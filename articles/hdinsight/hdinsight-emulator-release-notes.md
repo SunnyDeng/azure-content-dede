@@ -23,7 +23,8 @@
 
 
 
-> [AZURE.NOTE]Die einfachste Art, die Versionsnummer zu prüfen, ist, unter "Programme hinzufügen/entfernen" nach dem Eintrag für **Microsoft HDInsight Emulator für Azure** (bei Version 1.0.0.0 oder höher) oder **Microsoft HDInsight Developer Preview** (bei niedrigeren Versionen als 1.0.0.0) zu suchen.
+> [AZURE.NOTE] 
+Die einfachste Art, die Versionsnummer zu prüfen, ist, unter "Programme hinzufügen/entfernen" nach dem Eintrag für **Microsoft HDInsight Emulator für Azure** (bei Version 1.0.0.0 oder höher) oder **Microsoft HDInsight Developer Preview** (bei niedrigeren Versionen als 1.0.0.0) zu suchen.
 
 ## Version 2.0.0.0, veröffentlicht am 29. August 2014
 
@@ -89,7 +90,7 @@
 
 * Neues HDInsight-Dashboard mit folgenden Features:
  
-	* Verbindung mit mehreren Clustern sowohl in lokalen als auch in Remote-Installationen über den Azure HDInsight-Dienst. Weitere Informationen zum HDInsight-Dienst finden Sie unter [http://azure.microsoft.com/de-de/documentation/services/hdinsight/](http://azure.microsoft.com/documentation/services/hdinsight/).
+	* Verbindung mit mehreren Clustern sowohl in lokalen als auch in Remote-Installationen über den Azure HDInsight-Dienst. Weitere Informationen zum HDInsight-Dienst finden Sie unter [http://azure.microsoft.com/de-de/documentation/services/hdinsight/](https://azure.microsoft.com/documentation/services/hdinsight/).
  
 	* Konfigurieren von Azure-Blobspeicher für den lokalen Cluster. Detaillierte Anweisungen finden Sie unten.
 
@@ -276,4 +277,4 @@
 
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0128_2016-->

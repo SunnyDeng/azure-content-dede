@@ -1,4 +1,3 @@
-<a id="what-are-service-bus-queues"></a>
 ## Was sind Service Bus-Warteschlangen?
 
 Service Bus-Warteschlangen unterstützen ein Kommunikationsmodell namens **Brokermessaging**. Bei der Verwendung von Warteschlangen kommunizieren die Komponenten einer verteilten Anwendung nicht direkt miteinander, sondern tauschen Nachrichten über eine Warteschlange aus, die als Zwischenstufe (Broker) fungiert. Ein Nachrichtenproducer (Absender) übergibt eine Nachricht an die Warteschlange und setzt seine Funktion fort. Ein Nachrichtenconsumer (Empfänger) ruft die Nachricht asynchron aus der Warteschlange ab und verarbeitet sie. Der Producer muss nicht auf eine Antwort vom Consumer warten, um seine Funktion fortzusetzen und weitere Nachrichten zu schicken. Warteschlangen liefern die Nachrichten im **First In, First Out (FIFO)**-Verfahren an einen oder mehrere Consumer. Die Nachrichten werden also normalerweise in der gleichen Reihenfolge von den Consumern empfangen und verarbeitet, wie sie in die Warteschlange übergeben wurden, und jede Nachricht wird nur von einem Consumer verarbeitet.
@@ -23,11 +22,9 @@ So erstellen Sie einen Dienstnamespace:
 
 2.  Klicken Sie im linken Navigationsbereich des Portals auf **Service Bus**.
 
-3.  Klicken Sie im unteren Bereich des Verwaltungsportals auf **Erstellen**. 
-	![](./media/service-bus-java-how-to-create-queue/sb-queues-03.png)
+3.  Klicken Sie im unteren Bereich des Portals auf **Erstellen**. ![](./media/service-bus-java-how-to-create-queue/sb-queues-03.png)
 
-4.  Geben Sie im Dialogfeld **Add a new namespace** einen Namen für den Namespace ein. Das System prüft sofort, ob dieser Name verfügbar ist.
-	![](./media/service-bus-java-how-to-create-queue/sb-queues-04.png)
+4.  Geben Sie im Dialogfeld **Add a new namespace** einen Namen für den Namespace ein. Das System prüft sofort, ob dieser Name verfügbar ist.![](./media/service-bus-java-how-to-create-queue/sb-queues-04.png)
 
 5.  Wählen Sie nach der Bestätigung, dass der Name für den Namespace verfügbar ist, das Land oder die Region, wo dieser Namespace gehostet werden soll. (Stellen Sie sicher, dass dies dasselbe Land/dieselbe Region ist, in dem/der Sie Ihre Rechnerressourcen bereitstellen.)
 
@@ -43,15 +40,11 @@ Der neue Namespace wird innerhalb kurzer Zeit aktiviert und anschließend im Azu
 
 Wenn Sie Verwaltungsvorgänge ausführen möchten, z. B. die Erstellung einer Warteschlange im neuen Namespace, müssen Sie die Anmeldeinformationen für den Namespace abrufen. Diese Anmeldeinformation erhalten Sie im Portal.
 
-###So rufen Sie die Anmeldeinformationen im Verwaltungsportal ab
-
-1.  Klicken Sie im linken Navigationsbereich auf den Knoten **Service Bus**, um die Liste verfügbarer Namespaces anzuzeigen: 
-	![](./media/service-bus-java-how-to-create-queue/sb-queues-13.png)
+1.  Klicken Sie im linken Navigationsbereich auf den Knoten **Service Bus**, um die Liste verfügbarer Namespaces anzuzeigen: ![](./media/service-bus-java-how-to-create-queue/sb-queues-13.png)
 
 2.  Klicken Sie in der angezeigten Liste auf den Namespace, den Sie gerade erstellt haben.
 
-3.  Klicken Sie auf **Konfigurieren**, um die Richtlinien für den gemeinsamen Zugriff auf Ihren Namespace anzuzeigen. 
-	![](./media/service-bus-java-how-to-create-queue/sb-queues-14.png)
+3.  Klicken Sie auf **Konfigurieren**, um die Richtlinien für den gemeinsamen Zugriff auf Ihren Namespace anzuzeigen. ![](./media/service-bus-java-how-to-create-queue/sb-queues-14.png)
 
 4.  Notieren Sie den Primärschlüssel oder kopieren Sie ihn in die Zwischenablage.
 
@@ -59,4 +52,4 @@ Wenn Sie Verwaltungsvorgänge ausführen möchten, z. B. die Erstellung einer W
 
   [34]: ./media/service-bus-java-how-to-create-queue/VSProperties.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

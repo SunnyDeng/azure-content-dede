@@ -32,6 +32,6 @@ Microsoft Azure HDInsight bietet PowerShell-Cmdlets zum Ausführen von Hadoop-Au
 
 ## Weitere Informationen
 
-* [Lernpfad für Hadoop in HDInsight](http://azure.microsoft.com/documentation/learning-paths/hdinsight-self-guided-hadoop-training/)
+* [Lernpfad für Hadoop in HDInsight](https://azure.microsoft.com/documentation/learning-paths/hdinsight-self-guided-hadoop-training/)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

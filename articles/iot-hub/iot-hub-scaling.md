@@ -13,7 +13,7 @@
  ms.topic="article"
  ms.tgt_pltfrm="na"
  ms.workload="na"
- ms.date="10/02/2015"
+ ms.date="01/20/2016"
  ms.author="elioda"/>
 
 # Skalieren von IoT Hub
@@ -32,21 +32,14 @@ Sehen Sie sich zusätzlich zu diesen Durchsatzinformationen auch [IoT Hub-Kontin
 
 ## D2C- und C2D-Nachrichtendurchsatz
 
-Die beste Methode zum Skalieren einer IoT Hub-Lösung ist die Auswertung des Datenverkehrs pro Gerät.
+Die beste Methode zum Skalieren einer IoT Hub-Lösung ist die Auswertung des Datenverkehrs pro Einheit.
 
 D2C-Nachrichten basieren auf diesen Richtlinien für den anhaltenden Durchsatz:
 
 | Tarif | Anhaltender Durchsatz | Anhaltende Senderate |
 | ---- | -------------------- | ------------------- |
-| S1 | Bis zu 8 KBit/Std. pro Gerät | Durchschnitt von 4 Nachrichten/Std. pro Gerät |
-| S2 | Bis zu 4 KBit/Min. pro Gerät | Durchschnitt von 2 Nachrichten/Min. pro Gerät |
-
-Beim Empfangen von D2C-Nachrichten kann das Anwendungs-Back-End den folgenden maximalen Durchsatz erwarten (über alle Reader).
-
-| Preisstufe | Anhaltender Durchsatz |
-| ---- | -------------------- |
-| S1 | Bis zu 120 KBit/Min. pro Einheit, Minimum von 2 MBit/s |
-| S2 | Bis zu 4 MBit/Min. pro Einheit, Minimum von 2 MBit/s |
+| S1 | Bis zu 1111 KB/Minute pro Einheit<br/>(1,5 GB/Tag/Einheit) | Durchschnittlich 278 Nachrichten/Minute pro Einheit<br/>(400.000 Nachrichten/Tag pro Einheit) |
+| S2 | Bis zu 16 MB/Minute pro Einheit<br/>(22,8 GB/Tag/Einheit) | Durchschnittlich 4167 Nachrichten/Minute pro Einheit<br/>(6 Millionen Nachrichten/Tag pro Einheit) |
 
 Die Leistung wird bei C2D-Nachrichten pro Gerät skaliert und jedes Gerät empfängt bis zu 5 Nachrichten pro Minute.
 
@@ -73,4 +66,4 @@ Folgen Sie diesen Links, um mehr über Azure IoT Hub zu erfahren:
 [lnk-get-started]: iot-hub-csharp-csharp-getstarted.md
 [Was ist Azure IoT Hub?]: iot-hub-what-is-iot-hub.md
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

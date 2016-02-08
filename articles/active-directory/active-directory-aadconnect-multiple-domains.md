@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/11/2016"
+	ms.date="01/21/2016"
 	ms.author="billmath"/>
 
 #Unterstützung für mehrere Domänen
@@ -50,8 +50,8 @@ Wenn ich also in PowerShell „fabrikam.com“ mit dem SupportMultipleDomain-Par
 erhalte ich die folgende Konfiguration in Azure AD:
 
 - DomainName: fabrikam.com
-- IssuerURI: http://fabrikam.com/adfs/services/trust 
-- PassiveClientSignInUrl: https://fs.contoso100.com/adfs/ls/ 
+- IssuerURI: http://fabrikam.com/adfs/services/trust
+- PassiveClientSignInUrl: https://fs.contoso100.com/adfs/ls/
 
 Beachten Sie, dass der IssuerURI zwar auf einen Wert auf Grundlage meiner Domäne festgelegt wurde und somit eindeutig ist, die Endpunkt-URL-Werte aber immer noch so konfiguriert sind, dass sie auf meinen Verbunddienst auf „fs.contoso100.com“ verweisen, genau wie bei der ursprünglichen Domäne „contoso.com“. Alle Domänen verweisen also weiterhin auf dasselbe AD FS-System.
 
@@ -74,11 +74,11 @@ Nachfolgend finden Sie die detaillierten Schritte für den Übergang von einer e
 Anschließend verfügen wir über die Konfiguration für zwei Domänen in Azure AD:
 
 - DomainName: contoso.com
-- IssuerURI: http://contoso.com/adfs/services/trust 
-- PassiveClientSignInUrl: https://fs.contoso100.com/adfs/ls/ 
+- IssuerURI: http://contoso.com/adfs/services/trust
+- PassiveClientSignInUrl: https://fs.contoso100.com/adfs/ls/
 - DomainName: fabrikam.com
-- IssuerURI: http://fabrikam.com/adfs/services/trust 
-- PassiveClientSignInUrl: https://fs.contoso100.com/adfs/ls/ 
+- IssuerURI: http://fabrikam.com/adfs/services/trust
+- PassiveClientSignInUrl: https://fs.contoso100.com/adfs/ls/
 
 Die Verbundanmeldung für Benutzer aus den Domänen „contoso.com“ und „fabrikam.com“ funktioniert jetzt. Nur ein Problem bleibt bestehen: die Anmeldung für Benutzer in untergeordneten Domänen.
 
@@ -91,4 +91,4 @@ Sie müssen die benutzerdefinierte Anspruchsregel so konfigurieren, dass beim Er
 
 Zusammenfassend gesagt: Sie können über mehrere Domänen mit unterschiedlichen Namen sowie Unterdomänen verfügen, die alle mit dem gleichen AD FS-Server verbunden sind. Sie müssen lediglich einige zusätzliche Schritte ausführen, um sicherzustellen, dass die Issuer-Werte für alle Benutzer richtig festgelegt sind.
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

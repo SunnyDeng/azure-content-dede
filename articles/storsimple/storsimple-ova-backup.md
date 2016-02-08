@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Lernprogramm zur StorSimple Virtual Array-Sicherung | Microsoft Azure"
+   pageTitle="Tutorial zur StorSimple Virtual Array-Sicherung | Microsoft Azure"
    description="Beschreibt das Sichern von StorSimple Virtual Array-Freigaben und -Volumes."
    services="storsimple"
    documentationCenter="NA"
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="01/13/2016"
+   ms.date="01/22/2016"
    ms.author="alkohli" />
 
 # Sichern des StorSimple Virtual Array (Vorschau)
@@ -23,7 +23,7 @@ Dieses Lernprogramm bezieht sich nur auf Microsoft Azure StorSimple Virtual Arra
 
 Das StorSimple Virtual Array ist ein lokales virtuelles Cloudspeichergerät, das als Dateiserver oder iSCSI-Server konfiguriert werden kann. Es dient zum Erstellen von Sicherungen, zum Wiederherstellen aus Sicherungen und zum Durchführen eines Gerätefailovers, wenn eine Notfallwiederherstellung erforderlich ist. Wenn als Dateiserver konfiguriert ist, ermöglicht es auch die Wiederherstellung auf Elementebene. Dieses Lernprogramm beschreibt das Erstellen geplanter und manueller Sicherungen Ihres StorSimple Virtual Array mit dem klassischen Azure-Portal oder der StorSimple-Web-UI.
 
->[AZURE.IMPORTANT]
+>[AZURE.IMPORTANT] 
 >
 >- StorSimple Virtual Array befindet sich in der Vorschauphase und ist für die Evaluierung und Bereitstellungsplanung vorgesehen. Die Installation dieser Vorschauversion in einer Produktionsumgebung wird nicht unterstützt. 
 >- Wenn Probleme mit StorSimple Virtual Array auftreten, posten Sie sie im [StorSimple-MSDN-Forum](https://social.msdn.microsoft.com/Forums/home?forum=StorSimple).
@@ -32,7 +32,7 @@ Das StorSimple Virtual Array ist ein lokales virtuelles Cloudspeichergerät, das
 
 Sicherungen stellen Zeitpunktschutz zur Verfügung und verbessern die Wiederherstellbarkeit bei gleichzeitiger Minimierung der Wiederherstellungszeiten für Freigaben und Volumes. Für das Sichern einer Freigabe oder eines Volumes auf dem StorSimple-Gerät sind zwei Methoden möglich: **geplant** oder **manuell**. Diese Methoden werden in den folgenden Abschnitten erläutert.
 
-> [AZURE.NOTE]In dieser Version werden geplante Sicherungen durch eine Standardrichtlinie erstellt, die täglich zu einer bestimmten Uhrzeit ausgeführt wird und alle Freigaben oder Volumes auf dem Gerät sichert. Derzeit können für geplante Sicherungen keine benutzerdefinierten Richtlinien erstellt werden.
+> [AZURE.NOTE] In dieser Version werden geplante Sicherungen durch eine Standardrichtlinie erstellt, die täglich zu einer bestimmten Uhrzeit ausgeführt wird und alle Freigaben oder Volumes auf dem Gerät sichert. Derzeit können für geplante Sicherungen keine benutzerdefinierten Richtlinien erstellt werden.
 
 ## Ändern des Sicherungszeitplans
 
@@ -98,8 +98,14 @@ Führen Sie die folgenden Schritte im klassischen Azure-Portal aus, um die vorha
 
     Die der ausgewählten Freigabe bzw. dem ausgewählten Volume zugeordneten Sicherungen sollten in der Liste der Sicherungssätze angezeigt werden.
 
+![video\_icon](./media/storsimple-ova-backup/video_icon.png) **Video verfügbar**
+
+In diesem Video wird gezeigt, wie Sie Freigaben erstellen, Freigaben sichern und Daten auf einem StorSimple Virtual Array wiederherstellen.
+
+> [AZURE.VIDEO use-the-storsimple-virtual-array]
+
 ## Nächste Schritte
 
-Erfahren Sie mehr zur [Verwaltung des StorSimple Virtual Array](storsimple-ova-web-ui-admin.md).
+Erfahren Sie, wie Sie [StorSimple Virtual Array verwalten](storsimple-ova-web-ui-admin.md).
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

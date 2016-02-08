@@ -3,7 +3,7 @@
 	description="Dieses Thema beschreibt die integrierten Rollen der rollenbasierten Zugriffssteuerung (RBAC)."
 	services="active-directory"
 	documentationCenter=""
-	authors="IHenkel"
+	authors="kgremban"
 	manager="stevenpo"
 	editor=""/>
 
@@ -13,16 +13,16 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="identity"
-	ms.date="01/04/2016"
-	ms.author="inhenk"/>
+	ms.date="01/21/2016"
+	ms.author="kgremban"/>
 
 #RBAC: Integrierte Rollen
 
 ## Integrierte Rollen
 
-Die rollenbasierte Zugriffssteuerung von Azure umfasst die folgenden integrierten Rollen, die Benutzer, Gruppen und Diensten zugewiesen werden können. Die Definition integrierter Rollen kann nicht geändert werden. In einer zukünftigen Version von Azure RBAC können Sie benutzerdefinierte Rollen definieren. Dazu können Sie aus einer Liste mit verfügbaren Aktionen eine Reihe an Aktionen auswählen, die an Azure-Ressourcen durchgeführt werden dürfen.
+Die rollenbasierte Zugriffssteuerung (Role-Based Access Control, RBAC) von Azure umfasst die folgenden integrierten Rollen, die Benutzern, Gruppen und Diensten zugewiesen werden können. Die Definition integrierter Rollen kann nicht geändert werden. In einer zukünftigen Version von Azure RBAC können Sie benutzerdefinierte Rollen definieren. Dazu können Sie aus einer Liste mit verfügbaren Aktionen eine Reihe an Aktionen auswählen, die an Azure-Ressourcen durchgeführt werden dürfen.
 
-Klicken Sie auf den entsprechenden Link, um die **Aktions**- und **Nicht-Aktions**-Eigenschaften einer Rollendefinition anzuzeigen. Die **Aktions**-Eigenschaft gibt die zulässigen Aktionen für Azure-Ressourcen an. Für Aktionszeichenfolgen dürfen Platzhalter verwendet werden. Die **Nicht-Aktions**-Eigenschaft einer Rollendefinition gibt die Aktionen an, die von den zulässigen Aktionen ausgeschlossen werden müssen.
+Klicken Sie auf Links unten, um die **Aktions**- und **Nicht-Aktions**-Eigenschaften einer Rollendefinition anzuzeigen. Die **Aktions**-Eigenschaft gibt die zulässigen Aktionen für Azure-Ressourcen an. Für Aktionszeichenfolgen dürfen Platzhalter verwendet werden. Die **Nicht-Aktions**-Eigenschaft einer Rollendefinition gibt die Aktionen an, die von den zulässigen Aktionen ausgeschlossen werden müssen.
 
 
 | Rollenname | Beschreibung |
@@ -34,17 +34,17 @@ Klicken Sie auf den entsprechenden Link, um die **Aktions**- und **Nicht-Aktions
 | [Mitwirkender von ClearDB-MySQL-DB](#cleardb-mysql-db-contributor) | Kann ClearDB MySQL-Datenbanken verwalten |
 | [Mitwirkender](#contributor) | Kann alles außer den Zugriff verwalten |
 | [Mitwirkender von Data Factory](#data-factory-contributor) | Kann Data Factorys verwalten |
-| [DevTest Lab-Benutzer](#devtest-lab-user) | Kann alles anzeigen sowie virtuelle Computer verbinden, starten, neu starten und herunterfahren |
+| [DevTest Lab-Benutzer](#devtest-lab-user) | Kann alles anzeigen sowie virtuelle Maschinen verbinden, starten, neu starten und herunterfahren |
 | [Mitwirkender von DocumentDB-Konto](#document-db-account-contributor) | Kann DocumentDB-Konten verwalten |
 | [Mitwirkender von Intelligent Systems-Konto](#intelligent-systems-account-contributor) | Kann Intelligent Systems-Konten verwalten |
 | [Mitwirkender von virtuellem Netzwerk](#network-contributor) | Kann alle Netzwerkressourcen verwalten |
 | [Mitwirkender von NewRelic APM-Konto](#newrelic-apm-account-contributor) | Kann NewRelic Application Performance Management-Konten und -Anwendungen verwalten |
-| [Besitzer](#owner) | Besitzer können alles verwalten, einschließlich des Zugriffs. |
-| [Leser](#reader) | Leser können alle Dateien anzeigen, jedoch keine Änderungen vornehmen. |
+| [Besitzer](#owner) | Kann alles verwalten, einschließlich des Zugriffs |
+| [Leser](#reader) | Kann alles anzeigen, jedoch keine Änderungen vornehmen |
 | [Mitwirkender von Redis-Cache](#redis-cache-contributor]) | Kann Redis-Caches verwalten |
 | [Mitwirkender von Zeitplanungsauftragssammlung](#scheduler-job-collections-contributor) | Kann Zeitplanungsauftragssammlungen verwalten |
 | [Mitwirkender von Suchdienst](#search-service-contributor) | Kann Suchdienste verwalten |
-| [Sicherheits-Manager](#security-manager) | Kann Sicherheitskomponenten, Sicherheitsrichtlinien und virtuelle Computer verwalten |
+| [Sicherheits-Manager](#security-manager) | Kann Sicherheitskomponenten, Sicherheitsrichtlinien und virtuelle Maschinen verwalten |
 | [Mitwirkender von SQL DB](#sql-db-contributor) | Kann SQL-Datenbanken verwalten, jedoch nicht die zugehörigen sicherheitsbezogenen Richtlinien |
 | [SQL-Sicherheits-Manager](#sql-security-manager) | Kann die sicherheitsbezogenen Richtlinien von SQL-Servern und SQL-Datenbanken verwalten |
 | [Mitwirkender von SQL Server](#sql-server-contributor) | Kann SQL-Server und SQL-Datenbanken verwalten, jedoch nicht die zugehörigen sicherheitsbezogenen Richtlinien |
@@ -85,7 +85,7 @@ Kann Application Insights-Komponenten verwalten
 | Microsoft.Support/* | Erstellen und Verwalten von Support-Tickets |
 
 ### Operator für Automation
-Operatoren für Automation können Aufträge starten, unterbrechen und fortsetzen.
+Kann Aufträge starten, unterbrechen und fortsetzen
 
 | **Aktionen** ||
 | ------- | ------ |
@@ -128,14 +128,16 @@ Kann ClearDB MySQL-Datenbanken verwalten
 | Microsoft.Support/* | Erstellen und Verwalten von Support-Tickets |
 
 ### Mitwirkender
-Mitwirkende können alles mit Ausnahme des Zugriffs verwalten.
+Kann alles außer den Zugriff verwalten
 
 | **Aktionen** ||
 | ------- | ------ |
 | * | Erstellen und Verwalten von Ressourcen aller Typen |
-| ****Nicht-Aktionen |  |
-| Microsoft.Authorization/*/Write | Kann keine Rollen und Rollenzuweisungen erstellen |
-| Microsoft.Authorization/*/Delete | Kann keine Rollen und Rollenzuweisungen löschen |
+
+| **Nicht-Aktionen** | |
+| ------- | ------ |
+| Microsoft.Authorization/*/Write | Rollen und Rollenzuweisungen können nicht erstellt werden. |
+| Microsoft.Authorization/*/Delete | Rollen und Rollenzuweisungen können nicht gelöscht werden. |
 
 ### Mitwirkender von Data Factory
 Kann Data Factorys verwalten
@@ -151,7 +153,7 @@ Kann Data Factorys verwalten
 | Microsoft.Support/* | Erstellen und Verwalten von Support-Tickets |
 
 ### DevTest Lab-Benutzer
-Kann alles anzeigen sowie virtuelle Computer verbinden, starten, neu starten und herunterfahren
+Kann alles anzeigen sowie virtuelle Maschinen verbinden, starten, neu starten und herunterfahren
 
 | **Aktionen** ||
 | ------- | ------ |
@@ -301,7 +303,9 @@ Kann SQL-Datenbanken verwalten, jedoch nicht die zugehörigen sicherheitsbezogen
 | Microsoft.Resources/subscriptions/resourceGroups/deployments/* | Erstellen und Verwalten von Ressourcengruppenbereitstellungen |
 | Microsoft.Insights/alertRules/* | Erstellen und Verwalten von Warnungsregeln |
 | Microsoft.Support/* | Erstellen und Verwalten von Support-Tickets |
+
 | **Nicht-Aktionen** | |
+| ------- | ------ |
 | Microsoft.Sql/servers/databases/auditingPolicies/* | Kann keine Überwachungsrichtlinien bearbeiten |
 | Microsoft.Sql/servers/databases/connectionPolicies/* | Kann keine Verbindungsrichtlinien bearbeiten |
 | Microsoft.Sql/servers/databases/dataMaskingPolicies/* | Kann keine Datenmaskierungsrichtlinien bearbeiten |
@@ -341,7 +345,9 @@ Kann SQL-Server und SQL-Datenbanken verwalten, jedoch nicht die zugehörigen sic
 | Microsoft.Resources/subscriptions/resourceGroups/deployments/* | Erstellen und Verwalten von Ressourcengruppenbereitstellungen für Abonnements |
 | Microsoft.Insights/alertRules/* | Erstellen und Verwalten von Insights-Warnungsregeln |
 | Microsoft.Support/* | Erstellen und Verwalten von Support-Tickets |
+
 | **Nicht-Aktionen** | |
+| ------- | ------ |
 | Microsoft.Sql/servers/auditingPolicies/* | Kann keine SQL Server-Überwachungsrichtlinien bearbeiten |
 | Microsoft.Sql/servers/databases/auditingPolicies/* | Kann keine Überwachungsrichtlinien von SQL Server-Datenbanken bearbeiten |
 | Microsoft.Sql/servers/databases/connectionPolicies/* | Kann keine Verbindungsrichtlinien von SQL Server-Datenbanken bearbeiten |
@@ -381,8 +387,7 @@ Kann den Benutzerzugriff auf Azure-Ressourcen verwalten
 
 | **Aktionen** ||
 | ------- | ------ |
-| */read | Lesen von Ressourcen aller Typen, mit Ausnahme geheimer Schlüssel |
-| Microsoft.Authorization/* | Lesen von Autorisierungen |
+| */read | Lesen von Ressourcen aller Typen, mit Ausnahme geheimer Schlüssel | | Microsoft.Authorization/* | Lesen von Autorisierungen |
 | Microsoft.Support/* | Erstellen und Verwalten von Support-Tickets |
 
 ### Mitwirkender von klassischen virtuellen Computern
@@ -483,4 +488,4 @@ Kann Websites verwalten, jedoch nicht die Webpläne, mit denen sie verbunden sin
 ## RBAC-Themen
 [AZURE.INCLUDE [role-based-access-control-toc.md](../../includes/role-based-access-control-toc.md)]
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

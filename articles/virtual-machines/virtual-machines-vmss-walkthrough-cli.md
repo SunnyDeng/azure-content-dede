@@ -25,7 +25,7 @@
 
 <br>
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]klassisches Bereitstellungsmodell.
 
 VM-Skalierungsgruppen erleichtern Ihnen das Bereitstellen und Verwalten identischer virtueller Computer als Gruppe. Skalierungsgruppen stellen eine hoch skalierbare und anpassbare Compute-Ebene für Anwendungen mit Hyperskalierung bereit und bieten Unterstützung für Images der Windows-Plattform, Images der Linux-Plattform, benutzerdefinierte Images und Erweiterungen. Weitere Informationen zu Skalierungsgruppen finden Sie unter [VM-Skalierungsgruppen](virtual-machines-vmss-overview.md).
 
@@ -41,7 +41,7 @@ Die Vorlage, die Sie in diesem Tutorial erstellen, ähnelt einer Vorlage aus dem
 
 1. **Anmelden an Microsoft Azure** – Stellen Sie in der Befehlszeilenschnittstelle (Bash, Terminal, Eingabeaufforderung) sicher, dass Sie sich im Ressourcen-Manager-Modus befinden, indem Sie `azure config mode arm` eingeben. [Melden Sie sich dann mit Ihrer Geschäfts- oder Schulkonto-ID an](../xplat-cli-connect.md#use-the-log-in-method), indem Sie `azure login` eingeben und die Schritte befolgen, um eine interaktive Anmeldeoberfläche für Ihr Azure-Konto zu erhalten.
 
-	> [AZURE.NOTE]Wenn Sie über eine Arbeits- oder Schulkonto-ID verfügen und wissen, dass die zweistufige Authentifizierung nicht aktiviert ist, können Sie `azure login -u` zusammen mit der Arbeits- oder Schulkonto-ID verwenden, um sich ohne eine interaktive Sitzung anzumelden. Wenn Sie nicht über eine Arbeits- oder Schulkonto-ID verfügen, können Sie eine [Arbeits- oder Schulkonto-ID mit Ihrem persönlichen Microsoft-Konto erstellen](resource-group-create-work-id-from-personal.md).
+	> [AZURE.NOTE] Wenn Sie über eine Arbeits- oder Schulkonto-ID verfügen und wissen, dass die zweistufige Authentifizierung nicht aktiviert ist, können Sie `azure login -u` zusammen mit der Arbeits- oder Schulkonto-ID verwenden, um sich ohne eine interaktive Sitzung anzumelden. Wenn Sie nicht über eine Arbeits- oder Schulkonto-ID verfügen, können Sie eine [Arbeits- oder Schulkonto-ID mit Ihrem persönlichen Microsoft-Konto erstellen](resource-group-create-work-id-from-personal.md).
 
 2. **Erstellen einer Ressourcengruppe** – Alle Ressourcen müssen in einer Ressourcengruppe bereitgestellt werden. Geben Sie der Ressourcengruppe für dieses Tutorial den Namen **vmsstest1**:
 
@@ -604,4 +604,4 @@ Da in Azure die genutzten Ressourcen in Rechnung gestellt werden, empfiehlt es s
 
 Sehen Sie sich die Vorlage [Autoscale a VM Scale Set running a Ubuntu/Apache/PHP app](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-lapstack-autoscale) an, mit der ein LAMP-Stack eingerichtet wird, um die automatische Skalierungsfunktion von VM-Skalierungsgruppen auszuführen.
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

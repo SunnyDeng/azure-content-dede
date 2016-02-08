@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/05/2015"
-	ms.author="szarkos"/>
+	ms.date="01/22/2016"
+	ms.author="szark"/>
 
 # <a id="nonendorsed"> </a>Informationen zu nicht unterstützten Verteilungen #
 
@@ -32,7 +32,9 @@ Alle auf Azure ausgeführten Verteilungen müssen eine Reihe an Voraussetzungen 
 Daher wird empfohlen, dass Sie nach Möglichkeit mit einem unserer [Linux auf Azure-unterstützten Distributionen](../linux-endorsed-distributions.md) beginnen. Die folgenden Artikel führen Sie durch die Vorbereitung der verschiedenen unterstützten Linux-Verteilungen, die auf Azure unterstützt werden:
 
 - **[CentOS-basierte Verteilungen](virtual-machines-linux-create-upload-vhd-centos.md)**
+- **[Debian Linux](virtual-machines-linux-create-upload-vhd-debian.md)**
 - **[Oracle Linux](virtual-machines-linux-create-upload-vhd-oracle.md)**
+- **[Red Hat Enterprise Linux](virtual-machines-linux-create-upload-vhd-redhat.md)**
 - **[SLES und openSUSE](../virtual-machines-linux-create-upload-vhd-suse)**
 - **[Ubuntu](virtual-machines-linux-create-upload-vhd-ubuntu.md)**
 
@@ -76,7 +78,7 @@ VHD-Images auf Azure benötigen eine virtuelle Größe, die auf 1 MB ausgericht
 
 Zur Umgehung des Problems können Sie die Größe des virtuellen Computers mithilfe der Hyper-V-Manager-Konsole oder des Powershell-Cmdlets [Resize-VHD](http://technet.microsoft.com/library/hh848535.aspx) ändern. Wenn Sie nicht in einer Windows-Umgebung arbeiten, sollten Sie die Konvertierung (falls erforderlich) mit qemu-img durchführen und die Größe der virtuellen Festplatte ändern.
 
-> [AZURE.NOTE]In den Versionen qemu-img-Versionen > oder = 2.2.1 taucht ein bekannter Bug auf, der zu Fehlern bei der Formatierung der VHD-führt. Das Problem wird in einer zukünftigen qemu-img-Version behoben werden. Bis es soweit ist, empfiehlt es sich jedoch, auf die qemu-img-Version 2.2.0 oder niedriger zurückzugreifen. Referenz: https://bugs.launchpad.net/qemu/+bug/1490611
+> [AZURE.NOTE] In den Versionen qemu-img-Versionen > oder = 2.2.1 taucht ein bekannter Bug auf, der zu Fehlern bei der Formatierung der VHD-führt. Das Problem wird in einer zukünftigen qemu-img-Version behoben werden. Bis es soweit ist, empfiehlt es sich jedoch, auf die qemu-img-Version 2.2.0 oder niedriger zurückzugreifen. Referenz: https://bugs.launchpad.net/qemu/+bug/1490611
 
 
  1. Das direkte Ändern der Größe der virtuellen Festplatte mithilfe von Tools wie `qemu-img` oder `vbox-manage` kann dazu führen, dass die virtuelle Festplatte nicht startfähig ist. Daher empfiehlt es sich, die virtuelle Festplatte zuerst in ein RAW-Datenträgerimage zu konvertieren. Wenn das VM-Image bereits als RAW-Datenträgerimage erstellt wurde (die Standardeinstellung für einige Hypervisoren wie KVM), können Sie diesen Schritt überspringen:
@@ -127,12 +129,12 @@ Wenn ein benutzerdefiniertes Kernel erforderlich ist, empfiehlt es sich, eine ne
 
 Das Fehlen der folgenden Patches hat in einem sehr geringen Ausmaß Probleme in Azure verursacht. Daher müssen diese im Kernel enthalten sein. Diese Liste ist keineswegs vollständig für alle Verteilungen:
 
-- [ata\_piix: defer disks to the Hyper-V drivers by default](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/drivers/ata/ata_piix.c?id=cd006086fa5d91414d8ff9ff2b78fbb593878e3c) (Standardmäßiges Zurückstellen von Datenträgern zu Hyper-V-Treibern, in englischer Sprache)
-- [storvsc: Account for in-transit packets in the RESET path](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/drivers/scsi/storvsc_drv.c?id=5c1b10ab7f93d24f29b5630286e323d1c5802d5c) (Konto für Pakete auf dem Transportweg im RESET-Pfad, in englischer Sprache)
-- [storvsc: avoid usage of WRITE\_SAME](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/storvsc_drv.c?id=3e8f4f4065901c8dfc51407e1984495e1748c090) (Vermeiden der Verwendung von WRITE\_SAME, in englischer Sprache)
-- [storvsc: Disable WRITE SAME for RAID and virtual host adapter drivers](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/storvsc_drv.c?id=54b2b50c20a61b51199bedb6e5d2f8ec2568fb43) (Deaktivieren von WRITE\_SAME für RAID und virtuelle Hostadaptertreiber, in englischer Sprache)
-- [storvsc: NULL pointer dereference fix](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/storvsc_drv.c?id=b12bb60d6c350b348a4e1460cd68f97ccae9822e) (Beheben der NULL-Zeigerdereferenzierung, in englischer Sprache)
-- [storvsc: ring buffer failures may result in I/O freeze](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/storvsc_drv.c?id=e86fb5e8ab95f10ec5f2e9430119d5d35020c951) (Einfrieren von E/A durch Ringpufferfehler, in englischer Sprache)
+- [ata\_piix: defer disks to the Hyper-V drivers by default (Standardmäßiges Zurückstellen von Datenträgern zu Hyper-V-Treibern, in englischer Sprache)](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/drivers/ata/ata_piix.c?id=cd006086fa5d91414d8ff9ff2b78fbb593878e3c)
+- [storvsc: Account for in-transit packets in the RESET path (Konto für Pakete auf dem Transportweg im RESET-Pfad, in englischer Sprache)](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/drivers/scsi/storvsc_drv.c?id=5c1b10ab7f93d24f29b5630286e323d1c5802d5c)
+- [storvsc: avoid usage of WRITE\_SAME (Vermeiden der Verwendung von WRITE\_SAME, in englischer Sprache)](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/storvsc_drv.c?id=3e8f4f4065901c8dfc51407e1984495e1748c090)
+- [storvsc: Disable WRITE SAME for RAID and virtual host adapter drivers (Deaktivieren von WRITE\_SAME für RAID und virtuelle Hostadaptertreiber, in englischer Sprache)](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/storvsc_drv.c?id=54b2b50c20a61b51199bedb6e5d2f8ec2568fb43)
+- [storvsc: NULL pointer dereference fix (Beheben der NULL-Zeigerdereferenzierung, in englischer Sprache)](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/storvsc_drv.c?id=b12bb60d6c350b348a4e1460cd68f97ccae9822e)
+- [storvsc: ring buffer failures may result in I/O freeze (Einfrieren von E/A durch Ringpufferfehler, in englischer Sprache)](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/storvsc_drv.c?id=e86fb5e8ab95f10ec5f2e9430119d5d35020c951)
 
 
 ## Azure Linux Agent ##
@@ -193,4 +195,4 @@ Der [Azure Linux-Agent](virtual-machines-linux-agent-user-guide.md) (waagent) is
 
 - Sie müssen den virtuellen Computer anschließend herunterfahren und die virtuelle Festplatte in Azure hochladen.
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0128_2016-->

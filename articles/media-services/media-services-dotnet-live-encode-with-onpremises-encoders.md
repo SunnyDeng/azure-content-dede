@@ -29,7 +29,7 @@ Zum Abschließen dieses Lernprogramms müssen folgende Voraussetzungen erfüllt 
 
 Wir empfehlen, die folgenden Artikel zu lesen:
 
-- [Azure Media Services RTMP Support and Live Encoders (in englischer Sprache).](http://azure.microsoft.com/blog/2014/09/18/azure-media-services-rtmp-support-and-live-encoders/)
+- [Azure Media Services RTMP Support and Live Encoders (in englischer Sprache).](https://azure.microsoft.com/blog/2014/09/18/azure-media-services-rtmp-support-and-live-encoders/)
 - [Arbeiten mit Kanälen, die Livedatenströme mit mehreren Bitraten von lokalen Encodern empfangen](media-services-manage-channels-overview.md)
  
 
@@ -49,7 +49,7 @@ Im folgenden Codebeispiel wird veranschaulicht, wie die folgenden Aufgaben ausge
 - Abrufen von Locators für alle Streamingendpunkte
 - Herunterfahren von Ressourcen
 	
-Informationen zum Konfigurieren eines Liveencoders finden Sie unter [Azure Media Services RTMP Support and Live Encoders](http://azure.microsoft.com/blog/2014/09/18/azure-media-services-rtmp-support-and-live-encoders/) (in englischer Sprache).
+Informationen zum Konfigurieren eines Liveencoders finden Sie unter [Azure Media Services RTMP Support and Live Encoders](https://azure.microsoft.com/blog/2014/09/18/azure-media-services-rtmp-support-and-live-encoders/) (in englischer Sprache).
 	
 		using System;
 		using System.Collections.Generic;
@@ -385,4 +385,4 @@ Informationen zum Konfigurieren eines Liveencoders finden Sie unter [Azure Media
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

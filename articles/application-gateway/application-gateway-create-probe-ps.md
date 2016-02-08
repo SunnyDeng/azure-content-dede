@@ -58,7 +58,7 @@ Erstellen Sie eine neue Ressourcengruppe (Überspringen Sie diesen Schritt, wenn
 
 Der Azure-Ressourcen-Manager erfordert, dass alle Ressourcengruppen einen Speicherort angeben. Dieser wird als Standardspeicherort für Ressourcen in dieser Ressourcengruppe verwendet. Stellen Sie sicher, dass alle Befehle, mit denen ein Application Gateway erstellt wird, die gleiche Ressourcengruppe verwenden.
 
-Im obigen Beispiel haben wir eine Ressourcengruppe namens „appgw-RG“ mit dem Standort „USA, Westen“ erstellt.
+Im obigen Beispiel haben wir eine Ressourcengruppe mit dem Namen „appgw-RG“ und dem Standort „USA, Westen“ erstellt.
 
 ## Erstellen eines virtuelles Netzwerkes und eines Subnetzes für das Application Gateway.
 
@@ -124,9 +124,9 @@ Verwendete Parameter:
 - **-Hostname und -path**: Vollständiger URL-Pfad, der vom Application Gateway aufgerufen wird, um die Integrität der Instanz zu ermitteln. Beispiel: Bei der Website http://contoso.com/ können Sie den benutzerdefinierten Test für „http://contoso.com/path/custompath.htm“ konfigurieren, damit die HTTP-Antwort bei den Prüfungen des Tests erfolgreich ist.
 - **UnhealthyThreshold**: Die Anzahl der Fehler bei HTTP-Antworten, ab der die Back-End-Instanz als *fehlerhaft* gekennzeichnet wird.
 
+<BR>
 
-
-	$probe = New-AzureRmApplicationGatewayProbeConfig -Name probe01 -Protocol Http -HostName "contoso.com" -Path "/path/custompath.htm" -Interval 30 -Timeout 120 -UnhealthyThreshold 8
+	$probe = New-AzureRmApplicationGatewayProbeConfig -Name probe01 -Protocol Http -HostName "contoso.com" -Path "/path/path.htm" -Interval 30 -Timeout 120 -UnhealthyThreshold 8
 
 
 ### Schritt 4
@@ -168,7 +168,7 @@ Konfigurieren Sie die Instanzgröße des Application Gateways.
 	$sku = New-AzureRmApplicationGatewaySku -Name Standard_Small -Tier Standard -Capacity 2
 
 
->[AZURE.NOTE]Der Standardwert für „*InstanceCount*” ist „2“, der Maximalwert ist „10“. Der Standardwert für „*GatewaySize*” ist „Medium“. Sie können zwischen „Standard\_Small“, „Standard\_Medium“ und „Standard\_Large“ wählen.
+>[AZURE.NOTE]  Der Standardwert für *InstanceCount* ist 2, der Maximalwert ist 10. Der Standardwert für *GatewaySize* ist "Medium". Sie können zwischen „Standard\_Small“, „Standard\_Medium“ und „Standard\_Large“ wählen.
 
 ## Erstellen eines Application Gateways mit dem Cmdlet „New-AzureRmApplicationGateway“
 
@@ -182,7 +182,7 @@ Zum Hinzufügen eines benutzerdefinierten Tests zu einem vorhandenen Application
 
 ### Schritt 1
 
-Laden Sie die Application Gateway-Ressource mit „**Get-AzureRmApplicationGateway**” in eine PowerShell-Variable.
+Laden Sie die Application Gateway-Ressource mit **Get-AzureRmApplicationGateway** in eine PowerShell-Variable.
 
 	$getgw =  Get-AzureRmApplicationGateway -Name appgwtest -ResourceGroupName appgw-rg
 
@@ -197,14 +197,14 @@ Im genannten Beispiel ist der benutzerdefinierte Test so konfiguriert, dass der 
 
 ### Schritt 3
 
-Fügen Sie den Test „ **-Set-AzureRmApplicationGatewayBackendHttpSettings**“ den Einstellungen für die Back-End-Konfiguration und dem Timeout hinzu.
+Fügen Sie mithilfe von **-Set-AzureRmApplicationGatewayBackendHttpSettings** den Test den Einstellungen für die Back-End-Poolkonfiguration und dem Timeout hinzu.
 
 
 	 $getgw = Set-AzureRmApplicationGatewayBackendHttpSettings -ApplicationGateway $getgw -Name $getgw.BackendHttpSettingsCollection.name -Port 80 -Protocol Http -CookieBasedAffinity Disabled -Probe $probe -RequestTimeout 120
 
 ### Schritt 4
 
-Speichern Sie die Konfigurationen mit „**Set-AzureRmApplicationGateway**” ins Application Gateway.
+Speichern Sie die Konfiguration mit **Set-AzureRmApplicationGateway** ins Application Gateway.
 
 	Set-AzureRmApplicationGateway -ApplicationGateway $getgw -verbose
 
@@ -214,28 +214,28 @@ Hier sind die Schritte zum Entfernen eines benutzerdefinierten Tests aus einem v
 
 ### Schritt 1
 
-Laden Sie die Application Gateway-Ressource mit „**Get-AzureRmApplicationGateway**” in eine PowerShell-Variable.
+Laden Sie die Application Gateway-Ressource mit **Get-AzureRmApplicationGateway** in eine PowerShell-Variable.
 
 	$getgw =  Get-AzureRmApplicationGateway -Name appgwtest -ResourceGroupName appgw-rg
 
 
 ### Schritt 2
 
-Entfernen Sie die Testkonfiguration aus dem Application Gateway mit „**Remove-AzureRmApplicationGatewayProbeConfig**”.
+Entfernen Sie die Testkonfiguration mit **Remove-AzureRmApplicationGatewayProbeConfig** aus dem Application Gateway.
 
 	$getgw = Remove-AzureRmApplicationGatewayProbeConfig -ApplicationGateway $getgw -Name $getgw.Probes.name
 
 ### Schritt 3
 
-Verwenden Sie „**-Set-AzureRmApplicationGatewayBackendHttpSettings**”, um die Back-End-Pool-Einstellungen zu aktualisieren und damit den Test und die Timeouteinstellung zu entfernen.
+Verwenden Sie **-Set-AzureRmApplicationGatewayBackendHttpSettings**, um die Back-End-Pool-Einstellungen zu aktualisieren und damit den Test und die Timeouteinstellung zu entfernen.
 
 
 	 $getgw=Set-AzureRmApplicationGatewayBackendHttpSettings -ApplicationGateway $getgw -Name $getgw.BackendHttpSettingsCollection.name -Port 80 -Protocol http -CookieBasedAffinity Disabled
 
 ### Schritt 4
 
-Speichern Sie die Konfigurationen mit „**Set-AzureRmApplicationGateway**” ins Application Gateway.
+Speichern Sie die Konfiguration mit **Set-AzureRmApplicationGateway** ins Application Gateway.
 
 	Set-AzureRmApplicationGateway -ApplicationGateway $getgw -verbose
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

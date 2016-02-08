@@ -64,7 +64,7 @@ Sie können zwar mit einem einzelnen Vorgang alle Aufträge innerhalb einer Auft
 
 ## Preise
 
-Ausführliche Informationen finden Sie unter [Scheduler Preise](http://azure.microsoft.com/pricing/details/scheduler/).
+Ausführliche Informationen finden Sie unter [Scheduler Preise](https://azure.microsoft.com/pricing/details/scheduler/).
 
 ## Siehe auch
  
@@ -75,7 +75,7 @@ Ausführliche Informationen finden Sie unter [Scheduler Preise](http://azure.mic
 
  [Erste Schritte mit dem Scheduler im Azure-Portal](scheduler-get-started-portal.md)
 
- [Azure Scheduler-REST-API – Referenz](https://msdn.microsoft.com/library/dn528946)
+ [Azure Scheduler-REST-API – Referenz](https://msdn.microsoft.com/library/mt629143)
 
  [Azure Scheduler – PowerShell-Cmdlets-Referenz](scheduler-powershell-reference.md)
 
@@ -89,4 +89,4 @@ Ausführliche Informationen finden Sie unter [Scheduler Preise](http://azure.mic
 
   
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

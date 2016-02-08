@@ -30,7 +30,7 @@ Das folgende Diagramm zeigt die Architektur des bereitgestellten Systems. Der Sy
 
 Zum Ausführen der folgenden Schritte benötigen Sie Folgendes:
 
- * Ein aktives Azure-Abonnement. Wenn Sie kein Abonnement besitzen, können Sie eine kostenlose Testversion unter [azure.com](https://azure.microsoft.com) erhalten.
+ * Ein aktives Azure-Abonnement. Wenn Sie kein Abonnement besitzen, können Sie eine kostenlose Testversion unter [azure.com](https://azure.microsoft.com/) erhalten.
  * Eine Arbeits- oder Schulkonto-ID für die Verwendung von Azure-Ressourcengruppen. Wenn Sie über ein persönliches Konto verfügen, und Sie sich mit einer Microsoft-ID anmelden, müssen Sie [aus der persönlichen ID eine Arbeits-ID erstellen](resource-group-create-work-id-from-personal.md).
  * Je nach Client-Betriebssystem entweder [Azure PowerShell](powershell-install-configure.md) oder [Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows](xplat-cli-install.md).
  * [OpenSSL](https://www.openssl.org/). OpenSSL wird verwendet, um die erforderlichen Zertifikate zu generieren.
@@ -117,7 +117,7 @@ Die Vorlage definiert die eingehende NAT-Regeln, die 2223 zu Instanz 1, 2224 zu 
 
 ![NAT-Regeln des Load Balancers](media/virtual-machines-deis-cluster/nat-rules.png)
 
-> [AZURE.NOTE]Die Vorlage unterstützt derzeit nur 3-Knoten-Cluster. Dies liegt an der Beschränkung in der Azure-Ressourcen-Manager-Vorlage für die NAT-Regel-Definition, die keine Schleifensyntax unterstützt.
+> [AZURE.NOTE] Die Vorlage unterstützt derzeit nur 3-Knoten-Cluster. Dies liegt an der Beschränkung in der Azure-Ressourcen-Manager-Vorlage für die NAT-Regel-Definition, die keine Schleifensyntax unterstützt.
 
 ## Installieren und Starten der Deis-Plattform
 
@@ -128,7 +128,7 @@ Sie können deisctl nun verwenden, um die Deis-Plattform zu installieren und zu 
     deisctl install platform
     deisctl start platform
 
-> [AZURE.NOTE]Das Starten der Plattform dauert einige Zeit (bis zu 10 Minuten). Insbesondere das Starten des Builder-Dienstes kann lange dauern. Unter Umständen sind mehrere Versuche erforderlich: Wenn der Vorgang nicht mehr reagiert, versuchen Sie die Ausführung des Befehls durch Eingabe von `ctrl+c` abzubrechen, und wiederholen Sie den Vorgang.
+> [AZURE.NOTE] Das Starten der Plattform dauert einige Zeit (bis zu 10 Minuten). Insbesondere das Starten des Builder-Dienstes kann lange dauern. Unter Umständen sind mehrere Versuche erforderlich: Wenn der Vorgang nicht mehr reagiert, versuchen Sie die Ausführung des Befehls durch Eingabe von `ctrl+c` abzubrechen, und wiederholen Sie den Vorgang.
 
 Sie können `deisctl list` verwenden, um zu überprüfen, ob alle Dienste ausgeführt werden:
 
@@ -258,4 +258,4 @@ In diesem Artikel wurden Sie durch alle Schritte der Bereitstellung eines neuen 
 [resource-group-overview]: ../resource-group-overview.md
 [powershell-azure-resource-manager]: ../powershell-azure-resource-manager.md
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

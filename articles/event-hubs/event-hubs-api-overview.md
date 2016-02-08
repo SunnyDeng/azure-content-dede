@@ -12,14 +12,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="10/14/2015"
+   ms.date="01/26/2016"
    ms.author="sethm" />
 
 # Übersicht über die Event Hubs-API
 
 In diesem Artikel werden einige der wichtigsten .NET-Client-APIs von Event Hubs zusammengefasst. Es gibt zwei Kategorien: Verwaltungs- und Laufzeit-APIs. Runtime-APIs umfassen alle Vorgänge, die zum Senden und Empfangen einer Meldung erforderlich sind. Verwaltungsvorgänge ermöglichen das Verwalten des Entitätszustands von Event Hubs durch das Erstellen, Aktualisieren und Löschen von Entitäten.
 
-Überwachungsszenarien umfassen sowohl Verwaltung als auch Laufzeit. Eine ausführliche Referenzdokumentation zu den .NET-APIs finden Sie unter den Referenzen zur [.NET-Klassenbibliothek](https://msdn.microsoft.com/library/azure/mt419900.aspx) und zur [EventProcessorHost-API](https://msdn.microsoft.com/library/azure/mt445521.aspx).
+Überwachungsszenarien umfassen sowohl Verwaltung als auch Laufzeit. Eine ausführliche Referenzdokumentation zu den .NET-APIs finden Sie unter den Referenzen zu [Service Bus .NET](https://msdn.microsoft.com/library/azure/mt419900.aspx) und zur [EventProcessorHost-API](https://msdn.microsoft.com/library/azure/mt445521.aspx).
 
 ## Verwaltungs-APIs
 
@@ -84,7 +84,7 @@ await client.SendAsync(data);
 ### Consumer erstellen
 
 ```
-// Create the Event Hub client
+// Create the Event Hubs client
 EventHubClient eventHubClient = EventHubClient.Create(EventHubName);
 
 // Get the default consumer group
@@ -120,6 +120,7 @@ Diese APIs bieten Flexibilität für Arbeitsprozesse, die möglicherweise nicht 
 ```
 // Checkpointing is done within the SimpleEventProcessor and on a per-consumerGroup per-partition basis, workers resume from where they last left off.
 // Use the EventData.Offset value for checkpointing yourself, this value is unique per partition.
+
 string eventHubConnectionString = System.Configuration.ConfigurationManager.AppSettings["Microsoft.ServiceBus.ConnectionString"];
 string blobConnectionString = System.Configuration.ConfigurationManager.AppSettings["AzureStorageConnectionString"]; // Required for checkpoint/state
 
@@ -185,7 +186,7 @@ Weitere Informationen zu Event Hubs-Szenarien finden Sie unter diesen Links:
 
 Die .NET-API-Referenzen sind hier verfügbar:
 
-- [Referenz zu Service Bus und .NET-API für Event Hubs](https://msdn.microsoft.com/library/azure/mt419900.aspx)
+- [.NET-API-Referenzen zu Service Bus und Event Hubs](https://msdn.microsoft.com/library/azure/mt419900.aspx)
 - [Referenz zur Ereignisprozessorhost-API](https://msdn.microsoft.com/library/azure/mt445521.aspx)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

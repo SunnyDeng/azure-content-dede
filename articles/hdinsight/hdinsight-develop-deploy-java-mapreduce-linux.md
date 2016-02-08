@@ -223,7 +223,7 @@ Bei der Installation von Java und dem JDK können die folgenden Umgebungsvariabl
 
 3. Nachdem der Befehl ausgeführt wurde, enthält das Verzeichnis __wordcountjava\\target__ eine Datei mit dem Namen __wordcountjava-1.0-SNAPSHOT.jar__.
 
-	> [AZURE.NOTE]Die Datei __wordcountjava-1.0-SNAPSHOT.jar__ ist ein Uberjar, das nicht nur den WordCount-Auftrag enthält, sondern auch Abhängigkeiten, die für den Auftrag zur Laufzeit erforderlich sind.
+	> [AZURE.NOTE] Die Datei __wordcountjava-1.0-SNAPSHOT.jar__ ist ein Uberjar, das nicht nur den WordCount-Auftrag enthält, sondern auch Abhängigkeiten, die für den Auftrag zur Laufzeit erforderlich sind.
 
 
 ##<a id="upload"></a>Hochladen der JAR-Datei
@@ -236,7 +236,7 @@ Verwenden Sie den folgenden Befehl, um die JAR-Datei in den HDInsight-Hauptknote
 
 Dadurch werden die Dateien aus dem lokalen System auf den Stammknoten kopiert.
 
-> [AZURE.NOTE]Wenn Sie zum Schutz Ihres SSH-Kontos ein Kennwort verwendet haben, werden Sie zur Eingabe dieses Kennworts aufgefordert. Wenn Sie einen SSH-Schlüssel verwendet haben, müssen Sie möglicherweise den `-i`-Parameter und den Pfad zum privaten Schlüssel angeben. Beispiel: `scp -i /path/to/private/key wordcountjava-1.0-SNAPSHOT.jar USERNAME@CLUSTERNAME-ssh.azurehdinsight.net:`.
+> [AZURE.NOTE] Wenn Sie zum Schutz Ihres SSH-Kontos ein Kennwort verwendet haben, werden Sie zur Eingabe dieses Kennworts aufgefordert. Wenn Sie einen SSH-Schlüssel verwendet haben, müssen Sie möglicherweise den `-i`-Parameter und den Pfad zum privaten Schlüssel angeben. Beispiel: `scp -i /path/to/private/key wordcountjava-1.0-SNAPSHOT.jar USERNAME@CLUSTERNAME-ssh.azurehdinsight.net:`.
 
 ##<a name="run"></a>Ausführen des MapReduce-Auftrags
 
@@ -270,7 +270,7 @@ In diesem Dokument haben Sie gelernt, wie ein Java MapReduce-Auftrag entwickelt 
 - [Verwenden von Pig mit HDInsight][hdinsight-use-pig]
 - [Verwenden von MapReduce mit HDInsight](hdinsight-use-mapreduce.md)
 
-Weitere Informationen finden Sie außerdem im [Java Developer Center](http://azure.microsoft.com/develop/java/).
+Weitere Informationen finden Sie außerdem im [Java Developer Center](https://azure.microsoft.com/develop/java/).
 
 [azure-purchase-options]: http://azure.microsoft.com/pricing/purchase-options/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
@@ -292,4 +292,4 @@ Weitere Informationen finden Sie außerdem im [Java Developer Center](http://azu
 
 [powershell-PSCredential]: http://social.technet.microsoft.com/wiki/contents/articles/4546.working-with-passwords-secure-strings-and-credentials-in-windows-powershell.aspx
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/25/2015"
+	ms.date="01/28/2016"
 	ms.author="jgao"/>
 
 
@@ -22,9 +22,9 @@
 
 Eine der wichtigsten Features der Big Data-Lösung von Microsoft ist die Integration von Microsoft Business Intelligence (BI)-Komponenten in Hadoop-Cluster in Azure HDInsight. Ein gutes Beispiel für diese Integration ist die Möglichkeit, Excel mithilfe des Microsoft Power Query für Excel-Add-Ins mit dem Azure-Speicherkonto zu verbinden, das die dem Hadoop-Cluster zugeordneten Daten enthält. Dieser Artikel beschreibt die Einrichtung und Verwendung von Power Query für die Abfrage von Daten aus einem mit HDInsight verwalteten Hadoop-Cluster.
 
-> [AZURE.NOTE]Auch wenn die in diesem Artikel beschriebenen Schritte für Linux- und Windows-basierte HDInsight-Cluster gelten, ist für den Client in jedem Fall eine Windows-Arbeitsstation erforderlich.
+> [AZURE.NOTE] Auch wenn die in diesem Artikel beschriebenen Schritte für Linux- und Windows-basierte HDInsight-Cluster gelten, ist für den Client in jedem Fall eine Windows-Arbeitsstation erforderlich.
 
-## Voraussetzungen
+### Voraussetzungen
 
 Bevor Sie mit diesem Artikel beginnen können, benötigen Sie Folgendes:
 
@@ -33,13 +33,13 @@ Bevor Sie mit diesem Artikel beginnen können, benötigen Sie Folgendes:
 - **Office 2013 Professional Plus, Office 365 ProPlus, Excel 2013 Standalone oder Office 2010 Professional Plus**.
 
 
-## <a id="InstallPowerQuery"></a>Installieren von Microsoft Power Query für Excel
+## Installieren von Power Query
 
 Power Query kann zum Importieren von Daten aus verschiedensten Quellen in Excel verwendet werden, um diese in Business Intelligence (BI)-Tools wie PowerPivot und Power View zu verwenden. Insbesondere Power Query kann Daten importieren, die von einer Hadoop-Aufgabe in einem HDInsight-Cluster ausgegeben bzw. generiert wurden.
 
-Laden Sie Microsoft Power Query für Excel von [Microsoft Download Center][powerquery-download] herunter, und installieren Sie es.
+Laden Sie Microsoft Power Query für Excel aus dem [Microsoft Download Center][powerquery-download] herunter und installieren Sie es.
 
-## <a id="ImportData"></a>Importieren von HDInsight-Daten in Excel
+## Importieren von HDInsight-Daten in Excel
 
 Das Power Query für Excel-Add-In erleichtert den Import von Daten aus Ihrem HDInsight-Cluster in Excel. Business Intelligence-Tools wie z. B. PowerPivot und Power Map dienen zur Inspektion, Analyse und Darstellung der Daten.
 
@@ -57,21 +57,21 @@ Das Power Query für Excel-Add-In erleichtert den Import von Daten aus Ihrem HDI
 
 	**Hinweis:** Mit Power Query können Sie außerdem Daten aus HDFS durch Klicken auf **Aus anderen Quellen** importieren.
 
-3. Geben Sie den **Kontonamen** des mit Ihrem Cluster verbundenen Azure-Blobspeicherkontos ein, und klicken Sie dann auf **OK**.
+3. Geben Sie den **Kontonamen** des mit Ihrem Cluster verbundenen Azure-Blobspeicherkontos ein, und klicken Sie dann auf **OK**. Hierbei kann es sich um das [Standardspeicherkonto](hdinsight-administer-use-management-portal.md#find-the-default-storage-account) oder ein verknüpftes Speicherkonto handeln. Das Format lautet *https://<StorageAccountName>.blob.core.windows.net/*.
 
 4. Geben Sie den **Kontoschlüssel** für das Blobspeicherkonto ein, und klicken Sie dann auf **Speichern**. (Sie müssen diesen Schritt nur beim ersten Zugriff auf diesen Speicher ausführen.)
 
 5. Doppelklicken Sie im **Navigationsbereich** links vom Abfrage-Editor auf den Namen des Blobspeichercontainers. Der Containername ist standardmäßig derselbe Name wie der Clustername.
 
-6. Suchen Sie **HiveSampleData.txt** in der Spalte **Name** (der Pfad zum Ordner ist **../hive/warehouse/hivesampletable/**) und klicken Sie auf **Binär** links von HiveSampleData.txt.
+6. Suchen Sie **HiveSampleData.txt** in der Spalte **Name** (der Pfad zum Ordner ist **../hive/warehouse/hivesampletable/**) und klicken Sie auf **Binär** links von HiveSampleData.txt. „HiveSampleData.txt“ enthält alle Cluster. Sie können optional auch Ihre eigene Datei verwenden.
 
 	![HDI.PowerQuery.ImportData][image-hdi-powerquery-importdata]
 
-7. Bei Bedarf können Sie die Spaltennamen ändern. Klicken Sie auf **Übernehmen & schließen**, wenn Sie fertig sind.
+7. Bei Bedarf können Sie die Spaltennamen ändern. Klicken Sie auf **Schließen & laden**, wenn Sie fertig sind. Die Daten wurden in Ihre Arbeitsmappe geladen.
 
 	![HDI.PowerQuery.ImportedTable][image-hdi-powerquery-imported-table]
 
-## <a id="NextSteps"></a>Nächste Schritte
+## Nächste Schritte
 
 In diesem Artikel haben Sie gelernt, wie Sie Daten aus HDInsight mithilfe von Power Query in Excel verwenden können. Auf ähnliche Weise können Sie Daten aus HDInsight für die Azure SQL-Datenbank abrufen. Außerdem können Sie Daten nach HDInsight hochladen. Weitere Informationen finden Sie in den folgenden Artikeln:
 
@@ -88,4 +88,4 @@ In diesem Artikel haben Sie gelernt, wie Sie Daten aus HDInsight mithilfe von Po
 
 [powerquery-download]: http://go.microsoft.com/fwlink/?LinkID=286689
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

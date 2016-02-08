@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="10/23/2015"
+   ms.date="01/27/2016"
    ms.author="bwren" />
 
 # Verbindungsobjekte in Azure Automation
@@ -21,7 +21,7 @@ Ein Automation-Verbindungsobjekt enthält die Informationen, die zur Verbindungs
 
 Wenn Sie eine Verbindung erstellen, müssen Sie einen *Verbindungstyp* angeben. Der Verbindungstyp ist eine Vorlage, die einen Satz von Eigenschaften definiert. Die Verbindung definiert Werte für jede der Eigenschaften, die im zugehörigen Verbindungstyp definiert sind. Verbindungstypen werden in Integrationsmodulen zu Azure Automation hinzugefügt oder mit der [ Azure Automation-API](http://msdn.microsoft.com/library/azure/mt163818.aspx) erstellt. Es stehen beim Erstellen einer Verbindung nur die Verbindungstypen zur Verfügung, die in Ihrem Automation-Konto installiert sind.
 
->[AZURE.NOTE]Zu den sicheren Objekten in Azure Automation gehören Anmeldeinformationen, Zertifikate, Verbindungen und verschlüsselte Variablen. Diese Objekte werden mithilfe eines eindeutigen Schlüssels verschlüsselt und in Azure Automation gespeichert, der für jedes Automation-Konto generiert wird. Dieser Schlüssel wird mit einem Masterzertifikat verschlüsselt und in Azure Automation gespeichert. Vor dem Speichern eines sicheren Objekts wird der Schlüssel für das Automation-Konto mit dem Masterzertifikat verschlüsselt und anschließend zum Verschlüsseln des Objekts verwendet.
+>[AZURE.NOTE] Zu den sicheren Objekten in Azure Automation gehören Anmeldeinformationen, Zertifikate, Verbindungen und verschlüsselte Variablen. Diese Objekte werden mithilfe eines eindeutigen Schlüssels verschlüsselt und in Azure Automation gespeichert, der für jedes Automation-Konto generiert wird. Dieser Schlüssel wird mit einem Masterzertifikat verschlüsselt und in Azure Automation gespeichert. Vor dem Speichern eines sicheren Objekts wird der Schlüssel für das Automation-Konto mit dem Masterzertifikat verschlüsselt und anschließend zum Verschlüsseln des Objekts verwendet.
 
 ## Windows PowerShell-Cmdlets
 
@@ -42,7 +42,7 @@ Die Aktivitäten in der folgenden Tabelle werden für den Zugriff auf Verbindung
 |---|---|
 |Get-AutomationConnection|Ruft eine zu verwendende Verbindung ab. Gibt eine Hashtabelle mit den Eigenschaften der Verbindung zurück.|
 
->[AZURE.NOTE]Vermeiden Sie die Verwendung von Variablen im Parameter "-Name" von **Get-AutomationConnection**, da dies die Ermittlung von Abhängigkeiten zwischen Runbooks oder DSC-Konfigurationen und Verbindungsobjekten zur Entwurfszeit erschweren kann.
+>[AZURE.NOTE] Vermeiden Sie die Verwendung von Variablen im Parameter „-Name“ von **Get-AutomationConnection**, da dies die Ermittlung von Abhängigkeiten zwischen Runbooks oder DSC-Konfigurationen und Verbindungsobjekten zur Entwurfszeit erschweren kann.
 
 ## Erstellen einer neuen Verbindung
 
@@ -81,7 +81,7 @@ Die folgenden Beispielbefehle erstellen eine neue Verbindung für [Twilio](http:
 
 ## Verwenden einer Verbindung in einem Runbook oder einer DSC-Konfiguration
 
-Rufen Sie in einem Runbook oder einer DSC-Verbindung eine Verbindung mit dem Cmdlet **Get-AutomationConnection** ab. Mithilfe dieser Aktivität werden die Werte der verschiedenen Felder in der Verbindung abgerufen und als [Hashtabelle](http://go.microsoft.com/fwlink/?LinkID=324844) zurückgegeben, die anschließend mithilfe geeigneter Befehle im Runbook oder in der DSC-Konfiguration verwendet werden kann.
+Rufen Sie eine Verbindung in einem Runbook oder einer DSC-Konfiguration mit dem Cmdlet **Get-AutomationConnection** ab. Mithilfe dieser Aktivität werden die Werte der verschiedenen Felder in der Verbindung abgerufen und als [Hashtabelle](http://go.microsoft.com/fwlink/?LinkID=324844) zurückgegeben, die anschließend mithilfe geeigneter Befehle im Runbook oder in der DSC-Konfiguration verwendet werden kann.
 
 ### Beispiel für ein Textrunbook
 Die folgenden Beispielbefehle zeigen, wie Sie die Twilio-Verbindung aus dem vorherigen Beispiel zum Senden einer Textnachricht aus einem Runbook verwenden. Die hier verwendete Send-TwilioSMS-Aktivität verfügt über zwei Parametersätze, die unterschiedliche Methoden für die Authentifizierung beim Twilio-Dienst verwenden. Eine Methode verwendet ein Verbindungsobjekt, die andere verwendet einzelne Parameter für Konto-SID und Autorisierungstoken. In diesem Beispiel werden beide Methoden gezeigt.
@@ -120,4 +120,4 @@ Die folgende Abbildung zeigt das obige Beispiel, verwendet jedoch den Parameters
 - [Verknüpfungen bei der grafischen Erstellung](automation-graphical-authoring-intro.md#links-and-workflow)
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0128_2016-->

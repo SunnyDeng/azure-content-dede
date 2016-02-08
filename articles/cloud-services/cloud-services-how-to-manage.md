@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verwalten eines Clouddiensts| Microsoft Azure" 
+	pageTitle="Allgemeine Verwaltungsaufgaben für Clouddienste (klassisch) | Microsoft Azure" 
 	description="Hier erfahren Sie mehr über die Verwaltung von Clouddiensten im klassischen Azure-Vorschauportal." 
 	services="cloud-services" 
 	documentationCenter="" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/22/2015"
+	ms.date="01/20/2016"
 	ms.author="adegeo"/>
 
 
@@ -154,7 +154,8 @@ Gehen Sie folgendermaßen vor, um eine Bereitstellung oder Ihren Cloud-Dienst zu
 
 5. Klicken Sie zum Löschen des Cloud-Diensts auf **Cloud-Dienst löschen**. Klicken Sie dann an der Bestätigungsaufforderung auf **Ja**.
 
-> [AZURE.NOTE]Wenn für den Cloud-Dienst die ausführliche Überwachung konfiguriert ist, löscht Azure die Überwachungsdaten aus Ihrem Speicherkonto nicht, wenn Sie den Cloud-Dienst löschen. Sie müssen die Daten manuell löschen. Informationen zum Speicherort der Metriktabellen finden Sie unter „Zugreifen auf ausführliche Überwachungsdaten außerhalb des klassischen Azure-Portals“ in [Überwachen von Cloud Services](cloud-services-how-to-monitor.md).
+> [AZURE.NOTE]
+Wenn für den Cloud-Dienst die ausführliche Überwachung konfiguriert ist, löscht Azure die Überwachungsdaten aus Ihrem Speicherkonto nicht, wenn Sie den Cloud-Dienst löschen. Sie müssen die Daten manuell löschen. Informationen zum Speicherort der Metriktabellen finden Sie unter „Zugreifen auf ausführliche Überwachungsdaten außerhalb des klassischen Azure-Portals“ in [Überwachen von Cloud Services](cloud-services-how-to-monitor.md).
 
 ## Nächste Schritte
 
@@ -163,4 +164,4 @@ Gehen Sie folgendermaßen vor, um eine Bereitstellung oder Ihren Cloud-Dienst zu
 * [Konfigurieren eines benutzerdefinierten Domänennamens](cloud-services-custom-domain-name.md)
 * Konfigurieren von [SSL-Zertifikaten](cloud-services-configure-ssl-certificate.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

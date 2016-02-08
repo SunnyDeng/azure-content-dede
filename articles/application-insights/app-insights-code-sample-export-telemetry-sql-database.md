@@ -31,7 +31,7 @@ Zum Überwachen Ihrer Anwendung [fügen Sie Ihrer Anwendung ein Application Insi
 
 Erste Schritte:
 
-1. Fordern Sie ein [Konto in Microsoft Azure](http://azure.microsoft.com/pricing/) an.
+1. Fordern Sie ein [Konto in Microsoft Azure](https://azure.microsoft.com/pricing/) an.
 2. Fügen Sie im [Azure-Portal][portal] eine neue Application Insights-Ressource für Ihre App hinzu:
 
     ![Wählen Sie "Neu", "Entwicklerdienste", "Application Insights", und wählen Sie den Typ der Anwendung.](./media/app-insights-code-sample-export-telemetry-sql-database/010-new-asp.png)
@@ -467,7 +467,7 @@ Fügen Sie die DB-Verbindungszeichenfolge des Namens `TelemetryContext` in `app.
 
 Dies ist das Schema für die Tabelle, die für PageView generiert wird.
 
-> [AZURE.NOTE]Sie müssen dieses Skript nicht ausführen. Die Attribute in JSON bestimmen die Spalten in der Tabelle.
+> [AZURE.NOTE] Sie müssen dieses Skript nicht ausführen. Die Attribute in JSON bestimmen die Spalten in der Tabelle.
 
     CREATE TABLE [dbo].[PageViewPerformances](
 	[Id] [uniqueidentifier] NOT NULL,
@@ -543,4 +543,4 @@ Um dieses Beispiel in Aktion zu sehen, [laden Sie den vollständigen Arbeitscode
 
  
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -24,7 +24,7 @@
 
 Wenn Sie sich für ein kostenloses Azure-Testabonnement registrieren möchten, müssen Sie eine Telefonnummer, eine Kreditkarte und ein Microsoft-Konto angeben. Ihr Microsoft-Konto ist die E-Mail-Adresse, die Sie zusammen mit Ihrem Kennwort verwenden, um sich bei Windows Live-Programmen oder -Diensten anzumelden, z. B. bei Outlook, Hotmail oder OneDrive. Sie können ein Microsoft-Konto mit einer beliebigen E-Mail-Adresse einrichten, z. B. auch mit Ihrer Firmen-E-Mail-Adresse. Weitere Informationen finden Sie unter [Microsoft-Konto – Häufig gestellte Fragen (FAQ)](https://www.microsoft.com/de-DE/account/faq.aspx).
 
->[AZURE.NOTE]Ihre Telefonnummer und Kreditkartendetails werden nur zur Überprüfung Ihrer Identität verwendet. Ihre Kreditkarte wird nicht belastet, aber Microsoft belegt sie mit einem sehr geringen Autorisierungsbetrag, um sicherzustellen, dass die Karte gültig ist. Je nach den Richtlinien Ihres Finanzinstituts wird dies nach drei bis fünf Geschäftstagen aufgehoben.
+>[AZURE.NOTE] Ihre Telefonnummer und Kreditkartendetails werden nur zur Überprüfung Ihrer Identität verwendet. Ihre Kreditkarte wird nicht belastet, aber Microsoft belegt sie mit einem sehr geringen Autorisierungsbetrag, um sicherzustellen, dass die Karte gültig ist. Je nach den Richtlinien Ihres Finanzinstituts wird dies nach drei bis fünf Geschäftstagen aufgehoben.
 
 1. Öffnen Sie die [Seite mit der kostenlosen Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/), und wählen Sie dann **Jetzt testen**.
 2. Melden Sie sich mit Ihrem Microsoft-Konto oder Schul-/Geschäftskonto an.
@@ -62,7 +62,7 @@ Befolgen Sie diese Schritte zum Aktivieren Ihres Abonnements, wenn Sie Azure in 
 
 1. Wechseln Sie auf „azure.com“ zur [Übersichtsseite für das Abonnement](https://account.windowsazure.com/subscriptions).
 
-2. Wählen Sie **Azure in Open** aus. Wählen Sie auf der Seite [Azure in Open-Lizenzschlüssel](http://azure.microsoft.com/offers/ms-azr-0111p/) die Option **Neues oder vorhandenes Abonnement aktivieren** aus.
+2. Wählen Sie **Azure in Open** aus. Wählen Sie auf der Seite [Azure in Open-Lizenzschlüssel](https://azure.microsoft.com/offers/ms-azr-0111p/) die Option **Neues oder vorhandenes Abonnement aktivieren** aus.
 
 3. Geben Sie den Product Key ein, und aktivieren Sie dann das Kontrollkästchen für die Vereinbarung.
 
@@ -71,7 +71,7 @@ Befolgen Sie diese Schritte zum Aktivieren Ihres Abonnements, wenn Sie Azure in 
 Vergewissern Sie sich über Ihren Vorteilsprogrammkanal, ob Sie für den gewählten Plan berechtigt sind:
 
 ### MSDN
-- [Vergleichen Sie die Abonnementleistungen](https://www.visualstudio.com/de-DE/products/msdn-subscriptions-vs/#AdditionalPageSections_1).
+- [Vergleichen Sie die Abonnementleistungen.](https://www.visualstudio.com/de-DE/products/msdn-subscriptions-vs/#AdditionalPageSections_1)
 - Überprüfen Sie auf der [MSDN-Kontoseite](https://msdn.microsoft.com/subscriptions/manage/default.aspx) Ihren Berechtigungsstatus.
 - Wenn Sie Ihren Status nicht überprüfen können, wenden Sie sich an das [Kundendienstcenter für MSDN-Abonnements](https://msdn.microsoft.com/subscriptions/contactus.aspx).
 - [MSDN-Entwicklungs- und Testangebot – nutzungsbasierte Bezahlung](https://azure.microsoft.com/offers/ms-azr-0023p/)
@@ -92,4 +92,4 @@ Vergewissern Sie sich über Ihren Vorteilsprogrammkanal, ob Sie für den gewähl
 
 - [Microsoft BizSpark Plus-Portal](http://www.microsoft.com/bizspark/plus/default.aspx)
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

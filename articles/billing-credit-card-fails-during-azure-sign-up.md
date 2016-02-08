@@ -59,9 +59,9 @@ Die kostenlose Azure-Testversion ist auf eine einmalige Aktivierung begrenzt.
 
 Vorschläge:
 
-Wenn die Aktivierung einer kostenlosen Testversion nicht erfolgt, weil Sie in der Vergangenheit bereits ein Azure-Abonnement aktiviert haben, verwenden Sie anstelle des Plans „Kostenlose Azure-Testversion“ einen anderen in den [Microsoft Azure-Angebotsdetails](http://azure.microsoft.com/support/legal/offer-details/) verfügbaren Azure-Plan.
+Wenn die Aktivierung einer kostenlosen Testversion nicht erfolgt, weil Sie in der Vergangenheit bereits ein Azure-Abonnement aktiviert haben, verwenden Sie anstelle des Plans „Kostenlose Azure-Testversion“ einen anderen in den [Microsoft Azure-Angebotsdetails](https://azure.microsoft.com/support/legal/offer-details/) verfügbaren Azure-Plan.
 
 ## Kontaktieren des Azure-Supports
 Wenn nach Befolgen dieser Schritte zur Problembehandlung immer noch ein Registrierungsproblem vorliegt, wenden Sie sich an den [Azure-Support](http://go.microsoft.com/fwlink/?linkid=544831&clcid=0x409).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

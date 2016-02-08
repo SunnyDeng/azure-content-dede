@@ -24,11 +24,11 @@
 Sie können eine benutzerdefinierte Domäne für den Zugriff auf Blob-Daten in Ihrem Azure-Speicherkonto konfigurieren. Der Standardendpunkt für Blob Storage ist „https://<*meinSpeicherkonto*>.blob.core.windows.net“. Wenn Sie dem Blob-Endpunkt für Ihr Speicherkonto eine benutzerdefinierte Domäne und Unterdomäne wie z. B. **www.contoso.com** zuordnen, können Benutzer auch unter Verwendung dieser Domäne auf Blob-Daten in Ihrem Speicherkonto zugreifen.
 
 
-> [AZURE.NOTE]Die Vorgehensweisen in dieser Aufgabe gelten für Azure-Speicherkonten. Informationen zu Clouddiensten finden Sie unter <a href = "/develop/net/common-tasks/custom-dns/">Konfigurieren eines benutzerdefinierten Domänennamens für einen Azure-Clouddienst</a> Informationen zu Websites finden Sie unter <a href="/develop/net/common-tasks/custom-dns-web-site/">Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website</a>.
+> [AZURE.NOTE]	Die Vorgehensweisen in dieser Aufgabe gelten für Azure-Speicherkonten. Informationen zu Clouddiensten finden Sie unter <a href = "/develop/net/common-tasks/custom-dns/">Konfigurieren eines benutzerdefinierten Domänennamens für einen Azure-Clouddienst</a> Informationen zu Websites finden Sie unter <a href="/develop/net/common-tasks/custom-dns-web-site/">Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website</a>.
 
 Es gibt zwei Methoden, um Ihre benutzerdefinierte Domäne auf den Blob-Endpunkt für Ihr Speicherkonto zu verweisen. Die einfachste Methode besteht darin, einen CNAME-Datensatz zu erstellen, der Ihre benutzerdefinierte Domäne und Unterdomäne dem Blob-Endpunkt zuordnet. Ein CNAME-Datensatz ist eine DNS-Funktion, die eine Quelldomäne einer Zieldomäne zuordnet. In diesem Fall ist die Quelldomäne Ihre benutzerdefinierte Domäne und Unterdomäne (beachten Sie, dass die Unterdomäne immer erforderlich ist). Die Zieldomäne ist der Blob-Dienstendpunkt.
 
-Die Zuordnung der benutzerdefinierten Domäne zum Blob-Endpunkt kann jedoch zu einer kurzzeitigen Downtime für die Domäne führen, während Sie die Domäne im [klassischen Azure-Portal](manage.windowsazure.com) registrieren. Wenn Ihre benutzerdefinierte Domäne derzeit eine Anwendung mit einer Vereinbarung zum Servicelevel (SLA) unterstützt, die keine Downtime zulässt, können Sie die Azure-Unterdomäne **asverify** verwenden, um einen Registrierungs-Zwischenschritt bereitzustellen, sodass Benutzer auf die Domäne zugreifen können, während die DNS-Zuordnung stattfindet.
+Die Zuordnung der benutzerdefinierten Domäne zum Blob-Endpunkt kann jedoch zu einer kurzzeitigen Downtime für die Domäne führen, während Sie die Domäne im [klassischen Azure-Portal](https://manage.windowsazure.com) registrieren. Wenn Ihre benutzerdefinierte Domäne derzeit eine Anwendung mit einer Vereinbarung zum Servicelevel (SLA) unterstützt, die keine Downtime zulässt, können Sie die Azure-Unterdomäne **asverify** verwenden, um einen Registrierungs-Zwischenschritt bereitzustellen, sodass Benutzer auf die Domäne zugreifen können, während die DNS-Zuordnung stattfindet.
 
 Die folgende Tabelle enthält Beispiel-URLs für den Zugriff auf Blob-Daten in einem Speicherkonto namens **mystorageaccount**. Die für das Speicherkonto registrierte benutzerdefinierte Domäne ist **www.contoso.com**:
 
@@ -48,7 +48,7 @@ Zum Konfigurieren eines benutzerdefinierten Domänennamens müssen Sie einen neu
 
 Die Methoden zum Festlegen eines CNAME-Datensatzes der verschiedenen Registrierungen sind zwar ähnlich, jedoch unterscheiden sie sich auch in einigen Punkten. Das Konzept ist allerdings gleich. Beachten Sie, dass viele Basispakete für die Domänenregistrierung keine DNS-Konfiguration anbieten, daher müssen Sie möglicherweise Ihr Domänenregistrierungspaket aktualisieren, bevor Sie den CNAME-Datensatz erstellen können.
 
-1.  Navigieren Sie im [klassischen Azure-Portal](manage.windowsazure.com) zur Registerkarte **Speicher**.
+1.  Navigieren Sie im [klassischen Azure-Portal](https://manage.windowsazure.com) zur Registerkarte **Speicher**.
 
 2.  Klicken Sie auf der Registerkarte **Speicher** auf den Namen des Speicherkontos, für das Sie die benutzerdefinierte Domäne zuordnen möchten.
 
@@ -74,7 +74,7 @@ Gehen Sie nach diesem Verfahren vor, um Ihre benutzerdefinierte Domäne zu regis
 
 Die Unterdomäne "asverify" ist eine spezielle Unterdomäne, die von Azure erkannt wird. Indem Sie Ihrer eigenen Unterdomäne **asverify** voranstellen, erlauben Sie Azure, Ihre benutzerdefinierte Domäne zu erkennen, ohne den DNS-Datensatz für die Domäne zu ändern. Sobald Sie den DNS-Datensatz für die Domäne ändern, wird diese dem Blob-Endpunkt ohne Downtime zugeordnet.
 
-1.  Navigieren Sie im [klassischen Azure-Portal](manage.windowsazure.com) zur Registerkarte **Speicher**.
+1.  Navigieren Sie im [klassischen Azure-Portal](https://manage.windowsazure.com) zur Registerkarte **Speicher**.
 
 2.  Klicken Sie auf der Registerkarte **Speicher** auf den Namen des Speicherkontos, für das Sie die benutzerdefinierte Domäne zuordnen möchten.
 
@@ -116,4 +116,4 @@ Sie können z. B. den folgenden URI verwenden, um über eine benutzerdefinierte
 
 -   <a href="http://msdn.microsoft.com/library/azure/gg680307.aspx">Zuordnen von CDN-Inhalt (Content Delivery Network) zu einer benutzerdefinierten Domäne</a>
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

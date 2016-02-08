@@ -12,25 +12,25 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="10/15/2015"
+    ms.date="01/22/2016"
     ms.author="torsteng" />
 
 # Übersicht über elastische Datenbankenabfragen in Azure SQL-Datenbank (Vorschau)
 
 Mithilfe des Features „Elastische Datenbankabfrage“ (in der Vorschauphase) können Sie eine Transact-SQL-Abfrage ausführen, die mehrere Datenbanken in Azure SQL-Datenbank (SQLDB) umfasst. Es ermöglicht das Ausführen datenbankübergreifender Abfragen für den Zugriff auf Remotetabellen und das Verbinden von Microsoft- und Drittanbietertools (Excel, PowerBI, Tableau usw.), um Datenebenen mit mehreren Datenbanken abzufragen. Mit dieser Funktion können Sie Abfragen horizontal auf große Datenebenen in SQL-Datenbanken skalieren und die Abfrageergebnisse in Berichten für Business Intelligence (BI) darstellen. Informationen zum Erstellen einer Anwendung für elastische Datenbankabfragen finden Sie unter [Erste Schritte mit elastischen Datenbankabfragen](sql-database-elastic-query-getting-started.md).
 
-## Neuerungen bei elastischen Datenbankabfragen
+## Neuigkeiten bei elastischen Datenbankabfragen
 
-* Datenbankübergreifende Abfrageszenarien mit einzelnen Remotedatenbanken können jetzt vollständig in T-SQL definiert werden. Dadurch wird ein schreibgeschütztes Abfragen von Remotedatenbanken ermöglicht. Dies bietet derzeitigen Kunden von lokalem SQL Server eine Option zum Migrieren von Anwendungen unter Verwendung von Namen mit drei oder vier Teilen oder eines Verbindungsservers zu SQLDB. 
+* Datenbankübergreifende Abfrageszenarien mit einzelnen Remotedatenbanken können jetzt vollständig in T-SQL definiert werden. Dadurch wird ein schreibgeschütztes Abfragen von Remotedatenbanken ermöglicht. Dies bietet derzeitigen Kunden von lokalem SQL Server eine Option zum Migrieren von Anwendungen unter Verwendung von Namen mit drei oder vier Teilen oder eines Verbindungsservers zu SQLDB.
 * Elastische Abfragen werden nun zusätzlich zum Premium-Tarif auch vom Standard-Tarif unterstützt. Informationen zu Leistungseinschränkungen bei niedrigeren Tarifen finden Sie nachstehend im Abschnitt „Einschränkungen der Vorschau“.
 * Elastische Abfragen können nun SQL-Parameter zur Ausführung an die Remotedatenbank übertragen.
 * Aufrufe von remote gespeicherten Prozeduren oder Remotefunktionen, die „sp\_execute\_fanout“ verwenden, können jetzt Parameter wie [sp\_executesql](https://msdn.microsoft.com/library/ms188001.aspx) nutzen.
 * Die Leistung beim Abrufen großer Resultsets aus Remotedatenbanken wurde verbessert.
 * Externe Tabellen mit elastischer Abfrage können jetzt auf Remotetabellen mit einem anderen Schema- oder Tabellennamen verweisen.
 
-## Szenarien mit elastischen Datenbankabfragen
+## Szenarios mit elastischen Datenbankabfragen
 
-Ziel ist es, Berichterstellungsszenarien zu vereinfachen, in denen mehrere Datenbanken Zeilen zu einem einzelnen Gesamtergebnis beitragen. Die Abfrage kann entweder vom Benutzer oder durch die Anwendung direkt oder indirekt über Tools erstellt werden, die mit der Datenbank verbunden sind. Dies ist besonders hilfreich beim Erstellen von Berichten mit kommerziellen BI- oder Datenintegrationstools bzw. jeglicher Anwendung, die nicht geändert werden können. Mithilfe einer elastischen Abfrage können Sie mehrere Datenbanken mithilfe der üblichen SQL Server-Verbindungsumgebung in Tools wie Excel, PowerBI, Tableau oder Cognos abfragen. Außerdem ermöglicht eine elastische Abfrage den einfachen Zugriff auf eine ganze Sammlung von Datenbanken, die von SQL Server Management Studio oder Visual Studio ausgegeben werden, und sie vereinfacht datenbankübergreifende Abfragen aus Entity Framework oder anderen ORM-Umgebungen. Abbildung 1 zeigt ein Szenario, in dem eine vorhandene Cloudanwendung (die die [Clientbibliothek für elastische Datenbanken](sql-database-elastic-database-client-library.md) verwendet) auf einer horizontal skalierten Datenebene aufbaut und eine elastische Abfrage für datenbankübergreifende Berichte verwendet wird.
+Ziel ist es, Berichterstellungsszenarien zu vereinfachen, in denen mehrere Datenbanken Zeilen zu einem einzelnen Gesamtergebnis beitragen. Die Abfrage kann entweder vom Benutzer oder durch die Anwendung direkt oder indirekt über Tools erstellt werden, die mit der Datenbank verbunden sind. Dies ist besonders hilfreich beim Erstellen von Berichten mit kommerziellen BI- oder Datenintegrationstools bzw. allen Anwendungen, die nicht geändert werden können. Mithilfe einer elastischen Abfrage können Sie mehrere Datenbanken unter Verwendung der gewohnten SQL Server-Verbindungsumgebung in Tools wie Excel, Power BI, Tableau oder Cognos abfragen. Außerdem ermöglicht eine elastische Abfrage den einfachen Zugriff auf eine ganze Sammlung von Datenbanken, die von SQL Server Management Studio oder Visual Studio ausgegeben werden, und sie vereinfacht datenbankübergreifende Abfragen aus Entity Framework oder anderen ORM-Umgebungen. Abbildung 1 zeigt ein Szenario, in dem eine vorhandene Cloudanwendung (die die [Clientbibliothek für elastische Datenbanken](sql-database-elastic-database-client-library.md) verwendet) auf einer horizontal skalierten Datenebene aufbaut und eine elastische Abfrage für datenbankübergreifende Berichte verwendet wird.
 
 **Abbildung 1** Elastische Datenbankabfrage auf horizontal skalierter Datenebene
 
@@ -39,9 +39,9 @@ Ziel ist es, Berichterstellungsszenarien zu vereinfachen, in denen mehrere Daten
 Kundenszenarien für elastische Abfragen zeichnen sich durch die folgenden Topologien aus:
 
 * **Vertikale Partitionierung – Datenbankübergreifende Abfragen** (Topologie 1): Die Daten sind zwischen mehreren Datenbanken auf einer Datenebene vertikal partitioniert. In der Regel befinden sich verschiedene Sätze von Tabellen in verschiedenen Datenbanken. Das bedeutet, dass das Schema bei verschiedenen Datenbanken unterschiedlich ist. Beispielsweise befinden sich alle bestandsbezogenen Tabellen in einer Datenbank, während alle Buchhaltungstabellen in einer zweiten Datenbank enthalten sind. Gängige Anwendungsfälle mit dieser Topologie erfordern zum Erstellen von Berichten das Abfragen von Tabellen in mehreren Datenbanken.
-* **Horizontale Partitionierung – Sharding** (Topologie 2): Daten werden horizontal partitioniert, um Zeilen auf einer horizontal hochskalierten Datenebene zu verteilen. Bei diesem Ansatz ist das Schema für alle teilnehmenden Datenbanken identisch. Dieser Ansatz wird auch „Sharding“ genannt. Sharding kann (1.) mithilfe der Bibliothek für elastische Datenbanktools oder (2.) eines eigenständigen Shardings ausgeführt und verwaltet werden. Eine elastische Abfrage dient zum viele Shards übergreifenden Abfragen oder Erstellen von Berichten. 
+* **Horizontale Partitionierung – Sharding** (Topologie 2): Daten werden horizontal partitioniert, um Zeilen auf einer horizontal hochskalierten Datenebene zu verteilen. Bei diesem Ansatz ist das Schema für alle teilnehmenden Datenbanken identisch. Dieser Ansatz wird auch „Sharding“ genannt. Sharding kann (1.) mithilfe der Bibliothek für elastische Datenbanktools oder (2.) eines eigenständigen Shardings ausgeführt und verwaltet werden. Eine elastische Abfrage dient zum viele Shards übergreifenden Abfragen oder Erstellen von Berichten.
 
-> [AZURE.NOTE]Die elastisch Datenbankabfrage funktioniert am besten bei gelegentlichen Berichterstellungsszenarien, bei denen der Großteil der Verarbeitung auf der Datenebene ausgeführt werden kann. Bei hohem Berichtsaufkommen oder Data Warehouse-Szenarien mit komplexeren Abfragen sollten Sie auch die Verwendung von [Azure SQL Data Warehouse](http://azure.microsoft.com/services/sql-data-warehouse/) in Betracht ziehen.
+> [AZURE.NOTE] Die flexible Datenbankabfrage funktioniert am besten bei gelegentlichen Reporting-Szenarien, bei denen der Großteil der Verarbeitung auf der Datenebene ausgeführt werden kann. Bei hohen Reporting-Arbeitslasten oder Data Warehousing-Szenarien mit komplexeren Abfragen, sollten Sie auch die Verwendung von [Azure SQL Data Warehouse](https://azure.microsoft.com/services/sql-data-warehouse/) in Betracht ziehen.
 
 
 ## Topologien für elastische Datenbankabfragen
@@ -74,30 +74,30 @@ Das Verwenden einer elastischen Abfrage für Berichtsaufgaben auf einer Datenebe
 
 ![Horizontale Partitionierung – Verwenden einer elastischen Abfrage von Datenebenen mit Sharding für die Berichterstellung][5]
 
-> [AZURE.NOTE]Die dedizierte Abfragedatenbank für elastische Datenbanken muss eine SQLDB-V12-Datenbank sein. Es gibt keine Einschränkungen für die Shards selbst.
+> [AZURE.NOTE] Die dedizierte Abfragedatenbank für elastische Datenbanken muss eine SQLDB-V12-Datenbank sein. Es gibt keine Einschränkungen für die Shards selbst.
 
 
 ## Implementieren elastischer Datenbankabfragen
 
 In den folgenden Abschnitten werden die Schritte zum Implementieren einer elastischen Abfrage für die vertikalen und horizontalen Partitionierungsszenarien erläutert. Zudem finden Sie Verweise auf detaillierte Dokumentation zu den verschiedenen Partitionierungsszenarien.
 
-### Vertikale Partitionierung – Datenbankübergreifende Abfragen
+### Vertikale Partitionierung – datenbankübergreifende Abfragen
 
 Die folgenden Schritte dienen zum Konfigurieren elastischer Datenbankabfragen für vertikale Partitionierungsszenarien, die Zugriff auf eine Tabelle in einer SQLDB-Remotedatenbank benötigen:
 
-*    [CREATE MASTER KEY](https://msdn.microsoft.com/library/ms174382.aspx) mymasterkey 
+*    [CREATE MASTER KEY](https://msdn.microsoft.com/library/ms174382.aspx) mymasterkey
 *    [CREATE DATABASE SCOPED CREDENTIAL](https://msdn.microsoft.com/library/mt270260.aspx) mycredential
 *    [CREATE/DROP EXTERNAL DATA SOURCE](https://msdn.microsoft.com/library/dn935022.aspx) mydatasource of type **RDBMS**
 *    [CREATE/DROP EXTERNAL TABLE](https://msdn.microsoft.com/library/dn935021.aspx) mytable
 
 Nach Ausführen der DDL-Anweisungen können Sie auf die Remotetabelle „mytable“ wie auf eine lokale Tabelle zugreifen. Azure SQL-Datenbank öffnet automatisch eine Verbindung mit der Remotedatenbank, verarbeitet Ihre Anforderung an die Remotedatenbank und gibt die Ergebnisse zurück. Weitere Informationen zu den Schritten, die für das vertikale Partitionierungsszenario erforderlich sind, finden Sie unter [Elastische Abfrage für die vertikale Partitionierung](sql-database-elastic-query-vertical-partitioning.md).
 
-### Horizontale Partitionierung – Sharding 
+### Horizontale Partitionierung (Sharding)
 
 Die folgenden Schritte dienen zum Konfigurieren elastischer Datenbankabfragen für horizontale Partitionierungsszenarien, die Zugriff auf eine Gruppe von Tabelle in (üblicherweise) mehreren SQLDB-Remotedatenbanken benötigen:
 
 *    [CREATE MASTER KEY](https://msdn.microsoft.com/library/ms174382.aspx) mymasterkey
-*    [CREATE DATABASE SCOPED CREDENTIAL](https://msdn.microsoft.com/library/mt270260.aspx) mycredential 
+*    [CREATE DATABASE SCOPED CREDENTIAL](https://msdn.microsoft.com/library/mt270260.aspx) mycredential
 *    Erstellen Sie eine [Shardzuordnung](sql-database-elastic-scale-shard-map-management.md), die Ihre Datenebene darstellt, mithilfe der Clientbibliothek für elastische Datenbanken.   
 *    [CREATE/DROP EXTERNAL DATA SOURCE](https://msdn.microsoft.com/library/dn935022.aspx) mydatasource of type **SHARD\_MAP\_MANAGER**
 *    [CREATE/DROP EXTERNAL TABLE](https://msdn.microsoft.com/library/dn935021.aspx) mytable
@@ -112,12 +112,12 @@ Sie können herkömmliche SQL Server-Verbindungszeichenfolgen zum Verbinden Ihre
 
 ## Kosten
 
-Elastische Abfragen sind in den Kosten für Azure SQL-Datenbanken enthalten. Beachten Sie, dass Topologien, bei denen sich Ihre Remotedatenbanken in einem anderen Datencenter als der Endpunkt der elastischen Abfrage befinden, unterstützt werden. Der Datenausgang aus Remotedatenbanken wird hingegen zu den üblichen [Azure-Gebühren](https://azure.microsoft.com/pricing/details/data-transfers/) in Rechnung gestellt.
+Elastische Abfragen sind in den Kosten für Azure SQL-Datenbanken enthalten. Beachten Sie, dass Topologien, bei denen sich Ihre Remotedatenbanken in einem anderen Rechenzentrum als der Endpunkt der elastischen Abfrage befinden, unterstützt werden. Der Datenausgang aus Remotedatenbanken wird hingegen zu den üblichen [Azure-Gebühren](https://azure.microsoft.com/pricing/details/data-transfers/) in Rechnung gestellt.
 
 ## Einschränkungen der Vorschau
 * Beim Standard-Tarif kann das Ausführen Ihrer ersten elastischen Abfrage einige Minuten dauern. Dieser Zeitraum wird für das Laden der elastischen Abfragefunktionalität benötigt. Je höher der Tarif, desto besser die Ladeleistung.
 * Das Erstellen von Skripts für externe Datenquellen oder externe Tabellen in SSMS oder SSDT wird noch nicht unterstützt.
-* Import/Export für SQLDB unterstützt noch keine externen Datenquellen und externen Tabellen. Wenn Sie Import/Export verwenden müssen, löschen Sie diese Objekte vor dem Exportieren, und erstellen Sie sie nach dem Importieren neu. 
+* Import/Export für SQLDB unterstützt noch keine externen Datenquellen und externen Tabellen. Wenn Sie Import/Export verwenden müssen, löschen Sie diese Objekte vor dem Exportieren, und erstellen Sie sie nach dem Importieren neu.
 * Elastische Datenbankabfragen unterstützen derzeit nur den schreibgeschützten Zugriff auf externe Tabellen. Sie können jedoch die vollständige T-SQL-Funktionalität für die Datenbank nutzen, in der die externe Tabelle definiert ist. Dies kann z. B. hilfreich sein, um temporäre Ergebnisse mithilfe von beispielsweise SELECT <column_list> INTO <local_table> dauerhaft zu speichern oder um gespeicherte Prozeduren für die elastische Abfragedatenbank zu definieren, die auf externe Tabellen verweisen.
 * Mit Ausnahme von „nvarchar(max)“ werden LOB-Typen in externen Tabellendefinitionen nicht unterstützt. Um dieses Problem zu umgehen, können Sie eine Sicht für die Remotedatenbank erstellen, die den LOB-Typ in „nvarchar(max)“ umwandelt, ihre externe Tabelle für die Sicht anstatt für die Basistabelle definieren und sie in Ihren Abfragen in den ursprünglichen LOB-Typ rückumwandeln.
 * Spaltenstatistiken werden für externe Tabellen derzeit nicht unterstützt. Tabellenstatistiken werden unterstützt, müssen aber manuell erstellt werden.
@@ -130,13 +130,13 @@ Geben Sie uns bitte unten im Disqus-Kommentar, in den MSDN-Foren oder auf StackO
 Weitere Informationen zu datenbankübergreifenden Abfragen und vertikalen Partitionierungsszenarien finden Sie in den folgenden Dokumenten:
 
 * [Datenbankübergreifende Abfragen und die vertikale Partitionierung (Übersicht)](sql-database-elastic-query-vertical-partitioning.md)
-* Führen Sie unser schrittweises Tutorial aus, um innerhalb von Minuten zu einem umfassenden Arbeitsbeispiel zu gelangen: [Erste Schritte mit datenbankübergreifenden Abfragen (vertikale Partitionierung)](sql-database-elastic-query-getting-started-vertical.md).
+* Führen Sie unser Schritt-für-Schritt-Tutorial aus, um innerhalb von Minuten zu einem umfassenden Arbeitsbeispiel zu gelangen: [Erste Schritte mit datenbankübergreifenden Abfragen (vertikale Partitionierung)](sql-database-elastic-query-getting-started-vertical.md).
 
 
 Weitere Informationen zu horizontalen Partitionierungs- und Shardingszenarien finden Sie hier:
 
-* [Horizontale Partitionierung und Sharding – Übersicht](sql-database-elastic-query-horizontal-partitioning.md) 
-* Führen Sie unser schrittweises Tutorial aus, um innerhalb von Minuten zu einem umfassenden Arbeitsbeispiel zu gelangen: [Erste Schritte mit elastischen Datenbankabfragen für horizontale Partitionierung (Sharding)](sql-database-elastic-query-getting-started.md).
+* [Horizontale Partitionierung und Sharding – Übersicht](sql-database-elastic-query-horizontal-partitioning.md)
+* Führen Sie unser Schritt-für-Schritt-Tutorial aus, um innerhalb von Minuten zu einem umfassenden Arbeitsbeispiel zu gelangen: [Erste Schritte mit elastischen Datenbankabfragen für horizontale Partitionierung (Sharding)](sql-database-elastic-query-getting-started.md).
 
 
 [AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
@@ -150,4 +150,4 @@ Weitere Informationen zu horizontalen Partitionierungs- und Shardingszenarien fi
 
 <!--anchors-->
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_0128_2016-->

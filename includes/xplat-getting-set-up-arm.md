@@ -11,9 +11,9 @@
 
 ## Verwenden der Azure-CLI mit dem Azure-Ressourcen-Manager (ARM)
 
-Bevor Sie die Azure-CLI mit Ressourcen-Manager-Befehlen und -Vorlagen zur Bereitstellung von Azure-Ressourcen und -Workloads über Ressourcengruppen verwenden können, benötigen Sie (natürlich) ein Azure-Konto. Wenn Sie noch kein Konto haben, erhalten Sie [hier eine kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/).
+Bevor Sie die Azure-CLI mit Ressourcen-Manager-Befehlen und -Vorlagen zur Bereitstellung von Azure-Ressourcen und -Workloads über Ressourcengruppen verwenden können, benötigen Sie (natürlich) ein Azure-Konto. Wenn Sie noch kein Konto haben, erhalten Sie [hier eine kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/).
 
-> [AZURE.NOTE]Wenn Sie noch nicht über ein Azure-Konto, aber bereits über ein MSDN-Abonnement verfügen, erhalten Sie ein kostenloses Azure-Guthaben, indem Sie Ihren [Azure-Vorteil für MSDN-Abonnenten](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) aktivieren. Sie können aber auch ein kostenloses Konto verwenden. Beides ist für den Azure-Zugriff möglich.
+> [AZURE.NOTE] Wenn Sie noch nicht über ein Azure-Konto, aber bereits über ein MSDN-Abonnement verfügen, erhalten Sie ein kostenloses Azure-Guthaben, indem Sie Ihren [Azure-Vorteil für MSDN-Abonnenten](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) aktivieren. Sie können aber auch ein kostenloses Konto verwenden. Beides ist für den Azure-Zugriff möglich.
 
 ### Schritt 1: Überprüfen der Azure-CLI-Version
 
@@ -62,6 +62,6 @@ Um den ARM (Azure-Ressourcen-Manager)-Modus mit der Azure-Befehlszeilenschnittst
     $ azure config mode arm
     info:    New mode is arm
 
-> [AZURE.NOTE]Sie können wieder zurück zu ASM-Befehlen (Azure Service Management) wechseln, indem Sie `azure config mode asm` eingeben.
+> [AZURE.NOTE] Sie können wieder zurück zu ASM-Befehlen (Azure Service Management) wechseln, indem Sie `azure config mode asm` eingeben.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

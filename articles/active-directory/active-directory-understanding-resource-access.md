@@ -1,26 +1,26 @@
 <properties 
-                pageTitle="Grundlegendes zum Zugriff auf Ressourcen in Azure" 
-                description="In diesem Thema werden Konzepte zum Einsatz von Abonnementadministratoren erklärt, um den Zugriff auf Ressourcen im ganzen Azure-Portal zu steuern." 
-                services="active-directory" 
-                documentationCenter="" 
-                authors="markusvi" 
-                manager="stevenpo" 
-                editor=""/>
+    pageTitle="Grundlegendes zum Zugriff auf Ressourcen in Azure" 
+    description="In diesem Thema werden Konzepte zum Einsatz von Abonnementadministratoren erklärt, um den Zugriff auf Ressourcen im ganzen Azure-Portal zu steuern." 
+    services="active-directory" 
+    documentationCenter="" 
+    authors="markusvi" 
+    manager="stevenpo" 
+    editor=""/>
 
 <tags 
-                ms.service="active-directory" 
-                ms.workload="identity" 
-                ms.tgt_pltfrm="na" 
-                ms.devlang="na" 
-                ms.topic="article" 
-                ms.date="10/30/2015" 
-                ms.author="markusvi"/>
+    ms.service="active-directory" 
+    ms.workload="identity" 
+    ms.tgt_pltfrm="na" 
+    ms.devlang="na" 
+    ms.topic="article" 
+    ms.date="01/26/2016" 
+    ms.author="markusvi"/>
 
 
 # Grundlegendes zum Zugriff auf Ressourcen in Azure
 
 
-> [AZURE.NOTE]In diesem Thema werden Konzepte zum Einsatz von Abonnementadministratoren erklärt, um den Zugriff auf Ressourcen im ganzen Azure-Portal zu steuern. Als Alternative bietet das Azure-Vorschauportal die [rollenbasierte Zugriffssteuerung](role-based-access-control-configure.md) für eine detailliertere Verwaltung der Azure-Ressourcen.
+> [AZURE.NOTE] In diesem Thema werden Konzepte zum Einsatz von Abonnementadministratoren erklärt, um den Zugriff auf Ressourcen im ganzen Azure-Portal zu steuern. Als Alternative bietet das Azure-Vorschauportal die [rollenbasierte Zugriffssteuerung](role-based-access-control-configure.md) für eine detailliertere Verwaltung der Azure-Ressourcen.
 
 Im Oktober 2013 wurden das Azure-Verwaltungsportal und die Dienstverwaltungs-APIs in Azure Active Directory integriert, um die Benutzerfreundlichkeit bei der Verwaltung des Azure-Ressourcenzugriffs zu verbessern. Azure Active Directory bietet bereits leistungsstarke Funktionen wie Benutzerverwaltung, lokale Verzeichnissynchronisierung, mehrstufige Authentifizierung und Anwendungszugriffssteuerung. Diese Funktionen sollten natürlich auch für die allgemeine Verwaltung von Azure-Ressourcen zur Verfügung stehen.
 
@@ -37,7 +37,7 @@ Mithilfe der Funktionen im Azure-Verwaltungsportal können Dienstadministratoren
 
 
 
-> [AZURE.NOTE]Der Befehl **Verzeichnis bearbeiten** im Azure-Verwaltungsportal steht nicht für Benutzer zur Verfügung, die über ein Geschäfts- oder Schulkonto angemeldet sind, weil sich diese Konten nur an dem Verzeichnis anmelden können, zu dem sie gehören.
+> [AZURE.NOTE] Der Befehl **Verzeichnis bearbeiten** im Azure-Verwaltungsportal steht nicht für Benutzer zur Verfügung, die über ein Geschäfts- oder Schulkonto angemeldet sind, weil sich diese Konten nur an dem Verzeichnis anmelden können, zu dem sie gehören.
 
 <br><br>![Einfache Benutzeranmeldung − Ablauf][3]
 
@@ -64,4 +64,4 @@ Da die Abonnements in einer einzelnen Verzeichnisansicht dargestellt werden, kö
 [3]: ./media/active-directory-understanding-resource-access/IC707933.png
 [4]: ./media/active-directory-understanding-resource-access/IC707934.png
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0128_2016-->

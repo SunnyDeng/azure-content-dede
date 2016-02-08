@@ -3,7 +3,7 @@
    description="Erfahren Sie, wie Sie in der Erweiterung Azure Privileged Identity Management das Überwachungsprotokoll verwenden."
    services="active-directory"
    documentationCenter=""
-   authors="IHenkel"
+   authors="kgremban"
    manager="stevenpo"
    editor=""/>
 
@@ -13,16 +13,15 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="09/21/2015"
-   ms.author="inhenk"/>
+   ms.date="01/21/2016"
+   ms.author="kgremban"/>
 
 # Azure Privileged Identity Management: Verwenden des Überwachungsprotokolls
 
-## Verwenden des Überwachungsprotokolls
-Im Privileged Identity Management-Überwachungsprotokoll werden alle Benutzerzuweisungen und Aktivierungen in einem angegebenen Zeitraum angezeigt.
+Im Privileged Identity Management (PIM)-Überwachungsprotokoll werden alle Benutzerzuweisungen und Aktivierungen in einem angegebenen Zeitraum angezeigt.
 
 ## Navigieren zum Überwachungsprotokoll
-Sie können das Überwachungsprotokoll aufrufen, indem Sie im PIM-Dashboard auf "Überwachungsverlauf" klicken.
+Sie können das Überwachungsprotokoll aufrufen, indem Sie im PIM-Dashboard auf **Überwachungsverlauf** klicken.
 
 ## Der Graph des Überwachungsprotokolls
 Sie können mithilfe des Überwachungsprotokolls die Gesamtzahl der Aktivierungen, die maximale Anzahl der Aktivierungen pro Tag und die durchschnittliche Anzahl der Aktivierungen pro Tag in einem Liniendiagramm anzeigen. Sie können auch die Daten nach Rolle filtern, wenn der Überwachungsverlauf mehrere Rollen enthält.
@@ -51,10 +50,10 @@ Sie ändern den Zeitbereich des Überwachungsprotokolls durch Klicken auf die Sc
 
 Aktivieren oder deaktivieren Sie das Kontrollkästchen **Rolle** neben jeder Rolle, die im Protokoll enthalten bzw. nicht enthalten sein soll.
 
-Wenn Sie alle Filter für das Überwachungsprotokoll festgelegt haben, klicken Sie auf "Aktualisieren", um die Daten im Protokoll zu filtern. Wenn die Daten nicht sofort angezeigt werden, klicken Sie auf die Schaltfläche **Aktualisieren** .
+Wenn Sie alle Filter für das Überwachungsprotokoll festgelegt haben, klicken Sie auf "Aktualisieren", um die Daten im Protokoll zu filtern. Wenn die Daten nicht sofort angezeigt werden, aktualisieren Sie die Seite.
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## Nächste Schritte
 [AZURE.INCLUDE [active-directory-privileged-identity-management-toc](../../includes/active-directory-privileged-identity-management-toc.md)]
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

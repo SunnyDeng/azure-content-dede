@@ -12,14 +12,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="10/23/2015"
+   ms.date="01/27/2016"
    ms.author="bwren" />
 
 # Zertifikatobjekte in Azure Automation
 
 Zertifikate können sicher in Azure Automation gespeichert werden, sodass Sie aus Runbooks oder DSC-Konfigurationen mithilfe der Aktivität **Get-AutomationCertificate** darauf zugreifen können. Auf diese Weise können Sie Runbooks und DSC-Konfigurationen erstellen, die Zertifikate für die Authentifizierung verwenden oder diese zu Azure oder zu Drittanbieterressourcen hinzufügen.
 
->[AZURE.NOTE]Zu den sicheren Objekten in Azure Automation gehören Anmeldeinformationen, Zertifikate, Verbindungen und verschlüsselte Variablen. Diese Objekte werden mithilfe eines eindeutigen Schlüssels verschlüsselt und in Azure Automation gespeichert, der für jedes Automation-Konto generiert wird. Dieser Schlüssel wird mit einem Masterzertifikat verschlüsselt und in Azure Automation gespeichert. Vor dem Speichern eines sicheren Objekts wird der Schlüssel für das Automation-Konto mit dem Masterzertifikat verschlüsselt und anschließend zum Verschlüsseln des Objekts verwendet.
+>[AZURE.NOTE] Zu den sicheren Objekten in Azure Automation gehören Anmeldeinformationen, Zertifikate, Verbindungen und verschlüsselte Variablen. Diese Objekte werden mithilfe eines eindeutigen Schlüssels verschlüsselt und in Azure Automation gespeichert, der für jedes Automation-Konto generiert wird. Dieser Schlüssel wird mit einem Masterzertifikat verschlüsselt und in Azure Automation gespeichert. Vor dem Speichern eines sicheren Objekts wird der Schlüssel für das Automation-Konto mit dem Masterzertifikat verschlüsselt und anschließend zum Verschlüsseln des Objekts verwendet.
 
 ## Windows PowerShell-Cmdlets
 
@@ -40,7 +40,7 @@ Die Aktivitäten in der folgenden Tabelle werden für den Zugriff auf Zertifikat
 |:---|:---|
 |Get-AutomationCertificate|Ruft ein Zertifikat zur Verwendung in einem Runbook oder einer DSC-Konfiguration ab.|
 
->[AZURE.NOTE]Vermeiden Sie die Verwendung von Variablen im Parameter „-Name“ von „Get-AutomationCertificate“, da dies die Ermittlung von Abhängigkeiten zwischen Runbooks oder DSC-Konfigurationen und Zertifikatobjekten zur Entwurfszeit erschweren kann.
+>[AZURE.NOTE] Vermeiden Sie die Verwendung von Variablen im Parameter „-Name“ von „Get-AutomationCertificate“, da dies die Ermittlung von Abhängigkeiten zwischen Runbooks oder DSC-Konfigurationen und Zertifikatobjekten zur Entwurfszeit erschweren kann.
 
 ## Erstellen eines neues Zertifikats
 
@@ -107,4 +107,4 @@ In diesem Beispiel wird der Parametersatz **UseConnectionObject** für die Send-
 
 - [Verknüpfungen bei der grafischen Erstellung](automation-graphical-authoring-intro.md#links-and-workflow) 
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0128_2016-->

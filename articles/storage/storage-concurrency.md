@@ -93,10 +93,7 @@ Get Container Properties|	Ja|	Nein|
 Get Container Metadata|	Ja|	Nein|
 Set Container Metadata|	Ja|	Ja|
 Get Container ACL|	Ja|	Nein|
-Set Container ACL|	Ja|	Ja (*)|
-Delete Container| Nein| Ja|
-Lease Container| Ja| Ja|
-List Blobs| Nein| Nein 
+Set Container ACL|	Ja|	Ja (*)| Delete Container| Nein| Ja| Lease Container| Ja| Ja| List Blobs| Nein| Nein 
 
 (*) Die von SetContainerACL definierten Berechtigungen werden zwischengespeichert, und die Verteilung der Aktualisierungen dieser Berechtigungen dauert 30 Sekunden. Während dieser Zeitspanne kann die Konsistenz der Aktualisierungen nicht garantiert werden.
 
@@ -110,16 +107,7 @@ Get Blob Properties|	Ja|	Ja|
 Set Blob Properties|	Ja|	Ja|
 Get Blob Metadata|	Ja|	Ja|
 Set Blob Metadata|	Ja|	Ja|
-Lease Blob (*)| Ja| Ja|
-Snapshot Blob| Ja| Ja|
-Copy Blob| Ja| Ja (für Quell- und Ziel-Blob)|
-Abort Copy Blob| Nein| Nein|
-Delete Blob| Nein| Ja|
-Put Block| Nein| Nein|
-Put Block List| Ja| Ja|
-Get Block List| Ja| Nein|
-Put Page| Ja| Ja|
-Get Page Ranges| Ja| Ja
+Lease Blob (*)| Ja| Ja| Snapshot Blob| Ja| Ja| Copy Blob| Ja| Ja (für Quell- und Ziel-Blob)| Abort Copy Blob| Nein| Nein| Delete Blob| Nein| Ja| Put Block| Nein| Nein| Put Block List| Ja| Ja| Get Block List| Ja| Nein| Put Page| Ja| Ja| Get Page Ranges| Ja| Ja
 
 (*) "Lease Blob" ändert das ETag eines Blob nicht.
 
@@ -278,9 +266,9 @@ Informationen zur vollständigen Beispielanwendung, auf die in diesem Blog verwi
 
 Weitere Informationen zu Azure Storage finden Sie unter:
 
-- [Microsoft Azure Storage-Startseite](http://azure.microsoft.com/services/storage/)
+- [Microsoft Azure Storage-Startseite](https://azure.microsoft.com/services/storage/)
 - [Einführung in Azure Storage](storage-introduction.md)
 - Storage - Erste Schritte für [Blob](storage-dotnet-how-to-use-blobs.md), [Tabelle](storage-dotnet-how-to-use-tables.md) und [Warteschlangen](storage-dotnet-how-to-use-queues.md)
 - Speicherarchitektur – [Microsoft Azure Storage: A Highly Available Cloud Storage Service with Strong Consistency](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx) (in englischer Sprache)
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

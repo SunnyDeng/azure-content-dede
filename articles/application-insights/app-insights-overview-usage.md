@@ -42,7 +42,7 @@ Sie können Application Insights auch Ihrem [ASP.NET](app-insights-asp-net.md)- 
 
 ### Ausführen Ihres Projekts und Anzeigen erster Ergebnisse
 
-Führen Sie das Projekt einige Minuten im Debugmodus aus, wechseln Sie dann zum [Azure-Portal](http://portal.azure.com), und navigieren Sie in Application Insights zu Ihren Projektressourcen.
+Führen Sie das Projekt einige Minuten im Debugmodus aus, wechseln Sie dann zum [Azure-Portal](https://portal.azure.com), und navigieren Sie in Application Insights zu Ihren Projektressourcen.
 
 ![Klicken Sie in Azure auf "Durchsuchen", "Application Insights", und wählen Sie Ihr Projekt aus.](./media/app-insights-overview-usage/00-start.png)
 
@@ -288,4 +288,4 @@ Wenn Sie mit Analysen arbeiten, werden diese zu einem integrierten Bestandteil I
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

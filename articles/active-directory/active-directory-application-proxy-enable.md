@@ -13,11 +13,11 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/06/2016"
+	ms.date="01/22/2016"
 	ms.author="kgremban"/>
 
 # Aktivieren des Azure AD-Anwendungsproxys
-> [AZURE.NOTE]Das Feature "Anwendungsproxy" ist nur verfügbar, wenn Sie Azure Active Directory auf die Premium oder Basic Edition aktualisiert haben. Weitere Informationen finden Sie unter [Azure Active Directory-Editionen](active-directory-editions.md).
+> [AZURE.NOTE] Das Feature "Anwendungsproxy" ist nur verfügbar, wenn Sie Azure Active Directory auf die Premium oder Basic Edition aktualisiert haben. Weitere Informationen finden Sie unter [Azure Active Directory-Editionen](active-directory-editions.md).
 
 Der Microsoft Azure Active Directory-Anwendungsproxy ermöglicht es Ihnen, Anwendungen wie z. B. SharePoint-Websites, Outlook Web Access und IIS-basierte Apps innerhalb Ihres privaten Netzwerks zu veröffentlichen, und er stellt für Benutzer außerhalb Ihres Netzwerks einen sicheren Zugriff auf diese Apps bereit. Mitarbeiter können sich auf ihren eigenen Geräten von daheim aus bei Ihren Apps anmelden und sich über diesen cloudbasierten Proxy authentifizieren.
 
@@ -30,7 +30,7 @@ Bevor Sie die Anwendungsproxydienste aktivieren und verwenden können, benötige
 
 - Ein [Basic- oder Premium-Abonnement](active-directory-editions.md) für Microsoft Azure AD und ein Azure AD-Verzeichnis, für das Sie globaler Administrator sind.
 - Einen Server, auf dem Windows Server 2012 R2 bzw. Windows 8.1 oder höher installiert ist, auf dem Sie den Anwendungsproxyconnector installieren können. Der Server muss in der Lage sein, HTTPS-Anforderungen an die Anwendungsproxydienste in der Cloud zu senden, und er muss über eine HTTPS-Verbindung mit den Anwendungen verfügen, die Sie veröffentlichen möchten.
-- Wenn im Pfad eine Firewall platziert ist, vergewissern Sie sich, dass die Firewall HTTPS-Anforderungen (TCP) zulässt, die vom Connector für den Anwendungsproxy stammen. Der Connector verwendet diese Ports zusammen mit untergeordneten Domänen, die Teil der Domäne auf hoher Ebene sind: msappproxy.net. Stellen Sie sicher, dass **alle** folgenden Ports für den **ausgehenden** Datenverkehr geöffnet sind:
+- Wenn im Pfad eine Firewall platziert ist, vergewissern Sie sich, dass die Firewall HTTPS-Anforderungen (TCP) zulässt, die vom Connector für den Anwendungsproxy stammen. Der Connector verwendet diese Ports zusammen mit untergeordneten Domänen, die Teil der Domäne auf hoher Ebene sind: „msappproxy.net“ und „servicebus.windows.net“. Stellen Sie sicher, dass **alle** folgenden Ports für den **ausgehenden** Datenverkehr geöffnet sind:
 
 Portnummer | Beschreibung
 --- | ---
@@ -95,4 +95,4 @@ Der Anwendungsproxy bietet Ihnen noch viele weitere Möglichkeiten:
 * [Azure-Identität](fundamentals-identity.md)
 * [Veröffentlichen von Anwendungen mit dem Anwendungsproxy](active-directory-application-proxy-publish.md)
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

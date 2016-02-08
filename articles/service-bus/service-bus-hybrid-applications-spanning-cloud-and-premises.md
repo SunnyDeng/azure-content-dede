@@ -9,11 +9,11 @@
 
 <tags 
 	ms.service="service-bus" 
-	ms.workload="tbd" 
+	ms.workload="na" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="10/06/2015" 
+	ms.date="01/26/2016" 
 	ms.author="sethm"/>
 
 # Aktivieren hybrider Anwendungen, die sich auf Cloud und lokale Systeme verteilen
@@ -35,16 +35,16 @@ Hybride Anwendungen für Cloud und lokale Systeme sind aus modernen IT-Umgebunge
  
 ## Beliebt
 
-- [Service Bus-Preisübersicht](http://azure.microsoft.com/pricing/details/service-bus/)
+- [Service Bus-Preisübersicht](https://azure.microsoft.com/pricing/details/service-bus/)
 - [Service Bus-Preisübersicht FAQ](service-bus-pricing-faq.md)
 - [Service Bus REST-API-Referenz](http://msdn.microsoft.com/library/azure/hh780717.aspx)
-- [Anmelden für eine kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A85619ABF)
+- [Anmelden für eine kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A85619ABF)
  
 ## Verknüpfte Dienste
 
-- [BizTalk Services](http://azure.microsoft.com/services/biztalk-services/)
-- [Mobile Services](http://azure.microsoft.com/services/mobile-services/)
-- [Cloud Services](http://azure.microsoft.com/services/cloud-services/) 
+- [BizTalk Services](https://azure.microsoft.com/services/biztalk-services/)
+- [Mobile Services](https://azure.microsoft.com/services/mobile-services/)
+- [Cloud Services](https://azure.microsoft.com/services/cloud-services/) 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

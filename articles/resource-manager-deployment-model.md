@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="12/02/2015"
+   ms.date="01/22/2016"
    ms.author="tomfitz"/>
 
 # Grundlegendes zur Bereitstellung über den Ressourcen-Manager im Vergleich zur klassischen Bereitstellung
@@ -22,19 +22,17 @@ Das Ressourcen-Manager-Bereitstellungsmodell bietet eine neue Möglichkeit, die 
 
 Das klassische Bereitstellungsmodell ist Ihnen möglicherweise unter den Bezeichnungen "Service-Management-Modell" oder "Dienstverwaltungsmodell" bekannt.
 
-Dieses Thema beschreibt die Unterschiede zwischen den beiden Modellen sowie einige Probleme, die beim Wechsel vom klassischen zum Ressourcen-Manager-Modell auftreten können. Das Thema bietet einen Überblick über die Modelle, geht jedoch nicht detailliert auf die Unterschiede zwischen einzelnen Diensten ein. Detaillierte Informationen zum Verschieben von Compute-, Speicher- und Netzwerkressourcen finden Sie unter [Azure-Compute-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manager](./virtual-machines/virtual-machines-azurerm-versus-azuresm.md).
+Dieses Thema beschreibt die Unterschiede zwischen den beiden Modellen sowie einige Probleme, die beim Wechsel vom klassischen zum Ressourcen-Manager-Modell auftreten können. Das Thema bietet einen Überblick über die Modelle, geht jedoch nicht detailliert auf die Unterschiede zwischen einzelnen Diensten ein.
 
 Viele Ressourcen funktionieren problemlos sowohl im klassischen als auch im Ressourcen-Manager-Modell. Diese Ressourcen unterstützen den Ressourcen-Manager vollständig, selbst wenn sie im klassischen Modell erstellt wurden. Sie können diese Ressourcen ohne Bedenken oder zusätzlichen Aufwand zum Ressourcen-Manager verschieben.
 
 Aufgrund der Architekturunterschiede zwischen den Modellen stellen einige Ressourcenanbieter jedoch zwei Versionen ihrer Ressource bereit: eine für das klassische, eine für das Ressourcen-Manager-Modell. Für folgende Ressourcenanbieter bestehen Unterschiede zwischen den beiden Modellen:
 
-- Compute
-- Speicher
-- Netzwerk
+- **Compute** – Unterstützt Instanzen von virtuellen Maschinen und optionale Verfügbarkeitsgruppen.
+- **Storage** – Unterstützt erforderliche Speicherkonten, die VHDs für virtuelle Maschinen speichern, einschließlich der Datenträger für Betriebssysteme und zusätzlicher Datenträger.
+- **Netzwerk** – Unterstützt erforderliche NICs, IP-Adressen virtueller Maschinen und Subnetze innerhalb von virtuellen Netzwerken sowie optionale Load Balancer, deren IP-Adressen und Netzwerksicherheitsgruppen.
 
-Für diese Ressourcentypen müssen Sie darauf achten, welche Version Sie verwenden, da sich die unterstützten Vorgänge unterscheiden.
-
-Informationen zu den Architekturunterschieden zwischen den beiden Modellen finden Sie unter [Architektur des Azure-Ressourcen-Managers](virtual-machines/virtual-machines-azure-resource-manager-architecture.md).
+Für diese Ressourcentypen müssen Sie darauf achten, welche Version Sie verwenden, da sich die unterstützten Vorgänge unterscheiden. Detaillierte Informationen zum Verschieben von Compute-, Speicher- und Netzwerkressourcen finden Sie unter [Azure-Compute-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manager](./virtual-machines/virtual-machines-azurerm-versus-azuresm.md).
 
 ## Merkmale des Ressourcen-Managers
 
@@ -46,7 +44,7 @@ Ressourcen, die über den Ressourcen-Manager erstellt wurden, weisen folgende Me
 
         ![Azure portal](./media/resource-manager-deployment-model/preview-portal.png)
 
-        Für Compute-, Storage- und Netzwerkressourcen haben Sie die Möglichkeit, entweder den Ressourcen-Manager oder die klassische Bereitstellung zu nutzen. Wählen Sie **Ressourcen-Manager** .
+        For Compute, Storage, and Networking resources, you have the option of using either Resource Manager or Classic deployment. Select **Resource Manager**.
 
         ![Resource Manager deployment](./media/resource-manager-deployment-model/select-resource-manager.png)
 
@@ -67,7 +65,25 @@ Ressourcen, die über den Ressourcen-Manager erstellt wurden, weisen folgende Me
 
     ![Web-App](./media/resource-manager-deployment-model/resource-manager-type.png)
 
+Die in der folgenden Abbildung dargestellte Anwendung zeigt über den Ressourcen-Manager bereitgestellte Ressourcen in einer einfachen Ressourcengruppe.
+
+  ![](./media/virtual-machines-azure-resource-manager-architecture/arm_arch3.png)
+
+Außerdem gibt es Beziehungen zwischen den Ressourcen innerhalb der Ressourcenanbieter:
+
+- Ein virtueller Computer hängt von einem bestimmten Speicherkonto ab, das im SRP definiert ist, um die Datenträger im Blobspeicher zu speichern (erforderlich).
+- Ein virtueller Computer verweist auf eine bestimmte NIC, die im NRP definiert ist (erforderlich), und eine Verfügbarkeitsgruppe, die im CRP definiert ist (optional).
+- Eine NIC verweist auf die dem virtuellen Computer zugewiesene IP-Adresse (erforderlich), das Subnetz des virtuellen Netzwerks für den virtuellen Computer (erforderlich) und eine Netzwerksicherheitsgruppe (optional).
+- Ein Subnetz innerhalb eines virtuellen Netzwerks verweist auf eine Netzwerksicherheitsgruppe (optional).
+- Eine Lastenausgleichsinstanz verweist auf den Back-End-Pool von IP-Adressen, die die NIC eines virtuellen Computers enthalten (optional) und auf eine öffentliche oder private IP-Adresse für den Lastenausgleich (optional).
+
 ## Merkmale der klassischen Bereitstellung
+
+In der Azure-Dienstverwaltung werden die Compute-, Speicher- oder Netzwerkressourcen für das Hosten von virtuellen Computern wie folgt bereitgestellt:
+
+- Ein erforderlicher Clouddienst, der als Container für das Hosten virtueller Computer (Compute) fungiert. Virtuelle Computer werden automatisch mit einer Netzwerkschnittstellenkarte (Network Interface Card, NIC) bereitgestellt, und ihnen wird von Azure eine IP-Adresse zugewiesen. Darüber hinaus enthält der Clouddienst eine externe Lastenausgleichsinstanz, eine öffentliche IP-Adresse und Standardendpunkte, um Remotedesktop- und Remote-PowerShell-Datenverkehr für die Windows-basierten virtuellen Computer und Secure Shell-Datenverkehr (SSH) für Linux-basierte virtuelle Computer zu ermöglichen.
+- Ein erforderliches Speicherkonto, in dem die VHDs für einen virtuellen Computer gespeichert werden, einschließlich des Betriebssystems sowie temporärer und zusätzlicher Datenträger (Speicher).
+- Ein optionales virtuelles Netzwerk, das als zusätzlicher Container fungiert, in dem Sie eine Subnetzstruktur erstellen und das Subnetz benennen können, in dem sich der virtuelle Computer befindet (Netzwerk).
 
 Ressourcen, die im klassischen Bereitstellungsmodell erstellt wurden, weisen folgende Merkmale auf:
 
@@ -77,7 +93,7 @@ Ressourcen, die im klassischen Bereitstellungsmodell erstellt wurden, weisen fol
 
         ![Classic portal](./media/resource-manager-deployment-model/azure-portal.png)
 
-        Alternativ können Sie das Vorschauportal nutzen und eine **klassische** Bereitstellung (für Compute-, Speicher- und Netzwerkressourcen) festlegen.
+        Or, the portal and you specify **Classic** deployment (for Compute, Storage, and Networking).
 
         ![Classic deployment](./media/resource-manager-deployment-model/select-classic.png)
 
@@ -97,13 +113,17 @@ Ressourcen, die im klassischen Bereitstellungsmodell erstellt wurden, weisen fol
 
 Sie können weiterhin das Portal zur Verwaltung von Ressourcen verwenden, die über die klassische Bereitstellung erstellt wurden.
 
+Im Folgenden sind die Komponenten und deren Beziehungen für die Azure-Dienstverwaltung dargestellt.
+
+  ![](./media/virtual-machines-azure-resource-manager-architecture/arm_arch1.png)
+
 ## Vorteile der Verwendung von Ressourcen-Manager und Ressourcengruppen
 
 Mit dem Ressourcen-Manager wurde das Konzept der Ressourcengruppen eingeführt. Jede über den Ressourcen-Manager erstellte Ressource befindet sich in einer Ressourcengruppe. Das Ressourcen-Manager-Bereitstellungsmodell bietet verschiedene Vorteile:
 
 - Sie müssen die Dienste für Ihre Lösung nicht mehr einzeln bearbeiten, sondern können sie als Gruppe bereitstellen, verwalten und überwachen.
 - Sie können die Anwendung während des gesamten App-Lebenszyklus wiederholt bereitstellen und sicher sein, dass Ihre Ressourcen einheitlich bereitgestellt werden.
-- Sie können deklarative Vorlagen verwenden, um Ihre Bereitstellung zu definieren. 
+- Sie können deklarative Vorlagen verwenden, um Ihre Bereitstellung zu definieren.
 - Sie können die Abhängigkeiten zwischen Ressourcen definieren, sodass diese in der richtigen Reihenfolge bereitgestellt werden.
 - Sie können die Zugriffssteuerung auf alle Dienste in der Ressourcengruppe anwenden, da die rollenbasierte Zugriffssteuerung (Role-Based Access Control, RBAC) standardmäßig in die Verwaltungsplattform integriert ist.
 - Sie können Tags auf Ressourcen anwenden, um alle Ressourcen in Ihrem Abonnement logisch zu organisieren.
@@ -168,4 +188,4 @@ Informationen zum Verbinden virtueller Netzwerke aus verschiedenen Bereitstellun
 - Informationen zum Erstellen deklarativer Bereitstellungsvorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](resource-group-authoring-templates.md).
 - Die Befehle zum Bereitstellen einer Vorlage finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](resource-group-template-deploy.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

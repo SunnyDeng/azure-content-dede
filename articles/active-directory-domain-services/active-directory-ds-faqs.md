@@ -4,8 +4,8 @@
 	services="active-directory-ds"
 	documentationCenter=""
 	authors="mahesh-unnikrishnan"
-	manager="udayh"
-	editor="inhenk"/>
+	manager="stevenpo"
+	editor="curtand"/>
 
 <tags
 	ms.service="active-directory-ds"
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/16/2015"
+	ms.date="01/26/2016"
 	ms.author="maheshu"/>
 
 # Vorschau von Azure Active Directory-Domänendienste: häufig gestellte Fragen
@@ -38,17 +38,23 @@ Die PowerShell-/automatisierte Bereitstellung von Azure AD-Domänendienste ist 
 #### Ist Azure AD-Domänendienste im neuen Azure-Portal verfügbar?
 Nein. Azure AD-Domänendienste kann nur im älteren Azure-Verwaltungsportal (d. h. https://manage.windowsazure.com) konfiguriert werden. Wir gehen von einer erweiterten Unterstützung für das neue Microsoft Azure-Verwaltungsportal (d. h. https://portal.azure.com) in der Zukunft aus.
 
+#### Kann ich Domänencontroller zu einer verwalteten Domäne der Azure AD-Domänendienste hinzufügen?
+Nein. Die von den Azure AD-Domänendiensten bereitgestellte Domäne ist eine verwaltete Domäne. Die Domänencontroller für diese Domäne müssen nicht bereitgestellt, konfiguriert oder anderweitig verwaltet werden – diese Verwaltungsschritte werden als Dienst von Microsoft bereitgestellt. Daher können Sie keine zusätzlichen Domänencontroller (weder mit Lese-/Schreibzugriff noch mit reinem Lesezugriff) für die verwaltete Domäne hinzufügen.
+
 
 ### Verwaltung und Betrieb
 
 #### Ich habe Azure AD-Domänendienste aktiviert. Welches Benutzerkonto verwende ich für den Domänenbeitritt von Computern zu dieser Domäne?
-Die Benutzerkonten, die Sie der administrativen Gruppe (d. h. "AAD DC Administrators") hinzugefügt haben, können einen Domänenbeitritt von Computern durchführen. Darüber hinaus erhalten Benutzer in dieser Gruppe Remotedesktopzugriff auf Computer, die der Domäne beigetreten sind.
+Alle Benutzerkonten, die Sie der administrativen Gruppe (d. h. "AAD DC Administrators") hinzugefügt haben, können einen Domänenbeitritt von Computern durchführen. Darüber hinaus erhalten Benutzer in dieser Gruppe Remotedesktopzugriff auf Computer, die der Domäne beigetreten sind.
 
 #### Kann ich Domänenadministratorrechte für die von Azure AD-Domänendienste bereitgestellte Domäne erhalten?
 Nein. Da es sich um einen verwalteten Dienst handelt, erhalten Sie keine Administratorrechte in der Domäne. Dies bedeutet, dass die Berechtigungen für "Domänenadministrator" und "Unternehmensadministrator" nicht innerhalb der Domäne zur Verfügung stehen. Vorhandene Domänenadministrator- oder Unternehmensadministratorgruppen innerhalb Ihres Azure AD-Verzeichnisses erhalten ebenfalls keine Rechte für Domänen-/Unternehmensadministratoren in der Domäne.
 
 #### Kann ich mithilfe von LDAP oder anderen Active Directory-Verwaltungstools Gruppenmitgliedschaften in Azure AD-Domänendienste-Domänen ändern?
 Nein. Gruppenmitgliedschaften können nicht in Domänen geändert werden, die von Azure AD-Domänendienste verwaltet werden. Das gleiche gilt für Benutzerattribute. Sie können jedoch in Azure AD oder in Ihrer lokalen Domäne Gruppenmitgliedschaften und Benutzerattribute ändern. Solche Änderungen werden automatisch mit Azure AD-Domänendienste synchronisiert.
+
+#### Kann ich das Schema der von den Azure AD-Domänendiensten bereitgestellten Domäne erweitern?
+Nein. Das Schema für die verwaltete Domäne wird von Microsoft verwaltet. Schemaerweiterungen werden von Azure AD-Domänendiensten nicht unterstützt.
 
 
 ### Abrechnung und Verfügbarkeit
@@ -68,4 +74,4 @@ Auf unserer [Seite für Regionen](active-directory-ds-regions.md) finden Sie ein
 #### Wann wird Azure AD-Domänendienste allgemein verfügbar sein?
 Wir können derzeit keine Zeitpläne für die allgemeine Verfügbarkeit des Diensts bekannt geben.
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

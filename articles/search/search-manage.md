@@ -41,6 +41,10 @@ Wir empfehlen die folgenden Links für die Kapazitätsplanung und zum Verständn
 
 Wenn Sie sich anmelden möchten, finden Sie entsprechende Informationen unter [Erstellen eines Azure-Suchdiensts im Portal](search-create-service-portal.md).
 
+##Suchanalyse
+
+Sie können während der Suchaktivitäten der Benutzer Daten sammeln, um besser zu verstehen, wie Ihr leistungsfähig Ihr Suchdienst ist, welche Begriffe gesucht werden und ob für diese Suchbegriffe Treffer zurückgegeben werden. Am besten lassen sich diese Daten mithilfe eines Power BI-Inhaltspakets analysieren und visualisieren. Der erste Schritt besteht im Aktivieren einer Analyse des Suchdatenverkehrs. Informationen zur Vorgehensweise finden Sie unter [Analyzing your Azure Search traffic](https://azure.microsoft.com/blog/analyzing-your-azure-search-traffic/) (Analysieren Ihres Azure Search-Datenverkehrs).
+
 <a id="sub-2"></a>
 ## Verwaltungsaufgaben
 
@@ -105,7 +109,7 @@ Mit der Suchdienst-API können Sie Gesamtzahlen für Dokumente und Indizes abruf
 +	[Abrufen von Indexstatistiken](http://msdn.microsoft.com/library/dn798942.aspx)
 +	[Dokumentenanzahl](http://msdn.microsoft.com/library/dn798924.aspx)
 
-> [AZURE.NOTE]Durch Caching-Eigenheiten können die Obergrenzen vorübergehend überschritten werden. Wenn Sie z. B. den gemeinsam genutzten Dienst verwenden, kann es passieren, dass eine Dokumentenanzahl oberhalb der Grenze von 10.000 Dokumenten angezeigt wird. Dies ist vorübergehend und wird bei der nächsten Einhaltungsprüfung für die Obergrenze entdeckt.
+> [AZURE.NOTE] Durch Caching-Eigenheiten können die Obergrenzen vorübergehend überschritten werden. Wenn Sie z. B. den gemeinsam genutzten Dienst verwenden, kann es passieren, dass eine Dokumentenanzahl oberhalb der Grenze von 10.000 Dokumenten angezeigt wird. Dies ist vorübergehend und wird bei der nächsten Einhaltungsprüfung für die Obergrenze entdeckt.
 
 
 <a id="sub-6"></a>
@@ -145,6 +149,9 @@ Es ist nicht möglich, herauszufinden, welche Index-Shards auf welcher Partition
 
 Für die zukünftige Planung können Sie den Speicherverbrauch prüfen (siehe [Abrufen der Index-Statistiken](http://msdn.microsoft.com/library/dn798942.aspx)), um herauszufinden, wie viel Speicher Sie tatsächlich nutzen.
 
+### Bewährte Methoden zum Skalieren und Bereitstellen des Diensts über mehrere Datencenter hinweg (Video)
+
+> [AZURE.VIDEO azurecon-2015-azure-search-best-practices-for-web-and-mobile-applications]
 
 <a id="sub-7"></a>
 ## Starten bzw. Stoppen des Dienstes
@@ -193,4 +200,4 @@ Rollen bieten Zugriffssteuerung, nachdem der Dienst erstellt wurde. Nur Abonneme
 
  
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

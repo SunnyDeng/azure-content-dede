@@ -18,13 +18,13 @@
 
 # Aktivieren von Überwachung und Diagnose
 
-Im [Azure-Portal](http://portal.azure.com) können Sie eine umfangreiche, regelmäßig durchgeführte Erfassung von Überwachungs- und Diagnosedaten konfigurieren. Es ist auch möglich, die Diagnose mit [REST-API](https://msdn.microsoft.com/library/azure/dn931932.aspx) oder [.NET SDK](https://www.nuget.org/packages/Microsoft.Azure.Insights/) programmgesteuert zu konfigurieren.
+Im [Azure-Portal](https://portal.azure.com) können Sie eine umfangreiche, regelmäßig durchgeführte Erfassung von Überwachungs- und Diagnosedaten konfigurieren. Es ist auch möglich, die Diagnose mit [REST-API](https://msdn.microsoft.com/library/azure/dn931932.aspx) oder [.NET SDK](https://www.nuget.org/packages/Microsoft.Azure.Insights/) programmgesteuert zu konfigurieren.
 
 Diagnose-, Überwachungs- und Metrikdaten werden in Azure in einem Speicherkonto Ihrer Wahl gespeichert. Auf diese Weise können Sie zum Lesen der Daten ein beliebiges Tool einsetzen – von einem Speicher-Explorer über Power BI bis hin zu einem Drittanbietertool.
 
 ## Beim Erstellen einer Ressource
 
-Die meisten Dienste ermöglichen es Ihnen, die Diagnose bei der ersten Erstellung im [Azure-Portal](http://portal.azure.com) zu aktivieren.
+Die meisten Dienste ermöglichen es Ihnen, die Diagnose bei der ersten Erstellung im [Azure-Portal](https://portal.azure.com) zu aktivieren.
 
 1. Navigieren Sie zu **Neu**, und wählen Sie die gewünschte Ressource. 
 
@@ -71,4 +71,4 @@ Beachten Sie, dass derzeit bestimmte Linux-Distributionen nicht unterstützt wer
 * [Nachverfolgen der Dienstintegrität](insights-service-health.md), um den Zeitpunkt von Leistungsabfällen oder Dienstunterbrechungen zu ermitteln, die in Azure aufgetreten sind. 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -25,9 +25,9 @@ Die Azure Machine Learning-Entwicklungsumgebung ist eine Webdienst-API zum Erste
 Informationen zum Erstellen und Bereitstellen eines Azure Machine Learning-Webdiensts mit Studio finden Sie unter:
 
 - [Bereitstellen eines Machine Learning-Webdiensts](machine-learning-publish-a-machine-learning-web-service.md)
-- [Erste Schritte mit ML Studio](http://azure.microsoft.com/documentation/videos/getting-started-with-ml-studio/)
+- [Erste Schritte mit ML Studio](https://azure.microsoft.com/documentation/videos/getting-started-with-ml-studio/)
 - [Azure-Machine Learning-Vorschau](https://studio.azureml.net/)
-- [Machine Learning Dokumentationscenter](http://azure.microsoft.com/documentation/services/machine-learning/)
+- [Machine Learning Dokumentationscenter](https://azure.microsoft.com/documentation/services/machine-learning/)
 
 ## Azure Machine Learning-Webdienst ##
 
@@ -103,4 +103,4 @@ Verwenden Sie zum Verbinden mit einem Azure ML-Webdienst die **urllib2**-Bibliot
 2. Weisen Sie "apiKey" den Schlüssel von einem Webdienst zu. Weitere Informationen finden Sie unter "Abrufen eines Autorisierungsschlüssels für Azure ML".
 3. Weisen Sie "serviceUri" die Anforderungs-URI zu. Weitere Informationen finden Sie unter "Abrufen einer Anforderungs-URI".
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

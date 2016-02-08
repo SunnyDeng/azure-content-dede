@@ -1,4 +1,4 @@
-Die folgende Tabelle listet die Grenzwerte der verschiedenen Dienstebenen (S1, S2, F1) auf. Informationen zu den Kosten jeder *Einheit* finden Sie unter [IoT Hub – Preise](http://azure.microsoft.com/pricing/details/iot-hub/).
+Die folgende Tabelle listet die Grenzwerte der verschiedenen Dienstebenen (S1, S2, F1) auf. Informationen zu den Kosten jeder *Einheit* finden Sie unter [IoT Hub – Preise](https://azure.microsoft.com/pricing/details/iot-hub/).
 
 | Ressource | S1 Standard | S2 Standard | F1 Free |
 | -------- | ----------- | ----------- | ------- |
@@ -6,7 +6,7 @@ Die folgende Tabelle listet die Grenzwerte der verschiedenen Dienstebenen (S1, S
 | Maximale Anzahl der Einheiten | 200 | 200 | 1 |
 | Geräteaktualisierungen (Erstellen, Aktualisieren,<br/> Löschen) pro Einheit pro Tag | 1100 | 1100 | 1100 |
 
-> [AZURE.NOTE]Wenden Sie sich an den Microsoft-Support, wenn Sie voraussichtlich mehr als 200 Einheiten mit einem Hub im Tarif S1 oder S2 verwenden.
+> [AZURE.NOTE] Wenden Sie sich an den Microsoft-Support, wenn Sie voraussichtlich mehr als 200 Einheiten mit einem Hub im Tarif S1 oder S2 verwenden.
 
 Die folgende Tabelle enthält die für IoT Hub-Ressourcen geltenden Grenzwerte:
 
@@ -33,4 +33,4 @@ Der IoT Hub-Dienst drosselt Anforderungen, wenn die folgenden Kontingente übers
 | Senden von Nachrichten von Geräten an die Cloud | 120/Sekunden/Einheit (für S2), 12/Sekunden/Einheit (für S1) <br/> Mindestens 100/Sekunde |
 | Vorgänge von Cloud zu Geräten <br/> (Senden, Empfangen, Feedback) | 100/Minute/Einheit |
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

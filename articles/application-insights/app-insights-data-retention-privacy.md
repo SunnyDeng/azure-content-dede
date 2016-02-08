@@ -92,7 +92,7 @@ Hierzu können Sie ein [Telemetriedaten-Prozessor-Plug-In](app-insights-api-filt
 
 ## Wie lange werden Daten aufbewahrt? 
 
-Das hängt von Ihrem [Tarif](http://azure.microsoft.com/pricing/details/application-insights/) ab.
+Das hängt von Ihrem [Tarif](https://azure.microsoft.com/pricing/details/application-insights/) ab.
 
 Rohdatenpunkte (also Elemente, die Sie bei der Diagnosesuche überprüfen können): zwischen 7 und 30 Tagen.
 
@@ -264,4 +264,4 @@ Dieses Produkt enthält GeoLite2-Daten, die von MaxMind erstellt wurden und unte
 
  
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

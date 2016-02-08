@@ -12,14 +12,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="10/26/2015"
+   ms.date="01/27/2016"
    ms.author="bwren" />
 
 # Zeitpläne in Azure Automation
 
 Automation-Zeitpläne werden zur automatischen Ausführung von Runbooks verwendet. Ein Zeitplan kann ein einzelnes Datum und eine einzelne Uhrzeit enthalten, damit das Runbook einmal ausgeführt wird. Es kann sich aber auch um einen wiederholt auszuführenden Zeitplan handeln, mit dem das Runbook mehrmals gestartet wird. Über Runbooks kann üblicherweise nicht auf Zeitpläne zugegriffen werden.
 
->[AZURE.NOTE]Zeitpläne unterstützen derzeit keine Azure Automation DSC-Konfigurationen.
+>[AZURE.NOTE]  Zeitpläne unterstützen derzeit keine Azure Automation DSC-Konfigurationen.
 
 ## Windows PowerShell-Cmdlets
 
@@ -68,4 +68,4 @@ Das Cmdlet [New-AzureAutomationSchedule](http://msdn.microsoft.com/library/dn690
 - [Planen eines Runbooks in Azure Automation](automation-scheduling-a-runbook.md)
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0128_2016-->

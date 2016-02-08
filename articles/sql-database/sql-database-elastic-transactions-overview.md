@@ -140,9 +140,9 @@ Derzeit gelten für elastische Datenbanktransaktionen in SQL-DB folgende Einschr
 
 ## Weitere Informationen
 
-Sie verwenden noch keine elastischen Datenbankfunktionen für Ihre Azure-Anwendungen? Sehen Sie sich unsere [Dokumentationsübersicht](https://azure.microsoft.com/documentation/learning-paths/sql-database-elastic-scale/) an. Bei Fragen erreichen Sie uns im [SQL-Datenbankforum](http://social.msdn.microsoft.com/forums/azure/home?forum=ssdsgetstarted), Featureanforderungen können Sie im [SQL-Datenbank-Feedbackforum](http://feedback.azure.com/forums/217321-sql-database) einreichen.
+Sie verwenden noch keine elastischen Datenbankfunktionen für Ihre Azure-Anwendungen? Sehen Sie sich unsere [Dokumentationsübersicht](https://azure.microsoft.com/documentation/learning-paths/sql-database-elastic-scale/) an. Bei Fragen erreichen Sie uns im [SQL-Datenbankforum](http://social.msdn.microsoft.com/forums/azure/home?forum=ssdsgetstarted), Featureanforderungen können Sie im [SQL-Datenbank-Feedbackforum](https://feedback.azure.com/forums/217321-sql-database/) einreichen.
 
 <!--Image references-->
 [1]: ./media/sql-database-elastic-transactions-overview/distributed-transactions.png
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

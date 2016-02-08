@@ -13,7 +13,7 @@
 	ms.workload="data-management"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="hero-article"
+	ms.topic="article"
 	ms.date="11/16/2015"
 	ms.author="jodebrui"/>
 
@@ -52,8 +52,8 @@ Exportieren Sie Ihre Produktionsdatenbank mithilfe einer der folgenden Funktione
 
 Importieren Sie die „bacpac“-Datei in eine neue Premium-Datenbank.
 
-1. Navigieren Sie im [Azure-Vorschauportal](http://portal.azure.com/)
- - zum Server.
+1. Im [Azure-Portal](https://portal.azure.com/):
+ - Navigieren Sie zum Server.
  - Wählen Sie die Option [Datenbank importieren](sql-database-import.md).
  - Wählen Sie einen Premium-Tarif aus.
 
@@ -220,7 +220,7 @@ Um die Netzwerklatenz zu minimieren, führen Sie den Test in der gleichen geogra
 
 Sie sollten die Leistungseffekte Ihrer In-Memory-Implementierungen in der Produktion überwachen:
 
-- [Überwachen Sie den In-Memory-Speicher](https://azure.microsoft.com/documentation/articles/sql-database-in-memory-oltp-monitoring/).
+- [Überwachen Sie den In-Memory-Speicher](sql-database-in-memory-oltp-monitoring.md).
 
 - [Überwachen der Azure SQL-Datenbank mit dynamischen Verwaltungssichten](sql-database-monitoring-with-dmvs.md)
 
@@ -233,4 +233,4 @@ Sie sollten die Leistungseffekte Ihrer In-Memory-Implementierungen in der Produk
 
 - [Ratgeber für die Speicheroptimierung](http://msdn.microsoft.com/library/dn284308.aspx)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -13,7 +13,7 @@
    ms.topic="article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="01/12/2016"
+   ms.date="01/26/2016"
    ms.author="cherylmc"/>
 
 # Erstellen und Ändern einer ExpressRoute-Verbindung mit dem Azure-Ressourcen-Manager und mit PowerShell
@@ -169,7 +169,7 @@ In diesem Artikel werden Sie durch die Schritte zum Erstellen einer ExpressRoute
 		
 		CircuitProvisioningState         : Enabled
 
-	*ServiceProviderProvisioningState* enthält Informationen zum aktuellen Status der Bereitstellung auf Service Provider-Seite, und mit "Status" wird der Status auf Microsoft-Seite angegeben. Eine ExpressRoute-Verbindung muss sich im folgenden Zustand befinden, damit Sie sie verwenden können.
+	*ServiceProviderProvisioningState* enthält Informationen zum aktuellen Status der Bereitstellung auf Dienstanbieterseite, und mit „Status“ wird der Status auf Microsoft-Seite angegeben. Eine ExpressRoute-Verbindung muss sich im folgenden Zustand befinden, damit Sie sie verwenden können.
 
 		ServiceProviderProvisioningState : Provisioned
 		
@@ -183,7 +183,7 @@ In diesem Artikel werden Sie durch die Schritte zum Erstellen einer ExpressRoute
 
 
 
-5. **Überprüfen Sie regelmäßig den Status und Zustand des Verbindungsschlüssels.**
+6. **Überprüfen Sie regelmäßig den Status und Zustand des Verbindungsschlüssels.**
 
 	So sind Sie informiert, wenn Ihr Anbieter die Verbindung aktiviert hat. Sobald die Verbindung konfiguriert wurde, zeigt *ServiceProviderProvisioningState* wie im folgenden Beispiel den Status *Provisioned* an.
 
@@ -213,16 +213,12 @@ In diesem Artikel werden Sie durch die Schritte zum Erstellen einer ExpressRoute
 		ServiceKey                       : **************************************
 		Peerings                         : []
 
-6. **Erstellen Sie die Routingkonfiguration.**
-	
-	Lesen Sie die Schritt-für-Schritt-Anweisungen unter [Erstellen und Ändern des Routings für eine ExpressRoute-Verbindung](expressroute-howto-routing-arm.md).
+7. **Konfigurieren des Routings und Verknüpfen eines VNets**
 
->[AZURE.IMPORTANT]Diese Anweisungen gelten nur für Verbindungen, die über Service Provider erstellt wurden, von denen Layer 2-Konnektivitätsdienste angeboten werden. Wenn Sie einen Service Provider nutzen, der verwaltete Layer 3-Dienste anbietet (meist ein IPVPN, z. B. MPLS), übernimmt Ihr Konnektivitätsanbieter die Konfiguration und Verwaltung des Routings für Sie. In diesem Fall können Sie keine Peerings erstellen oder verwalten.
+	a. **Erstellen Sie die Routingkonfiguration.** Lesen Sie die Schrittanleitungen unter [Erstellen und Ändern des Routings für eine ExpressRoute-Verbindung](expressroute-howto-routing-arm.md).
 
-
-7. **Verknüpfen Sie ein VNet mit einer ExpressRoute-Verbindung.** 
-
-	Verknüpfen Sie als Nächstes ein VNet mit der ExpressRoute-Verbindung. Lesen Sie die Schritt-für-Schritt-Anweisungen unter [Verknüpfen von virtuellen Netzwerken mit ExpressRoute-Verbindungen](expressroute-howto-linkvnet-arm.md).
+		>[AZURE.NOTE] The instructions for routing only apply for circuits created with service providers offering Layer 2 connectivity services. If you are using a service provider offering managed Layer 3 services (typically an IPVPN, like MPLS), your connectivity provider will configure and manage routing for you. You will not be able to create or manage peerings in such cases. 
+	b. **Verknüpfen Sie Ihr VNet mit einer ExpressRoute-Verbindung.** Nachdem Sie sichergestellt haben, dass das Routing konfiguriert wurde, müssen Sie Ihr VNet mit Ihrer ExpressRoute-Verbindung verknüpfen. Lesen Sie die Schrittanleitungen unter [Verknüpfen von virtuellen Netzwerken mit ExpressRoute-Verbindungen](expressroute-howto-linkvnet-arm.md).
 
 ##  So rufen Sie den Status einer ExpressRoute-Verbindung ab
 
@@ -289,14 +285,14 @@ Ausführliche Beschreibungen aller Parameter erhalten Sie, wenn Sie Folgendes au
 
 ## So ändern Sie eine ExpressRoute-Verbindung
 
-Sie können bestimmte Eigenschaften einer ExpressRoute-Verbindung ändern, ohne die Konnektivität zu beeinträchtigen.
+Sie können bestimmte Eigenschaften einer ExpressRoute-Verbindung ändern, ohne die Konnektivität zu beeinträchtigen. Weitere Informationen zu Beschränkungen und Grenzwerten finden Sie auf der Seite [ExpressRoute – Häufig gestellte Fragen](expressroute-faqs.md).
 
-Sie können Folgendes durchführen:
+Folgende Einstellungen können Sie ändern, ohne Ausfallzeiten zu verursachen:
 
-- Aktivieren/Deaktivieren eines ExpressRoute Premium-Add-Ons für Ihre ExpressRoute-Verbindung ohne Ausfallzeit
+- Aktivieren/Deaktivieren des ExpressRoute Premium-Add-Ons für Ihre ExpressRoute-Verbindung ohne Ausfallzeit.
 - Erhöhen der Bandbreite Ihrer ExpressRoute-Verbindung ohne Ausfallzeit
 
-Weitere Informationen zu Beschränkungen und Grenzwerten finden Sie auf der Seite [ExpressRoute – Häufig gestellte Fragen](expressroute-faqs.md).
+
 
 ### Aktivieren des ExpressRoute Premium-Add-Ons
 
@@ -304,7 +300,7 @@ Für Ihre bereits vorhandene Verbindung können Sie das ExpressRoute Premium-Add
 
 		$ckt = Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
 
-		$ckt.Sku.Name = "Premium"
+		$ckt.Sku.Tier = "Premium"
 		$ckt.sku.Name = "Premium_MeteredData"
 
 		Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit $ckt
@@ -314,7 +310,13 @@ Für Ihre Verbindung sind nun die Features des ExpressRoute Premium-Add-Ons akti
 
 ### Deaktivieren des ExpressRoute Premium-Add-Ons
 
-Für Ihre bereits vorhandene Verbindung können Sie das ExpressRoute Premium-Add-On mit dem folgenden PowerShell-Cmdlet deaktivieren:
+Sie können das ExpressRoute Premium-Add-On für Ihre vorhandene Verbindung deaktivieren. Beachten Sie beim Deaktivieren des ExpressRoute Premium-Add-Ons Folgendes:
+
+- Sie müssen sicherstellen, dass die Anzahl von virtuellen Netzwerken, die mit der Verbindung verknüpft sind, kleiner als zehn ist, bevor Sie ein Downgrade von Premium auf Standard durchführen. Wenn Sie dies nicht beachten, tritt für die Updateanforderung ein Fehler auf, und Ihnen werden die Premium-Gebühren berechnet.
+- Sie müssen die Verknüpfung für alle virtuellen Netzwerke in anderen geopolitischen Regionen aufheben. Wenn Sie dies nicht beachten, tritt für die Updateanforderung ein Fehler auf, und Ihnen werden die Premium-Gebühren berechnet.
+- Ihre Routentabelle muss für das private Peering weniger als 4.000 Routen aufweisen. Wenn Ihre Routentabelle mehr als 4.000 Routen umfasst, wird die BGP-Sitzung verworfen. Eine erneute Aktivierung ist dann erst wieder möglich, wenn die Anzahl der angekündigten Präfixe unter 4.000 fällt.
+
+Verwenden Sie zum Deaktivieren des Premium-Add-Ons das unten stehende PowerShell-Cmdletbeispiel. Dieser Vorgang kann fehlschlagen, wenn Sie Ressourcen verwenden, die die zulässige Menge für die Standardverbindung überschreiten.
 	
 		$ckt = Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
 		
@@ -323,19 +325,13 @@ Für Ihre bereits vorhandene Verbindung können Sie das ExpressRoute Premium-Add
 		
 		Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit $ckt
 
-
-Das Premium-Add-On ist jetzt für Ihre Verbindung deaktiviert.
-
-Beachten Sie, dass dieser Vorgang fehlschlagen kann, wenn Sie Ressourcen verwenden, die die zulässige Menge für die Standardverbindung überschreiten.
-
-- Sie müssen sicherstellen, dass die Anzahl von virtuellen Netzwerken, die mit der Verbindung verknüpft sind, kleiner als zehn ist, bevor Sie ein Downgrade von Premium auf Standard durchführen. Wenn Sie dies nicht beachten, tritt für die Updateanforderung ein Fehler auf, und Ihnen werden die Premium-Gebühren berechnet.
-- Sie müssen die Verknüpfung für alle virtuellen Netzwerke in anderen geopolitischen Regionen aufheben. Wenn Sie dies nicht beachten, tritt für die Updateanforderung ein Fehler auf, und Ihnen werden die Premium-Gebühren berechnet.
-- Ihre Routentabelle muss für das private Peering weniger als 4.000 Routen aufweisen. Wenn Ihre Routentabelle mehr als 4.000 Routen umfasst, wird die BGP-Sitzung verworfen. Eine erneute Aktivierung ist dann erst wieder möglich, wenn die Anzahl der angekündigten Präfixe unter 4.000 fällt.
-
-
 ### Aktualisieren der Bandbreite für die ExpressRoute-Verbindung
 
-Informationen zu unterstützten Bandbreitenoptionen für Ihren Anbieter finden Sie auf der Seite [ExpressRoute – Häufig gestellte Fragen](expressroute-faqs.md). Sie können jede Größe auswählen, die die Größe der vorhandenen Verbindung übersteigt. Sobald Sie sich für die benötigte Größe entschieden haben, können Sie den folgenden Befehl verwenden, um die Größe der Verbindung anzupassen.
+Informationen zu unterstützten Bandbreitenoptionen für Ihren Anbieter finden Sie auf der Seite [ExpressRoute – Häufig gestellte Fragen](expressroute-faqs.md). Sie können jede Größe auswählen, die **größer** ist als die vorhandene Verbindung, ohne Ausfallzeiten zu verursachen.
+
+>[AZURE.IMPORTANT] Es ist nicht möglich, die Bandbreite einer ExpressRoute-Verbindung ohne Störungen zu reduzieren. Ein Downgrade der Bandbreite erfordert, dass Sie die Bereitstellung der ExpressRoute-Verbindung aufheben und dann eine neue ExpressRoute-Verbindung bereitstellen.
+
+Sobald Sie sich für die benötigte Größe entschieden haben, können Sie das folgende Beispiel verwenden, um die Größe der Verbindung anzupassen. Nachdem Sie die Cmdlets ausgeführt haben, wird die Größe Ihrer Verbindung auf der Microsoft-Seite sofort angepasst. Sie müssen sich an Ihren Konnektivitätsanbieter wenden, um die entsprechende Aktualisierung der Konfigurationen auf Anbieterseite vornehmen zu lassen. Beachten Sie, dass wir Ihnen ab diesem Zeitpunkt die aktualisierte Bandbreitenoption in Rechnung stellen.
 
 		$ckt = Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
 
@@ -343,24 +339,25 @@ Informationen zu unterstützten Bandbreitenoptionen für Ihren Anbieter finden S
 
 		Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit $ckt
 
-Die Größe Ihrer Verbindung wurde bereits auf der Microsoft-Seite angepasst. Sie müssen sich an Ihren Konnektivitätsanbieter wenden, um die entsprechende Aktualisierung der Konfigurationen auf Anbieterseite vornehmen zu lassen. Beachten Sie, dass wir Ihnen ab diesem Zeitpunkt die aktualisierte Bandbreitenoption in Rechnung stellen.
-
->[AZURE.IMPORTANT]Es ist nicht möglich, die Bandbreite einer ExpressRoute-Verbindung ohne Störungen zu reduzieren. Ein Downgrade der Bandbreite erfordert, dass Sie die Bereitstellung der ExpressRoute-Verbindung aufheben und dann eine neue ExpressRoute-Verbindung bereitstellen.
-
 ## So löschen Sie eine ExpressRoute-Verbindung und heben die Bereitstellung auf
 
-Sie können die ExpressRoute-Verbindung löschen, indem Sie den folgenden Befehl ausführen:
+Sie können Ihre ExpressRoute-Verbindung löschen. Wenn Sie eine ExpressRoute-Verbindung löschen, beachten Sie Folgendes:
+
+- Sie müssen die Verknüpfung aller virtuellen Netzwerke mit der ExpressRoute-Verbindung aufheben, damit dieser Vorgang erfolgreich durchgeführt werden kann. Überprüfen Sie, ob noch virtuelle Netzwerke mit der Verbindung verknüpft sind, falls dieser Vorgang nicht erfolgreich ist.
+
+- Wenn der Bereitstellungsstatus des Dienstanbieters für die ExpressRoute-Verbindung aktiviert ist, wechselt der Status von „enabled“ in *disabling*. Arbeiten Sie mit Ihrem Service Provider zusammen, um die Bereitstellung der Verbindung auf Anbieterseite aufzuheben. Wir reservieren weiterhin Ressourcen für Sie und stellen Ihnen dies in Rechnung, bis der Service Provider die Aufhebung der Verbindungsbereitstellung abgeschlossen hat und uns eine Benachrichtigung sendet.
+
+- Wenn der Dienstanbieter die Bereitstellung der Verbindung aufgehoben hat (Bereitstellungsstatus des Dienstanbieters lautet *not provisioned*), bevor Sie das Cmdlet ausführen, führen wir die Aufhebung der Verbindungsbereitstellung durch und stellen Ihnen keine Gebühren mehr in Rechnung.
+
+Führen Sie zum Löschen Ihrer ExpressRoute-Verbindung das unten stehende PowerShell-Cmdlet aus.
 
 		Remove-AzureRmExpressRouteCircuit -ResourceGroupName "ExpressRouteResourceGroup" -Name "ExpressRouteARMCircuit"
 
-Beachten Sie, dass Sie die Verknüpfung aller virtuellen Netzwerke für die ExpressRoute aufheben müssen, damit dieser Vorgang erfolgreich ist. Überprüfen Sie, ob noch virtuelle Netzwerke mit der Verbindung verknüpft sind, falls dieser Vorgang nicht erfolgreich ist.
-
-Wenn der Service Provider-Bereitstellungsstatus für die ExpressRoute-Verbindung aktiviert ist, wechselt der Status von "enabled" in *disabling*. Arbeiten Sie mit Ihrem Service Provider zusammen, um die Bereitstellung der Verbindung auf Anbieterseite aufzuheben. Wir reservieren weiterhin Ressourcen für Sie und stellen Ihnen dies in Rechnung, bis der Service Provider die Aufhebung der Verbindungsbereitstellung abgeschlossen hat und uns eine Benachrichtigung sendet.
-
-Wenn der Service Provider die Bereitstellung der Verbindung aufgehoben hat (Bereitstellungsstatus des Service Providers lautet *not provisioned*), bevor Sie das obige Cmdlet ausführen, führen wir die Aufhebung der Verbindungsbereitstellung durch und stellen Ihnen keine Gebühren mehr in Rechnung.
-
 ## Nächste Schritte
 
-- [Konfigurieren des Routings](expressroute-howto-routing-arm.md)
+Führen Sie nach dem Erstellen Ihrer Verbindung folgende Vorgänge aus:
 
-<!---HONumber=AcomDC_0114_2016-->
+1.  [Erstellen und Ändern des Routings für Ihre ExpressRoute-Verbindung](expressroute-howto-routing-arm.md)
+2.  [Verknüpfen Ihres virtuelles Netzwerks mit Ihrer ExpressRoute-Verbindung](expressroute-howto-linkvnet-arm.md)
+
+<!---HONumber=AcomDC_0128_2016-->

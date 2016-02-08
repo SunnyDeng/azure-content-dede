@@ -33,4 +33,4 @@ Wenn die App überhaupt keine Verbindung herstellen kann, ist der Grund meist di
 4.	Überprüfen Sie im Dashboard den Dienststatus. Wenn Sie glauben, dass es sich um einen regionalen Ausfall handelt, finden Sie unter [Wiederherstellen nach einem Ausfall](sql-database-disaster-recovery.md) Schritte zum Wiederherstellen in einer neuen Region.
 5.	Wenn die Verbindungsprobleme anhalten, wenden Sie sich an den Support, um ein Supportticket zu öffnen.
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

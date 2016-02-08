@@ -114,7 +114,7 @@ Um von externen Computern aus festzustellen, ob Tomcat ausgeführt wird, müssen
 9. Achten Sie im Bildschirm **Profil** darauf, dass **Domäne**, **Privat** und **Öffentlich** ausgewählt sind, und klicken Sie dann auf **Weiter**. ![Neue eingehende Regel – Profil][NewRuleProfile]
 10. Geben Sie im Bildschirm **Name** einen Namen für die Regel an, beispielsweise **HttpIn** (der Name der Regel muss jedoch nicht mit dem Namen des Endpunkts übereinstimmen). Klicken Sie anschließend auf **Fertig stellen**. ![Neue eingehende Regel – Name][NewRuleName]
 
-An dieser Stelle sollte die Tomcat-Website unter Verwendung einer URL im Format **http://*your\_DNS\_name*.cloudapp.net** über einen externen Browser sichtbar sein. Dabei ist ***your\_DNS\_name*** der DNS-Name, den Sie beim Erstellen des virtuellen Computers angegeben haben.
+An dieser Stelle sollte die Tomcat-Website unter Verwendung einer URL im Format ****http://*your\_DNS\_name*.cloudapp.net** über einen externen Browser sichtbar sein. Dabei ist ***your\_DNS\_name*** der DNS-Name, den Sie beim Erstellen des virtuellen Computers angegeben haben.
 
 ## Überlegungen zum Lebenszyklus von Anwendungen
 * Sie können Ihr eigenes Archiv für Web-Anwendungen (WAR) erstellen und im Ordner **webapps** hinzufügen. Erstellen Sie beispielsweise ein dynamisches JSP-Basiswebprojekt (Java Service Page), und exportieren Sie dieses als WAR-Datei. Kopieren Sie dann die WAR-Datei in den Apache Tomcat-Ordner **webapps** auf dem virtuellen Computer, und führen Sie das Projekt in einem Browser aus.
@@ -125,7 +125,7 @@ An dieser Stelle sollte die Tomcat-Website unter Verwendung einer URL im Format 
     Der automatische Start von Tomcat bietet den Vorteil, dass der Dienst gestartet wird, wenn ein Neustart des virtuellen Computer erfolgt (zum Beispiel nach der Installation von Softwareupdates, die einen Neustart erfordern).
 
 ## Nächste Schritte
-Weitere Informationen zu anderen Diensten wie beispielsweise Azure Storage, Service Bus und SQL-Datenbank, die Sie möglicherweise zusammen mit Ihren Java-Anwendungen verwenden möchten, finden Sie im [Java Developer Center](http://azure.microsoft.com/develop/java/).
+Weitere Informationen zu anderen Diensten wie beispielsweise Azure Storage, Service Bus und SQL-Datenbank, die Sie möglicherweise zusammen mit Ihren Java-Anwendungen verwenden möchten, finden Sie im [Java Developer Center](https://azure.microsoft.com/develop/java/).
 
 [virtual_machine_tomcat]: ./media/virtual-machines-java-run-tomcat-application-server/WA_VirtualMachineRunningApacheTomcat.png
 
@@ -146,4 +146,4 @@ Weitere Informationen zu anderen Diensten wie beispielsweise Azure Storage, Serv
 [NewRuleName]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleName.png
 [NewRuleProfile]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleProfile.png
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

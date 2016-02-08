@@ -38,13 +38,13 @@ Container stellen die folgenden Optionen zum Verwalten des Containerzugriffs ber
 
 Sie können Containerberechtigungen auf folgende Weise festlegen:
 
-- Im [Azure-Portal](portal.azure.com)
+- Im [Azure-Portal](https://portal.azure.com)
 - Programmgesteuert mithilfe der Speicherclientbibliothek oder der REST-API.
 - Mit PowerShell Informationen zum Festlegen von Containerberechtigungen über Azure PowerShell finden Sie unter [Verwenden von Azure PowerShell mit Azure Storage](storage-powershell-guide-full#how-to-manage-azure-blobs).
 
 ### Festlegen von Containerberechtigungen im Azure-Portal
 
-Befolgen Sie zum Festlegen von Containerberechtigungen im [Azure-Portal](portal.azure.com) diese Anweisungen:
+Befolgen Sie zum Festlegen von Containerberechtigungen im [Azure-Portal](https://portal.azure.com) diese Anweisungen:
 
 1. Navigieren Sie zum Dashboard Ihres Speicherkontos.
 2. Wählen Sie den Containernamen in der Liste aus. Beachten Sie, dass Sie rechts neben der Spalte „Name“ klicken müssen, um den Containernamen auszuwählen. Durch Klicken auf den Namen werden die im Container enthaltenen Blobs angezeigt.
@@ -155,4 +155,4 @@ Die folgende Tabelle zeigt, welche Vorgänge von anonymen Benutzern aufgerufen w
 - [Shared Access Signatures: Grundlagen zum SAS-Modell](storage-dotnet-shared-access-signature-part-1.md)
 - [Delegieren des Zugriffs mit einer Shared Access Signature](https://msdn.microsoft.com/library/azure/ee395415.aspx) 
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

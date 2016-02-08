@@ -35,7 +35,7 @@ Für dieses Lernprogramm benötigen Sie Folgendes:
 * Die [Android Developer Tools](https://developer.android.com/sdk/index.html) mit der integrierten Entwicklungsumgebung Android Studio sowie der neuesten Android-Plattform
 * Azure Mobile Android SDK, das automatisch als Teil des heruntergeladenen Schnellstartprojekts referenziert ist
 * Einen PC mit [Visual Studio Community 2013] oder neuer &ndash; für ein Node.js-Back-End nicht erforderlich
-* Ein [aktives Azure-Konto](http://azure.microsoft.com/pricing/free-trial/)
+* Ein [aktives Azure-Konto](https://azure.microsoft.com/pricing/free-trial/)
 
 ## Erstellen eines neuen mobilen Azure-App-Back-Ends
 
@@ -56,4 +56,4 @@ Für dieses Lernprogramm benötigen Sie Folgendes:
 [Azure portal]: https://portal.azure.com/
 [Visual Studio Community 2013]: https://go.microsoft.com/fwLink/p/?LinkID=534203
 
-<!----HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

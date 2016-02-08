@@ -1,9 +1,9 @@
 <properties
    pageTitle="Erstellen und Bereitstellen von Visual Studio-Projekten für Azure-Ressourcengruppen | Microsoft Azure"
    description="Verwenden Sie Visual Studio, um ein Azure-Ressourcengruppenprojekt zu erstellen und die Ressourcen in Azure bereitzustellen."
-   services="visual-studio-online"
+   services="azure-resource-manager"
    documentationCenter="na"
-   authors="TomArcher"
+   authors="tfitzmac"
    manager="douge"
    editor="" />
 <tags
@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="11/13/2015"
-   ms.author="tarcher" />
+   ms.author="tomfitz" />
 
 # Erstellen und Bereitstellen von Azure-Ressourcengruppen mit Visual Studio
 
@@ -39,7 +39,7 @@ In diesem Verfahren lernen Sie, ein Azure-Ressourcengruppenprojekt mit einer **W
 
     Sie können der Ressourcengruppe später auch weitere Ressourcen hinzufügen.
 
-    >[AZURE.NOTE]Die Liste der verfügbaren Vorlagen wird online abgerufen und kann sich ändern.
+    >[AZURE.NOTE] Die Liste der verfügbaren Vorlagen wird online abgerufen und kann sich ändern.
 
     Visual Studio erstellt ein Bereitstellungsprojekt für Azure-Ressourcengruppen für eine Web-App.
 
@@ -92,7 +92,7 @@ Azure-Ressourcengruppenprojekte werden in Azure-Ressourcengruppen bereitgestellt
 
     ![Dialogfeld "Ressourcengruppe erstellen"](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/IC796674.png)
 
-    >[AZURE.NOTE]Zu Beginn eines neuen Bereitstellungsprojekts ist es normalerweise sinnvoll, eine neue Ressourcengruppe zu erstellen, in der die Bereitstellung erfolgt.
+    >[AZURE.NOTE] Zu Beginn eines neuen Bereitstellungsprojekts ist es normalerweise sinnvoll, eine neue Ressourcengruppe zu erstellen, in der die Bereitstellung erfolgt.
 
 1. Geben Sie einen Namen und Speicherort für die Ressourcengruppe ein, und wählen Sie dann die Schaltfläche **Erstellen** aus.
 
@@ -108,15 +108,15 @@ Azure-Ressourcengruppenprojekte werden in Azure-Ressourcengruppen bereitgestellt
 
     - Der *siteName*-Parameter ist der erste Teil der URL der Webseite. Beispielsweise ist in der URL "mywebsitename.azurewebsites.net" der Name der Website **mywebsitename**.
 
-    - Der *hostingPlanName*-Parameter gibt den Hostingplan an. In diesem Beispiel können Sie "Free" verwenden. Weitere Informationen zu Hostingplänen finden Sie unter [Azure App Service-Pläne – Detaillierte Übersicht](http://azure.microsoft.com/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/).
+    - Der *hostingPlanName*-Parameter gibt den Hostingplan an. In diesem Beispiel können Sie "Free" verwenden. Weitere Informationen zu Hostingplänen finden Sie unter [Azure App Service-Pläne – Detaillierte Übersicht](https://azure.microsoft.com/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/).
 
-    - Der *siteLocation*-Parameter steht für die Azure-Region, in der die Website gehostet werden soll, wie etwa "USA, Westen". Eine Liste der verfügbaren Regionen finden Sie unter [Azure-Regionen](http://azure.microsoft.com/regions/).
+    - Der *siteLocation*-Parameter steht für die Azure-Region, in der die Website gehostet werden soll, wie etwa "USA, Westen". Eine Liste der verfügbaren Regionen finden Sie unter [Azure-Regionen](https://azure.microsoft.com/regions/).
 
 1. Wählen Sie die Schaltfläche **Bereitstellen** aus, um das Projekt in Azure bereitzustellen.
 
     Sie können den Verlauf der Bereitstellung im Fenster **Ausgabe** sehen. Abhängig von Ihrer Konfiguration kann die Bereitstellung mehrere Minuten in Anspruch nehmen.
 
-    >[AZURE.NOTE]Sie werden möglicherweise aufgefordert, die Microsoft Azure PowerShell-Cmdlets zu installieren. Da diese Cmdlets zum Bereitstellen von Azure-Ressourcengruppen erforderlich sind, müssen Sie sie installieren.
+    >[AZURE.NOTE] Sie werden möglicherweise aufgefordert, die Microsoft Azure PowerShell-Cmdlets zu installieren. Da diese Cmdlets zum Bereitstellen von Azure-Ressourcengruppen erforderlich sind, müssen Sie sie installieren.
 
 1. Öffnen Sie in Ihrem Browser das [Azure-Vorschauportal](https://portal.azure.com/). Da es sich um eine neue Änderung handelt, sollte auf der Registerkarte **Benachrichtigungen** eine neue Benachrichtigung verfügbar sein. Wählen Sie sie aus, um Details zur neuen Azure-Ressourcengruppe anzuzeigen. Eine Liste aller verfügbaren Ressourcengruppen wird angezeigt, wenn Sie die Registerkarte **Durchsuchen** und dort **Ressourcengruppen** auswählen.
 
@@ -196,4 +196,4 @@ Anpassungen wurden auch an einigen Variablennamen und Buildaufgaben vorgenommen,
 
 Informationen zum Hinzufügen von Ressourcen zu Ihrer Azure-Ressourcengruppe in Visual Studio finden Sie unter [Bearbeiten von Ressourcen-Manager-Vorlagen mit Visual Studio](vs-azure-tools-resource-group-adding-resources.md).
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0128_2016-->

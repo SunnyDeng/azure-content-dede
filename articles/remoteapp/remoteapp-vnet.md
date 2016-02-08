@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="12/05/2015"
+    ms.date="01/22/2016"
     ms.author="elizapo" />
 
 
@@ -33,8 +33,8 @@ Anschließend kann das Azure-VNET mit RemoteApp verwendet werden.
 
 Weitere Informationen zum End-to-End-Workflow für Hybridsammlungen finden Sie in den folgenden Artikeln:
 
-- [How to plan your virtual network for Azure RemoteApp (auf Englisch)](remoteapp-planvpn.md)
+- [How to plan your virtual network for Azure RemoteApp (auf Englisch)](remoteapp-planvnet.md)
 - [Erstellen einer Hybridsammlung](remoteapp-create-hybrid-deployment.md)
 - [Bereitstellen einer Azure RemoteApp-Sammlung für Azure Virtual Network (mit ExpressRoute-Unterstützung)](http://blogs.msdn.com/b/rds/archive/2015/04/23/deploy-azure-remoteapp-collection-to-your-azure-virtual-network-with-support-for-expressroute.aspx)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

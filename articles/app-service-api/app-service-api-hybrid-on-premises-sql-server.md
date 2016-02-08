@@ -24,7 +24,7 @@ Hybridverbindungen ermöglichen die Verbindung von [Azure App Service](http://go
 
 In diesem Tutorial erfahren Sie, wie eine App Service-API-App in der [Azure-Vorschau](http://go.microsoft.com/fwlink/?LinkId=529715) erstellt wird, die mithilfe der neuen Funktion für Hybridverbindungen eine Verbindung mit einer lokalen SQL Server-Datenbank herstellt. Bei diesem Tutorial wird davon ausgegangen, dass Sie noch keine Erfahrungen mit der Verwendung von Azure oder SQL Server haben.
 
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Voraussetzungen
 
@@ -75,7 +75,7 @@ Wenn Sie SQL Server bereits in einer Konfiguration und Umgebung installiert habe
 <a name="InstallSQL"></a>
 ## Installieren von SQL Server Express, Aktivieren von TCP/IP und Erstellen einer lokalen SQL Server-Datenbank
 
-In diesem Abschnitt wird erläutert, wie Sie SQL Server Express installieren, TCP/IP aktivieren und eine Datenbank erstellen, damit Ihre API-App im [Azure-Vorschauportal](https://portal.azure.com) funktioniert.
+In diesem Abschnitt wird erläutert, wie Sie SQL Server Express installieren, TCP/IP aktivieren und eine Datenbank erstellen, damit Ihre API-App im [Azure-Vorschauportal](https://portal.azure.com/) funktioniert.
 
 <a name="InstallSQLDB"></a>
 ### SQL Server Express installieren
@@ -202,7 +202,7 @@ In diesem Abschnitt wird das Erstellen der Demo-API-App erläutert.
 
 10. Ersetzen Sie den Code in der Datei `SpeakersController.cs` durch den folgenden Code. Geben Sie Ihre eigenen Werte für die Platzhalter „&lt;serverName>“ und „&lt;password>“ in `connectionString` an. Der Wert &lt;serverName> ist der Name des Computers, auf dem sich SQL Server befindet, und der Wert &lt;password> ist der, den Sie beim Installieren und Konfigurieren von SQL Server festgelegt haben.
 
-	> [AZURE.NOTE]Der folgende Codeausschnitt enthält Kennwortinformationen. Dies dient dazu, die Demo einfach zu halten. In einer realen Produktionsumgebung sollten Sie Ihre Anmeldeinformationen nicht im Code speichern. Lesen Sie stattdessen die [bewährten Methoden für das Bereitstellen von Kennwörtern (und anderen vertraulichen Daten) in ASP.NET und Azure](http://www.asp.net/identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure).
+	> [AZURE.NOTE] Der folgende Codeausschnitt enthält Kennwortinformationen. Dies dient dazu, die Demo einfach zu halten. In einer realen Produktionsumgebung sollten Sie Ihre Anmeldeinformationen nicht im Code speichern. Lesen Sie stattdessen die [bewährten Methoden für das Bereitstellen von Kennwörtern (und anderen vertraulichen Daten) in ASP.NET und Azure](http://www.asp.net/identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure).
 
 		using System;
 		using System.Collections.Generic;
@@ -332,7 +332,7 @@ Nachdem Sie die App lokal getestet haben, ist es Zeit, die App in Azure bereitzu
 	- Wenn Sie über mehrere Azure-Abonnements verfügen, wählen Sie dasjenige aus, das Sie verwenden möchten.
 	- Treffen Sie unter **App Service-Plan** eine Auswahl aus Ihren vorhandenen App Service-Plänen, oder wählen Sie **Neuen App Service-Plan erstellen** aus, und geben Sie den Namen eines neuen Plans ein. 
 	- Wählen Sie unter **Ressourcengruppe** eine vorhandene Ressourcengruppe aus, oder wählen Sie **Neue Ressourcengruppe erstellen**, und geben Sie einen Namen ein. Der Name muss eindeutig sein. Verwenden Sie eventuell den App-Namen als Präfix, und hängen Sie persönliche Informationen wie z. B. Ihre Microsoft-ID (ohne das @-Zeichen) an.  
-	- Wählen Sie unter **Zugriffsebene** die Option **Für alle Benutzer verfügbar** aus. Durch diese Option wird steht die gesamte API öffentlich zur Verfügung, was für dieses Lernprogramm in Ordnung ist. Sie können den Zugriff später über das [Azure-Vorschauportal](https://portal.azure.com) einschränken.
+	- Wählen Sie unter **Zugriffsebene** die Option **Für alle Benutzer verfügbar** aus. Durch diese Option wird steht die gesamte API öffentlich zur Verfügung, was für dieses Lernprogramm in Ordnung ist. Sie können den Zugriff später über das [Azure-Vorschauportal](https://portal.azure.com/) einschränken.
 	- Wählen Sie eine Region aus.
 
 	Klicken Sie auf **OK**, um die API-App in Ihrem Abonnement zu erstellen.
@@ -355,7 +355,7 @@ Im Fenster **Azure App Service-Aktivität** wird der Bereitstellungsfortschritt 
 
 ## Erstellen einer Hybridverbindung und eines BizTalk-Diensts ##
 
-1. Navigieren Sie in Ihrem Browser zum [Azure-Vorschauportal](https://portal.azure.com). 
+1. Navigieren Sie in Ihrem Browser zum [Azure-Vorschauportal](https://portal.azure.com/). 
 
 2. Klicken Sie auf der linken Seite auf die Option **Alle durchsuchen**.
 
@@ -432,4 +432,4 @@ Nachdem die Hybridverbindungsinfrastruktur jetzt vollständig ist, können Sie d
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../../includes/app-service-web-whats-changed.md)]
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

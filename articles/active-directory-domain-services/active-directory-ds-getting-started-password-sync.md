@@ -4,7 +4,7 @@
 	services="active-directory-ds"
 	documentationCenter=""
 	authors="mahesh-unnikrishnan"
-	manager="udayh"
+	manager="stevenpo"
 	editor="curtand"/>
 
 <tags
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/09/2015"
+	ms.date="01/26/2016"
 	ms.author="maheshu"/>
 
 # Azure AD-Domänendienste *(Vorschau)* – Erste Schritte
@@ -24,7 +24,7 @@ Nachdem Sie Azure Active Directory-Domänendienste für Ihren Azure AD-Mandanten
 Die einzelnen Schritte unterscheiden sich je nachdem, ob es sich bei Ihrer Organisation um einen reinen Cloud-Azure AD-Mandanten handelt oder ob die Synchronisierung mit Ihrem lokalen Verzeichnis über Azure AD Connect festgelegt ist.
 
 ### Reine Cloudmandanten: Aktivieren der Hashgenerierung für NTLM- und Kerberos-Anmeldeinformationen in Azure AD
-Wenn es sich bei Ihrer Organisation um einen reinen Cloud-Azure AD-Mandanten handelt, müssen Benutzer, die Azure Active Directory-Domänendienste verwenden, ihre Kennwörter ändern. Dieser Schritt führt dazu, dass die Anmeldeinformationshashes, die von den Azure AD-Domänendiensten für die Kerberos- und NTLM-Authentifizierung benötigt werden, in Azure AD generiert werden. Sie können entweder die Kennwörter für alle Benutzer im Mandanten ablaufen lassen, die Azure AD-Domänendienste verwenden sollen, oder diese Benutzer zum Ändern ihrer Kennwörter anweisen.
+Wenn es sich bei Ihrer Organisation um einen reinen Cloud-Azure AD-Mandanten handelt, müssen Benutzer, die Azure Active Directory-Domänendienste verwenden, ihre Kennwörter ändern. Dieser Schritt führt dazu, dass die Anmeldeinformationshashes, die von den Azure AD-Domänendiensten für die Kerberos- und NTLM-Authentifizierung benötigt werden, in Azure AD generiert werden. Sie können entweder die Kennwörter für alle Benutzer im Mandanten ablaufen lassen, die Azure AD-Domänendienste verwenden müssen, oder diese Benutzer zum Ändern ihrer Kennwörter anweisen.
 
 Hier finden Sie Anweisungen, die Sie den Benutzern zur Änderung ihrer Kennwörter bereitstellen müssen:
 
@@ -46,15 +46,13 @@ Wenn der Azure AD-Mandant für Ihre Organisation so festgelegt ist, dass er übe
 
 #### Installieren oder Aktualisieren von Azure AD Connect
 
-Sie müssen die neueste empfohlene Version von Azure AD Connect auf einem in die Domäne eingebundenen Computer installieren. Wenn Sie über eine vorhandene Instanz von Azure AD Connect-Setup verfügen, müssen Sie sie aktualisieren, damit der Azure AD Connect-GA-Build verwendet wird. Stellen Sie sicher, dass Sie die aktuelle Version von Azure AD Connect verwenden, um bekannte Probleme oder Fehler zu vermeiden.
+Sie müssen die neueste empfohlene Version von Azure AD Connect auf einem in die Domäne eingebundenen Computer installieren. Wenn Sie über eine vorhandene Instanz von Azure AD Connect-Setup verfügen, müssen Sie sie aktualisieren, damit der Azure AD Connect-GA-Build verwendet wird. Stellen Sie sicher, dass Sie die neueste Version von Azure AD Connect verwenden, um bekannte Probleme oder Fehler zu vermeiden.
 
 **[Azure AD Connect herunterladen](http://www.microsoft.com/download/details.aspx?id=47594)**
 
-Empfohlene Mindestversion: **1.0.9125** – veröffentlicht am 3. November 2015
+Empfohlene Mindestversion: **1.0.9131** – veröffentlicht am 3. Dezember 2015
 
-  >[AZURE.WARNING]Sie müssen die neueste empfohlene Version von Azure AD Connect installieren, um ältere Anmeldeinformationen zu aktivieren (erforderlich für NTLM- und Kerberos-Authentifizierung) und Ihren Azure AD-Mandanten zu synchronisieren. Diese Funktionalität ist in früheren Versionen von Azure AD Connect oder im DirSync-Legacytool nicht verfügbar.
-
-HINWEIS: Bei der neuesten Version von Azure AD Connect(d. h. 1.0.9125 oder höher) müssen Sie nicht mehr den Registrierungsschlüssel „EnableWindowsLegacyCredentialsSync“ erstellen.
+  >[AZURE.WARNING] Sie müssen die neueste empfohlene Version von Azure AD Connect installieren, um ältere Anmeldeinformationen zu aktivieren (erforderlich für NTLM- und Kerberos-Authentifizierung) und Ihren Azure AD-Mandanten zu synchronisieren. Diese Funktionalität ist in früheren Versionen von Azure AD Connect oder im DirSync-Legacytool nicht verfügbar.
 
 Installationshinweise für Azure AD Connect finden Sie im folgenden Artikel: [Erste Schritte mit Azure AD Connect](../active-directory/active-directory-aadconnect.md)
 
@@ -79,4 +77,4 @@ Set-ADSyncAADPasswordSyncConfiguration -SourceConnector $adConnector -TargetConn
 
 Abhängig von der Größe Ihres Verzeichnisses (Anzahl der Benutzer, Gruppen usw.) nimmt die Synchronisierung von Anmeldeinformationen mit Azure AD etwas Zeit in Anspruch. Die Kennwörter können kurz nach der Synchronisierung der Hashes für die Anmeldeinformationen mit Azure AD in der verwalteten Domäne der Azure AD-Domänendienste verwendet werden.
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

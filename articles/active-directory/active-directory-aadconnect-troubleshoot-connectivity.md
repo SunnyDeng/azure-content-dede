@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/11/2016"
+	ms.date="01/21/2016"
 	ms.author="andkjell"/>
 
 # Problembehebung bei Konnektivitätsproblemen mit Azure AD Connect
@@ -26,7 +26,7 @@ In diesem Artikel zeigen wir Ihnen, wie Fabrikam durch seinen Proxy mit Azure AD
 
 Zunächst stellen wir sicher, dass [**machine.config**](active-directory-aadconnect-prerequisites.md#connectivity) richtig konfiguriert ist. ![machineconfig](./media/active-directory-aadconnect-troubleshoot-connectivity/machineconfig.png)
 
-> [AZURE.NOTE]Laut einiger Blogs sollen Änderungen stattdessen an „miiserver.exe.config“ vorgenommen werden. Diese Datei wird jedoch mit jeder Aktualisierung überschrieben. Selbst wenn das System nach der Erstinstallation funktionieren sollte, ist das nach der ersten Aktualisierung nicht mehr der Fall. Daher wird empfohlen, stattdessen „machine.config“ zu aktualisieren.
+> [AZURE.NOTE] Laut einiger Blogs sollen Änderungen stattdessen an „miiserver.exe.config“ vorgenommen werden. Diese Datei wird jedoch mit jeder Aktualisierung überschrieben. Selbst wenn das System nach der Erstinstallation funktionieren sollte, ist das nach der ersten Aktualisierung nicht mehr der Fall. Daher wird empfohlen, stattdessen „machine.config“ zu aktualisieren.
 
 Danach stellen wir sicher, dass winhttp konfiguriert wurde. Überprüfen Sie das mit [**netsh**](active-directory-aadconnect-prerequisites.md#connectivity). ![netsh](./media/active-directory-aadconnect-troubleshoot-connectivity/netsh.png)
 
@@ -37,9 +37,7 @@ Die folgende Tabelle zeigt die Grundvoraussetzungen für eine Verbindung mit Azu
 | URL | Port | Beschreibung |
 | ---- | ---- | ---- |
 | mscrl.microsoft.com | HTTP/80 | Wird verwendet um CRL-Listen (Zertifikatsperrlisten) herunterzuladen. |
-| *.verisign.com | HTTP/80 |Wird verwendet um Zertifikatsperrlisten herunterzuladen. |
-| *.windows.net | HTTPS/443 |Wird verwendet um sich in Azure AD anzumelden. |
-| *.microsoftonline.com |HTTPS/443 | Wird verwendet, um das Azure AD-Verzeichnis zu konfigurieren und um Daten zu importieren und exportieren. |
+| **.verisign.com | HTTP/80 |Wird verwendet um Zertifikatsperrlisten herunterzuladen. || *.windows.net | HTTPS/443 |Wird verwendet um sich in Azure AD anzumelden. | | *.microsoftonline.com |HTTPS/443 | Wird verwendet, um das Azure AD-Verzeichnis zu konfigurieren und um Daten zu importieren und exportieren. |
 
 ## Fehler im Assistenten
 Der Installations-Assistent verwendet zwei verschiedene Sicherheitskontexte. Auf der Seite **Mit Azure AD verbinden** verwendet er den aktuell angemeldeten Benutzer. Auf der Seite **Konfigurieren** wechselt er auf das [Konto, das den Dienst für das Synchronisierungsmodul ausführt](active-directory-aadconnect-accounts-permissions.md#azure-ad-connect-sync-service-accounts). Die Proxykonfigurationen, die wir vornehmen, gelten für den ganzen Computer. Daher werden auftretende Probleme höchstwahrscheinlich bereits auf der **Mit Azure AD verbinden**-Seite des Assistenten angezeigt.
@@ -126,4 +124,4 @@ Time | URL
 1/11/2016 8:49 | connect://*bba900-anchor*.microsoftonline.com:443
 1/11/2016 8:49 | connect://*bba800-anchor*.microsoftonline.com:443
 
-<!----HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

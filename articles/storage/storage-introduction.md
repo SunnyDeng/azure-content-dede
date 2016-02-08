@@ -1,36 +1,36 @@
-<properties 
-	pageTitle="Einführung in Storage | Microsoft Azure" 
-	description="Eine Übersicht über Microsoft Azure Storage." 
-	services="storage" 
-	documentationCenter="" 
-	authors="tamram" 
-	manager="carmonm" 
+<properties
+	pageTitle="Einführung in Storage | Microsoft Azure"
+	description="Eine Übersicht über Azure Storage, dem Onlinedatenspeicher von Microsoft in der Cloud. Erfahren Sie, wie Sie die beste verfügbare Cloudspeicherlösung in Ihren Anwendungen einsetzen."
+	services="storage"
+	documentationCenter=""
+	authors="tamram"
+	manager="carmonm"
 	editor="tysonn"/>
 
-<tags 
-	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="01/05/2016" 
+<tags
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="01/22/2016"
 	ms.author="tamram"/>
 
 # Einführung in Microsoft Azure Storage
 
 ## Übersicht
 
-Dieser Artikel enthält eine ausführliche Einführung in Microsoft Azure Storage für Entwickler, IT-Fachleute und geschäftliche Entscheidungsträger. In diesem Artikel lernen Sie Folgendes:
+Azure Storage ist eine Cloudspeicherlösung für moderne Anwendungen, die eine Kombination aus Zuverlässigkeit, Verfügbarkeit und Skalierbarkeit bietet, um die Anforderungen Ihrer Kunden zu erfüllen. In diesem Artikel erfahren Entwickler, IT-Experten und Entscheidungsträger Folgendes:
 
 - Was Azure Storage ist und wie Sie in Ihren Cloud-, Mobilgerät-, Server- und Desktop-Anwendungen davon profitieren können
-- Welche Arten von Daten Sie mithilfe folgender Azure Storage-Dienste speichern können: Blob-, Tabellen-, Warteschlangen- und Dateispeicher
+- Welche Arten von Daten Sie mithilfe folgender Azure Storage-Dienste speichern können: Blobdaten (Objektdaten), NoSQL-Tabellendaten, Warteschlangennachrichten und Dateifreigaben
 - Wie der Zugriff auf Ihre Daten in Azure Storage verwaltet wird
-- Wie Ihre Azure Storage-Daten durch Redundanz und Replikation gesichert werden 
+- Wie Ihre Azure Storage-Daten durch Redundanz und Replikation gesichert werden
 - Welche Schritte erforderlich ist, um Ihre erste Azure Storage-Anwendung zu erstellen
 
 Informationen zu den ersten Schritten mit Azure Storage finden Sie unter [Erste Schritte mit Azure-Blobs, -Tabellen und -Warteschlangen in 5 Minuten](storage-getting-started-guide.md).
 
-Hier finden Sie eine allgemeine Übersicht über Speicher. Eine produktspezifische Übersicht finden Sie jeweils unter „Azure-Blobs, Azure-Tabellen, Azure-Warteschlangen und Azure-Dateien“.
+Informationen zu Tools, Bibliotheken und weiteren Ressourcen für die Arbeit mit Azure Storage finden Sie unter [Nächste Schritte](next-steps) weiter unten.
 
 ## Was ist Azure Storage?
 
@@ -46,7 +46,7 @@ Der Azure-Speicher ist weltweit und von jeder Art von Anwendung erreichbar, egal
 
 Azure Storage unterstützt Kunden mit verschiedenen Betriebssystemen (z. B. Windows und Linux) und einer Vielzahl von Programmiersprachen (darunter .NET, Java und C++) für eine problemlose Entwicklung. Azure Storage macht auch Datenressourcen über einfache REST-APIs verfügbar, die auf jedem Client ausgeführt werden können, der Daten über HTTP/HTTPS senden und empfangen kann.
 
-Azure Premium Storage bietet eine leistungsstarke Datenträgerunterstützung mit niedriger Latenz für E/A-intensive Workloads, die auf virtuellen Azure-Computern ausgeführt werden. Mit Azure Premium Storage können Sie mehrere persistente Datenträger an einen virtuellen Computer anfügen und diese gemäß Ihren Leistungsanforderungen konfigurieren. Jeder Datenträger wird für maximale E/A-Leistung von einer SSD-Festplatte in Azure Premium Storage unterstützt. Weitere Informationen finden Sie unter [Premium-Speicher: Hochleistungsspeicher für Workloads auf virtuellen Azure-Computern](../storage-premium-storage-preview-portal).
+Azure Premium Storage bietet eine leistungsstarke Datenträgerunterstützung mit niedriger Latenz für E/A-intensive Workloads, die auf virtuellen Azure-Computern ausgeführt werden. Mit Azure Premium Storage können Sie mehrere persistente Datenträger an einen virtuellen Computer anfügen und diese gemäß Ihren Leistungsanforderungen konfigurieren. Jeder Datenträger wird für maximale E/A-Leistung von einer SSD-Festplatte in Azure Premium Storage unterstützt. Weitere Informationen finden Sie unter Premium-Speicher: Hochleistungsspeicher für Workloads auf virtuellen Azure-Computern.
 
 ## Anwenden der Azure Storage-Dienste
 
@@ -55,18 +55,18 @@ Ein Azure-Speicherkonto ist ein sicheres Konto, mit dem Sie Zugriff auf Dienste 
 - Ein Standardspeicherkonto umfasst Blob-, Tabellen- und Warteschlangenspeicher.
 - Ein Premium-Speicherkonto unterstützt aktuell ausschließlich Festplatten virtueller Azure-Computer.
 
-Um ein Speicherkonto erstellen zu können, müssen Sie über ein Azure-Abonnement verfügen. Dies ist ein Plan, der Ihnen Zugriff auf eine Vielzahl von Azure-Diensten verschafft. [Sie können bis zu 100 eindeutig benannte Speicherkonten unter einem einzigen Abonnement erstellen.](../azure-subscription-service-limits.md) Informationen zu Volumenpreisen finden Sie unter [Speicherpreisübersicht](http://azure.microsoft.com/pricing/details/storage/).
+Um ein Speicherkonto erstellen zu können, müssen Sie über ein Azure-Abonnement verfügen. Dies ist ein Plan, der Ihnen Zugriff auf eine Vielzahl von Azure-Diensten verschafft. [Sie können bis zu 100 eindeutig benannte Speicherkonten unter einem einzigen Abonnement erstellen.](../azure-subscription-service-limits.md) Informationen zu Volumenpreisen finden Sie unter [Speicherpreisübersicht](https://azure.microsoft.com/pricing/details/storage/).
 
-Sie können die Verwendung von Azure mit einem [kostenlosen Testkonto](http://azure.microsoft.com/pricing/free-trial/) starten. Wenn Sie sich entscheiden, einen Plan zu kaufen, können Sie aus einer Vielzahl von [Kaufoptionen](http://azure.microsoft.com/pricing/purchase-options/) auswählen. [MSDN-Abonnenten](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) erhalten ein monatliches Gratis-Guthaben für Azure-Dienste, inklusive Azure-Speicher.
+Sie können die Verwendung von Azure mit einem [kostenlosen Testkonto](https://azure.microsoft.com/pricing/free-trial/) starten. Wenn Sie sich entscheiden, einen Plan zu kaufen, können Sie aus einer Vielzahl von [Kaufoptionen](https://azure.microsoft.com/pricing/purchase-options/) auswählen. [MSDN-Abonnenten](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) erhalten ein monatliches Gratis-Guthaben für Azure-Dienste, inklusive Azure-Speicher.
 
 ### Standardspeicherkonten
 
 Mit einem Standardspeicherkonto erhalten Sie Zugriff auf Blob-, Tabellen-, Warteschlangen- und Dateispeicher:
 
-- Im **Blobspeicher** werden Dateidaten gespeichert. Ein Blob kann jede Art von Text- oder binären Daten sein, z. B. ein Dokument, eine Mediendatei oder ein Anwendungs-Installer. Der BLOB-Speicher wird mitunter als Objektspeicher bezeichnet. 
+- Im **Blob Storage** werden Dateidaten gespeichert. Ein Blob kann jede Art von Text- oder binären Daten sein, z. B. ein Dokument, eine Mediendatei oder ein Anwendungs-Installer. Der BLOB-Speicher wird mitunter als Objektspeicher bezeichnet.
 - Im **Tabellenspeicher** werden strukturierte Datensätze gespeichert. Der Tabellenspeicher ist ein NoSQL-Schlüssel-/Attribut-Datenspeicher, der eine rasche Entwicklung und schnellen Zugriff auf große Datenmengen erlaubt.
-- Der **Warteschlangenspeicher** bietet eine zuverlässige Nachrichtenfunktion zur Workflowverarbeitung und zur Kommunikation zwischen Komponenten von Clouddiensten.
-- Der **Dateispeicher** bietet einen gemeinsam genutzten Speicher für ältere Anwendungen und verwendet dabei das standardmäßige SMB-Protokoll. Virtuelle Azure-Computer und Clouddienste können Dateidaten in verschiedenen Anwendungskomponenten über eingebundene Freigaben teilen, und lokale Anwendungen können über die REST-API des Dateidiensts auf freigegebene Dateien zugreifen. 
+- **Queue Storage** bietet eine zuverlässige Nachrichtenfunktion zur Workflowverarbeitung und zur Kommunikation zwischen Komponenten von Clouddiensten.
+- **File Storage** bietet einen gemeinsam genutzten Speicher für Legacyanwendungen unter Verwendung des standardmäßige SMB-Protokolls. Virtuelle Azure-Computer und Clouddienste können Dateidaten in verschiedenen Anwendungskomponenten über eingebundene Freigaben teilen, und lokale Anwendungen können über die REST-API des Dateidiensts auf freigegebene Dateien zugreifen.
 
 Jedes Standardspeicherkonto kann bis zu 500 TB an kombinierten Blob-, Warteschlangen-, Tabellen- und Dateidaten enthalten. Unter [Ziele für Skalierbarkeit und Leistung des Azure-Speichers](storage-scalability-targets.md) finden Sie weitere Details zur Kapazität von Standardspeicherkonten.
 
@@ -86,7 +86,7 @@ Azure Premium Storage unterstützt derzeit nur Datenträger in virtuellen Azure-
 
 Für Benutzer mit großen Mengen unstrukturierter Daten, die in einer Cloud gespeichert werden sollen, bietet der Blob-Speicher eine kostengünstige und skalierbare Lösung. Der Blob-Speicher dient zur Speicherung der folgenden Inhalte:
 
-- Dokumente 
+- Dokumente
 - Daten aus sozialen Netzwerken wie Fotos, Videos, Musik und Blogs
 - Sicherungskopien von Dateien, Computern, Datenbanken und Geräten
 - Bilder und Texte für Webanwendungen
@@ -155,7 +155,7 @@ Kunden werden Azure-Speicherdienste auf der Basis der folgenden vier Faktoren in
 
 Speicherkapazität bezieht sich darauf, wie viel von Ihrer Speicherkontozuweisung zum Speichern von Daten verwendet wird. Die Kosten des einfachen Speicherns von Daten wird dadurch bestimmt, wie viele Daten Sie speichern und wie diese Daten repliziert werden. Für jede Lese- und Schreiboperation auf dem Azure-Speicher wird außerdem eine Anfrage an den Dienst ausgeführt. Datenausgang bezieht sich auf die Daten, die aus einer Microsoft Azure-Region heraus übertragen werden. Wenn eine Anwendung, die nicht in der gleichen Region ausgeführt wird und entweder ein Clouddienst oder ein anderer Anwendungstyp ist, auf die Daten in Ihrem Speicherkonto zugreift, fallen Gebühren für den Datenausgang an. (Für Microsoft Azure-Dienste können Sie Maßnahmen ergreifen, um Ihre Daten und Dienste in den gleichen Datencentern zu gruppieren und auf diese Weise Prozess- und Datenausgangsgebühren zu senken oder komplett einzusparen.)
 
-Die Seite mit der [Speicherpreisübersicht](http://azure.microsoft.com/pricing/details/storage/) bietet detaillierte Preisinformationen für Speicherkapazität, Replikation und Transaktionen. In der [Datenübertragungs-Preisübersicht](http://azure.microsoft.com/pricing/details/data-transfers/) finden Sie detaillierte Preisinformationen für den Datenausgang. Sie können den [Azure Storage-Preisrechner](http://azure.microsoft.com/pricing/calculator/?scenario=data-management) verwenden, um Ihre Kosten zu bestimmen.
+Die Seite mit der [Speicherpreisübersicht](https://azure.microsoft.com/pricing/details/storage/) bietet detaillierte Preisinformationen für Speicherkapazität, Replikation und Transaktionen. In der [Datenübertragungs-Preisübersicht](https://azure.microsoft.com/pricing/details/data-transfers/) finden Sie detaillierte Preisinformationen für den Datenausgang. Sie können den [Azure Storage-Preisrechner](https://azure.microsoft.com/pricing/calculator/?scenario=data-management) verwenden, um Ihre Kosten zu bestimmen.
 
 ## Entwicklung bei der Speicherung
 
@@ -177,7 +177,7 @@ Informationen zu den ersten Schritten mit Azure Storage finden Sie in folgenden 
 ### Downloads
 
 - [Azure-Speicher NuGet-Paket – Clientbibliotheken für .NET, Windows Phone und Windows-Runtime ](https://www.nuget.org/packages/WindowsAzure.Storage/)
-- [Azure-SDKs und -Tools](http://azure.microsoft.com/downloads/)
+- [Azure-SDKs und -Tools](https://azure.microsoft.com/downloads/)
 - [Azure-Speicheremulator](http://www.microsoft.com/en-in/download/details.aspx?id=43709)
 - [Azure PowerShell](http://go.microsoft.com/?linkid=9811175&clcid=0x409)
 
@@ -187,7 +187,7 @@ Informationen zu den ersten Schritten mit Azure Storage finden Sie in folgenden 
 
 ### Dokumentation
 
-- [Azure-Speicherdokumentation](http://azure.microsoft.com/documentation/services/storage/)
+- [Azure-Speicherdokumentation](https://azure.microsoft.com/documentation/services/storage/)
 - [REST-API-Referenz für Azure-Speicherdienste](http://msdn.microsoft.com/library/azure/dd179355.aspx)
 - [Erste Schritte mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy.md)
 
@@ -234,6 +234,5 @@ Informationen zu den ersten Schritten mit Azure Storage finden Sie in folgenden 
 - [Verwenden des Blob-Speichers mit Python](storage-python-how-to-use-blob-storage.md)
 - [Verwenden des Tabellenspeichers mit Python](storage-python-how-to-use-table-storage.md)
 - [Verwenden des Warteschlangenspeichers mit Python](storage-python-how-to-use-queue-storage.md)
- 
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="09/18/2015"
+   ms.date="01/26/2016"
    ms.author="sethm" />
 
 # Bewährte Methoden zum Schützen von Anwendungen vor Service Bus-Ausfällen und Notfällen
@@ -37,7 +37,7 @@ Verwenden Sie zum Schutz vor ACS-Ausfällen Shared Access Signature (SAS)-Token.
 
 ## Schützen von Warteschlangen und Themen vor Ausfällen von Nachrichtenspeichern
 
-Eine nicht partitionierte Warteschlange bzw. ein Thema ist einem Nachrichtenspeicher zugewiesen. Wenn dieser Nachrichtenspeicher nicht verfügbar ist, treten für alle Vorgänge der Warteschlange oder des Themas Fehler auf. Eine partitionierte Warteschlange besteht dagegen aus mehreren Fragmenten. Jedes Fragment wird in einem anderen Nachrichtenspeicher gespeichert. Wenn eine Nachricht an eine partitionierte Warteschlange bzw. ein Thema gesendet wird, weist Service Bus die Nachricht einem der Fragmente zu. Wenn der entsprechende Nachrichtenspeicher nicht verfügbar ist, schreibt Service Bus in ein anderes Fragment, falls dies möglich ist. Weitere Informationen zu partitionierten Entitäten finden Sie unter [Partitionieren von Nachrichtenentitäten][].
+Eine nicht partitionierte Warteschlange bzw. ein Thema ist einem Nachrichtenspeicher zugewiesen. Wenn dieser Nachrichtenspeicher nicht verfügbar ist, treten für alle Vorgänge der Warteschlange oder des Themas Fehler auf. Eine partitionierte Warteschlange besteht dagegen aus mehreren Fragmenten. Jedes Fragment wird in einem anderen Nachrichtenspeicher gespeichert. Wenn eine Nachricht an eine partitionierte Warteschlange bzw. ein Thema gesendet wird, weist Service Bus die Nachricht einem der Fragmente zu. Wenn der entsprechende Nachrichtenspeicher nicht verfügbar ist, schreibt Service Bus in ein anderes Fragment, falls dies möglich ist. Weitere Informationen zu partitionierten Entitäten finden Sie unter [Partitionierte Messagingentitäten][].
 
 ## Schutz vor Ausfällen von Rechenzentren oder Notfällen
 
@@ -67,7 +67,7 @@ Ein Client empfängt Nachrichten aus beiden Warteschlangen. Der Empfänger verar
 
 Im Beispiel [Georeplikation mit Service Bus-Brokernachrichten][] wird die aktive Replikation von Nachrichtenentitäten veranschaulicht.
 
-> [AZURE.NOTE]Beim Ansatz mit der aktiven Replikation wird die Anzahl von Vorgängen verdoppelt. Daher kann dieser Ansatz zu höheren Kosten führen.
+> [AZURE.NOTE] Beim Ansatz mit der aktiven Replikation wird die Anzahl von Vorgängen verdoppelt. Daher kann dieser Ansatz zu höheren Kosten führen.
 
 ## Passive Replikation
 
@@ -99,14 +99,14 @@ Weitere Informationen zur Notfallwiederherstellung finden Sie in diesen Artikeln
 - [Azure-Geschäftskontinuität – Technische Anleitung][]
 
   [Service Bus-Authentifizierung]: service-bus-authentication-and-authorization.md
-  [Partitionieren von Nachrichtenentitäten]: service-bus-partitioning.md
-  [Asynchrone Nachrichtenmuster und hohe Verfügbarkeit]: https://msdn.microsoft.com/library/azure/dn292562.aspx
+  [Partitionierte Messagingentitäten]: service-bus-partitioning.md
+  [Asynchrone Nachrichtenmuster und hohe Verfügbarkeit]: service-bus-async-messaging.md
   [Georeplikation mit Service Bus Relay-Nachrichten]: http://code.msdn.microsoft.com/Geo-replication-with-16dbfecd
   [BrokeredMessage.MessageId]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.messageid.aspx
   [BrokeredMessage.Label]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.label.aspx
   [Georeplikation mit Service Bus-Brokernachrichten]: http://code.msdn.microsoft.com/Geo-replication-with-f5688664
   [Dauerhafter Nachrichtenabsender]: http://code.msdn.microsoft.com/Service-Bus-Durable-Sender-0763230d
-  [Geschäftskontinuität in Azure SQL-Datenbank]: https://msdn.microsoft.com/library/azure/hh852669.aspx
+  [Geschäftskontinuität in Azure SQL-Datenbank]: ../sql-database/sql-database-business-continuity.md
   [Azure-Geschäftskontinuität – Technische Anleitung]: https://msdn.microsoft.com/library/azure/hh873027.aspx
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

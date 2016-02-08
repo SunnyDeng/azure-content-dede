@@ -97,7 +97,7 @@ Die folgende Liste enthält wichtige Punkte, die beim Erstellen einer Momentaufn
 
 - Der Azure-Blob-Dienst kann nicht feststellen, ob zwei Blöcke identische Daten enthalten. Jeder hochgeladene Block, für den ein Commit ausgeführt wird, wird als eindeutig behandelt, selbst wenn die enthaltenen Daten und die Block-ID identisch sind. Da Gebühren jeweils für eindeutige Blöcke berechnet werden, ist zu berücksichtigen, dass beim Aktualisieren eines Blobs mit einer zugeordneten Momentaufnahme zusätzliche eindeutige Blöcke generiert werden, für die zusätzliche Gebühren entstehen.
 
-> [AZURE.NOTE]Planen und verwalten Sie Momentaufnahmen sorgfältig, um unnötige Gebühren zu vermeiden. Es wird empfohlen, Momentaufnahmen folgendermaßen zu verwalten:
+> [AZURE.NOTE] Planen und verwalten Sie Momentaufnahmen sorgfältig, um unnötige Gebühren zu vermeiden. Es wird empfohlen, Momentaufnahmen folgendermaßen zu verwalten:
 
 > - Löschen und erstellen Sie zugehörige Momentaufnahmen für ein BLOB neu, wenn Sie das BLOB aktualisieren, selbst wenn Sie mit identischen Daten aktualisieren, es sei denn, der Anwendungsentwurf erfordert, dass die Momentaufnahmen beibehalten werden. Durch das Löschen und Neuerstellen der Momentaufnahmen für ein BLOB können Sie sicherstellen, dass das BLOB und die Momentaufnahmen nicht voneinander abweichen.
 
@@ -125,4 +125,4 @@ In Szenario 4 wurde das Basis-Blob vollständig aktualisiert und enthält keine
 
 ![Azure Storage-Ressourcen](./media/storage-blob-snapshots/storage-blob-snapshots-billing-scenario-4.png)
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

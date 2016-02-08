@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="PDF-Datei mit SQL-Abfragespickzettel für DocumentDB | Microsoft Azure" 
-	description="Eine druckbare SQL-Spickzettel-PDF-Datei, die Ihnen hilft, die SQL-Syntax von DocumentDB zum Abfragen von JSON-Dokumenten in der NoSQL-Datenbank zu verwenden." 
+	description="Druckbare SQL-Spickzettel-PDF-Datei, die Ihnen hilft, die SQL-Syntax von DocumentDB zum Abfragen von JSON-Dokumenten in der NoSQL-Datenbank zu verwenden – SQL-Kurzübersicht" 
 	keywords="SQL-Spickzettel, PDF-Datei mit Sql-Spickzettel, Spickzettel für SQL-Abfragen"
 	services="documentdb" 
 	documentationCenter="" 
@@ -29,7 +29,7 @@ Schreiben Sie Ihre Abfragen schneller, indem Sie den SQL-Abfragespickzettel heru
 
 **Laden Sie den Spickzettel hier herunter: [Microsoft Azure DocumentDB – SQL-Abfragespickzettel](http://go.microsoft.com/fwlink/?LinkId=623215)**
 
-![SQL-Abfragespickzettel für DocumentDB: Kurzübersicht für die von DocumentDB unterstützte SQL-Grammatik.][cheat-sheet]
+![SQL-Abfragespickzettel für DocumentDB: PDF-Datei mit einer Kurzübersicht über die von DocumentDB unterstützte SQL-Syntax – SQL-Spickzettel, SQL-Spickzettel (PDF), SQL-Kurzreferenz][cheat-sheet]
 
 [cheat-sheet]: ./media/documentdb-sql-query-cheat-sheet/microsoft-documentdb-sql-query-cheat-sheet-v2.png
 
@@ -39,4 +39,4 @@ Schreiben Sie Ihre Abfragen schneller, indem Sie den SQL-Abfragespickzettel heru
 - Eine exemplarische Vorgehensweise der Abfrageoptionen, die in DocumentDB verfügbar sind, finden Sie unter [Abfragen von DocumentDB](documentdb-sql-query.md).
 - Die zugehörige Referenzdokumentation finden Sie unter [SQL-Abfragesprache von DocumentDB](https://msdn.microsoft.com/library/azure/dn782250.aspx).
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -20,7 +20,7 @@
 
 Hive ermöglicht die Ausführung eines Hadoop MapReduce-Auftrags über eine SQL-ähnliche Skriptsprache namens *[HiveQL][hadoop-hiveql]*, die zur Zusammenfassung, Abfrage und Analyse großer Datenmengen verwendet werden kann.
 
-> [AZURE.NOTE]Die Schritte in diesem Dokument erfordern einen Windows-basierten HDInsight-Cluster. Schritte für Linux-basierte Cluster finden Sie unter [Analysieren von Flugverspätungsdaten mit Hive in HDInsight (Linux)](hdinsight-analyze-flight-delay-data-linux.md).
+> [AZURE.NOTE] Die Schritte in diesem Dokument erfordern einen Windows-basierten HDInsight-Cluster. Schritte für Linux-basierte Cluster finden Sie unter [Analysieren von Flugverspätungsdaten mit Hive in HDInsight (Linux)](hdinsight-analyze-flight-delay-data-linux.md).
 
 Einer der größten Vorteile von Azure HDInsight ist die Trennung von Datenspeicher und Server. HDInsight verwendet zur Datenspeicherung Azure Blob-Speicher. Ein typischer Auftrag besteht aus drei Teilen:
 
@@ -43,13 +43,13 @@ In diesem Lernprogramm geht es hauptsächlich um die Verwendung eines PowerShell
 
 In den Anhängen finden Sie Anweisungen zum Hochladen der Flugverspätungsdaten, zum Erstellen/Hochladen der Hive-Abfragezeichenfolge und zum Vorbereiten der Azure SQL-Datenbank für den Sqoop-Auftrag.
 
-> [AZURE.NOTE]Die Schritte in diesem Dokument gelten speziell für Windows-basierte HDInsight-Cluster. Schritte für Linux-basierte Cluster finden Sie unter [Analysieren von Flugverspätungsdaten mit Hive in HDInsight (Linux)](hdinsight-analyze-flight-delay-data-linux.md).
+> [AZURE.NOTE] Die Schritte in diesem Dokument gelten speziell für Windows-basierte HDInsight-Cluster. Schritte für Linux-basierte Cluster finden Sie unter [Analysieren von Flugverspätungsdaten mit Hive in HDInsight (Linux)](hdinsight-analyze-flight-delay-data-linux.md).
 
 ###Voraussetzungen
 
 Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
-- **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](http://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
+- **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 
 - **Eine Arbeitsstation mit Azure PowerShell**. Siehe [Installieren von Azure PowerShell 1.0 und höher](hdinsight-administer-use-powershell.md#install-azure-powershell-10-and-greater).
 
@@ -239,7 +239,7 @@ Das Hochladen der Datendatei und der HiveQL-Skriptdateien (siehe [Anhang B](#ap
 - **Verwenden Sie dasselbe Azure-Speicherkonto, das vom HDInsight-Cluster als Standarddateisystem verwendet wird.** Da der HDInsight-Cluster über den Zugriffsschlüssel für das Speicherkonto verfügt, müssen Sie keine weiteren Änderungen vornehmen.
 - **Verwenden Sie ein anderes Azure-Speicherkonto als das Standarddateisystem des HDInsight-Clusters.** In diesem Fall müssen Sie den Erstellungsteil des Windows PowerShell-Skripts ändern, das Sie unter [Erstellen des HDInsight-Clusters und Ausführen von Hive/Sqoop-Aufträgen](#runjob) finden, um das Speicherkonto als zusätzliches Speicherkonto zu verknüpfen. Anweisungen hierzu finden Sie unter [Erstellen von Hadoop-Clustern in HDInsight][hdinsight-provision]. Der HDInsight-Cluster kennt dann den Zugriffsschlüssel für das Speicherkonto.
 
->[AZURE.NOTE]Der Blobspeicherpfad für die Datendatei ist fest in der HiveQL-Skriptdatei programmiert. Sie müssen ihn entsprechend aktualisieren.
+>[AZURE.NOTE] Der Blobspeicherpfad für die Datendatei ist fest in der HiveQL-Skriptdatei programmiert. Sie müssen ihn entsprechend aktualisieren.
 
 **So laden Sie die Flugdaten herunter**
 
@@ -348,7 +348,7 @@ Wenn Sie für das Hochladen der Dateien eine andere Methode verwenden möchten, 
 
 Bei „tutorials/flightdelay/data“ handelt es sich um den virtuellen Ordner, den Sie beim Hochladen der Dateien erstellt haben. Überprüfen Sie, dass 12 Dateien vorhanden sind, eine für jeden Monat.
 
->[AZURE.NOTE]Sie müssen die Hive-Abfrage aktualisieren, um vom neuen Speicherort lesen zu können.
+>[AZURE.NOTE] Sie müssen die Hive-Abfrage aktualisieren, um vom neuen Speicherort lesen zu können.
 
 > Sie müssen entweder die Zugriffsberechtigung für den Container in "Öffentlich" ändern oder das Speicherkonto an den HDInsight-Cluster binden. Andernfalls kann die Hive-Abfragezeichenfolge nicht auf die Datendateien zugreifen.
 
@@ -689,7 +689,7 @@ Eine vollständige Liste der HiveQL-Befehle finden Sie unter [Hive Data Definiti
 		
 		Write-host "`nEnd of the PowerShell script" -ForegroundColor Green
 
-	>[AZURE.NOTE]Das Skript verwendet einen REST-Dienst, http://bot.whatismyipaddress.com, um Ihre externe IP-Adresse abzurufen. Die IP-Adresse wird zum Erstellen einer Firewallregel für den SQL-Datenbankserver verwendet.
+	>[AZURE.NOTE] Das Skript verwendet einen REST-Dienst, http://bot.whatismyipaddress.com, um Ihre externe IP-Adresse abzurufen. Die IP-Adresse wird zum Erstellen einer Firewallregel für den SQL-Datenbankserver verwendet.
 
 	Im Skript werden u. a. folgende Variablen verwendet:
 
@@ -742,4 +742,4 @@ Jetzt wissen Sie, wie Sie eine Datei in den Azure-Blobspeicher hochladen, eine H
 [img-hdi-flightdelays-run-hive-job-output]: ./media/hdinsight-analyze-flight-delay-data/HDI.FlightDelays.RunHiveJob.Output.png
 [img-hdi-flightdelays-flow]: ./media/hdinsight-analyze-flight-delay-data/HDI.FlightDelays.Flow.png
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

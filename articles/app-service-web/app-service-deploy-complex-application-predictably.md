@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/16/2015"
+	ms.date="01/06/2016"
 	ms.author="cephalin"/>
 
 
@@ -58,7 +58,7 @@ Weitere Informationen finden Sie unter [Verwenden von Windows PowerShell mit dem
 
 ### Azure-Ressourcen-Explorer ###
 
-Dieses [Vorschautool](https://resources.azure.com) ermöglicht es Ihnen, die JSON-Definitionen aller Ressourcengruppen in Ihrem Abonnement und der einzelnen Ressourcen zu untersuchen. Im Tool können Sie die JSON-Definitionen einer Ressource bearbeiten, eine vollständige Hierarchie von Ressourcen löschen und neue Ressourcen erstellen. Die in diesem Tool verfügbaren Informationen sind sehr hilfreich für die Vorlagenerstellung, da sie zeigen, welche Eigenschaften Sie für einen bestimmten Typ von Ressource festlegen müssen, die richtigen Werte vorgeben usw. Sie können sogar die Ressourcengruppe im [Azure-Portal](https://portal.azure.com) erstellen, dann ihre JSON-Definitionen im Explorer-Tool untersuchen, um aus der Ressourcengruppe eine Vorlage zu machen.
+Dieses [Vorschautool](https://resources.azure.com) ermöglicht es Ihnen, die JSON-Definitionen aller Ressourcengruppen in Ihrem Abonnement und der einzelnen Ressourcen zu untersuchen. Im Tool können Sie die JSON-Definitionen einer Ressource bearbeiten, eine vollständige Hierarchie von Ressourcen löschen und neue Ressourcen erstellen. Die in diesem Tool verfügbaren Informationen sind sehr hilfreich für die Vorlagenerstellung, da sie zeigen, welche Eigenschaften Sie für einen bestimmten Typ von Ressource festlegen müssen, die richtigen Werte vorgeben usw. Sie können sogar die Ressourcengruppe im [Azure-Portal](https://portal.azure.com/) erstellen, dann ihre JSON-Definitionen im Explorer-Tool untersuchen, um aus der Ressourcengruppe eine Vorlage zu machen.
 
 ### Schaltfläche zum Bereitstellen in Azure ###
 
@@ -129,7 +129,7 @@ Beginnen wir mit einer einfachen Ressource auf Stammebene in JSON. Klicken Sie i
 
 Beachten Sie, dass das `type`-Element die Zeichenfolge für einen App Service-Plan angibt (wurde früher als Serverfarm bezeichnet). Andere Elemente und Eigenschaften werden mit den in der JSON-Datei definierten Parametern ausgefüllt, und diese Ressource weist keine geschachtelten Ressourcen auf.
 
->[AZURE.NOTE]Beachten Sie außerdem, dass der Wert von `apiVersion` Azure mitteilt, mit welcher Version der REST-API die JSON-Ressourcendefinition verwendet wird. Dies kann beeinflussen, wie die Ressource innerhalb von `{}` formatiert werden muss.
+>[AZURE.NOTE] Beachten Sie außerdem, dass der Wert von `apiVersion` Azure mitteilt, mit welcher Version der REST-API die JSON-Ressourcendefinition verwendet wird. Dies kann beeinflussen, wie die Ressource innerhalb von `{}` formatiert werden muss.
 
 #### SQL Server ####
 
@@ -143,7 +143,7 @@ Beachten Sie Folgendes im Zusammenhang mit dem hervorgehobenen JSON-Code:
 -	Die SQLServer-Ressource hat zwei geschachtelte Ressourcen, die jeweils einen anderen Wert für `type` aufweisen.
 -	Die geschachtelten Ressourcen in `“resources”: […]`, in denen die Datenbank und die Firewallregeln definiert werden, haben ein `dependsOn`-Element, das die Ressourcen-ID der SQLServer-Ressource auf Stammebene angibt. Dadurch wird der Azure-Ressourcen-Manager angewiesen, dass vor dem Erstellen dieser Ressource, die andere Ressource bereits vorhanden sein muss; und wenn diese andere Ressource in der Vorlage definiert ist, muss sie zuerst erstellt werden.
 
-	>[AZURE.NOTE]Ausführliche Informationen zur Verwendung der `resourceId()`-Funktion finden Sie unter [Funktionen von Azure-Ressourcen-Manager-Vorlagen](../resource-group-template-functions.md).
+	>[AZURE.NOTE] Ausführliche Informationen zur Verwendung der `resourceId()`-Funktion finden Sie unter [Funktionen von Azure-Ressourcen-Manager-Vorlagen](../resource-group-template-functions.md).
 
 -	Die Wirkung des `dependsOn`-Elements ist, dass der Azure-Ressourcen-Manager weiß, welche Ressourcen parallel erstellt werden können und welche Ressourcen sequenziell erstellt werden müssen.
 
@@ -176,7 +176,7 @@ Die Verbindungszeichenfolgen werden auch als geschachtelte Ressource definiert.
 
 Im `properties`-Element für `config/connectionstrings` ist jede Verbindungszeichenfolge auch als Name-Wert-Paar im Format `“<name>” : {“value”: “…”, “type”: “…”}` definiert. Mögliche Werte für das `type`-Element sind `MySql`, `SQLServer`, `SQLAzure` und `Custom`.
 
->[AZURE.TIP]Eine endgültige Liste der Typen von Verbindungszeichenfolgen erhalten Sie, indem Sie den folgenden Befehl in Azure PowerShell ausführen: [Enum]::GetNames("Microsoft.WindowsAzure.Commands.Utilities.Websites.Services.WebEntities.DatabaseType")
+>[AZURE.TIP] Eine endgültige Liste der Typen von Verbindungszeichenfolgen erhalten Sie, indem Sie den folgenden Befehl in Azure PowerShell ausführen: [Enum]::GetNames("Microsoft.WindowsAzure.Commands.Utilities.Websites.Services.WebEntities.DatabaseType")
     
 ##### Quellcodeverwaltung #####
 
@@ -186,13 +186,13 @@ Die Einstellungen für die Quellcodeverwaltung werden auch als geschachtelte Res
 
 `RepoUrl` und `branch` sollten ziemlich selbsterklärend sein und auf das Git-Repository und den Namen der Verzweigung für die Veröffentlichung verweisen. Auch sie werden durch Eingabeparameter definiert.
 
-Beachten Sie im `dependsOn`-Element, dass zusätzlich zur Abhängigkeit von der Web-App-Ressource selbst `sourcecontrols/web` auch von `config/appsettings` und `config/connectionstrings` abhängt. Der Grund hierfür ist, dass, sobald `sourcecontrols/web` konfiguriert ist, der Azure-Bereitstellungsprozess automatisch versucht, den Anwendungscode bereitzustellen, zu erstellen und zu starten. Daher können Sie durch das Einfügen dieser Abhängigkeit sicherstellen, dass die Anwendung über Zugriff auf die erforderlichen App-Einstellungen und Verbindungszeichenfolgen verfügt, bevor der Anwendungscode ausgeführt wird. [Aufgabe: Sie müssen überprüfen, ob dies der Fall ist.]
+Beachten Sie im `dependsOn`-Element, dass zusätzlich zur Abhängigkeit von der Web-App-Ressource selbst `sourcecontrols/web` auch von `config/appsettings` und `config/connectionstrings` abhängt. Der Grund hierfür ist, dass, sobald `sourcecontrols/web` konfiguriert ist, der Azure-Bereitstellungsprozess automatisch versucht, den Anwendungscode bereitzustellen, zu erstellen und zu starten. Daher können Sie durch das Einfügen dieser Abhängigkeit sicherstellen, dass die Anwendung über Zugriff auf die erforderlichen App-Einstellungen und Verbindungszeichenfolgen verfügt, bevor der Anwendungscode ausgeführt wird.
 
->[AZURE.NOTE]Beachten Sie auch, dass `IsManualIntegration` auf `true` festgelegt ist. Diese Eigenschaft ist in diesem Lernprogramm erforderlich, da Sie das GitHub-Repository nicht besitzen und daher Azure nicht die Berechtigung erteilen können, die kontinuierliche Veröffentlichung von [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) zu konfigurieren (d. h. automatische Updates im Repository in Azure zu übernehmen). Sie können den Standardwert `false` für das angegebene Repository nur verwenden, wenn Sie die GitHub-Anmeldeinformationen für den Besitzer zuvor im [Azure-Vorschauportal](https://portal.azure.com) konfiguriert haben. Anders ausgedrückt, wenn Sie zuvor mit Ihren Benutzeranmeldeinformationen die Quellcodeverwaltung für GitHub oder BitBucket für eine App im [Azure-Portal](https://portal.azure.com) eingerichtet haben, werden die Anmeldeinformationen in Azure gespeichert und verwendet, wenn Sie später eine App über GitHub oder BitBucket bereitstellen. Wenn dies jedoch noch nicht geschehen ist, schlägt die Bereitstellung der JSON-Vorlage fehl, wenn der Azure-Ressourcen-Manager versucht, die Quellcodeeinstellungen der Web-App zu konfigurieren, da mit den Anmeldeinformationen des Repositorybesitzers eine Anmeldung bei GitHub oder BitBucket nicht möglich ist.
+>[AZURE.NOTE] Beachten Sie auch, dass `IsManualIntegration` auf `true` festgelegt ist. Diese Eigenschaft ist in diesem Lernprogramm erforderlich, da Sie das GitHub-Repository nicht besitzen und daher Azure nicht die Berechtigung erteilen können, die kontinuierliche Veröffentlichung von [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) zu konfigurieren (d. h. automatische Updates im Repository in Azure zu übernehmen). Sie können den Standardwert `false` für das angegebene Repository nur verwenden, wenn Sie die GitHub-Anmeldeinformationen für den Besitzer zuvor im [Azure-Portal](https://portal.azure.com/) konfiguriert haben. Anders ausgedrückt, wenn Sie zuvor mit Ihren Benutzeranmeldeinformationen die Quellcodeverwaltung für GitHub oder BitBucket für eine App im [Azure-Portal](https://portal.azure.com/) eingerichtet haben, werden die Anmeldeinformationen in Azure gespeichert und verwendet, wenn Sie später eine App über GitHub oder BitBucket bereitstellen. Wenn dies jedoch noch nicht geschehen ist, schlägt die Bereitstellung der JSON-Vorlage fehl, wenn der Azure-Ressourcen-Manager versucht, die Quellcodeeinstellungen der Web-App zu konfigurieren, da mit den Anmeldeinformationen des Repositorybesitzers eine Anmeldung bei GitHub oder BitBucket nicht möglich ist.
 
 ## Vergleichen der JSON-Vorlage mit der bereitgestellten Ressourcengruppe ##
 
-Hier können Sie alle Blätter der Web-App im [Azure-Portal](https://portal.azure.com) durchgehen, es gibt aber ein weiteres Tool, das möglicherweise noch nützlicher ist. Wechseln Sie zum Vorschautool [Azure-Ressourcen-Explorer](https://resources.azure.com), in dem Sie eine JSON-Darstellung aller Ressourcengruppen in Ihren Abonnements erhalten, so wie sie tatsächlich im Azure-Back-End vorhanden sind. Sie können auch sehen, dass die JSON-Hierarchie der Ressourcengruppe in Azure der Hierarchie in der Vorlagendatei entspricht, die für die Erstellung verwendet wurde.
+Hier können Sie alle Blätter der Web-App im [Azure-Portal](https://portal.azure.com/) durchgehen, es gibt aber ein weiteres Tool, das möglicherweise noch nützlicher ist. Wechseln Sie zum Vorschautool [Azure-Ressourcen-Explorer](https://resources.azure.com), in dem Sie eine JSON-Darstellung aller Ressourcengruppen in Ihren Abonnements erhalten, so wie sie tatsächlich im Azure-Back-End vorhanden sind. Sie können auch sehen, dass die JSON-Hierarchie der Ressourcengruppe in Azure der Hierarchie in der Vorlagendatei entspricht, die für die Erstellung verwendet wurde.
 
 Beispiel: Wenn das Tool [Azure-Ressourcen-Explorer](https://resources.azure.com) aufgerufen und die Knoten im Explorer erweitern werden, werden die Ressourcengruppe und die Ressourcen auf Stammebene angezeigt, die unter den jeweiligen Ressourcentypen gesammelt werden.
 
@@ -264,11 +264,11 @@ Die Schaltfläche **Deploy to Azure** ist großartig, aber sie können damit die
  
 	![](./media/app-service-deploy-complex-application-predictably/deploy-11-parametereditorfilled.png)
 
-	>[AZURE.NOTE]Die automatische Skalierung ist ein Feature des Tarifs **Standard** oder höher, und Warnungen auf Planebene sind Features des Tarifs **Basic** oder höher. Sie müssen den Parameter **sku** auf **Standard** oder **Premium** festlegen, damit alle neuen App Insights-Ressourcen angezeigt werden.
+	>[AZURE.NOTE] Die automatische Skalierung ist ein Feature des Tarifs **Standard** oder höher, und Warnungen auf Planebene sind Features des Tarifs **Basic** oder höher. Sie müssen den Parameter **sku** auf **Standard** oder **Premium** festlegen, damit alle neuen App Insights-Ressourcen angezeigt werden.
 	
 16.	Klicken Sie auf **Bereitstellen**. Bei Auswahl von **Kennwörter speichern** wird das Kennwort in der Parameterdatei als **reiner Text** gespeichert. Andernfalls werden Sie während des Bereitstellungsprozesses zur Eingabe des Datenbankkennworts aufgefordert.
 
-Fertig! Nun müssen Sie einfach zum [Azure Portal](https://portal.azure.com) und zum Tool [Azure-Ressourcen-Explorer](https://resources.azure.com) wechseln, um die neuen Warnungen und die Einstellungen zum automatischen Skalieren zu sehen, die Ihrer mit JSON bereitstellten Anwendung hinzugefügt wurden.
+Fertig! Nun müssen Sie einfach zum [Azure Portal](https://portal.azure.com/) und zum Tool [Azure-Ressourcen-Explorer](https://resources.azure.com) wechseln, um die neuen Warnungen und die Einstellungen zum automatischen Skalieren zu sehen, die Ihrer mit JSON bereitstellten Anwendung hinzugefügt wurden.
 
 Mit den Schritten in diesem Abschnitt haben Sie im Wesentlichen Folgendes erreicht:
 
@@ -305,4 +305,4 @@ Erfahren Sie, wie Sie [agile Methoden umsetzen und eine aus Microservices besteh
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

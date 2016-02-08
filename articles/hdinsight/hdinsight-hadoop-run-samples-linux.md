@@ -28,7 +28,7 @@ Linux-basierte HDInsight-Cluster bieten eine Reihe von MapReduce-Beispielen, mit
 
 ##Voraussetzungen
 
-- **Ein Azure-Abonnement**: Siehe [Kostenlose Azure-Testversion](http://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/)
+- **Ein Azure-Abonnement**: Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/)
 
 - **Einen Linux-basierten HDInsight-Cluster**: Siehe [Erste Schritte bei der Verwendung von Hadoop mit Hive in HDInsight unter Linux](hdinsight-hadoop-linux-tutorial-get-started.md)
 
@@ -69,7 +69,7 @@ Linux-basierte HDInsight-Cluster bieten eine Reihe von MapReduce-Beispielen, mit
 
 **Quellcode**: Der Quellcode für diese Beispiele ist im HDInsight-Cluster unter **/usr/hdp/2.2.4.9-1/hadoop/src/hadoop-mapreduce-project/hadoop-mapreduce-examples** enthalten.
 
-> [AZURE.NOTE]`2.2.4.9-1` im Pfad ist die Version der Hortonworks Data Platform für den HDInsight-Cluster und kann geändert werden, wenn HDInsight aktualisiert wird.
+> [AZURE.NOTE] `2.2.4.9-1` im Pfad ist die Version der Hortonworks Data Platform für den HDInsight-Cluster und kann geändert werden, wenn HDInsight aktualisiert wird.
 
 ## Ausführen der Beispiele ##
 
@@ -103,7 +103,7 @@ Linux-basierte HDInsight-Cluster bieten eine Reihe von MapReduce-Beispielen, mit
 
     Die Ausgabe für dieses Beispiel wird unter ****wasb:///example/data/davinciwordcount** gespeichert.
 
-    > [AZURE.NOTE]Wie in der Hilfe für das wordcount-Beispiel erwähnt, können Sie auch mehrere Eingabedateien angeben. Beispiel: Mit `hadoop jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-mapreduce-examples.jar wordcount /example/data/gutenberg/davinci.txt /example/data/gutenberg/ulysses.txt /example/data/twowordcount` werden die Wörter in "davinci.txt" und "ulysses.txt" gezählt.
+    > [AZURE.NOTE] Wie in der Hilfe für das wordcount-Beispiel erwähnt, können Sie auch mehrere Eingabedateien angeben. Beispiel: Mit `hadoop jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-mapreduce-examples.jar wordcount /example/data/gutenberg/davinci.txt /example/data/gutenberg/ulysses.txt /example/data/twowordcount` werden die Wörter in "davinci.txt" und "ulysses.txt" gezählt.
 
 5. Sobald der Auftrag abgeschlossen ist, verwenden Sie den folgenden Befehl zum Anzeigen der Ausgabe.
 
@@ -144,7 +144,7 @@ Es gibt eine bestimmte Weise, wie Sudoku-Rätseln erstellt werden, da eine Zahl 
     ? ? ? ? ? ? 2 ? ?
     ? ? ? ? 4 5 ? 7 8
 
-> [AZURE.NOTE]Der Teil `2.2.4.9-1` des Pfads kann geändert werden, wenn Aktualisierungen am HDInsight-Cluster vorgenommen werden.
+> [AZURE.NOTE] Der Teil `2.2.4.9-1` des Pfads kann geändert werden, wenn Aktualisierungen am HDInsight-Cluster vorgenommen werden.
 
 Führen Sie das Sudoku-Beispiel mit dem folgenden Befehl aus:
 
@@ -236,4 +236,4 @@ In diesem Artikel haben Sie gelernt, wie die Beispiele ausgeführt werden, die i
 [hdinsight-use-hive]: hdinsight-use-hive.md
 [hdinsight-use-pig]: hdinsight-use-pig.md
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

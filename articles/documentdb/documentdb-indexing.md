@@ -28,13 +28,13 @@ Nach dem Lesen dieses Artikels können Sie die folgenden Fragen beantworten:
 
 ##<a id="HowDocumentDBIndexingWorks"></a> So funktioniert die DocumentDB-Indizierung
 
-[Microsoft Azure DocumentDB](http://azure.microsoft.com/services/documentdb/) ist eine speziell für JSON entwickelte Datenbank, die ohne Schema funktioniert. Sie erfordert weder Schema- noch sekundäre Indexdefinitionen, um Daten in großem Maßstab zu indizieren. Dadurch ermöglicht Ihnen DocumentDB das schnelle Definieren und Durchlaufen von Anwendungsdatenmodellen. Während Sie Dokumente zu einer Sammlung hinzufügen, werden alle Dokumenteigenschaften von DocumentDB automatisch indiziert und stehen dann für Sie für Abfragen bereit. Dank der automatischen Indizierung können Sie Dokumente mit absolut willkürlichen Schemas speichern, ohne sich Gedanken über Schemas oder sekundäre Indizes machen zu müssen.
+[Microsoft Azure DocumentDB](https://azure.microsoft.com/services/documentdb/) ist eine speziell für JSON entwickelte Datenbank, die ohne Schema funktioniert. Sie erfordert weder Schema- noch sekundäre Indexdefinitionen, um Daten in großem Maßstab zu indizieren. Dadurch ermöglicht Ihnen DocumentDB das schnelle Definieren und Durchlaufen von Anwendungsdatenmodellen. Während Sie Dokumente zu einer Sammlung hinzufügen, werden alle Dokumenteigenschaften von DocumentDB automatisch indiziert und stehen dann für Sie für Abfragen bereit. Dank der automatischen Indizierung können Sie Dokumente mit absolut willkürlichen Schemas speichern, ohne sich Gedanken über Schemas oder sekundäre Indizes machen zu müssen.
 
 DocumentDB nutzt die Einfachheit von JSON und das Fehlen einer Schemaspezifikation bei diesem Datenaustauschformat, um die Inkongruenz zwischen den Datenbank- und Anwendungsprogrammiermodellen zu beseitigen. Es werden keine Annahmen bezüglich der Dokumente gemacht, und neben instanzspezifischen Werten sind Dokumente mit unterschiedlichen Schemas in einer DocumentDB-Sammlung zulässig. Im Gegensatz zu anderen Dokumentdatenbanken arbeitet das Datenbankmodul von DocumentDB direkt auf der Ebene der JSON-Grammatik. Dadurch bleibt sie unabhängig vom Konzept eines Dokumentschemas, und die Grenzen zwischen den Struktur- und Instanzwerten von Dokumenten werden aufgehoben. Dies wiederum ermöglicht die automatische Indizierung von Dokumenten ohne Schema oder sekundäre Indizes.
 
 Bei der DocumentDB-Indizierung wird die Tatsache genutzt, dass Dokumente für die JSON-Grammatik **als Strukturen dargestellt** werden können. Damit ein JSON-Dokument als Struktur dargestellt werden kann, muss ein Dummy-Stammknoten erstellt werden, der für die restlichen Knoten im Dokument das übergeordnete Element darstellt. Jede Bezeichnung, einschließlich der Arrayindizes in einem JSON-Dokument, wird zu einem Knoten der Struktur. Die nachfolgende Abbildung zeigt ein JSON-Beispieldokument und die entsprechende Strukturdarstellung.
 
->[AZURE.NOTE]Da JSON selbstbeschreibend ist, enthält jedes Dokument sowohl ein Schema (Metadaten) als auch Daten. `{"locationId": 5, "city": "Moscow"}` gibt z. B. an, dass zwei Eigenschaften `locationId` und `city` mit einem numerischen und einem Zeichenfolgeneigenschaftswert vorhanden sind. DocumentDB kann das Schema von Dokumenten ableiten und Dokumente indizieren, wenn sie eingefügt oder ersetzt werden, ohne dass Sie jemals Schemas oder sekundäre Indizes definieren müssen.
+>[AZURE.NOTE] Da JSON selbstbeschreibend ist, enthält jedes Dokument sowohl ein Schema (Metadaten) als auch Daten. `{"locationId": 5, "city": "Moscow"}` gibt z. B. an, dass zwei Eigenschaften `locationId` und `city` mit einem numerischen und einem Zeichenfolgeneigenschaftswert vorhanden sind. DocumentDB kann das Schema von Dokumenten ableiten und Dokumente indizieren, wenn sie eingefügt oder ersetzt werden, ohne dass Sie jemals Schemas oder sekundäre Indizes definieren müssen.
 
 
 **JSON-Dokumente als Strukturen:**
@@ -67,4 +67,4 @@ Die DocumentDB-Indizierung ist für Speichereffizienz und Mehrinstanzfähigkeit 
 - Weitere Informationen zum Anpassen des DocumentDB-Indexes finden Sie [hier](documentdb-indexing-policies.md).
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0128_2016-->

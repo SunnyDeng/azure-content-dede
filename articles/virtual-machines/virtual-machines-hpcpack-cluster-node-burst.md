@@ -25,7 +25,7 @@ In diesem Artikel wird erläutert, wie Sie Azure-Burstknoten (Workerrolleninstan
 
 ![Burstknoten][burst]
 
->[AZURE.TIP]Bei Verwendung des [HPC Pack IaaS-Bereitstellungsskripts](virtual-machines-hpcpack-cluster-powershell-script.md) zum Erstellen des Clusters in Azure können Sie Azure-Burstknoten in die automatisierte Bereitstellung integrieren. Sehen Sie sich die Beispiele in diesem Artikel an.
+>[AZURE.TIP] Bei Verwendung des [HPC Pack IaaS-Bereitstellungsskripts](virtual-machines-hpcpack-cluster-powershell-script.md) zum Erstellen des Clusters in Azure können Sie Azure-Burstknoten in die automatisierte Bereitstellung integrieren. Sehen Sie sich die Beispiele in diesem Artikel an.
 
 Anhand der Schritte in diesem Artikel können Sie Azure-Knoten auf schnelle Weise zu einem cloudbasierten virtuellen Computer für den HPC Pack-Hauptknoten für Tests oder Machbarkeitsstudien hinzufügen. Der Vorgang entspricht im Wesentlichen dem "Burst-auf-Azure"-Vorgang zum Hinzufügen von Cloudcomputekapazität zu einem lokalen HPC Pack-Cluster. Ein entsprechendes Lernprogramm finden Sie unter [Einrichten eines Hybrid-Rechenclusters mit Microsoft HPC Pack](../cloud-services/cloud-services-setup-hybrid-hpcpack-cluster.md). Ausführliche Anweisungen und Überlegungen zu Produktionsbereitstellungen finden Sie unter [Burst to Azure with Microsoft HPC Pack](https://technet.microsoft.com/library/gg481749.aspx) (in englischer Sprache).
 
@@ -37,7 +37,7 @@ Wenn Sie die rechenintensive A8- oder A9-Instanzengröße verwenden möchten, fi
 
 * **Azure-Abonnement**: Zum Hinzufügen von Azure-Knoten können Sie dasselbe Abonnement verwenden, das zum Bereitstellen des virtuellen Computers für den Hauptknoten verwendet wird. Sie können dazu auch andere Abonnements verwenden.
 
-* **Kernkontingent**: Unter Umständen muss das Kontingent für die Kerne erhöht werden. Dies gilt insbesondere, wenn Sie mehrere Azure-Knoten mit Multicore-Größen bereitstellen. Um ein Kontingent zu erhöhen, können Sie kostenlos eine [Anfrage an den Onlinekundensupport richten](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/).
+* **Kernkontingent**: Unter Umständen muss das Kontingent für die Kerne erhöht werden. Dies gilt insbesondere, wenn Sie mehrere Azure-Knoten mit Multicore-Größen bereitstellen. Um ein Kontingent zu erhöhen, können Sie kostenlos eine [Anfrage an den Onlinekundensupport richten](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/).
 
 ## Schritt 1: Erstellen eines Clouddiensts und eines Speicherkontos zum Hinzufügen von Azure-Knoten
 
@@ -46,7 +46,7 @@ Verwenden Sie das klassische Azure-Portal oder entsprechende Tools, um die folge
 * Einen neuen Azure-Clouddienst
 * Ein neues Azure-Speicherkonto
 
->[AZURE.NOTE]Verwenden Sie in Ihrem Abonnement keinen vorhandenen Clouddienst. Stellen Sie auch kein separates benutzerdefiniertes Clouddienstpaket für diesen Clouddienst bereit. HPC Pack stellt automatisch ein Clouddienstpaket bereit, wenn Sie die Azure-Knoten starten (bereitstellen).
+>[AZURE.NOTE] Verwenden Sie in Ihrem Abonnement keinen vorhandenen Clouddienst. Stellen Sie auch kein separates benutzerdefiniertes Clouddienstpaket für diesen Clouddienst bereit. HPC Pack stellt automatisch ein Clouddienstpaket bereit, wenn Sie die Azure-Knoten starten (bereitstellen).
 
 **Überlegungen**
 
@@ -88,4 +88,4 @@ Wenn bei der Bereitstellung von Azure-Knoten Probleme auftreten, finden Sie unte
 <!--Image references-->
 [burst]: ./media/virtual-machines-hpcpack-cluster-node-burst/burst.png
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

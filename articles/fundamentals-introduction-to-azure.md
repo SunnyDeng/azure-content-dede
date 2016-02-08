@@ -31,12 +31,11 @@ Ihr Feedback ist uns sehr wichtig. Dieser Artikel soll Ihnen einen optimalen Üb
 
 ## Die Komponenten von Azure
 
-Azure gruppiert Dienste im Verwaltungsportal unter verschiedenen Kategorien und bietet verschiedene visuelle Hilfsmittel, wie beispielsweise die [Infografik "Was ist Azure?"](http://azure.microsoft.com/documentation/infographics/azure/). Im Verwaltungsportal verwalten Sie die meisten (aber nicht alle) Dienste in Azure.
+Azure gruppiert Dienste im Verwaltungsportal unter verschiedenen Kategorien und bietet verschiedene visuelle Hilfsmittel, wie beispielsweise die [Infografik "Was ist Azure?"](https://azure.microsoft.com/documentation/infographics/azure/). Im Verwaltungsportal verwalten Sie die meisten (aber nicht alle) Dienste in Azure.
 
 Dieser Artikel **geht anders vor**, denn die Dienste werden nach Funktionsverwandtschaft dargestellt, und es werden wichtige Teildienste hervorgehoben, die zu größeren Diensten gehören.
 
-![Azure-Komponenten](./media/fundamentals-introduction-to-azure/AzureComponentsIntroNew780.png)   
- *Abbildung: Azure bietet über das Internet zugängliche Anwendungsdienste, die in Azure-Datencentern ausgeführt werden.*
+![Azure-Komponenten](./media/fundamentals-introduction-to-azure/AzureComponentsIntroNew780.png) *Abbildung: Azure bietet über das Internet zugängliche Anwendungsdienste, die in Azure-Datencentern ausgeführt werden. *
 
 ## Verwaltungsportal
 Azure verfügt über eine Webschnittstelle, das so genannte [Verwaltungsportal](http://manage.windowsazure.com), über das Administratoren auf die meisten Azure-Features zugreifen und die meisten Azure-Features verwalten können. Microsoft gibt das Portal mit der neueren Benutzeroberfläche in der Regel als Beta-Version heraus, bevor eine ältere Version zurückgezogen wird. Die neuere Version heißt [Azure-Vorschauportal](https://portal.azure.com/).
@@ -247,7 +246,7 @@ Azure bietet Entwicklern und IT-Experten verschiedene Tools zum Erstellen und Ve
 ### Azure SDK
 Im Jahr 2008 unterstützte die erste Vorabversion von Azure nur die .NET-Entwicklung. Heute können Sie jedoch Azure-Anwendungen in nahezu jeder Sprache erstellen. Microsoft stellt derzeit sprachspezifische SDKs für .NET, Java, PHP, Node.js, Ruby und Python bereit. Es gibt auch ein allgemeines Azure-SDK, das grundlegende Unterstützung für jede Sprache, wie z. B. C++, bietet.
 
-Diese SDKs helfen Ihnen dabei, Azure-Anwendungen zu erstellen, bereitzustellen und zu verwalten. Sie stehen auf [www.microsoftazure.com](http://azure.microsoft.com/downloads/) oder GitHub zur Verfügung und können mit Visual Studio und Eclipse verwendet werden. Azure bietet auch Befehlszeilentools, die Entwickler mit jedem Editor oder mit jeder Entwicklungsumgebung verwenden können, darunter auch Tools zum Bereitstellen von Anwendungen auf Azure von Linux- und Macintosh-Systemen.
+Diese SDKs helfen Ihnen dabei, Azure-Anwendungen zu erstellen, bereitzustellen und zu verwalten. Sie stehen auf [www.microsoftazure.com](https://azure.microsoft.com/downloads/) oder GitHub zur Verfügung und können mit Visual Studio und Eclipse verwendet werden. Azure bietet auch Befehlszeilentools, die Entwickler mit jedem Editor oder mit jeder Entwicklungsumgebung verwenden können, darunter auch Tools zum Bereitstellen von Anwendungen auf Azure von Linux- und Macintosh-Systemen.
 
 Doch diese SDKs unterstützen Sie nicht nur beim Erstellen von Azure-Anwendungen, sie bieten auch Clientbibliotheken, mit denen Sie Software erstellen können, die Azure-Dienste nutzt. So können Sie beispielsweise eine Anwendung erstellen, die Azure-Blobs liest und schreibt. Oder Sie können ein Tool erstellen, das Azure-Anwendungen über die Azure-Verwaltungsschnittstelle bereitstellt.
 
@@ -612,4 +611,4 @@ Nachdem Sie nun einen Überblick erhalten haben, besteht der nächste Schritt da
 
 [Azure Media Services Poster]: http://azure.microsoft.com/documentation/infographics/media-services/
 
-<!----HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -53,13 +53,15 @@ name | Der Name der Aktivität | Ja
 description | Ein Text, der beschreibt, wofür die Aktivität verwendet wird. | Nein
 type | SqlServerStoredProcedure | Ja
 inputs | Eingabedatasets müssen (im Status "Bereit") verfügbar sein, damit die Aktivität "Gespeicherte Prozedur" ausgeführt wird. Die Eingaben in die Aktivität "Gespeicherte Prozedur" dienen nur zur Verwaltung von Abhängigkeiten bei deren Verkettung. Die Eingabedatasets können nicht als Parameter in der gespeicherten Prozedur genutzt werden. | Nein
-outputs | Von der Aktivität "Gespeicherte Prozedur" generierte Ausgabedatasets. Stellen Sie sicher, dass die Ausgabetabelle einen verknüpften Dienst verwendet, der eine Azure SQL-Datenbank oder ein Azure SQL Data Warehouse mit der Data Factory verknüpft. Die Ausgaben in der Aktivität "Gespeicherte Prozedur" dienen als Möglichkeit, das Ergebnis dieser Aktivität für die nachfolgende Verarbeitung zu übergeben und/oder Abhängigkeiten bei deren Verkettung zu verwalten. | Ja
+outputs | Von der Aktivität "Gespeicherte Prozedur" generierte Ausgabedatasets. Stellen Sie sicher, dass die Ausgabetabelle einen verknüpften Dienst verwendet, der eine Azure SQL-Datenbank, ein Azure SQL Data Warehouse oder eine SQL Server-Datenbank mit der Data Factory verknüpft. Die Ausgaben in der Aktivität "Gespeicherte Prozedur" dienen als Möglichkeit, das Ergebnis dieser Aktivität für die nachfolgende Verarbeitung zu übergeben und/oder Abhängigkeiten bei deren Verkettung zu verwalten. | Ja
 storedProcedureName | Geben Sie den Namen der gespeicherten Prozedur in der Azure SQL-Datenbank oder dem Azure SQL Data Warehouse an, die bzw. das vom verknüpften Dienst dargestellt wird, den die Ausgabetabelle verwendet. | Ja
 storedProcedureParameters | Geben Sie Werte für Parameter der gespeicherten Prozedur an. | Nein
 
 ## Exemplarische Vorgehensweise
 
 ### Beispiel für eine Tabelle und eine gespeicherte Prozedur
+> [AZURE.NOTE] Dieses Beispiel verwendet Azure SQL-Datenbank, funktioniert aber auf gleiche Weise für Azure SQL Data Warehouse und eine SQL Server-Datenbank.
+
 1. Erstellen Sie die folgende **Tabelle** in der Azure SQL-Datenbank mithilfe von SQL Server Management Studio oder anderen Tools, mit denen Sie vertraut sind. Die Spalte "datetimestamp" enthält das Datum und die Uhrzeit, zu der die entsprechende ID generiert wird. 
 
 		CREATE TABLE dbo.sampletable
@@ -72,8 +74,7 @@ storedProcedureParameters | Geben Sie Werte für Parameter der gespeicherten Pro
 		CREATE CLUSTERED INDEX ClusteredID ON dbo.sampletable(Id);
 		GO
 
-	"Id" ist der eindeutige Bezeichner, und die Spalte "datetimestamp" enthält das Datum und die Uhrzeit, zu der die entsprechende ID generiert wird.
-	![Beispieldaten](./media/data-factory-stored-proc-activity/sample-data.png)
+	"Id" ist der eindeutige Bezeichner, und die Spalte "datetimestamp" enthält das Datum und die Uhrzeit, zu der die entsprechende ID generiert wird. ![Beispieldaten](./media/data-factory-stored-proc-activity/sample-data.png)
 
 2. Erstellen Sie die folgende **gespeicherte Prozedur**, mit welcher Daten in **sampletable** eingefügt werden.
 
@@ -85,10 +86,10 @@ storedProcedureParameters | Geben Sie Werte für Parameter der gespeicherten Pro
 		    VALUES (newid(), @DateTime)
 		END
 
-	> [AZURE.IMPORTANT]**Name** und **Groß- und Kleinschreibung** des Parameters ("DateTime" in diesem Beispiel) müssen mit dem Parameter übereinstimmen, der in der JSON der Pipeline/Aktivität angegeben ist. Stellen Sie bei der Definition der gespeicherten Prozedur sicher, dass **@** als Präfix für den Parameter verwendet wird.
+	> [AZURE.IMPORTANT] **Name** und **Groß- und Kleinschreibung** des Parameters ("DateTime" in diesem Beispiel) müssen mit dem Parameter übereinstimmen, der in der JSON der Pipeline/Aktivität angegeben ist. Stellen Sie bei der Definition der gespeicherten Prozedur sicher, dass **@** als Präfix für den Parameter verwendet wird.
 	
 ### Erstellen einer Data Factory  
-4. Nach der Anmeldung beim [Azure-Portal](http://portal.azure.com/) gehen Sie wie folgt vor:
+4. Nach der Anmeldung beim [Azure-Portal](https://portal.azure.com/) gehen Sie wie folgt vor:
 	1.	Klicken Sie im linken Menü auf **NEU**. 
 	2.	Klicken Sie auf dem Blatt **Erstellen** auf **Datenanalyse**.
 	3.	Klicken Sie auf dem Blatt **Datenanalyse** auf **Data Factory**.
@@ -107,7 +108,7 @@ Nach dem Erstellen der Data Factory erstellen Sie einen mit Azure SQL verknüpft
 
 7.	Klicken Sie auf dem Blatt **DATA FACTORY** für **SProcDF** auf **Erstellen und bereitstellen**. Der Data Factory-Editor wird gestartet. 
 2.	Klicken Sie in der Befehlsleiste auf **Neuer Datenspeicher**, und wählen Sie **Azure SQL**. Das JSON-Skript zum Erstellen eines mit Azure SQL verknüpften Diensts wird im Editor angezeigt. 
-4. Ersetzen Sie **servername** durch den Namen Ihres Azure SQL-Datenbankservers, **databasename** durch die Datenbank, in der Sie die Tabelle und die gespeicherte Prozedur erstellt haben, **username@servername** durch das Benutzerkonto, das Zugriff auf die Datenbank besitzt, und **password** durch das Kennwort für das Benutzerkonto.
+4. Ersetzen Sie **servername** durch den Namen Ihres Azure SQL-Datenbankservers, **databasename** durch die Datenbank, in der Sie die Tabelle und die gespeicherte Prozedur erstellt haben, ****username@servername** durch das Benutzerkonto, das Zugriff auf die Datenbank besitzt, und **password** durch das Kennwort für das Benutzerkonto.
 5. Klicken Sie auf der Befehlsleiste auf **Bereitstellen**, um den verknüpften Dienst bereitzustellen.
 
 ### Erstellen eines Ausgabedatasets
@@ -178,7 +179,7 @@ Erstellen wir jetzt eine Pipeline mit der Aktivität "SqlServerStoredProcedure".
 
 	Unter [Überwachen der Pipeline](data-factory-monitor-manage-pipelines.md) finden Sie ausführliche Informationen zur Überwachung von Azure Data Factory-Pipelines.
 
-> [AZURE.NOTE]Im obigen Beispiel weist "SprocActivitySample" keine Eingaben auf. Wenn Sie dies mit einer vorgelagerten Aktivität verketten möchten (d. h. vor der Verarbeitung), können die Ausgaben der vorgelagerten Aktivität als Eingaben in diese Aktivität verwendet werden. In diesem Fall wird diese Aktivität erst ausgeführt, nachdem die vorgelagerte Aktivität abgeschlossen und deren Ausgaben (mit dem Status "Bereit") verfügbar sind. Die Eingaben können nicht direkt als Parameter für die Aktivität "Gespeicherte Prozedur" verwendet werden.
+> [AZURE.NOTE] Im obigen Beispiel weist "SprocActivitySample" keine Eingaben auf. Wenn Sie dies mit einer vorgelagerten Aktivität verketten möchten (d. h. vor der Verarbeitung), können die Ausgaben der vorgelagerten Aktivität als Eingaben in diese Aktivität verwendet werden. In diesem Fall wird diese Aktivität erst ausgeführt, nachdem die vorgelagerte Aktivität abgeschlossen und deren Ausgaben (mit dem Status "Bereit") verfügbar sind. Die Eingaben können nicht direkt als Parameter für die Aktivität "Gespeicherte Prozedur" verwendet werden.
 
 ## Übergeben eines statischen Werts 
 Lassen Sie uns nun der Tabelle eine weitere Spalte mit dem Namen "Scenario" hinzufügen, die den statischen Wert "Document sample" enthält.
@@ -206,4 +207,4 @@ Um dies zu erreichen, übergeben Sie den Parameter "Scenario" und den Wert aus d
 		}
 	}
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

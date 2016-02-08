@@ -30,7 +30,7 @@ Folgende Voraussetzungen müssen erfüllt sein, bevor Sie beginnen:
 
 1. Zum Kompilieren und Erstellen der Anwendung muss [Visual Studio](https://www.visualstudio.com/) auf Ihrem Computer installiert sein. 
 
-2. Installieren Sie die neueste Version von [Azure SDK für .NET](http://azure.microsoft.com/downloads/). Das SDK enthält die Azure-Schnellstart-Beispielprojekte, den Azure-Speicheremulator und die [Azure Storage Client Library for .NET](https://msdn.microsoft.com/library/azure/wa_storage_30_reference_home.aspx).
+2. Installieren Sie die neueste Version von [Azure SDK für .NET](https://azure.microsoft.com/downloads/). Das SDK enthält die Azure-Schnellstart-Beispielprojekte, den Azure-Speicheremulator und die [Azure Storage Client Library for .NET](https://msdn.microsoft.com/library/azure/wa_storage_30_reference_home.aspx).
 
 3. Stellen Sie sicher, dass [.NET Framework 4.5](http://www.microsoft.com/download/details.aspx?id=30653) auf Ihrem Computer installiert ist, da es von den Azure-Schnellstart-Beispielprojekte benötigt wird, die wir in diesem Lernprogramm verwenden.
 
@@ -38,7 +38,7 @@ Folgende Voraussetzungen müssen erfüllt sein, bevor Sie beginnen:
 
 4. Sie benötigen ein Azure-Abonnement und ein Azure-Speicherkonto.
 
-    - Informationen zum Erhalt eines Azure-Abonnements finden Sie unter [Kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/), [Kaufoptionen](http://azure.microsoft.com/pricing/purchase-options/) und [Angebote für Mitglieder](http://azure.microsoft.com/pricing/member-offers/) (für Mitglieder von MSDN, Microsoft Partner Network, BizSpark und anderen Microsoft-Programmen).
+    - Informationen zum Erhalt eines Azure-Abonnements finden Sie unter [Kostenlose Testversion](https://azure.microsoft.com/pricing/free-trial/), [Kaufoptionen](https://azure.microsoft.com/pricing/purchase-options/) und [Angebote für Mitglieder](https://azure.microsoft.com/pricing/member-offers/) (für Mitglieder von MSDN, Microsoft Partner Network, BizSpark und anderen Microsoft-Programmen).
     - Informationen zum Erstellen eines Speicherkontos in Azure finden Sie unter [Erstellen, Verwalten oder Löschen eines Speicherkontos](storage-create-storage-account.md).
 
 ## Ausführen Ihrer ersten Azure Storage-Anwendung über Azure Storage in der Cloud
@@ -102,11 +102,11 @@ Weitere Informationen zu Azure Storage finden Sie in den folgenden Ressourcen:
 * [Verwenden des Tabellenspeichers mit .NET](storage-dotnet-how-to-use-tables.md)
 * [Verwenden des Warteschlangenspeichers mit .NET](storage-dotnet-how-to-use-queues.md)
 * [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy)
-* [Azure-Speicherdokumentation](http://azure.microsoft.com/documentation/services/storage/)
+* [Azure-Speicherdokumentation](https://azure.microsoft.com/documentation/services/storage/)
 * [Azure Storage Client Library](https://msdn.microsoft.com/library/azure/wa_storage_30_reference_home.aspx)
 * [Azure Storage-REST-API](https://msdn.microsoft.com/library/azure/dd179355.aspx)
 
 [Image1]: ./media/storage-getting-started-guide/QuickStart.png
  
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -1,7 +1,8 @@
 <properties 
 	pageTitle="Beheben von Problemen mit der Azure Multi-Factor Authentication | Microsoft Azure" 
 	description="In diesem Dokument erhalten Benutzer Informationen zur Vorgehensweise, wenn bei Multi-Factor Authentication ein Problem auftreten sollte." 
-	services="multi-factor-authentication" 
+	services="multi-factor-authentication"
+	keywords = "Client für Multi-Factor Authentication, Authentifizierungsproblem, Korrelations-ID"
 	documentationCenter="" 
 	authors="billmath" 
 	manager="stevenpo" 
@@ -13,11 +14,12 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/10/2015" 
+	ms.date="01/25/2016" 
 	ms.author="billmath"/>
 
 # Beheben von Problemen mit Azure Multi-Factor Authentication
->[AZURE.IMPORTANT]Helfen Sie uns, diese Seite zu verbessern. Wenn Sie auf dieser Seite keine Antwort auf Ihre Frage finden, geben Sie ausführliches Feedback, damit wir diesen Punkt hinzufügen können.
+>[AZURE.IMPORTANT]
+Helfen Sie uns, diese Seite zu verbessern. Wenn Sie auf dieser Seite keine Antwort auf Ihre Frage finden, geben Sie ausführliches Feedback, damit wir diesen Punkt hinzufügen können.
 
 Die folgende Informationen sollen Ihnen helfen, einige der häufigsten Probleme, die auftreten können, in den Griff zu bekommen.
 
@@ -63,7 +65,8 @@ Wählen Sie dann Ihre andere Telefonnummer aus. Wählen Sie in diesem Fall **Ruf
 
 ![Alternatives Telefon](./media/multi-factor-authentication-end-user-manage/altphone2.png)
 
->[AZURE.IMPORTANT]Konfigurieren Sie unbedingt eine sekundäre Authentifizierungstelefonnummer. Da sich Ihre primäre Telefonnummer und ihre mobile App wahrscheinlich auf demselben Telefon befinden, ist die sekundäre Telefonnummer die einzige Möglichkeit, sich wieder bei Ihrem Konto anzumelden, sollte Ihr Telefon verloren gehen oder gestohlen werden.
+>[AZURE.IMPORTANT]
+Konfigurieren Sie unbedingt eine sekundäre Authentifizierungstelefonnummer. Da sich Ihre primäre Telefonnummer und ihre mobile App wahrscheinlich auf demselben Telefon befinden, ist die sekundäre Telefonnummer die einzige Möglichkeit, sich wieder bei Ihrem Konto anzumelden, sollte Ihr Telefon verloren gehen oder gestohlen werden.
 
 Wenn Sie keine sekundäre Authentifizierungstelefonnummer konfiguriert haben, müssen Sie den Administrator bitten, Ihre Einstellungen zu löschen, sodass Sie bei der nächsten Anmeldung aufgefordert werden, die [Multi-Factor Authentication erneut einzurichten](multi-factor-authentication-manage-users-and-devices.md#require-selected-users-to-provide-contact-methods-again).
 
@@ -129,7 +132,8 @@ Wählen Sie dann Ihre andere Telefonnummer aus. Wählen Sie in diesem Fall **Ruf
 
 ![Alternatives Telefon](./media/multi-factor-authentication-end-user-manage/altphone2.png)
 
->[AZURE.IMPORTANT]Konfigurieren Sie unbedingt eine sekundäre Authentifizierungstelefonnummer. Da sich Ihre primäre Telefonnummer und ihre mobile App wahrscheinlich auf demselben Telefon befinden, ist die sekundäre Telefonnummer die einzige Möglichkeit, sich wieder bei Ihrem Konto anzumelden, sollte Ihr Telefon verloren gehen oder gestohlen werden.
+>[AZURE.IMPORTANT]
+Konfigurieren Sie unbedingt eine sekundäre Authentifizierungstelefonnummer. Da sich Ihre primäre Telefonnummer und ihre mobile App wahrscheinlich auf demselben Telefon befinden, ist die sekundäre Telefonnummer die einzige Möglichkeit, sich wieder bei Ihrem Konto anzumelden, sollte Ihr Telefon verloren gehen oder gestohlen werden.
 
 Die zweite Möglichkeit ist, sich an Ihren Administrator oder die Person zu wenden, die MFA für Sie eingerichtet hat. So müssen Sie nur vorgehen, wenn Sie keine sekundäre Authentifizierungstelefonnummer konfiguriert haben. In diesem Fall müssen Sie den Administrator oder die Person, die MFA eingerichtet hat, bitten, Ihre Einstellungen zu löschen. Sie werden dann bei der nächsten Anmeldung zum erneuten [Einrichten von Multi-Factor Authentication](multi-factor-authentication-manage-users-and-devices.md#require-selected-users-to-provide-contact-methods-again) aufgefordert.
 
@@ -145,7 +149,7 @@ Zunächst müssen Sie Folgendes sicherstellen:
 
 Bei Smartphones wird empfohlen, die [Azure Authenticator-App](multi-factor-authentication-azure-authenticator) zu nutzen.
 
-Sie können zwischen dem Empfang von Überprüfungscodes per Textnachrichten und per mobiler App wechseln, indem Sie beim Anmelden **Andere Überprüfungsoption verwenden** auswählen.
+Sie können vom Empfang von Überprüfungscodes per Textnachrichten zum Empfang per mobiler App wechseln, indem Sie beim Anmelden **Andere Überprüfungsoption verwenden** auswählen.
 
 ![Andere Überprüfung](./media/multi-factor-authentication-end-user-manage/differentverification.png)
 
@@ -168,4 +172,4 @@ Außerdem können Sie Ihren Administrator oder die Person, die Multi-Factor Auth
 
 Geben Sie abschließend bitte detailliertes Feedback auf dieser Seite ab, damit wir diese Seite aktualisieren und durch weitere Informationen verbessern können.
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

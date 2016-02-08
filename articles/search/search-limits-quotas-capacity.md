@@ -61,7 +61,7 @@ Zusätzliche Kapazität wird als Partitionen multipliziert mit Replikaten berech
 In der folgenden Tabelle sind Replikate auf der vertikalen Achse und Partitionen auf der horizontalen Achse aufgelistet. Die Schnittpunkte zeigen die Anzahl der Sucheinheiten, die zur Unterstützung der jeweiligen Kombination erforderlich sind, wobei der Grenzwert von 36 Sucheinheiten (SU) pro Dienst beachtet wird. Wenn Sie beispielsweise über 6 Replikate und 2 Partitionen verfügen möchten, würde diese Konfiguration 12 Sucheinheiten erfordern. Zur Verwendung von 4 Replikaten und 2 Partitionen wären 8 Sucheinheiten erforderlich. Im Allgemeinen gilt, dass die meisten Suchanwendungen tendenziell mehr Replikate als Partitionen benötigen.
 
 <table cellspacing="0" border="1">
-<tr><td><b>12 Replikate</b></td><td>12 SU</td><td>24 SU</td><td>36 SU</td><td>N/V</td><td>N/V</td><td>N/V</td></tr>
+<tr><td><b>12 Replikate</b></td><td>12 SU</td><td>24 SU</td><td>36 SU</td><td>N/V</td><td>–</td><td>N/V</td></tr>
 <tr><td><b>6 Replikate</b></td><td>6 SU</td><td>12 SU</td><td>18 SU</td><td>24 SU</td><td>36 SU</td><td>N/V</td></tr>
 <tr><td><b>5 Replikate</b></td><td>5 SU</td><td>10 SU</td><td>15 SU</td><td>20 SU</td><td>30 SU</td><td>N/V</td></tr>
 <tr><td><b>4 Replikate</b></td><td>4 SU</td><td>8 SU</td><td>12 SU</td><td>16 SU</td><td>24 SU</td><td>N/V </td></tr>
@@ -71,9 +71,9 @@ In der folgenden Tabelle sind Replikate auf der vertikalen Achse und Partitionen
 <tr><td>N/V</td><td><b>1 Partition</b></td><td><b>2 Partitionen</b></td><td><b>3 Partitionen</b></td><td><b>4 Partitionen</b></td><td><b>6 Partitionen</b></td><td><b>12 Partitionen</b></td></tr>
 </table>
 
-Sucheinheiten, Preise und Kapazität werden auf der Azure-Website ausführlich erläutert. Weitere Informationen finden Sie unter [Preise](http://azure.microsoft.com/pricing/details/search/).
+Sucheinheiten, Preise und Kapazität werden auf der Azure-Website ausführlich erläutert. Weitere Informationen finden Sie unter [Preise](https://azure.microsoft.com/pricing/details/search/).
 
-> [AZURE.NOTE]Die Anzahl der Replikate und Partitionen muss gleichmäßig in 12 unterteilt werden können (d. h. 1, 2, 3, 4, 6, 12). Der Grund dafür ist, dass Azure Search jeden Index vorab in 12 Shards unterteilt, damit er auf Partitionen verteilt werden kann. Wenn Ihr Dienst z. B. drei Partitionen aufweist und Sie einen neuen Index erstellen, enthält jede Partition 4 Shards des Indexes. Die Form, in der Azure Search Shards eines Indexes erstellt, ist ein Implementierungsdetail, dass sich bei zukünftigen Versionen ändern kann. Auch wenn die Anzahl heute 12 beträgt, sollten Sie nicht davon ausgehen, das dies auch in Zukunft immer so ist.
+> [AZURE.NOTE] Die Anzahl der Replikate und Partitionen muss gleichmäßig in 12 unterteilt werden können (d. h. 1, 2, 3, 4, 6, 12). Der Grund dafür ist, dass Azure Search jeden Index vorab in 12 Shards unterteilt, damit er auf Partitionen verteilt werden kann. Wenn Ihr Dienst z. B. drei Partitionen aufweist und Sie einen neuen Index erstellen, enthält jede Partition 4 Shards des Indexes. Die Form, in der Azure Search Shards eines Indexes erstellt, ist ein Implementierungsdetail, dass sich bei zukünftigen Versionen ändern kann. Auch wenn die Anzahl heute 12 beträgt, sollten Sie nicht davon ausgehen, das dies auch in Zukunft immer so ist.
 
 ## Auswählen einer Kombination von Partitionen und Replikaten für hohe Verfügbarkeit
 
@@ -88,7 +88,7 @@ Allgemeine Empfehlungen für hohe Verfügbarkeit sind:
 
 Derzeit steht kein integrierter Mechanismus für die Notfallwiederherstellung bereit. Das Hinzufügen von Partitionen oder Replikaten wäre die falsche Strategie, um die Zielsetzungen für eine Notfallwiederherstellung zu erfüllen. Stattdessen sollten Sie das Hinzufügen von Redundanz auf Dienstebene in Betracht ziehen. Eine eingehendere Besprechung der Methoden finden Sie in [diesem Forumsbeitrag](https://social.msdn.microsoft.com/Forums/ee108a26-00c5-49f6-b1ff-64c66c8b828a/dr-and-high-availability-for-azure-search?forum=azuresearch).
 
-> [AZURE.NOTE]Denken Sie daran, dass Vereinbarungen zum Servicelevel und Skalierbarkeit Features des Standarddiensts sind. Der kostenlose Dienst wird auf fester Ressourcenebene angeboten, wobei Replikate und Partitionen von mehreren Abonnenten gemeinsam genutzt werden. Wenn Sie mit dem kostenlosen Dienst begonnen haben und jetzt ein Upgrade durchführen möchten, müssen Sie einen neuen Azure Search-Dienst auf Standardebene erstellen und dann Indizes und Daten erneut in den neuen Dienst laden. Anweisungen zur Dienstbereitstellung finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](search-create-service-portal.md).
+> [AZURE.NOTE] Denken Sie daran, dass Vereinbarungen zum Servicelevel und Skalierbarkeit Features des Standarddiensts sind. Der kostenlose Dienst wird auf fester Ressourcenebene angeboten, wobei Replikate und Partitionen von mehreren Abonnenten gemeinsam genutzt werden. Wenn Sie mit dem kostenlosen Dienst begonnen haben und jetzt ein Upgrade durchführen möchten, müssen Sie einen neuen Azure Search-Dienst auf Standardebene erstellen und dann Indizes und Daten erneut in den neuen Dienst laden. Anweisungen zur Dienstbereitstellung finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](search-create-service-portal.md).
 
 ## Grenzwerte für API-Schlüssel
 
@@ -112,4 +112,4 @@ API-Schlüssel werden für die Dienstauthentifizierung verwendet. Es gibt zwei A
 
 <sup>1</sup> In Azure Search darf der Inhalt einer Anforderung nicht größer als 16 MB sein. Dies beschränkt möglicherweise den Inhalt einzelner Felder oder Sammlungen, für die ansonsten keine theoretischen Beschränkungen gelten. (Weitere Informationen zur Feldzusammensetzung und den Beschränkungen finden Sie unter [Unterstützte Datentypen (Azure Search)](https://msdn.microsoft.com/library/azure/dn798938.aspx)).
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

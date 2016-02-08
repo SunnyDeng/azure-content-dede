@@ -33,7 +33,7 @@ Es gibt drei VPN-Gateway-SKUs:
 - Standard
 - Leistung
 
-In der folgenden Tabelle sind die Gatewaytypen und der geschätzte zusammengefasste Durchsatz angegeben. Für die einzelnen Gateway-SKUs gelten unterschiedliche Preise. Informationen zu den Preisen finden Sie unter [VPN-Gateway – Preise](http://azure.microsoft.com/pricing/details/vpn-gateway/).
+In der folgenden Tabelle sind die Gatewaytypen und der geschätzte zusammengefasste Durchsatz angegeben. Für die einzelnen Gateway-SKUs gelten unterschiedliche Preise. Informationen zu den Preisen finden Sie unter [VPN-Gateway – Preise](https://azure.microsoft.com/pricing/details/vpn-gateway/).
 
 | SKU | Gemeinsame Verwendung von VPN-Gateway und ExpressRoute | ExpressRoute-Gateway-Durchsatz | VPN-Gateway-Durchsatz | Max. IPsec-Tunnel für VPN-Gateway |
 |-------------|-----------------------------------|---------------------------------|------------------------|-------------------------------|
@@ -83,4 +83,4 @@ Wählen Sie das VPN-Gerät für Ihre Konfiguration aus. Weitere Informationen fi
 
  
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -23,11 +23,11 @@
 
 Dieser Artikel enthält ausführliche schrittweise Anleitungen zur Diagnose und Behebung komplexer Remotedesktop-Fehler für virtuelle windowsbasierte Azure-Computer.
 
-> [AZURE.IMPORTANT]Um allgemeine Remotedesktopfehler als Ursache auszuschließen, lesen Sie zunächst den Artikel [grundlegende Problembehandlung für Remotedesktop](virtual-machines-troubleshoot-remote-desktop-connections.md), bevor Sie mit dieser Problembehandlung fortfahren.
+> [AZURE.IMPORTANT] Um allgemeine Remotedesktopfehler als Ursache auszuschließen, lesen Sie zunächst den Artikel [grundlegende Problembehandlung für Remotedesktop](virtual-machines-troubleshoot-remote-desktop-connections.md), bevor Sie mit dieser Problembehandlung fortfahren.
 
 Wenn Sie eine Fehlermeldung erhalten, die nicht den spezifischen Fehlermeldungen ähnelt, die im Artikel [grundlegende Problembehandlung für Remotedesktop](virtual-machines-troubleshoot-remote-desktop-connections.md) beschrieben sind, können Sie diese Schritte durchführen, um herauszufinden, warum der Remotedesktop (oder [RDP](https://en.wikipedia.org/wiki/Remote_Desktop_Protocol)) Client keine Verbindung mit dem RDP-Dienst auf der Azure-VM herstellen kann.
 
-Wenn Sie beim Lesen dieses Artikels feststellen, dass Sie weitere Hilfe benötigen, können Sie Ihre Frage im [MSDN Azure-Forum oder im Stack Overflow-Forum](http://azure.microsoft.com/support/forums/) stellen, um dort Hilfe von Azure-Experten zu erhalten. Alternativ dazu haben Sie die Möglichkeit, einen Azure-Supportfall zu erstellen. Rufen Sie die [Azure-Support-Website](http://azure.microsoft.com/support/options/) auf, und klicken Sie auf **Support erhalten**. Informationen zur Nutzung von Azure-Support finden Sie unter [Microsoft Azure-Support-FAQ](http://azure.microsoft.com/support/faq/).
+Wenn Sie beim Lesen dieses Artikels feststellen, dass Sie weitere Hilfe benötigen, können Sie Ihre Frage im [MSDN Azure-Forum oder im Stack Overflow-Forum](https://azure.microsoft.com/support/forums/) stellen, um dort Hilfe von Azure-Experten zu erhalten. Alternativ dazu haben Sie die Möglichkeit, einen Azure-Supportfall zu erstellen. Rufen Sie die [Azure-Support-Website](https://azure.microsoft.com/support/options/) auf, und klicken Sie auf **Support erhalten**. Informationen zur Nutzung von Azure-Support finden Sie unter [Microsoft Azure-Support-FAQ](https://azure.microsoft.com/support/faq/).
 
 
 ## Komponenten einer Remotedesktopverbindung
@@ -100,7 +100,7 @@ Korrigieren Sie zusammen mit Ihrem Netzwerkadministrator die Einstellungen des E
 
 ![](./media/virtual-machines-rdp-detailed-troubleshoot/tshootrdp_3.png)
 
-> [AZURE.NOTE]Für virtuelle Computer, die im Ressourcen-Manager erstellt wurden, fahren Sie mit [Quelle 4: Netzwerksicherheitsgruppen](#nsgs) fort.
+> [AZURE.NOTE] Für virtuelle Computer, die im Ressourcen-Manager erstellt wurden, fahren Sie mit [Quelle 4: Netzwerksicherheitsgruppen](#nsgs) fort.
 
 Wenn Sie nicht über einen anderen virtuellen Computer im gleichen Clouddienst oder virtuellen Netzwerk verfügen, können Sie anhand der Schritte in [Erstellen eines virtuellen Computers unter Windows in Azure](virtual-machines-windows-tutorial.md)einen neuen virtuellen Computer erstellen. Löschen Sie den zusätzlichen virtuellen Computer, nach Abschluss des Tests.
 
@@ -195,4 +195,4 @@ Beenden Sie die Azure PowerShell-Remotesitzung mit dem folgenden Befehl.
 
 [Problembehandlung beim Zugriff auf eine Anwendung, die auf einem virtuellen Azure-Computer ausgeführt wird](virtual-machines-troubleshoot-access-application.md)
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Übersicht über Service Bus Premium- und Standard-Tarife für Messaging | Microsoft Azure"
-	description="Service Bus Premium- und Standard-Messaging"
+	pageTitle="Übersicht über Service Bus Premium- und Standard-Preisstufen für Messaging | Microsoft Azure"
+	description="Servicebus Premium- und Standard-Messaging"
 	services="service-bus"
 	documentationCenter=".net"
 	authors="djrosanova"
@@ -29,11 +29,11 @@ In der folgenden Tabelle sind einige allgemeine Unterschiede hervorgehoben.
 | Hoher Durchsatz | Variabler Durchsatz |
 | Vorhersagbare Leistung | Variable Latenzzeit |
 | Vorhersagbare Preise | Variable Preisgestaltung (nutzungsbasierte Bezahlung) |
-| Möglichkeit zur Herauf- und Herunterskalierung der Workload | N/V |
+| Möglichkeit zur Herauf- und Herunterskalierung der Arbeitslast | N/V |
 
-**Azure Service Bus Premium-Messaging** bietet Ressourcenisolierung auf der CPU- und Arbeitsspeicherebene, sodass die Workloads der einzelnen Kunden isoliert ausgeführt werden. Dieser Ressourcencontainer wird als *Messaging-Einheit* bezeichnet. Jedem Premium-Namespace wird mindestens eine Messaging-Einheit zugeordnet. Sie können 1, 2 oder 4 Messaging-Einheiten für jeden Service Bus Premium-Namespace erwerben. Eine einzelne Workload oder Entität kann mehrere Messaging-Einheiten umfassen, und die Anzahl der Einheiten kann beliebig geändert werden. Gebühren werden jedoch im 24-Stunden- bzw. Tagesrhythmus berechnet. Das Ergebnis ist eine vorhersehbare und wiederholbare Leistung Ihrer Service Bus-basierten Lösung.
+**Azure Service Bus Premium-Messaging** bietet Ressourcenisolierung auf der CPU- und Arbeitsspeicherebene, sodass die Arbeitslasten der einzelnen Kunden isoliert ausgeführt werden. Dieser Ressourcencontainer wird als *Messaging-Einheit* bezeichnet. Jedem Premium-Namespace wird mindestens eine Messaging-Einheit zugeordnet. Sie können 1, 2 oder 4 Messaging-Einheiten für jeden Service Bus Premium-Namespace erwerben. Eine einzelne Workload oder Entität kann mehrere Messaging-Einheiten umfassen, und die Anzahl der Einheiten kann beliebig geändert werden. Gebühren werden jedoch im 24-Stunden- bzw. Tagesrhythmus berechnet. Das Ergebnis ist eine vorhersehbare und wiederholbare Leistung Ihrer Service Bus-basierten Lösung.
 
-Diese Leistung ist nicht nur besser vorhersehbar und verfügbar, sondern auch schneller. Azure Service Bus Premium-Messaging basiert auf dem in [Azure Event Hubs](http://azure.microsoft.com/services/event-hubs/) eingeführten Speichermodul. Mit Premium-Messaging wird bei Spitzenleistung eine viel höhere Geschwindigkeit erzielt, als bei der Standard-Stufe.
+Diese Leistung ist nicht nur besser vorhersehbar und verfügbar, sondern auch schneller. Azure Service Bus Premium-Messaging basiert auf dem in [Azure Event Hubs](https://azure.microsoft.com/services/event-hubs/) eingeführten Speichermodul. Mit Premium-Messaging wird bei Spitzenleistung eine viel höhere Geschwindigkeit erzielt, als bei der Standard-Stufe.
 
 ## Premium-Messaging – technische Unterschiede
 
@@ -57,4 +57,4 @@ Weitere Informationen zu Service Bus Messaging finden Sie in folgenden Themen.
 - [Übersicht über die Architektur von Azure Service Bus](service-bus-fundamentals-hybrid-solutions.md)
 - [Verwenden von Service Bus-Warteschlangen](service-bus-dotnet-how-to-use-queues.md)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_0128_2016-->

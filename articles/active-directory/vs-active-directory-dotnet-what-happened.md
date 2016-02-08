@@ -169,6 +169,6 @@ Die folgenden Konfigurationsabschnitte und eine Verbindungszeichenfolge wurden h
 ###Ihre Azure Active Directory-App (AD) wurde aktualisiert
 Ihre Azure Active Directory-App wurde aktualisiert und enthält nun die Berechtigung *Verzeichnis lesen*. Außerdem wurde ein zusätzlicher Schlüssel erstellt, der als *ida:ClientSecret* in der Datei **web.config** verwendet wird.
 
-[Weitere Informationen zu Azure Active Directory](http://azure.microsoft.com/services/active-directory/)
+[Weitere Informationen zu Azure Active Directory](https://azure.microsoft.com/services/active-directory/)
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

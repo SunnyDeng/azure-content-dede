@@ -25,7 +25,7 @@ In diesem Dokument erfahren Sie, wie Sie mit Power BI aus Daten, die von einer S
 
 ## Voraussetzungen
 
-- Ein Azure-Abonnement. Siehe [How to get Azure Free trial for testing Hadoop in HDInsight](http://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/) (in englischer Sprache).
+- Ein Azure-Abonnement. Siehe [How to get Azure Free trial for testing Hadoop in HDInsight](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/) (in englischer Sprache).
 
 * Einen Azure Active Directory-Benutzer mit [Power BI](https://powerbi.com)-Zugriff
 
@@ -49,7 +49,7 @@ Die folgenden Dateien in diesem Projekt implementieren die spezifische Power BI-
 
 * **Data.cs**: Beschreibt das Datenobjekt/die Zeile, die an Power BI gesendet wird
 
-> [AZURE.WARNING]Power BI scheint das Erstellen von mehreren Datensätzen mit demselben Namen zu ermöglichen. Dies kann auftreten, wenn der Datensatz nicht vorhanden ist und Ihre Topologie mehrere Instanzen des Power BI Bolts erstellt. Um dies zu vermeiden, müssen Sie entweder den Parallelitätshinweis des Bolts auf 1 festlegen (wie in diesem Beispiel) oder den Datensatz vor dem Bereitstellen der Topologie erstellen.
+> [AZURE.WARNING] Power BI scheint das Erstellen von mehreren Datensätzen mit demselben Namen zu ermöglichen. Dies kann auftreten, wenn der Datensatz nicht vorhanden ist und Ihre Topologie mehrere Instanzen des Power BI Bolts erstellt. Um dies zu vermeiden, müssen Sie entweder den Parallelitätshinweis des Bolts auf 1 festlegen (wie in diesem Beispiel) oder den Datensatz vor dem Bereitstellen der Topologie erstellen.
 >
 > Die in dieser Lösung enthaltene **CreateDataset**-Konsolenanwendung dient als Beispiel zum Erstellen des Datensatzes außerhalb der Topologie.
 
@@ -59,7 +59,7 @@ Die folgenden Dateien in diesem Projekt implementieren die spezifische Power BI-
 
 2. Führen Sie die Schritte in [Registrieren einer Anwendung](https://msdn.microsoft.com/library/dn877542.aspx) durch, um eine Anwendungsregistrierung zu erstellen. Diese wird beim Zugriff auf die Power BI-REST-API benötigt.
 
-    > [AZURE.IMPORTANT]Speichern Sie die **Client-ID** für die Anwendungsregistrierung.
+    > [AZURE.IMPORTANT] Speichern Sie die **Client-ID** für die Anwendungsregistrierung.
 
 ## Das Beispiel herunterladen
 
@@ -83,7 +83,7 @@ Herunterladen des [HDInsight C# Storm Power BI-Beispiels](https://github.com/Bla
 
 1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt **WordCount** und wählen Sie **An Storm in HDInsight übermitteln** aus. Wählen Sie den HDInsight-Cluster aus dem Dropdown-Dialogfeld **Storm-Cluster** aus.
 
-    > [AZURE.NOTE]Es kann einige Sekunden dauern, bis die Dropdown-Liste **Storm-Cluster** mit Servernamen befüllt wird.
+    > [AZURE.NOTE] Es kann einige Sekunden dauern, bis die Dropdown-Liste **Storm-Cluster** mit Servernamen befüllt wird.
     >
     > Wenn Sie dazu aufgefordert werden, geben Sie die Anmeldeinformationen für Ihr Azure-Abonnement ein. Wenn Sie über mehrere Abonnements verfügen, melden Sie sich bei dem Abonnement an, das Ihren Storm-Cluster in HDInsight enthält.
 
@@ -91,7 +91,7 @@ Herunterladen des [HDInsight C# Storm Power BI-Beispiels](https://github.com/Bla
 
     ![Die Topologien mit der ausgewählten WordCount-Topologie](./media/hdinsight-storm-power-bi-topology/topologysummary.png)
 
-    > [AZURE.NOTE]Sie können die Storm-Topologien auch im Server-Explorer anzeigen, indem Sie Azure, HDInsight erweitern und dann mit der rechten Maustaste auf einen Storm-Cluster in HDInsight klicken und Storm-Topologien anzeigen auswählen.
+    > [AZURE.NOTE] Sie können die Storm-Topologien auch im Server-Explorer anzeigen, indem Sie Azure, HDInsight erweitern und dann mit der rechten Maustaste auf einen Storm-Cluster in HDInsight klicken und Storm-Topologien anzeigen auswählen.
 
 3. Beim Anzeigen der **Topologie-Zusammenfassung** blättern Sie solange, bis Sie zum Abschnitt **Bolts** gelangen. Beachten Sie in diesem Abschnitt die Spalte **Ausgeführt** für den **PowerBI**-Bolt. Zum Aktualisieren verwenden Sie die Schaltfläche "Aktualisieren" am oberen Rand der Seite, bis der Wert sich in einen anderen als 0 (Null) ändert. Wenn diese Zahl größer wird, bedeutet dies, dass Elemente in Power BI geschrieben werden.
 
@@ -139,4 +139,4 @@ In diesem Dokument haben Sie erfahren, wie Daten aus einer Storm-Topologie an Po
 
 * [Beispiele für Storm-Topologien für Storm in HDInsight](hdinsight-storm-example-topology.md)
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

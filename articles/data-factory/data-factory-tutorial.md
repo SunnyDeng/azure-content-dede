@@ -27,7 +27,7 @@ In diesem Lernprogramm erstellen Sie Data Factory-Pipelines, um die Wirksamkeit
 
 ## Vorbereitungen für das Lernprogramm
 1.	Lesen Sie die [Einführung in Azure Data Factory][adfintroduction], um sich einen Überblick über Azure Data Factory zu verschaffen und sich mit den wichtigsten Konzepten vertraut zu machen.
-2.	Sie benötigen ein Azure-Abonnement, um dieses Lernprogramm durchzuführen. Informationen zum Erwerb eines Abonnements finden Sie unter [Kaufoptionen](http://azure.microsoft.com/pricing/purchase-options/), [Spezielle Angebote](http://azure.microsoft.com/pricing/member-offers/) oder [Kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/).
+2.	Sie benötigen ein Azure-Abonnement, um dieses Lernprogramm durchzuführen. Informationen zum Erwerb eines Abonnements finden Sie unter [Kaufoptionen](https://azure.microsoft.com/pricing/purchase-options/), [Spezielle Angebote](https://azure.microsoft.com/pricing/member-offers/) oder [Kostenlose Testversion](https://azure.microsoft.com/pricing/free-trial/).
 3.	Sie müssen [Azure PowerShell][download-azure-powershell] auf Ihren Computer herunterladen und installieren. Beispieldaten und Pig-/Hive-Skripts werden mithilfe von Data Factory-Cmdlets an den Blobspeicher hochgeladen. 
 2.	**Empfohlen:** Beschäftigen Sie sich mit dem Lernprogramm im Artikel [Erste Schritte mit Azure Data Factory][adfgetstarted], um sich im Rahmen eines einfachen Lernprogramms mit dem Portal und den Cmdlets vertraut zu machen.
 3.	**Empfohlen:** Beschäftigen Sie sich mit der exemplarischen Vorgehensweise im Artikel [Verwenden von Pig und Hive mit Azure Data Factory][usepigandhive], um sich mit der Erstellung einer Pipeline vertraut zu machen, mit der Daten aus einer lokalen Datenquelle in einen Azure-Blobspeicher verschoben werden.
@@ -192,7 +192,7 @@ In diesem Schritt erstellen Sie eine Azure Data Factory mit dem Namen **LogProce
  
 ## <a name="MainStep3"></a> Schritt 3: Erstellen von verknüpften Diensten
 
-> [AZURE.NOTE]In diesem Artikel werden mithilfe des klassischen Azure-Portals und insbesondere des Data Factory-Editors verknüpfte Dienste, Tabellen und Pipelines erstellt. Wenn Sie dieses Lernprogramm mit Azure PowerShell ausführen möchten, lesen Sie unter [Lernprogramm mit Azure PowerShell][adftutorial-using-powershell] weiter.
+> [AZURE.NOTE] In diesem Artikel werden mithilfe des klassischen Azure-Portals und insbesondere des Data Factory-Editors verknüpfte Dienste, Tabellen und Pipelines erstellt. Wenn Sie dieses Lernprogramm mit Azure PowerShell ausführen möchten, lesen Sie unter [Lernprogramm mit Azure PowerShell][adftutorial-using-powershell] weiter.
 
 In diesem Schritt erstellen Sie die folgenden verknüpften Dienste:
 
@@ -206,8 +206,6 @@ In diesem Schritt erstellen Sie die folgenden verknüpften Dienste:
 1.	Klicken Sie auf dem Blatt **DATA FACTORY** auf die Kachel **Erstellen und bereitstellen**, um den Editor für die Data Factory zu starten.
 
 	![Kachel „Erstellen und bereitstellen“][image-author-deploy-tile]
-
-	Im Thema [Data Factory-Editor][data-factory-editor] finden Sie eine ausführliche Übersicht über den Data Factory-Editor.
 
 2.  Klicken Sie im **Editor** auf der Symbolleiste auf die Schaltfläche **Neuer Datenspeicher**, und wählen Sie im Dropdownmenü **Azure-Speicher** aus. Die JSON-Vorlage zum Erstellen eines mit einem Azure-Speicher verknüpften Diensts sollte im rechten Bereich angezeigt werden.
 	
@@ -421,7 +419,6 @@ In [Exemplarische Vorgehensweise: Verwenden einer lokalen Datenquelle][tutorial-
 [use-custom-activities]: data-factory-use-custom-activities.md
 [troubleshoot]: data-factory-troubleshoot.md
 [cmdlet-reference]: http://go.microsoft.com/fwlink/?LinkId=517456
-[data-factory-editor]: data-factory-editor.md
 
 [adfsamples]: data-factory-samples.md
 [adfgetstarted]: data-factory-get-started.md
@@ -486,4 +483,4 @@ In [Exemplarische Vorgehensweise: Verwenden einer lokalen Datenquelle][tutorial-
 
 [image-data-factory-new-datafactory-menu]: ./media/data-factory-tutorial/NewDataFactoryMenu.png
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

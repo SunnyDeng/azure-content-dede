@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="cache-redis"
    ms.workload="tbd"
-   ms.date="10/23/2015"
+   ms.date="01/13/2016"
    ms.author="sdanie" />
 
 # ASP.NET-Ausgabecacheanbieter für Azure Redis Cache
@@ -23,11 +23,11 @@ Zum Verwenden des Redis-Ausgabecacheanbieters konfigurieren Sie zunächst den Ca
 
 ## Speichern der ASP.NET-Seitenausgabe im Cache
 
-Um eine Clientanwendung in Visual Studio mithilfe des Redis-Ausgabecacheanbieter-NuGet-Pakets zu konfigurieren, klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt und wählen **NuGet-Pakete verwalten** aus.
+Um eine Clientanwendung in Visual Studio mithilfe des NuGet-Pakets mit dem Redis-Ausgabecacheanbieter zu konfigurieren, klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt und wählen **NuGet-Pakete verwalten** aus.
 
 ![Azure Redis Cache – NuGet-Pakete verwalten](./media/cache-asp.net-output-cache-provider/IC729541.png)
 
-Geben Sie **RedisOutputCacheProvider** in das Textfeld **Online-Suche** ein, wählen Sie in den Suchergebnissen das Paket aus, und klicken Sie auf **Installieren**.
+Geben Sie **RedisOutputCacheProvider** in das Textfeld **Online suchen** ein, wählen Sie in den Suchergebnissen das Paket aus, und klicken Sie auf **Installieren**.
 
 ![Azure Redis Cache – Ausgabecacheanbieter](./media/cache-asp.net-output-cache-provider/IC751727.jpg)
 
@@ -55,9 +55,9 @@ Das NuGet-Paket wird heruntergeladen und fügt die erforderlichen Assemblyverwei
       </outputCache>
     </caching>
 
-Im kommentierten Bereich finden Sie Beispiele für die Attribute sowie Beispieleinstellungen für jedes Attribut.
+Im kommentierten Bereich finden Sie Beispiele der Attribute sowie Beispieleinstellungen für jedes Attribut.
 
-Konfigurieren Sie die Attribute mit den Werten aus dem Blatt „Cache“ im Microsoft Azure-Portal, und konfigurieren Sie die restlichen Werte wie gewünscht. Anweisungen zum Zugreifen auf die Cacheeigenschaften finden Sie unter [Konfigurieren von Redis-Cacheeinstellungen](cache-configure.md#configure-redis-cache-settings).
+Konfigurieren Sie die Attribute mit den Werten vom Blatt „Cache“ im Microsoft Azure-Portal, und konfigurieren Sie die restlichen Werte wie gewünscht. Anweisungen zum Zugreifen auf die Cacheeigenschaften finden Sie unter [Konfigurieren von Redis-Cacheeinstellungen](cache-configure.md#configure-redis-cache-settings).
 
 -	**host**: Geben Sie den Cacheendpunkt an.
 -	**port**: Verwenden Sie abhängig von Ihren SSL-Einstellungen entweder den Nicht-SSL-Port oder den SSL-Port.
@@ -66,8 +66,8 @@ Konfigurieren Sie die Attribute mit den Werten aus dem Blatt „Cache“ im Micr
 	-	Der Nicht-SSL-Port ist für neue Caches standardmäßig deaktiviert. Geben Sie für diese Einstellung „true“ an, wenn Sie den SSL-Port verwenden möchten. Weitere Informationen zum Aktivieren des Nicht-SSL-Ports finden Sie im Abschnitt [Zugriffsports](cache-configure.md#access-ports) des Themas [Konfigurieren eines Caches](cache-configure.md).
 -	**databaseId**: Geben Sie an, welche Datenbank für die Cacheausgabedaten verwendet werden soll. Wenn Sie hier nichts angeben, wird der Standardwert 0 verwendet.
 -	**applicationName**: Schlüssel werden in Redis als „<AppName>\_<SessionId>\_Data“ gespeichert. Dadurch wird es möglich, dass mehrere Anwendungen denselben Schlüssel gemeinsam nutzen. Dieser Parameter ist optional, und wenn Sie ihn nicht angeben, wird der Standardwert verwendet.
--	**connectionTimeoutInMilliseconds**: Diese Einstellung ermöglicht es Ihnen, die connectTimeout-Einstellung im StackExchange.Redis-Client zu überschreiben. Wenn Sie sie nicht angegeben, wird die connectTimeout-Standardeinstellung „5000“ verwendet. Weitere Informationen finden Sie unter [StackExchange.Redis-Konfigurationsmodell](http://go.microsoft.com/fwlink/?LinkId=398705).
--	**operationTimeoutInMilliseconds**: Diese Einstellung ermöglicht es Ihnen, die syncTimeout-Einstellung im StackExchange.Redis-Client zu überschreiben. Wenn Sie sie nicht angegeben, wird die syncTimeout-Standardeinstellung „1000“ verwendet. Weitere Informationen finden Sie unter [StackExchange.Redis-Konfigurationsmodell](http://go.microsoft.com/fwlink/?LinkId=398705).
+-	**connectionTimeoutInMilliseconds**: Diese Einstellung ermöglicht Ihnen, die connectTimeout-Einstellung im StackExchange.Redis-Client zu überschreiben. Wenn Sie sie nicht angegeben, wird die connectTimeout-Standardeinstellung „5000“ verwendet. Weitere Informationen finden Sie unter [StackExchange.Redis-Konfigurationsmodell](http://go.microsoft.com/fwlink/?LinkId=398705).
+-	**operationTimeoutInMilliseconds**: Diese Einstellung ermöglicht Ihnen, die syncTimeout-Einstellung im StackExchange.Redis-Client zu überschreiben. Wenn Sie sie nicht angegeben, wird die syncTimeout-Standardeinstellung „1000“ verwendet. Weitere Informationen finden Sie unter [StackExchange.Redis-Konfigurationsmodell](http://go.microsoft.com/fwlink/?LinkId=398705).
 
 Fügen Sie jeder Seite, für die Sie die Ausgabe zwischenspeichern möchten, eine OutputCache-Direktive hinzu.
 
@@ -81,4 +81,4 @@ Nach Abschluss dieser Schritte ist Ihre Anwendung für die Verwendung des Redis-
 
 Lesen Sie die Seite [ASP.NET-Sitzungszustandsanbieter für Azure Redis Cache](cache-asp.net-session-state-provider.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0128_2016-->

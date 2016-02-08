@@ -19,6 +19,7 @@
 # Analysieren von Daten mit Azure Machine Learning
 In diesem Tutorial erfahren Sie, wie Sie ein prädiktives Machine Learning-Modell mit Azure Machine Learning und Ihren Azure SQL Data Warehouse-Daten erstellen. In diesem Tutorial werden wir eine gezielte Marketingkampagne für Adventure Works, einen Fahrradladen, erstellen und dabei eine Prognose, ob ein Kunde ein Fahrrad kauft.
 
+> [AZURE.VIDEO integrating-azure-machine-learning-with-azure-sql-data-warehouse]
 
 ## Voraussetzungen
 Für dieses Tutorial ist Folgendes erforderlich:
@@ -84,7 +85,7 @@ Wir teilen die Daten im Verhältnis 80:20: 80 Prozent zum Trainieren eines Mach
 1. Ziehen Sie das Modul **Split** in den Zeichenbereich.
 2. Geben Sie im Eigenschaftenbereich für den Anteil der Zeilen im ersten Ausgabedatensatz „0,8“ ein. ![Aufteilen von Daten in Trainings- und Testsätze][6]
 3. Ziehen Sie das Modul **Two-Class Boosted Decision Tree** in den Zeichenbereich.
-4. Ziehen Sie das Modul **Modell trainieren** in den Zeichenbereich, und legen Sie die Eingaben fest. Klicken Sie im Eigenschaftenbereich auf **Spaltenauswahl starten**.
+4. Ziehen Sie das Modul **Train Model** in den Zeichenbereich, und legen Sie die Eingaben fest. Klicken Sie im Eigenschaftenbereich auf **Spaltenauswahl starten**.
       - Erste Eingabe: ML-Algorithmus
       - Zweite Eingabe: Daten zum Trainieren des Algorithmus ![Verbinden des „Modell trainieren“-Moduls][7]
 5. Wählen Sie die Spalte **BikeBuyer** als die vorherzusagende Spalte aus. ![Auswählen der vorherzusagenden Spalte][8]
@@ -100,12 +101,12 @@ Wir testen nun die Leistung des Modells mithilfe von Testdaten. Wir vergleichen 
 2. Ziehen Sie das Modul **Two-Class Bayes Point Machine** in den Experimentbereich. Wir sehen uns an, wie dieser Algorithmus im Vergleich zum Modul „Two-Class Boosted Decision Tree“ abschneidet.
 3. Kopieren Sie die Module „Train Model“ und „Score Model“, und fügen Sie sie im Zeichenbereich ein.
 4. Ziehen Sie das Modul **Evaluate Model** in den Zeichenbereich, um die beiden Algorithmen zu vergleichen.
-5. Sie können nun das Experiment **ausführen**. ![Ausführen des Experiments][10]
-6. Klicken Sie unten im Modul „Modell evaluieren“ auf den Ausgabeport und anschließend auf „Visualisieren“. ![Anzeigen der Auswertungsergebnisse][11]
+5. Sie können das Experiment nun **ausführen**. ![Ausführen des Experiments][10]
+6. Klicken Sie unten im Modul „Evaluate Model“ auf den Ausgabeport und anschließend auf „Visualisieren“. ![Anzeigen der Auswertungsergebnisse][11]
 
 
 
-Folgende Metriken stehen zur Verfügung: ROC-Kurve, Precision-Recall-Diagramm und Lorenz-Kurve. Anhand dieser Metriken erkennen wir, dass mit dem ersten Modell eine bessere Leistung als mit dem zweiten Modell erzielt wird. Wenn Sie die Vorhersage des ersten Modells anzeigen möchten, klicken Sie im „Bewertungsmodell“ auf den Ausgabeport und anschließend auf „Visualisieren“. ![Anzeigen der Bewertungsergebnisse][12]
+Folgende Metriken stehen zur Verfügung: ROC-Kurve, Precision-Recall-Diagramm und Lorenz-Kurve. Anhand dieser Metriken erkennen wir, dass mit dem ersten Modell eine bessere Leistung als mit dem zweiten Modell erzielt wird. Wenn Sie die Vorhersage des ersten Modells anzeigen möchten, klicken Sie im „Score Model“ auf den Ausgabeport und anschließend auf „Visualisieren“. ![Anzeigen der Bewertungsergebnisse][12]
 
 Ihrem Testdatensatz werden zwei weitere Spalten hinzugefügt.
 
@@ -139,4 +140,4 @@ Weitere Informationen zum Erstellen von vorhersehbaren Machine Learning-Vorhersa
 [Beispieldaten manuell laden]: sql-data-warehouse-get-started-manually-load-samples.md
 [Erstellen eines SQL Data Warehouse]: sql-data-warehouse-get-started-provision.md
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

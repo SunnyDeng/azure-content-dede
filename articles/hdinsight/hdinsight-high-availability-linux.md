@@ -21,7 +21,7 @@
 
 Von Azure HDInsight bereitgestellte Linux-basierte Hadoop-Cluster verfügen über einen zweiten Hauptknoten. Dies verbessert die Verfügbarkeit und Zuverlässigkeit von Hadoop-Diensten und -Aufträgen, die in Azure ausgeführt werden.
 
-> [AZURE.NOTE]Die Schritte in diesem Dokument gelten für Linux-basierte HDInsight-Cluster. Wenn Sie einen Windows-basierten Cluster verwenden, finden Sie unter [Verfügbarkeit und Zuverlässigkeit von Windows-basierten Hadoop-Clustern in HDInsight](hdinsight-high-availability.md) entsprechende Informationen für Windows.
+> [AZURE.NOTE] Die Schritte in diesem Dokument gelten für Linux-basierte HDInsight-Cluster. Wenn Sie einen Windows-basierten Cluster verwenden, finden Sie unter [Verfügbarkeit und Zuverlässigkeit von Windows-basierten Hadoop-Clustern in HDInsight](hdinsight-high-availability.md) entsprechende Informationen für Windows.
 
 ##Grundlegendes zu Hauptknoten
 
@@ -29,7 +29,7 @@ In einigen Implementierungen von Hadoop hostet ein einzelner Hauptknoten Dienste
 
 HDInsight-Cluster verfügen über einen sekundären Hauptknoten, sodass Masterdienste und -komponenten bei einem Ausfall des primären Knotens weiterhin auf dem sekundären Knoten ausgeführt werden können.
 
-> [AZURE.IMPORTANT]Beide Hauptknoten sind aktiv und werden gleichzeitig innerhalb des Clusters ausgeführt. Einige Dienste (z. B. HDFS oder YARN) sind jeweils nur auf einem Hauptknoten „aktiv“ (und auf dem anderen Hauptknoten im „Standby“). Andere Dienste (z. B. HiveServer2 oder Hive-MetaStore) sind gleichzeitig auf beiden Hauptknoten aktiv.
+> [AZURE.IMPORTANT] Beide Hauptknoten sind aktiv und werden gleichzeitig innerhalb des Clusters ausgeführt. Einige Dienste (z. B. HDFS oder YARN) sind jeweils nur auf einem Hauptknoten „aktiv“ (und auf dem anderen Hauptknoten im „Standby“). Andere Dienste (z. B. HiveServer2 oder Hive-MetaStore) sind gleichzeitig auf beiden Hauptknoten aktiv.
 
 [ZooKeeper](http://zookeeper.apache.org/)-Knoten (ZKs) wählen eine übergeordnete Instanz von Masterdiensten auf Hauptknoten aus und teilen Diensten, Datenknoten (Workerknoten) und Gateways mit, auf welchem Hauptknoten ein Masterdienst aktiv ist.
 
@@ -128,7 +128,7 @@ Da für jeden Hauptknoten spezifische Protokolleinträge vorhanden sein können,
 
 ###Ambari
 
-> [AZURE.NOTE]Für den Zugriff auf Protokolldateien über Ambari ist ein SSH-Tunnel erforderlich, da die Websites für die einzelnen Dienste nicht öffentlich im Internet verfügbar sind. Informationen zum Verwenden eines SSH-Tunnels finden Sie unter [Verwenden von SSH-Tunneling zum Zugriff auf die Ambari-Webbenutzeroberfläche, ResourceManager, JobHistory, NameNode, Oozie und andere Webbenutzeroberflächen](hdinsight-linux-ambari-ssh-tunnel.md).
+> [AZURE.NOTE] Für den Zugriff auf Protokolldateien über Ambari ist ein SSH-Tunnel erforderlich, da die Websites für die einzelnen Dienste nicht öffentlich im Internet verfügbar sind. Informationen zum Verwenden eines SSH-Tunnels finden Sie unter [Verwenden von SSH-Tunneling zum Zugriff auf die Ambari-Webbenutzeroberfläche, ResourceManager, JobHistory, NameNode, Oozie und andere Webbenutzeroberflächen](hdinsight-linux-ambari-ssh-tunnel.md).
 
 Wählen Sie in der Ambari-Webbenutzeroberfläche den Dienst aus, für den Sie Protokolle anzeigen möchten (z. B. YARN), und wählen Sie dann mithilfe von **Quicklinks** den gewünschten Hauptknoten aus.
 
@@ -136,7 +136,7 @@ Wählen Sie in der Ambari-Webbenutzeroberfläche den Dienst aus, für den Sie Pr
 
 ## Konfigurieren der Größe des Hauptknotens ##
 
-Die Größe des Hauptknotens kann nur beim Erstellen des Clusters ausgewählt werden. Eine Liste der verschiedenen VM-Größen, die für HDInsight verfügbar sind (einschließlich Kerne, Arbeitsspeicher und lokaler Speicher), finden Sie auf der Seite [HDInsight-Preisdetails](http://azure.microsoft.com/pricing/details/hdinsight/).
+Die Größe des Hauptknotens kann nur beim Erstellen des Clusters ausgewählt werden. Eine Liste der verschiedenen VM-Größen, die für HDInsight verfügbar sind (einschließlich Kerne, Arbeitsspeicher und lokaler Speicher), finden Sie auf der Seite [HDInsight-Preisdetails](https://azure.microsoft.com/pricing/details/hdinsight/).
 
 Beim Erstellen eines neuen Clusters können Sie die Größe der Knoten angeben. Die Größe kann wie folgt im [Azure-Portal][preview-portal], mit [Azure PowerShell][azure-powershell] und mit der [Azure-Befehlszeilenschnittstelle][azure-cli] festgelegt werden:
 
@@ -166,4 +166,4 @@ In diesem Dokument haben Sie erfahren, wie Azure HDInsight hohe Verfügbarkeit f
 [azure-powershell]: ../powershell-install-configure.md
 [azure-cli]: ../xplat-cli-install.md
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

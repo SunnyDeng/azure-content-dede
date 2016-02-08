@@ -24,7 +24,7 @@ Dieser Leitfaden bietet eine Einführung in den Azure Automation-Dienst und zeig
 
 ## Was ist Azure Automation?
 
-[Azure Automation](http://azure.microsoft.com/services/automation/) ist ein Azure-Dienst für die Vereinfachung der Cloudverwaltung durch eine Prozessautomatisierung. Mithilfe von Azure Automation können manuelle, häufig wiederholte, lang andauernde und fehleranfällige Aufgaben automatisiert werden, um die Zuverlässigkeit und Effizienz für Ihre Organisation zu erhöhen und die Amortisierungszeit zu verkürzen.
+[Azure Automation](https://azure.microsoft.com/services/automation/) ist ein Azure-Dienst für die Vereinfachung der Cloudverwaltung durch eine Prozessautomatisierung. Mithilfe von Azure Automation können manuelle, häufig wiederholte, lang andauernde und fehleranfällige Aufgaben automatisiert werden, um die Zuverlässigkeit und Effizienz für Ihre Organisation zu erhöhen und die Amortisierungszeit zu verkürzen.
 
 Azure Automation bietet ein äußerst zuverlässiges, hoch verfügbares Workflow-Ausführungsmodul, das sich durch Skalierung an Ihre Anforderungen anpasst. In Azure Automation können Prozesse manuell, von Systemen von Drittanbietern oder in geplanten Intervallen gestartet werden, damit Aufgaben genau im Bedarfsfall ausgeführt werden.
 
@@ -33,9 +33,9 @@ Indem Sie die Aufgaben im Zusammenhang mit der Cloudverwaltung mit Azure Automat
 
 ## Wie kann Azure Automation beim Verwalten des Azure-Schlüsseltresors nützlich sein?
 
-Der Schlüsseltresor kann in Azure Automation mithilfe der [Azure-Schlüsseltresor-Cmdlets](https://msdn.microsoft.com/library/azure/dn868052.aspx) verwaltet werden, die in den [Azure PowerShell-Tools](https://msdn.microsoft.com/library/azure/jj156055.aspx) verfügbar sind. Azure Automation verfügt standardmäßig über diese Cmdlets, sodass Sie Schlüsseltresor-Verwaltungsaufgaben innerhalb des Dienstes ausführen können. Sie können diese Cmdlets in Azure Automation auch mit den Cmdlets für andere Azure-Dienste koppeln, um komplexe Aufgaben in Azure-Diensten und Systemen anderer Hersteller zu automatisieren.
+Azure Key Vault kann in Azure Automation mithilfe der [Azure Key Vault-Cmdlets](https://msdn.microsoft.com/library/azure/dn868052.aspx) verwaltet werden, die im [PowerShell-Katalog](https://azure.microsoft.com/blog/azps-1-0/) verfügbar sind. Sie können dieses Modul in Azure Automation importieren, sodass Sie viele Ihrer Key Vault-Verwaltungsaufgaben innerhalb des Diensts ausführen können. Sie können diese Cmdlets in Azure Automation auch mit den Cmdlets für andere Azure-Dienste koppeln, um komplexe Aufgaben in Azure-Diensten und Systemen anderer Hersteller zu automatisieren.
 
-Mit den Azure-Schlüsseltresor-Cmdlets können Sie folgende Aufgaben ausführen: Erstellen oder Importieren eines Schlüssels, Erstellen oder Aktualisieren einen geheimen Schlüssels, Aktualisieren der Attribute eines Schlüssels, Abrufen eines Schlüssels oder eines geheimen Schlüssels oder Löschen eines Schlüssels oder eines geheimen Schlüssels.
+Mit den Azure Key Vault-Cmdlets können Sie folgende Aufgaben ausführen: Erstellen oder Importieren eines Schlüssels, Erstellen oder Aktualisieren einen geheimen Schlüssels, Aktualisieren der Attribute eines Schlüssels, Abrufen eines Schlüssels oder eines geheimen Schlüssels oder Löschen eines Schlüssels oder eines geheimen Schlüssels.
 
 
 ## Nächste Schritte
@@ -45,4 +45,4 @@ Nachdem Sie sich nun mit den Grundlagen von Azure Automation und dessen Einsatz 
 * Weitere Informationen erhalten Sie im Lernprogramm [Erste Schritte](../automation-create-runbook-from-samples.md) zu Azure Automation.
 * Weitere Informationen finden Sie in den [PowerShell-Skripts des Azure-Schlüsseltresors](https://gallery.technet.microsoft.com/scriptcenter/Azure-Key-Vault-Powershell-1349b091).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

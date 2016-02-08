@@ -25,13 +25,13 @@ Sie finden den Bereich **Eigenschaften** wie folgt:
 * Im Azure-Portal: Klicken Sie auf die Bereitstellung Ihres Clouddiensts, klicken Sie auf **Alle Einstellungen**, und klicken Sie dann auf **Eigenschaften**.
 * Im klassischen Azure-Portal: Klicken Sie auf die Bereitstellung Ihres Clouddiensts, klicken Sie auf **DASHBOARD**, und suchen Sie in der rechten unteren Ecke der Seite (unter **Auf einen Blick**). Beachten Sie, dass für diesen Bereich kein Text „Eigenschaften“ vorhanden ist.
 
-> [AZURE.NOTE]Sie können den Inhalt des Bereichs „Eigenschaften“ in die Zwischenablage kopieren, indem Sie auf das Symbol in der oberen rechten Ecke des Bereichs klicken.
+> [AZURE.NOTE] Sie können den Inhalt des Bereichs „Eigenschaften“ in die Zwischenablage kopieren, indem Sie auf das Symbol in der oberen rechten Ecke des Bereichs klicken.
 
 ## Kontaktieren des Azure-Kundensupports
 
-Wenn Sie beim Lesen dieses Artikels feststellen, dass Sie weitere Hilfe benötigen, können Sie Ihre Frage im [MSDN Azure-Forum oder im Stack Overflow-Forum](http://azure.microsoft.com/support/forums/) stellen, um dort Hilfe von Azure-Experten zu erhalten.
+Wenn Sie beim Lesen dieses Artikels feststellen, dass Sie weitere Hilfe benötigen, können Sie Ihre Frage im [MSDN Azure-Forum oder im Stack Overflow-Forum](https://azure.microsoft.com/support/forums/) stellen, um dort Hilfe von Azure-Experten zu erhalten.
 
-Alternativ dazu haben Sie die Möglichkeit, einen Azure-Supportfall zu erstellen. Rufen Sie die [Azure-Support-Website](http://azure.microsoft.com/support/options/) auf, und klicken Sie auf **Support erhalten**. Informationen zur Nutzung von Azure-Support finden Sie unter [Microsoft Azure-Support-FAQ](http://azure.microsoft.com/support/faq/).
+Alternativ dazu haben Sie die Möglichkeit, einen Azure-Supportfall zu erstellen. Rufen Sie die [Azure-Support-Website](https://azure.microsoft.com/support/options/) auf, und klicken Sie auf **Support erhalten**. Informationen zur Nutzung von Azure-Support finden Sie unter [Microsoft Azure-Support-FAQ](https://azure.microsoft.com/support/faq/).
 
 
 
@@ -80,7 +80,7 @@ Weitere Informationen zum Behandeln dieses Problems finden Sie im Blogbeitrag [A
    * Wenn die Rolleninstanz ausgelastet ist, überprüfen Sie den Anwendungscode, um festzustellen, ob das [StatusCheck](https://msdn.microsoft.com/library/microsoft.windowsazure.serviceruntime.roleenvironment.statuscheck)-Ereignis verarbeitet wird. Möglicherweise müssen Sie Code hinzufügen oder korrigieren, der dieses Ereignis verarbeitet.
    * Weitere Informationen erhalten Sie in den Diagnosedaten und Problembehandlungsszenarios im Blogbeitrag [Azure PaaS Compute Diagnostics Data].
 
->[AZURE.WARNING]Wenn Sie Ihren Clouddienst neu starten, setzen Sie die Eigenschaften für die Bereitstellung zurück und löschen so effektiv die Informationen, die Sie zur Lösung des ursprünglichen Problems benötigen.
+>[AZURE.WARNING] Wenn Sie Ihren Clouddienst neu starten, setzen Sie die Eigenschaften für die Bereitstellung zurück und löschen so effektiv die Informationen, die Sie zur Lösung des ursprünglichen Problems benötigen.
 
 ## Nächste Schritte
 
@@ -88,4 +88,4 @@ Sehen Sie sich weitere [Artikel zur Problembehandlung](..\?tag=top-support-issue
 
 Erfahren Sie in der [Blogreihe von Kevin Williamson](http://blogs.msdn.com/b/kwill/archive/2013/08/09/windows-azure-paas-compute-diagnostics-data.aspx), wie Sie Probleme bei Clouddienstrollen mithilfe der Computerdiagnosedaten von Azure-PaaS beheben.
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

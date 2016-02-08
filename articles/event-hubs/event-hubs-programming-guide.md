@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="tbd"
-   ms.date="09/30/2015"
+   ms.date="01/26/2016"
    ms.author="sethm" />
 
 # Programmierleitfaden für Event Hubs
@@ -23,13 +23,13 @@ In diesem Thema wird die Programmierung mit Azure Event Hubs unter Verwendung de
 
 Das Senden von Ereignissen an einen Event Hub wird entweder mit HTTP POST oder über eine AMQP 1.0-Verbindung erreicht. Welches Verfahren gewählt wird, hängt vom jeweils vorliegenden Szenario ab. AMQP 1.0-Verbindungen werden als vermittelte Verbindungen in Service Bus gemessen und besser für Fälle mit häufigeren höheren Nachrichtenvolumen und geringeren Latenzanforderungen geeignet, da sie über einen dauerhaften Nachrichtenkanal verfügen.
 
-Event Hubs werden mit der [NamespaceManager](https://msdn.microsoft.com/library/azure/microsoft.servicebus.namespacemanager.aspx)-Klasse erstellt und verwaltet. Beim Verwenden der per .NET verwalteten APIs sind die Hauptkonstrukte für die Veröffentlichung von Daten auf Event Hubs die Klassen [EventHubClient](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventhubclient.aspx) und [EventData](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventdata.aspx). Die [EventHubClient](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventhubclient.aspx)-Klasse stellt den AMQP-Kommunikationskanal bereit, über den Ereignisse an den Event Hub gesendet werden. Die [EventData](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventdata.aspx)-Klasse stellt ein Ereignis dar und wird verwendet, um Nachrichten auf einem Event Hub zu veröffentlichen. Diese Klasse enthält den Text, einige Metadaten sowie Headerinformationen zum Ereignis. Andere Eigenschaften werden dem [EventData](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventdata.aspx)-Objekt hinzugefügt, wenn es einen Event Hub durchläuft.
+Event Hubs werden mit der [NamespaceManager](https://msdn.microsoft.com/library/azure/microsoft.servicebus.namespacemanager.aspx)-Klasse erstellt und verwaltet. Beim Verwenden der per .NET verwalteten APIs sind die Hauptkonstrukte für die Veröffentlichung von Daten auf Event Hubs die Klassen [EventHubClient](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventhubclient.aspx) und [EventData](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventdata.aspx). Die [EventHubClient](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventhubclient.aspx)-Klasse stellt den AMQP-Kommunikationskanal bereit, über den Ereignisse an den Event Hub gesendet werden. Die [EventData](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventdata.aspx)-Klasse stellt ein Ereignis dar und wird verwendet, um Nachrichten auf einem Event Hub zu veröffentlichen. Diese Klasse enthält den Text, einige Metadaten sowie Headerinformationen zum Ereignis. Dem [EventData](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventdata.aspx)-Objekt werden weitere Eigenschaften hinzugefügt, wenn es einen Event Hub durchläuft.
 
 ## Erste Schritte
 
-Die .NET-Klassen, die Event Hubs unterstützen, sind Teil der Assembly „Microsoft.ServiceBus.dll“. Der einfachste Weg zum Verweisen auf die Service Bus-API und Konfigurieren Ihrer Anwendung mit allen Service Bus-Abhängigkeiten ist das Herunterladen des Service Bus-NuGet-Pakets. Weitere Informationen finden Sie unter [Verwenden des NuGet-Service Bus-Pakets](https://msdn.microsoft.com/library/azure/dn741354.aspx). Alternativ dazu können Sie die [Paket-Manager-Konsole](http://docs.nuget.org/docs/start-here/using-the-package-manager-console) in Visual Studio verwenden. Geben Sie hierzu im Fenster der [Paket-Manager-Konsole](http://docs.nuget.org/docs/start-here/using-the-package-manager-console) den folgenden Befehl ein:
+Die .NET-Klassen, die Event Hubs unterstützen, werden in der Assembly „Microsoft.ServiceBus.dll“ bereitgestellt. Der einfachste Weg zum Verweisen auf die Service Bus-API und Konfigurieren Ihrer Anwendung mit allen Service Bus-Abhängigkeiten ist das Herunterladen des [Service Bus-NuGet-Pakets](https://www.nuget.org/packages/WindowsAzure.ServiceBus). Alternativ dazu können Sie die [Paket-Manager-Konsole](http://docs.nuget.org/docs/start-here/using-the-package-manager-console) in Visual Studio verwenden. Geben Sie hierzu im Fenster der [Paket-Manager-Konsole](http://docs.nuget.org/docs/start-here/using-the-package-manager-console) den folgenden Befehl ein:
 
-```powershell
+```
 Install-Package WindowsAzure.ServiceBus
 ```
 
@@ -37,7 +37,7 @@ Install-Package WindowsAzure.ServiceBus
 
 Sie können die [NamespaceManager](https://msdn.microsoft.com/library/azure/microsoft.servicebus.namespacemanager.aspx)-Klasse verwenden, um Event Hubs zu erstellen. Beispiel:
 
-```c
+```
 var manager = new Microsoft.ServiceBus.NamespaceManager("mynamespace.servicebus.windows.net");
 var description = manager.CreateEventHub("MyEventHub");
 ```
@@ -48,11 +48,11 @@ In den meisten Fällen ist es ratsam, die [CreateEventHubIfNotExists](https://ms
 var description = manager.CreateEventHubIfNotExists("MyEventHub");
 ```
 
-Alle Event Hub-Erstellungsvorgänge, z. B. [CreateEventHubIfNotExists](https://msdn.microsoft.com/library/azure/microsoft.servicebus.namespacemanager.createeventhubifnotexists.aspx), erfordern für den jeweiligen Namespace Verwaltungsberechtigungen (**Manage**). Falls Sie die Berechtigungen für Ihre Veröffentlichungs- oder Consumeranwendungen beschränken möchten, können Sie diese Aufrufe von Erstellungsvorgängen im Produktionscode vermeiden, wenn Sie Anmeldeinformationen mit begrenzten Berechtigungen verwenden.
+Alle Event Hubs-Erstellungsvorgänge, z. B. [CreateEventHubIfNotExists](https://msdn.microsoft.com/library/azure/microsoft.servicebus.namespacemanager.createeventhubifnotexists.aspx), erfordern für den jeweiligen Namespace Berechtigungen zum **Verwalten**. Falls Sie die Berechtigungen für Ihre Veröffentlichungs- oder Consumeranwendungen beschränken möchten, können Sie diese Aufrufe von Erstellungsvorgängen im Produktionscode vermeiden, wenn Sie Anmeldeinformationen mit begrenzten Berechtigungen verwenden.
 
-Die [EventHubDescription](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventhubdescription.aspx)-Klasse enthält Details zu einem Event Hub, z. B. Autorisierungsregeln, Intervall der Nachrichtenaufbewahrung, Partitions-IDs, Status und Pfad. Sie können diese Klasse verwenden, um die Metadaten für einen Event Hub zu aktualisieren.
+Die [EventHubDescription](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventhubdescription.aspx)-Klasse enthält Details zu einem Event Hub, z. B. Autorisierungsregeln, Zeitraum der Nachrichtenaufbewahrung, Partitions-IDs, Status und Pfad. Sie können diese Klasse verwenden, um die Metadaten für einen Event Hub zu aktualisieren.
 
-## Erstellen eines Event Hub-Clients
+## Erstellen eines Event Hubs-Clients
 
 Die Hauptklasse für die Interaktion mit Event Hubs ist [Microsoft.ServiceBus.Messaging.EventHubClient](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventhubclient.aspx). Mit dieser Klasse werden Funktionen für Absender und Empfänger bereitgestellt. Sie können diese Klasse mit der [Create](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventhubclient.create.aspx)-Methode instanziieren. Dies wird im folgenden Beispiel veranschaulicht.
 
@@ -89,7 +89,7 @@ Sie senden Ereignisse an einen Event Hub, indem Sie eine [EventData](https://msd
 
 ## Ereignisserialisierung
 
-Die [EventData](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventdata.aspx)-Klasse verfügt über [vier überladene Konstruktoren](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventdata.aspx), für die verschiedene Parameter verwendet werden können, z. B. ein Objekt und Serialisierungsprogramm, ein Bytearray oder ein Datenstrom. Es ist auch möglich, die [EventData](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventdata.aspx)-Klasse zu instanziieren und den Textdatenstrom danach festzulegen. Wenn Sie JSON mit [EventData](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventdata.aspx) verwenden, können Sie mit **Encoding.UTF8.GetBytes()** das Bytearray für eine JSON-codierte Zeichenfolge abrufen.
+Die [EventData](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventdata.aspx)-Klasse verfügt über [vier überladene Konstruktoren](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventdata.eventdata.aspx), für die verschiedene Parameter verwendet werden können, z. B. ein Objekt und Serialisierungsprogramm, ein Bytearray oder ein Datenstrom. Es ist auch möglich, die [EventData](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventdata.aspx)-Klasse zu instanziieren und den Textdatenstrom danach festzulegen. Wenn Sie JSON mit [EventData](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventdata.aspx) verwenden, können Sie mit **Encoding.UTF8.GetBytes()** das Bytearray für eine JSON-codierte Zeichenfolge abrufen.
 
 ## Partitionsschlüssel
 
@@ -103,7 +103,7 @@ Das Senden von Ereignissen in Batches kann den Durchsatz erheblich erhöhen. Die
 public void SendBatch(IEnumerable<EventData> eventDataList);
 ```
 
-Es ist wichtig zu beachten, dass ein einzelner Batch den Grenzwert von 256 KB für ein Ereignis nicht überschreiten darf. Darüber hinaus wird für jede Nachricht im Batch die gleiche Herausgeberidentität (Publisher Identity) verwendet. Der Absender ist dafür verantwortlich sicherzustellen, dass die maximale Ereignisgröße für den Batch nicht überschritten wird. Bei einer Überschreitung wird ein **Send**-Fehler für den Client generiert.
+Beachten Sie, dass ein einzelner Batch den Grenzwert von 256 KB für ein Ereignis nicht überschreiten darf. Darüber hinaus wird für jede Nachricht im Batch die gleiche Herausgeberidentität (Publisher Identity) verwendet. Der Absender ist dafür verantwortlich sicherzustellen, dass die maximale Ereignisgröße für den Batch nicht überschritten wird. Bei einer Überschreitung wird ein **Send**-Fehler für den Client generiert.
 
 ## Asynchrones Senden und Senden mit Skalierung
 
@@ -111,13 +111,13 @@ Sie können Ereignisse auch asynchron an einen Event Hub senden. Beim asynchrone
 
 ## Erstellen eines Elements für das Senden an Partitionen
 
-Am häufigsten werden Ereignisse zwar mit einem Partitionsschlüssel an einen Event Hub gesendet, aber es kann auch vorkommen, dass Sie Ereignisse direkt an eine bestimmte Partition senden möchten. Beispiel:
+Am häufigsten werden Ereignisse zwar mit einem Partitionsschlüssel an einen Event Hub gesendet, es kann aber auch vorkommen, dass Sie Ereignisse direkt an eine bestimmte Partition senden möchten. Beispiel:
 
 ```
 var partitionedSender = client.CreatePartitionedSender(description.PartitionIds[0]);
 ```
 
-[CreatePartitionedSender](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventhubclient.createpartitionedsender.aspx) gibt ein [EventHubSender](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventhubsender.aspx)-Objekt zurück, das Sie verwenden können, um Ereignisse auf einer bestimmten Event Hub-Partition zu veröffentlichen.
+[CreatePartitionedSender](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventhubclient.createpartitionedsender.aspx) gibt ein [EventHubSender](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventhubsender.aspx)-Objekt zurück, das Sie verwenden können, um Ereignisse in einer bestimmten Event Hub-Partition zu veröffentlichen.
 
 ## Ereignisconsumer
 
@@ -148,7 +148,7 @@ while(receive)
 
 Im Hinblick auf eine bestimmte Partition werden die Nachrichten in der Reihenfolge empfangen, in der sie an den Event Hub gesendet wurden. Der Offset ist ein Zeichenfolgentoken, das zum Identifizieren einer Nachricht in einer Partition verwendet wird.
 
-Es ist wichtig zu beachten, dass mit einer einzelnen Partition innerhalb einer Consumergruppe nicht mehr als fünf Leseeinheiten gleichzeitig verbunden sein können. Wenn Leseeinheiten verbunden oder getrennt werden, können die dazugehörigen Sitzungen noch einige Minuten lang aktiv bleiben, bevor der Dienst die Trennung erkennt. Während dieses Zeitraums kann für die erneute Herstellung der Verbindung mit einer Partition ein Fehler auftreten. Ein vollständiges Beispiel für das Schreiben eines direkten Empfängers für Event Hubs finden Sie im Beispiel [Service Bus Event Hubs – Direkte Empfänger](https://code.msdn.microsoft.com/Event-Hub-Direct-Receivers-13fa95c6).
+Beachten Sie, dass mit einer einzelnen Partition innerhalb einer Consumergruppe nicht mehr als fünf Leser gleichzeitig verbunden sein können. Wenn Leseeinheiten verbunden oder getrennt werden, können die dazugehörigen Sitzungen noch einige Minuten lang aktiv bleiben, bevor der Dienst die Trennung erkennt. Während dieses Zeitraums kann für die erneute Herstellung der Verbindung mit einer Partition ein Fehler auftreten. Ein vollständiges Beispiel für das Schreiben eines direkten Empfängers für Event Hubs finden Sie im Beispiel [Service Bus Event Hubs – Direkte Empfänger](https://code.msdn.microsoft.com/Event-Hub-Direct-Receivers-13fa95c6).
 
 ### Ereignisprozessorhost
 
@@ -162,7 +162,7 @@ Sie können [IEventProcessor](https://msdn.microsoft.com/library/azure/microsoft
 
 - [ProcessEventsAsync](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.ieventprocessor.processeventsasync.aspx)
 
-Instanziieren Sie zum Starten der Ereignisverarbeitung die [EventProcessorHost](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventprocessorhost.aspx)-Klasse, und geben Sie die entsprechenden Parameter für Ihren Event Hub an. Rufen Sie anschließend [RegisterEventProcessorAsync](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventprocessorhost.registereventprocessorasync.aspx) auf, um Ihre [IEventProcessor](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.ieventprocessor.aspx)-Implementierung bei der Laufzeit zu registrieren. An diesem Punkt versucht der Host, einen Lease für jede Partition im Event Hub zu erhalten, indem er einen „gierigen“ Algorithmus verwendet. Diese Leases gelten für einen bestimmten Zeitraum und müssen anschließend erneuert werden. Wenn neue Knoten (hier: Workerinstanzen) in den Onlinezustand versetzt werden, geben sie Leasereservierungen heraus. Im Laufe der Zeit wird die Arbeitsauslastung dann auf die Knoten verteilt, da jeder Knoten versucht, mehr Leases zu erlangen.
+Instanziieren Sie zum Starten der Ereignisverarbeitung die [EventProcessorHost](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventprocessorhost.aspx)-Klasse, und geben Sie die entsprechenden Parameter für Ihren Event Hub an. Rufen Sie anschließend [RegisterEventProcessorAsync](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventprocessorhost.registereventprocessorasync.aspx) auf, um Ihre [IEventProcessor](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.ieventprocessor.aspx)-Implementierung bei der Laufzeit zu registrieren. An diesem Punkt versucht der Host, eine Lease für jede Partition im Event Hub zu erhalten, indem er einen „gierigen“ Algorithmus verwendet. Diese Leases gelten für einen bestimmten Zeitraum und müssen anschließend erneuert werden. Wenn neue Knoten (hier: Workerinstanzen) in den Onlinezustand versetzt werden, geben sie Leasereservierungen heraus. Im Laufe der Zeit wird die Arbeitsauslastung dann auf die Knoten verteilt, da jeder Knoten versucht, mehr Leases zu erlangen.
 
 ![Ereignisprozessorhost](./media/event-hubs-programming-guide/IC759863.png)
 
@@ -172,7 +172,7 @@ Außerdem implementiert die [EventProcessorHost](https://msdn.microsoft.com/libr
 
 ## Herausgebersperrung
 
-Zusätzlich zu den erweiterten Laufzeitfunktionen von [EventProcessorHost](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventprocessorhost.aspx) ermöglichen Event Hubs die Herausgebersperrung, damit bestimmte Herausgeber blockiert werden und keine Ereignisse an einen Event Hub senden können. Diese Funktionen sind besonders nützlich, wenn das Token eines Herausgebers gefährdet ist oder eine Software ein unangemessenes Verhalten bewirkt. In diesen Fällen kann die Identität des Herausgebers, die Teil des SAS-Tokens ist, blockiert werden, um das Veröffentlichen von Ereignissen zu verhindern.
+Zusätzlich zu den erweiterten Laufzeitfunktionen von [EventProcessorHost](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventprocessorhost.aspx) ermöglichen Event Hubs die Herausgebersperrung, damit bestimmte Herausgeber blockiert werden und keine Ereignisse an einen Event Hub senden können. Diese Funktionen sind besonders nützlich, wenn das Token eines Herausgebers gefährdet ist oder ein Softwareupdate ein unangemessenes Verhalten bewirkt. In diesen Fällen kann die Identität des Herausgebers, die Teil des SAS-Tokens ist, blockiert werden, um das Veröffentlichen von Ereignissen zu verhindern.
 
 Weitere Informationen zum Sperren von Herausgebern und zum Senden an Event Hubs als Herausgeber finden Sie im Beispiel [Service Bus Ereignis Hubs – Sicheres Veröffentlichen in größerem Umfang](https://code.msdn.microsoft.com/Service-Bus-Event-Hub-99ce67ab).
 
@@ -185,4 +185,4 @@ Weitere Informationen zu Event Hubs-Szenarien finden Sie unter diesen Links:
 - [Codebeispiele für Event Hubs](http://code.msdn.microsoft.com/site/search?query=event hub&f[0].Value=event hub&f[0].Type=SearchText&ac=5)
 - [Referenz zur Ereignisprozessorhost-API](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventprocessorhost.aspx)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -69,7 +69,7 @@ Für diese meisten SaaS-Apps erfolgt die Bereitstellung ausschließlich ausgehen
 
 **Wie kann ich Feedback an das Entwicklerteam senden?**
 
-Kontaktieren Sie uns über das [Azure Active Directory-Feedbackforum](http://feedback.azure.com/forums/169401-azure-active-directory).
+Kontaktieren Sie uns über das [Azure Active Directory-Feedbackforum](https://feedback.azure.com/forums/169401-azure-active-directory/).
 
 ##Wie funktioniert die automatisierte Bereitstellung?
 
@@ -104,8 +104,8 @@ Klicken Sie auf die App, um ein Lernprogramm zum Konfigurieren der automatisiert
 
 Damit eine Anwendung die automatisierte Benutzerbereitstellung unterstützt, müssen zunächst die erforderlichen Endpunkte bereitgestellt werden, die es externen Programmen erlauben, die Erstellung, Wartung und Entfernung von Benutzern zu automatisieren. Daher sind nicht alle SaaS-Apps mit diesem Feature kompatibel. Für Apps, die diese Unterstützung bieten, kann das Azure AD-Entwicklerteam anschließend einen Bereitstellungsconnector erstellen. Dieser Tätigkeit wird in Abhängigkeit von den Anforderungen bestehender und potenzieller Kunden Priorität eingeräumt.
 
-Wenn Sie das Azure AD-Entwicklungsteam kontaktieren möchten, um Bereitstellungsunterstützung für zusätzliche Anwendungen anzufordern, senden Sie uns eine Nachricht über das [Azure Active Directory-Feedbackforum](http://feedback.azure.com/forums/169401-azure-active-directory).
+Wenn Sie das Azure AD-Entwicklungsteam kontaktieren möchten, um Bereitstellungsunterstützung für zusätzliche Anwendungen anzufordern, senden Sie uns eine Nachricht über das [Azure Active Directory-Feedbackforum](https://feedback.azure.com/forums/169401-azure-active-directory/).
 
 [AZURE.INCLUDE [saas-toc](../../includes/active-directory-saas-toc.md)]
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0128_2016-->

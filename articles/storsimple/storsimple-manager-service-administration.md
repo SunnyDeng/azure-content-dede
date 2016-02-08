@@ -34,7 +34,7 @@ Der StorSimple Manager-Dienst wird in Microsoft Azure ausgeführt. Er stellt Ver
 
 #### So stellen Sie eine Verbindung mit dem Dienst her
 
-1. Navigieren Sie zu [http://azure.microsoft.com/](http://azure.microsoft.com/).
+1. Navigieren Sie zu [http://azure.microsoft.com/](https://azure.microsoft.com/).
 
 1. Melden Sie sich mit den Anmeldeinformationen Ihres Microsoft-Kontos beim klassischen Microsoft Azure-Portal (rechts oben) an.
 
@@ -57,15 +57,15 @@ Die folgende Tabelle gibt Aufschluss über die Navigationshierarchie der Benutze
 |Zielseite|Seiten auf Dienstebene|Seiten auf Geräteebene|Seiten auf Geräteebene|
 |---|---|---|---|
 |StorSimple Manager-Dienst|Dienstdashboard|Gerätedashboard||
-||Geräte →|Überwachen|
-||Sicherungskatalog|Volumecontainer→|Volumes|
-||Konfigurieren (Dienst)|Sicherungsrichtlinien||
-||Aufträge|Konfigurieren (Gerät)|
-||Warnungen|Wartung|
+|Geräte →|Überwachen|
+|Sicherungskatalog|Volumecontainer→|Volumes|
+|Konfigurieren (Dienst)|Sicherungsrichtlinien||
+|Aufträge|Konfigurieren (Gerät)|
+|Warnungen|Wartung|
 
 ![Video verfügbar](./media/storsimple-manager-service-administration/Video_icon.png) **Video verfügbar**
 
-Um sich ein Video anzusehen, das Sie durch die Benutzeroberfläche des StorSimple Manager-Diensts führt, klicken Sie [hier](http://azure.microsoft.com/documentation/videos/storsimple-manager-service-overview/).
+Um sich ein Video anzusehen, das Sie durch die Benutzeroberfläche des StorSimple Manager-Diensts führt, klicken Sie [hier](https://azure.microsoft.com/documentation/videos/storsimple-manager-service-overview/).
 
 ## Verwalten des StorSimple-Geräts mithilfe des StorSimple Manager-Diensts
 
@@ -114,4 +114,4 @@ Informationen zu Problemen beim alltäglichen Betrieb Ihres StorSimple-Geräts o
 
 Falls sich die Probleme nicht beheben lassen und Sie eine Serviceanfrage erstellen müssen, finden Sie unter [Microsoft-Support kontaktieren](storsimple-contact-microsoft-support.md) weitere Informationen.
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -22,7 +22,7 @@ Durch die Integration der Quellcodeverwaltung können Sie Runbooks in Ihrem Auto
 Mit der Quellcodeverwaltung können Sie Code aus Azure Automation in die Quellcodeverwaltung übertragen oder Ihre Runbooks aus der Quellcodeverwaltung in Azure Automation verschieben. Dieser Artikel beschreibt die Quellcodeverwaltung in Ihrer Azure-Automation-Umgebung. Wir beginnen zunächst mit dem Konfigurieren von Azure Automation, um Zugriff auf Ihr GitHub-Repository zu erhalten, und durchlaufen dann verschiedene Vorgänge, die mithilfe einer Quellcodeverwaltung möglich sind.
 
 
->[AZURE.NOTE]Die Quellcodeverwaltung unterstützt das Abrufen und Verschieben von [PowerShell-Workflow-Runbooks](automation-runbook-types.md#powershell-workflow-runbooks) sowie [PowerShell-Runbooks](automation-runbook-types.md#powershell-runbooks). [Grafische Runbooks](automation-runbook-types.md#graphical-runbooks) werden noch nicht unterstützt.<br><br>
+>[AZURE.NOTE] Die Quellcodeverwaltung unterstützt das Abrufen und Verschieben von [PowerShell-Workflow-Runbooks](automation-runbook-types.md#powershell-workflow-runbooks) sowie [PowerShell-Runbooks](automation-runbook-types.md#powershell-runbooks). [Grafische Runbooks](automation-runbook-types.md#graphical-runbooks) werden noch nicht unterstützt.<br><br>
 
 
 Sie müssen nur zwei Schritte ausführen, um die Quellcodeverwaltung für Ihr Automation-Konto zu konfigurieren. Wenn Sie ein GitHub-Konto besitzen, ist nur ein Schritt erforderlich. Sie lauten wie folgt:
@@ -104,7 +104,7 @@ Durch Einchecken des Runbooks können Sie die Änderungen, die Sie an einem Runb
     ![Schaltfläche „Einchecken“](media/automation-source-control-integration/automation_06_CheckinButton.png)
 
 
-     >[AZURE.NOTE]Beim Einchecken aus Azure Automation wird der derzeit in Ihrer Quellcodeverwaltung vorhandene Code überschrieben. Die entsprechende Git-Befehlszeile zum Einchecken lautet **git add + git commit + git push**.
+     >[AZURE.NOTE] Beim Einchecken aus Azure Automation wird der derzeit in Ihrer Quellcodeverwaltung vorhandene Code überschrieben. Die entsprechende Git-Befehlszeile zum Einchecken lautet **git add + git commit + git push**.
 
 3. Wenn Sie auf **Einchecken** klicken, wird eine Bestätigungsmeldung angezeigt. Klicken Sie zum Fortfahren auf „Ja“.
 
@@ -114,7 +114,7 @@ Durch Einchecken des Runbooks können Sie die Änderungen, die Sie an einem Runb
 
     ![Runbook zum Einchecken](media/automation-source-control-integration/automation_08_CheckinRunbook.png)
 
-    >[AZURE.NOTE]Quellcodeverwaltungs-Runbooks sind spezielle Automation-Runbooks, die Sie weder anzeigen noch bearbeiten können. Obwohl sie nicht in Ihrer Runbookliste angezeigt werden, enthält die Auftragsliste Synchronisierungsaufträge.
+    >[AZURE.NOTE] Quellcodeverwaltungs-Runbooks sind spezielle Automation-Runbooks, die Sie weder anzeigen noch bearbeiten können. Obwohl sie nicht in Ihrer Runbookliste angezeigt werden, enthält die Auftragsliste Synchronisierungsaufträge.
  
 5. Der Name des geänderten Runbooks wird als Eingabeparameter an das Runbook „Einchecken“ gesendet. Sie können [die Auftragsdetails anzeigen](automation-runbook-execution.md#viewing-job-status-using-the-azure-management-portal), indem Sie das Runbook auf dem Blatt **Repository Synchronization** erweitern.
 
@@ -137,7 +137,7 @@ Mit der Synchronisierungsschaltfläche auf dem Blatt „Repository-Synchronisier
     ![Runbook synchronisieren](media/automation-source-control-integration/automation_11_SyncRunbook.png)
 
  
-    >[AZURE.NOTE]Die Synchronisierung der Quellcodeverwaltung überschreibt die Entwurfsversion für **ALLE** Runbooks in Ihrem Automation-Konto, die derzeit in der Quellcodeverwaltung vorhanden sind. Die entsprechende Git-Befehlszeile zum Synchronisieren lautet **git pull**.
+    >[AZURE.NOTE] Die Synchronisierung der Quellcodeverwaltung überschreibt die Entwurfsversion für **ALLE** Runbooks in Ihrem Automation-Konto, die derzeit in der Quellcodeverwaltung vorhanden sind. Die entsprechende Git-Befehlszeile zum Synchronisieren lautet **git pull**.
 
 
 ## Problembehandlung bei der Quellcodeverwaltung
@@ -158,4 +158,4 @@ Klicken Sie zum Trennen der Verbindung zu Ihrem GitHub-Konto auf dem Blatt „Re
 
 Weitere Informationen zur Integration der Quellcodeverwaltung finden Sie in den folgenden Ressourcen: - [Source Control Integration in Azure Automation](https://azure.microsoft.com/blog/azure-automation-source-control-13/) - [Vote for your favorite source control system](https://www.surveymonkey.com/r/?sm=2dVjdcrCPFdT0dFFI8nUdQ%3d%3d) - [Azure Automation: Integrating Runbook Source Control using Visual Studio Online](https://azure.microsoft.com/blog/azure-automation-integrating-runbook-source-control-using-visual-studio-online/) (alle in englischer Sprache)
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0128_2016-->

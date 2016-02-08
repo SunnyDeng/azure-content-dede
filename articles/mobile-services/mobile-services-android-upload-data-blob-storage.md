@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-android"
 	ms.devlang="java"
 	ms.topic="article"
-	ms.date="10/05/2015"
+	ms.date="01/21/2016"
 	ms.author="ricksal"/>
 
 # Hochladen von Bildern auf Azure Storage aus einem Android-Gerät
@@ -35,7 +35,7 @@ Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst den Mobile Ser
 
 Für dieses Lernprogramm ist außerdem Folgendes erforderlich:
 
-+ Ein [Azure Storage-Konto](../storage-create-storage-account.md)
++ Ein [Azure Storage-Konto](../storage/storage-create-storage-account.md)
 + Ein Android-Gerät mit einer Kamera
 
 ## Funktionsweise der App
@@ -49,7 +49,7 @@ Das Hochladen des Fotos umfasst mehrere Schritte:
 
 Was bedeutet SAS?
 
-Es ist nicht sicher, die für das Hochladen der Daten in den Azure Storage-Dienst erforderlichen Anmeldeinformationen innerhalb der Client-App zu speichern. Stattdessen müssen Sie diese Anmeldeinformationen in Ihrem mobilen Dienst speichern und dazu verwenden, eine Shared Access Signature (SAS) zu erstellen, die die Berechtigung zum Hochladen eines neuen Bildes erteilt. Die SAS, eine Anmeldeinformation mit einer Laufzeit von fünf Minuten, wird durch Mobile Services sicher an die Client-App zurückgegeben. Anschließend nutzt die App diese temporäre Anmeldeinformation zum Hochladen des Bildes. Weitere Informationen finden Sie unter [Shared Access Signatures, Teil 1: Grundlagen zum SAS-Modell](storage-dotnet-shared-access-signature-part-1.md).
+Es ist nicht sicher, die für das Hochladen der Daten in den Azure Storage-Dienst erforderlichen Anmeldeinformationen innerhalb der Client-App zu speichern. Stattdessen müssen Sie diese Anmeldeinformationen in Ihrem mobilen Dienst speichern und dazu verwenden, eine Shared Access Signature (SAS) zu erstellen, die die Berechtigung zum Hochladen eines neuen Bildes erteilt. Die SAS, eine Anmeldeinformation mit einer Laufzeit von fünf Minuten, wird durch Mobile Services sicher an die Client-App zurückgegeben. Anschließend nutzt die App diese temporäre Anmeldeinformation zum Hochladen des Bildes. Weitere Informationen finden Sie unter [Shared Access Signatures, Teil 1: Grundlagen zum SAS-Modell](../storage/storage-dotnet-shared-access-signature-part-1.md).
 
 ## Codebeispiel
 [Hier](https://github.com/Azure/mobile-services-samples/tree/master/UploadImages) finden Sie den abgeschlossenen Teil des Clientquellcodes dieser App. Damit Sie die App ausführen können, müssen Sie die Mobile Services-Back-End-Teile dieses Lernprogramms ausführen.
@@ -426,4 +426,4 @@ Nachdem Sie nun gelernt haben, Ihre Bilder durch die Integration Ihres mobilen D
 [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]: mobile-services-windows-dotnet-how-to-use-client-library.md
 [App settings]: http://msdn.microsoft.com/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

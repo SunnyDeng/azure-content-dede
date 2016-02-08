@@ -29,7 +29,7 @@ Das klassische Azure-Portall bietet zwei Methoden zum Erstellen und Bereitstelle
 
 In diesem Thema wird erläutert, wie Sie die Schnellerfassungsmethode zum Erstellen eines neuen Clouddiensts und dann **Hochladen** verwenden, um ein Clouddienstpaket in Azure hochzuladen und bereitzustellen. Wenn Sie diese Methode verwenden, werden im Azure-Portal praktische Links zum Erfüllen aller Anforderungen zur Verfügung gestellt. Wenn Sie Ihren Clouddienst bei der Erstellung auch bereitstellen möchten, können Sie beides mithilfe von **Benutzerdefinierte Erstellung** durchführen.
 
-> [AZURE.NOTE]Wenn Sie Ihren Clouddienst aus Visual Studio Team Services (VSTS) veröffentlichen möchten, verwenden Sie Schnellerstellung. Richten Sie die VSTS-Veröffentlichung dann über **Schnellstart** oder das Dashboard ein. Weitere Informationen finden Sie unter [Fortlaufende Bereitstellung für Azure mithilfe von Visual Studio Team Services][TFSTutorialForCloudService] oder in der Hilfe zur **Schnellstart**-Seite.
+> [AZURE.NOTE] Wenn Sie Ihren Clouddienst aus Visual Studio Team Services (VSTS) veröffentlichen möchten, verwenden Sie Schnellerstellung. Richten Sie die VSTS-Veröffentlichung dann über **Schnellstart** oder das Dashboard ein. Weitere Informationen finden Sie unter [Fortlaufende Bereitstellung für Azure mithilfe von Visual Studio Team Services][TFSTutorialForCloudService] oder in der Hilfe zur **Schnellstart**-Seite.
 
 ## Konzepte
 Für die Bereitstellung einer Anwendung als Clouddienst in Azure sind drei Komponenten erforderlich:
@@ -43,7 +43,7 @@ Für die Bereitstellung einer Anwendung als Clouddienst in Azure sind drei Kompo
 Weitere Informationen zu diesen Komponenten sowie zum Erstellen eines Pakets finden Sie [hier](cloud-services-model-and-package.md).
 
 ## Vorbereiten Ihrer App
-Bevor Sie einen Clouddienst bereitstellen können, müssen Sie das Clouddienstpaket (CSPKG) aus dem Anwendungscode und eine Clouddienstkonfigurationsdatei (CSCFG) erstellen. Das Azure-SDK stellt Tools zum Vorbereiten dieser erforderlichen Bereitstellungsdateien bereit. Sie können das SDK auf der Seite [Azure-Downloads](http://azure.microsoft.com/downloads/) in der Sprache herunterladen, in der Sie den Anwendungscode entwickeln möchten.
+Bevor Sie einen Clouddienst bereitstellen können, müssen Sie das Clouddienstpaket (CSPKG) aus dem Anwendungscode und eine Clouddienstkonfigurationsdatei (CSCFG) erstellen. Das Azure-SDK stellt Tools zum Vorbereiten dieser erforderlichen Bereitstellungsdateien bereit. Sie können das SDK auf der Seite [Azure-Downloads](https://azure.microsoft.com/downloads/) in der Sprache herunterladen, in der Sie den Anwendungscode entwickeln möchten.
 
 Drei Clouddienstfunktionen benötigen vor dem Export eines Dienstpakets spezielle Konfigurationen:
 
@@ -57,7 +57,7 @@ Sie müssen das [Dienstpaket erstellen](cloud-services-model-and-package.md#serv
 
 ## Voraussetzungen
 
-- Falls Sie das Azure-SDK noch nicht installiert haben, klicken Sie auf **Azure-SDK installieren**, um die [Azure-Downloadseite](http://azure.microsoft.com/downloads/) zu öffnen. Laden Sie dann das SDK für die Sprache herunter, in der Sie den Code entwickeln möchten. (Dazu haben Sie auch später noch die Möglichkeit.)
+- Falls Sie das Azure-SDK noch nicht installiert haben, klicken Sie auf **Azure-SDK installieren**, um die [Azure-Downloadseite](https://azure.microsoft.com/downloads/) zu öffnen. Laden Sie dann das SDK für die Sprache herunter, in der Sie den Code entwickeln möchten. (Dazu haben Sie auch später noch die Möglichkeit.)
 
 - Falls Rolleninstanzen ein Zertifikat erfordern, erstellen Sie die Zertifikate. Clouddienste erfordern eine PFX-Datei mit einem privaten Schlüssel. Sie können die [Zertifikate zu Azure hochladen](cloud-services-configure-ssl-certificate.md#step-3-upload-a-certificate), wenn Sie den Clouddienst erstellen und bereitstellen.
 
@@ -120,7 +120,7 @@ Sie müssen das [Dienstpaket erstellen](cloud-services-model-and-package.md#serv
 
 5. Falls der Clouddienst Rollen mit nur einer Instanz umfasst, aktivieren Sie das Kontrollkästchen mit der Bezeichnung wie **Auch bereitstellen, wenn eine oder mehrere Rollen eine einzelne Instanz enthalten**, um das Fortsetzen der Bereitstellung zu ermöglichen.
 
-    Azure kann nur dann 99,95 % Zugriff auf den Clouddienst während Wartungen und Dienstaktualisierungen garantieren, wenn jede Rolle über mindestens zwei Instanzen verfügt. Bei Bedarf können Sie zusätzliche Rolleninstanzen auf der Seite **Skalieren** nach der Bereitstellung des Clouddiensts hinzufügen. Weitere Informationen finden Sie unter [Vereinbarungen zum Servicelevel](http://azure.microsoft.com/support/legal/sla/).
+    Azure kann nur dann 99,95 % Zugriff auf den Clouddienst während Wartungen und Dienstaktualisierungen garantieren, wenn jede Rolle über mindestens zwei Instanzen verfügt. Bei Bedarf können Sie zusätzliche Rolleninstanzen auf der Seite **Skalieren** nach der Bereitstellung des Clouddiensts hinzufügen. Weitere Informationen finden Sie unter [Vereinbarungen zum Servicelevel](https://azure.microsoft.com/support/legal/sla/).
 
 6. Klicken Sie auf **OK** (Häkchen), um die Clouddienstbereitstellung zu starten.
 
@@ -150,4 +150,4 @@ Sie müssen das [Dienstpaket erstellen](cloud-services-model-and-package.md#serv
 * [Verwalten Ihres Clouddiensts](cloud-services-how-to-manage.md)
 * Konfigurieren von [SSL-Zertifikaten](cloud-services-configure-ssl-certificate.md)
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

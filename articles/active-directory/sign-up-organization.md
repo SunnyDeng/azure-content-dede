@@ -31,8 +31,8 @@ Möchten Sie sich als Organisation bei Azure anmelden? [**Jetzt registrieren**](
 
 **Weitere Ressourcen**
 
-* [Microsoft Azure-Blog](http://azure.microsoft.com/blog/)
+* [Microsoft Azure-Blog](https://azure.microsoft.com/blog/)
 * [Was ist Azure AD?](active-directory-whatis.md)
 * [Verwenden Ihrer lokalen Identitätsinfrastruktur in der Cloud](active-directory-aadconnect.md)
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

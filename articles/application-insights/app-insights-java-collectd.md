@@ -27,7 +27,7 @@ In der Regel verwenden Sie collectd, wenn Sie [Ihren Java-Webdienst bereits mith
 
 ## Abrufen des Instrumentationsschlüssels
 
-Öffnen Sie im [Microsoft Azure-Portal](http://portal.azure.com) die Ressource [Application Insights](start), in der die Daten angezeigt werden sollen. (Oder [erstellen Sie eine neue Ressource](app-insights-create-new-resource.md).)
+Öffnen Sie im [Microsoft Azure-Portal](https://portal.azure.com) die Ressource [Application Insights](start), in der die Daten angezeigt werden sollen. (Oder [erstellen Sie eine neue Ressource](app-insights-create-new-resource.md).)
 
 Kopieren Sie den Instrumentationsschlüssel, der die Ressource identifiziert.
 
@@ -143,4 +143,4 @@ Trennen Sie Direktiven mit einem Zeilenumbruch.
 
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0128_2016-->

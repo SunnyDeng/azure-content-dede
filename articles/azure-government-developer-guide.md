@@ -42,7 +42,7 @@ Microsoft bietet eine Reihe von Tools zum Erstellen und Bereitstellen von Cloud-
 
 Beim Erstellen und Bereitstellen von Anwendungen für Azure Government-Dienste müssen die Entwickler anders als beim globalen Dienst die wichtigsten Unterschiede zwischen den beiden Diensten kennen. Dies gilt insbesondere bei der Einrichtung und Konfiguration der Programmierumgebung, beim Konfigurieren der Endpunkte, beim Erstellen von Anwendungen sowie bei deren Bereitstellung als Dienste für Azure Government.
 
-Die Informationen in diesem Dokument fassen diese Unterschiede zusammen und ergänzen die Informationen, die auf der [Azure Government](http://www.azure.com/gov "Azure Government")-Website und in der [Technischen Bibliothek für Microsoft Azure](http://msdn.microsoft.com/cloud-app-development-msdn "MSDN") auf der MSDN-Website verfügbar sind. Möglicherweise sind auch an vielen anderen Orten wie dem [Microsoft Azure Trust Center](http://azure.microsoft.com/support/trust-center/ "Microsoft Azure Trust Center"), [Azure-Dokumentationscenter](http://azure.microsoft.com/documentation/) und in [Azure-Blogs](http://azure.microsoft.com/blog/ "Azure-Blogs") offizielle Informationen verfügbar.
+Die Informationen in diesem Dokument fassen diese Unterschiede zusammen und ergänzen die Informationen, die auf der [Azure Government](http://www.azure.com/gov "Azure Government")-Website und in der [Technischen Bibliothek für Microsoft Azure](http://msdn.microsoft.com/cloud-app-development-msdn "MSDN") auf der MSDN-Website verfügbar sind. Möglicherweise sind auch an vielen anderen Orten wie dem [Microsoft Azure Trust Center](https://azure.microsoft.com/support/trust-center/ "Microsoft Azure Trust Center"/), [Azure-Dokumentationscenter](https://azure.microsoft.com/documentation/) und in [Azure Blogs](https://azure.microsoft.com/blog/ "Azure Blogs"/) offizielle Informationen verfügbar.
 
 Dieser Inhalt ist für Partner und Entwickler für Bereitstellungen mit Microsoft Azure Government konzipiert.
 
@@ -77,7 +77,7 @@ Azure Government verfügt derzeit in den Regionen US GOV IOWA und US GOV VIRGINI
 - ExpressRoute
 - usw.
 
-Es sind auch noch andere Dienste verfügbar und es werden zudem kontinuierlich weitere Dienste hinzugefügt. Die aktuelle Liste der Dienste finden Sie in der [Regionsübersicht](http://azure.microsoft.com/regions/#services), in der die einzelnen verfügbaren Regionen und ihre Dienste hervorgehoben sind.
+Es sind auch noch andere Dienste verfügbar und es werden zudem kontinuierlich weitere Dienste hinzugefügt. Die aktuelle Liste der Dienste finden Sie in der [Regionsübersicht](https://azure.microsoft.com/regions/#services), in der die einzelnen verfügbaren Regionen und ihre Dienste hervorgehoben sind.
 
 Derzeit wird Azure Government von den Rechenzentren von US GOV Iowa und US GOV Virginia unterstützt. Informationen zu aktuell verfügbaren Rechenzentren und Diensten finden Sie in der obigen Regionsübersicht.
 
@@ -92,7 +92,7 @@ Verwaltungsportal|manage.windowsazure.com|manage.windowsazure.us
 Allgemein|*.windows.net|*.usgovcloudapi.net
 Core|*.core.windows.net|*.core.usgovcloudapi.net
 Compute|*.cloudapp.net|*.usgovcloudapp.net
-Blob-Speicher|*.blob.core.windows.net| *.blob.core.usgovcloudapi.net Warteschlangenspeicher|*.queue.core.windows.net|*.queue.core.usgovcloudapi.net
+Blob-Speicher|*.blob.core.windows.net| *.blob.core.usgovcloudapi.net Queue Storage|*.queue.core.windows.net|*.queue.core.usgovcloudapi.net
 Tabellenspeicher|*.table.core.windows.net|*.table.core.usgovcloudapi.net
 Dienstverwaltung|management.core.windows.net|management.core.usgovcloudapi.net
 SQL-Datenbank|*.database.windows.net|*.database.usgovcloudapi.net
@@ -112,7 +112,7 @@ Wenn Sie mehr über Azure Government erfahren möchten, nutzen Sie einige der un
 
 - **[Azure Government – Blog](http://blogs.msdn.com/b/azuregov/)**
 
-- **[Azure – Compliance](http://azure.microsoft.com/support/trust-center/compliance/)**
+- **[Azure – Compliance](https://azure.microsoft.com/support/trust-center/compliance/)**
 
 <!--Anchors-->
 
@@ -128,4 +128,4 @@ Wenn Sie mehr über Azure Government erfahren möchten, nutzen Sie einige der un
 [Link 2 to another azure.microsoft.com documentation topic]: web-sites-custom-domain-name.md
 [Link 3 to another azure.microsoft.com documentation topic]: storage-whatis-account.md
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0128_2016-->

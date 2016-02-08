@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="09/22/2015"
+	ms.date="01/21/2016"
 	ms.author="dastrock"/>
 
 # Azure AD B2C-Vorschau: Erstellen von Windows-Desktop-Apps
@@ -26,13 +26,11 @@ Mit Azure AD B2C können Sie Ihren Desktop-Apps in wenigen Schritten leistungss
 
 ## 1\. Erstellen eines Azure AD B2C-Verzeichnisses
 
-Bevor Sie Azure AD B2C verwenden können, müssen Sie ein Verzeichnis oder einen Mandanten erstellen. Ein Verzeichnis ist ein Container für alle Benutzer, Apps, Gruppen usw. Wenn Sie noch nicht über
-ein Verzeichnis verfügen, [erstellen Sie ein B2C-Verzeichnis](active-directory-b2c-get-started.md), bevor Sie fortfahren.
+Bevor Sie Azure AD B2C verwenden können, müssen Sie ein Verzeichnis oder einen Mandanten erstellen. Ein Verzeichnis ist ein Container für alle Benutzer, Apps, Gruppen usw. Wenn Sie noch nicht über ein Verzeichnis verfügen,[ erstellen Sie ein B2C-Verzeichnis](active-directory-b2c-get-started.md), bevor Sie fortfahren.
 
 ## 2\. Erstellen einer Anwendung
 
-Nun müssen Sie eine App in Ihrem B2C-Verzeichnis erstellen, sodass Azure AD die Informationen erhält, die für die sichere Kommunikation mit Ihrer App erforderlich sind.  Befolgen Sie zum
-Erstellen einer App [diese Anweisungen](active-directory-b2c-app-registration.md). Ersetzen Sie
+Nun müssen Sie eine App in Ihrem B2C-Verzeichnis erstellen, sodass Azure AD die Informationen erhält, die für die sichere Kommunikation mit Ihrer App erforderlich sind. Befolgen Sie zum Erstellen einer App [diese Anweisungen](active-directory-b2c-app-registration.md). Ersetzen Sie
 
 - Einfügen eines **systemeigenen Clients** in die Anwendung
 - Notieren Sie sich den **Umleitungs-URI** `urn:ietf:wg:oauth:2.0:oob` – dies ist die Standard-URL für dieses Codebeispiel.
@@ -42,9 +40,7 @@ Erstellen einer App [diese Anweisungen](active-directory-b2c-app-registration.md
 
 ## 3\. Erstellen der Richtlinien
 
-In Azure AD B2C wird jede Benutzeroberfläche durch eine [**Richtlinie**](active-directory-b2c-reference-policies.md) definiert.  Dieses Codebeispiel enthält drei 
-Benutzeroberflächen, für die Identitäten relevant sind: Registrierung, Anmeldung und Profilbearbeitung. Sie müssen eine Richtlinie für jeden Typ erstellen, wie im 
-[Artikel für Richtlinienreferenzen](active-directory-b2c-reference-policies.md#how-to-create-a-sign-up-policy) beschrieben. Beachten Sie beim Erstellen der drei Richtlinien Folgendes:
+In Azure AD B2C wird jede Benutzeroberfläche durch eine [**Richtlinie**](active-directory-b2c-reference-policies.md) definiert. Dieses Codebeispiel enthält drei Benutzeroberflächen, für die Identitäten relevant sind: Registrierung, Anmeldung und Profilbearbeitung. Sie müssen eine Richtlinie jedes Typs erstellen, wie im [Artikel mit Richtlinienreferenzen](active-directory-b2c-reference-policies.md#how-to-create-a-sign-up-policy) beschrieben. Wenn Sie die drei Richtlinien erstellen, beachten Sie Folgendes:
 
 - Wählen Sie **Registrierung mit Benutzer-ID** oder **E-Mail-Registrierung** auf dem Blatt für den Identitätsanbieter aus.
 - Wählen Sie den **Anzeigenamen** und einige andere Registrierungsattribute in der Registrierungsrichtlinie aus.
@@ -57,19 +53,15 @@ Nachdem Sie die drei Richtlinien erfolgreich erstellt haben, können Sie Ihre Ap
 
 ## 4\. Herunterladen des Codes
 
-Der Code für dieses Lernprogramm wird auf [GitHub](https://github.com/AzureADQuickStarts/B2C-NativeClient-DotNet) verwaltet. Zum Erstellen des Beispiels können Sie 
-[ein Projektgerüst als ZIP-Datei herunterladen](https://github.com/AzureADQuickStarts/B2C-NativeClient-DotNet/archive/skeleton.zip) oder das Gerüst klonen:
+Der Code für dieses Lernprogramm wird [auf GitHub](https://github.com/AzureADQuickStarts/B2C-NativeClient-DotNet) verwaltet. Zum Erstellen des Beispiels können Sie [ein Projektgerüst als ZIP herunterladen](https://github.com/AzureADQuickStarts/B2C-NativeClient-DotNet/archive/skeleton.zip) oder das Gerüst klonen:
 
 ```
 git clone --branch skeleton https://github.com/AzureADQuickStarts/B2C-NativeClient-DotNet.git
 ```
 
-Die fertige App ist ebenfalls [als ZIP-Datei verfügbar](https://github.com/AzureADQuickStarts/B2C-NativeClient-DotNet/archive/complete.zip) und unter
-`complete` im gleichen Repository enthalten.
+Die fertige App ist ebenfalls [als ZIP-Datei verfügbar](https://github.com/AzureADQuickStarts/B2C-NativeClient-DotNet/archive/complete.zip) oder unter der Verzweigung `complete` im gleichen Repository enthalten.
 
-Nachdem Sie den Beispielcode heruntergeladen haben, öffnen Sie die `.sln`-Datei in Visual Studio, um zu beginnen. Wie Sie sehen, sind in der Projektmappe zwei Projekte enthalten: ein `TaskClient`-Projekt und ein `TaskService`-Projekt. `TaskClient` ist eine WPF-Desktopanwendung,
-mit der der Benutzer interagiert. `TaskService` ist die Back-End-Web-API der App, in der die Aufgabenlisten der Benutzer gespeichert werden. Der `TaskClient` und der `TaskService` werden in diesem Fall durch eine einzige **Anwendungs-ID**
-dargestellt, da sie zusammen eine logische Anwendung bilden.
+Nachdem Sie den Beispielcode heruntergeladen haben, öffnen Sie die Visual Studio-Datei (`.sln`), um zu beginnen. Wie Sie sehen, sind in der Projektmappe zwei Projekte enthalten: ein `TaskClient`-Projekt und ein `TaskService`-Projekt. `TaskClient` ist eine WPF-Desktopanwendung, mit der der Benutzer interagiert. `TaskService` ist die Back-End-Web-API der App, in der die Aufgabenliste jedes Benutzers gespeichert wird. Der `TaskClient` und der `TaskService` werden in diesem Fall durch eine einzelne **Anwendungs-ID** dargestellt, da sie zusammen eine logische Anwendung bilden.
 
 ## 5\. Konfigurieren des Aufgabendiensts
 
@@ -87,7 +79,7 @@ Wenn `TaskService` Anforderungen von `TaskClient` erhält, sucht er nach einem g
     <add key="ida:PolicyId" value="{Enter the name of one of the policies you created, like `b2c_1_my_sign_in_policy`}" />
   </appSettings>
 ```
-  
+
 [AZURE.INCLUDE [active-directory-b2c-devquickstarts-tenant-name](../../includes/active-directory-b2c-devquickstarts-tenant-name.md)]
 
 Wenn Sie wissen möchten, wie eine Web-API sicher Anforderungen mithilfe von Azure AD B2C authentifiziert, sehen Sie sich unseren [Artikel mit den ersten Schritten für die Web-API](active-directory-b2c-devquickstarts-api-dotnet.md) an.
@@ -119,7 +111,7 @@ public static class Globals
 	public static string redirectUri = "urn:ietf:wg:oauth:2.0:oob";
 
 }
-``` 
+```
 
 [AZURE.INCLUDE [active-directory-b2c-devquickstarts-tenant-name](../../includes/active-directory-b2c-devquickstarts-tenant-name.md)]
 
@@ -138,7 +130,7 @@ public partial class MainWindow : Window
 		base.OnInitialized(e);
 
 		// The authority parameter can be constructed by appending the name of your tenant to 'https://login.microsoftonline.com/'.
-		// ADAL implements an in-memory cache by default.  Since we want tokens to persist when the user closes the app, 
+		// ADAL implements an in-memory cache by default.  Since we want tokens to persist when the user closes the app,
 		// we've extended the ADAL TokenCache and created a simple FileCache in this app.
 		authContext = new AuthenticationContext("https://login.microsoftonline.com/contoso.onmicrosoft.com", new FileCache());
 		...
@@ -166,14 +158,14 @@ private async void SignUp(object sender, RoutedEventArgs e)
 		SignUpButton.Visibility = Visibility.Collapsed;
 		EditProfileButton.Visibility = Visibility.Visible;
 		SignOutButton.Visibility = Visibility.Visible;
-		
+
 		// When the request completes successfully, you can get user information form the AuthenticationResult
 		UsernameLabel.Content = result.UserInfo.Name;
 
 		// After the sign up successfully completes, display the user's To-Do List
 		GetTodoList();
 	}
-	
+
 	// Handle any exeptions that occurred during execution of the policy.
 	catch (AdalException ex)
 	{
@@ -242,12 +234,12 @@ private async void GetTodoList()
 		TokenCacheItem tci = authContext.TokenCache.ReadItems().Where(i => i.Scope.Contains(Globals.clientId) && !string.IsNullOrEmpty(i.Policy)).FirstOrDefault();
 		string existingPolicy = tci == null ? null : tci.Policy;
 
-		// We use the PromptBehavior.Never flag to indicate that ADAL should throw an exception if a token 
-		// could not be acquired from the cache, rather than automatically prompting the user to sign in. 
+		// We use the PromptBehavior.Never flag to indicate that ADAL should throw an exception if a token
+		// could not be acquired from the cache, rather than automatically prompting the user to sign in.
 		result = await authContext.AcquireTokenAsync(new string[] { Globals.clientId },
 			null, Globals.clientId, new Uri(Globals.redirectUri),
 			new PlatformParameters(PromptBehavior.Never, null), existingPolicy);
-	
+
 	}
 
 	// If a token could not be acquired silently, we'll catch the exception and show the user a message.
@@ -290,7 +282,7 @@ Wenn der Aufruf von `AcquireTokenAsync(...)` erfolgreich ist und ein Token im Ca
 	// Call the To Do list service.
 	HttpResponseMessage response = await httpClient.GetAsync(taskServiceUrl + "/api/tasks");
 	...
-``` 
+```
 
 Dasselbe Muster können Sie jederzeit anwenden, um den Tokencache für Token zu überprüfen, ohne dass der Benutzer sich anmelden muss. Wir möchten z. B. beim Starten der App den `FileCache` auf vorhandene Token überprüfen, damit die Anmeldesitzung des Benutzers bei jeder Ausführung der App beibehalten wird. Sie finden den gleichen Code im `OnInitialized`-Ereignis von `MainWindow`, der auch die erste Ausführung behandelt.
 
@@ -322,16 +314,16 @@ Erstellen Sie abschließend `TaskClient` und `TaskService`, und führen Sie beid
 
 ## 10\. Soziale Netzwerke als IDPs hinzufügen
 
-Die App unterstützt bisher nur die Registrierung und Anmeldung von Benutzern mit sogenannten **lokalen Konten** – Konten in Ihrem B2C-Verzeichnis mit einem Benutzernamen und einem Kennwort. Mit Azure AD B2C können Sie auch Unterstützung für andere **Identitätsanbieter** (oder IDPs) hinzufügen, ohne Ihren Code ändern zu müssen.
+Die App unterstützt bisher nur die Registrierung und Anmeldung von Benutzern mit sogenannten **lokalen Konten** – Konten in Ihrem B2C-Verzeichnis mit einem Benutzernamen und einem Kennwort. Mit Azure AD B2C können Sie auch andere **Identitätsanbieter** (oder IDPs) hinzufügen, ohne Ihren Code ändern zu müssen.
 
 Um Ihrer App soziale Netzwerke als IDPs hinzuzufügen, befolgen Sie zunächst die detaillierten Anweisungen in einem oder zwei der folgenden Artikel. Sie müssen für jeden IDP, den Sie unterstützen möchten, eine Anwendung in dessen System registrieren und eine Client-ID abrufen.
 
 - [Einrichten von Facebook als IDP](active-directory-b2c-setup-fb-app.md)
 - [Einrichten von Google als IDP](active-directory-b2c-setup-goog-app.md)
 - [Einrichten von Amazon als IDP](active-directory-b2c-setup-amzn-app.md)
-- [Einrichten von LinkedIn als IDP](active-directory-b2c-setup-li-app.md) 
+- [Einrichten von LinkedIn als IDP](active-directory-b2c-setup-li-app.md)
 
-Wenn Sie die Identitätsanbieter Ihrem B2C-Verzeichnis hinzugefügt haben, müssen Sie zurückkehren und jede der drei Richtlinien bearbeiten, um die neuen IDPs einzuschließen, wie im [Artikel mit Richtlinienreferenzen](active-directory-b2c-reference-policies.md) beschrieben. Nachdem Sie Ihre Richtlinien gespeichert haben, führen Sie die App einfach erneut aus. Die neuen IDPs sollten als eine Registrierungs- und Anmeldeoption auf allen Benutzeroberflächen für Identitäten angezeigt werden.
+Wenn Sie die Identitätsanbieter Ihrem B2C-Verzeichnis hinzugefügt haben, müssen Sie jede der drei Richtlinien bearbeiten, um die neuen IDPs wie im [Artikel für Richtlinienreferenzen](active-directory-b2c-reference-policies.md) beschrieben einzufügen. Nachdem Sie Ihre Richtlinien gespeichert haben, führen Sie die App einfach erneut aus. Die neuen IDPs sollten als eine Registrierungs- und Anmeldeoption auf allen Benutzeroberflächen für Identitäten angezeigt werden.
 
 Sie können frei mit Ihren Richtlinien experimentieren und die Auswirkung auf die Beispiel-App beobachten – Sie können IDPs hinzufügen/entfernen oder die Anwendungsansprüche oder Registrierungsattribute ändern. Experimentieren Sie so lange, bis die Zusammenarbeit von Richtlinien, Authentifizierungsanforderungen und ADAL verstanden haben.
 
@@ -351,4 +343,4 @@ You can now move onto more advanced B2C topics.  You may want to try:
 
 -->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

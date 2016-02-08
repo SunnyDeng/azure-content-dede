@@ -136,7 +136,6 @@ Dieses Thema listet alle Themen mit direktem Bezug zum Azure Data-Factory-Dienst
 
 | Titel | Beschreibung |
 | :-- | :-- |
-| [Azure Data Factory Editor](data-factory-editor.md) | Beschreibt Azure Data Factory Editor. Dieses Tool ermöglicht Ihnen das Erstellen, Bearbeiten und Bereitstellen von JSON-Definitionen für verknüpfte Dienste, Tabellen und Pipelines mithilfe einer einfachen webbasierten Benutzeroberfläche. |
 | [Azure Data Factory – Häufig gestellte Fragen](data-factory-faq.md) | Häufig gestellte Fragen zu Azure Data Factory |
 | [Azure Data Factory – Benennungsregeln](data-factory-naming-rules.md) | Beschreibt die Benennungsregeln für Data Factory-Entitäten. |
 | [Versionshinweise für Azure Data Factory](data-factory-release-notes.md) | DataFactory – Anmerkungen zur Version |
@@ -145,10 +144,10 @@ Dieses Thema listet alle Themen mit direktem Bezug zum Azure Data-Factory-Dienst
 
 #### Extras
 
-- [Lernpfaddiagramm für Data Factory](http://azure.microsoft.com/documentation/learning-paths/data-factory/)
-- [Durchsuchen der Dokumentation von Microsoft Azure](http://azure.microsoft.com/search/documentation/)
-- [Alternative Suchmöglichkeit in der Dokumentation von Microsoft Azure](http://azure.microsoft.com/searchresults/?query=)
-- [Anzeigen der neuesten Updates für den Data Factory-Dienst](http://azure.microsoft.com/updates/?service=data-factory)
-- [Lernpfaddiagramme für Microsoft Azure-Dienste](http://azure.microsoft.com/documentation/learning-paths/)
+- [Lernpfaddiagramm für Data Factory](https://azure.microsoft.com/documentation/learning-paths/data-factory/)
+- [Durchsuchen der Dokumentation von Microsoft Azure](https://azure.microsoft.com/search/documentation/)
+- [Alternative Suchmöglichkeit in der Dokumentation von Microsoft Azure](https://azure.microsoft.com/searchresults/?query=)
+- [Anzeigen der neuesten Updates für den Data Factory-Dienst](https://azure.microsoft.com/updates/?service=data-factory)
+- [Lernpfaddiagramme für Microsoft Azure-Dienste](https://azure.microsoft.com/documentation/learning-paths/)
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0128_2016-->

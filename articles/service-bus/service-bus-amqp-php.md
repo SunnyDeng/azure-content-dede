@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="10/07/2015"
+   ms.date="01/26/2016"
    ms.author="sethm" />
 
 # Verwenden von Service Bus aus PHP mit AMQP 1.0
@@ -25,7 +25,7 @@ Proton-PHP ist eine PHP-Sprachbindung an Proton-C. Dies bedeutet, dass Proton-PH
 
 Sie können Proton-C und die dazugehörigen Bindungen (einschließlich PHP) unter [http://qpid.apache.org/download.html](http://qpid.apache.org/download.html) herunterladen. Der Download erfolgt in Quellcodeform. Folgen Sie zum Erstellen des Codes den Anweisungen, die im heruntergeladenen Paket enthalten sind.
 
-> [AZURE.IMPORTANT]Zum Zeitpunkt der Erstellung dieses Dokuments ist die SSL-Unterstützung in Proton-C nur für Linux-Betriebssysteme verfügbar. Da Azure Service Bus die Verwendung von SSL erfordert, können Proton-C (und die Sprachbindungen) derzeit nur für den Zugriff auf Service Bus aus Linux verwendet werden. Wir arbeiten daran, Proton-C mit SSL unter Windows zu ermöglichen. Achten Sie also auf Updates hierzu.
+> [AZURE.IMPORTANT] Zum Zeitpunkt der Erstellung dieses Dokuments ist die SSL-Unterstützung in Proton-C nur für Linux-Betriebssysteme verfügbar. Da Azure Service Bus die Verwendung von SSL erfordert, können Proton-C (und die Sprachbindungen) derzeit nur für den Zugriff auf Service Bus aus Linux verwendet werden. Wir arbeiten daran, Proton-C mit SSL unter Windows zu ermöglichen. Achten Sie also auf Updates hierzu.
 
 ## Verwenden von Service Bus-Warteschlangen, -Themen und -Abonnements aus PHP
 
@@ -82,7 +82,7 @@ $message->properties["TestString"] = "Service Bus";
 $message->properties["TestObject"] = new UUID("1234123412341234");   
 ```
 
-In den .NET-API von Service Bus sind die Nachrichtenanwendungseigenschaften in der **Properties**-Auflistung von [BrokeredMessage][] enthalten. Der folgende Code veranschaulicht, wie die Anwendungseigenschaften einer Nachricht gelesen werden, die von einem PHP-Client empfangen wird.
+In den .NET-APIs von Service Bus sind die Nachrichtenanwendungseigenschaften in der **Properties**-Auflistung von [BrokeredMessage][] enthalten. Der folgende Code veranschaulicht, wie die Anwendungseigenschaften einer Nachricht gelesen werden, die von einem PHP-Client empfangen wird.
 
 ```
 if (message.Properties.Keys.Count > 0)
@@ -111,7 +111,7 @@ In der folgende Tabelle sind die PHP-Eigenschaftstypen den .NET-Eigenschaftstype
 | integer | int |
 | double | double |
 | boolean | bool |
-| Zeichenfolge | string |
+| string | string |
 | object | Object |
 
 #### .NET-API von Service Bus zu PHP
@@ -156,7 +156,7 @@ In der folgende Tabelle sind die .NET-Eigenschaftstypen den PHP-Eigenschaftstype
 
 | .NET-Eigenschaftstyp | PHP-Eigenschaftstyp | Hinweise |
 |--------------------|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| byte | integer | - | | sbyte | integer | - | | char | Char | Proton-PHP-Klasse | | short | integer | - | | ushort | integer | - | | int | integer | - | | uint | Integer | - | | long | integer | - | | ulong | integer | - | | float | double | - | | double | double | - | | decimal | string | "Decimal" wird derzeit nicht mit Proton unterstützt. | | bool | boolean | - | | Guid | UUID | Proton-PHP-Klasse | | string | string | - | | DateTime | integer | - | | DateTimeOffset | DescribedType | DateTimeOffset.UtcTicks zugeordnet zu AMQP-Typ:<type name=”datetime-offset” class=restricted source=”long”> <descriptor name=”com.microsoft:datetime-offset” /></type> | | TimeSpan | DescribedType | Timespan.Ticks zugeordnet zu AMQP-Typ:<type name=”timespan” class=restricted source=”long”> <descriptor name=”com.microsoft:timespan” /></type> | | Uri | DescribedType | Uri.AbsoluteUri zugeordnet zu AMQP-Typ:<type name=”uri” class=restricted source=”string”> <descriptor name=”com.microsoft:uri” /></type> |
+| byte | integer | - | | sbyte | integer | - | | char | Char | Proton-PHP-Klasse | | short | integer | - | | ushort | integer | - | | int | integer | - | | uint | Integer | - | | long | integer | - | | ulong | integer | - | | float | double | - | | double | double | - | | decimal | string | "Decimal" wird derzeit nicht mit Proton unterstützt. | | bool | boolean | - | | Guid | UUID | Proton-PHP-Klasse | | string | string | - | | DateTime | integer | - | | DateTimeOffset | DescribedType | DateTimeOffset.UtcTicks zugeordnet zu AMQP-Typ:<type name="datetime-offset" class=restricted source="long"> <descriptor name="com.microsoft:datetime-offset" /></type> | | TimeSpan | DescribedType | Timespan.Ticks zugeordnet zu AMQP-Typ:<type name="timespan" class=restricted source="long"> <descriptor name="com.microsoft:timespan" /></type> | | Uri | DescribedType | Uri.AbsoluteUri zugeordnet zu AMQP-Typ:<type name="uri" class=restricted source="string"> <descriptor name="com.microsoft:uri" /></type> |
 
 ### Standardeigenschaften
 
@@ -173,7 +173,7 @@ Die folgenden Tabellen enthalten die Zuordnung zwischen den Proton-PHP-Standardn
 
 | Service Bus .NET | Proton-PHP | Hinweise |
 |-------------------------|--------------------------------------------------------|--------------------------------------------------------|
-| ContentType | Message->content\_type | - | | CorrelationId | Message->correlation\_id | - | | EnqueuedTimeUtc | Message->annotations[x-opt-enqueued-time] | - | | Label | Message->subject | - | | MessageId | Message->id | - | | ReplyTo | Message->reply\_to | - | | ReplyToSessionId | Message->reply\_to\_group\_id | - | | ScheduledEnqueueTimeUtc | Message->annotations [“x-opt-scheduled-enqueue-time”] | - | | SessionId | Message->group\_id | - | | TimeToLive | Message->ttl | Konvertierung, Proton-Python-TTL-Wert wird in Millisekunden definiert. | | To | Message->address | - |
+| ContentType | Message->content\_type | - | | CorrelationId | Message->correlation\_id | - | | EnqueuedTimeUtc | Message->annotations[x-opt-enqueued-time] | - | | Label | Message->subject | - | | MessageId | Message->id | - | | ReplyTo | Message->reply\_to | - | | ReplyToSessionId | Message->reply\_to\_group\_id | - | | ScheduledEnqueueTimeUtc | Message->annotations ["x-opt-scheduled-enqueue-time"] | - | | SessionId | Message->group\_id | - | | TimeToLive | Message->ttl | Konvertierung, Proton-PHP-TTL-Wert wird in Millisekunden definiert. | | To | Message->address | - |
 
 ## Nächste Schritte
 
@@ -184,9 +184,7 @@ Möchten Sie mehr erfahren? Nutzen Sie die folgenden Links:
 
 
 [BrokeredMessage]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx
-
 [AMQP in Service Bus für Windows Server]: https://msdn.microsoft.com/library/dn574799.aspx
-
 [Übersicht über Service Bus AMQP]: service-bus-amqp-overview.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

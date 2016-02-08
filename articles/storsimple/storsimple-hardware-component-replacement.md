@@ -4,7 +4,7 @@
    services="storsimple"
    documentationCenter=""
    authors="alkohli"
-   manager="carolz"
+   manager="carmonm"
    editor="" />
 <tags 
    ms.service="storsimple"
@@ -12,16 +12,16 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="08/31/2015"
+   ms.date="01/26/2016"
    ms.author="alkohli" />
 
 # Austauschen von StorSimple-Hardwarekomponenten
 
 ## Übersicht
 
-In den Tutorials zum Austauschen von Hardwarekomponenten werden die Hardwarekomponenten Ihres Microsoft Azure StorSimple-Gerät sowie die erforderlichen Schritte zum Ausbauen und Austauschen dieser Komponenten erläutert. Dieser Artikel beschreibt die Sicherheitssymbole und enthält Verweise auf die ausführlichen Tutorials. Darüber hinaus sind die austauschbaren Komponenten aufgeführt.
+In den Tutorials zum Austausch von Hardwarekomponenten werden die Hardwarekomponenten Ihres Microsoft Azure StorSimple-Gerät der Serie 8000 sowie die erforderlichen Schritte zum Ausbauen und Austauschen dieser Komponenten erläutert. Dieser Artikel beschreibt die Sicherheitssymbole und enthält Verweise auf die ausführlichen Tutorials. Darüber hinaus sind die austauschbaren Komponenten aufgeführt.
 
->[AZURE.IMPORTANT]Bevor Sie versuchen, StorSimple-Komponenten auszubauen oder auszutauschen, sollten Sie sich mit den [Konventionen für Sicherheitssymbole](#safety-icon-conventions) und anderen [Sicherheitsvorkehrungen](storsimple-safety.md) vertraut machen.
+>[AZURE.IMPORTANT] Bevor Sie versuchen, StorSimple-Komponenten auszubauen oder auszutauschen, sollten Sie sich mit den [Konventionen für Sicherheitssymbole](#safety-icon-conventions) und anderen [Sicherheitsvorkehrungen](storsimple-safety.md) vertraut machen.
  
 ### Konventionen für Sicherheitssymbole
 
@@ -57,7 +57,7 @@ Wenn Sie ein Modul austauschen, lassen Sie **NIEMALS ein Fach auf der Rückseite
 
 ## Vorgehensweisen zum Austausch von Hardwarekomponenten
 
-Ihr Microsoft Azure StorSimple-Gerät besteht aus mehreren Steckmodulen im primären und/oder EBOD-Gehäuse. Das Modell 8100 hat ein einziges primäres Gehäuse, während das Modell 8600 ein Gerät mit zwei Gehäusen (einem primären Gehäuse und einem EBOD-Gehäuse) ist.
+Ihr StorSimple-Gerät der Serie 8000 besteht aus mehreren Steckmodulen im primären und/oder EBOD-Gehäuse. Das Modell 8100 hat ein einziges primäres Gehäuse, während das Modell 8600 ein Gerät mit zwei Gehäusen (einem primären Gehäuse und einem EBOD-Gehäuse) ist.
 
 Die wesentlichen Hardwarekomponenten des Geräts sind in der folgenden Tabelle zusammengefasst. Klicken Sie in der Spalte **Austauschverfahren** auf den Link, um zum dazugehörigen Tutorial zu gelangen.
 
@@ -122,9 +122,9 @@ Die folgenden FRUs (Field Replaceable Units) sind für Ihr StorSimple-Gerät ver
 
 - Gehäuse (einschließlich des integrierten Bedienfelds)
 
-- Stromversorgungs- und Kühleinheit (Power and Cooling Module, PCM), 764 W
+- PCM mit 764 W, Wechselstrom
 
-- Stromversorgungs- und Kühleinheit (Power and Cooling Module, PCM), 580 W
+- PCM mit 580 W, Wechselstrom
 
 - Festplattenlaufwerk mit Laufwerkträgermodul
 
@@ -142,4 +142,4 @@ Die folgenden FRUs (Field Replaceable Units) sind für Ihr StorSimple-Gerät ver
 
 Lesen Sie die [Sicherheitsinformationen](storsimple-safety.md) vollständig, bevor Sie versuchen, eine StorSimple-Hardwarekomponente auszutauschen.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

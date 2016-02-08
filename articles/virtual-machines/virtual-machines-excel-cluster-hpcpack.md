@@ -32,9 +32,9 @@ Das folgende Diagramm gibt einen allgemeinen Überblick über den zu erstellende
 
 * **Clientcomputer**: Sie benötigen einen Windows-basierten Clientcomputer, um das Azure PowerShell-Clusterbereitstellungsskript auszuführen (sofern Sie diese Bereitstellungsmethode verwenden) und Excel- und SOA-Beispielaufträge an den Cluster zu übermitteln.
 
-* **Azure-Abonnement**: Wenn Sie über kein Konto verfügen, können Sie in wenigen Minuten ein kostenloses Testkonto einrichten. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/).
+* **Azure-Abonnement**: Wenn Sie über kein Konto verfügen, können Sie in wenigen Minuten ein kostenloses Testkonto einrichten. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/).
 
-* **Kernkontingent**: Unter Umständen muss das Kontingent für die Kerne erhöht werden. Dies gilt insbesondere, wenn Sie mehrere Clusterknoten mit Multicore-VM-Größen bereitstellen. Beachten Sie bei Verwendung einer Azure-Schnellstartvorlage, dass das Kernkontingent im Ressourcen-Manager pro Azure-Region gilt und gegebenenfalls in einer bestimmten Region erhöht werden muss. Weitere Informationen finden Sie unter [Einschränkungen für Azure-Abonnements und Dienste, Kontingente und Einschränkungen](../azure-subscription-service-limits.md). Wenn Sie ein Kontingent erhöhen möchten, können Sie kostenlos eine [Anfrage an den Onlinekundensupport richten](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/).
+* **Kernkontingent**: Unter Umständen muss das Kontingent für die Kerne erhöht werden. Dies gilt insbesondere, wenn Sie mehrere Clusterknoten mit Multicore-VM-Größen bereitstellen. Beachten Sie bei Verwendung einer Azure-Schnellstartvorlage, dass das Kernkontingent im Ressourcen-Manager pro Azure-Region gilt und gegebenenfalls in einer bestimmten Region erhöht werden muss. Weitere Informationen finden Sie unter [Einschränkungen für Azure-Abonnements und Dienste, Kontingente und Einschränkungen](../azure-subscription-service-limits.md). Wenn Sie ein Kontingent erhöhen möchten, können Sie kostenlos eine [Anfrage an den Onlinekundensupport richten](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/).
 
 
 ## Schritt 1: Einrichten eines HPC Pack-Clusters in Azure
@@ -61,7 +61,7 @@ Verwenden Sie eine Azure-Schnellstartvorlage, um schnell und einfach einen HPC 
 
     ![Parameter eingeben][parameters]
 
-    >[AZURE.NOTE]Der virtuelle Computer für den Hauptknoten wird automatisch auf der Grundlage des [neuesten Marketplace-Image](http://azure.microsoft.com/marketplace/partners/microsoft/hpcpack2012r2onwindowsserver2012r2/) von HPC Pack 2012 R2 für Windows Server 2012 R2 erstellt. Aktuell basiert das Image auf HPC Pack 2012 R2 Update 3.
+    >[AZURE.NOTE]Der virtuelle Computer für den Hauptknoten wird automatisch auf der Grundlage des [neuesten Marketplace-Image](https://azure.microsoft.com/marketplace/partners/microsoft/hpcpack2012r2onwindowsserver2012r2/) von HPC Pack 2012 R2 für Windows Server 2012 R2 erstellt. Aktuell basiert das Image auf HPC Pack 2012 R2 Update 3.
     >
     >Die virtuellen Computer für die Serverknoten werden auf der Grundlage des neuesten Image der ausgewählten Serverknotenfamilie erstellt. Wählen Sie die Option **ComputeNode** aus, um das neueste HPC Pack 2012 R2 Update 3-Compute-Image für allgemeine Anwendungen zu erhalten. Wählen Sie die Option **ComputeNodeWithExcel** aus, um das neueste HPC Pack-Serverknotenimage mit einer Evaluierungsversion von Microsoft Excel Professional Plus 2013 zu erhalten. Wenn Sie einen Cluster für allgemeine SOA-Sitzungen oder für die Abladung von Excel-UDFs bereitstellen möchten, wählen Sie die Option **ComputeNode** (ohne Installation von Excel) aus.
     >
@@ -264,7 +264,7 @@ Führen Sie die folgenden Schritte durch, um eine Excel-Arbeitsmappe für die Au
 
 Wenn Sie Excel-UDFs verwenden möchten, führen Sie zur Einrichtung des Clientcomputers die weiter oben angegebenen Schritte 1 bis 3 durch. Für Excel-UDFs muss die Excel-Anwendung nicht auf den Serverknoten installiert sein. Sie können in Schritt 1 also anstelle des Serverknotenimage mit Excel ein normales Serverknotenimage auswählen.
 
->[AZURE.NOTE]Im Clusterconnector-Dialogfeld von Excel 2010 und 2013 sind maximal 34 Zeichen zulässig. Längere Clusternamen wie etwa „hpcexcelhn01.southeastasia.cloudapp.azure.com“ passen nicht in das Dialogfeld. Dies kann folgendermaßen umgangen werden: Legen Sie im Dialogfeld als Name des Clusterhauptknotens eine computerweite Variable wie etwa *CCP\_IAASHN* mit dem Wert des langen Clusternamens und der Eingabe *%CCP\_IAASHN%* fest. Beachten Sie, dass bei Clustern mit Update 2 das QFE-Update 2 (KB3085833, [hier](http://www.microsoft.com/de-DE/download/details.aspx?id=48725) als Download verfügbar) für die SOA-Sitzungs-API auf dem Clientcomputer erforderlich ist, damit diese Problemumgehung unterstützt wird.
+>[AZURE.NOTE] Im Clusterconnector-Dialogfeld von Excel 2010 und 2013 sind maximal 34 Zeichen zulässig. Längere Clusternamen wie etwa „hpcexcelhn01.southeastasia.cloudapp.azure.com“ passen nicht in das Dialogfeld. Dies kann folgendermaßen umgangen werden: Legen Sie im Dialogfeld als Name des Clusterhauptknotens eine computerweite Variable wie etwa *CCP\_IAASHN* mit dem Wert des langen Clusternamens und der Eingabe *%CCP\_IAASHN%* fest. Beachten Sie, dass bei Clustern mit Update 2 das QFE-Update 2 (KB3085833, [hier](http://www.microsoft.com/de-DE/download/details.aspx?id=48725) als Download verfügbar) für die SOA-Sitzungs-API auf dem Clientcomputer erforderlich ist, damit diese Problemumgehung unterstützt wird.
 
 Führen Sie nach erfolgreicher Bereitstellung des Clusters die folgenden Schritte durch, um eine integrierte Beispiel-Excel-UDF auszuführen. Wenn Sie angepasste Excel-UDFs benötigen, sehen Sie sich [diese Ressourcen](http://social.technet.microsoft.com/wiki/contents/articles/1198.windows-hpc-and-microsoft-excel-resources-for-building-cluster-ready-workbooks.aspx) an, um die XLLs zu erstellen und auf dem IaaS-Cluster bereitzustellen.
 
@@ -381,4 +381,4 @@ Für die SOA-Clientanwendung muss lediglich der Hauptname auf den vollständigen
 [endpoint]: ./media/virtual-machines-excel-cluster-hpcpack/endpoint.png
 [udf]: ./media/virtual-machines-excel-cluster-hpcpack/udf.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

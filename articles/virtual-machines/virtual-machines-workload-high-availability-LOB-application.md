@@ -40,7 +40,7 @@ Ein standortübergreifendes virtuelles Netzwerk ist mit einem lokalen Netzwerk p
 
 ![](./media/virtual-machines-workload-high-availability-LOB-application/CreateLOBAppHybridCloud_3.png)
  
-Sie können diese Entwicklungs- und Testumgebung im Rahmen Ihres [MSDN-Abonnements](http://azure.microsoft.com/pricing/member-offers/msdn-benefits/) oder eines [Azure-Testabonnements](http://azure.microsoft.com/pricing/free-trial/) kostenlos erstellen.
+Sie können diese Entwicklungs- und Testumgebung im Rahmen Ihres [MSDN-Abonnements](https://azure.microsoft.com/pricing/member-offers/msdn-benefits/) oder eines [Azure-Testabonnements](https://azure.microsoft.com/pricing/free-trial/) kostenlos erstellen.
 
 Der nächste Schritt besteht darin, eine Branchenanwendung mit hoher Verfügbarkeit in Azure zu erstellen.
 
@@ -86,4 +86,4 @@ Nach der Konfiguration können Sie diese Branchenanwendung problemlos erweitern,
 
 - Verschaffen Sie sich einen [Überblick](virtual-machines-workload-high-availability-lob-application-overview.md) über den Produktions-Workload, bevor Sie sich die Konfiguration näher anschauen.
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

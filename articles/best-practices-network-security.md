@@ -28,7 +28,7 @@ Das nachstehende Diagramm bietet Hilfestellung bei der Auswahl aus den vielen Si
 ## Microsoft-Compliance und Infrastrukturschutz
 Microsoft nimmt in Bezug auf Compliance-Initiativen zur Unterstützung von Unternehmenskunden eine führende Rolle ein. Nachfolgend sehen Sie einige der Compliancezertifizierungen für Azure: ![Azure-Compliancezertifizierungen][1]
 
-Weitere Informationen finden Sie unter: [http://azure.microsoft.com/de-de/support/trust-center/compliance/](http://azure.microsoft.com/support/trust-center/compliance/)
+Weitere Informationen finden Sie unter: [http://azure.microsoft.com/de-de/support/trust-center/compliance/](https://azure.microsoft.com/support/trust-center/compliance/)
 
 Microsoft verfolgt einen umfassenden Ansatz zum Schutz der Cloudinfrastruktur, die zur Ausführung hyperskalierbarer globaler Dienste erforderlich ist. Die Microsoft-Cloudinfrastruktur umfasst Hardware, Software, Netzwerke, administratives und operatives Personal sowie die physischen Datencenter.
 
@@ -118,7 +118,7 @@ Die folgende Liste bietet Hilfestellung in Bezug auf die Anforderungen virtuelle
     - VPN-Geräte: Fungieren als standortübergreifende VPN-Gateways zur Bereitstellung standortübergreifender VPN-Konnektivität zwischen lokalen Kundennetzwerken und virtuellen Azure-Netzwerken.
     - VPN-Server: VPN-Server akzeptieren VPN-Clientverbindungen mit virtuellen Azure-Netzwerken.
 
->[AZURE.TIP]Sorgen Sie für eine vollständige Trennung zwischen dem autorisierten Personal mit Zugriff auf die DMZ-Sicherheitsgeräte und den Mitarbeitern, die als Administratoren für Entwicklung/Bereitstellung/Betrieb von Anwendungen zuständig sind. Durch eine strikte Trennung dieser Gruppen können Sie eine klare Aufgabenverteilung erzielen und verhindern, dass einzelne Personen Kontrollmechanismen zur Anwendungs- und Netzwerksicherheit umgehen.
+>[AZURE.TIP] Sorgen Sie für eine vollständige Trennung zwischen dem autorisierten Personal mit Zugriff auf die DMZ-Sicherheitsgeräte und den Mitarbeitern, die als Administratoren für Entwicklung/Bereitstellung/Betrieb von Anwendungen zuständig sind. Durch eine strikte Trennung dieser Gruppen können Sie eine klare Aufgabenverteilung erzielen und verhindern, dass einzelne Personen Kontrollmechanismen zur Anwendungs- und Netzwerksicherheit umgehen.
 
 ### Fragen in Bezug auf die Einrichtung von Netzwerkgrenzen
 In sämtlichen Erläuterungen zu "Azure-Netzwerken" in diesem Abschnitt bezieht sich – sofern nicht ausdrücklich anders erwähnt – der Begriff "Netzwerke" (Netzwerke, virtuelle Netzwerke oder Subnetze) auf private virtuelle Azure-Netzwerke, die von einem Abonnementadministrator erstellt werden. Es werden nicht die zugrunde liegende physischen Netzwerke in Azure beschrieben.
@@ -137,7 +137,7 @@ Im ersten Schritt muss entschieden werden, wie viele Sicherheitsgrenzen in einem
 
 Die Anzahl und Art der erforderlichen Grenzen variiert basierend darauf, wie hoch die Risikotoleranz eines Unternehmens liegt und welches Szenario implementiert wird. Diese Entscheidung wird häufig gemeinsam von verschiedenen Gruppen innerhalb einer Organisation getroffen – z. B. durch ein Team für Risiko und Compliance, ein Netzwerk-/Plattformteam und ein Team für die Anwendungsentwicklung. Bei dieser Entscheidung sollten Personen mit Einblick in die Sicherheit, relevante Daten und die eingesetzte Technologie einbezogen werden, um ein angemessenes Sicherheitsniveau für jede Implementierung zu gewährleisten.
 
->[AZURE.TIP]Verwenden Sie die kleinstmögliche Anzahl von Grenzen, mit denen die Sicherheitsanforderungen für ein vorgegebenes Szenario erfüllt werden können. Je mehr Grenzen implementiert werden, desto schwieriger können sich Betrieb und Problembehandlung gestalten. Gleichzeitig steigt der Aufwand für das Verwalten der verschiedenen Grenzrichtlinien. Durch eine unzureichende Anzahl von Grenzen steigt jedoch das Risiko. Entscheidend ist, die richtige Balance zu finden.
+>[AZURE.TIP] Verwenden Sie die kleinstmögliche Anzahl von Grenzen, mit denen die Sicherheitsanforderungen für ein vorgegebenes Szenario erfüllt werden können. Je mehr Grenzen implementiert werden, desto schwieriger können sich Betrieb und Problembehandlung gestalten. Gleichzeitig steigt der Aufwand für das Verwalten der verschiedenen Grenzrichtlinien. Durch eine unzureichende Anzahl von Grenzen steigt jedoch das Risiko. Entscheidend ist, die richtige Balance zu finden.
 
 ![Hybridnetzwerk mit drei Sicherheitsgrenzen][6]
 
@@ -184,7 +184,7 @@ Weitere Details zum Erstellen dieses Beispiels (sowohl mithilfe von Skripts als 
 #### Beschreibung der Netzwerksicherheitsgruppe (NSG)
 In diesem Beispiel wird eine Netzwerksicherheitsgruppe erstellt und dann mit sechs Regeln geladen.
 
->[AZURE.TIP]Im Allgemeinen sollten Sie zuerst die spezifischeren Regeln zum Zulassen von Aktionen und danach die allgemeineren Regeln zum Ablehnen von Aktionen erstellen. Die zugewiesene Priorität bestimmt, welche Regeln zuerst ausgewertet werden. Sobald eine Regel auf den Datenverkehr zutrifft, werden keine weiteren Regeln ausgewertet. NSG-Regeln können sowohl in eingehender als auch in ausgehender Richtung zutreffen (aus Perspektive des Subnetzes).
+>[AZURE.TIP] Im Allgemeinen sollten Sie zuerst die spezifischeren Regeln zum Zulassen von Aktionen und danach die allgemeineren Regeln zum Ablehnen von Aktionen erstellen. Die zugewiesene Priorität bestimmt, welche Regeln zuerst ausgewertet werden. Sobald eine Regel auf den Datenverkehr zutrifft, werden keine weiteren Regeln ausgewertet. NSG-Regeln können sowohl in eingehender als auch in ausgehender Richtung zutreffen (aus Perspektive des Subnetzes).
 
 Folgende Regeln werden deklarativ für eingehenden Datenverkehr erstellt:
 
@@ -230,7 +230,7 @@ Weitere Details zum Erstellen dieses Beispiels (sowohl mithilfe von Skripts als 
 #### Beschreibung der Netzwerksicherheitsgruppe (NSG)
 In diesem Beispiel wird eine Netzwerksicherheitsgruppe erstellt und dann mit sechs Regeln geladen.
 
->[AZURE.TIP]Im Allgemeinen sollten Sie zuerst die spezifischeren Regeln zum Zulassen von Aktionen und danach die allgemeineren Regeln zum Ablehnen von Aktionen erstellen. Die zugewiesene Priorität bestimmt, welche Regeln zuerst ausgewertet werden. Sobald eine Regel auf den Datenverkehr zutrifft, werden keine weiteren Regeln ausgewertet. NSG-Regeln können sowohl in eingehender als auch in ausgehender Richtung zutreffen (aus Perspektive des Subnetzes).
+>[AZURE.TIP] Im Allgemeinen sollten Sie zuerst die spezifischeren Regeln zum Zulassen von Aktionen und danach die allgemeineren Regeln zum Ablehnen von Aktionen erstellen. Die zugewiesene Priorität bestimmt, welche Regeln zuerst ausgewertet werden. Sobald eine Regel auf den Datenverkehr zutrifft, werden keine weiteren Regeln ausgewertet. NSG-Regeln können sowohl in eingehender als auch in ausgehender Richtung zutreffen (aus Perspektive des Subnetzes).
 
 Folgende Regeln werden deklarativ für eingehenden Datenverkehr erstellt:
 
@@ -307,7 +307,7 @@ Sobald die Routingtabellen erstellt wurden, sind sie an ihre Subnetze gebunden. 
 		 {10.0.0.0/16}     VirtualAppliance 10.0.0.4            Active    
          {0.0.0.0/0}       VirtualAppliance 10.0.0.4            Active
 
->[AZURE.NOTE]Aufgrund der Komplexität des dynamischen Routings im virtuellen Azure-Gateway gelten für das benutzerdefinierte Routing (User Defined Routing, UDR) mit ExpressRoute bestimmte Einschränkungen. Diese werden im Folgenden aufgeführt:
+>[AZURE.NOTE] Aufgrund der Komplexität des dynamischen Routings im virtuellen Azure-Gateway gelten für das benutzerdefinierte Routing (User Defined Routing, UDR) mit ExpressRoute bestimmte Einschränkungen. Diese werden im Folgenden aufgeführt:
 >
 > 1. Das benutzerdefinierte Routing (UDR) darf nicht auf das Gateway-Subnetz angewendet werden, an das das mit ExpressRoute verbundene virtuelle Azure-Gateway angebunden ist.
 > 2. Das mit ExpressRoute verbundene virtuelle Azure-Gateway kann nicht als NextHop-Gerät für andere UDR-gebundene Subnetze fungieren.
@@ -334,7 +334,7 @@ In der Firewall müssen Weiterleitungsregeln erstellt werden. Da die Firewall s�
  
 ![Logische Ansicht der Firewallregeln][10]
 
->[AZURE.NOTE]Je nach verwendetem virtuellem Netzwerkgerät variieren die Verwaltungsports. In diesem Beispiel wird auf eine Barracuda NG Firewall verwiesen, die die Ports 22, 801 und 807 verwendet. Informationen dazu, über welche Ports das verwendete Gerät genau verwaltet wird, finden Sie in der Dokumentation des Geräteanbieters.
+>[AZURE.NOTE] Je nach verwendetem virtuellem Netzwerkgerät variieren die Verwaltungsports. In diesem Beispiel wird auf eine Barracuda NG Firewall verwiesen, die die Ports 22, 801 und 807 verwendet. Informationen dazu, über welche Ports das verwendete Gerät genau verwaltet wird, finden Sie in der Dokumentation des Geräteanbieters.
 
 #### Beschreibung der Firewallregeln
 Im oben gezeigten logischen Diagramm wird das Sicherheitssubnetz nicht angezeigt, da die Firewall die einzige Ressource in diesem Subnetz ist. Dieses Diagramm zeigt die Firewallregeln und die Art und Weise, wie diese Datenverkehrsflüsse logisch zulassen oder ablehnen. Das Diagramm zeigt nicht den tatsächlichen Weiterleitungspfad. Die für den RDP-Datenverkehr ausgewählten externen Ports liegen in einem höheren Bereich (8014-8026) und wurden zur Anpassung an die letzten beiden Oktette der lokalen IP-Adresse ausgewählt, um die Lesbarkeit zu vereinfachen (die lokale Serveradresse 10.0.1.4 ist beispielsweise Port 8014 zugeordnet). Es können jedoch auch Ports mit einer höheren Nummer ausgewählt werden, wenn sie keine Konflikte verursachen.
@@ -354,7 +354,7 @@ In diesem Beispiel werden 7 Arten von Regeln benötigt, die wie folgt beschrieb
 - Ausfallsicherheitsregel (für Datenverkehr, für den keine der obigen Regeln gilt):
   7.	Regel zum Ablehnen jeglichen Datenverkehrs: Dies sollte (hinsichtlich der Priorität) die letzte Regel sein. Sollte ein Datenverkehrsfluss keiner der vorherigen Regeln entsprechen, wird er durch diese Regel verworfen. Dies ist eine Standardregel, die üblicherweise aktiviert ist. Im Allgemeinen sind keine Änderungen erforderlich.
 
->[AZURE.TIP]In Bezug auf die zweite Anwendungsdatenverkehrsregel ist in diesem Beispiel einfachheitshalber jeder Port zulässig. In einem realen Szenario sollten die spezifischsten Port- und Adressbereiche verwendet werden, um die Angriffsfläche dieser Regel zu reduzieren.
+>[AZURE.TIP] In Bezug auf die zweite Anwendungsdatenverkehrsregel ist in diesem Beispiel einfachheitshalber jeder Port zulässig. In einem realen Szenario sollten die spezifischsten Port- und Adressbereiche verwendet werden, um die Angriffsfläche dieser Regel zu reduzieren.
 
 Nachdem alle oben genannten Regeln erstellt wurden, ist es wichtig, die Priorität jeder einzelnen Regel zu prüfen, um sicherzustellen, dass der Datenverkehr wie gewünscht zugelassen oder abgelehnt wird. In diesem Beispiel wurden die Regeln nach Priorität geordnet.
 
@@ -378,7 +378,7 @@ Ein Hybridnetzwerk unter Verwendung eines virtuellen Netzwerkgeräts kann einem 
 
 Wie in der Abbildung oben dargestellt, wird eine VPN-Verbindung über das Internet (Site-to-Site) dazu verwendet, ein lokales Netzwerk über ein virtuelles Netzwerkgerät mit einem virtuellen Azure-Netzwerk zu verbinden.
 
->[AZURE.NOTE]Wenn Sie ExpressRoute mit aktivierter Azure Public Peering-Option verwenden, muss eine statische Route zum Routing über die VPN-IP-Adresse des virtuellen Netzwerkgeräts erstellt werden, damit ausgehender Datenverkehr über die Unternehmensgrenze zum Internet und nicht über die ExpressRoute-WAN-Grenze fließt. Dies ist nötig, da für die ExpressRoute Azure Public Peering-Option eine Netzwerkadressübersetzung (NAT) erforderlich ist, die höchstwahrscheinlich zu einer Unterbrechung der VPN-Sitzung führt (IPSec verträgt sich in der Regel nicht mit NAT).
+>[AZURE.NOTE] Wenn Sie ExpressRoute mit aktivierter Azure Public Peering-Option verwenden, muss eine statische Route zum Routing über die VPN-IP-Adresse des virtuellen Netzwerkgeräts erstellt werden, damit ausgehender Datenverkehr über die Unternehmensgrenze zum Internet und nicht über die ExpressRoute-WAN-Grenze fließt. Dies ist nötig, da für die ExpressRoute Azure Public Peering-Option eine Netzwerkadressübersetzung (NAT) erforderlich ist, die höchstwahrscheinlich zu einer Unterbrechung der VPN-Sitzung führt (IPSec verträgt sich in der Regel nicht mit NAT).
 
 Nachdem das VPN eingerichtet ist, wird das virtuelle Netzwerkgerät zum zentralen "Hub" für alle Netzwerke und Subnetze. Die Weiterleitungsregeln der Firewall legen fest, welcher Datenverkehr zulässig ist, wann eine Netzwerkadressübersetzung durchgeführt wird, welche Daten umgeleitet oder verworfen werden (selbst für Datenströme zwischen dem lokalen Netzwerk und Azure, wenn die Datenflüsse so eingerichtet sind).
 
@@ -413,7 +413,7 @@ Eine Hybridnetzwerkverbindung über ein Azure-VPN-Gateway kann einem beliebigen 
 
 Wie in der Abbildung oben dargestellt, wird eine VPN-Verbindung über das Internet (Site-to-Site) dazu verwendet, ein lokales Netzwerk über ein Azure-VPN-Gateway mit einem virtuellen Azure-Netzwerk zu verbinden.
 
->[AZURE.NOTE]Wenn Sie ExpressRoute mit aktivierter Azure Public Peering-Option verwenden, muss eine statische Route zum Routing über die IP-Adresse des Azure-VPN-Gateways erstellt werden, damit ausgehender Datenverkehr über die Unternehmensgrenze zum Internet und nicht über die ExpressRoute-WAN-Grenze fließt. Dies ist nötig, da für die ExpressRoute Azure Public Peering-Option eine Netzwerkadressübersetzung (NAT) erforderlich ist, die höchstwahrscheinlich zu einer Unterbrechung der VPN-Sitzung führt (IPSec verträgt sich in der Regel nicht mit NAT).
+>[AZURE.NOTE] Wenn Sie ExpressRoute mit aktivierter Azure Public Peering-Option verwenden, muss eine statische Route zum Routing über die IP-Adresse des Azure-VPN-Gateways erstellt werden, damit ausgehender Datenverkehr über die Unternehmensgrenze zum Internet und nicht über die ExpressRoute-WAN-Grenze fließt. Dies ist nötig, da für die ExpressRoute Azure Public Peering-Option eine Netzwerkadressübersetzung (NAT) erforderlich ist, die höchstwahrscheinlich zu einer Unterbrechung der VPN-Sitzung führt (IPSec verträgt sich in der Regel nicht mit NAT).
 
 Wie unten gezeigt, weist die Umgebung mit dieser Option zwei Netzwerkgrenzen auf. An der ersten Netzwerkgrenze steuern das virtuelle Netzwerkgerät und Netzwerksicherheitsgruppen (NSGs) den Fluss des Datenverkehrs für interne Azure-Netzwerke und zwischen Azure und dem Internet. Das Azure-VPN-Gateway bildet die zweite Netzwerkgrenze für eine vollständige Trennung und Isolierung zwischen dem lokalen Netzwerk und Azure.
 
@@ -442,7 +442,7 @@ Ein Hybridnetzwerk mit einer privaten ExpressRoute-Peeringverbindung kann einem 
 
 Wie in der Abbildung oben gezeigt wird, bietet das private ExpressRoute-Peering eine direkte Verbindung zwischen Ihrem lokalen Netzwerk und dem virtuellen Azure-Netzwerk. Der Datenverkehr passiert nur das Dienstanbieternetzwerk und das Microsoft-/Azure-Netzwerk, ohne jeglichen Berührungspunkt mit dem Internet.
 
->[AZURE.NOTE]Aufgrund der Komplexität des dynamischen Routings im virtuellen Azure-Gateway gelten für das benutzerdefinierte Routing (User Defined Routing, UDR) mit ExpressRoute bestimmte Einschränkungen. Diese werden im Folgenden aufgeführt:
+>[AZURE.NOTE] Aufgrund der Komplexität des dynamischen Routings im virtuellen Azure-Gateway gelten für das benutzerdefinierte Routing (User Defined Routing, UDR) mit ExpressRoute bestimmte Einschränkungen. Diese werden im Folgenden aufgeführt:
 >
 > 1. Das benutzerdefinierte Routing (UDR) darf nicht auf das Gateway-Subnetz angewendet werden, an das das mit ExpressRoute verbundene virtuelle Azure-Gateway angebunden ist.
 > 2. Das mit ExpressRoute verbundene virtuelle Azure-Gateway kann nicht als NextHop-Gerät für andere UDR-gebundene Subnetze fungieren.
@@ -451,7 +451,7 @@ Wie in der Abbildung oben gezeigt wird, bietet das private ExpressRoute-Peering 
 
 <br />
 
->[AZURE.TIP]Durch den Einsatz von ExpressRoute wird der Unternehmensnetzwerkverkehr vollständig vom Internet getrennt. Diese Implementierung bietet höhere Sicherheit, eine erheblich gesteigerte Leistung und ermöglicht das Bereitstellen von SLAs durch Ihren ExpressRoute-Anbieter. Mit ExpressRoute kann das Azure-Gateway eine Leistung von bis zu 2 GBit/s erzielen, während das Azure-Gateway bei Site-to-Site-VPNs einen maximalen Durchsatz von 200 MBit/s erreicht.
+>[AZURE.TIP] Durch den Einsatz von ExpressRoute wird der Unternehmensnetzwerkverkehr vollständig vom Internet getrennt. Diese Implementierung bietet höhere Sicherheit, eine erheblich gesteigerte Leistung und ermöglicht das Bereitstellen von SLAs durch Ihren ExpressRoute-Anbieter. Mit ExpressRoute kann das Azure-Gateway eine Leistung von bis zu 2 GBit/s erzielen, während das Azure-Gateway bei Site-to-Site-VPNs einen maximalen Durchsatz von 200 MBit/s erreicht.
 
 Wie aus dem nachstehenden Diagramm hervorgeht, verfügt die Umgebung bei dieser Option über zwei Netzwerkgrenzen. Das virtuelle Netzwerkgerät und Netzwerksicherheitsgruppen (NSGs) steuern den Fluss des Datenverkehrs für interne Azure-Netzwerke und zwischen Azure und dem Internet, während das Gateway eine zweite Netzwerkgrenze bildet und für eine vollständige Trennung und Isolierung zwischen dem lokalen Netzwerk und Azure sorgt.
 
@@ -511,4 +511,4 @@ stehen in Kürze zur Verfügung und werden über diese Seite verlinkt.
 [Example7]: ./virtual-network/virtual-networks-vnet2vnet-direct-asm.md
 [Example8]: ./virtual-network/virtual-networks-vnet2vnet-transit-asm.md
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

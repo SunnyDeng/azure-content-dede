@@ -25,7 +25,7 @@ Dieses Thema enthält allgemeine Sicherheitsrichtlinien, die dazu beitragen soll
 
 Weitere Informationen über die Sicherheitsmethoden für SQL Server finden Sie in [Bewährte Methoden für SQL Server 2008 R2 – Betriebs- und Verwaltungsaufgaben](http://download.microsoft.com/download/1/2/A/12ABE102-4427-4335-B989-5DA579A4D29D/SQL_Server_2008_R2_Security_Best_Practice_Whitepaper.docx) (in englischer Sprache).
 
-Azure erfüllt mehrere Branchenvorgaben und Standards, mit denen Sie eine kompatible Lösung mit SQL Server auf einem virtuellen Computer erstellen können. Weitere Informationen zur Einhaltung von Vorschriften durch Azure finden Sie unter [Azure Trust Center](http://azure.microsoft.com/support/trust-center/).
+Azure erfüllt mehrere Branchenvorgaben und Standards, mit denen Sie eine kompatible Lösung mit SQL Server auf einem virtuellen Computer erstellen können. Weitere Informationen zur Einhaltung von Vorschriften durch Azure finden Sie unter [Azure Trust Center](https://azure.microsoft.com/support/trust-center/).
 
 Im Folgenden finden Sie eine Liste mit Sicherheitsempfehlungen für das Konfigurieren und das Herstellen von Verbindungen mit SQL Server-Instanz auf einem virtuellen Azure-Computer berücksichtigt werden sollten.
 
@@ -62,4 +62,4 @@ Weitere Informationen zu bewährten Methoden in Bezug auf Leistung finden Sie un
 
 Weitere Informationen zum Ausführen von SQL Server auf virtuellen Azure-Computern finden Sie in der [Übersicht zu SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-infrastructure-services.md).
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

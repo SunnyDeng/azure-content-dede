@@ -245,7 +245,7 @@ Aktualisierungen des WordPress-Kerns haben keine Auswirkung auf Ihre Dateien `wp
 ```
 
 #### Einrichten einer Stagingumgebung
-Wenn Sie bereits über eine auf Azure Web ausgeführte WordPress-Web-App verfügen, melden Sie sich beim [Azure-Portal](http://portal.azure.com) an, und wechseln Sie zu Ihrer WordPress-Web-App. Andernfalls können Sie die App über den Marketplace erstellen. Klicken Sie [hier](web-sites-php-web-site-gallery.md), um weitere Informationen zu erhalten. Klicken Sie auf **Einstellungen** -> **Bereitstellungsslots** -> **Hinzufügen**, um einen Bereitstellungsslot mit dem Namen „stage“ zu erstellen. Ein Bereitstellungsslot ist eine weitere Webanwendung, die die gleichen Ressourcen wie die zuvor erstellte primäre Web-App nutzt.
+Wenn Sie bereits über eine auf Azure Web ausgeführte WordPress-Web-App verfügen, melden Sie sich beim [Azure-Portal](https://portal.azure.com/) an, und wechseln Sie zu Ihrer WordPress-Web-App. Andernfalls können Sie die App über den Marketplace erstellen. Klicken Sie [hier](web-sites-php-web-site-gallery.md), um weitere Informationen zu erhalten. Klicken Sie auf **Einstellungen** -> **Bereitstellungsslots** -> **Hinzufügen**, um einen Bereitstellungsslot mit dem Namen „stage“ zu erstellen. Ein Bereitstellungsslot ist eine weitere Webanwendung, die die gleichen Ressourcen wie die zuvor erstellte primäre Web-App nutzt.
 
 ![Erstellen des Bereitstellungslots „stage“](./media/app-service-web-staged-publishing-realworld-scenarios/1setupstage.png)
 
@@ -287,7 +287,8 @@ Durchsuchen und testen Sie Ihre Staging-Web-App. Das folgende Beispiel zeigt die
 
 ![Vorschau der Änderungen beim Austauschen für WordPress](./media/app-service-web-staged-publishing-realworld-scenarios/6swaps1.png)
 
- >[AZURE.NOTE]>Im Fall eines Szenarios, in dem Sie nur Dateien (keine Datenbankaktualisierungen) mithilfe von Push übertragen müssen, **aktivieren** Sie vor dem Austausch im Azure-Portal auf dem Blatt mit den Web-App-Einstellungen das Kontrollkästchen **Sloteinstellung** für alle datenbankbezogenen *App-Einstellungen* und *Verbindungszeichenfolgen-Einstellungen*. In diesem Fall sollten DB\_NAME, DB\_HOST, DB\_PASSWORD, DB\_USER und die standardmäßige Verbindungszeichenfolgen-Einstellung bei einem **Austausch** nicht in der Vorschau der Änderungen angezeigt werden. Nach Abschluss des **Austauschvorgangs** enthält die WordPress-Web-App **NUR** die aktualisierten Dateien.
+ >[AZURE.NOTE]
+ >Im Fall eines Szenarios, in dem Sie nur Dateien (keine Datenbankaktualisierungen) mithilfe von Push übertragen müssen, **aktivieren** Sie vor dem Austausch im Azure-Portal auf dem Blatt mit den Web-App-Einstellungen das Kontrollkästchen **Sloteinstellung** für alle datenbankbezogenen *App-Einstellungen* und *Verbindungszeichenfolgen-Einstellungen*. In diesem Fall sollten DB\_NAME, DB\_HOST, DB\_PASSWORD, DB\_USER und die standardmäßige Verbindungszeichenfolgen-Einstellung bei einem **Austausch** nicht in der Vorschau der Änderungen angezeigt werden. Nach Abschluss des **Austauschvorgangs** enthält die WordPress-Web-App **NUR** die aktualisierten Dateien.
 
 Hier sehen Sie die WordPress-Produktions-Web-App vor dem Austauschvorgang. ![Produktions-Web-App vor dem Austauschen von Slots](./media/app-service-web-staged-publishing-realworld-scenarios/7bfswap.png)
 
@@ -371,21 +372,14 @@ Zum Konfigurieren müssen Sie die Datei „courier.config“ im Ordner **Config*
   </repositories>
  ```
 
-Geben Sie unter `<repositories>` die URL der Produktionssite sowie die Benutzerinformationen ein. Wenn Sie den standardmäßigen Umbraco-Mitgliedschaftsanbieter verwenden, fügen Sie die ID für den Administrator im Abschnitt <user> hinzu. Wenn Sie einen benutzerdefinierten Umbraco-Mitgliedschaftsanbieter verwenden, verwenden Sie `<login>`,`<password>`, damit das Courier2-Modul weiß, wie eine Verbindung mit der Produktionssite hergestellt wird. Weitere Einzelheiten finden Sie in der [Dokumentation](http://umbraco.com/help-and-support/customer-area/courier-2-support-and-download/developer-documentation) zum Courier-Modul.
+Under `<repositories>`, enter the production site URL and user information. If you are using default Umbraco Membership provider, then add the ID for the Administration user in <user> section . If you are using a custom Umbraco membership provider, use `<login>`,`<password>` to Courier2 module know how to connect to the production site. For more details, review the [documentation](http://umbraco.com/help-and-support/customer-area/courier-2-support-and-download/developer-documentation) for Courier module.
 
-Installieren Sie das Courier-Modul für Ihre Produktionssite, und konfigurieren Sie es so, dass es auf die Staging-Web-App in der jeweiligen courier.config-Datei verweist (wie in diesem Abschnitt gezeigt)
+Similarly, install Courier module on your production site and configure it point to stage web app in its respective courier.config file as shown here
 
 ```xml
   <!-- Repository connection settings -->
   <!-- For each site, a custom repository must be configured, so Courier knows how to connect and authenticate-->
-  <repositories>
-        <!-- If a custom Umbraco Membership provider is used, specify login & password + set the passwordEncoding to clear:  -->
-        <repository name="Stage web app" alias="stage" type="CourierWebserviceRepositoryProvider" visible="true">
-            <url>http://umbracositecms-1-stage.azurewebsites.net</url>
-            <user>0</user>
-           </repository>
-  </repositories>
-```
+  <repositories> <!-- If a custom Umbraco Membership provider is used, specify login & password + set the passwordEncoding to clear:  --> <repository name="Stage web app" alias="stage" type="CourierWebserviceRepositoryProvider" visible="true"> <url>http://umbracositecms-1-stage.azurewebsites.net</url> <user>0</user> </repository> </repositories> ```
 
 Klicken Sie im Dashboard der Umbraco CMS-Web-App auf die Registerkarte „Courier2“, und wählen Sie Speicherorte aus. Der Name des Repositorys sollte wie in `courier.config` erwähnt angezeigt werden. Führen Sie diesen Vorgang für die Produktions- und die Staging-Web-App aus.
 
@@ -427,7 +421,7 @@ Nach dem Aktualisieren Ihrer lokalen Entwicklungswebsite veröffentlichen Sie di
 
 ![Austauschvorschau für die Bereitstellung von Umbraco CMS](./media/app-service-web-staged-publishing-realworld-scenarios/22umbswap.png)
 
-Das Austauschen der Web-App und der Datenbank bietet folgende Vorteile: 1. Sie können mit einem weiteren **Austauschvorgang** ein Rollback auf die vorherige Version der Web-App ausführen, wenn in der Anwendung Probleme auftreten. 2. Bei einer Aktualisierung müssen Sie Dateien und die Datenbank von der Staging-Web-App in der Produktions-Web-App und der Datenbank bereitstellen. Bei der Bereitstellung von Dateien und Datenbanken kann vieles schief gehen. Durch das **Austauschen** von Slots wird das Risiko von Ausfallzeiten während einer Aktualisierung und von Fehlern bei der Bereitstellung von Änderungen reduziert. 3. Sie können **A/B-Tests** mithilfe der Funktion zum [Testen in der Produktionsumgebung](http://azure.microsoft.com/documentation/videos/introduction-to-azure-websites-testing-in-production-with-galin-iliev/) durchführen.
+Das Austauschen der Web-App und der Datenbank bietet folgende Vorteile: 1. Sie können mit einem weiteren **Austauschvorgang** ein Rollback auf die vorherige Version der Web-App ausführen, wenn in der Anwendung Probleme auftreten. 2. Bei einer Aktualisierung müssen Sie Dateien und die Datenbank von der Staging-Web-App in der Produktions-Web-App und der Datenbank bereitstellen. Bei der Bereitstellung von Dateien und Datenbanken kann vieles schief gehen. Durch das **Austauschen** von Slots wird das Risiko von Ausfallzeiten während einer Aktualisierung und von Fehlern bei der Bereitstellung von Änderungen reduziert. 3. Sie können **A/B-Tests** mithilfe der Funktion zum [Testen in der Produktionsumgebung](https://azure.microsoft.com/documentation/videos/introduction-to-azure-websites-testing-in-production-with-galin-iliev/) durchführen.
 
 Dieses Beispiel veranschaulicht die Flexibilität der Plattform. Sie ermöglicht es Ihnen, benutzerdefinierte Module wie das Umbraco Courier-Modul zur umgebungsübergreifenden Verwaltung der Bereitstellung zu erstellen.
 
@@ -438,4 +432,4 @@ Dieses Beispiel veranschaulicht die Flexibilität der Plattform. Sie ermöglicht
 
 [Blockieren des Webzugriffs auf Nicht-Produktionsslots](http://ruslany.net/2014/04/azure-web-sites-block-web-access-to-non-production-deployment-slots/)
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

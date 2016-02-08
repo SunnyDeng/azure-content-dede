@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/22/2015" 
+	ms.date="01/12/2016" 
 	ms.author="tdykstra"/>
 
 # Ausführen von Hintergrundaufgaben mit WebJobs
@@ -42,7 +42,7 @@ Die folgenden Dateitypen werden akzeptiert:
 
 ## <a name="CreateOnDemand"></a>Erstellen eines bedarfsgesteuerten Webauftrags im Portal
 
-1. Klicken Sie auf dem Blatt **Web-App** im [Azure-Portal](http://portal.azure.com) auf **Alle Einstellungen > WebJobs**, um das Blatt **WebJobs** anzuzeigen.
+1. Klicken Sie auf dem Blatt **Web-App** im [Azure-Portal](https://portal.azure.com) auf **Alle Einstellungen > WebJobs**, um das Blatt **WebJobs** anzuzeigen.
 	
 	![Webauftrag, Blatt](./media/web-sites-create-web-jobs/wjblade.png)
 	
@@ -70,7 +70,7 @@ Die folgenden Dateitypen werden akzeptiert:
 
 2. Klicken Sie zum Starten oder Beenden eines kontinuierlich ausgeführten Webauftrags in der Liste mit der rechten Maustaste auf den Webauftrag, und klicken Sie dann auf **Starten** oder **Beenden**.
 	
-> [AZURE.NOTE]Wenn die Web-App auf mehr als einer Instanz ausgeführt wird, wird auf allen Instanzen ein kontinuierlich ausgeführter Webauftrag ausgeführt. Bedarfsgesteuerte und geplante Webaufträge werden auf einer einzigen Instanz ausgeführt, die für den Lastenausgleich durch Microsoft Azure ausgewählt wurde.
+> [AZURE.NOTE] Wenn die Web-App auf mehr als einer Instanz ausgeführt wird, wird auf allen Instanzen ein kontinuierlich ausgeführter Webauftrag ausgeführt. Bedarfsgesteuerte und geplante Webaufträge werden auf einer einzigen Instanz ausgeführt, die für den Lastenausgleich durch Microsoft Azure ausgewählt wurde.
 	
 > Aktivieren Sie für die Web-App die Konfigurationseinstellung "Immer bereit"*, um sicherzustellen, dass fortlaufende Webaufträge auf allen Instanzen zuverlässig ausgeführt werden. Andernfalls wird die Ausführung unter Umständen beendet, wenn sich die SCM-Hostwebsite zu lange im Leerlauf befindet.
 
@@ -201,7 +201,7 @@ Geplante Aufträge können auf den Seiten im Azure Scheduler des [klassischen Po
 - In den Modi "Basic" und "Standard" ist das Feature "Immer aktiviert" verfügbar. Ist es aktiviert, wird verhindert, dass Web-Apps in den Leerlauf wechseln.
 - Ein Debugging kann nur für kontinuierlich ausgeführte Webaufträge ausgeführt werden. Für geplante oder bei Bedarf ausgeführte Webaufträge wird Debugging nicht unterstützt.
 
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## <a name="NextSteps"></a>Nächste Schritte
  
@@ -239,4 +239,4 @@ Weitere Informationen finden Sie unter [Empfohlene Ressourcen für Azure WebJobs
 [JobActionPageInScheduler]: ./media/web-sites-create-web-jobs/33JobActionPageInScheduler.png
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

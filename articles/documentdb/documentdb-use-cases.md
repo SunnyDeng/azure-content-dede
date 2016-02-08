@@ -36,7 +36,7 @@ Inhalte wie Chats, Kommentare und Beiträge können in DocumentDB gespeichert we
 
 Anwendungen, die in verschiedene soziale Netzwerke integriert werden, müssen auf Schemaänderungen dieser Netzwerke reagieren. Da Daten in DocumentDB standardmäßig und automatisch indiziert werden, können Daten jederzeit abgefragt werden. Daher verfügen diese Anwendungen über die Flexibilität, Projektionen entsprechend ihren jeweiligen Anforderungen abzurufen.
 
-Viele soziale Anwendungen werden auf globaler Ebene ausgeführt und können nicht vorhersagbare Nutzungsmuster aufweisen. Flexibilität bei der Skalierung des Datenspeichers ist von grundlegender Bedeutung, da die Anwendungsschicht in Abhängigkeit von der Nutzung skaliert werden muss. Sie können den Speicher horizontal hochskalieren, indem Sie einem DocumentDB-Konto weitere Datenpartitionen hinzufügen. Darüber hinaus können Sie auch weitere DocumentDB-Konten über mehrere Regionen hinweg erstellen. Informationen zur regionalen Verfügbarkeit von DocumentDB-Diensten finden Sie unter [Azure-Region](http://azure.microsoft.com/regions/#services).
+Viele soziale Anwendungen werden auf globaler Ebene ausgeführt und können nicht vorhersagbare Nutzungsmuster aufweisen. Flexibilität bei der Skalierung des Datenspeichers ist von grundlegender Bedeutung, da die Anwendungsschicht in Abhängigkeit von der Nutzung skaliert werden muss. Sie können den Speicher horizontal hochskalieren, indem Sie einem DocumentDB-Konto weitere Datenpartitionen hinzufügen. Darüber hinaus können Sie auch weitere DocumentDB-Konten über mehrere Regionen hinweg erstellen. Informationen zur regionalen Verfügbarkeit von DocumentDB-Diensten finden Sie unter [Azure-Region](https://azure.microsoft.com/regions/#services).
 
 ## Katalogdaten
 Zu den Anwendungsfällen für Katalogdaten gehören das Speichern und Abfragen eines Satzes von Attributen für Entitäten wie beispielsweise Personen, Orte und Produkte. Einige Beispiele für Katalogdaten sind Benutzerkonten, Produktkataloge, Geräteregistrierungen für das Internet der Dinge und Stücklistensysteme. Attribute für diese Daten können variieren und sich im Laufe der Zeit ändern, um geänderte Anwendungsanforderungen zu erfüllen.
@@ -68,7 +68,7 @@ Weitere Informationen zu den Azure-Angeboten für das Internet der Dinge finden 
 
 ## Nächste Schritte
  
-Um mit DocumentDB zu beginnen, können Sie ein [Konto](http://azure.microsoft.com/pricing/free-trial/) erstellen und dann unserem [Lernpfad](https://azure.microsoft.com/documentation/learning-paths/documentdb/) folgen, um die Informationen zu DocumentDB zu erhalten, die Sie benötigen.
+Um mit DocumentDB zu beginnen, können Sie ein [Konto](https://azure.microsoft.com/pricing/free-trial/) erstellen und dann unserem [Lernpfad](https://azure.microsoft.com/documentation/learning-paths/documentdb/) folgen, um die Informationen zu DocumentDB zu erhalten, die Sie benötigen.
 
 Wenn Sie mehr zu Kunden erfahren möchten, die DocumentDB verwenden, stehen Ihnen folgende Kundenberichte zur Verfügung:
 
@@ -79,4 +79,4 @@ Wenn Sie mehr zu Kunden erfahren möchten, die DocumentDB verwenden, stehen Ihne
 - [XOMNI](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=18667). Der Speicher der Zukunft basiert auf schnellen Suchvorgängen und problemlosem Datenfluss.
  
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

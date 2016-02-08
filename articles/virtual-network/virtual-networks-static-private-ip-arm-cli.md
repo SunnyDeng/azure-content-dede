@@ -233,7 +233,7 @@ Es ist nicht möglich, über die Azure-Befehlszeilenschnittstelle für den Resso
 ## Hinzufügen einer statischen privaten IP-Adresse zu einem vorhandenen virtuellen Computer
 Führen Sie folgenden Befehl aus, um der Netzwerkkarte des virtuellen Computers, der mit obigem Skript erstellt wurde, eine statische private IP-Adresse hinzuzufügen:
 
-	azure netwrok nic set -g TestRG -n TestNIC2 -a 192.168.1.101
+	azure network nic set -g TestRG -n TestNIC2 -a 192.168.1.101
 
 Erwartete Ausgabe:
 
@@ -264,4 +264,4 @@ Erwartete Ausgabe:
 - Erfahren Sie mehr über [öffentliche IP-Adressen auf Instanzebene (ILPIP)](../virtual-networks-instance-level-public-ip).
 - Lesen Sie die Informationen zu [REST-APIs für reservierte IP-Adressen](https://msdn.microsoft.com/library/azure/dn722420.aspx).
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0128_2016-->

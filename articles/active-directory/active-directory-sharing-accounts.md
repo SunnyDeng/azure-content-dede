@@ -55,7 +55,7 @@ Zu den Azure AD-Features zur gemeinsamen Nutzung von Konten gehören folgende F
 - [Dashboard für Anwendungsnutzung/Berichte](active-directory-passwords-get-insights.md)
 - Zugriffsbereiche für Endbenutzer
 - [Anwendungsproxy](active-directory-application-proxy-get-started.md)
-- [Active Directory Marketplace](http://azure.microsoft.com/marketplace/active-directory/all/)
+- [Active Directory Marketplace](https://azure.microsoft.com/marketplace/active-directory/all/)
 
 ## Gemeinsames Nutzen eines Kontos
 Um Azure AD zur gemeinsamen Verwendung eines Kontos zu verwenden, sind folgende Schritte erforderlich:
@@ -72,4 +72,4 @@ Mithilfe von Azure AD lassen sich gemeinsam genutzte Konten durch Multi-Factor 
 - [Schützen von Apps durch bedingten Zugriff](active-directory-conditional-access.md)
 - [Self-Service-Gruppenverwaltung/SSAA](active-directory-accessmanagement-self-service-group-management.md)
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0128_2016-->

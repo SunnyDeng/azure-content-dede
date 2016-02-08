@@ -114,6 +114,6 @@ Dies wird zurzeit nicht unterstützt. Die mit den neuen Azure-Ressourcen-Manager
 
 **Wo finde ich Beispiele für Vorlagen für den Azure-Ressourcen-Manager?**
 
-Einen umfassenden Satz von Startervorlagen finden Sie unter [Schnellstartvorlagen für den Azure-Ressourcen-Manager](http://azure.microsoft.com/documentation/templates/).
+Einen umfassenden Satz von Startervorlagen finden Sie unter [Schnellstartvorlagen für den Azure-Ressourcen-Manager](https://azure.microsoft.com/documentation/templates/).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

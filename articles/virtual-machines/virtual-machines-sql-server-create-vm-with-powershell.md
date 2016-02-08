@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
-	ms.date="01/06/2015"
+	ms.date="01/22/2016"
 	ms.author="jroth" />
 
 # Erstellen eines virtuellen Computers mit SQL Server in Azure (PowerShell)
@@ -67,7 +67,7 @@ Ihr virtueller Computer mit SQL Server wird in einem Clouddienst gehostet, der s
 
 		(Get-AzureStorageAccount | where { $_.GeoPrimaryLocation -eq $dcLocation }).StorageAccountName
 
-	>[AZURE.NOTE]Wenn Sie ein neues Speicherkonto benötigen, erstellen Sie zunächst mit dem New-AzureStorageAccount-Befehl einen vollständig aus Kleinbuchstaben bestehenden Speicherkontonamen wie in diesem Beispiel: **New-AzureStorageAccount -StorageAccountName "<storage account name>"-Location $dcLocation**
+	>[AZURE.NOTE] Wenn Sie ein neues Speicherkonto benötigen, erstellen Sie zunächst mit dem New-AzureStorageAccount-Befehl einen vollständig aus Kleinbuchstaben bestehenden Speicherkontonamen wie in diesem Beispiel: **New-AzureStorageAccount -StorageAccountName "<storage account name>"-Location $dcLocation**
 
 1. Weisen Sie der **$staccount**-Variablen den Namen des Zielspeicherkontos zu. Verwenden Sie dann **Set-AzureSubscription**, um das Abonnement und das aktuelle Speicherkonto festzulegen.
 
@@ -112,7 +112,7 @@ Erstellen Sie schließlich den virtuellen Computer PowerShell:
 
 		New-AzureVM –ServiceName $svcname -VMs $vm1
 
->[AZURE.NOTE]Zusätzliche Erläuterungen sowie Konfigurationsoptionen finden Sie im Abschnitt **Erstellen des Befehlssatzes** in [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren Windows-basierter virtueller Computer](virtual-machines-ps-create-preconfigure-windows-vms.md).
+>[AZURE.NOTE] Zusätzliche Erläuterungen sowie Konfigurationsoptionen finden Sie im Abschnitt **Erstellen des Befehlssatzes** in [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren Windows-basierter virtueller Computer](virtual-machines-ps-create-preconfigure-windows-vms.md).
 
 ## PowerShell-Beispielskript
 
@@ -167,7 +167,7 @@ Nachdem Sie sich über Remotedesktop bei dem Computer angemeldet haben, konfigur
 
 ## Nächste Schritte
 
-Weitere Anleitungen zur Bereitstellung von virtuellen Computern mit PowerShell finden Sie in der [Dokumentation über virtuelle Computer](virtual-machines-ps-create-preconfigure-windows-vms.md). Weitere Skripts im Zusammenhang mit SQL Server und Storage Premium finden Sie unter [Verwenden von Azure Premium-Speicher mit SQL Server auf virtuellen Computern](virtual-machines-sql-server-use-premium-storage.md).
+Weitere Anleitungen zur Bereitstellung von virtuellen Computern mit PowerShell finden Sie in der [Dokumentation zu Virtual Machines](virtual-machines-ps-create-preconfigure-windows-vms.md). Weitere Skripts im Zusammenhang mit SQL Server und Storage Premium finden Sie unter [Verwenden von Azure Premium-Speicher mit SQL Server auf virtuellen Computern](virtual-machines-sql-server-use-premium-storage.md).
 
 In vielen Fällen ist der nächste Schritt, die Datenbanken auf diese neue SQL Server-VM zu migrieren. Anleitungen zur Datenbankmigration finden Sie unter [Migrieren einer Datenbank zu SQL Server auf einer Azure-VM](virtual-machines-migrate-onpremises-database.md).
 
@@ -175,4 +175,4 @@ Wenn Sie auch wissen möchten, wie diese Schritte im klassischen Azure-Portal au
 
 Zusätzlich zu diesen Ressourcen wird empfohlen, dass Sie sich die [anderen Themen im Zusammenhang mit Ausführen von SQL Server auf virtuellen Azure Computern](virtual-machines-sql-server-infrastructure-services.md) ansehen.
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

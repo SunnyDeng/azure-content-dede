@@ -28,7 +28,7 @@ Max. Ausgang<sup>2</sup> pro Speicherkonto (US-Regionen)|20 GBit/s mit aktivier
 Max. Eingang<sup>2</sup> pro Speicherkonto (Regionen Europa und Asien)|5 GBit/s mit aktiviertem GRS/ZRS<sup>3</sup>, 10 GBit/s bei LRS
 Max. Ausgang<sup>2</sup> pro Speicherkonto (Regionen Europa und Asien)|10 GBit/s mit aktiviertem RA-GRS/GRS/ZRS<sup>3</sup>, 15 GBit/s bei LRS
 
-<sup>1</sup>Wenn Sie mehr als 100 Speicherkonten benötigen, wenden Sie sich an den [Azure-Support](http://azure.microsoft.com/support/faq/).
+<sup>1</sup>Wenn Sie mehr als 100 Speicherkonten benötigen, wenden Sie sich an den [Azure-Support](https://azure.microsoft.com/support/faq/).
 
 <sup>2</sup>*Eingehend* bezieht sich auf alle Daten (Anforderungen), die an ein Speicherkonto gesendet werden. *Ausgang* bezieht sich auf alle Daten (Antworten), die von einem Speicherkonto empfangen werden.
 
@@ -39,4 +39,4 @@ Max. Ausgang<sup>2</sup> pro Speicherkonto (Regionen Europa und Asien)|10 GBit/
 - **ZRS**: Zonenredundanter Speicher Derzeit nur für Blockblobs verfügbar. 
 - **LRS**: Lokal redundanter Speicher 
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0128_2016-->

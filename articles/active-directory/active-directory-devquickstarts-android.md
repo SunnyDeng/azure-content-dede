@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-android"
 	ms.devlang="java"
 	ms.topic="article"
-	ms.date="10/13/2015"
+	ms.date="01/21/2016"
 	ms.author="brandwe"/>
 
 # Integrieren von Azure AD in eine Android-App
@@ -270,8 +270,7 @@ Sie können **acquireTokenSilent** aufrufen, um das Caching und die Aktualisieru
      mContext.acquireTokenSilent(resource, clientid, userId, callback );
     ```
 
-11. **Broker**:
-  Die Brokerkomponente wird über die Unternehmensportal-App von Microsoft Intune bereitgestellt. ADAL verwendet das Brokerkonto, falls unter diesem Authentifikator ein Benutzerkonto erstellt wurde und der Entwickler sich nicht für das Überspringen entschieden hat. Der Entwickler kann den Brokerbenutzer wie folgt überspringen:
+11. **Broker**: Die Brokerkomponente wird über die Unternehmensportal-App von Microsoft Intune bereitgestellt. ADAL verwendet das Brokerkonto, falls unter diesem Authentifikator ein Benutzerkonto erstellt wurde und der Entwickler sich nicht für das Überspringen entschieden hat. Der Entwickler kann den Brokerbenutzer wie folgt überspringen:
 
     ```java
      AuthenticationSettings.Instance.setSkipBroker(true);
@@ -283,14 +282,13 @@ Sie können **acquireTokenSilent** aufrufen, um das Caching und die Aktualisieru
 
  ```java
  String brokerAccount =  mContext.getBrokerUser();
- ``` 
-Der Brokerbenutzer wird zurückgegeben, wenn das Konto gültig ist.
+ ``` Der Brokerbenutzer wird zurückgegeben, wenn das Konto gültig ist.
 
  Ihr App-Manifest sollte über Berechtigungen zum Verwenden von Account Manager-Konten verfügen: http://developer.android.com/reference/android/accounts/AccountManager.html
 
- * GET_ACCOUNTS
- * USE_CREDENTIALS
- * MANAGE_ACCOUNTS
+ * GET\_ACCOUNTS
+ * USE\_CREDENTIALS
+ * MANAGE\_ACCOUNTS
 
 
 Mit dieser exemplarischen Vorgehensweise haben Sie alles, was Sie für die erfolgreiche Integration in Azure Active Directory benötigen. Weitere Beispiele hierzu finden Sie im Repository „AzureADSamples/“ bei GitHub.
@@ -313,12 +311,9 @@ Für die Autoritäts-URL sind die STS-Instanz und der Mandantenname erforderlich
 
 ### Abfragen von Cacheelementen
 
-Die ADAL stellt den Standardcache unter SharedPreferences mit einigen einfachen Funktionen für die Cacheabfrage bereit. Sie können den aktuellen Cache aus AuthenticationContext wie folgt abrufen: 
-```Java
+Die ADAL stellt den Standardcache unter SharedPreferences mit einigen einfachen Funktionen für die Cacheabfrage bereit. Sie können den aktuellen Cache aus AuthenticationContext wie folgt abrufen: ```Java
  ITokenCacheStore cache = mContext.getCache();
-```
- Außerdem können Sie Ihre Cacheimplementierung bereitstellen, wenn Sie sie anpassen möchten. 
-```Java
+```. Außerdem können Sie Ihre Cacheimplementierung bereitstellen, wenn Sie sie anpassen möchten. ```Java
 mContext = new AuthenticationContext(MainActivity.this, authority, true, yourCache);
 ```
 
@@ -364,8 +359,7 @@ Sie können die Bibliothek so konfigurieren, dass Protokollmeldungen generiert w
       writeToLogFile(getApplicationContext(), tag +":" + message + "-" + additionalMessage);
      }
  }
- ``` 
-Meldungen können wie unten dargestellt in eine benutzerdefinierte Protokolldatei geschrieben werden. Leider gibt es keine standardmäßige Möglichkeit, Protokolle von einem Gerät abzurufen. Es sind einige Dienste verfügbar, die Ihnen hierbei behilflich sein können. Sie können auch eigene Wege erfinden, z. B. das Senden einer Datei an einen Server.
+ ``` Meldungen können wie unten dargestellt in eine benutzerdefinierte Protokolldatei geschrieben werden. Leider gibt es keine standardmäßige Möglichkeit, Protokolle von einem Gerät abzurufen. Es sind einige Dienste verfügbar, die Ihnen hierbei behilflich sein können. Sie können auch eigene Wege erfinden, z. B. das Senden einer Datei an einen Server.
 
 ```Java
 private syncronized void writeToLogFile(Context ctx, String msg) {
@@ -386,8 +380,7 @@ private syncronized void writeToLogFile(Context ctx, String msg) {
 + Info (Informationen) (Informationszwecke)
 + Verbose (Ausführlich) (mehr Details)
 
-Sie legen den Protokolliergrad wie folgt fest: 
-```Java
+Sie legen den Protokolliergrad wie folgt fest: ```Java
 Logger.getInstance().setLogLevel(Logger.LogLevel.Verbose);
  ```
 
@@ -395,8 +388,7 @@ Logger.getInstance().setLogLevel(Logger.LogLevel.Verbose);
 
  ```
   adb logcat > "C:\logmsg\logfile.txt"
- ```
-Weitere Beispiele zu adb-Befehlen: https://developer.android.com/tools/debugging/debugging-log.html#startingLogcat
+ ``` Weitere Beispiele zu adb-Befehlen: https://developer.android.com/tools/debugging/debugging-log.html#startingLogcat
 
 #### Netzwerkablaufverfolgung
 
@@ -417,18 +409,16 @@ Mit ADAL werden die Token verschlüsselt und standardmäßig unter SharedPrefere
 
 ### OAuth2-Beareranforderung
 
-Die AuthenticationParameters-Klasse enthält Funktionen zum Abrufen des authorization_uri aus der OAuth2-Beareranforderung.
+Die AuthenticationParameters-Klasse enthält Funktionen zum Abrufen des authorization\_uri aus der OAuth2-Beareranforderung.
 
 ### Sitzungscookies in Webview
 
-In Android Webview werden Sitzungscookies nach dem Schließen der App nicht gelöscht. Sie können dies mit dem unten angegebenen Beispielcode behandeln: 
-```java
+In Android Webview werden Sitzungscookies nach dem Schließen der App nicht gelöscht. Sie können dies mit dem unten angegebenen Beispielcode behandeln: ```java
 CookieSyncManager.createInstance(getApplicationContext());
 CookieManager cookieManager = CookieManager.getInstance();
 cookieManager.removeSessionCookie();
 CookieSyncManager.getInstance().sync();
-``` 
-Weitere Informationen zu Cookies: http://developer.android.com/reference/android/webkit/CookieSyncManager.html
+``` Weitere Informationen zu Cookies: http://developer.android.com/reference/android/webkit/CookieSyncManager.html
 
 ### Außerkraftsetzungen von Ressourcen
 
@@ -452,6 +442,5 @@ Diese sollten von Ihrer Anwendung überschrieben werden, falls lokalisierte Zeic
 ADAL Version 1.1.0 unterstützt das NTLM-Dialogfeld, das über das onReceivedHttpAuthRequest-Ereignis des WebViewClient-Elements verarbeitet wird. Sie können das Dialogfeldlayout und die Zeichenfolgen anpassen.### Schritt 5: Herunterladen des iOS-Beispielcodes für den systemeigenen Client
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
- 
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

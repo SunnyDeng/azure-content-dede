@@ -1,8 +1,8 @@
 | Compute-Optionen | Audience (Zielgruppe) |
 | ------------------ | --------   |
-| [App Service](../app-service-web-overview.md) | Skalierbare Web-Apps, Mobile Apps, API-Apps und Logik-Apps für beliebige Geräte |
-| [Cloud-Dienste](services/cloud-services/) | Hoch verfügbare, skalierbare, n-schichtige Cloud-Apps mit mehr Kontrolle über das Betriebssystem |
-| [Virtuelle Computer](https://msdn.microsoft.com/library/azure/jj156143.aspx) | Angepasste Windows- und Linux-VMs mit vollständiger Kontrolle des Betriebssystems |
+| [App Service] | Skalierbare Web-Apps, Mobile Apps, API-Apps und Logik-Apps für beliebige Geräte |
+| [Cloud-Dienste] | Hoch verfügbare, skalierbare, n-schichtige Cloud-Apps mit mehr Kontrolle über das Betriebssystem |
+| [Virtuelle Computer] | Angepasste Windows- und Linux-VMs mit vollständiger Kontrolle des Betriebssystems |
 
 <a name="tellmevm"></a>
 ## Weitere Informationen über virtuelle Computer
@@ -38,8 +38,8 @@ Neben dem Betriebssystem sind die folgenden weiteren Konfigurationsoptionen für
 
 Zu den weiteren Vorteilen von VMs gehören:
 
-**Nutzungsbasierte Zahlung** – Bei Azure wird ein Stundenpreis basierend auf Größe und Betriebssystem der VM berechnet. Angefangene Stunden werden nur nach den Minuten der Nutzung abgerechnet. Speicherplatz wird separat bewertet und in Rechnung gestellt. Ausführliche Informationen finden Sie unter [Virtuelle Computer – Preisdetails](http://azure.microsoft.com/pricing/details/virtual-machines/).
+**Nutzungsbasierte Zahlung** – Bei Azure wird ein Stundenpreis basierend auf Größe und Betriebssystem der VM berechnet. Angefangene Stunden werden nur nach den Minuten der Nutzung abgerechnet. Speicherplatz wird separat bewertet und in Rechnung gestellt. Ausführliche Informationen finden Sie unter [Virtuelle Computer – Preisdetails](https://azure.microsoft.com/pricing/details/virtual-machines/).
 
 **Resilienz** – Azure überwacht die physische Hardware, die einen virtuellen Computer hostet. Wenn ein physischer Server, auf dem eine VM ausgeführt wird, ausfällt, erkennt Azure dies, verschiebt die VM auf neue Hardware und startet sie erneut. Dieser Vorgang wird manchmal als Dienstreparatur bezeichnet. Azure schützt auch die Daten eines virtuellen Computers durch redundante Kopien der virtuellen Festplatten im Blob-Speicher.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

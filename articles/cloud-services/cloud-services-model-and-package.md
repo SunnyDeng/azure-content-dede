@@ -12,7 +12,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="10/09/2015"
+    ms.date="01/21/2016"
     ms.author="adegeo"/>
 
 # Was ist das Clouddienstmodell, und wie kann es gepackt werden?
@@ -138,7 +138,7 @@ Ausführliche Informationen zu dem hier verwendeten XML-Schema finden Sie unter 
 
 <p/>
 
- >[AZURE.NOTE]Der Fingerabdruck des Zertifikats kann der Konfigurationsdatei mit einem Texteditor hinzugefügt oder in Visual Studio auf der Registerkarte **Zertifikate** auf der Seite **Eigenschaften** der Rolle eingefügt werden.
+ >[AZURE.NOTE] Der Fingerabdruck des Zertifikats kann der Konfigurationsdatei mit einem Texteditor hinzugefügt oder in Visual Studio auf der Registerkarte **Zertifikate** auf der Seite **Eigenschaften** der Rolle eingefügt werden.
 
 
 
@@ -190,16 +190,16 @@ Sie können die Konfiguration des Clouddiensts aktualisieren, während er in Azu
 - **Ändern des Zertifikatfingerabdrucks:** Sie können ein Zertifikat nur aktualisieren, wenn eine Rolleninstanz offline ist. Wenn ein Zertifikat hinzugefügt, gelöscht oder geändert wird, während eine Rolleninstanz online ist, schaltet Azure die Instanz ordnungsgemäß offline, um das Zertifikat zu aktualisieren, und schaltet sie nach der Änderung wieder online.
 
 ### Behandeln von Konfigurationsänderungen mit Dienstlaufzeitereignissen
-Die [Azure-Laufzeitbibliothek](https://msdn.microsoft.com/library/azure/dn511024.aspx) enthält den [Microsoft.WindowsAzure.ServiceRuntime](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.aspx)-Namespace, der Klassen für die Interaktion mit der Azure-Umgebung aus dem Code bereitstellt, der in einer Instanz einer Rolle ausgeführt wird. Die [RoleEnvironment](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.aspx)-Klasse definiert die folgenden Ereignisse, die vor und nach einer Konfigurationsänderung ausgelöst werden:
+Die [Azure-Laufzeitbibliothek](https://msdn.microsoft.com/library/azure/mt419365.aspx) enthält den [Microsoft.WindowsAzure.ServiceRuntime](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.aspx)-Namespace, der Klassen für die Interaktion mit der Azure-Umgebung aus dem Code bereitstellt, der in einer Instanz einer Rolle ausgeführt wird. Die [RoleEnvironment](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.aspx)-Klasse definiert die folgenden Ereignisse, die vor und nach einer Konfigurationsänderung ausgelöst werden:
 
 - **[Changing](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.changing.aspx)-Ereignis:** Dieses Ereignis wird ausgelöst, bevor die Konfigurationsänderung auf eine angegebene Instanz einer Rolle angewendet wird, sodass Sie die Möglichkeit haben, die Rolleninstanzen bei Bedarf offline zu schalten.
 - **[Changed](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.changed.aspx)-Ereignis:** Wird ausgelöst, nachdem die Konfigurationsänderung auf eine angegebene Instanz einer Rolle angewendet wurde.
 
-> [AZURE.NOTE]Da die Instanzen einer Rolle bei Zertifikatänderungen immer offline geschaltet werden, werden die RoleEnvironment.Changing- oder RoleEnvironment.Changed-Ereignisse nicht ausgelöst.
+> [AZURE.NOTE] Da die Instanzen einer Rolle bei Zertifikatänderungen immer offline geschaltet werden, werden die RoleEnvironment.Changing- oder RoleEnvironment.Changed-Ereignisse nicht ausgelöst.
 
 <a name="cspkg"></a>
 ## ServicePackage.cspkg
-Um eine Anwendung als Clouddienst in Azure bereitzustellen, müssen Sie zunächst die Anwendung im entsprechenden Format packen. Als Alternative zu Visual Studio können Sie das Befehlszeilentool **CSPack** (wird mit dem [Azure SDK](http://azure.microsoft.com/downloads/) installiert) verwenden, um die Paketdatei zu erstellen.
+Um eine Anwendung als Clouddienst in Azure bereitzustellen, müssen Sie zunächst die Anwendung im entsprechenden Format packen. Als Alternative zu Visual Studio können Sie das Befehlszeilentool **CSPack** (wird mit dem [Azure SDK](https://azure.microsoft.com/downloads/) installiert) verwenden, um die Paketdatei zu erstellen.
 
 **CSPack** verwendet den Inhalt der Dienstdefinitionsdatei und Dienstkonfigurationsdatei, um den Inhalt des Pakets zu definieren. **CSPack** generiert eine Anwendungspaketdatei (.cspkg), die Sie über das [klassische Azure-Portal](cloud-services-how-to-create-deploy/#how-to-deploy-a-cloud-service) in Azure hochladen können. Standardmäßig erhält das Paket den Namen `[ServiceDefinitionFileName].cspkg`, durch Verwendung der Option `/out` von **CSPack** können Sie jedoch auch einen anderen Namen angeben.
 
@@ -209,13 +209,15 @@ Um eine Anwendung als Clouddienst in Azure bereitzustellen, müssen Sie zunächs
 | 1\.7 und höher | C:\\Programme\\Microsoft SDKs\\Azure\\.NET SDK\\[SDK-Version]\\bin\\ |
 | Vor 1.6 | C:\\Programme\\Azure SDK\\[SDK-Version]\\bin\\ |
 
->[AZURE.NOTE]"CSPack.exe" ist (unter Windows) durch Ausführen der Verknüpfung **Microsoft Azure-Eingabeaufforderung** verfügbar, die mit dem SDK installiert wird.
+>[AZURE.NOTE]
+"CSPack.exe" ist (unter Windows) durch Ausführen der Verknüpfung **Microsoft Azure-Eingabeaufforderung** verfügbar, die mit dem SDK installiert wird.
 >  
 >Führen Sie das Programm "CSPack.exe" aus, um die Dokumentation zu allen möglichen Schaltern und Befehlen anzuzeigen.
 
 <p />
 
->[AZURE.TIP]Führen Sie den Clouddienst lokal im **Microsoft Azure-Serveremulator** aus, und verwenden Sie dabei die Option **/copyonly**. Mit dieser Option werden die Binärdateien für die Anwendung in ein Verzeichnislayout kopiert, aus dem sie im Serveremulator ausgeführt werden können.
+>[AZURE.TIP]
+Führen Sie den Clouddienst lokal im **Microsoft Azure-Serveremulator** aus, und verwenden Sie dabei die Option **/copyonly**. Mit dieser Option werden die Binärdateien für die Anwendung in ein Verzeichnislayout kopiert, aus dem sie im Serveremulator ausgeführt werden können.
 
 ### Beispielbefehl zum Packen eines Clouddiensts
 Mit dem folgenden Codebeispiel wird ein Anwendungspaket erstellt, das die Informationen für eine Webrolle enthält. Mit dem Befehl werden die zu verwendende Dienstdefinitionsdatei, das Verzeichnis, in dem sich die Binärdateien befinden, und der Name der Paketdatei angegeben.
@@ -262,12 +264,11 @@ Ich verwende Visual Studio und möchte ...
 * [Ein Clouddienstprojekt bereitstellen][vs_deploy]
 * [Eine Remotedesktopverbindung für eine Clouddienstinstanz einrichten][vs_remote]
 
-
 [deploy]: cloud-services-how-to-create-deploy-portal.md
 [remotedesktop]: cloud-services-role-enable-remote-desktop.md
-[vs_remote]: https://msdn.microsoft.com/library/gg443832.aspx
-[vs_deploy]: https://msdn.microsoft.com/library/ee460772.aspx
-[vs_reconfigure]: https://msdn.microsoft.com/library/ee405486.aspx
-[vs_create]: https://msdn.microsoft.com/library/ee405487.aspx
+[vs_remote]: ../vs-azure-tools-remote-desktop-roles.md
+[vs_deploy]: ../vs-azure-tools-cloud-service-publish-set-up-required-services-in-visual-studio.md
+[vs_reconfigure]: ../vs-azure-tools-configure-roles-for-cloud-service.md
+[vs_create]: ../vs-azure-tools-azure-project-create.md
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="10/16/2015"
+   ms.date="01/21/2016"
    ms.author="joaoma" />
 
 
@@ -52,11 +52,11 @@ Vorlagen, die Azure-Lastenausgleich verwenden, finden Sie in diesem [GitHub-Repo
 
 Beispiele für Vorlagen:
 
-- [2 VMs in a Load Balancer and load balancing rules](http://go.microsoft.com/fwlink/?LinkId=544799) (in englischer Sprache)
+- [2 VMs in a Load Balancer and load balancing rules (in englischer Sprache)](http://go.microsoft.com/fwlink/?LinkId=544799)
 
-- [2 VMs in a VNET with an Internal Load Balancer and Load Balancer rules](http://go.microsoft.com/fwlink/?LinkId=544800) (in englischer Sprache)
+- [2 VMs in a VNET with an Internal Load Balancer and Load Balancer rules (in englischer Sprache)](http://go.microsoft.com/fwlink/?LinkId=544800)
 
-- [2 VMs in a Load Balancer and configure NAT rules on the LB](http://go.microsoft.com/fwlink/?LinkId=544801) (in englischer Sprache)
+- [2 VMs in a Load Balancer and configure NAT rules on the LB (in englischer Sprache)](http://go.microsoft.com/fwlink/?LinkId=544801)
 
 
 ## Einrichten von Azure-Lastenausgleich per PowerShell oder CLI
@@ -67,14 +67,13 @@ Beispiele für Vorlagen:
 
 - [Verwenden der Azure-CLI mit der Azure-Ressourcenverwaltung](../xplat-cli-azure-resource-manager)
 
-- [Load Balancer REST APIs](https://msdn.microsoft.com/library/azure/mt163651.aspx) (in englischer Sprache)
+- [Load Balancer REST APIs (in englischer Sprache)](https://msdn.microsoft.com/library/azure/mt163651.aspx)
 
 
-## Siehe auch
+## Nächste Schritte
 
-[Konfigurieren eines Lastenausgleichs-Verteilungsmodus](load-balancer-distribution-mode.md)
+Sie können auch einen [Lastenausgleich mit Internetzugriff erstellen](load-balancer-get-started-internet-arm-ps.md) und die Art des [Verteilungsmodus](load-balancer-distribution-mode.md) des Lastenausgleichs für ein bestimmtes Datenverkehrsverhalten im Netzwerk konfigurieren.
 
-[Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
- 
+Wenn es für Ihre Anwendung erforderlich ist, dass Verbindungen mit Servern hinter einem Lastenausgleich aufrechterhalten werden, informieren Sie sich über [TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md). Hier erfahren Sie mehr über das Verhalten von Leerlaufverbindungen bei der Verwendung des Azure-Lastenausgleichs.
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_0128_2016-->

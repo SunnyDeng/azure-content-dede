@@ -62,12 +62,12 @@ Die folgende Abbildung veranschaulicht die in der WhatToPedia-Infrastruktur verw
 
 Wenn Sie die grünen Kästchen in der vorherigen Abbildung betrachten, sehen Sie, dass die WhatToPedia-Lösung auf folgenden Diensten basiert:
 
-- [Azure Search](http://azure.microsoft.com/services/search/)
-- [Azure-Websites, für die MVC 4 verwendet wird](http://azure.microsoft.com/services/websites/)
+- [Azure Search](https://azure.microsoft.com/services/search/)
+- [Azure-Websites, für die MVC 4 verwendet wird](https://azure.microsoft.com/services/websites/)
 - [Azure WebJobs für geplante Aufgaben](../websites-webjobs-resources.md)
-- [Azure SQL-Datenbank](http://azure.microsoft.com/services/sql-database/)
-- [Azure-Blobspeicher](http://azure.microsoft.com/services/storage/)
-- [E-Mail-Zustellung über SendGrid](http://azure.microsoft.com/marketplace/partners/sendgrid/sendgrid-azure/)
+- [Azure SQL-Datenbank](https://azure.microsoft.com/services/sql-database/)
+- [Azure-Blobspeicher](https://azure.microsoft.com/services/storage/)
+- [E-Mail-Zustellung über SendGrid](https://azure.microsoft.com/marketplace/partners/sendgrid/sendgrid-azure/)
 
 Das Herzstück der Lösung sind die Daten und die Suche. Der Datenfluss vom Wiederverkäufer (Reseller) zum Endkunden ist nachstehend dargestellt:
 
@@ -170,7 +170,7 @@ Alle Webaufträge wurden als Konsolenanwendungen entwickelt, die als ZIP-Dateien
 
 Der Auftrag ist so geplant, dass er alle 5 Minuten als geplante Webaufgabe ausgeführt wird. Wir haben berechnet, dass der Dienst ungefähr drei Minuten benötigt, um 3.000 Dokumente hochzuladen. Dies erfüllt unsere Anforderungen.
 
-> [AZURE.NOTE]Es gibt ein Prototypindexerfeature, das kürzlich in Azure Search eingeführt wurde. Dieses Feature kam für uns zu spät, um es in unserer ersten Version zu verwenden. Es scheint aber genau das Problem zu lösen, für das wir unsere Indexeraufgabe verwenden: das Automatisieren von Datenladevorgängen.
+> [AZURE.NOTE] Es gibt ein Prototypindexerfeature, das kürzlich in Azure Search eingeführt wurde. Dieses Feature kam für uns zu spät, um es in unserer ersten Version zu verwenden. Es scheint aber genau das Problem zu lösen, für das wir unsere Indexeraufgabe verwenden: das Automatisieren von Datenladevorgängen.
 
 
 ###Sicherungsstrategie
@@ -193,7 +193,7 @@ Zuvor waren in unserem Code Seitenverwaltung, Zählungen und weitere Verhaltensw
 
 Die größte Herausforderung bei der Implementierung bestand darin, dass Azure Search in einer Vorschauversion vorlag und es schwierig war, Informationen sowie veröffentlichte Erfahrungen zu finden. Nachdem wir aber einige Puzzlesteine zusammengefügt hatten, haben wir festgestellt, dass sich der Azure-Suchdienst aufgrund seiner REST-API und seines JSON-Datenformats ziemlich einfach verwenden lässt. Wir konnten das Framework direkt aus den meisten Open Source-Plug-ins wie JQuery JSON.Net aufrufen und Tools wie Fiddler für schnelle Experimente und das Debugging verwenden.
 
-> [AZURE.NOTE]Hilfreich war nicht nur, dass die Daten bereits vorbereitet waren, sondern auch, dass sich diejenigen von uns, die den Prototyp erstellten, bestens mit Suchtechnologien auskannten, so dass wir ziemlich schnell produktiv werden konnten und die integrierten Features so richtig zu schätzen wussten. Wenn Sie jedoch über die reinen Suchabfragen hinaus auch die Facettennavigation, Filter und dergleichen verwenden möchten, dauert die Erstellung des Prototyps vermutlich länger.
+> [AZURE.NOTE] Hilfreich war nicht nur, dass die Daten bereits vorbereitet waren, sondern auch, dass sich diejenigen von uns, die den Prototyp erstellten, bestens mit Suchtechnologien auskannten, so dass wir ziemlich schnell produktiv werden konnten und die integrierten Features so richtig zu schätzen wussten. Wenn Sie jedoch über die reinen Suchabfragen hinaus auch die Facettennavigation, Filter und dergleichen verwenden möchten, dauert die Erstellung des Prototyps vermutlich länger.
 
 ###Steuern von Facetten auf der Suchdarstellungsseite
 
@@ -217,7 +217,7 @@ Wir hoffen, dass Sie diese Fallstudie hilfreich fanden. Wenn Sie tiefer in die A
 
 - [MSDN-Forum zu Azure Search](https://social.msdn.microsoft.com/forums/azure/home?forum=azuresearch)
 - [StackOverflow hat auch ein Tag](http://stackoverflow.com/questions/tagged/azure-search)
-- [Dokumentationsseite auf Azure.com](http://azure.microsoft.com/documentation/services/search/)
+- [Dokumentationsseite auf Azure.com](https://azure.microsoft.com/documentation/services/search/)
 - [Azure Search-Dokumentation auf MSDN](http://msdn.microsoft.com/library/azure/dn798933.aspx)
 
 
@@ -421,4 +421,4 @@ Der folgende Code erstellt den Indexer, der im Abschnitt über die Erstellung de
 [Link 3 to another azure.microsoft.com documentation topic]: ../storage-whatis-account.md
  
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0128_2016-->

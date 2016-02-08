@@ -3,7 +3,7 @@
    description="Fügen Sie Mobile Services mithilfe des Dialogfelds ";Verbundene Dienste hinzufügen"; in Visual Studio hinzu"
    services="visual-studio-online"
    documentationCenter="na"
-   authors="TomArcher"
+   authors="mlhoop"
    manager="douge"
    editor="" />
 <tags 
@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="mobile"
    ms.date="12/16/2015"
-   ms.author="tarcher" />
+   ms.author="mlearned" />
 
 # Hinzufügen von Mobile Services mithilfe von verbundenen Visual Studio-Diensten
 
@@ -21,7 +21,7 @@ Mit Visual Studio 2015 können Sie mithilfe des Dialogfelds **Verbundenen Dienst
 
 ## Unterstützte Projekttypen
 
->[AZURE.NOTE]In Visual Studio 2015 wird das Hinzufügen von Azure Mobile Services zu universellen Windows-Projekten (Windows 10) mit dem Dialogfeld "Verbundene Dienste hinzufügen" nicht unterstützt. Sie können Azure Mobile Services hinzufügen, indem Sie die entsprechenden Pakete mit dem NuGet-Paket-Manager für Ihr Projekt installieren.
+>[AZURE.NOTE] In Visual Studio 2015 wird das Hinzufügen von Azure Mobile Services zu universellen Windows-Projekten (Windows 10) mit dem Dialogfeld "Verbundene Dienste hinzufügen" nicht unterstützt. Sie können Azure Mobile Services hinzufügen, indem Sie die entsprechenden Pakete mit dem NuGet-Paket-Manager für Ihr Projekt installieren.
 
 Mit dem Dialogfeld "Verbundene Dienste" können Sie in den folgenden Projekttypen eine Verbindung mit Azure Mobile Services herstellen.
 
@@ -49,9 +49,7 @@ Mit dem Dialogfeld "Verbundene Dienste" können Sie in den folgenden Projekttype
 
 1. Wählen Sie im Dialogfeld **Azure Mobile Services** einen vorhandenen mobilen Dienst, sofern vorhanden. Wenn Sie einen neuen Azure Mobile Service erstellen müssen, befolgen Sie das im Folgenden geschilderte Verfahren. Gehen Sie andernfalls zum nächsten Schritt.
 
-    So erstellen Sie ein neues Konto für einen mobilen Dienst:
-    1. Wählen Sie den Link "Mobilen Service erstellen" unten im Dialogfeld aus.
-        ![Fügen Sie einen neuen mobilen verbundenen Dienst hinzu](./media/vs-azure-tools-connected-services-add-mobile-services/IC797637.png)
+    So erstellen Sie ein neues Konto für einen mobilen Dienst: 1. Wählen Sie den Link "Mobilen Service erstellen" unten im Dialogfeld aus. ![Fügen Sie einen neuen mobilen verbundenen Dienst hinzu](./media/vs-azure-tools-connected-services-add-mobile-services/IC797637.png)
 
 
 
@@ -85,10 +83,10 @@ Stellen Sie Fragen, und holen Sie sich Hilfe:
 
  - [MSDN-Forum: Azure Mobile Services](https://social.msdn.microsoft.com/forums/azure/home?forum=azuremobile)
 
- - [Azure Mobile Services im Blog des Microsoft Azure-Teams](http://azure.microsoft.com/blog/topics/mobile/)
+ - [Azure Mobile Services im Blog des Microsoft Azure-Teams](https://azure.microsoft.com/blog/topics/mobile/)
 
- - [Azure Mobile Services auf "azure.microsoft.com"](http://azure.microsoft.com/services/mobile-services/)
+ - [Azure Mobile Services auf "azure.microsoft.com"](https://azure.microsoft.com/services/mobile-services/)
 
- - [Dokumentation für Azure Mobile Services auf "azure.microsoft.com"](http://azure.microsoft.com/documentation/services/mobile-services/)
+ - [Dokumentation für Azure Mobile Services auf "azure.microsoft.com"](https://azure.microsoft.com/documentation/services/mobile-services/)
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

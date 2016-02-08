@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="01/20/2015"
+   ms.date="01/26/2016"
    ms.author="oanapl"/>
 
 # Einführung in die Service Fabric-Integritätsüberwachung
@@ -21,7 +21,7 @@ Mit Azure Service Fabric wird ein Integritätsmodell eingeführt, das eine umfas
 
 Die Service Fabric-Komponenten verwenden dieses Integritätsmodell, um ihren aktuellen Zustand zu melden. Sie können den gleichen Mechanismus verwenden, um Integritätsberichte für Anwendungen zu erstellen. Wie einfach Sie Probleme mit ausgeführten Anwendungen erkennen und beheben können, hängt von der Qualität und die Vielfalt der Integritätsberichte ab, die Sie gemäß Ihren benutzerdefinierten Bedingungen festlegen.
 
-> [AZURE.NOTE]Das Integritätssubsystem wurde ursprünglich für das Überwachen von Upgrades eingeführt. Service Fabric bietet überwachte Upgrades, die alle Informationen enthalten, um ein Cluster oder eine Anwendung ohne Ausfallzeit, völlig ohne oder nur mit minimalem Benutzereingriff und mit vollständiger Verfügbarkeit von Cluster und Anwendung zu aktualisieren. Hierzu prüft das Upgrade die Integrität basierend auf den konfigurierten Aktualisierungsrichtlinien und erlaubt die Fortführung des Upgrades nur dann, wenn die Integrität die festgelegten Schwellenwerte einhält. Werden die Schwellenwerte nicht erfüllt, wird entweder automatisch ein Rollback des Upgrades durchgeführt oder das Upgrade angehalten, damit Administratoren das Problem beheben können. Weitere Informationen zu Anwendungsupgrades finden Sie in [diesem Artikel](service-fabric-application-upgrade.md).
+> [AZURE.NOTE] Das Integritätssubsystem wurde ursprünglich für das Überwachen von Upgrades eingeführt. Service Fabric bietet überwachte Upgrades, die alle Informationen enthalten, um ein Cluster oder eine Anwendung ohne Ausfallzeit, völlig ohne oder nur mit minimalem Benutzereingriff und mit vollständiger Verfügbarkeit von Cluster und Anwendung zu aktualisieren. Hierzu prüft das Upgrade die Integrität basierend auf den konfigurierten Aktualisierungsrichtlinien und erlaubt die Fortführung des Upgrades nur dann, wenn die Integrität die festgelegten Schwellenwerte einhält. Werden die Schwellenwerte nicht erfüllt, wird entweder automatisch ein Rollback des Upgrades durchgeführt oder das Upgrade angehalten, damit Administratoren das Problem beheben können. Weitere Informationen zu Anwendungsupgrades finden Sie in [diesem Artikel](service-fabric-application-upgrade.md).
 
 ## Integritätsspeicher
 Der Integritätsspeicher speichert integritätsbezogene Informationen zu Entitäten im Cluster, um Informationen auf einfache Weise abrufen und evaluieren zu können. Er ist als persistent zustandsbehafteter Service Fabric-Dienst implementiert, um hohe Verfügbarkeit und Skalierbarkeit zu bieten. Der Integritätsspeicher ist Bestandteil der Anwendung **fabric:/System** und ist verfügbar, sobald der Cluster eingerichtet wurde und ausgeführt wird.
@@ -79,7 +79,7 @@ Mögliche Integritätszustände:
 ## Integritätsrichtlinien
 Der Integritätsspeicher wendet Integritätsrichtlinien an, um basierend auf den Berichten und untergeordneten Elementen einer Entität festzustellen, ob die Entität fehlerfrei ist.
 
-> [AZURE.NOTE]Integritätsrichtlinien werden im Clustermanifest (für die Integritätsevaluierung von Cluster und Knoten) oder im Anwendungsmanifest (für die Evaluierung einer Anwendung und der untergeordneten Elemente) angegeben. Integritätsevaluierungsanforderungen können auch an benutzerdefinierte Richtlinien zur Integritätsevaluierung übergeben werden, die nur für diese eine Evaluierung verwendet werden.
+> [AZURE.NOTE] Integritätsrichtlinien werden im Clustermanifest (für die Integritätsevaluierung von Cluster und Knoten) oder im Anwendungsmanifest (für die Evaluierung einer Anwendung und der untergeordneten Elemente) angegeben. Integritätsevaluierungsanforderungen können auch an benutzerdefinierte Richtlinien zur Integritätsevaluierung übergeben werden, die nur für diese eine Evaluierung verwendet werden.
 
 Standardmäßig wendet Service Fabric strenge Regeln (alles muss fehlerfrei sein) auf hierarchische Beziehungen von über- und untergeordneten Elementen an. Wenn auch nur eines der untergeordneten Elemente ein fehlerhaftes Ereignis aufweist, wird das übergeordnete Element als fehlerhaft angesehen.
 
@@ -334,4 +334,4 @@ Das Integritätsmodell wird hauptsächlich für die Überwachung und Diagnose, E
 
 [Service Fabric-Anwendungsupgrade](service-fabric-application-upgrade.md)
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

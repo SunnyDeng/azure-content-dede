@@ -1,4 +1,4 @@
-In der folgenden Tabelle sind die Kontingentinformationen für das Service Bus Messaging aufgeführt. Einschränkungen für Event Hubs sind in dieser Tabelle auch enthalten. Spezifische Informationen zu Event Hubs finden Sie jedoch unter [Event Hubs Preise](http://azure.microsoft.com/pricing/details/event-hubs/). Informationen zu Preisen und anderen Kontingenten für Service Bus finden Sie in der Übersicht der [Service Bus-Preise](http://azure.microsoft.com/pricing/details/service-bus/).
+In der folgenden Tabelle sind die Kontingentinformationen für das Service Bus Messaging aufgeführt. Einschränkungen für Event Hubs sind in dieser Tabelle auch enthalten. Spezifische Informationen zu Event Hubs finden Sie jedoch unter [Event Hubs Preise](https://azure.microsoft.com/pricing/details/event-hubs/). Informationen zu Preisen und anderen Kontingenten für Service Bus finden Sie in der Übersicht der [Service Bus-Preise](https://azure.microsoft.com/pricing/details/service-bus/).
 
 |Namen des Kontingents|Umfang|Typ|Verhalten beim Überschreiten|Wert|
 |---|---|---|---|---|
@@ -13,4 +13,4 @@ In der folgenden Tabelle sind die Kontingentinformationen für das Service Bus M
 
 [klassische Azure-Portal]: http://manage.windowsazure.com
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

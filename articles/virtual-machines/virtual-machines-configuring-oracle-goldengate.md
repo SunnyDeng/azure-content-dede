@@ -34,7 +34,7 @@ Das Lernprogramm geht zudem davon aus, dass Sie die folgenden Voraussetzungen be
 
 - Sie haben die Oracle-GoldenGate-Software von der Website [Downloads von Oracle](http://www.oracle.com/us/downloads/index.html) heruntergeladen. Sie haben das Produkt Pack Oracle Fusion-Middleware – Datenintegration ausgewählt. Sie haben dann Oracle GoldenGate auf Oracle v11.2.1 Media Pack für Microsoft Windows x64 (64-Bit) für eine Oracle-Datenbank 11g aktiviert. Laden Sie als Nächstes Oracle GoldenGate V11.2.1.0.3 für Oracle 11g 64-Bit unter Windows 2008 (64 Bit) herunter.
 
-- Sie haben zwei virtuelle Computer (VMs) in Azure mit dem von der Plattform bereitgestellten Abbild von Oracle Enterprise Edition auf Windows Server erstellt. Weitere Informationen finden Sie unter [Erstellen eines virtuellen Oracle-Datenbank 12c-Computers in Azure](#z3dc8d3c097cf414e9048f7a89c026f80) und [Azure Virtual Machines](http://azure.microsoft.com/documentation/services/virtual-machines/). Stellen Sie sicher, dass sich die virtuellen Computer im [gleichen Clouddienst](virtual-machines-load-balance.md) und im gleichen [virtuellen Netzwerk](http://azure.microsoft.com/documentation/services/virtual-network/) befinden, um sicherzustellen, dass sie über die permanente private IP-Adresse aufeinander zugreifen können.
+- Sie haben zwei virtuelle Computer (VMs) in Azure mit dem von der Plattform bereitgestellten Abbild von Oracle Enterprise Edition auf Windows Server erstellt. Weitere Informationen finden Sie unter [Erstellen eines virtuellen Oracle-Datenbank 12c-Computers in Azure](#z3dc8d3c097cf414e9048f7a89c026f80) und [Azure Virtual Machines](https://azure.microsoft.com/documentation/services/virtual-machines/). Stellen Sie sicher, dass sich die virtuellen Computer im [gleichen Clouddienst](virtual-machines-load-balance.md) und im gleichen [virtuellen Netzwerk](https://azure.microsoft.com/documentation/services/virtual-network/) befinden, um sicherzustellen, dass sie über die permanente private IP-Adresse aufeinander zugreifen können.
 
 - Sie haben im klassischen Azure-Portal die Namen der virtuellen Computer für Standort A als „MachineGG1“ und als „MachineGG2“ für Standort B festgelegt.
 
@@ -80,7 +80,7 @@ In diesem Lernprogramm lernen Sie Folgendes:
 
 6. Überprüfen des bidirektionalen Replikationsprozesses
 
->[AZURE.IMPORTANT]Dieses Lernprogramm wurde mit der folgenden Softwarekonfiguration eingerichtet und getestet:
+>[AZURE.IMPORTANT] Dieses Lernprogramm wurde mit der folgenden Softwarekonfiguration eingerichtet und getestet:
 >
 >| | **Standort A Datenbank** | **Standort B Datenbank** |
 >|------------------------|----------------------------------|----------------------------------|
@@ -602,4 +602,4 @@ Remotedesktop an Standort A und überprüfen Sie, ob die Replikation stattgefund
 ##Zusätzliche Ressourcen
 [Oracle Virtual Machine images for Azure (Images von virtuellen Oracle-Computern für Azure; in englischer Sprache)](virtual-machines-oracle-list-oracle-virtual-machine-images.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

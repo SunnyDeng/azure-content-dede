@@ -312,4 +312,4 @@ In diesem Abschnitt führen Sie die Schritte zum Erstellen eines Dienstprinzipal
 <!-- Images. -->
 [1]: ./media/resource-group-authenticate-service-principal/arm-get-credential.png
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

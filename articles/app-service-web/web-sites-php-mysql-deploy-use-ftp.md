@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="PHP" 
 	ms.topic="article" 
-	ms.date="10/01/2015" 
+	ms.date="01/12/2016" 
 	ms.author="tomfitz"/>
 
 
@@ -38,7 +38,7 @@ Mithilfe dieses Lernprogramms erstellen Sie eine einfache Web-App für die Regis
 
 ![Azure-PHP-Website][running-app]
 
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 
 ##Erstellen einer Web-App und Einrichten der FTP-Veröffentlichung
@@ -46,31 +46,27 @@ Mithilfe dieses Lernprogramms erstellen Sie eine einfache Web-App für die Regis
 Befolgen Sie diese Schritte, um eine Web-App und eine MySQL-Datenbank zu erstellen:
 
 1. Melden Sie sich beim [Azure-Portal][management-portal] an.
-2. Klicken Sie unten links im Azure-Portal auf das Symbol **+ Neu**.
+2. Klicken Sie oben links im Azure-Portal auf das Symbol **+ Neu**.
 
 	![Neue Azure-Website erstellen][new-website]
 
-3. Klicken Sie auf **Web + Mobile** und dann auf **Web-App + MySQL**.
+3. Geben Sie im Suchfeld **Web-App + MySQL** ein, und klicken Sie auf **Web-App + MySQL**.
 
 	![Neue Website benutzerdefiniert erstellen][custom-create]
 
-4. Geben Sie einen gültigen Namen für die Ressourcengruppe ein.
+4. Klicken Sie auf **Erstellen**. Geben Sie einen eindeutigen App Service-Namen, einen gültigen Namen für die Ressourcengruppe und einen neuen Dienstplan ein.
 
     ![Ressourcengruppenname festlegen][resource-group]
 
-5. Geben Sie Werte für die neue Web-App ein.
-
-     ![Web-App erstellen][new-web-app]
 
 6. Geben Sie Werte für die neue Datenbank ein, einschließlich Ihrer Zustimmung der rechtlichen Bedingungen.
 
 	![Neue MySQL-Datenbank erstellen][new-mysql-db]
 	
-7. Wenn die Web-App erstellt wurde, wird die neue Ressourcengruppe angezeigt. Klicken Sie auf den Namen der Web-App, um deren Einstellungen zu konfigurieren.
+7. Wenn die Web-App erstellt wurde, wird das Blatt des neuen App-Diensts angezeigt.
 
-	![Web-App öffnen][go-to-webapp]
 
-6. Führen Sie einen Bildlauf nach unten durch, bis Sie **Anmeldeinformationen für die Bereitstellung einrichten** finden.
+6. Klicken Sie auf **Einstellungen** > **Anmeldeinformationen für die Bereitstellung**.
 
 	![Anmeldeinformationen für die Bereitstellung zurücksetzen][set-deployment-credentials]
 
@@ -118,7 +114,8 @@ Befolgen Sie die unten stehenden Schritte, um die App lokal zu erstellen und aus
 		echo "<h3>Table created.</h3>";
 		?>
 
-	> [AZURE.NOTE]Sie müssen die Werte für <code>$user</code> und <code>$pwd</code> durch Ihren lokalen MySQL-Benutzernamen und das Kennwort aktualisieren.
+	> [AZURE.NOTE] 
+	Sie müssen die Werte für <code>$user</code> und <code>$pwd</code> durch Ihren lokalen MySQL-Benutzernamen und das Kennwort aktualisieren.
 
 4. Öffnen Sie einen Webbrowser und navigieren Sie zu [http://localhost/registration/createtable.php][localhost-createtable]. Dadurch wird die Tabelle `registration_tbl` in der Datenbank erstellt.
 
@@ -171,7 +168,8 @@ Befolgen Sie die unten stehenden Schritte, um die App lokal zu erstellen und aus
 			die(var_dump($e));
 		}
 
-	> [AZURE.NOTE]Sie müssen erneut die Werte für <code>$user</code> und <code>$pwd</code> durch Ihren lokalen MySQL-Benutzernamen und das Kennwort aktualisieren.
+	> [AZURE.NOTE]
+	Sie müssen erneut die Werte für <code>$user</code> und <code>$pwd</code> durch Ihren lokalen MySQL-Benutzernamen und das Kennwort aktualisieren.
 
 7. Fügen Sie nach dem Datenbankverbindungscode den Code für die Eingabe der Registrierungsinformationen in die Datenbank hinzu.
 
@@ -222,11 +220,15 @@ Nun können Sie zu [http://localhost/registration/index.php][localhost-index] na
 
 Um eine Verbindung mit der in Web-Apps ausgeführten MySQL-Datenbank herzustellen, benötigen Sie die Verbindungsinformationen. Befolgen Sie die folgenden Schritte, um MySQL-Verbindungsinformationen abzurufen:
 
+1. Klicken Sie auf dem Blatt der App Service-Web-App auf den Ressourcengruppenlink:
+
+	![Ressourcengruppen auswählen][select-resourcegroup]
+
 1. Klicken Sie in der Ressourcengruppe auf die Datenbank:
 
 	![Datenbank auswählen][select-database]
 
-2. Wählen Sie für der Datenbankzusammenfassung die Option **Eigenschaften**.
+2. Wählen Sie in der Datenbankzusammenfassung die Optionen **Einstellungen** > **Eigenschaften**.
 
     ![Eigenschaften auswählen][select-properties]
 	
@@ -292,6 +294,7 @@ Weitere Informationen finden Sie im [PHP Developer Center](/develop/php/).
 [resource-group]: ./media/web-sites-php-mysql-deploy-use-ftp/set_group.png
 [new-web-app]: ./media/web-sites-php-mysql-deploy-use-ftp/create_wa.png
 [select-database]: ./media/web-sites-php-mysql-deploy-use-ftp/select_database.png
+[select-resourcegroup]: ./media/web-sites-php-mysql-deploy-use-ftp/select_resourcegroup.png
 [select-properties]: ./media/web-sites-php-mysql-deploy-use-ftp/select_properties.png
 [note-properties]: ./media/web-sites-php-mysql-deploy-use-ftp/note-properties.png
 
@@ -300,4 +303,4 @@ Weitere Informationen finden Sie im [PHP Developer Center](/develop/php/).
 [download-publish-profile]: ./media/web-sites-php-mysql-deploy-use-ftp/download_publish_profile_3.png
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

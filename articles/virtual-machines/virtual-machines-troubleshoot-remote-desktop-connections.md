@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/08/2016"
+	ms.date="01/25/2016"
 	ms.author="dkshir"/>
 
 # Problembehandlung bei Remotedesktopverbindungen mit einem Windows-basierten virtuellen Azure-Computer
@@ -26,7 +26,7 @@ Die Remotedesktopverbindung (RDP) mit Ihrem Windows-basierten virtuellen Azure-C
 
 Dieser Artikel gilt für virtuelle Azure-Computer, auf denen Windows ausgeführt wird. Informationen zu virtuellen Azure-Computern mit Linux finden Sie unter [Behandeln von Problemen mit SSH-Verbindungen mit einem virtuellen Azure-Computer](virtual-machines-troubleshoot-ssh-connections.md).
 
-Wenn Sie beim Lesen dieses Artikels feststellen, dass Sie weitere Hilfe benötigen, können Sie Ihre Frage im [MSDN Azure-Forum oder im Stack Overflow-Forum](http://azure.microsoft.com/support/forums/) stellen, um dort Hilfe von Azure-Experten zu erhalten. Alternativ dazu haben Sie die Möglichkeit, einen Azure-Supportfall zu erstellen. Rufen Sie die [Azure-Support-Website](http://azure.microsoft.com/support/options/) auf, und klicken Sie auf **Support erhalten**.
+Wenn Sie beim Lesen dieses Artikels feststellen, dass Sie weitere Hilfe benötigen, können Sie Ihre Frage im [MSDN Azure-Forum oder im Stack Overflow-Forum](https://azure.microsoft.com/support/forums/) stellen, um dort Hilfe von Azure-Experten zu erhalten. Alternativ dazu haben Sie die Möglichkeit, einen Azure-Supportfall zu erstellen. Rufen Sie die [Azure-Support-Website](https://azure.microsoft.com/support/options/) auf, und klicken Sie auf **Support erhalten**.
 
 
 <a id="quickfixrdp"></a>
@@ -38,38 +38,38 @@ Dieser Abschnitt enthält Schritte für die schnelle Behebung häufig auftretend
 
 Diese Schritte können dabei helfen, die meisten Remotedesktop-Verbindungsfehler bei virtuellen Azure-Computern zu beheben, die mit dem klassischen Bereitstellungsmodell erstellt wurden. Versuchen Sie nach jedem Schritt, die Verbindung mit dem virtuellen Computer erneut herzustellen.
 
-- Setzen Sie den Remotedesktopdienst über das [Azure-Portal](https://portal.azure.com) zurück, um die Startprobleme mit dem RDP-Server zu beheben.<br> Klicken Sie auf „Alle durchsuchen“ > „Virtuelle Computer (klassisch)“ > „Ihr virtueller Windows-Computer“ > „**Remotezugriff zurücksetzen...**“.
+- Setzen Sie den Remotedesktopdienst über das [Azure-Portal](https://portal.azure.com) zurück, um die Startprobleme mit dem RDP-Server zu beheben.<br> Klicken Sie auf **Alle durchsuchen** > **Virtuelle Computer (klassisch)** > „Ihr virtueller Windows-Computer“ > **Remotezugriff zurücksetzen...**.
 
-- Starten Sie den virtuellen Computer neu, um andere Startprobleme zu beheben.<br> Klicken Sie auf „Alle durchsuchen“ > „Virtuelle Computer (klassisch)“ > „Ihr virtueller Windows-Computer“ > „**Neu starten**“.
+- Starten Sie den virtuellen Computer neu, um andere Startprobleme zu beheben.<br> Klicken Sie auf **Alle durchsuchen** > **Virtuelle Computer (klassisch)** > „Ihr virtueller Windows-Computer“ > **Neu starten**.
 
-- Ändern Sie die Größe des virtuellen Computers, um Hostprobleme zu beheben.<br> Klicken Sie auf „Alle durchsuchen“ > „Virtuelle Computer (klassisch)“ > „Ihr virtueller Windows-Computer“ > „Einstellungen“ > „**Größe**“. Ausführliche Schritte finden Sie unter [Ändern der Größe des virtuellen Computers](https://msdn.microsoft.com/library/dn168976.aspx).
+- Ändern Sie die Größe des virtuellen Computers, um Hostprobleme zu beheben.<br> Klicken Sie auf **Alle durchsuchen** > **Virtuelle Computer (klassisch)** > „Ihr virtueller Windows-Computer“ > **Einstellungen** > **Größe**. Ausführliche Schritte finden Sie unter [Ändern der Größe des virtuellen Computers](https://msdn.microsoft.com/library/dn168976.aspx).
 
-- Überprüfen Sie das Konsolenprotokoll des virtuellen Computers oder den Screenshot, um Startprobleme zu beheben.<br> Klicken Sie auf „Alle durchsuchen“ > „Virtuelle Computer (klassisch)“ > „Ihr virtueller Windows-Computer“ > „Einstellungen“ > „**Startdiagnose**“.
+- Überprüfen Sie das Konsolenprotokoll oder den Screenshot des virtuellen Computers, um Startprobleme zu beheben.<br> Klicken Sie auf **Alle durchsuchen** > **Virtuelle Computer (klassisch)** > „Ihr virtueller Windows-Computer“ > **Einstellungen** > **Startdiagnose**.
 
-- Überprüfen Sie die VM-Ressourcenintegrität auf etwaige Plattformprobleme.<br> Klicken Sie auf „Alle durchsuchen“ > „Virtuelle Computer (klassisch)“ > „Ihr virtueller Windows-Computer“ > „Einstellungen“ > „**Integrität prüfen**“.
+- Überprüfen Sie die Ressourcenintegrität des virtuellen Computers auf etwaige Plattformprobleme.<br> Klicken Sie auf **Alle durchsuchen** > **Virtuelle Computer (klassisch)** > „Ihr virtueller Windows-Computer“ > **Einstellungen** > **Integrität prüfen**.
 
 ### Virtuelle Computer, die mit dem Ressourcen-Manager-Bereitstellungsmodell erstellt wurden
 
 Diese Schritte können dabei helfen, die meisten Remotedesktop-Verbindungsfehler bei virtuellen Azure-Computern zu beheben, die mit dem Ressourcen-Manager-Bereitstellungsmodell erstellt wurden. Versuchen Sie nach jedem Schritt, die Verbindung mit dem virtuellen Computer erneut herzustellen.
 
-- Zurücksetzen des Remotezugriffs mithilfe von Powershell<br> a. [Installieren Sie Azure PowerShell, und stellen Sie eine Verbindung mit Ihrem Azure-Abonnement her](../powershell-install-configure.md), indem Sie die Azure AD-Methode verwenden. Beachten Sie, dass Sie in den neueren Versionen von Azure PowerShell 1.0.x nicht in den Ressourcen-Manager-Modus wechseln müssen.
+- _Zurücksetzen des Remotezugriffs_ mithilfe von Powershell<br> a. [Installieren Sie Azure PowerShell, und stellen Sie eine Verbindung mit Ihrem Azure-Abonnement her](../powershell-install-configure.md), indem Sie die Azure AD-Methode verwenden. Beachten Sie, dass Sie in den neueren Versionen von Azure PowerShell 1.0.x nicht in den Ressourcen-Manager-Modus wechseln müssen.
 
 	b. Setzen Sie Ihre RDP-Verbindung mit einem der folgenden Azure PowerShell-Befehle zurück. Ersetzen Sie die `myRG`, `myVM`, `myVMAccessExtension` und den Speicherort durch für Ihr Setup relevante Werte.
 
 	```
 	Set-AzureRmVMExtension -ResourceGroupName "myRG" -VMName "myVM" -Name "myVMAccessExtension" -ExtensionType "VMAccessAgent" -Publisher "Microsoft.Compute" -typeHandlerVersion "2.0" -Location Westus
 	```
-	ODER
+	ODER<br>
 
   ```
   Set-AzureRmVMAccessExtension -ResourceGroupName "myRG" -VMName "myVM" -Name "myVMAccess" -Location Westus
   ```
 
-- Starten Sie den virtuellen Computer neu, um andere Startprobleme zu beheben.<br> Klicken Sie auf „Alle durchsuchen“ > „Virtuelle Computer“ > „Ihr virtueller Windows-Computer“ > „**Neu starten**“.
+- Starten Sie den virtuellen Computer neu, um andere Startprobleme zu beheben.<br> Klicken Sie auf **Alle durchsuchen** > **Virtuelle Computer** > „Ihr virtueller Windows-Computer“ > **Neu starten**.
 
-- Ändern Sie die Größe des virtuellen Computers, um Hostprobleme zu beheben.<br> Klicken Sie auf „Alle durchsuchen“ > „Virtuelle Computer“ > „Ihr virtueller Windows-Computer“ > „Einstellungen“ > „**Größe**“.
+- Ändern Sie die Größe des virtuellen Computers, um Hostprobleme zu beheben.<br> Klicken Sie auf **Alle durchsuchen** > **Virtuelle Computer** > „Ihr virtueller Windows-Computer“ > **Einstellungen** > **Größe**.
 
-- Überprüfen Sie das Konsolenprotokoll oder den Screenshot des virtuellen Computers, um Startprobleme zu beheben.<br> Klicken Sie auf „Alle durchsuchen“ > „Virtuelle Computer“ > „Ihr virtueller Windows-Computer“ > „Einstellungen“ > „**Startdiagnose**“.
+- Überprüfen Sie das Konsolenprotokoll oder den Screenshot des virtuellen Computers, um Startprobleme zu beheben.<br> Klicken Sie auf **Alle durchsuchen** > **Virtuelle Computer** > „Ihr virtueller Windows-Computer“ > **Einstellungen** > **Startdiagnose**.
 
 
 Fahren Sie mit dem nächsten Abschnitt fort, wenn die Remotedesktop-Verbindungsfehler durch die oben genannten Schritte nicht behoben wurden.
@@ -121,7 +121,7 @@ Der Adressteil in dieser RDP-Datei besteht aus dem vollqualifizierten Domänenna
 
 Ursache: Der virtuelle Zielcomputer konnte die Sicherheitsautorität im Benutzernamenteil Ihrer Anmeldeinformationen nicht finden.
 
-Wenn Ihr Benutzername das Format *SecurityAuthority\UserName* (Beispiel: „CORP\\User1“) aufweist, ist *SecurityAuthority* entweder der Computername des virtuellen Computers (für die lokale Sicherheitsautorität) oder ein Active Directory-Domänenname.
+Wenn Ihr Benutzername das Format *SecurityAuthority*\*UserName* (Beispiel: „CORP\\User1“) aufweist, ist *SecurityAuthority* entweder der Computername des virtuellen Computers (für die lokale Sicherheitsautorität) oder ein Active Directory-Domänenname.
 
 Lösungsvorschläge:
 
@@ -136,8 +136,8 @@ Ursache: Der virtuelle Zielcomputer konnte Ihren Kontonamen und das Kennwort nic
 
 Ein Windows-basierter Computer kann die Anmeldeinformationen eines lokalen Kontos oder eines Domänenkontos überprüfen.
 
-- Verwenden Sie für lokale Konten die Syntax *Computername\Benutzername* (Beispiel: „SQL1\\Admin4798“).
-- Verwenden Sie für Domänenkonten die Syntax *Domänenname\Benutzername* (Beispiel: „CONTOSO\\johndoe“).
+- Verwenden Sie für lokale Konten die Syntax *Computername*\*Benutzername* (Beispiel: „SQL1\\Admin4798“).
+- Verwenden Sie für Domänenkonten die Syntax *Domänenname*\*Benutzername* (Beispiel: „CONTOSO\\johndoe“).
 
 Bei virtuellen Computern, die Sie in einer neuen Active Directory-Gesamtstruktur zu Domänencontrollern heraufgestuft haben, wird auch das lokale Administratorkonto, mit dem Sie sich angemeldet haben, in der neuen Gesamtstruktur und Domäne in ein äquivalentes Konto mit dem gleichen Kennwort konvertiert. Das lokale Konto wird gelöscht. Wenn Sie sich beispielsweise mit dem lokalen Konto „DC1\\DCAdmin“ angemeldet und den virtuellen Computer zu einem Domänencontroller in einer neuen Gesamtstruktur für die Domäne „corp.contoso.com“ heraufgestuft haben, dann wird das lokale Konto DC1\\DCAdmin gelöscht und ein neues Domänenkonto („CORP\\DCAdmin“) mit demselben Kennwort erstellt.
 
@@ -156,7 +156,7 @@ Stellen Sie sicher, dass das Konto, das Sie zum Herstellen der Verbindung verwen
 
 ## Problembehandlung bei allgemeinen Remotedesktop-Fehlern
 
-Wenn keiner dieser Fehler auftritt und Sie trotzdem keine Verbindung mit dem virtuellen Computer per Remotedesktop herstellen können, können Sie zusätzlich im [ausführlichen Handbuch zur Problembehandlung für Remotedesktop ](virtual-machines-rdp-detailed-troubleshoot.md) nachschlagen.
+Wenn keiner dieser Fehler auftritt und Sie trotzdem keine Verbindung mit dem virtuellen Computer per Remotedesktop herstellen können, können Sie zusätzlich im [ausführlichen Handbuch zur Problembehandlung für Remotedesktop](virtual-machines-rdp-detailed-troubleshoot.md) nachschlagen.
 
 
 ## Zusätzliche Ressourcen
@@ -171,4 +171,4 @@ Wenn keiner dieser Fehler auftritt und Sie trotzdem keine Verbindung mit dem vir
 
 [Problembehandlung beim Zugriff auf eine Anwendung, die auf einem virtuellen Azure-Computer ausgeführt wird](virtual-machines-troubleshoot-access-application.md)
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -42,7 +42,7 @@ Ein dynamischer Bedarf ist für moderne Anwendungen eine Realität. Ob saisonale
 
 ## Verknüpfte Dienste
 
-- [Cloud Services](http://azure.microsoft.com/services/cloud-services/) 
+- [Cloud Services](https://azure.microsoft.com/services/cloud-services/) 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

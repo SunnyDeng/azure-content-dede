@@ -19,7 +19,7 @@
 
 Auflistungsvorgänge sind der Schlüssel für viele Entwicklungsszenarien mit Azure Storage. Dieser Artikel beschreibt, wie Objekte in Azure Storage mit den Auflistungs-APIs, die in der Microsoft Azure Storage Client Library for C++ bereitgestellt werden, am effizientesten aufgelistet werden können.
 
->[AZURE.NOTE]Diese Anleitung gilt für die Version 1.x der Azure Storage Client Library for C++, die über [NuGet](http://www.nuget.org/packages/wastorage) oder [GitHub](https://github.com/Azure/azure-storage-cpp) verfügbar ist.
+>[AZURE.NOTE] Diese Anleitung gilt für die Version 1.x der Azure Storage Client Library for C++, die über [NuGet](http://www.nuget.org/packages/wastorage) oder [GitHub](https://github.com/Azure/azure-storage-cpp) verfügbar ist.
 
 Die Storage Client Library stellt eine Vielzahl von Methoden bereit, um Objekte in Azure Storage aufzulisten oder abzufragen. Dieser Artikel behandelt die folgenden Szenarien:
 
@@ -182,6 +182,6 @@ Weitere Informationen zu Azure Storage und zur Client Library for C++ finden Sie
 -	[Verwenden des Warteschlangenspeichers in C++](storage-c-plus-plus-how-to-use-queues.md)
 -	[Azure Storage Client Library for C++ API Documentation.](http://azure.github.io/azure-storage-cpp/)
 -	[Azure Storage-Teamblog](http://blogs.msdn.com/b/windowsazurestorage/)
--	[Azure-Speicherdokumentation](http://azure.microsoft.com/documentation/services/storage/)
+-	[Azure-Speicherdokumentation](https://azure.microsoft.com/documentation/services/storage/)
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

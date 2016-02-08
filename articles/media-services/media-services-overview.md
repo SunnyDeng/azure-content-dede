@@ -40,13 +40,13 @@ Zum Entwickeln von Media Services-Lösungen können Sie folgende Komponenten ver
 
 Sie können sich die AMS-Lernpfade hier ansehen:
 
-- [Media Services - Live Streaming (in englischer Sprache)](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
-- [Media Services - on Demand Streaming (in englischer Sprache)](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+- [Media Services - Live Streaming (in englischer Sprache)](https://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
+- [Media Services - on Demand Streaming (in englischer Sprache)](https://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
 
 ##Poster
 
 
-[Hier](http://azure.microsoft.com/documentation/infographics/media-services/) können Sie das Azure Media Services-Poster ansehen, das die AMS-Workflows zeigt, von der Medienerstellung bis zur Nutzung.
+[Hier](https://azure.microsoft.com/documentation/infographics/media-services/) können Sie das Azure Media Services-Poster ansehen, das die AMS-Workflows zeigt, von der Medienerstellung bis zur Nutzung.
 
 ##Voraussetzungen
 
@@ -206,7 +206,7 @@ Außerdem können Sie Ihr Media Services-Konto skalieren, indem Sie Speicherkont
 
 ##Support
 
-Der [Azure-Support](http://azure.microsoft.com/support/options/) bietet Supportoptionen für Azure, Media Services eingeschlossen.
+Der [Azure-Support](https://azure.microsoft.com/support/options/) bietet Supportoptionen für Azure, Media Services eingeschlossen.
 
 ##Muster & Leitfäden
 
@@ -225,7 +225,7 @@ Der [Azure-Support](http://azure.microsoft.com/support/options/) bietet Supporto
 - Für den Schutz von Inhalten garantieren wir, dass Schlüsselanforderungen mindestens 99,9 % der Zeit erfolgreich bearbeitet werden.
 - Für Indexer werden Indexer-Aufgabenanforderungen, die mit einer reservierten Einheit für die Codierung verarbeitet werden, 99,9 % der Zeit erfolgreich bearbeitet.
 
-	Weitere Informationen finden Sie im [Microsoft Azure-SLA](http://azure.microsoft.com/support/legal/sla/).
+	Weitere Informationen finden Sie im [Microsoft Azure-SLA](https://azure.microsoft.com/support/legal/sla/).
 
 <!-- Images -->
 [overview]: ./media/media-services-overview/media-services-overview.png
@@ -234,4 +234,4 @@ Der [Azure-Support](http://azure.microsoft.com/support/options/) bietet Supporto
 [live-overview2]: ./media/media-services-live-streaming-workflow/media-services-live-streaming-current.png
  
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -2,13 +2,14 @@
  pageTitle="Übersicht über die vorkonfigurierte Lösung für vorhersagbaren Wartungsbedarf | Microsoft Azure"
  description="Beschreibung der vorkonfigurierten Azure IoT-Lösung für vorhersagbaren Wartungsbedarf | Microsoft Azure"
  services=""
+ suite="iot-suite"
  documentationCenter=""
  authors="stevehob"
  manager="timlt"
  editor=""/>
 
 <tags
- ms.service="na"
+ ms.service="iot-suite"
  ms.devlang="na"
  ms.topic="article"
  ms.tgt_pltfrm="na"
@@ -33,7 +34,7 @@ Durch die Vorhersage des geeigneten Wartungszeitpunkts kann Fabrikam eine Optimi
 
 ## Aufbau der Lösung für vorhersagbaren Wartungsbedarf
 
-Informationen dazu, wie [Azure IoT-Suite][lnk_iot_suite] die vom Kunden benötigten Fähigkeiten bereitstellt, um das Potenzial des vorhersagbaren Wartungsbedarfs zu erschließen, finden Sie auf dieser [Infografik][lnk_infographic].
+Informationen dazu, wie [Azure IoT-Suite][lnk_iot_suite] die vom Kunden benötigten Fähigkeiten bereitstellt, um das Potenzial des vorhersagbaren Wartungsbedarfs zu erschließen, finden Sie auf [dieser Infografik][lnk_infographic].
 
 Zur Demonstration dieser Möglichkeiten verwendet die vorgestellte Beispiellösung die über IoT-Suite-Dienste erfassten Gerätetelemetriedaten und bereitet diese anhand einer Webanwendung auf. Dabei kommt ein vorhandenes Azure Machine Learning-Modell zum Einsatz, das als Vorlage zur Verfügung steht. Microsoft hat ein [Regressionsmodell][lnk_regression_model] erstellt und die vollständige Vorlage sowie die Daten<sup>[1]</sup> und eine schrittweise Anleitung veröffentlicht.
 
@@ -55,4 +56,4 @@ Sehen Sie sich die [exemplarische Vorgehensweise][lnk-predictive-walkthrough] zu
 [lnk_regression_model]: http://gallery.cortanaanalytics.com/Collection/Predictive-Maintenance-Template-3
 [lnk_capture_value]: http://download.microsoft.com/download/0/7/D/07D394CE-185D-4B96-AC3C-9B61179F7080/Capture_value_from_the_Internet%20of%20Things_with_Predictive_Maintenance.PDF
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0128_2016-->

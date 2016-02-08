@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/02/2015"
+	ms.date="01/21/2016"
 	ms.author="billmath"/>
 
 # Häufig gestellte Fragen zu Azure AD Connect
@@ -90,4 +90,4 @@ Nein. Da bei dieser Option nicht alle Einstellungen abgerufen werden, sollte sie
 
 - Verwenden Sie diesen Link, um Support über das Azure-Portal zu erhalten.
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

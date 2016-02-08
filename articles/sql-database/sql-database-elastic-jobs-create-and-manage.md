@@ -27,7 +27,7 @@
 
 ## Voraussetzungen
 
-* Ein Azure-Abonnement. Eine kostenlose Testversion finden Sie unter [Einen Monat kostenlos testen](http://azure.microsoft.com/pricing/free-trial/).
+* Ein Azure-Abonnement. Eine kostenlose Testversion finden Sie unter [Einen Monat kostenlos testen](https://azure.microsoft.com/pricing/free-trial/).
 * Ein elastischer Datenbankpool. Siehe [Informationen zu elastischen Datenbankpools](sql-database-elastic-pool.md)
 * Installation von Dienstkomponenten für elastische Datenbankaufträge. Siehe [Installieren des Diensts für elastische Datenbankaufträge](sql-database-elastic-jobs-service-installation.md).
 
@@ -115,4 +115,4 @@ Wenn ein Auftrag fehlschlägt, wird ein Protokoll zu seiner Ausführung erstellt
 
  
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

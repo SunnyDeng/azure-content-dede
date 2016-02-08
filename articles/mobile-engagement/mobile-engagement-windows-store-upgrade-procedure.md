@@ -22,6 +22,11 @@ Wenn Sie bereits eine ältere Version von Engagement in Ihre Anwendung integrier
 
 Möglicherweise müssen Sie mehrere Verfahren befolgen, wenn Sie mehrere Versionen des SDK übersprungen haben. Wenn Sie beispielsweise von 0.10.1 zu 0.11.0 migrieren, müssen Sie zunächst den Vorgang "von 0.9.0 zu 0.10.1" ausführen und anschließend den Vorgang "von 0.10.1 zu 0.11.0".
 
+##Von 3.2.0 zu 3.3.0
+
+### Ressourcen
+Dieser Schritt betrifft nur angepasste Ressourcen. Wenn Sie die Ressourcen, die vom SDK (Html, Bilder, Überlagerung) bereitgestellt werden, angepasst haben, müssen Sie diese vor dem Upgrade sichern und Ihre Anpassungen erneut auf die aktualisierten Ressourcen anwenden.
+
 ##Von 3.1.0 zu 3.2.0
 
 ### Ressourcen
@@ -151,7 +156,7 @@ Dieser Schritt betrifft nur angepasste Ressourcen. Wenn Sie die Ressourcen, die 
 
 Im Folgenden wird beschrieben, wie Sie die Migration einer SDK-Integration vom Capptain-Dienst, der von Capptain-SAS angeboten wird, in eine durch Azure Mobile Engagement unterstützte App durchführen.
 
-> [Azure.IMPORTANT]Capptain und Mobile Engagement sind nicht dieselben Dienste, und die unten beschriebene Vorgehensweise hebt nur hervor, wie die Migration der Clientapp durchzuführen ist. Bei der Migration des SDK in die App werden Ihre Daten NICHT von den Capptain-Servern zu den Mobile Engagement-Servern migriert
+> [Azure.IMPORTANT] Capptain und Mobile Engagement sind nicht dieselben Dienste, und die unten beschriebene Vorgehensweise hebt nur hervor, wie die Migration der Clientapp durchzuführen ist. Bei der Migration des SDK in die App werden Ihre Daten NICHT von den Capptain-Servern zu den Mobile Engagement-Servern migriert
 
 Wenn Sie von einer früheren Version migrieren, ziehen Sie zunächst die Capptain-Website zurate, um zu 1.1.1 zu migrieren und wenden Sie dann das folgende Verfahren an
 
@@ -227,7 +232,7 @@ Nach Abschluss dieser Schritte müssen Sie nur die alten Capptain-Verweise durch
 		</engagement:EngagementPage>
 
 4. Änderungen der Überlagerungsseite
-	> [AZURE.IMPORTANT]Die Überlagerung ändert sich ebenfalls. Der neue Namespace lautet `Microsoft.Azure.Engagement.Overlay`. Er muss in XAML- und CS-Dateien verwendet werden. Darüber hinaus muss `CapptainGrid` in `EngagementGrid` umbenannt werden, und `capptain_notification_content` und `capptain_announcement_content` müssen in `engagement_notification_content` bzw. `engagement_announcement_content` umbenannt werden.
+	> [AZURE.IMPORTANT] Die Überlagerung ändert sich ebenfalls. Der neue Namespace lautet `Microsoft.Azure.Engagement.Overlay`. Er muss in XAML- und CS-Dateien verwendet werden. Darüber hinaus muss `CapptainGrid` in `EngagementGrid` umbenannt werden, und `capptain_notification_content` und `capptain_announcement_content` müssen in `engagement_notification_content` bzw. `engagement_announcement_content` umbenannt werden.
 	
 	Überlagerung:
 	
@@ -289,4 +294,4 @@ Beachten Sie, dass sich die Umbenennung auch auf überschriebene Methoden auswir
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

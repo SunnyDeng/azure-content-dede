@@ -19,7 +19,7 @@
 
 # Steuern des Azure-Web-App-Verkehrs mit Azure Traffic Manager
 
-> [AZURE.NOTE]Dieser Artikel bietet zusammenfassende Informationen zu Microsoft Azure Traffic Manager im Hinblick auf Azure Web Service-Web-Apps. Weitere Informationen über Azure Traffic Manager selbst finden Sie unter den Links am Ende dieses Artikels.
+> [AZURE.NOTE] Dieser Artikel bietet zusammenfassende Informationen zu Microsoft Azure Traffic Manager im Hinblick auf Azure Web Service-Web-Apps. Weitere Informationen über Azure Traffic Manager selbst finden Sie unter den Links am Ende dieses Artikels.
 
 ## Einführung
 Mit Azure Traffic Manager können Sie steuern, wie Anforderungen von Webclients auf Web-Apps in Azure Web Service verteilt werden. Wenn einem Azure Traffic Manager-Profil Azure-Web-App-Endpunkte hinzugefügt werden, verfolgt Azure Traffic Manager den Status Ihrer Web-Apps (aktiv, angehalten oder gelöscht), sodass der gewünschte Endpunkt als Empfänger des Verkehrs gewählt werden kann.
@@ -60,7 +60,7 @@ Einen Überblick über die Konzepte und technischen Aspekte von Azure Traffic Ma
 
 Detaillierte Informationen zum Lastenausgleich in Azure Traffic Manager finden Sie unter [Traffic Manager-Lastenausgleichsmethoden](../traffic-manager/traffic-manager-load-balancing-methods.md).
 
-Weitere Informationen zur Verwendung von Traffic Manager mit Web-Apps finden Sie in den Blogbeiträgen [Verwenden von Azure Traffic Manager mit Azure-Websites](http://blogs.msdn.com/b/waws/archive/2014/03/18/using-windows-azure-traffic-manager-with-waws.aspx) und [(Azure Traffic Manager kann jetzt in Azure-Websites integriert werden](http://azure.microsoft.com/blog/2014/03/27/azure-traffic-manager-can-now-integrate-with-azure-web-sites/).
+Weitere Informationen zur Verwendung von Traffic Manager mit Web-Apps finden Sie in den Blogbeiträgen [Verwenden von Azure Traffic Manager mit Azure-Websites](http://blogs.msdn.com/b/waws/archive/2014/03/18/using-windows-azure-traffic-manager-with-waws.aspx) und [(Azure Traffic Manager kann jetzt in Azure-Websites integriert werden](https://azure.microsoft.com/blog/2014/03/27/azure-traffic-manager-can-now-integrate-with-azure-web-sites/).
  
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0128_2016-->

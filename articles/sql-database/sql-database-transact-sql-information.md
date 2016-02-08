@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Nicht unterstützte T-SLQ-Funktionen in Azure SQL-Datenbank | Microsoft Azure"
+   pageTitle="Nicht unterstützte T-SQL-Funktionen in Azure SQL-Datenbank | Microsoft Azure"
    description="Transact-SQL-Anweisungen, die in Azure SQL-Datenbank nicht vollständig unterstützt werden"
    services="sql-database"
    documentationCenter=""
@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="data-management"
-   ms.date="01/15/2016"
+   ms.date="01/21/2016"
    ms.author="rick.byham@microsoft.com"/>
 
 # Azure SQL-Datenbank – Abweichungen bei Transact-SQL
@@ -53,7 +53,8 @@ Azure SQL-Datenbank V12 unterstützt einige, aber nicht alle Argumente, die in d
 
 - Sortierung von Systemobjekten
 - Verbindungsbezogen: Endpunktanweisungen, ORIGINAL\_DB\_NAME. Die Windows-Authentifizierung ist für Anmeldungen oder eigenständige Datenbanken nicht verfügbar.
-- Datenbankübergreifende Abfragen und Datenbankbesitzverkettung, Einstellung TRUSTWORTHY
+- Datenbankübergreifende Abfragen für INSERT-, UPDATE- und DELETE-Vorgänge. (Schreibgeschützte datenbankübergreifende Abfragen werden unterstützt.)
+- Datenbankübergreifende Besitzverkettung, TRUSTWORTHY-Einstellung
 - Datensammler
 - Datenbankdiagramme
 - Datenbank-E-Mail
@@ -106,4 +107,4 @@ Die Transact-SQL-Referenz umfasst Themen zu SQL Server-Versionen ab 2008. Unter 
 
 In einigen Fällen kann der allgemeine Gegenstand eines Themas in einem Produkt verwendet werden, es liegen jedoch kleine Unterschiede im Hinblick auf die verschiedenen Produkte vor. Die Unterschiede werden dann im Thema entsprechend angegeben.
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

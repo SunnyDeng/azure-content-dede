@@ -14,7 +14,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="12/04/2015" 
+	ms.date="01/25/2015" 
 	ms.author="jeffstok"/>
 
 
@@ -30,14 +30,10 @@ Erfahren Sie, wie Sie Stream Analytics-Ressourcen mit Azure PowerShell-Cmdlets u
  		# Log in to your Azure account
 		Add-AzureAccount
 
-		# Select the Azure subscription you want to use to create the resource group
+		# Select the Azure subscription you want to use to create the resource group if you have more than one subscription on your account.
 		Select-AzureSubscription -SubscriptionName <subscription name>
  
-		# Set the appropriate Azure mode to access Stream Analytics cmdlets
-		Switch-AzureMode AzureResourceManager
-
-		# Optional - Create an Azure resource group	
-			# If Stream Analytics has not been registered to the subscription, remove remark symbol below (#) to run the Register-AzureRMProvider cmdlet to register the provider namespace
+		# If Stream Analytics has not been registered to the subscription, remove remark symbol below (#) to run the Register-AzureProvider cmdlet to register the provider namespace.
 		#Register-AzureProvider -Force -ProviderNamespace 'Microsoft.StreamAnalytics'
 
 		# Create an Azure resource group
@@ -45,7 +41,7 @@ Erfahren Sie, wie Sie Stream Analytics-Ressourcen mit Azure PowerShell-Cmdlets u
 		
 
 
-> [AZURE.NOTE]Für programmgesteuert erstellte Stream Analytics-Aufträge ist die Überwachung in der Standardeinstellung nicht aktiviert. Sie können die Überwachung manuell im Azure-Portal aktivieren, indem Sie zur Überwachungsseite des Auftrags wechseln und auf die Schaltfläche "Aktivieren" klicken. Zudem können Sie programmgesteuert vorgehen, indem Sie die Schritte unter [Azure Stream Analytics – programmgesteuerte Überwachung von Stream Analytics-Aufträgen](stream-analytics-monitor-jobs.md) durchführen.
+> [AZURE.NOTE] Für programmgesteuert erstellte Stream Analytics-Aufträge ist die Überwachung in der Standardeinstellung nicht aktiviert. Sie können die Überwachung manuell im Azure-Portal aktivieren, indem Sie zur Überwachungsseite des Auftrags wechseln und auf die Schaltfläche "Aktivieren" klicken. Zudem können Sie programmgesteuert vorgehen, indem Sie die Schritte unter [Azure Stream Analytics – programmgesteuerte Überwachung von Stream Analytics-Aufträgen](stream-analytics-monitor-jobs.md) durchführen.
 
 ## Azure PowerShell-Cmdlets für Stream Analytics
 Mit den folgenden PowerShell-Cmdlets können Azure Stream Analytics-Aufträge überwacht und verwaltet werden.
@@ -289,4 +285,4 @@ Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://so
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

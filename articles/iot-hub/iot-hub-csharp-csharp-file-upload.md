@@ -24,7 +24,7 @@ Azure IoT Hub ist ein vollständig verwalteter Dienst, der eine zuverlässige un
 
 Dieses Lernprogramm baut auf dem Code in [Senden von C2D-Nachrichten mit IoT Hub] auf und zeigt, wie mit C2D-Nachrichten auf dem Gerät sicher ein Azure-Blob-URI zum Hochladen der Datei bereitgestellt werden kann und wie mit IoT Hub-Übermittlungsbestätigungen die Verarbeitung der Datei vom App-Back-End ausgelöst werden kann. Die Vorteile dieses Ansatzes liegen in der Wiederverwendung der IoT Hub-Geräteidentität. Zudem wird das Anwendungs-Back-End anhand von Übermittlungsbestätigung für C2D-Nachrichten informiert, dass die Datei erfolgreich hochgeladen wurde.
 
-> [AZURE.NOTE]Mit dem hier verwendeten Verfahren können Geräte auch sicher Dateien aus der Cloud herunterladen.
+> [AZURE.NOTE] Mit dem hier verwendeten Verfahren können Geräte auch sicher Dateien aus der Cloud herunterladen.
 
 Weitere Informationen zu C2D-Nachrichten und zur IoT Hub-Sicherheit finden Sie im [IoT Hub-Entwicklerhandbuch].
 
@@ -33,13 +33,13 @@ Am Ende dieses Lernprogramms führen Sie zwei Windows-Konsolenanwendungen aus:
 * **SimulatedDevice**, eine geänderte Version der in [Senden von C2D-Nachrichten mit IoT Hub] erstellten Anwendung. Diese stellt eine Verbindung mit IoT Hub her und empfängt C2D-Nachrichten mit Azure-Blob-URIs. Für jede empfangene C2D-Nachricht wird ein Dateiupload zum angegebenen Blob-URI ausgelöst.
 * **SendCloudToDevice**. Hiermit wird ein Azure-Blob-URI (wie in [Erstellen und Verwenden einer SAS mit dem Blob-Dienst](../storage/storage-dotnet-shared-access-signature-part-2.md) beschrieben) erstellt, in einer C2D-Nachricht über IoT Hub an das simulierte Gerät gesendet und dann die Übermittlungsbestätigung empfangen.
 
-> [AZURE.NOTE]IoT Hub verfügt durch Azure IoT-Geräte-SDKs über SDK-Unterstützung für zahlreiche Geräteplattformen und Sprachen (u. a. C, Java und Javascript). Im [Azure IoT Developer Center] finden Sie Schritt-für-Schritt-Anweisungen zum Verbinden eines Geräts mit dem Code in diesem Lernprogramm sowie allgemeine Informationen zum Verbinden mit Azure IoT Hub. Azure IoT-Dienst-SDKs für Java und Node sind in Kürze verfügbar.
+> [AZURE.NOTE] IoT Hub verfügt durch Azure IoT-Geräte-SDKs über SDK-Unterstützung für zahlreiche Geräteplattformen und Sprachen (u. a. C, Java und Javascript). Im [Azure IoT Developer Center] finden Sie Schritt-für-Schritt-Anweisungen zum Verbinden eines Geräts mit dem Code in diesem Lernprogramm sowie allgemeine Informationen zum Verbinden mit Azure IoT Hub. Azure IoT-Dienst-SDKs für Java und Node sind in Kürze verfügbar.
 
 Zum Durchführen dieses Lernprogramms benötigen Sie Folgendes:
 
 + Microsoft Visual Studio 2015
 
-+ Ein aktives Azure-Konto. <br/>Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdevelop%2Fiot%2Ftutorials%2Ffile-upload%2F target="\_blank").
++ Ein aktives Azure-Konto. <br/>Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdevelop%2Fiot%2Ftutorials%2Ffile-upload%2F target="\_blank").
 
 
 [AZURE.INCLUDE [iot-hub-file-upload-cloud-csharp](../../includes/iot-hub-file-upload-cloud-csharp.md)]
@@ -78,7 +78,7 @@ Weitere Informationen zu IoT Hub:
 
 <!-- Links -->
 
-[Senden von Cloud-zu-Gerät-Nachrichten mit IoT Hub]: iot-hub-csharp-csharp-c2d.md
+[Send Cloud-to-Device messages with IoT Hub]: iot-hub-csharp-csharp-c2d.md
 
 [Azure-Portal]: https://portal.azure.com/
 
@@ -98,4 +98,4 @@ Weitere Informationen zu IoT Hub:
 [Supported devices]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/tested_configurations.md
 [Azure IoT Developer Center]: http://www.azure.com/develop/iot
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

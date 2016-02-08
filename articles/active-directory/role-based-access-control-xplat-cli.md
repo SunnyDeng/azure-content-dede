@@ -3,7 +3,7 @@
 	description="Verwalten der rollenbasierten Zugriffssteuerung mit der Azure-Befehlszeilenschnittstelle"
 	services="active-directory"
 	documentationCenter="na"
-	authors="IHenkel"
+	authors="kgremban"
 	manager="stevenpo"
 	editor=""/>
 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="command-line-interface"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/04/2016"
-	ms.author="inhenk"/>
+	ms.date="01/25/2016"
+	ms.author="kgremban"/>
 
 # Verwalten der rollenbasierten Zugriffssteuerung mit der Azure-Befehlszeilenschnittstelle (Azure-CLI) #
 
@@ -22,9 +22,9 @@
 - [Windows PowerShell](role-based-access-control-powershell.md)
 - [Azure CLI](/role-based-access-control-xplat-cli-install.md)
 
-Mit der rollenbasierten Zugriffssteuerung (RBAC) im Azure-Portal und der Azure-Ressourcen-Manager-API können Sie den Zugriff auf Ihr Abonnement und Ihre Ressourcen differenziert steuern. Mithilfe dieser Funktion lassen sich Zugriffsberechtigungen für Active Directory-Benutzer, -Gruppen oder -Dienstprinzipale festlegen, indem ihnen bestimmte Rollen für einen bestimmten Bereich zugewiesen werden.
+Mit der rollenbasierten Zugriffssteuerung (Role-Based Access Control, RBAC) im Azure-Portal und der Azure-Ressourcen-Manager-API können Sie den Zugriff auf Ihr Abonnement und Ihre Ressourcen differenziert steuern. Mithilfe dieser Funktion lassen sich Zugriffsberechtigungen für Active Directory-Benutzer, -Gruppen oder -Dienstprinzipale festlegen, indem ihnen bestimmte Rollen für einen bestimmten Bereich zugewiesen werden.
 
-In diesem Lernprogramm erfahren Sie, wie Sie mit der Azure-Befehlszeilenschnittstelle die rollenbasierte Zugriffssteuerung verwalten können. Das Lernprogramm beschreibt die Erstellung und Überprüfung von Rollenzuweisungen.
+In diesem Tutorial erfahren Sie, wie Sie die Azure-Befehlszeilenschnittstelle zum Verwalten der rollenbasierten Zugriffssteuerung verwenden. Das Lernprogramm beschreibt die Erstellung und Überprüfung von Rollenzuweisungen.
 
 **Geschätzter Zeitaufwand**: 15 Minuten.
 
@@ -33,7 +33,7 @@ In diesem Lernprogramm erfahren Sie, wie Sie mit der Azure-Befehlszeilenschnitts
 Bevor Sie RBAC mithilfe der Azure-Befehlszeilenschnittstelle verwalten können, benötigen Sie Folgendes:
 
 - Azure-Befehlszeilenschnittstelle, Version 0.8.8 oder höher. Um die neueste Version zu installieren und sie Ihrem Azure-Abonnement zuzuordnen, lesen Sie [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md).
-- Lesen Sie bitte auch die folgenden Lernprogramme, um sich mit der Einrichtung und Verwendung des Azure-Ressourcen-Managers in der Azure-Befehlszeilenschnittstelle vertraut zu machen: [Verwenden der Azure-Befehlszeilenschnittstelle mit dem Azure-Ressourcen-Manager](../xplat-cli-azure-resource-manager.md)
+- Lesen Sie bitte auch das folgende Tutorial, um sich mit der Einrichtung und Verwendung des Azure-Ressourcen-Managers in der Azure-Befehlszeilenschnittstelle vertraut zu machen: [Verwenden der Azure-Befehlszeilenschnittstelle mit dem Azure-Ressourcen-Manager](../xplat-cli-azure-resource-manager.md).
 
 ## Dieses Lernprogramm umfasst folgende Punkte ##
 
@@ -116,16 +116,13 @@ Um eine Rollenzuweisung zu erstellen, müssen Sie folgende Überlegungen anstell
 
 Verwenden Sie anschließend den Befehl `azure role assignment create`, um eine Rollenzuweisung zu erstellen. Beispiel:
 
- - Mit dem folgenden Befehl wird eine Rollenzuweisung auf der aktuellen Abonnementebene für einen Benutzer mit Leseberechtigung erstellt:
-
+ 	#This will create a role assignment at the current subscription level for a user as a reader:
     `azure role assignment create --upn <user's email> -o Reader`
 
-- Mit dem folgenden Befehl wird eine Rollenzuweisung auf Ressourcengruppenebene erstellt:
-
+	#This will create a role assignment at a resource group level:
     `PS C:\> azure role assignment create --upn <user's email> -o Contributor -g group1`
 
-- Mit dem folgenden Befehl wird eine Rollenzuweisung auf Ressourcenebene erstellt:
-
+	#This will create a role assignment at a resource level:
     `azure role assignment create --upn <user's email> -o Owner -g group1 -r Microsoft.Web/sites -u site1`
 
 ## <a id="verify"></a>Überprüfen von Berechtigungen ##
@@ -151,4 +148,4 @@ In den folgenden Themen und Ressourcen erhalten Sie weitere Informationen zur Ve
 - [Konfigurieren der rollenbasierten Zugriffssteuerung mit Windows PowerShell](role-based-access-control-powershell.md)
 - [Behandlung von Problemen bei der rollenbasierten Zugriffssteuerung](role-based-access-control-troubleshooting.md)
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

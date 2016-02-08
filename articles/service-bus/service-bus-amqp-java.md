@@ -12,14 +12,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="10/07/2015"
+   ms.date="01/26/2016"
    ms.author="sethm" />
 
 # Verwenden von Service Bus aus Java mit AMQP 1.0
 
 [AZURE.INCLUDE [service-bus-selector-amqp](../../includes/service-bus-selector-amqp.md)]
 
-Der Java Message Service (JMS) ist eine Standard-API für das Arbeiten mit nachrichtenbasierter Middleware auf der Java-Plattform. Azure Service Bus wurde mit der auf AMQP 1.0 basierenden JMS-Clientbibliothek getestet, die vom Apache Qpid-Projekt entwickelt wurde. Diese Bibliothek unterstützt die vollständige JMS 1.1-API und kann mit jedem mit AMQP 1.0 kompatiblen Messagingdienst verwendet werden. Dieses Szenario wird auch in Service Bus für Windows Server (lokaler Service Bus) unterstützt. Weitere Informationen finden Sie unter [AMQP in Service Bus für Windows Server][].
+Der Java Message Service (JMS) ist eine Standard-API für das Arbeiten mit nachrichtenbasierter Middleware auf der Java-Plattform. Microsoft Azure Service Bus wurde mit der auf AMQP 1.0 basierenden JMS-Clientbibliothek getestet, die im Rahmen des Apache Qpid-Projekts entwickelt wurde. Diese Bibliothek unterstützt die vollständige JMS 1.1-API und kann mit jedem mit AMQP 1.0 kompatiblen Messagingdienst verwendet werden. Dieses Szenario wird auch in [Service Bus für Windows Server](https://msdn.microsoft.com/library/dn282144.aspx) (lokaler Service Bus) unterstützt. Weitere Informationen finden Sie unter [AMQP in Service Bus für Windows Server][].
 
 ## Herunterladen der Apache Qpid AMQP 1.0 JMS-Clientbibliothek
 
@@ -37,7 +37,7 @@ Folgende vier JAR-Dateien müssen aus dem Apache Qpid JMS AMQP 1.0-Verteilungsar
 
 ## Verwenden von Service Bus-Warteschlangen, -Themen und -Abonnements aus JMS
 
-### JNDI (Java Naming and Directory Interface)
+### JNDI (Java Naming and Directory Interface; Java Benennungs- und Verzeichnisschnittstelle)
 
 JMS verwendet die Java Naming and Directory Interface (JNDI), um eine Trennung zwischen logischen und physischen Namen umzusetzen. Zwei Typen von JMS-Objekten werden mit JNDI aufgelöst: **ConnectionFactory** und **Destination**. JNDI verwendet ein Anbietermodell, das Sie mit verschiedenen Verzeichnisdiensten verbinden können, um Namensauflösungsfunktionen zu implementieren. Die Apache Qpid JMS AMQP 1.0-Bibliothek enthält einen einfachen dateibasierten JNDI-Anbieter, der mithilfe einer Textdatei konfiguriert wird.
 
@@ -86,7 +86,7 @@ amqps://[username]:[password]@[namespace].servicebus.windows.net
 | `[username]` | Der Service Bus-Ausstellername, der aus dem [klassischen Azure-Portal][] abgerufen wird. | | | | |
 | `[password]` | Die URL-codierte Form des Service Bus-Ausstellerschlüssels, der aus dem [klassischen Azure-Portal][] abgerufen wird. | | | | |
 
-> [AZURE.NOTE]Sie müssen das Kennwort manuell URL-codieren. Ein nützliches URL-Codierungshilfsprogramm ist unter [http://www.w3schools.com/tags/ref\_urlencode.asp](http://www.w3schools.com/tags/ref_urlencode.asp) verfügbar.
+> [AZURE.NOTE] Sie müssen das Kennwort manuell URL-codieren. Ein nützliches URL-Codierungshilfsprogramm ist unter [http://www.w3schools.com/tags/ref\_urlencode.asp](http://www.w3schools.com/tags/ref_urlencode.asp) verfügbar.
 
 Angenommen, die aus dem Azure-Portal abgerufenen Informationen lauten wie folgt:
 
@@ -362,25 +362,7 @@ Die folgende Tabelle zeigt, wie die .NET-Eigenschaftstypen den JMS-Eigenschaftst
 
 | .NET-Eigenschaftstyp | JMS-Eigenschaftstyp | Hinweise |
 |--------------------|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| byte | UnsignedByte | - |
-| sbyte | Byte | - |
-| char | Character | - |
-| short | Short | - |
-| ushort | UnsignedShort | - |
-| int | Integer | - |
-| uint | UnsignedInteger | - |
-| long | Long | - |
-| ulong | UnsignedLong | - |
-| float | Float | - |
-| double | Double | - |
-| decimal | BigDecimal | - |
-| bool | Boolean | - |
-| Guid | UUID | - |
-| string | String | - |
-| DateTime | Date | - |
- | DateTimeOffset | DescribedType | DateTimeOffset.UtcTicks zugeordnet zum AMQP-Typ:<type name=”datetime-offset” class=restricted source=”long”> <descriptor name=”com.microsoft:datetime-offset” /></type> |
-| TimeSpan | DescribedType | Timespan.Ticks zugeordnet zum AMQP-Typ:<type name=”timespan” class=restricted source=”long”> <descriptor name=”com.microsoft:timespan” /></type> |
-| Uri | DescribedType | Uri.AbsoluteUri zugeordnet zum AMQP-Typ:<type name=”uri” class=restricted source=”string”> <descriptor name=”com.microsoft:uri” /></type> |
+| byte | UnsignedByte | - | | sbyte | Byte | - | | char | Character | - | | short | Short | - | | ushort | UnsignedShort | - | | int | Integer | - | | uint | UnsignedInteger | - | | long | Long | - | | ulong | UnsignedLong | - | | float | Float | - | | double | Double | - | | decimal | BigDecimal | - | | bool | Boolean | - | | Guid | UUID | - | | string | String | - | | DateTime | Date | - | | DateTimeOffset | DescribedType | DateTimeOffset.UtcTicks zugeordnet zum AMQP-Typ:<type name=”datetime-offset” class=restricted source=”long”> <descriptor name=”com.microsoft:datetime-offset” /></type> | | TimeSpan | DescribedType | Timespan.Ticks zugeordnet zum AMQP-Typ:<type name=”timespan” class=restricted source=”long”> <descriptor name=”com.microsoft:timespan” /></type> | | Uri | DescribedType | Uri.AbsoluteUri zugeordnet zum AMQP-Typ:<type name=”uri” class=restricted source=”string”> <descriptor name=”com.microsoft:uri” /></type> |
 
 ### Standardheader
 
@@ -390,32 +372,13 @@ Die folgenden Tabellen zeigen, wie die JMS-Standardheader und [BrokeredMessage][
 
 | JMS | Service Bus .NET | Hinweise |
 |------------------|--------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| JMSCorrelationID | Message.CorrelationID | - |
-| JMSDeliveryMode | Derzeit nicht verfügbar | Service Bus unterstützt nur dauerhafte Nachrichten. z. B. DeliveryMode.PERSISTENT, unabhängig davon, was angegeben wird. |
-| JMSDestination | Message.To | - |
-| JMSExpiration | Message. TimeToLive | Conversion |
-| JMSMessageID | Message.MessageID | Standardmäßig wird die JMSMessageID in binärer Form in der AMQP-Nachricht codiert. Beim Empfang einer binären Nachrichten-ID wird die .NET-Clientbibliothek basierend auf den Unicode-Werten der Bytes in eine Zeichenfolgendarstellung konvertiert. Damit die JMS-Bibliothek Zeichenfolgennachrichten-IDs verwendet, fügen Sie die Zeichenfolge "binary-messageid=false" an die Abfrageparameter von "JNDI ConnectionURL" an. Beispiel: “amqps://[username]:[password]@[namespace].servicebus.windows.net? binary-messageid=false”. |
-| JMSPriority | Derzeit nicht verfügbar. | Service Bus unterstützt keine Nachrichtenpriorität. |
-| JMSRedelivered | Derzeit nicht verfügbar | - |
-| JMSReplyTo | Message. ReplyTo | - |
-| JMSTimestamp | Message.EnqueuedTimeUtc | Conversion |
-| JMSType | Message.Properties[“jms-type”] | - |
+| JMSCorrelationID | Message.CorrelationID | - | | JMSDeliveryMode | Derzeit nicht verfügbar | Service Bus unterstützt nur dauerhafte Nachrichten. z. B. DeliveryMode.PERSISTENT, unabhängig davon, was angegeben wird. | | JMSDestination | Message.To | - | | JMSExpiration | Message. TimeToLive | Conversion | | JMSMessageID | Message.MessageID | Standardmäßig wird die JMSMessageID in binärer Form in der AMQP-Nachricht codiert. Beim Empfang einer binären Nachrichten-ID wird die .NET-Clientbibliothek basierend auf den Unicode-Werten der Bytes in eine Zeichenfolgendarstellung konvertiert. Damit die JMS-Bibliothek Zeichenfolgennachrichten-IDs verwendet, fügen Sie die Zeichenfolge "binary-messageid=false" an die Abfrageparameter von "JNDI ConnectionURL" an. Beispiel: “amqps://[username]:[password]@[namespace].servicebus.windows.net? binary-messageid=false”. | | JMSPriority | Derzeit nicht verfügbar. | Service Bus unterstützt keine Nachrichtenpriorität. | | JMSRedelivered | Derzeit nicht verfügbar | - | | JMSReplyTo | Message. ReplyTo | - | | JMSTimestamp | Message.EnqueuedTimeUtc | Conversion | | JMSType | Message.Properties[“jms-type”] | - |
 
 #### .NET-API von Service Bus zu JMS
 
 | Service Bus .NET | JMS | Hinweise |
 |-------------------------|------------------|-------------------------|
-| ContentType | - | Derzeit nicht verfügbar |
-| CorrelationId | JMSCorrelationID | - |
-| EnqueuedTimeUtc | JMSTimestamp | Conversion |
-| Label | – | Derzeit nicht verfügbar |
-| MessageId | JMSMessageID | - |
-| ReplyTo | JMSReplyTo | - |
-| ReplyToSessionId | – | Derzeit nicht verfügbar |
-| ScheduledEnqueueTimeUtc | – | Derzeit nicht verfügbar |
-| SessionId | – | Derzeit nicht verfügbar |
-| TimeToLive | JMSExpiration | Conversion |
-| To | JMSDestination | - |
+| ContentType | - | Derzeit nicht verfügbar | | CorrelationId | JMSCorrelationID | - | | EnqueuedTimeUtc | JMSTimestamp | Conversion | | Label | – | Derzeit nicht verfügbar | | MessageId | JMSMessageID | - | | ReplyTo | JMSReplyTo | - | | ReplyToSessionId | – | Derzeit nicht verfügbar | | ScheduledEnqueueTimeUtc | – | Derzeit nicht verfügbar | | SessionId | – | Derzeit nicht verfügbar | | TimeToLive | JMSExpiration | Conversion | | To | JMSDestination | - |
 
 ## Nicht unterstützte Funktionen und Einschränkungen
 
@@ -446,4 +409,4 @@ Möchten Sie mehr erfahren? Nutzen Sie die folgenden Links:
 [Übersicht über Service Bus AMQP]: service-bus-amqp-overview.md
 [klassischen Azure-Portal]: http://manage.windowsazure.com
 
-<!----HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

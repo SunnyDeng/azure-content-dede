@@ -1,6 +1,7 @@
 <properties 
-	pageTitle="Importieren von Daten in DocumentDB | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie das Open-Source-basierte DocumentDB-Datenmigrationstool verwenden, um Daten aus verschiedenen Quellen, z. B. JSON-Dateien, CSV-Dateien, SQL, MongoDB, Azure-Tabellenspeicher, Amazon DynamoDB und DocumentDB-Sammlungen, in DocumentDB zu importieren." 
+	pageTitle="Datenbank-Migrationstools – Konvertieren von CSV zu JSON | Microsoft Azure" 
+	description="Informationen zum Verwenden der Open-Source- Datenmigrationstools für DocumentDB zum Importieren von Daten in DocumentDB. MongoDB, SQL, Table Storage, DynamoDB und CSV in JSON." 
+	keywords="CSV zu JSON, Datenbank-Migrationstools, Konvertieren von CSV zu JSON"
 	services="documentdb" 
 	authors="andrewhoh" 
 	manager="jhubbard" 
@@ -16,9 +17,9 @@
 	ms.date="10/16/2015" 
 	ms.author="anhoh"/>
 
-# Importieren von Daten in DocumentDB #
+# Importieren von Daten in DocumentDB – Datenbank-Migrationstool
 
-Dieser Artikel beschreibt, wie Sie das Open-Source-basierte DocumentDB-Datenmigrationstool verwenden, um Daten aus verschiedenen Quellen, z. B. JSON-Dateien, CSV-Dateien, SQL, MongoDB, Azure-Tabellenspeicher, Amazon DynamoDB und DocumentDB-Sammlungen, in [Microsoft Azure DocumentDB](http://azure.microsoft.com/services/documentdb/) zu importieren.
+Dieser Artikel beschreibt, wie Sie das Open-Source-basierte DocumentDB-Datenmigrationstool verwenden, um Daten aus verschiedenen Quellen, z. B. JSON-Dateien, CSV-Dateien, SQL, MongoDB, Azure-Tabellenspeicher, Amazon DynamoDB und DocumentDB-Sammlungen, in [Microsoft Azure DocumentDB](https://azure.microsoft.com/services/documentdb/) zu importieren.
 
 Nach Lesen dieses Artikels können Sie die folgenden Fragen beantworten:
 
@@ -64,7 +65,7 @@ Der Quellcode des Migrationstools ist in GitHub in [diesem Repository](https://g
 
 Mit der Importprogrammoption für JSON-Dateiquellen können Sie ein oder mehrere JSON-Dateien mit einem einzelnen Dokument oder JSON-Dateien mit jeweils einem Array aus JSON-Dokumenten importieren. Wenn Sie Ordner hinzufügen, die zu importierende JSON-Dateien enthalten, können Sie in den Unterordnern rekursiv nach Dateien suchen.
 
-![Screenshot der Optionen für JSON-Dateiquellen](./media/documentdb-import-data/jsonsource.png)
+![Screenshot der Optionen für JSON-Dateiquellen – Datenbank-Migrationstools](./media/documentdb-import-data/jsonsource.png)
 
 Hier finden Sie einige Beispiele für Befehlszeilen zum Importieren von JSON-Dateien:
 
@@ -87,13 +88,13 @@ Hier finden Sie einige Beispiele für Befehlszeilen zum Importieren von JSON-Dat
 
 Mit der Importprogrammoption für MongoDB-Dateiquellen können Sie Dateien aus einer einzelnen MongoDB-Sammlung importieren und optional Dokumente mithilfe einer Abfrage filtern und/oder die Dokumentstruktur mithilfe einer Projektion ändern.
 
-![Screenshot der Optionen für MongoDB-Quellen](./media/documentdb-import-data/mongodbsource.png)
+![Screenshot der Optionen für MongoDB-Quellen – DocumentDB im Vergleich mit MongoDB](./media/documentdb-import-data/mongodbsource.png)
 
 Die Verbindungszeichenfolge weist das MongoDB-Standardformat auf:
 
 	mongodb://<dbuser>:<dbpassword>@<host>:<port>/<database>
 
-> [AZURE.NOTE]Verwenden Sie den Befehl "Überprüfen", um sicherzustellen, dass auf die im Feld "Verbindungszeichenfolge" angegebene MongoDB-Instanz zugegriffen werden kann.
+> [AZURE.NOTE] Verwenden Sie den Befehl "Überprüfen", um sicherzustellen, dass auf die im Feld "Verbindungszeichenfolge" angegebene MongoDB-Instanz zugegriffen werden kann.
 
 Geben Sie den Namen der Sammlung ein, aus der Daten importiert werden sollen. Optional können Sie eine Abfrage (z. B. {pop: {$gt:5000}}) und/oder eine Projektion (z. B. {loc:0}) angeben oder eine Datei für eine Abfrage bzw. Projektion bereitstellen, um die zu importierenden Daten zu filtern und zu formen.
 
@@ -109,7 +110,7 @@ Hier finden Sie einige Beispiele für Befehlszeilen zum Importieren aus MongoDB:
 
 Mit der Importprogrammoption für JSON-Dateiquellen und MongoDB-Exportdateien können Sie eine oder mehrere JSON-Dateien importieren, die mit dem mongoexport-Dienstprogramm erzeugt wurden.
 
-![Screenshot Optionen für MongoDB-Exportquellen](./media/documentdb-import-data/mongodbexportsource.png)
+![Screenshot der Exportoptionen für MongoDB-Quellen – DocumentDB im Vergleich mit MongoDB](./media/documentdb-import-data/mongodbexportsource.png)
 
 Wenn Sie Ordner hinzufügen, die zu importierende JSON-Dateien aus einem MongoDB-Export enthalten, können Sie in den Unterordnern rekursiv nach Dateien suchen:
 
@@ -121,11 +122,11 @@ Hier finden Sie ein Beispiel für eine Befehlszeile zum Importieren von JSON-Dat
 
 Mit der Importprogrammoption für SQL-Quellen können Sie Datensätze aus einer einzelnen SQL Server-Datenbank importieren und mithilfe einer Abfrage filtern. Darüber hinaus können Sie die Dokumentstruktur ändern, indem Sie ein Schachtelungstrennzeichen angeben (mehr dazu weiter unten).
 
-![Screenshot der Optionen für SQL-Quellen](./media/documentdb-import-data/sqlexportsource.png)
+![Screenshot der Optionen für SQL-Dateiquellen – Datenbank-Migrationstools](./media/documentdb-import-data/sqlexportsource.png)
 
 Die Verbindungszeichenfolge weist das standardmäßige Format für SQL-Verbindungszeichenfolgen auf.
 
-> [AZURE.NOTE]Verwenden Sie den Befehl "Überprüfen", um sicherzustellen, dass auf die im Feld "Verbindungszeichenfolge" angegebene SQL Server-Instanz zugegriffen werden kann.
+> [AZURE.NOTE] Verwenden Sie den Befehl "Überprüfen", um sicherzustellen, dass auf die im Feld "Verbindungszeichenfolge" angegebene SQL Server-Instanz zugegriffen werden kann.
 
 Die Schachtelungstrennzeicheneigenschaft wird zum Erstellen hierarchischer Beziehungen (Filialdokumente) während des Imports verwendet. Betrachten Sie die folgende SQL-Abfrage:
 
@@ -147,15 +148,15 @@ Hier finden Sie einige Beispiele für Befehlszeilen zum Importieren aus SQL Serv
 	#Import records from sql which match a query and create hierarchical relationships
 	dt.exe /s:SQL /s.ConnectionString:"Data Source=<server>;Initial Catalog=AdventureWorks;User Id=advworks;Password=<password>;" /s.Query:"select CAST(BusinessEntityID AS varchar) as Id, Name, AddressType as [Address.AddressType], AddressLine1 as [Address.AddressLine1], City as [Address.Location.City], StateProvinceName as [Address.Location.StateProvinceName], PostalCode as [Address.PostalCode], CountryRegionName as [Address.CountryRegionName] from Sales.vStoreWithAddresses WHERE AddressType='Main Office'" /s.NestingSeparator:. /t:DocumentDBBulk /t.ConnectionString:" AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:StoresSub /t.IdField:Id /t.CollectionTier:S3
 
-##<a id="CSV"></a>Importieren von CSV-Dateien ##
+##<a id="CSV"></a>Importieren von CSV-Dateien – Konvertieren von CSV zu JSON ##
 
 Mit der Importprogrammoption für CSV-Dateiquellen können Sie eine oder mehrere CSV-Dateien importieren. Wenn Sie Ordner hinzufügen, die zu importierende CSV-Dateien enthalten, können Sie in den Unterordnern rekursiv nach Dateien suchen.
 
-![Screenshot der Optionen für CSV-Quellen](media/documentdb-import-data/csvsource.png)
+![Screenshot der Optionen für CSV-Quellen – CSV in JSON](media/documentdb-import-data/csvsource.png)
 
 Ähnlich wie bei SQL-Quelldateien wird die Schachtelungstrennzeicheneigenschaft zum Erstellen hierarchischer Beziehungen (Filialdokumente) während des Imports verwendet. Betrachten Sie folgende CSV-Kopfzeile und Datenzeilen:
 
-![Screenshot der CSV-Beispieldatensätze](./media/documentdb-import-data/csvsample.png)
+![Screenshot der CSV-Beispieldatensätze – CSV in JSON](./media/documentdb-import-data/csvsample.png)
 
 Beachten Sie die Aliase wie z. B."DomainInfo.Domain\_Name" und "RedirectInfo.Redirecting". Durch Angabe des Schachtelungstrennzeichens "." erstellt das Importtool während des Imports die Filialdokumente "DomainInfo" und "RedirectInfo". Hier finden Sie ein Beispiel für ein Zieldokument in DocumentDB:
 
@@ -184,7 +185,7 @@ Die Verbindungszeichenfolge für den Azure-Tabellenspeicher weist folgendes Form
 
 	DefaultEndpointsProtocol=<protocol>;AccountName=<Account Name>;AccountKey=<Account Key>;
 
-> [AZURE.NOTE]Verwenden Sie den Befehl "Überprüfen", um sicherzustellen, dass auf die im Feld "Verbindungszeichenfolge" angegebene Azure-Tabellenspeicherinstanz zugegriffen werden kann.
+> [AZURE.NOTE] Verwenden Sie den Befehl "Überprüfen", um sicherzustellen, dass auf die im Feld "Verbindungszeichenfolge" angegebene Azure-Tabellenspeicherinstanz zugegriffen werden kann.
 
 Geben Sie den Namen des Azure-Tabellenspeichers ein, aus dem Daten importiert werden sollen. Optional können Sie einen [Filter](https://msdn.microsoft.com/library/azure/ff683669.aspx) angeben.
 
@@ -205,15 +206,15 @@ Hier finden Sie ein Beispiel für eine Befehlszeile zum Importieren aus einem Az
 
 Mit der Importprogrammoption für Amazon DynamoDB-Quellen können Sie aus einer einzelnen Amazon DynamoDB-Tabelle importieren und auf Wunsch die zu importierenden Entitäten filtern. Mehrere Vorlagen werden für einen einfachen Import bereitgestellt.
 
-![Screenshot der Optionen für Amazon DynamoDB-Quellen](./media/documentdb-import-data/dynamodbsource1.png)
+![Screenshot der Optionen für Amazon DynamoDB-Dateiquellen – Datenbank-Migrationstools](./media/documentdb-import-data/dynamodbsource1.png)
 
-![Screenshot der Optionen für Amazon DynamoDB-Quellen](./media/documentdb-import-data/dynamodbsource2.png)
+![Screenshot der Optionen für Amazon DynamoDB-Dateiquellen – Datenbank-Migrationstools](./media/documentdb-import-data/dynamodbsource2.png)
 
 Das Format der Amazon-DynamoDB-Verbindungszeichenfolge ist:
 
 	ServiceURL=<Service Address>;AccessKey=<Access Key>;SecretKey=<Secret Key>;
 
-> [AZURE.NOTE]Verwenden Sie den Befehl „Überprüfen“, um sicherzustellen, dass auf die im Feld „Verbindungszeichenfolge“ angegebene Amazon DynamoDB-Instanz zugegriffen werden kann.
+> [AZURE.NOTE] Verwenden Sie den Befehl „Überprüfen“, um sicherzustellen, dass auf die im Feld „Verbindungszeichenfolge“ angegebene Amazon DynamoDB-Instanz zugegriffen werden kann.
 
 Hier finden Sie ein Beispiel für die Befehlszeile zum Importieren von Amazon DynamoDB:
 
@@ -239,11 +240,11 @@ Die DocumentDB-Verbindungszeichenfolge weist folgendes Format auf:
 
 	AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;
 
-> [AZURE.NOTE]Verwenden Sie den Befehl "Überprüfen", um sicherzustellen, dass auf die im Feld "Verbindungszeichenfolge" angegebene DocumentDB-Instanz zugegriffen werden kann.
+> [AZURE.NOTE] Verwenden Sie den Befehl "Überprüfen", um sicherzustellen, dass auf die im Feld "Verbindungszeichenfolge" angegebene DocumentDB-Instanz zugegriffen werden kann.
 
 Zum Importieren von Daten aus einer einzelnen DocumentDB-Sammlung geben Sie den Namen der Sammlung ein, aus der Daten importiert werden sollen. Zum Importieren von Daten aus mehreren DocumentDB-Sammlungen geben Sie einen regulären Ausdruck ein, der mit den Namen von einer oder mehreren Sammlungen übereinstimmt (z. B. Sammlung01 | Sammlung02 | Sammlung03). Optional können Sie eine Abfrage angeben oder eine Datei für eine Abfrage bereitstellen, um die zu importierenden Daten zu filtern und zu formen.
 
-> [AZURE.NOTE]Wenn Sie Daten aus einer einzelnen Sammlung importieren, deren Name in regulären Ausdrücken verwendete Zeichen enthält, müssen diese Zeichen durch Escapezeichen geschützt werden, da für das Feld "Collection" reguläre Ausdrücke zulässig sind.
+> [AZURE.NOTE] Wenn Sie Daten aus einer einzelnen Sammlung importieren, deren Name in regulären Ausdrücken verwendete Zeichen enthält, müssen diese Zeichen durch Escapezeichen geschützt werden, da für das Feld "Collection" reguläre Ausdrücke zulässig sind.
 
 Die Importprogrammoption für DocumentDB-Quellen weist die folgenden erweiterten Optionen auf:
 
@@ -254,7 +255,7 @@ Die Importprogrammoption für DocumentDB-Quellen weist die folgenden erweiterten
 
 ![Screenshot der erweiterten Optionen für DocumentDB-Quellen](./media/documentdb-import-data/documentdbsourceoptions.png)
 
-> [AZURE.TIP]Standardmäßig verwendet das Importtool den Verbindungsmodus DirectTcp. Wenn Firewallprobleme auftreten, wechseln Sie zum Gatewaymodus, da dieser nur Port 443 erfordert.
+> [AZURE.TIP] Standardmäßig verwendet das Importtool den Verbindungsmodus DirectTcp. Wenn Firewallprobleme auftreten, wechseln Sie zum Gatewaymodus, da dieser nur Port 443 erfordert.
 
 
 Hier finden Sie einige Beispiele für Befehlszeilen zum Importieren aus DocumentDB:
@@ -280,7 +281,7 @@ Das Format der Verbindungszeichenfolge „HBase Stargate“ lautet:
 
 	ServiceURL=<server-address>;Username=<username>;Password=<password>
 
-> [AZURE.NOTE]Verwenden Sie den Befehl „Überprüfen“, um sicherzustellen, dass auf die im Feld „Verbindungszeichenfolge“ angegebene HBase-Instanz zugegriffen werden kann.
+> [AZURE.NOTE] Verwenden Sie den Befehl „Überprüfen“, um sicherzustellen, dass auf die im Feld „Verbindungszeichenfolge“ angegebene HBase-Instanz zugegriffen werden kann.
 
 Hier finden Sie ein Beispiel für die Befehlszeile zum Importieren von HBase:
 
@@ -296,7 +297,7 @@ Die DocumentDB-Verbindungszeichenfolge weist folgendes Format auf:
 
 	AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;
 
-> [AZURE.NOTE]Verwenden Sie den Befehl "Überprüfen", um sicherzustellen, dass auf die im Feld "Verbindungszeichenfolge" angegebene DocumentDB-Instanz zugegriffen werden kann.
+> [AZURE.NOTE] Verwenden Sie den Befehl "Überprüfen", um sicherzustellen, dass auf die im Feld "Verbindungszeichenfolge" angegebene DocumentDB-Instanz zugegriffen werden kann.
 
 Zum Importieren von Daten in eine einzelne Sammlung geben Sie den Namen der Sammlung ein, in die Daten importiert werden sollen, und klicken dann auf die Schaltfläche "Hinzufügen". Zum Importieren von Daten in mehrere Sammlungen geben Sie entweder jeden Sammlungsnamen einzeln ein, oder geben Sie mit der folgenden Syntax mehrere Sammlungen an: *Sammlungspräfix*[IndexStart - IndexEnde]. Wenn Sie mehrere Sammlungen über die oben genannte Syntax angeben, berücksichtigen Sie Folgendes:
 
@@ -306,7 +307,7 @@ Zum Importieren von Daten in eine einzelne Sammlung geben Sie den Namen der Samm
 
 Nachdem Sie den bzw. die Sammlungsnamen angegeben haben, wählen Sie den gewünschten Tarif für die Sammlung(en) aus (S1, S2 oder S3). Um die beste Importleistung zu erreichen, wählen Sie S3. Weitere Informationen zu DocumentDB-Leistungsstufen [finden Sie hier](documentdb-performance-levels.md).
 
-> [AZURE.NOTE]Die Einstellung der Leistungsstufe gilt nur für die Sammlungserstellung. Wenn die angegebene Sammlung bereits vorhanden ist, wird der zugehörige Tarif nicht geändert.
+> [AZURE.NOTE] Die Einstellung der Leistungsstufe gilt nur für die Sammlungserstellung. Wenn die angegebene Sammlung bereits vorhanden ist, wird der zugehörige Tarif nicht geändert.
 
 Beim Importieren von Daten in mehrere Sammlungen unterstützt das Importtool Sharding auf Hashbasis. Geben Sie in diesem Szenario die Dokumenteigenschaft an, die als Partitionsschlüssel verwendet werden soll (wenn der Partitionsschlüssel leer ist, werden die Dokumente nach dem Zufallsprinzip über die Zielsammlungen hinweg partitioniert).
 
@@ -336,7 +337,7 @@ Das DocumentDB-Massenimportprogramm weist die folgenden erweiterten Optionen auf
 
 ![Screenshot der erweiterten Optionen für den DocumentDB-Massenimport](./media/documentdb-import-data/docdbbulkoptions.png)
 
-> [AZURE.TIP]Standardmäßig verwendet das Importtool den Verbindungsmodus DirectTcp. Wenn Firewallprobleme auftreten, wechseln Sie zum Gatewaymodus, da dieser nur Port 443 erfordert.
+> [AZURE.TIP] Standardmäßig verwendet das Importtool den Verbindungsmodus DirectTcp. Wenn Firewallprobleme auftreten, wechseln Sie zum Gatewaymodus, da dieser nur Port 443 erfordert.
 
 ##<a id="DocumentDBSeqTarget"></a>Importieren in DocumentDB (sequenzieller Datensatzimport) ##
 
@@ -348,7 +349,7 @@ Die DocumentDB-Verbindungszeichenfolge weist folgendes Format auf:
 
 	AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;
 
-> [AZURE.NOTE]Verwenden Sie den Befehl "Überprüfen", um sicherzustellen, dass auf die im Feld "Verbindungszeichenfolge" angegebene DocumentDB-Instanz zugegriffen werden kann.
+> [AZURE.NOTE] Verwenden Sie den Befehl "Überprüfen", um sicherzustellen, dass auf die im Feld "Verbindungszeichenfolge" angegebene DocumentDB-Instanz zugegriffen werden kann.
 
 Zum Importieren von Daten in eine einzelne Sammlung geben Sie den Namen der Sammlung ein, in die Daten importiert werden sollen, und klicken dann auf die Schaltfläche "Hinzufügen". Zum Importieren von Daten in mehrere Sammlungen geben Sie entweder jeden Sammlungsnamen einzeln ein, oder geben Sie mit der folgenden Syntax mehrere Sammlungen an: *Sammlungspräfix*[IndexStart - IndexEnde]. Wenn Sie mehrere Sammlungen über die oben genannte Syntax angeben, berücksichtigen Sie Folgendes:
 
@@ -358,7 +359,7 @@ Zum Importieren von Daten in eine einzelne Sammlung geben Sie den Namen der Samm
 
 Nachdem Sie den bzw. die Sammlungsnamen angegeben haben, wählen Sie den gewünschten Tarif für die Sammlung(en) aus (S1, S2 oder S3). Um die beste Importleistung zu erreichen, wählen Sie S3. Weitere Informationen zu DocumentDB-Leistungsstufen [finden Sie hier](documentdb-performance-levels.md).
 
-> [AZURE.NOTE]Die Einstellung der Leistungsstufe gilt nur für die Sammlungserstellung. Wenn die angegebene Sammlung bereits vorhanden ist, wird der zugehörige Tarif nicht geändert.
+> [AZURE.NOTE] Die Einstellung der Leistungsstufe gilt nur für die Sammlungserstellung. Wenn die angegebene Sammlung bereits vorhanden ist, wird der zugehörige Tarif nicht geändert.
 
 Beim Importieren von Daten in mehrere Sammlungen unterstützt das Importtool Sharding auf Hashbasis. Geben Sie in diesem Szenario die Dokumenteigenschaft an, die als Partitionsschlüssel verwendet werden soll (wenn der Partitionsschlüssel leer ist, werden die Dokumente nach dem Zufallsprinzip über die Zielsammlungen hinweg partitioniert).
 
@@ -382,7 +383,7 @@ Das Programm für den Import von sequenziellen DocumentDB-Datensätzen weist die
 
 ![Screenshot der erweiterten Optionen für den sequenziellen DocumentDB-Datensatzimport](./media/documentdb-import-data/documentdbsequentialoptions.png)
 
-> [AZURE.TIP]Standardmäßig verwendet das Importtool den Verbindungsmodus DirectTcp. Wenn Firewallprobleme auftreten, wechseln Sie zum Gatewaymodus, da dieser nur Port 443 erfordert.
+> [AZURE.TIP] Standardmäßig verwendet das Importtool den Verbindungsmodus DirectTcp. Wenn Firewallprobleme auftreten, wechseln Sie zum Gatewaymodus, da dieser nur Port 443 erfordert.
 
 ##<a id="IndexingPolicy"></a>Festlegen einer Indizierungsrichtlinie zum Erstellen von DocumentDB-Sammlungen ##
 
@@ -401,7 +402,7 @@ Das Tool bietet folgende Richtlinienvorlagen:
 
 ![Screenshot der erweiterten Optionen für die DocumentDB-Indizierungsrichtlinie](./media/documentdb-import-data/indexingpolicy2.png)
 
-> [AZURE.NOTE]Wenn Sie keine Indizierungsrichtlinien angeben, wird die Standardrichtlinie verwendet. Weitere Informationen über DocumentDB-Indizierungsrichtlinien finden Sie [hier](documentdb-indexing-policies.md).
+> [AZURE.NOTE] Wenn Sie keine Indizierungsrichtlinien angeben, wird die Standardrichtlinie verwendet. Weitere Informationen über DocumentDB-Indizierungsrichtlinien finden Sie [hier](documentdb-indexing-policies.md).
 
 
 ## Exportieren in JSON-Datei
@@ -477,4 +478,4 @@ Geben Sie auf dem Bildschirm "Erweiterte Konfiguration" den Speicherort der Prot
 
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/16/2015"
+	ms.date="01/07/2016"
 	ms.author="cephalin"/>
 
 
@@ -67,15 +67,15 @@ Sie verwenden auch die übliche Verzweigungsstrategie, bei der Code aus der Entw
 	-	[Git](http://git-scm.com/documentation)
 	-	[PowerShell](https://technet.microsoft.com/library/bb978526.aspx)
 
-> [AZURE.NOTE]Sie benötigen ein Azure-Konto, um dieses Lernprogramm abzuschließen: Sie können [kostenlos ein Azure-Konto erstellen](/pricing/free-trial/?WT.mc_id=A261C142F). Sie erhalten ein Guthaben, das Sie zum Ausprobieren der kostenpflichtigen Azure-Dienste nutzen können. Sie können das Konto behalten und weiterhin kostenlose Azure-Dienste wie z. B. Web-Apps nutzen, wenn das Guthaben aufgebraucht ist. Sie können von [Vorteilen für Visual Studio-Abonnenten](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) profitieren. Über Ihr Visual Studio-Abonnement erhalten Sie jeden Monat Gutschriften, die Sie für kostenpflichtige Azure-Dienste einsetzen können.
+> [AZURE.NOTE] Sie benötigen ein Azure-Konto, um dieses Lernprogramm abzuschließen: Sie können [kostenlos ein Azure-Konto erstellen](/pricing/free-trial/). Sie erhalten ein Guthaben, das Sie zum Ausprobieren der kostenpflichtigen Azure-Dienste nutzen können. Sie können das Konto behalten und weiterhin kostenlose Azure-Dienste wie z. B. Web-Apps nutzen, wenn das Guthaben aufgebraucht ist. Sie können von [Vorteilen für Visual Studio-Abonnenten](/pricing/member-offers/msdn-benefits-details/) profitieren. Über Ihr Visual Studio-Abonnement erhalten Sie jeden Monat Gutschriften, die Sie für kostenpflichtige Azure-Dienste einsetzen können.
 >
 > Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Einrichten der Produktionsumgebung ##
 
->[AZURE.NOTE]Das Skript in diesem Tutorial konfiguriert automatisch die kontinuierliche Veröffentlichung aus Ihrem GitHub-Repository. Dies erfordert, dass Ihre Anmeldeinformationen für GitHub bereits in Azure gespeichert sind. Andernfalls misslingt die skriptgesteuerte Bereitstellung, wenn versucht wird, Quellcodeverwaltungseinstellungen für die Web-Apps zu konfigurieren.
+>[AZURE.NOTE] Das Skript in diesem Tutorial konfiguriert automatisch die kontinuierliche Veröffentlichung aus Ihrem GitHub-Repository. Dies erfordert, dass Ihre Anmeldeinformationen für GitHub bereits in Azure gespeichert sind. Andernfalls misslingt die skriptgesteuerte Bereitstellung, wenn versucht wird, Quellcodeverwaltungseinstellungen für die Web-Apps zu konfigurieren.
 >
->Um Ihre GitHub-Anmeldeinformationen in Azure zu speichern, erstellen Sie eine Web-App im [Azure-Portal](https://portal.azure.com) und [konfigurieren die GitHub-Bereitstellung](web-sites-publish-source-control.md#Step7). Dies ist nur einmalig erforderlich.
+>Um Ihre GitHub-Anmeldeinformationen in Azure zu speichern, erstellen Sie eine Web-App im [Azure-Portal](https://portal.azure.com/) und [konfigurieren die GitHub-Bereitstellung](web-sites-publish-source-control.md#Step7). Dies ist nur einmalig erforderlich.
 
 In einem typischen DevOps-Szenario verfügen Sie über eine Anwendung, die aktiv in Azure ausgeführt wird und an der Sie über die fortlaufende Veröffentlichung Änderungen vornehmen möchten. In diesem Szenario haben Sie eine Vorlage, die Sie entwickelt, getestet und zum Bereitstellen der Produktionsumgebung verwendet haben. Diese Vorlage werden Sie in diesem Abschnitt einrichten.
 
@@ -99,7 +99,7 @@ In einem typischen DevOps-Szenario verfügen Sie über eine Anwendung, die aktiv
 
 	![](./media/app-service-agile-software-development/production-2-app-in-browser.png)
  
-	>[AZURE.TIP]Wenn Sie sich *&lt;Repositorystammverzeichnis>\\ARMTemplates\\Deploy.ps1* ansehen, erkennen Sie, wie das Skript Ressourcen mit eindeutigen IDs erstellt. Sie können den gleichen Ansatz zum Erstellen von Klonen der gleichen Bereitstellung befolgen, ohne sich Gedanken über in Konflikt stehende Ressourcennamen machen zu müssen.
+	>[AZURE.TIP] Wenn Sie sich *&lt;Repositorystammverzeichnis>\\ARMTemplates\\Deploy.ps1* ansehen, erkennen Sie, wie das Skript Ressourcen mit eindeutigen IDs erstellt. Sie können den gleichen Ansatz zum Erstellen von Klonen der gleichen Bereitstellung befolgen, ohne sich Gedanken über in Konflikt stehende Ressourcennamen machen zu müssen.
  
 6.	Zurück in der Git-Shell-Sitzung führen Sie Folgendes aus:
 
@@ -109,7 +109,7 @@ In einem typischen DevOps-Szenario verfügen Sie über eine Anwendung, die aktiv
 
 7.	Wenn das Skript abgeschlossen ist, navigieren Sie zurück zur Adresse des Front-Ends (http://ToDoApp*&lt;unique_string>*master.azurewebsites.net/), um zu prüfen, ob die Anwendung in der Produktionsumgebung ausgeführt wird.
  
-5.	Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an, und sehen Sie sich an, was erstellt wurde.
+5.	Melden Sie sich beim [Azure-Portal](https://portal.azure.com/) an, und sehen Sie sich an, was erstellt wurde.
 
 	Sie sollten zwei Web-Apps in derselben Ressourcengruppe sehen, von denen eine das Suffix `Api` im Namen enthält. Wenn Sie die Ressourcengruppenansicht betrachten, sehen Sie auch SQL-Datenbank und -Server, den App Service-Plan und die Stagingslots für die Web-Apps. Navigieren Sie durch die verschiedenen Ressourcen, und vergleichen Sie diese mit *&lt;Repositorystammverzeichnis>\\ARMTemplates\\ProdAndStage.json*, um zu prüfen, wie sie in der Vorlage konfiguriert sind.
 
@@ -152,7 +152,7 @@ Nun da Sie über eine komplexe Anwendung verfügen, die in Azure in der Produkti
 	-	Ihre Entwicklungsumgebung wird aktiv in Azure ausgeführt.
 	-	Das Löschen der Entwicklungsumgebung ist so einfach wie das Löschen der Ressourcengruppe. Die dazu erforderlichen Schritte lernen Sie [später](#delete) kennen.
 
->[AZURE.NOTE]Wenn mehrere Entwickler am neuen Update arbeiten, kann jeder über die folgenden Schritte mühelos eine Verzweigung und dedizierte Entwicklungsumgebung erstellen:
+>[AZURE.NOTE] Wenn mehrere Entwickler am neuen Update arbeiten, kann jeder über die folgenden Schritte mühelos eine Verzweigung und dedizierte Entwicklungsumgebung erstellen:
 >
 >1.	Erstellen einer eigenen Verzweigung des Repositorys in GitHub (siehe [Verzweigen eines Repositorys](https://help.github.com/articles/fork-a-repo/))
 >2.	Klonen der Verzweigung auf ihrem lokalen Computer
@@ -166,7 +166,7 @@ Und Sie sollten über sechs Web-Apps (drei Gruppen mit je zwei) in drei separate
 
 ![](./media/app-service-agile-software-development/test-2-all-webapps.png)
  
->[AZURE.NOTE]Beachten Sie, dass „ProdandStage.json“ angibt, dass die Produktionsumgebung den Tarif **Standard** verwenden soll, der für die Skalierbarkeit der Produktionsumgebung geeignet ist.
+>[AZURE.NOTE] Beachten Sie, dass „ProdandStage.json“ angibt, dass die Produktionsumgebung den Tarif **Standard** verwenden soll, der für die Skalierbarkeit der Produktionsumgebung geeignet ist.
 
 ## Erstellen von Builds und Testen aller Commits ##
 
@@ -180,7 +180,7 @@ Die Vorlagendateien "ProdAndStage.json" und "Dev.json" geben bereits die Quellve
 
 	![](./media/app-service-agile-software-development/commit-1-changes.png)
 
-	>[AZURE.NOTE]Wenn Sie das Bild oben nicht lesen können:
+	>[AZURE.NOTE] Wenn Sie das Bild oben nicht lesen können:
 	>
 	>- Ändern Sie in Zeile 18 `check-list` in `list-group`.
 	>- Ändern Sie in Zeile 19 `class="check-list-item"` in `class="list-group-item"`.
@@ -258,9 +258,8 @@ Da Sie Ihre Entwicklungs- und Testumgebungen absichtlich als eigenständige Ress
 	git push origin :Dev
 	git branch -d NewUpdate
 	git push origin :NewUpdate
-	Switch-AzureMode AzureResourceManager
-	Remove-AzureResourceGroup -Name ToDoApp<unique_string>dev-group -Force -Verbose
-	Remove-AzureResourceGroup -Name ToDoApp<unique_string>newupdate-group -Force -Verbose
+	Remove-AzureRmResourceGroup -Name ToDoApp<unique_string>dev-group -Force -Verbose
+	Remove-AzureRmResourceGroup -Name ToDoApp<unique_string>newupdate-group -Force -Verbose
 
 ## Zusammenfassung ##
 
@@ -281,4 +280,4 @@ Eine agile Softwareentwicklung ist für viele Unternehmen unverzichtbar, die Azu
 -	[Erstellen oder Bearbeiten von Benutzern in Azure AD](https://msdn.microsoft.com/library/azure/hh967632.aspx#BKMK_1)
 -	[Wiki zum Kudu-Projekt](https://github.com/projectkudu/kudu/wiki)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

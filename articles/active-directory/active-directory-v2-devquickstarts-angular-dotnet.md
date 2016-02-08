@@ -31,7 +31,7 @@ Bevor Sie anfangen können, müssen Sie Visual Studio herunterladen und install
 git clone --branch skeleton https://github.com/AzureADQuickStarst/AppModelv2-SinglePageApp-AngularJS-DotNet.git
 ```
 
-Die Skelett-App enthält alle Codebausteine für eine einfache AngularJS-App, aber es fehlen alle identitätsbezogenen Teile. Wenn Sie nicht dieser Beschreibung folgen möchten, können Sie anstelle dessen auch das vollständige Muster [herunterladen](https://github.com/AzureADQuickStarts/AppModelv2-SinglePageApp-AngularJS-DotNet/archive/complete.zip) oder klonen.
+Die Skelett-App enthält alle Codebausteine für eine einfache AngularJS-App, aber es fehlen alle identitätsbezogenen Teile. Wenn Sie dieser Beschreibung nicht genau folgen möchten, können Sie anstelle dessen auch das vollständige Muster [herunterladen](https://github.com/AzureADQuickStarts/AppModelv2-SinglePageApp-AngularJS-DotNet/archive/complete.zip) oder klonen.
 
 ```
 git clone https://github.com/AzureADSamples/SinglePageApp-AngularJS-DotNet.git
@@ -43,12 +43,12 @@ Erstellen Sie zuerst eine App im [App-Registrierungsportal](https://apps.dev.mic
 
 - die **Web**-Plattform für Ihre App hinzufügen.
 - den richtigen **Umleitungs-URI** eingeben. Die Standardeinstellung für dieses Beispiel lautet `https://localhost:44326/`.
-- Lassen Sie das Kontrollkästchen **Impliziten Fluss zulassen** aktiviert. 
+- das Kontrollkästchen **Impliziten Fluss zulassen** aktiviert lassen. 
 
-Notieren Sie die Ihrer App zugewiesene **Anwendungs-ID**. Sie benötigen sie in Kürze.
+Kopieren oder notieren Sie die Ihrer App zugewiesene **Anwendungs-ID**. Sie benötigen Sie in Kürze.
 
 ## Installieren von „adal.js“
-Navigieren Sie zunächst zum heruntergeladenen Projekt, und installieren Sie „adal.js“. Wenn bei Ihnen [bower](http://bower.io/) installiert ist, können Sie einfach diesen Befehl ausführen. Falls Abhängigkeitsversionskonflikte auftreten, wählen Sie einfach die höhere Version. ```
+Navigieren Sie zunächst zum heruntergeladenen Projekt, und installieren Sie „adal.js“. Wenn bei Ihnen [bower](http://bower.io/) installiert ist, können Sie einfach diesen Befehl ausführen. Falls Abhängigkeitsversionskonflikte auftreten, wählen Sie die höhere Version. ```
 bower install adal-angular#experimental
 ```
 
@@ -98,7 +98,7 @@ angular.module('todoApp', ['ngRoute','AdalAngular'])
 ...
 ```
 
-Nun können Sie `adalProvider` mit Ihrer Anwendungs-ID initialisieren:
+Nun können Sie den `adalProvider` mit Ihrer Anwendungs-ID initialisieren:
 
 ```js
 // app/scripts/app.js
@@ -138,7 +138,7 @@ adalProvider.init({
 ...
 ```
 
-Wenn ein Benutzer auf den Link `TodoList` klickt, wird „adal.js“ zur Anmeldung ggf. automatisch an Azure AD umgeleitet. Sie können auch explizit An- und Abmeldeanforderungen senden, indem Sie „adal.js“ in Ihren Controllern aufrufen:
+Wenn ein Benutzer nun auf den Link `TodoList` klickt, erfolgt durch „adal.js“ automatisch eine Umleitung zu Azure AD, um bei Bedarf die Anmeldung auszuführen. Sie können auch explizit An- und Abmeldeanforderungen senden, indem Sie „adal.js“ in Ihren Controllern aufrufen:
 
 ```js
 // app/scripts/homeCtrl.js
@@ -162,7 +162,7 @@ angular.module('todoApp')
 ```
 
 ## Anzeigen von Benutzerinformationen
-Da der Benutzer nun angemeldet ist, müssen Sie wahrscheinlich in Ihrer Anwendung auf die Authentifizierungsdaten des angemeldeten Benutzers zugreifen. „Adal.js“ macht diese Informationen im Objekt `userInfo` für Sie verfügbar. Fügen Sie zum Zugreifen auf dieses Objekt in einer Ansicht zunächst „adal.js“ zum Stammbereich des entsprechenden Controllers hinzu:
+Da der Benutzer nun angemeldet ist, müssen Sie wahrscheinlich in Ihrer Anwendung auf die Authentifizierungsdaten des angemeldeten Benutzers zugreifen. „Adal.js“ macht diese Informationen im `userInfo`-Objekt verfügbar. Fügen Sie zum Zugreifen auf dieses Objekt in einer Ansicht zunächst „adal.js“ zum Stammbereich des entsprechenden Controllers hinzu:
 
 ```js
 // app/scripts/userDataCtrl.js
@@ -172,7 +172,7 @@ angular.module('todoApp')
 .controller('userDataCtrl', ['$scope', 'adalAuthenticationService', function ($scope, adalService) {}]);
 ```
 
-Anschließend können Sie das Objekt `userInfo` direkt in der Ansicht behandeln:
+Anschließend können Sie das `userInfo`-Objekt direkt in der Ansicht adressieren:
 
 ```html
 <!--app/views/UserData.html-->
@@ -187,7 +187,7 @@ Anschließend können Sie das Objekt `userInfo` direkt in der Ansicht behandeln:
 ...
 ```
 
-Sie können anhand des Objekts `userInfo` auch ermitteln, ob der Benutzer angemeldet ist oder nicht.
+Sie können anhand des `userInfo`-Objekts auch ermitteln, ob der Benutzer angemeldet ist oder nicht.
 
 ```html
 <!--index.html-->
@@ -203,9 +203,9 @@ Sie können anhand des Objekts `userInfo` auch ermitteln, ob der Benutzer angeme
 ```
 
 ## Aufrufen der REST-API
-Nun ist es an der Zeit, Token abzurufen und die REST-API aufzurufen, um Aufgaben zu erstellen, zu lesen, zu aktualisieren und zu löschen. Aber wissen Sie was? Sie müssen *nichts* tun. „Adal.js“ kümmert sich automatisch um das Abrufen, Zwischenspeichern und Aktualisieren von Token. Außerdem werden diese Token an die ausgehenden AJAX-Anforderungen angefügt, die Sie an die REST-API senden.
+Nun ist es an der Zeit, Token abzurufen und die REST-API aufzurufen, um Aufgaben zu erstellen, zu lesen, zu aktualisieren und zu löschen. Aber wissen Sie was? Sie müssen hier *nichts* tun. „Adal.js“ kümmert sich automatisch um das Abrufen, Zwischenspeichern und Aktualisieren von Token. Außerdem werden diese Token an die ausgehenden AJAX-Anforderungen angefügt, die Sie an die REST-API senden.
 
-Wie das funktioniert? Mit [AngularJS-Interceptors](https://docs.angularjs.org/api/ng/service/$http). Diese ermöglichen „adal.js“ das Transformieren aus- und eingehender HTTP-Nachrichten. Darüber hinaus geht „adal.js“ davon aus, dass alle Anforderungen, die an dieselbe Domäne wie das Fenster gesendet werden, Token verwenden sollten, die für dieselbe Anwendungs-ID wie die AngularJS-App bestimmt sind. Daher haben wir sowohl in der Angular-App als auch in der NodeJS-REST-API die gleiche Anwendungs-ID verwendet. Natürlich können Sie dieses Verhalten überschreiben und „adal.js“ bei Bedarf zum Abrufen von Token für andere REST-APIs anweisen. Für dieses einfache Szenario sind jedoch die Standardeinstellungen ausreichend.
+Wie das funktioniert? Möglich wird dies durch [AngularJS-Interceptors](https://docs.angularjs.org/api/ng/service/$http). Mit ihrer Hilfe kann „adal.js“ aus- und eingehende HTTP-Nachrichten transformieren. Darüber hinaus geht „adal.js“ davon aus, dass alle Anforderungen, die an dieselbe Domäne wie das Fenster gesendet werden, Token verwenden sollten, die für dieselbe Anwendungs-ID wie die AngularJS-App bestimmt sind. Daher haben wir sowohl in der Angular-App als auch in der NodeJS-REST-API die gleiche Anwendungs-ID verwendet. Natürlich können Sie dieses Verhalten überschreiben und „adal.js“ bei Bedarf zum Abrufen von Token für andere REST-APIs anweisen. Für dieses einfache Szenario sind jedoch die Standardeinstellungen ausreichend.
 
 Der folgende Codeausschnitt veranschaulicht, wie einfach das Senden von Anforderungen mit Bearertoken von Azure AD ist:
 
@@ -217,12 +217,12 @@ return $http.get('/api/tasks');
 ...
 ```
 
-Glückwunsch! Ihre in Azure AD integrierte einseitige App ist nun vollständig. Genießen Sie das. Jetzt können Benutzer authentifiziert werden, die zugehörige Back-End-REST-API kann mit OpenID Connect sicher aufgerufen werden, und es können grundlegende Informationen zum Benutzer abgerufen werden. Standardmäßig werden Benutzer mit einem persönlichen Microsoft- oder einem Geschäfts- oder Schulkonto von Azure AD unterstützt. Führen Sie die App aus, und navigieren Sie in einem Browser zu `https://localhost:44326/`. Melden Sie sich mit einem persönlichen Microsoft-Konto oder einem Geschäfts- oder Schulkonto an. Fügen Sie der Aufgabenliste des Benutzers Aufgaben hinzu, und melden Sie sich ab. Versuchen Sie, sich mit dem anderen Kontotyp anzumelden. Falls ein Azure AD-Mandant Geschäfts- oder Schulbenutzer erstellen soll, [erfahren Sie hier, wie Sie einen Mandanten einrichten](active-directory-howto-tenant.md) (kostenlos).
+Glückwunsch! Ihre in Azure AD integrierte einseitige App ist nun vollständig. Genießen Sie das. Jetzt können Benutzer authentifiziert werden, die zugehörige Back-End-REST-API kann mit OpenID Connect sicher aufgerufen werden, und es können grundlegende Informationen zum Benutzer abgerufen werden. Standardmäßig werden Benutzer mit einem persönlichen Microsoft- oder einem Geschäfts- oder Schulkonto von Azure AD unterstützt. Führen Sie die App aus, und navigieren Sie in einem Browser zu `https://localhost:44326/`. Melden Sie sich mit einem persönlichen Microsoft-Konto oder einem Geschäfts- oder Schulkonto an. Fügen Sie der Aufgabenliste des Benutzers Aufgaben hinzu, und melden Sie sich ab. Versuchen Sie, sich mit dem anderen Kontotyp anzumelden. Falls Sie zum Erstellen von Geschäfts- oder Schulbenutzern einen Azure AD-Mandanten benötigen, [erfahren Sie hier, wie Sie einen Mandanten einrichten](active-directory-howto-tenant.md) (kostenlos).
 
-Weitere Informationen zum App-Model v2.0 (Vorschauversion) finden Sie unter [v2.0 – Entwicklerhandbuch](active-directory-appmodel-v2-overview.md). Weitere Ressourcen:
+Weitere Informationen zur Vorschauversion des App-Modells v2.0 finden Sie unter [v2.0 – Entwicklerhandbuch](active-directory-appmodel-v2-overview.md). Weitere Ressourcen:
 
 - [Azure-Beispiele auf GitHub >>](https://github.com/Azure-Samples)
 - [Azure AD auf Stack Overflow >>](http://stackoverflow.com/questions/tagged/azure-active-directory)
-- Azure AD-Dokumentation auf [Azure.com >>](http://azure.microsoft.com/documentation/services/active-directory/)
+- Azure AD-Dokumentation auf [Azure.com >>](https://azure.microsoft.com/documentation/services/active-directory/)
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0128_2016-->

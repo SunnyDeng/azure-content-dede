@@ -104,8 +104,8 @@ Zusätzliche Symbole für Microsoft Office und zugehörige Technologien stehen i
 
 ##Infografiken zur Architektur
 
-Microsoft veröffentlicht mehrere architekturbezogene Poster/Infografiken. Dazu zählen [Erstellen echter Cloudanwendungen](http://azure.microsoft.com/documentation/infographics/building-real-world-cloud-apps/) und [Skalieren mit Cloud Services](http://azure.microsoft.com/documentation/infographics/cloud-services/).
+Microsoft veröffentlicht mehrere architekturbezogene Poster/Infografiken. Dazu zählen [Erstellen echter Cloudanwendungen](https://azure.microsoft.com/documentation/infographics/building-real-world-cloud-apps/) und [Skalieren mit Cloud Services](https://azure.microsoft.com/documentation/infographics/cloud-services/).
 
 ![Infografiken zur Azure-Architektur](./media/architecture-overview/AzureArchInfographicThumb.jpg)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

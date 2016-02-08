@@ -49,7 +49,7 @@ Um Ihrem Lab ein GitHub-Artefaktrepository hinzuzufügen, rufen Sie zunächst di
 
 ###Verbinden Ihres Labs mit dem GitHub-Repository
 
-1. Melden Sie sich beim [Azure-Vorschauportal](http://portal.azure.com) an.
+1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com) an.
 
 1. Tippen Sie auf **Durchsuchen**, und tippen Sie dann in der Liste auf **DevTest Labs**.
 
@@ -115,4 +115,4 @@ Um Ihrem Lab ein Visual Studio Git-Artefaktrepository hinzuzufügen, rufen Sie z
     3. Geben Sie das gespeicherte **Persönliche Zugriffstoken** für das Artefaktrepository ein.
     4. Tippen Sie auf **Speichern**.
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0128_2016-->

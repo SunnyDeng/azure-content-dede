@@ -67,7 +67,7 @@ Verwenden Sie Editor oder einen anderen Texteditor, um die folgende Zeile am Anf
 
 Das Azure-Modul entnimmt den Umgebungsvariablen `AZURE_STORAGE_ACCOUNT` und `AZURE_STORAGE_ACCESS_KEY` oder `AZURE_STORAGE_CONNECTION_STRING` die erforderlichen Informationen zum Herstellen einer Verbindung mit Ihrem Azure-Speicherkonto. Falls diese Umgebungsvariablen nicht gesetzt sind, müssen Sie die Kontoinformationen beim Aufruf von **createBlobService** angeben.
 
-Ein Beispiel zum Festlegen der Umgebungsvariablen für eine Azure-Web-App im [Azure-Portal](portal.azure.com) finden Sie unter [Node.js-Web-Anwendung mit Speicher].
+Ein Beispiel zum Festlegen der Umgebungsvariablen für eine Azure-Web-App im [Azure-Portal](https://portal.azure.com) finden Sie unter [Node.js-Web-Anwendung mit Speicher].
 
 ## Erstellen eines Containers
 
@@ -75,7 +75,7 @@ Mit dem **BlobService**-Objekt können Sie auf Container und Blobs zugreifen. De
 
     var blobSvc = azure.createBlobService();
 
-> [AZURE.NOTE]Sie können anonym auf ein Blob zugreifen, indem Sie **createBlobServiceAnonymous** verwenden und die Hostadresse angeben. Verwenden Sie z. B. `var blobSvc = azure.createBlobServiceAnonymous('https://myblob.blob.core.windows.net/');`.
+> [AZURE.NOTE] Sie können anonym auf ein Blob zugreifen, indem Sie **createBlobServiceAnonymous** verwenden und die Hostadresse angeben. Verwenden Sie z. B. `var blobSvc = azure.createBlobServiceAnonymous('https://myblob.blob.core.windows.net/');`.
 
 [AZURE.INCLUDE [storage-container-naming-rules-include](../../includes/storage-container-naming-rules-include.md)]
 
@@ -182,7 +182,7 @@ Das folgende Codebeispiel lädt den Inhalt der Datei **test.txt** in **mypageblo
 	  }
 	});
 
-> [AZURE.NOTE]Seitenblobs bestehen aus 512-Byte-"Seiten". Es wird möglicherweise ein Fehler angezeigt, wenn Daten mit einer Größe, die kein Vielfaches von 512 ist, hochgeladen werden.
+> [AZURE.NOTE] Seitenblobs bestehen aus 512-Byte-"Seiten". Es wird möglicherweise ein Fehler angezeigt, wenn Daten mit einer Größe, die kein Vielfaches von 512 ist, hochgeladen werden.
 
 ## Auflisten der Blobs in einem Container
 
@@ -270,7 +270,7 @@ Sie können eine neue Lease mithilfe der Methode **acquireLease** abrufen, die d
 
 Nachfolgende Vorgänge mit **myblob** müssen den `options.leaseId`-Parameter angeben. Die Lease-ID wird als `result.id` von **acquireLease** zurückgegeben.
 
-> [AZURE.NOTE]Die Leasedauer ist standardmäßig unendlich. Sie können eine endliche Dauer (zwischen 15 und 60 Sekunden) festlegen, indem Sie den `options.leaseDuration`-Parameter angeben.
+> [AZURE.NOTE] Die Leasedauer ist standardmäßig unendlich. Sie können eine endliche Dauer (zwischen 15 und 60 Sekunden) festlegen, indem Sie den `options.leaseDuration`-Parameter angeben.
 
 Verwenden Sie zum Entfernen einer Lease **releaseLease**. Zum Unterbrechen einer Lease, während andere darin gehindert werden sollen, eine neue Lease abzurufen, bis die ursprüngliche Dauer abgelaufen ist, verwenden Sie **breakLease**.
 
@@ -278,7 +278,7 @@ Verwenden Sie zum Entfernen einer Lease **releaseLease**. Zum Unterbrechen einer
 
 Shared Access Signatures (SAS) sind eine sichere Möglichkeit zum Bereitstellen einen granularen Zugriffs auf Blobs und Container, ohne dass dabei Ihr Speicherkontoname oder -schlüssel angegeben werden müssen. Shared Access Signatures werden oftmals zum Bereitstellen des beschränkten Zugriffs auf Ihre Daten verwendet, dazu zählt beispielsweise auch, einer mobilen App den Zugriff auf Blobs zu gewähren.
 
-> [AZURE.NOTE]Während Sie auch den anonymen Zugriff auf Blobs erlauben können, verleihen Ihnen Shared Access Signatures einen kontrollierteren Zugriff, da Sie die Shared Access Signatures generieren müssen.
+> [AZURE.NOTE] Während Sie auch den anonymen Zugriff auf Blobs erlauben können, verleihen Ihnen Shared Access Signatures einen kontrollierteren Zugriff, da Sie die Shared Access Signatures generieren müssen.
 
 Eine vertrauenswürdige Anwendung wie ein cloudbasierter Dienst generiert mittels **generateSharedAccessSignature** von **BlobService** Shared Access Signatures und stellt diese für eine nicht vertrauenswürdige oder teilweise vertrauenswürdige Anwendung wie beispielsweise eine mobile App bereit. Shared Access Signatures werden mithilfe einer Richtlinie generiert, die das Anfangs- und das Enddatum der Gültigkeit der Shared Access Signatures sowie die Zugriffsstufe definiert, die dem Inhaber der Shared Access Signatures gewährt wird.
 
@@ -377,4 +377,4 @@ Weitere Informationen finden Sie in den folgenden Ressourcen.
 [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
 [API-Referenz zum Azure Storage-SDK für Node]: http://dl.windowsazure.com/nodestoragedocs/index.html
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

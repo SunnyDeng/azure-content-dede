@@ -47,7 +47,7 @@ In beiden Sammlungsmodi können zusätzliche Ordner für die Datensammlung angeg
 ## Voraussetzungen
 
 - Sie benötigen ein Speicherkonto für die Erweiterung, um generierte ZIP-Dateien zu speichern.
-- Sie müssen sicherstellen, dass Sie Azure PowerShell-Cmdlets, Version 0.8.0 oder höher, verwenden. Weitere Informationen finden Sie unter [Azure-Downloads](http://azure.microsoft.com/downloads/).
+- Sie müssen sicherstellen, dass Sie Azure PowerShell-Cmdlets, Version 0.8.0 oder höher, verwenden. Weitere Informationen finden Sie unter [Azure-Downloads](https://azure.microsoft.com/downloads/).
 
 ## Hinzufügen der Erweiterung
 
@@ -126,7 +126,7 @@ Befolgen Sie einen der beiden folgenden Schritte, um den AzureLogCollector einer
         $AdditionalDataList+= $a1
               #more locations can be added....
   
-    > [AZURE.NOTE]Sie können das Token `%roleroot%` verwenden, um das Stammlaufwerk der Rolle anzugeben, da kein Festplattenlaufwerk verwendet wird.
+    > [AZURE.NOTE] Sie können das Token `%roleroot%` verwenden, um das Stammlaufwerk der Rolle anzugeben, da kein Festplattenlaufwerk verwendet wird.
 
 4. Geben Sie den Namen und den Schlüssel des Azure-Speicherkontos an, in das die gesammelten Dateien hochgeladen werden.
 
@@ -521,4 +521,4 @@ SetAzureVMLogCollector.ps1
 
 Sie können jetzt Ihre Protokolle an einem sehr einfachen Speicherort untersuchen oder kopieren.
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -6,6 +6,6 @@
 | Größe der Broadcastingtags | 10K | 10K | Unbegrenzt |
 | Anzahl der Tags (Broadcastinggruppen) | 3 KB | 3 KB, sofern nicht an weniger als 5 Geräte übertragen | Unbegrenzt |
 
-Weitere Informationen zu diesen Einschränkungen und zu Preisen finden Sie unter [Notification Hubs Preise](http://azure.microsoft.com/pricing/details/notification-hubs/).
+Weitere Informationen zu diesen Einschränkungen und zu Preisen finden Sie unter [Notification Hubs Preise](https://azure.microsoft.com/pricing/details/notification-hubs/).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

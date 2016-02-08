@@ -32,7 +32,7 @@ SQL Database bietet ein Verwaltungssystem für relationale Datenbanken für Azur
 
 SQL Database bietet relationalen Datenspeicher sowie Zugriff und Verwaltungsdienste in Azure. Sie benötigen ein Azure-Abonnement, um SQL-Datenbank zu verwenden.
 
-1. Öffnen Sie einen Webbrowser, und navigieren Sie zu [http://azure.microsoft.com/](http://azure.microsoft.com). Wenn Sie ein kostenloses Konto erstellen möchten, klicken Sie auf die kostenlose Testversion oben rechts, und befolgen Sie dann die Anweisungen.
+1. Öffnen Sie einen Webbrowser, und navigieren Sie zu [http://azure.microsoft.com/](https://azure.microsoft.com/). Wenn Sie ein kostenloses Konto erstellen möchten, klicken Sie auf die kostenlose Testversion oben rechts, und befolgen Sie dann die Anweisungen.
 
 2. Ihr Konto wurde erstellt. Sie können jetzt loslegen.
 
@@ -211,4 +211,4 @@ Weitere Informationen finden Sie unter [EntityClient-Anbieter für das Entity Fr
 Nachdem Sie nun die Grundlagen der Verbindung mit der SQL-Datenbank kennengelernt haben, informieren Sie sich weiter unter [Entwicklung: Gewusst-wie-Themen (SQL-Datenbank)](http://msdn.microsoft.com/library/windowsazure/ee621787.aspx)
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

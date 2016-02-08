@@ -22,7 +22,7 @@
 
 Dieses Lernprogramm beschreibt die Integration von Azure Site Recovery und Azure Automation, um die Erweiterung von Wiederherstellungsplänen zu ermöglichen. Wiederherstellungspläne können die Wiederherstellung Ihrer durch Azure Site Recovery geschützten virtuellen Computer sowohl bei der Replikation zur sekundären Cloud als auch bei der Replikation zu Azure orchestrieren. Darüber hinaus tragen sie zu einer **durchgängig exakten**, **wiederholbaren**, und **automatisierten** Wiederherstellung bei. Beim Failover virtueller Computer zu Azure erweitert die Azure Automation-Integration die Wiederherstellungspläne und ermöglicht die Ausführung von Runbooks für beeindruckende Automatisierungsaufgaben.
 
-Falls Sie noch nicht mit Azure Automation vertraut sind, können Sie sich [hier](http://azure.microsoft.com/services/automation/) registrieren und [hier](http://azure.microsoft.com/documentation/scripts/) die entsprechenden Beispielskripts herunterladen. Weitere Informationen zu [Azure Site Recovery](http://azure.microsoft.com/services/site-recovery/) sowie zur Orchestrierung der Wiederherstellung in Azure mithilfe von Wiederherstellungsplänen finden Sie [hier](http://azure.microsoft.com/blog/?p=166264).
+Falls Sie noch nicht mit Azure Automation vertraut sind, können Sie sich [hier](https://azure.microsoft.com/services/automation/) registrieren und [hier](https://azure.microsoft.com/documentation/scripts/) die entsprechenden Beispielskripts herunterladen. Weitere Informationen zu [Azure Site Recovery](https://azure.microsoft.com/services/site-recovery/) sowie zur Orchestrierung der Wiederherstellung in Azure mithilfe von Wiederherstellungsplänen finden Sie [hier](https://azure.microsoft.com/blog/?p=166264).
 
 In diesem Lernprogramm erfahren Sie, wie Sie Azure Automation-Runbooks in Wiederherstellungspläne integrieren. Wir automatisieren einfache Aufgaben, für die zuvor ein manueller Eingriff erforderlich war, und konvertieren eine Wiederherstellung mit mehreren Schritten in eine Wiederherstellungsaktion, die sich mit nur einem Klick durchführen lässt. Außerdem erfahren Sie, wie Sie Probleme in einem einfachen Skript beheben können.
 
@@ -310,4 +310,4 @@ In diesem Lernprogramm haben Sie gesehen, wie Sie eine häufig verwendete Aufgab
 
  
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0128_2016-->

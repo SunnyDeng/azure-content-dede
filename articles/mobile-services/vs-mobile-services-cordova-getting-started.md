@@ -3,7 +3,7 @@
 	description="Beschreibt die ersten Schritte, die Sie ausführen können, nachdem Sie Ihr Cordova-Projekt mithilfe von Visual Studio Verbundene Dienste mit Azure Mobile Services verbunden haben."
 	services="mobile-services"
 	documentationCenter=""
-	authors="TomArcher"
+	authors="mlhoop"
 	manager="douge"
 	editor=""/>
 
@@ -14,7 +14,7 @@
 	ms.devlang="multiple"
 	ms.topic="article"
 	ms.date="01/05/2016"
-	ms.author="tarcher"/>
+	ms.author="mlearned"/>
 
 # Erste Schritte mit Mobile Services (Cordova-Projekte)
 
@@ -88,6 +88,6 @@ Löschen Sie eine Zeile aus einer Datentabelle mithilfe der Methode **del**. Ruf
         items.splice(items.indexOf(todoItem), 1);
     });
 
-[Weitere Informationen zu mobilen Diensten](http://azure.microsoft.com/documentation/services/mobile-services/)
+[Weitere Informationen zu mobilen Diensten](https://azure.microsoft.com/documentation/services/mobile-services/)
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->
