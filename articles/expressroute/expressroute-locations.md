@@ -43,7 +43,7 @@ In der folgenden Tabelle finden Sie Informationen zu Regionen und geopolitischen
 
 |**Geopolitische Region**|**Azure-Regionen**|**ExpressRoute-Standorte**|
 |---|---|---|---|
-|**US-Government Cloud**|US-Behörde Iowa, US-Behörde Virginia|Iowa, Virginia|Chicago, Washington DC|
+|**US-Government Cloud**|US-Behörde Iowa, US-Behörde Virginia|Chicago, Washington DC|
 |**China-Cloud**|China (Norden), China (Osten)|Peking, Shanghai|
 
 
@@ -94,8 +94,8 @@ Konnektivität zwischen geopolitischen Regionen wird bei der ExpressRoute-Standa
 | **Service Provider** |**Microsoft Azure** | **Office 365** | **Standorte** |
 |-----------------------|--------------------|----------------|---------------|
 | **[AT&T NetBond](https://www.synaptic.att.com/clouduser/html/productdetail/ATT_NetBond.htm)** | Unterstützt | Nicht unterstützt | Chicago, Washington DC |
-| **[Equinix](http://www.equinix.com/partners/microsoft-azure/)** | Unterstützt | Nicht unterstützt | Chicago+, Washington, D.C. |
-| **[Level 3 Communications - IPVPN](http://your.level3.com/LP=882?WT.tsrc=02192014LP882AzureVanityAzureText)** | Unterstützt | Nicht unterstützt | Chicago+, Washington, D.C. |
+| **[Equinix](http://www.equinix.com/partners/microsoft-azure/)** | Unterstützt | Nicht unterstützt | Chicago, Washington DC |
+| **[Level 3 Communications - IPVPN](http://your.level3.com/LP=882?WT.tsrc=02192014LP882AzureVanityAzureText)** | Unterstützt | Nicht unterstützt | Chicago, Washington DC |
 | **[Verizon](http://news.verizonenterprise.com/2014/04/secure-cloud-interconnect-solutions-enterprise/)** | Unterstützt | Nicht unterstützt | Chicago, Washington DC |
 
 #### China-Cloud
@@ -141,4 +141,4 @@ Je nach Ihrer Netzwerkgröße kann das Aktivieren privater Verbindungen für Ihr
 - Weitere Informationen über ExpressRoute finden Sie unter [ExpressRoute – FAQ](expressroute-faqs.md).
 - Stellen Sie sicher, dass alle Voraussetzungen erfüllt sind. Informationen finden Sie unter [ExpressRoute-Voraussetzungen](expressroute-prerequisites.md).
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0204_2016-->

@@ -18,7 +18,7 @@
 
 # Authentifizierung und Autorisierung für API-Apps in Azure App Service
 
-[AZURE.INCLUDE [app-service-api-get-started-selector](../../includes/app-service-api-get-started-selector.md)]
+[AZURE.INCLUDE [Auswahl](../../includes/app-service-api-auth-selector.md)]
 
 ## Übersicht 
 
@@ -53,16 +53,14 @@ App Service kann verhindern, dass anonyme HTTP-Anfragen Ihre API-App erreichen. 
 
 1. Nur zulassen, dass authentifizierte Anforderungen Ihre API-App erreichen.
 
-	Wenn ein Browser eine anonyme Anforderung empfängt, leitet App Service sie zu einer Anmeldeseite um.
+	Wenn von einem Browser eine anonyme Anforderung empfangen wird, leitet App Service sie zu einer Anmeldeseite für den von Ihnen gewählten Authentifizierungsanbieter (Azure AD, Google, Twitter usw.) um.
 
-	Wenn Sie im Voraus wissen, welchen Authentifizierungsanbieter (Google, Twitter usw.) Sie verwenden möchten, können Sie App Service entsprechend konfigurieren,um den Anmeldevorgang für Sie zu abzuwickeln. Alternativ können Sie Ihre eigene URL angeben, zu der App Service anonyme Anforderungen umleitet. Dann können Sie Benutzern verschiedene Authentifizierungsanbieter zur Auswahl präsentieren.
-
-	Mit dieser Option müssen Sie keinen Authentifizierungscode in Ihre App schreiben, und die Autorisierung wird vereinfacht, da die wichtigsten Ansprüche in den HTTP-Headern bereitgestellt werden.
+	Mit dieser Option müssen Sie keinen Authentifizierungscode in Ihre App schreiben, und der Autorisierungscode wird vereinfacht, da die wichtigsten Ansprüche in den HTTP-Headern bereitgestellt werden.
 
 2. Zulassen, dass alle Anforderungen Ihre API-App erreichen, aber authentifizierte Anforderungen überprüfen, und Authentifizierungsdaten an die HTTP-Header übergeben.
 
-	Diese Option bietet Ihnen mehr Flexibilität bei der Behandlung von anonymen Anforderungen und erleichtert, Code zu schreiben, der Zugriff auf die gängigsten Ansprüche benötigt. Im Gegensatz zu Option 1 müssen Sie Code schreiben, wenn Sie verhindern möchten, dass anonyme Benutzer Ihre API verwenden.
-
+	Diese Option bietet Ihnen mehr Flexibilität bei der Behandlung anonymer Anforderungen. Sie müssen jedoch Code schreiben, wenn Sie verhindern möchten, dass anonyme Benutzer Ihre API verwenden. Da die am häufigsten verwendeten Ansprüche in den Headern von HTTP-Anforderungen übergeben werden, ist der Autorisierungscode relativ einfach.
+	
 3. Zulassen, dass alle Anforderungen Ihre API erreichen, und keine Aktionen an den Authentifizierungsdaten in den Anforderungen ausführen.
 
 	Bei dieser Option bleiben die Aufgaben der Authentifizierung und Autorisierung völlig Ihrem Anwendungscode überlassen.
@@ -95,7 +93,7 @@ Informationen zur Authentifizierung von mobilen Clients finden Sie in der [Dokum
 
 Weitere Informationen zur Authentifizierung und Autorisierung in Azure App Service finden Sie in den folgenden Ressourcen:
 
-* [Expanding App Service authentication / authorization](/blog/announcing-app-service-authentication-authorization/) (Erweitern der App Service-Authentifizierung/-Autorisierung)
+* [Expanding App Service authentication / authorization (Erweitern der App Service-Authentifizierung/-Autorisierung)](/blog/announcing-app-service-authentication-authorization/)
 * [So konfigurieren Sie Ihre App Service-Anwendung zur Verwendung der Azure Active Directory-Anmeldung](../app-service-mobile/app-service-mobile-how-to-configure-active-directory-authentication.md) (Enthält oben auf der Seite Links für andere Authentifizierungsanbieter.) 
 
 Weitere Informationen zu OAuth 2.0, OpenID Connect und JSON-Webtoken (JWT) finden Sie in den folgenden Ressourcen.
@@ -118,4 +116,4 @@ Wenn Sie der Erste-Schritte-Sequenz der Tutorials für ASP.NET- und API-Apps fol
 
 Weitere Informationen zur Verwendung von Knoten und Java in Azure App Service finden Sie unter [Node.js Developer Center](/develop/nodejs/) und [Java Developer Center](/develop/java/).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

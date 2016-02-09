@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="10/09/2015"
+	ms.date="02/04/2016"
 	ms.author="joseidz"/>
 
 
@@ -46,7 +46,7 @@ Sie benötigen auch eine Kopie von Excel. In diesem Artikel wird [Microsoft Exce
 
 4.	Klicken Sie im Abschnitt **Anmeldeinformationen** auf **Benutzername und Kennwort verwenden**. Geben Sie den **Benutzernamen** und das **Kennwort** wie beim Erstellen des Azure SQL-Datenbank-Servers ein, und klicken Sie dann auf **Weiter**.
 
-	> [AZURE.TIP]Die Excel-Add-Ins [PowerPivot](https://www.microsoft.com/download/details.aspx?id=102) und [Power Query](https://www.microsoft.com/download/details.aspx?id=39379) verfügen über ähnliche Funktionen.
+	> [AZURE.TIP] Die Excel-Add-Ins [PowerPivot](https://www.microsoft.com/download/details.aspx?id=102) und [Power Query](https://www.microsoft.com/download/details.aspx?id=39379) verfügen über ähnliche Funktionen.
 
 5. Wählen Sie im Dialogfeld **Datenbank und Tabelle wählen** im Pulldownmenü die Datenbank **AdventureWorks** aus und **vGetAllCategories** in der Liste der Tabellen und Ansichten aus. Klicken Sie anschließend auf **Weiter**.
 
@@ -77,4 +77,4 @@ Wenn Sie ein SaaS-Entwickler (Software-as-a-Service) sind, erfahren Sie mehr üb
 [4]: ./media/sql-database-connect-excel/power-pivot-results.png
 [5]: ./media/sql-database-connect-excel/select-database-and-table.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0204_2016-->

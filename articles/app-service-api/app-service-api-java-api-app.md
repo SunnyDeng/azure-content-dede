@@ -150,7 +150,7 @@ In dieser Demo wird mit einem Swagger-JSON-Text begonnen, der in den swagger.io-
 ## Bearbeiten des Codes zum Hinzufügen der API-Implementierung
 In diesem Abschnitt ersetzen Sie die serverseitige Implementierung des generierten Codes durch Ihren benutzerdefinierten Code. Der neue Code gibt ein ArrayList-Element mit Kontaktdaten an den aufrufenden Client zurück.
 
-1. Öffnen Sie die Modelldatei *Contact.java* im Ordner *src/gen/java/swagger/model* mit [Visual Studio Code](https://code.visualstudio.com) oder Ihrem bevorzugten Text-Editor. 
+1. Öffnen Sie die Modelldatei *Contact.java* im Ordner *src/gen/java/io/swagger/model* mit [Visual Studio Code](https://code.visualstudio.com) oder Ihrem bevorzugten Text-Editor. 
 
     ![Kontaktmodelldatei öffnen](media/app-service-api-java-api-app/open-contact-model-file.png)
 
@@ -163,7 +163,7 @@ In diesem Abschnitt ersetzen Sie die serverseitige Implementierung des generiert
 			this.emailAddress = email;
 		}
 
-1. Öffnen Sie die Dienstimplementierungsdatei *ContactsApiServiceImpl.java* im Ordner *src/main/java/swagger/api/impl* mit [Visual Studio Code](https://code.visualstudio.com) oder Ihrem bevorzugten Text-Editor.
+1. Öffnen Sie die Dienstimplementierungsdatei *ContactsApiServiceImpl.java* im Ordner *src/main/java/io/swagger/api/impl* mit [Visual Studio Code](https://code.visualstudio.com) oder Ihrem bevorzugten Text-Editor.
 
     ![Datei mit Kontaktdienstcode öffnen](media/app-service-api-java-api-app/open-contact-service-code-file.png)
 
@@ -295,4 +295,4 @@ Aufbauend auf diesem Beispiel können Sie mehr über das [Storage SDK für Java]
 
 Weitere Informationen zum Verwenden von Java in Azure finden Sie im [Java Developer Center](/develop/java/).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

@@ -41,8 +41,8 @@ Der folgende Codeausschnitt erstellt eine Methode, die eine Suchzeichenfolgenein
 			sp.Filter = filter;
 		}
 	
-		DocumentSearchResponse<Hotel> response = indexClient.Documents.Search<Hotel>(searchText, sp);
-		foreach (SearchResult<Hotel> result in response)
+		DocumentSearchResult<Hotel> documentSearchResult = indexClient.Documents.Search<Hotel>(searchText, sp);
+		foreach (SearchResult<Hotel> result in documentSearchResult.Results)
 		{
 			Console.WriteLine(result.Document);
 		}
@@ -63,4 +63,4 @@ Im ersten Aufruf werden alle Dokumente mit den Abfrageausdrücken „fancy“ un
 
 Der zweite Aufruf verwendet den OData-Ausdruck „$filter“ mit „Luxury“ als Kategorie. Diese Suche gibt dadurch nur Dokumente zurück, deren Kategoriefeld genau der Zeichenfolge „Luxury“ entspricht. Weitere Informationen zur OData-Syntax finden Sie auf der Seite [OData-Ausdruckssyntax für Azure Search](https://msdn.microsoft.com/library/azure/dn798921.aspx).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

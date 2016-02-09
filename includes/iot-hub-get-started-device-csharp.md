@@ -8,7 +8,7 @@ In diesem Abschnitt erstellen Sie eine Windows-Konsolenanwendung, die ein Gerät
 
 2. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt **SimulatedDevice**, und klicken Sie dann auf **NuGet-Pakete verwalten**.
 
-3. Stellen Sie im Fenster **NuGet-Paket-Manager** sicher, dass die Option **Vorabversion einbeziehen** aktiviert ist. Suchen Sie anschließend nach **Microsoft Azure-Geräteclient**, klicken Sie auf **Installieren**, und akzeptieren Sie die Nutzungsbedingungen.
+3. Suchen Sie im Fenster **NuGet-Paket-Manager** nach **Microsoft Azure-Geräteclient**, klicken Sie auf **Installieren**, und akzeptieren Sie die Nutzungsbedingungen.
 
 	Daraufhin wird das [NuGet-Paket mit dem Geräte-SDK für Azure IoT][lnk-device-nuget] heruntergeladen und installiert und dem Projekt ein Verweis auf das Paket hinzugefügt.
 
@@ -63,7 +63,7 @@ In diesem Abschnitt erstellen Sie eine Windows-Konsolenanwendung, die ein Gerät
   In der Standardeinstellung erstellt die **Create** -Methode einen **DeviceClient**, der das AMQP-Protokoll für die Kommunikation mit dem IoT Hub verwendet. Um das HTTPS-Protokoll zu verwenden, nutzen Sie die Überschreibung der **Create**-Methode, bei der Sie das Protokoll angeben können. Wenn Sie das HTTPS-Protokoll verwenden möchten, müssen Sie Ihrem Projekt auch das NuGet-Paket **Microsoft.AspNet.WebApi.Client** hinzufügen, um den **System.Net.Http.Formatting**-Namespace einzuschließen.
 
 
-> [AZURE.NOTE]Der Einfachheit halber wird in diesem Tutorial keine Wiederholungsrichtlinie implementiert. Im Produktionscode sollten Sie Wiederholungsrichtlinien implementieren (z. B. einen exponentiellen Backoff), wie im MSDN-Artikel zum [Behandeln vorübergehender Fehler][lnk-transient-faults] beschrieben.
+> [AZURE.NOTE] Der Einfachheit halber wird in diesem Tutorial keine Wiederholungsrichtlinie implementiert. Im Produktionscode sollten Sie Wiederholungsrichtlinien implementieren (z. B. einen exponentiellen Backoff), wie im MSDN-Artikel zum [Behandeln vorübergehender Fehler][lnk-transient-faults] beschrieben.
 
 <!-- Links -->
 
@@ -73,4 +73,4 @@ In diesem Abschnitt erstellen Sie eine Windows-Konsolenanwendung, die ein Gerät
 <!-- Images -->
 [30]: ./media/iot-hub-getstarted-device-csharp/create-identity-csharp1.png
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0204_2016-->

@@ -18,7 +18,7 @@
 
 # Benutzerauthentifizierung für API-Apps in Azure App Service
 
-[AZURE.INCLUDE [app-service-api-get-started-selector](../../includes/app-service-api-get-started-selector.md)]
+[AZURE.INCLUDE [Auswahl](../../includes/app-service-api-auth-selector.md)]
 
 ## Übersicht
 
@@ -88,7 +88,7 @@ Falls Sie das erste und zweite Tutorial nicht durchgearbeitet haben und mit dies
 
 2. Stellen Sie das Projekt ToDoListDataAPI in einer neuen API-App bereit.
 
-	a. Öffnen Sie im Projekt ToDoListDataAPI die Datei *App_Start/SwaggerConfig.cs*, und heben Sie die Auskommentierung des **EnableSwaggerUi**-Codes auf.
+	a. Öffnen Sie im Projekt ToDoListDataAPI die Datei *App\_Start/SwaggerConfig.cs*, und heben Sie die Auskommentierung des **EnableSwaggerUi**-Codes auf.
 
 	b. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt ToDoListDataAPI, und klicken Sie dann auf **Veröffentlichen**.
 
@@ -110,7 +110,7 @@ Falls Sie das erste und zweite Tutorial nicht durchgearbeitet haben und mit dies
 
 3. Stellen Sie das Projekt ToDoListAPI für eine neue API-App bereit.
 
-	a. Öffnen Sie im Projekt ToDoListAPI die Datei *Controllers\ToDoListController.cs*, und ändern Sie `http://localhost:45914` in `https://{your ToDoListDataAPI app name}.azurewebsites.net`.
+	a. Öffnen Sie im Projekt ToDoListAPI die Datei *Controllers\\ToDoListController.cs*, und ändern Sie `http://localhost:45914` in `https://{your ToDoListDataAPI app name}.azurewebsites.net`.
 
 	b. Führen Sie zum Bereitstellen des Projekts ToDoListAPI die gleichen Schritte wie für das Projekt ToDoListDataAPI aus. Vergessen Sie nicht, den Typ in **API-App** zu ändern.
 
@@ -391,4 +391,4 @@ Wenn Sie die Anwendung ohne Authentifizierung erfolgreich ausgeführt haben und 
 
 In diesem Tutorial haben Sie gelernt, wie Sie die App Service-Authentifizierung für eine API-App verwenden und die API-App mit der ADAL-JS-Bibliothek aufrufen. Im nächsten Tutorial geht es um das [Schützen des Zugriffs auf Ihre API-App für Dienst-zu-Dienst-Szenarien](app-service-api-dotnet-service-principal-auth.md).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="nodejs" 
 	ms.topic="hero-article" 
-	ms.date="01/26/2015" 
+	ms.date="02/03/2016" 
 	ms.author="ryancraw"/>
 
 # <a name="_Toc395783175"></a>Erstellen einer Node.js-Webanwendung mithilfe von DocumentDB
@@ -396,7 +396,7 @@ Dies ist für die anfängliche Einrichtung und Konfiguration erforderlich. Jetzt
 		
 		module.exports = config;
 
-3. Aktualisieren Sie in der Datei **config.js** die Werte für HOST und AUTH_KEY unter Verwendung der Werte im Blatt "Schlüssel" Ihres DocumentDB-Kontos im [Microsoft Azure-Portal](https://portal.azure.com):
+3. Aktualisieren Sie in der Datei **config.js** die Werte für HOST und AUTH\_KEY unter Verwendung der Werte im Blatt "Schlüssel" Ihres DocumentDB-Kontos im [Microsoft Azure-Portal](https://portal.azure.com):
 
 4. Speichern und schließen Sie die Datei **config.js**.
  
@@ -505,7 +505,7 @@ Jetzt konzentrieren wir uns auf die Erstellung der Benutzeroberfläche, um den B
 	
 	Dies sollte jetzt alles sein, damit unsere Anwendung funktioniert.
 
-5. Öffnen Sie die Datei **style.css** im Verzeichnis **Public\stylesheets**, und ersetzen Sie den Code durch Folgendes:
+5. Öffnen Sie die Datei **style.css** im Verzeichnis **Public\\stylesheets**, und ersetzen Sie den Code durch Folgendes:
 
 		body {
 		  padding: 50px;
@@ -569,4 +569,4 @@ Weitere Informationen finden Sie im [Node.js Developer Center](https://azure.mic
 [Github]: https://github.com/Azure-Samples/documentdb-node-todo-app
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

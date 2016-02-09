@@ -14,7 +14,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/07/2016"
+   ms.date="02/01/2016"
    ms.author="lodipalm;barbkess;sonyama"/>
 
 # Erstellen eines SQL Data Warehouse
@@ -31,7 +31,7 @@ In diesem Lernprogramm führen Sie folgende Schritte aus:
 - Erstellen eines Servers, der die Datenbank hostet
 - Erstellen einer Datenbank, die die AdventureWorksDW-Beispieldatenbank enthält
 
-Wenn Sie versuchen, eine vorhandene Datenbank zu SQL Data Warehouse zu migrieren, lesen Sie die [Übersicht über die Migration](./sql-data-warehouse-get-started-overview-migrate.md), oder verwenden Sie das [Migrationshilfsprogramm ](./sql-data-warehouse-migrate-migration-utility.md).
+Wenn Sie versuchen, eine vorhandene Datenbank zu SQL Data Warehouse zu migrieren, lesen Sie die [Übersicht über die Migration](./sql-data-warehouse-overview-migrate.md), oder verwenden Sie das [Migrationshilfsprogramm ](./sql-data-warehouse-migrate-migration-utility.md).
 
 Um Daten in SQL Data Warehouse zu laden, lesen Sie [Laden von Daten in SQL Data Warehouse](./sql-data-warehouse-overview-load.md).
 
@@ -54,10 +54,10 @@ Um Daten in SQL Data Warehouse zu laden, lesen Sie [Laden von Daten in SQL Data 
 
 In Azure SQL-Datenbank und SQL Data Warehouse wird jede Datenbank einem Server und jeder Server einem geografischen Standort zugewiesen. Der Server wird als logischer SQL Server bezeichnet.
 
-> [AZURE.NOTE]<a name="note"></a>Ein logischer SQL Server:
+> [AZURE.NOTE] <a name="note"></a>Ein logischer SQL Server:
   >
   > + Bietet ein einheitliches Verfahren zum Konfigurieren mehrerer Datenbanken innerhalb des gleichen geografischen Standorts.
-  > + Ist keine physische Hardware wie bei einem lokalen Server. sondern Teil der Dienstsoftware. Aus diesem Grund sprechen wird von einem *logischen Server*.
+  > + Ist keine physische Hardware wie bei einem lokalen Server, sondern Teil der Dienstsoftware. Aus diesem Grund wird er als *logischer Server* bezeichnet.
   > + Kann mehrere Datenbanken ohne Beeinträchtigung der Leistung hosten.
   > + Enthält im Namen ein kleingeschriebenes *s*. "SQL **s**erver" ist ein logischer Azure-Server, während "SQL **S**erver" der Name eines lokalen Datenbankprodukts von Microsoft ist.
 
@@ -74,7 +74,7 @@ In Azure SQL-Datenbank und SQL Data Warehouse wird jede Datenbank einem Server u
 	- **V12-Server erstellen**. "JA" ist für "SQL Data Warehouse" die einzige Option. 
 	- **Azure-Diensten den Zugriff auf Server gestatten**. Diese Option ist für "SQL Data Warehouse" stets aktiviert.
 
-    >[AZURE.NOTE]Stellen Sie sicher, dass Sie den Servernamen, den Serveradministratornamen und das Kennwort notieren und aufbewahren. Sie benötigen diese Informationen, um sich beim Server anzumelden.
+    >[AZURE.NOTE] Stellen Sie sicher, dass Sie den Servernamen, den Serveradministratornamen und das Kennwort notieren und aufbewahren. Sie benötigen diese Informationen, um sich beim Server anzumelden.
 
 1. Klicken Sie auf **OK**, um die Einstellungen zu speichern und zum Blatt "SQL Data Warehouse" zurückzukehren.
 
@@ -90,7 +90,7 @@ Nachdem Sie Ihren logischen SQL-Server ausgewählt haben, können Sie die Erstel
     
     - **Leistung**: Es wird empfohlen, mit 400 DWUs zu beginnen. Sie können den Schieberegler nach links oder rechts bewegen, um die Leistungsstufe Ihrer Datenbank anzupassen, was sowohl jetzt als auch nach Erstellen der Datenbank möglich ist. 
 
-        > [AZURE.NOTE]Die Leistung wird in SQL Data Warehouse-Einheiten (Data Warehouse Units, DWUs) gemessen. Wenn Sie die Anzahl der DWUs erhöhen, erhöht SQL Data Warehouse die Computerressourcen, die für Ihre Datenbankvorgänge verfügbar sind. Wie Sie Ihren Workload ausführen, werden Sie erkennen, in welchem Verhältnis DWUs zur Workloadleistung stehen.
+        > [AZURE.NOTE] Die Leistung wird in SQL Data Warehouse-Einheiten (Data Warehouse Units, DWUs) gemessen. Wenn Sie die Anzahl der DWUs erhöhen, erhöht SQL Data Warehouse die Computerressourcen, die für Ihre Datenbankvorgänge verfügbar sind. Wie Sie Ihren Workload ausführen, werden Sie erkennen, in welchem Verhältnis DWUs zur Workloadleistung stehen.
         > 
         > Sie können die Leistungsstufe schnell und einfach ändern, nachdem die Datenbank erstellt wurde. Wenn Sie z. B. die Datenbank nicht verwenden, ziehen Sie den Schieberegler nach links, um Kosten zu senken. Oder erhöhen Sie die Leistung, wenn mehr Ressourcen benötigt werden. Damit keine Kosten anfallen, können Sie die Datenbank anhalten. Dies ist die skalierbare Leistung von SQL Data Warehouse.
 
@@ -123,7 +123,7 @@ Um über Ihre aktuelle IP-Adresse auf den Server zuzugreifen, fügen Sie Ihre Cl
 
 1. Erstellen Sie eine Firewallregel mit einem Bereich von IP-Adressen. Sie können dies jetzt oder später tun.
 
-	>[AZURE.IMPORTANT]Die IP-Adresse kann sich von Zeit zu Zeit ändern, und Sie können dann möglicherweise nicht auf den Server zugreifen, bis Sie eine neue Firewallregel erstellt haben. Um konsistenten Zugriff zu gewährleisten, wird empfohlen, einen Bereich von IP-Adressen hinzuzufügen. Weitere Einzelheiten finden Sie unter [Konfigurieren der Firewalleinstellungen](../sql-database/sql-database-configure-firewall-settings.md).
+	>[AZURE.IMPORTANT] Die IP-Adresse kann sich von Zeit zu Zeit ändern, und Sie können dann möglicherweise nicht auf den Server zugreifen, bis Sie eine neue Firewallregel erstellt haben. Um konsistenten Zugriff zu gewährleisten, wird empfohlen, einen Bereich von IP-Adressen hinzuzufügen. Weitere Einzelheiten finden Sie unter [Konfigurieren der Firewalleinstellungen](../sql-database/sql-database-configure-firewall-settings.md).
 
     Um eine Regel zu erstellen, geben Sie einen Namen und den IP-Adressbereich ein. Klicken Sie dann auf **Speichern**.
 
@@ -135,4 +135,4 @@ Da Sie jetzt die Firewall konfiguriert haben, können Sie Verbindungen zwischen 
 
 Nachdem Sie eine Beispieldatenbank für SQL Data Warehouse erstellt haben, sind Sie bereit, eine [Verbindung](./sql-data-warehouse-get-started-connect.md) mit der Datenbank herzustellen.
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0204_2016-->
