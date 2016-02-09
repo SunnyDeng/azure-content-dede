@@ -68,7 +68,7 @@ In diesem Abschnitt erstellen Sie eine Windows-Konsolenanwendung, die ein Gerät
 <!-- Links -->
 
 [lnk-device-nuget]: https://www.nuget.org/packages/Microsoft.Azure.Devices.Client/
-[lnk-transient-faults]: https://msdn.microsoft.com/de-DE/library/hh680901(v=pandp.50).aspx
+[lnk-transient-faults]: https://msdn.microsoft.com/library/hh680901(v=pandp.50).aspx
 
 <!-- Images -->
 [30]: ./media/iot-hub-getstarted-device-csharp/create-identity-csharp1.png

@@ -228,14 +228,14 @@ Beachten Sie, dass die Anmeldeinformationen nur für den Kontext beibehalten wer
 
 Nachdem Sie eine Remoteverbindung zu dem virtuellen Computer hergestellt haben, können Sie den Befehl `net use` mit folgender Syntax ausführen, um die Dateifreigabe bereitzustellen. Ersetzen Sie `<storage-account-name>` durch den Namen Ihres Speicherkontos und `<share-name>` durch den Namen Ihrer Dateispeicher-Freigabe:
 
-    net use <drive-letter>: \<storage-account-name>.file.core.windows.net<share-name>
+    net use <drive-letter>: \\<storage-account-name>.file.core.windows.net\<share-name>
 
 	example :
 	net use z: \\samples.file.core.windows.net\logs
 
 Da Sie die Speicherkonto-Anmeldeinformationen im vorherigen Schritt dauerhaft gespeichert haben, müssen Sie diese nicht mit dem Befehl `net use` angeben. Wenn Sie Ihre Anmeldeinformationen noch nicht dauerhaft gespeichert haben, fügen Sie sie als Parameter hinzu, der an den Befehl `net use` übergeben wird, wie im folgenden Beispiel gezeigt.
 
-    net use <drive-letter>: \<storage-account-name>.file.core.windows.net<share-name> /u:<storage-account-name> <storage-account-key>
+    net use <drive-letter>: \\<storage-account-name>.file.core.windows.net\<share-name> /u:<storage-account-name> <storage-account-key>
 
 	example :
 	net use z: \\samples.file.core.windows.net\logs /u:samples <storage-account-key>

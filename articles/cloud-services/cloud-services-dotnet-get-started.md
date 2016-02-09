@@ -88,7 +88,7 @@ Wenn ein Benutzer ein Bild hochlädt, speichert das in einer Webrolle ausgeführ
 
 3. Vergewissern Sie sich im **Projektmappen-Explorer**, dass **ContosoAdsCloudService** als Startprojekt ausgewählt ist.
 
-2. Wenn Sie Visual Studio 2015 verwenden, ändern Sie die SQL Server-Verbindungszeichenfolge in der Anwendungsdatei *Web.config* des ContosoAdsWeb-Projekts und in der Datei *ServiceConfiguration.Local.cscfg* des ContosoAdsCloudService-Projekts. Ändern Sie in beiden Fällen „(localdb)\\v11.0“ in „(localdb)\\MSSQLLocalDB“.
+2. Wenn Sie Visual Studio 2015 verwenden, ändern Sie die SQL Server-Verbindungszeichenfolge in der Anwendungsdatei *Web.config* des ContosoAdsWeb-Projekts und in der Datei *ServiceConfiguration.Local.cscfg* des ContosoAdsCloudService-Projekts. Ändern Sie in beiden Fällen „(localdb)\v11.0“ in „(localdb)\MSSQLLocalDB“.
 
 1. Drücken Sie STRG+F5, um die Anwendung auszuführen.
 
@@ -471,10 +471,10 @@ Um Dateien zu einem Projekt oder einem Ordner hinzuzufügen, klicken Sie mit der
 
 3. Fügen Sie im Projekt ContosoAdsWeb die folgenden Dateien aus dem heruntergeladenen Projekt hinzu.
 	- *Global.asax.cs*.  
-	- Im Ordner *Views\\Shared*: <em>\_Layout.cshtml</em>
-	- Im Ordner *Views\\Home*: *Index.cshtml*
+	- Im Ordner *Views\Shared*: <em>\_Layout.cshtml</em>
+	- Im Ordner *Views\Home*: *Index.cshtml*
 	- Im Ordner *Controllers*: *AdController.cs*
-	- Im Ordner *Views\\Ad* (Ordner zuerst erstellen): fünf *CSHTML*-Dateien
+	- Im Ordner *Views\Ad* (Ordner zuerst erstellen): fünf *CSHTML*-Dateien
 
 3. Fügen Sie im Projekt ContosoAdsWorker die Datei *WorkerRole.cs* aus dem heruntergeladenen Projekt hinzu.
 
@@ -577,11 +577,11 @@ Ein ähnlicher Codeteil ruft einen Verweis auf die *images*-Warteschlange ab und
 
 ### ContosoAdsWeb - \_Layout.cshtml
 
-Die *\_Layout.cshtml*-Datei setzt den App-Namen in Kopf- und Fußzeile und erstellt einen "Ads"-Menüeintrag.
+Die *_Layout.cshtml*-Datei setzt den App-Namen in Kopf- und Fußzeile und erstellt einen "Ads"-Menüeintrag.
 
-### ContosoAdsWeb - Views\\Home\\Index.cshtml
+### ContosoAdsWeb - Views\Home\Index.cshtml
 
-Die *Views\\Home\\Index.cshtml*-Datei zeigt Links zu den Kategorien auf der Startseite an. Die Links übergeben den ganzzahligen Wert aus der `Category`-Enumeration in einer querystring-Variable an die Ads-Indexseite.
+Die *Views\Home\Index.cshtml*-Datei zeigt Links zu den Kategorien auf der Startseite an. Die Links übergeben den ganzzahligen Wert aus der `Category`-Enumeration in einer querystring-Variable an die Ads-Indexseite.
 
 		<li>@Html.ActionLink("Cars", "Index", "Ad", new { category = (int)Category.Cars }, null)</li>
 		<li>@Html.ActionLink("Real estate", "Index", "Ad", new { category = (int)Category.RealEstate }, null)</li>
@@ -670,7 +670,7 @@ Das nächste Beispiel zeigt den Code, der Blobs löscht, wenn Sie eine Werbeanze
 		    await blobToDelete.DeleteAsync();
 		}
 
-### ContosoAdsWeb - Views\\Ad\\Index.cshtml und Details.cshtml
+### ContosoAdsWeb - Views\Ad\Index.cshtml und Details.cshtml
 
 Die Datei *Index.cshtml* zeigt Miniaturansichten zusammen mit den restlichen Werbedaten an.
 
@@ -680,7 +680,7 @@ Die Datei *Details.cshtml* zeigt das Bild in voller Größe an.
 
 		<img src="@Html.Raw(Model.ImageURL)" />
 
-### ContosoAdsWeb - Views\\Ad\\Create.cshtml und Edit.cshtml
+### ContosoAdsWeb - Views\Ad\Create.cshtml und Edit.cshtml
 
 Die Dateien *Create.cshtml* und *Edit.cshtml* geben die Formularcodierung an, mit der der Controller das `HttpPostedFileBase`-Objekt abruft.
 

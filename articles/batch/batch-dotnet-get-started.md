@@ -82,9 +82,10 @@ private const string StorageAccountName = "";
 private const string StorageAccountKey  = "";
 ```
 
-Die Kontoanmeldeinformationen für Batch und Storage finden Sie jeweils auf dem Kontoblatt eines Diensts im [Azure-Portal][azure_portal]\:
+Die Kontoanmeldeinformationen für Batch und Storage finden Sie jeweils auf dem Kontoblatt eines Diensts im [Azure-Portal][azure_portal]:
 
-![Batch-Anmeldeinformationen im Portal][9] ![Storage-Anmeldeinformationen im Portal][10]<br/>
+![Batch-Anmeldeinformationen im Portal][9] 
+![Storage-Anmeldeinformationen im Portal][10]<br/>
 
 Nachdem Sie das Projekt mit Ihren Anmeldeinformationen aktualisiert haben, klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf die Projektmappe, und klicken Sie dann auf **Projektmappe erstellen**. Bestätigen Sie die Wiederherstellung von NuGet-Paketen, wenn Sie hierzu aufgefordert werden.
 
@@ -341,7 +342,7 @@ private static async Task<List<CloudTask>> AddTasksAsync(BatchClient batchClient
     foreach (ResourceFile inputFile in inputFiles)
     {
         string taskId = "topNtask" + inputFiles.IndexOf(inputFile);
-        string taskCommandLine = String.Format("cmd /c %AZ_BATCH_NODE_SHARED_DIR%\\TaskApplication.exe {0} 3 "{1}"", inputFile.FilePath, outputContainerSasUrl);
+        string taskCommandLine = String.Format("cmd /c %AZ_BATCH_NODE_SHARED_DIR%\\TaskApplication.exe {0} 3 \"{1}\"", inputFile.FilePath, outputContainerSasUrl);
 
         CloudTask task = new CloudTask(taskId, taskCommandLine);
         task.ResourceFiles = new List<ResourceFile> { inputFile };

@@ -27,7 +27,7 @@ In diesem Abschnitt erstellen Sie eine Java-Konsolenanwendung, die ein Gerät si
 
 4. Speichern und schließen Sie die Datei „pom.xml“.
 
-5. Öffnen Sie die Datei „simulated-device\\src\\main\\java\\com\\mycompany\\app\\App.java“ mit einem Text-Editor.
+5. Öffnen Sie die Datei „simulated-device\src\main\java\com\mycompany\app\App.java“ mit einem Text-Editor.
 
 6. Fügen Sie der Datei die folgenden **import**-Anweisungen hinzu:
 
@@ -156,6 +156,6 @@ In diesem Abschnitt erstellen Sie eine Java-Konsolenanwendung, die ein Gerät si
 > [AZURE.NOTE] Der Einfachheit halber wird in diesem Tutorial keine Wiederholungsrichtlinie implementiert. Im Produktionscode sollten Sie Wiederholungsrichtlinien implementieren (z. B. einen exponentiellen Backoff), wie im MSDN-Artikel zum [Behandeln vorübergehender Fehler][lnk-transient-faults] beschrieben.
 
 <!-- Links -->
-[lnk-transient-faults]: https://msdn.microsoft.com/de-DE/library/hh680901(v=pandp.50).aspx
+[lnk-transient-faults]: https://msdn.microsoft.com/library/hh680901(v=pandp.50).aspx
 
 <!---HONumber=AcomDC_0204_2016-->

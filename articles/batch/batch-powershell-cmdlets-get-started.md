@@ -44,7 +44,7 @@ Eine vollständige Liste mit Batch-Cmdlets und deren ausführliche Cmdlet-Syntax
 New-AzureRmResourceGroup –Name MyBatchResourceGroup –location "Central US"
 ```
 
-Erstellen Sie dann ein neues Batch-Konto in der Ressourcengruppe. Geben Sie zudem einen Kontonamen für <*account\_name*> und einen Standort an, an dem der Batch-Dienst verfügbar ist. Die Erstellung des Kontos kann mehrere Minuten in Anspruch nehmen. Beispiel:
+Erstellen Sie dann ein neues Batch-Konto in der Ressourcengruppe. Geben Sie zudem einen Kontonamen für <*account_name*> und einen Standort an, an dem der Batch-Dienst verfügbar ist. Die Erstellung des Kontos kann mehrere Minuten in Anspruch nehmen. Beispiel:
 
 ```
 New-AzureRmBatchAccount –AccountName <account_name> –Location "Central US" –ResourceGroupName MyBatchResourceGroup

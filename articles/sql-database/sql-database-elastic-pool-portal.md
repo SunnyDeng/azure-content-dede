@@ -173,7 +173,8 @@ Nach dem Erstellen eines Pools können Sie folgende Aktionen ausführen:
 
 Wenn Sie einen vorhandenen Pool auswählen, können Sie die Ressourcenverwendung des Pools sehen. Klicken Sie auf das Diagramm **Ressourcenverwendung**, um das Blatt **Metrik** zu öffnen, auf dem Sie die Diagrammanzeige anpassen und Warnungen einrichten können.
 
-![Überwachen eines elastischen Pools][4] ![Ressourcenverwendung][6]
+![Überwachen eines elastischen Pools][4] 
+![Ressourcenverwendung][6]
 
 Klicken Sie auf **Diagramm bearbeiten**, um Parameter hinzuzufügen, mit denen Sie Telemetriedaten für den Pool problemlos anzeigen können.
 

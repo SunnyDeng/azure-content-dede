@@ -153,7 +153,7 @@ Das Zuordnen neuer Einheiten dauert etwa 20 Minuten.
 		using Microsoft.WindowsAzure.MediaServices.Client;
 		
 
-6. Erstellen Sie einen neuen Ordner unter dem Verzeichnis Projekte, und kopieren Sie eine MP4 oder WMV-Datei, die Sie codieren und streamen oder progressiv herunterladen möchten. In diesem Beispiel wird der Pfad "C:\\VideoFiles" verwendet.
+6. Erstellen Sie einen neuen Ordner unter dem Verzeichnis Projekte, und kopieren Sie eine MP4 oder WMV-Datei, die Sie codieren und streamen oder progressiv herunterladen möchten. In diesem Beispiel wird der Pfad "C:\VideoFiles" verwendet.
 
 ##Herstellen einer Verbindung mit dem Media Services-Konto
 
