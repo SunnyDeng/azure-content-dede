@@ -18,8 +18,6 @@
 
 # Nutzen einer API-App aus JavaScript mit CORS
 
-[AZURE.INCLUDE [app-service-api-get-started-selector](../../includes/app-service-api-get-started-selector.md)]
-
 ## Übersicht
 
 Dieser Artikel enthält zwei Abschnitte:
@@ -240,4 +238,4 @@ In den folgenden Schritten ist der Prozess zum Aktivieren der Web-API-Unterstüt
 
 In diesem Tutorial haben Sie erfahren, wie Sie App Service-CORS-Unterstützung aktivieren, sodass der JavaScript-Clientcode eine API in einer anderen Domäne aufrufen kann. Im nächsten Artikel der Serie zu ersten Schritten mit API-Apps lernen Sie die [Authentifizierung für App Service-API-Apps](app-service-api-authentication.md) kennen.
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

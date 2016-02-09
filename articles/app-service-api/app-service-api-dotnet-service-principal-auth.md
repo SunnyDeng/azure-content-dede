@@ -18,7 +18,7 @@
 
 # Dienstprinzipalauthentifizierung für API-Apps in Azure App Service
 
-[AZURE.INCLUDE [app-service-api-get-started-selector](../../includes/app-service-api-get-started-selector.md)]
+[AZURE.INCLUDE [Auswahl](../../includes/app-service-api-auth-selector.md)]
 
 ## Übersicht
 
@@ -392,4 +392,4 @@ Weitere Informationen zu Azure Active Directory finden Sie in den folgenden Ress
 
 Informationen zu anderen Möglichkeiten der Bereitstellung von Visual Studio-Projekten für API-Apps mit Visual Studio oder durch die [Automatisierung der Bereitstellung](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery) über ein [Quellcodeverwaltungssystem](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control) finden Sie unter [Gewusst wie: Bereitstellen einer Azure App Service-App](web-sites-deploy.md).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/07/2016"
+   ms.date="02/01/2016"
    ms.author="mausher;barbkess;sonyama"/>
 
 # Herstellen einer Verbindung mit SQL Data Warehouse über Visual Studio
@@ -26,7 +26,7 @@ In dieser exemplarischen Vorgehensweise wird das Verbinden mit einer Azure SQL D
 
 ## Voraussetzungen
 
-+ AdventureWorksDW-Beispieldatenbank in SQL Data Warehouse. Informationen zum Erstellen dieser Datenbank finden Sie unter [Erstellen einer SQL Data Warehouse-Datenbank](sql-data-warehouse-get-started-create.md). 
++ AdventureWorksDW-Beispieldatenbank in SQL Data Warehouse. Informationen zum Erstellen dieser Datenbank finden Sie unter [Erstellen einer SQL Data Warehouse-Datenbank](sql-data-warehouse-get-started-provision.md). 
 + SQL Server Data Tools für Visual Studio. Installationshinweise und Optionen finden Sie unter [Installieren von Visual Studio und/oder SSDT](sql-data-warehouse-install-visual-studio.md).
 
 ## Schritt 1: Ermitteln des vollqualifizierten Namens des SQL Azure-Servers
@@ -108,4 +108,4 @@ Nachdem Sie eine Verbindung hergestellt haben und Abfragen senden können, versu
 [7]: ./media/sql-data-warehouse-get-started-connect/run-query.png
 [8]: ./media/sql-data-warehouse-get-started-connect/query-results.png
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0204_2016-->

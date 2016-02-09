@@ -1,7 +1,7 @@
 <properties
 	pageTitle="Erstellen eines einfachen Experiments in Machine Learning-Studio | Microsoft Azure"
 	description="Ein erstes Lernprogramm für maschinelles Lernen zum Erstellen eines einfachen Experiments zum Trainieren und Testen eines linearen Regressionsmodells in Azure Machine Learning Studio."
-	keywords="experiment,linear regression,machine learning algorithms,machine learning tutorial,predictive modeling techniques"
+	keywords="Experiment, Linear Regression, maschinelle Lernalgorithmen, Machine Learning-Tutorial, Vorhersagemodell-Techniken"
 	services="machine-learning"
 	documentationCenter=""
 	authors="garyericson"
@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="hero-article"
-	ms.date="11/03/2015"
+	ms.date="02/03/2016"
 	ms.author="garye"/>
 
 # Lernprogramm für maschinelles Lernen: Erstellen Ihres ersten Experiments im Azure Machine Learning Studio
@@ -29,7 +29,7 @@ Rufen Sie Machine Learning Studio über [https://studio.azureml.net](https://stu
 
 Allgemeine Informationen zu Machine Learning Studio finden Sie unter [Was ist Machine Learning Studio?](machine-learning-what-is-ml-studio.md).
 
->[AZURE.TIP]Informationen zum Herunterladen und Drucken des Diagramms, mit dem Sie sich einen Überblick über die Machine Learning Studio-Funktionen verschaffen können, finden Sie unter [Übersichtsdiagramm der Azure Machine Learning Studio-Funktionen](machine-learning-studio-overview-diagram.md).
+>[AZURE.TIP] Informationen zum Herunterladen und Drucken des Diagramms, mit dem Sie sich einen Überblick über die Machine Learning Studio-Funktionen verschaffen können, finden Sie unter [Übersichtsdiagramm der Azure Machine Learning Studio-Funktionen](machine-learning-studio-overview-diagram.md).
 
 
 ## Fünf Schritte zum Erstellen von Hypothesen
@@ -76,7 +76,7 @@ Schließen Sie das Visualisierungsfenster, indem Sie auf das "**X**" in der ober
 
 DataSets müssen vor der Analyse normalerweise vorverarbeitet werden. Möglicherweise sind Ihnen bereits die fehlenden Werte in den Spalten verschiedener Zeilen aufgefallen. Damit das Modell die Daten richtig analysieren kann, müssen diese fehlenden Werte bereinigt werden. In unserem Fall entfernen wir alle Zeilen, in denen Werte fehlen. Außerdem enthält die Spalte **normalisierte Verluste** viele fehlende Werte, daher schließen wir diese Spalte komplett aus dem Modell aus.
 
-> [AZURE.TIP]Die Bereinigung fehlender Werte aus den Eingabedaten ist eine Voraussetzung für die Verwendung der meisten Module.
+> [AZURE.TIP] Die Bereinigung fehlender Werte aus den Eingabedaten ist eine Voraussetzung für die Verwendung der meisten Module.
 
 Wir entfernen zunächst die Spalte **normalized-losses** und anschließend alle Zeilen, in denen Daten fehlen.
 
@@ -94,7 +94,7 @@ Wir entfernen zunächst die Spalte **normalized-losses** und anschließend alle 
 
     ![Projektspalteneigenschaften][screen4]
 
-    > [AZURE.TIP]Sie können einen Kommentar zu einem Modul eingeben, indem Sie auf das Modul doppelklicken und Text eingeben. Auf diese Weise können Sie mit einem Blick sehen, welche Funktion das Modul in Ihrem Experiment erfüllt. Doppelklicken Sie in diesem Fall auf das [Project Columns][project-columns]-Modul, und geben Sie den Kommentar "normalized-losses ausschließen" ein.
+    > [AZURE.TIP] Sie können einen Kommentar zu einem Modul eingeben, indem Sie auf das Modul doppelklicken und Text eingeben. Auf diese Weise können Sie mit einem Blick sehen, welche Funktion das Modul in Ihrem Experiment erfüllt. Doppelklicken Sie in diesem Fall auf das [Project Columns][project-columns]-Modul, und geben Sie den Kommentar "normalized-losses ausschließen" ein.
 
 3. Ziehen Sie das Modul [Clean Missing Data][clean-missing-data] in den Experimentbereich, und verbinden Sie es mit dem [Project Columns][project-columns]-Modul. Wählen Sie im Panel **Eigenschaften** unter **Bereinigungsmodus** die Option **Gesamte Zeile entfernen** aus, um die Daten zu bereinigen, indem Sie alle Zeilen entfernen, in denen Werte fehlen. Doppelklicken Sie auf das Modul, und geben Sie den Kommentar "Remove missing value rows" ein.
 
@@ -124,7 +124,7 @@ Wir werden ein Modell erstellen, das eine Teilmenge der Funktionen in unserem Da
 
 3. Wählen Sie in der Spaltenauswahl unter **Begin With** die Option **No columns** aus, und wählen Sie in der Filterzeile **Include** und **column names** aus. Geben Sie unsere Liste der Spaltennamen ein. Damit weisen Sie das Modul an, nur die angegebenen Spalten zu durchlaufen.
 
-	> [AZURE.TIP]Da wir das Experiment bereits ausgeführt haben, haben die Spaltendefinitionen unserer Daten vom Original-DataSet das [Clean Missing Data][clean-missing-data]-Modul durchlaufen. Wenn Sie [Project Columns][project-columns] mit [Clean Missing Data][clean-missing-data] verbinden, erhält das [Project Columns][project-columns]-Modul Kenntnis von den Spaltendefinitionen in unseren Daten. Wenn Sie in das Feld **column names** klicken, wird eine Liste der Spalten angezeigt, und Sie können die Spalten, die Sie der Liste hinzufügen möchten, einzeln auswählen.
+	> [AZURE.TIP] Da wir das Experiment bereits ausgeführt haben, haben die Spaltendefinitionen unserer Daten vom Original-DataSet das [Clean Missing Data][clean-missing-data]-Modul durchlaufen. Wenn Sie [Project Columns][project-columns] mit [Clean Missing Data][clean-missing-data] verbinden, erhält das [Project Columns][project-columns]-Modul Kenntnis von den Spaltendefinitionen in unseren Daten. Wenn Sie in das Feld **column names** klicken, wird eine Liste der Spalten angezeigt, und Sie können die Spalten, die Sie der Liste hinzufügen möchten, einzeln auswählen.
 
 4. Klicken Sie auf das Häkchen ("OK").
 
@@ -140,9 +140,9 @@ Nachdem die Daten vorbereitet sind, können Sie das Vorhersagemodell anhand von 
 
 Wir möchten den Preis eines Autos vorhersagen, der beliebige Werte annehmen kann, daher verwenden wir ein Regressionsmodell. Für dieses Beispiel trainieren wir ein einfaches *lineares Regressionsmodell* und testen es anschließend im nächsten Schritt.
 
-1. Die uns vorliegenden Daten können sowohl zum Trainieren als auch zum Testen verwendet werden, indem wir sie in separate Trainings- und Testsätze aufteilen. Ziehen Sie das Modul [Split Data][split] in den Experimentbereich und verbinden Sie es mit der Ausgabe des letzten [Project Columns][project-columns]-Moduls. Setzen Sie **Anteil der Zeilen im ersten Ausgabedatensatz** auf 0,75. Mit dieser Einstellung verwenden wir 75 Prozent der Daten zum Trainieren des Modells und halten 25 Prozent für Tests zurück.
+1. Die uns vorliegenden Daten können sowohl zum Trainieren als auch zum Testen verwendet werden, indem wir sie in separate Trainings- und Testsätze aufteilen. Ziehen Sie das Modul [Split Data][split] in den Experimentbereich, und verbinden Sie es mit der Ausgabe des letzten [Project Columns][project-columns]-Moduls. Setzen Sie **Anteil der Zeilen im ersten Ausgabedatensatz** auf 0,75. Mit dieser Einstellung verwenden wir 75 Prozent der Daten zum Trainieren des Modells und halten 25 Prozent für Tests zurück.
 
-	> [AZURE.TIP]Sie können den Parameter **Zufälliger Ausgangswert** ändern, um unterschiedliche zufällige Proben für Training und Tests zu erstellen. Dieser Parameter steuert den Ausgangswert des Pseudo-Zufallszahlengenerators.
+	> [AZURE.TIP] Sie können den Parameter **Zufälliger Ausgangswert** ändern, um unterschiedliche zufällige Proben für Training und Tests zu erstellen. Dieser Parameter steuert den Ausgangswert des Pseudo-Zufallszahlengenerators.
 
 2. Führen Sie das Experiment aus. Dadurch können die Module [Project Columns][project-columns] und [Split Data][split] die Spaltendefinitionen an die Module übergeben, die wir als Nächstes hinzufügen werden.
 
@@ -150,7 +150,7 @@ Wir möchten den Preis eines Autos vorhersagen, der beliebige Werte annehmen kan
 
 	Wählen Sie für dieses Experiment das [Linear Regression][linear-regression]-Modul unter der Kategorie **Regression** aus (oder geben Sie "linear regression" im Suchfeld der Palette ein), und ziehen Sie das Modul in den Experimentbereich.
 
-4. Suchen Sie das Modul [Train Model][train-model], und ziehen Sie es ebenfalls in den Experimentbereich. Verbinden Sie die Ausgabe des linken Eingangsports mit dem Ausgang des Moduls [Linear Regression][linear-regression]. Verbinden Sie den rechten Eingangsport mit dem Trainingsdatenausgang (linker Port) des [Split Data][split]-Moduls.
+4. Suchen Sie das Modul [Modell trainieren][train-model], und ziehen Sie es ebenfalls in den Experimentbereich. Verbinden Sie die Ausgabe des linken Eingangsports mit dem Ausgang des Moduls [Linear Regression][linear-regression]. Verbinden Sie den rechten Eingangsport mit dem Trainingsdatenausgang (linker Port) des [Split Data][split]-Moduls.
 
 5. Wählen Sie das Modul [Train Model][train-model] aus, klicken Sie im Bereich **Eigenschaften** auf **Spaltenauswahl starten**, und wählen Sie dann die Spalte **price** aus. Dies ist der Wert, den unser Modell vorhersagen wird.
 
@@ -196,7 +196,7 @@ Das fertige Experiment sollte folgendermaßen aussehen:
 
 Da Sie jetzt ein erstes Lernprogramm zum maschinellen Lernen abgeschlossen und das Experiment eingerichtet haben, können Sie es wiederholen, um das Modell zu verbessern. Sie können z. B. die Funktionen ändern, die Sie in Ihrer Vorhersage verwenden. Oder Sie können die Eigenschaften des [Linearen Regressionsalgorithmus][linear-regression] ändern oder einen völlig anderen Algorithmus ausprobieren. Sie können Ihrem Ereignis sogar mehrere Algorithmen zum maschinellen Lernen gleichzeitig hinzufügen und jeweils zwei vergleichen, indem Sie das [Evaluate Model][evaluate-model]-Modul verwenden.
 
-> [AZURE.TIP]Mit der Schaltfläche **SPEICHERN ALS** unterhalb des Experimentbereichs können Sie Kopien der Iterationen Ihres Experiments speichern. Sie können alle Iterationen Ihres Experiments anzeigen, indem Sie unterhalb des Experimentbereichs auf **AUSFÜHRUNGSVERLAUF ANZEIGEN** klicken. Weitere Informationen finden Sie unter [Verwalten von Experimentiterationen in Azure Machine Learning-Studio][runhistory].
+> [AZURE.TIP] Mit der Schaltfläche **SPEICHERN ALS** unterhalb des Experimentbereichs können Sie Kopien der Iterationen Ihres Experiments speichern. Sie können alle Iterationen Ihres Experiments anzeigen, indem Sie unterhalb des Experimentbereichs auf **AUSFÜHRUNGSVERLAUF ANZEIGEN** klicken. Weitere Informationen finden Sie unter [Verwalten von Experimentiterationen in Azure Machine Learning-Studio][runhistory].
 
 [runhistory]: machine-learning-manage-experiment-iterations.md
 
@@ -204,7 +204,7 @@ Wenn Sie mit Ihrem Modell zufrieden sind, können Sie es als Webdienst bereitste
 
 [publish]: machine-learning-publish-a-machine-learning-web-service.md
 
-Eine umfassendere und ausführlichere exemplarische Vorgehensweise für Vorhersagemodell-Techniken zum Erstellen, Trainieren, Bewerten und Bereitstellen eines Modells finden Sie unter [Entwickeln einer Lösung zur Vorhersageanalyse mit Azure Machine Learning][walkthrough].
+Eine umfassendere und ausführlichere exemplarische Vorgehensweise für Vorhersagemodell-Techniken zum Erstellen, Trainieren, Bewerten und Bereitstellen eines Modells finden Sie unter [Entwickeln einer Vorhersagelösung mit Azure Machine Learning][walkthrough].
 
 [walkthrough]: machine-learning-walkthrough-develop-predictive-solution.md
 
@@ -234,4 +234,4 @@ Eine umfassendere und ausführlichere exemplarische Vorgehensweise für Vorhersa
 [split]: https://msdn.microsoft.com/library/azure/70530644-c97a-4ab6-85f7-88bf30a8be5f/
 [train-model]: https://msdn.microsoft.com/library/azure/5cc7053e-aa30-450d-96c0-dae4be720977/
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0204_2016-->

@@ -4,9 +4,9 @@
 	keywords="Datenbankoptionen, Datenbankleistung"
 	services="sql-database"
 	documentationCenter=""
-	authors="rothja"
+	authors="jeffgoll"
 	manager="jeffreyg"
-	editor="monicar"/>
+	editor="jeffreyg"/>
 
 <tags
 	ms.service="sql-database"
@@ -14,13 +14,12 @@
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
 	ms.workload="data-management"
-	ms.date="12/22/2015"
-	ms.author="jroth"/>
+	ms.date="02/03/2016"
+	ms.author="jeffreyg"/>
 
 # SQL-Datenbankoptionen und -leistung: Grundlegendes zum Angebot in den einzelnen Tarifen
 
-
-[Azure SQL-Datenbank](sql-database-technical-overview.md) umfasst mehrere Dienstebenen für unterschiedliche Workloads. Sie haben die Möglichkeit zum [Erstellen einer Einzeldatenbank](sql-database-get-started.md) mit definierten Merkmalen und Preisen. Oder Sie können mehrere Datenbanken verwalten, indem Sie einen [Pool für elastische Datenbanken erstellen](sql-database-elastic-pool-portal.md). In beiden Fällen sind die Dienstebenen **Basic**, **Standard** und **Premium** verfügbar. Die Datenbankoptionen dieser Tarife unterscheiden sich jedoch abhängig davon, ob Sie eine Einzeldatenbank oder eine Datenbank in einem Pool für elastische Datenbanken erstellen. Dieser Artikel bietet eine Übersicht über die Dienstebenen in beiden Kontexten.
+[Azure SQL-Datenbank](sql-database-technical-overview.md) umfasst mehrere Dienstebenen für unterschiedliche Workloads. Sie können Dienstebenen jederzeit und ohne Ausfallzeiten der Anwendung ändern. Sie haben auch die Möglichkeit zum [Erstellen einer Einzeldatenbank](sql-database-get-started.md) mit definierten Merkmalen und Preisen. Oder Sie können mehrere Datenbanken verwalten, indem Sie einen [Pool für elastische Datenbanken erstellen](sql-database-elastic-pool-portal.md). In beiden Fällen sind die Dienstebenen **Basic**, **Standard** und **Premium** verfügbar. Die Datenbankoptionen dieser Tarife unterscheiden sich jedoch abhängig davon, ob Sie eine Einzeldatenbank oder eine Datenbank in einem Pool für elastische Datenbanken erstellen. Dieser Artikel enthält ausführliche Informationen zu den Dienstebenen in beiden Kontexten.
 
 ## Tarife und Datenbankoptionen
 Die Dienstebenen "Basic", "Standard" und "Premium" haben alle eine Betriebszeit-SLA von 99,99 % und bieten vorhersagbare Leistung, flexible Optionen für Geschäftskontinuität, Sicherheitsfeatures und stündliche Abrechnung. In der folgenden Tabelle sind Beispiele für Dienstebenen aufgeführt, die sich für unterschiedliche Anwendungsworkloads am besten eignen.
@@ -31,10 +30,10 @@ Die Dienstebenen "Basic", "Standard" und "Premium" haben alle eine Betriebszeit-
 | **Standard** | Die richtige Wahl für die meisten Cloudanwendungen mit Unterstützung mehrerer gleichzeitiger Abfragen. Beispiele hierfür sind Arbeitsgruppen-oder Webanwendungen. |
 | **Premium** | Konzipiert für hohe Transaktionsvolumen, unterstützt eine große Anzahl gleichzeitiger Benutzer und erfordert die höchste Stufe der Funktionen für Geschäftskontinuität. Beispiele hierfür sind Datenbanken für unternehmenskritische Anwendungen. |
 
->[AZURE.NOTE] Web- und Business-Editionen werden eingestellt. Erfahren Sie, wie Sie ein [Upgrade von Web- und Business-Editionen](sql-database-upgrade-new-service-tiers.md) durchführen. Bitte informieren Sie sich unter [Häufig gestellte Fragen zur Einstellung von Web und Business Edition](https://azure.microsoft.com/pricing/details/sql-database/web-business/), wenn Sie Web- und Business-Editionen weiterhin verwenden möchten.
+>[AZURE.NOTE] Web Edition und Business Edition sind nicht mehr verfügbar. Erfahren Sie, wie Sie ein [Upgrade von Web- und Business-Editionen](sql-database-upgrade-new-service-tiers.md) durchführen. Bitte informieren Sie sich unter [Häufig gestellte Fragen zur Einstellung von Web und Business Edition](https://azure.microsoft.com/pricing/details/sql-database/web-business/), wenn Sie Web- und Business-Editionen weiterhin verwenden möchten.
 
 ### Tarife und Leistungsstufen für Einzeldatenbanken
-Für Einzeldatenbanken sind mehrere Leistungsstufen innerhalb jeder Dienstebene verfügbar, sodass Sie flexibel die Ebene auswählen können, die Ihren Workloadanforderungen am besten entspricht. Wenn Sie zentral hoch- oder herunterskalieren müssen, können Sie die Ebenen Ihrer Datenbank im klassischen Azure-Portal problemlos ändern, und zwar ohne Ausfallzeiten der Anwendung. Ausführlichere Informationen finden Sie unter [Ändern der Dienstebenen und -Leistungsstufen von Datenbanken](sql-database-scale-up.md).
+Für Einzeldatenbanken sind mehrere Leistungsstufen innerhalb jeder Dienstebene verfügbar, sodass Sie flexibel die Ebene auswählen können, die Ihren Workloadanforderungen am besten entspricht. Wenn Sie zentral hoch- oder herunterskalieren müssen, können Sie die Ebenen Ihrer Datenbank problemlos und **ohne Ausfallzeiten der Anwendung** ändern. Ausführlichere Informationen finden Sie unter [Ändern der Dienstebenen und -Leistungsstufen von Datenbanken](sql-database-scale-up.md).
 
 Die hier aufgeführten Leistungsmerkmale gelten für Datenbanken, die mit [SQL-Datenbank V12](sql-database-v12-whats-new.md) erstellt wurden. In Situationen, in denen die zugrunde liegende Hardware in Azure mehrere SQL-Datenbanken hostet, erhält Ihre Datenbank immer noch einen garantierten Satz von Ressourcen, und die erwarteten Leistungsmerkmale der individuellen Datenbank sind nicht betroffen.
 
@@ -50,7 +49,7 @@ Neben dem Erstellen und Skalieren einer Einzeldatenbank haben Sie die Möglichke
 
 Durch Pools für elastische Datenbanken können diese Datenbanken DTU-Ressourcen teilen und nutzen, ohne dass den Datenbanken im Pool eine bestimmte Leistungsstufe zugewiesen werden muss. Beispielsweise kann eine Einzeldatenbank in einem Pool der Dienstebene "Standard" 0 eDTU bis zum maximalen eDTU-Wert für Datenbanken (entweder die durch die Dienstebene definierten 100 eDTUs oder ein benutzerdefinierter Wert, den Sie festlegen) nutzen. Dadurch können mehrere Datenbanken mit unterschiedlichen Workloads die für den gesamten Pool verfügbaren eDTU-Ressourcen effizient nutzen.
 
-In der folgenden Tabelle sind die Merkmale der Dienstebenen eines Pools für elastische Datenbanken beschrieben.
+In der folgenden Tabelle sind die Merkmale der Dienstebenen eines Pools für elastische Datenbanken beschrieben. Definitionen und ausführlichere Informationen finden Sie unter [SQL-Datenbank – Referenz für Pools für elastische Azure SQL-Datenbanken](sql-database-elastic-pool-reference.md).
 
 [AZURE.INCLUDE [Tabelle der SQL-Datenbank-Dienstebenen für elastische Datenbanken](../../includes/sql-database-service-tiers-table-elastic-db-pools.md)]
 
@@ -63,7 +62,7 @@ Für jede Datenbank in einem Pool gelten auch die Merkmale für Einzeldatenbanke
 ## Überwachen der Datenbankleistung
 Die Überwachung der Leistung einer SQL-Datenbank beginnt mit der Überwachung der Ressourcennutzung relativ zur gewählten Datenbankleistung. Diese relevanten Daten werden auf folgende Weise zur Verfügung gestellt:
 
-1.	Im klassischen Microsoft Azure-Portal.
+1.	Im Azure-Portal
 
 2.	In dynamischen Verwaltungssichten in der Benutzerdatenbank und in der Masterdatenbank des Servers, die die Benutzerdatenbank enthält.
 
@@ -95,4 +94,4 @@ Wenn Sie mehrere Datenbanken als Gruppe verwalten möchten, finden Sie entsprech
 
 Nachdem Sie jetzt die Ebenen der SQL-Datenbank kennen, können Sie sie mit einer [kostenlosen Testversion](https://azure.microsoft.com/pricing/free-trial/) ausprobieren und sich mit der [Erstellung Ihrer ersten SQL-Datenbank](sql-database-get-started.md) befassen!
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

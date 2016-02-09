@@ -5,7 +5,7 @@
 	services="sql-database"
 	documentationCenter=""
 	authors="dalechen"
-	manager="msmets"
+	manager="felixwu"
 	editor=""/>
 
 <tags
@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="01/06/2016"
+	ms.date="02/02/2016"
 	ms.author="daleche"/>
 
 
@@ -33,9 +33,11 @@ Wenn Ihr Clientprogramm ADO.NET verwendet, wird eine **SqlException**-Ausnahme a
 
 ### Vorübergehende Fehler bei Verbindungsherstellung und Befehlen
 
-Sie können je nach Situation versuchen, die SQL-Verbindung erneut zu verwenden oder wiederherzustellen: 
-* **Beim Versuch, eine Verbindung herzustellen, tritt ein vorübergehender Fehler auf**: Versuchen Sie, die Verbindung wiederherzustellen, nachdem Sie einige Sekunden gewartet haben. 
-* **Bei einem SQL-Abfragebefehl tritt ein vorübergehender Fehler auf**: Versuchen Sie nicht, den Befehl sofort erneut auszuführen. Stattdessen sollte die Verbindung nach einer Verzögerungszeit neu hergestellt werden. Anschließend kann der Befehl erneut ausgeführt werden.
+Sie können je nach Situation versuchen, die SQL-Verbindung erneut zu verwenden oder wiederherzustellen:
+
+* **Beim Versuch, eine Verbindung herzustellen, tritt ein vorübergehender Fehler auf:** Versuchen Sie, die Verbindung wiederherzustellen, nachdem Sie einige Sekunden gewartet haben.
+
+* **Bei einem SQL-Abfragebefehl tritt ein vorübergehender Fehler auf:** Versuchen Sie nicht sofort, den Befehl erneut auszuführen. Stattdessen sollte die Verbindung nach einer Verzögerungszeit neu hergestellt werden. Anschließend kann der Befehl erneut ausgeführt werden.
 
 
 <a id="j-retry-logic-transient-faults" name="j-retry-logic-transient-faults"></a>
@@ -135,8 +137,8 @@ In der Praxis könnte Ihr Programm einen Laufzeitparameter ermitteln, der folgen
 1. 18456 wird zeitweilig zur Liste der Fehler hinzugefügt, die als vorübergehend betrachtet werden. 
 2. Der Benutzername wird mit Absicht um „WRONG_“ ergänzt. 
 3. Nachdem der Fehler ermittelt wurde, wird 18456 aus der Liste entfernt. 
-4. „WRONG_“ wird vom Benutzernamen entfernt. 
-5. Es wird erneut versucht, eine Verbindung herzustellen (dieser Versuch sollte erfolgreich sein).
+4. „WRONG_“ wird vom Benutzernamen entfernt.
+ 5. Es wird erneut versucht, eine Verbindung herzustellen (dieser Versuch sollte erfolgreich sein).
 
 
 <a id="a-connection-connection-string" name="a-connection-connection-string"></a>
@@ -245,16 +247,13 @@ Hintergrundinformationen zur Konfiguration von Ports und IP-Adressen finden Sie 
 Wenn Ihr Programm ADO.NET-Klassen wie **System.Data.SqlClient.SqlConnection** für die Verbindung mit Azure SQL-Datenbank verwendet, sollten Sie .NET Framework 4.6.1 oder höher verwenden.
 
 
-ADO.NET 4.6.1: 
-- für Unterstützung des TDS 7.4-Protokolls. Dies umfasst Verbindungserweiterungen, die über die Erweiterungen in ADO.NET 4.0 hinausgehen. 
-- Bietet Unterstützung für Verbindungspooling. Dies umfasst eine effiziente Überprüfung, ob das für Ihr Programm zur Verfügung gestellte Verbindungsobjekt funktioniert.
+ADO.NET 4.6.1: für Unterstützung des TDS 7.4-Protokolls. Dies umfasst Verbindungserweiterungen, die über die Erweiterungen in ADO.NET 4.0 hinausgehen. Bietet Unterstützung für Verbindungspooling. Dies umfasst eine effiziente Überprüfung, ob das für Ihr Programm zur Verfügung gestellte Verbindungsobjekt funktioniert.
 
 
 Bei Verwendung eines Verbindungsobjekts aus einem Verbindungspool sollte Ihr Programm die Verbindung vorübergehend schließen, wenn diese nicht umgehend verwendet wird. Das erneute Öffnen einer Verbindung ist weniger kostenintensiv als das Erstellen einer neuen Verbindung.
 
 
-Wenn Sie ADO.NET 4.0 oder eine ältere Version verwenden, sollten Sie ein Upgrade auf die aktuelle ADO.NET-Version durchführen.
-- Seit November 2015 können Sie [ADO.NET 4.6.1 herunterladen](http://blogs.msdn.com/b/dotnet/archive/2015/11/30/net-framework-4-6-1-is-now-available.aspx).
+Wenn Sie ADO.NET 4.0 oder eine ältere Version verwenden, sollten Sie ein Upgrade auf die aktuelle ADO.NET-Version durchführen. Seit November 2015 können Sie [ADO.NET 4.6.1 herunterladen](http://blogs.msdn.com/b/dotnet/archive/2015/11/30/net-framework-4-6-1-is-now-available.aspx).
 
 
 <a id="e-diagnostics-test-utilities-connect" name="e-diagnostics-test-utilities-connect"></a>
@@ -328,8 +327,8 @@ Nachfolgend finden Sie einige Transact-SQL-SELECT-Anweisungen, mit denen Fehler-
 
 | Protokollabfrage | Beschreibung |
 | :-- | :-- |
-| `SELECT e.*`<br/>`FROM sys.event_log AS e`<br/>`WHERE e.database_name = 'myDbName'`<br/>`AND e.event_category = 'connectivity'`<br/>`AND 2 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, e.end_time, GetUtcDate())`<br/>`ORDER BY e.event_category,`<br/>&nbsp;&nbsp;`e.event_type, e.end_time;` | [sys.event_log](http://msdn.microsoft.com/library/dn270018.aspx) zeigt Informationen zu einzelnen Ereignissen an, darunter einige, die zu vorübergehenden Fehlern oder Verbindungsfehlern führen können.<br/><br/>Idealerweise können Sie die Werte **start_time** oder **end_time** mit Informationen zum Zeitpunkt der Probleme bei Ihren Clientprogrammen in Beziehung bringen.<br/><br/>**TIPP:** Zur Ausführung dieser Abfrage müssen Sie eine Verbindung mit der **Masterdatenbank** herstellen. |
-| `SELECT c.*`<br/>`FROM sys.database_connection_stats AS c`<br/>`WHERE c.database_name = 'myDbName'`<br/>`AND 24 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, c.end_time, GetUtcDate())`<br/>`ORDER BY c.end_time;` | Für eine weitere Diagnose zeigt [sys.database_connection_stats](http://msdn.microsoft.com/library/dn269986.aspx) die Gesamtzahl verschiedener Ereignistypen an.<br/><br/>**TIPP:** Zur Ausführung dieser Abfrage müssen Sie eine Verbindung mit der **Masterdatenbank** herstellen. |
+| `SELECT e.*`<br/>`FROM sys.event_log AS e`<br/>`WHERE e.database_name = 'myDbName'`<br/>`AND e.event_category = 'connectivity'`<br/>`AND 2 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, e.end_time, GetUtcDate())`<br/>`ORDER BY e.event_category,`<br/>&nbsp;&nbsp;`e.event_type, e.end_time;` | [sys.event\_log](http://msdn.microsoft.com/library/dn270018.aspx) zeigt Informationen zu einzelnen Ereignissen an, darunter einige, die zu vorübergehenden Fehlern oder Verbindungsfehlern führen können.<br/><br/>Idealerweise können Sie die Werte **start\_time** oder **end\_time** mit Informationen zum Zeitpunkt der Probleme bei Ihren Clientprogrammen in Beziehung bringen.<br/><br/>**TIPP:** Zur Ausführung dieser Abfrage müssen Sie eine Verbindung mit der **Masterdatenbank** herstellen. |
+| `SELECT c.*`<br/>`FROM sys.database_connection_stats AS c`<br/>`WHERE c.database_name = 'myDbName'`<br/>`AND 24 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, c.end_time, GetUtcDate())`<br/>`ORDER BY c.end_time;` | Für eine weitere Diagnose zeigt [sys.database\_connection\_stats](http://msdn.microsoft.com/library/dn269986.aspx) die Gesamtzahl verschiedener Ereignistypen an.<br/><br/>**TIPP:** Zur Ausführung dieser Abfrage müssen Sie eine Verbindung mit der **Masterdatenbank** herstellen. |
 
 
 ### Diagnose: Suche nach Problemereignissen im Protokoll von SQL-Datenbank
@@ -382,7 +381,7 @@ database_xml_deadlock_report  2015-10-16 20:28:01.0090000  NULL   NULL   NULL   
 ## Enterprise Library 6
 
 
-Bei Enterprise Library 6 (EntLib60) handelt es sich um ein Framework aus .NET-Klassen, mit denen Sie stabile Clouddienstclients implementieren können (u. a. den Azure SQL-Datenbankdienst). Auf der folgenden Seite finden Sie Themen zu den verschiedenen Bereichen, in denen EntLib60 nützlich ist: 
+Bei Enterprise Library 6 (EntLib60) handelt es sich um ein Framework aus .NET-Klassen, mit denen Sie stabile Clouddienstclients implementieren können (u. a. den Azure SQL-Datenbankdienst). Auf der folgenden Seite finden Sie Themen zu den verschiedenen Bereichen, in denen EntLib60 nützlich ist:
 – [Enterprise Library 6 – April 2013](http://msdn.microsoft.com/library/dn169621%28v=pandp.60%29.aspx)
 
 
@@ -429,7 +428,7 @@ Unter folgenden Links finden Sie weitere Informationen zu EntLib60:
 
 - Kostenloses E-Book: [Developer's Guide to Microsoft Enterprise Library, 2nd Edition](http://www.microsoft.com/download/details.aspx?id=41145).
 
-- Bewährte Methoden: [Allgemeiner Leitfaden zum Wiederholen von Vorgängen](best-practices-retry-general.md) bietet eine detaillierte Erläuterung wichtiger Aspekte im Zusammenhang mit Wiederholungslogik.
+- Bewährte Methoden: [Allgemeiner Leitfaden zum Wiederholen von Vorgängen](../best-practices-retry-general.md) bietet eine detaillierte Erläuterung wichtiger Aspekte im Zusammenhang mit Wiederholungslogik.
 
 - NuGet-Download: [Enterprise Library – Transient Fault Handling Application Block 6.0](http://www.nuget.org/packages/EnterpriseLibrary.TransientFaultHandling/)
 
@@ -446,7 +445,7 @@ Unter folgenden Links finden Sie weitere Informationen zu EntLib60:
 - Der Protokollierungsblock abstrahiert die Protokollierungsfunktionalität vom Protokollziel, sodass der Anwendungscode unabhängig von Speicherort und Typ des Zielprotokollspeichers einheitlich ist.
 
 
-Einzelheiten finden Sie hier: 
+Einzelheiten finden Sie hier:
 [5 – Protokollierung leicht gemacht: mit dem Protokollierungsanwendungsblock](https://msdn.microsoft.com/library/dn440731%28v=pandp.60%29.aspx)
 
 
@@ -533,4 +532,4 @@ public bool IsTransient(Exception ex)
 
 - [*Retrying* ist eine Apache 2.0-lizenzierte Allzweckwiederholungsbibliothek, die in **Python** geschrieben wurde und das Hinzufügen von Wiederholungsverhalten zu praktisch jeglichen Elementen vereinfacht.](https://pypi.python.org/pypi/retrying)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

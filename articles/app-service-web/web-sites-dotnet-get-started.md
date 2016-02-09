@@ -42,7 +42,7 @@ Sie lernen Folgendes:
 * Verwenden von Visual Studio **Server-Explorer** zum Öffnen von Remotedateien und Starten einer Remotedebugsitzung 
 * Verwenden des [Azure-Portals](/overview/preview-portal/) zum Überwachen und Verwalten der Web-App
 
-> [AZURE.NOTE]In diesem Tutorial wird die Verwendung von ASP.NET mit Azure App Service beschrieben; die Entwicklung einer ASP.NET-Webanwendung wird darin nicht behandelt. Eine Einführung zu ASP.NET MVC 5 finden Sie unter [Erste Schritte mit ASP.NET MVC 5](http://www.asp.net/mvc/overview/getting-started/introduction/getting-started) auf der [ASP.NET](http://asp.net/)-Website. Links zu anderen Artikeln, in denen die Anwendung des Azure App Service ausführlicher beschrieben wird, finden Sie im Abschnitt [Nächste Schritte](#next-steps).
+> [AZURE.NOTE] In diesem Tutorial wird die Verwendung von ASP.NET mit Azure App Service beschrieben; die Entwicklung einer ASP.NET-Webanwendung wird darin nicht behandelt. Eine Einführung zu ASP.NET MVC 5 finden Sie unter [Erste Schritte mit ASP.NET MVC 5](http://www.asp.net/mvc/overview/getting-started/introduction/getting-started) auf der [ASP.NET](http://asp.net/)-Website. Links zu anderen Artikeln, in denen die Anwendung des Azure App Service ausführlicher beschrieben wird, finden Sie im Abschnitt [Nächste Schritte](#next-steps).
 > 
 > Unterstützen Sie uns dabei, Umfang und Ansatz dieses Tutorials zu gestalten – wenn Sie wünschen, dass ein Erste-Schritte-Tutorial weitere Themen abdeckt, hinterlassen Sie Ihr Feedback am Ende des Tutorials in einem [Disqus-Kommentar](#comments).
 
@@ -296,9 +296,9 @@ In diesem Lernprogramm haben Sie erfahren, wie eine einfache Webanwendung erstel
 
 * [Auswählen oder Erstellen eines App Service-Plans](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md)
 
-* [Auswählen oder Erstellen einer Ressourcengruppe](../azure-preview-portal-using-resource-groups.md)
+* [Auswählen oder Erstellen einer Ressourcengruppe](../azure-portal/resource-group-portal.md)
 
 ## Änderungen
 * Hinweise zu den Änderungen in App Service im Vergleich zu Websites finden Sie unter [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0204_2016-->
