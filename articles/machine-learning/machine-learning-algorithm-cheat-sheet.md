@@ -30,7 +30,7 @@ Das **Microsoft Azure Machine Learning – Cheat Sheet für Algorithmen** erleic
 
 Laden Sie das Cheat Sheet für Algorithmen für maschinelles Lernen herunter, mit dem Sie einen Algorithmus für maschinelles Lernen auswählen können. Drucken Sie das Cheat Sheet in Tabloid-Größe (11 x 17 Zoll) aus, um schnell darauf zugreifen zu können.
 
-**Sie können das Cheat Sheet hier herunterladen: [Microsoft Azure Machine Learning Algorithm Cheat Sheet](http://download.microsoft.com/download/A/6/1/A613E11E-8F9C-424A-B99D-65344785C288/microsoft-machine-learning-algorithm-cheat-sheet-v6.pdf)** (in englischer Sprache).
+**Sie können das Cheat Sheet hier herunterladen: [Microsoft Azure Machine Learning Algorithm Cheat Sheet](http://download.microsoft.com/download/A/6/1/A613E11E-8F9C-424A-B99D-65344785C288/microsoft-machine-learning-algorithm-cheat-sheet-v6.pdf) \(in englischer Sprache).**
 
 ![Machine Learning Cheat Sheet für Algorithmen: Wie wähle ich einen Algorithmus für maschinelles Lernen aus?][cheat-sheet]
 

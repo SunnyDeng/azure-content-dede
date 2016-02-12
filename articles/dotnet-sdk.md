@@ -180,7 +180,7 @@ Um festzustellen, welche Version aktuell ist, oder um ältere Versionen herunter
 
 ##<a id="resources"></a>Ressourcen
 
-Das aktuelle Azure-SDK für .NET oder Clientbibliotheken können Sie auf der Azure Download-Seite herunterladen.
+Das aktuelle Azure-SDK für .NET oder Clientbibliotheken können Sie auf der [Azure Download-Seite](/downloads/) herunterladen.
 
 Quellcode des Azure-SDK für .NET, einschließlich Clientbibliotheken, finden Sie unter [GitHub.com/Azure](https://github.com/azure/).
 

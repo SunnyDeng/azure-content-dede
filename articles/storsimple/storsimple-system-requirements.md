@@ -36,7 +36,7 @@ Die folgenden Softwareanforderungen gelten für Speicherclients, die auf das Sto
 | Unterstützte Betriebssysteme | Erforderliche Version | Weitere Anforderungen/Hinweise |
 | --------------------------- | ---------------- | ------------- |
 | Windows Server | 2008 R2 SP1, 2012, 2012 R2 |StorSimple iSCSI-Volumes werden nur für die Verwendung auf den folgenden Windows-Datenträgertypen unterstützt:<ul><li>Einfaches Volume auf einfachem Datenträger</li><li>Einfaches und gespiegeltes Volume auf dynamischem Datenträger</li></ul>Schlanke Speicherzuweisung für Windows Server 2012 und ODX-Features werden bei Verwendung eines StorSimple iSCSI-Volumes unterstützt.<br><br>Mit StorSimple können Volumes mit schlanker und vollständiger Speicherzuweisung erstellt werden. Es können damit keine teilweise bereitgestellten Volumes erstellt werden.<br><br>Das erneute Formatieren eines mit schlanker Speicherzuweisung erstellten Volumes kann lange dauern. Es wird empfohlen, das Volume zu löschen und dann ein neues Volume zu erstellen, anstatt neu zu formatieren. Falls Sie trotzdem das Neuformatieren eines Volumes vorziehen:<ul><li>Führen Sie vor dem Neuformatieren den folgenden Befehl aus, um Verzögerungen bei der Speicherplatzrückgewinnung zu vermeiden: <br>`fsutil behavior set disabledeletenotify 1`</br></li><li>Verwenden Sie nach Abschluss der Formatierung den folgenden Befehl, um die Speicherplatzrückgewinnung wieder zu aktivieren:<br>`fsutil behavior set disabledeletenotify 0`</br></li><li>Wenden Sie den Windows Server 2012-Hotfix, der unter [KB2878635](https://support.microsoft.com/kb/2870270) beschrieben ist, auf Ihren Windows Server-Computer an.</li></ul></li></ul></ul> Greifen Sie auf [Softwareanforderungen für optionale Komponenten](#software-requirements-for-optional-components) zu, wenn Sie StorSimple Snapshot Manager oder den StorSimple-Adapter für SharePoint konfigurieren.|
-| VMWare ESX | 5\.5 | Wird für VMware vSphere als iSCSI-Client unterstützt. Die VAAI-Blockfunktion wird für VMware vSphere auf StorSimple-Geräten unterstützt. 
+| VMWare ESX | 5.5 | Wird für VMware vSphere als iSCSI-Client unterstützt. Die VAAI-Blockfunktion wird für VMware vSphere auf StorSimple-Geräten unterstützt. 
 | Linux RHEL/CentOS | 5 und 6 | Unterstützung für Linux-iSCSI-Clients mit Open-iSCSI-Initiator, Versionen 5 und 6. |
 | Linux | SUSE Linux 11 | |
  > [AZURE.NOTE] IBM AIX wird für StorSimple derzeit nicht unterstützt.
@@ -108,7 +108,12 @@ Update 2 umfasst mehrere netzwerkbezogene Verbesserungen, und die Routingmetrik 
 		
 	| Netzwerkschnittstelle | Cloudfähig | Nicht cloudfähig mit Gateway |
 	|-----|---------------|---------------------------|
-	| Data 0 | 1 | - | | Data 1 | 2 | 20 | | Data 2 | 3 | 30 | | Data 3 | 4 | 40 | | Data 4 | 5 | 50 | | Data 5 | 6 | 60 |
+	| Data 0 | 1 | - |
+	| Data 1 | 2 | 20 |
+	| Data 2 | 3 | 30 |
+	| Data 3 | 4 | 40 |
+	| Data 4 | 5 | 50 |
+	| Data 5 | 6 | 60 |
 
 
 - Der Clouddatenverkehr wird in folgender Reihenfolge über die Netzwerkschnittstellen weitergeleitet:

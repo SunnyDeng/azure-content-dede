@@ -155,7 +155,8 @@ Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta S
 7. Klicken Sie auf der Dialogfeldseite **Temporäres Kennwort abrufen** auf **Erstellen**. <br><br>![Was ist Azure AD Connect?][105]  
 8. Führen Sie auf der Dialogfeldseite **Temporäres Kennwort abrufen** die folgenden Schritte aus: <br><br>![Was ist Azure AD Connect?][106]   
 
-    a. Notieren Sie den Wert von **Neues Kennwort**. b. Klicken Sie auf **Fertig stellen**.
+    a. Notieren Sie den Wert von **Neues Kennwort**. 
+    b. Klicken Sie auf **Fertig stellen**.
   
  
 ### Erstellen eines Testbenutzers für Halogen Software
@@ -166,7 +167,12 @@ Das Ziel dieses Abschnitts ist das Erstellen eines Benutzers namens Britta Simon
 
 1. Melden Sie sich in Ihrer **Halogen Software**-Anwendung als Administrator an.
 2. Klicken Sie auf die Registerkarte **Benutzercenter** und dann auf **Benutzer erstellen**. <br><br>![Was ist Azure AD Connect?][300]  
-3. Führen Sie auf der Dialogfeldseite **Neuer Benutzer** die folgenden Schritte aus: <br><br>![Was ist Azure AD Connect?][301] a. Geben Sie in das Textfeld **Vorname** den Namen **Britta** ein. b. Geben Sie in das Textfeld **Nachname** den Namen **Simon** ein. c. Geben Sie im Textfeld **Benutzername** **Britta Simons Benutzernamen im Azure AD-Portal** ein. d. Geben Sie im Textfeld **Kennwort** ein Kennwort für Britta ein. e. Klicken Sie auf **Speichern**.
+3. Führen Sie auf der Dialogfeldseite **Neuer Benutzer** die folgenden Schritte aus: <br><br>![Was ist Azure AD Connect?][301] 
+  a. Geben Sie in das Textfeld **Vorname** den Namen **Britta** ein. 
+  b. Geben Sie in das Textfeld **Nachname** den Namen **Simon** ein. 
+  c. Geben Sie im Textfeld **Benutzername** **Britta Simons Benutzernamen im Azure AD-Portal** ein. 
+  d. Geben Sie im Textfeld **Kennwort** ein Kennwort für Britta ein. 
+  e. Klicken Sie auf **Speichern**.
 
 
 ### Zuweisen des Azure AD-Testbenutzers

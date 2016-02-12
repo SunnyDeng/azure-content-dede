@@ -91,9 +91,9 @@ Weitere Informationen zu IoT Hub:
 
 <!-- Links -->
 
-[Azure Blob storage]: https://azure.microsoft.com/de-DE/documentation/articles/storage-dotnet-how-to-use-blobs/
+[Azure Blob storage]: https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/
 [Azure Data Factory]: https://azure.microsoft.com/de-DE/documentation/services/data-factory/
-[HDInsight (Hadoop)]: https://azure.microsoft.com/de-DE/documentation/services/hdinsight/
+[HDInsight (Hadoop)]: https://azure.microsoft.com/documentation/services/hdinsight/
 [Service Bus-Warteschlange]: https://azure.microsoft.com/de-DE/documentation/articles/service-bus-dotnet-how-to-use-queues/
 [EventProcessorHost]: http://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventprocessorhost(v=azure.95).aspx
 

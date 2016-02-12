@@ -3,7 +3,7 @@
 
 Cloud Services ist ein Beispiel für Platform-as-a-Service (PaaS). Diese Technologie unterstützt wie [App Service](../articles/app-service-web/app-service-web-overview.md) skalierbare und zuverlässige Anwendungen mit niedrigen Betriebskosten. Cloud Services werden ebenso wie ein App Service auf VMs gehostet. Sie haben jedoch mehr Kontrolle über die virtuellen Computer. Sie können Ihre eigene Software auf Clouddienst-VMs installieren und per Remotezugriff auf diese zugreifen.
 
-![cs\_diagramcs\_diagram](./media/cloud-services-choose-me-content/diagram.png)
+![cs_diagramcs_diagram](./media/cloud-services-choose-me-content/diagram.png)
 
 Mehr Kontrolle bedeutet auch weniger Anwenderfreundlichkeit; wenn Sie die zusätzlichen Verwaltungsoptionen nicht benötigen, ist es i. d. R. im Vergleich zu Cloud Services schneller und einfacher Webanwendungen in Web-Apps in App Service zum Laufen zu bringen.
 
@@ -11,8 +11,10 @@ Diese Technologie bietet zwei leicht abweichende Optionen für VM: Auf Instanzen
 
 Eine beliebige Kombination dieser zwei leicht unterschiedlichen VM Hostingoptionen sind in einem Clouddienst verfügbar:
 
-* **Webrolle** Führt Windows Server mit Ihrer Web-App aus, die automatisch auf IIS bereitgestellt wird.
-* **Workerrolle** Führt Windows-Server ohne IIS aus.
+* **Webrolle**  
+  Führt Windows Server mit Ihrer Web-App aus, die automatisch auf IIS bereitgestellt wird.
+* **Workerrolle**  
+  Führt Windows-Server ohne IIS aus.
 
 Einfache Anwendungen verwenden z. B. nur eine Webrolle, während komplexere Anwendungen eine Webrolle für die Verarbeitung eingehender Benutzeranforderungen verwenden und die aus diesen Anforderungen entstandene Arbeit an Workerrollen abgeben. (Diese Kommunikation erfolgt über einen [Service Bus](../articles/service-bus/service-bus-fundamentals-hybrid-solutions.md) oder über [Azure-Warteschlangen](../articles/storage/storage-introduction.md).)
 

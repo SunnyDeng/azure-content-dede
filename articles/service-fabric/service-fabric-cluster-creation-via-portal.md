@@ -112,7 +112,8 @@ Wenn die Bereitstellung abgeschlossen ist, können Sie Ihren Cluster im Portal p
 
 1. Wechseln Sie zu **Durchsuchen**, und klicken Sie auf **Service Fabric-Cluster**.
 
-2. Suchen Sie Ihren Cluster, und klicken Sie darauf. ![Screenshot der Suche nach dem Cluster im Portal.][BrowseCluster]
+2. Suchen Sie Ihren Cluster, und klicken Sie darauf. 
+	![Screenshot der Suche nach dem Cluster im Portal.][BrowseCluster]
 
 3. Sie können jetzt die Details Ihres Clusters, einschließlich der öffentlichen IP-Adresse, im Dashboard anzeigen. Wenn Sie die Maus über **Öffentliche IP-Adresse des Clusters** bewegen, wird eine Zwischenablage angezeigt, in die Sie die Adresse durch Klicken kopieren können. ![Screenshot der Clusterdetails im Dashboard.][ClusterDashboard]
 

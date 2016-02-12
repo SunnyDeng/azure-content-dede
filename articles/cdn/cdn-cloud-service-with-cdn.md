@@ -80,7 +80,7 @@ In diesem Abschnitt stellen Sie die standardmäßige ASP.NET-MVC-Anwendungsvorla
 
 	![](media/cdn-cloud-service-with-cdn/cdn-cs-6-publish-signedin.png)
 
-8. Davon ausgehend, dass Sie noch keinen Clouddienst und kein Speicherkonto erstellt haben, unterstützt Visual Studio Sie bei der Erstellung dieser beiden Komponenten. Geben Sie im Dialogfeld **Create Cloud Service and Account** den gewünschten Dienstnamen ein, und wählen Sie die Region aus. Klicken Sie dann auf **Erstellen**.
+8. Davon ausgehend, dass Sie noch keinen Clouddienst und kein Speicherkonto erstellt haben, unterstützt Visual Studio Sie bei der Erstellung dieser beiden Komponenten. Geben Sie im Dialogfeld **Clouddienst und Konto erstellen** den gewünschten Dienstnamen ein, und wählen Sie die Region aus. Klicken Sie dann auf **Erstellen**.
 
 	![](media/cdn-cloud-service-with-cdn/cdn-cs-7-publish-createserviceandstorage.png)
 

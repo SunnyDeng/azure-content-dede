@@ -99,11 +99,11 @@ Geben Sie die Werte wie nachfolgend gezeigt ein:
 * **Datasetname** – Geben Sie einen Datasetnamen für die Power BI-Ausgabe an. Verwenden wir z. B. „pbidemo“.
 *	**Tabellenname** – Geben Sie einen Tabellennamen unter dem Dataset der Power BI-Ausgabe ein. Wir verwenden hier „pbidemo“. Derzeit darf die Power BI-Ausgabe von Stream Analytics-Aufträgen nur eine Tabelle pro Dataset aufweisen.
 
->	[AZURE.NOTE] You should not explicitly create this dataset and table in your Power BI account. They will be automatically created when you start your Stream Analytics job and the job starts pumping output into Power BI. If your job query doesn’t return any results, the dataset and table will not be created.
+>	[AZURE.NOTE] Sie sollten Dataset und Tabelle nicht explizit in Ihrem Power BI-Konto erstellen. Sie werden automatisch beim Starten Ihres Stream Analytics-Auftrags erstellt, sobald der Auftrag eine Ausgabe an Power BI zurückgibt. Wenn Ihre Auftragsabfrage keine Ergebnisse zurückgibt, werden Dataset und Tabelle nicht erstellt.
 
 *	Klicken Sie auf **OK** und anschließend auf **Testverbindung**. Die Ausgabekonfiguration ist abgeschlossen.
 
->	[AZURE.WARNING] Also be aware that if Power BI already had a dataset and table with the same name as the one you provided in this Stream Analytics job, the existing data will be overwritten.
+>	[AZURE.WARNING] Wenn Power BI bereits über ein Dataset und eine Tabelle mit demselben Namen verfügt, den Sie in diesem Stream Analytics-Auftrag angegeben haben, beachten Sie bitte, dass die vorhandenen Daten überschrieben werden.
 
 
 ## Schreiben von Abfragen

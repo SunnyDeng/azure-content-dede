@@ -24,9 +24,11 @@ ETW wird während der Service Fabric-Laufzeit verwendet, um Diagnoseinformatione
 
 Damit die Ablaufverfolgungsdaten in Elasticsearch angezeigt werden können, müssen sie in Echtzeit (also während der Anwendungsausführung) an den Service Fabric-Clusterknoten erfasst und an den Elasticsearch-Endpunkt gesendet werden. Für die Erfassung von Ablaufverfolgungen stehen zwei Hauptoptionen zur Verfügung:
 
-+ **In-Process-Ablaufverfolgungserfassung**: Die Diagnosedaten werden von der Anwendung (genauer gesagt: vom Dienstprozess) an den Ablaufverfolgungsspeicher (Elasticsearch) gesendet.
++ **In-Process-Ablaufverfolgungserfassung**:  
+Die Diagnosedaten werden von der Anwendung (genauer gesagt: vom Dienstprozess) an den Ablaufverfolgungsspeicher (ElasticSearch) gesendet.
 
-+ **Out-of-Process-Ablaufverfolgungserfassung**: Die Ablaufverfolgungen vom Dienstprozess bzw. den Prozessen werden von einem separaten Agenten erfasst und an den Ablaufverfolgungsspeicher gesendet.
++ **Out-of-Process-Ablaufverfolgungserfassung**:  
+Die Ablaufverfolgungen von Dienstprozessen werden von einem separaten Agent erfasst und an den Ablaufverfolgungsspeicher gesendet.
 
 Im weiteren Verlauf wird beschrieben, wie Elasticsearch in Azure eingerichtet wird, welche Vor- und Nachteile die beiden Erfassungsoptionen haben, und wie Sie einen Service Fabric-Dienst für das Senden von Daten an Elasticsearch konfigurieren.
 
