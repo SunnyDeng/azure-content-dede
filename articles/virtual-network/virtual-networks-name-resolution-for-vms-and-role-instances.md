@@ -4,7 +4,7 @@
    services="virtual-network"
    documentationCenter="na"
    authors="GarethBradshawMSFT"
-   manager="jdial"
+   manager="carmonm"
    editor="tysonn" />
 <tags 
    ms.service="virtual-network"
@@ -42,9 +42,9 @@ Welche Art der Namensauflösung Sie verwenden, hängt davon ab, wie die virtuell
 
 ## Von Azure bereitgestellte Namensauflösung
 
-Zusammen mit der Auflösung des öffentlichen DNS-Namens bietet Azure die Auflösung interner Namen für virtuelle Computer und Rolleninstanzen, die sich innerhalb des gleichen virtuellen Netzwerks oder Clouddienstes befinden. Virtuelle Computer oder Instanzen in einem Clouddienst teilen das gleiche DNS-Suffix, sodass der Hostname allein ausreichend ist. In klassischen virtuellen Netzwerken haben verschiedene Clouddienste verschiedene DNS-Suffixe, sodass der FQDN erforderlich ist. In ARM-basierten virtuellen Netzwerken ist das DNS-Suffix im ganzen virtuellen Netzwerk gleich, sodass der FQDN nicht erforderlich ist, und der DNS-Name entweder der Netzwerkkarte oder dem virtuellen Computer zugewiesen werden kann. Obwohl für die von Azure bereitgestellte Namensauflösung keine Konfiguration erforderlich ist, ist sie nicht für alle Bereitstellungsszenarien die beste Lösung, wie in der Tabelle oben dargestellt.
+Zusammen mit der Auflösung des öffentlichen DNS-Namens bietet Azure die Auflösung interner Namen für virtuelle Computer und Rolleninstanzen, die sich innerhalb des gleichen virtuellen Netzwerks oder Clouddienstes befinden. Virtuelle Computer und Instanzen in einem Clouddienst verwenden das gleiche DNS-Suffix. Daher ist innerhalb eines Clouddiensts der Hostname allein ausreichend. In klassischen virtuellen Netzwerken hingegen haben verschiedene Clouddienste unterschiedliche DNS-Suffixe. Deshalb wird hier der FQDN (Fully Qualified Domain Name, vollqualifizierter Domänenname) benötigt, um Namen zwischen verschiedenen Clouddiensten aufzulösen. In auf Azure-Ressourcen-Manager basierenden virtuellen Netzwerken ist das DNS-Suffix im ganzen virtuellen Netzwerk gleich, sodass der FQDN nicht erforderlich ist, und der DNS-Name kann entweder der Netzwerkkarte oder dem virtuellen Computer zugewiesen werden. Obwohl für die von Azure bereitgestellte Namensauflösung keine Konfiguration erforderlich ist, ist sie nicht für alle Bereitstellungsszenarien die beste Lösung, wie in der Tabelle oben dargestellt.
 
-> [AZURE.NOTE]Im Fall von Web- und Workerrollen können Sie auf die internen IP-Adressen von Rolleninstanzen auf Grundlage des Rollennamens und der Instanznummer über die REST-API für die Azure-Service-Verwaltung zugreifen. Weitere Informationen finden Sie unter [Referenz zur REST-API der Dienstverwaltung](https://msdn.microsoft.com/library/azure/ee460799.aspx).
+> [AZURE.NOTE] Im Fall von Web- und Workerrollen können Sie auf die internen IP-Adressen von Rolleninstanzen auf Grundlage des Rollennamens und der Instanznummer über die REST-API für die Azure-Service-Verwaltung zugreifen. Weitere Informationen finden Sie unter [Referenz zur REST-API der Dienstverwaltung](https://msdn.microsoft.com/library/azure/ee460799.aspx).
 
 ### Funktionen und Überlegungen
 
@@ -54,7 +54,7 @@ Zusammen mit der Auflösung des öffentlichen DNS-Namens bietet Azure die Auflö
 
 - Der von Azure bereitgestellte Dienst zur Namensauflösung ist hoch verfügbar und erspart Ihnen das Erstellen und Verwalten von Clustern Ihrer eigenen DNS-Server.
 
-- Die Namensauflösung wird zwischen Rolleninstanzen oder virtuellen Computern im gleichen Clouddienst bereitgestellt, ohne dass ein FQDN erforderlich ist.
+- Die Namensauflösung wird zwischen Rolleninstanzen/virtuellen Computern im gleichen Clouddienst bereitgestellt, ohne dass ein FQDN erforderlich ist.
 
 - Die Namensauflösung wird zwischen virtuellen Computern in ARM-basierten virtuellen Netzwerken ohne Notwendigkeit des FQDN bereitgestellt. In klassischen virtuellen Netzwerken ist der FQDN beim Auflösen von Namen in unterschiedlichen Clouddiensten erforderlich.
 
@@ -72,7 +72,7 @@ Zusammen mit der Auflösung des öffentlichen DNS-Namens bietet Azure die Auflö
 
 - Hostnamen müssen DNS-kompatibel sein. (Es dürfen nur 0-9, a-Z und "-" verwendet werden, und sie dürfen nicht mit "-" beginnen. Siehe RFC 3696 Abschnitt 2).
 
-- Der DNS-Anfragedatenverkehr wird pro virtuellem Computer gedrosselt. Dies sollte auf die meisten Anwendungen keine Auswirkungen haben. Wenn eine Drosselung der Anforderungen festgestellt wird, stellen Sie sicher, dass clientseitiges Zwischenspeichern aktiviert ist. Weitere Informationen finden Sie unter [Getting the most from Azure-provided name resolution](#Getting-the-most-from-Azure-provided-name-resolution) (auf Englisch).
+- Der DNS-Abfragedatenverkehr wird für den jeweiligen virtuellen Computer gedrosselt. Dies sollte auf die meisten Anwendungen keine Auswirkungen haben. Wenn eine Drosselung der Anforderungen festgestellt wird, stellen Sie sicher, dass clientseitiges Zwischenspeichern aktiviert ist. Weitere Informationen finden Sie unter [Getting the most from Azure-provided name resolution](#Getting-the-most-from-Azure-provided-name-resolution) (auf Englisch).
 
 - Nur virtuelle Computer in den ersten 180 Clouddiensten werden für jedes klassische virtuelle Netzwerk registriert. Dies gilt nicht für ARM-basierte virtuelle Netzwerke.
 
@@ -82,7 +82,9 @@ Zusammen mit der Auflösung des öffentlichen DNS-Namens bietet Azure die Auflö
 
 Nicht alle DNS-Abfragen müssen über das Netzwerk gesendet werden. Clientseitiges Zwischenspeichern kann die Latenz verringern und die Flexibilität bei Netzwerkproblemen verbessern, indem sich wiederholende DNS-Abfragen aus einem lokalen Cache aufgelöst werden. DNS-Einträge enthalten ein Time-To-Live (TTL), damit der Cache den Datensatz so lange wie möglich speichern kann, ohne die Aktualität der Datensätze zu beeinträchtigen, damit das clientseitige Zwischenspeichern für die meisten Situationen geeignet ist.
 
-Der standardmäßige DNS-Client von Windows verfügt über einen integrierten DNS-Cache. Einige Linux-Distributionen enthalten standardmäßig kein Zwischenspeichern, sodass empfohlen wird, diese Funktion zu jedem virtuellen Linux-Computer hinzuzufügen. Es gibt eine Reihe verschiedener DNS-Cachingpakete, z. B. dnsmasq. Es folgen die Schritte zur Installation von dnsmasq auf den am häufigsten verwendeten Distributionen:
+Der standardmäßige DNS-Client von Windows verfügt über einen integrierten DNS-Cache. Einige Linux-Distributionen bieten standardmäßig kein Zwischenspeichern. Deshalb wird empfohlen, diese Funktion zu jedem virtuellen Linux-Computer hinzuzufügen (nachdem Sie sich vergewissert haben, dass noch kein lokaler Cache vorhanden ist).
+
+Es gibt eine Reihe verschiedener DNS-Cachingpakete, z. B. dnsmasq. Es folgen die Schritte zur Installation von dnsmasq auf den am häufigsten verwendeten Distributionen:
 
 - **Ubuntu (verwendet resolvconf)**:
 	- Installieren Sie einfach das dnsmasq-Paket ("sudo apt-get install dnsmasq").
@@ -99,7 +101,7 @@ Der standardmäßige DNS-Client von Windows verfügt über einen integrierten DN
 	- Fügen Sie "prepend domain-name-servers 127.0.0.1;" zu "/etc/dhclient-eth0.conf" hinzu.
 	- Starten Sie den Netzwerkdienst neu ("service network restart"), um den Cache als lokalen DNS-Auflöser festzulegen.
 
-[AZURE.NOTE]\: Das dnsmasq-Paket ist nur einer der vielen DNS-Caches, die für Linux verfügbar sind. Bevor Sie es nutzen, überprüfen Sie dessen Eignung für Ihre besonderen Bedürfnisse und außerdem, ob keine anderer Cache installiert ist.
+> [AZURE.NOTE]\: Das dnsmasq-Paket ist nur einer der vielen DNS-Caches, die für Linux verfügbar sind. Bevor Sie es nutzen, überprüfen Sie dessen Eignung für Ihre besonderen Bedürfnisse und außerdem, ob keine anderer Cache installiert ist.
 
 **Clientseitige Wiederholungsversuche:**
 
@@ -126,15 +128,15 @@ Die Datei "resolv.conf" wird normalerweise automatisch generiert und sollte nich
 
 ## Namensauflösung mithilfe eines eigenen DNS-Servers
 
-Wenn Ihre Anforderungen an die Namensauflösung über die von Azure bereitgestellten Funktionen hinausgehen, können Sie eigene DNS-Server verwenden. Wenn Sie eigene DNS-Server verwenden, sind Sie für die Verwaltung der DNS-Datensätze verantwortlich.
+Wenn Ihre Anforderungen an die Namensauflösung über die von Azure bereitgestellten Funktionen hinausgehen, können Sie Ihre eigenen DNS-Server verwenden. Beim Verwenden Ihrer eigenen DNS-Server sind Sie für die Verwaltung der DNS-Einträge selbst verantwortlich.
 
-> [AZURE.NOTE]Es wird empfohlen, die Verwendung eines externen DNS-Servers zu vermeiden, wenn dies nicht aufgrund des Bereitstellungsszenarios erforderlich ist.
+> [AZURE.NOTE] Es wird empfohlen, die Verwendung eines externen DNS-Servers zu vermeiden, wenn dies nicht aufgrund des Bereitstellungsszenarios erforderlich ist.
 
 ## Anforderungen für DNS-Server
 
 Wenn Sie planen, eine nicht von Azure bereitgestellte Namensauflösung zu verwenden, muss der von Ihnen angegebene DNS-Server Folgendes unterstützen:
 
-- Der DNS-Server sollte die dynamische DNS-Registrierung über das dynamische DNS (DDNS)-Protokoll akzeptieren, oder Sie müssen die erforderlichen Einträge erstellen.
+- Da Ihre DNS-Server die von Azure bereitgestellten DNS-Server ersetzen, muss Ihre DNS-Lösung den Anforderungen für die Kommunikation zwischen den virtuellen Computern gerecht werden. Wenn bei der Kommunikation zwischen den virtuellen Computern auf Hostnamen zurückgegriffen wird, müssen diese Hostnamen in Ihren DNS-Servern registriert werden. Dabei sind etliche Faktoren und Abhängigkeiten zu berücksichtigen. Einige nützliche Anhaltspunkte finden Sie in [diesem Dokument](virtual-networks-name-resolution-ddns.md).
 
 - Falls auf dynamisches DNS zurückgegriffen wird, sollte beim DNS-Server der Aufräumvorgang für Datensätze deaktiviert sein. In Azure haben IP-Adressen einen langen DHCP-Lease, was dazu führen kann, dass Datensätze während des Aufräumvorgangs vom DNS-Server entfernt werden.
 
@@ -145,12 +147,14 @@ Wenn Sie planen, eine nicht von Azure bereitgestellte Namensauflösung zu verwen
 - Es wird außerdem empfohlen, den DNS-Server gegenüber einem Zugriff aus dem Internet zu sichern, da viele Bots nach offenen rekursiven DNS-Resolvern suchen.
 
 - Für eine optimale Leistung bei Verwendung von virtuellen Azure-Computern als DNS-Server sollte IPv6 deaktiviert und eine [öffentliche IP-Adresse auf Instanzebene](virtual-networks-instance-level-public-ip.mp) jedem virtuellen DNS-Servercomputer zugewiesen werden.
+	- Wenn Sie Windows Server als DNS-Server verwenden, finden Sie in [diesem Artikel](http://blogs.technet.com/b/networking/archive/2015/08/19/name-resolution-performance-of-a-recursive-windows-dns-server-2012-r2.aspx) Informationen zur Leistungsanalyse und zu Optimierungsmöglichkeiten.
+
 
 ## Angeben von DNS-Servern
 
 Sie können mehrere DNS-Server angeben, die von Ihren virtuellen Computern und Rolleninstanzen verwendet werden. Für jede DNS-Abfrage verwendet der Client zunächst den bevorzugten DNS-Server und verwendet die alternativen Server nur dann, wenn der bevorzugte Server nicht reagiert, d. h. wenn es keinen Lastenausgleich bei DNS-Abfragen über verschiedene DNS-Server hinweg gibt. Stellen Sie daher sicher, dass die DNS-Server in der richtigen Reihenfolge für Ihre Umgebung aufgeführt werden.
 
-> [AZURE.NOTE]Wenn Sie die DNS-Einstellungen in einer Netzwerkkonfigurationsdatei für ein virtuelles Netzwerk ändern, das bereits bereitgestellt wurde, müssen Sie alle virtuellen Computer neu starten, damit die Änderungen wirksam werden.
+> [AZURE.NOTE] Wenn Sie die DNS-Einstellungen in einer Netzwerkkonfigurationsdatei für ein virtuelles Netzwerk ändern, das bereits bereitgestellt wurde, müssen Sie alle virtuellen Computer neu starten, damit die Änderungen wirksam werden.
 
 ### Angeben eines DNS-Servers im Verwaltungsportal
 
@@ -164,7 +168,7 @@ Die Netzwerk-Konfigurationsdatei beschreibt die virtuellen Netzwerke in Ihrem Ab
 
 Die Dienstkonfigurationsdatei wird für jeden Clouddienst erstellt, den Sie in Azure hinzufügen. Wenn Sie dem Clouddienst Rolleninstanzen oder virtuelle Computer hinzufügen, werden die DNS-Einstellungen aus der Dienstkonfigurationsdatei auf jede Rolleninstanz oder virtuellen Computer angewendet.
 
-> [AZURE.NOTE]DNS-Server in der Dienstkonfigurationsdatei überschreiben die Einstellungen in der Netzwerkkonfigurationsdatei.
+> [AZURE.NOTE] DNS-Server in der Dienstkonfigurationsdatei überschreiben die Einstellungen in der Netzwerkkonfigurationsdatei.
 
 
 ## Nächste Schritte
@@ -177,4 +181,4 @@ Die Dienstkonfigurationsdatei wird für jeden Clouddienst erstellt, den Sie in A
 
 [Konfigurieren eines virtuellen Netzwerks mithilfe einer Netzwerkkonfigurationsdatei](virtual-networks-using-network-configuration-file.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0204_2016-->

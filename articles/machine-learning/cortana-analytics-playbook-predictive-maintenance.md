@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="01/15/2016"
-	ms.author="garye" />
+	ms.author="fboylu" />
 
 # Playbook für die Cortana Analytics-Lösungsvorlage für vorbeugende Wartung in der Luft- und Raumfahrt und anderen Unternehmen
 
@@ -333,4 +333,4 @@ Abbildung 8. Beispiel für eine Lösungsarchitektur für die vorbeugende Wartun
 
 Weitere Informationen zu den einzelnen Komponenten der Architektur finden Sie in der [Azure](https://azure.microsoft.com/)-Dokumentation.
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

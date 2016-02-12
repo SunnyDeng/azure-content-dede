@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="12/04/2015"
+   ms.date="01/28/2016"
    ms.author="larryfr"/>
 
 # Analysieren von Sensordaten mit Apache Storm, Event Hub und HBase in HDInsight (Hadoop)
@@ -24,9 +24,9 @@ Erfahren Sie, wie Sie Apache Storm in HDInsight zur Verarbeitung von Sensordaten
 
 ## Voraussetzungen
 
-* Ein Azure-Abonnement. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
+* Ein Azure-Abonnement. Siehe [Kostenlose Azure-Testversion](http://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 
-* Ein [Apache Storm in HDInsight-Cluster](../hdinsight-storm-getting-started.md)
+* Ein [Apache Storm in HDInsight-Cluster](hdinsight-apache-storm-tutorial-get-started.md)
 
 * [Node.js](http://nodejs.org/): Wird für das Webdashboard und zum Senden von Sensordaten an Event Hub verwendet.
 
@@ -256,7 +256,7 @@ Führen Sie die folgenden Schritte in Ihrer Entwicklungsumgebung aus, um die Tem
 
 ### Veröffentlichen des Website-Dashboards
 
-1. Um das Dashboard für eine Azure-Website bereitzustellen, folgen Sie den Anweisungen unter [Erstellen und Bereitstellen einer Node.js-Website für Azure](../web-sites-nodejs-develop-deploy-mac.md). Notieren Sie sich die URL der Website, die ungefähr folgendermaßen lautet: **mywebsite.azurewebsites.net**.
+1. Um das Dashboard für eine Azure-Website bereitzustellen, folgen Sie den Anweisungen unter [Erstellen und Bereitstellen einer Node.js-Website für Azure](../app-service-web/web-sites-nodejs-develop-deploy-mac.md). Notieren Sie sich die URL der Website, die ungefähr folgendermaßen lautet: **mywebsite.azurewebsites.net**.
 
 2. Wenn die Website erstellt wurde, wechseln Sie im klassischen Azure-Portal zur Website, und wählen Sie die Registerkarte **Konfigurieren** aus. Aktivieren Sie **Websockets**, und klicken Sie dann unten auf der Seite auf **Speichern**.
 
@@ -422,4 +422,4 @@ Sie haben gelernt, wie Sie Daten mithilfe von Storm aus einem Event Hub lesen un
 
 [azure-portal]: https://manage.windowsazure.com/
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

@@ -1,19 +1,21 @@
 <!--author=alkohli last changed: 01/28/16-->
 
-#### To add a new storage account 
+#### So erstellen Sie ein neues Speicherkonto 
 
-1. On the StorSimple Manager service landing page, select your service and double-click it. This will take you to the **Quick Start** page. Select the **Configure** page.
+1. Wählen Sie auf der StorSimple Manager-Dienst-Startseite Ihren Dienst aus, und doppelklicken Sie dann darauf. Damit gelangen Sie auf die Seite **Schnellstart**. Wählen Sie die Seite **Konfigurieren** aus.
 
-2. Click **Add/edit storage account**.
+2. Klicken Sie auf **Speicherkonto hinzufügen/bearbeiten**.
 
-3. In the **Add/Edit Storage Account** dialog box, do the following:
+3. Gehen Sie im Dialogfeld **Speicherkonten hinzufügen/bearbeiten** folgendermaßen vor:
 
-  1. Click **Add new**.
-  2. Provide the name of your Azure storage account.
-  3. Supply the primary **Access Key** for your Azure storage account. To get this key, go to the Storage service, select your storage account and click **Manage account keys**. You can now copy the **primary access key**.
-  4. Select **Enable SSL Mode** to create a secure channel for network communication between your StorSimple device and the cloud. Clear the **Enable SSL Mode** check box only if you are operating within a private cloud.
-  5. Click the check icon ![check icon](./media/storsimple-ova-configure-new-storage-account/checkicon-include.png). You will be notified after the storage account is successfully created.
+  1. Klicken Sie auf **Neues hinzufügen**.
+  2. Geben Sie den Namen Ihres Azure-Speicherkontos an.
+  3. Geben Sie den primären **Zugriffsschlüssel** für Ihr Azure-Speicherkonto an. Sie finden diesen Schlüssel, indem Sie zum Storage-Dienst navigieren, Ihr Speicherkonto auswählen und auf **Zugriffsschlüssel verwalten** klicken. Nun können Sie den **primären Zugriffsschlüssel** kopieren.
+  4. Aktivieren Sie **SSL-Modus aktivieren**, um einen sicheren Kanal für die Netzwerkkommunikation zwischen Ihrem StorSimple-Gerät und der Cloud zu erstellen. Deaktivieren Sie das Kontrollkästchen **SSL-Modus aktivieren** nur, wenn der Betrieb in einer privaten Cloud stattfindet.
+  5. Klicken Sie auf das Häkchensymbol ![Häkchensymbol](./media/storsimple-ova-configure-new-storage-account/checkicon-include.png). Sie werden benachrichtigt, nachdem das Speicherkonto erfolgreich erstellt wurde.
 
 		![Add storage account](./media/storsimple-ova-configure-new-storage-account/addnewstorageaccount-include.png)
 
-4. The newly created storage account will be displayed on the **Configure** page under **Storage accounts**. 
+4. Das neu erstellte Speicherkonto wird auf der Seite **Konfigurieren** unter **Speicherkonten** angezeigt.
+
+<!---HONumber=AcomDC_0204_2016-->

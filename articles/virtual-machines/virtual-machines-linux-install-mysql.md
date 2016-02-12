@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/10/2015"
+	ms.date="02/01/2016"
 	ms.author="mingzhan"/>
 
 
@@ -28,7 +28,7 @@ In diesem Artikel erfahren Sie, wie Sie MySQL auf einem virtuellen Azure-Compute
 
 ##Installieren von MySQL auf dem virtuellen Computer
 
-> [AZURE.NOTE]Sie benötigen einen virtuellen Microsoft Azure-Computer mit Linux, um dieses Lernprogramm auszuführen. Sehen Sie sich, bevor Sie fortfahren, im [Tutorial zu Azure Linux-VMs](virtual-machines-linux-tutorial.md) an, wie eine Linux-VM mit `mysqlnode` als VM-Namen und `azureuser` als Benutzer erstellt und eingerichtet wird.
+> [AZURE.NOTE] Sie benötigen einen virtuellen Microsoft Azure-Computer mit Linux, um dieses Lernprogramm auszuführen. Sehen Sie sich, bevor Sie fortfahren, im [Tutorial zu Azure Linux-VMs](virtual-machines-linux-tutorial.md) an, wie eine Linux-VM mit `mysqlnode` als VM-Namen und `azureuser` als Benutzer erstellt und eingerichtet wird.
 
 Verwenden Sie in diesem Fall Port 3306 als MySQL-Port.
 
@@ -185,4 +185,4 @@ Wir verwenden hier eine Linux-VM mit OpenSUSE.
 ###Nächster Schritt
 Weitere Informationen zur Verwendung von MySQL finden Sie [hier](https://www.mysql.com/).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0204_2016-->

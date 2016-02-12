@@ -13,7 +13,7 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="data-services" 
-    ms.date="10/27/2015" 
+    ms.date="02/03/2016" 
     ms.author="arramac"/>
     
 # Arbeiten mit Geodaten in Azure DocumentDB
@@ -350,9 +350,9 @@ Hier wird gezeigt, wie Sie eine vorhandene Sammlung so ändern können, dass die
 ## Nächste Schritte
 Nachdem Sie die ersten Schritte mit räumlichen Daten in DocumentDB ausgeführt haben, haben Sie folgende Möglichkeiten:
 
-- Starten der Programmierung mit den [.NET-Codebeispielen auf Github für räumliche Daten](https://github.com/Azure/azure-documentdb-dotnet/blob/master/samples/code-samples/Geospatial/Program.cs)
+- Starten der Programmierung mit den [.NET-Codebeispielen auf Github für räumliche Daten](https://github.com/Azure/azure-documentdb-dotnet/blob/e880a71bc03c9af249352cfa12997b51853f47e5/samples/code-samples/Geospatial/Program.cs)
 - Praktisches Arbeiten mit Abfragen von Geodaten im [DocumentDB Query Playground](http://www.documentdb.com/sql/demo#geospatial)
 - Weitere Informationen zu [DocumentDB-Abfragen](documentdb-sql-query.md)
 - Weitere Informationen zu [DocumentDB-Indizierungsrichtlinien](documentdb-indexing-policies.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

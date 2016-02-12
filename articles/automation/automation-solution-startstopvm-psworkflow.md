@@ -12,7 +12,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="infrastructure-services"
-	ms.date="09/25/2015"
+	ms.date="01/27/2016"
 	ms.author="bwren" />
 
 # Azure Automation-Lösung – Starten und Beenden virtueller Computer
@@ -28,11 +28,11 @@ Diese Azure Automation-Lösung enthält Runbooks zum Starten und Beenden klassis
 - [Graphical](automation-solution-startstopvm-graphical.md)
 - [PowerShell Workflow](automation-solution-startstopvm-psworkflow.md)
 
-Dies ist die PowerShell-Workflow-Runbookversion dieser Lösung. Sie ist auch über [grafische Runbooks](automation-solutions-startstopvm-graphical.md) verfügbar.
+Dies ist die PowerShell-Workflow-Runbookversion dieser Lösung. Sie ist auch über [grafische Runbooks](automation-solution-startstopvm-graphical.md) verfügbar.
 
 ## Abrufen der Lösung
 
-Diese Lösung besteht aus zwei PowerShell-Workflow-Runbooks, die Sie unter den folgenden Links herunterladen können. Links zu den grafischen Runbooks finden Sie in der [grafischen Version](automation-solutions-startstopvm-graphical.md) dieser Lösung.
+Diese Lösung besteht aus zwei PowerShell-Workflow-Runbooks, die Sie unter den folgenden Links herunterladen können. Links zu den grafischen Runbooks finden Sie in der [grafischen Version](automation-solution-startstopvm-graphical.md) dieser Lösung.
 
 | Runbook | Link | Typ | Beschreibung |
 |:---|:---|:---|:---|
@@ -193,4 +193,4 @@ In den nächsten Zeilen werden die einzelnen virtuellen Computer schrittweise du
 - [Untergeordnete Runbooks in Azure Automation](automation-child-runbooks.md) 
 - [Runbookausgabe und -meldungen in Azure Automation](automation-runbook-output-and-messages.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0204_2016-->

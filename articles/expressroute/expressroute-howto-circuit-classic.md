@@ -43,7 +43,7 @@ In diesem Artikel werden Sie durch die Schritte zum Erstellen einer ExpressRoute
 
 2. **Rufen Sie die Liste der unterstützten Anbieter, Standorte und Bandbreiten ab.**
 
-	Vor dem Erstellen einer ExpressRoute-Verbindung benötigen Sie die Liste der Konnektivitätsanbieter, unterstützten Standorte und Bandbreitenoptionen. Das PowerShell-Cmdlet *Get-AzureDedicatedCircuitServiceProvider* gibt diese Informationen zurück, die Sie in späteren Schritten noch verwenden werden.
+	Vor dem Erstellen einer ExpressRoute-Verbindung benötigen Sie die Liste der Konnektivitätsanbieter, unterstützten Standorte und Bandbreitenoptionen. Das PowerShell-Cmdlet *Get-AzureDedicatedCircuitServiceProvider* gibt diese Informationen zurück, die Sie in späteren Schritten noch verwenden werden. Wenn Sie das Cmdlet ausführen, ähnelt das Ergebnis dem folgenden Beispiel.
 
 		PS C:\> Get-AzureDedicatedCircuitServiceProvider
 
@@ -197,7 +197,7 @@ In diesem Artikel werden Sie durch die Schritte zum Erstellen einer ExpressRoute
 
 7. **Verknüpfen Sie ein VNet mit einer ExpressRoute-Verbindung.**
 
-	Verknüpfen Sie als Nächstes ein VNet mit der ExpressRoute-Verbindung. Eine schrittweise Anleitung finden Sie unter [Verknüpfen von ExpressRoute-Verbindungen mit VNETs](expressroute-howto-linkvnet-classic.md). Wenn Sie ein virtuelles Netzwerk für ExpressRoute erstellen möchten, hilft Ihnen die Anleitung unter [Erstellen eines virtuellen Netzwerks für ExpressRoute](expressroute-howto-createvnet-classic.md) weiter.
+	Verknüpfen Sie als Nächstes ein VNet mit der ExpressRoute-Verbindung. Eine schrittweise Anleitung finden Sie unter [Verknüpfen von ExpressRoute-Verbindungen mit VNETs](expressroute-howto-linkvnet-classic.md). Wenn Sie ein virtuelles Netzwerk für ExpressRoute mithilfe des klassischen Bereitstellungsmodell erstellen möchten, hilft Ihnen die Anleitung unter [Erstellen eines virtuellen Netzwerks für ExpressRoute](expressroute-howto-vnet-portal-classic.md) weiter.
 
 ##  So rufen Sie den Status einer ExpressRoute-Verbindung ab
 
@@ -328,4 +328,4 @@ Wenn der Service Provider die Bereitstellung der Verbindung aufgehoben hat (Bere
 
 - [Konfigurieren des Routings](expressroute-howto-routing-classic.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

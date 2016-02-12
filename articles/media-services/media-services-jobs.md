@@ -45,7 +45,7 @@ Ein Auftrag ist eine Entität, die Metadaten zu einer Reihe von Aufgaben enthäl
 
 ##Codieren
 
-Führen Sie die Codierung mit **Azure Media Encoder** mithilfe des klassischen **Azure-Portals**, mithilfe von **.NET**, oder **REST-API** aus.
+Führen Sie die Codierung mit **Media Encoder Standard** mithilfe des **klassischen Azure-Portals**, mit **.NET** oder mit der **REST-API** aus.
 
 [AZURE.INCLUDE [media-services-selector-encode](../../includes/media-services-selector-encode.md)]
 
@@ -80,4 +80,4 @@ Führen Sie die Codierung mit **Azure Media Encoder** mithilfe des klassischen *
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0204_2016-->

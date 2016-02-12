@@ -12,8 +12,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="01/06/2016"
-    ms.author="sidneyh;torsteng" />
+    ms.date="01/28/2016"
+    ms.author="torsteng;sidneyh" />
 
 # Elastische Datenbankabfragen bei Sharding (horizontaler Partitionierung)
 
@@ -200,7 +200,7 @@ Mit der elastischen Abfrage wurde auch eine gespeicherte Prozedur eingeführt, d
 * Datenbankname der Shardzuordnung (nvarchar): Der Name der Shardzuordnungsdatenbank. 
 * Benutzername (nvarchar): Der Benutzername für die Anmeldung bei der Shardzuordnungsdatenbank. 
 * Kennwort (nvarchar): Das Kennwort des Benutzers. 
-* Shardzuordnungsname (nvarchar): Der Name der Shardzuordnung für die Abfrage. 
+* Shardzuordnungsname (nvarchar): Der Name der Shardzuordnung für die Abfrage. Der Name befindet sich in der Tabelle „\_ShardManagement.ShardMapsGlobal“ – dies ist der Standardname, der verwendet wird, wenn Datenbanken mit der Beispiel-App in [Erste Schritte mit Tools für elastische Datenbanken](sql-database-elastic-scale-get-started.md) erstellt werden. Der in der App gefundene Standardname ist „CustomerIDShardMap“.
 *  Abfrage: Die T-SQL-Abfrage, die für die einzelnen Shards ausgeführt wird. 
 *  Parameterdeklaration (nvarchar) – optional: Zeichenfolge mit Datentypdefinitionen für die Parameter, die im „Query“-Parameter verwendet werden (z. B. sp\_executesql). 
 *  Parameterwertliste – optional: Durch Trennzeichen getrennte Liste von Parameterwerten (z. B. sp\_executesql).  
@@ -212,7 +212,7 @@ Beachten Sie, dass die gleichen Anmeldeinformationen für die Verbindung mit der
 Beispiel:
 
 	sp_execute_fanout 
-		’myserver.database.windows.net', 
+		N'myserver.database.windows.net', 
 		N'ShardMapDb', 
 		N'myuser', 
 		N'MyPwd', 
@@ -241,4 +241,4 @@ Verwenden Sie herkömmliche SQL Server-Verbindungszeichenfolgen, um Ihre Anwendu
 [1]: ./media/sql-database-elastic-query-horizontal-partitioning/horizontalpartitioning.png
 <!--anchors-->
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0204_2016-->

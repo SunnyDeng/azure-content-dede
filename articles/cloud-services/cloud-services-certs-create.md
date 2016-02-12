@@ -70,7 +70,7 @@ Im Internet wird auf vielen Seiten erläutert, wie mit IIS Zertifikate erstellt 
 Auch mit Java können Sie [ein Zertifikat erstellen](../app-service-web/java-create-azure-website-using-java-sdk.md#create-a-certificate).
 
 ### Linux
-In [diesem](..\virtual-machines\virtual-machines-linux-use-ssh-key.md) Artikel wird beschrieben, wie Zertifikate mit SSH erstellt werden.
+In [diesem](../virtual-machines/virtual-machines-linux-use-ssh-key.md) Artikel wird beschrieben, wie Zertifikate mit SSH erstellt werden.
 
 ## Nächste Schritte
 
@@ -80,4 +80,4 @@ Hochladen des [Verwaltungs-API-Zertifikats](../azure-api-management-certs.md) in
 
 >[AZURE.NOTE] Im Azure-Portal erfolgt der Zugriff auf die API nicht über Verwaltungszertifikate, sondern über Benutzerkonten.
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

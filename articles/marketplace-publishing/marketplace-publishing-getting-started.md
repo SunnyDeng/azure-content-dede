@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="01/07/2016"
+   ms.date="01/25/2016"
    ms.author="hascipio" />
 
 # Veröffentlichen eines Angebots im Azure Marketplace
@@ -30,16 +30,16 @@ Arten von Lösungen:
 
 Einige Schritte müssen für alle Lösungstypen ausgeführt werden. In diesem Artikel erhalten Sie eine kurze Übersicht darüber, welche Schritte für die einzelnen Lösungstypen erforderlich sind.
 
-> [AZURE.NOTE]Bevor Sie im Azure Marketplace arbeiten können, müssen Sie über eine Vorabgenehmigung verfügen. Dies gilt nicht für Herausgeber von Datendiensten.
+> [AZURE.NOTE] Bevor Sie im Azure Marketplace arbeiten können, müssen Sie über eine Vorabgenehmigung verfügen. Dies gilt nicht für Herausgeber von Datendiensten.
 
-||VM-Image |Entwicklerdienst | Datendienst | Lösungsvorlage |
+|VM-Image |Entwicklerdienst | Datendienst | Lösungsvorlage |
 |----|----|----|----|----|
 | **Erhalten einer Vorabgenehmigung** | [Microsoft Azure Certified][link-certification] | [Microsoft Azure Certified][link-certification] | – | [Microsoft Azure Certified][link-certification] |
 | **Schritt 1: Registrieren des Entwicklerkontos** | [Microsoft Developer-Konto: Erstellung und Registrierung][link-accts] | [Microsoft Developer-Konto: Erstellung und Registrierung][link-accts] | [Microsoft Developer-Konto: Erstellung und Registrierung][link-accts] | [Microsoft Developer-Konto: Erstellung und Registrierung][link-accts] |
 |**Schritt 2: Erstellen Ihres Angebots**| [Allgemeine nicht technische Voraussetzungen](marketplace-publishing-pre-requisites.md)| [Allgemeine nicht technische Voraussetzungen](marketplace-publishing-pre-requisites.md)| [Allgemeine nicht technische Voraussetzungen](marketplace-publishing-pre-requisites.md)| [Allgemeine nicht technische Voraussetzungen](marketplace-publishing-pre-requisites.md)|
-|| [Technische Voraussetzungen für VMs][link-single-vm-prereq] | Technische Voraussetzungen für Entwicklerdienste | [Technische Voraussetzungen für Datendienste](marketplace-publishing-data-service-creation-prerequisites.md) | [Technische Voraussetzungen für Lösungsvorlagen](marketplace-publishing-solution-template-creation-prerequisites.md) |
-||[Anleitung zum Veröffentlichen von VM-Images][link-single-vm] | Anleitung zum Veröffentlichen von Entwicklerdiensten | [Anleitung zum Veröffentlichen von Datendiensten](marketplace-publishing-data-service-creation.md) | [Anleitung zum Veröffentlichen von Lösungsvorlagen](marketplace-publishing-solution-template-creation.md) |
-|| [Anleitung für Marketinginhalte in Azure Marketplace][link-pushstaging] | [Anleitung für Marketinginhalte in Azure Marketplace][link-pushstaging] | [Anleitung für Marketinginhalte in Azure Marketplace][link-pushstaging] | [Anleitung für Marketinginhalte in Azure Marketplace][link-pushstaging] |
+| [Technische Voraussetzungen für VMs][link-single-vm-prereq] | Technische Voraussetzungen für Entwicklerdienste | [Technische Voraussetzungen für Datendienste](marketplace-publishing-data-service-creation-prerequisites.md) | [Technische Voraussetzungen für Lösungsvorlagen](marketplace-publishing-solution-template-creation-prerequisites.md) |
+|[Anleitung zum Veröffentlichen von VM-Images][link-single-vm] | Anleitung zum Veröffentlichen von Entwicklerdiensten | [Anleitung zum Veröffentlichen von Datendiensten](marketplace-publishing-data-service-creation.md) | [Anleitung zum Veröffentlichen von Lösungsvorlagen](marketplace-publishing-solution-template-creation.md) |
+| [Anleitung für Marketinginhalte in Azure Marketplace][link-pushstaging] | [Anleitung für Marketinginhalte in Azure Marketplace][link-pushstaging] | [Anleitung für Marketinginhalte in Azure Marketplace][link-pushstaging] | [Anleitung für Marketinginhalte in Azure Marketplace][link-pushstaging] |
 | **Schritt 3: Freigeben des Angebots in der Stagingphase** | [Testen des VM-Angebots in der Stagingphase](marketplace-publishing-vm-image-test-in-staging.md) | Testen des Entwicklerdienstangebots in der Stagingphase | [Testen des Datendienstangebots in der Stagingphase](marketplace-publishing-data-service-test-in-staging.md) | [Testen des Angebots einer Lösungsvorlage in der Stagingphase](marketplace-publishing-solution-template-test-in-staging.md) |
 | **Schritt 4: Bereitstellen des Angebots in Marketplace** | [Bereitstellen des Angebots in Marketplace][link-pushprod] | [Bereitstellen des Angebots in Marketplace][link-pushprod] | [Bereitstellen des Angebots in Marketplace][link-pushprod] | [Bereitstellen des Angebots in Marketplace][link-pushprod] |
 
@@ -81,4 +81,4 @@ Einige Schritte müssen für alle Lösungstypen ausgeführt werden. In diesem Ar
 [link-pushstaging]: marketplace-publishing-push-to-staging.md
 [link-pushprod]: marketplace-publishing-push-to-production.md
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0204_2016-->

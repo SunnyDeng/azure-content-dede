@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="12/18/2015"
+   ms.date="01/27/2016"
    ms.author="tarcher" />
 
 # Durchsuchen und Verwalten von Speicherressourcen mit dem Server-Explorer
@@ -50,7 +50,7 @@ Der Knoten "Blobs" zeigt eine Liste der Container für das ausgewählte Speicher
 
     ![Hinzufügen eines neuen Blobcontainers](./media/vs-azure-tools-storage-resources-server-explorer-browse-manage/IC744153.bmp)
 
-    >[AZURE.NOTE]Der Blobcontainername muss mit einer Zahl (0-9) oder einem Kleinbuchstaben (a-z) beginnen.
+    >[AZURE.NOTE] Der Blobcontainername muss mit einer Zahl (0-9) oder einem Kleinbuchstaben (a-z) beginnen.
 
 ### So löschen Sie einen Blobcontainer
 
@@ -74,7 +74,7 @@ Der Knoten "Blobs" zeigt eine Liste der Container für das ausgewählte Speicher
 
     - Löschen eines Blobs
 
-      >[AZURE.NOTE]Beim Löschen einer Datei aus einem Blobcontainer wird nicht die zugrunde liegende Datei gelöscht; sie wird lediglich aus dem Blobcontainer entfernt.
+      >[AZURE.NOTE] Beim Löschen einer Datei aus einem Blobcontainer wird nicht die zugrunde liegende Datei gelöscht; sie wird lediglich aus dem Blobcontainer entfernt.
 
     - Öffnen eines Blobs
 
@@ -98,7 +98,7 @@ Der Knoten "Blobs" zeigt eine Liste der Container für das ausgewählte Speicher
 
  - Löschen aller Dateien im Ordner
 
-    >[AZURE.NOTE]Da es sich bei Ordnern in Blobcontainern um virtuelle Ordner handelt, ist es nicht möglich, einen leeren Ordner zu erstellen, noch können Sie einen Ordner löschen, um dessen Dateiinhalt zu löschen. Sie müssen den gesamten Inhalt eines Ordners löschen, um den Ordner zu löschen.
+    >[AZURE.NOTE] Da es sich bei Ordnern in Blobcontainern um virtuelle Ordner handelt, ist es nicht möglich, einen leeren Ordner zu erstellen, noch können Sie einen Ordner löschen, um dessen Dateiinhalt zu löschen. Sie müssen den gesamten Inhalt eines Ordners löschen, um den Ordner zu löschen.
 
 ### So filtern Sie Blobs in einem Container
 
@@ -109,7 +109,7 @@ Wenn Sie beispielsweise das Präfix `hello` in das Filtertextfeld eingeben und d
 ![VST\_SE\_FilterBlobs](./media/vs-azure-tools-storage-resources-server-explorer-browse-manage/IC519076.png)
 
 
->[AZURE.NOTE]Beim Filterfeld muss die Groß-/Kleinschreibung beachtet werden. Filtervorgänge mit Platzhalterzeichen werden nicht unterstützt. Blobs können nur nach Präfix gefiltert werden. Das Präfix schließt möglicherweise ein Trennzeichen ein, wenn Sie Blobs in einer virtuellen Hierarchie mithilfe eines Trennzeichens organisieren. Zum Beispiel werden durch Filtern nach dem Präfix "HelloFabric/" alle Blobs zurückgegeben, die mit dieser Zeichenfolge beginnen.
+>[AZURE.NOTE] Beim Filterfeld muss die Groß-/Kleinschreibung beachtet werden. Filtervorgänge mit Platzhalterzeichen werden nicht unterstützt. Blobs können nur nach Präfix gefiltert werden. Das Präfix schließt möglicherweise ein Trennzeichen ein, wenn Sie Blobs in einer virtuellen Hierarchie mithilfe eines Trennzeichens organisieren. Zum Beispiel werden durch Filtern nach dem Präfix "HelloFabric/" alle Blobs zurückgegeben, die mit dieser Zeichenfolge beginnen.
 
 ### So laden Sie Blobdaten herunter
 
@@ -141,7 +141,7 @@ Wenn Sie beispielsweise das Präfix `hello` in das Filtertextfeld eingeben und d
 
     Die Datei wird an einen temporären Speicherort heruntergeladen und auf dem lokalen Computer geöffnet. Sie müssen das Blob nach dem Ändern erneut hochladen.
 
-### Arbeiten mit Warteschlangenressourcen
+## Arbeiten mit Warteschlangenressourcen
 
 Verwenden Sie die in Azure-Speicherkonten gehosteten Speicherdienstwarteschlangen, um die Kommunikation der Clouddienstrollen untereinander und mit anderen Diensten über einen Nachrichtenübergabemechanismus zu ermöglichen. Greifen Sie auf die Warteschlange programmgesteuert über einen Clouddienst und einen Webdienst für externe Clients zu. Oder greifen Sie mit dem Server-Explorer in Visual Studio direkt auf die Warteschlange zu.
 
@@ -163,9 +163,9 @@ Die folgende Abbildung zeigt eine Warteschlange, die zwei Nachrichten enthält.
 
 Weitere Informationen über Speicherdienstwarteschlangen finden Sie unter [Verwenden des Warteschlangenspeichers mit .NET](http://go.microsoft.com/fwlink/?LinkID=264702). Weitere Informationen zum Webdienst für Speicherdienstwarteschlangen finden Sie unter [Konzepte des Warteschlangendiensts](http://go.microsoft.com/fwlink/?LinkId=264788). Informationen dazu, wie Nachrichten mithilfe von Visual Studio an eine Speicherdienstwarteschlange gesendet werden, finden Sie unter [Senden von Nachrichten an eine Speicherdienstwarteschlange](https://msdn.microsoft.com/library/azure/jj649344.aspx).
 
->[AZURE.NOTE]Speicherdienstwarteschlangen unterscheiden sich von Service Bus-Warteschlangen. Weitere Informationen zu Service Bus-Warteschlangen finden Sie unter "Service Bus-Warteschlangen, -Themen und -Abonnements".
+>[AZURE.NOTE] Speicherdienstwarteschlangen unterscheiden sich von Service Bus-Warteschlangen. Weitere Informationen zu Service Bus-Warteschlangen finden Sie unter "Service Bus-Warteschlangen, -Themen und -Abonnements".
 
-### Arbeiten mit Tabellenressourcen
+## Arbeiten mit Tabellenressourcen
 
 Der Azure Tabellenspeicherdienst erlaubt die Speicherung großer Mengen von strukturierten Daten. Der Dienst ist ein NoSQL-Datenspeicher zur Annahme authentifizierter Anrufe von innerhalb und außerhalb der Azure-Cloud. Azure-Tabellen sind hervorragend zur Speicherung strukturierter nicht relationaler Daten geeignet.
 
@@ -213,7 +213,7 @@ Die Tabelle ist in Entitäten (Anzeige in Zeilen) und Eigenschaften (Anzeige in 
 
     Gehen Sie bei der Eingabe der Werte mit Bedacht vor, da sie nach dem Schließen des Dialogfelds nicht mehr geändert werden können. Zum Ändern muss die Entität gelöscht und erneut hinzugefügt werden.
 
-## So filtern Sie Entitäten
+### So filtern Sie Entitäten
 
 Mit dem Abfrage-Generator können Sie den Satz von Entitäten anpassen, der in einer Tabelle angezeigt wird.
 
@@ -235,35 +235,35 @@ Mit dem Abfrage-Generator können Sie den Satz von Entitäten anpassen, der in e
 
     ![VST\_SE\_TableFilter](./media/vs-azure-tools-storage-resources-server-explorer-browse-manage/IC655337.png)
 
-## Aktualisieren von Speicherdaten
+### Aktualisieren von Speicherdaten
 
 Wenn der Server-Explorer eine Verbindung mit einem Speicherkonto herstellt oder Daten daraus abruft, kann es bis zu einer Minute dauern, bis der Vorgang abgeschlossen ist. Wenn Sie keine Verbindung herstellen können, führt dies möglicherweise zu einer Zeitüberschreitung des Vorgangs. Während Daten abgerufen werden, können Sie weiterhin in anderen Bereichen von Visual Studio arbeiten. Wenn der Vorgang zu lange dauert, klicken Sie zum Abbrechen in der Symbolleiste des Server-Explorers auf die Schaltfläche **Aktualisieren beenden**.
 
-### So aktualisieren Sie Blobcontainerdaten
+#### So aktualisieren Sie Blobcontainerdaten
 
 - Wählen Sie unter **Storage** den Knoten **Blobs** und dann in der Symbolleiste des Server-Explorers die Schaltfläche **Aktualisieren** aus.
 
 - Um die angezeigte Liste der Blobs zu aktualisieren, wählen Sie die Schaltfläche **Ausführen**.
 
-### So aktualisieren Sie Tabellendaten
+#### So aktualisieren Sie Tabellendaten
 
 - Wählen Sie unter **Storage** den Knoten **Tabellen** und dann die Schaltfläche **Aktualisieren** aus.
 
 - Um die Liste der Entitäten zu aktualisieren, die im **Tabellen-Designer** angezeigt wird, klicken Sie im **Tabellen-Designer** auf die Schaltfläche **Ausführen**.
 
-### So aktualisieren Sie Warteschlangendaten
+#### So aktualisieren Sie Warteschlangendaten
 
 - Wählen Sie den Knoten **Warteschlangen** und dann die Schaltfläche **Aktualisieren** aus.
 
-### So aktualisieren Sie alle Elemente in einem Speicherkonto
+#### So aktualisieren Sie alle Elemente in einem Speicherkonto
 
 - Wählen Sie den Kontonamen und dann die Schaltfläche **Aktualisieren** in der Symbolleiste des Server-Explorers aus.
 
-## Hinzufügen von Speicherkonten mithilfe des Server-Explorers
+### Hinzufügen von Speicherkonten mithilfe des Server-Explorers
 
 Es gibt zwei Möglichkeiten, Speicherkonten mithilfe des Server-Explorers hinzuzufügen. Sie können in Ihrem Azure-Abonnement ein neues Speicherkonto erstellen, oder Sie können ein vorhandenes Speicherkonto anfügen.
 
-### So erstellen Sie ein neues Speicherkonto mit dem Server-Explorer
+#### So erstellen Sie ein neues Speicherkonto mit dem Server-Explorer
 
 1. Öffnen Sie im Server-Explorer das Kontextmenü für den Knoten "Speicher", und wählen Sie dann "Speicherkonto erstellen".
 
@@ -283,7 +283,7 @@ Es gibt zwei Möglichkeiten, Speicherkonten mithilfe des Server-Explorers hinzuz
 
     Das neue Speicherkonto wird im Projektmappen-Explorer in der Liste **Speicher** angezeigt.
 
-### So fügen Sie ein vorhandenes Speicherkonto mithilfe des Server-Explorers an
+#### So fügen Sie ein vorhandenes Speicherkonto mithilfe des Server-Explorers an
 
 1. Öffnen Sie im Server-Explorer das Kontextmenü für den Azure-Speicherknoten, und wählen Sie dann **Externen Speicher anfügen** aus.
 
@@ -307,10 +307,10 @@ Es gibt zwei Möglichkeiten, Speicherkonten mithilfe des Server-Explorers hinzuz
 
 - Öffnen Sie im Server-Explorer das Kontextmenü für den Kontonamen, und wählen Sie **Löschen**. Wenn Sie ein Speicherkonto löschen, werden auch alle gespeicherten Schlüsselinformationen für dieses Konto entfernt.
 
-    >[AZURE.NOTE]Das Löschen eines Speicherkontos aus dem Server-Explorer besitzt keine Auswirkungen auf das Speicherkonto oder die darin enthaltenen Daten. Es wird lediglich der Verweis aus dem Server-Explorer entfernt. Verwenden Sie das Azure-Verwaltungsportal, um ein Speicherkonto dauerhaft zu löschen.
+    >[AZURE.NOTE] Das Löschen eines Speicherkontos aus dem Server-Explorer besitzt keine Auswirkungen auf das Speicherkonto oder die darin enthaltenen Daten. Es wird lediglich der Verweis aus dem Server-Explorer entfernt. Verwenden Sie das Azure-Verwaltungsportal, um ein Speicherkonto dauerhaft zu löschen.
 
 ## Nächste Schritte
 
 Weitere Informationen dazu, wie Azure Storage Services verwendet wird, finden Sie unter [Zugreifen auf Azure Storage Services](https://msdn.microsoft.com/library/azure/ee405490.aspx).
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0204_2016-->

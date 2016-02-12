@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/16/2015" 
+	ms.date="02/01/2016" 
 	ms.author="sdanie"/>
 
 # Verwalten von Azure-Redis-Cache mit Azure PowerShell
@@ -60,6 +60,46 @@ Geben Sie beispielsweise Folgendes ein, um Hilfe zum `New-AzureRmRedisCache`-Cmd
 
 	Get-Help New-AzureRmRedisCache -Detailed
 
+## Herstellen einer Verbindung mit der Azure Government-Cloud oder Azure China
+
+Standardmäßig ist die Azure-Umgebung `AzureCloud`, was die globale Azure-Cloudinstanz darstellt. Verwenden Sie zum Verbinden mit einer anderen Instanz den `Add-AzureRmAccount`-Befehl mit dem Befehlszeilenschalter `-Environment` oder -`EnvironmentName` mit der gewünschten Umgebung bzw. dem gewünschten Umgebungsnamen.
+
+Führen Sie zum Anzeigen der Liste der verfügbaren Umgebungen das Cmdlet `Get-AzureRmEnvironment` aus.
+
+### Verbinden mit der Azure Government-Cloud
+
+Verwenden Sie zum Verbinden mit der Azure Government-Cloud einen der folgenden Befehle.
+
+	Add-AzureRMAccount -EnvironmentName AzureUSGovernment
+
+oder
+
+	Add-AzureRmAccount -Environment (Get-AzureRmEnvironment -Name AzureUSGovernment)
+
+Verwenden Sie zum Erstellen eines Caches in der Azure Government-Cloud einen der folgenden Standorte.
+
+-	US Government, Virginia
+-	US Government, Iowa
+
+Weitere Informationen zur Azure Government-Cloud finden Sie unter [Microsoft Azure Government](https://azure.microsoft.com/features/gov/) und im [Microsoft Azure Government-Entwicklerhandbuch](azure-government-developer-guide.md).
+
+### Verbinden mit der Azure China-Cloud
+
+Verwenden Sie zum Verbinden mit der Azure China-Cloud einen der folgenden Befehle.
+
+	Add-AzureRMAccount -EnvironmentName AzureChinaCloud
+
+oder
+
+	Add-AzureRmAccount -Environment (Get-AzureRmEnvironment -Name AzureChinaCloud)
+
+Verwenden Sie zum Erstellen eines Caches in der Azure China-Cloud einen der folgenden Standorte.
+
+-	China, Osten
+-	China, Norden
+
+Weitere Informationen zur Azure China-Cloud finden Sie unter [AzureChinaCloud für Azure wird in China von 21Vianet betrieben](http://www.windowsazure.cn/).
+
 ## Eigenschaften, die für Azure Redis Cache-PowerShell verwendet werden
 
 Die folgende Tabelle enthält Eigenschaften und Beschreibungen für Parameter, die beim Erstellen und Verwalten Ihrer Azure Redis Cache-Instanzen mithilfe von Azure PowerShell häufig verwendet werden.
@@ -85,7 +125,7 @@ Die folgende Tabelle enthält Eigenschaften und Beschreibungen für Parameter, d
 
 Neue Azure Redis Cache-Instanzen werden mit dem [New-AzureRmRedisCache](https://msdn.microsoft.com/library/azure/mt634517.aspx)-Cmdlet erstellt.
 
->[AZURE.IMPORTANT]Beim ersten Erstellen eines Redis-Caches in einem Abonnement mithilfe des Azure-Portals registriert das Portal den `Microsoft.Cache`-Namespace für dieses Abonnement. Wenn Sie versuchen, den ersten Redis-Cache in einem Abonnement mithilfe von PowerShell zu erstellen, müssen Sie zunächst diesen Namespace mit dem folgenden Befehl registrieren; andernfalls tritt bei Ausführung von Cmdlets wie `New-AzureRmRedisCache` und `Get-AzureRmRedisCache` ein Fehler auf.
+>[AZURE.IMPORTANT] Beim ersten Erstellen eines Redis-Caches in einem Abonnement mithilfe des Azure-Portals registriert das Portal den `Microsoft.Cache`-Namespace für dieses Abonnement. Wenn Sie versuchen, den ersten Redis-Cache in einem Abonnement mithilfe von PowerShell zu erstellen, müssen Sie zunächst diesen Namespace mit dem folgenden Befehl registrieren; andernfalls tritt bei Ausführung von Cmdlets wie `New-AzureRmRedisCache` und `Get-AzureRmRedisCache` ein Fehler auf.
 >
 >`Register-AzureRmResourceProvider -ProviderNamespace "Microsoft.Cache"`
 
@@ -569,4 +609,4 @@ Weitere Informationen zur Verwendung von Windows PowerShell mit Azure finden Sie
 - [Windows PowerShell-Blog](http://blogs.msdn.com/powershell): Informationen zu neuen Funktionen in Windows PowerShell.
 - ["Hey, Scripting Guy!"- Blog](http://blogs.technet.com/b/heyscriptingguy/): Praktische Tipps und Tricks aus der Windows PowerShell-Community.
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0204_2016-->

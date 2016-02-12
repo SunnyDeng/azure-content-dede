@@ -12,12 +12,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="multiple"
-   ms.date="12/19/2015"
+   ms.date="01/30/2016"
    ms.author="tarcher" />
 
 # Beibehalten einer konstanten virtuellen IP-Adresse für einen Clouddienst
 
-Wenn Sie einen in Azure gehosteten Clouddienst aktualisieren, müssen Sie möglicherweise sicherstellen, dass die virtuelle IP-Adresse (VIP) des Diensts unverändert bleibt. Viele Domänenverwaltungsdienste nutzen DNS (Domain Name System) für die Registrierung der Domänennamen. DNS funktioniert nur, wenn die VIP unverändert bleibt. Mithilfe des **Veröffentlichungs-Assistenten** in Azure Tools können Sie sicherstellen, dass die VIP Ihres Clouddiensts beibehalten wird, wenn Sie den Dienst aktualisieren. Weitere Informationen zur Verwendung der DNS-Domänenverwaltung für Clouddienste finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für einen Azure-Clouddienst](cloud-services-custom-domain-name.md).
+Wenn Sie einen in Azure gehosteten Clouddienst aktualisieren, müssen Sie möglicherweise sicherstellen, dass die virtuelle IP-Adresse (VIP) des Diensts unverändert bleibt. Viele Domänenverwaltungsdienste nutzen DNS (Domain Name System) für die Registrierung der Domänennamen. DNS funktioniert nur, wenn die VIP unverändert bleibt. Mithilfe des **Veröffentlichungs-Assistenten** in Azure Tools können Sie sicherstellen, dass die VIP Ihres Clouddiensts beibehalten wird, wenn Sie den Dienst aktualisieren. Weitere Informationen zur Verwendung der DNS-Domänenverwaltung für Clouddienste finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für einen Azure-Clouddienst](/cloud-services/cloud-services-custom-domain-name.md).
 
 ## Veröffentlichen eines Clouddiensts, ohne die VIP zu ändern
 
@@ -39,10 +39,10 @@ Die VIP eines Clouddiensts wird zugeordnet, wenn der Clouddienst erstmalig in ei
 
 1. Überprüfen Sie auf der Seite **Zusammenfassung** des Assistenten Ihre Einstellungen, und klicken Sie anschließend auf **Veröffentlichen**.
 
-  >[AZURE.WARNING]Wenn bei der Bereitstellung ein Fehler auftritt, sollten Sie die Ursache ermitteln und die Bereitstellung umgehend wiederholen. Dadurch wird verhindert, dass der Clouddienst als beschädigt angezeigt wird.
+  >[AZURE.WARNING] Wenn bei der Bereitstellung ein Fehler auftritt, sollten Sie die Ursache ermitteln und die Bereitstellung umgehend wiederholen. Dadurch wird verhindert, dass der Clouddienst als beschädigt angezeigt wird.
 
 ## Nächste Schritte
 
 Weitere Informationen zur Veröffentlichung in Azure über Visual Studio finden Sie unter [Assistent zum Veröffentlichen der Azure-Anwendung](vs-azure-tools-publish-azure-application-wizard.md).
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0204_2016-->

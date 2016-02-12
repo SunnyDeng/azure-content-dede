@@ -12,7 +12,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="infrastructure-services"
-	ms.date="09/25/2015"
+	ms.date="01/27/2016"
 	ms.author="bwren" />
 
 # Azure Automation-Lösung – Starten und Beenden virtueller Computer
@@ -28,11 +28,11 @@ Diese Azure Automation-Lösung enthält Runbooks zum Starten und Beenden klassis
 - [Graphical](automation-solution-startstopvm-graphical.md)
 - [PowerShell Workflow](automation-solution-startstopvm-psworkflow.md)
 
-Dies ist die grafische Runbookversion dieser Projektmappe. Sie ist auch über [PowerShell-Workflow-Runbooks](automation-solutions-startstopvm-psworkflow.md) verfügbar.
+Dies ist die grafische Runbookversion dieser Projektmappe. Sie ist auch über [PowerShell-Workflow-Runbooks](automation-solution-startstopvm-psworkflow.md) verfügbar.
 
 ## Abrufen der Projektmappe
 
-Diese Projektmappe besteht aus zwei grafischen Runbooks, die Sie unter den folgenden Links herunterladen können. Links zu den PowerShell-Workflow-Runbooks finden Sie unter der [PowerShell-Workflowversion](automation-solutions-startstopvm-psworkflow.md) dieser Projektmappe.
+Diese Projektmappe besteht aus zwei grafischen Runbooks, die Sie unter den folgenden Links herunterladen können. Links zu den PowerShell-Workflow-Runbooks finden Sie unter der [PowerShell-Workflowversion](automation-solution-startstopvm-psworkflow.md) dieser Projektmappe.
 
 
 | Runbook | Link | Typ | Beschreibung |
@@ -68,7 +68,7 @@ Die Runbooks verfügen jeweils über die folgenden [Eingabeparameter](automation
 |:---|:---|:---|:---|
 | ServiceName | string | Nein | Wenn ein Wert angegeben wird, werden alle virtuellen Computer mit diesem Dienstnamen gestartet oder beendet. Wenn kein Wert angegeben wird, werden alle klassischen virtuellen Computer im Azure-Abonnement gestartet oder beendet. |
 | AzureSubscriptionIdAssetName | string | Nein | Enthält den Namen des [Variablen-Assets](#installing-the-solution), in dem die Abonnement-ID des Azure-Abonnements enthalten ist. Wenn Sie keinen Wert angeben, wird *AzureSubscriptionId* verwendet. |
-| AzureCredentialAssetName | string | Nein | Enthält den Namen des [Anmeldeinformations-Assets](#installing-the-solution), in dem die Anmeldeinformationen für das zu verwendende Runbook enthalten sind. Wenn Sie keinen Wert angeben, wird *AzureCredential* verwendet. |
+| AzureCredentialAssetName | string | Nein | Enthält den Namen des [Anmeldeinformationsassets](#installing-the-solution), in dem die Anmeldeinformationen für das zu verwendende Runbook enthalten sind. Wenn Sie keinen Wert angeben, wird *AzureCredential* verwendet. |
 
 ### Starten der Runbooks
 
@@ -153,4 +153,4 @@ Der letzte Schritt im Runbook ist das Senden einer Ausgabe mit der Information, 
 - [Untergeordnete Runbooks in Azure Automation](automation-child-runbooks.md) 
 - [Runbookausgabe und -meldungen in Azure Automation](automation-runbook-output-and-messages.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0204_2016-->

@@ -12,10 +12,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="01/05/2016"
+   ms.date="01/30/2016"
    ms.author="tarcher" />
 
-# Erstellen und Verwalten virtueller Azure-Computer in Visual Studio
+# Erstellen und Verwalten virtueller Azure-Maschinen in Visual Studio
 
 Sie können mithilfe des Server-Explorers in Visual Studio virtuelle Computer in Azure erstellen.
 
@@ -175,6 +175,6 @@ Wenn Sie Ihren virtuellen Computer konfigurieren und Software darauf installiere
 
 ## Nächste Schritte
 
-Weitere Informationen zum Erstellen von virtuellen Computern finden Sie unter [Erstellen eines virtuellen Linux-Computers](virtual-machines-linux-tutorial.md) und [Erstellen ein virtuellen Windows-Computers im Azure-Vorschauportal](virtual-machines-windows-tutorial.md).
+Weitere Informationen zum Erstellen von virtuellen Computern finden Sie unter [Erstellen eines virtuellen Linux-Computers](/virtual-machines/virtual-machines-linux-tutorial.md) und [Erstellen ein virtuellen Windows-Computers im Azure-Vorschauportal](/virtual-machines/virtual-machines-windows-tutorial.md).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

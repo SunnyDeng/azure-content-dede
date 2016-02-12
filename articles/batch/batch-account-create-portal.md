@@ -13,10 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/10/2015"
-	ms.author="danlep"/>
-
-
+	ms.date="01/28/2016"
+	ms.author="marsma"/>
 
 # Erstellen und Verwalten eines Azure Batch-Kontos im Azure-Portal
 
@@ -24,13 +22,13 @@
 - [Azure portal](batch-account-create-portal.md)
 - [Batch Management .NET](batch-management-dotnet.md)
 
-In diesem Artikel wird beschrieben, wie Sie das [Azure-Portal](https://portal.azure.com) zum Erstellen und Verwalten eines Azure Batch-Kontos und der zugehörigen Einstellungen wie der Kontoschlüssel verwenden. Sie benötigen eine Batch-Konto-URL und den zugehörigen Zugriffsschlüssel, um alle Batch-API-Anforderungen zu authentifizieren. Außerdem ordnen Sie alle Batch-Ressourcen (z. B. Pools, Aufträge und Aufgaben) für Ihre Batch-Workload einem bestimmten Batch-Konto zu.
+In diesem Artikel wird beschrieben, wie Sie das [Azure-Portal][azure_portal] zum Erstellen und Verwalten eines Azure Batch-Kontos verwenden. Sie erfahren unter anderem, wo Sie Einstellungen wie die Konto-URL und Kontoschlüssel finden. Sie benötigen eine Batch-Konto-URL und den zugehörigen Zugriffsschlüssel, um alle Batch-API-Anforderungen zu authentifizieren. Außerdem ordnen Sie alle Batch-Ressourcen (z. B. Pools, Aufträge und Aufgaben) für Ihre Computeworkload einem bestimmten Batch-Konto zu.
 
->[AZURE.NOTE]Derzeit unterstützt das Vorschauportal Funktionen für die Batch-Kontenverwaltung und das Anzeigen einiger Kontoressourcen. Sämtliche Batch-Features stehen Entwicklern über die Batch-APIs zur Verfügung.
+>[AZURE.NOTE] Das Azure-Portal unterstützt derzeit Funktionen für die Batch-Kontenverwaltung und das Anzeigen einiger Kontoressourcen. Sämtliche Batch-Features stehen Entwicklern über die Batch-APIs zur Verfügung.
 
 ## Erstellen eines Batch-Kontos
 
-1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
+1. Melden Sie sich beim [Azure-Portal][azure_portal] an.
 
 2. Klicken Sie auf **Neu** > **Compute** > **Batch-Dienst**.
 
@@ -42,7 +40,7 @@ In diesem Artikel wird beschrieben, wie Sie das [Azure-Portal](https://portal.az
 
 	a. Geben Sie unter **Kontoname** einen eindeutigen Namen ein, der in der Batch-Konto-URL verwendet werden soll.
 
-	>[AZURE.NOTE]Der Batch-Kontoname muss in Azure eindeutig sein und zwischen 3 und 24 Zeichen enthalten, die nur Kleinbuchstaben und Zahlen umfassen dürfen.
+	>[AZURE.NOTE] Der Batch-Kontoname muss in Azure eindeutig sein und zwischen 3 und 24 Zeichen enthalten, die nur Kleinbuchstaben und Zahlen umfassen dürfen.
 
 	b. Wenn Sie über mehrere Abonnements verfügen, klicken Sie auf **Abonnement**, um ein verfügbares Abonnement auszuwählen, in dem das Konto erstellt wird.
 
@@ -65,10 +63,9 @@ Klicken Sie zum Anzeigen und Verwalten der Zugriffsschlüssel auf das Schlüssel
 
 ## Weitere wichtige Informationen zum Batch-Konto
 
-* Andere Methoden zum Erstellen und Verwalten von Batch-Konten bieten [Batch-PowerShell-Cmdlets](batch-powershell-cmdlets-get-started.md) und die [Batch Management .NET-Bibliothek](http://www.nuget.org/packages/Microsoft.Azure.Management.Batch/).
+* Andere Methoden zum Erstellen und Verwalten von Batch-Konten bieten [Batch-PowerShell-Cmdlets](batch-powershell-cmdlets-get-started.md) und die [Batch Management .NET-Bibliothek](batch-management-dotnet.md).
 
-
-* Azure berechnet keine Gebühren für ein Batch-Konto. Sie erhalten nur eine Abrechnung für die Verwendung von Azure-Computerressourcen und anderen Diensten, wenn Ihre Workloads ausgeführt werden (siehe [Batch Preise](https://azure.microsoft.com/pricing/details/batch/)).
+* Azure berechnet keine Gebühren für ein Batch-Konto. Sie erhalten nur eine Abrechnung für die Verwendung von Azure-Computerressourcen und anderen Diensten, wenn Ihre Workloads ausgeführt werden (siehe [Batch Preise][batch_pricing]).
 
 * Sie können mehrere Batch-Workloads in einem Batch-Konto ausführen oder die Workloads auf Batch-Konten in verschiedenen Azure-Regionen aufteilen.
 
@@ -80,8 +77,11 @@ Klicken Sie zum Anzeigen und Verwalten der Zugriffsschlüssel auf das Schlüssel
 
 * Erste Schritte beim Entwickeln Ihrer ersten Anwendung mit der [.NET-Clientbibliothek für Batch](batch-dotnet-get-started.md)
 
+[azure_portal]: https://portal.azure.com
+[batch_pricing]: https://azure.microsoft.com/pricing/details/batch/
+
 [marketplace_portal]: ./media/batch-account-create-portal/marketplace_batch.PNG
 [account_portal]: ./media/batch-account-create-portal/batch_acct_portal.png
 [account_keys]: ./media/batch-account-create-portal/account_keys.PNG
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0204_2016-->

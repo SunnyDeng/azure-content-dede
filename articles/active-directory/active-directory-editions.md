@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/25/2016"
+	ms.date="02/02/2016"
 	ms.author="markvi"/>
 
 # Azure Active Directory-Editionen
@@ -46,31 +46,29 @@ Eine Reihe von Azure Active Directory-Funktionen sind als Editionen mit nutzungs
 >-	Azure Multi-Factor Authentication kann über benutzer- oder authentifizierungsspezifische Anbieter genutzt werden. Weitere Informationen finden Sie unter [Was ist Azure Multi-Factor Authentication?](multi-factor-authentication.md).
 
 
+##Vergleich allgemein verfügbarer Funktionen der Free, Basic und Premium Editionen
+
 <br>
 
 | Featuretyp| Merkmale| Free Edition| Basic Edition| Premium Edition| Nur für Office 365-Apps |
 | --- | --- | --- | --- | --- | --- |
 | **Gemeinsame Features**| Verzeichnisobjekte [1]| Bis zu 500.000 Objekte| Keine Einschränkung des Objektvolumens| Keine Einschränkung des Objektvolumens| Keine Einschränkung des Objektvolumens für Office 365-Benutzerkonten|
 | | [Benutzer- und Gruppenverwaltung (hinzufügen, aktualisieren, löschen), benutzerbasierte Bereitstellung](active-directory-administer.md), [Geräteregistrierung](active-directory-conditional-access-device-registration-overview.md)| ![Prüfen][12]| ![Prüfen][12]| ![Prüfen][12]| ![Prüfen][12]|
-| | [SSO für SaaS-Apps, benutzerdefinierte Apps, Anwendungsproxy-Apps](active-directory-enable-sso-scenario.md)| 10 Apps pro Benutzer [2]| 10 Apps pro Benutzer [2]| Unbegrenzt| 10 Apps pro Benutzer [2]|
+| | [Einmaliges Anmelden (Single Sign-On, SSO)](active-directory-enable-sso-scenario.md)| 10 Apps pro Benutzer [2] <br>(bereits integrierte SaaS-Apps und von Entwicklern integrierte Apps)| 10 Apps pro Benutzer [2] <br>(Free-Tarif und Anwendungsproxy-Apps) | Keine Begrenzung [4] <br> (Free-, Basic-Tarife und Vorlagen für Self-Service-App-Integration)| 10 Apps pro Benutzer [2] <br> (bereits integrierte SaaS-Apps und von Entwicklern integrierte Apps)|
 | | [Self-Service-Kennwortänderung für Cloudbenutzer](active-directory-passwords-update-your-own-password.md)| ![Prüfen][12]| ![Prüfen][12]| ![Prüfen][12]| ![Prüfen][12]|
 | | [Connect – Für die Synchronisierung zwischen lokalen Verzeichnissen und Azure Active Directory](active-directory-aadconnect.md)| ![Prüfen][12]| ![Prüfen][12]| ![Prüfen][12]| ![Prüfen][12]|
-| | **Vorschau**: [B2B-Zusammenarbeit](active-directory-b2b-collaboration-overview.md)| ![Prüfen][12]| ![Prüfen][12]| ![Prüfen][12]| ![Prüfen][12]|
-| | [Sicherheits- und Nutzungsberichte](active-directory-view-access-usage-reports.md)| Einfache Berichte| Einfache Berichte| Erweiterte Berichte| Einfache Berichte|
+| | [Sicherheits- und Nutzungsberichte](active-directory-view-access-usage-reports.md)| 3 einfache Berichte| 3 einfache Berichte| Erweiterte Berichte| 3 einfache Berichte|
 | **Features der Premium und Basic Edition**| [Gruppenbasierte Anwendungszugriffsverwaltung und Bereitstellung von Anwendungen](active-directory-accessmanagement-group-saasapps.md)| | ![Prüfen][12]| ![Prüfen][12]| |
 | | [Self-Service-Kennwortrücksetzung für Cloudbenutzer](active-directory-passwords.md)| | ![Prüfen][12]| ![Prüfen][12]| ![Prüfen][12]|
 | | [Unternehmensbranding (Anpassen von Anmeldeseiten und Zugriffsbereich)](active-directory-add-company-branding.md)| | ![Prüfen][12]| ![Prüfen][12]| ![Prüfen][12]|
 | | [Anwendungsproxy](active-directory-application-proxy-get-started.md)| | ![Prüfen][12]| ![Prüfen][12]| |
 | | [In der SLA garantierte Verfügbarkeit von 99,9 %](https://azure.microsoft.com/support/legal/sla/)| | ![Prüfen][12]| ![Prüfen][12]| ![Prüfen][12]|
-| **Nur Premium-Features**| Self-Service-Gruppenverwaltung, Self-Service-Hinzufügung von Anwendungen, dynamische Gruppenmitgliedschaft| | | ![Prüfen][12]| |
-| | [Self-Service-Kennwortzurücksetzung, -änderung, -entsperrung mit lokalem Rückschreiben](active-directory-passwords-getting-started.md/#enable-users-to-reset-or-change-their-ad-passwords)| | | ![Prüfen][12]| |
+| **Nur Premium-Features**| [Self-Service-Gruppenverwaltung](active-directory-accessmanagement-self-service-group-management.md), Self-Service-Hinzufügung von Anwendungen, [dynamische Gruppenmitgliedschaft](https://channel9.msdn.com/Series/Azure-Active-Directory-Videos-Demos/Azure-AD--Introduction-to-Dynamic-Memberships-for-Groups)| | | ![Prüfen][12]| |
 | | [Multi-Factor Authentication (cloudbasiert und lokal)](multi-factor-authentication.md)| | | ![Prüfen][12]| Für Office 365-Apps nur auf die Cloud beschränkt|
 | | [Benutzerlizenzen für Microsoft Identity Manager (MIM) sowie MIM-Server [3]](http://www.microsoft.com/server-cloud/products/microsoft-identity-manager/default.aspx)| | | ![Prüfen][12]| |
 | | [Cloud-App-Ermittlung](active-directory-cloudappdiscovery-whatis.md)| | | ![Prüfen][12]| |
 | | [Azure Active Directory Connect Health](active-directory-aadconnect-health.md)| | | ![Prüfen][12]| |
 | | Automatisches Kennwortrollover für Gruppenkonten| | | ![Prüfen][12]| |
-| | **Vorschau**: Bedingter Zugriff| | | ![Prüfen][12]| |
-| | **Vorschau**: Privileged Identity Management| | | ![Prüfen][12]| |
 | **Features für Windows 10 und Azure AD Join**| Einbinden von Windows 10-Geräten in Azure AD, Desktop-SSO, Microsoft Passport für Azure AD, BitLocker-Wiederherstellung (Administrator)| ![Prüfen][12]| ![Prüfen][12]| ![Prüfen][12]| ![Prüfen][12]|
 | | Automatische Registrierung für MDM, BitLocker-Wiederherstellung (Self-Service), zusätzliche lokale Administratoren für Windows 10-Geräte über die Einbindung in Azure AD| | | ![Prüfen][12]| |
 
@@ -84,6 +82,24 @@ Eine Reihe von Azure Active Directory-Funktionen sind als Editionen mit nutzungs
 
 [3] Rechte an Microsoft Identity Manager Server-Software werden mit Windows Server-Lizenzen gewährt (beliebige Edition). Da Microsoft Identity Manager auf dem Windows Server-Betriebssystem ausgeführt wird, kann Microsoft Identity Manager installiert und auf dem Server verwendet werden, solange auf diesem Server eine gültige, lizenzierte Kopie von Windows Server vorhanden ist. Für Microsoft Identity Manager Server ist keine andere separate Lizenz erforderlich.
 
+[4] Self-Service-Integration jeder Anwendung, die SAML, SCIM oder formularbasierte Authentifizierung unterstützt, mithilfe von Vorlagen im Anwendungskatalogmenü. Weitere Informationen finden Sie in diesem Artikel. [https://azure.microsoft.com/de-DE/documentation/articles/active-directory-saas-custom-apps
+
+
+##Azure AD-Vorschaufunktionen
+
+Neben den allgemein verfügbaren Funktionen der Free, Basic und Premium Editionen bietet Azure AD auch eine Sammlung von Vorschaufunktionen. Die Vorschaufunktionen vermitteln Ihnen einen Eindruck von in Kürze verfügbaren Funktionen, und Sie können ermitteln, ob diese Funktionen hilfreich für die Verbesserung Ihrer Umgebung sind.
+
+
+**Verfügbare Vorschaufunktionen:**
+
+- [B2B-Zusammenarbeit](active-directory-b2b-collaboration-overview.md)
+- Bedingter Zugriff
+- [Verwaltungseinheiten](active-directory-administrative-units-management.md)
+- Privileged Identity Management
+- [HR-Anwendungsintegration](active-directory-saas-workday-inbound-tutorial.md)
+
+
+
 
 
 ## Nächste Schritte
@@ -96,4 +112,4 @@ Eine Reihe von Azure Active Directory-Funktionen sind als Editionen mit nutzungs
 <!--Image references-->
 [12]: ./media/active-directory-editions/ic195031.png
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

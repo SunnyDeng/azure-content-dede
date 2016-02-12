@@ -121,7 +121,7 @@ Der Adressteil in dieser RDP-Datei besteht aus dem vollqualifizierten Domänenna
 
 Ursache: Der virtuelle Zielcomputer konnte die Sicherheitsautorität im Benutzernamenteil Ihrer Anmeldeinformationen nicht finden.
 
-Wenn Ihr Benutzername das Format *SecurityAuthority\UserName* (Beispiel: „CORP\\User1“) aufweist, ist *SecurityAuthority* entweder der Computername des virtuellen Computers (für die lokale Sicherheitsautorität) oder ein Active Directory-Domänenname.
+Wenn Ihr Benutzername das Format *SecurityAuthority*\*UserName* (Beispiel: „CORP\\User1“) aufweist, ist *SecurityAuthority* entweder der Computername des virtuellen Computers (für die lokale Sicherheitsautorität) oder ein Active Directory-Domänenname.
 
 Lösungsvorschläge:
 
@@ -136,8 +136,8 @@ Ursache: Der virtuelle Zielcomputer konnte Ihren Kontonamen und das Kennwort nic
 
 Ein Windows-basierter Computer kann die Anmeldeinformationen eines lokalen Kontos oder eines Domänenkontos überprüfen.
 
-- Verwenden Sie für lokale Konten die Syntax *Computername\Benutzername* (Beispiel: „SQL1\\Admin4798“).
-- Verwenden Sie für Domänenkonten die Syntax *Domänenname\Benutzername* (Beispiel: „CONTOSO\\johndoe“).
+- Verwenden Sie für lokale Konten die Syntax *Computername*\*Benutzername* (Beispiel: „SQL1\\Admin4798“).
+- Verwenden Sie für Domänenkonten die Syntax *Domänenname*\*Benutzername* (Beispiel: „CONTOSO\\johndoe“).
 
 Bei virtuellen Computern, die Sie in einer neuen Active Directory-Gesamtstruktur zu Domänencontrollern heraufgestuft haben, wird auch das lokale Administratorkonto, mit dem Sie sich angemeldet haben, in der neuen Gesamtstruktur und Domäne in ein äquivalentes Konto mit dem gleichen Kennwort konvertiert. Das lokale Konto wird gelöscht. Wenn Sie sich beispielsweise mit dem lokalen Konto „DC1\\DCAdmin“ angemeldet und den virtuellen Computer zu einem Domänencontroller in einer neuen Gesamtstruktur für die Domäne „corp.contoso.com“ heraufgestuft haben, dann wird das lokale Konto DC1\\DCAdmin gelöscht und ein neues Domänenkonto („CORP\\DCAdmin“) mit demselben Kennwort erstellt.
 
@@ -165,10 +165,10 @@ Wenn keiner dieser Fehler auftritt und Sie trotzdem keine Verbindung mit dem vir
 
 [Zurücksetzen eines Kennworts oder des Remotedesktopdiensts für virtuelle Windows-Computer](virtual-machines-windows-reset-password.md)
 
-[Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md)
+[Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md)
 
 [Behandeln von Problemen mit Secure Shell (SSH)-Verbindungen mit einem Linux-basierten virtuellen Azure-Computer](virtual-machines-troubleshoot-ssh-connections.md)
 
 [Problembehandlung beim Zugriff auf eine Anwendung, die auf einem virtuellen Azure-Computer ausgeführt wird](virtual-machines-troubleshoot-access-application.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

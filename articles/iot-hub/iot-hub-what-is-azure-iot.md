@@ -13,14 +13,14 @@
  ms.topic="article"
  ms.tgt_pltfrm="na"
  ms.workload="na"
- ms.date="11/05/2015"
+ ms.date="02/03/2016"
  ms.author="dobett"/>
 
 [AZURE.INCLUDE [iot-azure-and-iot](../../includes/iot-azure-and-iot.md)]
 
 ## Nächste Schritte
 
-Azure IoT Hub ist ein Azure-Dienst, mit dem umfangreiche Telemetriedaten von Ihren Geräten empfangen und an einen Prozessor für Datenstromereignisse weitergeleitet werden. Sie können IoT Hub zum Implementieren Ihrer eigenen Back-End-Lösung verwenden. IoT Hub kann auch Cloud-zu-Gerät-Befehle an bestimmte Geräte senden. Darüber hinaus umfasst IoT Hub eine Geräteidentitätsregistrierung, mit der Sie Geräte bereitstellen und festlegen können, welche Geräte eine Verbindung mit dem Hub herstellen dürfen. Weitere Informationen finden Sie unter:
+Azure IoT Hub ist ein Azure-Dienst, der eine zuverlässige und sichere bidirektionale Kommunikation zwischen Ihrem Anwendungs-Back-End und Millionen von Geräten ermöglicht. Der Dienst ermöglicht dem Anwendungs-Back-End nach Maß das Empfangen von Telemetriedaten von Ihren Geräten, das Weiterleiten dieser Daten an einen Datenstromereignis-Prozessor und auch das Senden von C2D-Befehlen an bestimmte Geräte. Sie können IoT Hub zum Implementieren Ihrer eigenen Back-End-Lösung verwenden. Darüber hinaus umfasst IoT Hub eine Geräte-Identitätsregistrierung, die zum Bereitstellen von Geräten, ihren sicherheitsbezogenen Anmeldeinformationen und ihren Rechten zum Herstellen einer Verbindung mit dem Hub dient. Weitere Informationen finden Sie unter:
 
 - [Was ist IoT Hub?][lnk-iot-hub]
 - [Erste Schritte mit IoT Hub][lnk-getstarted]
@@ -35,4 +35,4 @@ Möglicherweise interessieren Sie sich auch für [Azure IoT Suite][lnk-iot-suite
 [lnk-iot-suite]: http://azure.microsoft.com/solutions/iot/
 [lnk-iotdev]: https://azure.microsoft.com/develop/iot/
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0204_2016-->

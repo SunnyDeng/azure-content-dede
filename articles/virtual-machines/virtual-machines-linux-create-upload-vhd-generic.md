@@ -22,14 +22,14 @@
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
 
-**Wichtig**: Das Azure-Plattform-SLA gilt für virtuelle Computer unter dem Betriebssystem Linux nur dann, wenn eine der [unterstützten Verteilungen](virtual-machines-../linux-endorsed-distributions.md) verwendet wird. Alle Linux-Verteilungen, die im Azure-Image-Katalog bereitgestellt werden, sind unterstützte Verteilungen mit der erforderlichen Konfiguration.
+**Wichtig**: Das Azure-Plattform-SLA gilt für virtuelle Computer unter dem Betriebssystem Linux nur dann, wenn eine der [unterstützten Verteilungen](virtual-machines-linux-endorsed-distributions.md) verwendet wird. Alle Linux-Verteilungen, die im Azure-Image-Katalog bereitgestellt werden, sind unterstützte Verteilungen mit der erforderlichen Konfiguration.
 
-- [Linux auf von Azure unterstützten Verteilungen](virtual-machines-../linux-endorsed-distributions.md)
+- [Linux auf von Azure unterstützten Verteilungen](virtual-machines-linux-endorsed-distributions.md)
 - [Unterstützung für Linux-Images in Microsoft Azure](http://support2.microsoft.com/kb/2941892)
 
 Alle auf Azure ausgeführten Verteilungen müssen eine Reihe an Voraussetzungen erfüllen, damit sie entsprechend auf der Plattform ausgeführt werden. Dieser Artikel umfasst in keinem Fall alle Aspekte, da jede Distribution unterschiedlich ist. Es ist durchaus möglich, dass Sie, selbst wenn Sie alle unten aufgeführten Kriterien erfüllen, Ihr Linus-System noch erheblich optimieren müssen, um gewährleisten zu können, dass es ordnungsgemäß auf der Plattform ausgeführt wird.
 
-Daher wird empfohlen, dass Sie nach Möglichkeit mit einem unserer [Linux auf Azure-unterstützten Distributionen](../linux-endorsed-distributions.md) beginnen. Die folgenden Artikel führen Sie durch die Vorbereitung der verschiedenen unterstützten Linux-Verteilungen, die auf Azure unterstützt werden:
+Daher wird empfohlen, dass Sie nach Möglichkeit mit einem unserer [Linux auf Azure-unterstützten Distributionen](virtual-machines-linux-endorsed-distributions.md) beginnen. Die folgenden Artikel führen Sie durch die Vorbereitung der verschiedenen unterstützten Linux-Verteilungen, die auf Azure unterstützt werden:
 
 - **[CentOS-basierte Verteilungen](virtual-machines-linux-create-upload-vhd-centos.md)**
 - **[Debian Linux](virtual-machines-linux-create-upload-vhd-debian.md)**
@@ -109,7 +109,7 @@ Zur Umgehung des Problems können Sie die Größe des virtuellen Computers mithi
 
 ## Linux-Kernelanforderungen ##
 
-Die Treiber für die Linux-Integrationsdienste (Linux Integration Services, LIS) für Hyper-V und Azure tragen direkt zum Linux-Upstream-Kernel bei. Viele Distributionen, die eine neue Linux-Kernelversion (d. h. 3.x) enthalten, verfügen bereits über diese Treiber oder bieten ansonsten zurückportierte Versionen dieser Treiber mit ihren Kerneln. Diese Treiber werden ständig im Upstream-Kernel mit neuen Fehlerbehebungen und Features aktualisiert. Daher empfiehlt sich, nach Möglichkeit eine [bestätigte Distribution](../linux-endorsed-distributions.md) auszuführen, die diese Fehlerbehebungen und Updates enthält.
+Die Treiber für die Linux-Integrationsdienste (Linux Integration Services, LIS) für Hyper-V und Azure tragen direkt zum Linux-Upstream-Kernel bei. Viele Distributionen, die eine neue Linux-Kernelversion (d. h. 3.x) enthalten, verfügen bereits über diese Treiber oder bieten ansonsten zurückportierte Versionen dieser Treiber mit ihren Kerneln. Diese Treiber werden ständig im Upstream-Kernel mit neuen Fehlerbehebungen und Features aktualisiert. Daher empfiehlt sich, nach Möglichkeit eine [bestätigte Distribution](virtual-machines-linux-endorsed-distributions.md) auszuführen, die diese Fehlerbehebungen und Updates enthält.
 
 Wenn Sie eine Variante der Red Hat Enterprise Linux-Versionen **6.0-6.3** ausführen, müssen Sie die neuesten LIS-Treiber für Hyper-V installieren. Die Treiber sind [unter diesem Speicherort](http://go.microsoft.com/fwlink/p/?LinkID=254263&clcid=0x409) zu finden. Ab RHEL **6.4+** (und Ableitungen) sind die LIS-Treiber bereits im Kernel enthalten. Daher sind keine zusätzlichen Installationspakete nötig, um diese Systeme auf Azure auszuführen.
 
@@ -195,4 +195,4 @@ Der [Azure Linux-Agent](virtual-machines-linux-agent-user-guide.md) (waagent) is
 
 - Sie müssen den virtuellen Computer anschließend herunterfahren und die virtuelle Festplatte in Azure hochladen.
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

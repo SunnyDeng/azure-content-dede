@@ -3,7 +3,7 @@
 	description="Erfahren Sie, wie Sie das einmalige Anmelden zwischen Azure Active Directory und OpsGenie konfigurieren."
 	services="active-directory"
 	documentationCenter=""
-	authors="ashimaabrol"
+	authors="jeevansd"
 	manager="stevenpo"
 	editor=""/>
 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/18/2015"
-	ms.author="v-aabrol"/>
+	ms.date="02/02/2016"
+	ms.author="jeedes"/>
 
 
 # Tutorial: Azure Active Directory-Integration mit OpsGenie
@@ -35,7 +35,7 @@ Um die Azure AD-Integration mit OpsGenie konfigurieren zu können, benötigen S
 - Ein OpsGenie-Abonnement, für das einmaliges Anmelden aktiviert ist
 
 
-> [AZURE.NOTE]Um die Schritte in diesem Tutorial zu testen, wird empfohlen, keine Produktionsumgebung zu verwenden.
+> [AZURE.NOTE] Um die Schritte in diesem Tutorial zu testen, wird empfohlen, keine Produktionsumgebung zu verwenden.
 
 
 Um die Schritte in diesem Tutorial zu testen, sollten Sie folgende Empfehlungen beachten:
@@ -74,7 +74,7 @@ Damit einmaliges Anmelden funktioniert, muss Azure AD wissen, welcher Benutzer i
 
 Zum Konfigurieren und Testen des einmaligen Anmeldens in Azure AD bei OpsGenie müssen Sie die folgenden Bausteine ausführen:
 
-1. **[Konfigurieren von Azure AD – einmaliges Anmelden](#configuring-azure-ad-single-single-sign-on)**, um Ihren Benutzern das Verwenden dieser Funktion zu ermöglichen.
+1. **[Konfigurieren des einmaligen Anmeldens von Azure AD](#configuring-azure-ad-single-single-sign-on)**, um Ihren Benutzern das Verwenden dieser Funktion zu ermöglichen.
 2. **[Erstellen eines Azure AD-Testbenutzers](#creating-an-azure-ad-test-user)**, um das einmalige Anmelden mit Azure AD mit dem Testbenutzer Britta Simon zu testen.
 4. **[Erstellen eines OpsGenie-Testbenutzers](#creating-a-opsgenie-test-user)**, um eine Entsprechung von Britta Simon in OpsGenie zu erhalten, die mit ihrer Darstellung in Azure AD verknüpft ist.
 5. **[Zuweisen des Azure AD-Testbenutzers](#assigning-the-azure-ad-test-user)**, um Britta Simon für das einmalige Anmelden von Azure AD zu aktivieren.
@@ -97,7 +97,7 @@ Das Ziel dieses Abschnitts besteht darin, das einmalige Anmelden von Azure AD im
 
     a. Geben Sie im Textfeld „Anmelde-URL“ die URL ein, die von Ihren Benutzern nach folgendem Muster zur Anmeldung bei der OpsGenie-Anwendung verwendet wird: **„https://app.opsgenie.com/auth/login“**.
 
-    > [AZURE.NOTE]Wenn Sie Ihre Anmelde-URL benötigen, wenden Sie sich an das [OpsGenie-Supportteam](mailto:support@opsgenie.com).
+    > [AZURE.NOTE] Wenn Sie Ihre Anmelde-URL benötigen, wenden Sie sich an das [OpsGenie-Supportteam](mailto:support@opsgenie.com).
 
     b. Klicken Sie auf **Weiter**.
 
@@ -123,7 +123,7 @@ Das Ziel dieses Abschnitts besteht darin, das einmalige Anmelden von Azure AD im
 
     b. Erstellen Sie eine Base64-codierte Datei aus dem heruntergeladenen Zertifikat.
     
-    > [AZURE.NOTE]Weitere Informationen finden Sie unter [How to convert a binary certificate into a text file](https://www.youtube.com/watch?v=PlgrzUZ-Y1o&feature=youtu.be) (in englischer Sprache).
+    > [AZURE.NOTE] Weitere Informationen finden Sie unter [How to convert a binary certificate into a text file](https://www.youtube.com/watch?v=PlgrzUZ-Y1o&feature=youtu.be) (in englischer Sprache).
 
     c. Öffnen Sie das Base64-codierte Zertifikat in Editor, kopieren Sie den Inhalt des Zertifikats in die Zwischenablage, und fügen Sie ihn anschließend in das Textfeld **X.500 Certificate** ein.
 
@@ -248,4 +248,4 @@ Das Ziel dieses Abschnitts ist das Testen Ihrer Azure AD-Konfiguration für einm
 [204]: ./media/active-directory-saas-opsgenie-tutorial/tutorial_general_204.png
 [205]: ./media/active-directory-saas-opsgenie-tutorial/tutorial_general_205.png
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0204_2016-->

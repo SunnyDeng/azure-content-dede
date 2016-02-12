@@ -13,7 +13,7 @@
 	ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="identity" 
-	ms.date="12/07/2015"
+	ms.date="02/02/2016"
 	ms.author="billmath"/>
 
 # Ermitteln der Identitätsanforderungen für Ihre Hybrid-Identitätslösung
@@ -47,7 +47,8 @@ Da Sie nun eine Vorstellung von den Bedürfnissen Ihres Unternehmens haben, müs
 Außerdem müssen Sie wissen, welche Clouddienste in Ihrem Unternehmen genutzt werden. Bewertungen zum Verstehen der aktuellen Integration in Saas-, Iaas oder Paas-Modelle in Ihrer Umgebung sind äußerst wichtig. Beantworten Sie während dieser Bewertung die folgenden Fragen: – Verfügt Ihr Unternehmen über eine Integration mit einem Cloud-Dienstanbieter? – Wenn ja, welche Dienste werden genutzt? – Ist diese Integration derzeit in der Produktion oder handelt es sich um ein Pilotprojekt?
 
 
->[AZURE.NOTE]Wenn Sie keine genaue Zuordnung all Ihrer Apps und Clouddienste haben, können Sie das Cloud App Discovery-Tool nutzen. Mit diesem Tool erhält Ihre IT-Abteilung Einblick in alle geschäftlichen und privaten Cloud-Apps in Ihrem Unternehmen. Mit diesem Modul ist es einfacher denn je, Schatten-IT in Ihrem Unternehmen zu ermitteln. Dies umfasst u. a. Einzelheiten zu Nutzungsmustern und sämtlichen Benutzern, die auf Ihre Cloudanwendungen zugreifen. Dieses Tool finden Sie unter [https://appdiscovery.azure.com](https://appdiscovery.azure.com/)
+>[AZURE.NOTE]
+Wenn Sie keine genaue Zuordnung all Ihrer Apps und Clouddienste haben, können Sie das Cloud App Discovery-Tool nutzen. Mit diesem Tool erhält Ihre IT-Abteilung Einblick in alle geschäftlichen und privaten Cloud-Apps in Ihrem Unternehmen. Mit diesem Modul ist es einfacher denn je, Schatten-IT in Ihrem Unternehmen zu ermitteln. Dies umfasst u. a. Einzelheiten zu Nutzungsmustern und sämtlichen Benutzern, die auf Ihre Cloudanwendungen zugreifen. Dieses Tool finden Sie unter [https://appdiscovery.azure.com](https://appdiscovery.azure.com/)
 
 ## Identitäts-Integrationsanforderungen bewerten
 Als Nächstes müssen Sie die Identitäts-Integrationsanforderungen bewerten. Diese Bewertung ist wichtig, um die technischen Vorschriften für die Benutzerauthentifizierung, die Gestaltung der Unternehmenspräsenz in der Cloud, die Autorisierung und die Gestaltung des Benutzererlebnisses zu definieren. Beantworten Sie die folgenden Fragen:
@@ -94,6 +95,6 @@ Sie müssen zudem die Benutzeranforderungen bewerten. Diese Bewertung ist wichti
 [Ermitteln der Anforderungen an die Verzeichnissynchronisierung](active-directory-hybrid-identity-design-considerations-directory-sync-requirements.md)
 
 ## Weitere Informationen
-[Design considerations overview]((active-directory-hybrid-identity-design-considerations-overview.md)
+[Überlegungen zum Entwurf – Übersicht](active-directory-hybrid-identity-design-considerations-overview.md)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0204_2016-->

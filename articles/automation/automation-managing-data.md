@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/02/2015"
+   ms.date="02/03/2016"
    ms.author="bwren;sngun" />
 
 # Verwalten von Azure Automation-Daten
@@ -84,4 +84,4 @@ In der folgenden Tabelle werden die verfügbaren Paare primärer und sekundärer
 
 Microsoft versucht im unwahrscheinlichen Fall, dass Daten der primären Region verloren gehen, diese wiederherzustellen. Wenn die Daten der primären Region nicht wiederhergestellt werden können, erfolgt ein Geofailover, über das die betroffenen Kunden durch ihr Abonnement benachrichtigt werden.
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0204_2016-->

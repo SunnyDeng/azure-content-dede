@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/26/2015"
+	ms.date="02/03/2016"
 	ms.author="garye;raymondl"/>
 
 # Verwenden eines Azure Machine Learning-Webdiensts mit einer Web-App-Vorlage
@@ -86,7 +86,7 @@ Nachdem Sie den Webdienst bereitgestellt haben, können Sie den unten aufgeführ
 
 Wenn Sie zur Seite **Konfiguration** zurückkehren möchten, wechseln Sie zur Seite `setting.aspx` der Web-App. Beispiel: `http://carprediction.azurewebsites.net/setting.aspx.` Sie werden aufgefordert, den API-Schlüssel erneut einzugeben. Sie benötigen ihn, um auf die Seite zuzugreifen und die Einstellungen zu aktualisieren.
 
-Sie können die Web-App im klassischen Azure-Portal wie andere Web-Apps beenden, neu starten oder löschen. Solange sie ausgeführt wird, können Sie zur Webadresse der Startseite wechseln und neue Werte eingeben.
+Sie können die Web-App im Azure-Portal wie andere Web-Apps beenden, neu starten oder löschen. Solange sie ausgeführt wird, können Sie zur Webadresse der Startseite wechseln und neue Werte eingeben.
 
 ## Verwenden der Vorlage für den Batchausführungsdienst (BES)
 
@@ -125,4 +125,4 @@ Erfahren Sie mehr:
 [image6]: media\machine-learning-consume-web-service-with-web-app-template\web-service-info.png
 [image7]: media\machine-learning-consume-web-service-with-web-app-template\storage.png
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

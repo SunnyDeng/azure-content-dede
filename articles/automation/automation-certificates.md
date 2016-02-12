@@ -46,7 +46,7 @@ Die Aktivitäten in der folgenden Tabelle werden für den Zugriff auf Zertifikat
 
 Wenn Sie ein neues Zertifikat erstellen, laden Sie eine CER- oder PFX-Datei in Azure Automation hoch. Wenn Sie das Zertifikat als exportierbar kennzeichnen, können Sie es aus dem Azure Automation-Zertifikatspeicher übertragen. Ist das Zertifikat nicht exportierbar, können Sie es nur zum Signieren innerhalb des Runbooks oder der DSC-Konfiguration verwenden.
 
-### So erstellen Sie ein neues Zertifikat mit dem Azure-Portal
+### So erstellen Sie ein neues Zertifikat mit dem klassischen Azure-Portal
 
 1. Klicken Sie in Ihrem Automation-Konto im oberen Fensterbereich auf **Objekte**.
 1. Klicken Sie unten im Fenster auf **Einstellung hinzufügen**.
@@ -57,7 +57,7 @@ Wenn Sie ein neues Zertifikat erstellen, laden Sie eine CER- oder PFX-Datei in A
 1. Aktivieren Sie das Kontrollkästchen, um die Zertifikatdatei hochzuladen und das neue Zertifikatobjekt zu speichern.
 
 
-### So erstellen Sie ein neues Zertifikat mit dem Azure-Vorschauportal
+### So erstellen Sie ein neues Zertifikat mit dem Azure-Portal
 
 1. Klicken Sie in Ihrem Automation-Konto auf **Objekte**, um das Blatt **Objekte** zu öffnen.
 1. Klicken Sie auf **Zertifikate**, um das Blatt **Zertifikate** zu öffnen.
@@ -98,7 +98,7 @@ Sie können einem grafischen Runbook **Get-AutomationCertificate** hinzufügen, 
 
 Die folgende Abbildung zeigt ein Beispiel für die Verwendung eines Zertifikats in einem grafischen Runbook. Es handelt sich um das oben gezeigte Beispiel zum Hinzufügen eines Zertifikats zu einem Clouddienst aus einem Textrunbook.
 
-In diesem Beispiel wird der Parametersatz **UseConnectionObject** für die Send-**TwilioSMS-Aktivität** verwendet, die ein Verbindungsobjekt zur Authentifizierung beim Dienst nutzt. Es muss hier eine [Pipelineverknüpfung](automation-graphical-authoring-intro.md#links-and-workflow) verwendet werden, da eine Sequenzverknüpfung eine Auflistung mit einem einzelnen Objekt zurückgeben würde, und dies nicht vom Connection-Parameter erwartet wird.
+In diesem Beispiel wird der Parametersatz **UseConnectionObject** für die **Send-TwilioSMS**-Aktivität verwendet, die ein Verbindungsobjekt zur Authentifizierung beim Dienst nutzt. Hier muss eine [Pipelineverknüpfung](automation-graphical-authoring-intro.md#links-and-workflow) verwendet werden, da eine Sequenzverknüpfung eine Auflistung mit einem einzelnen Objekt zurückgeben würde und dies nicht vom Connection-Parameter erwartet wird.
 
 ![](media/automation-certificates/add-certificate.png)
 
@@ -107,4 +107,4 @@ In diesem Beispiel wird der Parametersatz **UseConnectionObject** für die Send-
 
 - [Verknüpfungen bei der grafischen Erstellung](automation-graphical-authoring-intro.md#links-and-workflow) 
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

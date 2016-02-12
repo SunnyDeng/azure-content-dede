@@ -35,7 +35,7 @@ Wie oben gezeigt, wird durch Angabe eines Zeitplans für die Aktivität eine Rei
  
 Für das derzeit ausgeführte Aktivitätsfenster kann in der JSON der Aktivität über die Systemvariablen **WindowStart** und **WindowEnd** auf das dem Aktivitätsfenster zugeordnete Intervall zugegriffen werden. Sie können diese Variablen für verschiedene Zwecke in der JSON Ihrer Aktivität und Skripts verwenden, die der Aktivität zugeordnet sind, einschließlich Auswahl von Daten in den Ein- und Ausgabedatasets, die Zeitreihendaten darstellen.
 
-Weitere Informationen zu den für „scheduler“ verfügbaren Eigenschaften, einschließlich Planen eines bestimmten Zeitversatzes sowie Festlegen des Modus zum Abstimmen der Verarbeitung am Anfang oder Ende des Aktivitätsfensters, finden Sie im Artikel [Erstellen von Pipelines](data-factory-create-pipelines.md).
+Die Eigenschaft **scheduler** unterstützt dieselben untergeordneten Eigenschaften wie die Eigenschaft **availability** in einem Dataset. Weitere Informationen zu den für „scheduler“ verfügbaren Eigenschaften, einschließlich Planen eines bestimmten Zeitversatzes sowie Festlegen des Modus zum Abstimmen der Verarbeitung am Anfang oder Ende des Aktivitätsfensters, finden Sie im Artikel [Dataset: Availability](data-factory-create-datasets.md#Availability).
 
 ## Datasets und Datenslices von Zeitreihen
 
@@ -577,6 +577,8 @@ Text | Format(X) | X: Stringvariable | Formatiert den Text.
 	    "Hour" : "$$Text.Format('{0:hh}',WindowStart)"
 	}
 
+Im Thema [Benutzerdefinierte Formatzeichenfolgen für Datum und Uhrzeit](https://msdn.microsoft.com/library/8kb3ddd4.aspx) werden verschiedene Formatoptionen beschrieben (z. B. „yy“ im Vergleich zu „yyyy“).
+
 > [AZURE.NOTE] Bei Verwenden einer Funktion in einer anderen Funktion müssen Sie für die innere Funktion nicht das Präfix **$$** verwenden. Beispiel: $$Text.Format('PartitionKey eq \\'my\_pkey\_filter\_value\\' und RowKey ge \\'{0:yyyy-MM-dd HH:mm:ss}\\'', Time.AddHours(SliceStart, -6)). Beachten Sie bei diesem Beispiel, dass das Präfix **$$** für die **Time.AddHours**-Funktion nicht verwendet wird.
   
 
@@ -678,4 +680,4 @@ Ein Dataset kann als extern gekennzeichnet werden (siehe die nachstehende JSON),
 
   
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

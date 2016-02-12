@@ -13,11 +13,11 @@
       ms.topic="article"
       ms.tgt_pltfrm="na"
       ms.workload="na"
-      ms.date="01/04/2016"
+      ms.date="01/28/2016"
       ms.author="hascipio; avikova" />
 
 # Leitfaden für die Veröffentlichung von Datendiensten im Azure Marketplace
-Nach Abschluss von Schritt 1 [Erstellen und Registrieren eines Kontos][link-acct-creation] haben wir Sie durch [Allgemeine, nicht technische Voraussetzungen](marketplace-publishing-prerequisites.md) und [Technische Voraussetzungen](marketplace-publishing-data-service-creation-prerequisites.md) eines Datendienstangebots im Azure Marketplace geleitet. Jetzt führen wir Sie durch die Schritte, die Sie im [Veröffentlichungsportal][link-pubportal] zum Erstellen eines Datendienstangebots für den Azure Marketplace durchlaufen.
+Nach Abschluss von Schritt 1 [Erstellen und Registrieren eines Kontos][link-acct-creation] haben wir Sie durch [Allgemeine, nicht technische Voraussetzungen](marketplace-publishing-pre-requisites.md) und [Technische Voraussetzungen](marketplace-publishing-data-service-creation-prerequisites.md) eines Datendienstangebots im Azure Marketplace geleitet. Jetzt führen wir Sie durch die Schritte, die Sie im [Veröffentlichungsportal][link-pubportal] zum Erstellen eines Datendienstangebots für den Azure Marketplace durchlaufen.
 
 ## 1\. Melden Sie sich beim Veröffentlichungsportal an.
 
@@ -41,7 +41,7 @@ Geben Sie den Titel für Ihr neues Datendienstangebot ein, und klicken Sie recht
 
 Klicken Sie auf die Registerkarte **Exemplarische Vorgehensweise**, und informieren Sie sich über alle notwendigen Schritte zur ordnungsgemäßen Veröffentlichung des Datendiensts im Azure Marketplace.
 
-> [AZURE.TIP]Sie können immer auf die Links auf der Seite "Exemplarische Vorgehensweise" klicken oder die Registerkarten im Untermenü des Datendienstangebots auf der linken Seite verwenden.
+> [AZURE.TIP] Sie können immer auf die Links auf der Seite "Exemplarische Vorgehensweise" klicken oder die Registerkarten im Untermenü des Datendienstangebots auf der linken Seite verwenden.
 
 ## 5\. Erstellen Sie einen neuen Plan.
 
@@ -55,7 +55,7 @@ Eine Transaktion entspricht grundsätzlich der Anzahl von Datensätzen, die Ihr 
 
 Die Azure Marketplace Service-Ebene ist dafür zuständig, die Anzahl der von den einzelnen Abfragen genutzten Transaktionen zu überwachen (messen).
 
-> [AZURE.IMPORTANT]Endbenutzer, die während eines Monats die Transaktionsgrenze erreichen, werden bis zum Ende ihres monatlichen Abonnementzyklus an der Weiternutzung des Diensts gehindert.
+> [AZURE.IMPORTANT] Endbenutzer, die während eines Monats die Transaktionsgrenze erreichen, werden bis zum Ende ihres monatlichen Abonnementzyklus an der Weiternutzung des Diensts gehindert.
 
 > Der Plan oder einer der Pläne kann eine unbegrenzte Anzahl von Transaktionen enthalten (dies muss jedoch nicht der Fall sein).
 
@@ -68,7 +68,7 @@ Die Azure Marketplace Service-Ebene ist dafür zuständig, die Anzahl der von de
 
     Das Veröffentlichungsportal schlägt auch "Planbezeichner" vor, die verwendet werden, um den Namen des Plans in der UI gegenüber den Endbenutzern zu kommunizieren. Außerdem verwendet der Marketplace Service die Bezeichner zur Identifizierung des Plans. Sie können den "Planbezeichner" nach Ihren Wünschen ändern.
 
-    > [AZURE.NOTE]Der "Planbezeichner" muss im Rahmen jedes Angebots eindeutig sein. Wie viele andere im Veröffentlichungsportal verwendeten Bezeichner werden Planbezeichner nach der ersten Veröffentlichung in der produktiven Umgebung gesperrt. Daraufhin kann der Bezeichner nicht mehr geändert werden.
+    > [AZURE.NOTE] Der "Planbezeichner" muss im Rahmen jedes Angebots eindeutig sein. Wie viele andere im Veröffentlichungsportal verwendeten Bezeichner werden Planbezeichner nach der ersten Veröffentlichung in der produktiven Umgebung gesperrt. Daraufhin kann der Bezeichner nicht mehr geändert werden.
 
 3. Klicken Sie, um Ihre Auswahl zu bestätigen.
 
@@ -81,13 +81,13 @@ Die Azure Marketplace Service-Ebene ist dafür zuständig, die Anzahl der von de
 |----|----|
 |**Ist dieser Plan kostenlos und weltweit verfügbar?**|Sie können einen völlig kostenfreien Plan erstellen. Wenn dies der einzige Plan dieses Angebots ist, bedeutet dies, dass Sie ein "Kostenloses Angebot" im Marketplace veröffentlichen. Wenn das Angebot nur für einen Plan (von mehreren Plänen) gilt, können Sie Endbenutzern anbieten, unter Nutzung einer relativ kleinen Anzahl von Transaktionen pro Monat mehr über Ihren Dienst zu erfahren. Wenn die Antwort "Ja" ist, werden keine weiteren Fragen gestellt.|
 
-> [AZURE.NOTE]Endbenutzer können immer auf kostenpflichtige Pläne upgraden.
+> [AZURE.NOTE] Endbenutzer können immer auf kostenpflichtige Pläne upgraden.
 
 |Frage|Bedeutung|
 |----|----|
 |**Gibt es eine kostenlose Testversion?**|Sie können zwischen "Keine Testversion" oder der Nutzungsoption "Ein Monat" für Ihren Plan wählen. Herausgeber bevorzugen diese Option, um Endbenutzern die Möglichkeit zu geben, sich einen Monat lang kostenlos über die Vorteile des Angebots zu informieren.|
 
-> [AZURE.IMPORTANT]Endbenutzer können nur eine kostenlose Testversion erwerben, wenn sie ein Zahlungsmittel, z. B. eine Kreditkarte oder einen Enterprise Agreement, eingerichtet haben.
+> [AZURE.IMPORTANT] Endbenutzer können nur eine kostenlose Testversion erwerben, wenn sie ein Zahlungsmittel, z. B. eine Kreditkarte oder einen Enterprise Agreement, eingerichtet haben.
 
 > Nach Ablauf der 1-monatigen kostenlosen Testversion beginnt Azure Marketplace mit der Berechnung von Gebühren in Höhe des bei Abschluss des Abonnements geltenden Tarifs, sofern der Kunde nicht die Stornierung des Abonnements eingeleitet hat. Der Endbenutzer erhält darüber hinaus keine gesonderte Benachrichtigung.
 
@@ -131,7 +131,7 @@ Bei Webdiensten
 
   ![Abbildung](media/marketplace-publishing-data-service-creation/step-7.7.png)
 
-> [AZURE.IMPORTANT]Lesen Sie [Zuordnen eines vorhandenen Webdiensts zu OData über CSDL](marketplace-publishing-data-service-creation-odata-mapping.md), um ausführliche Informationen und Beispiele zum Erstellen eines CSDL-Webdiensts zu erhalten.
+> [AZURE.IMPORTANT] Lesen Sie [Zuordnen eines vorhandenen Webdiensts zu OData über CSDL](marketplace-publishing-data-service-creation-odata-mapping.md), um ausführliche Informationen und Beispiele zum Erstellen eines CSDL-Webdiensts zu erhalten.
 
 ## Nächste Schritte
 Nachdem Sie nun Ihr Datendienstangebot erstellt haben, stellen Sie sicher, dass Sie die Anweisungen im [Leitfaden zu Azure Marketplace-Marketinginhalten](marketplace-publishing-push-to-staging.md) befolgt haben, bevor Sie mit [Testen Ihres Datendiensts in der Stagingumgebung](marketplace-publishing-data-service-test-in-staging.md) fortfahren.
@@ -146,4 +146,4 @@ Nachdem Sie nun Ihr Datendienstangebot erstellt haben, stellen Sie sicher, dass 
 [link-acct-creation]: marketplace-publishing-microsoft-accounts-creation-registration.md
 [link-pubportal]: https://publish.windowsazure.com
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0204_2016-->

@@ -22,8 +22,6 @@
 
 Dieser Artikel enthält ausführliche Informationen und Beispiele, die veranschaulichen, wie Sie in Azure Mobile App Service-Apps ein Node.js-Back-End verwenden.
 
-> [AZURE.NOTE] Dieses SDK befindet sich in der Vorschauphase. Daher wird empfohlen, dieses SDK nicht in einer Produktionsumgebung einzusetzen. In den Beispielen in diesem Dokument wird die Version „v2.0.0-rc2“ von [azure-mobile-apps] verwendet.
-
 ## <a name="Introduction"></a>Einführung
 
 Mobile Azure App Service-Apps verfügen über eine Funktion zum Hinzufügen einer für Mobilgeräte optimierten Datenzugriff-Web-API zu einer Webanwendung. Das Azure Mobile App Service-Apps SDK steht für ASP.NET- und Node.js-Webanwendungen zur Verfügung. Das SDK ermöglicht die folgenden Vorgänge:
@@ -747,4 +745,4 @@ Im Azure-Portal können Sie Ihre Node.js-Back-End-Skriptdateien in Visual Studio
 [ExpressJS Middleware]: http://expressjs.com/guide/using-middleware.html
 [Winston]: https://github.com/winstonjs/winston
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

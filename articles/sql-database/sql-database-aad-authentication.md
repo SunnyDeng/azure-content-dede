@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="data-management"
-   ms.date="12/09/2015"
+   ms.date="02/01/2016"
    ms.author="rick.byham@microsoft.com"/>
 
 # Herstellen einer Verbindung mit SQL-Datenbank unter Verwendung der Azure Active Directory-Authentifizierung
@@ -65,7 +65,7 @@ Um eigenständige Datenbankbenutzer in Azure SQL-Datenbank zu erstellen, müssen
 
 ## Funktionen und Einschränkungen von Azure AD
 
-In Azure SQL-Datenbank können die folgenden Mitglieder von Azure Active Directory bereitgestellt werden: – Systemeigene Mitglieder: Ein Mitglied, das in Azure AD in der verwalteten Domäne oder in einer benutzerdefinierten Domäne erstellt wurde. Weitere Informationen finden Sie unter [Fügen Sie Ihren eigenen Domänennamen in Azure AD hinzu](active-directory-add-domain.md). – Mitglieder von Verbunddomänen: Ein Mitglied, das in Azure AD mit einer Verbunddomäne erstellt wurde. Weitere Informationen finden Sie unter [Microsoft Azure now supports federation with Windows Server Active Directory](https://azure.microsoft.com/blog/2012/11/28/windows-azure-now-supports-federation-with-windows-server-active-directory/) (in englischer Sprache). – Importierte Mitglieder aus anderen Azure Active Directory-Verzeichnissen, bei denen es sich um systemeigene Mitglieder oder um Mitglieder von Verbunddomänen handelt. – Active Directory-Gruppen, die als Sicherheitsgruppen erstellt wurden.
+In Azure SQL-Datenbank können die folgenden Mitglieder von Azure Active Directory bereitgestellt werden: – Systemeigene Mitglieder: Ein Mitglied, das in Azure AD in der verwalteten Domäne oder in einer benutzerdefinierten Domäne erstellt wurde. Weitere Informationen finden Sie unter [Fügen Sie Ihren eigenen Domänennamen in Azure AD hinzu](https://azure.microsoft.com/documentation/articles/active-directory-add-domain/). – Mitglieder von Verbunddomänen: Ein Mitglied, das in Azure AD mit einer Verbunddomäne erstellt wurde. Weitere Informationen finden Sie unter [Microsoft Azure now supports federation with Windows Server Active Directory](https://azure.microsoft.com/blog/2012/11/28/windows-azure-now-supports-federation-with-windows-server-active-directory/) (in englischer Sprache). – Importierte Mitglieder aus anderen Azure Active Directory-Verzeichnissen, bei denen es sich um systemeigene Mitglieder oder um Mitglieder von Verbunddomänen handelt. – Active Directory-Gruppen, die als Sicherheitsgruppen erstellt wurden.
 
 Microsoft-Konten (beispielsweise "outlook.com", "hotmail.com", "live.com") oder andere Gastkonten (z. B. "gmail.com", "yahoo.com") werden nicht unterstützt. Wenn Sie sich bei [https://login.live.com](https://login.live.com) mit dem Konto und einem Kennwort anmelden können, verwenden Sie ein Microsoft-Konto, das zur Azure AD-Authentifizierung für Azure SQL-Datenbank nicht eingesetzt werden kann.
 
@@ -86,8 +86,9 @@ Erstellen Sie ein Azure Active Directory-Verzeichnis, und füllen Sie es mit Ben
 
 - Erstellen der anfänglichen, von Azure AD verwalteten Domäne
 - Konfigurieren eines Verbunds aus lokalen Active Directory-Domänendiensten und Azure Active Directory
+- Aktivieren Sie mithilfe des Tools **AD FS** im Abschnitt **Dienst**, **Endpunkte** die Option **WS-Trust 1.3** für den URL-Pfad **/adfs/services/trust/13/windowstransport**.
 
-Weitere Informationen finden Sie unter [Fügen Sie Ihren eigenen Domänennamen in Azure AD hinzu](active-directory-add-domain.md), [Microsoft Azure now supports federation with Windows Server Active Directory](https://azure.microsoft.com/blog/2012/11/28/windows-azure-now-supports-federation-with-windows-server-active-directory/) (in englischer Sprache), [Verwalten Ihres Azure AD-Verzeichnisses](https://msdn.microsoft.com/library/azure/hh967611.aspx) und [Verwalten von Azure AD mit Windows PowerShell](https://msdn.microsoft.com/library/azure/jj151815.aspx).
+Weitere Informationen finden Sie unter [Fügen Sie Ihren eigenen Domänennamen in Azure AD hinzu](https://azure.microsoft.com/documentation/articles/active-directory-add-domain/), [Microsoft Azure now supports federation with Windows Server Active Directory](https://azure.microsoft.com/blog/2012/11/28/windows-azure-now-supports-federation-with-windows-server-active-directory/) (in englischer Sprache), [Verwalten Ihres Azure AD-Verzeichnisses](https://msdn.microsoft.com/library/azure/hh967611.aspx) und [Verwalten von Azure AD mit Windows PowerShell](https://msdn.microsoft.com/library/azure/jj151815.aspx).
 
 ## 2\. Sicherstellen, dass eine Datenbank in Azure SQL-Datenbank V12 vorliegt
 
@@ -199,8 +200,7 @@ Das folgende Beispiel gibt Informationen zum aktuellen Azure AD-Administrator f�
 Get-AzureRmSqlServerActiveDirectoryAdministrator –ResourceGroupName "Group-23" –ServerName "demo_server" | Format-List
 ```
 
-Mit dem folgenden Beispiel wird ein Azure AD-Administrator entfernt: 
-```
+Mit dem folgenden Beispiel wird ein Azure AD-Administrator entfernt: ```
 Remove-AzureRmSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23" –ServerName "demo_server"
 ```
 
@@ -244,7 +244,7 @@ Verwenden Sie diese Methode, wenn Sie unter Verwendung der verwalteten Azure AD-
 Verwenden Sie diese Methode, wenn Sie mit Ihren Windows-Anmeldeinformationen von einer Domäne aus angemeldet sind, die nicht im Verbund mit Azure konfiguriert ist, oder wenn Sie die Azure AD-Authentifizierung mit Azure AD basierend auf Anfangs- oder Clientdomäne nutzen.
 
 1. Starten Sie Management Studio, und wählen Sie im Dialogfeld **Verbindung mit Datenbankmodul herstellen** (oder **Verbindung mit dem Server herstellen**) im Feld **Authentifizierung** die Einstellung **Active Directory-Kennwortauthentifizierung** aus.
-2. Geben Sie im Feld **Benutzername** Ihren Azure Active Directory-Benutzernamen im Format **username@domain.com** ein. Es muss sich um ein Konto aus Azure Active Directory oder um ein Konto aus einer Domäne handeln, die im Verbund mit Azure Active Directory konfiguriert ist.
+2. Geben Sie im Feld **Benutzername** Ihren Azure Active Directory-Benutzernamen im Format ****username@domain.com** ein. Es muss sich um ein Konto aus Azure Active Directory oder um ein Konto aus einer Domäne handeln, die im Verbund mit Azure Active Directory konfiguriert ist.
 3. Geben Sie im Feld **Kennwort** Ihr Benutzerkennwort für das Azure Active Directory-Konto oder das Verbunddomänenkonto ein.
 4. Klicken Sie auf die Schaltfläche **Optionen**, und geben Sie auf der Seite **Verbindungseigenschaften** im Feld **Mit Datenbank verbinden** den Namen der Benutzerdatenbank ein, mit der Sie sich verbinden möchten.
 
@@ -314,6 +314,7 @@ Spezifische Codebeispiele für die Azure AD-Authentifizierung finden Sie im [SQL
 
 [CREATE USER (Transact-SQL)](http://msdn.microsoft.com/library/ms173463.aspx)
 
+
 <!--Image references-->
 
 [1]: ./media/sql-database-aad-authentication/1aad-auth-diagram.png
@@ -327,4 +328,4 @@ Spezifische Codebeispiele für die Azure AD-Authentifizierung finden Sie im [SQL
 [9]: ./media/sql-database-aad-authentication/9ad-settings.png
 [10]: ./media/sql-database-aad-authentication/10choose-admin.png
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

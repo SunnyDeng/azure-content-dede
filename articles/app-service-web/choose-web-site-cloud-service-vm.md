@@ -50,7 +50,7 @@ Im Folgenden sind einige Anwendungsszenarien mit Empfehlungen zur Auswahl der ge
 
 ### <a id="onprem"></a> Ich benötige ein Web-Front-End mit Hintergrundverarbeitung und Datenbank-Back-End, um Geschäftsanwendungen mit integrierten lokalen Medienobjekten auszuführen.
 
-Azure App Service stellt eine hervorragende Lösung für komplexe Geschäftsanwendungen dar. Mit Azure App Service können Sie Apps entwickeln, die automatisch auf einer Lastenausgleichsplattform skaliert, mit Active Directory geschützt und mit Ihren lokalen Ressourcen verbunden werden können. Das Verwalten dieser Apps wird dank eines erstklassigen Pportals und mithilfe von APIs erleichtert. Sie erhalten außerdem mithilfe von App Insight-Tools Einblicke darin, wie Kunden die Apps verwenden. Mit der Funktion [WebJobs][] können Sie Hintergrundprozesse und Aufgaben als Teil der Webebene ausführen, während Hybridkonnektivität und die [VNET-Funktionen](../fundamentals-introduction-to-azure.md#networking/) die Verbindung zurück zu den lokalen Ressourcen ermöglichen. Azure App Service bietet eine SLA mit 99,9 % Verfügbarkeit für Web-Apps und stellt folgende Möglichkeiten bereit:
+Azure App Service stellt eine hervorragende Lösung für komplexe Geschäftsanwendungen dar. Mit Azure App Service können Sie Apps entwickeln, die automatisch auf einer Lastenausgleichsplattform skaliert, mit Active Directory geschützt und mit Ihren lokalen Ressourcen verbunden werden können. Das Verwalten dieser Apps wird dank eines erstklassigen Pportals und mithilfe von APIs erleichtert. Sie erhalten außerdem mithilfe von App Insight-Tools Einblicke darin, wie Kunden die Apps verwenden. Mit der Funktion [WebJobs][] können Sie Hintergrundprozesse und Aufgaben als Teil der Webebene ausführen, während Hybridkonnektivität und VNET-Funktionen die Verbindung zurück zu den lokalen Ressourcen ermöglichen. Azure App Service bietet eine SLA mit 99,9 % Verfügbarkeit für Web-Apps und stellt folgende Möglichkeiten bereit:
 
 * Zuverlässige Ausführung Ihrer Anwendungen auf einer Cloudplattform mit Selbstreparatur und automatischem Patching.
 * Automatische Skalierung in einem globalen Netzwerk von Datencentern.
@@ -176,10 +176,7 @@ Wenn Sie Wenn Sie Azure Website ausprobieren möchten, ehe Sie sich für ein Kon
 
 ## <a id="nextsteps"></a> Nächste Schritte
 
-Weitere Informationen zu den drei Webhostingoptionen finden Sie in den folgenden Ressourcen:
-
-* [Einführung in Azure](../fundamentals-introduction-to-azure.md)
-* [Compute-Hostingoptionen in Azure](../fundamentals-application-models.md)
+Weitere Informationen zu den drei Webhostingoptionen finden Sie unter [Einführung in Azure](../fundamentals-introduction-to-azure.md):
 
 Informationen zum Einstieg in die gewählte(n) Optionen für Ihre Anwendungen finden Sie in den folgenden Ressourcen:
 
@@ -205,4 +202,4 @@ Informationen zum Einstieg in die gewählte(n) Optionen für Ihre Anwendungen fi
   [Storage]: http://www.windowsazure.com/documentation/services/storage/
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

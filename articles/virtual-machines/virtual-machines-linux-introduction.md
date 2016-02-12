@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/13/2015"
+	ms.date="02/01/2016"
 	ms.author="szark"/>
 
 #Einführung in Linux in Azure
@@ -29,7 +29,7 @@ Wenn Sie mithilfe des klassischen Azure-Portals einen virtuellen Linux-Computer 
 
 
  - Weitere Informationen finden Sie unter [Erstellen eines virtuellen Linux-Computers](virtual-machines-linux-tutorial.md)
- - Siehe [Verwenden von SSH mit Linux in Azure](../linux-use-ssh-key.md)
+ - Siehe [Verwenden von SSH mit Linux in Azure](virtual-machines-linux-use-ssh-key.md)
 
 
 ## Erlangen von Superuser-Berechtigungen mit `sudo`
@@ -99,4 +99,4 @@ Der Datenträger unter Linux kann vom Kernel den Namen `/dev/sdc` erhalten. Die 
 
  - **Siehe auch:** [Konfigurieren des Software-RAID unter Linux](virtual-machines-linux-configure-raid.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

@@ -20,6 +20,9 @@
 
 Dieser Artikel beschreibt die Verwendung der Kopieraktivität in einer Azure Data Factory, um Daten aus einem anderen Datenspeicher in eine Azure-Tabelle und aus einer Azure-Tabelle in einen anderen Datenspeicher zu verschieben. Dieser Artikel baut auf dem Artikel [Datenverschiebungsaktivitäten](data-factory-data-movement-activities.md) auf, der eine allgemeine Übersicht zur Datenverschiebung mit Kopieraktivität und unterstützten Datenspeicherkombinationen bietet.
 
+In den folgenden Beispielen wird veranschaulicht, wie Sie Daten in und aus Azure Table Storage und Azure-BLOB-Speicher kopieren. Daten können jedoch mithilfe der Kopieraktivität in Azure Data Factory **direkt** aus beliebigen Quellen in die [hier](data-factory-data-movement-activities.md#supported-data-stores) aufgeführten Senken kopiert werden.
+
+
 ## Beispiel: Kopieren von Daten aus einer Azure-Tabelle in ein Azure-Blob
 
 Das nachstehende Beispiel zeigt Folgendes:
@@ -515,4 +518,4 @@ In diesem Fall führt Data Factory die Typkonvertierungen automatisch einschlie�
 
 [AZURE.INCLUDE [data-factory-column-mapping](../../includes/data-factory-column-mapping.md)]
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

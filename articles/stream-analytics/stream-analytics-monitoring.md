@@ -14,7 +14,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="12/04/2015" 
+	ms.date="02/04/2016" 
 	ms.author="jeffstok"/>
 
 # Grundlegendes zur Stream Analytics-Auftragsüberwachung und zum Überwachen von Abfragen
@@ -35,7 +35,8 @@ Beim erstmaligen Erstellen eines Stream Analytics-Auftrags in einer Region müss
 
   ![Azure-Vorschauportal, Abfragediagnose konfigurieren](./media/stream-analytics-monitoring/07-stream-analytics-monitoring.png)
 
-## Verfügbare Metriken für Stream Analytics  
+## Verfügbare Metriken für Stream Analytics
+
 
 | Metrik | Definition |
 |--------|-------------|
@@ -45,7 +46,9 @@ Beim erstmaligen Erstellen eines Stream Analytics-Auftrags in einer Region müss
 | Ausgabeereignisse | Vom Stream Analytics-Auftrag an das Ausgabeziel gesendete Datenmenge im Hinblick auf die Ereignisanzahl. |
 | Ereignisse für falsche Reihenfolge | Anzahl der Ereignisse, die in falscher Reihenfolge empfangen und anhand der Richtlinie für die Ereignissortierung entweder verworfen oder mit einem angepassten Zeitstempel versehen wurden. Dies kann von der Konfiguration der Einstellung „Toleranzfenster für Fehlordnung“ beeinflusst werden. |
 | Konvertierungsfehler | Anzahl der Datenkonvertierungsfehler im Zusammenhang mit einem Stream Analytics-Auftrag. |
+| Laufzeitfehler | Die Anzahl von Fehlern, die beim Ausführen eines Stream Analytics-Auftrags festgestellt werden. |
 | Ereignisse bei verspäteter Eingabe | Anzahl von Ereignissen, die spät von der Quelle eintreffen und entweder verworfen wurden oder über eine Anpassung des Zeitstempels verfügen (basierend auf der Konfiguration der Richtlinie für die Ereignissortierung unter der Einstellung „Toleranzfenster für Eingangsverzögerung“). |
+
 ## Anpassen der Überwachung im Azure-Verwaltungsportal ##
 
 Bis zu 6 Metriken können in einem Diagramm angezeigt werden.
@@ -104,4 +107,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 - [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0204_2016-->

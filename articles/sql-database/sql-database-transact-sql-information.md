@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="data-management"
-   ms.date="01/21/2016"
+   ms.date="02/01/2016"
    ms.author="rick.byham@microsoft.com"/>
 
 # Azure SQL-Datenbank – Abweichungen bei Transact-SQL
@@ -95,6 +95,7 @@ Azure SQL-Datenbank V12 unterstützt einige, aber nicht alle Argumente, die in d
 - Trigger: Auf Server begrenzt oder Anmeldetrigger
 - USE-Anweisung
 
+
 ## Vollständige Transact-SQL-Referenz
 
 Weitere Informationen zu Transact-SQL-Grammatik und -Syntax sowie Beispiele finden Sie unter [Transact-SQL-Referenz (Datenbankmodul)](https://msdn.microsoft.com/library/bb510741.aspx) in der SQL Server-Onlinedokumentation.
@@ -107,4 +108,4 @@ Die Transact-SQL-Referenz umfasst Themen zu SQL Server-Versionen ab 2008. Unter 
 
 In einigen Fällen kann der allgemeine Gegenstand eines Themas in einem Produkt verwendet werden, es liegen jedoch kleine Unterschiede im Hinblick auf die verschiedenen Produkte vor. Die Unterschiede werden dann im Thema entsprechend angegeben.
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

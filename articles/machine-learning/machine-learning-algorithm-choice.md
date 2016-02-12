@@ -7,7 +7,7 @@
 	manager="paulettm"
 	editor="cgronlun"
     tags=""/>
-
+    
 <tags
 	ms.service="machine-learning"
     ms.devlang="na"
@@ -25,7 +25,7 @@ Die Antwort auf die Frage "Welchen Algorithmus für Machine Learning sollte ich 
 
 Das **Microsoft Azure Machine Learning – Cheat Sheet für Algorithmen** erleichtert Ihnen die Auswahl des richtigen Lernalgorithmus für Vorhersageanalyselösungen aus der Microsoft Azure Machine Learning-Algorithmusbibliothek. In diesem Artikel werden Sie durch seine Verwendung geführt.
 
-> [AZURE.NOTE]Um das Cheat Sheet herunterzuladen und parallel zu diesem Artikel als Referenz verwenden zu können, wechseln Sie zu [Machine Learning – Cheat Sheet für Algorithmen für Microsoft Azure Machine Learning Studio](machine-learning-algorithm-cheat-sheet.md).
+> [AZURE.NOTE] Um das Cheat Sheet herunterzuladen und parallel zu diesem Artikel als Referenz verwenden zu können, wechseln Sie zu [Machine Learning – Cheat Sheet für Algorithmen für Microsoft Azure Machine Learning Studio](machine-learning-algorithm-cheat-sheet.md).
 
 Dieses Cheat Sheet richtet sich an eine ganz bestimmte Zielgruppe: einen unerfahrenen Datenanalysten mit Machine Learning-Kenntnissen auf Studentenniveau, der einen Algorithmus für den Einstieg in Azure Machine Learning Studio auswählen möchte. Dies bedeutet, dass einige Verallgemeinerungen und Vereinfachungen getroffen werden, Sie aber dennoch auf dem richtigen Weg sein werden. Dies bedeutet außerdem, dass hier zahlreiche Algorithmen nicht aufgeführt sind. Der Satz verfügbarer Methoden in Azure Machine Learning wächst stetig, und sobald er vollständiger ist, werden wir einen neuen hinzufügen.
 
@@ -37,7 +37,7 @@ Die Pfad- und Algorithmusbezeichnungen in den Diagrammen sind wie folgt zu lesen
 
 Es folgt ein Beispiel aus dem [Cortana Analytics-Katalog](http://gallery.azureml.net/). Dabei handelt es sich um ein Experiment, mit dem mehrere Algorithmen auf dieselben Daten angewendet und die Ergebnisse verglichen werden: [Vergleichen von Multiklassen-Klassifizierungen: Buchstabenerkennung](http://gallery.azureml.net/Details/a635502fc98b402a890efe21cec65b92).
 
->[AZURE.TIP]Informationen zum Herunterladen und Drucken des Diagramms, mit dem Sie sich eine Übersicht über die Machine Learning Studio-Funktionen verschaffen können, finden Sie unter [Übersichtsdiagramm der Azure Machine Learning Studio-Funktionen](machine-learning-studio-overview-diagram.md).
+>[AZURE.TIP] Informationen zum Herunterladen und Drucken des Diagramms, mit dem Sie sich eine Übersicht über die Machine Learning Studio-Funktionen verschaffen können, finden Sie unter [Übersichtsdiagramm der Azure Machine Learning Studio-Funktionen](machine-learning-studio-overview-diagram.md).
 
 ## Ausprägungen des maschinellen Lernens
 
@@ -118,20 +118,7 @@ Einige Lernalgorithmen treffen bestimmte Annahmen über die Struktur der Daten o
 |[Decision Forest (Entscheidungswald)](https://msdn.microsoft.com/library/azure/dn906015.aspx)|●|○| |6| |
 |[Decision Jungle (Entscheidungsdschungel)](https://msdn.microsoft.com/library/azure/dn905963.aspx)|●|○| |6|Niedriger Speicherbedarf|
 |[Neuronales Netzwerk](https://msdn.microsoft.com/library/azure/dn906030.aspx)|●| | |9|[Zusätzliche Anpassung möglich](http://go.microsoft.com/fwlink/?LinkId=402867)|
-|[One-vs-All (eins-gegen-alle)](https://msdn.microsoft.com/library/azure/dn905887.aspx)|-|-|-|-|Siehe die Eigenschaften der ausgewählten zweiklassigen Methode|
-|**Regression**| | | | | |
-|[linear ](https://msdn.microsoft.com/library/azure/dn905978.aspx)| |●|●|4| |
-|[Bayesian Linear](https://msdn.microsoft.com/library/azure/dn906022.aspx)| |○|●|2| |
-|[Decision Forest (Entscheidungswald)](https://msdn.microsoft.com/library/azure/dn905862.aspx)|●|○| |6| |
-|[Boosted Decision Tree (Verstärkter Entscheidungsbaum)](https://msdn.microsoft.com/library/azure/dn905801.aspx)|●|○| |5|Hoher Speicherbedarf|
-|[Fast Forest Quantile](https://msdn.microsoft.com/library/azure/dn913093.aspx)|●|○| |9|Eher Verteilungen statt Punktvohersagen|
-|[Neuronales Netzwerk](https://msdn.microsoft.com/library/azure/dn905924.aspx)|●| | |9|[Zusätzliche Anpassung möglich](http://go.microsoft.com/fwlink/?LinkId=402867)|
-|[Poisson ](https://msdn.microsoft.com/library/azure/dn905988.aspx)| | |●|5|Technisch log-linear. Für die Vorhersage von Anzahlen.|
-|[ordinal](https://msdn.microsoft.com/library/azure/dn906029.aspx)| | | |0|Für die Vorhersage von Rangreihenfolgen|
-|**Erkennung von Anomalien**| | | | | |
-|[Support Vector Machine](https://msdn.microsoft.com/library/azure/dn913103.aspx)|○|○| |2|Besonders gut für große Merkmalssätze geeignet.|
-|[PCA-basierte Erkennung von Anomalien](https://msdn.microsoft.com/library/azure/dn913102.aspx)| |○|●|3| |
-|[K-Means](https://msdn.microsoft.com/library/azure/5049a09b-bd90-4c4e-9b46-7c87e3a36810/)| |○|●|4|Ein Clustering-Algorithmus.|
+|[One-vs-All (eins-gegen-alle)](https://msdn.microsoft.com/library/azure/dn905887.aspx)|-|-|-|-|Siehe die Eigenschaften der ausgewählten zweiklassigen Methode| |**Regression**| | | | | | |[linear ](https://msdn.microsoft.com/library/azure/dn905978.aspx)| |●|●|4| | |[Bayesian Linear](https://msdn.microsoft.com/library/azure/dn906022.aspx)| |○|●|2| | |[Decision Forest (Entscheidungswald)](https://msdn.microsoft.com/library/azure/dn905862.aspx)|●|○| |6| | |[Boosted Decision Tree (Verstärkter Entscheidungsbaum)](https://msdn.microsoft.com/library/azure/dn905801.aspx)|●|○| |5|Hoher Speicherbedarf| |[Fast Forest Quantile](https://msdn.microsoft.com/library/azure/dn913093.aspx)|●|○| |9|Eher Verteilungen statt Punktvohersagen| |[Neuronales Netzwerk](https://msdn.microsoft.com/library/azure/dn905924.aspx)|●| | |9|[Zusätzliche Anpassung möglich](http://go.microsoft.com/fwlink/?LinkId=402867)| |[Poisson ](https://msdn.microsoft.com/library/azure/dn905988.aspx)| | |●|5|Technisch log-linear. Für die Vorhersage von Anzahlen.| |[ordinal](https://msdn.microsoft.com/library/azure/dn906029.aspx)| | | |0|Für die Vorhersage von Rangreihenfolgen| |**Erkennung von Anomalien**| | | | | | |[Support Vector Machine](https://msdn.microsoft.com/library/azure/dn913103.aspx)|○|○| |2|Besonders gut für große Merkmalssätze geeignet.| |[PCA-basierte Erkennung von Anomalien](https://msdn.microsoft.com/library/azure/dn913102.aspx)| |○|●|3| | |[K-Means](https://msdn.microsoft.com/library/azure/5049a09b-bd90-4c4e-9b46-7c87e3a36810/)| |○|●|4|Ein Clustering-Algorithmus.|
 
 
 **Algorithmuseigenschaften:**
@@ -156,7 +143,7 @@ Obwohl es verwirrenderweise "Regression" im Namen trägt, handelt es sich bei de
 
 ![Logistische Regression mit zweiklassigen Daten mit nur einem Merkmal][4]
 
-***Eine logistische Regression mit zweiklassigen Daten mit nur einem Merkmal*** *– die Klassengrenze ist der Punkt, an dem die logistische Kurve gleich nah an beiden Klassen ist*
+***Eine logistische Regression mit zweiklassigen Daten mit nur einem Merkmal****– die Klassengrenze ist der Punkt, an dem die logistische Kurve gleich nah an beiden Klassen ist*
 
 ### Bäume, Wälder und Dschungel
 
@@ -237,4 +224,4 @@ Azure Machine Learning umfasst außerdem Zugriff auf ein leistungsfähiges Machi
 [9]: ./media/machine-learning-algorithm-choice/image9.png
 [10]: ./media/machine-learning-algorithm-choice/image10.png
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0204_2016-->

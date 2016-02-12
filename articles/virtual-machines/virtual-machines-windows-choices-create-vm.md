@@ -39,7 +39,7 @@ Wenn Sie lieber in einer Befehlsshell arbeiten, wählen Sie zwischen der Azure-B
 
 Informationen zur Azure-Befehlszeilenschnittstelle finden Sie unter:
 
-- [Befehlsentsprechungen für den Ressourcen-Manager und die Dienstverwaltung für Aufgaben für virtuelle Computer mit der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows][].
+- [Befehlsentsprechungen für den Ressourcen-Manager und die Dienstverwaltung für Aufgaben für virtuelle Computer mit der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows.][]
 - [Bereitstellen und Verwalten von virtuellen Computern mit Azure-Ressourcen-Manager-Vorlagen und der Azure-CLI][]
 
 Informationen zu Azure PowerShell finden Sie unter:
@@ -62,12 +62,12 @@ Wählen Sie ein Image basierend auf dem Betriebssystem, das Sie ausführen möch
 
 [Erstellen eines virtuellen Computers unter Windows]: virtual-machines-windows-tutorial.md
 
-[Befehlsentsprechungen für den Ressourcen-Manager und die Dienstverwaltung für Aufgaben für virtuelle Computer mit der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows]: xplat-cli-azure-manage-vm-asm-arm.md
+[Befehlsentsprechungen für den Ressourcen-Manager und die Dienstverwaltung für Aufgaben für virtuelle Computer mit der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows.]: xplat-cli-azure-manage-vm-asm-arm.md
 [Bereitstellen und Verwalten von virtuellen Computern mit Azure-Ressourcen-Manager-Vorlagen und der Azure-CLI]: virtual-machines-deploy-rmtemplates-azure-cli.md
 [Erstellen und Vorkonfigurieren eines virtuellen Windows-Computers mit dem Ressourcen-Manager und Azure PowerShell]: virtual-machines-ps-create-preconfigure-windows-resource-manager-vms.md
 [Bereitstellen und Verwalten von virtuellen Computern mit Azure-Ressourcen-Manager-Vorlagen und PowerShell]: virtual-machines-deploy-rmtemplates-powershell.md
 [Erstellen einer Windows-VM mit dem Ressourcen-Manager und PowerShell]: virtual-machines-create-windows-powershell-resource-manager.md
-[Erstellen eines virtuellen Windows-Computers mit einer Resource Manager-Vorlage und PowerShell]: virtual-machines-create-windows-powershell-resource-manager-template-simple.md
+[Erstellen eines virtuellen Windows-Computers mit einer Resource Manager-Vorlage und PowerShell]: virtual-machines-create-windows-powershell-resource-manager-template.md
 
 
 [Navigieren zu und Auswählen von Images virtueller Azure-Computer mit Windows PowerShell und der Azure-Befehlszeilenschnittstelle]: resource-groups-vm-searching.md
@@ -79,4 +79,4 @@ Wählen Sie ein Image basierend auf dem Betriebssystem, das Sie ausführen möch
 
 [Azure hybrid cloud test environments]: virtual-machines-hybrid-cloud-test-environments.md
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0204_2016-->

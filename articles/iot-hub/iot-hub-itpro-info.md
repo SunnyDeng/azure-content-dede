@@ -13,7 +13,7 @@
  ms.topic="article"
  ms.tgt_pltfrm="na"
  ms.workload="na"
- ms.date="12/15/2015"
+ ms.date="02/03/2016"
  ms.author="dobett"/>
 
 # Konfigurieren und Verwalten des Zugriffs auf IoT Hub
@@ -22,12 +22,14 @@ Die Informationen in diesem Artikel sollen IT-Experten beim Konfigurieren einer 
 
 ## Netzwerkverbindung
 
-Geräte kommunizieren in Azure über das AMQP- oder HTTPS-Protokoll mit IoT Hub. In der Regel richtet sich die Wahl des Protokolls nach den spezifischen Anforderungen der Lösung. Die folgende Tabelle enthält die ausgehenden Ports, die geöffnet sein müssen, damit ein Gerät ein bestimmtes Protokoll verwenden kann:
+Geräte können mit IoT Hub in Azure über eine Vielzahl von Protokollen kommunizieren. In der Regel richtet sich die Wahl des Protokolls nach den spezifischen Anforderungen der Lösung. Die folgende Tabelle enthält die ausgehenden Ports, die geöffnet sein müssen, damit ein Gerät ein bestimmtes Protokoll verwenden kann:
 
 | Protokoll | Port(s) |
 | -------- | ------- |
 | HTTPS | 443 |
 | AMQP | 5671 |
+| AMQP über WebSockets | 443 |
+| MQTT | 8883 |
 
 Nachdem Sie einen IoT Hub in einer Azure-Region erstellt haben, behält er seine IP-Adresse für die gesamte Lebensdauer bei. Wenn der IoT Hub in einem Notfallwiederherstellungsszenario von Microsoft jedoch zu einer anderen Skalierungseinheit verschoben wird, wird ihm eine neue IP-Adresse zugewiesen.
 
@@ -49,4 +51,4 @@ Dieser Artikel enthält spezifische Informationen für IT-Experten und Entwickle
 [lnk-devguide]: iot-hub-devguide.md#security
 [lnk-manage-portal]: iot-hub-manage-through-portal.md
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0204_2016-->

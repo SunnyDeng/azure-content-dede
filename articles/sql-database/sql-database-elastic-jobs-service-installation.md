@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/04/2015" 
+	ms.date="02/02/2016" 
 	ms.author="ddove;sidneyh"/>
 
 # Installieren von Aufträgen für die elastische Datenbank – Übersicht
@@ -24,7 +24,7 @@ Wenn Sie **Aufträge für die elastische Datenbank** bereits aus einem vorhanden
 
 ## Voraussetzungen
 * Ein Azure-Abonnement. Eine kostenlose Testversion finden Sie unter [Kostenlose Testversion](https://azure.microsoft.com/pricing/free-trial/).
-* Azure PowerShell, Version >= 0.8.16. Installieren Sie die neueste Version (0.9.5) mithilfe des [Webplattform-Installationsprogramms](http://go.microsoft.com/fwlink/p/?linkid=320376). Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md).
+* Azure PowerShell, Version >= 0.8.16. Installieren Sie die neueste Version (0.9.5) mithilfe des [Webplattform-Installationsprogramms](http://go.microsoft.com/fwlink/p/?linkid=320376). Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
 * Zum Installieren des Pakets der Aufträge für die elastische Datenbank wird das [NuGet-Befehlszeilenhilfsprogramm](https://nuget.org/nuget.exe) verwendet. Weitere Informationen finden Sie unter http://docs.nuget.org/docs/start-here/installing-nuget.
 
 ## Herunterladen und Importieren des PowerShell-Pakets der Aufträge für die elastische Datenbank
@@ -167,7 +167,7 @@ Nachdem Sie einen [elastischen Datenbankpool erstellt](sql-database-elastic-pool
 
 	![Erstellen von Benutzername und Kennwort][2]
 
-6. Klicken Sie auf die Schaltfläche "OK". Die Komponenten werden in wenigen Minuten in einer neuen [Ressourcengruppe](../resource-group-portal.md) erstellt. Die neue Ressourcengruppe wird an Start angeheftet, wie unten dargestellt. Nach der Erstellung werden alle Aufträge für die elastische Datenbank (Cloud Service, SQL-Datenbank, Service Bus und Storage) in der Gruppe erstellt.
+6. Klicken Sie auf die Schaltfläche "OK". Die Komponenten werden in wenigen Minuten in einer neuen [Ressourcengruppe](../azure-portal/resource-group-portal.md) erstellt. Die neue Ressourcengruppe wird an Start angeheftet, wie unten dargestellt. Nach der Erstellung werden alle Aufträge für die elastische Datenbank (Cloud Service, SQL-Datenbank, Service Bus und Storage) in der Gruppe erstellt.
 
 	![Ressourcengruppe unter Start][3]
 
@@ -188,4 +188,4 @@ Stellen Sie sicher, dass Anmeldeinformationen mit den passenden Rechten für die
 [4]: ./media/sql-database-elastic-jobs-service-installation/not-done.png
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

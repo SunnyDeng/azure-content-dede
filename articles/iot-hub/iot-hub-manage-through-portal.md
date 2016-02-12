@@ -52,7 +52,7 @@ Sie können zwischen drei Tarifen wählen: **Free**, **Standard 1** und **Stand
 
 ![][4]
 
-> [AZURE.NOTE]IoT Hub ermöglicht nur einen Free-Hub pro Abonnement.
+> [AZURE.NOTE] IoT Hub ermöglicht nur einen Free-Hub pro Abonnement.
 
 ### IoT Hub-Einheiten
 
@@ -72,13 +72,13 @@ Azure IoT Hub zeigt automatisch die Liste der Abonnements an, mit denen das Benu
 
 ### Wählen des Standorts
 
-Die Option „Standort“ enthält eine Liste der Regionen, in denen IoT Hub angeboten wird. Für diese Vorschauversion wird der IoT Hub nur in drei Regionen angeboten: USA Osten, Nordeuropa und Ostasien.
+Die Option „Standort“ enthält eine Liste der Regionen, in denen IoT Hub angeboten wird. IoT Hub ist in den folgenden Regionen verfügbar: USA, Osten, USA, Westen, Europa, Norden, Europa, Westen, Asien, Osten und Asien, Südosten.
 
 ### Erstellen des IoT Hubs
 
-Wenn alle vorherigen Schritte abgeschlossen sind, kann der IoT Hub erstellt werden. Klicken Sie auf **Erstellen**, um den Back-End-Prozess zum Erstellen dieses IoT Hubs mit den festgelegten Optionen zu starten und die Bereitstellung am angegebenen Ort auszuführen.
+Wenn alle vorherigen Schritte abgeschlossen sind, kann der IoT Hub erstellt werden. Klicken Sie auf **Erstellen**, um den Back-End-Prozess zur Erstellung dieses IoT Hubs mit den festgelegten Optionen zu starten und die Bereitstellung am angegebenen Ort durchzuführen.
 
-Das Erstellen des IoT Hubs kann einige Minuten in Anspruch nehmen, da es etwas dauert, bis die Back-End-Bereitstellung auf den jeweiligen Servern angezeigt wird.
+Bitte beachten Sie, dass die Erstellung des IoT Hubs einige Minuten in Anspruch nehmen kann, da es etwas dauert, bis die Back-End-Bereitstellung in den jeweiligen Servern angezeigt werden
 
 ## Ändern der Einstellungen des IoT Hubs
 
@@ -116,7 +116,7 @@ Klicken Sie auf die **Messaging**-Richtlinien, um eine Liste der Messaging-Eigen
 
 **Consumergruppen**: Consumergruppen ähneln als Einstellung anderen Messaging-Systemen, die zum Abrufen von Daten auf bestimmte Weise verwendet werden können, um andere Programme oder Dienste mit IoT Hub zu verbinden. Jeder IoT Hub wird mit einer Standard-Consumergruppe erstellt. Sie können Ihren IoT Hubs jedoch Consumergruppen hinzufügen oder diese daraus löschen.
 
-> [AZURE.NOTE]Die Standard-Consumergruppe kann nicht bearbeitet oder gelöscht werden.
+> [AZURE.NOTE] Die Standard-Consumergruppe kann nicht bearbeitet oder gelöscht werden.
 
 ![][11]
 
@@ -153,4 +153,4 @@ Folgen Sie diesen Links, um mehr über Azure IoT Hub zu erfahren:
 [lnk-get-started]: iot-hub-csharp-csharp-getstarted.md
 [Was ist Azure IoT Hub?]: iot-hub-what-is-iot-hub.md
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0204_2016-->

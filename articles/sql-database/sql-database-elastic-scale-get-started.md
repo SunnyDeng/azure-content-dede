@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/04/2015" 
+	ms.date="02/02/2016" 
 	ms.author="ddove;sidneyh"/>
 
 # Erste Schritte mit Tools für elastische Datenbanken
@@ -75,7 +75,7 @@ Preisinformationen finden Sie in der [SQL-Datenbank – Preisdetails](https://az
 ## Nächste Schritte
 Weitere Informationen zu den Tools für elastische Datenbanken finden Sie unter:
 
-* [Dokumentationsübersicht zu Tools für elastische Datenbanken](sql-database-elastic-scale-documentation-map.md) 
+* [Dokumentationsübersicht zu Tools für elastische Datenbanken](../learning-paths/sql-database-elastic-scale.md) 
 -    Codebeispiele: 
     -    [Elastische Datenbank mit Azure SQL – Erste Schritte](http://code.msdn.microsoft.com/Elastic-Scale-with-Azure-a80d8dc6?SRC=VSIDE)
     -    [Elastische Datenbank mit Azure SQL – Integration in Entity Framework](http://code.msdn.microsoft.com/Elastic-Scale-with-Azure-bae904ba?SRC=VSIDE)
@@ -98,4 +98,4 @@ Weitere Informationen zu den Tools für elastische Datenbanken finden Sie unter:
 [4]: ./media/sql-database-elastic-scale-get-started/output2.png
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

@@ -13,7 +13,7 @@
  ms.topic="article"
  ms.tgt_pltfrm="na"
  ms.workload="na"
- ms.date="11/09/2015"
+ ms.date="02/03/2016"
  ms.author="dobett"/>
 
 # Was ist Azure IoT Hub?
@@ -23,8 +23,9 @@ Willkommen bei Azure IoT Hub. In diesem Artikel erhalten Sie eine Übersicht üb
 Azure IoT Hub ist ein vollständig verwalteter Dienst, der eine zuverlässige und sichere bidirektionale Kommunikation zwischen Millionen von IoT-Geräten und einem Lösungs-Back-End ermöglicht. Azure IoT Hub:
 
 - Ermöglicht ein zuverlässiges Messaging zwischen Geräten und Cloud im großen Maßstab
-- Erlaubt eine sichere Kommunikation unter Verwendung von Zugriffssteuerung und Sicherheitsanmeldeinformationen auf Gerätebasis
-- Bietet Gerätebibliotheken für die gängigsten Sprachen und Plattformen
+- Eine sichere Kommunikation unter Verwendung von Zugriffssteuerung und Sicherheitsanmeldeinformationen auf Gerätebasis
+- Bietet eine umfassende Überwachung der Ereignisse zur Verwaltung der Gerätekonnektivität und -identität.
+- Gerätebibliotheken für die gängigsten Sprachen und Plattformen
 
 ![IoT Hub als Cloudgateway?][img-architecture]
 
@@ -48,9 +49,11 @@ Mit Azure IoT Hub werden die Verbindungsanforderungen für Geräte wie folgt erf
 
 -   **Authentifizierung pro Gerät und sichere Verbindung:** Sie können jedes Gerät mit seinem eigenen Sicherheitsschlüssel bereitstellen, damit es eine Verbindung mit IoT Hub herstellen kann. Die [IoT Hub-Identitätsregistrierung][lnk-devguide-identityregistry] speichert Geräteidentitäten und Schlüssel in einer Lösung. Das Back-End einer Lösung kann einzelne Geräte einer Positiv- oder Negativliste hinzufügen und so die vollständige Kontrolle über den Gerätezugriff erlangen.
 
+-   **Überwachung von Gerätekonnektivitätsvorgängen**. Sie können detaillierte Betriebsprotokolle zu Ereignissen im Zusammenhang mit Verwaltungsvorgängen für Geräteidentität und -konnektivität empfangen. Dadurch kann Ihre IoT-Lösung mühelos Verbindungsprobleme ausmachen, so z. B. Geräte, die versuchen, sich mit den falschen Anmeldeinformationen anzumelden, Nachrichten zu häufig senden oder alle C2D-Nachrichten zurückweisen.
+
 -   **Umfassender Satz von Gerätebibliotheken:** Azure IoT-Geräte-SDKs sind für die unterschiedlichsten Sprachen und Plattformen verfügbar und werden dafür unterstützt – C für viele Linux-Distributionen, Windows und Echtzeitbetriebssysteme. Azure IoT-Geräte-SDKs unterstützen auch verwaltete Sprachen wie C#, Java und JavaScript.
 
--   **IoT-Protokolle und -Erweiterbarkeit:** Falls Ihre Lösung die Gerätebibliotheken nicht nutzen kann, macht IoT Hub ein öffentliches Protokoll verfügbar, mit dem Geräte die HTTP 1.1- und AMQP 1.0-Protokolle auf systemeigene Weise nutzen können. Sie können Azure IoT Hub auch erweitern, um Unterstützung für MQTT v3.1.1 mit der Open Source-Komponente [Azure IoT-Protokollgateway][protocol-gateway] bereitzustellen. Sie können das Azure IoT-Protokollgateway in der Cloud oder lokal ausführen. Sie können es auch erweitern, um benutzerdefinierte Protokolle zu unterstützen.
+-   **IoT-Protokolle und -Erweiterbarkeit:** Falls Ihre Lösung die Gerätebibliotheken nicht nutzen kann, macht IoT Hub ein öffentliches Protokoll verfügbar, mit dem Geräte die Protokolle MQTT 3.1.1, HTTP 1.1 und AMQP 1.0 nativ verwenden können. Sie können IoT Hub auch erweitern, um Unterstützung für benutzerdefinierte Protokolle durch Anpassen der Open Source-Komponente [Azure IoT-Protokollgateway][protocol-gateway] bereitzustellen. Sie können das Azure IoT-Protokollgateway in der Cloud oder lokal ausführen.
 
 -   **Skalierung:** Azure IoT Hub kann auf Millionen von gleichzeitig verbundenen Geräten und Millionen von Ereignissen pro Sekunde skaliert werden.
 
@@ -109,4 +112,4 @@ Weitere Informationen zu Azure IoT Hub finden Sie unter den folgenden Links:
 [lnk-google-messaging]: https://developers.google.com/cloud-messaging/
 [lnk-apple-push]: https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW9
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0204_2016-->

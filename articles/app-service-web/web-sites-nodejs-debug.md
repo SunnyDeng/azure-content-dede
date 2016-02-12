@@ -4,9 +4,9 @@
 	tags="azure-portal"
 	services="app-service\web"
 	documentationCenter="nodejs"
-	authors="TomArcher"
+	authors="rmcmurray"
 	manager="wpickett"
-	editor="mollybos"/>
+	editor=""/>
 
 <tags
 	ms.service="app-service-web"
@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="nodejs"
 	ms.topic="article"
-	ms.date="11/18/2015"
-	ms.author="tarcher"/>
+	ms.date="02/03/2016"
+	ms.author="robmcm"/>
 
 # Debuggen einer Node.js-Web-App in Azure App Service
 
@@ -40,11 +40,11 @@ Mit der **IISNode.yml**-Datei können Sie auch steuern, ob benutzerfreundliche F
 
 Wenn diese Option aktiviert ist, gibt IISNode die letzten 64 K der an "stderr" gesendeten Informationen zurück, statt einer benutzerfreundlichen Fehlermeldung wie "Interner Serverfehler".
 
-> [AZURE.NOTE]"devErrorsEnabled" ist zwar für die Diagnose von Problemen währen der Entwicklungsphase nützlich, sollte jedoch nicht in Produktionsumgebungen verwendet werden, da Entwicklungsfehler möglicherweise an die Endbenutzer gesendet werden.
+> [AZURE.NOTE] "devErrorsEnabled" ist zwar für die Diagnose von Problemen währen der Entwicklungsphase nützlich, sollte jedoch nicht in Produktionsumgebungen verwendet werden, da Entwicklungsfehler möglicherweise an die Endbenutzer gesendet werden.
 
 Wenn die Datei **IISNode.yml** in Ihrer Anwendung zuvor noch nicht vorhanden war, müssen Sie die Web-App nach dem Veröffentlichen der aktualisierten Anwendung neu starten. Wenn Sie nur Einstellungen in einer bereits vorhandenen **IISNode.yml**-Datei geändert haben, die bereits veröffentlich wurde, ist kein Neustart erforderlich.
 
-> [AZURE.NOTE]Wenn Sie die Web-App mit den Azure-Befehlszeilentools oder Azure-PowerShell-Cmdlets erstellt haben, wird automatisch eine standardmäßige **IISNode.yml**-Datei erstellt.
+> [AZURE.NOTE] Wenn Sie die Web-App mit den Azure-Befehlszeilentools oder Azure-PowerShell-Cmdlets erstellt haben, wird automatisch eine standardmäßige **IISNode.yml**-Datei erstellt.
 
 Um die Web-App neu zu starten, wählen Sie die Web-App im [Azure-Portal](https://portal.azure.com) aus, und klicken Sie dann auf die Schaltfläche **NEU STARTEN**:
 
@@ -54,7 +54,7 @@ Wenn in Ihrer Entwicklungsumgebung die Azure-Befehlszeilentools installiert sind
 
 	azure site restart [sitename]
 
-> [AZURE.NOTE]Auch wenn "loggingEnabled" und "devErrorsEnabled" die am häufigsten verwendeten Konfigurationsoptionen in der Datei "IISNode.yml" zum Erfassen von Diagnoseinformationen sind, können Sie die Datei "IISNode.yml" zum Konfigurieren verschiedener Optionen Ihrer Hostingumgebung verwenden. Eine vollständige Liste der Konfigurationsoptionen finden Sie in der Datei [iisnode\_schema.xml](https://github.com/tjanczuk/iisnode/blob/master/src/config/iisnode_schema.xml).
+> [AZURE.NOTE] Auch wenn "loggingEnabled" und "devErrorsEnabled" die am häufigsten verwendeten Konfigurationsoptionen in der Datei "IISNode.yml" zum Erfassen von Diagnoseinformationen sind, können Sie die Datei "IISNode.yml" zum Konfigurieren verschiedener Optionen Ihrer Hostingumgebung verwenden. Eine vollständige Liste der Konfigurationsoptionen finden Sie in der Datei [iisnode\_schema.xml](https://github.com/tjanczuk/iisnode/blob/master/src/config/iisnode_schema.xml).
 
 <a id="viewlogs"></a>
 ## Zugreifen auf Protokolle
@@ -69,7 +69,7 @@ Nachdem sie installiert wurden, können Sie mit dem Befehl "azure" auf die Tools
 
 Um per FTP auf die Diagnoseinformationen zuzugreifen, rufen Sie das [Azure-Portal](https://portal.azure.com) auf, wählen Sie Ihre Web-App aus, und wählen Sie dann **DASHBOARD** aus. Im Abschnitt **QuickLinks** bieten die Links **FTP DIAGNOSTIC LOGS** und **FTPS DIAGNOSTIC LOGS** Zugriff auf die Protokolldateien per FTP.
 
-> [AZURE.NOTE]Wenn Sie noch keinen Benutzernamen und kein Kennwort für FTP oder die Bereitstellung konfiguriert haben, können Sie dies auf der **QuickStart**-Verwaltungsseite durchführen, indem Sie **Set up deployment credentials** auswählen.
+> [AZURE.NOTE] Wenn Sie noch keinen Benutzernamen und kein Kennwort für FTP oder die Bereitstellung konfiguriert haben, können Sie dies auf der **QuickStart**-Verwaltungsseite durchführen, indem Sie **Set up deployment credentials** auswählen.
 
 Die im Dashboard zurückgegebene FTP-URL gilt für das Verzeichnis **LogFiles**, das folgende Unterverzeichnisse enthält:
 
@@ -115,7 +115,7 @@ Weitere Informationen finden Sie außerdem im [Node.js Developer Center](/develo
 ## Änderungen
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 [IISNode]: https://github.com/tjanczuk/iisnode
 [IISNode Readme]: https://github.com/tjanczuk/iisnode#readme
@@ -126,4 +126,4 @@ Weitere Informationen finden Sie außerdem im [Node.js Developer Center](/develo
 [restart-button]: ./media/web-sites-nodejs-debug/restartbutton.png
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0204_2016-->

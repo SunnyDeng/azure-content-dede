@@ -14,12 +14,12 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/04/2015" 
+	ms.date="02/04/2016" 
 	ms.author="jeffstok"/>
 
 # Referenzarchitektur: Echtzeitereignisverarbeitung mit Microsoft Azure Stream Analytics
 
-Die Referenzarchitektur für Echtzeit Ereignisverarbeitung mit Azure-Stream-Analysen soll ein generischer Plan für die Bereitstellung von Echtzeit-Plattform als Service (PaaS) Datenstromverarbeitung Lösung mit Microsoft Azure bereitstellen.
+Die Referenzarchitektur für die Echtzeitereignisverarbeitung mit Azure Stream Analytics soll als allgemeiner Plan dienen, mit dem eine Plattform-as-a-Service (PaaS) für die Datenstromverarbeitung in Echtzeit auf der Basis von Microsoft Azure bereitgestellt werden kann.
 
 ## Zusammenfassung
 
@@ -63,4 +63,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0204_2016-->

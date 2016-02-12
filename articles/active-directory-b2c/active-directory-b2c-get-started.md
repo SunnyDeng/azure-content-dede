@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/21/2016"
+	ms.date="01/28/2016"
 	ms.author="swkrish"/>
 
 # Azure Active Directory B2C-Vorschau: Erstellen eines Azure AD B2C-Mandanten
@@ -24,7 +24,7 @@ Für den Einstieg in Azure Active Directory (AD) B2C führen Sie die unten besch
 
 ## Schritt 1: Registrieren für ein Azure-Abonnement
 
-Wenn Sie bereits über ein Azure-Abonnement verfügen, fahren Sie mit dem nächsten Schritt fort. Andernfalls registrieren Sie sich für ein [Azure-Abonnement](sign-up-organization.md), um Zugriff auf Azure AD B2C zu erhalten.
+Wenn Sie bereits über ein Azure-Abonnement verfügen, fahren Sie mit dem nächsten Schritt fort. Andernfalls registrieren Sie sich für ein [Azure-Abonnement](../active-directory/sign-up-organization.md), um Zugriff auf Azure AD B2C zu erhalten.
 
 > [AZURE.NOTE]
 Die Verwendung der Azure AD B2C-Vorschau ist derzeit kostenlos, jedoch eingeschränkt (bis zu 50.000 Benutzer pro Mandant). Für den Zugriff auf das [klassische Azure-Portal](http://manage.windowsazure.com/) ist ein Azure-Abonnement erforderlich.
@@ -74,4 +74,4 @@ Führen Sie die folgenden Schritte aus, um einen neuen Azure AD B2C-Mandanten zu
 
 Fahren Sie mit dem [Registrieren einer Anwendung bei Azure AD B2C und dem Erstellen einer Schnellstartanwendung](active-directory-b2c-app-registration.md) fort.
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

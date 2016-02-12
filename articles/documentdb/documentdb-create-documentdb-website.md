@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/16/2015" 
+	ms.date="02/01/2016" 
 	ms.author="ryancraw"/>
 
 # Bereitstellen von DocumentDB und Azure App Service-Web-Apps mithilfe einer Vorlage des Azure-Ressourcen-Managers #
@@ -210,4 +210,4 @@ Glückwunsch! Sie haben DocumentDB, eine App Service-Web-App und eine Beispielwe
 >[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

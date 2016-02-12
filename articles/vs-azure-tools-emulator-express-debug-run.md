@@ -12,13 +12,13 @@
    ms.topic="article"
    ms.tgt_pltfrm="multiple"
    ms.workload="na"
-   ms.date="12/17/2015"
+   ms.date="01/30/2016"
    ms.author="tarcher" />
 
 
 # Verwenden von Emulator Express zum Ausführen und Debuggen eines Clouddiensts auf einem lokalen Computer
 
-Mithilfe von Emulator Express können Sie einen Clouddienst testen und debuggen, ohne Visual Studio als Administrator auszuführen. Abhängig von den Anforderungen Ihres Clouddiensts können Sie die Projekteinstellungen für die Verwendung von Emulator Express oder des vollständigen Emulators festlegen. Weitere Informationen zum vollständigen Emulator finden Sie unter [Ausführen einer Azure-Anwendung im Serveremulator](../storage/storage-use-emulator.md). Emulator Express war erstmals in Azure SDK 2.1 enthalten. Ab Azure SDK 2.3 handelt es sich um den Standardemulator.
+Mithilfe von Emulator Express können Sie einen Clouddienst testen und debuggen, ohne Visual Studio als Administrator auszuführen. Abhängig von den Anforderungen Ihres Clouddiensts können Sie die Projekteinstellungen für die Verwendung von Emulator Express oder des vollständigen Emulators festlegen. Weitere Informationen zum vollständigen Emulator finden Sie unter [Ausführen einer Azure-Anwendung im Serveremulator](/storage/storage-use-emulator.md). Emulator Express war erstmals in Azure SDK 2.1 enthalten. Ab Azure SDK 2.3 handelt es sich um den Standardemulator.
 
 ## Verwenden von Emulator Express in der Visual Studio IDE
 
@@ -54,4 +54,4 @@ Bevor Sie Emulator Express verwenden, sollten Sie sich einige Einschränkungen v
 
 [Debuggen von Cloud-Diensten.](https://msdn.microsoft.com/library/azure/ee405479.aspx)
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0204_2016-->

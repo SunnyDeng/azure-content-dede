@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="vs-getting-started"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/16/2015"
+	ms.date="01/30/2016"
 	ms.author="tarcher"/>
 
 # Erste Schritte mit Blobspeicher und verbundenen Visual Studio-Diensten (ASP.NET)
@@ -50,7 +50,7 @@ Für den programmgesteuerten Zugriff auf Blobs in ASP.NET-Projekten müssen Sie 
 		CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
 		   CloudConfigurationManager.GetSetting("<storage-account-name>_AzureStorageConnectionString"));
 
-    > [AZURE.NOTE]Verwenden Sie den gesamten vorherigen Code vor dem Code in den folgenden Abschnitten.
+    > [AZURE.NOTE] Verwenden Sie den gesamten vorherigen Code vor dem Code in den folgenden Abschnitten.
 
 3. Rufen Sie ein **CloudBlobClient**-Objekt ab, um auf einen vorhandenen Container in Ihrem Speicherkonto zu verweisen.
 
@@ -60,7 +60,7 @@ Für den programmgesteuerten Zugriff auf Blobs in ASP.NET-Projekten müssen Sie 
         // Get a reference to a container named “mycontainer.”
         CloudBlobContainer container = blobClient.GetContainerReference("mycontainer");
 
-> [AZURE.NOTE]Einige der APIs, die Aufrufe des Azure-Speichers in ASP.NET 5 ausführen, sind asynchron. Unter [Asynchrone Programmierung mit Async und Await](http://msdn.microsoft.com/library/hh191443.aspx) finden Sie weitere Informationen.
+> [AZURE.NOTE] Einige der APIs, die Aufrufe des Azure-Speichers in ASP.NET 5 ausführen, sind asynchron. Unter [Asynchrone Programmierung mit Async und Await](http://msdn.microsoft.com/library/hh191443.aspx) finden Sie weitere Informationen.
 
 
 ## Erstellen eines BLOB-Containers in Code
@@ -237,4 +237,4 @@ Da die Beispielmethode eine asynchrone Methode aufruft, muss sie mit dem Schlüs
 
 [AZURE.INCLUDE [vs-storage-dotnet-blobs-next-steps](../../includes/vs-storage-dotnet-blobs-next-steps.md)]
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0204_2016-->

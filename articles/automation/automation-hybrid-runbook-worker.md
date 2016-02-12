@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="01/25/2016"
+   ms.date="01/27/2016"
    ms.author="bwren" />
 
 # Azure Automation – Hybrid-Runbook-Worker
@@ -60,7 +60,7 @@ Firewallanforderungen:
 Das folgende Verfahren beschreibt die Installation und Konfiguration von Hybrid Runbook Worker. Führen Sie die ersten beiden Schritte einmal für Ihre Automation-Umgebung durch, und wiederholen Sie dann die verbleibenden Schritte für jeden Workercomputer.
 
 ### 1\. Erstellen eines Operations Management Suite-Arbeitsbereichs
-Sofern Sie noch nicht über einen Operations Management Suite-Arbeitsbereich verfügen, erstellen Sie diesen mithilfe der Anweisungen unter [Einrichten Ihres Operational Insights-Arbeitsbereichs](../operational-insights/operational-insights-onboard-in-minutes.md). Wenn Sie bereits über einen Arbeitsbereich verfügen, können Sie diesen verwenden.
+Sofern Sie noch nicht über einen Operations Management Suite-Arbeitsbereich verfügen, erstellen Sie diesen mithilfe der Anweisungen unter [Einrichten Ihres Arbeitsbereichs](https://technet.microsoft.com/library/mt484119.aspx). Wenn Sie bereits über einen Arbeitsbereich verfügen, können Sie diesen verwenden.
 
 ### 2\. Hinzufügen der Automation-Lösung zum Operations Management Suite-Arbeitsbereich
 Die Funktionalität von Operations Management Suite kann durch Lösungen erweitert werden. Die Automation-Lösung fügt Azure Automation Funktionalität hinzu, einschließlich der Unterstützung für Hybrid Runbook Worker. Wenn Sie die Lösung Ihrem Arbeitsbereich hinzufügen, werden Workerkomponenten automatisch per Push auf den Agent-Computer übertragen, den Sie im nächsten Schritt installieren werden.
@@ -190,4 +190,4 @@ Sie können anhand der folgenden Kriterien prüfen, ob Azure Automation mit Hybr
 - [Bearbeiten eines Runbooks in Azure Automation](https://msdn.microsoft.com/library/dn879137.aspx)
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

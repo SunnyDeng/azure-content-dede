@@ -14,7 +14,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="12/11/2015" 
+	ms.date="02/04/2016" 
 	ms.author="jeffstok"/>
 
 # Schreiben von Abfragen in Stream Analytics
@@ -42,7 +42,7 @@ Das Schreiben von Abfragen für die Datenstrom-Verarbeitungslogik in Azure Strea
 
 Sie können testen, ob sich die Abfrage wie erwartet verhält, indem Sie sie im Browser über eine oder mehrere lokale JSON-Dateien mit den Testdaten ausführen. Dadurch wird weder der Auftrag gestartet noch gibt es Auswirkungen auf die Abrechnung.
 
-> [AZURE.NOTE]Derzeit wird das Testen von Abfragen im Browser im Azure-Vorschauportal nicht unterstützt.
+> [AZURE.NOTE] Derzeit wird das Testen von Abfragen im Browser im Azure-Vorschauportal nicht unterstützt.
 
 1.	Stellen Sie sicher, dass keine Fehler in der Abfrage enthalten sind (andernfalls ist die Schaltfläche "Testen" deaktiviert), und klicken Sie dann auf die Schaltfläche "Testen".  
 
@@ -71,4 +71,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 - [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0204_2016-->

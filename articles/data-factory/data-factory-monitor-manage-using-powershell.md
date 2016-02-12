@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/08/2015" 
+	ms.date="02/01/2016" 
 	ms.author="spelluru"/>
 
 # Lernprogramm: Erstellen und Überwachen einer Data Factory mit Azure PowerShell
@@ -26,7 +26,8 @@
 
 Im Lernprogramm [Erste Schritte mit Azure Data Factory][adf-get-started] erfahren Sie, wie Sie eine Azure Data Factory mithilfe des [Azure-Portals][azure-portal] erstellen und überwachen. In diesem Lernprogramm erstellen und überwachen Sie eine Azure Data Factory mithilfe von Azure PowerShell-Cmdlets. Die Pipeline in der Data Factory, die Sie in diesem Lernprogramm erstellen, kopiert Daten aus einem Azure-Blob in eine Azure SQL-Datenbank.
 
-> [AZURE.IMPORTANT]Lesen Sie sich den Artikel [Übersicht über das Tutorial](data-factory-get-started.md) durch, und führen Sie die vorbereitenden Schritte aus, bevor Sie mit diesem Tutorial beginnen.
+> [AZURE.IMPORTANT] 
+Lesen Sie sich den Artikel [Übersicht über das Tutorial](data-factory-get-started.md) durch, und führen Sie die vorbereitenden Schritte aus, bevor Sie mit diesem Tutorial beginnen.
 >   
 > In diesem Artikel werden nicht alle Data Factory-Cmdlets behandelt. In der [Data Factory-Cmdlet-Referenz](https://msdn.microsoft.com/library/dn820234.aspx) finden Sie eine umfassende Dokumentation zu Data Factory-Cmdlets.
   
@@ -45,7 +46,7 @@ Bei Verwendung von Azure PowerShell **Version < 1.0** müssen Sie die [hier][old
 4. Wechseln Sie in den Modus „AzureResourceManager“, da die Azure Data Factory-Cmdlets in diesem Modus verfügbar sind: **Switch-AzureMode AzureResourceManager**.
   
 
-##Inhalt dieses Lernprogramms
+##Dieses Lernprogramm umfasst folgende Punkte
 In der folgenden Tabelle sind die in diesem Lernprogramm auszuführen Schritte und ihre Beschreibungen aufgeführt.
 
 Schritt | Beschreibung
@@ -56,7 +57,7 @@ Schritt | Beschreibung
 [Schritt 4: Erstellen und Ausführen einer Pipeline](#CreateAndRunAPipeline) | In diesem Schritt erstellen Sie die Pipeline **ADFTutorialPipeline** in der Data Factory **ADFTutorialDataFactoryPSH**. Die Pipeline weist eine **Kopieraktivität** auf, die Daten aus einem Azure-Blob in eine Ausgabedatenbanktabelle in Azure kopiert.
 [Schritt 5: Überwachen der Datasets und Pipeline](#MonitorDataSetsAndPipeline) | In diesem Schritt überwachen Sie die Datasets und die Pipeline mit Azure PowerShell.
 
-## <a name="CreateDataFactory"></a>Schritt 1: Erstellen einer Azure Data Factory
+## <a name="CreateDataFactory"></a>Schritt 1: Erstellen einer Azure Data Factory
 In diesem Schritt erstellen Sie mit Azure PowerShell eine Azure Data Factory namens **ADFTutorialDataFactoryPSH**.
 
 1. Starten Sie Azure PowerShell, und führen Sie den folgenden Befehl aus. Lassen Sie Azure PowerShell bis zum Ende dieses Tutorials geöffnet. Wenn Sie PowerShell schließen und erneut öffnen, müssen Sie die Befehle erneut ausführen.
@@ -74,7 +75,7 @@ In diesem Schritt erstellen Sie mit Azure PowerShell eine Azure Data Factory nam
 
 	Der Name der Azure Data Factory muss global eindeutig sein. Bei Anzeige der Fehlermeldung **Data Factory-Name "ADFTutorialDataFactoryPSH" nicht verfügbar** ändern Sie den Namen (z. B. in "IhrNameADFTutorialDataFactoryPSH"). Verwenden Sie diesen Namen beim Ausführen der Schritte in diesem Lernprogramm anstelle von "ADFTutorialDataFactoryPSH". Im Thema [Data Factory – Benennungsregeln](data-factory-naming-rules.md) finden Sie Benennungsregeln für Data Factory-Artefakte.
 
-	> [AZURE.NOTE]Der Name der Data Factory kann in Zukunft als DNS-Name registriert und so öffentlich sichtbar werden.
+	> [AZURE.NOTE] Der Name der Data Factory kann in Zukunft als DNS-Name registriert und so öffentlich sichtbar werden.
 
 ## <a name="CreateLinkedServices"></a>Schritt 2: Erstellen von verknüpften Diensten
 Verknüpfte Dienste verknüpfen Datenspeicher oder Serverdienste mit einer Azure Data Factory. Ein Datenspeicher kann ein Azure-Speicher, eine Azure SQL-Datenbank oder eine lokale SQL Server-Datenbank sein, die Eingabedaten enthält oder die Ausgabedaten für eine Data Factory-Pipeline speichert. Ein Serverdienst ist der Dienst, der Eingabedaten verarbeitet und Ausgabedaten erzeugt.
@@ -442,4 +443,4 @@ In der [Data Factory-Cmdlet-Referenz][cmdlet-reference] finden Sie eine umfassen
 [sql-management-studio]: ../sql-database/sql-database-manage-azure-ssms.md
  
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0204_2016-->

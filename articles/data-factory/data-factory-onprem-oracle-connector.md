@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/12/2015" 
+	ms.date="02/01/2016" 
 	ms.author="spelluru"/>
 
 # Verschieben von Daten aus lokalem Oracle mithilfe von Azure Data Factory 
@@ -29,8 +29,9 @@ Damit der Azure Data Factory-Dienst eine Verbindung mit Ihrer lokalen Oracle-D
 > [AZURE.NOTE] Unter [Problembehandlung bei Gateways](data-factory-move-data-between-onprem-and-cloud.md#gateway-troubleshooting) finden Sie Tipps zur Behandlung von Verbindungs- bzw. Gatewayproblemen.
 
 ## Beispiel: Kopieren von Daten aus Oracle in Azure-Blob
-
-Das nachstehende Beispiel zeigt Folgendes:
+In diesem Beispiel wird gezeigt, wie Sie Daten aus einer lokalen Oracle-Datenbank in einen Azure-BLOB-Speicher kopieren. Daten können jedoch mithilfe der Kopieraktivität in Azure Data Factory **direkt** in die [hier](data-factory-data-movement-activities.md#supported-data-stores) aufgeführten Senken kopiert werden.
+ 
+Das Beispiel enthält die folgenden Data Factory-Entitäten:
 
 1.	Einen verknüpften Dienst des Typs [OnPremisesOracle](data-factory-onprem-oracle-connector.md#oracle-linked-service-properties)
 2.	Einen verknüpften Dienst des Typs [AzureStorage](data-factory-azure-blob-connector.md#azure-storage-linked-service-properties)
@@ -217,7 +218,7 @@ connectionString | Geben Sie Informationen, die zur Verbindung mit der Oracle Da
 gatewayName | Name des Gateways, das zum Herstellen einer Verbindung mit dem lokalen Oracle-Server verwendet wird | Ja
 
 Ausführliche Informationen zum Festlegen von Anmeldeinformationen für eine lokale Oracle-Datenquelle finden Sie unter [Festlegen von Anmeldeinformationen und Sicherheit](data-factory-move-data-between-onprem-and-cloud.md#setting-credentials-and-security).
-## Eigenschaften des Dataset-Typs "Oracle"
+## Eigenschaften des Dataset-Typs „Oracle“
 
 Eine vollständige Liste der Abschnitte und Eigenschaften, die zum Definieren von Datasets zur Verfügung stehen, finden Sie im Artikel [Erstellen von Datasets](data-factory-create-datasets.md). Abschnitte wie Struktur, Verfügbarkeit und Richtlinie einer Dataset-JSON sind bei allen Dataset-Typen (Oracle, Azure-Blob, Azure-Tabelle usw.) ähnlich.
  
@@ -227,7 +228,7 @@ Eigenschaft | Beschreibung | Erforderlich
 -------- | ----------- | --------
 tableName | Name der Tabelle in der Oracle Database, auf die der verknüpfte Dienst verweist. | Nein (wenn **OracleReaderQuery** von **SqlSource** angegeben ist)
 
-## Eigenschaften von Oracle-Kopieraktivitätstyp
+## Eigenschaften des Oracle-Kopieraktivitätstyps
 
 Eine vollständige Liste der Abschnitte und Eigenschaften zum Definieren von Aktivitäten finden Sie im Artikel [Erstellen von Pipelines](data-factory-create-pipelines.md). Eigenschaften wie Name, Beschreibung, Eingabe- und Ausgabetabellen, verschiedene Richtlinien usw. sind für alle Arten von Aktivitäten verfügbar.
 
@@ -301,4 +302,4 @@ XML | String
 
 [AZURE.INCLUDE [data-factory-column-mapping](../../includes/data-factory-column-mapping.md)]
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

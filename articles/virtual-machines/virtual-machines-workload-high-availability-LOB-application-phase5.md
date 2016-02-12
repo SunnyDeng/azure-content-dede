@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="Windows" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/09/2015" 
+	ms.date="01/28/2016" 
 	ms.author="josephd"/>
 
 # Branchenanwendungs-Workload, Phase 5: Erstellen der Verfügbarkeitsgruppe und Hinzufügen der Anwendungsdatenbanken
@@ -119,4 +119,4 @@ Nach der Erstellung des Listeners müssen Sie alle virtuellen Webservercomputer 
 
 - Wenn Sie Ihren eigenen IT-Workload in Azure bereitstellen, finden Sie weitere Informationen in diesen [Richtlinien](virtual-machines-infrastructure-services-implementation-guidelines.md) .
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0204_2016-->

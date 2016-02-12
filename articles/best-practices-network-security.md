@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="01/06/2016"
+   ms.date="02/01/2016"
    ms.author="jonor;sivae"/>
 
 # Microsoft Cloud Services und Netzwerksicherheit
@@ -334,7 +334,7 @@ In der Firewall müssen Weiterleitungsregeln erstellt werden. Da die Firewall s�
  
 ![Logische Ansicht der Firewallregeln][10]
 
->[AZURE.NOTE] Je nach verwendetem virtuellem Netzwerkgerät variieren die Verwaltungsports. In diesem Beispiel wird auf eine Barracuda NG Firewall verwiesen, die die Ports 22, 801 und 807 verwendet. Informationen dazu, über welche Ports das verwendete Gerät genau verwaltet wird, finden Sie in der Dokumentation des Geräteanbieters.
+>[AZURE.NOTE] Je nach verwendetem virtuellem Netzwerkgerät variieren die Verwaltungsports. In diesem Beispiel wird auf eine Barracuda NextGen Firewall verwiesen, die die Ports 22, 801 und 807 verwendet. Informationen dazu, über welche Ports das verwendete Gerät genau verwaltet wird, finden Sie in der Dokumentation des Geräteanbieters.
 
 #### Beschreibung der Firewallregeln
 Im oben gezeigten logischen Diagramm wird das Sicherheitssubnetz nicht angezeigt, da die Firewall die einzige Ressource in diesem Subnetz ist. Dieses Diagramm zeigt die Firewallregeln und die Art und Weise, wie diese Datenverkehrsflüsse logisch zulassen oder ablehnen. Das Diagramm zeigt nicht den tatsächlichen Weiterleitungspfad. Die für den RDP-Datenverkehr ausgewählten externen Ports liegen in einem höheren Bereich (8014-8026) und wurden zur Anpassung an die letzten beiden Oktette der lokalen IP-Adresse ausgewählt, um die Lesbarkeit zu vereinfachen (die lokale Serveradresse 10.0.1.4 ist beispielsweise Port 8014 zugeordnet). Es können jedoch auch Ports mit einer höheren Nummer ausgewählt werden, wenn sie keine Konflikte verursachen.
@@ -511,4 +511,4 @@ stehen in Kürze zur Verfügung und werden über diese Seite verlinkt.
 [Example7]: ./virtual-network/virtual-networks-vnet2vnet-direct-asm.md
 [Example8]: ./virtual-network/virtual-networks-vnet2vnet-transit-asm.md
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

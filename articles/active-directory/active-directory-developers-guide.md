@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="01/06/2016"
+   ms.date="02/01/2016"
    ms.author="mbaldwin"/>
 
 
@@ -72,7 +72,7 @@ In diesen Artikeln wird beschrieben, wie Sie mit Azure Active Directory bestimmt
 - [Erstellen einer App mit Office 365-APIs](https://msdn.microsoft.com/office/office365/howto/getting-started-Office-365-APIs)
 - [Übertragen von Web-Apps für Office 365 an das Verkäuferdashboard (in englischer Sprache)](https://msdn.microsoft.com/office/office365/howto/submit-web-apps-seller-dashboard)
 - [Vorschau: Erstellen von Apps, bei denen sich Benutzer sowohl mit persönlichen als auch mit Arbeits- oder Schulkonten anmelden können](active-directory-appmodel-v2-overview.md)
-- [Vorschau: Erstellen von Apps, die Kunden registrieren und anmelden](active-directory-b2c-overview.md)
+- [Vorschau: Erstellen von Apps, die Kunden registrieren und anmelden](../active-directory-b2c/active-directory-b2c-overview.md)
 
 
 ## Referenz
@@ -141,4 +141,4 @@ In diesen Übersichtspräsentationen zur Entwicklung von Apps mithilfe von Azure
 
 - [Azure Active Directory auf Twitter](https://twitter.com/azuread): Azure Active Directory-Ankündigungen in höchstens 140 Zeichen.
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

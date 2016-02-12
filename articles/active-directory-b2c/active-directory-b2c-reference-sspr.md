@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/22/2015"
+	ms.date="01/28/2016"
 	ms.author="swkrish"/>
 
 # Azure Active Directory B2C (Vorschauversion): Einrichten der Self-Service-Kennwortzurücksetzung für Ihre Kunden
@@ -34,6 +34,7 @@ Diese Funktion ermöglicht Ihren Kunden (die sich für lokale Konten angemeldet 
 
 Zum Testen verwenden Sie die Funktion "Jetzt ausführen" für eine beliebige Anmelderichtlinie (die lokale Konten als Identitätsanbieter hat). Klicken Sie auf der lokalen Kontoanmeldeseite (auf der Sie Ihre E-Mail-Adresse und das Kennwort oder den Benutzername und das Kennwort eingeben) auf **Kein Zugriff auf Ihr Konto?**, um die Kundenerfahrung zu überprüfen.
 
-> [AZURE.NOTE]Die Seiten der Self-Service-Kennwortzurücksetzung können mithilfe der [Unternehmensbranding-Funktion](active-directory-add-company-branding.md) angepasst werden.
+> [AZURE.NOTE]
+Die Seiten der Self-Service-Kennwortzurücksetzung können mithilfe der [Unternehmensbranding-Funktion](../active-directory/active-directory-add-company-branding.md) angepasst werden.
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0204_2016-->

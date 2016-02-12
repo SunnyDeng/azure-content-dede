@@ -13,14 +13,14 @@
 	ms.tgt_pltfrm="vs-getting-started"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/16/2015"
+	ms.date="01/30/2016"
 	ms.author="tarcher"/>
 
 # Erste Schritte mit Azure Storage (Azure WebJob-Projekte)
 
 ## Übersicht
 
-Dieser Artikel enthält C#-Codebeispiele, die zeigen, wie das Azure WebJobs-SDK (Version 1.x) mit dem Azure-Tabellenspeicherdienst verwendet wird. In den Codebeispielen wird Version 1.x des [WebJobs-SDK](websites-dotnet-webjobs-sdk.md) verwendet.
+Dieser Artikel enthält C#-Codebeispiele, die zeigen, wie das Azure WebJobs-SDK (Version 1.x) mit dem Azure-Tabellenspeicherdienst verwendet wird. In den Codebeispielen wird Version 1.x des [WebJobs-SDK](/app-service-web/websites-dotnet-webjobs-sdk.md) verwendet.
 
 Der Azure-Tabellenspeicherdienst ermöglicht das Speichern großer Mengen von strukturierten Daten. Der Dienst ist ein NoSQL-Datenspeicher, der authentifizierte Aufrufe von innerhalb und außerhalb der Azure-Cloud akzeptiert. Azure-Tabellen sind hervorragend zur Speicherung strukturierter nicht relationaler Daten geeignet. Weitere Informationen finden Sie unter [Verwenden von Tabellenspeicher aus .NET](storage-dotnet-how-to-use-tables.md/#create-a-table "Verwenden des Tabellenspeichers mit .NET").
 
@@ -142,7 +142,7 @@ Im folgenden Codebeispiel wird ein **CloudTable**-Objekt verwendet, um eine einz
 		    tableBinding.Execute(insertOperation);
 		}
 
-Weitere Informationen zur Verwendung des **CloudTable**-Objekts finden Sie unter [Verwenden von Tabellenspeicher aus .NET](../storage-dotnet-how-to-use-tables.md).
+Weitere Informationen zur Verwendung des **CloudTable**-Objekts finden Sie unter [Verwenden von Tabellenspeicher aus .NET](./storage-dotnet-how-to-use-tables.md).
 
 ## Verwandte in den Artikeln zu Warteschlangen behandelte Themen
 
@@ -154,4 +154,4 @@ Informationen zur Handhabung der durch eine Warteschlangennachricht ausgelösten
 
 In diesem Artikel wurden Codebeispiele bereitgestellt, in denen veranschaulicht wird, wie häufige Szenarien für das Arbeiten mit Azure-Tabellen behandelt werden. Weitere Informationen zur Verwendung von Azure WebJobs und dem WebJobs-SDK finden Sie unter [Empfohlene Ressourcen für Azure WebJobs](http://go.microsoft.com/fwlink/?linkid=390226).
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0204_2016-->

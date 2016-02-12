@@ -23,7 +23,7 @@ Automation-Zeitpläne werden zur automatischen Ausführung von Runbooks verwende
 
 ## Windows PowerShell-Cmdlets
 
-Die Cmdlets in der folgenden Tabelle werden zum Erstellen und Verwalten von Variablen mit Windows PowerShell in Azure Automation verwendet. Sie sind im [Azure PowerShell-Modul](../powershell-install-configure.md) enthalten.
+Die Cmdlets in der folgenden Tabelle werden zum Erstellen und Verwalten von Zeitplänen mit Windows PowerShell in Azure Automation verwendet. Sie sind im [Azure PowerShell-Modul](../powershell-install-configure.md) enthalten.
 
 |Cmdlets|Beschreibung|
 |:---|:---|
@@ -37,15 +37,15 @@ Die Cmdlets in der folgenden Tabelle werden zum Erstellen und Verwalten von Vari
 
 ## Erstellen eines neuen Zeitplans
 
-### So erstellen Sie einen neuen Zeitplan über das Azure-Portal
+### So erstellen Sie einen neuen Zeitplan über das klassische Azure-Portal
 
 
 1. Klicken Sie in Ihrem Automation-Konto im oberen Fensterbereich auf **Objekte**.
 1. Klicken Sie unten im Fenster auf **Einstellung hinzufügen**.
 1. Klicken Sie auf **Zeitplan hinzufügen**.
-1. Schließen Sie den Assistenten ab, und aktivieren Sie das Kontrollkästchen, um die neue Variable zu speichern.
+1. Schließen Sie den Assistenten ab, und aktivieren Sie das Kontrollkästchen, um den neuen Zeitplan zu speichern.
 
-### So erstellen Sie einen neuen Zeitplan über das Azure-Vorschauportal
+### So erstellen Sie einen neuen Zeitplan über das Azure-Portal
 
 1. Klicken Sie in Ihrem Automation-Konto auf **Objekte**, um das Blatt **Objekte** zu öffnen.
 1. Klicken Sie auf **Zeitpläne**, um das Blatt **Zeitpläne** zu öffnen.
@@ -68,4 +68,4 @@ Das Cmdlet [New-AzureAutomationSchedule](http://msdn.microsoft.com/library/dn690
 - [Planen eines Runbooks in Azure Automation](automation-scheduling-a-runbook.md)
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="10/01/2015"
+   ms.date="02/03/2016"
    ms.author="bwren" />
 
 # Grundlagen des Windows PowerShell-Workflows
@@ -249,4 +249,4 @@ Weitere Informationen zu Prüfpunkten finden Sie unter [Hinzufügen von Prüfpun
 
 - [Erste Schritte mit dem Windows PowerShell-Workflow](http://technet.microsoft.com/library/jj134242.aspx) 
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

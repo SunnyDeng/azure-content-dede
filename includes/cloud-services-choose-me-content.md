@@ -1,9 +1,9 @@
 <a name="tellmecs"></a>
 ## Informationen zu Cloud Services
 
-Cloud Services ist ein Beispiel für Platform-as-a-Service (PaaS). Diese Technologie unterstützt wie [App Services](app-service-web-overview.md) skalierbare und zuverlässige Anwendungen mit niedrigen Betriebskosten. Genau wie ein [App Service](app-service-web-overview.md) auf VMs gehostet werden, werden das auch die Cloud Services, Sie haben jedoch mehr Kontrolle über die virtuellen Computer. Sie können Ihre eigene Software auf Clouddienst-VMs installieren und per Remotezugriff auf diese zugreifen.
+Cloud Services ist ein Beispiel für Platform-as-a-Service (PaaS). Diese Technologie unterstützt wie [App Service](../articles/app-service-web/app-service-web-overview.md) skalierbare und zuverlässige Anwendungen mit niedrigen Betriebskosten. Cloud Services werden ebenso wie ein App Service auf VMs gehostet. Sie haben jedoch mehr Kontrolle über die virtuellen Computer. Sie können Ihre eigene Software auf Clouddienst-VMs installieren und per Remotezugriff auf diese zugreifen.
 
-![cs_diagramcs_diagram](./media/cloud-services-choose-me-content/diagram.png)
+![cs\_diagramcs\_diagram](./media/cloud-services-choose-me-content/diagram.png)
 
 Mehr Kontrolle bedeutet auch weniger Anwenderfreundlichkeit; wenn Sie die zusätzlichen Verwaltungsoptionen nicht benötigen, ist es i. d. R. im Vergleich zu Cloud Services schneller und einfacher Webanwendungen in Web-Apps in App Service zum Laufen zu bringen.
 
@@ -11,12 +11,10 @@ Diese Technologie bietet zwei leicht abweichende Optionen für VM: Auf Instanzen
 
 Eine beliebige Kombination dieser zwei leicht unterschiedlichen VM Hostingoptionen sind in einem Clouddienst verfügbar:
 
-* **Webrolle**  
-  Führt Windows Server mit Ihrer Web-App aus, die automatisch auf IIS bereitgestellt wird.
-* **Workerrolle**  
-  Führt Windows-Server ohne IIS aus.
+* **Webrolle** Führt Windows Server mit Ihrer Web-App aus, die automatisch auf IIS bereitgestellt wird.
+* **Workerrolle** Führt Windows-Server ohne IIS aus.
 
-Einfache Anwendungen verwenden z. B. nur eine Webrolle, während komplexere Anwendungen eine Webrolle für die Verarbeitung eingehender Benutzeranforderungen verwenden und die aus diesen Anforderungen entstandene Arbeit an Workerrollen abgeben. (Diese Kommunikation erfolgt über einen [Service Bus](../articles/service-bus/fundamentals-service-bus-hybrid-solutions.md) oder über [Azure-Warteschlangen](../articles/storage/storage-introduction.md).)
+Einfache Anwendungen verwenden z. B. nur eine Webrolle, während komplexere Anwendungen eine Webrolle für die Verarbeitung eingehender Benutzeranforderungen verwenden und die aus diesen Anforderungen entstandene Arbeit an Workerrollen abgeben. (Diese Kommunikation erfolgt über einen [Service Bus](../articles/service-bus/service-bus-fundamentals-hybrid-solutions.md) oder über [Azure-Warteschlangen](../articles/storage/storage-introduction.md).)
 
 Die obige Abbildung zeigt, dass alle VMs in einer einzigen Anwendung im gleichen Clouddienst laufen. Aus diesem Grund greifen die Benutzer über eine einzige öffentliche IP-Adresse auf die Anwendung zu, und die Anforderungen werden automatisch auf die einzelnen VMs verteilt. Die Plattform [skaliert und stellt](../articles/cloud-services/cloud-services-how-to-scale.md) die VMs in einer Cloud Services-Anwendung so bereit, dass einzelne Fehlerquellen vermieden werden.
 
@@ -32,4 +30,4 @@ Cloud Services bietet außerdem Überwachungsfunktionen. Wie auch bei Azure Virt
 
 Die PaaS-Funktionsweise von Cloud Services hat auch noch andere Auswirkungen. Zum Beispiel sollten Anwendungen für diese Technologie so entwickelt werden, dass sie auch dann korrekt funktionieren, wenn eine beliebige Web- oder Workerrolle ausfällt. Aus diesem Grund sollten Cloud Services-Anwendungen keinen Status im Dateisystem der eigenen virtuellen Computer speichern. Im Gegensatz zu virtuellen Computern mit Azure Virtual Machines sind Schreibvorgänge in virtuellen Cloud Services-Computern nicht persistent. Diese virtuellen Computer haben keine eigenen Datenträger. Cloud Services-Anwendungen sollten daher ihren Status in SQL-Datenbanken, Blobs, Tabellen oder andere externe Speichermedien schreiben. Die auf diese Weise erstellten Anwendungen sind skalierbarer und fehlerresistenter; zwei wichtige Ziele von Cloud Services.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0204_2016-->

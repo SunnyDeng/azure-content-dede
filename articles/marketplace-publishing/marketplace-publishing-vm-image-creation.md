@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="Azure"
    ms.workload="na"
-   ms.date="10/09/2015"
+   ms.date="02/02/2016"
    ms.author="hascipio; v-divte"/>
 
 # Anleitung zum Erstellen eines VM-Images für Azure Marketplace
@@ -45,7 +45,7 @@ Nach dem Hinzufügen eines Angebots müssen Sie Ihre SKUs definieren und angeben
 
 1. **Fügen Sie eine SKU hinzu.** Für die SKU ist ein Bezeichner erforderlich, der in der URL verwendet wird. Der Bezeichner muss in Ihrem Veröffentlichungsprofil eindeutig sein. Allerdings besteht keine Gefahr eines ID-Konflikts mit anderen Herausgebern.
 
-> [AZURE.NOTE]Angebots- und SKU-Bezeichner werden in der Angebots-URL im Marketplace angezeigt.
+> [AZURE.NOTE] Angebots- und SKU-Bezeichner werden in der Angebots-URL im Marketplace angezeigt.
 
 2. **Fügen Sie eine zusammenfassende Beschreibung für die SKU hinzu.** Zusammenfassende Beschreibungen sind für Kunden sichtbar. Achten Sie also darauf, dass sie gut lesbar sind. Vor der Phase „Für Stagingumgebung freigeben“ besteht keine Notwendigkeit, diese Informationen zu sperren. Bis dahin können sie nach Belieben bearbeitet werden.
 3. Erwerben Sie die genehmigten Versionen von Windows Server über die vorgeschlagenen Links, wenn Sie mit Windows-basierten SKUs arbeiten.
@@ -53,7 +53,7 @@ Nach dem Hinzufügen eines Angebots müssen Sie Ihre SKUs definieren und angeben
 ## 2\. Erstellen einer Azure-kompatiblen VHD (Linux-basiert)
 Im Mittelpunkt dieses Abschnitts stehen bewährte Methoden zum Erstellen eines Linux-basierten VM-Images für den Azure Marketplace. Eine exemplarische Vorgehensweise finden Sie in der folgenden Dokumentation: [Erstellen und Hochladen einer virtuellen Festplatte, die das Linux-Betriebssystem enthält][link-azure-vm-1].
 
-> [AZURE.TIP]Viele der folgenden Schritte (z. B. Agent-Installation, Festlegen der Kernel-Boot-Parameter) wurden für Linux-Images, die im Microsoft Azure-Image-Katalog verfügbar sind, bereits ausgeführt. Um Zeit zu sparen, können Sie also eines dieser Images als Grundlage verwenden, anstatt ein nicht für Azure geeignetes Linux-Image zu konfigurieren.
+> [AZURE.TIP] Viele der folgenden Schritte (z. B. Agent-Installation, Festlegen der Kernel-Boot-Parameter) wurden für Linux-Images, die im Microsoft Azure-Image-Katalog verfügbar sind, bereits ausgeführt. Um Zeit zu sparen, können Sie also eines dieser Images als Grundlage verwenden, anstatt ein nicht für Azure geeignetes Linux-Image zu konfigurieren.
 
 ### 2\.1 Auswählen der richtigen VHD-Größe
 Veröffentlichte SKUs (VM-Images) sollten für alle VM-Größen ausgelegt sein, die die Anzahl von Datenträgern für die SKU unterstützen. Sie können Richtlinien zu empfohlenen Größen ausgeben. Diese werden jedoch als Empfehlungen betrachtet und nicht erzwungen:
@@ -150,7 +150,7 @@ Erstellen Sie zunächst einen virtuellen Computer aus einem der folgenden Images
 
 Diese Verknüpfungen finden Sie auch im Veröffentlichungsportal auf der SKU-Seite.
 
-> [AZURE.TIP]Wenn Sie das aktuelle Azure-Portal oder PowerShell verwenden, sind am 8. September 2014 und später veröffentlichte Windows Server-Images genehmigt.
+> [AZURE.TIP] Wenn Sie das aktuelle Azure-Portal oder PowerShell verwenden, sind am 8. September 2014 und später veröffentlichte Windows Server-Images genehmigt.
 
 
 ### 3\.2 Erstellen des virtuellen Windows-basierten Computers
@@ -195,7 +195,7 @@ Im Microsoft Azure-Portal können Sie den virtuellen Computer auf der Grundlage 
 ### 3\.3 Entwickeln der VHD in der Cloud
 Es wird dringend empfohlen, die VHD in der Cloud mithilfe des Remotedesktopprotokolls (RDP) zu entwickeln. Die Verbindung zum RDP wird mit dem Benutzernamen und dem Kennwort hergestellt, die Sie während der Bereitstellung angegeben haben.
 
-> [AZURE.IMPORTANT]Wenn Sie die VHD lokal entwickeln (nicht zu empfehlen), helfen Ihnen die Informationen unter [Erstellen eines lokalen Images eines virtuellen Computers für Azure Marketplace](marketplace-publishing-vm-image-creation-on-premise.md) weiter. Beim Entwickeln in der Cloud ist das Herunterladen der VHD nicht notwendig.
+> [AZURE.IMPORTANT] Wenn Sie die VHD lokal entwickeln (nicht zu empfehlen), helfen Ihnen die Informationen unter [Erstellen eines lokalen Images eines virtuellen Computers für Azure Marketplace](marketplace-publishing-vm-image-creation-on-premise.md) weiter. Beim Entwickeln in der Cloud ist das Herunterladen der VHD nicht notwendig.
 
 
 **Herstellen der Verbindung mit dem [Microsoft Azure-Portal][link-azure-portal] über RDP**
@@ -261,7 +261,7 @@ Weitere Informationen zu VM-Images finden Sie in den folgenden Blogbeiträgen:
 
 - [VM-Image](https://azure.microsoft.com/blog/vm-image-blog-post/)
 - [VM Image PowerShell How To (VM Image PowerShell – Vorgehensweisen; in englischer Sprache)](https://azure.microsoft.com/blog/vm-image-powershell-how-to-blog-post/)
-- [About VM images in Azure](https://msdn.microsoft.com/library/azure/dn790290.aspx) (Informationen zu VM-Images in Azure; in englischer Sprache)
+- [About VM images in Azure (Informationen zu VM-Images in Azure; in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn790290.aspx)
 
 ### 4\.1 Erstellen eines Benutzer-VM-Images
 Wenn Sie ein Benutzer-VM-Image auf Basis Ihrer SKU erstellen und mehrere virtuelle Computer bereitstellen möchten, müssen Sie VHDs mithilfe der REST-API [Create VM Image](http://msdn.microsoft.com/library/azure/dn775054.aspx) als VM-Image registrieren.
@@ -580,14 +580,11 @@ Nach dem Erstellen des Angebots und der SKU müssen Sie die zu dieser SKU gehör
 2. Wählen Sie die Registerkarte **VM-Images**.
 3. Die am oberen Seitenrand aufgeführte ID ist nicht die SKU-ID, sondern die Angebots-ID.
 4. Tragen Sie im Abschnitt **SKUs** die Eigenschaften ein.
-
-    ![Abbildung][img-pubportal-vm-skus]
-
 5. Klicken Sie unter **Betriebssystemfamilie** auf den zur Betriebssystem-VHD gehörigen Betriebssystemtyp.
 6. Geben Sie im Feld **Betriebssystem** eine Beschreibung des Betriebssystems ein. Wählen Sie ein Format nach dem Schema Betriebssystemfamilie, Typ, Version und Updates. Beispiel: „Windows Server Datacenter 2014 R2“.
-7. Wählen Sie drei empfohlene VM-Größen aus. Dies sind Empfehlungen, die für Kunden auf dem Blatt „Tarif“ im Azure-Portal sichtbar sind, wenn sie Ihr Image erwerben und bereitstellen möchten.
+7. Wählen Sie bis zu sechs empfohlene VM-Größen aus. Dies sind Empfehlungen, die für Kunden auf dem Blatt „Tarif“ im Azure-Portal sichtbar sind, wenn sie Ihr Image erwerben und bereitstellen möchten.
 
-  >[AZURE.NOTE]Es handelt sich hierbei nur um Empfehlungen. Der Kunde kann eine beliebige VM-Größe auswählen, die sich für die in Ihrem Image festgelegten Datenträger eignet.
+  > [AZURE.NOTE] Es handelt sich hierbei nur um Empfehlungen. Der Kunde kann eine beliebige VM-Größe auswählen, die sich für die in Ihrem Image festgelegten Datenträger eignet.
 
 8. Geben Sie die Version ein. Das Versionsfeld kapselt eine semantische Version, um das Produkt und seine Updates zu identifizieren:
   -	Versionen sollten im Format „X.Y.Z“ angegeben werden. „X“, „Y“ und „Z“ sind dabei ganze Zahlen.
@@ -596,14 +593,11 @@ Nach dem Erstellen des Angebots und der SKU müssen Sie die zu dieser SKU gehör
 9. Geben Sie im Feld **URL der Betriebssystem-VHD** den Shared Access Signature-URI ein, der für die Betriebssystem-VHD erstellt wurde.
 10. Wenn dieser SKU Datenträger zugeordnet sind, wählen Sie die logische Gerätenummer (Logical Unit Number, LUN) aus, mit der dieser Datenträger bei der Bereitstellung eingebunden werden soll.
 11. Geben Sie im Feld **URL der LUN X-VHD** den Shared Access Signature-URI ein, der für die erste Daten-VHD erstellt wurde.
-12.	Klicken Sie auf **Testergebnisse hochladen**.
-13.	Klicken Sie auf **Zertifizierung anfordern**.
-14.	Wiederholen Sie die Schritte 11, 12 und 13 für jede weitere Datenträger-VHD.
 
     ![Abbildung][img-pubportal-vm-skus-2]
 
 ## Nächster Schritt
-Nachdem Sie Ihre VM-Image-SKUs zur Zertifizierung übermittelt haben, können Sie mit dem [Leitfaden zu Azure Marketplace-Marketinginhalten][link-pushstaging] fortfahren. In diesem Schritt des Veröffentlichungsprozesses geben Sie Marketinginhalte, Preise und andere Informationen an, die vor dem Fortfahren mit **Schritt 3: Testen Ihres VM-Angebots im Stagingmodus** benötigt werden. Bei diesem Schritt testen Sie verschiedene Anwendungsfallszenarien, bevor Sie das Angebot zum allgemeinen Anzeigen und Kaufen im Azure Marketplace bereitstellen.
+Wenn Sie die SKU-Details abgeschlossen haben, können Sie mit der [Anleitung für Marketinginhalte in Azure Marketplace][link-pushstaging] fortfahren. In diesem Schritt des Veröffentlichungsprozesses geben Sie Marketinginhalte, Preise und andere Informationen an, die vor dem Fortfahren mit **Schritt 3: Testen Ihres VM-Angebots im Stagingmodus** benötigt werden. Bei diesem Schritt testen Sie verschiedene Anwendungsfallszenarien, bevor Sie das Angebot zum allgemeinen Anzeigen und Kaufen im Azure Marketplace bereitstellen.
 
 ## Weitere Informationen
 - [Erste Schritte: Veröffentlichen eines Angebots im Azure Marketplace](marketplace-publishing-getting-started.md)
@@ -635,7 +629,7 @@ Nachdem Sie Ihre VM-Image-SKUs zur Zertifizierung übermittelt haben, können Si
 
 [link-pushstaging]: marketplace-publishing-push-to-staging.md
 [link-github-waagent]: https://github.com/Azure/WALinuxAgent
-[link-azure-codeplex]: https://azurestorageexplorer.codeplex.com/
+[link-azure-codeplex]: http://storageexplorer.com/
 [link-azure-2]: ../storage/storage-dotnet-shared-access-signature-part-2/
 [link-azure-1]: ../storage/storage-dotnet-shared-access-signature-part-1/
 [link-msft-download]: http://www.microsoft.com/download/details.aspx?id=44299
@@ -660,4 +654,4 @@ Nachdem Sie Ihre VM-Image-SKUs zur Zertifizierung übermittelt haben, können Si
 [link-intsvc]: http://www.microsoft.com/download/details.aspx?id=41554
 [link-python]: https://www.python.org/
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0204_2016-->

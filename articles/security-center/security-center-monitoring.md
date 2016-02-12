@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="01/22/2016"
+   ms.date="01/29/2016"
    ms.author="yurid"/>
 
 #Überwachen der Sicherheitsintegrität in Azure Security Center
@@ -41,7 +41,7 @@ Die Sicherheitsrichtlinien, die aktiviert sind, wirken sich auf die Typen von Si
 ###Virtueller Computer
 Wenn Sie auf der Kachel **Ressourcenintegrität** auf **Virtuelle Computer** klicken, wird das Blatt **Virtuelle Computer** geöffnet. Dieses Blatt enthält weitere Details zu den Integrations- und Vorbeugungsschritten sowie eine Liste aller virtuellen Computer, die von Azure Security Center überwacht werden (siehe folgende Abbildung):
 
-![Fehlendes Systemupdate nach VM](./media/security-center-monitoring/security-center-monitoring-fig2-new.png)
+![Fehlendes Systemupdate nach VM](./media/security-center-monitoring/security-center-monitoring-fig2-2-new.png)
 
 Nachdem Sie dieses Blatt geöffnet haben, sehen Sie drei Abschnitte:
 
@@ -60,7 +60,7 @@ In diesem Abschnitt wird die Gesamtanzahl von virtuellen Computern angezeigt, di
 ####Empfehlungen für virtuelle Computer
 Dieser Abschnitt enthält eine Reihe von Empfehlungen für jeden virtuellen Computer, der von Azure Security Center überwacht wird. Die erste Spalte enthält die Beschreibung der Empfehlung, die zweite Spalte enthält die Gesamtanzahl der von der Empfehlung betroffenen virtuellen Computer, und in der dritten Spalte finden Sie den Schweregrad (siehe folgende Abbildung):
 
-![Empfehlungen für virtuelle Computer](./media/security-center-monitoring/security-center-monitoring-fig4-new.png)
+![Empfehlungen für virtuelle Computer](./media/security-center-monitoring/security-center-monitoring-fig4-2-new.png)
 
 Jeder Empfehlung ist eine Reihe von Aktionen zugeordnet, die ausgeführt werden können, wenn Sie darauf klicken. Wenn Sie beispielsweise auf **Fehlende Systemupdates** klicken, wird das Blatt **Fehlende Systemupdates** mit der Liste der virtuellen Computer, für die Patches fehlen, und dem Schweregrad für jeden virtuellen Computer angezeigt (siehe folgende Abbildung):
 
@@ -173,4 +173,4 @@ In diesem Dokument haben Sie erfahren, wie Sie die Überwachungsfunktionen in Az
 - [Azure Security Center – häufig gestellte Fragen](security-center-faq.md) zur Verwendung des Diensts.
 - [Azure Security Blog](http://blogs.msdn.com/b/azuresecurity/) – suchen Sie nach Blogbeiträgen über Azure-Sicherheit und -Compliance.
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

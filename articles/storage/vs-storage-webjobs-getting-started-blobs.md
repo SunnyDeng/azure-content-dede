@@ -13,14 +13,14 @@
 	ms.tgt_pltfrm="vs-getting-started"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/16/2015"
+	ms.date="01/30/2016"
 	ms.author="tarcher"/>
 
 # Erste Schritte mit Azure Blob-Speicher und verbundenen Visual Studio-Diensten (WebJob-Projekte)
 
 ## Übersicht
 
-Dieser Artikel enthält C#-Codebeispiele, die zeigen, wie Sie einen Prozess auslösen, wenn ein Azure-Blob erstellt oder aktualisiert wird. In den Codebeispielen wird Version 1.x des [WebJobs-SDK](websites-dotnet-webjobs-sdk.md) verwendet. Wenn Sie über das Visual Studio-Dialogfeld **Verbundene Dienste hinzufügen** ein Speicherkonto zu einem WebJob-Projekt hinzufügen, wird das entsprechende Azure Storage-NuGet-Paket installiert, die entsprechenden .NET-Verweise werden dem Projekt hinzugefügt, und die Verbindungszeichenfolgen für das Speicherkonto werden in der Datei "App.config" aktualisiert.
+Dieser Artikel enthält C#-Codebeispiele, die zeigen, wie Sie einen Prozess auslösen, wenn ein Azure-Blob erstellt oder aktualisiert wird. In den Codebeispielen wird Version 1.x des [WebJobs-SDK](/app-service-web/websites-dotnet-webjobs-sdk.md) verwendet. Wenn Sie über das Visual Studio-Dialogfeld **Verbundene Dienste hinzufügen** ein Speicherkonto zu einem WebJob-Projekt hinzufügen, wird das entsprechende Azure Storage-NuGet-Paket installiert, die entsprechenden .NET-Verweise werden dem Projekt hinzugefügt, und die Verbindungszeichenfolgen für das Speicherkonto werden in der Datei "App.config" aktualisiert.
 
 
 
@@ -28,7 +28,7 @@ Dieser Artikel enthält C#-Codebeispiele, die zeigen, wie Sie einen Prozess ausl
 
 Dieser Abschnitt beschreibt die Verwendung des **BlobTrigger**-Attributs.
 
- **Hinweis:** Das WebJobs-SDK durchsucht Protokolldateien nach neuen oder geänderten Blobs. Dieser Vorgang ist naturgemäß recht langsam. Eine Funktion wird unter Umständen erst mehrere Minuten nach der Bloberstellung (oder noch später) ausgelöst. Wenn Ihre Anwendung Blobs sofort verarbeiten muss, empfiehlt es sich, zusammen mit dem Blob eine Warteschlangennachricht zu erstellen, und für die Funktion, die das Blob verarbeitet, anstelle des **BlobTrigger**-Attributs das [QueueTrigger](websites-dotnet-webjobs-sdk-storage-queues-how-to.md#trigger)-Attribut zu verwenden.
+ **Hinweis:** Das WebJobs-SDK durchsucht Protokolldateien nach neuen oder geänderten Blobs. Dieser Vorgang ist naturgemäß recht langsam. Eine Funktion wird unter Umständen erst mehrere Minuten nach der Bloberstellung (oder noch später) ausgelöst. Wenn Ihre Anwendung Blobs sofort verarbeiten muss, empfiehlt es sich, zusammen mit dem Blob eine Warteschlangennachricht zu erstellen, und für die Funktion, die das Blob verarbeitet, anstelle des **BlobTrigger**-Attributs das [QueueTrigger](/app-service-web/websites-dotnet-webjobs-sdk-storage-queues-how-to.md#trigger)-Attribut zu verwenden.
 
 ### Einzelner Platzhalter für Blobnamen mit Erweiterung  
 
@@ -229,4 +229,4 @@ In diesem Artikel werden u. a. die folgenden Themen behandelt:
 
 In diesem Artikel wurden Codebeispiele bereitgestellt, in denen der Umgang mit gängigen Szenarien für das Arbeiten mit Azure-Blobs veranschaulicht wird. Weitere Informationen zur Verwendung von Azure WebJobs und dem WebJobs-SDK finden Sie unter [Empfohlene Ressourcen für Azure WebJobs](http://go.microsoft.com/fwlink/?linkid=390226).
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0204_2016-->

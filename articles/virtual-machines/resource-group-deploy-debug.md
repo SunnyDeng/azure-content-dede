@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="vm-multiple"
    ms.workload="infrastructure"
-   ms.date="01/06/2016"
+   ms.date="01/28/2016"
    ms.author="tomfitz;rasquill"/>
 
 # Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure
@@ -23,7 +23,7 @@ Wenn während der Bereitstellung ein Problem auftritt, müssen Sie den Grund daf
 
 In diesem Thema geht es hauptsächlich um die Verwendung von Bereitstellungsbefehlen für das Beheben von Bereitstellungsfehlern. Weitere Informationen zum Nachverfolgen aller Vorgänge in Ihren Ressourcen mithilfe der Überwachungsprotokolle finden Sie unter [Überwachen von Vorgängen mit dem Ressourcen-Manager](../resource-group-audit.md).
 
-In diesem Thema wird das Abrufen von Informationen zur Problembehandlung mit Azure PowerShell, mit der Azure-Befehlszeilenschnittstelle und der REST-API veranschaulicht. Informationen zum Verwenden des Vorschauportals zum Beheben von Bereitstellungsfehlern finden Sie unter [Verwenden des Azure-Portals zum Verwalten Ihrer Azure-Ressourcen](../azure-portal/resource-group-portal.md).
+In diesem Thema wird das Abrufen von Informationen zur Problembehandlung mit Azure PowerShell, mit der Azure-Befehlszeilenschnittstelle und der REST-API veranschaulicht. Informationen zum Beheben von Bereitstellungsfehlern mithilfe des Portals finden Sie unter [Verwenden des Azure-Portals zum Verwalten Ihrer Azure-Ressourcen](../azure-portal/resource-group-portal.md).
 
 Lösungen für allgemeine Fehler bei der Verwendung werden ebenfalls in diesem Thema beschrieben.
 
@@ -160,7 +160,7 @@ Die Ressourcen-Manager-REST-API stellt URIs zum Abrufen von Informationen zu ein
 
 Bei der Bereitstellung tritt ein Fehler auf, wenn Ihre Azure-Anmeldedaten abgelaufen sind oder Sie sich nicht bei Ihrem Azure-Konto angemeldet haben. Ihre Anmeldeinformationen können ablaufen, wenn die Sitzung zu lange geöffnet ist. Sie können Ihre Anmeldeinformationen mit den folgenden Optionen aktualisieren:
 
-- Verwenden Sie für PowerShell das Cmdlet **Login-AzureRmAccount** (oder **Add-AzureAccount** für PowerShell-Versionen vor 1.0 Preview). Die Anmeldeinformationen in einer Datei mit Veröffentlichungseinstellungen sind für die Cmdlets im AzureResourceManager-Modul nicht ausreichend.
+- Verwenden Sie bei PowerShell das Cmdlet **Login-AzureRmAccount**. Die Anmeldeinformationen in einer Datei mit Veröffentlichungseinstellungen sind für die Cmdlets im AzureResourceManager-Modul nicht ausreichend.
 - Verwenden Sie bei der Azure-Befehlszeilenschnittstelle **azure login**. Stellen Sie für Hilfe mit Authentifizierungsfehlern sicher, dass Sie die [Azure-Befehlszeilenschnittstelle korrekt konfiguriert](../xplat-cli-connect.md) haben.
 
 ## Überprüfen des Formats von Vorlagen und Parametern
@@ -169,7 +169,7 @@ Liegt die Vorlage oder der Parameter im falschen Format vor, tritt bei der Berei
 
 ### PowerShell
 
-Verwenden Sie bei PowerShell den Befehl **Test-AzureRmResourceGroupDeployment** (oder **Test-AzureResourceGroupTemplate** für Versionen von PowerShell vor 1.0 Preview).
+Verwenden Sie bei PowerShell den Befehl **Test-AzureRmResourceGroupDeployment**.
 
     PS C:\> Test-AzureRmResourceGroupDeployment -ResourceGroupName ExampleGroup -TemplateFile c:\Azure\Templates\azuredeploy.json -TemplateParameterFile c:\Azure\Templates\azuredeploy.parameters.json
     VERBOSE: 12:55:32 PM - Template is valid.
@@ -201,7 +201,7 @@ Verwenden Sie beim Angeben eines Standorts für eine Ressource einen von der Res
 
 ### PowerShell
 
-Bei Versionen von PowerShell vor 1.0 Preview können Sie die vollständige Liste der Ressourcen und Standorte mit dem Befehl **Get-AzureLocation** anzeigen.
+Bei PowerShell-Versionen vor 1.0 können Sie die vollständige Liste der Ressourcen und Standorte mit dem Befehl **Get-AzureLocation** anzeigen.
 
     PS C:\> Get-AzureLocation
 
@@ -222,7 +222,7 @@ Sie können folgendermaßen einen bestimmten Ressourcentyp angeben:
                                                                 North Europe, West Europe, East Asia, Southeast Asia,
                                                                 Japan East, Japan West
 
-Verwenden Sie bei PowerShell 1.0 Preview den Befehl **Get-AzureRmResourceProvider**, um unterstützte Standorte abzurufen.
+Verwenden Sie bei PowerShell 1.0 den Befehl **Get-AzureRmResourceProvider**, um unterstützte Standorte abzurufen.
 
     PS C:\> Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Web
 
@@ -275,7 +275,7 @@ Doch mit Azure Active Directory können Sie oder Ihr Verwalter sehr genau kontro
 
 Probleme können auch auftreten, wenn eine Bereitstellung ein Standardkontingent erreicht (etwa für eine Ressourcengruppe, ein Abonnement, ein Konto oder Ähnliches). Vergewissern Sie sich, dass Sie über die für eine einwandfreie Bereitstellung benötigten Ressourcen verfügen. Die vollständigen Kontingentinformationen finden Sie unter [Grenzwerte, Kontingente und Einschränkungen für Azure-Abonnements und -Dienste](../azure-subscription-service-limits.md).
 
-Um Ihre Abonnementkontingente für Kerne zu untersuchen, verwenden Sie den Befehl `azure vm list-usage` in der Azure-Befehlszeilenschnittstelle und das Cmdlet **Get-AzureVMUsage** in PowerShell. Im Folgenden wird der Befehl in der Azure-CLI gezeigt und veranschaulicht, dass das Kernkontingent für ein kostenloses Testkonto 4 ist:
+Um Ihre Abonnementkontingente für Kerne zu untersuchen, verwenden Sie den Befehl `azure vm list-usage` in der Azure-Befehlszeilenschnittstelle und das Cmdlet **Get-AzureRmVMUsage** in PowerShell. Im Folgenden wird der Befehl in der Azure-CLI gezeigt und veranschaulicht, dass das Kernkontingent für ein kostenloses Testkonto 4 ist:
 
     azure vm list-usage
     info:    Executing command vm list-usage
@@ -293,25 +293,7 @@ Wenn Sie versuchen, eine Vorlage bereitzustellen, die mehr als vier Kerne in der
 
 In diesen Fällen sollten Sie zum Portal navigieren und ein Supportproblem einreichen, um Ihr Kontingent für die Region, in der Sie diese bereitstellen möchten, zu erhöhen.
 
-> [AZURE.NOTE] Denken Sie daran, dass für Ressourcengruppen das Kontingent für jede einzelne Region und nicht für das gesamte Abonnement gilt. Wenn Sie 30 Kerne in der Region "USA, Westen" bereitstellen möchten, müssen Sie 30 Ressourcen-Manager-Kerne für "USA, Westen" anfordern. Wenn Sie 30 Kerne in allen Regionen, auf die Sie Zugriff haben, bereitstellen möchten, müssen Sie 30 Ressourcen-Manager-Kerne in allen Regionen anfordern.
- <!-- --> 
-Um genaue Angaben zu Kernen zu machen, können Sie z. B. die Regionen angeben, für die Sie die entsprechende Kontingentmenge anfordern möchten, indem Sie den folgenden Befehl verwenden, der zur JSON-Analyse an **jq** weitergereicht wird:
-<!-- -->
-        azure provider show Microsoft.Compute --json | jq '.resourceTypes[] | select(.name == "virtualMachines") | { name,apiVersions, locations}'
-        {
-          "name": "virtualMachines",
-          "apiVersions": [
-            "2015-05-01-preview",
-            "2014-12-01-preview"
-          ],
-          "locations": [
-            "East US",
-            "West US",
-            "West Europe",
-            "East Asia",
-            "Southeast Asia"
-          ]
-        }
+> [AZURE.NOTE] Denken Sie daran, dass für Ressourcengruppen das Kontingent für jede einzelne Region und nicht für das gesamte Abonnement gilt. Wenn Sie 30 Kerne in der Region "USA, Westen" bereitstellen möchten, müssen Sie 30 Ressourcen-Manager-Kerne für "USA, Westen" anfordern. Wenn Sie 30 Kerne in allen Regionen, auf die Sie Zugriff haben, bereitstellen möchten, müssen Sie 30 Ressourcen-Manager-Kerne in allen Regionen anfordern. <!-- --> Um genaue Angaben zu Kernen zu machen, können Sie z. B. die Regionen angeben, für die Sie die entsprechende Kontingentmenge anfordern möchten, indem Sie den folgenden Befehl verwenden, der zur JSON-Analyse an **jq** weitergereicht wird: <!-- --> azure provider show Microsoft.Compute --json | jq '.resourceTypes | select(.name == "virtualMachines") | { name,apiVersions, locations}' { "name": "virtualMachines", "apiVersions": [ "2015-05-01-preview", "2014-12-01-preview" ], "locations": [ "East US", "West US", "West Europe", "East Asia", "Southeast Asia" ] }
 
 
 ## Überprüfen der Ressourcenanbieterregistrierung
@@ -320,7 +302,7 @@ Ressourcen werden von Ressourcenanbietern verwaltet, und ein Konto oder Abonneme
 
 ### PowerShell
 
-Verwenden Sie zum Abrufen einer Liste der Ressourcenanbieter und Ihres Registrierungsstatus **Get-AzureProvider** für PowerShell-Versionen vor 1.0 Preview.
+Verwenden Sie zum Abrufen einer Liste der Ressourcenanbieter und Ihres Registrierungsstatus **Get-AzureProvider** für PowerShell-Versionen vor 1.0.
 
     PS C:\> Get-AzureProvider
 
@@ -435,4 +417,4 @@ Informationen zur Vorlagenerstellung finden Sie unter [Erstellen von Azure-Resso
 
 <!--Reference style links - using these makes the source content way more readable than using inline links-->
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

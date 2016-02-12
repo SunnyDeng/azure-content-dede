@@ -47,10 +47,10 @@ Ein grundlegendes SSH-Setup für Azure umfasst ein öffentliches und privates **
 
 Im Folgenden sind die Dateitypen für die unterschiedlichen Bereitstellungsszenarien aufgeführt:
 
-1. **SSH-RSA**-Schlüssel sind unabhängig vom Bereitstellungsmodell für alle Bereitstellungen mithilfe des [Vorschauportals](https://portal.azure.com) erforderlich.
+1. **SSH-RSA**-Schlüssel sind unabhängig vom Bereitstellungsmodell für alle Bereitstellungen mithilfe des [Azure-Portals](https://portal.azure.com) erforderlich.
 2. PEM-Dateien sind erforderlich, um VMs mithilfe des [klassischen Portals](https://manage.windowsazure.com) zu erstellen. PEM-Dateien werden auch in klassischen Bereitstellungen mit der [Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md) unterstützt.
 
-> [AZURE.NOTE]Wenn Sie vorhaben, mit dem klassischen Bereitstellungsmodell bereitgestellte Dienste zu verwalten, können Sie auch eine **CER**-Datei erstellen. Dies erfordert jedoch weder die Verwendung von **ssh** noch das Herstellen einer Verbindung mit Linux-VMs und ist daher nicht Gegenstand dieses Artikels. Geben Sie zum Erstellen dieser Dateien unter Linux oder auf einem Mac Folgendes ein:
+> [AZURE.NOTE] Wenn Sie vorhaben, mit dem klassischen Bereitstellungsmodell bereitgestellte Dienste zu verwalten, können Sie auch eine **CER**-Datei erstellen. Dies erfordert jedoch weder die Verwendung von **ssh** noch das Herstellen einer Verbindung mit Linux-VMs und ist daher nicht Gegenstand dieses Artikels. Geben Sie zum Erstellen dieser Dateien unter Linux oder auf einem Mac Folgendes ein:
 
 ## Abrufen von ssh-keygen und openssl unter Windows ##
 
@@ -68,7 +68,7 @@ Im Folgenden sind die Dateitypen für die unterschiedlichen Bereitstellungsszena
 1.	Laden und installieren Sie GitHub für Windows von folgendem Speicherort: [http://windows.github.com/](http://windows.github.com/)
 2.	Führen Sie die Git-Shell aus: Startmenü > Alle Programme > GitHub, Inc
 
-> [AZURE.NOTE]Beim Ausführen der obigen `openssl`-Befehle tritt möglicherweise der folgende Fehler auf:
+> [AZURE.NOTE] Beim Ausführen der obigen `openssl`-Befehle tritt möglicherweise der folgende Fehler auf:
 
         Unable to load config info from /usr/local/ssl/openssl.cnf
 
@@ -155,4 +155,4 @@ Die einfachste Lösung ist, die Umgebungsvariable `OPENSSL_CONF` festzulegen. De
 5.	Klicken Sie auf **Öffnen**, um die Verbindung mit Ihrem virtuellen Computer herzustellen.
  
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0204_2016-->

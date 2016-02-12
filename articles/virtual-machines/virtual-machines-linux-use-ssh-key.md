@@ -23,7 +23,7 @@
 - [Windows](../articles/virtual-machines/virtual-machines-windows-use-ssh-key.md)
 - [Linux/Mac](../articles/virtual-machines/virtual-machines-linux-use-ssh-key.md)
 
-In diesem Thema wird beschrieben, wie Sie **ssh-keygen** und **openssl** unter Linux und Mac verwenden, um Dateien im **SSH-RSA**- und **PEM**-Format zum Sichern der Kommunikation mit Linux-basierten virtuellen Azure-Computern (VMs) erstellen und verwenden. Für neue Bereitstellungen wird die Erstellung von Linux-basierten Azure-VMs anhand des Ressourcen-Manager-Bereitstellungsmodells empfohlen. Dazu ist eine Datei oder Zeichenfolge (je nach Bereitstellungsclient) mit einem öffentlichen Schlüssel im *SSH-RSA*-Format erforderlich. Das [Vorschauportal](https://portal.azure.com) akzeptiert gegenwärtig sowohl für klassische als auch für Ressourcen-Manager-Bereitstellungen nur die Zeichenfolgen im **SSH-RSA**-Format.
+In diesem Thema wird beschrieben, wie Sie **ssh-keygen** und **openssl** unter Linux und Mac verwenden, um Dateien im **SSH-RSA**- und **PEM**-Format zum Sichern der Kommunikation mit Linux-basierten virtuellen Azure-Computern (VMs) erstellen und verwenden. Für neue Bereitstellungen wird die Erstellung von Linux-basierten Azure-VMs anhand des Ressourcen-Manager-Bereitstellungsmodells empfohlen. Dazu ist eine Datei oder Zeichenfolge (je nach Bereitstellungsclient) mit einem öffentlichen Schlüssel im *SSH-RSA*-Format erforderlich. Das [Azure-Portal](https://portal.azure.com) akzeptiert gegenwärtig sowohl für klassische als auch für Ressourcen-Manager-Bereitstellungen nur die Zeichenfolgen im **SSH-RSA**-Format.
 
 > [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]Informationen dazu, wie Sie diese Dateien zum Sichern der Kommunikation mit Linux-VMs in Azure auf einem Windows-Computer erstellen, finden Sie unter [Verwenden von SSH-Schlüsseln unter Windows](virtual-machines-windows-use-ssh-key.md).
 
@@ -33,7 +33,7 @@ Ein grundlegendes SSH-Setup für Azure umfasst ein öffentliches und privates **
 
 Im Folgenden sind die Dateitypen für die unterschiedlichen Bereitstellungsszenarien aufgeführt:
 
-1. **SSH-RSA**-Schlüssel sind unabhängig vom Bereitstellungsmodell für alle Bereitstellungen mithilfe des [Vorschauportals](https://portal.azure.com) erforderlich.
+1. **SSH-RSA**-Schlüssel sind unabhängig vom Bereitstellungsmodell für alle Bereitstellungen mithilfe des [Azure-Portals](https://portal.azure.com) erforderlich.
 2. PEM-Dateien sind erforderlich, um VMs mithilfe des [klassischen Portals](https://manage.windowsazure.com) zu erstellen. PEM-Dateien werden auch in klassischen Bereitstellungen mit der [Azure-Befehlszeilenschnittstelle](xplat-cli-install.md) unterstützt. 
 
 ## Erstellen von Schlüsseln zur Verwendung mit SSH
@@ -72,7 +72,7 @@ Falls Sie die Dateien erstellen müssen, gehen Sie wie folgt vor:
 
 	Wenn Sie die PEM-Datei aus einer anderen Datei mit einem privaten Schlüssel erstellen möchten, ändern Sie das `-key`-Argument.
 
-> [AZURE.NOTE]Wenn Sie vorhaben, mit dem klassischen Bereitstellungsmodell bereitgestellte Dienste zu verwalten, können Sie auch eine **CER**-Datei erstellen. Dies erfordert jedoch weder die Verwendung von **SSH** noch das Herstellen einer Verbindung mit Linux-VMs und ist daher nicht Gegenstand dieses Artikels. Geben Sie zum Erstellen dieser Dateien unter Linux oder Mac „<br /> openssl.exe x509 -outform der -in myCert.pem -out myCert.cer“ ein,
+> [AZURE.NOTE] Wenn Sie vorhaben, mit dem klassischen Bereitstellungsmodell bereitgestellte Dienste zu verwalten, können Sie auch eine **CER**-Datei erstellen. Dies erfordert jedoch weder die Verwendung von **SSH** noch das Herstellen einer Verbindung mit Linux-VMs und ist daher nicht Gegenstand dieses Artikels. Geben Sie zum Erstellen dieser Dateien unter Linux oder Mac „<br /> openssl.exe x509 -outform der -in myCert.pem -out myCert.cer“ ein,
 
 um die PEM-Datei in eine DER-codierte X509-Zertifikatsdatei zu konvertieren.
 
@@ -296,4 +296,4 @@ Möglicherweise lässt sich das Problem mithilfe der Empfehlungen unter [Problem
  
 Nachdem Sie eine Verbindung mit Ihrer VM hergestellt haben, müssen Sie die ausgewählte Distribution vor der weiteren Verwendung unbedingt aktualisieren.
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0204_2016-->

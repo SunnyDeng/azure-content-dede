@@ -19,6 +19,9 @@
 # Verschieben von Daten in einen und aus einem Azure-Blob mithilfe von Azure Data Factory
 Dieser Artikel beschreibt die Verwendung der Kopieraktivität in einer Azure Data Factory, um Daten aus einem anderen Datenspeicher in ein Azure-Blob und aus einem Azure-Blob in einen anderen Datenspeicher zu verschieben. Dieser Artikel baut auf dem Artikel [Datenverschiebungsaktivitäten](data-factory-data-movement-activities.md) auf, der eine allgemeine Übersicht zur Datenverschiebung mit der Kopieraktivität und den unterstützten Datenspeicherkombinationen bietet.
 
+In den folgenden Beispielen wird veranschaulicht, wie Sie Daten in und aus Azure-BLOB-Speicher und Azure SQL-Datenbank kopieren. Daten können jedoch mithilfe der Kopieraktivität in Azure Data Factory **direkt** aus beliebigen Quellen in die [hier](data-factory-data-movement-activities.md#supported-data-stores) aufgeführten Senken kopiert werden.
+ 
+
 ## Beispiel: Kopieren von Daten aus einem Azure-Blob in Azure SQL
 Das nachstehende Beispiel zeigt Folgendes:
 
@@ -508,4 +511,4 @@ false | mergeFiles | <p>Für einen Quellordner „Ordner1“ mit der folgenden S
 
 [AZURE.INCLUDE [data-factory-column-mapping](../../includes/data-factory-column-mapping.md)]
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

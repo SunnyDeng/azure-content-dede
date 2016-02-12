@@ -11,7 +11,7 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="01/14/2016" 
+    ms.date="02/02/2016" 
     ms.author="jeedes" />
 
 #Lernprogramm: Azure Active Directory-Integration mit Benefitsolver
@@ -82,10 +82,8 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Konfigurieren von App-Einstellungen](./media/active-directory-saas-benefitsolver-tutorial/IC804826.png "Konfigurieren von App-Einstellungen")
 
-    1.  Geben Sie im Textfeld **Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei der Benefitsolver-Anwendung verwenden (z. B. "*http://azure-dev.benefitsolver.com*.
-    2.  Geben Sie im Textfeld **Antwort-URL** Ihre AssertionConsumerService-URL für Benefitsolver ein (z. B. "*https://dev.benefitsolver.com/benefits/BenefitSolverView?page\_name=single\_signon\_saml*”).  
-
-        >[AZURE.NOTE]Sie erhalten den tatsächlichen Wert für Ihre Umgebung von Ihrem Benefitsolver-Supportteam.
+    1.  Geben Sie im Textfeld **Anmelde-URL** die URL ****http://azure.benefitsolver.com** ein.
+2.  Geben Sie im Textfeld **Antwort-URL** die URL ****https://www.benefitsolver.com/benefits/BenefitSolverView?page_name=single_signon_saml** ein.
 
     3.  Klicken Sie auf **Weiter**.
 
@@ -95,7 +93,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
 5.  Senden Sie die heruntergeladene Metadatendatei an das Supportteam von Benefitsolver.
 
-    >[AZURE.NOTE]Die eigentliche SSO-Konfiguration muss vom Supportteam von Benefitsolver durchgeführt werden. Sie erhalten eine Benachrichtigung, wenn SSO für Ihr Abonnement aktiviert wurde.
+    >[AZURE.NOTE] Die eigentliche SSO-Konfiguration muss vom Supportteam von Benefitsolver durchgeführt werden. Sie erhalten eine Benachrichtigung, wenn SSO für Ihr Abonnement aktiviert wurde.
 
 6.  Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
 
@@ -122,11 +120,12 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
     4.  Klicken Sie auf **Fertig stellen**.
 
 9.  Klicken Sie auf **Apply Changes**.
+
 ##Konfigurieren der Benutzerbereitstellung
 
-Damit sich Azure AD-Benutzer bei Benefitsolver anmelden können, müssen sie in Benefitsolver bereitgestellt werden. Im Fall von Benefitsolver müssen Benutzer manuell vom Benefitsolver-Supportteam erstellt werden.
+Damit sich Azure AD-Benutzer bei Benefitsolver anmelden können, müssen sie in Benefitsolver bereitgestellt werden. Im Fall von Benefitsolver werden die Mitarbeiterdaten in Ihrer Anwendung (in der Regel nachts) über eine Erhebungsdatei aus Ihrem HRIS-System ausgefüllt.
 
->[AZURE.NOTE]Sie können AAD-Benutzerkonten auch mithilfe anderer Tools zum Erstellen von Benefitsolver-Benutzerkonten oder mithilfe der von Benefitsolver bereitgestellten APIs erstellen.
+>[AZURE.NOTE] Sie können AAD-Benutzerkonten auch mithilfe anderer Tools zum Erstellen von Benefitsolver-Benutzerkonten oder mithilfe der von Benefitsolver bereitgestellten APIs erstellen.
 
 ##Zuweisen von Benutzern
 
@@ -146,4 +145,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0204_2016-->

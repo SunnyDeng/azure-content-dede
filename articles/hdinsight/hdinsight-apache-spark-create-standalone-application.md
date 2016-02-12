@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/08/2015" 
+	ms.date="02/01/2016" 
 	ms.author="nitinme"/>
 
 
@@ -84,13 +84,13 @@ Falls Sie beim Installieren von IntelliJ IDEA nicht zum Aktivieren des Scala-Plu
 	4. Klicken Sie auf **Übernehmen** und anschließend auf **OK**. 
 
 
-8. Aktualisieren Sie die Scala-Quelldatei mit Ihrem Anwendungscode. Öffnen Sie den vorhandenen Beispielcode, ersetzen Sie ihn durch den folgenden Code, und speichern Sie die Änderungen.
+8. Aktualisieren Sie die Scala-Quelldatei mit Ihrem Anwendungscode. Öffnen Sie den vorhandenen Beispielcode, ersetzen Sie ihn durch den folgenden Code, und speichern Sie die Änderungen. Dieser Code liest die Daten aus der Datei „HVAC.csv“ (für alle HDInsight Spark-Cluster verfügbar), ruft die Zeilen ab, die nur eine Ziffer in der sechsten Spalte enthalten, und schreibt die Ausgabe in **/HVACOut** unter dem Standardspeichercontainer für den Cluster.
 
 		package com.microsoft.spark.example
 
 		import org.apache.spark.SparkConf
 		import org.apache.spark.SparkContext
-				
+		
 		/**
 		  * Test IO to wasb
 		  */
@@ -101,11 +101,13 @@ Falls Sie beim Installieren von IntelliJ IDEA nicht zum Aktivieren des Scala-Plu
 		
 		    val rdd = sc.textFile("wasb:///HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv")
 		
-		    val rdd1 = rdd.map(s => s.split(",")).filter(s => s(0) != "ID")
+		    //find the rows which have only one digit in the 7th column in the CSV
+		    val rdd1 = rdd.filter(s => s.split(",")(6).length() == 1)
 		
 		    rdd1.saveAsTextFile("wasb:///HVACout")
 		  }
 		}
+
 
 9. Aktualisieren Sie die Datei „pom.xml“.
 
@@ -192,4 +194,4 @@ Gehen Sie wie folgt vor, um die Anwendung im Cluster auszuführen:
 
 * [Verwalten von Ressourcen für den Apache Spark-Cluster in Azure HDInsight](hdinsight-apache-spark-resource-manager.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

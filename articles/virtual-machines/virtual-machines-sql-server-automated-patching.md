@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
-	ms.date="11/12/2015"
+	ms.date="02/03/2016"
 	ms.author="jroth" />
 
 # Automatisches Patchen für SQL Server auf virtuellen Azure-Computern
@@ -93,4 +93,4 @@ Eine verwandte Funktion für virtuelle SQL Server-Computer in Azure ist die [aut
 
 Lesen Sie auch die weiteren [Ressourcen für die Ausführung von SQL Server in Azure Virtual Machines](virtual-machines-sql-server-infrastructure-services.md).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

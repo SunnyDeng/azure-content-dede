@@ -1,6 +1,6 @@
 <properties
    pageTitle="Debuggen der Anwendung in Visual Studio | Microsoft Azure"
-   description="Verbessern Sie die Zuverlässigkeit und Leistung Ihrer Dienste, indem Sie sie in Visual Studio und einem lokalen Entwicklungscluster entwickeln und debuggen."
+   description="Verbessern Sie die Zuverlässigkeit und Leistung Ihrer Dienste, indem Sie sie in Visual Studio in einem lokalen Entwicklungscluster entwickeln und debuggen."
    services="service-fabric"
    documentationCenter=".net"
    authors="jessebenson"
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="10/15/2015"
+   ms.date="01/28/2016"
    ms.author="jesseb"/>
 
 # Debuggen der Service Fabric-Anwendung mithilfe von Visual Studio
@@ -28,7 +28,7 @@ Sie können Zeit und Geld sparen, indem Sie Ihre Azure Service Fabric-Anwendung 
 
 3. Legen Sie Haltepunkte im Code fest und durchlaufen Sie die Anwendung mit den Befehlen im Menü **Debuggen**.
 
-    > [AZURE.NOTE]Visual Studio wird an alle Instanzen der Anwendung angefügt. Wenn Sie den Code durchlaufen, können Haltepunkte von mehreren Prozessen gleichzeitig erreicht werden, sodass es zu gleichzeitigen Sitzungen kommt. Versuchen Sie, die Haltepunkte nach dem Erreichen zu deaktivieren, indem Sie jeden Haltepunkt von der Thread-ID abhängig machen oder Diagnoseereignisse verwenden.
+    > [AZURE.NOTE] Visual Studio wird an alle Instanzen der Anwendung angefügt. Wenn Sie den Code durchlaufen, können Haltepunkte von mehreren Prozessen gleichzeitig erreicht werden, sodass es zu gleichzeitigen Sitzungen kommt. Versuchen Sie, die Haltepunkte nach dem Erreichen zu deaktivieren, indem Sie jeden Haltepunkt von der Thread-ID abhängig machen oder Diagnoseereignisse verwenden.
 
 4. Das Fenster **Diagnoseereignisse** wird automatisch geöffnet, sodass Sie die Diagnoseereignisse in Echtzeit anzeigen können.
 
@@ -65,4 +65,4 @@ Sie können Zeit und Geld sparen, indem Sie Ihre Azure Service Fabric-Anwendung 
 [diagnosticeventsactions]: ./media/service-fabric-debugging-your-application/diagnosticeventsactions.png
 [breakpoint]: ./media/service-fabric-debugging-your-application/breakpoint.png
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0204_2016-->

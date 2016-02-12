@@ -45,7 +45,7 @@ Die Aktivitäten in der folgenden Tabelle werden für den Zugriff auf Anmeldeinf
 ## Erstellen von neuen Anmeldeinformationen
 
 
-### So erstellen Sie neue Anmeldeinformationen mit dem Azure-Portal
+### So erstellen Sie eine neue Variable über das klassische Azure-Portal
 
 1. Klicken Sie in Ihrem Automation-Konto im oberen Fensterbereich auf **Objekte**.
 1. Klicken Sie unten im Fenster auf **Einstellung hinzufügen**.
@@ -54,7 +54,7 @@ Die Aktivitäten in der folgenden Tabelle werden für den Zugriff auf Anmeldeinf
 1. Schließen Sie den Assistenten ab, und aktivieren Sie das Kontrollkästchen, um die neuen Anmeldeinformationen zu speichern.
 
 
-### So erstellen Sie neue Anmeldeinformationen mit dem Azure-Vorschauportal
+### So erstellen Sie neue Anmeldeinformationen mit dem Azure-Portal
 
 1. Klicken Sie in Ihrem Automation-Konto auf **Objekte**, um das Blatt **Objekte** zu öffnen.
 1. Klicken Sie auf den Bereich **Anmeldeinformationen**, um das Blatt **Anmeldeinformationen** zu öffnen.
@@ -92,7 +92,7 @@ Sie können einem grafischen Runbook eine **Get-AutomationPSCredential**-Aktivit
 
 ![Anmeldeinformationen zum Zeichenbereich hinzufügen](media/automation-credentials/credential-add-canvas.png)
 
-Die folgende Abbildung zeigt ein Beispiel für die Verwendung eines Anmeldeinformationsobjekts in einem grafischen Runbook. In diesem Fall wird das Objekt zur Authentifizierung bei Azure-Ressourcen aus einem Runbook verwendet, wie beschrieben unter [Konfigurieren der Authentifizierung für Azure-Ressourcen](#automation-configuring.md). Die erste Aktivität ruft die Anmeldeinformationen ab, die Zugriff auf das Azure-Abonnement haben. Die Aktivität **Add-AzureAccount** verwendet diese Anmeldeinformationen anschließend, um eine Authentifizierung für alle nachfolgenden Aktivitäten bereitzustellen. Es wird eine [Pipelineverknüpfung](automation-graphical-authoring-intro.md#links-and-workflow) verwendet, da **Get-AutomationPSCredential** ein einzelnes Objekt erwartet.
+Die folgende Abbildung zeigt ein Beispiel für die Verwendung eines Anmeldeinformationsobjekts in einem grafischen Runbook. In diesem Fall wird das Objekt zur Authentifizierung bei Azure-Ressourcen aus einem Runbook verwendet, wie beschrieben unter [Konfigurieren der Authentifizierung für Azure-Ressourcen](automation-configuring.md). Die erste Aktivität ruft die Anmeldeinformationen ab, die Zugriff auf das Azure-Abonnement haben. Die Aktivität **Add-AzureAccount** verwendet diese Anmeldeinformationen anschließend, um eine Authentifizierung für alle nachfolgenden Aktivitäten bereitzustellen. Es wird eine [Pipelineverknüpfung](automation-graphical-authoring-intro.md#links-and-workflow) verwendet, da **Get-AutomationPSCredential** ein einzelnes Objekt erwartet.
 
 ![Anmeldeinformationen zum Zeichenbereich hinzufügen](media/automation-credentials/get-credential.png)
 
@@ -105,4 +105,4 @@ DSC-Konfigurationen in Azure Automation können mithilfe von **Get-AutomationPSC
 
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

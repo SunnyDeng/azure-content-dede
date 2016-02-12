@@ -24,13 +24,13 @@ Das **Microsoft Azure Machine Learning – Cheat Sheet für Algorithmen** erleic
 
 [Azure Machine Learning Studio](https://studio.azureml.net/) verfügt über eine große Anzahl von Algorithmen für maschinelles Lernen für Ihre Vorhersageanalyselösungen. Diese Algorithmen sind in die allgemeinen Kategorien für maschinelles Lernen ***Regression***, ***Klassifizierung***, ***Clustering*** und ***Anomalienerkennung*** unterteilt. Jede dieser Kategorien gilt für eine andere Art von Problemen beim maschinellen Lernen.
 
-> [AZURE.NOTE]Eine ausführliche Anleitung zur Verwendung des Cheat Sheets finden Sie im Artikel [Auswählen von Algorithmen für Microsoft Azure Machine Learning](machine-learning-algorithm-choice.md).
+> [AZURE.NOTE] Eine ausführliche Anleitung zur Verwendung des Cheat Sheets finden Sie im Artikel [Auswählen von Algorithmen für Microsoft Azure Machine Learning](machine-learning-algorithm-choice.md).
 
 ## Machine Learning Cheat Sheet für Algorithmen herunterladen
 
 Laden Sie das Cheat Sheet für Algorithmen für maschinelles Lernen herunter, mit dem Sie einen Algorithmus für maschinelles Lernen auswählen können. Drucken Sie das Cheat Sheet in Tabloid-Größe (11 x 17 Zoll) aus, um schnell darauf zugreifen zu können.
 
-**Sie können das Cheat Sheet hier herunterladen: [Microsoft Azure Machine Learning Algorithm Cheat Sheet](http://download.microsoft.com/download/A/6/1/A613E11E-8F9C-424A-B99D-65344785C288/microsoft-machine-learning-algorithm-cheat-sheet-v6.pdf) \(in englischer Sprache).**
+**Sie können das Cheat Sheet hier herunterladen: [Microsoft Azure Machine Learning Algorithm Cheat Sheet](http://download.microsoft.com/download/A/6/1/A613E11E-8F9C-424A-B99D-65344785C288/microsoft-machine-learning-algorithm-cheat-sheet-v6.pdf)** (in englischer Sprache).
 
 ![Machine Learning Cheat Sheet für Algorithmen: Wie wähle ich einen Algorithmus für maschinelles Lernen aus?][cheat-sheet]
 
@@ -42,7 +42,7 @@ Laden Sie das Cheat Sheet für Algorithmen für maschinelles Lernen herunter, mi
 * Eine eingehendere Erläuterung der verschiedenen Typen von Algorithmen für maschinelles Lernen, ihrer Verwendung und der Verwendung dieses Cheat Sheets für die Auswahl des richtigen Algorithmus finden Sie unter [Auswählen von Algorithmen für Microsoft Azure Machine Learning](machine-learning-algorithm-choice.md).
 * Eine in Kategorien unterteilte Liste aller in Machine Learning verfügbaren Algorithmen für maschinelles Lernen finden Sie in der Hilfe zu den Algorithmen und Modulen in Machine Learning unter [Modell initialisieren][initialize-model].
 * Eine vollständige Liste aller in Machine Learning Studio verfügbaren Algorithmen und Module finden Sie in der Hilfe zu den Algorithmen und Modulen in Machine Learning Studio unter [Modulliste von A bis Z für Machine Learning Studio][a-z-list].
-* Informationen zum Herunterladen und Drucken des Diagramms, mit dem Sie sich eine Übersicht über die Machine Learning Studio-Funktionen verschaffen können, finden Sie unter [Übersichtsdiagramm der Azure Machine Learning Studio-Funktionen](machine-learning-studio-overview-diagram.md).
+* Informationen zum Herunterladen und Drucken des Diagramms, mit dem Sie sich einen Überblick über die Machine Learning Studio-Funktionen verschaffen können, finden Sie unter [Übersichtsdiagramm der Azure Machine Learning Studio-Funktionen](machine-learning-studio-overview-diagram.md).
 
 
 [AZURE.INCLUDE [machine-learning-kostenlose-Testversion](../../includes/machine-learning-free-trial.md)]
@@ -79,7 +79,7 @@ Laden Sie das Cheat Sheet für Algorithmen für maschinelles Lernen herunter, mi
 <a href="http://download.microsoft.com/download/A/6/1/A613E11E-8F9C-424A-B99D-65344785C288/microsoft-machine-learning-algorithm-cheat-sheet.pdf">
 <img src="C:\Users\garye\azure-content-pr\articles\media\machine-learning-algorithm-cheat-sheet\cheat-sheet-small.png">
 </a>
--->
+--> \\
 
 <!-- Module References -->
 [a-z-list]: https://msdn.microsoft.com/library/azure/dn906033.aspx
@@ -87,4 +87,4 @@ Laden Sie das Cheat Sheet für Algorithmen für maschinelles Lernen herunter, mi
 [k-means-clustering]: https://msdn.microsoft.com/library/azure/5049a09b-bd90-4c4e-9b46-7c87e3a36810/
 [one-vs-all-multiclass]: https://msdn.microsoft.com/library/azure/7191efae-b4b1-4d03-a6f8-7205f87be664/
 
-<!----HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_0204_2016-->

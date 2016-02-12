@@ -1,10 +1,10 @@
 <properties
    pageTitle="Häufig gestellte Fragen zu Azure Backup | Microsoft Azure"
-   description="Häufig gestellte Fragen zur Azure Backup-Lösung – Der Backup-Agent, Sicherung und Aufbewahrung sowie Wiederherstellung, Sicherheit und andere wiederkehrende Fragen zum Azure-Backup-Dienst."
+   description="Hier finden Sie Antworten auf häufig gestellte Fragen zum Backup-Agent, zu Sicherung und Aufbewahrung, Wiederherstellung, Sicherheit und auf andere allgemeine Fragen zur Azure Backup-Lösung."
    services="backup"
    documentationCenter=""
    authors="Jim-Parker"
-   manager="shreeshd"
+   manager="jwhit"
    editor=""
    keywords="Backup-Lösung; Backup-Dienst"/>
 
@@ -14,7 +14,7 @@
 	 ms.tgt_pltfrm="na"
 	 ms.devlang="na"
 	 ms.topic="article"
-	 ms.date="01/26/2016"
+	 ms.date="01/28/2016"
 	 ms.author="trinadhk; giridham; arunak; markgal; jimpark;"/>
 
 # Azure Backup-Dienst – FAQ
@@ -183,4 +183,4 @@ Die Größe der Datenquelle wird wie folgt gemessen.
 
 Sobald die Sicherungen erfolgreich mit dem neuen Cachespeicherort ausgeführt werden, können Sie den ursprünglichen Cacheordner entfernen.
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

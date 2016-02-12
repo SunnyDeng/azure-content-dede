@@ -19,7 +19,7 @@
 
 # Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Azure-Ressourcen-Manager
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](virtual-machines-command-line-tools.md)
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](virtual-machines/virtual-machines-command-line-tools.md).
 
 In diesem Artikel wird beschrieben, wie Sie mithilfe der Azure-Befehlszeilenschnittstelle (Azure CLI) im Azure-Ressourcen-Manager-Modus Dienste über die Befehlszeile von Windows-, Mac- und Linux-Computern erstellen, verwalten und löschen können. Sie können viele dieser Aufgaben mithilfe der verschiedenen Bibliotheken der Azure-SDKs, mit Azure PowerShell und über das Azure-Portal ausführen.
 
@@ -1879,4 +1879,4 @@ Parameteroptionen:
 	vm image list-skus [options] <location> <publisher> <offer>
 	vm image list [options] <location> <publisher> [offer] [sku]
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

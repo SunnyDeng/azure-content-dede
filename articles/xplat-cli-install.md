@@ -21,9 +21,8 @@
 
 Installieren Sie schnell die Azure-Befehlszeilenschnittstelle (Azure-CLI), um eine Reihe von auf der Open-Source-Shell basierenden Befehlen zum Erstellen und Verwalten von Ressourcen in Microsoft Azure zu verwenden. Verwenden Sie eines der bereitgestellten Installationspakete zum Installieren der Azure-Befehlszeilenschnittstelle in Ihrem Betriebssystem. Installieren Sie die CLI über Node.js und **npm**, oder installieren Sie die Azure-CLI als Container auf einem Docker-Host. Weitere Optionen und Hintergrundinformationen finden Sie im Projektrepository auf [GitHub](https://github.com/azure/azure-xplat-cli).
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
-Sobald die Azure-CLI installiert ist, können Sie sie [mit Ihrem Azure-Abonnement verbinden](xplat-cli-connect.md) und die **azure**-Befehle in der Befehlszeilenschnittstelle (Bash, Terminal, Eingabeaufforderung usw.) für die Arbeit mit Ihren Azure-Ressourcen verwenden.
+Sobald die Azure-Befehlszeilenschnittstelle installiert ist, können Sie sie [mit Ihrem Azure-Abonnement verbinden](xplat-cli-connect.md) und die **azure**-Befehle in der Befehlszeilenschnittstelle (Bash, Terminal, Eingabeaufforderung usw.) für die Arbeit mit Ihren Azure-Ressourcen verwenden.
 
 
 
@@ -45,7 +44,7 @@ Wenn Node.js bereits auf Ihrem System installiert ist, verwenden Sie den folgend
 
 	npm install azure-cli -g
 
-> [AZURE.NOTE]Bei Linux-Distributionen müssen Sie möglicherweise `sudo` verwenden, um den Befehl __npm__ erfolgreich ausführen zu können.
+> [AZURE.NOTE] Bei Linux-Distributionen müssen Sie möglicherweise `sudo` verwenden, um den Befehl __npm__ erfolgreich ausführen zu können.
 
 ### Installieren von „Node.js“ und „npm“ in Linux-Distributionen, die die [dpkg](http://en.wikipedia.org/wiki/Dpkg)-Paketverwaltung verwenden
 
@@ -59,7 +58,7 @@ Die meisten der neueren Distributionen erfordern die Installation von **nodejs-l
 
 Einige der älteren Distributionen, wie z. B. Ubuntu 12.04, erfordern die Installation der aktuellen binären Distribution von „Node.js“. Der folgende Code zeigt, wie Sie dazu durch die Installation und Verwendung von **curl** vorgehen müssen.
 
->[AZURE.NOTE]Die Befehle stammen aus den Installationsanweisungen, die Sie [hier](https://github.com/joyent/node/wiki/installing-node.js-via-package-manager) finden. Bei der Verwendung von **sudo** als Pipeziel sollten Sie immer die Skripts überprüfen, die Sie installieren, und prüfen, ob sie sich so verhalten, wie Sie es erwarten, bevor Sie sie mit **sudo** ausführen. Je größer die Macht desto größer ist auch die Verantwortung.
+>[AZURE.NOTE] Die Befehle stammen aus den Installationsanweisungen, die Sie [hier](https://github.com/joyent/node/wiki/installing-node.js-via-package-manager) finden. Bei der Verwendung von **sudo** als Pipeziel sollten Sie immer die Skripts überprüfen, die Sie installieren, und prüfen, ob sie sich so verhalten, wie Sie es erwarten, bevor Sie sie mit **sudo** ausführen. Je größer die Macht desto größer ist auch die Verantwortung.
 
 	sudo apt-get install curl
 	curl -sL https://deb.nodesource.com/setup | sudo bash -
@@ -80,7 +79,7 @@ Für die Installation von „Node.js“ auf RPM-basierten Distributionen ist die
 
 ### Installieren von „Node.js“ und „npm“ unter Windows und Mac OS X
 
-Sie können „Node.js“ und „npm“ mit den Installationsprogrammen von [Nodejs.org](https://nodejs.org/en/download/) unter Windows und OS X installieren. Möglicherweise müssen Sie den Computer zum Abschließen der Installation neu starten. Überprüfen Sie, ob „Node.js“ und „npm“ ordnungsgemäß installiert wurden, indem Sie ein Befehls- oder Terminalfenster öffnen und Folgendes eingeben:
+Sie können „Node.js“ und „npm“ mit den Installationsprogrammen von [Nodejs.org](https://nodejs.org/en/download/) unter Windows und OS X installieren. Möglicherweise müssen Sie den Computer zum Abschließen der Installation neu starten. Überprüfen Sie, ob „Node.js“ und „npm“ ordnungsgemäß installiert wurden, indem Sie ein Befehls- oder Terminalfenster öffnen und Folgendes eingeben:
 
 	npm -v
 
@@ -108,7 +107,7 @@ Am Ende der Installation sollte eine Ausgabe angezeigt werden, die etwa wie folg
 	|-- kuduscript@0.1.2 (commander@1.1.1, streamline@0.4.11)
 	|-- azure@0.7.13 (dateformat@1.0.2-1.2.3, envconf@0.0.4, mpns@2.0.1, mime@1.2.10, validator@1.4.0, xml2js@0.2.8, wns@0.5.3, request@2.25.0)
 
->[AZURE.NOTE]Bei Linux-Systemen können Sie die Azure-Befehlszeilenschnittstelle auch installieren, erstellen Sie sie aus dem [Quellcode](http://go.microsoft.com/fwlink/?linkid=253472) neu erstellen. Weitere Informationen zum Erstellen aus dem Quellcode finden Sie in der Datei „INSTALL“, die im Archiv enthalten ist.
+>[AZURE.NOTE] Bei Linux-Systemen können Sie die Azure-Befehlszeilenschnittstelle auch installieren, erstellen Sie sie aus dem [Quellcode](http://go.microsoft.com/fwlink/?linkid=253472) neu erstellen. Weitere Informationen zum Erstellen aus dem Quellcode finden Sie in der Datei „INSTALL“, die im Archiv enthalten ist.
 
 ## Verwenden eines Docker-Containers
 
@@ -119,7 +118,7 @@ docker run -it microsoft/azure-cli
 ```
 
 ## Ausführen von Azure-CLI-Befehlen
-Sobald die Azure-CLI installiert ist, können Sie den Befehl **azure** in der Befehlszeilenschnittstelle (Bash, Terminal, Eingabeaufforderung usw.) ausführen. Um beispielsweise den Hilfebefehl auszuführen, geben Sie Folgendes ein:
+Sobald die Azure-Befehlszeilenschnittstelle installiert ist, können Sie den Befehl **azure** in der Befehlszeilenschnittstelle (Bash, Terminal, Eingabeaufforderung usw.) ausführen. Um beispielsweise den Hilfebefehl auszuführen, geben Sie Folgendes ein:
 
 ```
 azure help
@@ -131,11 +130,11 @@ Um die installierte Version der Azure-Befehlszeilenschnittstelle anzuzeigen, geb
 azure --version
 ```
 
-Jetzt sind Sie soweit. Um Zugriff auf alle CLI-Befehle für die Arbeit mit Ihren eigenen Ressourcen zu erhalten, [stellen Sie über die Azure-CLI eine Verbindung mit Ihrem Azure-Abonnement her](xplat-cli-connect.md).
+Jetzt sind Sie soweit. Um Zugriff auf alle CLI-Befehle für die Arbeit mit Ihren eigenen Ressourcen zu erhalten, [stellen Sie über die Azure-Befehlszeilenschnittstelle eine Verbindung mit Ihrem Azure-Abonnement her](xplat-cli-connect.md).
 
 ## Aktualisieren der CLI
 
-Microsoft veröffentlicht regelmäßig aktualisierte Versionen der Azure-Befehlszeilenschnittstelle. Installieren Sie die CLI erneut mit dem Installationsprogramm für Ihr Betriebssystem, bzw., wenn „Node.js“ und „npm“ installiert sind, aktualisieren Sie sie, indem Sie Folgendes eingeben (in Linux-Distributionen müssen Sie möglicherweise **sudo** verwenden).
+Microsoft veröffentlicht regelmäßig aktualisierte Versionen der Azure-Befehlszeilenschnittstelle. Installieren Sie die CLI erneut mit dem Installationsprogramm für Ihr Betriebssystem. Wenn „Node.js“ und „npm“ installiert sind, aktualisieren Sie sie, indem Sie Folgendes eingeben (in Linux-Distributionen müssen Sie möglicherweise **sudo** verwenden):
 
 ```
 npm upgrade -g azure-cli
@@ -159,4 +158,4 @@ npm upgrade -g azure-cli
 [cliasm]: virtual-machines/virtual-machines-command-line-tools.md
 [cliarm]: virtual-machines/xplat-cli-azure-resource-manager.md
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0204_2016-->

@@ -17,7 +17,7 @@
 
 # Konfigurieren der Routingmethode für Leistungsdatenverkehr
 
-Wenn Sie ein Datenverkehrsrouting für Clouddienste und Websites (Endpunkte) in verschiedenen Datencentern weltweit (die auch als "Regionen" bezeichnet werden) einrichten möchten, können Sie eingehenden Datenverkehr an den Endpunkt mit der kürzesten Wartezeit zwischen dem anfordernden Client und dem Endpunkt weiterleiten. Normalerweise entspricht das Datencenter mit der geringsten Wartezeit der kürzesten geografischen Distanz. Die Routingmethode für Leistungsdatenverkehr ermöglicht Ihnen eine Verteilung basierend auf der kürzesten Wartezeit, kann jedoch keine Echtzeitänderungen in der Netzwerkkonfiguration bzw. -last berücksichtigen. Weitere Informationen zu den verschiedenen Routingmethoden für Datenverkehr, die von Azure Traffic Manager bereitgestellt werden, finden Sie unter [Traffic Manager-Methoden für das Routing von Datenverkehr](traffic-manager-load-balancing-methods.md).
+Wenn Sie ein Datenverkehrsrouting für Clouddienste und Websites (Endpunkte) in verschiedenen Datencentern weltweit (die auch als "Regionen" bezeichnet werden) einrichten möchten, können Sie eingehenden Datenverkehr an den Endpunkt mit der kürzesten Wartezeit zwischen dem anfordernden Client und dem Endpunkt weiterleiten. Normalerweise entspricht das Datencenter mit der geringsten Wartezeit der kürzesten geografischen Distanz. Die Routingmethode für Leistungsdatenverkehr ermöglicht Ihnen eine Verteilung basierend auf der kürzesten Wartezeit, kann jedoch keine Echtzeitänderungen in der Netzwerkkonfiguration bzw. -last berücksichtigen. Weitere Informationen zu den verschiedenen Routingmethoden für Datenverkehr, die von Azure Traffic Manager bereitgestellt werden, finden Sie unter [Traffic Manager-Routingmethoden](traffic-manager-load-balancing-methods.md).
 
 ## Führen Sie ein Routing für Datenverkehr basierend auf der kürzesten Wartezeit für eine Gruppe von Endpunkten aus:
 
@@ -49,4 +49,4 @@ Wenn Sie ein Datenverkehrsrouting für Clouddienste und Websites (Endpunkte) in 
 [Deaktivieren oder Aktivieren eines Traffic Manager-Endpunkts](disable-or-enable-an-endpoint.md)
  
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0204_2016-->

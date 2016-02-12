@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/03/2015" 
+	ms.date="02/03/2016" 
 	ms.author="arramac"/>
 	
 # Automatische Indizierung in Azure DocumentDB
@@ -67,4 +67,4 @@ Die DocumentDB-Indizierung ist für Speichereffizienz und Mehrinstanzfähigkeit 
 - Weitere Informationen zum Anpassen des DocumentDB-Indexes finden Sie [hier](documentdb-indexing-policies.md).
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

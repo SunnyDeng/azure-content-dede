@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/08/2015" 
+	ms.date="01/08/2016" 
 	ms.author="tdykstra"/>
 
 # Authentifizierung für API-Apps und mobile Apps in Azure App Service
@@ -216,4 +216,4 @@ In diesem Artikel wurden die Authentifizierungsdienste von Azure App Service fü
 
 * [Abrufen eines Zugriffstokens und Aufrufen der SharePoint-API in einer mobilen App](../app-service-mobile/app-service-mobile-dotnet-backend-get-started-connect-to-enterprise.md#obtain-token)
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0204_2016-->
