@@ -13,7 +13,7 @@ ms.service="virtual-machines"
  ms.topic="article"
  ms.tgt_pltfrm="vm-linux"
  ms.workload="infrastructure-services"
- ms.date="01/21/2015"
+ ms.date="01/21/2016"
  ms.author="danlep"/>
 
 # Einrichten eines Linux RDMA-Clusters zum Ausführen von MPI-Anwendungen
@@ -32,7 +32,7 @@ In diesem Artikel wird beschrieben, wie Sie einen Linux RDMA-Cluster mit [virtue
 
 Mit den folgenden Methoden können Sie einen Linux RDMA-Cluster mit oder ohne eine Auftragsplanung erstellen.
 
-* **HPC Pack** – Erstellen Sie einen Microsoft HPC Pack-Cluster in Azure und fügen Sie Computeknoten hinzu, auf denen unterstützte Linux-Distributionen ausgeführt werden. Bestimmte Linux-Knoten können für den Zugriff auf das RDMA-Netzwerk konfiguriert werden. Informationen finden Sie unter [Erste Schritte mit Linux-Computeknoten in einem HPC Pack-Cluster in Azure](virtual-machines-linux-cluster.md).
+* **HPC Pack** – Erstellen Sie einen Microsoft HPC Pack-Cluster in Azure und fügen Sie Computeknoten hinzu, auf denen unterstützte Linux-Distributionen ausgeführt werden. Bestimmte Linux-Knoten können für den Zugriff auf das RDMA-Netzwerk konfiguriert werden. Informationen finden Sie unter [Erste Schritte mit Linux-Computeknoten in einem HPC Pack-Cluster in Azure](virtual-machines-linux-cluster-hpcpack.md).
 
 * **Azure-CLI-Skripts** – Verwenden Sie wie in den im restlichen Artikel gezeigten Schritten die [Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md) (CLI) für Mac, Linux und Windows zum Erstellen von Skripts für die Bereitstellung eines virtuellen Netzwerks und der übrigen Komponenten, die zum Erstellen eines Linux-Clusters erforderlich sind. Über die Befehlszeilenschnittstelle im klassischen Bereitstellungsmodus (Dienstverwaltungsmodus) werden die Clusterknoten seriell erstellt, daher kann die Bereitstellung vieler Computeknoten einige Minuten in Anspruch nehmen.
 
@@ -426,4 +426,4 @@ In einem funktionierenden Cluster mit zwei Knoten wird eine Ausgabe angezeigt, d
 
 * Anleitungen zu Intel MPI finden Sie in der [Dokumentation zu Intel MPI Library](https://software.intel.com/de-DE/articles/intel-mpi-library-documentation/).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

@@ -75,11 +75,11 @@ Wenn Sie bereits ein GitHub-Konto und ein Repository besitzen, das Sie mit Azure
     | Wert | {„Verzweigung“:<*Name Ihrer Verzweigung*>, „Runbook-Ordnertyp“:<*Runbook-Ordnerpfad*>, „Anbietertyp“:<*hat einen Wert 1 für GitHub*>, „Verzeichnis“:<*Name Ihres Repositorys*>, „Benutzername“<*Ihr GitHub-Benutzername*>} | <br>
 
 
-    * Die Variable **Microsoft.Azure.Automation.SourceControl.OauthToken**, enthält den sicher verschlüsselten Wert Ihres OAuthTokens.  
+    * Die Variable **Microsoft.Azure.Automation.SourceControl.OauthToken** enthält den sicher verschlüsselten Wert Ihres OAuth-Tokens.  
 
     |**Parameter** |**Wert** |
     |:---|:---|
-    | Name | Microsoft.Azure.Automation.SourceControl.OauthToken |
+    | Name | Microsoft.Azure.Automation.SourceControl.OAuthToken |
     | Typ | Unbekannte (Verschlüsselt) |
     | Wert | <*Verschlüsseltes OAuthToken*> |  
 
@@ -128,7 +128,7 @@ Durch Einchecken des Runbooks können Sie die Änderungen, die Sie an einem Runb
 
 Mit der Synchronisierungsschaltfläche auf dem Blatt „Repository-Synchronisierung“ können Sie alle Runbooks im Runbook-Ordnerpfad des Repositorys in Ihr Automation-Konto verschieben. Dasselbe Repository kann mit mehreren Automation-Konten synchronisiert werden. Mit den folgenden Schritten können Sie ein Runbook synchronisieren:
 
-1. Öffnen Sie in dem Automation-Konto, in dem Sie die Quellcodeverwaltung einrichten, das Blatt **Integration der Quellcodeverwaltung/Repository Synchronization**, und klicken Sie auf **Synchronisieren**. Klicken Sie in der angezeigten Bestätigungsmeldung auf **Ja**, um den Vorgang fortzusetzen.  
+1. Öffnen Sie in dem Automation-Konto, in dem Sie die Quellcodeverwaltung einrichten, das Blatt **Integration der Quellcodeverwaltung/Repository-Synchronisierung**, und klicken Sie auf **Synchronisieren**. Klicken Sie in der angezeigten Bestätigungsmeldung auf **Ja**, um den Vorgang fortzusetzen.  
 
     ![Taste „Synchronisierung“](media/automation-source-control-integration/automation_10_SyncButtonwithMessage.png)
 
@@ -158,4 +158,4 @@ Klicken Sie zum Trennen der Verbindung zu Ihrem GitHub-Konto auf dem Blatt „Re
 
 Weitere Informationen zur Integration der Quellcodeverwaltung finden Sie in den folgenden Ressourcen: - [Source Control Integration in Azure Automation](https://azure.microsoft.com/blog/azure-automation-source-control-13/) - [Vote for your favorite source control system](https://www.surveymonkey.com/r/?sm=2dVjdcrCPFdT0dFFI8nUdQ%3d%3d) - [Azure Automation: Integrating Runbook Source Control using Visual Studio Online](https://azure.microsoft.com/blog/azure-automation-integrating-runbook-source-control-using-visual-studio-online/) (alle in englischer Sprache)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

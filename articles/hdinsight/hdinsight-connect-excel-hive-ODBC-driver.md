@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="10/15/2015"
+   ms.date="01/28/2016"
    ms.author="jgao"/>
 
 #Verbinden von Excel über den Microsoft Hive ODBC-Treiber mit Hadoop
@@ -25,7 +25,7 @@ Die Big Data-Lösung von Microsoft integriert Microsoft Business Intelligence (B
 
 Es ist ebenfalls möglich, die zu einem HDInsight-Cluster gehörigen Daten und andere Datenquellen, einschließlich anderer Hadoop-Cluster (nicht aus HDInsight), zu verbinden. Hierbei verwenden Sie in Excel das Add-In Microsoft Power Query für Excel. Informationen zur Installation und Verwendung von Power Query finden Sie unter [Verbinden von Excel mit HDInsight über Power Query][hdinsight-power-query].
 
-> [AZURE.NOTE]Auch wenn die in diesem Artikel beschriebenen Schritte für Linux- und Windows-basierte HDInsight-Cluster gelten, ist für den Client in jedem Fall eine Windows-Arbeitsstation erforderlich.
+> [AZURE.NOTE] Auch wenn die in diesem Artikel beschriebenen Schritte für Linux- und Windows-basierte HDInsight-Cluster gelten, ist für den Client in jedem Fall eine Windows-Arbeitsstation erforderlich.
 
 **Voraussetzungen**:
 
@@ -55,35 +55,35 @@ Die folgenden Schritte zeigen Ihnen, wie Sie eine Hive ODBC-Datenquelle erstelle
 
 5. Geben Sie die folgenden Werte ein, oder wählen Sie sie aus:
 
-Eigenschaft|Beschreibung
----|---
-Name der Datenquelle|Geben Sie einen Namen für die Datenquelle an.
-Host|Geben Sie <HDInsightClusterName>.azurehdinsight.net ein. Beispiel: myHDICluster.azurehdinsight.net
-Port|Verwenden Sie <strong>443</strong>. (Dieser Port wurde von 563 in 443 geändert.)
-Datenbank|Verwenden Sie <strong>Standard</strong>.
-Hive-Servertyp|Wählen Sie <strong>Hive Server 2</strong> aus.
-Mechanismus|Wählen Sie <strong>Azure HDInsight Service</strong> aus.
-HTTP-Pfad|Lassen Sie dieses Feld leer.
-Benutzername|Geben Sie Ihren Benutzernamen für den HDInsight-Cluster an. Es handelt sich hierbei um den Benutzernamen, der beim Bereitstellungsprozess des Clusters erstellt wurde. Wenn Sie die Schnellerfassungsoption gewählt haben, lautet der Standardbenutzername <strong>admin</strong>.
-Kennwort|Geben Sie Ihr Benutzerkennwort für den HDInsight-Cluster an.
-</table>
+    Eigenschaft|Beschreibung
+    ---|---
+    Name der Datenquelle|Geben Sie einen Namen für die Datenquelle an.
+    Host|Geben Sie <HDInsightClusterName>.azurehdinsight.net ein. Beispiel: myHDICluster.azurehdinsight.net
+    Port|Verwenden Sie <strong>443</strong>. (Dieser Port wurde von 563 in 443 geändert.)
+    Datenbank|Verwenden Sie <strong>Standard</strong>.
+    Hive-Servertyp|Wählen Sie <strong>Hive Server 2</strong> aus.
+    Mechanismus|Wählen Sie <strong>Azure HDInsight Service</strong> aus.
+    HTTP-Pfad|Lassen Sie dieses Feld leer.
+    Benutzername|Geben Sie Ihren Benutzernamen für den HDInsight-Cluster an. Es handelt sich hierbei um den Benutzernamen, der beim Bereitstellungsprozess des Clusters erstellt wurde. Wenn Sie die Schnellerfassungsoption gewählt haben, lautet der Standardbenutzername <strong>admin</strong>.
+    Kennwort|Geben Sie Ihr Benutzerkennwort für den HDInsight-Cluster an.
+    </table>
 
-Sie müssen einige wichtige Parameter berücksichtigen, wenn Sie auf **Erweiterte Optionen** klicken:
+    Sie müssen einige wichtige Parameter berücksichtigen, wenn Sie auf **Erweiterte Optionen** klicken:
 
-Parameter|Beschreibung
----|---
-Use Native Query|Wenn diese Option ausgewählt ist, versucht der ODBC-Treiber NICHT, TSQL in HiveQL zu konvertieren. Verwenden Sie diese Option nur, wenn Sie sich absolut sicher sind, dass Sie reine HiveQL-Anweisungen absenden. Wenn Sie eine Verbindung zu SQL Server oder Azure SQL-Datenbank herstellen, sollten Sie die Option nicht aktivieren.
-Rows fetched per block|Wenn Sie viele Datensätze abrufen, ist es möglicherweise erforderlich, diesen Parameter zu optimieren, um optimale Leistung zu garantieren.
-Default string column length, Binary column length, Decimal column scale|Längen und Genauigkeiten der Datentypen können beeinflussen, wie die Daten zurückgegeben werden. Bei zu geringer Genauigkeit und/oder Abschneiden werden falsche Informationen zurückgegeben.
+    Parameter|Beschreibung
+    ---|---
+    Use Native Query|Wenn diese Option ausgewählt ist, versucht der ODBC-Treiber NICHT, TSQL in HiveQL zu konvertieren. Verwenden Sie diese Option nur, wenn Sie sich absolut sicher sind, dass Sie reine HiveQL-Anweisungen absenden. Wenn Sie eine Verbindung zu SQL Server oder Azure SQL Database herstellen, sollten Sie die Option nicht aktivieren.
+    Rows fetched per block|Wenn Sie viele Datensätze abrufen, ist es möglicherweise erforderlich, diesen Parameter zu optimieren, um optimale Leistung zu garantieren.
+    Default string column length, Binary column length, Decimal column scale|Längen und Genauigkeiten der Datentypen können beeinflussen, wie die Daten zurückgegeben werden. Bei zu geringer Genauigkeit und/oder Abschneiden werden falsche Informationen zurückgegeben.
 
 
-	![Advanced options][img-HiveOdbc-DataSource-AdvancedOptions]
+	![Erweiterte Optionen][img-HiveOdbc-DataSource-AdvancedOptions]
 
 6. Klicken Sie auf **Test**, um die Datenquelle zu testen. Wenn die Datenquelle korrekt konfiguriert wurde, wird *TESTS ERFOLGREICH ABGESCHLOSSEN.* angezeigt.
 7. Klicken Sie auf **OK**, um den Testdialog zu schließen. Die neue Datenquelle sollte jetzt im **ODBC-Datenquellen-Administrator** aufgeführt werden.
 8. Klicken Sie auf **OK**, um den Assistenten zu beenden.
 
-##Importieren von Daten aus einem HDInsight-Cluster in Excel
+##Importieren von Daten aus HDInsight in Excel
 
 In den folgenden Schritten wird beschrieben, wie Sie mithilfe der ODBC-Datenquelle, die Sie in den vorangegangenen Schritten erstellt haben, Daten aus einer Hive-Tabelle in eine Excel-Arbeitsmappe importieren.
 
@@ -131,4 +131,4 @@ In diesem Artikel haben Sie erfahren, wie Sie den Microsoft Hive ODBC-Treiber ve
 [img-hdi-simbahiveodbc-excel-connectionproperties]: ./media/hdinsight-connect-excel-hive-ODBC-driver/HDI.SimbaHiveODBC.Excel.ConnectionProperties1.png
 [img-hdi-simbahiveodbc.excel.dataconnection]: ./media/hdinsight-connect-excel-hive-ODBC-driver/HDI.SimbaHiveOdbc.Excel.DataConnection1.png
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_0204_2016-->

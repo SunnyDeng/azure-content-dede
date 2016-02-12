@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="01/04/2016"
+   ms.date="02/01/2016"
    ms.author="v-darmi"/>
 
 
@@ -21,7 +21,7 @@
 
 Mit den im Azure API Management-Dienst verfügbaren Richtlinien können Sie eine breite Palette sinnvoller Aufgaben durchführen, ausschließlich basierend auf der eingehenden Anforderung, der ausgehenden Antwort und den grundlegenden Konfigurationsinformationen. Die Interaktionsfähigkeit mit externen Diensten mithilfe von API Management-Richtlinien eröffnet jedoch viele weitere Möglichkeiten.
 
-Wir haben bereits gesehen, wie wir mit dem [Azure Event Hub-Dienst für die Protokollierung, Überwachung und Analyse](api-management-sample-logtoeventhub.md) interagieren können. In diesem Artikel werden Richtlinien gezeigt, die die Interaktion mit externen HTTP-basierten Diensten ermöglichen. Diese Richtlinien können zum Auslösen von Remoteereignissen oder zum Abrufen von Informationen verwendet werden, die wiederum zum Verändern der ursprünglichen Anforderung und Antwort verwendet werden.
+Wir haben bereits gesehen, wie wir mit dem [Azure Event Hub-Dienst für die Protokollierung, Überwachung und Analyse](api-management-log-to-eventhub-sample.md) interagieren können. In diesem Artikel werden Richtlinien gezeigt, die die Interaktion mit externen HTTP-basierten Diensten ermöglichen. Diese Richtlinien können zum Auslösen von Remoteereignissen oder zum Abrufen von Informationen verwendet werden, die wiederum zum Verändern der ursprünglichen Anforderung und Antwort verwendet werden.
 
 ## Send-One-Way-Request
 Die einfachste externe Interaktion ist möglicherweise eine Anforderung im „Fire and Forget“-Stil (Auslösen und Vergessen), mit der ein externer Dienst über ein wichtiges Ereignis jeglicher Art benachrichtigt werden kann. Wir können die Ablaufsteuerungsrichtlinie `choose` verwenden, um beliebige interessante Bedingungen zu erkennen. Wenn die Bedingung erfüllt ist, können wir mithilfe der [send-one-way-request](https://msdn.microsoft.com/library/azure/dn894085.aspx#SendOneWayRequest)-Richtlinie eine externe HTTP-Anforderung ausführen. Dabei kann es sich um eine Anforderung an ein Messagingsystem wie Hipchat oder Slack oder an eine E-Mail-API wie SendGrid oder MailChimp handeln. Alternativ können für kritische Supportfälle Anforderungen an beispielsweise PagerDuty gesendet werden. Alle diese Messagingsysteme verfügen über einfache HTTP-APIs, die wir mühelos aufrufen können.
@@ -269,4 +269,4 @@ Informieren Sie im folgenden Video ausführlicher über die diesem Artikel behan
 
 > [AZURE.VIDEO send-request-and-return-response-policies]
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0204_2016-->

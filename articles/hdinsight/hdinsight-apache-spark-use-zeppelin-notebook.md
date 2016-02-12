@@ -212,7 +212,7 @@ Nach dem Einrichten des SSH-Tunneling können Sie die folgenden Schritte ausfüh
 		http://hn0-myspar:9995
 
 	* **hn0** steht für „headnode0“.
-	* **myspar** sind die ersten fünf Buchstaben des Spark-Clusters.
+	* **myspar** sind die ersten sechs Buchstaben des Namens des Spark-Clusters.
 	* **9995** ist der Port, über den das Zeppelin Notebook zugänglich ist
 
 2. Erstellen Sie ein neues Notebook. Klicken Sie im Headerbereich auf **Notebook**, und wählen Sie die Option **Neue Notiz erstellen** aus.
@@ -330,4 +330,4 @@ Nach dem Einrichten des SSH-Tunneling können Sie die folgenden Schritte ausfüh
 [azure-management-portal]: https://manage.windowsazure.com/
 [azure-create-storageaccount]: ../storage-create-storage-account/
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="12/18/2015"
+   ms.date="01/30/2016"
    ms.author="tarcher" />
 
 # Assistent zur Veröffentlichung einer Azure-Anwendung
@@ -21,7 +21,7 @@
 
 Nachdem Sie eine Webanwendung in Visual Studio entwickelt haben, können Sie diese Anwendung mit dem **Assistenten zum Veröffentlichen einer Azure-Anwendung** leichter in einem Azure-Clouddienst veröffentlichen. Im ersten Abschnitt werden die Schritte erläutert, die Sie ausführen müssen, bevor Sie den Assistenten verwenden. In den verbleibenden Abschnitten werden die Features des Assistenten vorgestellt.
 
->[AZURE.NOTE]In diesem Thema wird die Bereitstellung in Clouddiensten und nicht auf Websites behandelt. Weitere Informationen zum Bereitstellen von Websites finden Sie unter [Bereitstellen einer Azure-Website](https://social.msdn.microsoft.com/Search/windowsazure?query=How%20to%20Deploy%20an%20Azure%20Web%20Site&Refinement=138&ac=4#refinementChanges=117&pageNumber=1&showMore=false).
+>[AZURE.NOTE] In diesem Thema wird die Bereitstellung in Clouddiensten und nicht auf Websites behandelt. Weitere Informationen zum Bereitstellen von Websites finden Sie unter [Bereitstellen einer Azure-Website](https://social.msdn.microsoft.com/Search/windowsazure?query=How%20to%20Deploy%20an%20Azure%20Web%20Site&Refinement=138&ac=4#refinementChanges=117&pageNumber=1&showMore=false).
 
 ## Voraussetzungen
 
@@ -29,13 +29,13 @@ Bevor Sie Ihre Webanwendung in Azure veröffentlichen können, benötigen Sie ei
 
 1. Verschaffen Sie sich ein Microsoft-Konto und ein Azure-Abonnement. [Hier](https://azure.microsoft.com/pricing/free-trial/) können ein einen Monat lang kostenloses Azure-Abonnement bestellen.
 
-1. Erstellen Sie einen Clouddienst und ein Speicherkonto in Azure. Hierzu können Sie den Server-Explorer in Visual Studio oder das [Azure-Verwaltungsportal](http://go.microsoft.com/fwlink/?LinkID=213885) verwenden. Weitere Informationen zum Einrichten Ihrer Azure-Umgebung finden Sie unter [Einrichten von Diensten, die zum Veröffentlichen eines Clouddiensts mit Visual Studio erforderlich sind](vs-azure-tools-publish-azure-application-wizard).
+1. Erstellen Sie einen Clouddienst und ein Speicherkonto in Azure. Hierzu können Sie den Server-Explorer in Visual Studio oder das [Azure-Verwaltungsportal](http://go.microsoft.com/fwlink/?LinkID=213885) verwenden.
 
 1. Aktivieren Sie Ihre Webanwendung für Azure. Damit Ihre Webanwendung aus Visual Studio in Azure veröffentlicht werden kann, müssen Sie sie einem Azure-Clouddienstprojekt in Visual Studio zuordnen. Wenn Sie das zugeordnete Clouddienstprojekt erstellen möchten, öffnen Sie das Kontextmenü für das Projekt für Ihre Webanwendung, und wählen Sie dann **Konvertieren -> In Azure-Clouddienstprojekt konvertieren** aus.
 
 1. Nachdem Sie das Clouddienstprojekt der Projektmappe hinzugefügt haben, öffnen Sie das Kontextmenü erneut, und wählen Sie dann **Veröffentlichen** aus. Weitere Informationen zum Aktivieren von Anwendungen für Azure finden Sie unter [Vorgehensweise: Migrieren und Veröffentlichen einer Webanwendung in einem Azure-Clouddienst aus Visual Studio](https://msdn.microsoft.com/library/azure/hh420322.aspx).
 
->[AZURE.NOTE]Sie müssen Visual Studio mit Administratorrechten aufrufen (Als Administrator ausführen).
+>[AZURE.NOTE] Sie müssen Visual Studio mit Administratorrechten aufrufen (Als Administrator ausführen).
 
 1. Wenn Sie zum Veröffentlichen der Anwendung bereit sind, öffnen Sie das Kontextmenü für das Azure-Clouddienstprojekt, und wählen Sie dann **Veröffentlichen** aus. In den folgenden Schritten wird der Assistent zum Veröffentlichen der Azure-Anwendung gezeigt.
 
@@ -65,7 +65,7 @@ Bevor Sie Ihre Webanwendung in Azure veröffentlichen können, benötigen Sie ei
 
 1. Ändern Sie die Einstellungen, die Sie für diese Bereitstellung verwenden möchten, und veröffentlichen Sie die Bereitstellung dann über die Schaltfläche **Veröffentlichen**. (Im nächsten Abschnitt werden weitere Details zu den verschiedenen Einstellungen erläutert.) Um die Einstellungen vor der Veröffentlichung zu überprüfen, klicken Sie auf **Weiter**.
 
-    >[AZURE.NOTE]Wenn Sie "Veröffentlichen" in diesem Schritt gewählt haben, können Sie den Status dieser Bereitstellung in Visual Studio überwachen.
+    >[AZURE.NOTE] Wenn Sie "Veröffentlichen" in diesem Schritt gewählt haben, können Sie den Status dieser Bereitstellung in Visual Studio überwachen.
 
 Sie können die allgemeinen und erweiterten Einstellungen für eine Bereitstellung mit dem **Assistenten zum Veröffentlichen einer Azure-Anwendung** ändern. Beispielsweise können Sie eine Einstellung wählen, um Ihre Anwendung in einer Testumgebung bereitstellen, bevor Sie sie freigeben. Die folgende Abbildung zeigt die Registerkarte **Allgemeine Einstellungen** für eine Azure-Bereitstellung.
 
@@ -97,7 +97,7 @@ Sie können die allgemeinen und erweiterten Einstellungen für eine Bereitstellu
 
 1. Wählen Sie in der Liste **Speicherkonto** das Speicherkonto aus, das für diese Bereitstellung verwendet werden soll. Vergleichen Sie die Standorte der Datencenter für den Clouddienst und Ihr Speicherkonto. Im Idealfall sollten diese Standorte identisch sein.
 
-    >[AZURE.NOTE]Das Azure-Speicherkonto speichert das Paket für die Bereitstellung der Anwendung. Nach der Bereitstellung der Anwendung wird das Paket aus dem Speicherkonto entfernt.
+    >[AZURE.NOTE] Das Azure-Speicherkonto speichert das Paket für die Bereitstellung der Anwendung. Nach der Bereitstellung der Anwendung wird das Paket aus dem Speicherkonto entfernt.
 
 1. Aktivieren Sie das Kontrollkästchen **Bereitstellungsaktualisierung**, wenn Sie nur aktualisierte Komponenten bereitstellen möchten. Diese Art der Bereitstellung kann schneller als eine vollständige Bereitstellung erfolgen. Wählen Sie den Link **Einstellungen**, um das Dialogfeld **Bereitstellungsaktualisierungs-Einstellungen** zu öffnen, das in der folgenden Abbildung gezeigt wird.
 
@@ -113,7 +113,7 @@ Sie können die allgemeinen und erweiterten Einstellungen für eine Bereitstellu
 2. Aktivieren Sie das Kontrollkästchen **Profilerstellung aktivieren**, und wählen Sie dann den Link **Einstellungen**, um die Profilerstellungsoptionen anzuzeigen und für diese Anwendung ein Profil zu erstellen.
 
 
-    >[AZURE.NOTE]Sie müssen Visual Studio Ultimate verwenden, um entweder IntelliTrace oder die Profilerstellung für die Ebeneninteraktion zu aktivieren. Beide können nicht gleichzeitig aktiviert werden.
+    >[AZURE.NOTE] Sie müssen Visual Studio Ultimate verwenden, um entweder IntelliTrace oder die Profilerstellung für die Ebeneninteraktion zu aktivieren. Beide können nicht gleichzeitig aktiviert werden.
 
     Weitere Informationen finden Sie unter [Debuggen eines veröffentlichten Clouddiensts mit IntelliTrace](https://msdn.microsoft.com/library/azure/ff683671.aspx) und [Visual Studio und Testen der Leistung eines Clouddiensts](https://msdn.microsoft.com/library/azure/hh369930.aspx).
 
@@ -125,13 +125,11 @@ Sie können die allgemeinen und erweiterten Einstellungen für eine Bereitstellu
 
     ![Zusammenfassungsbildschirm des Veröffentlichungs-Assistenten](./media/vs-azure-tools-publish-azure-application-wizard/IC749015.png)
 
-    >[AZURE.NOTE]Das Veröffentlichungsprofil wird im Projektmappen-Explorer in Visual Studio angezeigt. Die Profileinstellungen werden in eine Datei mit der Erweiterung ".azurePubxml" geschrieben. Einstellungen werden als Attribute der XML-Tags gespeichert.
+    >[AZURE.NOTE] Das Veröffentlichungsprofil wird im Projektmappen-Explorer in Visual Studio angezeigt. Die Profileinstellungen werden in eine Datei mit der Erweiterung ".azurePubxml" geschrieben. Einstellungen werden als Attribute der XML-Tags gespeichert.
 
 1. Wählen Sie **Veröffentlichen**, um Ihre Anwendung zu veröffentlichen. Sie können den Prozessstatus im Fenster **Ausgabe** in Visual Studio überwachen.
 
 ## Siehe auch
-
-[Einrichten von Diensten, die zum Veröffentlichen eines Clouddiensts aus Visual Studio erforderlich sind](https://msdn.microsoft.com/library/azure/ff683668.aspx)
 
 [Vorgehensweise: Migrieren und Veröffentlichen einer Webanwendung in einem Azure-Clouddienst aus Visual Studio](https://msdn.microsoft.com/library/azure/hh420322.aspx)
 
@@ -141,4 +139,4 @@ Sie können die allgemeinen und erweiterten Einstellungen für eine Bereitstellu
 
 [Lokales Testen der Leistung eines Cloud-Diensts](https://msdn.microsoft.com/library/azure/hh369930.aspx)
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0204_2016-->

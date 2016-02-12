@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="ne" 
 	ms.topic="article" 
-	ms.date="10/15/2015"  
+	ms.date="01/31/2016"  
 	ms.author="juliako"/>
 
 
@@ -37,7 +37,7 @@ In diesem Lernprogramm wird das klassische Azure-Portal verwendet, um die folgen
 ## Voraussetzungen
 Zum Abschließen dieses Lernprogramms müssen folgende Voraussetzungen erfüllt sein:
 
-- Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](azure.microsoft.com).
+- Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](/pricing/free-trial/?WT.mc_id=A261C142F). 
 - Media Services-Konto. Informationen zum Erstellen eines Media Services-Kontos finden Sie unter [Konto erstellen](media-services-create-account.md).
 - Sie benötigen eine Webcam und einen Encoder, von dem ein Multi-Bitrate-Livedatenstrom gesendet wird.
 
@@ -88,7 +88,7 @@ Wenn der Kanal erstellt wurde, können Sie Erfassungs-URLs abrufen, die Sie dem 
 
 ![ingesturls](./media/media-services-portal-get-started-with-live/media-services-ingest-urls.png)
 
-Weitere Informationen über Erfassungs-URLs finden Sie unter [Verwenden von lokalen Encodern zum Senden von Livestreams mit mehreren Bitraten an einen Kanal](../media-services-channels-overview.md).
+Weitere Informationen über Erfassungs-URLs finden Sie unter [Verwenden von lokalen Encodern zum Senden von Livestreams mit mehreren Bitraten an einen Kanal](media-services-channels-overview.md).
 
 ## Konfigurieren Sie einen Live-Encoder und erfassen Sie Livedatenströme
 
@@ -212,4 +212,4 @@ Wenn dieses Thema nicht die erwarteten Informationen enthält, Informationen feh
 
 <!-- Images -->
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

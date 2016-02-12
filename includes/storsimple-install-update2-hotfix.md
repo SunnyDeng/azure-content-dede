@@ -87,7 +87,7 @@ Führen Sie die folgenden Schritte zum Installieren und Überprüfen der normale
 
 	> [AZURE.NOTE] In manchen Fällen gibt das Cmdlet `False` zurück, wenn das Update noch ausgeführt wird. Um sicherzustellen, dass das Update abgeschlossen ist, warten Sie einige Minuten, führen Sie diesen Befehl erneut aus, und überprüfen Sie, ob `RunInProgress` gleich `False` ist. Wenn dies der Fall ist, wurde das Hotfix abgeschlossen.
 	
-8. Wiederholen Sie nach Abschluss des Softwareupdates die Schritte 3 bis 5, um den SaaS-Agent und den MDS-Agent mit `CisMdsAgentUpdateBundle.exe` zu installieren und zu überwachen. Stellen Sie vor dem Ausführen von `CisMdsAgentUpdateBundle.exe` sicher, dass `HcsMdsSoftwareUpdate.exe` installiert ist.
+8. Wiederholen Sie nach Abschluss des Softwareupdates die Schritte 3 bis 5, um den SaaS-Agent und den MDS-Agent zu installieren und zu überwachen. Stellen Sie vor dem Ausführen von `all-cismdsagentupdatebundle_f98e62f4d56c79e2a6644d027af7a2393a93827a.exe` sicher, dass `all-hcsmdssoftwareupdate_0b438ddf0d5b686aada2378b754fac8c7f2160e9.exe` installiert ist.
 
 9. Überprüfen Sie die Systemsoftwareversionen. Geben Sie Folgendes ein:
 
@@ -103,13 +103,13 @@ Führen Sie die folgenden Schritte zum Installieren und Überprüfen der normale
     
 9. Wiederholen Sie die Schritte 3 bis 5, um die verbleibenden normalen Hotfixes zu installieren und zu überwachen:
 
-	- Den LSI-Treiber mit dem Paket `HcsLsiUpdate.exe` (KB3121900)
-	- Den Storport-Fix mit dem Paket `Storport-KB3080728-x64.msu` (KB3080728)
-	- Den Spaceport-Fix mit dem Paket `spaceport-KB3090322-x64.msu` (KB3090322)
+	- Den LSI-Treiber mit KB3121900
+	- Den Storport-Fix mit KB3080728
+	- Den Spaceport-Fix mit KB3090322
 
 #### So installieren und überprüfen Sie den Hotfix für den Wartungsmodus
 
-Verwenden Sie das Paket `DiskFirmwarePackage.exe` (KB3121899), um die Datenträger-Firmwareupdates zu installieren. Es handelt sich dabei um beeinträchtigende Updates, die ca. 30 Minuten dauern. Sie können diese während eines geplanten Wartungsfensters durch Herstellen einer Verbindung mit der seriellen Konsole des Geräts installieren.
+Verwenden Sie KB3121899, um die Datenträger-Firmwareupdates zu installieren. Es handelt sich dabei um beeinträchtigende Updates, die ca. 30 Minuten dauern. Sie können diese während eines geplanten Wartungsfensters durch Herstellen einer Verbindung mit der seriellen Konsole des Geräts installieren.
 
 Beachten Sie, dass Sie diese Updates nicht installieren müssen, wenn Ihre Datenträger-Firmware bereits auf dem neuesten Stand ist. Führen Sie das `Get-HcsUpdateAvailability`-Cmdlet über die serielle Konsole des Geräts aus. Sie werden benachrichtigt, wenn Updates verfügbar sind und ob diese Updates mit Unterbrechungen (Wartungsmodus-Updates) oder ohne Unterbrechungen (regelmäßige Updates) installiert werden können.
  
@@ -239,4 +239,4 @@ Folgen Sie den Anweisungen unten, um die Datenträger-Firmwareupdates zu install
  
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

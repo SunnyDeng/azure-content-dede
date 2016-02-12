@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/13/2015" 
+	ms.date="02/03/2016" 
 	ms.author="garye;bradsev"/>
 
 
@@ -29,7 +29,7 @@ Um Azure Machine Learning Studio verwenden zu können, benötigen Sie einen Mach
 
 ## Erstellen eines Arbeitsbereichs
 
-1. Melden Sie sich mit Ihrem Microsoft Azure-Konto an.
+1. Melden Sie sich beim [klassischen Microsoft Azure-Portal](https://manage.windowsazure.com/) an.
 2. Klicken Sie im Microsoft Azure-Dienstbereich auf **MACHINE LEARNING**.
 
     ![Machine Learning-Dienst][1]
@@ -41,7 +41,7 @@ Um Azure Machine Learning Studio verwenden zu können, benötigen Sie einen Mach
 
 5. Geben Sie im Feld **ARBEITSBEREICHSNAME** für den Arbeitsbereich einen Namen ein, und legen Sie den **WORKSPACE OWNER** fest. Der Besitzer des Arbeitsbereichs muss einem gültigen Microsoft-Konto entsprechen (z. B. name@outlook.com).
 
-    > [AZURE.NOTE]Später können Sie die Experimente, an denen Sie arbeiten, mit anderen teilen, indem Sie andere Personen zum Arbeitsbereich einladen. Dies können Sie in Machine Learning Studio auf der Seite **EINSTELLUNGEN** vornehmen. Sie benötigen nur das Microsoft-Konto oder Organisationskonto des betreffenden Benutzers.
+    > [AZURE.NOTE] Später können Sie die Experimente, an denen Sie arbeiten, mit anderen teilen, indem Sie andere Personen zum Arbeitsbereich einladen. Dies können Sie in Machine Learning Studio auf der Seite **EINSTELLUNGEN** vornehmen. Sie benötigen nur das Microsoft-Konto oder Organisationskonto des betreffenden Benutzers.
 
 6. Geben Sie den Azure-**SPEICHERORT** ein und geben Sie dann ein vorhandenes Azure-**SPEICHERKONTO** an, oder wählen Sie **Neues Speicherkonto erstellen** aus, um ein neues zu erstellen.
 7. Klicken Sie auf **ML-ARBEITSBEREICH ERSTELLEN**.
@@ -67,4 +67,4 @@ Informationen zum Verwalten des Arbeitsbereichs finden Sie unter [Verwalten eine
 
 <!--Link references-->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0204_2016-->

@@ -86,7 +86,7 @@ Wenn kein Zugriff auf die Anwendung möglich ist, überprüfen Sie Folgendes:
 - Bei virtuellen Computern, die mithilfe der Dienstverwaltungs-API erstellt wurden, muss von der Endpunktkonfiguration für den virtuellen Computer eingehender Datenverkehr, insbesondere das Protokoll (TCP oder UDP) und die öffentlichen und privaten Portnummern, zugelassen werden. Weitere Informationen finden Sie unter [Einrichten von Endpunkten für einen virtuellen Computer](virtual-machines-set-up-endpoints.md).
 - Bei virtuellen Computern, die mithilfe der Dienstverwaltungs-API erstellt wurden, darf eingehender Datenverkehr aus dem Internet nicht durch Zugriffssteuerungslisten (ACLs) auf dem Endpunkt verhindert werden. Weitere Informationen finden Sie unter [Einrichten von Endpunkten für einen virtuellen Computer](virtual-machines-set-up-endpoints.md).
 - Bei virtuellen Computern, die im Ressourcen-Manager erstellt wurden, muss die Konfiguration der eingehenden NAT-Regel eingehenden Datenverkehr zulassen, insbesondere das Protokoll (TCP oder UDP) und die öffentlichen und privaten Portnummern.
-- Netzwerksicherheitsgruppen lassen die eingehende Anforderung und den ausgehende Antwortdatenverkehr zu. Weitere Informationen finden Sie unter [Was ist eine Netzwerksicherheitsgruppe (NSG)?](virtual-networks-nsg.md).
+- Netzwerksicherheitsgruppen lassen die eingehende Anforderung und den ausgehende Antwortdatenverkehr zu. Weitere Informationen finden Sie unter [Was ist eine Netzwerksicherheitsgruppe (NSG)?](../virtual-network/virtual-networks-nsg.md).
 
 Wenn der virtuelle Computer oder der Endpunkt Mitglied einer Gruppe mit Lastenausgleich ist:
 
@@ -125,4 +125,4 @@ Wenn Sie die obigen Schritte in diesem Artikel ausgeführt haben und zur Behebun
 
 [Behandeln von Problemen mit Secure Shell (SSH)-Verbindungen mit einem Linux-basierten virtuellen Azure-Computer](virtual-machines-troubleshoot-ssh-connections.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

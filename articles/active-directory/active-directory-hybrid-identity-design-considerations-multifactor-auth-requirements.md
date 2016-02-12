@@ -20,7 +20,8 @@
 
 In dieser Welt mit ihrem hohen Mobilitätsgrad, in der Benutzer mit allen Geräten auf Daten und Anwendungen in der Cloud zugreifen können, ist der Schutz dieser Daten zu einer sehr wichtigen Aufgabe geworden. Jeden Tag kann man neue Artikel über Sicherheitsverletzungen lesen. Es gibt zwar keinen absoluten Schutz vor diesen Sicherheitsverletzungen, aber die Multi-Factor Authentication bietet eine zusätzliche Sicherheitsebene als Schutz vor Verletzungen dieser Art. Beginnen Sie, indem Sie die Anforderungen des Unternehmens in Bezug auf die Multi-Factor Authentication auswerten. Hierbei geht es um die Daten, die vom Unternehmen geschützt werden sollen. Diese Auswertung ist wichtig, um die technischen Anforderungen zum Einrichten und Aktivieren der Unternehmensbenutzer für die Multi-Factor Authentication zu definieren.
 
->[AZURE.NOTE]Wenn Sie mit MFA und den damit verbundenen Funktionen nicht vertraut sind, empfehlen wir Ihnen dringend, den Artikel [Was ist Azure Multi-Factor Authentication?](multi-factor-authentication.md) zu lesen, bevor Sie mit diesem Abschnitt fortfahren.
+>[AZURE.NOTE]
+Wenn Sie mit MFA und den damit verbundenen Funktionen nicht vertraut sind, empfehlen wir Ihnen dringend, den Artikel [Was ist Azure Multi-Factor Authentication?](../multi-factor-authentication/multi-factor-authentication.md) zu lesen, bevor Sie mit diesem Abschnitt fortfahren.
 
 Beantworten Sie die folgenden Fragen:
 
@@ -57,4 +58,4 @@ Nach der Beantwortung der obigen Fragen wissen Sie, ob lokal bereits eine Multi-
 ## Weitere Informationen
 [Überlegungen zum Entwurf – Übersicht](active-directory-hybrid-identity-design-considerations-overview.md)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0204_2016-->

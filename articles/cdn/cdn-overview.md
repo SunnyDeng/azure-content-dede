@@ -31,7 +31,7 @@ Die Verwendung des CDN zum Zwischenspeichern von Azure-Daten bietet folgende Vor
 - Große verteilte Skalierung, um hohe Lasten etwa zu Beginn eines Ereignisses, z. B. bei einer Produkteinführung, besser verarbeiten zu können 
 
 
->[AZURE.IMPORTANT]Wenn Sie einen CDN-Endpunkt erstellen oder aktivieren, dauert es bis zu 90 Minuten, bis dieser weltweit verfügbar ist.
+>[AZURE.IMPORTANT] Wenn Sie einen CDN-Endpunkt erstellen oder aktivieren, dauert es bis zu 90 Minuten, bis dieser weltweit verfügbar ist.
  
 Wenn eine Anforderung für ein Objekt zuerst an das CDN gerichtet wird, wird das Objekt direkt aus seinem ursprünglichen Speicherort abgerufen. Dieser Ursprung kann ein Azure-Speicherkonto, eine Web-App, ein Cloud-Dienst oder ein beliebiger benutzerdefinierter Ursprung, der öffentlichen Webanforderungen akzeptiert, sein. Bei einer Anforderung mit der CDN-Syntax wird die Anforderung zum CDN-Endpunkt umgeleitet, der dem Standort am nächsten ist, von dem die Anforderung gestellt wurde, um auf das Objekt zuzugreifen. Wenn das Objekt an diesem Endpunkt nicht gefunden wird, wird es aus dem Dienst abgerufen und am Endpunkt zwischengespeichert, wobei eine Einstellung für Gültigkeitsdauer für das zwischengespeicherte Objekt verwaltet wird.
 
@@ -44,7 +44,7 @@ Der CDN-Tarif „Standard“ enthält die folgenden Features:
 - [Unterstützung benutzerdefinierter Domänennamen](cdn-map-content-to-custom-domain.md)
 - [Länderfilter](cdn-restrict-access-by-country.md)
 - [Wichtige Analysen](cdn-analyze-usage-patterns.md)
-- [Benutzerdefinierter Inhaltsursprung](cdn-map-content-to-custom-domain.md)
+- [Benutzerdefinierter Inhaltsursprung](cdn-how-to-use-cdn.md#caching-content-from-custom-origins)
 - [HTTPS-Unterstützung](cdn-how-to-use-cdn.md#accessing-cached-content-over-https)
 - Lastenausgleich
 - DDoS-Schutz
@@ -61,4 +61,4 @@ Der CDN-Tarif „Premium“ beinhaltet alle Funktionen des Standard-Tarifs und f
 - [Erweiterte HTTP-Berichte](cdn-advanced-http-reports.md)
 - [Echtzeitstatistiken](cdn-real-time-stats.md)
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0204_2016-->

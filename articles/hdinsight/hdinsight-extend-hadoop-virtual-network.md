@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="01/13/2016"
+   ms.date="01/29/2016"
    ms.author="larryfr"/>
 
 
@@ -64,34 +64,47 @@ Weitere Informationen zu Features, Vorteilen und Funktionen von virtuellen Netzw
 
 > [AZURE.IMPORTANT] Zum Erstellen eines HDInsight-Clusters in einem Virtual Network sind bestimmte Virtual Network-Konfigurationen erforderlich, die in diesem Abschnitt beschrieben werden.
 
-* Azure HDInsight unterstützt nur standortbasierte virtuelle Netzwerke und kann momentan nicht mit affinitätsgruppenbasierten virtuellen Netzwerken verwendet werden. 
+###Standortbasierte virtuelle Netzwerke
 
-* Es wird empfohlen, jeweils ein einzelnes Subnetz für die einzelnen HDInsight-Cluster zu erstellen.
+Azure HDInsight unterstützt nur standortbasierte virtuelle Netzwerke und kann momentan nicht mit affinitätsgruppenbasierten virtuellen Netzwerken verwendet werden.
 
-* Für Windows-basierte Cluster ist ein virtuelles Azure-Netzwerk der Version 1 (klassisch) erforderlich, für Linux-basierte Cluster dagegen ein virtuelles Azure-Netzwerk der Version 2 (Azure-Ressourcen-Manager). Wenn nicht der richtige Netzwerktyp vorhanden ist, kann das Netzwerk nicht zum Erstellen des Clusters verwendet werden.
+###Subnetze
 
-    Wenn sich Ressourcen in einem virtuellen Netzwerk befinden, das nicht von dem zu erstellenden Cluster verwendet werden kann, dann können Sie ein neues virtuelles Netzwerk erstellen, das vom Cluster verwendet werden kann, und es mit dem inkompatiblen virtuellen Netzwerk verbinden. Anschließend können Sie den Cluster in der erforderlichen Netzwerkversion erstellen, und da die beiden Netzwerke verknüpft sind, kann auf die Ressourcen im anderen Netzwerk zugegriffen werden. Weitere Informationen zum Herstellen einer Verbindung zwischen klassischen und neuen virtuellen Netzwerken finden Sie unter [Herstellen einer Verbindung zwischen klassischen VNets und neuen VNets](../virtual-network/virtual-networks-arm-asm-s2s.md).
+Es wird empfohlen, jeweils ein einzelnes Subnetz für die einzelnen HDInsight-Cluster zu erstellen.
 
-* HDInsight wird nicht für Azure Virtual Networks unterstützt, bei denen der Zugriff auf das bzw. aus dem Internet explizit eingeschränkt ist. Ein Beispiel hierfür ist die Verwendung von Netzwerksicherheitsgruppen oder ExpressRoute zum Blockieren von Internetdatenverkehr zu Ressourcen im Virtual Network. Der HDInsight-Dienst ist ein verwalteter Dienst, der während der Bereitstellung und Ausführung Internetzugriff benötigt. Azure muss die Integrität des Clusters überprüfen, das Failover von Clusterressourcen initiieren und andere automatisierte Verwaltungsaufgaben durchführen können.
+###Klassisches oder virtuelles Netzwerk der Version 2
 
-    Wenn Sie HDInsight in einem virtuellen Netzwerk verwenden möchten, für das der Internetdatenverkehr blockiert wird, haben Sie folgende Möglichkeiten:
+Für Windows-basierte Cluster ist ein virtuelles Azure-Netzwerk der Version 1 (klassisch) erforderlich, für Linux-basierte Cluster dagegen ein virtuelles Azure-Netzwerk der Version 2 (Azure-Ressourcen-Manager). Wenn nicht der richtige Netzwerktyp vorhanden ist, kann das Netzwerk nicht zum Erstellen des Clusters verwendet werden.
 
-    1. Erstellen Sie innerhalb des Virtual Network ein neues Subnetz. Standardmäßig kann das neue Subnetz mit dem Internet kommunizieren. Dadurch kann HDInsight in diesem Subnetz installiert werden. Da sich das neue Subnetz im gleichen virtuellen Netzwerk wie die geschützten Subnetze befindet, kann es auch mit Ressourcen kommunizieren, die dort installiert sind.
+Wenn sich Ressourcen in einem virtuellen Netzwerk befinden, das nicht von dem zu erstellenden Cluster verwendet werden kann, dann können Sie ein neues virtuelles Netzwerk erstellen, das vom Cluster verwendet werden kann, und es mit dem inkompatiblen virtuellen Netzwerk verbinden. Anschließend können Sie den Cluster in der erforderlichen Netzwerkversion erstellen, und da die beiden Netzwerke verknüpft sind, kann auf die Ressourcen im anderen Netzwerk zugegriffen werden. Weitere Informationen zum Herstellen einer Verbindung zwischen klassischen und neuen virtuellen Netzwerken finden Sie unter [Herstellen einer Verbindung zwischen klassischen VNets und neuen VNets](../virtual-network/virtual-networks-arm-asm-s2s.md).
+
+###Geschützte virtuelle Netzwerke
+
+HDInsight wird nicht für Azure Virtual Networks unterstützt, bei denen der Zugriff auf das bzw. aus dem Internet explizit eingeschränkt ist. Ein Beispiel hierfür ist die Verwendung von Netzwerksicherheitsgruppen oder ExpressRoute zum Blockieren von Internetdatenverkehr zu Ressourcen im Virtual Network. Der HDInsight-Dienst ist ein verwalteter Dienst, der während der Bereitstellung und Ausführung Internetzugriff benötigt. Azure muss die Integrität des Clusters überprüfen, das Failover von Clusterressourcen initiieren und andere automatisierte Verwaltungsaufgaben durchführen können.
+
+Wenn Sie HDInsight in einem virtuellen Netzwerk verwenden möchten, für das der Internetdatenverkehr blockiert wird, haben Sie folgende Möglichkeiten:
+
+1. Erstellen Sie innerhalb des Virtual Network ein neues Subnetz. Standardmäßig kann das neue Subnetz mit dem Internet kommunizieren. Dadurch kann HDInsight in diesem Subnetz installiert werden. Da sich das neue Subnetz im gleichen virtuellen Netzwerk wie die geschützten Subnetze befindet, kann es auch mit Ressourcen kommunizieren, die dort installiert sind.
+
+2. Erstellen Sie den HDInsight-Cluster. Wenn Sie die Einstellungen des virtuellen Netzwerks für den Cluster konfigurieren, wählen Sie das Subnetz aus, das Sie in Schritt 1 erstellt haben.
+
+> [AZURE.NOTE] In den zuvor genannten Schritten wird davon ausgegangen, dass Sie die Kommunikation mit IP-Adressen _im IP-Adressbereich des virtuellen Netzwerks_ nicht eingeschränkt haben. Falls doch, müssen Sie diese Einschränkungen so ändern, dass eine Kommunikation mit dem neuen Subnetz zulässig ist.
+
+Wenn Sie nicht sicher sind, ob Sie auf das Subnetz, in dem Sie HDInsight installieren möchten, Einschränkungen angewendet haben, oder Einschränkungen des Subnetzes aufheben möchten, führen Sie die folgenden Schritte aus:
+
+1. Öffnen Sie das [Azure-Portal](https://portal.azure.com).
+
+2. Wählen Sie das virtuelle Netzwerk aus.
+
+3. Wählen Sie __Eigenschaften__ aus.
+
+4. Wählen Sie __Subnetze__ und dann das jeweilige Subnetz aus. Auf dem Blatt dieses Subnetzes sind die Einträge __Netzwerksicherheitsgruppe__ und __Routentabelle__ auf __Keine__ festgelegt, wenn keine Einschränkungen gelten.
+
+    Falls Einschränkungen vorliegen, können Sie diese aufheben, indem Sie den Eintrag __Netzwerksicherheitsgruppe__ oder __Routentabelle__ und dann __Keine__ auswählen. Wählen Sie abschließend __Speichern__ auf dem Blatt „Subnetz“ aus, um die Änderungen zu speichern.
     
-    2. Mithilfe der folgenden PowerShell-Anweisungen können Sie bestätigen, dass keine bestimmte Netzwerksicherheitsgruppe oder Routentabelle dem Subnetz zugeordnet ist. Ersetzen Sie __VIRTUALNETWORKNAME__ durch den Namen Ihres virtuellen Netzwerks, __GROUPNAME__ durch den Namen der Ressourcengruppe mit dem virtuellen Netzwerk und __SUBNET__ durch den Namen des Subnetzes.
-        
-            $vnet = Get-AzureRmVirtualNetwork -Name VIRTUALNETWORKNAME -ResourceGroupName GROUPNAME
-            $vnet.Subnets | Where-Object Name -eq "SUBNET"
-            
-        Beachten Sie in den Ergebnissen, dass __NetworkSecurityGroup__ und __RouteTable__ beide `null` sind.
-    
-    2. Erstellen Sie den HDInsight-Cluster. Wenn Sie die Einstellungen des virtuellen Netzwerks für den Cluster konfigurieren, wählen Sie das Subnetz aus, das Sie in Schritt 1 erstellt haben.
+    ![Abbildung des Blatts „Subnetz“ und der ausgewählten Netzwerksicherheitsgruppe](./media/hdinsight-extend-hadoop-virtual-network/subnetnsg.png)
 
-    > [AZURE.NOTE] In den zuvor genannten Schritten wird davon ausgegangen, dass Sie die Kommunikation mit IP-Adressen _im IP-Adressbereich des virtuellen Netzwerks_ nicht eingeschränkt haben. Falls doch, müssen Sie diese Einschränkungen so ändern, dass eine Kommunikation mit dem neuen Subnetz zulässig ist.
-
-    Weitere Informationen zu Netzwerksicherheitsgruppen finden Sie unter [Übersicht über Netzwerksicherheitsgruppen](../virtual-network/virtual-networks-nsg.md). Informationen zum Steuern des Routings in einem Azure Virtual Network finden Sie unter [Benutzerdefinierte Routen und IP-Weiterleitung](../virtual-network/virtual-networks-udr-overview.md).
-
-Weitere Informationen zur Bereitstellung eines HDInsight-Clusters in einem virtuellen Netzwerk finden Sie unter [Bereitstellen von Hadoop-Clustern in HDInsight](hdinsight-provision-clusters.md).
+Weitere Informationen zu Netzwerksicherheitsgruppen finden Sie unter [Übersicht über Netzwerksicherheitsgruppen](../virtual-network/virtual-networks-nsg.md). Informationen zum Steuern des Routings in einem Azure Virtual Network finden Sie unter [Benutzerdefinierte Routen und IP-Weiterleitung](../virtual-network/virtual-networks-udr-overview.md).
 
 ##<a id="tasks"></a>Aufgaben und Informationen
 
@@ -199,4 +212,4 @@ In den folgenden Beispielen wird die Verwendung von HDInsight mit Azure Virtual 
 
 Weitere Informationen zu virtuellen Azure Virtual-Netzwerken finden Sie unter [Überblick über Azure Virtual Network](../virtual-network/virtual-networks-overview.md).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

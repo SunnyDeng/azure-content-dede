@@ -31,7 +31,7 @@ Sie können ein Volume aus einer lokalen oder aus einer Cloudsicherung wiederher
 
 Bevor Sie einen Wiederherstellungsvorgang initiieren, sollten Sie Folgendes beachten:
 
-- **Das Volume muss offline geschaltet werden**. Schalten Sie das Volume sowohl auf dem Host als auch auf dem Gerät offline, bevor Sie die Wiederherstellung initiieren. Auch wenn das Volume durch die Wiederherstellung automatisch auf dem Gerät online geschaltet wird, müssen Sie das Gerät auf dem Host manuell online schalten. Sie können das Volume auf dem Host online schalten, sobald das Volume auf dem Gerät online ist. (Sie müssen nicht warten, bis die Wiederherstellung abgeschlossen ist.) Anleitungen hierzu finden Sie unter [Offlienschalten von Volumes](storsimple-manage-volumes.md#take-a-volume-offline)
+- **Das Volume muss offline geschaltet werden**. Schalten Sie das Volume sowohl auf dem Host als auch auf dem Gerät offline, bevor Sie die Wiederherstellung initiieren. Auch wenn das Volume durch die Wiederherstellung automatisch auf dem Gerät online geschaltet wird, müssen Sie das Gerät auf dem Host manuell online schalten. Sie können das Volume auf dem Host online schalten, sobald das Volume auf dem Gerät online ist. (Sie müssen nicht warten, bis die Wiederherstellung abgeschlossen ist.) Anleitungen hierzu finden Sie unter [Offlineschalten von Volumes](storsimple-manage-volumes-u2.md#take-a-volume-offline)
 
 - **Volumetyp nach der Wiederherstellung**: Gelöschte Volumes werden basierend auf dem Typ in der Momentaufnahme wiederhergestellt; das heißt, lokale Volumes werden als lokale Volumes wiederhergestellt, und mehrstufige Volumes werden als mehrstufige Volumes wiederhergestellt.
 
@@ -45,7 +45,7 @@ Bevor Sie einen Wiederherstellungsvorgang initiieren, sollten Sie Folgendes beac
 
 - **Sie können eine Sicherung ausführen, während Sie ein lokales Volume wiederherstellen**. Verfahren finden Sie unter [Verwalten von Sicherungsrichtlinien mithilfe des StorSimple Manager-Diensts](storsimple-manage-backup-policies.md).
 
-- **Sie können einen Wiederherstellungsvorgang abbrechen**. Wenn Sie den Wiederherstellungsauftrag abbrechen, wird das Volume in den Zustand zurückversetzt, in dem es sich vor dem Start des Wiederherstellungsvorgangs befand. Verfahren hierzu finden Sie unter [Abbrechen eines Auftrags](storsimple-manage-jobs.md#cancel-a-job).
+- **Sie können einen Wiederherstellungsvorgang abbrechen**. Wenn Sie den Wiederherstellungsauftrag abbrechen, wird das Volume in den Zustand zurückversetzt, in dem es sich vor dem Start des Wiederherstellungsvorgangs befand. Verfahren hierzu finden Sie unter [Abbrechen eines Auftrags](storsimple-manage-jobs-u2.md#cancel-a-job).
 
 ## So verwenden Sie den Sicherungskatalog
 
@@ -71,7 +71,7 @@ Sie können Ihr StorSimple-Volume auf der Seite **Sicherungskatalog** aus einer 
 
 ### So stellen Sie Ihr Volume wieder her
 
-1. Klicken Sie auf der Seite des StorSimple-Manager-Diensts auf die Registerkarte **Sicherungskatalog**.
+1. Klicken Sie auf der Seite des StorSimple Manager-Diensts auf die Registerkarte **Sicherungskatalog**.
 
     ![Sicherungskatalog](./media/storsimple-restore-from-backup-set-u2/HCS_Restore.png)
 
@@ -113,6 +113,6 @@ Um den Wiederherstellungsvorgang erfolgreich abzuschließen, schalten Sie das Vo
 
 - Erfahren Sie, wie Sie [StorSimple-Volumes verwalten](storsimple-manage-volumes-u2.md).
 
-- Erfahren Sie, wie Sie [Ihr StorSimple-Gerät mithilfe des StorSimple Manager-Diensts verwalten](storsimple-manager-service-administration-u2.md).
+- Erfahren Sie, wie Sie [Ihr StorSimple-Gerät mithilfe des StorSimple Manager-Diensts verwalten](storsimple-manager-service-administration.md).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

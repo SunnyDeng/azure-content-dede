@@ -13,7 +13,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="tbd" 
-	ms.date="12/11/2015" 
+	ms.date="02/03/2015" 
 	ms.author="bradsev;ankarloff" />
 
 
@@ -115,7 +115,8 @@ Innerhalb des**Modul**-Elements können Sie ein optionales **Besitzer**-Element 
 * Der Inhalt des **Beschreibungs**-Elements darf 128 Zeichen nicht überschreiten.
 * Der Inhalt des **Besitzer**-Elements darf 32 Zeichen nicht überschreiten.
 
-**Gibt an, ob die Ergebnisse eines Moduls deterministisch oder nicht deterministisch sind.
+
+**Anzeigen, ob die Ergebnisse eines Moduls deterministisch oder nicht deterministisch sind**
 
 Standardmäßig gelten alle Module als deterministisch. Das heißt, bei einer unveränderlichen Gruppe von Parametern sollte das Modul jedes Mal, wenn es ausgeführt wird, die gleichen Ergebnisse zurückgeben. Bei diesem Verhalten wird Azure Machine Learning Studio die Module nicht erneut ausführen, die als deterministisch gekennzeichnet sind, es sei denn, ein Parameter oder die Eingabedaten haben sich geändert. Zwischengespeicherte Ergebnisse werden zurückgegeben, wodurch Experimente schneller ausgeführt werden.
 
@@ -171,8 +172,6 @@ Für benutzerdefinierte R-Module muss die ID für einen Zip-Port nicht mit den P
 	</Output>
 
 Für Ausgaben in benutzerdefinierten R-Modulen muss der Wert des **ID**-Attributs mit nichts im R-Skript übereinstimmen, jedoch eindeutig sein. Für ein einzelne Modulausgabe muss der Rückgabewert der R-Funktion ein *data.frame* sein. Um mehr als ein Objekt eines unterstützten Datentyps auszugeben, müssen die entsprechende Ausgangs-Ports in der XML-Definitionsdatei angegeben und die Objekte als Liste zurückgegeben werden. Die Ausgangsobjekte werden den Ausgangs-Ports von links nach rechts zugewiesen und entsprechen der Reihenfolge, in der die Objekte in der zurückgegebenen Liste platziert werden.
- 
-Wenn Sie beispielsweise "Dataset", "Dataset1" und "Dataset2" von links nach rechts an die Ausgabe-Ports dataset, dataset1 und dataset2 ausgeben möchten, definieren Sie die Ausgabe-Ports in der Datei "CustomAddRows.xml" wie folgt:
 
 Wenn Sie beispielsweise das Moul **Custom Add Rows** ändern möchten, um die ursprünglichen beiden DataSets, *dataset1* und *dataset2*, zusätzlich zu den beiden neu verknüpften *DataSets* ausgeben möchten (in Reihenfolge von links nach rechts als *dataset*, *dataset1*, *dataset2*), definieren Sie die Ausgabe-Ports in der Datei „CustomAddRows.xml“ wie folgt:
 
@@ -364,4 +363,4 @@ Die Ausführungsumgebung für das R-Skript verwendet die gleiche Version von R w
 
  
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0204_2016-->

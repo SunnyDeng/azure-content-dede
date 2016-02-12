@@ -4,7 +4,7 @@
    services="virtual-network"
    documentationCenter=""
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor=""
    tags="azure-resource-manager,azure-service-management"/>
 
@@ -68,4 +68,4 @@ Sie können Azure-Ressourcen auf Windows-, OS X- oder Linux-Computern über die 
 - Erlernen Sie das [Entwerfen von Vorlagen](/best-practices-resource-manager-design-templates.md).
 - Wenden Sie [bewährte Methoden](/best-practices-resource-manager-examples.md) an.
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

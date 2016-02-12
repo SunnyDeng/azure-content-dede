@@ -13,7 +13,7 @@
     ms.topic="article" 
     ms.tgt_pltfrm="NA" 
     ms.workload="data-services" 
-    ms.date="10/28/2015" 
+    ms.date="02/01/2016" 
     ms.author="anhoh"/>
 
 #Herstellen einer Verbindung zwischen DocumentDB und Azure Search unter Verwendung von Indexern
@@ -88,7 +88,7 @@ Wenn Zeilen aus der Quelltabelle gelöscht werden, sollten Sie diese Zeilen auch
         "softDeleteMarkerValue" : "the value that identifies a document as deleted" 
     }
 
-> [AZURE.NOTE]Sie müssen die Eigenschaft in Ihre SELECT-Klausel einbeziehen, wenn Sie eine benutzerdefinierte Projektion verwenden.
+> [AZURE.NOTE] Sie müssen die Eigenschaft in Ihre SELECT-Klausel einbeziehen, wenn Sie eine benutzerdefinierte Projektion verwenden.
 
 ###<a id="CreateDataSourceExample"></a>Beispiel für Anforderungstext
 
@@ -121,7 +121,7 @@ Sie erhalten die Antwort "HTTP 201 Created", wenn die Datenquelle erfolgreich er
 
 ##<a id="CreateIndex"></a>Schritt 2: Erstellen eines Index
 
-Erstellen Sie einen Azure Search-Zielindex, wenn Sie bislang noch über keinen verfügen. Sie können dies auf der [klassischen Azure-Portal-Benutzeroberfläche](../search/search-get-started.md#test-service-operations) tun, oder indem Sie [Index-API erstellen](https://msdn.microsoft.com/library/azure/dn798941.aspx) verwenden.
+Erstellen Sie einen Azure Search-Zielindex, wenn Sie bislang noch über keinen verfügen. Sie können dies auf der [Azure-Portal-Benutzeroberfläche](../search/search-get-started.md#test-service-operations) tun, oder indem Sie [Index-API erstellen](https://msdn.microsoft.com/library/azure/dn798941.aspx) verwenden.
 
 	POST https://[Search service name].search.windows.net/indexes?api-version=[api-version]
 	Content-Type: application/json
@@ -270,4 +270,4 @@ Glückwunsch! Sie wissen nun, wie Azure DocumentDB mit Azure Search unter Verwen
  - Weitere Informationen zu Azure Search finden Sie auf der [Seite des Search-Diensts](https://azure.microsoft.com/services/search/).
  
 
-<!---HONumber=AcomDC_0107_2016--->
+<!---HONumber=AcomDC_0204_2016-->

@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="multiple"
-   ms.date="12/19/2015"
+   ms.date="01/30/2016"
    ms.author="tarcher" />
 
 # Konfigurieren der Rollen für einen Azure-Clouddienst mit Visual Studio
@@ -51,7 +51,7 @@ Sie können einen Azure-Clouddienst vom Projektmappen-Explorer in Visual Studio 
 
     Wenn Sie alle Dienstkonfigurationen für diese Rolle ändern möchten, können Sie **Alle Konfigurationen** auswählen.
 
-    >[AZURE.IMPORTANT]Wenn Sie eine bestimmte Dienstkonfiguration auswählen, sind einige Eigenschaften deaktiviert, da sie nur für alle Konfigurationen festgelegt werden können. Um diese Eigenschaften zu bearbeiten, müssen Sie "Alle Konfigurationen" auswählen.
+    >[AZURE.IMPORTANT] Wenn Sie eine bestimmte Dienstkonfiguration auswählen, sind einige Eigenschaften deaktiviert, da sie nur für alle Konfigurationen festgelegt werden können. Um diese Eigenschaften zu bearbeiten, müssen Sie "Alle Konfigurationen" auswählen.
 
     Sie können jetzt eine Registerkarte auswählen, um alle aktivierten Eigenschaften in dieser Ansicht zu aktualisieren.
 
@@ -65,11 +65,11 @@ Um die Leistung des Clouddiensts zu verbessern, können Sie die Anzahl der ausge
 
 1. Wählen Sie in der Liste **Dienstkonfiguration** die Dienstkonfiguration aus, die Sie aktualisieren möchten.
 
-    >[AZURE.NOTE]Sie können die Instanzenanzahl für eine bestimmte Dienstkonfiguration oder für alle Dienstkonfigurationen festlegen.
+    >[AZURE.NOTE] Sie können die Instanzenanzahl für eine bestimmte Dienstkonfiguration oder für alle Dienstkonfigurationen festlegen.
 
 1. Geben Sie im Textfeld **Instanzenanzahl** die Anzahl der Instanzen ein, die Sie für diese Rolle starten möchten.
 
-    >[AZURE.NOTE]Jede Instanz wird auf einem separaten virtuellen Computer ausgeführt, wenn Sie Ihren Clouddienst in Azure veröffentlichen.
+    >[AZURE.NOTE] Jede Instanz wird auf einem separaten virtuellen Computer ausgeführt, wenn Sie Ihren Clouddienst in Azure veröffentlichen.
 
 1. Wählen Sie auf der Symbolleiste die Schaltfläche **Speichern** aus, um diese Änderungen in der Dienstkonfigurationsdatei zu speichern.
 
@@ -77,7 +77,7 @@ Um die Leistung des Clouddiensts zu verbessern, können Sie die Anzahl der ausge
 
 Sie können Verbindungszeichenfolgen für Ihre Dienstkonfigurationen hinzufügen, entfernen oder ändern. Möglicherweise möchten Sie verschiedene Verbindungszeichenfolgen für verschiedene Dienstkonfigurationen verwenden. Beispielsweise möchten Sie eine lokale Verbindungszeichenfolge für eine lokale Dienstkonfiguration mit dem Wert `UseDevelopmentStorage=true` festlegen. Sie können auch eine Clouddienstkonfiguration konfigurieren, die ein Speicherkonto in Azure verwendet.
 
->[AZURE.CAUTION]Wenn Sie die Schlüsselinformationen eines Azure-Speicherkontos für eine Speicherkonto-Verbindungszeichenfolge eingeben, werden diese Informationen lokal in der Dienstkonfigurationsdatei gespeichert. Diese Informationen werden jedoch derzeit nicht als verschlüsselter Text gespeichert.
+>[AZURE.CAUTION] Wenn Sie die Schlüsselinformationen eines Azure-Speicherkontos für eine Speicherkonto-Verbindungszeichenfolge eingeben, werden diese Informationen lokal in der Dienstkonfigurationsdatei gespeichert. Diese Informationen werden jedoch derzeit nicht als verschlüsselter Text gespeichert.
 
 Wenn Sie verschiedene Werte für die einzelnen Dienstkonfigurationen verwenden, müssen Sie nicht verschiedene Verbindungszeichenfolgen im Clouddienst verwenden oder Ihren Code ändern, wenn Sie Ihren Clouddienst in Azure veröffentlichen. Im Code können Sie denselben Namen für die Verbindungszeichenfolge verwenden. Der Wert unterscheidet sich basierend auf der Dienstkonfiguration, die Sie auswählen, wenn Sie einen Clouddienst erstellen oder veröffentlichen.
 
@@ -87,7 +87,7 @@ Wenn Sie verschiedene Werte für die einzelnen Dienstkonfigurationen verwenden, 
 
 1. Wählen Sie in der Liste **Dienstkonfiguration** die Dienstkonfiguration aus, die Sie aktualisieren möchten.
 
-    >[AZURE.NOTE]Sie können Verbindungszeichenfolgen für eine bestimmte Dienstkonfiguration aktualisieren. Wenn Sie jedoch eine Verbindungszeichenfolge hinzufügen oder löschen möchten, müssen Sie "Alle Konfigurationen" auswählen.
+    >[AZURE.NOTE] Sie können Verbindungszeichenfolgen für eine bestimmte Dienstkonfiguration aktualisieren. Wenn Sie jedoch eine Verbindungszeichenfolge hinzufügen oder löschen möchten, müssen Sie "Alle Konfigurationen" auswählen.
 
 1. Wenn Sie eine Verbindungszeichenfolge hinzufügen möchten, wählen Sie die Schaltfläche **Einstellung hinzufügen** aus. Der Liste wird ein neuer Eintrag hinzugefügt.
 
@@ -147,7 +147,7 @@ Wenn Sie verschiedene Werte für die einzelnen Dienstkonfigurationen verwenden, 
 
 1. Wählen Sie in der Liste **Dienstkonfiguration** die Dienstkonfiguration aus, die Sie aktualisieren möchten.
 
-    >[AZURE.NOTE]Sie können Zeichenfolgen für eine bestimmte Dienstkonfiguration aktualisieren. Wenn Sie jedoch eine Zeichenfolge hinzufügen oder löschen möchten, müssen Sie **Alle Konfigurationen** auswählen.
+    >[AZURE.NOTE] Sie können Zeichenfolgen für eine bestimmte Dienstkonfiguration aktualisieren. Wenn Sie jedoch eine Zeichenfolge hinzufügen oder löschen möchten, müssen Sie **Alle Konfigurationen** auswählen.
 
 1. Wenn Sie eine Zeichenfolge hinzufügen möchten, wählen Sie die Schaltfläche **Einstellung hinzufügen** aus. Der Liste wird ein neuer Eintrag hinzugefügt.
 
@@ -183,7 +183,7 @@ Wenn Sie verschiedene Werte für die einzelnen Dienstkonfigurationen verwenden, 
 
 ## Verwalten von lokalem Speicher für jede Rolleninstanz
 
-Sie können lokalen Dateisystemspeicher für jede Instanz einer Rolle hinzufügen. Hier können Sie die lokalen Daten speichern, auf die nicht von anderen Rollen zugegriffen werden muss. Alle Daten, die nicht im Tabellen-, Blob- oder SQL-Datenbankspeicher gespeichert werden müssen, können hier abgelegt werden. Beispielsweise können Sie diesen lokalen Speicher zum Zwischenspeichern von Daten verwenden, die möglicherweise erneut verwendet werden müssen. Auf diese gespeicherten Daten kann nicht von anderen Instanzen einer Rolle zugegriffen werden. Weitere Informationen zu lokalen Speicherressourcen finden Sie unter [Konfigurieren lokaler Speicherressourcen](cloud-services-configure-local-storage-resources.md).
+Sie können lokalen Dateisystemspeicher für jede Instanz einer Rolle hinzufügen. Hier können Sie die lokalen Daten speichern, auf die nicht von anderen Rollen zugegriffen werden muss. Alle Daten, die nicht im Tabellen-, Blob- oder SQL-Datenbankspeicher gespeichert werden müssen, können hier abgelegt werden. Beispielsweise können Sie diesen lokalen Speicher zum Zwischenspeichern von Daten verwenden, die möglicherweise erneut verwendet werden müssen. Auf diese gespeicherten Daten kann nicht von anderen Instanzen einer Rolle zugegriffen werden. Weitere Informationen zu lokalen Speicherressourcen finden Sie unter [Konfigurieren lokaler Speicherressourcen](/cloud-services/cloud-services-configure-local-storage-resources.md).
 
 Die Einstellungen des lokalen Speichers gelten für alle Dienstkonfigurationen. Sie können lokalen Speicher nur für alle Dienstkonfigurationen hinzufügen, entfernen oder ändern.
 
@@ -253,7 +253,7 @@ Die Einstellungen des lokalen Speichers gelten für alle Dienstkonfigurationen. 
 
 Sie können Diagnosedaten für den Azure-Clouddienst sammeln. Diese Daten werden einem Speicherkonto hinzugefügt. Möglicherweise möchten Sie verschiedene Verbindungszeichenfolgen für verschiedene Dienstkonfigurationen verwenden. Beispielsweise möchten Sie ein lokales Speicherkonto für eine lokale Dienstkonfiguration mit dem Wert "UseDevelopmentStorage=true" einrichten. Sie können auch eine Clouddienstkonfiguration konfigurieren, die ein Speicherkonto in Azure verwendet. Weitere Informationen zur Azure-Diagnose finden Sie unter "Sammeln von Protokollierungsdaten mit der Azure-Diagnose".
 
->[AZURE.NOTE]Die lokale Dienstkonfiguration ist bereits für die Verwendung lokaler Ressourcen konfiguriert. Wenn Sie die Clouddienstkonfiguration für die Veröffentlichung Ihres Azure-Clouddienst verwenden, wird die Verbindungszeichenfolge, die Sie beim Veröffentlichen angeben, auch für die Diagnoseverbindungszeichenfolge verwendet, es sei denn, Sie haben eine Verbindungszeichenfolge angegeben. Wenn Sie Ihren Clouddienst mithilfe von Visual Studio paketieren, wird die Verbindungszeichenfolge in der Dienstkonfiguration nicht geändert.
+>[AZURE.NOTE] Die lokale Dienstkonfiguration ist bereits für die Verwendung lokaler Ressourcen konfiguriert. Wenn Sie die Clouddienstkonfiguration für die Veröffentlichung Ihres Azure-Clouddienst verwenden, wird die Verbindungszeichenfolge, die Sie beim Veröffentlichen angeben, auch für die Diagnoseverbindungszeichenfolge verwendet, es sei denn, Sie haben eine Verbindungszeichenfolge angegeben. Wenn Sie Ihren Clouddienst mithilfe von Visual Studio paketieren, wird die Verbindungszeichenfolge in der Dienstkonfiguration nicht geändert.
 
 ### So erfassen Sie Clouddienst-Diagnoseinformationen
 
@@ -261,7 +261,7 @@ Sie können Diagnosedaten für den Azure-Clouddienst sammeln. Diese Daten werden
 
 1. Wählen Sie in der Liste **Dienstkonfiguration** die Dienstkonfiguration aus, die Sie aktualisieren möchten, oder wählen Sie **Alle Konfigurationen** aus.
 
-    >[AZURE.NOTE]Sie können das Speicherkonto für eine bestimmte Dienstkonfiguration aktualisieren. Wenn Sie jedoch die Diagnose aktivieren oder deaktivieren möchten, müssen Sie "Alle Konfigurationen" auswählen.
+    >[AZURE.NOTE] Sie können das Speicherkonto für eine bestimmte Dienstkonfiguration aktualisieren. Wenn Sie jedoch die Diagnose aktivieren oder deaktivieren möchten, müssen Sie "Alle Konfigurationen" auswählen.
 
 1. Um die Diagnose zu aktivieren, aktivieren Sie das Kontrollkästchen **Diagnose aktivieren**.
 
@@ -293,7 +293,7 @@ Sie können Diagnosedaten für den Azure-Clouddienst sammeln. Diese Daten werden
 
 ## Ändern der Größe des virtuellen Computers, der für die einzelnen Rollen verwendet wird
 
-Sie können die Größe der virtuellen Computer für die einzelnen Rollen festlegen. Sie können diese Größe nur für alle Dienstkonfigurationen festlegen. Wenn Sie eine geringere Computergröße auswählen, werden weniger CPU-Kerne, weniger Arbeitsspeicher und weniger lokaler Festplattenspeicher zugewiesen. Die zugewiesene Bandbreite ist ebenfalls kleiner. Weitere Informationen zu diesen Größen und den zugewiesenen Ressourcen finden Sie unter [Größen für Clouddienste](cloud-services-sizes-specs.md).
+Sie können die Größe der virtuellen Computer für die einzelnen Rollen festlegen. Sie können diese Größe nur für alle Dienstkonfigurationen festlegen. Wenn Sie eine geringere Computergröße auswählen, werden weniger CPU-Kerne, weniger Arbeitsspeicher und weniger lokaler Festplattenspeicher zugewiesen. Die zugewiesene Bandbreite ist ebenfalls kleiner. Weitere Informationen zu diesen Größen und den zugewiesenen Ressourcen finden Sie unter [Größen für Clouddienste](/cloud-services/cloud-services-sizes-specs.md).
 
 Die für die einzelnen virtuellen Computer in Azure erforderlichen Ressourcen wirken sich auf die Kosten der Ausführung Ihres Clouddiensts in Azure aus. Weitere Informationen zu Azure-Abrechnungen finden Sie unter [Informationen zu Ihrer Rechnung für Microsoft Azure](billing-understand-your-bill.md).
 
@@ -315,11 +315,11 @@ Zum Verbessern der Sicherheit Ihres Azure-Clouddiensts können Sie Endpunkte ers
 
 Sie können außerdem Endpunkte hinzufügen, die intern oder extern verwendet werden können. Externe Endpunkten werden Eingabeendpunkte genannt. Ein Eingabeendpunkt ermöglicht einen anderen Zugriffspunkt für Benutzer Ihres Clouddiensts. Wenn Sie einen WCF-Dienst haben, möchten Sie möglicherweise einen internen Endpunkt für eine Webrolle verfügbar machen, den sie zum Zugreifen auf diesen Dienst verwenden soll.
 
->[AZURE.IMPORTANT]Sie können Endpunkte nur für alle Dienstkonfigurationen aktualisieren.
+>[AZURE.IMPORTANT] Sie können Endpunkte nur für alle Dienstkonfigurationen aktualisieren.
 
 Wenn Sie HTTPS-Endpunkte hinzufügen, müssen Sie ein SSL-Zertifikat verwenden. Dazu können Sie Ihrer Rolle Zertifikate für alle Dienstkonfigurationen zuordnen und diese für Ihre Endpunkte verwenden.
 
->[AZURE.IMPORTANT]Diese Zertifikate werden nicht mit dem Dienst paketiert. Sie müssen die Zertifikate über das Azure Platform-Verwaltungsportal gesondert in Azure hochladen.
+>[AZURE.IMPORTANT] Diese Zertifikate werden nicht mit dem Dienst paketiert. Sie müssen die Zertifikate über das Azure Platform-Verwaltungsportal gesondert in Azure hochladen.
 
 Alle Verwaltungszertifikate, die Sie den Dienstkonfigurationen zuordnen, gelten nur, wenn der Clouddienst in Azure ausgeführt wird. Wenn der Clouddienst in der lokalen Entwicklungsumgebung ausgeführt wird, wird ein Standardzertifikat verwendet, das vom Azure-Serveremulator verwaltet wird.
 
@@ -329,7 +329,7 @@ Alle Verwaltungszertifikate, die Sie den Dienstkonfigurationen zuordnen, gelten 
 
 1. Wählen Sie in der Liste **Dienstkonfiguration** den Eintrag **Alle Konfigurationen** aus.
 
-    >[AZURE.NOTE]Sie müssen zum Hinzufügen oder Entfernen von Zertifikaten "Alle Konfigurationen" auswählen. Sie können den Namen und den Fingerabdruck für eine bestimmte Dienstkonfiguration aktualisieren, wenn es erforderlich ist.
+    >[AZURE.NOTE] Sie müssen zum Hinzufügen oder Entfernen von Zertifikaten "Alle Konfigurationen" auswählen. Sie können den Namen und den Fingerabdruck für eine bestimmte Dienstkonfiguration aktualisieren, wenn es erforderlich ist.
 
 1. Um ein Zertifikat für diese Rolle hinzuzufügen, wählen Sie die Schaltfläche **Zertifikat hinzufügen** aus. Der Liste wird ein neuer Eintrag hinzugefügt.
 
@@ -343,7 +343,7 @@ Alle Verwaltungszertifikate, die Sie den Dienstkonfigurationen zuordnen, gelten 
 
 1. Wählen Sie in der Liste das Zertifikat aus, das Sie verwenden möchten, und klicken Sie dann auf die Schaltfläche **OK**.
 
-    >[AZURE.NOTE]Wenn Sie ein Zertifikat aus dem Zertifikatspeicher hinzufügen, werden den Konfigurationseinstellungen automatisch alle Zwischenzertifikate hinzugefügt. Diese Zwischenzertifikate müssen auch in Azure hochgeladen werden, um den Dienst ordnungsgemäß für SSL zu konfigurieren.
+    >[AZURE.NOTE] Wenn Sie ein Zertifikat aus dem Zertifikatspeicher hinzufügen, werden den Konfigurationseinstellungen automatisch alle Zwischenzertifikate hinzugefügt. Diese Zwischenzertifikate müssen auch in Azure hochgeladen werden, um den Dienst ordnungsgemäß für SSL zu konfigurieren.
 
 1. Wählen Sie zum Löschen eines Zertifikats das Zertifikat aus, und klicken Sie dann auf die Schaltfläche **Zertifikat entfernen**.
 
@@ -369,11 +369,11 @@ Alle Verwaltungszertifikate, die Sie den Dienstkonfigurationen zuordnen, gelten 
 
 1. Wenn der Endpunkt das HTTPS-Protokoll benötigt, wählen Sie in der Liste **SSL-Zertifikatname** das zu verwendende Zertifikat aus.
 
-    >[AZURE.NOTE]Diese Liste enthält die Zertifikate, die Sie für diese Rolle auf der Registerkarte **Zertifikate** hinzugefügt haben.
+    >[AZURE.NOTE] Diese Liste enthält die Zertifikate, die Sie für diese Rolle auf der Registerkarte **Zertifikate** hinzugefügt haben.
 
 1. Wählen Sie auf der Symbolleiste die Schaltfläche **Speichern** aus, um diese Änderungen in den Dienstkonfigurationsdateien zu speichern.
 
 ## Nächste Schritte
 Unter [Konfigurieren eines Azure-Projekts](vs-azure-tools-configuring-an-azure-project.md) erhalten Sie weitere Informationen zu Azure-Projekten in Visual Studio. Informationen zum Clouddienstschema finden Sie unter [Schemareferenz](https://msdn.microsoft.com/library/azure/dd179398).
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0204_2016-->

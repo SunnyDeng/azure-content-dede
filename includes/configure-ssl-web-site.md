@@ -393,12 +393,20 @@ Die Aktivierung von HTTPS für eine benutzerdefinierte Domäne steht nur für di
 > [AZURE.NOTE] Bevor Sie eine App vom Tarif **Free** auf den Tarif **Standard** umstellen, müssen Sie das für Ihr Abonnement geltende Ausgabenlimit aufheben. Andernfalls besteht das Risiko, dass Ihre App nicht mehr verfügbar ist, wenn Sie Ihr Ausgabenlimit vor Ende des Abrechnungszeitraums erreichen. Weitere Informationen zu den Preisen für die Tarife „Shared“ und **Standard** finden Sie in der [Preisübersicht][pricing].
 
 1.	Öffnen Sie in Ihrem Browser das [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715).
+	
 2.	Klicken Sie auf der Seite links auf die Option **Durchsuchen**.
+
 3.	Klicken Sie auf das Blatt **Web-Apps**.
+
 4.	Klicken Sie auf den Namen der App.
+
 5.	Klicken Sie auf der Seite **Essentials** auf **Einstellungen**.
-6.	Klicken Sie auf **Skalieren**.![Die Registerkarte "Skalierung"][scale]
-7.	Legen Sie im Abschnitt **Skalierung** den Modus für den App Service-Plan fest, indem Sie auf **Auswählen** klicken. ![Den Tarif][sslreserved]
+
+6.	Klicken Sie auf **Skalieren**.
+	
+	![Die Registerkarte "Skalierung"][scale]
+
+7.	Legen Sie im Abschnitt **Staffelung** den Modus für den App Service-Plan fest, indem Sie auf **Auswählen** klicken.
 
 	> [AZURE.NOTE] Wenn die Fehlermeldung "Fehler beim Konfigurieren der Skalierung für Web-App '&lt;App-Name&gt;'" angezeigt wird, können Sie mit der Schaltfläche "Details" weitere Informationen abrufen. Eventuell wird die Fehlermeldung "Not enough available standard instance servers to satisfy this request." angezeigt. Wenn diese Fehlermeldung angezeigt wird, rufen Sie [Supportoptionen für Azure](/support/options/) auf.
 
@@ -408,13 +416,25 @@ Die Aktivierung von HTTPS für eine benutzerdefinierte Domäne steht nur für di
 Bevor Sie die Schritte in diesem Abschnitt ausführen, müssen Sie einen benutzerdefinierten Domänennamen mit Ihrer App verknüpft haben. Weitere Informationen finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für eine Web-App][customdomain].
 
 1.	Öffnen Sie das [Azure-Verwaltungsportal](https://portal.azure.com) in Ihrem Browser.
+
 2.	Klicken Sie auf der Seite links auf die Option **Durchsuchen**.
+
 3.	Klicken Sie auf das Blatt **Web-Apps**.
+
 4.	Klicken Sie auf den Namen der App.
+
 5.	Klicken Sie auf der Seite **Essentials** auf **Einstellungen**.
-6.	Klicken Sie auf **Benutzerdefinierte Domänen und SSL**. ![Die Registerkarte „Config“] [sslconfig]
+
+6.	Klicken Sie auf **Benutzerdefinierte Domänen und SSL**.
+
+	![Die Registerkarte "Konfiguration"][configure]
+
 7.	Klicken Sie im Bereich **Zertifikate** auf **Hochladen**.
-8.	Wählen Sie mit dem Dialogfeld **Zertifikat hochladen** die zuvor mit dem IIS-Manager oder mit OpenSSL erstellte PFX-Zertifikatdatei aus. Geben Sie ggf. das Kennwort ein, mit dem die PFX-Datei geschützt wurde. Klicken Sie abschließend auf **Speichern**, um das Zertifikat hochzuladen. ![ssl hochladen][ssluploadcert]
+
+8.	Wählen Sie mit dem Dialogfeld **Zertifikat hochladen** die zuvor mit dem IIS-Manager oder mit OpenSSL erstellte PFX-Zertifikatdatei aus. Geben Sie ggf. das Kennwort ein, mit dem die PFX-Datei geschützt wurde. Klicken Sie abschließend auf **Speichern**, um das Zertifikat hochzuladen.
+
+	![Hochladen des SSL-Zertifikats][uploadcert]
+
 9. Wählen Sie auf der Registerkarte **SSL-Einstellungen** im Abschnitt **SSL-Bindungen** mithilfe der Dropdownlisten den Domänennamen, der mit SSL geschützt werden soll, sowie das zu verwendende Zertifikat aus. Sie können auch auswählen, ob die SSL auf Basis der [Servernamensanzeige][sni] (Server Name Indication, SNI) oder eine IP-basierte SSL verwendet werden soll.
 
 	![SSL-Bindungen][sslbindings]
@@ -545,4 +565,4 @@ Weitere Informationen zum IIS-URL-Rewrite-Modul finden Sie unter der Dokumentati
 [certwiz3]: ./media/configure-ssl-web-site/waws-certwiz3.png
 [certwiz4]: ./media/configure-ssl-web-site/waws-certwiz4.png
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

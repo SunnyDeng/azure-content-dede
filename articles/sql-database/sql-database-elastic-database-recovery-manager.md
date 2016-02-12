@@ -19,7 +19,7 @@
 
 Die [RecoveryManager](https://msdn.microsoft.com/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.recovery.recoverymanager.aspx)-Klasse bietet ADO.NET-Anwendungen die Möglichkeit, Inkonsistenzen zwischen der globalen Shardzuordnung (GSM) und der lokalen Shardzuordnung (LSM) in einer horizontal partitionierten Datenbank leicht zu erkennen und zu beheben.
 
-Die GSM und die LSM verfolgen die Zuordnung der einzelnen Datenbanken in einer horizontal partitionierten Umgebung. Gelegentlich kommt es zu einem Bruch zwischen der GSM und der LSM. Verwenden Sie in diesem Fall die RecoveryManager-Klasse, um den Bruch zu erkennen und zu reparieren.
+Die GSM und die LSM verfolgen die Zuordnung der einzelnen Datenbanken in einer horizontal partitionierten Umgebung. Gelegentlich tritt eine Unterbrechung zwischen GSM und LSM auf. In diesem Fall verwenden Sie die RecoveryManager-Klasse zum Erkennen und Reparieren der Unterbrechung.
 
 Die RecoveryManager-Klasse ist Teil der [Clientbibliothek für elastische Datenbanken](sql-database-elastic-database-client-library.md).
 
@@ -155,4 +155,4 @@ In diesem Beispiel werden die folgende Schritte ausgeführt: 1. Entfernen von Sh
 [1]: ./media/sql-database-elastic-database-recovery-manager/recovery-manager.png
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

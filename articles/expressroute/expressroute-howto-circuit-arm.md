@@ -215,10 +215,9 @@ In diesem Artikel werden Sie durch die Schritte zum Erstellen einer ExpressRoute
 
 7. **Konfigurieren des Routings und Verknüpfen eines VNets**
 
-	a. **Erstellen Sie die Routingkonfiguration.** Lesen Sie die Schrittanleitungen unter [Erstellen und Ändern des Routings für eine ExpressRoute-Verbindung](expressroute-howto-routing-arm.md).
-
-		>[AZURE.NOTE] The instructions for routing only apply for circuits created with service providers offering Layer 2 connectivity services. If you are using a service provider offering managed Layer 3 services (typically an IPVPN, like MPLS), your connectivity provider will configure and manage routing for you. You will not be able to create or manage peerings in such cases. 
-	b. **Verknüpfen Sie Ihr VNet mit einer ExpressRoute-Verbindung.** Nachdem Sie sichergestellt haben, dass das Routing konfiguriert wurde, müssen Sie Ihr VNet mit Ihrer ExpressRoute-Verbindung verknüpfen. Lesen Sie die Schrittanleitungen unter [Verknüpfen von virtuellen Netzwerken mit ExpressRoute-Verbindungen](expressroute-howto-linkvnet-arm.md).
+	a. **Erstellen Sie die Routingkonfiguration.** Lesen Sie die Schrittanleitungen unter [Erstellen und Ändern des Routings für eine ExpressRoute-Verbindung](expressroute-howto-routing-arm.md). Beachten Sie, dass die Anweisungen für Routing nur für Verbindungen gelten, die über Dienstanbieter erstellt wurden, von denen Layer 2-Konnektivitätsdienste angeboten werden. Wenn Sie einen Service Provider nutzen, der verwaltete Layer 3-Dienste anbietet (meist ein IPVPN, z. B. MPLS), übernimmt Ihr Konnektivitätsanbieter die Konfiguration und Verwaltung des Routings für Sie. In diesem Fall können Sie keine Peerings erstellen oder verwalten.
+	
+	b. **Verknüpfen Sie Ihr VNet mit einer ExpressRoute-Verbindung.** Nachdem Sie sichergestellt haben, dass das Routing konfiguriert wurde, müssen Sie Ihr VNet mit Ihrer ExpressRoute-Verbindung verknüpfen. Lesen Sie die Schritt-für-Schritt-Anweisungen unter [Verknüpfen von virtuellen Netzwerken mit ExpressRoute-Verbindungen](expressroute-howto-linkvnet-arm.md).
 
 ##  So rufen Sie den Status einer ExpressRoute-Verbindung ab
 
@@ -347,7 +346,7 @@ Sie können Ihre ExpressRoute-Verbindung löschen. Wenn Sie eine ExpressRoute-Ve
 
 - Wenn der Bereitstellungsstatus des Dienstanbieters für die ExpressRoute-Verbindung aktiviert ist, wechselt der Status von „enabled“ in *disabling*. Arbeiten Sie mit Ihrem Service Provider zusammen, um die Bereitstellung der Verbindung auf Anbieterseite aufzuheben. Wir reservieren weiterhin Ressourcen für Sie und stellen Ihnen dies in Rechnung, bis der Service Provider die Aufhebung der Verbindungsbereitstellung abgeschlossen hat und uns eine Benachrichtigung sendet.
 
-- Wenn der Dienstanbieter die Bereitstellung der Verbindung aufgehoben hat (Bereitstellungsstatus des Dienstanbieters lautet *not provisioned*), bevor Sie das Cmdlet ausführen, führen wir die Aufhebung der Verbindungsbereitstellung durch und stellen Ihnen keine Gebühren mehr in Rechnung.
+- Wenn der Dienstanbieter die Bereitstellung der Verbindung aufgehoben hat (Bereitstellungsstatus des Dienstanbieters lautet *not provisioned*), bevor Sie das Cmdlet ausführen, heben wir die Verbindungsbereitstellung auf und stellen Ihnen keine Gebühren mehr in Rechnung.
 
 Führen Sie zum Löschen Ihrer ExpressRoute-Verbindung das unten stehende PowerShell-Cmdlet aus.
 
@@ -360,4 +359,4 @@ Führen Sie nach dem Erstellen Ihrer Verbindung folgende Vorgänge aus:
 1.  [Erstellen und Ändern des Routings für Ihre ExpressRoute-Verbindung](expressroute-howto-routing-arm.md)
 2.  [Verknüpfen Ihres virtuelles Netzwerks mit Ihrer ExpressRoute-Verbindung](expressroute-howto-linkvnet-arm.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

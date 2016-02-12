@@ -12,14 +12,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="multiple"
-   ms.date="01/05/2016"
+   ms.date="01/30/2016"
    ms.author="tarcher" />
 
 # Vorgehensweise: Migrieren und Veröffentlichen einer Webanwendung in einem Azure-Clouddienst aus Visual Studio
 
 Um die Vorteile der Hostingdienste und der Skalierbarkeit von Azure zu nutzen, kann es ratsam sein, Ihre Webanwendung zu einem Azure-Clouddienst zu migrieren und dort zu veröffentlichen. Sie können eine Webanwendung in Azure mit minimalen Änderungen an der vorhandenen Anwendung ausführen.
 
->[AZURE.NOTE]In diesem Thema wird die Bereitstellung in Clouddiensten und nicht auf Websites behandelt. Weitere Informationen zum Bereitstellen auf Websites finden Sie unter [Bereitstellen von Web-Apps in Azure App Service](web-sites-deploy.md).
+>[AZURE.NOTE] In diesem Thema wird die Bereitstellung in Clouddiensten und nicht auf Websites behandelt. Weitere Informationen zum Bereitstellen auf Websites finden Sie unter [Bereitstellen von Web-Apps in Azure App Service](/app-service-web/web-sites-deploy.md).
 
 Eine Liste der spezifischen Vorlagen, die sowohl für Visual C# als auch für Visual Basic unterstützt werden, finden Sie weiter unten in diesem Thema im Abschnitt **Unterstützte Projektvorlagen**.
 
@@ -27,7 +27,7 @@ Zuerst müssen Sie Ihre Webanwendung für Azure über Visual Studio aktivieren. 
 
 ![Veröffentlichen einer Webanwendung in Microsoft Azure](./media/vs-azure-tools-migrate-publish-web-app-to-cloud-service/IC748917.png)
 
->[AZURE.NOTE]Der Befehl **Konvertieren**, **In Azure-Clouddienstprojekt konvertieren** wird nur für das Webprojekt in Ihrer Projektmappe angezeigt. Beispielsweise ist der Befehl nicht für ein Silverlight-Projekt in Ihrer Projektmappe verfügbar. Wenn Sie ein Dienstpaket erstellen oder Ihre Anwendung in Azure veröffentlichen, können Warnungen oder Fehler auftreten. Diese Warnungen und Fehler sind hilfreich zum Beheben von Problemen, bevor Sie die Bereitstellung unter Azure durchführen. Beispielsweise können Sie eine Warnung zu einer fehlenden Assembly erhalten. Weitere Informationen dazu, wie Sie alle Warnungen wie Fehler behandeln, finden Sie unter [Konfigurieren eines Azure-Clouddienstprojekts mit Visual Studio](vs-azure-tools-configuring-an-azure-project.md). Wenn Sie Ihre Anwendung erstellen, lokal mit dem Serveremulator ausführen oder unter Azure veröffentlichen, wird im Fenster **Fehlerliste** ggf. der folgende Fehler angezeigt: **Der angegebene Pfad oder Dateiname bzw. beide sind zu lang.** Dieser Fehler tritt auf, da der vollqualifizierte Name des Azure-Projekts zu lang ist. Der Projektname, einschließlich des vollständigen Pfads, darf nicht mehr als 146 Zeichen lang sein. Dies ist beispielsweise der vollständige Projektname mit dem Dateinamen für ein Azure-Projekt, das für eine Silverlight-Anwendung erstellt wurde: `c:\users<user name>\documents\visual studio 2015\Projects\SilverlightApplication4\SilverlightApplication4.Web.Azure.ccproj`. Unter Umständen müssen Sie die Projektmappe in ein anderes Verzeichnis verschieben, das einen kürzeren Pfad hat, um die Länge des vollqualifizierten Projektnamens zu verringern.
+>[AZURE.NOTE] Der Befehl **Konvertieren**, **In Azure-Clouddienstprojekt konvertieren** wird nur für das Webprojekt in Ihrer Projektmappe angezeigt. Beispielsweise ist der Befehl nicht für ein Silverlight-Projekt in Ihrer Projektmappe verfügbar. Wenn Sie ein Dienstpaket erstellen oder Ihre Anwendung in Azure veröffentlichen, können Warnungen oder Fehler auftreten. Diese Warnungen und Fehler sind hilfreich zum Beheben von Problemen, bevor Sie die Bereitstellung unter Azure durchführen. Beispielsweise können Sie eine Warnung zu einer fehlenden Assembly erhalten. Weitere Informationen dazu, wie Sie alle Warnungen wie Fehler behandeln, finden Sie unter [Konfigurieren eines Azure-Clouddienstprojekts mit Visual Studio](vs-azure-tools-configuring-an-azure-project.md). Wenn Sie Ihre Anwendung erstellen, lokal mit dem Serveremulator ausführen oder unter Azure veröffentlichen, wird im Fenster **Fehlerliste** ggf. der folgende Fehler angezeigt: **Der angegebene Pfad oder Dateiname bzw. beide sind zu lang.** Dieser Fehler tritt auf, da der vollqualifizierte Name des Azure-Projekts zu lang ist. Der Projektname, einschließlich des vollständigen Pfads, darf nicht mehr als 146 Zeichen lang sein. Dies ist beispielsweise der vollständige Projektname mit dem Dateinamen für ein Azure-Projekt, das für eine Silverlight-Anwendung erstellt wurde: `c:\users<user name>\documents\visual studio 2015\Projects\SilverlightApplication4\SilverlightApplication4.Web.Azure.ccproj`. Unter Umständen müssen Sie die Projektmappe in ein anderes Verzeichnis verschieben, das einen kürzeren Pfad hat, um die Länge des vollqualifizierten Projektnamens zu verringern.
 
 Führen Sie die unten angegebenen Schritte aus, um eine Webanwendung aus Visual Studio zu Azure zu migrieren und dort zu veröffentlichen.
 
@@ -45,11 +45,9 @@ Führen Sie die unten angegebenen Schritte aus, um eine Webanwendung aus Visual 
 
     - Die **Copy Local**-Eigenschaft wird für alle Assemblys, die für MVC 2-, MVC 3-, MVC 4- und Silverlight-Geschäftsanwendungen erforderlich sind, auf "true" festgelegt. So werden diese Assemblys dem Dienstpaket hinzugefügt, das für die Bereitstellung verwendet wird.
 
-  >[AZURE.IMPORTANT]Wenn Sie über andere Assemblys oder Dateien verfügen, die für diese Webanwendung benötigt werden, müssen Sie die Eigenschaften für diese Dateien manuell festlegen. Informationen zum Festlegen dieser Eigenschaften finden Sie im Abschnitt **Einschließen von Dateien in das Dienstpaket** weiter unten in diesem Artikel.
+  >[AZURE.IMPORTANT] Wenn Sie über andere Assemblys oder Dateien verfügen, die für diese Webanwendung benötigt werden, müssen Sie die Eigenschaften für diese Dateien manuell festlegen. Informationen zum Festlegen dieser Eigenschaften finden Sie im Abschnitt **Einschließen von Dateien in das Dienstpaket** weiter unten in diesem Artikel.
 
-<br>
-
->[AZURE.NOTE]Wenn eine Webrolle für ein bestimmtes Webprojekt in einem Azure-Projekt der Lösung bereits vorhanden ist, wird **Konvertieren**, **In Azure-Clouddienstprojekt konvertieren** im Kontextmenü für dieses Webprojekt nicht angezeigt.
+  >[AZURE.NOTE] Wenn eine Webrolle für ein bestimmtes Webprojekt in einem Azure-Projekt der Lösung bereits vorhanden ist, wird **Konvertieren**, **In Azure-Clouddienstprojekt konvertieren** im Kontextmenü für dieses Webprojekt nicht angezeigt.
 
   Falls Ihre Webanwendung mehrere Webprojekte umfasst und Sie Webrollen für jedes Webprojekt erstellen möchten, müssen Sie die Schritte in diesem Verfahren für jedes Webprojekt ausführen. Hierbei werden für jede Webrolle separate Azure-Projekte erstellt. Jedes Webprojekt kann separat veröffentlicht werden. Alternativ dazu können Sie einem vorhandenen Azure-Projekt in der Webanwendung eine weitere Webrolle hinzufügen. Öffnen Sie hierzu das Kontextmenü für den Ordner **Rollen** in Ihrem Azure-Projekt, wählen Sie **Hinzufügen** und **Webrollenprojekt in Lösung** und dann das Projekt aus, das als Webrolle hinzugefügt werden soll. Klicken Sie anschließend auf die Schaltfläche **OK**.
 
@@ -57,13 +55,13 @@ Führen Sie die unten angegebenen Schritte aus, um eine Webanwendung aus Visual 
 
 Wenn Sie eine Verbindungszeichenfolge für Ihre Webanwendung nutzen, für die eine lokale SQL Server-Datenbank verwendet wird, müssen Sie diese Verbindungszeichenfolge ändern, damit stattdessen eine von Azure gehostete Instanz der SQL-Datenbank verwendet wird.
 
->[AZURE.IMPORTANT]Sie müssen im Rahmen Ihres Abonnements zur Verwendung der SQL-Datenbank berechtigt sein. Wenn Sie auf Ihr Abonnement über das Azure-Verwaltungsportal zugreifen, können Sie bestimmen, welche Services Ihr Abonnement umfasst. Die folgenden Anweisungen gelten für das veröffentlichte Verwaltungsportal. Springen Sie zum nächsten Verfahren, wenn Sie die Preview-Version des Verwaltungsportals verwenden.|
+>[AZURE.IMPORTANT] Sie müssen im Rahmen Ihres Abonnements zur Verwendung der SQL-Datenbank berechtigt sein. Wenn Sie auf Ihr Abonnement über das Azure-Verwaltungsportal zugreifen, können Sie bestimmen, welche Services Ihr Abonnement umfasst. Die folgenden Anweisungen gelten für das veröffentlichte Verwaltungsportal. Springen Sie zum nächsten Verfahren, wenn Sie die Preview-Version des Verwaltungsportals verwenden.|
 
 ### So verwenden Sie eine SQL-Datenbankinstanz in der Webrolle für Ihre Verbindungszeichenfolge
 
 1. Führen Sie die Schritte im folgenden Artikel aus, um eine Instanz von SQL-Datenbank im Azure-Verwaltungsportal zu erstellen: [Erstellen eines SQL-Datenbank-Servers](http://go.microsoft.com/fwlink/?LinkId=225109).
 
-    >[AZURE.NOTE]Wenn Sie die Firewallregeln für die Instanz von SQL-Datenbank einrichten, müssen Sie das Kontrollkästchen **Anderen Azure-Diensten Zugriff auf diesen Server gewähren** aktivieren.
+    >[AZURE.NOTE] Wenn Sie die Firewallregeln für die Instanz von SQL-Datenbank einrichten, müssen Sie das Kontrollkästchen **Anderen Azure-Diensten Zugriff auf diesen Server gewähren** aktivieren.
 
 1. Führen Sie die Schritte im nächsten Abschnitt des folgenden Artikels aus, um eine Instanz von SQL-Datenbank für Ihre Verbindungszeichenfolge zu erstellen: [Erstellen einer SQL-Datenbank](http://go.microsoft.com/fwlink/?LinkId=225110).
 
@@ -75,7 +73,7 @@ Wenn Sie eine Verbindungszeichenfolge für Ihre Webanwendung nutzen, für die ei
 
   1. Wählen Sie die Datenbank aus, um die Eigenschaften für die Datenbank anzuzeigen. Die Ansicht **Eigenschaften** wird angezeigt.
 
-      >[AZURE.NOTE]Wenn die Ansicht **Eigenschaften** nicht angezeigt wird, müssen Sie sie ggf. mithilfe des Trennlinienelements öffnen.
+      >[AZURE.NOTE] Wenn die Ansicht **Eigenschaften** nicht angezeigt wird, müssen Sie sie ggf. mithilfe des Trennlinienelements öffnen.
 
   1. Wählen Sie die Schaltfläche mit den Auslassungspunkten (...) neben „Ansicht“, um die Verbindungszeichenfolgen anzuzeigen.
 
@@ -129,7 +127,7 @@ Wenn Sie eine Verbindungszeichenfolge für Ihre Webanwendung nutzen, für die ei
 
     Das Dialogfeld **Azure-Anwendung veröffentlichen** wird geöffnet, und Visual Studio startet den Bereitstellungsprozess. Weitere Informationen zum Veröffentlichen der Anwendung finden Sie im Abschnitt **Veröffentlichen einer Azure-Anwendung aus Visual Studio** unter [Veröffentlichen eines Clouddiensts mit Azure Tools](vs-azure-tools-publishing-a-cloud-service.md).
 
-    >[AZURE.NOTE]Sie können die Webanwendung auch über das Azure-Projekt veröffentlichen. Öffnen Sie hierzu das Kontextmenü für das Azure-Projekt, und klicken Sie auf **Veröffentlichen**.
+    >[AZURE.NOTE] Sie können die Webanwendung auch über das Azure-Projekt veröffentlichen. Öffnen Sie hierzu das Kontextmenü für das Azure-Projekt, und klicken Sie auf **Veröffentlichen**.
 
 1. Sie können das Fenster mit dem **Azure-Aktivitätsprotokoll** anzeigen, um den Status der Bereitstellung zu verfolgen. Dieses Protokoll wird automatisch angezeigt, wenn der Bereitstellungsprozess gestartet wird. Sie können Positionen im Aktivitätsprotokoll erweitern, um ausführliche Informationen anzuzeigen. Dies ist in der folgenden Abbildung dargestellt:
 
@@ -137,7 +135,7 @@ Wenn Sie eine Verbindungszeichenfolge für Ihre Webanwendung nutzen, für die ei
 
 1. (Optional) Um den Bereitstellungsprozess abzubrechen, öffnen Sie das Kontextmenü für die Position im Aktivitätsprotokoll und wählen **Abbrechen und entfernen** aus. Der Bereitstellungsprozess wird beendet, und die Bereitstellungsumgebung wird aus Azure gelöscht.
 
-    >[AZURE.NOTE]Sie müssen Sie das Azure-Verwaltungsportal verwenden, um diese Umgebung nach der Bereitstellung zu entfernen.
+    >[AZURE.NOTE] Sie müssen Sie das Azure-Verwaltungsportal verwenden, um diese Umgebung nach der Bereitstellung zu entfernen.
 
 1. (Optional) Nach dem Starten Ihrer Rolleninstanzen wird die Bereitstellungsumgebung in Visual Studio im **Cloud Explorer** oder **Server-Explorer** automatisch unter dem Knoten **Azure Compute** angezeigt. Hier können Sie den Status der einzelnen Rolleninstanzen anzeigen.
 
@@ -210,4 +208,4 @@ Zum Veröffentlichen einer Webanwendung unter Azure muss für die Anwendung eine
 ## Nächste Schritte
 Weitere Informationen zur Veröffentlichung finden Sie unter [Veröffentlichen und Bereitstellen einer Azure-Anwendung in Visual Studio](vs-azure-tools-cloud-service-publish-set-up-required-services-in-visual-studio.md). Sehen Sie sich auch [Einrichten benannter Authentifizierungsanmeldeinformationen](vs-azure-tools-setting-up-named-authentication-credentials.md) an.
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0204_2016-->

@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="12/02/2015"
+   ms.date="01/27/2016"
    ms.author="alkohli" />
 
 # Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts
@@ -34,7 +34,7 @@ Der StorSimple Manager-Dienst wird in Microsoft Azure ausgeführt. Er stellt Ver
 
 #### So stellen Sie eine Verbindung mit dem Dienst her
 
-1. Navigieren Sie zu [http://azure.microsoft.com/](https://azure.microsoft.com/).
+1. Rufen Sie [https://manage.windowsazure.com/](https://manage.windowsazure.com/) auf.
 
 1. Melden Sie sich mit den Anmeldeinformationen Ihres Microsoft-Kontos beim klassischen Microsoft Azure-Portal (rechts oben) an.
 
@@ -114,4 +114,4 @@ Informationen zu Problemen beim alltäglichen Betrieb Ihres StorSimple-Geräts o
 
 Falls sich die Probleme nicht beheben lassen und Sie eine Serviceanfrage erstellen müssen, finden Sie unter [Microsoft-Support kontaktieren](storsimple-contact-microsoft-support.md) weitere Informationen.
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

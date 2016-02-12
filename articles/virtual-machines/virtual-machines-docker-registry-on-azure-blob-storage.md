@@ -14,7 +14,7 @@
   ms.topic="article"
   ms.tgt_pltfrm="vm-linux"
   ms.workload="infrastructure-services"
-  ms.date="06/17/2015" 
+  ms.date="02/01/2016" 
   ms.author="ahmetb" />
 
 # Bereitstellen einer privaten Docker-Registrierung in Azure
@@ -96,4 +96,4 @@ Sobald Sie Ihre Registrierung eingerichtet haben, ist es an der Zeit, sie verstÃ
 [registry-config]: http://docs.docker.com/registry/configuration/
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

@@ -22,7 +22,7 @@ In modernen Technologiesystemen nimmt die Zahl intelligenter, verbundener "Dinge
 
 ## Erkunden
 
-- [Event Hubs](event-hubs-overview.md)
+- [Event Hubs](../event-hubs/event-hubs-overview.md)
 - [Sharding-Muster](http://msdn.microsoft.com/library/dn589797.aspx)
 - [Servicebus und AMQP 1.0](service-bus-amqp-overview.md)
 - [Einführung in Servicebus](https://azure.microsoft.com/services/service-bus/)
@@ -45,4 +45,4 @@ In modernen Technologiesystemen nimmt die Zahl intelligenter, verbundener "Dinge
 - [Cloud Services](https://azure.microsoft.com/services/cloud-services/) 
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

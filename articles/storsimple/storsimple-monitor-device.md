@@ -4,7 +4,7 @@
    services="storsimple"
    documentationCenter="NA"
    authors="alkohli"
-   manager="carolz"
+   manager="carmonm"
    editor="" />
 <tags 
    ms.service="storsimple"
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="12/02/2015"
+   ms.date="01/29/2016"
    ms.author="alkohli" />
 
 # Verwenden des StorSimple Manager-Diensts zum Überwachen Ihres StorSimple-Geräts 
@@ -45,6 +45,7 @@ Für das gleiche Gerät wurde beginnend um 14:00 Uhr eine Cloudmomentaufnahme f�
 
 **Kapazitätsauslastung** verfolgt Metrikdaten im Zusammenhang mit der Menge an Datenspeicherplatz nach, die von den Volumes, den Volumecontainern oder dem Gerät verwendet wird. Sie können Berichte zur Kapazitätsauslastung des primären Speichers, des Cloudspeichers oder des Gerätespeichers erstellen. Die Kapazitätsauslastung kann für ein bestimmtes Volume, einen bestimmten Volumecontainer oder alle Volumecontainer gemessen werden.
 
+
 Die primäre, die Cloud- und die Gerätespeicherkapazität kann wie folgt beschrieben werden:
 
 ###Kapazitätsauslastung des primären Speichers
@@ -74,6 +75,10 @@ Die folgenden Diagramme stellen die Kapazitätsauslastung des Primärspeichers e
 ![Kapazitätsauslastung des Primärspeichers vor einer Cloudmomentaufnahme](./media/storsimple-monitor-device/StorSimple_PrimaryCapacityUtil_For_AllVolumes2M.png)
 
 ![Kapazitätsauslastung des Primärspeichers nach einer Cloudmomentaufnahme](./media/storsimple-monitor-device/StorSimple_PrimaryCapacityUtil_For_AllVolumes1M.png)
+
+Wenn Sie Update 2 oder höher ausführen, können Sie die Kapazitätsauslastung des Primärspeichers für einzelnes Volumes, für alle Volumes, für alle mehrstufigen Volumes und alle lokalen Volumes aufgeschlüsselt anzeigen (siehe folgende Abbildung). Durch eine Aufschlüsselung nach allen lokalen Volumes können Sie schnell feststellen, wie viel Speicherplatz auf der lokalen Ebene belegt ist.
+
+![Kapazitätsauslastung des Primärspeichers für alle lokalen Volumes](./media/storsimple-monitor-device/localvolumes.png)
 
 
 ###Kapazitätsauslastung des Cloudspeichers
@@ -121,4 +126,4 @@ Das Diagramm unten stellt den Netzwerkdurchsatz für „Data 0“ und „Data 4�
 
 - Informationen zum [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0204_2016-->

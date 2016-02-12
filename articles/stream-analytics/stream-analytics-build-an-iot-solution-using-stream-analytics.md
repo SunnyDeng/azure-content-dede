@@ -15,7 +15,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="01/27/2016" 
+	ms.date="02/04/2016" 
 	ms.author="jeffstok"
 />
 
@@ -417,10 +417,10 @@ Wir möchten für jedes Auto, das die Mautstelle passiert, die durchschnittlich 
 
 Dafür müssen wir den Datenstrom, der die Einfahrtszeit (EntryTime) enthält, mit dem Datenstrom zusammenfügen, der die Ausfahrtzeit (ExitTime) enthält. Wir werden die Datenströme über die Spalten TollId und LicencePlate zusammenfügen. Der JOIN-Operator erfordert die Angabe eines zeitlichen Spielraums, der den zulässigen Zeitunterschied zwischen den verknüpften Ereignissen beschreibt. Wir verwenden die DATEDIFF-Funktion, um anzugeben, dass Ereignisse nicht mehr als 15 Minuten auseinander liegen sollen. Wir werden die DATEDIFF-Funktion zusätzlich auf Ausfahrts- und Einfahrtszeiten anwenden, um die genaue Zeit zu berechnen, die ein Auto in der Mautstelle verbringt. Beachten Sie den Unterschied bei der Verwendung der DATEDIFF-Funktion in einer SELECT-Anweisung im Vergleich zu einer JOIN-Bedingung.
 
-    SELECT EntryStream.TollId, EntryTime, ExitStream.ExitTime, EntryStream.LicensePlate, DATEDIFF (minute , EntryStream.EntryTime, ExitStream .ExitTime) AS Duration InMinutes
+    SELECT EntryStream.TollId, EntryStream.EntryTime, ExitStream.ExitTime, EntryStream.LicensePlate, DATEDIFF (minute , EntryStream.EntryTime, ExitStream.ExitTime) AS DurationInMinutes
     FROM EntryStream TIMESTAMP BY EntryTime
-    JOIN ExitStream TIMESTAMP BY ExitTim e
-    ON (Entry Stream.TollId= ExitStream.TollId AND EntryStream.LicensePlate = ExitStream.LicensePlate)
+    JOIN ExitStream TIMESTAMP BY ExitTime
+    ON (EntryStream.TollId= ExitStream.TollId AND EntryStream.LicensePlate = ExitStream.LicensePlate)
     AND DATEDIFF (minute, EntryStream, ExitStream ) BETWEEN 0 AND 15
 
 Aktualisieren Sie die Abfrage auf der Registerkarte „Abfrage“ Ihres Auftrags, um sie zu testen:
@@ -445,7 +445,7 @@ Wenn ein Nutzfahrzeug bei einer Mautfirma registriert ist, kann es das Mauthäus
     FROM EntryStream TIMESTAMP BY EntryTime
     JOIN Registration
     ON EntryStream.LicensePlate = Registration.LicensePlate
-    WHERE Registration.Expired = ‘1’
+    WHERE Registration.Expired = '1'
 
 Beachten Sie, dass das Testen einer Abfrage mit Verweisdaten verlangt, dass eine Eingabequelle für Verweisdaten definiert ist, was wir in Schritt 5 getan haben.
 
@@ -534,4 +534,4 @@ Beachten Sie, dass Ressourcen anhand des Namens identifiziert werden. Stellen Si
 
 ![](media/stream-analytics-build-an-iot-solution-using-stream-analytics/image57.png)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

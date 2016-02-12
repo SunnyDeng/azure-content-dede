@@ -1,5 +1,5 @@
 
-Weitere Detailinformationen zu Datenträgern finden Sie unter [Informationen zu Datenträgern und VHDs für virtuelle Computer](../articles/virtual-machines-disks-vhds.md).
+Weitere Detailinformationen zu Datenträgern finden Sie unter [Informationen zu Datenträgern und VHDs für virtuelle Computer](virtual-machines-disks-vhds.md).
 
 <a id="attachempty"></a>
 ## Gewusst wie: Anfügen eines leeren Datenträgers
@@ -62,7 +62,7 @@ Zum Anfügen eines vorhandenen Datenträgers wird eine VHD-Datei im Speicherkont
 		uploaded successfully
 		info:    vm disk create command OK
 
-	Sie können auch den Befehl `azure vm disk upload` zum Hochladen einer VHD in ein bestimmtes Speicherkonto angeben. Weitere Informationen zu den Befehlen zum Verwalten der Datenträger Ihrer virtuellen Azure-Computer finden Sie [hier](../virtual-machines-command-line-tools.md#commands-to-manage-your-azure-virtual-machine-data-disks).
+	Sie können auch den Befehl `azure vm disk upload` zum Hochladen einer VHD in ein bestimmtes Speicherkonto angeben. Weitere Informationen zu den Befehlen zum Verwalten der Datenträger Ihrer virtuellen Azure-Computer finden Sie [hier](virtual-machines-command-line-tools.md#commands-to-manage-your-azure-virtual-machine-data-disks).
 
 5.  Geben Sie den folgenden Befehl ein, um die gewünschten hochgeladene VHD an Ihren virtuellen Computer anzufügen:
 
@@ -90,6 +90,7 @@ Zum Anfügen eines vorhandenen Datenträgers wird eine VHD-Datei im Speicherkont
 		info:    vm disk list command OK
 
 
-> [AZURE.NOTE]Wenn Sie einen Datenträger angefügt haben, müssen Sie sich auf dem virtuellen Computer anmelden und den Datenträger initialisieren, damit der virtuelle Computer ihn zur Speicherung verwenden kann.
+> [AZURE.NOTE]
+Wenn Sie einen Datenträger angefügt haben, müssen Sie sich auf dem virtuellen Computer anmelden und den Datenträger initialisieren, damit der virtuelle Computer ihn zur Speicherung verwenden kann.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0204_2016-->

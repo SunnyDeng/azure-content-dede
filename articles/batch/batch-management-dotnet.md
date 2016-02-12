@@ -14,8 +14,8 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-windows"
 	ms.workload="big-compute"
-	ms.date="11/10/2015"
-	ms.author="v-marsma"/>
+	ms.date="01/28/2016"
+	ms.author="marsma"/>
 
 # Verwalten von Azure Batch-Konten und -Kontingenten mit Batch Management .NET
 
@@ -30,7 +30,7 @@ Sie können den Wartungsaufwand in Ihren Azure Batch-Anwendungen verringern, in
 - **Überprüfen von Kontokontingenten** und Beseitigen der Mutmaßungen des Trial-and-Error-Prinzips beim Festlegen der Einschränkungen für die jeweiligen Batch-Konten. Durch Überprüfen der Kontokontingente vor dem Starten von Aufträgen, Erstellen von Pools oder Hinzufügen von Computeknoten können Sie proaktiv anpassen, wo und wann diese Computeressourcen erstellt werden. Sie können bestimmen, für welche Konten die Kontingente erhöht werden müssen, bevor zusätzliche Ressourcen in diesen Konten zugewiesen werden.
 - **Kombinieren Sie Funktionen von anderen Azure-Diensten**, um eine Verwaltung mit optimalem Funktionsumfang zu ermöglichen. Nutzen Sie dafür z. B. Batch Management .NET, [Azure Active Directory][aad_about] und den [Azure-Ressourcen-Manager][resman_overview] gemeinsam in derselben Anwendung. Wenn Sie diese Funktionen und ihre APIs nutzen, können Sie ein reibungsloses Authentifizierungserlebnis, Möglichkeiten zum Erstellen und Löschen von Ressourcengruppen und die oben beschriebenen Funktionen für eine End-to-End-Verwaltungslösung bereitstellen.
 
-> [AZURE.NOTE]Auch wenn sich dieser Artikel auf die programmgesteuerte Verwaltung der Batch-Konten, -Schlüssel und -Kontingente konzentriert, können Sie viele dieser Aktivitäten mithilfe des [Azure-Portals][azure_portal] ausführen. Weitere Informationen finden Sie unter [Erstellen und Verwalten eines Azure Batch-Kontos im Azure-Portal](batch-account-create-portal.md) und [Kontingente und Limits für den Azure Batch-Dienst](batch-quota-limit.md).
+> [AZURE.NOTE] Auch wenn sich dieser Artikel auf die programmgesteuerte Verwaltung der Batch-Konten, -Schlüssel und -Kontingente konzentriert, können Sie viele dieser Aktivitäten mithilfe des [Azure-Portals][azure_portal] ausführen. Weitere Informationen finden Sie unter [Erstellen und Verwalten eines Azure Batch-Kontos im Azure-Portal](batch-account-create-portal.md) und [Kontingente und Limits für den Azure Batch-Dienst](batch-quota-limit.md).
 
 ## Erstellen und Löschen von Batch-Konten
 
@@ -52,7 +52,7 @@ AccountResource account = getResponse.Resource;
 await batchManagementClient.Accounts.DeleteAsync("MyResourceGroup", account.Name);
 ```
 
-> [AZURE.NOTE]Anwendungen, die die Batch Management .NET-Bibliothek und die zugehörige „BatchManagementClient“-Klasse verwenden, benötigen einen Zugriff als **Dienstadministrator** oder **Co-Administrator** auf das Abonnement, das Besitzer des zu verwaltenden Batch-Kontos ist. Weitere Informationen finden Sie im nachfolgenden Abschnitt zu [Azure Active Directory](#aad) und im [AccountManagement][acct_mgmt_sample]-Codebeispiel.
+> [AZURE.NOTE] Anwendungen, die die Batch Management .NET-Bibliothek und die zugehörige „BatchManagementClient“-Klasse verwenden, benötigen einen Zugriff als **Dienstadministrator** oder **Co-Administrator** auf das Abonnement, das Besitzer des zu verwaltenden Batch-Kontos ist. Weitere Informationen finden Sie im nachfolgenden Abschnitt zu [Azure Active Directory](#aad) und im [AccountManagement][acct_mgmt_sample]-Codebeispiel.
 
 ## Abrufen und erneutes Generieren von Kontoschlüsseln
 
@@ -71,7 +71,7 @@ BatchAccountRegenerateKeyResponse newKeys = await batchManagementClient.Accounts
 	new BatchAccountRegenerateKeyParameters() { KeyName = AccountKeyType.Primary });
 ```
 
-> [AZURE.TIP]Sie können einen optimierten Verbindungsworkflow für Ihre Verwaltungsanwendungen erstellen. Rufen Sie zuerst mithilfe von [ListKeysAsync][net_list_keys] einen Kontoschlüssel für das zu verwaltende Batch-Konto ab. Verwenden Sie diesen Schlüssel anschließend beim Initialisieren der [BatchSharedKeyCredentials][net_sharedkeycred]-Klasse aus der Batch .NET-Bibliothek. Diese Klasse wird beim Initialisieren von [BatchClient][net_batch_client] verwendet.
+> [AZURE.TIP] Sie können einen optimierten Verbindungsworkflow für Ihre Verwaltungsanwendungen erstellen. Rufen Sie zuerst mithilfe von [ListKeysAsync][net_list_keys] einen Kontoschlüssel für das zu verwaltende Batch-Konto ab. Verwenden Sie diesen Schlüssel anschließend beim Initialisieren der [BatchSharedKeyCredentials][net_sharedkeycred]-Klasse aus der Batch .NET-Bibliothek. Diese Klasse wird beim Initialisieren von [BatchClient][net_batch_client] verwendet.
 
 ## Überprüfen des Azure-Abonnements und der Batch-Kontokontingente
 
@@ -119,7 +119,7 @@ Console.WriteLine("Pool quota: {0}", account.Properties.PoolQuota);
 Console.WriteLine("Active job and job schedule quota: {0}", account.Properties.ActiveJobAndJobScheduleQuota);
 ```
 
-> [AZURE.IMPORTANT]Solange Standardkontingente für Azure-Abonnements und -Dienste vorliegen, können viele dieser Grenzen durch eine Anforderung im [Azure-Portal][azure_portal] erhöht werden. Anleitungen zum Erhöhen der Batch-Kontokontingente finden Sie z. B. unter [Kontingente und Limits für den Azure Batch-Dienst](batch-quota-limit.md).
+> [AZURE.IMPORTANT] Solange Standardkontingente für Azure-Abonnements und -Dienste vorliegen, können viele dieser Grenzen durch eine Anforderung im [Azure-Portal][azure_portal] erhöht werden. Anleitungen zum Erhöhen der Batch-Kontokontingente finden Sie z. B. unter [Kontingente und Limits für den Azure Batch-Dienst](batch-quota-limit.md).
 
 ## Batch Management .NET, Azure Active Directory und Ressourcen-Manager
 
@@ -139,9 +139,17 @@ Wenn Sie Batch-Konten mit der Batch Management .NET-Bibliothek erstellen, erste
 
 Sehen Sie sich das [AccountManagement][acct_mgmt_sample] -Beispielprojekt auf GitHub an, um die Funktionsweise der Batch Management .NET-Bibliothek zu sehen. Diese Konsolenanwendung veranschaulicht die Erstellung und Verwendung von [BatchManagementClient][net_mgmt_client] und [ResourceManagementClient][resman_client]. Außerdem veranschaulicht sie die Verwendung der Azure [Active Directory-Authentifizierungsbibliothek][aad_adal] (ADAL), die für beide Clients erforderlich ist.
 
-> [AZURE.IMPORTANT]Zum erfolgreichen Ausführen der Beispielanwendung müssen Sie sie zuerst über das Azure-Portal bei Azure AD registrieren. Lesen Sie den Abschnitt „Hinzufügen einer Anwendung“ unter [Integrieren von Anwendungen in Azure Active Directory][aad_integrate]. Führen Sie anschließend die in dem Artikel genannten Schritte aus, um die Beispielanwendung in Ihrem eigenen Konto zu registrieren.
+Zum erfolgreichen Ausführen der Beispielanwendung müssen Sie sie zuerst über das Azure-Portal bei Azure AD registrieren. Lesen Sie den Abschnitt „Hinzufügen einer Anwendung“ unter [Integrieren von Anwendungen in Azure Active Directory][aad_integrate]. Führen Sie anschließend die in dem Artikel genannten Schritte aus, um die Beispielanwendung im Standardverzeichnis Ihres eigenen Kontos zu registrieren. Achten Sie darauf, als Anwendungstyp „Systemeigene Clientanwendung“ auswählen, und Sie können einen beliebigen gültigen URI (z. B. `http://myaccountmanagementsample`) unter „Umleitungs-URI“ angeben – es muss kein echter Endpunkt sein.
 
-Die Beispielanwendung veranschaulicht die folgenden Vorgänge:
+Nach dem Hinzufügen Ihrer Anwendung erteilen Sie der Anwendung *Windows Azure-Service-Verwaltungs-API* im Portal unter den Anwendungseinstellungen die Berechtigung zum Zugriff auf die Azure-Dienstverwaltung als Unternehmen.
+
+![Anwendungsberechtigungen im Azure-Portal][2]
+
+Nachdem Sie die Anwendung wie oben beschrieben hinzugefügt haben, aktualisieren Sie `Program.cs` im Beispielprojekt [AccountManagment][acct_mgmt_sample] mit dem Umleitungs-URI und der Client-ID Ihrer Anwendung. Diese Werte finden Sie auf der Registerkarte „Konfigurieren“ Ihrer Anwendung:
+
+![Anwendungskonfiguration im Azure-Portal][3]
+
+Die [AccountManagment][acct_mgmt_sample]-Beispielanwendung veranschaulicht die folgenden Vorgänge:
 
 1. Erwerben eines Sicherheitstokens von Azure Active AD mithilfe von [ADAL][aad_adal]. Wenn der Benutzer noch nicht angemeldet ist, wird er aufgefordert, die Azure-Anmeldeinformationen einzugeben.
 2. Unter Verwendung eines von Azure AD abgerufenen Sicherheitstokens wird eine [SubscriptionClient][resman_subclient] erstellt, um Azure nach einer Liste von Abonnements abzufragen, die mit dem Konto verknüpft sind. Dadurch kann der Benutzer ein Abonnement auswählen, falls mehrere gefunden werden.
@@ -189,5 +197,7 @@ Vor dem Löschen des neu erstellten Batch-Kontos und der Ressourcengruppe könne
 [resman_overview]: ../resource-group-overview.md
 
 [1]: ./media/batch-management-dotnet/portal-01.png
+[2]: ./media/batch-management-dotnet/portal-02.png
+[3]: ./media/batch-management-dotnet/portal-03.png
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0204_2016-->

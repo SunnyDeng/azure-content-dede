@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="12/18/2015"
+	ms.date="02/03/2016"
 	ms.author="tarcher"/>
 
 # Continuous Delivery für Azure mithilfe von Visual Studio Team Services
@@ -22,7 +22,7 @@ Sie können Ihre Teamprojekte in Visual Studio Team Services so konfigurieren, d
 
 Bei diesem Lernprogramm wird davon ausgegangen, dass auf Ihrem Rechner Visual Studio 2013 und das Azure-SDK installiert sind. Wenn Sie Visual Studio 2013 nicht bereits installiert haben, laden Sie es herunter, indem Sie auf der Seite **www.visualstudio.com** auf den Link [Starten Sie kostenlos](http://www.visualstudio.com) klicken. Installieren Sie das Azure-SDK von [hier](http://go.microsoft.com/fwlink/?LinkId=239540) aus.
 
-> [AZURE.NOTE]Für dieses Tutorial benötigen Sie ein Visual Studio Team Services-Konto. Dieses können Sie [kostenlos erstellen](http://go.microsoft.com/fwlink/p/?LinkId=512979).
+> [AZURE.NOTE] Für dieses Tutorial benötigen Sie ein Visual Studio Team Services-Konto. Dieses können Sie [kostenlos erstellen](http://go.microsoft.com/fwlink/p/?LinkId=512979).
 
 Gehen Sie wie folgt vor, um mithilfe von Visual Studio Team Services einen Clouddienst für die automatische Erstellung und Bereitstellung für Azure zu konfigurieren.
 
@@ -32,27 +32,23 @@ Befolgen Sie die Anweisungen [hier](http://go.microsoft.com/fwlink/?LinkId=51298
 
 ## Schritt 2: Einchecken eines Projekts in der Quellcodeverwaltung
 
-1. Öffnen Sie in Visual Studio die Anwendung, die Sie bereitstellen möchten, oder erstellen Sie eine neue Anwendung.
-Sie können eine Web-App oder einen Clouddienst (Azure-Anwendung) bereitstellen, indem Sie die Schritte in dieser Anleitung ausführen.
-Wenn Sie eine neue Anwendung erstellen möchten, erstellen Sie ein neues Azure-Clouddienstprojekt oder ein neues ASP.NET MVC-Projekt. 
-Stellen Sie sicher, dass das Projekt auf .NET Framework 4 oder 4.5 abzielt. Wenn Sie ein Clouddienstprojekt erstellen, fügen Sie eine ASP.NET MVC-Webrolle hinzu, und wählen Sie für die Webrolle "Internetanwendung" aus. Wenn Sie dazu aufgefordert werden, wählen Sie **Internetanwendung** aus. 
-Wenn Sie eine Web-App erstellen möchten, wählen Sie die Projektvorlage "ASP.NET Web Application" und anschließend "MVC" aus. Siehe [Erstellen einer ASP.NET-Web-App in Azure App Service](../web-sites-dotnet-get-started.md).
+1. Öffnen Sie in Visual Studio die Anwendung, die Sie bereitstellen möchten, oder erstellen Sie eine neue Anwendung. Sie können eine Web-App oder einen Clouddienst (Azure-Anwendung) bereitstellen, indem Sie die Schritte in dieser Anleitung ausführen. Wenn Sie eine neue Anwendung erstellen möchten, erstellen Sie ein neues Azure-Clouddienstprojekt oder ein neues ASP.NET MVC-Projekt. Stellen Sie sicher, dass das Projekt auf .NET Framework 4 oder 4.5 abzielt. Wenn Sie ein Clouddienstprojekt erstellen, fügen Sie eine ASP.NET MVC-Webrolle hinzu, und wählen Sie für die Webrolle "Internetanwendung" aus. Wenn Sie dazu aufgefordert werden, wählen Sie **Internetanwendung** aus. Wenn Sie eine Web-App erstellen möchten, wählen Sie die Projektvorlage "ASP.NET Web Application" und anschließend "MVC" aus. Siehe [Erstellen einer ASP.NET-Web-App in Azure App Service](/app-service-web/web-sites-dotnet-get-started.md).
 
-	> [AZURE.NOTE]Visual Studio Team Services unterstützt derzeit nur CI-Bereitstellungen von Visual Studio-Webanwendungen. Websiteprojekte werden nicht unterstützt.
+	> [AZURE.NOTE] Visual Studio Team Services unterstützt derzeit nur CI-Bereitstellungen von Visual Studio-Webanwendungen. Websiteprojekte werden nicht unterstützt.
 
-2. Öffnen Sie das Kontextmenü der Projektmappe, und wählen Sie **Projektmappe zur Quellcodeverwaltung hinzufügen**.<br/>
+1. Öffnen Sie das Kontextmenü der Projektmappe, und wählen Sie **Projektmappe zur Quellcodeverwaltung hinzufügen**.
 
 	![][5]
 
-3. Übernehmen oder ändern Sie die Standardeinstellungen, und klicken Sie auf die Schaltfläche **OK**. Wenn der Prozess abgeschlossen ist, werden im Projektmappen-Explorer die Symbole für die Quellcodeverwaltung angezeigt.
+1. Übernehmen oder ändern Sie die Standardeinstellungen, und klicken Sie auf die Schaltfläche **OK**. Wenn der Prozess abgeschlossen ist, werden im **Projektmappen-Explorer** die Symbole für die Quellcodeverwaltung angezeigt.
 
 	![][6]
 
-4. Öffnen Sie das Kontextmenü der Projektmappe, und klicken Sie auf **Einchecken**.<br/>
+1. Öffnen Sie das Kontextmenü der Projektmappe, und klicken Sie auf **Einchecken**.
 
 	![][7]
 
-5. Geben Sie in Team Explorer im Bereich "Ausstehende Änderungen" einen Kommentar zum Eincheckvorgang ein, und klicken Sie auf die Schaltfläche **Einchecken**.<br/>
+1. Geben Sie in **Team Explorer** im Bereich **Ausstehende Änderungen** einen Kommentar zum Eincheckvorgang ein, und klicken Sie auf die Schaltfläche **Einchecken**.
 
 	![][8]
 
@@ -62,15 +58,15 @@ Wenn Sie eine Web-App erstellen möchten, wählen Sie die Projektvorlage "ASP.NE
 
 ## Schritt 3: Verbinden des Projekts mit Azure
 
-1. Nachdem Sie nun über ein VSTS-Teamprojekt mit Quellcode verfügen, können Sie Ihr Teamprojekt mit Azure verbinden. Wählen Sie im [klassischen Azure-Portal](http://manage.windowsazure.com) Ihren Clouddienst oder Ihre Web-App aus, oder erstellen Sie einen neuen Clouddienst oder eine neue Web-App, indem Sie auf das **+**-Symbol links unten sowie auf **Cloud Service** oder **Web-App** und anschließend auf **Schnellerstellung** klicken. Wählen Sie den Link **Veröffentlichung einrichten mit Visual Studio Team Services** aus.
-	
+1. Nachdem Sie nun über ein VS Team Services-Teamprojekt mit Quellcode verfügen, können Sie Ihr Teamprojekt mit Azure verbinden. Wählen Sie im [klassischen Azure-Portal](http://manage.windowsazure.com) Ihren Clouddienst oder Ihre Web-App aus, oder erstellen Sie einen neuen Clouddienst oder eine neue Web-App, indem Sie auf das **+**-Symbol links unten sowie auf **Cloud Service** oder **Web-App** und anschließend auf **Schnellerstellung** klicken. Wählen Sie den Link **Veröffentlichung einrichten mit Visual Studio Team Services** aus.
+
 	![][10]
 
 1. Geben Sie in das Textfeld des Assistenten den Namen Ihres Visual Studio Team Services-Kontos ein, und klicken Sie auf den Link **Jetzt autorisieren**. Eventuell werden Sie aufgefordert, sich anzumelden.
 
 	![][11]
 
-1. Klicken Sie im Popupdialogfeld **Verbindungsanforderung** auf **Annehmen**, um Azure für die Konfiguration Ihres Teamprojekts in VSTS zu autorisieren.
+1. Klicken Sie im Popupdialogfeld **Verbindungsanforderung** auf **Annehmen**, um Azure für die Konfiguration Ihres Teamprojekts in VS Team Services zu autorisieren.
 
 	![][12]
 
@@ -88,31 +84,31 @@ Wenn Sie eine Web-App erstellen möchten, wählen Sie die Projektvorlage "ASP.NE
 
 	![][15]
 
-2. Navigieren Sie zu Ihrer Projektmappendatei, und öffnen Sie sie.
+1. Navigieren Sie zu Ihrer Projektmappendatei, und öffnen Sie sie.
 
 	![][16]
 
-3. Öffnen Sie im **Projektmappen-Explorer** eine Datei, und ändern Sie sie. Ändern Sie z. B. die Datei `_Layout.cshtml` im Ordner „Views\\Shared“ in eine MVC-Webrolle.
+1. Öffnen Sie im **Projektmappen-Explorer** eine Datei, und ändern Sie sie. Ändern Sie z. B. die Datei `_Layout.cshtml` im Ordner „Views\\Shared“ in eine MVC-Webrolle.
 
 	![][17]
 
-4. Bearbeiten Sie das Logo für die Website, und drücken Sie Strg+S, um die Datei zu speichern.
+1. Bearbeiten Sie das Logo für die Website, und drücken Sie **STRG+S**, um die Datei zu speichern.
 
 	![][18]
 
-5. Klicken Sie im Teamexplorer auf den Link **Ausstehende Änderungen**.
+1. Klicken Sie in **Team Explorer** auf den Link **Ausstehende Änderungen**.
 
 	![][19]
 
-6. Geben Sie einen Kommentar ein, und klicken Sie auf die Schaltfläche **Einchecken**.
+1. Geben Sie einen Kommentar ein, und klicken Sie auf die Schaltfläche **Einchecken**.
 
 	![][20]
 
-7. Klicken Sie auf die Schaltfläche "Startseite", um zur Startseite von Team Explorer zurückzukehren.
+1. Klicken Sie auf die Schaltfläche **Startseite**, um zur Startseite von **Team Explorer** zurückzukehren.
 
 	![][21]
 
-8. Klicken Sie auf den Link **Builds**, um die derzeit ausgeführten Builds anzuzeigen.
+1. Klicken Sie auf den Link **Builds**, um die derzeit ausgeführten Builds anzuzeigen.
 
 	![][22]
 
@@ -120,15 +116,15 @@ Wenn Sie eine Web-App erstellen möchten, wählen Sie die Projektvorlage "ASP.NE
 
 	![][23]
 
-9. Doppelklicken Sie auf den Namen des Builds, der gerade erstellt wird, um ein detailliertes Protokoll des Build-Verlaufs anzuzeigen.
+1. Doppelklicken Sie auf den Namen des Builds, der gerade erstellt wird, um ein detailliertes Protokoll des Build-Verlaufs anzuzeigen.
 
 	![][24]
 
-10. Betrachten Sie während des Buildverlaufs die Builddefinition, die erstellt wurde, als Sie TFS mithilfe des Assistenten mit Azure verknüpft haben. Öffnen sie das Kontextmenü für die Builddefinition, und klicken Sie auf **Builddefinition bearbeiten**.
+1. Betrachten Sie während des Buildverlaufs die Builddefinition, die erstellt wurde, als Sie TFS mithilfe des Assistenten mit Azure verknüpft haben. Öffnen sie das Kontextmenü für die Builddefinition, und klicken Sie auf **Builddefinition bearbeiten**.
 
 	![][25]
 
-	Auf der Registerkarte **Trigger** sehen Sie, dass die Builddefinition standardmäßig so festgelegt ist, dass bei jedem Einchecken ein Buildvorgang ausgeführt wird.<br/>
+	Auf der Registerkarte **Trigger** sehen Sie, dass die Builddefinition standardmäßig so festgelegt ist, dass bei jedem Einchecken ein Buildvorgang ausgeführt wird.
 
 	![][26]
 
@@ -153,11 +149,11 @@ Wenn Sie eine Web-App erstellen möchten, wählen Sie die Projektvorlage "ASP.NE
 
 	![][38]
 
-	An diesem Punkt sollte Ihr Build erfolgreich abgeschlossen sein.<br/>
+	An diesem Punkt sollte Ihr Build erfolgreich abgeschlossen sein.
 
 	![][28]
 
-12. Wenn Sie auf den Buildnamen doppelklicken, zeigt Visual Studio eine **Buildzusammenfassung** mit allen Testergebnissen aus den zugeordneten Komponententestprojekten an.<br/>
+1. Wenn Sie auf den Buildnamen doppelklicken, zeigt Visual Studio eine **Buildzusammenfassung** mit allen Testergebnissen aus den zugeordneten Komponententestprojekten an.
 
 	![][29]
 
@@ -165,23 +161,23 @@ Wenn Sie eine Web-App erstellen möchten, wählen Sie die Projektvorlage "ASP.NE
 
 	![][30]
 
-14.	Wechseln Sie zur URL Ihrer Site. Wenn es sich um eine Web-App handelt, klicken Sie einfach auf der Befehlsleiste auf die Schaltfläche **Durchsuchen**. Wenn es sich um einen Clouddienst handelt, wählen Sie die URL im Abschnitt **Auf einen Blick** der Seite **Dashboard**, auf der die Stagingumgebung für einen Clouddienst angezeigt wird. Bereitstellungen aus einer fortlaufenden Integration für Clouddienste werden standardmäßig in der Stagingumgebung veröffentlicht. Sie können dies ändern, indem Sie für die Eigenschaft **Alternative Umgebung für den Clouddienst** die Option **Produktion** festlegen. Dieser Screenshot zeigt, wo sich die Website-URL auf der Dashboard-Seite des Clouddiensts befindet:
+1.	Wechseln Sie zur URL Ihrer Site. Wenn es sich um eine Web-App handelt, klicken Sie einfach auf der Befehlsleiste auf die Schaltfläche **Durchsuchen**. Wenn es sich um einen Clouddienst handelt, wählen Sie die URL im Abschnitt **Auf einen Blick** der Seite **Dashboard**, auf der die Stagingumgebung für einen Clouddienst angezeigt wird. Bereitstellungen aus einer fortlaufenden Integration für Clouddienste werden standardmäßig in der Stagingumgebung veröffentlicht. Sie können dies ändern, indem Sie für die Eigenschaft **Alternative Umgebung für den Clouddienst** die Option **Produktion** festlegen. Dieser Screenshot zeigt, wo sich die Website-URL auf der Dashboard-Seite des Clouddiensts befindet:
 
 	![][31]
 
-Eine neue Browser-Registerkarte wird geöffnet, die Ihre laufende Site anzeigt.
+	Eine neue Browser-Registerkarte wird geöffnet, die Ihre laufende Site anzeigt.
 
-![][32]
+	![][32]
 
-Wenn es sich dabei um einen Clouddienst handelt und Sie weitere Änderungen an Ihrem Projekt vornehmen, lösen Sie weitere Builds aus und sammeln mehrere Bereitstellungen. Die letzte davon wird als "Aktiv" markiert.
+	Wenn es sich dabei um einen Clouddienst handelt und Sie weitere Änderungen an Ihrem Projekt vornehmen, lösen Sie weitere Builds aus und sammeln mehrere Bereitstellungen. Die letzte davon wird als "Aktiv" markiert.
 
-![][33]
+	![][33]
 
 ## Schritt 5: Erneutes Bereitstellen eines früheren Builds
 
 Dieser Schritt gilt nur für Clouddienste und ist optional. Wählen Sie im klassischen Azure-Portal eine frühere Bereitstellung aus, und klicken Sie dann auf die Schaltfläche **Erneut bereitstellen**, um Ihre Website auf einen früheren Eincheckvorgang zurückzusetzen. Beachten Sie, dass dadurch ein neuer Buildvorgang in TFS ausgelöst und in Ihrem Bereitstellungsverlauf ein neuer Eintrag erstellt wird.
 
- ![][34]
+![][34]
 
 ## Schritt 6: Ändern der Produktionsbereitstellung
 
@@ -194,12 +190,14 @@ Dieser Schritt gilt nur für Clouddienste, nicht für Web-Apps. Wenn Sie bereit 
 Dieser Schritt gilt nur für Web-Apps, nicht für Clouddienste. Für eine zusätzliche Qualitätsstufe Ihrer Bereitstellungen können Sie Komponententests ausführen und im Falle eines Fehlers die Bereitstellung anhalten.
 
 1.  Fügen Sie in Visual Studio ein Testprojekt hinzu.
-![][39]
 
-2.  Fügen Sie Projektverweise zu dem Projekt hinzu, das Sie testen möchten.
-![][40]
+	![][39]
 
-3.  Fügen Sie einige Komponententests hinzu. Probieren Sie es zuerst mit einem Dummy-Test, der immer erfolgreich sein wird.
+1.  Fügen Sie Projektverweise zu dem Projekt hinzu, das Sie testen möchten.
+
+	![][40]
+
+1.  Fügen Sie einige Komponententests hinzu. Probieren Sie es zuerst mit einem Dummy-Test, der immer erfolgreich sein wird.
 
 		```
 		using System;
@@ -222,26 +220,29 @@ Dieser Schritt gilt nur für Web-Apps, nicht für Clouddienste. Für eine zusät
 
 1.  Bearbeiten Sie die Builddefinition, wählen Sie die Registerkarte **Prozess**, und erweitern Sie den **Testknoten**.
 
+1.  Legen Sie für **Buildfehler bei Testfehler** "True" fest. Dies bedeutet, dass die Bereitstellung erst erfolgt, wenn die Tests erfolgreich waren.
 
-5.  Legen Sie für **Buildfehler bei Testfehler** "True" fest. Dies bedeutet, dass die Bereitstellung erst erfolgt, wenn die Tests erfolgreich waren.<br/>
-![][41]
+	![][41]
 
-6.  Setzen Sie einen neuen Build in die Warteschlange.<br/>
-![][42]
-<br/>
-![][43]
+1.  Setzen Sie einen neuen Build in die Warteschlange.
 
-7. Prüfen Sie den Fortschritt während der Buildverarbeitung.
-![][44]
-<br/>
-![][45]
+	![][42]
 
-7. Prüfen Sie die Testergebnisse, wenn der Build abgeschlossen ist.<br/>
-![][46]
-<br/>
-![][47]
+	![][43]
 
-8.  Versuchen Sie einen Test zu erstellen, der fehlschlagen wird. Fügen Sie einen neuen Test hinzu, indem Sie den ersten Test kopieren, umbenennen und die Codezeile auskommentieren, die besagt, dass "NotImplementedException" eine erwartete Ausnahme ist.
+1. Prüfen Sie den Fortschritt während der Buildverarbeitung.
+
+	![][44]
+
+	![][45]
+
+1. Prüfen Sie die Testergebnisse, wenn der Build abgeschlossen ist.
+
+	![][46]
+
+	![][47]
+
+1.  Versuchen Sie einen Test zu erstellen, der fehlschlagen wird. Fügen Sie einen neuen Test hinzu, indem Sie den ersten Test kopieren, umbenennen und die Codezeile auskommentieren, die besagt, dass "NotImplementedException" eine erwartete Ausnahme ist.
 
 		```
 		[TestMethod]
@@ -252,16 +253,18 @@ Dieser Schritt gilt nur für Web-Apps, nicht für Clouddienste. Für eine zusät
 		}
 		```
 
-9. Checken Sie die Änderung ein, um einen neuen Build in die Warteschlange zu stellen.<br/>
- ![][48]
+1. Checken Sie die Änderung ein, um einen neuen Build in die Warteschlange zu stellen.
 
-10. Sehen Sie sich die Testergebnisse an, um Details zum Fehler zu erhalten.<br/>
-![][49]
-<br/>
-![][50]
+	![][48]
+
+1. Sehen Sie sich die Testergebnisse an, um Details zum Fehler zu erhalten.
+
+	![][49]
+
+	![][50]
 
 ## Nächste Schritte
-Weitere Informationen zu Komponententests in Visual Studio Team Services finden Sie unter [Ausführen von Komponententests im Build](http://go.microsoft.com/fwlink/p/?LinkId=510474). Wenn Sie Git verwenden, finden Sie unter [Freigeben von Code in Git](http://www.visualstudio.com/get-started/share-your-code-in-git-vs.aspx) und [Kontinuierliche Bereitstellung mit GIT in Azure App Service](../web-sites-publish-source-control.md). Weitere Informationen zu Visual Studio Team Services finden Sie unter [Visual Studio Team Services](http://go.microsoft.com/fwlink/?LinkId=253861).
+Weitere Informationen zu Komponententests in Visual Studio Team Services finden Sie unter [Ausführen von Komponententests im Build](http://go.microsoft.com/fwlink/p/?LinkId=510474). Wenn Sie Git verwenden, finden Sie unter [Freigeben von Code in Git](http://www.visualstudio.com/get-started/share-your-code-in-git-vs.aspx) und [Kontinuierliche Bereitstellung mit GIT in Azure App Service](/app-service-web/web-sites-publish-source-control.md). Weitere Informationen zu Visual Studio Team Services finden Sie unter [Visual Studio Team Services](http://go.microsoft.com/fwlink/?LinkId=253861).
 
 [0]: ./media/cloud-services-continuous-delivery-use-vso/tfs0.PNG
 [1]: ./media/cloud-services-continuous-delivery-use-vso/tfs1.png
@@ -314,4 +317,4 @@ Weitere Informationen zu Komponententests in Visual Studio Team Services finden 
 [49]: ./media/cloud-services-continuous-delivery-use-vso/TestsFailed.PNG
 [50]: ./media/cloud-services-continuous-delivery-use-vso/TestsResultsFailed.PNG
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0204_2016-->

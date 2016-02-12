@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/28/2015"
+	ms.date="01/28/2016"
 	ms.author="swkrish"/>
 
 # Preview-Version von Azure Active Directory B2C: Häufig gestellte Fragen
@@ -59,7 +59,7 @@ Jeder Azure AD B2C-Mandant hat im Azure-Portal ein eigenes Blatt mit B2C-Funktio
 
 ### Wie kann ich Bestätigungs-E-Mails (Inhalt und Absenderfeld, also das Feld „Von:“) anpassen, die von Azure AD B2C gesendet werden?
 
-Verwenden Sie das [Feature für Unternehmensbranding](./active-directory/active-directory-add-company-branding.md), um den Inhalt von Bestätigungs-E-Mails anzupassen. Das Absenderfeld kann durch den Support geändert werden.
+Verwenden Sie das [Feature für Unternehmensbranding](../active-directory/active-directory-add-company-branding.md), um den Inhalt von Bestätigungs-E-Mails anzupassen. Das Absenderfeld kann durch den Support geändert werden.
 
 ### Wie kann ich meine vorhandenen Benutzernamen, Kennwörter und Profile aus meiner Datenbank zu Azure AD B2C migrieren?
 
@@ -80,6 +80,10 @@ Derzeit ist dies nicht möglich. Die Integration dieser Systeme ist aber geplant
 ### Funktioniert AD B2C in Verbindung mit SharePoint On-Premises 2016 oder früher?
 
 Derzeit ist dies nicht möglich. Azure AD B2C bietet keine Unterstützung für SAML 1.1 Token, die Portal- und E-Commerce-Anwendungen auf Grundlage lokaler SP-Bedürfnisse erstellen. Beachten Sie, dass Azure AD B2C nicht für das Sharepoint-Freigabeszenario für externe Partner vorgesehen ist. Informieren Sie sich dazu unter [Azure AD B2B](http://blogs.technet.com/b/ad/archive/2015/09/15/learn-all-about-the-azure-ad-b2b-collaboration-preview.aspx).
+
+### Sollte ich Azure AD B2C oder B2B zum Verwalten externer Identitäten verwenden?
+
+Lesen Sie [diesen Artikel](../active-directory/active-directory-b2b-compare-external-identities.md), um mehr über das Anwenden der entsprechenden Features in Ihren Szenarios mit externen Identitäten zu erfahren.
 
 ### Welche Funktionen für Berichterstellung und Auditing bietet Azure AD B2C? Sind die Funktionen mit der Azure AD Premium-Version identisch?
 
@@ -109,4 +113,4 @@ Derzeit können wir noch keine Angaben zum Datum der allgemeinen Verfügbarkeit 
 
 Es kann hilfreich sein, sich auch über die aktuellen [Einschränkungen der Vorschauversion](active-directory-b2c-limitations.md) zu informieren.
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0204_2016-->

@@ -1,19 +1,19 @@
 <properties 
-   pageTitle="Debuggen eines Azure-Clouddiensts oder virtuellen Computers in Visual Studio | Microsoft Azure"
-   description="Debuggen eines Clouddiensts oder eines virtuellen Computers in Visual Studio"
-   services="visual-studio-online"
-   documentationCenter="na"
-   authors="TomArcher"
-   manager="douge"
-   editor="tlee" />
+	pageTitle="Debuggen eines Azure-Clouddiensts oder virtuellen Computers in Visual Studio | Microsoft Azure"
+	description="Debuggen eines Clouddiensts oder eines virtuellen Computers in Visual Studio"
+	services="visual-studio-online"
+	documentationCenter="na"
+	authors="TomArcher"
+	manager="douge"
+	editor="tlee" />
 <tags 
-   ms.service="visual-studio-online"
-   ms.devlang="multiple"
-   ms.topic="article"
-   ms.tgt_pltfrm="multiple"
-   ms.workload="na"
-   ms.date="10/28/2015"
-   ms.author="tarcher" />
+	ms.service="visual-studio-online"
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.tgt_pltfrm="multiple"
+	ms.workload="na"
+	ms.date="02/03/2016"
+	ms.author="tarcher" />
 
 # Debuggen eines Azure-Clouddiensts oder virtuellen Computers in Visual Studio
 
@@ -48,7 +48,7 @@ Um einen Clouddienst über einen Remotecomputer zu debuggen, müssen Sie diese F
 
 Wenn Sie das Remotedebuggen für einen Clouddienst aktivieren, führt dies nicht zu einer Leistungsverschlechterung oder zu zusätzlichen Gebühren. Verwenden Sie das Remotedebuggen nicht für einen Produktionsdienst, da sich dies negativ auf Clients auswirken kann, die den Dienst nutzen.
 
->[AZURE.NOTE]Wenn Sie einen Clouddienst über Visual Studio veröffentlichen, können Sie **IntelliTrace** für alle Rollen in diesem Dienst aktivieren, die für .NET Framework 4 oder .NET Framework 4.5 ausgelegt sind. Mit **IntelliTrace** können Sie Ereignisse untersuchen, die in einer Rolleninstanz in der Vergangenheit aufgetreten sind, und den Kontext zum jeweiligen Zeitpunkt reproduzieren. Weitere Informationen finden Sie unter [Debuggen eines veröffentlichten Clouddiensts mit IntelliTrace](http://go.microsoft.com/fwlink/?LinkID=623016) und [Visual Studio und Verwenden von IntelliTrace](https://msdn.microsoft.com/library/dd264915.aspx).
+>[AZURE.NOTE] Wenn Sie einen Clouddienst über Visual Studio veröffentlichen, können Sie **IntelliTrace** für alle Rollen in diesem Dienst aktivieren, die für .NET Framework 4 oder .NET Framework 4.5 ausgelegt sind. Mit **IntelliTrace** können Sie Ereignisse untersuchen, die in einer Rolleninstanz in der Vergangenheit aufgetreten sind, und den Kontext zum jeweiligen Zeitpunkt reproduzieren. Weitere Informationen finden Sie unter [Debuggen eines veröffentlichten Clouddiensts mit IntelliTrace](http://go.microsoft.com/fwlink/?LinkID=623016) und [Visual Studio und Verwenden von IntelliTrace](https://msdn.microsoft.com/library/dd264915.aspx).
 
 ### So aktivieren Sie das Remotedebuggen für einen Clouddienst
 
@@ -82,13 +82,13 @@ Wenn Sie das Remotedebuggen für einen Clouddienst aktivieren, führt dies nicht
 
     ![Prozesse debuggen](./media/vs-azure-tools-debug-cloud-services-virtual-machines/IC690787.gif)
 
->[AZURE.WARNING]Vermeiden Sie es beim Remotedebuggen, lange an Breakpoints anzuhalten. Azure behandelt Prozesse, die länger als einige Minuten angehalten wurden, als nicht reagierend und sendet keinen Datenverkehr mehr an diese Instanz. Wenn Sie zu lange unterbrechen, wird "msvsmon.exe" vom Prozess getrennt.
+>[AZURE.WARNING] Vermeiden Sie es beim Remotedebuggen, lange an Breakpoints anzuhalten. Azure behandelt Prozesse, die länger als einige Minuten angehalten wurden, als nicht reagierend und sendet keinen Datenverkehr mehr an diese Instanz. Wenn Sie zu lange unterbrechen, wird "msvsmon.exe" vom Prozess getrennt.
 
 Um den Debugger von allen Prozessen in Ihrer Instanz oder Rolle zu trennen, öffnen Sie das Kontextmenü für die Rolle oder Instanz, die Sie debuggen, und klicken Sie dann auf "Debugger lösen".
 
 ## Einschränkungen beim Remotedebuggen in Azure
 
-Analog zu Azure SDK 2.3 gelten beim Remotedebuggen folgende Einschränkungen.
+Analog zu Azure SDK 2.3 gelten beim Remotedebuggen folgende Einschränkungen:
 
 - Wenn das Remotedebuggen aktiviert ist, können Sie keinen Clouddienst veröffentlichen, in dem eine Rolle mehr als 25 Instanzen aufweist.
 
@@ -102,7 +102,7 @@ Analog zu Azure SDK 2.3 gelten beim Remotedebuggen folgende Einschränkungen.
 
 Sie können Programme debuggen, die auf virtuellen Computern in Azure ausgeführt werden, indem Sie den Server-Explorer in Visual Studio verwenden. Wenn Sie das Remotedebuggen auf einem virtuellen Computer in Azure aktivieren, installiert Azure die Erweiterung für das Remotedebuggen auf dem virtuellen Computer. Sie können dann den Debugger an Prozesse auf dem virtuellen Computer anfügen und wie gewohnt debuggen.
 
->[AZURE.NOTE]Für durch den Azure-Ressourcen-Manager-Stapel erstellte virtuelle Computer ist Remotedebuggen mit dem Cloud-Explorer in Visual Studio 2015 möglich. Weitere Informationen finden Sie unter [Verwalten von Azure-Ressourcen mit dem Cloud-Explorer](http://go.microsoft.com/fwlink/?LinkId=623031).
+>[AZURE.NOTE] Für durch den Azure-Ressourcen-Manager-Stapel erstellte virtuelle Computer ist Remotedebuggen mit dem Cloud-Explorer in Visual Studio 2015 möglich. Weitere Informationen finden Sie unter [Verwalten von Azure-Ressourcen mit dem Cloud-Explorer](http://go.microsoft.com/fwlink/?LinkId=623031).
 
 ### So debuggen Sie einen virtuellen Computer in Azure
 
@@ -190,4 +190,4 @@ Visual Studio ASP.NET-Projekte bieten eine Option, einen praktischen virtuellen 
 - Verwenden Sie **IntelliTrace**, um ein Protokoll der Aufrufe und Ereignisse von einem freigegebenen Server zu sammeln. Weitere Informationen finden Sie unter [Debuggen eines veröffentlichten Clouddiensts mit IntelliTrace und Visual Studio](http://go.microsoft.com/fwlink/?LinkID=623016).
 - Verwenden Sie die **Azure-Diagnose**, um ausführliche Informationen zu Code, der in Rollen ausgeführt wird, zu protokollieren, unabhängig davon, ob die Rollen in der Entwicklungsumgebung oder in Azure ausgeführt werden. Weitere Informationen finden Sie unter [Sammeln von Protokollierungsdaten mit der Azure-Diagnose](http://go.microsoft.com/fwlink/p/?LinkId=400450).
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0204_2016-->

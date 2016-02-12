@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/06/2016"
+	ms.date="01/28/2016"
 	ms.author="kgremban"/>
 
 # Bereitstellen von sicherem Remotezugriff auf lokale Anwendungen
 
-> [AZURE.NOTE]Das Feature "Anwendungsproxy" ist nur verfügbar, wenn Sie Azure Active Directory auf die Premium oder Basic Edition aktualisiert haben. Weitere Informationen finden Sie unter [Azure Active Directory-Editionen](active-directory-editions.md).
+> [AZURE.NOTE] Das Feature "Anwendungsproxy" ist nur verfügbar, wenn Sie Azure Active Directory auf die Premium oder Basic Edition aktualisiert haben. Weitere Informationen finden Sie unter [Azure Active Directory-Editionen](active-directory-editions.md).
 
 Sie möchten für Remotebenutzer den Zugriff mit beliebigen Arten von Geräten bereitstellen – verwaltete und nicht verwaltete Geräte, Tablets, Smartphones und Laptops. Die Bereitstellung des sicheren Zugriffs für eine Vielzahl von Ressourcen kann jedoch komplex sein. In den letzten Jahren war es beliebt, sicheren Remotezugriff über Reverseproxys bereitzustellen, aber diese mussten sich hinter Firewalls befinden. Die Firewalls waren zum einen schwierig zu sichern, andererseits war es schwer, ihre hohe Verfügbarkeit zu garantieren.
 
@@ -59,7 +59,7 @@ Der Anwendungsproxy bietet Ihnen noch viele weitere Möglichkeiten:
 - [Sehen Sie sich unsere Videos auf Channel 9 an!](http://channel9.msdn.com/events/Ignite/2015/BRK3864)
 
 ## Zusätzliche Ressourcen
-* [Als Organisation für Azure registrieren](../sign-up-organization.md)
-* [Azure-Identität](../fundamentals-identity.md)
+* [Als Organisation für Azure registrieren](sign-up-organization.md)
+* [Azure-Identität](fundamentals-identity.md)
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0204_2016-->

@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="Windows" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/10/2015" 
+	ms.date="01/28/2016" 
 	ms.author="josephd"/>
 
 # Einrichten einer SharePoint-Intranetfarm in einer Hybrid Cloud zu Testzwecken
@@ -195,23 +195,8 @@ Die aktuelle Konfiguration sieht folgendermaßen aus.
  
 Ihre SharePoint-Intranetfarm kann jetzt in einer Hybrid Cloud-Umgebung getestet werden.
 
-## Zusätzliche Ressourcen
+## Nächste Schritte
 
-[SharePoint in Azure-Infrastrukturdiensten](http://msdn.microsoft.com/library/azure/dn275955.aspx)
+- Richten Sie die [Produktionsworkload](../virtual-machines/virtual-machines-workload-intranet-sharepoint-overview.md) ein.
 
-[SharePoint-Serverfarm](../virtual-machines/virtual-machines-sharepoint-farm-azure-preview.md)
-
-[Einrichten einer Hybridcloudumgebung zu Testzwecken](virtual-networks-setup-hybrid-cloud-environment-testing.md)
-
-[Einrichten einer webbasierten Branchenanwendung in einer Hybrid Cloud zu Testzwecken](virtual-networks-setup-lobapp-hybrid-cloud-testing.md)
-
-[Einrichten der Office 365-Verzeichnissynchronisierung (DirSync) in einer Hybrid Cloud zu Testzwecken](virtual-networks-setup-dirsync-hybrid-cloud-testing.md)
-
-[Einrichten einer simulierten Hybrid Cloud-Umgebung zu Testzwecken](virtual-networks-setup-simulated-hybrid-cloud-environment-testing.md)
-
-[Testumgebungen für Azure-Hybridclouds](../virtual-machines/virtual-machines-hybrid-cloud-test-environments.md)
-
-[Implementierungsrichtlinien für Azure-Infrastrukturdienste](../virtual-machines/virtual-machines-infrastructure-services-implementation-guidelines.md)
- 
-
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

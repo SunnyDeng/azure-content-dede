@@ -19,13 +19,14 @@
 
 # Einrichten von Endpunkten auf einer klassischen virtuellen Azure-Maschine
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell. Informationen zur Ressourcen-Manager-Bereitstellung finden Sie unter [Erste Schritte zum Konfigurieren des Lastenausgleichs für Internetverbindungen mit dem Azure-Ressourcen-Manager](../load-balancer/load-balancer-arm-powershell.md) und [Informationen zu Netzwerk-Sicherheitsgruppen](virtual-networks-nsg.md).
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+
 
 Alle virtuellen Maschinen, die Sie mit dem klassischen Bereitstellungsmodell in Azure erstellen, können automatisch über einen privaten Netzwerkkanal mit anderen virtuellen Maschinen im gleichen Clouddienst oder Virtual Network kommunizieren. Computer im Internet oder anderen virtuellen Netzwerken erfordern jedoch von den Endpunkten, dass sie den eingehenden Netzwerkdatenverkehr auf einen virtuellen Computer leiten.
 
 Beim Erstellen einer virtuellen Maschine im klassischen Azure-Portal werden die Endpunkte für Remote Desktop und Windows PowerShell Remoting Secure Shell (SSH) in der Regel automatisch erstellt – je nachdem, welches Betriebssystem Sie wählen. Sie können zusätzliche Endpunkte beim Erstellen des virtuellen Computers oder später nach Bedarf konfigurieren.
 
-Jeder Endpunkt verfügt über einen *öffentlichen* und einen *privaten Port*.
+Jeder Endpunkt verfügt über einen *öffentlichen* und einen *privaten Port*:
 
 - Der öffentliche Port wird von Azure-Lastenausgleich verwendet, um eingehenden Datenverkehr an den virtuellen Computer aus dem Internet zu überwachen.
 - Der private Port wird vom virtuellen Computer zum Überwachen von eingehendem Datenverkehr verwendet, in der Regel für eine Anwendung oder ein Dienst, der auf dem virtuellen Computer ausgeführt wird.
@@ -60,13 +61,13 @@ Der neue Endpunkt wird auf der Seite **Endpunkte** aufgeführt.
 
 ![Endpunkt erfolgreich erstellt](./media/virtual-machines-set-up-endpoints/endpointwindowsnew.png)
 
-Ein Azure-PowerShell-Cmdlet zum Einrichten finden Sie unter [Add-AzureEndpoint](https://msdn.microsoft.com/library/azure/dn495300.aspx). Wenn Sie die Azure-CLI im Service Management-Modus verwenden, geben Sie den Befehl **azure vm endpoint creat** ein.
+Ein Azure-PowerShell-Cmdlet zum Einrichten finden Sie unter [Add-AzureEndpoint](https://msdn.microsoft.com/library/azure/dn495300.aspx). Wenn Sie die Azure-Befehlszeilenschnittstelle (Azure-CLI) im Dienstverwaltungsmodus verwenden, geben Sie den Befehl **azure vm endpoint create** ein.
 
 ## Verwaltung der ACL für einen Endpunkt
 
 Zum Definieren der Computer, die Datenverkehr senden können, kann die ACL für einen Endpunkt Datenverkehr anhand der IP-Quelladresse einschränken. Gehen Sie folgendermaßen vor, um eine ACL an einem Endpunkt hinzuzufügen, zu modifizieren oder zu entfernen.
 
-> [AZURE.NOTE]Wenn der Endpunkt Teil eines Satzes mit Lastenausgleich ist, werden alle Änderungen, die Sie an der ACL oder an einem Endpunkt vornehmen, auf alle Endpunkte in diesem Satz angewendet.
+> [AZURE.NOTE] Wenn der Endpunkt Teil eines Satzes mit Lastenausgleich ist, werden alle Änderungen, die Sie an der ACL oder an einem Endpunkt vornehmen, auf alle Endpunkte in diesem Satz angewendet.
 
 Befindet sich der virtuelle Computer in einem virtuellen Azure-Netzwerk, sollten Sie anstelle von ACLs Netzwerksicherheitsgruppen verwenden. Weitere Informationen finden Sie unter [Informationen zu Netzwerksicherheitsgruppen](virtual-networks-nsg.md).
 
@@ -88,8 +89,9 @@ Die Regeln werden der Reihe nach, beginnend mit der ersten und endend mit der le
 
 Informationen dazu, wie Sie ein Azure PowerShell-Cmdlet für die Einrichtung verwenden, finden Sie unter [Verwalten von Zugriffssteuerungslisten (ACLs) für Endpunkte mithilfe von PowerShell](../virtual-network/virtual-networks-acl-powershell.md).
 
+
 ## Zusätzliche Ressourcen
 
-[Lastenausgleich für Azure-Infrastrukturdienste](virtual-machines-load-balance.md)
+[Erste Schritte zum Erstellen eines Load Balancers mit Internetzugriff im Ressourcen-Manager unter Verwendung von PowerShell](load-balancer-get-started-internet-arm-ps.md)
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0204_2016-->

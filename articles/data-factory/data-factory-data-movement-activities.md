@@ -13,16 +13,16 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/01/2015" 
+	ms.date="02/03/2016" 
 	ms.author="spelluru"/>
 
 # Datenverschiebungsaktivitäten
-Die [Kopieraktivität](#copyactivity) führt die Datenverschiebung in Azure Data Factory durch, und die Aktivität wird von einem [global verfügbaren Datenverschiebungsdienst](#global) gestützt, mit dem Daten zwischen verschiedenen Datenspeichern auf sichere, zuverlässige und skalierbare Weise kopiert werden können. Der Dienst wählt automatisch die optimale Region aus, um die Datenverschiebung basierend auf dem Speicherort der Quell- und Senkendatenspeicher durchzuführen. Derzeit wird die dem Senkendatenspeicher am nächsten gelegene Region verwendet.
+Die [Kopieraktivität](#copyactivity) führt die Datenverschiebung in Azure Data Factory durch, und die Aktivität wird von einem [global verfügbaren Dienst](#global) gestützt, mit dem Daten zwischen verschiedenen Datenspeichern auf sichere, zuverlässige und skalierbare Weise kopiert werden können. Der Dienst wählt automatisch die optimale Region zum Durchführen der Datenverschiebung aus. Es wird die dem Senkendatenspeicher am nächsten gelegene Region verwendet.
  
 Betrachten wir nun, wie diese Datenverschiebung in verschiedenen Szenarios erfolgt.
 
 ## Kopieren von Daten zwischen zwei Clouddatenspeichern
-Wenn sowohl die Quell- als auch die Senkendatenspeicher (sprich die Zieldatenspeicher) sich in der Cloud befinden, durchläuft die Kopieraktivität die folgenden Phasen, um die Daten aus der Quelle in die Senke zu kopieren bzw. zu verschieben. Der Datenverschiebungsdienst
+Wenn sowohl die Quell- als auch die Senkendatenspeicher (sprich die Zieldatenspeicher) sich in der Cloud befinden, durchläuft die Kopieraktivität die folgenden Phasen, um die Daten aus der Quelle in die Senke zu kopieren bzw. zu verschieben. Der Dienst, der als Grundlage der Kopieraktivität dient, führt Folgendes durch:
 
 1. liest Daten aus dem Quelldatenspeicher
 2.	führt die Serialisierung/Deserialisierung, Komprimierung/Dekomprimierung, Spaltenzuordnung und Typumwandlung basierend auf der Konfiguration des Eingabedatasets, Ausgabedatasets und der Kopieraktivität durch 
@@ -32,7 +32,7 @@ Wenn sowohl die Quell- als auch die Senkendatenspeicher (sprich die Zieldatenspe
 
 
 ## Kopieren von Daten zwischen einem lokalen Datenspeicher und einem Clouddatenspeicher
-Um [Daten sicher zwischen lokalen Datenspeichern hinter der Unternehmensfirewall und einem Clouddatenspeicher zu verschieben](#moveonpremtocloud), müssen Sie auf dem lokalen Computer das Datenverwaltungsgateway installieren, wobei es sich um einen Agent handelt, der eine hybride Datenverschiebung und -verarbeitung ermöglicht. Das Datenverwaltungsgateway kann auf dem gleichen Computer wie der Datenspeicher selbst oder auf einem separaten Computer, der Zugriff auf den Datenspeicher hat, installiert werden. In diesem Szenario werden die Serialisierung/Deserialisierung, Komprimierung/Dekomprimierung, Spaltenzuordnung und Typumwandlung vom Datenverwaltungsgateway ausgeführt. Der Datenverschiebungsdienst ist nicht an diesem Szenario beteiligt.
+Um [Daten sicher zwischen lokalen Datenspeichern hinter der Unternehmensfirewall und einem Clouddatenspeicher zu verschieben](#moveonpremtocloud), müssen Sie auf dem lokalen Computer das Datenverwaltungsgateway installieren, wobei es sich um einen Agent handelt, der eine hybride Datenverschiebung und -verarbeitung ermöglicht. Das Datenverwaltungsgateway kann auf dem gleichen Computer wie der Datenspeicher selbst oder auf einem separaten Computer, der Zugriff auf den Datenspeicher hat, installiert werden. In diesem Szenario werden die Serialisierung/Deserialisierung, Komprimierung/Dekomprimierung, Spaltenzuordnung und Typumwandlung vom Datenverwaltungsgateway ausgeführt. In solch einem Fall fließen die Daten nicht über den Azure Data Factory-Dienst. Das Datenverwaltungsgateway schreibt die Daten direkt in den Zielspeicher.
 
 ![Lokal-zu-Cloud-Kopie](.\media\data-factory-data-movement-activities\onprem-to-cloud.png)
 
@@ -44,40 +44,35 @@ Die Kopieraktivität kopiert die Daten aus einem **Quelldatenspeicher** in einen
 
 | Quellen| Senken |
 |:------- | :---- |
-| <ul><li>[Azure-Blob](data-factory-azure-blob-connector.md)</li><li>[Azure-Tabelle](data-factory-azure-table-connector.md)</li><li>[Azure SQL-Datenbank](data-factory-azure-sql-connector.md)</li><li>[Azure SQL Data Warehouse](data-factory-azure-sql-data-warehouse-connector.md)</li><li>[Azure DocumentDB (siehe Hinweis unten)](data-factory-azure-documentdb-connector.md)</li><li>[Azure Data Lake-Speicher](data-factory-azure-datalake-connector.md)</li><li>[SQL Server lokal/Azure IaaS](data-factory-sqlserver-connector.md)</li><li>[Dateisystem lokal/Azure IaaS](data-factory-onprem-file-system-connector.md)</li><li>[Oracle-Datenbank – lokal/Azure IaaS](data-factory-onprem-oracle-connector.md)</li><li>[MySQL-Datenbank – lokal/Azure IaaS ](data-factory-onprem-mysql-connector.md)</li><li>[DB2-Datenbank – lokal/Azure IaaS](data-factory-onprem-db2-connector.md)</li><li>[Teradata-Datenbank – lokal/Azure IaaS ](data-factory-onprem-teradata-connector.md)</li><li>[Sybase-Datenbank – lokal/Azure IaaS](data-factory-onprem-sybase-connector.md)</li><li>[PostgreSQL-Datenbank – lokal/Azure IaaS](data-factory-onprem-postgresql-connector.md)</li><li>[ODBC-Datenquellen](data-factory-odbc-connector.md)</li><li>[Hadoop Distributed File System (HDFS)](data-factory-hdfs-connector.md)</li></ul> | <ul><li>[Azure-Blob](data-factory-azure-blob-connector.md)</li><li>[Azure-Tabelle](data-factory-azure-table-connector.md)</li><li>[Azure SQL-Datenbank](data-factory-azure-sql-connector.md)</li><li>[Azure SQL Data Warehouse](data-factory-azure-sql-data-warehouse-connector.md)</li><li>[Azure DocumentDB (siehe Hinweis unten)](data-factory-azure-documentdb-connector.md)</li><li>[Azure Data Lake-Speicher](data-factory-azure-datalake-connector.md)</li><li>[SQL Server – lokal/Azure IaaS](data-factory-sqlserver-connector.md)</li><li>[Dateisystem – lokal/Azure IaaS](data-factory-onprem-file-system-connector.md)</li></ul> |
+| <ul><li>[Azure-Blob](data-factory-azure-blob-connector.md)</li><li>[Azure-Tabelle](data-factory-azure-table-connector.md)</li><li>[Azure SQL-Datenbank](data-factory-azure-sql-connector.md)</li><li>[Azure SQL Data Warehouse](data-factory-azure-sql-data-warehouse-connector.md)</li><li>[Azure DocumentDB (siehe Hinweis unten)](data-factory-azure-documentdb-connector.md)</li><li>[Azure Data Lake-Speicher](data-factory-azure-datalake-connector.md)</li><li>[SQL Server – lokal/Azure IaaS](data-factory-sqlserver-connector.md)</li><li>[Dateisystem – lokal/Azure IaaS](data-factory-onprem-file-system-connector.md)</li><li>[Oracle-Datenbank – lokal/Azure IaaS](data-factory-onprem-oracle-connector.md)</li><li>[MySQL-Datenbank – lokal/Azure IaaS ](data-factory-onprem-mysql-connector.md)</li><li>[DB2-Datenbank – lokal/Azure IaaS](data-factory-onprem-db2-connector.md)</li><li>[Teradata-Datenbank – lokal/Azure IaaS ](data-factory-onprem-teradata-connector.md)</li><li>[Sybase-Datenbank – lokal/Azure IaaS](data-factory-onprem-sybase-connector.md)</li><li>[PostgreSQL-Datenbank – lokal/Azure IaaS](data-factory-onprem-postgresql-connector.md)</li><li>[ODBC-Datenquellen – lokal/Azure IaaS](data-factory-odbc-connector.md)</li><li>[Hadoop Distributed File System (HDFS) – lokal/Azure IaaS](data-factory-hdfs-connector.md)</li></ul> | <ul><li>[Azure-Blob](data-factory-azure-blob-connector.md)</li><li>[Azure-Tabelle](data-factory-azure-table-connector.md)</li><li>[Azure SQL-Datenbank](data-factory-azure-sql-connector.md)</li><li>[Azure SQL Data Warehouse](data-factory-azure-sql-data-warehouse-connector.md)</li><li>[Azure DocumentDB (siehe Hinweis unten)](data-factory-azure-documentdb-connector.md)</li><li>[Azure Data Lake-Speicher](data-factory-azure-datalake-connector.md)</li><li>[SQL Server – lokal/Azure IaaS](data-factory-sqlserver-connector.md)</li><li>[Dateisystem – lokal/Azure IaaS](data-factory-onprem-file-system-connector.md)</li></ul> |
 
 
 > [AZURE.NOTE] Daten können nur zwischen Azure DocumentDB und anderen Azure-Diensten wie Azure-Blob, Azure-Tabelle, Azure SQL-Datenbank, Azure SQL Data Warehouse, Azure DocumentDB und Azure Data Lake-Speicher verschoben werden. Die vollständige Matrix für Azure DocumentDB wird ebenfalls bald unterstützt.
 
 ## Lernprogramm:
-Ein kurzes Lernprogramm zur Verwendung der Kopieraktivität finden Sie unter [Lernprogramm: Verwenden der Kopieraktivität in einer Azure Data Factory-Pipeline](data-factory-get-started.md). In diesem Lernprogramm kopieren Sie mit der Kopieraktivität Daten aus einem Azure-Blob-Speicher in eine Azure SQL-Datenbank. Im folgenden Abschnitt werden alle Quellen und Senken aufgeführt, die von der Kopieraktivität unterstützt werden.
+Ein kurzes Lernprogramm zur Verwendung der Kopieraktivität finden Sie unter [Lernprogramm: Verwenden der Kopieraktivität in einer Azure Data Factory-Pipeline](data-factory-get-started.md). In diesem Lernprogramm kopieren Sie mit der Kopieraktivität Daten aus einem Azure-Blob-Speicher in eine Azure SQL-Datenbank.
 
 ## <a name="copyactivity"></a>Kopieraktivität
-Die Kopieraktivität verwendet ein Eingabedataset (**Quelle**) und ein Ausgabedataset (**Senke**). Das Kopieren der Daten erfolgt als Batch entsprechend dem für die Aktivität angegebenen Zeitplan. Weitere Informationen zum Definieren von Aktivitäten im Allgemeinen, wie z. B. verschiedene JSON-Abschnitte und -Eigenschaften, die für alle Aktivitäten verfügbar sind, finden Sie im Artikel [Grundlegendes zu Pipelines und Aktivitäten](data-factory-create-pipelines.md).
+Die Kopieraktivität verwendet ein Eingabedataset (**Quelle**) und ein Ausgabedataset (**Senke**). Das Kopieren der Daten erfolgt als Batch entsprechend dem für die Aktivität angegebenen Zeitplan. Informationen zur allgemeinen Definition von Aktivitäten finden Sie im Artikel [Grundlegendes zu Pipelines und Aktivitäten](data-factory-create-pipelines.md).
 
 Die Kopieraktivität bietet die folgenden Funktionen:
 
 ### <a name="global"></a>Global verfügbare Datenverschiebung
-Obwohl Azure Data Factory selbst nur in den Regionen „USA Westen“ und „Nordeuropa“ verfügbar ist, steht der Datenverschiebungsdienst, der die Kopieraktivität unterstützt, global in den folgenden Regionen und Gebieten zur Verfügung. Die global verfügbare Topologie gewährleistet effiziente Datenverschiebungen und vermeidet in den meisten Fällen regionsübergreifende Hops.
+Obwohl Azure Data Factory selbst nur in den Regionen „USA, Westen“ und „Nordeuropa“ verfügbar ist, steht der Dienst, der die Kopieraktivität unterstützt, global in den folgenden Regionen und Gebieten zur Verfügung. Die global verfügbare Topologie gewährleistet effiziente Datenverschiebungen und vermeidet in den meisten Fällen regionsübergreifende Hops.
 
-| Region | Gebiet |
-| ------ | --------- | 
-| USA (Mitte) | US |
-| USA (Ost) | US |
-| USA (Ost 2) | US |
-| USA (Mitte/Norden) | US |
-| USA (Mitte/Süden) | US |
-| USA (West) | US |
-| Brasilien Süd | LATAM |
-| Nordeuropa | EMEA |
-| Westeuropa | EMEA |
-| Südostasien | APAC |
-| Japan Ost | APAC |
+Das **Datenverwaltungsgateway** oder **Azure Data Factory** führt die Datenverschiebung basierend auf dem Speicherort der Quell- und Zieldatenspeicher als Kopiervorgang durch. Die folgende Tabelle enthält die Details hierzu:
 
-Beachten Sie Folgendes:
+Speicherort der Quelldaten | Speicherort der Zieldaten | Datenverschiebung erfolgt per  
+-------------------------- | ------------------------------- | ----------------------------- 
+lokal/Azure-VM (IaaS) | Cloud | **Datenverwaltungsgateway** auf lokalem Computer/Azure-VM. Die Daten fließen nicht über den Dienst in der Cloud. <p> Hinweis: Das Datenverwaltungsgateway kann sich auf demselben lokalen Computer bzw. der Azure-VM wie der Datenspeicher oder auf einem anderen lokalen Computer bzw. einer Azure-VM befinden, solange eine Verbindung mit beiden Datenspeichern hergestellt werden kann.</p>
+Cloud | lokal/Azure-VM (IaaS) | Wie oben. 
+lokal/Azure-VM (IaaS) | lokal/Azure-VM | **Datenverwaltungsgateway ist der Quelle zugeordnet**. Die Daten fließen nicht über den Dienst in der Cloud. Siehe Hinweis oben.   
+Cloud | Cloud | <p>**Der Clouddienst, auf dem die Kopieraktivität basiert**. Azure Data Factory verwendet die Bereitstellung dieses Diensts in der Region, die der Senkenposition in der gleichen Region am nächsten liegt. Die Zuordnung können Sie der folgenden Tabelle entnehmen: </p><table><tr><th>Region des Zieldatenspeichers</th> <th>Region für Datenverschiebung</th></tr><tr><td>USA, Osten</td><td>USA, Osten</td></tr><tr><td>USA, Osten 2</td><td>USA, Osten 2</td><tr/><tr><td>USA, Mitte</td><td>USA, Mitte</td><tr/><tr><td>USA, Westen</td><td>USA, Westen</td></tr><tr><td>USA, Norden-Mitte</td><td>USA, Norden-Mitte</td></tr><tr><td>USA, Süden-Mitte</td><td>USA, Süden-Mitte</td></tr><tr><td>Europa, Norden</td><td>Europa, Norden</td></tr><tr><td>Europa, Westen</td><td>Europa, Westen</td></tr><tr><td>Asien, Südosten</td><td>Asien, Südosten</td></tr><tr><td>Asien, Osten</td><td>Asien, Südosten</td></tr><tr><td>Japan, Osten</td><td>Japan, Osten</td></tr><tr><td>Japan, Westen</td><td>Japan, Osten</td></tr><tr><td>Brasilien, Süden</td><td>Brasilien, Süden</td></tr></table>
 
-- Wenn Sie Daten aus einer **lokalen Datenquelle** in eine **Cloud** kopieren oder umgekehrt (z. B. vom lokalen SQL Server zu Azure Blob), werden die Daten tatsächlich über das **Datenverwaltungsgateway** in Ihrer lokalen Umgebung verschoben. Der Datenverschiebungsdienst ist daran nicht beteiligt.
-- Wenn Sie Daten aus einer **Cloudquelle** in ein **Cloudziel** kopieren (z. B. aus Azure-Blob in Azure SQL), wählt der **Datenverschiebungsdienst** die Bereitstellung, die **der Senke für die Übertragung im gleichen Gebiet am nächsten liegt**. Wenn Sie beispielsweise Daten von Südostasien nach Japan West kopieren, wird für den Kopiervorgang die Bereitstellung des Datenverschiebungsdiensts in Japan Ost verwendet. Wenn sich Quelle und Ziel im gleichen Gebiet befinden und in diesem Gebiet kein Datenverschiebungsdienst verfügbar ist (z. B. derzeit Australien), schlägt die Kopieraktivität fehl, anstatt über ein alternatives Gebiet durchgeführt zu werden. Hinweis: Der Datenverschiebungsdienst würde auch auf Australien erweitert werden. 
+
+> [AZURE.NOTE] Wenn die Region des Zieldatenspeichers in der obigen Liste nicht enthalten ist, schlägt die Kopieraktivität fehl, anstatt eine Alternativregion zu wählen. Die Liste wird in Kürze um „Australien, Osten“ und „Australien, Südosten“ erweitert.
+
+
 
 ### <a name="moveonpremtocloud"></a>Sicheres Verschieben von Daten zwischen einem lokalen Speicherort und der Cloud
 Eine Herausforderung für die moderne Datenintegration ist das nahtlose Verschieben von Daten zwischen lokalen Speicherorten und der Cloud. Das Datenverwaltungsgateway ist ein Agent, den Sie lokal installieren können, um hybride Datenpipelines zu ermöglichen.
@@ -115,4 +110,4 @@ Bei der Kopieraktivität hängt der **typeProperties**-Abschnitt von den Typen d
 ### Leistung und Optimierung der Kopieraktivität 
 Der Artikel [Handbuch zur Leistung und Optimierung der Kopieraktivität](data-factory-copy-activity-performance.md) beschreibt wichtige Faktoren, die sich auf die Leistung der Datenverschiebung (Kopieraktivität) in Azure Data Factory auswirken. Außerdem wird die beobachtete Leistung bei internen Tests aufgeführt und verschiedene Methoden zur Optimierung der Leistung der Kopieraktivität erläutert.
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

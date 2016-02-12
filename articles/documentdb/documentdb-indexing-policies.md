@@ -14,19 +14,18 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="data-services" 
-    ms.date="10/05/2015" 
+    ms.date="02/03/2016" 
     ms.author="arramac"/>
 
 
 # Indizierungsrichtlinien für DocumentDB
 
-Zwar lassen zahlreiche Kunden gerne [alle Aspekte der Indizierung](documentdb-indexing.md) automatisch von DocumentDB verwalten, DocumentDB unterstützt jedoch auch die Angabe einer benutzerdefinierten **Indizierungsrichtlinie** für Sammlungen während der Erstellung. Indizierungsrichtlinien in DocumentDB sind flexibler und leistungsfähiger als sekundäre Indizes, die in anderen indizierenden Datenbankplattformen angeboten werden, da sie Ihnen das Entwerfen und Anpassen der Form des Indexes ohne Einbußen bei der Schemaflexibilität ermöglichen. Um zu erfahren, wie die Indizierung innerhalb von DocumentDB funktioniert, müssen Sie verstehen, dass Sie durch die Verwaltung der Indizierungsrichtlinie differenzierte Kompromisse zwischen dem Indexspeicheraufwand, dem Schreib- und Abfragedurchsatz und der Abfragekonsistenz vornehmen können.
+Zwar lassen zahlreiche Kunden gerne [alle Aspekte der Indizierung](documentdb-indexing.md) automatisch von DocumentDB verwalten, DocumentDB unterstützt jedoch auch die Angabe einer benutzerdefinierten **Indizierungsrichtlinie** für Sammlungen während der Erstellung. Indizierungsrichtlinien in DocumentDB sind flexibler und leistungsfähiger als sekundäre Indizes, die in anderen Datenbankplattformen angeboten werden, da sie Ihnen das Entwerfen und Anpassen der Form des Indexes ohne Einbußen bei der Schemaflexibilität ermöglichen. Um zu erfahren, wie die Indizierung innerhalb von DocumentDB funktioniert, müssen Sie verstehen, dass Sie durch die Verwaltung der Indizierungsrichtlinie differenzierte Kompromisse zwischen dem Indexspeicheraufwand, dem Schreib- und Abfragedurchsatz und der Abfragekonsistenz vornehmen können.
 
 In diesem Artikel befassen wir uns eingehend mit DocumentDB-Indizierungsrichtlinien, der Anpassung der Indizierungsrichtlinie und den zugehörigen Vor- und Nachteilen.
 
 Nach Lesen dieses Artikels können Sie die folgenden Fragen beantworten:
 
-- Wie wird die automatische Indizierung standardmäßig von DocumentDB unterstützt?
 - Wie kann ich angeben, welche Eigenschaften in die Indizierung einbezogen bzw. davon ausgeschlossen werden sollen?
 - Wie kann ich den Index nach eventuellen Updates konfigurieren?
 - Wie kann ich die Indizierung konfigurieren, um Order By- oder Bereichsabfragen durchzuführen?
@@ -59,7 +58,7 @@ Mit dem folgenden .NET-Codeausschnitt wird gezeigt, wie eine benutzerdefinierte 
     await client.CreateDocumentCollectionAsync(database.SelfLink, collection);   
 
 
->[AZURE.NOTE]Das JSON-Schema für die Indizierungsrichtlinie wurde mit der Veröffentlichung der REST-API-Version 2015-06-03 geändert, um Bereichsindizes für Zeichenfolgen zu unterstützen. .NET SDK 1.2.0 und Java, Python und Node.js SDKs 1.1.0 unterstützen das neue Richtlinienschema. Für ältere SDKs wird die REST-API-Version 2015-04-08 genutzt und das ältere Schema der Indizierungsrichtlinie unterstützt.
+>[AZURE.NOTE] Das JSON-Schema für die Indizierungsrichtlinie wurde mit der Veröffentlichung der REST-API-Version 2015-06-03 geändert, um Bereichsindizes für Zeichenfolgen zu unterstützen. .NET SDK 1.2.0 und Java, Python und Node.js SDKs 1.1.0 unterstützen das neue Richtlinienschema. Für ältere SDKs wird die REST-API-Version 2015-04-08 genutzt und das ältere Schema der Indizierungsrichtlinie unterstützt.
 >
 >Standardmäßig indiziert DocumentDB alle Zeichenfolgeneigenschaften in Dokumenten konsistent mit einem Hashindex und numerische Eigenschaften mit einem Bereichsindex.
 
@@ -71,9 +70,9 @@ DocumentDB unterstützt drei Indizierungsmodi, welche über die Indizierungsrich
 
 **Verzögert**: Um den maximalen Dokumenterfassungsdurchsatz zu ermöglichen, kann eine DocumentDB-Sammlung mit verzögerter Konsistenz konfiguriert werden; d. h. Abfragen sind letztendlich konsistent. Der Index wird asynchron aktualisiert, wenn eine DocumentDB-Sammlung untätig ist, z. B. wenn die Durchsatzkapazität der Sammlung nicht vollständig mit dem Verarbeiten von Benutzeranforderungen ausgelastet ist. Für Workloads, die „jetzt erfassen, später abfragen“ und eine ungehinderte Dokumenterfassung erfordern, kann der „verzögerte“ Indizierungsmodus geeignet sein.
 
-**Keine**: Einer Sammlung mit dem Indexmodus „Keine“ ist kein Index zugeordnet. Das Konfigurieren der Indizierungsrichtlinie mit „Keine“ hat den Nebeneffekt, dass alle vorhandenen Indizes gelöscht werden.
+**Keine**: Einer Sammlung mit dem Indexmodus „Keine“ ist kein Index zugeordnet. Diese Option wird häufig verwendet, wenn DocumentDB als Schlüssel-Wert-Speicher genutzt wird und auf Dokumente nur nach ihrer ID-Eigenschaft zugegriffen wird.
 
->[AZURE.NOTE]Das Konfigurieren der Indizierungsrichtlinie mit „Keine“ hat den Nebeneffekt, dass alle vorhandenen Indizes gelöscht werden. Verwenden Sie diese Option, wenn Ihre Zugriffsmuster nur „ID“ und/oder „Self-Link“ erfordern.
+>[AZURE.NOTE] Das Konfigurieren der Indizierungsrichtlinie mit „Keine“ hat den Nebeneffekt, dass alle vorhandenen Indizes gelöscht werden. Verwenden Sie diese Option, wenn Ihre Zugriffsmuster nur „ID“ und/oder „Self-Link“ erfordern.
 
 Das folgende Beispiel zeigt die Erstellung einer DocumentDB-Sammlung mithilfe des .NET SDK mit konsistenter automatischer Indizierung bei jeder Dokumenteinfügung.
 
@@ -168,7 +167,7 @@ Die folgende Tabelle zeigt die Konsistenz für Abfragen auf Grundlage des konfig
     </tbody>
 </table>
 
-Standardmäßig wird für alle Abfragen ein Fehler zurückgegeben, wenn die Sammlung mit dem Indizierungsmodus „Keine“ eingerichtet ist, um zu signalisieren, dass möglicherweise eine Überprüfung erforderlich ist, um die Abfrage zu verarbeiten. Diese Abfragen können ohne Bereichsindex mit dem Header `x-ms-documentdb-enable-scans` in der REST-API oder mithilfe der `EnableScanInQuery`-Option des .NET SDK ausgeführt werden. Für einige Abfragen, z. B. wenn sie „ORDER BY“ verwenden, ist der Modus „Keine“ auch mit `EnableScanInQuery` nicht zulässig.
+DocumentDB gibt einen Fehler für Abfragen zurück, die für Sammlungen mit dem Indizierungsmodus „Keine“ ausgeführt wurden. Abfragen können immer noch als Scans über den expliziten Header `x-ms-documentdb-enable-scans` in der REST-API oder die Anforderungsoption `EnableScanInQuery` des .NET-SDKs ausgeführt werden. Einige Abfragefeatures wie ORDER BY werden als Scans mit `EnableScanInQuery` nicht unterstützt.
 
 Die folgende Tabelle zeigt die Konsistenz für Abfragen auf Grundlage des Indizierungsmodus (Konsistent, Verzögert und Keine) wenn „EnableScanInQuery“ angegeben wird.
 
@@ -440,7 +439,7 @@ Im Folgenden sind die allgemeinen Muster zum Angeben von Indexpfaden aufgeführt
     </tbody>
 </table>
 
->[AZURE.NOTE]Beim Festlegen von benutzerdefinierten Indexpfaden ist es erforderlich, dass Sie die Standardindizierungsregel für die gesamte Dokumentstruktur angeben, die durch den speziellen Pfad "/" angegeben ist.
+>[AZURE.NOTE] Beim Festlegen von benutzerdefinierten Indexpfaden ist es erforderlich, dass Sie die Standardindizierungsregel für die gesamte Dokumentstruktur angeben, die durch den speziellen Pfad "/" angegeben ist.
 
 Im folgenden Beispiel wird ein bestimmter Pfad mit Bereichsindizierung und benutzerdefiniertem Genauigkeitswert von 20 Byte konfiguriert:
 
@@ -547,7 +546,7 @@ Die gleichen Regeln gelten für räumliche Abfragen. Standardmäßig wird ein Fe
 
 Die Indexgenauigkeit ermöglicht eine Abstimmung zwischen dem Indexspeicheraufwand und der Abfrageleistung. Bei Zahlen wird die Verwendung der Standardkonfiguration für Genauigkeit -1 ("Maximum") empfohlen. Da Zahlen in JSON eine Größe von 8 Byte aufweisen, entspricht dies einer Konfiguration von 8 Byte. Die Auswahl eines niedrigeren Werts für die Genauigkeit, z. B. 1 bis 7, bedeutet, dass Werte in einigen Bereichen dem gleichen Indexeintrag zugeordnet werden. Der Indexspeicherplatz reduziert sich, bei der Abfrageausführung muss jedoch möglicherweise eine größere Anzahl von Dokumenten verarbeitet werden, sodass sich somit der Durchsatz erhöht, d. h., eine größere Anzahl von Anforderungseinheiten genutzt wird.
 
-Die Konfiguration der Indexgenauigkeit lässt sich bei Zeichenfolgenbereichen sinnvoller anwenden. Da Zeichenfolgen eine beliebige Länge aufweisen können, kann sich die Wahl der Indexgenauigkeit auf die Leistung von Abfragen von Zeichenfolgenbereichen und auf den benötigten Indexspeicherplatz auswirken. Zeichenfolgenbereich-Indizes können mit einem Wert von 1 bis 100 oder -1 ("Maximum") konfiguriert werden. Wenn Sie ORDER BY-Abfragen für Zeichenfolgeneigenschaften ausführen möchten, müssen Sie eine Genauigkeit von-1 für die entsprechenden Pfade angeben.
+Die Konfiguration der Indexgenauigkeit ist eher im Zusammenhang mit Zeichenfolgenbereichen hilfreich. Da Zeichenfolgen eine beliebige Länge aufweisen können, kann sich die Wahl der Indexgenauigkeit auf die Leistung von Abfragen von Zeichenfolgenbereichen und auf den benötigten Indexspeicherplatz auswirken. Zeichenfolgenbereich-Indizes können mit einem Wert von 1 bis 100 oder -1 ("Maximum") konfiguriert werden. Wenn Sie ORDER BY-Abfragen für Zeichenfolgeneigenschaften ausführen möchten, müssen Sie eine Genauigkeit von-1 für die entsprechenden Pfade angeben.
 
 Räumliche Indizes verwenden stets die standardmäßige Indexgenauigkeit für Punkte und können nicht überschrieben werden.
 
@@ -569,7 +568,7 @@ Das folgende Beispiel zeigt, wie die Genauigkeit für Bereichsindizes in einer S
     await client.CreateDocumentCollectionAsync(database.SelfLink, rangeDefault);   
 
 
-> [AZURE.NOTE]DocumentDB gibt einen Fehler zurück, wenn in einer Abfrage "Order By" verwendet wird, aber kein Bereichsindex für den abgefragten Pfad mit maximaler Genauigkeit vorhanden ist.
+> [AZURE.NOTE] DocumentDB gibt einen Fehler zurück, wenn in einer Abfrage "Order By" verwendet wird, aber kein Bereichsindex für den abgefragten Pfad mit maximaler Genauigkeit vorhanden ist.
 
 Auf ähnliche Weise können Pfade vollständig von der Indizierung ausgeschlossen werden. Im nächsten Beispiel wird gezeigt, wie Sie einen gesamten Abschnitt der Dokumente (eine Unterstruktur) mit dem Platzhalterzeichen "*" von der Indizierung ausschließen.
 
@@ -663,7 +662,7 @@ Warum sollten Sie Änderungen an der Indizierungsrichtlinie Ihrer DocumentDB-Sam
 - Manuelles Auswählen der zu indizierenden Eigenschaften und Änderungen dieser mit der Zeit
 - Optimieren der Indizierungsgenauigkeit zur Verbesserung der Abfrageleistung oder zum Reduzieren der Speicherbelegung
 
->[AZURE.NOTE]Zum Ändern der Indizierungsrichtlinie mit „ReplaceDocumentCollectionAsync“ benötigen Sie Version > = 1.3.0 von .NET SDK.
+>[AZURE.NOTE] Zum Ändern der Indizierungsrichtlinie mit „ReplaceDocumentCollectionAsync“ benötigen Sie Version > = 1.3.0 von .NET SDK.
 >
 > Damit die Indextransformation erfolgreich abgeschlossen wird, müssen Sie sicherstellen, dass ausreichend freier Speicherplatz in der Sammlung vorhanden ist. Wenn das Speicherkontingent der Sammlung erreicht ist, wird die Indextransformation angehalten. Die Indextransformation wird automatisch fortgesetzt, sobald Speicherplatz verfügbar ist, z. B. wenn Sie einige Dokumente löschen.
 
@@ -769,4 +768,4 @@ Verwenden Sie die unten angegebenen Links, um auf Beispiele für die Verwaltung 
 
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0204_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/27/2016"  
+	ms.date="02/02/2016"  
 	ms.author="willzhan;kilroyh;yanmf;juliako"/>
 
 #CENC mit mehreren DRM-Systemen und Access Control: Referenzentwurf und -implementierung in Azure und Azure Media Services
@@ -40,13 +40,13 @@ In diesem Artikel werden die folgenden Themen behandelt:
 	- [Was gilt für Livestreaming?](media-services-cenc-with-multidrm-access-control.md#what-about-live-streaming)
 	- [Was gilt für Lizenzserver außerhalb von Azure Media Services?](media-services-cenc-with-multidrm-access-control.md#what-about-license-servers-outside-of-azure-media-services)
 	- [Was geschieht, wenn ich einen benutzerdefinierten STS verwenden möchte?](media-services-cenc-with-multidrm-access-control.md#what-if-i-want-to-use-a-custom-sts)
-	- [Technische Hinweise](media-services-cenc-with-multidrm-access-control.md#tech-note)
 - [Das fertige System und Tests](media-services-cenc-with-multidrm-access-control.md#the-completed-system-and-test)
 	- [Benutzeranmeldung](media-services-cenc-with-multidrm-access-control.md#user-login)
 	- [Verwenden von Encrypted Media Extensions für PlayReady](media-services-cenc-with-multidrm-access-control.md#using-encrypted-media-extensipons-for-playready)
 	- [Verwenden von EME für Widevine](media-services-cenc-with-multidrm-access-control.md#using-eme-for-widevine)
 	- [Nicht berechtigte Benutzer](media-services-cenc-with-multidrm-access-control.md#not-entitled-users)
 	- [Ausführen eines benutzerdefinierten Sicherheitstokendiensts](media-services-cenc-with-multidrm-access-control.md#running-custom-secure-token-service)
+- [Zusammenfassung](media-services-cenc-with-multidrm-access-control.md#summary)
 
 ##Einführung
 
@@ -62,7 +62,7 @@ Die Vorteile von CENC mit mehreren DRM-Systemen sind wie folgt:
 1. Weniger Kosten für die Verwaltung verschlüsselter Assets, da nur eine einzige Kopie der verschlüsselte Assets erforderlich ist.
 1. Wegfall der Kosten für die DRM-Clientlizenzierung, da der systemeigene DRM-Client in der Regel auf seiner systemeigenen Plattform kostenlos ist.
 
-Microsoft ist zusammen mit einigen anderen wichtigen Anbietern ein aktiver Förderer von DASH und CENC. Microsoft Azure Media Services bietet Unterstützung für DASH und CENC. Aktuelle Ankündigungen finden Sie in den Blogs von Mingfei: [Announcing Google Widevine license delivery services public preview in Azure Media Services](https://azure.microsoft.com/blog/announcing-google-widevine-license-delivery-services-public-preview-in-azure-media-services/) und [Azure Media Services adds Google Widevine packaging for delivering multi-DRM stream](https://azure.microsoft.com/blog/azure-media-services-adds-google-widevine-packaging-for-delivering-multi-drm-stream/).
+Microsoft ist zusammen mit einigen anderen wichtigen Anbietern ein aktiver Förderer von DASH und CENC. Microsoft Azure Media Services bietet Unterstützung für DASH und CENC. Aktuelle Ankündigungen finden Sie in den Blogs von Mingfei: [Announcing Google Widevine license delivery services in Azure Media Services](https://azure.microsoft.com/blog/announcing-general-availability-of-google-widevine-license-services/) (Ankündigung von Google Widevine-Diensten zur Lizenzbereitstellung in Azure Media Services) und [Azure Media Services adds Google Widevine packaging for delivering multi-DRM stream](https://azure.microsoft.com/blog/azure-media-services-adds-google-widevine-packaging-for-delivering-multi-drm-stream/) (Azure Media Services jetzt mit Google Widevine-Paketerstellung zum Bereitstellen von Multi-DRM-Datenströmen).
 
 ### Übersicht über diesen Artikel
 
@@ -406,7 +406,7 @@ Es gibt zwei Arten von Sicherheitsschlüsseln:
 1.	Symmetrischer Schlüssel: Zum Generieren und Überprüfen eines JWT-Tokens wird der gleiche Schlüssel verwendet.
 2.	Asymmetrischer Schlüssel: Ein Paar aus öffentlichem und privatem Schlüssel in einem X.509-Zertifikat wird mit einem privaten Schlüssel zum Verschlüsseln/Generieren eines JWT-Tokens und der öffentlichen Schlüssel zum Überprüfen des Tokens verwendet.
 
-###Technische Hinweise
+####Technische Hinweise
 
 Bei Verwendung von .NET Framework/C# als Entwicklungsplattform muss das X.509-Zertifikat des asymmetrischen Schlüssels eine Schlüssellänge von mindestens 2048 aufweisen. Dies ist eine Voraussetzung für die „System.IdentityModel.Tokens.X509AsymmetricSecurityKey“--Klasse in .NET Framework. Andernfalls wird die folgende Ausnahme ausgelöst:
 
@@ -520,6 +520,6 @@ In diesem Dokument haben wir uns mit CENC mit mehreren systemeigenen DRM-Systeme
 
 ###Danksagungen 
 
-William Zhang, Mingfei Yan, Kilroy Hughes, Roland Le Franc, Julia Kornich
+William Zhang, Mingfei Yan, Roland Le Franc, Kilroy Hughes, Julia Kornich
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

@@ -1,6 +1,6 @@
 # Azure und IoT
 
-Willkommen bei Microsoft Azure und dem Internet der Dinge (IoT). In diesem Artikel wird eine typische IoT-Lösungsarchitektur vorgestellt, die die allgemeinen Merkmale einer IoT-Lösung beschreibt, die Sie mithilfe von Azure-Diensten bereitstellen können. Für eine typische IoT-Lösung ist eine sichere, bidirektionale Kommunikation zwischen – in einigen Fällen Millionen – Geräten und einem Lösungs-Back-End erforderlich, das beispielsweise automatisierte Predictive Analytics-Methoden verwendet, um Erkenntnisse aus dem D2C (Device-to-Cloud)-Ereignisdatenstrom zu gewinnen.
+Willkommen bei Microsoft Azure und dem Internet der Dinge (IoT). In diesem Artikel wird eine typische IoT-Lösungsarchitektur vorgestellt, die die allgemeinen Merkmale einer IoT-Lösung beschreibt, die Sie mithilfe von Azure-Diensten bereitstellen können. Für eine typische IoT-Lösung ist eine sichere, bidirektionale Kommunikation zwischen – in einigen Fällen Millionen – Geräten und einem Lösungs-Back-End erforderlich, das beispielsweise automatisierte Predictive Analytics-Methoden verwendet, um Erkenntnisse aus dem D2C-Ereignisdatenstrom (Device-to-Cloud) zu gewinnen.
 
 ## Architektur einer IoT-Lösung
 
@@ -12,11 +12,11 @@ Das folgende Diagramm zeigt die Architektur einer typischen IoT-Lösung. Es enth
 
 In einem typischen IoT-Szenario senden Geräte Telemetriedaten wie Temperaturwerte an einen Cloudendpunkt, wo sie gespeichert und verarbeitet werden. Geräte können auch Cloud-zu-Gerät-Befehle (Cloud-to-Device, C2D) empfangen und darauf reagieren, indem Nachrichten von einem Cloudendpunkt gelesen werden. Ein Gerät kann z. B. einen Befehl mit der Anweisung erhalten, die Frequenz zu ändern, mit der Daten gemessen werden.
 
-Eines der größten Probleme im Zusammenhang mit IoT-Projekten ist die sichere und zuverlässige Verbindung von Geräten mit dem Lösungs-Back-End. IoT-Geräte weisen gegenüber anderen Clients, z. B. Browsern und Mobile Apps, in der Regel andere Merkmale auf: IoT-Geräte:
+Eines der größten Probleme im Zusammenhang mit IoT-Projekten ist die sichere und zuverlässige Verbindung von Geräten mit dem Lösungs-Back-End. IoT-Geräte weisen gegenüber anderen Clients, z. B. Browsern und mobilen Apps, in der Regel andere Merkmale auf: IoT-Geräte:
 
 - Es handelt sich häufig um eingebettete Systeme ohne menschlichen Bediener.
 - Sie können sich an Remotestandorten befinden, an denen der physische Zugriff sehr teuer ist.
-- Sie sind unter Umständen nur über das Lösungs-Back-End erreichbar.
+- Sie sind unter Umständen nur über das Back-End der Lösung erreichbar.
 - Sie verfügen ggf. über eingeschränkte Stromversorgungs- und Verarbeitungsressourcen.
 - Sie verfügen ggf. über intermittierende, langsame oder teure Netzwerkverbindungen.
 - Sie müssen unter Umständen proprietäre, benutzerdefinierte oder branchenspezifische Anwendungsprotokolle verwenden.
@@ -46,4 +46,4 @@ Mit vielen IoT-Lösungen können die Benutzer die auf den Geräten erfassten Dat
 [lnk-machinelearning]: http://azure.microsoft.com/services/machine-learning/
 [Azure IoT Suite]: http://azure.microsoft.com/solutions/iot
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0204_2016-->

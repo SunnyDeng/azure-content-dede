@@ -25,7 +25,7 @@ Das Sicherheitsmodell von Event Hubs erfüllt die folgenden Voraussetzungen:
 
 ## Geräte-Authentifizierung
 
-Das Event Hubs-Sicherheitsmodell basiert auf einer Kombination aus [Shared Access Signature (SAS)](service-bus-shared-access-signature-authentication.md)-Token und Ereignisherausgeber. Ein Ereignisherausgeber definiert einen virtuellen Endpunkt für einen Event Hub. Der Herausgeber kann nur zum Senden von Nachrichten an einen Event Hub verwendet werden. Es ist nicht möglich, von einem Herausgeber Nachrichten zu empfangen.
+Das Event Hubs-Sicherheitsmodell basiert auf einer Kombination aus [Shared Access Signature (SAS)](../service-bus/service-bus-shared-access-signature-authentication.md)-Token und Ereignisherausgeber. Ein Ereignisherausgeber definiert einen virtuellen Endpunkt für einen Event Hub. Der Herausgeber kann nur zum Senden von Nachrichten an einen Event Hub verwendet werden. Es ist nicht möglich, von einem Herausgeber Nachrichten zu empfangen.
 
 In der Regel setzt ein Event Hub einen Herausgeber pro Gerät ein. Alle Nachrichten, die an einen Herausgeber eines Event Hubs gesendet werden, werden in die Warteschlange innerhalb dieses Event Hubs eingereiht. Herausgeber ermöglichen die präzise Zugriffssteuerung und -drosselung.
 
@@ -154,4 +154,4 @@ Weitere Informationen zu Event Hubs finden Sie unter den folgenden Themen:
 [Messaginglösung mit Warteschlange]: ../service-bus/service-bus-dotnet-multi-tier-app-using-service-bus-queues.md
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

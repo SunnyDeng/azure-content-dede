@@ -1,6 +1,6 @@
 <properties
    pageTitle="Objektattributänderungen für externe Benutzer bei der Vorschau der Azure Active Directory B2B-Zusammenarbeit | Microsoft Azure"
-   description="Azure Active Directory B2B ermöglicht Geschäftspartnern den gezielten Zugriff auf Ihre Unternehmensanwendungen und unterstützt so Ihre unternehmensübergreifenden Beziehungen."
+   description="Azure Active Directory B2B ermöglicht Geschäftspartnern den sicheren Zugriff auf Ihre Unternehmensanwendungen und unterstützt so Ihre unternehmensübergreifenden Beziehungen."
    services="active-directory"
    authors="viv-liu"
    manager="cliffdi"
@@ -13,11 +13,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="na"
-   ms.date="10/27/2015"
+   ms.date="02/03/2016"
    ms.author="viviali"/>
 
-# Objektattributänderungen für externe Benutzer bei der Vorschau der Azure Active Directory (Azure AD) B2B-Zusammenarbeit
-Jeder Benutzer in einem Azure AD-Verzeichnis wird durch ein Benutzerobjekt repräsentiert. Das Benutzerobjekt in Azure AD unterliegt Attributänderungen während der verschiedenen Phasen von der Einladung zur B2B-Zusammenarbeit bis zur Einlösung dieser Einladung. Das Benutzerobjekt, das im Verzeichnis den Partnerbenutzer repräsentiert, besitzt Attribute, die sich zur Einlösungszeit ändern können, wenn der Partnerbenutzer auf den Link in der Einladungs-E-Mail klickt. Dies gilt insbesondere in folgenden Fällen:
+# Vorschau der Azure AD B2B-Zusammenarbeit: Objektattributänderungen für externe Benutzer
+
+Jeder Benutzer in einem Azure AD-Verzeichnis wird durch ein Benutzerobjekt repräsentiert. Das Benutzerobjekt in Azure AD unterliegt Attributänderungen während der verschiedenen Phasen von der Einladung zur B2B-Zusammenarbeit bis zur Einlösung dieser Einladung. Das Benutzerobjekt, das im Verzeichnis den Partnerbenutzer repräsentiert, besitzt Attribute, die sich zur Einlösungszeit ändern können, wenn der Partnerbenutzer auf den Link in der Einladungs-E-Mail klickt. Dies bedeutet Folgendes:
 
 - Die Attribute **SignInName** und **AltSecId** werden aufgefüllt.
 - Das Attribut **DisplayName** ändert sich vom Benutzerprinzipalnamen (user\_fabrikam.com#EXT#@contoso.com) zum Anmeldenamen (user@fabrikam.com).
@@ -34,4 +35,4 @@ Durchsuchen Sie unsere anderen Artikel zur Azure B2B-Zusammenarbeit:
 - [Tokenformat für externe Benutzer](active-directory-b2b-references-external-user-token-format.md)
 - [Aktuelle Einschränkungen der Vorschau](active-directory-b2b-current-preview-limitations.md)
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0204_2016-->

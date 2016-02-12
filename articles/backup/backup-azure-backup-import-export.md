@@ -3,12 +3,20 @@
    description="Erfahren Sie, wie Sie mit Azure Backup mithilfe des Azure Import/Export-Diensts Daten aus dem Netzwerk senden können. Dieser Artikel beschreibt das Offlineseeding der ersten Sicherungsdaten über den Azure Import/Export-Dienst."
    services="backup"
    documentationCenter=""
-   authors="aashishr"
-   manager="shreeshd"
+   authors="Jim-Parker"
+   manager="jwhit"
    editor=""/>
-<tags  ms.service="backup" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="storage-backup-recovery" ms.date="11/25/2015" ms.author="aashishr"; "jimpark"/>
+<tags
+   ms.service="backup"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="storage-backup-recovery"
+   ms.date="01/28/2016"
+   ms.author="jimpark;"/>
 
 # Workflow zur Offlinesicherung in Azure Backup
+Azure Backup verfügt über zahlreiche integrierte effizienzsteigernde Maßnahmen, um Netzwerk- und Speicherkosten zu sparen. Azure Backup komprimiert nicht nur Daten, sondern sichert auch den vollständigen Inhalt nur einmal und danach nur Deltas/inkrementelle Daten. Wenn beispielsweise ein Dateivolume mit 10 TB gesichert wird, Azure Backup 10 TB bei der anfänglichen Replikation (Initial Replication, IR) und nur Deltas bei der Delta-Replikation. Bei der IR ist also die maximale WAN-Bandbreite erforderlich. Um die Abhängigkeit des WAN bei der IR zu verringern, unterstützt Azure Backup mithilfe des Azure-Import/Export-Diensts die Offline-Sicherung.
 
 Azure Backup ist umfassend in den Azure Import/Export-Dienst integriert. Dadurch können Sie die Daten der ersten Sicherung schnell übertragen. Wenn Sie bei der ersten Sicherung mehrere Terabyte an Daten über ein Netzwerk mit hoher Latenz und niedriger Bandbreite übertragen müssen, können Sie die erste Sicherungskopie mithilfe des Azure Import/Export-Diensts auf mehreren Festplatten an ein Azure-Datencenter liefern. Dieser Artikel bietet eine Übersicht über die für diesen Workflow erforderlichen Schritte.
 
@@ -18,7 +26,7 @@ Mit Azure Backup und Azure Import/Export können die Daten einfach und unkompliz
 
 ## Voraussetzungen
 
-1. Machen Sie sich unbedingt mit dem Azure Import/Export-Workflow vertraut, der [hier](../storage-import-export-service.md) aufgeführt ist.
+1. Machen Sie sich unbedingt mit dem Azure Import/Export-Workflow vertraut, der [hier](../storage/storage-import-export-service.md) aufgeführt ist.
 2. Stellen Sie vor dem Initiieren des Workflows sicher, dass ein Azure-Sicherungstresor erstellt wurde, dass Tresoranmeldedaten heruntergeladen wurden, dass der Azure Backup-Agent entweder auf dem Windows Server/Windows-Client oder dem SCDPM-Server (System Center Data Protection Manager) installiert wurde und dass der Computer beim Azure Backup-Tresor registriert ist.
 3. Laden Sie [hier](https://manage.windowsazure.com/publishsettings) die Azure-Einstellungen zum Veröffentlichen von Dateien auf den Computer herunter, von dem die Daten gesichert werden sollen.
 4. Bereiten Sie einen *Stagingspeicherort* vor. Dabei kann es sich um eine Netzwerkfreigabe oder ein zusätzliches Laufwerk auf dem Computer handeln. Stellen Sie sicher, dass der Stagingspeicherort genügend Speicherplatz für Ihre erste Kopie bietet. Wenn Sie beispielsweise versuchen, einen 500-GB-Dateiserver zu sichern, sorgen Sie dafür, dass der Stagingbereich mindestens 500 GB umfasst (auch wenn eine geringere Menge in Anspruch genommen wird). Der Stagingbereich ist ein Übergangsspeicher, der während dieses Workflows temporär verwendet wird.
@@ -27,7 +35,7 @@ Mit Azure Backup und Azure Import/Export können die Daten einfach und unkompliz
 7. Laden Sie das Azure Import/Export-Tool von [hier](http://go.microsoft.com/fwlink/?LinkID=301900&clcid=0x409) auf den Computer herunter, mit dem der SATA-Laufwerkswriter verbunden ist.
 
 ## Workflow
-Die in diesem Abschnitt bereitgestellten Informationen dienen zum Abschließen des Workflows zur **Offlinesicherung**, damit Ihre Daten an ein Azure-Datencenter versandt und in den Azure-Speicher hochgeladen werden können. Wenn Sie Fragen zum Importdienst oder zu einem anderen Aspekt des Prozesses haben, finden Sie weitere Informationen in der oben referenzierten [Dokumentation mit der Übersicht über den Importdienst](../storage-import-export-service.md).
+Die in diesem Abschnitt bereitgestellten Informationen dienen zum Abschließen des Workflows zur **Offlinesicherung**, damit Ihre Daten an ein Azure-Datencenter versandt und in den Azure-Speicher hochgeladen werden können. Wenn Sie Fragen zum Importdienst oder zu einem anderen Aspekt des Prozesses haben, finden Sie weitere Informationen in der oben referenzierten [Dokumentation mit der Übersicht über den Importdienst](../storage/storage-import-export-service.md).
 
 ### Initiieren der Offlinesicherung
 
@@ -45,6 +53,9 @@ Die in diesem Abschnitt bereitgestellten Informationen dienen zum Abschließen d
     - **Azure-Abonnement-ID** – Geben Sie die Azure-Abonnement-ID an, mit der Sie den Azure-Importauftrag initiieren möchten. Wenn Sie mehrere Azure-Abonnements besitzen, verwenden Sie die ID, die dem Importauftrag zugeordnet ist.
     - **Azure-Speicherkonto** – Geben Sie den Namen des Azure-Speicherkontos ein, dem dieser Importauftrag zugeordnet werden soll.
     - **Azure-Speichercontainer** – Geben Sie den Namen des Zielspeicherblobs ein, in das die Daten dieses Auftrags importiert werden.
+
+Speichern Sie alle diese Informationen separat, da sie in den folgenden Schritten erneut eingegeben werden müssen.
+
 
 2. Schließen Sie den Workflow ab, und wählen Sie in der Azure Backup-MMC **Jetzt sichern** aus, um die Kopie der Offlinesicherung zu initiieren. Die erste Sicherung wird bei diesem Schritt in den Stagingbereich geschrieben.
 
@@ -71,15 +82,15 @@ Die in diesem Abschnitt bereitgestellten Informationen dienen zum Abschließen d
 |-------------|-------------|
 | /j: <*JournalFile*>| Der Pfad zur Journaldatei. Jedes Laufwerk muss über genau eine Journaldatei verfügen. Beachten Sie, dass die Journaldatei sich nicht auf dem Ziellaufwerk befinden darf. Die Dateierweiterung der Journaldatei lautet ".jrn" und wird bei der Ausführung dieses Befehls erstellt.|
 |/ ID: <*SessionId*> | Die Sitzungs-ID identifiziert eine *Kopiersitzung*. Sie wird verwendet, um eine exakte Wiederherstellung einer unterbrochenen Kopiersitzung sicherzustellen. Die in einer Kopiersitzung kopierten Dateien werden in einem Verzeichnis gespeichert, das nach der Sitzungs-ID auf dem Ziellaufwerk benannt wird.|
-| /SK: <*StorageAccountKey*> | Der Kontoschlüssel für das Speicherkonto, in das die Daten importiert werden. |
+| /SK: <*StorageAccountKey*> | Der Kontoschlüssel für das Speicherkonto, in das die Daten importiert werden. Dies muss identisch mit dem Schlüssel sein, der während der Erstellung der Sicherungsrichtlinie/Schutzgruppe eingegeben wurde.|
 | /BlobType | Geben Sie **PageBlob** an. Dieser Workflow wird nur erfolgreich ausgeführt, wenn die Option "PageBlob" angegeben ist. Dies ist nicht die Standardoption und sollte in diesem Befehl angegeben werden. |
 |/ t: <*TargetDriveLetter*> | Der Laufwerkbuchstabe der Zielfestplatte für die aktuelle Kopiersitzung ohne nachgestellten Doppelpunkt.|
 |/format | Geben Sie diesen Parameter an, wenn das Laufwerk formatiert werden muss. Andernfalls können Sie ihn auslassen. Bevor das Tool das Laufwerk formatiert, werden Sie von der Konsole aus zur Bestätigung aufgefordert. Um die Bestätigung zu unterdrücken, geben Sie den /silentmode-Parameter an.|
 |/encrypt | Dieser Parameter wird angegeben, wenn das Laufwerk noch nicht mit BitLocker verschlüsselt wurde und vom Tool verschlüsselt werden muss. Wenn das Laufwerk bereits mit BitLocker verschlüsselt wurde, lassen Sie diesen Parameter aus, und geben Sie den /bk-Parameter an, in dem Sie den vorhandenen BitLocker-Schlüssel bereitstellen. Wenn Sie den /format-Parameter angeben, müssen Sie auch den /encrypt-Parameter festlegen. |
-|/srcdir: <*SourceDirectory*> | Das Quellverzeichnis, das Dateien enthält, die auf das Ziellaufwerk kopiert werden. Der Verzeichnispfad muss ein absoluter Pfad sein (kein relativer Pfad).|
-|/dstdir: <*DestinationBlobVirtualDirectory*> | Der Pfad zum virtuellen Zielverzeichnis in Ihrem Microsoft Azure-Speicherkonto. Achten Sie darauf, gültige Containernamen zu verwenden, wenn Sie virtuelle Zielverzeichnisse oder Blobs angeben. Containernamen müssen kleingeschrieben werden.|
+|/srcdir: <*SourceDirectory*> | Das Quellverzeichnis, das Dateien enthält, die auf das Ziellaufwerk kopiert werden. Stellen Sie sicher, dass der hier angegebene Verzeichnisname ein vollständiger Pfad (kein relativer Pfad) ist.|
+|/dstdir: <*DestinationBlobVirtualDirectory*> | Der Pfad zum virtuellen Zielverzeichnis in Ihrem Microsoft Azure-Speicherkonto. Achten Sie darauf, gültige Containernamen zu verwenden, wenn Sie virtuelle Zielverzeichnisse oder Blobs angeben. Containernamen müssen kleingeschrieben werden. Dieser Containername sollte derselbe sein wie der während der Erstellung der Sicherungsrichtlinie/Schutzgruppe eingegebene Name.|
 
-  >[AZURE.NOTE]Eine Journaldatei wird im Ordner "WAImportExport" erstellt. Darin werden die gesamten Informationen des Workflows erfasst. Sie benötigen diese Datei beim Erstellen eines Importauftrags im Azure-Portal.
+  > [AZURE.NOTE] Eine Journaldatei wird im Ordner "WAImportExport" erstellt. Darin werden die gesamten Informationen des Workflows erfasst. Sie benötigen diese Datei beim Erstellen eines Importauftrags im Azure-Portal.
 
   ![PowerShell-Ausgabe](./media/backup-azure-backup-import-export/psoutput.png)
 
@@ -90,7 +101,7 @@ Die in diesem Abschnitt bereitgestellten Informationen dienen zum Abschließen d
 
 2. Geben Sie im ersten Schritt des Assistenten an, dass Sie Ihr Laufwerk vorbereitet haben und dass Sie die Laufwerkprotokolldatei zur Hand haben. Geben Sie im zweiten Schritt des Assistenten die Kontaktinformationen des Ansprechpartners für diesen Importauftrag an.
 3. Laden Sie im dritten Schritt die Laufwerkjournaldateien hoch, die Sie im vorherigen Abschnitt erhalten haben.
-4. Geben Sie im vierten Schritt einen beschreibenden Namen für den Importauftrag ein. Beachten Sie, dass der eingegebene Name nur Kleinbuchstaben, Ziffern, Trennstriche und Unterstriche enthalten darf, mit einem Buchstaben beginnen muss und keine Leerzeichen enthalten darf. Mithilfe des ausgewählten Namens können Sie Ihre Aufträge während und nach der Bearbeitung nachverfolgen.
+4. Geben Sie in Schritt 4 einen aussagekräftigen Namen für den Importauftrag ein, der während der Erstellung der Sicherungsrichtlinie/Schutzgruppe eingegeben wurde. Beachten Sie, dass der eingegebene Name nur Kleinbuchstaben, Ziffern, Trennstriche und Unterstriche enthalten darf, mit einem Buchstaben beginnen muss und keine Leerzeichen enthalten darf. Mithilfe des ausgewählten Namens können Sie Ihre Aufträge während und nach der Bearbeitung nachverfolgen.
 5. Wählen Sie anschließend Ihr Rechenzentrum aus der Liste aus. Unter Rechenzentrumsregion wird das Rechenzentrum und die Adresse angegeben, an die Sie Ihr Paket schicken müssen.
 
     ![DC](./media/backup-azure-backup-import-export/dc.png)
@@ -105,7 +116,7 @@ Die in diesem Abschnitt bereitgestellten Informationen dienen zum Abschließen d
 Sobald die ersten Sicherungsdaten im Speicherkonto verfügbar sind, kopiert der Azure Backup-Agent den Inhalt der Daten von diesem Konto aus in das mehrinstanzenfähige Sicherungsspeicherkonto. Zum nächsten geplanten Sicherungszeitpunkt führt der Azure Backup-Agent die inkrementelle Sicherung über die erste Sicherungskopie durch.
 
 ## Nächste Schritte
-- Wenn Sie Fragen zum Azure Import/Export-Workflow haben, finden Sie weitere Informationen in diesem [Artikel](../storage-import-export-service.md).
+- Wenn Sie Fragen zum Azure Import/Export-Workflow haben, finden Sie weitere Informationen in diesem [Artikel](../storage/storage-import-export-service.md).
 - Bei Fragen zum Workflow finden Sie weitere Informationen im Abschnitt zur Offlinesicherung in den [häufig gestellten Fragen](backup-azure-backup-faq.md) zu Azure Backup.
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0204_2016-->

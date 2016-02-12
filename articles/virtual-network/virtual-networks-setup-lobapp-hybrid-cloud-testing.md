@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="Windows" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/10/2015" 
+	ms.date="01/28/2016" 
 	ms.author="josephd"/>
 
 # Einrichten einer webbasierten Branchenanwendung in einer Hybrid Cloud zu Testzwecken
@@ -180,23 +180,8 @@ Die aktuelle Konfiguration sieht folgendermaßen aus.
  
 Diese Umgebung kann jetzt zum Bereitstellen von webbasierten Anwendungen auf LOB1 und für Funktions- und Leistungstests aus dem Subnetz „Corpnet“ verwendet werden.
 
-## Zusätzliche Ressourcen
+## Nächste Schritte
 
-[Blaupausen für Software-Architekten](http://msdn.microsoft.com/dn630664)
+- Richten Sie die [Produktionsumgebung](../virtual-machines/virtual-machines-workload-high-availability-LOB-application-overview.md) ein.
 
-[Hostinggerechte Webserverplattform (IIS)](http://technet.microsoft.com/library/hh831818)
-
-[Einrichten einer Hybridcloudumgebung zu Testzwecken](virtual-networks-setup-hybrid-cloud-environment-testing.md)
-
-[Einrichten einer SharePoint-Intranetfarm in einer Hybrid Cloud zu Testzwecken](virtual-networks-setup-sharepoint-hybrid-cloud-testing.md)
-
-[Einrichten der Office 365-Verzeichnissynchronisierung (DirSync) in einer Hybrid Cloud zu Testzwecken](virtual-networks-setup-dirsync-hybrid-cloud-testing.md)
-
-[Einrichten einer simulierten Hybrid Cloud-Umgebung zu Testzwecken](virtual-networks-setup-simulated-hybrid-cloud-environment-testing.md)
-
-[Testumgebungen für Azure-Hybridclouds](../virtual-machines/virtual-machines-hybrid-cloud-test-environments.md)
-
-[Implementierungsrichtlinien für Azure-Infrastrukturdienste](../virtual-machines/virtual-machines-infrastructure-services-implementation-guidelines.md)
- 
-
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

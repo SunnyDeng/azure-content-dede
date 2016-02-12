@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/01/2015"
+	ms.date="02/03/2016"
 	ms.author="chhavib;cgronlun;garye"/>
 
 
@@ -136,4 +136,4 @@ Beschreibungen mit Rich Text-Renderingfunktionen sind nicht für alle Katalogben
 
 **[ZUM KATALOG >>](http://gallery.cortanaanalytics.com)**
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0204_2016-->

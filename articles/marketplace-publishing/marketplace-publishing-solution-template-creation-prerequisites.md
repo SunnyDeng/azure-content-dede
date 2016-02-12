@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="10/28/2015"
+   ms.date="01/28/2016"
    ms.author="hascipio; v-divte" />
 
 # Technische Voraussetzungen für das Erstellen einer Lösungsvorlage für den Azure Marketplace
@@ -29,9 +29,9 @@ Sie müssen eine Entscheidung bezüglich der einzelnen Bausteine Ihrer Lösung t
   - [https://github.com/azure/azure-quickstart-templates](https://github.com/azure/azure-quickstart-templates)
 
 ## Nächste Schritte
-Sie haben die Voraussetzungen überprüft und die erforderlichen Aufgaben ausgeführt und können nun mit dem Erstellen des Angebots für Ihre Lösungsvorlage fortfahren. Ausführliche Informationen finden Sie unter [Anleitung zum Erstellen einer Lösungsvorlage](marketplace-publishing-solution-template-creation.md). Bewährte Methoden finden Sie unter [Bewährte Methoden zum Erstellen einer Lösungsvorlage](marketplace-publishing-solution-template-best-practices.md). Informationen zum Zurückwechseln zur Hauptseite mit den Herausgeberaufgaben finden Sie unter [Erste Schritte: Veröffentlichen eines Angebots im Azure Marketplace](marketplace-publishing-getting-started.md).
+Sie haben die Voraussetzungen überprüft und die erforderlichen Aufgaben ausgeführt und können nun mit dem Erstellen des Angebots für Ihre Lösungsvorlage fortfahren. Ausführliche Informationen finden Sie unter [Anleitung zum Erstellen einer Lösungsvorlage](marketplace-publishing-solution-template-creation.md). Informationen zum Zurückwechseln zur Hauptseite mit den Herausgeberaufgaben finden Sie unter [Erste Schritte: Veröffentlichen eines Angebots im Azure Marketplace](marketplace-publishing-getting-started.md).
 
 
 [link-acct]: marketplace-publishing-accounts-creation-registration.md
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0204_2016-->

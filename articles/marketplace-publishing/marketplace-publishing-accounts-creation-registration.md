@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="01/07/2016"
+   ms.date="01/25/2016"
    ms.author="hascipio"/>
 
 # Erstellen eines Microsoft-Entwicklerkontos
@@ -24,7 +24,7 @@ In diesem Artikel werden die Schritte zur Erstellung und Registrierung eines Kon
 
 Die Adresse, die für den Benutzernamen maßgeblich ist, sollte sich in Ihrer Domäne befinden und von Ihrem IT-Team gesteuert werden (z. B. publishing@example.com)). Informationen zu Bezahlung, Steuern und Berichterstellung werden an dieses Konto gesendet.
 
-  >[AZURE.WARNING] Wörter wie „Azure“ und „Microsoft“ werden bei der Registrierung eines Microsoft-Kontos nicht unterstützt. Vermeiden Sie diese Wörter, um den Prozess der Kontoerstellung und -registrierung abzuschließen.
+  > [AZURE.WARNING] Wörter wie „Azure“ und „Microsoft“ werden bei der Registrierung eines Microsoft-Kontos nicht unterstützt. Vermeiden Sie diese Wörter, um den Prozess der Kontoerstellung und -registrierung abzuschließen.
 
 ### Anleitung
 
@@ -93,7 +93,7 @@ Das Microsoft Developer Center wird für die einmalige Registrierung der Unterne
 
 10. Geben Sie Ihre Zahlungsinformationen für Ihr Konto ein. Wenn Sie einen Aktionscode haben, der die Kosten der Registrierung abdeckt, können Sie ihn hier eingeben. Geben Sie andernfalls Ihre Kreditkartendaten an (oder PayPal-Daten, wenn dies für Ihren Markt unterstützt wird). Klicken Sie nach Abschluss dieses Vorgangs auf **Weiter**, um mit dem Bildschirm **Überprüfen** fortzufahren.
 
-11. Überprüfen Sie Ihre Kontoinformationen, und bestätigen Sie, dass alles korrekt ist. Lesen und akzeptieren Sie dann die Nutzungsbedingungen des **Microsoft Azure Marketplace-Herausgebervertrags**. Aktivieren Sie das Kontrollkästchen, um anzugeben, dass Sie die Bedingungen gelesen und akzeptiert haben.
+11. Überprüfen Sie Ihre Kontoinformationen, und bestätigen Sie, dass alles korrekt ist. Lesen und akzeptieren Sie dann die Nutzungsbedingungen des [Microsoft Azure Marketplace-Herausgebervertrags](http://go.microsoft.com/fwlink/?LinkID=699560). Aktivieren Sie das Kontrollkästchen, um anzugeben, dass Sie die Bedingungen gelesen und akzeptiert haben.
 
 12. Klicken Sie auf **Fertig stellen**, um die Registrierung zu bestätigen. Wir senden Ihnen eine Bestätigungsnachricht an Ihre Entwickler-E-Mail-Adresse.
 
@@ -145,9 +145,9 @@ Das Azure-Veröffentlichungsportal dient zum Veröffentlichen und Verwalten Ihre
 
 3.	Melden Sie sich mit dem Microsoft-Konto an, das Sie für Ihr Unternehmen registriert haben (also marketplace@example.com), und fügen Sie nach Bedarf Co-Admins hinzu.
 
-  >[AZURE.TIP] Die Teilnahmerichtlinien werden auf der [Azure-Website](https://azure.microsoft.com/support/legal/marketplace/participation-policies/) beschrieben.
+  > [AZURE.TIP] Die Teilnahmerichtlinien werden auf der [Azure-Website](https://azure.microsoft.com/support/legal/marketplace/participation-policies/) beschrieben.
 
-  > Wenn Sie Probleme beim Abschließen der Developer Center-Registrierung haben, öffnen Sie wie nachfolgend beschrieben ein Supportticket: 1. Wenden Sie sich an den [Support](https://support.microsoft.com/getsupport?wf=0&tenant=ClassicCommercial&oaspworkflow=start_1.0.0.0&supportregion=de-DE&pesid=15635&ccsid=635847950577064286). 2. Wählen Sie **Developer Center** aus. 3. Wählen Sie **Profil**. 4. Wählen Sie die Methode für die Kontaktaufnahme aus.
+  > Wenn beim Abschließen der Developer Center-Registrierung Probleme auftreten, öffnen Sie wie nachfolgend beschrieben ein Supportticket: 1. Wenden Sie sich an den [Support](https://support.microsoft.com/getsupport?wf=0&tenant=ClassicCommercial&oaspworkflow=start_1.0.0.0&supportregion=de-DE&pesid=15635&ccsid=635847950577064286). 2. Wählen Sie **Developer Center** aus. 3. Wählen Sie **Profil**. 4. Wählen Sie die Methode für die Kontaktaufnahme aus.
 
 
 
@@ -194,4 +194,4 @@ Nachdem Ihr Konto erstellt und registriert wurde, klicken Sie auf den Artefaktty
 [link-devsvc-prereq]: marketplace-publishing-dev-service-creation-prerequisites.md
 [link-pushstaging]: marketplace-publishing-push-to-staging.md
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

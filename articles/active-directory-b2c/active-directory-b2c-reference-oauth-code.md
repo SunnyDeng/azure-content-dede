@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/21/2016"
+	ms.date="01/28/2016"
 	ms.author="dastrock"/>
 
 # Azure AD B2C-Vorschau: OAuth 2.0-Autorisierungcodefluss
@@ -26,7 +26,7 @@ Der OAuth 2.0-Autorisierungcodefluss kann in Apps verwendet werden, die auf ein
 
 Der OAuth 2.0-Autorisierungcodefluss wird in [Abschnitt 4.1 der OAuth 2.0-Spezifikation](http://tools.ietf.org/html/rfc6749) beschrieben. Er wird zum Ausführen der Authentifizierung und Autorisierung von der Mehrzahl der App-Typen genutzt, einschließlich [Web-Apps](active-directory-b2c-apps.md#web-apps) und [systemintern installierter Apps](active-directory-b2c-apps.md#mobile-and-native-apps). Durch den Codefluss können Apps **Zugriffstoken** sicher abrufen, die zum Zugriff auf Ressourcen verwendet werden können, die mithilfe eines [Autorisierungsservers](active-directory-b2c-reference-protocols.md#the-basics) geschützt werden. Diese Anleitung konzentriert sich auf einen speziellen Aspekt des OAuth 2.0-Autorisierungcodeflusses – die **öffentlichen Clients**. Ein öffentlicher Client ist jede Clientanwendung, der nicht bei der sicheren Verwaltung der Integrität von geheimen Kennwörtern vertraut werden kann. Dazu gehören mobile Apps, Desktop-Apps und nahezu jede Anwendung, die auf einem Gerät ausgeführt wird und Zugriffstoken abrufen muss. Wenn Sie in einer Web-App mit Azure AD B2C eine Identitätsverwaltung einfügen möchten, verwenden Sie [OpenID Connect](active-directory-b2c-reference-oidc.md) anstelle von OAuth 2.0.
 
-Azure AD B2C erweitert den OAuth 2.0-Standardfluss, sodass mehr als nur eine einfache Authentifizierung und Autorisierung erfolgt. Dazu werden [**Richtlinienparameter**](active-directory-b2c-reference-poliices.md) eingeführt, mit denen Sie OAuth 2.0 zum Hinzufügen von Benutzeroberflächen für die Registrierung, Anmeldung und Profilverwaltung zu Ihrer App verwenden können. Hier zeigen wir, wie Sie mit OAuth 2.0 und Richtlinien diese Benutzeroberflächen in systemeigenen Anwendungen implementieren und Zugriffstoken für den Zugriff auf Web-APIs verwenden.
+Azure AD B2C erweitert den OAuth 2.0-Standardfluss, sodass mehr als nur eine einfache Authentifizierung und Autorisierung erfolgt. Dazu werden [**Richtlinienparameter**](active-directory-b2c-reference-policies.md) eingeführt, mit denen Sie OAuth 2.0 zum Hinzufügen von Benutzeroberflächen für die Registrierung, Anmeldung und Profilverwaltung zu Ihrer App verwenden können. Hier zeigen wir, wie Sie mit OAuth 2.0 und Richtlinien diese Benutzeroberflächen in systemeigenen Anwendungen implementieren und Zugriffstoken für den Zugriff auf Web-APIs verwenden.
 
 Die HTTP-Beispielanforderungen unten verwenden unser B2C-Beispielverzeichnis **fabrikamb2c.onmicrosoft.com** sowie unsere Beispielanwendung und die Richtlinien. Sie können selbst Anfragen mit diesen Werten testen oder eigene Werte verwenden. Erfahren Sie, wie Sie [eigene B2C-Verzeichnisse, -Anwendungen und -Richtlinien erstellen](#use-your-own-b2c-directory).
 
@@ -74,7 +74,7 @@ client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6
 
 | Parameter | | Beschreibung |
 | ----------------------- | ------------------------------- | ----------------------- |
-| client\_id | erforderlich | Die Anwendungs-ID, die das [Azure-Portal](https://portal.azure.com/) Ihrer App zugewiesen hat. |
+| client\_id | erforderlich | Die Anwendungs-ID, die das [Azure-Portal](https://portal.azure.com) Ihrer App zugewiesen hat. |
 | response\_type | erforderlich | Muss `code` für den Autorisierungscodefluss enthalten. |
 | redirect\_uri | erforderlich | Der Umleitungs-URI der App, in dem Authentifizierungsantworten gesendet und von der App empfangen werden können. Er muss genau mit einer der Umleitungs-URIs übereinstimmen, die Sie im Portal registriert haben, mit dem Unterschied, dass er URL-codiert sein muss. |
 | Bereich | erforderlich | Eine durch Leerzeichen getrennte Liste von Bereichen. Ein einzelner Bereichswert gibt Azure AD an, dass beide Berechtigungen angefordert werden. Der `openid`-Bereich gibt eine Berechtigung für die Anmeldung des Benutzers und das Abrufen von Daten über den Benutzer in Form von **ID-Token** an (dies wird noch erläutert). Der `offline_access`-Bereich gibt an, dass Ihre App ein **Aktualisierungstoken** für den dauerhaften Zugriff auf Ressourcen benötigt. |
@@ -134,7 +134,7 @@ Content-Type: application/json
 | Parameter | | Beschreibung |
 | ----------------------- | ------------------------------- | --------------------- |
 | p | erforderlich | Die Richtlinie, die zum Abrufen des Autorisierungscodes verwendet wurde. Sie können in dieser Anforderung keine andere Richtlinie verwenden. **Beachten Sie, dass dieser Parameter in der Abfragezeichenfolge hinzugefügt wird**, nicht im POST-Text. |
-| client\_id | erforderlich | Die Anwendungs-ID, die das [Azure-Portal](https://portal.azure.com/) Ihrer App zugewiesen hat. |
+| client\_id | erforderlich | Die Anwendungs-ID, die das [Azure-Portal](https://portal.azure.com) Ihrer App zugewiesen hat. |
 | grant\_type | erforderlich | Muss der `authorization_code` für den Autorisierungscodefluss sein. |
 | Bereich | erforderlich | Eine durch Leerzeichen getrennte Liste von Bereichen. Ein einzelner Bereichswert gibt Azure AD an, dass beide Berechtigungen angefordert werden. Der `openid`-Bereich gibt eine Berechtigung für die Anmeldung des Benutzers und das Abrufen von Daten über den Benutzer in Form von **ID-Token** an. Damit können Sie Token an die Back-End-Web-API der App übermitteln, die durch dieselbe Anwendungs-ID wie der Client dargestellt wird. Der `offline_access`-Bereich gibt an, dass Ihre App ein **Aktualisierungstoken** für den dauerhaften Zugriff auf Ressourcen benötigt. |
 | Code | erforderlich | Der Autorisierungscode, den Sie im ersten Abschnitt des Vorgangs erhalten haben. |
@@ -211,7 +211,7 @@ Content-Type: application/json
 | Parameter | | Beschreibung |
 | ----------------------- | ------------------------------- | -------- |
 | p | erforderlich | Die Richtlinie, die zum Abrufen des ursprünglichen Aktualisierungstokens verwendet wurde. Sie können in dieser Anforderung keine andere Richtlinie verwenden. **Beachten Sie, dass dieser Parameter in der Abfragezeichenfolge hinzugefügt wird**, nicht im POST-Text. |
-| client\_id | erforderlich | Die Anwendungs-ID, die das [Azure-Portal](https://portal.azure.com/) Ihrer App zugewiesen hat. |
+| client\_id | erforderlich | Die Anwendungs-ID, die das [Azure-Portal](https://portal.azure.com) Ihrer App zugewiesen hat. |
 | grant\_type | erforderlich | Muss der `refresh_token` für diesen Abschnitt des Autorisierungscodeflusses sein. |
 | Bereich | erforderlich | Eine durch Leerzeichen getrennte Liste von Bereichen. Ein einzelner Bereichswert gibt Azure AD an, dass beide Berechtigungen angefordert werden. Der `openid`-Bereich gibt eine Berechtigung für die Anmeldung des Benutzers und das Abrufen von Daten über den Benutzer in Form von **ID-Token** an. Damit können Sie Token an die Back-End-Web-API der App übermitteln, die durch dieselbe Anwendungs-ID wie der Client dargestellt wird. Der `offline_access`-Bereich gibt an, dass Ihre App ein **Aktualisierungstoken** für den dauerhaften Zugriff auf Ressourcen benötigt. |
 | redirect\_uri | erforderlich | Der Umleitungs-URI der Anwendung, bei der Sie den Autorisierungscode erhalten haben. |
@@ -257,11 +257,11 @@ Fehlerantworten sehen wie folgt aus:
 | error\_description | Eine spezifische Fehlermeldung, mit der Entwickler die Hauptursache eines Authentifizierungsfehlers identifizieren können. |
 
 
-<!--
+<!-- 
 
 Here is the entire flow for a native  app; each request is detailed in the sections below:
 
-![OAuth Auth Code Flow](./media/active-directory-b2c-reference-oauth-code/convergence_scenarios_native.png)
+![OAuth Auth Code Flow](./media/active-directory-b2c-reference-oauth-code/convergence_scenarios_native.png) 
 
 -->
 
@@ -273,4 +273,4 @@ Wenn Sie diese Anfragen selbst ausprobieren möchten, müssen Sie zunächst dies
 - [Erstellen einer Anwendung](active-directory-b2c-app-registration.md) zum Abrufen einer Anwendungs-ID und eines Umleitungs-URIs. Sie können Ihrer App einen **systemeigenen Client** hinzufügen.
 - [Erstellen der Richtlinien](active-directory-b2c-reference-policies.md) zum Abrufen der Richtliniennamen.
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

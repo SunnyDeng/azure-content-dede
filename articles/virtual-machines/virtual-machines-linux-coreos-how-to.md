@@ -58,7 +58,7 @@ Dieser Abschnitt beschreibt das Erstellen eines Azure-Clouddiensts mit drei dari
 
 Verwenden Sie die Anweisungen in [Gewusst wie: Verwenden von SSH mit Linux auf Azure](virtual-machines-linux-use-ssh-key.md), um einen öffentlichen und privaten Schlüssel für SSH zu erstellen. (Die grundlegenden Schritte befinden sich in den folgenden Anweisungen.) Sie verwenden diese Schlüssel, um eine Verbindung zu den virtuellen Computern im Cluster herzustellen, um zu überprüfen, ob sie funktionieren und miteinander kommunizieren können.
 
-> [AZURE.NOTE]In diesem Thema wird davon ausgegangen, dass Sie nicht über diese Schlüssel verfügen, und es ist erforderlich, dass Sie zur Verdeutlichung die Dateien `myPrivateKey.pem` und `myCert.pem` erstellen. Wenn Sie bereits über ein in `~/.ssh/id_rsa` gespeichertes öffentliches und privates Schlüsselpaar verfügen, können Sie einfach `openssl req -x509 -key ~/.ssh/id_rsa -nodes -days 365 -newkey rsa:2048 -out myCert.pem` eingeben, um die PEM-Datei abzurufen, die Sie für das Hochladen zu Azure benötigen.
+> [AZURE.NOTE] In diesem Thema wird davon ausgegangen, dass Sie nicht über diese Schlüssel verfügen, und es ist erforderlich, dass Sie zur Verdeutlichung die Dateien `myPrivateKey.pem` und `myCert.pem` erstellen. Wenn Sie bereits über ein in `~/.ssh/id_rsa` gespeichertes öffentliches und privates Schlüsselpaar verfügen, können Sie einfach `openssl req -x509 -key ~/.ssh/id_rsa -nodes -days 365 -newkey rsa:2048 -out myCert.pem` eingeben, um die PEM-Datei abzurufen, die Sie für das Hochladen zu Azure benötigen.
 
 1. Geben Sie in einem Arbeitsverzeichnis `openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout myPrivateKey.key -out myCert.pem` und ein damit verknüpftes X.509-Zertifikat ein, um den privaten Schlüssel zu erstellen.
 
@@ -79,7 +79,7 @@ curl https://discovery.etcd.io/new | grep ^http.* > etcdid
 
 Erstellen Sie im selben Arbeitsverzeichnis eine Datei mit Ihrem bevorzugten Text-Editor mit dem folgenden Text, und speichern Sie sie als `cloud-config.yaml`. (Sie können sie bei Bedarf als Dateinamen speichern. Wenn Sie Ihre virtuellen Computer jedoch im nächsten Schritt erstellen, müssen Sie diesen Dateinamen in der Option **--custom-data** für den Befehl **azure vm create** referenzieren.)
 
-> [AZURE.NOTE]Geben Sie zum Abrufen der Ermittlungs-ID `cat etcdid` aus der von Ihnen oben erstellten Datei `etcdid` ein, und ersetzen Sie `<token>` in der folgenden Datei `cloud-config.yaml` durch die generierte Zahl aus der Datei `etcdid`. Wenn Sie am Ende nicht in der Lage sind, Ihr Cluster zu überprüfen, haben Sie möglicherweise einen Schritt übersehen!
+> [AZURE.NOTE] Geben Sie zum Abrufen der Ermittlungs-ID `cat etcdid` aus der von Ihnen oben erstellten Datei `etcdid` ein, und ersetzen Sie `<token>` in der folgenden Datei `cloud-config.yaml` durch die generierte Zahl aus der Datei `etcdid`. Wenn Sie am Ende nicht in der Lage sind, Ihr Cluster zu überprüfen, haben Sie möglicherweise einen Schritt übersehen!
 
 ```
 #cloud-config
@@ -110,7 +110,7 @@ coreos:
 
 3. Erstellen Sie einen Clouddienst für Ihren grundlegenden Cluster, indem Sie `azure service create <cloud-service-name>` eingeben. <*cloud-service-name*> ist hierbei der Name Ihres CoreOS-Clouddiensts. In diesem Beispiel wird der Name **`coreos-cluster`** verwendet. Sie müssen den Namen erneut verwenden, den Sie zum Erstellen Ihrer virtuellen CoreOS-Computerinstanzen im Clouddienst auswählen.
 
-	Wenn Sie Ihre bisherige Arbeit im [Vorschauportal](https://portal.azure.com) begutachten, können Sie sehen, dass Ihr Clouddienstname sowohl eine Ressourcengruppe als auch eine Domäne ist, wie in der folgenden Abbildung gezeigt wird:
+	Wenn Sie Ihre bisherige Arbeit im [Azure-Portal](https://portal.azure.com) begutachten, können Sie sehen, dass Ihr Clouddienstname sowohl eine Ressourcengruppe als auch eine Domäne ist, wie in der folgenden Abbildung gezeigt wird:
 
 	![][CloudServiceInNewPortal]
 
@@ -166,7 +166,7 @@ Stellen Sie sicher, dass **fleet** auf `myPrivateKey.key` im Arbeitsverzeichnis 
 
 `ssh-add ./myPrivateKey.key`
 
-> [AZURE.NOTE]Wenn Sie bereits den `~/.ssh/id_rsa`-Schlüssel verwenden, fügen Sie diesen mit `ssh-add ~/.ssh/id_rsa` hinzu.
+> [AZURE.NOTE] Wenn Sie bereits den `~/.ssh/id_rsa`-Schlüssel verwenden, fügen Sie diesen mit `ssh-add ~/.ssh/id_rsa` hinzu.
 
 Nun können Sie mit demselben **fleetctl**-Befehl, den Sie von **node-1** verwendet haben, remote testen, geben Sie jedoch einige Remoteargumente weiter:
 
@@ -209,4 +209,4 @@ Sie sollten über einen betriebsbereiten CoreOS-Cluster mit drei Knoten in Azure
 [YAML]: http://yaml.org/
 [Erste Schritte mit Fleet unter CoreOS in Azure]: virtual-machines-linux-coreos-fleet-get-started.md
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_0204_2016-->

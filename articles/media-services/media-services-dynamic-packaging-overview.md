@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/05/2015"
+	ms.date="01/28/2016"
 	ms.author="juliako"/>
 
 
@@ -38,7 +38,7 @@ Im folgenden Diagramm wird der Workflow zur dynamischen Paketerstellung dargeste
 
 ##Allgemeines Szenario
 
-1. Laden Sie eine Eingabedatei (auch Mezzaninedatei genannt) hoch. Beispielformate: H.264, MP4 oder WMV (eine Liste unterstützter Formate finden Sie unter [Von Media Services Encoder unterstützte Formate](media-services-azure-media-encoder-formats)).
+1. Laden Sie eine Eingabedatei (auch Mezzaninedatei genannt) hoch. Beispielformate: H.264, MP4 oder WMV (eine Liste unterstützter Formate finden Sie unter [Von Media Encoder Standard unterstützte Formate](media-services-media-encoder-standard-formats.md)).
 
 1. Codieren Sie Ihre Mezzaninedatei zu H.264-MP4-Sätzen mit adaptiver Bitrate.
 
@@ -46,56 +46,31 @@ Im folgenden Diagramm wird der Workflow zur dynamischen Paketerstellung dargeste
 
 1. Erstellen Sie die Streaming-URLs zum Zugreifen und Streamen Ihrer Inhalte.
 
->[AZURE.NOTE]Es werden nicht alle MP4-Dateiformate von der dynamischen Paketerstellung unterstützt. Weitere Informationen finden Sie unter [Formats that are not supported by dynamic packaging](media-services-dynamic-packaging-overview.md#unsupported_formats) (Formate, die nicht von der dynamischen Paketerstellung unterstützt werden).
 
 ##Vorbereiten von Medienobjekten auf dynamisches Streaming
 
 Zum Vorbereiten Ihres Medienobjekts auf dynamisches Streaming haben Sie zwei Möglichkeiten:
 
-- Laden Sie eine Masterdatei hoch, und generieren Sie mithilfe von Azure Media Encoder H.264 MP4-Sätze mit adaptiver Bitrate.
-- Laden Sie vorhandene Sätze mit adaptiver Bitrate hoch, und überprüfen Sie sie mithilfe von Media Packager.
+1. [Laden Sie eine Masterdatei hoch](media-services-dotnet-upload-files.md).
+2. [Verwenden Sie den Media Encoder Standard-Encoder zum Erzeugen von H.264-MP4-Sätzen mit adaptiver Bitrate](media-services-dotnet-encode-with-media-encoder-standard.md).
+3. [Streamen Sie Ihre Inhalte](media-services-deliver-content-overview.md).
 
-###Laden Sie eine Masterdatei hoch, und generieren Sie mithilfe von Azure Media Encoder H.264 MP4-Sätze mit adaptiver Bitrate.
+ODER
+ 
+1. Laden Sie vorcodierte MP4-Dateien hoch. 
 
-Informationen zum Hochladen und Codieren von Medienobjekten finden Sie in den folgenden Artikeln:
-
-
-Laden Sie Ihre Dateien mithilfe des klassischen **Azure-Portals**, mithilfe von **.NET** oder **REST-API** hoch.
-
-[AZURE.INCLUDE [media-services-selector-upload-files](../../includes/media-services-selector-upload-files.md)]
-
-Führen Sie die Codierung mit **Azure Media Encoder** mithilfe des klassischen **Azure-Portals**, mithilfe von **.NET**, oder **REST-API** aus.
-
-[AZURE.INCLUDE [media-services-selector-encode](../../includes/media-services-selector-encode.md)]
-
-
-###Laden Sie vorhandene Sätze mit adaptiver Bitrate hoch, und überprüfen Sie sie mithilfe von Media Packager.
-
-Diese Aufgabe führen Sie in der Regel dann aus, wenn Sie einen Satz von MP4-Dateien mit adaptiver Bitrate hochladen, die nicht mit Media Services Encoder codiert wurden. Im Thema [Überprüfen von MP4-Dateien mit adaptiver Bitrate, die mit externen Encodern codiert wurden](https://msdn.microsoft.com/library/azure/dn750842.aspx) wird erläutert, wie diese Aufgaben ausgeführt werden.
-
-##Streamen Ihre Inhalte an Clients
-
-Wenn die Datensätze mit adaptiver Bitrate vorhanden sind, können Sie Ihr Medienobjekt veröffentlichen, indem Sie einen On-Demand-Locator und die Streaming-URLs für Smooth Streaming, MPEG DASH, HLS und HDS (nur mit Adobe PrimeTime/Access-Lizenz) erstellen.
-
-Informationen zum Erstellen von Locators und zum Verwenden der dynamischen Paketerstellung zum Streamen von Inhalten finden Sie unter den folgenden Themen:
-
-[Bereitstellen von Inhalten für Kunden – Übersicht](media-services-deliver-content-overview.md)
-
-Konfigurieren von Übermittlungsrichtlinien für Medienobjekte mithilfe von **.NET** oder **REST-API**
-
-[AZURE.INCLUDE [media-services-selector-asset-delivery-policy](../../includes/media-services-selector-asset-delivery-policy.md)]
-
-Veröffentlichen von Medienobjekten (durch Locator-Erstellung) mithilfe des klassischen **Azure-Portals** oder mithilfe von **.NET**.
-
-[AZURE.INCLUDE [media-services-selector-publish](../../includes/media-services-selector-publish.md)]
+	>[AZURE.NOTE] Diese Option wird jedoch nicht empfohlen.
+	
+2. [Überprüfen Sie die vorcodierten Dateien](media-services-static-packaging.md#validating-adaptive-bitrate-mp4s-encoded-with-external-encoders).
+3. [Streamen Sie Ihre Inhalte](media-services-deliver-content-overview.md).
 
 
 ##<a id="unsupported_formats"></a>Formate, die nicht von der dynamischen Paketerstellung unterstützt werden
 
 Die folgenden Quelldateiformate werden von der dynamischen Paketerstellung nicht unterstützt:
 
-- Dolby Digital mit MP4-Dateien
-- Dolby Digital mit Smooth-Dateien
+- MP4-Dateien in Dolby Digital
+- Smooth-Dateien in Dolby Digital
 
 ##Media Services-Lernpfade
 
@@ -105,4 +80,4 @@ Die folgenden Quelldateiformate werden von der dynamischen Paketerstellung nicht
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0204_2016-->

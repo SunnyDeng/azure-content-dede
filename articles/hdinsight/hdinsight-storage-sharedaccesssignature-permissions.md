@@ -13,7 +13,7 @@ ms.devlang="na"
 ms.topic="article"
 ms.tgt_pltfrm="na"
 ms.workload="big-data"
-ms.date="01/15/2016"
+ms.date="02/01/2016"
 ms.author="larryfr"/>
 
 #Verwenden von Azure Storage Shared Access Signatures zum Einschränken des Zugriffs auf Daten mit HDInsight
@@ -34,7 +34,7 @@ Shared Access Signatures (SAS) sind ein Feature von Azure Storage-Konten, das da
 
 * Einen Linux-basierten HDInsight-Cluster ODER [Azure PowerShell][powershell] – Wenn Sie bereits über einen Linux-basierten Cluster verfügen, können mit Ambari eine Shared Access Signature zum Cluster hinzuzufügen. Falls nicht, können Sie mit Azure PowerShell einen neuen Cluster erstellen und eine Shared Access Signature während der Clustererstellung hinzufügen.
 
-* Die Beispieldateien auf [https://github.com/Blackmist/hdinsight-azure-storage-sas](https://github.com/Blackmist/hdinsight-azure-storage-sas). Dieses Repository enthält Folgendes:
+* Die Beispieldateien aus [https://github.com/Azure-Samples/hdinsight-dotnet-python-azure-storage-shared-access-signature](https://github.com/Azure-Samples/hdinsight-dotnet-python-azure-storage-shared-access-signature). Dieses Repository enthält Folgendes:
 
     * Ein Visual Studio-Projekt, in dem ein Speichercontainer, eine gespeicherte Richtlinie und SAS für die Verwendung mit HDInsight erstellt werden kann.
     
@@ -60,7 +60,7 @@ Der Unterschied zwischen diesen beiden Formen ist wichtig für ein Schlüsselsze
 
 4. Der Kontoschlüssel, mit dem die SAS erstellt wurde, wird erneut generiert. Dies führt dazu, dass die Authentifizierung aller Anwendungskomponenten mit diesem Kontoschlüssel misslingt, bis diese entweder mit dem anderen gültigen Kontoschlüssel oder dem neu generierten Kontoschlüssel aktualisiert werden.
 
-> [AZURE.IMPORTANT]Ein SAS-URI wird dem Kontoschlüssel, mit dem die Signatur erstellt wurde, und der zugehörigen gespeicherten Zugriffsrichtlinie (sofern vorhanden) zugeordnet. Wenn keine gespeicherte Zugriffsrichtlinie angegeben wird, kann eine SAS nur durch Änderung des Kontoschlüssels aufgehoben werden.
+> [AZURE.IMPORTANT] Ein SAS-URI wird dem Kontoschlüssel, mit dem die Signatur erstellt wurde, und der zugehörigen gespeicherten Zugriffsrichtlinie (sofern vorhanden) zugeordnet. Wenn keine gespeicherte Zugriffsrichtlinie angegeben wird, kann eine SAS nur durch Änderung des Kontoschlüssels aufgehoben werden.
 
 Es wird empfohlen, stets gespeicherte Zugriffsrichtlinien zu verwenden, sodass Sie Signaturen entweder aufheben oder bei Bedarf das Ablaufdatum verlängern können. In den Schritten in diesem Dokument werden gespeicherte Zugriffsrichtlinien zum Generieren von SAS verwendet.
 
@@ -68,7 +68,7 @@ Weitere Informationen zu Shared Access Signatures finden Sie unter [Grundlagen z
 
 ##Erstellen einer gespeicherte Richtlinie und Generieren einer SAS
 
-Derzeit müssen Sie eine gespeicherte Richtlinie programmgesteuert erstellen. Das C#- und Python-Beispiel zum Erstellen einer gespeicherten Richtlinie und SAS finden Sie auf [https://github.com/Blackmist/hdinsight-azure-storage-sas](https://github.com/Blackmist/hdinsight-azure-storage-sas).
+Derzeit müssen Sie eine gespeicherte Richtlinie programmgesteuert erstellen. Das C#- und Python-Beispiel zum Erstellen einer gespeicherten Richtlinie und SAS finden Sie unter [https://github.com/Azure-Samples/hdinsight-dotnet-python-azure-storage-shared-access-signature](https://github.com/Azure-Samples/hdinsight-dotnet-python-azure-storage-shared-access-signature).
 
 ###Erstellen einer gespeicherte Richtlinie und SAS mit C#
 
@@ -169,7 +169,7 @@ Ein Beispiel zum Erstellen eines HDInsight-Clusters, der die SAS verwendet, befi
     
     Wenn Sie einen Linux-basierten Cluster erstellen, werden Sie auch zur Angabe des Namens und Kennworts eines SSH-Benutzerkontos aufgefordert. Dieses wird für eine Remoteanmeldung am Cluster verwendet.
     
-    > [AZURE.IMPORTANT]Wenn Sie zur Angabe des HTTP/S- oder SSH-Benutzernamens und Kennworts aufgefordert werden, müssen Sie ein Kennwort angeben, das die folgenden Kriterien erfüllt:
+    > [AZURE.IMPORTANT] Wenn Sie zur Angabe des HTTP/S- oder SSH-Benutzernamens und Kennworts aufgefordert werden, müssen Sie ein Kennwort angeben, das die folgenden Kriterien erfüllt:
     >
     > - Mindestens 10 Zeichen
     > - Mindestens eine Ziffer
@@ -201,7 +201,7 @@ Wenn Sie bereits einen Linux-basierten Cluster haben, können Sie die SAS der __
 
     Klicken Sie auf __OK__, wenn die Änderungen abgeschlossen sind.
 
-    > [AZURE.IMPORTANT]Dies speichert die geänderte Konfiguration, doch Sie müssen mehrere Dienste neu starten, damit die Änderung wirksam wird.
+    > [AZURE.IMPORTANT] Dies speichert die geänderte Konfiguration, doch Sie müssen mehrere Dienste neu starten, damit die Änderung wirksam wird.
 
 6. Wählen Sie auf der Ambari-Webbenutzeroberfläche in der Liste auf der linken Seite __HDFS__ und dann in der Dropdownliste __Service Actions__ auf der rechten Seite __Restart All__ aus. Wählen Sie bei Aufforderung __Turn on maintenance mode__ und dann „Conform Restart All“ aus.
 
@@ -290,4 +290,4 @@ Nachdem Sie erfahren haben, wie Sie Ihrem HDInsight-Cluster Speicher mit eingesc
 
 [powershell]: ../powershell-install-configure.md
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0204_2016-->

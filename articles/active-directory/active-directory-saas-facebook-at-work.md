@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/04/2015"
+	ms.date="02/02/2016"
 	ms.author="asmalser"/>
 
 
@@ -33,13 +33,13 @@ Weitere Informationen zur Integration von SaaS-Apps in Azure AD finden Sie unte
 
 Um die Azure AD-Integration mit CS Stars konfigurieren zu können, benötigen Sie Folgendes:
 
-- Ein Azure AD-Abonnement.
+- Ein Azure AD-Abonnement
 - Facebook at Work mit aktivierter Funktion für einmaliges Anmelden
 
 Um die Schritte in diesem Tutorial zu testen, sollten Sie folgende Empfehlungen beachten:
 
 - Sie sollten keine Produktionsumgebung verwenden, sofern dies nicht erforderlich ist.
-- Wenn Sie keine Azure AD-Testumgebung besitzen, können Sie [hier](https://azure.microsoft.com/pricing/free-trial/) eine einmonatige Testversion anfordern. 
+- Wenn Sie keine Azure AD-Testumgebung haben, können Sie [hier](https://azure.microsoft.com/pricing/free-trial/) eine einmonatige Testversion anfordern. 
 
 
 ## Hinzufügen von Facebook at Work aus dem Katalog
@@ -51,7 +51,7 @@ Zum Konfigurieren der Integration von Facebook at Work in Azure AD müssen Sie F
 
 2. Wählen Sie in der Liste **Verzeichnis** das Verzeichnis aus, für das Sie die Verzeichnisintegration aktivieren möchten.
 
-3. Klicken Sie zum Öffnen der Anwendungsansicht im Hauptmenü der Verzeichnisansicht auf **Anwendungen**. <br><br>![Anwendungen][2]<br>
+3. Klicken Sie zum Öffnen der Anwendungsansicht in der oberen Menüleiste der Verzeichnisansicht auf **Anwendungen**. <br><br>![Anwendungen][2]<br>
 
 4. Klicken Sie unten auf der Seite auf **Hinzufügen**. <br><br>![Anwendungen][3]<br>
 
@@ -62,11 +62,11 @@ Zum Konfigurieren der Integration von Facebook at Work in Azure AD müssen Sie F
 7. Wählen Sie im Ergebnisbereich **Facebook at Work** aus, und klicken Sie dann auf **Abschließen**, um die Anwendung hinzuzufügen.
 
 
-### Konfigurieren der einmaligen Anmeldung in Azure AD
+### Konfigurieren des einmaligen Anmeldens von Azure AD
 
 In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Konto in Azure Active Directory bei Facebook at Work zu authentifizieren.
 
-**Führen Sie zum Konfigurieren des einmaligen Anmeldens in Azure AD in Facebook at Work die folgenden Schritte aus:**
+**Führen Sie zum Konfigurieren des einmaligen Anmeldens in Azure AD mit Facebook at Work die folgenden Schritte aus:**
 
 1.	Wenn Sie Facebook at Work im Azure-Verwaltungsportal hinzugefügt haben, klicken Sie auf **Einmaliges Anmelden konfigurieren**.
 
@@ -114,4 +114,4 @@ Damit bereitgestellten AAD-Benutzern Facebook at Work im Zugriffsbereich angezei
 [3]: ./media/active-directory-saas-cs-stars-tutorial/tutorial_general_03.png
 [4]: ./media/active-directory-saas-cs-stars-tutorial/tutorial_general_04.png
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0204_2016-->

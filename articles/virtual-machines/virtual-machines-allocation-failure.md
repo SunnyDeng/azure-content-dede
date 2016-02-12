@@ -14,18 +14,18 @@
 	ms.tgt_pltfrm="ibiza"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/29/2015"
-	ms.author="kenazk"/>
+	ms.date="02/02/2016"
+	ms.author="cjiang"/>
 
 
 
 # Problembehandlung für Zuordnungsfehler beim Erstellen, Neustarten oder Ändern der Größen von virtuellen Computern in Azure
 
-Wenn Sie einen virtuellen Computer erstellen, beendete virtuelle Computer (zuordnungsaufgehobene) neu starten oder die Größe eines virtuellen Computers ändern, weist Microsoft Azure Ihrem Abonnement Compute-Ressourcen zu. Unter Umständen erhalten Sie beim Ausführen dieser Schritte auch dann gelegentlich Fehler, bevor Sie die Grenzwerte des Azure-Abonnements erreichen. In diesem Artikel werden die Ursachen einiger häufig auftretender Zuordnungsfehler erläutert und mögliche Abhilfemaßnahmen vorgeschlagen. Diese Informationen können auch hilfreich sein, wenn Sie die Bereitstellung Ihrer Dienste planen.
+Wenn Sie einen virtuellen Computer erstellen, beendete virtuelle Computer (zuordnungsaufgehobene) neu starten oder die Größe eines virtuellen Computers ändern, weist Microsoft Azure Ihrem Abonnement Compute-Ressourcen zu. Unter Umständen erhalten Sie beim Ausführen dieser Schritte auch dann gelegentlich Fehler, wenn Sie die Grenzwerte des Azure-Abonnements noch nicht erreicht haben. In diesem Artikel werden die Ursachen einiger häufig auftretender Zuordnungsfehler erläutert und mögliche Abhilfemaßnahmen vorgeschlagen. Diese Informationen können auch hilfreich sein, wenn Sie die Bereitstellung Ihrer Dienste planen.
+
+Im Abschnitt „Allgemeine Schritte zur Problembehandlung“ finden Sie Schritte für häufig auftretende Probleme. Der Abschnitt „Ausführliche Problembehandlungsschritte“ enthält Lösungsschritte für spezifische Fehlermeldungen. Bevor Sie beginnen, lesen Sie die Hintergrundinformationen zur Funktionsweise der Zuordnung und zu den Ursachen von Zuordnungsfehlern.
 
 Suchen Sie in den Azure-Foren bei [MSDN und Stack Overflow](https://azure.microsoft.com/support/forums/), falls Sie ihr Azure-Problem mit diesem Artikel nicht beheben konnten. Sie können Ihr Problem in diesen Foren veröffentlichen oder auf Twitter an den @AzureSupport senden. Darüber hinaus können Sie eine Azure-Supportanfrage stellen, indem Sie auf der Website des [Azure-Supports](https://azure.microsoft.com/support/options/) die Option **Support erhalten** auswählen.
-
-Im Abschnitt „Problembehandlung häufiger Fehler“ dieses Artikels werden die Schritte zur Behandlung häufiger Fehler aufgelistet. Der Abschnitt „Problembehandlung bei spezifischen Zuordnungsfehlerszenarien“ enthält Lösungsschritte für spezifische Fehlermeldungen. Bevor Sie beginnen, lesen Sie die Hintergrundinformationen zur Funktionsweise der Zuordnung und zu den Ursachen von Zuordnungsfehlern.
 
 ## Hintergrundinformationen
 ### Funktionsweise der Zuordnung
@@ -72,7 +72,7 @@ Zwei häufig auftretende Fehlerszenarien hängen mit der Affinitätsgruppe zusam
 
 In Diagramm 5 unten ist die Taxonomie der Zuordnungsszenarios (mit Verknüpfung) dargestellt. ![Verknüpfte Zuordnung, Taxonomie](./media/virtual-machines-allocation-failure/Allocation3.png)
 
-> [AZURE.NOTE] Der Fehler wird in den einzelnen Zuordnungsszenarien in Kurzform aufgelistet. Ausführliche Fehlerzeichenfolgen finden Sie im [Anhang](#appendix).
+> [AZURE.NOTE] Der Fehler wird in den einzelnen Zuordnungsszenarien in Kurzform aufgelistet. Details zu den Fehlerzeichenfolgen finden Sie unter [Error string lookup](#Error string lookup) (Fehlerzeichenfolgen zum Nachschlagen).
 
 #### Zuordnungsszenario: Ändern der Größe eines virtuellen Computers oder Hinzufügen weiterer virtueller Computer oder Rolleninstanzen zu einem vorhandenen Clouddienst
 **Fehler**
@@ -119,7 +119,7 @@ Falls die Verwendung einer anderen VIP akzeptabel ist, löschen Sie die ursprün
 #### Zuordnungsszenario: Staging-/Produktionsbereitstellungen (nur Platform-as-a-Service)
 **Fehler**
 
-New\_General oder New\_VMSizeNotSupported
+New\_General* oder New\_VMSizeNotSupported*
 
 **Ursache der Verknüpfung mit dem Cluster**
 
@@ -132,7 +132,7 @@ Löschen Sie die erste Bereitstellung und den ursprünglichen Clouddienst und st
 #### Zuordnungsszenario: Affinitätsgruppe (Nähe von virtuellem Computer und Dienst)
 **Fehler**
 
-New\_General oder New\_VMSizeNotSupported
+New\_General* oder New\_VMSizeNotSupported*
 
 **Ursache der Verknüpfung mit dem Cluster**
 
@@ -145,9 +145,9 @@ Falls dies nicht erforderlich ist, verwenden Sie keine Affinitätsgruppe oder gr
 #### Zuordnungsszenario: auf Affinitätsgruppen basierendes virtuelles Netzwerk
 **Fehler**
 
-New\_General oder New\_VMSizeNotSupported
+New\_General* oder New\_VMSizeNotSupported*
 
-**Ursache der Verknüpfung mit dem Cluster**
+<**Ursache der Verknüpfung mit dem Cluster**
 
 Bevor regionale virtuelle Netzwerke eingeführt wurden, mussten Sie einem Virtual Network eine Affinitätsgruppe zuordnen. Daher gelten für Compute-Ressourcen, die in die Affinitätsgruppe eingefügt werden, die gleichen Einschränkungen wie oben im Abschnitt „Zuordnungsszenario: Affinitätsgruppe (Nähe von virtuellem Computer und Dienst)“ beschrieben. Die Compute-Ressourcen sind an ein Cluster gebunden.
 
@@ -171,7 +171,7 @@ Solange für den Fehler nicht „Die angeforderte Größe des virtuellen Compute
 #### Zuordnungsszenario: Ändern der Größe eines virtuellen Computers oder Hinzufügen weiterer virtueller Computer zu einer vorhandenen Verfügbarkeitsgruppe
 **Fehler**
 
-Upgrade\_VMSizeNotSupported oder GeneralError
+Upgrade\_VMSizeNotSupported* oder GeneralError*
 
 **Ursache der Verknüpfung mit dem Cluster**
 
@@ -209,8 +209,7 @@ Die vollständige Aufhebung der Zuordnung bedeutet, dass Sie alle virtuellen Com
 
 Wählen Sie eine neue Größe des virtuellen Computers für die Zuordnung aus. Wenn das nicht funktioniert, versuchen Sie es bitte später erneut.
 
-## Anhang
-### Fehlerzeichenfolgen
+## Fehlerzeichenfolgen
 **New\_VMSizeNotSupported***
 
 „Die für diese Bereitstellung erforderliche VM-Größe (oder Kombination aus VM-Größen) kann aufgrund von Einschränkungen bei der Bereitstellungsanforderung nicht bereitgestellt werden. Lockern Sie, wenn möglich, die Einschränkungen, wie etwa die Bindungen des virtuellen Netzwerks, die Bereitstellung in einem gehosteten Dienst ohne weitere Bereitstellung darin und in einer anderen Affinitätsgruppe oder ohne Affinitätsgruppe, oder testen Sie die Bereitstellung in einer anderen Region.“
@@ -227,4 +226,4 @@ Wählen Sie eine neue Größe des virtuellen Computers für die Zuordnung aus. W
 
 „Auf dem Server ist ein interner Fehler aufgetreten. Versuchen Sie die Anforderung erneut.“ Oder „Für den Dienst konnte keine Zuordnung erstellt werden.“
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

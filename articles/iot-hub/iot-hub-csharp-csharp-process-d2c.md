@@ -26,7 +26,7 @@ Dieses Lernprogramm baut auf dem Code des Lernprogramms [Erste Schritte mit IoT 
 
 - Zuverlässiges Speichern von D2C-Nachrichten in [Azure Blob Storage]\: Dies ist sehr häufiges Szenario bei der Implementierung der *Cold Path*-Analyse, bei der Sie Daten in Blobs speichern. Die Blobs werden als Eingabe für Analyseprozesse mit Tools wie [Azure Data Factory] oder dem [HDInsight (Hadoop)]-Stapel verwendet.
 
-- Zuverlässige Verarbeitung von *interaktiven* D2C-Nachrichten: D2C-Nachrichten sind interaktiv, wenn es sich um unmittelbare Auslöser für eine Reihe von Aktionen im Anwendungs-Back-End handelt, und nicht um *Datenpunkt*-Nachrichten, die an ein Analysemodul übertragen werden. Ein Alarm von einem Gerät, bei dem das Einfügen eines Tickets in ein CRM-System ausgelöst werden muss, ist beispielsweise eine interaktive D2C-Nachricht. Bei Telemetriedaten, z. B. Temperaturangaben, handelt es sich dagegen um eine Datenpunkt-D2C-Nachricht.
+- Zuverlässige Verarbeitung von *interaktiven* D2C-Nachrichten: D2C-Nachrichten sind interaktiv, wenn es sich um unmittelbare Auslöser für eine Reihe von Aktionen im Anwendungs-Back-End handelt und nicht um *Datenpunkt*-Nachrichten, die an ein Analysemodul übertragen werden. Ein Alarm von einem Gerät, bei dem das Einfügen eines Tickets in ein CRM-System ausgelöst werden muss, ist beispielsweise eine interaktive D2C-Nachricht. Bei Telemetriedaten, z. B. Temperaturangaben, handelt es sich dagegen um eine Datenpunkt-D2C-Nachricht.
 
 Da in IoT Hub ein Event Hubs-kompatibler Endpunkt zum Empfangen von D2C-Nachrichten verfügbar gemacht wird, wird in diesem Lernprogramm eine [EventProcessorHost]-Instanz verwendet, die Folgendes ermöglicht:
 
@@ -91,9 +91,9 @@ Weitere Informationen zu IoT Hub:
 
 <!-- Links -->
 
-[Azure Blob storage]: https://azure.microsoft.com/de-DE/documentation/articles/storage-dotnet-how-to-use-blobs/
+[Azure Blob storage]: https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/
 [Azure Data Factory]: https://azure.microsoft.com/de-DE/documentation/services/data-factory/
-[HDInsight (Hadoop)]: https://azure.microsoft.com/de-DE/documentation/services/hdinsight/
+[HDInsight (Hadoop)]: https://azure.microsoft.com/documentation/services/hdinsight/
 [Service Bus-Warteschlange]: https://azure.microsoft.com/de-DE/documentation/articles/service-bus-dotnet-how-to-use-queues/
 [EventProcessorHost]: http://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventprocessorhost(v=azure.95).aspx
 
@@ -116,4 +116,4 @@ Weitere Informationen zu IoT Hub:
 [Supported devices]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/tested_configurations.md
 [Azure IoT Developer Center]: https://azure.microsoft.com/develop/iot
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

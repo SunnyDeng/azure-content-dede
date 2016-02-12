@@ -25,8 +25,8 @@ Es gibt zwei Möglichkeiten, einem CDN-Endpunkt eine benutzerdefinierte Domäne 
 	Ein CNAME-Eintrag ist eine DNS-Funktion, die eine Quelldomäne einer Zieldomäne zuordnet. In diesem Fall ist die Quelldomäne Ihre benutzerdefinierte Domäne und Unterdomäne (die Unterdomäne ist immer erforderlich). Die Zieldomäne entspricht Ihrem CDN-Endpunkt.
 
 	Die Zuordnung der benutzerdefinierten Domäne zum CDN-Endpunkt kann jedoch zu einer kurzzeitigen Downtime für die Domäne führen, während Sie die Domäne im Azure-Portal registrieren.
-     
-2. [Hinzufügen eines zwischengeschalteten Registrierungsschritts mithilfe von **cdnverify**] ((#register-a-custom-domain-for-an-azure-cdn-endpoint-using-the-intermediary-cdnverify-subdomain)
+	 
+2. [Hinzufügen eines zwischengeschalteten Registrierungsschritts mithilfe von **cdnverify**](#register-a-custom-domain-for-an-azure-cdn-endpoint-using-the-intermediary-cdnverify-subdomain)
 
 	Wenn Ihre benutzerdefinierte Domäne zurzeit eine Anwendung unterstützt, die unter einer Vereinbarung zum Servicelevel (SLA, Service Level Agreement) ohne Ausfallzeit läuft, können Sie mithilfe der Azure-Unterdomäne **cdnverify** einen Zwischenschritt für die Registrierung bereitstellen, damit Benutzer während der DNS-Zuordnung auf die Domäne zugreifen können.
 
@@ -83,4 +83,4 @@ Nachdem Sie Ihre benutzerdefinierte Domäne mit einem der oben genannten Verfahr
 
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

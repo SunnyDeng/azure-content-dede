@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/15/2015"  
+	ms.date="01/28/2016"  
 	ms.author="juliako"/>
 
 #Erweiterte Codierung mit dem Media Encoder Premium Workflow
@@ -28,7 +28,7 @@ In den folgenden Themen erhalten Sie nähere Informationen zum **Media Encoder P
 
 - [Von Media Encoder Premium Workflow unterstützte Formate](media-services-premium-workflow-encoder-formats.md): Erläutert die von **Media Encoder Premium Workflow** unterstützten Formate.
 
-- Im Abschnitt [Vergleich der Encoder](media-services-encode-asset.md#compare_encoders) werden die Codierungsfunktionen von **Media Encoder Premium Workflow** und **Azure Media Encoder** verglichen.
+- Im Abschnitt [Vergleich der Encoder](media-services-encode-asset.md#compare_encoders) werden die Codierungsfunktionen von **Media Encoder Premium Workflow**, **Media Encoder Standard** und **Azure Media Encoder** verglichen.
 
 Dieses Thema demonstriert die Codierung mit **Media Encoder Premium Workflow** unter Verwendung von .NET.
 
@@ -277,4 +277,4 @@ Wenn Ihr Eingabevideo keine Untertitel enthält, enthält das Ausgabemedienobjek
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0204_2016-->

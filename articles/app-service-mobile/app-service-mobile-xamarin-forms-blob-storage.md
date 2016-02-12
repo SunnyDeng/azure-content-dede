@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="mobile-xamarin-ios"
     ms.devlang="dotnet"
     ms.topic="article"
-	ms.date="01/21/2015"
+	ms.date="02/03/2015"
     ms.author="donnam"/>
 
 #Herstellen einer Verbindung mit Azure Storage in der Xamarin.Forms-App
@@ -44,7 +44,7 @@ Für dieses Lernprogramm benötigen Sie Folgendes:
 
 ## Erstellen Sie ein Speicherkonto.
 
-1. Erstellen Sie ein Speicherkonto, indem Sie die Tutorial-Schritte unter [Erstellen Sie ein Speicherkonto] ausführen. 
+1. Erstellen Sie ein Speicherkonto, indem Sie die Tutorialschritte unter [Erstellen eines Azure-Speicherkontos] ausführen. 
 
 2. Navigieren Sie im Azure-Portal zum neu erstellten Speicherkonto, und klicken Sie auf das Symbol **Schlüssel**. Kopieren Sie die **primäre Verbindungszeichenfolge**.
 
@@ -718,7 +718,7 @@ In diesem Artikel wird beschrieben, wie Sie die neue Dateiunterstützung im Azur
 [Microsoft.Azure.Mobile.Client.Files]: https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client.Files/
 [Microsoft.Azure.Mobile.Client.SQLiteStore]: https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client.SQLiteStore/
 [Microsoft.Azure.Mobile.Server.Files]: https://www.nuget.org/packages/Microsoft.Azure.Mobile.Server.Files/
-[Shared Access Signatures, Teil 1: Grundlagen zum SAS-Modell]: https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/
-[Erstellen Sie ein Speicherkonto]: https://azure.microsoft.com/de-DE/documentation/articles/storage-create-storage-account/#create-a-storage-account
+[Shared Access Signatures, Teil 1: Grundlagen zum SAS-Modell]: ../storage/storage-dotnet-shared-access-signature-part-1.md
+[Erstellen eines Azure-Speicherkontos]: ../storage/storage-create-storage-account.md#create-a-storage-account
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="01/20/2016"
+   ms.date="02/01/2016"
    ms.author="jonor;sivae"/>
 
 # Beispiel 2 – Erstellen einer DMZ zum Schützen von Anwendungen mit einer Firewall und NSGs
@@ -30,12 +30,12 @@ Dieses Beispiel umfasst ein Abonnement, das Folgendes enthält:
 - Zwei Clouddienste: "FrontEnd001" und "BackEnd001"
 - Ein virtuelles Netzwerk, "CorpNetwork", mit zwei Subnetzen: "FrontEnd" und "BackEnd"
 - Eine einzelne Netzwerksicherheitsgruppe, die auf beide Subnetze angewendet wird
-- Ein virtuelles Netzwerkgerät, in diesem Fall eine Barracuda NG Firewall, das mit dem Front-End-Subnetz verbunden ist
-- Eine Windows Server-Instanz, die einen Anwendungswebserver darstellt („IIS01“)
+- Ein virtuelles Netzwerkgerät, in diesem Fall eine Barracuda NextGen-Firewall, das mit dem Front-End-Subnetz verbunden ist
+- Eine Windows Server-Instanz, die einen Anwendungswebserver darstellt ("IIS01")
 - Zwei Windows Server-Instanzen, die Back-End-Anwendungsserver darstellen ("AppVM01", "AppVM02")
-- Eine Windows Server-Instanz, die einen DNS-Server darstellt („DNS01“)
+- Eine Windows Server-Instanz, die einen DNS-Server darstellt ("DNS01")
 
->[AZURE.NOTE]In diesem Beispiel wird zwar eine Barracuda NG Firewall verwendet, aber es könnten auch andere virtuelle Netzwerkgeräte eingesetzt werden.
+>[AZURE.NOTE] In diesem Beispiel wird zwar eine Barracuda NextGen-Firewall verwendet, aber es könnten auch andere virtuelle Netzwerkgeräte eingesetzt werden.
 
 Der Referenzabschnitt enthält ein PowerShell-Skript, mit dem sich der größte Teil der oben beschriebenen Umgebung erstellen lässt. Die Erstellung der virtuellen Computer und Netzwerke wird zwar durch das Beispielskript ausgeführt, aber dies wird in diesem Dokument nicht im Einzelnen beschrieben.
  
@@ -57,7 +57,7 @@ Im nächsten Abschnitt werden die meisten Skriptanweisungen für Netzwerksicherh
 ## Netzwerksicherheitsgruppen
 Für dieses Beispiel wird eine Netzwerksicherheitsgruppe erstellt und dann mit sechs Regeln geladen.
 
->[AZURE.TIP]Im Allgemeinen sollten Sie zuerst die spezifischeren Regeln zum Zulassen von Aktionen und danach die allgemeineren Regeln zum Ablehnen von Aktionen erstellen. Die zugewiesene Priorität bestimmt, welche Regeln zuerst ausgewertet werden. Sobald eine Regel auf den Datenverkehr zutrifft, werden keine weiteren Regeln ausgewertet. NSG-Regeln können sowohl in eingehender als auch in ausgehender Richtung zutreffen (aus Perspektive des Subnetzes).
+>[AZURE.TIP] Im Allgemeinen sollten Sie zuerst die spezifischeren Regeln zum Zulassen von Aktionen und danach die allgemeineren Regeln zum Ablehnen von Aktionen erstellen. Die zugewiesene Priorität bestimmt, welche Regeln zuerst ausgewertet werden. Sobald eine Regel auf den Datenverkehr zutrifft, werden keine weiteren Regeln ausgewertet. NSG-Regeln können sowohl in eingehender als auch in ausgehender Richtung zutreffen (aus Perspektive des Subnetzes).
 
 Folgende Regeln werden deklarativ für eingehenden Datenverkehr erstellt:
 
@@ -79,7 +79,7 @@ Zur Verwaltung der Firewall und Erstellung der erforderlichen Konfigurationen mu
 
 Anweisungen zum Herunterladen des Clients und Herstellen einer Verbindung zur in diesem Beispiel verwendeten Barracuda-Firewall finden Sie unter [Barracuda NG Admin](https://techlib.barracuda.com/NG61/NGAdmin).
 
-In der Firewall müssen Weiterleitungsregeln erstellt werden. Da in diesem Beispiel nur eingehender Internetdatenverkehr an die Firewall und dann an den Webserver geleitet wird, ist nur eine NAT-Weiterleitungsregel erforderlich. Für die Barracuda NG Firewall in diesem Beispiel würde es sich bei der Regel um eine Destination NAT-Regel („Dst NAT“) zum Übergeben des Datenverkehrs handeln.
+In der Firewall müssen Weiterleitungsregeln erstellt werden. Da in diesem Beispiel nur eingehender Internetdatenverkehr an die Firewall und dann an den Webserver geleitet wird, ist nur eine NAT-Weiterleitungsregel erforderlich. Für die Barracuda NextGen-Firewall in diesem Beispiel würde es sich bei der Regel um eine Destination NAT-Regel („Dst NAT“) zum Übergeben des Datenverkehrs handeln.
 
 Um die folgende Regel zu erstellen (oder vorhandene Standardregeln zu überprüfen), öffnen Sie das Dashboard des Barracuda NG Admin-Clients, wechseln zur Registerkarte „Configuration“ und klicken im Abschnitt „Operational Configuration“ auf „Ruleset“. In einem Raster namens „Main Rules“ werden die vorhandenen aktivierten und deaktivierten Regeln der Firewall angezeigt. In der oberen rechten Ecke dieses Rasters befindet sich ein kleines grünes Pluszeichen. Klicken Sie auf dieses Zeichen, um eine neue Regel zu erstellen. (Hinweis: Möglicherweise ist die Firewall „gesperrt“, sodass keine Änderungen vorgenommen werden können. Wenn eine Schaltfläche mit der Bezeichnung „Lock“ angezeigt wird und Sie keine Regeln erstellen oder bearbeiten können, klicken Sie auf diese Schaltfläche, um den Regelsatz zu entsperren und die Bearbeitung zu ermöglichen.) Wenn Sie eine vorhandene Regel bearbeiten möchten, wählen Sie diese Regel aus, klicken Sie mit der rechten Maustaste, und wählen Sie „Edit Rule“.
 
@@ -108,7 +108,7 @@ In der oberen rechten Ecke des Verwaltungsclients befinden sich verschiedene Sch
 
 Mit der Aktivierung des Firewallregelsatzes ist die Erstellung dieser Beispielumgebung abgeschlossen. Optional können die Skripts für die Vorgänge nach der Erstellung im Abschnitt „References“ ausgeführt werden, um dieser Umgebung eine Anwendung hinzuzufügen, damit die unten angegebenen Datenverkehrsszenarien getestet werden können.
 
->[AZURE.IMPORTANT]Es ist wichtig, sich zu vergegenwärtigen, dass der Zugang zum Webserver nicht direkt erfolgt. Wenn ein Browser eine HTTP-Seite von FrontEnd001.CloudApp.Net anfordert, übergibt der HTTP-Endpunkt (Port 80) diesen Datenverkehr an die Firewall, nicht an den Webserver. Anschließend leitet die Firewall die Anforderung gemäß der oben erstellten Regel per NAT an den Webserver weiter.
+>[AZURE.IMPORTANT] Es ist wichtig, sich zu vergegenwärtigen, dass der Zugang zum Webserver nicht direkt erfolgt. Wenn ein Browser eine HTTP-Seite von FrontEnd001.CloudApp.Net anfordert, übergibt der HTTP-Endpunkt (Port 80) diesen Datenverkehr an die Firewall, nicht an den Webserver. Anschließend leitet die Firewall die Anforderung gemäß der oben erstellten Regel per NAT an den Webserver weiter.
 
 ## Datenverkehrsszenarien
 
@@ -227,7 +227,7 @@ Dieses Skript führt basierend auf den benutzerdefinierten Variablen Folgendes a
 
 Dieses PowerShell-Skript sollte lokal auf einem mit dem Internet verbundenen PC oder Server ausgeführt werden.
 
->[AZURE.IMPORTANT]Während der Ausführung des Skripts werden in PowerShell möglicherweise Warnungen oder Informationsmeldungen angezeigt. Nur in Rot angezeigte Fehlermeldungen müssen genauer beachtet und ggf. gelöst werden.
+>[AZURE.IMPORTANT] Während der Ausführung des Skripts werden in PowerShell möglicherweise Warnungen oder Informationsmeldungen angezeigt. Nur in Rot angezeigte Fehlermeldungen müssen genauer beachtet und ggf. gelöst werden.
 
 
 	<# 
@@ -239,7 +239,7 @@ Dieses PowerShell-Skript sollte lokal auf einem mit dem Internet verbundenen PC 
 	   - A default storage account for VM disks
 	   - Two new cloud services
 	   - Two Subnets (FrontEnd and BackEnd subnets)
-	   - A Network Virtual Appliance (NVA), in this case a Barracuda NG Firewall
+	   - A Network Virtual Appliance (NVA), in this case a Barracuda NextGen Firewall
 	   - One server on the FrontEnd Subnet (plus the NVA on the FrontEnd subnet)
 	   - Three Servers on the BackEnd Subnet
 	   - Network Security Groups to allow/deny traffic patterns as declared
@@ -303,7 +303,7 @@ Dieses PowerShell-Skript sollte lokal auf einem mit dem Internet verbundenen PC 
 	
 	  # VM Base Disk Image Details
 	    $SrvImg = Get-AzureVMImage | Where {$_.ImageFamily -match 'Windows Server 2012 R2 Datacenter'} | sort PublishedDate -Descending | Select ImageName -First 1 | ForEach {$_.ImageName}
-	    $FWImg = Get-AzureVMImage | Where {$_.ImageFamily -match 'Barracuda NG Firewall'} | sort PublishedDate -Descending | Select ImageName -First 1 | ForEach {$_.ImageName}
+	    $FWImg = Get-AzureVMImage | Where {$_.ImageFamily -match 'Barracuda NextGen Firewall'} | sort PublishedDate -Descending | Select ImageName -First 1 | ForEach {$_.ImageName}
 	
 	  # NSG Details
 	    $NSGName = "MyVNetSG"
@@ -566,4 +566,4 @@ Wenn Sie eine Beispielanwendung für dieses und weitere DMZ-Beispiele installier
 [SampleApp]: ./virtual-networks-sample-app.md
 [Example1]: ./virtual-networks-dmz-nsg-asm.md
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0204_2016-->

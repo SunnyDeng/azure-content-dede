@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/21/2016"
+	ms.date="02/01/2016"
 	ms.author="curtand"/>
 
 
@@ -23,7 +23,7 @@ In diesem Thema wird gezeigt, wie zusätzliche Domänencontroller (die auch als 
 
 Folgende Themen könnten für Sie ebenfalls von Interesse sein:
 
--  Sie können optional eine neue Active Directory-Gesamtstruktur in einem virtuellen Azure-Netzwerk installieren. Diese Schritte finden Sie unter [Installieren einer neuen Active Directory-Gesamtstruktur in einem virtuellen Azure-Netzwerk](../active-directory-new-forest-virtual-machine.md).
+-  Sie können optional eine neue Active Directory-Gesamtstruktur in einem virtuellen Azure-Netzwerk installieren. Diese Schritte finden Sie unter [Installieren einer neuen Active Directory-Gesamtstruktur in einem virtuellen Azure-Netzwerk](../active-directory/active-directory-new-forest-virtual-machine.md).
 -  Weitere Anleitungen zu den Konzepten für die Installation von Active Directory-Domänendiensten (AD DS) auf einem virtuellen Azure-Netzwerk finden Sie unter [Richtlinien für die Bereitstellung von Windows Server Active Directory auf virtuellen Computern in Microsoft Azure](https://msdn.microsoft.com/library/azure/jj156090.aspx).
 
 
@@ -31,7 +31,7 @@ Folgende Themen könnten für Sie ebenfalls von Interesse sein:
 
 In diesem Szenario müssen externe Benutzer auf Anwendungen zugreifen, die auf in die Domäne eingebundenen Servern ausgeführt werden. Die virtuellen Computer, auf denen die Anwendungsserver und die Replikatdomänencontroller ausgeführt werden, sind in einem virtuellen Azure-Netzwerk installiert. Das virtuelle Netzwerk kann über eine [Site-to-Site-VPN-Verbindung](../vpn-gateway/vpn-gateway-site-to-site-create.md), wie in der folgenden Abbildung dargestellt, mit dem lokalen Netzwerk verbunden werden, oder Sie können als schnellere Verbindung [ExpressRoute](../../services/expressroute/) verwenden.
 
-Die Anwendungsserver und Domänencontroller werden in separaten [Clouddiensten](../cloud-services-what-is.md) bereitgestellt, um die Serververarbeitung zu verteilen, sowe in [Verfügbarkeitsgruppen](../virtual-machines/virtual-machines-manage-availability.md), um eine bessere Fehlertoleranz zu erzielen. Die Domänencontroller werden durch die Active Directory-Replikation untereinander und mit lokalen Domänencontroller repliziert. Es sind keine Synchronisierungstools erforderlich.
+Die Anwendungsserver und Domänencontroller werden in separaten Clouddiensten bereitgestellt, um die Computeverarbeitung zu verteilen, sowie in [Verfügbarkeitsgruppen](../virtual-machines/virtual-machines-manage-availability.md), um eine bessere Fehlertoleranz zu erzielen. Die Domänencontroller werden durch die Active Directory-Replikation untereinander und mit lokalen Domänencontroller repliziert. Es sind keine Synchronisierungstools erforderlich.
 
 ![][1]
 
@@ -121,4 +121,4 @@ Weitere Informationen zum Verwenden von Windows PowerShell finden Sie unter [Ers
 <!--Image references-->
 [1]: ./media/virtual-networks-install-replica-active-directory-domain-controller/ReplicaDCsOnAzureVNet.png
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

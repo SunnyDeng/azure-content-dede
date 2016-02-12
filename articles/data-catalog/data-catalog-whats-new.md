@@ -13,16 +13,39 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
-   ms.date="01/08/2016"
+   ms.date="01/29/2016"
    ms.author="maroche"/>
 
 # Neuigkeiten in Azure Data Catalog
 
 Updates für **Azure Data Catalog** werden in regelmäßigen Abständen veröffentlicht. Nicht jede Version umfasst neue Funktionen für Benutzer, da sich einige Versionen auf Back-End-Dienstfunktionen konzentrieren. Auf dieser Seite werden neue Funktionen für Benutzer aufgezeigt, die dem Dienst **Azure Data Catalog** hinzugefügt wurden.
 
+## Neuerungen in der Version der Woche ab dem 29. Januar 2016
+
+In der Woche ab dem 29. Januar 2016 wurden **Azure Data Catalog** die folgenden Funktionen hinzugefügt:
+
+- Unterstützung für die manuelle Registrierung zusätzlicher Datenquellen. Benutzer können jetzt im **Azure Data Catalog**-Portal manuelle Einträge erstellen oder die **Azure Data Catalog**-REST-API zum Registrieren von der folgenden Datenquellen verwenden:
+   + OData – Funktion, Entitätenmenge und Entitätencontainer
+   + HTTP – Datei, Endpunkt, Bericht und Website
+   + Dateisystem – Datei
+   + SharePoint – Liste
+   + FTP – Dateien und Verzeichnisse
+   + Salesforce.com – Objekt
+   + DB2 – Tabelle, Ansicht und Datenbank
+   + PostgreSQL – Tabelle, Ansicht und Datenbank
+- Unterstützung für „Open in SQL Server Data Tools“ für SQL Server-Datenquellen (einschließlich Azure SQL-Datenbank und Azure SQL Data Warehouse).  
+
+> [AZURE.NOTE] „Open in SQL Server Data Tools“ erfordert die Installation von Visual Studio 2013 mit Update 4 und SQL Server-Tools. Zum Installieren der aktuellen Version von SQL Server Data Tools besuchen Sie [Download der neuesten SQL Server-Datatools](https://msdn.microsoft.com/library/mt204009.aspx).
+
+## Neuerungen in der Version der Woche ab dem 22. Januar 2016
+
+In der Woche ab dem 22. Januar 2016 wurden **Azure Data Catalog** die folgenden Funktionen hinzugefügt:
+
+- Unterstützung für das Registrieren und Ermitteln von SAP HANA-Ansichten und -Paketen Mit dem Registrierungstool für Datenquellen von **Azure Data Catalog** können die Benutzer SAP HANA-Datenquellen registrieren, und mit dem **Azure Data Catalog**-Portal können sie registrierte SAP HANA-Datenquellen mit Anmerkungen versehen und ermitteln.
+
 ## Neuigkeiten in der Version der Woche ab dem 8. Januar 2016
 
-In der Woche ab dem 8. Januar 2016 wurden Azure Data Catalog die folgenden Funktionen hinzugefügt:
+In der Woche ab dem 8. Januar 2016 wurden **Azure Data Catalog** die folgenden Funktionen hinzugefügt:
 
 - Die Möglichkeit zum Anheften und Entfernen von Datenassets im **Azure Data Catalog**-Portal. Benutzer können Datenassets anheften, um sie leichter finden und erneut verwenden zu können.
 - Eine neu gestaltete Startseite im **Azure Data Catalog**-Portal. Die neue Homepage eröffnet Einblick in die aktuelle Benutzeraktivität – darunter kürzlich veröffentlichte Assets, angeheftete Assets und gespeicherte Suchvorgänge – als auch einen Einblick in die Aktivität im Katalog als Ganzes.
@@ -31,20 +54,18 @@ In der Woche ab dem 8. Januar 2016 wurden Azure Data Catalog die folgenden Fun
 
 ## Neuigkeiten in der Version der Woche ab dem 18. Dezember 2015
 
-In der Woche ab dem 18. Dezember 2015 wurden Azure Data Catalog die folgenden Funktionen hinzugefügt:
+In der Woche ab dem 18. Dezember 2015 wurden **Azure Data Catalog** die folgenden Funktionen hinzugefügt:
 
 - Unterstützung für Datenprofile für Azure SQL Data Warehouse-Datenquellen. Beim Registrieren von Azure SQL Data Warehouse-Tabellen und -Sichten können Benutzer festlegen, dass in die aus der Datenquelle extrahierten Metadaten auch Datenprofilmetriken eingeschlossen werden sollen.
 - Unterstützung für das Registrieren und Ermitteln von MySQL-Objekten und -Datenbanken. Mit dem Registrierungstool für Datenquellen von **Azure Data Catalog** können die Benutzer MySQL-Datenquellen registrieren, und mit dem **Azure Data Catalog**-Portal können sie registrierte MySQL-Datenquellen mit Anmerkungen versehen und ermitteln.
 
 ## Neuigkeiten in der Version der Woche ab dem 4. Dezember 2015
 
-In der Woche ab dem 4. Dezember 2015 wurden Azure Data Catalog die folgenden Funktionen hinzugefügt:
+In der Woche ab dem 4. Dezember 2015 wurden **Azure Data Catalog** die folgenden Funktionen hinzugefügt:
 
 - Unterstützung für SPNEGO und Windows-Authentifizierung für Teradata-Datenquellen. Bei der Registrierung von Teradata-Tabellen und -Sichten können Benutzer festlegen, dass die Herstellung der Verbindung mit Teradata mithilfe von SNPEGO und Windows-Authentifizierung sowie mit LDAP-Authentifizierung und TD2-Authentifizierung erfolgen soll.
 - Unterstützung für Datenquellen aus dem Azure Data Lake-Speicher. Benutzer können nun Azure Data Catalog verwenden, um Datenquellen aus dem Azure Data Lake-Speicher zu registrieren und zu ermitteln.
 - Unterstützung für das manuelle Festlegen von Netzwerk-Proxyeinstellungen im Registrierungstool für Datenquellen von Azure Data Catalog. Benutzer können auf der Startseite des Tools die Option „Proxyeinstellungen ändern“ auswählen und die Proxyadresse und den Port angeben, der vom Tool verwendet werden soll.
-
-> [AZURE.NOTE] Für „Open in Power BI Desktop“ muss eine aktuelle Version der Anwendung Power BI Desktop installiert sein. Wenn bei der Verwendung dieser Funktion Probleme oder Fehler auftreten, vergewissern Sie sich, dass Sie die neueste Version von Power BI Desktop von [PowerBI.com](https://powerbi.com/) heruntergeladen haben.
 
 
 ## Neuigkeiten in der Version der Woche ab dem 20. November 2015
@@ -174,4 +195,4 @@ Ab der Woche beginnend am 21. August 2015 wurden **Azure Data Catalog** die folg
 - Nur Standard Edition: Beim Hinzufügen von Besitzern zu Datenbeständen unterstützt **Azure Data Catalog** jetzt sowohl Benutzerkonten als auch Sicherheitsgruppen als Besitzer. Um eine Sicherheitsgruppe als Besitzer für ausgewählte Datenasset hinzuzufügen, können Sie entweder den Anzeigenamen der Gruppe oder die UPN-E-Mail-Adresse der Gruppe (sofern vorhanden) eingeben.
 - Unterstützung für Datenquellen in Azure Blob Storage. Benutzer können nun Azure Storage-Blobs und -Verzeichnisse registrieren und ermitteln.
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

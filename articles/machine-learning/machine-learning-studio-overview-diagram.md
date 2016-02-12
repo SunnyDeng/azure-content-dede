@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/28/2015"
+	ms.date="02/03/2016"
 	ms.author="haining;garye" />
 
 
@@ -26,11 +26,11 @@ Das Diagramm **Übersicht der Microsoft Azure Machine Learning Studio-Funktionen
 
 In diesem Diagramm wird gezeigt, wie alle diese Teile zusammenpassen.
 
-> [AZURE.NOTE]Weitere Unterstützung beim Navigieren durch die Machine Learning-Algorithmen, die in Machine Learning Studio verfügbar sind, und beim Auswählen von diesen finden Sie unter [Machine Learning – Cheat Sheet für Algorithmen für Microsoft Azure Machine Learning Studio](machine-learning-algorithm-cheat-sheet.md).
+> [AZURE.NOTE] Weitere Unterstützung beim Navigieren durch die Machine Learning-Algorithmen, die in Machine Learning Studio verfügbar sind, und beim Auswählen von diesen finden Sie unter [Machine Learning – Cheat Sheet für Algorithmen für Microsoft Azure Machine Learning Studio](machine-learning-algorithm-cheat-sheet.md).
 
 ## Herunterladen des Machine Learning Studio-Übersichtsdiagramms
 
-Laden Sie das Diagramm **Übersicht der Microsoft Azure Machine Learning Studio-Funktionen** herunter, und verschaffen Sie sich eine allgemeine Übersicht über die Funktionen von Machine Learning Studio. Drucken Sie das Diagramm in Tabloid-Größe (28 x 43 cm, 11 x 17 Zoll) aus, um schnell darauf zugreifen zu können.
+Laden Sie das Diagramm **Übersicht der Microsoft Azure Machine Learning Studio-Funktionen** herunter, und verschaffen Sie sich einen allgemeinen Überblick über die Funktionen von Machine Learning Studio. Drucken Sie das Diagramm in Tabloid-Größe (28 x 43 cm, 11 x 17 Zoll) aus, um schnell darauf zugreifen zu können.
 
 **Laden Sie das Diagramm in englischer Sprache über diesen Link herunter: [Microsoft Azure Machine Learning Studio Capabilities Overview](http://download.microsoft.com/download/C/4/6/C4606116-522F-428A-BE04-B6D3213E9E52/ml_studio_overview_v1.1.pdf)**
 
@@ -47,4 +47,4 @@ Laden Sie das Diagramm **Übersicht der Microsoft Azure Machine Learning Studio-
 
 [AZURE.INCLUDE [machine-learning-kostenlose-Testversion](../../includes/machine-learning-free-trial.md)]
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_0204_2016-->

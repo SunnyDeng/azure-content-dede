@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="media" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="12/09/2015"   
+	ms.date="01/29/2016"
 	ms.author="juliako"/>
 
 
@@ -25,6 +25,7 @@ In diesen Versionshinweisen werden Änderungen im Vergleich zu früheren Version
 
 - [Aktuell bekannte Probleme](#issues)
 - [REST-API-Versionsverlauf](#rest_version_history)
+- [Version Januar 2016](#jan_changes_16)
 - [Version vom Dezember 2015](#dec_changes_15)
 - [Version vom November 2015](#nov_changes_15)
 - [Version vom Oktober 2015](#oct_changes_15)
@@ -76,6 +77,13 @@ Media Services-Medienobjekte im SDK können nicht serialisiert werden und funkti
 ##<a id="rest_version_history"></a>REST-API-Versionsverlauf
 
 Informationen zum Versionsverlauf der Media Services-REST-API finden Sie unter [Azure Media Services – REST-API-Referenz].
+
+
+##<a id="jan_changes_16"></a>Version Januar 2016
+
+Reservierte Einheiten für die Codierung wurden umbenannt, um Verwechslungen mit Encoder-Namen zu vermeiden.
+
+Die reservierten Einheiten für die Codierung „Basic“, „Standard“ und „Premium“ werden in die reservierten Einheiten S1, S2 und S3 umbenannt. Kunden, die derzeit reservierte Basic-Einheiten für die Codierung einsetzen, wird im Azure-Portal (und auf der Rechnung) S1 als Bezeichnung angezeigt. Standard und Premium werden mit den Bezeichnungen S2 und S3 aufgeführt.
 
 ##<a id="dec_changes_15"></a>Version vom Dezember 2015
 
@@ -635,4 +643,4 @@ Die folgende Funktion war neu in der November-Version des SDK.
 [Verarbeiten von Media Services-Auftragsbenachrichtigungen]: http://msdn.microsoft.com/library/azure/dn261241.aspx
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

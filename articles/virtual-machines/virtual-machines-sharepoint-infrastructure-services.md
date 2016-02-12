@@ -31,7 +31,7 @@ Diese automatisch erstellte Umgebung besteht aus drei Servern in einem virtuelle
 
 Weitere Informationen finden Sie unter [SharePoint 2013 nicht hoch verfügbare Farm](https://azure.microsoft.com/marketplace/partners/sharepoint2013/sharepoint2013farmsharepoint2013-nonha/) im Azure Marketplace des Azure-Portals. Damit wird eine grundlegende Test-/Entwicklungsfarm für eine SharePoint-Website mit Internetverbindung erstellt. Weitere Informationen finden Sie unter [SharePoint-Serverfarm](virtual-machines-sharepoint-farm-azure-preview.md).
 
-Sie können zudem eine Azure-Ressourcen-Manager-Vorlage verwenden. Weitere Informationen finden Sie unter [Bereitstellen einer SharePoint-Farm mit drei Servern](virtual-machines-workload-template-sharepoint.md#deploy-a-three-server-sharepoint-farm).
+Sie können zudem eine Azure-Ressourcen-Manager-Vorlage verwenden. Weitere Informationen finden Sie unter [SharePoint](virtual-machines-app-frameworks.md).
 
 > [AZURE.NOTE] Das Element **SharePoint-Serverfarm** wurde aus dem Azure Marketplace des Azure-Portals entfernt.
 
@@ -61,4 +61,4 @@ Diese Konfiguration verwendet das klassische Bereitstellungsmodell.
 
 - Lernen Sie weitere Konfigurationen von [SharePoint 2013](https://technet.microsoft.com/library/dn635309.aspx) in Azure-Infrastrukturdiensten kennen.
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

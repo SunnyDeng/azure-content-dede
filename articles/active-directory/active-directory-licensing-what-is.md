@@ -14,7 +14,7 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="identity"
-    ms.date="01/05/2016"
+    ms.date="02/01/2016"
     ms.author="curtand"/>
 
 # Was ist Microsoft Azure Active Directory-Lizenzierung?
@@ -43,7 +43,7 @@ Im Allgemeinen werden Azure AD-Abonnementinformationen über das klassische Azur
 
 > [AZURE.IMPORTANT] Abonnements von Azure AD Premium und Basic sowie Enterprise Mobility Suite sind auf ihre bereitgestellten Verzeichnisse/Mandanten beschränkt. Abonnements können nicht zwischen Verzeichnissen aufgeteilt oder verwendet werden, um Benutzern Berechtigungen für andere Verzeichnissen zu erteilen. Das Verschieben eines Abonnements zwischen Verzeichnissen ist möglich, erfordert jedoch das Einreichen eines Supporttickets oder im Fall von direkten Käufen die Kündigung und den erneuten Erwerb.
 
-> [AZURE.IMPORTANT] Beim Kauf von Azure AD oder Enterprise Mobility Suite über ein Abonnement mit Volumenlizenzierung erfolgt die Aktivierung automatisch, wenn die Vereinbarung andere Microsoft Online-Dienste wie Office 365 enthält.
+> Beim Kauf von Azure AD oder Enterprise Mobility Suite über ein Abonnement mit Volumenlizenzierung erfolgt die Aktivierung automatisch, wenn die Vereinbarung andere Microsoft Online-Dienste wie Office 365 enthält.
 
 Kostenpflichtige Azure AD-Funktionen decken das gesamte Verzeichnis ab. Beispiele: – Gruppenbasierte Zuweisung zu Anwendungen, die für die jeweilige Anwendung aktiviert wird, die Sie verwalten. – Erweiterte und Self-Service-Gruppenverwaltungsfunktionen stehen in der Verzeichniskonfiguration oder in den jeweiligen Gruppen zur Verfügung. – Premium-Sicherheitsberichte finden Sie auf der Registerkarte "Berichterstellung". – Die Ermittlung von Cloudanwendungen befindet sich im Azure-Portal unter "Identität".
 
@@ -129,7 +129,7 @@ Jetzt sind Sie möglicherweise bereit, einige Funktionen von Azure AD Premium zu
 - [Self-Service-Gruppenverwaltung](active-directory-accessmanagement-self-service-group-management.md)
 - [Azure AD Connect-Zustand](active-directory-aadconnect-health.md)
 - [Gruppenzuweisung zu Anwendungen](active-directory-manage-groups.md)
-- [Azure Multi-Factor Authentication](multi-factor-authentication.md)
+- [Azure Multi-Factor Authentication](../multi-factor-authentication/multi-factor-authentication.md)
 - [Direkter Erwerb von Azure AD Premium-Lizenzen](http://aka.ms/buyaadp)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

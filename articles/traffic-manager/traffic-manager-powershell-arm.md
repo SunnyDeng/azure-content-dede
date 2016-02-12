@@ -43,9 +43,9 @@ Es gibt zurzeit einige wenige Einschränkungen in der ARM-Unterstützung für de
 
 - Traffic Manager-Profile, die mit der vorhandenen Nicht-ARM-Azure-Service-Verwaltungs-API, den vorhandenen Tools und dem klassischen Portal erstellt wurden, sind nicht über ARM verfügbar. Dies gilt auch im umgekehrten Fall. Die Migration von Profilen von der Azure-Service-Verwaltung zu ARM-APIs wird derzeit nicht unterstützt. Die einzige Möglichkeit ist das Löschen und Neuerstellen des Profils.
 
-
 - „Geschachtelte“ Traffic Manager Endpunkte werde durch den ARM-API, ARM PowerShell und ARM-Modus Azure CLI unterstützt. Sie werden gegenwärtig im Azure-Portal (das ebenfalls ARM API verwendet) nicht unterstützt.
 
+- Traffic Manager-Endpunkte vom Typ „AzureEndpoints“, die auf eine Web-App verweisen, können nur auf den standardmäßigen, für die Produktion verwendeten [Web-App-Slot](../app-service-web/web-sites-staged-publishing.md) verweisen. Benutzerdefinierte Slots werden noch nicht unterstützt. Um dieses Problem zu umgehen, können benutzerdefinierte Slots so konfiguriert werden, dass sie den Typ „ExternalEndpoints“ verwenden.
 
 ## Einrichten von Azure PowerShell
 
@@ -190,9 +190,9 @@ In diesem Beispiel fügen wir einem vorhandenen Profil, das durch den Profil- un
 
 Der Traffic Manager erlaubt Ihnen, ein Traffic Manager-Profil (hier als „untergeordnetes“ Profil bezeichnet) als einen Endpunkt innerhalb eines anderen Traffic Manager-Profils (hier als „übergeordnetes“ Profil bezeichnet) zu erstellen.
 
-Geschachtelte Traffic Manager erlauben Ihnen flexiblere und stärkere Datenverkehrs-Routing und Failoverschemata zu erstellen und die Bedürfnisse größerer, komplexerer Bereitstellungen zu unterstützen. [Dieser Blogeintrag](https://azure.microsoft.com/blog/new-azure-traffic-manager-nested-profiles/) enthält mehrere Beispiele.
+Geschachtelte Traffic Manager erlauben Ihnen flexiblere und stärkere Datenverkehrs-Routing und Failoverschemata zu erstellen und die Bedürfnisse größerer, komplexerer Bereitstellungen zu unterstützen. [Dieser Blogbeitrag](https://azure.microsoft.com/blog/new-azure-traffic-manager-nested-profiles/) enthält mehrere Beispiele.
 
-Geschachtelte Endpunkte sind beim übergeordneten Profil mittels eines speziellen Endpunkttyps „NestedEndpoints“ konfiguriert. Beim Angeben geschachtelter Endpunkte: - Der Endpunkt (z. B. das untergeordnete Profil) muss mithilfe des Parameters „targetResourceId“ angegeben werden. -Die „EndpointLocation“ ist erforderlich, wenn die Datenverkehr-Routingmethode „Performance“ verwendet wird. Andernfalls ist der Parameter optional. Der Wert muss ein [gültiger Azure-Regionsname](http://azure.microsoft.com/regions/) sein. - Die Parameter „Weight“ und „Priority“ sind wie bei Azure-Endpunkten optional. Der Parameter „MinChildEndpoints“ ist optional. Der Standardwert ist „1“. Falls die Anzahl der verfügbaren Endpunkte im untergeordneten Profil unter diesen Schwellenwert fällt, betrachtet das übergeordnete Profil das untergeordnete als „heruntergestuft“ und leitet den Verkehr auf die anderen Endpunkte des übergeordneten Profils um.
+Geschachtelte Endpunkte sind beim übergeordneten Profil mittels eines speziellen Endpunkttyps „NestedEndpoints“ konfiguriert. Beim Angeben geschachtelter Endpunkte: - Der Endpunkt (z. B. das untergeordnete Profil) muss mithilfe des Parameters „targetResourceId“ angegeben werden. -Die „EndpointLocation“ ist erforderlich, wenn die Datenverkehr-Routingmethode „Performance“ verwendet wird. Andernfalls ist der Parameter optional. Der Wert muss ein [gültiger Azure-Regionsname](http://azure.microsoft.com/regions/) sein. – Die Parameter „Weight“ und „Priority“ sind wie bei Azure-Endpunkten optional. Der Parameter „MinChildEndpoints“ ist optional, der Standardwert ist „1“. Falls die Anzahl der verfügbaren Endpunkte im untergeordneten Profil unter diesen Schwellenwert fällt, betrachtet das übergeordnete Profil das untergeordnete als „heruntergestuft“ und leitet den Verkehr auf die anderen Endpunkte des übergeordneten Profils um.
 
 
 #### Beispiel 1: Hinzufügen geschachtelter Endpunkte mithilfe von „Add-AzureRmTrafficManagerEndpointConfig“ und „Set-AzureRmTrafficManagerProfile“
@@ -285,4 +285,4 @@ Diese Sequenz kann auch weitergeleitet werden:
 [Leistungsüberlegungen zu Traffic Manager](traffic-manager-performance-considerations.md)
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

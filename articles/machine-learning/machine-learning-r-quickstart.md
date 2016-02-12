@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/08/2015"
+	ms.date="02/04/2016"
 	ms.author="larryfr"/>
 
 # Schnellstart-Lernprogramm für die Programmiersprache R für Azure Machine Learning
@@ -238,13 +238,24 @@ Die Eingabe "Script Bundle" erlaubt es Ihnen, den Inhalt einer ZIP-Datei an das 
 	source("src/yourfile.R") # Reads a zipped R script
 	load("src/yourData.rdata") # Reads a zipped R data file
 
-> [AZURE.NOTE]Azure Machine Learning behandelt Dateien in dem ZIP, als wären sie im Verzeichnis "src/", weshalb Sie Ihren Dateinamen diesen Ordnernamen als Präfix voranstellen müssen.
+> [AZURE.NOTE] Azure Machine Learning behandelt Dateien in dem ZIP, als wären sie im Verzeichnis "src/", weshalb Sie Ihren Dateinamen diesen Ordnernamen als Präfix voranstellen müssen. Wenn der Stamm der ZIP-Datei beispielsweise die Dateien `yourfile.R` und `yourData.rdata` enthält, würden Sie diese bei Verwendung von `source` und `load` als `src/yourfile.R` und `src/yourData.rdata` adressieren.
 
 Das Laden von DataSets haben wir bereits unter [Laden des DataSets](#loading) erläutert Nachdem Sie das im vorherigen Abschnitt gezeigte R-Skript erstellt und getestet haben, führen Sie folgende Schritte aus:
 
-1. Speichern Sie das R-Skript in einer ".R"-Datei. Wir geben unserer Skriptdatei den Namen "simpleplot.R".  
+1. Speichern Sie das R-Skript in einer ".R"-Datei. Wir geben unserer Skriptdatei den Namen "simpleplot.R". Der Inhalt lautet wie folgt:
 
-2.  Erstellen Sie eine ZIP-Datei, und kopieren Sie Ihr Skript in diese ZIP-Datei.
+        ## Only one of the following two lines should be used
+        ## If running in Machine Learning Studio, use the first line with maml.mapInputPort()
+        ## If in RStudio, use the second line with read.csv()
+        cadairydata <- maml.mapInputPort(1)
+        # cadairydata  <- read.csv("cadairydata.csv", header = TRUE, stringsAsFactors = FALSE)
+        str(cadairydata)
+        pairs(~ Cotagecheese.Prod + Icecream.Prod + Milk.Prod + N.CA.Fat.Price, data = cadairydata)
+        ## The following line should be executed only when running in
+        ## Azure Machine Learning Studio
+        maml.mapOutputPort('cadairydata')
+
+2.  Erstellen Sie eine ZIP-Datei, und kopieren Sie Ihr Skript in diese ZIP-Datei. Unter Windows können Sie mit der rechten Maustaste auf die Datei klicken und __Senden an__ wählen, und klicken Sie dann auf __Komprimierter Ordner__. Dadurch entsteht eine neue ZIP-Datei, die die Datei „simpleplot.R“ enthält.
 
 3.	Fügen Sie Ihre Datei den **DataSets** in Machine Learning Studio hinzu, und geben Sie dabei den Typ **zip** an. Die ZIP-Datei sollte jetzt in Ihren DataSets angezeigt werden.
 
@@ -252,7 +263,7 @@ Das Laden von DataSets haben wir bereits unter [Laden des DataSets](#loading) er
 
 5.	Verbinden Sie die Ausgabe des **ZIP-Daten**-Symbols mit der Eingabe **Script Bundle** des[Execute R Script][execute-r-script]-Moduls.
 
-6.	Geben Sie die `source()`-Funktion mit dem Namen Ihrer ZIP-Datei in das Codefenster des [Execute R Script][execute-r-script]-Moduls ein. In diesem Fall geben Sie `source("src/SimplePlot.R")` ein.
+6.	Geben Sie die `source()`-Funktion mit dem Namen Ihrer ZIP-Datei in das Codefenster des [Execute R Script][execute-r-script]-Moduls ein. In diesem Fall geben Sie `source("src/simpleplot.R")` ein.
 
 7.	Denken Sie daran, auf **Speichern** zu klicken.
 
@@ -279,7 +290,7 @@ Führen Sie das Experiment aus, indem Sie auf die Schaltfläche **Ausführen** k
     [ModuleOutput]  "ColumnTypes":System.Int32,3,System.Double,5,System.String,1
     [ModuleOutput] }
 
-Wenn Sie auf die Seite doppelklicken, werden zusätzliche Daten geladen, die ungefähr wie folgt aussehen.
+Weiter unten auf der Seite finden Sie ausführlichere Informationen zu den Spalten, die in etwa folgendermaßen aussehen.
 
 	[ModuleOutput] [1] "Loading variable port1..."
 	[ModuleOutput]
@@ -305,7 +316,7 @@ Wenn Sie auf die Seite doppelklicken, werden zusätzliche Daten geladen, die ung
 
 Diese Ergebnisse sind größtenteils wie erwartet, mit 228 Beobachtungen und 9 Spalten im Dataframe. Wir sehen die Spaltennamen, den R-Datentyp und ein Beispiel für jede Spalte.
 
-> [AZURE.NOTE]Dieselbe Druckausgabe steht bequem über die Ausgabe "R Device" des [Execute R Script][execute-r-script]-Moduls zur Verfügung. Die Ausgaben des [Execute R Script][execute-r-script]-Moduls werden im nächsten Abschnitt erklärt.
+> [AZURE.NOTE] Dieselbe Druckausgabe steht bequem über die Ausgabe "R Device" des [Execute R Script][execute-r-script]-Moduls zur Verfügung. Die Ausgaben des [Execute R Script][execute-r-script]-Moduls werden im nächsten Abschnitt erklärt.
 
 ####Dataset2
 
@@ -462,7 +473,7 @@ R-Dataframes unterstützen leistungsstarke Filterfunktionen. Datasets können mi
 
 Wir sollten unser Dataset ein wenig filtern. Wenn Sie die Spalten im Dataframe "cadariydata" betrachten, sehen Sie zwei nicht benötigte Spalten. Die erste Spalte enthält lediglich eine Zeilennummer, die nicht sehr nützlich ist. Die zweite Spalte, "Year.Month", enthält redundante Informationen. Wir können diese Spalten ganz einfach mithilfe des folgenden R-Codes ausschließen.
 
-> [AZURE.NOTE]Von nun an zeige ich Ihnen in diesem Abschnitt nur noch den zusätzlichen Code, den wir im [Execute R Script][execute-r-script]-Modul hinzufügen. Alle neuen Zeilen werden **vor** der `str()`-Funktion eingefügt. Wir verwenden diese Funktion zum Überprüfen unserer Ergebnisse in Azure Machine Learning Studio.
+> [AZURE.NOTE] Von nun an zeige ich Ihnen in diesem Abschnitt nur noch den zusätzlichen Code, den wir im [Execute R Script][execute-r-script]-Modul hinzufügen. Alle neuen Zeilen werden **vor** der `str()`-Funktion eingefügt. Wir verwenden diese Funktion zum Überprüfen unserer Ergebnisse in Azure Machine Learning Studio.
 
 Wir fügen die folgende Zeile dem R-Code im [Execute R Script][execute-r-script]-Modul hinzu.
 
@@ -644,7 +655,7 @@ Der vollständige R-Code für diesen Abschnitt befindet sich in der ZIP-Datei, d
 
 Wie bereits erwähnt, sind Zeitreihen Reihen von Datenwerten, die einen Zeitindex besitzen. R-Zeitreihenobjekte dienen zum Erstellen und Verwalten des Zeitindex. Es gibt mehrere Vorteile bei der Verwendung von Zeitreihenobjekten. Zeitreihenobjekte übernehmen für Sie zahlreiche Details der Verwaltung der Zeitreihen-Indexwerte, die im Objekt gekapselt sind. Darüber hinaus ermöglichen Zeitreihenobjekte die Verwendung der zahlreichen Zeitreihenmethoden zum Plotten, Drucken, Modellieren usw.
 
-Die Zeitreihenklasse "POSIXct" wird häufig verwendet und ist relativ einfach. Diese Zeitreihenklasse misst die Zeit seit Beginn der Epoche, 1. Januar 1970. Wir verwenden in diesem Beispiel POSIXct-Zeitreihenobjekte. Andere weit verbreitete R-Zeitreihen-Objektklassen umfassen "zoo" und "xts" (für extensible time series, erweiterbare Zeitreihe).
+Die Zeitreihenklasse "POSIXct" wird häufig verwendet und ist relativ einfach. Diese Zeitreihenklasse misst die Zeit seit Beginn der Epoche, 1. Januar 1970. Wir verwenden in diesem Beispiel POSIXct-Zeitreihenobjekte. Andere weit verbreitete R-Zeitreihen-Objektklassen umfassen "zoo" und "xts" (für extensible time series, erweiterbare Zeitreihe). 
 <!-- Additional information on R time series objects is provided in the references in Section 5.7. [commenting because this section doesn't exist, even in the original] -->
 
 ###	Beispiel für Zeitreihenobjekte
@@ -1347,4 +1358,4 @@ Einige weitere nützliche Internetressourcen:
 <!-- Module References -->
 [execute-r-script]: https://msdn.microsoft.com/library/azure/30806023-392b-42e0-94d6-6b775a6e0fd5/
 
-<!----HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_0204_2016-->

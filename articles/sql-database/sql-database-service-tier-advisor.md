@@ -13,14 +13,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="data-management" 
-   ms.date="12/01/2015"
+   ms.date="01/28/2015"
    ms.author="sstein"/>
 
 # Tarifempfehlungen für SQL-Datenbank
 
  Es werden Tarifempfehlungen bereitgestellt, die die Dienstebene und die Leistungsebene empfehlen, die am besten geeignet sind, den Workload einer vorhandenen Azure SQL-Datenbank auszuführen.
 
-> [AZURE.NOTE]Tarifempfehlungen sind nur für Web- und Business-Datenbanken sowie für Pools für elastische Datenbanken verfügbar – und sie sind nur im [Azure-Portal](https://portal.azure.com/) verfügbar.
+> [AZURE.NOTE] Tarifempfehlungen sind nur für Web- und Business-Datenbanken sowie für Pools für elastische Datenbanken verfügbar – und sie sind nur im [Azure-Portal](https://portal.azure.com/) verfügbar.
 
 
 Sie erhalten Tarifempfehlungen während der folgenden Aufgaben:
@@ -56,7 +56,7 @@ Basierend auf Ihrer Datenbanknutzung können derzeit 2 Kategorien von Empfehlung
 
 ## Abrufen von Tarifempfehlungen
 
-Zum Abrufen von Tarifempfehlungen wählen Sie eine vorhandene Web- oder Business-Datenbank aus, und klicken Sie dann auf die Kachel **Tarif** . (Tarifempfehlungen sind auch verfügbar, wenn Sie die [Schritte für das Upgrade auf Azure SQL-Datenbank V12](sql-database-v12-upgrade.md) ausführen.)
+Zum Abrufen von Tarifempfehlungen wählen Sie eine vorhandene Web- oder Business-Datenbank aus, klicken Sie auf **Alle Einstellungen** und dann auf **Tarif (DTUs skalieren)**. (Tarifempfehlungen sind auch verfügbar, wenn Sie die [Schritte für das Upgrade auf Azure SQL-Datenbank V12](sql-database-v12-upgrade.md) ausführen.)
 
 1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/) an.
 2. Klicken auf **DURCHSUCHEN** > **SQL-Datenbanken**.
@@ -64,12 +64,10 @@ Zum Abrufen von Tarifempfehlungen wählen Sie eine vorhandene Web- oder Business
 
     ![Datenbank auswählen][1]
 
-5. Wählen Sie im Blatt "Datenbank" die Kachel **Tarif** aus.
-
-    ![Preisstufe][2]
+5. Wählen Sie auf dem Datenbankblatt **Alle Einstellungen** und dann **Tarif (DTUs skalieren)**.
 
 
-7. Nach dem Klicken auf die Kachel **Tarif** wird das Blatt **Empfohlene Tarife** angezeigt. Dort können Sie auf den empfohlenen Tarif klicken und dann auf die Schaltfläche **Auswählen**, um zu diesem Tarif zu wechseln.
+7. **Empfohlene Tarife** wird angezeigt. Dort können Sie auf den empfohlenen Tarif klicken und dann auf die Schaltfläche **Auswählen**, um zu diesem Tarif zu wechseln.
 
     ![Anmelden für die Vorschau][4]
 
@@ -81,7 +79,7 @@ Zum Abrufen von Tarifempfehlungen wählen Sie eine vorhandene Web- oder Business
 
 ## Zusammenfassung
 
-Tarifempfehlungen bieten eine automatisierte Möglichkeit zum Erfassen von Telemetriedaten für jede SQL-Datenbank und zum Empfehlen der besten Kombination von Dienstebene/Leistungsstufe basierend auf den tatsächlichen Leistungs- und Featureanforderungen einer Datenbank. Klicken Sie auf die Kachel **Tarif** im Blatt einer Datenbank, um die Tarifempfehlungen anzuzeigen.
+Tarifempfehlungen bieten eine automatisierte Möglichkeit zum Erfassen von Telemetriedaten für jede SQL-Datenbank und zum Empfehlen der besten Kombination von Dienstebene/Leistungsstufe basierend auf den tatsächlichen Leistungs- und Featureanforderungen einer Datenbank. Klicken Sie auf dem Blatt „Einstellungen“ auf **Tarif (DTUs skalieren)**, um Tarifempfehlungen für alle Web- und Business-Datenbanken anzuzeigen.
 
 
 
@@ -92,12 +90,10 @@ Abhängig von den Details Ihrer speziellen Datenbank erfolgt die Durchführung e
 
 <!--Image references-->
 [1]: ./media/sql-database-service-tier-advisor/select-database.png
-[2]: ./media/sql-database-service-tier-advisor/pricing-tier.png
-[3]: ./media/sql-database-service-tier-advisor/preview-sign-up.png
 [4]: ./media/sql-database-service-tier-advisor/choose-pricing-tier.png
 [5]: ./media/sql-database-service-tier-advisor/usage-details.png
 
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0204_2016-->

@@ -37,7 +37,7 @@ In der folgenden Tabelle wird gezeigt, wie diese vorkonfigurierten Lösungen bes
 
 | Lösung | Datenerfassung | Geräteidentität | Befehl und Steuerung | Regeln und Aktionen | Predictive Analytics |
 |------------------------|-----|-----|-----|-----|-----|
-| Remoteüberwachung | Ja | Ja | Ja | Ja | – | 
+| Remoteüberwachung | Ja | Ja | Ja | Ja | – |
 | Vorbeugende Wartung | Ja | Ja | Ja | Ja | Ja |
 
 ## Übersicht über die vorkonfigurierte Lösung zur Remoteüberwachung
@@ -116,4 +116,4 @@ Unter den folgenden Ressourcen erhalten Sie weitere Informationen zu vorkonfigur
 [lnk-preconf-get-started]: iot-suite-getstarted-preconfigured-solutions.md
 [lnk-predictive-maintenance]: iot-suite-predictive-overview.md
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

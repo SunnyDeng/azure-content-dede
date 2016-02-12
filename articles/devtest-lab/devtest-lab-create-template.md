@@ -13,14 +13,14 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/01/2015"
+	ms.date="01/30/2016"
 	ms.author="tarcher"/>
 
 # Erstellen von VM-Vorlagen
 
 ## Übersicht
 
-Sobald Sie [ein Lab erstellt](devtest-lab-create-lab.md) haben, können Sie [diesem aus einer Liste von VM-Vorlagen virtuelle Computer hinzufügen](devtest-lab-add-vm-with-artifacts.md). In diesem Artikel erfahren Sie, wie Sie eine Imagedatei für eine virtuelle Festplatte (VHD) als Vorlage für das Erstellen virtueller Computer hochladen und konfigurieren. Wenn Sie mit VHD-Images nicht vertraut sind, erfahren Sie im Artikel [Erstellen und Hochladen einer Windows Server-VHD nach Azure](../virtual-machines-create-upload-vhd-windows-server.md), wie VHD-Images erstellt werden. Nachdem Sie ein VHD-Image erstellt oder Zugriff auf dieses erhalten haben, führt dieser Artikel Sie durch das Hochladen des Images und das Erstellen einer Vorlage aus diesem.
+Sobald Sie [ein Lab erstellt](devtest-lab-create-lab.md) haben, können Sie [diesem aus einer Liste von VM-Vorlagen virtuelle Computer hinzufügen](devtest-lab-add-vm-with-artifacts.md). In diesem Artikel erfahren Sie, wie Sie eine Imagedatei für eine virtuelle Festplatte (VHD) als Vorlage für das Erstellen virtueller Computer hochladen und konfigurieren. Wenn Sie mit VHD-Images nicht vertraut sind, erfahren Sie im Artikel [Erstellen und Hochladen einer Windows Server-VHD nach Azure](/virtual-machines/virtual-machines-create-upload-vhd-windows-server.md), wie VHD-Images erstellt werden. Nachdem Sie ein VHD-Image erstellt oder Zugriff auf dieses erhalten haben, führt dieser Artikel Sie durch das Hochladen des Images und das Erstellen einer Vorlage aus diesem.
 
 ## Erstellen einer VM-Vorlage
 
@@ -86,4 +86,4 @@ Wenn Sie ein neues Vorlagenimage hinzufügen möchten, benötigen Sie Zugriff au
 
 Nachdem Sie eine VM-Vorlage zum Erstellen eines virtuellen Computers hinzugefügt haben, besteht der nächste Schritt darin, [Ihrem DevTest Lab einen virtuellen Computer hinzuzufügen](devtest-lab-add-vm-with-artifacts).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

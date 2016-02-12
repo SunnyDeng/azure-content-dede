@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/06/2016"
+	ms.date="01/28/2016"
 	ms.author="swkrish"/>
 
 # Preview-Version von Azure Active Directory B2C: Einschränkungen
@@ -28,7 +28,7 @@ Wenn beim [Erstellen eines Azure AD B2C-Mandanten](active-directory-b2c-get-star
 
 ## Probleme beim Branding in der Bestätigungs-E-Mail
 
-Die Standard-Bestätigungs-E-Mail ist mit dem Microsoft-Branding versehen. Dieses wird künftig entfernt. Derzeit können Sie es mit dem [Feature für Unternehmensbranding](./active-directory/active-directory-add-company-branding.md) entfernen.
+Die Standard-Bestätigungs-E-Mail ist mit dem Microsoft-Branding versehen. Dieses wird künftig entfernt. Derzeit können Sie es mit dem [Feature für Unternehmensbranding](../active-directory/active-directory-add-company-branding.md) entfernen.
 
 ## Unterstützung für Produktionsanwendungen
 
@@ -68,7 +68,7 @@ Die Preview-Version von Azure AD B2C unterstützt OpenID Connect und OAuth 2.0.
 
 ## Einschränkungen für Token
 
-Viele der von der Preview-Version von Azure AD B2C ausgestellten Token werden als JSON-Webtoken (JWTs) implementiert. Aber nicht alle Informationen, die in JWTs enthalten sind (als „Ansprüche“ bezeichnet), sind richtig, oder sie fehlen sogar. Beispiele hierfür sind die Ansprüche „sub“ und „preferred\_username“. Sie können davon ausgehen, dass sich einige Dinge während der Preview-Phase ändern werden. Lesen Sie sich die [Token-Referenz](active-directory-b2c-tokens.md) durch, um ein besseres Verständnis für die Token zu entwickeln, die vom Azure AD B2C-Dienst derzeit ausgegeben werden.
+Viele der von der Preview-Version von Azure AD B2C ausgestellten Token werden als JSON-Webtoken (JWTs) implementiert. Aber nicht alle Informationen, die in JWTs enthalten sind (als „Ansprüche“ bezeichnet), sind richtig, oder sie fehlen sogar. Beispiele hierfür sind die Ansprüche „sub“ und „preferred\_username“. Sie können davon ausgehen, dass sich einige Dinge während der Preview-Phase ändern werden. Lesen Sie sich die [Token-Referenz](active-directory-b2c-reference-tokens.md) durch, um ein besseres Verständnis für die Token zu entwickeln, die vom Azure AD B2C-Dienst derzeit ausgegeben werden.
 
 ## Probleme mit der Benutzerverwaltung im klassischen Azure-Portal
 
@@ -96,4 +96,4 @@ Derzeit können Sie im [klassischen Azure-Portal](https://manage.windowsazure.co
 
 Wenn Sie im Azure-Portal auf das Blatt für die B2C-Einstellungen zugreifen, wird in der oberen rechten Ecke unter „Benachrichtigungen“ eine Warnmeldung mit folgendem Inhalt angezeigt: „Im Verzeichnis <B2CTenantName> sind keine Abonnements vorhanden. Sie verfügen über andere Verzeichnisse, zu denen Sie wechseln können.“ (<B2CTenantName> steht für den Namen Ihres B2C-Mandanten.) Sie können diese Meldung problemlos ignorieren und weiterhin auf Ihre B2C-Features zugreifen. Wir arbeiten mit dem Azure-Portal-Team an der Behebung dieses Problems.
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0204_2016-->

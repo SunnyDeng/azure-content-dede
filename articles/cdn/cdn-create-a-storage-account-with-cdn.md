@@ -24,11 +24,11 @@ Zum Zwischenspeichern von Inhalten aus Ihrem Azure-Speicher kann CDN aktiviert w
 
 ## Schritt 1: Erstellen eines Speicherkontos
 
-Gehen Sie folgendermaßen vor, um für ein Azure-Abonnement ein neues Speicherkonto zu erstellen. Ein Speicherkonto ermöglicht den Zugriff auf Speicherdienste von Azure. Das Speicherkonto stellt die höchste Ebene des Namespace für den Zugriff auf die verschiedenen Komponenten der Speicherdienste von Azure dar: Blob-, Warteschlangen- und Tabellenspeicherdienste. Weitere Informationen finden Sie unter [Einführung in Microsoft Azure Storage](../storage-introduction.md).
+Gehen Sie folgendermaßen vor, um für ein Azure-Abonnement ein neues Speicherkonto zu erstellen. Ein Speicherkonto ermöglicht den Zugriff auf Speicherdienste von Azure. Das Speicherkonto stellt die höchste Ebene des Namespace für den Zugriff auf die verschiedenen Komponenten der Speicherdienste von Azure dar: Blob-, Warteschlangen- und Tabellenspeicherdienste. Weitere Informationen finden Sie unter [Einführung in Microsoft Azure Storage](../storage/storage-introduction.md).
 
 Um ein Speicherkonto zu erstellen, müssen Sie entweder der Dienstadministrator oder ein Co-Administrator für das zugehörige Abonnement sein.
 
-> [AZURE.NOTE]Es gibt mehrere Methoden zum Erstellen eines Speicherkontos, einschließlich Azure-Portal und PowerShell. In diesem Tutorial wird das Azure-Portal verwendet.
+> [AZURE.NOTE] Es gibt mehrere Methoden zum Erstellen eines Speicherkontos, einschließlich Azure-Portal und PowerShell. In diesem Tutorial wird das Azure-Portal verwendet.
 
 **So erstellen Sie ein Speicherkonto für ein Azure-Abonnement**
 
@@ -64,7 +64,7 @@ Um ein Speicherkonto zu erstellen, müssen Sie entweder der Dienstadministrator 
 
 Ein CDN-Profil ist eine Sammlung von CDN-Endpunkten. Jedes Profil enthält mindestens einen CDN-Endpunkt. Sie können mehrere Profile verwenden, um Ihre CDN-Endpunkte nach Internetdomäne, Webanwendung oder anderen Kriterien zu organisieren.
 
-> [AZURE.TIP]Wenn Sie bereits über ein CDN-Profil verfügen, das Sie für dieses Tutorial verwenden möchten, fahren Sie mit [Schritt 3](#step-3-create-a-new-cdn-endpoint) fort.
+> [AZURE.TIP] Wenn Sie bereits über ein CDN-Profil verfügen, das Sie für dieses Tutorial verwenden möchten, fahren Sie mit [Schritt 3](#step-3-create-a-new-cdn-endpoint) fort.
 
 **So erstellen Sie ein neues CDN-Profil**
 
@@ -112,7 +112,7 @@ Ein CDN-Profil ist eine Sammlung von CDN-Endpunkten. Jedes Profil enthält minde
 
 6. Behalten Sie die Standardwerte für **Ursprünglicher Pfad**, **Header des Ursprungshosts** und **Protocol/Origin port** bei. Sie müssen mindestens ein Protokoll (HTTP oder HTTPS) angeben.
 
-    > [AZURE.NOTE]Mit dieser Konfiguration werden alle Ihre öffentlich sichtbaren Container in Ihrem Speicherkonto für die Zwischenspeicherung im CDN aktiviert. Wenn Sie den Gültigkeitsbereich auf einen einzelnen Container beschränken möchten, verwenden Sie **Ursprünglicher Pfad**. Beachten Sie, dass dieser Container als öffentlich sichtbar festgelegt sein muss.
+    > [AZURE.NOTE] Mit dieser Konfiguration werden alle Ihre öffentlich sichtbaren Container in Ihrem Speicherkonto für die Zwischenspeicherung im CDN aktiviert. Wenn Sie den Gültigkeitsbereich auf einen einzelnen Container beschränken möchten, verwenden Sie **Ursprünglicher Pfad**. Beachten Sie, dass dieser Container als öffentlich sichtbar festgelegt sein muss.
 
 7. Klicken Sie auf die Schaltfläche **Hinzufügen**, um den neuen Endpunkt zu erstellen.
 
@@ -120,7 +120,7 @@ Ein CDN-Profil ist eine Sammlung von CDN-Endpunkten. Jedes Profil enthält minde
 
     ![CDN-Endpunkt][cdn-endpoint-success]
 
-    > [AZURE.NOTE]Der Endpunkt kann nicht sofort verwendet werden. Es dauert bis zu 90 Minuten, bis die Registrierung über das CDN-Netzwerk weitergegeben wurde. Benutzer, die den CDN-Domänennamen sofort zu verwenden versuchen, sehen u. U. den Statuscode 404, bis die Inhalte über das CDN verfügbar sind.
+    > [AZURE.NOTE] Der Endpunkt kann nicht sofort verwendet werden. Es dauert bis zu 90 Minuten, bis die Registrierung über das CDN-Netzwerk weitergegeben wurde. Benutzer, die den CDN-Domänennamen sofort zu verwenden versuchen, sehen u. U. den Statuscode 404, bis die Inhalte über das CDN verfügbar sind.
 
 
 ## Schritt 4: Zugriff auf CDN-Inhalte
@@ -129,7 +129,7 @@ Verwenden Sie für den Zugriff auf die im CDN zwischengespeicherten Inhalte den 
 
 http://<*EndpunktName*>.azureedge.net/<*meinÖffentlicherContainer*>/<*BlobName*>
 
-> [AZURE.NOTE]Sobald Sie den CDN-Zugriff auf ein Speicherkonto oder einen gehosteten Dienst aktivieren, kommen alle öffentlich verfügbaren Objekte für den CDN-Edgezwischenspeicher in Frage. Wenn Sie ein Objekt ändern, das derzeit im CDN zwischengespeichert ist, stehen die neuen Inhalte erst dann über das CDN zur Verfügung, wenn das CDN seine Inhalte aktualisiert, wenn die Lebensdauer der zwischengespeicherten Inhalte abläuft.
+> [AZURE.NOTE] Sobald Sie den CDN-Zugriff auf ein Speicherkonto oder einen gehosteten Dienst aktivieren, kommen alle öffentlich verfügbaren Objekte für den CDN-Edgezwischenspeicher in Frage. Wenn Sie ein Objekt ändern, das derzeit im CDN zwischengespeichert ist, stehen die neuen Inhalte erst dann über das CDN zur Verfügung, wenn das CDN seine Inhalte aktualisiert, wenn die Lebensdauer der zwischengespeicherten Inhalte abläuft.
 
 ## Schritt 5: Entfernen von Inhalten aus dem CDN
 
@@ -154,4 +154,4 @@ Ein bereits im CDN zwischengespeichertes Objekt bleibt zwischengespeichert, bis 
 [cdn-add-endpoint]: ./media/cdn-create-a-storage-account-with-cdn/cdn-add-endpoint.png
 [cdn-endpoint-success]: ./media/cdn-create-a-storage-account-with-cdn/cdn-endpoint-success.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0204_2016-->

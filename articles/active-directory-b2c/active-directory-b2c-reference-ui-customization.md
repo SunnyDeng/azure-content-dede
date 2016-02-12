@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/21/2016"
+	ms.date="01/28/2016"
 	ms.author="swkrish"/>
 
 # Azure Active Directory B2C-Vorschau: Anpassen der Azure AD B2C-Benutzeroberfläche (UI)
@@ -21,7 +21,7 @@
 Benutzerfreundlichkeit ist in einer kundenorientierten Anwendung entscheidend. Dies ist der Unterschied zwischen einer guten Anwendung und einer hervorragenden – und zwischen lediglich aktiven Consumern und wirklich engagierten. Azure Active Directory (AD) B2C ermöglicht es Ihnen, die Seiten für die Registrierung und Anmeldung von Consumern (*siehe Hinweis unten*) und für die Profilbearbeitung mit einer präzisen Kontrolle anzupassen.
 
 > [AZURE.NOTE]
-Gegenwärtig sind Anmeldeseiten für lokale Konten, Überprüfungs-E-Mails und Seiten zum eigenständigen Zurücksetzen des Kennworts nur mithilfe des [Features für Unternehmensbranding](./active-directory/active-directory-add-company-branding.md) anpassbar, nicht durch die Mechanismen, die in diesem Artikel beschrieben sind.
+Gegenwärtig sind Anmeldeseiten für lokale Konten, Überprüfungs-E-Mails und Seiten zum eigenständigen Zurücksetzen des Kennworts nur mithilfe des [Features für Unternehmensbranding](../active-directory/active-directory-add-company-branding.md) anpassbar, nicht durch die Mechanismen, die in diesem Artikel beschrieben sind.
 
 Dieser Artikel enthält Folgendes:
 
@@ -59,7 +59,7 @@ Diese Seite enthält eine Liste der Identitätsanbieter, aus denen der Benutzer 
 	<div class="intro">
          <p>Sign up</p>
 	</div>
-
+	
 	<div>
 		<ul>
 			<li>
@@ -83,21 +83,21 @@ Diese Seite enthält ein Registrierungsformular, das der Benutzer ausfüllen mus
 
 ```HTML
 
-<div id="api" data-name="SelfAsserted">
-	<div class="intro">
+<div id="api" data-name="SelfAsserted"> 
+	<div class="intro"> 
 		<p>Create your account by providing the following details</p>
 	</div>
-
-	<div id="attributeVerification">
+	
+	<div id="attributeVerification"> 
 		<div class="errorText" id="passwordEntryMismatch" style="display: none;">The password entry fields do not match. Please enter the same password in both fields and try again.</div>
 		<div class="errorText" id="requiredFieldMissing" style="display: none;">A required field is missing. Please fill out all required fields and try again.</div>
 		<div class="errorText" id="fieldIncorrect" style="display: none;">One or more fields are filled out incorrectly. Please check your entries and try again.</div>
 		<div class="errorText" id="claimVerificationServerError" style="display: none;"></div>
-		<div class="attr" id="attributeList">
+		<div class="attr" id="attributeList"> 
 			<ul>
-				<li>
+				<li> 
 					<div class="attrEntry validate">
-						<div>
+						<div> 
 							<div class="verificationInfoText" id="email_intro" style="display: inline;">Verification is necessary. Please click Send button.</div>
 							<div class="verificationInfoText" id="email_info" style="display:none">Verification code has been sent to your inbox. Please copy it to the input box below.</div>
 							<div class="verificationSuccessText" id="email_success" style="display:none">E-mail address verified. You can now continue.</div>
@@ -111,40 +111,40 @@ Diese Seite enthält ein Registrierungsformular, das der Benutzer ausfüllen mus
 						<label>Email</label>
 						<input id="email" class="textInput" type="text" placeholder="Email" required="" autofocus=""><a href="javascript:void(0)" onclick="selfAssertedClient.showHelp('Email address that can be used to contact you.');" class="tiny">What is this?</a>
 
-					<div class="buttons verify" claim_id="email">
+					<div class="buttons verify" claim_id="email"> 
 						<div id="email_ver_wait" class="working" style="display: none;"></div>
-							<label id="email_ver_input_label" for="email_ver_input" style="display: none;">Verification code</label>
+							<label id="email_ver_input_label" for="email_ver_input" style="display: none;">Verification code</label> 
 							<input id="email_ver_input" type="text" placeholder="Verification code" style="display:none">
 							<button id="email_ver_but_send" class="sendButton" type="button" style="display: inline;">Send verification code</button>
 							<button id="email_ver_but_verify" class="verifyButton" type="button" style="display:none">Verify code</button>
 							<button id="email_ver_but_resend" class="sendButton" type="button" style="display:none">Send new code</button>
 							<button id="email_ver_but_edit" class="editButton" type="button" style="display:none">Change e-mail</button>
-							<button id="email_ver_but_default" class="defaultButton" type="button" style="display:none">Default</button>
+							<button id="email_ver_but_default" class="defaultButton" type="button" style="display:none">Default</button> 
 						</div>
 					</div>
 				</li>
-				<li>
+				<li> 
 					<div class="attrEntry">
 						<div class="helpText">8-16 characters, containing 3 out of 4 of the following: Lowercase characters, uppercase characters, digits (0-9), and one or more of the following symbols: @ # $ % ^ &amp; * - _ + = [ ] { } | \ : ' , ? / ` ~ " ( ) ; .This information is required</div>
 						<label>Enter password</label>
 						<input id="password" class="textInput" type="password" placeholder="Enter password" pattern="^((?=.*[a-z])(?=.*[A-Z])(?=.*\d)|(?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])|(?=.*[a-z])(?=.*\d)(?=.*[^A-Za-z0-9])|(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]))([A-Za-z\d@#$%^&amp;*-_+=[]{}|\\:',?/`~";();!]|\.(?!@)){8,16}$" title="8-16 characters, containing 3 out of 4 of the following: Lowercase characters, uppercase characters, digits (0-9), and one or more of the following symbols: @ # $ % ^ &amp; * - _ + = [ ] { } | \ : ' , ? / ` ~ "; ( ) ; ." required=""><a href="javascript:void(0)" onclick="selfAssertedClient.showHelp('Enter password');" class="tiny">What is this?</a>
 					</div>
 				</li>
-				<li>
+				<li> 
 					<div class="attrEntry">
 						<div class="helpText"> This information is required</div>
 						<label>Reenter password</label>
 						<input id="reenterPassword" class="textInput" type="password" placeholder="Reenter password" pattern="^((?=.*[a-z])(?=.*[A-Z])(?=.*\d)|(?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])|(?=.*[a-z])(?=.*\d)(?=.*[^A-Za-z0-9])|(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]))([A-Za-z\d@#$%^&amp;*-_+=[]{}|\\:',?/`~";();!]|\.(?!@)){8,16}$" title=" " required=""><a href="javascript:void(0)" onclick="selfAssertedClient.showHelp('Reenter password');" class="tiny">What is this?</a>
 					</div>
 				</li>
-				<li>
+				<li> 
 					<div class="attrEntry">
 						<div class="helpText">This information is required</div>
 						<label>Name</label>
 						<input id="displayName" class="textInput" type="text" placeholder="Name" required=""><a href="javascript:void(0)" onclick="selfAssertedClient.showHelp('Your display name.');" class="tiny">What is this?</a>
 					</div>
 				</li>
-				<li>
+				<li> 
 					<div class="attrEntry">
 						<div class="helpText"></div>
 						<label>Gender</label>
@@ -155,14 +155,14 @@ Diese Seite enthält ein Registrierungsformular, das der Benutzer ausfüllen mus
 						<a href="javascript:void(0)" onclick="selfAssertedClient.showHelp('');" class="tiny">What is this?</a>
 					</div>
 				</li>
-				<li>
+				<li> 
 					<div class="attrEntry">
 						<div class="helpText"></div>
 						<label>Loyalty number</label>
 						<input id="extension_MemNum" class="textInput" type="text" placeholder="Loyalty number"><a href="javascript:void(0)" onclick="selfAssertedClient.showHelp('Membership number');" class="tiny">What is this?</a>
 					</div>
 				</li>
-				<li>
+				<li> 
 					<div class="attrEntry">
 						<div class="helpText"></div>
 						<label>State</label>
@@ -175,18 +175,18 @@ Diese Seite enthält ein Registrierungsformular, das der Benutzer ausfüllen mus
 						<a href="javascript:void(0)" onclick="selfAssertedClient.showHelp('Your residential state or province.');" class="tiny">What is this?</a>
 					</div>
 				</li>
-				<li>
+				<li> 
 					<div class="attrEntry">
 						<div class="helpText">This information is required</div>
 						<label>Zip code</label>
 						<input id="postalCode" class="textInput" type="text" placeholder="Zip code" required=""><a href="javascript:void(0)" onclick="selfAssertedClient.showHelp('The postal code of your address.');" class="tiny">What is this?</a>
 					</div>
 				</li>
-			</ul>
+			</ul> 
 		</div>
 		<div class="buttons"> <button id="continue" disabled="">Create</button> <button id="cancel">Cancel</button></div>
 	</div>
-	<div class="verifying-modal">
+	<div class="verifying-modal"> 
 		<div class="preloader"> <img src="https://login.microsoftonline.com/static/img/win8loader.gif" alt="Please wait"></div>
 		<div id="verifying_blurb"></div>
 	</div>
@@ -267,7 +267,7 @@ Diese Seite ermöglicht es Benutzern, während der Registrierung oder Anmeldung 
 Wenn Sie das Anpassungsfeature für die Seiten-UI verwenden möchten, beachten Sie die folgenden bewährten Methoden:
 
 - Kopieren Sie nicht die Azure AD B2C-Standardvorlage, um zu versuchen, sie zu ändern. Es wird empfohlen, eigene HTML5-Inhalte von Grund auf neu zu erstellen und die Standardvorlage als Referenz zu verwenden.
-- Aus Gründen der Sicherheit ist es nicht zulässig, JavaScript in Ihren Inhalt aufzunehmen. Das meiste, was Sie benötigen, sollte ohne Bearbeitungsaufwand verfügbar sein. Falls nicht, fordern Sie über [User Voice](https://feedback.azure.com/forums/169401-azure-active-directory/) neue Funktionen an.
+- Aus Gründen der Sicherheit ist es nicht zulässig, JavaScript in Ihren Inhalt aufzunehmen. Das meiste, was Sie benötigen, sollte ohne Bearbeitungsaufwand verfügbar sein. Falls nicht, fordern Sie über [User Voice](http://feedback.azure.com/forums/169401-azure-active-directory) neue Funktionen an.
 - Unterstützte Browserversionen:
 	- Internet Explorer 11
 	- Internet Explorer 10
@@ -278,4 +278,4 @@ Wenn Sie das Anpassungsfeature für die Seiten-UI verwenden möchten, beachten S
 	- Mozilla Firefox 38.0
 	- Mozilla Firefox 37.0
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

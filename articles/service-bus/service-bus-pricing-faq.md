@@ -19,7 +19,7 @@
 
 In diesem Abschnitt werden einige häufig gestellte Fragen zur Service Bus-Preisstruktur beantwortet. Sie können auch die [Azure-Support-FAQ](http://go.microsoft.com/fwlink/?LinkID=185083) aufrufen, wenn Sie nach allgemeinen Microsoft Azure-Preisinformationen suchen. Vollständige Informationen zu Service Bus-Preisen finden Sie unter [Service Bus-Preise](https://azure.microsoft.com/pricing/details/service-bus/).
 
->[AZURE.NOTE] Die Preisstruktur für Event Hubs wird im Thema [Event Hubs Verfügbarkeit und Support – häufig gestellte Fragen](event-hubs-availability-and-support-faq.md) beschrieben. Weitere Informationen hierzu finden Sie zudem im Thema [Event Hubs-Preise](https://azure.microsoft.com/pricing/details/event-hubs/).
+>[AZURE.NOTE] Die Preisstruktur für Event Hubs wird im Thema [Event Hubs Verfügbarkeit und Support – häufig gestellte Fragen](../event-hubs/event-hubs-availability-and-support-faq.md) beschrieben. Weitere Informationen hierzu finden Sie zudem im Thema [Event Hubs-Preise](https://azure.microsoft.com/pricing/details/event-hubs/).
 
 - [Wie werden die Kosten für Service Bus berechnet?](#how-do-you-charge-for-service-bus)
 - [Bei welcher Nutzung von Service Bus werden Daten übertragen? Bei welcher nicht?](#what-usage-of-service-bus-is-subject-to-data-transfer-what-is-not)
@@ -116,4 +116,4 @@ Weitere Informationen zu Service Bus Messaging finden Sie in folgenden Themen.
 
 [klassische Azure-Portal]: http://manage.windowsazure.com
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

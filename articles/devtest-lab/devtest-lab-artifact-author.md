@@ -1,6 +1,6 @@
-    <properties 
-	pageTitle="Create custom artifacts for your DevTest Lab VM | Microsoft Azure"
-	description="Learn how to author your own artifacts for use with DevTest Labs"
+<properties 
+	pageTitle="Erstellen von benutzerdefinierten Artefakten für Ihre DevTest Lab-VM | Microsoft Azure"
+	description="Erfahren Sie, wie Sie Ihre eigenen Artefakte für die Verwendung mit DevTest Labs erstellen."
 	services="devtest-lab,virtual-machines"
 	documentationCenter="na"
 	authors="tomarcher"
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/01/2015"
+	ms.date="02/03/2016"
 	ms.author="tarcher"/>
 
 #Erstellen von benutzerdefinierten Artefakten für Ihre DevTest Lab-VM
@@ -121,4 +121,4 @@ Erstellen Sie Ihr benutzerdefiniertes Artefakt anhand der nachstehend aufgeführ
 
 Erfahren Sie, wie Sie Ihrem [DevTest Lab ein Git-Artefaktrepository hinzufügen](devtest-lab-add-artifact-repo.md).
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0204_2016-->

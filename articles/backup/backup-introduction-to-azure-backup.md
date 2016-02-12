@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/22/2016"
+	ms.date="01/29/2016"
 	ms.author="trinadhk;jimpark"/>
 
 # Was ist Azure Backup?
@@ -78,6 +78,8 @@ In diesen fünf Tabellen wird zusammengefasst, wie Azure Backup-Funktionen in je
 | Inkrementelle Sicherung | ![Ja][green] | ![Ja][green] | ![Ja][green] | ![Ja][green] |
 | Datenträgerdeduplizierung | | ![Teilweise][yellow] | ![Teilweise][yellow]| | |
 
+**Legende** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![Ja][green]= Unterstützt &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![Teilweise][yellow]= Teilweise unterstützt &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *&lt;blank&gt;* = Nicht unterstützt
+
 Der Azure Backup-Tresor ist das bevorzugte Speicherziel aller Komponenten. System Center DPM und Azure Backup Server bieten auch die Möglichkeit, eine Kopie des lokalen Datenträgers zu erstellen, aber nur System Center DPM ermöglicht das Schreiben von Daten auf ein Bandspeichergerät.
 
 #### Inkrementelle Sicherung
@@ -86,7 +88,7 @@ Unabhängig vom Zielspeicher (Datenträger, Band, Sicherungstresor) unterstütze
 Die Komponente, die keine Komprimierung vornimmt, ist die VM-Erweiterung. Alle Sicherungsdaten werden aus dem Speicherkonto des Kunden in den Sicherungstresor in derselben Region kopiert, ohne dass eine Komprimierung erfolgt. Dadurch wird zwar die Speicherbelegung etwas erhöht, doch das Speichern der Daten ohne Komprimierung ermöglicht kürzere Wiederherstellungszeiten.
 
 #### Deduplizierung
-Die Deduplizierung wird für System Center DPM und Azure Backup Server unterstützt, wenn [die Bereitstellung in einer Hyper-V-VM erfolgt](http://blogs.technet.com/b/dpm/archive/2015/01/06/deduplication-of-dpm-storage-reduce-dpm-storage-consumption.aspx). Die Deduplizierung erfolgt auf Hostebene mithilfe der Deduplizierungsfunktion von Windows Server auf den virtuellen Festplatten (VHDs), die als Sicherungsspeicher an den virtuellen Computer angefügt sind.
+Die Deduplizierung wird für System Center DPM und Backup Server unterstützt, wenn [die Bereitstellung in einer Hyper-V-VM erfolgt](http://blogs.technet.com/b/dpm/archive/2015/01/06/deduplication-of-dpm-storage-reduce-dpm-storage-consumption.aspx). Die Deduplizierung erfolgt auf Hostebene mithilfe der Deduplizierungsfunktion von Windows Server auf den virtuellen Festplatten (VHDs), die als Sicherungsspeicher an den virtuellen Computer angefügt sind.
 
 >[AZURE.WARNING] Die Deduplizierung ist in Azure für keine der Azure Backup-Komponenten verfügbar! Wenn System Center DPM und Azure Backup Server in Azure bereitgestellt werden, können an die VM angefügte Speicherdatenträger nicht dedupliziert werden.
 
@@ -97,11 +99,13 @@ Die Deduplizierung wird für System Center DPM und Azure Backup Server unterstü
 | Netzwerksicherheit (Azure) | ![Ja][green] |![Ja][green] | ![Ja][green] | ![Teilweise][yellow]|
 | Datensicherheit (in Azure) | ![Ja][green] |![Ja][green] | ![Ja][green] | ![Teilweise][yellow]|
 
+**Legende** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![Ja][green]= Unterstützt &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![Teilweise][yellow]= Teilweise unterstützt &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *&lt;blank&gt;* = Nicht unterstützt
+
 Sämtlicher Sicherungsdatenverkehr von Ihren Servern in den Azure Backup-Tresor wird mit AES 256 (Advanced Encryption Standard) verschlüsselt. Die Daten werden über eine sichere HTTPS-Verbindung übertragen. Die Sicherungsdaten werden auch im Sicherungstresor in verschlüsselter Form gespeichert. Nur der Kunde kennt die Passphrase, um diese Daten zu entsperren. Die Sicherungsdaten können zu keinem Zeitpunkt von Microsoft entschlüsselt werden.
 
 >[AZURE.WARNING] Den Schlüssel zum Verschlüsseln der Sicherungsdaten besitzt nur der Kunde. Microsoft behält keine Kopie in Azure und hat keinen Zugriff auf den Schlüssel. Wenn der Schlüssel verlegt wird, kann Microsoft die gesicherten Daten nicht wiederherstellen.
 
-Für eine Sicherung von Azure-VMs müssen Sie die Verschlüsselung *im* virtuellen Computer explizit einrichten. Verwenden Sie BitLocker auf virtuellen Windows-Computern und **dm-crypt** auf virtuellen Linux-Computern. Daten, die auf diesem Weg eingehen, werden von Azure Backup nicht automatisch verschlüsselt.
+Für eine Sicherung von Azure-VMs müssen Sie die Verschlüsselung *in* der virtuellen Maschine explizit einrichten. Verwenden Sie BitLocker auf virtuellen Windows-Maschinen und **dm-crypt** auf virtuellen Linux-Maschinen. Daten, die auf diesem Weg eingehen, werden von Azure Backup nicht automatisch verschlüsselt.
 
 ### Unterstützte Workloads
 
@@ -117,6 +121,8 @@ Für eine Sicherung von Azure-VMs müssen Sie die Verschlüsselung *im* virtuell
 | Virtueller Azure-Computer (Windows) | | | | ![Ja][green] |
 | Virtueller Azure-Computer (Linux) | | | | ![Ja][green] |
 
+**Legende** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![Ja][green]= Unterstützt &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *&lt;blank&gt;* = Nicht unterstützt
+
 ### Netzwerk
 
 | Funktion | Azure Backup-Agent | System Center DPM | Azure Backup Server | Azure Backup (VM-Erweiterung) |
@@ -125,6 +131,8 @@ Für eine Sicherung von Azure-VMs müssen Sie die Verschlüsselung *im* virtuell
 | Netzwerkkomprimierung (zu Sicherungstresor) | ![Ja][green] | ![Ja][green] | ![Ja][green] | |
 | Netzwerkprotokoll (zu Sicherungsserver) | | TCP | TCP | |
 | Netzwerkprotokoll (zu Sicherungstresor) | HTTPS | HTTPS | HTTPS | HTTPS |
+
+**Legende** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![Ja][green]= Unterstützt &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *&lt;blank&gt;* = Nicht unterstützt
 
 Da die VM-Erweiterung die Daten aus dem Azure-Speicherkonto direkt über das Speichernetzwerk liest, ist das Optimieren dieses Datenverkehrs nicht erforderlich. Der Datenverkehr erfolgt über das lokale Speichernetzwerk im Azure-Datencenter, sodass kaum Bedarf an einer Komprimierung aufgrund von Bandbreitenaspekten besteht.
 
@@ -145,7 +153,7 @@ Für Kunden, die die Übertragung ihrer Daten an einen Sicherungsserver (System 
 ## Wie unterscheidet sich Azure Backup von Azure Site Recovery?
 Viele Kunden verwechseln Sicherungswiederherstellung und Notfallwiederherstellung. Für beide Zwecke werden Daten erfasst und Wiederherstellungsmechanismen bereitgestellt, doch das Hauptanliegen ist in beiden Fällen unterschiedlich.
 
-Azure Backup sichert Daten lokal und in der Cloud. Azure Site Recovery koordiniert Replikation, Failover und Wiederherstellung virtueller Computer und physischer Server. Sie benötigen beide Komponenten für eine vollständige Lösung zur Notfallwiederherstellung. Für Ihre Notfallwiederherstellungsstrategie müssen Ihre Daten sicher und wiederherstellbar gespeichert werden (Azure Backup) *und* Ihre Workloads verfügbar und zugänglich (Azure Site Recovery) sein, sollte es zu Ausfällen kommen.
+Azure Backup sichert Daten lokal und in der Cloud. Azure Site Recovery koordiniert Replikation, Failover und Wiederherstellung virtueller Computer und physischer Server. Sie benötigen beide Komponenten für eine vollständige Lösung zur Notfallwiederherstellung. Für Ihre Notfallwiederherstellungsstrategie müssen Ihre Daten sicher und wiederherstellbar gespeichert werden (Backup) *und* Ihre Workloads verfügbar und zugänglich (Site Recovery) sein, sollte es zu Ausfällen kommen.
 
 Um Entscheidungen hinsichtlich der Sicherung und Notfallwiederherstellung zu treffen, sollten Sie mit den folgenden wichtigen Konzepten vertraut sein:
 
@@ -153,7 +161,7 @@ Um Entscheidungen hinsichtlich der Sicherung und Notfallwiederherstellung zu tre
 | ------- | ------- | ------ | ----------------- |
 | Recovery Point Objective (RPO) | Der Umfang des Datenverlusts, der im Fall einer erforderlichen Wiederherstellung akzeptabel ist. | Sicherungslösungen weisen eine große Varianz beim akzeptablen RPO auf. Sicherungen virtueller Computer haben zumeist ein RPO von einem Tag, während Datenbanksicherungskopien RPOs von bis zu 15 Minuten aufweisen. | Lösungen für die Notfallwiederherstellung haben überaus niedrige RPOs. Die Kopie für die Notfallwiederherstellung kann einige Sekunden bzw. einige Minuten hinterherhinken. |
 | Recovery Time Objective (RTO) | Der Zeitraum, der für eine Wiederherstellung erforderlich ist. | Aufgrund des größeren RPO ist die Datenmenge, die eine Sicherungslösung verarbeiten muss, meist wesentlich größer. Dies führt zu längeren RTOs. Beispielsweise kann das Wiederherstellen von Daten von Bändern Tage dauern, was davon abhängt, wie lange der Transport des Bands von einem standortexternen Aufbewahrungsort dauert. | Lösungen für die Notfallwiederherstellung weisen kleinere RTOs auf, da sie synchroner mit der Quelle sind. Weniger Änderungen müssen verarbeitet werden. |
-| Aufbewahrung | Die Dauer der Datenspeicherung. | <p>Bei Szenarien, in denen die Wiederherstellung des Geschäftsbetriebs (nach Datenbeschädigung, versehentlichem Löschen von Dateien oder Betriebssystemausfällen) erforderlich ist, werden Sicherungsdaten in der Regel maximal 30 Tage lang aufbewahrt.</p> <p>Vom Standpunkt der Compliance müssen Daten möglicherweise Monate oder sogar Jahre gespeichert werden. In solchen Fällen sind Sicherungsdaten ideal für die Archivierung geeignet.</p> | Für die Notfallwiederherstellung werden nur Betriebsdaten für die Wiederherstellung benötigt. Diese dauert in der Regel von einigen Stunden bis zu einem Tag. Aufgrund der differenzierten Datensammlung in Lösungen für die Notfallwiederherstellung empfehlen sich Notfallwiederherstellungsdaten nicht für eine langfristige Aufbewahrung. |
+| Aufbewahrung | Die Dauer der Datenspeicherung. | <p>Bei Szenarien, in denen die Wiederherstellung des Geschäftsbetriebs (nach Datenbeschädigung, versehentlichem Löschen von Dateien oder Betriebssystemausfällen) erforderlich ist, werden Sicherungsdaten in der Regel maximal 30 Tage lang aufbewahrt.</p> <p>Vom Standpunkt der Compliance aus müssen Daten möglicherweise Monate oder sogar Jahre gespeichert werden. In solchen Fällen sind Sicherungsdaten ideal für die Archivierung geeignet.</p> | Für die Notfallwiederherstellung werden nur Betriebsdaten für die Wiederherstellung benötigt. Diese dauert in der Regel von einigen Stunden bis zu einem Tag. Aufgrund der differenzierten Datensammlung in Lösungen für die Notfallwiederherstellung empfehlen sich Notfallwiederherstellungsdaten nicht für eine langfristige Aufbewahrung. |
 
 
 ## Nächste Schritte
@@ -167,4 +175,4 @@ Um Entscheidungen hinsichtlich der Sicherung und Notfallwiederherstellung zu tre
 [yellow]: ./media/backup-introduction-to-azure-backup/yellow.png
 [red]: ./media/backup-introduction-to-azure-backup/red.png
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->
