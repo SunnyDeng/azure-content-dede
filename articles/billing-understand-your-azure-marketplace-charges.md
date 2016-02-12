@@ -28,7 +28,8 @@ So zeigen Sie eine Rechnung an oder laden sie herunter
 
 1. Melden Sie sich mit Ihrer Organisations-ID am Azure-Kontoportal an.
 2. Klicken Sie auf **Marketplace**. Es wird eine vollständige Liste mit allen Marketplace-Bestellungen angezeigt, die über Ihr Azure-Konto aufgegeben wurden. Sie sehen, dass die Bestellungen nach Name und ID des übergeordneten Azure-Abonnements gruppiert sind. ![Marketplace-Bestellungen](./media/billing-understand-your-azure-marketplace-charges/marketplace-orders.png)
-3. Wenn Sie auf eine der angezeigten Bestellungen klicken, gelangen Sie zur Zusammenfassung dieser Bestellung für den aktuellen Abrechnungszyklus. Eine Beschreibung der unterschiedlichen Preismodelle finden Sie unter [Häufig gestellte Fragen zum Marketplace](https://azure.microsoft.com/marketplace/faq/). ![Bestellübersicht](./media/billing-understand-your-azure-marketplace-charges/order-summary.png)
+3. Wenn Sie auf eine der angezeigten Bestellungen klicken, gelangen Sie zur Zusammenfassung dieser Bestellung für den aktuellen Abrechnungszyklus. Eine Beschreibung der unterschiedlichen Preismodelle finden Sie unter [Häufig gestellte Fragen zum Marketplace]( https://azure.microsoft.com/marketplace/faq/).
+![Bestellübersicht](./media/billing-understand-your-azure-marketplace-charges/order-summary.png)
 
 Die Zusammenfassung enthält für jede Bestellung die folgenden Informationen: - Preis - Abrechnungszyklus - Kaufdatum - Zugeordnetes übergeordnetes Abonnement - Rechnungswährung
 
@@ -65,4 +66,4 @@ Führen Sie die folgenden Schritte aus, um die tatsächlichen Gebühren anzuzeig
 1. Klicken Sie auf der Seite **ABRECHNUNGSVERLAUF** auf **Gebühren anzeigen**. Eine neue Registerkarte mit dem [Bestellverlauf](https://account.microsoft.com/billing/orders#/) wird geöffnet. Beachten Sie Folgendes: Wenn Sie versuchen, im Portal für die Abrechnungs- und Kontoverwaltung auf die Rohdaten der Nutzung zuzugreifen, müssen Sie sich an den Support wenden. Klicken Sie hierfür unten auf der Seite auf den Link „Support“. ![Bestellverlauf](./media/billing-understand-your-azure-marketplace-charges/order-history.jpg)
 2. Wählen Sie die Bestellung aus, die Sie prüfen möchten, und klicken Sie dann auf **Details**, um eine Aufstellung Ihrer Gebühren anzuzeigen. Die Aufstellung enthält Punkte wie Zwischensumme, Steuern und Gesamtgebühren. ![Bestelldetails](./media/billing-understand-your-azure-marketplace-charges/order-details.jpg)
 
-<!---HONumber=AcomDC_0204_2016-->
+<!----HONumber=AcomDC_0204_2016-->
