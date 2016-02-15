@@ -761,11 +761,11 @@ In diesem Schritt erstellen Sie eine Pipeline mit einer Aktivität, der zuvor er
 
 	-   **AssemblyName** wird auf den Namen der DLL festgelegt: **MyActivities.dll**.
 
-	-   **EntryPoint** wird auf **MyDotNetActivityNS.MyDotNetActivity** festgelegt. Das entspricht im Grunde <Namespace>.<Klassenname> in Ihrem Code.
+	-   **EntryPoint** wird auf **MyDotNetActivityNS.MyDotNetActivity** festgelegt. Das entspricht im Grunde \<Namespace\>.\<Klassenname\> in Ihrem Code.
 
 	-   **PackageLinkedService** ist auf **StorageLinkedService** festgelegt, das auf den Blobspeicher verweist, der die Zip-Datei mit der benutzerdefinierten Aktivität enthält. Wenn Sie andere Azure-Speicherkonten für die Eingabe- und Ausgabedateien und die Zip-Datei mit der benutzerdefinierten Aktivität verwenden, müssen Sie einen weiteren verknüpften Azure Storage-Dienst erstellen. Dieser Artikel setzt voraus, dass Sie das gleiche Azure-Speicherkonto verwenden.
 
-	-   **PackageFile** wird auf **customactivitycontainer/MyCustomActivity.zip** festgelegt. Das entspricht dem Format: <containerforthezip>/<nameofthezip.zip>.
+	-   **PackageFile** wird auf **customactivitycontainer/MyCustomActivity.zip** festgelegt. Das entspricht dem Format: \<containerforthezip\>/\<nameofthezip.zip\>.
 
 	-   Die benutzerdefinierte Aktivität verwendet **InputDataset** als Eingabe und **OutputDataset** als Ausgabe.
 
@@ -929,4 +929,4 @@ Nachdem Sie Daten verarbeitet haben, können Sie sie mit Online-Tools wie **Micr
 
     -   [Erste Schritte mit der Azure Batch-Bibliothek für .NET](../batch/batch-dotnet-get-started.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!----HONumber=AcomDC_0128_2016-->
