@@ -396,7 +396,7 @@ Dies ist für die anfängliche Einrichtung und Konfiguration erforderlich. Jetzt
 		
 		module.exports = config;
 
-3. Aktualisieren Sie in der Datei **config.js** die Werte für HOST und AUTH_KEY unter Verwendung der Werte im Blatt "Schlüssel" Ihres DocumentDB-Kontos im [Microsoft Azure-Portal](https://portal.azure.com):
+3. Aktualisieren Sie in der Datei **config.js** die Werte für HOST und AUTH\_KEY unter Verwendung der Werte im Blatt "Schlüssel" Ihres DocumentDB-Kontos im [Microsoft Azure-Portal](https://portal.azure.com):
 
 4. Speichern und schließen Sie die Datei **config.js**.
  
@@ -428,6 +428,8 @@ Dies ist für die anfängliche Einrichtung und Konfiguration erforderlich. Jetzt
 		app.get('/', taskList.showTasks.bind(taskList));
 		app.post('/addtask', taskList.addTask.bind(taskList));
 		app.post('/completetask', taskList.completeTask.bind(taskList));
+		app.set('view engine', 'jade');
+
 
 
 6. Diese Zeilen definieren eine neue Instanz unseres **TaskDao**-Objekts mit einer neuen Verbindung zu DocumentDB (unter Verwendung der aus **config.js** gelesenen Werte). Sie initialisieren das Task-Objekt und binden dann Formularaktionen an Methoden auf unserem **TaskList**-Controller.
@@ -505,7 +507,7 @@ Jetzt konzentrieren wir uns auf die Erstellung der Benutzeroberfläche, um den B
 	
 	Dies sollte jetzt alles sein, damit unsere Anwendung funktioniert.
 
-5. Öffnen Sie die Datei **style.css** im Verzeichnis **Public\stylesheets**, und ersetzen Sie den Code durch Folgendes:
+5. Öffnen Sie die Datei **style.css** im Verzeichnis **Public\\stylesheets**, und ersetzen Sie den Code durch Folgendes:
 
 		body {
 		  padding: 50px;
@@ -569,4 +571,4 @@ Weitere Informationen finden Sie im [Node.js Developer Center](https://azure.mic
 [Github]: https://github.com/Azure-Samples/documentdb-node-todo-app
  
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

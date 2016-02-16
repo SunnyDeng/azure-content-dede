@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="get-started-article" 
-	ms.date="10/23/2015" 
+	ms.date="02/02/2016" 
 	ms.author="elizapo"/>
 
 # Azure RemoteApp – Häufig gestellte Fragen
@@ -26,15 +26,14 @@ Folgende Fragen wurden zu Azure RemoteApp an uns gestellt. Haben Sie weitere Fra
 - **Welche Bereitstellungsoptionen gibt es?** Es gibt zwei Arten von RemoteApp-Sammlungen: Cloud und Hybrid. Welche der beiden Sie benötigen, hängt von einer Reihe von Faktoren ab, z. B. davon, ob Sie einen Domänenbeitritt benötigen. Wir diskutieren diese Entscheidungen [hier](remoteapp-collections.md).
 
 ## Tipps zum Verwenden von Azure RemoteApp ##
-- **Wie lange kann ich inaktiv sein, bis ich getrennt werde? Wie viel Zeit habe ich bis zur automatischen Abmeldung?** 4 Stunden. Wenn Sie oder einer Ihrer Benutzer 4 Stunden lang inaktiv ist, werden Sie automatisch von Azure RemoteApp abgemeldet. Alle weiteren Standardeinstellungen werden unter [Einschränkungen für Azure-Abonnements und Dienste, Kontingente und Einschränkungen](azure-subscription-service-limits.md) näher besprochen.
-- **Kann ich diesen Dienst kostenlos testen?** Ja. Es ist eine kostenlose Testversion für 30 Tage verfügbar. Nach Ablauf des Testzeitraums können Sie auf ein gebührenpflichtiges Konto (für die Produktionsumgebung) umstellen oder den Dienst beenden. Starten Sie die kostenlose Testversion unter [manage.windowsazure.com](http://manage.windowsazure.com), und erstellen Sie eine neue Instanz von RemoteApp. Mit der kostenlosen Testversion können Sie zwei Instanzen von RemoteApp mit 10 Benutzern pro Instanz erstellen. Beachten Sie, dass diese Testversion nur für 30 Tage gilt.
+- **Wie lange kann ich inaktiv sein, bis ich getrennt werde? Wie viel Zeit habe ich bis zur automatischen Abmeldung?** 4 Stunden. Wenn Sie oder einer Ihrer Benutzer 4 Stunden lang inaktiv ist, werden Sie automatisch von Azure RemoteApp abgemeldet. Alle weiteren Standardeinstellungen werden unter [Einschränkungen für Azure-Abonnements und Dienste, Kontingente und Einschränkungen](../azure-subscription-service-limits.md) näher besprochen.
+- **Kann ich diesen Dienst kostenlos testen?** Ja. Es ist eine kostenlose Testversion für 30 Tage verfügbar. Nach Ablauf des Testzeitraums können Sie auf ein gebührenpflichtiges Konto (für die Produktionsumgebung) umstellen oder den Dienst beenden. Starten Sie die kostenlose Testversion unter [portal.azure.com](http://portal.azure.com), und erstellen Sie eine neue Instanz von RemoteApp. Mit der kostenlosen Testversion können Sie zwei Instanzen von RemoteApp mit 10 Benutzern pro Instanz erstellen. Beachten Sie, dass diese Testversion nur für 30 Tage gilt.
 ## Informationen zu Azure RemoteApp-Abonnements ##
 
 - **Was sind die Dienstgrenzwerte?** Informationen zu den Standardeinstellungen und Dienstbeschränkungen für Azure RemoteApp finden Sie unter [Einschränkungen für Azure-Abonnements und Dienste, Kontingente und Einschränkungen](azure-subscription-service-limits.md). Sie können sich gern an uns wenden, wenn Sie weitere Fragen haben.
 - **Wie viele Benutzer benötige ich?** Es sind mindestens 20 Benutzer erforderlich. Ich wiederhole dies noch einmal, damit es klar verständlich ist: das MINIMUM beträgt 20. Ihnen werden 20 Benutzer berechnet. 
 - **Wie hoch sind die Kosten für RemoteApp?** Beachten Sie die [Preisdetails für Azure RemoteApp](../../../pricing/details/remoteapp/).
-- **Sind bestimmte Sammlungstypen teurer als andere?** 
-Ja, dies kann abhängig von Ihren Anforderungen an Sammlungen der Fall sein. Für eine Hybridsammlung ist eine Verbindung von Azure RemoteApp zu Ihrem lokalen Netzwerk erforderlich. Wenn Sie ein vorhandenes VNET/ExpressRoute verwenden, fallen keine zusätzlichen Kosten an. Wenn Sie jedoch ein neues Azure-VNET und ein Gateway oder ExpressRoute verwenden, fallen für das [VPN-Gateway](../../../pricing/details/vpn-gateway) oder [ExpressRoute](../../../pricing/details/expressroute/) Kosten an. Diese Kosten (siehe Links) werden zusätzlich zu Ihren monatlichen Kosten für Azure RemoteApp berechnet.
+- **Sind bestimmte Sammlungstypen teurer als andere?** Ja, dies kann abhängig von Ihren Anforderungen an Sammlungen der Fall sein. Für eine Hybridsammlung ist eine Verbindung von Azure RemoteApp zu Ihrem lokalen Netzwerk erforderlich. Wenn Sie ein vorhandenes VNET/ExpressRoute verwenden, fallen keine zusätzlichen Kosten an. Wenn Sie jedoch ein neues Azure-VNET und ein Gateway oder ExpressRoute verwenden, fallen für das [VPN-Gateway](../../../pricing/details/vpn-gateway) oder [ExpressRoute](../../../pricing/details/expressroute/) Kosten an. Diese Kosten (siehe Links) werden zusätzlich zu Ihren monatlichen Kosten für Azure RemoteApp berechnet.
 
 ## Sammlungen: Was wird unterstützt, welche sollten Sie verwenden usw.
 - **Werden benutzerdefinierte Line-of-Business-Anwendungen (LOB) unterstützt?** Ja. Zum Verwenden einer benutzerdefinierten Anwendung in Azure RemoteApp müssen Sie ein [benutzerdefiniertes Vorlagenimage](remoteapp-create-custom-image.md) erstellen und anschließend in die RemoteApp-Sammlung hochladen.
@@ -115,4 +114,4 @@ Unter [Zugreifen auf Anwendungen in Azure RemoteApp](remoteapp-clients.md) finde
 ### Helfen Sie uns, Ihnen zu helfen 
 Wussten Sie schon, dass Sie diesen Artikel im Bereich unten nicht nur bewerten und kommentieren, sondern ihn auch selbst ändern können? Fehlt etwas? Ist etwas nicht ganz richtig? Habe ich etwas geschrieben, das eher verwirrend ist? Scrollen Sie nach oben, und klicken Sie auf **Edit on GitHub**, um die gewünschten Änderungen vorzunehmen. Ihr Vorschlag wird uns vorgelegt, und wenn wir ihn bestätigt haben, werden Ihre Änderungen und Verbesserungen hier angezeigt.
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

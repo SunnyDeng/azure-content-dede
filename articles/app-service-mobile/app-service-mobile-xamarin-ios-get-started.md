@@ -13,15 +13,13 @@
 	ms.tgt_pltfrm="mobile-xamarin-ios"
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
-	ms.date="11/23/2015"
+	ms.date="02/04/2016"
 	ms.author="normesta"/>
 
 
 #Erstellen einer Xamarin.iOS-App
 
 [AZURE.INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)]
-&nbsp;
-[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
 
 ##Übersicht
 
@@ -38,7 +36,7 @@ Für dieses Lernprogramm benötigen Sie Folgendes:
 * [Visual Studio Community 2013] oder höher. Wenn Sie Visual Studio Community 2013 installieren, dann installieren Sie [Xamarin] separat. Sie können die Xamarin-Tools bei der Installation von Visual Studio 2015 installieren.
 
 * Ein Mac, auf dem [Xcode] Version 7.0 oder höher und [Xamarin Studio] installiert ist.
- 
+
 * Wenn Sie beabsichtigen, Ihre App mit Visual Studio auf einem Windows-basierten Computer mit ausgeführtem Visual Studio zu erstellen, benötigen Sie weiterhin Zugriff auf einen an das Netzwerk angeschlossenen Mac mit ausgeführtem Xamarin.iOS Build Host, um den Build zu erstellen und die Bereitstellung auszuführen. Weitere Informationen finden Sie unter [Installieren von Xamarin.iOS unter Windows](http://developer.xamarin.com/guides/ios/getting_started/installation/windows/).
 
 >[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, besuchen Sie [Azure App Service-App erstellen](https://tryappservice.azure.com/?appServiceName=mobile). Dort können Sie direkt eine kurzzeitige mobile Start-App in App Service erstellen – keine Kreditkarte erforderlich, keine weiteren Verpflichtungen.
@@ -121,4 +119,4 @@ Wenn Sie zuvor eine .NET-Back-End-Konfiguration gewählt haben, können Sie das 
 [Xamarin for Windows]: https://go.microsoft.com/fwLink/?LinkID=330242&clcid=0x409
 [Installation von Xamarin.iOS auf Windows]: http://developer.xamarin.com/guides/ios/getting_started/installation/windows/
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

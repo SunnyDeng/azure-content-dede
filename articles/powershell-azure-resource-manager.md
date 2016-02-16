@@ -12,7 +12,7 @@
 	ms.workload="multiple" 
 	ms.tgt_pltfrm="powershell" 
 	ms.devlang="na" 
-	ms.topic="article" 
+	ms.topic="get-started-article" 
 	ms.date="01/08/2016" 
 	ms.author="tomfitz"/>
 
@@ -89,7 +89,7 @@ Sie werden vom Cmdlet zur Eingabe der Anmeldeinformationen für Ihr Azure-Konto 
 
 Die Kontoeinstellungen laufen ab. Sie müssen sie also ab und zu aktualisieren. Um die Kontoeinstellungen zu aktualisieren, führen Sie **Login-AzureRmAccount** erneut aus.
 
->[AZURE.NOTE]Die Ressourcen-Manager-Module erfordert „Login-AzureRmAccount“. Eine Datei mit Veröffentlichungseinstellungen ist nicht ausreichend.
+>[AZURE.NOTE] Die Ressourcen-Manager-Module erfordert „Login-AzureRmAccount“. Eine Datei mit Veröffentlichungseinstellungen ist nicht ausreichend.
 
 ## Abrufen der Speicherorte für Ressourcentypen
 
@@ -461,4 +461,4 @@ Sie können vorhandene Ressourcen in eine neue Ressourcengruppe verschieben. Bei
 - Ein ausführliches Beispiel für das Bereitstellen eines Projekts finden Sie unter [Vorhersagbares Bereitstellen von Microservices in Azure](app-service-web/app-service-deploy-complex-application-predictably.md).
 - Weitere Informationen zur Problembehandlung bei einer nicht erfolgreichen Bereitstellung finden Sie unter [Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure](./virtual-machines/resource-group-deploy-debug.md).
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0211_2016-->

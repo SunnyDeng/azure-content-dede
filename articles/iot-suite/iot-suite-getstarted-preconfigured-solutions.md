@@ -57,7 +57,7 @@ Sie benötigen ein aktives Azure-Abonnement, um dieses Lernprogramm auszuführen
 
     ![][img-devicelist]
 
-2.  Wie Sie sehen, gibt es vier simulierte Geräte, die im Rahmen des Bereitstellungsprozesses erstellt werden.
+2.  Die Geräteliste zeigt, dass es vier simulierte Geräte gibt, die im Rahmen des Bereitstellungsprozesses erstellt werden.
 
 3.  Klicken Sie auf ein Gerät in der Geräteliste, um die Gerätedetails anzuzeigen.
 
@@ -89,7 +89,7 @@ Sie benötigen ein aktives Azure-Abonnement, um dieses Lernprogramm auszuführen
 
     ![][img-addnew]
 
-4.  Wählen Sie **Eigene Geräte-ID definieren** aus, und geben Sie einen eindeutigen Geräte-ID-Namen wie **mydevice_01** ein.
+4.  Wählen Sie **Eigene Geräte-ID definieren** aus, und geben Sie einen eindeutigen Geräte-ID-Namen wie **mydevice\_01** ein.
 
 5.  Klicken Sie auf **Erstellen**.
 
@@ -130,6 +130,8 @@ Sie benötigen ein aktives Azure-Abonnement, um dieses Lernprogramm auszuführen
 9.  Kehren Sie zur Tabelle **Alarmverlauf** im **Lösungsdashboard** zurück, und beachten Sie die durch die aktualisierte Regel verursachte Verhaltensänderung.
 
     ![][img-newhistory]
+    
+Wenn Sie fertig sind, können Sie die vorkonfigurierte Lösung auf der Website [azureiotsuite.com][lnk-azureiotsuite] aus Ihrem Azure-Abonnement löschen. Dadurch können Sie problemlos alle Ressourcen löschen, die bei der Erstellung der vorkonfigurierten Lösung bereitgestellt wurden.
 
 ## Nächste Schritte
 
@@ -160,4 +162,4 @@ Nachdem Sie jetzt eine funktionsfähige vorkonfigurierte Lösung erstellt haben,
 [lnk-customize]: iot-suite-guidance-on-customizing-preconfigured-solutions.md
 [lnk-predictive]: iot-suite-predictive-overview.md
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

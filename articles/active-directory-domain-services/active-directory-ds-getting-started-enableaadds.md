@@ -12,7 +12,7 @@
 	ms.workload="identity"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="article"
+	ms.topic="get-started-article"
 	ms.date="01/26/2016"
 	ms.author="maheshu"/>
 
@@ -46,7 +46,7 @@ Mit diesem Schritt können Sie Azure AD-Domänendienste für Ihr Verzeichnis ak
    - Die Liste enthält alle Domänen, die für Ihr Azure AD-Verzeichnis konfiguriert wurden, einschließlich überprüfter und nicht überprüfter Domänen, die Sie auf der Registerkarte „Domänen“ konfigurieren.
    - Außerdem können Sie durch eine entsprechende Eingabe einen benutzerdefinierten Domänennamen zu dieser Liste hinzufügen.
 
-     >[AZURE.WARNING] Stellen Sie sicher, dass das Domänenpräfix des angegebenen Domänennamens (z. B. „Contoso“ im Domänennamen „contoso.local“) weniger als 15 Zeichen lang ist. Das Erstellen von Azure Active Directory-Domänendienste-Domänen mit einem Domänenpräfix von mehr als 15 Zeichen ist nicht möglich.
+     > [AZURE.WARNING] Stellen Sie sicher, dass das Domänenpräfix des angegebenen Domänennamens (z. B. „Contoso“ im Domänennamen „contoso.local“) weniger als 15 Zeichen lang ist. Das Erstellen von Azure Active Directory-Domänendienste-Domänen mit einem Domänenpräfix von mehr als 15 Zeichen ist nicht möglich.
 
 8. Im nächsten Schritt wird ein virtuelles Netzwerk ausgewählt, in dem Azure AD-Domänendienste verfügbar sein soll. Wählen Sie das soeben erstellte virtuelle Netzwerk in der Dropdownliste mit der Bezeichnung **Domänendienste mit diesem virtuellen Netzwerk verbinden** aus.
    - Stellen Sie sicher, dass das angegebene virtuelle Netzwerk zu einer Azure-Region gehört, die von Azure AD-Domänendienste unterstützt wird.
@@ -73,4 +73,4 @@ Mit diesem Schritt können Sie Azure AD-Domänendienste für Ihr Verzeichnis ak
 ---
 [**Nächster Schritt – Aktualisieren der DNS-Einstellungen für das virtuelle Azure-Netzwerk**](active-directory-ds-getting-started-dns.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

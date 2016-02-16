@@ -10,10 +10,10 @@
 <tags
 	ms.service="active-directory"
 	ms.devlang="na"
-	ms.topic="article"
+	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
 	ms.workload="identity"
-	ms.date="01/21/2016"
+	ms.date="02/10/2016"
 	ms.author="kgremban"/>
 
 # Rollenbasierte Access Control in Azure
@@ -198,4 +198,4 @@ Mit der **AssignableScopes**-Eigenschaft der benutzerdefinierten Rolle wird fest
 
 **Wer kann benutzerdefinierte Rollen anzeigen, die für die Zuweisung in einem Bereich verfügbar sind?** Benutzer, die den Vorgang `Microsoft.Authorization/roleDefinition/read` für einen Bereich durchführen können, können die RBAC-Rollen anzeigen, die für die Zuweisung in diesem Bereich verfügbar sind. Alle integrierten Rollen in Azure RBAC ermöglichen das Anzeigen von Rollen, die für die Zuweisung verfügbar sind.
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

@@ -4,7 +4,7 @@
    services="vpn-gateway"
    documentationCenter=""
    authors="cherylmc"
-   manager="carolz"
+   manager="carmonm"
    editor=""
    tags="azure-service-management"/>
 
@@ -14,7 +14,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="12/14/2015"
+   ms.date="02/04/2016"
    ms.author="cherylmc"/>
 
 # Erstellen eines virtuellen Netzwerks mit einer Standort-zu-Standort-VPN-Verbindung mit dem klassischen Azure-Portal
@@ -23,7 +23,7 @@
 - [Azure Classic Portal](vpn-gateway-site-to-site-create.md)
 - [PowerShell - Resource Manager](vpn-gateway-create-site-to-site-rm-powershell.md)
 
-Dieser Artikel führt Sie durch den Erstellungsvorgang eines virtuellen Netzwerks und einer Standort-zu-Standort-VPN-Verbindung mit Ihrem lokalen Netzwerk. Dieser Artikel gilt für das klassische Bereitstellungsmodell. Wenn Sie ein anderes Bereitstellungsmodell für diese Konfiguration suchen, verwenden Sie die Registerkarten oben, um den gewünschten Artikel auszuwählen. Wenn Sie VNets miteinander verbinden möchten, aber keine Verbindung mit einem lokalen Standort erstellen, finden Sie unter [Konfigurieren einer VNet-zu-VNet-Verbindung](virtual-networks-configure-vnet-to-vnet-connection.md) entsprechende Informationen.
+Dieser Artikel führt Sie durch den Erstellungsvorgang eines virtuellen Netzwerks und einer Standort-zu-Standort-VPN-Verbindung mit Ihrem lokalen Netzwerk. Standort-zu-Standort-Verbindungen können für standortübergreifende Konfigurationen und Hybridkonfigurationen verwendet werden. Dieser Artikel gilt für das **klassische** Bereitstellungsmodell. Wenn Sie eine Standort-zu-Standort-Verbindung für das **Ressourcen-Manager**-Bereitstellungsmodell erstellen möchten, finden Sie Informationen dazu unter [Konfigurieren einer Standort-zu-Standort-Verbindung mit dem Azure-Ressourcen-Manager und PowerShell](vpn-gateway-create-site-to-site-rm-powershell.md). Wenn Sie VNets miteinander verbinden, aber keine Verbindung mit einem lokalen Standort erstellen möchten, finden Sie unter [Konfigurieren einer VNet-zu-VNet-Verbindung im klassischen Azure-Portal](virtual-networks-configure-vnet-to-vnet-connection.md) oder [Konfigurieren einer VNet-zu-VNet-Verbindung für das Ressourcen-Manager-Bereitstellungsmodell](vpn-gateway-vnet-vnet-rm-ps.md) entsprechende Informationen.
 
 **Informationen zu Azure-Bereitstellungsmodellen**
 
@@ -100,4 +100,4 @@ Sie können dem virtuellen Netzwerk virtuelle Computer hinzufügen. Weitere Info
 
 Wenn Sie eine Verbindung zwischen dem klassischen virtuellen Netzwerk und einem virtuellen Netzwerk, das mit dem Azure-Ressourcen-Manager-Modus erstellt wurde, konfigurieren möchten, finden Sie weitere Informationen unter [Herstellen einer Verbindung zwischen klassischen VNets und VNets des Azure-Ressourcen-Managers](../virtual-network/virtual-networks-arm-asm-s2s-howto.md).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

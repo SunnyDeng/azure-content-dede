@@ -12,8 +12,8 @@
 	ms.workload="identity"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="article"
-	ms.date="01/28/2016"
+	ms.topic="get-started-article"
+	ms.date="02/10/2016"
 	ms.author="kgremban"/>
 
 # Bereitstellen von sicherem Remotezugriff auf lokale Anwendungen
@@ -59,7 +59,8 @@ Der Anwendungsproxy bietet Ihnen noch viele weitere Möglichkeiten:
 - [Sehen Sie sich unsere Videos auf Channel 9 an!](http://channel9.msdn.com/events/Ignite/2015/BRK3864)
 
 ## Zusätzliche Ressourcen
-* [Als Organisation für Azure registrieren](sign-up-organization.md)
-* [Azure-Identität](fundamentals-identity.md)
+- [Artikelindex für die Anwendungsverwaltung in Azure Active Directory](active-directory-apps-index.md)
+- [Als Organisation für Azure registrieren](sign-up-organization.md)
+- [Azure-Identität](fundamentals-identity.md)
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->
