@@ -454,7 +454,7 @@ Wenn Sie die Anwendung jetzt ausführen, werden Sie zum **HomeController** und d
 
 Damit weiß ASP.NET MVC, dass Sie keinen Wert in der URL angegeben haben, um das Routingverhalten zu steuern, dass anstelle von **Home** **Item** als Controller und den Benutzer-**Index** als Ansicht verwendet.
 
-Wenn Sie jetzt die Anwendung ausführen, wird Ihr **ItemController** aufgerufen. In diesem wird die „Repository“-Klasse aufgerufen und die „GetItems“-Methode verwendet, um alle unvollständigen Elemente an die Ansicht **Ansichten**\**Element**\**Index** zurückzugeben.
+Wenn Sie jetzt die Anwendung ausführen, wird Ihr **ItemController** aufgerufen. In diesem wird die „Repository“-Klasse aufgerufen und die „GetItems“-Methode verwendet, um alle unvollständigen Elemente an die Ansicht **Ansichten**\\**Element**\\**Index** zurückzugeben.
 
 Wenn Sie dieses Projekt jetzt erstellen und ausführen, sollte ein Ergebnis ähnlich dem folgenden angezeigt werden.
 
