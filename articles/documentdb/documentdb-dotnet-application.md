@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="hero-article" 
-	ms.date="11/18/2015" 
+	ms.date="02/09/2016" 
 	ms.author="ryancraw"/>
 
 #<a name="_Toc395809351"></a>ASP.NET MVC-Tutorial: Erstellen einer Webanwendung mit DocumentDB
@@ -209,7 +209,7 @@ Nun wird das **V** in MVC erstellt, die Ansichten (Views):
 	- Wählen Sie im Feld **Vorlage** die Option ***Liste*** aus.
 	- Wählen Sie im Feld **Modellklasse** die Option ***Item (todo.Models)*** aus.
 	- Lassen Sie das Feld **Datenkontextklasse** leer. 
-	- Geben Sie im Feld für die Layoutseite ***~/Views/Shared/_Layout.cshtml*** ein.
+	- Geben Sie im Feld für die Layoutseite ***~/Views/Shared/\_Layout.cshtml*** ein.
 	
 	![Screenshot des Dialogfelds "Ansicht hinzufügen"](./media/documentdb-dotnet-application/image18.png)
 
@@ -226,7 +226,7 @@ Nun wird das **V** in MVC erstellt, die Ansichten (Views):
     - Wählen Sie im Feld **Vorlage** die Option ***Erstellen*** aus.
     - Wählen Sie im Feld **Modellklasse** die Option ***Item (todo.Models)*** aus.
     - Lassen Sie das Feld **Datenkontextklasse** leer.
-    - Geben Sie im Feld für die Layoutseite ***~/Views/Shared/_Layout.cshtml*** ein.
+    - Geben Sie im Feld für die Layoutseite ***~/Views/Shared/\_Layout.cshtml*** ein.
     - Klicken Sie auf **Hinzufügen**.
 
 #### <a name="_Toc395888515"></a>Hinzufügen einer Elementbearbeitungsansicht
@@ -240,7 +240,7 @@ Fügen Sie abschließend eine letzte Ansicht zum Bearbeiten eines **Elements** a
     - Wählen Sie im Feld **Vorlage** die Option ***Bearbeiten*** aus.
     - Wählen Sie im Feld **Modellklasse** die Option ***Item (todo.Models)*** aus.
     - Lassen Sie das Feld **Datenkontextklasse** leer. 
-    - Geben Sie im Feld für die Layoutseite ***~/Views/Shared/_Layout.cshtml*** ein.
+    - Geben Sie im Feld für die Layoutseite ***~/Views/Shared/\_Layout.cshtml*** ein.
     - Klicken Sie auf **Hinzufügen**.
 
 Wenn dies abgeschlossen ist, schließen Sie alle CSHTML-Dokumente in Visual Studio, da wir erst später zu diesen Ansichten zurückkehren.
@@ -448,13 +448,13 @@ Jetzt sollte Ihre Lösung ohne Fehler erstellen können.
 
 Wenn Sie die Anwendung jetzt ausführen, werden Sie zum **HomeController** und der Ansicht **Index** dieses Controllers geleitet. Das ist das Standardverhalten für das MVC-Vorlagenprojekt, das am Anfang ausgewählt wurde, das möchten wir jedoch nicht! Zum Ändern dieses Verhaltens muss die Weiterleitung dieser MVC-Anwendung geändert werden.
 
-Öffnen Sie ***App\_Start\RouteConfig.cs***, navigieren Sie zur Zeile, die mit „defaults“ beginnt, und ändern Sie diese auf folgende Weise.
+Öffnen Sie ***App\\_Start\\RouteConfig.cs***, navigieren Sie zur Zeile, die mit „defaults“ beginnt, und ändern Sie diese auf folgende Weise.
 
     	defaults: new { controller = "Item", action = "Index", id = UrlParameter.Optional }
 
 Damit weiß ASP.NET MVC, dass Sie keinen Wert in der URL angegeben haben, um das Routingverhalten zu steuern, dass anstelle von **Home** **Item** als Controller und den Benutzer-**Index** als Ansicht verwendet.
 
-Wenn Sie jetzt die Anwendung ausführen, wird Ihr **ItemController** aufgerufen. In diesem wird die „Repository“-Klasse aufgerufen und die „GetItems“-Methode verwendet, um alle unvollständigen Elemente an die Ansicht **Ansichten**\\**Element**\\**Index** zurückzugeben.
+Wenn Sie jetzt die Anwendung ausführen, wird Ihr **ItemController** aufgerufen. In diesem wird die „Repository“-Klasse aufgerufen und die „GetItems“-Methode verwendet, um alle unvollständigen Elemente an die Ansicht **Ansichten**\**Element**\**Index** zurückzugeben.
 
 Wenn Sie dieses Projekt jetzt erstellen und ausführen, sollte ein Ergebnis ähnlich dem folgenden angezeigt werden.
 
@@ -633,4 +633,4 @@ Wenn Sie Ihrer Anwendung zusätzliche Funktionen hinzufügen möchten, sehen Sie
 [Grundlegende CRUD-Vorgänge in ASP.NET MVC]: http://go.microsoft.com/fwlink/?LinkId=317598
 [GitHub]: https://github.com/Azure-Samples/documentdb-net-todo-app
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

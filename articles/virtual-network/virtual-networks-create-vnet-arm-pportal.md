@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Erstellen eines virtuellen Netzwerks mit dem Azure-Vorschauportal | Microsoft Azure"
-   description="Erfahren Sie, wie Sie ein virtuelles Netzwerk mit dem Azure-Vorschauportal in ARM erstellen | Ressourcen-Manager."
+   pageTitle="Erstellen eines virtuellen Netzwerks mit dem Azure-Portal | Microsoft Azure"
+   description="Erfahren Sie, wie Sie ein virtuelles Netzwerk mit dem Azure-Portal in ARM erstellen | Ressourcen-Manager."
    services="virtual-network"
    documentationCenter=""
    authors="telmosampaio"
@@ -14,10 +14,10 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="12/07/2015"
+   ms.date="02/04/2016"
    ms.author="telmos"/>
 
-# Erstellen eines virtuellen Netzwerks mit dem Azure-Vorschauportal
+# Erstellen eines virtuellen Netzwerks im Azure-Portal
 
 [AZURE.INCLUDE [virtual-networks-create-vnet-selectors-arm-include](../../includes/virtual-networks-create-vnet-selectors-arm-include.md)]
 
@@ -30,4 +30,4 @@
 
 [AZURE.INCLUDE [virtual-networks-create-vnet-arm-pportal-include](../../includes/virtual-networks-create-vnet-arm-pportal-include.md)]
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0211_2016-->

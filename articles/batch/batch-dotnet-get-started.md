@@ -82,10 +82,9 @@ private const string StorageAccountName = "";
 private const string StorageAccountKey  = "";
 ```
 
-Die Kontoanmeldeinformationen für Batch und Storage finden Sie jeweils auf dem Kontoblatt eines Diensts im [Azure-Portal][azure_portal]:
+Die Kontoanmeldeinformationen für Batch und Storage finden Sie jeweils auf dem Kontoblatt eines Diensts im [Azure-Portal][azure_portal]\:
 
-![Batch-Anmeldeinformationen im Portal][9] 
-![Storage-Anmeldeinformationen im Portal][10]<br/>
+![Batch-Anmeldeinformationen im Portal][9] ![Storage-Anmeldeinformationen im Portal][10]<br/>
 
 Nachdem Sie das Projekt mit Ihren Anmeldeinformationen aktualisiert haben, klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf die Projektmappe, und klicken Sie dann auf **Projektmappe erstellen**. Bestätigen Sie die Wiederherstellung von NuGet-Paketen, wenn Sie hierzu aufgefordert werden.
 
@@ -231,7 +230,7 @@ In der Beispielanwendung DotNetTutorial werden die Aufgabentypen JobPreparationT
 
 Bei Shared Access Signatures handelt es sich um Zeichenfolgen, die – bei Einbindung in eine URL – den sicheren Zugriff auf Container und Blobs in Azure Storage ermöglichen. Die Anwendung DotNetTutorial nutzt Shared Access Signature-URLs sowohl von Blobs als auch von Containern und veranschaulicht, wie diese Shared Access Signature-Zeichenfolgen aus dem Storage-Dienst abgerufen werden.
 
-- **Blob-Shared Access Signatures:** In der StartTask des Pools in DotNetTutorial werden Blob-Shared Access Signatures verwendet, wenn die Anwendungsbinärdateien und Eingabedatendateien aus Storage heruntergeladen werden (siehe Schritt 3 unten). Die `UploadFileToContainerAsync`-Methode in der Datei `Program.cs` von DotNetTutorial enthält den Code, mit dem die Shared Access Signature der einzelnen Blobs abgerufen wird. Hierfür wird [CloudblobData.GetSharedAccessSignature][net_sas_blob] aufgerufen.
+- **Blob-Shared Access Signatures:** In der StartTask des Pools in DotNetTutorial werden Blob-Shared Access Signatures verwendet, wenn die Anwendungsbinärdateien und Eingabedatendateien aus Storage heruntergeladen werden (siehe Schritt 3 unten). Die `UploadFileToContainerAsync`-Methode in der Datei `Program.cs` von DotNetTutorial enthält den Code, mit dem die Shared Access Signature der einzelnen Blobs abgerufen wird. Hierfür wird [CloudBlob.GetSharedAccessSignature][net_sas_blob] aufgerufen.
 
 - **Container-Shared Access Signatures:** Wenn die Arbeit einer Aufgabe auf dem Computeknoten abgeschlossen ist, wird die Ausgabedatei in Azure Storage in den Container *output* hochgeladen. Hierfür nutzt TaskApplication eine Container-Shared Access Signature, die im Rahmen des Pfads beim Hochladen der Datei Lese-/Schreibzugriff auf den Container ermöglicht. Das Abrufen der Container-Shared Access Signature ähnelt dem Abrufen der Blob-Shared Access Signature. In DotNetTutorial sehen Sie, dass die `GetContainerSasUrl`-Hilfsmethode für diesen Vorgang [CloudBlobContainer.GetSharedAccessSignature][net_sas_container] aufruft. „Schritt 6: Überwachen von Aufgaben“ enthält weitere Informationen dazu, wie TaskApplication die Container-Shared Access Signature verwendet.
 
@@ -342,7 +341,7 @@ private static async Task<List<CloudTask>> AddTasksAsync(BatchClient batchClient
     foreach (ResourceFile inputFile in inputFiles)
     {
         string taskId = "topNtask" + inputFiles.IndexOf(inputFile);
-        string taskCommandLine = String.Format("cmd /c %AZ_BATCH_NODE_SHARED_DIR%\\TaskApplication.exe {0} 3 \"{1}\"", inputFile.FilePath, outputContainerSasUrl);
+        string taskCommandLine = String.Format("cmd /c %AZ_BATCH_NODE_SHARED_DIR%\\TaskApplication.exe {0} 3 "{1}"", inputFile.FilePath, outputContainerSasUrl);
 
         CloudTask task = new CloudTask(taskId, taskCommandLine);
         task.ResourceFiles = new List<ResourceFile> { inputFile };
@@ -413,7 +412,7 @@ Die `MonitorTasks`-Methode in der Datei `Program.cs` von DotNetTutorial enthält
 
 2. **TaskStateMonitor:** [TaskStateMonitor][net_taskstatemonitor] stellt für Batch-.NET-Anwendungen Hilfsprogramme zum Überwachen des Aufgabenstatus bereit. Bei `MonitorTasks` wartet *DotNetTutorial*, bis alle Aufgaben innerhalb eines bestimmten Zeitraums den Status [TaskState.Completed][net_taskstate] erreicht haben. Anschließend wird der Auftrag beendet.
 
-3. **TerminateJobAsync:** Wenn ein Auftrag mit [JobOperations.TerminateJobAsync][net_joboperations_terminatejob] (oder durch das Blockieren von JobOperations.TerminateJob) beendet wird, wird der Auftrag als abgeschlossen gekennzeichnet. Dies ist wichtig, wenn für Ihre Batch-Projektmappe eine [JobReleaseTask][net_jobreltask] verwendet wird. Dies ist eine besondere Art von Aufgabe, die unter [Vorbereitung und Abschluss von Aufträgen](batch-job-prep-release) beschrieben ist.
+3. **TerminateJobAsync:** Wenn ein Auftrag mit [JobOperations.TerminateJobAsync][net_joboperations_terminatejob] (oder durch das Blockieren von JobOperations.TerminateJob) beendet wird, wird der Auftrag als abgeschlossen gekennzeichnet. Dies ist wichtig, wenn für Ihre Batch-Projektmappe eine [JobReleaseTask][net_jobreltask] verwendet wird. Dies ist eine besondere Art von Aufgabe, die unter [Vorbereitung und Abschluss von Aufträgen](batch-job-prep-release.md) beschrieben ist.
 
 Die `MonitorTasks`-Methode aus der Datei `Program.cs` von *DotNetTutorial* wird unten angezeigt:
 
@@ -681,4 +680,4 @@ Nachdem Sie sich jetzt mit dem grundlegenden Workflow einer Batch-Lösung vertra
 [10]: ./media/batch-dotnet-get-started/credentials_storage_sm.png "Storage-Anmeldeinformationen im Portal"
 [11]: ./media/batch-dotnet-get-started/batch_workflow_minimal_sm.png "Batch-Lösungsworkflow (reduziertes Diagramm)"
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

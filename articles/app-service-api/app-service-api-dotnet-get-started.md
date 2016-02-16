@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="dotnet"
 	ms.devlang="na"
 	ms.topic="hero-article"
-	ms.date="01/26/2016"
+	ms.date="02/05/2016"
 	ms.author="tdykstra"/>
 
 # Erste Schritte mit API-Apps und ASP.NET in Azure App Service
@@ -176,7 +176,7 @@ In diesem Abschnitt des Tutorials geht es um die generierten Swagger 2.0-Metada
 
 1. Schließen Sie den Browser.
 
-3. Öffnen Sie im Projekt ToDoListDataAPI im **Projektmappen-Explorer** die Datei *App_Start\SwaggerConfig.cs*, und scrollen Sie dann nach unten zum folgenden Code. Heben Sie die Auskommentierung für diesen Code auf.
+3. Öffnen Sie im Projekt ToDoListDataAPI im **Projektmappen-Explorer** die Datei *App\_Start\\SwaggerConfig.cs*, und scrollen Sie dann nach unten zum folgenden Code. Heben Sie die Auskommentierung für diesen Code auf.
 
 		/*
 		    })
@@ -340,6 +340,8 @@ Gehen Sie hierzu wie folgt vor: Legen Sie die `apiDefinition`-Eigenschaft über 
 		  "url": "https://todolistdataapi.azurewebsites.net/swagger/docs/v1"
 		}
 
+Öffnen Sie die [Datei „azuredeploy.json“ im Repository der Beispielanwendung](https://github.com/azure-samples/app-service-api-dotnet-todo-list/blob/master/azuredeploy.json), um ein Beispiel für eine Azure-Ressourcen-Manager-Vorlage mit JSON für das Festlegen der API-Definitionseigenschaft anzuzeigen.
+
 ## <a id="codegen"></a> Nutzen in einem .NET-Client mit generiertem Clientcode
 
 Einer der Vorteile der Integration von Swagger in Azure API-Apps ist die automatische Codegenerierung. Generierte Clientklassen vereinfachen das Schreiben von Code, mit dem eine API-App aufgerufen wird.
@@ -352,13 +354,13 @@ Sie können Clientcode für eine API-App mit Visual Studio oder über die Befehl
 
 Das Projekt ToDoListAPI enthält bereits den generierten Clientcode. Sie löschen und generieren den Code aber neu, damit die standardmäßige Ziel-URL auf Ihre eigene API-App zurückgesetzt wird.
 
-1. Löschen Sie im **Projektmappen-Explorer** von Visual Studio im Projekt ToDoListAPI den Ordner *ToDoListDataAPI*.
+1. Löschen Sie im **Projektmappen-Explorer** von Visual Studio im Projekt „ToDoListAPI“ den Ordner *ToDoListDataAPI*.
 
 	Dieser Ordner wurde mithilfe des Codegenerierungsprozesses erstellt, den Sie gleich durchlaufen werden.
 
 	![](./media/app-service-api-dotnet-get-started/deletecodegen.png)
 
-2. Klicken Sie mit der rechten Maustaste auf das Projekt ToDoListAPI, und klicken Sie dann auf **Hinzufügen > REST-API-Client**.
+2. Klicken Sie mit der rechten Maustaste auf das Projekt „ToDoListAPI“, und klicken Sie dann auf **Hinzufügen > REST-API-Client**.
 
 	![](./media/app-service-api-dotnet-get-started/codegenmenu.png)
 
@@ -366,7 +368,7 @@ Das Projekt ToDoListAPI enthält bereits den generierten Clientcode. Sie lösche
 
 	![](./media/app-service-api-dotnet-get-started/codegenbrowse.png)
 
-8. Erweitern Sie im Dialogfeld **App Service** die für dieses Tutorial verwendete Ressourcengruppe, und wählen Sie Ihre API-App aus. Klicken Sie anschließend auf **OK**.
+8. Erweitern Sie im Dialogfeld **App Service** die für dieses Lernprogramm verwendete Ressourcengruppe, und wählen Sie Ihre API-App aus. Klicken Sie anschließend auf **OK**.
 
 	In diesem Dialogfeld haben Sie mehrere Möglichkeiten zum Organisieren von API-Apps in der Liste, falls die Liste für den Bildlauf zu lang wird. Außerdem können Sie eine Suchzeichenfolge eingeben, um API-Apps nach dem Namen zu filtern.
 
@@ -388,33 +390,31 @@ Das Projekt ToDoListAPI enthält bereits den generierten Clientcode. Sie lösche
 
 	![](./media/app-service-api-dotnet-get-started/codegenfiles.png)
 
-5. Öffnen Sie im Projekt ToDoListAPI die Datei *Controllers\ToDoListController.cs*, um den Code zum Aufrufen der API mit dem generierten Client anzuzeigen.
+5. Öffnen Sie im Projekt „ToDoListAPI“ die Datei *Controllers\\ToDoListController.cs*, um den Code zum Aufrufen der API mit dem generierten Client anzuzeigen.
 
 	Der folgende Codeausschnitt zeigt, wie mit dem Code das Clientobjekt instanziiert und die Get-Methode aufgerufen wird.
 
-		private ToDoListDataAPI db = new ToDoListDataAPI(new Uri("http://localhost:45914"));
+		private ToDoListDataAPI db = new ToDoListDataAPI(new Uri(ConfigurationManager.AppSettings["toDoListDataAPIURL"]));
 		
 		public ActionResult Index()
 		{
 		    return View(db.Contacts.Get());
 		}
 
-	Mit diesem Code wird die lokale IIS Express-URL des API-Projekts an den Clientklassenkonstruktor übergeben, damit Sie die Anwendung lokal ausführen können. Wenn Sie den Konstruktorparameter weglassen, ist der Standardendpunkt die URL, aus der Sie den Code generiert haben.
+	Der Konstruktorparameter ruft die Endpunkt-URL aus der `toDoListDataAPIURL`-App-Einstellung ab. In der Datei „Web.config“ ist dieser Wert in der `toDoListDataAPIURL`-Einstellung auf die lokale IIS Express-URL des API-Projekts festgelegt, damit Sie die Anwendung lokal ausführen können. Wenn Sie den Konstruktorparameter weglassen, ist der Standardendpunkt die URL, aus der Sie den Code generiert haben.
 
-6. Ihre Clientklasse wird unter einem anderen Namen basierend auf dem Namen Ihrer API-App generiert. Ändern Sie diesen Code, damit der Typname mit den Daten übereinstimmt, die in Ihrem Projekt generiert wurden, und entfernen Sie die URL. Wenn Sie Ihre API-App beispielsweise ToDoListDataAPI0121 nennen, sieht der Code wie folgt aus:
+6. Ihre Clientklasse wird unter einem anderen Namen basierend auf dem Namen Ihrer API-App generiert. Ändern Sie diesen Code, damit der Typname mit den Daten übereinstimmt, die in Ihrem Projekt generiert wurden. Wenn Sie Ihre API-App beispielsweise ToDoListDataAPI0121 nennen, sieht der Code wie folgt aus:
 
-		private ToDoListDataAPI0121 db = new ToDoListDataAPI0121();
+		private ToDoListDataAPI0121 db = new ToDoListDataAPI0121(new Uri(ConfigurationManager.AppSettings["toDoListDataAPIURL"]));
 		
 		public ActionResult Index()
 		{
 		    return View(db.Contacts.Get());
 		}
-
-	Die standardmäßige Ziel-URL ist Ihre API-App ToDoListDataAPI, weil Sie den Code darüber generiert haben. Falls Sie eine andere Methode zum Generieren des Codes verwendet haben, müssen Sie die URL der Azure-API-App unter Umständen genauso wie die lokale URL angeben.
 
 #### Erstellen einer API-App zum Hosten der mittleren Ebene
 
-1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt ToDoListAPI, und klicken Sie dann auf **Veröffentlichen**.
+1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt „ToDoListAPI“, und klicken Sie dann auf **Veröffentlichen**.
 
 3.  Klicken Sie auf der Registerkarte **Profil** des Assistenten **Web veröffentlichen** auf **Microsoft Azure App Service**.
 
@@ -434,6 +434,22 @@ Das Projekt ToDoListAPI enthält bereits den generierten Clientcode. Sie lösche
 
 	Visual Studio erstellt die API-App und das dazugehörige Veröffentlichungsprofil und zeigt den Schritt **Verbindung** des Assistenten **Web veröffentlichen** an.
 
+### Festlegen der Datenebenen-URL in den App-Einstellungen für die mittlere Ebene
+
+1. Navigieren Sie zum [Azure-Portal](https://portal.azure.com/) und dann zum Blatt **API-App** für die API-App, die Sie zum Hosten des Projekts „TodoListAPI“ (mittlere Ebene) erstellt haben.
+
+2. Klicken Sie auf **Einstellungen > Anwendungseinstellungen**.
+
+3. Fügen Sie im Abschnitt **Anwendungseinstellungen** folgenden Schlüssel und Wert hinzu:
+
+	|Schlüssel|Wert|Beispiel
+	|---|---|---|
+	|toDoListDataAPIURL|Name der https://{your-API-App für die Datenebene}.azurewebsites.net|https://todolistdataapi0121.azurewebsites.net|
+
+4. Klicken Sie auf **Speichern**.
+
+	Wenn der Code in Azure ausgeführt wird, überschreibt dieser Wert nun die localhost-URL in der Datei „Web.config“.
+
 ### Bereitstellen des Projekts ToDoListAPI für die neue API-App
 
 3.  Klicken Sie im Schritt **Verbindung** des Assistenten **Web veröffentlichen** auf **Veröffentlichen**.
@@ -444,7 +460,7 @@ Das Projekt ToDoListAPI enthält bereits den generierten Clientcode. Sie lösche
 
 11. Fügen Sie der URL in der Adresszeile des Browsers „swagger“ hinzu, und drücken Sie dann die EINGABETASTE. (Die URL lautet `http://{apiappname}.azurewebsites.net/swagger`.)
 
-	Im Browser wird die gleiche Swagger-Benutzeroberfläche wie vorher für ToDoListDataAPI angezeigt, aber jetzt ist `owner` kein erforderliches Feld. Der Grund ist, dass die API-App der mittleren Ebene diesen Wert für Sie an die API-App der Datenebene sendet.
+	Im Browser wird die gleiche Swagger-Benutzeroberfläche wie vorher für „ToDoListDataAPI“ angezeigt, aber jetzt ist `owner` kein erforderliches Feld. Der Grund ist, dass die API-App der mittleren Ebene diesen Wert für Sie an die API-App der Datenebene sendet.
 
 12. Probieren Sie die Get-Methode und die anderen Methoden aus, um zu überprüfen, ob die API-App der mittleren Ebene die API-App der Datenebene erfolgreich aufruft.
 
@@ -454,4 +470,4 @@ Das Projekt ToDoListAPI enthält bereits den generierten Clientcode. Sie lösche
 
 In diesem Tutorial haben Sie erfahren, wie Sie API-Apps erstellen, Code dafür bereitstellen, Clientcode generieren und die Apps dann über .NET-Clients nutzen. Im nächsten Tutorial der Reihe „Erste Schritte mit API-Apps“ wird gezeigt, wie Sie [API-Apps über JavaScript-Clients mit CORS nutzen](app-service-api-cors-consume-javascript.md).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

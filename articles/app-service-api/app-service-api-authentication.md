@@ -110,10 +110,6 @@ Weitere Informationen zur Authentifizierung mit Azure Active Directory finden Si
 
 ## Nächste Schritte
 
-In diesem Artikel wurden Authentifizierungs- und Autorisierungsfeatures von App Service für API-Apps erläutert.
+In diesem Artikel wurden Authentifizierungs- und Autorisierungsfeatures von App Service für API-Apps erläutert. Im nächsten Lernprogramm erfahren Sie, wie die [Benutzerauthentifizierung in App Service-API-Apps](app-service-api-dotnet-user-principal-auth.md) implementiert wird.
 
-Wenn Sie der Erste-Schritte-Sequenz der Tutorials für ASP.NET- und API-Apps folgen, probieren Sie diese Features im nächsten Tutorial aus, [Benutzerauthentifizierung für API-Apps in Azure App Service](app-service-api-dotnet-user-principal-auth.md).
-
-Weitere Informationen zur Verwendung von Knoten und Java in Azure App Service finden Sie unter [Node.js Developer Center](/develop/nodejs/) und [Java Developer Center](/develop/java/).
-
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->
