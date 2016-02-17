@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/07/2015" 
+	ms.date="01/26/2016" 
 	ms.author="cephalin"/>
 
 # Wiederherstellen einer App in Azure App Service
@@ -22,7 +22,7 @@ In diesem Artikel erfahren Sie, wie Sie eine App Service-App wiederherstellen, d
 
 Mit dem App Service-Wiederherstellungsfeature können Sie Ihre App mit den zugehörigen verknüpften Datenbanken (SQL-Datenbank oder MySQL) bei Bedarf in einem vorherigen Zustand wiederherstellen oder basierend auf der Sicherung der ursprünglichen App eine neue App erstellen. Das Erstellen einer neuen App, die parallel zur letzten Version ausgeführt wird, kann für A/B-Tests nützlich sein.
 
-Die App Service-Wiederherstellungsfunktion ist im [Azure-Portal](http://portal.azure.com) auf dem Blatt **Sicherungen** verfügbar, jedoch nur im Standard- oder Premium-Tarif. Weitere Informationen zum Skalieren Ihrer App im Standard- oder Premium-Tarif finden Sie unter [Skalieren einer App in Azure App Service](web-sites-scale.md). Beachten Sie, dass im Premium-Tarif eine größere Anzahl von täglichen Sicherungen ausgeführt werden kann als im Standard-Tarif.
+Die App Service-Wiederherstellungsfunktion ist im [Azure-Portal](https://portal.azure.com) auf dem Blatt **Sicherungen** verfügbar, jedoch nur im Standard- oder Premium-Tarif. Weitere Informationen zum Skalieren Ihrer App im Standard- oder Premium-Tarif finden Sie unter [Skalieren einer App in Azure App Service](web-sites-scale.md). Beachten Sie, dass im Premium-Tarif eine größere Anzahl von täglichen Sicherungen ausgeführt werden kann als im Standard-Tarif.
 
 <a name="PreviousBackup"></a>
 ## So stellen Sie eine App aus einer zuvor erstellten Sicherung wieder her
@@ -41,7 +41,7 @@ Die App Service-Wiederherstellungsfunktion ist im [Azure-Portal](http://portal.a
 
 	![](./media/web-sites-restore/022ChooseDestination.png)
 	
-	>[AZURE.WARNING]Wenn Sie **Überschreiben** wählen, werden alle Daten im Zusammenhang mit Ihrer vorhandenen App gelöscht. Bevor Sie auf **OK** klicken, stellen Sie sicher, dass alles genau Ihren Vorstellungen entspricht.
+	>[AZURE.WARNING] Wenn Sie **Überschreiben** wählen, werden alle Daten im Zusammenhang mit Ihrer vorhandenen App gelöscht. Bevor Sie auf **OK** klicken, stellen Sie sicher, dass alles genau Ihren Vorstellungen entspricht.
 	
 	Sie können **Vorhandene App** auswählen, um die App-Sicherung in einer anderen App in derselben Ressourcengruppe wiederherzustellen. Bevor Sie diese Option verwenden, sollten Sie bereits eine andere App in der Ressourcengruppe erstellt haben, deren Datenbankkonfiguration derjenigen entspricht, die in der App-Sicherung definiert ist.
 	
@@ -73,14 +73,14 @@ Die App Service-Wiederherstellungsfunktion ist im [Azure-Portal](http://portal.a
 	
 1. Um Details über den Erfolg oder Misserfolg des Wiederherstellungsvorgangs für die App anzuzeigen, wählen Sie den Bereich **Überwachungsprotokoll** auf dem Hauptblatt **Durchsuchen** aus. 
 	
-	Auf dem Blatt **Audio-Protokoll** werden alle Ihre Vorgänge mit Ebene, Status, Ressourcen und Zeitdetails angezeigt.
+	Auf dem Blatt **Überwachungsprotokoll** werden alle Ihre Vorgänge mit Ebene, Status, Ressourcen und Zeitdetails angezeigt.
 	
 2. Scrollen Sie durch das Blatt, um Vorgänge im Zusammenhang mit Ihrer App zu suchen.
 3. Um weitere Details zu einem Vorgang anzuzeigen, wählen Sie den Vorgang in der Liste aus.
 	
 Auf dem Blatt "Details" werden die verfügbaren Informationen im Zusammenhang mit dem Vorgang angezeigt.
 	
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Nächste Schritte
 
@@ -106,4 +106,4 @@ Sie können App Service-Apps auch mithilfe der REST-API sichern und wiederherste
 [OperationDetails]: ./media/web-sites-restore/13OperationDetails.png
  
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

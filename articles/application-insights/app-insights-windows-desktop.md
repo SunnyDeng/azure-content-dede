@@ -183,7 +183,7 @@ Im Gegensatz dazu puffert der Persistenzkanal Telemetriedaten in einer Datei, be
 
 ### Verwenden des Persistenzkanals
 
-1. Importieren Sie das NuGet-Paket [Microsoft.ApplicationInsights.PersistenceChannel](https://www.nuget.org/packages/Microsoft.ApplicationInsights.PersistenceChannel).
+1. Importieren Sie das NuGet-Paket [Microsoft.ApplicationInsights.PersistenceChannel](https://www.nuget.org/packages/Microsoft.ApplicationInsights.PersistenceChannel/1.2.3).
 2. Fügen Sie diesen Code an geeigneter Stelle für die Initialisierung in Ihre App ein:
  
     ```C# 
@@ -274,7 +274,7 @@ namespace ConsoleApplication1
 ```
 
 
-Den Code für den Persistenzkanal finden Sie auf [GitHub](https://github.com/Microsoft/ApplicationInsights-dotnet/tree/master/src/TelemetryChannels/PersistenceChannel).
+Den Code für den Persistenzkanal finden Sie auf [GitHub](https://github.com/Microsoft/ApplicationInsights-dotnet/tree/v1.2.3/src/TelemetryChannels/PersistenceChannel).
 
 
 ## <a name="usage"></a>Nächste Schritte
@@ -299,4 +299,4 @@ Den Code für den Persistenzkanal finden Sie auf [GitHub](https://github.com/Mic
 [CoreNuGet]: https://www.nuget.org/packages/Microsoft.ApplicationInsights
  
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

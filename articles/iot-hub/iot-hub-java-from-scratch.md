@@ -26,7 +26,7 @@ Sie können die [Java-API-Dokumentation][lnk-java-api-docs] (in englischer Sprac
 
 Informationen zu erforderlichen Komponenten und zum Einrichten der Entwicklungsumgebung unter Windows oder Linux finden Sie unter [Prepare your development environment][devbox-setup] (in englischer Sprache).
 
-> [AZURE.NOTE]Es ist wichtig, dass Sie die Schritte in [Prepare your development environment][devbox-setup] abschließen, bevor Sie mit diesem Tutorial beginnen, um die erforderlichen Komponenten zu installieren und die notwendigen JAR-Dateien Ihrem lokalen Maven-Repository hinzuzufügen.
+> [AZURE.NOTE] Es ist wichtig, dass Sie die Schritte in [Prepare your development environment][devbox-setup] abschließen, bevor Sie mit diesem Tutorial beginnen, um die erforderlichen Komponenten zu installieren und die notwendigen JAR-Dateien Ihrem lokalen Maven-Repository hinzuzufügen.
 
 ## Erstellen des Projekts
 
@@ -36,7 +36,7 @@ Informationen zu erforderlichen Komponenten und zum Einrichten der Entwicklungsu
     mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=iot-device -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
     ```
 
-    > [AZURE.NOTE]Es handelt sich um einen einzigen, langen Befehl. Achten Sie darauf, ihn zum Einfügen in das Befehlszeilentool vollständig zu kopieren.
+    > [AZURE.NOTE] Es handelt sich um einen einzigen, langen Befehl. Achten Sie darauf, ihn zum Einfügen in das Befehlszeilentool vollständig zu kopieren.
 
     Dieser Befehl erstellt einen Projektordner mit dem Namen *iot-device* und der standardmäßigen Maven-Projektstruktur. Weitere Informationen finden Sie auf der Apache-Website unter [Maven in 5 Minutes][maven-five-minutes] (in englischer Sprache).
 
@@ -48,7 +48,7 @@ Informationen zu erforderlichen Komponenten und zum Einrichten der Entwicklungsu
     <dependency>
       <groupId>com.microsoft.azure.iothub-java-client</groupId>
       <artifactId>iothub-java-client</artifactId>
-      <version>1.0.0-preview.4</version>
+      <version>1.0.0</version>
     </dependency>
     ```
 
@@ -214,7 +214,7 @@ Um die Protokollierungsgranularität zu ändern, fügen Sie folgende Zeile in di
 .level = {LOGGING_LEVEL}
 ```
 
-> [AZURE.NOTE]Eine Erläuterung der verschiedenen Protokollierungsgrade können Sie [hier](http://docs.oracle.com/javase/7/docs/api/java/util/logging/Level.html) lesen.
+> [AZURE.NOTE]  Eine Erläuterung der verschiedenen Protokollierungsgrade können Sie [hier](http://docs.oracle.com/javase/7/docs/api/java/util/logging/Level.html) lesen.
 
 Legen Sie dann die JVM-Eigenschaft `java.util.logging.config.file={Path to your config.properties file}` fest.
 
@@ -229,4 +229,4 @@ Um AMQP-Frames zu protokollieren, legen Sie die Umgebungsvariable `PN_TRACE_FRM=
 [lnk-device-explorer]: https://github.com/Azure/azure-iot-sdks/blob/master/tools/DeviceExplorer/doc/how_to_use_device_explorer.md
 [lnk-iothub-explorer]: https://github.com/Azure/azure-iot-sdks/blob/master/tools/iothub-explorer/doc/provision_device.md
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0204_2016-->

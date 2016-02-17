@@ -13,12 +13,24 @@
  ms.topic="article"
  ms.tgt_pltfrm="na"
  ms.workload="na"
- ms.date="01/20/2016"
+ ms.date="02/03/2016"
  ms.author="elioda"/>
 
 # Hohe Verfügbarkeit und Notfallwiederherstellung von IoT Hub
 
 Als Azure-Dienst sorgt IoT Hub für hohe Verfügbarkeit, indem Redundanzen auf Azure-Regionsebene bereitgestellt werden, ohne dass zusätzlicher Aufwand für die Lösung anfällt. Azure bietet außerdem eine Reihe von Features zum Erstellen von Lösungen mit Funktionen für die Notfallwiederherstellung oder, falls erforderlich, für die regionsübergreifende Verfügbarkeit. Ihre Lösungen müssen entsprechend entworfen und vorbereitet werden, um diese Features für die Notfallwiederherstellung nutzen zu können, wenn Sie für Geräte oder Benutzer global eine regionsübergreifende hohe Verfügbarkeit ermöglichen möchten. Im Artikel [Azure-Geschäftskontinuität – Technische Anleitung][] werden die integrierten Features von Azure für Geschäftskontinuität und Notfallwiederherstellung beschrieben. Das Dokument [Notfallwiederherstellung und hohe Verfügbarkeit für Azure-Anwendungen][] enthält Architekturinformationen zu Strategien für Azure-Anwendungen in Bezug auf Notfallwiederherstellung und hohe Verfügbarkeit.
+
+## Azure IoT Hub – Notfallwiederherstellung
+Zusätzlich zur Hochverfügbarkeit zwischen Regionen implementiert IoT Hub Failovermechanismen für die Notfallwiederherstellung, die keine Benutzereingriffe erfordern. Die IoT Hub-Notfallwiederherstellung löst sich selbst aus und hat ein Recovery Time Objective (RTO) von 2-26 Stunden und die folgenden Recovery Point Objectives (RPOs).
+
+| Funktionalität | RPO |
+| ------------- | --- |
+| Dienstverfügbarkeit für Registrierungs- und Kommunikationsvorgänge | Möglicher CNAME-Verlust |
+| Identitätsdaten in der Geräte-Identitätsregistrierung | 0-5 Minuten Datenverlust |
+| D2C-Nachrichten | Alle ungelesenen Nachrichten gehen verloren |
+| Vorgangsüberwachungsnachrichten | Alle ungelesenen Nachrichten gehen verloren |
+| C2D-Nachrichten | 0-5 Minuten Datenverlust |
+| C2D-Feedbackwarteschlange | Alle ungelesenen Nachrichten gehen verloren |
 
 ## Regionales Failover mit IoT Hub
 
@@ -48,4 +60,4 @@ Folgen Sie diesen Links, um mehr über Azure IoT Hub zu erfahren:
 [lnk-get-started]: iot-hub-csharp-csharp-getstarted.md
 [Was ist Azure IoT Hub?]: iot-hub-what-is-iot-hub.md
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0204_2016-->

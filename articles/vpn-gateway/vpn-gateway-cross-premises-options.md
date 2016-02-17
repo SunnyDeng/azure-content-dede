@@ -32,7 +32,7 @@ Die von Ihnen gewählte Option kann von einer Vielzahl von Faktoren abhängen:
 Die folgende Tabelle kann Ihnen dabei helfen, die beste Verbindungsoption für Ihre Lösung zu finden.
 
 
-| -                            | **Punkt-zu-Standort**                                                                   | **Standort-zu-Standort**                                                                                              | **ExpressRoute**                                                                                                                      |
+| - | **Punkt-zu-Standort** | **Standort-zu-Standort** | **ExpressRoute** | 
 |------------------------------|---------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
 | **Von Azure unterstützte Dienste** | Cloud ServicesVirtual Machines                                                  | Cloud Services Virtual Machines                                                                           | [Dienstliste](../expressroute/expressroute-faqs.md#supported-azure-services)                                                                                                                |
 | **Typische Bandbreiten**       | In der Regel < 100-Mbit/s-Aggregat                                                  | In der Regel < 100-Mbit/s-Aggregat                                                                            |  50 MBit/s, 100 MBit/s, 200 MBit/s und 500 MBit/s, 1 GBit/s, 2 GBit/s, 5 GBit/s, 10 GBit/s                                                                                            |
@@ -99,4 +99,4 @@ Weitere Informationen über ExpressRoute finden Sie unter [ExpressRoute – Tech
 
 Weitere Informationen finden Sie unter [FAQs zu ExpressRoute](../expressroute/expressroute-faqs.md) und [FAQs zu VPN-Gateway](vpn-gateway-vpn-faq.md).
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0128_2016-->

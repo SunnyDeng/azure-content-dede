@@ -46,7 +46,7 @@ Verwenden Sie nochmals den Assistenten **Web veröffentlichen** zum Bereitstelle
 
 Nachdem Sie die Benutzeroberfläche von Swagger im vorherigen Lernprogramm aktiviert haben, können Sie sie dazu nutzen, um zu überprüfen, ob die API-Anwendung in Azure ausgeführt wird.
 
-1. Wechseln Sie im [Azure-Vorschauportal](https://portal.azure.com) zum Blatt **API-App** für die API-App, die Sie bereitgestellt haben.
+1. Wechseln Sie im [Azure-Vorschauportal](https://portal.azure.com/) zum Blatt **API-App** für die API-App, die Sie bereitgestellt haben.
 
 2. Klicken Sie auf die URL der API-App.
 
@@ -62,7 +62,7 @@ Nachdem Sie die Benutzeroberfläche von Swagger im vorherigen Lernprogramm aktiv
 
 ## Anzeigen der API-Definition im Portal
 
-1. Wechseln Sie im [Azure-Vorschauportal](https://portal.azure.com) zurück zum Blatt **API-App** für die API-App, die Sie bereitgestellt haben.
+1. Wechseln Sie im [Azure-Vorschauportal](https://portal.azure.com/) zurück zum Blatt **API-App** für die API-App, die Sie bereitgestellt haben.
 
 4. Klicken Sie auf **API-Definition**.
  
@@ -129,4 +129,4 @@ API-Apps sind Web-Apps mit zusätzlichen Funktionen für das Hosten von APIs. Si
 
 Informationen zu API-Apps-Funktionen finden Sie unter [Was sind API-Apps?](app-service-api-apps-why-best-platform.md).
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

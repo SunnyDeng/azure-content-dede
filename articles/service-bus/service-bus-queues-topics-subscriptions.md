@@ -158,7 +158,7 @@ Weitere Informationen über mögliche Filterwerte finden Sie in der Dokumentatio
 
 ## Event Hubs
 
-[Event Hubs](http://azure.microsoft.com/services/event-hubs/) ist ein Dienst zur Ereignisverarbeitung, der riesige Mengen an Ereignis- und Telemetriedaten in Azure erfassen kann und gleichzeitig eine niedrige Latenz und hohe Zuverlässigkeit bietet. Dieser Dienst ist in Verbindung mit anderen nachgeschalteten Diensten besonders für Anwendungsinstrumentierung, Benutzeroberflächen oder Workflowverarbeitung sowie für IoT-Szenarien (Internet der Dinge) geeignet.
+[Event Hubs](https://azure.microsoft.com/services/event-hubs/) ist ein Dienst zur Ereignisverarbeitung, der riesige Mengen an Ereignis- und Telemetriedaten in Azure erfassen kann und gleichzeitig eine niedrige Latenz und hohe Zuverlässigkeit bietet. Dieser Dienst ist in Verbindung mit anderen nachgeschalteten Diensten besonders für Anwendungsinstrumentierung, Benutzeroberflächen oder Workflowverarbeitung sowie für IoT-Szenarien (Internet der Dinge) geeignet.
 
 Event Hubs sind ein Konstrukt für das Streamen von Nachrichten, und obwohl sie scheinbar Ähnlichkeiten mit Warteschlangen und Themen aufweisen, gibt es deutliche Unterschiede. So stellen Event Hubs beispielsweise keine Gültigkeitsdauer für Nachrichten, keine Verarbeitung unzustellbarer Nachrichten, Transaktionen oder Bestätigungen bereit, da es sich hierbei nicht um Streamingfeatures, sondern um herkömmliche Brokermessagingfeatures handelt. Event Hubs bieten auch weitere streambezogene Features wie Partitionierung, Beibehaltung der Reihenfolge und erneute Datenstromwiedergabe.
 
@@ -172,4 +172,4 @@ Weitere Informationen und Beispiele für die Verwendung von Service Bus-Brokerme
 - [Ereignis-Hubs-Entwicklerhandbuch](../event-hubs/event-hubs-programming-guide.md)
 - [Brokermessaging: Erweiterte Filter](http://code.msdn.microsoft.com/Brokered-Messaging-6b0d2749)
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0128_2016-->

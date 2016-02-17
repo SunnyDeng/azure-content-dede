@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/15/2015"
+	ms.date="02/03/2016"
 	ms.author="garye"/>
 
 
@@ -29,12 +29,12 @@ Mit dem klassischen Azure-Portal können Sie Ihre Arbeitsbereiche für maschinel
 
 Außerdem finden Sie auf der Dashboard-Registerkarte eine Übersicht über die Nutzung Ihres Arbeitsbereichs und eine Schnellübersicht über Informationen zum Arbeitsbereich.
 
-> [AZURE.TIP]In Azure Machine Learning Studio können Sie auf der Registerkarte **WEBDIENSTE** Machine-Learning-Webdienste hinzufügen, aktualisieren oder löschen.
+> [AZURE.TIP] In Azure Machine Learning Studio können Sie auf der Registerkarte **WEBDIENSTE** Machine-Learning-Webdienste hinzufügen, aktualisieren oder löschen.
 
 So verwalten Sie einen Arbeitsbereich:
 
-1.	Melden Sie sich bei Ihrem Microsoft Azure-Konto an – verwenden Sie hierzu das Konto, das dem Azure-Abonnement zugeordnet ist.
-2.	Klicken Sie im [klassischen Azure Portal](https://manage.windowsazure.com/) im Bereich der Microsoft Azure-Dienste auf **MACHINE LEARNING**.
+1.	Melden Sie sich beim [klassischen Azure-Portal](https://manage.windowsazure.com/) über Ihr Microsoft Azure-Konto an – verwenden Sie hierzu das Konto, das dem Azure-Abonnement zugeordnet ist.
+2.	Klicken Sie im Microsoft Azure-Dienstbereich auf **MACHINE LEARNING**.
 3.	Klicken Sie auf den Arbeitsbereich, den Sie verwalten möchten.
 
 Die Workspace-Seite enthält drei Registerkarten:
@@ -54,7 +54,7 @@ Im Dashboard können Sie die Gesamtnutzung des Arbeitsbereichs ablesen und sich 
 - **Verwendungsübersicht** zeigt den vom Arbeitsbereich genutzten Azure-Speicher an.
 - **Auf einen Blick** enthält eine Zusammenfassung der Informationen des Arbeitsbereichs und nützliche Links.
 
-> [AZURE.NOTE]Über den Link **Bei ML Studio anmelden** wird Machine Learning Studio mit dem Microsoft-Konto geöffnet, an dem Sie gerade angemeldet sind. Das Microsoft-Konto, mit dem Sie sich beim klassischen Azure-Portal angemeldet haben, um einen Arbeitsbereich zu erstellen, verfügt nicht automatisch über die Berechtigung zum Öffnen dieses Arbeitsbereichs. Um einen Arbeitsbereich zu öffnen, müssen Sie an dem Microsoft-Konto angemeldet sein, das als Besitzer des Arbeitsbereichs definiert wurde, oder Sie müssen eine Einladung des Besitzers zur Teilnahme am Arbeitsbereich erhalten haben.
+> [AZURE.NOTE] Über den Link **Bei ML Studio anmelden** wird Machine Learning Studio mit dem Microsoft-Konto geöffnet, an dem Sie gerade angemeldet sind. Das Microsoft-Konto, mit dem Sie sich beim klassischen Azure-Portal angemeldet haben, um einen Arbeitsbereich zu erstellen, verfügt nicht automatisch über die Berechtigung zum Öffnen dieses Arbeitsbereichs. Um einen Arbeitsbereich zu öffnen, müssen Sie an dem Microsoft-Konto angemeldet sein, das als Besitzer des Arbeitsbereichs definiert wurde, oder Sie müssen eine Einladung des Besitzers zur Teilnahme am Arbeitsbereich erhalten haben.
 
 
 ## So erteilen oder blockieren Sie den Zugriff für Benutzer ##
@@ -81,7 +81,7 @@ Ein Webdienst kann einen oder mehrere definierte Endpunkte haben.
 
 - Klicken Sie an einer beliebigen Stelle außerhalb des Namens auf die Endpunktzeile, und klicken Sie dann am unteren Seitenrand auf **ENDPUNKT LÖSCHEN**. Dadurch wird der Endpunkt aus dem Webdienst entfernt.
 
-    > [AZURE.NOTE]Wenn eine Anwendung den Webdienst-Endpunkt gerade verwendet, wenn dieser gelöscht wird, erhält die Anwendung beim nächsten Zugriff auf den Dienst eine Fehlermeldung.
+    > [AZURE.NOTE] Wenn eine Anwendung den Webdienst-Endpunkt gerade verwendet, wenn dieser gelöscht wird, erhält die Anwendung beim nächsten Zugriff auf den Dienst eine Fehlermeldung.
 
 Klicken Sie auf den Namen eines Webdienst-Endpunkts, um diesen zu öffnen. Das Nutzungsdiagramm zeigt die vom Webdienst-Endpunkt verwendeten Computer- und Vorhersage-Ressourcen. Sie können die Ansicht ändern, um relative oder absolute Werte anzuzeigen, und den im Diagramm angezeigten Zeitrahmen ändern.
 
@@ -94,4 +94,4 @@ Klicken Sie auf die Registerkarte **KONFIGURIEREN**, um die Beschreibung zu bear
 [consume]: machine-learning-consume-web-services.md
 [marketplace]: machine-learning-publish-web-service-to-azure-marketplace.md
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0204_2016-->

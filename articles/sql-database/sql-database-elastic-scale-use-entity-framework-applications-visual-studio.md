@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/04/2015" 
+	ms.date="02/04/2016" 
 	ms.author="torsteng;sidneyh"/>
 
 # Clientbibliothek für elastische Datenbanken mit Entity Framework 
  
-Dieses Dokument zeigt, welche Änderungen in einer Entity Framework-Anwendung erforderlich sind, damit diese die Funktionen der [Tools für elastische Datenbanken](sql-database-elastic-scale-introduction.md) nutzen kann. Der Schwerpunkt liegt darauf, [Shard-Zuordnungsverwaltung](sql-database-elastic-scale-shard-map-management.md) und [datenabhängiges Routing](sql-database-elastic-scale-data-dependent-routing.md) mit dem **Code First**-Ansatz von Entity Framework zu erstellen. Das Tutorial [Code First für eine neue Datenbank](http://msdn.microsoft.com/data/jj193542.aspx) für EF wird im gesamten Dokument als Beispiel verwendet. Der zu diesem Dokument gehörige Beispielcode ist Teil der Beispielserie der Tools für elastische Datenbanken in den Visual Studio-Codebeispielen.
+Dieses Dokument zeigt, welche Änderungen in einer Entity Framework-Anwendung erforderlich sind, damit diese die Funktionen der [Tools für elastische Datenbanken](sql-database-elastic-scale-introduction.md) nutzen kann. Der Schwerpunkt liegt darauf, [Shard-Zuordnungsverwaltung](sql-database-elastic-scale-shard-map-management.md) und [datenabhängiges Routing](sql-database-elastic-scale-data-dependent-routing.md) mit dem **Code First-Ansatz** von Entity Framework zu erstellen. Das Lernprogramm [Code First für eine neue Datenbank](http://msdn.microsoft.com/data/jj193542.aspx) für EF wird im gesamten Dokument als Beispiel verwendet. Der zu diesem Dokument gehörige Beispielcode ist Teil der Beispielserie der Tools für elastische Datenbanken in den Visual Studio-Codebeispielen.
   
 ## Herunterladen und Ausführen des Beispielcodes
 So laden Sie den Code für diesen Artikel herunter:
@@ -26,7 +26,7 @@ So laden Sie den Code für diesen Artikel herunter:
 * Visual Studio 2012 oder höher wird vorausgesetzt. 
 * Starten Sie Visual Studio. 
 * Wählen Sie in Visual Studio "Datei -> Neues Projekt" aus. 
-* Navigieren Sie im Dialogfeld „Neues Projekt“ zu **Online Samples** für **Visual C#**, und geben Sie „elastic db“ in das Suchfeld oben rechts ein.
+* Navigieren Sie im Dialogfeld "Neues Projekt" zu **Online Samples** für **Visual C#**, und geben Sie "elastic db" in das Suchfeld oben rechts ein.
     
     ![Entity Framework und elastische Datenbank – Beispielanwendung][1]
 
@@ -64,7 +64,7 @@ Die Shard-Zuordnungsverwaltung schützt den Benutzer vor inkonsistenten Sichten 
 
 Bei gleichzeitiger Verwendung der Clientbibliothek für elastische Datenbanken und der Entity Framework-APIs sollten die folgenden Eigenschaften beibehalten werden:
 
-* **Horizontale Skalierung**: Das Hinzufügen oder Entfernen von Datenbanken zu bzw. aus der Datenbankebene der horizontal partitionierten Anwendung entsprechend den Kapazitätsanforderungen der Anwendung. Dies impliziert die Kontrolle über die Erstellung und Löschung von Datenbanken und den Einsatz der APIs für die Shard-Zuordnungsverwaltung von elastischen Datenbanken, um Datenbanken und die Zuordnung von Shardlets zu verwalten. 
+* **Horizontale Skalierung**: Das Hinzufügen oder Entfernen von Datenbanken zu bzw. aus der Datenbankebene der partitionierten Anwendung entsprechend den Kapazitätsanforderungen der Anwendung. Dies impliziert die Kontrolle über die Erstellung und Löschung von Datenbanken und den Einsatz der APIs für die Shard-Zuordnungsverwaltung von elastischen Datenbanken, um Datenbanken und die Zuordnung von Shardlets zu verwalten. 
 
 * **Konsistenz:** Die Anwendung nutzt das Sharding und verwendet die datenabhängigen Routingfunktionen der Clientbibliothek. Um Beschädigung von Daten oder falsche Abfrageergebnisse zu vermeiden, werden Verbindungen über die Shard-Zuordnungsverwaltung vermittelt. Dadurch bleiben auch Gültigkeitsprüfung und Konsistenz gewahrt.
  
@@ -157,7 +157,7 @@ Verwenden Sie in Ihrem Code den neuen Konstruktor für die DbContext-Unterklasse
      … 
     }
 
-Der neue Konstruktor öffnet die Verbindung mit dem Shard, der die Daten für das durch den Wert von **tenantid1** bezeichnete Shardlet enthält. Der Code im **using**-Block wird für den Zugriff auf **DbSet** für Blogs unter Verwendung von EF für den Shard mit dem Shardlet **tenantid1** nicht verändert. Dadurch wird die Semantik für den Code im using-Block geändert, sodass alle Datenbankvorgänge jetzt auf den einen Shard beschränkt werden, in dem sich **tenantid1** befindet. Beispielsweise würde eine LINQ-Abfrage für die Blogs in **DbSet** nur die Blogs liefern, die im aktuellen Shard gespeichert sind, nicht jedoch die in anderen Shards gespeicherten Blogs.
+Der neue Konstruktor öffnet die Verbindung mit der Shard, die die Daten für das durch den Wert von **tenantid1** bezeichnete Shardlet enthält. Der Code im **using**-Block wird für den Zugriff auf **DbSet** für Blogs unter Verwendung von EF für den Shard mit dem Shardlet **tenantid1** nicht verändert. Dadurch wird die Semantik für den Code im using-Code geändert, sodass alle Datenbankvorgänge jetzt auf den einen Shard beschränkt werden, in dem sich **tenantid1** befindet. Beispielsweise würde eine **DbSet**-Abfrage für die Blogs in DbSet nur die Blogs liefern, die im aktuellen Shard gespeichert sind, nicht jedoch die in anderen Shards gespeicherten Blogs.
 
 #### Behandlung zeitweise auftretender Fehler
 Das Microsoft Patterns & Practices-Team hat [The Transient Fault Handling Application Block](https://msdn.microsoft.com/library/dn440719.aspx) veröffentlicht. Die Bibliothek wird beim Einsatz der Clientbibliothek für elastische Datenbanken in Kombination mit EF verwendet. Stellen Sie jedoch sicher, dass eine vorübergehende Ausnahme die Steuerung an eine Stelle zurückgibt, an der wir sicherstellen können, dass nach einem vorübergehenden Fehler der neue Konstruktor verwendet wird, damit für alle neuen Verbindungsversuche die von uns optimierten Konstruktoren verwendet werden. Andernfalls kann nicht sichergestellt werden, dass die Verbindung mit der richtigen Shard hergestellt und aufrechterhalten wird, wenn die Shard-Zuordnung verändert wird.
@@ -180,7 +180,7 @@ Im folgenden Codebeispiel wird veranschaulicht, wie eine SQL-Wiederholungsrichtl
 
 Im Code oben ist **SqlDatabaseUtils.SqlRetryPolicy** als **SqlDatabaseTransientErrorDetectionStrategy** mit 10 Wiederholungen und einer Wartezeit von 5 Sekunden zwischen den Wiederholungen definiert. Dieser Ansatz ähnelt der Anleitung für EF und durch den Benutzer initiierte Transaktionen (siehe [Limitations with Retrying Execution Strategies (EF6 onwards)](http://msdn.microsoft.com/data/dn307226) (in englischer Sprache)). Beide Situationen erfordern, dass das Anwendungsprogramm den Bereich steuert, in dem die vorübergehende Ausnahme zurückgegeben wird: erneutes Öffnen der Transaktion oder (wie dargestellt) Neuerstellung des Kontexts von einem geeigneten Konstruktor, der die Clientbibliothek für elastische Datenbanken verwendet.
 
-Die Notwendigkeit, den Rückgabeort für vorübergehende Ausnahmen zu steuern, schließt auch die Verwendung der integrierten **SqlAzureExecutionStrategy** ein, die im Lieferumfang von EF enthalten ist. **SqlAzureExecutionStrategy** würde eine Verbindung erneut öffnen, aber ohne **OpenConnectionForKey** zu verwenden. Dadurch werden alle Validierungen umgangen, die im Rahmen des **OpenConnectionForKey**-Aufrufs durchgeführt werden. Das Codebeispiel verwendet stattdessen die integrierte **DefaultExecutionStrategy**, die ebenfalls im Lieferumfang von EF enthalten ist. Im Gegensatz zu **SqlAzureExecutionStrategy** funktioniert sie jedoch ordnungsgemäß zusammen mit der Wiederholungsrichtlinie aus der Verarbeitung vorübergehender Fehler. Die Ausführungsrichtlinie wird in der **ElasticScaleDbConfiguration**-Klasse festgelegt. Beachten Sie, dass wir uns gegen die Verwendung von **DefaultSqlExecutionStrategy** entschieden haben, da sie im Fall vorübergehender Ausnahmen die Verwendung von **SqlAzureExecutionStrategy** nahelegt. Das wiederum führt zu dem bereits beschriebenen fehlerhaften Verhalten. Weitere Informationen über die verschiedenen Wiederholungsrichtlinien und EF finden Sie unter [Verbindungsstabilität in EF](http://msdn.microsoft.com/data/dn456835.aspx).
+Die Notwendigkeit, den Rückgabeort für vorübergehende Ausnahmen zu steuern, schließt auch die Verwendung der integrierten **SqlAzureExecutionStrategy** ein, die im Lieferumfang von EF enthalten ist. **SqlAzureExecutionStrategy** würde eine Verbindung erneut öffnen, aber ohne **OpenConnectionForKey** zu verwenden. Dadurch werden alle Validierungen umgangen, die im Rahmen des **OpenConnectionForKey**-Aufrufs durchgeführt werden. Das Codebeispiel verwendet stattdessen die integrierte **DefaultExecutionStrategy**, die ebenfalls im Lieferumfang von EF enthalten ist. Im Gegensatz zu **SqlAzureExecutionStrategy** funktioniert sie jedoch ordnungsgemäß zusammen mit der Wiederholungsrichtlinie aus der Verabeitung vorübergehender Fehler. Die Ausführungsrichtlinie wird in der **ElasticScaleDbConfiguration**-Klasse festgelegt. Beachten Sie, dass wir uns gegen die Verwendung von **DefaultSqlExecutionStrategy** entschieden haben, da sie im Fall vorübergehender Ausnahmen die Verwendung von **SqlAzureExecutionStrategy** nahelegt. Das wiederum führt zu dem bereits beschriebenen fehlerhaften Verhalten. Weitere Informationen über die verschiedenen Wiederholungsrichtlinien und EF finden Sie unter [Verbindungsstabilität in EF](http://msdn.microsoft.com/data/dn456835.aspx).
 
 #### Neuschreiben von Konstruktoren
 Die oben aufgeführten Codebeispiele veranschaulichen, welche Änderungen am Standardkonstruktor vorgenommen werden müssen, damit Ihre Anwendung das datenabhängige Routing mit Entity Framework verwenden kann. In der folgende Tabelle wird dieser Ansatz für die anderen Konstruktoren verallgemeinert.
@@ -238,7 +238,7 @@ Wenn diese Voraussetzungen erfüllt sind, können wir eine reguläre nicht geöf
         } 
  
 
-Das Beispiel zeigt die **RegisterNewShard**-Methode, die den Shard in der Shardzuordnung registriert, das Schema über EF-Migrationen bereitstellt und eine Zuordnung des Shardingschlüssels im Shard speichert. Sie verwendet einen Konstruktor der **DbContext**-Unterklasse (im Beispiel **ElasticScaleContext**), der eine SQL-Verbindungszeichenfolge als Eingabe akzeptiert. Der Code dieses Konstruktors ist einfach, wie im folgenden Beispiel gezeigt:
+Das Beispiel zeigt die **RegisterNewShard**-Methode, die den Shard in der Shard-Zuordnung registriert, das Schema über EF-Migrationen bereitstellt und eine Zuordnung des Sharding-Schlüssels im Shard speichert. Sie verwendet einen Konstruktor der **DbContext**-Unterklasse (**ElasticScaleContext** im Beispiel), der eine SQL-Verbindungszeichenfolge als Eingabe akzeptiert. Der Code dieses Konstruktors ist einfach, wie im folgenden Beispiel gezeigt:
 
 
         // C'tor to deploy schema and migrations to a new shard 
@@ -270,9 +270,9 @@ Für die in diesem Dokument beschriebenen Vorgehensweisen gelten einige Einschr�
 
 * Wenn eine Anforderung gegeben ist, wird davon ausgegangen, dass die damit verbundene Datenbankverarbeitung innerhalb einer einzelnen Shard erfolgt, die durch den in der Anforderung bereitgestellten Sharding-Schlüssel bezeichnet wird. Allerdings ist diese Annahme nicht immer richtig. Beispielsweise dann, wenn es nicht möglich ist, einen Sharding-Schlüssel verfügbar zu machen. Um dieses Problem zu beheben, stellt die Clientbibliothek die **MultiShardQuery**-Klasse bereit, die eine Verbindungsabstraktion für Abfragen mit mehreren Shards implementiert. Eine detaillierte Erläuterung der Verwendung von **MultiShardQuery** in Kombination mit EF würde den Rahmen dieses Dokuments sprengen.
 
-## Zusammenfassung 
+## Zusammenfassung
 
-Entity Framework-Anwendungen können problemlos von den Tools für elastische Datenbanken in Azure SQL-Datenbank profitieren. Durch die in diesem Dokument beschriebenen Schritte können EF-Anwendungen die Funktionen der Clientbibliothek für elastische Datenbanken für das datenabhängige Routing nutzen, indem die Konstruktoren der **DbContext**-Unterklassen, die in der EF-Anwendung verwendet werden, abgeändert werden. Dadurch werden die erforderlichen Änderungen auf die Stellen begrenzt, an denen bereits **DbContext**-Klassen vorhanden sind. Darüber hinaus können EF-Anwendungen weiterhin die automatische Schemabereitstellung nutzen, indem die Schritte, mit denen die erforderlichen EF-Migrationen aufgerufen werden, mit der Registrierung der neuen Shards und Zuordnungen in der Shard-Zuordnung kombiniert werden.
+Durch die in diesem Dokument beschriebenen Schritte können EF-Anwendungen die Funktionen der Clientbibliothek für elastische Datenbanken für das datenabhängige Routing nutzen, indem die Konstruktoren der **DbContext**-Unterklassen, die in der EF-Anwendung verwendet werden, abgeändert werden. Dadurch werden die erforderlichen Änderungen auf die Stellen begrenzt, an denen bereits **DbContext**-Klassen vorhanden sind. Darüber hinaus können EF-Anwendungen weiterhin die automatische Schemabereitstellung nutzen, indem die Schritte, mit denen die erforderlichen EF-Migrationen aufgerufen werden, mit der Registrierung der neuen Shards und Zuordnungen in der Shard-Zuordnung kombiniert werden.
 
 
 [AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
@@ -281,4 +281,4 @@ Entity Framework-Anwendungen können problemlos von den Tools für elastische Da
 [1]: ./media/sql-database-elastic-scale-use-entity-framework-applications-visual-studio/sample.png
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0204_2016-->

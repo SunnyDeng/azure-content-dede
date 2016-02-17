@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/18/2015"
+	ms.date="01/21/2016"
 	ms.author="billmath;andkjell"/>
 
 # Aktivieren des Geräterückschreibens in Azure AD Connect
@@ -24,11 +24,11 @@ Aktivieren des bedingten Zugriffs basierend auf Geräten auf von ADFS (2012 R2 o
 
 Dies bietet zusätzliche Sicherheit und die Gewissheit, dass nur vertrauenswürdige Geräte auf die Anwendung zugreifen können. Weitere Informationen zum bedingten Zugriff finden Sie unter [Verwalten von Risiken mit bedingtem Zugriff](active-directory-conditional-access.md) und [Einrichten des lokalen bedingten Zugriffs mithilfe der Azure Active Directory-Geräteregistrierung](https://msdn.microsoft.com/library/azure/dn788908.aspx).
 
->[AZURE.NOTE]Für das Geräterückschreiben ist ein Azure AD Premium-Abonnement erforderlich.
+>[AZURE.NOTE] Für das Geräterückschreiben ist ein Azure AD Premium-Abonnement erforderlich.
 
 .
 
->[AZURE.IMPORTANT]Geräte müssen sich in der gleichen Gesamtstruktur befinden wie die Benutzer. Da Geräte mit einer einzelnen Gesamtstruktur zurückgeschrieben werden müssen, unterstützt diese Funktion derzeit keine Bereitstellung mit mehreren Gesamtstrukturen für Benutzer.
+>[AZURE.IMPORTANT] Geräte müssen sich in der gleichen Gesamtstruktur befinden wie die Benutzer. Da Geräte in eine einzelne Gesamtstruktur zurückgeschrieben werden müssen, unterstützt diese Funktion derzeit keine Bereitstellung mit mehreren Gesamtstrukturen für Benutzer.
 
 ## Teil 1: Installieren von Azure AD Connect
 1. Installieren Sie Azure AD Connect mit benutzerdefinierten Einstellungen oder Expresseinstellungen. Es wird empfohlen, zuerst alle Benutzer und Gruppen erfolgreich zu synchronisieren, bevor Sie das Geräterückschreiben aktivieren.
@@ -129,4 +129,4 @@ Zuerst die wichtigen Dinge:
 ## Nächste Schritte
 Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

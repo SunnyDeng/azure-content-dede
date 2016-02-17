@@ -35,7 +35,7 @@ Das Hosten einer SharePoint-Intranetfarm in Azure-Infrastrukturdiensten ist ein 
 
 Im nächste Schritt richten Sie eine SharePoint-Intranetfarm für die Entwicklung bzw. zum Testen ein, die unter Azure gehostet wird.
 
-> [AZURE.NOTE]Microsoft hat die SharePoint Server 2016 IT Preview veröffentlicht. Damit Sie diese Vorschau einfach installieren und testen können, verwenden Sie ein Azure Virtual Machine-Katalogimage, auf dem SharePoint Server 2016 IT Preview und alle erforderlichen Komponenten vorinstalliert sind. Weitere Informationen finden Sie unter [Test the SharePoint Server 2016 IT Preview in Azure](http://azure.microsoft.com/blog/test-sharepoint-server-2016-it-preview-4/) (in englischer Sprache).
+> [AZURE.NOTE] Microsoft hat die SharePoint Server 2016 IT Preview veröffentlicht. Damit Sie diese Vorschau einfach installieren und testen können, verwenden Sie ein Azure Virtual Machine-Katalogimage, auf dem SharePoint Server 2016 IT Preview und alle erforderlichen Komponenten vorinstalliert sind. Weitere Informationen finden Sie unter [Test the SharePoint Server 2016 IT Preview in Azure](https://azure.microsoft.com/blog/test-sharepoint-server-2016-it-preview-4/) (in englischer Sprache).
 
 ## Erstellen einer unter Azure gehosteten SharePoint-Intranetfarm für die Entwicklung bzw. zum Testen
 
@@ -44,7 +44,7 @@ Sie haben zwei Möglichkeiten, wie Sie eine Entwicklungs- bzw. Testumgebung für
 - Virtuelles Nur-Cloud-Netzwerk
 - Standortübergreifendes virtuelles Netzwerk
 
-Sie können diese Entwicklungs- und Testumgebungen im Rahmen Ihres [Visual Studio-Abonnements](http://azure.microsoft.com/pricing/member-offers/msdn-benefits/) oder eines [Azure-Testabonnements](http://azure.microsoft.com/pricing/free-trial/) kostenlos erstellen.
+Sie können diese Entwicklungs- und Testumgebungen im Rahmen Ihres [Visual Studio-Abonnements](https://azure.microsoft.com/pricing/member-offers/msdn-benefits/) oder eines [Azure-Testabonnements](https://azure.microsoft.com/pricing/free-trial/) kostenlos erstellen.
 
 ### Virtuelles Nur-Cloud-Netzwerk
 
@@ -102,4 +102,4 @@ Nach Abschluss der Konfiguration können Sie diese SharePoint-Farm gemäß den I
 
 - Verschaffen Sie sich einen [Überblick](virtual-machines-workload-intranet-sharepoint-overview.md) über den Produktions-Workload, bevor Sie sich die Konfiguration näher anschauen.
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

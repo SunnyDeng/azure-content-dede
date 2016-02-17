@@ -13,12 +13,10 @@
 	ms.tgt_pltfrm="dotnet"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="01/26/2016"
+	ms.date="02/05/2016"
 	ms.author="tdykstra"/>
 
 # Nutzen einer API-App aus JavaScript mit CORS
-
-[AZURE.INCLUDE [app-service-api-get-started-selector](../../includes/app-service-api-get-started-selector.md)]
 
 ## Übersicht
 
@@ -78,6 +76,8 @@ Bei diesen Tools legen Sie die `cors`-Eigenschaft für Ihre Ressource <site name
 		    ]
 		}
 
+Öffnen Sie die [Datei „azuredeploy.json“ im Repository der Beispielanwendung](https://github.com/azure-samples/app-service-api-dotnet-todo-list/blob/master/azuredeploy.json), um ein Beispiel für eine Azure-Ressourcen-Manager-Vorlage mit JSON-Code für die Konfiguration von CORS anzuzeigen.
+
 ## <a id="tutorialstart"></a> Fortsetzen des Erste-Schritte-Tutorials für .NET
 
 Falls Sie die Reihe „Erste Schritte“ für Node.js oder Java und API-Apps durcharbeiten, können Sie mit dem nächsten Artikel fortfahren: [Authentifizierung für App Service-API-Apps](app-service-api-authentication.md).
@@ -110,19 +110,6 @@ In der [ToDoList-Beispielanwendung](https://github.com/Azure-Samples/app-service
 		    };
 		}]);
 
-### Konfigurieren des Projekts ToDoListAngular zum Aufrufen der API-App ToDoListAPI 
-
-Vor der Bereitstellung des Front-Ends in Azure müssen Sie den API-Endpunkt im AngularJS-Projekt so ändern, dass der Code die im vorigen Tutorial erstellte Azure-API-App ToDoListAPI aufruft.
-
-1. Öffnen Sie im Projekt ToDoListAngular die Datei *app/scripts/todoListSvc.js*.
-
-2. Kommentieren Sie die Zeile aus, mit der `apiEndpoint` auf die localhost-URL festgelegt wird, und heben Sie die Auskommentierung für die Zeile auf, mit der für `apiEndPoint` eine URL in der Domäne „azurewebsites.net“ angegeben wird. Ersetzen Sie darüber hinaus den Platzhalter durch den tatsächlichen Namen der zuvor erstellten API-App. Wenn Sie die API-App ToDoListAPI0125 genannt haben, sieht der Code nun aus wie im folgenden Beispiel:
-
-		var apiEndPoint = 'https://todolistapi0125.azurewebsites.net';
-		//var apiEndPoint = 'http://localhost:45914';
-
-3. Speichern Sie die Änderungen.
-
 ### Erstellen einer neuen Web-App für das Projekt ToDoListAngular
 
 Das Verfahren zum Erstellen einer neuen Web-App und das Bereitstellen eines Projekts dafür entspricht der Vorgehensweise im ersten Tutorial dieser Reihe. Die einzige Ausnahme ist, dass Sie den Typ nicht von **Web-App** in **API-App** ändern.
@@ -147,11 +134,59 @@ Das Verfahren zum Erstellen einer neuen Web-App und das Bereitstellen eines Proj
 
 	Visual Studio erstellt die Web-App und das dazugehörige Veröffentlichungsprofil und zeigt den Schritt **Verbindung** des Assistenten **Web veröffentlichen** an.
 
+	Bevor Sie im Assistenten **Web veröffentlichen** auf **Veröffentlichen** klicken, konfigurieren Sie die neue Web-App, um die API-App der mittleren Ebene aufzurufen, die in App Service ausgeführt wird.
+
+### Festlegen der URL für die mittlere Ebene in den Web-App-Einstellungen
+
+1. Navigieren Sie zum [Azure-Portal](https://portal.azure.com/) und dann zum Blatt **Web-App** für die Web-App, die Sie zum Hosten des Projekts TodoListAngular (Front-End) erstellt haben.
+
+2. Klicken Sie auf **Einstellungen > Anwendungseinstellungen**.
+
+3. Fügen Sie im Abschnitt **Anwendungseinstellungen** folgenden Schlüssel und Wert hinzu:
+
+	|Schlüssel|Wert|Beispiel
+	|---|---|---|
+	|toDoListAPIURL|https://{your middle tier API app name = Name Ihrer API-App der mittleren Ebene}.azurewebsites.net|https://todolistapi0121.azurewebsites.net|
+
+4. Klicken Sie auf **Speichern**.
+
+	Wenn der Code in Azure ausgeführt wird, überschreibt dieser Wert nun die localhost-URL in der Datei „Web.config“.
+
+	Der Code, mit dem der Einstellungswert abgerufen wird, ist in *index.cshtml* enthalten:
+
+		<script type="text/javascript">
+		    var apiEndpoint = "@System.Configuration.ConfigurationManager.AppSettings["toDoListAPIURL"]";
+		</script>
+		<script src="app/scripts/todoListSvc.js"></script>
+
+	Im Code in *todoListSvc.js* wird die Einstellung verwendet:
+
+		return {
+		    getItems : function(){
+		        return $http.get(apiEndpoint + '/api/TodoList');
+		    },
+		    getItem : function(id){
+		        return $http.get(apiEndpoint + '/api/TodoList/' + id);
+		    },
+		    postItem : function(item){
+		        return $http.post(apiEndpoint + '/api/TodoList', item);
+		    },
+		    putItem : function(item){
+		        return $http.put(apiEndpoint + '/api/TodoList/', item);
+		    },
+		    deleteItem : function(id){
+		        return $http({
+		            method: 'DELETE',
+		            url: apiEndpoint + '/api/TodoList/' + id
+		        });
+		    }
+		};
+
 ### Bereitstellen des Webprojekts ToDoListAngular für die neue Web-App
 
-*  Klicken Sie im Schritt **Verbindung** des Assistenten **Web veröffentlichen** auf **Veröffentlichen**.
+*  Klicken Sie in Visual Studio im Schritt **Verbindung** des Assistenten **Web veröffentlichen** auf **Veröffentlichen**.
 
-	Visual Studio stellt das Projekt ToDoListAngular in der Web-App bereit und öffnet einen Browser mit der URL der Web-App.
+	Visual Studio stellt das Projekt ToDoListAngular in der neuen Web-App bereit und öffnet einen Browser mit der URL der Web-App.
 
 ### Testen der Anwendung ohne Aktivierung von CORS 
 
@@ -202,7 +237,7 @@ Web-API-CORS-Unterstützung ist flexibler als App Service-CORS-Unterstützung. 
 
 ### Gewusst wie: Aktivieren von CORS im Web-API-Code
 
-In den folgenden Schritten ist der Prozess zum Aktivieren der Web-API-Unterstützung zusammengefasst. Weitere Informationen finden Sie unter [Enabling Cross-Origin Requests in ASP.NET Web API 2](http://www.asp.net/web-api/overview/security/enabling-cross-origin-requests-in-web-api) (Aktivieren von ursprungsübergreifenden Anforderungen in ASP.NET Web-API 2).
+In den folgenden Schritten ist der Prozess zum Aktivieren der Web-API-Unterstützung zusammengefasst. Weitere Informationen finden Sie unter [Aktivieren von ursprungsübergreifenden Anforderungen in ASP.NET Web-API 2](http://www.asp.net/web-api/overview/security/enabling-cross-origin-requests-in-web-api).
 
 1. Fügen Sie in einem Web-API-Projekt, wie im folgenden Beispiel gezeigt, eine `config.EnableCors()`-Codezeile in die **Register**-Methode der **WebApiConfig**-Klasse ein. 
 
@@ -240,4 +275,4 @@ In den folgenden Schritten ist der Prozess zum Aktivieren der Web-API-Unterstüt
 
 In diesem Tutorial haben Sie erfahren, wie Sie App Service-CORS-Unterstützung aktivieren, sodass der JavaScript-Clientcode eine API in einer anderen Domäne aufrufen kann. Im nächsten Artikel der Serie zu ersten Schritten mit API-Apps lernen Sie die [Authentifizierung für App Service-API-Apps](app-service-api-authentication.md) kennen.
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

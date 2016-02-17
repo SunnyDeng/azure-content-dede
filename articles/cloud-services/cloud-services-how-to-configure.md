@@ -29,7 +29,7 @@ Im klassischen Azure-Portal können Sie die am häufigsten für einen Clouddiens
 
 Das klassische Azure-Portal ermöglicht Ihnen auch das [Aktivieren einer Remotedesktopverbindung für eine Rolle in Azure Cloud Services](cloud-services-role-enable-remote-desktop.md)
 
-Während der Konfigurationsupdates kann Azure nur dann eine Dienstverfügbarkeit von 99,95 Prozent sicherstellen, wenn Sie mindestens zwei Rolleninstanzen für jede Rolle haben. In diesem Fall kann ein virtueller Computer Clientanforderungen verarbeiten, während der andere aktualisiert wird. Weitere Informationen finden Sie unter [Vereinbarungen zum Servicelevel](http://azure.microsoft.com/support/legal/sla/).
+Während der Konfigurationsupdates kann Azure nur dann eine Dienstverfügbarkeit von 99,95 Prozent sicherstellen, wenn Sie mindestens zwei Rolleninstanzen für jede Rolle haben. In diesem Fall kann ein virtueller Computer Clientanforderungen verarbeiten, während der andere aktualisiert wird. Weitere Informationen finden Sie unter [Vereinbarungen zum Servicelevel](https://azure.microsoft.com/support/legal/sla/).
 
 ## Ändern eines Clouddiensts
 
@@ -73,7 +73,7 @@ Während der Konfigurationsupdates kann Azure nur dann eine Dienstverfügbarkeit
     
     3. Wenn Ihr Clouddienst Rollen enthält, die über nur eine Instanz verfügen, aktivieren Sie das Kontrollkästchen **Konfiguration auch dann anwenden, wenn mindestens eine Rolle nur eine einzelne Instanz enthält**, um die Konfigurationsupdates zu aktivieren, damit die Rollen fortgesetzt werden können.
     
-        Nur wenn Sie für jede Rolle mindestens zwei Instanzen definieren, kann Azure während der Updates der Dienstkonfiguration eine Verfügbarkeit des Clouddiensts von mindestens 99,95 Prozent garantieren. Weitere Informationen finden Sie unter [Vereinbarungen zum Servicelevel](http://azure.microsoft.com/support/legal/sla/).
+        Nur wenn Sie für jede Rolle mindestens zwei Instanzen definieren, kann Azure während der Updates der Dienstkonfiguration eine Verfügbarkeit des Clouddiensts von mindestens 99,95 Prozent garantieren. Weitere Informationen finden Sie unter [Vereinbarungen zum Servicelevel](https://azure.microsoft.com/support/legal/sla/).
     
     4. Klicken Sie auf **OK** (Häkchen).
 
@@ -86,4 +86,4 @@ Während der Konfigurationsupdates kann Azure nur dann eine Dienstverfügbarkeit
 * [Aktivieren einer Remotedesktopverbindung für eine Rolle in Azure Cloud Services](cloud-services-role-enable-remote-desktop.md)
 * Konfigurieren von [SSL-Zertifikaten](cloud-services-configure-ssl-certificate.md)
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

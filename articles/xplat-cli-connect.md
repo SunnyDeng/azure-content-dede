@@ -14,15 +14,13 @@
 	ms.tgt_pltfrm="command-line-interface"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/30/2015"
+	ms.date="12/29/2015"
 	ms.author="danlep"/>
 
 # Herstellen einer Verbindung mit einem Azure-Abonnement von der Azure Befehlszeilenschnittstelle (Azure-CLI)
 
 Die Azure-Befehlszeilenschnittstelle beinhaltet eine Reihe von plattformübergreifenden Open Source-Befehlen für die Arbeit mit der Azure Platform. Dieser Artikel beschreibt, wie Sie mit der Azure-Befehlszeilenschnittstelle eine Verbindung mit Ihrem Azure-Abonnement herstellen, damit Sie alle Befehle der Befehlszeilenschnittstelle nutzen können. Wenn Sie die Befehlszeilenschnittstelle noch nicht installiert haben, finden Sie alle erforderlichen Informationen unter [Installieren der Azure-Befehlszeilenschnittstelle](xplat-cli-install.md).
 
-
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
 
 Es gibt zwei Möglichkeiten, über die Azure-Befehlszeilenschnittstelle eine Verbindung mit Ihrem Abonnement herzustellen:
@@ -35,7 +33,7 @@ Weitere Informationen zur Authentifizierung und Abonnementverwaltung finden Sie 
 
 Wenn Sie noch kein Azure-Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion][free-trial].
 
->[AZURE.NOTE]Bei Verwendung einer älteren Version der Azure-Befehlszeilenschnittstelle als 0.9.10 können Sie den Befehl `azure login` nur mit Geschäfts- oder Schulkontoidentitäten verwenden, Microsoft-Kontoidentitäten werden dagegen nicht unterstützt. Mit der Azure-Befehlszeilenschnittstelle ab Version 0.9.10 können Sie sich jedoch mit dem interaktiven Befehl `azure login` mit jeder Identität bei Ihrem Konto anmelden.
+>[AZURE.NOTE] Bei Verwendung einer älteren Version der Azure-Befehlszeilenschnittstelle als 0.9.10 können Sie den Befehl `azure login` nur mit Geschäfts- oder Schulkontoidentitäten verwenden, Microsoft-Kontoidentitäten werden dagegen nicht unterstützt. Mit der Azure-Befehlszeilenschnittstelle ab Version 0.9.10 können Sie sich jedoch mit dem interaktiven Befehl `azure login` mit jeder Identität bei Ihrem Konto anmelden.
 >
 Befehlszeilenschnittstellen ab Version 0.9.9 unterstützen die mehrstufige Authentifizierung.
 
@@ -48,7 +46,7 @@ Verwenden Sie den Befehl `azure login` – ohne Argumente – für die interakti
 - einer Geschäfts- oder Schulkontoidentität, für die die Multi-Factor Authentication erforderlich ist, oder
 - einer Microsoft-Kontoidentität, wenn Sie auf die Funktionen des Ressourcen-Manager-Bereitstellungsmodus zugreifen möchten
 
-> [AZURE.NOTE]In beiden Fällen werden Authentifizierung und Autorisierung mit Azure Active Directory durchgeführt. Wenn Sie eine Microsoft-Kontoidentität verwenden, greift der Anmeldeprozess auf Ihre Azure Active Directory-Standarddomäne zu. (Wenn Sie sich für eine kostenlose Testversion registriert haben, ist Ihnen möglicherweise nicht bewusst, dass Azure Active Directory eine Standarddomäne für Ihr Konto erstellt hat.)
+> [AZURE.NOTE]  In beiden Fällen werden Authentifizierung und Autorisierung mit Azure Active Directory durchgeführt. Wenn Sie eine Microsoft-Kontoidentität verwenden, greift der Anmeldeprozess auf Ihre Azure Active Directory-Standarddomäne zu. (Wenn Sie sich für eine kostenlose Testversion registriert haben, ist Ihnen möglicherweise nicht bewusst, dass Azure Active Directory eine Standarddomäne für Ihr Konto erstellt hat.)
 
 Geben Sie `azure login` ein, und befolgen Sie die unten gezeigten Anweisungen:
 
@@ -96,9 +94,9 @@ Wenn Sie nur die klassischen Befehle der Befehlszeilenschnittstelle (über die D
 
 Ihr Standardbrowser wird geöffnet, und Sie werden aufgefordert, sich beim [klassischen Azure-Portal][portal] anzumelden. Nach der Anmeldung wird eine `.publishsettings`-Datei heruntergeladen. Notieren Sie sich den Speicherort der Datei.
 
-	> [AZURE.NOTE] If your account is associated with multiple Azure Active Directory tenants, you may be prompted to select which Active Directory you wish to download a publish settings file for.
-	>
-	> Once selected using the download page, or by visiting the Azure classic portal, the selected Active Directory becomes the default used by the classic portal and download page. Once a default has been established, you will see the text '__click here to return to the selection page__' at the top of the download page. Use the provided link to return to the selection page.
+> [AZURE.NOTE] Wenn Ihr Konto mit mehreren Azure Active Directory-Mandanten verknüpft ist, werden Sie möglicherweise aufgefordert, das Active Directory auszuwählen, für das eine Datei mit Veröffentlichungseinstellungen heruntergeladen werden soll.
+>
+> Die Active Directory-Instanz, die Sie auf der Downloadseite oder im klassischen Azure-Portal ausgewählt haben, wird zur Standardinstanz, die vom klassischen Portal und der Downloadseite verwendet wird. Nachdem eine Standardeinstellung festgelegt wurde, wird am oberen Rand der Downloadseite der Text '__click here to return to the selection page__' (Klicken Sie hier, um zur Auswahlseite zurückzukehren) angezeigt. Klicken Sie auf den bereitgestellten Link, um zur Auswahlseite zurückzukehren.
 
 * Führen Sie den folgenden Befehl aus, um die **Datei mit den Veröffentlichungseinstellungen zu importieren**:
 
@@ -123,7 +121,7 @@ In der oben angeführten Liste gibt die Spalte **Aktuell** das aktuelle Standard
 
 Damit wird das Standardabonnement in "Azure-sub-2" geändert.
 
-> [AZURE.NOTE]Die Änderung des Standardabonnements tritt sofort in Kraft, und es ist eine globale Änderung. Für weitere Befehle der Azure-Befehlszeilenschnittstelle wird das neue Standardabonnement verwendet, unabhängig davon, ob die Befehle in derselben oder einer anderen Befehlsschnittstelleninstanz ausgeführt werden.
+> [AZURE.NOTE] Die Änderung des Standardabonnements tritt sofort in Kraft, und es ist eine globale Änderung. Für weitere Befehle der Azure-Befehlszeilenschnittstelle wird das neue Standardabonnement verwendet, unabhängig davon, ob die Befehle in derselben oder einer anderen Befehlsschnittstelleninstanz ausgeführt werden.
 
 Wenn Sie in der Azure-Befehlszeilenschnittstelle ein anderes Abonnement als das Standardabonnement verwenden, aber das aktuelle Standardabonnement nicht ändern möchten, können Sie die Option `--subscription` und den Namen des Abonnements angeben, das Sie für den Vorgang verwenden möchten.
 
@@ -158,4 +156,4 @@ Unabhängig davon, ob Sie sich mit einem Geschäfts- oder Schulkonto anmelden od
 [cliasm]: virtual-machines/virtual-machines-command-line-tools.md
 [cliarm]: xplat-cli-azure-resource-manager.md
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0204_2016-->

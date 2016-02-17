@@ -32,7 +32,7 @@ Sie erhalten Informationen zu folgenden Themen:
 -	Gewusst wie: Vorbereiten des virtuellen Computers für tomcat7.
 -	Gewusst wie: Installieren von tomcat7.
 
-Es wird vorausgesetzt, dass der Leser bereits über ein Azure-Abonnement verfügt. Falls dies nicht der Fall ist, können Sie sich für eine kostenlose Testversion unter [http://azure.microsoft.com](http://azure.microsoft.com) registrieren. Wenn Sie über ein MSDN-Abonnement verfügen, finden Sie weitere Informationen unter [Microsoft Azure-Sonderpreis: MSDN-, MPN- und Bizspark-Vorteile](http://azure.microsoft.com/pricing/member-offers/msdn-benefits/?c=14-39). Weitere Informationen zu Azure finden Sie unter [Was ist Azure?](http://azure.microsoft.com/overview/what-is-azure/)
+Es wird vorausgesetzt, dass der Leser bereits über ein Azure-Abonnement verfügt. Falls dies nicht der Fall ist, können Sie sich für eine kostenlose Testversion unter [http://azure.microsoft.com](https://azure.microsoft.com/) registrieren. Wenn Sie über ein MSDN-Abonnement verfügen, finden Sie weitere Informationen unter [Microsoft Azure-Sonderpreis: MSDN-, MPN- und Bizspark-Vorteile](https://azure.microsoft.com/pricing/member-offers/msdn-benefits/?c=14-39). Weitere Informationen zu Azure finden Sie unter [Was ist Azure?](https://azure.microsoft.com/overview/what-is-azure/)
 
 In diesem Artikel wird davon ausgegangen, dass Sie über allgemeine Kenntnisse zu tomcat und Linux verfügen.
 
@@ -306,4 +306,4 @@ Nachdem die Verbindung hergestellt wurde, müsste in etwa Folgendes angezeigt we
 [17]: ./media/virtual-machines-linux-setup-tomcat7-linux/virtual-machines-linux-setup-tomcat7-linux-17.png
 [18]: ./media/virtual-machines-linux-setup-tomcat7-linux/virtual-machines-linux-setup-tomcat7-linux-18.png
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

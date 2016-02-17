@@ -36,7 +36,7 @@ Um Probleme in Clientanwendungen mit Microsoft Azure-Speicher zu beheben, könne
 
 	- **Speicherprotokollierung** erfasst jede Anfrage an die Azure-Speicherdienste in einem serverseitigen Protokoll. Das Protokoll erfasst ausführliche Daten für jede Anfrage, einschließlich des ausgeführten Vorgangs, des Status des Vorgangs und der Latenzinformationen. Weitere Informationen zu den Anfrage- und Antwortdaten, die von der Speicheranalyse in die Protokolle geschrieben werden, finden Sie unter [Protokollformat der Speicheranalyse](http://msdn.microsoft.com/library/azure/hh343259.aspx).
 
-- **Klassisches Azure-Portal**. Sie können die Protokollierung und Metriken für das Speicherkonto im [klassischen Azure-Portal](manage.windowsazure.com) konfigurieren. Sie können auch Diagramme und Grafiken anzeigen, die darstellen, welche Leistung die Anwendung über einen gewissen Zeitraum hinweg erbringt, und Warnungen konfigurieren, die Sie benachrichtigen, wenn die Leistung bezüglich einer bestimmten Metrik von den Erwartungen abweicht.
+- **Klassisches Azure-Portal**. Sie können die Protokollierung und Metriken für das Speicherkonto im [klassischen Azure-Portal](https://manage.windowsazure.com) konfigurieren. Sie können auch Diagramme und Grafiken anzeigen, die darstellen, welche Leistung die Anwendung über einen gewissen Zeitraum hinweg erbringt, und Warnungen konfigurieren, die Sie benachrichtigen, wenn die Leistung bezüglich einer bestimmten Metrik von den Erwartungen abweicht.
 	
 	Informationen zum Konfigurieren der Überwachung im klassischen Azure-Portal finden Sie unter [Überwachen eines Speicherkontos](storage-monitor-storage-account.md).
 
@@ -88,13 +88,13 @@ In diesem Lernprogramm verwenden wir Message Analyzer, um mit drei verschiedenen
 
 ### Konfigurieren der serverseitigen Protokollierung und Metriken
 
-Zunächst müssen wir die Azure-Speicherprotokollierung und -metriken konfigurieren, damit uns Daten von der Clientanwendung zur Analyse vorliegen. Sie können die Protokollierung und die Metriken auf verschiedene Arten konfigurieren: über das [klassische Azure-Portal](manage.windowsazure.com), mithilfe von PowerShell oder programmgesteuert. Weitere Informationen zum Konfigurieren der Protokollierung und der Metriken finden Sie unter [Aktivieren der Speichermetriken und Anzeigen von Metrikdaten](http://msdn.microsoft.com/library/azure/dn782843.aspx) und [Aktivieren der Speicherprotokollierung und Zugreifen auf Protokolldaten](http://msdn.microsoft.com/library/azure/dn782840.aspx) auf MSDN.
+Zunächst müssen wir die Azure-Speicherprotokollierung und -metriken konfigurieren, damit uns Daten von der Clientanwendung zur Analyse vorliegen. Sie können die Protokollierung und die Metriken auf verschiedene Arten konfigurieren: über das [klassische Azure-Portal](https://manage.windowsazure.com), mithilfe von PowerShell oder programmgesteuert. Weitere Informationen zum Konfigurieren der Protokollierung und der Metriken finden Sie unter [Aktivieren der Speichermetriken und Anzeigen von Metrikdaten](http://msdn.microsoft.com/library/azure/dn782843.aspx) und [Aktivieren der Speicherprotokollierung und Zugreifen auf Protokolldaten](http://msdn.microsoft.com/library/azure/dn782840.aspx) auf MSDN.
 
 **Über das klassische Azure-Portal**
 
 Folgen Sie zum Konfigurieren der Protokollierung und der Metriken für das Speicherkonto den Anweisungen unter [Überwachen eines Speicherkontos](storage-monitor-storage-account.md).
 
-> [AZURE.NOTE]Es ist nicht möglich, mithilfe des klassischen Azure-Portals Minutenmetriken festzulegen. Allerdings empfiehlt es sich für dieses Lernprogramm sowie für die Untersuchung von Leistungsproblemen mit Ihrer Anwendung, diese Metriken festzulegen. Sie können die Minutenmetriken wie unten beschrieben mithilfe von PowerShell, programmgesteuert oder über das klassische Azure-Pportal festlegen.
+> [AZURE.NOTE] Es ist nicht möglich, mithilfe des klassischen Azure-Portals Minutenmetriken festzulegen. Allerdings empfiehlt es sich für dieses Lernprogramm sowie für die Untersuchung von Leistungsproblemen mit Ihrer Anwendung, diese Metriken festzulegen. Sie können die Minutenmetriken wie unten beschrieben mithilfe von PowerShell, programmgesteuert oder über das klassische Azure-Pportal festlegen.
 >
 > Beachten Sie, dass das klassische Azure-Portal keine Minutenmetriken, sondern nur Stundenmetriken anzeigen kann.
 
@@ -164,7 +164,7 @@ Erfassen und speichern Sie für das Lernprogramm zunächst eine Netzwerkablaufve
 
 7. Schließen Sie das Dialogfeld, und klicken Sie auf **Restart**, um mit dem Erfassen der Ablaufverfolgung mit dem Hostnamensfilter zu beginnen, sodass nur der Azure-Speichernetzwerkverkehr in die Ablaufverfolgung einbezogen wird.
 
->[AZURE.NOTE]Nach dem Erfassen der Netzwerkablaufverfolgung wird dringend empfohlen, dass Sie die Einstellungen wiederherstellen, die Sie in Fiddler bezüglich der Entschlüsselung von HTTPS-Datenverkehr geändert haben. Deaktivieren Sie im Dialogfeld "Fiddler Options" die Kontrollkästchen **Capture HTTPS CONNECTs** und **Decrypt HTTPS Traffic**.
+>[AZURE.NOTE] Nach dem Erfassen der Netzwerkablaufverfolgung wird dringend empfohlen, dass Sie die Einstellungen wiederherstellen, die Sie in Fiddler bezüglich der Entschlüsselung von HTTPS-Datenverkehr geändert haben. Deaktivieren Sie im Dialogfeld "Fiddler Options" die Kontrollkästchen **Capture HTTPS CONNECTs** und **Decrypt HTTPS Traffic**.
 
 Weitere Informationen finden Sie unter [Using the Network Tracing Features](http://technet.microsoft.com/library/jj674819.aspx) (in englischer Sprache) auf Technet.
 
@@ -172,7 +172,7 @@ Weitere Informationen finden Sie unter [Using the Network Tracing Features](http
 
 Sobald die Anwendung über einen bestimmten Zeitraum hinweg ausgeführt wurde, können Sie die Metrikdiagramme überprüfen, die im klassischen Azure-Portal zur Untersuchung der Dienstleistung angezeigt werden. Zunächst fügen wir die Metrik **Prozentsatz erfolgreich** auf der Seite "Überwachen" hinzu:
 
-1. Navigieren Sie im [klassischen Azure-Portal](manage.windowsazure.com) zum Dashboard für das Speicherkonto, und wählen Sie **Überwachen** aus, um die Überwachungsseite anzuzeigen.
+1. Navigieren Sie im [klassischen Azure-Portal](https://manage.windowsazure.com) zum Dashboard für das Speicherkonto, und wählen Sie **Überwachen** aus, um die Überwachungsseite anzuzeigen.
 2. Klicken Sie auf **Metriken hinzufügen** zum Anzeigen des Dialogfelds **Metriken auswählen**.
 3. Scrollen Sie nach unten zur Gruppe **Prozentsatz erfolgreich**, erweitern Sie sie, und wählen Sie dann wie in der folgenden Abbildung dargestellt **Aggregate** aus. Diese Metrik führt Daten zum erfolgreichen Prozentsatz aus allen Blobvorgängen zusammen.
 
@@ -184,7 +184,7 @@ Im klassischen Azure-Portal wird nun **Prozentsatz erfolgreich** im Überwachung
 
 Weitere Informationen zum Hinzufügen von Metriken auf der Seite "Überwachen" finden Sie unter [Hinzufügen von Metriken zur Metrikentabelle](storage-monitor-storage-account.md#addmonitoringmetrics).
 
-> [AZURE.NOTE]Es dauert einige Zeit, bis die Metrikdaten im klassischen Azure-Portal angezeigt werden, nachdem Sie die Speichermetriken aktiviert haben. Dies liegt daran, dass stündliche Metriken für die vergangene Stunde dort erst angezeigt werden, wenn die Stunde vergangen ist. Darüber hinaus werden Minutenmetriken nicht im klassischen Azure-Portal angezeigt. Je nach Zeitpunkt der Metrikaktivierung kann es also bis zu zwei Stunden dauern, bis die Metrikdaten angezeigt werden.
+> [AZURE.NOTE] Es dauert einige Zeit, bis die Metrikdaten im klassischen Azure-Portal angezeigt werden, nachdem Sie die Speichermetriken aktiviert haben. Dies liegt daran, dass stündliche Metriken für die vergangene Stunde dort erst angezeigt werden, wenn die Stunde vergangen ist. Darüber hinaus werden Minutenmetriken nicht im klassischen Azure-Portal angezeigt. Je nach Zeitpunkt der Metrikaktivierung kann es also bis zu zwei Stunden dauern, bis die Metrikdaten angezeigt werden.
 
 ## Verwenden von AzCopy zum Kopieren von Serverprotokollen in ein lokales Verzeichnis
 
@@ -194,7 +194,7 @@ Sie können das AzCopy-Befehlszeilentool verwenden, um diese serverseitigen Prot
 
 	AzCopy.exe /Source:http://<storageaccountname>.blob.core.windows.net/$logs /Dest:C:\Temp\Logs\Server /Pattern:"blob/2015/01/02" /SourceKey:<storageaccountkey> /S /V
 
-AzCopy steht zum Download auf der Seite [Azure-Downloads](http://azure.microsoft.com/downloads/) zur Verfügung. Ausführliche Informationen zum Verwenden von AzCopy finden Sie unter [Verwenden von AzCopy mit Microsoft Azure Storage](storage-use-azcopy.md).
+AzCopy steht zum Download auf der Seite [Azure-Downloads](https://azure.microsoft.com/downloads/) zur Verfügung. Ausführliche Informationen zum Verwenden von AzCopy finden Sie unter [Verwenden von AzCopy mit Microsoft Azure Storage](storage-use-azcopy.md).
 
 Weitere Informationen zum Herunterladen serverseitiger Protokolle finden Sie unter [Herunterladen von Protokolldaten der Speicherprotokollierung](http://msdn.microsoft.com/library/azure/dn782840.aspx#DownloadingStorageLogginglogdata).
 
@@ -219,7 +219,7 @@ Message Analyzer enthält Ressourcen für Azure Storage, mit denen Sie Server-, 
 
 ![Message Analyzer-Startseite](./media/storage-e2e-troubleshooting-classic-portal/mma-start-page-1.png)
 
-> [AZURE.NOTE]Installieren Sie für dieses Lernprogramm alle angezeigten Azure-Speicherressourcen.
+> [AZURE.NOTE] Installieren Sie für dieses Lernprogramm alle angezeigten Azure-Speicherressourcen.
 
 ### Importieren der Protokolldateien in Message Analyzer
 
@@ -263,7 +263,7 @@ Die Abbildung unten zeigt die Anwendung dieses Ansichtslayouts auf die Beispielp
 
 ![Layout: Azure-Speicheransicht](./media/storage-e2e-troubleshooting-classic-portal/view-layout-client-request-id-module.png)
 
->[AZURE.NOTE]Verschiedene Protokolldateien verfügen über unterschiedliche Spalten, sodass bei der Anzeige der Daten aus verschiedenen Protokolldateien im Analyseraster einige Spalten für bestimmte Zeilen möglicherweise keine Daten enthalten. die Clientprotokollzeilen keine Daten für die Spalten **Timestamp**, **TimeElapsed**, **Source** und **Destination**, da diese Spalten nicht im Clientprotokoll, jedoch in der Netzwerkablaufverfolgung vorhanden sind. Auf ähnliche Weise zeigt die Spalte **Timestamp** Zeitdaten aus dem Serverprotokoll an, jedoch werden keine Daten für die Spalten **TimeElapsed**, **Source** und **Destination** angezeigt, da diese nicht Teil des Serverprotokolls sind.
+>[AZURE.NOTE] Verschiedene Protokolldateien verfügen über unterschiedliche Spalten, sodass bei der Anzeige der Daten aus verschiedenen Protokolldateien im Analyseraster einige Spalten für bestimmte Zeilen möglicherweise keine Daten enthalten. die Clientprotokollzeilen keine Daten für die Spalten **Timestamp**, **TimeElapsed**, **Source** und **Destination**, da diese Spalten nicht im Clientprotokoll, jedoch in der Netzwerkablaufverfolgung vorhanden sind. Auf ähnliche Weise zeigt die Spalte **Timestamp** Zeitdaten aus dem Serverprotokoll an, jedoch werden keine Daten für die Spalten **TimeElapsed**, **Source** und **Destination** angezeigt, da diese nicht Teil des Serverprotokolls sind.
 
 Zusätzlich zur Verwendung der Azure-Speicheransichtslayouts können Sie auch eigene Ansichtslayouts speichern. Sie können andere gewünschte Felder zum Gruppieren von Daten auswählen und die Gruppierung als Teil des benutzerdefinierten Layouts speichern.
 
@@ -294,7 +294,7 @@ Die folgende Abbildung zeigt die Ergebnisse dieser Gruppierung und Filterung. Du
 
 Nach dem Anwenden dieses Filters werden die Zeilen aus dem Clientprotokoll ausgeschlossen, da das Clientprotokoll keine **StatusCode**-Spalte enthält. Zunächst überprüfen wir die Server- und Netzwerkablaufverfolgungs-Protokolle, um die 404-Fehler zu finden, und kehren dann zum Clientprotokoll zurück, um die Clientvorgänge zu untersuchen, die die Fehler verursacht haben.
 
->[AZURE.NOTE]Sie können die Spalte **StatusCode** filtern und dennoch die Daten aller drei Protokolle anzeigen, einschließlich des Clientprotokolls, indem Sie dem Filter einen Ausdruck hinzufügen, der Protokolleinträge mit dem Statuscode null einschließt. Verwenden Sie für das Erstellen dieses Filters folgende Elemente:
+>[AZURE.NOTE] Sie können die Spalte **StatusCode** filtern und dennoch die Daten aller drei Protokolle anzeigen, einschließlich des Clientprotokolls, indem Sie dem Filter einen Ausdruck hinzufügen, der Protokolleinträge mit dem Statuscode null einschließt. Verwenden Sie für das Erstellen dieses Filters folgende Elemente:
 >
 > <code>&#42;StatusCode >= 400 oder !&#42;StatusCode</code>
 >
@@ -350,10 +350,10 @@ Nachdem Sie nun mit der Verwendung von Message Analyzer zum Analysieren Ihrer Da
 | HTTP-Zunahme von PercentThrottlingError | HTTP.Response.StatusCode == 500 &#124;&#124; HTTP.Response.StatusCode == 503 | Netzwerk |
 | Zunahme von PercentTimeoutError | HTTP.Response.StatusCode == 500 | Netzwerk |
 | Zunahme von PercentTimeoutError (alle) |    *StatusCode == 500 | All |
-| Zunahme von PercentNetworkError | AzureStorageClientDotNetV4.EventLogEntry.Level < 2 | Client |
-| HTTP 403 (Verboten)-Meldungen | HTTP.Response.StatusCode == 403 | Network |
-| HTTP 404 (Nicht gefunden)-Meldungen | HTTP.Response.StatusCode == 404 | Network |
-| 404 (Alle) | *StatusCode == 404 | All |
+| Zunahme von PercentNetworkError | AzureStorageClientDotNetV4.EventLogEntry.Level < 2 | Client | 
+| HTTP 403 (Verboten)-Meldungen | HTTP.Response.StatusCode == 403 | Network | 
+| HTTP 404 (Nicht gefunden)-Meldungen | HTTP.Response.StatusCode == 404 | Network | 
+| 404 (Alle) | *StatusCode == 404 | All | 
 | Autorisierungsproblem für Shared Access Signature (SAS) | AzureStorageLog.RequestStatus == "SASAuthorizationError" | Network |
 | HTTP 409 (Konflikt)-Meldungen | HTTP.Response.StatusCode == 409 | Network |
 | 409 (Alle) | *StatusCode == 409 | All |
@@ -375,4 +375,4 @@ Weitere Informationen zur Problembehandlung in End-to-End-Szenarien im Azure-Spe
  
  
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

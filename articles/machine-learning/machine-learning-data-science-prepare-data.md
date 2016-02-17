@@ -26,7 +26,7 @@ Aufgaben der Vorverarbeitung und Bereinigung, z. B. die Datenuntersuchung, kön
 
 In diesem Artikel werden verschiedene Konzepte und Aufgaben zur Datenverarbeitung beschrieben, die vor oder nach der Erfassung von Daten in Azure Machine Learning durchgeführt werden können.
 
-Ein Beispiel für die Datenuntersuchung und Vorverarbeitung in Azure Machine Learning Studio ist im Video [Vorverarbeitung von Daten in Azure ML Studio](http://azure.microsoft.com/documentation/videos/preprocessing-data-in-azure-ml-studio/) enthalten.
+Ein Beispiel für die Datenuntersuchung und Vorverarbeitung in Azure Machine Learning Studio ist im Video [Vorverarbeitung von Daten in Azure ML Studio](https://azure.microsoft.com/documentation/videos/preprocessing-data-in-azure-ml-studio/) enthalten.
 
 
 ## Warum müssen Daten vorverarbeitet und bereinigt werden?
@@ -111,4 +111,4 @@ Das **Durchsuchen von Daten** ermöglicht einen frühzeitigen Einblick in die Da
 >Jiawei Han, Micheline Kamber und Jian Pei: *Data Mining: Concepts and Techniques*, 3. Auflage, Morgan Kaufmann, 2011
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_0128_2016-->

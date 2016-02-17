@@ -30,7 +30,7 @@ Damit Sie beginnen können, müssen Sie zuerst eine Tabelle in Ihrem Speicherkon
 
 - Weitere Informationen zum programmgesteuerten Bearbeiten von Tabellen finden Sie unter [Verwenden der Tabellenspeicherung aus .NET](storage-dotnet-how-to-use-tables.md).
 - Allgemeine Informationen zum Azure-Speicher finden Sie unter [Speicherdokumentation](https://azure.microsoft.com/documentation/services/storage/).
-- Allgemeine Informationen zu Azure-Clouddiensten finden Sie unter [Cloud Services-Dokumentation](http://azure.microsoft.com/documentation/services/cloud-services/).
+- Allgemeine Informationen zu Azure-Clouddiensten finden Sie unter [Cloud Services-Dokumentation](https://azure.microsoft.com/documentation/services/cloud-services/).
 - Weitere Informationen über das Programmieren von ASP.NET-Anwendungen finden Sie unter [ASP.NET](http://www.asp.net).
 
 ## Zugreifen auf Tabellen im Code
@@ -50,7 +50,7 @@ Um auf Tabellen in Clouddienst-Projekten zuzugreifen, müssen Sie die folgenden 
 		 CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
 		   CloudConfigurationManager.GetSetting("<storage account name>
          _AzureStorageConnectionString"));
-> [AZURE.NOTE]Verwenden Sie den gesamten obigen Code vor dem Code in den folgenden Beispielen.
+> [AZURE.NOTE]  Verwenden Sie den gesamten obigen Code vor dem Code in den folgenden Beispielen.
 
 3. Rufen Sie ein **CloudTableClient**-Objekt ab, um auf die Tabellenobjekte in Ihrem Speicherkonto zu verweisen.
 
@@ -269,4 +269,4 @@ Sie können eine Entität nach dem Abrufen löschen. Der folgende Code sucht nac
 
 [AZURE.INCLUDE [vs-storage-dotnet-blobs-next-steps](../../includes/vs-storage-dotnet-blobs-next-steps.md)]
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0128_2016-->

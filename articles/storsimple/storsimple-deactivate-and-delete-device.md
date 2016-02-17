@@ -12,79 +12,91 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="09/14/2015"
+   ms.date="01/29/2016"
    ms.author="v-sharos" />
 
 # Deaktivieren und Löschen eines StorSimple-Geräts
 
-In diesem Tutorial wird erläutert, wie ein StorSimple-Gerät aus dem Dienst entfernt wird, indem es deaktiviert und anschließend gelöscht wird.
+## Übersicht
 
->[AZURE.NOTE]Sie müssen ein Gerät deaktivieren, bevor Sie es löschen können.
+Möglicherweise möchten Sie ein StorSimple-Gerät außer Betrieb nehmen (z. B. weil Sie es ersetzen oder aufrüsten möchten oder weil Sie StorSimple nicht mehr verwenden). Wenn dies der Fall ist, müssen Sie das Gerät deaktivieren, bevor Sie es löschen können. Das Deaktivieren trennt die Verbindung zwischen dem Gerät und dem entsprechenden StorSimple Manager-Dienst. In diesem Tutorial wird erläutert, wie ein StorSimple-Gerät aus dem Dienst entfernt wird, indem es zuerst deaktiviert und anschließend gelöscht wird.
 
-## Deaktivieren eines Geräts
+Wenn Sie ein Gerät deaktivieren, sind alle Daten, die lokal auf dem Gerät gespeichert wurden, nicht mehr zugänglich. Nur Daten auf dem Gerät, die in der Cloud gespeichert wurden, können wiederhergestellt werden.
 
-Möglicherweise möchten Sie ein Gerät außer Betrieb nehmen. In diesem Fall muss das Gerät deaktiviert werden. Das Deaktivieren trennt die Verbindung zwischen dem Gerät und dem entsprechenden StorSimple Manager-Dienst.
+>[AZURE.WARNING] Die Deaktivierung ist ein ENDGÜLTIGER Vorgang und kann nicht rückgängig gemacht werden. Ein deaktiviertes Gerät kann nicht mit dem StorSimple Manager-Dienst registriert werden, es sei denn, die Werkseinstellungen werden zunächst zurückgesetzt.
+>
+>Das Zurücksetzen der Werkseinstellungen löscht alle Daten, die lokal auf Ihrem Gerät gespeichert wurden. Daher ist es wichtig, dass Sie von allen Daten eine Momentaufnahme in der Cloud machen, bevor Sie ein Gerät deaktivieren. Dadurch können Sie alle Daten zu einem späteren Zeitpunkt wiederherstellen.
 
->[AZURE.WARNING]Die Deaktivierung ist ein ENDGÜLTIGER Vorgang und kann nicht rückgängig gemacht werden. Ein deaktiviertes Gerät kann nicht mit dem StorSimple Manager-Dienst registriert werden, es sei denn, die Werkseinstellungen werden zunächst zurückgesetzt.
+In diesem Tutorial werden folgende Punkte erläutert:
 
-Wenn Sie ein Gerät deaktivieren, sind alle Daten, die lokal auf dem Gerät gespeichert wurden, nicht mehr zugänglich. Nur Daten auf dem Gerät, die in der Cloud gespeichert wurden, können wiederhergestellt werden. Wenn ein Gerät einmal deaktiviert wurde, müssen die Werkseinstellungen zurückgesetzt werden, bevor es erneut mit einem vorhandenen oder neuen Dienst verwendet werden kann. Das Zurücksetzen der Werkseinstellungen löscht alle Daten, die lokal auf Ihrem Gerät gespeichert wurden. Daher ist es wichtig, dass Sie von allen Daten eine Momentaufnahme in der Cloud machen, bevor Sie ein Gerät deaktivieren. Dadurch können Sie alle Daten zu einem späteren Zeitpunkt wiederherstellen.
+- Deaktivieren eines Geräts und Löschen der Daten
+- Deaktivieren eines Geräts und Beibehalten der Daten
 
-Bei einem virtuellen StorSimple-Gerät löscht die Deaktivierung die virtuelle Maschine und die Ressourcen, die bei der Bereitstellung erstellt wurden. Nach der Deaktivierung kann das virtuelle Gerät nicht im vorherigen Zustand wiederhergestellt werden. Vor dem Deaktivieren eines virtuellen StorSimple-Geräts müssen alle von diesem virtuellen Gerät abhängigen Clients und Hosts beendet oder entfernt werden.
+Außerdem wird erläutert, wie die Deaktivierung und das Löschen bei einem virtuellen StorSimple-Gerät funktioniert.
 
-### Deaktivieren und Löschen von Daten
+>[AZURE.NOTE] Vor dem Deaktivieren eines physischen oder virtuellen StorSimple-Geräts müssen alle von diesem Gerät abhängigen Clients und Hosts beendet oder entfernt werden.
 
-Wenn Sie das Gerät vollständig löschen und die Gerätedaten nicht beibehalten wollen, führen Sie die folgenden Schritte aus:
+## Deaktivieren und Löschen von Daten
+
+Wenn Sie das Gerät vollständig löschen und die Daten auf dem Gerät nicht beibehalten möchten, führen Sie die folgenden Schritte aus:
+
+#### So deaktivieren Sie ein Gerät und löschen die Daten  
 
 1. Vor dem Deaktivieren eines Geräts müssen Sie alle Volumecontainer (und die Volumes) löschen, die dem Gerät zugeordnet sind. Sie können Volumecontainer nur löschen, nachdem Sie die zugeordneten Sicherungen gelöscht haben.
 
-2. Deaktivieren Sie das Gerät. Anweisungen finden Sie unter [Schritte zum Deaktivieren](#steps-to-deactivate).
+2. Deaktivieren Sie das Gerät wie folgt:
 
-3. Sie können nach der Deaktivierung das Gerät vollständig löschen. Anweisungen finden Sie unter [Löschen eines Geräts](#delete-a-device).
+    1. Wählen Sie auf der Seite **Geräte** des StorSimple Manager-Diensts das Gerät aus, das Sie deaktivieren möchten, und klicken Sie unten auf der Seite auf **Deaktivieren**.
 
-### Deaktivieren und Beibehalten von Daten
+    2. Eine Bestätigungsmeldung wird angezeigt. Klicken Sie auf **Ja**, um fortzufahren. Der Prozess zum Deaktivieren beginnt und dauert einige Minuten.
 
-Wenn Sie das Gerät löschen, aber die Gerätedaten beibehalten wollen, führen Sie die folgenden Schritte aus:
+3. Sie können nach der Deaktivierung das Gerät vollständig löschen. Das Löschen eines Geräts entfernt es aus der Liste der mit dem Dienst verbundenen Geräte. Der Dienst kann das gelöschte Gerät dann nicht mehr länger verwalten. Führen Sie die folgenden Schritte aus, um das Gerät zu löschen:
 
-1. Deaktivieren Sie das Gerät. Alle Volumecontainer und die Momentaufnahmen des Geräts bleiben erhalten. Anweisungen finden Sie unter [Schritte zum Deaktivieren](#steps-to-deactivate).
+    1. Wählen Sie auf der Seite **Geräte** des StorSimple Manager-Diensts ein deaktiviertes Gerät, das Sie löschen möchten.
+
+    2. Klicken Sie unten auf der Seite auf **Löschen**.
+
+    3. Sie werden aufgefordert, diesen Schritt zu bestätigen. Klicken Sie auf **Ja**, um fortzufahren.
+
+    Es dauert einige Minuten, bis das Gerät gelöscht wird.
+
+## Deaktivieren und Beibehalten von Daten
+
+Wenn Sie das Gerät löschen, aber die Daten beibehalten möchten, führen Sie die folgenden Schritte aus:
+
+####So deaktivieren Sie ein Gerät und behalten die Daten bei 
+
+1. Deaktivieren Sie das Gerät. Alle Volumecontainer und die Momentaufnahmen des Geräts bleiben erhalten.
+
+    1. Wählen Sie auf der Seite **Geräte** des StorSimple Manager-Diensts das Gerät aus, das Sie deaktivieren möchten, und klicken Sie unten auf der Seite auf **Deaktivieren**.
+
+    2. Eine Bestätigungsmeldung wird angezeigt. Klicken Sie auf **Ja**, um fortzufahren. Der Prozess zum Deaktivieren beginnt und dauert einige Minuten.
 
 2. Sie können nun ein Failover der Volumecontainer und der zugehörigen Momentaufnahmen durchführen. Informationen zu den Verfahren finden Sie unter [Ausführen eines Failovers und einer Notfallwiederherstellung für das StorSimple-Gerät](storsimple-device-failover-disaster-recovery.md).
 
-3. Sie können nach der Deaktivierung und der Ausführung des Failovers das Gerät vollständig löschen. Anweisungen finden Sie unter [Löschen eines Geräts](#delete-a-device).
+3. Sie können nach der Deaktivierung und der Ausführung des Failovers das Gerät vollständig löschen. Das Löschen eines Geräts entfernt es aus der Liste der mit dem Dienst verbundenen Geräte. Der Dienst kann das gelöschte Gerät dann nicht mehr länger verwalten. Führen Sie die folgenden Schritte aus, um das Gerät zu löschen:
+ 
+    1. Wählen Sie auf der Seite **Geräte** des StorSimple Manager-Diensts ein deaktiviertes Gerät, das Sie löschen möchten.
 
-### Schritte zum Deaktivieren
+    2. Klicken Sie unten auf der Seite auf **Löschen**.
 
-Verwenden Sie das folgende Verfahren, um ein Gerät zur Vorbereitung auf das Löschen zu deaktivieren.
+    3. Sie werden aufgefordert, diesen Schritt zu bestätigen. Klicken Sie auf **Ja**, um fortzufahren.
 
-#### So deaktivieren Sie ein Gerät
+    Es dauert einige Minuten, bis das Gerät gelöscht wird.
 
-1. Wählen Sie auf der Seite **Geräte** des StorSimple Manager-Diensts das Gerät aus, das Sie deaktivieren möchten, und klicken Sie unten auf der Seite auf **Deaktivieren**.
+## Deaktivieren und Löschen eines virtuellen Geräts
 
-2. Eine Bestätigungsmeldung wird angezeigt. Klicken Sie auf **Ja**, um fortzufahren. Der Prozess zum Deaktivieren beginnt und dauert einige Minuten.
+Wenn Sie ein virtuelles StorSimple-Gerät deaktivieren, wird die Zuordnung des virtuellen Computers aufgehoben. Anschließend können Sie den virtuellen Computer und die bei seiner Bereitstellung erstellten Ressourcen löschen. Nach der Deaktivierung kann das virtuelle Gerät nicht im vorherigen Zustand wiederhergestellt werden.
 
-    Auf einem virtuellen StorSimple-Gerät führt das Deaktivieren zu den folgenden Aktionen:
+Beim Deaktivieren werden die folgenden Aktionen ausgeführt:
 
-      - Das virtuelle StorSimple-Gerät wird entfernt.
+- Das virtuelle StorSimple-Gerät wird entfernt.
 
-      - Die für das virtuelle StorSimple-Gerät erstellten OSDisks und Datenträger werden entfernt.
+- Die für das virtuelle StorSimple-Gerät erstellten OSDisks und Datenträger werden entfernt.
 
-      - Der bei der Bereitstellung erstellte gehostete Dienst und das Virtual Network werden beibehalten. Wenn diese Entitäten nicht verwendet werden, sollten sie manuell gelöscht werden.
+- Der bei der Bereitstellung erstellte gehostete Dienst und das Virtual Network werden beibehalten. Wenn diese Entitäten nicht verwendet werden, sollten sie manuell gelöscht werden.
 
-      - Vom virtuellen StorSimple-Gerät erstellte Cloudmomentaufnahmen werden beibehalten.
-
-<!--After the device is deactivated, you will need to perform a failover before you can delete it completely. For failover instructions, go to [Failover and disaster recovery for your StorSimple device](storsimple-device-failover-disaster-recovery.md).-->
-## Löschen eines Geräts
-
-Sie können nur Geräte löschen, die deaktiviert wurden. Das Löschen eines Geräts entfernt es aus der Liste der mit dem Dienst verbundenen Geräte. Der Dienst kann das gelöschte Gerät dann nicht mehr länger verwalten.
-
-#### So löschen Sie ein Gerät
-
-1. Wählen Sie auf der Seite **Geräte** des StorSimple Manager-Diensts ein deaktiviertes Gerät, das Sie löschen möchten.
-
-2. Klicken Sie unten auf der Seite auf **Löschen**.
-
-3. Sie werden aufgefordert, diesen Schritt zu bestätigen. Klicken Sie auf **Ja**, um fortzufahren.
-
-Es dauert einige Minuten, bis das Gerät gelöscht wird.
+- Vom virtuellen StorSimple-Gerät erstellte Cloudmomentaufnahmen werden beibehalten.
 
 ## Nächste Schritte
 - Um das deaktivierte Gerät mit den Werkseinstellungen wiederherzustellen, wechseln Sie zu [Zurücksetzen des Geräts auf die Standardwerkseinstellungen](storsimple-manage-device-controller.md#reset-the-device-to-factory-default-settings).
@@ -93,4 +105,4 @@ Es dauert einige Minuten, bis das Gerät gelöscht wird.
 
 - Weitere Informationen zum Verwenden des StorSimple Manager-Diensts finden Sie unter [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0204_2016-->

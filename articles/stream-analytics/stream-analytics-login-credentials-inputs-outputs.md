@@ -14,7 +14,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="12/04/2015" 
+	ms.date="02/04/2016" 
 	ms.author="jeffstok"/>
 
 #Austauschen von Anmeldeinformationen für Ein- und Ausgaben in Stream Analytics-Aufträgen
@@ -58,7 +58,7 @@ Für andere Ein-/Ausgaben fahren Sie mit Teil 2 fort.
 
 ###SQL-Datenbank
 
->[AZURE.NOTE]Hinweis: Sie müssen eine Verbindung mit dem SQL-Datenbankdienst herstellen. Wir werden die Vorgehensweise anhand der Verwaltungsfunktionen des Azure-Verwaltungsportals erläutern, Sie können jedoch auch clientseitige Tools wie z. B. SQL Server Management Studio verwenden.
+>[AZURE.NOTE] Hinweis: Sie müssen eine Verbindung mit dem SQL-Datenbankdienst herstellen. Wir werden die Vorgehensweise anhand der Verwaltungsfunktionen des Azure-Verwaltungsportals erläutern, Sie können jedoch auch clientseitige Tools wie z. B. SQL Server Management Studio verwenden.
 
 1.  Wechseln Sie zur SQL-Datenbank-Erweiterung des Azure-Verwaltungsportals: ![Grafik14][graphic14]
 2.  Suchen Sie die für den Auftrag verwendete SQL-Datenbank, und **klicken Sie in derselben Zeile auf den Server**: ![Grafik15][graphic15]
@@ -194,4 +194,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 [graphic43]: ./media/stream-analytics-login-credentials-inputs-outputs/43-stream-analytics-login-credentials-inputs-outputs.png
  
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0204_2016-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/07/2016"
+   ms.date="02/01/2016"
    ms.author="lodipalm;barbkess;sonyama"/>
 
 #Nutzen anderer Dienste mit SQL Data Warehouse
@@ -32,14 +32,14 @@ Mit der Power BI-Integration können Sie die Rechenleistung von SQL Data Warehou
 + **Direct Connect**: Eine erweiterte Verbindung mit logischem Pushdown gegen SQL Data Warehouse. Dies ermöglicht schnellere Analysen im größeren Maßstab.
 + **Open in Power BI**: Die Schaltfläche 'Open in Power BI' übergibt für eine nahtlose Verbindung Instanzinformationen an Power BI. 
 
-Weitere Informationen finden Sie unter [Integration in Power BI](../sql-data-warehouse-integrate-power-bi.md) oder in der [Power BI-Dokumentation](http://blogs.msdn.com/b/powerbi/archive/2015/06/24/exploring-azure-sql-data-warehouse-with-power-bi.aspx).
+Weitere Informationen finden Sie unter [Integration in Power BI](./sql-data-warehouse-integrate-power-bi.md) oder in der [Power BI-Dokumentation](http://blogs.msdn.com/b/powerbi/archive/2015/06/24/exploring-azure-sql-data-warehouse-with-power-bi.aspx).
 
 ##Azure Data Factory
 Azure Data Factory bietet Benutzern eine verwaltete Plattform zur Erstellung von Pipelines zum Extrahieren und Laden. Die SQL Data Warehouse-Integration in Azure Data Factory umfasst Folgendes:
 
 + **Gespeicherte Prozeduren**: Orchestrieren Sie die Ausführung von gespeicherten Prozeduren in SQL Data Warehouse.
 
-Weitere Informationen finden Sie unter[Integration in Azure Data Factory](../sql-data-warehouse-integrate-azure-data-factory.md) oder in der [Azure Data Factory-Dokumentation](https://azure.microsoft.com/documentation/services/data-factory/).
+Weitere Informationen finden Sie unter[Integration in Azure Data Factory](./sql-data-warehouse-integrate-azure-data-factory.md) oder in der [Azure Data Factory-Dokumentation](https://azure.microsoft.com/documentation/services/data-factory/).
 
 ##Azure Machine Learning
 Azure Machine Learning ist ein vollständig verwalteter Analytics-Dienst, mit dem Benutzer komplexe Modelle erstellen können, die einen großen Satz von Vorhersagetools nutzen. SQL Data Warehouse wird sowohl als Quelle als auch als Ziel für diese Modelle mit den folgenden Funktionen unterstützt:
@@ -47,14 +47,14 @@ Azure Machine Learning ist ein vollständig verwalteter Analytics-Dienst, mit de
 + **Daten lesen**: skalierte Laufwerkmodelle mit T-SQL gegen SQL Data Warehouse. 
 + **Daten schreiben**: Zurückgeben von Änderungen von jedem Modell zurück an SQL Data Warehouse.
 
-Weitere Informationen finden Sie unter [Integration in Azure Machine Learning](../sql-data-warehouse-integrate-azure-machine-learning.md) oder in der [Azure Machine Learning-Dokumentation](https://azure.microsoft.com/services/machine-learning/).
+Weitere Informationen finden Sie unter [Integration in Azure Machine Learning](./sql-data-warehouse-integrate-azure-machine-learning.md) oder in der [Azure Machine Learning-Dokumentation](https://azure.microsoft.com/services/machine-learning/).
 
 ##Azure Stream Analytics
 Azure Stream Analytics ist eine komplexe, vollständig verwaltete Infrastruktur für die Verarbeitung und Nutzung von Azure Event Hub generierten Ereignisdaten. Die Integration mit SQL Data Warehouse ermöglicht das effiziente Streamen von Daten und die Speicherung neben relationalen Daten, sodass eine tiefergehende, erweiterte Analyse durchgeführt werden kann.
 
 + **Auftragsausgabe**: direktes Senden der Ausgabe von Stream Analytics-Aufträgen an SQL Data Warehouse.
 
-Weitere Informationen finden Sie unter[Integration in Azure Stream Analytics](../sql-data-warehouse-integrate-azure-stream-analytics.md) oder in der [Azure Stream Analytics-Dokumentation](https://azure.microsoft.com/documentation/services/stream-analytics/).
+Weitere Informationen finden Sie unter[Integration in Azure Stream Analytics](./sql-data-warehouse-integrate-azure-stream-analytics.md) oder in der [Azure Stream Analytics-Dokumentation](https://azure.microsoft.com/documentation/services/stream-analytics/).
 
 <!--Image references-->
 
@@ -71,4 +71,4 @@ Weitere Informationen finden Sie unter[Integration in Azure Stream Analytics](..
 
 <!--Other Web references-->
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0204_2016-->

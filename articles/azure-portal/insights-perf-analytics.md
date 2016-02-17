@@ -17,7 +17,7 @@
 
 # Überwachen der Leistung der Azure-Web-App
 
-Im [Azure-Portal](http://portal.azure.com) können Sie festlegen, dass Statistiken und Details zu den Anwendungsabhängigkeiten in Ihren [Azure-Web-Apps](../app-service-web/app-service-web-overview.md) oder [virtuellen Computern](../virtual-machines/virtual-machines-about.md) gesammelt werden.
+Im [Azure-Portal](https://portal.azure.com) können Sie festlegen, dass Statistiken und Details zu den Anwendungsabhängigkeiten in Ihren [Azure-Web-Apps](../app-service-web/app-service-web-overview.md) oder [virtuellen Computern](../virtual-machines/virtual-machines-about.md) gesammelt werden.
 
 Azure unterstützt die Überwachung der Anwendungsleistung (oder *APM*, Application Performance Monitoring) durch die Nutzung von *Erweiterungen*. Diese Erweiterungen werden in Ihrer Anwendung installiert und geben die gesammelten Daten an die Überwachungsdienste zurück.
 
@@ -83,4 +83,4 @@ Nachdem Sie das Blatt geöffnet haben, z. B. für Application Insights, können
 * [Überwachen der Verfügbarkeit und Reaktionsfähigkeit einer beliebigen Webseite](../app-insights-monitor-web-app-availability.md) mit Application Insights, um zu ermitteln, ob eine Seite offline ist.
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

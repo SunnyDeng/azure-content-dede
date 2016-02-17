@@ -20,7 +20,7 @@
 
 # Konfigurieren einer Firewall für die Azure SQL-Datenbank
 
-Die Microsoft Azure SQL-Datenbank bietet einen relationalen Datenbankdienst für Azure und andere internetbasierte Anwendungen. Zum Schutz Ihrer Daten verhindert die Firewall der SQL-Datenbank jeglichen Zugriff auf Ihren SQL-Datenbankserver, bis Sie angeben, welche Computer zugriffsberechtigt sind. Die Datenbankfirewall gewährt den Zugriff auf der Grundlage der Ursprungs-IP-Adresse der jeweiligen Anforderung.
+Die Microsoft Azure SQL-Datenbank bietet einen relationalen Datenbankdienst für Azure und andere internetbasierte Anwendungen. Zum Schutz Ihrer Daten verhindert die Firewall der SQL-Datenbank jeglichen Zugriff auf Ihren SQL-Datenbankserver, bis Sie angeben, welche Computer zugriffsberechtigt sind. Die Firewall gewährt den Datenbankzugriff auf der Grundlage der Ursprungs-IP-Adresse der jeweiligen Anforderung.
 
 Zum Konfigurieren der Firewall erstellen Sie Firewallregeln, die Bereiche zulässiger IP-Adressen festlegen. Sie können Firewallregeln auf Server- und Datenbankebene erstellen.
 
@@ -31,7 +31,7 @@ Zum Konfigurieren der Firewall erstellen Sie Firewallregeln, die Bereiche zuläs
 
 **Hinweis zu Verbunden:** Die aktuelle Implementierung von Verbunden wird zusammen mit den Dienstebenen „Business“ und „Web“ eingestellt. Erwägen Sie die Bereitstellung von benutzerdefinierten Shardinglösungen, um die Skalierbarkeit, Flexibilität und Leistung zu verbessern. Weitere Informationen zum benutzerdefinierten Sharding finden Sie unter [Horizontales Skalieren von Azure SQL-Datenbanken](https://msdn.microsoft.com/library/dn495641.aspx).
 
-> [AZURE.NOTE]Wenn Sie einen Datenbankverbund in der Azure SQL-Datenbank erstellen, bei dem die Stammdatenbank Firewallregeln auf Datenbankebene enthält, werden die Regeln nicht in die Datenbanken der Verbundmitglieder kopiert. Wenn Sie Firewallregeln auf Datenbankebene für die Verbundmitglieder benötigen, müssen Sie die Regeln für die Verbundmitglieder neu erstellen. Wenn Sie jedoch ein Verbundmitglied, das eine Firewallregel auf Datenbankebene enthält, mit der ALTER FEDERATION … SPLIT-Anweisung in neue Verbundmitglieder aufteilen, weisen die neuen Zielmitglieder dieselben Firewallregeln auf Datenbankebene wie das Quellverbundmitglied auf. Weitere Informationen zu Verbunden finden Sie unter [Verbunde in der Azure SQL-Datenbank](https://msdn.microsoft.com/library/hh597452.aspx).
+> [AZURE.NOTE] Wenn Sie einen Datenbankverbund in der Azure SQL-Datenbank erstellen, bei dem die Stammdatenbank Firewallregeln auf Datenbankebene enthält, werden die Regeln nicht in die Datenbanken der Verbundmitglieder kopiert. Wenn Sie Firewallregeln auf Datenbankebene für die Verbundmitglieder benötigen, müssen Sie die Regeln für die Verbundmitglieder neu erstellen. Wenn Sie jedoch ein Verbundmitglied, das eine Firewallregel auf Datenbankebene enthält, mit der ALTER FEDERATION … SPLIT-Anweisung in neue Verbundmitglieder aufteilen, weisen die neuen Zielmitglieder dieselben Firewallregeln auf Datenbankebene wie das Quellverbundmitglied auf. Weitere Informationen zu Verbunden finden Sie unter [Verbunde in der Azure SQL-Datenbank](https://msdn.microsoft.com/library/hh597452.aspx).
 
 ## Firewall für SQL-Datenbank – Übersicht
 
@@ -41,7 +41,7 @@ Wenn Sie jedoch selektiv nur den Zugriff auf eine der Datenbanken auf dem Azure 
 
 Verbindungsversuche über das Internet und Azure müssen zunächst die Firewall passieren, bevor sie zum Azure SQL-Datenbankserver oder einer Datenbank gelangen können, wie es im folgenden Diagramm dargestellt ist.
 
-   ![Diagramm, das die Konfiguration einer SQL-Datenbankfirewall beschreibt.][1]
+   ![Diagramm zur Beschreibung der Firewallkonfiguration][1]
 
 ## Herstellen einer Verbindung über das Internet
 
@@ -53,7 +53,7 @@ Wenn ein Computer versucht, eine Verbindung mit dem Datenbankserver über das In
 
 - Liegt die IP-Adresse der Anforderung nicht innerhalb der in den Firewallregeln auf Serverebene oder Datenbankebene angegebenen Bereiche, schlägt die Verbindungsanforderung fehl.
 
-> [AZURE.NOTE]Um von Ihrem lokalen Computer aus auf die Azure SQL-Datenbank zuzugreifen, stellen Sie sicher, dass die Firewall im Netzwerk und auf dem lokalen Computer eine ausgehende Kommunikation an TCP-Port 1433 zulässt.
+> [AZURE.NOTE] Um von Ihrem lokalen Computer aus auf die Azure SQL-Datenbank zuzugreifen, stellen Sie sicher, dass die Firewall im Netzwerk und auf dem lokalen Computer eine ausgehende Kommunikation an TCP-Port 1433 zulässt.
 
 
 ## Herstellen einer Verbindung über Azure
@@ -74,7 +74,7 @@ Die erste Firewalleinstellung auf Serverebene kann mit dem [klassischen Portal](
 
 Nachdem Sie die erste Firewall auf Serverebene konfiguriert haben, können Sie den Zugriff auf bestimmte Datenbanken einschränken. Wenn Sie in der Firewallregel auf Datenbankebene einen IP-Adressbereich angeben, der außerhalb des Bereichs liegt, der in der Firewallregel auf Serverebene angegeben ist, können nur die Clients auf die Datenbank zugreifen, die IP-Adressen in dem auf Datenbankebene angegebenen Bereich aufweisen. Es können maximal 128 Firewallregeln auf Datenbankebene für eine Datenbank verwendet werden. Firewallregeln auf Datenbankebene für Master- und Benutzerdatenbanken können über Transact-SQL erstellt und verwaltet werden. Weitere Informationen finden Sie unter [Vorgehensweise: Konfigurieren von Firewalleinstellungen (Azure SQL-Datenbank)](sql-database-configure-firewall-settings.md).
 
-## Programmgesteuertes Verwalten von Datenbankfirewallregeln
+## Programmgesteuertes Verwalten von Firewallregeln
 
 Außer im klassischen Azure-Portal können Firewallregeln mithilfe von Transact-SQL, REST-API und Azure PowerShell programmgesteuert verwaltet werden. In den folgenden Tabellen sind die Gruppen von Befehlen beschrieben, die für die jeweilige Methode zur Verfügung stehen.
 
@@ -109,7 +109,7 @@ Außer im klassischen Azure-Portal können Firewallregeln mithilfe von Transact-
 | [Set-AzureSqlDatabaseServerFirewallRule](https://msdn.microsoft.com/library/azure/dn546739.aspx) | Server | Aktualisiert die Eigenschaften einer vorhandenen Firewallregel auf Serverebene. |
 | [Remove-AzureSqlDatabaseServerFirewallRule](https://msdn.microsoft.com/library/azure/dn546727.aspx) | Server | Entfernt Firewallregeln auf Serverebene. |
 
-> [AZURE.NOTE]Es kann bis zu fünf Minuten dauern, bis die Änderungen der Firewalleinstellungen wirksam werden.
+> [AZURE.NOTE] Es kann bis zu fünf Minuten dauern, bis die Änderungen der Firewalleinstellungen wirksam werden.
 
 ## Problembehandlung der Datenbankfirewall
 
@@ -138,4 +138,4 @@ Wenn der Zugriff auf den Microsoft Azure SQL-Datenbankdienst nicht das erwartete
 <!--Image references-->
 [1]: ./media/sql-database-firewall-configure/sqldb-firewall-1.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

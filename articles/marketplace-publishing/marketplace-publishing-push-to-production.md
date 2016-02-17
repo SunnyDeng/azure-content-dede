@@ -31,9 +31,9 @@ Wenn Sie nach dem Testen von Kundenszenarien, Marketinginhalten und Ähnlichem m
 
   ![Abbildung][img-pubportal-publish-pushproduction]
 
-> [AZURE.IMPORTANT]Solange das Angebot den Status **Entwurf** (also nicht **Für Stagingumgebung freigeben** oder **Für Produktionsumgebungen freigeben**) hat, kann es jederzeit gelöscht werden. Klicken Sie unten auf der Seite auf der Registerkarte **Verlauf** auf **Entwurf verwerfen**, um einen Entwurf zu löschen.
+> [AZURE.IMPORTANT] Solange das Angebot den Status **Entwurf** (also nicht **Für Stagingumgebung freigeben** oder **Für Produktionsumgebungen freigeben**) hat, kann es jederzeit gelöscht werden. Klicken Sie unten auf der Seite auf der Registerkarte **Verlauf** auf **Entwurf verwerfen**, um einen Entwurf zu löschen.
 
-> Bei VM-Images dauert die Replikation in allen Datencentern 24–48 Stunden. Nachdem die Replikation abgeschlossen ist, wird Ihr Angebot in [Azure Marketplace](http://azure.microsoft.com/marketplace) gelistet.
+> Bei VM-Images dauert die Replikation in allen Datencentern 24–48 Stunden. Nachdem die Replikation abgeschlossen ist, wird Ihr Angebot in [Azure Marketplace](https://azure.microsoft.com/marketplace/) gelistet.
 
 ## Nächste Schritte
 Wenn das Angebot live geschaltet wurde, testen Sie die Kundenszenarien in der Produktionsumgebung, um zu prüfen, ob alle Verträge und Funktionen wie bei den Tests und Überprüfungen in der Stagingumgebung funktionieren.
@@ -45,4 +45,4 @@ Wenn das Angebot live geschaltet wurde, testen Sie die Kundenszenarien in der Pr
 [img-pubportal-menu-publish]: media/marketplace-publishing-push-to-production/pubportal-menu-publish.png
 [img-pubportal-publish-pushproduction]: media/marketplace-publishing-push-to-production/pubportal-publish-pushproduction.png
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

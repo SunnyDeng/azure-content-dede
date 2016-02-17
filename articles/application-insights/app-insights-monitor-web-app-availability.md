@@ -207,6 +207,20 @@ Webtest-Plug-Ins bieten dazu die entsprechende Möglichkeit.
 
 Laden Sie nun den Test in das Portal hoch. Bei jeder Ausführung des Tests werden die dynamischen Werte verwendet.
 
+## OAuth-Anmeldung
+
+Wenn sich die Benutzer bei Ihrer App mit dem OAuth-Kennwort (beispielsweise für Microsoft, Google oder Facebook) anmelden, können Sie in Ihrem mehrstufigen Webtest die Anmeldung mithilfe des SAML-Plug-Ins simulieren.
+
+![Beispielwebtest für OAuth](./media/app-insights-monitor-web-app-availability/81.png)
+
+Im Beispieltest werden die folgenden Schritte ausgeführt:
+
+1. Fragen Sie mit der zu testenden Web-App die Adresse des OAuth-Endpunkts ab.
+2. Melden Sie sich mit dem SAML-Plug-In an.
+3. Führen Sie den Rest des Tests in angemeldetem Zustand aus.
+
+Das SAML-Plug-In legt die Variable `Assert` fest, die in Schritt 2 verwendet wird.
+
 ## <a name="edit"></a> Bearbeiten oder Deaktivieren eines Tests
 
 Öffnen Sie einen Test, um ihn zu bearbeiten oder zu deaktivieren.
@@ -249,4 +263,4 @@ Sie können Webtests beispielsweise deaktivieren, während Sie Wartungsarbeiten 
 [qna]: app-insights-troubleshoot-faq.md
 [start]: app-insights-overview.md
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

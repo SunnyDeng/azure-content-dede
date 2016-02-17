@@ -22,13 +22,13 @@
 
 ## Übersicht
 
-Standardmäßig sind für Ihre Speicherdienste keine Speichermetriken aktiviert. Sie können die Überwachung mithilfe des [klassischen Azure-Portals](manage.windowsazure.com), über Windows PowerShell oder programmgesteuert über eine Speicher-API aktivieren.
+Standardmäßig sind für Ihre Speicherdienste keine Speichermetriken aktiviert. Sie können die Überwachung mithilfe des [klassischen Azure-Portals](https://manage.windowsazure.com), über Windows PowerShell oder programmgesteuert über eine Speicher-API aktivieren.
 
 Wenn Sie Speichermetriken aktivieren, müssen Sie einen Aufbewahrungszeitraum für die Daten auswählen: Dieser Zeitraum bestimmt, wie lange der Speicherdienst die Metriken beibehält und Speicherplatz abgerechnet wird, der für ihre Speicherung erforderlich ist. Normalerweise sollten Sie einen kürzeren Aufbewahrungszeitraum für minütliche Metriken als für stündliche Metriken auswählen, weil für minütliche Metriken eine erhebliche Menge an zusätzlichem Speicherplatz erforderlich ist. Sie sollten den Aufbewahrungszeitraum so auswählen, dass ausreichend Zeit zum Analysieren der Daten und zum Herunterladen von Metriken verfügbar ist, die Sie für die Offlineanalyse oder zur Berichterstellung verwenden möchten. Denken Sie daran, dass auch für das Herunterladen von Metrikdaten aus Ihrem Speicherkonto Kosten anfallen.
 
 ## Aktivieren von Speichermetriken über das klassische Azure-Portal
 
-Im [klassischen Azure-Portal](manage.windowsazure.com) verwenden Sie die Seite "Konfigurieren" für ein Speicherkonto, um die Speichermetriken zu steuern. Für die Überwachung können Sie für Blobs, Tabellen und Warteschlangen jeweils eine Stufe sowie einen Aufbewahrungszeitraum in Tagen festlegen. In jedem Fall sind die folgenden Stufen verfügbar:
+Im [klassischen Azure-Portal](https://manage.windowsazure.com) verwenden Sie die Seite "Konfigurieren" für ein Speicherkonto, um die Speichermetriken zu steuern. Für die Überwachung können Sie für Blobs, Tabellen und Warteschlangen jeweils eine Stufe sowie einen Aufbewahrungszeitraum in Tagen festlegen. In jedem Fall sind die folgenden Stufen verfügbar:
 
 - Aus – Es werden keine Metriken erfasst.
 
@@ -211,4 +211,4 @@ Die von den Metriktabellen verwendete Kapazität ist ebenfalls kostenpflichtig: 
 [Aktivieren der Protokollierung von Speicheranalysen und Zugreifen auf Protokolldaten](https://msdn.microsoft.com/library/dn782840.aspx)
  
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

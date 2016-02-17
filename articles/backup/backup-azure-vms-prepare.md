@@ -1,11 +1,12 @@
 <properties
 	pageTitle="Vorbereiten der Umgebung für die Sicherung virtueller Azure-Computer | Microsoft Azure"
-	description="Bereiten Sie die Umgebung für die Sicherung virtueller Azure-Computer vor."
+	description="Vergewissern Sie sich, dass Ihre Umgebung für die Sicherung virtueller Computer in Azure vorbereitet ist."
 	services="backup"
 	documentationCenter=""
 	authors="Jim-Parker"
 	manager="jwhit"
-	editor=""/>
+	editor=""
+	keywords="Sicherung; Sichern;"/>
 
 <tags
 	ms.service="backup"
@@ -13,12 +14,13 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/19/2016"
+	ms.date="01/22/2016"
 	ms.author="trinadhk; jimpark; markgal;"/>
 
-# Vorbereiten der Umgebung für die Sicherung virtueller Azure-Computer
-Bevor Sie einen virtuellen Azure-Computer sichern, müssen Sie die folgenden Voraussetzungen erfüllen, um die Umgebung vorzubereiten. Wenn Sie dies bereits erledigt haben, können Sie mit dem [Sichern virtueller Azure-Computer](backup-azure-vms.md) beginnen. Andernfalls führen Sie die unten stehenden Schritte durch, um sicherzustellen, dass Ihre Umgebung vorbereitet ist.
 
+# Vorbereiten der Umgebung für die Sicherung virtueller Azure-Computer
+
+Bevor Sie einen virtuellen Azure-Computer sichern, müssen Sie die folgenden Voraussetzungen erfüllen. Wenn Sie Ihre Umgebung bereits für Sicherungen vorbereitet haben, können Sie mit dem [Sichern Ihrer virtuellen Computer](backup-azure-vms.md) beginnen. Andernfalls führen Sie die unten stehenden Schritte durch, um sicherzustellen, dass Ihre Umgebung vorbereitet ist.
 
 ## 1\. Sicherungstresor
 
@@ -79,7 +81,7 @@ Hierbei muss zwischen Verwaltbarkeit, Feinsteuerung und Kosten abgewogen werden.
 ### Verwenden eines HTTP-Proxys für die Sicherung von virtuellen Computern
 Beim Sichern eines virtuellen Computers werden die Befehle für die Snapshotverwaltung von der Sicherungserweiterung per HTTPS-API an Azure Storage gesendet. Dieser Datenverkehr muss von der Erweiterung über den Proxy geleitet werden, da nur der Proxy so konfiguriert wird, dass Zugriff auf das öffentliche Internet besteht.
 
->[AZURE.NOTE]Für die zu verwendende Proxysoftware gibt es keine Empfehlung. Stellen Sie sicher, dass Sie einen Proxy wählen, der mit den unten stehenden Konfigurationsschritten kompatibel ist.
+>[AZURE.NOTE] Für die zu verwendende Proxysoftware gibt es keine Empfehlung. Stellen Sie sicher, dass Sie einen Proxy wählen, der mit den unten stehenden Konfigurationsschritten kompatibel ist.
 
 Im folgenden Beispiel muss der virtuelle App-Computer so konfiguriert werden, dass der virtuelle Proxycomputer für den gesamten HTTP-Datenverkehr verwendet wird, der für das öffentliche Internet bestimmt ist. Der virtuelle Proxycomputer muss so konfiguriert werden, dass eingehender Datenverkehr von den virtuellen Computern im virtuellen Netzwerk zugelassen wird. Außerdem benötigt die Netzwerksicherheitsgruppe (mit dem Namen *NSG-lockdown*) eine neue Sicherheitsregel, mit der ausgehender Internetdatenverkehr vom virtuellen Proxycomputer zugelassen wird.
 
@@ -159,7 +161,7 @@ Der VM-Agent ist auf virtuellen Computern, die über den Azure-Katalog erstellt 
 | Überprüfen der VM-Agent-Installation | <li>Navigieren Sie auf dem virtuellen Azure-Computer zum Ordner *C:\\WindowsAzure\\Packages*. <li>Dieser Ordner enthält die Datei „WaAppAgent.exe“.<li> Klicken Sie mit der rechten Maustaste auf die Datei, wechseln Sie zu **Eigenschaften**, und wählen Sie dann die Registerkarte **Details** aus. Im Feld mit der Produktversion sollte 2.6.1198.718 oder eine höhere Version angegeben sein. | - |
 
 
-Erfahren Sie mehr über den [VM-Agent](https://go.microsoft.com/fwLink/?LinkID=390493&clcid=0x409) und [seine Installation](http://azure.microsoft.com/blog/2014/04/15/vm-agent-and-extensions-part-2/).
+Erfahren Sie mehr über den [VM-Agent](https://go.microsoft.com/fwLink/?LinkID=390493&clcid=0x409) und [seine Installation](https://azure.microsoft.com/blog/2014/04/15/vm-agent-and-extensions-part-2/).
 
 ### Backup-Erweiterung
 
@@ -176,7 +178,7 @@ Die Sicherungserweiterung wird installiert, wenn der virtuelle Computer (Virtual
 - Die Sicherung von virtuellen Computern mit einer reservierten IP-Adresse und ohne definierten Endpunkt wird nicht unterstützt.
 - Das Ersetzen eines vorhandenen virtuellen Computers während der Wiederherstellung wird nicht unterstützt. Löschen Sie zuerst den vorhandenen virtuellen Computer und alle zugeordneten Datenträger, und stellen Sie dann die Daten aus der Sicherung wieder her.
 - Regionsübergreifende Sicherungs- und Wiederherstellungsvorgänge werden nicht unterstützt.
-- Die Sicherung von virtuellen Computern mithilfe des Azure Backup-Diensts wird in allen öffentlichen Azure-Regionen unterstützt (Informationen hierzu finden Sie in der [Liste der Azure-Regionen](http://azure.microsoft.com/regions/#services)). Wenn die gewünschte Region derzeit nicht unterstützt wird, wird sie bei der Erstellung des Tresors in der Dropdownliste nicht angezeigt.
+- Die Sicherung von virtuellen Computern mithilfe des Azure Backup-Diensts wird in allen öffentlichen Azure-Regionen unterstützt (Informationen hierzu finden Sie in der [Liste der Azure-Regionen](https://azure.microsoft.com/regions/#services)). Wenn die gewünschte Region derzeit nicht unterstützt wird, wird sie bei der Erstellung des Tresors in der Dropdownliste nicht angezeigt.
 - Die Sicherung virtueller Computer mithilfe des Azure Backup-Diensts wird nur für bestimmte Betriebssystemversionen unterstützt:
   - **Linux**: Die [Liste der von Azure unterstützten Verteilungen](../virtual-machines/virtual-machines-linux-endorsed-distributions.md) finden Sie hier. Andere Bring-Your-Own-Linux-Verteilungen sollten ebenfalls funktionieren, sofern der VM-Agent auf dem virtuellen Computer verfügbar ist.
   - **Windows Server**: Versionen, die älter als Windows Server 2008 R2 sind, werden nicht unterstützt.
@@ -195,4 +197,4 @@ Wenn Sie Fragen haben oder Anregungen zu gewünschten Funktionen mitteilen möch
 - [Sichern virtueller Computer](backup-azure-vms.md)
 - [Verwalten der Sicherung virtueller Computer](backup-azure-manage-vms.md)
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

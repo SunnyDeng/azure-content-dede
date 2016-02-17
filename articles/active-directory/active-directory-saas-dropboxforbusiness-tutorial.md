@@ -16,7 +16,8 @@
 
 #Tutorial: Azure Active Directory-Integration mit Dropbox für Unternehmen
   
-In diesem Tutorial wird die Integration von Azure und Dropbox für Unternehmen erläutert. Das in diesem Lernprogramm verwendete Szenario setzt voraus, dass Sie bereits über die folgenden Elemente verfügen:
+In diesem Tutorial wird die Integration von Azure und Dropbox für Unternehmen erläutert.  
+Das in diesem Lernprogramm verwendete Szenario setzt voraus, dass Sie bereits über die folgenden Elemente verfügen:
 
 -   Ein gültiges Azure-Abonnement
 -   Einen Testmandanten in Dropbox für Unternehmen
@@ -107,7 +108,9 @@ Im Rahmen dieses Verfahrens müssen Sie ein Base-64-codiertes Zertifikat in Ihre
      5.2. Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Dropbox für Unternehmen** den Wert für **URL der Anmeldeseite**, und fügen Sie ihn ins Textfeld **Anmelde-URL** ein.
 
 
-     5.3. Erstellen Sie eine **Base64-codierte** Datei aus dem heruntergeladenen Zertifikat.[AZURE.TIP]Weitere Informationen finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache).
+     5.3. Erstellen Sie eine **Base64-codierte** Datei aus dem heruntergeladenen Zertifikat.  
+
+     >[AZURE.TIP]Weitere Informationen finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache).
 
 
      5.4. Klicken Sie auf **Zertifikat wählen**, und wechseln Sie dann zu Ihrer **Base-64-codierten Zertifikatdatei**.
@@ -176,7 +179,8 @@ Ein erfolgreich abgeschlossener Benutzerbereitstellungszyklus wird durch einen e
 <br><br> ![Benutzer zuweisen](./media/active-directory-saas-dropboxforbusiness-tutorial/IC769523.png "Benutzer zuweisen")
 
 
-Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
+Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich.
+Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
 
 

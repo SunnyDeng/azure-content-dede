@@ -13,10 +13,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="identity"
-   ms.date="10/27/2015"
+   ms.date="02/03/2016"
    ms.author="viviali"/>
 
-# Aktuelle Einschränkungen der Vorschau für die Azure Active Directory (Azure AD) B2B-Zusammenarbeit
+# Vorschau der Azure AD B2B-Zusammenarbeit: Aktuelle Einschränkungen der Vorschau
 
 - Die Multi-Factor Authentication (MFA) wird für externe Benutzer nicht unterstützt. Beispiel: Wenn Contoso MFA nutzt, Partner Org jedoch nicht, kann den Partner Org-Benutzern die MFA über B2B-Zusammenarbeit nicht ermöglicht werden.
 - Einladungen sind nur über CSV möglich. Einzelne Einladungen und API-Zugriff werden nicht unterstützt.
@@ -28,13 +28,13 @@
 - Über CSV können maximal 2.000 Datensätze hochgeladen werden.
 
 ## Verwandte Artikel
-Weitere Artikel zur Azure B2B-Zusammenarbeit:
+Durchsuchen Sie unsere anderen Artikel zur Azure B2B-Zusammenarbeit:
 
-- [Was ist die Azure AD B2B-Zusammenarbeit?](active-directory-b2b-what-is-azure-ad-b2b.md)
+- [Was ist die Azure AD B2B-Zusammenarbeit?](active-directory-b2b-what-is-azure-ad-b2b.md)
 - [So funktioniert's](active-directory-b2b-how-it-works.md)
 - [Ausführliche exemplarische Vorgehensweise](active-directory-b2b-detailed-walkthrough.md)
 - [Referenz zum CSV-Dateiformat](active-directory-b2b-references-csv-file-format.md)
 - [Tokenformat für externe Benutzer](active-directory-b2b-references-external-user-token-format.md)
 - [Objektattributänderungen für externe Benutzer](active-directory-b2b-references-external-user-object-attribute-changes.md)
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0204_2016-->

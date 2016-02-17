@@ -1,20 +1,20 @@
 <properties
-   pageTitle="Tutorial: Integrieren von NetSuite in Azure Active Directory | Microsoft Azure"
-   description="Erfahren Sie, wie Sie NetSuite mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und mehr zu aktivieren!"
-   services="active-directory"
-   documentationCenter=""
-   authors="liviodlc"
-   manager="TerryLanfear"
-   editor=""/>
+    pageTitle="Tutorial: Azure Active Directory-Integration mit NetSuite | Microsoft Azure"
+    description="Erfahren Sie, wie Sie NetSuite mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und mehr zu aktivieren!"
+    services="active-directory"
+    documentationCenter=""
+    authors="liviodlc"
+    manager="stevenpo"
+    editor=""/>
 
 <tags
-   ms.service="active-directory"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="identity"
-   ms.date="10/20/2015"
-   ms.author="liviodlc"/>
+    ms.service="active-directory"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="identity"
+    ms.date="02/02/2016"
+    ms.author="liviodlc"/>
 
 #Tutorial: Integrieren von NetSuite in Azure Active Directory
 
@@ -64,7 +64,7 @@ In diesem Tutorial erfahren Sie, wie Sie Ihre NetSuite-Umgebung mit Ihrem Azure 
 
 	![Wählen Sie "Azure AD – einmaliges Anmelden".][7]
 
-	> [AZURE.NOTE]Um weitere Informationen zu den verschiedenen Optionen für die einmalige Anmeldung zu erhalten, [klicken Sie hier](../active-directory-appssoaccess-whatis/#how-does-single-sign-on-with-azure-active-directory-work).
+	> [AZURE.NOTE] Um weitere Informationen zu den verschiedenen Optionen für die einmalige Anmeldung zu erhalten, [klicken Sie hier](../active-directory-appssoaccess-whatis/#how-does-single-sign-on-with-azure-active-directory-work).
 
 3. Geben Sie auf der Seite **App-Einstellungen konfigurieren** für das Feld **Antwort-URL** Ihre NetSuite-Mandanten-URL in einem der folgenden Formate ein:
 	- `https://<tenant-name>.netsuite.com/saml2/acs`
@@ -186,7 +186,7 @@ In diesem Tutorial erfahren Sie, wie Sie Ihre NetSuite-Umgebung mit Ihrem Azure 
 
 ##Schritt 3: Aktivieren der automatisierten Benutzerbereitstellung
 
-> [AZURE.NOTE]Standardmäßig werden die bereitgestellten Benutzer der Stammniederlassung Ihrer NetSuite-Umgebung hinzugefügt.
+> [AZURE.NOTE] Standardmäßig werden die bereitgestellten Benutzer der Stammniederlassung Ihrer NetSuite-Umgebung hinzugefügt.
 
 1. Klicken Sie in Azure Active Directory auf der Seite „Schnellstart“ für NetSuite auf **Benutzerbereitstellung konfigurieren**.
 
@@ -256,4 +256,4 @@ In diesem Tutorial erfahren Sie, wie Sie Ihre NetSuite-Umgebung mit Ihrem Azure 
 [31]: ./media/active-directory-saas-netsuite-tutorial/assign-users.png
 [32]: ./media/active-directory-saas-netsuite-tutorial/assign-confirm.png
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_0204_2016-->

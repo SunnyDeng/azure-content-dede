@@ -80,7 +80,7 @@ So richten Sie Ihre Azure Data Science-Umgebung ein:
 
 3. [Stellen Sie einen virtuellen Computer für Data Science bereit](machine-learning-data-science-setup-sql-server-virtual-machine.md), der als Server für SQL Server und IPython Notebook fungiert.
 
-	> [AZURE.NOTE]Die Beispielskripts und IPython Notebooks werden während der Einrichtung auf den virtuellen Computer für Data Science heruntergeladen. Nach Abschluss der VM-Nachinstallationsskripts finden Sie die Beispiele in der Dokumentbibliothek auf Ihrem virtuellen Computer: – Sample Scripts: `C:\Users<user_name>\Documents\Data Science Scripts` – Sample IPython Notebooks: `C:\Users<user_name>\Documents\IPython Notebooks\DataScienceSamples`, wobei `<user_name>` der Windows-Anmeldenamen des virtuellen Computers ist. Wir bezeichnen die Beispielordner mit **Sample Scripts** und **Sample IPython Notebooks**.
+	> [AZURE.NOTE] Die Beispielskripts und IPython Notebooks werden während der Einrichtung auf den virtuellen Computer für Data Science heruntergeladen. Nach Abschluss der VM-Nachinstallationsskripts finden Sie die Beispiele in der Dokumentbibliothek auf Ihrem virtuellen Computer: – Sample Scripts: `C:\Users<user_name>\Documents\Data Science Scripts` – Sample IPython Notebooks: `C:\Users<user_name>\Documents\IPython Notebooks\DataScienceSamples`, wobei `<user_name>` der Windows-Anmeldenamen des virtuellen Computers ist. Wir bezeichnen die Beispielordner mit **Sample Scripts** und **Sample IPython Notebooks**.
 
 
 Basierend auf der Größe des DataSets, dem Speicherort der Datenquelle und der ausgewählten Azure-Zielumgebung ähnelt dieses Szenario dem [Szenario 5: Große Datasets in einem Ziel-SQL-Server mit lokalen Dateien in Azure VM](../machine-learning-data-science-plan-sample-scenarios.md#largelocaltodb).
@@ -286,7 +286,7 @@ Die folgende Abfrage führt die Tabellen **nyctaxi\_trip** und **nyctaxi\_fare**
 
 In diesem Abschnitt werden wir Daten durchsuchen und Funktionen generieren, und zwar sowohl mit Python als auch mit SQL-Abfragen in der zuvor erstellten SQL Server-Datenbank. Ein Beispiel-IPython Notebook namens **machine-Learning-data-science-process-sql-story.ipynb** ist im Ordner **Sample IPython Notebooks** enthalten. Dieses Notebook ist auch auf [GitHub](https://github.com/Azure/Azure-MachineLearning-DataScience/tree/master/Misc/DataScienceProcess/iPythonNotebooks) verfügbar.
 
-Die empfohlene Reihenfolge beim Arbeiten mit Big Data lautet wie folgt:
+Die empfohlene Reihenfolge beim Arbeiten mit großen Datenmengen lautet wie folgt:
 
 - Einlesen eines kleinen Teils der Daten in ein DataFrame im Speicher
 - Durchführen von Visualisierungen und Suchvorgängen mit den Beispieldaten
@@ -612,7 +612,7 @@ Melden Sie sich zum Starten der Modellierungsübung im Azure Machine Learning-Ar
 
 2. Melden Sie sich in [Azure Machine Learning Studio](https://studio.azureml.net) an.
 
-3. Die Startseite von Studio enthält eine Vielzahl an Informationen, Videos, Tutorials, Links zu Modulreferenzen und andere Ressourcen. Weitere Informationen zu Azure Machine Learning finden Sie im [Azure Machine Learning Center](http://azure.microsoft.com/documentation/services/machine-learning/).
+3. Die Startseite von Studio enthält eine Vielzahl an Informationen, Videos, Tutorials, Links zu Modulreferenzen und andere Ressourcen. Weitere Informationen zu Azure Machine Learning finden Sie im [Azure Machine Learning Center](https://azure.microsoft.com/documentation/services/machine-learning/).
 
 Ein typisches Trainingsexperiment umfasst Folgendes:
 
@@ -621,7 +621,7 @@ Ein typisches Trainingsexperiment umfasst Folgendes:
 3. Vorverarbeiten, Transformieren und Ändern der Daten nach Bedarf
 4. Generieren von Funktionen nach Bedarf
 5. Aufteilen der Daten in DataSets für Training/Überprüfung/Tests (oder Verwenden verschiedener DataSets für alles)
-6. Auswählen eines oder mehrerer Algorithmen für das maschinelle Lernen in Abhängigkeit vom zu lösenden Lernproblem wie binäre Klassifizierung, Multi-Klassen-Klassifizierung, Regression
+6. Auswählen eines oder mehrerer Algorithmen für das maschinelle Lernen in Abhängigkeit vom zu lösenden Lernproblem wie binäre Klassifizierung, Multiklassenklassifizierung, Regression
 7. Trainieren eines oder mehrerer Modelle mit dem Trainings-DataSet
 8. Bewerten des Validierungs-DataSets mithilfe der trainierten Modelle
 9. Evaluieren der Modelle zur Berechnung der relevanten Kennzahlen für das Lernproblem
@@ -649,7 +649,7 @@ Ein Beispiel für ein binäres Klassifizierungsexperiment zum Lesen von Daten di
 
 ![Azure ML-Schulung][10]
 
-> [AZURE.IMPORTANT]In den Modellierungsbeispielen für Datenextraktion und Stichprobengenerierung in den vorherigen Abschnitten sind **alle Bezeichner für die drei Modellierungsübungen in der Abfrage enthalten**. Ein wichtiger (erforderlicher) Schritt in den einzelnen Modellierungsübungen ist das **Ausschließen** unnötiger Bezeichner für die anderen beiden Probleme und alle anderen **Zielverluste**. Wenn Sie z. B. eine binäre Klassifizierung anwenden, verwenden Sie den Bezeichner **tipped** und schließen die Felder **tip\_class**, **tip\_amount** und **total\_amount** aus. Letztere sind Zielverluste, da sie das bezahlte Trinkgeld beinhalten.
+> [AZURE.IMPORTANT] In den Modellierungsbeispielen für Datenextraktion und Stichprobengenerierung in den vorherigen Abschnitten sind **alle Bezeichner für die drei Modellierungsübungen in der Abfrage enthalten**. Ein wichtiger (erforderlicher) Schritt in den einzelnen Modellierungsübungen ist das **Ausschließen** unnötiger Bezeichner für die anderen beiden Probleme und alle anderen **Zielverluste**. Wenn Sie z. B. eine binäre Klassifizierung anwenden, verwenden Sie den Bezeichner **tipped** und schließen die Felder **tip\_class**, **tip\_amount** und **total\_amount** aus. Letztere sind Zielverluste, da sie das bezahlte Trinkgeld beinhalten.
 >
 > Um nicht benötigte Spalten und/oder Zielverluste auszuschließen, können Sie das Modul [Project Columns][project-columns] oder den [Metadaten-Editor][metadata-editor] verwenden. Weitere Informationen finden Sie auf den Referenzseiten [Project Columns][project-columns] und [Metadaten-Editor][metadata-editor].
 
@@ -714,4 +714,4 @@ Diese exemplarische Vorgehensweise und die zugehörigen Skripts und IPython Note
 [project-columns]: https://msdn.microsoft.com/library/azure/1ec722fa-b623-4e26-a44e-a50c6d726223/
 [reader]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0128_2016-->

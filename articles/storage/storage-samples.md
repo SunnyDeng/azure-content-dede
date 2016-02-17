@@ -26,7 +26,7 @@ Die [Bibliothek mit Azure-Codebeispielen](https://azure.microsoft.com/documentat
 
 ## Beispiele für .NET
 
-Um die Beispiele für .NET zu untersuchen, laden Sie die [Speicherclientbibliothek für .NET](https://www.nuget.org/packages/WindowsAzure.Storage/) aus NuGet herunter. Die .NET-Speicherclientbibliothek ist auch im [Azure SDK für .NET](http://azure.microsoft.com/downloads/) verfügbar.
+Um die Beispiele für .NET zu untersuchen, laden Sie die [Speicherclientbibliothek für .NET](https://www.nuget.org/packages/WindowsAzure.Storage/) aus NuGet herunter. Die .NET-Speicherclientbibliothek ist auch im [Azure SDK für .NET](https://azure.microsoft.com/downloads/) verfügbar.
 
 * [Erste Schritte mit Azure-Blobs, -Tabellen und -Warteschlangen in 5 Minuten](storage-getting-started-guide.md)
 * [Managing Concurrency using Azure Storage – Sample Application (in englischer Sprache)](https://code.msdn.microsoft.com/Managing-Concurrency-using-56018114)
@@ -85,4 +85,4 @@ Um die Beispiele für C++ zu untersuchen, laden Sie die [Speicherclientbibliothe
 - [Quellcode für die Speicherclientbibliothek für C++](https://github.com/Azure/azure-storage-cpp)
 - [Referenz zur C++-Clientbibliothek](http://azure.github.io/azure-storage-cpp/)
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -4,7 +4,7 @@
 	services="active-directory"
 	documentationCenter=""
 	authors="liviodlc"
-	manager="terrylan"
+	manager="stevenpo"
 	editor=""/>
 
 <tags
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/29/2015"
+	ms.date="02/02/2016"
 	ms.author="liviodlc"/>
 
 #Verwalten von Zertifikaten für die einmalige Verbundanmeldung in Azure Active Directory
@@ -72,10 +72,10 @@ Im Idealfall sollte die unten gezeigten Schritte zur Erneuerung keine wesentlich
 
 	- Aktivieren Sie in Azure AD das Kontrollkästchen "Bestätigung" unten im Dialogfeld, um das neue Zertifikat zu aktivieren, und klicken Sie zum Senden auf **Weiter**.
 
-	> [AZURE.IMPORTANT]Die einmalige Anmeldung bei der App wird in dem Moment deaktiviert, in dem einer der beiden Schritte abgeschlossen ist, sie wird jedoch wieder aktiviert, sobald der zweite Schritt abgeschlossen ist. Um daher Ausfallzeiten so gering wie möglich zu halten, bereiten Sie sich darauf vor, beide Schritte möglichst schnell nacheinander auszuführen.
+	> [AZURE.IMPORTANT] Die einmalige Anmeldung bei der App wird in dem Moment deaktiviert, in dem einer der beiden Schritte abgeschlossen ist, sie wird jedoch wieder aktiviert, sobald der zweite Schritt abgeschlossen ist. Um daher Ausfallzeiten so gering wie möglich zu halten, bereiten Sie sich darauf vor, beide Schritte möglichst schnell nacheinander auszuführen.
 
 	![Herunterladen und Hochladen des Zertifikats](./media/active-directory-sso-certs/renew-config-app.PNG)
 
 [AZURE.INCLUDE [saas-toc](../../includes/active-directory-saas-toc.md)]
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0204_2016-->

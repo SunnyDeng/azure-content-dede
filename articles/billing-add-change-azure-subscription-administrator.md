@@ -1,12 +1,12 @@
 <properties
 	pageTitle="Hinzufügen oder Ändern von Azure-Administratorrollen | Microsoft Azure"
 	description="Informationen zum Hinzufügen oder Ändern des Co-Administrators, Dienstadministrators und Kontoadministrators in Azure"
-	services="billing"
+	services=""
 	documentationCenter=""
 	authors="genlin"
 	manager="msmbaldwin"
 	editor="meerak"
-	/>
+	tags="billing"/>
 
 <tags
 	ms.service="billing"
@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/05/2016"
+	ms.date="01/27/2016"
 	ms.author="genli"/>
 
 # Hinzufügen oder Ändern von Azure-Administratorrollen
@@ -66,4 +66,4 @@ Nur der Kontoadministrator kann den Dienstadministrator für ein Abonnement änd
 
 Informationen zum Übertragen des Besitzes des Azure-Kontos auf ein anderes Konto finden Sie unter [Übertragen eines Azure-Abonnements](billing-subscription-transfer.md).
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0204_2016-->

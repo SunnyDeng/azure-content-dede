@@ -18,7 +18,7 @@
 
 # Anzeigen, Bearbeiten und Erstellen von gespeicherten Prozeduren, Triggern und benutzerdefinierten Funktionen mit dem DocumentDB-Skript-Explorer
 
-Dieser Artikel bietet eine Übersicht über den [Microsoft Azure DocumentDB](http://azure.microsoft.com/services/documentdb/)-Skript-Explorer, ein Azure-Portaltool, das Ihnen die Anzeige von serverseitigen DocumentDB-Programmierartefakten ermöglicht, z. B. gespeicherte Prozeduren, Trigger und benutzerdefinierte Funktionen. Weitere Informationen über die serverseitige DocumentDB-Programmierung finden Sie [hier](documentdb-programming.md).
+Dieser Artikel bietet eine Übersicht über den [Microsoft Azure DocumentDB](https://azure.microsoft.com/services/documentdb/)-Skript-Explorer, ein Azure-Portaltool, das Ihnen die Anzeige von serverseitigen DocumentDB-Programmierartefakten ermöglicht, z. B. gespeicherte Prozeduren, Trigger und benutzerdefinierte Funktionen. Weitere Informationen über die serverseitige DocumentDB-Programmierung finden Sie [hier](documentdb-programming.md).
 
 Nach Abschluss dieses Lernprogramms können Sie die folgenden Fragen beantworten:
 
@@ -56,7 +56,7 @@ Der Skript-Explorer kann über jedes DocumentDB-Konto, jede -Datenbank und jedes
 	![Screenshot des Skript-Explorers mit gefilterten Ergebnissen](./media/documentdb-view-scripts/scriptexplorerfilterresults.png)
 
 
-	> [AZURE.IMPORTANT]Die Filterfunktion vom Skript-Explorer filtert nur aus dem ***aktuell*** geladenen Satz an Skripten und aktualisiert die aktuell ausgewählte Sammlung nicht automatisch.
+	> [AZURE.IMPORTANT] Die Filterfunktion vom Skript-Explorer filtert nur aus dem ***aktuell*** geladenen Satz an Skripten und aktualisiert die aktuell ausgewählte Sammlung nicht automatisch.
 
 5. Zum Aktualisieren der vom Skript-Explorer geladenen Skriptliste klicken Sie einfach auf den Befehl **Aktualisieren** im oberen Bereich des Blatts.
 
@@ -91,7 +91,7 @@ Mit dem Skript-Explorer können Sie problemlos CRUD-Vorgänge an serverseitigen 
 
 	![Screenshot der Ansicht Skript-Eigenschaften in Skript-Explorer](./media/documentdb-view-scripts/scriptproperties.png)
 
-	> [AZURE.NOTE]Die Zeitstempeleigenschaft (\_ts) wird intern als Epochenzeit dargestellt, im Skript-Explorer wird der Wert jedoch in einem vom Menschen lesbaren GMT-Format angezeigt.
+	> [AZURE.NOTE] Die Zeitstempeleigenschaft (\_ts) wird intern als Epochenzeit dargestellt, im Skript-Explorer wird der Wert jedoch in einem vom Menschen lesbaren GMT-Format angezeigt.
 
 - Um ein Skript zu löschen, wählen Sie dieses im Skript-Explorer aus, und klicken Sie auf den Befehl **Löschen**.
 
@@ -106,4 +106,4 @@ Mit dem Skript-Explorer können Sie problemlos CRUD-Vorgänge an serverseitigen 
 Um weitere Informationen zu DocumentDB zu erhalten, klicken Sie [hier](http://azure.com/docdb).
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

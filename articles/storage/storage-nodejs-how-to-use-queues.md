@@ -66,7 +66,7 @@ Verwenden Sie Editor oder einen anderen Texteditor, um die folgende Zeile am Anf
 
 Das Azure-Modul entnimmt den Umgebungsvariablen AZURE\_STORAGE\_ACCOUNT und AZURE\_STORAGE\_ACCESS\_KEY oder AZURE\_STORAGE\_CONNECTION\_STRING die Informationen, die zum Herstellen einer Verbindung mit Ihrem Azure-Speicherkonto benötigt werden. Falls diese Umgebungsvariablen nicht gesetzt sind, müssen Sie die Kontoinformationen beim Aufruf von **createQueueService** angeben.
 
-Ein Beispiel zum Festlegen der Umgebungsvariablen für eine Azure-Website im [Azure-Portal](portal.azure.com) finden Sie unter [Node.js-Webanwendung mit Speicher].
+Ein Beispiel zum Festlegen der Umgebungsvariablen für eine Azure-Website im [Azure-Portal](https://portal.azure.com) finden Sie unter [Node.js-Webanwendung mit Speicher].
 
 ## Erstellen einer Warteschlange
 
@@ -123,7 +123,7 @@ Sie können einen Blick auf die Nachricht am Anfang einer Warteschlange werfen, 
 
 Das `result` enthält die Nachricht.
 
-> [AZURE.NOTE]Wenn Sie **peekMessages** verwenden und keine Nachrichten in der Warteschlange vorhanden sind, werden weder Fehler noch Nachrichten zurückgegeben.
+> [AZURE.NOTE] Wenn Sie **peekMessages** verwenden und keine Nachrichten in der Warteschlange vorhanden sind, werden weder Fehler noch Nachrichten zurückgegeben.
 
 ## Entfernen der nächsten Nachricht aus der Warteschlange
 
@@ -147,9 +147,10 @@ Verwenden Sie **getMessages**, um eine Nachricht aus der Warteschlange zu entfer
 	  }
 	});
 
-> [AZURE.NOTE]Standardmäßig wird eine Nachricht nur für 30 Sekunden ausgeblendet, danach ist sie für andere Client sichtbar. Sie können einen anderen Wert angeben, indem Sie `options.visibilityTimeout` mit **getMessages** verwenden.
+> [AZURE.NOTE] Standardmäßig wird eine Nachricht nur für 30 Sekunden ausgeblendet, danach ist sie für andere Client sichtbar. Sie können einen anderen Wert angeben, indem Sie `options.visibilityTimeout` mit **getMessages** verwenden.
 
-> [AZURE.NOTE]Wenn Sie **getMessages** verwenden und keine Nachrichten in der Warteschlange vorhanden sind, werden weder Fehler noch Nachrichten zurückgegeben.
+> [AZURE.NOTE]
+Wenn Sie **getMessages** verwenden und keine Nachrichten in der Warteschlange vorhanden sind, werden weder Fehler noch Nachrichten zurückgegeben.
 
 ## Ändern des Inhalts von Nachrichten in der Warteschlange
 
@@ -330,4 +331,4 @@ Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gem
   [Blog des Azure-Speicherteams]: http://blogs.msdn.com/b/windowsazurestorage/
   [Website mit WebMatrix]: ../web-sites-nodejs-use-webmatrix.md
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

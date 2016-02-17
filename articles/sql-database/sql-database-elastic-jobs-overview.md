@@ -12,8 +12,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/04/2015" 
-	ms.author="ddove; sidneyh" />
+	ms.date="02/01/2016" 
+	ms.author="ddove;sidneyh" />
 
 # Übersicht über Aufträge für die elastische Datenbank
 
@@ -40,7 +40,7 @@ Anweisungen zum Installieren finden Sie unter [Installieren der Komponente für 
 * Definieren von Ausführungszeitplänen
 * Aggregieren von Daten aus einer Sammlung von Azure SQL-Datenbanken in einer einzelnen Zieltabelle
 
-> [AZURE.NOTE]Im Azure-Portal steht nur eine eingeschränkte Anzahl von Funktionen für elastische SQL Azure-Pools zur Verfügung. Verwenden Sie die PowerShell-APIs, um auf den gesamten aktuell verfügbaren Funktionsumfang zuzugreifen.
+> [AZURE.NOTE] Im Azure-Portal steht nur eine eingeschränkte Anzahl von Funktionen für elastische SQL Azure-Pools zur Verfügung. Verwenden Sie die PowerShell-APIs, um auf den gesamten aktuell verfügbaren Funktionsumfang zuzugreifen.
 
 ## Szenarien
 
@@ -88,10 +88,10 @@ Benutzerdefinierte Gruppen werden dagegen starr definiert. Sie müssen explizit 
 ## Komponenten und Preise 
 Die folgenden Komponenten arbeiten zusammen, um einen Azure-Clouddienst zu erstellen, der eine Ad-hoc-Ausführung von Verwaltungsaufgaben ermöglicht. Die Komponenten werden installiert und automatisch während der Installation in Ihrem Abonnement konfiguriert. Sie können die Dienste am automatisch generierten identischen Namen erkennen. Der Name ist eindeutig und besteht aus dem Präfix "edj", gefolgt von 21 zufällig generierten Zeichen.
 
-* **Azure Cloud Service**: Elastische Datenbankaufträge (Vorschau) werden als vom Kunden gehosteter Azure-Clouddienst bereitgestellt, um die angeforderten Aufgaben auszuführen. Der Dienst wird im Portal bereitgestellt und im Microsoft Azure-Abonnement gehostet. Der standardmäßig bereitgestellte Dienst wird mit mindestens zwei Workerrollen für hohe Verfügbarkeit ausgeführt. Die Standardgröße der einzelnen Workerrollen ("ElasticDatabaseJobWorker") wird in einer A0-Instanz ausgeführt. Die Preise finden Sie unter [Cloud Services Preise](http://azure.microsoft.com/pricing/details/cloud-services/). 
-* **Azure SQL-Datenbank**: Der Dienst verwendet eine Azure SQL-Datenbank, die als **Verwaltungsdatenbank** bezeichnet wird, zum Speichern aller Auftragsmetadaten. Die Standarddienstebene ist S0. Informationen zu den Preisen finden Sie unter [SQL-Datenbank Preise](http://azure.microsoft.com/pricing/details/sql-database/).
-* **Azure Service Bus**: Ein Azure Service Bus dient der Koordination der Arbeit innerhalb von Azure Cloud Service. Siehe [Service Bus Preise](http://azure.microsoft.com/pricing/details/service-bus/).
-* **Azure Storage**: Ein Azure-Speicherkonto wird zum Speichern von Diagnoseausgabeprotokollen verwendet, falls ein aufgetretenes Problem weiteres Debugging erfordert (üblicherweise für [Azure-Diagnosen](cloud-services-dotnet-diagnostics.md)). Information zu den Preisen finden Sie unter [Preise für Azure Storage](http://azure.microsoft.com/pricing/details/storage/).
+* **Azure Cloud Service**: Elastische Datenbankaufträge (Vorschau) werden als vom Kunden gehosteter Azure-Clouddienst bereitgestellt, um die angeforderten Aufgaben auszuführen. Der Dienst wird im Portal bereitgestellt und im Microsoft Azure-Abonnement gehostet. Der standardmäßig bereitgestellte Dienst wird mit mindestens zwei Workerrollen für hohe Verfügbarkeit ausgeführt. Die Standardgröße der einzelnen Workerrollen ("ElasticDatabaseJobWorker") wird in einer A0-Instanz ausgeführt. Die Preise finden Sie unter [Cloud Services Preise](https://azure.microsoft.com/pricing/details/cloud-services/). 
+* **Azure SQL-Datenbank**: Der Dienst verwendet eine Azure SQL-Datenbank, die als **Verwaltungsdatenbank** bezeichnet wird, zum Speichern aller Auftragsmetadaten. Die Standarddienstebene ist S0. Informationen zu den Preisen finden Sie unter [SQL-Datenbank Preise](https://azure.microsoft.com/pricing/details/sql-database/).
+* **Azure Service Bus**: Ein Azure Service Bus dient der Koordination der Arbeit innerhalb von Azure Cloud Service. Siehe [Service Bus Preise](https://azure.microsoft.com/pricing/details/service-bus/).
+* **Azure Storage**: Ein Azure Storage-Konto wird zum Speichern von Diagnoseausgabeprotokollen verwendet, falls ein aufgetretenes Problem weiteres Debugging erfordert (siehe [Aktivieren der Diagnose in Azure Cloud Services und Virtual Machines](../service-fabric/cloud-services-dotnet-diagnostics.md)). Information zu den Preisen finden Sie unter [Preise für Azure Storage](https://azure.microsoft.com/pricing/details/storage/).
 
 ## Funktionsweise von Aufträgen für die elastische Datenbank
 1.	Einer Azure SQL-Datenbank wird eine Steuerdatenbank zugeordnet, die alle Meta- und Statusdaten enthält.
@@ -124,4 +124,4 @@ Es gibt mehrere Typen von Auftragsaufgaben, die die Ausführung von Aufträgen a
 [1]: ./media/sql-database-elastic-jobs-overview/elastic-jobs.png
 <!--anchors-->
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0204_2016-->

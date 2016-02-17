@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/20/2015" 
+	ms.date="01/27/2016" 
 	ms.author="spelluru"/>
 
 # Planung und Ausführung mit Data Factory
@@ -22,7 +22,7 @@ In diesem Artikel werden die Planungs- und Ausführungsaspekte des Azure Data Fa
 
 ## Planen von Aktivitäten
 
-Im Abschnitt **scheduler** in der JSON der Aktivität können Sie einen sich wiederholenden Zeitplan für die Aktivität angeben. Beispielsweise können Sie folgendermaßen eine stündliche Ausführung der Aktivität planen:
+Im Abschnitt **scheduler** in der JSON der Aktivität können Sie einen sich wiederholenden Zeitplan für die Aktivität angeben. Beispielsweise können Sie folgendermaßen eine stündliche Ausführung einer Aktivität planen:
 
 	"scheduler": {
 		"frequency": "Hour",
@@ -31,11 +31,11 @@ Im Abschnitt **scheduler** in der JSON der Aktivität können Sie einen sich wie
     
 ![Beispiel für "scheduler"](./media/data-factory-scheduling-and-execution/scheduler-example.png)
 
-Wie oben gezeigt, werden beim Angeben eines stündlichen Zeitplans Aktivitätsausführungen als eine Reihe rollierender Zeitfenster erzeugt. Rollierende Zeitfenster sind eine Reihe sich nicht überlappender zusammenhängender Zeitintervalle mit fester Größe.
+Wie oben gezeigt, wird durch Angabe eines Zeitplans für die Aktivität eine Reihe rollierender Zeitfenster erstellt. Rollierende Zeitfenster sind eine Reihe sich nicht überlappender zusammenhängender Zeitintervalle mit fester Größe. Diese logischen rollierenden Fenster für die Aktivität heißen **Aktivitätsfenster**.
  
-Für die derzeit ausgeführte Aktivität kann in der JSON der Aktivität über die Systemvariablen **WindowStart** und **WindowEnd** auf das Zeitfenster zugegriffen werden. Sie können diese Variablen für verschiedene Zwecke in der JSON Ihrer Aktivität und Skripts verwenden, die der Aktivität zugeordnet sind, einschließlich Auswahl von Daten in den Ein- und Ausgabedatasets, die Zeitreihendaten darstellen.
+Für das derzeit ausgeführte Aktivitätsfenster kann in der JSON der Aktivität über die Systemvariablen **WindowStart** und **WindowEnd** auf das dem Aktivitätsfenster zugeordnete Intervall zugegriffen werden. Sie können diese Variablen für verschiedene Zwecke in der JSON Ihrer Aktivität und Skripts verwenden, die der Aktivität zugeordnet sind, einschließlich Auswahl von Daten in den Ein- und Ausgabedatasets, die Zeitreihendaten darstellen.
 
-Weitere Informationen zu den für "scheduler" verfügbaren Eigenschaften, einschließlich Planen eines bestimmten Zeitversatzes sowie Festlegen des Modus zum Abstimmen der Verarbeitung am Anfang oder Ende des Zeitfensters, finden Sie im Artikel [Erstellen von Pipelines](data-factory-create-pipelines.md).
+Die Eigenschaft **scheduler** unterstützt dieselben untergeordneten Eigenschaften wie die Eigenschaft **availability** in einem Dataset. Weitere Informationen zu den für „scheduler“ verfügbaren Eigenschaften, einschließlich Planen eines bestimmten Zeitversatzes sowie Festlegen des Modus zum Abstimmen der Verarbeitung am Anfang oder Ende des Aktivitätsfensters, finden Sie im Artikel [Dataset: Availability](data-factory-create-datasets.md#Availability).
 
 ## Datasets und Datenslices von Zeitreihen
 
@@ -523,7 +523,7 @@ WindowEnd | Ende des Zeitfensters der aktuellen Aktivitätsausführung | Aktivit
 SliceStart | Anfang des Zeitfensters für den zu erstellenden Datenslice | Aktivität<br/>Dataset | <ol><li>Geben Sie bei der Arbeit mit [Azure Blob](data-factory-azure-blob-connector.md) und [Dateisystem-Datasets](data-factory-onprem-file-system-connector.md) dynamische Ordnerpfade und Dateinamen an.</li><li>Geben Sie Eingabeabhängigkeiten mit Data Factory-Funktionen in der Auflistung der Aktivitätseingaben an.</li></ol>
 SliceEnd | Ende des Zeitfensters für den zu erstellenden Datenslice | Aktivität<br/>Dataset | Wie oben. 
 
-> [AZURE.NOTE]Derzeit erfordert Data Factory, dass der in der Aktivität angegebene Zeitplan exakt mit dem Zeitplan übereinstimmt, der in "availability" für das Ausgabedataset angegeben ist. Das heißt, dass "WindowStart" und "WindowEnd" sowie "SliceStart" und "SliceEnd" immer dem gleichen Zeitraum und einem einzelnen Ausgabeslice zugeordnet sind.
+> [AZURE.NOTE] Derzeit erfordert Data Factory, dass der in der Aktivität angegebene Zeitplan exakt mit dem Zeitplan übereinstimmt, der in "availability" für das Ausgabedataset angegeben ist. Das heißt, dass "WindowStart" und "WindowEnd" sowie "SliceStart" und "SliceEnd" immer dem gleichen Zeitraum und einem einzelnen Ausgabeslice zugeordnet sind.
  
 ## Referenz der Data Factory-Funktionen
 
@@ -577,7 +577,9 @@ Text | Format(X) | X: Stringvariable | Formatiert den Text.
 	    "Hour" : "$$Text.Format('{0:hh}',WindowStart)"
 	}
 
-> [AZURE.NOTE]Bei Verwenden einer Funktion in einer anderen Funktion müssen Sie für die innere Funktion nicht das Präfix **$$** verwenden. Beispiel: $$Text.Format('PartitionKey eq \\'my\_pkey\_filter\_value\\' und RowKey ge \\'{0:yyyy-MM-dd HH:mm:ss}\\'', Time.AddHours(SliceStart, -6)). Beachten Sie bei diesem Beispiel, dass das Präfix **$$** für die **Time.AddHours**-Funktion nicht verwendet wird.
+Im Thema [Benutzerdefinierte Formatzeichenfolgen für Datum und Uhrzeit](https://msdn.microsoft.com/library/8kb3ddd4.aspx) werden verschiedene Formatoptionen beschrieben (z. B. „yy“ im Vergleich zu „yyyy“).
+
+> [AZURE.NOTE] Bei Verwenden einer Funktion in einer anderen Funktion müssen Sie für die innere Funktion nicht das Präfix **$$** verwenden. Beispiel: $$Text.Format('PartitionKey eq \\'my\_pkey\_filter\_value\\' und RowKey ge \\'{0:yyyy-MM-dd HH:mm:ss}\\'', Time.AddHours(SliceStart, -6)). Beachten Sie bei diesem Beispiel, dass das Präfix **$$** für die **Time.AddHours**-Funktion nicht verwendet wird.
   
 
 ## Datenabhängigkeiten – Detaillierte Informationen
@@ -678,4 +680,4 @@ Ein Dataset kann als extern gekennzeichnet werden (siehe die nachstehende JSON),
 
   
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0204_2016-->

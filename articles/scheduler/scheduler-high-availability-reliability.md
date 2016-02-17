@@ -24,7 +24,7 @@ Als Kerndienst der Azure-Plattform ist Azure Scheduler hochverfügbar und bietet
 
 ### Georedundante Dienstbereitstellung
 
-Azure Scheduler steht über die Benutzeroberfläche in nahezu allen geografischen Regionen zur Verfügung, die aktuell in Azure verfügbar sind. Die Regionen, in denen Azure Scheduler verfügbar ist, finden Sie [hier](http://azure.microsoft.com/regions/#services). Beim Ausfall eines Rechenzentrums in einer gehosteten Region wird der Azure Scheduler-Dienst dank Failoverfunktionen über ein anderes Rechenzentrum bereitgestellt.
+Azure Scheduler steht über die Benutzeroberfläche in nahezu allen geografischen Regionen zur Verfügung, die aktuell in Azure verfügbar sind. Die Regionen, in denen Azure Scheduler verfügbar ist, finden Sie [hier](https://azure.microsoft.com/regions/#services). Beim Ausfall eines Rechenzentrums in einer gehosteten Region wird der Azure Scheduler-Dienst dank Failoverfunktionen über ein anderes Rechenzentrum bereitgestellt.
 
 ### Georegionale Auftragsreplikation
 
@@ -72,10 +72,9 @@ Weitere Informationen zum Konfigurieren eines alternativen Endpunkts finden Sie 
 
  [Erstellen komplexer Zeitpläne und erweiterter Serien mit Azure Scheduler](scheduler-advanced-complexity.md)
 
- [Azure Scheduler-REST-API – Referenz](https://msdn.microsoft.com/library/dn528946)
+ [Azure Scheduler-REST-API – Referenz](https://msdn.microsoft.com/library/mt629143)
 
  [Azure Scheduler – PowerShell-Cmdlets-Referenz](scheduler-powershell-reference.md)
-
 
  [Einschränkungen, Standardwerte und Fehlercodes für Azure Scheduler](scheduler-limits-defaults-errors.md)
 
@@ -88,4 +87,4 @@ Weitere Informationen zum Konfigurieren eines alternativen Endpunkts finden Sie 
 
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

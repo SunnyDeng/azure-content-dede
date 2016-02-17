@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/15/2015"
+	ms.date="01/22/2016"
 	ms.author="SilviaDoomra" />
 
 # Erste Schritte mit Abfragen für elastische Datenbanken bei Sharding (horizontaler Partitionierung)
@@ -44,7 +44,7 @@ Hier erstellen Sie einen Shardzuordnungs-Manager und mehrere Shards und fügen a
 ## Erstellen einer elastischen Datenbankabfrage
 
 1. Öffnen Sie das [Azure-Portal](https://portal.azure.com), und melden Sie sich an.
-2. Erstellen Sie eine neue Azure SQL-Datenbank auf demselben Server, auf dem sich auch das Shard-Setup befindet. Nennen Sie die Datenbank "ElasticDBQuery". 
+2. Erstellen Sie eine neue Azure SQL-Datenbank auf demselben Server, auf dem sich auch das Shard-Setup befindet. Nennen Sie die Datenbank "ElasticDBQuery".
 
 	![Azure-Portal und -Tarif][3]
 
@@ -129,7 +129,7 @@ Sie können jetzt die leistungsstarken Funktionen von Excel zur Datenvisualisier
 ### Kosten
 Es gibt keine zusätzlichen Gebühren für die Verwendung der Abfragefunktion für elastische Datenbanken.
 
-Preisinformationen finden Sie in der [SQL-Datenbank – Preisdetails](http://azure.microsoft.com/pricing/details/sql-database/).
+Preisinformationen finden Sie in der [SQL-Datenbank – Preisdetails](https://azure.microsoft.com/pricing/details/sql-database/).
 
 
 [AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
@@ -142,4 +142,4 @@ Preisinformationen finden Sie in der [SQL-Datenbank – Preisdetails](http://azu
 [5]: ./media/sql-database-elastic-query-getting-started/exel-sources.png
 <!--anchors-->
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -3,7 +3,7 @@
 Sie können vordefinierte ARM-Vorlagen, die in ein von Microsoft verwaltetes und für die Community freigegebenes GitHub-Repository hochgeladen wurden, wiederverwenden. Diese Vorlagen können direkt aus GitHub heraus bereitgestellt oder heruntergeladen und an Ihre Bedürfnisse angepasst werden. Zum Bereitstellen einer Vorlage, die ein VNet mit zwei Subnetzen erstellt, führen Sie die unten aufgeführten Schritte aus.
 
 1. Navigieren Sie in einem Browser zu [https://github.com/Azure/azure-quickstart-templates](https://github.com/Azure/azure-quickstart-templates).
-2. Führen Sie in der Liste der Vorlagen einen Bildlauf nach unten aus, und klicken Sie auf **101-two-subnets**. Überprüfen Sie die Datei **Readme.MD**, wie unten dargestellt.
+2. Führen Sie in der Liste der Vorlagen einen Bildlauf nach unten aus, und klicken Sie auf **101-vnet-two-subnets**. Überprüfen Sie die Datei **Readme.MD**, wie unten dargestellt.
 
 	![READEME.md-Datei in GitHub](./media/virtual-networks-create-vnet-arm-template-click-include/figure1.png)
 
@@ -27,4 +27,4 @@ Sie können vordefinierte ARM-Vorlagen, die in ein von Microsoft verwaltetes und
 
 	![Erstellen von VNet im Vorschauportal](./media/virtual-networks-create-vnet-arm-template-click-include/figure5.gif)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0211_2016-->

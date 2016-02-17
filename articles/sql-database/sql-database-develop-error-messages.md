@@ -1,6 +1,7 @@
-<properties 
-	pageTitle="Fehlermeldungen für Clientprogramme der SQL-Datenbank"
-	description="Für jeden Fehler sind die numerische ID und die Textmeldung aufgeführt. Sie können gern auf eigene besser geeignete Fehlermeldungstexte verweisen, falls dies wünschenswert ist."
+<properties
+	pageTitle="SQL-Fehlercodes – Datenbankverbindungsfehler | Microsoft Azure"
+	description="Erfahren Sie mehr über SQL-Fehlercodes für SQL-Datenbank-Clientanwendungen, beispielsweise zu häufigen Datenbankverbindungsfehlern, Datenbankkopiefehlern und allgemeinen Fehlern."
+	keywords="SQL-Fehlercodes,Zugriff auf SQL,Datenbankverbindungsfehler,SQL-Fehlercodes"
 	services="sql-database"
 	documentationCenter=""
 	authors="MightyPen"
@@ -8,17 +9,17 @@
 	editor="" />
 
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="12/06/2015" 
+<tags
+	ms.service="sql-database"
+	ms.workload="data-management"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="12/06/2015"
 	ms.author="genemi"/>
 
 
-# Fehlermeldungen für Clientprogramme der SQL-Datenbank
+# SQL-Fehlercodes für SQL-Datenbank-Clientanwendungen: Datenbankverbindungsfehler und andere Probleme
 
 
 <!--
@@ -28,25 +29,19 @@ Dx 4cff491e-9359-4454-bd7c-fb72c4c452ca
 -->
 
 
-In diesem Thema sind verschiedene Kategorien von Fehlermeldungen aufgeführt. Die meisten Kategorien gelten speziell für Azure SQL-Datenbank und nicht für Microsoft SQL Server.
+In diesem Artikel werden SQL-Fehlercodes für SQL-Datenbank-Clientanwendungen aufgeführt, darunter Datenbankverbindungsfehler, vorübergehende Fehler, Fehler zur Ressourcenkontrolle, Datenbankkopiefehler und andere. Die meisten Kategorien gelten speziell für Azure SQL-Datenbank und nicht für Microsoft SQL Server.
 
-
-In Ihrem Clientprogramm können Sie Benutzern eine alternative Meldung für Fehler anzeigen, die von Ihnen angepasst wurde.
-
-
-> [AZURE.TIP]Besonders wichtig ist der folgende Abschnitt über Fehler vom Typ [*Vorübergehender Fehler*](#bkmk_connection_errors).
-
-
+In Ihrer Clientanwendung können Sie dem Benutzer für jeden Fehler eine angepasste Meldung anzeigen.
 
 <a id="bkmk_connection_errors" name="bkmk_connection_errors">&nbsp;</a>
 
 
-## Vorübergehende Fehler, Verbindungsabbruchfehler und andere temporäre Fehler
+## Datenbankverbindungsfehler, vorübergehende Fehler und andere temporäre Fehler
 
-Die folgende Tabelle enthält die Verbindungsabbruchfehler sowie andere vorübergehende Fehler, die auftreten können, wenn Sie über das Internet mit Azure SQL-Datenbank arbeiten.
+Die folgende Tabelle enthält die SQL-Fehlercodes für Fehler bei Verbindungsverlust und andere vorübergehende Fehler, die auftreten können, wenn Ihre Anwendung versucht, auf SQL-Datenbank zuzugreifen.
 
 
-### Die häufigsten vorübergehenden Fehler
+### Häufigste Datenbankverbindungsfehler und vorübergehende Fehler
 
 
 Vorübergehende Fehler machen sich in der Regel in Form einer der folgenden Fehlermeldungen von Ihren Clientprogrammen bemerkbar:
@@ -67,10 +62,10 @@ Vorübergehende Fehler sollten in Ihrem Clientprogramm eine Ausführung der von 
 - [Maßnahmen zum Behandeln von Verbindungsfehlern und vorübergehenden Fehlern in SQL-Datenbank](sql-database-connectivity-issues.md)
 
 
-### Fehlernummern für vorübergehende Fehler
+### Fehlercodes für vorübergehende Fehler
 
 
-| Fehlernummer | Schweregrad | Beschreibung |
+| Fehlercode | Schweregrad | Beschreibung |
 | ---: | ---: | :--- |
 | 4060 | 16 | Die von der Anmeldung angeforderte „%.&#x2a;ls“-Datenbank kann nicht geöffnet werden. Fehler bei der Anmeldung. |
 |40197|17|Dienstfehler beim Verarbeiten Ihrer Anforderung. Wiederholen Sie den Vorgang. Fehlercode %d.<br/><br/>Sie erhalten diesen Fehler, wenn der Dienst aufgrund von Software- oder Hardwareupgrades, Hardwarefehlern oder sonstigen Failoverproblemen ausgefallen ist. Der Fehlercode (%d), der in der Meldung zum Fehler 40197 enthalten ist, liefert weitere Informationen zur Art des aufgetretenen Fehlers oder Failovers. Beispiele für Fehlercodes, die in die Meldung zum Fehler 40197 eingebettet sind, lauten 40020, 40143, 40166 und 40540.<br/><br/>Wenn Sie erneut eine Verbindung mit Ihrem SQL-Datenbank-Server herstellen, werden Sie automatisch mit einer intakten Kopie Ihrer Datenbank verbunden. Ihre Anwendung muss den Fehler 40197 abfangen, den für die Problembehandlung in der Meldung enthaltenen Fehlercode (%d) protokollieren und versuchen, eine neue Verbindung mit SQL-Datenbank herzustellen, bis die Ressourcen verfügbar sind, damit Ihre Verbindung wiederhergestellt wird.|
@@ -89,7 +84,7 @@ Vorübergehende Fehler sollten in Ihrem Clientprogramm eine Ausführung der von 
 Die folgende Tabelle enthält die verschiedenen Fehler, die auftreten können, wenn Sie eine Datenbank in Azure SQL-Datenbank kopieren. Weitere Informationen finden Sie unter [Kopieren einer Azure SQL-Datenbank](sql-database-copy.md).
 
 
-|Fehlernummer|Schweregrad|Beschreibung|
+|Fehlercode|Schweregrad|Beschreibung|
 |---:|---:|:---|
 |40635|16|Der Client mit der IP-Adresse „%.&#x2a;ls“ ist vorübergehend deaktiviert.|
 |40637|16|Das Kopieren von Datenbanken ist derzeit deaktiviert.|
@@ -126,7 +121,7 @@ In der folgende Tabelle sind die Fehler enthalten, die beim Arbeiten mit Azure S
 - [Ressourceneinschränkungen für Azure SQL-Datenbanken](sql-database-resource-limits.md)
 
 
-|Fehlernummer|Schweregrad|Beschreibung|
+|Fehlercode|Schweregrad|Beschreibung|
 |---:|---:|:---|
 |10928|20|Ressourcen-ID: %d. Das %s-Limit für die Datenbank beträgt %d und wurde erreicht. Weitere Informationen finden Sie unter [http://go.microsoft.com/fwlink/?LinkId=267637](http://go.microsoft.com/fwlink/?LinkId=267637).<br/><br/>Mit der Ressourcen-ID wird die Ressource angegeben, für die das Limit erreicht wurde. Bei Arbeitsthreads lautet die Ressourcen-ID „1“. Bei Sitzungen lautet die Ressourcen-ID „2“.<br/><br/>*Hinweis:* Weitere Informationen zu diesem Fehler und zu seiner Behebung finden Sie unter:<br/>• [Ressourceneinschränkungen für Azure SQL-Datenbanken](sql-database-resource-limits.md). |
 |10929|20|Ressourcen-ID: %d. Die %s-Mindestgarantie beträgt %d, der maximale Wert beträgt %d und die aktuelle Nutzung für die Datenbank beträgt %d. Der Server ist jedoch derzeit zu stark ausgelastet, um Anforderungen über %d für diese Datenbank zu unterstützen. Weitere Informationen finden Sie unter [http://go.microsoft.com/fwlink/?LinkId=267637](http://go.microsoft.com/fwlink/?LinkId=267637). Versuchen Sie es andernfalls später noch einmal.<br/><br/>Mit der Ressourcen-ID wird die Ressource angegeben, für die das Limit erreicht wurde. Bei Arbeitsthreads lautet die Ressourcen-ID „1“. Bei Sitzungen lautet die Ressourcen-ID „2“.<br/><br/>*Hinweis:* Weitere Informationen zu diesem Fehler und zu seiner Behebung finden Sie unter:<br/>• [Ressourceneinschränkungen für Azure SQL-Datenbanken](sql-database-resource-limits.md).|
@@ -150,10 +145,10 @@ Weitere Informationen zur Ressourcenkontrolle und den dazugehörigen Fehlern fin
 ## Allgemeine Fehler
 
 
-Die folgende Tabelle enthält alle allgemeinen Fehler, die nicht in die vorherigen Kategorien fallen.
+Die folgende Tabelle enthält alle allgemeinen Fehler, die nicht in eine der vorherigen Kategorien fallen.
 
 
-|Fehlernummer|Schweregrad|Beschreibung|
+|Fehlercode|Schweregrad|Beschreibung|
 |---:|---:|:---|
 |15006|16|<AdministratorLogin> ist kein gültiger Name, da er ungültige Zeichen enthält.|
 |18452|14|Anmeldefehler. Die Anmeldung stammt aus einer nicht vertrauenswürdigen Domäne und kann mit der Windows-Authentifizierung nicht verwendet werden.%.&#x2a;ls (Windows-Anmeldungen werden in dieser SQL Server-Version nicht unterstützt.)|
@@ -216,8 +211,8 @@ Die folgende Tabelle enthält alle allgemeinen Fehler, die nicht in die vorherig
 |40651|16|Fehler beim Erstellen des Servers, weil das <subscription-id>-Abonnement deaktiviert ist.|
 |40652|16|Der Server kann nicht verschoben oder erstellt werden, weil das <subscription-id>-Abonnement das Serverkontingent überschreitet.|
 |40671|17|Kommunikationsfehler zwischen dem Gateway und dem Verwaltungsdienst. Versuchen Sie es später erneut.|
-|40852|16|Die von der Anmeldung angeforderte Datenbank „%.*ls“ auf Server „%.*ls“ kann nicht geöffnet werden. Der Zugriff auf die Datenbank ist nur mit einer Verbindungszeichenfolge mit aktivierter Sicherheit zulässig. Ändern Sie für den Zugriff auf diese Datenbank Ihre Verbindungszeichenfolgen so, dass „secure“ im FQDN des Servers enthalten ist. „'server name'.database.windows.net“ muss demnach in „'server name'.database.`secure`.windows.net“ geändert werden.|
-|45168|16|Das SQL Azure-System ist ausgelastet und richtet eine Obergrenze für gleichzeitige DB CRUD-Vorgänge für einen Server ein (z. B. CREATE DATABASE). Für den in der Fehlermeldung angegebenen Server wurde die maximale Anzahl von gleichzeitigen Verbindungen überschritten. Versuchen Sie es erneut. |
+|40852|16|Die von der Anmeldung angeforderte Datenbank „%.*ls“ auf Server „%.*ls“ kann nicht geöffnet werden. Der Zugriff auf die Datenbank ist nur mit einer Verbindungszeichenfolge mit aktivierter Sicherheit zulässig. Ändern Sie für den Zugriff auf diese Datenbank Ihre Verbindungszeichenfolgen so, dass „secure“ im FQDN des Servers enthalten ist. „'server name'.database.windows.net“ muss demnach in „'server name'.database.`secure`.windows.net“ geändert werden.| 
+|45168|16|Das SQL Azure-System ist ausgelastet und richtet eine Obergrenze für gleichzeitige DB CRUD-Vorgänge für einen Server ein (z. B. CREATE DATABASE). Für den in der Fehlermeldung angegebenen Server wurde die maximale Anzahl von gleichzeitigen Verbindungen überschritten. Versuchen Sie es erneut. | 
 |45169|16| Das SQL Azure-System ist ausgelastet und richtet eine Obergrenze für gleichzeitige CRUD-Servervorgänge für ein Abonnement ein (z. B. CREATE SERVER). Für das in der Fehlermeldung angegebene Abonnement wurde die maximale Anzahl von gleichzeitigen Verbindungen überschritten, und die Anforderung wurde verweigert. Versuchen Sie es erneut.|
 
 
@@ -226,4 +221,4 @@ Die folgende Tabelle enthält alle allgemeinen Fehler, die nicht in die vorherig
 - [Azure SQL-Datenbanken – Allgemeine Einschränkungen und Leitlinien](sql-database-general-limitations.md)
 - [Ressourceneinschränkungen für Azure SQL-Datenbanken](sql-database-resource-limits.md)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0204_2016-->

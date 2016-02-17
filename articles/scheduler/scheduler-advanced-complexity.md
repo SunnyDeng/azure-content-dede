@@ -187,7 +187,7 @@ Bei den folgenden Zeitplänen wird jeweils davon ausgegangen, dass _interval_ au
 
  [Pläne und Abrechnung in Azure Scheduler](scheduler-plans-billing.md)
 
- [Azure Scheduler-REST-API – Referenz](https://msdn.microsoft.com/library/dn528946)
+ [Azure Scheduler-REST-API – Referenz](https://msdn.microsoft.com/library/mt629143)
 
  [Azure Scheduler – PowerShell-Cmdlets-Referenz](scheduler-powershell-reference.md)
 
@@ -199,4 +199,4 @@ Bei den folgenden Zeitplänen wird jeweils davon ausgegangen, dass _interval_ au
  
   
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

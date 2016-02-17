@@ -28,7 +28,8 @@ Im weiteren Verlauf dieses Themas werden die umfassenden Kennwortverwaltungsfunk
 - **Berichte zu Kennwortverwaltungsaktivitäten** bieten Administratoren Einblicke in die Aktivitäten, die sich in ihrer Organisation in Bezug auf die Kennwortzurücksetzung und -registrierung ereignen.
 - Das **Rückschreiben von Kennwörtern** ermöglicht die Verwaltung lokaler Kennwörter in der Cloud, sodass alle oben genannten Szenarien von oder im Auftrag von Verbund- oder kennwortsynchronisierten Benutzern durchgeführt werden können. Für das Rückschreiben von Kennwörtern ist Azure AD Premium erforderlich. Weitere Informationen finden Sie unter [Erste Schritte mit Azure Active Directory Premium](active-directory-get-started-premium.md).
 
-> [AZURE.NOTE]Azure AD Premium steht Kunden in China über die internationale Instanz von Azure AD zur Verfügung. Azure AD Premium wird derzeit im von 21Vianet in China betriebenen Microsoft Azure-Dienst nicht unterstützt. Wenn Sie weitere Informationen benötigen, kontaktieren Sie uns im [Azure Active Directory-Forum](http://feedback.azure.com/forums/169401-azure-active-directory).
+> [AZURE.NOTE]
+Azure AD Premium steht Kunden in China über die internationale Instanz von Azure AD zur Verfügung. Azure AD Premium wird derzeit im von 21Vianet in China betriebenen Microsoft Azure-Dienst nicht unterstützt. Wenn Sie weitere Informationen benötigen, kontaktieren Sie uns im [Azure Active Directory-Forum](https://feedback.azure.com/forums/169401-azure-active-directory/).
 
 Über die folgenden Links gelangen Sie zur Dokumentation, die für Sie am interessantesten ist:
 
@@ -48,4 +49,4 @@ Im weiteren Verlauf dieses Themas werden die umfassenden Kennwortverwaltungsfunk
 - [Erstellen oder Bearbeiten von Benutzern in Azure AD](active-directory-create-users.md)
 - [Verwalten von Gruppen in Azure AD](active-directory-manage-groups.md)
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

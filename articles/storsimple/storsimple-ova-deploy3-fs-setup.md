@@ -57,7 +57,7 @@ Verwenden Sie die folgende Schritt-für-Schritt-Anleitung, um Ihr virtuelles Sto
 
 	![](./media/storsimple-ova-deploy3-fs-setup/image2.png)
 
-1.  Melden Sie sich an der Webbenutzeroberfläche des virtuellen Geräts als **StorSimpleAdmin** an. Geben Sie das Kennwort des Geräteadministrators ein, das Sie in „Schritt 3: Starten des virtuellen Geräts“ (unter [Bereitstellen eines StorSimple Virtual Array in Hyper-V](storsimple-ova-deploy2-provision-hyperv.md) bzw. [Bereitstellen eines StorSimple Virtual Array in VMware](storsimple-ova-deploy2-provision-vmware.md)) geändert haben.
+1.  Melden Sie sich an der Webbenutzeroberfläche des virtuellen Geräts als **StorSimpleAdmin** an. Geben Sie das Kennwort des Geräteadministrators ein, das Sie in „Schritt 3: Starten des virtuellen Geräts“ (unter [Bereitstellen von StorSimple Virtual Array in Hyper-V](storsimple-ova-deploy2-provision-hyperv.md) bzw. [Bereitstellen von StorSimple Virtual Array in VMware](storsimple-ova-deploy2-provision-vmware.md)) geändert haben.
 
 	![](./media/storsimple-ova-deploy3-fs-setup/image3.png)
 
@@ -169,7 +169,7 @@ Die Einstellungen werden jetzt aktualisiert. Nachdem die Einstellungen erfolgrei
  ![](./media/storsimple-ova-deploy3-fs-setup/image17.png)
 
 
-> [AZURE.NOTE]
+> [AZURE.NOTE]                                                              
 >
 > Alle anderen Geräteeinstellungen können über die Seite **Konfigurieren** geändert werden.
 
@@ -231,4 +231,4 @@ Im Video wird gezeigt, wie Sie ein StorSimple Virtual Array als Dateiserver konf
 
 Erfahren Sie, wie Sie die lokale Webbenutzeroberfläche verwenden, um [Ihr StorSimple Virtual Array zu verwalten](storsimple-ova-web-ui-admin.md).
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

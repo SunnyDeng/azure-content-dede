@@ -1,6 +1,6 @@
-    <properties
-	pageTitle="Add a Git artifact repository to your DevTest Lab | Microsoft Azure"
-	description="Add a GitHub or Visual Studio Team Services Git repository for your custom artifacts to your lab"
+<properties
+	pageTitle="Hinzufügen eines Git-Artefaktrepositorys zu Ihrem DevTest Lab | Microsoft Azure"
+	description="Fügen Sie ein GitHub- oder Visual Studio Team Services-Git-Repository für Ihre benutzerdefinierten Elemente in Ihrem Lab hinzu."
 	services="devtest-lab,virtual-machines,visual-studio-online"
 	documentationCenter="na"
 	authors="tomarcher"
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/01/2015"
+	ms.date="02/03/2016"
 	ms.author="tarcher"/>
 
 # Hinzufügen eines Git-Artefaktrepositorys zu Ihrem DevTest Lab
@@ -49,7 +49,7 @@ Um Ihrem Lab ein GitHub-Artefaktrepository hinzuzufügen, rufen Sie zunächst di
 
 ###Verbinden Ihres Labs mit dem GitHub-Repository
 
-1. Melden Sie sich beim [Azure-Vorschauportal](http://portal.azure.com) an.
+1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com) an.
 
 1. Tippen Sie auf **Durchsuchen**, und tippen Sie dann in der Liste auf **DevTest Labs**.
 
@@ -115,4 +115,4 @@ Um Ihrem Lab ein Visual Studio Git-Artefaktrepository hinzuzufügen, rufen Sie z
     3. Geben Sie das gespeicherte **Persönliche Zugriffstoken** für das Artefaktrepository ein.
     4. Tippen Sie auf **Speichern**.
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0204_2016-->

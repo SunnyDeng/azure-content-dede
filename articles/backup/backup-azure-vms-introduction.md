@@ -31,7 +31,7 @@ Wenn die Datenübertragung abgeschlossen ist, wird die Momentaufnahme entfernt u
 ### Datenkonsistenz
 Das Sichern und Wiederherstellen unternehmenskritischer Daten ist dadurch kompliziert, dass die Daten während der Ausführung der Anwendungen gesichert werden, welche die Daten generieren. Hierfür bietet Azure Backup anwendungskonsistente Sicherungen für Microsoft-Workloads mithilfe des Volumeschattenkopie-Diensts, um sicherzustellen, dass die Daten ordnungsgemäß in den Speicher geschrieben werden.
 
->[AZURE.NOTE]Für virtuelle Linux-Computer sind nur dateikonsistente Sicherungen möglich, da Linux keine dem VSS entsprechende Plattform umfasst.
+>[AZURE.NOTE] Für virtuelle Linux-Computer sind nur dateikonsistente Sicherungen möglich, da Linux keine dem VSS entsprechende Plattform umfasst.
 
 Azure Backup erstellt vollständige VSS-Sicherungen auf virtuellen Windows-Computern (weitere Informationen hierzu finden Sie unter [VSS Full Backup](http://blogs.technet.com/b/filecab/archive/2008/05/21/what-is-the-difference-between-vss-full-backup-and-vss-copy-backup-in-windows-server-2008.aspx)). Um VSS-Kopiesicherungen zu aktivieren, müssen die folgenden Registrierungsschlüssel auf dem virtuellen Computer festgelegt werden.
 
@@ -91,7 +91,7 @@ Azure Backup verschlüsselt die Daten während des Sicherungsvorgangs nicht. Sie
 
 
 ## Wie werden geschützte Instanzen berechnet?
-Für virtuelle Azure-Computer, die über Azure Backup gesichert werden, gelten die [Azure Backup-Preise](http://azure.microsoft.com/pricing/details/backup/). Die Berechnung der geschützten Instanzen basiert auf der *tatsächlichen* Größe des virtuellen Computers, d. h. der Summe aller Daten auf dem virtuellen Computer, mit Ausnahme des Ressourcendatenträgers.
+Für virtuelle Azure-Computer, die über Azure Backup gesichert werden, gelten die [Azure Backup-Preise](https://azure.microsoft.com/pricing/details/backup/). Die Berechnung der geschützten Instanzen basiert auf der *tatsächlichen* Größe des virtuellen Computers, d. h. der Summe aller Daten auf dem virtuellen Computer, mit Ausnahme des Ressourcendatenträgers.
 
 Ihnen wird *nicht* die maximal unterstützte Größe für jeden mit dem virtuellen Computer verknüpften Datenträger, sondern die Größe der tatsächlich auf dem jeweiligen Datenträger gespeicherten Daten berechnet. Gleichermaßen basiert die Berechnung der Sicherungsspeicherung auf der Menge der mit Azure Backup gespeicherten Daten, d. h. auf der Summe der tatsächlichen Daten in jedem Wiederherstellungspunkt.
 
@@ -120,4 +120,4 @@ Wenn Sie Fragen haben oder Anregungen zu gewünschten Funktionen mitteilen möch
 - [Wiederherstellen virtueller Computer](backup-azure-restore-vms.md)
 - [Problembehandlung bei der Sicherung virtueller Computer](backup-azure-vms-troubleshoot.md)
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

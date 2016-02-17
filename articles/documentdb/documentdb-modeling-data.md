@@ -1,6 +1,7 @@
 <properties 
 	pageTitle="Modellieren von Daten in Azure DocumentDB | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie Daten für eine NoSQL-Dokumentendatenbank wie Azure DocumentDB modellieren." 
+	description="Informationen zur Datenmodellierung für DocumentDB, eine NoSQL-Dokumentdatenbank." 
+	keywords="Modellieren von Daten"
 	services="documentdb" 
 	authors="ryancrawcour" 
 	manager="jhubbard" 
@@ -87,7 +88,7 @@ Verwenden Sie in der Regel eingebettete Datenmodelle in den folgenden Fällen:
 - Es gibt eingebettete Daten, die nicht **grenzenlos** wachsen.
 - Es gibt eingebettete Daten, die von **integraler** Bedeutung für die Daten in einem Dokument sind.
 
-> [AZURE.NOTE]In der Regel bieten denormalisierte Datenmodelle eine bessere **Leseleistung**.
+> [AZURE.NOTE] In der Regel bieten denormalisierte Datenmodelle eine bessere **Leseleistung**.
 
 ###Wann Sie nicht einbetten sollten
 
@@ -113,7 +114,7 @@ Nehmen Sie beispielsweise diesen JSON-Ausschnitt.
 
 So könnte eine Beitragsentität mit eingebetteten Kommentaren aussehen, wenn wir ein typisches Blog- oder CMS-System modellieren würden. Das Problem bei diesem Beispiel besteht darin, dass das Kommentar-Array **unbegrenzt** ist, d. h., es gibt (praktisch) keine Begrenzung hinsichtlich der Anzahl an Kommentaren zu einem einzelnen Beitrag. Dies wird zu einem Problem, da die Größe des Dokuments erheblich zunehmen kann.
 
-> [AZURE.TIP]Dokumente in DocumentDB weisen eine Maximalgröße auf. Weitere Informationen dazu finden Sie unter [DocumentDB-Grenzen](documentdb-limits.md).
+> [AZURE.TIP] Dokumente in DocumentDB weisen eine Maximalgröße auf. Weitere Informationen dazu finden Sie unter [DocumentDB-Grenzen](documentdb-limits.md).
 
 Mit zunehmender Größe des Dokuments wird die Möglichkeit zum Übertragen von Daten über das Netz sowie zum Lesen und Aktualisieren des Dokuments bei Skalierung beeinträchtigt.
 
@@ -220,7 +221,7 @@ Im JSON-Abschnitt unten verwenden wir das vorherige Beispiel eines Aktienportfol
 
 Ein unmittelbarer Nachteil dieses Ansatzes besteht jedoch darin, dass, wenn Ihre Anwendung Informationen zu jeder Aktie anzeigen muss, die bei der Anzeige des Portfolios einer Person enthalten sein müssen, Sie mehrere Roundtrips zur Datenbank durchführen müssen, um die Informationen für jedes Aktiendokument zu laden. Hier haben wir beschlossen, die Effizienz der Schreibvorgänge zu verbessern, die mehrmals täglich durchgeführt werden, wir nehmen wiederum die Beeinträchtigung der Lesevorgänge hin, die sich potenziell weniger stark auf die Leistung dieses speziellen Systems auswirken.
 
-> [AZURE.NOTE]Normalisierte Datenmodelle **können mehrere Roundtrips zum Server erfordern**.
+> [AZURE.NOTE] Normalisierte Datenmodelle **können mehrere Roundtrips zum Server erfordern**.
 
 ### Was ist mit Fremdschlüsseln?
 Da es derzeit kein Konzept für eine Einschränkung gibt, Fremdschlüssel oder anderweitig, sind alle Beziehungen zwischen Dokumenten in Dokumenten im Grunde "schwache Verknüpfungen" und werden nicht von der Datenbank selbst überprüft. Wenn Sie sicherstellen möchten, dass die Daten, auf die ein Dokument verweist, tatsächlich vorhanden sind, müssen Sie dies in der Anwendung durchführen oder serverseitige Trigger oder gespeicherte Prozeduren für DocumentDB verwenden.
@@ -233,7 +234,7 @@ Verwenden Sie in der Regel normalisierte Datenmodelle in den folgenden Fällen:
 - Wenn sich zugehörige Daten **häufig ändern**.
 - Wenn referenzierte Daten möglicherweise **unbegrenzt** sind.
 
-> [AZURE.NOTE]Wenn eine Normalisierung in der Regel eine bessere **Schreibleistung** bietet.
+> [AZURE.NOTE] Wenn eine Normalisierung in der Regel eine bessere **Schreibleistung** bietet.
 
 ###Wo erstelle ich die Beziehung?
 Das Wachstum der Beziehung hilft bei der Bestimmung, in welchem Dokument der Verweis gespeichert werden sollte.
@@ -392,4 +393,4 @@ Informationen zur horizontalen Partitionierung („Sharding“) Ihrer Daten auf 
 Anleitungen für die Datenmodellierung und das Sharding für mehrinstanzenfähige Anwendungen finden Sie unter [Skalieren einer mehrinstanzenfähigen Anwendung mit Azure DocumentDB](http://blogs.msdn.com/b/documentdb/archive/2014/12/03/scaling-a-multi-tenant-application-with-azure-documentdb.aspx).
  
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -61,7 +61,7 @@ Um einen neuen App Service-Plan zu erstellen, klicken Sie auf **+ Neu erstellen*
  
 ## Wie kann ich eine App in einen anderen App Service-Plan verschieben?
 
-Sie können eine App im [Azure-Portal](http://portal.azure.com) in einen anderen App Service-Plan verschieben. Apps können zwischen Plänen in derselben geografischen Region verschoben werden.
+Sie können eine App im [Azure-Portal](https://portal.azure.com) in einen anderen App Service-Plan verschieben. Apps können zwischen Plänen in derselben geografischen Region verschoben werden.
 
 Um eine Anwendung in einen anderen Plan zu verschieben, navigieren Sie zu der App, die Sie verschieben möchten, und klicken dann auf **App Service-Plan ändern**.
  
@@ -89,15 +89,12 @@ App Service-Pläne stellen einen Satz an Funktionen und Kapazitäten dar, die Si
 
 ## Änderungen
 
-* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
- 
- 
- 
- <!-- Images. -->
+* Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
+   
 [pricingtier]: ./media/azure-web-sites-web-hosting-plans-in-depth-overview/appserviceplan-pricingtier.png
 [assign]: ./media/azure-web-sites-web-hosting-plans-in-depth-overview/assing-appserviceplan.png
 [change]: ./media/azure-web-sites-web-hosting-plans-in-depth-overview/change-appserviceplan.png
 [createASP]: ./media/azure-web-sites-web-hosting-plans-in-depth-overview/create-appserviceplan.png
 [createWebApp]: ./media/azure-web-sites-web-hosting-plans-in-depth-overview/create-web-app.png
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

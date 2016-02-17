@@ -35,7 +35,7 @@ Das Begleitthema für Windows-basierte virtuelle Computer finden Sie unter [Erst
 
 ## Installieren von Azure PowerShell
 
-Sofern dies noch nicht erfolgt ist, [installieren und konfigurieren Sie Azure PowerShell](../install-configure-powershell.md). Öffnen Sie dann eine Azure PowerShell-Befehlseingabeaufforderung.
+Sofern dies noch nicht erfolgt ist, [installieren und konfigurieren Sie Azure PowerShell](powershell-install-configure.md). Öffnen Sie dann eine Azure PowerShell-Befehlseingabeaufforderung.
 
 ## Festlegen Ihres Abonnements und Speicherkontos
 
@@ -268,16 +268,16 @@ Hier finden Sie den entsprechenden Azure PowerShell-Befehlssatz zum Erstellen di
 
 ## Zusätzliche Ressourcen
 
-[Dokumentation zu virtuellen Computern](http://azure.microsoft.com/documentation/services/virtual-machines/)
+[Dokumentation zu virtuellen Computern](https://azure.microsoft.com/documentation/services/virtual-machines/)
 
 [Virtuelle Computer in Azure – häufig gestellte Fragen](http://msdn.microsoft.com/library/azure/dn683781.aspx)
 
 [Übersicht über Azure Virtual Machines](http://msdn.microsoft.com/library/azure/jj156143.aspx)
 
-[Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md)
+[Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md)
 
 [Anmelden bei einem mit Linux betriebenen virtuellen Computer](virtual-machines-linux-how-to-log-on.md)
 
 [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren Windows-basierter virtueller Computer](virtual-machines-ps-create-preconfigure-windows-vms.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0204_2016-->

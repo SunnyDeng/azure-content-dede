@@ -65,9 +65,9 @@ Dieses Thema enthält Links zu Azure SDK für .NET-Versionshinweise.
 
 ##Verwandte Themen
 
-[Azure SDK für .NET](http://azure.microsoft.com/downloads/archive-net-downloads/)
+[Azure SDK für .NET](https://azure.microsoft.com/downloads/archive-net-downloads/)
 
 [Azure SDK-Versionshinweise auf MSDN](https://msdn.microsoft.com/library/azure/dn627519.aspx)
  
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

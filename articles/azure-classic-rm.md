@@ -4,7 +4,7 @@
    services="virtual-network"
    documentationCenter=""
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor=""
    tags="azure-resource-manager,azure-service-management"/>
 
@@ -48,7 +48,7 @@ In den folgenden Abschnitten wird erläutert, wie Azure-Ressourcen mit den versc
 Azure verfügt über zwei Portale:
 
 - **[Azure-Portal](https://manage.windowsazure.com):** Wenn Sie Azure schon seit einer Weile verwenden, kennen Sie dieses Portal. Es dient zum Erstellen und Konfigurieren älterer Azure-Ressourcen, die das klassische Bereitstellungsmodell unterstützen. Sie können es nicht zum Erstellen oder Konfigurieren von Ressourcen verwenden, die nur den Ressourcen-Manager unterstützen. 
-- **[Azure-Vorschauportal](http://azure.microsoft.com/overview/preview-portal/):** Wenn Sie eine neuere Azure-Ressource nutzen, haben Sie wahrscheinlich dieses Portal verwendet. Es kann zum Erstellen und Konfigurieren einiger Azure-Ressourcen verwendet werden. Sie werden damit letztendlich alle Azure-Ressourcen erstellen und konfigurieren können. Für einige Ressourcen, die beide Bereitstellungsmodelle unterstützen, kann dieses Portal zum Erstellen und Konfigurieren einer Ressource mit einem beliebigen der beiden Bereitstellungsmodelle verwendet werden. 
+- **[Azure-Vorschauportal](https://azure.microsoft.com/overview/preview-portal/):** Wenn Sie eine neuere Azure-Ressource nutzen, haben Sie wahrscheinlich dieses Portal verwendet. Es kann zum Erstellen und Konfigurieren einiger Azure-Ressourcen verwendet werden. Sie werden damit letztendlich alle Azure-Ressourcen erstellen und konfigurieren können. Für einige Ressourcen, die beide Bereitstellungsmodelle unterstützen, kann dieses Portal zum Erstellen und Konfigurieren einer Ressource mit einem beliebigen der beiden Bereitstellungsmodelle verwendet werden. 
 
 Einige Ressourcen und Features können nur in entweder dem einem oder dem anderen der beiden Portale erstellt und konfiguriert werden. Einige Ressourcen oder Features können (noch) nicht in einem der Portale erstellt oder konfiguriert werden und lassen sich nur mit PowerShell und/oder der Befehlszeilenschnittstelle konfigurieren. Die Dokumentation für die einzelnen Azure-Ressourcen legt dar, mit welcher Methode sie jeweils erstellt werden können.
 
@@ -57,7 +57,7 @@ Mit [PowerShell](powershell-install-configure.md) können Sie eine Befehlszeile 
 
 - **Nur PowerShell-Cmdlets:** Sie können jede Azure-Ressource einzeln über die Cmdlets für die einzelnen Ressourcen erstellen und konfigurieren. Dies kann über eine Befehlszeile erfolgen oder durch Einschließen mehrerer Befehle in einem PowerShell-Skript, das Sie speichern und versionieren können.
 
-- **PowerShell-Cmdlets mit einer Azure-Ressourcen-Manager-Vorlage:** Sie können PowerShell zum Erstellen von Azure-Ressourcen über eine Azure-Ressourcen-Manager-Vorlage verwenden. Vorlagen können gespeichert und versioniert werden. Weitere Informationen finden Sie im Artikel [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](resource-group-template-deploy.md). Es gibt mehrere [Azure-Schnellstartvorlagen](http://azure.microsoft.com/documentation/templates/) für gängige Lösungen, die heruntergeladen und geändert werden können.
+- **PowerShell-Cmdlets mit einer Azure-Ressourcen-Manager-Vorlage:** Sie können PowerShell zum Erstellen von Azure-Ressourcen über eine Azure-Ressourcen-Manager-Vorlage verwenden. Vorlagen können gespeichert und versioniert werden. Weitere Informationen finden Sie im Artikel [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](resource-group-template-deploy.md). Es gibt mehrere [Azure-Schnellstartvorlagen](https://azure.microsoft.com/documentation/templates/) für gängige Lösungen, die heruntergeladen und geändert werden können.
 
 ## Befehlszeilenschnittstelle (CLI)
 Sie können Azure-Ressourcen auf Windows-, OS X- oder Linux-Computern über die Befehlszeilenschnittstelle erstellen und konfigurieren. Lesen Sie den Artikel [Installieren der Azure-Befehlszeilenschnittstelle](xplat-cli-install.md), um die Befehlszeilenschnittstelle auf dem Betriebssystem Ihrer Wahl zu installieren. Wie in PowerShell gibt es verschiedene Befehle, die je nachdem verwendet werden müssen, ob Sie Ressourcen mit dem [Ressourcen-Managers-](xplat-cli-azure-resource-manager.md) oder mit dem [klassischen Bereitstellungsmodell (Service Management)](virtual-machines-command-line-tools.md) erstellen.
@@ -68,4 +68,4 @@ Sie können Azure-Ressourcen auf Windows-, OS X- oder Linux-Computern über die 
 - Erlernen Sie das [Entwerfen von Vorlagen](/best-practices-resource-manager-design-templates.md).
 - Wenden Sie [bewährte Methoden](/best-practices-resource-manager-examples.md) an.
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0204_2016-->

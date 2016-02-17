@@ -1,20 +1,20 @@
 <properties
-   pageTitle="Problembehandlung in der Zugriffsbereichserweiterung für Internet Explorer | Microsoft Azure"
-   description="So stellen Sie das Internet Explorer-Add-On für das Portal ";Meine Apps"; mithilfe von Gruppenrichtlinien bereit"
-   services="active-directory"
-   documentationCenter=""
-   authors="liviodlc"
-   manager="stevenpo"
-   editor=""/>
+    pageTitle="Problembehandlung in der Zugriffsbereichserweiterung für Internet Explorer | Microsoft Azure"
+    description="So stellen Sie das Internet Explorer-Add-On für das Portal ";Meine Apps"; mithilfe von Gruppenrichtlinien bereit"
+    services="active-directory"
+    documentationCenter=""
+    authors="liviodlc"
+    manager="stevenpo"
+    editor=""/>
 
 <tags
-   ms.service="active-directory"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="identity"
-   ms.date="09/28/2015"
-   ms.author="liviodlc"/>
+    ms.service="active-directory"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="identity"
+    ms.date="02/02/2016"
+    ms.author="liviodlc"/>
 
 #Problembehandlung in der Zugriffsbereichserweiterung für Internet Explorer
 
@@ -105,4 +105,4 @@ Wenn beim Deinstallieren der Erweiterung Probleme auftreten, können Sie diese a
 
 [AZURE.INCLUDE [saas-toc](../../includes/active-directory-saas-toc.md)]
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0204_2016-->

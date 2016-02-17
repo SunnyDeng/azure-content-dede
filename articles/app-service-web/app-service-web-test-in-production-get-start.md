@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/16/2015"
+	ms.date="01/13/2016"
 	ms.author="cephalin"/>
 
 # Erste Schritte beim Testen in der Produktionsumgebung für Web-Apps
@@ -39,9 +39,9 @@ Mit dem Feature für Datenverkehrsrouting in [Azure App Service](http://go.micro
 
 Auf der Basisebene in jedem TiP-Szenario leiten Sie einen vorab definierten Prozentsatz des Livedatenverkehrs an einen nicht produktiven Bereitstellungsslot weiter. Führen Sie dazu die folgenden Schritte aus:
 
->[AZURE.NOTE]Bei den folgenden Schritten wird davon ausgegangen, dass Sie bereits über einen [nicht produktiven Bereitstellungsslot](web-sites-staged-publishing.md) verfügen und die gewünschten Web-App-Inhalte in diesem Slot [bereitgestellt](web-sites-publish-source-control.md) wurden.
+>[AZURE.NOTE] Bei den folgenden Schritten wird davon ausgegangen, dass Sie bereits über einen [nicht produktiven Bereitstellungsslot](web-sites-staged-publishing.md) verfügen und die gewünschten Web-App-Inhalte in diesem Slot [bereitgestellt](web-sites-publish-source-control.md) wurden.
 
-1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/) an.
 2. Klicken Sie auf dem Blatt der Web-App auf **Einstellungen** > **Datenverkehrsrouting**. ![](./media/app-service-web-test-in-production/01-traffic-routing.png)
 3. Wählen Sie den Slot aus, an den Sie den Datenverkehr weiterleiten möchten, sowie den gewünschten Prozentsatz des Gesamtdatenverkehrs, und klicken Sie auf **Speichern**.
 
@@ -86,4 +86,4 @@ Damit Benutzer Ihre Beta-App nutzen können, legen Sie den gleichen Abfrageparam
 -   [Agile Softwareentwicklung mit Azure App Service](app-service-agile-software-development.md)
 -	[Effektive Verwendung der DevOps-Umgebungen für Ihre Web-Apps](app-service-web-staged-publishing-realworld-scenarios.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

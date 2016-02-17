@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="10/15/2015"
+   ms.date="01/26/2016"
    ms.author="abhisram"/>
 
 # Diagnose und Leistungsüberwachung für Reliable Actors
@@ -153,4 +153,4 @@ Die Reliable Actors-Laufzeit gibt die folgenden Ereignisse im Zusammenhang mit d
 |ActorActivated|5|Information|0x1|Ein Actor wurde aktiviert.|
 |ActorDeactivated|6|Information|0x1|Ein Actor wurde deaktiviert.|
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

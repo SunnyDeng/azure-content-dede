@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/13/2015"
+	ms.date="02/01/2016"
 	ms.author="szark"/>
 
 #Einführung in Linux in Azure
@@ -28,8 +28,8 @@ Dieses Thema bietet einen Überblick über einige Aspekte der Verwendung virtuel
 Wenn Sie mithilfe des klassischen Azure-Portals einen virtuellen Linux-Computer erstellen, werden Sie aufgefordert, einen Benutzernamen, ein Kennwort oder einen öffentlichen SSH-Schlüssel anzugeben. Bei der Auswahl eines Benutzernamens während der Bereitstellung virtueller Linux-Computer gibt es folgende Einschränkungen: bereits im virtuellen Computer vorhandene Namen von Systemkonten (UID <100) sind nicht zulässig, z. B. 'root'.
 
 
- - Siehe [Erstellen eines virtuellen Linux-Computers](virtual-machines-linux-tutorial.md)
- - Siehe [Verwenden von SSH mit Linux in Azure](../linux-use-ssh-key.md)
+ - Weitere Informationen finden Sie unter [Erstellen eines virtuellen Linux-Computers](virtual-machines-linux-tutorial.md)
+ - Siehe [Verwenden von SSH mit Linux in Azure](virtual-machines-linux-use-ssh-key.md)
 
 
 ## Erlangen von Superuser-Berechtigungen mit `sudo`
@@ -68,7 +68,7 @@ Der Azure Linux Agent enthält eine Funktion zur automatischen Erkennung dieser 
 **Ubuntu**- und **CoreOS**-Images nutzen cloud-init bei Azure, was zusätzliche Funktionen für das Bootstrapping eines virtuellen Computers bietet.
 
  - [Einfügen von benutzerdefinierten Daten](virtual-machines-how-to-inject-custom-data.md)
- - [Custom Data and Cloud-Init on Microsoft Azure (Benutzerdefinierte Daten und Cloud-Init in Microsoft Azure, in englischer Sprache)](http://azure.microsoft.com/blog/2014/04/21/custom-data-and-cloud-init-on-windows-azure/)
+ - [Custom Data and Cloud-Init on Microsoft Azure (Benutzerdefinierte Daten und Cloud-Init in Microsoft Azure, in englischer Sprache)](https://azure.microsoft.com/blog/2014/04/21/custom-data-and-cloud-init-on-windows-azure/)
  - [AzureSwapPartitions (in englischer Sprache)](https://wiki.ubuntu.com/AzureSwapPartitions)
  - [Verwenden von CoreOS in Azure](virtual-machines-linux-coreos-how-to.md)
 
@@ -93,10 +93,10 @@ An jeden virtuellen Computer ist ein temporärer lokaler *Ressourcendatenträger
 Unter Linux wird der Ressourcendatenträger normalerweise vom Azure Linux Agent verwaltet und automatisch an **/mnt/resource** (oder auf Ubuntu-Images an **/mnt**) angefügt.
 
 
->[AZURE.NOTE]Beachten Sie, dass der Ressourcendatenträger ein **temporärer** Datenträger ist und geleert und neu formatiert werden kann, wenn der virtuelle Computer neu gestartet wird.
+>[AZURE.NOTE] Beachten Sie, dass der Ressourcendatenträger ein **temporärer** Datenträger ist und geleert und neu formatiert werden kann, wenn der virtuelle Computer neu gestartet wird.
 
 Der Datenträger unter Linux kann vom Kernel den Namen `/dev/sdc` erhalten. Die Benutzer müssen diese Ressource partitionieren, formatieren und bereitstellen. Dieser Vorgang wird Schritt für Schritt im Lernprogramm [Anfügen eines Datenträgers an einen virtuellen Computer](virtual-machines-linux-how-to-attach-disk.md) beschrieben.
 
  - **Siehe auch:** [Konfigurieren des Software-RAID unter Linux](virtual-machines-linux-configure-raid.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0204_2016-->

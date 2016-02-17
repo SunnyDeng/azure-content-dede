@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/09/2015" 
+	ms.date="01/26/2016" 
 	ms.author="spelluru"/>
 
 # Versionshinweise für Azure Data Factory
@@ -270,8 +270,8 @@ Die Listen **Letzte aktualisierte Slices** und **Letzte fehlerhafte Slices** bef
 
 Klicken Sie auf den Titel der Listen oder auf **...** (Auslassungspunkte), um eine umfangreichere Liste mit Slices anzuzeigen. Klicken Sie auf der Symbolleiste auf **Filter**, um die Slices zu filtern.
  
-Durch Klicken auf die Kachel **Datenslices (nach Slicezeit)** können Sie Slices weiterhin sortiert nach der Slicezeit anzeigen. Die Slices in diesen Auflistungen sind nach Slicezeit sortiert. Bei einem stündlichen Zeitplan sind die Slices beispielsweise wie folgt sortiert:
-- 04.04.2015 17:00 Uhr In Bearbeitung
+Durch Klicken auf die Kachel **Datenslices (nach Slicezeit)** können Sie Slices weiterhin sortiert nach der Slicezeit anzeigen. Die Slices in diesen Auflistungen sind nach Slicezeit sortiert. Bei einem stündlichen Zeitplan sind die Slices beispielsweise wie folgt sortiert: 
+- 04.04.2015 17:00 Uhr In Bearbeitung 
 - 04.04.2015 16:00 Uhr Erfolg 
 - 04.04.2015 15:00 Uhr Fehler
 
@@ -290,12 +290,12 @@ Wenn jedoch ein älterer Slice erneut ausgeführt wird, wird er nicht oben in di
 -  Sie können die Codierung für Textdateien in einem Azure-Blob angeben. Siehe die neue Eigenschaft [encodingName](https://msdn.microsoft.com/library/dn894089.aspx#AzureBlob). 
 - Beim Kopieren in die SQL-Senke können Sie eine gespeicherte Prozedur mit zusätzlichen Parametern aufrufen.    
 
-Siehe den Blogbeitrag [Azure Data Factory-Update – Neue Datenspeicher](http://azure.microsoft.com/blog/2015/03/30/azure-data-factory-update-new-data-stores/), der weitere Informationen und Beispiele bietet.
+Siehe den Blogbeitrag [Azure Data Factory-Update – Neue Datenspeicher](https://azure.microsoft.com/blog/2015/03/30/azure-data-factory-update-new-data-stores/), der weitere Informationen und Beispiele bietet.
 
 ## Anmerkungen zur Version von Data Factory vom 27.2.2015
 
 ### Neue Verbesserungen
-- **Azure Data Factory-Editor**: Der Data Factory-Editor, der zum Azure-Portal gehört, dient zum Erstellen, Bearbeiten und Bereitstellen von JSON-Dateien, die verknüpfte Dienste, Datasets und Pipelines definieren. Hauptaufgabe des Editors ist es, Ihnen eine schnelle und schlanke Benutzeroberfläche zum Erstellen von Azure Data Factory-Artefakten zu bieten, ohne dass Sie Azure PowerShell installieren und PowerShell-Cmdlets einsetzen müssen. Im Blogbeitrag [Azure Data Factory-Editor – ein schlanker Web-Editor][adf-editor-blog] finden Sie eine Kurzübersicht sowie ein Video zum Data Factory-Editor. Eine ausführliche Übersicht über den Editor finden Sie im Artikel [Data Factory-Editor][adf-editor].          
+- **Azure Data Factory-Editor**: Der Data Factory-Editor, der zum Azure-Portal gehört, dient zum Erstellen, Bearbeiten und Bereitstellen von JSON-Dateien, die verknüpfte Dienste, Datasets und Pipelines definieren. Hauptaufgabe des Editors ist es, Ihnen eine schnelle und schlanke Benutzeroberfläche zum Erstellen von Azure Data Factory-Artefakten zu bieten, ohne dass Sie Azure PowerShell installieren und PowerShell-Cmdlets einsetzen müssen. Im Blogbeitrag [Azure Data Factory-Editor – ein schlanker Web-Editor][adf-editor-blog] finden Sie eine Kurzübersicht sowie ein Video zum Data Factory-Editor.  
 
 ### Änderungen
 
@@ -343,7 +343,6 @@ Siehe den Blogbeitrag [Azure Data Factory-Update – Neue Datenspeicher](http://
 
 [adf-azure-ml]: data-factory-azure-ml-batch-execution-activity.md
 [adf-custom-activities]: data-factory-use-custom-activities.md
-[adf-editor]: data-factory-editor.md
 
 [adf-editor-video]: http://channel9.msdn.com/Blogs/Windows-Azure/New-Azure-Data-Factory-Editor-UI
 [adf-editor-blog]: http://azure.microsoft.com/blog/2015/03/02/azure-data-factory-editor-a-light-weight-web-editor/
@@ -357,4 +356,4 @@ Siehe den Blogbeitrag [Azure Data Factory-Update – Neue Datenspeicher](http://
 
  
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

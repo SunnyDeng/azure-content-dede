@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/28/2015" 
+	ms.date="02/01/2016" 
 	ms.author="spelluru"/>
 
 # Fallstudien
@@ -48,4 +48,4 @@ Data Factory ist ein cloudbasierter Dienst zur Verwaltung von Informationen, der
 
 [Durch Cloud Machine Learning den Kundenkontakt stärken](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=11257)
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0204_2016-->

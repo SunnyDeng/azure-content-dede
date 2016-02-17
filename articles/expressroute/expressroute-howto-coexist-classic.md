@@ -18,7 +18,7 @@
 
 # Konfigurieren von gleichzeitig bestehenden ExpressRoute- und Standort-zu-Standort-VPN-Verbindungen für ein VNet
 
-Die Möglichkeit zum Konfigurieren von Standort-zu-Standort-VPN und ExpressRoute bietet mehrere Vorteile. Sie können Standort-zu-Standort-VPN als sicheren Failoverpfad für ExressRoute konfigurieren oder Standort-zu-Standort-VPNs für die Verbindung mit Websites nutzen, die nicht Teil Ihres Netzwerks, aber über ExpressRoute verbunden sind. Wir werden die Schritte zum Konfigurieren von beiden Szenarien in diesem Artikel behandeln. Dieser Artikel bezieht sich auf Verbindungen, die mithilfe des klassischen Bereitstellungsmodells erstellt wurden.
+Die Möglichkeit zum Konfigurieren von Standort-zu-Standort-VPN und ExpressRoute bietet mehrere Vorteile. Sie können Standort-zu-Standort-VPN als sicheren Failoverpfad für ExressRoute konfigurieren oder Standort-zu-Standort-VPNs für die Verbindung mit Websites nutzen, die nicht Teil Ihres Netzwerks, aber über ExpressRoute verbunden sind. Wir werden die Schritte zum Konfigurieren von beiden Szenarien in diesem Artikel behandeln. Derzeit können Sie diese Konfiguration nur mit dem klassischen Bereitstellungsmodell erstellen. Sobald Dokumentation für das Ressourcen-Manager-Bereitstellungsmodell verfügbar ist, stellen wir hier einen Link bereit.
 
 >[AZURE.IMPORTANT] Sie sollten wissen, dass Azure derzeit mit zwei Bereitstellungsmodellen arbeitet: der Bereitstellung mit dem Ressourcen-Manager und der klassischen Bereitstellung. Bevor Sie Ihre Konfiguration beginnen, sollten Sie sicherstellen, dass Sie die Bereitstellungsmodelle und -tools verstehen. Informationen zu den Bereitstellungsmodellen finden Sie unter [Azure-Bereitstellungsmodelle](../azure-classic-rm.md).
 
@@ -211,4 +211,4 @@ Wenn Sie ein vorhandenes virtuelles Netzwerk über eine ExpressRoute- oder Stand
 
 Weitere Informationen über ExpressRoute finden Sie unter [ExpressRoute – FAQ](expressroute-faqs.md).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

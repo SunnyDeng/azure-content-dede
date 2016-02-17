@@ -1,12 +1,13 @@
 
 <properties
 	pageTitle="Wiederherstellen eines virtuellen Computers aus einer Sicherung | Microsoft Azure"
-	description="Erfahren Sie, wie ein virtueller Azure-Computer wiederhergestellt wird."
+	description="Erfahren Sie, wie ein virtueller Azure-Computer mithilfe eines Wiederherstellungspunkts wiederhergestellt wird."
 	services="backup"
 	documentationCenter=""
 	authors="trinadhk"
 	manager="shreeshd"
-	editor=""/>
+	editor=""
+	keywords="Sicherung wiederherstellen; Wiederherstellungsschritte; Wiederherstellungspunkt;"/>
 
 <tags
 	ms.service="backup"
@@ -14,13 +15,16 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/29/2015"
-	ms.author="trinadhk"; "jimpark"/>
+	ms.date="01/22/2016"
+	ms.author="trinadhk; jimpark;"/>
+
 
 # Wiederherstellen virtueller Computer in Azure
-Mithilfe der Wiederherstellungsaktion können Sie einen virtuellen Computer aus den Sicherungen im Azure-Sicherungstresor in einem neuen virtuellen Computer wiederherstellen.
+
+Führen Sie die folgenden Schritte aus, um einen virtuellen Computer aus den Sicherungen im Azure-Sicherungstresor in einem neuen virtuellen Computer wiederherzustellen.
 
 ## Wiederherstellen von Workflows
+
 ### 1\. Auswählen eines wiederherzustellenden Elements
 
 1. Navigieren Sie zur Registerkarte **Geschützte Elemente**, und wählen Sie den virtuellen Computer aus, den Sie in einem neuen virtuellen Computer wiederherstellen möchten.
@@ -104,7 +108,7 @@ In einer Umgebung mit mehreren Domänencontrollern synchronisieren die Domänenc
 
 Das Problem tritt auf, weil der DSRM-Modus in Azure nicht vorhanden ist. Zum Wiederherstellen eines virtuellen Computers können Sie also nicht das Azure-Portal verwenden. Der einzige unterstützte Wiederherstellungsmechanismus ist die datenträgerbasierte Wiederherstellung mithilfe von PowerShell.
 
->[AZURE.WARNING]Verwenden Sie für virtuelle Computer des Domänencontrollers in einer Umgebung mit mehreren Domänencontrollern nicht das Azure-Portal für die Wiederherstellung. Nur die PowerShell-basierte Wiederherstellung wird unterstützt.
+>[AZURE.WARNING] Verwenden Sie für virtuelle Computer des Domänencontrollers in einer Umgebung mit mehreren Domänencontrollern nicht das Azure-Portal für die Wiederherstellung. Nur die PowerShell-basierte Wiederherstellung wird unterstützt.
 
 Hier finden Sie weitere Informationen zum [USN-Rollback-Problem](https://technet.microsoft.com/library/dd363553) und den vorgeschlagenen Strategien zum Beheben des Problems.
 
@@ -117,7 +121,7 @@ Azure Backup unterstützt die Sicherung für die folgenden speziellen Netzwerkko
 
 Bei diesen Konfigurationen müssen bei ihrer Wiederherstellung die folgende Aspekte berücksichtigt werden.
 
->[AZURE.TIP]Verwenden Sie den PowerShell-basierten Wiederherstellungsprozess zum erneuten Erstellen der speziellen Netzwerkkonfiguration von VMs im Anschluss an die Wiederherstellung.
+>[AZURE.TIP] Verwenden Sie den PowerShell-basierten Wiederherstellungsprozess zum erneuten Erstellen der speziellen Netzwerkkonfiguration von VMs im Anschluss an die Wiederherstellung.
 
 ### Wiederherstellung über die Benutzeroberfläche:
 Beim Wiederherstellen über die Benutzeroberfläche **müssen Sie stets einen neuen Clouddienst wählen**. Da das Portal während des Wiederherstellungsprozesses nur Pflichtparameter verwendet, geht bei VMs, die über die Benutzeroberfläche wiederhergestellt werden, die spezielle Netzwerkkonfiguration verloren. Dies bedeutet, dass wiederhergestellte VMs herkömmliche VMs sind, die ohne Load Balancer bzw. mehrere NICs oder reservierte IP-Adressen konfiguriert sind.
@@ -131,13 +135,13 @@ Zum vollständigen Wiederherstellen des virtuellen Computers im Anschluss an die
 
 2. Erstellen mithilfe der PowerShell-Cmdlets die für Load Balancer/mehrere NICs/mehrere reservierte IP-Adressen erforderliche VM-Konfiguration, und verwenden Sie sie zum Erstellen der VM mit der gewünschten Konfiguration.
 	- Erstellen Sie die VM im Clouddienst mit [internem Load Balancer](https://azure.microsoft.com/documentation/articles/load-balancer-internal-getstarted/).
-	- Erstellen Sie die VM zum Herstellen einer Verbindung dem [Load Balancer mit Internetzugriff](https://azure.microsoft.com/de-DE/documentation/articles/load-balancer-internet-getstarted).
-	- Erstellen Sie die VM mit [mehreren NICs](https://azure.microsoft.com/documentation/articles/virtual-networks-multiple-nics).
+	- Erstellen Sie die VM zum Herstellen einer Verbindung dem [Load Balancer mit Internetzugriff](https://azure.microsoft.com/de-DE/documentation/articles/load-balancer-internet-getstarted/).
+	- Erstellen Sie die VM mit [mehreren NICs](https://azure.microsoft.com/documentation/articles/virtual-networks-multiple-nics/).
 	- Erstellen Sie die VM mit [mehreren reservierten IP-Adressen](https://azure.microsoft.com/documentation/articles/virtual-networks-reserved-public-ip/).
-  
+
 
 ## Nächste Schritte
 - [Problembehandlung](backup-azure-vms-troubleshoot.md#restore)
 - [Verwalten virtueller Computer](backup-azure-manage-vms.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

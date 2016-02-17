@@ -1,6 +1,7 @@
 <properties 
-	pageTitle=".NET-Beispiele für DocumentDB auf GitHub | Microsoft Azure" 
-	description="Auf GitHub finden Sie C# .NET-Beispiele für gängige Aufgaben in DocumentDB, darunter CRUD-Vorgänge für JSON-Dokumente in NoSQL-Datenbanken." 
+	pageTitle=".NET NoSQL-Beispiel für DocumentDB | Microsoft Azure" 
+	description="Auf GitHub finden Sie C# .NET NoSQL-Beispiele für gängige Aufgaben in DocumentDB, darunter CRUD-Vorgänge für JSON-Dokumente in NoSQL-Datenbanken." 
+	keywords="NoSQL-Beispiel"
 	services="documentdb" 
 	authors="mimig1" 
 	manager="jhubbard" 
@@ -20,23 +21,24 @@
 # DocumentDB .NET-Beispiele
 
 > [AZURE.SELECTOR]
-- [.NET Samples](documentdb-dotnet-samples.md)
-- [Node.js Samples](documentdb-nodejs-samples.md)
+- [.NET Examples](documentdb-dotnet-samples.md)
+- [Node.js Examples](documentdb-nodejs-samples.md)
 - [Azure Code Sample Gallery](https://azure.microsoft.com/documentation/samples/?service=documentdb)
 
-Beispiellösungen, in denen CRUD-Operationen und andere häufige Vorgänge für DocumentDB-Ressourcen ausgeführt werden, sind im GitHub-Repository [azure-documentdb-net](https://github.com/Azure/azure-documentdb-net/tree/master/samples/code-samples) enthalten. Dieser Artikel enthält Folgendes:
+Beispiellösungen, in denen CRUD- und andere häufige Vorgänge für DocumentDB-Ressourcen ausgeführt werden, sind im GitHub-Repository [azure-documentdb-net](https://github.com/Azure/azure-documentdb-net/tree/master/samples/code-samples) enthalten. Dieser Artikel enthält Folgendes:
 
 - Links zu den Aufgaben in den einzelnen C#-Beispielprojektdateien. 
 - Links zum zugehörigen API-Referenzinhalt.
 
 **Voraussetzungen**
 
-1. Sie benötigen ein Azure-Konto, um diese Beispiele zu verwenden:
+1. Sie benötigen ein Azure-Konto, um diese NoSQL-Beispiele zu verwenden:
     - Sie können [ein Azure-Konto kostenlos erstellen](https://azure.microsoft.com/pricing/free-trial/): Sie erhalten ein Guthaben, das Sie zum Ausprobieren zahlungspflichtiger Azure-Dienste nutzen können, und Sie können das Konto selbst dann behalten und die kostenlosen Azure-Dienste wie Websites nutzen, wenn das Guthaben aufgebraucht ist. Ihre Kreditkarte wird nur dann belastet, wenn Sie Ihre Einstellungen explizit ändern und mit einer Zahlung einverstanden sind.
-   - Sie können Ihre [Vorteile für Visual Studio-Abonnenten aktivieren](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/): Ihr Visual Studio-Abonnement beinhaltet ein monatliches Guthaben, das Sie für zahlungspflichtige Azure-Dienste nutzen können.
+   - Sie können Ihre [Vorteile für Visual Studio-Abonnenten aktivieren](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/): Ihr Visual Studio-Abonnement schließt ein monatliches Guthaben ein, das Sie für zahlungspflichtige Azure-Dienste nutzen können.
 2. Außerdem benötigen Sie das [Microsoft.Azure.DocumentDB-NuGet-Paket](http://www.nuget.org/packages/Microsoft.Azure.DocumentDB/). 
 
-> [AZURE.NOTE]Jedes Beispiel ist eigenständig mit eigener Einrichtung und Bereinigung. In den Beispielen werden mehrere Aufrufe von CreateDocumentCollectionAsync() ausgegeben. Jedes Mal, wenn dies geschieht, wird Ihrem Abonnement 1 Stunde Nutzung gemäß dem Leistungstarif der erstellten Sammlung berechnet.
+> [AZURE.NOTE]
+Jedes Beispiel ist eigenständig mit eigener Einrichtung und Bereinigung. In den Beispielen werden mehrere Aufrufe von CreateDocumentCollectionAsync() ausgegeben. Jedes Mal, wenn dies geschieht, wird Ihrem Abonnement 1 Stunde Nutzung gemäß dem Leistungstarif der erstellten Sammlung berechnet.
 
 ## Datenbankbeispiele
 
@@ -78,7 +80,7 @@ Aufgabe | API-Referenz
 [Löschen eines Dokuments](https://github.com/Azure/azure-documentdb-dotnet/blob/f374cc601f4cf08d11c88f0c3fa7dcefaf7ecfe8/samples/code-samples/DocumentManagement/Program.cs#L322) | [DocumentClient.DeleteDocumentAsync](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.client.documentclient.deletedocumentasync.aspx)
 [Verwenden von dynamischen .NET-Objekten](https://github.com/Azure/azure-documentdb-dotnet/blob/f374cc601f4cf08d11c88f0c3fa7dcefaf7ecfe8/samples/code-samples/DocumentManagement/Program.cs#L331-L380) | [DocumentClient.CreateDocumentAsync](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.client.documentclient.createdocumentasync.aspx)<br>[DocumentClient.ReadDocumentAsync](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.client.documentclient.readdocumentasync.aspx)<br>[DocumentClient.ReplaceDocumentAsync](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.client.documentclient.replacedocumentasync.aspx)
 
-## Beispiele für die Indizierung
+## Indizierungsbeispiele
 
 Die [RunIndexDemo](https://github.com/Azure/azure-documentdb-dotnet/blob/ea8c977b9c2f37ddc2894911ec239907ab60e40a/samples/code-samples/IndexManagement/Program.cs#L89-L117)-Methode des IndexManagement-Beispielprojekts veranschaulicht, wie Sie die folgenden Aufgaben durchführen.
 
@@ -94,7 +96,7 @@ Aufgabe | API-Referenz
 
 Weitere Informationen zur Indizierung finden Sie unter [Indizierungsrichtlinien für DocumentDB](documentdb-indexing-policies.md).
  
-## Beispiele für die Partitionierung
+## Partitionierungsbeispiele
 
 Die Partitionierungsbeispieldatei [azure-documentdb-net/samples/code-samples/Partitioning/Program.cs](https://github.com/Azure/azure-documentdb-net/blob/master/samples/code-samples/Partitioning/Program.cs) veranschaulicht, wie Sie die folgenden Aufgaben durchführen. In einigen Fällen werden zusätzliche Hilfsdateien verwendet, um die Aufgabe durchzuführen.
 
@@ -112,9 +114,9 @@ Aufgabe | API-Referenz
 
 Weitere Informationen zu Partitionierung und Sharding finden Sie unter [Partitionieren und Skalieren von Daten in DocumentDB](documentdb-partition-data.md).
 
-## Beispiele für Geodaten  
+## Geodatenbeispiele  
 
-Die Geodaten-Beispieldatei [azure-documentdb-net/samples/code-samples/Geospatial/Program.cs](https://github.com/Azure/azure-documentdb-dotnet/blob/master/samples/code-samples/Geospatial/Program.cs) veranschaulicht, wie Sie die folgenden Aufgaben durchführen.
+Die Geodatenbeispieldatei [azure-documentdb-net/samples/code-samples/Geospatial/Program.cs](https://github.com/Azure/azure-documentdb-dotnet/blob/master/samples/code-samples/Geospatial/Program.cs) veranschaulicht, wie Sie die folgenden Aufgaben durchführen.
  
 Aufgabe | API-Referenz  
 ---- | ---  
@@ -127,7 +129,7 @@ Aufgabe | API-Referenz
  
 Weitere Informationen zum Verwenden von Geodaten finden Sie unter [Arbeiten mit Geodaten in Azure DocumentDB](documentdb-geospatial.md).
  
-## Beispiele für Abfragen
+## Abfragebeispiele
 
 Die Abfragedokumentdatei [azure-documentdb-net/samples/code-samples/Queries/Program.cs](https://github.com/Azure/azure-documentdb-net/blob/master/samples/code-samples/Queries/Program.cs) veranschaulicht, wie Sie die folgenden Aufgaben jeweils mit der SQL-Abfragegrammatik, dem LINQ-Anbieter mit Abfrage und mit Lambda durchführen.
 
@@ -148,7 +150,7 @@ Aufgabe | API-Referenz
 Weitere Informationen zum Schreiben von Abfragen finden Sie unter [SQL-Abfrage in DocumentDB](documentdb-sql-query.md).
 
 
-## Beispiele für serverseitige Programmierung
+## Serverseitige Programmierbeispiele
 
 Die Datei [azure-documentdb-net/samples/code-samples/ServerSideScripts/Program.cs](https://github.com/Azure/azure-documentdb-net/blob/master/samples/code-samples/ServerSideScripts/Program.cs) für die serverseitige Programmierung veranschaulicht, wie Sie die folgenden Aufgaben durchführen.
 
@@ -162,9 +164,9 @@ Aufgabe | API-Referenz
 [Erstellen eines nachgestellten Triggers](https://github.com/Azure/azure-documentdb-net/blob/d17c0ca5be739a359d105cf4112443f65ca2cb72/samples/code-samples/ServerSideScripts/Program.cs#L329) | [DocumentClient.CreateTriggerAsync](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.client.documentclient.createtriggerasync.aspx)
 [Erstellen einer benutzerdefinierten Funktion (UDF)](https://github.com/Azure/azure-documentdb-net/blob/d17c0ca5be739a359d105cf4112443f65ca2cb72/samples/code-samples/ServerSideScripts/Program.cs#L389) | [DocumentClient.CreateUserDefinedFunctionAsync](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.client.documentclient.createuserdefinedfunctionasync.aspx) 
 
-Weitere Informationen zur serverseitigen Programmierung finden Sie unter [Serverseitige DocumentDB-Programmierung: Gespeicherte Prozeduren, Datenbanktrigger und UDFs](documentdb-programming.md).
+Weitere Informationen über die serverseitige Programmierung finden Sie unter [DocumentDB-serverseitige Programmierung: gespeicherte Prozeduren, Datenbanktrigger und UDFs](documentdb-programming.md).
 
-## Beispiele für Benutzerverwaltung
+## Benutzerverwaltungsbeispiele
 
 Die Datei [azure-documentdb-net/samples/code-samples/UserManagement/Program.cs](https://github.com/Azure/azure-documentdb-net/blob/master/samples/code-samples/UserManagement/Program.cs) für die Benutzerverwaltung veranschaulicht, wie Sie die folgenden Aufgaben durchführen.
 
@@ -174,4 +176,4 @@ Aufgabe | API-Referenz
 [Festlegen von Berechtigungen für eine Sammlung oder ein Dokument](https://github.com/Azure/azure-documentdb-net/blob/d17c0ca5be739a359d105cf4112443f65ca2cb72/samples/code-samples/UserManagement/Program.cs#L85) | [DocumentClient.CreatePermissionAsync](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.client.documentclient.createpermissionasync.aspx)
 [Abrufen einer Liste mit Berechtigungen eines Benutzers](https://github.com/Azure/azure-documentdb-net/blob/d17c0ca5be739a359d105cf4112443f65ca2cb72/samples/code-samples/UserManagement/Program.cs#L218) | [DocumentClient.ReadUserAsync](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.client.documentclient.readuserasync.aspx)<br>[DocumentClient.ReadPermissionFeedAsync](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.client.documentclient.readpermissionfeedasync.aspx)
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

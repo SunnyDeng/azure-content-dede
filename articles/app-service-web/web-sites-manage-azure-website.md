@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/28/2015" 
+	ms.date="01/12/2016" 
 	ms.author="erikre"/>
 
 # Verwalten einer Web-App in Azure App Service
@@ -65,8 +65,8 @@ Bei der Ausführung Ihrer Web-App müssen Sie sicherstellen, dass sie verfügbar
  
 ### Backups
 
-- Legen Sie [automatische Sicherungen](web-sites-backup.md) Ihrer Web-App fest. Erfahren Sie in [diesem Video](http://azure.microsoft.com/documentation/videos/azure-websites-automatic-and-easy-backup/) mehr über Backups.
-- Erfahren Sie mehr über die Optionen für die [Datenbankwiederherstellung](../sql-database-business-continuity.md) in der Azure SQL-Datenbank.
+- Legen Sie [automatische Sicherungen](web-sites-backup.md) Ihrer Web-App fest. Erfahren Sie in [diesem Video](https://azure.microsoft.com/documentation/videos/azure-websites-automatic-and-easy-backup/) mehr über Backups.
+- Erfahren Sie mehr über die Optionen für die [Datenbankwiederherstellung](../sql-database/sql-database-business-continuity.md) in der Azure SQL-Datenbank.
 
 ### Problembehandlung
 
@@ -87,8 +87,8 @@ Ziehen Sie eine [gestaffelte Bereitstellung](web-sites-staged-publishing.md) in 
 
 Wenn Sie Visual Studio Team Services verwenden, können Sie die fortlaufende Bereitstellung aus der Quellcodeverwaltung festlegen:
 
-- [Verwendung von Team Foundation Version Control (TFVC)](../cloud-services-continuous-delivery-use-vso.md) 
-- [Verwendung von Git](../cloud-services-continuous-delivery-use-vso-git.md)
+- [Verwendung von Team Foundation Version Control (TFVC)](../cloud-services/cloud-services-continuous-delivery-use-vso.md) 
+- [Verwendung von Git](../cloud-services/cloud-services-continuous-delivery-use-vso-git.md)
  
 [AZURE.INCLUDE [app-service-web-whats-changed](../../includes/app-service-web-whats-changed.md)]
 
@@ -103,4 +103,4 @@ Wenn Sie Visual Studio Team Services verwenden, können Sie die fortlaufende Ber
 
   
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0204_2016-->

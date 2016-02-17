@@ -37,7 +37,7 @@ Das Mobile Engagement-SDK für Windows Universal-Apps kann nur in Windows-Runtim
 -   Windows Phone 8.1
 -   Windows 10 (Desktop- und Mobile-Familien)
 
-> [AZURE.NOTE]Informationen für Windows Phone Silverlight finden Sie im [Windows Universal Silverlight-Integrationsverfahren](mobile-engagement-windows-phone-integrate-engagement.md).
+> [AZURE.NOTE] Informationen für Windows Phone Silverlight finden Sie im [Windows Universal Silverlight-Integrationsverfahren](mobile-engagement-windows-phone-integrate-engagement.md).
 
 ## Installieren der Mobile Engagement Universal Apps-SDK
 
@@ -58,8 +58,6 @@ NuGet stellt die SDK-Ressourcen in Ihrer UWP-Anwendung noch nicht automatisch be
 3.  Ziehen Sie den **Ressourcen**-Ordner per Drag-und-Drop aus dem Datei-Explorer in das Stammverzeichnis des Projekts in Visual Studio.
 4.  Wählen Sie in Visual Studio Ihr Projekt aus, und aktivieren Sie das Symbol **Alle Dateien anzeigen** über dem **Projektmappen-Explorer**.
 5.  Einige Dateien sind nicht im Projekt enthalten. Um die Dateien in einem Vorgang zu importieren, klicken Sie mit der rechten Maustaste auf den **Ressourcen**-Ordner, und wählen Sie **Aus Projekt ausschließen** aus. Klicken Sie dann mit der rechten Maustaste erneut auf den **Ressourcen**-Ordner, und wählen Sie **Zu Projekt hinzufügen** aus, um den gesamten Ordner wieder einzuschließen. Alle Dateien aus dem **Ressourcen**-Ordner sind jetzt im Projekt enthalten.
-
-Das extrahierte Engagement-Paket finden Sie auch unter *$(Solutiondir)\\Packages* oder an dem in der *NuGet.config*-Datei definierten Speicherort.
 
 ## Hinzufügen von Funktionen
 
@@ -127,7 +125,7 @@ Wenn Sie ein neues Projekt erstellen, wird eine Datei `App.xaml.cs` generiert. D
           InitEngagement(args);
 		}
 
-> [AZURE.IMPORTANT]Wir raten dringend davon ab, die Engagement-Initialisierung an einer anderen Stelle der Anwendung hinzuzufügen.
+> [AZURE.IMPORTANT] Wir raten dringend davon ab, die Engagement-Initialisierung an einer anderen Stelle der Anwendung hinzuzufügen.
 
 ## Grundlegende Berichterstellung
 
@@ -169,7 +167,7 @@ Hier ist ein Beispiel für eine Seite Ihrer Anwendung. Das Gleiche gilt für all
 		  }
 		}
 
-> [AZURE.IMPORTANT]Wenn Ihre Seite die Methode `OnNavigatedTo` überschreibt, rufen Sie unbedingt `base.OnNavigatedTo(e)` auf. Andernfalls wird die Aktivität nicht erfasst (`EngagementPage` ruft `StartActivity` innerhalb der `OnNavigatedTo`-Methode auf).
+> [AZURE.IMPORTANT] Wenn Ihre Seite die Methode `OnNavigatedTo` überschreibt, rufen Sie unbedingt `base.OnNavigatedTo(e)` auf. Andernfalls wird die Aktivität nicht erfasst (`EngagementPage` ruft `StartActivity` innerhalb der `OnNavigatedTo`-Methode auf).
 
 #### XAML-Datei
 
@@ -232,7 +230,7 @@ Es wird empfohlen, `StartActivity` innerhalb Ihrer Methode `OnNavigatedTo` der S
 			  EngagementAgent.Instance.StartActivity("MyPage");
 			}
 
-> [AZURE.IMPORTANT]Stellen Sie sicher, dass Ihre Sitzung ordnungsgemäß beendet wird.
+> [AZURE.IMPORTANT]  Stellen Sie sicher, dass Ihre Sitzung ordnungsgemäß beendet wird.
 > 
 > Das Windows Universal-SDK ruft automatisch die Methode `EndActivity` auf, wenn die Anwendung geschlossen wird. Daher wird **dringend** empfohlen, bei jeder Änderung der Benutzeraktivität die Methode `StartActivity` und **niemals** die Methode `EndActivity` aufzurufen. Diese Methode benachrichtigt den Engagement-Server, dass der aktuelle Benutzer die Anwendung verlassen hat, und dies wirkt sich auf alle Anwendungsprotokolle aus.
 
@@ -248,7 +246,7 @@ Weitere Informationen finden Sie unter [Verwenden der erweiterten Mobile Engagem
 
 Sie können die automatische Absturzberichtsfunktion von Engagement deaktivieren. Wenn dann eine unbehandelte Ausnahme auftritt, handelt Engagement nicht.
 
-> [AZURE.WARNING]Wenn Sie diese Funktion deaktivieren möchten, bedenken Sie, dass bei einem unbehandelten Absturz in Ihrer App Engagement den Absturz nicht sendet **UND** weder die Sitzung noch die Aufträge schließt.
+> [AZURE.WARNING] Wenn Sie diese Funktion deaktivieren möchten, bedenken Sie, dass bei einem unbehandelten Absturz in Ihrer App Engagement den Absturz nicht sendet **UND** weder die Sitzung noch die Aufträge schließt.
 
 Zum Deaktivieren der automatischen Absturzberichtsfunktion passen Sie Ihre Konfiguration an, je nachdem, wie Sie sie deklariert haben:
 
@@ -279,10 +277,10 @@ Das Argument ist ein Wert in **Millisekunden**. Immer wenn Sie die Protokollieru
 
 Der Burst-Modus verlängert leicht die Akkulaufzeit, wirkt sich jedoch auf den Engagement-Monitor aus: Die Dauer von allen Sitzungen und Aufträgen wird auf den Burst-Schwellenwert gerundet (folglich sind eventuell Sitzungen und Aufträge, die kürzer als der Burst-Schwellenwert sind, möglicherweise nicht sichtbar). Es wird empfohlen, einen Burst-Schwellenwert von höchstens 30000 (30 s) zu verwenden. Sie müssen beachten, dass gespeicherte Protokolle auf 300 Elemente beschränkt sind. Wenn der Sendevorgang zu lange dauert, können einige Protokolle verloren gehen.
 
-> [AZURE.WARNING]Der Burst-Schwellenwert kann nicht auf einen Wert unter 1 s konfiguriert werden. Wenn Sie dies versuchen, zeigt das SDK eine Ablaufverfolgung mit dem Fehler an und setzt sich automatisch auf den Standardwert, d. h. 0 s, zurück. Dadurch wird ausgelöst, dass das SDK die Protokolle in Echtzeit meldet.
+> [AZURE.WARNING] Der Burst-Schwellenwert kann nicht auf einen Wert unter 1 s konfiguriert werden. Wenn Sie dies versuchen, zeigt das SDK eine Ablaufverfolgung mit dem Fehler an und setzt sich automatisch auf den Standardwert, d. h. 0 s, zurück. Dadurch wird ausgelöst, dass das SDK die Protokolle in Echtzeit meldet.
 
 [here]: http://www.nuget.org/packages/Capptain.WindowsCS
 [NuGet website]: http://docs.nuget.org/docs/start-here/overview
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

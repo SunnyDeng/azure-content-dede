@@ -18,24 +18,24 @@
 
 # Dienstprinzipalauthentifizierung für API-Apps in Azure App Service
 
-[AZURE.INCLUDE [app-service-api-get-started-selector](../../includes/app-service-api-get-started-selector.md)]
+[AZURE.INCLUDE [Auswahl](../../includes/app-service-api-auth-selector.md)]
 
 ## Übersicht
+
+In diesem Artikel wird erläutert, wie Sie die App Service-Authentifizierung für den [internen](app-service-api-authentication.md#internal) Zugriff auf API-Apps verwenden. Ein Beispiel für ein internes Szenario ist die Verwendung einer API-App, die nur für Ihren eigenen Anwendungscode nutzbar sein soll. Die einfachste Möglichkeit zum Implementieren dieses Szenarios in App Service ist die Verwendung von Azure AD zum Schützen der aufgerufenen API-App. Sie rufen die geschützte API-App mit einem Bearertoken auf, das Sie über Azure AD erhalten, indem Sie App-Identität-Anmeldeinformationen (Dienstprinzipal) bereitstellen.
 
 In diesem Artikel lernen Sie Folgendes:
 
 * Verwenden von Azure Active Directory (Azure AD) zum Schützen einer API-App vor Zugriff ohne Authentifizierung
-* Nutzen einer geschützten API-App mit Dienstprinzipal-Anmeldeinformationen (App-Identität)
+* Nutzen einer geschützten API-App aus einer API-App, Web-App oder mobilen App mit Azure AD-Dienstprinzipal-Anmeldeinformationen (App-Identität) Weitere Informationen dazu, wie Sie Daten einer Logik-App nutzen, finden Sie unter [Verwenden der in App Service gehosteten benutzerdefinierten API mit Logik-Apps](../app-service-logic/app-service-logic-custom-hosted-api.md).
 * Sicherstellen, dass die geschützte API-App von angemeldeten Benutzern nicht aufgerufen werden kann
 * Sicherstellen, dass die geschützte API-App nur über einen speziellen Azure AD-Dienstprinzipal aufgerufen werden kann
-
-Diese Methode zum Schützen einer API-App wird häufig für [interne Szenarien](app-service-api-authentication.md#internal) verwendet, z. B. für einen Aufruf einer API-App von einer anderen API-App.
 
 Der Artikel enthält zwei Abschnitte:
 
 * Der Abschnitt [Gewusst wie: Konfigurieren der Dienstprinzipalauthentifizierung in Azure App Service](#authconfig) enthält eine allgemeine Beschreibung, wie Sie die Authentifizierung für eine API-App konfigurieren und die geschützte API-App nutzen. Dieser Abschnitt gilt für alle Frameworks, die von App Service unterstützt werden, z. B. .NET, Node.js und Java.
 
-* Im [weiteren Verlauf des Artikels](#tutorialstart) werden Sie durch die Konfiguration eines Szenarios vom Typ „interner Zugriff“ für eine .NET-Beispielanwendung geführt, die in App Service ausgeführt wird.
+* Beginnend mit dem Abschnitt [Fortsetzen der Erste-Schritte-Tutorials für .NET](#tutorialstart) werden Sie im Tutorial durch die Konfiguration eines Szenarios vom Typ „interner Zugriff“ für eine .NET-Beispielanwendung geführt, die in App Service ausgeführt wird.
 
 ## <a id="authconfig"></a> Konfigurieren der Dienstprinzipalauthentifizierung in Azure App Service
 
@@ -65,7 +65,7 @@ Dieser Abschnitt enthält allgemeine Anweisungen, die für alle API-Apps gelten.
 
 7. Klicken Sie auf dem Blatt **Authentifizierung/Autorisierung** auf **Speichern**.
 
-Wenn dies konfiguriert wird, wird von App Service verhindert, dass nicht authentifizierte API-Aufrufe die API-App erreichen. In der geschützten API-App ist kein Authentifizierungs- oder Autorisierungscode erforderlich.
+Wenn Sie dies durchführen, lässt App Service nur Anforderungen von Aufrufern im konfigurierten Azure AD-Mandanten zu. In der geschützten API-App ist kein Authentifizierungs- oder Autorisierungscode erforderlich. Das Bearertoken wird zusammen mit häufig verwendeten Ansprüchen in HTTP-Headern an die API-App übergeben. Sie können diese Informationen im Code lesen, um zu überprüfen, ob Anforderungen von einem bestimmten Aufrufer stammen, z. B. einem Dienstprinzipal.
 
 Diese Authentifizierungsfunktion funktioniert für alle von App Service unterstützten Sprachen gleich, z. B. .NET, Node.js und Java.
 
@@ -83,10 +83,12 @@ Nachdem das Token abgerufen wurde, fügt der Aufrufer es mit HTTP-Anforderungen 
 
 #### Schützen der API-App vor dem Zugriff von Benutzern in demselben Mandanten
 
-Bearertoken für Benutzer in demselben Mandanten werden für die geschützte API-App als gültig angesehen. Wenn Sie sicherstellen möchten, dass nur ein Dienstprinzipal die geschützte API-App aufrufen kann, können Sie der App Code hinzufügen, mit dem die folgenden Ansprüche überprüft werden:
+Bearertoken für Benutzer in demselben Mandanten werden für die geschützte API-App als gültig angesehen. Wenn Sie sicherstellen möchten, dass nur ein Dienstprinzipal die geschützte API-App aufrufen kann, können Sie der geschützten API-App Code hinzufügen, um die folgenden Ansprüche vom Token zu überprüfen:
 
-* `appid` sollte der Client-ID der Azure AD-Anwendung entsprechen, die dem Aufrufer zugeordnet ist.
-* `objectidentifier` sollte die Dienstprinzipal-ID des Aufrufers sein.
+* `appid` sollte der Client-ID der Azure AD-Anwendung entsprechen, die dem Aufrufer zugeordnet ist. 
+* `oid` (`objectidentifier`) sollte die Dienstprinzipal-ID des Aufrufers sein. 
+
+App Service stellt auch den Anspruch `objectidentifier` im X-MS-CLIENT-PRINCIPAL-ID-Header bereit.
 
 ### Schützen der API-App vor Browserzugriff
 
@@ -96,7 +98,7 @@ Wenn Sie Ansprüche im Code der geschützten API-App nicht überprüfen und eine
 
 Falls Sie die API-App-Reihe „Erste Schritte“ für Node.js oder Java durcharbeiten, können Sie mit dem Abschnitt [Nächste Schritte](#next-steps) fortfahren.
 
-Im weiteren Verlauf dieses Artikels wird die .NET-Reihe „Erste Schritte“ für API-Apps fortgesetzt und davon ausgegangen, dass Sie das [Tutorial zur Benutzerauthentifizierung](app-service-api-user-principal-authentication.md) abgeschlossen haben und dass die Beispielanwendung in Azure mit aktivierter Benutzerauthentifizierung ausgeführt wird.
+Im weiteren Verlauf dieses Artikels wird die .NET-Reihe „Erste Schritte“ für API-Apps fortgesetzt und davon ausgegangen, dass Sie das [Tutorial zur Benutzerauthentifizierung](app-service-api-user-principal-auth.md) abgeschlossen haben und dass die Beispielanwendung in Azure mit aktivierter Benutzerauthentifizierung ausgeführt wird.
 
 ## Einrichten der Authentifizierung in Azure
 
@@ -299,9 +301,9 @@ Sie haben weiter oben bereits sichergestellt, dass Sie über einen Browser auf d
 
 Zum jetzigen Zeitpunkt können alle Aufrufer, die sich ein Token für einen Benutzer oder einen Dienstprinzipal in Ihrem Azure AD-Mandanten beschaffen können, die API-App TodoListDataAPI (Datenebene) aufrufen. Es kann ratsam sein sicherzustellen, dass die API-App der Datenebene nur Aufrufe von der API-App TodoListAPI (mittlere Ebene) und nur von einem bestimmten Dienstprinzipal akzeptiert.
 
-Sie können diese Einschränkungen hinzufügen, indem Sie Code zum Überprüfen der Ansprüche `appid` und `objectidentifier` von eingehenden Anrufen hinzufügen.
+Sie können diese Einschränkungen hinzufügen, indem Sie Code zum Überprüfen der Ansprüche `appid` und `objectidentifier` von eingehenden Aufrufen hinzufügen.
 
-Für dieses Tutorial fügen Sie den Code, mit dem die App-ID und die Dienstprinzipal-ID überprüft werden, direkt in Ihre Controlleraktionen ein. Alternativen sind die Verwendung eines benutzerdefinierten `Authorize`-Attributs oder das Durchführen der Überprüfung in Ihren Startsequenzen (z. B. OWIN-Middleware).
+Für dieses Tutorial fügen Sie den Code, mit dem die App-ID und die Dienstprinzipal-ID überprüft werden, direkt in Ihre Controlleraktionen ein. Alternativen sind die Verwendung eines benutzerdefinierten `Authorize`-Attributs oder das Durchführen der Überprüfung in Ihren Startsequenzen (z. B. OWIN-Middleware). Ein Beispiel für letzteren Vorgang finden Sie in [dieser Beispielanwendung](https://github.com/mohitsriv/EasyAuthMultiTierSample/blob/master/MyDashDataAPI/Startup.cs).
 
 Nehmen Sie die folgenden Änderungen am Projekt TodoListDataAPI vor.
 
@@ -365,7 +367,7 @@ Nehmen Sie die folgenden Änderungen am Projekt TodoListDataAPI vor.
 
 ## Neues Erstellen der Projekte von Grund auf
 
-Die beiden Web-API-Projekte wurden erstellt, indem die Projektvorlage **Azure-API-App** verwendet wurde und der standardmäßige Values-Controller durch einen ToDoList-Controller ersetzt wurde. Zum Beschaffen von Azure AD-Dienstprinzipaltoken im Projekt ToDoListAPI wurde das NuGet-Paket [Active Directory Authentication Library](https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory/) (ADAL) für .NET installiert.
+Die beiden Web-API-Projekte wurden erstellt, indem die Projektvorlage **Azure-API-App** verwendet und der standardmäßige Values-Controller durch einen ToDoList-Controller ersetzt wurde. Zum Beschaffen von Azure AD-Dienstprinzipaltoken im Projekt ToDoListAPI wurde das NuGet-Paket [Active Directory Authentication Library](https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory/) (ADAL) für .NET installiert.
  
 Weitere Informationen zum Erstellen einer AngularJS-Single-Page-Anwendung mit einem Web-API-Back-End wie ToDoListAngular finden Sie unter [Hands On Lab: Build a Single Page Application (SPA) with ASP.NET Web API and Angular.js](http://www.asp.net/web-api/overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs) (Hands On Lab: Erstellen einer Single-Page-Anwendung (SPA) mit ASP.NET-Web-API und „Angular.js“). Informationen zum Hinzufügen von Azure AD-Authentifizierungscode finden Sie unter [Schützen von einseitigen AngularJS-Apps mit Azure AD](../active-directory/active-directory-devquickstarts-angular.md).
 
@@ -378,7 +380,7 @@ Wenn Sie die Anwendung ohne Authentifizierung erfolgreich ausgeführt haben und 
 * Achten Sie darauf, dass Sie in Ihrem Browser auf HTTPS-URLs zugreifen, nicht auf HTTP-URLs.
 * Stellen Sie sicher, dass CORS für die API-App der mittleren Ebene noch aktiviert ist, sodass Aufrufe an die mittlere Ebene über die Front-End-HTTPS-URL möglich sind. Falls Sie unsicher sind, ob das Problem mit CORS zusammenhängt, können Sie versuchen, „*“ als zulässige Ursprungs-URL zu verwenden. **Wichtig:** In einigen Fehlermeldungen der Entwicklertools-Konsole wird unter Umständen auch ein CORS-Fehler gemeldet, wenn die Ursache mit der Authentifizierung auf der Datenebene zusammenhängt. Sie können überprüfen, ob dies der Fall ist, indem Sie die Authentifizierung für die API-App ToDoListDataAPI vorübergehend deaktivieren.
 * Sorgen Sie dafür, dass Sie in Fehlermeldungen so viele Informationen wie möglich erhalten, indem Sie den [customErrors-Modus auf „Off“ festlegen](../app-service-web/web-sites-dotnet-troubleshoot-visual-studio.md#remoteview).
-* Wenn andere Methoden fehlschlagen, können Sie es mit einer [Remotedebugsitzung](../app-service-web/web-sites-dotnet-troubleshoot-visual-studio.md#remotedebug) versuchen. Hierbei können Sie die Werte der Variablen untersuchen, die an den Code übergeben werden, mit dem das Bearertoken in ToDoListAPI abgerufen wird, und an den Code, mit dem die in ToDoListDataAPI empfangenen Azure AD-Werte überprüft werden. Beachten Sie, dass mit Ihrem Code die Konfigurationswerte aus vielen unterschiedlichen Quellen erfasst werden können, sodass Sie hier ggf. auch Überraschungen erleben. Wenn Sie beim Konfigurieren von App Service-Einstelllungen beispielsweise nicht den Namen `ida:ClientId` angeben, sondern `ida:ClientID`, kann Folgendes passieren: Der Code erhält den gesuchten Wert für `ida:ClientId` von der Datei „Web.config“ und ignoriert die App Service-Einstellung. 
+* Wenn andere Methoden fehlschlagen, können Sie es mit einer [Remotedebugsitzung](../app-service-web/web-sites-dotnet-troubleshoot-visual-studio.md#remotedebug) versuchen. Hierbei können Sie die Werte der Variablen untersuchen, die an den Code übergeben werden, mit dem das Bearertoken in ToDoListAPI abgerufen wird, sowie an den Code, mit dem die in ToDoListDataAPI empfangenen Azure AD-Werte überprüft werden. Beachten Sie, dass mit Ihrem Code die Konfigurationswerte aus vielen unterschiedlichen Quellen erfasst werden können, sodass Sie hier ggf. auch Überraschungen erleben. Wenn Sie beim Konfigurieren von App Service-Einstelllungen beispielsweise nicht den Namen `ida:ClientId` angeben, sondern `ida:ClientID`, kann Folgendes passieren: Der Code erhält den gesuchten Wert für `ida:ClientId` von der Datei „Web.config“ und ignoriert die App Service-Einstellung. 
 
 ## Nächste Schritte
 
@@ -388,8 +390,8 @@ Weitere Informationen zu Azure Active Directory finden Sie in den folgenden Ress
 
 * [Azure AD Entwicklerhandbuch](http://aka.ms/aaddev)
 * [Azure AD-Szenarien](http://aka.ms/aadscenarios)
-* [Azure AD-Beispiele](http://aka.ms/aadsamples)
+* [Azure AD-Beispiele](http://aka.ms/aadsamples) Das Beispiel [WebApp-WebAPI-OAuth2-AppIdentity-DotNet](http://github.com/AzureADSamples/WebApp-WebAPI-OAuth2-AppIdentity-DotNet) ähnelt der Vorgehensweise in diesem Tutorial, aber ohne Verwendung der App Service-Authentifizierung.
 
 Informationen zu anderen Möglichkeiten der Bereitstellung von Visual Studio-Projekten für API-Apps mit Visual Studio oder durch die [Automatisierung der Bereitstellung](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery) über ein [Quellcodeverwaltungssystem](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control) finden Sie unter [Gewusst wie: Bereitstellen einer Azure App Service-App](web-sites-deploy.md).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

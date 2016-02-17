@@ -71,7 +71,7 @@ Die folgenden Konfigurationseinträge wurden hinzugefügt. ```
 
 Eine Azure AD-Anwendung wurde in dem Verzeichnis erstellt, das Sie im Assistenten ausgewählt haben.
 
-[Weitere Informationen zu Azure Active Directory](http://azure.microsoft.com/services/active-directory/)
+[Weitere Informationen zu Azure Active Directory](https://azure.microsoft.com/services/active-directory/)
 
 ##Wenn ich *das Deaktivieren der Authentifizierung für einzelne Benutzerkonten* ausgewählt habe, welche zusätzlichen Änderungen wurden an meinem Projekt vorgenommen?
 NuGet-Paketverweise wurden entfernt, und die Dateien wurden entfernt und gesichert. Abhängig vom Status des Projekts müssen Sie möglicherweise manuell zusätzliche Verweise oder Dateien entfernen oder Code entsprechend ändern.
@@ -114,6 +114,6 @@ Die folgenden zusätzlichen Konfigurationseinträge wurden hinzugefügt.
 ###Ihre Azure Active Directory-App (AD) wurde aktualisiert
 Ihre Azure Active Directory-App wurde aktualisiert und enthält nun die Berechtigung *Verzeichnisdaten lesen*. Außerdem wurde ein zusätzlicher Schlüssel erstellt, der als *ida:Password* in der Datei `web.config` verwendet wird.
 
-[Weitere Informationen zu Azure Active Directory](http://azure.microsoft.com/services/active-directory/)
+[Weitere Informationen zu Azure Active Directory](https://azure.microsoft.com/services/active-directory/)
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

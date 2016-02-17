@@ -23,7 +23,7 @@ VM-Skalierungsgruppen sind eine Azure-Computeressource, mit der Sie eine Gruppe 
 
 [AZURE.INCLUDE [virtual-machines-vmss-preview](../../includes/virtual-machines-vmss-preview-ps-include.md)]
 
-Bei Anwendungen, für die Computeressourcen horizontal herunter- und hochskaliert werden müssen, werden Skalierungsoperationen implizit über Fehler- und Updatedomänen ausgeglichen. Eine Einführung in das Thema „VM-Skalierungsgruppen“ finden Sie in der [Ankündigung im Azure-Blog](https://azure.microsoft.com/blog/azure-vm-scale-sets-public-preview) (in englischer Sprache).
+Bei Anwendungen, für die Computeressourcen horizontal herunter- und hochskaliert werden müssen, werden Skalierungsoperationen implizit über Fehler- und Updatedomänen ausgeglichen. Eine Einführung in das Thema „VM-Skalierungsgruppen“ finden Sie in der [Ankündigung im Azure-Blog](https://azure.microsoft.com/blog/azure-vm-scale-sets-public-preview/) (in englischer Sprache).
 
 Sehen Sie sich diese Videos an, um weitere Informationen zu VM-Skalierungsgruppen zu erhalten:
 
@@ -153,4 +153,4 @@ Dieser Abschnitt enthält einige typische Szenarien für VM-Skalierungsgruppen. 
 
 **A.** Ja. Eine VM-Skalierungsgruppe ist eine implizite Verfügbarkeitsgruppe mit 3 Fehlerdomänen (FDs) und 5 Updatedomänen (UDs). Unter virtualMachineProfile brauchen Sie nichts zu konfigurieren. In künftigen Versionen werden VM-Skalierungsgruppen wahrscheinlich mehrere Mandanten umspannen, aber derzeit entspricht eine Skalierungsgruppe einer einzigen Verfügbarkeitsgruppe.
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

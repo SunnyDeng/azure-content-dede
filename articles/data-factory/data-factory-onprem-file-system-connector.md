@@ -13,16 +13,19 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/09/2015" 
+	ms.date="02/01/2016" 
 	ms.author="spelluru"/>
 
-# Verschieben von Daten in das und aus dem lokalen Dateisystem mithilfe von Azure Data Factory
+# Verschieben von Daten in das lokale und aus dem lokalen Dateisystem mithilfe von Azure Data Factory
 
 Dieser Artikel beschreibt, wie Sie die Data Factory-Kopieraktivität zum Verschieben von Daten in das und aus dem lokalen Dateisystem verwenden können. Dieser Artikel baut auf dem Artikel [Datenverschiebungsaktivitäten](data-factory-data-movement-activities.md) auf, der eine allgemeine Übersicht zur Datenverschiebung mit Kopieraktivität und unterstützten Datenspeicherkombinationen bietet.
 
 Data Factory unterstützt das Herstellen einer Verbindung mit dem lokalen Dateisystem mithilfe des Datenverwaltungsgateways. Im Artikel [Verschieben von Daten zwischen lokalen Standorten und Cloud](data-factory-move-data-between-onprem-and-cloud.md) erfahren mehr zum Datenverwaltungsgateway und erhalten eine schrittweise Anleitung zum Einrichten des Gateways.
 
-**Hinweis:** Abgesehen vom Datenverwaltungsgateway müssen keine anderen Binärdateien installiert werden, um die Kommunikation mit dem lokalen Dateisystem zu ermöglichen.
+> [AZURE.NOTE] 
+Abgesehen vom Datenverwaltungsgateway müssen keine anderen Binärdateien installiert werden, um die Kommunikation mit dem lokalen Dateisystem zu ermöglichen.
+> 
+> Unter [Problembehandlung bei Gateways](data-factory-move-data-between-onprem-and-cloud.md#gateway-troubleshooting) finden Sie Tipps zur Behandlung von Verbindungs- bzw. Gatewayproblemen.
 
 ## Linux-Dateifreigabe 
 
@@ -33,7 +36,9 @@ Führen Sie die folgenden beiden Schritte aus, um eine Linux-Dateifreigabe mit d
  
 ## Beispiel: Kopieren von Daten aus dem lokalen Dateisystem in ein Azure-Blob
 
-Das nachstehende Beispiel zeigt Folgendes:
+In diesem Beispiel wird gezeigt, wie Sie Daten aus einem lokalen Dateisystem in einen Azure-BLOB-Speicher kopieren. Daten können jedoch mithilfe der Kopieraktivität in Azure Data Factory **direkt** in die [hier](data-factory-data-movement-activities.md#supported-data-stores) aufgeführten Senken kopiert werden.
+ 
+Das Beispiel enthält die folgenden Data Factory-Entitäten:
 
 1.	Einen verknüpften Dienst des Typs [OnPremisesFileServer](data-factory-onprem-file-system-connector.md#onpremisesfileserver-linked-service-properties)
 2.	Einen verknüpften Dienst des Typs [AzureStorage](data-factory-azure-blob-connector.md#azure-storage-linked-service-properties)
@@ -424,7 +429,7 @@ Daten werden stündlich in eine neue Datei kopiert, wobei der Pfad des Blobs jew
 	   }
 	}
 
-## Eigenschaften des verknüpften Diensts "OnPremisesFileServer"
+## Eigenschaften des verknüpften Diensts „OnPremisesFileServer“
 
 Sie können ein lokales Dateisystem mithilfe eines verknüpften Dienst des Typs "Lokaler Dateiserver" mit einer Azure Data Factory verknüpfen. Die folgende Tabelle enthält eine Beschreibung der JSON-Elemente, die für den mit dem lokalen Dateiserver verknüpften Dienst spezifisch sind.
 
@@ -468,7 +473,7 @@ Ausführliche Informationen zum Festlegen von Anmeldeinformationen für eine Dat
 	  }
 	}
 
-## Eigenschaften des Dataset-Typs "Lokales Dateisystem"
+## Eigenschaften des Dataset-Typs „Lokales Dateisystem“
 
 Eine vollständige Liste der Abschnitte und Eigenschaften, die zum Definieren von Datasets zur Verfügung stehen, finden Sie im Artikel [Erstellen von Datasets](data-factory-create-datasets.md). Abschnitte wie "structure", "availability" und "policy" des JSON-Codes eines Datasets sind bei allen Typen von Datasets (Azure SQL, Azure-Blob, Azure-Tabelle, lokales Dateisystem usw.) ähnlich.
 
@@ -481,9 +486,9 @@ fileName | Geben Sie den Namen der Datei in **folderPath** an, wenn die Tabelle 
 partitionedBy | "partitionedBy" kann genutzt werden, um einen dynamischen Wert für "folderPath" oder "filename" für Zeitreihendaten anzugeben. Beispiel: "folderPath" als Parameter für jedes Stunde mit Daten. | Nein
 format | Zwei Typen von Formaten werden unterstützt: **TextFormat** und **AvroFormat**. Sie müssen die "type"-Eigenschaft unter "format" auf einen dieser Werte festlegen. Wenn die "type"-Eigenschaft auf "TextFormat" festgelegt ist, können Sie zusätzliche optionale Eigenschaften für das Format angeben. Im Formatabschnitt unten finden Sie weitere Einzelheiten. **Die Formateigenschaft wird für lokale Dateisysteme momentan nicht unterstützt. Es wird wie hier dokumentiert in Kürze aktiviert.** | Nein
 fileFilter | Geben Sie einen Filter zur Auswahl einer Teilmenge der Dateien in "folderPath" statt alle Dateien an. <p>Zulässige Werte sind: * (mehrere Zeichen) und ? (einzelnes Zeichen).</p><p>Beispiel 1: "fileFilter": "*.log"</p>Beispiel 2: "fileFilter": 2014-1-?.txt"</p><p>** Hinweis**: "fileFilter" eignet sich für ein Eingabedataset des Typs "FileShare".</p> | Nein
-| compression | Geben Sie den Typ und den Grad der Komprimierung für die Daten an. Folgende Typen werden unterstützt: "GZip", "Deflate" und "BZip2". Folgende Komprimierungsgrade werden unterstützt: "Optimal" und "Schnellste". Weitere Einzelheiten finden Sie im Abschnitt [Komprimierungsunterstützung](#compression-support). | Nein |
+| Komprimierung | Geben Sie den Typ und den Grad der Komprimierung für die Daten an. Folgende Typen werden unterstützt: "GZip", "Deflate" und "BZip2". Folgende Komprimierungsgrade werden unterstützt: "Optimal" und "Schnellste". Weitere Einzelheiten finden Sie im Abschnitt [Komprimierungsunterstützung](#compression-support). | Nein |
 
-> [AZURE.NOTE]"filename" und "fileFilter" können nicht gleichzeitig verwendet werden.
+> [AZURE.NOTE] "filename" und "fileFilter" können nicht gleichzeitig verwendet werden.
 
 ### Nutzen der "partionedBy"-Eigenschaft
 
@@ -563,7 +568,7 @@ Um das Avro-Format in einer nachfolgenden Hive-Tabelle zu verwenden, sehen Sie s
 
 [AZURE.INCLUDE [data-factory-compression](../../includes/data-factory-compression.md)]
 
-## Eigenschaften von Kopieraktivitätstyp "Dateifreigabe"
+## Eigenschaften des Kopieraktivitätstyps „Dateifreigabe“
 
 **FileSystemSource** unterstützt die folgenden Eigenschaften:
 
@@ -575,19 +580,19 @@ Um das Avro-Format in einer nachfolgenden Hive-Tabelle zu verwenden, sehen Sie s
 
 | Eigenschaft | Beschreibung | Zulässige Werte | Erforderlich |
 | -------- | ----------- | -------------- | -------- |
-| copyBehavior | Definiert das Verhalten beim Kopieren, wenn die Quelle "BlobSource" oder "FileSystem" ist. | <p>Es gibt drei mögliche Werte für die copyBehavior-Eigenschaft. </p><ul><li>**PreserveHierarchy:** Behält die Dateihierarchie im Zielordner bei, d. h., der relative Pfad zum Quellordner ist mit dem relativen Pfad der Zieldatei zum Zielordner identisch.</li><li>**FlattenHierarchy:** Alle Dateien aus dem Quellordner befinden sich auf der ersten Ebene des Zielordners. Für die Zieldateien wird ein automatisch ein Name erzeugt. </li></ul> | Nein |
+| copyBehavior | Definiert das Verhalten beim Kopieren, wenn die Quelle "BlobSource" oder "FileSystem" ist. | <p>Es gibt drei mögliche Werte für die copyBehavior-Eigenschaft. </p><ul><li>**PreserveHierarchy:** Behält die Dateihierarchie im Zielordner bei, d. h., der relative Pfad zum Quellordner ist mit dem relativen Pfad der Zieldatei zum Zielordner identisch.</li><li>**FlattenHierarchy:** Alle Dateien aus dem Quellordner befinden sich auf der ersten Ebene des Zielordners. Für die Zieldateien wird automatisch ein Name erzeugt. </li></ul> | Nein |
 
 ### Beispiele für "recursive" und "copyBehavior"
 Dieser Abschnitt beschreibt das resultierende Verhalten des Kopiervorgangs für verschiedene Kombinationen von rekursiven und CopyBehavior-Werten.
 
 recursive | copyBehavior | Resultierendes Verhalten
 --------- | ------------ | --------
-true | preserveHierarchy | <p>Für einen Quellordner „Ordner1“ mit der folgenden Struktur:</p> <p>Ordner1<br/>&nbsp; &nbsp; &nbsp; &nbsp; Datei1<br/>&nbsp; &nbsp; &nbsp; &nbsp; Datei2<br/>&nbsp; &nbsp; &nbsp; &nbsp; Unterordner1<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei3<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei4<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei5</p>der Zielordner „Ordner1“ wird dieselbe Struktur wie der Quellordner aufweisen<p>Ordner1<br/>&nbsp; &nbsp; &nbsp; &nbsp; Datei1<br/>&nbsp; &nbsp; &nbsp; &nbsp; Datei2<br/>&nbsp; &nbsp; &nbsp; &nbsp; Unterordner1<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei3<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei4<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei5</p>.  
-true | flattenHierarchy | <p>Für einen Quellordner „Ordner1“ mit der folgenden Struktur:</p> <p>Ordner1<br/>&nbsp; &nbsp; &nbsp; &nbsp; Datei1<br/>&nbsp; &nbsp; &nbsp; &nbsp; Datei2<br/>&nbsp; &nbsp; &nbsp; &nbsp; Unterordner1<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei3<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei4<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei5</p>der Zielordner „Ordner1“ wird die folgende Struktur haben: <p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei1<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei2<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei3<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei4<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei5</p>
-true | mergeFiles | <p>Für einen Quellordner „Ordner1“ mit der folgenden Struktur:</p> <p>Ordner1<br/>&nbsp; &nbsp; &nbsp; &nbsp; Datei1<br/>&nbsp; &nbsp; &nbsp; &nbsp; Datei2<br/>&nbsp; &nbsp; &nbsp; &nbsp; Unterordner1<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei3<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei4<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei5</p>der Zielordner „Ordner1“ wird die folgende Struktur haben: <p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inhalte von Datei1 + Datei2 + Datei3 + Datei4 + Datei5 werden in einer Datei mit einem automatisch erstellten Namen zusammengeführt</p>
-false | preserveHierarchy | <p>Für einen Quellordner „Ordner1“ mit der folgenden Struktur:</p> <p>Ordner1<br/>&nbsp; &nbsp; &nbsp; &nbsp; Datei1<br/>&nbsp; &nbsp; &nbsp; &nbsp; Datei2<br/>&nbsp; &nbsp; &nbsp; &nbsp; Unterordner1<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei3<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei4<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei5</p>der Zielordner „Ordner1“ wird die folgende Struktur haben:<p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei2<br/></p><p>Unterordner1 mit Datei3, Datei4, und Datei5 werden nicht übernommen.</p>.
-false | flattenHierarchy | <p>Für einen Quellordner „Ordner1“ mit der folgenden Struktur:</p> <p>Ordner1<br/>&nbsp; &nbsp; &nbsp; &nbsp; Datei1<br/>&nbsp; &nbsp; &nbsp; &nbsp; Datei2<br/>&nbsp; &nbsp; &nbsp; &nbsp; Unterordner1<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei3<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei4<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei5</p>der Zielordner „Ordner1“ wird die folgende Struktur haben:<p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei1<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei2<br/></p><p>Unterordner1 mit Datei3, Datei4, und Datei5 werden nicht übernommen.</p>.
-false | mergeFiles | <p>Für einen Quellordner „Ordner1“ mit der folgenden Struktur:</p> <p>Ordner1<br/>&nbsp; &nbsp; &nbsp; &nbsp; Datei1<br/>&nbsp; &nbsp; &nbsp; &nbsp; Datei2<br/>&nbsp; &nbsp; &nbsp; &nbsp; Unterordner1<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei3<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei4<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei5</p>der Zielordner „Ordner1“ wird die folgende Struktur haben:<p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inhalte von Datei1 + Datei2 werden in einer Datei mit einem automatisch erstellten Namen zusammengeführt. automatisch erstellter Name für Datei1</p><p>Unterordner1 mit Datei3, Datei4, und Datei5 werden nicht übernommen.</p>.
+true | preserveHierarchy | <p>Für einen Quellordner „Ordner1“ mit der folgenden Struktur:</p> <p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Unterordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei5</p>der Zielordner „Ordner1“ wird dieselbe Struktur wie der Quellordner aufweisen<p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Unterordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei5</p>.  
+true | flattenHierarchy | <p>Für einen Quellordner „Ordner1“ mit der folgenden Struktur:</p> <p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Unterordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei5</p>der Zielordner „Ordner1“ wird die folgende Struktur haben: <p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei1<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei2<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei3<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei4<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei5</p>
+true | mergeFiles | <p>Für einen Quellordner „Ordner1“ mit der folgenden Struktur:</p> <p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Unterordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei5</p>der Zielordner „Ordner1“ wird die folgende Struktur haben: <p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inhalte von Datei1 + Datei2 + Datei3 + Datei4 + Datei5 werden in einer Datei mit einem automatisch erstellten Namen zusammengeführt</p>
+false | preserveHierarchy | <p>Für einen Quellordner „Ordner1“ mit der folgenden Struktur:</p> <p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Unterordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei5</p>der Zielordner „Ordner1“ wird die folgende Struktur haben:<p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei2<br/></p><p>Unterordner1 mit Datei3, Datei4, und Datei5 werden nicht übernommen.</p>.
+false | flattenHierarchy | <p>Für einen Quellordner „Ordner1“ mit der folgenden Struktur:</p> <p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Unterordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei5</p>der Zielordner „Ordner1“ wird die folgende Struktur haben:<p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;utomatisch erstellter Name für Datei1<br/>&nbsp;&nbsp;&nbsp;&nbsp;utomatisch erstellter Name für Datei2<br/></p><p>Unterordner1 mit Datei3, Datei4, und Datei5 werden nicht übernommen.</p>.
+false | mergeFiles | <p>Für einen Quellordner „Ordner1“ mit der folgenden Struktur:</p> <p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Unterordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei5</p>der Zielordner „Ordner1“ wird die folgende Struktur haben:<p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inhalte von Datei1 + Datei2 werden in einer Datei mit einem automatisch erstellten Namen zusammengeführt. automatisch erstellter Name für Datei1</p><p>Unterordner1 mit Datei3, Datei4, und Datei5 werden nicht übernommen.</p>.
 
 
 [AZURE.INCLUDE [data-factory-structure-for-rectangular-datasets](../../includes/data-factory-structure-for-rectangualr-datasets.md)]
@@ -603,4 +608,4 @@ false | mergeFiles | <p>Für einen Quellordner „Ordner1“ mit der folgenden S
 
  
 
-<!---HONumber=AcomDC_0121_2016-->
+<!----HONumber=AcomDC_0204_2016-->

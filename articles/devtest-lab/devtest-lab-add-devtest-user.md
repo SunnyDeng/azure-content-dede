@@ -1,6 +1,6 @@
-    <properties
-	pageTitle="Add owners and users to a DevTest Lab | Microsoft Azure"
-	description="Securely add a user who is not in your subscription to your Azure DevTest Lab."
+<properties
+	pageTitle="Hinzufügen von Besitzern und Benutzern zu DevTest Labs | Microsoft Azure"
+	description="Hier erfahren Sie, wie Sie einen Benutzer, der nicht in Ihrem Abonnement enthalten ist, zu Azure DevTest Labs hinzufügen."
 	services="devtest-lab,virtual-machines"
 	documentationCenter="na"
 	authors="tomarcher"
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/01/2015"
+	ms.date="02/03/2016"
 	ms.author="tarcher"/>
 
 # Hinzufügen von Besitzern und Benutzern zu einem DevTest Lab
@@ -26,7 +26,7 @@ Sie gewähren über zwei Rollen Zugriff auf Ihr DevTest Lab:
 
  - **Besitzer**: Benutzer, denen die Rolle **Besitzer** auf der Ebene des Azure-Abonnements zugewiesen ist, haben vollständigen Zugriff auf das Lab, einschließlich der Verwaltungs- und Überwachungsfunktionen.
 
-     >[AZURE.NOTE]Rollen vom Typ **Besitzer**, die auf anderen RBAC-Ebenen als der Abonnementebene zugewiesen sind, werden in DevTest Lab nicht unterstützt. Das Zuweisen eines Benutzers zur Rolle **Besitzer** wird in DevTest Lab nicht unterstützt.
+     > [AZURE.NOTE] Rollen vom Typ **Besitzer**, die auf anderen RBAC-Ebenen als der Abonnementebene zugewiesen sind, werden in DevTest Lab nicht unterstützt. Das Zuweisen eines Benutzers zur Rolle **Besitzer** wird in DevTest Lab nicht unterstützt.
 
  -  **DevTest Lab-Benutzer**: Benutzer, die der Rolle **DevTest Lab-Benutzer** zugewiesen sind, können virtuelle Computer im angegebenen Lab erstellen, aktualisieren und löschen. Benutzer können entweder *intern* (ein Mitglied von Azure Active Directory für das Abonnement) oder *extern* (ein Benutzer, der kein Mitglied von Azure AD ist, z. B. ein Mitglied einer Partnerorganisation) sein.
 	-  Die Rolle **DevTest Lab-Benutzer** muss über die Kachel **Benutzer hinzufügen** des Labs zugewiesen werden.
@@ -39,7 +39,7 @@ Für DevTest Lab sind die Besitzer eines Azure-Abonnements, das Labs enthält, B
 
 Um einen Besitzer zu einem Azure-Abonnement hinzuzufügen, in dem Sie Labs bereits erstellt haben oder neue Labs erstellen werden, gehen Sie folgendermaßen vor:
 
-1. Melden Sie sich beim [Azure-Vorschauportal](http://portal.azure.com) an.
+1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com) an.
 
 1. Tippen Sie im linken Navigationsbereich auf **Abonnements**.
 
@@ -71,7 +71,7 @@ Um einen Besitzer zu einem Azure-Abonnement hinzuzufügen, in dem Sie Labs berei
 
 Um einen DevTest Lab-Benutzer zum Lab hinzuzufügen, gehen Sie folgendermaßen vor:
 
-1. Melden Sie sich beim [Azure-Vorschauportal](http://portal.azure.com) an.
+1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com) an.
 
 1. Tippen Sie auf **Durchsuchen**.
 
@@ -101,4 +101,4 @@ Um einen DevTest Lab-Benutzer zum Lab hinzuzufügen, gehen Sie folgendermaßen v
 
 	1. Auf dem Blatt **Benutzer** werden die hinzugefügten Rollen und Benutzer angezeigt.
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0204_2016-->

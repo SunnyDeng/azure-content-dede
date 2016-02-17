@@ -13,7 +13,7 @@
 	ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="identity" 
-	ms.date="11/11/2015"
+	ms.date="02/02/2016"
 	ms.author="billmath"/>
 
 # Ermitteln der Anforderungen an die Verzeichnissynchronisierung
@@ -57,12 +57,13 @@ Außerdem müssen Sie die Sicherheitsanforderungen und Einschränkungen der Verz
  - Falls Sie in Ihrem Unternehmen diese Frage nicht beantworten können, helfen Ihnen die Informationen im Abschnitt „Berechtigungen für die Kennwortsynchronisierung“ des Artikels [Installieren des Azure Active Directory-Synchronisierungsdiensts](https://msdn.microsoft.com/library/azure/dn757602.aspx#BKMK_CreateAnADAccountForTheSyncService) weiter. Mit diesen Informationen können Sie ermitteln, ob bereits ein Konto mit diesen Berechtigungen vorhanden ist oder ob Sie ein Konto erstellen müssen.
 - Kann der Synchronisierungsserver auf alle Gesamtstrukturen zugreifen, wenn bei Ihnen mehrere Gesamtstrukturen an der Synchronisierung beteiligt sind?
  
->[AZURE.NOTE]Notieren Sie sich alle Antworten, und stellen Sie sicher, dass Ihnen die Begründung der Antwort jeweils klar ist. Unter [Bestimmen der Anforderungen an Reaktionen auf Vorfälle](active-directory-hybrid-identity-design-considerations-incident-response-requirements.md) sind die verfügbaren Optionen beschrieben. Indem Sie diese Fragen beantworten, wählen Sie aus, welche Option Ihre Geschäftsanforderungen am besten erfüllt.
+>[AZURE.NOTE]
+Notieren Sie sich alle Antworten, und stellen Sie sicher, dass Ihnen die Begründung der Antwort jeweils klar ist. Unter [Bestimmen der Anforderungen an Reaktionen auf Vorfälle](active-directory-hybrid-identity-design-considerations-incident-response-requirements.md) sind die verfügbaren Optionen beschrieben. Indem Sie diese Fragen beantworten, wählen Sie aus, welche Option Ihre Geschäftsanforderungen am besten erfüllt.
 
 ## Nächste Schritte
 [Ermitteln der Anforderungen für die Multi-Factor Authentication](active-directory-hybrid-identity-design-considerations-multifactor-auth-requirements.md)
 
 ## Weitere Informationen
-[Überlegungen zum Entwurf – Übersicht](active-directory-hybrid-identity-design-considerations-directory-overview.md)
+[Überlegungen zum Entwurf – Übersicht](active-directory-hybrid-identity-design-considerations-overview.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0204_2016-->

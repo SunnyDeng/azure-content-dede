@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/20/2015"
+	ms.date="01/06/2016"
 	ms.author="cephalin"/>
 
 # Aktivieren der Diagnoseprotokollierung für Web-Apps in Azure App Service
@@ -57,7 +57,7 @@ Zum Aktivieren der Diagnose im [Azure-Portal](https://portal.azure.com) navigier
 
 Wenn Sie die **Anwendungsdiagnose** aktivieren, können Sie auch die **Ebene** auswählen. Diese Einstellung ermöglicht das Filtern der aufgezeichneten Informationen nach **informational**, **warning** oder **error**. Sie können auch **verbose** auswählen, um alle von der Anwendung erzeugten Informationen zu protokollieren.
 
-> [AZURE.NOTE]Im Gegensatz zum Ändern der Datei "web.config" wird durch das Aktivieren der Anwendungsdiagnose oder durch das Ändern des Diagnoseprotokollumfangs nicht die Anwendungsdomäne neu gestartet, in der die Anwendung ausgeführt wird.
+> [AZURE.NOTE] Im Gegensatz zum Ändern der Datei "web.config" wird durch das Aktivieren der Anwendungsdiagnose oder durch das Ändern des Diagnoseprotokollumfangs nicht die Anwendungsdomäne neu gestartet, in der die Anwendung ausgeführt wird.
 
 Im [klassischen Portal](https://manage.windowsazure.com) der Web-App auf der Registerkarte **Konfigurieren** können Sie **Speicher** oder **Dateisystem** für **Webserverprotokollierung** auswählen. Durch Auswahl von **storage** können Sie ein Speicherkonto festlegen und dann einen Blob-Container hinzufügen, in den die Protokolle geschrieben werden. Alle anderen Protokolle für **site diagnostics** werden nur in das Dateisystem geschrieben.
 
@@ -68,7 +68,7 @@ Die Registerkarte **Konfigurieren** im [klassischen Portal](https://manage.windo
 * **Blob storage** - Speichert die Anwendungsdiagnoseinformationen im angegebenen Azure-Speicherkonto im Blob-Container.
 * **Retention period** - Standardmäßig werden Protokolle nicht automatisch aus dem **blob storage** gelöscht. Falls die Protokolle automatisch gelöscht werden sollen, wählen Sie **set retention** aus, und geben Sie die Anzahl der Tage ein, für die Protokolle aufbewahrt werden sollen.
 
->[AZURE.NOTE]Wenn Sie [den Zugriffsschlüssel für Ihr Speicherkonto neu generieren](storage-create-storage-account.md#view-copy-and-regenerate-storage-access-keys), müssen Sie die jeweilige Protokollierungskonfiguration zur Verwendung der aktualisierten Tasten zurücksetzen. Gehen Sie dazu folgendermaßen vor:
+>[AZURE.NOTE] Wenn Sie [den Zugriffsschlüssel für Ihr Speicherkonto neu generieren](storage-create-storage-account.md#view-copy-and-regenerate-storage-access-keys), müssen Sie die jeweilige Protokollierungskonfiguration zur Verwendung der aktualisierten Tasten zurücksetzen. Gehen Sie dazu folgendermaßen vor:
 >
 > 1. Stellen Sie in der Registerkarte **Konfigurieren** das jeweilige Protokollierungsfeature auf **Aus**. Speichern Sie die Einstellungen.
 > 2. Aktivieren Sie die Protokollierung für den Speicherkonto-Blob oder die -Tabelle erneut. Speichern Sie die Einstellungen.
@@ -77,9 +77,9 @@ Sie können gleichzeitig eine Kombination aus Dateisystem-, Tabellen- und BLOB-S
 
 Obwohl alle drei Speicherorte dieselben grundlegenden Informationen zu protokollierten Ereignissen bieten, zeichnen **table storage** und **blob storage** zusätzliche Informationen wie Instanz-ID, Thread-ID und einen ausführlicheren Zeitstempel (Tick-Format) als die Protokollierung im **file system** auf.
 
-> [AZURE.NOTE]Im **Tabellenspeicher** oder **Blob-Speicher** gespeicherte Informationen können nur über Speicherclients oder Anwendungen aufgerufen werden, die direkt mit diesen Speichersystemen arbeiten. Beispielsweise enthält Visual Studio 2013 einen Speicher-Explorer, mit dem Tabellen- oder Blob-Speicher erkundet werden können, und HDInsight kann auf die im Blob-Speicher gespeicherten Daten zugreifen. Sie können auch mithilfe der [Azure SDKs](/downloads/#) eine Anwendung schreiben, die auf den Azure-Speicher zugreift.
+> [AZURE.NOTE] Im **Tabellenspeicher** oder **Blob-Speicher** gespeicherte Informationen können nur über Speicherclients oder Anwendungen aufgerufen werden, die direkt mit diesen Speichersystemen arbeiten. Beispielsweise enthält Visual Studio 2013 einen Speicher-Explorer, mit dem Tabellen- oder Blob-Speicher erkundet werden können, und HDInsight kann auf die im Blob-Speicher gespeicherten Daten zugreifen. Sie können auch mithilfe der [Azure SDKs](/downloads/#) eine Anwendung schreiben, die auf den Azure-Speicher zugreift.
 
-> [AZURE.NOTE]Diagnosen können auch über die Azure PowerShell mit dem Cmdlet **Set-AzureWebsite** aktiviert werden. Wenn Sie Azure PowerShell nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden von Azure PowerShell](/develop/nodejs/how-to-guides/powershell-cmdlets/).
+> [AZURE.NOTE] Diagnosen können auch über die Azure PowerShell mit dem Cmdlet **Set-AzureWebsite** aktiviert werden. Wenn Sie Azure PowerShell nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden von Azure PowerShell](/develop/nodejs/how-to-guides/powershell-cmdlets/).
 
 ##<a name="download"></a> Vorgehensweise: Herunterladen von Blobs
 
@@ -101,7 +101,7 @@ Protokolle werden in der folgenden Verzeichnisstruktur gespeichert:
 
 Um Diagnoseinformationen über FTP aufzurufen, wechseln Sie im [klassischen Portal](https://manage.windowsazure.com) zur Seite **Dashboard** Ihrer Web-App. Im Abschnitt **quick glance** können Sie den Link **FTP Diagnostic Logs** verwenden, um die Protokolldateien über FTP aufzurufen. Der Eintrag **Deployment/FTP User** listet den Benutzernamen auf, der zum Zugriff auf die FTP-Site verwendet werden sollte.
 
-> [AZURE.NOTE]Falls der Eintrag **Bereitstellung/FTP-Benutzer** nicht festgelegt ist oder Sie das Kennwort für diesen Benutzer vergessen haben, können Sie einen neuen Benutzer mit zugehörigem Kennwort über den Link **Anmeldeinformationen für die Bereitstellung zurücksetzen** im Abschnitt **Auf einen Blick** im **Dashboard** erstellen.
+> [AZURE.NOTE] Falls der Eintrag **Bereitstellung/FTP-Benutzer** nicht festgelegt ist oder Sie das Kennwort für diesen Benutzer vergessen haben, können Sie einen neuen Benutzer mit zugehörigem Kennwort über den Link **Anmeldeinformationen für die Bereitstellung zurücksetzen** im Abschnitt **Auf einen Blick** im **Dashboard** erstellen.
 
 ### Herunterladen mit Azure PowerShell
 
@@ -111,7 +111,7 @@ Starten Sie zum Herunterladen der Protokolldateien eine neue Instanz von Azure P
 
 Daraufhin werden die Protokolle für die Web-App, die durch den Parameter **-Name** angegeben wird, in der Datei**logs.zip** im aktuellen Verzeichnis gespeichert.
 
-> [AZURE.NOTE]Wenn Sie Azure PowerShell nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden von Azure PowerShell](/develop/nodejs/how-to-guides/powershell-cmdlets/).
+> [AZURE.NOTE] Wenn Sie Azure PowerShell nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden von Azure PowerShell](/develop/nodejs/how-to-guides/powershell-cmdlets/).
 
 ### Herunterladen mit der Azure-Befehlszeilenschnittstelle
 
@@ -121,7 +121,7 @@ Zum Herunterladen der Protokolldateien mit der Azure-Befehlszeilenschnittstelle 
 
 Damit werden die Protokolle für die Web-App namens 'webappname' in der Datei **diagnostics.zip** im aktuellen Verzeichnis gespeichert.
 
-> [AZURE.NOTE]Wenn Sie die Azure-Befehlszeilenschnittstelle (Azure-CLI) nicht installiert oder nicht für Ihr Azure-Abonnement konfiguriert haben, lesen Sie unter [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md) weiter.
+> [AZURE.NOTE] Wenn Sie die Azure-Befehlszeilenschnittstelle (Azure-CLI) nicht installiert oder nicht für Ihr Azure-Abonnement konfiguriert haben, lesen Sie unter [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md) weiter.
 
 ## Vorgehensweise: Anzeigen von Protokollen in Application Insights
 
@@ -132,7 +132,7 @@ Visual Studio Application Insights bietet Tools zum Filtern und Suchen von Proto
 2. Fügen Sie Ihrem Projekt das Ablaufverfolgungs-Listener-Paket hinzu.
  * Klicken Sie mit der rechten Maustaste auf Ihr Projekt, und wählen Sie "NuGet-Pakete verwalten" aus. Wählen Sie `Microsoft.ApplicationInsights.TraceListener` [Weitere Informationen](../application-insights/app-insights-asp-net-trace-logs.md) aus
 3. Laden Sie das Projekt hoch, und führen sie es zum Generieren von Protokolldaten aus.
-4. Navigieren Sie im [Azure-Portal](http://portal.azure.com/) zu der neuen Application Insights-Ressource, und öffnen Sie **Suche**. Ihre Protokolldaten werden zusammen mit der Anforderung, Nutzung und sonstiger Telemetrie angezeigt. Einige Telemetrie kann einige Minuten in Anspruch nehmen, bis sie angezeigt wird: Klicken Sie auf "Aktualisieren". [Weitere Informationen](../application-insights/app-insights-diagnostic-search.md)
+4. Navigieren Sie im [Azure-Portal](https://portal.azure.com/) zu der neuen Application Insights-Ressource, und öffnen Sie **Suche**. Ihre Protokolldaten werden zusammen mit der Anforderung, Nutzung und sonstiger Telemetrie angezeigt. Einige Telemetrie kann einige Minuten in Anspruch nehmen, bis sie angezeigt wird: Klicken Sie auf "Aktualisieren". [Weitere Informationen](../application-insights/app-insights-diagnostic-search.md)
 
 [Erfahren Sie mehr über die Leistungsüberwachung mit Application Insights](../insights-perf-analytics.md)
 
@@ -140,13 +140,13 @@ Visual Studio Application Insights bietet Tools zum Filtern und Suchen von Proto
 
 Beim Entwickeln einer Anwendung ist es häufig nützlich, Protokollinformationen nahezu in Echtzeit zu sehen. Dies kann durch das Streaming von Protokollinformationen in die Entwicklungsumgebung entweder mit Azure PowerShell oder mit der Azure-Befehlszeilenschnittstelle erfolgen.
 
-> [AZURE.NOTE]Einige Protokolltypen puffern die Schreibvorgänge in die Protokolldatei, was zu Störereignissen im Stream führen kann. Beispielsweise kann ein Anwendungsprotokolleintrag für den Besuch einer Seite im Stream vor dem zugehörigen HTTP-Protokolleintrag für die Seitenanforderung angezeigt werden.
+> [AZURE.NOTE] Einige Protokolltypen puffern die Schreibvorgänge in die Protokolldatei, was zu Störereignissen im Stream führen kann. Beispielsweise kann ein Anwendungsprotokolleintrag für den Besuch einer Seite im Stream vor dem zugehörigen HTTP-Protokolleintrag für die Seitenanforderung angezeigt werden.
 
-> [AZURE.NOTE]Protokoll-Streaming zeigt auch Informationen an, die in eine Textdatei im Ordner **D:\\home\\LogFiles\** geschrieben werden.
+> [AZURE.NOTE] Protokoll-Streaming zeigt auch Informationen an, die in eine Textdatei im Ordner **D:\\home\\LogFiles\** geschrieben werden.
 
 ### Streaming mit Azure PowerShell
 
-Starten Sie zum Streaming der Protokollinformationen eine neue Instanz von Azure PowerShell, und führen Sie den folgenden Befehl aus:
+Starten Sie zum Streaming der Protokollinformationen eine neue Instanz von Azure PowerShell, und verwenden Sie den folgenden Befehl:
 
 	Get-AzureWebSiteLog -Name webappname -Tail
 
@@ -162,7 +162,7 @@ Um bestimmte Protokolltypen wie HTTP zu filtern, verwenden Sie den Parameter **-
 
 Eine Liste der verfügbaren Pfade wird mit dem Parameter "-ListPath" angezeigt.
 
-> [AZURE.NOTE]Wenn Sie Azure PowerShell nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden von Azure PowerShell](/develop/nodejs/how-to-guides/powershell-cmdlets/).
+> [AZURE.NOTE] Wenn Sie Azure PowerShell nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden von Azure PowerShell](/develop/nodejs/how-to-guides/powershell-cmdlets/).
 
 ### Streaming mit der Azure-Befehlszeilenschnittstelle
 
@@ -180,7 +180,7 @@ Um bestimmte Protokolltypen wie HTTP zu filtern, verwenden Sie den Parameter **-
 
 	azure site log tail webappname --path http
 
-> [AZURE.NOTE]Wenn Sie die Azure-Befehlszeilenschnittstelle nicht installiert oder nicht für Ihr Azure-Abonnement konfiguriert haben, lesen Sie unter [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md) weiter.
+> [AZURE.NOTE] Wenn Sie die Azure-Befehlszeilenschnittstelle nicht installiert oder nicht für Ihr Azure-Abonnement konfiguriert haben, lesen Sie unter [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md) weiter.
 
 ##<a name="understandlogs"></a> Vorgehensweise: Verstehen von Diagnoseprotokollen
 
@@ -239,7 +239,7 @@ In einem Blob gespeicherte Daten sehen in etwa wie folgt aus:
 	date,level,applicationName,instanceId,eventTickCount,eventId,pid,tid,message
 	2014-01-30T16:36:52,Error,mywebapp,6ee38a,635266966128818593,0,3096,9,An error occurred
 
-> [AZURE.NOTE]Die erste Zeile des Protokolls enthält die Spaltentitel, wie in diesem Beispiel angegeben.
+> [AZURE.NOTE] Die erste Zeile des Protokolls enthält die Spaltentitel, wie in diesem Beispiel angegeben.
 
 ### Verfolgung fehlgeschlagener Anforderungen
 
@@ -255,7 +255,7 @@ Detaillierte Fehlerprotokolle sind HTML-Dokumente, die ausführlichere Informati
 
 Webserverprotokolle werden im [erweiterten W3C-Protokolldateiformat](http://msdn.microsoft.com/library/windows/desktop/aa814385.aspx) gespeichert. Die Informationen können in einem Texteditor gelesen oder mit einem Dienstprogramm wie [Log Parser](http://go.microsoft.com/fwlink/?LinkId=246619) analysiert werden.
 
-> [AZURE.NOTE]Die von den Azure-Web-Apps erzeugten Protokolle unterstützen nicht die Felder __s-computername__, __s-ip__ oder __cs-version__.
+> [AZURE.NOTE] Die von den Azure-Web-Apps erzeugten Protokolle unterstützen nicht die Felder __s-computername__, __s-ip__ oder __cs-version__.
 
 ##<a name="nextsteps"></a> Nächste Schritte
 
@@ -263,11 +263,11 @@ Webserverprotokolle werden im [erweiterten W3C-Protokolldateiformat](http://msdn
 - [Problembehandlung von Azure-Web-Apps in Visual Studio](web-sites-dotnet-troubleshoot-visual-studio.md)
 - [Analyse von Web-App-Protokollen in HDInsight](http://gallery.technet.microsoft.com/scriptcenter/Analyses-Windows-Azure-web-0b27d413)
 
-> [AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+> [AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Änderungen
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
+* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715).
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -26,17 +26,17 @@ Dieser Leitfaden beschreibt die ersten Schritte mit API Management zur Verwaltun
 
 ##Was ist Azure API Management?
 
-Azure API Management ist ein Azure-Dienst, mit dem Sie Ihre REST-API-Endpunkte verwalten können, indem Sie Benutzerzugriff, Nutzungseinschränkungen und Dashboardüberwachung definieren. Klicken Sie [hier](http://azure.microsoft.com/services/api-management/), um Informationen zu Azure API Management zu erhalten. Klicken Sie [hier](api-management/api-management-get-started.md), um eine Anleitung zum Einstieg in Azure API Management zu erhalten. Dieser Leitfaden (auf dem der vorliegende Leitfaden basiert) behandelt weitere Themen, z. B. Benachrichtigungskonfiguration, Tarife, Antwortverarbeitung, Benutzerauthentifizierung, Produkterstellung, Entwicklerabonnements und Nutzungsdashboards.
+Azure API Management ist ein Azure-Dienst, mit dem Sie Ihre REST-API-Endpunkte verwalten können, indem Sie Benutzerzugriff, Nutzungseinschränkungen und Dashboardüberwachung definieren. Klicken Sie [hier](https://azure.microsoft.com/services/api-management/), um Informationen zu Azure API Management zu erhalten. Klicken Sie [hier](api-management/api-management-get-started.md), um eine Anleitung zum Einstieg in Azure API Management zu erhalten. Dieser Leitfaden (auf dem der vorliegende Leitfaden basiert) behandelt weitere Themen, z. B. Benachrichtigungskonfiguration, Tarife, Antwortverarbeitung, Benutzerauthentifizierung, Produkterstellung, Entwicklerabonnements und Nutzungsdashboards.
 
 ##Was ist Azure ML?
 
-Azure ML ist ein Azure-Dienst für Machine Learning, mit dem Sie erweiterte Analyselösungen ganz einfach entwickeln, bereitstellen und freigeben können. Klicken Sie [hier](http://azure.microsoft.com/services/machine-learning/), um Informationen zu Azure ML zu erhalten.
+Azure ML ist ein Azure-Dienst für Machine Learning, mit dem Sie erweiterte Analyselösungen ganz einfach entwickeln, bereitstellen und freigeben können. Klicken Sie [hier](https://azure.microsoft.com/services/machine-learning/), um Informationen zu Azure ML zu erhalten.
 
 ##Voraussetzungen
 
 Zum Durcharbeiten dieses Leitfadens benötigen Sie Folgendes:
 
-* Ein Azure-Konto. Wenn Sie kein Azure-Konto haben, klicken Sie [hier](http://azure.microsoft.com/pricing/free-trial/), um zu erfahren, wie Sie ein kostenloses Testkonto erstellen.
+* Ein Azure-Konto. Wenn Sie kein Azure-Konto haben, klicken Sie [hier](https://azure.microsoft.com/pricing/free-trial/), um zu erfahren, wie Sie ein kostenloses Testkonto erstellen.
 * Ein Azure ML-Konto. Wenn Sie kein Azure ML-Konto haben, klicken Sie [hier](https://studio.azureml.net/), um zu erfahren, wie Sie ein kostenloses Testkonto erstellen.
 * Den Arbeitsbereich, den Dienst und den API-Schlüssel für ein als Webdienst bereitgestelltes Azure ML-Experiment. Klicken Sie [hier](machine-learning/machine-learning-create-experiment.md), um Informationen zum Erstellen eines Azure ML-Experiments zu erhalten. Klicken Sie [hier](machine-learning/machine-learning-publish-a-machine-learning-web-service.md), um Informationen zum Bereitstellen eines Azure ML-Experiments als Webdienst zu erhalten. Alternativ dazu enthält Anhang A Anweisungen zum Erstellen und Testen eines einfachen Azure ML-Experiments und zum Bereitstellen dieses Experiments als Webdienst.
 
@@ -384,4 +384,4 @@ Dieser Leitfaden zeigt ein funktionierendes Python-Beispiel. Sie müssen dieses 
 	return
 	invokeBatchExecutionService()
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

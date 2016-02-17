@@ -12,7 +12,7 @@ ms.workload="tbd"
 ms.tgt_pltfrm="na" 
 ms.devlang="na" 
 ms.topic="article" 
-ms.date="10/14/2015" 
+ms.date="01/19/2016" 
 ms.author="saurabh"/>
 
 # Aktivieren einer Remotedesktopverbindung für eine Rolle in Azure Cloud Services
@@ -20,7 +20,7 @@ ms.author="saurabh"/>
 >[AZURE.SELECTOR]
 - [Azure classic portal](cloud-services-role-enable-remote-desktop.md)
 - [PowerShell](cloud-services-role-enable-remote-desktop-powershell.md)
-- [Visual Studio](https://msdn.microsoft.com/library/gg443832.aspx)
+- [Visual Studio](../vs-azure-tools-remote-desktop-roles.md)
 
 
 Mit Remotedesktop können Sie auf den Desktop einer Rolle zugreifen, die in Azure ausgeführt wird. Mithilfe einer Remotedesktopverbindung können Sie Probleme mit Ihrer Anwendung diagnostizieren und beheben, während diese ausgeführt wird.
@@ -28,8 +28,8 @@ Mit Remotedesktop können Sie auf den Desktop einer Rolle zugreifen, die in Azur
 Sie können eine Remotedesktopverbindung in Ihrer Rolle während der Entwicklung aktivieren, indem Sie die Remotedesktopmodule in ihre Dienstdefinition aufnehmen, oder Sie können Remotedesktop über die Remotedesktoperweiterung aktivieren. Der bevorzugte Ansatz ist die Verwendung der Remotedesktoperweiterung, da sie Remotedesktop damit auch nach der Bereitstellung der Anwendung aktivieren können, ohne die Anwendung erneut bereitzustellen.
 
 
-## Konfigurieren von Remotedesktop über das Portal
-Das Portal ermöglicht die Remotedesktoperweiterung, sodass Sie Remotedesktop auch nach der Bereitstellung der Anwendung aktivieren können. Auf der Seite **Konfigurieren** des Clouddiensts können Sie Remotedesktop aktivieren, das lokale Administratorkonto, das zum Herstellen einer Verbindung mit den virtuellen Computern verwendet wird, das bei der Authentifizierung verwendete Zertifikat oder das Ablaufdatum ändern bzw. festlegen.
+## Konfigurieren von Remotedesktop über das klassische Azure-Portal
+Das klassische Azure-Portal ermöglicht die Remotedesktoperweiterung, sodass Sie Remotedesktop auch nach Bereitstellung der Anwendung aktivieren können. Auf der Seite **Konfigurieren** des Clouddiensts können Sie Remotedesktop aktivieren, das lokale Administratorkonto, das zum Herstellen einer Verbindung mit den virtuellen Computern verwendet wird, das bei der Authentifizierung verwendete Zertifikat oder das Ablaufdatum ändern bzw. festlegen.
 
 
 1. Klicken Sie auf **Cloud Services** und dann auf den Namen des Clouddiensts, und klicken Sie dann auf **Konfigurieren**.
@@ -38,7 +38,7 @@ Das Portal ermöglicht die Remotedesktoperweiterung, sodass Sie Remotedesktop au
     
     ![Clouddienste remote](./media/cloud-services-role-enable-remote-desktop/CloudServices_Remote.png)
     
-    > [AZURE.WARNING]Alle Rolleninstanzen werden neu gestartet, wenn Sie Remotedesktop erstmals aktivieren und auf OK (Häkchen) klicken. Um einen Neustart zu verhindern, muss in der Rolle das Zertifikat installiert sein, mit dem das Kennwort verschlüsselt wird. Zum Verhindern eines Neustarts [laden Sie ein Zertifikat für den Clouddienst hoch](cloud-services-how-to-create-deploy/#how-to-upload-a-certificate-for-a-cloud-service) und kehren dann zu diesem Dialogfeld zurück.
+    > [AZURE.WARNING] Alle Rolleninstanzen werden neu gestartet, wenn Sie Remotedesktop erstmals aktivieren und auf OK (Häkchen) klicken. Um einen Neustart zu verhindern, muss in der Rolle das Zertifikat installiert sein, mit dem das Kennwort verschlüsselt wird. Zum Verhindern eines Neustarts [laden Sie ein Zertifikat für den Clouddienst hoch](cloud-services-how-to-create-deploy/#how-to-upload-a-certificate-for-a-cloud-service) und kehren dann zu diesem Dialogfeld zurück.
     
 
 3. Wählen Sie unter **Rollen** die Rolle aus, die aktualisiert werden soll, oder wählen Sie **Alle** für alle Rollen.
@@ -61,7 +61,7 @@ Das Portal ermöglicht die Remotedesktoperweiterung, sodass Sie Remotedesktop au
 ## Remotezugriff auf Rolleninstanzen
 Nach der Aktivierung von Remotedesktop in den Rollen können Sie mit verschiedenen Tools remote auf eine Rolleninstanz zugreifen.
 
-So verbinden Sie eine Rolleninstanz über das Portal:
+So verbinden Sie eine Rolleninstanz über das klassische Azure-Portal:
     
   1.   Klicken Sie auf **Instanzen**, um die Seite **Instanzen** zu öffnen.
   2.   Wählen Sie eine Rolleninstanz aus, in der Remotedesktop konfiguriert ist.
@@ -147,4 +147,4 @@ Die Datei [ServiceConfiguration.cscfg](cloud-services-model-and-package.md#cscfg
 
 [Konfigurieren von Clouddiensten](cloud-services-how-to-configure.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

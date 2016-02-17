@@ -1,6 +1,6 @@
 <!--author=SharS last changed: 12/01/15-->
 
-### Schritt 1: Ein Gerät autorisieren, um den Verschlüsselungsschlüssel für Dienstdaten im Verwaltungsportal zu ändern.
+### Schritt 1: Autorisieren Sie ein Gerät im klassischen Azure-Portal, um den Verschlüsselungsschlüssel für Dienstdaten zu ändern.
 
 Üblicherweise fordert der Geräteadministrator den Dienstadministrator auf, ein Gerät zu autorisieren, um den Verschlüsselungsschlüssel für Dienstdaten zu ändern. Der Dienstadministrator autorisiert dann das Gerät, um den Schlüssel zu ändern.
 
@@ -20,7 +20,8 @@ Ein Gerät muss die folgenden Kriterien erfüllen, bevor es für die Initiierung
 
 - Eine Geräte-Autorisierung ist möglich, sobald einige der beim Dienst registrierten Geräte den Verschlüsselungs-Rollover abgeschlossen haben. In diesen Fällen handelt es sich bei den verfügbaren Geräten um diejenigen, die die Änderung des Verschlüsselungsschlüssels für Dienstdaten bereits abgeschlossen haben.
 
-> [AZURE.NOTE]Im klassischen Azure-Portal werden virtuelle StorSimple-Geräte nicht in der Liste der Geräte angezeigt, welche für die Initiierung der Schlüsseländerung durch eine Autorisierung zur Verfügung stehen.
+> [AZURE.NOTE]
+Im klassischen Azure-Portal werden virtuelle StorSimple-Geräte nicht in der Liste der Geräte angezeigt, welche für die Initiierung der Schlüsseländerung durch eine Autorisierung zur Verfügung stehen.
 
 Führen Sie die folgenden Schritte durch, um ein Gerät für die Initialisierung der Änderung des Verschlüsselungsschlüssels für Dienstdaten auszuwählen und zu autorisieren.
 
@@ -38,7 +39,7 @@ Führen Sie die folgenden Schritte durch, um ein Gerät für die Initialisierung
 
 Dieser Schritt wird in der Windows PowerShell für StorSimple-Schnittstelle auf dem autorisierten StorSimple-Gerät ausgeführt.
 
-> [AZURE.NOTE]Bis zum Abschluss des Schlüssel-Rollovers kann im klassischen Azure-Portal des StorSimple Managers kein Vorgang ausgeführt werden.
+> [AZURE.NOTE] Bis zum Abschluss des Schlüssel-Rollovers kann im klassischen Azure-Portal des StorSimple Managers kein Vorgang ausgeführt werden.
 
 Wenn Sie die Verbindung zur Windows PowerShell-Schnittstelle über die serielle Gerätekonsole herstellen, führen Sie die folgenden Schritte durch.
 
@@ -52,7 +53,7 @@ Wenn Sie die Verbindung zur Windows PowerShell-Schnittstelle über die serielle 
 
 3. Nachdem das Cmdlet erfolgreich abgeschlossen wurde, erhalten Sie einen neuen Verschlüsselungsschlüssel für Dienstdaten. Kopieren und speichern Sie diesen Schlüssel, da Sie ihn für Schritt 3 dieses Prozesses benötigen. Dieser Schlüssel wird zur Aktualisierung aller Geräte benötigt, die beim StorSimple Manager-Dienst registriert sind.
 
-    > [AZURE.NOTE]Dieser Prozess muss innerhalb von vier Stunden nach der Autorisierung eines StorSimple-Geräts initiiert werden.
+    > [AZURE.NOTE] Dieser Prozess muss innerhalb von vier Stunden nach der Autorisierung eines StorSimple-Geräts initiiert werden.
 
    Der neue Schlüssel wird dann an den Dienst gesendet und an alle bei diesem Dienst registrierten Geräte übermittelt. Im Dienst-Dashboard wird eine Warnung angezeigt. Der Dienst deaktiviert alle Vorgänge auf den registrierten Geräten. Dann muss der Geräteadministrator den Verschlüsselungsschlüssel für Dienstdaten auf den anderen Geräten aktualisieren. E/A-Vorgänge (von Hosts an die Cloud übermittelte Daten) werden jedoch nicht unterbrochen.
 
@@ -74,4 +75,4 @@ Führen Sie die folgenden Schritte aus, um den Verschlüsselungsschlüssel für 
 
 3. Geben Sie den Verschlüsselungsschlüssel für Dienstdaten ein, den Sie in [Schritt2: Verwenden Sie Windows PowerShell für StorSimple, um die Änderung des Verschlüsselungsschlüssels für Dienstdaten zu initialisieren.](#to-initiate-the-service-data-encryption-key-change) erhalten haben.
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

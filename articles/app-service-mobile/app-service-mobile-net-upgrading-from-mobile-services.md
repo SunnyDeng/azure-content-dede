@@ -28,7 +28,7 @@ Wenn ein Mobil-Back-End auf Azure App Service aktualisiert wird, hat dieses Zugr
 
 [AZURE.INCLUDE [app-service-mobile-migrate-vs-upgrade](../../includes/app-service-mobile-migrate-vs-upgrade.md)]
 
->[AZURE.TIP]Es wird empfohlen, vor einem Upgrade eine [Migration durchzuführen](app-service-mobile-migrating-from-mobile-services.md). Auf diese Weise können Sie beide Versionen der Anwendung in den gleichen App Service-Plan übernehmen, ohne dass zusätzliche Kosten anfallen.
+>[AZURE.TIP] Es wird empfohlen, vor einem Upgrade eine [Migration auszuführen](app-service-mobile-migrating-from-mobile-services.md). Auf diese Weise können Sie beide Versionen der Anwendung in den gleichen App Service-Plan übernehmen, ohne dass zusätzliche Kosten anfallen.
 
 ###Verbesserungen im Mobile Apps-.NET-Server-SDK
 
@@ -46,7 +46,7 @@ Die Aktualisierung auf das neue [Mobile Apps-SDK](https://www.nuget.org/packages
 
 In vielen Fällen erfolgt das Upgrade einfach durch den Wechsel zum neuen Mobile Apps-Server-SDK und einer erneuten Veröffentlichung Ihres Codes für eine neue Mobile Apps-Instanz. Es gibt jedoch einige Szenarien, die eine zusätzliche Konfiguration erfordern, beispielsweise erweiterte Authentifizierungsszenarien und das Arbeiten mit geplanten Aufträgen. Diese Fälle werden in den nachstehenden Abschnitten beschrieben.
 
->[AZURE.TIP]Es wird empfohlen, die restlichen Abschnitte in diesem Thema vollständig zu lesen, bevor Sie mit einem Upgrade beginnen. Notieren Sie sich alle Features, die Sie verwenden möchten und die nachfolgend behandelt werden.
+>[AZURE.TIP] Es wird empfohlen, die restlichen Abschnitte in diesem Thema vollständig zu lesen, bevor Sie mit einem Upgrade beginnen. Notieren Sie sich alle Features, die Sie verwenden möchten und die nachfolgend behandelt werden.
 
 Die Mobile Services-Client-SDKs sind **nicht** mit dem neuen Mobile Apps-Server-SDK kompatibel. Um die Kontinuität von Diensten für Ihre App zu gewährleisten, sollten Sie keine Änderungen auf einer Website veröffentlichen, die derzeit veröffentlichte Clients bereitstellt. Stattdessen sollten Sie eine neue mobile App erstellen, die als Duplikat dient. Sie können diese Anwendung in den gleichen App Service-Plan aufnehmen, um zu vermeiden, dass zusätzliche Kosten anfallen.
 
@@ -95,7 +95,7 @@ durch
             .UseDefaultConfiguration()
         .ApplyTo(config);
 
->[AZURE.NOTE]Wenn Sie mehr über das neue .NET-Server-SDK und die Features zum Hinzufügen oder Entfernen erfahren möchten, lesen Sie das Thema [Verwenden des .NET-Server-SDK].
+>[AZURE.NOTE] Wenn Sie mehr über das neue .NET-Server-SDK und die Features zum Hinzufügen oder Entfernen erfahren möchten, lesen Sie das Thema [Verwenden des .NET-Server-SDK].
 
 Wenn Ihre App die Authentifizierungsfeatures verwendet, müssen Sie auch eine OWIN-Middleware registrieren. In diesem Fall sollten Sie den oben stehenden Konfigurationscode in eine neue OWIN-Startklasse verschieben.
  
@@ -244,7 +244,7 @@ Wenn Ihre Anwendung eine benutzerdefinierte Lösung für die Authentifizierung v
 ##<a name="updating-clients"></a>Aktualisieren von Clients
 Sobald Sie über ein betriebsbereites Mobile App-Back-End verfügen, können Sie an einer neuen Version Ihrer Clientanwendung arbeiten, die dieses nutzt. Mobile Apps enthält außerdem eine neue Version der Client-SDKs. Wie bei dem oben beschriebenen Serverupgrade müssen Sie vor der Installation der Mobile Apps-Versionen alle Verweise auf die Mobile Services-SDKs entfernen.
 
-Einer der wichtigsten Unterschiede zwischen den Versionen ist, dass die Konstruktoren keinen Anwendungsschlüssel mehr benötigen. Sie brauchen jetzt nur noch die URL der mobilen App zu übergeben. Auf den .NET-Clients lautet der `MobileServiceClient`-Konstruktor nun:
+Einer der wichtigsten Unterschiede zwischen den Versionen ist, dass die Konstruktoren keinen Anwendungsschlüssel mehr benötigen. Sie brauchen jetzt nur noch die URL der mobilen App zu übergeben. Bei den .NET-Clients lautet der `MobileServiceClient`-Konstruktor z. B. nun:
 
         public static MobileServiceClient MobileService = new MobileServiceClient(
             "https://contoso.azurewebsites.net", // URL of the Mobile App
@@ -277,4 +277,4 @@ Wenn die neue Clientversion bereit ist, testen Sie sie mit dem aktualisierten Se
 [App Service-Preisen]: https://azure.microsoft.com/de-DE/pricing/details/app-service/
 [Übersicht über das .NET Server-SDK]: app-service-mobile-dotnet-backend-how-to-use-server-sdk.md
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

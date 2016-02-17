@@ -12,7 +12,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="infrastructure-services"
-	ms.date="09/23/2015"
+	ms.date="02/03/2016"
 	ms.author="bwren" />
 
 # Testen eines Runbooks in Azure Automation
@@ -55,4 +55,4 @@ Sie können im Azure-Portal nur [PowerShell-Workflow-Runbooks](automation-runboo
 - [Bearbeiten von Textrunbooks in Azure Automation](automation-edit-textual-runbook.md)
 - [Runbookausgabe und -meldungen in Azure Automation](automation-runbook-output-and-messages.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0204_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/09/2015" 
+	ms.date="02/01/2016" 
 	ms.author="spelluru"/>
 
 # Hive-Aktivität
@@ -54,7 +54,7 @@ Die HDInsight-Hive-Aktivität in einer Data Factory-[Pipeline](data-factory-crea
 
 Eigenschaft | Beschreibung | Erforderlich
 -------- | ----------- | --------
-Name | Der Name der Aktivität | Ja
+name | Der Name der Aktivität | Ja
 description | Ein Text, der beschreibt, wofür die Aktivität verwendet wird. | Nein
 Typ | HDInsightHive | Ja
 inputs | Von der Hive-Aktivität genutzte Eingaben | Nein
@@ -108,7 +108,7 @@ Um dieses Hive-Skript in einer Data Factory-Pipeline auszuführen, müssen Sie f
 3. Erstellen Sie [Datasets](data-factory-create-datasets.md), die auf die Eingabe- und die Ausgabedaten verweisen. Wir nennen das Eingabedataset "HiveSampleIn" und das Ausgabedataset "HiveSampleOut".
 4. Kopieren Sie die Hive-Abfrage als Datei in den Azure-Blobspeicher, den Sie im obigen Schritt 2 konfiguriert haben. Wenn sich der verknüpfte Dienst zum Hosten der Daten von dem zum Hosten dieser Abfragedatei unterscheidet, erstellen Sie einen separaten verknüpften Azure Storage-Dienst, und verweisen Sie in der Aktivitätskonfiguration darauf. Geben Sie mit **skriptPath** den Pfad der Hive-Abfragedatei und mit **ScriptLinkedService** den Azure-Speicher mit der Skriptdatei an.
 
-	> [AZURE.NOTE]Sie können das Hive-Skript auch inline in der Aktivitätsdefinition mit der **script**-Eigenschaft bereitstellen, aber dies wird nicht empfohlen, da alle Sonderzeichen im Skript innerhalb des JSON-Dokuments mit Escapezeichen versehen werden müssen, was möglicherweise zu Problemen beim Debuggen führen kann. Die bewährte Methode ist, Schritt 4 auszuführen.
+	> [AZURE.NOTE] Sie können das Hive-Skript auch inline in der Aktivitätsdefinition mit der **script**-Eigenschaft bereitstellen, aber dies wird nicht empfohlen, da alle Sonderzeichen im Skript innerhalb des JSON-Dokuments mit Escapezeichen versehen werden müssen, was möglicherweise zu Problemen beim Debuggen führen kann. Die bewährte Methode ist, Schritt 4 auszuführen.
 5.	Erstellen Sie die unten aufgeführte Pipeline mit der HDInsightHive-Aktivität, um die Daten zu verarbeiten.
 
 		{
@@ -214,4 +214,4 @@ Gehen Sie folgendermaßen vor, um das Hive-Skript zu parametrisieren
 			SUM(Duration)
 		FROM HiveSampleIn Group by ProfileID
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0204_2016-->

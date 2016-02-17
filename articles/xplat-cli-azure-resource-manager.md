@@ -13,7 +13,7 @@
 	ms.workload="multiple"
 	ms.tgt_pltfrm="command-line-interface"
 	ms.devlang="na"
-	ms.topic="article"
+	ms.topic="get-started-article"
 	ms.date="01/19/2016"
 	ms.author="danlep"/>
 
@@ -27,7 +27,7 @@
 
 In diesem Artikel erfahren Sie, wie Sie Ihre Azure-Ressourcen mit der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows im Azure-Ressourcen-Manager-Modus erstellen und verwalten.
 
->[AZURE.NOTE]Für die befehlszeilenbasierte Erstellung und Verwaltung von Azure-Ressourcen benötigen Sie ein Azure-Konto. Eine kostenlose Testversion finden Sie [hier](http://azure.microsoft.com/pricing/free-trial/). Außerdem müssen Sie die [Azure-Befehlszeilenschnittstelle installieren](xplat-cli-install.md) sich [für die Verwendung der mit Ihrem Konto verknüpften Azure-Ressourcen anmelden](xplat-cli-connect.md). Damit sind dann alle nötigen Vorbereitungen abgeschlossen.
+>[AZURE.NOTE] Für die befehlszeilenbasierte Erstellung und Verwaltung von Azure-Ressourcen benötigen Sie ein Azure-Konto. Eine kostenlose Testversion finden Sie [hier](https://azure.microsoft.com/pricing/free-trial/). Außerdem müssen Sie die [Azure-Befehlszeilenschnittstelle installieren](xplat-cli-install.md) sich [für die Verwendung der mit Ihrem Konto verknüpften Azure-Ressourcen anmelden](xplat-cli-connect.md). Damit sind dann alle nötigen Vorbereitungen abgeschlossen.
 
 ## Azure-Ressourcen
 
@@ -45,7 +45,7 @@ Wenn Sie den Azure-Ressourcen-Manager über die Azure-Befehlszeilenschnittstelle
 
 Weitere Informationen zur Authentifizierung bei Microsoft Azure finden Sie unter [Herstellen einer Verbindung mit einem Azure-Abonnement über die Azure-Befehlszeilenschnittstelle](xplat-cli-connect.md).
 
->[AZURE.NOTE]Bei Verwendung eines (von Azure Active Directory verwalteten) Geschäfts- oder Schulkontos können Sie auch die rollenbasierte Zugriffssteuerung (Role-Based Access Control, RBAC) von Azure nutzen, um den Zugriff auf und die Verwendung von Azure-Ressourcen zu verwalten. Weitere Informationen finden Sie unter [Rollenbasierte Zugriffssteuerung in Azure](./active-directory/role-based-access-control-configure.md).
+>[AZURE.NOTE] Bei Verwendung eines (von Azure Active Directory verwalteten) Geschäfts- oder Schulkontos können Sie auch die rollenbasierte Zugriffssteuerung (Role-Based Access Control, RBAC) von Azure nutzen, um den Zugriff auf und die Verwendung von Azure-Ressourcen zu verwalten. Weitere Informationen finden Sie unter [Rollenbasierte Zugriffssteuerung in Azure](./active-directory/role-based-access-control-configure.md).
 
 ## Festlegen des Azure-Ressourcen-Manager-Modus
 
@@ -53,7 +53,7 @@ Da der Azure-Ressourcen-Manager-Modus standardmäßig nicht aktiviert ist, müss
 
 	azure config mode arm
 
->[AZURE.NOTE]Der Azure-Ressourcen-Manager-Modus und der Azure-Dienstverwaltungsmodus schließen sich gegenseitig aus. Das heißt, dass Ressourcen, die in einem Modus erstellt wurden, nicht im anderen Modus verwaltet werden können.
+>[AZURE.NOTE] Der Azure-Ressourcen-Manager-Modus und der Azure-Dienstverwaltungsmodus schließen sich gegenseitig aus. Das heißt, dass Ressourcen, die in einem Modus erstellt wurden, nicht im anderen Modus verwaltet werden können.
 
 ## Suchen der Standorte
 
@@ -84,7 +84,7 @@ Das Erstellen einer neuen Vorlage würde jedoch den Rahmen dieses Artikels spren
 * Kennwort = `adminPassword`
 * Domänenname für den virtuellen Computer = `dnsLabelPrefix`
 
->[AZURE.TIP]Diese Schritte veranschaulichen nur eine Möglichkeit der Verwendung einer VM-Vorlage mit der Azure-Befehlszeilenschnittstelle. Weitere Beispiele finden Sie unter [Bereitstellen und Verwalten von virtuellen Computern mit Azure-Ressourcen-Manager-Vorlagen und der Azure-CLI](virtual-machines/virtual-machines-deploy-rmtemplates-azure-cli.md).
+>[AZURE.TIP] Diese Schritte veranschaulichen nur eine Möglichkeit der Verwendung einer VM-Vorlage mit der Azure-Befehlszeilenschnittstelle. Weitere Beispiele finden Sie unter [Bereitstellen und Verwalten von virtuellen Computern mit Azure-Ressourcen-Manager-Vorlagen und der Azure-CLI](virtual-machines/virtual-machines-deploy-rmtemplates-azure-cli.md).
 
 1. Klicken Sie auf den Link „Mehr erfahren via GitHub“und laden Sie die Dateien „azuredeploy.json“ und „azuredeploy.parameters.json“ von GitHub in einen Arbeitsordner auf Ihrem lokalen Computer herunter. (Stellen Sie sicher, dass Sie in GitHub für jede Datei das _Rohformat_ auswählen.)
 
@@ -149,7 +149,7 @@ Das Erstellen einer neuen Vorlage würde jedoch den Rahmen dieses Artikels spren
 		data:    ubuntuOSVersion        String        14.04.2-LTS
 		info:    group deployment show command OK
 
-	>[AZURE.NOTE]Wenn Sie feststellen, dass Ihre Konfiguration nicht richtig ist und eine Bereitstellung mit langer Laufzeit angehalten werden muss, verwenden Sie den folgenden Befehl:
+	>[AZURE.NOTE] Wenn Sie feststellen, dass Ihre Konfiguration nicht richtig ist und eine Bereitstellung mit langer Laufzeit angehalten werden muss, verwenden Sie den folgenden Befehl:
 	>
 	> `azure group deployment stop "testRG" "testDeploy"`
 	>
@@ -168,13 +168,13 @@ Sie können auch eine Vorlage direkt auf [GitHub](https://github.com/Azure/azure
 	azure group deployment create "testDeploy" testResourceGroup --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-simple-linux/azuredeploy.json
 Sie werden aufgefordert, die erforderlichen Vorlagenparameter einzugeben.
 
-> [AZURE.NOTE]Die JSON-Vorlage muss im _Rohmodus_ geöffnet werden. Im normalen Modus wird in der Adressleiste des Browsers eine andere URL angezeigt. Klicken Sie rechts oben auf die Schaltfläche **Raw**, während die Datei in GitHub angezeigt wird, um sie im _Rohmodus_ zu öffnen.
+> [AZURE.NOTE] Die JSON-Vorlage muss im _Rohmodus_ geöffnet werden. Im normalen Modus wird in der Adressleiste des Browsers eine andere URL angezeigt. Klicken Sie rechts oben auf die Schaltfläche **Raw**, während die Datei in GitHub angezeigt wird, um sie im _Rohmodus_ zu öffnen.
 
 ## Arbeiten mit Ressourcen
 
 Auch wenn Vorlagen es Ihnen ermöglichen, gruppenweite Änderungen an der Konfiguration zu deklarieren, müssen Sie manchmal mit nur einer einzelnen Ressource arbeiten. Verwenden Sie dazu die Befehle vom Typ `azure resource`.
 
-> [AZURE.NOTE]Mit Ausnahme des Befehls `list` müssen Sie allen anderen Befehlen vom Typ `azure resource` mithilfe des Parameters `-o` die API-Version der Ressource angeben, mit der Sie arbeiten. Wenn Sie die zu verwendende API-Version nicht kennen, öffnen Sie die Vorlagendatei und gehen Sie zum Feld **apiVersion** der Ressource.
+> [AZURE.NOTE] Mit Ausnahme des Befehls `list` müssen Sie allen anderen Befehlen vom Typ `azure resource` mithilfe des Parameters `-o` die API-Version der Ressource angeben, mit der Sie arbeiten. Wenn Sie die zu verwendende API-Version nicht kennen, öffnen Sie die Vorlagendatei und gehen Sie zum Feld **apiVersion** der Ressource.
 
 1. Verwenden Sie den folgenden Befehl, um alle Ressourcen in einer Gruppe aufzulisten.
 
@@ -192,7 +192,7 @@ Auch wenn Vorlagen es Ihnen ermöglichen, gruppenweite Änderungen an der Konfig
 
 		azure resource show "testRG" "MyUbuntuVM" Microsoft.Compute/virtualMachines -o "2015-06-15" --json
 
-	>[AZURE.NOTE]Sie können die JSON-Daten in einer Datei speichern. Verwenden Sie dazu das Zeichen „ &gt;“, um die Ausgabe in die Datei zu leiten. Beispiel:
+	>[AZURE.NOTE] Sie können die JSON-Daten in einer Datei speichern. Verwenden Sie dazu das Zeichen „ &gt;“, um die Ausgabe in die Datei zu leiten. Beispiel:
 	>
 	> `azure resource show "testRG" "MyUbuntuVM" Microsoft.Compute/virtualMachines -o "2015-06-15" --json > myfile.json`
 
@@ -215,4 +215,4 @@ Verwenden Sie den Befehl `azure group log show`, um protokollierte Informationen
 [adtenant]: http://technet.microsoft.com/library/jj573650#createAzureTenant
 [psrm]: http://go.microsoft.com/fwlink/?LinkId=394760
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0211_2016-->

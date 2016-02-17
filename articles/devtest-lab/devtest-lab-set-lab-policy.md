@@ -1,20 +1,20 @@
 <properties
-pageTitle="Definieren von Labrichtlinien | Microsoft Azure"
-description="Erfahren Sie, wie Sie Labrichtlinien wie VM-Größen, die maximale Anzahl von VMs pro Benutzer und das automatisierte Herunterfahren definieren."
-services="devtest-lab,virtual-machines"
-documentationCenter="na"
-authors="tomarcher"
-manager="douge"
-editor=""/>
+	pageTitle="Definieren von Labrichtlinien | Microsoft Azure"
+	description="Erfahren Sie, wie Sie Labrichtlinien wie VM-Größen, die maximale Anzahl von VMs pro Benutzer und das automatisierte Herunterfahren definieren."
+	services="devtest-lab,virtual-machines"
+	documentationCenter="na"
+	authors="tomarcher"
+	manager="douge"
+	editor=""/>
 
 <tags
-ms.service="devtest-lab"
-ms.workload="na"
-ms.tgt_pltfrm="na"
-ms.devlang="na"
-ms.topic="article"
-ms.date="11/01/2015"
-ms.author="tarcher"/>
+	ms.service="devtest-lab"
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="02/03/2016"
+	ms.author="tarcher"/>
 
 # Definieren von Labrichtlinien.
 
@@ -26,7 +26,7 @@ Mit DevTest Lab können Sie Richtlinien für Schlüssel angeben, die die Verwend
 
 Um die Richtlinien für ein Lab anzeigen und ändern zu können, gehen Sie folgendermaßen vor:
 
-1. Melden Sie sich beim [Azure-Vorschauportal](http://portal.azure.com) an.
+1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com) an.
 
 1. Tippen Sie auf **Durchsuchen**, und tippen Sie dann in der Liste auf **DevTest Labs**.
 
@@ -100,4 +100,4 @@ Die Auto-Shutdown-Richtlinie hilft dabei, unnötigen Aufwand im Lab zu minimiere
 
 1. Tippen Sie auf **Speichern**.
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0204_2016-->

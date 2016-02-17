@@ -2,7 +2,7 @@
 
 In diesem Abschnitt schreiben wir eine C-App, um Ereignisse an den Event Hub zu senden. Wir verwenden die Proton AMQP-Bibliothek aus dem [Apache Qpid-Projekt](http://qpid.apache.org/). Dies entspricht der Verwendung von Service Bus-Warteschlangen und -Themen mit AMQP aus C, wie [hier](https://code.msdn.microsoft.com/Using-Apache-Qpid-Proton-C-afd76504) beschrieben. Weitere Informationen finden Sie in der [Qpid Proton-Dokumentation](http://qpid.apache.org/proton/index.html).
 
-1. Klicken Sie auf der Seite [Qpid AMQP Messenger](http://qpid.apache.org/components/messenger/index.html) (in englischer Sprache) auf den Link **Installing Qpid Proton**, und befolgen Sie die Anweisungen für Ihre Umgebung. Wir setzen eine Linux-Umgebung voraus, z. B. eine [Azure-Linux-VM](../articles/virtual-machines/virtual-machines-linux-tutorial.md) mit Ubuntu 14.04.
+1. Klicken Sie auf der Seite [Qpid AMQP Messenger](http://qpid.apache.org/components/messenger/index.html) (in englischer Sprache) auf den Link **Installing Qpid Proton**, und befolgen Sie die Anweisungen für Ihre Umgebung. Wir setzen eine Linux-Umgebung voraus, z. B. eine [Azure-Linux-VM](../virtual-machines/virtual-machines-linux-tutorial.md) mit Ubuntu 14.04.
 
 2. Um die Proton-Bibliothek zu kompilieren, installieren Sie die folgenden Pakete:
 
@@ -115,6 +115,6 @@ In diesem Abschnitt schreiben wir eine C-App, um Ereignisse an den Event Hub zu 
 	gcc sender.c -o sender -lqpid-proton
 	```
 
-> [AZURE.NOTE]In diesem Code verwenden wir ein Ausgabefenster von 1, um eine sofortige Ausgabe der Meldungen zu erzwingen. Im Allgemeinen sollten Anwendungen Nachrichten stapelweise ausgeben, um den Durchsatz zu erhöhen. Weitere Informationen zur Verwendung der Qpid Proton-Bibliothek in dieser und anderen Umgebungen und auf Plattformen, für die Bindungen bereitgestellt werden (derzeit Perl, PHP, Python und Ruby), finden Sie auf der Seite [Qpid AMQP Messenger](http://qpid.apache.org/components/messenger/index.html) (in englischer Sprache).
+> [AZURE.NOTE] In diesem Code verwenden wir ein Ausgabefenster von 1, um eine sofortige Ausgabe der Meldungen zu erzwingen. Im Allgemeinen sollten Anwendungen Nachrichten stapelweise ausgeben, um den Durchsatz zu erhöhen. Weitere Informationen zur Verwendung der Qpid Proton-Bibliothek in dieser und anderen Umgebungen und auf Plattformen, für die Bindungen bereitgestellt werden (derzeit Perl, PHP, Python und Ruby), finden Sie auf der Seite [Qpid AMQP Messenger](http://qpid.apache.org/components/messenger/index.html) (in englischer Sprache).
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0204_2016-->

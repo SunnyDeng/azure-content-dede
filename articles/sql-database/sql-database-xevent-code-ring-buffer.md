@@ -51,7 +51,7 @@ In diesem Thema finden Sie ein Transact-SQL-Codebeispiel, mit dem folgende Aufga
 ## Voraussetzungen
 
 
-- Ein Azure-Konto und ein Azure-Abonnement. Sie können sich für eine [kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/) registrieren.
+- Ein Azure-Konto und ein Azure-Abonnement. Sie können sich für eine [kostenlose Testversion](https://azure.microsoft.com/pricing/free-trial/) registrieren.
 
 
 - Jede Datenbank, in der eine Tabelle erstellt werden kann.
@@ -385,4 +385,4 @@ Weitere Themen mit Codebeispielen für erweiterte Ereignisse finden Sie unter de
 - Code sample for SQL Server: [Find the Objects That Have the Most Locks Taken on Them](http://msdn.microsoft.com/library/bb630355.aspx)
 -->
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/29/2015" 
+	ms.date="01/09/2016" 
 	ms.author="stepsic"/>
 
 # Ändern der Preisstufe in Azure App Service
@@ -22,13 +22,13 @@ Zur Steigerung von Leistung und Durchsatz für Ihre Web-Apps in Microsoft Azure 
 
 Der verfügbare Dienstumfang für Ihren App Service-Plan richtet sich nach der [*Preisstufe* für den Plan](/pricing/details/app-service/). Höhere Tarife wie **Standard** und **Premium** bieten eine höhere Stabilität und Flexibilität bei der Festlegung, wie Ressourcen in Azure verwendet werden. Die Änderung der Preisstufe wirkt sich auf die Anzahl von Kernen und die Menge des Arbeitsspeichers aus, die für Ihren Dienst zur Verfügung steht. Dieser Vorgang wird als *vertikale Skalierung* (nach oben oder unten) bezeichnet.
 
-Zusätzlich zum Ändern der Preisstufe können Sie die Anzahl von Instanzen für Ihren Dienst ändern. Dieser Vorgang wird als *horizontale Skalierung* bezeichnet. Weitere Informationen zur *horizontalen Skalierung* finden Sie unter [Manuelles oder automatisches Skalieren der Instanzenanzahl](../insights-how-to-scale.md).
+Zusätzlich zur Änderung des Tarifs können Sie die Anzahl von Instanzen für Ihren Dienst ändern. Dieser Vorgang wird als *horizontale Skalierung* bezeichnet. Weitere Informationen zur *horizontalen Skalierung* finden Sie unter [Manuelles oder automatisches Skalieren der Instanzenanzahl](../insights-how-to-scale.md).
 
 Weitere Informationen zu App Service-Plänen finden Sie unter [Was ist ein App Service-Plan?](../web-sites-web-hosting-plan-overview.md) und [Azure App Service-Pläne – Detaillierte Übersicht](azure-web-sites-web-hosting-plans-in-depth-overview.md). Informationen zu Preisen und Features der einzelnen App Service-Pläne finden Sie unter [App Service – Preisdetails](/pricing/details/app-service/).
 
 Die Skalierung funktioniert anders, wenn Sie eine dedizierte [App Service-Umgebung](app-service-app-service-environment-intro.md) verwenden möchten. Weitere Details finden Sie unter [Skalieren von Web-Apps in einer App Service-Umgebung](app-service-web-scale-a-web-app-in-an-app-service-environment.md).
 
-> [AZURE.NOTE]Bevor Sie vom Modus **Free** zum Modus **Basic**, **Standard** oder **Premium** wechseln, müssen Sie zunächst das Ausgabenlimit für Ihr Azure App Service-Abonnement aufheben. Informationen zum Anzeigen oder Ändern von Optionen für Ihr Microsoft Azure App Service-Abonnement finden Sie unter [Microsoft Azure-Abonnement][azuresubscriptions].
+> [AZURE.NOTE] Bevor Sie vom Modus **Free** zum Modus **Basic**, **Standard** oder **Premium** wechseln, müssen Sie zunächst das Ausgabenlimit für Ihr Azure App Service-Abonnement aufheben. Informationen zum Anzeigen oder Ändern von Optionen für Ihr Microsoft Azure App Service-Abonnement finden Sie unter [Microsoft Azure-Abonnement][azuresubscriptions].
 
 <a name="scalingsharedorbasic"></a> <a name="scalingstandard"></a>
 
@@ -85,7 +85,7 @@ Je nach Preisstufe stehen die folgenden entwicklungsbezogenen Funktionen zur Ver
 
 - Ausführliche Informationen zu allen weiteren Funktionen in den App Service-Plänen, einschließlich Preisgestaltung und allgemein interessanten Funktionen (auch für Entwickler) finden Sie in den [App Service – Preisdetails](/pricing/details/web-sites/).
 
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 <a name="Next Steps"></a>
 ## Nächste Schritte
@@ -130,4 +130,4 @@ Je nach Preisstufe stehen die folgenden entwicklungsbezogenen Funktionen zur Ver
 [GeoReplication]: ./media/web-sites-scale/scale12SQLGeoReplication.png
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

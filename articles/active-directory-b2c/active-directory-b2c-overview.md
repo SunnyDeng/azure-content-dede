@@ -12,7 +12,7 @@
 	ms.workload="identity"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="article"
+	ms.topic="hero-article"
 	ms.date="01/06/2016"
 	ms.author="swkrish"/>
 
@@ -22,7 +22,7 @@ Bei **Azure Active Directory B2C** handelt es sich um eine umfassende Lösung zu
 
 In der Vergangenheit mussten Anwendungsentwickler ihren eigenen Code schreiben, wenn Sie Verbraucher in ihren Anwendungen registrieren und anmelden wollten. Und sie hätten lokale Datenbanken oder Systeme zum Speichern von Benutzernamen und Kennwörtern verwendet. Azure Active Directory B2C bietet Entwicklern eine bessere Lösung, um die Verwaltung von Kundenidentitäten in ihre Anwendungen zu integrieren. Dabei kommen eine sichere, standardbasierte Plattform und ein umfassender Satz von erweiterbaren Richtlinien zum Einsatz. Mit Azure Active Directory B2C können sich Ihre Kunden mit vorhandenen Konten in sozialen Netzwerken (Facebook, Google, Amazon, LinkedIn) oder durch Erstellen neuer Anmeldeinformationen (E-Mail-Adresse und Kennwort oder Benutzername und Kennwort, im Folgenden als "lokale Konten" bezeichnet) bei Ihren Anwendungen registrieren.
 
-Azure Active Directory B2C ist eine Vorschauversion. Während dieser Phase nehmen wir gerne Ihr Feedback entgegen und freuen uns, wenn Sie uns Ihre Erfahrung beim Testen mitteilen. Anhand dieses Feedbacks nehmen wir möglicherweise grundlegende Änderungen zur Verbesserung des Diensts vor. Sie sollten in dieser Phase keine Produktionsanwendung auf Grundlage der Vorschauversion veröffentlichen. Teilen Sie uns Ihre Meinung über [User Voice](http://feedback.azure.com/forums/169401-azure-active-directory) mit.
+Azure Active Directory B2C ist eine Vorschauversion. Während dieser Phase nehmen wir gerne Ihr Feedback entgegen und freuen uns, wenn Sie uns Ihre Erfahrung beim Testen mitteilen. Anhand dieses Feedbacks nehmen wir möglicherweise grundlegende Änderungen zur Verbesserung des Diensts vor. Sie sollten in dieser Phase keine Produktionsanwendung auf Grundlage der Vorschauversion veröffentlichen. Teilen Sie uns Ihre Meinung über [User Voice](https://feedback.azure.com/forums/169401-azure-active-directory/) mit.
 
 ## Erste Schritte
 
@@ -54,13 +54,13 @@ Informieren Sie sich über die Verwendung bestimmter Features der Azure Active D
 
 Unter den folgenden Links finden Sie ausführliche Informationen zum Dienst:
 
-- Hier finden Sie [Active Directory B2C-Preisinformationen](https://azure.microsoft.com/pricing/details/active-directory-b2c).
+- Hier finden Sie [Active Directory B2C-Preisinformationen](https://azure.microsoft.com/pricing/details/active-directory-b2c/).
 - Hilfe zu Stack Overflow mit [azure-active-directory](http://stackoverflow.com/questions/tagged/azure-active-directory)- oder [adal](http://stackoverflow.com/questions/tagged/adal)-Tags.
-- Teilen Sie uns Ihre Meinung zur Vorschau über [User Voice](http://feedback.azure.com/forums/169401-azure-active-directory) mit. Verwenden Sie den Ausdruck "AzureADB2C:" im Titel Ihres Beitrags, damit wir ihn einfacher finden können.
+- Teilen Sie uns Ihre Meinung zur Vorschau über [User Voice](https://feedback.azure.com/forums/169401-azure-active-directory/) mit. Verwenden Sie den Ausdruck "AzureADB2C:" im Titel Ihres Beitrags, damit wir ihn einfacher finden können.
 - Azure Active Directory B2C unterstützt Protokolle gemäß den Branchenstandards OpenID Connect und OAuth 2.0 über ein Anwendungsregistrierungsmodell, das als "App Model v2.0" bezeichnet wird.
   - [App-Modell, Version 2.0 –Protokollreferenz](active-directory-b2c-reference-protocols.md)
   - [App-Modell, Version 2.0 –Tokenreferenz](active-directory-b2c-reference-tokens.md)
 - [Häufig gestellte Fragen zu Azure Active Directory B2C](active-directory-b2c-faqs.md)
 - [Senden von Supportanfragen zu Azure Active Directory B2C](active-directory-b2c-support.md)
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0211_2016-->

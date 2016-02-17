@@ -3,7 +3,7 @@
 Führen Sie die folgenden Schritte aus, um die ARM-Vorlage bereitzustellen, die Sie mithilfe der Azure-Befehlszeilenschnittstelle heruntergeladen haben.
 
 1. Wenn Sie die Azure-Befehlszeilenschnittstelle noch nie verwendet haben, ziehen Sie [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](xplat-cli-install.md) zurate, und folgen Sie den Anweisungen bis zu dem Punkt, an dem Sie Ihr Azure-Konto und Ihr Abonnement auswählen.
-2. Führen Sie den Befehl **azure config mode** aus, um in den Ressourcen-Manager-Modus zu wechseln, wie unten dargestellt.
+2. Führen Sie den Befehl **`azure config mode`** aus, um in den Ressourcen-Manager-Modus zu wechseln, wie unten dargestellt.
 
 		azure config mode arm
 
@@ -11,7 +11,7 @@ Führen Sie die folgenden Schritte aus, um die ARM-Vorlage bereitzustellen, die 
 
 		info:    New mode is arm
 
-3. Führen Sie bei Bedarf **azure group create** aus, um eine neue Ressourcengruppe zu erstellen, wie unten dargestellt. Beachten Sie die Ausgabe des Befehls. In der nach der Ausgabe angezeigten Liste werden die verwendeten Parameter erläutert. Weitere Informationen zu Ressourcengruppen finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](resource-group-overview.md).
+3. Erstellen Sie ggf. eine neue Ressourcengruppe, indem Sie wie unten dargestellt **`azure group create`** ausführen. Beachten Sie die Ausgabe des Befehls. In der nach der Ausgabe angezeigten Liste werden die verwendeten Parameter erläutert. Weitere Informationen zu Ressourcengruppen finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](resource-group-overview.md).
 
 		azure group create -n TestRG -l centralus
 
@@ -32,7 +32,7 @@ Führen Sie die folgenden Schritte aus, um die ARM-Vorlage bereitzustellen, die 
 	- **-n (oder --name)**. Name für die neue Ressourcengruppe. In diesem Szenario *TestRG*.
 	- **-l (oder --location)**. Azure-Region, in der die neue Ressourcengruppe erstellt wird. In diesem Szenario *centralus*.
 
-4. Führen Sie das Cmdlet **azure group deployment create** aus, um das neue VNet mithilfe der oben heruntergeladenen und geänderten Vorlage und Parameterdateien bereitzustellen. In der nach der Ausgabe angezeigten Liste werden die verwendeten Parameter erläutert.
+4. Führen Sie das Cmdlet **`azure group deployment create`** aus, um das neue VNet mithilfe der oben heruntergeladenen und geänderten Vorlage und Parameterdateien bereitzustellen. In der nach der Ausgabe angezeigten Liste werden die verwendeten Parameter erläutert.
 
 		azure group deployment create -g TestRG -n TestVNetDeployment -f C:\ARM\azuredeploy.json -e C:\ARM\azuredeploy-parameters.json
 
@@ -65,7 +65,7 @@ Führen Sie die folgenden Schritte aus, um die ARM-Vorlage bereitzustellen, die 
 	- **-f (oder --template-file)**. Pfad zu Ihrer ARM-Vorlagendatei.
 	- **-e (oder --parameters-file)**. Pfad zu Ihrer ARM-Parameterdatei.
 
-5. Führen Sie den Befehl **azure network vnet show** aus, um die Eigenschaften des neuen VNet anzuzeigen, wie unten dargestellt.
+5. Führen Sie den Befehl **`azure network vnet show`** aus, um die Eigenschaften des neuen VNet anzuzeigen, wie unten dargestellt.
 
 		azure network vnet show -g TestRG -n TestVNet
 
@@ -89,4 +89,4 @@ Führen Sie die folgenden Schritte aus, um die ARM-Vorlage bereitzustellen, die 
 		data:
 		info:    network vnet show command OK
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0211_2016-->

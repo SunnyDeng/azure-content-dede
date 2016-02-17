@@ -80,9 +80,9 @@ Um den Blob-Dienst mit Jenkins verwenden zu können, müssen Sie das Azure-Speic
 1. Klicken Sie im Jenkins-Dashboard auf **Manage Jenkins**.
 2. Klicken Sie auf der Seite **Manage Jenkins** auf **Configure System**.
 3. Führen Sie im Bereich **Microsoft Azure Storage Account Configuration** folgende Schritte aus:
-    1. Geben Sie Ihren Speicherkontonamen ein, den Sie aus dem [Azure-Portal](portal.azure.com) abrufen können.
-    2. Geben Sie Ihren Speicherkontoschlüssel ein, der ebenfalls über das [Azure-Portal](portal.azure.com) abrufbar ist.
-    3. Verwenden Sie den Standardwert für **Blob Service Endpoint URL**, wenn Sie die öffentliche Azure-Cloud verwenden. Wenn Sie mit einer anderen Azure-Cloud arbeiten, verwenden Sie den Endpunkt, der im [Azure-Portal](portal.azure.com) für Ihr Speicherkonto angegeben ist. 
+    1. Geben Sie Ihren Speicherkontonamen ein, den Sie aus dem [Azure-Portal](https://portal.azure.com) abrufen können.
+    2. Geben Sie Ihren Speicherkontoschlüssel ein, der ebenfalls über das [Azure-Portal](https://portal.azure.com) abrufbar ist.
+    3. Verwenden Sie den Standardwert für **Blob Service Endpoint URL**, wenn Sie die öffentliche Azure-Cloud verwenden. Wenn Sie mit einer anderen Azure-Cloud arbeiten, verwenden Sie den Endpunkt, der im [Azure-Portal](https://portal.azure.com) für Ihr Speicherkonto angegeben ist. 
     4. Klicken Sie auf **Validate storage credentials**, um Ihr Speicherkonto zu validieren. 
     5. [Optional] Wenn Sie über weitere Speicherkonten verfügen, die Sie für Jenkins CI verfügbar machen möchten, klicken Sie auf **Add more Storage Accounts**.
     6. Klicken Sie auf **Save**, um Ihre Einstellungen zu speichern.
@@ -117,7 +117,7 @@ Für das Lernprogramm müssen wir zunächst einen Auftrag erstellen, der mehrere
 12. Klicken Sie auf **Save**, um Ihre Einstellungen zu speichern.
 13. Klicken Sie im Jenkins-Dashboard auf **Build Now**, um **MyJob** auszuführen. Prüfen Sie den Status in der Ausgabe der Konsole. Statusmeldungen für Azure-Speicher werden in die Ausgabe der Konsole aufgenommen, wenn die Postbuildaktion mit dem Hochladen von Buildartefakten beginnt.
 14. Nach erfolgreichem Abschluss des Auftrags können Sie die Buildartefakte überprüfen, indem Sie den öffentlichen Blob öffnen.
-    1. Melden Sie sich beim [Azure-Portal](portal.azure.com) an.
+    1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
     2. Klicken Sie auf **Storage**.
     3. Klicken Sie auf den Speicherkontonamen, den Sie für Jenkins verwendet haben.
     4. Klicken Sie auf **Container**.
@@ -150,7 +150,7 @@ Im Folgenden erhalten Sie einen Überblick über die Komponenten des Blob-Dienst
 
     `http://storageaccount.blob.core.windows.net/container_name/blob_name`
     
-    (Das Format oben gilt für die öffentliche Azure-Cloud. Wenn Sie mit einer anderen Azure-Cloud arbeiten, verwenden Sie den Endpunkt im [Azure-Portal](portal.azure.com), um Ihren URL-Endpunkt zu bestimmen.)
+    (Das Format oben gilt für die öffentliche Azure-Cloud. Wenn Sie mit einer anderen Azure-Cloud arbeiten, verwenden Sie den Endpunkt im [Azure-Portal](https://portal.azure.com), um Ihren URL-Endpunkt zu bestimmen.)
 
     Bei obigem Format steht `storageaccount` für den Namen Ihres Speicherkontos, `container_name` für den Namen des Containers und `blob_name` für den Namen des Blobs. Der Containername kann mehrere Pfade umfassen, die durch einen Schrägstrich (**/**) getrennt sind. Der Beispielcontainername in diesem Lernprogramm war **MyJob**, und **${BUILD\_ID}/${BUILD\_NUMBER}** wurde für den gemeinsamen virtuellen Pfad verwendet. Der Blob hat also eine URL in folgendem Format:
 
@@ -162,4 +162,4 @@ Im Folgenden erhalten Sie einen Überblick über die Komponenten des Blob-Dienst
   [Meet Jenkins]: https://wiki.jenkins-ci.org/display/JENKINS/Meet+Jenkins
  
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

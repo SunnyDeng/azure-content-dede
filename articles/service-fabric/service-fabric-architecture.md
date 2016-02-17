@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="08/26/2015"
+   ms.date="01/26/2016"
    ms.author="rsinha"/>
 
 # Service Fabric-Architektur
@@ -61,4 +61,4 @@ Dieses Subsystem sorgt mithilfe des Naming-Diensts für zuverlässiges Messaging
 ## Prüfbarkeitssubsystem
 Das Prüfbarkeitssubsystem besteht aus mehreren Tools, die speziell zum Testen von mit Service Fabric erstellten Diensten entwickelt wurden. Mit den Tools können Entwickler leicht aussagekräftige Fehler hervorrufen und Testszenarien ausführen, um die vielen Zustände und Übergänge zu schaffen und zu überprüfen, die für einen Dienst während seiner Lebensdauer gelten können. Dabei ist jederzeit für die erforderliche Kontrolle und Sicherheit gesorgt. Das Prüfbarkeitssubsystem bietet außerdem einen Mechanismus für das Ausführen langer Testläufe, in denen mehrere Fehler ohne Verfügbarkeitsverlust durchlaufen werden. Benutzern wird hierfür eine Testproduktionsumgebung bereitgestellt.
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0204_2016-->

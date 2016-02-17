@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="12/07/2015"
+   ms.date="01/21/2016"
    ms.author="joaoma" />
 
 # Anzeigen und Ändern von Hostnamen
@@ -55,7 +55,7 @@ Gehen Sie auf einem REST-Client wie folgt vor:
 
 1. Suchen Sie das **HostName**-Element für jedes **RoleInstance**-Element.
 
->[AZURE.WARNING]Sie können auch das interne Domänensuffix für Ihren Clouddienst über die Antwort auf den REST-Aufruf anzeigen, indem Sie das **InternalDnsSuffix**-Element überprüfen. Alternativ können Sie „ipconfig /all“ an einer Eingabeaufforderung in einer Remotedesktopsitzung (Windows) oder „cat /etc/resolv.conf“ in einem SSH-Terminal ausführen (Linux).
+>[AZURE.WARNING] Sie können auch das interne Domänensuffix für Ihren Clouddienst über die Antwort auf den REST-Aufruf anzeigen, indem Sie das **InternalDnsSuffix**-Element überprüfen. Alternativ können Sie „ipconfig /all“ an einer Eingabeaufforderung in einer Remotedesktopsitzung (Windows) oder „cat /etc/resolv.conf“ in einem SSH-Terminal ausführen (Linux).
 
 ## Ändern eines Hostnamens
 
@@ -71,4 +71,4 @@ Sie können den Hostnamen für einen virtuellen Computer oder eine Rolleninstanz
 
 [Angeben von DNS-Einstellungen mit Netzwerkkonfigurationsdateien](virtual-networks-specifying-a-dns-settings-in-a-virtual-network-configuration-file.md)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0204_2016-->

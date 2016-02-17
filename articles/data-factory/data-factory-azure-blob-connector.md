@@ -13,11 +13,14 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/03/2015" 
+	ms.date="01/26/2016" 
 	ms.author="spelluru"/>
 
 # Verschieben von Daten in einen und aus einem Azure-Blob mithilfe von Azure Data Factory
 Dieser Artikel beschreibt die Verwendung der Kopieraktivität in einer Azure Data Factory, um Daten aus einem anderen Datenspeicher in ein Azure-Blob und aus einem Azure-Blob in einen anderen Datenspeicher zu verschieben. Dieser Artikel baut auf dem Artikel [Datenverschiebungsaktivitäten](data-factory-data-movement-activities.md) auf, der eine allgemeine Übersicht zur Datenverschiebung mit der Kopieraktivität und den unterstützten Datenspeicherkombinationen bietet.
+
+In den folgenden Beispielen wird veranschaulicht, wie Sie Daten in und aus Azure-BLOB-Speicher und Azure SQL-Datenbank kopieren. Daten können jedoch mithilfe der Kopieraktivität in Azure Data Factory **direkt** aus beliebigen Quellen in die [hier](data-factory-data-movement-activities.md#supported-data-stores) aufgeführten Senken kopiert werden.
+ 
 
 ## Beispiel: Kopieren von Daten aus einem Azure-Blob in Azure SQL
 Das nachstehende Beispiel zeigt Folgendes:
@@ -53,6 +56,8 @@ Im Beispiel werden Daten, die zu einer Zeitreihe aus einem Azure-Blob gehören, 
 	    }
 	  }
 	}
+
+Azure Data Factory unterstützt zwei Arten von mit Azure Storage verknüpften Diensten: **AzureStorage** und **AzureStorageSas**. Für den ersten geben Sie die Verbindungszeichenfolge an, die den Kontoschlüssel enthält. Für den zweiten geben Sie den SAS-URI (Shared Access Signature) an. Weitere Informationen finden Sie unter [Verknüpfte Dienste](#linked-services).
 
 **Azure-Blob-Eingabedataset:**
 
@@ -225,6 +230,9 @@ Im Beispiel werden Daten, die zu einer Zeitreihe gehören, stündlich aus einer 
 	  }
 	}
 
+Azure Data Factory unterstützt zwei Arten von mit Azure Storage verknüpften Diensten: **AzureStorage** und **AzureStorageSas**. Für den ersten geben Sie die Verbindungszeichenfolge an, die den Kontoschlüssel enthält. Für den zweiten geben Sie den SAS-URI (Shared Access Signature) an. Weitere Informationen finden Sie unter [Verknüpfte Dienste](#linked-services).
+
+
 **Azure SQL-Eingabedataset:**
 
 Im Beispiel wird vorausgesetzt, dass Sie die Tabelle "MyTable" in Azure SQL erstellt haben, die für Zeitreihendaten eine Spalte namens "timestampcolumn" enthält.
@@ -254,9 +262,11 @@ Durch Festlegen von "external" auf "true" und Angeben der Richtlinie "externalDa
 	  }
 	}
 
+
 **Azure-Blob-Ausgabedataset:**
 
 Daten werden stündlich in ein neues Blob geschrieben ("frequency": "hour", "interval": 1). Der Ordnerpfad des Blobs wird basierend auf der Startzeit des Slices, der verarbeitet wird, dynamisch ausgewertet. Im Ordnerpfad werden Jahr, Monat, Tag und die Stundenteile der Startzeit verwendet.
+
 	
 	{
 	  "name": "AzureBlobOutput",
@@ -362,14 +372,10 @@ Die Pipeline enthält eine Kopieraktivität, die für das Verwenden der oben gen
 		}
 	}
 
-## Eigenschaften des mit Azure Storage verknüpften Diensts
+## Verknüpfte Dienste
+Es gibt zwei Arten von verknüpften Diensten, die Sie verwenden können, um einen Azure-Blobspeicher mit einer Azure Data Factory zu verknüpfen: **AzureStorage** und **AzureStorageSas**. Der mit Azure Storage verknüpfte Dienst bietet der Data Factory einen globalen Zugriff auf Azure-Speicher. Dagegen bietet der mit Azure Storage SAS (Shared Access Signature) verknüpfte Dienst der Data Factory einen eingeschränkten bzw. zeitgebundenen Zugriff auf Azure-Speicher. Es gibt keine weitere Unterschiede zwischen diesen beiden verknüpften Diensten. Wählen Sie den verknüpften Dienst, der Ihren Anforderungen entspricht. Die folgenden Abschnitte bieten weitere Informationen zu diesen beiden verknüpften Diensten.
 
-Sie können einen mit Azure Storage verknüpften Dienst verwenden, um ein Azure-Speicherkonto mit einer Azure Data Factory zu verknüpfen. Die folgende Tabelle enthält eine Beschreibung der JSON-Elemente, die für den mit Azure Storage verknüpften Dienst spezifisch sind.
-
-| Eigenschaft | Beschreibung | Erforderlich |
-| -------- | ----------- | -------- |
-| type | Die type-Eigenschaft muss auf **AzureStorage** festgelegt sein. | Ja |
-| connectionString | Geben Sie Informationen, die zur Verbindung mit dem Azure-Speicher erforderlich sind, für die connectionString-Eigenschaft ein. Sie können die connectionString-Eigenschaft für den Azure-Speicher aus dem klassischen Azure-Portal abrufen. | Ja |
+[AZURE.INCLUDE [data-factory-azure-storage-linked-services](../../includes/data-factory-azure-storage-linked-services.md)]
 
 ## Eigenschaften des Dataset-Typs "Azure-Blob"
 
@@ -489,12 +495,12 @@ Dieser Abschnitt beschreibt das resultierende Verhalten des Kopiervorgangs für 
 
 recursive | copyBehavior | Resultierendes Verhalten
 --------- | ------------ | --------
-true | preserveHierarchy | <p>Für einen Quellordner „Ordner1“ mit der folgenden Struktur:</p> <p>Ordner1<br/>&nbsp; &nbsp; &nbsp; &nbsp; Datei1<br/>&nbsp; &nbsp; &nbsp; &nbsp; Datei2<br/>&nbsp; &nbsp; &nbsp; &nbsp; Unterordner1<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei3<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei4<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei5</p>der Zielordner „Ordner1“ wird dieselbe Struktur wie der Quellordner aufweisen<p>Ordner1<br/>&nbsp; &nbsp; &nbsp; &nbsp; Datei1<br/>&nbsp; &nbsp; &nbsp; &nbsp; Datei2<br/>&nbsp; &nbsp; &nbsp; &nbsp; Unterordner1<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei3<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei4<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei5</p>.  
-true | flattenHierarchy | <p>Für einen Quellordner „Ordner1“ mit der folgenden Struktur:</p> <p>Ordner1<br/>&nbsp; &nbsp; &nbsp; &nbsp; Datei1<br/>&nbsp; &nbsp; &nbsp; &nbsp; Datei2<br/>&nbsp; &nbsp; &nbsp; &nbsp; Unterordner1<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei3<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei4<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei5</p>der Zielordner „Ordner1“ wird die folgende Struktur haben: <p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei1<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei2<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei3<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei4<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei5</p>
-true | mergeFiles | <p>Für einen Quellordner „Ordner1“ mit der folgenden Struktur:</p> <p>Ordner1<br/>&nbsp; &nbsp; &nbsp; &nbsp; Datei1<br/>&nbsp; &nbsp; &nbsp; &nbsp; Datei2<br/>&nbsp; &nbsp; &nbsp; &nbsp; Unterordner1<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei3<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei4<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei5</p>der Zielordner „Ordner1“ wird die folgende Struktur haben: <p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inhalte von Datei1 + Datei2 + Datei3 + Datei4 + Datei5 werden in einer Datei mit einem automatisch erstellten Namen zusammengeführt</p>
-false | preserveHierarchy | <p>Für einen Quellordner „Ordner1“ mit der folgenden Struktur:</p> <p>Ordner1<br/>&nbsp; &nbsp; &nbsp; &nbsp; Datei1<br/>&nbsp; &nbsp; &nbsp; &nbsp; Datei2<br/>&nbsp; &nbsp; &nbsp; &nbsp; Unterordner1<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei3<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei4<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei5</p>der Zielordner „Ordner1“ wird die folgende Struktur haben:<p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei2<br/></p><p>Unterordner1 mit Datei3, Datei4, und Datei5 werden nicht übernommen.</p>.
-false | flattenHierarchy | <p>Für einen Quellordner „Ordner1“ mit der folgenden Struktur:</p> <p>Ordner1<br/>&nbsp; &nbsp; &nbsp; &nbsp; Datei1<br/>&nbsp; &nbsp; &nbsp; &nbsp; Datei2<br/>&nbsp; &nbsp; &nbsp; &nbsp; Unterordner1<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei3<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei4<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei5</p>der Zielordner „Ordner1“ wird die folgende Struktur haben:<p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei1<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei2<br/></p><p>Unterordner1 mit Datei3, Datei4, und Datei5 werden nicht übernommen.</p>.
-false | mergeFiles | <p>Für einen Quellordner „Ordner1“ mit der folgenden Struktur:</p> <p>Ordner1<br/>&nbsp; &nbsp; &nbsp; &nbsp; Datei1<br/>&nbsp; &nbsp; &nbsp; &nbsp; Datei2<br/>&nbsp; &nbsp; &nbsp; &nbsp; Unterordner1<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei3<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei4<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Datei5</p>der Zielordner „Ordner1“ wird die folgende Struktur haben:<p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inhalte von Datei1 + Datei2 werden in einer Datei mit einem automatisch erstellten Namen zusammengeführt. automatisch erstellter Name für Datei1</p><p>Unterordner1 mit Datei3, Datei4, und Datei5 werden nicht übernommen.</p>.
+true | preserveHierarchy | <p>Für einen Quellordner „Ordner1“ mit der folgenden Struktur:</p> <p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Unterordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei5</p>der Zielordner „Ordner1“ wird dieselbe Struktur wie der Quellordner aufweisen<p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp; Datei1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Unterordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei5</p>.  
+true | flattenHierarchy | <p>Für einen Quellordner „Ordner1“ mit der folgenden Struktur:</p> <p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Unterordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Datei5</p>der Zielordner „Ordner1“ wird die folgende Struktur haben: <p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei1<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei2<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei3<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei4<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei5</p>
+true | mergeFiles | <p>Für einen Quellordner „Ordner1“ mit der folgenden Struktur:</p> <p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Unterordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Datei5</p>der Zielordner „Ordner1“ wird die folgende Struktur haben: <p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inhalte von Datei1 + Datei2 + Datei3 + Datei4 + Datei5 werden in einer Datei mit einem automatisch erstellten Namen zusammengeführt</p>
+false | preserveHierarchy | <p>Für einen Quellordner „Ordner1“ mit der folgenden Struktur:</p> <p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Unterordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei5</p>der Zielordner „Ordner1“ wird die folgende Struktur haben:<p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei2<br/></p><p>Unterordner1 mit Datei3, Datei4, und Datei5 werden nicht übernommen.</p>.
+false | flattenHierarchy | <p>Für einen Quellordner „Ordner1“ mit der folgenden Struktur:</p> <p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Unterordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei5</p>der Zielordner „Ordner1“ wird die folgende Struktur haben:<p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei1<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch erstellter Name für Datei2<br/></p><p>Unterordner1 mit Datei3, Datei4, und Datei5 werden nicht übernommen.</p>.
+false | mergeFiles | <p>Für einen Quellordner „Ordner1“ mit der folgenden Struktur:</p> <p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Datei2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Unterordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datei4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FDatei5</p>der Zielordner „Ordner1“ wird die folgende Struktur haben:<p>Ordner1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inhalte von Datei1 + Datei2 werden in einer Datei mit einem automatisch erstellten Namen zusammengeführt. automatisch erstellter Name für Datei1</p><p>Unterordner1 mit Datei3, Datei4, und Datei5 werden nicht übernommen.</p>.
 
   
 
@@ -505,4 +511,4 @@ false | mergeFiles | <p>Für einen Quellordner „Ordner1“ mit der folgenden S
 
 [AZURE.INCLUDE [data-factory-column-mapping](../../includes/data-factory-column-mapping.md)]
 
-<!---HONumber=AcomDC_0121_2016-->
+<!----HONumber=AcomDC_0204_2016-->

@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/09/2015"
+	ms.date="01/25/2016"
 	ms.author="paulettm"/>
 
 # Häufig gestellte Fragen zu Azure Machine Learning (FAQ): Abrechnung, Funktionen, Einschränkungen und Support
@@ -47,7 +47,7 @@ Weitere Informationen finden Sie unter [Verbinden mit einem Machine Learning-Web
 
 **Wie funktioniert die Abrechnung von Machine Learning?**
 
-Abrechnungs- und Preisinformationen finden Sie unter [Machine Learning Preise](http://azure.microsoft.com/pricing/details/machine-learning/).
+Abrechnungs- und Preisinformationen finden Sie unter [Machine Learning Preise](https://azure.microsoft.com/pricing/details/machine-learning/).
 
 **Gibt es eine kostenlose Testversion von Machine Learning?**
 
@@ -93,7 +93,8 @@ Laden Sie für DataSets größer als einige GB die Daten in Azure Storage oder A
 
 **Können Daten von Amazon S3 gelesen werden?**
 
-Wenn Ihre Daten nicht sehr umfangreich sind und Sie diese über eine HTTP-URL verfügbar machen möchten, können Sie das [Reader][reader]-Modul verwenden. Größere Datenmengen sollten Sie zunächst in Azure Storage übertragen und anschließend mit dem [Reader][reader]-Modul in das Experiment übernehmen. <!--
+Wenn Ihre Daten nicht sehr umfangreich sind und Sie diese über eine HTTP-URL verfügbar machen möchten, können Sie das [Reader][reader]-Modul verwenden. Größere Datenmengen sollten Sie zunächst in Azure Storage übertragen und anschließend mit dem [Reader][reader]-Modul in das Experiment übernehmen.
+<!--
 <SEE CLOUD DS PROCESS>
 -->
 
@@ -163,7 +164,7 @@ Derzeit können neue benutzerdefinierte Module nur in R erstellt werden.
 
 **Welche R-Pakete sind in Machine Learning Studio verfügbar?**
 
-Machine Learning Studio unterstützt bereits über 400 R-Pakete, und diese Liste wird ständig erweitert. Anweisungen zum Abrufen einer Liste der unterstützten R-Pakete finden Sie unter [Erweitern des Experiments mit R](machine-learning-extend-your-experiment-with-r.md). Falls das gewünschte Paket nicht in der Liste enthalten ist, können Sie den Namen des Pakets im [Forum für Benutzer-Feedback](http://go.microsoft.com/fwlink/?LinkId=404231) hinterlassen.
+Machine Learning Studio unterstützt bereits über 400 CRAN R-Pakete, und diese Liste wird ständig erweitert. Anweisungen zum Abrufen einer Liste der unterstützten R-Pakete finden Sie unter [Erweitern des Experiments mit R](machine-learning-extend-your-experiment-with-r.md). Falls das gewünschte Paket nicht in der Liste enthalten ist, können Sie den Namen des Pakets im [Forum für Benutzer-Feedback](http://go.microsoft.com/fwlink/?LinkId=404231) hinterlassen.
 
 **Ist es möglich, benutzerdefinierte R-Module zu erstellen?**
 
@@ -218,7 +219,10 @@ Sobald ein Vorhersagemodell in die Produktionsumgebung übernommen wurde, könne
 
 Für RRS wird das Ergebnis normalerweise in der Antwort des Webdiensts ausgegeben. Sie können es aber auch in ein Blob schreiben. Bei BES wird die Ausgabe standardmäßig in ein Blob geschrieben. Sie können die Ausgabe aber auch mithilfe des Schreibmoduls in eine Datenbank oder Tabelle schreiben.
 
- ****Können Webdienste nur aus Modellen erstellt werden, die im Studio erstellt wurden? Nein. Webdienste können auch direkt aus Jupyter Notebooks und RStudio erstellt werden.
+ **Können Webdienste nur aus Modellen erstellt werden, die im Studio erstellt wurden?
+ Nein. Webdienste können auch direkt aus Jupyter Notebooks und RStudio erstellt werden.
+ 
+ **** Wo finde ich Informationen zu Fehlercodes? Fehlercodes werden [hier](https://msdn.microsoft.com/library/azure/dn905910.aspx) beschrieben.
 
 ## Skalierbarkeit
 
@@ -310,4 +314,4 @@ Für Azure Machine Learning gibt es außerdem ein Community-Forum auf MSDN, in d
 [reader]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
 [split]: https://msdn.microsoft.com/library/azure/70530644-c97a-4ab6-85f7-88bf30a8be5f/
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

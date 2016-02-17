@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/08/2015" 
+	ms.date="02/01/2016" 
 	ms.author="garye"/>
 
 
@@ -73,10 +73,10 @@ Nach dem Konvertieren der Daten in das CSV-Format müssen Sie sie in Machine Lea
 
 Daraufhin werden die Daten in ein DataSet-Modul hochgeladen, das wir in einem Experiment verwenden können.
 
-Weitere Informationen zum Importieren von verschiedenen Datentypen in einem Experiment finden Sie unter [Importieren von Trainingsdaten in Azure Machine Learning Studio](machine-learning-import-data.md).
+Weitere Informationen zum Importieren von verschiedenen Datentypen in einem Experiment finden Sie unter [Importieren von Trainingsdaten in Azure Machine Learning Studio](machine-learning-data-science-import-data.md).
 
 **Als Nächstes: [Erstellen eines neuen Experiments](machine-learning-walkthrough-3-create-new-experiment.md)**
 
 [1]: ./media/machine-learning-walkthrough-2-upload-data/upload1.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0204_2016-->

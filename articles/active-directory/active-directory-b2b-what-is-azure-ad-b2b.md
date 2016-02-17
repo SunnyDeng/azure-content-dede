@@ -13,10 +13,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="identity"
-   ms.date="10/27/2015"
+   ms.date="02/03/2016"
    ms.author="viviali"/>
 
-# Vorschau der Azure Active Directory (Azure AD) B2B-Zusammenarbeit: Einfache, sichere Integration von Partnern in der Cloud
+# Vorschau der Azure AD B2B-Zusammenarbeit: Einfache, sichere Integration von Partnern in der Cloud
 
 Da sich Unternehmen mehr auf ihr Kerngeschäft konzentrieren, wächst auch die Notwendigkeit der Zusammenarbeit mit anderen Unternehmen. Zur Gewährleistung einer effektiven Zusammenarbeit müssen Unternehmen Ressourcen auf einfache und sichere Weise gemeinsam mit ihren Partnern nutzen können (z. B. den Zugriff auf Unternehmensanwendungen). Die Azure Active Directory B2B-Zusammenarbeit ermöglicht Partnern den gezielten Zugriff auf Ihre Unternehmensanwendungen und Unternehmensdaten über ihre selbstverwalteten Identitäten und unterstützt so Ihre unternehmensübergreifenden Beziehungen. Die Azure AD B2B-Zusammenarbeit ist:
 
@@ -28,8 +28,10 @@ Da sich Unternehmen mehr auf ihr Kerngeschäft konzentrieren, wächst auch die N
 
 Ausführliche Informationen zur Azure AD B2B-Zusammenarbeit finden Sie [im Blogbeitrag zur Ankündigung der öffentlichen Vorschau](http://blogs.technet.com/b/ad/archive/2015/09/15/learn-all-about-the-azure-ad-b2b-collaboration-preview.aspx) und in [diesem umfassenden Video](https://channel9.msdn.com/Series/Azure-Active-Directory-Videos-Demos/Azure-Active-Directory-B2B-collaboration-demo).
 
+Unter [Vergleich von Funktionen zum Verwalten externer Identitäten mithilfe von Azure AD](active-directory-b2b-compare-external-identities.md) werden die Anwendungsfälle für die Azure AD B2B-Zusammenarbeit, Azure AD B2C und die mehrinstanzenfähige Azure AD-App verglichen.
+
 ## Verwandte Artikel
-Weitere Artikel zur Azure B2B-Zusammenarbeit:
+Durchsuchen Sie unsere anderen Artikel zur Azure B2B-Zusammenarbeit:
 
 - [So funktioniert's](active-directory-b2b-how-it-works.md)
 - [Ausführliche exemplarische Vorgehensweise](active-directory-b2b-detailed-walkthrough.md)
@@ -38,4 +40,4 @@ Weitere Artikel zur Azure B2B-Zusammenarbeit:
 - [Objektattributänderungen für externe Benutzer](active-directory-b2b-references-external-user-object-attribute-changes.md)
 - [Aktuelle Einschränkungen der Vorschau](active-directory-b2b-current-preview-limitations.md)
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0204_2016-->

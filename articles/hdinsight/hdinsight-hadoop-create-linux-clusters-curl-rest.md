@@ -23,13 +23,13 @@
 
 Mit der Azure-REST-API können Sie Verwaltungsvorgänge für Dienste durchführen, die auf der Azure-Plattform gehostet werden. Beispielsweise können Sie neue Ressourcen wie etwa Linux-basierte HDInsight-Cluster erstellen. In diesem Dokument erfahren Sie, wie Sie Azure-Ressourcen-Manager-Vorlagen erstellen, um einen HDInsight-Cluster sowie den zugehörigen Speicher zu konfigurieren. Sie erfahren auch, wie Sie anschließend die Vorlage mithilfe von cURL in der Azure-REST-API bereitstellen, um einen neuen HDInsight-Cluster zu erstellen.
 
-> [AZURE.IMPORTANT]Bei den Schritten in diesem Dokument wird die Standardanzahl von Workerknoten (4) für einen HDInsight-Cluster verwendet. Wenn Sie mehr als 32 Workerknoten planen, entweder bei Erstellung des Clusters oder durch eine Skalierung des Clusters nach der Erstellung, müssen Sie eine Hauptknotengröße von mindestens 8 Kernen und 14 GB Arbeitsspeicher (RAM) auswählen.
+> [AZURE.IMPORTANT] Bei den Schritten in diesem Dokument wird die Standardanzahl von Workerknoten (4) für einen HDInsight-Cluster verwendet. Wenn Sie mehr als 32 Workerknoten planen, entweder bei Erstellung des Clusters oder durch eine Skalierung des Clusters nach der Erstellung, müssen Sie eine Hauptknotengröße von mindestens 8 Kernen und 14 GB Arbeitsspeicher (RAM) auswählen.
 >
 > Weitere Informationen zu Knotengrößen und damit verbundenen Kosten finden Sie unter [HDInsight – Preise](https://azure.microsoft.com/pricing/details/hdinsight/).
 
 ###Voraussetzungen
 
-- **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](http://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
+- **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 
 - __Azure-Befehlszeilenschnittstelle__. Die Azure-Befehlszeilenschnittstelle wird verwendet, um einen Dienstprinzipal zu erstellen, der zum Generieren von Authentifizierungstoken für Anforderungen an die Azure-REST-API verwendet wird.
 
@@ -37,7 +37,7 @@ Mit der Azure-REST-API können Sie Verwaltungsvorgänge für Dienste durchführe
 
 - __cURL__. Dieses Hilfsprogramm ist über Ihr Paketverwaltungssystem verfügbar oder kann hier heruntergeladen werden: [http://curl.haxx.se/](http://curl.haxx.se/).
 
-    > [AZURE.NOTE]Wenn Sie PowerShell zum Ausführen der Befehle in diesem Dokument verwenden, müssen Sie zuerst den `curl`-Alias entfernen, der standardmäßig erstellt wird. Wenn Sie den `curl`-Befehl von einer PowerShell-Eingabeaufforderung ausführen, verwendet dieser Alias das PowerShell-Cmdlet "Invoke-WebRequest" anstelle von cURL und gibt für viele der in diesem Dokument angegebenen Befehle Fehler zurück.
+    > [AZURE.NOTE] Wenn Sie PowerShell zum Ausführen der Befehle in diesem Dokument verwenden, müssen Sie zuerst den `curl`-Alias entfernen, der standardmäßig erstellt wird. Wenn Sie den `curl`-Befehl von einer PowerShell-Eingabeaufforderung ausführen, verwendet dieser Alias das PowerShell-Cmdlet "Invoke-WebRequest" anstelle von cURL und gibt für viele der in diesem Dokument angegebenen Befehle Fehler zurück.
     > 
     > Um diesen Alias zu entfernen, verwenden Sie folgenden Befehl in der PowerShell-Eingabeaufforderung:
     >
@@ -263,7 +263,7 @@ Führen Sie die Schritte aus, die unter [Herstellen einer Verbindung mit einem A
 
 ##Erstellen eines Dienstprinzipals
 
-> [AZURE.IMPORTANT]Wenn Sie die Schritte in dem unten verlinkten Artikel befolgen, müssen Sie Folgendes ändern:
+> [AZURE.IMPORTANT] Wenn Sie die Schritte in dem unten verlinkten Artikel befolgen, müssen Sie Folgendes ändern:
 > 
 > * Wenn Sie in den Schritten aufgefordert werden, den Wert __reader__ zu verwenden, müssen Sie stattdessen __owner__ verwenden. Dadurch wird ein Dienstprinzipal erstellt, der Änderungen an den Diensten in Ihrem Abonnement vornehmen kann – dies ist erforderlich, um einen HDInsight-Cluster zu erstellen.
 >
@@ -290,7 +290,7 @@ Verwenden Sie folgenden Code, um ein neues Token aus Azure abzurufen. Ersetzen S
 
 Wenn die Anforderung erfolgreich ist, erhalten Sie eine 2xx-Antwort, deren Text ein JSON-Dokument enthält.
 
-> [AZURE.IMPORTANT]Das von dieser Anforderung zurückgegebene JSON-Dokument enthält ein Element namens __access\_token__. Der Wert dieses Elements ist das Zugriffstoken, das zur Authentifizierung der in den nächsten Abschnitten dieses Dokuments verwendeten Anforderungen erforderlich ist.
+> [AZURE.IMPORTANT] Das von dieser Anforderung zurückgegebene JSON-Dokument enthält ein Element namens __access\_token__. Der Wert dieses Elements ist das Zugriffstoken, das zur Authentifizierung der in den nächsten Abschnitten dieses Dokuments verwendeten Anforderungen erforderlich ist.
 
 ##Erstellen einer Ressourcengruppe
 
@@ -315,13 +315,13 @@ Gehen Sie wie folgt vor, um die Clusterkonfiguration (Vorlage und Parameterwerte
 
     curl -X "PUT" "https://management.azure.com/subscriptions/SUBSCRIPTIONID/resourcegroups/GROUPNAME/providers/microsoft.resources/deployments/DEPLOYMENTNAME?api-version=2015-01-01" \\ -H "Authorization: Bearer ACCESSTOKEN" \\ -H "Content-Type: application/json" \\ -d "{Textzeichenfolge auf die Vorlage und Parameter festlegen}"
 
-> [AZURE.NOTE]Wenn Sie das JSON-Dokument mit der Vorlage und den Parameter in eine Datei gespeichert haben, können Sie anstelle von '-d "{ Vorlage und Parameter}"' Folgendes verwenden:
+> [AZURE.NOTE] Wenn Sie das JSON-Dokument mit der Vorlage und den Parameter in eine Datei gespeichert haben, können Sie anstelle von '-d "{ Vorlage und Parameter}"' Folgendes verwenden:
 >
 > ```--data-binary "@/path/to/file.json"```
 
 Wenn die Anforderung erfolgreich ist, erhalten Sie eine 2xx-Antwort, deren Text ein JSON-Dokument mit Informationen zum Bereitstellungsvorgang enthält.
 
-> [AZURE.IMPORTANT]Beachten Sie, dass die Bereitstellung zu diesem Zeitpunkt übermittelt, aber noch nicht abgeschlossen wurde. Es kann mehrere Minuten dauern (in der Regel etwa 15), bis die Bereitstellung abgeschlossen ist.
+> [AZURE.IMPORTANT] Beachten Sie, dass die Bereitstellung zu diesem Zeitpunkt übermittelt, aber noch nicht abgeschlossen wurde. Es kann mehrere Minuten dauern (in der Regel etwa 15), bis die Bereitstellung abgeschlossen ist.
 
 ##Überprüfen des Bereitstellungsstatus
 
@@ -355,4 +355,4 @@ Nachdem Sie einen HDInsight-Cluster erfolgreich erstellt haben, nutzen Sie die f
 * [Verwenden von Python-Komponenten in Storm in HDInsight](hdinsight-storm-develop-python-topology.md)
 * [Bereitstellen und Überwachen von Topologien mit Storm in HDInsight](hdinsight-storm-deploy-monitor-topology-linux.md)
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

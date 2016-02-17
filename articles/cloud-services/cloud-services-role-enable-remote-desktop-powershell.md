@@ -12,7 +12,7 @@ ms.workload="tbd"
 ms.tgt_pltfrm="na" 
 ms.devlang="na" 
 ms.topic="article" 
-ms.date="09/17/2015" 
+ms.date="01/19/2016" 
 ms.author="saurabh"/>
 
 # Aktivieren einer Remotedesktopverbindung für eine Rolle in Azure Cloud Services mit PowerShell
@@ -20,12 +20,12 @@ ms.author="saurabh"/>
 >[AZURE.SELECTOR]
 - [Azure classic portal](cloud-services-role-enable-remote-desktop.md)
 - [PowerShell](cloud-services-role-enable-remote-desktop-powershell.md)
-- [Visual Studio](https://msdn.microsoft.com/library/gg443832.aspx)
+- [Visual Studio](../vs-azure-tools-remote-desktop-roles.md)
 
 
 Mit Remotedesktop können Sie auf den Desktop einer Rolle zugreifen, die in Azure ausgeführt wird. Mithilfe einer Remotedesktopverbindung können Sie Probleme mit Ihrer Anwendung diagnostizieren und beheben, während diese ausgeführt wird.
 
-In diesem Artikel wird beschrieben, wie Sie Remotedesktop mithilfe von PowerShell für Cloud Services-Rollen aktivieren. Informationen zu den erforderlichen Komponenten für diesen Artikel finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md). PowerShell ermöglicht die Remotedesktoperweiterung, sodass Sie Remotedesktop auch nach der Bereitstellung der Anwendung aktivieren können.
+In diesem Artikel wird beschrieben, wie Sie Remotedesktop mithilfe von PowerShell für Cloud Services-Rollen aktivieren. Informationen zu den erforderlichen Komponenten für diesen Artikel finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md). PowerShell ermöglicht die Remotedesktoperweiterung, sodass Sie Remotedesktop auch nach der Bereitstellung der Anwendung aktivieren können.
 
 
 ## Konfigurieren von Remotedesktop über PowerShell
@@ -50,7 +50,7 @@ Verwenden Sie das folgende PowerShell-Skript zum Erstellen einer sicheren Kennwo
 
 Nachdem die Kennwortdatei (password.txt) erstellt wurde, verwenden Sie nur diese Datei und müssen das Kennwort nicht im Klartext angeben. Wenn Sie das Kennwort aktualisieren möchten, können Sie das oben aufgeführte PowerShell-Skript mit dem neuen Kennwort erneut ausführen und die Datei "password.txt" neu generieren.
 
->[AZURE.IMPORTANT]Stellen Sie beim Festlegen des Kennworts sicher, dass die [Komplexitätsvoraussetzungen](https://technet.microsoft.com/library/cc786468.aspx) erfüllt sind.
+>[AZURE.IMPORTANT] Stellen Sie beim Festlegen des Kennworts sicher, dass die [Komplexitätsvoraussetzungen](https://technet.microsoft.com/library/cc786468.aspx) erfüllt sind.
 
 Zum Erstellen des Anmeldeinformationsobjekts aus der sicheren Kennwortdatei müssen Sie den Inhalt der Datei auslesen und mit [ConvertTo-SecureString](https://technet.microsoft.com/library/hh849818.aspx) in eine sichere Zeichenfolge zurückkonvertieren. Neben den Anmeldeinformationen nimmt das Cmdlet [Set-AzureServiceRemoteDesktopExtension](https://msdn.microsoft.com/library/azure/dn495117.aspx) auch den *Expiration*-Parameter an, der einen DateTime-Wert für den Zeitpunkt angibt, an dem das Benutzerkonto abläuft. Diesen Parameter definieren Sie, indem Sie einen statischen Wert für Datum und Uhrzeit angeben oder einfach festlegen, dass das Konto einige Tage nach dem aktuellen Datum abläuft.
 
@@ -94,7 +94,7 @@ Remove-AzureServiceRemoteDesktopExtension -ServiceName $servicename -UninstallCo
 
 ```  
 
->[AZURE.NOTE]Mit dem *UninstallConfiguration*-Parameter wird die gesamte Erweiterungskonfiguration deinstalliert, die auf den Dienst angewendet wurde. Die gesamte Erweiterungskonfiguration ist immer der Dienstkonfiguration zugeordnet. Um die Erweiterung mit einer Bereitstellung zu aktivieren, muss der Bereitstellung diese Erweiterungskonfiguration zugeordnet werden. Durch Aufrufen des Cmdlets "Remove" ohne den *UninstallConfiguration*-Parameter wird die Zuordnung der Bereitstellung zur Erweiterungskonfiguration aufgehoben und faktisch die Erweiterung aus der Bereitstellung entfernt. Die Erweiterungskonfiguration ist jedoch weiterhin dem Dienst zugeordnet. Um die Erweiterungskonfiguration vollständig zu entfernen, sollten Sie das Cmdlet "Remove" mit dem *UninstallConfiguration*-Parameter aufrufen.
+>[AZURE.NOTE] Mit dem *UninstallConfiguration*-Parameter wird die gesamte Erweiterungskonfiguration deinstalliert, die auf den Dienst angewendet wurde. Die gesamte Erweiterungskonfiguration ist immer der Dienstkonfiguration zugeordnet. Um die Erweiterung mit einer Bereitstellung zu aktivieren, muss der Bereitstellung diese Erweiterungskonfiguration zugeordnet werden. Durch Aufrufen des Cmdlets "Remove" ohne den *UninstallConfiguration*-Parameter wird die Zuordnung der Bereitstellung zur Erweiterungskonfiguration aufgehoben und faktisch die Erweiterung aus der Bereitstellung entfernt. Die Erweiterungskonfiguration ist jedoch weiterhin dem Dienst zugeordnet. Um die Erweiterungskonfiguration vollständig zu entfernen, sollten Sie das Cmdlet "Remove" mit dem *UninstallConfiguration*-Parameter aufrufen.
 
 
 
@@ -102,4 +102,4 @@ Remove-AzureServiceRemoteDesktopExtension -ServiceName $servicename -UninstallCo
 
 [Konfigurieren von Clouddiensten](cloud-services-how-to-configure.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

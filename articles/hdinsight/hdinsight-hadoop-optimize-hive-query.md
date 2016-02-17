@@ -38,7 +38,7 @@ In einem Cluster, dem mehr Worker-Knoten zur Verfügung stehen, können mehr Map
 
 - Aber auch während der Laufzeit kann ein Cluster horizontal skaliert werden, ohne ihn neu zu erstellen. Dies wird nachfolgend gezeigt. ![scaleout\_1][image-hdi-optimize-hive-scaleout_2]
 
-Weitere Informationen zu den von HDInsight unterstützten virtuellen Computern finden Sie unter [HDInsight-Preise](http://azure.microsoft.com/pricing/details/hdinsight/).
+Weitere Informationen zu den von HDInsight unterstützten virtuellen Computern finden Sie unter [HDInsight-Preise](https://azure.microsoft.com/pricing/details/hdinsight/).
 
 ##Aktivieren von Tez
 
@@ -87,7 +87,7 @@ Für Windows-basierte HDInsight-Cluster muss Tez zum Zeitpunkt der Bereitstellun
 	New-AzureHDInsightCluster -Name $clusterName -Location $location -Credential $hdiCredential
 
     
-> [AZURE.NOTE]Linux-basierte HDInsight-Cluster haben Tez standardmäßig aktiviert.
+> [AZURE.NOTE] Linux-basierte HDInsight-Cluster haben Tez standardmäßig aktiviert.
     
 
 ## Partitionierung in Hive
@@ -226,4 +226,4 @@ In diesem Artikel haben Sie mehrere allgemeine Hive-Methoden zur Optimierung von
 [image-hdi-optimize-hive-tez_1]: ./media/hdinsight-hadoop-optimize-hive-query/tez_1.png
 [image-hdi-optimize-hive-partitioning_1]: ./media/hdinsight-hadoop-optimize-hive-query/partitioning_1.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

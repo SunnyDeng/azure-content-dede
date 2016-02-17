@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/13/2016"
+	ms.date="01/21/2016"
 	ms.author="markusvi"/>
 
 
@@ -81,20 +81,20 @@ Die Typen werden mit der folgenden Syntax ausgedrückt:
 ### BitAnd
 
 **Beschreibung:**<br> Die Funktion "BitAnd" legt angegebene Bits auf einem Wert fest.
- 
+
 **Syntax:**<br> `num BitAnd(num value1, num value2)`
 
 - value1, value2: Numerische Werte, die mit AND verknüpft werden sollen.
- 
+
 **Hinweise:**<br> Diese Funktion konvertiert beide Parameter in die binäre Darstellung und setzt ein Bit auf:
- 
+
 - 0 – wenn ein oder beide entsprechenden Bits in *Mask* und *Flag* 0 sind.
-- 1 – wenn beide entsprechenden Bits 1 sind. 
+- 1 – wenn beide entsprechenden Bits 1 sind.
 
 Anders gesagt: sie gibt in allen Fällen 0 zurück, außer wenn die entsprechenden Bits beider Parameter 1 sind.
- 
+
 **Beispiel:**<br> `BitAnd(&HF, &HF7)`<br> Gibt 7 zurück, da durch die Verknüpfung mit AND die Hexadezimalwerte "F" und "F7" zu diesem Wert ausgewertet werden.
- 
+
 ----------
 ### BitOr
 
@@ -102,7 +102,7 @@ Anders gesagt: sie gibt in allen Fällen 0 zurück, außer wenn die entsprechend
 
 **Syntax:** <br> `num BitOr(num value1, num value2)`
 
-- value1, value2: Numerische Werte, die mit OR verknüpft werden sollen. 
+- value1, value2: Numerische Werte, die mit OR verknüpft werden sollen.
 
 **Hinweise:**<br> Diese Funktion konvertiert beide Parameter in die binäre Darstellung und setzt ein Bit auf 1, wenn eine oder beide entsprechenden Bits in Mask und Flag 1 sind, und auf 0, wenn beide entsprechenden Bits 0 sind. <br> Anders gesagt, gibt sie in allen Fällen 1 zurück, außer wenn die entsprechenden Bits der beiden Parameter 0 sind.
 
@@ -119,8 +119,8 @@ Anders gesagt: sie gibt in allen Fällen 0 zurück, außer wenn die entsprechend
 **Beispiel:**<br> `CBool([attrib1] = [attrib2])` <br>
 
 Gibt True zurück, wenn beide Attribute den gleichen Wert haben.
- 
- 
+
+
 
 
 ----------
@@ -137,7 +137,7 @@ Gibt True zurück, wenn beide Attribute den gleichen Wert haben.
 **Beispiel:**<br> `CDate([employeeStartTime])` <br> Gibt einen DateTime-Wert auf Basis der Anfangszeit des Mitarbeiters zurück.
 
 `CDate("2013-01-10 4:00 PM -8")` <br> Gibt einen DateTime-Wert zurück, der "2013-01-11 12:00 AM" darstellt.
- 
+
 
 
 
@@ -145,11 +145,11 @@ Gibt True zurück, wenn beide Attribute den gleichen Wert haben.
 ### CGuid
 
 **Beschreibung:**<br> Die Funktion "CGuid" konvertiert die Zeichenfolgendarstellung einer GUID in die binäre Darstellung.
- 
+
 **Syntax:**<br> `bin CGuid(str GUID)GUID`
 
 - Eine in diesem Muster formatierte Zeichenfolge: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx oder {xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}
- 
+
 
 
 
@@ -157,7 +157,7 @@ Gibt True zurück, wenn beide Attribute den gleichen Wert haben.
 ### Contains
 
 **Beschreibung:**<br> Die Funktion "Contains" sucht in einem mehrwertigen Attribut nach einer Zeichenfolge.
- 
+
 **Syntax:**<br> `num Contains (mvstring attribute, str search)` – Groß-/Kleinschreibung<br> `num Contains (mvstring attribute, str search, enum Casetype)`<br> `num Contains (mvref attribute, str search)` – Groß-/Kleinschreibung
 
 - attribute: Das zu durchsuchende mehrwertige Attribut<br>
@@ -1058,4 +1058,4 @@ Wenn "string" weniger als "WordNumber" Wörter enthält, oder "string" keine Wö
 
 <!--Image references-->
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

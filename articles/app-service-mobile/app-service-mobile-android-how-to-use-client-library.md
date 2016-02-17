@@ -13,15 +13,13 @@
 	ms.tgt_pltfrm="mobile-android"
 	ms.devlang="java"
 	ms.topic="article"
-	ms.date="01/05/2016" 
+	ms.date="02/03/2016" 
 	ms.author="ricksal"/>
 
 
 # Verwenden der Android-Clientbibliothek für Mobile Apps
 
 [AZURE.INCLUDE [app-service-mobile-selector-client-library](../../includes/app-service-mobile-selector-client-library.md)]&nbsp;
-
-[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
 
 In diesem Leitfaden erfahren Sie, wie Sie das Android-Client-SDK für Mobile Apps zum Implementieren gängiger Szenarien wie dem Abfragen von Daten (Einfügen, Aktualisieren und Löschen), Authentifizieren von Benutzern, zur Fehlerbehandlung und zum Anpassen des Clients verwenden. Er bietet auch eine fundierte Einführung in gängigen Clientcode, der in den meisten mobilen Apps verwendet wird.
 
@@ -38,7 +36,7 @@ Absolvieren Sie das Tutorial [Schnellstart für Mobile Apps](app-service-mobile-
 
 Wenn Sie entscheiden, das Schnellstarttutorial nicht zu absolvieren, und eine Android-App mit einem Mobile App-Back-End verbinden möchten, gehen Sie folgendermaßen vor:
 
-- [erstellen Sie ein Mobile App-Back-End](app-service-mobile-android-get-started.md#create-a-new-azure-mobile-app-backend) zur Verwendung mit Ihrer Android-App (sofern Ihre App nicht bereits darüber verfügt)
+- [Erstellen Sie ein Mobile App-Back-End](app-service-mobile-android-get-started.md#create-a-new-azure-mobile-app-backend) zur Verwendung mit Ihrer Android-App (sofern Ihre App nicht bereits darüber verfügt),
 - [aktualisieren Sie die Gradle-Builddateien](#gradle-build) in Android Studio, und
 - [aktivieren Sie die Internetberechtigung](#enable-internet)
 
@@ -60,10 +58,10 @@ Danach müssen Sie die Schritte ausführen, die in der fundierten Einführung be
 
 		compile 'com.microsoft.azure:azure-mobile-android:3.0'
 
-	Derzeit ist 3.0 die neueste Version. Die unterstützten Versionen werden [hier](http://go.microsoft.com/fwlink/p/?LinkID=717034) aufgeführt.
+	Derzeit ist 3.0 die neueste Version. Die unterstützten Versionen sind [hier](http://go.microsoft.com/fwlink/p/?LinkID=717034) aufgeführt.
 
 ###<a name="enable-internet"></a>Aktivieren der Internetberechtigung
-Für den Zugriff auf Azure muss für Ihre App die INTERNET-Berechtigung aktiviert sein. Wenn sie nicht bereits aktiviert ist, fügen Sie die folgende Codezeile Ihrer **AndroidManifest.xml**-Datei hinzu:
+Für den Zugriff auf Azure muss für Ihre App die INTERNET-Berechtigung aktiviert sein. Wenn sie nicht bereits aktiviert ist, fügen Sie Ihrer Datei **AndroidManifest.xml** die folgende Codezeile hinzu:
 
 	<uses-permission android:name="android.permission.INTERNET" />
 
@@ -71,7 +69,7 @@ Für den Zugriff auf Azure muss für Ihre App die INTERNET-Berechtigung aktivier
 
 In diesem Abschnitt wird ein Teil des Codes der Schnellstart-App erörtert. Wenn Sie das Schnellstarttutorial nicht absolviert haben, müssen Sie diesen Code Ihrer App hinzufügen.
 
-> [AZURE.NOTE]Die Zeichenfolge „MobileServices“ kommt im Code häufig vor: Tatsächlich verweist der Code auf das Mobile Apps-SDK ist, es ist nur eine temporäre Übernahme aus der Vergangenheit.
+> [AZURE.NOTE] Die Zeichenfolge „MobileServices“ kommt im Code häufig vor: Tatsächlich verweist der Code auf das Mobile Apps-SDK ist, es ist nur eine temporäre Übernahme aus der Vergangenheit.
 
 
 ###<a name="data-object"></a>Definieren von Clientdatenklassen
@@ -119,19 +117,19 @@ Informationen zum Erstellen zusätzlicher Tabellen in Ihrem Mobile Apps-Back-End
 
 ###<a name="create-client"></a>Erstellen des Clientkontexts
 
-Der folgende Code erstellt das **MobileServiceClient**-Objekt, das für den Zugriff auf Ihr Mobile App-Back-End verwendet wird. Der Code gehört in die `onCreate`-Methode der **Activity**-Klasse, die in *AndroidManifest.xml* als **MAIN**-Aktion und **LAUNCHER**-Kategorie angegeben ist. Im Schnellstartcode gehört er in die **ToDoActivity.java**-Datei.
+Der folgende Code erstellt das **MobileServiceClient**-Objekt, das für den Zugriff auf Ihr Mobile App-Back-End verwendet wird. Der Code gehört in die `onCreate`-Methode der **Activity**-Klasse, die in *AndroidManifest.xml* als **MAIN**-Aktion und **LAUNCHER**-Kategorie angegeben ist. Im Schnellstartcode gehört er in die Datei **ToDoActivity.java**.
 
 		MobileServiceClient mClient = new MobileServiceClient(
 				"MobileAppUrl", // Replace with the above Site URL
 				this)
 
-Ersetzen Sie in diesem Code `MobileAppUrl` durch die URL des Mobile App-Back-Ends. Sie finden die URL im [Azure-Portal](https://portal.azure.com) auf dem Blatt für das Mobile App-Back-End. Zum Kompilieren dieser Codezeile müssen Sie auch folgende **import**-Anweisung hinzufügen:
+Ersetzen Sie in diesem Code `MobileAppUrl` durch die URL des Mobile App-Back-Ends. Sie finden die URL im [Azure-Portal](https://portal.azure.com/) auf dem Blatt für das Mobile App-Back-End. Zum Kompilieren dieser Codezeile müssen Sie auch folgende **import**-Anweisung hinzufügen:
 
 	import com.microsoft.windowsazure.mobileservices.*;
 
 ###<a name="instantiating"></a>Erstellen von Tabellenverweisen
 
-Der einfachste Weg, Daten im Back-End abzufragen oder zu ändern, ist das *typisierte Programmiermodell*, da Java eine stark typisierte Sprache ist (später besprechen wir das *untypisierte* Modell). Dieses Modell bietet eine nahtlose JSON-Serialisierung und -Deserialisierung mithilfe der [gson](http://go.microsoft.com/fwlink/p/?LinkId=290801)-Bibliothek, wenn Daten zwischen Clientobjekten und Tabellen im Back-End-Azure SQL gesendet werden: Der Entwickler muss nicht eingreifen, da das Framework alle Aufgaben übernimmt.
+Der einfachste Weg, Daten im Back-End abzufragen oder zu ändern, ist das *typisierte Programmiermodell*, da Java eine stark typisierte Sprache ist (später besprechen wir das *untypisierte* Modell). Dieses Modell ermöglicht eine nahtlose JSON-Serialisierung und -Deserialisierung mithilfe der [gson](http://go.microsoft.com/fwlink/p/?LinkId=290801)-Bibliothek, wenn Daten zwischen Clientobjekten und Tabellen im Back-End-Azure SQL gesendet werden: Der Entwickler muss nicht eingreifen, da das Framework alle Aufgaben übernimmt.
 
 Um auf eine Tabelle zuzugreifen, erstellen Sie zuerst ein [MobileServiceTable](http://go.microsoft.com/fwlink/p/?LinkId=296835)-Objekt durch Aufrufen der **getTable**-Methode im [**MobileServiceClient**](http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceClient.html). Diese Methode verfügt über zwei Überladungen:
 
@@ -177,7 +175,7 @@ Das Layout wird durch mehrere XML-Codeabschnitte definiert. Anhand eines existie
     </ListView>
 
 
-Das *listitem*-Attribut im obigen Code definiert die id des Layouts für eine bestimmte Zeile in der Liste. Der folgende Code definiert ein Kontrollkästchen und dessen zugehörigen Text. Dieses Element wird einmal pro Listenelement instanziiert. In diesem Layout wird das **id**-Feld nicht angezeigt, und bei einem komplexeren Layout würden zusätzliche Felder angezeigt. Dieser Code befindet sich in der Datei **row\_list\_to\_do.xml**.
+Das *listitem*-Attribut im obigen Code definiert die id des Layouts für eine bestimmte Zeile in der Liste. Der folgende Code definiert ein Kontrollkästchen und dessen zugehörigen Text. Dieses Element wird einmal pro Listenelement instanziiert. In diesem Layout wird das Feld **id** nicht angezeigt, und bei einem komplexeren Layout würden zusätzliche Felder angezeigt. Dieser Code befindet sich in der Datei **row\_list\_to\_do.xml**.
 
 	<?xml version="1.0" encoding="utf-8"?>
 	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -251,14 +249,14 @@ Beachten Sie, dass der zweite Parameter des ToDoItemAdapter-Konstruktors ein Ver
 
 ### <a name="api"></a>Die API-Struktur
 
-Mobile Apps-Tabellenvorgänge und benutzerdefinierte API-Aufrufe sind asynchron, sodass Sie die Objekte [Future](http://developer.android.com/reference/java/util/concurrent/Future.html) und [AsyncTask](http://developer.android.com/reference/android/os/AsyncTask.html) in allen asynchronen Methoden mit Abfragen und Einfügen, Aktualisierungen und Löschungen verwenden. Dies erleichtert die Ausführungen mehrerer Vorgänge in einem Hintergrundthread, ohne sich um mehrere geschachtelte Rückrufe kümmern zu müssen.
+Mobile Apps-Tabellenvorgänge und benutzerdefinierte API-Aufrufe sind asynchron, sodass Sie die Objekte [Future](http://developer.android.com/reference/java/util/concurrent/Future.html) und [AsyncTask](http://developer.android.com/reference/android/os/AsyncTask.html) in allen asynchronen Methoden mit Abfragen und Einfügungen, Aktualisierungen und Löschungen verwenden. Dies erleichtert die Ausführungen mehrerer Vorgänge in einem Hintergrundthread, ohne sich um mehrere geschachtelte Rückrufe kümmern zu müssen.
 
-Um zu erfahren, wie diese asynchronen APIs in Ihrer Android-App verwendet, und wie Daten in der Benutzeroberfläche angezeigt werden, schauen Sie in die Datei **ToDoActivity.java** im Android-Schnellstartprojekt aus dem [Azure-Portal].
+Um zu erfahren, wie diese asynchronen APIs in Ihrer Android-App verwendet und wie Daten in der Benutzeroberfläche angezeigt werden, können Sie sich die Datei **ToDoActivity.java** im Android-Schnellstartprojekt über das [Azure-Portal] ansehen.
 
 
 #### <a name="use-adapter"></a>Verwenden des Adapters
 
-Sie sind nun in der Lage, die Datenbindung zu verwenden. Der folgende Code zeigt, wie Sie die Elemente aus der Tabelle im mobilen Dienst abrufen, den Adapter leeren und anschließend dessen *add*-Methode aufrufen, um ihn mit den abgerufenen Elementen zu füllen.
+Sie sind nun in der Lage, die Datenbindung zu verwenden. Der folgende Code zeigt, wie Sie die Elemente aus der Tabelle im mobilen Dienst abrufen, den Adapter leeren und anschließend dessen *add*-Methode aufrufen, um ihn mit den zurückgegebenen Elementen zu füllen.
 
 
 **TBD**: Testen Sie diesen Code!
@@ -311,7 +309,7 @@ Die Variable *results* gibt das Resultset der Abfrage als Liste zurück.
 
 ### <a name="filtering"></a>Gewusst wie: Filtern zurückgegebener Daten
 
-Die Ausführung der folgenden Abfrage gibt alle Elemente aus der *ToDoItem*-Tabelle zurück, wobei *complete* gleich *false* ist. Dies ist der Code, der bereits im Schnellstart vorhanden ist.
+Bei der Ausführung der folgenden Abfrage werden alle Elemente aus der *ToDoItem*-Tabelle zurückgegeben, wobei *complete* gleich *false* ist. Dies ist der Code, der bereits im Schnellstart vorhanden ist.
 
 	List<ToDoItem> result = mToDoTable.where()
 								.field("complete").eq(false)
@@ -319,7 +317,7 @@ Die Ausführung der folgenden Abfrage gibt alle Elemente aus der *ToDoItem*-Tabe
 
 *mToDoTable* ist der Verweis auf die Tabelle im mobilen Dienst, die wir zuvor erstellt haben.
 
-Sie definieren einen Filter mit einem **where**-Methodenaufruf auf den Tabellenverweis. Diesem Code folgt ein **field**-Methodenaufruf, der das logische Prädikat angibt. Mögliche Prädikatmethoden sind **eq** (equals, ist gleich), **ne** (not equal, nicht gleich), **gt** (greater than, größer als), **ge** (greater than or equal to, größer als oder gleich), **lt** (less than, kleiner als), **le** (less than or equal to, kleiner als oder gleich) usw. Mit diesen Methoden können Sie die numerischen und Zeichenfolgenfelder mit bestimmten Werten vergleichen.
+Sie definieren einen Filter mit einem **where**-Methodenaufruf für den Tabellenverweis. Diesem Code folgt ein **field**-Methodenaufruf, der das logische Prädikat angibt. Mögliche Prädikatmethoden sind **eq** (equals, ist gleich), **ne** (not equal, ist ungleich), **gt** (greater than, größer als), **ge** (greater than or equal to, größer als oder gleich), **lt** (less than, kleiner als), **le** (less than or equal to, kleiner als oder gleich) usw. Mit diesen Methoden können Sie die numerischen und Zeichenfolgenfelder mit bestimmten Werten vergleichen.
 
 Sie können nach Daten filtern. Mit den folgenden Methoden können Sie das gesamte Datumsfeld oder Teile des Datums vergleichen: **year**, **month**, **day**, **hour**, **minute** und **second**. Im folgenden Beispiel wird ein Filter für Elemente hinzugefügt, deren *Fälligkeitsdatum* 2013 entspricht.
 
@@ -346,7 +344,7 @@ Außerdem können Sie logische Operatoren gruppieren und schachteln, wie etwa hi
 				(startsWith("text", "PRI0").or().field("duration").gt(10))
 				.execute().get();
 
-Eine detailliertere Besprechung und weitere Beispiele für Filter finden Sie unter [Exploring the richness of the Android client query model](http://hashtagfail.com/post/46493261719/mobile-services-android-querying).
+Eine detailliertere Besprechung und weitere Beispiele für Filter finden Sie unter [Exploring the richness of the Android client query model](http://hashtagfail.com/post/46493261719/mobile-services-android-querying) (Untersuchen der umfassenden Möglichkeiten des Android-Clientabfragemodells).
 
 ### <a name="sorting"></a>Gewusst wie: Sortieren zurückgegebener Daten
 
@@ -356,7 +354,7 @@ Der folgende Code gibt alle Elemente aus einer *ToDoItems*-Tabelle in aufsteigen
 
 Der erste Parameter der **orderBy**-Methode ist eine Zeichenfolge mit dem Namen des Felds, nach dem sortiert werden soll.
 
-Der zweite Parameter verwendet die Aufzählung **QueryOrder**, um anzugeben, ob auf- oder absteigend sortiert werden soll.
+Für den zweiten Parameter wird die Aufzählung **QueryOrder** verwendet, um anzugeben, ob auf- oder absteigend sortiert werden soll.
 
 Beachten Sie, dass beim Filtern mit der ***where***-Methode die ***where***-Methode vor dem Aufruf der ***orderBy***-Methode aufgerufen werden muss.
 
@@ -374,14 +372,14 @@ Hier ist eine Abfrage, welche die ersten fünf Elemente überspringt und die nä
 
 ### <a name="selecting"></a>Gewusst wie: Auswählen bestimmter Spalten
 
-Der folgende Code veranschaulicht, wie alle Elemente aus einer *ToDoItems*-Tabelle zurückgegeben werden, zeigt jedoch nur das *complete*-Feld und das *text*-Feld an. *mToDoTable* ist der Verweis auf die zuvor erstellte Back-End-Tabelle.
+Der folgende Code veranschaulicht, wie alle Elemente aus einer *ToDoItems*-Tabelle zurückgegeben werden, zeigt aber nur das *complete*-Feld und das *text*-Feld an. *mToDoTable* ist der Verweis auf die zuvor erstellte Back-End-Tabelle.
 
 	List<ToDoItemNarrow> result = mToDoTable.select("complete", "text").execute().get();
 
 
 Die Parameter der select-Funktion sind in diesem Fall die Namen der Tabellenspalten, die Sie zurückgeben möchten.
 
-Die **select**-Methode folgt im Anschluss an Methoden wie **where** und **orderBy**, falls diese vorhanden sind. Auf sie können Auslagerungsmethoden wie **top** folgen.
+Die **select**-Methode folgt im Anschluss an Methoden wie **where** und **orderBy**, falls diese vorhanden sind. Auf sie können Pagingmethoden wie **top** folgen.
 
 ### <a name="chaining"></a>Verketten von Abfragemethoden
 
@@ -389,7 +387,7 @@ Wie Sie sehen, können die Methoden zum Abfragen von Back-End-Tabellen verkettet
 
 Dies funktioniert dank der von den Abfragemethoden zurückgegebenen **MobileServiceQuery<T>**-Objekte, in denen wiederum zusätzliche Methoden aufgerufen werden können. Um die Methodenverkettung zu beenden und die Abfrage auszuführen, rufen Sie die **execute**-Methode auf.
 
-Das folgende Codebeispiel verwendet *mToDoTable* als Verweis auf die Tabelle *ToDoItem*.
+Im folgenden Codebeispiel wird *mToDoTable* als Verweis auf die Tabelle *ToDoItem* verwendet.
 
 	mToDoTable.where().year("due").eq(2013)
 					.and().startsWith("text", "PRI0")
@@ -447,7 +445,7 @@ Sie können ein Element auch durch Angabe des **id**-Felds der zu löschenden Ze
 
 ##<a name="lookup"></a>Gewusst wie: Abfragen bestimmter Elemente
 
-Dieser Code zeigt, wie Sie ein Element mit einer bestimmten *id* suchen können.
+Dieser Code zeigt, wie Sie nach einem Element mit einer bestimmten *id* suchen können.
 
 	ToDoItem result = mToDoTable
 						.lookUp("0380BAFB-BCFF-443C-B7D5-30199F730335")
@@ -462,7 +460,7 @@ Die meisten API-Aufrufe für den Datenzugriff sind gleich wie beim typisierten P
 
 ### <a name="json_instance"></a>Erstellen einer Instanz einer nicht typisierten Tabelle
 
-Ähnlich wie beim typisierten Modell benötigen Sie zunächst einen Tabellenverweis. In diesem Fall handelt es sich jedoch um ein **MobileServicesJsonTable**-Objekt. Sie erhalten den Verweis durch einen Aufruf der **getTable**-Methode auf einer Instanz des Clients wie folgt:
+Ähnlich wie beim typisierten Modell benötigen Sie zunächst einen Tabellenverweis. In diesem Fall handelt es sich jedoch um ein **MobileServicesJsonTable**-Objekt. Sie erhalten den Verweis durch einen Aufruf der **getTable**-Methode für eine Instanz des Clients wie folgt:
 
     private MobileServiceJsonTable mJsonToDoTable;
 	//...
@@ -571,7 +569,7 @@ Die **invokeApi**-Methode wird beim Client aufgerufen, der eine POST-Anfrage an 
 
 Es stehen bereits Tutorials zur Verfügung, in denen das Hinzufügen dieser Features im Detail beschrieben wird.
 
-App Service unterstützt die [Authentifizierung von App-Benutzern](mobile-services-android-get-started-users.md) mit einer Vielzahl externer Identitätsanbieter: Facebook, Google, Microsoft-Konto, Twitter und Azure Active Directory. Sie können Berechtigungen für Tabellen vergeben, um den Zugriff auf bestimmte Operationen auf authentifizierte Benutzer zu beschränken. Außerdem können Sie die Identität authentifizierter Benutzer verwenden, um Autorisierungsregeln auf Ihrem Back-End zu implementieren.
+App Service unterstützt die [Authentifizierung von App-Benutzern](app-service-mobile-android-get-started-users.md) mit einer Vielzahl externer Identitätsanbieter: Facebook, Google, Microsoft-Konto, Twitter und Azure Active Directory. Sie können Berechtigungen für Tabellen vergeben, um den Zugriff auf bestimmte Operationen auf authentifizierte Benutzer zu beschränken. Außerdem können Sie die Identität authentifizierter Benutzer verwenden, um Autorisierungsregeln auf Ihrem Back-End zu implementieren.
 
 Insgesamt werden zwei Authentifizierungsflüsse unterstützt: ein *Serverfluss* und ein *Clientfluss*. Der Serverfluss bietet die einfachste Authentifizierungsform, da in diesem Fall die Authentifizierungs-Webschnittstelle des Anbieters verwendet wird. Der Clientfluss ermöglicht eine tiefere Integration mit gerätespezifischen Fähigkeiten wie z. B. einmalige Anmeldung, da in diesem Fall anbieterspezifische und gerätespezifische SDKs verwendet werden, und Programmierung Ihrerseits erforderlich ist.
 
@@ -591,20 +589,99 @@ Der folgende Code startet den Serverfluss-Anmeldeprozess mit dem Google-Anbieter
 
 	MobileServiceUser user = mClient.login(MobileServiceAuthenticationProvider.Google);
 
-Sie können die ID des angemeldeten Benutzers von einem **MobileServiceUser** mit der **getUserId**-Methode abrufen. Ein Beispiel zur Verwendung von „Futures“ zum Abrufen der asynchronen APIs für die Anmeldung finden Sie unter [Hinzufügen der Authentifizierung zu Ihrer Android-App].
+Sie können die ID des angemeldeten Benutzers von einem **MobileServiceUser** mit der **getUserId**-Methode abrufen. Ein Beispiel zur Verwendung von „Futures“ zum Abrufen der asynchronen APIs für die Anmeldung finden Sie unter [Erste Schritte mit Authentifizierungen].
 
 
 ### <a name="caching"></a>Zwischenspeichern von Authentifizierungstokens
 
 Beim Zwischenspeichern von Authentifizierungstoken müssen Benutzer-ID und Authentifizierungstoken lokal auf dem Gerät gespeichert werden. Beim nächsten Start der App prüfen Sie den Cache und können den Anmeldevorgang überspringen und den Client mit diesen Daten aktivieren, sofern sie vorhanden sind. Diese Daten sind jedoch vertraulich und sollten aus Sicherheitsgründen verschlüsselt gespeichert werden, falls das Telefon gestohlen wird.
 
-Ein vollständiges Beispiel zum Zwischenspeichern von Authentifizierungstoken finden Sie im Abschnitt [Zwischenspeichern von Authentifizierungstoken auf dem Client](app-service-mobile-android-get-started-users.md#cache-tokens).
+Ein vollständiges Beispiel zum Zwischenspeichern von Authentifizierungstoken finden Sie im Abschnitt [Zwischenspeichern von Authentifizierungstokens](app-service-mobile-android-get-started-users.md#cache-tokens).
 
 Wenn Sie versuchen, ein abgelaufenes Token zu verwenden, erhalten Sie die Antwort *401 nicht autorisiert*. Der Benutzer muss sich erneut anmelden, um ein neues Token zu erhalten. Um den Code zur Behandlung dieses Falls nicht an jeder Stelle in Ihrer App schreiben zu müssen, an der der mobile Dienst aufgerufen wird, können Sie Filter verwenden, mit denen Sie Aufrufe an und Antworten von Mobile Services abfangen können. Der Filtercode prüft Antworten auf 401, löst bei Bedarf den Anmeldeprozess aus und setzt anschließend die Anfrage fort, die den 401-Fehler ausgelöst hatte. Sie können auch das Token auf Ablauf überprüfen.
 
+
+## <a name="adal"></a>Gewusst wie: Authentifizieren von Benutzern mit der Active Directory-Authentifizierungsbibliothek
+
+Nutzen Sie die Active Directory-Authentifizierungsbibliothek (Active Directory Authentication Library, ADAL), um Benutzer mithilfe von Azure Active Directory bei Ihrer Anwendung anzumelden. Dies wird aufgrund der besseren Bedienbarkeit und der Möglichkeit, zusätzliche Anpassungen vorzunehmen, den `loginAsync()`-Methoden häufig vorgezogen.
+
+1. Konfigurieren Sie Ihr mobiles App-Back-End für die AAD-Anmeldung, indem Sie die im Tutorial [So konfigurieren Sie Ihre App Service-Anwendung zur Verwendung der Azure Active Directory-Anmeldung](app-service-mobile-how-to-configure-active-directory-authentication.md) beschriebenen Schritte ausführen. Schließen Sie auch den optionalen Schritt zur Registrierung einer nativen Clientanwendung ab.
+
+2. Installieren Sie ADAL, indem Sie die Datei „build.gradle“ so ändern, dass sie Folgendes enthält:
+
+	repositories { mavenCentral() flatDir { dirs 'libs' } maven { url "YourLocalMavenRepoPath\\.m2\\repository" } } packagingOptions { exclude 'META-INF/MSFTSIG.RSA' exclude 'META-INF/MSFTSIG.SF' } dependencies { compile fileTree(dir: 'libs', include: ['*.jar']) compile('com.microsoft.aad:adal:1.1.1') { exclude group: 'com.android.support' } // Recent version is 1.1.1 compile 'com.android.support:support-v4:23.0.0' }
+
+3. Fügen Sie Ihrer Anwendung den folgenden Code hinzu, und nehmen Sie die folgenden Ersetzungen vor:
+
+* Ersetzen Sie **INSERT-AUTHORITY-HERE** durch den Namen des Mandanten, unter dem Sie Ihre Anwendung bereitgestellt haben. Das Format sollte https://login.windows.net/contoso.onmicrosoft.com entsprechen. Sie können diesen Wert auf der Registerkarte „Domäne“ in Ihrer Azure Active Directory-Instanz im [klassischen Azure-Portal] kopieren.
+
+* Ersetzen Sie **INSERT-RESOURCE-ID-HERE** durch die Client-ID für Ihr mobiles App-Back-End. Sie finden diese auf der Registerkarte **Erweitert** unter **Azure Active Directory-Einstellungen** im Portal.
+
+* Ersetzen Sie **INSERT-CLIENT-ID-HERE** durch die Client-ID, die Sie aus der nativen Clientanwendung kopiert haben.
+
+* Ersetzen Sie **INSERT-REDIRECT-URI-HERE** durch den Endpunkt _/.auth/login/done_ Ihrer Website mithilfe des HTTPS-Schemas. Dieser Wert sollte etwa so aussehen: \__https://contoso.azurewebsites.net/.auth/login/done_.
+
+		private AuthenticationContext mContext;
+		private void authenticate() {
+		String authority = "INSERT-AUTHORITY-HERE";
+		String resourceId = "INSERT-RESOURCE-ID-HERE";
+		String clientId = "INSERT-CLIENT-ID-HERE";
+		String redirectUri = "INSERT-REDIRECT-URI-HERE";
+		try {
+		    mContext = new AuthenticationContext(this, authority, true);
+		    mContext.acquireToken(this, resourceId, clientId, redirectUri, PromptBehavior.Auto, "", callback);
+		} catch (Exception exc) {
+		    exc.printStackTrace();
+		}
+		}
+		private AuthenticationCallback<AuthenticationResult> callback = new AuthenticationCallback<AuthenticationResult>() {
+		@Override
+		public void onError(Exception exc) {
+		    if (exc instanceof AuthenticationException) {
+		        Log.d(TAG, "Cancelled");
+		    } else {
+		        Log.d(TAG, "Authentication error:" + exc.getMessage());
+		    }
+		}
+		@Override
+			public void onSuccess(AuthenticationResult result) {
+		    if (result == null || result.getAccessToken() == null
+		            || result.getAccessToken().isEmpty()) {
+		        Log.d(TAG, "Token is empty");
+		    } else {
+		        try {
+		            JSONObject payload = new JSONObject();
+		            payload.put("access_token", result.getAccessToken());
+		            ListenableFuture<MobileServiceUser> mLogin = mClient.login("aad", payload.toString());
+		            Futures.addCallback(mLogin, new FutureCallback<MobileServiceUser>() {
+		                @Override
+		                public void onFailure(Throwable exc) {
+		                    exc.printStackTrace();
+		                }
+		                @Override
+		                public void onSuccess(MobileServiceUser user) {
+		            		Log.d(TAG, "Login Complete");
+		                }
+		            });
+		        }
+		        catch (Exception exc){
+		            Log.d(TAG, "Authentication error:" + exc.getMessage());
+		        }
+		    }
+		}
+		};
+		@Override
+		protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		if (mContext != null) {
+		    mContext.onActivityResult(requestCode, resultCode, data);
+		}
+		}
+
+
 ## Hinzufügen von Pushbenachrichtigungen zur App
 
-Sie können [eine Übersicht lesen](notification-hubs-overview.md/#integration-with-app-service-mobile-apps), die beschreibt, wie Microsoft Azure Notification Hubs eine Vielzahl von Pushbenachrichtigungen unterstützt.
+Erfahren Sie in der [Übersicht](notification-hubs-overview.md/#integration-with-app-service-mobile-apps), wie Microsoft Azure Notification Hubs eine Vielzahl von Pushbenachrichtigungen unterstützt.
 
 In [diesem Tutorial](app-service-mobile-android-get-started-push.md) wird bei jedem Einfügen eines Datensatzes eine Pushbenachrichtigung gesendet.
 
@@ -679,7 +756,7 @@ Sie müssen die clientseitigen Namen zu JSON-Namen serialisieren, die den Spalte
 	@com.google.gson.annotations.SerializedName("duration")
 	private String mDuration;
 
-### <a name="table"></a>Zuordnen unterschiedlicher Tabellennamen zwischen Client und Back-End
+### <a name="table"></a>Gewusst wie: Zuordnen unterschiedlicher Tabellennamen zwischen Client und Back-End
 
 Die Zuordnung von Client-Tabellennamen zu anderen Tabellennamen im mobilen Dienst ist einfach. Verwenden Sie dazu eine der Überschreibungen der <a href="http://go.microsoft.com/fwlink/p/?LinkId=296840" target="_blank">getTable()</a>-Funktion, wie im folgenden Code gezeigt.
 
@@ -761,6 +838,6 @@ Sie können diese allgemeine Methode immer dann verwenden, wenn Sie mit komplexe
 [Mobile Services SDK for Android]: http://go.microsoft.com/fwlink/p/?LinkID=717033
 [Azure-Portal]: https://portal.azure.com
 [Get started with authentication]: app-service-mobile-android-get-started-users.md
-[Hinzufügen der Authentifizierung zu Ihrer Android-App]: app-service-mobile-android-get-started-users.md
+[Erste Schritte mit Authentifizierungen]: app-service-mobile-android-get-started-users.md
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0204_2016-->

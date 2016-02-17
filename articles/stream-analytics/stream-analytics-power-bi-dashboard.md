@@ -14,7 +14,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="01/11/2016" 
+	ms.date="02/04/2016" 
 	ms.author="jeffstok"/>
 	
 #  Stream Analytics und Power BI: Ein Dashboard mit Echtzeitanalyse von Streamingdaten
@@ -25,7 +25,7 @@ Verwenden Sie [Microsoft Power BI](https://powerbi.com/), um ohne großen Zeitau
 
 In diesem Artikel erfahren Sie, wie Sie eigene benutzerdefinierte Business Intelligence-Tools erstellen können, indem Sie Power BI als Ausgabe für Ihre Aufträge in Azure Stream Analytics verwenden und dazu ein Echtzeitdashboard nutzen.
 
-> [AZURE.NOTE]Power BI ist eine Vorschaufunktion von Azure Stream Analytics. Zu diesem Zeitpunkt wird die Erstellung und Konfiguration von Power BI-Ausgaben im Azure-Vorschauportal nicht unterstützt.
+> [AZURE.NOTE] Power BI ist eine Vorschaufunktion von Azure Stream Analytics. Zu diesem Zeitpunkt wird die Erstellung und Konfiguration von Power BI-Ausgaben im Azure-Vorschauportal nicht unterstützt.
 
 ## Voraussetzungen
 
@@ -47,7 +47,7 @@ Klicken Sie im linken Bereich auf **Stream Analytics**, um die Stream Analytics-
 
 ![Grafik1][graphic1]
 
-> [AZURE.TIP]Der neue Auftrag wird mit dem Status **Nicht gestartet** aufgeführt. Beachten Sie, dass die Schaltfläche **Start** am unteren Seitenrand deaktiviert ist. Dies entspricht dem erwarteten Verhalten, da Sie die Auftragseingabe, -ausgabe, -abfrage usw. konfigurieren müssen, bevor Sie den Auftrag starten können.
+> [AZURE.TIP] Der neue Auftrag wird mit dem Status **Nicht gestartet** aufgeführt. Beachten Sie, dass die Schaltfläche **Start** am unteren Seitenrand deaktiviert ist. Dies entspricht dem erwarteten Verhalten, da Sie die Auftragseingabe, -ausgabe, -abfrage usw. konfigurieren müssen, bevor Sie den Auftrag starten können.
 
 ## Festlegen der Auftragseingabe
 
@@ -62,7 +62,7 @@ In diesem Tutorial wird davon ausgegangen, dass Sie Event Hub als Eingabe mit J
   * **Event Hub** – Wenn der Event Hub, den Sie erstellt haben, sich in demselben Abonnement wie der Stream Analytics-Auftrag befindet, wählen Sie den Namespace aus, in dem sich der Event Hub befindet.
 *	Wenn sich Ihr Event Hub in einem anderen Abonnement befindet, wählen Sie **Event Hub aus anderem Abonnement verwenden**, und geben Sie manuell den **Service Bus-Namespace**, **Event Hub-Namen**, **Event Hub-Richtliniennamen**, **Event Hub-Richtlinienschlüssel** und die **Event Hub-Partitionsanzahl** ein.
 
-> [AZURE.NOTE]In diesem Beispiel wird die Standardanzahl an Partitionen verwendet, sprich 16.
+> [AZURE.NOTE]	In diesem Beispiel wird die Standardanzahl an Partitionen verwendet, sprich 16.
 
 * **Event Hub-Name** – Wählen Sie den Namen Ihrer Azure Event Hub-Instanz aus.
 * **Event Hub-Richtlinienname** – Wählen Sie die Richtlinie für die Event Hub-Instanz aus, die Sie verwenden. Stellen Sie sicher, dass diese Richtlinie über Verwaltungsberechtigungen verfügt.
@@ -232,4 +232,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 [graphic12]: ./media/stream-analytics-power-bi-dashboard/12-stream-analytics-power-bi-dashboard.png
 [graphic13]: ./media/stream-analytics-power-bi-dashboard/13-stream-analytics-power-bi-dashboard.png
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0204_2016-->

@@ -109,7 +109,7 @@ XUF99EW9OIQOMV7Q7 | Familienlimousine
 
 [Visual Studio-Projektmappe „Vehicle Telematics Simulator“](http://go.microsoft.com/fwlink/?LinkId=717075)
 
-[Azure Event Hub](http://azure.microsoft.com/services/event-hubs/)
+[Azure Event Hub](https://azure.microsoft.com/services/event-hubs/)
 
 [Azure Data Factory](https://azure.microsoft.com/documentation/learning-paths/data-factory/)
 
@@ -163,7 +163,7 @@ Nachdem die Pipeline erfolgreich ausgeführt wurde und das Dataset „RawCarEven
 
 
 ## Vorbereiten
->[AZURE.ALERT]Dieser Schritt der Projektmappe gilt nur für die Batchverarbeitung.
+>[AZURE.ALERT] Dieser Schritt der Projektmappe gilt nur für die Batchverarbeitung.
 
 Die unformatierten, halbstrukturierten Fahrzeugsignale und das Diagnosedataset werden im Datenvorbereitungsschritt in das Format JAHR/MONAT partitioniert, um effiziente Abfragen und eine skalierbare langfristige Speicherung zu ermöglichen (also ein Failover von einem Blob-Konto zum nächsten, wenn das erste voll ist). Die Ausgabedaten (mit der Bezeichnung *PartitionedCarEventsTable*) werden im „Data Lake“ des Kunden über einen längeren Zeitraum als grundlegende „Rohdaten“ aufbewahrt. Die Eingabedaten für die Pipeline werden normalerweise verworfen, da die Ausgabedaten die Qualität der Eingabedaten voll widerspiegeln. Sie werden lediglich für die nachfolgende Nutzung besser gespeichert (partitioniert).
 
@@ -396,7 +396,7 @@ Klicken Sie auf [RealtimeDashboardApp download](http://go.microsoft.com/fwlink/?
 
 *Abbildung 19 – RealtimeDashboardApp: Anmelden bei PowerBI*
 
->[AZURE.NOTE]Hinweis: Um die Daten für das PowerBI-Dataset zu löschen, führen Sie RealtimeDashboardApp mit dem Parameter „flushdata“ aus:
+>[AZURE.NOTE] Hinweis: Um die Daten für das PowerBI-Dataset zu löschen, führen Sie RealtimeDashboardApp mit dem Parameter „flushdata“ aus:
 
 	RealtimeDashboardApp.exe -flushdata
 
@@ -706,4 +706,4 @@ Klicken Sie hier, um eine ausführliche Anleitung zum Einrichten der PowerBI-Ber
 
 In diesem Dokument wird die Projektmappe für die Fahrzeugtelemetrieanalyse (Vehicle Telemetry Analytics) ausführlich beschrieben. Es wird ein Lambda-Architekturmuster für die Echtzeit- und Batchanalyse mit Vorhersagen und Aktionen veranschaulicht. Dieses Muster gilt für eine Vielzahl von Anwendungsfällen, für die „Hot Path“-Analysen (Echtzeit) und „Cold Path“-Analysen (Batch) erforderlich sind.
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

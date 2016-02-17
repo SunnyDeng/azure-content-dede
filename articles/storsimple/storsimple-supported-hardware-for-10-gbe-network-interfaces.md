@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="12/30/2015"
+   ms.date="01/26/2016"
    ms.author="alkohli" />
 
 # Unterstützte Hardware für 10-GbE-Netzwerkschnittstellen auf Ihrem StorSimple-Gerät
@@ -21,7 +21,7 @@
 
 Dieser Artikel enthält Informationen zu zusätzlicher Hardware, die mit dem Microsoft Azure StorSimple-Gerät verwendet werden kann.
 
-## Liste der unterstützten Geräte
+## Liste der Geräte, die von Microsoft getestet wurden
 
 Microsoft hat die folgenden SFP (Small Form-factor Pluggable)-Transceiver, Kabel und Switches getestet, um sicherzustellen, dass sie optimal mit Geräten funktionieren. (Die folgenden Tabellen werden aktualisiert, wenn neue Hardware getestet wird.)
 
@@ -48,7 +48,25 @@ Microsoft hat die folgenden SFP (Small Form-factor Pluggable)-Transceiver, Kabel
 | 2\. |Cisco|N3K-C3048-ZM-F|
 | 3\. |Cisco|N5K-C5596UP-FA|
 
-## Liste der von Mellanox unterstützten Geräte  
+## Liste der Geräte, die in der Praxis getestet wurden
+
+Dieser Abschnitt enthält eine Liste der Geräte, die von StorSimple-Kunden erfolgreich in der Praxis eingesetzt wurden. Diese wurden nicht von Microsoft getestet, funktionieren aber wahrscheinlich mit dem StorSimple-Gerät.
+ 
+| Parameter | Wert |
+|-----------------------------------|------------------------------------------|
+| Switch-Fabrikat | Juniper |
+| Switch-Modell | ex4550-32F |
+| Switch-Betriebssystemversion | JunOS 12.3R9.4 |
+| Blade-Modell | Integrierte Ports (PIC 0) |
+| Transceiver-Fabrikat | Juniper |
+| Transceiver-Modell | Teilenummer 740-021308 <br></br> Teilenummer 740-030658 |
+| Transceiver-Firmwareversion | Rev 01 Version 0.0 (gemeldet) |
+| Kabelmodell | Duplex-Jumper LC/LC 50/125µ, OM3, LSZH |
+| StorSimple-Modell | 8600 |
+| StorSimple-Softwareversion | 6\.3.9600.17491 |
+
+
+## Liste der Geräte, die von OEM-Anbieter getestet wurden (Mellanox)  
 
 Mellanox hat die folgenden SFP (Small Form-factor Pluggable)-Transceiver, Kabel und Switches getestet, um sicherzustellen, dass sie optimal mit Netzwerkschnittstellen von Mellanox, beispielsweise den 10-GbE-Netzwerkschnittstellen Ihres StorSimple-Geräts, funktionieren.
 
@@ -112,4 +130,4 @@ Die folgende Tabelle enthält die Switches, die von Mellanox unterstützt werden
 
 Weitere Informationen zu [StorSimple-Hardwarekomponenten und ihrem Status](storsimple-monitor-hardware-status.md).
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

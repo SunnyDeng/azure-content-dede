@@ -13,13 +13,12 @@
 	ms.workload="data-management"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="hero-article"
-	ms.date="12/11/2015"
+	ms.topic="article"
+	ms.date="01/27/2016"
 	ms.author="jodebrui"/>
 
 
 # Erste Schritte mit In-Memory (Vorschau) in SQL-Datenbank
-
 
 In-Memory-Features verbessern die Leistung bei Transaktions- und Analyseworkloads in den richtigen Situationen deutlich.
 
@@ -83,7 +82,7 @@ Vorschau:
 Solange sich die In-Memory-Features in der Vorschau befinden, müssen einige Aspekte beachtet werden. Informationen dazu finden Sie [weiter unten in diesem Thema](#preview_considerations_for_in_memory).
 
 
-> [AZURE.NOTE]Die in der Vorschau befindlichen Features stehen nur für Azure SQL-Datenbanken im Tarif [*Premium*](sql-database-service-tiers.md) zur Verfügung, nicht für Datenbanken im Tarif „Standard“ oder „Basic“.
+> [AZURE.NOTE] Die in der Vorschau befindlichen Features stehen nur für Azure SQL-Datenbanken im Tarif [*Premium*](sql-database-service-tiers.md) zur Verfügung, nicht für Datenbanken im Tarif „Standard“ oder „Basic“.
 
 
 
@@ -93,7 +92,7 @@ Solange sich die In-Memory-Features in der Vorschau befinden, müssen einige Asp
 
 ## A: Installieren des Beispiels für In-Memory OLTP
 
-Sie können im [Azure-Portal](http://portal.azure.com/) die Beispieldatenbank „AdventureWorksLT [V12]“ mit wenigen Klicks erstellen. Anhand der Schritte in diesem Abschnitt wird erläutert, wie Sie anschließend Ihre AdventureWorksLT-Datenbank wie folgt erweitern können:
+Sie können im [Azure-Portal](https://portal.azure.com/) die Beispieldatenbank „AdventureWorksLT [V12]“ mit wenigen Klicks erstellen. Anhand der Schritte in diesem Abschnitt wird erläutert, wie Sie anschließend Ihre AdventureWorksLT-Datenbank wie folgt erweitern können:
 
 - In-Memory-Tabellen
 - Systemintern kompilierte gespeicherte Prozedur
@@ -101,7 +100,7 @@ Sie können im [Azure-Portal](http://portal.azure.com/) die Beispieldatenbank �
 
 #### Installationsschritte
 
-1. Erstellen Sie im [Azure-Portal](http://portal.azure.com/) auf einem V12-Server eine Premium-Datenbank. Legen Sie die AdventureWorksLT [V12]-Beispieldatenbank als **Quelle** fest.
+1. Erstellen Sie im [Azure-Portal](https://portal.azure.com/) auf einem V12-Server eine Premium-Datenbank. Legen Sie die AdventureWorksLT [V12]-Beispieldatenbank als **Quelle** fest.
  - Detaillierte Anweisungen finden Sie unter [Erstellen Ihrer ersten Azure SQL-Datenbank](sql-database-get-started.md).
 
 2. Stellen Sie eine Verbindung mit der Datenbank mit SQL Server Management Studio [(SSMS.exe)](http://msdn.microsoft.com/library/mt238290.aspx) her.
@@ -132,7 +131,7 @@ SELECT DatabasePropertyEx(DB_Name(), 'IsXTPSupported');
 ```
 
 
-Das Ergebnis **0** bedeutet, dass In-Memory nicht unterstützt wird. „1“ bedeutet Unterstützung. So analysieren Sie das Problem:
+Das Ergebnis **0** bedeutet, dass In-Memory nicht unterstützt wird. 1 bedeutet Unterstützung. So analysieren Sie das Problem:
 
 - Stellen Sie sicher, dass die Datenbank erstellt wurde, nachdem die In-Memory OLTP-Features für die Vorschau aktiviert wurden.
 - Stellen Sie sicher, dass die Datenbank dem Premium-Tarif unterliegt.
@@ -227,17 +226,18 @@ WHILE (@i < 20)
 begin;
 	EXECUTE SalesLT.usp_InsertSalesOrder_inmem @SalesOrderID OUTPUT,
 		@DueDate, @CustomerID, @BillToAddressID, @ShipToAddressID, @od;
+	SET @i = @i + 1;
 end
 ```
 
 
-Um die „\_ondisk“-Version des vorherigen T-SQL-Skripts für „ostress.exe“ zu erstellen, müssen Sie beide Vorkommen der Teilzeichenfolge „ *\_inmem* “ durch „ *\_ondisk* “ ersetzen. Diese Austauschvorgänge wirken sich auf die Namen von Tabellen und gespeicherten Prozeduren aus.
+Um die „\_ondisk“-Version des vorherigen T-SQL-Skripts für „ostress.exe“ zu erstellen, müssen Sie beide Vorkommen der Teilzeichenfolge „*\_inmem*“ durch „*\_ondisk*“ ersetzen. Diese Austauschvorgänge wirken sich auf die Namen von Tabellen und gespeicherten Prozeduren aus.
 
 
 ### Installieren von RML-Hilfsprogrammen und ostress
 
 
-Im Idealfall planen Sie die Ausführung von „ostress.exe“ auf einer Azure-VM. Dazu erstellen Sie eine [Azure-VM](http://azure.microsoft.com/documentation/services/virtual-machines/) in der gleichen Azure-Region, in der sich die AdventureWorksLT-Datenbank befindet. Sie können „ostress.exe“ aber auch auf Ihrem Laptop ausführen.
+Im Idealfall planen Sie die Ausführung von „ostress.exe“ auf einer Azure-VM. Dazu erstellen Sie eine [Azure-VM](https://azure.microsoft.com/documentation/services/virtual-machines/) in der gleichen Azure-Region, in der sich die AdventureWorksLT-Datenbank befindet. Sie können „ostress.exe“ aber auch auf Ihrem Laptop ausführen.
 
 
 Installieren Sie auf der VM oder dem gewählten Host die RML-Hilfsprogramme (Replay Markup Language), zu denen „ostress.exe“ gehört.
@@ -317,10 +317,7 @@ EXECUTE Demo.usp_DemoReset;
 
 #### Erwartete Vergleichsergebnisse
 
-Unsere In-Memory-Tests haben für diese einfache Workload und bei Ausführung von „ostress“ auf einem virtuellen Azure Computer, der sich in der gleichen Azure-Region wie die Datenbank befindet, eine **9-mal** höhere Leistung ergeben.
-
-
-Die Leistungssteigerung kann noch höher sein, wenn die Konvertierung in systemintern kompilierte gespeicherte Prozeduren hinzugefügt wird.
+Unsere In-Memory-Tests haben für diese einfache Workload eine **9-mal** höhere Leistung ergeben, wenn „ostress“ auf einem virtuellen Azure-Computer ausgeführt wird, der sich in derselben Azure-Region befindet wie die Datenbank.
 
 
 ## B. Installieren des In-Memory Analytics-Beispiels
@@ -452,7 +449,7 @@ GO
 ## Besondere Aspekte der Vorschauversion von In-Memory OLTP
 
 
-Die In-Memory OLTP-Features in der Azure SQL-Datenbank [wurden am 28. Oktober 2015 als Vorschau aktiviert](http://azure.microsoft.com/updates/public-preview-in-memory-oltp-and-real-time-operational-analytics-for-azure-sql-database/).
+Die In-Memory OLTP-Features in der Azure SQL-Datenbank [wurden am 28. Oktober 2015 als Vorschau aktiviert](https://azure.microsoft.com/updates/public-preview-in-memory-oltp-and-real-time-operational-analytics-for-azure-sql-database/).
 
 
 In der Vorschauphase vor der allgemeinen Verfügbarkeit wird In-Memory OLTP nur für Folgendes unterstützt:
@@ -470,7 +467,7 @@ SELECT DatabasePropertyEx(DB_NAME(), 'IsXTPSupported');
 ```
 
 
-Wenn die Abfrage **1** zurückgibt, wird In-Memory OLTP in dieser Datenbank sowie allen Datenbankkopien und -wiederherstellungen unterstützt, die auf Basis dieser Datenbank erstellt wurden.
+Wenn die Abfrage **1** zurückgibt, wird In-Memory OLTP in dieser Datenbank sowie allen Datenbankkopien und -wiederherstellungen unterstützt, die auf Basis auf dieser Datenbank erstellt wurden.
 
 
 #### Nur im Premium-Tarif zulässige Objekte
@@ -528,4 +525,4 @@ Wenn eine Datenbank eine der folgenden Arten von In-Memory OLTP-Objekten oder -T
 
 - [Überwachen von In-Memory-Speicher](sql-database-in-memory-oltp-monitoring.md) für In-Memory OLTP
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0128_2016-->

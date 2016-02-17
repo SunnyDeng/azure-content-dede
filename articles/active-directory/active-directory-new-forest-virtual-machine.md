@@ -1,7 +1,8 @@
 <properties 
 	pageTitle="Installieren einer Active Directory-Gesamtstruktur in einem virtuellen Azure-Netzwerk | Microsoft Azure" 
 	description="Ein Lernprogramm, in dem erläutert wird, wie Sie eine neue Active Directory-Gesamtstruktur auf einer virtuellen Maschine (VM) in einem virtuellen Azure-Netzwerk erstellen" 
-	services="active-directory, virtual-network" 
+	services="active-directory, virtual-network"
+    keywords="Virtuelle Active Directory-Maschine, Active Directory-Gesamtstruktur installieren, Azure Active Directory-Videos"
 	documentationCenter="" 
 	authors="markusvi" 
 	manager="stevenpo" 
@@ -13,7 +14,7 @@
 	ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-	ms.date="01/05/2016" 
+	ms.date="01/25/2016" 
 	ms.author="markusvi"/>
 
 
@@ -31,7 +32,7 @@ Folgende Themen könnten für Sie ebenfalls von Interesse sein:
 
 In diesem Szenario müssen externe Benutzer auf Anwendungen zugreifen, die auf in die Domäne eingebundenen Servern ausgeführt werden. Die virtuellen Computer, auf denen die Anwendungsserver ausgeführt werden, und die virtuellen Computer, auf denen Domänencontroller ausgeführt werden, werden in einem virtuellen Azure-Netzwerk in einem eigenen Clouddienst ausgeführt. Sie sind auch zur Verbesserung der Fehlertoleranz in einer Verfügbarkeitsgruppe enthalten.
 
-![][1] 7
+![Active Directory-Gesamtstruktur auf einer virtuellen Maschine in Azure Virtual Network][1] 7
 ## Unterschiede zwischen der virtuellen und der lokalen Umgebung
 
 Die Installation eines Domänencontrollers in Azure unterscheidet sich nicht wesentlich von der lokalen Installation. Die Hauptunterschiede sind in der folgenden Tabelle aufgeführt.
@@ -137,4 +138,4 @@ Weitere Informationen zum Verwenden von Windows PowerShell finden Sie unter [Ers
 
  
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

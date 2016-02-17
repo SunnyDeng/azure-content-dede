@@ -85,6 +85,6 @@ DNS-Zonenbeispiel im Json-Format:
 
 Lesen Sie die [REST-API-Dokumentation für DNS-Zonen](https://msdn.microsoft.com/library/azure/mt130626.aspx), um weitere Informationen zu erhalten.
 
-Weitere Informationen erhalten Sie in der [REST-API-Dokumentation für DNS-Ressourceneintragssätze](https://msdn.microsoft.com/library/azure/mt130626.aspx).
+Weitere Informationen erhalten Sie in der [REST-API-Dokumentation für DNS-Ressourceneintragssätze](https://msdn.microsoft.com/library/azure/mt130627.aspx).
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

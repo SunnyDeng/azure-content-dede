@@ -20,7 +20,8 @@
 
 Apps, die sich in Azure AD integrieren lassen, folgen einem bestimmten Autorisierungsmodell, mit dem Benutzer festlegen können, wie eine App auf ihre Daten zugreift. In App-Modell v2.0 wurde die Implementierung dieses Autorisierungsmodells so aktualisiert, sodass die Art und Weise, wie eine App mit Azure AD interagieren muss, nun anders ist. In diesem Thema werden die grundlegenden Konzepte dieses Autorisierungsmodells einschließlich der Bereiche, Berechtigungen und Zustimmung behandelt.
 
-> [AZURE.NOTE]Diese Informationen gelten für App-Modell v2.0 (öffentliche Vorschauversion). Anweisungen zum Integrieren in den allgemein verfügbaren Azure AD-Dienst finden Sie im [Azure Active Directory-Entwicklerhandbuch](active-directory-developers-guide.md).
+> [AZURE.NOTE]
+	Diese Informationen gelten für App-Modell v2.0 (öffentliche Vorschauversion). Anweisungen zum Integrieren in den allgemein verfügbaren Azure AD-Dienst finden Sie im [Azure Active Directory-Entwicklerhandbuch](active-directory-developers-guide.md).
 
 ## Bereiche und Berechtigungen
 
@@ -100,20 +101,29 @@ Das sich ergebende Zugriffstoken kann dann in HTTP-Anforderungen an die Ressourc
 
 Weitere Informationen über das OAuth 2.0-Protokoll und zum Erwerb von Zugriffstoken finden Sie in der [App-Modell, Version 2.0 –Protokollreferenz](active-directory-v2-protocols.md).
 
-## OpenId & Offline\_Access
 
-Das App-Modell v2.0 umfasst zwei gut definierte Bereiche, die nicht für eine bestimmte Ressource - gelten: `openid` und `offline_access`.
+## OpenId Connect-Bereiche
+
+Die v2.0-Implementierung von OpenID Connect bietet einige klar definierte Bereiche, die für keine bestimmte Ressource gelten: `openid`, `email`, `profile` und `offline_access`.
 
 #### OpenId
 
-Bei einer App-Anmeldung mit [OpenID Connect](active-directory-v2-protocols.md#openid-connect-sign-in-flow) muss der `openid`-Bereich angefordert werden. Der `openid`-Bereich wird auf dem Zustimmungsbildschirm des Arbeitskontos als Berechtigung "Sie werden angemeldet" angezeigt, und auf dem Zustimmungsbildschirm des persönlichen Microsoft-Kontos als Berechtigung "Ihr Profil anzeigen und mit Ihrem Microsoft-Konto eine Verbindung zu Apps und Diensten herstellen". Mit dieser Berechtigung kann eine App auf den OpenID-Endpunkt mit den Benutzerinformationen zugreifen, weshalb die Genehmigung des Benutzers erforderlich ist. Der `openid`-Bereich kann auch auf dem v2.0-Tokenendpunkt zum Abrufen von ID-Token verwendet werden, die zum Sichern von HTTP-Aufrufen zwischen verschiedenen Komponenten einer App genutzt werden können.
+Bei einer App-Anmeldung mit [OpenID Connect](active-directory-v2-protocols.md#openid-connect-sign-in-flow) muss der `openid`-Bereich angefordert werden. Der `openid`-Bereich wird auf dem Zustimmungsbildschirm des Arbeitskontos als Berechtigung "Sie werden angemeldet" angezeigt, und auf dem Zustimmungsbildschirm des persönlichen Microsoft-Kontos als Berechtigung "Ihr Profil anzeigen und mit Ihrem Microsoft-Konto eine Verbindung zu Apps und Diensten herstellen". Mit dieser Berechtigung kann eine App einen eindeutigen Bezeichner für den Benutzer in Form des Anspruchs `sub` empfangen. Sie ermöglicht der App zudem Zugriff auf den Endpunkt mit den Benutzerinformationen. Der `openid`-Bereich kann auch auf dem v2.0-Tokenendpunkt zum Abrufen von ID-Token verwendet werden, die zum Sichern von HTTP-Aufrufen zwischen verschiedenen Komponenten einer App genutzt werden können.
 
-#### Offline\_Access
+#### E-Mail
 
-Mit dem `offline_access`-Bereich kann Ihre App im Auftrag des Benutzers für einen längeren Zeitraum auf Ressourcen zugreifen. Auf dem Zustimmungsbildschirm des Arbeitskontos erscheint dieser Bereich als "Jederzeit und überall auf Ihre Daten zugreifen". Auf dem Zustimmungsbildschirm des persönlichen Microsoft-Kontos erscheint er als "Jederzeit auf Ihre Informationen zugreifen". Wenn ein Benutzer den `offline_access`-Bereich genehmigt, ist Ihre App für den Empfang von Aktualisierungstoken vom v2.0-Tokenendpunkt aktiviert. Aktualisierungstoken sind langlebig und ermöglichen es Ihrer App, neue Zugriffstoken zu erhalten, wenn ältere ablaufen.
+Der Bereich `email` kann zusammen mit dem Bereich `openid` und weiteren Bereichen eingefügt werden. Er ermöglicht der App Zugriff auf die primäre E-Mail-Adresse des Benutzers in Form des Anspruchs `email`. Der Anspruch `email` ist nur in Token enthalten, wenn dem Benutzerkonto eine E-Mail-Adresse zugewiesen ist (dies ist nicht immer der Fall). Bei Verwendung des Bereichs `email` sollte die Verarbeitung durch Ihre App auch dann möglich sein, wenn der Anspruch `email` nicht im Token vorhanden ist.
+
+#### Profil
+
+Der Bereich `profile` kann zusammen mit dem Bereich `openid` und weiteren Bereichen eingefügt werden. Er ermöglicht der App Zugriff auf eine Fülle von Benutzerinformationen. Dazu gehören u. a. Vorname, Nachname, bevorzugter Benutzername und Objekt-ID des Benutzers. Eine vollständige Liste der in ID-Token verfügbaren Profilansprüche für einen bestimmten Benutzer finden Sie in der [v2.0-Tokenreferenz](active-directory-v2-tokens.md).
+
+#### Offline\_access
+
+Mit dem [`offline_access`-Bereich](http://openid.net/specs/openid-connect-core-1_0.html#OfflineAccess) kann Ihre App im Auftrag des Benutzers für einen längeren Zeitraum auf Ressourcen zugreifen. Auf dem Zustimmungsbildschirm des Arbeitskontos erscheint dieser Bereich als "Jederzeit und überall auf Ihre Daten zugreifen". Auf dem Zustimmungsbildschirm des persönlichen Microsoft-Kontos erscheint er als "Jederzeit auf Ihre Informationen zugreifen". Wenn ein Benutzer den `offline_access`-Bereich genehmigt, ist Ihre App für den Empfang von Aktualisierungstoken vom v2.0-Tokenendpunkt aktiviert. Aktualisierungstoken sind langlebig und ermöglichen es Ihrer App, neue Zugriffstoken zu erhalten, wenn ältere ablaufen.
 
 Wenn die App den `offline_access`-Bereich nicht anfordert, werden auch keine Aktualisierungstoken empfangen. Dies bedeutet, dass Sie beim Einlösen eines Autorisierungscodes im [OAuth 2.0-Authorisierungscodefluss](active-directory-v2-protocols.md#oauth2-authorization-code-flow) nur ein Zugriffstoken vom `/token`-Endpunkt erhalten. Dieses Zugriffstoken bleibt für einen kurzen Zeitraum (in der Regel eine Stunde) gültig, läuft aber anschließend ab. Zu diesem Zeitpunkt muss Ihre App den Benutzer zurück auf den `/authorize`-Endpunkt leiten, um einen neuen Autorisierungscode abzurufen. Während dieser Umleitung muss der Benutzer möglicherweise seine Anmeldeinformationen erneut eingeben oder den Berechtigungen erneut zustimmen, je nach Art der App.
 
-Weitere Informationen zum Abrufen und Verwenden von Aktualisierungstoken finden Sie in der [App-Modell, Version 2.0 –Protokollreferenz](active-directory-v2-protocols.md).
+Weitere Informationen zum Abrufen und Verwenden von Aktualisierungstoken finden Sie in der [v2.0-Protokollreferenz](active-directory-v2-protocols.md).
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0128_2016-->

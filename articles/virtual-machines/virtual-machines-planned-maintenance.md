@@ -44,20 +44,20 @@ Updates für mehrere Instanzen (für virtuelle Computer in einer Verfügbarkeits
 
 Es gibt zwei Arten der Konfiguration virtueller Computer: mehrere Instanzen und eine Instanz. In einer Konfiguration mit mehreren Instanzen werden ähnliche virtuelle Computer in eine Verfügbarkeitsgruppe platziert.
 
-Die Konfiguration mit mehreren Instanzen sorgt für Redundanz und wird empfohlen, um die Verfügbarkeit Ihrer Anwendung sicherzustellen. Alle virtuellen Computer in der Verfügbarkeitsgruppe sollten nahezu identisch sein und denselben Zweck für Ihre Anwendung erfüllen.
+Die Konfiguration mit mehreren Instanzen sorgt für Redundanz über mehrere physische Computer hinweg, für Leistungskraft und für optimale Vernetzung. Sie wird empfohlen, um die Verfügbarkeit Ihrer Anwendung sicherzustellen. Alle virtuellen Computer in der Verfügbarkeitsgruppe sollten denselben Zweck für Ihre Anwendung erfüllen.
 
 Weitere Informationen über das Konfigurieren Ihrer virtuellen Computer für hohe Verfügbarkeit finden Sie unter [Verwalten der Verfügbarkeit virtueller Computer](virtual-machines-manage-availability.md).
 
 Im Gegensatz dazu wird eine Einzelinstanz-Konfiguration für eigenständige virtuelle Computer verwendet, die nicht in einer Verfügbarkeitsgruppe platziert wurden. Diese virtuellen Computer fallen nicht unter die Vereinbarung zum Servicelevel (SLA), denn hier ist es erforderlich, dass mindestens zwei virtuelle Computer in derselben Verfügbarkeitsgruppe bereitgestellt werden.
 
-Weitere Informationen zur SLA finden Sie im Abschnitt „Clouddienste, virtuelle Computer und virtuelles Netzwerk“ unter [Vereinbarungen zum Servicelevel (SLAs)](http://azure.microsoft.com/support/legal/sla/).
+Weitere Informationen zur SLA finden Sie im Abschnitt „Clouddienste, virtuelle Computer und virtuelles Netzwerk“ unter [Vereinbarungen zum Servicelevel (SLAs)](https://azure.microsoft.com/support/legal/sla/).
 
 
 ## Konfigurationsupdates bei mehreren Instanzen
 
-Während der geplanten Wartung aktualisiert die Azure-Plattform zuerst den Satz von virtuellen Computern, die in einer Konfiguration mit mehreren Instanzen gehostet werden. Dadurch wird ein Neustart dieser virtuellen Computer verursacht.
+Während der geplanten Wartung aktualisiert die Azure-Plattform zuerst den Satz von virtuellen Computern, die in einer Konfiguration mit mehreren Instanzen gehostet werden. Dabei wird ein Neustart dieser virtuellen Computer ausgeführt, was mit einer Downtime von etwa 15 Minuten verbunden ist.
 
-In einer Mehrfachinstanzkonfiguration werden virtuelle Computer so aktualisiert, dass die Verfügbarkeit während des Prozesses gegeben ist. Dabei wird davon ausgegangen, dass jeder virtuelle Computer die gleiche Funktion hat wie die anderen im Satz.
+In einer Konfiguration mit mehreren Instanzen werden die virtuellen Computer so aktualisiert, dass die Verfügbarkeit während des Prozesses gewährleistet bleibt. Dabei wird davon ausgegangen, dass jeder virtuelle Computer die gleiche Funktion hat wie die anderen im Satz.
 
 Jeder virtuelle Computer in der Verfügbarkeitsgruppe wird einer Updatedomäne (UD) und einer Fehlerdomäne (FD) der zugrunde liegenden Azure-Plattform zugewiesen. Jede Updatedomäne ist eine Gruppe virtueller Computer, die im selben Zeitfenster neu gestartet wird. Jede Fehlerdomäne ist eine Gruppe virtueller Computer, die eine Stromquelle und einen Netzwerkswitch gemeinsam nutzen.
 
@@ -65,7 +65,7 @@ Weitere Informationen zu Updatedomänen und Fehlerdomänen finden Sie unter [Kon
 
 Um zu verhindern, dass Updatedomänen zur gleichen Zeit offline gehen, erfolgt die Wartung, indem jeder virtuelle Computer in der betreffenden Updatedomäne heruntergefahren wird, das Update auf die Hostcomputer angewendet wird, die virtuellen Computer neu gestartet werden und dann mit der nächsten Updatedomäne fortgefahren wird. Der geplante Wartungsvorgang endet, nachdem alle Updatedomänen aktualisiert wurden.
 
-Die Reihenfolge der Updatedomänen, die neu gestartet werden, muss bei der Wartung nicht unbedingt in Folge bearbeitet werden, es befindet sich jedoch nur jeweils eine Updatedomäne im Neustartvorgang. Aktuell wird bei Azure 48 Stunden vorher über geplante Wartungsarbeiten für virtuelle Computer in einer Mehrfachinstanzkonfiguration informiert.
+Die Reihenfolge der Updatedomänen, die neu gestartet werden, muss bei der Wartung nicht unbedingt in Folge bearbeitet werden, es befindet sich jedoch nur jeweils eine Updatedomäne im Neustartvorgang. Aktuell wird bei Azure eine Woche vorher über geplante Wartungsarbeiten für virtuelle Computer in einer Konfiguration mit mehreren Instanzen informiert.
 
 Nach der Wiederherstellung eines virtuellen Computers ist in der Windows-Ereignisanzeige beispielsweise folgender Inhalt zu sehen:
 
@@ -83,20 +83,20 @@ Nachdem die Konfigurationsupdates bei mehreren Instanzen abgeschlossen sind, fü
 
 Bitte beachten Sie, dass wenn auch nur eine Instanz in einer Verfügbarkeitsgruppe ausgeführt wird, die Azure-Plattform die Aktualisierung bereits als eine Konfigurationsaktualisierung mit mehreren Instanzen behandelt.
 
-Bei virtuellen Computern in einer Konfiguration mit nur einer Instanz werden diese ausgeschaltet, dann die Aktualisierung auf dem Host-Computer eingespielt und anschließend die virtuellen Computer neu gestartet. Diese Aktualisierungen werden auf allen virtuellen Computern in einer Region in einem einzigen Wartungsfenster ausgeführt.
+Bei virtuellen Computern in einer Konfiguration mit nur einer Instanz werden diese heruntergefahren, anschließend wird das Update auf dem Host-Computer eingespielt, und dann werden die virtuellen Computer neu gestartet. Dies ist mit einer Downtime von etwa 15 Minuten verbunden. Diese Aktualisierungen werden auf allen virtuellen Computern in einer Region in einem einzigen Wartungsfenster ausgeführt.
 
 Der geplante Wartungsvorgang wirkt sich bei dieser Art von Konfiguration eines virtuellen Computers auf die Verfügbarkeit aus. Aktuell wird bei Azure eine Woche vorher über geplante Wartungsarbeiten für virtuelle Computer in einer Einzelinstanzkonfiguration informiert.
 
 ### E-Mail-Benachrichtigung
 
-Nur bei virtuellen Computern mit Konfigurationen mit einzelnen und mehreren Instanzen informiert Azure im Voraus per E-Mail über geplante Wartungsarbeiten. Bei einzelnen Instanzen erfolgt die Benachrichtigung eine Woche im Voraus, bei mehreren Instanzen 48 Stunden im Voraus. Diese E-Mail wird an die E-Mail-Konten des Kontoadministrators und die des Co-Administrators gesendet, die im Abonnement bereitgestellt werden. Hier ist ein Beispiel für diese Art von E-Mail:
+Nur bei virtuellen Computern mit Konfigurationen mit einzelnen und mehreren Instanzen informiert Azure im Voraus per E-Mail über geplante Wartungsarbeiten (eine Woche im Voraus). Diese E-Mail wird an die E-Mail-Konten des Kontoadministrators und die des Co-Administrators gesendet, die im Abonnement bereitgestellt werden. Hier ist ein Beispiel für diese Art von E-Mail:
 
 <!--Image reference-->
 ![][image1]
 
 ## Regionspaare
 
-Azure organisiert einen Satz von Regionspaaren. Azure führt während einer geplanten Wartung für virtuelle Computer mit einer Konfiguration mit einzelnen Instanzen nicht gleichzeitig ein Update in beiden Regionen eines Paares durch.
+Beim Ausführen der Wartung aktualisiert Azure nur die VM-Instanzen in einer Region des jeweiligen Regionspaars. Wenn z. B. die virtuellen Computer (Virtual Machines, VMs) in der Region „USA, Norden-Mitte“ aktualisiert werden, aktualisiert Azure nicht gleichzeitig die virtuellen Computer in der Region „USA, Süden-Mitte“. Die Aktualisierung für diese Region wird zu einem anderen Zeitpunkt geplant. Dies ermöglicht ein Failover oder einen Lastenausgleich zwischen den Regionen. Andere Regionen wie Nordeuropa können jedoch gleichzeitig mit USA (Ost) gewartet werden.
 
 Informationen zu aktuellen Regionspaaren finden Sie in der folgenden Tabelle:
 
@@ -113,8 +113,6 @@ Brasilien Süd | USA (Mitte/Süden)
 Australien (Südost) | Australien (Osten)
 US Government, Iowa | US Government, Virginia
 
-Beispiel: Während einer geplanten Wartung stellt Azure für "USA (West)" kein Update bereit, während "USA (Ost)" gewartet wird. Andere Regionen wie Nordeuropa können jedoch gleichzeitig mit USA (Ost) gewartet werden.
-
 <!--Anchors-->
 [image1]: ./media/virtual-machines-planned-maintenance/vmplanned1.png
 [image2]: ./media/virtual-machines-planned-maintenance/EventViewerPostReboot.png
@@ -126,4 +124,4 @@ Beispiel: Während einer geplanten Wartung stellt Azure für "USA (West)" kein U
 [Virtual Machines Manage Availability]: virtual-machines-windows-tutorial.md
 [Understand planned versus unplanned maintenance]: virtual-machines-manage-availability.md#Understand-planned-versus-unplanned-maintenance/
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0204_2016-->

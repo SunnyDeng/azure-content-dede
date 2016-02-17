@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/10/2015"
+	ms.date="01/26/2016"
 	ms.author="mmercuri"/>
 
 # Freigeben des Status in Azure-Ressourcen-Manager-Vorlagen
@@ -386,7 +386,7 @@ Innerhalb der Hauptvorlage können Sie diese Daten mit folgender Syntax verwende
     }
 
 ## Nächste Schritte
-- [Authoring Azure Resource Manager Templates](resource-group-authoring-templates.md) (in englischer Sprache)
+- [Authoring Azure Resource Manager Templates (in englischer Sprache)](resource-group-authoring-templates.md)
 - [Funktionen von Azure-Ressourcen- Manager-Vorlagen](resource-group-template-functions.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0204_2016-->

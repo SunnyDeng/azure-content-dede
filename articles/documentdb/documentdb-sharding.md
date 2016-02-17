@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/05/2015" 
+	ms.date="02/03/2016" 
 	ms.author="arramac"/>
 
 # Partitionieren von Daten in DocumentDB mit dem .NET SDK
 
-Azure DocumentDB ist ein Dokumentdatenbankdienst, der Ihnen durch Bereitstellung von Sammlungen mithilfe von [SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) und [REST-APIs](https://msdn.microsoft.com/library/azure/dn781481.aspx) (auch **Sharding** genannt) eine nahtlose Skalierung Ihres Kontos ermöglicht. Um die Entwicklung von partitionierten Anwendungen zu vereinfachen und die Menge der für Partitionierungsaufgaben erforderlichen Codebausteine zu reduzieren, wurden Funktionen in das .NET SDK eingefügt, mit denen sich Anwendungen leichter erstellen lassen, die über mehrere Partitionen horizontal skaliert werden.
+Azure DocumentDB ist ein Dokumentdatenbankdienst, der Ihnen durch Bereitstellung von Sammlungen mithilfe von [SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) und [REST-APIs](https://msdn.microsoft.com/library/azure/dn781481.aspx) (auch **Sharding** genannt) eine nahtlose Skalierung Ihres Kontos ermöglicht. Um die Entwicklung von partitionierten Anwendungen zu vereinfachen und die Menge der für Partitionierungsaufgaben erforderlichen Codebausteine zu reduzieren, wurden Funktionen in das .NET-, das Node.js- und das Java-SDK eingefügt, mit denen sich Anwendungen leichter erstellen lassen, die über mehrere Partitionen horizontal hochskaliert werden.
 
 In diesem Artikel werden die Klassen und Schnittstellen im .NET SKDK betrachtet, und es wird erläutert, wie Sie diese für die Entwicklung partitionierter Anwendungen verwenden können
 
@@ -131,7 +131,7 @@ Sehen Sie sich das [GitHub-Projekt mit DocumentDB-Partitionierungsbeispielen](ht
 
 Diese Beispiele sind Open-Source-basiert, und wir freuen uns, wenn Sie Pullanforderungen mit Beiträgen senden, von denen andere DocumentDB-Entwickler profitieren können. In den [Anleitungen für Beiträge](https://github.com/Azure/azure-documentdb-net/blob/master/Contributing.md) finden Sie Informationen dazu, wie Sie beitragen können.
 
->[AZURE.NOTE]Die Übertragungsrate bei der Erstellung von Sammlungen ist durch DocumentDB begrenzt, die Durchführung einiger der hier gezeigten Beispielmethoden kann also einige Minuten in Anspruch nehmen.
+>[AZURE.NOTE] Die Übertragungsrate bei der Erstellung von Sammlungen ist durch DocumentDB begrenzt, die Durchführung einiger der hier gezeigten Beispielmethoden kann also einige Minuten in Anspruch nehmen.
 
 ##Häufig gestellte Fragen
 **Warum unterstützt DocumentDB die clientseitige Partitionierung anstelle einer serverseitigen Partitionierung?**
@@ -140,10 +140,6 @@ DocumentDB unterstützt die clientseitige Partitionierung aus verschiedenen Grü
 
 - Es ist für Entwickler sehr schwierig, das Konzept einer Sammlung zu abstrahieren, ohne eine der drei grundlegenden Aspekte zu vernachlässigen: konsistente Indizierung/Abfragen, hohe Verfügbarkeit und ACID-Transaktionsgarantien. 
 - Dokumentendatenbanken erfordern häufig viel Flexibilität hinsichtlich der Definition von Partitionierungsstrategien, eine Voraussetzung, die sich durch einen serverseitigen Ansatz möglicherweise nicht erfüllen lässt. 
-
-**Warum wird die Partitionierung auf anderen Plattformen (Node.js, Java oder Python) nicht unterstützt?**
-
-Die Partitionierungsunterstützung wird, basierend auf dem Feedback der .NET SDK-Kunden, nach und nach auch für andere Plattformen eingeführt.
 
 **Wie füge ich eine Sammlung zu meinem Partitionierungsschema hinzu oder entferne sie daraus?**
 
@@ -164,7 +160,7 @@ Sie können "PartitionResolver" verketten, indem Sie Ihren eigenen "IPartitionRe
 * [DocumentDB .NET SDK-Dokumentation in MSDN](https://msdn.microsoft.com/library/azure/dn948556.aspx)
 * [DocumentDB .NET-Beispiele](https://github.com/Azure/azure-documentdb-net)
 * [DocumentDB-Einschränkungen](documentdb-limits.md)
-* [DocumentDB-Blog mit Leistungstipps](http://azure.microsoft.com/blog/2015/01/20/performance-tips-for-azure-documentdb-part-1-2/)
+* [DocumentDB-Blog mit Leistungstipps](https://azure.microsoft.com/blog/2015/01/20/performance-tips-for-azure-documentdb-part-1-2/)
  
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0204_2016-->

@@ -4,7 +4,7 @@
    services="vpn-gateway"
    documentationCenter="na"
    authors="cherylmc"
-   manager="carolz"
+   manager="carmonm"
    editor=""
    tags="azure-service-management"/>
 
@@ -14,7 +14,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="09/16/2015"
+   ms.date="02/04/2016"
    ms.author="cherylmc"/>
 
 # Zurücksetzen einer Azure VPN Gateway-Instanz mit PowerShell
@@ -54,9 +54,8 @@ Wenn die Verbindung nach dem ersten Neustart nicht wiederhergestellt wird, führ
 
 Wenn nach den beiden Neustarts weiterhin standortübergreifende Konnektivitätsprobleme auftreten, erstellen Sie über das klassische Azure-Portal ein Supportticket, um den Microsoft Azure-Support zu kontaktieren.
 
-
 ## Nächste Schritte
 	
 Weitere Informationen zu diesem Cmdlet finden Sie in der [PowerShell-Referenz](https://msdn.microsoft.com/library/azure/mt270366.aspx).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0211_2016-->

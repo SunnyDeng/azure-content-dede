@@ -2,13 +2,14 @@
 	pageTitle="Anpassen von vorkonfigurierten Lösungen | Microsoft Azure"
 	description="Dieses Dokument bietet eine Anleitung zum Anpassen vorkonfigurierter Azure IoT Suite-Lösungen."
 	services=""
+    suite="iot-suite"
 	documentationCenter=".net"
 	authors="stevehob"
 	manager="timlt"
 	editor=""/>
 
 <tags
-     ms.service="na"
+     ms.service="iot-suite"
      ms.devlang="dotnet"
      ms.topic="article"
      ms.tgt_pltfrm="na"
@@ -30,7 +31,7 @@ Dieser Quellcode wird bereitgestellt, um ein Muster zum Implementieren der Kernf
 
 ## Ändern der vorkonfigurierten Regeln
 
-Die Remoteüberwachungslösung enthält zwei [Azure Stream Analytics](http://azure.microsoft.com/services/stream-analytics)-Aufträge, um die im Dashboard angezeigte Telemetrie- und Alarmlogik zu implementieren.
+Die Remoteüberwachungslösung enthält zwei [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/)-Aufträge, um die im Dashboard angezeigte Telemetrie- und Alarmlogik zu implementieren.
 
 Der erste Auftrag wählt alle Daten aus dem eingehenden Telemetriedatenstrom und erstellt zwei verschiedene Ausgaben. Der Auftrag wird mit **[Lösungsname]-Telemetry** benannt.
 
@@ -41,7 +42,7 @@ Auf der Stream Analytics-Benutzeroberfläche können Sie diese Aufträge direkt 
 
 Der zweite Auftrag bearbeitet die Werte für "Gerät bis Schwellenwert", die auf der Seite **Regeln** der Lösung erstellt werden. Dieser Auftrag verarbeitet den für jedes Gerät festgelegten Schwellenwert als Referenzdaten. Er bestimmt durch Vergleich des Schwellenwerts, ob dieser größer als (`>`) der tatsächliche Wert ist. Sie können diesen Auftrag ändern, um z. B. den Vergleichsoperator zu ändern.
 
-> [AZURE.NOTE]Das Remoteüberwachungs-Dashboard hängt von bestimmten Daten ab. Deshalb kann das Ändern der Aufträge dazu führen, dass das Dashboard fehlschlägt.
+> [AZURE.NOTE] Das Remoteüberwachungs-Dashboard hängt von bestimmten Daten ab. Deshalb kann das Ändern der Aufträge dazu führen, dass das Dashboard fehlschlägt.
 
 ## Hinzufügen eigener Regeln
 
@@ -65,8 +66,8 @@ Die [Azure IoT-SDKs](https://github.com/Azure/azure-iot-sdks) bieten Bibliotheke
 
 ## Nächste Schritte
 
-Weitere Informationen zu IoT-Geräten finden Sie auf der [Azure IoT-Entwicklerwebsite](http://azure.microsoft.com/develop/iot), die entsprechende Links und Dokumente enthält.
+Weitere Informationen zu IoT-Geräten finden Sie auf der [Azure IoT-Entwicklerwebsite](https://azure.microsoft.com/develop/iot/), die entsprechende Links und Dokumente enthält.
 
 [IoT-Geräte-SDK]: https://azure.microsoft.com/documentation/articles/iot-hub-sdks-summary/
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

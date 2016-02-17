@@ -1,6 +1,6 @@
 <properties
    pageTitle="Häufige Ursachen für das zyklische Ausführen von Clouddienstrollen | Microsoft Azure"
-   description="Eine Clouddienstrolle, die plötzlich zyklisch ausgeführt wird, kann zu erheblichen Ausfallzeiten führen. Hier sind einige allgemeine Probleme aufgeführt, die zum zyklischen Ausführen von Rollen führen. Dadurch werden Ausfallzeiten möglicherweise verringert."
+   description="Eine Clouddienstrolle, die plötzlich zyklisch ausgeführt wird, kann zu erheblichen Ausfallzeiten führen. Hier sind einige allgemeine Probleme aufgeführt, die zum zyklischen Ausführen von Rollen führen. Diese können Ihnen dabei helfen, Ausfallzeiten zu verringern."
    services="cloud-services"
    documentationCenter=""
    authors="dalechen"
@@ -18,14 +18,13 @@
 
 # Allgemeine Probleme, durch die Rollen zyklisch ausgeführt werden
 
-Hier sind einige der allgemeinen Ursachen für Bereitstellungsprobleme sowie Tipps zur Problembehandlung aufgeführt, mit denen Sie diese Probleme beheben können. Wenn die Rolleninstanz nicht gestartet wird oder zwischen den Zuständen **initializing**, **busy**, and **stopping** wechselt, weist dies auf ein Problem mit einer Anwendung hin.
+In diesem Artikel sind einige der allgemeinen Ursachen für Bereitstellungsprobleme sowie Tipps zur Problembehandlung aufgeführt, mit denen Sie diese Probleme beheben können. Wenn die Rolleninstanz nicht gestartet wird oder zwischen den Zuständen „Initialisieren“, „Ausgelastet“ und „Beenden“ wechselt, weist dies auf ein Problem mit einer Anwendung hin.
 
 ## Kontaktieren des Azure-Kundensupports
 
-Wenn Sie beim Lesen dieses Artikels feststellen, dass Sie weitere Hilfe benötigen, können Sie Ihre Frage im [MSDN Azure-Forum oder im Stack Overflow-Forum](http://azure.microsoft.com/support/forums/) stellen, um dort Hilfe von Azure-Experten zu erhalten.
+Wenn Sie beim Lesen dieses Artikels feststellen, dass Sie weitere Hilfe benötigen, können Sie Ihre Frage im [MSDN Azure-Forum oder im Stack Overflow-Forum](https://azure.microsoft.com/support/forums/) stellen, um dort Hilfe von Azure-Experten zu erhalten.
 
 Alternativ dazu haben Sie die Möglichkeit, einen Azure-Supportfall zu erstellen. Rufen Sie die [Azure-Support-Website](http://azure.microsoft.com/support/options/) auf, und klicken Sie auf **Support erhalten**. Informationen zur Nutzung von Azure-Support finden Sie unter [Microsoft Azure-Support-FAQ](http://azure.microsoft.com/support/faq/).
-
 
 ## Fehlende Laufzeitabhängigkeiten
 
@@ -35,29 +34,21 @@ Wenn eine Rolle in Ihrer Anwendung auf einer Assembly basiert, die nicht Teil vo
 
 - Vergewissern Sie sich bei der Verwendung von Visual Studio, dass für jede referenzierte Assembly im Projekt, die nicht Teil von Azure SDK oder .NET Framework ist, die Eigenschaft **Lokale Kopie** auf **True** festgelegt ist.
 
-- Stellen Sie sicher, dass die Datei **web.config** Datei nicht auf nicht verwendete Assemblys im **compilation**-Element verweist.
+- Stellen Sie sicher, dass die Datei „web.config“ nicht auf nicht verwendete Assemblys im Element „compilation“ verweist.
 
 - Der **Buildvorgang** jeder CSHTML-Datei ist auf **Inhalt** festgelegt. Dadurch wird sichergestellt, dass die Dateien im Paket ordnungsgemäß angezeigt werden, und das Anzeigen anderer referenzierter Dateien im Paket ermöglicht.
-
-
 
 ## Die Assembly ist auf eine falsche Plattform ausgerichtet.
 
 Azure ist eine 64-Bit-Umgebung. Aus diesem Grund funktionieren für eine 32-Bit-Umgebung kompilierte .NET-Assemblys nicht in Azure.
 
-
-
 ## Eine Rolle löst beim Initialisieren oder Beenden Ausnahmefehler aus.
 
-Von den Methoden der [RoleEntryPoint]-Klasse ausgelöste Ausnahmen sind Ausnahmefehler. Zu diesen Methoden zählen [OnStart], [OnStop], und [Run]. Wenn ein Ausnahmefehler in einer der folgenden Methoden auftritt, wird die Rolle zyklisch ausgeführt. Wenn die Rolle zyklisch ausgeführt wird, wird bei jedem versuchten Start möglicherweise ein Ausnahmefehler ausgelöst.
-
+Von den Methoden der [RoleEntryPoint]-Klasse ausgelöste Ausnahmen sind Ausnahmefehler. Zu diesen Methoden zählen [OnStart], [OnStop] und [Run]. Wenn ein Ausnahmefehler in einer der folgenden Methoden auftritt, wird die Rolle zyklisch ausgeführt. Wenn die Rolle zyklisch ausgeführt wird, wird bei jedem versuchten Start möglicherweise ein Ausnahmefehler ausgelöst.
 
 ## Die Rolle wird von der Run-Methode reaktiviert.
 
 Die Methode [Run] ist für die Ausführung auf unbestimmte Zeit ausgelegt. Wenn Ihr Code die [Run]-Methode außer Kraft setzt, sollte sie sich für unbegrenzte Zeit im Ruhezustand befinden. Wird die [Run]-Methode jedoch reaktiviert, wird die Rolle zyklisch ausgeführt.
-
-
-
 
 ## Falsche DiagnosticsConnectionString-Einstellung
 
@@ -67,19 +58,15 @@ Wenn die Anwendung die Azure-Diagnose verwendet, muss Ihre Dienstkonfigurationsd
 
 - Die Einstellung `DiagnosticsConnectionString` verweist auf ein gültiges Speicherkonto in Azure. Standardmäßig verweist diese Einstellung auf das emulierte Speicherkonto. Daher müssen Sie diese Einstellung explizit ändern, bevor Sie das Anwendungspaket bereitstellen. Wenn Sie diese Einstellung nicht ändern, wird eine Ausnahme ausgelöst, wenn die Rolleninstanz versucht, den Diagnosemonitor zu starten. Dies kann dazu führen, dass die Rolleninstanz unbegrenzt zyklisch ausgeführt wird.
 
-- Die Verbindungszeichenfolge wird im folgenden [Format](../storage/storage-configure-connection-string.md) angegeben (das Protokoll muss als HTTPS angegeben werden). Ersetzen Sie *MyAccountName* durch den Namen Ihres Speicherkontos und *MyAccountKey* durch den Zugriffsschlüssel:
+- Die Verbindungszeichenfolge wird in folgendem [Format](../storage/storage-configure-connection-string.md) angegeben. (Das Protokoll muss als HTTPS angegeben werden.) Ersetzen Sie *MyAccountName* durch den Namen Ihres Speicherkontos und *MyAccountKey* durch den Zugriffsschlüssel:
 
         DefaultEndpointsProtocol=https;AccountName=MyAccountName;AccountKey=MyAccountKey
 
   Wenn Sie Ihre Anwendung mit den Azure-Tools für Microsoft Visual Studio entwickeln, können Sie diesen Wert mithilfe der [Eigenschaftenseiten](https://msdn.microsoft.com/library/ee405486) festlegen.
 
-
-
 ## Das exportierte Zertifikat enthält keinen privaten Schlüssel.
 
-Um eine Webrolle unter SSL auszuführen, müssen Sie sicherstellen, dass das exportierte Verwaltungszertifikat den privaten Schlüssel enthält. Wenn Sie zum Exportieren des Zertifikats den *Windows-Zertifikat-Manager* verwenden, aktivieren Sie unbedingt die Option *Ja, privaten Schlüssel exportieren*. Das Zertifikat muss im PFX-Format exportiert werden. Dies ist das einzige derzeit unterstützte Format.
-
-
+Um eine Webrolle unter SSL auszuführen, müssen Sie sicherstellen, dass das exportierte Verwaltungszertifikat den privaten Schlüssel enthält. Wenn Sie zum Exportieren des Zertifikats den *Windows-Zertifikat-Manager* verwenden, aktivieren Sie für die Option **Privaten Schlüssel exportieren** unbedingt **Ja**. Das Zertifikat muss im PFX-Format exportiert werden. Dies ist das einzige derzeit unterstützte Format.
 
 ## Nächste Schritte
 
@@ -95,4 +82,4 @@ Informieren Sie sich in der [Blogreihe von Kevin Williamson](http://blogs.msdn.c
 [OnStop]: https://msdn.microsoft.com/library/microsoft.windowsazure.serviceruntime.roleentrypoint.onstop.aspx
 [Run]: https://msdn.microsoft.com/library/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0204_2016-->

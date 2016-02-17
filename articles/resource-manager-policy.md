@@ -327,4 +327,4 @@ Zum Anzeigen aller Ereignisse, die mit dem Überwachungseffekt in Verbindung ste
     Get-AzureRmLog | where {$_.OperationName -eq "Microsoft.Authorization/policies/audit/action"} 
     
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/19/2016"
+	ms.date="02/01/2016"
 	ms.author="cabailey"/>
 #Gewusst wie: Generieren und Übertragen von HSM-geschützten Schlüsseln für den Azure-Schlüsseltresor
 
@@ -25,7 +25,7 @@ Verwenden Sie die Informationen in diesem Thema zum Planen, Generieren und ansch
 
 Diese Funktion für Azure China nicht zur Verfügung.
 
->[AZURE.NOTE]Weitere Informationen zum Azure-Schlüsseltresor finden Sie unter [Was ist der Azure-Schlüsseltresor?](key-vault-whatis.md).
+>[AZURE.NOTE] Weitere Informationen zum Azure-Schlüsseltresor finden Sie unter [Was ist der Azure-Schlüsseltresor?](key-vault-whatis.md).
 >
 >Ein Lernprogramm zu den ersten Schritten, z. B. der Erstellung eines Schlüsseltresors für HSM-geschützte Schlüssel, finden Sie unter [Erste Schritte mit dem Azure-Schlüsseltresor](key-vault-get-started.md).
 
@@ -217,6 +217,8 @@ Führen Sie den folgenden Befehl aus, um den Schlüssel zu generieren:
 
 Gehen Sie wie folgt vor, wenn Sie diesen Befehl ausführen:
 
+- Der Parameter *protect* muss, wie gezeigt, auf den Wert **module** gesetzt werden. So wird ein modulgeschützter Schlüssel erstellt. Das BYOK-Toolset unterstützt OCS-geschützte Schlüssel nicht.
+
 - Ersetzen Sie den Wert von *contosokey* für **ident** und **plainname** durch einen beliebigen Zeichenfolgenwert. Um den Verwaltungsaufwand zu minimieren und das Fehlerrisiko zu senken, empfehlen wir, jeweils den gleichen Wert zu verwenden. Der Wert **Ident** darf nur Zahlen, Bindestriche und Kleinbuchstaben enthalten.
 
 - „pubexp“ wird in diesem Beispiel leer gelassen (Standard), aber Sie können bestimmte Werte angeben. Weitere Informationen finden Sie in der Thales-Dokumentation.
@@ -225,7 +227,7 @@ Mit diesem Befehl wird im Ordner "%NFAST\_KMDATA%\\local" eine Tokenschlüsselda
 
 Sichern Sie diese Tokenschlüsseldatei an einem sicheren Ort.
 
->[AZURE.IMPORTANT]Wenn Sie Ihren Schlüssel später in den Azure-Schlüsseltresor übertragen, kann Microsoft diesen Schlüssel nicht für Sie zurück exportieren. Daher ist es sehr wichtig, dass Sie Ihren Schlüssel und die Security World sorgfältig sichern. Informationen und bewährte Methoden zum Sichern des Schlüssels erhalten Sie bei Thales.
+>[AZURE.IMPORTANT] Wenn Sie Ihren Schlüssel später in den Azure-Schlüsseltresor übertragen, kann Microsoft diesen Schlüssel nicht für Sie zurück exportieren. Daher ist es sehr wichtig, dass Sie Ihren Schlüssel und die Security World sorgfältig sichern. Informationen und bewährte Methoden zum Sichern des Schlüssels erhalten Sie bei Thales.
 
 Sie können Ihren Schlüssel jetzt an den Azure-Schlüsseltresor übertragen.
 
@@ -330,4 +332,4 @@ Wenn der Upload erfolgreich ist, werden die Eigenschaften des gerade hinzugefüg
 
 Sie können diesen HSM-geschützten Schlüssel jetzt in Ihrem Schlüsseltresor verwenden. Weitere Informationen finden Sie im Abschnitt **Verwenden eines Hardwaresicherheitsmoduls (HSM)** im Lernprogramm [Erste Schritte mit dem Azure-Schlüsseltresor](key-vault-get-started.md).
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0204_2016-->

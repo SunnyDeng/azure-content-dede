@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="01/20/2016"
+   ms.date="02/01/2016"
    ms.author="jonor;sivae"/>
 
 # Beispiel 3: Erstellen einer DMZ zum Schutz von Netzwerken mit Firewall, UDR und NSG
@@ -80,7 +80,7 @@ Wenn die Routingtabelle zwei identische Präfixe aufweist, gilt folgende Präfer
 2.	"VPNGateway" = Eine dynamische Route (BGP bei Verwendung in Hybridnetzwerken), die durch ein dynamisches Netzwerkprotokoll hinzugefügt wurde. Diese Routen können sich im Lauf der Zeit ändern, da das dynamische Protokoll Änderungen im Peernetzwerk automatisch widerspiegelt.
 3.	"Default" = Die Systemrouten, das lokale VNet und die statischen Einträge, wie in der Routingtabelle oben gezeigt.
 
->[AZURE.NOTE]Aufgrund der Komplexität des dynamischen Routings im Azure-Gateway gelten für das benutzerdefinierte Routing (User Defined Routing, UDR) und ExpressRoute Einschränkungen. Auf Subnetze, die mit dem Azure-Gateway kommunizieren, das die ExpressRoute-Verbindung bereitstellt, sollte kein UDR angewendet werden. Darüber hinaus kann das Azure-Gateway nicht als NextHop-Gerät für andere UDR-gebundene Subnetze fungieren. Die Möglichkeit zur vollständigen Integration von UDR und ExpressRoute ist für eine spätere Azure-Version geplant.
+>[AZURE.NOTE] Aufgrund der Komplexität des dynamischen Routings im Azure-Gateway gelten für das benutzerdefinierte Routing (User Defined Routing, UDR) und ExpressRoute Einschränkungen. Auf Subnetze, die mit dem Azure-Gateway kommunizieren, das die ExpressRoute-Verbindung bereitstellt, sollte kein UDR angewendet werden. Darüber hinaus kann das Azure-Gateway nicht als NextHop-Gerät für andere UDR-gebundene Subnetze fungieren. Die Möglichkeit zur vollständigen Integration von UDR und ExpressRoute ist für eine spätere Azure-Version geplant.
 
 #### Erstellen der lokalen Routen
 
@@ -139,7 +139,7 @@ Die IP-Weiterleitung ist eine begleitende Funktion für das benutzerdefinierte R
 
 Ein Beispiel: Wenn Datenverkehr aus AppVM01 eine Anforderung an den Server DNS01 sendet, leitet UDR diese Anforderung an die Firewall weiter. Wenn die IP-Weiterleitung aktiviert ist, wird Datenverkehr für das Ziel DNS01 (10.0.2.4) vom Gerät (10.0.0.4) akzeptiert und dann an das endgültige Ziel (10.0.2.4) weitergeleitet. Ist die IP-Weiterleitung in der Firewall nicht aktiviert, wird der Datenverkehr vom Gerät nicht akzeptiert, selbst wenn in der Routingtabelle die Firewall als nächster Hop angegeben ist.
 
->[AZURE.IMPORTANT]Es wichtig, die IP-Weiterleitung zusammen mit dem benutzerdefinierten Routing zu aktivieren.
+>[AZURE.IMPORTANT] Es wichtig, die IP-Weiterleitung zusammen mit dem benutzerdefinierten Routing zu aktivieren.
 
 Die Einrichtung der IP-Weiterleitung erfolgt über einen einzigen Befehl und kann während der Erstellung des virtuellen Computers ausgeführt werden. In diesem Beispiel befindet sich der Codeausschnitt am Ende des Skripts und ist mit den UDR-Befehlen gruppiert:
 
@@ -179,7 +179,7 @@ In der Firewall müssen Weiterleitungsregeln erstellt werden. Da die Firewall s�
  
 ![Logische Ansicht der Firewallregeln][2]
 
->[AZURE.NOTE]Je nach verwendetem virtuellem Netzwerkgerät variieren die Verwaltungsports. In diesem Beispiel wird auf eine Barracuda NG Firewall verwiesen, die die Ports 22, 801 und 807 verwendet. Informationen dazu, über welche Ports das verwendete Gerät genau verwaltet wird, finden Sie in der Dokumentation des Geräteanbieters.
+>[AZURE.NOTE] Je nach verwendetem virtuellem Netzwerkgerät variieren die Verwaltungsports. In diesem Beispiel wird auf eine Barracuda NextGen-Firewall verwiesen, die die Ports 22, 801 und 807 verwendet. Informationen dazu, über welche Ports das verwendete Gerät genau verwaltet wird, finden Sie in der Dokumentation des Geräteanbieters.
 
 ### Beschreibung der logischen Regel
 Im oben gezeigten logischen Diagramm wird das Sicherheitssubnetz nicht angezeigt, da die Firewall die einzige Ressource in diesem Subnetz ist. Dieses Diagramm zeigt die Firewallregeln und die Art und Weise, wie diese Datenverkehrsflüsse logisch zulassen oder ablehnen. Das Diagramm zeigt nicht den tatsächlichen Weiterleitungspfad. Die für den RDP-Datenverkehr ausgewählten externen Ports liegen in einem höheren Bereich (8014-8026) und wurden zur Anpassung an die letzten beiden Oktette der lokalen IP-Adresse ausgewählt, um die Lesbarkeit zu vereinfachen (die lokale Serveradresse 10.0.1.4 ist beispielsweise Port 8014 zugeordnet). Es können jedoch auch Ports mit einer höheren Nummer ausgewählt werden, wenn sie keine Konflikte verursachen.
@@ -199,16 +199,16 @@ In diesem Beispiel werden 7 Arten von Regeln benötigt, die wie folgt beschrieb
 - Ausfallsicherheitsregel (für Datenverkehr, für den keine der obigen Regeln gilt):
   7.	Regel zum Ablehnen jeglichen Datenverkehrs: Dies sollte (hinsichtlich der Priorität) die letzte Regel sein. Sollte ein Datenverkehrsfluss keiner der vorherigen Regeln entsprechen, wird er durch diese Regel verworfen. Dies ist eine Standardregel, die üblicherweise aktiviert ist. Im Allgemeinen sind keine Änderungen erforderlich.
 
->[AZURE.TIP]In Bezug auf die zweite Anwendungsdatenverkehrsregel ist in diesem Beispiel einfachheitshalber jeder Port zulässig. In einem realen Szenario sollten die spezifischsten Port- und Adressbereiche verwendet werden, um die Angriffsfläche dieser Regel zu reduzieren.
+>[AZURE.TIP] In Bezug auf die zweite Anwendungsdatenverkehrsregel ist in diesem Beispiel einfachheitshalber jeder Port zulässig. In einem realen Szenario sollten die spezifischsten Port- und Adressbereiche verwendet werden, um die Angriffsfläche dieser Regel zu reduzieren.
 
 <br />
 
->[AZURE.IMPORTANT]Nachdem alle oben genannten Regeln erstellt wurden, ist es wichtig, die Priorität jeder einzelnen Regel zu prüfen, um sicherzustellen, dass der Datenverkehr wie gewünscht zugelassen oder abgelehnt wird. In diesem Beispiel wurden die Regeln nach Priorität geordnet. Es kann leicht passieren, aufgrund einer falschen Reihenfolge der Regeln von der Firewall ausgesperrt zu werden. Stellen Sie auf jeden Fall sicher, dass die Verwaltung der Firewall selbst immer die Regel mit der höchsten Priorität ist.
+>[AZURE.IMPORTANT] Nachdem alle oben genannten Regeln erstellt wurden, ist es wichtig, die Priorität jeder einzelnen Regel zu prüfen, um sicherzustellen, dass der Datenverkehr wie gewünscht zugelassen oder abgelehnt wird. In diesem Beispiel wurden die Regeln nach Priorität geordnet. Es kann leicht passieren, aufgrund einer falschen Reihenfolge der Regeln von der Firewall ausgesperrt zu werden. Stellen Sie auf jeden Fall sicher, dass die Verwaltung der Firewall selbst immer die Regel mit der höchsten Priorität ist.
 
 ### Voraussetzungen für Regeln
 Eine Voraussetzung für den virtuellen Computer, auf dem die Firewall ausgeführt wird, sind öffentliche Endpunkte. Damit die Firewall Datenverkehr verarbeiten kann, müssen die entsprechenden Endpunkte offen sein. Es gibt drei Arten von Datenverkehr in diesem Beispiel: 1. Verwaltungsdatenverkehr zur Steuerung der Firewall und Firewallregeln. 2. RDP-Datenverkehr zur Steuerung der Windows-Server. 3. Anwendungsdatenverkehr. Diese werden in den drei Kategorien für den Datenverkehr in der oberen Hälfte der logischen Ansicht für die oben erläuterten Firewallregeln angezeigt.
 
->[AZURE.IMPORTANT]An dieser Stelle muss daran erinnert werden, dass **sämtlicher** Datenverkehr durch die Firewall geleitet wird. Um also eine Remotedesktopverbindung mit dem IIS01-Server herzustellen – selbst wenn dieser sich im Front-End-Clouddienst und im Front-End-Subnetz befindet –, ist für den Zugriff auf diesen Server eine RDP-Verbindung mit der Firewall über Port 8014 erforderlich. Anschließend muss der Firewall ermöglicht werden, die RDP-Anforderung intern an den RDP-Port auf IIS01 weiterzuleiten. Die Schaltfläche "Verbinden" im Azure-Portal funktioniert hier nicht, da es keinen direkten RDP-Pfad zu IIS01 gibt (zumindest nicht für das Portal). Dies bedeutet, dass alle Verbindungen aus dem Internet an den Sicherheitsdienst und einen Port, z. B. secscv001.cloudapp.net:xxxx, weitergeleitet werden (Informationen zur Zuordnung zwischen externem Port und interner IP-Adresse und internem Port finden Sie in obigem Diagramm).
+>[AZURE.IMPORTANT] An dieser Stelle muss daran erinnert werden, dass **sämtlicher** Datenverkehr durch die Firewall geleitet wird. Um also eine Remotedesktopverbindung mit dem IIS01-Server herzustellen – selbst wenn dieser sich im Front-End-Clouddienst und im Front-End-Subnetz befindet –, ist für den Zugriff auf diesen Server eine RDP-Verbindung mit der Firewall über Port 8014 erforderlich. Anschließend muss der Firewall ermöglicht werden, die RDP-Anforderung intern an den RDP-Port auf IIS01 weiterzuleiten. Die Schaltfläche "Verbinden" im Azure-Portal funktioniert hier nicht, da es keinen direkten RDP-Pfad zu IIS01 gibt (zumindest nicht für das Portal). Dies bedeutet, dass alle Verbindungen aus dem Internet an den Sicherheitsdienst und einen Port, z. B. secscv001.cloudapp.net:xxxx, weitergeleitet werden (Informationen zur Zuordnung zwischen externem Port und interner IP-Adresse und internem Port finden Sie in obigem Diagramm).
 
 Ein Endpunkt kann entweder zum Zeitpunkt der VM-Erstellung oder danach geöffnet werden, wie im Beispielskript erfolgt und im Codeausschnitt unten gezeigt (Hinweis: Jedes Element, das mit einem Dollarzeichen beginnt, wie etwa $VMName[$i], ist eine benutzerdefinierte Variable aus dem Skript im Referenzabschnitt dieses Dokuments. Die in Klammern stehenden Zeichen [$i] stellen die Arraynummer eines bestimmten virtuellen Computers in einem VM-Array dar):
 
@@ -246,7 +246,7 @@ Die Werte können bearbeitet werden, um den RDP-Dienst für einen bestimmten Ser
  
 Wiederholen Sie den Prozess, um die RDP-Dienste für die anderen Server zu erstellen: AppVM02, DNS01 und IIS01. Durch diese Dienste wird die Erstellung von Regeln im nächsten Abschnitt einfacher und klarer.
 
->[AZURE.NOTE]Aus zwei Gründen wird kein RDP-Dienst für die Firewall benötigt: 1. die Firewall-VM ist ein Linux-basiertes Image, zur VM-Verwaltung würde also SSH anstatt RDP auf Port 22 verwendet. 2. Port 22 sowie zwei weitere Verwaltungsports sind in der ersten oben beschriebenen Verwaltungsregel zulässig, um Verbindungen zum Zweck der Verwaltung zu ermöglichen.
+>[AZURE.NOTE] Aus zwei Gründen wird kein RDP-Dienst für die Firewall benötigt: 1. die Firewall-VM ist ein Linux-basiertes Image, zur VM-Verwaltung würde also SSH anstatt RDP auf Port 22 verwendet. 2. Port 22 sowie zwei weitere Verwaltungsports sind in der ersten oben beschriebenen Verwaltungsregel zulässig, um Verbindungen zum Zweck der Verwaltung zu ermöglichen.
 
 ### Erstellen von Firewallregeln
 In diesem Beispiel werden drei Arten von Firewallregeln verwendet, die jeweils unterschiedliche Symbole aufweisen:
@@ -265,11 +265,11 @@ Nachdem Regeln erstellt und/oder bearbeitet wurden, müssen sie an die Firewall 
 
 Die Einzelheiten zu allen Regeln, die für dieses Beispiel erforderlich sind, werden im Folgenden beschrieben:
 
-- **Firewallverwaltungsregel**: Diese Regel zur Anwendungsumleitung ermöglicht die Weiterleitung von Datenverkehr an die Verwaltungsports des virtuellen Netzwerkgeräts, bei dem es sich in diesem Fall um eine Barracuda NG-Firewall handelt. Die Verwaltungsports lauten 801, 807 und optional 22. Die externen und internen Ports sind die gleichen (d. h. es findet keine Portübersetzung statt). Bei dieser Regel, SETUP-MGMT-ACCESS, handelt es sich um eine Standardregel, die standardmäßig aktiviert ist (in Barracuda NG Firewall, Version 6.1).
+- **Firewallverwaltungsregel**: Diese Regel zur Anwendungsumleitung ermöglicht die Weiterleitung von Datenverkehr an die Verwaltungsports des virtuellen Netzwerkgeräts, bei dem es sich in diesem Fall um eine Barracuda NextGen-Firewall handelt. Die Verwaltungsports lauten 801, 807 und optional 22. Die externen und internen Ports sind die gleichen (d. h. es findet keine Portübersetzung statt). Bei dieser Regel, SETUP-MGMT-ACCESS, handelt es sich um eine Standardregel, die standardmäßig aktiviert ist (in Barracuda NextGen Firewall, Version 6.1).
 
 	![Firewallverwaltungsregel][10]
 
->[AZURE.TIP]Der Quelladressraum in dieser Regel lautet "Any", wenn die IP-Verwaltungsadressbereiche bekannt sind. Eine Verkleinerung dieses Bereichs würde auch die Angriffsfläche der Verwaltungsports verringern.
+>[AZURE.TIP] Der Quelladressraum in dieser Regel lautet "Any", wenn die IP-Verwaltungsadressbereiche bekannt sind. Eine Verkleinerung dieses Bereichs würde auch die Angriffsfläche der Verwaltungsports verringern.
 
 - **RDP-Regeln**: Diese Ziel-NAT-Regeln ermöglichen die Verwaltung der einzelnen Server über RDP. Zum Erstellen dieser Regel sind vier wichtige Felder erforderlich:
   1.	Source: Um eine Verwaltung per RDP von einem beliebigen Standort aus zu ermöglichen, wird im Feld "Source" der Verweis "Any" verwendet.
@@ -288,7 +288,7 @@ Die Einzelheiten zu allen Regeln, die für dieses Beispiel erforderlich sind, we
     | RDP-to-AppVM01 | AppVM01 | AppVM01 RDP | 10\.0.2.5:3389 |
     | RDP-to-AppVM02 | AppVM02 | AppVm02 RDP | 10\.0.2.6:3389 |
   
->[AZURE.TIP]Indem Sie den Bereich in den Feldern "Source" und "Service" verkleinern, verringern Sie die Angriffsfläche. Es sollte der kleinste Bereich verwendet werden, der eine ordnungsgemäße Funktionsweise sicherstellt.
+>[AZURE.TIP] Indem Sie den Bereich in den Feldern "Source" und "Service" verkleinern, verringern Sie die Angriffsfläche. Es sollte der kleinste Bereich verwendet werden, der eine ordnungsgemäße Funktionsweise sicherstellt.
 
 - **Regeln für den Anwendungsdatenverkehr**: Es gibt zwei Regeln für den Anwendungsdatenverkehr, eine für den Datenverkehr im Front-End, eine für den Datenverkehr im Back-End (z. B. vom Webserver zur Datenebene). Diese Regeln richten sich nach der Netzwerkarchitektur (der Platzierung Ihrer Server) und dem Datenverkehrsfluss (Richtung des Datenverkehrs und verwendete Ports).
 
@@ -312,13 +312,13 @@ Die Einzelheiten zu allen Regeln, die für dieses Beispiel erforderlich sind, we
 
 	**Hinweis**: Das Quellnetzwerk in dieser Regel kann jede Ressource im Front-End-Subnetz sein. Wenn es nur einen oder eine bekannte Anzahl von Webservern gibt, kann eine Netzwerkobjektressource zum Angeben der genauen IP-Adressen dieser Server anstelle des gesamten Front-End-Subnetzes verwendet werden.
 
->[AZURE.TIP]Diese Regel verwendet den Dienst "Any", um die Einrichtung und Verwendung der Beispielanwendung zu vereinfachen. Dies ermöglicht auch ICMPv4 (Ping) in einer einzigen Regel. Dies ist jedoch kein empfohlenes Verfahren. Die Ports und Protokolle ("Services") sollten auf das Mindestmaß reduziert werden, mit dem ein Anwendungsbetrieb möglich ist, um die Angriffsfläche an dieser Grenze zu verringern.
+>[AZURE.TIP] Diese Regel verwendet den Dienst "Any", um die Einrichtung und Verwendung der Beispielanwendung zu vereinfachen. Dies ermöglicht auch ICMPv4 (Ping) in einer einzigen Regel. Dies ist jedoch kein empfohlenes Verfahren. Die Ports und Protokolle ("Services") sollten auf das Mindestmaß reduziert werden, mit dem ein Anwendungsbetrieb möglich ist, um die Angriffsfläche an dieser Grenze zu verringern.
 
 <br />
 
->[AZURE.TIP]Obwohl in dieser Regel ein Verweis auf ein explizites Ziel verwendet wird, sollte für die gesamte Firewallkonfiguration ein konsistenter Ansatz zur Anwendung kommen. Es empfiehlt sich, in der gesamten Konfiguration ein benanntes Netzwerkobjekt zu verwenden, um die Lesbarkeit und Unterstützung zu vereinfachen. Das explizite Ziel wird hier nur zur Demonstration einer alternativen Verweismethode verwendet und wird (insbesondere in komplexen Konfigurationen) nicht allgemein empfohlen.
+>[AZURE.TIP] Obwohl in dieser Regel ein Verweis auf ein explizites Ziel verwendet wird, sollte für die gesamte Firewallkonfiguration ein konsistenter Ansatz zur Anwendung kommen. Es empfiehlt sich, in der gesamten Konfiguration ein benanntes Netzwerkobjekt zu verwenden, um die Lesbarkeit und Unterstützung zu vereinfachen. Das explizite Ziel wird hier nur zur Demonstration einer alternativen Verweismethode verwendet und wird (insbesondere in komplexen Konfigurationen) nicht allgemein empfohlen.
 
-- **Regel für ausgehenden Datenverkehr zum Internet**: Mit dieser Übergaberegel kann Datenverkehr aus jedem Quellnetzwerk an die ausgewählten Zielnetzwerke übergeben werden. Diese Regel ist üblicherweise standardmäßig in der Barracuda NG Firewall vorhanden, jedoch deaktiviert. Klicken Sie mit der rechten Maustaste auf diese Regel, um den Befehl zum Aktivieren der Regel aufzurufen. Die hier gezeigte Regel wurde bearbeitet, um die beiden lokalen Subnetze hinzuzufügen, die in diesem Dokument im Abschnitt zu Voraussetzungen als Verweise auf das Quellattribut dieser Regel erstellt wurden.
+- **Regel für ausgehenden Datenverkehr zum Internet**: Mit dieser Übergaberegel kann Datenverkehr aus jedem Quellnetzwerk an die ausgewählten Zielnetzwerke übergeben werden. Diese Regel ist üblicherweise standardmäßig in der Barracuda NextGen-Firewall vorhanden, jedoch deaktiviert. Klicken Sie mit der rechten Maustaste auf diese Regel, um den Befehl zum Aktivieren der Regel aufzurufen. Die hier gezeigte Regel wurde bearbeitet, um die beiden lokalen Subnetze hinzuzufügen, die in diesem Dokument im Abschnitt zu Voraussetzungen als Verweise auf das Quellattribut dieser Regel erstellt wurden.
 
 	![Ausgehende Firewallregel][14]
 
@@ -338,7 +338,7 @@ Die Einzelheiten zu allen Regeln, die für dieses Beispiel erforderlich sind, we
 
 	![Firewallregel "Alle ablehnen"][17]
 
->[AZURE.IMPORTANT]Nachdem alle oben genannten Regeln erstellt wurden, ist es wichtig, die Priorität jeder einzelnen Regel zu prüfen, um sicherzustellen, dass der Datenverkehr wie gewünscht zugelassen oder abgelehnt wird. In diesem Beispiel befinden sich die Regeln im Barracuda-Verwaltungsclient in der Hauptanzeige der Weiterleitungsregeln in der gewünschten Reihenfolge.
+>[AZURE.IMPORTANT] Nachdem alle oben genannten Regeln erstellt wurden, ist es wichtig, die Priorität jeder einzelnen Regel zu prüfen, um sicherzustellen, dass der Datenverkehr wie gewünscht zugelassen oder abgelehnt wird. In diesem Beispiel befinden sich die Regeln im Barracuda-Verwaltungsclient in der Hauptanzeige der Weiterleitungsregeln in der gewünschten Reihenfolge.
 
 ## Regelaktivierung
 Nachdem der Regelsatz gemäß den Angaben des logischen Diagramms geändert wurde, muss er auf die Firewall hochgeladen und dann aktiviert werden.
@@ -350,7 +350,7 @@ In der oberen rechten Ecke des Verwaltungsclients befinden sich verschiedene Sch
 Mit der Aktivierung des Firewallregelsatzes ist die Erstellung dieser Beispielumgebung abgeschlossen.
 
 ## Datenverkehrsszenarien
->[AZURE.IMPORTANT]An dieser Stelle muss daran erinnert werden, dass **sämtlicher** Datenverkehr durch die Firewall geleitet wird. Um also eine Remotedesktopverbindung mit dem IIS01-Server herzustellen – selbst wenn dieser sich im Front-End-Clouddienst und im Front-End-Subnetz befindet –, ist für den Zugriff auf diesen Server eine RDP-Verbindung mit der Firewall über Port 8014 erforderlich. Anschließend muss der Firewall ermöglicht werden, die RDP-Anforderung intern an den RDP-Port auf IIS01 weiterzuleiten. Die Schaltfläche "Verbinden" im Azure-Portal funktioniert hier nicht, da es keinen direkten RDP-Pfad zu IIS01 gibt (zumindest nicht für das Portal). Dies bedeutet, dass alle Verbindungen aus dem Internet an den Sicherheitsdienst und einen Port, z. B. secscv001.cloudapp.net:xxxx, weitergeleitet werden.
+>[AZURE.IMPORTANT] An dieser Stelle muss daran erinnert werden, dass **sämtlicher** Datenverkehr durch die Firewall geleitet wird. Um also eine Remotedesktopverbindung mit dem IIS01-Server herzustellen – selbst wenn dieser sich im Front-End-Clouddienst und im Front-End-Subnetz befindet –, ist für den Zugriff auf diesen Server eine RDP-Verbindung mit der Firewall über Port 8014 erforderlich. Anschließend muss der Firewall ermöglicht werden, die RDP-Anforderung intern an den RDP-Port auf IIS01 weiterzuleiten. Die Schaltfläche "Verbinden" im Azure-Portal funktioniert hier nicht, da es keinen direkten RDP-Pfad zu IIS01 gibt (zumindest nicht für das Portal). Dies bedeutet, dass alle Verbindungen aus dem Internet an den Sicherheitsdienst und einen Port, z. B. secscv001.cloudapp.net:xxxx, weitergeleitet werden.
 
 Für diese Szenarien sollten folgende Firewallregeln eingerichtet sein:
 
@@ -546,7 +546,7 @@ Dieses Skript führt basierend auf den benutzerdefinierten Variablen Folgendes a
 
 Dieses PowerShell-Skript sollte lokal auf einem mit dem Internet verbundenen PC oder Server ausgeführt werden.
 
->[AZURE.IMPORTANT]Während der Ausführung des Skripts werden in PowerShell möglicherweise Warnungen oder Informationsmeldungen angezeigt. Nur in Rot angezeigte Fehlermeldungen müssen genauer beachtet und ggf. gelöst werden.
+>[AZURE.IMPORTANT] Während der Ausführung des Skripts werden in PowerShell möglicherweise Warnungen oder Informationsmeldungen angezeigt. Nur in Rot angezeigte Fehlermeldungen müssen genauer beachtet und ggf. gelöst werden.
 
 	<# 
 	 .SYNOPSIS
@@ -557,7 +557,7 @@ Dieses PowerShell-Skript sollte lokal auf einem mit dem Internet verbundenen PC 
 	   - A default storage account for VM disks
 	   - Three new cloud services
 	   - Three Subnets (SecNet, FrontEnd, and BackEnd subnets)
-	   - A Network Virtual Appliance (NVA), in this case a Barracuda NG Firewall
+	   - A Network Virtual Appliance (NVA), in this case a Barracuda NextGen Firewall
 	   - One server on the FrontEnd Subnet
 	   - Three Servers on the BackEnd Subnet
 	   - IP Forwading from the FireWall out to the internet
@@ -627,7 +627,7 @@ Dieses PowerShell-Skript sollte lokal auf einem mit dem Internet verbundenen PC 
 	
 	  # VM Base Disk Image Details
 	    $SrvImg = Get-AzureVMImage | Where {$_.ImageFamily -match 'Windows Server 2012 R2 Datacenter'} | sort PublishedDate -Descending | Select ImageName -First 1 | ForEach {$_.ImageName}
-	    $FWImg = Get-AzureVMImage | Where {$_.ImageFamily -match 'Barracuda NG Firewall'} | sort PublishedDate -Descending | Select ImageName -First 1 | ForEach {$_.ImageName}
+	    $FWImg = Get-AzureVMImage | Where {$_.ImageFamily -match 'Barracuda NextGen Firewall'} | sort PublishedDate -Descending | Select ImageName -First 1 | ForEach {$_.ImageName}
 	
 	  # UDR Details
 	    $FERouteTableName = "FrontEndSubnetRouteTable"
@@ -941,4 +941,4 @@ Wenn Sie eine Beispielanwendung für dieses und weitere DMZ-Beispiele installier
 [HOME]: ../best-practices-network-security.md
 [SampleApp]: ./virtual-networks-sample-app.md
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0204_2016-->

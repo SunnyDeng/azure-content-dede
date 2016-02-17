@@ -24,10 +24,10 @@ Wenn Sie über ein Azure-Abonnement verfügen, können Sie [Azure RemoteApp für
 
 Im Testmodus können Sie zwei Sammlungen mit jeweils maximal 10 Benutzern erstellen. Es gibt keine anderen Einschränkungen. Sie können Ihre Testversion jederzeit in ein bezahltes Abonnement umwandeln. Nach 30 Tagen werden Ihre Sammlungen deaktiviert, wenn Sie nicht zum bezahlten Abonnement wechseln.
 
->[AZURE.NOTE]Die Azure-SLA betrifft keine Sammlungen, die im Testmodus erstellt wurden.
+>[AZURE.NOTE] Die Azure-SLA betrifft keine Sammlungen, die im Testmodus erstellt wurden.
 
-Sie möchten nicht warten? Sehen Sie sich ein kurzes Video zum [Erstellen einer Cloudbereitstellung](http://azure.microsoft.com/documentation/videos/azure-remoteapp-cloud-deployment-overview/) an.
+Sie möchten nicht warten? Sehen Sie sich ein kurzes Video zum [Erstellen einer Cloudbereitstellung](https://azure.microsoft.com/documentation/videos/azure-remoteapp-cloud-deployment-overview/) an.
 
-Sie haben Fragen oder Anmerkungen? Stellen Sie Fragen in [den Diskussionsforen](http://feedback.azure.com/forums/247748-azure-remoteapp). Wenn Sie über einen [Azure-Supportplan](http://azure.microsoft.com/support/plans/) verfügen, können Sie eine Supportanfrage einreichen. In unserem [Feedbackforum](http://feedback.azure.com/forums/247748-azure-remoteapp) kann jede Person Feedback abgeben.
+Sie haben Fragen oder Anmerkungen? Stellen Sie Fragen in [den Diskussionsforen](https://feedback.azure.com/forums/247748-azure-remoteapp/). Wenn Sie über einen [Azure-Supportplan](https://azure.microsoft.com/support/plans/) verfügen, können Sie eine Supportanfrage einreichen. In unserem [Feedbackforum](https://feedback.azure.com/forums/247748-azure-remoteapp/) kann jede Person Feedback abgeben.
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

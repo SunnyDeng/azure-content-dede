@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="multiple"
-   ms.date="12/19/2015"
+   ms.date="01/30/2016"
    ms.author="tarcher" />
 
 # Veröffentlichung in Entwicklungs- und Testumgebungen mithilfe von Windows PowerShell-Skripts
@@ -25,7 +25,7 @@ Mithilfe dieser Skripts können Sie angepasste Versionen Ihrer Website (auch als
 
 - Azure SDK 2.3 oder höher. Weitere Informationen finden Sie unter [Visual Studio-Downloads](http://go.microsoft.com/fwlink/?LinkID=624384).
 
-    Sie benötigen das Azure SDK nicht, um die Skripts für Webprojekte zu generieren. Dieses Feature bezieht sich auf Webprojekte, nicht auf Webrollen in Clouddiensten.
+Sie benötigen das Azure SDK nicht, um die Skripts für Webprojekte zu generieren. Dieses Feature bezieht sich auf Webprojekte, nicht auf Webrollen in Clouddiensten.
 
 - Azure PowerShell 0.7.4 oder höher. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md).
 
@@ -37,7 +37,7 @@ Für die Arbeit mit PowerShell in Visual Studio für die Azure-Entwicklung stehe
 
 ## Generieren der Veröffentlichungsskripts
 
-Sie können die Veröffentlichungsskripts für einen virtuellen Computer generieren, der Ihre Website hostet, wenn Sie ein neues Projekt anhand [dieser Anleitungen](virtual-machines-dotnet-create-visual-studio-powershell.md) erstellen. Sie können auch [Veröffentlichungsskripts für Web-Apps in Azure App Service generieren](web-sites-dotnet-get-started.md).
+Sie können die Veröffentlichungsskripts für einen virtuellen Computer generieren, der Ihre Website hostet, wenn Sie ein neues Projekt anhand [dieser Anleitungen](/virtual-machines/virtual-machines-dotnet-create-visual-studio-powershell.md) erstellen. Sie können auch [Veröffentlichungsskripts für Web-Apps in Azure App Service generieren](/app-service-web/web-sites-dotnet-get-started.md).
 
 ## Von Visual Studio generierte Skripts
 
@@ -57,99 +57,99 @@ Die JSON-Datei wird im Ordner **Configurations** erstellt und enthält die Konfi
 
 ```
 {
-    "environmentSettings": {
-        "webSite": {
-            "name": "WebApplication26632",
-            "location": "West US"
-        },
-        "databases": [
-            {
-                "connectionStringName": "DefaultConnection",
-                "databaseName": "WebApplication26632_db",
-                "serverName": "YourDatabaseServerName",
-                "user": "sqluser2",
-                "password": "",
-                "edition": "",
-                "size": "",
-                "collation": "",
-                "location": "West US"
-            }
-        ]
-    }
+"environmentSettings": {
+"webSite": {
+"name": "WebApplication26632",
+"location": "West US"
+},
+"databases": [
+{
+"connectionStringName": "DefaultConnection",
+"databaseName": "WebApplication26632_db",
+"serverName": "YourDatabaseServerName",
+"user": "sqluser2",
+"password": "",
+"edition": "",
+"size": "",
+"collation": "",
+"location": "West US"
+}
+]
+}
 }
 ```
 Wenn Sie einen virtuellen Computer erstellen, sieht die JSON-Konfigurationsdatei wie im folgenden Beispiel aus. Beachten Sie, dass ein Clouddienst als Container für den virtuellen Computer erstellt wird. Der virtuelle Computer enthält die üblichen Endpunkte für den Webzugriff über HTTP und HTTPS sowie Endpunkte für Web Deploy. Letzteres ermöglicht die Veröffentlichung auf der Website über Ihren lokalen Computer, Remotedesktop und Windows PowerShell.
 
 ```
 {
-    "environmentSettings": {
-        "cloudService": {
-            "name": "myusernamevm1",
-            "affinityGroup": "",
-            "location": "West US",
-            "virtualNetwork": "",
-            "subnet": "",
-            "availabilitySet": "",
-            "virtualMachine": {
-                "name": "myusernamevm1",
-                "vhdImage": "a699494373c04fc0bc8f2bb1389d6106__Win2K8R2SP1-Datacenter-201403.01-en.us-127GB.vhd",
-                "size": "Small",
-                "user": "vmuser1",
-                "password": "",
-                "enableWebDeployExtension": true,
-                "endpoints": [
-                    {
-                        "name": "Http",
-                        "protocol": "TCP",
-                        "publicPort": "80",
-                        "privatePort": "80"
-                    },
-                    {
-                        "name": "Https",
-                        "protocol": "TCP",
-                        "publicPort": "443",
-                        "privatePort": "443"
-                    },
-                    {
-                        "name": "WebDeploy",
-                        "protocol": "TCP",
-                        "publicPort": "8172",
-                        "privatePort": "8172"
-                    },
-                    {
-                        "name": "Remote Desktop",
-                        "protocol": "TCP",
-                        "publicPort": "3389",
-                        "privatePort": "3389"
-                    },
-                    {
-                        "name": "Powershell",
-                        "protocol": "TCP",
-                        "publicPort": "5986",
-                        "privatePort": "5986"
-                    }
-                ]
-            }
-        },
-        "databases": [
-            {
-                "connectionStringName": "",
-                "databaseName": "",
-                "serverName": "",
-                "user": "",
-                "password": ""
-            }
-        ],
-        "webDeployParameters": {
-            "iisWebApplicationName": "Default Web Site"
-        }
-    }
+"environmentSettings": {
+"cloudService": {
+"name": "myusernamevm1",
+"affinityGroup": "",
+"location": "West US",
+"virtualNetwork": "",
+"subnet": "",
+"availabilitySet": "",
+"virtualMachine": {
+"name": "myusernamevm1",
+"vhdImage": "a699494373c04fc0bc8f2bb1389d6106__Win2K8R2SP1-Datacenter-201403.01-en.us-127GB.vhd",
+"size": "Small",
+"user": "vmuser1",
+"password": "",
+"enableWebDeployExtension": true,
+"endpoints": [
+{
+"name": "Http",
+"protocol": "TCP",
+"publicPort": "80",
+"privatePort": "80"
+},
+{
+"name": "Https",
+"protocol": "TCP",
+"publicPort": "443",
+"privatePort": "443"
+},
+{
+"name": "WebDeploy",
+"protocol": "TCP",
+"publicPort": "8172",
+"privatePort": "8172"
+},
+{
+"name": "Remote Desktop",
+"protocol": "TCP",
+"publicPort": "3389",
+"privatePort": "3389"
+},
+{
+"name": "Powershell",
+"protocol": "TCP",
+"publicPort": "5986",
+"privatePort": "5986"
+}
+]
+}
+},
+"databases": [
+{
+"connectionStringName": "",
+"databaseName": "",
+"serverName": "",
+"user": "",
+"password": ""
+}
+],
+"webDeployParameters": {
+"iisWebApplicationName": "Default Web Site"
+}
+}
 }
 ```
 
 Sie können die JSON-Konfiguration bearbeiten, um das Verhalten beim Ausführen der Veröffentlichungsskripts zu ändern. Die Abschnitte `cloudService` und `virtualMachine` sind erforderlich, der Abschnitt `databases` kann jedoch gelöscht werden, wenn er nicht benötigt wird. Die Eigenschaften, die in der von Visual Studio generierten Standardkonfigurationsdatei leer sind, sind optional. Die Eigenschaften, die in der Standardkonfigurationsdatei Werte aufweisen, sind erforderlich.
 
-Wenn Sie eine Website mit mehreren Bereitstellungsumgebungen (als Slots bezeichnet) anstelle einer einzelnen Produktionswebsite in Azure verwenden, können Sie den Slotnamen in den Namen der Website in der JSON-Konfigurationsdatei einschließen. Wenn Sie z. B. eine Website mit dem Namen **mysite** und einen zugehörigen Slot namens **test** verwenden, lautet der URI "mysite-test.cloudapp.net". Der richtige Name zur Verwendung in der Konfigurationsdatei lautet jedoch "mysite(test)". Diese Vorgehensweise ist nur möglich, wenn die Website und die Slots bereits in Ihrem Abonnement vorhanden sind. Andernfalls erstellen Sie die Website, indem Sie das Skript ausführen, ohne den Slot anzugeben. Erstellen Sie den Slot dann im Azure-Verwaltungsportal, und führen Sie anschließend das Skript mit dem geänderten Websitenamen aus. Weitere Informationen zu den Bereitstellungsslots für Web-Apps finden Sie unter [Einrichten von Stagingumgebungen für Web-Apps in Azure App Service](web-sites-staged-publishing.md).
+Wenn Sie eine Website mit mehreren Bereitstellungsumgebungen (als Slots bezeichnet) anstelle einer einzelnen Produktionswebsite in Azure verwenden, können Sie den Slotnamen in den Namen der Website in der JSON-Konfigurationsdatei einschließen. Wenn Sie z. B. eine Website mit dem Namen **mysite** und einen zugehörigen Slot namens **test** verwenden, lautet der URI "mysite-test.cloudapp.net". Der richtige Name zur Verwendung in der Konfigurationsdatei lautet jedoch "mysite(test)". Diese Vorgehensweise ist nur möglich, wenn die Website und die Slots bereits in Ihrem Abonnement vorhanden sind. Andernfalls erstellen Sie die Website, indem Sie das Skript ausführen, ohne den Slot anzugeben. Erstellen Sie den Slot dann im Azure-Verwaltungsportal, und führen Sie anschließend das Skript mit dem geänderten Websitenamen aus. Weitere Informationen zu den Bereitstellungsslots für Web-Apps finden Sie unter [Einrichten von Stagingumgebungen für Web-Apps in Azure App Service](/app-service-web/web-sites-staged-publishing.md).
 
 ## Ausführen der Veröffentlichungsskripts
 
@@ -159,52 +159,52 @@ Wenn Sie noch nie zuvor ein Windows PowerShell-Skript ausgeführt haben, müssen
 
 1. Erstellen Sie das Web Deploy-Paket für Ihr Projekt. Web Deploy-Pakete sind komprimierte Archive (ZIP-Dateien), die Dateien enthalten, die Sie auf Ihre Website oder den virtuellen Computer kopieren möchten. In Visual Studio können Sie Web Deploy-Pakete für beliebige Webanwendungen erstellen.
 
-    ![Web Deploy-Paket erstellen](./media/vs-azure-tools-publishing-using-powershell-scripts/IC767885.png)
+![Web Deploy-Paket erstellen](./media/vs-azure-tools-publishing-using-powershell-scripts/IC767885.png)
 
-    Weitere Informationen finden Sie unter [Vorgehensweise: Erstellen eines Webbereitstellungspakets in Visual Studio](https://msdn.microsoft.com/library/dd465323.aspx). Sie können die Erstellung Ihres Web Deploy-Pakets auch automatisieren. Dies wird weiter unten in diesem Thema unter **Anpassen und Erweitern der Veröffentlichungsskripts** beschrieben.
+Weitere Informationen finden Sie unter [Vorgehensweise: Erstellen eines Webbereitstellungspakets in Visual Studio](https://msdn.microsoft.com/library/dd465323.aspx). Sie können die Erstellung Ihres Web Deploy-Pakets auch automatisieren. Dies wird weiter unten in diesem Thema unter **Anpassen und Erweitern der Veröffentlichungsskripts** beschrieben.
 
 1. Öffnen Sie im **Projektmappen-Explorer** das Kontextmenü für das Skript, und wählen Sie dann **Mit PowerShell-ISE öffnen** aus.
 
 1. Wenn Sie Windows PowerShell-Skripts erstmals auf diesem Computer ausführen, öffnen Sie ein Eingabeaufforderungsfenster mit Administratorberechtigungen, und geben Sie dann den folgenden Befehl ein:
 
-    `Set-ExecutionPolicy RemoteSigned`
+`Set-ExecutionPolicy RemoteSigned`
 
 1. Melden Sie sich mithilfe des folgenden Befehls bei Azure an.
 
-    `Add-AzureAccount`
+`Add-AzureAccount`
 
-    Geben Sie Ihren Benutzernamen und Ihr Kennwort ein, wenn Sie dazu aufgefordert werden.
+Geben Sie Ihren Benutzernamen und Ihr Kennwort ein, wenn Sie dazu aufgefordert werden.
 
-    Beachten Sie, dass diese Methode für die Bereitstellung von Azure-Anmeldeinformationen bei einer Automatisierung des Skripts nicht funktioniert. Stattdessen sollten Sie die PUBLISHSETTINGS-Datei zum Bereitstellen von Anmeldeinformationen verwenden. Sie verwenden den Befehl **Get-AzurePublishSettingsFile** einmalig zum Herunterladen der Datei aus Azure. Danach verwenden Sie **Import-AzurePublishSettingsFile**, um die Datei zu importieren. Ausführliche Anweisungen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md).
+Beachten Sie, dass diese Methode für die Bereitstellung von Azure-Anmeldeinformationen bei einer Automatisierung des Skripts nicht funktioniert. Stattdessen sollten Sie die PUBLISHSETTINGS-Datei zum Bereitstellen von Anmeldeinformationen verwenden. Sie verwenden den Befehl **Get-AzurePublishSettingsFile** einmalig zum Herunterladen der Datei aus Azure. Danach verwenden Sie **Import-AzurePublishSettingsFile**, um die Datei zu importieren. Ausführliche Anweisungen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md).
 
 1. (Optional) Wenn Sie Azure-Ressourcen (z. B. virtuelle Computer, Datenbanken und Websites) erstellen möchten, ohne Ihre Webanwendung zu veröffentlichen, verwenden Sie den Befehl **Publish-WebApplication.ps1** mit dem Argument **-Configuration**, das auf die JSON-Konfigurationsdatei festgelegt ist. Diese Befehlszeile verwendet die JSON-Konfigurationsdatei, um zu ermitteln, welche Ressourcen erstellt werden sollen. Da sie die Standardeinstellungen für andere Befehlszeilenargumente verwendet, werden die Ressourcen erstellt, Ihre Webanwendung wird jedoch nicht veröffentlicht. Die Option "–Verbose" stellt weitere Informationen zu den Vorgängen zur Verfügung.
 
-    `Publish-WebApplication.ps1 -Verbose –Configuration C:\Path\WebProject-WAWS-dev.json`
+`Publish-WebApplication.ps1 -Verbose –Configuration C:\Path\WebProject-WAWS-dev.json`
 
 1. Verwenden Sie den Befehl **Publish-WebApplication.ps1** wie in einem der folgenden Beispiele gezeigt, um das Skript aufzurufen und Ihre Webanwendung zu veröffentlichen. Wenn Sie die Standardeinstellungen für andere Argumente (z. B. den Abonnementnamen, den Namen des Veröffentlichungspakets, die Anmeldeinformationen des virtuellen Computers oder die Anmeldeinformationen des Datenbankservers) außer Kraft setzen müssen, können Sie diese Parameter angeben. Verwenden Sie die Option **–Verbose**, um weitere Informationen zum Verlauf des Veröffentlichungsvorgangs anzuzeigen.
 
-    ```
-    Publish-WebApplication.ps1 –Configuration C:\Path\WebProject-WAWS-dev-json `
-    –SubscriptionName Contoso `
-    -WebDeployPackage C:\Documents\Azure\ADWebApp.zip `
-    -DatabaseServerPassword @{Name="dbServerName";Password="adminPassword"} `
-    -Verbose
-    ```
+```
+Publish-WebApplication.ps1 –Configuration C:\Path\WebProject-WAWS-dev-json `
+–SubscriptionName Contoso `
+-WebDeployPackage C:\Documents\Azure\ADWebApp.zip `
+-DatabaseServerPassword @{Name="dbServerName";Password="adminPassword"} `
+-Verbose
+```
 
-    Wenn Sie einen virtuellen Computer erstellen, sieht der Befehl wie im folgenden Beispiel aus. Dieses Beispiel zeigt außerdem, wie die Anmeldeinformationen für mehrere Datenbanken angegeben werden. Für die virtuellen Computer, die durch diese Skripts erstellt werden, stammt das SSL-Zertifikat nicht von einer vertrauenswürdigen Stammzertifizierungsstelle. Aus diesem Grund müssen Sie die Option **–AllowUntrusted** verwenden.
+Wenn Sie einen virtuellen Computer erstellen, sieht der Befehl wie im folgenden Beispiel aus. Dieses Beispiel zeigt außerdem, wie die Anmeldeinformationen für mehrere Datenbanken angegeben werden. Für die virtuellen Computer, die durch diese Skripts erstellt werden, stammt das SSL-Zertifikat nicht von einer vertrauenswürdigen Stammzertifizierungsstelle. Aus diesem Grund müssen Sie die Option **–AllowUntrusted** verwenden.
 
-    ```
-    Publish-WebApplication.ps1 `
-    -Configuration C:\Path\ADVM-VM-test.json `
-    -SubscriptionName Contoso `
-    -WebDeployPackage C:\Path\ADVM.zip `
-    -AllowUntrusted `
-    -VMPassword @{name = "vmUserName"; password = "YourPasswordHere"} `
-    -DatabaseServerPassword @{Name="server1";Password="adminPassword1"}, @{Name="server2";Password="adminPassword2"} `
-    -Verbose
-    ```
+```
+Publish-WebApplication.ps1 `
+-Configuration C:\Path\ADVM-VM-test.json `
+-SubscriptionName Contoso `
+-WebDeployPackage C:\Path\ADVM.zip `
+-AllowUntrusted `
+-VMPassword @{name = "vmUserName"; password = "YourPasswordHere"} `
+-DatabaseServerPassword @{Name="server1";Password="adminPassword1"}, @{Name="server2";Password="adminPassword2"} `
+-Verbose
+```
 
-    Das Skript kann Datenbanken erstellen, es erstellt jedoch keine Datenbankserver. Wenn Sie einen Datenbankserver erstellen möchten, können Sie die Funktion **New-AzureSqlDatabaseServer** im Azure-Modul verwenden.
+Das Skript kann Datenbanken erstellen, es erstellt jedoch keine Datenbankserver. Wenn Sie einen Datenbankserver erstellen möchten, können Sie die Funktion **New-AzureSqlDatabaseServer** im Azure-Modul verwenden.
 
 ## Anpassen und Erweitern der Veröffentlichungsskripts
 
@@ -216,93 +216,93 @@ Wenn Sie den Buildvorgang Ihres Projekts automatisieren möchten, fügen Sie Cod
 
 1. Fügen Sie den Parameter `$ProjectFile` im Abschnitt mit den globalen Parametern hinzu.
 
-    ```
-    [Parameter(Mandatory = $false)]
-    [ValidateScript({Test-Path $_ -PathType Leaf})]
-    [String]
-    $ProjectFile,
-    ```
+```
+[Parameter(Mandatory = $false)]
+  [ValidateScript({Test-Path $_ -PathType Leaf})]
+  [String]
+  $ProjectFile,
+```
 
 1. Kopieren Sie die Funktion `Get-MSBuildCmd` in Ihre Skriptdatei.
 
-    ```
-    function Get-MSBuildCmd
-    {
-            process
-            {
+```
+function Get-MSBuildCmd
+{
+        process
+{
 
-                 $path =  Get-ChildItem "HKLM:\SOFTWARE\Microsoft\MSBuild\ToolsVersions" |
-                                       Sort-Object {[double]$_.PSChildName} -Descending |
-                                       Select-Object -First 1 |
-                                       Get-ItemProperty -Name MSBuildToolsPath |
-                                       Select -ExpandProperty MSBuildToolsPath
-           
-                $path = (Join-Path -Path $path -ChildPath 'msbuild.exe')
+             $path =  Get-ChildItem "HKLM:\SOFTWARE\Microsoft\MSBuild\ToolsVersions" |
+                                   Sort-Object {[double]$_.PSChildName} -Descending |
+                                   Select-Object -First 1 |
+                                   Get-ItemProperty -Name MSBuildToolsPath |
+                                   Select -ExpandProperty MSBuildToolsPath
+       
+            $path = (Join-Path -Path $path -ChildPath 'msbuild.exe')
 
-            return Get-Item $path
-        }
+        return Get-Item $path
     }
-    ```
+}
+```
 
 1. Ersetzen Sie `New-WebDeployPackage` durch den folgenden Code, und ersetzen Sie die Platzhalter in der Zeile, mit der `$msbuildCmd` erstellt wird. Dieser Code ist für Visual Studio 2015. Wenn Sie Visual Studio 2013 verwenden, ändern Sie die unten gezeigte Eigenschaft **VisualStudioVersion** in `12.0`.
 
-    ```
-    function New-WebDeployPackage
-      {
-        #Write a function to build and package your web application
-          
-        #To build your web application, use MsBuild.exe. For help, see MSBuild Command-Line Reference at: http://go.microsoft.com/fwlink/?LinkId=391339
-          
-        Write-VerboseWithTime 'Build-WebDeployPackage: Start'
-          
-        $msbuildCmd = '"{0}" "{1}" /T:Rebuild;Package /P:VisualStudioVersion=14.0 /p:OutputPath="{2}\MSBuildOutputPath" /flp:logfile=msbuild.log,v=d' -f (Get-MSBuildCmd), $ProjectFile, $scriptDirectory
-          
-        Write-VerboseWithTime ('Build-WebDeployPackage: ' + $msbuildCmd)
-          
-        #Start execution of the build command
-        $job = Start-Process cmd.exe -ArgumentList('/C "' + $msbuildCmd + '"') -WindowStyle Normal -Wait -PassThru
-          
-        if ($job.ExitCode -ne 0)
-        {
-          throw('MsBuild exited with an error. ExitCode:' + $job.ExitCode)
-        }
+```
+function New-WebDeployPackage
+{
+    #Write a function to build and package your web application
+      
+#To build your web application, use MsBuild.exe. For help, see MSBuild Command-Line Reference at: http://go.microsoft.com/fwlink/?LinkId=391339
+      
+Write-VerboseWithTime 'Build-WebDeployPackage: Start'
+      
+$msbuildCmd = '"{0}" "{1}" /T:Rebuild;Package /P:VisualStudioVersion=14.0 /p:OutputPath="{2}\MSBuildOutputPath" /flp:logfile=msbuild.log,v=d' -f (Get-MSBuildCmd), $ProjectFile, $scriptDirectory
+      
+Write-VerboseWithTime ('Build-WebDeployPackage: ' + $msbuildCmd)
+      
+#Start execution of the build command
+$job = Start-Process cmd.exe -ArgumentList('/C "' + $msbuildCmd + '"') -WindowStyle Normal -Wait -PassThru
+      
+if ($job.ExitCode -ne 0)
+{
+throw('MsBuild exited with an error. ExitCode:' + $job.ExitCode)
+}
 
-        #Obtain the project name
-        $projectName = (Get-Item $ProjectFile).BaseName
-          
-        #Construct the path to web deploy zip package
-        $DeployPackageDir =  '.\MSBuildOutputPath\_PublishedWebsites\{0}_Package\{0}.zip' -f $projectName
-          
-          
-        #Get the full path for the web deploy zip package. This is required for MSDeploy to work
-        $WebDeployPackage = Resolve-Path –LiteralPath $DeployPackageDir
-          
-        Write-VerboseWithTime 'Build-WebDeployPackage: End'
-          
-        return $WebDeployPackage
-      }
-    ```
+#Obtain the project name
+$projectName = (Get-Item $ProjectFile).BaseName
+      
+#Construct the path to web deploy zip package
+$DeployPackageDir =  '.\MSBuildOutputPath\_PublishedWebsites\{0}_Package\{0}.zip' -f $projectName
+      
+      
+#Get the full path for the web deploy zip package. This is required for MSDeploy to work
+$WebDeployPackage = Resolve-Path –LiteralPath $DeployPackageDir
+      
+Write-VerboseWithTime 'Build-WebDeployPackage: End'
+      
+return $WebDeployPackage
+}
+```
 
 1. Rufen Sie die Funktion `New-WebDeployPackage` vor dieser Zeile auf: `$Config = Read-ConfigFile $Configuration` für Web-Apps bzw. `$Config = Read-ConfigFile $Configuration -HasWebDeployPackage:([Bool]$WebDeployPackage)` für virtuelle Computer.
 
-    ```
-    if($ProjectFile)
-      {
-        $WebDeployPackage = New-WebDeployPackage
-      }
-    ```
+```
+if($ProjectFile)
+{
+$WebDeployPackage = New-WebDeployPackage
+}
+```
 
 1. Rufen Sie das angepasste Skript über die Befehlszeile auf, und übergeben Sie das Argument `$Project`, wie in der folgenden Beispielbefehlszeile gezeigt.
 
-    ```
-    .\Publish-WebApplicationVM.ps1 -Configuration .\Configurations\WebApplication5-VM-dev.json `
-     -ProjectFile ..\WebApplication5\WebApplication5.csproj `
-     -VMPassword @{Name="VMUser";Password="Test.123"} `
-     -AllowUntrusted `
-    -Verbose
-    ```
+```
+.\Publish-WebApplicationVM.ps1 -Configuration .\Configurations\WebApplication5-VM-dev.json `
+-ProjectFile ..\WebApplication5\WebApplication5.csproj `
+-VMPassword @{Name="VMUser";Password="Test.123"} `
+-AllowUntrusted `
+-Verbose
+```
 
-    Wenn Sie das Testen Ihrer Anwendung automatisieren möchten, fügen Sie der `Test-WebApplication` Code hinzu. Stellen Sie in **Publish-WebApplication.ps1** sicher, dass die Auskommentierung der Zeilen aufgehoben wird, in denen diese Funktionen aufgerufen werden. Wenn Sie keine Implementierung bereitstellen, können Sie Ihr Projekt manuell mit Visual Studio erstellen und dann das Veröffentlichungsskript zum Veröffentlichen in Azure aufrufen.
+Wenn Sie das Testen Ihrer Anwendung automatisieren möchten, fügen Sie der `Test-WebApplication` Code hinzu. Stellen Sie in **Publish-WebApplication.ps1** sicher, dass die Auskommentierung der Zeilen aufgehoben wird, in denen diese Funktionen aufgerufen werden. Wenn Sie keine Implementierung bereitstellen, können Sie Ihr Projekt manuell mit Visual Studio erstellen und dann das Veröffentlichungsskript zum Veröffentlichen in Azure aufrufen.
 
 ## Zusammenfassung der Veröffentlichungsfunktion
 
@@ -351,4 +351,4 @@ Wenn Sie Hilfe zu Funktionen abrufen möchten, können Sie an der Windows PowerS
 
 Weitere Informationen zur PowerShell-Skripterstellung finden Sie unter [Scripting with Windows PowerShell](https://technet.microsoft.com/library/bb978526.aspx). Weitere Azure PowerShell-Skripts finden Sie im [Script Center](https://azure.microsoft.com/documentation/scripts/).
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0204_2016-->

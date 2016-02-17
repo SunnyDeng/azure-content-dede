@@ -13,7 +13,7 @@
   ms.topic="article"
   ms.tgt_pltfrm="na"
   ms.workload="data-services"
-  ms.date="12/22/2015"
+  ms.date="01/29/2015"
   ms.author="andrl"/>
 
 # Communityportal
@@ -80,6 +80,8 @@ Sie können über aktuelle DocumentDB-Nachrichten und -Features auf dem Laufende
 
 **Communitybeiträge:**
 
+* [**Azure DocumentDB Server-Side Scripting**](https://www.simple-talk.com/cloud/cloud-data/azure-documentdb-server-side-scripting/) (Serverseitiges Skripting mit Azure DocumentDB) – *von Robert Sheldon*
+
 * [**DocumentDB as a data sink for Azure Stream Analytics**](http://janatdevelopment.com/2015/12/11/documentdb-as-a-data-sink-for-azure-stream-analytics/?utm_source=twitterfeed&utm_medium=twitter) – *von Jan Hentschel*
 
 * [**Azure DocumentDB in production!**](http://blog.nexapp.ca/2015/11/30/azure-documentdb-in-production/) – *von Alexandre Walsh und Marc-Olivier Duval*
@@ -124,6 +126,7 @@ Sie können über aktuelle DocumentDB-Nachrichten und -Features auf dem Laufende
 
 | Veranstaltungsname | Referent | Ort | Datum | Hashtag |
 | -------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- | -------------------- | ---------------------- | ------- |
+| [Meetup: CloudTalk](http://www.meetup.com/CloudTalk/events/227963695/) | Andrew Liu | Bellevue, WA | 3\. März 2016 | –
 | SQLBits XV | TBD | Liverpool, Großbritannien | 4\. bis 7. Mai 2016 | [#SQLBits](https://twitter.com/hashtag/SQLBits)
 
 *Sprechen Sie auf einer Veranstaltung oder organisieren Sie sie? [Teilen Sie uns mit, ](mailto:askdocdb@microsoft.com)wie wir helfen können!*
@@ -132,6 +135,7 @@ Sie können über aktuelle DocumentDB-Nachrichten und -Features auf dem Laufende
 
 | Veranstaltungsname | Referent | Ort | Datum | Aufzeichnung |
 | -------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- | -------------------- | ---------------------- | --------- |
+| [Meetup: Azure Austin](http://www.meetup.com/azureaustin/events/228209275/) | Merwan Chinta | Austin, TX | 28\. Januar 2016 | – |
 | [Meetup: msdevmtl](http://www.meetup.com/msdevmtl/events/223839818/) | Vincent-Philippe Lauzon | Montreal (Quebec, Kanada) | 1\. Dezember 2015 | – |
 | [Meetup: SeattleJS](http://www.meetup.com/seattlejs/events/220102664/) | David Makogon | Seattle, WA | 12\. November 2015 | – |
 | [PASS Summit 2015](http://www.sqlpass.org/summit/2015/) | Jeff Renz, Andrew Hoh, Aravind Ramachandran, John Macintyre | Seattle, WA | 27\. bis 30. Oktober 2015 | – |
@@ -213,14 +217,6 @@ Folgen Sie uns auf Twitter ([@DocumentDB](https://twitter.com/DocumentDB)), um u
 
 <br/><br/>
 
-### Internet Relay Chat und Geschäftszeiten
-
-Chatten Sie unter `chat.freenode.net` auf dem Kanal `#documentdb` per IRC in Echtzeit mit uns, indem Sie einen [IRC-Client](http://www.irchelp.org/) verwenden. Oder stellen Sie für Ihren Webkanal eine Verbindung mit dem Kanal her, indem Sie [WebChat](http://webchat.freenode.net/?channels=documentdb) von Freenode nutzen.
-
-Unsere Geschäftszeiten: bei IRC jeden Freitag von 11 Uhr bis 12 Uhr (Pacific Time).
-
-<br/><br/>
-
 <hr/>
 
 ## Kontaktaufnahme mit dem Team
@@ -271,4 +267,4 @@ DocumentDB-Genies sind wichtige Mitglieder der Community, die sich durch ein bei
 
 Möchten Sie ein DocumentDB-Genie werden? Wenngleich es nicht unbedingt ein bestimmtes Kriterium gibt, das erfüllt sein muss, um ein DocumentDB-Genie zu werden, bewerten wir u. a. den Einfluss der Beiträge des Kandidaten zu Onlineforen wie StackOverflow und MSDN, Wikis, Online-Inhalten, Konferenzen, Benutzergruppen, Podcasts, Websites, Blogs und sozialen Medien sowie Artikeln und Büchern. [Senden uns eine E-Mail](mailto:askdocdb@microsoft.com), um sich selbst oder jemand anderen vorzuschlagen.
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0204_2016-->

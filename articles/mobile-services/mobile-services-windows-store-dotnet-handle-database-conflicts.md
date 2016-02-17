@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="10/05/2015"
+	ms.date="01/21/2016"
 	ms.author="wesmc"/>
 
 # Behandeln von Schreibkonflikten in Datenbanken
@@ -125,7 +125,7 @@ In manchen Szenarien können zwei oder mehr Clients gleichzeitig versuchen, dass
 			public string Version { set; get; }
 		}
 
-	> [AZURE.NOTE]Bei der Verwendung von untypisierten Tabellen können Sie die optimistische Nebenläufigkeit aktivieren, indem sie das Version-Flag zu den Systemeigenschaften der Tabelle hinzufügen.
+	> [AZURE.NOTE] Bei der Verwendung von untypisierten Tabellen können Sie die optimistische Nebenläufigkeit aktivieren, indem sie das Version-Flag zu den Systemeigenschaften der Tabelle hinzufügen.
 	>
 	>`````
 	//Enable optimistic concurrency by retrieving __version
@@ -370,4 +370,4 @@ In diesem Lernprogramm wurden die Grundlagen der Behandlung von Schreibkonflikte
 [Developer Code Samples site]: http://go.microsoft.com/fwlink/p/?LinkId=271146
 [Systemeigenschaften]: http://go.microsoft.com/fwlink/?LinkId=331143
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

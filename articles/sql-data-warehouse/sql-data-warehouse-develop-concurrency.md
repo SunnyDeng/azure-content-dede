@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/07/2016"
+   ms.date="01/25/2016"
    ms.author="jrj;barbkess;sonyama"/>
 
 # Parallelitäts- und Workloadverwaltung in SQL Data Warehouse
@@ -34,7 +34,7 @@ Im Allgemeinen verbraucht jede gleichzeitig ausgeführte Abfrage einen oder mehr
 2. **Ressourcenklasse**, der der Benutzer angehört
 3. Ob die Abfrage oder der Vorgang durch das Parallelitätsslot-Modell gesteuert wird 
 
-> [AZURE.NOTE]Es ist zu erwähnen, dass nicht jede Abfrage durch die Parallelitätsslot-Abfrageregel gesteuert ist. Dies ist jedoch bei den meisten Benutzerabfragen der Fall. Einige Abfragen und Vorgänge verbrauchen gar keine Parallelitätsslots. Diese Abfragen und Vorgänge sind dennoch durch den Grenzwert für gleichzeitige Abfragen begrenzt, weshalb beide Regeln beschrieben werden. Weitere Informationen finden Sie im Abschnitt zu den [Ressourcenklassenausnahmen](#exceptions) weiter unten.
+> [AZURE.NOTE] Es ist zu erwähnen, dass nicht jede Abfrage durch die Parallelitätsslot-Abfrageregel gesteuert ist. Dies ist jedoch bei den meisten Benutzerabfragen der Fall. Einige Abfragen und Vorgänge verbrauchen gar keine Parallelitätsslots. Diese Abfragen und Vorgänge sind dennoch durch den Grenzwert für gleichzeitige Abfragen begrenzt, weshalb beide Regeln beschrieben werden. Weitere Informationen finden Sie im Abschnitt zu den [Ressourcenklassenausnahmen](#exceptions) weiter unten.
 
 Die folgende Tabelle enthält die Grenzwerte für gleichzeitige Abfragen und Parallelitätsslots. Dabei wird davon ausgegangen, dass die Abfrage durch Ressourcen gesteuert ist.
 
@@ -75,7 +75,7 @@ SQL Data Warehouse hat Ressourcenklassen durch Verwendung von Datenbankrollen im
 
 Sie können sich selbst der Datenbankrolle für die Workloadverwaltung hinzufügen, indem Sie die Prozeduren `sp_addrolemember` und `sp_droprolemember` verwenden. Beachten Sie, dass Sie hierfür die Berechtigung `ALTER ROLE` benötigen. Es ist nicht möglich, die ALTER ROLE DDL-Syntax zu verwenden. Sie müssen die oben erwähnten gespeicherten Prozeduren verwenden. Ein vollständiges Beispiel zum Erstellen von Anmeldungen und Benutzern finden Sie im Abschnitt [Verwalten von Benutzern)[#managing-users] am Ende dieses Artikels.
 
-> [AZURE.NOTE]Anstatt einen Benutzer einer Workloadverwaltungsgruppe hinzuzufügen und daraus zu entfernen, ist es häufig einfacher, diese intensiveren Vorgänge über eine separate Anmeldung bzw. einen separaten Benutzer zu initiieren, die bzw. der der höheren Ressourcenklasse dauerhaft zugewiesen ist.
+> [AZURE.NOTE] Anstatt einen Benutzer einer Workloadverwaltungsgruppe hinzuzufügen und daraus zu entfernen, ist es häufig einfacher, diese intensiveren Vorgänge über eine separate Anmeldung bzw. einen separaten Benutzer zu initiieren, die bzw. der der höheren Ressourcenklasse dauerhaft zugewiesen ist.
 
 ### Speicherzuweisung
 
@@ -183,7 +183,7 @@ Removed as these two are not confirmed / supported under SQLDW
 - CREATE EXTERNAL TABLE AS SELECT
 - REDISTRIBUTE 
 -->
-> [AZURE.NOTE]Es sollte betont werden, dass `SELECT`-Abfragen, die ausschließlich für dynamische Verwaltungssichten und Katalogsichten ausgeführt werden, **nicht** durch Ressourcenklassen gesteuert werden.
+> [AZURE.NOTE] Es sollte betont werden, dass `SELECT`-Abfragen, die ausschließlich für dynamische Verwaltungssichten und Katalogsichten ausgeführt werden, **nicht** durch Ressourcenklassen gesteuert werden.
 
 Es ist wichtig zu beachten, dass die Mehrzahl der Endbenutzerabfragen wahrscheinlich durch Ressourcenklassen gesteuert werden. Als allgemeine Regel gilt, dass die aktive Abfrageworkload sowohl den Schwellenwert für gleichzeitige Abfragen als auch den Schwellenwert für Parallelitätsslots einhalten muss, sofern sie nicht ausdrücklich von der Plattform ausgeschlossen wurde. Als Endbenutzer können Sie eine Abfrage nicht aus dem Parallelitätsslot-Modell ausschließen. Falls einer der Schwellenwerte überschritten wird, werden Abfragen in die Warteschlange eingereiht. Abfragen in der Warteschlange werden anhand der Prioritätsreihenfolge gefolgt vom Übermittlungszeitpunkt abgearbeitet.
 
@@ -267,7 +267,7 @@ ORDER BY
 ;
 ```
 
-> [AZURE.NOTE]Die obige Abfrage kann auch verwendet werden, um bei der Problembehandlung die aktive und historische Verwendung von Workloadgruppen zu analysieren.
+> [AZURE.NOTE] Die obige Abfrage kann auch verwendet werden, um bei der Problembehandlung die aktive und historische Verwendung von Workloadgruppen zu analysieren.
 
 ## Beispiele für die Workloadverwaltung
 
@@ -285,7 +285,7 @@ CREATE LOGIN newperson WITH PASSWORD = 'mypassword'
 CREATE USER newperson for LOGIN newperson
 ```
 
-[AZURE.NOTE]Es ist eine gute Idee, bei der Arbeit mit Azure SQL-Datenbank und SQL Data Warehouse gleichzeitig in der Masterdatenbank Benutzer für die Anmeldungen zu erstellen. Auf dieser Ebene sind zwei Serverrollen verfügbar, die eine Anmeldung dafür erfordern, dass ein Benutzer in der Masterdatenbank ist, um die Mitgliedschaft erteilen zu können. Die Rollen lauten `Loginmanager` und `dbmanager`. Sowohl in der Azure SQL-Datenbank als auch im SQL Data Warehouse erteilen diese Rollen Berechtigungen zum Verwalten von Anmeldungen und zum Erstellen von Datenbanken. Dies unterscheidet sich bei SQL Server. Weitere Informationen finden Sie im Artikel [Verwalten von Datenbanken und Anmeldungen in der Azure SQL-Datenbank].
+> [AZURE.NOTE] Es empfiehlt sich, Benutzer für Anmeldungen bei der Masterdatenbank in Azure SQL-Datenbank und Azure SQL Data Warehouse zu erstellen. Auf dieser Ebene sind zwei Serverrollen verfügbar, die eine Anmeldung dafür erfordern, dass ein Benutzer in der Masterdatenbank ist, um die Mitgliedschaft erteilen zu können. Die Rollen lauten `Loginmanager` und `dbmanager`. Sowohl in der Azure SQL-Datenbank als auch im SQL Data Warehouse erteilen diese Rollen Berechtigungen zum Verwalten von Anmeldungen und zum Erstellen von Datenbanken. Dies unterscheidet sich bei SQL Server. Weitere Informationen finden Sie im Artikel [Verwalten von Datenbanken und Anmeldungen in der Azure SQL-Datenbank].
 
 Nachdem die Anmeldung abgeschlossen ist, muss nun ein Benutzerkonto hinzugefügt werden.
 
@@ -323,7 +323,7 @@ Verwenden Sie die folgende Abfrage, um einen Benutzer aus einer Workload-Verwalt
 EXEC sp_droprolemember 'largerc', 'newperson' 
 ```
 
-> [AZURE.NOTE]Es ist nicht möglich, einen Benutzer aus „smallrc“ zu entfernen.
+> [AZURE.NOTE] Es ist nicht möglich, einen Benutzer aus „smallrc“ zu entfernen.
 
 Verwenden Sie die folgende Abfrage, um festzustellen, welche Benutzer Mitglieder einer bestimmten Rolle sind:
 
@@ -452,4 +452,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 
 <!--Other Web references-->
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

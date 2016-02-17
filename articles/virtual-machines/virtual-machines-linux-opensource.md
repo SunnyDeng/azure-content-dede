@@ -31,7 +31,7 @@ Da sowohl Azure als auch das Open-Source-Computing einer ständigen Weiterentwic
 ## Allgemeine Hinweise
 Die Abschnitte werden am rechten Rand dieser Seite aufgeschlüsselt. (Links können in mehr als einem Abschnitt auftreten, da Themen sich mit mehr als einem Konzept, mehr als einer Distribution oder mehr als einer Technologie beschäftigen können.) Darüber hinaus gibt es mehrere Themen, in denen verschiedene Linux-Optionen, Image-Repositorys, Fallstudien und Gewusst-wie-Themen zum Hochladen Ihrer eigenen benutzerdefinierten Images beschrieben werden:
 
-- [Azure Marketplace](http://azure.microsoft.com/marketplace/virtual-machines/)
+- [Azure Marketplace](https://azure.microsoft.com/marketplace/virtual-machines/)
 - [MSOpenTech VM Depot](https://vmdepot.msopentech.com/List/Index)
 - [Veranstaltungen und Demonstrationen: Microsoft Openness CEE](http://www.opennessatcee.com/)
 - [Klassische Bereitstellung]: [Gewusst wie: Hochladen Ihres eigenen Distro-Images](virtual-machines-linux-create-upload-vhd.md) (plus Anweisungen zum Verwenden einer [von Azure unterstützten Verteilung](virtual-machines-linux-endorsed-distributions.md))
@@ -53,7 +53,7 @@ Die Abschnitte werden am rechten Rand dieser Seite aufgeschlüsselt. (Links kön
 
 Es gibt Unmengen von Linux-Verteilungen, die in der Regel durch die Paket-Verwaltungssysteme unterteilt sind. Einige sind dpgk-basiert, wie Debian und Ubuntu, andere sind rpm-basiert, wie CentOS, SUSE und RedHat. Einige Unternehmen bieten Distributions-Images als formale Partner von Microsoft. Diese werden unterstützt. Andere werden von der Community bereitgestellt. Für die Distributionen in diesem Abschnitt gibt es formale Artikel, selbst wenn sie nur in Beispielen für andere Technologien verwendet wurden.
 
-### [Ubuntu](http://azure.microsoft.com/marketplace/partners/Canonical/)
+### [Ubuntu](https://azure.microsoft.com/marketplace/partners/Canonical/)
 
 Ubuntu ist eine äußerst populäre und von Azure unterstützte Linux-Verteilung, die auf der dkpg- und apt-get-Paketverwaltung basiert.
 
@@ -63,9 +63,9 @@ Ubuntu ist eine äußerst populäre und von Azure unterstützte Linux-Verteilung
 4. [Klassische Bereitstellung]: [Gewusst wie: Node.js und Cassandra](virtual-machines-linux-nodejs-running-cassandra.md)
 5. [Ressourcen-Manager-Bereitstellung]: [Gewusst wie: IPython Notebook](virtual-machines-python-ipython-notebook.md)
 6. [Klassische Bereitstellung]: [Gefachsimpelt: Ausführen von ASP.NET 5 auf Linux mithilfe von Docker-Containern](http://blogs.msdn.com/b/webdev/archive/2015/01/14/running-asp-net-5-applications-in-linux-containers-with-docker.aspx)
-7. [Images: Redis-Server](http://azure.microsoft.com/marketplace/partners/cognosys/redisserver269ubuntu1204lts/)
-8. [Images: Minecraft Server](http://azure.microsoft.com/marketplace/partners/bitnami/craftbukkitminecraft179r030ubuntu1210/)
-11. [Images: Mono as a Service](http://azure.microsoft.com/marketplace/partners/aegis/monoasaserviceubuntu1204/)
+7. [Images: Redis-Server](https://azure.microsoft.com/marketplace/partners/cognosys/redisserver269ubuntu1204lts/)
+8. [Images: Minecraft Server](https://azure.microsoft.com/marketplace/partners/bitnami/craftbukkitminecraft179r030ubuntu1210/)
+11. [Images: Mono as a Service](https://azure.microsoft.com/marketplace/partners/aegis/monoasaserviceubuntu1204/)
 
 
 ### [Debian](https://vmdepot.msopentech.com/List/Index?sort=Featured&search=Debian)
@@ -77,12 +77,12 @@ Debian ist eine wichtige Verteilung für Linux und Open-Source basierend auf der
 Die CentOS-Linux-Distribution ist eine stabile, vorhersehbare, verwaltbare und reproduzierbare Plattform, die aus den Quellen von Red Hat Enterprise Linux (RHEL) abgeleitet wurde.
 
 1. [MSOpenTech VM Depot](https://vmdepot.msopentech.com/List/Index?sort=Featured&search=centos)
-2. [Image-Katalog](http://azure.microsoft.com/marketplace/partners/OpenLogic/)
+2. [Image-Katalog](https://azure.microsoft.com/marketplace/partners/OpenLogic/)
 3. [Gewusst wie: Vorbereiten eines benutzerdefinierten CentOS-basierten virtuellen Computers für Azure](virtual-machines-linux-create-upload-vhd-centos.md)
-4. [Klassische Bereitstellung]: [Blog: Bereitstellen eines CentOS-VM-Images aus OpenLogic](http://azure.microsoft.com/blog/2013/01/11/deploying-openlogic-centos-images-on-windows-azure-virtual-machines/)
+4. [Klassische Bereitstellung]: [Blog: Bereitstellen eines CentOS-VM-Images aus OpenLogic](https://azure.microsoft.com/blog/2013/01/11/deploying-openlogic-centos-images-on-windows-azure-virtual-machines/)
 6. [Klassische Bereitstellung]: [Gewusst wie: Installieren von Apache Qpid Proton-C für AMQP und Service Bus](../service-bus/service-bus-amqp-apache.md/)
-7. [Images: Apache 2.2.15 auf OpenLogic CentOS 6.3](http://azure.microsoft.com/marketplace/partners/cognosys/apache2215onopenlogiccentos63/)
-8. [Images: Drupal 7.2, LAMP-Server auf OpenLogic CentOS 6.3](http://azure.microsoft.com/marketplace/partners/cognosys/drupal720lampserveronopenlogiccentos63/)
+7. [Images: Apache 2.2.15 auf OpenLogic CentOS 6.3](https://azure.microsoft.com/marketplace/partners/cognosys/apache2215onopenlogiccentos63/)
+8. [Images: Drupal 7.2, LAMP-Server auf OpenLogic CentOS 6.3](https://azure.microsoft.com/marketplace/partners/cognosys/drupal720lampserveronopenlogiccentos63/)
 
 ### SUSE Linux Enterprise Server und openSUSE
 
@@ -90,28 +90,28 @@ Die CentOS-Linux-Distribution ist eine stabile, vorhersehbare, verwaltbare und r
 11. [Klassische Bereitstellung]: [Gewusst wie: Installieren und Ausführen von MySQL](virtual-machines-linux-mysql-use-opensuse.md)
 12. [Gewusst wie: Vorbereiten einer benutzerdefinierten SLES- oder openSUSE-VM](virtual-machines-linux-create-upload-vhd-suse.md)  
 13. [[SUSE-Forum] How to: Move to a New Patch Server (Wechseln zu einem neuen Patchserver, in englischer Sprache)](https://forums.suse.com/showthread.php?5622-New-Update-Infrastructure)
-14. [Images: SUSE Linux Enterprise Server für SAP Cloud Appliance Library](http://azure.microsoft.com/marketplace/partners/suse/suselinuxenterpriseserver11sp3forsapcloudappliance/)
+14. [Images: SUSE Linux Enterprise Server für SAP Cloud Appliance Library](https://azure.microsoft.com/marketplace/partners/suse/suselinuxenterpriseserver11sp3forsapcloudappliance/)
 
 ### CoreOS
 
 CoreOS ist eine kleine, optimierte Distribution für die reine Computingskalierung mit einem hohen Maß an Kontrolle hinsichtlich der Anpassung.
 
-10. [Image-Katalog](http://azure.microsoft.com/marketplace/partners/coreos/)  
+10. [Image-Katalog](https://azure.microsoft.com/marketplace/partners/coreos/)  
 11. [Klassische Bereitstellung]: [Gewusst wie: Verwenden von CoreOS in Azure](virtual-machines-linux-coreos-how-to.md)
 12. [Klassische Bereitstellung]: [Gewusst wie: Erste Schritte mit Fleet und Docker unter CoreOS in Azure](virtual-machines-linux-coreos-fleet-get-started.md)
 
 
-#### [Oracle Linux](http://azure.microsoft.com/marketplace/?term=Oracle+Linux)
+#### [Oracle Linux](https://azure.microsoft.com/marketplace/?term=Oracle+Linux)
   2. [Vorbereiten eines virtuellen Oracle Linux-Computers für Azure](virtual-machines-linux-create-upload-vhd-oracle.md)
 
 ### FreeBSD
 
 12. [MSOpenTech VM Depot](https://vmdepot.msopentech.com/List/Index?sort=Date&search=FreeBSD)
-13. [Klassische Bereitstellung]: [Blog: Ausführen von FreeBSD in Azure](http://azure.microsoft.com/blog/2014/05/22/running-freebsd-in-azure/)
+13. [Klassische Bereitstellung]: [Blog: Ausführen von FreeBSD in Azure](https://azure.microsoft.com/blog/2014/05/22/running-freebsd-in-azure/)
 14. [Klassische Bereitstellung]: [Blog: Einfache Bereitstellung von FreeBSD](http://msopentech.com/blog/2014/10/24/easy-deploy-freebsd-microsoft-azure-vm-depot/)
 15. [Blog: Bereitstellen eines benutzerdefinierten FreeBSD-Images](http://msopentech.com/blog/2014/05/14/deploy-customize-freebsd-virtual-machine-image-microsoft-azure/)
 17. [Gewusst wie: Installieren des Azure Linux-Agents](virtual-machines-linux-agent-user-guide.md)
-18. [Marketplace: Kaspersky AV für Linux-Dateiserver](http://azure.microsoft.com/marketplace/partners/kaspersky-lab/kav-for-lfs-kav-for-lfs/)
+18. [Marketplace: Kaspersky AV für Linux-Dateiserver](https://azure.microsoft.com/marketplace/partners/kaspersky-lab/kav-for-lfs-kav-for-lfs/)
 
 ## Grundlagen
 
@@ -142,19 +142,19 @@ CoreOS ist eine kleine, optimierte Distribution für die reine Computingskalieru
 5. [Docker-Hub-Registrierung](https://registry.hub.docker.com/) &ndash; die Registrierung für Docker-Container-Images.
 
 ## Sprachen und Plattformen
-### [Azure Java Dev Center](http://azure.microsoft.com/develop/java/)
+### [Azure Java Dev Center](https://azure.microsoft.com/develop/java/)
 
 1. [Images](https://vmdepot.msopentech.com/List/Index?sort=Featured&search=java)
 2. [Gewusst wie: Verwenden von Service Bus aus Java mit AMQP 1.0](http://msdn.microsoft.com/library/azure/jj841073.aspx)
 3. [Gewusst wie: Einrichten von Tomcat7 auf Linux mit dem klassischen Azure-Portal](virtual-machines-linux-setup-tomcat7-linux.md)
 4. [Video: Azure-Java-SDK für die Dienstverwaltung](http://channel9.msdn.com/Shows/Cloud+Cover/Episode-157-The-Java-SDK-for-Azure-Management-with-Brady-Gaster)
-5. [Blog: Erste Schritte mit Azure-Verwaltungsbibliotheken für Java](http://azure.microsoft.com/blog/2014/09/15/getting-started-with-the-azure-java-management-libraries/)
+5. [Blog: Erste Schritte mit Azure-Verwaltungsbibliotheken für Java](https://azure.microsoft.com/blog/2014/09/15/getting-started-with-the-azure-java-management-libraries/)
 5. [GitHub-Repository: Azure Toolkit für Eclipse mit Java](https://github.com/MSOpenTech/WindowsAzureToolkitForEclipseWithJava)
 6. [Referenz: Azure Toolkit für Eclipse mit Java](http://msdn.microsoft.com/library/azure/hh694271.aspx)
 7. [GitHub-Repository: MS Open Tech-Tools-Plug-In für IntelliJ IDEA und Android-Studio](https://github.com/MSOpenTech/msopentech-tools-for-intellij)
 7. [Blog: MSOpenTech-Beiträge zu OpenJDK](http://msopentech.com/blog/2014/10/21/ms-open-techs-first-contribution-openjdk/)
-8. [Images: WebSphere](http://azure.microsoft.com/marketplace/partners/msopentech/was-8-5-was-8-5-5-3/)
-9. [Images: WebLogic](http://azure.microsoft.com/marketplace/?term=weblogic)
+8. [Images: WebSphere](https://azure.microsoft.com/marketplace/partners/msopentech/was-8-5-was-8-5-5-3/)
+9. [Images: WebLogic](https://azure.microsoft.com/marketplace/?term=weblogic)
 
 
 ### JVM-Sprachen
@@ -206,7 +206,7 @@ Dieser Abschnitt enthält Informationen zu mehreren verschiedenen Speicheransät
     - [Blog: Redis unter Windows im Azure Redis Cache-Dienst](http://msopentech.com/blog/2014/05/12/redis-on-windows/)
     - [Blog: Ankündigung des ASP.NET-Sitzungsstatusanbieters für Redis-Vorschauversion](http://blogs.msdn.com/b/webdev/archive/2014/05/12/announcing-asp-net-session-state-provider-for-redis-preview-release.aspx)
 6. RavenHQ
-    - [Blog: RavenHQ jetzt in Azure Marketplace verfügbar](http://azure.microsoft.com/blog/2014/08/12/ravenhq-now-available-in-the-azure-store/)
+    - [Blog: RavenHQ jetzt in Azure Marketplace verfügbar](https://azure.microsoft.com/blog/2014/08/12/ravenhq-now-available-in-the-azure-store/)
 
 ### Big Data
 2. Hadoop/Cloudera  
@@ -239,8 +239,8 @@ Authentifizierung und Verschlüsselung sind wichtige Themen in der Software-Entw
 
 Führen Sie HPC-Workloads auf Linux-VM-Clustern aus, die mit Open-Source-Tools oder mit dem Microsoft HPC Pack erstellt wurden.
 
-1.	[Schnellstartvorlage: Einrichten eines SLURM-Clusters](http://azure.microsoft.com/documentation/templates/slurm/) und [Blogbeitrag](http://blogs.technet.com/b/windowshpc/archive/2015/06/06/deploy-a-slurm-cluster-on-azure.aspx)
-2.	[Schnellstartvorlage: Einrichten eines Torque-Clusters](http://azure.microsoft.com/documentation/templates/torque-cluster/)
+1.	[Schnellstartvorlage: Einrichten eines SLURM-Clusters](https://azure.microsoft.com/documentation/templates/slurm/) und [Blogbeitrag](http://blogs.technet.com/b/windowshpc/archive/2015/06/06/deploy-a-slurm-cluster-on-azure.aspx)
+2.	[Schnellstartvorlage: Einrichten eines Torque-Clusters](https://azure.microsoft.com/documentation/templates/torque-cluster/)
 3.	[Schnellstartvorlage: Erstellen eines HPC-Clusters mit Linux-Computeknoten](https://azure.microsoft.com/documentation/templates/create-hpc-cluster-linux-cn/)
 4.	[Tutorial: Erste Schritte mit Linux-Computeknoten in einem HPC Pack-Cluster in Azure](virtual-machines-linux-cluster-hpcpack.md)
 5.	[Tutorial: Ausführen von NAMD mit dem Microsoft HPC Pack auf Linux-Computeknoten in Azure](virtual-machines-linux-cluster-hpcpack-namd.md)
@@ -249,7 +249,7 @@ Führen Sie HPC-Workloads auf Linux-VM-Clustern aus, die mit Open-Source-Tools o
 
 ## DevOps, Verwaltung und Optimierung
 
-Dieser Abschnitt beginnt mit einem Blogeintrag mit einer Reihe von Videos unter [Video: Virtuelle Azure-Computer: Verwenden von Chef, Puppet und Docker für die Verwaltung virtueller Linux-Computer.](http://azure.microsoft.com/blog/2014/12/15/azure-virtual-machines-using-chef-puppet-and-docker-for-managing-linux-vms/). Der Bereich "DevOps, Verwaltung und Optimierung" ist jedoch ziemlich umfangreich und verändert sich sehr schnell. Sie sollten die Liste unten also als Ausgangspunkt betrachten.
+Dieser Abschnitt beginnt mit einem Blogeintrag mit einer Reihe von Videos unter [Video: Virtuelle Azure-Computer: Verwenden von Chef, Puppet und Docker für die Verwaltung virtueller Linux-Computer.](https://azure.microsoft.com/blog/2014/12/15/azure-virtual-machines-using-chef-puppet-and-docker-for-managing-linux-vms/). Der Bereich "DevOps, Verwaltung und Optimierung" ist jedoch ziemlich umfangreich und verändert sich sehr schnell. Sie sollten die Liste unten also als Ausgangspunkt betrachten.
 
 1. Docker
 	- [Docker-VM-Erweiterung für Linux auf Azure](virtual-machines-docker-vm-extension.md)
@@ -265,7 +265,7 @@ Dieser Abschnitt beginnt mit einem Blogeintrag mit einer Reihe von Videos unter 
 	- [GitHub-Repository: Installieren von Deis auf einem CoreOS-Cluster in Azure](https://github.com/chanezon/azure-linux/tree/master/coreos/deis)
 4. Kubernetes
 	- [Vollständige Anleitung für die automatisierte Kubernetes- Clusterbereitstellung mit CoreOS und Weave](https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/getting-started-guides/coreos/azure/README.md#kubernetes-on-azure-with-coreos-and-weave)
-	- [Kubernetes Visualizer](http://azure.microsoft.com/blog/2014/08/28/hackathon-with-kubernetes-on-azure)
+	- [Kubernetes Visualizer](https://azure.microsoft.com/blog/2014/08/28/hackathon-with-kubernetes-on-azure/)
 5. Jenkins und Hudson
 	- [Blog: Jenkins Slave-Plug-In für Azure](http://msopentech.com/blog/2014/09/23/announcing-jenkins-slave-plugin-azure/)
 	- [GitHub-Repository: Jenkins Speicher-Plug-In für Azure](https://github.com/jenkinsci/windows-azure-storage-plugin)
@@ -302,4 +302,4 @@ Dieser Abschnitt beginnt mit einem Blogeintrag mit einer Reihe von Videos unter 
 [How to use docker-machine on Azure]: virtual-machines-docker-machine.md
 [How to use docker with swarm on Azure]: virtual-machines-docker-swarm.md
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

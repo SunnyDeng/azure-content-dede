@@ -21,7 +21,8 @@
 
 Eigene Geräte der Benutzer können als Ihrer Organisation bekannt markiert werden. Dazu müssen die Benutzer für ihre Geräte eine Arbeitsbereichverknüpfung mit dem Geräteregistrierungsdienst für Azure Active Directory durchführen. Die folgende Schrittanleitung zeigt, wie Sie mithilfe der Active Directory-Verbunddienste (AD FS) in Windows Server 2012 R2 den bedingten Zugriff auf lokale Anwendungen ermöglichen.
 
-> [AZURE.NOTE]Wenn Geräte verwendet werden, die über den Azure Active Directory-Geräteregistrierungsdienst registriert und mit Richtlinien für den bedingten Zugriff konfiguriert sind, wird eine Office 365-Lizenz oder eine Azure AD Premium-Lizenz benötigt. Hierzu gehören auch Richtlinien, die von den Active Directory-Verbunddiensten (AD FS) für lokale Ressourcen erzwungen werden.
+> [AZURE.NOTE]
+Wenn Geräte verwendet werden, die über den Azure Active Directory-Geräteregistrierungsdienst registriert und mit Richtlinien für den bedingten Zugriff konfiguriert sind, wird eine Office 365-Lizenz oder eine Azure AD Premium-Lizenz benötigt. Hierzu gehören auch Richtlinien, die von den Active Directory-Verbunddiensten (AD FS) für lokale Ressourcen erzwungen werden.
 
 Weitere Informationen zu den Szenarien für den lokalen bedingten Zugriff finden Sie unter [Arbeitsplatzbeitritt von einem beliebigen Gerät für SSO und die nahtlose zweistufige Authentifizierung bei allen Unternehmensanwendungen](https://technet.microsoft.com/library/dn280945.aspx).
 
@@ -118,13 +119,14 @@ Diese Anleitung hilft Ihnen bei der Integration Ihres Azure AD-Mandanten in das 
 5.	Führen Sie im Abschnitt **Bereitstellen und verwalten** die Schritte 1 bis 3 aus, um Azure Active Directory in Ihr lokales Verzeichnis zu integrieren.
   1.	Fügen Sie Domänen hinzu.
   2.	Installieren und Ausführen von Azure AD Connect: Installieren Sie Azure AD Connect, indem Sie die Anleitung unter [Benutzerdefinierte Installation von Azure AD Connect](active-directory-aadconnect-get-started-custom.md) verwenden.
-  3. Überprüfen und verwalten Sie die Verzeichnissynchronisierung. In diesem Schritt sind Anweisungen zum einmaligen Anmelden enthalten. >[AZURE.NOTE]Konfigurieren Sie die Partnerbeziehung mit AD FS wie im oben verlinkten Dokument beschrieben. >[AZURE.NOTE]Sie müssen keine Preview-Funktionen konfigurieren.
+  3. Überprüfen und verwalten Sie die Verzeichnissynchronisierung. In diesem Schritt sind Anweisungen zum einmaligen Anmelden enthalten. >[AZURE.NOTE] Konfigurieren Sie die Partnerbeziehung mit AD FS wie im oben verlinkten Dokument beschrieben. >[AZURE.NOTE] Sie müssen keine Preview-Funktionen konfigurieren.
   
    
 
 
 ## Ausführen eines Upgrades des Schemas der Active Directory-Domänendienste
-> [AZURE.NOTE]Das Upgrade des Active Directory-Schemas kann nicht rückgängig gemacht werden. Es wird empfohlen, dieses Upgrade zuerst in einer Testumgebung auszuführen.
+> [AZURE.NOTE]
+Das Upgrade des Active Directory-Schemas kann nicht rückgängig gemacht werden. Es wird empfohlen, dieses Upgrade zuerst in einer Testumgebung auszuführen.
 
 1. Melden Sie sich an Ihrem Domänencontroller mit einem Konto an, das über die Rechte "Unternehmensadministrator" und "Schemaadministrator" verfügt.
 2. Kopieren Sie das Verzeichnis **[medien]\\support\\adprep** und die Unterverzeichnisse auf einen Ihrer Active Directory-Domänencontroller. 
@@ -132,12 +134,13 @@ Diese Anleitung hilft Ihnen bei der Integration Ihres Azure AD-Mandanten in das 
 4. Navigieren Sie an einer Eingabeaufforderung zum Verzeichnis „adprep“, und führen Sie dann den folgenden Befehl aus: **adprep.exe /forestprep**. Folgen Sie den Anweisungen auf dem Bildschirm, um das Upgrade des Schemas abzuschließen.
 
 ## Vorbereiten von Active Directory für die Unterstützung von Geräten
->[AZURE.NOTE]Dies ist ein einmaliger Vorgang, den Sie ausführen müssen, um Ihre Active Directory-Gesamtstruktur für die Unterstützung von Geräten vorzubereiten. Sie müssen mit der Berechtigung "Unternehmensadministrator" angemeldet sein, und Ihre Active Directory-Gesamtstruktur muss über das Windows Server 2012 R2-Schema verfügen, damit dieses Verfahren abgeschlossen werden kann.
+>[AZURE.NOTE] Dies ist ein einmaliger Vorgang, den Sie ausführen müssen, um Ihre Active Directory-Gesamtstruktur für die Unterstützung von Geräten vorzubereiten. Sie müssen mit der Berechtigung "Unternehmensadministrator" angemeldet sein, und Ihre Active Directory-Gesamtstruktur muss über das Windows Server 2012 R2-Schema verfügen, damit dieses Verfahren abgeschlossen werden kann.
 
 
 ##Vorbereiten der Active Directory-Gesamtstruktur für die Unterstützung von Geräten
 
-> [AZURE.NOTE]Dies ist ein einmaliger Vorgang, den Sie ausführen müssen, um Ihre Active Directory-Gesamtstruktur für die Unterstützung von Geräten vorzubereiten. Sie müssen mit der Berechtigung "Unternehmensadministrator" angemeldet sein, und Ihre Active Directory-Gesamtstruktur muss über das Windows Server 2012 R2-Schema verfügen, damit dieses Verfahren abgeschlossen werden kann.
+> [AZURE.NOTE]
+Dies ist ein einmaliger Vorgang, den Sie ausführen müssen, um Ihre Active Directory-Gesamtstruktur für die Unterstützung von Geräten vorzubereiten. Sie müssen mit der Berechtigung "Unternehmensadministrator" angemeldet sein, und Ihre Active Directory-Gesamtstruktur muss über das Windows Server 2012 R2-Schema verfügen, damit dieses Verfahren abgeschlossen werden kann.
 
 ### Vorbereiten der Active Directory-Gesamtstruktur
 
@@ -183,6 +186,9 @@ Diese URL kann auf unterschiedlichste Weise an die Benutzer kommuniziert werden.
 3. Wählen Sie **Beitreten**.
 4. Melden Sie sich bei Aufforderung mit Ihren Anmeldeinformationen an. Das Gerät ist jetzt verknüpft.
 
+###Verknüpfen eines Windows 7-Geräts mithilfe der Azure Active Directory-Geräteregistrierung
+Zum Registrieren von in eine Domäne eingebundenen Windows 7-Geräten müssen Sie das Geräteregistrierung-Softwarepaket bereitstellen. Das Softwarepaket heißt „Arbeitsplatzeinbindung für Windows 7“ und steht zum Download auf der [Microsoft Connect-Website](https://connect.microsoft.com/site1164) zur Verfügung. Eine Anleitung zum Verwenden des Pakets finden Sie unter [Konfigurieren der automatischen Geräteregistrierung für in eine Domäne eingebundene Windows 7-Geräte](active-directory-conditional-access-automatic-device-registration-windows7.md).
+
 ### Verknüpfen eines Android-Geräts mithilfe der Azure Active Directory-Geräteregistrierung
 
 Im Thema [Azure Authenticator für Android](active-directory-conditional-access-azure-authenticator-app.md) finden Sie Anweisungen zum Installieren der Azure Authenticator-App auf Ihrem Android-Gerät und zum Hinzufügen eines Geschäftskontos. Nach der erfolgreichen Erstellung eines Geschäftskontos auf einem Android-Gerät wird das Gerät per Arbeitsbereich mit der Organisation verknüpft.
@@ -198,7 +204,8 @@ Standardmäßig werden Geräteobjekte, die aus Azure Active Directory zurückges
 Stellen Sie sich folgendes Szenario vor: Sie erstellen eine Anwendungsvertrauensstellung der vertrauenden Seite in AD FS und konfigurieren eine Ausstellungsautorisierungsregel , die nur registrierte Geräte zulässt. Nun dürfen ausschließlich registrierte Geräte auf die Anwendung zugreifen. Damit der Zugriff auf die Anwendung für Ihre Benutzer vereinfacht wird, konfigurieren Sie eine benutzerdefinierte Meldung "Zugriff verweigert", die Anweisungen zum Hinzufügen von Geräten enthält. Jetzt steht Ihren Benutzern ein nahtloses Verfahren zum Registrieren ihrer Geräte zur Verfügung, um Zugriff auf eine Anwendung zu erhalten.
 
 Die folgenden Schritte zeigen, wie dieses Szenario implementiert wird.
->[AZURE.NOTE]Dieser Abschnitt setzt voraus, dass Sie bereits eine Vertrauensstellung der vertrauenden Seite für Ihre Anwendung in AD FS konfiguriert haben.
+>[AZURE.NOTE]
+Dieser Abschnitt setzt voraus, dass Sie bereits eine Vertrauensstellung der vertrauenden Seite für Ihre Anwendung in AD FS konfiguriert haben.
 
 1. Öffnen Sie die AD FS-Verwaltungskonsole, und navigieren Sie zu "AD FS > Vertrauensstellungen > Vertrauensstellungen der vertrauenden Seite".
 2. Suchen Sie nach der Anwendung, für die diese neue Zugriffsregel gelten soll. Klicken Sie mit der rechten Maustaste auf die Anwendung, und wählen Sie dann "Anspruchsregeln bearbeiten" aus.
@@ -237,4 +244,4 @@ Wenn Benutzer auf Ihre Anwendung jetzt über ein Gerät zugreifen, das nicht unt
 
 ![Screenshot eines Fehlers, den Benutzer erhalten, wenn sie ihr Gerät nicht unter Azure AD registriert haben](./media/active-directory-conditional-access/error-azureDRS-device-not-registered.gif)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

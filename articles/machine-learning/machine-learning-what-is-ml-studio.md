@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/13/2015"
+	ms.date="02/03/2016"
 	ms.author="garye"/>
 
 # Was ist Azure Machine Learning Studio?
@@ -31,7 +31,7 @@ Für die Entwicklung eines prädiktiven Analysemodells verwendet man typischerwe
 
 **Azure Machine Learning Studio** stellt Ihnen einen interaktiven, visuellen Arbeitsbereich zur Verfügung, in dem Sie einfach ein Vorhersageanalysemodell entwickeln, testen und durchlaufen können. Sie fügen per Drag & Drop ***DataSets*** und ***Analysemodule*** in einen interaktiven ***Arbeitsbereich*** ein und verbinden sie zu einem ***Experiment***, das in Machine Learning Studio ***ausgeführt*** werden kann. Für das Iterieren an Ihrem Modelldesign ***bearbeiten*** Sie das Experiment, ***speichern*** auf Wunsch eine Kopie und führen es erneut aus. Wenn Sie bereit sind, können Sie Ihr ***Trainingsexperiment*** in ein ***Vorhersageexperiment*** konvertieren und anschließend als ***Webdienst*** ***veröffentlichen***, damit andere Benutzer auf das Modell zugreifen können.
 
->[AZURE.TIP]Informationen zum Herunterladen und Drucken des Diagramms, mit dem Sie sich eine Übersicht über die Machine Learning Studio-Funktionen verschaffen können, finden Sie unter [Übersichtsdiagramm der Azure Machine Learning Studio-Funktionen](machine-learning-studio-overview-diagram.md).
+>[AZURE.TIP] Informationen zum Herunterladen und Drucken des Diagramms, mit dem Sie sich einen Überblick über die Machine Learning Studio-Funktionen verschaffen können, finden Sie unter [Übersichtsdiagramm der Azure Machine Learning Studio-Funktionen](machine-learning-studio-overview-diagram.md).
 
 Es ist keine Programmierung erforderlich, sondern einfach nur das visuelle Verbinden von Datasets und Modulen zum Erstellen eines prädiktiven Analysemodells.
 
@@ -93,7 +93,7 @@ Eine Liste der in Machine Learning Studio enthaltenen Beispiel-DataSets finden S
 Ein Modul ist ein Algorithmus, den Sie auf Ihre Daten anwenden können. Machine Learning Studio hat eine Reihe von Modulen, die von Funktionen für die Dateneinspeisung bis zu Trainings-, Bewertungs- und Überprüfungsvorgängen reichen. Hier einige Beispiele der enthaltenen Module:
 
 - [In ARFF konvertieren:][convert-to-arff] konvertiert ein .NET-serialisiertes DataSet in das ARFF-Format
-- [Elementare Statistiken:][elementary-statistics] berechnet elementare Statistiken wie beispielsweise Mittelwert, Standardabweichung usw.
+- [Elementare Statistiken berechnen:][elementary-statistics] berechnet elementare Statistiken wie beispielsweise Mittelwert, Standardabweichung usw.
 - [Lineare Regression:][linear-regression] erstellt ein lineares Regressionsmodell online, das auf einem Gradientenverfahren-Modell beruht.
 - [Bewertungsmodell:][score-model] bewertet ein trainiertes Klassifizierungs- oder Regressionsmodell
 
@@ -115,4 +115,4 @@ Wenn Ihr Predictive Analytics-Modell bereit ist, können Sie es als Webdienst di
 [linear-regression]: https://msdn.microsoft.com/library/azure/31960a6f-789b-4cf7-88d6-2e1152c0bd1a/
 [score-model]: https://msdn.microsoft.com/library/azure/401b4f92-e724-4d5a-be81-d5b0ff9bdb33/
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_0204_2016-->

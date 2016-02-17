@@ -54,12 +54,12 @@ Benutzername | Ja | Geben Sie einen Benutzernamen ein, mit dem Sie sich bei SQL 
 Kennwort | Ja | Geben Sie das Kennwort für den Benutzernamen ein.
 Datenbankname | Ja | Geben Sie die Datenbank ein, mit der Sie eine Verbindung herstellen. Sie können z. B. *Customers* oder *dbo/orders* eingeben.
 Lokal | Ja | Die Standardeinstellung ist "False". Geben Sie "False" ein, wenn Sie eine Verbindung mit einer Azure SQL-Datenbank herstellen. Geben Sie "True" ein, wenn Sie eine Verbindung zu einem lokalen SQL Server herstellen.
-Service Bus-Verbindungszeichenfolge | Nein | Wenn Sie lokale eine Verbindung herstellen, geben Sie die Verbindungszeichenfolge von Service Bus Relay ein.<br/><br/>[Verwendung mit dem Hybrid Connection Manager](app-service-logic-hybrid-connection-manager.md)<br/>[Service Bus-Preise](http://azure.microsoft.com/pricing/details/service-bus/)
+Service Bus-Verbindungszeichenfolge | Nein | Wenn Sie lokale eine Verbindung herstellen, geben Sie die Verbindungszeichenfolge von Service Bus Relay ein.<br/><br/>[Verwendung mit dem Hybrid Connection Manager](app-service-logic-hybrid-connection-manager.md)<br/>[Service Bus-Preise](https://azure.microsoft.com/pricing/details/service-bus/)
 Name des Partnerservers | Nein | Wenn der primäre Server nicht verfügbar ist, können Sie einen Partnerserver als Alternative oder einen Backup-Server eingeben.
 Tabellen | Nein | Listen Sie die Datenbanktabellen auf, die vom Connector aktualisiert werden können. Geben Sie z. B. *OrdersTable* oder *EmployeeTable* ein. Wenn keine Tabellen eingegeben werden, können alle Tabellen verwendet werden. Gültige Tabellen und/oder gespeicherte Prozeduren sind erforderlich, um diesen Connector als Aktion zu verwenden.
 Gespeicherte Prozeduren | Nein | Geben Sie eine vorhandene gespeicherte Prozedur ein, die vom Connector aufgerufen werden kann. Geben Sie z. B. *sp\_IsEmployeeEligible* oder *sp\_CalculateOrderDiscount* ein. Gültige Tabellen und/oder gespeicherte Prozeduren sind erforderlich, um diesen Connector als Aktion zu verwenden.
 Abfrage zu verfügbaren Daten | Für Trigger-Support | Die SQL-Anweisung, mit der bestimmt wird, ob Daten zum Abrufen einer SQL Server-Datenbanktabelle verfügbar sind. Dies sollte einen numerischen Wert für die Anzahl der Zeilen der verfügbaren Daten zurückgeben. Beispiel: SELECT COUNT(*) from table\_name.
-Abrufen der Datenabfrage | Unterstützung für Trigger | Die SQL-Anweisung zum Abrufen der SQL Server-Datenbanktabelle. Sie können eine beliebige Anzahl von SQL-Anweisungen durch ein Semikolon getrennt eingeben. Diese Anweisung wird im Hinblick auf Transaktionen ausgeführt und nur übernommen, wenn die Daten in Ihrer Logik-App sicher gespeichert sind. Beispiel: SELECT * FROM table\_name; DELETE FROM table\_name. <br/><br/>**Hinweis**<br/>Sie müssen eine Umfrageanweisung bereitstellen, die eine Endlosschleife durch Löschen, Verschieben oder Aktualisieren der ausgewählten Daten vermeidet, um sicherzustellen, dass die gleichen Daten nicht erneut abgefragt werden.
+ Abrufen der Datenabfrage | Unterstützung für Trigger | Die SQL-Anweisung zum Abrufen der SQL Server-Datenbanktabelle. Sie können eine beliebige Anzahl von SQL-Anweisungen durch ein Semikolon getrennt eingeben. Diese Anweisung wird im Hinblick auf Transaktionen ausgeführt und nur übernommen, wenn die Daten in Ihrer Logik-App sicher gespeichert sind. Beispiel: SELECT * FROM table\_name; DELETE FROM table\_name. <br/><br/>**Hinweis**<br/>Sie müssen eine Umfrageanweisung bereitstellen, die eine Endlosschleife durch Löschen, Verschieben oder Aktualisieren der ausgewählten Daten vermeidet, um sicherzustellen, dass die gleichen Daten nicht erneut abgefragt werden.
 
 5. Nach Abschluss des Vorgangs sehen die Paketeinstellungen etwa wie folgt aus: ![][1]
 
@@ -73,7 +73,7 @@ Um den SQL-Connector als Trigger zu verwenden, geben Sie die Werte für die **Ve
 
 Der **Abruf der Datenabfrage** wird nur ausgeführt, wenn die Datenabfrage nach verfügbaren Daten angibt, dass Daten verfügbar sind. Diese Anweisung wird innerhalb einer Transaktion ausgeführt, und wird nur übernommen, wenn die extrahierten Daten in Ihrem Workflow dauerhaft gespeichert werden. Es ist wichtig, das unendliche Extrahieren der gleichen Daten zu vermeiden. Das transaktionale Merkmal dieser Ausführung kann verwendet werden, um Daten zu löschen oder zu aktualisieren, damit sie bei der nächsten Datenabfrage nicht wieder gesammelt werden.
 
-> [AZURE.NOTE]Das Schema, das von dieser Anweisung zurückgegebenen wird, identifiziert die verfügbaren Eigenschaften im Connector. Alle Spalten müssen benannt werden.
+> [AZURE.NOTE] Das Schema, das von dieser Anweisung zurückgegebenen wird, identifiziert die verfügbaren Eigenschaften im Connector. Alle Spalten müssen benannt werden.
 
 #### Beispiel für eine Abfrage verfügbarer Daten
 
@@ -131,11 +131,11 @@ Felder (in der SELECT-Abfrage) |<ul><li>Gültige Spaltennamen (durch Kommas getr
 
 ## Hybridkonfiguration (optional)
 
-> [AZURE.NOTE]Dieser Schritt ist nur bei lokaler Verwendung von SQL Server hinter Ihrer Firewall erforderlich.
+> [AZURE.NOTE] Dieser Schritt ist nur bei lokaler Verwendung von SQL Server hinter Ihrer Firewall erforderlich.
 
 App Service verwendet den Hybrid-Konfigurations-Manager, um sicher eine Verbindung auf Ihr lokales System herzustellen. Wenn Ihr Connector SQL Server lokal verwendet, ist der Hybrid Connection Manager erforderlich.
 
-> [AZURE.NOTE]Wenn Sie Azure Logik-Apps ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [Logik-App testen](https://tryappservice.azure.com/?appservice=logic) sofort kostenlos eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+> [AZURE.NOTE] Wenn Sie Azure Logik-Apps ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [Logik-App testen](https://tryappservice.azure.com/?appservice=logic) sofort kostenlos eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 Informationen finden Sie unter [Hybrid Connection Manager konfigurieren](app-service-logic-hybrid-connection-manager.md).
 
@@ -159,4 +159,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [11]: ./media/app-service-logic-connector-sql/LogicApp7.png
 [12]: ./media/app-service-logic-connector-sql/LogicApp8.png
 
-<!----HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

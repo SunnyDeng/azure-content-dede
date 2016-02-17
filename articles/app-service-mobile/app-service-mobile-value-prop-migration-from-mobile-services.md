@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-multiple"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/05/2015"
+	ms.date="01/12/2016"
 	ms.author="kirillg"/>
 
 # <a name="getting-started"> </a>Ich verwende Mobile Services. Welche Vorteile bietet App Service?
@@ -44,7 +44,7 @@ In *Azure App Service* wird der *Mobile App*-Back-End-Code in demselben Containe
 
 
 ##Verbinden Ihrer *Mobile App* mit SaaS-API
-*Azure App Service* erleichtert das Verbinden Ihrer Mobile App mit SaaS-APIs wie Office 365, Dynamics, Salesforce, SAP und vielen mehr. *Azure App Service* bietet eine sofort einsetzbare Authentifizierung im Namen des Benutzers und ermöglicht Ihnen eine einmalige Anmeldung über alle SaaS-APIs hinweg, indem Token für einzelne SaaS-APIs Ihrer primären Identität zugeordnet werden.
+*Azure App Service* erleichtert das Verbinden Ihrer Mobile App mit SaaS-APIs wie Office 365, Dynamics, Salesforce, SAP und vielen mehr. *Azure App Service* bietet eine sofort einsetzbare Authentifizierung im Namen des Benutzers und ermöglicht Ihnen einmaliges Anmelden über alle SaaS-APIs hinweg, indem Token für einzelne SaaS-APIs Ihrer primären Identität zugeordnet werden.
 
 ##Zugriff auf lokale Daten über VNet
 Mit Mobile Services können Sie schon heute Hybridverbindungen für den Zugriff auf lokale Ressourcen verwenden. Es gibt jedoch Situationen, in denen eine VPN-Lösung bevorzugt wird. Mit *Azure App Service* können Sie Azure-VNet für Mobile App-Back-End-Code verwenden.
@@ -64,9 +64,7 @@ Sichern Sie automatisch Back-End und Datenbank. Ihr Code und Ihre Daten werden i
 ##Auf die Plätze, Staging, los!
 Mit *Azure App Service* können Sie jetzt mehrere private Test- und Stagingumgebungen für Ihre mobilen Apps erstellen. Verwenden Sie sie zum Durchführen von Tests vor der Bereitstellung. Wechseln Sie ohne Ausfallzeiten in die Produktion. Web-Apps werden vorab geladen, um höchste Kundenzufriedenheit zu gewährleisten.
 
-
-
-Sobald die Funktion *Mobile Azure App Service-App* allgemein verfügbar wird, stellen wir eine nahtlose Migrationsmöglichkeit für Ihre vorhandenen Mobile Services auf App Service bereit, falls Sie die Migration durchführen möchten. In der Zwischenzeit können Sie sich mithilfe dieses [Lernprogramms](app-service-mobile-migrating-from-mobile-services.md) mit *App Service* vertraut machen und die Vorteile von *App Service* für Ihre vorhandenen Mobile Service-Projekte nutzen.
+Sie können mithilfe dieses [Tutorials](app-service-mobile-migrating-from-mobile-services.md) die Vorteile von *App Service* für Ihre vorhandenen Mobile Service-Projekte nutzen.
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

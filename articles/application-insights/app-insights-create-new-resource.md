@@ -33,7 +33,7 @@ Außerdem benötigen Sie ein [Microsoft Azure](http://azure.com)-Abonnement. Wen
 
 Sie können jedoch auch ein neues Abonnement erstellen. Mit der kostenlosen Testversion können Sie alle Funktionen von Azure testen. Nachdem der Testzeitraum abgelaufen ist, finden Sie möglicherweise das Abonnement mit nutzungsbasierter Bezahlung geeignet, da Ihnen kostenlose Dienste nicht in Rechnung gestellt werden.
 
-Wenn Sie Zugang zu einem Abonnement besitzen, melden Sie sich über Ihre Live-ID unter [http://portal.azure.com](http://portal.azure.com) bei Application Insights an.
+Wenn Sie Zugang zu einem Abonnement besitzen, melden Sie sich über Ihre Live-ID unter [http://portal.azure.com](https://portal.azure.com) bei Application Insights an.
 
 
 ## Erstellen einer Application Insights-Ressource
@@ -94,4 +94,4 @@ Sie können ein [PowerShell-Skript](app-insights-powershell-script-create-resour
 
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

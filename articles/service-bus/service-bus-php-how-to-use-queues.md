@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="PHP" 
 	ms.topic="article" 
-	ms.date="10/14/2015" 
+	ms.date="01/26/2016" 
 	ms.author="sethm"/>
 
 # Verwenden von Service Bus-Warteschlangen
@@ -28,7 +28,7 @@ In diesem Leitfaden erfahren Sie, wie Sie Service Bus-Warteschlangen verwenden. 
 
 Die einzige Voraussetzung für das Erstellen einer PHP-Anwendung, die auf den Azure-Blob-Dienst zugreift, ist das Referenzieren von Klassen im [Azure-SDK für PHP](../php-download-sdk.md) aus dem Code heraus. Sie können die Anwendung mit beliebigen Entwicklungstools oder mit Editor erstellen.
 
-> [AZURE.NOTE]In Ihrer PHP-Installation muss außerdem die [OpenSSL-Erweiterung](http://php.net/openssl) installiert und aktiviert sein.
+> [AZURE.NOTE] In Ihrer PHP-Installation muss außerdem die [OpenSSL-Erweiterung](http://php.net/openssl) installiert und aktiviert sein.
 
 In diesem Leitfaden verwenden Sie Dienstfunktionen, die lokal aus einer PHP-Anwendung heraus oder im Code, der in einer Azure-Webrolle, -Workerrolle oder -Website ausgeführt wird, aufgerufen werden.
 
@@ -38,27 +38,27 @@ In diesem Leitfaden verwenden Sie Dienstfunktionen, die lokal aus einer PHP-Anwe
 
 ## Konfigurieren Ihrer Anwendung für die Verwendung von Service Bus
 
-Um die APIs für Azure Service Bus-Warteschlangen zu verwenden, gehen Sie folgendermaßen vor:
+Um die APIs für Service Bus-Warteschlangen zu verwenden, gehen Sie folgendermaßen vor:
 
 1. Verweisen Sie mithilfe der [require\_once][require_once]-Anweisung auf die Autoloaderdatei.
 2. Verweisen Sie auf alle Klassen, die Sie möglicherweise verwenden.
 
 Das folgende Beispiel zeigt, wie die Autoloaderdatei eingeschlossen und die **ServicesBuilder**-Klasse referenziert wird.
 
-> [AZURE.NOTE]In diesem Beispiel (und in anderen Beispielen in diesem Artikel) wird angenommen, dass Sie die PHP-Clientbibliotheken für Azure über Composer installiert haben. Wenn Sie die Bibliotheken manuell oder als PEAR-Paket installiert haben, müssen Sie auf die Autoloaderdatei **WindowsAzure.php** verweisen.
+> [AZURE.NOTE] In diesem Beispiel (und in anderen Beispielen in diesem Artikel) wird angenommen, dass Sie die PHP-Clientbibliotheken für Azure über Composer installiert haben. Wenn Sie die Bibliotheken manuell oder als PEAR-Paket installiert haben, müssen Sie auf die Autoloaderdatei **WindowsAzure.php** verweisen.
 
 	require_once 'vendor\autoload.php';
 	use WindowsAzure\Common\ServicesBuilder;
 
 In den Beispielen weiter unten wird die `require_once`-Anweisung immer angezeigt. Jedoch wird nur auf die für die Ausführung des Beispiels erforderlichen Klassen verwiesen.
 
-## Einrichten einer Azure Service Bus-Verbindung
+## Einrichten einer Service Bus-Verbindung
 
 Um einen Service Bus-Client zu instanziieren, benötigen Sie zunächst eine gültige Verbindungszeichenfolge mit diesem Format:
 
 	Endpoint=[yourEndpoint];SharedSecretIssuer=[Default Issuer];SharedSecretValue=[Default Key]
 
-Wobei das **Endgerät** normalerweise das Format `https://[yourNamespace].servicebus.windows.net` aufweist.
+Wobei der **Endpunkt** normalerweise das Format `https://[yourNamespace].servicebus.windows.net` aufweist.
 
 Um einen Azure-Dienstclient zu erstellen, müssen Sie die **ServicesBuilder**-Klasse verwenden. Sie können:
 
@@ -108,7 +108,7 @@ Das folgende Beispiel zeigt, wie Sie **ServiceBusRestProxy** instanziieren und *
 		echo $code.": ".$error_message."<br />";
 	}
 
-> [AZURE.NOTE]Sie können die `listQueues`-Methode bei `ServiceBusRestProxy`-Objekten zur Überprüfung verwenden, ob eine Warteschlange mit einem spezifischen Namen bereits innerhalb eines Dienstnamespace vorhanden ist.
+> [AZURE.NOTE] Sie können die `listQueues`-Methode bei `ServiceBusRestProxy`-Objekten zur Überprüfung verwenden, ob eine Warteschlange mit einem spezifischen Namen bereits innerhalb eines Dienstnamespace vorhanden ist.
 
 ## Senden von Nachrichten an eine Warteschlange
 
@@ -209,4 +209,4 @@ Weitere Informationen finden Sie auch im [PHP Developer Center](/develop/php/).
 
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_0128_2016-->

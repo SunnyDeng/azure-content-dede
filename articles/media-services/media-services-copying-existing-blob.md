@@ -20,13 +20,13 @@
 
 In diesem Thema wird erläutert, wie Blobs aus einem Speicherkonto in ein neues Microsoft Azure Media Services-Medienobjekt kopiert werden.
 
-Ihre Blobs können sich in einem Speicherkonto befinden, das einem oder das keinem Media Services-Konto zugeordnet ist. In diesem Thema wird beschrieben, wie Blobs aus einem Speicherkonto in ein Media Services-Medienobjekt kopiert werden. Beachten Sie, dass Sie Blobs auch zwischen verschiedenen Rechenzentren kopieren können. Allerdings fallen dabei möglicherweise Kosten an. Die Preisübersicht und weitere Informationen finden Sie unter [Azure-Preise](http://azure.microsoft.com/pricing/#header-11).
+Ihre Blobs können sich in einem Speicherkonto befinden, das einem oder das keinem Media Services-Konto zugeordnet ist. In diesem Thema wird beschrieben, wie Blobs aus einem Speicherkonto in ein Media Services-Medienobjekt kopiert werden. Beachten Sie, dass Sie Blobs auch zwischen verschiedenen Rechenzentren kopieren können. Allerdings fallen dabei möglicherweise Kosten an. Die Preisübersicht und weitere Informationen finden Sie unter [Azure-Preise](https://azure.microsoft.com/pricing/#header-11).
 
->[AZURE.NOTE]Sie sollten nicht versuchen, den Inhalt von BLOB-Containern, die mit Media Services generiert wurden, ohne die Verwendung von Media Service-APIs zu ändern.
+>[AZURE.NOTE] Sie sollten nicht versuchen, den Inhalt von BLOB-Containern, die mit Media Services generiert wurden, ohne die Verwendung von Media Service-APIs zu ändern.
 
 ##Beispiel herunterladen
 
-Laden Sie [hier](http://azure.microsoft.com/documentation/samples/media-services-dotnet-copy-blob-into-asset/) ein Beispiel herunter und führen Sie es aus.
+Laden Sie [hier](https://azure.microsoft.com/documentation/samples/media-services-dotnet-copy-blob-into-asset/) ein Beispiel herunter und führen Sie es aus.
 
 ##Voraussetzungen
 
@@ -316,4 +316,4 @@ Mit dem Codebeispiel unten werden die folgenden Aufgaben ausgeführt:
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

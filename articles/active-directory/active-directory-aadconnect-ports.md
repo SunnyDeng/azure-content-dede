@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure AD Connect-Ports"
+	pageTitle="Azure AD Connect: Ports | Microsoft Azure"
 	description="Diese Seite ist eine Seite technische Referenz für Ports, die für Azure AD Connect geöffnet sein müssen."
 	services="active-directory"
 	documentationCenter=""
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/11/2016"
+	ms.date="02/01/2016"
 	ms.author="billmath"/>
 
 # Erforderliche Ports und Protokolle für die Hybrid-Identität
@@ -46,7 +46,13 @@ In dieser Tabelle werden die Ports und Protokolle beschrieben, die für die Komm
 Eine Liste mit den Office 365-Ports und der IP-Adresse finden Sie unter [URLs und IP-Adressbereiche von Office 365](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2).
 
 ## Tabelle 3: Azure AD Connect und Verbund-/WAP-Server
-In dieser Tabelle werden die Ports und Protokolle beschrieben, die für die Kommunikation zwischen dem Azure AD Connect-Server und Verbund-/WAP-Servern erforderlich sind. In Kürze verfügbar!
+In dieser Tabelle werden die Ports und Protokolle beschrieben, die für die Kommunikation zwischen dem Azure AD Connect-Server und Verbund-/WAP-Servern erforderlich sind.
+
+| Protokoll |Ports |Beschreibung
+| --------- | --------- |--------- |
+| HTTP|80 (TCP/UDP)|Wird zum Herunterladen von Zertifikatsperrlisten zur Überprüfung von SSL-Zertifikaten verwendet
+|HTTPS|443 (TCP/UDP)|Wird zum Synchronisieren mit Azure AD verwendet
+|WinRM|5985| WinRM-Listener
 
 ## Tabelle 4: WAP- und Verbundserver
 In dieser Tabelle werden die Ports und Protokolle beschrieben, die für die Kommunikation zwischen den Verbundservern und WAP-Servern erforderlich sind.
@@ -79,4 +85,4 @@ In dieser Tabelle werden die Ports und Protokolle beschrieben, die für die Komm
 ### Tabelle 6b: Endpunkte für Azure AD Connect Health-Agent für (AD FS/Sync) und Azure AD
 Eine Liste mit Endpunkten finden Sie im [Abschnitt mit den Anforderungen für den Azure AD Connect Health-Agent](active-directory-aadconnect-health.md#requirements).
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0204_2016-->

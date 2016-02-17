@@ -3,7 +3,7 @@
 	description="Lösungsvorlage mit Microsoft Cortana Analytics für vorbeugende Wartung in der Luft- und Raumfahrt, in Versorgungsunternehmen und im Transport."
 	services="cortana-analytics"
 	documentationCenter=""
-	authors="garyericson"
+	authors="fboylu"
 	manager="paulettm"
 	editor="cgronlun"/>
 
@@ -14,14 +14,15 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="01/15/2016"
-	ms.author="garye" />
+	ms.author="fboylu" />
 
 # Playbook für die Cortana Analytics-Lösungsvorlage für vorbeugende Wartung in der Luft- und Raumfahrt und anderen Unternehmen
 
 ## Kurzfassung  
-Die vorbeugende Wartung ist eine der am stärksten nachgefragten Anwendungen von Predictive Analytics und bietet eindeutige Vorteile, z. B. das sehr hohe Kosteneinsparpotenzial. Dieses Playbook soll als Referenz für Lösungen zur vorbeugenden Wartung dienen, wobei der Schwerpunkt auf repräsentativen Anwendungsfällen liegt. Leser lernen die häufigsten Geschäftsszenarien der vorbeugenden Wartung kennen. Es geht um die Anforderungen in Bezug auf die Qualifizierung von Geschäftsproblemen für diese Lösungen, die für die Problemlösung erforderlichen Daten, Verfahren für die Vorhersagemodellierung zum Erstellen von Lösungen mit diesen Daten und bewährte Methoden mit Beispiel-Lösungsarchitekturen. Außerdem werden die Details der entwickelten Vorhersagemodelle beschrieben, z. B. Featureentwicklung, Modellentwicklung und Leistungsbewertung. Im Wesentlichen sind in diesem Playbook die geschäftlichen und analytischen Richtlinien zusammengefasst, die für eine erfolgreiche Entwicklung und Bereitstellung von Lösungen für die vorbeugende Wartung benötigt werden. Diese Richtlinien sollen der Zielgruppe dabei helfen, eine Lösung zu erstellen, indem Cortana Analytics Suite und vor allem Azure Machine Learning als Ausgangspunkte für die langfristige Strategie in Bezug auf die vorbeugende Wartung genutzt werden. Die Dokumentation zu Cortana Analytics Suite und Azure Machine Learning finden Sie auf den Seiten [Cortana Analytics](http://www.microsoft.com/server-cloud/cortana-analytics-suite/overview.aspx) und [Azure Machine Learning](http://azure.microsoft.com/services/machine-learning/).
+Die vorbeugende Wartung ist eine der am stärksten nachgefragten Anwendungen von Predictive Analytics und bietet eindeutige Vorteile, z. B. das sehr hohe Kosteneinsparpotenzial. Dieses Playbook soll als Referenz für Lösungen zur vorbeugenden Wartung dienen, wobei der Schwerpunkt auf repräsentativen Anwendungsfällen liegt. Leser lernen die häufigsten Geschäftsszenarien der vorbeugenden Wartung kennen. Es geht um die Anforderungen in Bezug auf die Qualifizierung von Geschäftsproblemen für diese Lösungen, die für die Problemlösung erforderlichen Daten, Verfahren für die Vorhersagemodellierung zum Erstellen von Lösungen mit diesen Daten und bewährte Methoden mit Beispiel-Lösungsarchitekturen. Außerdem werden die Details der entwickelten Vorhersagemodelle beschrieben, z. B. Featureentwicklung, Modellentwicklung und Leistungsbewertung. Im Wesentlichen sind in diesem Playbook die geschäftlichen und analytischen Richtlinien zusammengefasst, die für eine erfolgreiche Entwicklung und Bereitstellung von Lösungen für die vorbeugende Wartung benötigt werden. Diese Richtlinien sollen der Zielgruppe dabei helfen, eine Lösung zu erstellen, indem Cortana Analytics Suite und vor allem Azure Machine Learning als Ausgangspunkte für die langfristige Strategie in Bezug auf die vorbeugende Wartung genutzt werden. Die Dokumentation zu Cortana Analytics Suite und Azure Machine Learning finden Sie auf den Seiten [Cortana Analytics](http://www.microsoft.com/server-cloud/cortana-analytics-suite/overview.aspx) und [Azure Machine Learning](https://azure.microsoft.com/services/machine-learning/).
 
->[AZURE.TIP]Eine technische Anleitung zum Implementieren dieser Lösungsvorlage finden Sie unter [Technische Anleitung für die Cortana Analytics-Lösungsvorlage für vorbeugende Wartung](cortana-analytics-technical-guide-predictive-maintenance.md). Unter [Architektur der Cortana Analytics-Lösungsvorlage für vorbeugende Wartung](cortana-analytics-architecture-predictive-maintenance.md) können Sie ein Diagramm herunterladen, das eine Architekturübersicht zu dieser Vorlage enthält.
+>[AZURE.TIP]
+Eine technische Anleitung zum Implementieren dieser Lösungsvorlage finden Sie unter [Technische Anleitung für die Cortana Analytics-Lösungsvorlage für vorbeugende Wartung](cortana-analytics-technical-guide-predictive-maintenance.md). Unter [Architektur der Cortana Analytics-Lösungsvorlage für vorbeugende Wartung](cortana-analytics-architecture-predictive-maintenance.md) können Sie ein Diagramm herunterladen, das eine Architekturübersicht zu dieser Vorlage enthält.
 
 ## Playbook-Übersicht und -Zielgruppe  
 Dieses Playbook ist so aufgebaut, dass es für Leser mit und ohne technischen Hintergrund und mit unterschiedlichen Wissensständen und Interessen in Bezug auf die vorbeugende Wartung geeignet ist. Im Playbook werden sowohl die allgemeinen Aspekte der unterschiedlichen Arten von Lösungen für die vorbeugende Wartung als auch die Details der Implementierung abgedeckt. Der Inhalt ist so abgestimmt, dass er für die Zielgruppe, die nur an der Lösung und der Art der Anwendungen interessiert ist, und die Zielgruppe, die diese Lösungen implementieren möchte und daher die technischen Details benötigt, gleichermaßen geeignet ist.
@@ -332,4 +333,4 @@ Abbildung 8. Beispiel für eine Lösungsarchitektur für die vorbeugende Wartun
 
 Weitere Informationen zu den einzelnen Komponenten der Architektur finden Sie in der [Azure](https://azure.microsoft.com/)-Dokumentation.
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0204_2016-->

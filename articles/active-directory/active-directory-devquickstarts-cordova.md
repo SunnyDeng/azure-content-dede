@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="javascript"
 	ms.topic="article"
-	ms.date="10/13/2015"
+	ms.date="01/21/2016"
 	ms.author="vittorib"/>
 
 # Integrieren von Azure AD in eine Apache Cordova-App
@@ -256,4 +256,4 @@ Als Referenz stellen wir hier das vollständige Beispiel (ohne Ihre Konfiguratio
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

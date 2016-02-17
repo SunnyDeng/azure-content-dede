@@ -12,8 +12,9 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="article" 
-    ms.date="11/04/2015" 
+    ms.date="02/04/2016" 
     ms.author="torsteng;sidneyh" />
+
 
 # Split-Merge-Sicherheitskonfiguration  
 
@@ -23,8 +24,8 @@ Zur Verwendung des Split-Merge-Diensts müssen Sie die Sicherheit ordnungsgemä�
 
 Zertifikate werden auf zwei Arten konfiguriert.
 
-1. [So konfigurieren Sie das SSL-Zertifikat](To#Configure#the#SSL#Certificate)
-2. [So konfigurieren Sie Clientzertifikate](To#Configure#Client#Certificates) 
+1. [So konfigurieren Sie das SSL-Zertifikat](#To-Configure-the-SSL#Certificate)
+2. [So konfigurieren Sie Clientzertifikate](#To-Configure-Client-Certificates) 
 
 ## So rufen Sie Zertifikate ab
 
@@ -52,45 +53,45 @@ Ein SSL-Zertifikat ist zum Verschlüsseln der Kommunikation und Authentifizieren
 
 ### Erstellen eines neuen selbstsignierten Zertifikats
 
-1.    [Erstellen eines selbstsignierten Zertifikats](Create#a#Self-Signed#Certificate)
-2.    [Erstellen einer PFX-Datei für ein selbstsigniertes SSL-Zertifikat](Create#PFX#file#for#Self-Signed#SSL#Certificate)
-3.    [Hochladen des SSL-Zertifikats zum Clouddienst](Upload#SSL#Certificate#to#Cloud#Service)
-4.    [Aktualisieren des SSL-Zertifikats in der Dienstkonfigurationsdatei](Update#SSL#Certificate#in#Service#Configuration#File)
-5.    [Importieren der SSL-Zertifizierungsstelle](Import#SSL#Certification#Authority)
+1.    [Erstellen eines selbstsignierten Zertifikats](#Create-a-Self-Signed-Certificate)
+2.    [Erstellen einer PFX-Datei für ein selbstsigniertes SSL-Zertifikat](#Create-PFX-file-for-Self-Signed-SSL-Certificate)
+3.    [Hochladen des SSL-Zertifikats zum Clouddienst](#Upload-SSL-Certificate-to-Cloud-Service)
+4.    [Aktualisieren des SSL-Zertifikats in der Dienstkonfigurationsdatei](#Update-SSL-Certificate-in-Service-Configuration-File)
+5.    [Importieren der SSL-Zertifizierungsstelle](#Import-SSL-Certification-Authority)
 
 ### So verwenden Sie ein vorhandenes Zertifikat aus dem Zertifikatspeicher
-1. [Exportieren des SSL-Zertifikats aus dem Zertifikatspeicher](Export#SSL#Certificate#From#Certificate#Store)
-2. [Hochladen des SSL-Zertifikats zum Clouddienst](Upload#SSL#Certificate#to#Cloud#Service)
-3. [Aktualisieren des SSL-Zertifikats in der Dienstkonfigurationsdatei](Update#SSL#Certificate#in#Service#Configuration#File)
+1. [Exportieren des SSL-Zertifikats aus dem Zertifikatspeicher](#Export-SSL-Certificate-From-Certificate-Store)
+2. [Hochladen des SSL-Zertifikats zum Clouddienst](#Upload-SSL-Certificate-to-Cloud-Service)
+3. [Aktualisieren des SSL-Zertifikats in der Dienstkonfigurationsdatei](#Update-SSL-Certificate-in-Service-Configuration-File)
 
 ### So verwenden Sie ein vorhandenes Zertifikat in einer PFX-Datei
 
-1. [Hochladen des SSL-Zertifikats zum Clouddienst](Upload#SSL#Certificate#to#Cloud#Service)
-2. [Aktualisieren des SSL-Zertifikats in der Dienstkonfigurationsdatei](Update#SSL#Certificate#in#Service#Configuration#File)
+1. [Hochladen des SSL-Zertifikats zum Clouddienst](#Upload-SSL-Certificate-to-Cloud-Service)
+2. [Aktualisieren des SSL-Zertifikats in der Dienstkonfigurationsdatei](#Update-SSL-Certificate-in-Service-Configuration-File)
 
 ## So konfigurieren Sie Clientzertifikate
 Clientzertifikate sind erforderlich, um Anforderungen an den Dienst zu authentifizieren. Wählen Sie das zutreffende unter den folgenden drei Szenarien, und führen Sie alle zugehörigen Schritte aus:
 
 ### Deaktivieren von Clientzertifikaten
-1.    [Deaktivieren der zertifikatbasierten Clientauthentifizierung](Turn#Off#Client#Certificate-Based#Authentication)
+1.    [Deaktivieren der zertifikatbasierten Clientauthentifizierung](#Turn-Off-Client-Certificate-Based-Authentication)
 
 ### Ausstellen eines neuen selbstsignierten Clientzertifikats
-1.    [Erstellen einer selbstsignierten Zertifizierungsstelle](Create#a#Self-Signed#Certification#Authority)
-2.    [Hochladen eines CA-Zertifikats zum Clouddienst](Upload#CA#Certificate#to#Cloud#Service)
-3.    [Aktualisieren des CA-Zertifikats in der Dienstkonfigurationsdatei](Update#CA#Certificate#in#Service#Configuration#File)
-4.    [Ausstellen von Clientzertifikaten](Issue#Client#Certificates)
-5.    [Erstellen von PFX-Dateien für Clientzertifikate](Create#PFX#files#for#Client#Certificates)
-6.    [Importieren des Clientzertifikats](Import#Client#Certificate)
-7.    [Kopieren der Clientfingerabdrücke](Copy#Client#Certificate#Thumbprints)
-8.    [Konfigurieren der zulässigen Clients in der Dienstkonfigurationsdatei](Configure#Allowed#Clients#in#the#Service#Configuration#File)
+1.    [Erstellen einer selbstsignierten Zertifizierungsstelle](#Create-a-Self-Signed-Certification-Authority)
+2.    [Hochladen eines CA-Zertifikats zum Clouddienst](#Upload-CA-Certificate-to-Cloud-Service)
+3.    [Aktualisieren des CA-Zertifikats in der Dienstkonfigurationsdatei](#Update-CA-Certificate-in-Service-Configuration-File)
+4.    [Ausstellen von Clientzertifikaten](#Issue-Client-Certificates)
+5.    [Erstellen von PFX-Dateien für Clientzertifikate](#Create-PFX-files-for-Client-Certificates)
+6.    [Importieren des Clientzertifikats](#Import-Client-Certificate)
+7.    [Kopieren der Clientfingerabdrücke](#Copy-Client-Certificate-Thumbprints)
+8.    [Konfigurieren der zulässigen Clients in der Dienstkonfigurationsdatei](#Configure-Allowed-Clients-in-the-Service-Configuration-File)
 
 ### So verwenden Sie vorhandene Clientzertifikate
-1.    [Suchen des öffentlichen Schlüssels der Zertifizierungsstelle](Find#CA#Public Key)
-2.    [Hochladen eines CA-Zertifikats zum Clouddienst](Upload#CA#certificate#to#cloud#service)
-3.    [Aktualisieren des CA-Zertifikats in der Dienstkonfigurationsdatei](Update#CA#Certificate#in#Service#Configuration#File)
-4.    [Kopieren der Clientfingerabdrücke](Copy#Client#Certificate#Thumbprints)
-5.    [Konfigurieren der zulässigen Clients in der Dienstkonfigurationsdatei](Configure#Allowed#Clients#in#the#Service#Configuration File)
-6.    [Konfigurieren der Sperrprüfung für Clientzertifikate](Configure#Client#Certificate#Revocation#Check)
+1.    [Suchen des öffentlichen Schlüssels der Zertifizierungsstelle](#Find-CA-Public Key)
+2.    [Hochladen eines CA-Zertifikats zum Clouddienst](#Upload-CA-certificate-to-cloud-service)
+3.    [Aktualisieren des CA-Zertifikats in der Dienstkonfigurationsdatei](#Update-CA-Certificate-in-Service-Configuration-File)
+4.    [Kopieren der Clientfingerabdrücke](#Copy-Client-Certificate-Thumbprints)
+5.    [Konfigurieren der zulässigen Clients in der Dienstkonfigurationsdatei](#Configure-Allowed-Clients-in-the-Service-Configuration File)
+6.    [Konfigurieren der Sperrprüfung für Clientzertifikate](#Configure-Client-Certificate-Revocation-Check)
 
 ## Zulässige IP-Adressen
 
@@ -102,21 +103,21 @@ Ein Zertifikat ist erforderlich, um die Anmeldeinformationen zu verschlüsseln, 
 
 ### Verwenden eines neuen selbstsignierten Zertifikats
 
-1.     [Erstellen eines selbstsignierten Zertifikats](Create#a#Self-Signed#Certificate)
-2.     [Erstellen einer PFX-Datei für ein selbstsigniertes Verschlüsselungszertifikat](Create#PFX#file#for#Self-Signed#Encryption#Certificate)
-3.     [Hochladen eines Verschlüsselungszertifikats zum Clouddienst](Upload#Encryption#Certificate#to#Cloud#Service)
-4.     [Aktualisieren des Verschlüsselungszertifikats in der Dienstkonfigurationsdatei](Update#Encryption#Certificate#in#Service#Configuration#File)
+1.     [Erstellen eines selbstsignierten Zertifikats](#Create-a-Self-Signed-Certificate)
+2.     [Erstellen einer PFX-Datei für ein selbstsigniertes Verschlüsselungszertifikat](#Create-PFX-file-for-Self-Signed-Encryption-Certificate)
+3.     [Hochladen eines Verschlüsselungszertifikats zum Clouddienst](#Upload-Encryption-Certificate-to-Cloud-Service)
+4.     [Aktualisieren des Verschlüsselungszertifikats in der Dienstkonfigurationsdatei](#Update-Encryption-Certificate-in-Service-Configuration-File)
 
 ### Verwenden eines vorhandenen Zertifikats aus dem Zertifikatspeicher
 
-1.     [Exportieren des Verschlüsselungszertifikats aus dem Zertifikatspeicher](Export#Encryption#Certificate#From#Certificate#Store)
-2.     [Hochladen eines Verschlüsselungszertifikats zum Clouddienst](Upload#Encryption#Certificate#to#Cloud#Service)
-3.     [Aktualisieren des Verschlüsselungszertifikats in der Dienstkonfigurationsdatei](Update#Encryption#Certificate#in#Service#Configuration#File)
+1.     [Exportieren des Verschlüsselungszertifikats aus dem Zertifikatspeicher](#Export-Encryption-Certificate-From-Certificate-Store)
+2.     [Hochladen eines Verschlüsselungszertifikats zum Clouddienst](#Upload-Encryption-Certificate-to-Cloud-Service)
+3.     [Aktualisieren des Verschlüsselungszertifikats in der Dienstkonfigurationsdatei](#Update-Encryption-Certificate-in-Service-Configuration-File)
 
 ### Verwenden eines vorhandenen Zertifikats in einer PFX-Datei
 
-1.     [Hochladen eines Verschlüsselungszertifikats zum Clouddienst](Upload#Encryption#Certificate#to#Cloud#Service)
-2.     [Aktualisieren des Verschlüsselungszertifikats in der Dienstkonfigurationsdatei](Update#Encryption#Certificate#in#Service#Configuration#File)
+1.     [Hochladen eines Verschlüsselungszertifikats zum Clouddienst](#Upload-Encryption-Certificate-to-Cloud-Service)
+2.     [Aktualisieren des Verschlüsselungszertifikats in der Dienstkonfigurationsdatei](#Update-Encryption-Certificate-in-Service-Configuration-File)
 
 ## Standardkonfiguration
 
@@ -448,12 +449,12 @@ Gehen Sie im Zertifikatimport-Assistenten wie folgt vor:
 7.     Wählen Sie den gewünschten Speicher aus.
 8.     Klicken Sie auf **Fertig stellen**.
        
-	* Wenn der Speicher vertrauenswürdiger Stammzertifizierungsstellen ausgewählt wurde, klicken Sie auf **Ja**.
+    * Wenn der Speicher vertrauenswürdiger Stammzertifizierungsstellen ausgewählt wurde, klicken Sie auf **Ja**.
 9.     Klicken Sie in allen Dialogfeldern auf **OK**.
 
 ## Hochladen des Zertifikats
 
-Im [klassischen Azure-Portal](http://portal.azure.com/)
+Im [Azure-Portal](https://portal.azure.com/):
 
 1. Wählen Sie **Cloud-Dienste**.
 2. Wählen Sie den Clouddienst aus.
@@ -473,4 +474,4 @@ In dieser Datenbank gespeicherte Anmeldeinformationen werden verschlüsselt. Ste
 
 [AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0204_2016-->

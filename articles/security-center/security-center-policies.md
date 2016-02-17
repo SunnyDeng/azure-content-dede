@@ -10,16 +10,16 @@
 <tags
    ms.service="security-center"
    ms.devlang="na"
-   ms.topic="article"
+   ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="01/05/2016"
+   ms.date="02/08/2016"
    ms.author="yurid"/>
 
 # Festlegen von Sicherheitsrichtlinien in Azure Security Center
 Dieses Dokument unterstützt Sie dabei, Sicherheitsrichtlinien in Azure Security Center zu konfigurieren. Sie werden durch die erforderlichen Schritte zum Ausführen dieser Aufgabe begleitet.
 
-> [AZURE.NOTE]Die Informationen in diesem Dokument gelten für die Vorschauversion von Azure Security Center.
+> [AZURE.NOTE] Die Informationen in diesem Dokument gelten für die Vorschauversion von Azure Security Center.
 
 ## Was ist Azure Security Center?
 Azure Security Center unterstützt Sie beim Verhindern, Erkennen und Beheben von Bedrohungen durch größere Transparenz und bessere Kontrolle über die Sicherheit Ihrer Azure-Ressourcen. Es bietet integrierte Sicherheitsüberwachung und Richtlinienverwaltung für Ihre Abonnements, hilft bei der Erkennung von Bedrohungen, die andernfalls möglicherweise unbemerkt bleiben, und kann gemeinsam mit einem breiten Sektrum an Sicherheitslösungen verwendet werden.
@@ -45,7 +45,7 @@ Sicherheitsrichtlinien sind für jedes Abonnement konfiguriert. Damit Sie eine S
 
 4. Stellen Sie sicher, dass die Option **Collect data from virtual machines** auf **Ein** festgelegt ist. Diese Option aktiviert automatische Protokollsammlung für vorhandene und neue Ressourcen.
 
-    >[AZURE.NOTE]Es wird dringend empfohlen, die Datensammlung für alle Ihre Abonnements zu aktivieren, da so sichergestellt wird, dass die Sicherheitsüberwachung für alle vorhandenen und neuen VMs verfügbar ist. Wird Datensammlung aktiviert, wird der Überwachungs-Agent installiert. Wenn Sie Datensammlung momentan von diesem Standort nicht aktivieren möchten, können Sie dies später über die Integritäts- und Empfehlungsansichten tun. Sie können sie auch für das Abonnement oder für ausgewählte VMs aktivieren. Weitere Informationen zu den unterstützten virtuellen Computern finden Sie unter [Azure Security Center – häufig gestellte Fragen](security-center-faq.md).
+    >[AZURE.NOTE] Es wird dringend empfohlen, die Datensammlung für alle Ihre Abonnements zu aktivieren, da so sichergestellt wird, dass die Sicherheitsüberwachung für alle vorhandenen und neuen VMs verfügbar ist. Wird Datensammlung aktiviert, wird der Überwachungs-Agent installiert. Wenn Sie Datensammlung momentan von diesem Standort nicht aktivieren möchten, können Sie dies später über die Integritäts- und Empfehlungsansichten tun. Sie können die Datensammlung auch nur für das Abonnement oder für ausgewählte VMs aktivieren. Weitere Informationen zu den unterstützten virtuellen Computern finden Sie unter [Azure Security Center – häufig gestellte Fragen](security-center-faq.md).
 
 5. Wenn Ihr Speicherkonto noch nicht konfiguriert ist, wird beim Öffnen der **Sicherheitsrichtlinie** möglicherweise eine Warnung angezeigt, die so ähnlich aussieht wie in der folgenden Abbildung:
 
@@ -59,7 +59,7 @@ Sicherheitsrichtlinien sind für jedes Abonnement konfiguriert. Damit Sie eine S
 
 8. Klicken Sie auf dem Blatt **Choose storage accounts** auf **OK**.
 
-    > [AZURE.NOTE]Bei Bedarf können Sie Daten von virtuellen Computern in verschiedenen Regionen in einem zentralen Speicherkonto aggregieren. Weitere Informationen hierzu finden Sie unter [Azure Security Center – häufig gestellte Fragen](security-center-faq.md).
+    > [AZURE.NOTE] Bei Bedarf können Sie Daten von virtuellen Computern in verschiedenen Regionen in einem zentralen Speicherkonto aggregieren. Weitere Informationen hierzu finden Sie unter [Azure Security Center – häufig gestellte Fragen](security-center-faq.md).
 
 9. Klicken Sie auf dem Blatt **Sicherheitsrichtlinie** auf **Ein**, um die Sicherheitsempfehlungen zu aktivieren, die Sie für dieses Abonnement verwenden möchten. Verwenden Sie die folgende Tabelle als Referenz, um zu verstehen, was jede Option bewirkt:
 
@@ -69,7 +69,7 @@ Sicherheitsrichtlinien sind für jedes Abonnement konfiguriert. Damit Sie eine S
 | Basisregeln | Analysiert alle 12 Stunden alle unterstützten virtuellen Computer, um jegliche Betriebssystemkonfigurationen zu ermitteln, die bewirken können, dass die virtuellen Computer anfälliger für Angriffe werden, und empfiehlt Konfigurationsänderungen, um auf diese Sicherheitsrisiken zu reagieren. Weitere Informationen zu den speziellen Konfigurationen, die überwacht werden, finden Sie in der [Liste der empfohlenen Basisregeln](https://gallery.technet.microsoft.com/Azure-Security-Center-a789e335) (in englischer Sprache). |
 | Antimalware | Empfiehlt, dass Antimalware für alle virtuellen Windows-Computer bereitgestellt wird, um Viren, Spyware und andere Schadsoftware möglichst zu erkennen und zu entfernen. |
 | Zugriffssteuerungsliste auf Endpunkten | Empfiehlt, dass eine [Zugriffssteuerungsliste](virtual-machines-set-up-endpoints.md) (Access Controls List, ACL) konfiguriert wird, um den Zugriff auf Endpunkte von klassischen virtuellen Computern zu beschränken. Dies wird normalerweise verwendet, um sicherzustellen, dass nur Benutzer, die mit dem Unternehmensnetzwerk verbunden sind, auf die virtuellen Computer zugreifen können. |
-| Netzwerksicherheitsgruppen für Subnetze und Netzwerkschnittstellen | Empfiehlt, dass [Netzwerksicherheitsgruppen](virtual-networks-nsg.md) (NSGs) konfiguriert werden sollten, um den eingehenden und ausgehenden Datenverkehr für Subnetze und Netzwerkschnittstellen für virtuelle Ressourcen-Manager-Computer zu steuern. NSGs, die für ein Subnetz konfiguriert sind, werden für alle Netzwerkschnittstellen der virtuellen Computer übernommen, sofern nichts anderes angegeben ist. Zusätzlich zur Überprüfung, ob eine NSG konfiguriert wurde, werden Sicherheitsregeln für eingehende Daten bewertet, um Regeln zu identifizieren, die jeglichen eingehenden Datenverkehr zulassen. |
+| Netzwerksicherheitsgruppen | Empfiehlt, dass [Netzwerksicherheitsgruppen](virtual-networks-nsg.md) (NSGs) konfiguriert werden sollten, um den eingehenden und ausgehenden Datenverkehr für Subnetze und Netzwerkschnittstellen für virtuelle Ressourcen-Manager-Computer zu steuern. NSGs, die für ein Subnetz konfiguriert sind, werden für alle Netzwerkschnittstellen der virtuellen Computer übernommen, sofern nichts anderes angegeben ist. Zusätzlich zur Überprüfung, ob eine NSG konfiguriert wurde, bewertet diese Option Sicherheitsregeln für eingehende Daten, um Regeln zu identifizieren, die jeglichen eingehenden Datenverkehr zulassen. |
 | Web Application Firewall | Empfiehlt, dass eine Web Application Firewall auf virtuellen Ressourcen-Manager-Computern bereitgestellt wird, wenn Folgendes zutrifft: [Öffentliche IP auf Instanzebene](virtual-networks-instance-level-public-ip.md) (ILPIP) wird verwendet, und die zugehörigen NSG-Sicherheitsregeln für eingehenden Datenverkehr sind so konfiguriert, dass Zugriff auf den Port 80/443 zugelassen wird. Es wird eine IP-Adresse mit Lastenausgleich (VIP) verwendet, und die zugehörigen Lastenausgleichs- und eingehenden NAT-Regeln sind so konfiguriert, dass Zugriff auf den Port 80/443 zugelassen wird (weitere Informationen finden Sie unter [Unterstützung des Azure-Ressourcen-Managers für Load Balancer](load-balancer-arm.md)). |
 | SQL-Überwachung | Empfiehlt, dass Überwachung des Zugriffs auf Azure SQL-Server und -Datenbanken zu Compliance-, erweiterten Erkennungs- und Untersuchungszwecken aktiviert wird. |
 | Transparent Data Encryption für SQL | Empfiehlt, dass Verschlüsselung im Ruhezustand für Ihre Azure SQL-Datenbanken, die zugehörigen Sicherungen und die Transaktionsprotokolldateien aktiviert wird, sodass Ihre Daten selbst dann, wenn unberechtigt auf sie zugegriffen wird, nicht gelesen werden können. |
@@ -85,4 +85,4 @@ In diesem Dokument haben Sie erfahren, wie Sie Sicherheitsrichtlinien in Azure S
 - [Azure Security Center – häufig gestellte Fragen](security-center-faq.md) zur Verwendung des Diensts.
 - [Azure Security Blog](http://blogs.msdn.com/b/azuresecurity/) – suchen Sie nach Blogbeiträgen über Azure-Sicherheit und -Compliance.
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0211_2016-->

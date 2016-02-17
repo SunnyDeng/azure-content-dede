@@ -67,7 +67,7 @@ Erfahren Sie, wie Sie mithilfe des .NET SDK für Azure Data Lake-Speicher ein Az
 
 	4. Schließen Sie den **NuGet-Paket-Manager**.
 
-7. Öffnen Sie die Datei **Program.cs**, und ersetzen Sie den vorhandenen Codeblock durch folgenden Code. Geben Sie außerdem Werte für die im Codeausschnitt vorhandenen Parameter an.
+7. Öffnen Sie die Datei **Program.cs**, und ersetzen Sie den vorhandenen Codeblock durch folgenden Code. Geben Sie darüber hinaus die Werte für Parameter im Codeausschnitt wie etwa subscriptionId, dataLakeAccountName und localPath an.
 
 	Dieser Code erstellt zunächst einen Data Lake-Speicher, erstellt dort Ordner, lädt Dateien hoch und dann wieder herunter, und löscht schließlich das Konto. Wenn Sie Beispieldaten zum Hochladen verwenden möchten, können Sie den Ordner **Ambulance Data** aus dem [Azure Data Lake-Git-Repository](https://github.com/MicrosoftBigData/usql/tree/master/Examples/Samples/Data/AmbulanceData) herunterladen.
 	
@@ -101,6 +101,10 @@ Erfahren Sie, wie Sie mithilfe des .NET SDK für Azure Data Lake-Speicher ein Az
 		            var subscriptionId = new Guid("<subscription_ID>");
 		            var _credentials = GetAccessToken();
 		            string dataLakeAccountName = "<data_lake_store_name>";
+		            string localPath = @"C:\local_path\file.txt"; //Change this
+		            string remoteFolder = "/data_lake_path/";
+		            string remotePath = remoteFolder + "file.txt";
+		            
 		            string location = "East US 2";
 		
 		            _credentials = GetCloudCredentials(_credentials, subscriptionId);
@@ -121,22 +125,22 @@ Erfahren Sie, wie Sie mithilfe des .NET SDK für Azure Data Lake-Speicher ein Az
 		            Console.WriteLine("Account created. Press ENTER to continue...");
 		            Console.ReadLine();
 		
-		            // Create a directory called MYTEMPDIR in the store
+		            // Create a directory in the store
 		            Console.WriteLine("Creating a directory under the Azure Data Lake Store account");
-		            CreateDir(_dataLakeStoreFileSystemClient, "/mytempdir", dataLakeAccountName, "777");
+		            CreateDir(_dataLakeStoreFileSystemClient, dataLakeAccountName, remoteFolder, "777");
 		            Console.WriteLine("Directory created. Press ENTER to continue...");
 		            Console.ReadLine();
 		
-		            // Upload a file under MYTEMPDIR
+		            // Upload a file under the new folder
 		            Console.WriteLine("Uploading a file to the Azure Data Lake Store account");
 		            bool force = false; //Set this to true if you want to overwrite existing data
-		            UploadFile(_dataLakeStoreFileSystemClient, dataLakeAccountName, "C:\\users\\nitinme\\desktop\\vehicle1_09142014.csv", "/mytempdir/vehicle1_09142014.csv", force);
+		            UploadFile(_dataLakeStoreFileSystemClient, dataLakeAccountName, localPath, remotePath, force);
 		            Console.WriteLine("File uploaded. Press ENTER to continue...");
 		            Console.ReadLine();
 		
 		            // List the files in the Data Lake Store
 		            Console.WriteLine("Listing all files in the Azure Data Lake Store account");
-		            var fileList = ListItems(_dataLakeStoreFileSystemClient, dataLakeAccountName, "/mytempdir");
+		            var fileList = ListItems(_dataLakeStoreFileSystemClient, dataLakeAccountName, remoteFolder);
 		            var fileMenuItems = fileList.Select(a => String.Format("{0,15} {1}", a.Type, a.PathSuffix)).ToList();
 		            foreach (var filename in fileMenuItems)
 		            {
@@ -148,7 +152,7 @@ Erfahren Sie, wie Sie mithilfe des .NET SDK für Azure Data Lake-Speicher ein Az
 		
 		            // Download the files from the Data Lake Store
 		            Console.WriteLine("Downloading files from an Azure Data Lake Store account");
-		            DownloadFile(_dataLakeStoreFileSystemClient, dataLakeAccountName, "/mytempdir/vehicle1_09142014.csv", "C:\\users\\nitinme\\desktop\\vehicle1_09142014_copy.csv", force);
+		            DownloadFile(_dataLakeStoreFileSystemClient, dataLakeAccountName, remotePath, localPath, force);
 		            Console.WriteLine("Files downloaded. Press ENTER to continue...");
 		            Console.ReadLine();
 		
@@ -178,18 +182,26 @@ Erfahren Sie, wie Sie mithilfe des .NET SDK für Azure Data Lake-Speicher ein Az
 		            return new TokenCloudCredentials(subId.ToString(), ((TokenCloudCredentials)creds).Token);
 		        }
 		
-		        public static bool CreateDir(DataLakeStoreFileSystemManagementClient dataLakeStoreFileSystemClient, string path, string dlAccountName, string permission)
+		        public static bool CreateDir(DataLakeStoreFileSystemManagementClient dataLakeStoreFileSystemClient, string dlAccountName, string path, string permission)
 		        {
 		            dataLakeStoreFileSystemClient.FileSystem.Mkdirs(path, dlAccountName, permission);
 		            return true;
 		        }
 		
-		        public static bool UploadFile(DataLakeStoreFileSystemManagementClient dataLakeStoreFileSystemClient, string dlAccountName, string srcPath, string destPath, bool force = false)
+		        public static bool UploadFile(DataLakeStoreFileSystemManagementClient dataLakeStoreFileSystemClient, string dlAccountName, string srcPath, string destPath, bool force = true)
 		        {
-		            var parameters = new UploadParameters(srcPath, destPath, dlAccountName, isOverwrite: true);
+		            var parameters = new UploadParameters(srcPath, destPath, dlAccountName, isOverwrite: force);
 		            var frontend = new DataLakeStoreFrontEndAdapter(dlAccountName, dataLakeStoreFileSystemClient);
 		            var uploader = new DataLakeStoreUploader(parameters, frontend);
 		            uploader.Execute();
+		            return true;
+		        }
+		        
+		        public static bool AppendToFile(DataLakeStoreFileSystemManagementClient dataLakeStoreFileSystemClient, string dlAccountName, string path, string content)
+		        {
+		            var stream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(content));
+		            
+		            dataLakeStoreFileSystemClient.FileSystem.DirectAppend(path, dlAccountName, stream, null);
 		            return true;
 		        }
 		
@@ -227,4 +239,4 @@ Erfahren Sie, wie Sie mithilfe des .NET SDK für Azure Data Lake-Speicher ein Az
 - [Verwenden von Azure Data Lake Analytics mit Data Lake-Speicher](data-lake-analytics-get-started-portal.md)
 - [Verwenden von Azure HDInsight mit Data Lake-Speicher](data-lake-store-hdinsight-hadoop-use-portal.md)
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0204_2016-->

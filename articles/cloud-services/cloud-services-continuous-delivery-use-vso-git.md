@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="12/18/2015"
+	ms.date="01/30/2016"
 	ms.author="tarcher"/>
 
 # Continuous Delivery für Azure mithilfe von Visual Studio Team Services und Git
@@ -23,7 +23,7 @@ Sie können Visual Studio Team Services-Teamprojekte verwenden, um ein Git-Repo
 Sie müssen Visual Studio 2013 und das Azure-SDK installiert haben. Wenn Sie Visual Studio 2013 nicht bereits installiert haben, laden Sie es herunter, indem Sie auf der Seite **www.visualstudio.com** auf den Link [Starten Sie kostenlos](http://www.visualstudio.com) klicken. Installieren Sie das Azure-SDK von [hier](http://go.microsoft.com/fwlink/?LinkId=239540) aus.
 
 
-> [AZURE.NOTE]Für dieses Tutorial benötigen Sie ein Visual Studio Team Services-Konto. Dieses können Sie [kostenlos erstellen](http://go.microsoft.com/fwlink/p/?LinkId=512979).
+> [AZURE.NOTE] Für dieses Tutorial benötigen Sie ein Visual Studio Team Services-Konto. Dieses können Sie [kostenlos erstellen](http://go.microsoft.com/fwlink/p/?LinkId=512979).
 
 Gehen Sie wie folgt vor, um mithilfe von Visual Studio Team Services einen Clouddienst für die automatische Erstellung und Bereitstellung für Azure zu konfigurieren.
 
@@ -43,7 +43,7 @@ Gehen Sie wie folgt vor, um mithilfe von Visual Studio Team Services einen Cloud
 
 	![][4]
 
-2. Sie können eine Web-App oder einen Clouddienst (Azure-Anwendung) bereitstellen, indem Sie die Schritte in dieser Anleitung ausführen. Erstellen Sie ein neues Azure Cloud Service-Projekt oder ein neues ASP.NET MVC-Projekt. Stellen Sie sicher, dass das Projekt auf .NET Framework 4 oder höher abzielt. Wenn Sie ein Clouddienstprojekt erstellen, fügen Sie eine ASP.NET MVC-Webrolle und eine Workerrolle hinzu. Wenn Sie eine Web-App erstellen möchten, wählen Sie die Projektvorlage **ASP.NET Web Application** und anschließend **MVC** aus. Weitere Informationen finden Sie unter [Erstellen einer ASP.NET-Web-App in Azure App Service](../web-sites-dotnet-get-started.md).
+2. Sie können eine Web-App oder einen Clouddienst (Azure-Anwendung) bereitstellen, indem Sie die Schritte in dieser Anleitung ausführen. Erstellen Sie ein neues Azure Cloud Service-Projekt oder ein neues ASP.NET MVC-Projekt. Stellen Sie sicher, dass das Projekt auf .NET Framework 4 oder höher abzielt. Wenn Sie ein Clouddienstprojekt erstellen, fügen Sie eine ASP.NET MVC-Webrolle und eine Workerrolle hinzu. Wenn Sie eine Web-App erstellen möchten, wählen Sie die Projektvorlage **ASP.NET Web Application** und anschließend **MVC** aus. Weitere Informationen finden Sie unter [Erstellen einer ASP.NET-Web-App in Azure App Service](/app-service-web/web-sites-dotnet-get-started.md).
 
 3. Öffnen Sie das Kontextmenü für die Projektmappe, und klicken Sie auf **Commit**.
 
@@ -224,7 +224,7 @@ Wenn Sie Git verwenden, nehmen Sie die Änderungen normalerweise an einer Arbeit
 
 ## Nächste Schritte
 
-Zusätzliche Tipps zur Verwendung von Git mit Visual Studio Team Services finden Sie unter [Entwickeln und Freigeben von Code in Git mit Visual Studio](http://www.visualstudio.com/get-started/share-your-code-in-git-vs.aspx). Informationen zur Verwendung eines nicht von Visual Studio Team Services verwalteten Git-Repositorys zur Veröffentlichung für Azure finden Sie unter [Kontinuierliche Bereitstellung mit GIT in Azure App Service](../web-sites-publish-source-control.md). Weitere Informationen zu Visual Studio Team Services finden Sie unter [Visual Studio Team Services](http://go.microsoft.com/fwlink/?LinkId=253861).
+Zusätzliche Tipps zur Verwendung von Git mit Visual Studio Team Services finden Sie unter [Entwickeln und Freigeben von Code in Git mit Visual Studio](http://www.visualstudio.com/get-started/share-your-code-in-git-vs.aspx). Informationen zur Verwendung eines nicht von Visual Studio Team Services verwalteten Git-Repositorys zur Veröffentlichung für Azure finden Sie unter [Kontinuierliche Bereitstellung mit GIT in Azure App Service](/app-service-web/web-sites-publish-source-control.md). Weitere Informationen zu Visual Studio Team Services finden Sie unter [Visual Studio Team Services](http://go.microsoft.com/fwlink/?LinkId=253861).
 
 [0]: ./media/cloud-services-continuous-delivery-use-vso/tfs0.PNG
 [1]: ./media/cloud-services-continuous-delivery-use-vso-git/CreateTeamProjectInGit.PNG
@@ -272,4 +272,4 @@ Zusätzliche Tipps zur Verwendung von Git mit Visual Studio Team Services finden
 [47]: ./media/cloud-services-continuous-delivery-use-vso-git/SourceSettingsPage.PNG
 [48]: ./media/cloud-services-continuous-delivery-use-vso-git/IncludeWorkingBranch.PNG
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0204_2016-->

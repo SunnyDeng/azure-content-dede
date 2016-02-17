@@ -108,7 +108,7 @@ Auf den gesamten von Ihrem Dienst ausgehenden Internetdatenverkehr wird Quell-NA
 Die Azure Load Balancer-Konfiguration unterstützt vollständige Cone-NAT für UDP. Vollständige Cone-NAT ist ein NAT-Typ, bei dem der Port eingehende Verbindungen von jedem externen Host (als Reaktion auf eine externe Anforderung) erlaubt.
 
 
->[AZURE.NOTE]Für jede neue ausgehende Verbindung, die von einem virtuellen Computer initiiert wird, wird auch ein ausgehender Port vom Azure Load Balancer zugeordnet. Dem externen Host wird eingehender Datenverkehr als einer virtuellen IP (VIP) zugewiesener Port angezeigt. Wenn für Ihre Szenarien eine große Anzahl von ausgehenden Verbindungen benötigt wird, empfehlen wir, dass die VMs öffentliche IP-Adressen auf Instanzebene verwenden, damit sie eine dedizierte ausgehende IP-Adresse für SNAT aufweisen. Dies reduziert das Risiko von Portauslastung.
+>[AZURE.NOTE] Für jede neue ausgehende Verbindung, die von einem virtuellen Computer initiiert wird, wird auch ein ausgehender Port vom Azure Load Balancer zugeordnet. Dem externen Host wird eingehender Datenverkehr als einer virtuellen IP (VIP) zugewiesener Port angezeigt. Wenn für Ihre Szenarien eine große Anzahl von ausgehenden Verbindungen benötigt wird, empfehlen wir, dass die VMs öffentliche IP-Adressen auf Instanzebene verwenden, damit sie eine dedizierte ausgehende IP-Adresse für SNAT aufweisen. Dies reduziert das Risiko von Portauslastung.
 >
 >Die maximale Anzahl von Ports, die für VIPs oder öffentliche IPs auf Instanzebene (PIPs) verwendet werden können, beträgt 64.000. Dies ist eine standardmäßige Einschränkung für TCP.
 
@@ -119,7 +119,7 @@ Sie können einer Gruppe von virtuellen Computern mehr als eine öffentliche IP-
 
 **Vorlagenbasierte Bereitstellungen über den Azure-Ressourcen-Manager**
 
-Der Azure-Ressourcen-Manager ist das neue Verwaltungsframework für Dienste in Azure. Der Azure Load Balancer kann jetzt mithilfe von APIs und Tools im Ressourcen-Manager verwaltet werden. Weitere Informationen zum Ressourcen-Manager finden Sie unter [IaaS ist jetzt noch einfacher mit Azure-Ressourcen-Manager](http://azure.microsoft.com/blog/2015/04/29/iaas-just-got-easier-again/).
+Der Azure-Ressourcen-Manager ist das neue Verwaltungsframework für Dienste in Azure. Der Azure Load Balancer kann jetzt mithilfe von APIs und Tools im Ressourcen-Manager verwaltet werden. Weitere Informationen zum Ressourcen-Manager finden Sie unter [IaaS ist jetzt noch einfacher mit Azure-Ressourcen-Manager](https://azure.microsoft.com/blog/2015/04/29/iaas-just-got-easier-again/).
 
 
 ## Nächste Schritte
@@ -130,4 +130,4 @@ Der Azure-Ressourcen-Manager ist das neue Verwaltungsframework für Dienste in A
 
 [Erste Schritte zum Erstellen eines Lastenausgleichs für den Internetzugriff](load-balancer-internet-getstarted.md)
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

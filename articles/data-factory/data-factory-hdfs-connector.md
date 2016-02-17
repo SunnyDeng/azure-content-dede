@@ -21,6 +21,7 @@ Dieser Artikel beschreibt, wie Sie die Kopieraktivität in einer Azure Data Fact
 
 Data Factory unterstützt derzeit nur das Verschieben von Daten aus einem lokalen HDFS in andere Datenspeicher, aber nicht das Verschieben aus anderen Datenspeichern in ein lokales HDFS.
 
+
 ## Herstellen der Verbindung
 Der Data Factory-Dienst unterstützt das Herstellen einer Verbindung mit einem lokalen HDFS über das Datenverwaltungsgateway. Im Artikel [Verschieben von Daten zwischen lokalen Standorten und Cloud](data-factory-move-data-between-onprem-and-cloud.md) erfahren mehr zum Datenverwaltungsgateway und erhalten eine schrittweise Anleitung zum Einrichten des Gateways. Sie müssen das Gateway nutzen, um eine Verbindung mit dem HDFS herzustellen, auch wenn das HDFS einer Azure-IaaS-VM gehostet wird.
 
@@ -28,7 +29,9 @@ Grundsätzlich ist es zwar möglich, das Gateway auf dem gleichen lokalen Comput
 
 ## Beispiel: Kopieren von Daten aus einem lokalen HDFS in ein Azure-Blob
 
-Das nachstehende Beispiel zeigt Folgendes:
+In diesem Beispiel wird gezeigt, wie Sie Daten aus einem lokalen HDFS in einen Azure-BLOB-Speicher kopieren. Daten können jedoch mithilfe der Kopieraktivität in Azure Data Factory **direkt** in die [hier](data-factory-data-movement-activities.md#supported-data-stores) aufgeführten Senken kopiert werden.
+ 
+Das Beispiel enthält die folgenden Data Factory-Entitäten:
 
 1.	Einen verknüpften Dienst des Typs [OnPremisesHdfs](#hdfs-linked-service-properties)
 2.	Einen verknüpften Dienst des Typs [AzureStorage](data-factory-azure-blob-connector.md#azure-storage-linked-service-properties)
@@ -203,7 +206,7 @@ Die folgende Tabelle enthält eine Beschreibung der JSON-Elemente, die für den 
 | -------- | ----------- | -------- | 
 | type | Die type-Eigenschaft muss auf **Hdfs** festgelegt sein. | Ja | 
 | Url | Die URL für das HDFS. | Ja |
-| encryptedCredential | Die Ausgabe der Anmeldeinformationen von [New-AzureRMDataFactoryEncryptValue](https://msdn.microsoft.com/library/mt603802.aspx) für den Zugriff. | Nein |
+| encryptedCredential | Die Ausgabe der Anmeldeinformationen von [New-AzureRMDataFactoryEncryptValue](https://msdn.microsoft.com/library/mt603802.aspx) für den Zugriff | Nein |
 | userName | Der Benutzername für die Windows-Authentifizierung. | Ja (für die Windows-Authentifizierung)
 | password | Das Kennwort für die Windows-Authentifizierung. | Ja (für die Windows-Authentifizierung)
 | authenticationType | Windows oder Anonymous. | Ja |
@@ -261,11 +264,11 @@ folderPath | Pfad zum Ordner. Beispiel: myfolder<p>Verwenden Sie für Sonderzeic
 fileName | Geben Sie den Namen der Datei in **folderPath** an, wenn die Tabelle auf eine bestimmte Datei im Ordner verweisen soll. Wenn Sie keine Werte für diese Eigenschaft angeben, verweist die Tabelle auf alle Dateien im Ordner.<p>Wenn "fileName" für ein Ausgabedataset nicht angegeben wird, hat der Name der generierten Datei das folgende Format: </p><p>Data.<Guid>.txt (Beispiel: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt)</p> | Nein
 partitionedBy | "partitionedBy" kann genutzt werden, um einen dynamischen Wert für "folderPath" oder "filename" für Zeitreihendaten anzugeben. Beispiel: "folderPath" als Parameter für jedes Stunde mit Daten. | Nein
 fileFilter | Geben Sie einen Filter zur Auswahl einer Teilmenge der Dateien in "folderPath" statt alle Dateien an. <p>Zulässige Werte sind: * (mehrere Zeichen) und ? (einzelnes Zeichen).</p><p>Beispiel 1: "fileFilter": "*.log"</p>Beispiel 2: "fileFilter": 2014-1-?.txt"</p><p>** Hinweis**: "fileFilter" eignet sich für ein Eingabedataset des Typs "FileShare".</p> | Nein
-| compression | Geben Sie den Typ und den Grad der Komprimierung für die Daten an. Folgende Typen werden unterstützt: "GZip", "Deflate" und "BZip2". Folgende Komprimierungsgrade werden unterstützt: "Optimal" und "Schnellste". Weitere Einzelheiten finden Sie im Abschnitt [Komprimierungsunterstützung](#compression-support). | Nein |
-| format | Zwei Typen von Formaten werden unterstützt: **TextFormat** und **AvroFormat**. Sie müssen die type-Eigenschaft unter "format" auf einen dieser Werte festlegen. Wenn das Format auf "TextFormat" festgelegt ist, können Sie zusätzliche optionale Eigenschaften für das Format angeben. Im Abschnitt [Angeben von "TextFormat"](#specifying-textformat) unten finden Sie weitere Details. | Nein
+| Komprimierung | Geben Sie den Typ und den Grad der Komprimierung für die Daten an. Folgende Typen werden unterstützt: "GZip", "Deflate" und "BZip2". Folgende Komprimierungsgrade werden unterstützt: "Optimal" und "Schnellste". Weitere Einzelheiten finden Sie im Abschnitt [Komprimierungsunterstützung](#compression-support). | Nein |
+| Format | Zwei Typen von Formaten werden unterstützt: **TextFormat** und **AvroFormat**. Sie müssen die type-Eigenschaft unter "format" auf einen dieser Werte festlegen. Wenn das Format auf "TextFormat" festgelegt ist, können Sie zusätzliche optionale Eigenschaften für das Format angeben. Im Abschnitt [Angeben von "TextFormat"](#specifying-textformat) unten finden Sie weitere Details. | Nein
 
 
-> [AZURE.NOTE]"filename" und "fileFilter" können nicht gleichzeitig verwendet werden.
+> [AZURE.NOTE] "filename" und "fileFilter" können nicht gleichzeitig verwendet werden.
 
 
 ### Nutzen der "partionedBy"-Eigenschaft
@@ -362,4 +365,4 @@ Wenn bei der Kopieraktivität „source“ den Typ **FileSystemSource** aufweist
 
 [AZURE.INCLUDE [data-factory-structure-for-rectangular-datasets](../../includes/data-factory-structure-for-rectangualr-datasets.md)]
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0204_2016-->

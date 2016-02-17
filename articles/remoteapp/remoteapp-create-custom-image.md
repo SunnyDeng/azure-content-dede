@@ -20,7 +20,7 @@
 Azure RemoteApp verwendet ein Windows Server 2012 R2-Vorlagenimage, um alle Programme zu hosten, die Sie an die Benutzer freigeben möchten. Um ein benutzerdefiniertes RemoteApp-Vorlagenimage zu erstellen, beginnen Sie mit einem bestehenden Abbild oder erstellen Sie ein neues.
 
 
-> [AZURE.TIP]Wussten Sie, dass Sie für eine Azure-VM ein Image erstellen können? Das stimmt. So wird der Zeitaufwand für das Importieren des Images reduziert. Die entsprechenden Schritte sind [hier](remoteapp-image-on-azurevm.md) angegeben.
+> [AZURE.TIP] Wussten Sie, dass Sie für eine Azure-VM ein Image erstellen können? Das stimmt. So wird der Zeitaufwand für das Importieren des Images reduziert. Die entsprechenden Schritte sind [hier](remoteapp-image-on-azurevm.md) angegeben.
 
 Das Abbild, das für die Verwendung mit Azure RemoteApp hochgeladen werden soll, muss folgende Anforderungen erfüllen:
 
@@ -43,7 +43,7 @@ Das Abbild, das für die Verwendung mit Azure RemoteApp hochgeladen werden soll,
 
 Bevor Sie mit der Erstellung des Dienstes beginnen, führen Sie Folgendes aus:
 
-- [Melden](http://azure.microsoft.com/services/remoteapp/) Sie sich für RemoteApp an.
+- [Melden](https://azure.microsoft.com/services/remoteapp/) Sie sich für RemoteApp an.
 - Erstellen Sie ein Benutzerkonto in Active Directory, das als Konto für den RemoteApp-Dienst dient. Beschränken Sie die Berechtigungen für dieses Konto, sodass es nur Computer in die Domäne einbinden kann. Weitere Informationen finden Sie unter [Konfigurieren von Active Directory für Azure RemoteApp](remoteapp-ad.md).
 - Sammeln Sie Informationen zu Ihrem lokalen Netzwerk: IP-Adressdaten und Details zum VPN-Gerät.
 - Installieren Sie das [Azure PowerShell](../install-configure-powershell.md)-Modul.
@@ -142,4 +142,4 @@ Nach dem Erstellen des benutzerdefinierten Vorlagenimages müssen Sie dieses Ima
 - [Erstellen einer Cloud-Sammlung von RemoteApp](remoteapp-create-cloud-deployment.md)
  
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

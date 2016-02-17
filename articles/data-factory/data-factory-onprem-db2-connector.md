@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/12/2015" 
+	ms.date="02/01/2016" 
 	ms.author="spelluru"/>
 
 # Verschieben von Daten aus DB2 mithilfe von Azure Data Factory
@@ -31,9 +31,14 @@ Damit sich das Datenverwaltungsgateway mit der DB2-Datenbank verbindet, müssen 
 
 IBM hat bekannte Probleme bei der Installation des IBM DB2 Data Server-Treibers unter Windows 8 gemeldet, die zusätzliche Installationsschritte erforderlich machen. Weitere Informationen zum IBM DB2 Data Server-Treiber für Windows 8 finden Sie unter [http://www-01.ibm.com/support/docview.wss?uid=swg21618434](http://www-01.ibm.com/support/docview.wss?uid=swg21618434).
 
+> [AZURE.NOTE] Unter [Problembehandlung bei Gateways](data-factory-move-data-between-onprem-and-cloud.md#gateway-troubleshooting) finden Sie Tipps zur Behandlung von Verbindungs- bzw. Gatewayproblemen.
+
+
 ## Beispiel: Kopieren von Daten aus DB2 in Azure-Blob
 
-Das nachstehende Beispiel zeigt Folgendes:
+In diesem Beispiel wird gezeigt, wie Sie Daten aus einer lokalen DB2-Datenbank in einen Azure-BLOB-Speicher kopieren. Daten können jedoch mithilfe der Kopieraktivität in Azure Data Factory **direkt** in die [hier](data-factory-data-movement-activities.md#supported-data-stores) aufgeführten Senken kopiert werden.
+ 
+Das Beispiel enthält die folgenden Data Factory-Entitäten:
 
 1.	Einen verknüpften Dienst des Typs [OnPremisesDb2](data-factory-onprem-db2-connector.md#db2-linked-service-properties)
 2.	Einen verknüpften Dienst des Typs [AzureStorage](data-factory-azure-blob-connector.md#azure-storage-linked-service-properties) 
@@ -227,7 +232,7 @@ Die folgende Tabelle enthält eine Beschreibung der JSON-Elemente, die für den 
 Ausführliche Informationen zum Festlegen von Anmeldeinformationen für eine lokale DB2-Datenquelle finden Sie unter [Festlegen von Anmeldeinformationen und Sicherheit](data-factory-move-data-between-onprem-and-cloud.md#setting-credentials-and-security).
 
 
-## Eigenschaften des Dataset-Typs "DB2"
+## Eigenschaften des Dataset-Typs „DB2“
 
 Eine vollständige Liste der Abschnitte und Eigenschaften, die zum Definieren von Datasets zur Verfügung stehen, finden Sie im Artikel [Erstellen von Datasets](data-factory-create-datasets.md). Abschnitte wie "structure", "availability" und "policy" des JSON-Codes eines Datasets sind bei allen Typen von Datasets (Azure SQL, Azure-Blob, Azure-Tabelle usw.) ähnlich.
 
@@ -237,7 +242,7 @@ Der Abschnitt "typeProperties" unterscheidet sich bei jedem Typ von Dataset und 
 | -------- | ----------- | -------- | 
 | tableName | Name der Tabelle in der DB2-Datenbankinstanz, auf die der verknüpfte Dienst verweist. | Nein (wenn **query** von **RelationalSource** angegeben ist) |
 
-## Eigenschaften von DB2-Kopieraktivitätstyp
+## Eigenschaften des DB2-Kopieraktivitätstyps
 
 Eine vollständige Liste der Abschnitte und Eigenschaften zum Definieren von Aktivitäten finden Sie im Artikel [Erstellen von Pipelines](data-factory-create-pipelines.md). Eigenschaften wie Name, Beschreibung, Eingabe- und Ausgabetabellen, verschiedene Richtlinien usw. sind für alle Arten von Aktivitäten verfügbar.
 
@@ -309,4 +314,4 @@ Char | String
 
 [AZURE.INCLUDE [data-factory-type-repeatability-for-relational-sources](../../includes/data-factory-type-repeatability-for-relational-sources.md)]
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0204_2016-->

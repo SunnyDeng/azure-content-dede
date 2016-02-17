@@ -30,15 +30,15 @@ Analog dazu können die REST-APIs für **SQL Azure-Datenbank** auch für Instanz
 2. Geben Sie zum Ausführen des Moduls auf der Startseite **Microsoft Azure PowerShell** ein.
 3. Falls Sie Ihr Konto noch nicht dem Computer hinzugefügt haben, führen Sie das folgende Cmdlet aus. (Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell]():
 
-```
-Add-AzureAccount
-```
+	```
+	Login-AzureRmAccount
+	```
 
 3. Wählen Sie Ihr Abonnement für die Datenbank, die Sie anhalten oder wieder aufnehmen möchten. Dadurch wird das Abonnement „MySubscription“ ausgewählt.
 
-```
-Select-AzureRmSubscription -SubscriptionName "MySubscription"
-```
+	```
+	Select-AzureRmSubscription -SubscriptionName "MySubscription"
+	```
 
 ## Suspend-AzureRmSqlDatabase
 
@@ -54,7 +54,7 @@ Suspend-AzureRmSqlDatabase –ResourceGroupName "ResourceGroup11" –ServerName 
 
 ### Beispiel 2: Anhalten eines Datenbankobjekts
 
-In diesem Beispiel wird eine Datenbank namens „Database02“ von einem Server mit der Bezeichnung „Server01“ abgerufen, der sich in einer Ressourcengruppe namens „ResourceGroup1“ befindet. Das abgerufene Objekt wird an **Suspend-AzureSqlDatabase** weitergeleitet. Dadurch wird die Datenbank angehalten. Der letzte Befehl zeigt die Ergebnisse an.
+In diesem Beispiel wird eine Datenbank namens „Database02“ von einem Server mit der Bezeichnung „Server01“ abgerufen, der sich in einer Ressourcengruppe namens „ResourceGroup1“ befindet. Das abgerufene Objekt wird an **Suspend-AzureRmSqlDatabase** weitergeleitet. Dadurch wird die Datenbank angehalten. Der letzte Befehl zeigt die Ergebnisse an.
 
 ```
 $database = Get-AzureRmSqlDatabase –ResourceGroupName "ResourceGroup11" –ServerName "Server01" –DatabaseName "Database02"
@@ -113,7 +113,7 @@ $retorePoints
 ```
 
 
-> [AZURE.NOTE]Hinweis: Wenn Ihr Server „foo.database.windows.net“ heißt, verwenden Sie in den PowerShell-Cmdlets für „-ServerName“ den Namen „foo“.
+> [AZURE.NOTE] Hinweis: Wenn Ihr Server „foo.database.windows.net“ heißt, verwenden Sie in den PowerShell-Cmdlets für „-ServerName“ den Namen „foo“.
 
 
 ## Nächste Schritte
@@ -133,4 +133,4 @@ Weitere Referenzinformationen finden Sie unter [SQL Data Warehouse-Referenz – 
 [yah]: http://search.yahoo.com/
 [msn]: http://search.msn.com/
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0204_2016-->

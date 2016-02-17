@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD" 
-   ms.date="11/16/2015"
+   ms.date="01/22/2016"
    ms.author="v-sharos"/>
 
 # StorSimple-Sicherheit und -Datenschutz
@@ -38,9 +38,9 @@ In den folgenden Abschnitten werden die in der StorSimple-Sicherheitsfunktionen 
 
 Der StorSimple-Manager-Dienst ist ein in Microsoft Azure gehosteter Verwaltungsdienst, der zum Verwalten aller StorSimple-Geräte verwendet wird, die Ihre Organisation beschafft hat. Sie können auf den StorSimple Manager-Dienst zugreifen, indem Sie sich beim klassischen Azure-Portal mithilfe eines Webbrowsers unter Verwendung Ihrer Organisationsanmeldeinformationen anmelden.
 
-Für den Zugriff auf den StorSimple-Manager-Dienst ist es erforderlich, dass Ihre Organisation über ein Azure-Abonnement verfügt, das StorSimple einschließt. Ihr Abonnement bestimmt die Funktionen, auf die Sie im klassischen Azure-Portal zugreifen können. Wenn Ihre Organisation kein Azure-Abonnement besitzt, und Sie weitere Informationen dazu erhalten möchten, lesen Sie [Als Unternehmen für Azure registrieren](../sign-up-organization.md).
+Für den Zugriff auf den StorSimple-Manager-Dienst ist es erforderlich, dass Ihre Organisation über ein Azure-Abonnement verfügt, das StorSimple einschließt. Ihr Abonnement bestimmt die Funktionen, auf die Sie im klassischen Azure-Portal zugreifen können. Wenn Ihre Organisation kein Azure-Abonnement besitzt, und Sie weitere Informationen dazu erhalten möchten, lesen Sie [Als Unternehmen für Azure registrieren](../active-directory/sign-up-organization.md).
 
-Da der StorSimple-Manager-Dienst in Azure gehostet wird, ist er durch die Azure-Sicherheitsfeatures geschützt. Weitere Informationen zu den Sicherheitsfeatures von Microsoft Azure finden Sie im [Microsoft Azure Trust Center](http://azure.microsoft.com/support/trust-center/security/).
+Da der StorSimple-Manager-Dienst in Azure gehostet wird, ist er durch die Azure-Sicherheitsfeatures geschützt. Weitere Informationen zu den Sicherheitsfeatures von Microsoft Azure finden Sie im [Microsoft Azure Trust Center](https://azure.microsoft.com/support/trust-center/security/).
 
 ## StorSimple-Geräteschutz
 
@@ -56,7 +56,7 @@ Der Dienstregistrierungsschlüssel ist ein langer Schlüssel mit mehr als 100 Ze
 
 Nachdem ein Gerät registriert wurde, verwendet es Token für die Kommunikation mit Microsoft Azure. Der Dienstregistrierungsschlüssel wird nach der Geräteregistrierung nicht verwendet.
 
-> [AZURE.NOTE]Es wird empfohlen, den Dienstregistrierungsschlüssel nach jeder Verwendung neu zu generieren.
+> [AZURE.NOTE] Es wird empfohlen, den Dienstregistrierungsschlüssel nach jeder Verwendung neu zu generieren.
 
 ## Schützen der StorSimple-Lösung mittels Kennwörtern
 
@@ -127,7 +127,7 @@ In diesem Abschnitt werden die StorSimple-Sicherheitsfunktionen für in der Übe
 
 Wie in anderen Abschnitten erläutert, werden Kennwörter verwendet, um Benutzer zu autorisieren und zu authentifizieren, bevor diese Zugriff auf Ihre StorSimple-Lösung erhalten. Ein weiterer Sicherheitsaspekt ist der Schutz der Daten vor nicht autorisierten Benutzern, während die Daten zwischen Speichersystemen übertragen oder gespeichert werden. In den folgenden Abschnitten werden die Datenschutzfunktionen von StorSimple beschrieben.
 
-> [AZURE.NOTE]Eine Deduplizierung bietet zusätzlichen Schutz für Daten, die auf dem StorSimple-Gerät und in Microsoft Azure-Speicher gespeichert. Bei einer Deduplizierung der Daten werden die Datenobjekte getrennt auf den Metadaten gespeichert, die für Zuordnung und Zugriff genutzt werden. Es gibt keinen verfügbaren Speicherebenenkontext zum Rekonstruieren der Daten basierend auf Volumestruktur, Dateisystem oder Dateiname.
+> [AZURE.NOTE] Eine Deduplizierung bietet zusätzlichen Schutz für Daten, die auf dem StorSimple-Gerät und in Microsoft Azure-Speicher gespeichert. Bei einer Deduplizierung der Daten werden die Datenobjekte getrennt auf den Metadaten gespeichert, die für Zuordnung und Zugriff genutzt werden. Es gibt keinen verfügbaren Speicherebenenkontext zum Rekonstruieren der Daten basierend auf Volumestruktur, Dateisystem oder Dateiname.
 
 ## Schützen von durch den Dienst geleiteten Daten
 
@@ -144,7 +144,7 @@ Das asymmetrische Schlüsselsystem schützt die durch den Dienst geleiteten Date
 
 Der Verschlüsselungsschlüssel für Dienstdaten wird nur auf dem ersten Gerät generiert, das beim Dienst registriert wird. Alle nachfolgenden Geräte, die beim Dienst registriert werden, müssen denselben Verschlüsselungsschlüssel für Dienstdaten verwenden.
 
-> [AZURE.IMPORTANT]
+> [AZURE.IMPORTANT] 
 > 
 > Es ist sehr wichtig, dass Sie eine Kopie des Verschlüsselungsschlüssels für Dienstdaten erstellen und diese an einem sicheren Ort aufbewahren. Die Kopie des Verschlüsselungsschlüssels für Dienstdaten muss so gespeichert werden, dass autorisierte Personen darauf zugreifen und er problemlos dem Geräteadministrator mitgeteilt werden kann.
 >
@@ -269,4 +269,4 @@ Die folgenden Fragen und Antworten beziehen sich auf die Sicherheit und Microsof
 [Bereitstellen von StorSimple-Geräten](storsimple-deployment-walkthrough.md).
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

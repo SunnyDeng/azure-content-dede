@@ -141,4 +141,4 @@ Visual Studio Team Services-Auslastungstests stellen APIs bereit, die Sie in ein
 [8]: ./media/service-fabric-vso-load-test/RunTest2.png
 [9]: ./media/service-fabric-vso-load-test/Graph.png
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

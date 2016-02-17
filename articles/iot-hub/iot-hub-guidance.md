@@ -13,7 +13,7 @@
  ms.topic="article"
  ms.tgt_pltfrm="na"
  ms.workload="na"
- ms.date="11/10/2015"
+ ms.date="02/03/2016"
  ms.author="dobett"/>
 
 # Entwerfen der Lösung
@@ -52,7 +52,7 @@ Ein Bereichsgateway unterscheidet sich von einem einfachen Gerät für das Routi
 - Transformieren von Telemetriedaten, um die Verarbeitung in Ihrem Lösungs-Back-End zu ermöglichen.
 - Ausführen von Protokollübersetzungen, um Geräten die Kommunikation mit IoT Hub zu ermöglichen, selbst wenn sie nicht die Transportprotokolle verwenden, die IoT Hub unterstützt.
 
-> [AZURE.NOTE]In der Regel stellen Sie ein Bereichsgateway lokal auf Ihren Geräten bereit, aber Sie können in einigen Szenarien auch ein [Protokollgateway][lnk-gateway] in der Cloud bereitstellen.
+> [AZURE.NOTE] In der Regel stellen Sie ein Bereichsgateway lokal auf Ihren Geräten bereit, aber Sie können in einigen Szenarien auch ein [Protokollgateway][lnk-gateway] in der Cloud bereitstellen.
 
 ### Typen von Bereichsgateways
 
@@ -63,6 +63,8 @@ Ein Bereichsgateway kann *transparent* oder *nicht transparent* sein:
 | In der IoT Hub-Identitätsregistrierung gespeicherte Identitäten | Identitäten aller angeschlossenen Geräte | Nur die Identität des Bereichsgateways |
 | IoT Hub kann [Schutz vor Spoofing im Hinblick auf Geräteidentitäten][lnk-devguide-antispoofing] bieten | Ja | Nein |
 | [Drosselungen und Kontingente][lnk-throttles-quotas] | Auf jedes Gerät anwenden | Auf das Bereichsgateway anwenden |
+
+> [AZURE.IMPORTANT]  Bei Verwenden eines nicht transparenten Gatewaymusters nutzen alle Geräte, die sich über dieses Gateway verbinden, dieselbe C2D-Warteschlange, die maximal 50 Nachrichten enthalten darf. Daraus folgt, dass das nicht transparente Gatewaymuster nur dann verwendet werden sollte, wenn sehr wenige Geräte eine Verbindung über die einzelnen Bereichsgateways herstellen und ihr C2D-Datenverkehr niedrig ist.
 
 ### Weitere Überlegungen
 
@@ -83,7 +85,7 @@ Dies sind die wichtigsten Schritte des Tokendienstmusters:
 3. Der Tokendienst gibt ein Token zurück. Das Token wird gemäß [Abschnitt über Sicherheit im IoT Hub-Entwicklerleitfaden][lnk-devguide-security] erstellt, indem `/devices/{deviceId}` als `resourceURI` verwendet wird. `deviceId` ist hierbei das zu authentifizierende Gerät. Der Tokendienst verwendet die SAS-Richtlinie, um das Token zu erstellen.
 4. Das Gerät nutzt das Token direkt mit IoT Hub.
 
-> [AZURE.NOTE]Sie können die .NET-Klasse [SharedAccessSignatureBuilder][lnk-dotnet-sas] oder die Java-Klasse [IotHubServiceSasToken][lnk-java-sas] zum Erstellen eines Tokens im Tokendienst verwenden.
+> [AZURE.NOTE] Sie können die .NET-Klasse [SharedAccessSignatureBuilder][lnk-dotnet-sas] oder die Java-Klasse [IotHubServiceSasToken][lnk-java-sas] zum Erstellen eines Tokens im Tokendienst verwenden.
 
 Der Tokendienst kann die Gültigkeitsdauer für das Token wie gewünscht festlegen. Wenn das Token abläuft, trennt IoT Hub die Geräteverbindung. Das Gerät muss dann ein neues Token vom Tokendienst anfordern. Wenn Sie eine kurze Ablaufzeit verwenden, erhöht sich die Last für das Gerät und den Tokendienst gleichermaßen.
 
@@ -92,6 +94,14 @@ Damit ein Gerät eine Verbindung mit Ihrem Hub herstellen kann, müssen Sie es d
 ### Vergleich mit einem benutzerdefinierten Gateway
 
 Das Tokendienstmuster ist der empfohlene Weg zur Implementierung einer benutzerdefinierten Identitätsregistrierung bzw. eines Authentifizierungsschemas mit IoT Hub. Dies wird empfohlen, da der größte Teil des Lösungsdatenverkehrs weiterhin über IoT Hub abgewickelt wird. Es gibt aber auch Fälle, in denen das benutzerdefinierte Authentifizierungsschema so eng mit dem Protokoll verknüpft ist, dass ein Dienst zum Verarbeiten des gesamten Datenverkehrs (*benutzerdefiniertes Gateway*) erforderlich ist. Beispiele hierfür sind [Transport Layer Security (TLS) und vorinstallierte Schlüssel (PSKs)][lnk-tls-psk]. Weitere Informationen finden Sie im Thema [Protokollgateway][lnk-gateway].
+
+## Gerätetakt <a id="heartbeat"></a>
+
+Die [IoT Hub-Identitätsregistrierung][lnk-devguide-identityregistry] enthält das Feld **connectionState**. Sie dürfen das Feld **connectionState** nur während der Entwicklung und des Debuggings verwenden. IoT-Lösungen sollten das Feld zur Laufzeit nicht abfragen (um beispielsweise zum Prüfen, ob ein Gerät verbunden ist, um zu bestimmen, ob eine C2D-Nachricht oder SMS gesendet werden sollte). Wenn Ihre IoT-Lösung wissen muss, ob ein Gerät verbunden ist (entweder zur Laufzeit oder mit höherer Genauigkeit als von der **connectionState**-Eigenschaft ermöglicht), muss Ihre Lösung das *Taktmuster* implementieren.
+
+Beim Taktmuster sendet das Gerät D2C-Nachrichten mindestens einmal pro festgelegtem Zeitraum (z. B. mindestens einmal pro Stunde). Dies bedeutet, dass selbst wenn ein Gerät keine zu sendenden Daten hat, es dennoch eine leere D2C-Nachricht sendet (in der Regel mit einer Eigenschaft, die sie als Takt identifiziert). Auf Dienstseite verwaltet die Lösung eine Zuordnung mit dem letzten für jedes Gerät empfangenen Takts und nimmt an, dass es ein Problem mit einem Gerät gibt, wenn es innerhalb des erwarteten Zeitraums keine Taktnachricht empfängt.
+
+Eine komplexere Implementierung kann die Informationen aus der [Vorgangsüberwachung][lnk-devguide-opmon] enthalten, um Geräte zu bestimmen, die erfolglos versuchen, eine Verbindung herzustellen oder zu kommunizieren. Wenn Sie das Taktmuster implementieren, sollten Sie [IoT Hub-Kontingente und -Drosselungen][] überprüfen.
 
 ## Nächste Schritte
 
@@ -104,6 +114,7 @@ Folgen Sie diesen Links, um mehr über Azure IoT Hub zu erfahren:
 
 [lnk-devguide-identityregistry]: iot-hub-devguide.md#identityregistry
 [lnk-device-management]: iot-hub-device-management.md
+[lnk-devguide-opmon]: iot-hub-operations-monitoring.md
 
 [lnk-device-sdks]: iot-hub-sdks-summary.md
 [lnk-devguide-security]: iot-hub-devguide.md#security
@@ -118,5 +129,6 @@ Folgen Sie diesen Links, um mehr über Azure IoT Hub zu erfahren:
 [lnk-devguide-protocol]: iot-hub-devguide.md#amqpvshttp
 [lnk-dotnet-sas]: https://msdn.microsoft.com/library/microsoft.azure.devices.common.security.sharedaccesssignaturebuilder.aspx
 [lnk-java-sas]: http://azure.github.io/azure-iot-sdks/java/service/api_reference/com/microsoft/azure/iot/service/auth/IotHubServiceSasToken.html
+[IoT Hub-Kontingente und -Drosselungen]: iot-hub-devguide.md#throttling
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0204_2016-->

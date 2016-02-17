@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/12/2015" 
+	ms.date="01/26/2016" 
 	ms.author="spelluru"/>
 
 # Datasets
@@ -131,7 +131,7 @@ Tägliche Slices, die um 6:00 Uhr anstelle des Standards Mitternacht beginnen.
 
 	"availability":
 	{
-		"frequency": "Daily",
+		"frequency": "Day",
 		"interval": "1",
 		"offset": "06:00:00"
 	}
@@ -208,4 +208,4 @@ Wenn Sie eine Pipeline jeden Monat an einem bestimmten Tag und zu einer bestimmt
 	  }
 	}
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0204_2016-->

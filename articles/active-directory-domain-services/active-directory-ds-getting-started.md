@@ -4,8 +4,8 @@
 	services="active-directory-ds"
 	documentationCenter=""
 	authors="mahesh-unnikrishnan"
-	manager="udayh"
-	editor="inhenk"/>
+	manager="stevenpo"
+	editor="curtand"/>
 
 <tags
 	ms.service="active-directory-ds"
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/12/2015"
+	ms.date="01/26/2016"
 	ms.author="maheshu"/>
 
 # Azure AD-Domänendienste *(Vorschau)* – Erste Schritte
@@ -23,7 +23,7 @@ Dieser Artikel erläutert die erforderlichen Konfigurationsschritte zum Aktivier
 ## Schritt 1: Erstellen der Gruppe "AAD DC Administrators"
 Im ersten Schritt wird eine administrative Gruppe in Ihrem Azure Active Directory-Mandanten erstellt. Diese spezielle administrative Gruppe heißt **AAD DC Administrators**. Mitgliedern dieser Gruppe werden Administratorrechte auf Computern erteilt, die in die Domäne eingebunden sind, die Sie mit den Azure Active Directory-Domänendiensten einrichten. Nach dem Beitritt zu einer Domäne wird diese Gruppe der Gruppe "Administratoren" auf diesen Computern der Domäne hinzugefügt. Mitglieder dieser Gruppe können darüber hinaus auch mithilfe von Remotedesktop Remoteverbindungen mit den in die Domäne eingebundenen Computern herstellen.
 
-> [AZURE.NOTE]Domänenadministrator- oder Unternehmensadministratorberechtigungen innerhalb der Domäne, die mithilfe der Azure Active Directory-Domänendienste erstellt wurde, können nicht genutzt werden. Da dies eine verwaltete Domäne ist, sind diese Berechtigungen durch den Dienst reserviert und stehen Benutzern innerhalb des Mandanten nicht zur Verfügung. Sie können jedoch mithilfe dieser speziellen Administratorgruppe, die in diesem Konfigurationsschritt erstellt wurde, einige privilegierte Vorgänge durchführen, wie z. B. das Hinzufügen von Computern zur Domäne, das Nutzen der Zugehörigkeit zur Administratorgruppe auf in die Domäne eingebundenen Computern, das Konfigurieren der Gruppenrichtlinie usw.
+> [AZURE.NOTE] Domänenadministrator- oder Unternehmensadministratorberechtigungen innerhalb der Domäne, die mithilfe der Azure Active Directory-Domänendienste erstellt wurde, können nicht genutzt werden. Da dies eine verwaltete Domäne ist, sind diese Berechtigungen durch den Dienst reserviert und stehen Benutzern innerhalb des Mandanten nicht zur Verfügung. Sie können jedoch mithilfe dieser speziellen Administratorgruppe, die in diesem Konfigurationsschritt erstellt wurde, einige privilegierte Vorgänge durchführen, wie z. B. das Hinzufügen von Computern zur Domäne, das Nutzen der Zugehörigkeit zur Administratorgruppe auf in die Domäne eingebundenen Computern, das Konfigurieren der Gruppenrichtlinie usw.
 
 In diesem Konfigurationsschritt erstellen Sie die Gruppe und fügen der Gruppe einen oder mehrere Benutzer in Ihrem Mandanten hinzu. Führen Sie die folgenden Schritte durch, um die Administratorgruppe für Azure Active Directory-Domänendienste zu erstellen:
 
@@ -37,7 +37,7 @@ In diesem Konfigurationsschritt erstellen Sie die Gruppe und fügen der Gruppe e
 5. Klicken Sie im Aufgabenbereich am unteren Rand der Seite auf **Gruppe hinzufügen**, um Ihrem Verzeichnis eine Gruppe hinzuzufügen.
 6. Erstellen Sie eine Gruppe mit dem Namen **AAD DC Administrators**.
 
-    > [AZURE.WARNING]Sie müssen eine Gruppe mit exakt diesem Namen erstellen, um den Zugriff innerhalb von Azure Active Directory-Domänendiensten zu aktivieren.
+    > [AZURE.WARNING] Sie müssen eine Gruppe mit exakt diesem Namen erstellen, um den Zugriff innerhalb von Azure Active Directory-Domänendiensten zu aktivieren.
 
 	![Erstellen der Administratorgruppe](./media/active-directory-domain-services-getting-started/create-admin-group.png)
 
@@ -50,4 +50,4 @@ In diesem Konfigurationsschritt erstellen Sie die Gruppe und fügen der Gruppe e
 ---
 [**Nächster Schritt: Erstellen oder Auswählen eines virtuellen Azure-Netzwerks.**](active-directory-ds-getting-started-vnet.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

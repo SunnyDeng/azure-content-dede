@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="multiple"
-   ms.date="12/19/2015"
+   ms.date="01/30/2016"
    ms.author="tarcher" />
 
 # Veröffentlichen eines Clouddiensts mit den Azure Tools
@@ -21,7 +21,7 @@ Mit den Azure-Tools für Microsoft Visual Studio können Sie Ihre Azure-Anwendun
 
 Um eine Azure-Anwendung veröffentlichen zu können, müssen Sie über ein Azure-Abonnement verfügen. Sie müssen auch einen Clouddienst und ein Speicherkonto für die Nutzung durch die Anwendung einrichten. Dies können Sie im [Azure-Verwaltungsportal](http://go.microsoft.com/fwlink/?LinkID=213885) festlegen.
 
->[AZURE.IMPORTANT]Beim Veröffentlichen können Sie die Bereitstellungsumgebung für Ihren Clouddienst auswählen. Außerdem müssen Sie ein Speicherkonto auswählen, das zum Speichern des Anwendungspakets für die Bereitstellung verwendet wird. Nach der Bereitstellung wird das Anwendungspaket aus dem Speicherkonto entfernt. Weitere Informationen zum Einrichten dieser Dienste finden Sie unter [Einrichten von Diensten, die zum Veröffentlichen eines Clouddiensts mit Visual Studio erforderlich sind](vs-azure-tools-setting-up-services-required-to-publish-a-cloud-service-from-visual-studio.md).
+>[AZURE.IMPORTANT] Beim Veröffentlichen können Sie die Bereitstellungsumgebung für Ihren Clouddienst auswählen. Außerdem müssen Sie ein Speicherkonto auswählen, das zum Speichern des Anwendungspakets für die Bereitstellung verwendet wird. Nach der Bereitstellung wird das Anwendungspaket aus dem Speicherkonto entfernt.
 
 Wenn Sie eine Azure-Anwendung entwickeln und testen, können Sie Web Deploy verwenden, um Änderungen inkrementell für Ihre Webrollen zu veröffentlichen. Nachdem Sie Ihre Anwendung in einer Bereitstellungsumgebung veröffentlicht haben, können Sie mit Web Deploy Änderungen direkt auf dem virtuellen Computer bereitstellen, auf dem die Webrolle ausgeführt wird. Sie müssen nicht jedes Mal die gesamte Azure-Anwendung verpacken und veröffentlichen, wenn Sie die Webrolle aktualisieren und die Änderungen testen möchten. Mit diesem Ansatz können Sie Ihre Webrollenänderungen in der Cloud zu Testzwecken vorhalten, ohne darauf warten zu müssen, dass Ihre Anwendung in einer Bereitstellungsumgebung veröffentlicht wird.
 
@@ -61,7 +61,7 @@ Wenn Sie Ihre Azure-Anwendung veröffentlichen, können Sie eine der folgenden A
 
 1. (Optional) Um den Bereitstellungsprozess abzubrechen, wählen Sie im Kontextmenü für die Position im Aktivitätsprotokoll die Option **Abbrechen und entfernen**. Der Bereitstellungsprozess wird beendet, und die Bereitstellungsumgebung wird aus Azure gelöscht.
 
-    >[AZURE.NOTE]Sie müssen Sie das Azure-Verwaltungsportal verwenden, um diese Umgebung nach der Bereitstellung zu entfernen.
+    >[AZURE.NOTE] Sie müssen Sie das Azure-Verwaltungsportal verwenden, um diese Umgebung nach der Bereitstellung zu entfernen.
 
 1. (Optional) Nach dem Starten Ihrer Rolleninstanzen wird die Bereitstellungsumgebung in Visual Studio im Server-Explorer automatisch unter dem Knoten **Cloud Services** angezeigt. Hier können Sie den Status der einzelnen Rolleninstanzen anzeigen. Weitere Informationen finden Sie unter [Verwalten von Azure-Ressourcen mit dem Cloud-Explorer](vs-azure-tools-resources-managing-with-cloud-explorer.md). Die folgende Abbildung zeigt die Rolleninstanzen, während sie sich noch im Zustand der Initialisierung befinden:
 
@@ -97,7 +97,7 @@ Beim folgenden Verfahren wird davon ausgegangen, dass Sie den Assistenten **Azur
 
     Der Clouddienst wird veröffentlicht. Für den virtuellen Computer, der erstellt wird, sind Remoteverbindungen für IIS aktiviert, damit Web Deploy zum Aktualisieren Ihrer Webrollen verwendet werden kann, ohne dass sie erneut veröffentlicht werden müssen.
 
-    >[AZURE.NOTE]Wenn Sie für eine Webrolle mehr als eine Instanz konfiguriert haben, wird eine Warnmeldung mit folgenden Informationen angezeigt: Jede Webrolle ist im Paket, das zum Veröffentlichen der Anwendung erstellt wird, auf nur eine Instanz beschränkt. Klicken Sie auf OK, um fortzufahren. Wie im Abschnitt „Anforderungen“ beschrieben, können Sie mehr als eine Webrolle verwenden, aber nur eine Instanz jeder Rolle.
+    >[AZURE.NOTE] Wenn Sie für eine Webrolle mehr als eine Instanz konfiguriert haben, wird eine Warnmeldung mit folgenden Informationen angezeigt: Jede Webrolle ist im Paket, das zum Veröffentlichen der Anwendung erstellt wird, auf nur eine Instanz beschränkt. Klicken Sie auf OK, um fortzufahren. Wie im Abschnitt „Anforderungen“ beschrieben, können Sie mehr als eine Webrolle verwenden, aber nur eine Instanz jeder Rolle.
 
 ### So aktualisieren Sie Ihre Webrolle mit Web Deploy
 
@@ -131,7 +131,7 @@ Beim folgenden Verfahren wird davon ausgegangen, dass Sie den Assistenten **Azur
 
   1. Öffnen Sie den Verwaltungsdienst im IIS-Manager, um ein SSL-Zertifikat hinzuzufügen. Aktivieren Sie SSL im IIS-Manager, indem Sie im Aktionsbereich den Link **Bindungen** öffnen. Das Dialogfeld **Sitebindung hinzufügen** wird angezeigt. Wählen Sie **Hinzufügen** und in der Dropdownliste **Typ** dann die Option HTTPS. Wählen Sie in der Liste **SSL-Zertifikat** das SSL-Zertifikat aus, das von einer Zertifizierungsstelle signiert wurde und das Sie in das Azure-Verwaltungsportal hochgeladen haben. Weitere Informationen finden Sie unter [Konfigurieren der Verbindungseinstellungen für den Verwaltungsdienst](http://go.microsoft.com/fwlink/?LinkId=215824).
 
-      >[AZURE.NOTE]Wenn Sie ein vertrauenswürdiges SSL-Zertifikat hinzufügen, wird die Warnung mit dem gelben Dreieck im **Veröffentlichungs-Assistenten** nicht mehr angezeigt.
+      >[AZURE.NOTE] Wenn Sie ein vertrauenswürdiges SSL-Zertifikat hinzufügen, wird die Warnung mit dem gelben Dreieck im **Veröffentlichungs-Assistenten** nicht mehr angezeigt.
 
 ## Einschließen von Dateien in das Dienstpaket
 
@@ -173,4 +173,4 @@ Unter Umständen müssen Sie bestimmte Dateien in Ihr Dienstpaket einschließen,
 
 Weitere Informationen zum Veröffentlichen in Azure aus Visual Studio finden Sie unter [Assistent zur Veröffentlichung einer Azure-Anwendung](vs-azure-tools-publish-azure-application-wizard.md).
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0204_2016-->

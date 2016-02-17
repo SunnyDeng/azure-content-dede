@@ -33,9 +33,9 @@ Diese Schritte setzen voraus, dass Sie bereits einen virtuellen Azure-Computer e
 - [Erstellen eines virtuellen Computers von einem Image](virtual-machines-create-custom.md)
 - [Anfügen eines Datenträgers an einen virtuellen Computer](storage-windows-attach-disk.md)
 
-> [AZURE.WARNING]Mit diesem Vorgang wird die ursprüngliche virtuelle Maschine nach der Erfassung gelöscht.
+> [AZURE.WARNING] Mit diesem Vorgang wird die ursprüngliche virtuelle Maschine nach der Erfassung gelöscht.
 
-Er dient nicht zum Erstellen einer Sicherungskopie eines virtuellen Computers. Eine Möglichkeit dafür ist Azure Backup, das in bestimmten Regionen als Vorschau verfügbar. Weitere Informationen finden Sie unter [Sichern eines virtuellen Azure-Computers](../backup/backup-azure-vms.md). Andere Lösungen sind von zertifizierten Partnern erhältlich. Aktuelle Angebote finden Sie auf dem Azure Marketplace.
+Es empfiehlt sich, vor der Erfassung eines Images eines Azure virtuellen Computers, den virtuellen Zielcomputer durch ein Backup zu sichern. Azure virtuelle Computer können durch den Azure Backup entsprechend gesichert werden. Weitere Informationen finden Sie unter [Sichern eines virtuellen Azure-Computers](../backup/backup-azure-vms.md). Andere Lösungen sind von zertifizierten Partnern erhältlich. Aktuelle Angebote finden Sie auf dem Azure Marketplace.
 
 
 ##Erfassen des virtuellen Computers
@@ -90,4 +90,4 @@ Das Image kann jetzt zum Erstellen virtueller Computer verwendet werden. Dazu er
 [Image capture successful]: ./media/virtual-machines-capture-image-windows-server/CaptureSuccess.png
 [Use the captured image]: ./media/virtual-machines-capture-image-windows-server/MyImagesWindows.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

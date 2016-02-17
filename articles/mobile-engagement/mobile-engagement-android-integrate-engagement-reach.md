@@ -18,7 +18,7 @@
 
 #Integrieren von Engagement Reach unter Android
 
-> [AZURE.IMPORTANT]Bevor Sie dieser Anleitung folgen, müssen Sie das unter „Integrieren von Mobile Engagement unter Android“ beschriebene Integrationsverfahren befolgen.
+> [AZURE.IMPORTANT] Bevor Sie dieser Anleitung folgen, müssen Sie das unter „Integrieren von Mobile Engagement unter Android“ beschriebene Integrationsverfahren befolgen.
 
 ##Standardintegration
 
@@ -87,7 +87,7 @@ Bearbeiten Sie Ihre `AndroidManifest.xml`-Datei:
 
 			<meta-data android:name="engagement:reach:notification:icon" android:value="<name_of_icon_WITHOUT_file_extension_and_WITHOUT_'@drawable/'>" />
 
-> [AZURE.IMPORTANT]Dieser Abschnitt ist **obligatorisch**, wenn Sie beim Erstellen von Reach-Kampagnen die Verwendung von Systembenachrichtigungen planen. Android verhindert, dass Systembenachrichtigungen ohne Symbole angezeigt werden. Wenn Sie diesen Abschnitt daher auslassen, können Ihre Endbenutzer sie nicht empfangen.
+> [AZURE.IMPORTANT] Dieser Abschnitt ist **obligatorisch**, wenn Sie beim Erstellen von Reach-Kampagnen die Verwendung von Systembenachrichtigungen planen. Android verhindert, dass Systembenachrichtigungen ohne Symbole angezeigt werden. Wenn Sie diesen Abschnitt daher auslassen, können Ihre Endbenutzer sie nicht empfangen.
 
 -   Wenn Sie Kampagnen mit Systembenachrichtigungen erstellen, die eine allgemeine Übersicht verwenden, müssen Sie die folgenden Berechtigungen (hinter dem `</application>`-Tag) hinzufügen, falls diese nicht vorhanden sind:
 
@@ -193,7 +193,7 @@ Eine In-App-Benachrichtigung ist standardmäßig eine Ansicht, die dank der Andr
 
 Sie können einfach die Datei `engagement_notification_area.xml` nach Belieben ändern, um das Aussehen der Benachrichtigungsüberlagerungen zu modifizieren.
 
-> [AZURE.NOTE]Die Datei `engagement_notification_overlay.xml` ist die Datei, die zum Erstellen einer Benachrichtigungsüberlagerung verwendet wird. Sie enthält die Datei `engagement_notification_area.xml`. Sie können die Datei auch anpassen, um sie gemäß Ihren Anforderungen zu ändern (z. B. zur Positionierung des Benachrichtigungsbereichs innerhalb der Überlagerung).
+> [AZURE.NOTE] Die Datei `engagement_notification_overlay.xml` ist die Datei, die zum Erstellen einer Benachrichtigungsüberlagerung verwendet wird. Sie enthält die Datei `engagement_notification_area.xml`. Sie können die Datei auch anpassen, um sie gemäß Ihren Anforderungen zu ändern (z. B. zur Positionierung des Benachrichtigungsbereichs innerhalb der Überlagerung).
 
 ##### Einbeziehen des Benachrichtigungslayouts im Rahmen einer Aktivitätsüberlagerung
 
@@ -233,7 +233,7 @@ In diesem Beispiel wurde ein übergeordneter Container hinzugefügt, da das ursp
 
 Das Engagement Reach SDK erkennt automatisch, dass das Benachrichtigungslayout in diese Aktivität einbezogen wird, daher wird für diese Aktivität keine Überlagerung hinzugefügt.
 
-> [AZURE.TIP]Wenn Sie „ListActivity“ in Ihrer Anwendung verwenden, verhindert eine sichtbare Reichweitenüberlagerung, dass Sie in der Listenansicht weiterhin auf angeklickte Elemente reagieren. Dies ist ein bekanntes Problem. Es wird empfohlen, das Benachrichtigungslayout wie im vorherigen Beispiel in Ihr eigenes Aktivitätenlayout einzubetten, um dieses Problem zu umgehen.
+> [AZURE.TIP] Wenn Sie „ListActivity“ in Ihrer Anwendung verwenden, verhindert eine sichtbare Reichweitenüberlagerung, dass Sie in der Listenansicht weiterhin auf angeklickte Elemente reagieren. Dies ist ein bekanntes Problem. Es wird empfohlen, das Benachrichtigungslayout wie im vorherigen Beispiel in Ihr eigenes Aktivitätenlayout einzubetten, um dieses Problem zu umgehen.
 
 ##### Deaktivieren der Anwendungsbenachrichtigung durch eine Aktivität
 
@@ -249,7 +249,7 @@ Wenn Sie die bereitgestellten Layouts ändern, verändern Sie das Aussehen Ihrer
 
 Sie müssen beim Initialisieren der Anwendung einen Aufruf hinzufügen, um einen Kategoriehandler für Ihre Benachrichtigungen zu registrieren.
 
-> [AZURE.IMPORTANT]Bevor Sie fortfahren, finden Sie Informationen zur Warnung zum „android:process“-Attribut „<android-sdk-engagement-process> “ unter „Integrieren von Engagement unter Android“.
+> [AZURE.IMPORTANT] Bevor Sie fortfahren, finden Sie Informationen zur Warnung zum „android:process“-Attribut „<android-sdk-engagement-process> “ unter „Integrieren von Engagement unter Android“.
 
 Im folgenden Beispiel wird angenommen, dass Sie die vorherige Warnung bestätigt haben und eine Unterklasse von `EngagementApplication` verwenden:
 
@@ -499,7 +499,7 @@ Wenn Ihre Implementierung von `EngagementNotifier` das Standardverhalten umgeht,
 -   Für die Systembenachrichtigungen haben Sie `onNotificationPrepared` außer Kraft gesetzt und `contentIntent` oder `deleteIntent` im `Notification`-Objekt geändert.
 -   Für In-App-Benachrichtigungen haben Sie `prepareInAppArea` außer Kraft gesetzt. Stellen Sie sicher, dass Sie mindestens `actionNotification` zu einem Ihrer Steuerelemente der Benutzeroberfläche zuordnen.
 
-> [AZURE.NOTE]Wenn `handleNotification` eine Ausnahme auslöst, wird der Inhalt gelöscht und `dropContent` aufgerufen. Dies wird in den Statistiken gemeldet und die nächsten Kampagnen können jetzt verarbeitet werden.
+> [AZURE.NOTE] Wenn `handleNotification` eine Ausnahme auslöst, wird der Inhalt gelöscht und `dropContent` aufgerufen. Dies wird in den Statistiken gemeldet und die nächsten Kampagnen können jetzt verarbeitet werden.
 
 ### Ankündigungen und Umfragen
 
@@ -640,13 +640,9 @@ Hier folgt der interessante Teil der Implementierung:
 
 Wenn Sie aufgerufen `actionContent(this)` und dann die Aktivität beendet haben, kann `exitContent(this)` ohne Auswirkungen sicher aufgerufen werden.
 
-##Test
-
-Überprüfen Sie jetzt Ihre Integration, indem Sie den Abschnitt „Testen der Engagement-Integration unter Android“ lesen.
-
 [hier]: http://developer.android.com/tools/extras/support-library.html#Downloading
 [Google Cloud Messaging]: http://developer.android.com/guide/google/gcm/index.html
 [Amazon Device Messaging]: https://developer.amazon.com/sdk/adm.html
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

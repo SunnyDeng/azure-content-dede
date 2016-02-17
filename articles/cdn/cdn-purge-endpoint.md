@@ -28,7 +28,7 @@ Dieses Lernprogramm führt Sie durch das Löschen von Assets aus allen Edgeknote
 
 ## Exemplarische Vorgehensweise
 
-1. Navigieren Sie im [Azure-Portal](http://portal.azure.com) zu dem CDN-Profil mit dem Endpunkt, den Sie löschen möchten.
+1. Navigieren Sie im [Azure-Portal](https://portal.azure.com) zu dem CDN-Profil mit dem Endpunkt, den Sie löschen möchten.
 
 2. Klicken Sie auf dem CDN-Profilblatt auf die Schaltfläche zum Löschen.
 	
@@ -42,11 +42,11 @@ Dieses Lernprogramm führt Sie durch das Löschen von Assets aus allen Edgeknote
 
 	![Löschformular](./media/cdn-purge-endpoint/cdn-purge-form.png)
 	
-	> [AZURE.NOTE]Um das Blatt „Löschen“ aufzurufen, können Sie auch auf dem Blatt des CDN-Endpunkts auf die Schaltfläche **Löschen** klicken. In diesem Fall ist im **URL**-Feld die Adresse des Diensts dieses Endpunkts vorgegeben.
+	> [AZURE.NOTE] Um das Blatt „Löschen“ aufzurufen, können Sie auch auf dem Blatt des CDN-Endpunkts auf die Schaltfläche **Löschen** klicken. In diesem Fall ist im **URL**-Feld die Adresse des Diensts dieses Endpunkts vorgegeben.
 	
 4. Wählen Sie, welche Assets Sie aus dem Edgeknoten löschen möchten. Wenn Sie alle Assets löschen möchten, klicken Sie auf das Kontrollkästchen **Alles löschen**. Geben Sie andernfalls den vollständigen Pfad jedes Assets, das Sie löschen möchten (z. B. */pictures/kitten.png*), in das Textfeld **Pfad** ein.
 
-	> [AZURE.TIP]Nachdem Sie Text eingegeben haben, werden weitere **Pfad**-Textfelder angezeigt, damit Sie eine Liste mit mehreren Assets erstellen können. Sie können Assets aus der Liste löschen, indem Sie auf die Schaltfläche mit den Auslassungspunkten (...) klicken.
+	> [AZURE.TIP] Nachdem Sie Text eingegeben haben, werden weitere **Pfad**-Textfelder angezeigt, damit Sie eine Liste mit mehreren Assets erstellen können. Sie können Assets aus der Liste löschen, indem Sie auf die Schaltfläche mit den Auslassungspunkten (...) klicken.
 	>
 	> Die Pfade müssen eine relative URL sein. Sternchen (*) können als Platzhalter verwendet werden.
 	
@@ -59,4 +59,4 @@ Dieses Lernprogramm führt Sie durch das Löschen von Assets aus allen Edgeknote
 - [Vorabladen von Assets auf einen Azure CDN-Endpunkt](cdn-preload-endpoint.md)
 - [Azure CDN-REST-API-Referenz – Löschen oder Vorabladen eines Endpunkts](https://msdn.microsoft.com/library/mt634451.aspx)
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -39,7 +39,7 @@ Die Beispiele decken Folgendes ab:
 - Codebeispiele, die relationale Resultsets in ein objektorientiertes Format konvertieren.
 
 
-> [AZURE.NOTE]Codebeispiele für weitere Sprachen werden vorbereitet. Links zu diesen Beispielen werden in diesem Thema hinzugefügt.
+> [AZURE.NOTE] Codebeispiele für weitere Sprachen werden vorbereitet. Links zu diesen Beispielen werden in diesem Thema hinzugefügt.
 
 
 ## Clients unter Linux
@@ -86,7 +86,7 @@ Dieser Abschnitt enthält Links zu Themen mit Codebeispielen für Clientprogramm
 ## Weitere Informationen
 
 
-- [Downloads von SDKs und Tools für zahlreiche Sprachen und Plattformen](http://azure.microsoft.com/downloads/#cmd-line-tools)
+- [Downloads von SDKs und Tools für zahlreiche Sprachen und Plattformen](https://azure.microsoft.com/downloads/#cmd-line-tools)
 - [Connection Libraries for SQL Database and SQL Server (Verbindungsbibliotheken für SQL-Datenbanken und SQL Server, in englischer Sprache)](sql-database-libraries.md)
 - [Liste mit numerischem Code für vorübergehende Fehler](sql-database-develop-error-messages.md#bkmk_connection_errors)<br/>&nbsp;
 - [Azure SQL-Datenbankentwicklung: Themen zur Vorgehensweise](http://msdn.microsoft.com/library/azure/ee621787.aspx)
@@ -94,4 +94,4 @@ Dieser Abschnitt enthält Links zu Themen mit Codebeispielen für Clientprogramm
 - [Create your first Azure SQL Database (Erstellen einer ersten Azure SQL-Datenbank, in englischer Sprache)](sql-database-get-started.md)
 - [Entity Framework 6 hier, EF 7 auf GitHub](http://entityframework.codeplex.com/)
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

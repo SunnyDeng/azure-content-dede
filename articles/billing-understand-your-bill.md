@@ -24,7 +24,7 @@ Die Gebühren für Microsoft Azure-Abonnements variieren je nach Preisliste. Ein
 
 Bitte beachten Sie, dass bis zu 24 Stunden an ruhendem Verbrauch von Ihrem vorherigen in den aktuellen Abrechnungszeitraum übertragen werden können.
 
-Weitere Informationen über Verbrauch und Tarife finden Sie auf der Seite [Microsoft Azure-Kaufoptionen](http://azure.microsoft.com/pricing/purchase-options/).
+Weitere Informationen über Verbrauch und Tarife finden Sie auf der Seite [Microsoft Azure-Kaufoptionen](https://azure.microsoft.com/pricing/purchase-options/).
 
 Die folgenden Links enthalten eine vollständige Liste aller Microsoft Azure-Dienste.
 
@@ -262,4 +262,4 @@ Im Abschnitt **Verwalten von Konten, Abonnements und Administratorrollen** unter
 
 <!--Image references-->
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="11/04/2015"
+    ms.date="02/01/2016"
     ms.author="ddove;sidneyh"/>
 
 # Übersicht über die Clientbibliothek für elastische Datenbanken
@@ -46,7 +46,7 @@ Rufen Sie zum Installieren der Bibliothek [Clientbibliothek für elastische Date
 
 Informationen zur Verwendung des Split-Merge-Tools finden Sie in der [Übersicht über das Split-Merge-Tool](sql-database-elastic-scale-overview-split-and-merge.md).
 
-[Die Clientbibliothek für elastische Datenbanken liegt nun als Open Source vor!](http://azure.microsoft.com/blog/elastic-database-client-library-is-now-open-sourced/)
+[Die Clientbibliothek für elastische Datenbanken liegt nun als Open Source vor!](https://azure.microsoft.com/blog/elastic-database-client-library-is-now-open-sourced/)
 
 
 [AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
@@ -55,4 +55,4 @@ Informationen zur Verwendung des Split-Merge-Tools finden Sie in der [Übersicht
 <!--Image references-->
 [1]: ./media/sql-database-elastic-database-client-library/glossary.png
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0204_2016-->

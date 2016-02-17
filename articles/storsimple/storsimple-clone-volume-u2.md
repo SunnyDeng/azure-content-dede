@@ -27,7 +27,7 @@ Auf der Seite **Sicherungskatalog** des StorSimple Manager-Diensts werden alle S
 
 In diesem Tutorial wird beschrieben, wie Sie einen Sicherungssatz zum Klonen eines einzelnen Volumes verwenden können. Außerdem wird der Unterschied zwischen *vorübergehenden* und *dauerhaften* Klonen beschrieben.
 
->[AZURE.NOTE]
+>[AZURE.NOTE] 
 >
 >Ein lokal fixiertes Volume wird als mehrstufiges Volume geklont. Wenn das geklonte Volume lokal fixiert werden muss, können Sie den Klon in ein lokal fixiertes Volume konvertieren, nachdem der Klonvorgang erfolgreich abgeschlossen wurde. Informationen zum Konvertieren eines mehrstufigen Volumes in ein lokal fixiertes Volume finden Sie unter [Ändern des Volumetyps](storsimple-manage-volumes-u2.md#change-the-volume-type).
 >
@@ -82,7 +82,7 @@ Sie können einen Klon anhand einer lokalen oder einer Cloudmomentaufnahme auf d
   1. Navigieren Sie zur Seite **Geräte**, und klicken Sie auf die Registerkarte **Volumecontainer**.
   2. Wählen Sie den Volumecontainer aus, der dem geklonten Ausgangsvolume zugeordnet ist. In der Liste der Volumes sollte der gerade erstellte Klon angezeigt werden.
 
->[AZURE.NOTE]Die Überwachung und die Standardsicherung werden auf geklonten Volumes automatisch deaktiviert.
+>[AZURE.NOTE] Die Überwachung und die Standardsicherung werden auf geklonten Volumes automatisch deaktiviert.
 
 Ein auf diese Weise erstellter Klon ist ein vorübergehender Klon. Weitere Informationen zu Klontypen finden Sie unter [Vergleich von vorübergehenden und dauerhaften Klonen](#transient-vs.-permanent-clones).
 
@@ -104,7 +104,7 @@ Sie müssen eine ein Jahr alte Datei mit einer Microsoft PowerPoint-Präsentatio
  
 ![Video verfügbar](./media/storsimple-clone-volume-u2/Video_icon.png) **Video verfügbar**
 
-Um ein Video zu schauen, in dem gezeigt wird, wie Sie mithilfe des Klons und Wiederherstellungsfunktionen in StorSimple gelöschte Dateien wiederherstellen können, klicken Sie [hier](http://azure.microsoft.com/documentation/videos/storsimple-recover-deleted-files-with-storsimple/).
+Um ein Video zu schauen, in dem gezeigt wird, wie Sie mithilfe des Klons und Wiederherstellungsfunktionen in StorSimple gelöschte Dateien wiederherstellen können, klicken Sie [hier](https://azure.microsoft.com/documentation/videos/storsimple-recover-deleted-files-with-storsimple/).
 
 ### Testen in der Produktionsumgebung mit einem dauerhaften Klon
 
@@ -117,4 +117,4 @@ Sie müssen einen Testfehler in der Produktionsumgebung überprüfen. Sie erstel
 
  
 
-<!----HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

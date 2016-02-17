@@ -13,11 +13,12 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
-	ms.date="01/18/2016"
+	ms.date="02/03/2016" 
 	ms.author="juliako"/>
 
 
 # Erste Schritte zum Bereitstellen von Inhalten nach Bedarf mit dem .NET SDK
+
 
 [AZURE.INCLUDE [media-services-selector-get-started](../../includes/media-services-selector-get-started.md)]
 
@@ -65,7 +66,7 @@ Laden Sie [hier](https://azure.microsoft.com/documentation/samples/media-service
 
 1. Klicken Sie im **klassischen Azure-Portal** auf **Mediendienst** und dann auf **Schnellerfassung**.
 
-![Media Services-Schnellerfassung](./media/media-services-dotnet-get-started/wams-QuickCreate.png)
+	![Media Services-Schnellerfassung](./media/media-services-dotnet-get-started/wams-QuickCreate.png)
 
 2. Geben Sie in das Feld **NAME** den Namen des neuen Kontos ein. Der Name eines Media Services-Kontos darf nur Kleinbuchstaben oder Ziffern ohne Leerzeichen enthalten und muss aus 3 bis 24 Zeichen bestehen.
 
@@ -130,7 +131,7 @@ Das Zuordnen neuer Einheiten dauert etwa 20 Minuten.
 
 4. Öffnen Sie die Datei "App.config" (fügen Sie die Datei dem Projekt hinzu, wenn sie nicht standardmäßig hinzugefügt wurde), und fügen Sie einen *appSettings*-Abschnitt in der Datei hinzu. Legen Sie die Werte für Ihren Azure Media Services-Kontonamen und Schlüssel fest, wie im folgenden Beispiel gezeigt. Um den Kontonamen und wichtige Informationen zu erhalten, öffnen Sie das klassische Azure-Portal, wählen Sie Ihr Media Services-Konto aus, und klicken Sie anschließend auf die Schaltfläche **Schlüssel verwalten**.
 
-<configuration>
+		<configuration>
 		...
 		  <appSettings>
 		    <add key="MediaServicesAccountName" value="Media-Services-Account-Name" />
@@ -150,9 +151,9 @@ Das Zuordnen neuer Einheiten dauert etwa 20 Minuten.
 		using System.Threading;
 		using System.IO;
 		using Microsoft.WindowsAzure.MediaServices.Client;
-		using Microsoft.WindowsAzure.MediaServices.Client.DynamicEncryption;
+		
 
-6. Erstellen Sie einen neuen Ordner unter dem Verzeichnis Projekte, und kopieren Sie eine MP4 oder WMV-Datei, die Sie codieren und streamen oder progressiv herunterladen möchten. In diesem Beispiel wird der Pfad "C:\VideoFiles" verwendet.
+6. Erstellen Sie einen neuen Ordner unter dem Verzeichnis Projekte, und kopieren Sie eine MP4 oder WMV-Datei, die Sie codieren und streamen oder progressiv herunterladen möchten. In diesem Beispiel wird der Pfad "C:\\VideoFiles" verwendet.
 
 ##Herstellen einer Verbindung mit dem Media Services-Konto
 
@@ -255,7 +256,7 @@ Um die dynamische Paketerstellung nutzen zu können, müssen Sie folgende Schrit
 - Codieren oder Transcodieren Ihrer Zwischendatei (Quelldatei) in einen Satz von MP4-Dateien oder Smooth Streaming-Dateien mit adaptiver Bitrate  
 - Abrufen von mindestens einer Streamingeinheit für den Streamingendpunkt, von dem aus Sie die Bereitstellung Ihrer Inhalte planen
 
-Der folgende Code zeigt, wie Sie einen Codierungsauftrag senden. Der Auftrag enthält einen Task zum Transcodieren der Zwischendatei in eine Reihe von adaptiven MP4-Dateien mit **Azure Media Encoder**. Der Code sendet den Auftrag und wartet, bis er abgeschlossen ist.
+Der folgende Code zeigt, wie Sie einen Codierungsauftrag senden. Der Auftrag enthält eine Aufgabe zum Transcodieren der Zwischendatei in eine Reihe von MP4-Dateien mit adaptiver Bitrate mithilfe von **Media Encoder Standard**. Der Code sendet den Auftrag und wartet, bis er abgeschlossen ist.
 
 Wenn der Auftrag abgeschlossen ist, sind Sie in der Lage, das Medienobjekt zu streamen oder MP4-Dateien, die als Ergebnis der Transcodierung erstellt wurden, progressiv herunterzuladen. Beachten Sie, dass Sie keine Streamingeinheiten abrufen müssen, um MP4-Dateien progressiv herunterzuladen.
 
@@ -452,4 +453,4 @@ Wenn dieses Thema nicht die erwarteten Informationen enthält, Informationen feh
   [Web Platform Installer]: http://go.microsoft.com/fwlink/?linkid=255386
   [Portal]: http://manage.windowsazure.com/
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

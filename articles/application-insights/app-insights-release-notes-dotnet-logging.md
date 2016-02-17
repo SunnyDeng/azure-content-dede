@@ -16,7 +16,7 @@
  
 # Versionshinweise für Protokollierungsadapter für .NET
 
-Wenn Sie bereits ein Protokollierungsframework wie log4net, NLog oder System.Diagnostics.Trace nutzen, können Sie diese Protokolle erfassen und an [Application Insights](http://azure.microsoft.com/services/application-insights/) senden. Dort können Sie Protokollablaufverfolgungen mit Benutzeraktionen, Ausnahmen und anderen Ereignissen in Beziehung setzen.
+Wenn Sie bereits ein Protokollierungsframework wie log4net, NLog oder System.Diagnostics.Trace nutzen, können Sie diese Protokolle erfassen und an [Application Insights](https://azure.microsoft.com/services/application-insights/) senden. Dort können Sie Protokollablaufverfolgungen mit Benutzeraktionen, Ausnahmen und anderen Ereignissen in Beziehung setzen.
 
 
 #### Erste Schritte
@@ -32,4 +32,4 @@ Siehe [Protokolle, Ausnahmen und benutzerdefinierte Diagnose für ASP.NET in App
 ## Version 1.2.5
 - Erste Open Source-Version: Verweist auf die Application Insights-API-Version 1.2.3 oder höher.
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

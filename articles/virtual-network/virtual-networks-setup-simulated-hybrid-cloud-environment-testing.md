@@ -44,9 +44,9 @@ Die Einrichtung dieser Hybrid Cloud-Testumgebung besteht aus vier Hauptphasen:
 3.	Herstellen der VNet-zu-VNet-VPN-Verbindung
 4.	Konfigurieren von DC2 
 
-Wenn Sie noch über kein Azure-Abonnement verfügen, können Sie sich unter [Azure testen](http://azure.microsoft.com/pricing/free-trial/) für eine kostenlose Testversion anmelden. Wenn Sie über ein MSDN-Abonnement verfügen, lesen Sie [Azure-Vorteil für MSDN-Abonnenten](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
+Wenn Sie noch über kein Azure-Abonnement verfügen, können Sie sich unter [Azure testen](https://azure.microsoft.com/pricing/free-trial/) für eine kostenlose Testversion anmelden. Wenn Sie über ein MSDN-Abonnement verfügen, lesen Sie [Azure-Vorteil für MSDN-Abonnenten](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
 
->[AZURE.NOTE]Für virtuelle Computer und virtuelle Netzwerkgateways in Azure fallen laufende Kosten an, wenn sie ausgeführt werden. Diese Kosten werden im Rahmen der kostenlosen Testversion, des MSDN-Abonnements oder des kostenpflichtigen Abonnements abgerechnet. Weitere Informationen zum Reduzieren der Kosten für das Ausführen dieser Testumgebung, wenn sie nicht verwendet wird, finden Sie in diesem Artikel unter [Minimieren der laufenden Kosten dieser Umgebung](#costs).
+>[AZURE.NOTE] Für virtuelle Computer und virtuelle Netzwerkgateways in Azure fallen laufende Kosten an, wenn sie ausgeführt werden. Diese Kosten werden im Rahmen der kostenlosen Testversion, des MSDN-Abonnements oder des kostenpflichtigen Abonnements abgerechnet. Weitere Informationen zum Reduzieren der Kosten für das Ausführen dieser Testumgebung, wenn sie nicht verwendet wird, finden Sie in diesem Artikel unter [Minimieren der laufenden Kosten dieser Umgebung](#costs).
 
 
 ## Phase 1: Konfigurieren des virtuellen Netzwerks "TestLab"
@@ -231,7 +231,7 @@ Einrichten der folgenden Workloads im virtuellen Netzwerk TestVNET:
 
 Führen Sie zur Minimierung der Kosten für das Ausführen von virtuellen Computern in dieser Umgebung die erforderlichen Tests und Demonstrationen so schnell wie möglich durch, und löschen Sie oder fahren Sie die virtuellen Computer herunter, wenn Sie sie nicht verwenden. Sie können beispielsweise Azure Automation oder ein Runbook verwenden, um die virtuellen Computer in den virtuellen Netzwerken TestLab und TestVNET am Ende jedes Arbeitstages automatisch herunterzufahren. Weitere Informationen finden Sie unter [Erste Schritte mit Azure Automation](../automation-create-runbook-from-samples.md). Wenn Sie die virtuellen Computer im Subnetz des Unternehmensnetzwerks erneut starten möchten, starten Sie zuerst DC1.
 
-Ein Azure-VPN-Gateway wird als Gruppe von zwei virtuellen Computern in Azure implementiert, für die laufende Kosten anfallen. Nähere Informationen hierzu finden Sie unter [Preise – Virtuelles Netzwerk](http://azure.microsoft.com/pricing/details/virtual-network/). Wenn Sie die Kosten für die zwei VPN-Gateways (eines für TestLab und eines für TestVNET) minimieren möchten, erstellen sie die Testumgebung, und führen Sie die erforderlichen Test- und Demonstrationen so schnell wie möglich durch, oder löschen Sie die Gateways mit folgenden Schritten.
+Ein Azure-VPN-Gateway wird als Gruppe von zwei virtuellen Computern in Azure implementiert, für die laufende Kosten anfallen. Nähere Informationen hierzu finden Sie unter [Preise – Virtuelles Netzwerk](https://azure.microsoft.com/pricing/details/virtual-network/). Wenn Sie die Kosten für die zwei VPN-Gateways (eines für TestLab und eines für TestVNET) minimieren möchten, erstellen sie die Testumgebung, und führen Sie die erforderlichen Test- und Demonstrationen so schnell wie möglich durch, oder löschen Sie die Gateways mit folgenden Schritten.
  
 1.	Klicken Sie im linken Bereich des Azure-Verwaltungsportals auf dem lokalen Computer auf **Netzwerke**, klicken Sie auf **TestLab** und anschließend auf **Dashboard**.
 2.	Klicken Sie in der Taskleiste auf **Gateway löschen**. Klicken Sie auf **Ja**, wenn Sie dazu aufgefordert werden. Warten Sie, bis das Gateway gelöscht ist und sein Status in **Das Gateway wurde nicht erstellt** geändert wird.
@@ -266,4 +266,4 @@ Setzen Sie anschließend den vorinstallierten Schlüssel für beide Gateways auf
 Klicken Sie auf der Seite "Netzwerk" im Azure-Verwaltungsportal auf das virtuelle Netzwerk **TestLab** und anschließend in der Taskleiste auf **Verbinden**. Warten Sie, bis angezeigt wird, dass das virtuelle Netzwerk TestLab mit dem lokalen Netzwerk TestVNET verbunden ist.
  
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

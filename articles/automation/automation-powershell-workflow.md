@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="10/01/2015"
+   ms.date="02/03/2016"
    ms.author="bwren" />
 
 # Grundlagen des Windows PowerShell-Workflows
@@ -129,7 +129,7 @@ Sie können Werte in einen InlineScript-Block übergeben, aber Sie müssen den *
 		$ServiceName = "MyService"
 	
 		$Output = InlineScript {
-			$Service = Get-Service -Name $Using:MyService
+			$Service = Get-Service -Name $Using:ServiceName
 			$Service.Stop()
 			$Service
 		}
@@ -206,7 +206,7 @@ Das folgende Beispiel ähnelt dem vorherigen Beispiel mit dem parallelen Kopiere
 		Write-Output "All files copied."
 	}
 
-> [AZURE.NOTE]Wir raten davon ab, untergeordnete Runbooks parallel auszuführen, da dies häufig zu unzuverlässigen Ergebnissen führt. Die Ausgabe des untergeordneten Runbooks wird in einigen Fällen nicht angezeigt, und die Einstellungen in einem untergeordneten Runbook können sich auf andere untergeordnete Runbooks auswirken.
+> [AZURE.NOTE]  Wir raten davon ab, untergeordnete Runbooks parallel auszuführen, da dies häufig zu unzuverlässigen Ergebnissen führt. Die Ausgabe des untergeordneten Runbooks wird in einigen Fällen nicht angezeigt, und die Einstellungen in einem untergeordneten Runbook können sich auf andere untergeordnete Runbooks auswirken.
 
 
 ## Prüfpunkte
@@ -249,4 +249,4 @@ Weitere Informationen zu Prüfpunkten finden Sie unter [Hinzufügen von Prüfpun
 
 - [Erste Schritte mit dem Windows PowerShell-Workflow](http://technet.microsoft.com/library/jj134242.aspx) 
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0204_2016-->

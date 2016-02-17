@@ -20,18 +20,18 @@
 
 ## Übersicht
 
-Sie können Ihr Speicherkonto im [Azure-Portal](portal.azure.com) überwachen. Wenn Sie Ihr Speicherkonto für die Überwachung über das Portal konfigurieren, verwendet Azure Storage die [Speicheranalyse](http://msdn.microsoft.com/library/azure/hh343270.aspx) zum Erfassen von Metriken für Ihr Konto und zum Protokollieren von Anforderungsdaten.
+Sie können Ihr Speicherkonto im [Azure-Portal](https://portal.azure.com) überwachen. Wenn Sie Ihr Speicherkonto für die Überwachung über das Portal konfigurieren, verwendet Azure Storage die [Speicheranalyse](http://msdn.microsoft.com/library/azure/hh343270.aspx) zum Erfassen von Metriken für Ihr Konto und zum Protokollieren von Anforderungsdaten.
 
-> [AZURE.NOTE]Für die Untersuchung von Überwachungsdaten im [Azure-Portal](portal.azure.com) fallen zusätzliche Kosten an. Weitere Informationen finden Sie unter <a href="http://msdn.microsoft.com/library/azure/hh360997.aspx">Speicheranalyse und Speicheranalysekosten</a>.<br />
+> [AZURE.NOTE] Für die Untersuchung von Überwachungsdaten im [Azure-Portal](https://portal.azure.com) fallen zusätzliche Kosten an. Weitere Informationen finden Sie unter <a href="http://msdn.microsoft.com/library/azure/hh360997.aspx">Speicheranalyse und Speicheranalysekosten</a>.<br />
 
-> Der Azure-Dateispeicher unterstützt derzeit Metriken der Speicheranalyse, allerdings noch keine Protokollierung. Sie können die Metriken für den Azure-Dateispeicher über das [Azure-Portal](portal.azure.com) aktivieren.
+> Der Azure-Dateispeicher unterstützt derzeit Metriken der Speicheranalyse, allerdings noch keine Protokollierung. Sie können die Metriken für den Azure-Dateispeicher über das [Azure-Portal](https://portal.azure.com) aktivieren.
 
 > Eine ausführliche Anleitung zum Verwenden der Speicheranalyse sowie weiterer Tools, um Azure Storage-bezogene Probleme zu identifizieren, zu diagnostizieren und zu beheben, finden Sie unter [Microsoft Azure Storage: Überwachung, Diagnose und Problembehandlung](storage-monitoring-diagnosing-troubleshooting.md).
 
 
 ## Gewusst wie: Konfigurieren der Überwachung für ein Speicherkonto
 
-1. Klicken Sie im [Azure-Portal](portal.azure.com) auf **Speicher** und dann auf den Speicherkontonamen, um das Dashboard zu öffnen.
+1. Klicken Sie im [Azure-Portal](https://portal.azure.com) auf **Speicher** und dann auf den Speicherkontonamen, um das Dashboard zu öffnen.
 
 2. Klicken Sie auf **Konfigurieren**, und blättern Sie nach unten zu den Einstellungen unter **Überwachung** für die Blob-, Tabellen- und Warteschlangendienste.
 
@@ -55,7 +55,7 @@ Nach ungefähr einer Stunde sollten die ersten Überwachungsdaten im Dashboard u
 
 Bis Sie die Überwachung für ein Speicherkonto konfigurieren, werden keine Überwachungsdaten gesammelt, und die Metrikendiagramme im Dashboard und auf der Seite **Überwachen** sind leer.
 
-Nachdem Sie die Überwachungsstufen und Aufbewahrungsrichtlinien festgelegt haben, können Sie wählen, welche der verfügbaren Metriken im [Azure-Portal](portal.azure.com) überwacht und welche in Metrikendiagrammen gezeichnet werden sollen. Auf jeder Überwachungsstufe wird ein Standardsatz Metriken angezeigt. Mit **Metriken hinzufügen** können Sie Metriken zur Metrikenliste hinzufügen oder daraus entfernen.
+Nachdem Sie die Überwachungsstufen und Aufbewahrungsrichtlinien festgelegt haben, können Sie wählen, welche der verfügbaren Metriken im [Azure-Portal](https://portal.azure.com) überwacht und welche in Metrikendiagrammen gezeichnet werden sollen. Auf jeder Überwachungsstufe wird ein Standardsatz Metriken angezeigt. Mit **Metriken hinzufügen** können Sie Metriken zur Metrikenliste hinzufügen oder daraus entfernen.
 
 Metriken werden im Speicherkonto in vier Tabellen namens $MetricsTransactionsBlob, $MetricsTransactionsTable, $MetricsTransactionsQueue und $MetricsCapacityBlob gespeichert. Weitere Informationen finden Sie unter [Informationen zu Metriken der Speicheranalyse](http://msdn.microsoft.com/library/azure/hh343258.aspx).
 
@@ -64,7 +64,7 @@ Metriken werden im Speicherkonto in vier Tabellen namens $MetricsTransactionsBlo
 
 Im Dashboard können Sie aus neun verfügbaren Metriken bis zu sechs Metriken zum Zeichnen im Metrikendiagramm auswählen. Für jeden Dienst (Blob, Tabelle und Warteschlange) sind die Metriken "Verfügbarkeit", "Prozentsatz erfolgreich" und "Anforderungen insgesamt" verfügbar. Für minimale und ausführliche Überwachung stehen im Dashboard die gleichen Metriken zur Verfügung.
 
-1. Klicken Sie im [Azure-Portal](portal.azure.com) auf **Speicher** und dann auf den Namen des Speicherkontos, um das Dashboard zu öffnen.
+1. Klicken Sie im [Azure-Portal](https://portal.azure.com) auf **Speicher** und dann auf den Namen des Speicherkontos, um das Dashboard zu öffnen.
 
 2. Führen Sie eine der folgenden Aktionen aus, um die im Diagramm gezeichneten Metriken zu ändern:
 
@@ -92,7 +92,7 @@ Mit den folgenden Vorgehensweisen können Sie wählen, welche Speichermetriken i
 ## Hinzufügen von Metriken zur Metrikentabelle
 
 
-1. Klicken Sie im [Azure-Portal](portal.azure.com) auf **Speicher** und dann auf den Namen des Speicherkontos, um das Dashboard zu öffnen.
+1. Klicken Sie im [Azure-Portal](https://portal.azure.com) auf **Speicher** und dann auf den Namen des Speicherkontos, um das Dashboard zu öffnen.
 
 2. Klicken Sie auf **Überwachen**.
 
@@ -100,7 +100,7 @@ Mit den folgenden Vorgehensweisen können Sie wählen, welche Speichermetriken i
 
 	![Überwachung\_AusführlicheAnzeige](./media/storage-monitor-storage-account/Storage_Monitoring_VerboseDisplay.png)
 
-	> [AZURE.NOTE]Berücksichtigen Sie bei der Auswahl der Metriken die Kosten. Für die Aktualisierung von Überwachungsanzeigen fallen Transaktionsgebühren und Kosten für eingehenden Datenverkehr an. Weitere Informationen finden Sie unter [Speicheranalyse und Speicheranalysekosten](http://msdn.microsoft.com/library/azure/hh360997.aspx).
+	> [AZURE.NOTE] Berücksichtigen Sie bei der Auswahl der Metriken die Kosten. Für die Aktualisierung von Überwachungsanzeigen fallen Transaktionsgebühren und Kosten für eingehenden Datenverkehr an. Weitere Informationen finden Sie unter [Speicheranalyse und Speicheranalysekosten](http://msdn.microsoft.com/library/azure/hh360997.aspx).
 
 3. Klicken Sie auf **Metriken hinzufügen**.
 
@@ -113,7 +113,7 @@ Mit den folgenden Vorgehensweisen können Sie wählen, welche Speichermetriken i
 	![Metriken hinzufügen\_Bildlaufleiste](./media/storage-monitor-storage-account/Storage_AddMetrics_Scrollbar.png)
 
 
-5. Klicken Sie auf den Nach-unten-Pfeil neben einer Metrik, um eine Liste vor Vorgängen zu erweitern, die im Funktionsumfang der Metrik enthalten sind. Wählen Sie jeden Vorgang aus, der in der Metrikentabelle im [Azure-Portal](portal.azure.com) angezeigt werden soll.
+5. Klicken Sie auf den Nach-unten-Pfeil neben einer Metrik, um eine Liste vor Vorgängen zu erweitern, die im Funktionsumfang der Metrik enthalten sind. Wählen Sie jeden Vorgang aus, der in der Metrikentabelle im [Azure-Portal](https://portal.azure.com) angezeigt werden soll.
 
 	In der folgenden Abbildung wurde die Metrik PROZENTSATZ DER AUTORISIERUNGSFEHLER erweitert.
 
@@ -140,7 +140,7 @@ Mit den folgenden Vorgehensweisen können Sie wählen, welche Speichermetriken i
 
 Für jeden der für Ihr Speicherkonto verfügbaren Speicherdienste (Blob, Warteschlange und Tabelle) können Sie Diagnoseprotokolle für Lese-, Schreib- und/oder Löschanforderungen speichern, und Sie können die Datenaufbewahrungsrichtlinie für jeden der Dienste festlegen.
 
-1. Klicken Sie im [Azure-Portal](portal.azure.com) auf **Speicher** und dann auf den Namen des Speicherkontos, um das Dashboard zu öffnen.
+1. Klicken Sie im [Azure-Portal](https://portal.azure.com) auf **Speicher** und dann auf den Namen des Speicherkontos, um das Dashboard zu öffnen.
 
 2. Klicken Sie auf **Konfigurieren**, und blättern Sie dann mit der Nach-unten-Taste zum Abschnitt **Protokollierung**.
 
@@ -157,4 +157,4 @@ Für jeden der für Ihr Speicherkonto verfügbaren Speicherdienste (Blob, Wartes
 
 Die Diagnoseprotokolle werden in einem Blob-Container namens $logs in Ihren Speicherkonto gespeichert. Informationen zum Zugreifen auf den Container $logs finden Sie unter [Informationen zur Protokollierung durch die Speicheranalyse](http://msdn.microsoft.com/library/azure/hh343262.aspx).
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

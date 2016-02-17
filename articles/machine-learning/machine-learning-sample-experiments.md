@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="09/28/2015"
+    ms.date="02/01/2016"
     ms.author="chhavib;olgali"/>
 
 # Verwenden von Beispielexperimenten zum Erstellen neuer Experimente
@@ -24,8 +24,8 @@ Wenn Sie ein Experiment erstellen möchten, suchen Sie in den Beispielexperiment
 ## Durchsuchen des Cortana Analytics-Katalogs
 1. Wechseln Sie zu [Gallery](http://gallery.azureml.net/) (Galerie).
 2. Durchsuchen Sie **Trending Experiments** (Trendanalyse-Experimente) oder **Microsoft Samples** (Microsoft-Beispiele).
-3. Verwenden Sie die Suchfunktion und Filter, um die Ergebnisse einzugrenzen:  
-![](./media/machine-learning-sample-experiments/image1.png)
+3. Verwenden Sie die Suchfunktion und Filter, um die Ergebnisse einzugrenzen: 
+![](./media/machine-learning-sample-experiments/image1.png) 
 4. Klicken Sie auf ein Experiment, um mehr darüber zu erfahren. Zum Ausführen und/oder Ändern des Experiments klicken Sie auf **Open in Studio** (In Studio öffnen). 
 ![](./media/machine-learning-sample-experiments/image2.png) 
 5.  Melden Sie sich mit den Anmeldeinformationen für ihr Microsoft-Konto an. Wenn Sie noch keinen Machine Learning-Arbeitsbereich besitzen, wird ein Arbeitsbereich in der kostenlosen Testversion erstellt. [Informieren Sie sich über den Funktionsumfang der kostenlosen Testversion von Machine Learning](https://azure.microsoft.com/pricing/details/machine-learning/).
@@ -36,10 +36,10 @@ Wenn Sie ein Experiment erstellen möchten, suchen Sie in den Beispielexperiment
 2. Durchsuchen Sie die Beispiele, und wählen Sie dann das Beispiel aus, das Sie als Vorlage verwenden möchten.
 
 ## Nächste Schritte
-- [Vorbereiten der Daten](machine-learning-import-data.md)
+- [Vorbereiten der Daten](machine-learning-data-science-import-data.md)
 - [Verwenden von R im Experiment](machine-learning-r-quickstart.md)
 - [Überprüfen der R-Beispielexperimente](machine-learning-r-csharp-web-service-examples.md)
 - [Erstellen einer Webdienst-API](machine-learning-publish-a-machine-learning-web-service.md)
 - [Durchsuchen einsatzbereiter Anwendungen](https://datamarket.azure.com/browse?query=machine+learning)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0204_2016-->

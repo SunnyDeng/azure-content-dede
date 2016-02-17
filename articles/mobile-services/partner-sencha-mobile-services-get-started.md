@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-sencha"
 	ms.devlang="multiple"
 	ms.topic="get-started-article"
-	ms.date="11/06/2015"
+	ms.date="02/10/2016"
 	ms.author="glenga"/>
 
 # <a name="getting-started"></a>Erste Schritte mit Mobile Services und Sencha Touch
@@ -69,7 +69,7 @@ Sobald Sie den Mobile Service erstellt haben, können Sie einfach der Schnellsta
 
 3. Klicken Sie auf **TodoItems-Tabelle erstellen**, um eine Tabelle zum Speichern der App-Daten zu erstellen.
 
-	> [AZURE.NOTE]Laden Sie NICHT die HTML-App aus dem klassischen Azure-Portal herunter. Wir werden stattdessen im Abschnitt unten manuell eine Sencha Touch-Anwendung erstellen.
+	> [AZURE.NOTE] Laden Sie NICHT die HTML-App aus dem klassischen Azure-Portal herunter. Wir werden stattdessen im Abschnitt unten manuell eine Sencha Touch-Anwendung erstellen.
 
 
 1. Notieren Sie sich **appKey** und **appUrl** im klassischen Azure-Portal. Sie werden diese in anderen Abschnitten dieses Lernprogramms benötigen.
@@ -113,7 +113,7 @@ Sie können die Azure-Erweiterungen durch folgende Schritte manuell zur Anwendun
 
 ###Installation eines Sencha-Pakets
 
-> [AZURE.NOTE]Sie können diese Methode nur verwenden, wenn Sie die Anwendung mithilfe des Befehls <code>sencha generate app</code> erstellt haben.
+> [AZURE.NOTE] Sie können diese Methode nur verwenden, wenn Sie die Anwendung mithilfe des Befehls <code>sencha generate app</code> erstellt haben.
 
 Alle Anwendungen, die von Sencha Cmd erstellt wurden, haben im Stamm einen Ordner „packages“. Der Speicherort dieses Ordners kann konfiguriert werden, aber unabhängig vom Speicherort dient der Ordner „packages“ auch als Speicher aller Pakete, die von der Anwendung verwendet wurden (oder von Anwendungen, wenn Sie einen Sencha Workspace erstellt haben).
 
@@ -724,4 +724,4 @@ Für weitere Informationen zu den ersten Schritten mit Sencha Touch besuchen Sie
 
 [klassischen Azure-Portal]: https://manage.windowsazure.com/
 
-<!----HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0211_2016-->

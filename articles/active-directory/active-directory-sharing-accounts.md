@@ -13,7 +13,7 @@
  	ms.tgt_pltfrm="na"
  	ms.devlang="na"
  	ms.topic="article"
- 	ms.date="10/16/2015"  
+ 	ms.date="02/01/2015"  
  	ms.author="stevenpo"/>
 
 # Freigeben von Konten in Azure AD
@@ -44,7 +44,7 @@ Benutzer melden Sie sich einmal mit ihrem Organisationskonto an. Dies ist dassel
 
 Gemeinsam genutzte Konten verbessern nicht nur den Überblick, sondern auch die Sicherheit. Benutzer mit Berechtigungen zur Verwendung der Anmeldeinformationen sehen das gemeinsame Kennwort nicht, sondern erhalten vielmehr die Berechtigung, es als Teil des orchestrierten Authentifizierungsablaufs nutzen zu dürfen. Darüber hinaus steht bei einigen Kennwort-SSO-Anwendungen die Option zur Verfügung, das Kennwort in regelmäßigen Abständen von Azure AD gegen ein langes, komplexes Kennwort austauschen/aktualisieren zu lassen, wodurch die Kontosicherheit erhöht wird. Der Administrator kann Zugriffsrechte auf bestimmte Anwendungen mühelos gewähren oder widerrufen. Er weiß auch, wer genau Zugriff auf das Konto hat und wer bereits darauf zugegriffen hat.
 
-Azure AD unterstützt freigegebene Konten für alle lizenzierten Benutzer von Enterprise Mobility Suite (EMS) Premium oder Basic für alle Typen des einmaligen Anmeldens per Kennwort. Sie können Konten für Tausende im Katalog befindliche, bereits integrierte Anwendungen gemeinsam nutzen und mithilfe [benutzerdefinierter SSO-Apps](active-directory-single-sign-on-newly-acquired-saas-apps.md) eigene Anwendungen mit Kennwortauthentifizierung hinzufügen.
+Azure AD unterstützt freigegebene Konten für alle lizenzierten Benutzer von Enterprise Mobility Suite (EMS) Premium oder Basic für alle Typen des einmaligen Anmeldens per Kennwort. Sie können Konten für Tausende im Katalog befindliche, bereits integrierte Anwendungen gemeinsam nutzen und mithilfe [benutzerdefinierter SSO-Apps](active-directory-sso-integrate-saas-apps.md) eigene Anwendungen mit Kennwortauthentifizierung hinzufügen.
 
 Zu den Azure AD-Features zur gemeinsamen Nutzung von Konten gehören folgende Funktionen:
 
@@ -55,7 +55,7 @@ Zu den Azure AD-Features zur gemeinsamen Nutzung von Konten gehören folgende F
 - [Dashboard für Anwendungsnutzung/Berichte](active-directory-passwords-get-insights.md)
 - Zugriffsbereiche für Endbenutzer
 - [Anwendungsproxy](active-directory-application-proxy-get-started.md)
-- [Active Directory Marketplace](http://azure.microsoft.com/marketplace/active-directory/all/)
+- [Active Directory Marketplace](https://azure.microsoft.com/marketplace/active-directory/all/)
 
 ## Gemeinsames Nutzen eines Kontos
 Um Azure AD zur gemeinsamen Verwendung eines Kontos zu verwenden, sind folgende Schritte erforderlich:
@@ -72,4 +72,4 @@ Mithilfe von Azure AD lassen sich gemeinsam genutzte Konten durch Multi-Factor 
 - [Schützen von Apps durch bedingten Zugriff](active-directory-conditional-access.md)
 - [Self-Service-Gruppenverwaltung/SSAA](active-directory-accessmanagement-self-service-group-management.md)
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0204_2016-->

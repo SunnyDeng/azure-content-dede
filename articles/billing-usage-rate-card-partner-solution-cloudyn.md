@@ -31,7 +31,7 @@ Der Einsatz dieser APIs liefert wichtige Informationen zur Nutzung und zu den Ko
 ## Integrieren von Cloudyn in die RateCard- und Nutzungs-APIs
 Die RateCard-API erfordert mehrere Eingabeparameter – z. B. Regionsinformationen, Währung und Gebietsschema –, aber der wichtigste Parameter ist OfferDurableID. Hiermit wird der Typ des Azure-Angebots angegeben, für den der Kunde bezahlt (Nutzungsbasierte Bezahlung, ältere 6- und 12-monatige Tarife mit verbindlicher Zusage bzw. Vertrag, MSDN-Angebote, MPN-Angebote, Werbeangebote usw.). Die OfferDurableID finden Sie im [Azure-Nutzungs- und Abrechnungsportal](https://account.windowsazure.com/Subscriptions) unter der „Angebots-ID“ für das jeweilige Abonnement.
 
-Bei der Registrierung für [Cloudyn für Azure](https://www.cloudyn.com/microsoft-azure/)-Diensten können Kunden ihren OfferDurableID-Code hinzufügen. Hiermit kann Cloudyn ihre relevanten Preisinformationen über die RateCard-API abrufen. Informationen zu den verschiedenen Angebotstypen finden Sie auf der Seite [Microsoft Azure-Angebotsdetails](http://azure.microsoft.com/en-gb/support/legal/offer-details/).
+Bei der Registrierung für [Cloudyn für Azure](https://www.cloudyn.com/microsoft-azure/)-Diensten können Kunden ihren OfferDurableID-Code hinzufügen. Hiermit kann Cloudyn ihre relevanten Preisinformationen über die RateCard-API abrufen. Informationen zu den verschiedenen Angebotstypen finden Sie auf der Seite [Microsoft Azure-Angebotsdetails](https://azure.microsoft.com/support/legal/offer-details/).
 
 ![Übersicht über das Cloudyn-ITFM-Modul][2]
 
@@ -74,10 +74,10 @@ In diesem kurzen Video wird gezeigt, wie Azure-Kunden Cloudyn für Azure und die
 + Bei einem kostenlosen Test von [Cloudyn für Azure](https://www.cloudyn.com/microsoft-azure/) können Sie ausprobieren, wie Sie mit der angepassten Berichterstellung und den Analysefunktionen für Ihre Microsoft Azure-Cloudbereitstellung Kostentransparenz schaffen können.
 + Eine Übersicht über die Azure-APIs zur Ressourcennutzung und Gebührenkarte (Resource Usage und RateCard) finden Sie unter [Gewinnen von Einblicken in den Ressourcenverbrauch unter Microsoft Azure](billing-usage-rate-card-overview.md). 
 + Ausführlichere Informationen zu beiden APIs finden Sie unter [Azure-Abrechnungs-REST-API – Referenz](https://msdn.microsoft.com/library/azure/1ea5b323-54bb-423d-916f-190de96c6a3c). Sie sind Teil der APIs, die vom Azure-Ressourcen-Manager bereitgestellt werden.
-+ Wenn Sie sich weiter mit Beispielcode beschäftigen möchten, können Sie dies anhand der Codebeispiele für die Microsoft Azure-Abrechnungs-API unter [Azure-Codebeispiele](https://azure.microsoft.com/documentation/samples/?term=billing) tun.
++ Wenn Sie sich weiter mit Beispielcode beschäftigen möchten, sehen Sie sich die Codebeispiele für die Microsoft Azure-Abrechnungs-API unter [Azure-Codebeispiele](https://azure.microsoft.com/documentation/samples/?term=billing) an.
 
 ## Weitere Informationen
-+ Weitere Informationen zu Enterprise Agreement (EA)-Angeboten für Microsoft Azure finden Sie unter [Lizenzierung von Azure für das Unternehmen](http://azure.microsoft.com/pricing/enterprise-agreement/).
++ Weitere Informationen zu Enterprise Agreement (EA)-Angeboten für Microsoft Azure finden Sie unter [Lizenzierung von Azure für das Unternehmen](https://azure.microsoft.com/pricing/enterprise-agreement/).
 + Weitere Informationen zum Azure-Ressourcen-Manager finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](resource-group-overview.md).
 + Weitere Informationen zu den Tools, die zum Entwickeln eines Verständnisses der Cloudausgaben erforderlich sind, finden Sie im Gartner-Artikel [Market Guide for IT Financial Management (ITFM) Tools](http://www.gartner.com/technology/reprints.do?id=1-212F7AL&ct=140909&st=sb) (Marktleitfaden für IT Financial Management (ITFM)-Tools).
 
@@ -90,4 +90,4 @@ In diesem kurzen Video wird gezeigt, wie Azure-Kunden Cloudyn für Azure und die
 [6]: ./media/billing-usage-rate-card-partner-solution-cloudyn/Cloudyn-Performance-Reports.png
 [7]: ./media/billing-usage-rate-card-partner-solution-cloudyn/Cloudyn-Category-Manager.png
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0128_2016-->

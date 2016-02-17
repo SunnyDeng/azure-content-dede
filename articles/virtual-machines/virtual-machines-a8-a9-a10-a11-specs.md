@@ -13,7 +13,7 @@ ms.service="virtual-machines"
  ms.topic="article"
  ms.tgt_pltfrm="vm-multiple"
  ms.workload="infrastructure-services"
- ms.date="10/30/2015"
+ ms.date="01/26/2016"
  ms.author="danlep"/>
 
 # Informationen zu den rechenintensiven A8-, A9-, A10- und A11-Instanzen
@@ -25,9 +25,9 @@ Dieser Artikel enthält Hintergrundinformationen und Überlegungen zur Verwendun
 
 * **Hochleistungshardware**: Die Azure-Rechenzentrumshardware, auf der diese Instanzen ausgeführt werden, wurde für rechenintensive Anwendungen mit hoher Netzwerkauslastung konzipiert und optimiert. Hierzu zählen beispielsweise High Performance Computing (HPC)-Clusteranwendungen, Modellierung und Simulationen.
 
-* **RDMA-Netzwerkverbindung für MPI-Anwendungen**: Wenn die A8- und A9-Instanzen mit den erforderlichen Netzwerktreibern konfiguriert sind, können sie über ein Azure-Netzwerk mit niedriger Latenz und hohem Durchsatz, das auf RDMA-Technologie (Remote Direct Memory Access) basiert, mit anderen A8- und A9-Instanzen kommunizieren. Diese Funktion kann die Leistung von Anwendungen steigern, die unterstützte MPI-Implementierungen (Message Passing Interface) für Linux oder Windows verwenden.
+* **RDMA-Netzwerkverbindung für MPI-Anwendungen**: Sie können die A8- und A9-Instanzen so einrichten, dass sie über ein Azure-Netzwerk mit niedriger Latenz und hohem Durchsatz, das auf RDMA-Technologie (Remote Direct Memory Access) basiert, mit anderen A8- und A9-Instanzen kommunizieren können. Dieses Feature kann die Leistung von bestimmten Linux- und Windows-MPI-Anwendungen (Message Passing Interface) steigern.
 
-* **Unterstützung für Linux- und Windows-HPC-Cluster**: Stellen Sie auf den Instanzen A8 und A9, A10 und A11 in Azure Clusterverwaltungs- und Auftragsplanungssoftware bereit, um einen eigenständigen HPC-Cluster zu erstellen oder einem lokalen Cluster Kapazität hinzuzufügen. Wie auch andere Azure-VM-Formate unterstützen die Instanzen A8 und A9, A10 und A11 standardmäßige oder benutzerdefinierte Windows Server- und Linux-Betriebssystemimages oder Azure-Ressourcen-Manager-Vorlagen in Azure-VMs (IaaS) oder Azure-Gastbetriebssystemversionen in Clouddiensten (PaaS, nur für Windows Server).
+* **Unterstützung für Linux- und Windows-HPC-Cluster**: Stellen Sie auf den Instanzen A8 und A9, A10 und A11 in Azure Clusterverwaltungs- und Auftragsplanungssoftware bereit, um einen eigenständigen HPC-Cluster zu erstellen oder einem lokalen Cluster Kapazität hinzuzufügen.
 
 >[AZURE.NOTE]Die A10- und A11-Instanzen verfügen über die gleichen Leistungsoptimierungen und Spezifikationen wie die A8- und A9-Instanzen. Allerdings bieten sie keinen Zugriff auf das RDMA-Netzwerk in Azure. Sie wurden für HPC-Anwendungen entworfen, die keine konstante Kommunikation mit niedriger Latenz zwischen den Knoten erfordern und auch als parametrische oder hochgradig parallele Anwendungen bezeichnet werden.
 
@@ -57,31 +57,31 @@ Ethernet mit 10 GBit/s | Verbindung mit Azure-Diensten (z. B. Azure Storage un
 Back-End mit 32 GBit/s, RDMA-fähig | Ermöglicht Anwendungskommunikation mit geringer Latenz und hohem Durchsatz zwischen Instanzen in einem einzelnen Clouddienst oder in einer einzelnen Verfügbarkeitsgruppe Für MPI-Verkehr reserviert.
 
 
->[AZURE.IMPORTANT]Auf virtuellen A8- und A9-Computern, auf denen Linux ausgeführt wird, ist der Zugriff auf das RDMA-Netzwerk derzeit nur über Anwendungen möglich, die Azure Linux RDMA und Intel MPI Library 5 unter SUSE Linux Enterprise Server 12 (SLES 12) verwenden. In A8- und A9-Instanzen, auf denen Windows Server ausgeführt wird, ist der Zugriff auf das RDMA-Netzwerk derzeit nur über Anwendungen möglich, die die Microsoft Network Direct-Schnittstelle verwenden. Informationen zu weiteren Anforderungen finden Sie unter [Zugreifen auf das RDMA-Netzwerk](#access-the-rdma-network) in diesem Artikel.
+>[AZURE.IMPORTANT]Informationen über zusätzliche Anforderungen bei Linux- und Windows-MPI-Anwendungen für den Zugriff auf das RDMA-Netzwerk finden Sie in diesem Artikel unter [Zugreifen auf das RDMA-Netzwerk](#access-the-rdma-network).
 
 A10- und A11-Instanzen besitzen einen einzelnen 10-GBit/s-Ethernet-Netzwerkadapter, der mit den Azure-Diensten und dem Internet verbunden ist.
 
-## Überlegungen zum Abonnement
+## Überlegungen zur Bereitstellung
 
-* **Azure-Konto**: Wenn Sie eine größere Anzahl von rechenintensiven Instanzen bereitstellen möchten, sollten Sie ein nutzungsbasiertes Abonnement oder andere Kaufoptionen in Erwägung ziehen. Sie können auch Ihr MSDN-Abonnement verwenden. Weitere Informationen finden Sie unter [Azure-Vorteile für MSDN-Abonnenten](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/). Bei Verwendung einer [kostenlosen Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/) können Sie nur eine begrenzte Anzahl von Azure-Compute-Kernen nutzen.
+* **Azure-Konto**: Wenn Sie eine größere Anzahl von rechenintensiven Instanzen bereitstellen möchten, sollten Sie ein nutzungsbasiertes Abonnement oder andere Kaufoptionen in Erwägung ziehen. Sie können auch Ihr MSDN-Abonnement verwenden. Weitere Informationen finden Sie unter [Azure-Vorteile für MSDN-Abonnenten](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/). Bei Verwendung einer [kostenlosen Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/) können Sie nur eine begrenzte Anzahl von Azure-Compute-Kernen nutzen.
 
-* **Kernkontingent** – Sie müssen u. U. das Kernkontingent in Ihrem Azure-Abonnement vom Standardwert von 20 Kernen pro Abonnement (für Bereitstellungen der Azure-Dienstverwaltung) oder 20 Kernen pro Region (für Bereitstellungen des Azure-Ressourcen-Managers), die für viele Szenarien mit 8-Kern- oder 16-Kern-Instanzen nicht ausreichen, heraufsetzen. Für anfängliche Tests sollten Sie eine Erhöhung des Kontingents auf 100 Kerne in Erwägung ziehen. Erstellen Sie hierzu ein kostenloses Supportticket, siehe [Grundlegendes zu Einschränkungen und Steigerungen in Azure](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/).
+* **Kernkontingent**: Unter Umständen müssen Sie das Kontingent an CPU-Kernen in Ihrem Azure-Abonnement erhöhen. Standardmäßig stehen 20 Kerne pro Abonnement (im klassischen Bereitstellungsmodell) oder 20 Kerne pro Region (im Azure-Ressourcen-Manager-Bereitstellungsmodell) zur Verfügung. Zum Anfordern einer Kontingenterhöhung erstellen Sie ein kostenloses Supportticket, wie in [Understanding Azure Limits and Increases](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) (Grundlegendes zu Einschränkungen und Steigerungen in Azure) beschrieben.
 
     >[AZURE.NOTE]Azure-Kontingente sind Angebotsbeschränkungen, keine Kapazitätsgarantien. Nur verwendete Kerne werden auch in Rechnung gestellt.
 
-* **Virtuelles Netzwerk**: Ein virtuelles Azure-Netzwerk ist nicht erforderlich, um die rechenintensiven Instanzen zu verwenden. Sie benötigen möglicherweise jedoch für viele IaaS-Szenarios mindestens ein cloudbasiertes virtuelles Azure-Netzwerk oder für den Zugriff auf lokale Ressourcen, z. B. einen Anwendungslizenzserver, eine Site-to-Site-Verbindung. Sie müssen ein neues (regionales) virtuelles Netzwerk erstellen, bevor Sie die Instanzen bereitstellen. Das Hinzufügen von A8-, A9-, A10- oder A11-VMs zu einem virtuellen Netzwerk in einer Affinitätsgruppe wird nicht unterstützt. Weitere Informationen finden Sie in der Dokumentation zu [virtuellen Netzwerken](https://azure.microsoft.com/documentation/services/virtual-network/).
+* **Virtuelles Netzwerk**: Ein [virtuelles Azure-Netzwerk](https://azure.microsoft.com/documentation/services/virtual-network/) ist nicht erforderlich, um die rechenintensiven Instanzen zu verwenden. Sie benötigen möglicherweise jedoch für viele IaaS-Szenarios mindestens ein cloudbasiertes virtuelles Azure-Netzwerk oder für den Zugriff auf lokale Ressourcen, z. B. einen Anwendungslizenzserver, eine Site-to-Site-Verbindung. Sie müssen ein neues virtuelles Netzwerk erstellen, um die Instanzen bereitzustellen. Das Hinzufügen von A8-, A9-, A10- oder A11-VMs zu einem virtuellen Netzwerk in einer Affinitätsgruppe wird nicht unterstützt.
 
-* **Clouddienst oder Verfügbarkeitsgruppe**: Zum Herstellen der Verbindung über das RDMA-Netzwerk müssen die A8- und A9-Instanzen im gleichen Clouddienst (für IaaS-Szenarios mit Linux- oder Windows-basierten virtuellen Computern in der Azure-Dienstverwaltung oder für PaaS-Szenarios mit Windows Server) oder in der gleichen Verfügbarkeitsgruppe (für Linux- oder Windows-basierte virtuelle Computer im Azure-Ressourcen-Manager) bereitgestellt werden.
+* **Clouddienst oder Verfügbarkeitsgruppe**: Um eine Verbindung über das RDMA-Netzwerk herzustellen, müssen Sie die A8- und A9-Instanzen im gleichen Clouddienst (falls Sie das klassische Bereitstellungsmodell nutzen) oder in der gleichen Verfügbarkeitsgruppe (falls Sie das Azure-Ressourcen-Manager-Bereitstellungsmodell nutzen) bereitgestellt werden.
 
 ## Überlegungen zur Verwendung von HPC Pack
 
 ### Überlegungen zu HPC Pack und Linux
 
-[HPC Pack](https://technet.microsoft.com/library/jj899572.aspx) ist die kostenlose HPC-Cluster- und Auftragsverwaltungslösung von Microsoft für Windows. HPC Pack unterstützt ab HPC Pack 2012 R2 Update 2 das Ausführen von mehreren Linux-Distributionen auf Compute-Knoten, die auf virtuellen Azure-Computern bereitgestellt wurden und von einem Windows Server-Hauptknoten verwaltet werden. Mit der neuesten Version von HPC Pack können Sie einen Linux-basierten Cluster bereitstellen, der MPI-Anwendungen mit Zugriff auf das RDMA-Netzwerk in Azure ausführen kann. Weitere Informationen finden Sie unter [Erste Schritte mit Linux-Computeknoten in einem HPC Pack-Cluster in Azure](virtual-machines-linux-cluster-hpcpack.md).
+[HPC Pack](https://technet.microsoft.com/library/jj899572.aspx) ist die kostenlose HPC-Cluster- und Auftragsverwaltungslösung von Microsoft für Windows. Die neuesten Versionen von HPC Pack 2012 R2 unterstützen das Ausführen von mehreren Linux-Distributionen auf Computeknoten, die auf virtuellen Azure-Computern bereitgestellt wurden und von einem Windows Server-Hauptknoten verwaltet werden. Weitere Informationen finden Sie unter [Erste Schritte mit Linux-Computeknoten in einem HPC Pack-Cluster in Azure](virtual-machines-linux-cluster-hpcpack.md).
 
 ### Überlegungen zu HPC Pack und Windows
 
-HPC Pack ist nicht für die Verwendung der Instanzen A8 und A9, A10 und A11 mit Windows Server erforderlich, wird jedoch als Tool zum Erstellen von Windows HPC Server-basierten Clustern in Azure empfohlen. Im Fall von A8- und A9-Instanzen ist HPC Pack die effizienteste Methode zum Ausführen Windows-basierter MPI-Anwendungen, die auf das RDMA-Netzwerk in Azure zugreifen. HPC Pack enthält eine Laufzeitumgebung für die Microsoft-Implementierung des Message Passing Interface für Windows.
+HPC Pack ist nicht für die Verwendung der Instanzen A8 und A9, A10 und A11 mit Windows Server erforderlich, wird jedoch als Tool zum Erstellen von Windows HPC Server-basierten Clustern in Azure empfohlen. Im Fall von A8- und A9-Instanzen ist HPC Pack die effizienteste Methode zum Ausführen Windows-basierter MPI-Anwendungen, die auf das RDMA-Netzwerk in Azure zugreifen. HPC Pack enthält eine Laufzeitumgebung für die Microsoft-Implementierung des Message Passing Interface (MS MPI) für Windows.
 
 Weitere Informationen und Prüflisten zur Verwendung rechenintensiver Instanzen mit HPC Pack auf Windows Server finden Sie unter [Einrichten eines Windows RDMA-Clusters mit HPC Pack zum Ausführen von MPI-Anwendungen](virtual-machines-windows-hpcpack-cluster-rdma.md).
 
@@ -89,11 +89,11 @@ Weitere Informationen und Prüflisten zur Verwendung rechenintensiver Instanzen 
 
 ### Zugriff von virtuellen Linux A8- und A9-Computern
 
-In einem einzelnen Clouddienst oder einer einzelnen Verfügbarkeitsgruppe können die A8- und A9-Instanzen auf das RDMA-Netzwerk in Azure zugreifen, um MPI-Anwendungen auszuführen, die für die Kommunikation zwischen Instanzen die Linux-RDMA-Treiber verwenden. Azure Linux RDMA wird derzeit nur mit der [Intel MPI Library 5](https://software.intel.com/de-DE/intel-mpi-library/) unterstützt.
+In einem einzelnen Clouddienst oder einer einzelnen Verfügbarkeitsgruppe können die A8- und A9-Instanzen auf das RDMA-Netzwerk in Azure zugreifen, um Linux-MPI-Anwendungen auszuführen. Azure Linux RDMA wird derzeit nur mit der [Intel MPI Library 5](https://software.intel.com/de-DE/intel-mpi-library/) unterstützt.
 
->[AZURE.NOTE]Azure Linux RDMA-Treiber können derzeit nicht über Treibererweiterungen installiert werden. Sie sind nur bei Verwendung des RDMA-fähigen SLES 12-Image aus dem Azure Marketplace verfügbar.
+>[AZURE.NOTE] Azure Linux RDMA-Treiber können derzeit nicht über Treibererweiterungen installiert werden. Sie sind nur bei Verwendung des RDMA-fähigen SLES 12-Image aus dem Azure Marketplace verfügbar.
 
-In der folgenden Tabelle sind die Voraussetzungen für den Zugriff von Linux-MPI-Anwendungen auf das RDMA-Netzwerk in Clustern von Compute-Knoten (IaaS) aufgeführt. Bereitstellungsoptionen und Konfigurationsschritte finden Sie unter [Einrichten eines Linux RDMA-Clusters zum Ausführen von MPI-Anwendungen](virtual-machines-linux-cluster-rdma.md).
+In der folgenden Tabelle werden die Voraussetzungen für den Zugriff von Linux-MPI-Anwendungen auf das RDMA-Netzwerk in Clustern von Compute-Knoten (IaaS) zusammengefasst. Bereitstellungsoptionen und Konfigurationsschritte finden Sie unter [Einrichten eines Linux RDMA-Clusters zum Ausführen von MPI-Anwendungen](virtual-machines-linux-cluster-rdma.md).
 
 Voraussetzung | Virtuelle Computer (IaaS)
 ------------ | -------------
@@ -102,7 +102,7 @@ MPI | Intel MPI Library 5
 
 ### Zugriff von Windows-A8- und A9-Instanzen
 
-In einem einzelnen Clouddienst oder einer einzelnen Verfügbarkeitsgruppe können die A8- und A9-Instanzen auf das RDMA-Netzwerk in Azure zugreifen, um MPI-Anwendungen auszuführen, die die Microsoft Network Direct-Schnittstelle zur Kommunikation zwischen Instanzen verwenden. Die Instanzen A10 und A11 bieten keinen Zugriff auf das RDMA-Netzwerk.
+In einem einzelnen Clouddienst oder einer einzelnen Verfügbarkeitsgruppe können die A8- und A9-Instanzen auf das RDMA-Netzwerk in Azure zugreifen, um Windows-MPI-Anwendungen auszuführen, die die Microsoft Network Direct-Schnittstelle zur Kommunikation zwischen Instanzen verwenden.
 
 Weitere Informationen zu den Voraussetzungen für MPI-Anwendungen zum Zugreifen auf das RDMA-Netzwerk in virtuellen Computerbereitstellungen (IaaS) und Clouddienst-Bereitstellungen (PaaS) der Instanzen A8 oder A9 finden Sie in der folgenden Tabelle. Informationen zu typischen Bereitstellungsszenarios finden Sie unter [Einrichten eines Windows RDMA-Clusters mit HPC Pack zum Ausführen von MPI-Anwendungen](virtual-machines-windows-hpcpack-cluster-rdma.md).
 
@@ -118,16 +118,16 @@ MPI | MS-MPI 2012 R2 oder höher, entweder eigenständig oder installiert übe
 
 ## Weitere wichtige Informationen
 
-* **Preisgestaltung** – Die VM-Größen A8 bis A11 sind nur im Tarif „Standard“ verfügbar.
+* **Preisgestaltung** - Die VM-Größen A8 bis A11 sind nur im Tarif „Standard“ verfügbar.
 
 * **Größenänderung** – Sie können einer rechenintensiven Instanz (A8-A11) nur die Größe A8 bis A11 zuweisen, und Sie können eine rechenintensive Instanz nicht in eine nicht rechenintensive Instanz ändern. Dies liegt an der speziellen Hardware und den Leistungsoptimierungen, die für rechenintensive Instanzen typisch sind.
 
-* **RDMA-Netzwerkadressbereich** – Das RDMA-Netzwerk in Azure reserviert sich den Adressbereich 172.16.0.0/12. Wenn Sie beabsichtigen, MPI-Anwendungen auf A8- und A9-Instanzen auszuführen, die in einem virtuellen Azure-Netzwerk bereitgestellt wurden, stellen Sie sicher, dass der Adressbereich des virtuellen Netzwerks sich nicht mit dem RDMA-Netzwerk überschneidet.
+* **RDMA-Netzwerkadressbereich** - Das RDMA-Netzwerk in Azure reserviert sich den Adressbereich 172.16.0.0/12. Wenn Sie beabsichtigen, MPI-Anwendungen auf A8- und A9-Instanzen in einem virtuellen Azure-Netzwerk auszuführen, stellen Sie sicher, dass der Adressbereich des virtuellen Netzwerks sich nicht mit dem RDMA-Netzwerk überschneidet.
 
 ## Nächste Schritte
 
-* Ausführliche Informationen zur Verfügbarkeit und Preisgestaltung der Instanzen A8, A9, A10 und A11 finden Sie unter [Virtuelle Computer – Preise](http://azure.microsoft.com/pricing/details/virtual-machines/) sowie unter [Cloud Services – Preise](http://azure.microsoft.com/pricing/details/cloud-services/).
+* Ausführliche Informationen zur Verfügbarkeit und Preisgestaltung der Instanzen A8 und A9, A10 und A11 finden Sie unter [Virtuelle Computer Preise](https://azure.microsoft.com/pricing/details/virtual-machines/) sowie unter [Cloud Services Preise](https://azure.microsoft.com/pricing/details/cloud-services/).
 * Informationen zum Bereitstellen und Konfigurieren eines Linux-basierten Clusters mit A8- und A9-Instanzen für den Zugriff auf das Azure-RDMA-Netzwerk finden Sie unter [Einrichten eines Linux RDMA-Clusters zum Ausführen von MPI-Anwendungen](virtual-machines-linux-cluster-rdma.md).
 * Informationen zu ersten Schritten für die Bereitstellung und Verwendung von A8- und A9-Instanzen mit HPC Pack unter Windows finden Sie unter [Einrichten eines Windows RDMA-Clusters mit HPC Pack zum Ausführen von MPI-Anwendungen](virtual-machines-windows-hpcpack-cluster-rdma.md).
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0204_2016-->

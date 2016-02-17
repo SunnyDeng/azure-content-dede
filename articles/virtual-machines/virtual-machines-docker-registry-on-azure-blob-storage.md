@@ -14,7 +14,7 @@
   ms.topic="article"
   ms.tgt_pltfrm="vm-linux"
   ms.workload="infrastructure-services"
-  ms.date="06/17/2015" 
+  ms.date="02/01/2016" 
   ms.author="ahmetb" />
 
 # Bereitstellen einer privaten Docker-Registrierung in Azure
@@ -28,7 +28,7 @@ Dieses Dokument beschreibt, was eine private Docker-Registrierung ist, und zeigt
 In diesem Dokument wird von Folgendem ausgegangen:
 
 1. Sie wissen, wie Docker verwendet wird, und verfügen über Docker-Images zum Speichern. (Andernfalls [sollten Sie sich über Docker informieren](https://www.docker.com).)
-2. Sie haben einen Server, auf dem ein Docker-Modul installiert ist. (Andernfalls [installieren Sie ein Docker-Modul in Azure](http://azure.microsoft.com/documentation/templates/docker-simple-on-ubuntu/).)
+2. Sie haben einen Server, auf dem ein Docker-Modul installiert ist. (Andernfalls [installieren Sie ein Docker-Modul in Azure](https://azure.microsoft.com/documentation/templates/docker-simple-on-ubuntu/).)
 
 
 ## Was ist eine private Docker-Registrierung?
@@ -82,7 +82,7 @@ CONTAINER ID        IMAGE               COMMAND                CREATED          
 3698ddfebc6f        registry:2          "registry cmd/regist   2 seconds ago       Up 1 seconds        0.0.0.0:5000->5000/tcp   registry
 ```
 
-> [AZURE.IMPORTANT]Das Konfigurieren der Sicherheit für die Docker-Registrierung wird in diesem Dokument nicht behandelt, und auf Ihre Registrierung können standardmäßig alle Benutzer ohne Authentifizierung zugreifen, wenn Sie den Registrierungsport am Endpunkt des virtuellen Computers oder des Lastenausgleichs durch die Verwendung des Bereitstellungsbefehls oben öffnen.
+> [AZURE.IMPORTANT] Das Konfigurieren der Sicherheit für die Docker-Registrierung wird in diesem Dokument nicht behandelt, und auf Ihre Registrierung können standardmäßig alle Benutzer ohne Authentifizierung zugreifen, wenn Sie den Registrierungsport am Endpunkt des virtuellen Computers oder des Lastenausgleichs durch die Verwendung des Bereitstellungsbefehls oben öffnen.
 >
 > Lesen Sie das Dokument zum [Konfigurieren von Docker-Registrierungen][registry-config] (in englischer Sprache), um zu erfahren, wie Sie die Registrierungsinstanz und Ihre Images schützen.
 
@@ -96,4 +96,4 @@ Sobald Sie Ihre Registrierung eingerichtet haben, ist es an der Zeit, sie verst�
 [registry-config]: http://docs.docker.com/registry/configuration/
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0204_2016-->

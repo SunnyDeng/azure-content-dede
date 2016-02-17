@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/03/2015" 
+	ms.date="02/01/2016" 
 	ms.author="spelluru"/>
 
 # Verschieben von Daten in und aus SQL Server in einer lokalen oder IaaS-Umgebung (Azure-VM) mithilfe von Azure Data Factory
@@ -27,6 +27,8 @@ Die Konzepte und Schritte zum Herstellen einer Verbindung mit SQL Server, ob lok
 Im Artikel [Verschieben von Daten zwischen lokalen Standorten und Cloud](data-factory-move-data-between-onprem-and-cloud.md) erfahren mehr zum Datenverwaltungsgateway und erhalten eine schrittweise Anleitung zum Einrichten des Gateways. Das Einrichten einer Gatewayinstanz ist eine Voraussetzung für die Verbindung mit SQL Server.
 
 Wenngleich Sie das Gateway auf demselben lokalen Computer bzw. in derselben Cloud-VM-Instanz wie SQL Server installieren können, wird aus Leistungsgründen empfohlen, diese Komponenten auf getrennten Computern oder in getrennten Cloud-VMs zu installieren, um Ressourcenkonflikte zu vermeiden.
+
+In den folgenden Beispielen wird veranschaulicht, wie Sie Daten in und aus SQL Server und Azure-BLOB-Speicher kopieren. Daten können jedoch mithilfe der Kopieraktivität in Azure Data Factory **direkt** aus beliebigen Quellen in die [hier](data-factory-data-movement-activities.md#supported-data-stores) aufgeführten Senken kopiert werden.
 
 ## Beispiel: Kopieren von Daten aus SQL Server in Azure-Blob
 
@@ -204,7 +206,7 @@ Die Pipeline enthält eine Kopieraktivität, die für das Verwenden der oben gen
 	   }
 	}
 
-> [AZURE.NOTE]Im obigen Beispiel ist **sqlReaderQuery** für SqlSource angegeben. Mit der Kopieraktivität wird diese Abfrage in der SQL Server-Datenbankquelle ausgeführt, um die Daten abzurufen.
+> [AZURE.NOTE] Im obigen Beispiel ist **sqlReaderQuery** für SqlSource angegeben. Mit der Kopieraktivität wird diese Abfrage in der SQL Server-Datenbankquelle ausgeführt, um die Daten abzurufen.
 >  
 > Alternativ dazu können Sie eine gespeicherte Prozedur angeben, indem Sie **sqlReaderStoredProcedureName** und **storedProcedureParameters** angeben (sofern die gespeicherten Prozeduren Parameter verwenden).
 >  
@@ -433,7 +435,7 @@ Wenn Benutzername und Kennwort angegeben werden, werden diese Informationen vom 
 
 Ausführliche Informationen zum Festlegen von Anmeldeinformationen für eine SQL Server-Datenquelle finden Sie unter [Festlegen von Anmeldeinformationen und Sicherheit](data-factory-move-data-between-onprem-and-cloud.md#setting-credentials-and-security).
 
-## Eigenschaften des Dataset-Typs "SQL Server"
+## Eigenschaften des Dataset-Typs „SQL Server“
 
 Eine vollständige Liste der Abschnitte und Eigenschaften, die zum Definieren von Datasets zur Verfügung stehen, finden Sie im Artikel [Erstellen von Datasets](data-factory-create-datasets.md). Abschnitte wie "structure", "availability" und "policy" des JSON-Codes eines Datasets sind bei allen Typen von Datasets (SQL Server, Azure-Blob, Azure-Tabelle usw.) ähnlich.
 
@@ -443,11 +445,11 @@ Der Abschnitt "typeProperties" unterscheidet sich bei jedem Typ von Dataset und 
 | -------- | ----------- | -------- |
 | tableName | Name der Tabelle in der SQL Server-Datenbankinstanz, auf die der verknüpfte Dienst verweist. | Ja |
 
-## Eigenschaften von SQL Server-Kopieraktivitätstyp
+## Eigenschaften des SQL Server-Kopieraktivitätstyps
 
 Eine vollständige Liste der Abschnitte und Eigenschaften zum Definieren von Aktivitäten finden Sie im Artikel [Erstellen von Pipelines](data-factory-create-pipelines.md). Eigenschaften wie Name, Beschreibung, Eingabe- und Ausgabetabellen, verschiedene Richtlinien usw. sind für alle Arten von Aktivitäten verfügbar.
 
-> [AZURE.NOTE]Die Kopieraktivität verwendet nur eine Eingabe und erzeugt nur eine Ausgabe.
+> [AZURE.NOTE] Die Kopieraktivität verwendet nur eine Eingabe und erzeugt nur eine Ausgabe.
 
 Im Abschnitt "typeProperties" der Aktivität verfügbare Eigenschaften variieren hingegen bei jedem Aktivitätstyp. Bei der Kopieraktivität variieren sie je nach Typ der Quellen und Senken.
 
@@ -484,22 +486,25 @@ Wenn Sie sqlReaderQuery oder sqlReaderStoredProcedureName nicht angeben, werden 
 
 ## Beheben von Verbindungsproblemen
 
-1. Konfigurieren Sie Ihren SQL-Server, um Remoteverbindungen zu akzeptieren. Starten Sie **SQL Server Management Studio**, klicken Sie mit der rechten Maustaste auf **Server** und dann auf **Eigenschaften**. Wählen Sie **Verbindungen** aus der Liste und aktivieren sie das Kontrollkästchen **Remoteverbindungen mit diesem Server zulassen**.
+1. Konfigurieren Sie Ihren SQL-Server, um Remoteverbindungen zu akzeptieren. Starten Sie **SQL Server Management Studio**, klicken Sie mit der rechten Maustaste auf **Server**, und klicken Sie dann auf **Eigenschaften**. Wählen Sie in der Liste den Eintrag **Verbindungen**, und aktivieren sie das Kontrollkästchen **Remoteverbindungen mit diesem Server zulassen**.
 	
 	![Aktivieren von Remoteverbindungen](.\media\data-factory-sqlserver-connector\AllowRemoteConnections.png)
 
 	Ausführliche Schritte finden Sie im Abschnitt zum [Konfigurieren der Serverkonfigurationsoption für den Remotezugriff](https://msdn.microsoft.com/library/ms191464.aspx). 
-2. Starten Sie den **SQL Server-Konfigurations-Manager**. Erweitern Sie die **SQL Server-Netzwerkkonfiguration** für die gewünschte Instanz, und wählen Sie **Protokolle für MSSQLSERVER**. Im rechten Bereich werden Protokolle angezeigt. Aktivieren Sie TCP/TP, indem Sie mit der rechten Maustaste auf **TCP/IP** und auf **Aktivieren** klicken.
+2. Starten Sie den **SQL Server-Konfigurations-Manager**. Erweitern Sie die **SQL Server-Netzwerkkonfiguration** für die gewünschte Instanz, und wählen Sie **Protokolle für MSSQLSERVER**. Im rechten Bereich werden Protokolle angezeigt. Aktivieren Sie TCP/TP, indem Sie mit der rechten Maustaste auf **TCP/IP** und anschließend auf **Aktivieren** klicken.
 
 	![TCP/IP aktivieren](.\media\data-factory-sqlserver-connector\EnableTCPProptocol.png)
 
-	Alternative Methoden zum Aktivieren des TCP/IP-Protokolls finden Sie unter [Aktivieren oder Deaktivieren eines Server-Netzwerkprotokolls](https://msdn.microsoft.com/library/ms191294.aspx). 
+	Alternative Methoden zum Aktivieren des TCP/IP-Protokolls finden Sie unter [Aktivieren oder Deaktivieren eines Servernetzwerkprotokolls](https://msdn.microsoft.com/library/ms191294.aspx). 
 3. Doppelklicken Sie in demselben Fenster auf **TCP/IP**, um das Fenster **TCP/IP-Eigenschaften** zu öffnen.
-4. Klicken Sie auf die Registerkarte **IP-Adressen**. Scrollen Sie nach unten zum Abschnitt **IPAll**. Notieren Sie den ** TCP-Port ** (der Standardwert ist **1433**).
+4. Klicken Sie auf die Registerkarte **IP-Adressen**. Scrollen Sie nach unten zum Abschnitt **IPAll**. Notieren Sie den **TCP-Port** (der Standardwert ist **1433**).
 5. Erstellen Sie eine **Regel für die Windows-Firewall** auf dem Computer, um eingehenden Datenverkehr über diesen Port zuzulassen.  
-6. **Verbindung überprüfen**: Verwenden Sie SQL Server Management Studio auf einem anderen Computer, um mit einem vollqualifizierten Namen die Verbindung mit dem SQL-Server herzustellen. Beispiel: <machine>.<domain>. corp.<company>. com, 1433.
+6. **Verbindung überprüfen**: Verwenden Sie SQL Server Management Studio auf einem anderen Computer, um mit einem vollqualifizierten Namen die Verbindung mit der SQL Server-Instanz herzustellen. Beispiel: <machine>.<domain>.corp.<company>.com,1433
 
-	> [AZURE.IMPORTANT]Ausführliche Informationen finden Sie unter [Ports und Sicherheitsaspekte](data-factory-move-data-between-onprem-and-cloud.md#port-and-security-considerations).
+	> [AZURE.IMPORTANT] 
+	Ausführliche Informationen finden Sie unter [Ports und Sicherheitsaspekte](data-factory-move-data-between-onprem-and-cloud.md#port-and-security-considerations).
+	>   
+	> Unter [Problembehandlung bei Gateways](data-factory-move-data-between-onprem-and-cloud.md#gateway-troubleshooting) finden Sie Tipps zur Behandlung von Verbindungs- bzw. Gatewayproblemen.
 
 [AZURE.INCLUDE [data-factory-type-repeatability-for-sql-sources](../../includes/data-factory-type-repeatability-for-sql-sources.md)]
 
@@ -562,4 +567,4 @@ Die Zuordnung ist mit der SQL Server-Datentypzuordnung für ADO.NET identisch.
 
 [AZURE.INCLUDE [data-factory-column-mapping](../../includes/data-factory-column-mapping.md)]
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0204_2016-->

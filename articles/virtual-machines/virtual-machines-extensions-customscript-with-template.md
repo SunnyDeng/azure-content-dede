@@ -37,7 +37,7 @@ Eine Azure-Ressourcen-Manager-Vorlage ermöglicht es Ihnen, deklarativ die Azure
 
 ### Voraussetzungen
 
-1. Installieren Sie die neuesten Azure PowerShell-Cmdlets oder die Azure-Befehlszeilenschnittstelle von [hier](http://azure.microsoft.com/downloads).
+1. Installieren Sie die neuesten Azure PowerShell-Cmdlets oder die Azure-Befehlszeilenschnittstelle von [hier](https://azure.microsoft.com/downloads/).
 2. Wenn die Skripts auf einem vorhandenen virtuellen Computer ausgeführt werden, müssen Sie sicherstellen, dass der VM-Agent auf diesem aktiviert ist. Andernfalls folgen Sie [diesen Anweisungen](virtual-machines-extensions-install), um einen Agent zu installieren.
 3. Laden Sie die Skripts, die Sie auf der VM ausführen möchten, nach Azure Storage hoch. Die Skripts können aus einem einzelnen oder mehreren Speichercontainern stammen.
 4. Alternativ können die Skripts in ein Github-Konto hochgeladen werden.
@@ -102,4 +102,4 @@ In den nachstehenden Beispielen finden Sie vollständige Beispiele zum Konfiguri
 
 <a href="https://github.com/Azure/azure-quickstart-templates/blob/b1908e74259da56a92800cace97350af1f1fc32b/mongodb-on-ubuntu/azuredeploy.json/" target="_blank">Benutzerdefinierte Skripterweiterung auf einem virtuellen Linux-Computer</a> </br> <a href="https://github.com/Azure/azure-quickstart-templates/blob/b1908e74259da56a92800cace97350af1f1fc32b/201-list-storage-keys-windows-vm/azuredeploy.json/" target="_blank">Benutzerdefinierte Skripterweiterung auf einem virtuellen Windows-Computer</a>
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

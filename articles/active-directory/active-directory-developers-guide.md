@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="01/06/2016"
+   ms.date="02/01/2016"
    ms.author="mbaldwin"/>
 
 
@@ -72,7 +72,7 @@ In diesen Artikeln wird beschrieben, wie Sie mit Azure Active Directory bestimmt
 - [Erstellen einer App mit Office 365-APIs](https://msdn.microsoft.com/office/office365/howto/getting-started-Office-365-APIs)
 - [Übertragen von Web-Apps für Office 365 an das Verkäuferdashboard (in englischer Sprache)](https://msdn.microsoft.com/office/office365/howto/submit-web-apps-seller-dashboard)
 - [Vorschau: Erstellen von Apps, bei denen sich Benutzer sowohl mit persönlichen als auch mit Arbeits- oder Schulkonten anmelden können](active-directory-appmodel-v2-overview.md)
-- [Vorschau: Erstellen von Apps, die Kunden registrieren und anmelden](active-directory-b2c-overview.md)
+- [Vorschau: Erstellen von Apps, die Kunden registrieren und anmelden](../active-directory-b2c/active-directory-b2c-overview.md)
 
 
 ## Referenz
@@ -120,16 +120,16 @@ Diese Artikel enthalten grundlegende Referenzen zu REST- und Authentifizierungsb
 
 In diesen Übersichtspräsentationen zur Entwicklung von Apps mithilfe von Azure Active Directory kommen Mitglieder des Entwicklungsteams zu Wort. In den Präsentationen werden grundlegende Themen abgedeckt, darunter IDMaaS, Authentifizierung, Identitätsverbund und einmaliges Anmelden.
 
-- [Azure Active Directory: Identitätsverwaltung als Dienst für moderne Anwendungen](http://azure.microsoft.com/documentation/videos/build-2015-azure-active-directory-identity-management-as-a-service-for-modern-applications)
-- [Entwickeln von modernen Webanwendungen mit Azure Active Directory](http://azure.microsoft.com/documentation/videos/build-2015-develop-modern-web-applications-with-azure-active-directory)
-- [Entwickeln von modernen systemeigenen Anwendungen mit Azure Active Directory](http://azure.microsoft.com/documentation/videos/build-2015-develop-modern-native-applications-with-azure-active-directory)
+- [Azure Active Directory: Identitätsverwaltung als Dienst für moderne Anwendungen](https://azure.microsoft.com/documentation/videos/build-2015-azure-active-directory-identity-management-as-a-service-for-modern-applications/)
+- [Entwickeln von modernen Webanwendungen mit Azure Active Directory](https://azure.microsoft.com/documentation/videos/build-2015-develop-modern-web-applications-with-azure-active-directory/)
+- [Entwickeln von modernen systemeigenen Anwendungen mit Azure Active Directory](https://azure.microsoft.com/documentation/videos/build-2015-develop-modern-native-applications-with-azure-active-directory/)
 
 ### Azure Friday
-[Azure Friday](http://azure.microsoft.com/documentation/videos/azure-friday/) ist eine Videoreihe, bei der jeden Freitag neue kurze Videos veröffentlicht werden. Dabei handelt es sich um kurze Interviews (10 bis 15 Minuten) mit Experten, bei denen es um unterschiedliche Azure-Themen geht. Verwenden Sie die Dienstfilterfunktion auf der Seite, um alle Azure Active Directory-Videos anzuzeigen.
+[Azure Friday](https://azure.microsoft.com/documentation/videos/azure-friday/) ist eine Videoreihe, bei der jeden Freitag neue kurze Videos veröffentlicht werden. Dabei handelt es sich um kurze Interviews (10 bis 15 Minuten) mit Experten, bei denen es um unterschiedliche Azure-Themen geht. Verwenden Sie die Dienstfilterfunktion auf der Seite, um alle Azure Active Directory-Videos anzuzeigen.
 
-- [Azure-Identität 101](http://azure.microsoft.com/documentation/videos/azure-identity-basics/)
-- [Azure-Identität 102](http://azure.microsoft.com/documentation/videos/azure-identity-creating-active-directory/)
-- [Azure-Identität 103](http://azure.microsoft.com/documentation/videos/azure-identity-application-to-authenticate/)
+- [Azure-Identität 101](https://azure.microsoft.com/documentation/videos/azure-identity-basics/)
+- [Azure-Identität 102](https://azure.microsoft.com/documentation/videos/azure-identity-creating-active-directory/)
+- [Azure-Identität 103](https://azure.microsoft.com/documentation/videos/azure-identity-application-to-authenticate/)
 
 ## Soziale Netzwerke
 
@@ -141,4 +141,4 @@ In diesen Übersichtspräsentationen zur Entwicklung von Apps mithilfe von Azure
 
 - [Azure Active Directory auf Twitter](https://twitter.com/azuread): Azure Active Directory-Ankündigungen in höchstens 140 Zeichen.
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0204_2016-->

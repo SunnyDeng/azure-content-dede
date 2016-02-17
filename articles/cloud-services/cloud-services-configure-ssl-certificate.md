@@ -62,12 +62,20 @@ Ihre Anwendung muss so konfiguriert sein, dass das Zertifikat verwendet wird. Au
             <Certificates>
                 <Certificate name="SampleCertificate" 
 							 storeLocation="LocalMachine" 
-                    		 storeName="CA" />
+                    		 storeName="CA"
+                             permissionLevel="limitedOrElevated" />
             </Certificates>
         ...
         </WebRole>
 
     Der Bereich **Certificates** definiert den Namen des Zertifikats, dessen Speicherort sowie den Namen des Speichers.
+    
+    Berechtigungen (`permisionLevel`-Attribut) können auf eine der folgenden Einstellungen festgelegt werden:
+
+    | Berechtigungswert | Beschreibung |
+    | ----------------  | ----------- |
+    | limitedOrElevated | **(Standard)** Alle Rollenprozesse können auf den privaten Schlüssel zugreifen. |
+    | elevated | Nur Prozesse mit erhöhten Rechten können auf den privaten Schlüssel zugreifen.|
 
 2.  Fügen Sie in der Dienstdefinitionsdatei im Bereich **Endpoints** ein **InputEndpoint**-Element hinzu, um HTTPS zu aktivieren:
 
@@ -160,4 +168,4 @@ Wenn Sie SSL für eine Staging- statt für eine Produktionsbereitstellung verwen
   [3]: ./media/cloud-services-configure-ssl-certificate/SSLCloudService.png
   [4]: ./media/cloud-services-configure-ssl-certificate/AddCertificateComplete.png
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

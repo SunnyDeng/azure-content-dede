@@ -33,7 +33,7 @@ Dienstzertifikate können gesondert von Ihren Diensten sowie von verschiedenen P
 ## Was sind Verwaltungszertifikate?
 Mit Verwaltungszertifikaten können Sie eine Authentifizierung mit der Dienstverwaltungs-API durchführen, die vom klassischen Azure bereitgestellt wird. Diese Zertifikate werden in vielen Programmen und Tools (z. B. Visual Studio oder Azure SDK) zum Automatisieren der Konfiguration und Bereitstellung verschiedener Azure-Dienste verwendet. Diese stehen eigentlich nicht in Zusammenhang mit Clouddiensten.
 
->[AZURE.WARNING]Vorsicht ist geboten! Alle Personen, die die Authentifizierung mit diesen Zertifikaten durchführen, können das zugeordnete Abonnement verwalten.
+>[AZURE.WARNING] Vorsicht ist geboten! Alle Personen, die die Authentifizierung mit diesen Zertifikaten durchführen, können das zugeordnete Abonnement verwalten.
 
 ### Einschränkungen
 Es sind maximal 100 Verwaltungszertifikate pro Abonnement möglich. Ebenso sind maximal 100 Verwaltungszertifikate für alle Abonnements unter der Benutzer-ID eines bestimmten Dienstadministrators zulässig. Wenn über die Benutzer-ID für den Kontoadministrator bereits 100 Verwaltungszertifikate hinzugefügt wurden und weitere Zertifikate benötigt werden, können Sie einen Co-Administrator festlegen, um die zusätzlichen Zertifikate hinzuzufügen.
@@ -70,14 +70,14 @@ Im Internet wird auf vielen Seiten erläutert, wie mit IIS Zertifikate erstellt 
 Auch mit Java können Sie [ein Zertifikat erstellen](../app-service-web/java-create-azure-website-using-java-sdk.md#create-a-certificate).
 
 ### Linux
-In [diesem](..\virtual-machines\virtual-machines-linux-use-ssh-key.md) Artikel wird beschrieben, wie Zertifikate mit SSH erstellt werden.
+In [diesem](../virtual-machines/virtual-machines-linux-use-ssh-key.md) Artikel wird beschrieben, wie Zertifikate mit SSH erstellt werden.
 
 ## Nächste Schritte
 
-[Hochladen des Dienstzertifikats in das klassische Azure-Portal](cloud-services-configure-ssl-certificate.md) (oder das [Azure-Portal](cloud-services-configure-ssl-certificate-portal.md)) und [Konfigurieren](cloud-services-xml-certs.md) des Zertifikats für den Clouddienst.
+[Hochladen des Dienstzertifikats in das klassische Azure-Portal](cloud-services-configure-ssl-certificate.md) (oder das [Azure-Portal](cloud-services-configure-ssl-certificate-portal.md)).
 
 Hochladen des [Verwaltungs-API-Zertifikats](../azure-api-management-certs.md) in das klassische Azure-Portal.
 
->[AZURE.NOTE]Im Azure-Portal erfolgt der Zugriff auf die API nicht über Verwaltungszertifikate, sondern über Benutzerkonten.
+>[AZURE.NOTE] Im Azure-Portal erfolgt der Zugriff auf die API nicht über Verwaltungszertifikate, sondern über Benutzerkonten.
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0204_2016-->

@@ -18,7 +18,7 @@
 
 # Benutzerauthentifizierung für API-Apps in Azure App Service
 
-[AZURE.INCLUDE [app-service-api-get-started-selector](../../includes/app-service-api-get-started-selector.md)]
+[AZURE.INCLUDE [Auswahl](../../includes/app-service-api-auth-selector.md)]
 
 ## Übersicht
 
@@ -78,63 +78,9 @@ Falls Sie die Reihe „Erste Schritte“ für Node.js oder Java und API-Apps dur
 
 Wenn Sie die API-App-Reihe „Erste Schritte“ für .NET durcharbeiten und die Beispielanwendung schon bereitgestellt haben, wie dies im [ersten](app-service-api-dotnet-get-started.md) und [zweiten](app-service-api-cors-consume-javascript.md) Tutorial beschrieben ist, können Sie mit dem Abschnitt [Konfigurieren der Authentifizierung](#azureauth) fortfahren.
 
-Falls Sie das erste und zweite Tutorial nicht durchgearbeitet haben und mit diesem Tutorial beginnen möchten, sollten Sie zuerst sicherstellen, dass alle [Voraussetzungen](app-service-api-dotnet-get-started.md#prerequisites) für die Reihe erfüllt sind. Führen Sie anschließend die folgenden Schritte zum Herunterladen und Bereitstellen der Beispielanwendung aus. Mit diesen Schritten wird die Vorgehensweise in den ersten beiden Tutorials dupliziert, aber die Anleitung ist verkürzt wiedergegeben.
+Falls Sie das erste und zweite Tutorial nicht durchgearbeitet haben und mit diesem Tutorial beginnen möchten, können Sie die Schaltfläche **In Azure bereitstellen** in der [Infodatei im Repository mit dem Beispiel für eine To-Do-Liste](https://github.com/azure-samples/app-service-api-dotnet-todo-list/blob/master/readme.md) verwenden, um die API-Apps und die Web-App bereitzustellen.
 
-1. Laden Sie die Beispielanwendung herunter.
-
-	a. Laden Sie das Repository [Azure-Samples/app-service-api-dotnet-todo-list](https://github.com/Azure-Samples/app-service-api-dotnet-to-do-list) herunter.
-
-	a. Öffnen Sie die Projektmappe ToDoList in Visual Studio 2015, und erstellen Sie die Projektmappe, um die NuGet-Pakete wiederherzustellen.
-
-2. Stellen Sie das Projekt ToDoListDataAPI in einer neuen API-App bereit.
-
-	a. Öffnen Sie im Projekt ToDoListDataAPI die Datei *App_Start/SwaggerConfig.cs*, und heben Sie die Auskommentierung des **EnableSwaggerUi**-Codes auf.
-
-	b. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt ToDoListDataAPI, und klicken Sie dann auf **Veröffentlichen**.
-
-	c. Klicken Sie im Schritt **Profil** im Assistenten **Web veröffentlichen** auf **Microsoft Azure App Service**.
-
-	d. Wählen Sie im Dialogfeld **App Service** das gewünschte Azure-**Abonnement** aus, und klicken Sie dann auf **Neu**.
-
-	e. Klicken Sie im Dialogfeld **App Service erstellen** auf der Registerkarte **Hosting** auf **Typ ändern** und dann auf **API-App**.
-
-	f. Geben Sie einen **API-App-Namen**, z. B. ToDoListDataAPI, mit einer Zahl ein, damit er in der Domäne *azurewebsites.net* eindeutig ist. Beispiel: ToDoListDataAPI1230.
-
-	g. Geben Sie in der Dropdownliste **Ressourcengruppe** einen Namen ein, z. B. TodoListGroup, um eine neue Ressourcengruppe zu erstellen.
-
-	h. Klicken Sie in der Dropdownliste **App Service-Plan** auf **Neu**, und geben Sie im Dialogfeld **App Service-Plan konfigurieren** die erforderlichen Informationen ein.
-
-	i. Klicken Sie auf **Erstellen**.
-
-	j. Klicken Sie auf **Veröffentlichen**.
-
-3. Stellen Sie das Projekt ToDoListAPI für eine neue API-App bereit.
-
-	a. Öffnen Sie im Projekt ToDoListAPI die Datei *Controllers\ToDoListController.cs*, und ändern Sie `http://localhost:45914` in `https://{your ToDoListDataAPI app name}.azurewebsites.net`.
-
-	b. Führen Sie zum Bereitstellen des Projekts ToDoListAPI die gleichen Schritte wie für das Projekt ToDoListDataAPI aus. Vergessen Sie nicht, den Typ in **API-App** zu ändern.
-
-4. Stellen Sie das Projekt ToDoListAngular für eine neue Web-App bereit.
-
-	a. Öffnen Sie im Projekt ToDoListAngular die Datei *app/scripts/todoListSvc.js*.
-
-	b. Kommentieren Sie die Zeile aus, mit der `apiEndpoint` auf die localhost-URL festgelegt wird, und heben Sie die Auskommentierung für die Zeile auf, mit der für `apiEndPoint` eine URL in der Domäne „azurewebsites.net“ angegeben wird. Ersetzen Sie darüber hinaus den Platzhalter durch den tatsächlichen Namen der API-App, die Sie für ToDoListAPI erstellt haben.
-
-	c. Führen Sie zum Bereitstellen des Projekts ToDoListAPI die gleichen Schritte aus, die Sie für das Projekt ToDoListDataAPI ausgeführt haben, **aber ändern Sie den Typ nicht von „Web-App“ in „API-App“**.
-
-5. Konfigurieren Sie CORS für die API-App in Azure
-
-	a. Wechseln Sie zum [Azure-Portal](https://portal.azure.com/), und navigieren Sie zur API-App, die Sie für das Projekt ToDoListAPI erstellt haben.
-
-	b. Klicken Sie auf dem Blatt **API-App** auf **Einstellungen**.
-
-	c. Klicken Sie im Abschnitt **API** auf **CORS**.
-
-	d. Geben Sie im Textfeld die URL ein, von der Aufrufe zugelassen werden sollen. In diesem Tutorial ist dies die URL der Web-App, die Sie für das Projekt ToDoListAngular erstellt haben. Geben Sie beispielsweise „https://todolistangular.azurewebsites.net“ ein.
-
-	e. Klicken Sie auf **Speichern**.
-
-6. Öffnen Sie einen Browser mit der HTTPS-URL der Web-App, und überprüfen Sie, ob Sie Aufgabenelemente anzeigen, hinzufügen, bearbeiten und löschen können.
+Nach Abschluss der Bereitstellung wird ein HTTP-Link zur Web-App angezeigt. Ändern Sie diese URL in eine HTTPS-URL, um die Anwendung auszuführen und zu überprüfen, ob sie funktioniert.
 
 ## <a id="azureauth"></a> Einrichten der Authentifizierung in Azure
 
@@ -148,7 +94,7 @@ An diesem Punkt wird die Anwendung in Azure App Service ausgeführt, ohne dass B
 
 1. Navigieren Sie im [Azure-Portal](https://portal.azure.com/) zum Blatt **API-App** der API-App, die Sie für das Projekt ToDoListAPI erstellt haben.
 
-2. Klicken Sie auf **Settings**.
+2. Klicken Sie auf **Einstellungen**.
 
 2. Suchen Sie auf dem Blatt **Einstellungen** nach dem Abschnitt mit den **Features**, und klicken Sie dann auf **Authentifizierung/Autorisierung**.
 
@@ -367,12 +313,12 @@ Nehmen Sie am Projekt ToDoListAPI die folgenden Änderungen vor.
 
 ## Neues Erstellen der Projekte von Grund auf
 
-Die beiden Web-API-Projekte wurden erstellt, indem die Projektvorlage **Azure-API-App** verwendet wurde und der standardmäßige Values-Controller durch einen ToDoList-Controller ersetzt wurde.
+Die beiden Web-API-Projekte wurden erstellt, indem die Projektvorlage **Azure-API-App** verwendet und der standardmäßige Values-Controller durch einen ToDoList-Controller ersetzt wurde.
 
 Weitere Informationen zum Erstellen einer AngularJS-Single-Page-Anwendung mit einem Web-API 2-Back-End finden Sie unter [Hands On Lab: Build a Single Page Application (SPA) with ASP.NET Web API and Angular.js](http://www.asp.net/web-api/overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs) (Hands On Lab: Erstellen einer Single-Page-Anwendung (SPA) mit ASP.NET-Web-API und „Angular.js“). Informationen zum Hinzufügen von Azure AD-Authentifizierungscode finden Sie unter den folgenden Ressourcen:
 
 * [Schützen von einseitigen AngularJS-Apps mit Azure AD](../active-directory/active-directory-devquickstarts-angular.md).
-* [Introducing ADAL JS v1](http://www.cloudidentity.com/blog/2015/02/19/introducing-adal-js-v1/) (Einführung in ADAL JS v1)
+* [Introducing ADAL JS v1 (Einführung in ADAL JS v1)](http://www.cloudidentity.com/blog/2015/02/19/introducing-adal-js-v1/)
 
 ## Problembehandlung
 
@@ -391,4 +337,4 @@ Wenn Sie die Anwendung ohne Authentifizierung erfolgreich ausgeführt haben und 
 
 In diesem Tutorial haben Sie gelernt, wie Sie die App Service-Authentifizierung für eine API-App verwenden und die API-App mit der ADAL-JS-Bibliothek aufrufen. Im nächsten Tutorial geht es um das [Schützen des Zugriffs auf Ihre API-App für Dienst-zu-Dienst-Szenarien](app-service-api-dotnet-service-principal-auth.md).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

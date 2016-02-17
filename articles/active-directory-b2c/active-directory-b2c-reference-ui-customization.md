@@ -13,14 +13,15 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/22/2015"
+	ms.date="01/28/2016"
 	ms.author="swkrish"/>
 
 # Azure Active Directory B2C-Vorschau: Anpassen der Azure AD B2C-Benutzeroberfläche (UI)
 
 Benutzerfreundlichkeit ist in einer kundenorientierten Anwendung entscheidend. Dies ist der Unterschied zwischen einer guten Anwendung und einer hervorragenden – und zwischen lediglich aktiven Consumern und wirklich engagierten. Azure Active Directory (AD) B2C ermöglicht es Ihnen, die Seiten für die Registrierung und Anmeldung von Consumern (*siehe Hinweis unten*) und für die Profilbearbeitung mit einer präzisen Kontrolle anzupassen.
 
-> [AZURE.NOTE]Gegenwärtig sind Anmeldeseiten für lokale Konten, Überprüfungs-E-Mails und Seiten zum eigenständigen Zurücksetzen des Kennworts nur mithilfe des [Features für Unternehmensbranding](./active-directory/active-directory-add-company-branding.md) anpassbar, nicht durch die Mechanismen, die in diesem Artikel beschrieben sind.
+> [AZURE.NOTE]
+Gegenwärtig sind Anmeldeseiten für lokale Konten, Überprüfungs-E-Mails und Seiten zum eigenständigen Zurücksetzen des Kennworts nur mithilfe des [Features für Unternehmensbranding](../active-directory/active-directory-add-company-branding.md) anpassbar, nicht durch die Mechanismen, die in diesem Artikel beschrieben sind.
 
 Dieser Artikel enthält Folgendes:
 
@@ -45,7 +46,8 @@ Wenn Sie das Anpassungsfeature für die Benutzeroberfläche mithilfe unseres auf
 
 Im folgenden Abschnitt finden Sie Beispiele für HTML5-Fragmente (für jeden Seitentyp), die Azure AD B2C im <div id="api"></div>-Element in Ihrem Inhalt zusammenführt. Sie können diese UI-Elemente mit Ihren eigenen Stylesheets anpassen. Diese Stylesheets müssen die standardmäßigen Stylesheets überschreiben, die wir in diesen Seiten in den <head>-Fragmenten hinzufügen.
 
-> [AZURE.IMPORTANT]Gehen Sie in der Vorschau davon aus, dass sich die genauen UI-Elemente ändern, da sie an Ihr Feedback angepasst werden. Überprüfen Sie immer den Quellcode der Standardseiten auf die neuesten Aktualisierungen. Tatsächlich ist die erste Änderung, die berücksichtigt wird, das Entfernen unserer Standardstylesheets. Dies bedeutet, dass Sie immer Ihre eigenen Stylesheets für diese UI-Elemente in Ihrem Inhalt bereitstellen müssen.
+> [AZURE.IMPORTANT]
+	Gehen Sie in der Vorschau davon aus, dass sich die genauen UI-Elemente ändern, da sie an Ihr Feedback angepasst werden. Überprüfen Sie immer den Quellcode der Standardseiten auf die neuesten Aktualisierungen. Tatsächlich ist die erste Änderung, die berücksichtigt wird, das Entfernen unserer Standardstylesheets. Dies bedeutet, dass Sie immer Ihre eigenen Stylesheets für diese UI-Elemente in Ihrem Inhalt bereitstellen müssen.
 
 ## Auswahlseite für Identitätsanbieter
 
@@ -276,4 +278,4 @@ Wenn Sie das Anpassungsfeature für die Seiten-UI verwenden möchten, beachten S
 	- Mozilla Firefox 38.0
 	- Mozilla Firefox 37.0
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0204_2016-->

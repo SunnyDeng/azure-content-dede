@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="11/17/2015"
+   ms.date="02/02/2016"
    ms.author="mbaldwin"/>
 
 # Integration in Azure Active Directory
@@ -30,7 +30,7 @@ Es gibt mehrere Möglichkeiten, Ihre Anwendung in Azure AD zu integrieren. Nutze
 
 **Verringern von Anmeldeaufwand und Supportkosten.** Wenn sich Ihre Benutzer über Azure AD bei Ihrer Anwendung anmelden, müssen sie sich keinen weiteren Benutzernamen und kein weiteres Kennwort merken. Als Entwickler müssen Sie ein Kennwort weniger speichern und schützen. Allein dadurch, dass keine vergessenen Kennwörter zurückgesetzt werden müssen, kann es zu beträchtlichen Kosteneinsparungen kommen. Azure AD unterstützt das Anmelden für einige der weltweit beliebtesten Cloudanwendungen wie Office 365 und Microsoft Azure. Bei Hunderten Millionen Benutzern in Millionen Organisationen ist es wahrscheinlich, dass Ihr Benutzer bereits bei Azure AD angemeldet ist. Erfahren Sie mehr über das [Hinzufügen von Unterstützung für die Azure AD-Anmeldung](active-directory-authentication-scenarios.md).
 
-**Vereinfachen der Registrierung für Ihre Anwendung.** Während der Registrierung für Ihre Anwendung kann Azure AD wichtige Informationen über einen Benutzer senden, sodass Sie Ihr Anmeldeformular vorab ausfüllen lassen oder vollständig entfernen können. Benutzer können sich für Ihre Anwendung mit ihrem Azure AD-Konto in einer vertrauten Genehmigungsumgebung registrieren, die derjenigen in sozialen Medien und mobilen Anwendungen ähnelt. Benutzer können sich ohne Beteiligung der IT bei einer Anwendung, die in Azure AD integriert ist, registrieren und anmelden. Erfahren Sie mehr über das [Registrieren Ihrer Anwendung für die Azure AD-Kontoanmeldung](../mobile-services-how-to-register-active-directory-authentication.md).
+**Vereinfachen der Registrierung für Ihre Anwendung.** Während der Registrierung für Ihre Anwendung kann Azure AD wichtige Informationen über einen Benutzer senden, sodass Sie Ihr Anmeldeformular vorab ausfüllen lassen oder vollständig entfernen können. Benutzer können sich für Ihre Anwendung mit ihrem Azure AD-Konto in einer vertrauten Genehmigungsumgebung registrieren, die derjenigen in sozialen Medien und mobilen Anwendungen ähnelt. Benutzer können sich ohne Beteiligung der IT bei einer Anwendung, die in Azure AD integriert ist, registrieren und anmelden. Erfahren Sie mehr über das [Registrieren Ihrer Anwendung für die Azure AD-Kontoanmeldung](../mobile-services/mobile-services-how-to-register-active-directory-authentication.md).
 
 ### Suchen nach Benutzern, Verwalten der Benutzerbereitstellung und Steuern des Zugriffs auf Ihre Anwendung
 
@@ -48,7 +48,7 @@ Es gibt mehrere Möglichkeiten, Ihre Anwendung in Azure AD zu integrieren. Nutze
 
 ### Werben für Ihre Anwendung im Azure und Office 365 Marketplace
 
-**Werben Sie für Ihre Anwendung bei Millionen von Organisationen, die Azure AD bereits verwenden.** Benutzer, die diese Marketplaces durchsuchen bzw durchstöbern, nutzen bereits einen oder mehrere Clouddienste, sodass sie als potenzielle Kunden von Cloudlösungen in Frage kommen. Erfahren Sie mehr über das Werben für Ihre Anwendung in [Azure Marketplace](http://azure.microsoft.com/marketplace/partner-program/).
+**Werben Sie für Ihre Anwendung bei Millionen von Organisationen, die Azure AD bereits verwenden.** Benutzer, die diese Marketplaces durchsuchen bzw durchstöbern, nutzen bereits einen oder mehrere Clouddienste, sodass sie als potenzielle Kunden von Cloudlösungen in Frage kommen. Erfahren Sie mehr über das Werben für Ihre Anwendung in [Azure Marketplace](https://azure.microsoft.com/marketplace/partner-program/).
 
 **Wenn sich Benutzer für Ihre Anwendung registrieren, wird sie in ihrem Azure AD-Zugriffsbereich und Office 365-App-Startfeld angezeigt.** Benutzer können später schnell und einfach zu Ihrer Anwendung zurückkehren, was die Benutzerbindung verbessert. Erfahren Sie mehr über den [Azure AD-Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
@@ -68,7 +68,7 @@ Die Integration in Azure AD bietet den Vorteil, dass Sie keinen zusätzlichen Co
 
 ### Erweiterte Sicherheitsmerkmale
 
-**Multi-Factor Authentication.** Azure AD bietet eine systemeigene Multi-Factor Authentication. IT-Administratoren können für den Zugriff auf Ihre Anwendung die Multi-Factor Authentication anfordern, damit Sie diese Unterstützung nicht selbst programmieren müssen. Erfahren Sie mehr über die [Multi-Factor Authentication](http://azure.microsoft.com/documentation/services/multi-factor-authentication/).
+**Multi-Factor Authentication.** Azure AD bietet eine systemeigene Multi-Factor Authentication. IT-Administratoren können für den Zugriff auf Ihre Anwendung die Multi-Factor Authentication anfordern, damit Sie diese Unterstützung nicht selbst programmieren müssen. Erfahren Sie mehr über die [Multi-Factor Authentication](https://azure.microsoft.com/documentation/services/multi-factor-authentication/).
 
 **Erkennung anomaler Anmeldungen.** Azure AD verarbeitet mehr als eine Milliarde Anmeldungen pro Tag. Dabei kommen Algorithmen für maschinelles Lernen zum Erkennen verdächtiger Aktivitäten zum Einsatz, die IT-Administratoren über mögliche Probleme informieren. Durch die Unterstützung der Azure AD-Anmeldung kommt Ihre Anwendung in den Genuss dieses Schutzes. Erfahren Sie mehr über das [Anzeigen des Azure Active Directory-Zugriffsberichts](active-directory-view-access-usage-reports.md).
 
@@ -90,4 +90,4 @@ Die Integration in Azure AD bietet den Vorteil, dass Sie keinen zusätzlichen Co
 
 [Anmelden von Benutzern über Azure AD](active-directory-authentication-scenarios.md)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0204_2016-->

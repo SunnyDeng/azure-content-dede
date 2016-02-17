@@ -48,7 +48,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 -	Ein aktives [Microsoft Azure-Konto](/account/)
 -	Visual Studio 2015 mit [Azure SDK](http://go.microsoft.com/fwlink/?linkid=518003&clcid=0x409)
 
-> [AZURE.NOTE]Sie benötigen ein Azure-Konto, um dieses Lernprogramm abzuschließen. + Sie können [kostenlos ein Azure-Konto erstellen](/pricing/free-trial/): – Sie erhalten ein Guthaben, das Sie zum Ausprobieren der kostenpflichtigen Azure-Dienste nutzen können. Sie können das Konto behalten und weiterhin kostenlose Azure-Dienste wie z. B. Websites nutzen, wenn das Guthaben aufgebraucht ist. + Sie können von [Vorteilen für MSDN-Abonnenten profitieren](/pricing/member-offers/msdn-benefits-details/): – Über Ihr MSDN-Abonnement erhalten Sie jeden Monat Gutschriften, die Sie für kostenpflichtige Azure-Dienste einsetzen können.
+> [AZURE.NOTE] Sie benötigen ein Azure-Konto, um dieses Lernprogramm abzuschließen. + Sie können [kostenlos ein Azure-Konto erstellen](/pricing/free-trial/): – Sie erhalten ein Guthaben, das Sie zum Ausprobieren der kostenpflichtigen Azure-Dienste nutzen können. Sie können das Konto behalten und weiterhin kostenlose Azure-Dienste wie z. B. Websites nutzen, wenn das Guthaben aufgebraucht ist. + Sie können von [Vorteilen für MSDN-Abonnenten profitieren](/pricing/member-offers/msdn-benefits-details/): – Über Ihr MSDN-Abonnement erhalten Sie jeden Monat Gutschriften, die Sie für kostenpflichtige Azure-Dienste einsetzen können.
 
 <a name="deploy"></a>
 ## Bereitstellen eines Cloud-Diensts ##
@@ -80,7 +80,7 @@ In diesem Abschnitt stellen Sie die standardmäßige ASP.NET-MVC-Anwendungsvorla
 
 	![](media/cdn-cloud-service-with-cdn/cdn-cs-6-publish-signedin.png)
 
-8. Davon ausgehend, dass Sie noch keinen Clouddienst und kein Speicherkonto erstellt haben, unterstützt Visual Studio Sie bei der Erstellung dieser beiden Komponenten. Geben Sie im Dialogfeld **Create Cloud Service and Account** den gewünschten Dienstnamen ein, und wählen Sie die Region aus. Klicken Sie dann auf **Erstellen**.
+8. Davon ausgehend, dass Sie noch keinen Clouddienst und kein Speicherkonto erstellt haben, unterstützt Visual Studio Sie bei der Erstellung dieser beiden Komponenten. Geben Sie im Dialogfeld **Clouddienst und Konto erstellen** den gewünschten Dienstnamen ein, und wählen Sie die Region aus. Klicken Sie dann auf **Erstellen**.
 
 	![](media/cdn-cloud-service-with-cdn/cdn-cs-7-publish-createserviceandstorage.png)
 
@@ -88,17 +88,17 @@ In diesem Abschnitt stellen Sie die standardmäßige ASP.NET-MVC-Anwendungsvorla
 
 	![](media/cdn-cloud-service-with-cdn/cdn-cs-8-publish-finalize.png)
 
-	>[AZURE.NOTE]Das Veröffentlichen von Clouddiensten dauert sehr lange. Mit der Option "Web Deploy für alle Webrollen aktivieren" können Sie das Debuggen des Clouddiensts erheblich beschleunigen, da hiermit schnelle (allerdings temporäre) Updates für Ihre Webrollen zur Verfügung gestellt werden. Weitere Informationen zu dieser Option finden Sie unter [Veröffentlichen eines Clouddiensts mit Azure Tools](http://msdn.microsoft.com/library/ff683672.aspx).
+	>[AZURE.NOTE] Das Veröffentlichen von Clouddiensten dauert sehr lange. Mit der Option "Web Deploy für alle Webrollen aktivieren" können Sie das Debuggen des Clouddiensts erheblich beschleunigen, da hiermit schnelle (allerdings temporäre) Updates für Ihre Webrollen zur Verfügung gestellt werden. Weitere Informationen zu dieser Option finden Sie unter [Veröffentlichen eines Clouddiensts mit Azure Tools](http://msdn.microsoft.com/library/ff683672.aspx).
 
 	Wenn im **Microsoft Azure-Aktivitätsprotokoll** als Veröffentlichungsstatus **Abgeschlossen** angezeigt wird, erstellen Sie einen CDN-Endpunkt, der in diesen Clouddienst integriert ist.
 	
-	>[AZURE.WARNING]Falls der bereitgestellte Clouddienst nach der Veröffentlichung eine Fehlermeldung anzeigt, verwendet der bereitgestellte Clouddienst wahrscheinlich ein [Gastbetriebssystem ohne .NET 4.5.2](../cloud-services/cloud-services-guestos-update-matrix.md#news-updates). Sie können dieses Problem durch das [Bereitstellen von .NET 4.5.2 als Startaufgabe](../cloud-services/cloud-services-dotnet-install-dotnet.md) umgehen.
+	>[AZURE.WARNING] Falls der bereitgestellte Clouddienst nach der Veröffentlichung eine Fehlermeldung anzeigt, verwendet der bereitgestellte Clouddienst wahrscheinlich ein [Gastbetriebssystem ohne .NET 4.5.2](../cloud-services/cloud-services-guestos-update-matrix.md#news-updates). Sie können dieses Problem durch das [Bereitstellen von .NET 4.5.2 als Startaufgabe](../cloud-services/cloud-services-dotnet-install-dotnet.md) umgehen.
 
 ## Erstellen eines neuen CDN-Profils
 
 Ein CDN-Profil ist eine Sammlung von CDN-Endpunkten. Jedes Profil enthält mindestens einen CDN-Endpunkt. Sie können mehrere Profile verwenden, um Ihre CDN-Endpunkte nach Internetdomäne, Webanwendung oder anderen Kriterien zu organisieren.
 
-> [AZURE.TIP]Wenn Sie bereits über ein CDN-Profil verfügen, das Sie für dieses Tutorial verwenden möchten, fahren Sie mit [Erstellen eines neuen CDN-Endpunkts](#create-a-new-cdn-endpoint) fort.
+> [AZURE.TIP] Wenn Sie bereits über ein CDN-Profil verfügen, das Sie für dieses Tutorial verwenden möchten, fahren Sie mit [Erstellen eines neuen CDN-Endpunkts](#create-a-new-cdn-endpoint) fort.
 
 **So erstellen Sie ein neues CDN-Profil**
 
@@ -152,7 +152,7 @@ Ein CDN-Profil ist eine Sammlung von CDN-Endpunkten. Jedes Profil enthält minde
 
     ![CDN-Endpunkt][cdn-endpoint-success]
 
-    > [AZURE.NOTE]Der Endpunkt kann nicht sofort verwendet werden. Es dauert bis zu 90 Minuten, bis die Registrierung über das CDN-Netzwerk weitergegeben wurde. Benutzer, die den CDN-Domänennamen sofort zu verwenden versuchen, sehen u. U. den Statuscode 404, bis die Inhalte über das CDN verfügbar sind.
+    > [AZURE.NOTE] Der Endpunkt kann nicht sofort verwendet werden. Es dauert bis zu 90 Minuten, bis die Registrierung über das CDN-Netzwerk weitergegeben wurde. Benutzer, die den CDN-Domänennamen sofort zu verwenden versuchen, sehen u. U. den Statuscode 404, bis die Inhalte über das CDN verfügbar sind.
 	
 ## Testen des CDN-Endpunkts
 
@@ -624,10 +624,9 @@ Die [Bundle](http://msdn.microsoft.com/library/system.web.optimization.bundle.as
 
 ## Weitere Informationen ##
 - [Übersicht über das Azure Content Delivery Network (CDN)](http://msdn.microsoft.com/library/azure/ff919703.aspx)
-- [Verarbeiten von Inhalt aus Azure CDN in einer Webanwendung](cdn-serve-content-from-cdn-in-your-web-application.md)
-- [Integrieren einer Azure-Website in Azure CDN](cdn-websites-with-cdn.md)
+- [Verwenden von CDN für Azure](cdn-how-to-use-cdn.md)
 - [ASP.NET-Bündelung und -Minimierung](http://www.asp.net/mvc/tutorials/mvc-4/bundling-and-minification)
-- [Verwenden von CDN für Azure](cdn-how-to-use.md)
+
 
 
 [new-cdn-profile]: ./media/cdn-cloud-service-with-cdn/cdn-new-profile.png
@@ -636,4 +635,4 @@ Die [Bundle](http://msdn.microsoft.com/library/system.web.optimization.bundle.as
 [cdn-add-endpoint]: ./media/cdn-cloud-service-with-cdn/cdn-add-endpoint.png
 [cdn-endpoint-success]: ./media/cdn-cloud-service-with-cdn/cdn-endpoint-success.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0204_2016-->

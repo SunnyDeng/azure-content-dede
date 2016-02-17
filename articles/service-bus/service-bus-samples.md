@@ -12,14 +12,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="10/08/2015"
+   ms.date="01/26/2016"
    ms.author="sethm" />
 
 # Service Bus-Beispiele:
 
-In den Service Bus-Beispielen werden die Hauptfeatures in Service Bus (Clouddienst) und Service Bus für Windows Server veranschaulicht. Dieser Artikel kategorisiert und beschreibt die verfügbaren Beispiele und stellt Links zu jedem der Beispiele zur Verfügung.
+In den Service Bus-Beispielen werden die Hauptfeatures von [Service Bus](https://azure.microsoft.com/services/service-bus/) (Clouddienst) und [Service Bus für Windows Server](https://msdn.microsoft.com/library/dn282144.aspx) veranschaulicht. Dieser Artikel kategorisiert und beschreibt die verfügbaren Beispiele und stellt Links zu jedem der Beispiele zur Verfügung.
 
->[AZURE.NOTE]Die Service Bus-Beispiele werden nicht zusammen mit dem SDK installiert. Zum Abrufen der Beispiele besuchen Sie die [Azure SDK-Beispielseite](https://code.msdn.microsoft.com).
+>[AZURE.NOTE] Die Service Bus-Beispiele werden nicht zusammen mit dem SDK installiert. Zum Abrufen der Beispiele besuchen Sie die [Azure SDK-Beispielseite](https://code.msdn.microsoft.com/site/search?query=service%20bus&f%5B0%5D.Value=service%20bus&f%5B0%5D.Type=SearchText&ac=5).
 
 ## Service Bus-Brokermessaging
 
@@ -126,10 +126,10 @@ Die folgenden Beispiele zeigen verschiedene weitere Features des Diensts.
 
 ## Nächste Schritte
 
-Weitere Übersichten über Service Bus finden Sie in den folgenden Themen.
+Konzeptionelle Übersichten über Service Bus finden Sie in den folgenden Themen.
 
 - [Übersicht über Service Bus-Messaging](service-bus-messaging-overview.md)
 - [Service Bus-Architektur](service-bus-architecture.md)
 - [Service Bus – Grundlagen](service-bus-fundamentals-hybrid-solutions.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -14,7 +14,7 @@
 	ms.workload="na" 
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
-	ms.date="12/17/2015" 
+	ms.date="01/26/2016" 
 	ms.author="betorres"
 />
 
@@ -36,7 +36,7 @@ Wählen Sie diese Option aus, und ein neues Blatt wird geöffnet. Ändern Sie de
 ![][2]
 
 
-> [AZURE.IMPORTANT]Das Speicherkonto muss sich in der gleichen Region und dem gleichen Abonnement wie Ihr Suchdienst befinden.
+> [AZURE.IMPORTANT] Das Speicherkonto muss sich in der gleichen Region und dem gleichen Abonnement wie Ihr Suchdienst befinden.
 > 
 > Für dieses Speicherkonto fallen Standardgebühren an.
 
@@ -131,26 +131,32 @@ Verfügbare Metriken:
 
 Die Daten befinden sich in Ihrem eigenen Speicherkonto, und Sie sollten diese Daten in der für Sie idealen Art und Weise untersuchen.
 
-Zunächst sollten Sie Ihre Daten mit [Power BI Desktop](https://powerbi.microsoft.com/de-DE/desktop) untersuchen und visualisieren. Sie können sich ganz einfach mit Ihrem Azure Storage-Konto verbinden und schnell mit der Analyse Ihrer Daten beginnen.
+Zunächst sollten Sie Ihre Daten mit [Power BI](https://powerbi.microsoft.com) untersuchen und visualisieren. Sie können sich ganz einfach mit Ihrem Azure Storage-Konto verbinden und schnell mit der Analyse Ihrer Daten beginnen.
 
-Sehen Sie sich die folgende Beispielabfrage an, mit der Sie Ihre eigenen Berichte in Power BI Desktop erstellen.
+#### Power BI Online
 
-### Anleitung
+[Power BI-Inhaltspaket](https://app.powerbi.com/getdata/services/azure-search): Erstellen Sie ein Power BI-Dashboard und einen Satz von Power BI-Berichten, die Ihre Daten automatisch anzeigen und visuelle Einblicke in Ihren Suchdienst gestatten. Informationen finden Sie auf der [Hilfeseite zum Inhaltspaket](https://powerbi.microsoft.com/de-DE/documentation/powerbi-content-pack-azure-search/).
+
+![][3]
+
+#### Power BI Desktop
+
+[Power BI Desktop](https://powerbi.microsoft.com/de-DE/desktop): Untersuchen Sie Ihre Daten, und erstellen Sie Ihre eigenen Visualisierungen für Ihre Daten. Unten finden Sie eine Abfrage für den Einstieg.
 
 1. Öffnen eines neuen Power BI Desktop-Berichts
 2. Wählen Sie „Daten abrufen -> Mehr...“
 
-	![][3]
+	![][4]
 
 3. Wählen Sie „Microsoft Azure-Blobspeicher“ und „Verbinden“.
 
-	![][4]
+	![][5]
 
 4. Geben Sie Namen und Kontoschlüssel des Speicherkontos ein.
 5. Wählen Sie „insight-logs-operationlogs“ und „insights-metrics-pt1mm“ und klicken Sie dann auf „Bearbeiten“.
 6. Der Abfrage-Editor wird geöffnet. Stellen Sie sicher, dass „insight-logs-operationlogs“ auf der linken Seite ausgewählt ist. Öffnen Sie jetzt den erweiterten Editor durch Auswahl von „Ansicht -> Erweiterter Editor“.
 
-	![][5]
+	![][6]
 
 7. Behalten Sie die ersten beiden Zeilen bei, und ersetzen Sie den Rest durch die folgende Abfrage:
 
@@ -217,8 +223,9 @@ Erfahren Sie hier mehr über das Erstellen erstaunlicher Berichte. Weitere Infor
 
 [1]: ./media/search-traffic-analytics/SettingsBlade.png
 [2]: ./media/search-traffic-analytics/DiagnosticsBlade.png
-[3]: ./media/search-traffic-analytics/GetData.png
-[4]: ./media/search-traffic-analytics/BlobStorage.png
-[5]: ./media/search-traffic-analytics/QueryEditor.png
+[3]: ./media/search-traffic-analytics/Dashboard.png
+[4]: ./media/search-traffic-analytics/GetData.png
+[5]: ./media/search-traffic-analytics/BlobStorage.png
+[6]: ./media/search-traffic-analytics/QueryEditor.png
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0204_2016-->

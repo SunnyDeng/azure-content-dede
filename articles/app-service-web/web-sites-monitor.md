@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/14/2015"
+	ms.date="01/13/2016"
 	ms.author="byvinyal"/>
 
 #<a name="howtomonitor"></a>Überwachen von Web-Apps in Azure App Service
@@ -24,7 +24,7 @@
 
 ##Aufbewahrungsrichtlinien für Metriken
 
->[AZURE.NOTE]Die Aufbewahrungsrichtlinien für App-Metriken variieren je nach Granularität.
+>[AZURE.NOTE] Die Aufbewahrungsrichtlinien für App-Metriken variieren je nach Granularität.
 
 - Metriken mit der Granularität **Minute** werden für **24 Stunden** beibehalten.
 - Metriken mit der Granularität **Stunde** werden für **7 Tage** beibehalten.
@@ -54,7 +54,7 @@ Im Web-App-Modus **Standard** können Sie basierend auf den Web-App-Überwachung
 
 Web-Apps können im [klassischen Portal](https://manage.windowsazure.com) auf der Verwaltungsseite **Skalierung** der Web-App zur Ausführung entweder im Modus **Shared** oder **Standard** konfiguriert werden. Jedes Azure-Abonnement hat Zugriff auf einen Ressourcenpool, der für die Ausführung von bis zu 100 Web-Apps pro Region im Modus **Shared** bereitgestellt wird. Der für jedes Web-App-Abonnement für diesen Zweck bereitgestellte Ressourcenpool wird in derselben geografischen Region auch von anderen Web-Apps genutzt, die im Modus **Shared** konfiguriert sind. Da diese Ressourcen von anderen Web-Apps ebenfalls genutzt werden, verfügen alle Abonnements über begrenzte Ressourcennutzung. Die Höchstgrenzen für die Ressourcennutzung von Abonnements werden als Nutzungskontingente bezeichnet und sind im Abschnitt "Nutzungsübersicht" der Verwaltungsseite **Dashboard** jeder Web-App aufgelistet.
 
->[AZURE.NOTE]Wenn eine Web-App für die Ausführung im Modus **Standard** konfiguriert ist, werden ihr dedizierte Ressourcen entsprechend der Größe **Klein** (Standard), **Mittel** oder **Groß** des virtuellen Computers zugewiesen, die in der Tabelle unter [Größen virtueller Computer und Clouddienste für Azure][vmsizes] aufgelistet sind. Es gibt kein Limit, wie viele Ressourcen ein Abonnement zum Ausführen von Web-Apps im **Standard**-Modus verwenden kann. Die Anzahl der im **Standard**-Modus erstellten Web-Apps pro Region ist jedoch auf 500 begrenzt.
+>[AZURE.NOTE] Wenn eine Web-App für die Ausführung im Modus **Standard** konfiguriert ist, werden ihr dedizierte Ressourcen entsprechend der Größe **Klein** (Standard), **Mittel** oder **Groß** des virtuellen Computers zugewiesen, die in der Tabelle unter [Größen virtueller Computer und Clouddienste für Azure][vmsizes] aufgelistet sind. Es gibt kein Limit, wie viele Ressourcen ein Abonnement zum Ausführen von Web-Apps im **Standard**-Modus verwenden kann. Die Anzahl der im **Standard**-Modus erstellten Web-Apps pro Region ist jedoch auf 500 begrenzt.
 
 ### Vorgehensweise: Anzeigen der Nutzungskontingente für Web-Apps, die für den Modus "Freigegeben" konfiguriert sind ###
 Um zu bestimmen, in welchem Umfang eine Web-App sich auf die Ressourcennutzungskontingente auswirkt, führen Sie folgende Schritte aus:
@@ -100,7 +100,7 @@ Sie können die folgenden Anwendungsdiagnose-Optionen aktivieren oder deaktivier
 
 Weitere Informationen zu Azure-Speicherkonten finden Sie unter [Verwalten von Speicherkonten](/manage/services/storage/how-to-manage-a-storage-account/).
 
-> [AZURE.NOTE]Anwendungsprotokollierung in einer Tabelle oder einem Blob-Speicher wird nur für .NET-Anwendungen unterstützt.
+> [AZURE.NOTE] Anwendungsprotokollierung in einer Tabelle oder einem Blob-Speicher wird nur für .NET-Anwendungen unterstützt.
 
 Da die Anwendungsprotokollierung im Speicher die Verwendung eines Speicherclients zum Anzeigen der Protokolldaten erfordert, ist es hilfreich, wenn Sie eine Anwendung oder einen Dienst verwenden, die bzw. der Daten direkt aus der Azure-Tabelle oder dem Blob-Speicher lesen und verarbeiten kann. Bei der Protokollierung im Dateisystem werden Dateien erzeugt, die über FTP oder andere Dienstprogramme auf Ihren lokalen Computer heruntergeladen werden können, wie später in diesem Abschnitt beschrieben wird.
 
@@ -108,7 +108,7 @@ Da die Anwendungsprotokollierung im Speicher die Verwendung eines Speicherclient
 
 Diagnosen können auch über die Azure PowerShell mit dem Cmdlet **Set-AzureWebsite** aktiviert werden. Wenn Sie Azure PowerShell nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden von Azure PowerShell](/develop/nodejs/how-to-guides/powershell-cmdlets/).
 
-> [AZURE.NOTE]Die Anwendungsprotokollierung beruht auf Protokollinformationen, die von Ihrer Anwendung erzeugt werden. Die verwendete Methode zum Erzeugen von Protokollinformationen sowie das Format der Informationen hängt von der Sprache ab, in der Ihre Anwendung geschrieben ist. Erläuterungen zur sprachspezifischen Verwendung der Anwendungsprotokollierung finden Sie in den folgenden Artikeln:
+> [AZURE.NOTE] Die Anwendungsprotokollierung beruht auf Protokollinformationen, die von Ihrer Anwendung erzeugt werden. Die verwendete Methode zum Erzeugen von Protokollinformationen sowie das Format der Informationen hängt von der Sprache ab, in der Ihre Anwendung geschrieben ist. Erläuterungen zur sprachspezifischen Verwendung der Anwendungsprotokollierung finden Sie in den folgenden Artikeln:
 >
 > - **.NET** – [Problembehandlung von Web-Apps in Azure App Service in Visual Studio](web-sites-dotnet-troubleshoot-visual-studio.md)
 > - **Node.js** - [Debuggen einer Node.js-Anwendung auf Azure-Websites](web-sites-nodejs-debug.md)
@@ -134,7 +134,7 @@ Der Abschnitt **Website-Diagnose** der Verwaltungsseite **Konfigurieren** steuer
 
 Klicken Sie nach dem Aktivieren der Diagnose für eine Web-App unten auf der Verwaltungsseite **Konfigurieren** auf das Symbol **Speichern**, um die von Ihnen festgelegten Optionen anzuwenden.
 
-> [AZURE.IMPORTANT]Detaillierte Fehlermeldungen und Ablaufverfolgung für Anforderungsfehler belasten eine Web-App erheblich. Wir empfehlen, diese Funktionen wieder zu deaktivieren, nachdem Sie die zu behebenden Probleme reproduziert haben.
+> [AZURE.IMPORTANT] Detaillierte Fehlermeldungen und Ablaufverfolgung für Anforderungsfehler belasten eine Web-App erheblich. Wir empfehlen, diese Funktionen wieder zu deaktivieren, nachdem Sie die zu behebenden Probleme reproduziert haben.
 
 ### Erweiterte Konfiguration ###
 
@@ -173,7 +173,7 @@ Protokolldateien können per FTP, mit Azure PowerShell oder mit der Azure-Befehl
 
 1. Suchen Sie im **Startmenü** oder auf der **Startseite** nach **Azure PowerShell**. Klicken Sie mit der rechten Maustaste auf den Eintrag **Azure PowerShell**, und wählen Sie **Als Administrator ausführen** aus.
 
-	> [AZURE.NOTE]Falls **Azure PowerShell** nicht installiert ist, finden Sie Informationen zur Installation und Konfiguration unter [Erste Schritte mit Azure PowerShell-Cmdlets](http://msdn.microsoft.com/library/windowsazure/jj554332.aspx).
+	> [AZURE.NOTE] Falls **Azure PowerShell** nicht installiert ist, finden Sie Informationen zur Installation und Konfiguration unter [Erste Schritte mit Azure PowerShell-Cmdlets](http://msdn.microsoft.com/library/windowsazure/jj554332.aspx).
 
 2. Geben Sie an der Eingabeaufforderung von Azure PowerShell den folgenden Befehl ein, um die Protokolldateien herunterzuladen:
 
@@ -201,7 +201,7 @@ Sie können auch einen Live-Stream der Protokollereignisse mit dem folgenden Bef
 
 Daraufhin werden die Protokollinformationen an der Eingabeaufforderung, PowerShell, Bash- oder Terminalsitzung angezeigt, von der der Befehl ausgeführt wird.
 
-> [AZURE.NOTE]Falls der Befehl **azure** nicht installiert ist, finden Sie Informationen zur Installation und Konfiguration unter [Verwenden der Azure-CLI](../virtual-machines-command-line-tools.md).
+> [AZURE.NOTE] Falls der Befehl **azure** nicht installiert ist, finden Sie Informationen zur Installation und Konfiguration unter [Verwenden der Azure-CLI](../virtual-machines-command-line-tools.md).
 
 ### Lesen der Protokolldateien ###
 
@@ -263,7 +263,7 @@ Nachdem Sie die Endpunktüberwachung konfiguriert haben, können Sie Details zu 
 7.	Sie können optional die vorherigen Schritte wiederholen, um einen zweiten Endpunkt zu erstellen.
 8.	Klicken Sie auf **Speichern**. Es kann einige Zeit dauern, bis die Daten der Web-Endpunktüberwachung auf den Registerkarten **Dashboard** und **Monitor** verfügbar sind.
 
-	Gehen Sie folgendermaßen vor, um eine E-Mail-Regel zu erstellen:
+Gehen Sie folgendermaßen vor, um eine E-Mail-Regel zu erstellen:
 
 9.	Klicken Sie in der Diensteleiste links auf **Verwaltungsdienste**.
 10.	Klicken Sie unten auf **Regel hinzufügen**.
@@ -279,7 +279,7 @@ Weitere Informationen zur Web-App-Endpunktüberwachung erhalten Sie in den folge
 
 - [Pflegen von Azure-Websites plus Endpunktüberwachung - mit Stefan Schackow](/documentation/videos/azure-web-sites-endpoint-monitoring-and-staying-up/)
 
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Änderungen
 * Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
@@ -289,4 +289,4 @@ Weitere Informationen zur Web-App-Endpunktüberwachung erhalten Sie in den folge
 [vmsizes]: http://go.microsoft.com/fwlink/?LinkID=309169
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

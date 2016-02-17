@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/12/2015"
+	ms.date="02/03/2016"
 	ms.author="jeffreyg; ronitr"/>
  
 # Erste Schritte bei der Überwachung von SQL-Datenbank
@@ -21,7 +21,7 @@ Die Azure SQL-Datenbanküberwachung verfolgt Datenbankereignisse und schreibt ü
 
 Die Überwachung kann Ihnen dabei helfen, die gesetzlichen Bestimmungen einzuhalten, die Datenbankaktivität zu verstehen und Einblicke in Abweichungen und Anomalien zu erhalten, die auf geschäftsspezifische Bedenken oder mutmaßliche Sicherheitsverstöße hinweisen können.
 
-Überwachungstools ermöglichen und unterstützen die Einhaltung von Konformitätsstandards, gewährleisten aber keine Konformität. Weitere Informationen zu Azure-Programmen, die die Einhaltung von Standards unterstützen, finden Sie im [Microsoft Azure-Vertrauenscenter](http://azure.microsoft.com/support/trust-center/compliance).
+Überwachungstools ermöglichen und unterstützen die Einhaltung von Konformitätsstandards, gewährleisten aber keine Konformität. Weitere Informationen zu Azure-Programmen, die die Einhaltung von Standards unterstützen, finden Sie im [Microsoft Azure-Vertrauenscenter](https://azure.microsoft.com/support/trust-center/compliance/).
 
 + [Grundlagen zur Überwachung von Azure SQL-Datenbank]
 + [Einrichten der Überwachung für Ihre Datenbank]
@@ -37,7 +37,7 @@ Die Überwachung von SQL-Datenbank bietet folgende Möglichkeiten:
 - **Melden** von Datenbankaktivitäten. Sie können vorkonfigurierte Berichte und ein Dashboard verwenden, um schnell mit der Berichterstattung über Aktivitäten und Ereignisse zu beginnen.
 - **Analysieren** von Berichten. Sie können nach verdächtigen Ereignissen, ungewöhnliche Aktivitäten und Trends suchen.
 
-> [AZURE.NOTE]Sie können jetzt proaktive Warnungen vor anomalen Datenbankaktivitäten erhalten, die auf mögliche Sicherheitsbedrohungen hinweisen können, indem Sie das neue Feature **Bedrohungserkennung** verwenden. Es befindet sich derzeit in der Vorschauphase. Sie können die Bedrohungserkennung auf dem Blatt für die Überwachungskonfiguration aktivieren und konfigurieren. Weitere Informationen finden Sie unter [Erste Schritte mit der Bedrohungserkennung](sql-database-threat-detection-get-started.md).
+> [AZURE.NOTE] Sie können jetzt proaktive Warnungen vor anomalen Datenbankaktivitäten erhalten, die auf mögliche Sicherheitsbedrohungen hinweisen können, indem Sie das neue Feature **Bedrohungserkennung** verwenden. Es befindet sich derzeit in der Vorschauphase. Sie können die Bedrohungserkennung auf dem Blatt für die Überwachungskonfiguration aktivieren und konfigurieren. Weitere Informationen finden Sie unter [Erste Schritte mit der Bedrohungserkennung](sql-database-threat-detection-get-started.md).
 
 Sie können eine Überwachung für die folgenden Ereigniskategorien einrichten:
 
@@ -178,4 +178,4 @@ Es gibt mehrere PowerShell-Cmdlets, die Sie zum Konfigurieren der Überwachung i
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0204_2016-->

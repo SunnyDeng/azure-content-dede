@@ -53,4 +53,4 @@ Weitere Informationen zu Service Fabric finden Sie unter:
 - [Anwendungsmodell](service-fabric-application-model.md)
 - [Anwendungsszenarien](service-fabric-application-scenarios.md)
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

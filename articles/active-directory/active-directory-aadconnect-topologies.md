@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="12/02/2015"
+   ms.date="01/22/2016"
    ms.author="andkjell"/>
 
 # Topologien für Azure AD Connect
@@ -56,9 +56,17 @@ Der Azure AD Connect-Assistent bietet mehrere Optionen für das Konsolidieren vo
 
 Allgemeine Topologien werden im nächsten Abschnitt erläutert: [Separate Topologien](#multiple-forests-separate-topologies), [Vollständig vermaschtes Netz](#multiple-forests-full-mesh-with-optional-galsync) und [Kontoressource](#multiple-forests-account-resource-forest).
 
-Die Standardkonfiguration der Azure AD Connect-Synchronisierung basiert auf folgenden Annahmen: 1. Benutzer haben nur ein einziges aktiviertes Konto, und die Gesamtstruktur, in der sich dieses Konto befindet, wird verwendet, um den Benutzer zu authentifizieren. Dies gilt für Kennwortsynchronisierung und Verbund; userPrincipalName und sourceAnchor/immutableID stammen aus dieser Gesamtstruktur. 2. Benutzer haben nur ein einziges Postfach. 3. Die Gesamtstruktur, die das Postfach des Benutzers enthält, hat die beste Datenqualität für Attribute, die in der globalen Exchange-Adressliste (Global Address List, GAL) sichtbar sind. Wenn kein Postfach für den Benutzer vorhanden ist, kann jede Gesamtstruktur verwendet werden, um diese Attributwerte beizutragen. 4. Wenn Sie ein verknüpftes Postfach haben, dann wird auch ein anderes Konto in einer anderen Gesamtstruktur für die Anmeldung verwendet.
+Die Standardkonfiguration der Azure AD Connect-Synchronisierung basiert auf folgenden Annahmen:
 
-Wenn Ihre Umgebung mit diesen Annahmen nicht übereinstimmt, geschieht Folgendes: – Wenn Sie mehrere aktive Konten oder mehrere Postfächer haben, wählt das Synchronisierungsmodul eines aus und ignoriert die anderen. – Wenn Sie verknüpfte Postfächer, jedoch kein anderes Konto haben, werden diese Konten nicht in Azure AD exportiert, und der Benutzer wird nicht Mitglied einer Gruppe. In DirSync würde ein verknüpftes Postfach als normales Postfach dargestellt, darum ist dies absichtlich ein anderes Verhalten, um Szenarien mit mehreren Gesamtstrukturen besser zu unterstützen.
+1.	Benutzer haben nur ein einziges aktiviertes Konto, und die Gesamtstruktur, in der sich dieses Konto befindet, wird verwendet, um den Benutzer zu authentifizieren. Dies gilt für Kennwortsynchronisierung und Verbund; userPrincipalName und sourceAnchor/immutableID stammen aus dieser Gesamtstruktur.
+2.	Benutzer haben nur ein einziges Postfach.
+3.	Die Gesamtstruktur, die das Postfach des Benutzers enthält, hat die beste Datenqualität für Attribute, die in der globalen Exchange-Adressliste (Global Address List, GAL) sichtbar sind. Wenn kein Postfach für den Benutzer vorhanden ist, kann jede Gesamtstruktur verwendet werden, um diese Attributwerte beizutragen.
+4.	Wenn Sie ein verknüpftes Postfach haben, dann wird auch ein anderes Konto in einer anderen Gesamtstruktur für die Anmeldung verwendet.
+
+Wenn Ihre Umgebung diesen Annahmen nicht entspricht, passiert Folgendes:
+
+-	Wenn Sie mehrere aktive Konten oder Postfächer haben, wählt das Synchronisierungsmodul eines von ihnen aus und ignoriert die anderen.
+-	Wenn Sie verknüpfte Postfächer, jedoch kein anderes Konto haben, werden diese Konten nicht in Azure AD exportiert, und der Benutzer wird nicht Mitglied einer Gruppe. In DirSync würde ein verknüpftes Postfach als normales Postfach dargestellt, darum ist dies absichtlich ein anderes Verhalten, um Szenarien mit mehreren Gesamtstrukturen besser zu unterstützen.
 
 ### Mehrere Gesamtstrukturen, mehrere Synchronisierungsserver zu einem Azure AD-Verzeichnis
 ![MultiForestMultiSyncUnsupported](./media/active-directory-aadconnect-topologies/MultiForestMultiSyncUnsupported.png)
@@ -142,7 +150,10 @@ In dieser Topologie gibt es keine "GALsync" zwischen den Azure AD-Verzeichnisins
 
 Mit dieser Topologie kann nur eines der Azure AD-Verzeichnisse den Exchange-Hybrid mit dem lokalen Active Directory aktivieren.
 
-Die Anforderung für wechselseitig exklusive Gruppen von Objekten gilt auch für das Zurückschreiben. Damit werden einige Zurückschreibfeatures mit dieser Topologie nicht unterstützt, da sie eine lokale Einzelkonfiguration voraussetzen. Dazu gehören: - Gruppenzurückschreiben mit Standardkonfiguration – Gerätezurückschreiben
+Die Anforderung für wechselseitig exklusive Gruppen von Objekten gilt auch für das Zurückschreiben. Damit werden einige Zurückschreibfeatures mit dieser Topologie nicht unterstützt, da sie eine lokale Einzelkonfiguration voraussetzen. Dies umfasst:
+
+-	Gruppenrückschreiben mit Standardkonfiguration
+-	Geräterückschreiben
 
 ### Jedes Objekt mehrmals in einem Azure AD-Verzeichnis
 ![SingleForestMultiDirectoryUnsupported](./media/active-directory-aadconnect-topologies/SingleForestMultiDirectoryUnsupported.png) ![SingleForestMultiConnectorsUnsupported](./media/active-directory-aadconnect-topologies/SingleForestMultiConnectorsUnsupported.png)
@@ -167,4 +178,4 @@ Weitere Informationen zur Konfiguration der [Azure AD Connect-Synchronisierung](
 
 Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

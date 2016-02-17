@@ -13,10 +13,11 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="na"
-   ms.date="10/27/2015"
+   ms.date="02/03/2016"
    ms.author="viviali"/>
 
-# Tokenformat für externe Benutzer bei der Vorschau der Azure Active Directory (Azure AD) B2B-Zusammenarbeit
+# Vorschau der Azure AD B2B-Zusammenarbeit: Tokenformat für externe Benutzer
+
 Die Ansprüche für ein standardmäßiges Azure AD-Token werden im Artikel [Unterstützte Token- und Anspruchstypen](active-directory-token-and-claims.md) auf azure.microsoft.com beschrieben.
 
 Die Ansprüche, die für einen für die B2B-Zusammenarbeit authentifizierten externen Benutzer anders sind, lauten wie folgt:<br/> - **OID:** Die Objekt-ID aus dem Ressourcenmandanten<br/> - **TID**: Mandanten-ID aus dem Ressourcenmandanten<br/> - **Aussteller**: Dies ist der Ressourcenmandant<br/> - **IDP**: Hierbei handelt es sich um den Home-Mandanten des Benutzers<br/> - **AltSecId**: Dies ist die alternative Sicherheits-ID, die für Sie nicht transparent ist.<br/>
@@ -31,4 +32,4 @@ Durchsuchen Sie unsere anderen Artikel zur Azure B2B-Zusammenarbeit:
 - [Objektattributänderungen für externe Benutzer](active-directory-b2b-references-external-user-object-attribute-changes.md)
 - [Aktuelle Einschränkungen der Vorschau](active-directory-b2b-current-preview-limitations.md)
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0204_2016-->

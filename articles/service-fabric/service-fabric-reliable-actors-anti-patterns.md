@@ -30,4 +30,4 @@ Wir haben die folgenden möglichen Fallgruben für Kunden ermittelt, die sich ne
 
 * Blindes Zuordnen von Entitätsmodellen. Dies richtet sich an Entwickler, die aus einer relationalen Welt kommen, in der Probleme mithilfe von Entitäten und deren Beziehungen modelliert werden. Während dieser Ansatz für das Verständnis der Subjektdomäne nach wie vor nützlich ist, sollte er mit dienst-orientierter Denkweise gekoppelt und in das Verhalten aufgenommen werden.
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

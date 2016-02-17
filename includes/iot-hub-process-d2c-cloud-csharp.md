@@ -8,13 +8,13 @@ Um Nachrichten zuverlässig in den Azure-Speicher zu schreiben, wird im Beispiel
 
 Der Ereignisprozessor nutzt Event Hubs-Nachrichten-Offsets als Block-IDs. Dies ermöglicht eine Überprüfung der Deduplizierung vor dem Ausführen eines Commits für den neuen Block an den Speicher, und ein etwaiger Konflikt zwischen dem Commit eines Blocks und dem Prüfpunkt wird verhindert.
 
-> [AZURE.NOTE]In diesem Lernprogramm wird ein einzelnes Speicherkonto zum Schreiben aller Nachrichten verwendet, die von IoT Hub abgerufen werden. Informationen zum Treffen der Entscheidung, ob Sie in Ihrer Lösung mehrere Azure-Speicherkonten benötigen, finden Sie unter [Richtlinien zur Azure-Speicherskalierbarkeit].
+> [AZURE.NOTE] In diesem Lernprogramm wird ein einzelnes Speicherkonto zum Schreiben aller Nachrichten verwendet, die von IoT Hub abgerufen werden. Informationen zum Treffen der Entscheidung, ob Sie in Ihrer Lösung mehrere Azure-Speicherkonten benötigen, finden Sie unter [Richtlinien zur Azure-Speicherskalierbarkeit].
 
 Die Anwendung nutzt die Service Bus-Deduplizierungsfunktion, um beim Verarbeiten interaktiver Nachrichten Duplikate zu vermeiden. Das simulierte Gerät versieht jede interaktive Nachricht mit einer eindeutigen **MessageId**, damit Service Bus sicherstellen kann, dass im angegebenen Zeitfenster für die Deduplizierung nicht zwei Nachrichten mit der gleichen **MessageId** an die Empfänger übertragen werden. Diese Deduplizierung sorgt zusammen mit der Abschlusssemantik pro Nachricht von Service Bus-Warteschlangen dafür, dass die zuverlässige Verarbeitung von interaktiven Nachrichten vereinfacht wird.
 
 Um sicherzustellen, dass keine Nachrichten außerhalb des Deduplizierungsfensters erneut übermittelt werden, wird der **EventProcessorHost**-Prüfpunktmechanismus im Code mit dem Deduplizierungsfenster der Service Bus-Warteschlange synchronisiert. Hierzu wird mindestens einmal bei jedem Ablauf des Deduplizierungsfensters (in diesem Lernprogramm nach einer Stunde) ein Prüfpunkt erzwungen.
 
-> [AZURE.NOTE]In diesem Lernprogramm wird eine einzelne partitionierte Service Bus-Warteschlange verwendet, um alle interaktiven Nachrichten zu verarbeiten, die von IoT Hub abgerufen werden. Weitere Informationen zur Verwendung von Service Bus-Warteschlangen, um die Skalierbarkeitsanforderungen Ihrer Lösung zu erfüllen, finden Sie unter [Service Bus-Dokumentation].
+> [AZURE.NOTE] In diesem Lernprogramm wird eine einzelne partitionierte Service Bus-Warteschlange verwendet, um alle interaktiven Nachrichten zu verarbeiten, die von IoT Hub abgerufen werden. Weitere Informationen zur Verwendung von Service Bus-Warteschlangen, um die Skalierbarkeitsanforderungen Ihrer Lösung zu erfüllen, finden Sie unter [Service Bus-Dokumentation].
 
 ### Bereitstellen eines Azure-Speicherkontos und einer Service Bus-Warteschlange
 Zum Verwenden der [EventProcessorHost]-Klasse müssen Sie über ein Azure-Speicherkonto verfügen, damit von **EventProcessorHost** Prüfpunktinformationen aufgezeichnet werden können. Sie können ein vorhandenes Speicherkonto verwenden oder mithilfe der Anweisungen unter [Informationen zu Azure Storage] ein neues Konto erstellen. Notieren Sie sich die Verbindungszeichenfolge für das Speicherkonto.
@@ -200,7 +200,7 @@ Sie benötigen außerdem eine Service Bus-Warteschlange, um die zuverlässige Ve
 
     Mit der **AppendAndCheckpoint**-Methode wird zuerst eine „blockId“ für den anzufügenden Block generiert. Für den Azure-Speicher ist es erforderlich, dass alle Block-IDs die gleiche Länge haben. Die Methode füllt den Offset daher mit führenden Nullen auf: `currentBlockInitOffset.ToString("0000000000000000000000000")`. Wenn ein Block mit dieser ID im Blob bereits vorhanden ist, überschreibt die Methode ihn mit dem aktuellen Inhalt des Puffers.
 
-    > [AZURE.NOTE]Um den Code zu vereinfachen, wird in diesem Lernprogramm eine einzelne Blob-Datei pro Partition zum Speichern von Nachrichten verwendet. Für eine echte Lösung würde das „File Rolling“ implementiert werden, indem zusätzliche Dateien erstellt werden, wenn sie eine bestimmte Größe erreichen (ein Azure-Blockblob kann maximal 195 Gb groß sein) oder wenn ein bestimmter Zeitraum verstrichen ist.
+    > [AZURE.NOTE] Um den Code zu vereinfachen, wird in diesem Lernprogramm eine einzelne Blob-Datei pro Partition zum Speichern von Nachrichten verwendet. Für eine echte Lösung würde das „File Rolling“ implementiert werden, indem zusätzliche Dateien erstellt werden, wenn sie eine bestimmte Größe erreichen (ein Azure-Blockblob kann maximal 195 Gb groß sein) oder wenn ein bestimmter Zeitraum verstrichen ist.
 
 8. Fügen Sie am Anfang der **Program**-Klasse die folgenden **using**-Anweisungen hinzu:
 
@@ -229,7 +229,7 @@ Sie benötigen außerdem eine Service Bus-Warteschlange, um die zuverlässige Ve
     }
     ```
     
-    > [AZURE.NOTE]Der Einfachheit halber wird in diesem Lernprogramm eine einzelne Instanz der [EventProcessorHost]-Klasse verwendet. Weitere Informationen finden Sie im [Programmierleitfaden für Event Hubs].
+    > [AZURE.NOTE] Der Einfachheit halber wird in diesem Lernprogramm eine einzelne Instanz der [EventProcessorHost]-Klasse verwendet. Weitere Informationen finden Sie im [Programmierleitfaden für Event Hubs].
 
 ## Empfangen von interaktiven Nachrichten
 In diesem Abschnitt schreiben Sie eine Windows-Konsolen-App, die interaktive Nachrichten aus der Service Bus-Warteschlange empfängt. Weitere Informationen zum Aufbau einer Lösung mit Service Bus finden Sie im Artikel zum [Erstellen von Anwendungen mit mehreren Ebenen mit Service Bus][].
@@ -293,7 +293,6 @@ In diesem Abschnitt schreiben Sie eine Windows-Konsolen-App, die interaktive Nac
 [Scaled out event processing]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-45f43fc3
 [EventProcessorHost]: http://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventprocessorhost(v=azure.95).aspx
 [Programmierleitfaden für Event Hubs]: ../event-hubs/event-hubs-programming-guide.md
-[Azure preview portal]: https://portal.azure.com/
 [Transient Fault Handling]: https://msdn.microsoft.com/library/hh680901(v=pandp.50).aspx
 [Azure-Portal]: https://manage.windowsazure.com/
 [Service Bus Queue]: ../service-bus/service-bus-dotnet-how-to-use-queues.md
@@ -313,4 +312,4 @@ In diesem Abschnitt schreiben Sie eine Windows-Konsolen-App, die interaktive Nac
 [31]: ./media/iot-hub-process-d2c-cloud-csharp/createqueue3.png
 [32]: ./media/iot-hub-process-d2c-cloud-csharp/createqueue4.png
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0204_2016-->

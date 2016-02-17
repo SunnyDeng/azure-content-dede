@@ -34,7 +34,7 @@ Weitere Informationen:
 
 - [Azure Media Player](http://aka.ms/ampinfo)
 - [Azure Media Player-Dokumentation](http://aka.ms/ampdocs) 
-- [Azure Media Player – Blog für die ersten Schritte](http://azure.microsoft.com/blog/2015/04/15/announcing-azure-media-player)
+- [Azure Media Player – Blog für die ersten Schritte](https://azure.microsoft.com/blog/2015/04/15/announcing-azure-media-player/)
 - [Melden Sie sich an, um immer über die neuesten Informationen zu Azure Media Player auf dem Laufenden zu sein.](http://aka.ms/ampsignup)
 - [Hinzufügen von neuen Funktionsanfragen, Ideen und Feedback](http://aka.ms/ampuservoice) 
 
@@ -75,11 +75,11 @@ Informationen zu Untertiteln und der Unterstützung von Werbeeinblendungen in Li
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-##Weitere Informationen
+##Siehe auch
 
 [Einbetten eines Videos mit adaptivem Streaming im MPEG-DASH-Format in eine HTML5-Anwendung mit DASH.js](media-services-embed-mpeg-dash-in-html5.md)
 
-[dash.js-Repository von GitHub](https://github.com/Dash-Industry-Forum/dash.js) (in englischer Sprache)
+[dash.js-Repository von GitHub (in englischer Sprache)](https://github.com/Dash-Industry-Forum/dash.js)
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

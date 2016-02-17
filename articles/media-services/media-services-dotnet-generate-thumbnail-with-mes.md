@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/15/2015"    
+	ms.date="01/28/2016" 
 	ms.author="juliako"/>
 
 
@@ -302,7 +302,6 @@ Informationen zum Schema finden Sie in [diesem](https://msdn.microsoft.com/libra
 	          <MaxBitrate>4500</MaxBitrate>
 	        </H264Layer>
 	      </H264Layers>
-	      <Chapters />
 	    </H264Video>
 	    <AACAudio>
 	      <Profile>AACLC</Profile>
@@ -383,4 +382,4 @@ Es gelten die folgenden Bedingungen:
 
 [Media Services-Codierung (Übersicht)](media-services-encode-asset.md)
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0204_2016-->

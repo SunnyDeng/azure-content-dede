@@ -346,7 +346,7 @@ Die Antwort auf diese Anforderung lautet wie folgt:
 
  [Pläne und Abrechnung in Azure Scheduler](scheduler-plans-billing.md)
 
- [Azure Scheduler-REST-API – Referenz](https://msdn.microsoft.com/library/dn528946)
+ [Azure Scheduler-REST-API – Referenz](https://msdn.microsoft.com/library/mt629143)
 
  [Azure Scheduler – PowerShell-Cmdlets-Referenz](scheduler-powershell-reference.md)
 
@@ -360,4 +360,4 @@ Die Antwort auf diese Anforderung lautet wie folgt:
  
   
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0128_2016-->

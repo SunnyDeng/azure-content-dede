@@ -50,4 +50,4 @@
 
 Weitere Informationen zum klassischen Azure-Portal: http://azure.microsoft.com.
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

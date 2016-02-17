@@ -162,4 +162,4 @@ Sie können jeden Vorgang auswählen, um weitere Details anzuzeigen.
 - Informationen zum Gewähren des Zugriffs für einen Dienstprinzipal finden Sie unter [Authentifizieren eines Dienstprinzipals mit dem Azure-Ressourcen-Manager](resource-group-authenticate-service-principal.md).
 - Informationen zum Beschränken von Aktionen für eine Ressource für alle Benutzer finden Sie unter [Sperren von Ressourcen mit dem Azure-Ressourcen-Manager](resource-group-lock-resources.md).
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

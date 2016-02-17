@@ -2,7 +2,6 @@
    pageTitle="Ausführliche exemplarische Vorgehensweise zur Verwendung der Vorschau der Azure Active Directory B2B-Zusammenarbeit | Microsoft Azure"
    description="Azure Active Directory B2B ermöglicht Geschäftspartnern den sicheren Zugriff auf Ihre Unternehmensanwendungen und unterstützt so Ihre unternehmensübergreifenden Beziehungen."
    services="active-directory"
-   documentationCenter="na"
    authors="viv-liu"
    manager="cliffdi"
    editor=""
@@ -14,10 +13,11 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="identity"
-   ms.date="10/27/2015"
+   ms.date="02/03/2016"
    ms.author="viviali"/>
 
-# Ausführliche exemplarische Vorgehensweise zur Verwendung der Vorschau der Azure Active Directory (Azure AD) B2B-Zusammenarbeit
+# Vorschau der Azure AD B2B-Zusammenarbeit: Ausführliche exemplarische Vorgehensweise
+
 In dieser exemplarischen Vorgehensweise wird die Verwendung der Azure AD B2B-Zusammenarbeit beschrieben. Als IT-Administrator von Contoso möchten wir für Mitarbeiter von drei Partnerunternehmen Anwendungen freigeben. Keines der Partnerunternehmen benötigt Azure AD.
 
 - Alice von Simple Partner Org.
@@ -80,4 +80,4 @@ Weitere Artikel zur Azure AD B2B-Zusammenarbeit:
 - [Objektattributänderungen für externe Benutzer](active-directory-b2b-references-external-user-object-attribute-changes.md)
 - [Aktuelle Einschränkungen der Vorschau](active-directory-b2b-current-preview-limitations.md)
 
-<!----HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0204_2016-->

@@ -50,7 +50,7 @@ Mehrstufige Volumes sind Volumes mit schlanker Speicherzuweisung, in denen häuf
 
 Sie können ein mehrstufiges Volume als Archivierungsvolume festlegen, indem Sie das Kontrollkästchen **Verwenden Sie dieses Volume für Archivdaten, auf die Sie seltener zugreifen** aktivieren. Archivierungsvolumes verwenden eine Deduplizierungsblockgröße von 512 KB, während andere Volumes eine Blockgröße von 64 KB verwenden. Die größere Deduplizierungsblockgröße ermöglicht dem Gerät die Übertragung größerer Datenblöcke in die Cloud.
 
->[AZURE.NOTE]Archivierungsvolumes, die mit einer StorSimple-Version vor Update 2 erstellt werden, werden als mehrstufig mit aktiviertem Archivierungskontrollkästchen importiert.
+>[AZURE.NOTE] Archivierungsvolumes, die mit einer StorSimple-Version vor Update 2 erstellt werden, werden als mehrstufig mit aktiviertem Archivierungskontrollkästchen importiert.
 
 ### Bereitgestellte Kapazität
 
@@ -136,13 +136,13 @@ Sie haben beim Bereitstellen der StorSimple-Lösung [ein Volume erstellt](storsi
 
 Das neue Volume kann nun verwendet werden.
 
->[AZURE.NOTE]Wenn Sie ein lokales Volume und unmittelbar danach ein weiteres lokales Volume erstellen, werden die Aufträge zur Volumeerstellung nacheinander ausgeführt. Der erste Auftrag zur Volumeerstellung muss abgeschlossen sein, bevor der nächste Auftrag zur Volumeerstellung beginnt.
+>[AZURE.NOTE] Wenn Sie ein lokales Volume und unmittelbar danach ein weiteres lokales Volume erstellen, werden die Aufträge zur Volumeerstellung nacheinander ausgeführt. Der erste Auftrag zur Volumeerstellung muss abgeschlossen sein, bevor der nächste Auftrag zur Volumeerstellung beginnt.
 
 ## Ändern von Volumes
 
 Zum Ändern eines Volumes müssen Sie dieses erweitern oder die Hosts ändern, die auf das Volume zugreifen.
 
-> [AZURE.IMPORTANT]
+> [AZURE.IMPORTANT] 
 >
 > - Wenn Sie die Größe des Volumes auf dem Gerät ändern, muss auch die Größe des Volumes auf dem Host geändert werden. 
 > - Die hier beschriebenen hostseitigen Schritte gelten für Windows Server 2012 (2012R2). Vorgehensweisen für Linux oder andere Hostbetriebssysteme können davon abweichen. Beachten Sie beim Ändern des Volumes auf einem Host mit einem anderen Betriebssystem die Anweisungen zu Ihrem Hostbetriebssystem. 
@@ -163,7 +163,7 @@ Zum Ändern eines Volumes müssen Sie dieses erweitern oder die Hosts ändern, d
 
 5. Unter **Zusätzliche Einstellungen** können Sie den ACR ändern, vorausgesetzt, dass das Volume offline ist. Wenn das Volume online ist, müssen Sie dieses zunächst offline schalten. Lesen Sie vor dem Bearbeiten eines Zugriffssteuerungsdatensatzes die Schritte unter [Offlineschalten von Volumes](#take-a-volume-offline).
 
-    > [AZURE.NOTE]Die Option **Standardsicherung für dieses Volume?** kann für das Volume nicht geändert werden.
+    > [AZURE.NOTE] Die Option **Standardsicherung für dieses Volume?** kann für das Volume nicht geändert werden.
 
 6. Speichern Sie die Änderungen, indem Sie auf das Häkchensymbol ![Häkchensymbol](./media/storsimple-manage-volumes-u2/HCS_CheckIcon.png) klicken. Das klassische Azure-Portal zeigt eine Meldung zur Aktualisierung des Volumes an. Eine Erfolgsmeldung wird angezeigt, wenn das Volume aktualisiert wurde.
 
@@ -174,11 +174,11 @@ Zum Ändern eines Volumes müssen Sie dieses erweitern oder die Hosts ändern, d
    3. Wählen Sie in der Liste der Datenträger die aktualisierten Volumes aus und dann **Volume erweitern**. Der Assistent zum Erweitern von Volumes wird gestartet. Klicken Sie auf **Weiter**.
    4. Schließen Sie den Assistenten unter Verwendung der angegebenen Standardwerte ab. Nach Abschluss des Assistenten sollte für das Volume die höhere Speichergröße angezeigt werden.
 
-    >[AZURE.NOTE]Wenn Sie ein lokales Volume und unmittelbar danach ein weiteres lokales Volume erweitern, werden die Aufträge zur Volumeerweiterung nacheinander ausgeführt. Der erste Auftrag zur Volumeerweiterung muss abgeschlossen sein, bevor der nächste Auftrag zur Volumeerweiterung beginnt.
+    >[AZURE.NOTE] Wenn Sie ein lokales Volume und unmittelbar danach ein weiteres lokales Volume erweitern, werden die Aufträge zur Volumeerweiterung nacheinander ausgeführt. Der erste Auftrag zur Volumeerweiterung muss abgeschlossen sein, bevor der nächste Auftrag zur Volumeerweiterung beginnt.
 
 ![Video verfügbar](./media/storsimple-manage-volumes-u2/Video_icon.png) **Video verfügbar**
 
-Sie können sich [hier](http://azure.microsoft.com/documentation/videos/expand-a-storsimple-volume) ein Video anschauen, in dem das Erweitern eines Volumes demonstriert wird.
+Sie können sich [hier](https://azure.microsoft.com/documentation/videos/expand-a-storsimple-volume/) ein Video anschauen, in dem das Erweitern eines Volumes demonstriert wird.
 
 ## Ändern des Volumetyps
 
@@ -189,11 +189,11 @@ Sie können den Volumetyp von mehrstufig in lokal ändern oder umgekehrt. Normal
 
 Ein lokales Volume wird bei seiner Erstellung vollständig bereitgestellt. Wenn Sie ein mehrstufiges Volume in ein lokales Volume konvertieren, stellt StorSimple vor der Konvertierung sicher, dass auf dem Gerät genügend Speicherplatz verfügbar ist. Wenn Sie nicht über genügend Speicherplatz verfügen, erhalten Sie eine Fehlermeldung und der Vorgang wird abgebrochen.
 
-> [AZURE.NOTE]Bevor Sie eine Konvertierung von mehrstufig in lokal starten, berücksichtigen Sie unbedingt den Platzbedarf der anderen Workloads.
+> [AZURE.NOTE] Bevor Sie eine Konvertierung von mehrstufig in lokal starten, berücksichtigen Sie unbedingt den Platzbedarf der anderen Workloads.
 
 Möglicherweise empfiehlt es sich, ein lokales Volume in ein mehrstufiges Volume zu ändern, wenn Sie zusätzlichen Speicherplatz zur Bereitstellung anderer Volumes benötigen. Bei der Konvertierung des lokalen Volumes in ein mehrstufiges erhöht sich die auf dem Gerät verfügbare Kapazität um die Größe der freigegebenen Kapazität. Wenn Verbindungsprobleme die Konvertierung eines Volumes vom lokalen in den mehrstufigen Typ verhindern, zeigt das lokale Volume Eigenschaften eines mehrstufigen Volumes, bis die Konvertierung abgeschlossen ist. Dies liegt daran, dass einige Daten möglicherweise in die Cloud übergegangen sind. Diese übergelaufenen Daten belegen weiterhin lokalen Speicherplatz auf dem Gerät, der erst freigegeben werden kann, wenn der Vorgang neu gestartet wird und abgeschlossen ist.
 
->[AZURE.NOTE]Das Konvertieren eines Volumes kann einige Zeit dauern, und eine Konvertierung kann nach ihrem Start nicht abgebrochen werden. Das Volume bleibt während der Konvertierung online, und Sie können Sicherungen erstellen. Sie können das Volume jedoch nicht erweitern oder wiederherstellen, solange die Konvertierung stattfindet.
+>[AZURE.NOTE] Das Konvertieren eines Volumes kann einige Zeit dauern, und eine Konvertierung kann nach ihrem Start nicht abgebrochen werden. Das Volume bleibt während der Konvertierung online, und Sie können Sicherungen erstellen. Sie können das Volume jedoch nicht erweitern oder wiederherstellen, solange die Konvertierung stattfindet.
 
 #### So ändern Sie den Volumetyp
 
@@ -237,11 +237,11 @@ Möglicherweise müssen Sie ein Volume offline schalten, wenn Sie dieses ändern
 
     Wenn ein Volume offline geschaltet wurde, wird die Option **Online schalten** angezeigt.
 
-> [AZURE.NOTE]Mit dem Befehl **Offline schalten** wird eine Anforderung an das Gerät gesendet, das Volume offline zu schalten. Wenn das Volume weiterhin von Hosts verwendet wird, führt dies zur Unterbrechung von Verbindungen, das Offlineschalten des Volumes schlägt jedoch nicht fehl.
+> [AZURE.NOTE] Mit dem Befehl **Offline schalten** wird eine Anforderung an das Gerät gesendet, das Volume offline zu schalten. Wenn das Volume weiterhin von Hosts verwendet wird, führt dies zur Unterbrechung von Verbindungen, das Offlineschalten des Volumes schlägt jedoch nicht fehl.
 
 ## Löschen von Volumes
 
-> [AZURE.IMPORTANT]Sie können ein Volume nur löschen, wenn dieses offline ist.
+> [AZURE.IMPORTANT] Sie können ein Volume nur löschen, wenn dieses offline ist.
 
 Führen Sie die folgenden Schritte durch, um ein Volume zu löschen.
 
@@ -257,7 +257,7 @@ Führen Sie die folgenden Schritte durch, um ein Volume zu löschen.
 
 5. Wenn Sie zur Bestätigung aufgefordert werden, klicken Sie auf **Ja**. Das Volume wird nun gelöscht. Auf der Seite **Volumes** wird die aktualisierte Liste der Volumes innerhalb des Containers angezeigt.
 
-    >[AZURE.NOTE]Wenn Sie ein lokales Volume und unmittelbar danach ein weiteres lokales Volume löschen, werden die Aufträge zur Volumelöschung nacheinander ausgeführt. Der erste Auftrag zur Volumelöschung muss abgeschlossen sein, bevor der nächste Auftrag zur Volumelöschung beginnt.
+    >[AZURE.NOTE] Wenn Sie ein lokales Volume und unmittelbar danach ein weiteres lokales Volume löschen, werden die Aufträge zur Volumelöschung nacheinander ausgeführt. Der erste Auftrag zur Volumelöschung muss abgeschlossen sein, bevor der nächste Auftrag zur Volumelöschung beginnt.
  
 ## Überwachen von Volumes
 
@@ -285,4 +285,4 @@ Führen Sie die folgenden Schritte durch, um die Überwachung eines Volumes zu a
 
  
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

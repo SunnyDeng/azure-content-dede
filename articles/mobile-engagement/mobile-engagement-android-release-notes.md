@@ -13,11 +13,19 @@
 	ms.tgt_pltfrm="mobile-android"
 	ms.devlang="Java"
 	ms.topic="article"
-	ms.date="08/10/2015"
+	ms.date="02/01/2016"
 	ms.author="piyushjo" />
 
 
 #Versionshinweise
+
+##4\.1.5 (01.02.2016)
+
+- Verbesserungen der Stabilität.
+
+##4\.1.4 (26.01.2016)
+
+- Verbesserungen der Stabilität.
 
 ##4\.1.3 (9.12.2015)
 
@@ -57,4 +65,4 @@
 -   Verbesserungen der Sicherheit.
 -   Google Play und die SmartAd-Nachverfolgung wurden entfernt.
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0204_2016-->

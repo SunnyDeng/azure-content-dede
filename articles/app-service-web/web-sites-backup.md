@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/07/2015" 
+	ms.date="01/26/2016" 
 	ms.author="cephalin"/>
 
 # Sichern von Web-Apps in Azure App Service
@@ -35,14 +35,14 @@ Für Web-Apps können die folgenden Informationen gesichert werden:
 
 Diese Informationen werden in dem von Ihnen angegebenen Azure-Speicherkonto und -Container gesichert.
 
-> [AZURE.NOTE]Jede Sicherung ist eine vollständige Offlinekopie Ihrer App. Es gibt keine inkrementellen Aktualisierungen.
+> [AZURE.NOTE] Jede Sicherung ist eine vollständige Offlinekopie Ihrer App. Es gibt keine inkrementellen Aktualisierungen.
 
 <a name="requirements"></a>
 ## Anforderungen und Einschränkungen
 
 * Die Funktion zum Sichern und Wiederherstellen erfordert, dass sich der App Service-Plan im Tarif „Standard“ oder einem höheren Tarif angehört. Weitere Informationen zum Skalieren des App Service-Plans zur Verwendung in einem höheren Tarif finden Sie unter [Skalieren einer Web-App in Azure App Service](web-sites-scale.md). Beachten Sie, dass im Tarif „Premium“ eine größere Anzahl täglicher Sicherungen zulässig ist als im Tarif „Standard“.
 
-* Die Funktion zum Sichern und Wiederherstellen erfordert ein Azure-Speicherkonto und einen -Container, die zum selben Abonnement wie die Web-App gehören, die Sie sichern möchten. Falls Sie noch nicht über ein Speicherkonto verfügen, können Sie es erstellen, indem Sie im [Azure-Portal](http://portal.azure.com) auf dem Blatt **Sicherungen** auf die Schaltfläche **Speicherkonto** klicken. Klicken Sie anschließend auf dem Blatt **Ziel** auf das **Speicherkonto** und den **Container**. Weitere Informationen zu Azure-Speicherkonten erhalten Sie unter den [Links](#moreaboutstorage) am Ende dieses Artikels.
+* Die Funktion zum Sichern und Wiederherstellen erfordert ein Azure-Speicherkonto und einen -Container, die zum selben Abonnement wie die Web-App gehören, die Sie sichern möchten. Falls Sie noch nicht über ein Speicherkonto verfügen, können Sie es erstellen, indem Sie im [Azure-Portal](https://portal.azure.com/) auf dem Blatt **Sicherungen** auf die Schaltfläche **Speicherkonto** klicken. Klicken Sie anschließend auf dem Blatt **Ziel** auf das **Speicherkonto** und den **Container**. Weitere Informationen zu Azure-Speicherkonten erhalten Sie unter den [Links](#moreaboutstorage) am Ende dieses Artikels.
 
 * Das Feature zum Sichern und Wiederherstellen unterstützt bis zu 10 GB an Website- und Datenbankinhalt. Es wird eine Fehlermeldung angezeigt, wenn die Sicherungsfunktion nicht fortgesetzt werden kann, weil die Nutzlast diesen Grenzwert überschreitet.
 
@@ -66,7 +66,7 @@ Diese Informationen werden in dem von Ihnen angegebenen Azure-Speicherkonto und 
 
 	![Speicherkonto auswählen](./media/web-sites-backup/03ConfigureDatabase.png)
 
-	> [AZURE.NOTE]Damit eine Datenbank in dieser Liste angezeigt wird, muss die zugehörige Verbindungszeichenfolge im Portal auf dem Blatt **Web-App-Einstellungen** im Abschnitt **Verbindungszeichenfolgen** angegeben sein.
+	> [AZURE.NOTE] 	Damit eine Datenbank in dieser Liste angezeigt wird, muss die zugehörige Verbindungszeichenfolge im Portal auf dem Blatt **Web-App-Einstellungen** im Abschnitt **Verbindungszeichenfolgen** angegeben sein.
 
 6. Klicken Sie auf dem Blatt **Sicherungseinstellungen konfigurieren** auf **Speichern**.
 6. Wählen Sie auf dem Blatt **Sicherungen** das **Sicherungsziel** aus. Sie müssen ein vorhandenes Speicherkonto und einen Container auswählen.
@@ -98,7 +98,7 @@ Sie können jederzeit eine manuelle Sicherung vornehmen.
 
 	![Speicherkonto auswählen](./media/web-sites-backup/03ConfigureDatabase.png)
 
-	> [AZURE.NOTE]Damit eine Datenbank in dieser Liste angezeigt wird, muss die zugehörige Verbindungszeichenfolge im Portal auf dem Blatt **Web-App-Einstellungen** im Abschnitt **Verbindungszeichenfolgen** angegeben sein.
+	> [AZURE.NOTE] 	Damit eine Datenbank in dieser Liste angezeigt wird, muss die zugehörige Verbindungszeichenfolge im Portal auf dem Blatt **Web-App-Einstellungen** im Abschnitt **Verbindungszeichenfolgen** angegeben sein.
 
 6. Klicken Sie auf dem Blatt **Sicherungseinstellungen konfigurieren** auf **Speichern**.
 
@@ -107,7 +107,7 @@ Sie können jederzeit eine manuelle Sicherung vornehmen.
 
 * Stellen Sie sicher, dass Sie die Verbindungszeichenfolgen für jede Ihrer Datenbanken ordnungsgemäß auf dem Blatt **Web-App-Einstellungen** in **Einstellungen** angeben, damit die Sicherungs- und Wiederherstellungsfunktion die Datenbanken einschließen kann.
 
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 <a name="partialbackups"></a>
 ## Sichern eines Teils Ihrer Web-App
@@ -138,7 +138,7 @@ Die unten angegebenen Schritte zeigen, wie Sie diese Dateien aus der Sicherung a
 		D:\home\site\wwwroot\Images\2014
 		D:\home\site\wwwroot\Images\brand.png
 
-	[AZURE.NOTE]Die letzte Zeile zeigt, dass Sie einzelne Dateien und Ordner ausschließen können.
+	[AZURE.NOTE] Die letzte Zeile zeigt, dass Sie einzelne Dateien und Ordner ausschließen können.
 
 2. Erstellen Sie eine Datei namens `_backup.filter`, und fügen Sie die oben aufgeführte Liste in die Datei ein, aber entfernen Sie `D:\home`. Geben Sie ein Verzeichnis oder eine Datei pro Zeile an. Der Inhalt der Datei sollte folgendermaßen aussehen:
 
@@ -150,7 +150,7 @@ Die unten angegebenen Schritte zeigen, wie Sie diese Dateien aus der Sicherung a
 
 Alle Dateien und Ordner, die in `_backup.filter` angegeben sind, werden jetzt aus der Sicherung ausgeschlossen. In diesem Beispiel werden die Protokolldateien und die Bilddateien "2013" und "2014" sowie "brand.png" nicht mehr gesichert.
 
->[AZURE.NOTE]Sie stellen Teilsicherungen Ihrer Website genauso wieder her, wie Sie eine [normale Sicherung wiederherstellen](web-sites-restore.md) würden. Der Wiederherstellungsvorgang wird richtig ausgeführt.
+>[AZURE.NOTE] Sie stellen Teilsicherungen Ihrer Website genauso wieder her, wie Sie eine [normale Sicherung wiederherstellen](web-sites-restore.md) würden. Der Wiederherstellungsvorgang wird richtig ausgeführt.
 >
 >Bei der Wiederherstellung einer vollständigen Sicherung wird der gesamte Inhalt der Website durch den Inhalt der Sicherung ersetzt. Wenn eine Datei auf der Website vorhanden ist, aber nicht in der Sicherung, wird sie gelöscht. Wenn aber eine Teilsicherung wiederhergestellt wird, bleiben alle Inhalte von ausgeschlossenen Verzeichnissen bzw. alle ausgeschlossenen Dateien unverändert.
 
@@ -162,7 +162,7 @@ Nachdem Sie eine oder mehrere Sicherungen für Ihre Web-App vorgenommen haben, w
 
 Die Datenbanksicherung für die Web-App wird im Stammverzeichnis der ZIP-Datei gespeichert. Bei SQL-Datenbanken ist dies eine BACPAC-Datei (ohne Dateierweiterung), die importiert werden kann. Schritte zum Erstellen einer neuen SQL-Datenbank auf Basis des BACPAC-Exports finden Sie im Artikel [Importieren einer BACPAC-Datei zum Erstellen einer neuen Benutzerdatenbank](http://technet.microsoft.com/library/hh710052.aspx).
 
-> [AZURE.WARNING]Wenn Sie die Dateien im Container **websitebackups** ändern, kann die Sicherung ungültig werden und nicht mehr wiederhergestellt werden.
+> [AZURE.WARNING] Wenn Sie die Dateien im Container **websitebackups** ändern, kann die Sicherung ungültig werden und nicht mehr wiederhergestellt werden.
 
 <a name="nextsteps"></a>
 ## Nächste Schritte
@@ -189,4 +189,4 @@ Informationen zu den ersten Schritten mit Azure finden Sie unter [Kostenlose Mic
 [GhostUpgradeWarning]: ./media/web-sites-backup/13GhostUpgradeWarning.png
  
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

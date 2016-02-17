@@ -47,7 +47,7 @@ Um die Ausfallzeit während des Datenbankmigrationsvorgangs auf ein Mindestmaß 
 
 Falls die oben genannten Methoden nicht verwendet werden können, migrieren Sie die Datenbank manuell. Mit dieser Methode beginnen Sie in der Regel mit einer Datenbanksicherung, kopieren die Datenbanksicherung in Azure und führen dann eine Wiederherstellung der Datenbank durch. Sie können auch die Datenbankdateien selbst in Azure kopieren und anschließend anfügen. Es gibt mehrere Methoden, mit denen dieser manuelle Prozess zum Migrieren einer Datenbank in eine Azure-VM ausgeführt werden kann.
 
-> [AZURE.NOTE]Wenn Sie aus älteren Versionen von SQL Server auf SQL Server 2014 oder SQL Server 2016 aktualisieren, sollten Sie erwägen, ob Änderungen erforderlich sind. Es wird empfohlen, dass Sie alle Abhängigkeiten von Funktionen, die von der neuen Version von SQL Server nicht unterstützt werden, im Rahmen des Migrationsprojekts behandeln. Weitere Informationen zu den unterstützten Editionen und Szenarios finden Sie unter [Aktualisieren auf SQL Server](https://msdn.microsoft.com/library/bb677622.aspx).
+> [AZURE.NOTE] Wenn Sie aus älteren Versionen von SQL Server auf SQL Server 2014 oder SQL Server 2016 aktualisieren, sollten Sie erwägen, ob Änderungen erforderlich sind. Es wird empfohlen, dass Sie alle Abhängigkeiten von Funktionen, die von der neuen Version von SQL Server nicht unterstützt werden, im Rahmen des Migrationsprojekts behandeln. Weitere Informationen zu den unterstützten Editionen und Szenarios finden Sie unter [Aktualisieren auf SQL Server](https://msdn.microsoft.com/library/bb677622.aspx).
 
 In der folgenden Tabelle werden alle primären Migrationsmethoden aufgeführt, und es wird erläutert, wann die Verwendung der jeweiligen Methode am besten geeignet ist.
 
@@ -164,7 +164,7 @@ Verwenden Sie diese Methode, um alle System- und Benutzerdatenbanken in einer lo
 2.	Laden Sie VHD-Dateien mithilfe des Cmdlets [Add-AzureVHD](https://msdn.microsoft.com/library/windowsazure/dn495173.aspx) in den Azure-Speicher hoch.
 3.	Stellen Sie einen neuen virtuellen Computer mithilfe der hochgeladenen VHD bereit.
 
-> [AZURE.NOTE]Um eine gesamte Anwendung zu migrieren, sollten Sie die Verwendung von [Azure Site Recovery](../services/site-recovery/) erwägen.
+> [AZURE.NOTE] Um eine gesamte Anwendung zu migrieren, sollten Sie die Verwendung von [Azure Site Recovery](../services/site-recovery/) erwägen.
 
 ## Versenden einer Festplatte
 
@@ -174,4 +174,4 @@ Mithilfe der Methode [Windows Import-Export-Dienst](../storage-import-export-ser
 
 Ausführlichere Informationen zur Verwendung von SQL Server auf virtuellen Azure-Computern finden Sie unter [Übersicht zu SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-infrastructure-services.md).
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -20,7 +20,7 @@
 
 In diesem Artikel erfahren Sie, wie Sie eine ASP.NET MVC-Branchenanwendung in [Azure App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714) mit einem lokalen [Active Directory-Verbunddienst (AD FS)](http://technet.microsoft.com/library/hh831502.aspx) als Identitätsanbieter erstellen. Dieses Szenario kann funktionieren, wenn Sie Branchenanwendungen in Azure App Service-Web-Apps erstellen möchten, Ihre Organisation jedoch verlangt, alle Daten vor Ort zu speichern.
 
->[AZURE.NOTE]Eine Übersicht über die verschiedenen Authentifizierungs- und Autorisierungsoptionen für Unternehmen für Azure App Service-Web-Apps finden Sie unter [Verwenden von Active Directory für die Authentifizierung in Azure App Service](web-sites-authentication-authorization.md).
+>[AZURE.NOTE] Eine Übersicht über die verschiedenen Authentifizierungs- und Autorisierungsoptionen für Unternehmen für Azure App Service-Web-Apps finden Sie unter [Verwenden von Active Directory für die Authentifizierung in Azure App Service](web-sites-authentication-authorization.md).
 
 <a name="bkmk_build"></a>
 ## Was Sie erstellen ##
@@ -36,7 +36,7 @@ Sie erstellen eine grundlegende ASP.NET-Anwendung in Azure App Service-Web-Apps 
 
 [AZURE.INCLUDE [free-trial-note](../../includes/free-trial-note.md)]
 
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 Sie benötigen Folgendes zum Bearbeiten dieses Lernprogramms:
 
@@ -59,7 +59,7 @@ Die Beispielanwendung in diesem Lernprogramm ([WebApp-WSFederation-DotNet](https
 
 2.	Klonen Sie die Beispielprojektmappe unter [WebApp-WSFederation-DotNet](https://github.com/AzureADSamples/WebApp-WSFederation-DotNet), oder laden Sie sie in Ihr lokales Verzeichnis herunter.
 
-	> [AZURE.NOTE]Die Anweisungen unter [README.md](https://github.com/AzureADSamples/WebApp-WSFederation-DotNet/blob/master/README.md) zeigen, wie Sie die Anwendung in Azure Active Directory einrichten. Da Sie sie in diesem Lernprogramm aber mit AD FS einrichten, führen Sie stattdessen die hier genannten Schritte aus.
+	> [AZURE.NOTE] Die Anweisungen unter [README.md](https://github.com/AzureADSamples/WebApp-WSFederation-DotNet/blob/master/README.md) zeigen, wie Sie die Anwendung in Azure Active Directory einrichten. Da Sie sie in diesem Lernprogramm aber mit AD FS einrichten, führen Sie stattdessen die hier genannten Schritte aus.
 
 3.	Öffnen Sie die Projektmappe, und öffnen Sie "Controllers\\AccountController.cs" im **Projektmappen-Explorer**.
 
@@ -81,14 +81,14 @@ Die Beispielanwendung in diesem Lernprogramm ([WebApp-WSFederation-DotNet](https
 
 5.	Ändern Sie in der Datei "App_Start\\Startup.Auth.cs" die Definitionen für statische Zeichenfolgen wie unten hervorgehoben:
 	<pre class="prettyprint">
-	private static string realm = ConfigurationManager.AppSettings["ida:<mark>RPIdentifier</mark>"];
-    <mark><del>private static string aadInstance = ConfigurationManager.AppSettings["ida:AADInstance"];</del></mark>
-    <mark><del>private static string tenant = ConfigurationManager.AppSettings["ida:Tenant"];</del></mark>
-    <mark><del>private static string metadata = string.Format("{0}/{1}/federationmetadata/2007-06/federationmetadata.xml", aadInstance, tenant);</del></mark>
-    <mark>private static string metadata = string.Format("https://{0}/federationmetadata/2007-06/federationmetadata.xml", ConfigurationManager.AppSettings["ida:ADFS"]);</mark>
+private static string realm = ConfigurationManager.AppSettings["ida:<mark>RPIdentifier</mark>"];
+<mark><del>private static string aadInstance = ConfigurationManager.AppSettings["ida:AADInstance"];</del></mark>
+<mark><del>private static string tenant = ConfigurationManager.AppSettings["ida:Tenant"];</del></mark>
+<mark><del>private static string metadata = string.Format("{0}/{1}/federationmetadata/2007-06/federationmetadata.xml", aadInstance, tenant);</del></mark>
+<mark>private static string metadata = string.Format("https://{0}/federationmetadata/2007-06/federationmetadata.xml", ConfigurationManager.AppSettings["ida:ADFS"]);</mark>
 
-    <mark><del>string authority = String.Format(CultureInfo.InvariantCulture, aadInstance, tenant);</del></mark>
-    </pre>
+<mark><del>string authority = String.Format(CultureInfo.InvariantCulture, aadInstance, tenant);</del></mark>
+</pre>
 
 6.	Nehmen Sie jetzt die entsprechenden Änderungen in der Datei "Web.config" vor. Öffnen Sie die Datei "Web.config", und ändern Sie die App-Einstellungen wie unten dargestellt:
 	<pre class="prettyprint">
@@ -103,10 +103,8 @@ Die Beispielanwendung in diesem Lernprogramm ([WebApp-WSFederation-DotNet](https
   <mark>&lt;add key="ida:RPIdentifier" value="[ID für vertrauende Seite gemäß Konfiguration in AD&#160;FS eingeben, z.&#160;B. https://localhost:44320/]" /></mark>
   <mark>&lt;add key="ida:ADFS" value="[FQDN des AD&#160;FS-Diensts eingeben, z.&#160;B. adfs.contoso.com]" /></mark>
 
-	&lt;/appSettings&gt;
-	</pre>
-
-	Tragen Sie die Schlüsselwerte entsprechend Ihrer jeweiligen Umgebung ein.
+&lt;/appSettings>
+</pre>Tragen Sie die Schlüsselwerte entsprechend Ihrer jeweiligen Umgebung ein.
 
 7.	Erstellen Sie die Anwendung, um sicherzustellen, dass keine Fehler vorliegen.
 
@@ -148,7 +146,7 @@ Wenn Sie die in Azure veröffentlichte Web-App dem Debugger anfügen möchten (d
 
 Jetzt müssen Sie eine RP-Vertrauensstellung in der AD FS-Verwaltung konfigurieren, bevor Sie Ihre Beispielanwendung verwenden und tatsächlich mit AD FS authentifizieren können. Sie müssen zwei separate RP-Vertrauensstellungen einrichten, eine für Ihre Debugumgebung und eine für die veröffentlichte Web-App.
 
-> [AZURE.NOTE]Wiederholen Sie die folgenden Schritte für beide Umgebungen.
+> [AZURE.NOTE] Wiederholen Sie die folgenden Schritte für beide Umgebungen.
 
 4.	Melden Sie sich mit Anmeldeinformationen, die Berechtigungen zur Verwaltung von AD FS umfassen, auf dem AD FS-Server an.
 5.	Öffnen Sie die AD FS-Verwaltung. Klicken Sie mit der rechten Maustaste auf **AD FS\\Trusted Relationships\\Relying Party Trusts**, und wählen Sie **Vertrauensstellung der vertrauenden Seite hinzufügen**.
@@ -163,7 +161,7 @@ Jetzt müssen Sie eine RP-Vertrauensstellung in der AD FS-Verwaltung konfigurie
 7.	Klicken Sie auf der Seite **Protokoll auswählen** auf **Weiter**.
 8.	Klicken Sie auf der Seite **Zertifikat konfigurieren** auf **Weiter**.
 
-	> [AZURE.NOTE]Da Sie HTTPS bereits verwenden sollten, sind verschlüsselte Token optional. Wenn Sie Token von AD FS auf dieser Seite verschlüsseln möchten, müssen Sie Ihrem Code auch Token-Entschlüsselungslogik hinzufügen. Weitere Informationen finden Sie unter [Manually configuring OWIN WS-Federation middleware and accepting encrypted tokens](http://chris.59north.com/post/2014/08/21/Manually-configuring-OWIN-WS-Federation-middleware-and-accepting-encrypted-tokens.aspx) (Manuelles Konfigurieren von OWIN-WS-Verbund-Middleware und Akzeptieren verschlüsselter Token, in englischer Sprache).
+	> [AZURE.NOTE] Da Sie HTTPS bereits verwenden sollten, sind verschlüsselte Token optional. Wenn Sie Token von AD FS auf dieser Seite verschlüsseln möchten, müssen Sie Ihrem Code auch Token-Entschlüsselungslogik hinzufügen. Weitere Informationen finden Sie unter [Manually configuring OWIN WS-Federation middleware and accepting encrypted tokens](http://chris.59north.com/post/2014/08/21/Manually-configuring-OWIN-WS-Federation-middleware-and-accepting-encrypted-tokens.aspx) (Manuelles Konfigurieren von OWIN-WS-Verbund-Middleware und Akzeptieren verschlüsselter Token, in englischer Sprache).
   
 5.	Bevor Sie zum nächsten Schritt übergehen, benötigen Sie eine bestimmte Information aus Ihrem Visual Studio-Projekt. Notieren Sie sich in den Projekteigenschaften die **SSL-URL** der Anwendung.
 
@@ -173,11 +171,11 @@ Jetzt müssen Sie eine RP-Vertrauensstellung in der AD FS-Verwaltung konfigurie
 
 	![](./media/web-sites-dotnet-lob-application-adfs/4-configure-url.png)
 
-	> [AZURE.NOTE]Die URL gibt an, auf welche Seite der Client nach der erfolgreichen Authentifizierung geleitet werden soll. Für die Debug-Umgebung lautet die URL folgendermaßen: <code>https://localhost:&lt;port&gt;/</code>. Für die veröffentlichte Web-App muss dies die Web-App-URL sein.
+	> [AZURE.NOTE] Die URL gibt an, auf welche Seite der Client nach der erfolgreichen Authentifizierung geleitet werden soll. Für die Debug-Umgebung lautet die URL folgendermaßen: <code>https://localhost:&lt;port&gt;/</code>. Für die veröffentlichte Web-App muss dies die Web-App-URL sein.
 
 7.	Prüfen Sie auf der Seite **Bezeichner konfigurieren**, ob die SSL-URL für Ihr Projekt bereits aufgeführt wird, und klicken Sie auf **Weiter**. Klicken Sie bis zum Abschluss des Assistenten mit den Standardeinstellungen stets auf **Weiter**.
 
-	> [AZURE.NOTE]In der Datei "App\_Start\\Startup.Auth.cs" Ihres Visual Studio-Projekts wird diese ID während der Verbundauthentifizierung mit dem Wert von <code>WsFederationAuthenticationOptions.Wtrealm</code> verglichen. Standardmäßig wird die URL der Anwendung aus dem vorherigen Schritt als RP-ID hinzugefügt.
+	> [AZURE.NOTE] In der Datei "App\_Start\\Startup.Auth.cs" Ihres Visual Studio-Projekts wird diese ID während der Verbundauthentifizierung mit dem Wert von <code>WsFederationAuthenticationOptions.Wtrealm</code> verglichen. Standardmäßig wird die URL der Anwendung aus dem vorherigen Schritt als RP-ID hinzugefügt.
 
 8.	Damit ist die Konfiguration der RP-Anwendung für Ihr Projekt in AD FS abgeschlossen. Anschließend konfigurieren Sie diese Anwendung zum Senden die Ansprüche, die Ihre Anwendung benötigt. Am Ende des Assistenten wird das Dialogfeld **Anspruchsregeln bearbeiten** standardmäßig geöffnet, damit Sie sofort mit der Bearbeitung beginnen können. Wir wollen mindestens die folgenden Ansprüche konfigurieren (Schemas sind in Klammern angegeben):
 
@@ -186,7 +184,7 @@ Jetzt müssen Sie eine RP-Vertrauensstellung in der AD FS-Verwaltung konfigurie
 	-	Gruppenmitgliedschaften als Rollen (http://schemas.microsoft.com/ws/2008/06/identity/claims/role) – Kann mit der Dekoration `[Authorize(Roles="role1, role2,...")]` zum Autorisieren von Controllern/Aktionen verwendet werden. Tatsächlich ist dies nicht unbedingt die leistungsfähigste Methode für die Rollenautorisierung, insbesondere dann nicht, wenn die Active Directory-Benutzer normalerweise Hunderten von Sicherheitsgruppen angehören, denn dies entspricht Hunderten von Rollenansprüche im SAML-Token. Eine alternative Methode ist das bedingte Senden eines einzelnen Rollenanspruchs je nach Mitgliedschaft des Benutzers in einer bestimmten Gruppe. Allerdings werden wir die Methode im Rahmen dieses Lernprogramms einfach halten.
 	-	Namens-ID (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier) – Kann zur Validierung des Fälschungsschutzes verwendet werden. Weitere Informationen zur Anpassung für die Validierung des Fälschungsschutzes finden Sie im Abschnitt **Hinzufügen von Branchenfunktionen zur Beispielanwendung** unter [Erstellen einer .NET MVC-Web-App in Azure App Service mit Azure Active Directory-Authentifizierung](web-sites-dotnet-lob-application-azure-ad.md#bkmk_crud).
 
-	> [AZURE.NOTE]Die Anspruchstypen, die Sie für Ihre Anwendung konfigurieren müssen, richten sich nach den Anforderungen Ihrer Anwendung. Die Liste der Ansprüche, die von Azure Active Directory-Anwendungen (d. h. RP-Vertrauensstellungen) unterstützt werden, finden Sie z. B. unter [Unterstützte Token- und Anspruchstypen](http://msdn.microsoft.com/library/azure/dn195587.aspx).
+	> [AZURE.NOTE] Die Anspruchstypen, die Sie für Ihre Anwendung konfigurieren müssen, richten sich nach den Anforderungen Ihrer Anwendung. Die Liste der Ansprüche, die von Azure Active Directory-Anwendungen (d. h. RP-Vertrauensstellungen) unterstützt werden, finden Sie z. B. unter [Unterstützte Token- und Anspruchstypen](http://msdn.microsoft.com/library/azure/dn195587.aspx).
 
 8.	Klicken Sie im Dialogfeld "Anspruchsregeln bearbeiten" auf **Regel hinzufügen**.
 9.	Konfigurieren Sie die Namens-, UPN- und Rollenansprüche wie unten gezeigt, und klicken Sie auf **Fertig stellen**.
@@ -199,20 +197,18 @@ Jetzt müssen Sie eine RP-Vertrauensstellung in der AD FS-Verwaltung konfigurie
 10.	Wählen Sie **Ansprüche per benutzerdefinierter Regel senden**, und klicken Sie auf **Weiter**.
 11.	Fügen Sie in das Feld **Benutzerdefinierte Regel** die folgende Regelsprache ein, geben Sie der Regel den Namen **Sitzungsspezifische ID**, und klicken Sie auf **Fertig stellen**.  
 	<pre class="prettyprint">
-	c1:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname"] &amp;&amp;
-	c2:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationinstant"]
-		=> add(
-			store = "_OpaqueIdStore",
-			types = ("<mark>http://contoso.com/internal/sessionid</mark>"),
-			query = "{0};{1};{2};{3};{4}",
-			param = "useEntropy",
-			param = c1.Value,
-			param = c1.OriginalIssuer,
-			param = "",
-			param = c2.Value);
-	</pre>
-
-	Die benutzerdefinierte Regel sollte wie folgt aussehen:
+c1:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname"] &amp;&amp;
+c2:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationinstant"]
+	=> add(
+		store = "_OpaqueIdStore",
+		types = ("<mark>http://contoso.com/internal/sessionid</mark>"),
+		query = "{0};{1};{2};{3};{4}",
+		param = "useEntropy",
+		param = c1.Value,
+		param = c1.OriginalIssuer,
+		param = "",
+		param = c2.Value);
+</pre>Die benutzerdefinierte Regel sollte wie folgt aussehen:
 
 	![](./media/web-sites-dotnet-lob-application-adfs/6-per-session-identifier.png)
 
@@ -228,7 +224,7 @@ Jetzt müssen Sie eine RP-Vertrauensstellung in der AD FS-Verwaltung konfigurie
 
 	![](./media/web-sites-dotnet-lob-application-adfs/8-all-claim-rules.png)
 
-	> [AZURE.NOTE]Wiederholen Sie diese Schritte erneut für die Debugumgebung und die veröffentlichte Web-App.
+	> [AZURE.NOTE] Wiederholen Sie diese Schritte erneut für die Debugumgebung und die veröffentlichte Web-App.
 
 <a name="bkmk_test"></a>
 ## Testen Sie die Verbundauthentifizierung für Ihre Anwendung.
@@ -265,39 +261,31 @@ Da Sie Gruppenmitgliedschaften als Rollenansprüche in die RP-Vertrauensstellung
 1. Öffnen Sie die Datei "Controllers\\HomeController.cs".
 2. Dekorieren Sie die Aktionsmethoden `About` und `Contact` ähnlich wie unten mit Mitgliedschaften in Sicherheitsgruppen, über die Ihr authentifizierter Benutzer verfügt.  
 	<pre class="prettyprint">
-    <mark>[Authorize(Roles="Test Group")]</mark>
-    public ActionResult About()
-    {
-        ViewBag.Message = "Your application description page.";
+<mark>[Authorize(Roles="Test Group")]</mark>
+public ActionResult About()
+{
+    ViewBag.Message = "Your application description page.";
 
-        return View();
-    }
+    return View();
+}
 
-    <mark>[Authorize(Roles="Domain Admins")]</mark>
-    public ActionResult Contact()
-    {
-        ViewBag.Message = "Your contact page.";
+<mark>[Authorize(Roles="Domain Admins")]</mark>
+public ActionResult Contact()
+{
+    ViewBag.Message = "Your contact page.";
 
-        return View();
-    }
-	</pre>
-
-
-	Da ich in meiner AD FS-Testumgebung dem Element **Testgruppe** den Eintrag **Testbenutzer** hinzugefügt habe, verwende ich die Testgruppe zum Testen der Autorisierung in `About`. Für `Contact` teste ich den negativen Fall für **Domänenadministratoren**. Dies ist eine Gruppe, der der **Testbenutzer** nicht angehört.
+    return View();
+}
+</pre>Da ich in meiner AD FS-Testumgebung dem Element **Testgruppe** den Eintrag **Testbenutzer** hinzugefügt habe, verwende ich die Testgruppe zum Testen der Autorisierung in `About`. Für `Contact` teste ich den negativen Fall für **Domänenadministratoren**. Dies ist eine Gruppe, der der **Testbenutzer** nicht angehört.
 
 3. Starten Sie den Debugger durch Drücken von `F5`, melden Sie sich an, und klicken Sie auf **Info**. Sie sollten jetzt die Seite `~/About/Index` sehen können, wenn der authentifizierte Benutzer für diese Aktion berechtigt ist.
 4. Klicken Sie nun auf **Kontakt**. In meinem Fall sollte keine Autorisierung von **Testbenutzer** für die Aktion erfolgen. Allerdings wird der Browser zu AD FS umgeleitet, und schließlich wird diese Meldung angezeigt:
 
 	![](./media/web-sites-dotnet-lob-application-adfs/13-authorize-adfs-error.png)
 
-	Wenn Sie diesen Fehler in der Ereignisanzeige auf dem AD FS-Server untersuchen, sehen Sie diese Ausnahmemeldung:   
-	<pre class="prettyprint">
-	Microsoft.IdentityServer.Web.InvalidRequestException: MSIS7042: <mark>The same client browser session has made '6' requests in the last '11' seconds.</mark> Contact your administrator for details.
-	   at Microsoft.IdentityServer.Web.Protocols.PassiveProtocolHandler.UpdateLoopDetectionCookie(WrappedHttpListenerContext context)
-	   at Microsoft.IdentityServer.Web.Protocols.WSFederation.WSFederationProtocolHandler.SendSignInResponse(WSFederationContext context, MSISSignInResponse response)
-	   at Microsoft.IdentityServer.Web.PassiveProtocolListener.ProcessProtocolRequest(ProtocolContext protocolContext, PassiveProtocolHandler protocolHandler)
-	   at Microsoft.IdentityServer.Web.PassiveProtocolListener.OnGetContext(WrappedHttpListenerContext context)
-	</pre>
+	Wenn Sie diesen Fehler in der Ereignisanzeige auf dem AD FS-Server untersuchen, sehen Sie diese Ausnahmemeldung: 
+	<pre class="prettyprint"> 
+	Microsoft.IdentityServer.Web.InvalidRequestException: MSIS7042: <mark>The same client browser session has made '6' requests in the last '11' seconds.</mark> Ausführliche Informationen erhalten Sie bei Ihrem Administrator unter Microsoft.IdentityServer.Web.Protocols.PassiveProtocolHandler.UpdateLoopDetectionCookie(WrappedHttpListenerContext context) unter Microsoft.IdentityServer.Web.Protocols.WSFederation.WSFederationProtocolHandler.SendSignInResponse(WSFederationContext context, MSISSignInResponse response) unter Microsoft.IdentityServer.Web.PassiveProtocolListener.ProcessProtocolRequest(ProtocolContext protocolContext, PassiveProtocolHandler protocolHandler) unter Microsoft.IdentityServer.Web.PassiveProtocolListener.OnGetContext(WrappedHttpListenerContext context) </pre>
 
 	Der Grund hierfür ist, dass MVC standardmäßig die Fehlermeldung "401 - Nicht autorisiert" zurückgibt, wenn die Rollen des Benutzers nicht autorisiert sind. Dadurch wird eine Anforderung zur erneuten Authentifizierung an Ihren Identitätsanbieter (AD FS) ausgelöst. Da der Benutzer bereits authentifiziert ist, kehrt AD FS zur selben Seite zurück- Diese gibt dann wiederum eine 401-Fehlermeldung aus, sodass eine Umleitungsschleife entsteht. Überschreiben Sie die `HandleUnauthorizedRequest`-Methode von "AuthorizeAttribute" mit einfacher Logik, um etwas Sinnvolles anzuzeigen, anstatt die Umleitungsschleife fortzusetzen.
 
@@ -339,7 +327,7 @@ Da Sie Gruppenmitgliedschaften als Rollenansprüche in die RP-Vertrauensstellung
 
 Ein Grund dafür, Ihre Line-of-Business-Anwendung mit AD FS statt mit Azure Active Directory zu implementieren, sind Kompatibilitätsprobleme beim externen Speichern von Organisationsdaten. Dies kann auch bedeuten, dass Ihre Web-App in Azure auf lokale Datenbanken zugreifen muss, da Sie [SQL-Datenbank](/services/sql-database/) nicht als Datenebene für Ihre Web-Apps verwenden dürfen.
 
-Azure App Service-Web-Apps unterstützen zwei Methoden für den Zugriff auf lokale Datenbanken: [Hybridverbindungen](../integration-hybrid-connection-overview.md) und [Virtuelle Netzwerke](web-sites-integrate-with-vnet.md). Weitere Informationen finden Sie unter [Using VNET integration and Hybrid connections with Azure App Service Web Apps](http://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/) (Verwenden der VNET-Integration und von Hybridverbindungen in Azure App Service-Web-Apps, in englischer Sprache).
+Azure App Service-Web-Apps unterstützen zwei Methoden für den Zugriff auf lokale Datenbanken: [Hybridverbindungen](../integration-hybrid-connection-overview.md) und [Virtuelle Netzwerke](web-sites-integrate-with-vnet.md). Weitere Informationen finden Sie unter [Using VNET integration and Hybrid connections with Azure App Service Web Apps](https://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/) (Verwenden der VNET-Integration und von Hybridverbindungen in Azure App Service-Web-Apps, in englischer Sprache).
 
 <a name="bkmk_resources"></a>
 ## Weitere Ressourcen
@@ -357,4 +345,4 @@ Azure App Service-Web-Apps unterstützen zwei Methoden für den Zugriff auf loka
  
  
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0128_2016-->
