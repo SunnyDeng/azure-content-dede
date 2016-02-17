@@ -3,9 +3,9 @@ Um Anwendungen in Azure bereitzustellen, benötigen Sie ein Konto. In diesem Art
 ## Erstellen eines Azure-Kontos
 
 1.  Öffnen Sie einen Webbrowser, und navigieren Sie zu <http://azure.microsoft.com>.
-2.  Wenn Sie ein MSDN-Abonnement besitzen, navigieren Sie zur Seite [Azure-Vorteil für MSDN-Abonnenten](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/), und führen Sie die Schritte zum Erstellen eines Kontos aus, indem Sie Ihre Vorteile für MSDN-Abonnenten aktivieren.
+2.  Wenn Sie ein MSDN-Abonnement besitzen, navigieren Sie zur Seite [Azure-Vorteil für MSDN-Abonnenten](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/), und führen Sie die Schritte zum Erstellen eines Kontos aus, indem Sie Ihre Vorteile für MSDN-Abonnenten aktivieren.
 
-   Navigieren Sie andernfalls zur Seite [Kostenlose einmonatige Testversion](http://azure.microsoft.com/pricing/free-trial/), und führen Sie die Schritte zum Erstellen eines Testkontos aus. Sie müssen als Identitätsnachweis eine Kreditkartennummer und eine Mobiltelefonnummer angeben, erhalten jedoch keine Rechnung.
+   Navigieren Sie andernfalls zur Seite [Kostenlose einmonatige Testversion](https://azure.microsoft.com/pricing/free-trial/), und führen Sie die Schritte zum Erstellen eines Testkontos aus. Sie müssen als Identitätsnachweis eine Kreditkartennummer und eine Mobiltelefonnummer angeben, erhalten jedoch keine Rechnung.
 
 ## Aktivieren der Azure-Vorschaufeatures
 
@@ -18,4 +18,4 @@ Um Anwendungen in Azure bereitzustellen, benötigen Sie ein Konto. In diesem Art
 [2]: ./media/create-an-azure-account/antares-iaas-preview-05.png
 [3]: ./media/create-an-azure-account/antares-iaas-preview-06.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

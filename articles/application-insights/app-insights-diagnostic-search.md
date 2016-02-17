@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/23/2015" 
+	ms.date="01/26/2016" 
 	ms.author="awills"/>
  
 # Verwenden der Diagnosesuche in Application Insights
@@ -20,6 +20,9 @@
 "Diagnosesuche" ist das Blatt in [Application Insights][start], auf dem Sie einzelne Telemetrieelemente wie Seitenaufrufe, Ausnahmen und Webanforderungen suchen und untersuchen. Außerdem können Sie Protokollablaufverfolgungen und Ereignisse anzeigen, die Sie programmiert haben.
 
 ## Wann wird die Diagnosesuche angezeigt?
+
+
+### Im Azure-Portal
 
 Sie können die Diagnosesuche explizit öffnen:
 
@@ -38,7 +41,21 @@ Den Hauptteil der Diagnosesuche bildet eine Liste von Telemetrieelementen: Serve
 Ereignisse werden in der Regel in der Diagnosesuche angezeigt, bevor sie in Metrik-Explorer angezeigt werden. Obwohl sich das Blatt regelmäßig selbst aktualisiert, können Sie auf "Aktualisieren" klicken, wenn Sie auf ein bestimmtes Ereignis warten.
 
 
-> [AZURE.NOTE]Wenn die Anwendung viele Telemetriedaten generiert (und Sie Version 2.0.0-beta3 oder höher des ASP.NET-SDK verwenden), reduziert das adaptive Stichprobenmodul automatisch die an das Portal gesendete Datenmenge, indem nur ein repräsentativer Bruchteil der Ereignisse gesendet wird. Ereignisse, die mit derselben Anforderung im Zusammenhang stehen, werden als Gruppe aus- oder abgewählt, sodass Sie zwischen verwandten Ereignissen navigieren können. [Erfahren Sie mehr über das Erstellen von Stichproben](app-insights-sampling.md).
+### In Visual Studio
+
+Öffnen Sie das Suchfenster in Visual Studio:
+
+![](./media/app-insights-diagnostic-search/32.png)
+
+Das Suchfenster bietet dieselben Features wie das Webportal:
+
+![](./media/app-insights-diagnostic-search/34.png)
+
+
+### Stichproben
+
+Wenn die Anwendung viele Telemetriedaten generiert (und Sie Version 2.0.0-beta3 oder höher des ASP.NET-SDK verwenden), reduziert das adaptive Stichprobenmodul automatisch die an das Portal gesendete Datenmenge, indem nur ein repräsentativer Bruchteil der Ereignisse gesendet wird. Ereignisse, die mit derselben Anforderung im Zusammenhang stehen, werden als Gruppe aus- oder abgewählt, sodass Sie zwischen verwandten Ereignissen navigieren können.
+> [Erfahren Sie mehr über das Erstellen von Stichproben](app-insights-sampling.md).
 
 
 ## Überprüfen einzelner Elemente
@@ -140,7 +157,7 @@ Dies sind einige Suchausdrücke, die Sie verwenden können:
 Beispielabfrage | Effekt 
 ---|---
 langsam|Findet alle Ereignisse im Datumsbereich, deren Felder den Begriff „langsam“ enthalten
-Datenbank??|Stimmt mit „Datenbank01“, „DatenbankAB“, ... überein?<br/>ist am Anfang eines Suchbegriffs nicht zulässig.
+Datenbank??|Stimmt mit „Datenbank01“, „DatenbankAB“, ... überein<br/>? ist am Anfang eines Suchbegriffs nicht zulässig.
 Datenbank*|Datenbank, Datenbank01, DatenbankNNNN entspricht<br/> ist am Anfang eines Suchbegriffs nicht zulässig.
 Apfel UND Banane|Findet Ereignisse, die beide Begriffe enthalten. Verwenden Sie „AND“ in Großbuchstaben, nicht „and“.
 Apfel OR Banane<br/>Apfel Banane|Findet Ereignisse, die einen der beiden Begriffe enthalten. Verwenden Sie "OR" nicht "or".</br/>Kurzform.
@@ -203,4 +220,4 @@ POST-Daten werden nicht automatisch protokolliert. Sie können jedoch ["TrackTra
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

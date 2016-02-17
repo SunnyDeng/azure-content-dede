@@ -36,7 +36,7 @@ Sie müssen das [Registrieren einer Anwendung](active-directory-b2c-app-registra
 
 - Erstellen Sie eine der [hier](active-directory-b2c-overview.md#getting-started) aufgeführten Azure AD B2C-Schnellstartanwendungen.
 - Verwenden Sie die fertige Anwendung [Azure AD B2C Playground](https://aadb2cplayground.azurewebsites.net). Wenn Sie die Playground-Anwendung wählen, müssen Sie eine Anwendung mit dem **Umleitungs-URI** `https://aadb2cplayground.azurewebsites.net/` im B2C-Mandanten registrieren.
-- Verwenden Sie im [Azure-Portal](https://portal.azure.com) die Schaltfläche **Jetzt ausführen** für Ihre Richtlinie.
+- Verwenden Sie im [Azure-Portal](https://portal.azure.com/) die Schaltfläche **Jetzt ausführen** für Ihre Richtlinie.
 
 ## Anpassen der Richtlinie
 
@@ -44,7 +44,7 @@ Um das Aussehen und Verhalten Ihrer Richtlinien anzupassen, müssen Sie zuerst H
 
 Für dieses Lernprogramm haben wir bereits einige Beispielinhalte erstellt und auf einem Azure-BLOB-Speicher gehostet. Die Beispielinhalte umfassen eine sehr einfache Anpassung des Designs unseres fiktiven Unternehmens „Contoso B2C“. Gehen Sie folgendermaßen vor, um dies für Ihre eigene Richtlinie auszuprobieren:
 
-1. Melden Sie sich im [Azure-Portal](https://portal.azure.com) bei Ihrem Mandanten an, und navigieren Sie zum Blatt mit den B2C-Funktionen.
+1. Melden Sie sich im [Azure-Portal](https://portal.azure.com/) bei Ihrem Mandanten an, und navigieren Sie zum Blatt mit den B2C-Funktionen.
 2. Klicken Sie auf **Registrierungsrichtlinien**, und klicken Sie dann auf Ihre Registrierungsrichtlinie (z. B. „b2c\_1\_sign\_up“).
 3. Klicken Sie auf **Anpassung der Seiten-UI** und dann auf **Auswahlseite für den Identitätsanbieter**.
 4. Stellen Sie die Option **Benutzerdefinierte Vorlage** verwenden auf **Ja** ein. Geben Sie im Feld **Benutzerdefinierter Seiten-URI** den Linktext `https://contosob2c.blob.core.windows.net/static/Index.html` ein. Klicken Sie auf **OK**.
@@ -68,7 +68,8 @@ Wenn Sie den Azure-BLOB-Speicher zum Hosten Ihrer Beispielinhalte verwenden möc
 7. Der Container, den Sie erstellt haben, wird in der Liste auf dem Blatt **Blobs** angezeigt. Notieren Sie sich die URL des Containers. Sie sieht beispielsweise wie folgt aus: `https://contoso.blob.core.windows.net/b2c`. Schließen Sie das Blatt **Blobs**.
 8. Klicken Sie auf dem Blatt für das Speicherkonto auf **Schlüssel**, und notieren Sie sich die Werte der Felder **Speicherkontoname** und **Primärer Zugriffsschlüssel**.
 
-> [AZURE.NOTE]Der **primäre Zugriffsschlüssel** ist eine wichtige Anmeldeinformation.
+> [AZURE.NOTE]
+	Der **primäre Zugriffsschlüssel** ist eine wichtige Anmeldeinformation.
 
 #### Herunterladen des Hilfstools und der Beispieldateien
 
@@ -90,4 +91,4 @@ Nachdem Sie die Beispielinhalte in Ihr eigenes Speicherkonto hochgeladen haben, 
         
 Sie können nun die Schaltfläche **Jetzt ausführen** oder Ihre eigene Anwendung verwenden, um die Richtlinie erneut auszuführen. Das Ergebnis sollte nahezu identisch sein, da Sie in beiden Fällen dieselben HTML- und CSS-Beispieldaten verwendet haben. Die Richtlinien verweisen jetzt aber auf Ihre eigene Instanz des Azure-BLOB-Speichers, und Sie können die Dateien wie gewünscht bearbeiten und neu hochladen. Weitere Informationen zum Anpassen der HTML- und CSS-Daten finden Sie im [Hauptartikel zur Anpassung der Benutzeroberfläche](active-directory-b2c-reference-ui-customization.md).
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -17,7 +17,7 @@
  
 # Exemplarische Vorgehensweise: Exportieren aus Application Insights in SQL mit Stream Analytics
 
-Dieser Artikel zeigt, wie Sie Ihre Telemetriedaten aus [Visual Studio Application Insights][start] mithilfe von [fortlaufendem Export][export] und [Azure Stream Analytics](http://azure.microsoft.com/services/stream-analytics/) in eine Azure SQL-Datenbank verschieben.
+Dieser Artikel zeigt, wie Sie Ihre Telemetriedaten aus [Visual Studio Application Insights][start] mithilfe von [fortlaufendem Export][export] und [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/) in eine Azure SQL-Datenbank verschieben.
 
 Beim fortlaufenden Export werden die Telemetriedaten im JSON-Format in Azure Storage verschoben. Wir analysieren die JSON-Objekte mithilfe von Azure Stream Analytics und erstellen Zeilen in einer Datenbanktabelle.
 
@@ -35,7 +35,7 @@ Zum Überwachen Ihrer Anwendung [fügen Sie Ihrer Anwendung ein Application Insi
 
 Erste Schritte:
 
-1. Fordern Sie ein [Konto in Microsoft Azure](http://azure.microsoft.com/pricing/) an.
+1. Fordern Sie ein [Konto in Microsoft Azure](https://azure.microsoft.com/pricing/) an.
 2. Fügen Sie im [Azure-Portal][portal] eine neue Application Insights-Ressource für Ihre App hinzu:
 
     ![Wählen Sie "Neu", "Entwicklerdienste", "Application Insights", und wählen Sie den Typ der Anwendung.](./media/app-insights-code-sample-export-sql-stream-analytics/010-new-asp.png)
@@ -219,7 +219,7 @@ Bestätigen Sie das Serialisierungsformat:
 
 Schließen Sie den Assistenten, und warten Sie, bis das Setup abgeschlossen ist.
 
->[AZURE.TIP]Verwenden Sie die Beispielfunktion um zu überprüfen, ob der Eingabepfad ordnungsgemäß festgelegt wurde. Bei einem Fehler: Überprüfen Sie, ob sich für den ausgewählten Beispielzeitraum Daten im Speicher befinden. Bearbeiten Sie die Eingabedefinition, und überprüfen Sie, ob die Einstellungen für Speicherkonto, Pfadpräfix und Datumsformat richtig sind.
+>[AZURE.TIP] Verwenden Sie die Beispielfunktion um zu überprüfen, ob der Eingabepfad ordnungsgemäß festgelegt wurde. Bei einem Fehler: Überprüfen Sie, ob sich für den ausgewählten Beispielzeitraum Daten im Speicher befinden. Bearbeiten Sie die Eingabedefinition, und überprüfen Sie, ob die Einstellungen für Speicherkonto, Pfadpräfix und Datumsformat richtig sind.
 
 ## Festlegen der Abfrage
 
@@ -315,4 +315,4 @@ Nach einigen Minuten wechseln Sie zurück zu den SQL Server-Verwaltungstools, un
 
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0128_2016-->

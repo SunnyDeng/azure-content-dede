@@ -13,14 +13,14 @@ ms.devlang="na"
 ms.topic="article"
 ms.tgt_pltfrm="na"
 ms.workload="big-data"
-ms.date="01/14/2016"
+ms.date="01/28/2016"
 ms.author="larryfr"/>
 
 #Verwenden von Azure Data Lake-Speicher mit Apache Storm und HDInsight
 
 Azure Data Lake-Speicher ist ein mit HDFS-kompatibler Cloudspeicherdienst, der für Ihre Daten hohe Durchsatzraten, Verfügbarkeit, Stabilität und Zuverlässigkeit bietet. In diesem Dokument erfahren Sie, wie Sie eine Java-basierte Storm-Topologie verwenden, um Daten mithilfe der Komponente [HdfsBolt](http://storm.apache.org/javadoc/apidocs/org/apache/storm/hdfs/bolt/HdfsBolt.html) aus dem Funktionsumfang von Apache Storm in den Azure Data Lake-Speicher zu schreiben.
 
-> [AZURE.IMPORTANT]Die in diesem Dokument verwendete Beispieltopologie basiert auf Komponenten im Funktionsumfang von Storm in HDInsight-Clustern, die ggf. überarbeitet werden müssen, um bei Verwenden mit anderen Apache Storm-Clustern mit dem Azure Data Lake-Speicher zusammenarbeiten zu können.
+> [AZURE.IMPORTANT] Die in diesem Dokument verwendete Beispieltopologie basiert auf Komponenten im Funktionsumfang von Storm in HDInsight-Clustern, die ggf. überarbeitet werden müssen, um bei Verwenden mit anderen Apache Storm-Clustern mit dem Azure Data Lake-Speicher zusammenarbeiten zu können.
 
 ##Voraussetzungen
 
@@ -63,7 +63,7 @@ ADLStoreBolt ist der Name für die HdfsBolt-Instanz in der Topologie, die Daten 
 
 Wenn Sie einen HDInsight-Cluster erstellen, können Sie ihn einem Azure Data Lake-Speicher zuordnen. Einträge werden dann für den ausgewählten Data Lake-Speicher in „core-site.xml“ geschrieben, die anschließend von Komponenten wie „hadoop-client“ und „hadoop-hdfs“ zum Ermöglichen der Kommunikation mit dem Data Lake-Speicher genutzt werden.
 
-> [AZURE.NOTE]Microsoft hat Code zu Apache Hadoop- und Storm-Projekten beigetragen, der die Kommunikation mit Azure Data Lake-Speicher und Azure Blob Storage ermöglicht. Doch diese Funktionalität ist ggf. nicht standardmäßig in anderen Hadoop- und Storm-Distributionen enthalten.
+> [AZURE.NOTE] Microsoft hat Code zu Apache Hadoop- und Storm-Projekten beigetragen, der die Kommunikation mit Azure Data Lake-Speicher und Azure Blob Storage ermöglicht. Doch diese Funktionalität ist ggf. nicht standardmäßig in anderen Hadoop- und Storm-Distributionen enthalten.
 
 Die Konfiguration für HdfsBolt in der Topologie ist wie folgt:
 
@@ -96,9 +96,9 @@ Da HdfsBolt zum Schreiben in Azure Data Lake-Speicher verwendet wird und nur ein
 
 ##Erstellen eines HDInsight-Clusters und von Data Lake-Speicher
 
-Erstellen Sie einen neuen Storm-in-HDInsight-Cluster, indem Sie die Schritte im Dokument [Bereitstellen eines HDInsight-Clusters mit Data Lake-Speicher mithilfe des Azure-Portals](data-lake-store-hdinsight-hadoop-use-portal.md) befolgen. Anhand der Schritte in diesem Dokument erstellen Sie einen neuen HDInsight-Cluster und Azure Data Lake-Speicher.
+Erstellen Sie einen neuen Storm-in-HDInsight-Cluster, indem Sie die Schritte im Dokument [Bereitstellen eines HDInsight-Clusters mit Data Lake-Speicher mithilfe des Azure-Portals](../data-lake-store/data-lake-store-hdinsight-hadoop-use-portal.md) ausführen. Anhand der Schritte in diesem Dokument erstellen Sie einen neuen HDInsight-Cluster und Azure Data Lake-Speicher.
 
-> [AZURE.IMPORTANT]Wenn Sie den HDInsight-Cluster erstellen, müssen Sie __Storm__ als Clustertyp auswählen. Das Betriebssystem kann Windows oder Linux sein.
+> [AZURE.IMPORTANT] Wenn Sie den HDInsight-Cluster erstellen, müssen Sie __Storm__ als Clustertyp auswählen. Das Betriebssystem kann Windows oder Linux sein.
 
 ##Erstellen und Packen der Topologie
 
@@ -123,7 +123,7 @@ Wenn Sie einen auf Linux basierenden Storm-in-HDInsight-Cluster erstellt haben, 
     
     Geben Sie nach Aufforderung das Kennwort ein, das Sie beim Erstellen des SSH-Benutzers für den Cluster verwendet haben. Wenn Sie einen öffentlichen Schlüssel anstelle eines Kennworts verwendet haben, müssen Sie möglicherweise den Parameter `-i` verwenden und den Pfad zum passenden privaten Schlüssel angeben.
     
-    > [AZURE.NOTE]Wenn Sie einen Windows-Client für die Entwicklung verwenden, steht der Befehl `scp` ggf. nicht zur Verfügung. In diesem Fall können Sie `pscp` verwenden, das unter [http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) zur Verfügung steht.
+    > [AZURE.NOTE] Wenn Sie einen Windows-Client für die Entwicklung verwenden, steht der Befehl `scp` ggf. nicht zur Verfügung. In diesem Fall können Sie `pscp` verwenden, das unter [http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) zur Verfügung steht.
 
 2. Führen Sie nach Abschluss des Uploads den folgenden Befehl aus, um mithilfe von SSH eine Verbindung mit dem HDInsight-Cluster herzustellen. Ersetzen Sie __USER__ durch den SSH-Benutzernamen, den Sie beim Erstellen des Clusters verwendet haben. Ersetzen Sie __CLUSTERNAME__ durch den Namen des Clusters.
 
@@ -131,7 +131,7 @@ Wenn Sie einen auf Linux basierenden Storm-in-HDInsight-Cluster erstellt haben, 
 
     Geben Sie nach Aufforderung das Kennwort ein, das Sie beim Erstellen des SSH-Benutzers für den Cluster verwendet haben. Wenn Sie einen öffentlichen Schlüssel anstelle eines Kennworts verwendet haben, müssen Sie möglicherweise den Parameter `-i` verwenden und den Pfad zum passenden privaten Schlüssel angeben.
     
-    > [AZURE.NOTE]Wenn Sie einen Windows-Client für die Entwicklung verwenden, befolgen Sie die Informationen unter [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Windows](hdinsight-hadoop-linux-use-ssh-windows.md) zur Verwendung des PuTTY-Clients zum Herstellen einer Verbindung mit dem Cluster.
+    > [AZURE.NOTE] Wenn Sie einen Windows-Client für die Entwicklung verwenden, befolgen Sie die Informationen unter [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Windows](hdinsight-hadoop-linux-use-ssh-windows.md) zur Verwendung des PuTTY-Clients zum Herstellen einer Verbindung mit dem Cluster.
     
 3. Führen Sie nach dem Herstellen der Verbindung den folgenden Befehl aus, um die Topologie zu starten:
 
@@ -162,11 +162,11 @@ Wenn Sie einen auf Linux basierenden Storm-in-HDInsight-Cluster erstellt haben, 
 
 Es gibt mehrere Möglichkeiten zum Anzeigen der Daten. In diesem Abschnitt verwenden wir das Azure-Portal und den `hdfs`-Befehl, um die Daten anzuzeigen.
 
-> [AZURE.NOTE]Sie sollten die Topologien vor der Prüfung der Ausgabedaten mehrere Minuten ausführen, damit Daten mit mehreren Dateien im Azure Data Lake-Speicher synchronisiert wurden.
+> [AZURE.NOTE] Sie sollten die Topologien vor der Prüfung der Ausgabedaten mehrere Minuten ausführen, damit Daten mit mehreren Dateien im Azure Data Lake-Speicher synchronisiert wurden.
 
 * __Im [Azure-Portal](https://portal.azure.com)__: Wählen Sie im Portal, den Azure Data Lake-Speicher aus, den Sie mit HDInsight verwendet haben.
 
-    > [AZURE.NOTE]Wenn Sie den Data Lake-Speicher nicht am Dashboard im Azure-Portal angeheftet haben, finden Sie ihn, indem Sie links unten in der Liste erst __Durchsuchen__, dann __Data Lake-Speicher__ und schließlich den Speicher auswählen.
+    > [AZURE.NOTE] Wenn Sie den Data Lake-Speicher nicht am Dashboard im Azure-Portal angeheftet haben, finden Sie ihn, indem Sie links unten in der Liste erst __Durchsuchen__, dann __Data Lake-Speicher__ und schließlich den Speicher auswählen.
     
     Wählen Sie aus den Symbolen oben im Data Lake-Speicher __Daten-Explorer__ aus.
     
@@ -221,4 +221,4 @@ __Für Windows-basiertes HDInsight__:
 
 Nachdem Sie erfahren haben, wie Daten mithilfe von Storm in Azure Data Lake-Speicher geschrieben werden, können Sie sich mit anderen [Storm-Beispielen für HDInsight](hdinsight-storm-example-topology.md) beschäftigen.
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0204_2016-->

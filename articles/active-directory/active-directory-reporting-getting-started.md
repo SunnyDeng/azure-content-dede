@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="01/05/2016"
+   ms.date="02/01/2016"
    ms.author="curtand;kenhoff"/>
 
 # Erste Schritte mit Azure Active Directory-Berichten
@@ -48,7 +48,7 @@ Azure Active Directory (Azure AD) umfasst Sicherheits-, Aktivitäts- und Prüfbe
 
 - Verzeichnisprüfbericht
 
-> [AZURE.TIP]Weitere Dokumentationen zu Azure AD Reporting finden Sie unter [Anzeigen von Zugriffs- und Nutzungsberichten](active-directory-view-access-usage-reports.md).
+> [AZURE.TIP] Weitere Dokumentationen zu Azure AD Reporting finden Sie unter [Anzeigen von Zugriffs- und Nutzungsberichten](active-directory-view-access-usage-reports.md).
 
 
 
@@ -71,7 +71,7 @@ Sie finden die aktuellste verarbeitete Anmeldung im Hilfetext am oberen Rand jed
 
 ![Hilfetext am oberen Rand jedes Berichts](./media/active-directory-reporting-getting-started/reportingWatermark.PNG)
 
-> [AZURE.TIP]Weitere Dokumentationen zu Azure AD Reporting finden Sie unter [Anzeigen von Zugriffs- und Nutzungsberichten](active-directory-view-access-usage-reports.md).
+> [AZURE.TIP] Weitere Dokumentationen zu Azure AD Reporting finden Sie unter [Anzeigen von Zugriffs- und Nutzungsberichten](active-directory-view-access-usage-reports.md).
 
 
 
@@ -92,7 +92,7 @@ Wenn Sie zum ersten Mal Berichte anzeigen, müssen Sie ein Dialogfeld bestätige
 
 ### Untersuchen der einzelnen Berichte
 
-Navigieren Sie zu jedem Bericht, um die gesammelten Daten und die verarbeiteten Anmeldungen zu sehen. Sie finden [hier eine Liste aller Berichte](active-directory-reporting-what-it-is.md).
+Navigieren Sie zu jedem Bericht, um die gesammelten Daten und die verarbeiteten Anmeldungen zu sehen. Sie finden [hier eine Liste aller Berichte](active-directory-reporting-guide.md).
 
 ![Alle Berichte](./media/active-directory-reporting-getting-started/reportsMain.png)
 
@@ -104,7 +104,7 @@ Um einen Bericht im CSV-Format herunterzuladen, navigieren Sie zum Bericht, und 
 
 ![Schaltfläche "Herunterladen"](./media/active-directory-reporting-getting-started/downloadButton.png)
 
-> [AZURE.TIP]Weitere Dokumentationen zu Azure AD Reporting finden Sie unter [Anzeigen von Zugriffs- und Nutzungsberichten](active-directory-view-access-usage-reports.md).
+> [AZURE.TIP] Weitere Dokumentationen zu Azure AD Reporting finden Sie unter [Anzeigen von Zugriffs- und Nutzungsberichten](active-directory-view-access-usage-reports.md).
 
 
 
@@ -134,7 +134,7 @@ Klicken Sie am unteren Bildschirmrand auf die Schaltfläche "MFA aktivieren".
 
 ![Schaltfläche "Multi-Factor Authentication" am unteren Bildschirmrand](./media/active-directory-reporting-getting-started/mfaButton.png)
 
-> [AZURE.TIP]Weitere Dokumentationen zu Azure AD Reporting finden Sie unter [Anzeigen von Zugriffs- und Nutzungsberichten](active-directory-view-access-usage-reports.md).
+> [AZURE.TIP] Weitere Dokumentationen zu Azure AD Reporting finden Sie unter [Anzeigen von Zugriffs- und Nutzungsberichten](active-directory-view-access-usage-reports.md).
 
 
 
@@ -154,6 +154,6 @@ Informationen hierzu finden Sie unter [Erste Schritte mit der Azure AD Reporting
 
 Unter der E-Mail-Adresse [aadreportinghelp@microsoft.com](mailto:aadreportinghelp@microsoft.com) erhalten Sie Feedback, Hilfe und Antworten auf Ihre Fragen!
 
-> [AZURE.TIP]Weitere Dokumentationen zu Azure AD Reporting finden Sie unter [Anzeigen von Zugriffs- und Nutzungsberichten](active-directory-view-access-usage-reports.md).
+> [AZURE.TIP] Weitere Dokumentationen zu Azure AD Reporting finden Sie unter [Anzeigen von Zugriffs- und Nutzungsberichten](active-directory-view-access-usage-reports.md).
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0204_2016-->

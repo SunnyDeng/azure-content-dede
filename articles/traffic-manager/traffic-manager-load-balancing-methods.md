@@ -31,7 +31,7 @@ Die drei folgenden Traffic Manager-Routingmethoden für Datenverkehr stehen zur 
 
 Beachten Sie, dass Azure Websites bereits Funktionen für Failover- und Roundrobin-Datenverkehrs-Routingmethoden für Websites in einem Datencenter unabhängig vom Websitemodus zur Verfügung stellen. Traffic Manager ermöglicht das Angeben von Failover- und Roundrobin-Datenverkehrsrouting für Websites in verschiedenen Datencentern.
 
->[AZURE.NOTE]Die DNS-Gültigkeitsdauer (TTL) informiert DNS-Clients und -Resolver auf DNS-Servern, wie lange die aufgelösten Namen zwischengespeichert werden sollen. Clients verwenden weiterhin einen bestimmten Endpunkt beim Auflösen des Domänennamens, bis der lokale DNS-Cacheeintrag für den Namen abläuft.
+>[AZURE.NOTE] Die DNS-Gültigkeitsdauer (TTL) informiert DNS-Clients und -Resolver auf DNS-Servern, wie lange die aufgelösten Namen zwischengespeichert werden sollen. Clients verwenden weiterhin einen bestimmten Endpunkt beim Auflösen des Domänennamens, bis der lokale DNS-Cacheeintrag für den Namen abläuft.
 
 ## Routingmethode für Failoverdatenverkehr
 
@@ -85,7 +85,7 @@ Zurzeit kann das Azure-Portal nicht zum Konfigurieren von gewichtetem Datenverke
 
 Informationen zur Verwendung der REST-APIs finden Sie unter [Vorgänge für Traffic Manager (REST-API-Referenz)](http://go.microsoft.com/fwlink/p/?LinkId=313584).
 
-Informationen zur Verwendung der Azure PowerShell-Cmdlets finden Sie unter [Azure Traffic Manager-Cmdlets](http://go.microsoft.com/fwlink/p/?LinkId=400769). Eine Beispielkonfiguration finden Sie unter [Azure Traffic Manager External Endpoints and Weighted Round Robin via PowerShell](http://azure.microsoft.com/blog/2014/06/26/azure-traffic-manager-external-endpoints-and-weighted-round-robin-via-powershell/) in englischer Sprache im Azure-Blog.
+Informationen zur Verwendung der Azure PowerShell-Cmdlets finden Sie unter [Azure Traffic Manager-Cmdlets](http://go.microsoft.com/fwlink/p/?LinkId=400769). Eine Beispielkonfiguration finden Sie unter [Azure Traffic Manager External Endpoints and Weighted Round Robin via PowerShell](https://azure.microsoft.com/blog/2014/06/26/azure-traffic-manager-external-endpoints-and-weighted-round-robin-via-powershell/) in englischer Sprache im Azure-Blog.
 
 Wenn Sie das Profil von einem einzelnen Client aus testen und das gleichmäßige oder gewichtete Roundrobin-Verhalten beobachten möchten, überprüfen Sie, ob der DNS-Name in die verschiedenen IP-Adressen für die Endpunkte gemäß den gleichmäßigen oder gewichteten Werten im Profil aufgelöst wird. Beim Testen müssen Sie clientseitiges DNS-Caching deaktivieren oder den DNS-Cache zwischen den einzelnen Versuchen löschen, damit sichergestellt ist, dass eine neue Abfrage des DNS-Namens gesendet wird.
 
@@ -137,4 +137,4 @@ Wenn Sie die Abbildungen in diesem Thema als PowerPoint-Folien in Ihrer eigenen 
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

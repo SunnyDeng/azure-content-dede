@@ -27,7 +27,7 @@ In der Regel verwenden Sie collectd, wenn Sie [Ihren Java-Webdienst bereits mith
 
 ## Abrufen des Instrumentationsschlüssels
 
-Öffnen Sie im [Microsoft Azure-Portal](http://portal.azure.com) die Ressource [Application Insights](start), in der die Daten angezeigt werden sollen. (Oder [erstellen Sie eine neue Ressource](app-insights-create-new-resource.md).)
+Öffnen Sie im [Microsoft Azure-Portal](https://portal.azure.com) die Ressource [Application Insights](start), in der die Daten angezeigt werden sollen. (Oder [erstellen Sie eine neue Ressource](app-insights-create-new-resource.md).)
 
 Kopieren Sie den Instrumentationsschlüssel, der die Ressource identifiziert.
 
@@ -40,7 +40,7 @@ Kopieren Sie den Instrumentationsschlüssel, der die Ressource identifiziert.
 Auf Unix-Servercomputern:
 
 1. Installieren Sie [collectd](http://collectd.org/), Version 5.4.0 oder höher.
-2. Laden Sie das [collectd-Writer-Plug-In für Application Insights](https://azuredownloads.blob.core.windows.net/applicationinsights/sdk.html) herunter. Beachten Sie die Versionsnummer.
+2. Laden Sie das [collectd-Writer-Plug-In für Application Insights](https://azuredownloads.blob.core.windows.net/applicationinsights/applicationinsights-collectd-1.0.1.jar) herunter. Beachten Sie die Versionsnummer.
 3. Kopieren Sie die Plug-In-JAR in `/usr/share/collectd/java`.
 3. Bearbeiten Sie `/etc/collectd/collectd.conf`:
  * Stellen Sie sicher, dass [das Java-Plug-In](https://collectd.org/wiki/index.php/Plugin:Java) aktiviert ist.
@@ -143,4 +143,4 @@ Trennen Sie Direktiven mit einem Zeilenumbruch.
 
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0204_2016-->

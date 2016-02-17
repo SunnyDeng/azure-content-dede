@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="01/19/2016"
+    ms.date="01/29/2016"
     ms.author="elizapo" />
 
 
@@ -30,20 +30,19 @@ Folgendes gilt für Azure RemoteApp bei einer Cloud- oder Hybridsammlung, wenn S
 *	 https://*remoteapp.windowsazure.com  
 *	 https://*.core.windows.net  
 *	 Ausgehend: TCP: 443, TCP: 10101 - 10175 
-*	 Optional – UDP: 10201-10275 
+*	 Optional – UDP: 10201-10275  
  
 ## Azure RemoteApp-Clients benötigen Zugriff auf diese Endpunkte und URLs: 
 
 Mit Clients sind die Desktops, Geräte usw. gemeint, mit denen Benutzer eine Verbindung mit den Apps herstellen, die in der Azure RemoteApp-Sammlung bereitgestellt werden.
 
 -  https://telemetry.remoteapp.windowsazure.com  
--  https://**.remoteapp.windowsazure.com (optionale UDP-Ports gelten für diese Adresse) 
+-  https://*.remoteapp.windowsazure.com (optionale UDP-Ports gelten für diese Adresse) 
 -  https://login.windows.net  
 -  https://login.microsoftonline.com  
 -  https://www.remoteapp.windowsazure.com 
--  https://**.remoteapp.windowsazure.com  
 -  https://*.core.windows.net  
 -  Ausgehend: TCP: 443  
--  Optional – UDP: 10201-10275
+-  Optional – UDP: 3391 
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0204_2016-->

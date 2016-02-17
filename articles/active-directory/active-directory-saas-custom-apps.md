@@ -15,32 +15,34 @@
 
 #Konfigurieren des einmaligen Anmeldens für Anwendungen, die nicht im Azure Active Directory-Anwendungskatalog enthalten sind
 
-Der Azure Active Directory-Anwendungskatalog enthält eine Liste der Anwendungen, die bekanntermaßen eine Form der einmaligen Anmeldung mit Azure Active Directory unterstützen, wie [in diesem Artikel](https://azure.microsoft.com/documentation/articles/active-directory-appssoaccess-whatis/) beschrieben. Wenn Sie (als IT-Spezialist oder Systemintegrator in Ihrer Organisation) die Anwendung gefunden haben, mit der Sie eine Verbindung herstellen möchten, können Sie mithilfe der Schritt-für-Schritt-Anleitungen im Azure-Verwaltungsportal das einmalige Anmelden aktivieren.
+In diesem Artikel geht es um eine Funktion, die Administratoren das Konfigurieren der einmaligen Anmeldung bei Anwendungen, die im Azure Active Directory-App-Katalog nicht vorhanden sind, *ohne Schreiben von Code*. Diese Funktion wurde von der technischen Vorschau am 18. November 2015 veröffentlicht und steht [Azure Active Directory Premium](active-directory-editions.md) zur Verfügung. Wenn Sie stattdessen nach einer Anleitung für Entwickler zum Integrieren von benutzerdefinierten Apps in Azure AD mithilfe von Code suchen, finden Sie diese unter [Authentifizierungsszenarien für Azure AD](active-directory-authentication-scenarios.md).
 
-Kunden mit [Azure Active Directory Premium](https://msdn.microsoft.com/library/azure/dn532272.aspx)-Lizenzen erhalten folgende zusätzlichen Möglichkeiten, die über die Kategorie **Benutzerdefiniert** des Azure AD-Anwendungskatalogs genutzt werden können:
+Der Azure Active Directory-Anwendungskatalog enthält eine Liste der Anwendungen, die bekanntermaßen eine Form der einmaligen Anmeldung mit Azure Active Directory unterstützen, wie [in diesem Artikel](active-directory-appssoaccess-whatis.md) beschrieben. Wenn Sie (als IT-Spezialist oder Systemintegrator in Ihrer Organisation) die Anwendung gefunden haben, mit der Sie eine Verbindung herstellen möchten, können Sie mithilfe der Schritt-für-Schritt-Anleitungen im Azure-Verwaltungsportal das einmalige Anmelden aktivieren.
 
-* Self-Service-Verbindung für Anwendungen, die SAML 2.0-Identitätsanbieter unterstützen
-* Self-Service-Verbindung für Webanwendungen, die über eine HTML-basierte Anmeldeseite mit kennwortbasierter einmaliger Anmeldung (Single Sign-On, SSO) verfügen
-* Möglichkeit zum Hinzufügen von Links auf Anwendungen im [Office 365-App-Startfeld](https://blogs.office.com/2014/10/16/organize-office-365-new-app-launcher-2/) oder im [Azure AD-Zugriffsbereich](https://azure.microsoft.com/documentation/articles/active-directory-appssoaccess-whatis/#deploying-azure-ad-integrated-applications-to-users)
+Kunden mit [Azure Active Directory Premium](active-directory-editions.md)-Lizenzen erhalten auch diese zusätzlichen Funktionen:
+
+* Self-Service-Integration für Anwendungen, die SAML 2.0-Identitätsanbieter unterstützen
+* Self-Service-Integration für Webanwendungen, die über eine HTML-basierte Anmeldeseite mit [kennwortbasierter einmaliger Anmeldung (Single Sign-On, SSO)](active-directory-appssoaccess-whatis.md/#password-based-single-sign-on) verfügen
 * Self-Service-Verbindung für Anwendungen, die das SCIM-Protokoll für die Benutzerbereitstellung verwenden ([wie hier beschrieben](active-directory-scim-provisioning))
+* Möglichkeit zum Hinzufügen von Links auf Anwendungen im [Office 365-App-Startfeld](https://blogs.office.com/2014/10/16/organize-office-365-new-app-launcher-2/) oder im [Azure AD-Zugriffsbereich](active-directory-appssoaccess-whatis.md/#deploying-azure-ad-integrated-applications-to-users)
 
 Diese Möglichkeiten beziehen sich nicht nur SaaS-Anwendungen, die Sie bereits nutzen, die aber noch nicht per Onboarding in den Azure AD-Anwendungskatalog aufgenommen wurden, sondern auch auf Drittanbieter-Webanwendungen, die Ihre Organisation auf von Ihnen kontrollierten Servern in der Cloud oder lokal bereitgestellt hat.
 
-Hinweis: Anwendungsentwickler, die die Kompatibilität ihrer Anwendung mit diesem Feature testen möchten, können dazu die [kostenlose Testversion von Azure Active Directory Premium](https://azure.microsoft.com/trial/get-started-active-directory/) verwenden. Es wird jedoch empfohlen, eine [Lizenz für interne Nutzungsrechte](https://mspartner.microsoft.com/en/us/pages/membership/internal-use-software.aspx) zu erwerben.
+Diese Funktionen, auch als *App-Integrationsvorlagen* bezeichnet, bieten standardbasierte Verbindungspunkte für Apps, die SAML, SCIM oder formularbasierte Authentifizierung unterstützen, und enthalten flexible Optionen und Einstellungen für die Kompatibilität mit einer umfassenden Reihe von Anwendungen.
 
-##Hinzufügen einer nicht aufgeführten oder benutzerdefinierten Anwendung 
+##Hinzufügen einer nicht aufgeführten Anwendung
 
-Zum Konfigurieren einer Anwendung melden Sie sich mit Ihrem Azure Active Directory-Administratorkonto beim Azure-Verwaltungsportal an, navigieren zum Bereich **Active Directory > [Verzeichnis] > Anwendungen**, klicken auf **Hinzufügen** und dann auf **Anwendung aus dem Katalog hinzufügen**.
+Zum Verbinden einer Anwendung mithilfe einer App-Integrationsvorlage melden Sie sich mit Ihrem Azure Active Directory-Administratorkonto beim Azure-Verwaltungsportal an, navigieren zum Bereich **Active Directory > [Verzeichnis] > Anwendungen**, klicken auf **Hinzufügen** und dann auf **Anwendung aus dem Katalog hinzufügen**.
 
 ![][1]
 
-Im App-Katalog können Sie eine benutzerdefinierte App hinzufügen, indem Sie links die Kategorie **Benutzerdefiniert** verwenden oder indem Sie auf den Link **Eine nicht aufgeführte Anwendung hinzufügen** klicken. Dieser Link wird in den Suchergebnissen angezeigt, wenn die gewünschte App nicht gefunden wurde. Nachdem Sie den Namen für Ihre Anwendung eingegeben haben, können Sie die Optionen für das einmalige Anmelden und das entsprechende Verhalten festlegen.
+Im App-Katalog können Sie eine nicht aufgeführte App hinzufügen, indem Sie links die Kategorie **Benutzerdefiniert** verwenden oder indem Sie auf den Link **Eine nicht aufgeführte Anwendung hinzufügen** klicken. Dieser Link wird in den Suchergebnissen angezeigt, wenn die gewünschte App nicht gefunden wurde. Nachdem Sie den Namen für Ihre Anwendung eingegeben haben, können Sie die Optionen für das einmalige Anmelden und das entsprechende Verhalten festlegen.
 
 **Tipp**: Es hat sich bewährt, zuerst mit der Suchfunktion zu prüfen, ob die Anwendung bereits im Anwendungskatalog vorhanden ist. Wenn die Anwendung gefunden wird und in der Beschreibung das einmalige Anmelden erwähnt wird, wird die einmalige Verbundanmeldung für die Anwendung bereits unterstützt.
 
 ![][2]
 
-Das Hinzufügen einer benutzerdefinierten Anwendung gestaltet sich ähnlich benutzerfreundlich wie bei vorab integrierten Anwendungen. Zu Beginn wählen Sie **Einmaliges Anmelden konfigurieren**. Auf dem nächsten Bildschirm werden die folgenden drei Optionen zum Konfigurieren des einmaligen Anmeldens angeboten, die in den folgenden Abschnitten beschrieben werden.
+Das Hinzufügen einer Anwendung mit dieser Methode gestaltet sich ähnlich benutzerfreundlich wie bei vorab integrierten Anwendungen. Zu Beginn wählen Sie **Einmaliges Anmelden konfigurieren**. Auf dem nächsten Bildschirm werden die folgenden drei Optionen zum Konfigurieren des einmaligen Anmeldens angeboten, die in den folgenden Abschnitten beschrieben werden.
 
 ![][3]
 
@@ -105,7 +107,7 @@ Hinweis: Sie können ein Kachellogo für die Anwendung hochladen. Verwenden Sie 
 
 Wählen Sie diese Option, um im Azure AD-Zugriffsbereich oder im Office 365-Portal einen Link auf eine Anwendung hinzufügen. Sie können mit dieser Option Links auf benutzerdefinierte Web-Apps hinzufügen, die derzeit zur Authentifizierung nicht Azure AD verwenden, sondern Azure Active Directory-Verbunddienste (oder andere Verbunddienste). Oder Sie können Deep-Links auf spezifische SharePoint-Seiten oder andere Webseiten hinzufügen, die in den Zugriffsbereichen der betreffenden Benutzer angezeigt werden sollen.
 
-Nachdem Sie auf **Weiter** geklickt haben, werden Sie aufgefordert, die URL für die Anwendung einzugeben, für die der Link angezeigt werden soll. Wenn Sie dies abgeschlossen haben, können Sie der Anwendung Benutzer und Gruppen zuweisen. Dadurch wird die Anwendung im [Office 365-App-Startfeld](https://blogs.office.com/2014/10/16/organize-office-365-new-app-launcher-2/) oder im [Azure AD-Zugriffsbereich](https://azure.microsoft.com/documentation/articles/active-directory-appssoaccess-whatis/#deploying-azure-ad-integrated-applications-to-users) für die betreffenden Benutzer angezeigt.
+Nachdem Sie auf **Weiter** geklickt haben, werden Sie aufgefordert, die URL für die Anwendung einzugeben, für die der Link angezeigt werden soll. Wenn Sie dies abgeschlossen haben, können Sie der Anwendung Benutzer und Gruppen zuweisen. Dadurch wird die Anwendung im [Office 365-App-Startfeld](https://blogs.office.com/2014/10/16/organize-office-365-new-app-launcher-2/) oder im [Azure AD-Zugriffsbereich](active-directory-appssoaccess-whatis.md/#deploying-azure-ad-integrated-applications-to-users) für die betreffenden Benutzer angezeigt.
 
 Hinweis: Sie können ein Kachellogo für die Anwendung hochladen. Verwenden Sie dazu die Schaltfläche **Logo hochladen** auf der Registerkarte **Konfigurieren** für die Anwendung.
 
@@ -118,4 +120,4 @@ Hinweis: Sie können ein Kachellogo für die Anwendung hochladen. Verwenden Sie 
 [6]: ./media/active-directory-saas-custom-apps/customapp6.png
 [7]: ./media/active-directory-saas-custom-apps/customapp7.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0204_2016-->

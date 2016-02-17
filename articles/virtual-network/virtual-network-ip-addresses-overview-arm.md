@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="01/12/2015"
+   ms.date="01/25/2016"
    ms.author="telmos" />
 
 # IP-Adressen in Azure
@@ -28,7 +28,7 @@ Private IP-Adressen werden für die Kommunikation innerhalb eines Azure Virtual 
 Wenn Sie mit dem klassischen Bereitstellungsmodell vertraut sind, sehen Sie sich die [Unterschiede bei IP-Adressen zwischen dem klassischen und dem Ressourcen-Manager](virtual-network-ip-addresses-overview-classic.md#Differences-between-Resource-Manager-and-classic-deployments)-Bereitstellungsmodell an.
 
 ## Öffentliche IP-Adressen
-Öffentliche IP-Adressen ermöglichen Azure-Ressourcen die Kommunikation mit dem Internet und öffentlichen Azure-Diensten wie [Azure Redis Cache](https://azure.microsoft.com/services/cache), [Azure Event Hubs](https://azure.microsoft.com/services/event-hubs), [SQL-Datenbanken](sql-database-technical-overview.md) und [Azure Storage](storage-introduction.md).
+Öffentliche IP-Adressen ermöglichen Azure-Ressourcen die Kommunikation mit dem Internet und öffentlichen Azure-Diensten wie [Azure Redis Cache](https://azure.microsoft.com/services/cache/), [Azure Event Hubs](https://azure.microsoft.com/services/event-hubs/), [SQL-Datenbanken](sql-database-technical-overview.md) und [Azure Storage](storage-introduction.md).
 
 In Azure-Ressourcen-Manager ist eine [öffentliche IP-Adresse](resource-groups-networking.md#public-ip-address) eine Ressource, die über eigene Eigenschaften verfügt. Sie können eine öffentliche IP-Adressressource einer der folgenden Ressourcen zuordnen:
 
@@ -42,7 +42,7 @@ Es gibt zwei Methoden zum Zuordnen einer IP-Adresse zu einer *öffentlichen IP-R
 
 Damit die IP-Adresse für die zugeordnete Ressource unverändert bleibt, können Sie die Zuordnungsmethode explizit auf *statisch* festlegen. In diesem Fall wird sofort eine IP-Adresse zugewiesen. Sie wird nur freigegeben, wenn Sie die Ressource löschen oder deren Zuordnungsmethode in *dynamisch* ändern.
 
->[AZURE.NOTE]Auch wenn Sie die Zuordnungsmethode auf *statisch* festlegen, können Sie nicht die tatsächliche IP-Adresse festlegen, die der *öffentlichen IP-Ressource* zugewiesen wird. Sie wird stattdessen aus einem Pool der verfügbaren IP-Adressen an dem Azure-Standort zugeordnet, an dem die Ressource erstellt wird.
+>[AZURE.NOTE] Auch wenn Sie die Zuordnungsmethode auf *statisch* festlegen, können Sie nicht die tatsächliche IP-Adresse festlegen, die der *öffentlichen IP-Ressource* zugewiesen wird. Sie wird stattdessen aus einem Pool der verfügbaren IP-Adressen an dem Azure-Standort zugeordnet, an dem die Ressource erstellt wird.
 
 Statische öffentliche IP-Adressen werden häufig in den folgenden Szenarien verwendet:
 
@@ -51,12 +51,12 @@ Statische öffentliche IP-Adressen werden häufig in den folgenden Szenarien ver
 - Ihre Azure-Ressourcen kommunizieren mit anderen Apps oder Diensten, die ein IP-basiertes Sicherheitsmodell verwenden.
 - Sie verwenden SSL-Zertifikate, die mit einer IP-Adresse verknüpft sind.
 
->[AZURE.NOTE]Die Liste mit den IP-Adressbereichen, aus denen den Azure-Ressourcen öffentliche IP-Adressen (dynamisch/statisch) zugewiesen werden, finden Sie unter [IP-Bereiche des Azure-Datencenters](https://www.microsoft.com/download/details.aspx?id=41653).
+>[AZURE.NOTE] Die Liste mit den IP-Adressbereichen, aus denen den Azure-Ressourcen öffentliche IP-Adressen (dynamisch/statisch) zugewiesen werden, finden Sie unter [IP-Bereiche des Azure-Datencenters](https://www.microsoft.com/download/details.aspx?id=41653).
 
 ### DNS-Hostnamensauflösung
 Sie können eine DNS-Domänennamensbezeichnung für eine öffentliche IP-Ressource angeben. Dadurch erstellen Sie für *Domänennamensbezeichnung*.*Standort*.cloudapp.azure.com eine Zuordnung zur öffentlichen IP-Adresse in den von Azure verwalteten DNS-Servern. Wenn Sie z. B. eine öffentliche IP-Ressource mit **contoso** als *Domänennamensbezeichung* am Azure-*Standort* **USA, Westen** erstellen, wird der vollqualifizierte Domänenname (FQDN) **contoso.westus.cloudapp.azure.com** in die öffentliche IP-Adresse der Ressource aufgelöst. Mit diesem FQDN können Sie einen benutzerdefinierten CNAME-Domäneneintrag mit Verweis auf die öffentliche IP-Adresse in Azure erstellen.
 
->[AZURE.IMPORTANT]Jede erstellte Domänennamensbezeichnung muss innerhalb des Azure-Standorts eindeutig sein.
+>[AZURE.IMPORTANT] Jede erstellte Domänennamensbezeichnung muss innerhalb des Azure-Standorts eindeutig sein.
 
 ### VMs
 Sie können eine öffentliche IP-Adresse einem [virtuellen Computer](virtual-machines-about.md) (VM, Virtual Machine) zuordnen, indem Sie sie dessen **Netzwerkschnittstellenkarte** (NIC, Network Interface Card) zuordnen. Bei einem virtuellen Computer mit mehreren Netzwerkschnittstellenkarten (NICs) können Sie die IP-Adresse nur der *primären* NIC zuweisen. Sie können einem virtuellen Computer (VM) eine dynamische oder eine statische öffentliche IP-Adresse zuweisen.
@@ -68,17 +68,17 @@ Sie können eine öffentliche IP-Adresse einem [Azure Load Balancer](load-balanc
 Über [Azure VPN Gateway](vpn-gateway-about-vpngateways.md) wird eine Verbindung zwischen einem Azure Virtual Network (VNet) und anderen Azure-VNets oder lokalen Netzwerken hergestellt. Sie müssen der **IP-Konfiguration** dieses Gateways eine öffentliche IP-Adresse zuweisen, um eine Kommunikation mit dem Remotenetzwerk zu ermöglichen. Derzeit können Sie einem VPN-Gateway nur eine dynamische öffentliche IP-Adresse zuweisen.
 
 ### Anwendungsgateways
-Sie können eine öffentliche IP-Adresse einem Azure [Application Gateway](application-gateway-introduction.md) zuordnen, indem Sie sie der **Front-End**-Konfiguration des Gateways zuweisen. Diese öffentliche IP-Adresse fungiert als VIP (virtuelle IP-Adresse) mit Lastenausgleich. Derzeit können Sie der Front-End-Konfiguration eines Anwendungsgateways nur eine *dynamische* öffentliche IP-Adresse zuweisen. Für Szenarien mit mehreren VIPs können Sie auch mehrere öffentliche IP-Adressen zuweisen.
+Sie können eine öffentliche IP-Adresse einem Azure [Application Gateway](application-gateway-introduction.md) zuordnen, indem Sie sie der **Front-End**-Konfiguration des Gateways zuweisen. Diese öffentliche IP-Adresse fungiert als VIP (virtuelle IP-Adresse) mit Lastenausgleich. Derzeit können Sie der Front-End-Konfiguration eines Anwendungsgateways nur eine *dynamische* öffentliche IP-Adresse zuweisen.
 
 ### Auf einen Blick
-Die folgende Tabelle gibt Aufschluss über die einzelnen Ressourcentypen, die möglichen Zuordnungsmethoden (dynamisch/statisch) sowie über die Möglichkeit, mehrere öffentliche IP-Adressen zuzuweisen.
+Die nachstehende Tabelle zeigt die spezifischen Eigenschaften, durch die eine öffentliche IP-Adresse einer Ressource der obersten Ebene zugeordnet sein kann und die möglichen Zuweisungsverfahren (dynamisch oder statisch).
 
-|Ressource|Dynamisch|Statisch|Mehrere IP-Adressen|
+|Ressource der obersten Ebene|Zuordnung der IP-Adresse|Dynamisch|Statisch|
 |---|---|---|---|
-|Netzwerkschnittstellenkarte (NIC) (einer VM)|Ja|Ja|Nein|
-|Load Balancer-Front-End|Ja|Ja|Ja|
-|VPN Gateway|Ja|Nein|Nein|
-|Application Gateway-Front-End|Ja|Nein|Nein|
+|Virtueller Computer|Netzwerkschnittstellenkarte (NIC)|Ja|Ja|
+|Lastenausgleichsmodul|Front-End-Konfiguration|Ja|Ja|
+|VPN Gateway|Gateway-IP-Konfiguration|Ja|Nein|
+|Anwendungsgateway|Front-End-Konfiguration|Ja|Nein|
 
 ## Private IP-Adressen
 Private IP-Adressen ermöglichen Azure-Ressourcen die Kommunikation mit anderen Ressourcen in einem [Azure Virtual Network](virtual-networks-overview.md) (VNet) oder in einem lokalen Netzwerk über ein VPN-Gateway oder eine ExpressRoute-Verbindung, ohne dass dabei eine über das Internet erreichbare IP-Adresse verwendet wird.
@@ -113,47 +113,28 @@ Beim Erstellen einer VM wird den von Azure verwalteten DNS-Servern eine Zuordnun
 VMs, die mit von Azure verwalteten DNS-Servern konfiguriert wurden, können die Hostnamen aller VMs innerhalb ihres VNets in deren private IP-Adressen auflösen.
 
 ### Interne Load Balancer (ILB) und Anwendungsgateways
-Sie können der **Front-End**-Konfiguration eines [Azure-ILBs](load-balancer-internal-overview.md) oder eines [Azure Application Gateways](application-gateway-introduction.md) eine private IP-Adresse zuweisen. Diese private IP-Adresse fungiert als interner Endpunkt und steht nur den Ressourcen innerhalb des entsprechenden virtuellen Netzwerks (VNet) und der damit verbundenen Remotenetzwerke zur Verfügung. Der Front-End-Konfiguration kann eine dynamische oder eine statische private IP-Adresse zugewiesen werden. Für Szenarien mit mehreren virtuellen IP-Adressen (VIPs) können Sie auch mehrere private IP-Adressen zuweisen.
+Sie können der **Front-End**-Konfiguration eines [Azure-ILBs](load-balancer-internal-overview.md) oder eines [Azure Application Gateways](application-gateway-introduction.md) eine private IP-Adresse zuweisen. Diese private IP-Adresse fungiert als interner Endpunkt und steht nur den Ressourcen innerhalb des entsprechenden virtuellen Netzwerks (VNet) und der damit verbundenen Remotenetzwerke zur Verfügung. Der Front-End-Konfiguration kann eine dynamische oder eine statische private IP-Adresse zugewiesen werden.
 
 ### Auf einen Blick
-Die folgende Tabelle gibt Aufschluss über die einzelnen Ressourcentypen, die möglichen Zuordnungsmethoden (dynamisch/statisch) sowie über die Möglichkeit, mehrere private IP-Adressen zuzuweisen:
+Die nachstehende Tabelle zeigt die spezifischen Eigenschaften, durch die eine private IP-Adresse einer Ressource der obersten Ebene zugeordnet sein kann und die möglichen Zuweisungsverfahren (dynamisch oder statisch).
 
-|Ressource|Statisch|Dynamisch|Mehrere IP-Adressen|
+|Ressource der obersten Ebene|Zuordnung der IP-Adresse|Dynamisch|Statisch|
 |---|---|---|---|
-|Virtual Machine (VM)/Netzwerkschnittstellenkarte (NIC)|Ja|Ja|Ja|
-|Front-End für interne Load Balancer|Ja|Ja|Ja|
-|Application Gateway-Front-End|Ja|Ja|Ja|
+|Virtueller Computer|Netzwerkschnittstellenkarte (NIC)|Ja|Ja|
+|Lastenausgleichsmodul|Front-End-Konfiguration|Ja|Ja|
+|Anwendungsgateway|Front-End-Konfiguration|Ja|Ja|
 
 ## Grenzen
 
-Folgende Tabelle zeigt die Einschränkungen für die IP-Adressierung in Azure pro Region pro Abonnement. Sie können sich [an den Support wenden](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade), um die Standardlimits Ihren Unternehmensanforderungen entsprechend auf die maximalen Grenzwerte zu erhöhen.
-
-||Standardlimit|Maximaler Grenzwert|
-|---|---|---|
-|Öffentliche IP-Adressen (dynamisch)|60|Wenden Sie sich an den Support.|
-|Öffentliche IP-Adressen (statisch)|20|Wenden Sie sich an den Support.|
-|Öffentliche Front-End-IP pro Lastenausgleich|5|Wenden Sie sich an den Support.|
-|Private Front-End-IP pro Lastenausgleich|1|Wenden Sie sich an den Support.|
-
-Lesen Sie unbedingt die vollständigen Informationen zu [Netzwerkeinschränkungen](azure-subscription-service-limits.md#networking-limits) in Azure.
+Die Einschränkungen für die IP-Adressierung finden Sie in den vollständigen Informationen zu [Netzwerkeinschränkungen](azure-subscription-service-limits.md#networking-limits) in Azure. Diese Einschränkungen werden pro Region und pro Abonnement angegeben. Sie können sich [an den Support wenden](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade), um die Standardlimits Ihren Unternehmensanforderungen entsprechend auf die maximalen Grenzwerte zu erhöhen.
 
 ## Preise
 
 In den meisten Fällen sind öffentliche IP-Adressen kostenlos. Es wird eine Schutzgebühr für die Verwendung zusätzlicher und/oder statischer öffentlicher IP-Adressen erhoben. Informieren Sie sich unbedingt über die [Preisstruktur für öffentliche IP-Adressen](https://azure.microsoft.com/pricing/details/ip-addresses/).
 
-Zusammenfassend gilt für öffentliche IP-Ressourcen die folgenden Preisstruktur:
-
-- VPN-Gateways und Anwendungsgateways verwenden nur eine dynamische öffentliche IP-Adresse, die kostenlos ist.
-- Virtuelle Computer verwenden nur eine öffentliche IP-Adresse, die kostenlos ist, solange es sich um eine dynamische IP-Adresse handelt. Wenn ein virtueller Computer eine statische öffentliche IP-Adresse verwendet, fällt dies unter „Nutzung statischer (reservierter) öffentlicher IP-Adressen“.
-- Jeder Lastenausgleich kann mehrere öffentliche IP-Adressen verwenden. Die erste öffentliche IP-Adresse ist kostenlos. Zusätzliche dynamische IP-Adressen werden mit €0,0034 pro Stunde berechnet. Statische öffentliche IP-Adressen fallen unter „Nutzung statischer (reservierter) öffentlicher IP-Adressen“.
-- Nutzung statischer (reservierter) öffentlicher IP-Adressen: 
-	- Die ersten fünf (in Gebrauch) sind kostenlos. Zusätzliche statische öffentliche IP-Adressen werden mit €0,0034 pro Stunde berechnet. 
-	- Statische öffentliche IP-Adressen, die keiner Ressource zugewiesen sind, werden mit €0,0034 pro Stunde in Rechnung gestellt.
-	- Die Nutzung wird basierend auf der Gesamtanzahl von statischen öffentlichen IP-Adressen im Abonnement berechnet.
-
 ## Nächste Schritte
-- [Bereitstellen einer VM mit einer statischen öffentlichen IP-Adresse](virtual-network-deploy-static-pip-arm-portal.md) mithilfe des Azure-Portals
-- Erfahren Sie, wie Sie [eine VM mit einer statischen öffentlichen IP-Adresse mithilfe einer Vorlage bereitstellen](virtual-network-deploy-static-pip-arm-template.md).
-- [Bereitstellen einer VM mit einer statischen privaten IP-Adresse](virtual-networks-static-private-ip-arm-pportal.md) mithilfe des Azure-Portals
+- [Bereitstellen eines virtuellen Computers mit einer statischen öffentlichen IP-Adresse](virtual-network-deploy-static-pip-arm-portal.md) mithilfe des Azure-Portals.
+- Erfahren Sie, wie Sie [einen virtuellen Computer mit einer statischen öffentlichen IP-Adresse mithilfe einer Vorlage bereitstellen](virtual-network-deploy-static-pip-arm-template.md).
+- [Bereitstellen eines virtuellen Computers mit einer statischen privaten IP-Adresse](virtual-networks-static-private-ip-arm-pportal.md) mithilfe des Azure-Portals.
 
-<!----HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

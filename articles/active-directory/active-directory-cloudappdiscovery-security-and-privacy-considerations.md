@@ -47,7 +47,7 @@ Weitere Anweisungen zu Bereitstellungsoptionen finden Sie unter [Bereitstellungs
 
 ### Vom Agent gesammelte Daten
 
-Die Informationen in der folgenden Liste werden vom Agent beim Herstellen einer Verbindung mit einer Webanwendung gesammelt. Es werden nur Informationen für solche Anwendungen gesammelt, die der Administrator für die Ermittlung konfiguriert hat. <br> Sie können die Liste der Cloud-Apps bearbeiten, die der Agent über das Blatt "Cloud App Discovery" im Microsoft [Azure-Portal](https://portal.azure.com) unter **Einstellungen** -> **Datensammlung** -> **App-Sammlungsliste** überwacht. Weitere Informationen finden Sie unter [Getting Started With Cloud App Discovery](http://social.technet.microsoft.com/wiki/contents/articles/30962.getting-started-with-cloud-app-discovery.aspx) (in englischer Sprache) <br> **Informationskategorie**: Benutzerinformationen <br> **Beschreibung**: <br> Der Windows-Benutzername des Prozesses, der eine Anforderung an die Zielwebanwendung gestellt hat (z. B. DOMÄNE\\Benutzername) sowie die Windows-Sicherheits-ID (SID) des Benutzers.
+Die Informationen in der folgenden Liste werden vom Agent beim Herstellen einer Verbindung mit einer Webanwendung gesammelt. Es werden nur Informationen für solche Anwendungen gesammelt, die der Administrator für die Ermittlung konfiguriert hat. <br> Sie können die Liste der Cloud-Apps bearbeiten, die der Agent über das Blatt "Cloud App Discovery" im Microsoft [Azure-Portal](https://portal.azure.com/) unter **Einstellungen** -> **Datensammlung** -> **App-Sammlungsliste** überwacht. Weitere Informationen finden Sie unter [Getting Started With Cloud App Discovery](http://social.technet.microsoft.com/wiki/contents/articles/30962.getting-started-with-cloud-app-discovery.aspx) (in englischer Sprache) <br> **Informationskategorie**: Benutzerinformationen <br> **Beschreibung**: <br> Der Windows-Benutzername des Prozesses, der eine Anforderung an die Zielwebanwendung gestellt hat (z. B. DOMÄNE\\Benutzername) sowie die Windows-Sicherheits-ID (SID) des Benutzers.
 
 
 **Informationskategorie**: Prozessinformationen <br> **Beschreibung**: <br> Der Name des Prozesses, der die Anforderung an die Zielwebanwendung gestellt hat (z. B. "iexplore.exe").
@@ -88,7 +88,7 @@ Die folgenden HTTP-Informationen:
 
 
 
-> [AZURE.NOTE]Die oben stehenden HTTP-Informationen werden für alle nicht verschlüsselten Verbindungen erfasst. Bei TLS-Verbindungen werden diese Informationen nur aufgezeichnet, wenn die Einstellung "Verschärfte Inspektion" im Portal aktiviert ist. Diese Einstellung ist standardmäßig aktiviert. Weitere Informationen finden Sie unten und unter [Getting Started With Cloud App Discovery](http://social.technet.microsoft.com/wiki/contents/articles/30962.getting-started-with-cloud-app-discovery.aspx) (in englischer Sprache).
+> [AZURE.NOTE] Die oben stehenden HTTP-Informationen werden für alle nicht verschlüsselten Verbindungen erfasst. Bei TLS-Verbindungen werden diese Informationen nur aufgezeichnet, wenn die Einstellung "Verschärfte Inspektion" im Portal aktiviert ist. Diese Einstellung ist standardmäßig aktiviert. Weitere Informationen finden Sie unten und unter [Getting Started With Cloud App Discovery](http://social.technet.microsoft.com/wiki/contents/articles/30962.getting-started-with-cloud-app-discovery.aspx) (in englischer Sprache).
 
 
 Zusätzlich zu den Daten, die der Agent über die Netzwerkaktivität sammelt, sammelt er auch anonyme Informationen über die Software- und Hardwarekonfiguration, Fehlerberichte und Informationen, wie der Agent verwendet wird.
@@ -168,7 +168,7 @@ Um die Sicherheit der erfassten Metadaten zu gewährleisten, haben standardmäß
 
 
 
-> [AZURE.NOTE]Nähere Informationen finden Sie unter [Getting Started With Cloud App Discovery](http://social.technet.microsoft.com/wiki/contents/articles/30962.getting-started-with-cloud-app-discovery.aspx) (in englischer Sprache).
+> [AZURE.NOTE] Nähere Informationen finden Sie unter [Getting Started With Cloud App Discovery](http://social.technet.microsoft.com/wiki/contents/articles/30962.getting-started-with-cloud-app-discovery.aspx) (in englischer Sprache).
 
 <br> Jeder Benutzer, der auf die Daten im Portal zugreift, muss mit einer Azure AD Premium-Lizenz lizenziert sein.
 
@@ -179,4 +179,4 @@ Um die Sicherheit der erfassten Metadaten zu gewährleisten, haben standardmäß
 
 * [Wie ermittle ich nicht genehmigte Cloud-Apps, die in meiner Organisation verwendet werden?](active-directory-cloudappdiscovery-whatis.md)
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

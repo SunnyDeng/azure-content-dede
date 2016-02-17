@@ -51,9 +51,9 @@ Die Einrichtung des Corpnet-Subnetzes der Testumgebung für die Basiskonfigurati
 3.	Konfigurieren von APP1
 4.	Konfigurieren von CLIENT1
 
-Wenn Sie noch nicht über ein Azure-Konto verfügen, erhalten Sie unter [Einen Monat kostenlos testen](http://azure.microsoft.com/pricing/free-trial/) eine kostenlose Testversion. Wenn Sie über ein MSDN Platforms-Abonnement verfügen, lesen Sie [Azure-Vorteil für MSDN Platforms-Abonnenten](https://azure.microsoft.com/offers/ms-azr-0062p/).
+Wenn Sie noch nicht über ein Azure-Konto verfügen, erhalten Sie unter [Einen Monat kostenlos testen](https://azure.microsoft.com/pricing/free-trial/) eine kostenlose Testversion. Wenn Sie über ein MSDN Platforms-Abonnement verfügen, lesen Sie [Azure-Vorteil für MSDN Platforms-Abonnenten](https://azure.microsoft.com/offers/ms-azr-0062p/).
 
-> [AZURE.NOTE]Durch virtuelle Computer, die in Azure ausgeführt werden, entstehen fortlaufend Kosten. Diese Kosten werden im Rahmen der kostenlosen Testversion, des MSDN Platforms-Abonnements oder des kostenpflichtigen Abonnements abgerechnet. Weitere Informationen zu den Kosten der in Azure ausgeführten virtuellen Computer finden Sie unter [Virtuelle Computer – Preisübersicht](http://azure.microsoft.com/pricing/details/virtual-machines/) und [Azure-Preisrechner](http://azure.microsoft.com/pricing/calculator/). Informationen dazu, wie Sie die Kosten möglichst gering halten können, finden Sie unter [Minimizing the costs of test environment virtual machines in Azure](#costs) (Minimieren der Kosten von Testumgebungen für virtuelle Computer in Azure).
+> [AZURE.NOTE] Durch virtuelle Computer, die in Azure ausgeführt werden, entstehen fortlaufend Kosten. Diese Kosten werden im Rahmen der kostenlosen Testversion, des MSDN Platforms-Abonnements oder des kostenpflichtigen Abonnements abgerechnet. Weitere Informationen zu den Kosten der in Azure ausgeführten virtuellen Computer finden Sie unter [Virtuelle Computer – Preisübersicht](https://azure.microsoft.com/pricing/details/virtual-machines/) und [Azure-Preisrechner](https://azure.microsoft.com/pricing/calculator/). Informationen dazu, wie Sie die Kosten möglichst gering halten können, finden Sie unter [Minimizing the costs of test environment virtual machines in Azure](#costs) (Minimieren der Kosten von Testumgebungen für virtuelle Computer in Azure).
 
 ## Phase 1: Erstellen des virtuellen Netzwerks
 
@@ -284,4 +284,4 @@ Zum Starten der virtuellen Computer in der angegebenen Reihenfolge mit Azure Pow
 	Start-AzureVM -ServiceName $serviceName -Name "APP1"
 	Start-AzureVM -ServiceName $serviceName -Name "CLIENT1"
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

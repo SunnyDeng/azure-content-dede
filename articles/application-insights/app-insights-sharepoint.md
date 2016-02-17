@@ -26,7 +26,7 @@ Visual Studio Application Insights überwacht die Verfügbarkeit, Leistung und N
 ## Erstellen einer Application Insights-Ressource
 
 
-Erstellen Sie im [Azure-Portal](http://portal.azure.com) eine neue Application Insights-Ressource. Wählen Sie als Anwendungstyp "ASP.NET" aus.
+Erstellen Sie im [Azure-Portal](https://portal.azure.com) eine neue Application Insights-Ressource. Wählen Sie als Anwendungstyp "ASP.NET" aus.
 
 ![Klicken Sie auf "Eigenschaften", wählen Sie den Schlüssel aus, und drücken Sie STRG+C](./media/app-insights-sharepoint/01-new.png)
 
@@ -75,7 +75,7 @@ Fügen Sie ein Webpart ein, und betten Sie den Codeausschnitt darin ein.
 
 Stellen Sie Ihre App erneut bereit.
 
-Kehren Sie zum Blatt Ihrer Anwendung im [Azure-Portal](http://portal.azure.com) zurück.
+Kehren Sie zum Blatt Ihrer Anwendung im [Azure-Portal](https://portal.azure.com) zurück.
 
 Die ersten Ereignisse werden in der Suche angezeigt.
 
@@ -108,4 +108,4 @@ Oder Benutzer:
 
 <!--Link references-->
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

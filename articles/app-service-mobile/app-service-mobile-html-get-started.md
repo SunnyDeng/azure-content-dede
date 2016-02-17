@@ -13,15 +13,13 @@
 	ms.tgt_pltfrm="mobile-html5"
 	ms.devlang="javascript"
 	ms.topic="get-started-article"
-	ms.date="11/18/2015"
+	ms.date="02/04/2016"
 	ms.author="glenga"/>
 
 
 #Erstellen einer HTML-App
 
 [AZURE.INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)]
-&nbsp;
-<!--- [AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]-->
 
 >[AZURE.IMPORTANT] Dieses Thema wird von Mobile Apps derzeit nicht unterstützt, da der Schnellstart für HTML-/JavaScript-Apps vorübergehend aus dem Azure-Portal entfernt wurde. Diese Option soll in naher Zukunft wieder unterstützt werden. Vielen Dank für Ihre Geduld.
 
@@ -55,7 +53,7 @@ Sie haben nun ein Azure-Back-End für mobile Apps bereitgestellt, das von Ihren 
 
 ## Herunterladen des Serverprojekts
 
-1. Klicken Sie im [Azure-Portal] auf **Alle durchsuchen** > **Web-Apps**, und klicken Sie anschließend auf das mobile App-Back-End, das Sie gerade erstellt haben. 
+1. Klicken Sie im [Azure-Portal] auf **Alle durchsuchen** > **Web-Apps**, und klicken Sie anschließend auf das mobile App-Back-End, das Sie gerade erstellt haben.
 
 2. Klicken Sie im Mobile App-Back-End auf **Alle Einstellungen**, und klicken Sie unter **Mobile App** auf **Schnellstart** > **HTML/JavaScript**.
 
@@ -70,10 +68,10 @@ Cross-Origin Resource Sharing (CORS) ist eine Möglichkeit für webbasierte Apps
 Standardmäßig wird das aus dem Portal heruntergeladene Client-Schnellstartprojekt auf "localhost" auf Port 8000 ausgeführt. Aus diesem Grund aktivieren Sie als Nächstes CORS für `http://localhost:8000` im Serverprojekt.
 
 1. Klicken Sie in Visual Studio im Menü "Extras" auf **NuGet-Paket-Manager** > **Paket-Manager-Konsole**, wählen Sie "NuGet.org" als **Paketquelle**, und führen Sie den folgenden Befehl im Konsolenfenster aus:
- 
-		Install-Package Microsoft.AspNet.WebApi.Cors  
 
-2. Öffnen Sie die Projektdatei "App_Start/Startup.MobileApp.cs", und fügen Sie die folgende "using"-Anweisung hinzu:
+		Install-Package Microsoft.AspNet.WebApi.Cors
+
+2. Öffnen Sie die Projektdatei "App\_Start/Startup.MobileApp.cs", und fügen Sie die folgende "using"-Anweisung hinzu:
 
 		using System.Web.Http.Cors;
 
@@ -93,7 +91,7 @@ Dann stellen Sie das CORS-fähige Projekt in Azure bereit.
 
 ##Herunterladen und Ausführen des Clientprojekts
 
-1. Klicken Sie zurück im Blatt für ihr Mobile App-Back-End auf **Alle Einstellungen**, und klicken Sie unter **Mobile App** auf **Schnellstart** > **HTML/JavaScript**. 
+1. Klicken Sie zurück im Blatt für ihr Mobile App-Back-End auf **Alle Einstellungen**, und klicken Sie unter **Mobile App** auf **Schnellstart** > **HTML/JavaScript**.
 
 2.  Klicken Sie unter **Herunterladen und HTML/Javascript-Projekt ausführen** in **Neue App erstellen** auf **Herunterladen**, und speichern Sie die komprimierten Projektdateien auf dem lokalen Computer.
 
@@ -125,6 +123,5 @@ Dann stellen Sie das CORS-fähige Projekt in Azure bereit.
 [Azure-Portal]: https://portal.azure.com/
 
 [Visual Studio Community 2013]: https://www.visualstudio.com/downloads
- 
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

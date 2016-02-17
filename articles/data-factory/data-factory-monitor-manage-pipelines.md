@@ -25,7 +25,7 @@ In diesem Artikel wird das Überwachen, Verwalten und Debuggen Ihrer Pipelines b
 Im Azure-Portal können Sie Ihre Data Factory in Diagrammform anzeigen, Aktivitäten in einer Pipeline einsehen, Ein- und Ausgabedatasets anzeigen u.v.m. In diesem Abschnitt wird auch erklärt, wie ein Slice von einem Status in einen anderen wechselt.
 
 ### Navigieren zu Ihrer Data Factory
-1.	Melden Sie sich beim [Azure-Portal](http://portal.azure.com) an.
+1.	Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
 2.	Klicken Sie auf **Alle durchsuchen**, und wählen Sie **Data Factorys** aus.
 	
 	![Alle durchsuchen -> Data Factorys](./media/data-factory-monitor-manage-pipelines/browseall-data-factories.png)
@@ -96,6 +96,7 @@ Die Datasetslices in Data Factory können einen der folgenden Status haben:
 <td>ValidationRetry</td><td>Es wird auf die Wiederholung der Überprüfung gewartet.</td>
 </tr>
 <tr>
+
 <td rowspan="2">In Bearbeitung</td><td>Die Überprüfen erfolgt.</td><td>Die Überprüfung wird ausgeführt.</td>
 </tr>
 <td></td>
@@ -566,4 +567,4 @@ Folgende Meldung sollte nach erfolgreicher Bereitstellung angezeigt werden:
 
 Zum Bereitstellen einer Warnungsregel können Sie auch das Cmdlet **Add-AlertRule** verwenden. Detaillierte Informationen und Beispiele finden Sie im Thema [Add-AlertRule](https://msdn.microsoft.com/library/mt282468.aspx).
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

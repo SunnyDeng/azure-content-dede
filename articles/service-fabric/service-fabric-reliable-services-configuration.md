@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="10/28/2015"
+   ms.date="01/26/2016"
    ms.author="sumukhs"/>
 
 # Konfigurieren zustandsbehafteter Reliable Services
@@ -24,7 +24,7 @@ Sie können die Standardkonfigurationen für zustandsbehaftete Reliable Services
 
 Standardmäßig sucht die Azure Service Fabric-Laufzeit in der Datei „Settings.xml“ nach vordefinierten Abschnittsnamen und nutzt die Konfigurationswerte beim Erstellen der zugrunde liegenden Laufzeitkomponenten.
 
->[AZURE.NOTE]Löschen Sie **nicht** die Abschnittsnamen der folgenden Konfigurationen in der Datei „settings.xml“, die in der Visual Studio-Projektmappe generiert wird, sofern Sie die Konfiguration nicht per Code vornehmen möchten. Das Umbenennen des Konfigurationspakets oder der Abschnittsnamen erfordert eine Änderung des Codes beim Konfigurieren von ReliableStateManager.
+>[AZURE.NOTE] Löschen Sie **nicht** die Abschnittsnamen der folgenden Konfigurationen in der Datei „settings.xml“, die in der Visual Studio-Projektmappe generiert wird, sofern Sie die Konfiguration nicht per Code vornehmen möchten. Das Umbenennen des Konfigurationspakets oder der Abschnittsnamen erfordert eine Änderung des Codes beim Konfigurieren von ReliableStateManager.
 
 
 ## Replicator-Sicherheitskonfiguration
@@ -33,7 +33,7 @@ Replicator-Sicherheitskonfigurationen werden verwendet, um den während der Repl
 ### Standardmäßiger Abschnittsname
 ReplicatorSecurityConfig
 
->[AZURE.NOTE]Zum Ändern dieses Abschnittsnamens überschreiben Sie den ReplicatorSecuritySectionName-Parameter für den ReliableStateManagerConfiguration-Konstruktor beim Erstellen von ReliableStateManager für diesen Dienst.
+>[AZURE.NOTE] Zum Ändern dieses Abschnittsnamens überschreiben Sie den ReplicatorSecuritySectionName-Parameter für den ReliableStateManagerConfiguration-Konstruktor beim Erstellen von ReliableStateManager für diesen Dienst.
 
 
 ## Replicator-Konfiguration
@@ -42,7 +42,7 @@ Replicator-Konfigurationen werden zum Konfigurieren des Replicators verwendet, d
 ### Standardmäßiger Abschnittsname
 ReplicatorConfig
 
->[AZURE.NOTE]Zum Ändern dieses Abschnittsnamens überschreiben Sie den ReplicatorSettingsSectionName-Parameter für den ReliableStateManagerConfiguration-Konstruktor beim Erstellen von ReliableStateManager für diesen Dienst.
+>[AZURE.NOTE] Zum Ändern dieses Abschnittsnamens überschreiben Sie den ReplicatorSettingsSectionName-Parameter für den ReliableStateManagerConfiguration-Konstruktor beim Erstellen von ReliableStateManager für diesen Dienst.
 
 
 ### Konfigurationsnamen
@@ -107,4 +107,4 @@ Die Einstellung MaxRecordSizeInKB definiert die maximale Größe eines Datensatz
 
 Die Einstellungen SharedLogId und SharedLogPath werden immer zusammen verwendet. Sie ermöglichen einem Dienst, ein separates freigegebenes Protokoll aus dem freigegebenen Standardprotokoll für den Knoten zu verwenden. Zur Optimierung der Effizienz sollten so viele Dienste wie möglich dasselbe freigegebene Protokoll angeben. Freigegebene Protokolldateien sollten auf Datenträgern gespeichert werden, die ausschließlich für die freigegebene Protokolldatei verwendet werden. So werden Konflikte durch die Bewegungen des Lesekopfs reduziert. Dieser Wert muss in der Regel nur in seltenen Ausnahmefällen geändert werden.
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0204_2016-->

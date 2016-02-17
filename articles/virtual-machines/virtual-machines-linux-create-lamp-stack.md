@@ -32,7 +32,7 @@ Sie erhalten Informationen zu folgenden Themen:
 -	Gewusst wie: Vorbereiten des virtuellen Computers für den LAMP-Stapel
 -	Gewusst wie: Installieren von Software, die von Ihrem LAMP-Server auf dem virtuellen Computer benötigt wird
 
-Es wird vorausgesetzt, dass der Leser bereits über ein Azure-Abonnement verfügt. Falls dies nicht der Fall ist, können Sie sich für eine kostenlose Testversion unter [http://azure.microsoft.com](http://azure.microsoft.com) registrieren. Wenn Sie über ein MSDN-Abonnement verfügen, finden Sie weitere Informationen unter [Microsoft Azure-Sonderpreis: MSDN-, MPN- und Bizspark-Vorteile](http://azure.microsoft.com/pricing/member-offers/msdn-benefits/?c=14-39). Weitere Informationen zu Azure finden Sie unter [Was ist Azure?](http://azure.microsoft.com/overview/what-is-azure/)
+Es wird vorausgesetzt, dass der Leser bereits über ein Azure-Abonnement verfügt. Falls dies nicht der Fall ist, können Sie sich für eine kostenlose Testversion unter [http://azure.microsoft.com](https://azure.microsoft.com/) registrieren. Wenn Sie über ein MSDN-Abonnement verfügen, finden Sie weitere Informationen unter [Microsoft Azure-Sonderpreis: MSDN-, MPN- und Bizspark-Vorteile](https://azure.microsoft.com/pricing/member-offers/msdn-benefits/?c=14-39). Weitere Informationen zu Azure finden Sie unter [Was ist Azure?](https://azure.microsoft.com/overview/what-is-azure/)
 
 Wenn Sie bereits einen virtuellen Computer verwenden und nur Informationen zu den Grundlagen der Installation eines LAMP-Stapels auf unterschiedlichen Linux-Verteilungen benötigen, lesen Sie zusätzlich zu diesem Thema [Installieren des LAMP-Stapels auf einem virtuellen Linux-Computer in Azure](virtual-machines-linux-install-lamp-stack.md).
 
@@ -456,4 +456,4 @@ Nachdem Sie den LAMP-Stapel erfolgreich eingerichtet haben, können Sie Ihre vor
 [17]: ./media/virtual-machines-linux-create-lamp-stack/virtual-machines-linux-create-lamp-stack-17.png
 [18]: ./media/virtual-machines-linux-create-lamp-stack/virtual-machines-linux-create-lamp-stack-18.jpg
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -19,9 +19,13 @@
 # Verschieben von Daten in und aus Azure Data Lake-Speicher mithilfe von Azure Data Factory
 Dieser Artikel beschreibt die Verwendung der Kopieraktivität in Azure Data Factory, um Daten aus dem Azure Data Lake-Speicher in einen anderen Datenspeicher und umgekehrt zu verschieben. Dieser Artikel baut auf dem Artikel [Datenverschiebungsaktivitäten](data-factory-data-movement-activities.md) auf, der eine allgemeine Übersicht zur Datenverschiebung mit der Kopieraktivität und den unterstützten Datenspeicherkombinationen bietet.
 
-> [AZURE.NOTE]Sie müssen ein Azure Data Lake-Speicherkonto anlegen, bevor Sie eine Pipeline mit einer Kopieraktivität zum Verschieben von Daten in einen bzw. aus einem Azure Data Lake-Speicher erstellen können. Weitere Informationen zu Azure Data Lake-Speicher finden Sie unter [Erste Schritte mit Azure Data Lake-Speicher](../data-lake-store/data-lake-store-get-started-portal.md).
+> [AZURE.NOTE]
+Sie müssen ein Azure Data Lake-Speicherkonto anlegen, bevor Sie eine Pipeline mit einer Kopieraktivität zum Verschieben von Daten in einen bzw. aus einem Azure Data Lake-Speicher erstellen können. Weitere Informationen zu Azure Data Lake-Speicher finden Sie unter [Erste Schritte mit Azure Data Lake-Speicher](../data-lake-store/data-lake-store-get-started-portal.md).
 >  
 > Im Tutorial [Erstellen Ihrer ersten Pipeline](data-factory-build-your-first-pipeline.md) finden Sie detaillierte Anweisungen zum Erstellen von Data Factorys, verknüpften Diensten, Datasets und Pipelines. Verwenden Sie die JSON-Codeausschnitte mit Data Factory-Editor, Visual Studio oder Azure PowerShell, um die Data Factory-Entitäten zu erstellen.
+
+In den folgenden Beispielen wird veranschaulicht, wie Sie Daten in und aus Azure Data Lake-Speicher und Azure-BLOB-Speicher kopieren. Daten können jedoch mithilfe der Kopieraktivität in Azure Data Factory **direkt** aus beliebigen Quellen in die [hier](data-factory-data-movement-activities.md#supported-data-stores) aufgeführten Senken kopiert werden.
+
 
 ## Beispiel: Kopieren von Daten aus einem Azure-Blob in Azure Data Lake-Speicher
 Das nachstehende Beispiel zeigt Folgendes:
@@ -65,16 +69,16 @@ Im Beispiel werden zu einer Zeitreihe gehörende Daten aus Azure Blob Storage st
 Das folgende Verfahren enthält Schritte zum Erstellen eines mit Azure Data Lake-Speicher verknüpften Diensts mit dem Data Factory-Editor.
 
 1. Klicken Sie auf der Befehlsleiste auf **Neuer Datenspeicher**, und wählen Sie **Azure Data Lake-Speicher** aus.
-2. Geben Sie im JSON-Editor für die **datalakeUri**-Eigenschaft den URI für den Data Lake ein.
+2. Geben Sie im JSON-Editor für die **datalakeUri**-Eigenschaft den URI für die Data Lake-Instanz ein.
 3. Klicken Sie auf der Befehlsleiste auf die Schaltfläche **Autorisieren**. Ein Popupfenster wird angezeigt.
 
 	![Schaltfläche „Autorisieren“](./media/data-factory-azure-data-lake-connector/authorize-button.png)
 
 4. Melden Sie sich mit Ihren Anmeldeinformationen an. Der **authorization**-Eigenschaft in der JSON sollte nun ein Wert zugewiesen sein.
-5. (Optional) Geben Sie Werte für optionale Parameter wie z. B. **accountName**, **subscriptionID** und **resourceGroupName** in der JSON an, (oder) löschen Sie diese Eigenschaften aus der JSON.
+5. (Optional) Geben Sie Werte für optionale Parameter wie z. B. **accountName**, **subscriptionID** und **resourceGroupName** in der JSON-Datei an, (oder) löschen Sie diese Eigenschaften aus der JSON-Datei.
 6. Klicken Sie auf der Befehlsleiste auf **Bereitstellen**, um den verknüpften Dienst bereitzustellen.
 
-> [AZURE.IMPORTANT]Der von Ihnen mithilfe der Schaltfläche **Autorisieren** generierte Autorisierungscode läuft nach einer gewissen Zeit ab. Wenn das **Token abläuft**, müssen Sie mithilfe der Schaltfläche **Autorisieren** eine **erneute Autorisierung** ausführen und den verknüpften Dienst erneut bereitstellen. Weitere Informationen finden Sie im Abschnitt [Mit Azure Data Lake-Speicher verknüpfter Dienst](#azure-data-lake-store-linked-service-properties).
+> [AZURE.IMPORTANT] Der von Ihnen mithilfe der Schaltfläche **Autorisieren** generierte Autorisierungscode läuft nach einer gewissen Zeit ab. Wenn das **Token abläuft**, müssen Sie mithilfe der Schaltfläche **Autorisieren** eine **erneute Autorisierung** ausführen und den verknüpften Dienst erneut bereitstellen. Weitere Informationen finden Sie im Abschnitt [Mit Azure Data Lake-Speicher verknüpfter Dienst](#azure-data-lake-store-linked-service-properties).
 
 
 
@@ -238,7 +242,7 @@ Im Beispiel werden zu einer Zeitreihe gehörende Daten aus einem Azure Data Lake
 	    }
 	}
 
-> [AZURE.NOTE]Siehe die Schritte im vorherigen Beispiel zum Abrufen der Autorisierungs-URL.
+> [AZURE.NOTE] Siehe die Schritte im vorherigen Beispiel zum Abrufen der Autorisierungs-URL.
 
 **Mit Azure Storage verknüpfter Dienst:**
 
@@ -400,8 +404,8 @@ Sie können einen mit Azure Storage verknüpften Dienst verwenden, um ein Azure-
 
 | Eigenschaft | Beschreibung | Erforderlich |
 | :-------- | :----------- | :-------- |
-| type | Die „type“-Eigenschaft muss auf **AzureDataLakeStore** festgelegt sein. | Ja |
-| dataLakeUri | Geben Sie Informationen zum Azure Data Lake-Speicherkonto an. Er hat das folgende Format: https://<Azure Data Lake account name>.azuredatalakestore.net/webhdfs/v1 | Ja |
+| type | Die type-Eigenschaft muss auf **AzureDataLakeStore** festgelegt sein. | Ja |
+| dataLakeUri | Geben Sie Informationen zum Azure Data Lake-Speicherkonto an. Der URI hat das folgende Format: https://<Azure Data Lake account name>.azuredatalakestore.net/webhdfs/v1. | Ja |
 | authorization | Klicken Sie im **Data Factory-Editor** auf die Schaltfläche **Autorisieren**, und geben Sie Ihre Anmeldeinformationen ein, wodurch die automatisch generierte Autorisierungs-URL dieser Eigenschaft zugewiesen wird. | Ja |
 | sessionId | OAuth-Sitzungs-ID aus der OAuth-Autorisierungssitzung. Jede Sitzungs-ID ist eindeutig und darf nur einmal verwendet werden. Sie wird automatisch generiert, wenn Sie den Data Factory-Editor verwenden. | Ja |  
 | accountName | Data Lake-Kontoname | Nein |
@@ -414,8 +418,8 @@ Der von Ihnen mithilfe der Schaltfläche **Autorisieren** generierte Autorisieru
 | Benutzertyp | Läuft ab nach |
 | :-------- | :----------- | 
 | Nicht-AAD-Benutzer(@hotmail.com, @live.com usw.) | 12 Stunden |
-| AAD-Benutzer, und die OAuth-basierte Quelle befindet sich in einem anderen [Mandanten](https://msdn.microsoft.com/library/azure/jj573650.aspx#BKMK_WhatIsAnAzureADTenant) als demjenigen für die Data Factory des Benutzers. | 12 Stunden |
-| AAD-Benutzer, und die OAuth-basierte Quelle befindet sich im gleichen Mandanten wie demjenigen für die Data Factory des Benutzers. | <p> Das Maximum beträgt 90 Tage, wenn ein Benutzer alle 14 Tage mindestens einmal Slices auf Basis seiner OAuth-basierten verknüpften Dienstquelle ausführt. </p><p>Wenn der Benutzer während der erwarteten 90 Tage in einem Zeitraum von 14 Tagen keine Slices für diese Quelle ausgeführt hat, laufen die Anmeldeinformation 14 Tage nach Ausführung des letzten Slices ohne Zeitverzug ab.</p> |
+| AAD-Benutzer, und die OAuth-basierte Quelle befindet sich in einem anderen [Mandanten](https://msdn.microsoft.com/library/azure/jj573650.aspx#BKMK_WhatIsAnAzureADTenant) als dem für die Data Factory | 12 Stunden |
+| AAD-Benutzer, und die OAuth-basierte Quelle befindet sich im gleichen Mandanten wie dem für die Data Factory. | 14 Tage |
 
 Um diesen Fehler zu vermeiden oder zu beheben, müssen Sie bei **Ablauf des Tokens** mithilfe der Schaltfläche **Autorisieren** eine erneute Autorisierung ausführen und den verknüpften Dienst erneut bereitstellen. Sie können auch programmgesteuert Werte für die Eigenschaften **sessionId** und **authorization** generieren. Verwenden Sie dazu den im folgenden Abschnitt bereitgestellten Code.
 
@@ -604,4 +608,4 @@ Im Abschnitt "typeProperties" der Aktivität verfügbare Eigenschaften variieren
 
 [AZURE.INCLUDE [data-factory-column-mapping](../../includes/data-factory-column-mapping.md)]
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0204_2016-->

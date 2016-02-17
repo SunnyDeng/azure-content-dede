@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="na"
-	ms.date="11/17/2015"
+	ms.date="02/03/2016"
 	ms.author="tarcher" />
 
 # Übersicht über das Skript des Bereitstellungsprojekts für Azure-Ressourcengruppen
@@ -35,7 +35,7 @@ Da nicht alle Vorlagenbereitstellungen das Hochladen zusätzlicher Elemente erfo
 
 Es folgt eine Beschreibung der Aufgaben ausgewählter Abschnitte des Azure PowerShell-Skripts „Deploy-AzureResourceGroup.ps1“.
 
->[AZURE.NOTE]Hier wird Version 1.0 des Skripts „Deploy-AzureResourceGroup.ps1“ beschrieben.
+>[AZURE.NOTE] Hier wird Version 1.0 des Skripts „Deploy-AzureResourceGroup.ps1“ beschrieben.
 
 1.	Deklarieren Sie die für das Azure-Ressourcen-Manager-Bereitstellungsprojekt benötigten Parameter. Einige Parameter haben Standardwerte, die bei der Projekterstellung festgelegt wurden. Sie können diese Standardwerte im ändern oder andere Parameterwerte hinzufügen, bevor Sie das Skript ausführen.
 
@@ -209,7 +209,7 @@ Es folgt eine Beschreibung der Aufgaben ausgewählter Abschnitte des Azure Power
 
     ![][3]
 
-	>[AZURE.NOTE]Wenn erforderliche Parameter Werte benötigen, wird dieses Dialogfeld bei der Bereitstellung automatisch angezeigt.
+	>[AZURE.NOTE] Wenn erforderliche Parameter Werte benötigen, wird dieses Dialogfeld bei der Bereitstellung automatisch angezeigt.
 
     ![][4]
 
@@ -264,4 +264,4 @@ Weitere Informationen zum Azure-Ressourcen-Manager finden Sie unter [Übersicht 
 [4]: ./media/vs-azure-tools-resource-groups-how-script-works/deploy5c.png
 [5]: ./media/vs-azure-tools-resource-groups-how-script-works/deploy6c.png
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0204_2016-->

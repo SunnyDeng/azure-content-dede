@@ -19,7 +19,7 @@ Um auf Oracle-Images basierende virtuelle Computer zu erstellen, melden Sie sich
 ![](media/virtual-machines-oracle-list-oracle-virtual-machine-images/image1.png)
 
 ##Images von virtuellen Windows-Computern
-Die folgende Liste enthält die verfügbaren Images virtueller Oracle-Computer, die unter Windows Server in Azure ausgeführt werden. Für diese Images gilt eine nutzungsbasierte Zahlung, was bedeutet, dass Oracle-Lizenzgebühren in der Nutzung dieser Images inbegriffen sind. Sie können zum Ausführen von Oracle-Software unter Windows oder Linux auch Ihre eigene Lizenz nutzen. Hier finden Sie ausführliche Informationen zu den [Preisen und der Lizenzierung virtueller Azure-Computer und Katalog-Images von virtuellen Computern](http://azure.microsoft.com/pricing/details/virtual-machines/#oracle-software). Klicken Sie auf die Registerkarte **Oracle**, um Details zu spezifischen Oracle-Preisen zu erhalten.
+Die folgende Liste enthält die verfügbaren Images virtueller Oracle-Computer, die unter Windows Server in Azure ausgeführt werden. Für diese Images gilt eine nutzungsbasierte Zahlung, was bedeutet, dass Oracle-Lizenzgebühren in der Nutzung dieser Images inbegriffen sind. Sie können zum Ausführen von Oracle-Software unter Windows oder Linux auch Ihre eigene Lizenz nutzen. Hier finden Sie ausführliche Informationen zu den [Preisen und der Lizenzierung virtueller Azure-Computer und Katalog-Images von virtuellen Computern](https://azure.microsoft.com/pricing/details/virtual-machines/#oracle-software). Klicken Sie auf die Registerkarte **Oracle**, um Details zu spezifischen Oracle-Preisen zu erhalten.
 
 ###Images von virtuellen Oracle Database-Computern
 - Oracle-Datenbank 12c Enterprise Edition unter Windows Server 2012
@@ -63,4 +63,4 @@ Die folgende Liste enthält die verfügbaren vorkonfigurierten Images virtueller
 
 [Images virtueller Oracle-Computer – verschiedene Überlegungen](#miscellaneous-considerations-for-oracle-virtual-machine-images-new-article)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

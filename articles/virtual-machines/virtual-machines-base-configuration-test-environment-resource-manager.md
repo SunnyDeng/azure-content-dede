@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="Windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/14/2016"
+	ms.date="01/21/2016"
 	ms.author="josephd"/>
 
 # Testumgebung für die Basiskonfiguration mit Azure-Ressourcen-Manager
@@ -50,15 +50,15 @@ Die Einrichtung des Corpnet-Subnetzes der Testumgebung für die Basiskonfigurati
 3.	Konfigurieren von APP1
 4.	Konfigurieren von CLIENT1
 
-Wenn Sie noch nicht über ein Azure-Konto verfügen, erhalten Sie unter [Try Azure](http://azure.microsoft.com/pricing/free-trial/) (Azure testen) eine kostenlose Testversion. Wenn Sie über ein MSDN-Abonnement verfügen, lesen Sie [Azure-Vorteil für MSDN-Abonnenten](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
+Wenn Sie noch nicht über ein Azure-Konto verfügen, erhalten Sie unter [Try Azure](https://azure.microsoft.com/pricing/free-trial/) (Azure testen) eine kostenlose Testversion. Wenn Sie über ein MSDN-Abonnement verfügen, lesen Sie [Azure-Vorteil für MSDN-Abonnenten](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
 
-> [AZURE.NOTE]Durch virtuelle Computer, die in Azure ausgeführt werden, entstehen fortlaufend Kosten. Diese Kosten werden im Rahmen der kostenlosen Testversion, des MSDN-Abonnements oder des kostenpflichtigen Abonnements abgerechnet. Weitere Informationen zu den Kosten der in Azure ausgeführten virtuellen Computer finden Sie unter [Virtuelle Computer – Preisübersicht](http://azure.microsoft.com/pricing/details/virtual-machines/) und [Azure-Preisrechner](http://azure.microsoft.com/pricing/calculator/). Informationen dazu, wie Sie die Kosten möglichst gering halten können, finden Sie unter [Minimizing the costs of test environment virtual machines in Azure](#costs) (Minimieren der Kosten von Testumgebungen für virtuelle Computer in Azure).
+> [AZURE.NOTE] Durch virtuelle Computer, die in Azure ausgeführt werden, entstehen fortlaufend Kosten. Diese Kosten werden im Rahmen der kostenlosen Testversion, des MSDN-Abonnements oder des kostenpflichtigen Abonnements abgerechnet. Weitere Informationen zu den Kosten der in Azure ausgeführten virtuellen Computer finden Sie unter [Virtuelle Computer – Preisübersicht](https://azure.microsoft.com/pricing/details/virtual-machines/) und [Azure-Preisrechner](https://azure.microsoft.com/pricing/calculator/). Informationen dazu, wie Sie die Kosten möglichst gering halten können, finden Sie unter [Minimizing the costs of test environment virtual machines in Azure](#costs) (Minimieren der Kosten von Testumgebungen für virtuelle Computer in Azure).
 
 ## Phase 1: Erstellen des virtuellen Netzwerks
 
 Starten Sie zunächst eine Azure PowerShell-Eingabeaufforderung.
 
-> [AZURE.NOTE]Die folgenden Befehlssätze verwenden Azure PowerShell 1.0 und höher. Weitere Informationen finden Sie unter [Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0/) (in englischer Sprache).
+> [AZURE.NOTE] Die folgenden Befehlssätze verwenden Azure PowerShell 1.0 und höher. Weitere Informationen finden Sie unter [Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0/) (in englischer Sprache).
 
 Melden Sie sich in Ihrem Konto an.
 
@@ -244,6 +244,8 @@ Die aktuelle Konfiguration sieht folgendermaßen aus.
 
 CLIENT1 fungiert als typischer Laptop-, Tablet- oder Desktopcomputer im Contoso-Intranet.
 
+> [AZURE.NOTE] Der folgende Befehlssatz erstellt CLIENT1 unter Windows Server 2012 R2 Datacenter, was für alle verschiedenen Azure-Abonnementversionen möglich ist. Falls Sie ein MSDN-basiertes Azure-Abonnement haben, können Sie mithilfe vom [Azure-Portal](virtual-machines-windows-tutorial.md) CLIENT1 unter Windows 10, Windows 8 oder Windows 7 erstellen.
+
 Geben Sie zuerst den Namen der Ressourcengruppe, den Azure-Standort und den Namen des Speicherkontos an, und führen Sie mithilfe der Azure PowerShell-Eingabeaufforderung auf dem lokalen Computer die folgenden Befehle aus, um für CLIENT1 einen virtuellen Computer in Azure zu erstellen:
 
 	$rgName="<resource group name>"
@@ -296,7 +298,7 @@ Die Basiskonfiguration in Azure kann nun zur Anwendungsentwicklung, zu Testzweck
 
 ## Nächster Schritt
 
-- [Fügen Sie eine neue virtuelle Maschine](virtual-machines-ps-create-preconfigure-windows-resource-manager-vms.md) zum Subnetz des Unternehmensnetzwerks hinzu, beispielsweise ein Subnetz unter Microsoft SQL Server.
+- [Fügen Sie einen neuen virtuellen Computer](virtual-machines-ps-create-preconfigure-windows-resource-manager-vms.md) zum Corpnet-Subnetz hinzu, beispielsweise ein Subnetz unter Microsoft SQL Server.
 
 
 ## <a id="costs"></a>Minimizing the costs of test environment virtual machines in Azure (Minimieren der Kosten von Testumgebungen für virtuelle Computer in Azure)
@@ -326,4 +328,4 @@ Zum Starten der virtuellen Computer mit Azure PowerShell in der richtigen Reihen
 	Start-AzureRMVM -ResourceGroupName $rgName -Name "APP1"
 	Start-AzureRMVM -ResourceGroupName $rgName -Name "CLIENT1"
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

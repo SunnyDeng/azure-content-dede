@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Bearbeiten einer Ressourcen-Manager-Vorlage mit Visual Studio | Microsoft Azure"
    description="Erfahren Sie, wie Ressourcen mithilfe von Visual Studio einer Azure-Ressourcen-Manager-Vorlage hinzugefügt werden."
-   services="visual-studio-online"
+   services="azure-resource-manager"
    documentationCenter="na"
-   authors="TomArcher"
-   manager="douge"
+   authors="tfitzmac"
+   manager="wpickett"
    editor="" />
 <tags 
-   ms.service="multiple"
+   ms.service="azure-resource-manager"
    ms.devlang="dotnet"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="multiple"
    ms.date="11/13/2015"
-   ms.author="tarcher" />
+   ms.author="tomfitz" />
 
 # Bearbeiten von Ressourcen-Manager-Vorlagen mit Visual Studio
 
@@ -69,4 +69,4 @@ Weitere Informationen zur Struktur der Vorlage finden Sie unter [Erstellen von A
 
 [Channel 9-Video: Azure-Ressourcen-Manager](http://channel9.msdn.com/Events/TechEd/NorthAmerica/2014/DEV-B224#fbid=)
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0128_2016-->

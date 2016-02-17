@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/23/2015" 
+	ms.date="01/22/2016" 
 	ms.author="awills"/>
  
 # Erstellen von Application Insights-Ressourcen mithilfe von PowerShell
@@ -117,6 +117,27 @@ Suchen | Ersetzen durch
 `"myappname"` (Kleinbuchstaben) | `"[toLower(parameters('appName'))]"`
 `"<WebTest Name="myWebTest" ...`<br/>` Url="http://fabrikam.com/home" ...>"`|`[concat('<WebTest Name="',` <br/> `parameters('webTestName'),` <br/> `'" ... Url="', parameters('Url'),` <br/> `'"...>')]" `
 
+## Wenn Ihre App eine Azure-Web-App ist
+
+Fügen Sie diese Ressource hinzu. Oder wenn eine `siteextensions`-Ressource bereits vorhanden ist, parametrisieren Sie sie wie folgt:
+
+```json
+    {
+      "apiVersion": "2014-04-01",
+      "name": "Microsoft.ApplicationInsights.AzureWebSites",
+      "type": "siteextensions",
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/Sites', parameters('siteName'))]",
+        "[resourceId('Microsoft.Web/Sites/config', parameters('siteName'), 'web')]",
+        "[resourceId('Microsoft.Web/sites/sourcecontrols', parameters('siteName'), 'web')]"
+      ],
+      "properties": { }
+    }
+
+```
+
+Diese Ressource stellt das Application Insights SDK für Ihre Azure-Web-App bereit.
+
 ## Festlegen von Abhängigkeiten zwischen den Ressourcen
 
 Die Ressourcen sollten in Azure in strikter Reihenfolge eingerichtet werden. Um sicherzustellen, dass eine Einrichtung abgeschlossen ist, bevor die nächste beginnt, fügen Sie Abhängigkeitszeilen hinzu:
@@ -145,6 +166,7 @@ Die Ressourcen sollten in Azure in strikter Reihenfolge eingerichtet werden. Um 
                -webTestName aWebTest `
                -Url http://myapp.com `
                -text "Welcome!"
+               -siteName "MyAzureSite"
 
     ``` 
 
@@ -154,6 +176,7 @@ Die Ressourcen sollten in Azure in strikter Reihenfolge eingerichtet werden. Um 
     * -webTestName: der Name des zu erstellenden Webtests.
     * -Url: die URL der Web-App.
     * -text: eine Zeichenfolge, die auf der Webseite angezeigt wird.
+    * -siteName: Wird verwendet, wenn es sich um eine Azure-Website handelt
 
 
 ## Definieren von Metrikwarnungen
@@ -288,4 +311,4 @@ Es folgt eine vollständige Vorlage für Komponenten, Webtests und Webtestwarnun
 
 ```
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

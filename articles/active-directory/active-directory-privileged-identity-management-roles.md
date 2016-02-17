@@ -3,18 +3,18 @@
    description="Erfahren Sie, welche Rollen mit der Erweiterung Azure Privileged Identity Management für privilegierte Identitäten verwendet werden."
    services="active-directory"
    documentationCenter=""
-   authors="IHenkel"
+   authors="kgremban"
    manager="stevenpo"
    editor=""/>
 
 <tags
-   ms.service="na"
+   ms.service="active-directory"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="09/21/2015"
-   ms.author="inhenk"/>
+   ms.date="01/21/2016"
+   ms.author="kgremban"/>
 
 # Azure Privileged Identity Management: Rollen
 
@@ -22,7 +22,7 @@
 
 ## Rollen aus Active Directory Azure, Office 365 und anderen Quellen
 
-Azure PIM verwendet die folgenden Rollen als Standardadministratorrollen.
+Azure Privileged Identity Management (PIM) verwendet die folgenden Rollen als Standardadministratorrollen.
 
 - Globaler Administrator
 - Abrechnungsadministrator
@@ -30,7 +30,7 @@ Azure PIM verwendet die folgenden Rollen als Standardadministratorrollen.
 - Benutzeradministrator
 - Kennwortadministrator
 
-Klicken Sie hier, um weitere Informationen über die Rollen aus Office 365, Exchange Online, SharePoint Online und Skype for Business zu erhalten.[Zuweisen von Administratorrollen in Office 365](https://support.office.com/de-DE/article/Assigning-admin-roles-in-Office-365-eac4d046-1afd-4f1a-85fc-8219c79e1504?ui=de-DE&rs=de-DE&ad=US)
+Weitere Informationen zu den Rollen aus Office 365, Exchange Online, SharePoint Online und Skype for Business finden Sie unter [Zuweisen von Administratorrollen in Office 365](https://support.office.com/de-DE/article/Assigning-admin-roles-in-Office-365-eac4d046-1afd-4f1a-85fc-8219c79e1504?ui=de-DE&rs=de-DE&ad=US).
 
 <!--**PLACEHOLDER: The above article may not be the one we want since PIM gets roles from places other that Office 365**-->
 
@@ -42,7 +42,7 @@ Klicken Sie hier, um weitere Informationen über die Rollen aus Office 365, Exch
 
 ## Zuweisen einer Lizenz an einen Benutzer in Azure AD
 
-> [AZURE.NOTE]Die Lizenzoption wird nur angezeigt, wenn tatsächlich Lizenzen tatsächlich für das Abonnement vorhanden sind.
+> [AZURE.NOTE] Die Lizenzoption wird nur angezeigt, wenn tatsächlich Lizenzen tatsächlich für das Abonnement vorhanden sind.
 
 1. Melden Sie sich mit einem globalen Administratorkonto oder CO-Administratorkonto bei [http://manage.windowsazure.com](http://manage.windowsazure.com) an.
 2. Klicken Sie im Hauptmenü auf **Alle Elemente**.
@@ -57,4 +57,4 @@ Klicken Sie hier, um weitere Informationen über die Rollen aus Office 365, Exch
 ## Nächste Schritte
 [AZURE.INCLUDE [active-directory-privileged-identity-management-toc](../../includes/active-directory-privileged-identity-management-toc.md)]
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0204_2016-->

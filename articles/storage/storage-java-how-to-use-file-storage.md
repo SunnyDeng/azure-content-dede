@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="Java"
 	ms.topic="article"
-	ms.date="01/11/2016"
+	ms.date="02/03/2016"
 	ms.author="jutang"/>
 
 # Verwenden des Dateispeichers mit Java
@@ -50,7 +50,7 @@ Zur Verwendung des Dateidiensts müssen Sie eine Verbindung mit Ihrem Azure-Spei
 	    "AccountName=your_storage_account_name;" +
 	    "AccountKey=your_storage_account_key";
 
-> [AZURE.NOTE]Ersetzen Sie "your\_storage\_account\_name" und "your\_storage\_account\_key" durch die tatsächlichen Werte für Ihr Speicherkonto.
+> [AZURE.NOTE] Ersetzen Sie "your\_storage\_account\_name" und "your\_storage\_account\_key" durch die tatsächlichen Werte für Ihr Speicherkonto.
 
 ## Herstellen einer Verbindung mit einem Azure-Speicherkonto
 
@@ -208,17 +208,12 @@ Das Löschen einer Freigabe erfolgt durch Aufrufen der **deleteIfExists**-Method
 
 Folgen Sie diesen Links, wenn Sie mehr über andere Azure-Speicher-APIs erfahren möchten.
 
-- [Azure Storage-SDK für Java]
-- [Referenz für Azure Storage-Client-SDKs]
-- [Azure Storage-REST-API]
-- [Azure Storage-Teamblog]
-- [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy)
+- [Azure-SDK für Java](http://azure.microsoft.com/develop/java/)
+- [Azure Storage-SDK für Java](https://github.com/azure/azure-storage-java)
+- [Azure Storage-SDK für Android](https://github.com/azure/azure-storage-android)
+- [Referenz für Azure Storage-Client-SDKs](http://dl.windowsazure.com/storage/javadoc/)
+- [Azure Storage-REST-API](https://msdn.microsoft.com/library/azure/dd179355.aspx)
+- [Azure Storage-Teamblog](http://blogs.msdn.com/b/windowsazurestorage/)
+- [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy.md)
 
-[Azure SDK for Java]: http://azure.microsoft.com/develop/java/
-[Azure Storage-SDK für Java]: https://github.com/azure/azure-storage-java
-[Azure Storage SDK for Android]: https://github.com/azure/azure-storage-android
-[Referenz für Azure Storage-Client-SDKs]: http://dl.windowsazure.com/storage/javadoc/
-[Azure Storage-REST-API]: https://msdn.microsoft.com/library/azure/dd179355.aspx
-[Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
-
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0204_2016-->

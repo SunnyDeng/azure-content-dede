@@ -18,6 +18,8 @@
 
 # Bereitstellen von Inhalt aus Azure CDN in einer Webanwendung #
 
+> [AZURE.NOTE] Dieses Tutorial gilt für den klassischen CDN-Dienst. Wir arbeiten mit Hochdruck an der Entwicklung eines Updates für die aktuelle Version des CDN.
+
 Dieses Lernprogramm zeigt, wie Sie von Azure CDN profitieren können, um die Reichweite und Leistung Ihrer Webanwendung zu verbessern. Azure CDN kann Ihnen in folgenden Fällen helfen, die Leistung Ihrer Webanwendung zu verbessern:
 
 - Sie haben viele Links zu statischen oder halbstatischen Inhalten auf Ihren Seiten
@@ -43,7 +45,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 -	Visual Studio 2013 mit [Azure SDK](http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409) für die Blobverwaltungsoberfläche
 -	[Azure PowerShell](http://go.microsoft.com/?linkid=9811175&clcid=0x409) (verwendet von [Automatisieren des Hochladens von Inhalten von einer ASP.NET-Anwendung zu einem CDN-Endpunkt](#upload))
 
-> [AZURE.NOTE]Sie benötigen ein Azure-Konto, um dieses Lernprogramm abzuschließen. + Sie können [kostenlos ein Azure-Konto erstellen](/pricing/free-trial/?WT.mc_id=A261C142F): – Sie erhalten ein Guthaben, das Sie zum Ausprobieren der kostenpflichtigen Azure-Dienste nutzen können. Sie können das Konto behalten und weiterhin kostenlose Azure-Dienste wie z. B. Websites nutzen, wenn das Guthaben aufgebraucht ist. + Sie können von [Vorteilen für MSDN-Abonnenten profitieren](/pricing/member-offers/msdn-benefits-details/): – Über Ihr MSDN-Abonnement erhalten Sie jeden Monat Gutschriften, die Sie für kostenpflichtige Azure-Dienste einsetzen können.
+> [AZURE.NOTE] Sie benötigen ein Azure-Konto, um dieses Lernprogramm abzuschließen. + Sie können [kostenlos ein Azure-Konto erstellen](/pricing/free-trial/?WT.mc_id=A261C142F): – Sie erhalten ein Guthaben, das Sie zum Ausprobieren der kostenpflichtigen Azure-Dienste nutzen können. Sie können das Konto behalten und weiterhin kostenlose Azure-Dienste wie z. B. Websites nutzen, wenn das Guthaben aufgebraucht ist. + Sie können von [Vorteilen für MSDN-Abonnenten profitieren](/pricing/member-offers/msdn-benefits-details/): – Über Ihr MSDN-Abonnement erhalten Sie jeden Monat Gutschriften, die Sie für kostenpflichtige Azure-Dienste einsetzen können.
 
 <a name="static"></a>
 ## Bereitstellen statischer Inhalte über einen Azure CDN-Endpunkt ##
@@ -63,13 +65,13 @@ Los geht's! Folgen Sie den Schritten unten, um mit der Verwendung des Azure CDN 
 
 	![](media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-1.PNG)
 
-	>[AZURE.NOTE]Ich verwende Ostasien als Region, da sich diese weit genug entfernt befindet, um mein CDN später von Nordamerika aus zu testen.
+	>[AZURE.NOTE] Ich verwende Ostasien als Region, da sich diese weit genug entfernt befindet, um mein CDN später von Nordamerika aus zu testen.
 
 2. Sobald der Status des neuen Speicherkontos **Online** ist, erstellen Sie einen neuen CDN-Endpunkt, der mit dem erstellten Speicherkonto verknüpft ist. Klicken Sie auf **Neu > App-Dienste > CDN > Schnellerfassung**. Wählen Sie das erstellte Speicherkonto aus, und klicken Sie auf **Erstellen**.
 
 	![](media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-2.PNG)
 
-	>[AZURE.NOTE]Sobald das CDN erstellt ist, wird im Azure-Portal dessen URL und die Ursprungsdomäne angezeigt, mit der es verknüpft ist. Jedoch kann es etwas dauern, bis die Konfiguration des CDN-Endpunkts vollständig an alle Knotenstandorte weitergegeben wurde.
+	>[AZURE.NOTE] Sobald das CDN erstellt ist, wird im Azure-Portal dessen URL und die Ursprungsdomäne angezeigt, mit der es verknüpft ist. Jedoch kann es etwas dauern, bis die Konfiguration des CDN-Endpunkts vollständig an alle Knotenstandorte weitergegeben wurde.
 
 3. Testen Sie, ob Ihr CDN-Endpunkt wirklich online ist, indem Sie einen Ping ausführen. Wenn Ihr CDN-Endpunkt nicht zu allen Knoten weitergegeben wurde, wird Ihnen eine ähnliche Nachricht wie unten angezeigt.
 
@@ -93,7 +95,7 @@ Los geht's! Folgen Sie den Schritten unten, um mit der Verwendung des Azure CDN 
 
 	![](media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-2-enablequeryb.PNG)
 
-	>[AZURE.NOTE]Auch wenn die Aktivierung der Abfragezeichenfolge für diesen Teil des Lernprogramms nicht erforderlich ist, sollten Sie diesen Schritt so früh wie möglich durchführen, da die Verteilung einer hier vorgenommenen Änderung an die übrigen Knoten einige Zeit dauert und Sie verhindern möchten, dass Inhalte, für die Abfragezeichenfolgen nicht aktiviert wurden, den CDN-Cache verstopfen (die Aktualisierung von CDN-Inhalten wird später erläutert). Wie Sie davon profitieren können, erfahren Sie in [Sofortiges Verarbeiten neuer Inhalte mit Abfragezeichenfolgen](#query).
+	>[AZURE.NOTE] Auch wenn die Aktivierung der Abfragezeichenfolge für diesen Teil des Lernprogramms nicht erforderlich ist, sollten Sie diesen Schritt so früh wie möglich durchführen, da die Verteilung einer hier vorgenommenen Änderung an die übrigen Knoten einige Zeit dauert und Sie verhindern möchten, dass Inhalte, für die Abfragezeichenfolgen nicht aktiviert wurden, den CDN-Cache verstopfen (die Aktualisierung von CDN-Inhalten wird später erläutert). Wie Sie davon profitieren können, erfahren Sie in [Sofortiges Verarbeiten neuer Inhalte mit Abfragezeichenfolgen](#query).
 
 6. Klicken Sie in Visual Studio 2013 im Server-Explorer auf **Mit Microsoft Azure verbinden**.
 
@@ -126,7 +128,7 @@ Los geht's! Folgen Sie den Schritten unten, um mit der Verwendung des Azure CDN 
 
 13.	Wenn das Blob ordnungsgemäß im Browser ausgegeben wird, ändern Sie die URL von `http://<yourStorageAccountName>.blob.core.windows.net` in die URL Ihres Azure CDN. In meinem Fall verwende ich `http://az623979.vo.msecnd.net/cdn/cephas_lin.png`, um das erste Bild auf meinem CDN-Endpunkt zu testen.
 
-	>[AZURE.NOTE]Sie finden die URL des CDN-Endpunkts im Azure-Verwaltungsportal auf der Registerkarte "CDN".
+	>[AZURE.NOTE] Sie finden die URL des CDN-Endpunkts im Azure-Verwaltungsportal auf der Registerkarte "CDN".
 
 	Wenn Sie die Leistung des direkten Blob-Zugriffs und CDN-Zugriffs vergleichen, können Sie den Leistungszuwachs durch die Verwendung von Azure CDN sehen. Unten finden Sie einen Screenshot der Internet Explorer 11 F12-Entwicklertools für den Blob-URL-Zugriff meines Bilds:
 
@@ -155,7 +157,7 @@ Wenn Sie all Ihre statischen Inhalte Ihrer ASP.NET-Webanwendung zu einem CDN-End
 
 		Import-AzurePublishSettingsFile "<yourDownloadedFilePath>"
 
-	>[AZURE.NOTE]Nach dem Importieren der Einstellungsveröffentlichungsdatei wird dies das Azure-Standardkonto, das für alle Azure PowerShell-Sitzungen verwendet wird. Dies bedeutet, dass Sie die Schritte oben nur einmal ausführen müssen.
+	>[AZURE.NOTE] Nach dem Importieren der Einstellungsveröffentlichungsdatei wird dies das Azure-Standardkonto, das für alle Azure PowerShell-Sitzungen verwendet wird. Dies bedeutet, dass Sie die Schritte oben nur einmal ausführen müssen.
 	
 1. Laden Sie das Skript von der [Downloadseite](http://gallery.technet.microsoft.com/scriptcenter/Upload-Content-Files-from-41c2142a) herunter. Speichern Sie es im Projektordner der ASP.NET-Anwendung.
 2. Klicken Sie mit der rechten Maustaste auf das heruntergeladene Skript, und klicken Sie auf **Eigenschaften**.
@@ -271,4 +273,4 @@ Ohne Integration in Azure App Service-Web-Apps oder Azure Cloud Services können
 - [Verwenden von CDN für Azure](cdn-how-to-use-cdn.md)
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

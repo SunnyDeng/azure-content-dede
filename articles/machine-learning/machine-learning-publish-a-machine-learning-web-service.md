@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/03/2015"
+	ms.date="02/01/2016"
 	ms.author="garye"/>
 
 # Bereitstellen eines Azure Machine Learning-Webdiensts
@@ -50,7 +50,7 @@ Der Prozess der Erstellung und Verwaltung von Trainingsexperimenten an anderer S
 
 - [Erstellen eines einfachen Experiments im Azure Machine Learning-Studio](machine-learning-create-experiment.md)
 - [Entwickeln einer Vorhersagelösung mit Azure Machine Learning](machine-learning-walkthrough-develop-predictive-solution.md)
-- [Importieren von Trainingsdaten in Azure Machine Learning Studio](machine-learning-import-data.md)
+- [Importieren von Trainingsdaten in Azure Machine Learning Studio](machine-learning-data-science-import-data.md)
 - [Verwalten von Experimentiterationen in Azure Machine Learning-Studio](machine-learning-manage-experiment-iterations.md)
 
 ## Konvertieren des Trainingsexperiments in ein Vorhersageexperiment
@@ -108,8 +108,8 @@ Sie können Änderungen am Webdienst vornehmen, z. B. das Modell mit zusätzlich
 
 Um den Webdienst zu aktualisieren, öffnen Sie das ursprüngliche Vorhersageexperiment, das Sie zum Bereitstellen des Webdiensts verwendet haben, und klicken Sie auf **SPEICHERN UNTER**, um eine bearbeitbare Kopie zu erstellen. Nehmen Sie die gewünschten Änderungen vor, und klicken Sie dann auf **Webdienst bereitstellen**. Da Sie dieses Experiment zuvor bereits bereitgestellt hatten, werden Sie von Machine Learning Studio gefragt, ob Sie den vorhandenen Dienst überschreiben möchten. Wenn Sie auf **JA** klicken, wird der vorhandenen Webdienst beendet, und das neue Vorhersageexperiment wird an seiner Stelle veröffentlicht.
 
-> [AZURE.NOTE]Wenn Sie Konfigurationsänderungen im ursprünglichen Webdienst vorgenommen haben, z. B. einen anderen Anzeigenamen oder eine andere Beschreibung eingegeben haben, dann müssen Sie diese Werte erneut eingeben.
+> [AZURE.NOTE] Wenn Sie Konfigurationsänderungen im ursprünglichen Webdienst vorgenommen haben, z. B. einen anderen Anzeigenamen oder eine andere Beschreibung eingegeben haben, dann müssen Sie diese Werte erneut eingeben.
 
 Eine Option zum Aktualisieren des Webdiensts ist das programmgesteuerte erneute Trainieren des Modells. Weitere Informationen finden Sie unter [Programmgesteuertes erneutes Trainieren von Machine Learning-Modellen](machine-learning-retrain-models-programmatically.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0204_2016-->

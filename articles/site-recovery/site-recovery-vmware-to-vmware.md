@@ -27,7 +27,7 @@ InMage Scout in Azure Site Recovery ermöglicht eine Echtzeitreplikation zwische
 
 ## Voraussetzungen
 
-- **Azure-Konto**: Sie benötigen ein [Microsoft Azure](http://azure.microsoft.com/)-Konto. Für den Einstieg steht ein [kostenloses Testkonto](pricing/free-trial/) zur Verfügung.
+- **Azure-Konto**: Sie benötigen ein [Microsoft Azure](https://azure.microsoft.com/)-Konto. Für den Einstieg steht ein [kostenloses Testkonto](pricing/free-trial/) zur Verfügung.
 
 
 ## Schritt 1: Erstellen eines Tresors
@@ -130,4 +130,4 @@ Dieses neueste Update enthält Fehlerbehebungen und neue Funktionen:
 
 Etwaige Fragen können Sie im [Azure Recovery Services-Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr) stellen.
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -171,7 +171,7 @@ Beachten Sie die folgenden Punkte bei der Entscheidung, wie und wo Hintergrundau
 
 Hintergrundaufgaben können so implementiert werden, dass sie nicht in Azure-Web-Apps oder Cloud Services bereitgestellt werden können oder sich dazu nicht eignen. Typische Beispiele sind Windows-Dienste und Hilfsprogrammen von Drittanbietern und ausführbare Programme. Hierzu können auch Programme gehören, die für eine Ausführungsumgebung geschrieben wurden, die sich von der Umgebung unterscheidet, in der die Anwendung gehostet wird. Beispielsweise kann dies ein UNIX- oder Linux-Programm sein, das von einer Windows- oder .NET-Anwendung ausgeführt werden soll. Sie können eines von verschiedenen Betriebssystemen für einen virtuellen Azure-Computer auswählen und den Dienst oder die ausführbare Datei dann auf diesem virtuellen Computer ausführen.
 
-Informationen dazu, wann sich die Verwendung von Virtual Machines anbietet, finden Sie unter [Azure App Service, Cloud Services und Virtual Machines im Vergleich](choose-web-site-cloud-service-vm.md). Weitere Informationen zu den Optionen für virtuelle Computer finden Sie unter [Größen virtueller Computer und Clouddienste für Azure](http://msdn.microsoft.com/library/azure/dn197896.aspx). Weitere Informationen zu den Betriebssystemen und verfügbaren vorgefertigten Images für virtuelle Computer finden Sie unter [Katalog für virtuelle Azure-Computer](http://azure.microsoft.com/gallery/virtual-machines/).
+Informationen dazu, wann sich die Verwendung von Virtual Machines anbietet, finden Sie unter [Azure App Service, Cloud Services und Virtual Machines im Vergleich](choose-web-site-cloud-service-vm.md). Weitere Informationen zu den Optionen für virtuelle Computer finden Sie unter [Größen virtueller Computer und Clouddienste für Azure](http://msdn.microsoft.com/library/azure/dn197896.aspx). Weitere Informationen zu den Betriebssystemen und verfügbaren vorgefertigten Images für virtuelle Computer finden Sie unter [Katalog für virtuelle Azure-Computer](https://azure.microsoft.com/gallery/virtual-machines/).
 
 Zum Initiieren der Hintergrundaufgabe in einem separaten virtuellen Computer stehen verschiedene Optionen zur Auswahl:
 
@@ -191,7 +191,7 @@ Berücksichtigen Sie die folgenden Punkte bei der Entscheidung, ob Hintergrundau
 
 ### Weitere Informationen
 
-- [Virtuelle Computer in Azure](http://azure.microsoft.com/services/virtual-machines/)
+- [Virtuelle Computer in Azure](https://azure.microsoft.com/services/virtual-machines/)
 - [Virtuelle Computer in Azure – häufig gestellte Fragen](virtual-machines-questions.md)
 
 ## Überlegungen zum Entwurf
@@ -317,4 +317,4 @@ Hintergrundaufgaben müssen ausreichend Leistung bieten, damit sichergestellt is
 - [Azure-Warteschlangen und Service Bus-Warteschlangen – Vergleich und Gegenüberstellung](service-bus-azure-and-service-bus-queues-compared-contrasted.md)
 - [Aktivieren der Diagnose in einem Clouddienst](cloud-services-dotnet-diagnostics.md)
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

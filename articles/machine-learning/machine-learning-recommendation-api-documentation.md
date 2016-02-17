@@ -41,7 +41,7 @@ Die Azure Machine Learning-Empfehlungs-APIs können in die folgenden logischen G
 - <ins>Benutzerdaten</ins>: Dies sind APIs, mit denen Sie Informationen zu den Nutzungsdaten der Benutzer abrufen können.
 - <ins>Benachrichtigungen</ins>: Dies sind APIs, mit denen Sie Benachrichtigungen bei Problemen im Zusammenhang mit Ihren API-Vorgängen empfangen können. (Beispiel: Sie berichten Nutzungsdaten über die Datengewinnung, und bei der Verarbeitung von Ereignissen treten Fehler auf. Es wird eine Fehlerbenachrichtigung ausgegeben.)
 
-##2\. Einschränkungen
+##2. Einschränkungen
 
 - Die Maximale Anzahl von Modellen pro Abonnement beträgt 10.
 - Die maximale Anzahl von Builds pro Modell beträgt 20.
@@ -49,41 +49,42 @@ Die Azure Machine Learning-Empfehlungs-APIs können in die folgenden logischen G
 - Die maximale Menge der Nutzungspunkte, die aufbewahrt werden, beträgt etwa 5.000.000. Die ältesten werden gelöscht, wenn neue hochgeladen oder gemeldet werden.
 - Die maximale Größe der Daten, die in POST gesendet werden können (z. B. Importieren von Katalog- oder Nutzungsdaten), beträgt 200 MB.
 - Die Anzahl der Transaktionen pro Sekunde bei Empfehlungsmodellbuilds, die nicht aktiv sind, beträgt etwa 2 T/s. Bei aktiven Empfehlungsmodellbuilds sind bis zu 20 T/s möglich.
+- Die maximale Anzahl von Elementen, die bei Empfehlungen abgerufen werden können, beträgt 150.
 
-##3\. APIs – allgemeine Informationen
+##3. APIs – allgemeine Informationen
 
-###3\.1. Authentifizierung
+###3.1. Authentifizierung
 Befolgen Sie die Microsoft Azure Marketplace-Richtlinien in Bezug auf die Authentifizierung. Der Marketplace unterstützt sowohl die Standard- als auch die OAuth-Authentifizierungsmethode.
 
-###3\.2. Dienst-URI
+###3.2. Dienst-URI
 Den Dienststamm-URI für die APIs zu Azure Machine Learning-Empfehlungen finden Sie [hier](https://api.datamarket.azure.com/amla/recommendations/v3/).
 
 Der vollständige Dienst-URI wird unter Verwendung von Elementen der OData-Spezifikation angegeben.
 
-###3\.3. API-Version
+###3.3. API-Version
 Jeder API-Aufruf enthält am Ende einen Abfrageparameter namens apiVersion. Dieser muss auf 1.0 festgelegt sein.
 
-###3\.4. Groß-/Kleinschreibung bei IDs
+###3.4. Groß-/Kleinschreibung bei IDs
 Bei IDs, die von den APIs zurückgegeben werden, muss die Groß-/Kleinschreibung beachtet werden, wenn sie in nachfolgenden API-Aufrufen als Parameter weitergegeben werden. Beispielsweise muss bei Modell- und Katalog-IDs die Groß-/Kleinschreibung beachtet werden.
 
-##4\. Empfehlungsqualität und kalte Elemente
+##4. Empfehlungsqualität und kalte Elemente
 
-###4\.1. Qualität der Empfehlungen
+###4.1. Qualität der Empfehlungen
 
 Das Erstellen eines Empfehlungsmodells ist in der Regel ausreichend, damit Empfehlungen vom System bereitgestellt werden können. Allerdings hängt die Qualität der Empfehlungen von der verarbeiteten Nutzung und der Abdeckung des Katalogs ab. Wenn beispielsweise viele „kalte“ Elemente (Elemente ohne nennenswerte Nutzung) vorhanden sind, ist es schwierig für das System, Empfehlungen für solche Elemente bereitzustellen oder sie als empfohlene Elemente zu verwenden. Um das Problem mit „kalten“ Elementen zu beheben, können die Metadaten der Elemente verwendet werden, um die Empfehlungen zu verbessern. Diese Metadaten werden als Funktionen bezeichnet. Typische Funktionen sind beispielsweise Buchautoren oder Filmschauspieler. Diese Funktionen werden im Katalog in Form von Schlüssel/Wert-Zeichenfolgen bereitgestellt. Die vollständige Format der Katalogdatei finden Sie im Abschnitt [Importieren von Katalogen](#81-import-catalog-data).
 
-###4\.2. Rangfolgebuild
+###4.2. Rangfolgebuild
 
 Features können das Empfehlungsmodell verbessern, doch dazu ist die Verwendung von nützlichen Features erforderlich. Zu diesem Zweck wurde ein neuer Build zum Erstellen von Rangfolgen eingeführt Durch diesen Build wird die Nützlichkeit der Features in eine Rangfolge gebracht. Nützliche Features erhalten mindestens eine Rangwertung von 2. Wenn Sie wissen, welche Features nützlich sind, lösen Sie mit der Liste bzw. Unterliste nützlicher Features das Erstellen eines Empfehlungsbuilds aus. Diese Features können zum Verbessern sowohl „warmer“ als auch „kalter“ Elemente verwendet werden. Zum Verwenden der Features bei „warmen“ Elementen muss der Buildparameter `UseFeatureInModel` eingerichtet werden. Zum Verwenden der Features bei „kalten“ Elementen muss der Buildparameter `AllowColdItemPlacement` aktiviert werden. Hinweis: Es ist nicht möglich, `AllowColdItemPlacement` ohne `UseFeatureInModel` zu aktivieren.
 
-###4\.3. Empfehlungsargumentation
+###4.3. Empfehlungsargumentation
 
 Die Empfehlungsargumentation ist ein weiterer Nutzungsaspekt der Features. Das Empfehlungsmodul von Azure Machine Learning kann Features verwenden, um Erläuterungen („Argumentation“) zu den Empfehlungen bereitzustellen, um das Zutrauen desjenigen, der die Empfehlung verwendet, in das empfohlene Element zu erhöhen. Zum Aktivieren der Argumentation müssen die Parameter `AllowFeatureCorrelation` und `ReasoningFeatureList` eingerichtet werden, bevor ein Empfehlungsbuild angefordert wird.
 
 
-##5\. Einfaches Modell
+##5. Einfaches Modell
 
-###5\.1. Modell erstellen
+###5.1. Modell erstellen
 Es wird eine Anforderung „Modell erstellen“ erstellt.
 
 | HTTP-Methode | URI |
@@ -146,8 +147,8 @@ Hiermit wird eine Anforderung „Modell abrufen“ erstellt.
 |:--------			|:--------								|
 |	id |	Dies ist der eindeutige Bezeichner des Modells (Groß-/Kleinschreibung muss beachtet werden). |
 |	apiVersion | 1,0 |
-||| 
-| Request Body | KEINER |
+|
+| Anforderungstext | KEINE |
 
 **Antwort**:
 
@@ -209,8 +210,8 @@ Hierdurch werden alle Modelle des aktuellen Benutzers abgerufen.
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
 |	apiVersion | 1,0 |
-||| 
-| Request Body | KEINER |
+|
+| Anforderungstext | KEINE |
 
 **Antwort**:
 
@@ -267,7 +268,9 @@ OData-XML
 
 ###5.4. Modell aktualisieren
 
-Sie können die Modellbeschreibung oder die aktive Build-ID aktualisieren.<br> <ins>Aktive Build-ID</ins>: Jeder Build für jedes Modell weist eine „Build-ID“ auf. Die aktive Build-ID ist der erste erfolgreich erstellte Build jedes neuen Modells. Wenn Sie über eine aktive Build-ID verfügen und für das gleiche Modell zusätzliche Builds erstellen, müssen Sie die aktive Build-ID gegebenenfalls ausdrücklich als Standard-Build-ID festlegen. Wenn Sie Empfehlungen nutzen und die zu verwendende Build-ID nicht angeben, wird automatisch der Standard-Build-ID verwendet.<br> Wenn ein Empfehlungsmodell in der Produktion verwendet wird, können mit diesem Mechanismus neue Modelle erstellt und getestet werden, bevor sie in der Produktion verwendet werden.
+Sie können die Modellbeschreibung oder die aktive Build-ID aktualisieren.<br> 
+<ins>Aktive Build-ID</ins>: Jeder Build für jedes Modell weist eine „Build-ID“ auf. Die aktive Build-ID ist der erste erfolgreich erstellte Build jedes neuen Modells. Wenn Sie über eine aktive Build-ID verfügen und für das gleiche Modell zusätzliche Builds erstellen, müssen Sie die aktive Build-ID gegebenenfalls ausdrücklich als Standard-Build-ID festlegen. Wenn Sie Empfehlungen nutzen und die zu verwendende Build-ID nicht angeben, wird automatisch der Standard-Build-ID verwendet.<br> 
+Wenn ein Empfehlungsmodell in der Produktion verwendet wird, können mit diesem Mechanismus neue Modelle erstellt und getestet werden, bevor sie in der Produktion verwendet werden.
 
 
 | HTTP-Methode | URI |
@@ -278,14 +281,14 @@ Sie können die Modellbeschreibung oder die aktive Build-ID aktualisieren.<br> <
 |:--------			|:--------								|
 |	id | Dies ist der eindeutige Bezeichner des Modells (Groß-/Kleinschreibung muss beachtet werden). |
 |	apiVersion | 1\.0 |
-||| 
-| Request Body | `<ModelUpdateParams xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">`<br>`<Description>New Description</Description>`<br>`<ActiveBuildId>-1</ActiveBuildId>`<br>` </ModelUpdateParams>`<br><br>Beachten Sie, dass die Beschreibung der XML-Tags sowie die ActiveBuildId optional sind. Wenn Sie keine Beschreibung oder keine ActiveBuildId festlegen möchten, entfernen Sie das gesamte Tag.|
+|
+| Anforderungstext | `<ModelUpdateParams xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">`<br>`<Description>New Description</Description>`<br>`<ActiveBuildId>-1</ActiveBuildId>`<br>` </ModelUpdateParams>`<br><br>Beachten Sie, dass die Beschreibung und aktive Build-ID der XML-Tags optional sind. Wenn Sie keine Beschreibung oder aktive Build-ID festlegen möchten, entfernen Sie das gesamte Tag.|
 
 **Antwort**:
 
 HTTP-Statuscode: 200
 
-### 5\.5. Modell löschen
+###5\.5. Modell löschen
 Löscht ein vorhandenes Modell nach ID.
 
 | HTTP-Methode | URI |
@@ -296,8 +299,8 @@ Löscht ein vorhandenes Modell nach ID.
 |:--------			|:--------								|
 |	id |	Dies ist der eindeutige Bezeichner des Modells (Groß-/Kleinschreibung muss beachtet werden). |
 |	apiVersion | 1,0 |
-||| 
-| Request Body | KEINER |
+|
+| Anforderungstext | KEINE |
 
 **Antwort**:
 
@@ -340,8 +343,8 @@ Nur für den Empfehlungsbuild verfügbar.
 |:--------			|:--------								|
 |	modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 |	apiVersion | 1,0 |
-||| 
-| Request Body | KEINER |
+|
+| Anforderungstext | KEINE |
 
 **Antwort**:
 
@@ -577,8 +580,8 @@ Nur für den Empfehlungsbuild verfügbar.
 |	modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 |	buildId |	Optional. Mit dieser Nummer wird ein erfolgreicher Build identifiziert. |
 |	apiVersion | 1,0 |
-||| 
-| Request Body | KEINER |
+|
+| Anforderungstext | KEINE |
 
 **Antwort**:
 
@@ -657,8 +660,8 @@ Hierdurch wird eine Probe des Empfehlungsmodells abgerufen.
 |:--------			|:--------								|
 |	modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 |	apiVersion | 1,0 |
-|||  
-| Request Body | KEINER |
+|
+| Anforderungstext | KEINE |
 
 **Antwort**:
 
@@ -800,9 +803,9 @@ d5358189-d70f-4e35-8add-34b83b4942b3, Pigs in Heaven
 
 ##7\. Modellgeschäftsregeln
 Folgende Regeltypen werden unterstützt: 
-<strong>BlockList</strong>: Mit dieser Funktion können Sie eine Sperrliste mit Elementen erstellen, die nicht in den Empfehlungsergebnissen zurückgegeben werden sollen.
+- <strong>BlockList</strong>: Mit dieser Funktion können Sie eine Sperrliste mit Elementen erstellen, die nicht in den Empfehlungsergebnissen zurückgegeben werden sollen.
 
-- <strong>FeatureBlockList</strong> Hiermit können Sie Elemente basierend auf den Werten ihrer Features blockieren.
+- <strong>FeatureBlockList</strong>: Hiermit können Sie Elemente basierend auf den Werten ihrer Funktionen blockieren.
 
 *Senden Sie in einer einzelnen Blocklistenregel nicht mehr als 1000 Elemente, um eine Zeitüberschreitung beim Aufruf zu vermeiden. Wenn Sie mehr als 1000 Elemente blockieren müssen, können Sie mehrere Blocklisten aufrufen.*
 
@@ -810,7 +813,7 @@ Folgende Regeltypen werden unterstützt:
 
 - <strong>WhiteList</strong>: Hiermit können Sie ausschließlich Empfehlungen aus einer Liste von Elementen vorschlagen.
 
-- <strong>FeatureWhiteList</strong>: Hiermit können Sie ausschließlich Elemente empfehlen, die bestimmte Featurewerte haben.
+- <strong>FeatureWhiteList</strong>: Hiermit können Sie ausschließlich Elemente empfehlen, die bestimmte Funktionswerte haben.
 
 - <strong>PerSeedBlockList</strong>: Mit dieser Funktion können Sie eine Sperrliste pro Startwert erstellen, um für jedes Element eine Liste von Elementen festzulegen, die nicht in den Empfehlungsergebnissen zurückgegeben werden sollen.
 
@@ -827,8 +830,8 @@ Folgende Regeltypen werden unterstützt:
 |:--------			|:--------								|
 |	modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 |	apiVersion | 1,0 |
-|||
-| Request Body | KEINER |
+|
+| Anforderungstext | KEINE |
 
 **Antwort**:
 
@@ -882,19 +885,23 @@ OData-XML
 |POST |`<rootURI>/AddRule?apiVersion=%271.0%27`|
 |HEADER |`"Content-Type", "text/xml"`|
 
-|	Parametername |	Gültige Werte						 |
+|	Parametername |	Gültige Werte |
 |:--------			|:--------								|
 |	apiVersion | 1,0 |
-||| 
+|
 | Anforderungstext | 
-<ins>Stellen Sie beim Bereitstellen von Element-IDs für Geschäftsregeln sicher, dass Sie die externe ID des Elements verwenden (die gleiche ID, die Sie in der Katalogdatei verwendet haben).</ins><br>
-<ins>So fügen Sie eine BlockList-Regel hinzu</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>BlockList</Type><Value>{"ItemsToExclude":["2406E770-769C-4189-89DE-1C9283F93A96","3906E110-769C-4189-89DE-1C9283F98888"]}</Value></ApiFilter>`<br><br><ins>
-<ins>So fügen Sie eine FeatureBlockList-Regel hinzu</ins><br> 
+<ins>Wenn Sie Element-IDs für Geschäftsregeln bereitstellen, stellen Sie sicher, dass Sie die externe ID des Elements verwenden (die gleiche ID, die Sie in der Katalogdatei verwendet haben)</ins><br> 
+<ins>So fügen Sie eine BlockList-Regel hinzu:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>BlockList</Type><Value>{"ItemsToExclude":["2406E770-769C-4189-89DE-1C9283F93A96","3906E110-769C-4189-89DE-1C9283F98888"]}</Value></ApiFilter>`<br><br><ins> 
+<ins>So fügen Sie eine FeatureBlockList-Regel hinzu:</ins><br> 
+<br>
+`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>FeatureBlockList</Type><Value>{"Name":"Movie_category","Values":["Adult","Drama"]}</Value></ApiFilter>`<br><br><ins>
+So fügen Sie eine Upsale-Regel hinzu:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>Upsale</Type><Value>{"ItemsToUpsale":["2406E770-769C-4189-89DE-1C9283F93A96"]}</Value></ApiFilter>`<br><br> 
+<ins>So fügen Sie eine WhiteList-Regel hinzu:</ins><br> 
+`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>WhiteList</Type><Value>{"ItemsToInclude":["2406E770-769C-4189-89DE-1C9283F93A96","1116E770-769C-4189-89DE-1C9283F88888"]}</Value></ApiFilter>`<br><br><ins> 
+<ins>So fügen Sie eine FeatureWhiteList-Regel hinzu:</ins><br> 
 <br> 
-`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>FeatureBlockList</Type><Value>{"Name":"Movie_category","Values":["Adult","Drama"]}</Value></ApiFilter>`<br><br><ins> 
-So fügen Sie eine Upsale-Regel hinzu</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>Upsale</Type><Value>{"ItemsToUpsale":["2406E770-769C-4189-89DE-1C9283F93A96"]}</Value></ApiFilter>`<br><br> <ins>So fügen Sie eine WhiteList-Regel hinzu</ins><br> `<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>WhiteList</Type><Value>{"ItemsToInclude":["2406E770-769C-4189-89DE-1C9283F93A96","1116E770-769C-4189-89DE-1C9283F88888"]}</Value></ApiFilter>`<br><br><ins> 
-<ins>So fügen Sie eine FeatureWhiteList-Regel hinzu</ins><br> <br> 
-`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>FeatureWhiteList</Type><Value>{"Name":"Movie_rating","Values":["PG13"]}</Value></ApiFilter>`<br><br><ins> So fügen Sie eine PerSeedBlockList-Regel hinzu</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>PerSeedBlockList</Type><Value>{"SeedItems":["9949"],"ItemsToExclude":["9862","8158","8244"]}</Value></ApiFilter>`|
+`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>FeatureWhiteList</Type><Value>{"Name":"Movie_rating","Values":["PG13"]}</Value></ApiFilter>`<br><br><ins>
+So fügen Sie eine PerSeedBlockList-Regel hinzu:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>PerSeedBlockList</Type><Value>{"SeedItems":["9949"],"ItemsToExclude":["9862","8158","8244"]}</Value></ApiFilter>`|
 
 
 **Antwort**:
@@ -942,8 +949,8 @@ OData-XML
 |	modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 |	filterId |	Dies ist der eindeutige Bezeichner des Filters. |
 |	apiVersion | 1,0 |
-||| 
-| Request Body | KEINER |
+|
+| Anforderungstext | KEINE |
 
 **Antwort**:
 
@@ -959,8 +966,8 @@ HTTP-Statuscode: 200
 |:--------			|:--------								|
 |	modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 |	apiVersion | 1,0 |
-||| 
-| Request Body | KEINER |
+|
+| Anforderungstext | KEINE |
 
 **Antwort**:
 
@@ -1000,7 +1007,7 @@ Hinweis: Die maximale Dateigröße beträgt 200 MB.
 |:--------			|:--------								|
 |	modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 | filename | Textbezeichner des Katalogs.<br>Es sind nur Buchstaben (A-Z, a-z), Zahlen (0-9), Bindestriche (-) und Unterstrich (\_) zulässig.<br>Max. Länge: 50 | 
-| apiVersion | 1.0 | 
+| apiVersion | 1.0 |
 ||| 
 | Anforderungstext | Beispiel (mit Features):<br/>2406e770-769c-4189-89de-1c9283f93a96,Clara Callan,Book,the book description,author=Richard Wright,publisher=Harper Flamingo Canada,year=2001<br>21bf8088-b6c0-4509-870c-e1c7ac78304a,The Forgetting Room: A Fiction (Byzantium Book),Book,,author=Nick Bantock,publisher=Harpercollins,year=1997<br>3bb5cb44-d143-4bdd-a55c-443964bf4b23,Spadework,Book,,author=Timothy Findley, publisher=HarperFlamingo Canada, year=2001<br>552a1940-21e4-4399-82bb-594b46d7ed54,Restraint of Beasts,Book,the book description,author=Magnus Mills, publisher=Arcade Publishing, year=1998</pre> |
 
@@ -1009,8 +1016,8 @@ Hinweis: Die maximale Dateigröße beträgt 200 MB.
 
 HTTP-Statuscode: 200
 
-Von der API wird ein Importbericht zurückgegeben.
-- `feed\entry\content\properties\LineCount`: Dies ist die Anzahl der zulässigen Zeilen.
+Von der API wird ein Importbericht zurückgegeben. 
+- `feed\entry\content\properties\LineCount`: Dies ist die Anzahl der zulässigen Zeilen. 
 - `feed\entry\content\properties\ErrorCount`: Dies ist die Anzahl der Zeilen, die aufgrund eines Fehlers nicht eingefügt wurden.
 
 OData-XML
@@ -1047,8 +1054,8 @@ Hierdurch werden alle Katalogelemente abgerufen.
 |:--------			|:--------								|
 |	modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 |	apiVersion | 1,0 |
-||| 
-| Request Body | KEINER |
+|
+| Anforderungstext | KEINE |
 
 **Antwort**:
 
@@ -1150,8 +1157,8 @@ OData-XML
 |	modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 |	token |	Dies ist das Token des Katalogelementnamens. Muss mindestens 3 Zeichen enthalten. |
 |	apiVersion | 1,0 |
-||| 
-| Request Body | KEINER |
+|
+| Anforderungstext | KEINE |
 
 **Antwort**:
 
@@ -1370,8 +1377,8 @@ Hierdurch werden von allen Modellnutzungsdateien Metadaten abgerufen.
 |:--------			|:--------								|
 |	forModelId |	Dies ist der eindeutige Bezeichner des Modells. |
 |	apiVersion | 1,0 |
-||| 
-| Request Body | KEINER |
+|
+| Anforderungstext | KEINE |
 
 **Antwort**:
 
@@ -1437,8 +1444,8 @@ Hierdurch werden Nutzungsstatistiken abgerufen.
 | endDate |	Dies ist das Enddatum. Format: yyyy/MM/ddTHH:mm:ss |
 | eventTypes |	Dies ist eine kommagetrennte Zeichenfolge aus Ereignistypen oder null, um alle Ereignisse abzurufen. |
 | apiVersion | 1,0 |
-||| 
-| Request Body | KEINER |
+|
+| Anforderungstext | KEINE |
 
 **Antwort**:
 
@@ -1520,8 +1527,8 @@ Hierdurch werden die ersten 2 KB des Nutzungsdateiinhalts abgerufen.
 | modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 | fileId |	Dies ist der eindeutige Bezeichner der Modellnutzungsdatei. |
 | apiVersion | 1,0 |
-|||  
-| Request Body | KEINER |
+|
+| Anforderungstext | KEINE |
 
 **Antwort**:
 
@@ -1560,8 +1567,8 @@ Hierdurch wird der vollständige Inhalt der Nutzungsdatei abgerufen.
 | fid |	Dies ist der eindeutige Bezeichner der Modellnutzungsdatei. |
 | Download | 1 |
 | apiVersion | 1,0 |
-||| 
-| Request Body | KEINER |
+|
+| Anforderungstext | KEINE |
 
 **Antwort**:
 
@@ -1616,8 +1623,8 @@ Hierdurch wird die angegebene Modellnutzungsdatei gelöscht.
 | modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 | fileId | Dies ist der eindeutige Bezeichner der zu löschenden Datei. |
 | apiVersion | 1,0 |
-||| 
-| Request Body | KEINER |
+|
+| Anforderungstext | KEINE |
 
 **Antwort**:
 
@@ -1635,8 +1642,8 @@ Hierdurch werden alle Modellnutzungsdateien gelöscht.
 |:--------			|:--------								|
 | modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 | apiVersion | 1,0 |
-||| 
-| Request Body | KEINER |
+|
+| Anforderungstext | KEINE |
 
 **Antwort**:
 
@@ -1659,8 +1666,8 @@ Hierdurch werden Featureinformationen einschließlich Rang für den letzten erfo
 | modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 |samplingSize| Dies ist die Anzahl der Werte, die für jedes Feature anhand der Daten im Katalog eingeschlossen werden sollen. <br/>Mögliche Werte sind:<br> -1: Alle Proben <br>0: Keine Proben <br>N - N Proben für jeden Featurenamen zurückgeben|
 | apiVersion | 1,0 |
-||| 
-| Request Body | KEINER |
+|
+| Anforderungstext | KEINE |
 
 
 **Antwort**:
@@ -1742,8 +1749,8 @@ Hierdurch werden Featureinformationen einschließlich Rang für einen bestimmten
 |samplingSize| Dies ist die Anzahl der Werte, die für jedes Feature anhand der Daten im Katalog eingeschlossen werden sollen.<br/> Mögliche Werte sind:<br> -1: Alle Proben <br>0: Keine Proben <br>N - N Proben für jeden Featurenamen zurückgeben|
 |rankBuildId| Dies ist der eindeutige Bezeichner des Rangfolgebuilds oder -1 für den letzten Rangfolgebuild.|
 | apiVersion | 1,0 |
-||| 
-| Request Body | KEINER |
+|
+| Anforderungstext | KEINE |
 
 
 **Antwort**:
@@ -1904,8 +1911,8 @@ In der folgenden Tabelle sind die Parameter für Empfehlungsbuilds aufgeführt.
 | modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 | userDescription | Dies ist der Textbezeichner des Katalogs. Beachten Sie, dass Sie bei Verwendung von Leerzeichen diese stattdessen mit "%20" codieren müssen. Siehe Beispiel oben. <br>Max. Länge: 50 |
 | apiVersion | 1\.0 |
-||| 
-| Request Body | Wird das Feld leer gelassen, so wird der Build mit den Standardbuildparametern ausgeführt.<br><br>Wenn Sie die Parameter festlegen möchten, senden Sie sie wie im folgenden Beispiel als XML in den Textkörper. (Eine Erläuterung der Parameter finden Sie im Abschnitt „Buildparameter“.)`<NumberOfModelIterations>40</NumberOfModelIterations><NumberOfModelDimensions>20</NumberOfModelDimensions><MinItemAppearance>5</MinItemAppearance><MinUserAppearance>5</MinUserAppearance><EnableModelingInsights>true</EnableModelingInsights><UseFeaturesInModel>false</UseFeaturesInModel><ModelingFeatureList>feature_name_1,feature_name_2,...</ModelingFeatureList><AllowColdItemPlacement>false</AllowColdItemPlacement><EnableFeatureCorrelation>false</EnableFeatureCorrelation><ReasoningFeatureList>feature_name_a,feature_name_b,...</ReasoningFeatureList></BuildParametersList>` |
+|
+| Anforderungstext | Wenn das Feld leer gelassen wird, wird der Build mit den Standardbuildparametern ausgeführt.<br><br>Wenn Sie die Buildparameter festlegen möchten, senden Sie sie wie im folgenden Beispiel als XML in den Textkörper. (Eine Erläuterung der Parameter finden Sie im Abschnitt „Buildparameter“.)`<NumberOfModelIterations>40</NumberOfModelIterations><NumberOfModelDimensions>20</NumberOfModelDimensions><MinItemAppearance>5</MinItemAppearance><MinUserAppearance>5</MinUserAppearance><EnableModelingInsights>true</EnableModelingInsights><UseFeaturesInModel>false</UseFeaturesInModel><ModelingFeatureList>feature_name_1,feature_name_2,...</ModelingFeatureList><AllowColdItemPlacement>false</AllowColdItemPlacement><EnableFeatureCorrelation>false</EnableFeatureCorrelation><ReasoningFeatureList>feature_name_a,feature_name_b,...</ReasoningFeatureList></BuildParametersList>` |
 
 **Antwort**:
 
@@ -1979,9 +1986,9 @@ OData-XML
 | modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 | userDescription | Dies ist der Textbezeichner des Katalogs. Beachten Sie, dass Sie bei Verwendung von Leerzeichen diese stattdessen mit "%20" codieren müssen. Siehe Beispiel oben. <br>Max. Länge: 50 |
 | buildType | Typ des aufzurufenden Builds: <br/>: „Recommendation“ für Empfehlungsbuild <br>: „Ranking“ für Rangplatzbuild <br/>: „Fbt“ für FBT-Build
-| apiVersion | 1\.0 |
-||| 
-| Anforderungstext | Wird das Feld leer belassen, wird der Build mit den Standardbuildparametern ausgeführt.<br><br>Wenn Sie Buildparameter festlegen möchten, senden Sie diese wie im folgenden Beispiel als XML in den Textkörper. (Eine Erläuterung und eine vollständige Liste der Parameter finden Sie im Abschnitt „Buildparameter“).`<BuildParametersList><NumberOfModelIterations>40</NumberOfModelIterations><NumberOfModelDimensions>20</NumberOfModelDimensions><MinItemAppearance>5</MinItemAppearance><MinUserAppearance>5</MinUserAppearance></BuildParametersList>` |
+| apiVersion | 1,0 |
+|
+| Anforderungstext | Wenn das Feld leer gelassen wird, wird der Build mit den Standardbuildparametern ausgeführt.<br><br>Wenn Sie Buildparameter festlegen möchten, senden Sie diese wie im folgenden Beispiel als XML in den Textkörper. (Eine Erläuterung und eine vollständige Liste der Parameter finden Sie im Abschnitt „Buildparameter“).`<BuildParametersList><NumberOfModelIterations>40</NumberOfModelIterations><NumberOfModelDimensions>20</NumberOfModelDimensions><MinItemAppearance>5</MinItemAppearance><MinUserAppearance>5</MinUserAppearance></BuildParametersList>` |
 
 **Antwort**:
 
@@ -2468,7 +2475,7 @@ Hierdurch werden Empfehlungen des aktiven Builds vom Typ "Recommendation" (Empfe
 |:--------			|:--------								|
 | modelId | Dies ist der eindeutige Bezeichner des Modells. |
 | itemIds | Dies ist eine kommagetrennte Liste der Elemente, für die Empfehlungen erstellt werden sollen. <br>Wenn der aktive Build den Typ „FBT“ aufweist, können Sie nur ein Element senden. <br>Max. Länge: 1024 |
-| numberOfResults | Dies ist die Anzahl der erforderlichen Ergebnisse. |
+| numberOfResults | Anzahl der erforderlichen Ergebnisse <br> Max.: 150 |
 | includeMetatadata | Zur zukünftigen Verwendung, stets „false“ |
 | apiVersion | 1,0 |
 
@@ -2648,7 +2655,7 @@ Hierdurch werden Empfehlungen eines bestimmten Builds vom Typ „Recommendation�
 |:--------			|:--------								|
 | modelId | Dies ist der eindeutige Bezeichner des Modells. |
 | itemIds | Dies ist eine kommagetrennte Liste der Elemente, für die Empfehlungen erstellt werden sollen. <br>Wenn der aktive Build den Typ „FBT“ aufweist, können Sie nur ein Element senden. <br>Max. Länge: 1024 |
-| numberOfResults | Dies ist die Anzahl der erforderlichen Ergebnisse. |
+| numberOfResults | Anzahl der erforderlichen Ergebnisse <br> Max.: 150 |
 | includeMetatadata | Zur zukünftigen Verwendung, stets „false“
 | buildId | Dies ist die Build-ID, die für diese Empfehlungsanforderung verwendet werden soll. |
 | apiVersion | 1,0 |
@@ -2678,7 +2685,7 @@ Hierdurch werden Empfehlungen des aktiven Builds vom Typ "FBT" basierend auf ein
 |:--------			|:--------								|
 | modelId | Dies ist der eindeutige Bezeichner des Modells. |
 | itemId | Element, für das die Empfehlung gilt. <br>Max. Länge: 1024 |
-| numberOfResults | Dies ist die Anzahl der erforderlichen Ergebnisse. |
+| numberOfResults | Anzahl der erforderlichen Ergebnisse <br>Max.: 150 |
 | minimalScore | Die Mindestbewertung, die ein häufiger Satz haben muss, um in die zurückgegebenen Ergebnisse eingeschlossen zu werden. |
 | includeMetatadata | Zur zukünftigen Verwendung, stets „false“ |
 | apiVersion | 1,0 |
@@ -2769,7 +2776,7 @@ Hierdurch werden Empfehlungen eines bestimmten Builds vom Typ "FBT" abgerufen.
 |:--------			|:--------								|
 | modelId | Dies ist der eindeutige Bezeichner des Modells. |
 | itemId | Element, für das die Empfehlung gilt. <br>Max. Länge: 1024 |
-| numberOfResults | Dies ist die Anzahl der erforderlichen Ergebnisse. |
+| numberOfResults | Anzahl der erforderlichen Ergebnisse <br>Max.: 150 |
 | minimalScore | Die Mindestbewertung, die ein häufiger Satz haben muss, um in die zurückgegebenen Ergebnisse eingeschlossen zu werden. |
 | includeMetatadata | Zur zukünftigen Verwendung, stets „false“ |
 | buildId | Dies ist die Build-ID, die für diese Empfehlungsanforderung verwendet werden soll. |
@@ -2843,8 +2850,8 @@ Hinweise:
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
 | modelId | Dies ist der eindeutige Bezeichner des Modells. |
-| bei der ersten | Dies ist der eindeutige Bezeichner des Benutzers. |
-| itemIds | Dies ist eine kommagetrennte Liste der Elemente, für die Empfehlungen erstellt werden sollen. Max. Länge: 1024 |
+| userId | Dies ist der eindeutige Bezeichner des Benutzers. |
+| itemsIds | Dies ist eine kommagetrennte Liste der Elemente, für die Empfehlungen erstellt werden sollen. Max. Länge: 1024 |
 | numberOfResults | Dies ist die Anzahl der erforderlichen Ergebnisse. |
 | includeMetatadata | Zur zukünftigen Verwendung, stets „false“ |
 | apiVersion | 1,0 |
@@ -3013,8 +3020,8 @@ Hierdurch werden alle Benachrichtigungen für alle Modelle oder für ein einzeln
 |:--------			|:--------								|
 | modelId | Dieser Parameter ist optional. Wenn er nicht angegeben wird, erhalten Sie alle Benachrichtigungen für alle Modelle. <br>Gültiger Wert: Eindeutiger Bezeichner des Modells.|
 | apiVersion | 1,0 |
-||| 
-| Request Body | KEINE |
+|
+| Anforderungstext | KEINE |
 
 **Antwort:**
 
@@ -3065,8 +3072,8 @@ Hierdurch werden alle gelesenen Benachrichtigungen für ein Modell gelöscht.
 |:--------			|:--------								|
 | modelId | Dies ist der eindeutige Bezeichner des Modells. |
 | apiVersion | 1,0 |
-||| 
-| Request Body | KEINER |
+|
+| Anforderungstext | KEINE |
 
 **Antwort**:
 
@@ -3083,8 +3090,8 @@ Hierdurch werden alle Benachrichtigungen für alle Modelle gelöscht.
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
 | apiVersion | 1,0 |
-||| 
-| Request Body | KEINER |
+|
+| Anforderungstext | KEINE |
 
 **Antwort**:
 
@@ -3100,4 +3107,4 @@ Dieses Dokument gibt Ihnen keinerlei geistige Eigentums- oder anderweitige Recht
 © 2015 Microsoft. Alle Rechte vorbehalten.
  
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

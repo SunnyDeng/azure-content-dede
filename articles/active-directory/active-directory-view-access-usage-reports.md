@@ -34,7 +34,7 @@ Im Azure-Verwaltungsportal werden Berichte auf folgende Weise kategorisiert:
 > [AZURE.NOTE]
 >
 - Einige erweiterte Anomalie- und Ressourcennutzungsberichte sind nur verfügbar, wenn Sie [Azure Active Directory Premium](active-directory-get-started-premium.md) aktivieren. Erweiterte Berichte unterstützen Sie bei der Optimierung der Zugriffssicherheit, Reaktion auf potenzielle Bedrohungen und dem Zugriff auf Analysen zur Geräte- und Anwendungsnutzung.
-- Die Azure Active Directory-Editionen Premium und Basic stehen für Kunden in China zur Verfügung, die mit der weltweit verfügbaren Instanz von Azure Active Directory arbeiten. Allerdings werden die Azure Active Directory-Editionen Premium und Basic derzeit durch den in China von 21Vianet betriebenen Microsoft Azure-Dienst nicht unterstützt. Wenn Sie weitere Informationen benötigen, kontaktieren Sie uns im [Azure Active Directory-Forum](http://feedback.azure.com/forums/169401-azure-active-directory).
+- Die Azure Active Directory-Editionen Premium und Basic stehen für Kunden in China zur Verfügung, die mit der weltweit verfügbaren Instanz von Azure Active Directory arbeiten. Allerdings werden die Azure Active Directory-Editionen Premium und Basic derzeit durch den in China von 21Vianet betriebenen Microsoft Azure-Dienst nicht unterstützt. Wenn Sie weitere Informationen benötigen, kontaktieren Sie uns im [Azure Active Directory-Forum](https://feedback.azure.com/forums/169401-azure-active-directory/).
 
 ## Berichte
 
@@ -221,7 +221,7 @@ Nur bestimmte Arten von Anmeldeereignissen werden im Bericht "Benutzeraktivität
 | ----------------------								| ---------		|
 | Anmeldungen beim [Zugriffsbereich](http://myapps.microsoft.com/) | Ja |
 | Anmeldungen beim [Azure-Verwaltungsportal](https://manage.windowsazure.com/) | Ja |
-| Anmeldungen beim [Microsoft Azure-Portal](http://portal.azure.com/) | Ja |
+| Anmeldungen beim [Microsoft Azure-Portal](https://portal.azure.com/) | Ja |
 | Anmeldungen beim [Office 365-Portal](http://portal.office.com/) | Ja |
 | Anmeldungen bei einer systemeigenen Anwendung wie Outlook (siehe nachfolgende Ausnahme) | Ja |
 | Anmeldungen bei einer Verbund-/bereitgestellten App über den Zugriffsbereich wie z. B. Salesforce | Ja |
@@ -253,7 +253,7 @@ Wenn Sie vermuten, dass ein Benutzerkonto ggf. gefährdet ist, oder von einer ve
 1. Klicken Sie im Azure-Verwaltungsportal auf **Active Directory**, dann auf den Namen des Verzeichnisses Ihrer Organisation und danach auf **Berichte**.
 2. Klicken Sie auf der Seite "Berichte" auf den Bericht, den Sie anzeigen und/oder herunterladen möchten.
 
-    > [AZURE.NOTE]Wenn Sie die Berichtsfunktion von Azure Active Directory zum ersten Mal verwenden, wird eine Aktivierungsmeldung angezeigt. Wenn Sie zustimmen, klicken Sie auf das Häkchensymbol, um den Vorgang fortzusetzen.
+    > [AZURE.NOTE] Wenn Sie die Berichtsfunktion von Azure Active Directory zum ersten Mal verwenden, wird eine Aktivierungsmeldung angezeigt. Wenn Sie zustimmen, klicken Sie auf das Häkchensymbol, um den Vorgang fortzusetzen.
 
 3. Klicken Sie auf das Dropdownmenü neben "Intervall", und wählen Sie dann einen der folgenden Zeiträume aus, der zum Generieren des Berichts verwendet werden soll:
     - Letzte 24 Stunden
@@ -278,4 +278,4 @@ Weitere Informationen zu den Benachrichtigungen für Berichte in Azure AD finde
 - [Erste Schritte mit Azure Active Directory Premium](active-directory-get-started-premium.md)
 - [Hinzufügen Ihres Unternehmensbranding zur Anmelde- und Zugriffsbereichsseite](active-directory-add-company-branding.md)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

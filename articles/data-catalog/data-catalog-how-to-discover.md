@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
-   ms.date="11/10/2015"
+   ms.date="02/03/2013"
    ms.author="maroche"/>
 
 
@@ -42,14 +42,14 @@ Obwohl die standardmäßige Freitextsuche einfach und intuitiv ist, können Benu
 | Eigenschaftsbasierte Suche | Es werden nur Datenquellen zurückgegeben, bei denen der Suchbegriff mit der angegebenen Eigenschaft übereinstimmt. | Name:Finanzen |
 | Boolesche Operatoren | Die Suche wird mithilfe von booleschen Vorgängen erweitert oder eingegrenzt. | Finanzen NOT Unternehmen |
 | Gruppierung mit Klammern | Teile der Abfrage werden mithilfe von Klammern gruppiert, um eine logische Isolierung zu erzielen (insbesondere in Verbindung mit booleschen Operatoren). | Name:Finanzen AND (Tags:Q1 OR Tags:Q2) |
-| Vergleichsoperatoren | Für Eigenschaften mit numerischen Datentypen und Datumsdatentypen können andere Vergleiche als Gleichheit verwendet werden. | Erstellungszeit>"05/11/2014" |
+| Vergleichsoperatoren | Für Eigenschaften mit numerischen Datentypen und Datumsdatentypen können andere Vergleiche als Gleichheit verwendet werden. | modifiedTime > "11/05/2014" |
 
 Weitere Informationen zur Suche in **Azure Data Catalog** finden Sie unter [https://msdn.microsoft.com/library/azure/mt267594.aspx](https://msdn.microsoft.com/library/azure/mt267594.aspx).
 
 ## Treffermarkierung
 Beim Anzeigen von Suchergebnissen werden alle angezeigten Eigenschaften, die mit den angegebenen Suchbegriffen übereinstimmen (z. B. Name der Datenressource, Beschreibung und Tags), hervorgehoben, damit leichter zu erkennen ist, weshalb eine bestimmte Datenressource zurückgegeben wurde.
 
-> [AZURE.NOTE]Benutzer können die Treffermarkierung bei Bedarf mit der Option „Hervorheben“ im **Azure Data Catalog**-Portal deaktivieren.
+> [AZURE.NOTE] Benutzer können die Treffermarkierung bei Bedarf mit der Option „Hervorheben“ im **Azure Data Catalog**-Portal deaktivieren.
 
 Beim Anzeigen von Suchergebnissen ist es selbst bei aktivierter Treffermarkierung u. U. nicht immer offensichtlich, warum eine Datenressource in den Ergebnissen enthalten ist. Da standardmäßig alle Eigenschaften durchsucht werden, kann eine Datenressource aufgrund einer Übereinstimmung mit einer Eigenschaft auf Spaltenebene zurückgegeben werden. Und da mehrere Benutzer registrierten Datenressourcen eigene Anmerkungen (Tags, Beschreibungen usw.) hinzufügen können, werden möglicherweise nicht alle Metadaten in der Liste der Suchergebnisse angezeigt.
 
@@ -60,4 +60,4 @@ In der standardmäßigen Kachelansicht enthält jede in den Suchergebnissen ange
 ## Zusammenfassung
 Durch die Registrierung einer Datenquelle in **Azure Data Catalog** werden strukturelle und beschreibende Metadaten aus der Datenquelle in den Katalogdienst kopiert, sodass die Datenquelle leichter zu ermitteln und zu verstehen ist. Nachdem eine Datenquelle registriert wurde, kann sie mithilfe der Filter- und Suchfunktionen im **Azure Data Catalog**-Portal von Benutzern ermittelt werden.
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0204_2016-->

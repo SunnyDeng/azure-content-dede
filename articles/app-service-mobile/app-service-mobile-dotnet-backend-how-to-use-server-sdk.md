@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="mobile-multiple"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="01/09/2016"
+	ms.date="01/24/2016"
 	ms.author="glenga"/>
 
 # Arbeiten Sie mit der Back-End-Server-SDK für Azure Mobile Apps
@@ -25,7 +25,7 @@
 
 In diesem Thema wird das Verwenden des .NET-Back-End-Server-SDKs in Azure App Service Mobile Apps-Szenarien veranschaulicht. Das Azure-SDK für Mobile Apps erleichtert Ihnen die Arbeit mit mobilen Clients aus der ASP.NET-Anwendung.
 
->[AZURE.TIP]Das [.NET-Server-SDK für Azure Mobile Apps](https://github.com/Azure/azure-mobile-apps-net-server) ist als Open Source auf GitHub verfügbar. Das Repository enthält die gesamte Testsammlung der Server-SDK-Einheit sowie einige Projektbeispiele.
+>[AZURE.TIP] Das [.NET-Server-SDK für Azure Mobile Apps](https://github.com/Azure/azure-mobile-apps-net-server) ist als Open Source auf GitHub verfügbar. Das Repository enthält die gesamte Testsammlung der Server-SDK-Einheit sowie einige Projektbeispiele.
 
 ## Referenzdokumentation
 
@@ -184,7 +184,7 @@ Ein Beispiel für einen Tabellencontroller, der für den Datenzugriff in einer A
 
 ## Gewusst wie: Definieren eines benutzerdefinierten API-Controllers
 
-Der benutzerdefinierte API-Controller bietet Grundfunktionen für Ihr Mobile App-Back-End, indem ein Endpunkt verfügbar gemacht wird. Mit dem `MobileAppControllerAttribute`-Attribut können Sie einen mobilspezifischen API-Controller registrieren. Mit diesem Attribut wird die Route registriert und zudem das JSON-Serialisierungsprogramm für Mobile Apps eingerichtet.
+Der benutzerdefinierte API-Controller bietet Grundfunktionen für Ihr Mobile App-Back-End, indem ein Endpunkt verfügbar gemacht wird. Mit dem [MobileAppController]-Attribut können Sie einen mobilspezifischen API-Controller registrieren. Mit diesem Attribut wird die Route registriert und zudem das JSON-Serialisierungsprogramm für Mobile Apps eingerichtet.
 
 1. Klicken Sie in Visual Studio mit der rechten Maustaste auf den Ordner "Controller", und klicken Sie dann auf **Hinzufügen** > **Controller**. Wählen Sie **Web-API 2-Controller &ndash;Empty**, und klicken Sie auf **Hinzufügen**.
 
@@ -194,7 +194,7 @@ Der benutzerdefinierte API-Controller bietet Grundfunktionen für Ihr Mobile App
 
 		using Microsoft.Azure.Mobile.Server.Config;
 
-4. Wenden Sie das **MobileAppControllerAttribute** wie im folgenden Beispiel auf die API-Controller-Klassendefinition an:
+4. Wenden Sie das **[MobileAppController]** wie im folgenden Beispiel auf die API-Controller-Klassendefinition an:
 
 		[MobileAppController] 
 		public class CustomController : ApiController
@@ -286,13 +286,13 @@ Sie können den Clientcode auch vereinfachen, um die `loginAsync()`-Methode (die
 		
 Ersetzen Sie die Zeichenfolge „CustomAuth“ oben durch den Namen des Controller, der Ihre Anmeldeaktion hostet.
 
->[AZURE.TIP]Mit dem loginAsync()-Ansatz wird sichergestellt, dass das Authentifizierungstoken jedem nachfolgenden Aufruf des Diensts angefügt wird.
+>[AZURE.TIP] Mit dem loginAsync()-Ansatz wird sichergestellt, dass das Authentifizierungstoken jedem nachfolgenden Aufruf des Diensts angefügt wird.
 
 ###<a name="user-info"></a>Vorgehensweise: Abrufen von Informationen zu authentifizierten Benutzern
 
 Wenn ein Benutzer von App Service authentifiziert wird, können Sie in Ihrem .NET-Back-End-Code auf die zugewiesene Benutzer-ID sowie auf andere Informationen zugreifen. Dies ist hilfreich, wenn für einen bestimmten Benutzer im Back-End Autorisierungsentscheidungen zu treffen sind – etwa, ob ein bestimmter Benutzer auf eine Tabellenzeile oder andere Ressource Zugriff haben soll. Der folgende Code zeigt, wie Sie die Benutzer-ID für einen angemeldeten Benutzer abrufen:
 
-    // Get the current user SID and create a tag for the current user.
+    // Get the SID of the current user.
     var claimsPrincipal = this.User as ClaimsPrincipal;
     string sid = claimsPrincipal.FindFirst(ClaimTypes.NameIdentifier).Value;
 
@@ -447,4 +447,4 @@ Ihr lokal ausgeführter Server kann nun Token überprüfen, die der Client vom c
 [Microsoft.Azure.Mobile.Server.Login]: http://www.nuget.org/packages/Microsoft.Azure.Mobile.Server.Login/
 [Microsoft.Azure.Mobile.Server.Notifications]: http://www.nuget.org/packages/Microsoft.Azure.Mobile.Server.Notifications/
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

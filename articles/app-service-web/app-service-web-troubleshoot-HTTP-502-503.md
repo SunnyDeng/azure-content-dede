@@ -14,14 +14,14 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/23/2015"
+	ms.date="01/13/2016"
 	ms.author="cephalin"/>
 
 # Problembehandlung: Die Web-App ist aufgrund eines HTTP-Fehlers 502/503 nicht verfügbar
 
 In diesem Artikel wird beschrieben, wie Sie die HTTP-Fehler 502/503 in Ihrer in [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714) gehosteten Web-App beheben.
 
-Wenn Sie beim Lesen dieses Artikels feststellen, dass Sie weitere Hilfe benötigen, können Sie Ihre Frage im [MSDN Azure-Forum oder im Stack Overflow-Forum](http://azure.microsoft.com/support/forums/) stellen, um dort Hilfe von Azure-Experten zu erhalten. Alternativ dazu haben Sie die Möglichkeit, einen Azure-Supportfall zu erstellen. Rufen Sie die [Azure-Support-Website](http://azure.microsoft.com/support/options/) auf, und klicken Sie auf **Support erhalten**.
+Wenn Sie beim Lesen dieses Artikels feststellen, dass Sie weitere Hilfe benötigen, können Sie Ihre Frage im [MSDN Azure-Forum oder im Stack Overflow-Forum](https://azure.microsoft.com/support/forums/) stellen, um dort Hilfe von Azure-Experten zu erhalten. Alternativ dazu haben Sie die Möglichkeit, einen Azure-Supportfall zu erstellen. Rufen Sie die [Azure-Support-Website](https://azure.microsoft.com/support/options/) auf, und klicken Sie auf **Support erhalten**.
 
 ## Symptom
 
@@ -76,7 +76,7 @@ Weitere Informationen finden Sie unter:
 
 ####	Verwenden des Azure App Service-Support-Portals
 
-Web-Apps bietet Ihnen die Möglichkeit, Probleme im Zusammenhang mit Ihrer Web-App anhand von HTTP-Protokollen, Ereignisprotokollen, Prozesssicherungen usw. zu behandeln. Auf all diese Informationen können Sie in unserem Support-Portal unter **http://&lt;your App-Name>.scm.azurewebsites.net/Support** zugreifen.
+Web-Apps bietet Ihnen die Möglichkeit, Probleme im Zusammenhang mit Ihrer Web-App anhand von HTTP-Protokollen, Ereignisprotokollen, Prozesssicherungen usw. zu behandeln. Auf diese Informationen können Sie in unserem Supportportal unter **http://&lt;yourApp-Name>.scm.azurewebsites.net/Support** zugreifen.
 
 Im Azure App Service-Support-Portal stehen Ihnen drei separate Registerkarten für die drei Schritte eines typischen Problembehandlungsszenarios zur Verfügung:
 
@@ -94,9 +94,9 @@ Weitere Informationen zum Azure App Service-Support-Portal finden Sie unter [Neu
 
 ####	Verwenden der Kudu-Debugkonsole
 
-Web-Apps enthält eine Debugkonsole, die Sie zum Debuggen, Untersuchen und Hochladen von Dateien verwenden können, sowie JSON-Endpunkte zum Abrufen von Informationen über Ihre Umgebung. Dieses Feature wird als die _Kudu-Konsole_ oder das _SCM-Dashboard_ für Ihre Web-App bezeichnet.
+Web-Apps enthält eine Debugkonsole, die Sie zum Debuggen, Untersuchen und Hochladen von Dateien verwenden können, sowie JSON-Endpunkte zum Abrufen von Informationen über Ihre Umgebung. Dieses Feature wird als _Kudu-Konsole_ oder _SCM-Dashboard_ für Ihre Web-App bezeichnet.
 
-Sie können über den Link **https://&lt;Your App-Name>.scm.azurewebsites.net/** auf das Dashboard zugreifen.
+Sie können über den Link **https://&lt;YourApp-Name>.scm.azurewebsites.net/** auf das Dashboard zugreifen.
 
 Die Kudu-Konsole bietet z. B. folgende Funktionen:
 
@@ -132,10 +132,10 @@ Weitere Informationen finden Sie unter [Automatische Reparatur von Azure-Website
 
 ####	Neustarten der Web-App
 
-Dies ist oft die einfachste Methode zum Beheben einmaliger Probleme. Im [Azure-Portal](https://portal.azure.com) stehen auf dem Blatt Ihrer Web-App Optionen zum Beenden oder Neustarten der App zur Verfügung.
+Dies ist oft die einfachste Methode zum Beheben einmaliger Probleme. Im [Azure-Portal](https://portal.azure.com/) stehen auf dem Blatt Ihrer Web-App Optionen zum Beenden oder Neustarten der App zur Verfügung.
 
  ![](./media/app-service-web-troubleshoot-HTTP-502-503/2-restart.png)
 
 Sie können Ihre Web-App auch mit Azure PowerShell verwalten. Weitere Informationen finden Sie unter [Verwenden von Azure PowerShell mit dem Azure-Ressourcen-Manager](powershell-azure-resource-manager.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

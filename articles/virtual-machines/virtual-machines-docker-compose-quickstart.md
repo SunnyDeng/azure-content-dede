@@ -24,7 +24,7 @@ In diesem Artikel werden die ersten Schritte mit Docker und [Compose](http://git
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] [Ressourcen-Manager-Modell](https://azure.microsoft.com/documentation/templates/docker-wordpress-mysql/).
 
 
-Wenn Sie mit Docker und Containern noch nicht vertraut sind, lesen Sie die Informationen unter [Docker High Level Whiteboard](http://azure.microsoft.com/documentation/videos/docker-high-level-whiteboard/) (Whiteboard auf hoher Ebene zu Docker; in englischer Sprache).
+Wenn Sie mit Docker und Containern noch nicht vertraut sind, lesen Sie die Informationen unter [Docker High Level Whiteboard](https://azure.microsoft.com/documentation/videos/docker-high-level-whiteboard/) (Whiteboard auf hoher Ebene zu Docker; in englischer Sprache).
 
 ## Schritt 1: Einrichten eines virtuellen Linux-Computers als Docker-Host
 
@@ -34,7 +34,7 @@ Im Azure Marketplace stehen Ihnen verschieden Azure-Verfahren und Images zur Ver
 
 Wenn der virtuelle Linux-Computer mit Docker ausgeführt wird, stellen Sie von Ihrem Clientcomputer aus über SSH eine Verbindung mit ihm her. Installieren Sie ggf. [Compose](https://github.com/docker/compose/blob/882dc673ce84b0b29cd59b6815cb93f74a6c4134/docs/install.md) mithilfe der folgenden beiden Befehle.
 
->[AZURE.TIP]Wenn Sie den virtuellen Computer mithilfe der Docker-VM-Erweiterung erstellt haben, wurde Compose bereits für Sie installiert. Überspringen Sie diese Befehle, und fahren Sie mit Schritt 3 fort. Sie müssen Compose nur installieren, wenn Sie Docker selbst auf dem virtuellen Computer installiert haben.
+>[AZURE.TIP] Wenn Sie den virtuellen Computer mithilfe der Docker-VM-Erweiterung erstellt haben, wurde Compose bereits für Sie installiert. Überspringen Sie diese Befehle, und fahren Sie mit Schritt 3 fort. Sie müssen Compose nur installieren, wenn Sie Docker selbst auf dem virtuellen Computer installiert haben.
 
 ```
 $ curl -L https://github.com/docker/compose/releases/download/1.1.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
@@ -49,7 +49,7 @@ Führen Sie zum Testen der Compose-Installation den folgenden Befehl aus:
 $ docker-compose --version
 ```
 
-Eine Ausgabe ähnlich der folgenden wird angezeigt `docker-compose 1.4.1`.
+Daraufhin wird eine Ausgabe angezeigt, die `docker-compose 1.4.1` ähnelt.
 
 
 ## Schritt 3: Erstellen der Konfigurationsdatei „docker-compose.yml“
@@ -89,7 +89,7 @@ Creating wordpress_db_1...
 Creating wordpress_wordpress_1...
 ```
 
->[AZURE.NOTE]Verwenden Sie zu Beginn die Option **-d**, damit die Container kontinuierlich im Hintergrund ausgeführt werden.
+>[AZURE.NOTE] Verwenden Sie zu Beginn die Option **-d**, damit die Container kontinuierlich im Hintergrund ausgeführt werden.
 
 Um zu prüfen, ob die Container ausgeführt werden, geben Sie `docker-compose ps` ein. Die Ausgabe sollte folgendermaßen aussehen:
 
@@ -117,13 +117,13 @@ Daraufhin sollte der Startbildschirm von WordPress angezeigt werden, auf dem Sie
 
 ## Nächste Schritte
 
-* Weitere Beispiele zum Erstellen und Bereitstellen von Anwendungen mit mehreren Containern finden Sie in der [Compose-Befehlsreferenz](http://docs.docker.com/compose/cli/) und im [Compose-Benutzerhandbuch](http://docs.docker.com/compose/).
-* Verwenden Sie eine von Ihnen oder der [Community](http://azure.microsoft.com/documentation/templates/) erstellte Vorlage des Azure-Ressourcen-Managers, um eine Azure-VM mit Docker und eine mit Compose eingerichtete Anwendung bereitzustellen. Die Vorlage [WordPress-Blog mit Docker bereitstellen](https://azure.microsoft.com/documentation/templates/docker-wordpress-mysql/) verwendet Docker und Compose, um WordPress schnell mit einem MySQL-Back-End auf einem virtuellen Ubuntu-Computer bereitzustellen.
-* Sie können Docker Compose auch in ein [Docker Swarm-Cluster](virtual-machines-docker-swarm.md) integrieren. Szenarien finden Sie im Artikel über die
+* Weitere Beispiele zum Erstellen und Bereitstellen von Anwendungen mit mehreren Containern finden Sie in der [Compose-Befehlsreferenz](http://docs.docker.com/compose/reference/) und im [Compose-Benutzerhandbuch](http://docs.docker.com/compose/).
+* Verwenden Sie eine von Ihnen oder der [Community](https://azure.microsoft.com/documentation/templates/) erstellte Vorlage des Azure-Ressourcen-Managers, um eine Azure-VM mit Docker und eine mit Compose eingerichtete Anwendung bereitzustellen. Die Vorlage [WordPress-Blog mit Docker bereitstellen](https://azure.microsoft.com/documentation/templates/docker-wordpress-mysql/) verwendet Docker und Compose, um WordPress schnell mit einem MySQL-Back-End auf einem virtuellen Ubuntu-Computer bereitzustellen.
+* Sie können Docker Compose auch in ein [Docker Swarm-Cluster](virtual-machines-docker-swarm.md) integrieren. Szenarien finden Sie im Artikel über die 
 [Integration von Docker Compose/Swarm](https://github.com/docker/compose/blob/master/SWARM.md).
 
 <!--Image references-->
 
 [wordpress_start]: ./media/virtual-machines-docker-compose-quickstart/WordPress.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

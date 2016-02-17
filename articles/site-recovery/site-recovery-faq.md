@@ -88,7 +88,7 @@ Virtuelle Computer, die Sie in Azure replizieren möchten, sollten den [Azure-An
 
 ### Kann ich virtuelle Hyper-V-Computer der 2. Generation in Azure replizieren?
 
-Ja. Während des Failovers konvertiert Site Recovery Computer der 2. Generation in die 1. Generation. Beim Failback werden die Computer wieder in die 2. Generation zurückkonvertiert. [Weitere Informationen](http://azure.microsoft.com/blog/2015/04/28/disaster-recovery-to-azure-enhanced-and-were-listening/)
+Ja. Während des Failovers konvertiert Site Recovery Computer der 2. Generation in die 1. Generation. Beim Failback werden die Computer wieder in die 2. Generation zurückkonvertiert. [Weitere Informationen](https://azure.microsoft.com/blog/2015/04/28/disaster-recovery-to-azure-enhanced-and-were-listening/)
 
 ### Wenn ich in Azure repliziere, wie bezahle ich für Azure-VMs? 
 
@@ -129,28 +129,28 @@ Beim Replizieren von virtuellen Computern und physischen Servern zwischen lokale
 
 Sie benötigen ein Speicherkonto mit [georedundantem Standardspeicher](../storage/storage-redundancy.md/#geo-redundant-storage). Ein [Premium-Speicherkonto](../storage/storage-premium-storage-preview-portal/) wird nur unterstützt, wenn Sie virtuelle VMware-Computer oder physische Windows-/Linux-Server in Azure replizieren.
 
-Mit der Unterstützung für lokal redundante Standardspeicher sind wir im Rückstand. Senden Sie Feedback zu dieser Funktion über das [Feedbackforum](http://feedback.azure.com/forums/256299-site-recovery/suggestions/7204469-local-redundant-type-azure-storage-support).
+Mit der Unterstützung für lokal redundante Standardspeicher sind wir im Rückstand. Senden Sie Feedback zu dieser Funktion über das [Feedbackforum](https://feedback.azure.com/forums/256299-site-recovery/suggestions/7204469-local-redundant-type-azure-storage-support/).
 
 ### Wie oft kann ich Daten replizieren?
 - **Hyper-V:** Hyper-V-VMs können alle 30 Sekunden, 5 Minuten oder 15 Minuten repliziert werden. Wenn Sie SAN-Replikation eingerichtet haben, erfolgt die Replikation synchron.
 - **VMware- und physische Server:** Hier ist eine Replikationshäufigkeit irrelevant. Die Replikation erfolgt fortlaufend. 
 
 ### Kann die Replikation von vorhandenen Wiederherstellungsstandorten auf einen weiteren tertiären Standort erweitert werden?
-Eine erweiterte oder verkettete Replikation wird nicht unterstützt. Senden Sie Feedback zu dieser Funktion über das [Feedbackforum](http://feedback.azure.com/forums/256299-site-recovery/suggestions/6097959-support-for-exisiting-extended-replication).
+Eine erweiterte oder verkettete Replikation wird nicht unterstützt. Senden Sie Feedback zu dieser Funktion über das [Feedbackforum](https://feedback.azure.com/forums/256299-site-recovery/suggestions/6097959-support-for-exisiting-extended-replication/).
 
 
 ### Kann ich eine Offlinereplikation durchführen, wenn ich zum ersten Mal in Azure repliziere? 
 
-Dies wird nicht unterstützt. Senden Sie uns Feedback zu dieser Funktion über das [Feedbackforum](http://feedback.azure.com/forums/256299-site-recovery/suggestions/6227386-support-for-offline-replication-data-transfer-from).
+Dies wird nicht unterstützt. Senden Sie uns Feedback zu dieser Funktion über das [Feedbackforum](https://feedback.azure.com/forums/256299-site-recovery/suggestions/6227386-support-for-offline-replication-data-transfer-from/).
 
 
 ### Können bestimmte Datenträger von der Replikation ausgeschlossen werden?
 
-Dies wird nicht unterstützt. Senden Sie uns Feedback zu dieser Funktion über das [Feedbackforum](http://feedback.azure.com/forums/256299-site-recovery/suggestions/6418801-exclude-disks-from-replication).
+Dies wird nicht unterstützt. Senden Sie uns Feedback zu dieser Funktion über das [Feedbackforum](https://feedback.azure.com/forums/256299-site-recovery/suggestions/6418801-exclude-disks-from-replication/).
 
 ### Können virtuelle Computer mit dynamischen Datenträgern repliziert werden?
 
-Dynamische Datenträger werden unterstützt, wenn virtuelle Hyper-V-Computer repliziert werden. Sie werden nicht unterstützt, wenn virtuelle VMware-Computer oder physische Server repliziert. Senden Sie uns Feedback zu dieser Funktion über das [Feedbackforum](http://feedback.azure.com/forums/256299-site-recovery).
+Dynamische Datenträger werden unterstützt, wenn virtuelle Hyper-V-Computer repliziert werden. Sie werden nicht unterstützt, wenn virtuelle VMware-Computer oder physische Server repliziert. Senden Sie uns Feedback zu dieser Funktion über das [Feedbackforum](https://feedback.azure.com/forums/256299-site-recovery/).
 
 ### Wie greife ich nach einem Failover auf Azure auf die virtuellen Azure-Computer zu? 
 
@@ -223,4 +223,4 @@ Ja, Sie können virtuelle Hyper-V-Computer in Azure oder zwischen Dienstanbieter
 
  
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0128_2016-->

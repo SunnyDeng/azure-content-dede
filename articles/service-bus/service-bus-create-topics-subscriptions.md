@@ -47,7 +47,7 @@ Bei dieser Konfiguration wird jede Nachricht von den POS-Terminals sowohl dem Ab
 
 ## Anwendungscode
 
-Unter [Erstellen von Anwendungen, die Service Bus-Warteschlangen verwenden](service-bus-create-queues.md) wird beschrieben, wie Sie sich für ein Service Bus-Konto anmelden und einen Dienstnamespace erstellen. Zur Verwendung eines Service Bus-Namespaces muss eine Anwendung auf die Service Bus-Assembly verweisen, d. h. auf "Microsoft.ServiceBus.dll". Die einfachste Möglichkeit zum Verweisen auf Service Bus-Abhängigkeiten besteht darin, das [NuGet-Paket](https://www.nuget.org/packages/WindowsAzure.ServiceBus/) "Service Bus" zu installieren. Die Assembly ist auch Bestandteil des Azure SDK und kann auf der [Azure SDK-Downloadseite](http://azure.microsoft.com/downloads/) heruntergeladen werden.
+Unter [Erstellen von Anwendungen, die Service Bus-Warteschlangen verwenden](service-bus-create-queues.md) wird beschrieben, wie Sie sich für ein Service Bus-Konto anmelden und einen Dienstnamespace erstellen. Zur Verwendung eines Service Bus-Namespaces muss eine Anwendung auf die Service Bus-Assembly verweisen, d. h. auf "Microsoft.ServiceBus.dll". Die einfachste Möglichkeit zum Verweisen auf Service Bus-Abhängigkeiten besteht darin, das [NuGet-Paket](https://www.nuget.org/packages/WindowsAzure.ServiceBus/) "Service Bus" zu installieren. Die Assembly ist auch Bestandteil des Azure SDK und kann auf der [Azure SDK-Downloadseite](https://azure.microsoft.com/downloads/) heruntergeladen werden.
 
 ### Erstellen des Themas und der Abonnements
 
@@ -150,4 +150,4 @@ Alle Gründe, die für die Verwendung von Warteschlangen sprechen und die unter 
 
 Informationen zur Verwendung von Warteschlangen im POS-Einzelhandelsszenario finden Sie unter [Erstellen von Anwendungen, die Service Bus-Warteschlangen verwenden](service-bus-create-queues.md).
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

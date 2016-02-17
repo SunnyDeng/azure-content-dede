@@ -13,13 +13,13 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="12/05/2015"   
+	ms.date="01/28/2016"   
 	ms.author="juliako"/>
 
 
 # Ausführen von Aufgaben zur statischen Paketerstellung mithilfe von Azure Media Packager
 
->[AZURE.NOTE]Das Ende der Nutzung von Microsoft Azure Media Packager und Microsoft Azure Media Encryptor ist am 1. März 2016 erreicht. Ab diesem Zeitpunkt sind diese Komponenten nicht mehr verfügbar. Die Funktionen zur Formatkonvertierung und Verschlüsselung stehen dann über die dynamische Paketerstellung und die dynamische Verschlüsselung zur Verfügung.
+>[AZURE.NOTE]Das Datum für das Ende der Nutzung von Windows Azure Media Packager und Windows Azure Media Encryptor wurde auf den 1. März 2017 verlegt. Vor diesem Datum werden die Funktionen dieser Prozessoren in Media Encoder Standard (MES) hinzugefügt. Kunden erhalten eine Anleitung zum Migrieren ihrer Workflows, sodass Aufträge an MES gesendet werden. Funktionen zur Formatkonvertierung und Verschlüsselung stehen außerdem über die dynamische Paketerstellung und die dynamische Verschlüsselung zur Verfügung.
 
 ## Übersicht
 
@@ -968,7 +968,7 @@ Im Beispiel in diesem Abschnitt wird eine Zwischendatei (in diesem Fall eine MP4
 
 Sie können wahlweise die [dynamische Verschlüsselung](media-services-protect-with-drm.md) (empfohlene Option) oder die statische Verschlüsselung (wie in diesem Abschnitt beschrieben) verwenden, wenn Sie Ihre Inhalte mit PlayReady schützen möchten.
 
->[AZURE.NOTE]Zum Schützen Ihrer Inhalte mit PlayReady müssen Sie zunächst Ihre Inhalte in ein Smooth Streaming-Format konvertieren bzw. codieren.
+>[AZURE.NOTE] Zum Schützen Ihrer Inhalte mit PlayReady müssen Sie zunächst Ihre Inhalte in ein Smooth Streaming-Format konvertieren bzw. codieren.
 
 Im Beispiel in diesem Abschnitt wird eine Zwischendatei (in diesem Fall eine MP4-Datei) in MP4-Dateien mit mehreren Bitraten codiert. Anschließend werden die MP4-Dateien als Smooth Streaming gepackt, und Smooth Streaming wird mit PlayReady verschlüsselt. Damit HLS (HTTP Live Streaming) mit PlayReady verschlüsselt werden kann, muss das PlayReady Smooth Streaming-Asset in HLS gepackt werden. In diesem Thema wird die Ausführung aller Schritte erläutert.
 
@@ -1447,4 +1447,4 @@ Media Services bietet jetzt einen Dienst für die Bereitstellung von Microsoft P
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0204_2016-->

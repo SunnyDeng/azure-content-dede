@@ -1,4 +1,4 @@
-<properties 
+<properties
 	pageTitle="Erweitern von lokalen AlwaysOn-Verfügbarkeitsgruppen auf Azure | Microsoft Azure"
 	description="In diesem Lernprogramm werden mit dem klassischen Bereitstellungsmodell erstellte Ressourcen verwendet. Es beschreibt die Verwendung des Assistenten zum Hinzufügen von Replikaten in SQL Server Management Studio (SSMS) zum Hinzufügen eines Replikats einer AlwaysOn-Verfügbarkeitsgruppe in Azure."
 	services="virtual-machines"
@@ -8,13 +8,13 @@
 	editor="monicar"
 	tags="azure-service-management"/>
 
-<tags 
+<tags
 	ms.service="virtual-machines"
 	ms.devlang="na"
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
-	ms.date="11/13/2015"
+	ms.date="02/03/2016"
 	ms.author="jroth" />
 
 # Erweitern von lokalen AlwaysOn-Verfügbarkeitsgruppen auf Azure
@@ -25,7 +25,7 @@ Sie können lokale Verfügbarkeitsgruppen nach Microsoft Azure erweitern, indem 
 
 Dieses Lernprogramm setzt voraus, dass Sie über die folgenden Punkte verfügen:
 
-- Ein aktives Azure-Abonnement. Sie können sich für eine [kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial) registrieren.
+- Ein aktives Azure-Abonnement. Sie können sich für eine [kostenlose Testversion](https://azure.microsoft.com/pricing/free-trial/) registrieren.
 
 - Eine vorhandene, lokale AlwaysOn-Verfügbarkeitsgruppe. Weitere Informationen zu Verfügbarkeitsgruppen finden Sie unter [AlwaysOn-Verfügbarkeitsgruppen](https://msdn.microsoft.com/library/hh510230.aspx).
 
@@ -65,7 +65,7 @@ In diesem Abschnitt erfahren Sie, wie Sie den **Assistenten zum Hinzufügen von 
 |**VM-Benutzername**|Geben Sie einen Benutzernamen für das Administratorkonto auf dem virtuellen Computer ein|
 |**VM-Administratorkennwort**|Geben Sie ein Kennwort für das neue Konto an|
 |**Kennwort bestätigen**|Bestätigen Sie das Kennwort für das neue Konto|
-|**Virtuelles Netzwerk**|Geben Sie das virtuelle Azure-Netzwerk an, das die neue VM verwenden soll. Weitere Informationen über virtuelle Netzwerke erhalten Sie unter [Übersicht über virtuelle Netzwerke](..\virtual-network\virtual-networks-overview.md).|
+|**Virtuelles Netzwerk**|Geben Sie das virtuelle Azure-Netzwerk an, das die neue VM verwenden soll. Weitere Informationen über virtuelle Netzwerke erhalten Sie unter [Übersicht über virtuelle Netzwerke](../virtual-network/virtual-networks-overview.md).|
 |**Subnetz des virtuellen Netzwerks**|Geben Sie das Subnetz des virtuellen Netzwerks an, das die neue VM verwenden soll|
 |**Domäne**|Bestätigen Sie, dass der voreingestellte Wert für die Domäne zutreffend ist|
 |**Domänenbenutzername**|Geben Sie ein Konto an, das sich in der lokalen Administratorgruppe auf dem lokalen Clusterknoten befindet|
@@ -91,7 +91,7 @@ In diesem Abschnitt erfahren Sie, wie Sie den **Assistenten zum Hinzufügen von 
 
 1. Der Bereitstellungsvorgang beginnt. Wenn der Assistent erfolgreich abgeschlossen wird, klicken Sie auf **Schließen**, um den Assistenten zu verlassen.
 
->[AZURE.NOTE]Der Assistent zum Hinzufügen von Azure-Replikaten erstellt eine Protokolldatei unter <Users>"<Benutzername>\\AppData\\Local\\SQL Server\\AddReplicaWizard". Diese Protokolldatei kann zum Beheben von Fehlern in fehlerhaften Azure-Replikatbereitstellungen verwendet werden. Wenn der Assistent keinerlei Aktionen ausführt, wird ein Rollback aller zuvor vorgenommenen Vorgänge ausgeführt, einschließlich der Löschung der bereitgestellten VM.
+>[AZURE.NOTE] Der Assistent zum Hinzufügen von Azure-Replikaten erstellt eine Protokolldatei unter „Benutzer\\Benutzername\\AppData\\Local\\SQL Server\\AddReplicaWizard“. Diese Protokolldatei kann zum Beheben von Fehlern in fehlerhaften Azure-Replikatbereitstellungen verwendet werden. Wenn der Assistent keinerlei Aktionen ausführt, wird ein Rollback aller zuvor vorgenommenen Vorgänge ausgeführt, einschließlich der Löschung der bereitgestellten VM.
 
 ## Erstellen eines Listeners für eine Verfügbarkeitsgruppe
 
@@ -103,4 +103,4 @@ Nach dem Erstellen der Verfügbarkeitsgruppe sollten Sie einen Listener für Cli
 
 Weitere Informationen zum Ausführen von SQL Server auf virtuellen Azure-Computern finden Sie unter [SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-infrastructure-services.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0204_2016-->

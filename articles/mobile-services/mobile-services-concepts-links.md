@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-multiple"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/20/2015"
+	ms.date="01/09/2016"
 	ms.author="glenga"/>
 
 # Mobile Services-Konzepte
@@ -86,4 +86,4 @@ Die folgenden Themen enthalten Beispiele zum Ausführen von Aufgaben mit Servers
 - [Fehlerbehandlung](https://msdn.microsoft.com/library/azure/jj631632.aspx)
 - [Tastenkombinationen](https://msdn.microsoft.com/library/azure/jj552469.aspx)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

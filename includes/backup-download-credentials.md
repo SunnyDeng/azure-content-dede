@@ -27,6 +27,6 @@ Die Datei mit Tresoranmeldeinformationen wird über einen sicheren Kanal aus dem
 - Stellen Sie sicher, dass die Tresoranmeldeinformationen an einem Ort gespeichert werden, der von Ihrem Computer aus zugänglich ist. Wenn sie in einer Dateifreigabe/einem SMB gespeichert sind, überprüfen Sie die Zugriffsberechtigungen.
 - Die Datei mit den Tresoranmeldeinformationen wird nur während des Registrierungsworkflows verwendet.
 - Die Datei mit den Tresoranmeldeinformationen läuft nach 48 Stunden ab und kann über das Portal heruntergeladen werden.
-- Bei Fragen zum Workflow finden Sie Informationen in den [häufig gestellten Fragen](backup-azure-backup-faq.md) zu Azure Backup.
+- In den [häufig gestellten Fragen](](../articles/backup/backup-azure-backup-faq.md) zu Azure Backup finden Sie Fragen und Antworten zum Workflow.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0204_2016-->

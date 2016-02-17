@@ -27,7 +27,7 @@ Derzeit funktioniert das Plug-In für Maven-Projekte und für dynamische Webproj
 Sie benötigen Folgendes:
 
 * Oracle JRE 1.6 oder höher
-* Ein Abonnement für [Microsoft Azure](http://azure.microsoft.com/). (Sie können mit der [kostenlosen Testversion](http://azure.microsoft.com/pricing/free-trial/) beginnen.)
+* Ein Abonnement für [Microsoft Azure](https://azure.microsoft.com/). (Sie können mit der [kostenlosen Testversion](https://azure.microsoft.com/pricing/free-trial/) beginnen.)
 * [Eclipse IDE für Java EE-Entwickler](http://www.eclipse.org/downloads/), Indigo oder höher.
 * Windows 7 oder höher oder Windows Server 2008 oder höher
 
@@ -207,7 +207,7 @@ Ihre Leistungsindikatoren werden im [Metrik-Explorer][metrics] als benutzerdefin
 
 ## Verfügbarkeitswebtests
 
-Application Insights kann Ihre Website in regelmäßigen Abständen testen, um zu überprüfen, ob sie betriebsbereit ist und gut reagiert. Zum [Einzurichten][availability] scrollen Sie nach unten und klicken auf „Verfügbarkeit“.
+Application Insights kann Ihre Website in regelmäßigen Abständen testen, um zu überprüfen, ob sie betriebsbereit ist und gut reagiert. [Zum Einrichten][availability] scrollen Sie nach unten und klicken auf „Verfügbarkeit“.
 
 ![Scrollen Sie nach unten, klicken Sie auf „Verfügbarkeit“ und dann auf „Webtest hinzufügen“.](./media/app-insights-java-eclipse/31-config-web-test.png)
 
@@ -260,4 +260,4 @@ Sie können Code sowohl in das JavaScript der Webseite als auch in serverseitige
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

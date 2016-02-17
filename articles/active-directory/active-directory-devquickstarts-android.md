@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-android"
 	ms.devlang="java"
 	ms.topic="article"
-	ms.date="10/13/2015"
+	ms.date="01/21/2016"
 	ms.author="brandwe"/>
 
 # Integrieren von Azure AD in eine Android-App
@@ -100,7 +100,7 @@ Für die Erstellung mit Maven können Sie die Datei „pom.xml“ auf der oberst
   * Richten Sie den Emulator mit SDK 19 ein.
   * Wechseln Sie zu dem Stammordner, in dem Sie das Repository geklont haben.
   * Führen Sie den folgenden Befehl aus: mvn clean install.
-  * Wechseln Sie in das Verzeichnis mit dem Schnellstartbeispiel: cd samples\\hello.
+  * Wechseln Sie in das Verzeichnis mit dem Schnellstartbeispiel: cd samples\hello.
   * Führen Sie den folgenden Befehl aus: mvn android:deploy android:run.
   * Die App wird gestartet.
   * Geben Sie die Anmeldeinformationen des Testbenutzers ein, um sie auszuprobieren.
@@ -136,7 +136,7 @@ repositories {
         dirs 'libs'
     }
     maven {
-        url "YourLocalMavenRepoPath\\.m2\\repository"
+        url "YourLocalMavenRepoPath\.m2\repository"
     }
 }
 dependencies {
@@ -452,6 +452,5 @@ Diese sollten von Ihrer Anwendung überschrieben werden, falls lokalisierte Zeic
 ADAL Version 1.1.0 unterstützt das NTLM-Dialogfeld, das über das onReceivedHttpAuthRequest-Ereignis des WebViewClient-Elements verarbeitet wird. Sie können das Dialogfeldlayout und die Zeichenfolgen anpassen.### Schritt 5: Herunterladen des iOS-Beispielcodes für den systemeigenen Client
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
- 
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

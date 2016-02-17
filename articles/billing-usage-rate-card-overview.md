@@ -56,7 +56,7 @@ Hier sind einige Szenarios angegeben, die aufgrund der Kombination aus Nutzungs-
 
 - **Vorhersagen des Rechnungsbetrags** – Kunden und Partner können ihren geschätzten Verbrauch und die Coudausgaben abrufen und Machine Learning-Algorithmen anwenden, um vorherzusagen, welcher Betrag sich am Ende des Abrechnungszeitraums ergibt.
 
-- **Kostenanalyse vor der Nutzung** – Kunden können mit der Gebührenkarten-API auch vorhersagen, wie hoch ihre Rechnung wäre, wenn sie ihre Workloads auf Azure verlagern. Hierzu können sie die Werte zur gewünschten Nutzung angeben. Wenn Kunden über vorhandene Workloads in anderen Clouds bzw. Private Clouds verfügen, können sie die Nutzung ebenfalls den Azure-Preisen zuordnen, um eine bessere Schätzung der Azure-Ausgaben zu erhalten. Dies verdeutlicht, was mit dem [Azure-Preisrechner](http://azure.microsoft.com/pricing/calculator/) möglich ist. Beispiel: Unsere Abrechnungspartner bieten die Pivot-Funktion für ein Angebot und das Vergleichen und Gegenüberstellen von Angebotstypen über die nutzungsbasierte Bezahlung hinaus an, z. B. verbindliche Zusage und Guthaben. Außerdem sind mit den APIs Kostenschätzungsänderungen nach Region möglich. Dies ermöglicht die Art von Was-wäre-wenn-Analysen, die zum Treffen von Bereitstellungsentscheidungen erforderlich sind, da sich die Bereitstellung von Ressourcen in verschiedenen DCs weltweit direkt auf die Gesamtkosten auswirken kann.
+- **Kostenanalyse vor der Nutzung** – Kunden können mit der Gebührenkarten-API auch vorhersagen, wie hoch ihre Rechnung wäre, wenn sie ihre Workloads auf Azure verlagern. Hierzu können sie die Werte zur gewünschten Nutzung angeben. Wenn Kunden über vorhandene Workloads in anderen Clouds bzw. Private Clouds verfügen, können sie die Nutzung ebenfalls den Azure-Preisen zuordnen, um eine bessere Schätzung der Azure-Ausgaben zu erhalten. Dies verdeutlicht, was mit dem [Azure-Preisrechner](https://azure.microsoft.com/pricing/calculator/) möglich ist. Beispiel: Unsere Abrechnungspartner bieten die Pivot-Funktion für ein Angebot und das Vergleichen und Gegenüberstellen von Angebotstypen über die nutzungsbasierte Bezahlung hinaus an, z. B. verbindliche Zusage und Guthaben. Außerdem sind mit den APIs Kostenschätzungsänderungen nach Region möglich. Dies ermöglicht die Art von Was-wäre-wenn-Analysen, die zum Treffen von Bereitstellungsentscheidungen erforderlich sind, da sich die Bereitstellung von Ressourcen in verschiedenen DCs weltweit direkt auf die Gesamtkosten auswirken kann.
 
 - **Was-wäre-wenn-Analyse** –
 
@@ -72,10 +72,10 @@ Unter [Integration von Cloud Cruiser und Microsoft Azure-Abrechnungs-API](billin
 
 ## Nächste Schritte
 + Ausführlichere Informationen zu beiden APIs finden Sie unter [Azure-Abrechnungs-REST-API – Referenz](https://msdn.microsoft.com/library/azure/1ea5b323-54bb-423d-916f-190de96c6a3c). Sie sind Teil der APIs, die vom Azure-Ressourcen-Manager bereitgestellt werden.
-+ Wenn Sie sich weiter mit Beispielcode beschäftigen möchten, können Sie dies anhand der Codebeispiele für die Microsoft Azure-Abrechnungs-API unter [Azure-Codebeispiele](https://azure.microsoft.com/documentation/samples/?term=billing) tun.
++ Wenn Sie sich weiter mit Beispielcode beschäftigen möchten, sehen Sie sich die Codebeispiele für die Microsoft Azure-Abrechnungs-API unter [Azure-Codebeispiele](https://azure.microsoft.com/documentation/samples/?term=billing) an.
 
 ## Weitere Informationen
 + Weitere Informationen zum Azure-Ressourcen-Manager finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](resource-group-overview.md).
 + Weitere Informationen zu den Tools, die zum Entwickeln eines Verständnisses der Cloudausgaben erforderlich sind, finden Sie im Gartner-Artikel [Market Guide for IT Financial Management (ITFM) Tools](http://www.gartner.com/technology/reprints.do?id=1-212F7AL&ct=140909&st=sb) (Marktleitfaden für IT Financial Management (ITFM)-Tools).
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0128_2016-->

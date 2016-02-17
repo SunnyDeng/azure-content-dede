@@ -70,7 +70,7 @@ Authenticate with backend service | Nachdem Sie Ihren Back-End-Dienst in der App
 2. Wählen Sie **All settings** aus.
 3. Wählen Sie in **Settings** die Option **Policy** aus: ![][14]
 
-Diese Richtlinie ist mit der Richtlinie identisch, die von [Azure API Management](https://azure.microsoft.com/services/api-management) unterstützt wird. Die aktuelle Richtlinie befindet sich im eingebetteten XML-Editor. Sie können die Definition direkt bearbeiten oder eine neue XML-Datei hochladen. Nachdem Sie die Änderungen über **Save** gespeichert haben, werden auf diesem Blatt alle Fehler angezeigt, auch sämtliche Probleme in Bezug auf die API-Definition.
+Diese Richtlinie ist mit der Richtlinie identisch, die von [Azure API Management](https://azure.microsoft.com/services/api-management/) unterstützt wird. Die aktuelle Richtlinie befindet sich im eingebetteten XML-Editor. Sie können die Definition direkt bearbeiten oder eine neue XML-Datei hochladen. Nachdem Sie die Änderungen über **Save** gespeichert haben, werden auf diesem Blatt alle Fehler angezeigt, auch sämtliche Probleme in Bezug auf die API-Definition.
 
 [Richtlinien in Azure API Management](../api-management-howto-policies.md) ist eine gute Ressource für weitere Informationen zum Konfigurieren und Verstehen von Richtlinien.
 
@@ -88,4 +88,4 @@ In den folgenden Themen und Ressourcen finden Sie weitere Informationen zu Power
 [13]: ./media/powerapps-configure-apis/api-settings-api-definition.png
 [14]: ./media/powerapps-configure-apis/api-settings-policy.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="01/20/2016"
+   ms.date="02/01/2016"
    ms.author="jonor"/>
 
 # Beispielanwendung zur Verwendung in Umgebungen mit Sicherheitsbegrenzung
@@ -148,7 +148,7 @@ Mit diesem Skript wird das Back-End für diese einfache Anwendung eingerichtet. 
 4.	Festlegen der Berechtigungen für das Verzeichnis und die Datei auf "Anonym", um den Zugriff zuzulassen
 5.	Deaktivieren der verstärkten Sicherheitskonfiguration von Internet Explorer zur einfacheren Navigation über diesen Server 
 
->[AZURE.IMPORTANT]**Bewährte Methode**: Deaktivieren Sie die verstärkte Sicherheitskonfiguration von Internet Explorer niemals auf einem Produktionsserver. Zudem empfiehlt es sich allgemein nicht, über einen Produktionsserver im Internet zu surfen. Darüber hinaus empfiehlt es sich auch nicht, Dateifreigaben für den anonymen Zugriff zu öffnen. Dies wird hier jedoch aus Gründen der Einfachheit durchgeführt.
+>[AZURE.IMPORTANT] **Bewährte Methode**: Deaktivieren Sie die verstärkte Sicherheitskonfiguration von Internet Explorer niemals auf einem Produktionsserver. Zudem empfiehlt es sich allgemein nicht, über einen Produktionsserver im Internet zu surfen. Darüber hinaus empfiehlt es sich auch nicht, Dateifreigaben für den anonymen Zugriff zu öffnen. Dies wird hier jedoch aus Gründen der Einfachheit durchgeführt.
 
 Dieses PowerShell-Skript muss lokal ausgeführt werden, wenn es über das RDP-Protokoll an AppVM01 geleitet wird. PowerShell muss mit Administratorrechten ausgeführt werden, um die erfolgreiche Ausführung sicherzustellen.
 	
@@ -188,4 +188,4 @@ Diese Beispielanwendung enthält kein Skript zum Einrichten des DNS-Servers. Wen
 <!--Link References-->
 [HOME]: ../best-practices-network-security.md
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0204_2016-->

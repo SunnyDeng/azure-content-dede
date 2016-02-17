@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="01/14/2016"
+   ms.date="01/27/2016"
    ms.author="alkohli"/>
 
 # Wiederherstellen aus einer Sicherung des StorSimple Virtual Array (Vorschau)
@@ -77,9 +77,7 @@ Führen Sie im klassischen Azure-Portal die folgenden Schritte aus, um die Wiede
 
 3.  Navigieren Sie zurück zur Registerkarte **Sicherungskatalog**, und wählen Sie einen Sicherungssatz aus.
 
-4.  Klicken Sie unten auf der Seite auf **Als neu wiederherstellen**.
-
-5.  Klicken Sie unten auf der Seite auf **Als neu wiederherstellen**. Der Assistent **Als neues Volume wiederherstellen** wird gestartet.
+5.  Klicken Sie unten auf der Seite auf **Als neu wiederherstellen**. Der Assistent **Als neues Volumes wiederherstellen** wird gestartet.
 
 1.  Auf der Seite **Namen und Speicherort angeben**:
 
@@ -104,7 +102,7 @@ Führen Sie im klassischen Azure-Portal die folgenden Schritte aus, um die Wiede
 
 4.  Sie können nun das neu wiederhergestellte Volume in der Liste mit den Volumes auf Ihrem Gerät anzeigen.
 
-	> [AZURE.NOTE]Beachten Sie, dass bei der Wiederherstellung derselbe Volumetyp verwendet wird. Ein mehrstufiges Volume wird auch als mehrstufiges Volume wiederhergestellt, und ein lokales Volume bleibt ein lokales Volume.
+	> [AZURE.NOTE] Beachten Sie, dass bei der Wiederherstellung derselbe Volumetyp verwendet wird. Ein mehrstufiges Volume wird auch als mehrstufiges Volume wiederhergestellt, und ein lokales Volume bleibt ein lokales Volume.
 
 ## Wiederherstellung auf Elementebene
 
@@ -130,9 +128,14 @@ Jede Freigabe verfügt über den Ordner *.backups*, der die letzten Sicherungen 
 
 3.  Kopieren Sie die Datei bzw. den Ordner auf die entsprechende Freigabe auf dem StorSimple-Dateiserver.
 
+![video\_icon](./media/storsimple-ova-restore/video_icon.png) **Video verfügbar**
+
+In diesem Video wird gezeigt, wie Sie Freigaben erstellen, Freigaben sichern und Daten auf einem StorSimple Virtual Array wiederherstellen.
+
+> [AZURE.VIDEO use-the-storsimple-virtual-array]
 
 ## Nächste Schritte
 
 Erfahren Sie mehr darüber, wie Sie das [StorSimple Virtual Array mit der lokalen Webbenutzeroberfläche verwalten](storsimple-ova-web-ui-admin.md).
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

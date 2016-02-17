@@ -31,11 +31,11 @@ Weitere Informationen zur Integration von SaaS-Apps in Azure AD finden Sie unte
 
 Um die Azure AD-Integration mit Alcumus Info Exchange konfigurieren zu können, benötigen Sie Folgendes:
 
-- Ein [Azure AD](http://azure.microsoft.com/)-Abonnement.
+- Ein [Azure AD](https://azure.microsoft.com/)-Abonnement.
 - Ein [Alcumus Info Exchange](http://www.alcumusgroup.com/)-Abonnement, für das einmaliges Anmelden aktiviert ist
 
 
-> [AZURE.NOTE]Um die Schritte in diesem Tutorial zu testen, wird empfohlen, keine Produktionsumgebung zu verwenden.
+> [AZURE.NOTE] Um die Schritte in diesem Tutorial zu testen, wird empfohlen, keine Produktionsumgebung zu verwenden.
 
 
 Um die Schritte in diesem Tutorial zu testen, sollten Sie folgende Empfehlungen beachten:
@@ -99,7 +99,7 @@ Das Ziel dieses Abschnitts ist es, das einmalige Anmelden von Azure AD im Azure 
  
      3\.1. Geben Sie in das Textfeld **Antwort-URL** die Consumer-URL ein, die für Sie von Ihrem Alcumus Info Exchange-Supportteam eingerichtet wurde.
 
-     >[AZURE.NOTE]Wenn Sie den richtigen Wert nicht kennen, wenden Sie sich über [helpdesk@alcumusgroup.com](mailto:helpdesk@alcumusgroup.com) an das Alcumus Info Exchange-Supportteam.
+     >[AZURE.NOTE] Wenn Sie den richtigen Wert nicht kennen, wenden Sie sich über [helpdesk@alcumusgroup.com](mailto:helpdesk@alcumusgroup.com) an das Alcumus Info Exchange-Supportteam.
 
      3\.2. Klicken Sie auf **Weiter**.
  
@@ -204,4 +204,4 @@ Das Ziel dieses Abschnitts ist das Testen Ihrer Azure AD-Konfiguration für einm
 [205]: ./media/active-directory-saas-alcumus-info-tutorial/tutorial_general_205.png
 [400]: ./media/active-directory-saas-alcumus-info-tutorial/tutorial_alcumus_402.png
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

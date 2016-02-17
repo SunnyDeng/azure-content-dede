@@ -3,7 +3,7 @@
 	description="Beschreibt die ersten Schritte mit Azure Mobile Services in einem .NET-Projekt in Visual Studio."
 	services="mobile-services"
 	documentationCenter=""
-	authors="TomArcher"
+	authors="mlhoop"
 	manager="douge"
 	editor=""/>
 
@@ -14,7 +14,7 @@
 	ms.devlang="dotnet"
 	ms.topic="article"
 	ms.date="01/05/2016"
-	ms.author="tarcher"/>
+	ms.author="mlearned"/>
 
 # Erste Schritte mit Mobile Services (.NET-Projekte)
 
@@ -81,6 +81,6 @@ Löschen Sie eine Zeile in der Datenbank. Das Parameterelement ist das TodoItem-
 	await todoTable.DeleteAsync(item);
 
 
-[Weitere Informationen zu mobilen Diensten](http://azure.microsoft.com/documentation/services/mobile-services/)
+[Weitere Informationen zu mobilen Diensten](https://azure.microsoft.com/documentation/services/mobile-services/)
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

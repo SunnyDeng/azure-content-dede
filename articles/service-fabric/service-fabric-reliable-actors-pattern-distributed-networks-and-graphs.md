@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="09/29/2015"
-   ms.author="claudioc"/>
+   ms.author="vturecek"/>
 
 # Reliable Actors-Entwurfsmuster: Verteilte Netzwerke und Diagramme
 Das Azure Service Fabric Reliable Actors-Programmiermodell ist ideal geeignet für die Modellierung komplexer Lösungen mit Beziehungen und für die Modellierung dieser Beziehungen als Objekte.
@@ -230,4 +230,4 @@ Dieser Ansatz nutzt die Fähigkeit des Reliable Actors-Modells, jedem Actor das 
 [1]: ./media/service-fabric-reliable-actors-pattern-distributed-networks-and-graphs/distributedNetworks_arch1.png
 [2]: ./media/service-fabric-reliable-actors-pattern-distributed-networks-and-graphs/distributedNetworks_arch2.png
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

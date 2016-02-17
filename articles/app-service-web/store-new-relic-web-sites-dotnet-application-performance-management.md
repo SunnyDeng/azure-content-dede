@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="07/30/2015" 
+	ms.date="01/21/2016" 
 	ms.author="stepsic"/>
 
 
@@ -34,7 +34,7 @@ New Relic Standard steht Azure-Benutzern kostenlos zur Verfügung. New Relic Pro
 
 Preisinformationen finden Sie auf der [New Relic-Seite im Azure Marketplace](/marketplace/partners/newrelic/newrelic).
 
-> [AZURE.NOTE]Es werden nur Preise für bis zu zehn Compute-Instanzen aufgeführt. Volumenpreise für mehr als zehn Instanzen erfragen Sie bitte bei New Relic (sales@newrelic.com).
+> [AZURE.NOTE] Es werden nur Preise für bis zu zehn Compute-Instanzen aufgeführt. Volumenpreise für mehr als zehn Instanzen erfragen Sie bitte bei New Relic (sales@newrelic.com).
 
 Azure-Kunden erhalten bei Bereitstellung des New Relic-Agenten ein zweiwöchiges Testabonnement von New Relic Pro.
 
@@ -47,7 +47,7 @@ Um sich direkt im Azure Marketplace bei New Relic anzumelden, führen Sie diese 
 
 ## Schritt 1: Erstellen eines New Relic-Kontos
 
-1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an, und klicken Sie in der Ecke auf **Neu**.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/) an, und klicken Sie in der Ecke auf **Neu**.
 3. Klicken Sie auf **Entwicklerdienste** > **New Relic-APM**.
 4. Konfigurieren Sie Ihr New Relic-Konto mit den folgenden Angaben, und klicken Sie dann auf **Erstellen**.
 	- **Name**
@@ -63,7 +63,7 @@ Um sich direkt im Azure Marketplace bei New Relic anzumelden, führen Sie diese 
 
 ## Schritt 2: Konfigurieren der New Relic-Integration für die Web-App
 
-1. Öffnen Sie im [Azure-Portal](https://portal.azure.com) das Blatt Ihrer Web-App.
+1. Öffnen Sie im [Azure-Portal](https://portal.azure.com/) das Blatt Ihrer Web-App.
 2. Klicken Sie im oberen Bereich des Blatts auf das Menü "...", und wählen Sie **Kacheln hinzufügen**.
 3. Wählen Sie auf der Registerkarte **Überwachung** **Anwendungsübersicht**, und ziehen Sie die Kachel auf die gewünschte Stelle im Blatt für die Web-App.
 4. Klicken Sie auf „Fertig“, um das Hinzufügen der Kacheln zu beenden.
@@ -74,7 +74,7 @@ Um sich direkt im Azure Marketplace bei New Relic anzumelden, führen Sie diese 
 
 	Klicken Sie nach Abschluss des Vorgangs auf dem Blatt der Web-App auf **Alle Einstellungen** und anschließend auf **Anwendungseinstellungen**. Die Einstellung **NEWRELIC\_LICENSEKEY** sollte dem Abschnitt **App-Einstellungen** des Blatts zur Unterstützung von New Relic hinzugefügt worden sein:
 
-	>[AZURE.NOTE]Es kann bis zu 30 Sekunden dauern, bis die neuen App-Einstellungen wirksam sind. Damit die Einstellungen sofort wirksam werden, starten Sie die Web-App neu.
+	>[AZURE.NOTE] Es kann bis zu 30 Sekunden dauern, bis die neuen App-Einstellungen wirksam sind. Damit die Einstellungen sofort wirksam werden, starten Sie die Web-App neu.
 
 ## Schritt 3: Veröffentlichen der ASP.NET-Web-App
 
@@ -84,7 +84,7 @@ Veröffentlichen Sie Ihre Web-App mit Visual Studio. Wenn Sie Ihre Web-App berei
 
 So zeigen Sie das New Relic-Dashboard an:
 
-2. Öffnen Sie im [Azure-Portal](https://portal.azure.com) das Blatt Ihrer Web-App.
+2. Öffnen Sie im [Azure-Portal](https://portal.azure.com/) das Blatt Ihrer Web-App.
 3. Klicken Sie auf **Anwendungsüberwachung** > **Anwendungsname** > **View at New Relic**.
 
 	![](./media/store-new-relic-web-sites-dotnet-application-performance-management/view-new-relic-data.png)
@@ -154,14 +154,14 @@ Nachfolgend sehen Sie ein Beispiel des Dashboards "Overview" bei Auswahl der Bro
 
 In den folgenden Ressourcen finden Sie weitere Informationen:
 
- * [Installieren des .NET-Agents für Azure-Websites](https://docs.newrelic.com/docs/agents/net-agent/azure-installation/azure-websites#manual): Vorgehensweise für das Installieren des New Relic-.NET-Agents 
+ * [Installieren des .NET-Agents für Azure Web-Apps](https://docs.newrelic.com/docs/agents/net-agent/azure-installation/azure-preview-portal#install-new-relic-azure-webapps): Vorgehensweise für das Installieren des New Relic-.NET-Agents 
  * [New Relic-Benutzeroberfläche](https://newrelic.com/docs/site/the-new-relic-ui): Überblick über die New Relic-Benutzeroberfläche, Festlegen von Benutzerrechten und -profilen, Verwenden von Standardfunktionen und Details zu Drilldowns in Dashboards
  * [Anwendungsübersicht](https://newrelic.com/docs/site/applications-overview): Merkmale und Funktionen des New Relic-Dashboards "Overview"
  * [Apdex](https://newrelic.com/docs/site/apdex): Erläuterung, wie Apdex die Endbenutzerzufriedenheit mit Ihrer Anwendung misst
  * [Real User Monitoring](https://newrelic.com/docs/features/real-user-monitoring): Überblick darüber, wie mit RUM (Real User Monitoring) die Zeit gemessen wird, die das Laden Ihrer Webseiten in den Browsern von Benutzern dauert, woher diese Benutzer stammen und welche Browser sie verwenden
  * [Finding Help](https://newrelic.com/docs/site/finding-help): Über das Online-Hilfecenter von New Relic aufrufbare Ressourcen
 
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Änderungen
 * Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
@@ -178,4 +178,4 @@ In den folgenden Ressourcen finden Sie weitere Informationen:
 [custom]: ./media/store-new-relic-web-sites-dotnet-application-performce-management/nrcustom.png
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

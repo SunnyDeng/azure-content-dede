@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Suchen nach nicht genehmigten Cloudanwendungen per Cloud App Discovery | Microsoft Azure"
+	pageTitle="Suchen nach nicht verwalteten Cloudanwendungen per Cloud App Discovery | Microsoft Azure"
 	description="Bietet Informationen zum Suchen und Verwalten von Anwendungen mit Cloud App Discovery, zu den Vorteilen und zu der Funktionsweise."
 	services="active-directory"
 	keywords="Cloud App Discovery, Verwalten von Anwendungen"
@@ -14,10 +14,10 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/20/2015"
-	ms.author="markusvi"/>
+	ms.date="01/26/2016"
+	ms.author="markvi"/>
 
-# Suchen nach nicht genehmigten Cloudanwendungen per Cloud App Discovery
+# Suchen nach nicht verwalteten Cloudanwendungen per Cloud App Discovery
 
 ## Übersicht
 In modernen Unternehmen sind den IT-Abteilungen häufig nicht alle Cloudanwendungen bekannt, die die Mitarbeiter des Unternehmens für ihre Arbeit verwenden. Es ist verständlich, warum Administratoren sich Sorgen um den unberechtigten Zugriff auf Unternehmensdaten, mögliche Datenlecks und andere Sicherheitsrisiken machen. Dieses fehlende Bewusstsein kann die Erstellung eines Plans für den Umgang mit diesen Sicherheitsrisiken als sehr anspruchsvolle Aufgabe erscheinen lassen.
@@ -48,4 +48,4 @@ Informationen zu den ersten Schritten mit Cloud App Discovery finden Sie unter [
 - [Cloud App Discovery – Agent-Änderungsprotokoll](http://social.technet.microsoft.com/wiki/contents/articles/24616.cloud-app-discovery-agent-changelog.aspx)
 - [Cloud App Discovery – Häufig gestellte Fragen](http://social.technet.microsoft.com/wiki/contents/articles/24037.cloud-app-discovery-frequently-asked-questions.aspx)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0128_2016-->

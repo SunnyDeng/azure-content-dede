@@ -94,7 +94,7 @@ Wenn Sie einen Azure Multi-Factor Authentication-Anbieter verwenden, sind zwei N
 - **Pro Benutzer**. Diese Option ist für Unternehmen geeignet, die Multi-Factor Authentication für eine feste Anzahl von Mitarbeitern aktivieren möchten, die regelmäßig eine Authentifizierung benötigen.
 - **Pro Authentifizierung**. Diese Option ist für Unternehmen geeignet, die Multi-Factor Authentication für eine große Gruppe externer Benutzer aktivieren möchten, die seltener oder unregelmäßig eine Authentifizierung benötigen.
 
-Ausführliche Preisinformationen finden Sie unter [Preise für Azure MFA](http://azure.microsoft.com/pricing/details/multi-factor-authentication/).
+Ausführliche Preisinformationen finden Sie unter [Preise für Azure MFA](https://azure.microsoft.com/pricing/details/multi-factor-authentication/).
 
 Wählen Sie das Pro-Arbeitsplatz-Modell oder das nutzungsbasierte Modell, das am besten zu Ihrer Organisation passt. Lesen Sie anschließend die Informationen unter [Erste Schritte](multi-factor-authentication-get-started.md).
 
@@ -102,4 +102,4 @@ Wählen Sie das Pro-Arbeitsplatz-Modell oder das nutzungsbasierte Modell, das am
 
  
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

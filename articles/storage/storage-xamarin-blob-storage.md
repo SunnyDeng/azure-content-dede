@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/01/2015"
+	ms.date="01/22/2016"
 	ms.author="micurd"/>
 
 # Verwenden des Blob-Speichers mit Xamarin (Vorschau)
@@ -173,10 +173,10 @@ In diesem Lernprogramm haben Sie erfahren, wie Sie den Azure-Blob-Speicher und S
 
 Weitere Informationen zu Blobs, Tabellen und Warteschlangen finden Sie über die folgenden Links:
 
-[Einführung in Microsoft Azure Storage](storage-introduction.md)  
+[Einführung in Microsoft Azure Storage](storage-introduction.md) 
 [Verwenden des Blob Storage mit .NET](storage-dotnet-how-to-use-blobs.md) 
 [Verwenden des Table Storage mit .NET](storage-dotnet-how-to-use-tables.md) 
 [Verwenden des Queue Storage mit .NET](storage-dotnet-how-to-use-queues.md) 
 [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy)
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

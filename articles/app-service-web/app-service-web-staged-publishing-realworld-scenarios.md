@@ -245,7 +245,7 @@ Aktualisierungen des WordPress-Kerns haben keine Auswirkung auf Ihre Dateien `wp
 ```
 
 #### Einrichten einer Stagingumgebung
-Wenn Sie bereits über eine auf Azure Web ausgeführte WordPress-Web-App verfügen, melden Sie sich beim [Azure-Portal](http://portal.azure.com) an, und wechseln Sie zu Ihrer WordPress-Web-App. Andernfalls können Sie die App über den Marketplace erstellen. Klicken Sie [hier](web-sites-php-web-site-gallery.md), um weitere Informationen zu erhalten. Klicken Sie auf **Einstellungen** -> **Bereitstellungsslots** -> **Hinzufügen**, um einen Bereitstellungsslot mit dem Namen „stage“ zu erstellen. Ein Bereitstellungsslot ist eine weitere Webanwendung, die die gleichen Ressourcen wie die zuvor erstellte primäre Web-App nutzt.
+Wenn Sie bereits über eine auf Azure Web ausgeführte WordPress-Web-App verfügen, melden Sie sich beim [Azure-Portal](https://portal.azure.com/) an, und wechseln Sie zu Ihrer WordPress-Web-App. Andernfalls können Sie die App über den Marketplace erstellen. Klicken Sie [hier](web-sites-php-web-site-gallery.md), um weitere Informationen zu erhalten. Klicken Sie auf **Einstellungen** -> **Bereitstellungsslots** -> **Hinzufügen**, um einen Bereitstellungsslot mit dem Namen „stage“ zu erstellen. Ein Bereitstellungsslot ist eine weitere Webanwendung, die die gleichen Ressourcen wie die zuvor erstellte primäre Web-App nutzt.
 
 ![Erstellen des Bereitstellungslots „stage“](./media/app-service-web-staged-publishing-realworld-scenarios/1setupstage.png)
 
@@ -287,7 +287,8 @@ Durchsuchen und testen Sie Ihre Staging-Web-App. Das folgende Beispiel zeigt die
 
 ![Vorschau der Änderungen beim Austauschen für WordPress](./media/app-service-web-staged-publishing-realworld-scenarios/6swaps1.png)
 
- >[AZURE.NOTE]>Im Fall eines Szenarios, in dem Sie nur Dateien (keine Datenbankaktualisierungen) mithilfe von Push übertragen müssen, **aktivieren** Sie vor dem Austausch im Azure-Portal auf dem Blatt mit den Web-App-Einstellungen das Kontrollkästchen **Sloteinstellung** für alle datenbankbezogenen *App-Einstellungen* und *Verbindungszeichenfolgen-Einstellungen*. In diesem Fall sollten DB\_NAME, DB\_HOST, DB\_PASSWORD, DB\_USER und die standardmäßige Verbindungszeichenfolgen-Einstellung bei einem **Austausch** nicht in der Vorschau der Änderungen angezeigt werden. Nach Abschluss des **Austauschvorgangs** enthält die WordPress-Web-App **NUR** die aktualisierten Dateien.
+ >[AZURE.NOTE]
+ >Im Fall eines Szenarios, in dem Sie nur Dateien (keine Datenbankaktualisierungen) mithilfe von Push übertragen müssen, **aktivieren** Sie vor dem Austausch im Azure-Portal auf dem Blatt mit den Web-App-Einstellungen das Kontrollkästchen **Sloteinstellung** für alle datenbankbezogenen *App-Einstellungen* und *Verbindungszeichenfolgen-Einstellungen*. In diesem Fall sollten DB\_NAME, DB\_HOST, DB\_PASSWORD, DB\_USER und die standardmäßige Verbindungszeichenfolgen-Einstellung bei einem **Austausch** nicht in der Vorschau der Änderungen angezeigt werden. Nach Abschluss des **Austauschvorgangs** enthält die WordPress-Web-App **NUR** die aktualisierten Dateien.
 
 Hier sehen Sie die WordPress-Produktions-Web-App vor dem Austauschvorgang. ![Produktions-Web-App vor dem Austauschen von Slots](./media/app-service-web-staged-publishing-realworld-scenarios/7bfswap.png)
 
@@ -427,7 +428,7 @@ Nach dem Aktualisieren Ihrer lokalen Entwicklungswebsite veröffentlichen Sie di
 
 ![Austauschvorschau für die Bereitstellung von Umbraco CMS](./media/app-service-web-staged-publishing-realworld-scenarios/22umbswap.png)
 
-Das Austauschen der Web-App und der Datenbank bietet folgende Vorteile: 1. Sie können mit einem weiteren **Austauschvorgang** ein Rollback auf die vorherige Version der Web-App ausführen, wenn in der Anwendung Probleme auftreten. 2. Bei einer Aktualisierung müssen Sie Dateien und die Datenbank von der Staging-Web-App in der Produktions-Web-App und der Datenbank bereitstellen. Bei der Bereitstellung von Dateien und Datenbanken kann vieles schief gehen. Durch das **Austauschen** von Slots wird das Risiko von Ausfallzeiten während einer Aktualisierung und von Fehlern bei der Bereitstellung von Änderungen reduziert. 3. Sie können **A/B-Tests** mithilfe der Funktion zum [Testen in der Produktionsumgebung](http://azure.microsoft.com/documentation/videos/introduction-to-azure-websites-testing-in-production-with-galin-iliev/) durchführen.
+Das Austauschen der Web-App und der Datenbank bietet folgende Vorteile: 1. Sie können mit einem weiteren **Austauschvorgang** ein Rollback auf die vorherige Version der Web-App ausführen, wenn in der Anwendung Probleme auftreten. 2. Bei einer Aktualisierung müssen Sie Dateien und die Datenbank von der Staging-Web-App in der Produktions-Web-App und der Datenbank bereitstellen. Bei der Bereitstellung von Dateien und Datenbanken kann vieles schief gehen. Durch das **Austauschen** von Slots wird das Risiko von Ausfallzeiten während einer Aktualisierung und von Fehlern bei der Bereitstellung von Änderungen reduziert. 3. Sie können **A/B-Tests** mithilfe der Funktion zum [Testen in der Produktionsumgebung](https://azure.microsoft.com/documentation/videos/introduction-to-azure-websites-testing-in-production-with-galin-iliev/) durchführen.
 
 Dieses Beispiel veranschaulicht die Flexibilität der Plattform. Sie ermöglicht es Ihnen, benutzerdefinierte Module wie das Umbraco Courier-Modul zur umgebungsübergreifenden Verwaltung der Bereitstellung zu erstellen.
 
@@ -438,4 +439,4 @@ Dieses Beispiel veranschaulicht die Flexibilität der Plattform. Sie ermöglicht
 
 [Blockieren des Webzugriffs auf Nicht-Produktionsslots](http://ruslany.net/2014/04/azure-web-sites-block-web-access-to-non-production-deployment-slots/)
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

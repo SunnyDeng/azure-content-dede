@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/22/2015"
+	ms.date="01/28/2016"
 	ms.author="anhoh"/>
 
 # Anfordern von erhöhten DocumentDB-Kontolimits
@@ -38,8 +38,8 @@ Die folgende Tabelle beschreibt die DocumentDB-Kontingente, die durch Kontaktauf
 |Maximale Anzahl von UDFs pro Abfrage |2
 |Maximale Anzahl von JOINs pro Abfrage |5
 |Maximale Anzahl von UND-Klauseln pro Abfrage |20
-|Maximale Anzahl von ODER-Klauseln pro Abfrage |10
-|Maximale Anzahl von Werten pro IN-Ausdruck |100
+|Maximale Anzahl von ODER-Klauseln pro Abfrage |20
+|Maximale Anzahl von Werten pro IN-Ausdruck |200
 |Maximale Anzahl von Punkten in einem Polygon-Argument in einer ST\_WITHIN-Abfrage |16
 |Maximale Anzahl von Sammlungserstellungen pro Minute |5
 |Maximale Anzahl von Skalierungsvorgängen pro Minute |5
@@ -75,4 +75,4 @@ Sobald das Supportticket erstellt wurde, sollten Sie per E-Mail eine Supportanfo
 ##<a name="NextSteps"></a> Nächste Schritte
 - Um weitere Informationen zu DocumentDB zu erhalten, klicken Sie [hier](http://azure.com/docdb).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

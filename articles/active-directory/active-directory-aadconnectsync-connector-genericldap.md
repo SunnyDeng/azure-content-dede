@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure AD Connect-Synchronisierung: generischer LDAP-Connector"
+   pageTitle="Azure AD Connect-Synchronisierung: Generischer LDAP-Connector | Microsoft Azure"
    description="Dieser Artikel beschreibt die Konfiguration des generischen LDAP-Connectors von Microsoft."
    services="active-directory"
    documentationCenter=""
@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.devlang="na"
    ms.topic="article"
-   ms.date="01/14/2015"
+   ms.date="01/21/2016"
    ms.author="andkjell"/>
 
 # Technische Referenz für den generischen LDAP-Connector
@@ -211,13 +211,13 @@ Die folgende Liste gibt Aufschluss über die standardmäßigen Änderungsprotoko
 | Apache Directory Server | Nicht verfügbar. |
 | Directory 389 | Änderungsprotokoll. Zu verwendender Standardwert: **cn=changelog** |
 | IBM Tivoli DS | Änderungsprotokoll. Zu verwendender Standardwert: **cn=changelog** |
-| Isode Directory | Änderungsprotokoll. Zu verwendender Standardwert: **cn=ChangeLog**
+| Isode Directory | Änderungsprotokoll. Zu verwendender Standardwert: **cn=changelog**
 | Novell/NetIQ eDirectory | Nicht verfügbar. Zeitstempel. Der Connector verwendet den Datums-/Uhrzeitwert der letzten Aktualisierung, um hinzugefügte und aktualisierte Datensätze abzurufen. |
-| Open DJ/DS | Änderungsprotokoll. Zu verwendender Standardwert: **cn=Changelog** |
+| Open DJ/DS | Änderungsprotokoll. Zu verwendender Standardwert: **cn=changelog** |
 | Open LDAP | Zugriffsprotokoll. Zu verwendender Standardwert: **cn=accesslog** |
 | Oracle DSEE | Änderungsprotokoll. Zu verwendender Standardwert: **cn=changelog** |
 | RadiantOne VDS | Virtuelles Verzeichnis. Abhängig vom mit VDS verbundenen Verzeichnis. |
-| Sun One Directory Server | Änderungsprotokoll. Zu verwendender Standardwert: **cn=Changelog** |
+| Sun One Directory Server | Änderungsprotokoll. Zu verwendender Standardwert: **cn=changelog** |
 
 Das Kennwortattribut ist der Name des Attributs, das der Connector bei Kennwortänderungen/-festlegungen zum Festlegen des Kennworts verwenden soll. Er ist standardmäßig auf **userPassword** festgelegt, kann jedoch bei Bedarf für ein bestimmtes LDAP-System angepasst werden.
 
@@ -279,4 +279,4 @@ Bei Verzeichnissen mit einem datums-/uhrzeitbasierten Delta-Änderungsprotokoll 
 
 -	Informationen zum Aktivieren der Protokollierung für die Behandlung von Connectorproblemen finden Sie unter [Vorgehensweise: Aktivieren der ETW-Ablaufverfolgung für Connectors](http://go.microsoft.com/fwlink/?LinkId=335731).
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

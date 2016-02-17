@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure AD Connect-Synchronisierung: generischer SQL-Connector"
+   pageTitle="Azure AD Connect-Synchronisierung: Generischer SQL-Connector | Microsoft Azure"
    description="Dieser Artikel beschreibt die Konfiguration des generischen SQL-Connectors von Microsoft."
    services="active-directory"
    documentationCenter=""
@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.devlang="na"
    ms.topic="article"
-   ms.date="12/11/2015"
+   ms.date="01/21/2016"
    ms.author="andkjell"/>
 
 # Technische Referenz für den generischen SQL-Connector
@@ -295,4 +295,4 @@ Bei Verwendung der Option „SQL-Abfrage“ werden drei verschiedene Abfragen f�
 
 -	Informationen zum Aktivieren der Protokollierung für die Behandlung von Connectorproblemen finden Sie unter [Vorgehensweise: Aktivieren der ETW-Ablaufverfolgung für Connectors](http://go.microsoft.com/fwlink/?LinkId=335731).
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0128_2016-->

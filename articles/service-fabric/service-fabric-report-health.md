@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="01/20/2015"
+   ms.date="01/26/2016"
    ms.author="oanapl"/>
 
 # Hinzufügen von benutzerdefinierten Service Fabric-Integritätsberichten
@@ -45,11 +45,11 @@ Wie bereits erwähnt, kann die Berichterstellung von folgenden Orten aus erfolge
 
 - Von externen Watchdogs, welche die Ressource von *außerhalb* des Service Fabric-Clusters überwachen (z. B. ein Überwachungsdienst wie Gomez).
 
-> [AZURE.NOTE]Standardmäßig enthält das Cluster von den Systemkomponenten gesendete Integritätsberichte. Weitere Informationen finden Sie unter [Verwenden von Systemintegritätsberichten für die Problembehandlung](service-fabric-understand-and-troubleshoot-with-system-health-reports.md). Die Benutzerberichte müssen für bereits vom System erstellte [Integritätsentitäten](service-fabric-health-introduction.md#health-entities-and-hierarchy) gesendet werden.
+> [AZURE.NOTE] Standardmäßig enthält das Cluster von den Systemkomponenten gesendete Integritätsberichte. Weitere Informationen finden Sie unter [Verwenden von Systemintegritätsberichten für die Problembehandlung](service-fabric-understand-and-troubleshoot-with-system-health-reports.md). Die Benutzerberichte müssen für bereits vom System erstellte [Integritätsentitäten](service-fabric-health-introduction.md#health-entities-and-hierarchy) gesendet werden.
 
 Sobald das Design für die Integritätsberichterstellung feststeht, können Integritätsberichte problemlos gesendet werden. Dies kann über die API mit **FabricClient.HealthManager.ReportHealth**, über PowerShell oder über REST erfolgen. Intern verwenden alle Methoden einen Integritätsclient, der in einem Fabric-Client enthalten ist. Zur Verbesserung der Leistung fassen Konfigurationselemente Berichte zusammen.
 
-> [AZURE.NOTE]Integritätsberichte sind synchronisiert und repräsentieren nur die auf der Clientseite durchgeführten Überprüfungen. Die Tatsache, dass der Bericht vom Integritätsclient akzeptiert wird, bedeutet nicht, dass er in den Speicher übernommen wird. Er wird asynchron gesendet und möglicherweise mit anderen Berichten zusammengefasst. Die Verarbeitung auf dem Server kann möglicherweise trotzdem fehlschlagen (weil z. B. eine Sequenznummer veraltet ist, die Entität, auf die der Bericht angewendet werden muss, gelöscht wurde usw.).
+> [AZURE.NOTE] Integritätsberichte sind synchronisiert und repräsentieren nur die auf der Clientseite durchgeführten Überprüfungen. Die Tatsache, dass der Bericht vom Integritätsclient akzeptiert wird, bedeutet nicht, dass er in den Speicher übernommen wird. Er wird asynchron gesendet und möglicherweise mit anderen Berichten zusammengefasst. Die Verarbeitung auf dem Server kann möglicherweise trotzdem fehlschlagen (weil z. B. eine Sequenznummer veraltet ist, die Entität, auf die der Bericht angewendet werden muss, gelöscht wurde usw.).
 
 ## Integritätsclient
 Die Integritätsberichte werden über einen Integritätsclient innerhalb des Fabric-Clients an den Integritätsspeicher gesendet. Der Integritätsclient kann mit folgenden Optionen konfiguriert werden:
@@ -60,7 +60,7 @@ Die Integritätsberichte werden über einen Integritätsclient innerhalb des Fab
 
 - **HealthOperationTimeout**: Das Zeitlimit für eine Berichtsnachricht, die an den Integritätsspeicher gesendet wurde. Wenn bei einer Nachricht das Zeitlimit überschritten wird, wiederholt der Integritätsclient den Sendevorgang, bis der Integritätsspeicher die Verarbeitung des Berichts bestätigt. Standardwert: 2 Minuten.
 
-> [AZURE.NOTE]Wenn die Berichte zusammengefasst werden, muss der Fabric-Client mindestens für die Dauer von „HealthReportSendInterval“ aktiv bleiben, um sicherzustellen, dass sie gesendet werden. Wenn die Nachricht verloren geht oder der Integritätsspeicher die Berichte aufgrund von vorübergehenden Fehlern nicht anwenden kann, muss der Fabric-Client länger aktiv bleiben, um einen erneuten Versuch zu ermöglichen.
+> [AZURE.NOTE] Wenn die Berichte zusammengefasst werden, muss der Fabric-Client mindestens für die Dauer von „HealthReportSendInterval“ aktiv bleiben, um sicherzustellen, dass sie gesendet werden. Wenn die Nachricht verloren geht oder der Integritätsspeicher die Berichte aufgrund von vorübergehenden Fehlern nicht anwenden kann, muss der Fabric-Client länger aktiv bleiben, um einen erneuten Versuch zu ermöglichen.
 
 Bei der Pufferung auf dem Client wird auf die Eindeutigkeit der Berichte geachtet. Beispiel: Wenn ein besonders schlechter Reporter pro Sekunde 100 Berichte bezüglich derselben Eigenschaft einer Entität sendet, werden die Berichte jeweils durch die letzte Version ersetzt. In der Clientwarteschlange ist stets höchstens ein solcher Bericht vorhanden. Wenn die Batchverarbeitung konfiguriert ist, wird pro Sendeintervall nur ein Bericht an den Integritätsspeicher gesendet. Dies ist der zuletzt hinzugefügte Bericht, der den aktuellen Zustand der Entität angibt. Beim Erstellen von **FabricClient** können alle Konfigurationsparameter durch Übergabe von **FabricClientSettings** mit den gewünschten Werten für integritätsbezogene Einträge angegeben werden.
 
@@ -104,7 +104,7 @@ GatewayInformation   : {
                        }
 ```
 
-> [AZURE.NOTE]Um sicherzustellen, dass nicht autorisierte Dienste keine Integritätsberichte für die im Cluster enthaltenen Entitäten ausgeben, kann der Server so konfiguriert werden, dass er Anforderungen nur von sicheren Clients akzeptiert. Da die Berichterstellung über FabricClient erfolgt, müssen für FabricClient Sicherheitsfunktionen aktiviert sein, um mit dem Cluster (z. B. mit Kerberos oder der Zertifikatauthentifizierung) kommunizieren zu können.
+> [AZURE.NOTE] Um sicherzustellen, dass nicht autorisierte Dienste keine Integritätsberichte für die im Cluster enthaltenen Entitäten ausgeben, kann der Server so konfiguriert werden, dass er Anforderungen nur von sicheren Clients akzeptiert. Da die Berichterstellung über FabricClient erfolgt, müssen für FabricClient Sicherheitsfunktionen aktiviert sein, um mit dem Cluster (z. B. mit Kerberos oder der Zertifikatauthentifizierung) kommunizieren zu können.
 
 ## Entwerfen der Integritätsberichterstellung
 Der erste Schritt zum Generieren hochwertiger Berichte ist das Identifizieren der Bedingungen, welche die Dienstintegrität beeinträchtigen können. Jegliche Bedingung, die beim – oder noch besser vor dem – Auftreten von Problemen im Dienst oder Cluster zu deren Erkennung beiträgt, kann Milliarden Euro einsparen. Zu den Vorteilen gehören weniger Ausfallzeiten, weniger nächtliche Untersuchungen und Behebungen von Problemen sowie eine höhere Kundenzufriedenheit.
@@ -119,7 +119,7 @@ Mitunter ist es jedoch auch nicht möglich, einen Watchdog im Cluster auszuführ
 
 Nachdem Sie die Watchdog-Details festgelegt haben, sollten Sie eine Quell-ID auswählen, die den Watchdog eindeutig identifiziert. Wenn im Cluster mehrere Watchdogs mit dem gleichen Typ enthalten sind, müssen sie entweder Berichte zu unterschiedlichen Entitäten erstellen oder, falls es dieselbe Entität ist, sicherstellen, dass sich die Quell-ID oder die Eigenschaft unterscheiden. Auf diese Weise können ihre Berichte gleichzeitig vorhanden sein. Die Eigenschaft des Integritätsberichts sollte die überwachte Bedingung erfassen. (Im vorangegangenen Beispiel könnte die Eigenschaft **ShareSize** sein.) Wenn mehrere Berichte für die gleiche Bedingung gelten, sollte die Eigenschaft einige dynamische Informationen beinhalten, sodass mehrere Berichte gleichzeitig vorhanden sein können. Beispiel: Wenn mehrere Freigaben überwacht werden müssen, kann der Name der Eigenschaft **ShareSize-Freigabename** lauten.
 
-> [AZURE.NOTE]Der Integritätsspeicher sollte *nicht* zum Speichern von Zustandsinformationen verwendet werden. Hinsichtlich der Integrität sollten nur integritätsbezogene Informationen gemeldet werden, da sie sich auf die Integritätsevaluierung einer Entität auswirken. Der Integritätsspeicher wurde nicht als Allzweckspeicher entwickelt. Er aggregiert mithilfe von Integritätsevaluierungslogik alle Daten im Integritätszustand. Das Senden von Informationen, die sich nicht auf die Integrität beziehen (z. B. Statusberichte mit dem Integritätszustand „OK“), wirkt sich nicht auf den aggregierten Integritätszustand aus, kann jedoch die Leistung des Integritätsspeichers beeinträchtigen.
+> [AZURE.NOTE] Der Integritätsspeicher sollte *nicht* zum Speichern von Zustandsinformationen verwendet werden. Hinsichtlich der Integrität sollten nur integritätsbezogene Informationen gemeldet werden, da sie sich auf die Integritätsevaluierung einer Entität auswirken. Der Integritätsspeicher wurde nicht als Allzweckspeicher entwickelt. Er aggregiert mithilfe von Integritätsevaluierungslogik alle Daten im Integritätszustand. Das Senden von Informationen, die sich nicht auf die Integrität beziehen (z. B. Statusberichte mit dem Integritätszustand „OK“), wirkt sich nicht auf den aggregierten Integritätszustand aus, kann jedoch die Leistung des Integritätsspeichers beeinträchtigen.
 
 Als Nächstes legen Sie fest, für welche Entität Berichte erstellt werden sollen. In den meisten Fällen ist dies aufgrund der Bedingung offensichtlich. Sie sollten die Entität mit der bestmöglichen Granularität auswählen. Wenn sich eine Bedingung auf alle Replikate in einer Partition auswirkt, erstellen Sie Berichte nicht über den Dienst, sonder über die Partition. Es gibt jedoch Ausnahmefälle, in denen weitere Überlegungen erforderlich sind. Wenn sich die Bedingung auf eine Entität wie ein Replikat auswirkt, jedoch der Wunsch besteht, sie für mehr als nur die Replikatgültigkeitsdauer zu kennzeichnen, sollte die Berichterstellung auf der Partition erfolgen. Andernfalls werden beim Löschen des Replikats alle damit verbundenen Berichte aus dem Speicher bereinigt. Dies bedeutet, dass Watchdog-Autoren auch die Lebensdauer der Entität und des Berichts berücksichtigen müssen. Es muss klar sein, wann ein Bericht aus einem Speicher bereinigt werden soll (z. B. wenn ein für eine Entität gemeldeter Fehler nicht mehr zutrifft).
 
@@ -275,4 +275,4 @@ Basierend auf den Integritätsdaten können Dienstautoren und Cluster- bzw. Anwe
 
 [Service Fabric-Anwendungsupgrade](service-fabric-application-upgrade.md)
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

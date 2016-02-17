@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="multiple"
-   ms.date="12/18/2015"
+   ms.date="01/30/2016"
    ms.author="tarcher" />
 
 # Hosten von Web-Apps in Docker
@@ -163,7 +163,7 @@ Das folgende Verfahren gilt für die Kommunikation mit einem Docker-Host, der in
 
 Da Sie jetzt über einen Docker-Host verfügen, können Sie Docker-Befehle an ihn ausgeben. Weitere Informationen zu Docker finden Sie in der [Docker-Dokumentation](https://docs.docker.com/) und im [Docker-Onlinetutorial](https://www.docker.com/tryit/) (in englischer Sprache).
 
-Informationen zur Verwendung der Docker VM-Erweiterung für Linux in Azure finden Sie unter [Die Docker-Erweiterung für virtuelle Linux-Computer in Azure](virtual-machines-docker-vm-extension.md).
+Informationen zur Verwendung der Docker VM-Erweiterung für Linux in Azure finden Sie unter [Die Docker-Erweiterung für virtuelle Linux-Computer in Azure](/virtual-machines/virtual-machines-docker-vm-extension.md).
 
 Informationen zu Problemen bei der Verwendung von Docker in Visual Studio finden Sie unter [Problembehandlung von Docker-Clientfehlern unter Windows mithilfe von Visual Studio](vs-azure-tools-docker-troubleshooting-docker-errors.md).
 
@@ -177,4 +177,4 @@ Informationen zu Problemen bei der Verwendung von Docker in Visual Studio finden
 [7]: ./media/vs-azure-tools-docker-hosting-web-apps-in-docker/IC796685.png
 [8]: ./media/vs-azure-tools-docker-hosting-web-apps-in-docker/IC796686.png
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0204_2016-->

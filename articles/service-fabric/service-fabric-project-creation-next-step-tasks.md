@@ -54,10 +54,10 @@ Die ASP.NET 5-Vorlagen zur Verwendung in Service Fabric-Anwendungen sind fast 
 
 ## Nächste Schritte
 ### Hinzufügen eines Web-Front-Ends zur Anwendung
-Service Fabric bietet Integration in ASP.NET 5 zum Erstellen von webbasierten Einstiegspunkten für Ihre Anwendung. Informationen über das Erstellen einer REST-Schnittstelle basierend auf der ASP.NET-WebAPI finden Sie unter [Hinzufügen eines Web-Front-Ends zur Anwendung][add-web-frontend].
+Service Fabric bietet Integration in ASP.NET 5 zum Erstellen von webbasierten Einstiegspunkten für Ihre Anwendung. Informationen über das Erstellen einer REST-Schnittstelle basierend auf der ASP.NET-Web-API finden Sie unter [Hinzufügen eines Web-Front-Ends zur Anwendung][add-web-frontend].
 
 ### Erstellen eines Azure-Clusters
-Das Service Fabric-SDK stellt einen lokalen Cluster zu Entwicklungs- und Testzwecken bereit. Informationen zum Erstellen eines Clusters in Azure finden Sie unter [Einrichten eines Service Fabric-Clusters im Azure-Portal][create-cluster-in-portal]
+Das Service Fabric-SDK stellt einen lokalen Cluster zu Entwicklungs- und Testzwecken bereit. Informationen zum Erstellen eines Clusters in Azure finden Sie unter [Einrichten eines Service Fabric-Clusters im Azure-Portal][create-cluster-in-portal].
 
 ### Kostenloses Testen der Bereitstellung von Party Clustern in Azure
 
@@ -78,12 +78,12 @@ Informationen zur Einrichtung einer Continuous Integration für die Service Fab
 
 
 <!-- Links -->
-[add-web-frontend]: ./service-fabric-add-a-web-frontend.md
-[create-cluster-in-portal]: ./service-fabric-cluster-creation-via-portal.md
-[publish-app-to-azure]: ./service-fabric-publish-app-remote-cluster.md
-[visualize-with-sfx]: ./service-fabric-visualizing-your-cluster.md
-[ci-with-vso]: ./service-fabric-set-up-continuous-integration.md
-[reliable-services-webapi]: ./service-fabric-reliable-services-communication-webapi.md
-[app-upgrade-tutorial]: ./service-fabric-application-upgrade-tutorial.md
+[add-web-frontend]: service-fabric-add-a-web-frontend.md
+[create-cluster-in-portal]: service-fabric-cluster-creation-via-portal.md
+[publish-app-to-azure]: service-fabric-publish-app-remote-cluster.md
+[visualize-with-sfx]: service-fabric-visualizing-your-cluster.md
+[ci-with-vso]: service-fabric-set-up-continuous-integration.md
+[reliable-services-webapi]: service-fabric-reliable-services-communication-webapi.md
+[app-upgrade-tutorial]: service-fabric-application-upgrade-tutorial.md
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0204_2016-->

@@ -3,7 +3,7 @@
 	description="Verwalten der rollenbasierten Zugriffssteuerung mit Windows PowerShell"
 	services="active-directory"
 	documentationCenter="na"
-	authors="IHenkel"
+	authors="kgremban"
 	manager="stevenpo"
 	editor=""/>
 
@@ -13,15 +13,14 @@
 	ms.tgt_pltfrm="powershell"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/04/2016"
-	ms.author="inhenk"/>
+	ms.date="01/25/2016"
+	ms.author="kgremban"/>
 
 # Verwalten der rollenbasierten Zugriffssteuerung mit Windows PowerShell #
 
 > [AZURE.SELECTOR]
-- [PowerShell](role-based-access-control-manage-access-powershell.md)
-- [Azure CLI](role-based-access-control-manage-access-azure-cli.md)
-- [REST API](role-based-access-control-manage-access-rest.md)
+- [Windows PowerShell](role-based-access-control-powershell.md)
+- [Azure CLI](role-based-access-control-xplat-cli.md)
 
 Mit der rollenbasierten Zugriffssteuerung (RBAC) im Azure-Portal und in der Azure Resource Management-API können Sie den Zugriff auf Ihr Abonnement differenziert steuern. Mithilfe dieser Funktion lassen sich Zugriffsberechtigungen für Active Directory-Benutzer, -Gruppen oder -Dienstprinzipale festlegen, indem ihnen bestimmte Rollen für einen bestimmten Bereich zugewiesen werden.
 
@@ -39,15 +38,15 @@ Bevor Sie die RBAC mithilfe der Windows PowerShell verwalten können, benötigen
 
 Dieses Lernprogramm richtet sich an Windows PowerShell-Anfänger. Es wird aber vorausgesetzt, dass Sie die grundlegenden Konzepte, wie zum Beispiel Module, Cmdlets und Sitzungen, verstehen. Weitere Informationen zu Windows PowerShell finden Sie unter [Erste Schritte mit Windows PowerShell](http://technet.microsoft.com/library/hh857337.aspx).
 
-Um detaillierte Hilfe zu einem Cmdlet aus dem Lernprogramm zu erhalten, verwenden Sie das Get-Help-Cmdlet.
+Um detaillierte Hilfe zu einem Cmdlet aus dem Tutorial zu erhalten, verwenden Sie das `Get-Help`-Cmdlet.
 
 	Get-Help <cmdlet-name> -Detailed
 
-Geben Sie beispielsweise Folgendes ein, um Hilde zum Add-AzureAccount-Cmdlet zu erhalten:
+Geben Sie beispielsweise Folgendes ein, um Hilfe zum `Add-AzureAccount`-Cmdlet zu erhalten:
 
 	Get-Help Add-AzureAccount -Detailed
 
-Lesen Sie bitte auch die folgenden Lernprogramme, um sich mit der Einrichtung und Verwendung von Azure Resource Manager in Windows PowerShell vertraut zu machen:
+Lesen Sie bitte auch die folgenden Tutorials, um sich mit der Einrichtung und Verwendung des Azure-Ressourcen-Managers in Windows PowerShell vertraut zu machen:
 
 - [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md)
 - [Verwenden von Windows PowerShell mit dem Ressourcen-Manager](../powershell-azure-resource-manager.md)
@@ -55,7 +54,7 @@ Lesen Sie bitte auch die folgenden Lernprogramme, um sich mit der Einrichtung un
 
 ## Verbindungsherstellung mit Ihren Abonnements
 
-Da RBAC nur mit Azure Resource Manager funktioniert, müssen Sie zunächst in den Azure Resource Manager-Modus wechseln. Geben Sie dazu Folgendes ein:
+Da RBAC nur mit dem Azure-Ressourcen-Manager funktioniert, müssen Sie zunächst in den Azure-Ressourcen-Manager-Modus wechseln:
 
     PS C:\> Switch-AzureMode -Name AzureResourceManager
 
@@ -67,7 +66,7 @@ Um eine Verbindung mit Ihren Azure-Abonnements herzustellen, geben Sie Folgendes
 
 Geben Sie in das Popup-Browsersteuerelement den Benutzernamen und das Kennwort Ihres Azure-Kontos ein. PowerShell ruft alle Abonnements ab, die mit diesem Konto verknüpft sind, und konfiguriert sich selbst so, dass das erste Konto als Standardkonto verwendet wird. Beachten Sie, dass Sie mit der rollenbasierten Zugriffssteuerung nur Abonnements abrufen können, für die Sie entweder als Co-Administrator oder durch Rollenzuweisung Berechtigung haben.
 
-Wenn Sie über mehrere Abonnements verfügen und ein anderes Abonnement abrufen möchten, geben Sie Folgendes ein:
+Wenn Sie über mehrere Abonnements verfügen und zu einem anderen Abonnement wechseln möchten, geben Sie Folgendes ein:
 
     # This will show you the subscriptions under the account.
     PS C:\> Get-AzureSubscription
@@ -94,7 +93,7 @@ Sie können bestehende Rollenzuweisungen auch für eine bestimmte Rollendefiniti
 Mit diesem Befehl erhalten sie alle Rollenzuweisungen für einen bestimmten Benutzer in Ihrem AD-Mandanten mit der Rollenzuweisung "Besitzer" für die Ressourcengruppe "Gruppe1". Die Rollenzuweisung kann auf zwei Wegen erfolgen:
 
 1. Als Rollenzuweisung "Besitzer" für den Benutzer der Ressourcengruppe.
-2. Als Rollenzuweisung "Besitzer" für den Benutzer der Ressource, die der Ressourcengruppe übergeordnet ist (in diesem Fall das Abonnement), da eine Berechtigung auf einer Ebene auch für alle untergeordneten Strukturen gilt.
+2. Als Rollenzuweisung „Besitzer“ für den Benutzer der Ressource, die der Ressourcengruppe übergeordnet ist (in diesem Fall das Abonnement), da eine Berechtigung auf einer übergeordneten Ebene auch für alle untergeordneten Elemente gilt.
 
 Alle Parameter dieses Cmdlet sind optional. Sie können kombiniert werden, um Rollenzuweisungen mit verschiedenen Filtern zu überprüfen.
 
@@ -113,43 +112,34 @@ Welche Rolle soll zugewiesen werden: Verwenden Sie das folgende Cmdlet, um die u
 
     PS C:\> Get-AzureRoleDefinition
 
-Welcher Bereich soll zugewiesen werden: Sie können aus den folgenden drei Bereichsebenen auswählen:
-
-    - The current subscription
-    - A resource group, to get a list of resource groups, type `PS C:\> Get-AzureResourceGroup`
-    - A resource, to get a list of resources, type `PS C:\> Get-AzureResource`
+Welcher Bereich soll zugewiesen werden: Sie können aus den folgenden drei Bereichsebenen auswählen: Aktuelles Abonnement - Ressourcengruppe. Zum Abrufen einer Liste mit Ressourcengruppen, geben Sie `PS C:\> Get-AzureResourceGroup` ein. - Ressource. Zum Abrufen einer Liste mit Ressourcen geben Sie `PS C:\> Get-AzureResource` ein.
 
 Verwenden Sie anschließend den Befehl `New-AzureRoleAssignment`, um eine Rollenzuweisung zu erstellen. Beispiel:
 
+	#This will create a role assignment at the current subscription level for a user as a reader.
+	PS C:\> New-AzureRoleAssignment -Mail <user email> -RoleDefinitionName Reader
 
-Mit dem folgenden Befehl wird eine Rollenzuweisung auf der aktuellen Abonnementebene für einen Benutzer mit Leseberechtigung erstellt:
-
-	 PS C:\> New-AzureRoleAssignment -Mail <user email> -RoleDefinitionName Reader
-
-Mit dem folgenden Befehl wird eine Rollenzuweisung auf Ressourcengruppenebene erstellt.
-
+	#This will create a role assignment at a resource group level.
 	PS C:\> New-AzureRoleAssignment -Mail <user email> -RoleDefinitionName Contributor -ResourceGroupName group1
 
-Mit dem folgenden Befehl wird eine Rollenzuweisung für eine Gruppe auf Ressourcengruppenebene erstellt.
-
+	#This will create a role assignment for a group at a resource group level.
 	PS C:\> New-AzureRoleAssignment -ObjectID <group object ID> -RoleDefinitionName Reader -ResourceGroupName group1
 
-Mit dem folgenden Befehl wird eine Rollenzuweisung auf Ressourcenebene erstellt.
-
+	#This will create a role assignment at a resource level.
 	PS C:\> $resources = Get-AzureResource
     PS C:\> New-AzureRoleAssignment -Mail <user email> -RoleDefinitionName Owner -Scope $resources[0].ResourceId
 
 
 ## Überprüfen von Berechtigungen
 
-Nachdem Sie überprüft haben, ob mit Ihrem Konto Rollenzuweisungen verknüpft sind, können Sie die Berechtigungen der zugewiesenen Rollen anzeigen lassen. Führen Sie dazu folgende Befehle aus:
+Nachdem Sie überprüft haben, ob mit Ihrem Konto Rollenzuweisungen verknüpft sind, können Sie die Berechtigungen der zugewiesenen Rollen anzeigen. Führen Sie dazu folgende Befehle aus:
 
     PS C:\> Get-AzureResourceGroup
     PS C:\> Get-AzureResource
 
 Mit diesen beiden Cmdlets werden Ressourcengruppen und Ressourcen mit Leseberechtigung zurückgegeben. Zusätzlich werden auch Ihre Berechtigungen angezeigt.
 
-Wenn Sie versuchen, ein anderes Cmdlet wie z. B. `New-AzureResourceGroup` auszuführen und nicht über die erforderlichen Berechtigung verfügen, wird ein Zugriffsverweigerungsfehler ausgegeben.
+Wenn Sie versuchen, andere Cmdlets wie `New-AzureResourceGroup` auszuführen, wird ein Zugriffsverweigerungsfehler ausgegeben, wenn Sie nicht über die entsprechende Berechtigung verfügen.
 
 ## Nächste Schritte
 
@@ -164,4 +154,4 @@ In den folgenden Themen und Ressourcen erhalten Sie weitere Informationen zur Ve
 - [Konfigurieren der rollenbasierten Zugriffssteuerung mit der Azure-Befehlszeilenschnittstelle](role-based-access-control-xplat-cli-install.md)
 - [Behandlung von Problemen bei der rollenbasierten Zugriffssteuerung](role-based-access-control-troubleshooting.md)
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

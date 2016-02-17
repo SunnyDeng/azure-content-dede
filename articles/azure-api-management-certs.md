@@ -21,11 +21,11 @@
 
 Mit Verwaltungszertifikaten können Sie die Authentifizierung mit der in Azure bereitgestellten Dienstverwaltungs-API durchführen. Diese Zertifikate werden in vielen Programmen und Tools (z. B. Visual Studio oder Azure SDK) zum Automatisieren der Konfiguration und Bereitstellung verschiedener Azure-Dienste verwendet. Sie stehen nicht wirklich in Zusammenhang mit Clouddiensten.
 
->[AZURE.WARNING]Vorsicht ist geboten! Alle Personen, die die Authentifizierung mit diesen Zertifikaten durchführen, können das zugeordnete Abonnement verwalten.
+>[AZURE.WARNING] Vorsicht ist geboten! Alle Personen, die die Authentifizierung mit diesen Zertifikaten durchführen, können das zugeordnete Abonnement verwalten.
 
 Weitere Informationen zu Azure-Zertifikaten (einschließlich der Erstellung eines selbstsignierten Zertifikats) sind bei Bedarf [verfügbar](cloud-services/cloud-services-certs-create.md#what-are-management-certificates).
 
-Sie können auch [Azure Active Directory](http://azure.microsoft.com/documentation/services/active-directory/) für die Authentifizierung von Clientcode zur Automatisierung verwenden.
+Sie können auch [Azure Active Directory](https://azure.microsoft.com/documentation/services/active-directory/) für die Authentifizierung von Clientcode zur Automatisierung verwenden.
 
 ## Hochladen eines Verwaltungszertifikats
 
@@ -52,4 +52,4 @@ Sobald Sie ein Verwaltungszertifikat erstellt haben (CER-Datei nur mit dem öffe
 
 Da Sie jetzt einem Abonnement ein Verwaltungszertifikat zugeordnet haben, können Sie (nachdem Sie das entsprechende Zertifikat lokal installiert haben) programmgesteuert eine Verbindung mit der [Dienstverwaltungs-REST-API](https://msdn.microsoft.com/library/azure/mt420159.aspx) herstellen und die verschiedenen Azure-Ressourcen automatisieren, die auch diesem Abonnement zugeordnet sind.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

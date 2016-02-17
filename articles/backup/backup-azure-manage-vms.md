@@ -8,7 +8,14 @@
 	manager="shreeshd"
 	editor=""/>
 
-<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/29/2015" ms.author="aashishr"; "jimpark"; "trinadhk"/>
+<tags
+	ms.service="backup"
+	ms.workload="storage-backup-recovery"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="01/25/2016"
+	ms.author="trinadhk; jimpark; markgal;"/>
 
 # Verwalten und Überwachen der Sicherung von virtuellen Azure-Computern
 
@@ -51,7 +58,7 @@ So führen Sie die bedarfsabhängige Sicherung eines virtuellen Computers aus:
 
     ![Erstellen eines Sicherungsauftrag](./media/backup-azure-manage-vms/creating-job.png)
 
-    >[AZURE.NOTE]Zum Anzeigen der Richtlinie eines virtuellen Computers führen Sie auf der Seite **Geschützte Elemente** des virtuellen Computers eine Detailsuche durch und navigieren zur Registerkarte "Sicherungsrichtlinie".
+    >[AZURE.NOTE] Zum Anzeigen der Richtlinie eines virtuellen Computers führen Sie auf der Seite **Geschützte Elemente** des virtuellen Computers eine Detailsuche durch und navigieren zur Registerkarte "Sicherungsrichtlinie".
 
 3. Nachdem der Auftrag erstellt wurde, klicken Sie auf der Befehlsleiste auf die Schaltfläche **Auftrag anzeigen**, um den entsprechenden Auftrag auf der Seite "Aufträge" anzuzeigen.
 
@@ -65,7 +72,7 @@ Mit den folgenden Optionen können Sie künftige Sicherungen eines virtuellen Co
 - Sicherungsdaten beibehalten, die dem virtuellen Computer im Azure Backup-Tresor zugeordnet sind
 - Sicherungsdaten löschen, die dem virtuellen Computer zugeordnet sind Sicherungsdaten löschen, die dem virtuellen Computer zugeordnet sind
 
-Wenn Sie ausgewählt haben, dass die dem virtuellen Computer zugeordneten Sicherungsdaten aufbewahrt werden sollen, können Sie den virtuellen Computer anhand der Sicherungsdaten wiederherstellen. Klicken Sie [hier](http://azure.microsoft.com/pricing/details/backup/), um die Preisübersicht für virtuelle Computer anzuzeigen.
+Wenn Sie ausgewählt haben, dass die dem virtuellen Computer zugeordneten Sicherungsdaten aufbewahrt werden sollen, können Sie den virtuellen Computer anhand der Sicherungsdaten wiederherstellen. Klicken Sie [hier](https://azure.microsoft.com/pricing/details/backup/), um die Preisübersicht für virtuelle Computer anzuzeigen.
 
 So beenden Sie den Schutz für einen virtuellen Computer:
 
@@ -104,7 +111,7 @@ Nach erneuter Aktivierung des Schutzes ändert sich der Schutzstatus des virtuel
 
   ![VM erneut geschützt](./media/backup-azure-manage-vms/reprotected-status.png)
 
->[AZURE.NOTE]Wenn Sie den virtuellen Computer erneut schützen, können Sie eine andere Richtlinie als die Richtlinie auswählen, gemäß der der virtuelle Computer zuvor geschützt wurde.
+>[AZURE.NOTE] Wenn Sie den virtuellen Computer erneut schützen, können Sie eine andere Richtlinie als die Richtlinie auswählen, gemäß der der virtuelle Computer zuvor geschützt wurde.
 
 ## Aufheben der Registrierung virtueller Computer
 
@@ -153,7 +160,7 @@ Auf der Seite **Dashboard** können Sie Informationen zu virtuellen Computern in
 
 ![Dashboard](./media/backup-azure-manage-vms/dashboard-protectedvms.png)
 
->[AZURE.NOTE]Werte im Dashboard werden einmal alle 24 Stunden aktualisiert.
+>[AZURE.NOTE] Werte im Dashboard werden einmal alle 24 Stunden aktualisiert.
 
 ## Überwachen von Vorgängen
 Azure Backup bietet einen Überblick über die "Vorgangsprotokolle" der vom Kunden ausgelösten Sicherungsvorgänge, sodass leicht zu erkennen ist, welche Verwaltungsvorgänge für den Sicherungstresor ausgeführt wurden. Vorgangsprotokolle bieten eine hervorragende Grundlage für Nachbesprechungen und für die Überwachung von Sicherungsvorgängen.
@@ -249,4 +256,4 @@ Ereignisbasierte Warnungen unterliegen den folgenden Einschränkungen:
 
 - [Wiederherstellen virtueller Azure-Computer](backup-azure-restore-vms.md)
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0128_2016-->

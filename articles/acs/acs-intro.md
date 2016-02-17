@@ -28,7 +28,7 @@ ACS nutzt Docker, um sicherzustellen, dass Ihre Anwendungscontainer vollständig
 
 Der Azure Container Service ermöglicht Ihnen die Nutzung der Unternehmensfunktionen von Azure, während gleichzeitig die Anwendungsportierbarkeit erhalten bleibt, auch auf den Orchestrierungsebenen.
 
-Solange sich der Dienst in der Vorschauphase befindet, bitten wir diejenigen, die am Testen des Diensts interessiert sind, [sich selbst zu nominieren](http://aka.ms/acspreview). Nachdem der Vorschauzugriff bereitgestellt wurde, wird eine E-Mail mit weiteren Details gesendet, einschließlich Bereitstellungsvorlagen und Anweisungen für die ersten Schritte. Um den Dienst zu verwenden, benötigen Sie ein Azure-Abonnement. Wenn Sie noch keins haben, warum registrieren Sie sich nicht für eine [kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AA4C1C935)?
+Solange sich der Dienst in der Vorschauphase befindet, bitten wir diejenigen, die am Testen des Diensts interessiert sind, [sich selbst zu nominieren](http://aka.ms/acspreview). Nachdem der Vorschauzugriff bereitgestellt wurde, wird eine E-Mail mit weiteren Details gesendet, einschließlich Bereitstellungsvorlagen und Anweisungen für die ersten Schritte. Um den Dienst zu verwenden, benötigen Sie ein Azure-Abonnement. Wenn Sie noch keins haben, warum registrieren Sie sich nicht für eine [kostenlose Testversion](https://azure.microsoft.com/pricing/free-trial/)?
 
 Verwenden von Azure Container Service
 -----------------------------
@@ -104,16 +104,16 @@ Teilnehmern an der Vorschau wird eine vollständige Dokumentation und umfassende
 Erhalten von Zugriff
 --------------
 
-Solange sich der Dienst in der Vorschauphase befindet, bitten wir diejenigen, die am Testen des Diensts interessiert sind, [sich selbst zu nominieren](http://aka.ms/acspreview). Sie benötigen zuerst ein Azure-Abonnement. Wenn Sie noch keins haben, warum registrieren Sie sich nicht für eine [kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AA4C1C935)?
+Solange sich der Dienst in der Vorschauphase befindet, bitten wir diejenigen, die am Testen des Diensts interessiert sind, [sich selbst zu nominieren](http://aka.ms/acspreview). Sie benötigen zuerst ein Azure-Abonnement. Wenn Sie noch keins haben, warum registrieren Sie sich nicht für eine [kostenlose Testversion](https://azure.microsoft.com/pricing/free-trial/)?
 
 Videos
 ------
 AzureCon-Ankündigung:
 
-> [AZURE.VIDEO azurecon-2015-deep-dive-on-the-azure-container-service-with-mesos]
+> [AZURE.VIDEO azurecon-2015-deep-dive-on-the-azure-container-service-with-mesos]  
 
 Erste Schritte mit ACS:
 
 > [AZURE.VIDEO connect-2015-getting-started-developing-with-docker-and-azure-container-service]
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

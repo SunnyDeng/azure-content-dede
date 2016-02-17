@@ -1,7 +1,8 @@
 <properties 
 	pageTitle="Erstmaliges Anmelden mit Azure Multi-Factor Authentication" 
 	description="Auf dieser Seite werden die bei der erstmaligen Anmeldung erforderlichen Schritte beschrieben." 
-	services="multi-factor-authentication" 
+	services="multi-factor-authentication"
+	keywords="Verwenden von Azure Active Directory, Active Directory in der Cloud, Tutorial zu Active Directory" 
 	documentationCenter="" 
 	authors="billmath" 
 	manager="stevenp" 
@@ -13,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/19/2015" 
+	ms.date="01/25/2016" 
 	ms.author="billmath"/>
 # Einrichten von Azure Multi-Factor Authentication
 
@@ -36,4 +37,4 @@ Methode|Beschreibung
 
  
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0128_2016-->

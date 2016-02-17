@@ -40,7 +40,7 @@ Geben Sie auf der Registerkarte **Links** auf der linken Seite Links mit Informa
 ![Abbildung](media/marketplace-publishing-push-to-staging/pubportal-02.png)
 
 ### Beispielbilder (optional)
-> [AZURE.NOTE]Das Hinzufügen von Beispielbildern ist ein optionaler Schritt. Sie können auch nur die Marketinginhalte angeben, um die Voraussetzungen für die Überführung in die Stagingumgebung zu erfüllen.
+> [AZURE.NOTE] Das Hinzufügen von Beispielbildern ist ein optionaler Schritt. Sie können auch nur die Marketinginhalte angeben, um die Voraussetzungen für die Überführung in die Stagingumgebung zu erfüllen.
 
 Laden Sie auf der Registerkarte **Beispielbilder** im Menü auf der linken Seite ein neues Bild hoch, indem Sie auf **Neues Bild hochladen** klicken. Wenn Sie ein vorhandenes Bild austauschen möchten, klicken Sie auf **Bild ersetzen**.
 
@@ -52,7 +52,7 @@ Laden Sie auf der Registerkarte **Beispielbilder** im Menü auf der linken Seite
 ### Rechtliche Hinweise
 Geben Sie auf der Registerkarte **Rechtliche Hinweise** einen Link zu Ihren Richtlinien/Nutzungsbedingungen an. Geben Sie die Bedingungen im großen Feld **Nutzungsbedingungen** ein, oder kopieren Sie sie in das Feld.
 
-> [AZURE.IMPORTANT]Alle Felder müssen ausgefüllt sein, einschließlich der Abbildungen, um das Angebot in die Stagingumgebung zu überführen.
+> [AZURE.IMPORTANT] Alle Felder müssen ausgefüllt sein, einschließlich der Abbildungen, um das Angebot in die Stagingumgebung zu überführen.
 
 
 ## Schritt 2: Festlegen der Preise
@@ -67,7 +67,7 @@ Geben Sie auf der Registerkarte **Rechtliche Hinweise** einen Link zu Ihren Rich
 
 **Verfügbare Preismodelle nach Angebotstyp**
 
-> [AZURE.IMPORTANT]Die Verfügbarkeit bestimmten Preismodelle variiert je nach Art Angebotstyp. Siehe hierzu die nachstehende Tabelle.
+> [AZURE.IMPORTANT] Die Verfügbarkeit bestimmten Preismodelle variiert je nach Art Angebotstyp. Siehe hierzu die nachstehende Tabelle.
 
 | | Nur Basis | Nur Verbrauch | Basis und Verbrauch |
 |---|---|---|---|
@@ -76,14 +76,14 @@ Geben Sie auf der Registerkarte **Rechtliche Hinweise** einen Link zu Ihren Rich
 | Datendienst | Ja | Nein | Nein |
 
 ### 2\.1. Festlegen der VM-Preise
-> [AZURE.NOTE]BYOL (Bring Your Own License, Verwendung eigener Lizenzen) wird nur für virtuelle Computer unterstützt.
+> [AZURE.NOTE] BYOL (Bring Your Own License, Verwendung eigener Lizenzen) wird nur für virtuelle Computer unterstützt.
 
 1.	Auf der Registerkarte **Preise** sind alle unterstützten Märkte aufgeführt. Wählen Sie den entsprechenden Markt aus, um zu den Feldern für die Preisgestaltung zu gelangen.
 2.	Der bereitgestellte Link im Veröffentlichungsportal enthält Preisinformationen, mit denen Sie die Preise für Ihre eigene(n) SKU(s) festlegen können.
 3.	Wenn Ihre SKU BYOL unterstützt, aktivieren Sie das Kontrollkästchen für die Verfügbarkeit extern per BYOL lizenzierter SKUs.
 4.	Wenn Ihre SKU auf Stundenbasis abgerechnet wird, geben Sie die Preise für Ihre Software ein. SKUs ohne Preis stehen nicht zum Kauf oder zur Verwendung zur Verfügung.
 
-  >[AZURE.NOTE]Wenn Sie sowohl über BYOL-SKUs als auch über auf Stundenbasis abgerechnete SKUs verfügen, stellen Sie sicher, dass beide Optionen angegeben sind.
+  >[AZURE.NOTE] Wenn Sie sowohl über BYOL-SKUs als auch über auf Stundenbasis abgerechnete SKUs verfügen, stellen Sie sicher, dass beide Optionen angegeben sind.
 
 5.	Es wird ein Assistent zur Preisgestaltung geöffnet, mit dem Sie Ihre Preise festlegen können. Hier können Sie auch Preise für andere Länder angeben, falls Sie Käufe in anderen Märkten als dem von Ihnen angegebenen Markt zulassen möchten.
 6.	Einige Länder sind ISV-Abführungsländer. Um in einem ISV-Abführungsland Produkte verkaufen zu können, müssen Sie sowohl Steuern für Ihre SKUs berechnen und einziehen als auch Steuern abrechnen und an die Behörden in diesem Land zahlen können. Microsoft kann keine rechtliche oder steuerliche Beratung anbieten. Weitere Informationen finden Sie im Abschnitt zu Käuferländern des Angebots in der Einführung zu diesem Dokument.
@@ -115,7 +115,7 @@ Einige dieser Informationen haben Sie bereits im Schritt für die Zertifizierung
 Auf der Registerkarte **Kategorien** stehen verschiedene Möglichkeiten zur Auswahl. Wenn Ihr Angebot sich hier einordnen lässt, können Sie bis zu fünf Kategorien auswählen.
 
 ## Verwendung Ihrer Marketinginhalte
-Im Folgenden finden Sie eine ausführliche Übersicht darüber, wie die Marketinginhalte des Angebots auf der [Azure Marketplace-Website](http://azure.microsoft.com/marketplace) und im [Azure-Vorschauportal](https://ms.portal.azure.com) verwendet werden.
+Im Folgenden finden Sie eine ausführliche Übersicht darüber, wie die Marketinginhalte des Angebots auf der [Azure Marketplace-Website](https://azure.microsoft.com/marketplace/) und im [Azure-Vorschauportal](https://ms.portal.azure.com) verwendet werden.
 
 ### Azure Marketplace-Website
 ![Abbildung](media/marketplace-publishing-push-to-staging/acom-catalog-01.png)
@@ -130,7 +130,7 @@ Im Folgenden finden Sie eine ausführliche Übersicht darüber, wie die Marketin
 
 ![Abbildung](media/marketplace-publishing-push-to-staging/acom-listing-details-02.png)
 
-*Preisübersicht zu den Angeboten auf der Azure Marketplace-Website*
+* Preisübersicht zu den Angeboten auf der Azure Marketplace-Website*
 
 ### Azure-Vorschauportal
 ![Abbildung](media/marketplace-publishing-push-to-staging/portal-catalog-01.png)
@@ -144,7 +144,7 @@ Im Folgenden finden Sie eine ausführliche Übersicht darüber, wie die Marketin
 ## Nächste Schritte
 Nachdem nun Ihre Marketplace-Inhalte geladen wurden, geht es weiter mit dem Testen des Angebots in der Stagingumgebung. Da die Schritte jedoch je nach Angebotstyp unterschiedlich sind, müssen Sie den entsprechenden Angebotstyp in der Liste unten auswählen.
 
-||VM-Image |Entwicklerdienst | Datendienst | Lösungsvorlage |
+|VM-Image |Entwicklerdienst | Datendienst | Lösungsvorlage |
 |----|----|----|----|----|
 | **Schritt 3: Freigeben des Angebot in der Stagingphase** | [Testen des VM-Angebots in der Stagingphase](marketplace-publishing-vm-image-test-in-staging.md) | Testen des Entwicklerdienstangebots in der Stagingphase | [Testen des Datendienstangebots in der Stagingphase](marketplace-publishing-data-service-test-in-staging.md) | [Testen des Angebots einer Lösungsvorlage in der Stagingphase](marketplace-publishing-solution-template-test-in-staging.md) |
 
@@ -160,4 +160,4 @@ Nachdem nun Ihre Marketplace-Inhalte geladen wurden, geht es weiter mit dem Test
 [link-pubportal]: https://publish.windowsazure.com
 [link-push-to-production]: marketplace-publishing-push-to-production.md
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

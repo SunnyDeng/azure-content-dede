@@ -114,7 +114,7 @@ Sie können diese Werte jederzeit ändern, indem Sie einen oder beide Parameter 
 
 Selbst wenn Sie die Tolerierung einiger Fehler festlegen, werden durch den [API-Vorgang "Indexerstatus abrufen"](https://msdn.microsoft.com/library/azure/dn946884.aspx) dennoch Informationen zu fehlgeschlagenen Dokumenten zurückgeben.
 
-Damit sind wir am Ende angelangt. Wenn Sie Ideen oder Vorschläge für zukünftige Artikel haben, senden Sie uns einen Tweet mit dem Hashtag #AzureSearch, oder geben Sie Ihre Anregungen auf unserer [UserVoice-Seite](http://feedback.azure.com/forums/263029-azure-search) ein.
+Damit sind wir am Ende angelangt. Wenn Sie Ideen oder Vorschläge für zukünftige Artikel haben, senden Sie uns einen Tweet mit dem Hashtag #AzureSearch, oder geben Sie Ihre Anregungen auf unserer [UserVoice-Seite](https://feedback.azure.com/forums/263029-azure-search/) ein.
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

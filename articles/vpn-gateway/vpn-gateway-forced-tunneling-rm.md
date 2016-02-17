@@ -59,11 +59,9 @@ Im Beispiel verfügt das virtuelle Netzwerk "MultiTier-VNet" über drei Subnetze
 
 Vergewissern Sie sich vor Beginn der Konfiguration, dass Sie über Folgendes verfügen:
 
-- Ein Azure-Abonnement. Wenn Sie noch kein Abonnement haben, können Sie Ihre [MSDN-Abonnentenvorteile](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) aktivieren oder sich für eine [kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/) registrieren.
+- Ein Azure-Abonnement. Wenn Sie noch kein Abonnement haben, können Sie Ihre [MSDN-Abonnentenvorteile](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) aktivieren oder sich für eine [kostenlose Testversion](https://azure.microsoft.com/pricing/free-trial/) registrieren.
 
-- Azure PowerShell-Cmdlets (1.0 oder höher). Sie können diese Version aus dem Windows PowerShell-Abschnitt der [Downloadseite](http://azure.microsoft.com/downloads/) herunterladen und installieren. Diese Dokumentation wurde für PowerShell 1.0 oder höher geschrieben. Für diese Konfiguration erforderliche Cmdlets sind in früheren Versionen nicht vorhanden.
-
-- Wenn Sie mit der Verwendung des Azure-Ressourcen-Managers und mit PowerShell nicht vertraut sind, finden Sie [in diesem Artikel](../articles/powershell-azure-resource-manager.md) weitere Informationen.
+- Azure PowerShell-Cmdlets (1.0 oder höher). Die für diese Konfiguration benötigten Cmdlets sind in Versionen vor 1.0 nicht vorhanden. Sie können diese Version aus dem Windows PowerShell-Abschnitt der [Downloadseite](https://azure.microsoft.com/downloads/) herunterladen und installieren. Wenn Sie mit dem Installieren und Konfigurieren von PowerShell nicht vertraut sind, lesen Sie den Artikel [Installieren und Konfigurieren von Microsoft Azure PowerShell](../powershell-install-configure.md).
 
 ### Konfigurationsschritte
 
@@ -136,4 +134,4 @@ Vergewissern Sie sich vor Beginn der Konfiguration, dass Sie über Folgendes ver
 		Get-AzureRmVirtualNetworkGatewayConnection -Name "Connection1" -ResourceGroupName "ForcedTunneling"
 		
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0204_2016-->

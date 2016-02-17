@@ -1,6 +1,6 @@
 <properties 
    pageTitle="Übersicht über Event Hubs-Authentifizierung und -Sicherheitsmodell | Microsoft Azure"
-   description="Event Hubs – häufig gestellte Fragen"
+   description="Übersicht über Event Hubs-Authentifizierung und -Sicherheitsmodell."
    services="event-hubs"
    documentationCenter="na"
    authors="sethmanheim"
@@ -11,35 +11,35 @@
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
-   ms.workload="tbd"
-   ms.date="10/07/2015"
+   ms.workload="na"
+   ms.date="01/26/2016"
    ms.author="sethm" />
 
 # Event Hubs-Authentifizierung und -Sicherheitsmodell (Übersicht)
 
 Das Sicherheitsmodell von Event Hubs erfüllt die folgenden Voraussetzungen:
 
-- Nur Geräte, die über gültige Anmeldeinformationen verfügen, können Daten an einen Event Hub senden.
+- Nur Geräte, die gültige Anmeldeinformationen bereitstellen, können Daten an einen Event Hub senden.
 - Ein Gerät kann kein anderes Gerät imitieren.
-- Ein nicht autorisiertes Gerät kann vom Senden von Daten an einen Event Hub blockiert werden.
+- Ein nicht autorisiertes Gerät kann am Senden von Daten an einen Event Hub gehindert werden.
 
 ## Geräte-Authentifizierung
 
-Das Event Hubs-Sicherheitsmodell basiert auf einer Kombination aus [Shared Access Signature (SAS)](service-bus-shared-access-signature-authentication.md)-Token und Ereignisherausgeber. Ein Ereignisherausgeber definiert einen virtuellen Endpunkt für einen Event Hub. Der Herausgeber kann nur zum Senden von Nachrichten an einen Event Hub verwendet werden. Es ist nicht möglich, von einem Herausgeber Nachrichten zu empfangen.
+Das Event Hubs-Sicherheitsmodell basiert auf einer Kombination aus [Shared Access Signature (SAS)](../service-bus/service-bus-shared-access-signature-authentication.md)-Token und Ereignisherausgeber. Ein Ereignisherausgeber definiert einen virtuellen Endpunkt für einen Event Hub. Der Herausgeber kann nur zum Senden von Nachrichten an einen Event Hub verwendet werden. Es ist nicht möglich, von einem Herausgeber Nachrichten zu empfangen.
 
-In der Regel setzt ein Event Hub einen Herausgeber pro Gerät ein. Alle Nachrichten, die an einen der Herausgeber eines Event Hubs gesendet werden, werden in die Warteschlange innerhalb dieses Event Hubs eingereiht. Herausgeber ermöglichen die präzise Zugriffssteuerung und -drosselung.
+In der Regel setzt ein Event Hub einen Herausgeber pro Gerät ein. Alle Nachrichten, die an einen Herausgeber eines Event Hubs gesendet werden, werden in die Warteschlange innerhalb dieses Event Hubs eingereiht. Herausgeber ermöglichen die präzise Zugriffssteuerung und -drosselung.
 
 Jedes Gerät erhält ein eindeutiges Token, das auf dem Gerät hochgeladen wird. Token werden so erzeugt, sodass jedes eindeutige Token Zugriff auf einen anderen eindeutigen Herausgeber gewährt. Ein Gerät, das ein Token besitzt, kann nur an einen Herausgeber senden und zu keinem anderen. Wenn mehrere Geräte das gleiche Token gemeinsam nutzen, teilt jedes dieser Geräte einen Herausgeber.
 
-Obwohl dies nicht empfohlen wird, ist es möglich, Geräte mit Token auszustatten, die direkten Zugriff auf einen Event Hub gewähren. Alle Geräte, die solche Token enthalten, können Nachrichten direkt an den Event Hub senden. Solche Geräte unterliegen keiner Drosselung. Darüber hinaus kann das Gerät nicht davon gesperrt werden, an den betreffenden Event Hub zu senden.
+Es ist möglich, Geräte mit Token auszustatten, die direkten Zugriff auf einen Event Hub gewähren. Dies wird jedoch nicht empfohlen. Alle Geräte, die ein solches Token enthalten, können Nachrichten direkt an den Event Hub senden. Solche Geräte unterliegen keiner Drosselung. Darüber hinaus kann das Gerät nicht auf eine Blacklist gesetzt und so daran gehindert werden, Nachrichten an den betreffenden Event Hub zu senden.
 
 Alle Token werden mit einem SAS-Schlüssel signiert. Alle Token werden in der Regel mit demselben Schlüssel signiert. Geräte kennen den Schlüssel nicht. Dadurch wird verhindert, dass Geräte Token erzeugen.
 
 ### Erstellen des SAS-Schlüssels
 
-Wenn Sie einen Namespace erstellen, generiert Service Bus einen 256-Bit-SAS-Schlüssel mit dem Namen **RootManageSharedAccessKey**. Dieser Schlüssel erteilt die Rechte zum Senden, Überwachen und Verwalten für den Namespace. Sie können zusätzliche Schlüssel erstellen. Es wird empfohlen, dass Sie einen Schlüssel erzeugen, der Berechtigungen zum Senden an den bestimmten Event Hub erteilt. Für den Rest dieses Themas wird davon ausgegangen, dass Sie diesen Schlüssel `EventHubSendKey` benannt haben.
+Wenn Sie einen Namespace erstellen, generiert Service Bus einen 256-Bit-SAS-Schlüssel mit dem Namen **RootManageSharedAccessKey**. Dieser Schlüssel erteilt die Rechte zum Senden, Überwachen und Verwalten für den Namespace. Sie können zusätzliche Schlüssel erstellen. Es empfiehlt sich, einen Schlüssel zu erzeugen, der Berechtigungen zum Senden an den bestimmten Event Hub erteilt. Für den Rest dieses Themas wird davon ausgegangen, dass Sie diesen Schlüssel `EventHubSendKey` benannt haben.
 
-Das folgende Beispiel erstellt einen reinen Sende-Schlüssel beim Erstellen des Event Hubs:
+Das folgende Beispiel erzeugt beim Erstellen des Event Hubs einen Schlüssel, der nur zum Senden verwendet werden kann:
 
 ```
 // Create namespace manager.
@@ -50,7 +50,7 @@ Uri uri = ServiceBusEnvironment.CreateServiceUri("sb", serviceNamespace, string.
 TokenProvider td = TokenProvider.CreateSharedAccessSignatureTokenProvider(namespaceManageKeyName, namespaceManageKey);
 NamespaceManager nm = new NamespaceManager(namespaceUri, namespaceManageTokenProvider);
 
-// Create Event Hub with a SAS rule that allows sending to that Event Hub.
+// Create Event hub with a SAS rule that allows sending to that Event hub
 EventHubDescription ed = new EventHubDescription("MY_EVENT_HUB") { PartitionCount = 32 };
 string eventHubSendKeyName = "EventHubSendKey";
 string eventHubSendKey = SharedAccessAuthorizationRule.GenerateRandomKey();
@@ -87,7 +87,7 @@ In der Regel müssen die Token eine Lebensdauer besitzen, der der Lebensdauer de
 
 Sobald die Token erstellt wurden, wird jedes Gerät mit eigenem eindeutigen Token bereitgestellt.
 
-Wenn das Gerät Daten an einen Event Hub sendet, markiert das Gerät sein Token mit der Sendeanforderung. Um Lauschangriffe und Diebstahl von Token von einem Angreifer zu verhindern, muss die Kommunikation zwischen dem Gerät und dem Event Hub über einen verschlüsselten Kanal erfolgen.
+Wenn das Gerät Daten an einen Event Hub sendet, markiert das Gerät sein Token mit der Sendeanforderung. Um Lauschangriffe und Diebstahl von Token durch einen Angreifer zu verhindern, muss die Kommunikation zwischen dem Gerät und dem Event Hub über einen verschlüsselten Kanal erfolgen.
 
 ### Geräte blockieren
 
@@ -95,7 +95,7 @@ Wenn ein Token von einem Angreifer gestohlen wird, kann der Angreifer das Gerät
 
 ## Authentifizierung von Back-End-Anwendungen
 
-Um Back-End-Anwendungen zu authentifizieren, die von Geräten generierte Daten nutzen, setzen Event Hubs ein Sicherheitsmodell ähnlich dem Modell ein, das für Service Bus-Themen verwendet wird. Eine Event Hubs-Verbrauchergruppe entspricht einem Abonnement für ein Service Bus-Thema. Ein Client kann eine Verbrauchergruppe erstellen, wenn die Anforderung zum Erstellen der Verbrauchergruppe von einem Token begleitet wird, der Berechtigungen zum Verwalten des Event Hubs gewährt, oder für den Namespace, zu dem das Event Hub gehört. Ein Client kann Daten aus einer Verbrauchergruppe nutzen, wenn die Empfangsanforderung von einem Token begleitet wird, die der Gruppe, dem Event Hub oder dem Namespace, zu dem das Event Hub gehört, Empfangsrechte erteilt.
+Um Back-End-Anwendungen zu authentifizieren, die von Geräten generierte Daten nutzen, setzen Event Hubs ein Sicherheitsmodell ähnlich dem Modell ein, das für Service Bus-Themen verwendet wird. Eine Event Hubs-Verbrauchergruppe entspricht einem Abonnement für ein Service Bus-Thema. Ein Client kann eine Consumergruppe erstellen, wenn die Anforderung zum Erstellen der Consumergruppe von einem Token begleitet wird, das Verwaltungsberechtigungen für den Event Hub oder für den Namespace gewährt, zu dem der Event Hub gehört. Ein Client kann Daten aus einer Consumergruppe nutzen, wenn die Empfangsanforderung von einem Token begleitet wird, das dieser Gruppe, dem Event Hub oder dem Namespace, zu dem der Event Hub gehört, Empfangsrechte erteilt.
 
 Die aktuelle Version des Service Bus unterstützt nicht die SAS-Regeln für einzelne Abonnements. Dasselbe gilt für Event Hubs-Verbrauchergruppen. SAS-Support wird in Zukunft für beide Funktionen hinzugefügt werden.
 
@@ -154,4 +154,4 @@ Weitere Informationen zu Event Hubs finden Sie unter den folgenden Themen:
 [Messaginglösung mit Warteschlange]: ../service-bus/service-bus-dotnet-multi-tier-app-using-service-bus-queues.md
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0204_2016-->

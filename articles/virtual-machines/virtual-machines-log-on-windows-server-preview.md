@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/15/2015"
+	ms.date="01/21/2016"
 	ms.author="cynthn"/>
 
 # Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird 
@@ -27,15 +27,11 @@ Hierfür verwenden Sie die Schaltfläche **Verbinden** im Azure-Portal zum Start
 
 1. Melden Sie sich am [Azure-Portal](https://portal.azure.com/) an, falls Sie dies noch nicht getan haben.
 
-2.	Klicken Sie im Menü "Hub" auf **Durchsuchen**.
+2.	Klicken Sie im Hub-Menü auf **Virtuelle Computer**.
 
-3.	Klicken Sie auf das Blatt "Suchen", führen Sie einen Bildlauf nach unten durch, und klicken Sie auf **Virtuelle Computer**.
+3.	Wählen Sie den gewünschten virtuellen Computer aus der Liste aus.
 
-	![Suchen nach virtuellen Computern](./media/virtual-machines-log-on-windows-server-preview/search-blade-preview-portal.png)
-
-4.	Wählen Sie den gewünschten virtuellen Computer aus der Liste aus.
-
-5. Klicken Sie auf dem Blatt für den virtuellen Computer auf **Verbinden**.
+4. Klicken Sie auf dem Blatt für den virtuellen Computer auf **Verbinden**.
 
 	![Herstellen einer Verbindung mit dem virtuellen Computer](./media/virtual-machines-log-on-windows-server-preview/preview-portal-connect.png)
 
@@ -47,4 +43,4 @@ Hierfür verwenden Sie die Schaltfläche **Verbinden** im Azure-Portal zum Start
 
 Wenn die Tipps zum Anmelden nicht hilfreich oder nicht das Gesuchte sind, finden Sie entsprechende Informationen unter [Problembehandlung bei Remotedesktopverbindungen mit einem Windows-basierten virtuellen Azure-Computer](virtual-machines-troubleshoot-remote-desktop-connections.md). Dieser Artikel führt Sie durch die Diagnose und Behebung von häufigen Problemen.
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

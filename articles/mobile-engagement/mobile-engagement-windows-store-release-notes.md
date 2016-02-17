@@ -18,6 +18,13 @@
 
 #Windows Universal Apps SDK-Versionshinweise
 
+##3\.3.0 (22.01.2016)
+
+-   Absturz bei Formatierung auf UWP-Apps, die im Releasemodus ausgeführt wird, behoben.
+-   1px-Rand auf Benachrichtigungen für Universal 8.1-Apps behoben.
+-   ms-appx- und ms-appdata-Schemas in Aktions-URLs verfügbar.
+-   Verbesserungen der Stabilität.
+
 ##3\.2.0 (20.11.2015)
 
 -   Unterstützung für universelle Windows 10-Plattform-Anwendungen hinzugefügt.
@@ -49,4 +56,4 @@
 
  
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0128_2016-->

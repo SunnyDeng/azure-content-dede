@@ -20,6 +20,9 @@
 
 Dieser Artikel beschreibt die Verwendung der Kopieraktivität in einer Azure Data Factory, um Daten aus einem anderen Datenspeicher in Azure DocumentDB und aus Azure DocumentDB in einen anderen Datenspeicher zu verschieben. Dieser Artikel baut auf dem Artikel [Datenverschiebungsaktivitäten](data-factory-data-movement-activities.md) auf, der eine allgemeine Übersicht zur Datenverschiebung mit Kopieraktivität und unterstützten Datenspeicherkombinationen bietet.
 
+In den folgenden Beispielen wird veranschaulicht, wie Sie Daten in und aus Azure DocumentDB und Azure-BLOB-Speicher kopieren. Daten können jedoch mithilfe der Kopieraktivität in Azure Data Factory **direkt** aus beliebigen Quellen in die [hier](data-factory-data-movement-activities.md#supported-data-stores) aufgeführten Senken kopiert werden.
+
+
 ## Beispiel: Kopieren von Daten aus DocumentDB in ein Azure-Blob
 
 Das nachstehende Beispiel zeigt Folgendes:
@@ -408,7 +411,7 @@ Wenn bei der Kopieraktivität "source" den Typ **DocumentDbCollectionSource** ha
 
 	**Antwort:** Wenn Datensätze über ein ID-Feld verfügen und beim Kopiervorgang versucht wird, einen Datensatz mit der gleichen ID einzufügen, löst der Kopiervorgang einen Fehler aus.
  
-3. **Frage:** Unterstützt Data Factory die [bereichs- oder hashbasierte Datenpartitionierung](https://azure.microsoft.com/documentation/articles/documentdb-partition-data/)?
+3. **Frage:** Unterstützt Data Factory die [bereichs- oder hashbasierte Datenpartitionierung]( https://azure.microsoft.com/documentation/articles/documentdb-partition-data/)?
 
 	**Antwort:** Nein. 
 4. **Frage**: Können mehrere DocumentDB-Auflistungen für eine Tabelle angegeben werden?
@@ -416,4 +419,4 @@ Wenn bei der Kopieraktivität "source" den Typ **DocumentDbCollectionSource** ha
 	**Antwort:** Nein. Zurzeit kann nur eine Auflistung angegeben werden.
      
 
-<!---HONumber=Oct15_HO4-->
+<!----HONumber=AcomDC_0204_2016-->

@@ -23,7 +23,7 @@ In diesem Artikel wird die Registerkarte **REACH** im Portal **Mobile Engagement
 
 Der Abschnitt "Reach" der Benutzeroberfläche ist das Verwaltungstool für Pushkampagnen, mit dem Sie Kampagnen und Merkmale von Pushbenachrichtigungen erstellen, bearbeiten, aktivieren, beenden und überwachen sowie entsprechende Statistiken abrufen können. Der Zugriff darauf ist auch über die Reach-API (und einige Elemente der untergeordneten Push-API) möglich. Vor der Verwendung von Reach-Kampagnen müssen Sie unabhängig davon, ob Sie die APIs oder Benutzeroberfläche verwenden, Azure Mobile Engagement und Reach für jede Plattform mit dem SDK in Ihre Anwendung integrieren.
 
->[AZURE.NOTE]Viele Abschnitte der Benutzeroberfläche des **Mobile Engagement**-Portals enthalten die Schaltfläche **HILFE ANZEIGEN**. Drücken Sie diese Schaltfläche, um weitere Kontextinformationen zu einem bestimmten Bereich zu erhalten.
+>[AZURE.NOTE] Viele Abschnitte der Benutzeroberfläche des **Mobile Engagement**-Portals enthalten die Schaltfläche **HILFE ANZEIGEN**. Drücken Sie diese Schaltfläche, um weitere Kontextinformationen zu einem bestimmten Bereich zu erhalten.
 
 ## Vier Arten von Pushbenachrichtigungen
 1.    Ankündigungen – Ermöglicht Ihnen das Senden von Werbebotschaften an Benutzer, über die diese zu einer anderen Stelle in Ihrer App umgeleitet oder zu einer Webseite oder einem Store außerhalb Ihrer App geleitet werden. 
@@ -49,10 +49,11 @@ Klicken Sie auf „**Statistiken**“, um die Details einer Reichweitenkampagne 
 	1. Wenn der Benutzer die App auf dem Gerät deinstalliert hat und dies dem PNS zum Zeitpunkt, zu dem wir den Push an den PNS senden, nicht bekannt ist, wird die Meldung gelöscht.
 	2. Wenn die App auf dem Gerät installiert ist, die Geräte selbst aber für längere Zeit offline waren, kann die Meldung nicht vom PNS an das Gerät übermittelt werden. 
 	3. Wenn die Meldung an das Gerät übermittelt wird, das Mobile Engagement SDK in der Anwendung den Inhalt der Meldung jedoch nicht erkennt, wird die Meldung gelöscht. Dies kann passieren, wenn die Anpassung der Benachrichtigung in der App eine Ausnahme generiert, die wir im SDK erfassen und die Meldung somit löschen. Dies kann auch auftreten, wenn die App auf dem Gerät eine Version des Mobile Engagement SDK verwendet, die die von der Plattform gesendete neuere Version der Pushbenachrichtigung nicht verstehen kann. Dies tritt jedoch nur auf, wenn die App aktualisiert wurde, nachdem die Benachrichtigung von der Serviceplattform gesendet wurde. Die Registerkarte „**Erweitert**” zeigt an, wie viele Nachrichten gelöscht wurden. 
+	4. Auf iOS-Geräten werden Nachrichten manchmal nicht zugestellt, wenn der Akkuladestand des Geräts niedrig ist oder wenn die App beim Verarbeiten von Remotebenachrichtigungen eine erhebliche Menge an Energie verbraucht. Dies ist eine Einschränkung der iOS-Geräte.   
 
-3.	**Angezeigt** - Gibt die Anzahl der Meldungen an, die dem App-Benutzer erfolgreich auf dem Gerät angezeigt wurden - entweder in Form einer System-/Out-of-App-Benachrichtigung im Notification Center oder einer In-App-Benachrichtigung in der mobilen App. Die Registerkarte „**Erweitert**” zeigt an, wie viele der Benachrichtigungen System- und wie viele In-App-Benachrichtigungen waren.
+3.	**Angezeigt**: Gibt die Anzahl der Meldungen an, die dem App-Benutzer erfolgreich auf dem Gerät angezeigt wurden – entweder in Form einer System-/Out-of-App-Benachrichtigung im Notification Center oder einer In-App-Benachrichtigung in der mobilen App. Die Registerkarte **Erweitert** zeigt an, wie viele der Benachrichtigungen System- und wie viele In-App-Benachrichtigungen waren.
 
-4.	**Benutzerinteraktionen** - Gibt die Anzahl der Meldungen an, mit denen der App-Benutzer interagiert hat, und enthält die Meldungen, die entweder geöffnet oder geschlossen wurden.
+4.	**Benutzerinteraktionen**: Gibt die Anzahl der Meldungen an, mit denen der App-Benutzer interagiert hat, und enthält die Meldungen, die entweder geschlossen wurden oder für die eine Aktion ausgeführt wurde.
 
 	- *Der App-Benutzer kann eine Benachrichtigung auf eine der folgenden Weisen öffnen:*
 			
@@ -66,9 +67,9 @@ Klicken Sie auf „**Statistiken**“, um die Details einer Reichweitenkampagne 
 		2. Durch Wischen mit dem Finger oder Löschen der Benachrichtigung. 
 		3. In-App-Benachrichtigungen mit Text-/Webinhalten und Umfragen werden dem App-Benutzer in der Regel in einem zweistufigen Prozess angezeigt. Zunächst wird dem Benutzer eine Benachrichtigung angezeigt und sobald er darauf klickt, sieht er die weiteren Text-/Web-/Umfrageninhalte. Der App-Benutzer kann eine Benachrichtigung während einem dieser Schritte schließen und dies wird in den Details in der Ansicht „Erweitert“ erfasst. 
 
-5.	**Geöffnet** - Gibt die Anzahl der Meldungen an, die explizit vom App-Benutzer geöffnet wurden. Dies ist die interessanteste Zahl, da sie angibt, wie viele App-Benutzer an der Meldung, die Sie in der Benachrichtigung gesendet haben, interessiert waren.
+5.	**Aktion durchgeführt**: Gibt die Anzahl der Meldungen an, für die der App-Benutzer explizit eine Aktion durchgeführt hat. Dies ist die interessanteste Zahl, da sie angibt, wie viele App-Benutzer an der Meldung, die Sie in der Benachrichtigung gesendet haben, interessiert waren.
  
-> [AZURE.NOTE]Bei IOS- und Windows-Plattformen ist es möglich, dass die Out-of-App- und die In-App-Benachrichtigungen beide gleichzeitig angezeigt werden, wenn der Benutzer die App geöffnet hat und es sich bei der Kampagne um eine „Jederzeit“-Kampagne handelte. Dies könnte zur Folge haben, dass die Anzahl bei „Angezeigt“ höher ist als bei „Übermittelt“. Wenn der Benutzer mit der Benachrichtigung interagiert oder sie öffnet, könnte sogar die Anzahl bei „Benutzerinteraktionen/Geöffnet“ höher sein als bei „Übermittelt“.
+> [AZURE.NOTE] Bei IOS- und Windows-Plattformen ist es möglich, dass die Out-of-App- und die In-App-Benachrichtigungen beide gleichzeitig angezeigt werden, wenn der Benutzer die App geöffnet hat und es sich bei der Kampagne um eine „Jederzeit“-Kampagne handelte. Dies könnte zur Folge haben, dass die Anzahl bei „Angezeigt“ höher ist als bei „Übermittelt“. Wenn der Benutzer mit der Benachrichtigung interagiert oder sie öffnet, könnte sogar die Anzahl bei „Benutzerinteraktionen/Geöffnet“ höher sein als bei „Übermittelt“.
 
 
 ![Reach2][19]
@@ -170,4 +171,4 @@ Klicken Sie auf „**Statistiken**“, um die Details einer Reichweitenkampagne 
 [Link 29]: mobile-engagement-user-interface-reach-content.md
  
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0204_2016-->

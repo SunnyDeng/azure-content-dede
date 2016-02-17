@@ -1,6 +1,6 @@
-    <properties 
-	pageTitle="What is the DevTest Lab service? | Microsoft Azure"
-	description="Learn how DevTest Lab can make it easy to create, manage, and monitor Azure virtual machines"
+<properties 
+	pageTitle="Worum handelt es sich beim DevTest Lab-Dienst? | Microsoft Azure"
+	description="Erfahren Sie, wie DevTest Lab das Erstellen, Verwalten und Überwachen von virtuellen Azure-Maschinen erleichtern kann."
 	services="devtest-lab,virtual-machines"
 	documentationCenter="na"
 	authors="tomarcher"
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/01/2015"
+	ms.date="01/30/2016"
 	ms.author="tarcher"/>
 
 #Was ist DevTest Lab?
@@ -52,7 +52,7 @@ Die folgende Liste enthält wichtige DevTest Lab-Konzepte und Definitionen:
 - Aktionen, die auf dem virtuellen Computer ausgeführt werden sollen, z. B. das Klonen eines Repositorys.
 - Anwendungen, die Sie testen möchten.
 
-Artefakte sind JSON-Dateien auf Grundlage des Azure-Ressourcen-Managers (ARM), die Anweisungen zum Ausführen der Bereitstellung und Übernehmen der Konfiguration enthalten. Weitere Informationen zu ARM finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](resource-group-overview.md).
+Artefakte sind JSON-Dateien auf Grundlage des Azure-Ressourcen-Managers (ARM), die Anweisungen zum Ausführen der Bereitstellung und Übernehmen der Konfiguration enthalten. Weitere Informationen zu ARM finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](/resource-group-overview.md).
 
 **Artefaktrepositorys** sind Git-Repositorys, in denen Artefakte eingecheckt werden. Die gleichen Artefaktrepositorys können mehreren Labs in Ihrer Organisation hinzugefügt werden, sodass sie wiederverwendet und geteilt werden können.
 
@@ -66,4 +66,4 @@ Artefakte sind JSON-Dateien auf Grundlage des Azure-Ressourcen-Managers (ARM), d
 
 Befolgen Sie zum Einstieg in DevTest Lab zunächst das schrittweise Lernprogramm [Erstellen von Azure DevTest Labs](devtest-lab-create-lab.md).
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0204_2016-->

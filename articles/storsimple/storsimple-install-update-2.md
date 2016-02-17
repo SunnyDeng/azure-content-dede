@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="01/12/2016"
+   ms.date="01/27/2016"
    ms.author="alkohli" />
 
 # Installieren von Update 2 auf Ihrem StorSimple-Gerät
@@ -81,16 +81,16 @@ Die Softwareversionen, die mit dem Hotfixverfahren aktualisiert werden können, 
 
 Die Hotfixes, die mit diesem Verfahren angewendet werden, sind unten in der Tabelle angegeben:
 
-| Reihenfolge | KB | Name | Paketbeschreibung | Updatetyp |
-|--------|-----------|-------------------------|-----------------------------|-------------|
-| 1 | KB3121901 | Softwareupdate | HcsMdsSfotwareUpdate.exe <br></br> CisMdsAgentUpdateBundle.exe | Normal |
-| 2 | KB3121900 | LSI-Treiber | HcsLsiUpdate.exe | Normal |
-| 3 | KB3080728 | Storport-Fix | Storport-KB3080728-x64.msu | Normal |
-| 4 | KB3090322 | Spaceport-Fix | Spaceport-KB3090322-x64.msu | Normal |
-| 5 | KB3121899 | Datenträgerfirmware | DiskFirmwarePackage.exe | Wartung |
+| Reihenfolge | KB | Name | Updatetyp |
+|--------|-----------|-------------------------|------------- |
+| 1 | KB3121901 | Softwareupdate | Normal |
+| 2 | KB3121900 | LSI-Treiber | Normal |
+| 3 | KB3080728 | Storport-Fix | Normal |
+| 4 | KB3090322 | Spaceport-Fix | Normal |
+| 5 | KB3121899 | Datenträgerfirmware | Wartung |
 
 
-> [AZURE.IMPORTANT]
+> [AZURE.IMPORTANT] 
 > 
 > - Wenn auf dem Gerät die Releaseversion (GA) ausgeführt wird, wenden Sie sich an den [Microsoft Support](storsimple-contact-microsoft-support.md), um Hilfe bei diesem Update zu erhalten.
 > - Dieses Verfahren muss nur einmal ausgeführt werden, um Update 2 anzuwenden. Über das klassischen Azure-Portal können Sie nachfolgende Updates installieren.
@@ -125,6 +125,6 @@ Wenn Sie sichergestellt haben, dass die Verbindung vorhanden ist, und dieses Pro
 
 ## Nächste Schritte
 
-Weitere Informationen finden Sie unter [Versionshinweise zu Update 2](storsimple-update2-release-notes.md).
+Weitere Informationen finden Sie unter [Update 2-Version](storsimple-update2-release-notes.md).
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

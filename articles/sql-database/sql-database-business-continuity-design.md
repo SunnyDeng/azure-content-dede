@@ -33,7 +33,7 @@ Sie sollten den integrierten Schutz verwenden, wenn Ihre Anwendung die folgenden
 2. Die Häufigkeit von Datenänderungen ist niedrig (z. B. Transaktionen pro Stunde). Ein RPO-Wert von einer Stunde führt nicht zu erheblichen Datenverlusten.
 3. Bei der Anwendung muss sehr auf die Kosten geachtet werden, sodass keine zusätzlichen Kosten für die Georeplikation möglich sind. 
 
-> [AZURE.NOTE]Bei der geografischen Wiederherstellung wird keine Rechenkapazität in bestimmten Regionen im Voraus reserviert, um aktive Datenbanken nach einem Ausfall aus einer Sicherungskopie wiederherzustellen. Der Dienst verwaltet die Arbeitsauslastung im Zusammenhang mit "geo-restore"-Anforderungen so, dass die Auswirkungen auf vorhandene Datenbanken in dieser Region minimiert werden und deren Kapazitätsanforderungen Priorität haben. Daher hängt die Wiederherstellungszeit der Datenbank davon ab, wie viele andere Datenbanken in derselben Region zur gleichen Zeit wiederhergestellt werden.
+> [AZURE.NOTE] Bei der geografischen Wiederherstellung wird keine Rechenkapazität in bestimmten Regionen im Voraus reserviert, um aktive Datenbanken nach einem Ausfall aus einer Sicherungskopie wiederherzustellen. Der Dienst verwaltet die Arbeitsauslastung im Zusammenhang mit "geo-restore"-Anforderungen so, dass die Auswirkungen auf vorhandene Datenbanken in dieser Region minimiert werden und deren Kapazitätsanforderungen Priorität haben. Daher hängt die Wiederherstellungszeit der Datenbank davon ab, wie viele andere Datenbanken in derselben Region zur gleichen Zeit wiederhergestellt werden.
 
 ##Gründe für das Verwenden der Georeplikation
 
@@ -45,23 +45,23 @@ Sie sollten die Georeplikation verwenden, wenn Ihre Anwendung die folgenden Krit
 2. Die Häufigkeit von Datenänderungen ist hoch (z. B. Transaktionen pro Minute oder Sekunde). Der für den Standardschutz geltende RPO-Wert von einer Stunde führt wahrscheinlich zu nicht akzeptablen Datenverlusten.
 3. Die Kosten für die Verwendung der Georeplikation sind deutlich niedriger als die potenziellen finanziellen Haftungsschäden und die damit einhergehenden Geschäftsverluste.
 
-> [AZURE.NOTE]Wenn die Anwendung Datenbanken der Basic-Ebene verwendet, wird die Georeplikation nicht unterstützt.
+> [AZURE.NOTE] Wenn die Anwendung Datenbanken der Basic-Ebene verwendet, wird die Georeplikation nicht unterstützt.
 
 ##Auswählen von standardmäßiger oder aktiver Georeplikation
 
 Für Datenbanken der Standard-Ebene kann keine aktive Georeplikation verwendet werden. Wenn die Anwendung also die Datenbanken der Standardebene verwendet und die oben genannten Kriterien erfüllt, sollten Sie die standardmäßige Georeplikation aktivieren. Für Premium-Datenbanken können hingegen beide Optionen ausgewählt werden. Die standardmäßige Georeplikation wurde als einfachere und kostengünstigere Lösung für die Notfallwiederherstellung entworfen und ist damit besonders für Anwendungen geeignet, die nur vor ungeplanten Ereignissen wie Ausfällen geschützt werden sollen. Bei der standardmäßigen Georeplikation können Sie nur die gekoppelte Region für die Notfallwiederherstellung zur Wiederherstellung verwenden und für jede primäre Datenbank lediglich eine sekundäre Datenbank erstellen. Für das Anwendungsupgradeszenario kann eine weitere sekundäre Datenbank erforderlich sein. Wenn dieses Szenario also für die Anwendung wichtig ist, sollten Sie stattdessen die aktive Georeplikation aktivieren. Weitere Informationen finden Sie unter [Aktualisieren von Anwendungen ohne Ausfallzeit](sql-database-business-continuity-application-upgrade.md).
 
-> [AZURE.NOTE]Die aktive Georeplikation unterstützt auch schreibgeschützten Zugriff auf die sekundäre Datenbank, wodurch zusätzliche Kapazität für die schreibgeschützten Arbeitsauslastungen bereitgestellt wird.
+> [AZURE.NOTE] Die aktive Georeplikation unterstützt auch schreibgeschützten Zugriff auf die sekundäre Datenbank, wodurch zusätzliche Kapazität für die schreibgeschützten Arbeitsauslastungen bereitgestellt wird.
 
 ##Aktivieren der Georeplikation
 
 Sie können die Georeplikation im klassischen Azure-Portal oder durch Aufrufen des entsprechenden REST-API- oder PowerShell-Befehls aktivieren.
 
-###Klassisches Azure-Portal
+###Azure-Portal
 
 [AZURE.VIDEO sql-database-enable-geo-replication-in-azure-portal]
 
-1. Melden Sie sich beim [klassischen Azure-Portal](https://portal.Azure.com) an.
+1. Melden Sie sich beim [Azure-Portal](https://portal.Azure.com) an.
 2. Wählen Sie auf der linken Bildschirmseite **DURCHSUCHEN** und dann **SQL-Datenbanken** aus.
 3. Navigieren Sie zu Ihrem Datenbank-Blatt, wählen Sie die **Geo Replication map**, und klicken Sie auf **Configure Geo-Replication**.
 4. Navigieren Sie zum Blatt "Georeplikation". Wählen Sie die Zielregion aus. 
@@ -69,7 +69,7 @@ Sie können die Georeplikation im klassischen Azure-Portal oder durch Aufrufen d
 6. Wählen Sie den sekundären Typ (*Lesbar* oder *Nicht lesbar*)
 7. Klicken Sie auf **Erstellen**, um die Konfiguration abzuschließen.
 
-> [AZURE.NOTE]Die gekoppelte Region für die Notfallwiederherstellung wird auf dem Blatt "Georeplikation" als *empfohlen* gekennzeichnet. Wenn Sie eine Datenbank der Premium-Ebene verwenden, können Sie eine andere Region auswählen. Bei Verwendung einer Standard-Datenbank können Sie diese nicht ändern. Bei Premium-Datenbanken kann der sekundäre Typ ausgewählt werden (*Lesbar* oder *Nicht lesbar*). Bei Standard-Datenbanken kann nur ein *nicht lesbares*, sekundäres Replikat ausgewählt werden.
+> [AZURE.NOTE] Die gekoppelte Region für die Notfallwiederherstellung wird auf dem Blatt "Georeplikation" als *empfohlen* gekennzeichnet. Wenn Sie eine Datenbank der Premium-Ebene verwenden, können Sie eine andere Region auswählen. Bei Verwendung einer Standard-Datenbank können Sie diese nicht ändern. Bei Premium-Datenbanken kann der sekundäre Typ ausgewählt werden (*Lesbar* oder *Nicht lesbar*). Bei Standard-Datenbanken kann nur ein *nicht lesbares*, sekundäres Replikat ausgewählt werden.
 
 
 ###PowerShell
@@ -98,4 +98,4 @@ Diese API ist asynchron. Verwenden Sie nach der Rückgabe die [Get Replication L
 
 Sie sollten beim Entwerfen der Anwendung für die Geschäftskontinuität verschiedene Konfigurationsoptionen berücksichtigen. Die Auswahl hängt von der Bereitstellungstopologie für die Anwendung ab und davon, welche Teile der Anwendungen am anfälligsten für einen Ausfall sind. Anleitungen finden Sie unter [Entwerfen von Cloudlösungen für die Notfallwiederherstellung mithilfe der Georeplikation](sql-database-designing-cloud-solutions-for-disaster-recovery.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0204_2016-->

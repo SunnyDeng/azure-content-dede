@@ -14,7 +14,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="12/04/2015" 
+	ms.date="02/04/2016" 
 	ms.author="jeffstok"/>
 
 # Debuggen von Stream Analytics-Aufträgen mithilfe von Dienst- und Vorgangsprotokollen
@@ -83,7 +83,7 @@ Wählen Sie einen der Fehler aus, und klicken Sie auf **Details**, um weitere In
 
   ![Vorgangsdetails](./media/stream-analytics-operation-logs/05-stream-analytics-operation-logs.png)
 
-Wenn Sie den [Support](http://azure.microsoft.com/support/options/) kontaktieren oder dem Team über das [MSDN-Forum](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=AzureStreamAnalytics) Informationen bereitstellen möchten, beachten Sie die Vorgangsdetails, insbesondere die **Korrelations-ID**.
+Wenn Sie den [Support](https://azure.microsoft.com/support/options/) kontaktieren oder dem Team über das [MSDN-Forum](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=AzureStreamAnalytics) Informationen bereitstellen möchten, beachten Sie die Vorgangsdetails, insbesondere die **Korrelations-ID**.
 
 ## Hier erhalten Sie Hilfe
 Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=AzureStreamAnalytics).
@@ -96,4 +96,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 - [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0204_2016-->

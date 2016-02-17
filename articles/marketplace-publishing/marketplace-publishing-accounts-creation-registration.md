@@ -13,18 +13,18 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="01/07/2016"
+   ms.date="01/25/2016"
    ms.author="hascipio"/>
 
 # Erstellen eines Microsoft-Entwicklerkontos
 In diesem Artikel werden die Schritte zur Erstellung und Registrierung eines Kontos erläutert, die notwendig sind, um anerkannter Microsoft-Entwickler im Azure Marketplace zu werden.
 
 ## 1\. Erstellen eines Microsoft-Kontos
-> [AZURE.WARNING]Zum Starten des Veröffentlichungsprozesses müssen Sie ein Microsoft-Konto erstellen. Dieses Konto wird verwendet, um sich für das **Microsoft Developer Center** und das **Azure-Veröffentlichungsportal** zu registrieren und die Anmeldung dafür durchzuführen. Sie sollten für Ihre Azure Marketplace-Angebote nur ein Microsoft-Konto verwenden. Verwenden Sie keine unterschiedlichen Konten für verschiedene Dienste oder Angebote.
+> [AZURE.WARNING] Zum Starten des Veröffentlichungsprozesses müssen Sie ein Microsoft-Konto erstellen. Dieses Konto wird verwendet, um sich für das **Microsoft Developer Center** und das **Azure-Veröffentlichungsportal** zu registrieren und die Anmeldung dafür durchzuführen. Sie sollten für Ihre Azure Marketplace-Angebote nur ein Microsoft-Konto verwenden. Verwenden Sie keine unterschiedlichen Konten für verschiedene Dienste oder Angebote.
 
 Die Adresse, die für den Benutzernamen maßgeblich ist, sollte sich in Ihrer Domäne befinden und von Ihrem IT-Team gesteuert werden (z. B. publishing@example.com)). Informationen zu Bezahlung, Steuern und Berichterstellung werden an dieses Konto gesendet.
 
-  >[AZURE.WARNING]Wörter wie „Azure“ und „Microsoft“ werden bei der Registrierung eines Microsoft-Kontos nicht unterstützt. Vermeiden Sie diese Wörter, um den Prozess der Kontoerstellung und -registrierung abzuschließen.
+  > [AZURE.WARNING] Wörter wie „Azure“ und „Microsoft“ werden bei der Registrierung eines Microsoft-Kontos nicht unterstützt. Vermeiden Sie diese Wörter, um den Prozess der Kontoerstellung und -registrierung abzuschließen.
 
 ### Anleitung
 
@@ -42,7 +42,7 @@ Die Adresse, die für den Benutzernamen maßgeblich ist, sollte sich in Ihrer Do
 5. Verifizieren Sie die an die Verteilerliste gesendete E-Mail-Adresse.
 6. Sie können das neue Microsoft-Konto jetzt im Microsoft Developer Center verwenden.
 
-> [AZURE.TIP]Durch Verwendung einer Verteilerliste können mehrere Personen E-Mail-Benachrichtigungen mit wichtigen Zahlungsinformationen empfangen. Gleichzeitig ist sichergestellt, dass das Eigentum am Microsoft-Konto übertragen werden kann und nicht an eine Einzelperson geknüpft ist.
+> [AZURE.TIP] Durch Verwendung einer Verteilerliste können mehrere Personen E-Mail-Benachrichtigungen mit wichtigen Zahlungsinformationen empfangen. Gleichzeitig ist sichergestellt, dass das Eigentum am Microsoft-Konto übertragen werden kann und nicht an eine Einzelperson geknüpft ist.
 
 ## 2\. Erstellen des Microsoft Developer Center-Kontos
 Das Microsoft Developer Center wird für die einmalige Registrierung der Unternehmensinformationen verwendet. Die Person, die das Konto registriert, muss ein offizieller Vertreter des Unternehmens sein und ihre persönlichen Informationen zum Zweck der Identitätsüberprüfung bereitstellen. Diese Person muss ein Microsoft-Konto verwenden, das für das Unternehmen freigegeben ist. **Das gleiche Konto muss im Azure-Veröffentlichungsportal verwendet werden.** Sie sollten überprüfen, ob Ihr Unternehmen nicht bereits über ein Microsoft Developer Center-Konto verfügt, bevor Sie ein Konto erstellen. Während des Prozesses erfassen wir Informationen zu Unternehmensadresse, Bankdaten und Steuer. Diese Informationen erhalten Sie üblicherweise über Bank- oder Geschäftskontakte.
@@ -57,7 +57,7 @@ Das Microsoft Developer Center wird für die einmalige Registrierung der Unterne
 |Bankkonto | Optional | Optional | Optional | Verpflichtend |
 
 
-> [AZURE.NOTE]Bring Your Own License (BYOL) wird nur für virtuelle Computer unterstützt und gilt als ein **kostenloses** Angebot.
+> [AZURE.NOTE] Bring Your Own License (BYOL) wird nur für virtuelle Computer unterstützt und gilt als ein **kostenloses** Angebot.
 
 
 ### Registrieren Ihres Unternehmenskontos
@@ -75,7 +75,7 @@ Das Microsoft Developer Center wird für die einmalige Registrierung der Unterne
 
 5. Wählen Sie im Abschnitt „Registrierungskontoinformationen“ im Dropdownmenü **Land/Region des Kontos** die für Sie zutreffende Option aus.
 
-    > [AZURE.WARNING]**Verkäuferländer:** Um Ihre Dienste im Azure Marketplace verkaufen zu können, muss die registrierte Organisation in einem der obigen genehmigten Verkäuferländer ansässig sein. Diese Einschränkung hat auszahlungstechnische und steuerliche Gründe. Die Länderliste wird in Kürze erweitert, prüfen Sie sie also regelmäßig. Weitere Informationen finden Sie in den [Marketplace-Teilnahmerichtlinien](http://go.microsoft.com/fwlink/?LinkID=526833).
+    > [AZURE.WARNING] **Verkäuferländer:** Um Ihre Dienste im Azure Marketplace verkaufen zu können, muss die registrierte Organisation in einem der obigen genehmigten Verkäuferländer ansässig sein. Diese Einschränkung hat auszahlungstechnische und steuerliche Gründe. Die Länderliste wird in Kürze erweitert, prüfen Sie sie also regelmäßig. Weitere Informationen finden Sie in den [Marketplace-Teilnahmerichtlinien](http://go.microsoft.com/fwlink/?LinkID=526833).
 
 6. Wählen Sie Ihren „Kontotyp“ oder die Option **Einzelperson** oder **Unternehmen** aus.
 
@@ -83,17 +83,17 @@ Das Microsoft Developer Center wird für die einmalige Registrierung der Unterne
 
 7. Geben Sie den **Anzeigenamen des Herausgebers** ein. Dies ist normalerweise der Name Ihres Unternehmens.
 
-    > [AZURE.TIP]Derzeit wird im Azure-Veröffentlichungsportal kein Anzeigename des Herausgebers verwendet. Sie müssen dieses Feld aber ausfüllen, um den Registrierungsprozess abzuschließen.
+    > [AZURE.TIP] Derzeit wird im Azure-Veröffentlichungsportal kein Anzeigename des Herausgebers verwendet. Sie müssen dieses Feld aber ausfüllen, um den Registrierungsprozess abzuschließen.
 
 8. Geben Sie die Kontaktinformationen für das Konto ein.
 
-    > [AZURE.IMPORTANT]Es ist erforderlich, dass Sie genaue Kontaktinformationen angeben. Sie werden in unserem Überprüfungsprozess für Ihr Unternehmen und seine Genehmigung im Developer Center verwendet.
+    > [AZURE.IMPORTANT] Es ist erforderlich, dass Sie genaue Kontaktinformationen angeben. Sie werden in unserem Überprüfungsprozess für Ihr Unternehmen und seine Genehmigung im Developer Center verwendet.
 
 9. Für ein Unternehmenskonto müssen Sie auch Kontaktinformationen für den **Genehmiger des Unternehmens** angeben. Dies ist die Person, die bestätigen kann, dass Sie zum Erstellen des Kontos im Namen Ihres Unternehmens berechtigt sind. Klicken Sie nach Abschluss dieses Vorgangs auf **Weiter**, um mit dem Abschnitt **Zahlung** fortzufahren.
 
 10. Geben Sie Ihre Zahlungsinformationen für Ihr Konto ein. Wenn Sie einen Aktionscode haben, der die Kosten der Registrierung abdeckt, können Sie ihn hier eingeben. Geben Sie andernfalls Ihre Kreditkartendaten an (oder PayPal-Daten, wenn dies für Ihren Markt unterstützt wird). Klicken Sie nach Abschluss dieses Vorgangs auf **Weiter**, um mit dem Bildschirm **Überprüfen** fortzufahren.
 
-11. Überprüfen Sie Ihre Kontoinformationen, und bestätigen Sie, dass alles korrekt ist. Lesen und akzeptieren Sie dann die Nutzungsbedingungen des **Microsoft Azure Marketplace-Herausgebervertrags**. Aktivieren Sie das Kontrollkästchen, um anzugeben, dass Sie die Bedingungen gelesen und akzeptiert haben.
+11. Überprüfen Sie Ihre Kontoinformationen, und bestätigen Sie, dass alles korrekt ist. Lesen und akzeptieren Sie dann die Nutzungsbedingungen des [Microsoft Azure Marketplace-Herausgebervertrags](http://go.microsoft.com/fwlink/?LinkID=699560). Aktivieren Sie das Kontrollkästchen, um anzugeben, dass Sie die Bedingungen gelesen und akzeptiert haben.
 
 12. Klicken Sie auf **Fertig stellen**, um die Registrierung zu bestätigen. Wir senden Ihnen eine Bestätigungsnachricht an Ihre Entwickler-E-Mail-Adresse.
 
@@ -101,7 +101,7 @@ Das Microsoft Developer Center wird für die einmalige Registrierung der Unterne
 
 14. Wenn Sie die Veröffentlichung von kommerziellen Angeboten planen, klicken Sie auf **Kontoinformationen aktualisieren**. Unter dieser Option müssen Sie die Steuer- und Bankdaten für Ihr Developer Center-Konto angeben.
 
-> [AZURE.IMPORTANT]Ohne vollständige Angabe der Steuer- und Bankdaten können Sie Ihre Angebote in der Stagingumgebung nicht ordnungsgemäß testen, und Sie können Ihre Angebote nicht in die Produktionsumgebung überführen.
+> [AZURE.IMPORTANT] Ohne vollständige Angabe der Steuer- und Bankdaten können Sie Ihre Angebote in der Stagingumgebung nicht ordnungsgemäß testen, und Sie können Ihre Angebote nicht in die Produktionsumgebung überführen.
 
 Wenn Sie Ihre Steuer- und Bankdaten später aktualisieren möchten, können Sie mit Abschnitt 3, [Registrieren Ihres Kontos im Veröffentlichungsportal](#3-register-your-account-in-the-publishing-portal), fortfahren und später über die Links im Azure-Veröffentlichungsportal zurückkehren.
 
@@ -114,11 +114,11 @@ Wenn Sie Ihre Steuer- und Bankdaten später aktualisieren möchten, können Sie 
 
 2. Klicken Sie im Menü auf der linken Seite auf **Auszahlungskonto**, und klicken Sie unter **Zahlungsmethode wählen** auf **Bankkonto** oder **PayPal**.
 
-    > [AZURE.IMPORTANT]Wenn Sie über kommerzielle Angebote verfügen, die Kunden im Marketplace erwerben, wird dieses Konto für die entsprechenden Auszahlungen an Sie verwendet.
+    > [AZURE.IMPORTANT] Wenn Sie über kommerzielle Angebote verfügen, die Kunden im Marketplace erwerben, wird dieses Konto für die entsprechenden Auszahlungen an Sie verwendet.
 
 3. Geben Sie die Zahlungsinformationen ein, und klicken Sie auf **Speichern**, wenn Sie zufrieden sind.
 
-    > [AZURE.IMPORTANT]Wenn Sie das Auszahlungskonto aktualisieren oder ändern müssen, können Sie die obigen Schritte verwenden und die aktuellen Informationen durch neue Informationen ersetzen. Wenn Sie Ihr Zahlungskonto ändern, kann dies dazu führen, dass sich Ihre Zahlungen um maximal einen Zahlungszyklus verzögern. Diese Verzögerung tritt auf, weil wir die Kontoänderung überprüfen müssen. Dies ist der gleiche Vorgang wie bei der ersten Einrichtung des Zahlungskontos. Nachdem das Konto bestätigt wurde, erhalten Sie trotzdem den vollen Betrag. Zahlungen, die für den aktuellen Zahlungszyklus fällig sind, werden im nächsten Zyklus hinzugefügt.
+    > [AZURE.IMPORTANT] Wenn Sie das Auszahlungskonto aktualisieren oder ändern müssen, können Sie die obigen Schritte verwenden und die aktuellen Informationen durch neue Informationen ersetzen. Wenn Sie Ihr Zahlungskonto ändern, kann dies dazu führen, dass sich Ihre Zahlungen um maximal einen Zahlungszyklus verzögern. Diese Verzögerung tritt auf, weil wir die Kontoänderung überprüfen müssen. Dies ist der gleiche Vorgang wie bei der ersten Einrichtung des Zahlungskontos. Nachdem das Konto bestätigt wurde, erhalten Sie trotzdem den vollen Betrag. Zahlungen, die für den aktuellen Zahlungszyklus fällig sind, werden im nächsten Zyklus hinzugefügt.
 
 4. Klicken Sie auf **Weiter**.
 
@@ -132,12 +132,12 @@ Wenn Sie Ihre Steuer- und Bankdaten später aktualisieren möchten, können Sie 
 
 4. Geben Sie Ihre Steuerdaten ein, und klicken Sie auf **Weiter**.
 
-> [AZURE.WARNING]Ohne vollständige Angabe der Steuer- und Bankinformationen in Ihrem Microsoft Developer Center-Konto können Sie Ihre kommerziellen Angebote nicht in die Produktionsumgebung überführen.
+> [AZURE.WARNING] Ohne vollständige Angabe der Steuer- und Bankinformationen in Ihrem Microsoft Developer Center-Konto können Sie Ihre kommerziellen Angebote nicht in die Produktionsumgebung überführen.
 
 ## 3\. Registrieren Ihres Kontos im Veröffentlichungsportal
 Das Azure-Veröffentlichungsportal dient zum Veröffentlichen und Verwalten Ihrer Angebote. Das Portal bietet einige nützliche Informationen, die Sie durch den Prozess der Angebotserstellung führen.
 
-> [AZURE.WARNING]Sie müssen hier das gleiche Microsoft-Konto verwenden, das zur Registrierung beim Microsoft Developer Center verwendet wurde. Nachdem das Masterkonto für die Veröffentlichung erstellt wurde, können diesem Konto weitere Benutzer hinzugefügt werden.
+> [AZURE.WARNING] Sie müssen hier das gleiche Microsoft-Konto verwenden, das zur Registrierung beim Microsoft Developer Center verwendet wurde. Nachdem das Masterkonto für die Veröffentlichung erstellt wurde, können diesem Konto weitere Benutzer hinzugefügt werden.
 
 1.	Öffnen Sie eine neue Chrome-Inkognito- oder Internet Explorer-InPrivate-Browsersitzung, um sicherzustellen, dass Sie nicht bei einem persönlichen Konto angemeldet sind.
 
@@ -145,9 +145,9 @@ Das Azure-Veröffentlichungsportal dient zum Veröffentlichen und Verwalten Ihre
 
 3.	Melden Sie sich mit dem Microsoft-Konto an, das Sie für Ihr Unternehmen registriert haben (also marketplace@example.com), und fügen Sie nach Bedarf Co-Admins hinzu.
 
-  >[AZURE.TIP]Die Teilnahmerichtlinien werden auf der [Azure-Website](http://azure.microsoft.com/support/legal/marketplace/participation-policies/) beschrieben.
+  > [AZURE.TIP] Die Teilnahmerichtlinien werden auf der [Azure-Website](https://azure.microsoft.com/support/legal/marketplace/participation-policies/) beschrieben.
 
-  > Wenn Sie Probleme beim Abschließen der Developer Center-Registrierung haben, öffnen Sie wie nachfolgend beschrieben ein Supportticket: 1. Wenden Sie sich an den [Support](https://support.microsoft.com/getsupport?wf=0&tenant=ClassicCommercial&oaspworkflow=start_1.0.0.0&supportregion=de-DE&pesid=15635&ccsid=635847950577064286). 2. Wählen Sie **Developer Center** aus. 3. Wählen Sie **Profil**. 4. Wählen Sie die Methode für die Kontaktaufnahme aus.
+  > Wenn beim Abschließen der Developer Center-Registrierung Probleme auftreten, öffnen Sie wie nachfolgend beschrieben ein Supportticket: 1. Wenden Sie sich an den [Support](https://support.microsoft.com/getsupport?wf=0&tenant=ClassicCommercial&oaspworkflow=start_1.0.0.0&supportregion=de-DE&pesid=15635&ccsid=635847950577064286). 2. Wählen Sie **Developer Center** aus. 3. Wählen Sie **Profil**. 4. Wählen Sie die Methode für die Kontaktaufnahme aus.
 
 
 
@@ -194,4 +194,4 @@ Nachdem Ihr Konto erstellt und registriert wurde, klicken Sie auf den Artefaktty
 [link-devsvc-prereq]: marketplace-publishing-dev-service-creation-prerequisites.md
 [link-pushstaging]: marketplace-publishing-push-to-staging.md
 
-<!---HONumber=AcomDC_0121_2016-->
+<!----HONumber=AcomDC_0204_2016-->

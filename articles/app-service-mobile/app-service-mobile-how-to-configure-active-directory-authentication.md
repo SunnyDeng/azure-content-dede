@@ -24,7 +24,7 @@
 
 In diesem Thema wird veranschaulicht, wie Sie Azure App Services zur Verwendung von Azure Active Directory als Authentifizierungsanbieter konfigurieren.
 
-> [AZURE.NOTE]Dieses Thema veranschaulicht die Verwendung des Authentifizierung- und Autorisierungsfeatures von App Service. Dadurch wird für die meisten Anwendungen das App Service-Gateway ersetzt. Wenn Sie das Gateway verwenden, sehen Sie sich die [alternative Methode] an. Unterschiede, die für die Verwendung des Gateways gelten, werden in diesem Abschnitt in Hinweisen hervorgehoben.
+> [AZURE.NOTE] Dieses Thema veranschaulicht die Verwendung des Authentifizierung- und Autorisierungsfeatures von App Service. Dadurch wird für die meisten Anwendungen das App Service-Gateway ersetzt. Wenn Sie das Gateway verwenden, sehen Sie sich die [alternative Methode] an. Unterschiede, die für die Verwendung des Gateways gelten, werden in diesem Abschnitt in Hinweisen hervorgehoben.
 
 
 ## <a name="express"> </a>Konfigurieren von Azure Active Directory mit Express-Einstellungen
@@ -71,7 +71,8 @@ Sie können Konfigurationseinstellungen auch manuell bereitstellen Dies ist die 
     ![][3]
 	
 	
-	> [AZURE.NOTE]Wenn anstelle des Authentifizierungs-/Autorisierungsfeatures von App Service das App Service-Gateway verwendet wird, greift Ihre Umleitungs-URL stattdessen auf die Gateway-URL mit dem Pfad _/signin-aad_ zurück.
+	> [AZURE.NOTE]
+	Wenn anstelle des Authentifizierungs-/Autorisierungsfeatures von App Service das App Service-Gateway verwendet wird, greift Ihre Umleitungs-URL stattdessen auf die Gateway-URL mit dem Pfad _/signin-aad_ zurück.
 
 
 9. Klicken Sie auf **Speichern**. Kopieren Sie dann die **Client-ID** für die App. Ihre Anwendung wird später anhand dieser Angabe konfiguriert.
@@ -82,7 +83,8 @@ Sie können Konfigurationseinstellungen auch manuell bereitstellen Dies ist die 
 
 ### <a name="secrets"> </a>Hinzufügen von Azure Active Directory-Informationen zu Ihrer Anwendung
 
-> [AZURE.NOTE]Wenn Sie das App Service-Gateway verwenden, ignorieren Sie diesen Abschnitt und navigieren stattdessen im Portal zu Ihrem Gateway. Wählen Sie unter **Einstellungen** die Option **Identität** und dann **Azure Active Directory** aus. Fügen Sie die Client-ID ein, und fügen Sie die Mandanten-ID der Liste **Zulässige Mandanten** hinzu. Klicken Sie auf **Speichern**.
+> [AZURE.NOTE]
+Wenn Sie das App Service-Gateway verwenden, ignorieren Sie diesen Abschnitt und navigieren stattdessen im Portal zu Ihrem Gateway. Wählen Sie unter **Einstellungen** die Option **Identität** und dann **Azure Active Directory** aus. Fügen Sie die Client-ID ein, und fügen Sie die Mandanten-ID der Liste **Zulässige Mandanten** hinzu. Klicken Sie auf **Speichern**.
 
 
 13. Zurück im [Azure-Portal] navigieren Sie zu Ihrer Anwendung. Klicken Sie auf **Einstellungen** und anschließend auf **Authentifizierung/Autorisierung**.
@@ -119,7 +121,7 @@ Mit Azure Active Directory können Sie auch systemeigene Clients registrieren. S
 
 7. Führen Sie auf der Seite einen Bildlauf nach unten zum Abschnitt **Berechtigungen für andere Anwendungen** durch, und klicken Sie auf **Anwendung hinzufügen**.
 
-8. Suchen Sie nach der zuvor registrierten Web-App, und klicken Sie auf das Pluszeichen. Klicken Sie dann auf das Häkchen, um das Dialogfeld zu schließen.
+8. Suchen Sie nach der zuvor registrierten Web-App, und klicken Sie auf das Pluszeichen. Klicken Sie dann auf das Häkchen, um das Dialogfeld zu schließen. Wenn die Webanwendung nicht gefunden werden kann, navigieren Sie zu ihrer Registrierung, und fügen Sie eine neue Antwort-URL (beispielsweise die HTTP-Version der aktuellen URL) hinzu. Klicken Sie anschließend auf „Speichern“, und wiederholen Sie diese Schritte. Die Anwendung sollte nun in der Liste angezeigt werden.
 
 9. Öffnen Sie für den neu erstellten Eintrag das Dropdownmenü **Berechtigungen der Stellvertretung**, und wählen Sie **Zugriff (App-Name)** aus. Klicken Sie anschließend auf **Save**.
 
@@ -144,4 +146,4 @@ Sie haben nun eine systemeigene Clientanwendung mit Zugriff auf Ihre App Service
 [ios-adal]: ../app-service-mobile-xamarin-ios-aad-sso.md
 [alternative Methode]: #advanced
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -40,7 +40,7 @@ Dieses Tutorial führt Sie durch den Prozess für das Erstellen einer Hybridsamm
 
 Bevor Sie mit der Erstellung der Sammlung beginnen, benötigen Sie Folgendes:
 
-- [Registrieren](http://azure.microsoft.com/services/remoteapp/) Sie sich für Azure RemoteApp. 
+- [Registrieren](https://azure.microsoft.com/services/remoteapp/) Sie sich für Azure RemoteApp. 
 - Erstellen Sie ein Benutzerkonto in Active Directory, das als Konto für den Azure RemoteApp-Dienst verwendet werden soll. Beschränken Sie die Berechtigungen für dieses Konto, sodass es nur Computer in die Domäne einbinden kann.
 - Sammeln Sie Informationen zu Ihrem lokalen Netzwerk: IP-Adressdaten und Details zum VPN-Gerät.
 - Installieren Sie das [Azure PowerShell](../install-configure-powershell.md)-Modul.
@@ -52,7 +52,7 @@ Bevor Sie mit der Erstellung der Sammlung beginnen, benötigen Sie Folgendes:
 
 
 ## Schritt 1: Einrichten des virtuellen Netzwerks
-Sie können eine Hybridsammlung für ein vorhandenes virtuelles Azure-Netzwerk bereitstellen oder ein neues virtuelles Netzwerk erstellen. Ein virtuelles Netzwerk ermöglicht es den Benutzern, auf Daten auf Ihrem lokalen Netzwerk über RemoteApp-Remoteressourcen zuzugreifen. Mit einem virtuellen Azure-Netzwerk verfügt Ihre Sammlung über direkten Zugriff auf andere Azure-Dienste und virtuelle Computer in diesem virtuellen Netzwerk.
+Sie können eine Hybridsammlung bereitstellen, die ein vorhandenes virtuelles Azure-Netzwerk nutzt, oder Sie können ein neues virtuelles Netzwerk erstellen. Ein virtuelles Netzwerk ermöglicht es den Benutzern, auf Daten auf Ihrem lokalen Netzwerk über RemoteApp-Remoteressourcen zuzugreifen. Mit einem virtuellen Azure-Netzwerk verfügt Ihre Sammlung über direkten Zugriff auf andere Azure-Dienste und virtuelle Computer in diesem virtuellen Netzwerk.
 
 Überprüfen Sie die Informationen zur [VNET-Planung](remoteapp-planvnet.md) und [VNET-Größe](remoteapp-vnetsizing.md), bevor Sie Ihr VNET erstellen.
 
@@ -69,7 +69,7 @@ Bevor Sie Ihre Sammlung erstellen, müssen Sie sicherstellen, dass Ihr neues vir
 2. Stellen Sie über Remotedesktop eine Verbindung zum virtuellen Computer her. (Klicken Sie auf **Verbinden**.)
 3. Verknüpfen Sie ihn mit der gleichen Active Directory-Bereitstellung, die auch für RemoteApp verwendet werden soll.
 
-Hat dies funktioniert? Ihr virtuelles Netzwerk und das Subnetz sind für Azure RemoteApp bereit!
+Hat dies funktioniert? Ihr virtuelles Netzwerk und das Subnetz sind für Azure RemoteApp bereit.
 
 [Hier](https://msdn.microsoft.com/library/azure/jj156003.aspx) finden Sie weitere Informationen zum Erstellen von virtuellen Azure-Computern und zum Verbinden mit Remotedesktop.
 
@@ -98,7 +98,7 @@ Ist etwas schiefgegangen? Sehen Sie sich die [Informationen zur Problembehandlun
 	Dies sind die Informationen, die Sie im Rahmen der Schritte unter [Konfigurieren von Active Directory für Azure RemoteApp](remoteapp-ad.md) erfasst haben.
 
 
-## Schritt 4: Erstellen eines Azure RemoteApp-Images ##
+## Schritt 4: Verbinden mit einem Azure RemoteApp-Image ##
 
 Ein Azure RemoteApp-Vorlagenimage enthält die Programme, die Sie für Benutzer freigeben möchten. Sie können entweder ein neues [Vorlagenimage](remoteapp-imageoptions.md) erstellen oder eine Verbindung zu einem vorhandenen Image (das bereits in Azure hochgeladen oder importiert wurde) herstellen. Sie können außerdem eine Verbindung mit einem der [Vorlagenimages](remoteapp-images.md) für Azure RemoteApp herstellen, die Office 365- oder Office 2013-Programme (für die Testnutzung) enthalten.
 
@@ -112,7 +112,7 @@ Wenn Sie eine Verbindung zu einem vorhandenen Abbild herstellen, geben Sie einfa
 
 Für Azure RemoteApp müssen Sie eine Integration in Azure Active Directory durchführen, indem Sie entweder 1) Azure Active Directory Sync mit der Kennwortsynchronisierungsoption konfigurieren oder 2) Azure Active Directory Sync ohne die Kennwortsynchronisierungsoption, aber unter Verwendung einer Domäne konfigurieren, die mit AD FS verbunden ist.
 
-Lesen Sie den Artikel [AD Connect](http://blogs.technet.com/b/ad/archive/2014/08/04/connecting-ad-and-azure-ad-only-4-clicks-with-azure-ad-connect.aspx), in dem Sie erfahren, wie Sie die Verzeichnisintegration in 4 Schritten einrichten.
+Lesen Sie den Artikel [AD Connect](http://blogs.technet.com/b/ad/archive/2014/08/04/connecting-ad-and-azure-ad-only-4-clicks-with-azure-ad-connect.aspx) – hier erfahren Sie, wie Sie die Verzeichnisintegration in 4 Schritten einrichten.
 
 Informationen zur Planung und eine detaillierte Anleitung finden Sie unter [Fahrplan zur Verzeichnissynchronisierung](http://msdn.microsoft.com//library/azure/hh967642.aspx).
 
@@ -122,7 +122,7 @@ Eine Azure RemoteApp-App ist die App oder das Programm, die bzw. das Sie den Ben
 
 Bevor ein Benutzer aber auf die Apps zugreifen kann, müssen Sie sie im Endbenutzer-Feed – einer Liste verfügbarer Apps, auf die der Benutzer über den Remotedesktopclient zugreift – veröffentlichen.
  
-Sie können in Ihrer Sammlung mehrere Apps veröffentlichen. Um eine App hinzuzufügen, klicken Sie auf der Veröffentlichungsseite auf **Veröffentlichen**. Sie können die App entweder aus dem **Startmenü** des Vorlagenimages veröffentlichen oder den Pfad zur App im Vorlagenimage angeben. Wenn Sie das Programm über das **Startmenü** hinzufügen möchten, wählen Sie das hinzuzufügende Programm aus. Wenn Sie den Pfad angeben möchten, geben Sie den Namen der App sowie den Pfad an, in dem die App auf dem Vorlagenimage installiert ist.
+Sie können in Ihrer Sammlung mehrere Apps veröffentlichen. Um eine App hinzuzufügen, klicken Sie auf der Veröffentlichungsseite auf **Veröffentlichen**. Sie können die App entweder aus dem **Startmenü** des Vorlagenimages veröffentlichen oder den Pfad zur App im Vorlagenimage angeben. Wenn Sie das Programm vom **Startmenü** aus veröffentlichen möchten, wählen Sie das hinzuzufügende Programm aus. Wenn Sie den Pfad angeben möchten, geben Sie den Namen der App sowie den Pfad an, in dem die App auf dem Vorlagenimage installiert ist.
 
 ## Schritt 7: Konfigurieren des Benutzerzugriffs ##
 
@@ -142,11 +142,11 @@ Nach dem Erstellen der Sammlung müssen Sie nun die Benutzer hinzufügen, die Zu
 
 
 ## Nächste Schritte ##
-Das war alles: Sie haben die Azure RemoteApp-Hybridsammlung erfolgreich erstellt und bereitgestellt. Als Nächstes müssen die Benutzer den Remotedesktopclient herunterladen und installieren. Die URL für den Client finden Sie auf der Azure RemoteApp-Schnellstartseite. Die Benutzer müssen sich nun beim Client anmelden und können dann auf die veröffentlichten Apps zugreifen.
+Geschafft – Sie haben die Azure RemoteApp-Hybridsammlung erfolgreich erstellt und bereitgestellt. Als Nächstes müssen die Benutzer den Remotedesktopclient herunterladen und installieren. Die URL für den Client finden Sie auf der Azure RemoteApp-Schnellstartseite. Die Benutzer müssen sich nun beim Client anmelden und können dann auf die veröffentlichten Apps zugreifen.
 
 
  
 ### Helfen Sie uns, Ihnen zu helfen 
-Wussten Sie schon, dass Sie diesen Artikel im Bereich unten nicht nur bewerten und kommentieren, sondern ihn auch selbst ändern können? Fehlt etwas? Ist etwas nicht ganz richtig? Habe ich etwas geschrieben, das eher verwirrend ist? Führen Sie einen Bildlauf nach oben durch, und klicken Sie auf **Edit on GitHub**, um die gewünschten Änderungen vorzunehmen. Ihr Vorschlag wird uns vorgelegt, und wenn wir ihn bestätigt haben, werden Ihre Änderungen und Verbesserungen hier angezeigt.
+Wussten Sie schon, dass Sie diesen Artikel im Bereich unten nicht nur bewerten und kommentieren, sondern ihn auch selbst ändern können? Fehlt etwas? Ist etwas nicht ganz richtig? Habe ich etwas geschrieben, das eher verwirrend ist? Scrollen Sie nach oben, und klicken Sie auf **In GitHub bearbeiten**, um die gewünschten Änderungen vorzunehmen. Ihr Vorschlag wird uns vorgelegt, und wenn wir ihn bestätigt haben, werden Ihre Änderungen und Verbesserungen hier angezeigt.
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0128_2016-->

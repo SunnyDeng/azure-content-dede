@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="01/04/2016"
+   ms.date="02/01/2016"
    ms.author="v-sharos" />
 
 # Versionsanmerkungen zu Update 2 der StorSimple 8000-Serie  
@@ -21,7 +21,7 @@
 
 Die folgenden Versionsanmerkungen beschreiben die neuen Features und weisen auf wichtige offene Punkte bei Update 2 der StorSimple 8000-Serie hin. Sie enthalten außerdem eine Liste der Updates für StorSimple-Software, -Treiber und -Datenträgerfirmware, die in dieser Version enthalten sind.
 
-Update 2 kann auf alle StorSimple-Geräte angewendet werden, auf denen Release (GA) oder Update 0.1 bis Update 1.2 ausgeführt wird.
+Update 2 kann auf alle StorSimple-Geräte angewendet werden, auf denen Release (GA) oder Update 0.1 bis Update 1.2 ausgeführt wird. Update 2 ist die Geräteversion 6.3.9600.17673 zugeordnet.
 
 Lesen Sie vor der Bereitstellung des Updates in Ihrer StorSimple-Lösung die Informationen in den Versionsanmerkungen sorgfältig durch.
 
@@ -113,4 +113,8 @@ Mit dieser Version werden der Treiber und die Datenträgerfirmware auf Ihrem Ger
 
 Dieses Update kann nicht auf das virtuelle Gerät angewendet werden. Es müssen neue virtuelle Geräte erstellt werden.
 
-<!---HONumber=AcomDC_0121_2016-->
+## Nächster Schritt
+
+Erfahren Sie, wie Sie [Update 2 auf Ihrem StorSimple-Gerät installieren](storsimple-install-update-2.md).
+
+<!---HONumber=AcomDC_0204_2016-->

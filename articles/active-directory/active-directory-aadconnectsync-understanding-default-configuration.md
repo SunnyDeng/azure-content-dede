@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.devlang="na"
    ms.topic="article"
-   ms.date="12/21/2015"
+   ms.date="01/21/2016"
    ms.author="andkjell"/>
 
 # Azure AD Connect-Synchronisierung: Grundlegendes zur Standardkonfiguration
@@ -221,7 +221,7 @@ Wir haben nun einige individuelle Synchronisierungsregeln betrachtet, aber die R
 
 ![Eingehende Synchronisierungsregeln](./media/active-directory-aadconnectsync-understanding-default-configuration/syncrulesinbound.png)
 
-Die Rangfolge für Synchronisierungsregeln wird vom Installations-Assistenten in Gruppen festgelegt. Eine Gruppe von Regeln, die alle den gleichen Namen besitzen, aber mit anderen verbundenen Verzeichnissen verbunden sind. Der Installations-Assistent gibt der Regel **Ein von AD – Benutzerverknüpfung** höchste Priorität und führt mit ihr eine Iteration über alle verbundenen AD-Verzeichnisse aus. Er fährt dann mit der nächsten Gruppen von Regeln in einer vordefinierten Reihenfolge fort. Innerhalb einer Gruppe werden die Regeln in der Reihenfolge hinzugefügt, in der die Connectors dem Assistenten hinzugefügt wurden. Wenn ein weiterer Connector durch den Assistenten hinzugefügt wird, werden die Synchronisierungsregeln neu geordnet, und die Regeln für den neuen Connector werden zuletzt in jede Gruppe eingefügt.
+Die Rangfolge für Synchronisierungsregeln wird vom Installations-Assistenten in Gruppen festgelegt. Eine Gruppe von Regeln, die alle den gleichen Namen besitzen, aber mit anderen verbundenen Verzeichnissen verbunden sind. Der Installations-Assistent räumt der Regel **Ein von AD – Benutzerverknüpfung** höchste Rangfolge ein und führt mit ihr eine Iteration über alle verbundenen AD-Verzeichnissen aus. Er fährt dann mit der nächsten Gruppen von Regeln in einer vordefinierten Reihenfolge fort. Innerhalb einer Gruppe werden die Regeln in der Reihenfolge hinzugefügt, in der die Connectors dem Assistenten hinzugefügt wurden. Wenn ein weiterer Connector durch den Assistenten hinzugefügt wird, werden die Synchronisierungsregeln neu geordnet, und die Regeln für den neuen Connector werden zuletzt in jede Gruppe eingefügt.
 
 ### Zusammenfügen des Gesamtbilds
 
@@ -241,4 +241,4 @@ Jetzt wissen wir genug über Synchronisierungsregeln, um die Funktionsweise der 
 * [Azure AD Connect-Synchronisierung: Anpassen von Synchronisierungsoptionen](active-directory-aadconnectsync-whatis.md)
 * [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

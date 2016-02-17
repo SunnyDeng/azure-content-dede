@@ -27,7 +27,7 @@ In diesem Thema werden die zahlreichen Vorteile beschrieben, die die neue Versio
 Es werden auch weiterhin neue Funktionen zu V12 hinzugefügt. Daher empfehlen wir Ihnen, die Webseite "Dienstupdates" für Azure zu besuchen und diese Filter zu verwenden:
 
 
-- Gefiltert nach [SQL-Datenbank](http://azure.microsoft.com/updates/?service=sql-database).
+- Gefiltert nach [SQL-Datenbank](https://azure.microsoft.com/updates/?service=sql-database).
 - Gefiltert nach allgemeiner Verfügbarkeit [Ankündigungen](http://azure.microsoft.com/updates/?service=sql-database&update-type=general-availability) für SQL-Datenbankfunktionen.
 
 
@@ -132,7 +132,7 @@ Es gibt viele gute Gründe, warum Kunden jetzt ein Upgrade von V11 auf Azure SQL
 Eine einfache Möglichkeit, um festzustellen, ob eine Datenbank oder ein logischer Server einer älteren Version des SQL-Datenbankdiensts ausgeführt wird, besteht in folgendem Verfahren:
 
 
-1. Öffnen Sie das [Azure-Portal](http://portal.azure.com/).
+1. Öffnen Sie das [Azure-Portal](https://portal.azure.com/).
 2. Klicken Sie auf **Durchsuchen**.
 3. Klicken Sie auf **SQL-Server**.
 4. Das Symbol neben dem Server oder der Datenbank enthält die Informationen:
@@ -159,6 +159,6 @@ Wenn Sie noch nicht V12 ausführen, können Sie ein Upgrade des logischen Server
 - Am 31. Juli 2015 wurden alle Regionen auf die "Allgemeine Verfügbarkeit" heraufgestuft.
 - V12 wurde im Dezember 2014 freigegeben, zunächst jedoch nur mit dem Status "Vorschau".
 
-[Ergänzende Nutzungsbedingungen für Microsoft Azure-Vorschauversionen](http://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+[Ergänzende Nutzungsbedingungen für Microsoft Azure-Vorschauversionen](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

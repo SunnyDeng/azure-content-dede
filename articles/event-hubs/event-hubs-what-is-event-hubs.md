@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/05/2015"
+	ms.date="01/26/2016"
 	ms.author="sethm"/>
 
 # Was ist Azure Event Hubs?
@@ -45,4 +45,4 @@ Ausführliche Informationen zu Event Hubs finden Sie unter den folgenden Themen
 [Lernprogramm zu Event Hubs]: event-hubs-csharp-ephcs-getstarted.md
 [Beispielanwendung zur Verwendung von Event Hubs]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

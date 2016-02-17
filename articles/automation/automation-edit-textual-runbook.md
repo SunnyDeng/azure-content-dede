@@ -12,7 +12,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="infrastructure-services"
-	ms.date="09/23/2015"
+	ms.date="01/19/2016"
 	ms.author="bwren" />
 
 # Bearbeiten von Textrunbooks in Azure Automation
@@ -21,7 +21,7 @@ Mit dem Text-Editor in Azure Automation können Sie [PowerShell-Runbooks](automa
 
 Der Text-Editor enthält ein Feature zum Einfügen von Code für Aktivitäten, Objekte und untergeordnete Runbooks in ein Runbook. Sie müssen den Code nicht selbst eingeben, sondern können eine Auswahl aus einer Liste verfügbarer Ressourcen treffen und den entsprechenden Code in das Runbook einfügen.
 
-Jedes Runbook in Azure Automation umfasst zwei Versionen: eine Entwurfsversion und eine veröffentlichte Version. Sie bearbeiten die Entwurfsversion des Workflows und veröffentlichen sie anschließend, damit sie ausgeführt werden kann. Die veröffentlichte Version kann nicht bearbeitet werden. Weitere Informationen finden Sie unter [Veröffentlichen eines Runbooks](automation-creating-importing-runbook.md#publishing-a-runbook).
+Jedes Runbook in Azure Automation umfasst zwei Versionen: eine Entwurfsversion und eine veröffentlichte Version. Sie bearbeiten die Entwurfsversion des Runbooks und veröffentlichen sie anschließend, damit sie ausgeführt werden kann. Die veröffentlichte Version kann nicht bearbeitet werden. Weitere Informationen finden Sie unter [Veröffentlichen eines Runbooks](automation-creating-importing-runbook.md#publishing-a-runbook).
 
 Informationen zum Arbeiten mit [grafischen Runbooks](automation-runbook-types.md#graphical-runbooks) finden Sie unter [Grafische Erstellung in Azure Automation](automation-graphical-authoring-intro.md).
 
@@ -58,7 +58,7 @@ Gehen Sie wie folgt vor, um ein Runbook zur Bearbeitung im Text-Editor zu öffne
 2. Platzieren Sie den Cursor im Zeichenbereich des Text-Editors an der Position, an der Sie den Code für das untergeordnete Runbook einfügen möchten.
 3. Erweitern Sie im Bibliotheksteuerelement den Knoten **Objekte**. 
 4. Erweitern Sie den Knoten für den gewünschten Objekttyp.
-3. Klicken Sie mit der rechten Maustaste auf das einzufügende Objekt, und wählen Sie **Zum Zeichenbereich hinzufügen**. Wählen Sie für [Variablenobjekte](variable-assets.md) entweder **„Variable abrufen“ zum Zeichenbereich hinzufügen** oder **„Variable festlegen“ zum Zeichenbereich hinzufügen**. Dies ist abhängig davon, ob Sie die Variable abrufen oder festlegen möchten.
+3. Klicken Sie mit der rechten Maustaste auf das einzufügende Objekt, und wählen Sie **Zum Zeichenbereich hinzufügen**. Wählen Sie für [Variablenobjekte](automation-variables.md) entweder **„Variable abrufen“ zum Zeichenbereich hinzufügen** oder **„Variable festlegen“ zum Zeichenbereich hinzufügen**. Dies ist abhängig davon, ob Sie die Variable abrufen oder festlegen möchten.
 4. Der Code für das Objekt wird in das Runbook eingefügt.
 
 
@@ -107,7 +107,7 @@ Gehen Sie wie folgt vor, um ein Runbook zur Bearbeitung im Text-Editor zu öffne
 
 ## So bearbeiten Sie ein Azure Automation-Runbook mit Windows PowerShell
 
-Bei der Bearbeitung eines Runbooks mit Windows PowerShell bearbeiten Sie den Workflow mit einem Editor Ihrer Wahl und speichern ihn in einer PS1-Datei. Mit dem Cmdlet [Get-AzureAutomationRunbookDefinition](http://aka.ms/runbookauthor/cmdlet/getazurerunbookdefinition) können Sie den Inhalt des Runbooks abrufen, und mit dem Cmdlet [Set-AzureAutomationRunbookDefinition](http://aka.ms/runbookauthor/cmdlet/setazurerunbookdefinition) können Sie den vorhandenen Entwurfsworkflow durch den geänderten Workflow ersetzen.
+Zum Bearbeiten eines Runbooks mit Windows PowerShell verwenden Sie einen Editor Ihrer Wahl und speichern es in einer PS1-Datei. Mit dem Cmdlet [Get-AzureAutomationRunbookDefinition](http://aka.ms/runbookauthor/cmdlet/getazurerunbookdefinition) können Sie den Inhalt des Runbooks abrufen, und mit dem Cmdlet [Set-AzureAutomationRunbookDefinition](http://aka.ms/runbookauthor/cmdlet/setazurerunbookdefinition) können Sie das vorhandene Entwurfsrunbook durch das geänderte Runbook ersetzen.
 
 ### So rufen Sie den Inhalt eines Runbooks mit WindowsPowerShell ab
 
@@ -124,7 +124,7 @@ Die folgenden Beispielbefehle zeigen, wie das Skript für ein Runbook abgerufen 
 
 ### So ändern Sie den Inhalt eines Runbooks mit WindowsPowerShell
 
-Die folgenden Beispielbefehle zeigen, wie der vorhandene Inhalt eines Runbooks durch den Inhalt einer Skriptdatei mit einem Workflow ersetzt wird. Hinweis: Hierbei handelt es sich um das gleiche Beispielverfahren wie unter [So importieren Sie ein Runbook aus einer Skriptdatei mit Windows PowerShell](../automation-creating-or-importing-a-runbook#ImportRunbookScriptPS).
+Die folgenden Beispielbefehle zeigen, wie der vorhandene Inhalt eines Runbooks durch den Inhalt einer Skriptdatei ersetzt wird. Hinweis: Hierbei handelt es sich um das gleiche Beispielverfahren wie unter [So importieren Sie ein Runbook aus einer Skriptdatei mit Windows PowerShell](../automation-creating-or-importing-a-runbook#ImportRunbookScriptPS).
 
     $automationAccountName = "MyAutomationAccount"
     $runbookName = "Sample-TestRunbook"
@@ -135,7 +135,7 @@ Die folgenden Beispielbefehle zeigen, wie der vorhandene Inhalt eines Runbooks d
 
 ## Verwandte Artikel
 
-- [Erstellen oder Importieren eines Runbooks in Azure Automation](automation-creatnig-importing-runbook.md)
+- [Erstellen oder Importieren eines Runbooks in Azure Automation](automation-creating-importing-runbook.md)
 - [Grundlagen des PowerShell-Workflows](automation-powershell-workflow.md)
 - [Grafische Erstellung in Azure Automation](automation-graphical-authoring-intro.md)
 - [Zertifikate](automation-certificates.md)
@@ -144,4 +144,4 @@ Die folgenden Beispielbefehle zeigen, wie der vorhandene Inhalt eines Runbooks d
 - [Zeitpläne](automation-schedules.md)
 - [Variablen](automation-variables.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

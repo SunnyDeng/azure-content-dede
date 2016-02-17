@@ -90,8 +90,8 @@ Wenn Sie die Bearbeitung des Dialogfelds abschließen, fügt Visual Studio Verwe
 
      - [Azure Storage-Teamblog](http://blogs.msdn.com/b/windowsazurestorage/)
 
-     - [Speicher auf "azure.microsoft.com"](http://azure.microsoft.com/services/storage)
+     - [Speicher auf "azure.microsoft.com"](https://azure.microsoft.com/services/storage/)
 
-     - [Speicherdokumentation auf "azure.microsoft.com"](http://azure.microsoft.com/documentation/services/storage/)
+     - [Speicherdokumentation auf "azure.microsoft.com"](https://azure.microsoft.com/documentation/services/storage/)
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

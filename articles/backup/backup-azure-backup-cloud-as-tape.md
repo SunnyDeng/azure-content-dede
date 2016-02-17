@@ -47,7 +47,7 @@ Die Gesamtanzahl der "Aufbewahrungspunkte" (Punkte, von denen ein Kunde Daten wi
 
 Die Gesamtzahl der Wiederherstellungspunkte beträgt 56.
 
-> [AZURE.NOTE]In Azure Backup gibt es keine Beschränkung der Anzahl der Wiederherstellungspunkte.
+> [AZURE.NOTE] In Azure Backup gibt es keine Beschränkung der Anzahl der Wiederherstellungspunkte.
 
 ## Erweiterte Konfiguration
 Durch Klicken auf **Ändern** im Bildschirm oben können Kunden noch flexiblere Aufbewahrungszeitpläne angeben.
@@ -60,4 +60,4 @@ Weitere Informationen zu Azure Backup finden Sie unter
 - [Einführung in Azure Backup](backup-introduction-to-azure-backup.md)
 - [Azure Backup testen](backup-try-azure-backup-in-10-mins)
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0128_2016-->

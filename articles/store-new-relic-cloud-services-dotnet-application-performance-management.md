@@ -33,9 +33,9 @@ New Relic verfolgt die Ladezeit und den Durchsatz von Webtransaktionen, sowohl v
 
 New Relic Standard ist für Azure-Benutzer kostenlos; New Relic Pro wird basierend auf der Instanzgröße für Azure-Clouddienste angeboten
 
-Preisinformationen finden Sie auf der [New Relic-Seite im Azure Store](http://azure.microsoft.com/marketplace/partners/newrelic/newrelic).
+Preisinformationen finden Sie auf der [New Relic-Seite im Azure Store](https://azure.microsoft.com/marketplace/partners/newrelic/newrelic/).
 
-> [AZURE.NOTE]Es werden nur Preise für bis zu zehn Serverinstanzen aufgeführt. Volumenpreise für mehr als zehn Instanzen erfragen Sie bitte bei New Relic (sales@newrelic.com).
+> [AZURE.NOTE] Es werden nur Preise für bis zu zehn Serverinstanzen aufgeführt. Volumenpreise für mehr als zehn Instanzen erfragen Sie bitte bei New Relic (sales@newrelic.com).
 
 Azure-Kunden erhalten bei Bereitstellung des New Relic-Agenten ein zweiwöchiges Testabonnement von New Relic Pro.
 
@@ -119,11 +119,11 @@ Neben der [standardmäßigen New Relic-Benutzeroberfläche](https://newrelic.com
 
 | Gewünschte Aktion | Maßnahme |
 | ----------------- | ---------- |
-| Anzeigen von Dashboardinformationen für den ausgewählten App-Server oder Browser. | Klicken Sie auf die Schaltfläche **App server** oder **Browser**. |
+| Anzeigen von Dashboardinformationen für den ausgewählten Server oder Browser der App | Klicken Sie auf die Schaltfläche **App server** oder **Browser**. |
 | Anzeigen von Schwellenwerten für das [Apdex](https://newrelic.com/docs/site/apdex)-Ergebnis Ihrer App. | Zeigen Sie auf das **?**-Symbol des Apdex-Ergebnisses. |
-| Anzeigen weltweiter Apdex-Details. | Zeigen Sie in der **Browser**-Ansicht der Übersicht auf eine beliebige Stelle der globalen Apdex-Karte. **Tipp:** Wenn Sie direkt zum Dashboard [Geography](https://docs.newrelic.com/docs/new-relic-browser/geography-dashboard") der ausgewählten App wechseln möchten, klicken Sie auf den Titel **Global Apdex**, oder klicken Sie auf eine beliebige Stelle der globalen Apdex-Karte. |
-| Anzeigen des Dashboards [Web Transactions](https://newrelic.com/docs/applications-dashboards/web-transactions) | Klicken Sie im Dashboard "Overview" auf die Tabelle "Web Transactions". Wenn Sie Details zu einer bestimmten Webtransaktion (einschließlich [Key Transactions](https://newrelic.com/docs/site/key-transactions") anzeigen möchten), klicken Sie auf den entsprechenden Namen. |
-| Anzeigen des Dashboards [Errors](https://newrelic.com/docs/site/errors). | Klicken Sie im Dashboard "Overview" der Anwendung auf den Titel des Fehlerratendiagramms. **Tipp:** Sie können das Dashboard "Errors" auch über **Applications > (Ihre App) > Events > Errors** anzeigen. |
+| Anzeigen weltweiter Apdex-Details | Zeigen Sie in der **Browser**-Ansicht der Übersicht auf eine beliebige Stelle der globalen Apdex-Karte. **Tipp:** Wenn Sie direkt zum Dashboard [Gebiet](https://docs.newrelic.com/docs/new-relic-browser/geography-dashboard") der ausgewählten App wechseln möchten, klicken Sie auf den Titel **Global Apdex**, oder klicken Sie auf eine beliebige Stelle der globalen Apdex-Karte. |
+| Anzeigen des Dashboards [Webtransaktionen](https://newrelic.com/docs/applications-dashboards/web-transactions) | Klicken Sie im Dashboard "Overview" auf die Tabelle "Web Transactions". Wenn Sie Details zu einer bestimmten Webtransaktion (einschließlich [Wichtige Transaktionen](https://newrelic.com/docs/site/key-transactions") anzeigen möchten), klicken Sie auf den entsprechenden Namen. |
+| Anzeigen des Dashboards [Fehler](https://newrelic.com/docs/site/errors) | Klicken Sie im Dashboard "Overview" der Anwendung auf den Titel des Fehlerratendiagramms. **Tipp:** Sie können das Dashboard "Errors" auch über **Applications > (Ihre App) > Events > Errors** anzeigen. |
 
 
 Zum Anzeigen der Serverdetails der App können Sie zusätzlich eine der folgenden Aktionen ausführen:
@@ -148,4 +148,4 @@ In den folgenden Ressourcen finden Sie weitere Informationen:
  * [Real User Monitoring](https://newrelic.com/docs/features/real-user-monitoring): Überblick darüber, wie mit RUM (Real User Monitoring) die Zeit gemessen wird, die das Laden Ihrer Webseiten in den Browsern von Benutzern dauert, woher diese Benutzer stammen und welche Browser sie verwenden
  * [Finding Help](https://newrelic.com/docs/site/finding-help): Über das Online-Hilfecenter von New Relic aufrufbare Ressourcen
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0128_2016-->

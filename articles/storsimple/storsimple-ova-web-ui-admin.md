@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="01/13/2016"
+   ms.date="01/22/2016"
    ms.author="alkohli" />
 
 # Verwaltung des StorSimple Virtual Array (Vorschau) mithilfe der Web-UI
@@ -23,7 +23,7 @@
 
 Die Lernprogramme in diesem Artikel beziehen sich auf Microsoft Azure StorSimple Virtual Array (auch als „lokales virtuelles StorSimple-Gerät“ bezeichnet) mit Version 1.1.1.0 (Vorschau). Dieser Artikel beschreibt einige der komplexen Workflows und Verwaltungsaufgaben, die auf dem StorSimple Virtual Array durchgeführt werden können. Zur Verwaltung des StorSimple Virtual Array können zwei Benutzeroberflächen verwendet werden: die Benutzeroberfläche des StorSimple Manager-Dienstes (als „Portal-UI“ bezeichnet) und die lokale Web-UI für das Gerät. Der Schwerpunkt dieses Artikels liegt auf den Aufgaben, die mithilfe der Web-UI ausgeführt werden können.
 
->[AZURE.IMPORTANT]
+>[AZURE.IMPORTANT] 
 >
 >- StorSimple Virtual Array befindet sich in der Vorschauphase und ist für die Evaluierung und Bereitstellungsplanung vorgesehen. Die Installation dieser Vorschauversion in einer Produktionsumgebung wird nicht unterstützt. 
 >- Wenn Probleme mit StorSimple Virtual Array auftreten, posten Sie sie im [StorSimple-MSDN-Forum](https://social.msdn.microsoft.com/Forums/home?forum=StorSimple).
@@ -132,14 +132,8 @@ Sie können Ihr virtuelles Gerät über die lokale Web-UI herunterfahren oder ne
 
     Während des Neustarts wird die Verbindung mit der Benutzeroberfläche getrennt. Sie können den Neustart durch Aktualisieren der Benutzeroberfläche in regelmäßigen Abständen überwachen. Überwachen Sie den Neustartstatus des Geräts alternativ über den Hyper-V-Manager.
 
-![video\_icon](./media/storsimple-ova-web-ui-admin/video_icon.png) **Video verfügbar**
-
-In diesem Video wird gezeigt, wie Sie Freigaben erstellen, Freigaben sichern und Daten auf einem StorSimple Virtual Array wiederherstellen.
-
-> [AZURE.VIDEO use-the-storsimple-virtual-array]
-
 ## Nächste Schritte
 
-Erhalten Sie Informationen zum [Verwalten Ihres Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
+Erfahren Sie, wie Sie den [StorSimple Manager-Dienst zum Verwalten Ihres Geräts verwenden](storsimple-manager-service-administration.md).
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

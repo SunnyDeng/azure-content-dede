@@ -20,14 +20,14 @@
 
 Das Aktivieren von Self-Service-Funktionen für Endbenutzer ist ein häufiges Szenario in IT-Unternehmen. Dort gibt es viele Benutzer und viele Anwendungen, und die am besten informierte Person, die über das Erteilen von Zugriffsrechten entscheidet, ist nicht unbedingt der Verzeichnisadministrator. Oft ist die Person, die am besten darüber entscheiden kann, wer Zugriff auf eine Anwendung erhält, ein Teamleiter oder ein anderer delegierter Administrator. Doch letzten Endes ist es der Benutzer, der die Anwendung benutzt, und nur er weiß genau, was er zum Ausführen seiner Aufgaben benötigt.
 
-Der Self-Service-Anwendungszugriff ist eine Funktion von [Azure Active Directory Premium](http://azure.microsoft.com/trial/get-started-active-directory/), mit der Verzeichnisadministratoren folgende Möglichkeiten haben:
+Der Self-Service-Anwendungszugriff ist eine Funktion von [Azure Active Directory Premium](https://azure.microsoft.com/trial/get-started-active-directory/), mit der Verzeichnisadministratoren folgende Möglichkeiten haben:
 
 * Es Benutzern ermöglichen, mithilfe der Kachel „Weitere Anwendungen abrufen“ im [Azure AD-Zugriffsbereich](active-directory-appssoaccess-whatis.md#deploying-azure-ad-integrated-applications-to-users) den Zugriff auf Anwendungen anzufordern.
 * Festlegen, für welche Anwendungen Benutzer den Zugriff anfordern können.
 * Festlegen, ob Benutzer eine Genehmigung benötigen, um sich selbst den Zugriff auf eine Anwendung zuweisen zu können.
 * Festlegen, wer die Anforderungen genehmigt und den Zugriff für jede Anwendung verwaltet.
 
-Derzeit wird diese Funktion für alle bereits integrierten und benutzerdefinierten Anwendungen unterstützt, die die einmalige Verbundanmeldung oder die kennwortbasierte einmalige Anwendung im [Azure Active Directory-Anwendungskatalog](http://azure.microsoft.com/marketplace/active-directory/all/) unterstützen, einschließlich Apps wie Salesforce, Dropbox, Google Apps usw. Dieser Artikel beschreibt, wie Sie:
+Derzeit wird diese Funktion für alle bereits integrierten und benutzerdefinierten Anwendungen unterstützt, die die einmalige Verbundanmeldung oder die kennwortbasierte einmalige Anwendung im [Azure Active Directory-Anwendungskatalog](https://azure.microsoft.com/marketplace/active-directory/all/) unterstützen, einschließlich Apps wie Salesforce, Dropbox, Google Apps usw. Dieser Artikel beschreibt, wie Sie:
 
 * den Self-Service-Anwendungszugriff für Endbenutzer konfigurieren, einschließlich der Konfiguration eines optionalen Genehmigungsworkflows. 
 * die Zugriffsverwaltung für bestimmte Anwendungen auf die am besten geeigneten Personen in Ihrer Organisation delegieren und ihnen ermöglichen, den Azure AD-Zugriffsbereich zum Genehmigen von Zugriffsanforderungen, dem direkten Zuweisen von Zugriff für ausgewählte Benutzer oder (optional) zum Festlegen von Anmeldeinformationen für den Anwendungszugriff verwenden, wenn die kennwortbasierte einmalige Anwendung konfiguriert ist.
@@ -106,4 +106,4 @@ Die Kachel **Konfigurieren** wird nur angezeigt, wenn die Anwendung vom IT-Admin
 [2]: ./media/active-directory-self-service-application-access/ssaa_ap_manage_app.PNG
 [3]: ./media/active-directory-self-service-application-access/ssaa_ap_manage_app_config.PNG
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0128_2016-->

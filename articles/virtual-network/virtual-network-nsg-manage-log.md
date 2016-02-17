@@ -25,12 +25,12 @@ Sie können in Azure verschiedene Protokolltypen verwenden, um NSGs zu verwalten
 - **Ereignisprotokolle:** Mithilfe dieses Protokolls können Sie anzeigen, welche NSG-Regeln auf virtuelle Computer und Instanzrollen auf Grundlage der MAC-Adresse angewendet werden. Der Status für diese Regeln wird alle 60 Sekunden erfasst. 
 - **Leistungsindikatorenprotokolle:** Verwenden Sie dieses Protokoll, um anzuzeigen, wie oft jede NSG-Regel angewendet wurde, um Datenverkehr zuzulassen oder zu verweigern.
 
->[AZURE.WARNING]Protokolle sind nur für Ressourcen verfügbar, die im Ressourcen-Manager-Bereitstellungsmodell bereitgestellt werden. Sie können Protokolle nicht für Ressourcen im klassischen Bereitstellungsmodell verwenden. Für ein besseres Verständnis der beiden Modelle lesen Sie den Artikel [Grundlegendes zur Bereitstellung über den Ressourcen-Manager im Vergleich zur klassischen Bereitstellung](resource-manager-deployment-model.md).
+>[AZURE.WARNING] Protokolle sind nur für Ressourcen verfügbar, die im Ressourcen-Manager-Bereitstellungsmodell bereitgestellt werden. Sie können Protokolle nicht für Ressourcen im klassischen Bereitstellungsmodell verwenden. Für ein besseres Verständnis der beiden Modelle lesen Sie den Artikel [Grundlegendes zur Bereitstellung über den Ressourcen-Manager im Vergleich zur klassischen Bereitstellung](resource-manager-deployment-model.md).
 
 ##Aktivieren der Protokollierung
 Die Überwachungsprotokollierung ist automatisch jederzeit für alle Ressourcen-Manager-Ressourcen aktiviert. Sie müssen die Ereignis- und Leistungsindikatorenprotokollierung aktivieren, um mit der Erfassung von Daten aus diesen Protokollen zu beginnen. Führen Sie zum Aktivieren der Protokollierung die folgenden Schritte aus.
 
-1.  Melden Sie sich beim [Azure-Vorschauportal](http://portal.azure.com) an. Wenn Sie noch keine Netzwerksicherheitsgruppe haben, [erstellen Sie eine NSG](virtual-networks-create-nsg-arm-ps.md), bevor Sie fortfahren. 
+1.  Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com) an. Wenn Sie noch keine Netzwerksicherheitsgruppe haben, [erstellen Sie eine NSG](virtual-networks-create-nsg-arm-ps.md), bevor Sie fortfahren. 
 
 2.  Klicken Sie im Vorschauportal auf **Durchsuchen** > **Netzwerksicherheitsgruppen**.
 
@@ -43,7 +43,7 @@ Die Überwachungsprotokollierung ist automatisch jederzeit für alle Ressourcen-
 4. Klicken Sie im Blatt **Einstellungen** auf **Diagnose** und dann im Blatt **Diagnose** neben **Status** auf **Ein**.
 5. Klicken Sie im Blatt **Einstellungen** auf **Speicherkonto**, und wählen Sie ein vorhandenes Speicherkonto aus, oder erstellen Sie ein neues.  
 
->[AZURE.INFORMATION]Für Überwachungsprotokolle ist kein separates Speicherkonto erforderlich. Bei der Nutzung von Speicher zur Ereignis- und Regelprotokollierung fallen Gebühren an.
+>[AZURE.INFORMATION] Für Überwachungsprotokolle ist kein separates Speicherkonto erforderlich. Bei der Nutzung von Speicher zur Ereignis- und Regelprotokollierung fallen Gebühren an.
 
 6. Wählen Sie in der Dropdownliste direkt unter **Speicherkonto** aus, ob Sie Ereignisse, Leistungsindikatoren oder beides protokollieren möchten, und klicken Sie dann auf **Speichern**.
 
@@ -107,11 +107,11 @@ Mit einer der folgenden Methoden können Sie die Überwachungsprotokolldaten anz
 ##Anzeigen und Analysieren der Leistungsindikatoren- und Ereignisprotokolle 
 Für Leistungsindikatoren- und Ereignisprotokolle müssen Sie eine Verbindung zu Ihrem Speicherkonto herstellen und die JSON-Protokolleinträge abrufen. Sobald Sie die JSON-Dateien heruntergeladen haben, können Sie diese in das CSV-Format konvertieren oder in Excel, PowerBI oder einem anderen Datenvisualisierungstool anzeigen.
 
->[AZURE.TIP]Wenn Sie mit Visual Studio und den grundlegenden Konzepten zum Ändern der Werte für Konstanten und Variablen in C# vertraut sind, können Sie die [Protokollkonvertierungstools](https://github.com/Azure-Samples/networking-dotnet-log-converter) von Github verwenden
+>[AZURE.TIP] Wenn Sie mit Visual Studio und den grundlegenden Konzepten zum Ändern der Werte für Konstanten und Variablen in C# vertraut sind, können Sie die [Protokollkonvertierungstools](https://github.com/Azure-Samples/networking-dotnet-log-converter) von Github verwenden
 
 ##Zusätzliche Ressourcen
 
 - Blogbeitrag [Visualize your Azure Audit Logs with Power BI](http://blogs.msdn.com/b/powerbi/archive/2015/09/30/monitor-azure-audit-logs-with-power-bi.aspx).
 - Blogbeitrag [View and analyze Azure Audit Logs in Power BI and more](https://azure.microsoft.com/blog/analyze-azure-audit-logs-in-powerbi-more/).
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0128_2016-->

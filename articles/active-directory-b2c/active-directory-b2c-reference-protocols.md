@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Vorschau für Azure AD B2C | Microsoft Azure"
+	pageTitle="Azure AD B2C Preview | Microsoft Azure"
 	description="Hier erfahren Sie, wie Sie Apps direkt mit den von der Vorschau für Azure AD B2C unterstützten Protokollen erstellen."
 	services="active-directory-b2c"
 	documentationCenter=""
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/22/2015"
+	ms.date="01/28/2016"
 	ms.author="dastrock"/>
 
 # Vorschau für Azure AD B2C: Authentifizierungsprotokolle
@@ -68,6 +68,4 @@ Wenn Sie einige Beispielanforderungen sehen möchten, beginnen Sie mit einem der
 - Abrufen von Token mit Benutzername und Kennwort mit dem OAuth 2.0-Fluss für Ressourcenbesitzer-Kennwortberechtigungen(in Kürze verfügbar)
 - Abrufen von Token in einer Web-API mit dem OAuth 2.0-Fluss "Im-Auftrag-von" (in Kürze verfügbar)
 
-<!-- [Call the Azure AD Graph API using the OAuth 2.0 Client Credentials Flow](active-directory-reference-graph.md) -->
-
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0204_2016-->

@@ -1,7 +1,7 @@
 <properties
 	pageTitle="Eine Vorhersagelösung für die Kreditrisikobewertung mit Machine Learning| Microsoft Azure"
 	description="Eine ausführliche exemplarische Vorgehensweise zum Erstellen einer Lösung für die Vorhersageanalyse zur Kreditrisikobewertung in Azure Machine Learning Studio."
-	keywords="credit risk, predictive analytics solution,risk assessment"
+	keywords="Kreditrisiko, Predictive Analytics-Lösung, Risikobewertung"
 	services="machine-learning"
 	documentationCenter=""
 	authors="garyericson"
@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="10/13/2015"
+	ms.date="02/03/2016"
 	ms.author="garye"/>
 
 
@@ -26,11 +26,9 @@ Kreditrisikobewertung ist natürlich ein komplexes Problem, wir versuchen jedoch
 
 In dieser ausführlichen Anleitung erstellen Sie ein Predictive Analytics-Modell in Machine Learning Studio und stellen das Modell anschließend im Machine Learning-API-Dienst bereit. Wir beginnen mit öffentlich verfügbaren Kreditrisikodaten, entwickeln und trainieren ein Vorhersagemodell anhand dieser Daten und stellen das Modell als Webdienst bereit, den andere Benutzer für die Kreditrisikobewertung verwenden können.
 
-[AZURE.INCLUDE [machine-learning-free-trial](../../includes/machine-learning-free-trial.md)]
+[AZURE.INCLUDE [machine-learning-kostenlose-Testversion](../../includes/machine-learning-free-trial.md)]
 
-Öffnen Sie Machine Learning Studio über folgenden Link: [https://studio.azureml.net/Home](https://studio.azureml.net/Home). Weitere Informationen zu den ersten Schritten mit Machine Learning Studio finden Sie unter [Microsoft Azure Machine Learning Studio Home](https://studio.azureml.net/).
-
->[AZURE.TIP]Informationen zum Herunterladen und Drucken des Diagramms, mit dem Sie sich einen Überblick über die Machine Learning Studio-Funktionen verschaffen können, finden Sie unter [Übersichtsdiagramm der Azure Machine Learning Studio-Funktionen](machine-learning-studio-overview-diagram.md).
+>[AZURE.TIP] Informationen zum Herunterladen und Drucken des Diagramms, mit dem Sie sich einen Überblick über die Machine Learning Studio-Funktionen verschaffen können, finden Sie unter [Übersichtsdiagramm der Azure Machine Learning Studio-Funktionen](machine-learning-studio-overview-diagram.md).
 
 Um eine Lösung zur Kreditrisikobewertung zu erstellen, müssen wir die folgenden Schritte ausführen:
 
@@ -41,6 +39,6 @@ Um eine Lösung zur Kreditrisikobewertung zu erstellen, müssen wir die folgende
 5.	[Bereitstellen des Webdiensts](machine-learning-walkthrough-5-publish-web-service.md)
 6.	[Zugreifen auf den Webdienst](machine-learning-walkthrough-6-access-web-service.md)
 
-Diese Anleitung basiert auf einer vereinfachten Version des in Machine Learning Studio enthaltenen Artikels [Experiment zur Kreditrisiko-Vorhersage](../machine-learning-sample-credit-risk-prediction.md).
+Diese Anleitung basiert auf einer vereinfachten Version des Beispielexperiments [Binäre Klassifizierung: Kreditrisiko-Vorhersage](../machine-learning-sample-credit-risk-prediction.md) im [Cortana Analytics-Katalog](http://gallery.cortanaanalytics.com/).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0211_2016-->

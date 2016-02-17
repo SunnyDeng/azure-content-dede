@@ -89,7 +89,7 @@ Zusätzlich sollten Sie sicherstellen, dass die importierten Berechtigungsnachwe
 ### Konfigurationseinstellungen und Verbindungszeichenfolgen
 Es ist üblich, Verbindungszeichenfolgen, Berechtigungsnachweise zur Authentisierung und andere sensible Daten in Konfigurationsdateien zu speichern. Leider können sich diese Dateien ungeschützt auf ihrer Website befinden oder in ein öffentliches Repository verschoben werden, wodurch diese Daten gefährdet werden können. Eine einfache Suche, z. B. nach „[GitHub](https://github.com)“, kann unzählige Konfigurationsdateien mit sichtbaren geheimen Schlüsseln in den öffentlichen Repositories aufdecken.
 
-Die bewährte Methode ist, diese Informationen aus Ihren App-Konfigurationsdateien herauszuhalten. Azure App Service ermöglicht es Ihnen, Konfigurationsdaten als Teil der Laufzeitumgebung von Web-Apps, als **App-Einstellungen** und als **Verbindungszeichenfolgen** zu speichern. Die Werte werden für Ihre Anwendung zur Laufzeit über *Umgebungsvariablen* für die meisten Programmiersprachen freigegeben. Bei .NET-Anwendungen werden diese Werte in Ihre .NET-Konfiguration zur Laufzeit eingegeben. Von diesen Situationen abgesehen, bleiben diese Konfigurationseinstellungen verschlüsselt, es sei denn Sie zeigen diese an oder konfigurieren sie mithilfe des [Azure-Portals](http://portal.azure.com) oder mit Hilfsprogrammen wie PowerShell oder der Azure-Befehlszeilenschnittstelle.
+Die bewährte Methode ist, diese Informationen aus Ihren App-Konfigurationsdateien herauszuhalten. Azure App Service ermöglicht es Ihnen, Konfigurationsdaten als Teil der Laufzeitumgebung von Web-Apps, als **App-Einstellungen** und als **Verbindungszeichenfolgen** zu speichern. Die Werte werden für Ihre Anwendung zur Laufzeit über *Umgebungsvariablen* für die meisten Programmiersprachen freigegeben. Bei .NET-Anwendungen werden diese Werte in Ihre .NET-Konfiguration zur Laufzeit eingegeben. Von diesen Situationen abgesehen, bleiben diese Konfigurationseinstellungen verschlüsselt, es sei denn Sie zeigen diese an oder konfigurieren sie mithilfe des [Azure-Portals](https://portal.azure.com) oder mit Hilfsprogrammen wie PowerShell oder der Azure-Befehlszeilenschnittstelle.
 
 Das Speichern von Konfigurationsinformationen in App Service ermöglicht es dem App-Administrator, vertrauliche Daten für die Produktions-Apps zu sperren. Entwickler können einen separaten Satz von Konfigurationen für die App-Entwicklung nutzen und die Einstellungen können durch die Einstellungen in App Service automatisch ersetzt werden. Selbst die Entwickler dürfen die geheimen Schlüssel nicht kennen, die für die Produktions-App konfiguriert worden sind. Weitere Informationen zu App-Einstellungen und Verbindungszeichenfolgen in App Service finden Sie unter [Konfigurieren von Web-Apps](web-sites-configure.md).
 
@@ -99,7 +99,7 @@ Azure App Service bietet sicheren FTP-Zugriff auf das Dateisystem für Ihre App 
 
 Den FTPS-Link für Ihre App finden Sie, indem Sie folgende Schritte durchführen:
 
-1. Öffnen Sie das [Azure-Portal](http://portal.azure.com).
+1. Öffnen Sie das [Azure-Portal](https://portal.azure.com).
 2. Wählen Sie „**Alle durchsuchen**“ aus.
 3. Wählen Sie auf dem Blatt „**Durchsuchen**“ die Option „**App Services**“ aus.
 4. Wählen Sie auf dem Blatt „**App Services**“ die gewünschte App aus.
@@ -111,16 +111,16 @@ Weitere Informationen zu FTPS finden Sie unter [File Transfer Protocol](http://e
 
 ## Nächste Schritte
 
-Um weitere Informationen zur Sicherheit der Azure-Plattform oder Informationen zur Meldung eines **sicherheitsrelevanten Ereignisses oder Missbrauchs** zu erhalten, bzw. um Microsoft zu informieren, dass Sie einen **Penetrationstest** Ihrer Seite durchführen, lesen Sie den Abschnitt über Sicherheit im [Microsoft Azure Trust Center](http://azure.microsoft.com/support/trust-center/security/).
+Um weitere Informationen zur Sicherheit der Azure-Plattform oder Informationen zur Meldung eines **sicherheitsrelevanten Ereignisses oder Missbrauchs** zu erhalten, bzw. um Microsoft zu informieren, dass Sie einen **Penetrationstest** Ihrer Seite durchführen, lesen Sie den Abschnitt über Sicherheit im [Microsoft Azure-Vertrauunsstellungscenter](https://azure.microsoft.com/support/trust-center/security/).
 
-Weitere Informationen zu den Dateien **web.config** oder **applicationhost.config** in App Service-Apps finden Sie unter [Freigegebene Konfigurationsoptionen in Azure App Service-Web-Apps](http://azure.microsoft.com/blog/2014/01/28/more-to-explore-configuration-options-unlocked-in-windows-azure-web-sites/).
+Weitere Informationen zu den Dateien **web.config** oder **applicationhost.config** in App Service-Apps finden Sie unter [Freigegebene Konfigurationsoptionen in Azure App Service-Web-Apps](https://azure.microsoft.com/blog/2014/01/28/more-to-explore-configuration-options-unlocked-in-windows-azure-web-sites/).
 
 Weitere Informationen zum Protokollieren von Informationen für App Service-Apps, die sich bei der Erkennung von Angriffen als nützlich erweisen können, finden Sie unter [Aktivieren der Diagnoseprotokollierung](web-sites-enable-diagnostic-log.md).
 
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Änderungen
 
 * Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

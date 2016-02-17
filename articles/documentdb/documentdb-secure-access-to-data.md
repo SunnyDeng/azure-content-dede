@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/16/2015" 
+	ms.date="01/26/2015" 
 	ms.author="ryancraw"/>
 
 # Sicherer Zugriff auf Daten in DocumentDB #
@@ -115,7 +115,7 @@ Eine DocumentDB-Benutzerressource ist einer DocumentDB-Datenbank zugeordnet. Jed
 
     docUser = await client.CreateUserAsync(database.SelfLink, docUser);
 
-> [AZURE.NOTE]Jeder DocumentDB-Benutzer hat eine PermissionsLink-Eigenschaft, mit der die Liste der dem Benutzer zugeordneten Berechtigungen abgerufen werden kann.
+> [AZURE.NOTE] Jeder DocumentDB-Benutzer hat eine PermissionsLink-Eigenschaft, mit der die Liste der dem Benutzer zugeordneten Berechtigungen abgerufen werden kann.
 
 Eine DocumentDB-Berechtigungsressource ist einem DocumentDB-Benutzer zugeordnet. Jeder Benutzer kann null oder mehr DocumentDB-Berechtigungen enthalten. Eine Berechtigungsressource ermöglicht den Zugriff auf ein Sicherheitstoken, das der Benutzer beim Zugriff auf eine bestimmte Anwendungsressource benötigt. Es gibt zwei verfügbare Zugriffsebenen, die von einer Berechtigungsressource bereitgestellt werden können:
 
@@ -123,7 +123,7 @@ Eine DocumentDB-Berechtigungsressource ist einem DocumentDB-Benutzer zugeordnet.
 - Lesen: Der Benutzer kann die Inhalte der Ressource nur lesen und keine Schreib-, Aktualisierungs- oder Löschvorgänge für die Ressource vornehmen.
 
 
-> [AZURE.NOTE]Zum Ausführen von gespeicherten DocumentDB-Prozeduren muss der Benutzer über uneingeschränkte Berechtigung für die Sammlung verfügen, in dem die gespeicherte Prozedur ausgeführt wird.
+> [AZURE.NOTE] Zum Ausführen von gespeicherten DocumentDB-Prozeduren muss der Benutzer über uneingeschränkte Berechtigung für die Sammlung verfügen, in dem die gespeicherte Prozedur ausgeführt wird.
 
 
 Der folgende Codeausschnitt zeigt, wie eine Berechtigungsressource erstellt, das Ressourcentoken (Token) der Berechtigungsressource gelesen und die Berechtigungen dem oben erstellen Benutzer zugeordnet werden können.
@@ -154,7 +154,7 @@ Um alle einem bestimmten Benutzer zugeordneten Berechtigungsressourcen abzurufen
             
     DocumentClient userClient = new DocumentClient(new Uri(endpointUrl),permList);
 
-> [AZURE.TIP]Ressourcentoken verfügen über einen gültigen Zeitspannenwert von einer Stunde. Die Gültigkeitsdauer des Tokens kann bis maximal fünf Stunden angegeben werden.
+> [AZURE.TIP] Ressourcentoken verfügen über einen gültigen Zeitspannenwert von einer Stunde. Die Gültigkeitsdauer des Tokens kann bis maximal fünf Stunden angegeben werden.
 
 ##<a name="NextSteps"></a>Nächste Schritte
 
@@ -163,4 +163,4 @@ Um alle einem bestimmten Benutzer zugeordneten Berechtigungsressourcen abzurufen
 - Informationen zum Erstellen von DocumentDB-Autorisierungstoken finden klicken Sie [hier](https://msdn.microsoft.com/library/azure/dn783368.aspx)
  
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

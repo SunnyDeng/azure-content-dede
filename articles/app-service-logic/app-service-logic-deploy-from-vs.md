@@ -18,12 +18,12 @@
 	
 # Bereitstellen von Visual Studio aus
 
-Auch wenn das [Azure-Portal](https://portal.azure.com) Ihnen eine hervorragende Möglichkeit zum Entwerfen und Verwalten von Logik-Apps bietet, können Sie die Logik-App stattdessen auch von Visual Studio aus bereitstellen. Es gibt einige wichtige Funktionen, die auf diese Weise ermöglicht werden:
+Auch wenn das [Azure-Portal](https://portal.azure.com/) Ihnen eine hervorragende Möglichkeit zum Entwerfen und Verwalten von Logik-Apps bietet, können Sie die Logik-App stattdessen auch von Visual Studio aus bereitstellen. Es gibt einige wichtige Funktionen, die auf diese Weise ermöglicht werden:
 
 - Speichern Sie Ihre Logik-App zusammen mit den anderen Ressourcen in Ihrer Projektmappe, sodass alle Aspekte Ihrer Anwendung darin enthalten sind.
 - Lassen Sie die Logik-App-Definition in der Quellcodeverwaltung eingecheckt, damit Sie Überarbeitungen mit TFS oder Git verfolgen können. 
 
-Sie müssen das Azure SDK 2.7 oder höher installiert haben, um die folgenden Schritte durchführen zu können. Suchen Sie hier [das neueste SDK für Visual Studio](http://azure.microsoft.com/downloads/).
+Sie müssen das Azure SDK 2.7 oder höher installiert haben, um die folgenden Schritte durchführen zu können. Suchen Sie hier [das neueste SDK für Visual Studio](https://azure.microsoft.com/downloads/).
 
 ## Erstellen eines Projekts
 
@@ -65,4 +65,4 @@ In Zukunft können Sie Ihre Logik-App in der Quellcodeverwaltung überarbeiten u
 
 Wenn Sie nicht Visual Studio verwenden, aber dennoch die Werkzeuge zur Verfügung haben möchten, um Ihre Logik-App von der Quellcodesteuerung aus bereitzustellen, können Sie auch die [API](https://msdn.microsoft.com/library/azure/dn948510.aspx) oder [PowerShell](../powershell-azure-resource-manager.md) direkt verwenden, um Ihre Bereitstellungen zu automatisieren.
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -35,7 +35,7 @@ Die Offlinesynchronisierung bietet mehrere Vorteile:
 * Synchronisiert Daten auf mehreren Geräten
 * Erkennt Konflikte, wenn derselbe Datensatz von zwei Geräten geändert wird
 
-> [AZURE.NOTE]Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie [kostenlose mobile Dienste, die Sie auch nach Ablauf der Testversion weiter nutzen können](http://azure.microsoft.com/pricing/details/mobile-services/). Weitere Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AE564AB28 target="\_blank").
+> [AZURE.NOTE] Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie [kostenlose mobile Dienste, die Sie auch nach Ablauf der Testversion weiter nutzen können](https://azure.microsoft.com/pricing/details/mobile-services/). Weitere Informationen finden Sie unter [Kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AE564AB28 target="\_blank").
 
 Dieses Lernprogramm baut auf dem Schnellstartlernprogramm [Erste Schritte mit Mobile Services] auf, das Sie zuerst abschließen müssen. Sehen sich zunächst den Code im Zusammenhang mit der Offlinesynchronisierung aus dem Schnellstart an.
 
@@ -102,7 +102,7 @@ Der zweite Parameter für `pullWithQuery` ist eine Abfrage-ID, für die _inkreme
 ```
 
 
->[AZURE.NOTE]Um Datensätze aus dem lokalen Speicher des Geräts zu entfernen, wenn sie in der Datenbank des mobilen Diensts gelöscht wurden, aktivieren Sie [Vorläufiges Löschen]. Andernfalls sollte Ihre App in regelmäßigen Abständen `MSSyncTable.purgeWithQuery` aufrufen, um den lokalen Speicher zu löschen.
+>[AZURE.NOTE] Um Datensätze aus dem lokalen Speicher des Geräts zu entfernen, wenn sie in der Datenbank des mobilen Diensts gelöscht wurden, aktivieren Sie [Vorläufiges Löschen]. Andernfalls sollte Ihre App in regelmäßigen Abständen `MSSyncTable.purgeWithQuery` aufrufen, um den lokalen Speicher zu löschen.
 
 
 * In **QSTodoService.m** rufen die Methoden `addItem` und `completeItem` nach dem Ändern von Daten `syncData` auf. In **QSTodoListViewController.m** ruft die Methode `refresh` auch `syncData` auf, damit in der GUI bei jeder Aktualisierung und jedem Start die neuesten Daten angezeigt werden (`init` ruft `refresh` auf).
@@ -120,7 +120,7 @@ Bei Verwendung des Core-Offlinedatenspeichers müssen Sie bestimmte Tabellen und
       * MS\_TableConfig: Zum Nachverfolgen der letzten aktualisierten Zeit für die letzte Synchronisierung für alle Pullvorgänge.
       * TodoItem: Zum Speichern von TODO-Elementen. Die Systemspalten **ms\_createdAt**, **ms\_updatedAt** und **ms\_version** sind optionale Systemeigenschaften.
 
->[AZURE.NOTE]Das Mobile Services-SDK reserviert Spaltennamen, die mit "**`ms_`**" beginnen. Verwenden Sie dieses Präfix ausschließlich für Systemspalten. Andernfalls ändern sich die Spaltennamen bei Verwendung des Remotedienstes.
+>[AZURE.NOTE] Das Mobile Services-SDK reserviert Spaltennamen, die mit "**`ms_`**" beginnen. Verwenden Sie dieses Präfix ausschließlich für Systemspalten. Andernfalls ändern sich die Spaltennamen bei Verwendung des Remotedienstes.
 
 - Zur Verwendung der Funktion zur Offlinesynchronisierung müssen Sie die Systemtabellen definieren, wie unten dargestellt.
 
@@ -275,4 +275,4 @@ Um den lokalen Speicher mit dem Server zu synchronisieren, wurden `MSSyncTable.p
 
 [Erste Schritte mit Mobile Services]: mobile-services-ios-get-started.md
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

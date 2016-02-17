@@ -18,7 +18,7 @@
 
 # Microsoft Azure-Sicherheits- und Überwachungsprotokollverwaltung
 
-Mit Azure können Kunden mithilfe von Azure IaaS- (Infrastructure-as-a-Service) und PaaS-Rollen (Platform-as-a-Service) Sicherheitsereignisse generieren und im zentralen Speicher ihrer Abonnements sammeln. Anschließend können die Kunden [HDInsight](http://azure.microsoft.com/documentation/services/hdinsight/) verwenden, um die gesammelten Ereignisse zu aggregieren und zu analysieren. Darüber hinaus können diese gesammelten Ereignisse zur kontinuierlichen Überwachung in lokale SIEM-Systeme (Security Information and Event Management) exportiert werden.
+Mit Azure können Kunden mithilfe von Azure IaaS- (Infrastructure-as-a-Service) und PaaS-Rollen (Platform-as-a-Service) Sicherheitsereignisse generieren und im zentralen Speicher ihrer Abonnements sammeln. Anschließend können die Kunden [HDInsight](https://azure.microsoft.com/documentation/services/hdinsight/) verwenden, um die gesammelten Ereignisse zu aggregieren und zu analysieren. Darüber hinaus können diese gesammelten Ereignisse zur kontinuierlichen Überwachung in lokale SIEM-Systeme (Security Information and Event Management) exportiert werden.
 
 Zum Azure-Lebenszyklus der Sicherheitsprotokollierung, Analyse und Überwachung gehören:
 
@@ -32,9 +32,9 @@ Dieser Artikel konzentriert sich auf die Generierungs- und Sammlungsphasen des L
 ## Protokollgenerierung:
 Sicherheitsereignisse werden im Windows-Ereignisprotokoll für die Kanäle **System**, **Sicherheit** und **Anwendung** auf virtuellen Computern ausgelöst. Um sicherzustellen, dass Ereignisse ohne potenzielle Datenverluste protokolliert werden, muss die Größe des Ereignisprotokolls unbedingt entsprechend konfiguriert werden. Richten Sie die Größe des Ereignisprotokolls an der Anzahl von Ereignissen, die durch die Überwachungsrichtlinieneinstellungen generiert werden, und an den definierten Ereignissammlungsrichtlinien aus. Weitere Informationen finden Sie unter [Planning for security audit monitoring and management](http://technet.microsoft.com/library/ee513968.aspx#BKMK_4) (in englischer Sprache).
 
->[AZURE.NOTE]Wenn Sie die Windows-Ereignisweiterleitung (Windows Event Forwarding, WEF) oder die Azure-Diagnose (wird im Abschnitt [Protokollsammlung](#log-collection) erklärt) verwenden, um Protokolle aus Cloud Services oder virtuellen Computern abzurufen, sollten Sie die möglichen Auswirkungen von Systemausfällen berücksichtigen. Wenn beispielsweise Ihre WEF-Umgebung für einige Zeit ausfällt, müssen Sie entweder sicherstellen, dass die Protokollgröße ausreicht, um einen größeren Zeitraum abzudecken, oder sich auf einen möglichen Protokolldatenverlust einstellen.
+>[AZURE.NOTE] Wenn Sie die Windows-Ereignisweiterleitung (Windows Event Forwarding, WEF) oder die Azure-Diagnose (wird im Abschnitt [Protokollsammlung](#log-collection) erklärt) verwenden, um Protokolle aus Cloud Services oder virtuellen Computern abzurufen, sollten Sie die möglichen Auswirkungen von Systemausfällen berücksichtigen. Wenn beispielsweise Ihre WEF-Umgebung für einige Zeit ausfällt, müssen Sie entweder sicherstellen, dass die Protokollgröße ausreicht, um einen größeren Zeitraum abzudecken, oder sich auf einen möglichen Protokolldatenverlust einstellen.
 
-Für in Azure bereitgestellte Cloud Services-Anwendungen und für virtuelle Computer, die über den [Azure Marketplace für virtuelle Computer](http://azure.microsoft.com/marketplace/virtual-machines/#microsoft) erstellt wurden, ist eine Reihe von Betriebssystem-Sicherheitsereignissen standardmäßig aktiviert. Kunden können Ereignisse für die Überwachung hinzufügen, entfernen oder ändern, indem sie die Betriebssystem-Überwachungsrichtlinie anpassen. Weitere Informationen finden Sie unter [Security Policy Settings Reference](http://technet.microsoft.com/library/jj852210.aspx) (in englischer Sprache).
+Für in Azure bereitgestellte Cloud Services-Anwendungen und für virtuelle Computer, die über den [Azure Marketplace für virtuelle Computer](https://azure.microsoft.com/marketplace/virtual-machines/#microsoft) erstellt wurden, ist eine Reihe von Betriebssystem-Sicherheitsereignissen standardmäßig aktiviert. Kunden können Ereignisse für die Überwachung hinzufügen, entfernen oder ändern, indem sie die Betriebssystem-Überwachungsrichtlinie anpassen. Weitere Informationen finden Sie unter [Security Policy Settings Reference](http://technet.microsoft.com/library/jj852210.aspx) (in englischer Sprache).
 
 Mithilfe der folgenden Methoden können Sie weitere Protokolle über Betriebssystem- (z. B. Überwachungsrichtlinienänderungen) und Windows-Komponenten (z. B. IIS) generieren:
 
@@ -93,7 +93,7 @@ In der folgenden Tabelle sind einige wichtige Unterschiede zwischen diesen beide
 ##	Sammlung von Sicherheitsereignisdaten mit der Windows-Ereignisweiterleitung
 Für in Domänen eingebundene Azure Virtual Machines können Sie WEF mithilfe von Gruppenrichtlinien auf die gleiche Weise konfigurieren wie für lokale in eine Domäne eingebundene Computer. Weitere Informationen hierzu finden Sie unter [Hybrid Cloud](http://www.microsoft.com/server-cloud/solutions/hybrid-cloud.aspx).
 
-Bei dieser Vorgehensweise könnte eine Organisation ein IaaS-Abonnement erwerben, es über [ExpressRoute](http://azure.microsoft.com/services/expressroute/) oder ein Site-to-Site-VPN mit ihrem Unternehmensnetzwerk verbinden und dann die in Azure verfügbaren virtuellen Computer in die Unternehmensdomäne einbinden. Anschließend können Sie von den in der Domäne eingebundenen Computern aus die Windows-Ereignisweiterleitung konfigurieren.
+Bei dieser Vorgehensweise könnte eine Organisation ein IaaS-Abonnement erwerben, es über [ExpressRoute](https://azure.microsoft.com/services/expressroute/) oder ein Site-to-Site-VPN mit ihrem Unternehmensnetzwerk verbinden und dann die in Azure verfügbaren virtuellen Computer in die Unternehmensdomäne einbinden. Anschließend können Sie von den in der Domäne eingebundenen Computern aus die Windows-Ereignisweiterleitung konfigurieren.
 
 Die Ereignisweiterleitung ist in zwei Teile unterteilt: Quelle und Sammler. Die Quelle ist der Computer, in dem die Sicherheitsprotokolle generiert werden. Der Sammler ist der zentrale Server, der die Ereignisprotokolle sammelt und konsolidiert. IT-Administratoren können Ereignisse abonnieren, damit sie Ereignisse empfangen und speichern können, die von Remotecomputern (der Ereignisquelle) weitergeleitet werden. Weitere Informationen finden Sie unter [Einrichten von Computern zum Weiterleiten und Sammeln von Ereignissen](http://technet.microsoft.com/library/cc748890.aspx).
 
@@ -218,7 +218,7 @@ Zusammen wird durch **PartitionKey** und **RowKey** jede Entität innerhalb eine
 
 - "Timestamp" ist ein Datums-/Uhrzeitwert, der auf dem Server verwaltet wird, um den Zeitpunkt der letzten Änderung eines Elements nachzuverfolgen.
 
->[AZURE.NOTE]Die maximale Zeilengröße in einer Azure Storage-Tabelle ist auf 1 MB beschränkt. Ein Speicherkonto kann bis zu 200 TB Daten aus Blobs, Warteschlangen und Tabellen enthalten, wenn das Konto nach Juni 2012 erstellt wurde. Daher kann die Tabellengröße auf bis zu 200 TB anwachsen, wenn Blobs und Warteschlangen keinen Speicherplatz belegen. Für Konten, die vor Juni 2012 erstellt wurden, gilt ein Grenzwert von 100 TB.
+>[AZURE.NOTE] Die maximale Zeilengröße in einer Azure Storage-Tabelle ist auf 1 MB beschränkt. Ein Speicherkonto kann bis zu 200 TB Daten aus Blobs, Warteschlangen und Tabellen enthalten, wenn das Konto nach Juni 2012 erstellt wurde. Daher kann die Tabellengröße auf bis zu 200 TB anwachsen, wenn Blobs und Warteschlangen keinen Speicherplatz belegen. Für Konten, die vor Juni 2012 erstellt wurden, gilt ein Grenzwert von 100 TB.
 
 Der Speicher-Explorer ermöglicht Ihnen auch das Bearbeiten von Tabellendaten. Doppelklicken Sie auf eine bestimmte Zeile in der Tabellenansicht, um das hier gezeigte Fenster "Entität bearbeiten" zu öffnen:
 
@@ -230,7 +230,7 @@ In diesem Abschnitt aktualisieren wir eine vorhandene Pipeline zur Sicherheitspr
 ##### Schritt 1: Ergänzen der Konfigurationsdatei durch relevante Ereignisse
 Die im vorherigen Beispiel erstellte Azure-Diagnose-Datei muss aktualisiert werden, um die Fehlertypen des Windows-Anwendungsereignisprotokolls zu berücksichtigen.
 
->[AZURE.NOTE]Alle vorhandenen Konfigurationseinstellungen der Azure-Diagnose müssen mit der neuen Konfigurationsdatei zusammengeführt werden. Die in der neuen Datei definierten Einstellungen überschreiben die vorhandenen Konfigurationen.
+>[AZURE.NOTE] Alle vorhandenen Konfigurationseinstellungen der Azure-Diagnose müssen mit der neuen Konfigurationsdatei zusammengeführt werden. Die in der neuen Datei definierten Einstellungen überschreiben die vorhandenen Konfigurationen.
 
 Zum Abrufen der vorhandenen Konfigurationseinstellung können Sie das Cmdlet **Get-AzureVMDiagnosticsExtension** verwenden. Im Folgenden finden Sie ein Azure PowerShell-Beispielskript zum Abrufen der vorhandenen Konfiguration:
 
@@ -396,7 +396,7 @@ In diesem Abschnitt aktualisieren wir eine vorhandene Pipeline zur Sicherheitspr
 Zum Erkennen von Änderungen an der Firewall wird die vorhandene Konfiguration durch Änderungsereignisse für die Firewall ergänzt.
 
 #### Schritt 1: Abrufen der vorhandenen Konfiguration
->[AZURE.NOTE]Die neuen Konfigurationseinstellungen überschreiben die vorhandene Konfiguration. Es ist daher wichtig, alle vorhandenen Konfigurationseinstellungen der Azure-Diagnose mit der neuen Konfigurationsdatei zusammenzuführen.
+>[AZURE.NOTE] Die neuen Konfigurationseinstellungen überschreiben die vorhandene Konfiguration. Es ist daher wichtig, alle vorhandenen Konfigurationseinstellungen der Azure-Diagnose mit der neuen Konfigurationsdatei zusammenzuführen.
 
 Zum Abrufen der vorhandenen Konfigurationseinstellung können Sie das Cmdlet **Get-AzureServiceDiagnosticsExtension** verwenden:
 
@@ -527,7 +527,7 @@ Wenn Sie Sicherheitsprotokolle sammeln, empfehlen wir Folgendes:
 - Führen Sie vorhandene Azure-Diagnose-Konfigurationseigenschaften mit den von Ihnen vorgenommenen Änderungen zusammen. Die neue Konfigurationsdatei überschreibt die vorhandenen Konfigurationseinstellungen.
 - Wählen Sie das Intervall für **ScheduledTransferPeriod** mit Bedacht. Kürzere Datenübertragungszeiten steigern die Relevanz der Daten, können jedoch die Speicherkosten und den Mehraufwand für die Verarbeitung erhöhen.
 
->[AZURE.NOTE]Die andere Variable, die sich erheblich auf die Menge der gesammelten Daten auswirkt, ist der Protokolliergrad. Im Folgenden finden Sie ein Beispiel dafür, wie Protokolle nach Protokolliergrad gefiltert werden:
+>[AZURE.NOTE] Die andere Variable, die sich erheblich auf die Menge der gesammelten Daten auswirkt, ist der Protokolliergrad. Im Folgenden finden Sie ein Beispiel dafür, wie Protokolle nach Protokolliergrad gefiltert werden:
 
     System!*[System[(Level =2)]]
 
@@ -535,7 +535,7 @@ Der Protokolliergrad ist kumulativ. Wenn der Filter auf **Warnung** festgelegt w
 
 - Löschen Sie regelmäßig die Diagnosedaten aus Azure Storage, wenn sie nicht länger benötigt werden.
 
->[AZURE.NOTE]Weitere Informationen zu Diagnosedaten finden Sie unter [Speichern und Anzeigen von Diagnosedaten in Azure Storage](https://msdn.microsoft.com/library/azure/hh411534.aspx). Die Container und Tabellen, in denen Diagnosedaten gespeichert werden, sind genau wie andere Container und Tabellen. Sie können daraus Blobs und Entitäten auf die gleiche Weise löschen wie bei anderen Daten. Sie können die Diagnosedaten programmgesteuert über eine der Speicherclientbibliotheken oder visuell über einen [Speicher-Explorer-Client](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx) löschen.
+>[AZURE.NOTE] Weitere Informationen zu Diagnosedaten finden Sie unter [Speichern und Anzeigen von Diagnosedaten in Azure Storage](https://msdn.microsoft.com/library/azure/hh411534.aspx). Die Container und Tabellen, in denen Diagnosedaten gespeichert werden, sind genau wie andere Container und Tabellen. Sie können daraus Blobs und Entitäten auf die gleiche Weise löschen wie bei anderen Daten. Sie können die Diagnosedaten programmgesteuert über eine der Speicherclientbibliotheken oder visuell über einen [Speicher-Explorer-Client](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx) löschen.
 
 - Es hat sich bewährt, Dienstdaten und Sicherheitsprotokolldaten in separaten Speicherkonten zu speichern. Durch diese Isolierung wird sichergestellt, dass die Speicherung von Sicherheitsprotokolldaten nicht die Speicherleistung für Produktionsdienstdaten beeinträchtigt.
 - Wählen Sie die Aufbewahrungsdauer für Protokolle basierend auf der Konformitätsrichtlinie und den Anforderungen zur Datenanalyse und -überwachung in Ihrer Organisation.
@@ -572,7 +572,7 @@ Protokolle für Vorgänge im Zusammenhang mit Ihren Azure-Abonnementressourcen s
 ## Zusätzliche Ressourcen
 Die folgenden Ressourcen bieten allgemeine Informationen zu Microsoft Azure und verwandte Microsoft-Dienste:
 
-- [Microsoft Azure Trust Center](http://azure.microsoft.com/support/trust-center/)
+- [Microsoft Azure Trust Center](https://azure.microsoft.com/support/trust-center/)
 
     Informationen zur Einbettung von Sicherheit und Datenschutz in die Entwicklung von Azure und zur Einhaltung einer Vielzahl von internationalen und branchenspezifischen Compliancestandards mit Azure
 
@@ -614,4 +614,4 @@ Die folgenden Ressourcen bieten allgemeine Informationen zu Microsoft Azure und 
 [19]: ./media/azure-security-audit-log-management/sec-view-blob-container.png
 [20]: ./media/azure-security-audit-log-management/sec-hdinsight-analysis.png
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0128_2016-->

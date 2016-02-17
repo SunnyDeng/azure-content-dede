@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure AD Connect-Synchronisierung: Lotus Domino-Connector"
+   pageTitle="Azure AD Connect-Synchronisierung: Generischer Lotus Domino-Connector | Microsoft Azure"
    description="Dieser Artikel beschreibt die Konfiguration des Lotus Domino-Connectors von Microsoft."
    services="active-directory"
    documentationCenter=""
@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.devlang="na"
    ms.topic="article"
-   ms.date="01/14/2016"
+   ms.date="01/21/2016"
    ms.author="andkjell"/>
 
 # Technische Referenz für den Lotus Domino-Connector
@@ -539,4 +539,4 @@ Das Schema kann in Domino auf unterschiedliche Arten erweitert werden, sodass es
 
 -	Informationen zum Aktivieren der Protokollierung für die Behandlung von Connectorproblemen finden Sie unter [Vorgehensweise: Aktivieren der ETW-Ablaufverfolgung für Connectors](http://go.microsoft.com/fwlink/?LinkId=335731).
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

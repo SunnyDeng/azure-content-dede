@@ -26,7 +26,7 @@ In diesem Artikel wird veranschaulicht, wie Sie das [Microsoft HPC Pack-Image f�
 
 ![HPC Pack-Hauptknoten][headnode]
 
->[AZURE.NOTE]Derzeit basiert das HPC Pack-VM-Image auf Windows Server 2012 R2 Datacenter mit vorinstalliertem HPC Pack 2012 R2 Update 2. Außerdem ist Microsoft SQL Server 2014 Express vorinstalliert.
+>[AZURE.NOTE] Derzeit basiert das HPC Pack-VM-Image auf Windows Server 2012 R2 Datacenter mit vorinstalliertem HPC Pack 2012 R2 Update 2. Außerdem ist Microsoft SQL Server 2014 Express vorinstalliert.
 
 
 Für eine Produktionsbereitstellung eines HPC Pack-Clusters in Azure empfehlen wir Ihnen eine automatisierte Bereitstellungsmethode, z. B. das [HPC Pack-IaaS-Bereitstellungsskript](virtual-machines-hpcpack-cluster-powershell-script.md) oder eine [Schnellstartvorlage](https://azure.microsoft.com/documentation/templates/) des Azure-Ressourcen-Managers.
@@ -42,7 +42,7 @@ Für eine Produktionsbereitstellung eines HPC Pack-Clusters in Azure empfehlen w
 Unten sind die allgemeinen Schritte zum Erstellen eines virtuellen Azure-Computers für den HPC Pack-Hauptknoten angegeben. Sie können verschiedene Azure-Tools nutzen, um diese Schritte im klassischen Azure-Bereitstellungsmodell (Service Management) auszuführen.
 
 
-1. Falls Sie planen, ein VNet für den virtuellen Hauptknotencomputer zu erstellen, helfen Ihnen die Informationen unter [Erstellen eines virtuellen Netzwerks (klassisch) über das Azure-Portal](../virtual-networks/virtual-networks-create-vnet-classic-pportal.md) weiter.
+1. Falls Sie planen, ein VNet für den virtuellen Hauptknotencomputer zu erstellen, helfen Ihnen die Informationen unter [Erstellen eines virtuellen Netzwerks (klassisch) über das Azure-Portal](../virtual-networks/virtual-networks-create-vnet-classic-portal.md) weiter.
 
     **Überlegungen**
 
@@ -102,4 +102,4 @@ Unten sind die allgemeinen Schritte zum Erstellen eines virtuellen Azure-Compute
 <!--Image references-->
 [headnode]: ./media/virtual-machines-hpcpack-cluster-headnode/headnode.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0204_2016-->

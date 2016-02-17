@@ -13,10 +13,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="identity"
-   ms.date="10/27/2015"
+   ms.date="02/03/2016"
    ms.author="viviali"/>
 
-# Vorschau der Azure Active Directory (Azure AD) B2B-Zusammenarbeit: Funktionsweise
+# Vorschau der Azure AD B2B-Zusammenarbeit: Funktionsweise
 Die Azure AD-B2B-Zusammenarbeit basiert auf einem Einladungs- und Einlösemodell. Sie geben die E-Mail-Adressen der Parteien, mit denen Sie zusammenarbeiten möchten, sowie die Anwendungen ein, die sie verwenden sollen. Azure AD sendet den Parteien eine E-Mail-Einladung mit einem Link. Der Partnerbenutzer folgt dem Link und wird aufgefordert, sich über sein Azure AD-Konto anzumelden oder sich für ein neues Azure AD-Konto zu registrieren.
 
 1. Ihr Administrator lädt Partnerbenutzer durch Hochladen einer [strukturierten CSV-Datei](active-directory-b2b-references-csv-file-format.md) über das Azure-Portal ein.
@@ -33,13 +33,13 @@ Obwohl zur Nutzung von Azure AD B2B kein kostenpflichtiges Azure AD-Abonnement (
  - Für das Branding der Einladungs-E-Mails und beim Einlösen wird das Mandantenbranding verwendet, sodass den eingeladenen Partnerbenutzern mehr Kontext zur Verfügung steht.
 
 ## Verwandte Artikel
- Weitere Artikel zur Azure B2B-Zusammenarbeit:
+ Durchsuchen Sie unsere anderen Artikel zur Azure B2B-Zusammenarbeit
 
- - [Was ist die Azure AD B2B-Zusammenarbeit?](active-directory-b2b-what-is-azure-ad-b2b.md)
+ - [Was ist die Azure AD B2B-Zusammenarbeit?](active-directory-b2b-what-is-azure-ad-b2b.md)
  - [Ausführliche exemplarische Vorgehensweise](active-directory-b2b-detailed-walkthrough.md)
  - [Referenz zum CSV-Dateiformat](active-directory-b2b-references-csv-file-format.md)
  - [Tokenformat für externe Benutzer](active-directory-b2b-references-external-user-token-format.md)
  - [Objektattributänderungen für externe Benutzer](active-directory-b2b-references-external-user-object-attribute-changes.md)
  - [Aktuelle Einschränkungen der Vorschau](active-directory-b2b-current-preview-limitations.md)
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0204_2016-->

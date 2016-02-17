@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/14/2015"
+	ms.date="01/22/2016"
 	ms.author="dkshir"/>
 
 
@@ -29,9 +29,7 @@ Azure speichert das Image unter **Images**. Hier werden sämtliche Images abgele
 
 ## Voraussetzungen
 
-Diese Schritte setzen voraus, dass Sie bereits mithilfe des klassischen Bereitstellungsmodells einen virtuellen Azure-Computer erstellt, das Betriebssystem konfiguriert und beliebige Datenträger angefügt haben. Falls dies noch nicht geschehen ist, finden Sie hier Anweisungen:
-
-- [Erstellen eines virtuellen Linux-Computers][]
+Diese Schritte setzen voraus, dass Sie bereits mithilfe des klassischen Bereitstellungsmodells einen virtuellen Azure-Computer erstellt, das Betriebssystem konfiguriert und beliebige Datenträger angefügt haben. Falls Sie dies noch nicht getan haben, lesen Sie sich [Erstellen einer virtuellen Linux-Maschine][] durch.
 
 
 ## Erfassen des virtuellen Computers
@@ -51,7 +49,7 @@ Diese Schritte setzen voraus, dass Sie bereits mithilfe des klassischen Bereitst
 	- Setzt den Hostnamen auf "localhost.localdomain" zurück
 	- Löschen des zuletzt bereitgestellten Benutzerkontos (aus "/var/lib/waagent" abgerufen) **und der zugehörigen Daten**
 
-	>[AZURE.NOTE]Beim Aufheben der Bereitstellung werden Dateien und Daten gelöscht, um das Image zu "verallgemeinern". Führen Sie diesen Befehl nur auf einem virtuellen Computer aus, den Sie als neue Imagevorlage erfassen möchten. Dies garantiert nicht, dass alle vertraulichen Informationen aus dem Image gelöscht werden oder dass es für eine erneute Verteilung an Dritte genutzt werden kann.
+	>[AZURE.NOTE] Beim Aufheben der Bereitstellung werden Dateien und Daten gelöscht, um das Image zu "verallgemeinern". Führen Sie diesen Befehl nur auf einem virtuellen Computer aus, den Sie als neue Imagevorlage erfassen möchten. Dies garantiert nicht, dass alle vertraulichen Informationen aus dem Image gelöscht werden oder dass es für eine erneute Verteilung an Dritte genutzt werden kann.
 
 
 3. Geben Sie **y** ein, um fortzufahren. Sie können den Parameter `-force` hinzufügen, um diesen Bestätigungsschritt zu vermeiden.
@@ -59,7 +57,7 @@ Diese Schritte setzen voraus, dass Sie bereits mithilfe des klassischen Bereitst
 4. Geben Sie **Exit** ein, um den SSH-Client zu schließen.
 
 
-	>[AZURE.NOTE]Bei den nächsten Schritten wird davon ausgegangen, dass Sie [die Azure-Befehlszeilenschnittstelle auf dem Clientcomputer installiert haben](../xplat-cli-install.md). Die folgenden Schritte können Sie auch im [klassischen Azure-Portal][] ausführen.
+	>[AZURE.NOTE] Bei den nächsten Schritten wird davon ausgegangen, dass Sie [die Azure-Befehlszeilenschnittstelle auf dem Clientcomputer installiert haben](../xplat-cli-install.md). Die folgenden Schritte können Sie auch im [klassischen Azure-Portal][] ausführen.
 
 5. Öffnen Sie auf dem Clientcomputer die Azure-CLI, und melden Sie sich bei Ihrem Azure-Abonnement an. Weitere Informationen hierzu finden Sie unter [Herstellen einer Verbindung mit einem Azure-Abonnement von der Azure-CLI](../xplat-cli-connect.md).
 
@@ -71,7 +69,7 @@ Diese Schritte setzen voraus, dass Sie bereits mithilfe des klassischen Bereitst
 
 	`azure vm shutdown <your-virtual-machine-name>`
 
-	>[AZURE.NOTE]Mit `azure vm list` können Sie alle in Ihrem Abonnement erstellten virtuellen Computer ermitteln.
+	>[AZURE.NOTE] Mit `azure vm list` können Sie alle in Ihrem Abonnement erstellten virtuellen Computer ermitteln.
 
 8. Wenn der virtuelle Computer beendet wird, erfassen Sie das Image mit dem folgenden Befehl:
 
@@ -99,6 +97,6 @@ Das Image kann jetzt zum Erstellen virtueller Computer verwendet werden. Sie kö
 [Informationen zu virtuellen Computern in Azure]: virtual-machines-images.md
 [Erstellen eines benutzerdefinierten virtuellen Computers]: virtual-machines-linux-create-custom.md
 [How to Attach a Data Disk to a Virtual Machine]: storage-windows-attach-disk.md
-[Erstellen eines virtuellen Linux-Computers]: virtual-machines-linux-tutorial.md
+[Erstellen einer virtuellen Linux-Maschine]: virtual-machines-linux-create-custom.md
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

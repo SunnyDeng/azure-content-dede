@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/09/2015" 
+	ms.date="02/01/2016" 
 	ms.author="spelluru"/>
 
 # Hadoop-Streamingaktivität
@@ -81,7 +81,7 @@ Beachten Sie Folgendes:
 9. Geben Sie für die **arguments**-Eigenschaft die Argumente für den Streamingauftrag an.
 10. Die **getDebugInfo**-Eigenschaft ist ein optionales Element. Wenn die Eigenschaft auf "Failure" festgelegt wird, werden die Protokolle nur bei Fehlern heruntergeladen. Wenn die Eigenschaft auf "All" festgelegt wird, werden Protokolle immer heruntergeladen, unabhängig vom Ausführungsstatus.
 
-> [AZURE.NOTE]Wie im Beispiel gezeigt, müssen Sie in Bezug auf die Hadoop-Streamingaktivität für die **outputs**-Eigenschaft ein Ausgabedataset festlegen. Dies ist nur ein für die Pipeline erforderliches Dummy-Dataset. Sie müssen in Bezug auf die Aktivität kein Eingabedataset für die **inputs**-Eigenschaft festlegen.
+> [AZURE.NOTE] Wie im Beispiel gezeigt, müssen Sie in Bezug auf die Hadoop-Streamingaktivität für die **outputs**-Eigenschaft ein Ausgabedataset festlegen. Dies ist nur ein für die Pipeline erforderliches Dummy-Dataset. Sie müssen in Bezug auf die Aktivität kein Eingabedataset für die **inputs**-Eigenschaft festlegen.
 
 	
 ## Beispiel
@@ -102,7 +102,7 @@ Erstellen Sie zunächst einen verknüpften Dienst, um die vom Azure HDInsight-C
 	    }
 	}
 
-#### Verknüpfter Azure HDInsight-Dienst
+#### Mit Azure HDInsight verknüpfter Dienst
 Erstellen Sie anschließend einen verknüpften Dienst, um Ihren Azure HDInsight-Cluster mit der Azure Data Factory zu verknüpfen. Ersetzen Sie beim Kopieren und Einfügen des folgenden Codes „HDInsight cluster name“ durch den Namen des HDInsight-Clusters, und ändern Sie die Werte für Benutzername und Kennwort.
 	
 	{
@@ -192,4 +192,4 @@ Der HDInsight-Cluster wird automatisch mit Beispielprogrammen („wc.exe“ und 
 	    }
 	}
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0204_2016-->

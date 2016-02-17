@@ -21,7 +21,7 @@
 
 *Application Insights befindet sich in der Vorschau.*
 
-[Microsoft Azure Cloud Service-Apps](http://azure.microsoft.com/services/cloud-services/) können mit [Visual Studio Application Insights][start] auf Verfügbarkeit, Leistung, Fehler und Auslastung überwacht werden. Mit dem Feedback zur Leistung und Effektivität der App in der Praxis können Sie in jedem Entwicklungslebenszyklus eine fundierte Entscheidung für die Richtung des Entwurfs treffen.
+[Microsoft Azure Cloud Service-Apps](https://azure.microsoft.com/services/cloud-services/) können mit [Visual Studio Application Insights][start] auf Verfügbarkeit, Leistung, Fehler und Auslastung überwacht werden. Mit dem Feedback zur Leistung und Effektivität der App in der Praxis können Sie in jedem Entwicklungslebenszyklus eine fundierte Entscheidung für die Richtung des Entwurfs treffen.
 
 ![Beispiel](./media/app-insights-cloudservices/sample.png)
 
@@ -279,4 +279,4 @@ Das ist alles! Die Portalfunktionalität ist bereits angeschlossen, damit Sie al
 [redfield]: app-insights-monitor-performance-live-website-now.md
 [start]: app-insights-overview.md
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -68,14 +68,17 @@ In die Domäne eingebundene Geräte verwenden dieses Objekt, um während der aut
 
     Initialize-ADSyncDomainJoinedComputerSync –AdConnectorAccount [connector account name] -AzureADCredentials $aadAdminCred;
 
->[AZURE.NOTE]Ersetzen Sie [*connector account name*] durch das Domänenkonto, das als AD-Connector-Konto verwendet wird.
+>[AZURE.NOTE]
+ Ersetzen Sie [*connector account name*] durch das Domänenkonto, das als AD-Connector-Konto verwendet wird.
 
->[AZURE.NOTE]Wenn das Get-Credential-Popup angezeigt wird, muss der Benutzername für die Anmeldeinformationen im Format *user@example.com* angegeben werden.
+>[AZURE.NOTE]
+Wenn das Get-Credential-Popup angezeigt wird, muss der Benutzername für die Anmeldeinformationen im Format *user@example.com* angegeben werden.
 
 ### Konfigurieren von AD FS-Anspruchsregeln
 Dieser Schritt ermöglicht die sofortige Registrierung eines Computers bei Azure DRS, indem den Computern die Authentifizierung mit Kerberos/NTLM über AD FS erlaubt wird. Ohne diesen Schritt werden Computer nur mit Verzögerung in Azure AD eingebunden (abhängig von den Synchronisationszeiten von Azure AD Connect).
 
->[AZURE.NOTE]Wenn Sie lokal nicht mit AD FS als Verbundserver arbeiten, befolgen Sie die Anweisungen Ihres Anbieters, um die Anspruchsregeln zu erstellen.
+>[AZURE.NOTE]
+Wenn Sie lokal nicht mit AD FS als Verbundserver arbeiten, befolgen Sie die Anweisungen Ihres Anbieters, um die Anspruchsregeln zu erstellen.
 
 Führen Sie auf Ihrem AD FS-Server (oder in einer mit dem AD FS-Server verbundenen Sitzung) die folgenden PowerShell-Befehle aus:
 
@@ -109,7 +112,8 @@ Führen Sie auf Ihrem AD FS-Server (oder in einer mit dem AD FS-Server verbund
  
     Set-AdfsRelyingPartyTrust -TargetIdentifier urn:federation:MicrosoftOnline -IssuanceTransformRules $crSet.ClaimRulesString 
 
->[AZURE.NOTE]Windows 10-Computer authentifizieren sich mit der integrierten Windows-Authentifizierung bei einem aktiven von AD FS gehosteten WS-Trust-Endpunkt. Sie müssen sicherstellen, dass dieser Endpunkt aktiviert ist. Wenn Sie einen Webauthentifizierungsproxy verwenden, müssen Sie außerdem sicherstellen, dass dieser Endpunkt durch den Proxy veröffentlicht wird. Dazu prüfen Sie, ob in der AD FS-Verwaltungskonsole unter „Dienst > Endpunkte“ die Option „adfs/services/trust/13/windowstransport“ als aktiviert angezeigt wird.
+>[AZURE.NOTE]
+Windows 10-Computer authentifizieren sich mit der integrierten Windows-Authentifizierung bei einem aktiven von AD FS gehosteten WS-Trust-Endpunkt. Sie müssen sicherstellen, dass dieser Endpunkt aktiviert ist. Wenn Sie einen Webauthentifizierungsproxy verwenden, müssen Sie außerdem sicherstellen, dass dieser Endpunkt durch den Proxy veröffentlicht wird. Dazu prüfen Sie, ob in der AD FS-Verwaltungskonsole unter „Dienst > Endpunkte“ die Option „adfs/services/trust/13/windowstransport“ als aktiviert angezeigt wird.
 
 
 ## Schritt 2: Konfigurieren der automatischen Geräteregistrierung mithilfe einer Gruppenrichtlinie in Active Directory
@@ -127,14 +131,15 @@ Sie können eine Active Directory-Gruppenrichtlinie verwenden, um Ihre in die Do
  - Eine bestimmte Organisationseinheit in AD, in der in die Domäne eingebundene Windows 10-Computer platziert werden
  - Eine bestimmte Sicherheitsgruppe mit in die Domäne eingebundenen Windows 10-Computern, die automatisch bei Azure AD registriert werden
  
->[AZURE.NOTE]Die Gruppenrichtlinienvorlage wurde in Windows 10 umbenannt. Wenn Sie das Gruppenrichtlinientool auf einem Windows 10-Computer ausführen, wird die Richtlinie angezeigt als: <br> **In die Domäne eingebundene Computer als Geräte registrieren**. Die Richtlinie wird in folgendem Verzeichnis gespeichert:<br> ***Computerkonfiguration/Richtlinien/Administrative Vorlagen/Windows-Komponenten/Geräteregistrierung***
+>[AZURE.NOTE]
+Die Gruppenrichtlinienvorlage wurde in Windows 10 umbenannt. Wenn Sie das Gruppenrichtlinientool auf einem Windows 10-Computer ausführen, wird die Richtlinie angezeigt als: <br> **In die Domäne eingebundene Computer als Geräte registrieren**. Die Richtlinie wird in folgendem Verzeichnis gespeichert:<br> ***Computerkonfiguration/Richtlinien/Administrative Vorlagen/Windows-Komponenten/Geräteregistrierung***
 
  
 ## Zusätzliche Informationen
 * [Windows 10 für Unternehmen: Möglichkeiten der geschäftlichen Nutzung von Geräten](active-directory-azureadjoin-windows10-devices-overview.md)
 * [Erweitern von Cloudfunktionen auf Windows 10-Geräte über Azure Active Directory Join](active-directory-azureadjoin-user-upgrade.md)
 * [Weitere Informationen zu Verwendungsszenarios für Azure AD Join](active-directory-azureadjoin-deployment-aadjoindirect.md)
-* [Verbinden von in die Domäne eingebundenen Geräten mit Azure AD für Windows 10-Funktionen](active-directory-azureadjoin-devices-group-policy.md)
+* [Benutzererfahrungen beim Verknüpfen von in die Domäne eingebundenen Windows 10-Geräten mit Azure AD](active-directory-azureadjoin-devices-group-policy.md)
 * [Einrichten von Azure AD Join](active-directory-azureadjoin-setup.md)
 
-<!----HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

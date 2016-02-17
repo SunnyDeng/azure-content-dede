@@ -271,7 +271,7 @@ Verwenden Sie diese Befehle, um die möglichen Werte für die Größenzeichenfol
 	$avName="<availability set name>"
 	Get-AzureRmVMSize -ResourceGroupName $rgName -AvailabilitySetName $avName | Select Name
 
-> [AZURE.NOTE]Derzeit können Sie mit dem Ressourcen-Manager einen virtuellen Computer nur bei der Erstellung zu einer Verfügbarkeitsgruppe hinzufügen.
+> [AZURE.NOTE] Derzeit können Sie mit dem Ressourcen-Manager einen virtuellen Computer nur bei der Erstellung zu einer Verfügbarkeitsgruppe hinzufügen.
 
 Um dem virtuellen Computer einen zusätzlichen Datenträger hinzuzufügen, kopieren Sie diese Zeilen in den Befehlssatz, und geben Sie die Datenträgereinstellungen an.
 
@@ -391,8 +391,8 @@ Hier finden Sie den Azure PowerShell-Befehlssatz zum Erstellen dieses virtuellen
 
 [Bereitstellen und Verwalten von virtuellen Azure-Computern mit Ressourcen-Manager-Vorlagen und PowerShell](virtual-machines-deploy-rmtemplates-powershell.md)
 
-[Erstellen eines virtuellen Windows-Computers mit einer Ressourcen-Manager-Vorlage und PowerShell](virtual-machines-create-windows-powershell-resource-manager-template-simple)
+[Erstellen eines virtuellen Windows-Computers mit einer Ressourcen-Manager-Vorlage und PowerShell](virtual-machines-create-windows-powershell-resource-manager-template.md)
 
-[Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md)
+[Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md)
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0204_2016-->

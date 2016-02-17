@@ -14,20 +14,20 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="data-services"
-	ms.date="12/16/2015"
+	ms.date="02/04/2016"
 	ms.author="jeffstok"/>
 
-# Skalieren von Stream Analytics-Aufträgen zur Erhöhung des Durchsatzes bei der Datenverarbeitung #
+# Skalieren von Azure Stream Analytics-Aufträgen zur Erhöhung des Durchsatzes bei der Streamingdatenverarbeitung
 
 Erfahren Sie, wie Sie Analyseaufträge optimieren, *Streamingeinheiten* für einen Stream Analytics-Auftrag berechnen und Stream Analytics-Aufträge durch Konfiguration von Eingabepartitionen, Optimierung der Abfragedefinition und Einstellung von Streamingeinheiten für Aufträge skalieren.
 
-## Welche Teile hat ein Stream Analytics-Auftrag? ##
+## Welche Teile hat ein Stream Analytics-Auftrag?
 Eine Stream Analytics-Auftragsdefinition umfasst Eingaben, Abfrage und Ausgabe. Bei der Eingabe liest der Auftrag den eingehenden Datenstrom, bei der Ausgabe sendet der Auftrag die Auftragsergebnisse, und bei der Abfrage wird der Dateneingabestrom umgewandelt.
 
 Für einen Auftrag wird mindestens eine Eingabequelle für Datenstreaming benötigt. Die Datenstrom-Eingabequelle kann entweder ein Azure Service Bus Event Hub oder ein Azure-BLOB-Speicher sein. Weitere Informationen finden Sie unter [Einführung in Azure Stream Analytics](stream-analytics-introduction.md), [Erste Schritte mit Azure Stream Analytics](stream-analytics-get-started.md) und [Azure Stream Analytics-Entwicklerhandbuch](../stream-analytics-developer-guide.md).
 
-## Konfigurieren von Streaming-Einheiten ##
-Streaming-Einheiten (SUs) stellen die Ressourcen und Leistung für die Ausführung eines Azure Stream Analytics-Auftrags dar. SUs bieten anhand eines kombinierten Maßes aus CPU, Arbeitsspeicher und Schreib- und Leseraten eine Möglichkeit zur Beschreibung der relativen Ereignisverarbeitungskapazität. Jede Streaming-Einheit entspricht etwa einem Durchsatz von 1 MB/s.
+## Konfigurieren von Streamingeinheiten
+Streamingeinheiten (Streaming Units, SUs) sind eine abstrakte Repräsentation für die Ressourcen und Leistung, die zum Ausführen eines Azure Stream Analytics-Auftrags benötigt werden. SUs bieten anhand eines kombinierten Maßes aus CPU, Arbeitsspeicher und Schreib- und Leseraten eine Möglichkeit zur Beschreibung der relativen Ereignisverarbeitungskapazität. Jede Streaming-Einheit entspricht etwa einem Durchsatz von 1 MB/s.
 
 Die benötigte SU-Anzahl für ein bestimmtes Projekt hängt von der für die Partitionskonfiguration für die Eingaben und die für den Auftrag definierte Abfrage ab. Über das Azure-Portal können Sie für einen Auftrag bis zu Ihrem Kontingent Streamingeinheiten einrichten. Für jedes Azure-Abonnement hat standardmäßig höchstens 50 Streaming-Einheiten für alle Analytics-Aufträge in einer bestimmten Region. Wenn Sie die Streaming-Einheiten für Ihr Abonnement erhöhen möchten, wenden Sie sich an den [Microsoft Support](http://support.microsoft.com).
 
@@ -37,11 +37,98 @@ Die Anzahl an Streaming-Einheiten, die ein Auftrag verwenden kann, hängt von de
 
 In diesem Artikel sehen Sie, wie Sie die Abfrage so berechnen und optimieren, dass der Durchsatz für Analytics-Aufträge erhöht wird.
 
-## Berechnen der maximal möglichen Streaming-Einheiten für einen Auftrag ##
+## Hochgradig paralleler Auftrag
+Der hochgradig parallele Auftrag ist das am stärksten skalierbare Szenario, das in Azure Stream Analytics zur Verfügung steht. Er verbindet eine Partition der Eingabe mit einer Instanz der Abfrage und einer Partition der Ausgabe. Um diese Parallelität zu erreichen, müssen einige Anforderungen erfüllt sein:
+
+1.  Wenn Ihre Abfragelogik davon abhängig ist, dass der gleiche Schlüssel durch die gleiche Abfrageinstanz verarbeitet wird, müssen Sie sicherstellen, dass die Ereignisse in die gleiche Partition Ihrer Eingabe aufgenommen werden. Für Event Hubs bedeutet das, dass für die Ereignisdaten ein **PartitionKey** festgelegt werden muss. Alternativ können Sie auch partitionierte Absender verwenden. Für Blob bedeutet das, dass die Ereignisse an den gleichen Partitionsordner gesendet werden. Wenn es für Ihre Abfragelogik nicht erforderlich ist, dass der gleiche Schlüssel von der gleichen Abfrageinstanz verarbeitet wird, können Sie diese Anforderung ignorieren. Ein Beispiel hierfür wäre eine einfache Auswahl-, Projekt- oder Filterabfrage.  
+2.	Nachdem die Daten auf der Eingabeseite wie erforderlich angeordnet und gegliedert wurden, müssen Sie sicherstellen, dass die Abfrage partitioniert wird. Dazu müssen Sie in allen Schritten **Partition By** verwenden. Es sind mehrere Schritte zulässig, aber sie müssen alle durch den gleichen Schlüssel partitioniert werden. Außerdem müssen Sie beachten, dass der Partitionierungsschlüssel derzeit auf **PartitionId** festgelegt werden muss, um einen vollständig parallelen Auftrag zu erhalten.  
+3.	Derzeit unterstützen nur Event Hubs und Blob eine partitionierte Ausgabe. Für die Event Hubs-Ausgabe müssen Sie für das Feld **PartitionKey** den Wert **PartitionId** konfigurieren. Für Blob müssen Sie nichts tun.  
+4.	Sie müssen beachten, dass die Anzahl von Eingabepartitionen gleich der Anzahl von Ausgabepartitionen sein muss. Die Blob-Ausgabe unterstützt derzeit keine Partitionen. Das ist aber kein Problem, weil sie das Partitionierungsschema von der vorgelagerten Abfrage erbt. Beispiele für Partitionswerte, die einen vollständig parallelen Auftrag ermöglichen:  
+	1.	8 Event Hubs-Eingabepartitionen und 8 Event Hubs-Ausgabepartitionen
+	2.	8 Event Hubs-Eingabepartitionen und Blob-Ausgabe  
+	3.	8 Blob-Eingabepartitionen und Blob-Ausgabe  
+	4.	8 Blob-Eingabepartitionen und 8 Event Hubs-Ausgabepartitionen  
+
+Es folgen einige Beispielszenarien für hochgradige Parallelität.
+
+### Einfache Abfrage
+Eingabe: Event Hubs mit 8 Partitionen. Ausgabe: Event Hub mit 8 Partitionen
+
+**Abfrage:**
+
+    SELECT TollBoothId
+    FROM Input1 Partition By PartitionId
+    WHERE TollBoothId > 100
+
+Bei der Abfrage handelt es sich um einen einfachen Filter, und daher brauchen wir uns um die Partitionierung der an Event Hubs gesendeten Eingabe nicht zu kümmern. Sie sehen, dass in der Abfrage **Partition By** auf **PartitionId** festgelegt ist. Die zweite oben genannte Anforderung ist also erfüllt. Für die Ausgabe muss die Event Hubs-Ausgabe in dem Auftrag so konfiguriert werden, dass das Feld **PartitionKey** auf **PartitionId** festgelegt ist. Und als letzte Prüfung: Die Anzahl von Eingabepartitionen ist gleich der Anzahl von Ausgabepartitionen. Diese Topologie ist hochgradig parallel.
+
+### Abfrage mit Gruppierungsschlüssel
+Eingabe: Event Hubs mit 8 Partitionen. Ausgabe: Blob
+
+**Abfrage:**
+
+    SELECT COUNT(*) AS Count, TollBoothId
+    FROM Input1 Partition By PartitionId
+    GROUP BY TumblingWindow(minute, 3), TollBoothId, PartitionId
+
+Diese Abfrage enthält einen Gruppierungsschlüssel. Hier muss der gleiche Schlüssel von der gleichen Abfrageinstanz verarbeitet werden. Das bedeutet, dass die Ereignisse auf partitionierte Weise an Event Hubs gesendet werden müssen. Um welchen Schlüssel müssen wir uns kümmern? **PartitionId** ist ein logisches Konzept auf Auftragsebene. Der Schlüssel, um den es wirklich geht, ist **TollBoothId**. Das heißt, wir müssen den **PartitionKey** der an Event Hubs gesendeten Ereignisse so festlegen, dass er die **TollBoothId** des Ereignisses ist. Bei der Abfrage ist **Partition By** auf **PartitionId** festgelegt, das ist also in Ordnung. Da die Ausgabe in Blob erfolgt, brauchen wir uns um die Konfiguration von **PartitionKey** nicht zu kümmern. Was die vierte Anforderung betrifft: Hier geht es um Blob, wir brauchen uns also darum nicht zu kümmern. Diese Topologie ist hochgradig parallel.
+
+### Mehrschrittige Abfrage mit Gruppierungsschlüssel ###
+Eingabe: Event Hub mit 8 Partitionen. Ausgabe: Event Hub mit 8 Partitionen
+
+**Abfrage:**
+
+    WITH Step1 AS (
+    SELECT COUNT(*) AS Count, TollBoothId, PartitionId
+    FROM Input1 Partition By PartitionId
+    GROUP BY TumblingWindow(minute, 3), TollBoothId, PartitionId
+    )
+    
+    SELECT SUM(Count) AS Count, TollBoothId
+    FROM Step1 Partition By PartitionId
+    GROUP BY TumblingWindow(minute, 3), TollBoothId, PartitionId
+
+Diese Abfrage enthält einen Gruppierungsschlüssel. Hier muss der gleiche Schlüssel von der gleichen Abfrageinstanz verarbeitet werden. Wir können hier die gleiche Strategie wie in der vorherigen Abfrage verwenden. Die Abfrage umfasst mehrere Schritte. Ist für jeden Schritt **Partition By** auf **PartitionId** festgelegt? Ja. Das wäre also in Ordnung. Für die Ausgabe muss wie oben erörtert **PartitionKey** auf **PartitionId** festgelegt werden, und wir können auch feststellen, dass die Anzahl von Partitionen der Eingabe entspricht. Diese Topologie ist hochgradig parallel.
+
+
+## Beispielszenarien OHNE hochgradige Parallelität
+
+### Ungleiche Anzahl von Partitionen ###
+Eingabe: Event Hubs mit 8 Partitionen. Ausgabe: Event Hub mit 32 Partitionen
+
+In diesem Fall spielt es keine Rolle, was die Abfrage beinhaltet, weil die Anzahl von Eingabepartitionen ungleich der Anzahl von Ausgabepartitionen ist.
+
+### Keine Verwendung von Event Hubs oder Blobs als Ausgabe
+Eingabe: Event Hubs mit 8 Partitionen. Ausgabe: Power BI
+
+Bei der Power BI-Ausgabe wird derzeit keine Partitionierung unterstützt.
+
+### Mehrschrittige Abfrage mit unterschiedlichen Werten für „Partition By“
+Eingabe: Event Hub mit 8 Partitionen. Ausgabe: Event Hub mit 8 Partitionen
+
+**Abfrage:**
+
+    WITH Step1 AS (
+    SELECT COUNT(*) AS Count, TollBoothId, PartitionId
+    FROM Input1 Partition By PartitionId
+    GROUP BY TumblingWindow(minute, 3), TollBoothId, PartitionId
+    )
+    
+    SELECT SUM(Count) AS Count, TollBoothId
+    FROM Step1 Partition By TollBoothId
+    GROUP BY TumblingWindow(minute, 3), TollBoothId
+    
+Wie Sie sehen, wird im zweiten Schritt **TollBoothId** als Partitionierungsschlüssel verwendet. Dies entspricht nicht dem ersten Schritt, und deshalb muss eine Umschichtung durchgeführt werden.
+
+Dies waren einige Beispiele und Gegenbeispiele für Stream Analytics-Aufträge, mit denen eine hochgradig parallele Topologie erreicht werden kann und bei denen daher eine maximale Skalierung möglich ist. Es gibt jedoch Aufträge, die in keines dieser Profile passen. In künftigen Updates wird deshalb dargelegt, wie einige der anderen kanonischen Stream Analytics-Szenarien maximal skaliert werden können.
+
+Bis dahin können Sie die folgenden allgemeinen Anleitungen verwenden:
+
+## Berechnen der maximal möglichen Streaming-Einheiten für einen Auftrag
 Die Gesamtzahl der von einem Stream Analytics-Auftrag verwendbaren Streaming-Einheiten hängt von der Anzahl an Schritten in der für den Auftrag definierten Abfrage und der Anzahl an Partitionen für die einzelnen Schritte ab.
 
-### Schritte einer Abfrage ###
-Eine Abfrage kann einen oder mehrere Schritte umfassen. Jeder Schritt besteht aus einer Unterabfrage, die anhand des WITH-Schlüsselworts definiert ist. Die einzige Abfrage, die sich außerhalb des WITH-Schlüsselworts befindet, wird ebenfalls als Schritt gezählt, beispielsweise die SELECT-Anweisung in der folgenden Abfrage:
+### Schritte einer Abfrage
+Eine Abfrage kann einen oder mehrere Schritte umfassen. Jeder Schritt besteht aus einer Unterabfrage, die mithilfe des **WITH**-Schlüsselworts definiert wird. Die einzige Abfrage, die sich außerhalb des **WITH**-Schlüsselworts befindet, wird ebenfalls als Schritt gezählt, beispielsweise die **SELECT**-Anweisung in der folgenden Abfrage:
 
 	WITH Step1 AS (
 		SELECT COUNT(*) AS Count, TollBoothId
@@ -55,19 +142,19 @@ Eine Abfrage kann einen oder mehrere Schritte umfassen. Jeder Schritt besteht au
 
 Die vorherige Abfrage umfasst zwei Schritte.
 
-> [AZURE.NOTE]Diese Beispielabfrage wird im Laufe des Artikels erläutert.
+> [AZURE.NOTE] Diese Beispielabfrage wird im Laufe des Artikels erläutert.
 
-### Partitionieren eines Schritts ###
+### Partitionieren eines Schritts
 
 Für die Partitionierung eines Schrittes gelten die folgenden Voraussetzungen:
 
 - Die Eingabequelle muss partitioniert sein. Siehe [Azure Stream Analytics-Entwicklerhandbuch](../stream-analytics-developer-guide.md) und [Azure Event Hubs-Entwicklerhandbuch](../event-hubs/event-hubs-programming-guide.md).
-- Die SELECT-Anweisung der Abfrage muss aus einer partitionierten Eingabequelle lesen.
+- Die **SELECT**-Anweisung der Abfrage muss aus einer partitionierten Eingabequelle lesen.
 - Die Abfrage im Schritt muss das Schlüsselwort **Partition By** aufweisen.
 
 Wenn eine Abfrage partitioniert ist, werden die Eingabeereignisse verarbeitet und in separaten Partitionsgruppen aggregiert, und für jede einzelne Gruppe werden Ausgabeereignisse generiert. Wenn ein kombiniertes Aggregat erwünscht ist, müssen Sie einen zweiten, nicht partitionierten Schritt zum Aggregieren erstellen.
 
-### Berechnen der maximal möglichen Streaming-Einheiten für einen Auftrag ###
+### Berechnen der maximal möglichen Streaming-Einheiten für einen Auftrag
 
 Alle nicht partitionierten Schritte zusammen können bis zu sechs Streaming-Einheiten für einen Stream Analytics-Auftrag skalieren. Um zusätzliche Streaming-Einheiten hinzuzufügen, muss ein Schritt partitioniert werden. Jede Partition kann über sechs Streaming-Einheiten verfügen.
 
@@ -111,7 +198,7 @@ Alle nicht partitionierten Schritte zusammen können bis zu sechs Streaming-Einh
 <td>24 (18 für partitionierte Schritte + 6 für nicht partitionierte Schritte)</td></tr>
 </table>
 
-### Beispiel für Skalierung ###
+### Beispiele für Skalierung
 Mit der folgenden Abfrage wird die Anzahl der Fahrzeuge berechnet, die innerhalb von drei Minuten eine gebührenpflichtige Station mit drei Mautstationen passieren. Diese Abfrage kann auf bis zu sechs Streaming-Einheiten skaliert werden.
 
 	SELECT COUNT(*) AS Count, TollBoothId
@@ -124,7 +211,7 @@ Um weitere Streaming-Einheiten für die Abfrage zu verwenden, müssen sowohl die
 	FROM Input1 Partition By PartitionId
 	GROUP BY TumblingWindow(minute, 3), TollBoothId, PartitionId
 
-Wenn eine Abfrage partitioniert ist, werden die Eingabeereignisse verarbeitet und in separaten Partitionsgruppen aggregiert. Zudem werden für die einzelnen Gruppen Ausgabeereignisse generiert. Das Partitionieren kann unerwartete Ergebnisse erbringen, wenn der Partitionsschlüssel in der Datenstromeingabe nicht das Feld **Group-by** ist. Beispielsweise ist das Feld "TollBoothId" in der vorherigen Beispielabfrage nicht der Partitionsschlüssel von Input1. Die Daten aus der Mautstation 1 können auf mehrere Partitionen verteilt werden.
+Wenn eine Abfrage partitioniert ist, werden die Eingabeereignisse verarbeitet und in separaten Partitionsgruppen aggregiert. Zudem werden für die einzelnen Gruppen Ausgabeereignisse generiert. Das Partitionieren kann unerwartete Ergebnisse erbringen, wenn der Partitionsschlüssel in der Datenstromeingabe nicht das Feld **Group-by** ist. Beispielsweise ist das Feld **TollBoothId** in der vorherigen Beispielabfrage nicht der Partitionsschlüssel von Input1. Die Daten aus der Mautstation 1 können auf mehrere Partitionen verteilt werden.
 
 Jede Input1-Partition wird separat von Stream Analytics verarbeitet, und es werden mehrere Datensätze für die Anzahl der passierenden Autos für dieselbe Mautstation im selben rollierenden Fenster erstellt. Für den Fall, dass der Eingabepartitionsschlüssel nicht geändert werden kann, kann dieses Problem durch Hinzufügen eines zusätzlichen, nicht partitionierten Schritts behoben werden, z. B.:
 
@@ -140,10 +227,10 @@ Jede Input1-Partition wird separat von Stream Analytics verarbeitet, und es werd
 
 Diese Abfrage kann auf bis zu 24 Streaming-Einheiten skaliert werden.
 
->[AZURE.NOTE]Wenn Sie zwei Datenströmen verknüpfen, stellen Sie sicher, dass die Ströme anhand des Partitionsschlüssels der Spalte partitioniert werden, in der Sie die Verknüpfungen vornehmen, und in beiden Strömen dieselbe Anzahl an Partitionen vorhanden ist.
+>[AZURE.NOTE] Wenn Sie zwei Datenströmen verknüpfen, stellen Sie sicher, dass die Ströme anhand des Partitionsschlüssels der Spalte partitioniert werden, in der Sie die Verknüpfungen vornehmen, und in beiden Strömen dieselbe Anzahl an Partitionen vorhanden ist.
 
 
-## Konfigurieren der Stream Analytics-Auftragspartition ##
+## Konfigurieren der Stream Analytics-Auftragspartition
 
 **So passen Sie die Streaming-Einheit für einen Auftrag an**
 
@@ -158,7 +245,7 @@ Im Azure-Vorschauportal können Sie unter „Einstellungen“ auf die Skalierung
 
 ![Auftragskonfiguration in Stream Analytics im Azure-Vorschauportal][img.stream.analytics.preview.portal.settings.scale]
 
-## Überwachen der Auftragsleistung ##
+## Überwachen der Auftragsleistung
 
 Über das Verwaltungsportal können Sie den Durchsatz eines Auftrags in Ereignissen/Sekunde nachverfolgen:
 
@@ -166,12 +253,12 @@ Im Azure-Vorschauportal können Sie unter „Einstellungen“ auf die Skalierung
 
 Berechnen Sie den erwarteten Durchsatz der Arbeitsauslastung in Ereignissen/Sekunde. Für den Fall, dass der Durchsatz kleiner als erwartet ist, optimieren Sie die Eingabepartition und die Abfrage, und fügen Sie dem Auftrag zusätzliche Streaming-Einheiten hinzu.
 
-## Skalierter ASA-Durchsatz – Raspberry Pi-Szenario ##
+## Skalierter Stream Analytics-Durchsatz – Raspberry Pi-Szenario
 
 
-Um zu verstehen, wie ASA in einem typischen Szenario die Verarbeitung des Durchsatzes über mehrere Streaming-Einheiten skaliert, führen wir hier ein Experiment an, bei dem die Sensordaten (Clients) an einen Event Hub gesendet und von ASA verarbeitet werden, um als Ausgabe Warnungen oder Statistiken an einen anderen Event Hub zu senden.
+Es soll verdeutlicht werden, wie Stream Analytics-Aufträge in einem typischen Szenario in Bezug auf den Verarbeitungsdurchsatz über mehrere Streamingeinheiten skaliert werden. Dazu betrachten wir ein Experiment, bei dem die Sensordaten (von Clients) an einen Event Hub gesendet und verarbeitet werden, um als Ausgabe Warnungen oder Statistiken an einen anderen Event Hub zu senden.
 
-Der Client sendet neu bestimmte Sensordaten im JSON-Format an Event Hubs und ASA. Auch die Datenausgabe erfolgt im JSON-Format. Hier wird dargestellt, wie die Beispieldaten ungefähr aussehen würden.
+Der Client sendet neu bestimmte Sensordaten im JSON-Format an Event Hubs und Stream Analytics. Auch die Datenausgabe erfolgt im JSON-Format. Hier wird dargestellt, wie die Beispieldaten ungefähr aussehen würden.
 
     {"devicetime":"2014-12-11T02:24:56.8850110Z","hmdt":42.7,"temp":72.6,"prss":98187.75,"lght":0.38,"dspl":"R-PI Olivier's Office"}
 
@@ -184,7 +271,7 @@ Abfrage: "Warnung senden, wenn das Licht ausgeschaltet wird"
 	 WHERE
 		lght< 0.05 GROUP BY TumblingWindow(second, 1)
 
-Messen des Durchsatzes: Beim Durchsatz handelt es sich in diesem Kontext um die Menge der von ASA über einen festen Zeitraum (10 Minuten) verarbeiteten Eingabedaten. Um einen optimalen Verarbeitungsdurchsatz für die Eingabedaten zu erzielen, müssen sowohl die Datenstromeingabe als auch die Abfrage partitioniert werden. Zudem umfasst die Abfrage "COUNT()", um zu messen, wie viele Eingabeereignisse verarbeitet wurden. Um sicherzustellen, dass ASA nicht einfach auf eingehende Eingabeereignisse wartet, wurden die einzelnen Eingabe-Event Hubs vorab mit ausreichend Eingabedaten (ca. 300 MB) geladen.
+Messen des Durchsatzes: Beim Durchsatz handelt es sich in diesem Kontext um die Menge der von Stream Analytics in einem festen Zeitraum (10 Minuten) verarbeiteten Eingabedaten. Um einen optimalen Verarbeitungsdurchsatz für die Eingabedaten zu erzielen, müssen sowohl die Datenstromeingabe als auch die Abfrage partitioniert werden. Zudem enthält die Abfrage **COUNT()**, um zu messen, wie viele Eingabeereignisse verarbeitet wurden. Um sicherzustellen, dass der Auftrag nicht einfach auf eingehende Eingabeereignisse wartet, wurde jede Partition der Eingabe-Event Hubs vorab mit ausreichend Eingabedaten (ca. 300 MB) geladen.
 
 Im Folgenden finden Sie die Ergebnisse mit einer wachsenden Anzahl an Streaming-Einheiten sowie der entsprechenden Partitionsmenge in den Event Hubs.
 
@@ -231,11 +318,11 @@ Im Folgenden finden Sie die Ergebnisse mit einer wachsenden Anzahl an Streaming-
 
 ![img.stream.analytics.perfgraph][img.stream.analytics.perfgraph]
 
-## Hier erhalten Sie Hilfe ##
+## Hier erhalten Sie Hilfe
 Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=AzureStreamAnalytics).
 
 
-## Nächste Schritte ##
+## Nächste Schritte
 
 - [Einführung in Azure Stream Analytics](stream-analytics-introduction.md)
 - [Erste Schritte mit Azure Stream Analytics](stream-analytics-get-started.md)
@@ -265,4 +352,4 @@ Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://so
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
  
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0204_2016-->

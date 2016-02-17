@@ -25,11 +25,31 @@ Durch die Überwachung Ihrer Anwendung mit [Visual Studio Application Insights][
 
 Um eine ASP.NET-App zu überwachen, müssen Sie Ihrer Anwendung das [Application Insights-SDK][greenbrown] hinzufügen, den [Statusmonitor auf dem IIS-Server installieren][redfield] oder, falls es sich bei Ihrer App um eine Azure-Web-App handelt, die [Application Insights-Erweiterung][azure] hinzufügen.
 
-## Diagnostizieren von Fehlern 
+## Diagnostizieren von Ausnahmen mithilfe von Visual Studio
 
-Auf dem Blatt "Übersicht" zeigt die Kachel "Fehler" Ihnen Diagramme mit Ausnahmen und Fehlern bei HTTP-Anforderungen zusammen mit einer Liste der Anforderungs-URLs an, die die häufigsten Fehler verursachen.
+Öffnen Sie für das Debuggen die App-Projektmappe in Visual Studio.
 
-![Fehler auswählen](./media/app-insights-asp-net-exceptions/012-start.png)
+Führen Sie die App entweder auf dem Server oder Ihrem Entwicklungscomputer aus, indem Sie F5 drücken.
+
+Öffnen Sie das Application Insights-Fenster „Suchen“ in Visual Studio, und legen Sie es auf auf das Anzeigen von Ereignissen aus Ihrer App fest. Während Sie debuggen, können Sie dazu einfach auf die Schaltfläche „Application Insights“ klicken.
+
+![Klicken Sie mit der rechten Maustaste auf das Projekt, und wählen Sie „Application Insights > Öffnen“ aus.](./media/app-insights-asp-net-exceptions/34.png)
+
+Beachten Sie, dass Sie den Bericht so filtern können, dass nur Ausnahmen angezeigt werden.
+
+*Es werden keine Ausnahmen angezeigt? Informationen hierzu finden Sie unter [Erfassen von Ausnahmen](#exceptions).*
+
+Klicken Sie auf einen Ausnahmebericht, um dessen Stapelüberwachung anzuzeigen.
+
+![Klicken Sie sich durch eine Ausnahme.](./media/app-insights-asp-net-exceptions/35.png)
+
+Klicken Sie in der Stapelüberwachung auf einen Zeilenverweis, um die entsprechende Datei zu öffnen.
+
+## Diagnostizieren von Fehlern im Azure-Portal
+
+In der Application Insights-Übersicht Ihrer App zeigt die Kachel „Fehler“ Ihnen Diagramme mit Ausnahmen und Fehlern bei HTTP-Anforderungen zusammen mit einer Liste der Anforderungs-URLs an, die die häufigsten Fehler verursachen.
+
+![Wählen Sie „Einstellungen > Fehler“ aus.](./media/app-insights-asp-net-exceptions/012-start.png)
 
 Klicken Sie in der Liste auf einen der fehlerhaften Anforderungstypen, um zu einzelnen Vorkommen des Fehlers gelangen. Klicken Sie von dort aus auf die Ausnahmen oder die diesen zugeordneten Ablaufverfolgungsdaten:
 
@@ -49,6 +69,8 @@ Von dort aus können Sie sich die Stapelüberwachung und detaillierte Eigenschaf
 ![Drillthrough](./media/app-insights-asp-net-exceptions/050-exception-properties.png)
 
 [Erfahren Sie mehr über die Diagnosesuche][diagnostic].
+
+
 
 ## Abhängigkeitsfehler
 
@@ -79,7 +101,7 @@ Sie haben mehrere Möglichkeiten:
 ![Drillthrough](./media/app-insights-asp-net-exceptions/viewCustomEvents.png)
 
 
-> [AZURE.NOTE]Wenn die Anwendung viele Telemetriedaten generiert, reduziert das adaptive Stichprobenmodul automatisch die an das Verwaltungsportal gesendete Datenmenge, indem nur ein repräsentativer Bruchteil der Ereignisse gesendet wird. Ereignisse, die Teil des gleichen Vorgangs sind, werden als Gruppe aus- oder abgewählt, sodass Sie zwischen verwandten Ereignissen navigieren können. [Erfahren Sie mehr über das Erstellen von Stichproben](app-insights-sampling.md).
+> [AZURE.NOTE] Wenn die Anwendung viele Telemetriedaten generiert, reduziert das adaptive Stichprobenmodul automatisch die an das Verwaltungsportal gesendete Datenmenge, indem nur ein repräsentativer Bruchteil der Ereignisse gesendet wird. Ereignisse, die Teil des gleichen Vorgangs sind, werden als Gruppe aus- oder abgewählt, sodass Sie zwischen verwandten Ereignissen navigieren können. [Erfahren Sie mehr über das Erstellen von Stichproben.](app-insights-sampling.md)
 
 ### Anzeigen von POST-Daten von Anforderungen
 
@@ -455,4 +477,4 @@ Beachten Sie, dass sich der Wert von der Anzahl der "Ausnahmen" unterscheidet, d
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

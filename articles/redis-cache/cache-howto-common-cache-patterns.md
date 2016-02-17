@@ -33,8 +33,8 @@ Wenngleich es als bewährte Methode gilt, die Verwendung des Sitzungszustands zu
 ## Nächste Schritte
 Weitere Informationen zu Azure Redis Cache:
  
-- [Azure Redis Cache-Dokumentation](http://azure.microsoft.com/documentation/services/cache/): Diese Seite enthält viele nützliche Links zur Verwendung von Azure Redis Cache.
-- [MVC movie app with Azure Redis Cache in 15 minutes](http://azure.microsoft.com/blog/2014/06/05/mvc-movie-app-with-azure-redis-cache-in-15-minutes/): Der Blogbeitrag bietet einen schnellen Einstieg in die Nutzung des Redis-Caches von Azure in einer ASP.NET MVC-App.
+- [Azure Redis Cache-Dokumentation](https://azure.microsoft.com/documentation/services/cache/): Diese Seite enthält viele nützliche Links zur Verwendung von Azure Redis Cache.
+- [MVC movie app with Azure Redis Cache in 15 minutes](https://azure.microsoft.com/blog/2014/06/05/mvc-movie-app-with-azure-redis-cache-in-15-minutes/): Der Blogbeitrag bietet einen schnellen Einstieg in die Nutzung des Redis-Caches von Azure in einer ASP.NET MVC-App.
 - [Verwenden des ASP.NET-Sitzungszustands mit Azure-Websites](../app-service-web/web-sites-dotnet-session-state-caching.md): In diesem Thema wird erläutert, wie Sie den Azure Redis Cache-Dienst für den Sitzungszustand verwenden.
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

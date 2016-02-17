@@ -23,11 +23,11 @@
 
 Microsoft Azure SQL-Datenbank verfügt über drei [Dienstebenen](sql-database-service-tiers.md): Basic, Standard und Premium. Auf allen Ebenen wird die Ressource, die für Ihre Azure SQL-Datenbank bereitgestellt wird, streng isoliert, und es wird für eine vorhersagbare Leistung gesorgt. Der für die Datenbank garantierte Durchsatz steigt von der Ebene „Basic“ über „Standard“ bis hin zu „Premium“ an.
 
->[AZURE.NOTE]Die Dienstebenen „Business“ und „Web“ werden im September 2015 eingestellt. Weitere Informationen finden Sie unter [Häufig gestellte Fragen zur Einstellung von Web Edition und Business Edition](https://msdn.microsoft.com/library/azure/dn741330.aspx). Ausführliche Informationen zum Aktualisieren vorhandener Web- und Business-Datenbanken auf die neuen Dienstebenen finden Sie unter [Upgrade von Web-/Business-Datenbanken der SQL-Datenbank auf neue Dienstebenen](sql-database-upgrade-new-service-tiers.md).
+>[AZURE.NOTE] Die Dienstebenen „Business“ und „Web“ werden im September 2015 eingestellt. Weitere Informationen finden Sie unter [Häufig gestellte Fragen zur Einstellung von Web Edition und Business Edition](https://msdn.microsoft.com/library/azure/dn741330.aspx). Ausführliche Informationen zum Aktualisieren vorhandener Web- und Business-Datenbanken auf die neuen Dienstebenen finden Sie unter [Upgrade von Web-/Business-Datenbanken der SQL-Datenbank auf neue Dienstebenen](sql-database-upgrade-new-service-tiers.md).
 
 Dieses Dokument enthält eine Anleitung, mit deren Hilfe Sie ermitteln können, welche Dienstebene für Ihre Anwendung geeignet ist. Außerdem enthält es Empfehlungen zur Optimierung der Anwendung, damit Sie alle Vorteile von Azure SQL-Datenbank ausnutzen können.
 
->[AZURE.NOTE]In diesem Artikel geht es schwerpunktmäßig um die Verbesserung der Leistung für Einzeldatenbanken in SQL-Datenbank. Informationen zur Verbesserung der Leistung für elastische Datenbankpools finden Sie unter [Überlegungen zum Preis und zur Leistung eines elastischen Datenbankpools](sql-database-elastic-pool-guidance.md). Beachten Sie jedoch, dass viele Optimierungsempfehlungen in diesem Artikel für eine Einzeldatenbank auf Datenbanken in einem elastischen Pool mit ähnlichen Leistungsvorteilen angewendet werden können.
+>[AZURE.NOTE] In diesem Artikel geht es schwerpunktmäßig um die Verbesserung der Leistung für Einzeldatenbanken in SQL-Datenbank. Informationen zur Verbesserung der Leistung für elastische Datenbankpools finden Sie unter [Überlegungen zum Preis und zur Leistung eines elastischen Datenbankpools](sql-database-elastic-pool-guidance.md). Beachten Sie jedoch, dass viele Optimierungsempfehlungen in diesem Artikel für eine Einzeldatenbank auf Datenbanken in einem elastischen Pool mit ähnlichen Leistungsvorteilen angewendet werden können.
 
 **Autoren:** Conor Cunningham, Kun Cheng, Jan Engelsberg
 
@@ -117,7 +117,7 @@ Weitere Informationen finden Sie unter [Übersicht über die Geschäftskontinuit
 ### Max. In-Memory-OLTP-Speicher
 Der **maximale In-Memory-OLTP-Speicher** bezieht sich auf den maximalen Speicherplatz, der für die [Vorschauversion von In-Memory-OLTP](sql-database-in-memory.md) für Premium-Datenbanken verfügbar ist. Dies wird gelegentlich auch als *XTP-In-Memory-Speicher* bezeichnet. Sie können das klassische Azure-Portal oder die Sicht **sys.dm\_db\_resource\_stats** verwenden, um die Nutzung des In-Memory-Speichers zu überwachen. Weitere Informationen zur Überwachung finden Sie unter [Überwachen von In-Memory-OLTP-Speicher](sql-database-in-memory-oltp-monitoring.md).
 
->[AZURE.NOTE]Die Vorschauversion von In-Memory OLTP wird derzeit nur für Einzeldatenbanken und nicht für Datenbanken in Pools für elastische Datenbanken unterstützt.
+>[AZURE.NOTE] Die Vorschauversion von In-Memory OLTP wird derzeit nur für Einzeldatenbanken und nicht für Datenbanken in Pools für elastische Datenbanken unterstützt.
 
 ### Maximale Anzahl gleichzeitiger Anforderungen
 
@@ -139,7 +139,7 @@ Beachten Sie, dass dies nur eine Momentaufnahme zu einem bestimmten Zeitpunkt is
 
 Die **maximale Anzahl gleichzeitiger Anmeldungen** stellt die Obergrenze für die Anzahl der Benutzer oder Anwendungen dar, die gleichzeitig versuchen, sich an der Datenbank anzumelden. Beachten Sie, dass der Dienst auch dann jede Anmeldung authentifiziert, wenn diese Clients die gleiche Verbindungszeichenfolge verwenden. Wenn zehn Benutzer gleichzeitig mit dem gleichen Benutzernamen und Kennwort verbunden sind, wären dies also zehn gleichzeitige Anmeldungen. Diese Obergrenze gilt nur für die Dauer der Anmeldung und Authentifizierung. Wenn sich also die gleichen zehn Benutzer ohne Überlappung nacheinander an der Datenbank anmelden, wäre die Anzahl der gleichzeitigen Anmeldung niemals höher als 1.
 
->[AZURE.NOTE]Diese Beschränkung gilt derzeit nicht für Datenbanken in Pools für elastische Datenbanken.
+>[AZURE.NOTE] Diese Beschränkung gilt derzeit nicht für Datenbanken in Pools für elastische Datenbanken.
 
 Es ist keine Abfrage oder dynamische Verwaltungssicht vorhanden, mit der Sie die Anzahl gleichzeitiger Anmeldungen oder den Verlauf anzeigen können. Sie können Ihre Benutzer- und Anmeldungsmuster analysieren, um Informationen zur Häufigkeit der Anmeldungen zu erhalten. Sie können auch reale Auslastungen in einer Testumgebung ausführen, um sicherzustellen, dass Sie diese oder andere Obergrenzen, die in diesem Thema beschrieben werden, nicht überschreiten.
 
@@ -168,7 +168,7 @@ Es gibt zwei Ansichten, mit denen Sie die Ressourcenverwendung für eine SQL-Dat
 - [sys.dm\_db\_resource\_stats](https://msdn.microsoft.com/library/dn800981.aspx)
 - [sys.resource\_stats](https://msdn.microsoft.com/library/dn269979.aspx)
 
->[AZURE.NOTE]Sie können auch das klassische Azure-Portal zum Anzeigen der Ressourcenverwendung verwenden. Ein Beispiel finden Sie unter [Dienstebenen – Überwachen der Leistung](sql-database-service-tiers.md#monitoring-performance).
+>[AZURE.NOTE] Sie können auch das klassische Azure-Portal zum Anzeigen der Ressourcenverwendung verwenden. Ein Beispiel finden Sie unter [Dienstebenen – Überwachen der Leistung](sql-database-service-tiers.md#monitoring-performance).
 
 ### Verwenden von „sys.dm\_db\_resource\_stats“
 Die Sicht [sys.dm\_db\_resource\_stats](https://msdn.microsoft.com/library/dn800981.aspx) ist in jeder SQL-Datenbank vorhanden und liefert Daten zur letzten Ressourcenverwendung relativ zur Dienstebene. Durchschnittliche Prozentsätze für CPU, Dateneingang/-ausgang, Protokollschreibvorgänge und Arbeitsspeicher werden alle 15 Sekunden aufgezeichnet und eine Stunde lang aufbewahrt.
@@ -202,7 +202,7 @@ Hierbei muss darauf hingewiesen werden, dass andere Anwendungstypen denselben Gr
 
 Azure SQL-Datenbank macht die verbrauchten Ressourceninformationen für jede aktive Datenbank in der Sicht **sys.resource\_stats** der **master**-Datenbank jedes Servers verfügbar. Die Daten in der Tabelle werden zu Intervallen von fünf Minuten zusammengefasst. Bei den Dienstebenen Basic, Standard und Premium kann es länger als fünf Minuten dauern, bis sie in der Tabelle angezeigt werden. Dies bedeutet, dass diese Daten besser für Verlaufsanalysen geeignet sind als für Analysen nahezu in Echtzeit. Beim Abfragen der Ansicht **sys.resource\_stats** wird der kürzliche Verlauf einer Datenbank angezeigt, um zu überprüfen, ob mit der gewählten Reservierung bei Bedarf die gewünschte Leistung erzielt wurde.
 
->[AZURE.NOTE]Sie müssen mit der **master**-Datenbank Ihres logischen SQL-Datenbankservers verbunden sein, um **sys.resource\_stats** in den folgenden Beispielen abzufragen.
+>[AZURE.NOTE] Sie müssen mit der **master**-Datenbank Ihres logischen SQL-Datenbankservers verbunden sein, um **sys.resource\_stats** in den folgenden Beispielen abzufragen.
 
 Im folgenden Beispiel wird veranschaulicht, wie die Daten in dieser Ansicht verfügbar gemacht werden:
 
@@ -215,7 +215,7 @@ Im folgenden Beispiel wird veranschaulicht, wie die Daten in dieser Ansicht verf
 
 Im folgenden Beispiel werden unterschiedliche Wege veranschaulicht, wie Sie die Ressourcenverwendung Ihrer SQL-Datenbank verstehen können, indem Sie die Katalogsicht **sys.resource\_stats** verwenden.
 
->[AZURE.NOTE]Einige Spalten von **sys.resource\_stats** haben sich in den aktuellen V12-Datenbanken geändert, sodass die Beispielabfragen in den folgenden Beispielen unter Umständen zu Fehlern führen können. Zukünftige Aktualisierungen dieses Themas werden neue Versionen der Abfragen enthalten, mit denen dieses Problem behoben wird.
+>[AZURE.NOTE] Einige Spalten von **sys.resource\_stats** haben sich in den aktuellen V12-Datenbanken geändert, sodass die Beispielabfragen in den folgenden Beispielen unter Umständen zu Fehlern führen können. Zukünftige Aktualisierungen dieses Themas werden neue Versionen der Abfragen enthalten, mit denen dieses Problem behoben wird.
 
 1. Wenn Sie sich beispielsweise die Ressourcenverwendung der Datenbank „userdb1“ für die letzte Woche ansehen möchten, können Sie die folgende Abfrage ausführen.
 	
@@ -324,7 +324,7 @@ Im folgenden Beispiel wird ein Fall erstellt, in dem der ausgewählte Abfragepla
 
 Azure SQL-Datenbank enthält Funktionen, mit denen Datenbankadministratoren Hinweise dazu erhalten können, wie sie allgemeine fehlende Indexbedingungen finden und dies beheben können. Mit in Azure SQL-Datenbank integrierten dynamischen Verwaltungssichten (DMVs) wird die Abfragenkompilierung daraufhin untersucht, ob ein Index die geschätzten Kosten zum Ausführen einer Abfrage erheblich reduzieren würde. Während der Abfragenausführung wird nachverfolgt, wie häufig jeder Abfrageplan ausgeführt wird. Außerdem wird die geschätzte Differenz zwischen dem ausgeführten Abfrageplan und dem imaginären Abfrageplan mit dem Index ermittelt. So kann ein Datenbankadministrator schnell abschätzen, welche Änderungen am physischen Datenbankdesign zu einer Verbesserung der Workload-Gesamtkosten für eine bestimmte Datenbank und der tatsächlichen Workload führen können.
 
->[AZURE.NOTE]Lesen Sie sich zuerst den Abschnitt [Query Performance Insight und Index Advisor](query-performance-insight-and-index-advisor.md) durch, bevor Sie dynamische Verwaltungssichten zum Suchen nach fehlenden Indizes verwenden.
+>[AZURE.NOTE] Lesen Sie sich zuerst den Abschnitt [Query Performance Insight und Index Advisor](query-performance-insight-and-index-advisor.md) durch, bevor Sie dynamische Verwaltungssichten zum Suchen nach fehlenden Indizes verwenden.
 
 Die folgende Abfrage kann verwendet werden, um potenzielle fehlende Indizes zu ermitteln.
 
@@ -459,7 +459,7 @@ Die Auswirkungen können ermittelt werden, indem die Tabelle **sys.resource\_sta
 
 ![Abfragenoptimierung](./media/sql-database-performance-guidance/query_tuning_4.png)
 
->[AZURE.NOTE]Das hier verwendete Beispiel hat zwar absichtlich nur einen kleineren Umfang, aber die Auswirkungen von suboptimalen Parametern können beträchtlich sein, besonders für größere Datenbanken. Der Unterschied kann für die langsame und die schnelle Variante in Extremfällen zwischen dem Sekundenbereich und dem Stundenbereich liegen.
+>[AZURE.NOTE] Das hier verwendete Beispiel hat zwar absichtlich nur einen kleineren Umfang, aber die Auswirkungen von suboptimalen Parametern können beträchtlich sein, besonders für größere Datenbanken. Der Unterschied kann für die langsame und die schnelle Variante in Extremfällen zwischen dem Sekundenbereich und dem Stundenbereich liegen.
 
 Sie können **sys.resource\_stats** überprüfen, um zu ermitteln, ob die Ressource für einen bestimmten Test mehr oder weniger Ressourcen als für einen anderen Test verwendet. Beim Vergleichen von Daten sollten Sie Tests zeitlich ausreichend trennen, damit sie sich in der Ansicht **sys.resource\_stats** nicht in demselben 5-Minuten-Zeitfenster bewegen. Beachten Sie außerdem, dass das Ziel dieser Übung die Minimierung der insgesamt verwendeten Ressourcen ist, und nicht die reine Minimierung der Ressourcen bei Spitzenlast. Im Allgemeinen führt eine Optimierung eines Codeabschnitts in Bezug auf die Latenz auch zu einem verringerten Ressourcenverbrauch. Stellen Sie sicher, dass die für eine Anwendung vorgesehenen Änderungen wirklich erforderlich sind und sich nicht negativ auf die Kundenerfahrung beim Nutzen von Anwendungen auswirken, wenn Abfragehinweise verwendet werden.
 
@@ -468,7 +468,7 @@ Wenn eine Workload eine Gruppe von sich wiederholenden Abfragen enthält, ist es
 ### Datenbankübergreifendes Sharding
 Da Azure SQL-Datenbank auf normaler Hardware ausgeführt wird, gelten für eine Einzeldatenbank meist niedrigere Kapazitätsgrenzen als für eine herkömmliche lokale SQL Server-Installation. Es gibt eine Reihe von Kunden, die Sharding-Verfahren (also das horizontale Partitionieren) verwenden, um Datenbankvorgänge auf mehrere Datenbanken zu verteilen, wenn diese nicht in die Grenzen für eine Einzeldatenbank in Azure SQL-Datenbank passen. Die meisten Kunden, die heutzutage Sharding-Verfahren für Azure SQL-Datenbank verwenden, teilen ihre Daten einer Dimension auf mehrere Datenbanken auf. Bei diesem Ansatz muss verinnerlicht werden, dass von OLTP-Anwendungen häufig Transaktionen durchgeführt werden, die nur für eine Zeile oder eine kleine Gruppe von Zeilen im Schema gelten.
 
->[AZURE.NOTE]SQL-Datenbank verfügt jetzt über eine Bibliothek als Hilfe für das Sharding. Weitere Informationen finden Sie unter [Übersicht über die Clientbibliothek für elastische Datenbanken](sql-database-elastic-database-client-library.md).
+>[AZURE.NOTE] SQL-Datenbank verfügt jetzt über eine Bibliothek als Hilfe für das Sharding. Weitere Informationen finden Sie unter [Übersicht über die Clientbibliothek für elastische Datenbanken](sql-database-elastic-database-client-library.md).
 
 Wenn eine Datenbank beispielsweise Kunden, Bestellungen und Bestelldetails enthält (wie in der herkömmlichen Northwind-Beispieldatenbank in SQL Server), können diese Daten auf mehrere Datenbanken aufgeteilt werden. Hierzu wird ein Kunde mit den zugehörigen Bestellinformationen und -details gruppiert und dafür gesorgt, dass diese Daten in einer Einzeldatenbank verbleiben. Bei dieser Anwendung würden unterschiedliche Kunden auf verschiedene Datenbanken verteilt werden, um eine effektive Verteilung der Last auf mehrere Datenbanken zu erreichen. So können Kunden nicht nur die Erreichung der Obergrenze bei der Datenbankgröße vermeiden, sondern für Azure SQL-Datenbank auch die Verarbeitung von Workloads ermöglichen, die die Obergrenzen der unterschiedlichen Leistungsebenen deutlich überschreiten, solange jede einzelne Datenbank in die DTU passt.
 
@@ -485,10 +485,10 @@ Für Anwendungen, bei denen mit sehr häufigen Ad-hoc-Abfragen auf Daten zugegri
 Einige Anwendungen sind mit vielen Schreibvorgängen verbunden. In einigen Fällen ist es auch möglich, die E/A-Gesamtlast einer Datenbank zu reduzieren, indem geprüft wird, wie Schreibvorgänge zu Batches zusammengefasst werden können. Dies ist häufig so einfach wie die Verwendung von expliziten Transaktionen anstelle von Transaktionen mit automatischem Commit innerhalb von gespeicherten Prozeduren und Ad-hoc-Batches. Eine Auswertung unterschiedlicher Verfahren, die verwendet werden können, finden Sie unter [Stapelverarbeitungsverfahren für SQL-Datenbankanwendungen in Azure](https://msdn.microsoft.com/library/windowsazure/dn132615.aspx). Experimentieren Sie mit Ihrer eigenen Workload, um das richtige Modell für die Batcherstellung zu finden, und machen Sie sich klar, dass ein bestimmtes Modell unter Umständen über etwas andere Garantien in Bezug auf die Transaktionskonsistenz verfügen kann. Die Ermittlung der richtigen Workload, bei der die Ressourcenverwendung reduziert wird, erfordert die richtige Kombination aus Konsistenz und Abstrichen bei der Leistung.
 
 ### Zwischenspeichern auf Anwendungsebene
-Einige Datenbankanwendungen enthalten Workloads mit einer hohen Zahl von Lesevorgängen. Sie können Caching-Schichten verwenden, um die Auslastung für die Datenbank zu reduzieren und ggf. die Leistungsebene zu reduzieren, die zum Unterstützen einer Datenbank mit Azure SQL-Datenbank erforderlich ist. [Azure Redis Cache](https://azure.microsoft.com/services/cache) ermöglicht Kunden, die über Workloads mit vielen Lesevorgängen verfügen, das einmalige Lesen der Daten (oder je nach Konfiguration ggf. einmal pro Computer auf Anwendungsebene) und das Speichern dieser Daten außerhalb von Azure SQL-Datenbank. Dies ermöglicht die Reduzierung der Datenbanklast (CPU und Lesevorgang-E/A), aber es kommt zu einer Auswirkung auf die Transaktionskonsistenz, da die aus dem Cache ausgelesenen Daten gegenüber den Daten in der Datenbank veraltet sein können. Es gibt zwar viele Anwendungen, bei denen eine gewisse Inkonsistenz akzeptabel ist, aber dies gilt nicht für alle Workloads. Machen Sie sich daher vollständig mit den Anwendungsanforderungen vertraut, bevor Sie eine Caching-Strategie auf Anwendungsebene anwenden.
+Einige Datenbankanwendungen enthalten Workloads mit einer hohen Zahl von Lesevorgängen. Sie können Caching-Schichten verwenden, um die Auslastung für die Datenbank zu reduzieren und ggf. die Leistungsebene zu reduzieren, die zum Unterstützen einer Datenbank mit Azure SQL-Datenbank erforderlich ist. [Azure Redis Cache](https://azure.microsoft.com/services/cache/) ermöglicht Kunden, die über Workloads mit vielen Lesevorgängen verfügen, das einmalige Lesen der Daten (oder je nach Konfiguration ggf. einmal pro Computer auf Anwendungsebene) und das Speichern dieser Daten außerhalb von Azure SQL-Datenbank. Dies ermöglicht die Reduzierung der Datenbanklast (CPU und Lesevorgang-E/A), aber es kommt zu einer Auswirkung auf die Transaktionskonsistenz, da die aus dem Cache ausgelesenen Daten gegenüber den Daten in der Datenbank veraltet sein können. Es gibt zwar viele Anwendungen, bei denen eine gewisse Inkonsistenz akzeptabel ist, aber dies gilt nicht für alle Workloads. Machen Sie sich daher vollständig mit den Anwendungsanforderungen vertraut, bevor Sie eine Caching-Strategie auf Anwendungsebene anwenden.
 
 ## Zusammenfassung
 
 Dank der Dienstebenen in Azure SQL-Datenbank verfügen Sie in Bezug auf die Typen von Anwendungen, die Sie in der Cloud erstellen, über mehr Flexibilität. In Kombination mit einer sorgfältigen Anwendungsoptimierung können Sie für Ihre Anwendung eine hohe und vorhersagbare Leistung erzielen. In diesem Dokument werden empfohlene Verfahren zum Optimieren des Ressourcenverbrauchs einer Datenbank und Ermitteln der Eignung für eine der Leistungsebenen beschrieben. Die Optimierung ist beim Cloudmodell ein fortlaufender Prozess, und die Dienstebenen und ihre Leistungsebenen ermöglichen Administratoren die Steigerung der Leistung, während die Kosten auf der Microsoft Azure Platform gesenkt werden.
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

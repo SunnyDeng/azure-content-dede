@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/07/2016"
+   ms.date="02/01/2016"
    ms.author="barbkess;sonyama"/>
 
 #Transact-SQL-Themen
@@ -47,7 +47,7 @@
 - [DROP TABLE](https://msdn.microsoft.com/library/ms173790.aspx)
 - [DROP SCHEMA](https://msdn.microsoft.com/library/ms186751.aspx)
 - [DROP VIEW](https://msdn.microsoft.com/library/ms173492.aspx)
-- RENAME
+- [RENAME](https://msdn.microsoft.com/library/mt631611.aspx)
 - [TRUNCATE TABLE](https://msdn.microsoft.com/library/ms177570.aspx)
 - [UPDATE STATISTICS](https://msdn.microsoft.com/library/ms187348.aspx)
 
@@ -60,19 +60,19 @@
 ## Datenbankkonsolenbefehle
 
 - [DBCC DROPCLEANBUFFERS](https://msdn.microsoft.com/library/ms187762.aspx)
-- [DBCC FREEPROCCACHE](https://msdn.microsoft.com/library/ms174283.aspx)
-- DBCC SHRINKLOG
+- [DBCC FREEPROCCACHE](https://msdn.microsoft.com/library/mt204018.aspx)
+- [DBCC SHRINKLOG](https://msdn.microsoft.com/library/mt204020.aspx)
 - [DBCC PDW\_SHOWEXECUTIONPLAN](https://msdn.microsoft.com/library/mt204017.aspx)
-- DBCC PDW\_SHOWPARTITIONSTATS
-- DBCC PDW\_SHOWSPACEUSED
-- [DBCC SHOW\_STATISTICS](https://msdn.microsoft.com/library/ms174384.aspx)
+- [DBCC PDW\_SHOWPARTITIONSTATS](https://msdn.microsoft.com/library/mt204013.aspx)
+- [DBCC PDW\_SHOWSPACEUSED](https://msdn.microsoft.com/library/mt204028.aspx)
+- [DBCC SHOW\_STATISTICS](https://msdn.microsoft.com/library/mt204043.aspx)
 
 ## Abfrageanweisungen
 
 - [SELECT](https://msdn.microsoft.com/library/ms189499.aspx)
 - [WITH common\_table\_expression](https://msdn.microsoft.com/library/ms175972.aspx)
 - [EXCEPT und INTERSECT](https://msdn.microsoft.com/library/ms188055.aspx)
-- EXPLAIN
+- [EXPLAIN](https://msdn.microsoft.com/library/mt631615.aspx)
 - [FROM](https://msdn.microsoft.com/library/ms177634.aspx)
 - [Verwenden von PIVOT und UNPIVOT](https://msdn.microsoft.com/library/ms177410.aspx)
 - [GROUP BY](https://msdn.microsoft.com/library/ms177673.aspx)
@@ -82,9 +82,9 @@
 - [UNION](https://msdn.microsoft.com/library/ms180026.aspx)
 - [WHERE](https://msdn.microsoft.com/library/ms188047.aspx)
 - [TOP](https://msdn.microsoft.com/library/ms189463.aspx)
-- Aliase
+- [Aliase](https://msdn.microsoft.com/library/mt631614.aspx)
 - [Suchbedingung](https://msdn.microsoft.com/library/ms173545.aspx)
-- Unterabfragen
+- [Unterabfragen](https://msdn.microsoft.com/library/mt631613.aspx)
 
 ## Sicherheitsanweisungen
 
@@ -95,7 +95,6 @@
 - [ALTER LOGIN](https://msdn.microsoft.com/library/ms189828.aspx)
 - [ALTER MASTER KEY](https://msdn.microsoft.com/library/ms186937.aspx)
 - [ALTER ROLE](https://msdn.microsoft.com/library/ms189775.aspx)
-- [ALTER SERVER ROLE](https://msdn.microsoft.com/library/ee677634.aspx)
 - [ALTER USER](https://msdn.microsoft.com/library/ms176060.aspx)
 - [BACKUP CERTIFICATE](https://msdn.microsoft.com/library/ms178578.aspx)
 - [CLOSE MASTER KEY](https://msdn.microsoft.com/library/ms188387.aspx)
@@ -104,14 +103,12 @@
 - [CREATE LOGIN](https://msdn.microsoft.com/library/ms189751.aspx)
 - [CREATE MASTER KEY](https://msdn.microsoft.com/library/ms174382.aspx)
 - [CREATE ROLE](https://msdn.microsoft.com/library/ms187936.aspx)
-- [CREATE SERVER ROLE](https://msdn.microsoft.com/library/ee677610.aspx)
 - [CREATE USER](https://msdn.microsoft.com/library/ms173463.aspx)
 - [DROP CERTIFICATE](https://msdn.microsoft.com/library/ms179906.aspx)
 - [DROP DATABASE ENCRYPTION KEY](https://msdn.microsoft.com/library/bb630256.aspx)
 - [DROP LOGIN](https://msdn.microsoft.com/library/ms188012.aspx)
 - [DROP MASTER KEY](https://msdn.microsoft.com/library/ms180071.aspx)
 - [DROP ROLE](https://msdn.microsoft.com/library/ms174988.aspx)
-- [DROP SERVER ROLE](https://msdn.microsoft.com/library/ee677643.aspx)
 - [DROP USER](https://msdn.microsoft.com/library/ms189438.aspx)
 - [OPEN MASTER KEY](https://msdn.microsoft.com/library/ms174433.aspx)
 
@@ -129,4 +126,4 @@ Weitere TSQL-Beispiele finden Sie in der [Entwicklungsübersicht für SQL Data W
 
 <!--Other Web references-->
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0204_2016-->

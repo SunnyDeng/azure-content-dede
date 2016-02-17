@@ -20,19 +20,19 @@
 
 # Spark-Streaming: Verarbeiten von Ereignissen aus Azure Event Hubs mit Apache Spark für HDInsight (Windows)
 
-> [AZURE.NOTE]HDInsight bietet jetzt Spark-Cluster unter Linux. Informationen zum Ausführen einer Streaminganwendung auf HDInsight Spark-Clustern unter Linux finden Sie unter [Spark-Streaming: Verarbeiten von Ereignissen aus Azure Event Hubs mit Apache Spark für HDInsight (Linux)](hdinsight-apache-spark-eventhub-streaming.md).
+> [AZURE.NOTE] HDInsight bietet jetzt Spark-Cluster unter Linux. Informationen zum Ausführen einer Streaminganwendung auf HDInsight Spark-Clustern unter Linux finden Sie unter [Spark-Streaming: Verarbeiten von Ereignissen aus Azure Event Hubs mit Apache Spark für HDInsight (Linux)](hdinsight-apache-spark-eventhub-streaming.md).
 
 Das Spark-Streaming ist eine Erweiterung der Spark-Kern-API zum Erstellen von skalierbaren, fehlertoleranten Anwendungen für die Datenstromverarbeitung mit hohem Durchsatz. Daten können aus vielen Quellen erfasst werden. In diesem Artikel verwenden wir Event Hubs zum Erfassen von Daten. Bei Event Hubs handelt es sich um ein hochskalierbares Erfassungssystem, mit dem Millionen von Ereignissen pro Sekunde verarbeitet werden können.
 
 In diesem Lernprogramm erfahren Sie, wie Sie einen Azure Event Hub erstellen, Nachrichten mit einer Konsolenanwendung in C# für einen Event Hub erfassen und mit einem Zeppelin Notebook parallel abrufen, das für Apache Spark unter HDInsight konfiguriert ist.
 
-> [AZURE.NOTE]Für die Anweisungen in diesem Artikel benötigen Sie beide Versionen des Azure-Portals. Zum Erstellen eines Event Hubs verwenden Sie das [Azure-Portal](https://manage.windowsazure.com). Für das Arbeiten mit dem HDInsight Spark-Cluster nutzen Sie das [Azure-Vorschauportal](https://ms.portal.azure.com/).
+> [AZURE.NOTE] Für die Anweisungen in diesem Artikel benötigen Sie beide Versionen des Azure-Portals. Zum Erstellen eines Event Hubs verwenden Sie das [Azure-Portal](https://manage.windowsazure.com). Für das Arbeiten mit dem HDInsight Spark-Cluster nutzen Sie das [Azure-Vorschauportal](https://ms.portal.azure.com/).
 
 **Voraussetzungen:**
 
 Sie benötigen Folgendes:
 
-- Ein Azure-Abonnement. Siehe [Kostenlose Azure-Testversion](http://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
+- Ein Azure-Abonnement. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 - Einen Apache Spark-Cluster. Eine Anleitung finden Sie unter [Erstellen von Apache Spark-Clustern in Azure HDInsight](hdinsight-apache-spark-provision-clusters.md).
 - Einen [Azure Event Hub](service-bus-event-hubs-csharp-ephcs-getstarted.md)
 - Eine Arbeitsstation mit Microsoft Visual Studio 2013. Anweisungen finden Sie unter [Installieren von Visual Studio](https://msdn.microsoft.com/library/e2h7fzkw.aspx).
@@ -45,7 +45,7 @@ Sie benötigen Folgendes:
 
 	![Seite 1 des Assistenten](./media/hdinsight-apache-spark-csharp-apache-zeppelin-eventhub-streaming/hdispark.streaming.create.event.hub.png "Erstellen eines Azure Event Hubs")
 
-	> [AZURE.NOTE]Wählen Sie den gleichen **Speicherort** wie für Ihren Apache Spark-Cluster unter HDInsightStorm aus, um die Latenz und die Kosten zu reduzieren.
+	> [AZURE.NOTE] Wählen Sie den gleichen **Speicherort** wie für Ihren Apache Spark-Cluster unter HDInsightStorm aus, um die Latenz und die Kosten zu reduzieren.
 
 3. Geben Sie im Bildschirm **Event Hub konfigurieren** die Werte für **Partitionsanzahl** und **Nachrichtenaufbewahrung** ein, und klicken Sie auf das Häkchen. Verwenden Sie für dieses Beispiel eine Anzahl von 10 Partitionen und eine Nachrichtenaufbewahrung von 1. Notieren Sie sich die Partitionsanzahl, da Sie diesen Wert später benötigen werden.
 
@@ -96,7 +96,7 @@ Informationen zum Zuordnen von Ressourcen in einem Spark-Cluster finden Sie unte
 
 2. Klicken Sie auf dem Blatt für den Spark-Cluster auf **Quicklinks** und anschließend auf dem Blatt **Cluster Dashboard** auf **Zeppelin Notebook**. Geben Sie die Administratoranmeldeinformationen für den Cluster ein, wenn Sie dazu aufgefordert werden.
 
-	> [AZURE.NOTE]Sie können auch das Zeppelin Notebook für Ihren Cluster aufrufen, indem Sie in Ihrem Browser die folgende URL öffnen. Ersetzen Sie __CLUSTERNAME__ durch den Namen Ihres Clusters:
+	> [AZURE.NOTE] Sie können auch das Zeppelin Notebook für Ihren Cluster aufrufen, indem Sie in Ihrem Browser die folgende URL öffnen. Ersetzen Sie __CLUSTERNAME__ durch den Namen Ihres Clusters:
 	>
 	> `https://CLUSTERNAME.azurehdinsight.net/zeppelin`
 
@@ -112,7 +112,7 @@ Informationen zum Zuordnen von Ressourcen in einem Spark-Cluster finden Sie unte
 
 4. Fügen Sie in den leeren Absatz, der im neuen Notebook standardmäßig erstellt wird, den folgenden Codeausschnitt ein, und ersetzen Sie die Platzhalter, um Ihre Event Hub-Konfiguration zu verwenden. In diesem Codeausschnitt empfangen Sie den Datenstrom vom Event Hub und registrieren ihn in einer temporären Tabelle mit dem Namen **mytemptable**. Im nächsten Abschnitt starten wir die Absenderanwendung. Anschließend können Sie die Daten direkt aus der Tabelle auslesen.
 
-	> [AZURE.NOTE]Der folgende Codeausschnitt (**eventhubs.checkpoint.dir**) muss auf ein Verzeichnis in Ihrem Standardspeichercontainer festgelegt werden. Wenn das Verzeichnis nicht vorhanden ist, wird es von der Streaminganwendung erstellt. Sie können entweder den vollständigen Pfad zum Verzeichnis angeben, z. B. "**wasb://container@storageaccount.blob.core.windows.net/mycheckpointdir/**", oder nur den relativen Verzeichnispfad, z. B. "**/mycheckpointdir**".
+	> [AZURE.NOTE] Der folgende Codeausschnitt (**eventhubs.checkpoint.dir**) muss auf ein Verzeichnis in Ihrem Standardspeichercontainer festgelegt werden. Wenn das Verzeichnis nicht vorhanden ist, wird es von der Streaminganwendung erstellt. Sie können entweder den vollständigen Pfad zum Verzeichnis angeben, z. B. "**wasb://container@storageaccount.blob.core.windows.net/mycheckpointdir/**", oder nur den relativen Verzeichnispfad, z. B. "**/mycheckpointdir**".
 
 		import org.apache.spark.streaming.{Seconds, StreamingContext}
 		import org.apache.spark.streaming.eventhubs.EventHubsUtils
@@ -194,4 +194,4 @@ Eine Anleitung zum Ausführen dieser Schritte und eine Streaming-Beispielanwendu
 [azure-management-portal]: https://manage.windowsazure.com/
 [azure-create-storageaccount]: ../storage-create-storage-account/
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

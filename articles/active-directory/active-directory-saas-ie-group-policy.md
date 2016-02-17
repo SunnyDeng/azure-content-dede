@@ -1,19 +1,19 @@
 <properties
-   pageTitle="How to Deploy the Access Panel Extension for Internet Explorer using Group Policy (Bereitstellen der Zugriffsbereichserweiterung für Internet Explorer mit der Gruppenrichtlinie; in englischer Sprache) | Microsoft Azure"
-   description="So stellen Sie das Internet Explorer-Add-On für das Portal „Meine Apps“ mithilfe von Gruppenrichtlinien bereit"
-   services="active-directory"
-   documentationCenter=""
-   authors="liviodlc"
-   manager="stevenpo"
-   editor=""/>
+    pageTitle="How to Deploy the Access Panel Extension for Internet Explorer using Group Policy (Bereitstellen der Zugriffsbereichserweiterung für Internet Explorer mit der Gruppenrichtlinie; in englischer Sprache) | Microsoft Azure"
+    description="So stellen Sie das Internet Explorer-Add-On für das Portal „Meine Apps“ mithilfe von Gruppenrichtlinien bereit"
+    services="active-directory"
+    documentationCenter=""
+    authors="liviodlc"
+    manager="stevenpo"
+    editor=""/>
 <tags
-   ms.service="active-directory"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="identity"
-   ms.date="11/18/2015"
-   ms.author="liviodlc"/>
+    ms.service="active-directory"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="identity"
+    ms.date="02/02/2016"
+    ms.author="liviodlc"/>
 
 #How to Deploy the Access Panel Extension for Internet Explorer using Group Policy (Bereitstellen der Zugriffsbereichserweiterung für Internet Explorer mit der Gruppenrichtlinie; in englischer Sprache)
 
@@ -62,7 +62,7 @@ Zunächst müssen Sie das Installationspaket an einem Speicherort im Netzwerk ab
 
 3. Zeigen Sie im linken Bereich des Fensters **Gruppenrichtlinienverwaltung** die Hierarchie Ihrer Organisationseinheiten (OE) an, und legen Sie fest, in welchem Umfang die Gruppenrichtlinie angewendet werden soll. Sie können beispielsweise eine kleine Organisationseinheit auswählen, die einigen wenigen Benutzern zu Testzwecken bereitgestellt wird, oder eine Organisationseinheit der obersten Ebene festlegen, die im gesamten Unternehmen bereitgestellt wird.
 
-	> [AZURE.NOTE]Wenn Sie Organisationseinheiten erstellen oder bearbeiten möchten, wechseln Sie zurück zum Server-Manager, und rufen Sie **Extras** > **Active Directory-Benutzer und -Computer** auf.
+	> [AZURE.NOTE] Wenn Sie Organisationseinheiten erstellen oder bearbeiten möchten, wechseln Sie zurück zum Server-Manager, und rufen Sie **Extras** > **Active Directory-Benutzer und -Computer** auf.
 
 4. Nachdem Sie eine Organisationseinheit ausgewählt haben, klicken Sie mit der rechten Maustaste darauf, und wählen Sie **Gruppenrichtlinienobjekt hier erstellen und verknüpfen...**.
 
@@ -90,7 +90,7 @@ Zunächst müssen Sie das Installationspaket an einem Speicherort im Netzwerk ab
 
 4. Klicken Sie auf den freigegebenen Ordner mit dem Installationspaket aus [Schritt 1: Erstellen des Verteilungspunkts](#step-1-create-the-distribution-point), markieren Sie die MSI-Datei, und klicken Sie auf **Öffnen**.
 
-	> [AZURE.IMPORTANT]Wenn sich die Freigabe auf demselben Server befindet, vergewissern Sie sich, dass Sie nicht über den lokalen Dateipfad, sondern über den Netzwerkdateipfad auf die MSI-Datei zugreifen.
+	> [AZURE.IMPORTANT] Wenn sich die Freigabe auf demselben Server befindet, vergewissern Sie sich, dass Sie nicht über den lokalen Dateipfad, sondern über den Netzwerkdateipfad auf die MSI-Datei zugreifen.
 
 	![Wählen Sie das Installationspaket im freigegebenen Ordner.](./media/active-directory-saas-ie-group-policy/select-package.png)
 
@@ -141,7 +141,7 @@ Falls diese Frage nicht angezeigt werden soll, führen Sie die folgenden Schritt
 
 2. Suchen Sie die Einstellung **AutoVervollständigen für Benutzernamen und Kennwörter in Formularen aktivieren**.
 
-	> [AZURE.NOTE]In älteren Versionen von Active Directory heißt diese Einstellung unter Umständen noch **Kennwörter in AutoVervollständigen können nicht gespeichert werden**. Die Konfiguration für diese Einstellung unterscheidet sich von der in diesem Tutorial beschriebenen Einstellung.
+	> [AZURE.NOTE] In älteren Versionen von Active Directory heißt diese Einstellung unter Umständen noch **Kennwörter in AutoVervollständigen können nicht gespeichert werden**. Die Konfiguration für diese Einstellung unterscheidet sich von der in diesem Tutorial beschriebenen Einstellung.
 
 	![Diese finden Sie in den Benutzereinstellungen.](./media/active-directory-saas-ie-group-policy/disable-auto-complete.png)
 
@@ -155,7 +155,7 @@ Falls diese Frage nicht angezeigt werden soll, führen Sie die folgenden Schritt
 
 Daraufhin können Benutzer ihre Anmeldeinformationen nicht mehr speichern oder mithilfe von AutoVervollständigen auf zuvor gespeicherte Anmeldeinformationen zugreifen. Für andere Arten von Formularfeldern (etwa Suchfelder) kann AutoVervollständigen dagegen weiter verwendet werden.
 
-> [AZURE.WARNING]Wenn diese Richtlinie aktiviert wird, nachdem Benutzer bereits Anmeldeinformationen gespeichert haben, werden diese *nicht* gelöscht.
+> [AZURE.WARNING] Wenn diese Richtlinie aktiviert wird, nachdem Benutzer bereits Anmeldeinformationen gespeichert haben, werden diese *nicht* gelöscht.
 
 ##Schritt 6: Testen der Bereitstellung
 
@@ -177,4 +177,4 @@ Gehen Sie folgendermaßen vor, um zu überprüfen, ob die Erweiterungsbereitstel
 
 [AZURE.INCLUDE [saas-toc](../../includes/active-directory-saas-toc.md)]
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0204_2016-->

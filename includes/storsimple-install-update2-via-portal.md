@@ -1,4 +1,4 @@
-<!--author=alkohli last changed: 01/11/16-->
+<!--author=alkohli last changed: 01/26/16-->
 
 #### So installieren Sie Update 2 über das Azure-Portal
 
@@ -8,7 +8,7 @@
 
 3. Im Abschnitt **Softwareupdates** auf derselben Seite sehen Sie, dass neue Softwareupdates verfügbar sind. Es wird empfohlen, die Versionshinweise zu lesen, bevor Sie Update 2 auf Ihrem Gerät installieren.
 
-    ![Softwareupdates installieren](./media/storsimple-install-update2-via-portal/InstallUpdate12_11M.png)
+    ![Softwareupdates installieren](./media/storsimple-install-update2-via-portal/scanupdate1.png)
 
 4. Klicken Sie unten auf der Seite auf **Updates installieren**.
 
@@ -39,7 +39,7 @@
    	 ![Fehler bei der Vorabprüfung](./media/storsimple-install-update2-via-portal/HCS_PreUpgradeChecksFailed-include.png)
 
 	
-	> [AZURE.NOTE]Wenn Sie ein Update für eine Softwareversion vor Update 1 ausführen, sind die DATA 2- und DATA 3-Prüfung sowie die Gateway-Prüfung bei zukünftigen Updates nicht mehr erforderlich, nachdem Sie Update 2 auf dem StorSimple-Gerät angewendet haben. Die anderen Vorabprüfungen sind noch immer erforderlich. Bei einer Aktualisierung von Update 1 oder einer höheren Version werden die DATA 2-, DATA 3- und Gateway-Vorabprüfungen nicht ausgeführt.
+	> [AZURE.NOTE] Wenn Sie ein Update für eine Softwareversion vor Update 1 ausführen, sind die DATA 2- und DATA 3-Prüfung sowie die Gateway-Prüfung bei zukünftigen Updates nicht mehr erforderlich, nachdem Sie Update 2 auf dem StorSimple-Gerät angewendet haben. Die anderen Vorabprüfungen sind noch immer erforderlich. Bei einer Aktualisierung von Update 1 oder einer höheren Version werden die DATA 2-, DATA 3- und Gateway-Vorabprüfungen nicht ausgeführt.
 
 
 8. Wenn die Überprüfungen vor dem Upgrade erfolgreich abgeschlossen wurden, wird ein Updateauftrag erstellt. Sie werden benachrichtigt, wenn der Updateauftrag erfolgreich erstellt wurde.
@@ -57,8 +57,10 @@
 12. Stellen Sie sicher, dass auf Ihrem Gerät **Update 2 der StorSimple 8000-Serie (6.3.9600.17673)** ausgeführt wird. Das **Datum der letzten Aktualisierung** hat sich ebenfalls geändert.
 
 
-13. Sie sehen nun, dass Wartungsmodus-Updates verfügbar sind. Diese Updates sind störende Updates, die zu Ausfallzeiten beim Gerät führen und nur über die Windows PowerShell-Schnittstelle Ihres Geräts angewendet werden können. Führen Sie die Schritte unter [So installieren und überprüfen Sie den Hotfix für den Wartungsmodus](#to-install-and-verify-maintenance-mode-hotfix) aus, um diese Updates für den Wartungsmodus zu installieren.
+13. Sie sehen nun, dass Wartungsmodus-Updates verfügbar sind. In einigen Fällen könnte Ihre Datenträgerfirmware bereits auf dem aktuellen Stand sein, wenn Sie Update 1.2 ausführen. In diesen Fällen wird das Portal dies automatisch erkennen und Sie nicht dazu auffordern, Wartungsmodus-Updates durchzuführen.
 
-> [AZURE.NOTE]In bestimmten Fällen werden Meldungen, die anzeigen, dass Updates des Wartungsmodus verfügbar sind, bis zu 24 Stunden nach erfolgreichem Anwenden dieser Updates auf dem Gerät angezeigt.
+	Die Wartungsmodus-Updates sind beeinträchtigende Updates, die zu Ausfallzeiten beim Gerät führen und nur über die Windows PowerShell-Schnittstelle Ihres Geräts angewendet werden können. Führen Sie die Schritte unter [So installieren und überprüfen Sie den Hotfix für den Wartungsmodus](#to-install-and-verify-maintenance-mode-hotfix) aus, um diese Wartungsmodus-Updates zu installieren.
 
-<!---HONumber=AcomDC_0114_2016-->
+> [AZURE.NOTE] In bestimmten Fällen werden Meldungen, die anzeigen, dass Updates des Wartungsmodus verfügbar sind, bis zu 24 Stunden nach erfolgreichem Anwenden dieser Updates auf dem Gerät angezeigt.
+
+<!---HONumber=AcomDC_0128_2016-->

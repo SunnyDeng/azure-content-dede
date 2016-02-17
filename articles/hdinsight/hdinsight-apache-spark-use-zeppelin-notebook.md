@@ -21,21 +21,21 @@
 
 Erfahren Sie, wie Zeppelin Notebooks auf Spark-Clustern installiert und wie Zeppelin Notebooks verwendet werden.
 
-> [AZURE.IMPORTANT]Ein Zeppelin Notebook für Spark-Cluster in HDInsight dient zur Veranschaulichung der Verwendung von Zeppelin in einer Azure HDInsight Spark-Umgebung. Wenn Sie Notebooks zum Arbeiten mit HDInsight Spark verwenden möchten, empfehlen wir die Verwendung von Jupyter Notebooks. Jupyter Notebooks bieten zudem verschiedene Kerneloptionen, z. B. Scala, und werden weiterhin Verbesserungen von Features aufweisen. Hinweise zur Verwendung von Jupyter Notebooks mit HDInsight Spark finden Sie unter [Ausführen von Spark-SQL-Abfragen mit einem Jupyter Notebook](hdinsight-apache-spark-jupyter-spark-sql.md#jupyter).
+> [AZURE.IMPORTANT] Ein Zeppelin Notebook für Spark-Cluster in HDInsight dient zur Veranschaulichung der Verwendung von Zeppelin in einer Azure HDInsight Spark-Umgebung. Wenn Sie Notebooks zum Arbeiten mit HDInsight Spark verwenden möchten, empfehlen wir die Verwendung von Jupyter Notebooks. Jupyter Notebooks bieten zudem verschiedene Kerneloptionen, z. B. Scala, und werden weiterhin Verbesserungen von Features aufweisen. Hinweise zur Verwendung von Jupyter Notebooks mit HDInsight Spark finden Sie unter [Ausführen von Spark-SQL-Abfragen mit einem Jupyter Notebook](hdinsight-apache-spark-jupyter-spark-sql.md#jupyter).
 
 **Voraussetzungen:**
 
-* Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie über ein Azure-Abonnement verfügen. Siehe [Kostenlose Azure-Testversion](http://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
+* Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie über ein Azure-Abonnement verfügen. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 * Einen Apache Spark-Cluster. Eine Anleitung finden Sie unter [Erstellen von Apache Spark-Clustern in Azure HDInsight](hdinsight-apache-spark-provision-clusters.md).
 * Einen SSH-Client Für Linux- und Unix-Distributionen oder Macintosh OS X steht der Befehl `ssh` über das Betriebssystem zur Verfügung. Bei Windows wird [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) empfohlen.
 
-	> [AZURE.NOTE]Wenn Sie einen anderen SSH-Client als `ssh` oder PuTTY verwenden möchten, finden Sie Informationen zum Herstellen eines SSH-Tunnels in der Dokumentation zu Ihrem Client.
+	> [AZURE.NOTE] Wenn Sie einen anderen SSH-Client als `ssh` oder PuTTY verwenden möchten, finden Sie Informationen zum Herstellen eines SSH-Tunnels in der Dokumentation zu Ihrem Client.
 
 * Einen Webbrowser, der für die Verwendung eines SOCKS-Proxys konfiguriert werden kann.
 
 * __(Optional)__: ein Plug-In wie [FoxyProxy](http://getfoxyproxy.org/,), das Regeln anwenden kann, sodass nur routenspezifische Anfragen durch den Tunnel geleitet werden.
 
-	> [AZURE.WARNING]Ohne ein Plug-In wie FoxyProxy können alle über den Browser gesendeten Anfragen über den Tunnel weitergeleitet werden. Dies kann dazu führen, dass Webseiten in Ihrem Browser langsamer geladen werden.
+	> [AZURE.WARNING] Ohne ein Plug-In wie FoxyProxy können alle über den Browser gesendeten Anfragen über den Tunnel weitergeleitet werden. Dies kann dazu führen, dass Webseiten in Ihrem Browser langsamer geladen werden.
 
 ## Installieren von Zeppelin im Rahmen der Clustererstellung
 
@@ -151,13 +151,13 @@ Führen Sie die folgenden Schritte aus, um einen SSH-Tunnel mithilfe von PuTTY z
 
 ### Verwenden des Tunnels im Browser
 
-> [AZURE.NOTE]Für die Schritte in diesem Abschnitt wird der Firefox-Browser verwendet, der für Linux, Unix, Macintosh OS X und Windows-Systeme frei verfügbar ist. Andere moderne Browser wie Google Chrome, Microsoft Edge oder Apple Safari sollten ebenfalls funktionieren. Allerdings ist möglicherweise das in einigen Schritten verwendete FoxyProxy-Plug-In nicht für alle Browser verfügbar.
+> [AZURE.NOTE] Für die Schritte in diesem Abschnitt wird der Firefox-Browser verwendet, der für Linux, Unix, Macintosh OS X und Windows-Systeme frei verfügbar ist. Andere moderne Browser wie Google Chrome, Microsoft Edge oder Apple Safari sollten ebenfalls funktionieren. Allerdings ist möglicherweise das in einigen Schritten verwendete FoxyProxy-Plug-In nicht für alle Browser verfügbar.
 
 1. Konfigurieren Sie den Browser für die Verwendung von **localhost:9876** als **SOCKS v5**-Proxy. Die Firefox-Einstellungen sollten wie folgt aussehen. Wenn Sie einen anderen Port als 9876 verwenden, ändern Sie den Port entsprechend:
 
 	![Abbildung von Firefox-Einstellungen](./media/hdinsight-apache-spark-use-zeppelin-notebook/socks.png)
 
-	> [AZURE.NOTE]Durch die Auswahl von **Remote-DNS** werden DNS-Anforderungen (Domain Name System) mithilfe des HDInsight-Clusters aufgelöst. Ist diese Option deaktiviert, wird DNS lokal aufgelöst.
+	> [AZURE.NOTE] Durch die Auswahl von **Remote-DNS** werden DNS-Anforderungen (Domain Name System) mithilfe des HDInsight-Clusters aufgelöst. Ist diese Option deaktiviert, wird DNS lokal aufgelöst.
 
 2. Überprüfen Sie, ob Datenverkehr durch den Tunnel weitergeleitet wird, indem Sie eine Website wie [http://www.whatismyip.com/](http://www.whatismyip.com/) mit aktivierten und deaktivierten Proxyeinstellungen in Firefox aufrufen. Bei aktivierten Einstellungen wird die IP-Adresse eines Computers im Microsoft Azure-Datencenter angezeigt.
 
@@ -212,7 +212,7 @@ Nach dem Einrichten des SSH-Tunneling können Sie die folgenden Schritte ausfüh
 		http://hn0-myspar:9995
 
 	* **hn0** steht für „headnode0“.
-	* **myspar** sind die ersten fünf Buchstaben des Spark-Clusters.
+	* **myspar** sind die ersten sechs Buchstaben des Namens des Spark-Clusters.
 	* **9995** ist der Port, über den das Zeppelin Notebook zugänglich ist
 
 2. Erstellen Sie ein neues Notebook. Klicken Sie im Headerbereich auf **Notebook**, und wählen Sie die Option **Neue Notiz erstellen** aus.
@@ -330,4 +330,4 @@ Nach dem Einrichten des SSH-Tunneling können Sie die folgenden Schritte ausfüh
 [azure-management-portal]: https://manage.windowsazure.com/
 [azure-create-storageaccount]: ../storage-create-storage-account/
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0204_2016-->

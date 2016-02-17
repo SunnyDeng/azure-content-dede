@@ -13,12 +13,12 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="compute"
-   ms.date="11/05/2015"
+   ms.date="02/02/2016"
    ms.author="elizapo"/>
 
 # Mit Azure RemoteApp jede Windows-Anwendung auf jedem Gerät ausführen
 
-Sie können eine Windows-Anwendung überall und auf jedem Gerät ausführen – einfach, indem Sie Azure RemoteApp verwenden. Ob es eine vor zehn Jahren geschriebene benutzerdefinierte Anwendung oder eine Office-App ist – Ihre Benutzer sind für diese Anwendungen nicht länger an ein bestimmtes Betriebssystem (wie Windows XP) gebunden.
+Sie können eine Windows-Anwendung überall und auf jedem Gerät ausführen – einfach, indem Sie Azure RemoteApp verwenden. Ob eine vor zehn Jahren geschriebene benutzerdefinierte Anwendung oder Office-App – Ihre Benutzer sind für diese Anwendungen nicht länger an ein bestimmtes Betriebssystem (wie Windows XP) gebunden.
 
 Dank Azure RemoteApp können Ihre Benutzer auch ihre eigenen Android- oder Apple-Geräte verwenden und die gleiche Nutzererfahrung wie mit Windows (oder Windows Phones) machen. Dies geschieht durch Hosten der Windows-Anwendung in einer Sammlung virtueller Windows-Computer in Azure – auf die Benutzer überall zugreifen können, wo eine Internetverbindung besteht.
 
@@ -116,4 +116,4 @@ Nun, da Sie eine Sammlung erstellen können, versuchen Sie das Erstellen einer [
 
 <!--Image references-->
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0211_2016-->

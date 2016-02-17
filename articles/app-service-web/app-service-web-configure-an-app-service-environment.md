@@ -39,7 +39,7 @@ Jede App Service-Umgebung ist mit 500 GB Speicherplatz konfiguriert. Dieser Spe
 
 Die Datenbank enthält Informationen, die die Umgebung definieren, und auch Details zu den darin ausgeführten Apps. Dies ist ebenfalls Teil des gebuchten Azure-Abonnements. Die Kunden haben hier keine direkten Möglichkeiten zu Änderungen.
 
-Das virtuelle Netzwerk, das mit der App Service-Umgebung verwendet wird, kann das beim Erstellen der App Service-Umgebung eingerichtete sein oder eines, das bereits vorher vorhanden war. Wenn sich Ihre App Service-Umgebung in einer Ressourcengruppe befinden soll, die von der für Ihre App Service-Umgebung verwendeten getrennt ist, dann müssen Sie Ihr VNET unabhängig vom Arbeitsablauf bei der App Service-Erstellung erstellen. Es ist eine gute Idee, das zu verwendende Subnetz gleichzeitig mit der App Service-Umgebung zu erstellen. Wenn Sie das Subnetz bei der Erstellung der App Service-Umgebung erstellen, befindet sich die App Service-Umgebung zwingend in derselben Ressourcengruppe wie das VNET. Zurzeit werden nur klassische V1-VNETs unterstützt.
+Das virtuelle Netzwerk, das mit der App Service-Umgebung verwendet wird, kann das beim Erstellen der App Service-Umgebung eingerichtete sein oder eines, das bereits vorher vorhanden war. Wenn sich Ihr VNET in einer Ressourcengruppe befinden soll, die von der für Ihre ASE verwendeten getrennt ist, dann müssen Sie Ihr VNET unabhängig vom Arbeitsablauf bei der ASE-Erstellung erstellen. Es ist eine gute Idee, das zu verwendende Subnetz gleichzeitig mit der App Service-Umgebung zu erstellen. Wenn Sie das Subnetz bei der Erstellung der App Service-Umgebung erstellen, befindet sich die App Service-Umgebung zwingend in derselben Ressourcengruppe wie das VNET. Zurzeit werden nur klassische V1-VNETs unterstützt.
 
 Die Benutzeroberfläche zum Verwalten und Überwachen der App Service-Umgebung finden Sie im Azure-Portal. Wenn für Sie eine App Service-Umgebung vorhanden ist, sehen Sie normalerweise in der Randleiste das App Service-Symbol. Im Azure-Portal werden App Service-Umgebungen mit folgendem Symbol dargestellt:
 
@@ -145,7 +145,7 @@ Das Hinzufügen weiterer Instanzen zu einem Workerpool ist unkritisch und führt
  
 Dies führt bei ausgeführten Apps zu sehr viel weniger Unterbrechungen als das Ändern der Größe von Compute-Ressourcen während der Ausführung von Workloads. Details zum Skalieren von Apps in einer App Service-Umgebung finden Sie unter [Skalieren von Apps in einer App Service-Umgebung](app-service-web-scale-a-web-app-in-an-app-service-environment.md)
 
-## Virtual Network ##
+## Virtuelles Netzwerk ##
 
 Anders als beim gehosteten Dienst, der die App Service-Umgebung umfasst, werden das [virtuelle Netzwerk][virtualnetwork] und das Subnetz vom Benutzer gesteuert. App Service-Umgebungen weisen einige Netzwerkanforderungen auf, aber der Rest unterliegt der Steuerung durch den Benutzer. Die App Service-Umgebung stellt folgende Anforderungen:
 
@@ -200,4 +200,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 [ASEAutoscale]: http://azure.microsoft.com/documentation/articles/app-service-environment-auto-scale/
 [ExpressRoute]: http://azure.microsoft.com/documentation/articles/app-service-app-service-environment-network-configuration-expressroute/
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

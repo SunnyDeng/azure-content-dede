@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/09/2015"
+   ms.date="01/21/2016"
    ms.author="joaoma"/>
 
 # Was ist Application Gateway?
@@ -20,7 +20,7 @@
 
 Microsoft Azure Application Gateway bietet eine von Azure verwaltete HTTP-Lastenausgleichslösung, die auf Lastenausgleich der HTTP-Ebene 7 basiert.
 
-Durch Anwendungslastenausgleich können IT-Administratoren und Entwickler Routingregeln für Netzwerkverkehr basierend auf HTTP erstellen. Der Application Gateway-Dienst bietet hohe Verfügbarkeit und gute Kontrolle. Die Vereinbarung zum Servicelevel und die Preise finden Sie auf den Seiten [SLA](http://azure.microsoft.com/support/legal/sla/) und [Preise](https://azure.microsoft.com/pricing/details/application-gateway/).
+Durch Anwendungslastenausgleich können IT-Administratoren und Entwickler Routingregeln für Netzwerkverkehr basierend auf HTTP erstellen. Der Application Gateway-Dienst bietet hohe Verfügbarkeit und gute Kontrolle. Die Vereinbarung zum Servicelevel und die Preise finden Sie auf den Seiten [SLA](https://azure.microsoft.com/support/legal/sla/) und [Preise](https://azure.microsoft.com/pricing/details/application-gateway/).
 
 Application Gateway unterstützt derzeit die Anwendungsbereitstellung der Ebene 7 für Folgendes:
 
@@ -28,11 +28,16 @@ Application Gateway unterstützt derzeit die Anwendungsbereitstellung der Ebene�
 - Cookiebasierte Sitzungsaffinität
 - Secure Sockets Layer (SSL)-Auslagerung
 
-![Application Gateway](./media/application-gateway-introduction/appgateway1.png)
+
+## Lastenausgleich der HTTP-Ebene 7
+
+Azure bietet Lastenausgleich der Ebene 4 über Azure Load Balancer, der auf der Transportebene (TCP/UDP) eingesetzt wird und den Lastenausgleich des gesamten eingehenden Netzwerkverkehrs für den Application Gateway-Dienst übernimmt. Das Application Gateway wendet dann Routingregeln auf den HTTP-Datenverkehr an und ermöglicht so Lastenausgleich der Ebene 7 (HTTP). Wenn Sie ein Application Gateway erstellen, wird ein Endpunkt (VIP) zugeordnet und als öffentliche IP-Adresse für eingehenden Netzwerkverkehr verwendet.
+
+Das Anwendungsgateway leitet den HTTP-Datenverkehr auf Grundlage der Konfiguration weiter: virtueller Computer, Clouddienst, Web-App oder eine externe IP-Adresse.
 
 Lastenausgleich der HTTP-Ebene 7 eignet sich für:
 
-- Anwendungen, für die Anforderungen von einer Benutzer-/Clientsitzung den gleichen virtuellen Back-End-Computer erreichen müssen. Beispiele hierfür wären Einkaufswagen-Apps und Web-E-Mail-Server.
+- Anwendungen, für die Anforderungen von einer Benutzer-/Clientsitzung die gleiche virtuelle Back-End-Maschine erreichen müssen. Beispiele hierfür wären Einkaufswagen-Apps und Web-E-Mail-Server.
 - Anwendungen, die für Webserverfarmen den Mehraufwand für die SSL-Beendigung unterbinden möchten.
 - Anwendungen wie Content Delivery Network, für die mehrere HTTP-Anforderungen auf der gleichen lange bestehenden TCP-Verbindung an verschiedene Back-End-Server weitergeleitet bzw. dort ausgeglichen werden.
 
@@ -52,10 +57,9 @@ Die folgende Tabelle zeigt einen durchschnittlichen Durchsatz für jede Anwendun
 |100k | 35 MBit/s | 100 MBit/s| 200 MBit/s |
 
 
->[AZURE.NOTE]Hierbei handelt es sich um ungefähre Richtwerte für den Application Gateway-Durchsatz. Der tatsächliche Durchsatz ist abhängig von verschiedenen Umgebungsdetails wie etwa durchschnittliche Seitengröße, Ort der Back-End-Instanzen und Verarbeitungszeit für die Seitenbereitstellung.
+>[AZURE.NOTE] Hierbei handelt es sich um ungefähre Richtwerte für den Application Gateway-Durchsatz. Der tatsächliche Durchsatz ist abhängig von verschiedenen Umgebungsdetails wie etwa durchschnittliche Seitengröße, Ort der Back-End-Instanzen und Verarbeitungszeit für die Seitenbereitstellung.
 
 ## Systemüberwachung
-
 
 Azure Application Gateway überprüft die Integrität der Back-End-Instanzen automatisch. Weitere Informationen finden Sie unter [Systemüberwachung des Application Gateways – Übersicht](application-gateway-probe-overview.md).
 
@@ -64,11 +68,8 @@ Azure Application Gateway überprüft die Integrität der Back-End-Instanzen aut
 Sie können ein Application Gateway mithilfe von REST-APIs und PowerShell-Cmdlets erstellen und verwalten.
 
 
-
 ## Nächste Schritte
 
-Erstellen Sie ein Application Gateway. Weitere Informationen finden Sie unter [Erstellen eines Application Gateways](application-gateway-create-gateway.md).
+Nachdem Sie sich mit dem Application Gateway vertraut gemacht haben, können Sie [ein Application Gateway erstellen](application-gateway-create-gateway.md) oder [ein Application Gateway für SSL-Auslagerung erstellen](application-gateway-ssl.md), um einen Lastenausgleich für HTTPS-Verbindungen durchzuführen.
 
-Konfigurieren Sie die SSL-Auslagerung. Weitere Informationen finden Sie unter [Konfigurieren der SSL-Auslagerung mit Application Gateway](application-gateway-ssl.md).
-
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

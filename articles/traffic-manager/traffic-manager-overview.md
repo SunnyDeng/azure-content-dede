@@ -61,7 +61,7 @@ Da der Domänenname des Unternehmens und die aufgelöste IP-Adresse auf dem Clie
    - **Erstellen Sie Ihr Traffic Manager-Profil**: Informationen zum Erstellen eines Profils mithilfe der Schnellerfassung im klassischen Azure-Portal finden Sie unter [Verwalten von Traffic Manager-Profilen](traffic-manager-manage-profiles.md).
    - **Konfigurieren Sie die Einstellungen der Routingmethode für Datenverkehr**: Bei der Schnellerfassung müssen Sie die Routingmethode für Datenverkehr für das Profil auswählen. Diese Einstellung kann jederzeit geändert werden, nachdem Sie die Schritte für die Schnellerfassung ausgeführt haben. Konfigurationsschritte finden Sie im Thema, das der Routingmethode für Datenverkehr entspricht: [Konfigurieren der Routingmethode für Datenverkehr "Leistung"](traffic-manager-configure-performance-load-balancing.md), [Konfigurieren der Routingmethode für Datenverkehr "Failover"](traffic-manager-configure-failover-load-balancing.md), [Konfigurieren der Routingmethode für Datenverkehr "Roundrobin"](traffic-manager-configure-round-robin-load-balancing.md).
    
-   >[AZURE.NOTE]Die Routingmethode für Datenverkehr "Roundrobin" unterstützt jetzt auch die gewichtete Verteilung von Netzwerkdatenverkehr. Zurzeit müssen Sie zum Konfigurieren von Gewichtung jedoch die REST-APIs oder Windows PowerShell verwenden. Weitere Informationen und ein Konfigurationsbeispiel finden Sie unter [Azure Traffic Manager External Endpoints and Weighted Round Robin via PowerShell](http://azure.microsoft.com/blog/2014/06/26/azure-traffic-manager-external-endpoints-and-weighted-round-robin-via-powershell/) (Azure Traffic Manager: Externe Endpunkte und gewichtetes Roundrobin über PowerShell; in englischer Sprache) im Azure-Blog.
+   >[AZURE.NOTE] Die Routingmethode für Datenverkehr "Roundrobin" unterstützt jetzt auch die gewichtete Verteilung von Netzwerkdatenverkehr. Zurzeit müssen Sie zum Konfigurieren von Gewichtung jedoch die REST-APIs oder Windows PowerShell verwenden. Weitere Informationen und ein Konfigurationsbeispiel finden Sie unter [Azure Traffic Manager External Endpoints and Weighted Round Robin via PowerShell](https://azure.microsoft.com/blog/2014/06/26/azure-traffic-manager-external-endpoints-and-weighted-round-robin-via-powershell/) (Azure Traffic Manager: Externe Endpunkte und gewichtetes Roundrobin über PowerShell; in englischer Sprache) im Azure-Blog.
 
    - **Konfigurieren von Endpunkten**: Endpunkte werden während der Schnellerfassung nicht konfiguriert. Nachdem Sie das Profil erstellt und die Routingmethode für Datenverkehr angegeben haben, müssen Sie dem Traffic Manager Informationen zu den Endpunkten bereitstellen. Die Schritte zum Konfigurieren von Endpunkten finden Sie unter [Verwalten von Endpunkten in Traffic Manager](traffic-manager-endpoints.md).
 
@@ -79,7 +79,7 @@ Obwohl nicht jedes REST-API-Element im klassischen Azure-Portal sichtbar ist, k�
 
 Weitere Informationen zu Windows PowerShell-Cmdlets für Traffic Manager finden Sie unter [Azure Traffic Manager-Cmdlets](http://go.microsoft.com/fwlink/p/?LinkId=400769).
 
->[AZURE.NOTE]Derzeit wird das Konfigurieren von externen Endpunkten (Typ = „Any“), von Gewichtungen für die Routingmethode für den Datenverkehr „Roundrobin“ sowie von geschachtelten Profilen mit dem klassischen Azure-Portal nicht unterstützt. Hierzu müssen Sie entweder REST (siehe [Definition erstellen](http://go.microsoft.com/fwlink/p/?LinkId=400772)) oder Windows PowerShell (siehe [Add-AzureTrafficManagerEndpoint](https://msdn.microsoft.com/library/azure/dn690257.aspx)) verwenden.
+>[AZURE.NOTE] Derzeit wird das Konfigurieren von externen Endpunkten (Typ = „Any“), von Gewichtungen für die Routingmethode für den Datenverkehr „Roundrobin“ sowie von geschachtelten Profilen mit dem klassischen Azure-Portal nicht unterstützt. Hierzu müssen Sie entweder REST (siehe [Definition erstellen](http://go.microsoft.com/fwlink/p/?LinkId=400772)) oder Windows PowerShell (siehe [Add-AzureTrafficManagerEndpoint](https://msdn.microsoft.com/library/azure/dn690257.aspx)) verwenden.
 
 ### Konfigurieren von Einstellungen im klassischen Azure-Portal
 
@@ -172,4 +172,4 @@ Wenn Sie die Abbildungen in diesem Thema als PowerPoint-Folien in Ihrer eigenen 
 
 [Azure Traffic Manager-Cmdlets](http://go.microsoft.com/fwlink/p/?LinkId=400769)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

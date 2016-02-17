@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-multiple"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/05/2015"
+	ms.date="01/12/2016"
 	ms.author="kirillg"/>
 
 # <a name="getting-started"> </a>Was sind Mobile Apps?
@@ -36,7 +36,7 @@ Azure App Service ist ein vollständiges PaaS-Angebot (Platform as a Service) f�
 ## Mobile App-Konzepte
 - **Einmaliges Anmelden (Single Sign-On, SSO)** – Wählen Sie aus einer ständig größer werdenden Auswahl an Identitätsanbietern, darunter Azure Active Directory, Facebook, Google, Twitter und Microsoft-Konto, und nutzen Sie Mobile Apps, um Ihrer App innerhalb von Minuten eine Authentifizierungsfunktion hinzuzufügen.
 - **Offlinesynchronisierung** – Mobile Apps ermöglicht es Ihnen, auf einfache Weise stabile und reaktionsschnelle Apps zu erstellen, mit denen Mitarbeiter offline arbeiten können, wenn keine Konnektivität vorhanden ist. Sobald wieder eine Verbindung besteht, erfolgt eine Synchronisierung mit Ihren Unternehmens-Back-End-Systemen. Die Funktion zur Offlinesynchronisierung wird auf allen Clientplattformen unterstützt und kann mit beliebigen Datenquellen eingesetzt werden, darunter SQL, Table Storage, Mongo oder Document DB. Darüber hinaus werden zahlreiche SaaS-APIs unterstützt, z. B. Office 365, Salesforce, Dynamics oder lokale Datenbanken.
-- **Pushbenachrichtigungen** – Mobile Apps bietet eine hochgradig skalierbares Benachrichtigungsmodul für mobile Pushbenachrichtigungen, Notification Hubs, mit dem innerhalb von Sekunden Millionen von personalisierten Pushbenachrichtigungen an Benutzer mit iOS-, Android-, Windows- oder Kindle-Geräten gesendet werden können. Sie können Notification Hubs problemlos mit einem vorhandenen App-Back-End verknüpfen, unabhängig davon, ob das Back-End lokal oder in der Cloud gehostet wird.
+- **Pushbenachrichtigungen** – Mobile Apps bietet ein hochgradig skalierbares Benachrichtigungsmodul für mobile Pushbenachrichtigungen (Notification Hubs), mit dem innerhalb von Sekunden Millionen von personalisierten Pushbenachrichtigungen an Benutzer mit iOS-, Android-, Windows- oder Kindle-Geräten gesendet werden können. Sie können Notification Hubs problemlos mit einem vorhandenen App-Back-End verknüpfen, unabhängig davon, ob das Back-End lokal oder in der Cloud gehostet wird.
 - **Automatische Skalierung** – App Service ermöglicht Ihnen eine schnelle vertikale oder horizontale Skalierung, um beliebige eingehende Datenlasten zu verarbeiten. Wählen Sie die Anzahl und Größe der VMs manuell aus, oder legen Sie eine automatische Skalierung fest, damit Ihr mobiles App-Back-End basierend auf der Datenlast oder einem Zeitplan automatisch skaliert wird.
 
 ## Erste Schritte ##
@@ -44,7 +44,7 @@ Absolvieren Sie zum Einstieg in Mobile Apps das Lernprogramm [Erste Schritte].
 
 Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure App Service].
 
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](https://tryappservice.azure.com/?appServiceName=mobile) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](https://tryappservice.azure.com/?appServiceName=mobile) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 <!-- URLs. -->
 [Migrate your Mobile Service to App Service]: app-service-mobile-migrating-from-mobile-services.md
@@ -54,4 +54,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

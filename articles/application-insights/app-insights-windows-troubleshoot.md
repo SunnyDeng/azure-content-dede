@@ -35,7 +35,7 @@ Fragen zu oder Probleme mit [Visual Studio Application Insights in Windows][wind
 #### Zuvor wurden Daten angezeigt, jetzt jedoch nicht mehr.
 
 * Überprüfen Sie den [Statusblog](http://blogs.msdn.com/b/applicationinsights-status/).
-* Ist Ihr monatliches Kontingent an Datenpunkten erreicht? Öffnen Sie "Einstellungen – Kontingente und Preisübersicht", um es herauszufinden. Sie können in diesem Fall Ihren Plan aktualisieren oder zusätzliche Kapazität erwerben. Informationen hierzu finden Sie in der [Preisübersicht](http://azure.microsoft.com/pricing/details/application-insights/).
+* Ist Ihr monatliches Kontingent an Datenpunkten erreicht? Öffnen Sie "Einstellungen – Kontingente und Preisübersicht", um es herauszufinden. Sie können in diesem Fall Ihren Plan aktualisieren oder zusätzliche Kapazität erwerben. Informationen hierzu finden Sie in der [Preisübersicht](https://azure.microsoft.com/pricing/details/application-insights/).
 
 
 ## Wie füge ich Application Insights einer universellen App hinzu?
@@ -82,7 +82,7 @@ Um Ereignisse auf dem Client und auf dem Server einfacher in Beziehung setzen zu
 
 ## Der Azure-Startbildschirm
 
-*Ich sehe mir das [Azure-Portal](http://portal.azure.com) an. Teilt mir die Karte etwas über meine App mit?*
+*Ich sehe mir das [Azure-Portal](https://portal.azure.com) an. Teilt mir die Karte etwas über meine App mit?*
 
 Nein, sie zeigt die Integrität der Azure-Server auf der ganzen Welt.
 
@@ -124,4 +124,4 @@ Informationen hierzu finden Sie unter [Datenaufbewahrung und Datenschutz][data].
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

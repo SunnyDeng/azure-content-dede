@@ -35,7 +35,7 @@ Wenn wir den Namen der Ressourcengruppe kennen, die die Web-App der Quelle enth�
 
 Um einen neuen App-Service-Plan zu erstellen, können wir den New-AzureRmAppServicePlan-Befehl wie in dem folgenden Beispiel verwenden:
 
-	New-AzureRmAppServicePlan -Location "South Central US" -ResourceGroupName DestinationAzureResourceGroup -Name NewAppServicePlan
+	New-AzureRmAppServicePlan -Location "South Central US" -ResourceGroupName DestinationAzureResourceGroup -Name NewAppServicePlan -Tier Premium
 
 Mit dem Befehl New-AzureRmWebApp können wir die neue Web-App in der nördlichen Region erstellen und diese an einen vorhandenen App-Service-Plan im Premiumtarif binden. Darüber hinaus können wir die gleiche Ressourcengruppe wie die Quellen-Web-App verwenden oder eine neue Ressourcengruppe definieren, wie in dem folgenden Beispiel veranschaulicht wird:
 
@@ -77,7 +77,7 @@ Das folgende Beispiel zeigt, wie man einen Klon der Quellen-Web-App in einer neu
 
 ## Konfigurieren des Traffic Managers beim Klonen einer App ##
 
-Beim Konfigurieren des Traffic Managers mit Erstellung neuer Web-Apps beim Klonen aus einer vorhandenen App, haben Sie die Möglichkeit, beide Web-Apps entweder mit einem neuem Traffic Manager-Profil oder mit einem bereits vorhandenen Profil zu verbinden. Hinweis: Nur die ARM-Version des Traffic Managers wird unterstützt.
+Die Erstellung von Web-Apps für mehrere Regionen und die Konfiguration von Azure Traffic Manager zum Leiten von Datenverkehr an alle diese Web-Apps sind wichtig, um sicherzustellen, dass die Apps der Kunden hoch verfügbar sind. Beim Klonen einer vorhandenen Web-App haben Sie die Option, beide Web-Apps entweder mit einem neuen Traffic Manager-Profil oder mit einem vorhandenen Profil zu verbinden. Beachten Sie jedoch, dass nur die ARM-Version von Traffic Manager unterstützt wird.
 
 ### Erstellen eines neuen Traffic Manager-Profils während eine App geklont wird ###
 
@@ -114,4 +114,4 @@ Dieses Feature ist zurzeit in der Vorschau. Wir arbeiten daran, neue Funktionen 
 - [Einführung in die App Service-Umgebung](app-service-app-service-environment-intro.md)
 - [Verwenden von Windows PowerShell mit dem Azure-Ressourcen-Manager](../powershell-azure-resource-manager.md)
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0204_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/26/2015"
+	ms.date="01/26/2016"
 	ms.author="danlep"/>
 
 
@@ -24,7 +24,7 @@ Dieser Artikel listet die Standard- und Höchstwerte bestimmter Ressourcen auf, 
 
 Wenn Sie Batch-Workloads in der Produktion ausführen möchten, müssen Sie möglicherweise ein oder mehrere Kontingente über den Standardwert erhöhen. Wenn Sie ein Kontingent erhöhen möchten, können Sie kostenlos eine Anfrage an den Onlinekundensupport richten.
 
->[AZURE.NOTE]Bei einem Kontingent handelt es sich um ein Kreditlimit und keine Kapazitätsgarantie. Wenn Sie einen umfangreichen Kapazitätsbedarf haben, wenden Sie sich an den Azure-Support.
+>[AZURE.NOTE] Bei einem Kontingent handelt es sich um ein Kreditlimit und keine Kapazitätsgarantie. Wenn Sie einen umfangreichen Kapazitätsbedarf haben, wenden Sie sich an den Azure-Support.
 
 ## Abonnementkontingente
 Ressource|Standardlimit|Maximales Limit
@@ -53,11 +53,11 @@ Sie können die Kontingente Ihres Batch-Kontos im [Azure-Portal](https://portal.
 
 ## Erhöhen eines Kontingents
 
-Anhand der folgenden Schritte können Sie die Erhöhung eines Kontingents im Azure-Portal anfordern (Sie können die Erhöhung auch im [klassischen Azure-Portal](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) beantragen).
+Anhand der folgenden Schritte können Sie die Erhöhung eines Kontingents im Azure-Portal anfordern (Sie können die Erhöhung auch im [klassischen Azure-Portal](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) beantragen).
 
-1. Klicken Sie auf dem Dashboard des Vorschauportals auf **Hilfe und Support**.
+1. Klicken Sie auf dem Dashboard des Portals auf **Hilfe und Support**.
 
-2. Klicken Sie auf **Create support request > Grundlagen**.
+2. Klicken Sie auf **Neue Supportanfrage > Grundlagen**.
 
 3. Gehen Sie auf dem Blatt **Grundlagen** folgendermaßen vor:
 
@@ -65,7 +65,7 @@ Anhand der folgenden Schritte können Sie die Erhöhung eines Kontingents im Azu
 
 	b. Wählen Sie Ihr Abonnement aus.
 
-	c. Wählen Sie in **Service** die Option **Batch-Dienst** aus.
+	c. Wählen Sie in **Kontingenttyp** die Option **Batch** aus.
 
 	d. Wählen Sie in **Supportplan** die Option **Azure Support Plan - Developer** aus.
 
@@ -73,7 +73,7 @@ Anhand der folgenden Schritte können Sie die Erhöhung eines Kontingents im Azu
 
 4. Gehen Sie auf dem Blatt **Problem** folgendermaßen vor:
 
-	a. Wählen Sie in **Problemtyp** die Option **Batch** aus.
+	a. Wählen Sie gemäß der geschäftlichen Auswirkung einen **Schweregrad** aus.
 
 	b. Listen Sie in **Details** die Kontingente, die Sie in einem bestimmten Konto ändern möchten, mit den neuen Grenzwerten auf.
 
@@ -95,4 +95,4 @@ Der Azure-Support tritt mit Ihnen in Kontakt. Die Bearbeitung der Anfrage kann b
 
 [account_quotas]: ./media/batch-quota-limit/accountquota_portal.PNG
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

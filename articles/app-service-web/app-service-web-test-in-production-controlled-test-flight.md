@@ -48,15 +48,15 @@ In diesem Tutorial lernen Sie, wie Sie folgende Szenarien kombinieren, um Ihre A
 	-	[Git](http://git-scm.com/documentation)
 	-	[PowerShell](https://technet.microsoft.com/library/bb978526.aspx)
 
-> [AZURE.NOTE]Sie benötigen ein Azure-Konto, um dieses Lernprogramm abzuschließen: + Sie können [kostenlos ein Azure-Konto erstellen](/pricing/free-trial/?WT.mc_id=A261C142F): – Sie erhalten ein Guthaben, das Sie zum Ausprobieren der kostenpflichtigen Azure-Dienste nutzen können. Sie können das Konto behalten und weiterhin kostenlose Azure-Dienste wie z. B. Web-Apps nutzen, wenn das Guthaben aufgebraucht sind. + Sie können von [Vorteilen für Visual Studio-Abonnenten](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) profitieren – Über Ihr Visual Studio-Abonnement erhalten Sie jeden Monat Gutschriften, die Sie für kostenpflichtige Azure-Dienste einsetzen können.
+> [AZURE.NOTE] Sie benötigen ein Azure-Konto, um dieses Lernprogramm abzuschließen: Sie können [kostenlos ein Azure-Konto erstellen](/pricing/free-trial/). Sie erhalten ein Guthaben, das Sie zum Ausprobieren der kostenpflichtigen Azure-Dienste nutzen können. Sie können das Konto behalten und weiterhin kostenlose Azure-Dienste wie z. B. Web-Apps nutzen, wenn das Guthaben aufgebraucht ist. Sie können von [Vorteilen für Visual Studio-Abonnenten](/pricing/member-offers/msdn-benefits-details/) profitieren. Über Ihr Visual Studio-Abonnement erhalten Sie jeden Monat Gutschriften, die Sie für kostenpflichtige Azure-Dienste einsetzen können.
 >
 > Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Einrichten der Produktions-Web-App
 
->[AZURE.NOTE]Das Skript in diesem Tutorial konfiguriert automatisch die kontinuierliche Veröffentlichung aus Ihrem GitHub-Repository. Dies erfordert, dass Ihre Anmeldeinformationen für GitHub bereits in Azure gespeichert sind. Andernfalls misslingt die skriptgesteuerte Bereitstellung, wenn versucht wird, Quellcodeverwaltungseinstellungen für die Web-Apps zu konfigurieren.
+>[AZURE.NOTE] Das Skript in diesem Tutorial konfiguriert automatisch die kontinuierliche Veröffentlichung aus Ihrem GitHub-Repository. Dies erfordert, dass Ihre Anmeldeinformationen für GitHub bereits in Azure gespeichert sind. Andernfalls misslingt die skriptgesteuerte Bereitstellung, wenn versucht wird, Quellcodeverwaltungseinstellungen für die Web-Apps zu konfigurieren.
 >
->Um Ihre GitHub-Anmeldeinformationen in Azure zu speichern, erstellen Sie eine Web-App im [Azure-Portal](https://portal.azure.com) und [konfigurieren die GitHub-Bereitstellung](web-sites-publish-source-control.md#Step7). Dies ist nur einmalig erforderlich.
+>Um Ihre GitHub-Anmeldeinformationen in Azure zu speichern, erstellen Sie eine Web-App im [Azure-Portal](https://portal.azure.com/) und [konfigurieren die GitHub-Bereitstellung](web-sites-publish-source-control.md#Step7). Dies ist nur einmalig erforderlich.
 
 In einem typischen DevOps-Szenario verfügen Sie über eine Anwendung, die aktiv in Azure ausgeführt wird und an der Sie über die fortlaufende Veröffentlichung Änderungen vornehmen möchten. In diesem Szenario stellen Sie eine Vorlage in der Produktionsumgebung bereit, die Sie entwickelt und getestet haben.
 
@@ -84,7 +84,7 @@ In einem typischen DevOps-Szenario verfügen Sie über eine Anwendung, die aktiv
 	![](./media/app-service-web-test-in-production-controlled-test-flight/00.2-swap-to-production.png)
 
 7.	Wenn das Skript abgeschlossen ist, navigieren Sie zurück zur Adresse des Front-Ends (http://ToDoApp*&lt;your_suffix>*.azurewebsites.net/), um zu prüfen, ob die Anwendung in der Produktionsumgebung ausgeführt wird.
-5.	Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an, und sehen Sie sich an, was erstellt wurde.
+5.	Melden Sie sich beim [Azure-Portal](https://portal.azure.com/) an, und sehen Sie sich an, was erstellt wurde.
 
 	Sie sollten zwei Web-Apps in derselben Ressourcengruppe sehen, von denen eine das Suffix `Api` im Namen enthält. Wenn Sie die Ressourcengruppenansicht betrachten, sehen Sie auch SQL-Datenbank und -Server, den App Service-Plan und die Stagingslots für die Web-Apps. Navigieren Sie durch die verschiedenen Ressourcen, und vergleichen Sie diese mit *&lt;Repositorystammverzeichnis>\\ARMTemplates\\ProdAndStage.json*, um zu prüfen, wie sie in der Vorlage konfiguriert sind.
 
@@ -215,7 +215,7 @@ Da Sie Daten zum Clientverhalten erfassen, [fügen Sie Ihrem JavaScript-Code in 
 
 5. Klicken Sie auf die Schaltfläche **Favoriten**, um die aktuellen Metrik-Explorer-Einstellungen zu speichern, beispielsweise unter **Benutzerdefinierte Ereignisse: Produktion**. Sie können später ganz einfach zwischen dieser Ansicht und der Ansicht eines Bereitstellungsslots wechseln.
 
-    > [AZURE.TIP]Eine noch leistungsstärkere Analyse erhalten Sie durch [Integrieren der Application Insights-Ressource in Power BI](app-insights-export-power-bi.md).
+    > [AZURE.TIP] Eine noch leistungsstärkere Analyse erhalten Sie durch [Integrieren der Application Insights-Ressource in Power BI](app-insights-export-power-bi.md).
 
 ### Hinzufügen von slotspezifischen Tags zu Ihren Server-App-Metriken
 Der Vollständigkeit halber richten Sie jetzt auch die serverseitige App ein. Im Gegensatz zur Client-App, die in JavaScript instrumentiert wird, werden slotspezifische Tags für die Server-App mithilfe von .NET-Code instrumentiert.
@@ -279,7 +279,7 @@ Der Vollständigkeit halber richten Sie jetzt auch die serverseitige App ein. Im
 
     Wenn das Skript ausgeführt wurde, sind alle Ressourcen in der ursprünglichen Ressourcengruppe noch vorhanden, es wurde jedoch ein neuer Slot namens „beta“ in der Gruppe erstellt, der die gleiche Konfiguration aufweist, wie der zu Anfang erstellte „Staging“-Slot.
 
-    >[AZURE.NOTE]Diese Methode, bei der verschiedene Bereitstellungsumgebungen erstellt werden, unterscheidet sich von der Methode in [Agile Softwareentwicklung mit Azure App Service](app-service-agile-software-development.md). Hier erstellen Sie Bereitstellungsumgebungen mit Bereitstellungsslots, bei der anderen Methode erstellen Sie Bereitstellungsumgebungen mit Ressourcengruppen. Durch das Verwalten von Bereitstellungsumgebungen mit Ressourcengruppen können Sie die Produktionsumgebung für Entwickler sperren, das Testen in der Produktionsumgebung ist jedoch nicht so einfach wie mit Slots.
+    >[AZURE.NOTE] Diese Methode, bei der verschiedene Bereitstellungsumgebungen erstellt werden, unterscheidet sich von der Methode in [Agile Softwareentwicklung mit Azure App Service](app-service-agile-software-development.md). Hier erstellen Sie Bereitstellungsumgebungen mit Bereitstellungsslots, bei der anderen Methode erstellen Sie Bereitstellungsumgebungen mit Ressourcengruppen. Durch das Verwalten von Bereitstellungsumgebungen mit Ressourcengruppen können Sie die Produktionsumgebung für Entwickler sperren, das Testen in der Produktionsumgebung ist jedoch nicht so einfach wie mit Slots.
 
 Wenn Sie möchten, können Sie auch eine Alpha-App erstellen, indem Sie folgendes Skript ausführen:
 
@@ -328,7 +328,7 @@ In diesem Abschnitt leiten Sie Datenverkehr an die Beta-App weiter. Um das Prinz
 
 3. Filtern Sie die Metriken in Ihrer Application Insights-Ressource nach der Umgebung „beta“.
 
-    > [AZURE.NOTE]Wenn Sie diese gefilterte Ansicht als Favorit speichern, können Sie im Metrik-Explorer schnell zwischen der Produktions- und der Betaansicht wechseln.
+    > [AZURE.NOTE] Wenn Sie diese gefilterte Ansicht als Favorit speichern, können Sie im Metrik-Explorer schnell zwischen der Produktions- und der Betaansicht wechseln.
 
 In Application Insights sehen Sie möglicherweise eine Anzeige wie die folgende:
 
@@ -375,4 +375,4 @@ Mit Azure App Service können kleine und mittelgroße Unternehmen ihre kundenori
 -	[Azure PowerShell](powershell-install-configure.md)
 -	[Wiki zum Kudu-Projekt](https://github.com/projectkudu/kudu/wiki)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

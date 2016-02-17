@@ -1,10 +1,11 @@
-<properties 
-   pageTitle="Übersicht über die Geschäftskontinuität in Azure SQL-Datenbank"
-   description="Lernen Sie die integrierten Funktionen und verfügbaren Optionen von Azure SQL-Datenbank kennen, mit deren Hilfe Sie wichtige Cloudanwendungen in Betrieb halten und nach Ausfällen und Fehlern wiederherstellen können."
+<properties
+   pageTitle="Geschäftskontinuität für die Cloud – Datenbankwiederherstellung | Microsoft Azure"
+   description="Erfahren Sie, wie Azure SQL-Datenbank die Geschäftskontinuität in der Cloud sowie die Datenbankwiederherstellung unterstützt und dafür sorgt, dass geschäftskritische Cloudanwendungen in Betrieb gehalten werden."
+   keywords="Geschäftskontinuität,Geschäftskontinuität in der Cloud,Notfallwiederherstellung von Datenbanken,Datenbankwiederherstellung"
    services="sql-database"
-   documentationCenter="" 
-   authors="elfisher" 
-   manager="jeffreyg" 
+   documentationCenter=""
+   authors="elfisher"
+   manager="jeffreyg"
    editor="monicar"/>
 
 <tags
@@ -12,30 +13,30 @@
    ms.devlang="NA"
    ms.topic="article"
    ms.tgt_pltfrm="NA"
-   ms.workload="data-management" 
+   ms.workload="data-management"
    ms.date="11/16/2015"
    ms.author="elfish"/>
 
-# Übersicht über die Geschäftskontinuität
+# Übersicht: Geschäftskontinuität für die Cloud und Notfallwiederherstellung für Datenbanken mit SQL-Datenbank
 
-Bei Geschäftskontinuität geht es um das Entwerfen, Bereitstellen und Ausführen der Anwendung mit Flexibilität gegenüber geplanten oder ungeplanten Unterbrechungen, die zu einem dauerhaften oder vorübergehenden Ausfall der von der Anwendung ausgeführten Geschäftsfunktion führen können. Die ungeplanten Ereignisse reichen von Benutzerfehlern über dauerhafte oder zeitweise Ausfälle bis hin zu regionalen Katastrophen, die umfassende Verluste an Einrichtungen in einer bestimmten Azure-Region verursachen können. Zu geplanten Ereignissen gehören die erneute Bereitstellung der Anwendung in einer anderen Region, Anwendungsupgrades usw. Das Ziel der Geschäftskontinuität ist die Fortsetzung der Anwendung während solcher Ereignisse mit minimalen Auswirkungen auf die Geschäftsfunktion.
+Bei Geschäftskontinuität geht es um das Entwerfen, Bereitstellen und Ausführen von Anwendungen mit Flexibilität gegenüber geplanten oder ungeplanten Unterbrechungen, die zu einem dauerhaften oder vorübergehenden Ausfall der von der Anwendung ausgeführten Geschäftsfunktion führen können. Ungeplante Ereignisse reichen von Benutzerfehlern über dauerhafte oder zeitweise Ausfälle bis hin zu regionalen Katastrophen, die weitreichende Verluste an Einrichtungen in einer bestimmten Azure-Region verursachen können. Zu geplanten Ereignissen gehören die erneute Bereitstellung der Anwendung in einer anderen Region, Anwendungsupgrades usw. Das Ziel der Geschäftskontinuität ist die Fortsetzung der Anwendung während solcher Ereignisse mit minimalen Auswirkungen auf die Geschäftsfunktion.
 
-Für die Erörterung der verschiedenen Lösungen für die Geschäftskontinuität sollten Sie mit einigen Konzepten vertraut sein.
+Für die Erörterung der Geschäftskontinuitätslösungen für die Cloud sollten Sie mit einigen Konzepten vertraut sein.
 
-**Notfallwiederherstellung:** ein Vorgang zur Wiederherstellung der normalen Geschäftsfunktionen der Anwendung
+* **Notfallwiederherstellung:** ein Vorgang zur Wiederherstellung der normalen Geschäftsfunktionen der Anwendung
 
-**Geschätzte Wiederherstellungszeit:** die geschätzte Dauer bis zur vollständigen Verfügbarkeit der Datenbank nach einer Wiederherstellungs- oder Failover-Anforderung.
+* **Geschätzte Wiederherstellungszeit:** die geschätzte Dauer bis zur vollständigen Verfügbarkeit der Datenbank nach einer Wiederherstellungs- oder Failover-Anforderung.
 
-**RTO (Recovery Time Objective)**: die maximal zulässige Zeitspanne bis zur vollständigen Wiederherstellung der Anwendung nach der Störung. RTO misst den maximalen Verlust der Verfügbarkeit während des Ausfalls.
+* **RTO (Recovery Time Objective)**: die maximal zulässige Zeitspanne bis zur vollständigen Wiederherstellung der Anwendung nach der Störung. RTO misst den maximalen Verlust der Verfügbarkeit während des Ausfalls.
 
-**RPO (Recovery Point Objective)**: Höchstmenge der letzten Updates (Zeitraum), die für die Anwendung bis zum Moment der vollständigen Wiederherstellung nach dem Ausfall verloren gehen dürfen. RPO misst den maximalen Datenverlust während des Ausfalls.
+* **RPO (Recovery Point Objective)**: die maximale Anzahl von letzten Updates (Zeitraum), die für die Anwendung bis zum Moment der vollständigen Wiederherstellung nach dem Ausfall verloren gehen dürfen. RPO misst den maximalen Datenverlust während des Ausfalls.
 
 
-## Szenarios für die Geschäftskontinuität
+## Szenarien für die Geschäftskontinuität in der Cloud
 
-Die Geschäftskontinuität gilt für die folgenden Szenarios.
+Nachfolgend werden die wichtigsten Szenarien beschrieben, die beim Planen von Geschäftskontinuität und Datenbankwiederherstellung zu berücksichtigen sind.
 
-###Entwerfen für Geschäftskontinuität
+###Entwerfen von Anwendungen für Geschäftskontinuität
 
 Die Anwendung, die ich erstelle, ist entscheidend für mein Unternehmen. Ich möchte sie so entwickeln und konfigurieren, dass sie einen regionalen Ausfall oder Totalausfall des Diensts überstehen kann. Ich kenne die Anforderungen für RPO und RTO für meine Anwendung und wähle eine Konfiguration, die diese Anforderungen erfüllt.
 
@@ -57,9 +58,9 @@ Ich gebe ein größeres Upgrade meiner Anwendung frei. Es umfasst Änderungen am
 
 ##Funktionen der Geschäftskontinuität
 
-Die folgende Tabelle zeigt die Unterschiede zwischen den Funktionen der Geschäftskontinuität in den verschiedenen Dienstebenen:
+Die folgende Tabelle zeigt die Unterschiede zwischen den Funktionen der Geschäftskontinuität für die Cloud in den verschiedenen Diensttarifen:
 
-| Funktion | Basic-Ebene | Standard-Ebene |Premium-Ebene 
+| Funktion | Basic-Tarif | Standard-Tarif |Premium-Tarif
 | --- |--- | --- | ---
 | Zeitpunktwiederherstellung | Jeder Wiederherstellungspunkt innerhalb von 7 Tagen | Jeder Wiederherstellungspunkt innerhalb von 14 Tagen | Jeder Wiederherstellungspunkt innerhalb von 35 Tagen
 | Geografische Wiederherstellung | Geschätzte Wiederherstellungszeit < 12 h, RPO < 1 h | Geschätzte Wiederherstellungszeit < 12 h, RPO < 1 h | Geschätzte Wiederherstellungszeit < 12 h, RPO < 1 h
@@ -68,7 +69,7 @@ Die folgende Tabelle zeigt die Unterschiede zwischen den Funktionen der Geschäf
 
 Diese Funktionen werden für die zuvor beschriebenen Szenarios bereitgestellt. Im Abschnitt [Entwurf für Geschäftskontinuität](sql-database-business-continuity-design.md) finden Sie Anleitungen zum Auswählen der jeweiligen Funktion.
 
-> [AZURE.NOTE]\: Die Werte für die geschätzte Wiederherstellungszeit und RPO sind technische Ziele und dienen lediglich als Leitfaden. Sie sind nicht Bestandteil des [SLA für die SQL-Datenbank](https://azure.microsoft.com/support/legal/sla/sql-database/v1_0/).
+> [AZURE.NOTE] Die Werte für die geschätzte Wiederherstellungszeit und RPO sind technische Ziele und dienen lediglich als Leitfaden. Sie sind nicht Bestandteil des [SLA für die SQL-Datenbank](https://azure.microsoft.com/support/legal/sla/sql-database/v1_0/).
 
 
 ###Zeitpunktwiederherstellung
@@ -87,8 +88,4 @@ Die standardmäßige Georeplikation ist nur für Standard- und Premium-Datenbank
 
 Die aktive Georeplikation ist für Premium-Datenbanken verfügbar. Sie wurde für schreibintensive Anwendungen mit den umfassendsten Wiederherstellungsanforderungen entwickelt. Bei der aktiven Georeplikation können Sie bis zu vier lesbare sekundäre Replikate auf Servern in verschiedenen Regionen erstellen. Sie können auf die gleiche Weise wie bei der standardmäßigen Georeplikation ein Failover auf eines der sekundären Replikate initiieren. Darüber hinaus kann die aktive Georeplikation verwendet werden, um Anwendungsupgrades oder die räumliche Verlegung von Anwendungen zu unterstützen, sowie als Lastenausgleich für schreibgeschützte Arbeitsauslastungen. Informationen zur Konfiguration der Georeplikation finden Sie unter [Entwerfen für Geschäftskontinuität](sql-database-business-continuity-design.md) und Details zu einem Failover zu einer sekundären Datenbank unter [Wiederherstellen nach einem Ausfall](sql-database-disaster-recovery.md). Details zur Implementierung von Anwendungsupgrades ohne Ausfallzeit finden Sie unter [Anwendungsupgrades ohne Ausfallzeiten](sql-database-business-continuity-application-upgrade.md).
 
-
-
- 
-
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0204_2016-->

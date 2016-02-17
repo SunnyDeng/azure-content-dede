@@ -14,13 +14,13 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/02/2015" 
+	ms.date="01/05/2016" 
 	ms.author="omark"/>
 
 # Was ist Azure App Service?
 Azure App Service ist der einzige Clouddienst, der alle Komponenten integriert, die für das schnelle und einfache Erstellen von Web-Apps und mobilen Apps für beliebige Plattformen und Geräte benötigt werden. App Service ist eine für Entwickler konzipierte, vollständig verwaltete Plattform, die leistungsstarke Funktionen bereitstellt, wie z. B. integrierte DevOps, fortlaufende Integration in Visual Studio Team Services und GitHub, Staging- und Produktionsunterstützung sowie automatisches Patching.
 
-Azure App Service ist ein einzelner Dienst, der neben allen vorhandenen Funktionen von Azure-Websites, Azure Mobile Services und Azure BizTalk Services verschiedene neue Funktionen bietet. [Hier erfahren Sie](http://azure.microsoft.com/documentation/services/app-service/), wie App Service zu den vorhandenen Diensten in Beziehung steht.
+Azure App Service ist ein einzelner Dienst, der neben allen vorhandenen Funktionen von Azure-Websites, Azure Mobile Services und Azure BizTalk Services verschiedene neue Funktionen bietet. [Hier erfahren Sie](https://azure.microsoft.com/documentation/services/app-service/), wie App Service zu den vorhandenen Diensten in Beziehung steht.
 
 ## Warum App Service?
 Azure App Service ist auf die schnelle Entwicklung von Web-Apps und mobilen Apps sowie auf das Automatisieren von Geschäftsprozessen ausgelegt und bietet einen integrierten Satz an Unternehmensfunktionen, die über eine einzige Entwicklungs- und Verwaltungsumgebung bereitgestellt werden. Dies bietet Ihnen folgende Vorteile:
@@ -29,7 +29,7 @@ Azure App Service ist auf die schnelle Entwicklung von Web-Apps und mobilen Apps
 
 - **Herstellen einer Verbindung mit beliebigen Diensten und Freigeben Ihrer Daten** – Verbinden Sie Ihre Web-App oder mobile App dank integrierter Connectors innerhalb von Minuten mit Unternehmenssystemen oder SaaS-Lösungen. Wählen Sie aus über 50 Connectors für Unternehmenssysteme wie SAP, Siebel und Oracle und gängige SaaS-Dienste für Unternehmen, darunter Salesforce und Office 365, bis hin zu gängigen Internetdiensten wie Facebook, Twitter und Dropbox.
 
-- **Einfache Integration** – Integrieren Sie Ihre Daten cloudübergreifend, und automatisieren Sie in Minutenschnelle Geschäftsprozesse – dank einer einfachen visuellen Entwicklungsoberfläche. Integrieren Sie mithilfe von standardmäßigen REST-APIs Ihre Logik auf einfache Weise in beliebige Web-Apps und mobile Apps. Ermöglichen Sie die Integration komplexer Unternehmensanwendungen, entwickeln Sie B2B-Lösungen mithilfe von EDI, erstellen Sie Unternehmensrichtlinien (Regelmodul) und vieles mehr auf Grundlage der branchenführenden BizTalk-Plattform.
+- **Einfache Integration** – Integrieren Sie Ihre Daten cloudübergreifend, und automatisieren Sie in Minutenschnelle Geschäftsprozesse – dank einer einfachen visuellen Entwicklungsoberfläche. Schnelle Integration Ihrer Logik in alle mobilen Apps und Web-Apps über Standard-REST-APIs. Ermöglichen Sie die Integration komplexer Unternehmensanwendungen, entwickeln Sie B2B-Lösungen mithilfe von EDI, erstellen Sie Unternehmensrichtlinien (Regelmodul) und vieles mehr auf Grundlage der branchenführenden BizTalk-Plattform.
 
 - **Herausragende Entwicklerproduktivität** – optimiert für DevOps mit dauerhafter Unterstützung der Integration in Visual Studio Team Services und GitHub, sodass Sie sich auf die schnelle Verbesserung Ihrer Apps konzentrieren können, ohne sich über die Infrastruktur Gedanken zu machen. Stellen Sie App-Updates mit integrierten Staging- und Rollbackfunktionen sowie der Möglichkeit zum Testen in der Produktion bereit.
 
@@ -60,4 +60,4 @@ Mit Azure App Service brauchen Sie dazu nur eine Sprache auszuwählen!
 [Erstellen Sie eine neue App](http://go.microsoft.com/fwlink/?LinkId=523751) – sofort und kostenlos. Keine Kreditkarte erforderlich, keine Verpflichtungen, kein Ärger.
  
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0128_2016-->

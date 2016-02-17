@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/28/2015"
+	ms.date="01/21/2016"
 	ms.author="markusvi;andkjell"/>
 
 
@@ -43,7 +43,7 @@ Der Installations-Assistent verfügt über eine Konfiguration, die für die meis
 - Zum [Ändern einer standardmäßigen Regel](#change-an-out-of-box-rule) sollten Sie eine Kopie der Originalregel erstellen und die standardmäßige Regel deaktivieren. Der Synchronisierungsregel-Editor wird angezeigt und dient Ihnen als Unterstützung.
 - Exportieren Sie Ihre benutzerdefinierten Synchronisierungsregeln mit dem Synchronisierungsregel-Editor. Dadurch erhalten Sie ein PowerShell-Skript, mit dem Sie die Regeln bei einem Notfallwiederherstellungsszenario problemlos neu erstellen können.
 
->[AZURE.WARNING]Die standardmäßigen Synchronisierungsregeln verfügen über einen Fingerabdruck. Wenn Sie eine Änderung an diesen Regeln vornehmen, stimmt der Fingerabdruck überein. Daher kann es später zu Problemen kommen, wenn Sie versuchen, eine neue Version von Azure AD Connect anzuwenden. Führen Sie Änderungen nur wie in diesem Artikel beschrieben durch.
+>[AZURE.WARNING] Die standardmäßigen Synchronisierungsregeln verfügen über einen Fingerabdruck. Wenn Sie eine Änderung an diesen Regeln vornehmen, stimmt der Fingerabdruck überein. Daher kann es später zu Problemen kommen, wenn Sie versuchen, eine neue Version von Azure AD Connect anzuwenden. Führen Sie Änderungen nur wie in diesem Artikel beschrieben durch.
 
 ### Ändern von Attributflüssen
 In einigen Fällen funktionieren die standardmäßigen Attributflüsse für eine Organisation nicht.
@@ -113,4 +113,4 @@ Weitere Informationen zur Konfiguration der [Azure AD Connect-Synchronisierung](
 
 Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

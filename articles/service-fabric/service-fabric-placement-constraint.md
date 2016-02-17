@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="09/03/2015"
-   ms.author="abhic"/>
+   ms.date="02/03/2016"
+   ms.author="masnider"/>
 
 # Übersicht über Platzierungseinschränkungen
 
@@ -24,9 +24,9 @@ Azure Service Fabric ermöglicht Entwicklern, die Platzierung von Dienstreplikat
 ## Funktionen
 Platzierungseinschränkungen ermöglichen Folgendes:
 
-- Beschränken verschiedener Diensttypen auf verschiedene Knotentypen durch Definieren von NodeProperties auf den Knoten.
+- Beschränken Sie verschiedene Diensttypen auf verschiedene Knotentypen, indem Sie NodeProperties auf den Knoten definieren.
 
-- Anwenden bestimmter Einschränkungen auf primäre Replikate, jedoch nicht auf sekundäre Replikate.
+- Legen Sie Ziele für die Einschränkungen fest, sodass sie entweder sowohl für primäre als auch für sekundäre Replikate eines Diensts oder aber nur für die primären Replikate gelten.
 
 
 ## Wichtige Begriffe
@@ -38,4 +38,4 @@ NodeProperty – Eine benutzer- oder systemdefinierte Zuordnung einer Zeichenfol
 
 Weitere Informationen: [Anwendungsszenarien](../service-fabric-application-scenarios).
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0204_2016-->

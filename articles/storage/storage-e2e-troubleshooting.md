@@ -15,7 +15,7 @@
 	ms.date="12/01/2015"
 	ms.author="tamram"/>
 
-# End-to-End-Problembehandlung mit Azure-Speichermetriken und -Protokollen sowie AzCopy und Message Analyzer 
+# End-to-End-Problembehandlung mit Azure-Speichermetriken und -Protokollen sowie AzCopy und Message Analyzer
 
 [AZURE.INCLUDE [storage-selector-portal-e2e-troubleshooting](../../includes/storage-selector-portal-e2e-troubleshooting.md)]
 
@@ -32,12 +32,12 @@ Dieses Lernprogramm bietet eine praktische Beschreibung eines Szenarios der End-
 Um Probleme in Clientanwendungen mit Microsoft Azure-Speicher zu beheben, können Sie eine Kombination verschiedener Tools verwenden, um zu ermitteln, wann ein Problem aufgetreten ist und was die Ursache des Problems sein kann. Zu diesen Tools zählen:
 
 - **Azure-Speicheranalyse**. [Azure-Speicheranalyse](http://msdn.microsoft.com/library/azure/hh343270.aspx) bietet Metriken und Protokolle für den Azure-Speicher.
-	- **Speichermetriken** zeichnet Transaktions- und Kapazitätsmetriken für das Speicherkonto auf. Mithilfe von Metriken können Sie die Leistung Ihrer Anwendung anhand einer Vielzahl verschiedener Messwerte bestimmen. Weitere Informationen zu den Arten der von der Speicheranalyse erfassten Metriken finden Sie unter [Schema der Tabellen für Speicheranalysemetriken](http://msdn.microsoft.com/library/azure/hh343264.aspx). 
+	- **Speichermetriken** zeichnet Transaktions- und Kapazitätsmetriken für das Speicherkonto auf. Mithilfe von Metriken können Sie die Leistung Ihrer Anwendung anhand einer Vielzahl verschiedener Messwerte bestimmen. Weitere Informationen zu den Arten der von der Speicheranalyse erfassten Metriken finden Sie unter [Schema der Tabellen für Speicheranalysemetriken](http://msdn.microsoft.com/library/azure/hh343264.aspx).
 
 	- **Speicherprotokollierung** erfasst jede Anfrage an die Azure-Speicherdienste in einem serverseitigen Protokoll. Das Protokoll erfasst ausführliche Daten für jede Anfrage, einschließlich des ausgeführten Vorgangs, des Status des Vorgangs und der Latenzinformationen. Weitere Informationen zu den Anfrage- und Antwortdaten, die von der Speicheranalyse in die Protokolle geschrieben werden, finden Sie unter [Protokollformat der Speicheranalyse](http://msdn.microsoft.com/library/azure/hh343259.aspx).
 
-- **Azure-Portal**. Sie können die Protokollierung und Metriken für das Speicherkonto im [Azure-Portal](portal.azure.com) konfigurieren. Sie können auch Diagramme und Grafiken anzeigen, die darstellen, welche Leistung die Anwendung über einen gewissen Zeitraum hinweg erbringt, und Warnungen konfigurieren, die Sie benachrichtigen, wenn die Leistung bezüglich einer bestimmten Metrik von den Erwartungen abweicht.
-	
+- **Azure-Portal**. Sie können die Protokollierung und Metriken für das Speicherkonto im [Azure-Portal](https://portal.azure.com) konfigurieren. Sie können auch Diagramme und Grafiken anzeigen, die darstellen, welche Leistung die Anwendung über einen gewissen Zeitraum hinweg erbringt, und Warnungen konfigurieren, die Sie benachrichtigen, wenn die Leistung bezüglich einer bestimmten Metrik von den Erwartungen abweicht.
+
 	Informationen zum Konfigurieren der Überwachung im Azure-Portal finden Sie unter [Überwachen eines Speicherkontos](storage-monitor-storage-account.md).
 
 - **AzCopy**. Serverprotokolle für den Azure-Speicher werden als Blobs gespeichert, damit Sie AzCopy verwenden können, um die Protokoll-Blobs für die Analyse mithilfe von Microsoft Message Analyzer in ein lokales Verzeichnis zu kopieren. Weitere Informationen zu AzCopy finden Sie unter [Verwenden von AzCopy mit Microsoft Azure Storage](storage-use-azcopy.md).
@@ -46,7 +46,7 @@ Um Probleme in Clientanwendungen mit Microsoft Azure-Speicher zu beheben, könne
 
 ## Informationen zum Beispielszenario
 
-Für dieses Lernprogramm wird ein Szenario untersucht, in dem Metriken des Azure-Speichers für eine Anwendung, die den Azure-Speicher aufruft, eine niedrige prozentuale Erfolgsrate anzeigen. Die Metrik zur niedrigen prozentualen Erfolgsrate (im [Azure-Portal](portal.azure.com) und den Metrikentabellen als **PercentSuccess** angezeigt) erfasst Vorgänge, die zwar erfolgreich waren, aber einen HTTP-Statuscode über 299 zurückgeben. In den serverseitigen Speicher-Protokollierungsdateien sind diese Vorgänge mit dem Transaktionsstatus **ClientOtherErrors** erfasst. Ausführliche Informationen zur Metrik zur niedrigen prozentualen Erfolgsrate finden Sie unter [Metriken zeigen niedrigen PercentSuccess an, oder Analyse-Protokolleinträge enthalten Vorgänge mit Transaktionsstatus "ClientOtherErrors"](storage-monitoring-diagnosing-troubleshooting.md#metrics-show-low-percent-success).
+Für dieses Lernprogramm wird ein Szenario untersucht, in dem Metriken des Azure-Speichers für eine Anwendung, die den Azure-Speicher aufruft, eine niedrige prozentuale Erfolgsrate anzeigen. Die Metrik zur niedrigen prozentualen Erfolgsrate (im [Azure-Portal](https://portal.azure.com) und den Metrikentabellen als **PercentSuccess** angezeigt) erfasst Vorgänge, die zwar erfolgreich waren, aber einen HTTP-Statuscode über 299 zurückgeben. In den serverseitigen Speicher-Protokollierungsdateien sind diese Vorgänge mit dem Transaktionsstatus **ClientOtherErrors** erfasst. Ausführliche Informationen zur Metrik zur niedrigen prozentualen Erfolgsrate finden Sie unter [Metriken zeigen niedrigen PercentSuccess an, oder Analyse-Protokolleinträge enthalten Vorgänge mit Transaktionsstatus "ClientOtherErrors"](storage-monitoring-diagnosing-troubleshooting.md#metrics-show-low-percent-success).
 
 Azure-Speichervorgänge geben möglicherweise als Teil ihrer normalen Funktionalität HTTP-Statuscodes zurück, die höher sind als 299. Diese Fehler zeigen jedoch in einigen Fällen an, dass Sie Ihre Clientanwendung optimieren können, um eine bessere Leistung zu erzielen.
 
@@ -64,15 +64,15 @@ Beachten Sie, dass die folgenden Listen nicht vollständig sind. Informationen z
 
 Tritt auf, wenn ein Lesevorgang für einen Container oder einen Blob fehlschlägt, weil der Blob oder Container nicht gefunden wurde.
 
-- Tritt auf, wenn ein Container oder Blob vor dieser Anfrage von einem anderen Client gelöscht wurde. 
+- Tritt auf, wenn ein Container oder Blob vor dieser Anfrage von einem anderen Client gelöscht wurde.
 - Tritt auf, wenn Sie einen API-Aufruf verwenden, der den Container oder Blob erstellt, nachdem überprüft wurde, ob er vorhanden ist. Die APIs CreateIfNotExists führen zunächst einen HEAD-Aufruf durch, um das Vorhandensein des Containers oder Blobs zu überprüfen. Wenn hierbei festgestellt wird, dass er nicht vorhanden ist, wird ein Fehler 404 zurückgegeben und ein zweiter PUT-Aufruf durchgeführt, um den Container oder Blob zu erstellen.
 
 **Beispiele für Statuscode 409 (Konflikt)**
 
-- Tritt auf, wenn Sie eine Create-API verwenden, um einen neuen Container oder Blob zu erstellen, ohne zunächst sein Vorhandensein zu überprüfen, und bereits ein Container oder Blob mit diesem Namen vorhanden ist. 
+- Tritt auf, wenn Sie eine Create-API verwenden, um einen neuen Container oder Blob zu erstellen, ohne zunächst sein Vorhandensein zu überprüfen, und bereits ein Container oder Blob mit diesem Namen vorhanden ist.
 - Tritt auf, wenn ein Container gelöscht wird und Sie versuchen, einen neuen Container mit demselben Namen zu erstellen, bevor der Löschvorgang abgeschlossen ist.
 - Tritt auf, wenn Sie eine Lease für einen Container oder Blob angeben, obwohl bereits eine Lease vorhanden ist.
- 
+
 **Beispiele für Statuscode 412 (Vorbedingung nicht erfüllt)**
 
 - Tritt auf, wenn die von einem Bedingungsheader angegebene Bedingung nicht erfüllt wurde.
@@ -83,18 +83,18 @@ Tritt auf, wenn ein Lesevorgang für einen Container oder einen Blob fehlschläg
 In diesem Lernprogramm verwenden wir Message Analyzer, um mit drei verschiedenen Typen von Protokolldateien zu arbeiten. Sie können jedoch mit jeder der folgenden Dateien arbeiten:
 
 - Das **Serverprotokoll**, das bei Aktivierung der Azure-Speicherprotokollierung erstellt wird. Das Serverprotokoll enthält Daten zu jedem Vorgang, der für einen der Azure-Speicherdienste aufgerufen wird – Blob, Warteschlange, Tabelle und Datei. Das Serverprotokoll gibt an, welcher Vorgang aufgerufen und welcher Statuscode zurückgegeben wurde, und enthält weitere Details zur Anfrage und Antwort.
-- Das **.NET-Clientprotokoll**, das bei Aktivierung der clientseitigen Protokollierung innerhalb Ihrer .NET-Anwendung erstellt wird. Das Clientprotokoll enthält detaillierte Informationen darüber, wie der Client die Anfrage vorbereitet und die Antwort empfängt und verarbeitet. 
+- Das **.NET-Clientprotokoll**, das bei Aktivierung der clientseitigen Protokollierung innerhalb Ihrer .NET-Anwendung erstellt wird. Das Clientprotokoll enthält detaillierte Informationen darüber, wie der Client die Anfrage vorbereitet und die Antwort empfängt und verarbeitet.
 - Das **HTTP-Netzwerk-Ablaufverfolgungsprotokoll**, das Daten zur HTTP/HTTPS-Anfrage und zur Antwort sammelt, einschließlich der Vorgänge im Azure-Speicher. In diesem Lernprogramm generieren wir die Netzwerkablaufverfolgung über Message Analyzer.
 
 ### Konfigurieren der serverseitigen Protokollierung und Metriken
 
-Zunächst müssen wir die Azure-Speicherprotokollierung und -metriken konfigurieren, damit uns Daten von der Clientanwendung zur Analyse vorliegen. Sie können die Protokollierung und die Metriken auf verschiedene Arten konfigurieren: über das [Azure-Portal](portal.azure.com), mithilfe von PowerShell oder programmgesteuert. Weitere Informationen zum Konfigurieren der Protokollierung und der Metriken finden Sie unter [Aktivieren der Speichermetriken und Anzeigen von Metrikdaten](http://msdn.microsoft.com/library/azure/dn782843.aspx) und [Aktivieren der Speicherprotokollierung und Zugreifen auf Protokolldaten](http://msdn.microsoft.com/library/azure/dn782840.aspx) auf MSDN.
+Zunächst müssen wir die Azure-Speicherprotokollierung und -metriken konfigurieren, damit uns Daten von der Clientanwendung zur Analyse vorliegen. Sie können die Protokollierung und die Metriken auf verschiedene Arten konfigurieren: über das [Azure-Portal](https://portal.azure.com), mithilfe von PowerShell oder programmgesteuert. Weitere Informationen zum Konfigurieren der Protokollierung und der Metriken finden Sie unter [Aktivieren der Speichermetriken und Anzeigen von Metrikdaten](http://msdn.microsoft.com/library/azure/dn782843.aspx) und [Aktivieren der Speicherprotokollierung und Zugreifen auf Protokolldaten](http://msdn.microsoft.com/library/azure/dn782840.aspx) auf MSDN.
 
 **Über das Azure-Portal**
 
-Folgen Sie zum Konfigurieren der Protokollierung und der Metriken für das Speicherkonto mit dem [Azure-Portal](portal.azure.com) den Anweisungen unter [Überwachen eines Speicherkontos](storage-monitor-storage-account.md).
+Folgen Sie zum Konfigurieren der Protokollierung und der Metriken für das Speicherkonto mit dem [Azure-Portal](https://portal.azure.com) den Anweisungen unter [Überwachen eines Speicherkontos](storage-monitor-storage-account.md).
 
-> [AZURE.NOTE]Es ist nicht möglich, mithilfe des Azure-Portals Minutenmetriken festzulegen. Allerdings empfiehlt es sich für dieses Lernprogramm sowie für die Untersuchung von Leistungsproblemen mit Ihrer Anwendung, diese Metriken festzulegen. Sie können die Minutenmetriken wie unten beschrieben mithilfe von PowerShell oder programmgesteuert mithilfe der Speicherclientbibliothek festlegen.
+> [AZURE.NOTE] Es ist nicht möglich, mithilfe des Azure-Portals Minutenmetriken festzulegen. Allerdings empfiehlt es sich für dieses Lernprogramm sowie für die Untersuchung von Leistungsproblemen mit Ihrer Anwendung, diese Metriken festzulegen. Sie können die Minutenmetriken wie unten beschrieben mithilfe von PowerShell oder programmgesteuert mithilfe der Speicherclientbibliothek festlegen.
 >
 > Beachten Sie, dass das Azure-Portal keine Minutenmetriken, sondern nur Stundenmetriken anzeigen kann.
 
@@ -113,19 +113,19 @@ Informationen zum Einstieg in PowerShell für Azure finden Sie unter [Installier
 
 	```
 	$SubscriptionName = 'Your subscription name'
-	$StorageAccountName = 'yourstorageaccount' 
-	Set-AzureSubscription -CurrentStorageAccountName $StorageAccountName -SubscriptionName $SubscriptionName 
+	$StorageAccountName = 'yourstorageaccount'
+	Set-AzureSubscription -CurrentStorageAccountName $StorageAccountName -SubscriptionName $SubscriptionName
 	```
 
 4. Aktivieren Sie die Speicherprotokollierung für den Blobdienst:
- 
+
 	```
-	Set-AzureStorageServiceLoggingProperty -ServiceType Blob -LoggingOperations Read,Write,Delete -PassThru -RetentionDays 7 -Version 1.0 
+	Set-AzureStorageServiceLoggingProperty -ServiceType Blob -LoggingOperations Read,Write,Delete -PassThru -RetentionDays 7 -Version 1.0
 	```
 5. Aktivieren Sie die Speichermetriken für den Blobdienst, und stellen Sie dabei sicher, dass für **-MetricsType** `Minute` festgelegt ist:
 
 	```
-	Set-AzureStorageServiceMetricsProperty -ServiceType Blob -MetricsType Minute -MetricsLevel ServiceAndApi -PassThru -RetentionDays 7 -Version 1.0 
+	Set-AzureStorageServiceMetricsProperty -ServiceType Blob -MetricsType Minute -MetricsLevel ServiceAndApi -PassThru -RetentionDays 7 -Version 1.0
 	```
 
 ### Konfigurieren der clientseitigen .NET-Protokollierung
@@ -157,26 +157,26 @@ Erfassen und speichern Sie für das Lernprogramm zunächst eine Netzwerkablaufve
 4. Wählen Sie **Configure** rechts neben dem ETW-Anbieter **Microsoft-Pef-WebProxy** aus.
 5. Klicken Sie im Dialogfeld **Advanced Settings** auf die Registerkarte **Provider**.
 6. Geben Sie im Feld **Hostname Filter** die Speicherendpunkte an (getrennt durch Leerzeichen). Sie können beispielsweise Ihre Endpunkte wie folgt angeben (ändern Sie hierbei `storagesample` in den Namen Ihres Speicherkontos):
-	
-	```	
-	storagesample.blob.core.windows.net storagesample.queue.core.windows.net storagesample.table.core.windows.net 
+
+	```
+	storagesample.blob.core.windows.net storagesample.queue.core.windows.net storagesample.table.core.windows.net
 	```
 
 7. Schließen Sie das Dialogfeld, und klicken Sie auf **Restart**, um mit dem Erfassen der Ablaufverfolgung mit dem Hostnamensfilter zu beginnen, sodass nur der Azure-Speichernetzwerkverkehr in die Ablaufverfolgung einbezogen wird.
 
->[AZURE.NOTE]Nach dem Erfassen der Netzwerkablaufverfolgung wird dringend empfohlen, dass Sie die Einstellungen wiederherstellen, die Sie in Fiddler bezüglich der Entschlüsselung von HTTPS-Datenverkehr geändert haben. Deaktivieren Sie im Dialogfeld "Fiddler Options" die Kontrollkästchen **Capture HTTPS CONNECTs** und **Decrypt HTTPS Traffic**.
+>[AZURE.NOTE] Nach dem Erfassen der Netzwerkablaufverfolgung wird dringend empfohlen, dass Sie die Einstellungen wiederherstellen, die Sie in Fiddler bezüglich der Entschlüsselung von HTTPS-Datenverkehr geändert haben. Deaktivieren Sie im Dialogfeld "Fiddler Options" die Kontrollkästchen **Capture HTTPS CONNECTs** und **Decrypt HTTPS Traffic**.
 
 Weitere Informationen finden Sie unter [Using the Network Tracing Features](http://technet.microsoft.com/library/jj674819.aspx) (in englischer Sprache) auf Technet.
 
 ## Überprüfen der Metrikdaten im Azure-Portal
 
-Sobald die Anwendung über einen bestimmten Zeitraum hinweg ausgeführt wurde, können Sie die Metrikdiagramme überprüfen, die im [Azure-Portal](portal.azure.com) zur Untersuchung der Dienstleistung angezeigt werden. Zunächst navigieren Sie zu Ihrem Speicherkonto im Azure-Portal und fügen ein Diagramm für die Metrik **Prozentsatz erfolgreich** hinzu.
+Sobald die Anwendung über einen bestimmten Zeitraum hinweg ausgeführt wurde, können Sie die Metrikdiagramme überprüfen, die im [Azure-Portal](https://portal.azure.com) zur Untersuchung der Dienstleistung angezeigt werden. Zunächst navigieren Sie zu Ihrem Speicherkonto im Azure-Portal und fügen ein Diagramm für die Metrik **Prozentsatz erfolgreich** hinzu.
 
 Im Azure-Portal wird nun **Prozentsatz erfolgreich** im Überwachungsdiagramm neben sämtlichen anderen Metriken angezeigt, die Sie möglicherweise hinzugefügt haben. Im Szenario, das wir im Folgenden durch die Analyse der Protokolle in Message Analyzer untersuchen, liegt die prozentuale Erfolgsrate unter 100 %.
 
 Weitere Informationen zum Hinzufügen von Metriken auf der Seite "Überwachen" finden Sie unter [Hinzufügen von Metriken zur Metrikentabelle](storage-monitor-storage-account.md#addmonitoringmetrics).
 
-> [AZURE.NOTE]Es dauert einige Zeit, bis die Metrikdaten im Azure-Portal angezeigt werden, nachdem Sie die Speichermetriken aktiviert haben. Dies liegt daran, dass stündliche Metriken für die vergangene Stunde dort erst angezeigt werden, wenn die Stunde vergangen ist. Darüber hinaus werden Minutenmetriken derzeit nicht im Azure-Portal angezeigt. Je nach Zeitpunkt der Metrikaktivierung kann es also bis zu zwei Stunden dauern, bis die Metrikdaten angezeigt werden.
+> [AZURE.NOTE] Es dauert einige Zeit, bis die Metrikdaten im Azure-Portal angezeigt werden, nachdem Sie die Speichermetriken aktiviert haben. Dies liegt daran, dass stündliche Metriken für die vergangene Stunde dort erst angezeigt werden, wenn die Stunde vergangen ist. Darüber hinaus werden Minutenmetriken derzeit nicht im Azure-Portal angezeigt. Je nach Zeitpunkt der Metrikaktivierung kann es also bis zu zwei Stunden dauern, bis die Metrikdaten angezeigt werden.
 
 ## Verwenden von AzCopy zum Kopieren von Serverprotokollen in ein lokales Verzeichnis
 
@@ -186,7 +186,7 @@ Sie können das AzCopy-Befehlszeilentool verwenden, um diese serverseitigen Prot
 
 	AzCopy.exe /Source:http://<storageaccountname>.blob.core.windows.net/$logs /Dest:C:\Temp\Logs\Server /Pattern:"blob/2015/01/02" /SourceKey:<storageaccountkey> /S /V
 
-AzCopy steht zum Download auf der Seite [Azure-Downloads](http://azure.microsoft.com/downloads/) zur Verfügung. Ausführliche Informationen zum Verwenden von AzCopy finden Sie unter [Verwenden von AzCopy mit Microsoft Azure Storage](storage-use-azcopy.md).
+AzCopy steht zum Download auf der Seite [Azure-Downloads](https://azure.microsoft.com/downloads/) zur Verfügung. Ausführliche Informationen zum Verwenden von AzCopy finden Sie unter [Verwenden von AzCopy mit Microsoft Azure Storage](storage-use-azcopy.md).
 
 Weitere Informationen zum Herunterladen serverseitiger Protokolle finden Sie unter [Herunterladen von Protokolldaten der Speicherprotokollierung](http://msdn.microsoft.com/library/azure/dn782840.aspx#DownloadingStorageLogginglogdata).
 
@@ -201,7 +201,7 @@ Message Analyzer enthält Ressourcen für Azure Storage, mit denen Sie Server-, 
 1. Laden Sie [Message Analyzer](http://www.microsoft.com/download/details.aspx?id=44226) aus dem Microsoft Download Center herunter, und führen Sie das Installationsprogramm aus.
 2. Starten Sie Message Analyzer.
 3. Navigieren Sie auf der Seite **Start** zu **Downloads**, und filtern Sie die Anzeige nach **Azure Storage**. Die Azure-Speicherressourcen werden angezeigt, wie in der folgenden Abbildung dargestellt.
-4. Klicken Sie auf **Sync All Displayed Items**, um die Azure-Speicherressourcen zu installieren. Die verfügbaren Ressourcen umfassen: 
+4. Klicken Sie auf **Sync All Displayed Items**, um die Azure-Speicherressourcen zu installieren. Die verfügbaren Ressourcen umfassen:
 	- **Azure Storage Color Rules:** Die Azure-Speicherfarbregeln ermöglichen Ihnen die Angabe bestimmter Filter, die mithilfe von Farbe, Text und Schriftarten Nachrichten hervorheben, die bestimmte Informationen einer Nachverfolgung enthalten.
 	- **Azure Storage Charts:** Azure-Speicherdiagramme sind vordefinierte Diagramme, die Server-Protokolldaten grafisch darstellen. Beachten Sie, dass für die Verwendung der Azure-Speicherdiagramme zum jetzigen Zeitpunkt das Serverprotokoll nur in das Analyseraster geladen werden kann.
 	- **Azure Storage Parsers:** Die Azure-Speicherparser analysieren die Client-, Server- und HTTP-Protokolle des Azure-Speichers, um sie im Analyseraster anzuzeigen.
@@ -211,14 +211,14 @@ Message Analyzer enthält Ressourcen für Azure Storage, mit denen Sie Server-, 
 
 ![Message Analyzer-Startseite](./media/storage-e2e-troubleshooting/mma-start-page-1.png)
 
-> [AZURE.NOTE]Installieren Sie für dieses Lernprogramm alle angezeigten Azure-Speicherressourcen.
+> [AZURE.NOTE] Installieren Sie für dieses Lernprogramm alle angezeigten Azure-Speicherressourcen.
 
 ### Importieren der Protokolldateien in Message Analyzer
 
 Sie können alle Ihre gespeicherten Protokolldateien (serverseitig, clientseitig und Netzwerk) in einer einzigen Sitzung in Microsoft Message Analyzer für die Analyse importieren.
 
-1. Klicken Sie im Menü **File** von Microsoft Message Analyzer auf **New Session**, und klicken Sie dann auf **Blank Session**. Geben Sie im Dialogfeld **New Session** einen Namen für Ihre Analysesitzung ein. Klicken Sie im Bereich **Session Details** auf die Schaltfläche **Files**. 
-1. Um die von Message Analyzer generierten Netzwerkablaufverfolgungs-Daten zu laden, klicken Sie auf **Add Files**, navigieren Sie zum Speicherort, an dem Sie die MATP-Datei der Web-Protokollierungssitzung gespeichert haben, wählen Sie die MATP-Datei aus, und klicken Sie auf **Open**. 
+1. Klicken Sie im Menü **File** von Microsoft Message Analyzer auf **New Session**, und klicken Sie dann auf **Blank Session**. Geben Sie im Dialogfeld **New Session** einen Namen für Ihre Analysesitzung ein. Klicken Sie im Bereich **Session Details** auf die Schaltfläche **Files**.
+1. Um die von Message Analyzer generierten Netzwerkablaufverfolgungs-Daten zu laden, klicken Sie auf **Add Files**, navigieren Sie zum Speicherort, an dem Sie die MATP-Datei der Web-Protokollierungssitzung gespeichert haben, wählen Sie die MATP-Datei aus, und klicken Sie auf **Open**.
 1. Klicken Sie zum Laden der serverseitigen Protokolldaten auf **Add Files**, navigieren Sie zum Speicherort, an den Sie die serverseitigen Protokolle heruntergeladen haben, wählen Sie die Protokolldateien für den zu analysierenden Zeitraum aus, und klicken Sie auf **Open**. Legen Sie im Dropdownmenü **Text Log Configuration** jeder serverseitigen Protokolldatei im Bereich **Session Details** die Option **AzureStorageLog** fest, um sicherzustellen, dass Microsoft Message Analyzer die Protokolldatei ordnungsgemäß analysieren kann.
 1. Klicken Sie zum Laden der clientseitigen Protokolldaten auf **Add Files**, navigieren Sie zum Speicherort, an dem Sie die clientseitigen Protokolle gespeichert haben, wählen Sie die zu analysierenden Protokolldateien aus, und klicken Sie auf **Open**. Legen Sie im Dropdownmenü **Text Log Configuration** jeder clientseitigen Protokolldatei im Bereich **Session Details** die Option **AzureStorageClientDotNetV4** fest, um sicherzustellen, dass Microsoft Message Analyzer die Protokolldatei ordnungsgemäß analysieren kann.
 1. Klicken Sie im Dialogfeld **New Session** auf **Start**, um die Daten zu laden und zu analysieren. Die Protokolldaten werden im Analyseraster von Message Analyzer angezeigt.
@@ -255,7 +255,7 @@ Die Abbildung unten zeigt die Anwendung dieses Ansichtslayouts auf die Beispielp
 
 ![Layout: Azure-Speicheransicht](./media/storage-e2e-troubleshooting/view-layout-client-request-id-module.png)
 
->[AZURE.NOTE]Verschiedene Protokolldateien verfügen über unterschiedliche Spalten, sodass bei der Anzeige der Daten aus verschiedenen Protokolldateien im Analyseraster einige Spalten für bestimmte Zeilen möglicherweise keine Daten enthalten. die Clientprotokollzeilen keine Daten für die Spalten **Timestamp**, **TimeElapsed**, **Source** und **Destination**, da diese Spalten nicht im Clientprotokoll, jedoch in der Netzwerkablaufverfolgung vorhanden sind. Auf ähnliche Weise zeigt die Spalte **Timestamp** Zeitdaten aus dem Serverprotokoll an, jedoch werden keine Daten für die Spalten **TimeElapsed**, **Source** und **Destination** angezeigt, da diese nicht Teil des Serverprotokolls sind.
+>[AZURE.NOTE] Verschiedene Protokolldateien verfügen über unterschiedliche Spalten, sodass bei der Anzeige der Daten aus verschiedenen Protokolldateien im Analyseraster einige Spalten für bestimmte Zeilen möglicherweise keine Daten enthalten. die Clientprotokollzeilen keine Daten für die Spalten **Timestamp**, **TimeElapsed**, **Source** und **Destination**, da diese Spalten nicht im Clientprotokoll, jedoch in der Netzwerkablaufverfolgung vorhanden sind. Auf ähnliche Weise zeigt die Spalte **Timestamp** Zeitdaten aus dem Serverprotokoll an, jedoch werden keine Daten für die Spalten **TimeElapsed**, **Source** und **Destination** angezeigt, da diese nicht Teil des Serverprotokolls sind.
 
 Zusätzlich zur Verwendung der Azure-Speicheransichtslayouts können Sie auch eigene Ansichtslayouts speichern. Sie können andere gewünschte Felder zum Gruppieren von Daten auswählen und die Gruppierung als Teil des benutzerdefinierten Layouts speichern.
 
@@ -286,7 +286,7 @@ Die folgende Abbildung zeigt die Ergebnisse dieser Gruppierung und Filterung. Du
 
 Nach dem Anwenden dieses Filters werden die Zeilen aus dem Clientprotokoll ausgeschlossen, da das Clientprotokoll keine **StatusCode**-Spalte enthält. Zunächst überprüfen wir die Server- und Netzwerkablaufverfolgungs-Protokolle, um die 404-Fehler zu finden, und kehren dann zum Clientprotokoll zurück, um die Clientvorgänge zu untersuchen, die die Fehler verursacht haben.
 
->[AZURE.NOTE]Sie können die Spalte **StatusCode** filtern und dennoch die Daten aller drei Protokolle anzeigen, einschließlich des Clientprotokolls, indem Sie dem Filter einen Ausdruck hinzufügen, der Protokolleinträge mit dem Statuscode null einschließt. Verwenden Sie für das Erstellen dieses Filters folgende Elemente:
+>[AZURE.NOTE] Sie können die Spalte **StatusCode** filtern und dennoch die Daten aller drei Protokolle anzeigen, einschließlich des Clientprotokolls, indem Sie dem Filter einen Ausdruck hinzufügen, der Protokolleinträge mit dem Statuscode null einschließt. Verwenden Sie für das Erstellen dieses Filters folgende Elemente:
 >
 > <code>&#42;StatusCode >= 400 oder !&#42;StatusCode</code>
 >
@@ -302,7 +302,7 @@ Die Speicherressourcen enthalten vordefinierte Filter, die Sie verwenden können
 4. Ändern Sie die im Filter angezeigten Zeitstempel zu dem gewünschten Zeitraum. So können Sie den Zeitraum der zu analysierenden Daten eingrenzen.
 5. Der Filter wird ähnlich wie im folgenden Beispiel angezeigt. Klicken Sie auf **Apply**, um den Filter auf das Analyseraster anzuwenden.
 
-		((AzureStorageLog.StatusCode == 404 || HTTP.StatusCode == 404)) And 
+		((AzureStorageLog.StatusCode == 404 || HTTP.StatusCode == 404)) And
 		(#Timestamp >= 2014-10-20T16:36:38 and #Timestamp <= 2014-10-20T16:36:39)
 
 ![Layout: Azure-Speicheransicht](./media/storage-e2e-troubleshooting/404-filtered-errors1.png)
@@ -317,8 +317,8 @@ Die folgende Abbildung zeigt eine bestimmte Anfrage, bei der der Vorgang "Get Bl
 
 Als Nächstes müssen wir diese Clientanfragen-ID den Clientprotokolldaten zuordnen, um anzuzeigen, welche Aktionen der Client ausgeführt hat, als der Fehler aufgetreten ist. Sie können eine neue Analyserasteransicht für diese Sitzung öffnen, um die Clientprotokolldaten in einer zweiten Registerkarte anzuzeigen:
 
-1. Kopieren Sie zunächst den Wert des Felds **ClientRequestId** in die Zwischenablage. Sie können dazu eine beliebige Zeile auswählen, das Feld **ClientRequestId** suchen, mit der rechten Maustaste auf den Datenwert klicken und **Copy 'ClientRequestId'** auswählen. 
-1. Wählen Sie in der Symbolleiste **New Viewer** und dann **Analysis Grid** aus, um eine neue Registerkarte zu öffnen. Die neue Registerkarte zeigt alle Daten in den Protokolldateien ohne Gruppierung, Filterung oder Farbregeln an. 
+1. Kopieren Sie zunächst den Wert des Felds **ClientRequestId** in die Zwischenablage. Sie können dazu eine beliebige Zeile auswählen, das Feld **ClientRequestId** suchen, mit der rechten Maustaste auf den Datenwert klicken und **Copy 'ClientRequestId'** auswählen.
+1. Wählen Sie in der Symbolleiste **New Viewer** und dann **Analysis Grid** aus, um eine neue Registerkarte zu öffnen. Die neue Registerkarte zeigt alle Daten in den Protokolldateien ohne Gruppierung, Filterung oder Farbregeln an.
 2. Wählen Sie auf der Symbolleiste die Option **View Layout** und dann **All .NET Client Columns** im Bereich **Azure Storage** aus. Dieses Ansichtslayout zeigt Daten aus dem Clientprotokoll sowie den Server- und Netzwerkablaufverfolgungs-Protokollen an. Standardmäßig wird die Anzeige nach der Spalte **MessageNumber** sortiert.
 3. Als Nächstes durchsuchen wir das Clientprotokoll nach der Clientanfragen-ID. Wählen Sie auf der Symbolleiste die Option **Find Messages** aus, und legen Sie dann einen benutzerdefinierten Filter für die Clientanfragen-ID im Feld **Find** fest. Verwenden Sie folgende Syntax für den Filter unter Angabe Ihrer eigenen Clientanfragen-ID:
 
@@ -365,4 +365,4 @@ Weitere Informationen zur Problembehandlung in End-to-End-Szenarien im Azure-Spe
 - [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy)
 - [Microsoft Message Analyzer Operating Guide (in englischer Sprache)](http://technet.microsoft.com/library/jj649776.aspx)
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

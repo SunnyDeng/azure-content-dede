@@ -18,7 +18,7 @@
 	ms.author="jroth" />
 
 
-# Ressourceneinschränkungen für Azure SQL-Datenbanken
+# Ressourceneinschränkungen für Azure SQL-Datenbank
 
 ## Übersicht
 
@@ -53,19 +53,19 @@ Für eine einzelne Datenbank sind deren Einschränkungen durch die Dienstebene u
 
 [AZURE.INCLUDE [Tabelle der SQL-Datenbank-Dienstebenen für elastische Datenbanken](../../includes/sql-database-service-tiers-table-elastic-db-pools.md)]
 
-Eine erweiterte Definition der einzelnen Ressourcen, die in den vorangehenden Tabellen aufgeführt werden, können Sie der Beschreibungen in [Funktionen und Grenzen der Serviceebenen](sql-database-performance-guidance.md#service-tier-capabilities-and-limits) entnehmen. Eine Übersicht über die Dienstebenen finden Sie unter [Dienstebenen und Leistungsstufen für Azure SQL-Datenbanken](sql-database-service-tiers.md).
+Eine erweiterte Definition der einzelnen Ressourcen, die in den vorangehenden Tabellen aufgeführt werden, können Sie der Beschreibungen in [Funktionen und Grenzen der Serviceebenen](sql-database-performance-guidance.md#service-tier-capabilities-and-limits) entnehmen. Eine Übersicht über die Diensttarife finden Sie unter [Dienstebenen und Leistungsstufen für Azure SQL-Datenbank](sql-database-service-tiers.md).
 
 ## DTU-Kontingent pro Server
 
 Azure SQL-Datenbank verfügt über ein DTU-Kontingent pro logischen Server von derzeit 15000 DTUs. Dieses Kontingent stellt die DTUs dar, die ein logischer Server hosten kann, basierend auf der Summe der DTUs der Leistungsstufe der einzelnen Datenbanken auf dem Server. Beispielsweise hat ein Server mit 5 Basic-Datenbanken (maximal 5 x 5 DTUs), 2 Standard-S1-Datenbanken (maximal 2 x 20 DTUs) und 3 Premium-P1-Datenbanken (bis zu 3 x 100 DTUs) insgesamt 365 DTUs des DTU-Kontingents von 15000 verbraucht.
 
->[AZURE.NOTE] [Wenden Sie sich an den Support](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/), um dieses Kontingent zu erhöhen.
+>[AZURE.NOTE] [Wenden Sie sich an den Support](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/), um dieses Kontingent zu erhöhen.
 
 ## Weitere Einschränkungen für SQL-Datenbanken
 
 | Bereich | Begrenzung | Beschreibung |
 |---|---|---|
-| Datenbanken mit automatisiertem Export pro Abonnement | 10 | Automatisierter Export ermöglicht es Ihnen, einen benutzerdefinierten Zeitplan für die Sicherung Ihrer SQL-Datenbanken zu erstellen. Weitere Informationen finden Sie unter [SQL-Datenbanken: Support für automatisierte SQL-Datenbankexporte](http://weblogs.asp.net/scottgu/windows-azure-july-updates-sql-database-traffic-manager-autoscale-virtual-machines).|
+| Datenbanken mit automatisiertem Export pro Abonnement | 10 | Automatisierter Export ermöglicht es Ihnen, einen benutzerdefinierten Zeitplan für die Sicherung Ihrer SQL-Datenbanken zu erstellen. Weitere Informationen finden Sie unter [SQL Databases: Support for Automated SQL Database Exports](http://weblogs.asp.net/scottgu/windows-azure-july-updates-sql-database-traffic-manager-autoscale-virtual-machines).|
 
 ## Ressourcen
 
@@ -75,4 +75,4 @@ Azure SQL-Datenbank verfügt über ein DTU-Kontingent pro logischen Server von d
 
 [Fehlermeldungen für Clientprogramme der SQL-Datenbank](sql-database-develop-error-messages.md)
 
-<!----HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0128_2016-->

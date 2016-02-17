@@ -19,7 +19,7 @@
 	
 # Azure App Service: Skalierung von App Service-Anwendungen
 
-Anwendungen in Azure App Service können [sehr groß werden](https://azure.microsoft.com/blog/canadian-broadcasting-corporation-radio-canada-leverage-azure-for-smooth-election-coverage), doch das Skalieren einer Anwendung ist komplex und es gibt keine Lösung, die sich für alle Probleme eignet. 3 Faktoren spielen beim korrekten Skalieren Ihrer Anwendung eine Rolle und tragen so zum Erfolg dieser bei:
+Anwendungen in Azure App Service können [sehr groß werden](https://azure.microsoft.com/blog/canadian-broadcasting-corporation-radio-canada-leverage-azure-for-smooth-election-coverage/), doch das Skalieren einer Anwendung ist komplex, und es gibt keine Lösung, die sich für alle Probleme eignet. 3 Faktoren spielen beim korrekten Skalieren Ihrer Anwendung eine Rolle und tragen so zum Erfolg dieser bei:
 
 1. Lernen Sie die Architektur Ihrer App und ihre Schwächen kennen.
 	* Ist Ihre Anwendung zustandsbehaftet? Zustandslos?
@@ -38,4 +38,4 @@ Dieser Abschnitt hilft Ihnen dabei, all diese Faktoren zu verstehen und eine Str
 
 [AZURE.INCLUDE [app-service-blueprint-scaling-app-service-applications](../../includes/app-service-blueprint-scaling-app-service-applications.md)]
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

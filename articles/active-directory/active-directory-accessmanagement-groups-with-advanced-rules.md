@@ -37,8 +37,9 @@ Eine vollständige erweiterte Regel sieht etwa wie folgt aus: (leftParameter bin
 
 Eine vollständige Liste der unterstützten Parameter und Ausdrucksregeloperatoren finden Sie in den folgenden Abschnitten.
 
-Die Gesamtlänge des Texts der erweiterten Regel darf 255 Zeichen nicht überschreiten.
-> [AZURE.NOTE]Bei string- und regex-Vorgängen wird die Groß-und Kleinschreibung nicht beachtet. Sie können auch NULL-Prüfungen durchführen, indem Sie "$null" als Konstante verwenden, z. B.: user.department -eq $null. Zeichenfolgen mit Anführungszeichen (") sollten mit dem Escapezeichen ` maskiert werden, z. B.: user.department -eq "Sa`"les".
+Die Gesamtlänge des Texts der erweiterten Regel darf 2048 Zeichen nicht überschreiten.
+> [AZURE.NOTE]
+Bei string- und regex-Vorgängen wird die Groß-und Kleinschreibung nicht beachtet. Sie können auch NULL-Prüfungen durchführen, indem Sie "$null" als Konstante verwenden, z. B.: user.department -eq $null. Zeichenfolgen mit Anführungszeichen (") sollten mit dem Escapezeichen ` maskiert werden, z. B.: user.department -eq "Sa`"les".
 
 ##Unterstützte Ausdrucksregeloperatoren
 Die folgende Tabelle enthält alle Ausdrucksregeloperatoren und ihre Syntax zur Verwendung im Text der erweiterten Regel:
@@ -157,12 +158,25 @@ Zulässige Operatoren
 | otherMails | Jeder string-Wert. | (user.otherMails -contains "alias@domain") |
 | proxyAddresses | SMTP: alias@domain smtp: alias@domain | (user.proxyAddresses -contains "SMTP: alias@domain") |
 
+## Erweiterungsattribute und benutzerdefinierte Attribute
+Erweiterungsattribute und benutzerdefinierte Attribute werden in Regeln für dynamische Mitgliedschaft unterstützt.
+
+Erweiterungsattributes werden von einer lokalen Windows Server AD-Instanz synchronisiert und erhalten folgendes Format: ExtensionAttributeX. Dabei entspricht X 1 bis 15. Beispiel für eine Regel, die ein Erweiterungsattribut verwendet:
+
+(user.extensionAttribute15 -eq "Marketing")
+
+Benutzerdefinierte Attribute werden von einer lokalen Windows Server AD-Instanz oder von einer verbundenen SaaS-Anwendung aus synchronisiert und erhalten das Format „user.extension\_[GUID]\_\_[Attribute]“. Dabei ist [GUID] der eindeutige Bezeichner in AAD für die Anwendung, die das Attribut in AAD erstellt hat, und [Attribute] ist der Name des Attributs bei seiner Erstellung. Beispiel für eine Regel, die ein benutzerdefiniertes Attribut verwendet:
+
+user.extension\_c272a57b722d4eb29bfe327874ae79cb\_\_OfficeNumber
+
+Den Namen des benutzerdefinierten Attributs finden Sie im Verzeichnis. Fragen Sie dazu das Attribut eines Benutzers mithilfe des Graph-Explorers ab, und suchen Sie nach dem Attributnamen.
+
 ## Mitarbeiterregel
 Sie können Mitglieder einer Gruppe jetzt basierend auf dem manager-Attribut eines Benutzers auffüllen.
 So konfigurieren Sie eine Gruppe als Gruppe mit "Vorgesetzten"
 --------------------------------------------------------------------------------
 1. Klicken Sie im Administratorportal auf die Registerkarte **Konfigurieren**, und wählen Sie **ERWEITERTE REGEL** aus.
-2. Geben Sie die Regel mit folgender Syntax ein: Mitarbeiter von *Mitarbeiter von {Benutzer-ID\_von\_Vorgesetzter}*. Ein Beispiel für eine gültige Regel für den direkten Mitarbeiter ist 
+2. Geben Sie die Regel mit folgender Syntax ein: Mitarbeiter von *Mitarbeiter von {Benutzer-ID\_von\_Vorgesetztem}* Beispiel für eine gültige Regel für Mitarbeiter: 
 
 Mitarbeiter von „62e19b97-8b3d-4d4a-a106-4ce66896a863“
 
@@ -182,4 +196,4 @@ Diese Artikel enthalten zusätzliche Informationen zum Azure Active Directory.
 
 * [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

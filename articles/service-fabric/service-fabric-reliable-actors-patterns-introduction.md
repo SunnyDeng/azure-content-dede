@@ -78,4 +78,4 @@ Die Hauptvorteile von Reliable Actors sind **Entwicklerproduktivität**, selbst 
 
   * *Explizite Asynchronie:* Das Reliable Actors-Programmiermodell macht die Asynchronie einer verteilten Anwendung explizit und weist Programmierern den Weg zum Schreiben von nicht blockierendem, asynchronem Code. Dadurch wird ein hohes Maß an verteilter Parallelität und Gesamtdurchsatz ermöglicht, ohne dass die explizite Verwendung von Multithreading erforderlich ist.
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

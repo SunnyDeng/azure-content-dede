@@ -76,7 +76,7 @@ Bei einem Dienst, der mit der ASP.NET-Web-API implementiert wird, wird jede Anfo
 	}
 	```
 
-	> [AZURE.TIP]Nutzen Sie das Standardrouting, wenn dies möglich ist, und vermeiden Sie das Festlegen von vielen komplizierten benutzerdefinierten Routen. Dies kann zu „Brüchigkeit“ (einfaches Hinzufügen von Methoden zu einem Controller, die zu mehrdeutigen Routen führen) und einer verringerten Leistung führen (je größer die Routingtabelle, desto größer ist der Aufwand für das Web-API-Framework beim Ermitteln, welche Route mit einem bestimmten URI übereinstimmt). Verwenden Sie einfache APIs und Routen. Weitere Informationen finden Sie im Abschnitt „Organisieren der Web-API basierend auf Ressourcen“ im API-Entwurfsleitfaden. Wenn Sie benutzerdefinierte Routen definieren müssen, ist die Verwendung des attributbasierten Routings ein guter Ansatz. Dies wird weiter unten in diesem Abschnitt beschrieben.
+	> [AZURE.TIP] Nutzen Sie das Standardrouting, wenn dies möglich ist, und vermeiden Sie das Festlegen von vielen komplizierten benutzerdefinierten Routen. Dies kann zu „Brüchigkeit“ (einfaches Hinzufügen von Methoden zu einem Controller, die zu mehrdeutigen Routen führen) und einer verringerten Leistung führen (je größer die Routingtabelle, desto größer ist der Aufwand für das Web-API-Framework beim Ermitteln, welche Route mit einem bestimmten URI übereinstimmt). Verwenden Sie einfache APIs und Routen. Weitere Informationen finden Sie im Abschnitt „Organisieren der Web-API basierend auf Ressourcen“ im API-Entwurfsleitfaden. Wenn Sie benutzerdefinierte Routen definieren müssen, ist die Verwendung des attributbasierten Routings ein guter Ansatz. Dies wird weiter unten in diesem Abschnitt beschrieben.
 
 	Weitere Informationen zum konventionsbasierten Routing finden Sie auf der Microsoft-Website unter [Routing in der ASP.NET-Web-API](http://www.asp.net/web-api/overview/web-api-routing-and-actions/routing-in-aspnet-web-api).
 
@@ -157,7 +157,7 @@ Nachdem eine Anforderung einer Clientanwendung erfolgreich an eine Methode in ei
 
 	Der Code, mit dem diese Anforderungen implementiert werden, sollte nicht mit Nebeneffekten verbunden sein. Eine Anforderung, die für eine Ressource wiederholt ausgeführt wird, sollte zum gleichen Ergebnis führen. Wenn Sie beispielsweise mehrere DELETE-Anforderungen an denselben URI senden, sollte dies immer die gleiche Auswirkung haben. Hierbei kann der HTTP-Statuscode in den Antwortnachrichten variieren (für die erste DELETE-Anforderung wird ggf. Statuscode 204 (No Content) zurückgegeben, während für eine nachfolgende DELETE-Anforderung Statuscode 404 (Nicht gefunden) zurückgegeben werden kann).
 
-> [AZURE.NOTE]Der Artikel [Idempotency Patterns](http://blog.jonathanoliver.com/idempotency-patterns/) (Muster der Idempotenz) im Blog von Jonathan Oliver enthält eine Übersicht über die Idempotenz und ihre Verbindung mit Datenverwaltungsvorgängen.
+> [AZURE.NOTE] Der Artikel [Idempotency Patterns](http://blog.jonathanoliver.com/idempotency-patterns/) (Muster der Idempotenz) im Blog von Jonathan Oliver enthält eine Übersicht über die Idempotenz und ihre Verbindung mit Datenverwaltungsvorgängen.
 
 - **Bei POST-Aktionen, mit denen neue Ressourcen erstellt werden, sollten keine nicht relevanten Nebeneffekte auftreten**.
 
@@ -226,7 +226,7 @@ Nachdem eine Anforderung einer Clientanwendung erfolgreich an eine Methode in ei
 
 	Falls der Client keinen Accept-Header angibt, sollten Sie für den Text der Antwort ein geeignetes Standardformat verwenden. Beispiel: Das ASP.NET-Web-API-Framework nutzt für textbasierte Daten standardmäßig JSON.
 
-	> [AZURE.NOTE]Das ASP.NET-Web-API-Framework führt eine automatische Erkennung von Accept-Headern durch und behandelt diese selbst basierend auf dem Typ der Daten im Text der Antwortnachricht. Wenn der Text einer Antwortnachricht beispielsweise ein CLR-Objekt (Common Language Runtime) enthält, formatiert die ASP.NET-Web-API die Antwort automatisch im JSON-Format, wobei der Content-Type-Header der Antwort auf „application/json“ festgelegt ist – es sei denn, der Client gibt an, dass er die Ergebnisse im XML-Format benötigt. In diesem Fall formatiert das ASP.NET-Web-API-Framework die Antwort im XML-Format und legt den Content-Type-Header der Antwort auf „text/xml“ fest. Es kann aber auch erforderlich sein, Accept-Header zu behandeln, für die verschiedene Medientypen explizit im Implementierungscode für einen Vorgang angegeben werden.
+	> [AZURE.NOTE] Das ASP.NET-Web-API-Framework führt eine automatische Erkennung von Accept-Headern durch und behandelt diese selbst basierend auf dem Typ der Daten im Text der Antwortnachricht. Wenn der Text einer Antwortnachricht beispielsweise ein CLR-Objekt (Common Language Runtime) enthält, formatiert die ASP.NET-Web-API die Antwort automatisch im JSON-Format, wobei der Content-Type-Header der Antwort auf „application/json“ festgelegt ist – es sei denn, der Client gibt an, dass er die Ergebnisse im XML-Format benötigt. In diesem Fall formatiert das ASP.NET-Web-API-Framework die Antwort im XML-Format und legt den Content-Type-Header der Antwort auf „text/xml“ fest. Es kann aber auch erforderlich sein, Accept-Header zu behandeln, für die verschiedene Medientypen explizit im Implementierungscode für einen Vorgang angegeben werden.
 
 - **Stellen Sie Links zum Unterstützen der Navigation im HATEOAS-Stil und der Ermittlung von Ressourcen bereit**.
 
@@ -362,9 +362,9 @@ Wenn ein Vorgang im ASP.NET-Web-API-Framework eine unerwartete Ausnahme auslöst
 	}
 	```
 
-	> [AZURE.TIP]Fügen Sie keine Informationen ein, die für Angreifer beim Eindringen in Ihre Web-API nützlich sein könnten. Weitere Informationen finden Sie auf der Microsoft-Website auf der Seite [Ausnahmebehandlung in der ASP.NET-Web-API](http://www.asp.net/web-api/overview/error-handling/exception-handling).
+	> [AZURE.TIP] Fügen Sie keine Informationen ein, die für Angreifer beim Eindringen in Ihre Web-API nützlich sein könnten. Weitere Informationen finden Sie auf der Microsoft-Website auf der Seite [Ausnahmebehandlung in der ASP.NET-Web-API](http://www.asp.net/web-api/overview/error-handling/exception-handling).
 
-	> [AZURE.NOTE]Viele Webserver fangen Fehlerbedingungen selbst ab, bevor sie die Web-API erreichen. Wenn Sie beispielsweise die Authentifizierung für eine Website konfigurieren und der Benutzer keine richtigen Authentifizierungsinformationen angibt, sollte der Webserver mit dem Statuscode 401 (Unauthorized) antworten. Nachdem ein Client authentifiziert wurde, kann Ihr Code eigene Überprüfungen durchführen, um zu bestätigen, dass der Client auf die angeforderte Ressource zugreifen kann. Wenn diese Autorisierung nicht erfolgreich ist, sollten Sie den Statuscode 403 (Forbidden) zurückgeben.
+	> [AZURE.NOTE] Viele Webserver fangen Fehlerbedingungen selbst ab, bevor sie die Web-API erreichen. Wenn Sie beispielsweise die Authentifizierung für eine Website konfigurieren und der Benutzer keine richtigen Authentifizierungsinformationen angibt, sollte der Webserver mit dem Statuscode 401 (Unauthorized) antworten. Nachdem ein Client authentifiziert wurde, kann Ihr Code eigene Überprüfungen durchführen, um zu bestätigen, dass der Client auf die angeforderte Ressource zugreifen kann. Wenn diese Autorisierung nicht erfolgreich ist, sollten Sie den Statuscode 403 (Forbidden) zurückgeben.
 
 - **Behandeln Sie Ausnahmen auf konsistente Weise, und protokollieren Sie Informationen zu Fehlern**.
 
@@ -465,13 +465,13 @@ In einer verteilten Umgebung, z. B. mit einem Webserver und Clientanwendungen, 
     }
 	```
 
-	> [AZURE.NOTE]Außerdem wird im HTTP-Protokoll auch die _no-cache_-Direktive für den Cache-Control-Header definiert. Es ist etwas verwirrend, dass diese Direktive nicht etwa „nicht zwischenspeichern“, sondern „zwischengespeicherte Informationen vor dem Zurückgeben per Server neu bewerten“ bedeutet. Die Daten können zwar zwischengespeichert werden, aber sie werden bei jeder Verwendung überprüft, um sicherzustellen, dass sie noch aktuell sind.
+	> [AZURE.NOTE] Außerdem wird im HTTP-Protokoll auch die _no-cache_-Direktive für den Cache-Control-Header definiert. Es ist etwas verwirrend, dass diese Direktive nicht etwa „nicht zwischenspeichern“, sondern „zwischengespeicherte Informationen vor dem Zurückgeben per Server neu bewerten“ bedeutet. Die Daten können zwar zwischengespeichert werden, aber sie werden bei jeder Verwendung überprüft, um sicherzustellen, dass sie noch aktuell sind.
 
 	Für die Cacheverwaltung ist die Clientanwendung oder der Zwischenserver verantwortlich, aber bei einer richtigen Implementierung kann Bandbreite gespart und die Leistung verbessert werden. Zu diesem Zweck wird verhindert, dass keine Daten mehr abgerufen werden müssen, die bereits vorher abgerufen wurden.
 
 	Der _max-age_-Wert im Cache-Control-Header ist nur ein Anhaltspunkt und keine Garantie, dass sich die entsprechenden Daten während des angegebenen Zeitraums nicht ändern. Die Web-API sollte den max-age-Wert je nach der erwarteten Volatilität der Daten auf einen geeigneten Wert festlegen. Wenn dieser Zeitraum abgelaufen ist, sollte der Client das Objekt aus dem Cache entfernen.
 
-	> [AZURE.NOTE]Die meisten modernen Webbrowser unterstützen die clientseitige Zwischenspeicherung, indem Anforderungen die passenden Cache-Control-Header hinzugefügt werden und die Header der Ergebnisse (wie beschrieben) untersucht werden. Einige ältere Browser speichern aber keine Werte zwischen, die über eine URL mit einer Abfragezeichenfolge zurückgegeben werden. Normalerweise ist dies kein Problem für benutzerdefinierte Clientanwendungen, bei denen basierend auf dem hier beschriebenen Protokoll eine eigene Strategie zur Cacheverwaltung implementiert wird.
+	> [AZURE.NOTE] Die meisten modernen Webbrowser unterstützen die clientseitige Zwischenspeicherung, indem Anforderungen die passenden Cache-Control-Header hinzugefügt werden und die Header der Ergebnisse (wie beschrieben) untersucht werden. Einige ältere Browser speichern aber keine Werte zwischen, die über eine URL mit einer Abfragezeichenfolge zurückgegeben werden. Normalerweise ist dies kein Problem für benutzerdefinierte Clientanwendungen, bei denen basierend auf dem hier beschriebenen Protokoll eine eigene Strategie zur Cacheverwaltung implementiert wird.
 	>
 	> Einige ältere Proxys weisen das gleiche Verhalten auf und speichern unter Umständen keine Anforderungen zwischen, die auf URLs mit Abfragezeichenfolgen basieren. Dies kann für benutzerdefinierte Clientanwendungen ein Problem darstellen, die über einen Proxy dieser Art eine Verbindung mit einem Webserver herstellen.
 
@@ -517,7 +517,7 @@ In einer verteilten Umgebung, z. B. mit einem Webserver und Clientanwendungen, 
 	{"orderID":2,"productID":4,"quantity":2,"orderValue":10.00}
 	```
 
-	> [AZURE.TIP]Aus Sicherheitsgründen sollten Sie nicht zulassen, dass sensible Daten oder Daten, die über eine authentifizierte Verbindung (HTTPS) zurückgegeben werden, zwischengespeichert werden.
+	> [AZURE.TIP] Aus Sicherheitsgründen sollten Sie nicht zulassen, dass sensible Daten oder Daten, die über eine authentifizierte Verbindung (HTTPS) zurückgegeben werden, zwischengespeichert werden.
 
 	Eine Clientanwendung kann eine nachfolgende GET-Anforderung ausgeben, um jederzeit dieselbe Ressource abzurufen. Wenn sich die Ressource geändert hat (also ein anderes ETag aufweist), sollte die zwischengespeicherte Version verworfen und die neue Version dem Cache hinzugefügt werden. Falls eine Ressource umfangreich ist und für die Übertragung zurück auf den Client eine erhebliche Menge an Bandbreite erfordert, kann die Verwendung wiederholter Anforderungen zum Abrufen derselben Daten ineffizient werden. Als Lösung definiert das HTTP-Protokoll den folgenden Prozess zum Optimieren von GET-Anforderungen, die Sie in einer Web-API unterstützen sollten:
 
@@ -539,7 +539,7 @@ In einer verteilten Umgebung, z. B. mit einem Webserver und Clientanwendungen, 
 
 	- Der Client verwendet den Statuscode zum Verwalten des Cache. Wenn sich die Daten nicht geändert haben (Statuscode 304), kann das Objekt zwischengespeichert bleiben, und die Clientanwendung sollte weiterhin diese Version des Objekts nutzen. Wenn sich die Daten geändert haben (Statuscode 200), sollte das zwischengespeicherte Objekt verworfen und das neue Objekt eingefügt werden. Falls die Daten nicht mehr verfügbar sind (Statuscode 404), sollte das Objekt aus dem Cache entfernt werden.
 
-	> [AZURE.NOTE]Wenn der Antwortheader den Cache-Control-Header „no-store“ enthält, sollte das Objekt unabhängig vom HTTP-Statuscode aus dem Cache entfernt werden.
+	> [AZURE.NOTE] Wenn der Antwortheader den Cache-Control-Header „no-store“ enthält, sollte das Objekt unabhängig vom HTTP-Statuscode aus dem Cache entfernt werden.
 
 	Im Code unten wird die erweiterte `FindOrderByID`-Methode zum Unterstützen des If-None-Match-Headers veranschaulicht. Beachten Sie Folgendes: Wenn der If-None-Match-Header weggelassen wird, wird immer die angegebene Bestellung abgerufen:
 
@@ -631,7 +631,7 @@ In einer verteilten Umgebung, z. B. mit einem Webserver und Clientanwendungen, 
     }
 	```
 
-	> [AZURE.TIP]In diesem Beispiel wird das ETag für die Daten generiert, indem die Daten, die aus der zugrunde liegenden Datenquelle abgerufen werden, mit einem Hashwert versehen werden. Wenn das ETag auf andere Art berechnet werden kann, kann der Prozess weiter optimiert werden, und die Daten müssen nur dann aus der Datenquelle abgerufen werden, wenn sie sich geändert haben. Dieser Ansatz ist besonders nützlich, wenn die Daten sehr umfangreich sind oder das Zugreifen auf die Datenquelle zu einer längeren Wartezeit führen kann (beispielsweise bei einer Remotedatenbank als Datenquelle).
+	> [AZURE.TIP] In diesem Beispiel wird das ETag für die Daten generiert, indem die Daten, die aus der zugrunde liegenden Datenquelle abgerufen werden, mit einem Hashwert versehen werden. Wenn das ETag auf andere Art berechnet werden kann, kann der Prozess weiter optimiert werden, und die Daten müssen nur dann aus der Datenquelle abgerufen werden, wenn sie sich geändert haben. Dieser Ansatz ist besonders nützlich, wenn die Daten sehr umfangreich sind oder das Zugreifen auf die Datenquelle zu einer längeren Wartezeit führen kann (beispielsweise bei einer Remotedatenbank als Datenquelle).
 
 - **Verwenden Sie ETags zum Unterstützen der optimistischen Parallelität**.
 
@@ -732,7 +732,7 @@ In einer verteilten Umgebung, z. B. mit einem Webserver und Clientanwendungen, 
     }
 	```
 
-	> [AZURE.TIP]Die Verwendung des If-Match-Headers ist absolut optional. Wenn er weggelassen wird, versucht die Web-API stets, die angegebene Bestellung zu aktualisieren. Hierbei kann es unter Umständen vorkommen, dass ein Update eines anderen Benutzers versehentlich überschrieben wird. Geben Sie zur Vermeidung von Problemen aufgrund von verloren gegangenen Updates immer einen If-Match-Header an.
+	> [AZURE.TIP] Die Verwendung des If-Match-Headers ist absolut optional. Wenn er weggelassen wird, versucht die Web-API stets, die angegebene Bestellung zu aktualisieren. Hierbei kann es unter Umständen vorkommen, dass ein Update eines anderen Benutzers versehentlich überschrieben wird. Geben Sie zur Vermeidung von Problemen aufgrund von verloren gegangenen Updates immer einen If-Match-Header an.
 
 <a name="considerations-for-handling-large"></a>
 ## Aspekte zur Behandlung umfangreicher Anforderungen und Antworten
@@ -873,11 +873,11 @@ Wenn eine Clientanwendung Anforderungen ausgibt, bei denen Daten gesendet oder e
     }
 	```
 
-	> [AZURE.TIP]Die Datenmenge, die Sie für einen Webdienst hochladen können, ist beim Streamen nicht beschränkt. Eine einzelne Anforderung kann also zu einem riesigen Objekt führen, das Ressourcen in erheblichem Umfang verbraucht. Wenn die Web-API während des Streamingvorgangs ermittelt, dass die Menge der Daten in einer Anforderung nicht mehr akzeptabel ist, kann sie den Vorgang abbrechen und eine Antwortnachricht mit dem Statuscode 413 (Request Entity Too Large) zurückgeben.
+	> [AZURE.TIP] Die Datenmenge, die Sie für einen Webdienst hochladen können, ist beim Streamen nicht beschränkt. Eine einzelne Anforderung kann also zu einem riesigen Objekt führen, das Ressourcen in erheblichem Umfang verbraucht. Wenn die Web-API während des Streamingvorgangs ermittelt, dass die Menge der Daten in einer Anforderung nicht mehr akzeptabel ist, kann sie den Vorgang abbrechen und eine Antwortnachricht mit dem Statuscode 413 (Request Entity Too Large) zurückgeben.
 
 	Sie können die Größe von großen Objekten, die über das Netzwerk übertragen werden, per HTTP-Komprimierung verringern. Dieser Ansatz ist hilfreich, um die Menge des Datenverkehrs im Netzwerk und die damit verbundene Netzwerklatenz zu reduzieren. Der Nachteil ist, dass auf dem Client und dem Server, auf dem die Web-API gehostet wird, zusätzlicher Verarbeitungsaufwand anfällt. Eine Clientanwendung, die den Eingang von komprimierten Daten erwartet, kann beispielsweise den Anforderungsheader „Accept-Encoding: gzip“ einfügen (auch andere Algorithmen zur Datenkomprimierung können angegeben werden). Wenn der Server die Komprimierung unterstützt, sollte die Antwort den Inhalt im gzip-Format im Nachrichtentext sowie den Antwortheader „Content-Encoding: gzip“ enthalten.
 
-	> [AZURE.TIP]Sie können die codierte Komprimierung mit dem Streaming kombinieren. Komprimieren Sie die Daten vor dem Streamen, und geben Sie die gzip-Inhaltscodierung und die segmentierte Transfercodierung in den Nachrichtenheadern an. Beachten Sie außerdem, dass einige Webserver (z. B. Internet Information Server) so konfiguriert werden können, dass HTTP-Antworten automatisch komprimiert werden. Dies gilt unabhängig davon, ob die Web-API die Daten komprimiert oder nicht.
+	> [AZURE.TIP] Sie können die codierte Komprimierung mit dem Streaming kombinieren. Komprimieren Sie die Daten vor dem Streamen, und geben Sie die gzip-Inhaltscodierung und die segmentierte Transfercodierung in den Nachrichtenheadern an. Beachten Sie außerdem, dass einige Webserver (z. B. Internet Information Server) so konfiguriert werden können, dass HTTP-Antworten automatisch komprimiert werden. Dies gilt unabhängig davon, ob die Web-API die Daten komprimiert oder nicht.
 
 - **Implementieren Sie Teilantworten für Clients, die keine asynchronen Vorgänge unterstützen**.
 
@@ -926,7 +926,7 @@ Wenn eine Clientanwendung Anforderungen ausgibt, bei denen Daten gesendet oder e
 
 	Eine Clientanwendung kann eine Anforderung zum Abrufen von 30 Bestellungen ausgeben, bei der bei Offset = 50 begonnen wird. Hierfür wird der URI \__http://www.adventure-works.com/api/orders?limit=30&offset=50_ verwendet.
 
-	> [AZURE.TIP]Sie sollten verhindern, dass Clientanwendungen Abfragezeichenfolgen angeben können, die zu einem URI mit einer Länge von mehr als 2.000 Zeichen führen. Viele Webclients und -server können keine URIs dieser Länge verarbeiten.
+	> [AZURE.TIP] Sie sollten verhindern, dass Clientanwendungen Abfragezeichenfolgen angeben können, die zu einem URI mit einer Länge von mehr als 2.000 Zeichen führen. Viele Webclients und -server können keine URIs dieser Länge verarbeiten.
 
 <a name="considerations-for-maintaining-responsiveness"></a>
 ## Aspekte zur Aufrechterhaltung der Reaktionsfähigkeit, Skalierbarkeit und Verfügbarkeit
@@ -937,7 +937,7 @@ Eine Web-API kann von vielen Clientanwendungen, die weltweit an den unterschiedl
 
 	Eine Anforderung, deren Verarbeitung unter Umständen sehr lange dauern kann, sollte durchgeführt werden, ohne den übermittelnden Client zu blockieren. Die Web-API kann einige erste Überprüfungen durchführen, um die Anforderung zu validieren, eine separate Aufgabe zum Ausführen der Arbeit initiieren und dann eine Antwortnachricht mit dem HTTP-Code 202 (Accepted) zurückgeben. Die Aufgabe kann asynchron als Teil der Web-API-Verarbeitung ausgeführt werden, oder sie kann in einen Azure WebJob (wenn die Web-API von einer Azure-Website gehostet wird) oder eine Workerrolle (wenn die Web-API als Azure-Clouddienst implementiert wird) verlagert werden.
 
-	> [AZURE.NOTE]Weitere Informationen zur Verwendung von WebJobs mit der Azure-Website finden Sie auf der Microsoft-Website unter [Ausführen von Hintergrundaufgaben mit Webaufträgen](web-sites-create-web-jobs.md).
+	> [AZURE.NOTE] Weitere Informationen zur Verwendung von WebJobs mit der Azure-Website finden Sie auf der Microsoft-Website unter [Ausführen von Hintergrundaufgaben mit Webaufträgen](web-sites-create-web-jobs.md).
 
 	Außerdem sollte die Web-API über ein Verfahren zum Zurückgeben der Ergebnisse einer Verarbeitung an die Clientanwendung verfügen. Hierzu können Sie einen Abrufmechanismus für Clientanwendungen bereitstellen, um regelmäßig abzufragen, ob die Verarbeitung abgeschlossen ist, und das Ergebnis abzurufen. Sie können die Web-API auch so einrichten, dass nach Abschluss des Vorgangs eine Benachrichtigung gesendet wird.
 
@@ -965,7 +965,7 @@ Eine Web-API kann von vielen Clientanwendungen, die weltweit an den unterschiedl
 
 	- Verwenden Sie SignalR, um Daten über eine dauerhafte Netzwerkverbindung in Echtzeit vom Webserver auf den Client zu übertragen. SignalR ist für ASP.NET-Webanwendungen als NuGet-Paket verfügbar. Weitere Informationen finden Sie auf der Website [ASP.NET SignalR](http://signalr.net/).
 
-	> [AZURE.NOTE]Für Comet und SignalR werden jeweils dauerhafte Netzwerkverbindungen zwischen dem Webserver und der Clientanwendung verwendet. Dies kann die Skalierbarkeit beeinträchtigen, da eine große Anzahl von Clients ggf. eine ebenso große Anzahl von gleichzeitigen Verbindungen erfordern kann.
+	> [AZURE.NOTE] Für Comet und SignalR werden jeweils dauerhafte Netzwerkverbindungen zwischen dem Webserver und der Clientanwendung verwendet. Dies kann die Skalierbarkeit beeinträchtigen, da eine große Anzahl von Clients ggf. eine ebenso große Anzahl von gleichzeitigen Verbindungen erfordern kann.
 
 - **Stellen Sie sicher, dass jede Anforderung zustandslos ist**.
 
@@ -981,7 +981,7 @@ Eine Web-API kann von vielen Clientanwendungen, die weltweit an den unterschiedl
 
 	Das Offenhalten einer Verbindung kann die Reaktionsfähigkeit verbessern, indem die Latenz und Netzwerküberlastung reduziert wird. Aber es kann sich negativ auf die Skalierbarkeit auswirken, wenn nicht benötigte Verbindungen länger als erforderlich geöffnet bleiben, da das gleichzeitige Herstellen von Verbindungen für andere Clients eingeschränkt wird. Außerdem kann es sich auf die Akkulaufzeit auswirken, wenn die Clientanwendung auf einem Mobilgerät ausgeführt wird. Falls die Anwendung nur gelegentlich Anforderungen an den Server sendet, kann das Aufrechterhalten einer offenen Verbindung dazu führen, dass der Akku schneller leer ist. Um sicherzustellen, dass eine Verbindung unter HTTP 1.1 nicht dauerhaft eingerichtet wird, kann der Client einen Connection:Close-Header in Nachrichten einfügen, um das Standardverhalten außer Kraft zu setzen. Wenn ein Server eine sehr große Anzahl von Clients behandelt, kann er einen Connection:Close-Header in Antwortnachrichten einfügen, mit dem die Verbindung geschlossen wird und Serverressourcen gespart werden.
 
-	> [AZURE.NOTE]Dauerhafte HTTP-Verbindungen sind ein rein optionales Feature zum Reduzieren des Netzwerkaufwands, der mit dem wiederholten Einrichten eines Kommunikationskanals verbunden ist. Weder die Web-API noch die Clientanwendung sollten davon abhängig sein, dass eine dauerhafte HTTP-Verbindung verfügbar ist. Nutzen Sie keine dauerhaften HTTP-Verbindungen, um Benachrichtigungssysteme im Comet-Stil zu implementieren. Stattdessen sollten Sie Sockets (oder WebSockets, falls verfügbar) auf TCP-Ebene verwenden. Beachten Sie außerdem Folgendes: Der Nutzen von Keep-Alive-Headern ist eingeschränkt, wenn eine Clientanwendung mit einem Server über einen Proxy kommuniziert. Nur die Verbindung mit dem Client und dem Proxy ist dauerhafter Art.
+	> [AZURE.NOTE] Dauerhafte HTTP-Verbindungen sind ein rein optionales Feature zum Reduzieren des Netzwerkaufwands, der mit dem wiederholten Einrichten eines Kommunikationskanals verbunden ist. Weder die Web-API noch die Clientanwendung sollten davon abhängig sein, dass eine dauerhafte HTTP-Verbindung verfügbar ist. Nutzen Sie keine dauerhaften HTTP-Verbindungen, um Benachrichtigungssysteme im Comet-Stil zu implementieren. Stattdessen sollten Sie Sockets (oder WebSockets, falls verfügbar) auf TCP-Ebene verwenden. Beachten Sie außerdem Folgendes: Der Nutzen von Keep-Alive-Headern ist eingeschränkt, wenn eine Clientanwendung mit einem Server über einen Proxy kommuniziert. Nur die Verbindung mit dem Client und dem Proxy ist dauerhafter Art.
 
 ## Aspekte zur Veröffentlichung und Verwaltung einer Web-API
 
@@ -1003,7 +1003,7 @@ Es ist hilfreich, diese Probleme von den technischen Problemen in Bezug auf die 
 ## Aspekte zum Testen einer Web-API
 Eine Web-API sollte so gründlich wie jede andere Software getestet werden. Erwägen Sie die Erstellung von Komponententests zum Überprüfen der Funktionalität jedes Vorgangs, wie Sie dies auch bei jeder anderen Art von Anwendung tun. Weitere Informationen finden Sie auf der Microsoft-Website unter [Überprüfen von Code mithilfe von Komponententests](https://msdn.microsoft.com/library/dd264975.aspx).
 
-> [AZURE.NOTE]Das Web-API-Beispiel dieses Leitfadens enthält ein Testprojekt, das verdeutlicht, wie Komponententests für ausgewählte Vorgänge durchgeführt werden.
+> [AZURE.NOTE] Das Web-API-Beispiel dieses Leitfadens enthält ein Testprojekt, das verdeutlicht, wie Komponententests für ausgewählte Vorgänge durchgeführt werden.
 
 Die Art einer Web-API bringt eigene zusätzliche Anforderungen in Bezug auf die Überprüfung der korrekten Funktionsweise mit sich. Achten Sie besonders auf die folgenden Aspekte:
 
@@ -1013,13 +1013,13 @@ Die Art einer Web-API bringt eigene zusätzliche Anforderungen in Bezug auf die 
 
 - Vergewissern Sie sich, dass alle Routen richtig geschützt sind und geeignete Authentifizierungs- und Autorisierungsüberprüfungen aufweisen.
 
-	> [AZURE.NOTE]Für einige Aspekte der Sicherheit, z. B. die Benutzerauthentifizierung, ist meist nicht die Web-API verantwortlich, sondern die Hostumgebung. Es ist trotzdem erforderlich, Sicherheitstests in den Bereitstellungsprozess einzubinden.
+	> [AZURE.NOTE] Für einige Aspekte der Sicherheit, z. B. die Benutzerauthentifizierung, ist meist nicht die Web-API verantwortlich, sondern die Hostumgebung. Es ist trotzdem erforderlich, Sicherheitstests in den Bereitstellungsprozess einzubinden.
 
 - Testen Sie die Ausnahmebehandlung, die von den einzelnen Vorgängen durchgeführt wird, und stellen Sie sicher, dass eine passende und aussagekräftige HTTP-Antwort zurück an die Clientanwendung übergeben wird.
 - Achten Sie darauf, dass Anforderungs- und Antwortnachrichten richtig formatiert sind. Wenn eine HTTP POST-Anforderung beispielsweise die Daten für eine neue Ressource im Format „x-www-form-urlencoded“ enthält, müssen Sie bestätigen, dass der entsprechende Vorgang die Daten richtig analysiert, die Ressourcen erstellt und eine Antwort mit den Details der neuen Ressource zurückgibt, einschließlich des richtigen Location-Headers.
 - Überprüfen Sie alle Links und URIs in Antwortnachrichten. Beispielsweise sollte eine HTTP POST-Nachricht den URI der neu erstellten Ressource zurückgeben. Alle HATEOAS-Links müssen gültig sein.
 
-	> [AZURE.IMPORTANT]Wenn Sie die Web-API über einen API Management-Dienst veröffentlichen, sollten diese URIs die URL des Management-Diensts widerspiegeln, und nicht die URL des Webservers, auf dem die Web-API gehostet wird.
+	> [AZURE.IMPORTANT] Wenn Sie die Web-API über einen API Management-Dienst veröffentlichen, sollten diese URIs die URL des Management-Diensts widerspiegeln, und nicht die URL des Webservers, auf dem die Web-API gehostet wird.
 
 - Stellen Sie sicher, dass jeder Vorgang für unterschiedliche Eingabekombinationen die richtigen Statuscodes zurückgibt. Beispiel:
 	- Wenn eine Abfrage erfolgreich ist, sollte der Vorgang den Statuscode 200 (OK) zurückgeben.
@@ -1039,13 +1039,13 @@ Außerdem sollten Sie Leistungstests erstellen und ausführen, um zu überprüfe
 
 ## Veröffentlichen und Verwalten einer Web-API mit dem Azure API Management-Dienst
 
-Azure stellt den [API Management-Dienst](http://azure.microsoft.com/documentation/services/api-management/) bereit, den Sie zum Veröffentlichen und Verwalten einer Web-API verwenden können. Hiermit können Sie einen Dienst generieren, der für eine oder mehrere Web-APIs als „Fassade“ (Façade) dient. Bei diesem Dienst handelt es sich selbst um einen skalierbaren Webdienst, den Sie mit dem Azure-Verwaltungsportal erstellen und konfigurieren können. Sie können diesen Dienst verwenden, um eine Web-API wie folgt zu veröffentlichen und zu verwalten:
+Azure stellt den [API Management-Dienst](https://azure.microsoft.com/documentation/services/api-management/) bereit, den Sie zum Veröffentlichen und Verwalten einer Web-API verwenden können. Hiermit können Sie einen Dienst generieren, der für eine oder mehrere Web-APIs als „Fassade“ (Façade) dient. Bei diesem Dienst handelt es sich selbst um einen skalierbaren Webdienst, den Sie mit dem Azure-Verwaltungsportal erstellen und konfigurieren können. Sie können diesen Dienst verwenden, um eine Web-API wie folgt zu veröffentlichen und zu verwalten:
 
 1. Stellen Sie die Web-API auf einer Website, in einem Azure-Clouddienst oder auf einem virtuellen Azure-Computer bereit.
 
 2. Verbinden Sie den API Management-Dienst mit der Web-API. Anforderungen, die an die URL der Verwaltungs-API gesendet werden, werden den URIs in der Web-API zugeordnet. Ein und derselbe API Management-Dienst kann Anforderungen an mehr als eine Web-API weiterleiten. So können Sie mehrere Web-APIs zu einem zentralen Management-Dienst zusammenfassen. Außerdem kann von mehr als einem API Management-Dienst auf dieselbe Web-API verwiesen werden, wenn Sie die Funktionalität, die für unterschiedliche Anwendungen verfügbar ist, einschränken oder partitionieren müssen.
 
-	> [AZURE.NOTE]Die URIs in HATEOAS-Links, die als Teil der Antwort für HTTP GET-Anforderungen generiert werden, sollten auf die URL des API Management-Diensts verweisen, und nicht auf den Webserver, auf dem die Web-API gehostet wird.
+	> [AZURE.NOTE] Die URIs in HATEOAS-Links, die als Teil der Antwort für HTTP GET-Anforderungen generiert werden, sollten auf die URL des API Management-Diensts verweisen, und nicht auf den Webserver, auf dem die Web-API gehostet wird.
 
 3. Geben Sie für jede Web-API die HTTP-Vorgänge an, die von der Web-API zusammen mit den optionalen Parametern, die ein Vorgang als Eingabe verwenden kann, verfügbar gemacht werden. Sie können auch konfigurieren, ob der API Management-Dienst die von der Web-API empfangene Antwort zwischenspeichern soll, um wiederholte Anforderungen für dieselben Daten zu optimieren. Zeichnen Sie die Details der HTTP-Antworten auf, die von den einzelnen Vorgängen generiert werden können. Diese Informationen werden zum Generieren der Dokumentation für Entwickler verwendet. Es ist also wichtig, dass sie richtig und vollständig sind.
 
@@ -1055,13 +1055,13 @@ Azure stellt den [API Management-Dienst](http://azure.microsoft.com/documentatio
 
 5. Erstellen Sie ein Produkt. Ein Produkt ist die Einheit der Veröffentlichung. Sie fügen die Web-APIs, die Sie zuvor mit dem Management-Dienst verbunden haben, dem Produkt hinzu. Wenn das Produkt veröffentlicht wird, werden die Web-APIs für Entwickler verfügbar gemacht.
 
-	> [AZURE.NOTE]Vor dem Veröffentlichen eines Produkts können Sie auch Benutzergruppen definieren, die Zugriff auf das Produkt haben, und diesen Gruppen Benutzer hinzufügen. So haben Sie die Kontrolle darüber, welche Entwickler und Anwendungen die Web-API verwenden können. Wenn eine Web-API genehmigt werden muss, müssen Entwickler eine Anforderung an den Produktadministrator senden, bevor sie Zugriff erhalten können. Der Administrator kann dem Entwickler den Zugriff gewähren oder verweigern. Außerdem können vorhandene Entwickler blockiert werden, wenn sich die Umstände ändern.
+	> [AZURE.NOTE] Vor dem Veröffentlichen eines Produkts können Sie auch Benutzergruppen definieren, die Zugriff auf das Produkt haben, und diesen Gruppen Benutzer hinzufügen. So haben Sie die Kontrolle darüber, welche Entwickler und Anwendungen die Web-API verwenden können. Wenn eine Web-API genehmigt werden muss, müssen Entwickler eine Anforderung an den Produktadministrator senden, bevor sie Zugriff erhalten können. Der Administrator kann dem Entwickler den Zugriff gewähren oder verweigern. Außerdem können vorhandene Entwickler blockiert werden, wenn sich die Umstände ändern.
 
 6.	Konfigurieren Sie Richtlinien für jede Web-API. Mit Richtlinien werden beispielsweise folgende Aspekte geregelt: ob domänenübergreifende Aufrufe zulässig sind, wie Clients authentifiziert werden, ob zwischen den Datenformaten XML und JSON transparent konvertiert werden soll, ob Aufrufe für einen bestimmten IP-Bereich beschränkt werden sollen, Verwendungskontingente und ob die Aufrufrate begrenzt werden soll. Richtlinien können global über das gesamte Produkt hinweg, für eine einzelne Web-API in einem Produkt oder für einzelne Vorgänge in einer Web-API angewendet werden.
 
-Ausführliche Informationen dazu, wie Sie diese Aufgaben durchführen, finden Sie auf der Microsoft-Website unter [API Management](http://azure.microsoft.com/services/api-management/). Der Azure API Management-Dienst stellt auch seine eigene REST-Schnittstelle bereit. Hiermit können Sie eine benutzerdefinierte Schnittstelle zum Vereinfachen des Prozesses erstellen, der zum Konfigurieren einer Web-API verwendet wird. Weitere Informationen finden Sie auf der Microsoft-Website unter [Azure API-Verwaltung für REST-API-Referenz](https://msdn.microsoft.com/library/azure/dn776326.aspx).
+Ausführliche Informationen dazu, wie Sie diese Aufgaben durchführen, finden Sie auf der Microsoft-Website unter [API Management](https://azure.microsoft.com/services/api-management/). Der Azure API Management-Dienst stellt auch seine eigene REST-Schnittstelle bereit. Hiermit können Sie eine benutzerdefinierte Schnittstelle zum Vereinfachen des Prozesses erstellen, der zum Konfigurieren einer Web-API verwendet wird. Weitere Informationen finden Sie auf der Microsoft-Website unter [Azure API-Verwaltung für REST-API-Referenz](https://msdn.microsoft.com/library/azure/dn776326.aspx).
 
-> [AZURE.TIP]Azure stellt den Azure Traffic Manager bereit, mit dem Sie das Failover und den Lastenausgleich implementieren und die Latenz über mehrere Instanzen einer Website hinweg, die an unterschiedlichen geografischen Orten gehostet wird, reduzieren können. Sie können den Azure Traffic Manager zusammen mit dem API Management-Dienst verwenden. Der API Management-Dienst kann Anforderungen über den Azure Traffic Manager an die Instanzen einer Website weiterleiten. Weitere Informationen finden Sie auf der Microsoft-Website unter [Traffic Manager-Lastenausgleichsmethoden](../traffic-manager/traffic-manager-load-balancing-methods.md).
+> [AZURE.TIP] Azure stellt den Azure Traffic Manager bereit, mit dem Sie das Failover und den Lastenausgleich implementieren und die Latenz über mehrere Instanzen einer Website hinweg, die an unterschiedlichen geografischen Orten gehostet wird, reduzieren können. Sie können den Azure Traffic Manager zusammen mit dem API Management-Dienst verwenden. Der API Management-Dienst kann Anforderungen über den Azure Traffic Manager an die Instanzen einer Website weiterleiten. Weitere Informationen finden Sie auf der Microsoft-Website unter [Traffic Manager-Lastenausgleichsmethoden](../traffic-manager/traffic-manager-load-balancing-methods.md).
 
 > Wenn Sie benutzerdefinierte DNS-Namen für Ihre Websites verwenden, sollten Sie in dieser Struktur den richtigen CNAME-Eintrag für jede Website konfigurieren, damit jeweils auf den DNS-Namen der Azure Traffic Manager-Website verwiesen wird.
 
@@ -1127,7 +1127,7 @@ Wenn Sie Ihre Web-API mit dem API Management-Dienst veröffentlicht haben, enth�
 
 Anhand dieser Informationen können Sie bestimmen, ob eine bestimmte Web-API oder ein Vorgang einen Engpass verursacht, und bei Bedarf die Hostumgebung skalieren und weitere Server hinzufügen. Sie können auch prüfen, ob eine oder mehrere Anwendungen eine unangemessen hohe Menge an Ressourcen verbrauchen, und entsprechende Richtlinien anwenden, um Kontingente festzulegen und die Aufrufraten zu beschränken.
 
-> [AZURE.NOTE]Sie können die Details für ein veröffentlichtes Produkt ändern. Die Änderungen werden dann sofort angewendet. Beispielsweise können Sie einen Vorgang einer Web-API hinzufügen oder daraus entfernen, ohne dass Sie hierfür das Produkt neu veröffentlichen müssen, in dem die Web-API enthalten ist.
+> [AZURE.NOTE] Sie können die Details für ein veröffentlichtes Produkt ändern. Die Änderungen werden dann sofort angewendet. Beispielsweise können Sie einen Vorgang einer Web-API hinzufügen oder daraus entfernen, ohne dass Sie hierfür das Produkt neu veröffentlichen müssen, in dem die Web-API enthalten ist.
 
 ## Verwandte Muster
 - Das Muster [Fassade](http://en.wikipedia.org/wiki/Facade_pattern) (Façade) beschreibt, wie eine Schnittstelle für eine Web-API bereitgestellt wird.
@@ -1145,11 +1145,11 @@ Anhand dieser Informationen können Sie bestimmen, ob eine bestimmte Web-API ode
 - Im Artikel [Globale Fehlerbehandlung für die Web-API](http://www.asp.net/web-api/overview/error-handling/web-api-global-error-handling) auf der Microsoft-Website wird beschrieben, wie Sie eine globale Strategie zur Fehlerbehandlung und Protokollierung für eine Web-API implementieren.
 - Die Seite [Ausführen von Hintergrundaufgaben mit Webaufträgen](web-sites-create-web-jobs.md) auf der Microsoft-Website enthält Informationen und Beispiele zur Verwendung von WebJobs zum Durchführen von Hintergrundvorgängen auf einer Azure-Website.
 - Auf der Seite [Azure Notification Hubs – Benachrichtigen von Benutzern](notification-hubs-aspnet-backend-windows-dotnet-notify-users/) der Microsoft-Website wird beschrieben, wie Sie ein Azure Notification Hub zum Übertragen von asynchronen Antworten per Pushvorgang auf Clientanwendungen verwenden können.
-- Auf der Seite [API Management](http://azure.microsoft.com/services/api-management/) der Microsoft-Website wird beschrieben, wie Sie ein Produkt veröffentlichen, das kontrollierten und sicheren Zugriff auf eine Web-API ermöglicht.
+- Auf der Seite [API Management](https://azure.microsoft.com/services/api-management/) der Microsoft-Website wird beschrieben, wie Sie ein Produkt veröffentlichen, das kontrollierten und sicheren Zugriff auf eine Web-API ermöglicht.
 - Auf der Seite [Azure API-Verwaltung für REST-API-Referenz](https://msdn.microsoft.com/library/azure/dn776326.aspx) der Microsoft-Website wird beschrieben, wie Sie die API Management-REST-API zum Erstellen von benutzerdefinierten Verwaltungsanwendungen verwenden.
 - Auf der Seite [Traffic Manager-Lastenausgleichsmethoden](../traffic-manager/traffic-manager-load-balancing-methods.md) der Microsoft-Website wird zusammengefasst, wie Azure Traffic Manager verwendet werden kann, um für mehrere Instanzen einer Website, auf der eine Web-API gehostet wird, den Lastenausgleich für Anforderungen durchzuführen.
 - Auf der Seite [Application Insights – Beginnen Sie damit, Integrität und Nutzung Ihrer Anwendung zu überwachen](app-insights-start-monitoring-app-health-usage.md) auf der Microsoft-Website werden ausführliche Informationen zum Installieren und Konfigurieren von Application Insights in einem ASP.NET-Web-API-Projekt bereitgestellt.
 - Auf der Seite [Überprüfen von Code mithilfe von Komponententests](https://msdn.microsoft.com/library/dd264975.aspx) der Microsoft-Website werden ausführliche Informationen zum Erstellen und Verwalten von Komponententests mit Visual Studio bereitgestellt.
 - Auf der Seite [Ausführen von Leistungstests für Ihre App](https://msdn.microsoft.com/library/dn250793.aspx) der Microsoft-Website wird beschrieben, wie Sie Visual Studio Ultimate zum Erstellen eines Projekts zum Testen der Webleistung und Auslastung verwenden.
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

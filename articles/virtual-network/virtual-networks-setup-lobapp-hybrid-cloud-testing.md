@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="Windows" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/10/2015" 
+	ms.date="01/28/2016" 
 	ms.author="josephd"/>
 
 # Einrichten einer webbasierten Branchenanwendung in einer Hybrid Cloud zu Testzwecken
@@ -46,7 +46,7 @@ Die Einrichtung dieser Hybrid Cloud-Testumgebung besteht aus drei Hauptphasen:
 2.	Konfigurieren des SQL Server-Computers (SQL1)
 3.	Konfigurieren den Branchenservers (LOB1)
 
-Wenn Sie noch kein Azure-Abonnement besitzen, können Sie sich unter [Azure ausprobieren](http://azure.microsoft.com/pricing/free-trial/) für eine kostenlose Testversion registrieren. Wenn Sie über ein MSDN-Abonnement verfügen, lesen Sie [Azure-Vorteil für MSDN-Abonnenten](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
+Wenn Sie noch kein Azure-Abonnement besitzen, können Sie sich unter [Azure ausprobieren](https://azure.microsoft.com/pricing/free-trial/) für eine kostenlose Testversion registrieren. Wenn Sie über ein MSDN-Abonnement verfügen, lesen Sie [Azure-Vorteil für MSDN-Abonnenten](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
 
 ## Phase 1: Einrichten der Hybridcloudumgebung
 
@@ -56,7 +56,7 @@ Die aktuelle Konfiguration sieht folgendermaßen aus.
 
 ![](./media/virtual-networks-setup-lobapp-hybrid-cloud-testing/CreateLOBAppHybridCloud_1.png)
 
-> [AZURE.NOTE]Für Phase 1 können Sie auch die simulierte Hybridcloud-Testumgebung einrichten. Im Thema [Einrichten einer simulierten Hybridcloudumgebung zu Testzwecken](virtual-networks-setup-simulated-hybrid-cloud-environment-testing.md) finden Sie entsprechende Anweisungen.
+> [AZURE.NOTE] Für Phase 1 können Sie auch die simulierte Hybridcloud-Testumgebung einrichten. Im Thema [Einrichten einer simulierten Hybridcloudumgebung zu Testzwecken](virtual-networks-setup-simulated-hybrid-cloud-environment-testing.md) finden Sie entsprechende Anweisungen.
  
 ## Phase 2: Konfigurieren des SQL Server-Computers (SQL1)
 
@@ -163,8 +163,8 @@ Konfigurieren Sie dann LOB1 für IIS, und testen Sie den Zugriff von CLIENT1.
 1.	Führen Sie Server-Manager aus, und klicken Sie dann auf **Rollen und Features hinzufügen**.
 2.	Klicken Sie auf der Seite „Voraussetzungen“ auf **Weiter**.
 3.	Klicken Sie auf der Seite "Installationstyp auswählen" auf **Weiter**.
-4.	Klicken Sie auf der Seite "Zielserver auswählen" auf **Weiter**.
-5.	Klicken Sie auf der Seite "Serverrollen" in der Liste **Rollen** auf **Webserver (IIS)**.
+4.	Klicken Sie auf der Seite „Zielserver auswählen“ auf **Weiter**.
+5.	Klicken Sie auf der Seite „Serverrollen“ in der Liste **Rollen** auf **Webserver (IIS)**.
 6.	Klicken Sie bei der entsprechenden Aufforderung auf **Features hinzufügen** und anschließend auf **Weiter**.
 7.	Klicken Sie auf der Seite "Features auswählen" auf **Weiter**.
 8.	Klicken Sie auf der Seite "Webserver (IIS)" auf **Weiter**.
@@ -180,23 +180,8 @@ Die aktuelle Konfiguration sieht folgendermaßen aus.
  
 Diese Umgebung kann jetzt zum Bereitstellen von webbasierten Anwendungen auf LOB1 und für Funktions- und Leistungstests aus dem Subnetz „Corpnet“ verwendet werden.
 
-## Zusätzliche Ressourcen
+## Nächste Schritte
 
-[Blaupausen für Software-Architekten](http://msdn.microsoft.com/dn630664)
+- Richten Sie die [Produktionsumgebung](../virtual-machines/virtual-machines-workload-high-availability-LOB-application-overview.md) ein.
 
-[Hostinggerechte Webserverplattform (IIS)](http://technet.microsoft.com/library/hh831818)
-
-[Einrichten einer Hybridcloudumgebung zu Testzwecken](virtual-networks-setup-hybrid-cloud-environment-testing.md)
-
-[Einrichten einer SharePoint-Intranetfarm in einer Hybrid Cloud zu Testzwecken](virtual-networks-setup-sharepoint-hybrid-cloud-testing.md)
-
-[Einrichten der Office 365-Verzeichnissynchronisierung (DirSync) in einer Hybrid Cloud zu Testzwecken](virtual-networks-setup-dirsync-hybrid-cloud-testing.md)
-
-[Einrichten einer simulierten Hybrid Cloud-Umgebung zu Testzwecken](virtual-networks-setup-simulated-hybrid-cloud-environment-testing.md)
-
-[Testumgebungen für Azure-Hybridclouds](../virtual-machines/virtual-machines-hybrid-cloud-test-environments.md)
-
-[Implementierungsrichtlinien für Azure-Infrastrukturdienste](../virtual-machines/virtual-machines-infrastructure-services-implementation-guidelines.md)
- 
-
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0204_2016-->

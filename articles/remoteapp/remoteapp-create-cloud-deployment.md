@@ -35,10 +35,10 @@ Dieses Lernprogramm beschreibt die Schritte zur Erstellung einer Cloudsammlung. 
 
 Bevor Sie mit der Erstellung der Sammlung beginnen, benötigen Sie Folgendes:
 
-- [Registrieren](http://azure.microsoft.com/services/remoteapp/) Sie sich für Azure RemoteApp. 
+- [Registrieren](https://azure.microsoft.com/services/remoteapp/) Sie sich für Azure RemoteApp. 
 - Sammeln Sie Informationen zu den Benutzern, denen Sie Zugriff gewähren möchten. Dies können Informationen zu Microsoft-Konten oder Active Directory-Geschäftskonten für Benutzer sein.
 - Voraussetzung ist, dass Sie entweder eins der im Rahmen Ihres Abonnements bereitgestellten Vorlagenimages verwenden oder das gewünschte Vorlagenimage bereits hochgeladen haben. Falls Sie eine andere Abbildvorlage hochladen möchten, können Sie dies auf der Seite für Abbildvorlagen tun. Klicken Sie auf **Abbildvorlage hochladen** und folgen Sie den Schritten im Assistenten. 
-- Möchten Sie das Office 365 ProPlus-Image verwenden? Weitere Informationen finden Sie unter [hier](remoteapp-officesubscription.md).
+- Möchten Sie das Office 365 ProPlus-Image verwenden? Informationen dazu finden Sie [hier](remoteapp-officesubscription.md).
 - Möchten Sie benutzerdefinierte Apps oder LOB-Programme bereitstellen? Erstellen Sie ein neues [Image](remoteapp-imageoptions.md), und verwenden Sie es in Ihrer Cloud-Sammlung.
 - Ermitteln Sie, ob Sie eine Verbindung mit einem VNET herstellen müssen. Wenn Sie eine Verbindung mit einem VNET herstellen möchten, stellen Sie sicher, dass die [Richtlinien zum Festlegen der Größe](remoteapp-vnetsizing.md) eingehalten werden und dass eine [Verbindung mit RemoteApp](remoteapp-vnet.md) hergestellt werden kann. Weitere Informationen finden Sie im [Artikel zur VNET-Planung](remoteapp-planvnet.md).
 - Wenn Sie ein VNET verwenden, können Sie entscheiden Sie, ob es Ihrer lokalen Active Directory-Domäne beitreten soll.
@@ -51,7 +51,7 @@ Führen Sie die folgenden Schritte aus, um **eine reine Cloudsammlung zu erstell
 1. Navigieren Sie im Verwaltungsportal zur Seite "RemoteApp".
 2. Klicken Sie auf **Neu > Schnellerfassung**.
 3. Geben Sie einen Namen für Ihre Sammlung ein, und wählen Sie Ihre Region aus.
-4. Wählen Sie den Plan aus, den Sie verwenden möchten: „Standard“ oder „Basic“.
+4. Wählen Sie den Plan aus, den Sie verwenden möchten: "Standard" oder "Einfach".
 5. Wählen Sie die Vorlage für diese Sammlung aus. 
 
 	**Tipp:** Ihr RemoteApp-Abonnement enthält bereits [Vorlagenimages](remoteapp-images.md) mit Office 365- oder Office 2013-Programmen (zu Testzwecken), von denen einige bereits veröffentlicht (z. B. Word) und andere bereit für die Veröffentlichung sind. Sie können auch ein neues [Image](remoteapp-imageoptions.md) erstellen und es in der Cloud-Sammlung verwenden.
@@ -66,9 +66,9 @@ Nachdem Ihre Azure RemoteApp-Sammlung erstellt wurde, doppelklicken Sie auf den 
 Führen Sie die folgenden Schritte aus, um **eine Cloud- und VNET-Sammlung zu erstellen**:
 
 1. Wechseln Sie im Verwaltungsportal zur Seite „Azure RemoteApp“.
-2. Klicken Sie auf **Neu** > **Mit VNet erstellen**.
+2. Klicken Sie auf **Neu** > **Mit VNET erstellen**.
 3. Geben Sie einen Namen für die Sammlung ein.
-4. Wählen Sie den Plan aus, den Sie verwenden möchten: „Standard“ oder „Basic“.
+4. Wählen Sie den Plan aus, den Sie verwenden möchten: "Standard" oder "Einfach".
 5. Wählen Sie das bereits erstellte VNET aus. Sie wissen nicht, wie das geht? Momentan finden Sie die entsprechenden Schritte im Thema [Hybrid](remoteapp-create-hybrid-deployment.md).
 6. Entscheiden Sie, ob Ihre Sammlung Ihrer Domäne beitreten soll. Wenn dies der Fall ist, müssen Sie AD Connect verwenden, um Azure AD in Ihrer Active Directory-Umgebung zu integrieren. Informationen dazu finden Sie im unten in **Schritt 2**.
 6. Klicken Sie auf **Create RemoteApp collection**.
@@ -76,7 +76,7 @@ Führen Sie die folgenden Schritte aus, um **eine Cloud- und VNET-Sammlung zu er
 
 ## Schritt 2: Konfigurieren der Active Directory-Verzeichnissynchronisierung (optional) ##
 
-Falls Sie Active Directory verwenden möchten, benötigt Azure RemoteApp eine Verzeichnissynchronisierung zwischen Azure Active Directory und Ihrem lokalen Active Directory. Dadurch können Benutzer, Kontakte und Kennwörter mit Ihrem Active Directory-Mandanten in Azure synchronisiert werden. Informationen zur Planung finden Sie unter [Konfigurieren von Active Directory für Azure RemoteApp](remoteapp-ad.md). Informationen finden Sie auch direkt unter [AD Connect](http://blogs.technet.com/b/ad/archive/2014/08/04/connecting-ad-and-azure-ad-only-4-clicks-with-azure-ad-connect.aspx).
+Falls Sie Active Directory verwenden möchten, benötigt Azure RemoteApp eine Verzeichnissynchronisierung zwischen Azure Active Directory und Ihrem lokalen Active Directory. Dadurch können Benutzer, Kontakte und Kennwörter mit Ihrem Active Directory-Mandanten in Azure synchronisiert werden. Informationen zur Planung finden Sie unter [Konfigurieren von Active Directory für Azure RemoteApp](remoteapp-ad.md). Informationen finden Sie auch direkt unter [AD Connect](http://blogs.technet.com/b/ad/archive/2014/08/04/connecting-ad-and-azure-ad-only-4-clicks-with-azure-ad-connect.aspx).
 
 ## Schritt 3: Veröffentlichen von Apps ##
 
@@ -84,7 +84,7 @@ Eine Azure RemoteApp-App ist die App oder das Programm, die bzw. das Sie den Ben
 
 Bevor ein Benutzer aber auf die Apps zugreifen kann, müssen Sie sie im Endbenutzer-Feed – einer Liste verfügbarer Apps, auf die der Benutzer über den Remotedesktopclient zugreift – veröffentlichen.
  
-Sie können in Ihrer Azure RemoteApp-Sammlung mehrere Apps veröffentlichen. Um ein Programm hinzuzufügen, klicken Sie auf der Veröffentlichungsseite auf **Veröffentlichen**. Sie können die App aus dem Startmenü des Vorlagenimages veröffentlichen oder den Pfad zur App im Vorlagenimage angeben. Wenn Sie die App aus dem Startmenü hinzufügen möchten, wählen Sie die zu veröffentlichende App aus. Wenn Sie den Pfad angeben möchten, geben Sie den Namen der App sowie den Pfad an, in dem die App auf dem Vorlagenimage installiert ist.
+Sie können in Ihrer Azure RemoteApp-Sammlung mehrere Apps veröffentlichen. Um ein Programm hinzuzufügen, klicken Sie auf der Veröffentlichungsseite auf **Veröffentlichen**. Sie können die App entweder aus dem **Startmenü** des Vorlagenimages veröffentlichen oder den Pfad zur App im Vorlagenimage angeben. Wenn Sie die App aus dem **Startmenü** hinzufügen möchten, wählen Sie die zu veröffentlichende App aus. Wenn Sie den Pfad angeben möchten, geben Sie den Namen der App sowie den Pfad an, in dem die App auf dem Vorlagenimage installiert ist.
 
 ## Schritt 4: Konfigurieren des Benutzerzugriffs ##
 
@@ -104,9 +104,9 @@ Nach dem Erstellen der Sammlung müssen Sie nun die Benutzer hinzufügen, die Zu
 
 ## Nächste Schritte ##
 
-Geschafft – Sie haben Ihre Cloudsammlung in Azure RemoteApp erfolgreich erstellt und bereitgestellt. Als Nächstes müssen die Benutzer den Remotedesktopclient herunterladen und installieren. Die URL für den Client finden Sie auf der Azure RemoteApp-Schnellstartseite. Die Benutzer müssen sich nun beim Client anmelden und können dann auf die veröffentlichten Apps zugreifen.
+Geschafft – Sie haben Ihre Azure RemoteApp-Cloudsammlung erfolgreich erstellt und bereitgestellt. Als Nächstes müssen die Benutzer den Remotedesktopclient herunterladen und installieren. Die URL für den Client finden Sie auf der Azure RemoteApp-Schnellstartseite. Die Benutzer müssen sich nun beim Client anmelden und können dann auf die veröffentlichten Apps zugreifen.
 
 ### Helfen Sie uns, Ihnen zu helfen 
 Wussten Sie schon, dass Sie diesen Artikel im Bereich unten nicht nur bewerten und kommentieren, sondern ihn auch selbst ändern können? Fehlt etwas? Ist etwas nicht ganz richtig? Habe ich etwas geschrieben, das eher verwirrend ist? Scrollen Sie nach oben, und klicken Sie auf **Edit on GitHub**, um die gewünschten Änderungen vorzunehmen. Ihr Vorschlag wird uns vorgelegt, und wenn wir ihn bestätigt haben, werden Ihre Änderungen und Verbesserungen hier angezeigt.
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0128_2016-->

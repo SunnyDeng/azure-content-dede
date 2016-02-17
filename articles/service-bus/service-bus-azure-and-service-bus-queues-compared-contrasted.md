@@ -23,9 +23,9 @@ In diesem Artikel werden die Unterschiede und Ähnlichkeiten zwischen den beiden
 
 Microsoft Azure unterstützt zwei Typen von Warteschlangen: **Azure-Warteschlangen** und **Service Bus-Warteschlangen**.
 
-**Azure-Warteschlangen** gehören zur Infrastruktur von [Azure Storage](http://azure.microsoft.com/services/storage/). Sie verfügen über eine einfache REST-basierte Get-/Put-/Peek-Oberfläche, die ein zuverlässiges und konsequentes Messaging innerhalb von Diensten und zwischen diesen gewährleistet.
+**Azure-Warteschlangen** gehören zur Infrastruktur von [Azure Storage](https://azure.microsoft.com/services/storage/). Sie verfügen über eine einfache REST-basierte Get-/Put-/Peek-Oberfläche, die ein zuverlässiges und konsequentes Messaging innerhalb von Diensten und zwischen diesen gewährleistet.
 
-**Service Bus-Warteschlangen** gehören der weiter gefassten [Azure-Messaging](http://azure.microsoft.com/services/service-bus/)-Infrastruktur an, die neben Warteschlangen auch Veröffentlichungen/Abonnements, Remotebereitstellung von Webdiensten und Integrationsmuster unterstützt. Weitere Informationen zu Service Bus-Warteschlangen, Themen/Abonnements und Relays finden Sie unter [Übersicht über Service Bus-Messaging](service-bus-messaging-overview.md).
+**Service Bus-Warteschlangen** gehören der weiter gefassten [Azure-Messaging](https://azure.microsoft.com/services/service-bus/)-Infrastruktur an, die neben Warteschlangen auch Veröffentlichungen/Abonnements, Remotebereitstellung von Webdiensten und Integrationsmuster unterstützt. Weitere Informationen zu Service Bus-Warteschlangen, Themen/Abonnements und Relays finden Sie unter [Übersicht über Service Bus-Messaging](service-bus-messaging-overview.md).
 
 Obwohl beide Warteschlangentechnologien parallel vorhanden sind, wurden Azure-Warteschlangen zuerst als dedizierter Warteschlangenspeicher-Mechanismus eingeführt, der auf den Azure-Speicherdiensten aufsetzt. Service Bus-Warteschlangen basieren auf der umfassenderen Infrastruktur für "Brokermessaging". Diese dient der Integration von Anwendungen oder Anwendungskomponenten, die sich auf mehrere Kommunikationsprotokolle, Datenverträge, vertrauenswürdige Domänen und/oder Netzwerkumgebungen erstrecken.
 
@@ -204,7 +204,7 @@ In diesem Abschnitt werden die von Azure-Warteschlangen und Service Bus-Wartesch
 |Vergleichskriterien|Azure-Warteschlangen|Service Bus-Warteschlangen|
 |---|---|---|
 |Verwaltungsprotokoll|**REST über HTTP/HTTPS**|**REST über HTTPS**|
-|Laufzeitprotokoll|**REST über HTTP/HTTPS**|**REST über HTTPS**<br/><br/>** AMQP 1.0 Standard (TCP mit TLS)**|
+|Laufzeitprotokoll|**REST über HTTP/HTTPS**|**REST über HTTPS**<br/><br/>** AMQP 1.0 Standard (TCP mit TLS)**| 
 |. NET-verwaltete API|**Ja**<br/><br/>(.NET verwaltete Speicherclient-API)|**Ja**<br/><br/>(.NET-verwaltete API für Brokermessaging)|
 |Systemeigenes C++|**Ja**|**Nein**|
 |Java-API|**Ja**|**Ja**|
@@ -289,7 +289,7 @@ In diesem Abschnitt werden Azure-Warteschlangen und Service Bus-Warteschlangen i
 
 - Die Unterstützung langer Abrufintervalle vorausgesetzt, kann sich die Verwendung von Service Bus-Warteschlangen in Situationen, in denen eine Zustellung mit niedriger Latenz erforderlich ist, als kosteneffektiv erweisen.
 
->[AZURE.NOTE]Änderungen bei allen Kosten bleiben vorbehalten. Die vorangehende Tabelle enthält die Preise, die zum Zeitpunkt der Erstellung dieses Dokuments gültig waren, und schließt keine Werbeangebote ein, die möglicherweise gerade gültig sind. Aktuelle Preisinformationen für Azure finden Sie auf der Seite [Azure-Preise](http://azure.microsoft.com/pricing/). Weitere Informationen zu Service Bus-Preisen finden Sie unter [Service Bus Preise](http://azure.microsoft.com/pricing/details/service-bus/).
+>[AZURE.NOTE] Änderungen bei allen Kosten bleiben vorbehalten. Die vorangehende Tabelle enthält die Preise, die zum Zeitpunkt der Erstellung dieses Dokuments gültig waren, und schließt keine Werbeangebote ein, die möglicherweise gerade gültig sind. Aktuelle Preisinformationen für Azure finden Sie auf der Seite [Azure-Preise](https://azure.microsoft.com/pricing/). Weitere Informationen zu Service Bus-Preisen finden Sie unter [Service Bus Preise](https://azure.microsoft.com/pricing/details/service-bus/).
 
 ## Zusammenfassung
 
@@ -316,4 +316,4 @@ Die folgenden Artikel enthalten weitere Anleitungen und Informationen zur Verwen
 [klassischen Azure-Portals]: http://manage.windowsazure.com
  
 
-<!----HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

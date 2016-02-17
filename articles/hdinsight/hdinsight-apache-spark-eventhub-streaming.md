@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/29/2015" 
+	ms.date="01/27/2016" 
 	ms.author="nitinme"/>
 
 
@@ -24,13 +24,13 @@ Das Spark-Streaming ist eine Erweiterung der Spark-Kern-API zum Erstellen von sk
 
 In diesem Tutorial erfahren Sie, wie Sie einen Azure Event Hub erstellen, Nachrichten mit einer Konsolenanwendung in Java für einen Event Hub erfassen und mit einer Spark-Anwendung, geschrieben in Scala, parallel abrufen. Diese Anwendung verwendet die Daten, die über Event Hubs gestreamt werden, und leitet sie an verschiedene Ausgaben weiter (Azure Storage Blob, Hive-Tabelle und SQL-Tabelle).
 
-> [AZURE.NOTE]Für die Anweisungen in diesem Artikel benötigen Sie beide Versionen des Azure-Portals. Zum Erstellen eines Event Hubs verwenden Sie das [Azure-Portal](https://manage.windowsazure.com). Für das Arbeiten mit dem HDInsight Spark-Cluster nutzen Sie das [Azure-Vorschauportal](https://ms.portal.azure.com/).
+> [AZURE.NOTE] Für die Anweisungen in diesem Artikel benötigen Sie beide Versionen des Azure-Portals. Zum Erstellen eines Event Hubs verwenden Sie das [Azure-Portal](https://manage.windowsazure.com). Für das Arbeiten mit dem HDInsight Spark-Cluster nutzen Sie das [Azure-Vorschauportal](https://ms.portal.azure.com/).
 
 **Voraussetzungen:**
 
 Sie benötigen Folgendes:
 
-- Ein Azure-Abonnement. Siehe [Kostenlose Azure-Testversion](http://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
+- Ein Azure-Abonnement. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 - Einen Apache Spark-Cluster. Anleitungen finden Sie unter [Erstellen von Apache Spark-Clustern in Azure HDInsight](hdinsight-apache-spark-jupyter-spark-sql.md).
 - Oracle Java Development Kit. Das Installationspaket finden Sie [hier](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
 - Eine Java-IDE. In diesem Artikel wird IntelliJ IDEA 15.0.1 verwendet. Das Installationspaket finden Sie [hier](https://www.jetbrains.com/idea/download/).
@@ -55,7 +55,7 @@ Die Streaminglösung bietet den folgenden Workflow:
 
 	![Seite 1 des Assistenten](./media/hdinsight-apache-spark-eventhub-streaming/hdispark.streaming.create.event.hub.png "Erstellen eines Azure Event Hubs")
 
-	> [AZURE.NOTE]Wählen Sie den gleichen **Speicherort** wie für Ihren Apache Spark-Cluster unter HDInsightStorm aus, um die Latenz und die Kosten zu reduzieren.
+	> [AZURE.NOTE] Wählen Sie den gleichen **Speicherort** wie für Ihren Apache Spark-Cluster unter HDInsightStorm aus, um die Latenz und die Kosten zu reduzieren.
 
 3. Geben Sie im Bildschirm **Event Hub konfigurieren** die Werte für **Partitionsanzahl** und **Nachrichtenaufbewahrung** ein, und klicken Sie auf das Häkchen. Verwenden Sie für dieses Beispiel eine Anzahl von 10 Partitionen und eine Nachrichtenaufbewahrung von 1. Notieren Sie sich die Partitionsanzahl, da Sie diesen Wert später benötigen werden.
 
@@ -88,7 +88,7 @@ In diesem Abschnitt verwenden Sie eine eigenständige lokale Scala-Anwendung, um
 	
 2. Erstellen Sie das Projekt. Klicken Sie im Menü **Build** auf **Make Project**. Die JAR-Ausgabedatei wird unter **\\out\\artifacts** erstellt.
 
->[AZURE.TIP]Sie können auch eine in IntelliJ IDEA verfügbare Option verwenden, um das Projekt direkt aus einem GitHub-Repository zu erstellen. Verwenden Sie die Anweisungen im nächsten Abschnitt, um Hinweise zu diesem Ansatz zu erhalten. Beachten Sie, dass viele der im nächsten Abschnitt beschriebenen Schritte nicht für die Scala-Anwendung gelten, die Sie in diesem Schritt erstellen. Beispiel:
+>[AZURE.TIP] Sie können auch eine in IntelliJ IDEA verfügbare Option verwenden, um das Projekt direkt aus einem GitHub-Repository zu erstellen. Verwenden Sie die Anweisungen im nächsten Abschnitt, um Hinweise zu diesem Ansatz zu erhalten. Beachten Sie, dass viele der im nächsten Abschnitt beschriebenen Schritte nicht für die Scala-Anwendung gelten, die Sie in diesem Schritt erstellen. Beispiel:
 
 > * Sie müssen das POM nicht aktualisieren, um die Spark-Version einzuschließen. Der Grund dafür ist, dass zum Erstellen dieser Anwendung keine Abhängigkeit von Spark notwendig ist.
 > * Sie müssen der Projektbibliothek keine JAR-Abhängigkeitsdateien hinzufügen, da diese JAR-Dateien nicht für dieses Projekt erforderlich sind.
@@ -121,9 +121,9 @@ Eine Scala-Beispielanwendung, die das Ereignis empfängt und an verschiedene Zie
 
 5. Die Anwendung benötigt zwei JAR-Abhängigkeitsdateien:
 
-	* **EventHub JAR-Empfängerdatei**. Diese ist erforderlich, damit Spark Nachrichten aus Event Hub empfangen kann. Diese JAR-Datei steht auf dem Spark-Linux-Cluster unter `/usr/hdp/current/spark-client/lib/spark-streaming-eventhubs-example-1.5.1.2.3.2.1-12-jar-with-dependencies.jar` zur Verfügung. Mit pscp können Sie die JAR-Datei auf Ihren lokalen Computer kopieren.
+	* **EventHub JAR-Empfängerdatei**. Diese ist erforderlich, damit Spark Nachrichten aus Event Hub empfangen kann. Diese JAR-Datei steht auf dem Spark-Linux-Cluster unter `/usr/hdp/current/spark-client/lib/spark-streaming-eventhubs-example-1.5.2.2.3.3.1-7-jar-with-dependencies.jar` zur Verfügung. Mit pscp können Sie die JAR-Datei auf Ihren lokalen Computer kopieren.
 
-			pscp sshuser@mysparkcluster-ssh.azurehdinsight.net/usr/hdp/current/spark-client/lib/spark-streaming-eventhubs-example-1.5.1.2.3.2.1-12-jar-with-dependencies.jar C:/eventhubjar
+			pscp sshuser@mysparkcluster-ssh.azurehdinsight.net:/usr/hdp/current/spark-client/lib/spark-streaming-eventhubs-example-1.5.2.2.3.3.1-7-jar-with-dependencies.jar C:/eventhubjar
 
 		Dabei wird die JAR-Datei aus dem Spark-Cluster auf den lokalen Computer kopiert.
 
@@ -209,7 +209,7 @@ Nachfolgend finden Sie eine Erläuterung der Parameter in der Eingabedatei:
 * **NumExecutors** ist die Anzahl der Kerne, die von Spark zum Ausführen der Streaminganwendung verwendet werden. Dies sollte immer mindestens die doppelte Anzahl an Event Hub-Partitionen sein.
 * **executorMemory**, **executorCores** und **driverMemory** sind Parameter, mit denen die erforderlichen Ressourcen der Streaminganwendung zugewiesen werden.
 
->[AZURE.NOTE]Sie müssen nicht die Ausgabeordner (EventCheckpoint, EventCount/EventCount10) erstellen, die als Parameter verwendet werden. Die Streaminganwendung erstellt sie automatisch.
+>[AZURE.NOTE] Sie müssen nicht die Ausgabeordner (EventCheckpoint, EventCount/EventCount10) erstellen, die als Parameter verwendet werden. Die Streaminganwendung erstellt sie automatisch.
 	
 Beim Ausführen des Befehls sollte Folgendes angezeigt werden:
 
@@ -370,4 +370,4 @@ Eine Ausgabe ähnlich der folgenden sollte angezeigt werden:
 [azure-management-portal]: https://manage.windowsazure.com/
 [azure-create-storageaccount]: ../storage-create-storage-account/
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

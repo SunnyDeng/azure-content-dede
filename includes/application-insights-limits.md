@@ -1,4 +1,4 @@
- Die Beschränkungen hängen von dem von Ihnen ausgewählten [Tarif](http://azure.microsoft.com/pricing/details/application-insights/) ab.
+ Die Beschränkungen hängen von dem von Ihnen ausgewählten [Tarif](https://azure.microsoft.com/pricing/details/application-insights/) ab.
 
 **Ressource** | **Standardlimit** | **Maximales Limit**
 -------- | ------------- | -------------
@@ -21,4 +21,4 @@ Länge von Metriknamen | 100 | 100
  
 [Informationen zu Preisen und Kontingenten für Application Insights](app-insights-pricing.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

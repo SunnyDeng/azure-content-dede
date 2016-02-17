@@ -45,11 +45,11 @@ In diesem Lernprogramm lernen Sie Folgendes:
 
 - [Nächste Schritte](#Next)
 
-In diesem Lernprogramm wird davon ausgegangen, dass Sie bereits ein Azure-Konto haben. Wenn Sie kein Azure-Konto haben, sollten Sie die Seite [Kostenlose einmonatige Testversion](http://azure.microsoft.com/pricing/free-trial/) besuchen.
+In diesem Lernprogramm wird davon ausgegangen, dass Sie bereits ein Azure-Konto haben. Wenn Sie kein Azure-Konto haben, sollten Sie die Seite [Kostenlose einmonatige Testversion](https://azure.microsoft.com/pricing/free-trial/) besuchen.
 
 ## <a id="Provision">Bereitstellen eines SQL-VM-Images aus dem Katalog mit dem Ressourcen-Manager-Bereitstellungsmodell
 
-1. Melden Sie sich mit Ihrem Konto beim [Azure-Portal](http://portal.azure.com) an.
+1. Melden Sie sich mit Ihrem Konto beim [Azure-Portal](https://portal.azure.com) an.
 1. Klicken Sie im Azure-Portal auf **+Neu**. Im Portal wird das Blatt **Neu** geöffnet. Die SQL Server-VM-Vorlagen befinden sich im Marketplace in der Gruppe **Compute**.
 
 1. Klicken Sie im Blatt **Neu** auf **Compute**.
@@ -87,7 +87,7 @@ Konfigurieren Sie auf dem Blatt **Virtuellen Computer erstellen** unter **Einste
 
 - Geben Sie unter **Speicher** einen Datenträgertyp an. Für Produktionsworkloads wird Storage Premium empfohlen.
 
->[AZURE.NOTE]Storage Premium ist standardmäßig aktiviert. Ihre Maschine wird automatisch in ein Größe geändert, die Storage Premium unterstützt. Wenn Sie Storage Premium deaktivieren, wird Ihre vorherige Auswahl der Maschinengröße verwendet.
+>[AZURE.NOTE] Storage Premium ist standardmäßig aktiviert. Ihre Maschine wird automatisch in ein Größe geändert, die Storage Premium unterstützt. Wenn Sie Storage Premium deaktivieren, wird Ihre vorherige Auswahl der Maschinengröße verwendet.
 
 - Unter **Speicherkonto** können Sie entweder den automatisch bereitgestellten Speicherkontonamen übernehmen, oder Sie können auf **Speicherkonto** klicken, um ein vorhandenes Konto auszuwählen und den Speicherkontotyp zu konfigurieren. Standardmäßig erstellt Azure ein neues Speicherkonto mit lokal redundantem Speicher.
 
@@ -129,7 +129,7 @@ Wenn Sie die SQL Server-Authentifizierung benötigen, klicken Sie unter **SQL-Au
 
 Geben Sie beim Aktivieren der SQL Server-Authentifizierung **Anmeldename** und **Kennwort** an. Dieser Benutzername wird als Anmeldung für die SQL Server-Authentifizierung verwendet und ist Mitglied der festen Serverrolle „sysadmin“. Weitere Informationen zu Authentifizierungsmodi finden Sie unter [Auswählen eines Authentifizierungsmodus](http://msdn.microsoft.com/library/ms144284.aspx). Standardmäßig wird die SQL Server-Authentifizierung von SQL Server nicht aktiviert. In diesem Szenario können lokale Administratoren auf der virtuellen Maschine eine Verbindung mit der SQL Server-Instanz herstellen.
 
->[AZURE.NOTE]Wenn Sie auf SQL Server über das Internet zugreifen möchten (Konnektivitätsoption „Öffentlich“), sollten Sie die SQL-Authentifizierung hier aktivieren. Für den öffentlichen Zugriff auf SQL Server muss die SQL-Authentifizierung verwendet werden.
+>[AZURE.NOTE] Wenn Sie auf SQL Server über das Internet zugreifen möchten (Konnektivitätsoption „Öffentlich“), sollten Sie die SQL-Authentifizierung hier aktivieren. Für den öffentlichen Zugriff auf SQL Server muss die SQL-Authentifizierung verwendet werden.
 
 ### Speicheroptimierung
 Klicken Sie auf **Speicherkonfiguration**, um die Speicheranforderungen anzugeben. Sie können die Anforderungen als Eingabe-/Ausgabevorgänge pro Sekunde (IOPS), Durchsatz in MB/s und Gesamtspeichergröße angeben. Konfigurieren Sie diese mit den Schiebereglern. Das Portal berechnet basierend auf diesen Anforderungen automatisch die Anzahl der Datenträger.
@@ -142,7 +142,7 @@ Standardmäßig optimiert Azure den Speicher für 5.000 IOPS, 200 MB und 1 TB
 
 Die folgende Abbildung zeigt das Blatt für die Speicherkonfiguration. <br/>![SQL-ARM Speicher](./media/virtual-machines-sql-server-provision-resource-manager/azure-sql-arm-storage.png) <br/>
 
->[AZURE.NOTE]Die Grenzwerte für die Speicherkonfiguration hängen jeweils von der VM-Größe ab. Weitere Informationen finden Sie unter [Größen für virtuelle Computer](virtual-machines-size-specs.md).
+>[AZURE.NOTE] Die Grenzwerte für die Speicherkonfiguration hängen jeweils von der VM-Größe ab. Weitere Informationen finden Sie unter [Größen für virtuelle Computer](virtual-machines-size-specs.md).
 
 ### Patching
 **Automatisiertes SQL-Patchen** ist standardmäßig aktiviert. Beim automatisierten Patchen kann Azure automatisch Patches für SQL Server und das Betriebssystem anwenden. Geben Sie einen Wochentag, eine Uhrzeit und eine Dauer für das Wartungsfenster an. Azure führt das Patchen dann während des Wartungsfensters durch. Für die Zeitplanung des Wartungsfensters wird die Uhrzeit des VM-Gebietsschemas verwendet. Wenn Sie nicht möchten, dass SQL Server und das Betriebssystem automatisch gepatcht werden, klicken Sie auf **Deaktivieren**.
@@ -197,7 +197,7 @@ Wenn Sie über das Internet eine Verbindung mit Ihrem SQL Server-Datenbankmodul
 
 Wenn Sie das Portal verwenden, um mit dem Ressourcen-Manager ein Image für virtuelle Maschinen mit SQL Server bereitzustellen, werden diese Schritte für Sie ausgeführt, wenn Sie für die SQL-Verbindungsoption **Öffentlich** auswählen und die SQL Server-Authentifizierung aktivieren. Sie müssen aber noch einige verbleibende Schritte ausführen, um über das Internet auf die SQL Server-Instanz zugreifen zu können.
 
->[AZURE.NOTE]Wenn Sie bei der Bereitstellung nicht die Option „Öffentlich“ gewählt haben, müssen Sie weitere Schritte ausführen, um den Zugriff auf die SQL Server-Instanz über das Internet zu ermöglichen. Weitere Informationen finden Sie unter [Verbinden mit virtuellen SQL Server-Maschinen (Ressourcen-Manager) | Microsoft Azure](virtual-machines-sql-server-connectivity-resource-manager.md).
+>[AZURE.NOTE] Wenn Sie bei der Bereitstellung nicht die Option „Öffentlich“ gewählt haben, müssen Sie weitere Schritte ausführen, um den Zugriff auf die SQL Server-Instanz über das Internet zu ermöglichen. Weitere Informationen finden Sie unter [Verbinden mit virtuellen SQL Server-Maschinen (Ressourcen-Manager) | Microsoft Azure](virtual-machines-sql-server-connectivity-resource-manager.md).
 
 Die folgenden Schritte sind nicht erforderlich, wenn Sie auf Ihre virtuelle Maschine nur lokal oder innerhalb eines Virtual Network zugreifen müssen.
 
@@ -206,4 +206,4 @@ Die folgenden Schritte sind nicht erforderlich, wenn Sie auf Ihre virtuelle Masc
 ##<a id="Next">Nächste Schritte
 Weitere Informationen zur Verwendung von SQL Server in Azure finden Sie unter [SQL Server auf virtuellen Azure-Computern](../articles/virtual-machines/virtual-machines-sql-server-infrastructure-services.md).
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

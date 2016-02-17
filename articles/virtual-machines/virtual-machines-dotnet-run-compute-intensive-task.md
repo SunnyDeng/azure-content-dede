@@ -83,7 +83,7 @@ So erstellen Sie einen Dienstnamespace:
     ![Dialogfeld "Namespace erstellen"][create_namespace_dialog]
 5.  Nachdem Sie sichergestellt haben, dass der Namespacename verfügbar ist, wählen Sie die Region aus, in der der Namespace gehostet werden soll (verwenden Sie dieselbe Region, in der auch der virtuelle Computer gehostet wird).
 
-    > [AZURE.IMPORTANT]Wählen Sie **dieselbe Region** aus, die Sie für den virtuellen Computer verwenden oder verwenden möchten. Dies sorgt für die beste Leistung.
+    > [AZURE.IMPORTANT] Wählen Sie **dieselbe Region** aus, die Sie für den virtuellen Computer verwenden oder verwenden möchten. Dies sorgt für die beste Leistung.
 
 6. Wenn Sie mehr als ein Azure-Abonnement für das Konto besitzen, mit dem Sie angemeldet sind, wählen Sie das Abonnement aus, das Sie für den Namespace verwenden möchten. (Wenn Sie nur ein Abonnement für das Konto haben, mit dem Sie angemeldet sind, wird keine Dropdownliste Ihrer Abonnements angezeigt.)
 7. Aktivieren Sie das Kontrollkästchen. Ihr Dienstnamespace wird nun erstellt und aktiviert. Eventuell müssen Sie einige Minuten warten, bis die Ressourcen für Ihr Konto bereitgestellt werden.
@@ -103,7 +103,7 @@ Um Verwaltungsvorgänge im neuen Namespace auszuführen, wie zum Beispiel das Er
 
 ## Erstellen einer .NET-Anwendung, die eine rechenintensive Aufgabe ausführt
 
-1. Laden Sie auf dem Entwicklungscomputer (der nicht mit dem erstellten virtuellen Computer identisch sein muss) das [Azure-SDK für .NET](http://azure.microsoft.com/develop/net/) herunter.
+1. Laden Sie auf dem Entwicklungscomputer (der nicht mit dem erstellten virtuellen Computer identisch sein muss) das [Azure-SDK für .NET](https://azure.microsoft.com/develop/net/) herunter.
 2. Erstellen Sie eine .NET-Konsolenanwendung mit dem Projekt namens TSPSolver. Stellen Sie sicher, dass als Zielframework **.NET Framework 4** oder höher (nicht **.NET Framework 4 Client Profile**) festgelegt ist. Nach dem Erstellen eines Projekts kann das Zielframework folgendermaßen festgelegt werden: Klicken Sie im Menü von Visual Studio auf **Projekte**. Klicken Sie auf **Eigenschaften** und anschließend auf die Registerkarte **Anwendung**, und legen Sie den Wert für **Zielframework** fest.
 3. Fügen Sie die Microsoft ServiceBus-Bibliothek hinzu. Klicken Sie im Projektmappen-Explorer von Visual Studio mit der rechten Maustaste auf **TSPSolver**. Klicken Sie auf **Verweis hinzufügen** und anschließend auf die Registerkarte **Durchsuchen**, und navigieren Sie zum Azure .NET SDK (zum Beispiel unter "C:\\Programme\\Microsoft SDKs\\Azure.NET SDK\\v2.5\\ToolsRef"). Wählen Sie als Verweis **Microsoft.ServiceBus.dll** aus.
 4. Fügen Sie die System.Runtime.Serialization-Bibliothek hinzu. Klicken Sie im Projektmappen-Explorer von Visual Studio mit der rechten Maustaste auf **TSPSolver**. Klicken Sie auf **Verweis hinzufügen** und auf die Registerkarte **.NET**, und wählen Sie dann **System.Runtime.Serialization** als Verweis aus.
@@ -515,7 +515,8 @@ Führen Sie die rechenintensive Anwendung zunächst aus, um die Warteschlage zu 
 
 Der Solver wird ausgeführt, bis alle Routen untersucht wurden.
 
-> [AZURE.NOTE]Je größer die angegebene Zahl, desto länger wird der Solver ausgeführt. Die Ausführung für 14 Städte könnte zum Beispiel mehrere Minuten dauern, und die Ausführung für 15 Städte könnte mehrere Stunden dauern. Wird der Wert auf 16 oder mehr Städte erhöht, könnte die Ausführung mehrere Tage (und schließlich Wochen, Monate und Jahre) dauern. Dies liegt an der schnellen Zunahme der Anzahl der Permutationen, die vom Solver analysiert werden, wenn die Anzahl der Städte zunimmt.
+> [AZURE.NOTE]
+Je größer die angegebene Zahl, desto länger wird der Solver ausgeführt. Die Ausführung für 14 Städte könnte zum Beispiel mehrere Minuten dauern, und die Ausführung für 15 Städte könnte mehrere Stunden dauern. Wird der Wert auf 16 oder mehr Städte erhöht, könnte die Ausführung mehrere Tage (und schließlich Wochen, Monate und Jahre) dauern. Dies liegt an der schnellen Zunahme der Anzahl der Permutationen, die vom Solver analysiert werden, wenn die Anzahl der Städte zunimmt.
 
 ### Ausführen der überwachenden Clientanwendung
 1. Melden Sie sich bei dem Computer an, auf dem die Clientanwendung ausgeführt wird. Dieser Computer muss nicht zwingend mit dem Computer identisch sein, auf dem die TSPSolver-Anwendung ausgeführt wird.
@@ -550,4 +551,4 @@ Anstatt TSPSolver zum Erstellen oder Löschen der Warteschlange zu verwenden, k�
 [namespace_list]: ./media/virtual-machines-dotnet-run-compute-intensive-task/NamespaceList.png
 [access_key_button]: ./media/virtual-machines-dotnet-run-compute-intensive-task/AccessKey.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

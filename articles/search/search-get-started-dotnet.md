@@ -13,7 +13,7 @@
 	ms.workload="search"
 	ms.topic="hero-article"
 	ms.tgt_pltfrm="na"
-	ms.date="01/21/2016"
+	ms.date="02/09/2016"
 	ms.author="heidist"/>
 
 # Erste Schritte mit der ersten Azure Search-Anwendung in .NET
@@ -78,7 +78,7 @@ Nachdem Sie die Projekte erstellt haben, sollte Ihre Lösung dem unten dargestel
 
 4. Installieren Sie anschließend die .NET-Clientbibliothek für Azure Search. Geben Sie die Suche unbedingt ordnungsgemäß an, da Sie das Paket sonst nur schwer finden. Klicken Sie erneut mit der rechten Maustaste auf **NuGet-Pakete verwalten**.
 
-5. Geben Sie **Online** > **nuget.org** > **Include Prerelease** an, und suchen Sie dann nach *azure.search*. Klicken Sie auf **Installieren**, um die Bibliothek zu installieren.
+5. Geben Sie **Online** > **nuget.org** > **Nur stabile Versionen** an, und suchen Sie dann nach *azure.search*. Klicken Sie auf **Installieren**, um die Bibliothek zu installieren.
 
    ![][12]
 
@@ -671,4 +671,4 @@ Neu bei Azure Search? Es wird empfohlen, auch andere Lernprogramme zu bearbeiten
 [11]: ./media/search-get-started-dotnet/AzSearch-DotNet-NuGet-1.PNG
 [12]: ./media/search-get-started-dotnet/AzSearch-DotNet-NuGet-2.PNG
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

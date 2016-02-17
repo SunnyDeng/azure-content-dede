@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="11/18/2015"
+   ms.date="01/22/2016"
    ms.author="larryfr"/>
 
 #Bereitstellen und Verwalten von Apache Storm-Topologien in HDInsight unter Windows
@@ -23,7 +23,7 @@ Mithilfe des Storm-Dashboards können Sie Apache Storm-Topologien für Ihren HDI
 
 Sowohl das Storm-Dashboard als auch die Storm-Features der HDInsight-Tools sind von der Storm-REST-API abhängig, mit der Sie eigene Lösungen zur Überwachung und Verwaltung erstellen können.
 
-> [AZURE.IMPORTANT]Die Schritte in diesem Dokument erfordern einen Windows-basierten Storm in HDInsight-Cluster. Informationen zur Verwendung eines Linux-basierten Clusters finden Sie unter [Bereitstellen und Verwalten von Apache Storm-Topologien in HDInsight unter Linux](hdinsight-storm-deploy-monitor-topology-linux.md).
+> [AZURE.IMPORTANT] Die Schritte in diesem Dokument erfordern einen Windows-basierten Storm in HDInsight-Cluster. Informationen zur Verwendung eines Linux-basierten Clusters finden Sie unter [Bereitstellen und Verwalten von Apache Storm-Topologien in HDInsight unter Linux](hdinsight-storm-deploy-monitor-topology-linux.md).
 
 ##Voraussetzungen
 
@@ -41,7 +41,7 @@ Sowohl das Storm-Dashboard als auch die Storm-Features der HDInsight-Tools sind 
 
 	* <a href="http://visualstudio.com/downloads/visual-studio-2015-ctp-vs" target="_blank">Visual Studio 2015 CTP6</a>
 
-	> [AZURE.NOTE]Die HDInsight-Tools für Visual Studio unterstützen derzeit nur Storm auf der HDInsight-Clusterversion 3.2.
+	> [AZURE.NOTE] Die HDInsight-Tools für Visual Studio unterstützen derzeit nur Storm auf der HDInsight-Clusterversion 3.2.
 
 ##Storm-Dashboard
 
@@ -57,7 +57,7 @@ Wählen Sie im Storm-Dashboard den Link **Storm-UI** aus. Dadurch werden die Inf
 
 ![die Storm UI][storm-dashboard-ui]
 
-> [AZURE.NOTE]Bei einigen Versionen von Internet Explorer kann es passieren, dass die Storm-Benutzeroberfläche nach dem ersten Öffnen nicht aktualisiert wird. Beispielsweise werden die von Ihnen übermittelten neuen Topologien nicht gezeigt, oder es wird eine Topologie als aktiv angezeigt, die Sie zuvor deaktiviert haben. Microsoft ist sich dieses Umstands bewusst und arbeitet an einer Lösung.
+> [AZURE.NOTE] Bei einigen Versionen von Internet Explorer kann es passieren, dass die Storm-Benutzeroberfläche nach dem ersten Öffnen nicht aktualisiert wird. Beispielsweise werden die von Ihnen übermittelten neuen Topologien nicht gezeigt, oder es wird eine Topologie als aktiv angezeigt, die Sie zuvor deaktiviert haben. Microsoft ist sich dieses Umstands bewusst und arbeitet an einer Lösung.
 
 ####Hauptseite
 
@@ -129,7 +129,7 @@ Gehen Sie wie folgt vor, um ein Beispiel für den Storm-Cluster in HDInsight ber
 
 1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt, und wählen Sie **Submit to Storm on HDInsight** aus.
 
-	> [AZURE.NOTE]Wenn Sie dazu aufgefordert werden, geben Sie die Anmeldeinformationen für Ihr Azure-Abonnement ein. Wenn Sie über mehrere Abonnements verfügen, melden Sie sich bei dem Abonnement an, das Ihren Storm-Cluster in HDInsight enthält.
+	> [AZURE.NOTE] Wenn Sie dazu aufgefordert werden, geben Sie die Anmeldeinformationen für Ihr Azure-Abonnement ein. Wenn Sie über mehrere Abonnements verfügen, melden Sie sich bei dem Abonnement an, das Ihren Storm-Cluster in HDInsight enthält.
 
 2. Wählen Sie in der Dropdownliste **Storm Cluster** Ihren Storm-Cluster in HDInsight und dann die Option **Übermitteln** aus. Sie können über das Fenster **Ausgabe** überwachen, ob die Übermittlung erfolgreich ausgeführt wurde.
 
@@ -137,13 +137,15 @@ Gehen Sie wie folgt vor, um ein Beispiel für den Storm-Cluster in HDInsight ber
 
 	![Visual Studio Monitor](./media/hdinsight-storm-deploy-monitor-topology/vsmonitor.png)
 
-	> [AZURE.NOTE]Sie können die **Storm-Topologien** auch im **Server-Explorer** anzeigen, indem Sie **Azure** > **HDInsight** erweitern und dann mit der rechten Maustaste auf einen Storm-Cluster in HDInsight klicken und **View Storm Topologies** auswählen.
+	> [AZURE.NOTE] Sie können die **Storm-Topologien** auch im **Server-Explorer** anzeigen, indem Sie **Azure** > **HDInsight** erweitern und dann mit der rechten Maustaste auf einen Storm-Cluster in HDInsight klicken und **View Storm Topologies** auswählen.
 
-	Verwenden Sie die Links für die Spouts oder Bolts, um Informationen über diese Komponenten anzuzeigen. Für jedes ausgewählte Element wird ein neues Fenster geöffnet.
+	Wählen Sie die Form für die Spouts oder Bolts aus, um Informationen über diese Komponenten anzuzeigen. Für jedes ausgewählte Element wird ein neues Fenster geöffnet.
+    
+    > [AZURE.NOTE] Der Name der Topologie ist der Klassenname der Topologie (in diesem Fall `HelloWord`) mit angefügtem Zeitstempel.
 
 4. Wählen Sie in der Ansicht **Topology Summary** die Option **Beenden** aus, um die Topologie zu beenden.
 
-	> [AZURE.NOTE]Storm-Topologien werden weiterhin ausgeführt, bis sie beendet werden oder der Cluster gelöscht wird.
+	> [AZURE.NOTE] Storm-Topologien werden weiterhin ausgeführt, bis sie beendet werden oder der Cluster gelöscht wird.
 
 ##REST-API
 
@@ -159,7 +161,7 @@ Der Basis-URI für die REST-API auf HDInsight-Clustern ist **https://&lt;cluster
 
 Anforderungen an die REST-API müssen die **Standardauthentifizierung** und somit den Benutzernamen und das Kennwort des HDInsight-Clusteradministrators verwenden.
 
-> [AZURE.NOTE]Da die Standardauthentifizierung unverschlüsselt gesendet wird, sollten Sie **immer** HTTPS verwenden, um die Kommunikation mit dem Cluster zu schützen.
+> [AZURE.NOTE] Da die Standardauthentifizierung unverschlüsselt gesendet wird, sollten Sie **immer** HTTPS verwenden, um die Kommunikation mit dem Cluster zu schützen.
 
 ###Rückgabewerte
 
@@ -179,4 +181,4 @@ Eine Liste weiterer Beispieltopologien finden Sie unter [Beispieltopologien für
 [storm-dashboard-submit]: ./media/hdinsight-storm-deploy-monitor-topology/submit.png
 [storm-dashboard-ui]: ./media/hdinsight-storm-deploy-monitor-topology/storm-ui-summary.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0128_2016-->

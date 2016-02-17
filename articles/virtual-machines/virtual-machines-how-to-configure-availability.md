@@ -31,7 +31,7 @@ Beim klassischen Bereitstellungsmodell können Sie mithilfe einer der beiden fol
 - [Option 1: Erstellen Sie gleichzeitig einen virtuellen Computer und eine Verfügbarkeitsgruppe][]. Fügen Sie der Gruppe anschließend die neuen virtuellen Computer hinzu, wenn Sie diese virtuellen Computer erstellen.
 - [Option 2: Fügen Sie einer Verfügbarkeitsgruppe einen vorhandenen virtuellen Computer hinzu][].
 
->[AZURE.NOTE]Beim klassischen Modell müssen virtuelle Maschinen, die Sie in dieselbe Verfügbarkeitsgruppe versetzen möchten, zum selben Clouddienst gehören.
+>[AZURE.NOTE] Beim klassischen Modell müssen virtuelle Maschinen, die Sie in dieselbe Verfügbarkeitsgruppe versetzen möchten, zum selben Clouddienst gehören.
 
 ## <a id="createset"> </a>Option 1: Erstellen Sie gleichzeitig einen virtuellen Computer und eine Verfügbarkeitsgruppe##
 
@@ -96,7 +96,7 @@ Um Azure PowerShell-Befehle zu verwenden, öffnen Sie eine Azure PowerShell-Sitz
 
 	Get-AzureVM -ServiceName "<VmCloudServiceName>" -Name "<VmName>" | Set-AzureAvailabilitySet -AvailabilitySetName "<AvSetName>" | Update-AzureVM
 
->[AZURE.NOTE]Der virtuelle Computer muss möglicherweise neu gestartet werden, um das Hinzufügen zur Verfügbarkeitsgruppe abzuschließen.
+>[AZURE.NOTE] Der virtuelle Computer muss möglicherweise neu gestartet werden, um das Hinzufügen zur Verfügbarkeitsgruppe abzuschließen.
 
 ## Zusätzliche Ressourcen
 
@@ -110,6 +110,6 @@ Um Azure PowerShell-Befehle zu verwenden, öffnen Sie eine Azure PowerShell-Sitz
 [Verwalten der Verfügbarkeit virtueller Computer]: virtual-machines-manage-availability.md
 [Erstellen eines virtuellen Windows-Computers]: virtual-machines-windows-tutorial.md
 [Virtuelle Netzwerke im Überblick]: virtual-networks-overview.md
-[Artikel zu virtuellen Computern in der Dienstverwaltung]: virtual-machines-service-management-articles.md
+[Artikel zu virtuellen Computern in der Dienstverwaltung]: https://azure.microsoft.com/documentation/articles/?tag=azure-service-management&service=virtual-machines
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0204_2016-->
