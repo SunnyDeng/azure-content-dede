@@ -77,7 +77,7 @@ Erstellen Sie einen Wiederherstellungsplan wie folgt:
 	- Wenn Sie per SAN von VMM zu VMM replizieren, wählen Sie **Quelltyp** > **VMM** und die VMM-Quell- und -Zielserver aus. Klicken Sie auf **SAN**, um die Clouds anzuzeigen, die für die SAN-Replikation konfiguriert sind.
 	- Wenn Sie von VMM zu Azure replizieren, wählen **Quelltyp** > **VMM** aus. Wählen Sie den VMM-Quellserver und als Ziel **Azure** aus.
 	- Wenn Sie von einem Hyper-V-Standort replizieren, wählen Sie **Quelltyp** > **Hyper-V** aus. Wählen Sie den Standort als Quelle und als Ziel **Azure** aus.
-- Wenn Sie von VMware oder einem physischen lokalen Server zu Azure replizieren, wählen Sie einen Konfigurationsserver als Quelle und als Ziel **Azure** aus.
+	- Wenn Sie von VMware oder einem physischen lokalen Server zu Azure replizieren, wählen Sie einen Konfigurationsserver als Quelle und als Ziel **Azure** aus.
 
 2. Wählen Sie unter **Virtuelle Computer auswählen** die virtuellen Computer (oder die Replikationsgruppe) aus, die Sie der Standardgruppe (Gruppe 1) im Wiederherstellungsplan hinzufügen möchten.
 
@@ -127,4 +127,4 @@ Sie können unterschiedliche Arten von Failover-Wiederherstellungsplänen ausfü
 
  
 
-<!---HONumber=AcomDC_0204_2016-->
+<!----HONumber=AcomDC_0204_2016-->
