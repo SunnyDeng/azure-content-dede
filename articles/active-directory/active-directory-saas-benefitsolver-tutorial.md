@@ -82,8 +82,9 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Konfigurieren von App-Einstellungen](./media/active-directory-saas-benefitsolver-tutorial/IC804826.png "Konfigurieren von App-Einstellungen")
 
-    1.  Geben Sie im Textfeld **Anmelde-URL** die URL ****http://azure.benefitsolver.com** ein.
-2.  Geben Sie im Textfeld **Antwort-URL** die URL ****https://www.benefitsolver.com/benefits/BenefitSolverView?page_name=single_signon_saml** ein.
+    1.  Geben Sie im Textfeld **Anmelde-URL** die URL **http://azure.benefitsolver.com** ein.
+	2.  Geben Sie im Textfeld **Antwort-URL** die URL **https://www.benefitsolver.com/benefits/BenefitSolverView?page_name=single_signon_saml** ein.
+
 
     3.  Klicken Sie auf **Weiter**.
 
@@ -145,4 +146,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=AcomDC_0204_2016-->
+<!----HONumber=AcomDC_0204_2016-->

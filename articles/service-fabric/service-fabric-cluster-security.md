@@ -205,7 +205,8 @@ Sobald dieser Vorgang abgeschlossen ist, signalisieren Sie Service Fabric über 
 Hinweis: Für einen sicheren Cluster muss stets mindestens ein gültiges (nicht widerrufenes oder abgelaufenes) Zertifikat (primär oder sekundär) bereitgestellt werden. Andernfalls können Sie nicht auf den Cluster zugreifen.
 
 
-## Details zu den Arten von Zertifikaten, die von Service Fabric verwendet werden.
+## 
+Details zu den Arten von Zertifikaten, die von Service Fabric verwendet werden.
 
 ## X.509-Zertifikate
 
@@ -245,4 +246,4 @@ Clientzertifikate werden in der Regel nicht von einer Drittanbieter-Zertifizieru
 [Node-to-Node]: ./media/service-fabric-cluster-security/node-to-node.png
 [Client-to-Node]: ./media/service-fabric-cluster-security/client-to-node.png
 
-<!---HONumber=AcomDC_0204_2016-->
+<!----HONumber=AcomDC_0204_2016-->
