@@ -46,4 +46,4 @@ Dieses Dokument beschreibt ein grundlegendes Muster für die Verwendung von Azur
 
 [Batch Processing Tier](https://gallery.technet.microsoft.com/Cloud-Platform-Integration-0bc3f8b1)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Oct15_HO4--->
