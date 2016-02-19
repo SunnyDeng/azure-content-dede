@@ -96,4 +96,4 @@ Wenn Sie den Authentifizierungstyp ändern möchten, entfernen Sie den inkompati
 
 Weitere Informationen finden Sie unter [Authentifizierungsszenarien für Azure AD](active-directory-authentication-scenarios.md).
 
-<!---HONumber=AcomDC_1217_2015--->
+<!----HONumber=AcomDC_1217_2015-->
