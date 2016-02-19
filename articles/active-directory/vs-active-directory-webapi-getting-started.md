@@ -29,4 +29,4 @@ Alle Controller in Ihrem Projekt wurden mit dem Attribut **Authorize** versehen.
 [Weitere Informationen zu Azure Active Directory](https://azure.microsoft.com/services/active-directory/)
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0128_2016--->
