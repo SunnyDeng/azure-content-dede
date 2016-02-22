@@ -34,7 +34,8 @@ In der folgenden Tabelle wird gezeigt, welchen IoT-Features die Lösungen zugeor
 
 | Lösung | Datenerfassung | Geräteidentität | Befehl und Steuerung | Regeln und Aktionen | Predictive Analytics |
 |------------------------|-----|-----|-----|-----|-----|
-| [Remoteüberwachung][lnk-remote-monitoring] | Ja | Ja | Ja | Ja | – | | [Vorbeugende Wartung][lnk-predictive-maintenance] | Ja | Ja | Ja | Ja | Ja |
+| [Remoteüberwachung][lnk-remote-monitoring] | Ja | Ja | Ja | Ja | – |
+| [Vorbeugende Wartung][lnk-predictive-maintenance] | Ja | Ja | Ja | Ja | Ja |
 
 ## Übersicht über die vorkonfigurierte Lösung zur Remoteüberwachung
 
@@ -91,7 +92,7 @@ Das Lösungsportal ist eine webbasierte Benutzeroberfläche, die in der Cloud al
 - Senden von Befehlen an bestimmte Geräte
 - Verwalten von Regeln und Aktionen
 
-> [AZURE.NOTE] Im Lösungsportal bleibt die [Registrierung der IoT Hub-Geräteidentität][lnk-identity-registry] mit den umfassenderen Gerätestatusinformationen in der DocumentDB-Datenbank der Lösung synchronisiert.
+> [AZURE.NOTE]Im Lösungsportal bleibt die [Registrierung der IoT Hub-Geräteidentität][lnk-identity-registry] mit den umfassenderen Gerätestatusinformationen in der DocumentDB-Datenbank der Lösung synchronisiert.
 
 Bei dieser vorkonfigurierten Lösung bildet das Lösungsportal einen Teil des *IoT-Lösungs-Back-Ends* und einen Teil der *Verarbeitungsverbindung und Business Connectivity* in einer typischen [IoT-Lösungsarchitektur][lnk-what-is-azure-iot].
 

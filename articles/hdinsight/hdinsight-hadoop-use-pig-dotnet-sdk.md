@@ -49,7 +49,7 @@ Anweisungen hierzu finden Sie unter [Erstellen eines selbstsignierten Zertifikat
 
 Jedes Azure-Abonnement wird durch einen GUID-Wert gekennzeichnet, der als Abonnement-ID bezeichnet wird. Ermitteln Sie diesen Wert mithilfe der folgenden Schritte.
 
-1. Besuchen Sie das [Azure-Portal] [Vorschauportal].
+1. Besuchen Sie das [Azure-Vorschauportal] [Vorschauportal].
 
 2. Klicken Sie links im Portal auf der Menüleiste auf __ALLE DURCHSUCHEN__, und wählen Sie dann auf dem Blatt __Durchsuchen__ die Option __Abonnements__.
 
@@ -155,6 +155,7 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 
 * [Verwenden von Hive mit Hadoop in HDInsight](hdinsight-use-hive.md)
 
-* [Verwenden von MapReduce mit Hadoop in HDInsight](hdinsight-use-mapreduce.md) [Vorschauportal]: https://portal.azure.com/
+* [Verwenden von MapReduce mit Hadoop in HDInsight](hdinsight-use-mapreduce.md) 
+[Vorschauportal]: https://portal.azure.com/
 
 <!---HONumber=AcomDC_0211_2016-->

@@ -32,14 +32,14 @@ In diesem Thema erfahren Sie, wie Sie Ihre Apps registrieren, um Twitter zur Aut
 
 Sie benötigen ein Twitter-Konto mit verifizierter E-Mail-Adresse, um den in diesem Thema beschriebenen Vorgang abzuschließen. Rufen Sie die Seite <a href="http://go.microsoft.com/fwlink/p/?LinkID=268287" target="_blank">twitter.com</a> auf, um ein neues Twitter-Konto zu erstellen.
 
-1. Navigieren Sie zur [Twitter Developers](http://go.microsoft.com/fwlink/p/?LinkId=268300)-Website, melden Sie sich mit den Anmeldeinformationen für Ihr Twitter-Konto an, und klicken Sie auf **Create new app**.
+1. Navigieren Sie zur [Twitter-Entwickler](http://go.microsoft.com/fwlink/p/?LinkId=268300)-Website, melden Sie sich mit den Anmeldeinformationen für Ihr Twitter-Konto an, und klicken Sie auf **Create new app**.
 
 2. Geben Sie die Werte für **Name**, **Beschreibung** und **Website** für Ihre App ein, geben Sie dann eines der folgenden URL-Formate in **Callback URL** ein.
 
 	+ **.NET-Back-End**: `https://<mobile_service>.azure-mobile.net/signin-twitter`
 	+ **JavaScript-Back-End**: `https://<mobile_service>.azure-mobile.net/login/twitter`
 
-	 >[AZURE.NOTE]Stellen Sie sicher, dass Sie das richtige Umleitungs-URL-Pfadformat für Ihren Typ von Mobile Services-Back-End verwenden. Wenn die Angabe falsch ist, wird die Authentifizierung nicht erfolgreich ausgeführt.&nbsp;
+	 >[AZURE.NOTE] Stellen Sie sicher, dass Sie das richtige Umleitungs-URL-Pfadformat für Ihren Typ von Mobile Services-Back-End verwenden. Wenn die Angabe falsch ist, wird die Authentifizierung nicht erfolgreich ausgeführt.&nbsp;
 
    	![][2]
 

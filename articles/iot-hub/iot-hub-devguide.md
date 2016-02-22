@@ -272,7 +272,11 @@ Sie können Berechtigungen auf folgende Weise festlegen:
 
 * **Sicherheitsanmeldeinformationen auf Gerätebasis**. Jeder IoT Hub enthält eine [Geräteidentitätsregistrierung](#device-identity-registry). Sie können für jedes Gerät in dieser Registrierung Sicherheitsanmeldeinformationen konfigurieren, die **DeviceConnect**-Berechtigungen erteilen, deren Gültigkeitsbereich auf die entsprechenden Geräteendpunkte festgelegt ist.
 
-**Beispiel**. In einer typischen IoT-Lösung gilt Folgendes: – Die Komponente zur Geräteverwaltung verwendet die *registryReadWrite*-Richtlinie. – Die Ereignisprozessorkomponente nutzt die *service*-Richtlinie. – Die Laufzeit-Geschäftslogikkomponente für Geräte verwendet die *service*-Richtlinie. – Einzelne Geräte stellen unter Verwendung von Anmeldeinformationen eine Verbindung her, die in der IoT Hub-Identitätsregistrierung gespeichert sind.
+**Beispiel**. In einer typischen IoT-Lösung gilt Folgendes:
+- Die Komponente zur Geräteverwaltung verwendet die *registryReadWrite*-Richtlinie.
+- Die Ereignisprozessorkomponente nutzt die *service*-Richtlinie.
+- Die Laufzeit-Geschäftslogikkomponente für Geräte verwendet die *service*-Richtlinie.
+- Einzelne Geräte stellen unter Verwendung von Anmeldeinformationen eine Verbindung her, die in der IoT Hub-Identitätsregistrierung gespeichert sind.
 
 Einen Leitfaden zu IoT Hub-Sicherheitsthemen finden Sie im Abschnitt zur Sicherheit unter [Entwerfen der Lösung][lnk-guidance-security].
 
@@ -344,7 +348,9 @@ Dieser Mechanismus ist mit einer [Event Hubs-Herausgeberrichtlinie][lnk-event-hu
 
 ## Nachrichten
 
-IoT Hub stellt Messaginggrundtypen für die Kommunikation zwischen folgenden Komponenten bereit: – [C2D](#c2d): von einem Anwendungs-Back-End (*Dienst* oder *Cloud*) zu einem Gerät. – [D2C](#d2c): von einem Gerät zu einem Anwendungs-Back-End.
+IoT Hub stellt Messaginggrundtypen für die Kommunikation zwischen folgenden Komponenten bereit:
+– [C2D](#c2d): von einem Anwendungs-Back-End (*Dienst* oder *Cloud*) zu einem Gerät.
+– [D2C](#d2c): von einem Gerät zu einem Anwendungs-Back-End.
 
 Die wichtigsten Eigenschaften beim IoT Hub-Messaging sind eine zuverlässige und stabile Übermittlung von Nachrichten. Dies bietet Ausfallsicherheit bei zeitweiligen Verbindungsproblemen auf Geräteseite und Lastspitzen bei der Ereignisverarbeitung auf Cloudseite. IoT Hub implementiert *mindestens einmalig* Übermittlungsgarantien für das D2C- und C2D-Messaging.
 
@@ -366,8 +372,7 @@ Die folgende Tabelle zeigt den Satz an Systemeigenschaften in IoT Hub-Nachrichte
 | -------- | ----------- |
 | MessageId | Eine vom Benutzer festgelegte Kennung für die Nachricht, wird üblicherweise für Anforderung-Antwort-Muster verwendet. Format: Eine Zeichenfolge mit Berücksichtigung von Klein-/Großschreibung (bis zu 128 Zeichen lang), die aus alphanumerischen ASCII-Zeichen (7 Bit) + `{'-', ':',’.', '+', '%', '_', '#', '*', '?', '!', '(', ')', ',', '=', '@', ';', '$', '''}` besteht. |
 | Sequenznummer | Eine Nummer (für jede Gerätewarteschlange eindeutig), die jeder C2D-Nachricht von IoT Hub zugewiesen wird |
-| To  
- | Gibt in [C2D](#c2d)-Nachrichten das Ziel an. |
+| To | Gibt in [C2D](#c2d)-Nachrichten das Ziel an. |
 | ExpiryTimeUtc | Datum und Uhrzeit des Nachrichtenablaufs. |
 | EnqueuedTime | Datum und Uhrzeit des Empfangs der Nachricht durch IoT Hub. |
 | CorrelationId | Zeichenfolgeneigenschaft in einer Antwortnachricht, die normalerweise die Nachrichten-ID der Anforderung im Anforderung-Antwort-Muster enthält. |
@@ -482,7 +487,9 @@ Die folgende Abbildung zeigt den Lebenszyklus einer C2D-Nachricht und ihren jewe
 
 Wenn der Dienst eine Nachricht sendet, wird diese als *Zur Warteschlange hinzugefügt* betrachtet. Wenn ein Gerät eine Nachricht *empfangen* möchte, *sperrt* IoT Hub die Nachricht (Status wird auf **Nicht sichtbar** gesetzt), um anderen Threads auf demselben Gerät das Empfangen anderer Nachrichten zu ermöglichen. Wenn ein Gerätethread die Verarbeitung für ein Gerät abschließt, wird IoT Hub hierüber durch den *Abschluss* der Nachricht benachrichtigt.
 
-Darüber hinaus bestehen folgende Möglichkeiten: - Ein Gerät kann die Nachricht *ablehnen*, woraufhin IoT Hub sie in den Status **Unzustellbar** versetzt. - Das Gerät kann den Vorgang auch *abbrechen*, woraufhin IoT die Nachricht wieder in die Warteschlange einreiht (Status **Zur Warteschlange hinzugefügt**).
+Darüber hinaus bestehen folgende Möglichkeiten:
+- Ein Gerät kann die Nachricht *ablehnen*, woraufhin IoT Hub sie in den Status **Unzustellbar** versetzt.
+- Das Gerät kann den Vorgang auch *abbrechen*, woraufhin IoT die Nachricht wieder in die Warteschlange einreiht (Status **Zur Warteschlange hinzugefügt**).
 
 Bei der Nachrichtenverarbeitung durch den Thread könnte ein Fehler auftreten, ohne dass IoT Hub hierüber benachrichtigt wird. In diesem Fall werden Nachrichten automatisch vom Status **Nicht sichtbar** zurück in den Status **Zur Warteschlange hinzugefügt** versetzt, wenn ein *Timeout für die Sichtbarkeit (oder Sperrung)* abgelaufen ist (Standardeinstellung: 1 Minute). Eine Nachricht kann zwischen den Statuswerten **Zur Warteschlange hinzugefügt** und **Nicht sichtbar** maximal so oft wechseln, wie in der Eigenschaft *Anzahl maximaler Zustellungen* in IoT Hub festgelegt wurde. Nachdem diese Anzahl überschritten wurde, legt IoT Hub den Status der Nachricht als **Unzustellbar** fest. Ebenso kennzeichnet IoT Hub eine Nachricht als **Unzustellbar**, wenn ihre Gültigkeitsdauer abgelaufen ist (siehe [Gültigkeitsdauer](#ttl)).
 

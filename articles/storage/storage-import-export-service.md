@@ -236,8 +236,9 @@ Befolgen Sie die Anweisungen unten, wenn Sie Ihre Festplatte mithilfe von Window
 **Formatieren Sie die Laufwerke, bevor Sie sie zurückschicken?**
 
 - Nein, alle Laufwerke müssen mit BitLocker vorbereitet sein.
-
-**Muss ich den Datenträger beim Erstellen eines Exportauftragsvorbereiten?** – Nein, aber es empfiehlt sich, einige Vorabüberprüfungen durchzuführen. Überprüfen Sie die Anzahl der erforderlichen Datenträger mithilfe des Befehls [PreviewExport](https://msdn.microsoft.com/library/azure/dn722414.aspx) Import/Export-Tools. Sie können damit eine Vorschau der Festplattenverwendung für Blobs anzeigen, die Sie ausgewählt haben, basierend auf der Größe der Laufwerke, die Sie verwenden möchten. Überprüfen Sie außerdem, ob Sie Lese-/Schreibzugriff auf die Festplatte haben, die für den Exportauftrag versendet werden soll.
+ 
+**Muss ich den Datenträger beim Erstellen eines Exportauftragsvorbereiten?**
+- Nein, aber es empfiehlt sich, einige Vorabüberprüfungen durchzuführen. Überprüfen Sie die Anzahl der erforderlichen Datenträger mithilfe des Befehls [PreviewExport](https://msdn.microsoft.com/library/azure/dn722414.aspx) Import/Export-Tools. Sie können damit eine Vorschau der Festplattenverwendung für Blobs anzeigen, die Sie ausgewählt haben, basierend auf der Größe der Laufwerke, die Sie verwenden möchten. Überprüfen Sie außerdem, ob Sie Lese-/Schreibzugriff auf die Festplatte haben, die für den Exportauftrag versendet werden soll.
 
 ### Versand
 
@@ -247,7 +248,7 @@ Befolgen Sie die Anweisungen unten, wenn Sie Ihre Festplatte mithilfe von Window
 
 - Für asiatische Regionen wird nur [DHL](http://www.dhl-welcome.com/Tutorial/) unterstützt. Alle Pakete werden per DHL Express Worldwide zurückgeschickt.
 
-	> [AZURE.IMPORTANT] Sie müssen Ihre Tracking-Nummer an den Azure Import-/Export-Dienst übertragen, ansonsten kann Ihr Auftrag nicht verarbeitet werden.
+	> [AZURE.IMPORTANT]Sie müssen Ihre Tracking-Nummer an den Azure Import-/Export-Dienst übertragen, ansonsten kann Ihr Auftrag nicht verarbeitet werden.
 
 **Entstehen Kosten für den Rückversand?**
 
@@ -258,10 +259,10 @@ Befolgen Sie die Anweisungen unten, wenn Sie Ihre Festplatte mithilfe von Window
 **Von wo aus kann ich meine Daten verschicken bzw. wohin kann ich sie schicken lassen?**
 
 - Der Import-/Exportdienst unterstützt Import und Export von Daten in Speicherkonten in den folgenden Regionen:
-	- USA (Ost)
-	- Westen USA
-	- USA Nord Mitte
-	- USA Süd Mitte
+	- USA (Ost) 
+	- Westen USA 
+	- USA Nord Mitte 
+	- USA Süd Mitte 
 	- Nordeuropa
 	- Westeuropa
 	- Asien (Osten)
@@ -269,7 +270,7 @@ Befolgen Sie die Anweisungen unten, wenn Sie Ihre Festplatte mithilfe von Window
 
 - Sie erhalten eine Lieferadresse in der Region, in der sich Ihr Speicherkonto befindet. Wenn Sie z. B. in den USA leben und sich Ihr Speicherkonto im Rechenzentrum in Westeuropa befindet, erhalten Sie für den Versand der Laufwerke eine Lieferadresse in Europa.
 
-	> [AZURE.IMPORTANT] Beachten Sie, dass die physischen Medien beim Versand unter Umständen Ländergrenzen überqueren. Sie müssen sicherstellen, dass Ihre physischen Medien und Daten gemäß geltender Gesetze importiert bzw. exportiert werden. Prüfen Sie vor dem Versand der physischen Medien mit Ihren Rechtsberatern, ob Medien und Daten laut Gesetz an das entsprechende Rechenzentrum verschickt werden dürfen. So stellen Sie sicher, dass Ihre Daten zeitnah bei Microsoft eintreffen.
+	> [AZURE.IMPORTANT]Beachten Sie, dass die physischen Medien beim Versand unter Umständen Ländergrenzen überqueren. Sie müssen sicherstellen, dass Ihre physischen Medien und Daten gemäß geltender Gesetze importiert bzw. exportiert werden. Prüfen Sie vor dem Versand der physischen Medien mit Ihren Rechtsberatern, ob Medien und Daten laut Gesetz an das entsprechende Rechenzentrum verschickt werden dürfen. So stellen Sie sicher, dass Ihre Daten zeitnah bei Microsoft eintreffen.
 
 - Beim Versand Ihrer Pakete müssen Sie die Nutzungsbedingungen unter [Microsoft Azure-Nutzungsbedingungen](https://azure.microsoft.com/support/legal/services-terms/) beachten.
 

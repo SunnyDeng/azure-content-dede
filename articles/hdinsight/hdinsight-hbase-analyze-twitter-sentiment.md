@@ -75,11 +75,11 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
 
 	<table border="1">
-<tr><th>Clustereigenschaft</th><th>Beschreibung</th></tr>
-<tr><td>HBase-Clustername</td><td>Der Name Ihres HDInsight HBase-Clusters. Beispiel: https://myhbase.azurehdinsight.net/</td></tr>
-<tr><td>Clusterbenutzer-Name</td><td>Der Name des Hadoop-Benutzerkontos. Der Standardbenutzername für Hadoop ist <strong>admin</strong>.</td></tr>
-<tr><td>Clusterbenutzer-Kennwort</td><td>Das Benutzerkennwort für den Hadoop-Cluster.</td></tr>
-</table>
+	<tr><th>Clustereigenschaft</th><th>Beschreibung</th></tr>
+	<tr><td>HBase-Clustername</td><td>Der Name Ihres HDInsight HBase-Clusters. Beispiel: https://myhbase.azurehdinsight.net/</td></tr>
+	<tr><td>Clusterbenutzer-Name</td><td>Der Name des Hadoop-Benutzerkontos. Der Standardbenutzername für Hadoop ist <strong>admin</strong>.</td></tr>
+	<tr><td>Clusterbenutzer-Kennwort</td><td>Das Benutzerkennwort für den Hadoop-Cluster.</td></tr>
+	</table>
 
 - **Eine Workstation** mit installiertem Visual Studio 2013. [Installieren von Visual Studio](http://msdn.microsoft.com/library/e2h7fzkw.aspx)
 

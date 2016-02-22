@@ -79,7 +79,8 @@ Hinweis: Die Mobile Services-Client-SDKs senden *keinen* Headerwert für `ZUMO-A
 
 | Serverplattform | Version | Akzeptierter Versionsheader |
 | ---------------- | ------------------------------------------------------------                                                   | ----------------------- |
-| .NET | [WindowsAzure.MobileServices.Backend.* Version 1.0.x](https://www.nuget.org/packages/WindowsAzure.MobileServices.Backend/) | **** Kein Versionsheader ** || Node.js | (demnächst verfügbar) | **Kein Versionsheader** |
+| .NET | [WindowsAzure.MobileServices.Backend.* Version 1.0.x](https://www.nuget.org/packages/WindowsAzure.MobileServices.Backend/) | ** Kein Versionsheader ** |
+| Node.js | (demnächst verfügbar) | **Kein Versionsheader** |
 
 <!-- TODO: add Node npm version -->
 

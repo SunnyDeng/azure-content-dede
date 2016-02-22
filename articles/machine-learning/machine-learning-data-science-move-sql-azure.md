@@ -53,7 +53,7 @@ Sie können die hier beschriebenen Verfahren entweder auf einen Satz Ihrer eigen
 
 Daten in Flatfiles (CSV- oder TSV-Format) können mithilfe einer SQL-Abfrage zum Masseneinfügen in eine Azure SQL-Datenbank verschoben werden.
 
-### <a name="bulk-insert-sql-query"></a>SQL-Abfrage zum Masseneinfügen
+### <a name="bulk-insert-sql-query"></a> SQL-Abfrage zum Masseneinfügen
 
 Die Schritte des Verfahrens unter Verwendung der SQL-Abfrage zum Masseneinfügen sind mit denen vergleichbar, die in den Abschnitten zum Verschieben von Daten aus einer Flatfilequelle in SQL Server auf einem virtuellen Azure-Computer behandelt werden. Ausführliche Informationen finden Sie unter [SQL-Abfrage zum Masseneinfügen](machine-learning-data-science-move-sql-server-virtual-machine.md#insert-tables-bulkquery).
 

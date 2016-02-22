@@ -8,7 +8,7 @@
    1. Geben Sie den **Namen** für das Volume ein.
    2. Geben Sie die **Bereitgestellte Kapazität** für das Volume in GB oder TB an. Die Volumekapazität muss für ein physisches Gerät zwischen 1 GB und 64 TB liegen.
    3. Wählen Sie aus der Dropdownliste den **Verwendungstyp** für das Volume aus. 
-   4. Wenn Sie dieses Volume für archivierte Daten verwenden, aktivieren Sie das Kontrollkästchen **Use this volume for less frequently accessed archival data**. Wählen Sie für alle anderen Verwendungstypen einfach **Mehrstufiges Volume** aus. (Mehrstufige Volumes wurden früher primäre Volumes genannt).
+   4. Wenn Sie dieses Volume für archivierte Daten verwenden, aktivieren Sie das Kontrollkästchen **Verwenden Sie dieses Volume für Archivdaten, auf die Sie seltener zugreifen**. Wählen Sie für alle anderen Verwendungstypen einfach **Mehrstufiges Volume** aus. (Mehrstufige Volumes wurden früher primäre Volumes genannt).
 
         ![Add volume](./media/storsimple-create-volume/ScreenshotUpdate1VolumeFlow.png)
 
@@ -19,7 +19,7 @@
    2. Geben Sie unter **iSCSI-Initiatorname** den qualifizierten iSCSI-Namen (IQN) des Windows-Hosts an. Wenn Sie den IQN nicht kennen, fahren Sie mit [Abrufen des IQNs eines Windows Server-Hosts](#get-the-iqn-of-a-windows-server-host) fort.
    3. Es wird empfohlen, eine Standardsicherung zu aktivieren, indem Sie das Kontrollkästchen **Standardsicherung für dieses Volume aktivieren** aktivieren. Die Standardsicherung erstellt eine Richtlinie, die jeden Tag um 22:30 Uhr ausgeführt wird (Uhrzeit des Geräts) und eine Cloud-Momentaufnahme dieses Volumes erstellt.
 
-        > [AZURE.NOTE] After the backup is enabled here, it cannot be reverted. You will need to edit the volume to modify this setting.
+        > [AZURE.NOTE] Nachdem die Sicherung hier aktiviert wurde, kann sie nicht zurückgesetzt werden. Sie müssen das Volume bearbeiten, um diese Einstellung zu ändern.
 
         ![Add volume](./media/storsimple-create-volume/AddVolume2-include.png)
 

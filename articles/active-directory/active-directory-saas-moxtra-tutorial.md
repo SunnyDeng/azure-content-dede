@@ -35,7 +35,7 @@ Um die Azure AD-Integration mit Moxtra konfigurieren zu können, benötigen Sie
 - Ein Moxtra-Abonnement, für das einmaliges Anmelden aktiviert ist
 
 
-> [AZURE.NOTE] Um die Schritte in diesem Tutorial zu testen, wird empfohlen, keine Produktionsumgebung zu verwenden.
+> [AZURE.NOTE]Um die Schritte in diesem Tutorial zu testen, wird empfohlen, keine Produktionsumgebung zu verwenden.
 
 
 Um die Schritte in diesem Tutorial zu testen, sollten Sie folgende Empfehlungen beachten:
@@ -45,7 +45,8 @@ Um die Schritte in diesem Tutorial zu testen, sollten Sie folgende Empfehlungen 
 
  
 ## Beschreibung des Szenarios
-Ziel dieses Tutorials ist es, das einmalige Anmelden von Azure AD in einer Testumgebung zu testen. <br> Das in diesem Tutorial beschriebene Szenario besteht aus zwei großen Bausteinen:
+Ziel dieses Tutorials ist es, das einmalige Anmelden von Azure AD in einer Testumgebung zu testen. <br>
+Das in diesem Tutorial beschriebene Szenario besteht aus zwei großen Bausteinen:
 
 1. Hinzufügen von Moxtra aus dem Katalog 
 2. Konfigurieren und Testen der einmaligen Anmeldung von Azure AD
@@ -56,20 +57,28 @@ Zum Konfigurieren der Integration von Moxtra in Azure AD müssen Sie Moxtra aus
 
 **Um Moxtra aus dem Katalog hinzuzufügen, führen Sie die folgenden Schritte aus:**
 
-1. Klicken Sie im **klassischen Azure-Portal** im linken Navigationsbereich auf **Active Directory**. <br><br> ![Active Directory][1]<br>
+1. Klicken Sie im linken Navigationsbereich des **Azure-Verwaltungsportals** auf **Active Directory**. <br><br>
+![Active Directory][1]<br>
 
 2. Wählen Sie in der Liste **Verzeichnis** das Verzeichnis aus, für das Sie die Verzeichnisintegration aktivieren möchten.
 
-3. Klicken Sie zum Öffnen der Anwendungsansicht in der oberen Menüleiste der Verzeichnisansicht auf **Anwendungen**.<br><br> ![Anwendungen][2]<br>
-4. Klicken Sie unten auf der Seite auf **Hinzufügen**.<br><br> ![Anwendungen][3]<br>
-5. Klicken Sie im Dialogfeld **What do you want to do** auf **Anwendung aus dem Katalog hinzufügen**.<br><br> ![Anwendungen][4]<br>
-6. Geben Sie im Suchfeld den Suchbegriff **Moxtra** ein.<br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-moxtra-tutorial/tutorial_moxtra_01.png)<br>
-7. Wählen Sie im Ergebnisbereich **Moxtra** aus, und klicken Sie dann auf **Abschließen**, um die Anwendung hinzuzufügen. <br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-moxtra-tutorial/tutorial_moxtra_02.png)<br>
+3. Klicken Sie zum Öffnen der Anwendungsansicht in der oberen Menüleiste der Verzeichnisansicht auf **Anwendungen**.<br><br>
+![Anwendungen][2]<br>
+4. Klicken Sie unten auf der Seite auf **Hinzufügen**.<br><br>
+![Anwendungen][3]<br>
+5. Klicken Sie im Dialogfeld **What do you want to do** auf **Anwendung aus dem Katalog hinzufügen**.<br><br>
+![Anwendungen][4]<br>
+6. Geben Sie im Suchfeld den Suchbegriff **Moxtra** ein.<br><br>
+![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-moxtra-tutorial/tutorial_moxtra_01.png)<br>
+7. Wählen Sie im Ergebnisbereich **Moxtra** aus, und klicken Sie dann auf **Abschließen**, um die Anwendung hinzuzufügen.
+<br><br>
+![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-moxtra-tutorial/tutorial_moxtra_02.png)<br>
 
 ##  Konfigurieren und Testen der einmaligen Anmeldung von Azure AD
 In diesem Abschnitt soll anhand eines Testbenutzers namens Britta Simon veranschaulicht werden, wie das einmalige Anmelden von Azure AD in Moxtra konfiguriert und getestet werden kann.
 
-Damit einmaliges Anmelden funktioniert, muss Azure AD wissen, welcher Benutzer in Moxtra als Gegenbenutzer zu einem Benutzer in Azure AD fungiert. Anders ausgedrückt: Zwischen einem Azure AD-Benutzer und dem entsprechenden Benutzer in Moxtra muss eine Linkbeziehung eingerichtet werden.<br> Diese Linkbeziehung wird hergestellt, indem Sie den **Benutzernamen** in Azure AD als Wert für den **Benutzernamen** in Moxtra zuweisen.
+Damit einmaliges Anmelden funktioniert, muss Azure AD wissen, welcher Benutzer in Moxtra als Gegenbenutzer zu einem Benutzer in Azure AD fungiert. Anders ausgedrückt: Zwischen einem Azure AD-Benutzer und dem entsprechenden Benutzer in Moxtra muss eine Linkbeziehung eingerichtet werden.<br>
+Diese Linkbeziehung wird hergestellt, indem Sie den **Benutzernamen** in Azure AD als Wert für den **Benutzernamen** in Moxtra zuweisen.
  
 Zum Konfigurieren und Testen des einmaligen Anmeldens in Azure AD bei Moxtra müssen Sie die folgenden Bausteine ausführen:
 
@@ -83,24 +92,29 @@ Zum Konfigurieren und Testen des einmaligen Anmeldens in Azure AD bei Moxtra m�
 
 Das Ziel dieses Abschnitts besteht darin, das einmalige Anmelden von Azure AD im klassischen Azure-Portal zu aktivieren und das einmalige Anmelden in Ihrer Moxtra-Anwendung zu konfigurieren.
 
-Die Moxtra-Anwendung erwartet die SAML-Assertionen in einem bestimmten Format. Daher müssen Sie Ihrer Konfiguration der SAML-Tokenattribute benutzerdefinierte Attributzuordnungen hinzufügen. Der folgende Screenshot zeigt ein Beispiel für diesen Vorgang: <br><br> ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-moxtra-tutorial/tutorial_moxtra_09.png) <br>
+Die Moxtra-Anwendung erwartet die SAML-Assertionen in einem bestimmten Format. Daher müssen Sie Ihrer Konfiguration der SAML-Tokenattribute benutzerdefinierte Attributzuordnungen hinzufügen. Der folgende Screenshot zeigt ein Beispiel für diesen Vorgang:
+<br><br> ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-moxtra-tutorial/tutorial_moxtra_09.png) <br>
 
 
 
 **Führen Sie zum Konfigurieren des einmaligen Anmeldens von Azure AD in Moxtra die folgenden Schritte aus:**
 
-1. Klicken Sie im klassischen Azure-Portal auf der Anwendungsintegrationsseite für **Moxtra** auf **Einmaliges Anmelden konfigurieren**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu öffnen. <br><br> ![Einmaliges Anmelden konfigurieren][6] <br>
+1. Klicken Sie im klassischen Azure-Portal auf der Anwendungsintegrationsseite für **Moxtra** auf **Einmaliges Anmelden konfigurieren**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu öffnen.
+<br><br> ![Einmaliges Anmelden konfigurieren][6] <br>
 
-2. Wählen Sie auf der Seite **Wie sollen sich Benutzer bei Moxtra anmelden** die Option **Azure AD – einmaliges Anmelden** aus, und klicken Sie dann auf **Weiter**. <br><br> ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-moxtra-tutorial/tutorial_moxtra_03.png) <br>
+2. Wählen Sie auf der Seite **Wie sollen sich Benutzer bei Moxtra anmelden** die Option **Azure AD – einmaliges Anmelden** aus, und klicken Sie dann auf **Weiter**.
+<br><br> ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-moxtra-tutorial/tutorial_moxtra_03.png) <br>
 
-3. Führen Sie auf der Dialogfeldseite **App-Einstellungen konfigurieren** die folgenden Schritte aus: <br><br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-moxtra-tutorial/tutorial_moxtra_04.png) <br>
+3. Führen Sie auf der Dialogfeldseite **App-Einstellungen konfigurieren** die folgenden Schritte aus:
+<br><br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-moxtra-tutorial/tutorial_moxtra_04.png) <br>
 
     a. Geben Sie im Textfeld **Anmelde-URL** die folgende URL ein: ****https://www.moxtra.com/service/#login**.
 
     b. Klicken Sie auf **Weiter**.
  
  
-4. Führen Sie auf der Seite **Einmaliges Anmelden konfigurieren für Moxtra** die folgenden Schritte aus: <br><br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-moxtra-tutorial/tutorial_moxtra_05.png) <br>
+4. Führen Sie auf der Seite **Einmaliges Anmelden konfigurieren für Moxtra** die folgenden Schritte aus:
+<br><br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-moxtra-tutorial/tutorial_moxtra_05.png) <br>
 
     a. Klicken Sie auf **Zertifikat herunterladen** und speichern Sie die Datei auf Ihrem Computer.
 
@@ -109,10 +123,12 @@ Die Moxtra-Anwendung erwartet die SAML-Assertionen in einem bestimmten Format. D
 
 1. Melden Sie sich in einem anderen Webbrowserfenster bei der Moxtra-Unternehmenswebsite als Administrator an.
 
-1. Klicken Sie in der Symbolleiste auf der linken Seite auf **Admin-Konsole > SAML Single Sign-On** und dann auf **Neu**. <br><br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-moxtra-tutorial/tutorial_moxtra_06.png) <br>
+1. Klicken Sie in der Symbolleiste auf der linken Seite auf **Admin-Konsole > SAML Single Sign-On** und dann auf **Neu**.
+<br><br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-moxtra-tutorial/tutorial_moxtra_06.png) <br>
 
 
-1. Führen Sie auf der Seite **SAML** die folgenden Schritte aus: <br><br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-moxtra-tutorial/tutorial_moxtra_08.png) <br>
+1. Führen Sie auf der Seite **SAML** die folgenden Schritte aus:
+<br><br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-moxtra-tutorial/tutorial_moxtra_08.png) <br>
 
     a. Geben Sie im Textfeld **Name** einen Namen für Ihre Konfiguration ein (z. B. *SAML*).
 
@@ -127,17 +143,20 @@ Die Moxtra-Anwendung erwartet die SAML-Assertionen in einem bestimmten Format. D
     f. Öffnen Sie das heruntergeladene Zertifikat im Editor, kopieren Sie den Inhalt, und fügen Sie ihn anschließend in das Textfeld **Zertifikat** ein.
 
     g. Geben Sie im Textfeld für die SAML-E-Mail-Domäne Ihre SAML-E-Mail-Domäne ein.
-    > [AZURE.NOTE] Klicken Sie unten auf „**i**“, um die Schritte zum Überprüfen der Domäne anzuzeigen.
+    > [AZURE.NOTE]Klicken Sie unten auf „**i**“, um die Schritte zum Überprüfen der Domäne anzuzeigen.
 
 
     h. Klicken Sie auf **Aktualisieren**.
 
 
-6. Wählen Sie im klassischen Azure-Portal die Bestätigung zur Konfiguration der einmaligen Anmeldung aus und klicken Sie dann auf **Weiter**. <br><br>![Azure AD – einmaliges Anmelden][10]<br>
+6. Wählen Sie im klassischen Azure-Portal die Bestätigung zur Konfiguration der einmaligen Anmeldung aus und klicken Sie dann auf **Weiter**.
+<br><br>![Azure AD – einmaliges Anmelden][10]<br>
 
-7. Klicken Sie auf der Seite **Bestätigung zur einmaligen Anmeldung** auf **Fertig stellen**. <br><br>![Azure AD – einmaliges Anmelden][11]
+7. Klicken Sie auf der Seite **Bestätigung zur einmaligen Anmeldung** auf **Fertig stellen**.
+<br><br>![Azure AD – einmaliges Anmelden][11]
 
-1. Klicken Sie zum Hinzufügen von benutzerdefinierten Attributzuordnungen zur Konfiguration der SAML-Tokenattribute im Menü oben auf **Attribute**, um das Dialogfeld **SAML-Tokenattribute** zu öffnen. <br><br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-moxtra-tutorial/tutorial_general_80.png) <br>
+1. Klicken Sie zum Hinzufügen von benutzerdefinierten Attributzuordnungen zur Konfiguration der SAML-Tokenattribute im Menü oben auf **Attribute**, um das Dialogfeld **SAML-Tokenattribute** zu öffnen.
+<br><br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-moxtra-tutorial/tutorial_general_80.png) <br>
 
 
 
@@ -158,7 +177,8 @@ Die Moxtra-Anwendung erwartet die SAML-Assertionen in einem bestimmten Format. D
 
 
 
-1. Klicken Sie auf **Änderungen übernehmen**. <br><br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-moxtra-tutorial/tutorial_general_84.png) <br>
+1. Klicken Sie auf **Änderungen übernehmen**.
+<br><br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-moxtra-tutorial/tutorial_general_84.png) <br>
 
 
 
@@ -168,19 +188,24 @@ Die Moxtra-Anwendung erwartet die SAML-Assertionen in einem bestimmten Format. D
 
 
 ### Erstellen eines Azure AD-Testbenutzers
-Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta Simon im klassischen Azure-Portal.<br> Wählen Sie in der Benutzerliste **Britta Simon** aus.<br><br>![Azure AD-Benutzer erstellen][20]<br>
+Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta Simon im klassischen Azure-Portal.<br>
+Wählen Sie in der Benutzerliste **Britta Simon** aus.<br><br>![Azure AD-Benutzer erstellen][20]<br>
 
 **Um einen Testbenutzer in Azure AD zu erstellen, führen Sie die folgenden Schritte aus:**
 
-1. Klicken Sie im **klassischen Azure-Portal** im linken Navigationsbereich auf **Active Directory**. <br><br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-moxtra-tutorial/create_aaduser_09.png)<br> 
+1. Klicken Sie im **klassischen Azure-Portal** im linken Navigationsbereich auf **Active Directory**.
+<br><br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-moxtra-tutorial/create_aaduser_09.png)<br> 
 
 2. Wählen Sie in der Liste **Verzeichnis** das Verzeichnis aus, für das Sie die Verzeichnisintegration aktivieren möchten.
 
-3. Klicken Sie zum Anzeigen der Liste der Benutzer im Menü oben auf **Benutzer**. <br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-moxtra-tutorial/create_aaduser_03.png) <br>
+3. Klicken Sie zum Anzeigen der Liste der Benutzer im Menü oben auf **Benutzer**.
+<br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-moxtra-tutorial/create_aaduser_03.png) <br>
  
-4. Um das Dialogfeld **Benutzer hinzufügen** zu öffnen, klicken Sie auf der Symbolleiste unten auf **Benutzer hinzufügen**. <br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-moxtra-tutorial/create_aaduser_04.png) <br>
+4. Um das Dialogfeld **Benutzer hinzufügen** zu öffnen, klicken Sie auf der Symbolleiste unten auf **Benutzer hinzufügen**.
+<br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-moxtra-tutorial/create_aaduser_04.png) <br>
 
-5. Führen Sie auf der Dialogfeldseite **Informationen über diesen Benutzer** die folgenden Schritte aus: <br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-moxtra-tutorial/create_aaduser_05.png) <br>
+5. Führen Sie auf der Dialogfeldseite **Informationen über diesen Benutzer** die folgenden Schritte aus:
+<br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-moxtra-tutorial/create_aaduser_05.png) <br>
 
     a. Wählen Sie als "Benutzertyp" die Option "Neuer Benutzer in Ihrer Organisation" aus.
 
@@ -188,7 +213,8 @@ Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta S
 
     c. Klicken Sie auf **Weiter**.
 
-6.  Führen Sie auf der Dialogfeldseite **Benutzerprofil** die folgenden Schritte aus: <br><br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-moxtra-tutorial/create_aaduser_06.png) <br>
+6.  Führen Sie auf der Dialogfeldseite **Benutzerprofil** die folgenden Schritte aus:
+<br><br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-moxtra-tutorial/create_aaduser_06.png) <br>
  
     a. Geben Sie in das Textfeld **Vorname** den Namen **Britta** ein.
 
@@ -196,11 +222,14 @@ Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta S
 
     c. Geben Sie in das Textfeld **Anzeigename** den Namen **Britta Simon** ein.
 
-    d. Wählen Sie in der Liste **Rolle** die Rolle **Benutzer** aus. e. Klicken Sie auf **Weiter**.
+    d. Wählen Sie in der Liste **Rolle** die Rolle **Benutzer** aus.
+    e. Klicken Sie auf **Weiter**.
 
-7. Klicken Sie auf der Dialogfeldseite **Vorübergehendes Kennwort abrufen** auf **Erstellen**. <br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-moxtra-tutorial/create_aaduser_07.png) <br>
+7. Klicken Sie auf der Dialogfeldseite **Vorübergehendes Kennwort abrufen** auf **Erstellen**.
+<br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-moxtra-tutorial/create_aaduser_07.png) <br>
  
-8. Führen Sie auf der Dialogfeldseite **Vorübergehendes Kennwort abrufen** die folgenden Schritte aus: <br><br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-moxtra-tutorial/create_aaduser_08.png) <br>
+8. Führen Sie auf der Dialogfeldseite **Vorübergehendes Kennwort abrufen** die folgenden Schritte aus:
+<br><br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-moxtra-tutorial/create_aaduser_08.png) <br>
   
     a. Notieren Sie den Wert von **Neues Kennwort**.
 
@@ -216,7 +245,8 @@ Das Ziel dieses Abschnitts ist das Erstellen eines Benutzers namens Britta Simon
 
 1. Melden Sie sich bei der Moxtra-Unternehmenswebsite als Administrator an.
 
-1. Klicken Sie auf der Symbolleiste auf der linken Seite auf **Admin-Konsole > Benutzerverwaltung** und dann auf **Benutzer hinzufügen**. <br><br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-moxtra-tutorial/tutorial_moxtra_10.png) <br>
+1. Klicken Sie auf der Symbolleiste auf der linken Seite auf **Admin-Konsole > Benutzerverwaltung** und dann auf **Benutzer hinzufügen**.
+<br><br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-moxtra-tutorial/tutorial_moxtra_10.png) <br>
 
 
 
@@ -242,25 +272,31 @@ Das Ziel dieses Abschnitts ist das Erstellen eines Benutzers namens Britta Simon
 
 ### Zuweisen des Azure AD-Testbenutzers
 
-Das Ziel dieses Abschnitts besteht darin, Britta Simon die Verwendung des einmaligen Anmeldens bei Azure zu ermöglichen, indem sie Zugriff auf Moxtra erhält. <br><br>![Benutzer zuweisen][200] <br>
+Das Ziel dieses Abschnitts besteht darin, Britta Simon die Verwendung des einmaligen Anmeldens bei Azure zu ermöglichen, indem sie Zugriff auf Moxtra erhält.
+<br><br>![Benutzer zuweisen][200] <br>
 
 **Um Britta Simon Moxtra zuzuweisen, führen Sie die folgenden Schritte aus:**
 
-1. Klicken Sie zum Öffnen der Anwendungsansicht im klassischen Azure-Portal in der oberen Menüleiste der Verzeichnisansicht auf **Anwendungen**. <br><br>![Benutzer zuweisen][201] <br>
+1. Klicken Sie zum Öffnen der Anwendungsansicht im klassischen Azure-Portal in der oberen Menüleiste der Verzeichnisansicht auf **Anwendungen**.
+<br><br>![Benutzer zuweisen][201] <br>
 
-2. Wählen Sie in der Anwendungsliste **Moxtra** aus. <br><br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-moxtra-tutorial/tutorial_moxtra_50.png) <br>
+2. Wählen Sie in der Anwendungsliste **Moxtra** aus.
+<br><br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-moxtra-tutorial/tutorial_moxtra_50.png) <br>
 
-1. Klicken Sie im oberen Menü auf **Benutzer**. <br><br>![Benutzer zuweisen][203] <br>
+1. Klicken Sie im oberen Menü auf **Benutzer**.
+<br><br>![Benutzer zuweisen][203] <br>
 
 1. Wählen Sie in der Benutzerliste **Britta Simon** aus.
 
-2. Klicken Sie auf der Symbolleiste unten auf **Zuweisen**. <br><br>![Benutzer zuweisen][205]
+2. Klicken Sie auf der Symbolleiste unten auf **Zuweisen**.
+<br><br>![Benutzer zuweisen][205]
 
 
 
 ### Testen der einmaligen Anmeldung
 
-Das Ziel dieses Abschnitts ist das Testen Ihrer Azure AD-Konfiguration für einmaliges Anmelden mithilfe des Zugriffsbereichs.<br> Wenn Sie im Zugriffsbereich auf die Kachel „Moxtra“ klicken, sollten Sie automatisch bei Ihrer Moxtra-Anwendung angemeldet werden.
+Das Ziel dieses Abschnitts ist das Testen Ihrer Azure AD-Konfiguration für einmaliges Anmelden mithilfe des Zugriffsbereichs.<br>
+Wenn Sie im Zugriffsbereich auf die Kachel „Moxtra“ klicken, sollten Sie automatisch bei Ihrer Moxtra-Anwendung angemeldet werden.
 
 
 ## Zusätzliche Ressourcen

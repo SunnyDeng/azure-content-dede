@@ -215,7 +215,8 @@ Es folgt der Prozess zum Entfernen eines alten Zertifikats, damit der Cluster es
 >[AZURE.NOTE] Für einen sicheren Cluster muss stets mindestens ein gültiges (nicht widerrufenes oder abgelaufenes) Zertifikat (primär oder sekundär) bereitgestellt sein. Andernfalls können Sie nicht auf den Cluster zugreifen.
 
 
-## Arten von Zertifikaten, die von Service Fabric verwendet werden
+## 
+Arten von Zertifikaten, die von Service Fabric verwendet werden
 
 ### X.509-Zertifikate
 

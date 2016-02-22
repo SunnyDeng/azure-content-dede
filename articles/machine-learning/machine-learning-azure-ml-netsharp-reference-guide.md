@@ -397,12 +397,12 @@ Die Definition des folgenden Netzwerks zur Erkennung von Ziffern veranschaulicht
 -	Das Netzwerk hat eine dritte verdeckte Schicht: _Hid3_. Diese ist vollständig mit der zweiten verdeckten Schicht _Conv2_ verbunden.
 -	Die Ausgabeschicht _Digit_ ist nur mit der dritten verdeckten Schicht (_Hid3_) verbunden. Das Schlüsselwort **all** gibt an, dass die Ausgabeschicht vollständig mit _Hid3_ verbunden ist.
 -	Die Arität der Konvolution ist drei (die Länge der Tupel **InputShape**, **KernelShape**, **Stride** und **Sharing**). 
--	Die Anzahl der Gewichtungen pro Kernel ist _1 + **KernelShape**[0] * **KernelShape**[1] * **KernelShape**[2] = 1 + 1 * 5 * 5 = 26. Oder 26 * 50 = 1300_.
+-	Die Anzahl der Gewichtungen pro Kernel ist _1 + **KernelShape**\[0] * **KernelShape**\[1] * **KernelShape**\[2] = 1 + 1 * 5 * 5 = 26. Oder 26 * 50 = 1300_.
 -	Sie können die Knoten in jeder verdeckten Schicht wie folgt berechnen:
-	-	**NodeCount**[0] = (5 - 1) / 1 + 1 = 5.
-	-	**NodeCount**[1] = (13–5)/2+1 = 5. 
-	-	**NodeCount**[2] = (13 - 5) / 2 + 1 = 5. 
--	Die Gesamtanzahl der Knoten kann anhand der deklarierten Dimensionalität der Schicht [50, 5, 5] wie folgt berechnet werden: _**MapCount** * **NodeCount**[0] * **NodeCount**[1] * **NodeCount**[2] = 10 * 5 * 5 * 5_
+	-	**NodeCount**\[0] = (5 - 1) / 1 + 1 = 5.
+	-	**NodeCount**\[1] = (13–5)/2+1 = 5. 
+	-	**NodeCount**\[2] = (13 - 5) / 2 + 1 = 5. 
+-	Die Gesamtanzahl der Knoten kann anhand der deklarierten Dimensionalität der Schicht [50, 5, 5] wie folgt berechnet werden: _**MapCount** * **NodeCount**\[0] * **NodeCount**\[1] * **NodeCount**\[2] = 10 * 5 * 5 * 5_
 -	Da **Sharing**[d] nur für _d == 0_ „False“ ist, beträgt die Anzahl der Kernel _**MapCount** * **NodeCount**[0] = 10 * 5 = 50_. 
 
 

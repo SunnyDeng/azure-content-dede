@@ -190,7 +190,7 @@ Mit den Ansichtselementanforderungen **PUT** und **POST** können Sie Rollen und
 
 > [AZURE.NOTE]
 >
-> **__**\_\_permissions** gilt nur für ein Stammelement.
+> **\_\_permissions** gilt nur für ein Stammelement.
 >
 > Die Rolle **Besitzer** gilt nur für ein Stammelement.
 >

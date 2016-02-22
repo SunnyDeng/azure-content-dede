@@ -91,7 +91,8 @@ Unser Experiment sollte nun wie folgt aussehen:
 
 Führen Sie das Experiment ein letztes Mal aus (klicken Sie auf **Ausführen**). Wenn Sie überprüfen möchten, ob das Modell noch funktioniert, klicken Sie mit der rechten Maustaste auf die Ausgabe des Moduls [Score Model][score-model] und wählen **Ergebnisse anzeigen**. Sie sehen, dass die Originaldaten zusammen mit dem Wert für das Kreditrisiko („Bewertete Beschriftungen“)' und dem Bewertungswahrscheinlichkeitswert („Bewertete Wahrscheinlichkeiten“) angezeigt werden.
 
-## Bereitstellen des Webdiensts
+##
+Bereitstellen des Webdiensts
 
 Zum Bereitstellen eines aus dem Experiment abgeleiteten Webdiensts klicken Sie unter dem Bereich auf **Webdienst bereitstellen**. Machine Learning Studio stellt das Experiment als Webdienst bereit und führt Sie zum Dashboard dieses Webdiensts. Von hier aus können Sie zum Experiment zurückkehren (**View snapshot** oder **View latest**) und einen einfachen Test des Webdiensts ausführen (Schaltfläche **Test** – siehe **Testen des Webdiensts** weiter unten). Dort befinden sich auch Informationen zum Erstellen von Anwendungen, die auf den Webdienst zugreifen können (mehr dazu im nächsten Schritt dieser exemplarischen Vorgehensweise).
 

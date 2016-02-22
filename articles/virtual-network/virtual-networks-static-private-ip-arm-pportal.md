@@ -54,7 +54,9 @@ Erstellen Sie in einem VNet mit dem Namen *TestVNet* im Subnetz *FrontEnd* einen
 
 6. Überprüfen Sie auf dem Blatt **Einstellungen**, dass für die folgenden Eigenschaften die nachfolgenden Werte festgelegt sind, und klicken Sie anschließend auf **OK**.
 
-	-**Speicherkonto**: *vnetstorage* - **Netzwerk**: *TestVNet* - **Subnetz**: *FrontEnd*
+	-**Speicherkonto**: *vnetstorage*
+	- **Netzwerk**: *TestVNet*
+	- **Subnetz**: *FrontEnd*
 
 	![Blatt "Größe auswählen"](./media/virtual-networks-static-ip-arm-pportal/figure05.png)
 
