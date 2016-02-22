@@ -392,21 +392,19 @@ Die Aktivierung von HTTPS für eine benutzerdefinierte Domäne steht nur für di
 
 > [AZURE.NOTE] Bevor Sie eine App vom Tarif **Free** auf den Tarif **Standard** umstellen, müssen Sie das für Ihr Abonnement geltende Ausgabenlimit aufheben. Andernfalls besteht das Risiko, dass Ihre App nicht mehr verfügbar ist, wenn Sie Ihr Ausgabenlimit vor Ende des Abrechnungszeitraums erreichen. Weitere Informationen zu den Preisen für die Tarife „Shared“ und **Standard** finden Sie in der [Preisübersicht][pricing].
 
-1.	Öffnen Sie in Ihrem Browser das [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715).
+1.	Öffnen Sie in Ihrem Browser das [Azure-Portal](https://portal.azure.com).
 	
-2.	Klicken Sie auf der Seite links auf die Option **Durchsuchen**.
-
-3.	Klicken Sie auf das Blatt **Web-Apps**.
+2.	Klicken Sie auf der Seite links auf die Option **App Service**.
 
 4.	Klicken Sie auf den Namen der App.
 
 5.	Klicken Sie auf der Seite **Essentials** auf **Einstellungen**.
 
-6.	Klicken Sie auf **Skalieren**.
+6.	Klicken Sie auf **Zentral hochskalieren**.
 	
 	![Die Registerkarte "Skalierung"][scale]
 
-7.	Legen Sie im Abschnitt **Staffelung** den Modus für den App Service-Plan fest, indem Sie auf **Auswählen** klicken.
+7.	Legen Sie im Abschnitt **Zentral hochskalieren** den Modus für den App Service-Plan fest, indem Sie auf **Auswählen** klicken.
 
 	> [AZURE.NOTE] Wenn die Fehlermeldung "Fehler beim Konfigurieren der Skalierung für Web-App '&lt;App-Name&gt;'" angezeigt wird, können Sie mit der Schaltfläche "Details" weitere Informationen abrufen. Eventuell wird die Fehlermeldung "Not enough available standard instance servers to satisfy this request." angezeigt. Wenn diese Fehlermeldung angezeigt wird, rufen Sie [Supportoptionen für Azure](/support/options/) auf.
 
@@ -415,11 +413,9 @@ Die Aktivierung von HTTPS für eine benutzerdefinierte Domäne steht nur für di
 
 Bevor Sie die Schritte in diesem Abschnitt ausführen, müssen Sie einen benutzerdefinierten Domänennamen mit Ihrer App verknüpft haben. Weitere Informationen finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für eine Web-App][customdomain].
 
-1.	Öffnen Sie das [Azure-Verwaltungsportal](https://portal.azure.com) in Ihrem Browser.
+1.	Öffnen Sie in Ihrem Browser das [Azure-Portal](https://portal.azure.com).
 
-2.	Klicken Sie auf der Seite links auf die Option **Durchsuchen**.
-
-3.	Klicken Sie auf das Blatt **Web-Apps**.
+2.	Klicken Sie auf der Seite links auf die Option **App Service**.
 
 4.	Klicken Sie auf den Namen der App.
 
@@ -500,7 +496,7 @@ Wenn Ihre web.config-Datei bereits einen Anschnitt **&lt;rewrite>** enthält, f�
 
 ###PHP
 
-Speichern Sie bei PHP-Anwendungen einfach das [Beispiel](#example) als web.config-Datei im Stammverzeichnis Ihrer Anwendung und stellen Sie die Anwendung für Ihre App erneut bereit.
+Speichern Sie bei PHP-Anwendungen einfach das [Beispiel](#example) als web.config-Datei im Stammverzeichnis Ihrer Anwendung, und stellen Sie die Anwendung für Ihre App erneut bereit.
 
 ###Node.js, Python Django und Java
 
@@ -516,7 +512,7 @@ Um die automatisch generierte Datei von der App abzurufen und zu ändern, führe
 
 	* **Node.js und Python Django**
 
-		Die Datei "web.config", die für Node.js- und Python Django-Anwendungen erstellt wurde, enthält bereits einen Abschnitt **&lt;rewrite>** mit **&lt;rule>**-Einträgen, die für die ordnungsgemäße Funktion der Website benötigt werden. Um für die App die Verwendung von HTTPS zu erzwingen, fügen Sie **&lt;rule>** aus dem Beispiel als ersten Eintrag im Abschnitt **&lt;rules>** hinzu. Damit wird HTTPS erzwungen, während die übrigen Regeln bestehen bleiben.
+		Die Datei „web.config“, die für Node.js- und Python Django-Anwendungen erstellt wurde, enthält bereits einen **&lt;rewrite>**-Abschnitt mit **&lt;rule>**-Einträgen, die für die ordnungsgemäße Funktion der Website benötigt werden. Um für die App die Verwendung von HTTPS zu erzwingen, fügen Sie die **&lt;rule>** aus dem Beispiel als ersten Eintrag im **&lt;rules>**-Abschnitt hinzu. Damit wird HTTPS erzwungen, während die übrigen Regeln bestehen bleiben.
 
 	* **Java**
 
@@ -565,4 +561,4 @@ Weitere Informationen zum IIS-URL-Rewrite-Modul finden Sie unter der Dokumentati
 [certwiz3]: ./media/configure-ssl-web-site/waws-certwiz3.png
 [certwiz4]: ./media/configure-ssl-web-site/waws-certwiz4.png
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

@@ -9,11 +9,11 @@
 
 <tags 
 	ms.service="service-bus" 
-	ms.workload="tbd" 
+	ms.workload="na" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="10/08/2015" 
+	ms.date="02/08/2016" 
 	ms.author="sethm"/>
 
 # Verwenden von AMQP 1.0 mit der .NET-Programmierschnittstelle für Service Bus
@@ -22,7 +22,7 @@ AMQP (Advanced Message Queuing Protocol) 1.0 ist ein effizientes, zuverlässiges
 
 Unterstützung für AMQP 1.0 im Service Bus bedeutet, dass Sie die gebrokerten Messagingfunktionen für Warteschlangen und Veröffentlichen/Abonnieren mithilfe eines effizienten binären Protokolls auf unterschiedlichen Plattformen nutzen können. Zudem können Sie Anwendungen erstellen, deren Komponenten mit einer Mischung aus Sprachen, Frameworks und Betriebssystemen erstellt wurden.
 
-In diesem Artikel wird erklärt, wie Sie die Brokermessagingfunktionen (Warteschlangen und Veröffentlichen/Abonnieren) für Service Bus aus .NET-Anwendungen mithilfe der .NET-API für Service Bus verwenden. In einem separaten Artikel wird erklärt, wie Sie dieselbe Aufgabe mithilfe der standardmäßigen JMS-API (Java Message Service) durchführen. Sie können diese beiden Anleitungen verwenden, um weitere Informationen zur plattformübergreifenden Nachrichtenübermittlung unter Verwendung von AMQP 1.0 zu erhalten.
+In diesem Artikel wird erklärt, wie Sie die Brokermessagingfunktionen (Warteschlangen und Veröffentlichen/Abonnieren) für Service Bus aus .NET-Anwendungen mithilfe der .NET-API für Service Bus verwenden. In einem [separaten Artikel](service-bus-java-how-to-use-jms-api-amqp.md) wird erklärt, wie Sie dieselbe Aufgabe mithilfe der standardmäßigen JMS-API (Java Message Service) durchführen. Sie können diese beiden Anleitungen verwenden, um weitere Informationen zur plattformübergreifenden Nachrichtenübermittlung unter Verwendung von AMQP 1.0 zu erhalten.
 
 ## Erste Schritte mit Service Bus
 
@@ -320,8 +320,8 @@ Nachdem Sie sich einen Überblick über Service Bus und AMQP mit .NET verschafft
 
 * [AMQP 1.0-Unterstützung in Azure Service Bus](service-bus-amqp-overview.md)
 * [Verwenden der JMS-Programmierschnittstelle (Java Message Service) mit Service Bus & AMQP 1.0](service-bus-java-how-to-use-jms-api-amqp.md)
-* [Verwenden von Servicebus-Warteschlangen](service-bus-dotnet-how-to-use-queues.md)
+* [Verwenden von Service Bus-Warteschlangen](service-bus-dotnet-how-to-use-queues.md)
  
 [klassischen Azure-Portal]: http://manage.windowsazure.com
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0211_2016-->

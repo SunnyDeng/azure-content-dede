@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="01/08/2016"
+   ms.date="02/09/2016"
    ms.author="mbaldwin"/>
 
 # Authentifizierungsszenarien für Azure AD
@@ -63,12 +63,12 @@ Im Anschluss folgen einige wichtige Informationen zu den Komponenten des obigen 
 • Nach der Authentifizierung eines Benutzers muss die Anwendung das Sicherheitstoken des Benutzers überprüfen, um sicherzustellen, dass die Authentifizierung der betreffenden Parteien erfolgreich war. Mithilfe der bereitgestellten Authentifizierungsbibliotheken können Entwickler die Validierung beliebiger Token von Azure AD behandeln – einschließlich JSON-Webtoken (JWT) und SAML 2.0. Informationen zum Durchführen einer manuellen Überprüfung finden Sie in der Dokumentation für den [JWT-Tokenhandler](https://msdn.microsoft.com/library/dn205065.aspx).
 
 
-> [AZURE.IMPORTANT]Azure AD verwendet die Verschlüsselung mit öffentlichem Schlüssel, um Token zu signieren und deren Gültigkeit zu überprüfen. Weitere Informationen zur Logik, die in Ihrer Anwendung enthalten sein muss, damit diese immer mit den neuesten Schlüsseln aktualisiert wird, finden Sie unter [Wichtige Informationen zum Signaturschlüsselrollover in Azure AD](https://msdn.microsoft.com/library/azure/dn641920.aspx).
+> [AZURE.IMPORTANT] Azure AD verwendet die Verschlüsselung mit öffentlichem Schlüssel, um Token zu signieren und deren Gültigkeit zu überprüfen. Weitere Informationen zur Logik, die in Ihrer Anwendung enthalten sein muss, damit diese immer mit den neuesten Schlüsseln aktualisiert wird, finden Sie unter [Wichtige Informationen zum Signaturschlüsselrollover in Azure AD](https://msdn.microsoft.com/library/azure/dn641920.aspx).
 
 
 • Der Fluss von Anforderungen und Antworten für den Authentifizierungsprozess ergibt sich aus dem verwendeten Authentifizierungsprotokoll (etwa OAuth 2.0, OpenID Connect, WS-Federation oder SAML 2.0). Diese Protokolle werden im Thema [Azure Active Directory-Authentifizierungsprotokolle](active-directory-authentication-protocols.md) sowie in den folgenden Abschnitten ausführlicher behandelt.
 
-> [AZURE.NOTE]Azure AD unterstützt den OAuth 2.0- und den OpenID Connect-Standard. Diese machen ausgiebig Gebrauch von Trägertoken (auch in Form von JWTs). Ein Trägertoken ist ein einfaches Sicherheitstoken, das dem „Träger“ den Zugriff auf eine geschützte Ressource ermöglicht. In diesem Kontext ist der „Träger“ jede beliebige Partei, die das Token vorweisen kann. Um das Trägertoken zu erhalten, muss sich die Partei zwar zunächst bei Azure AD authentifizieren, falls jedoch keine Maßnahmen ergriffen werden, um das Token bei der Übertragung und Speicherung zu schützen, kann das Token von einer fremden Partei abgefangen und verwendet werden. Einige Sicherheitstoken verfügen über einen integrierten Mechanismus, der eine unbefugte Verwendung durch nicht autorisierte Parteien verhindert. Trägertoken besitzen dagegen keinen solchen Mechanismus und müssen über einen sicheren Kanal wie etwa Transport Layer Security (HTTPS) übertragen werden. Wird ein Trägertoken als Klartext gesendet, kann eine böswillige Partei das Token mithilfe eines Man-in-the-Middle-Angriffs abfangen und damit unautorisiert auf eine geschützte Ressource zugreifen. Die gleichen Sicherheitsprinzipien gelten für die (Zwischen-)Speicherung von Trägertoken zur späteren Verwendung. Stellen Sie daher sicher, dass Ihre Anwendung Trägertoken immer sicher überträgt und speichert. Weitere Sicherheitsüberlegungen zu Trägertoken finden Sie unter [RFC 6750, Abschnitt 5](http://tools.ietf.org/html/rfc6750).
+> [AZURE.NOTE] Azure AD unterstützt den OAuth 2.0- und den OpenID Connect-Standard. Diese machen ausgiebig Gebrauch von Trägertoken (auch in Form von JWTs). Ein Trägertoken ist ein einfaches Sicherheitstoken, das dem „Träger“ den Zugriff auf eine geschützte Ressource ermöglicht. In diesem Kontext ist der „Träger“ jede beliebige Partei, die das Token vorweisen kann. Um das Trägertoken zu erhalten, muss sich die Partei zwar zunächst bei Azure AD authentifizieren, falls jedoch keine Maßnahmen ergriffen werden, um das Token bei der Übertragung und Speicherung zu schützen, kann das Token von einer fremden Partei abgefangen und verwendet werden. Einige Sicherheitstoken verfügen über einen integrierten Mechanismus, der eine unbefugte Verwendung durch nicht autorisierte Parteien verhindert. Trägertoken besitzen dagegen keinen solchen Mechanismus und müssen über einen sicheren Kanal wie etwa Transport Layer Security (HTTPS) übertragen werden. Wird ein Trägertoken als Klartext gesendet, kann eine böswillige Partei das Token mithilfe eines Man-in-the-Middle-Angriffs abfangen und damit unautorisiert auf eine geschützte Ressource zugreifen. Die gleichen Sicherheitsprinzipien gelten für die (Zwischen-)Speicherung von Trägertoken zur späteren Verwendung. Stellen Sie daher sicher, dass Ihre Anwendung Trägertoken immer sicher überträgt und speichert. Weitere Sicherheitsüberlegungen zu Trägertoken finden Sie unter [RFC 6750, Abschnitt 5](http://tools.ietf.org/html/rfc6750).
 
 
 Nachdem Sie nun mit den Grundlagen vertraut sind, finden Sie in den folgenden Abschnitten Informationen zur Funktionsweise der Bereitstellung in Azure AD sowie zu den gängigen, von Azure AD unterstützten Szenarien.
@@ -138,7 +138,7 @@ Jedes Szenario aus diesem Dokument enthält einen Unterabschnitt mit den entspre
 
 ## Anwendungstypen und -szenarien
 
-Jedes der in diesem Dokument beschriebenen Szenarien kann mit verschiedenen Programmiersprachen und Plattformen umgesetzt werden, und für jedes Szenario stehen [umfassende Codebeispiele auf GitHub](https://github.com/AzureADSamples) zur Verfügung. Sollte Ihre Anwendung einen bestimmten Teil oder ein Segment eines End-to-End-Szenarios benötigen, lässt sich diese Funktion in den meisten Fällen unabhängig hinzufügen. Wenn also beispielsweise Ihre systemeigene Anwendung eine Web-API aufruft, können Sie problemlos eine Webanwendung hinzufügen, die die Web-API ebenfalls aufruft. Das folgende Diagramm veranschaulicht die Szenarien und Anwendungstypen sowie das Hinzufügen verschiedener Komponenten:
+Jedes der in diesem Dokument beschriebenen Szenarios kann mit verschiedenen Sprachen und Plattformen entwickelt werden. Sie werden sämtlichst durch vollständige Codebeispiele unterstützt, die in unserer [Anleitung für Codebeispiele](active-directory-code-samples.md) oder direkt in den entsprechenden [GitHub-Beispielrepositories](https://github.com/Azure-Samples?utf8=%E2%9C%93&query=active-directory) verfügbar sind. Sollte Ihre Anwendung einen bestimmten Teil oder ein Segment eines End-to-End-Szenarios benötigen, lässt sich diese Funktion in den meisten Fällen unabhängig hinzufügen. Wenn also beispielsweise Ihre systemeigene Anwendung eine Web-API aufruft, können Sie problemlos eine Webanwendung hinzufügen, die die Web-API ebenfalls aufruft. Das folgende Diagramm veranschaulicht die Szenarien und Anwendungstypen sowie das Hinzufügen verschiedener Komponenten:
 
 ![Anwendungstypen und -szenarien](./media/active-directory-authentication-scenarios/application_types_and_scenarios.png)
 
@@ -292,7 +292,7 @@ Bei Verwendung der AD-Authentifizierungsbibliotheken werden Ihnen die meisten de
 6. Wenn das Zugriffstoken abläuft, erhält die Clientanwendung eine Fehlermeldung mit dem Hinweis, dass sich der Benutzer erneut authentifizieren muss. Wenn die Anwendung über ein gültiges Aktualisierungstoken verfügt, kann damit ohne erneute Anmeldeaufforderung ein neues Zugriffstoken abgerufen werden. Wenn das Aktualisierungstoken abläuft, muss die Anwendung den Benutzer interaktiv neu authentifizieren.
 
 
-> [AZURE.NOTE]Das von Azure AD ausgestellte Aktualisierungstoken kann für den Zugriff auf mehrere Ressourcen verwendet werden. Wenn Sie beispielsweise über eine Clientanwendung verfügen, die zum Aufrufen zweier Web-APIs berechtigt ist, kann mit dem Aktualisierungstoken auch ein Zugriffstoken für die andere Web-API abgerufen werden.
+> [AZURE.NOTE] Das von Azure AD ausgestellte Aktualisierungstoken kann für den Zugriff auf mehrere Ressourcen verwendet werden. Wenn Sie beispielsweise über eine Clientanwendung verfügen, die zum Aufrufen zweier Web-APIs berechtigt ist, kann mit dem Aktualisierungstoken auch ein Zugriffstoken für die andere Web-API abgerufen werden.
 
 
 #### Codebeispiele
@@ -467,4 +467,4 @@ Wenn die erste Anwendung mithilfe ihres Autorisierungscodes ein JWT-Zugriffstoke
 
 [OAuth 2.0 in Azure AD](https://msdn.microsoft.com/library/azure/dn645545.aspx)
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0211_2016-->

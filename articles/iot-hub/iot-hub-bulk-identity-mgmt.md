@@ -336,6 +336,6 @@ In diesem Artikel haben Sie gelernt, wie Massenvorgänge auf die Geräte-Identit
 
 - [Programmgesteuertes Erstellen eines IoT Hubs](iot-hub-rm-template.md)
 - [IoT Hub-Nutzungsmetriken](iot-hub-metrics.md)
-- [IoT Hub-Vorgangsüberwachung](iot-hub-operations-montoring.md)
+- [IoT Hub-Vorgangsüberwachung](iot-hub-operations-monitoring.md)
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

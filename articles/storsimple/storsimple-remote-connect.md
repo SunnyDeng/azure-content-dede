@@ -4,7 +4,7 @@
    services="storsimple"
    documentationCenter=""
    authors="alkohli"
-   manager="carolz"
+   manager="carmonm"
    editor="" />
 <tags 
    ms.service="storsimple"
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="12/02/2015"
+   ms.date="02/08/2016"
    ms.author="alkohli" />
 
 # Herstellen einer Remoteverbindung mit dem StorSimple-Gerät
@@ -32,6 +32,8 @@ In diesem Tutorial wird erläutert, wie das Gerät für die Remoteverwaltung kon
 - Eine Verbindung über eine HTTPS-Sitzung mit einem selbstsignierten Zertifikat ist die sicherste und empfohlene Option.
 
 Sie können eine Remoteverbindung mit der Windows PowerShell-Benutzeroberfläche herstellen. Der Remotezugriff auf Ihr StorSimple-Gerät über die Windows PowerShell-Benutzeroberfläche ist jedoch standardmäßig nicht aktiviert. Sie müssen zunächst die Remoteverwaltung auf dem Gerät und anschließend auf dem Client aktivieren, der für den Zugriff auf das Gerät verwendet wird.
+
+Die Schritte in diesem Artikel wurden auf einem Hostsystem mit Windows Server 2012 R2 ausgeführt.
 
 ## Verbinden über HTTP
 
@@ -61,7 +63,7 @@ Führen Sie die folgenden Schritte im klassischen Azure-Portal aus, um die Remot
 
 4. Sie können jetzt eine Verbindung über HTTP herstellen. (Die Standardeinstellung ist eine HTTPS-Verbindung.) Stellen Sie sicher, dass "HTTP" ausgewählt ist.
 
-    >[AZURE.NOTE]Verbindungen über HTTP sind nur in vertrauenswürdigen Netzwerken zulässig.
+    >[AZURE.NOTE] Verbindungen über HTTP sind nur in vertrauenswürdigen Netzwerken zulässig.
 
 6. Klicken Sie unten auf der Seite auf **Speichern**.
 
@@ -112,7 +114,7 @@ Führen Sie die folgenden Schritte auf dem Client aus, um die Remoteverwaltung z
 
      `Enter-pssession -Credential $cred -ConfigurationName SSAdminConsole -ComputerName <device_ip>`
 
-     >[AZURE.NOTE]Fügen Sie zum Erstellen einer Windows PowerShell-Sitzung für die Verwendung mit dem virtuellen StorSimple-Gerät den `–port`-Parameter an, und geben Sie den öffentlichen Port an, den Sie zum Remoting für das virtuelle StorSimple-Gerät konfiguriert haben.
+     >[AZURE.NOTE] Fügen Sie zum Erstellen einer Windows PowerShell-Sitzung für die Verwendung mit dem virtuellen StorSimple-Gerät den `–port`-Parameter an, und geben Sie den öffentlichen Port an, den Sie zum Remoting für das virtuelle StorSimple-Gerät konfiguriert haben.
 
      Jetzt sollten Sie über eine aktive Windows PowerShell-Remotesitzung auf dem Gerät verfügen.
 
@@ -176,7 +178,7 @@ Führen Sie die folgenden Schritte auf der seriellen Gerätekonsole aus, um die 
 
 4. Kopieren Sie aus der Ausgabe von `Get-HcsSystem` die Seriennummer des Geräts, und speichern Sie sie zur späteren Verwendung.
 
-    >[AZURE.NOTE]Die Seriennummer entspricht dem CN-Namen im Zertifikat.
+    >[AZURE.NOTE] Die Seriennummer entspricht dem CN-Namen im Zertifikat.
 
 5. Rufen Sie ein Zertifikat für die Remoteverwaltung ab, indem Sie Folgendes eingeben:
  
@@ -188,7 +190,7 @@ Führen Sie die folgenden Schritte auf der seriellen Gerätekonsole aus, um die 
 
 5. Kopieren Sie die Informationen im Zertifikat zwischen **-----BEGIN CERTIFICATE-----** und **-----END CERTIFICATE-----** in einen Text-Editor wie Editor, und speichern Sie sie als CER-Datei. (Sie kopieren diese Datei auf den Remotehost, wenn Sie den Host vorbereiten.)
 
-    >[AZURE.NOTE]Verwenden Sie das Cmdlet `Set-HcsRemoteManagementCert`, um ein neues Zertifikat zu generieren.
+    >[AZURE.NOTE] Verwenden Sie das Cmdlet `Set-HcsRemoteManagementCert`, um ein neues Zertifikat zu generieren.
 
 ### Vorbereiten des Hosts für die Remoteverwaltung
 
@@ -272,4 +274,4 @@ Führen Sie die folgenden Schritte auf dem Computer aus, über den Sie die Windo
 
 - Erfahren Sie mehr über das [Verwenden Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0211_2016-->

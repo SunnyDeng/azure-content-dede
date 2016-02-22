@@ -9,11 +9,11 @@
 
 <tags 
 	ms.service="service-bus" 
-	ms.workload="tbd" 
+	ms.workload="na" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="python" 
 	ms.topic="article" 
-	ms.date="10/08/2015" 
+	ms.date="02/08/2016" 
 	ms.author="sethm"/>
 
 
@@ -25,7 +25,7 @@ In diesem Artikel wird beschrieben, wie Sie Service Bus-Warteschlangen verwenden
 
 [AZURE.INCLUDE [howto-service-bus-queues](../../includes/howto-service-bus-queues.md)]
 
-> [AZURE.NOTE]Informationen zur Installation von Python bzw. des [Python Azure-Pakets][] finden Sie in den [Installationsanweisungen für Python](../python-how-to-install.md).
+> [AZURE.NOTE] Informationen zur Installation von Python bzw. des [Python Azure-Pakets][] finden Sie in den [Installationsanweisungen für Python](../python-how-to-install.md).
 
 ## Erstellen einer Warteschlange
 
@@ -116,4 +116,4 @@ Nachdem Sie nun mit den Grundlagen der Service Bus-Warteschlangen vertraut sind,
 [Azure-Warteschlangen und Service Bus-Warteschlangen]: service-bus-azure-and-service-bus-queues-compared-contrasted.md#capacity-and-quotas
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0211_2016-->

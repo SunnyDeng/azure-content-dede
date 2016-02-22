@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile"
 	ms.devlang="node"
 	ms.topic="article"
-	ms.date="12/02/2015"
+	ms.date="02/09/2016"
 	ms.author="chrande"/>
 
 # Aktualisieren eines vorhandenen Node.js-Azure Mobile Service auf App Service
@@ -28,7 +28,7 @@ Wenn ein Mobil-Back-End auf Azure App Service aktualisiert wird, hat dieses Zugr
 
 [AZURE.INCLUDE [app-service-mobile-migrate-vs-upgrade](../../includes/app-service-mobile-migrate-vs-upgrade.md)]
 
->[AZURE.TIP]Es wird empfohlen, vor einem Upgrade eine [Migration durchzuführen](app-service-mobile-migrating-from-mobile-services.md). Auf diese Weise können Sie beide Versionen der Anwendung in den gleichen App Service-Plan übernehmen, ohne dass zusätzliche Kosten anfallen.
+>[AZURE.TIP] Es wird empfohlen, vor einem Upgrade eine [Migration auszuführen](app-service-mobile-migrating-from-mobile-services.md). Auf diese Weise können Sie beide Versionen der Anwendung in den gleichen App Service-Plan übernehmen, ohne dass zusätzliche Kosten anfallen.
 
 ### Verbesserungen im Mobile Apps-Server-SDK für Node.js
 
@@ -48,7 +48,7 @@ Bei einem Upgrade auf das neue [Mobile Apps-SDK](https://www.npmjs.com/package/a
 
 Anders als beim Mobile Apps-SDK für .NET lässt sich das Upgraden eines Node-Back-Ends von Mobile Services auf Mobile Apps nicht durch einen einfachen Austausch von Paketen bewerkstelligen. Sie besitzen nun den gesamten Anwendungsstapel, der sonst von Azure gesteuert wurde. Daher müssen Sie eine Express-Basis-App zum Hosten Ihres Mobil-Back-Ends erstellen. Für die Tabellen- und API-Controller sind die Konzepte ähnlich, aber Sie müssen jetzt Tabellenobjekte exportieren, und die Funktions-APIs wurden leicht geändert. Dieser Artikel führt Sie schrittweise durch die grundlegenden Strategien beim Upgrade. Bevor Sie die ersten Schritte für die Migration ausführen, sollten Sie jedoch die Anleitung [Verwenden des Node-SDK](app-service-mobile-node-backend-how-to-use-server-sdk.md) lesen.
 
->[AZURE.TIP]Sie sollten die restlichen Abschnitte in diesem Thema vollständig lesen, bevor Sie mit einem Upgrade beginnen. Notieren Sie sich alle Features, die Sie verwenden möchten, und die nachfolgend behandelt werden.
+>[AZURE.TIP] Sie sollten die restlichen Abschnitte in diesem Thema vollständig lesen, bevor Sie mit einem Upgrade beginnen. Notieren Sie sich alle Features, die Sie verwenden möchten, und die nachfolgend behandelt werden.
 
 Die Mobile Services-Client-SDKs sind **nicht** mit dem neuen Mobile Apps-Server-SDK kompatibel. Um die Kontinuität von Diensten für Ihre App zu gewährleisten, sollten Sie keine Änderungen auf einer Website veröffentlichen, die derzeit veröffentlichte Clients bereitstellt. Stattdessen sollten Sie eine neue mobile App erstellen, die als Duplikat dient. Sie können diese Anwendung in den gleichen App Service-Plan aufnehmen, um zu vermeiden, dass zusätzliche Kosten anfallen.
 
@@ -131,7 +131,7 @@ Der Server verfügt über sehr viele Konfigurationseinstellungen, aber es gibt d
 
 Sie können Ihre Serverkonfiguration über Umgebungsvariable anpassen, die Sie in Ihrem Mobile App-Back-End über die App-Einstellungen festlegen können.
 
-Sie können das Mobile Apps-SDK weiter anpassen, indem Sie ein [Konfigurationsobjekt](http://azure.github.io/azure-mobile-apps-node/global.html#configuration) an den Initialisierer übergeben oder im Stamm des Projekts [eine Datei mit dem Namen „azureMobile.js“ erstellen](app-service-mobile-node-backend-how-to-use-server-sdk/#howto-config-localdev).
+Sie können das Mobile Apps-SDK weiter anpassen, indem Sie ein [Konfigurationsobjekt](http://azure.github.io/azure-mobile-apps-node/global.html#configuration) an den Initialisierer übergeben oder im Stamm des Projekts [eine Datei mit dem Namen „azureMobile.js“ erstellen](app-service-mobile-node-backend-how-to-use-server-sdk.md#howto-config-localdev).
 
 ### Arbeiten mit Daten und Tabellen
 
@@ -288,4 +288,4 @@ Wenn die neue Clientversion bereit ist, testen Sie sie mit dem aktualisierten Se
 [ExpressJS Middleware]: http://expressjs.com/guide/using-middleware.html
 [Winston]: https://github.com/winstonjs/winston
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0211_2016-->

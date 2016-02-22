@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-android"
 	ms.devlang="java"
 	ms.topic="article"
-	ms.date="12/06/2015"
+	ms.date="02/07/2016"
 	ms.author="ricksal"/>
 
 # Hinzufügen von Offlinedatensynchronisierung zur Mobile Services-App für Android
@@ -199,7 +199,7 @@ One thing which is important to point out: if there are pending changes in the l
 
 * [Cloud Cover: Offlinesynchronisierung in Azure Mobile Services]
 
-* [Azure Friday: Offlinefähige Apps in Azure Mobile Services] \(Hinweis: Demos sind für Windows, Funktionserläuterungen gelten jedoch für alle Plattformen)
+* [Azure Friday: Offlinefähige Apps in Azure Mobile Services] (Hinweis: Demos sind für Windows, Funktionserläuterungen gelten jedoch für alle Plattformen)
 
 
 <!-- URLs. -->
@@ -223,4 +223,4 @@ One thing which is important to point out: if there are pending changes in the l
 
 [Schnellstartlernprogramm „Erste Schritte mit Mobile Services“]: mobile-services-android-get-started.md
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0211_2016-->

@@ -3,7 +3,7 @@
 	description="Advanced Analytics Process and Technology in Aktion"  
 	services="machine-learning"
 	documentationCenter=""
-	authors="bradsev,hangzh,weig"
+	authors="bradsev,hangzh-msft,wguo123"
 	manager="paulettm"
 	editor="cgronlun" />
 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/03/2016" 
-	ms.author="bradsev;hangzh;wguo123"/>
+	ms.date="02/05/2016" 
+	ms.author="bradsev;hangzh;weig"/>
 
 
 # Der Cortana Analytics-Prozess in Aktion: Verwenden von SQL Data Warehouse
@@ -28,9 +28,16 @@ Die Prozedur entspricht dem Workflow des [Cortana Analytics-Prozesses (CAP)](htt
 
 Die „NYC Taxi Trips“-Daten umfassen ca. 20 GB komprimierter CSV-Dateien (~48 GB unkomprimiert) mit Aufzeichnungen von mehr als 173 Millionen einzelner Fahrten mit den zugehörigen Preisen. Jeder Fahrtendatensatz enthält den Start- und Zielort, jeweils mit Uhrzeit, die anonymisierte Lizenznummer des Fahrers (Hack) und die eindeutige ID des Taxis (Medallion). Die Daten umfassen alle Fahrten im Jahr 2013. Sie werden für jeden Monat in den folgenden beiden DataSets bereitgestellt:
 
-1. Die Datei **trip\_data.csv** enthält Fahrtendetails wie die Anzahl der Fahrgäste, Start- und Zielort, Fahrtdauer und Fahrtlänge. Es folgen einige Beispieleinträge: medallion,hack\_license,vendor\_id,rate\_code,store\_and\_fwd\_flag,pickup\_datetime,dropoff\_datetime,passenger\_count,trip\_time\_in\_secs,trip\_distance,pickup\_longitude,pickup\_latitude,dropoff\_longitude,dropoff\_latitude 89D227B655E5C82AECF13C3F540D4CF4,BA96DE419E711691B9445D6A6307C170,CMT,1,N,2013-01-01 15:11:48,2013-01-01 15:18:10,4,382,1.00,-73.978165,40.757977,-73.989838,40.751171 0BD7C8F5BA12B88E0B67BED28BEA73D8,9FD8F69F0804BDB5549F40E9DA1BE472,CMT,1,N,2013-01-06 00:18:35,2013-01-06 00:22:54,1,259,1.50,-74.006683,40.731781,-73.994499,40.75066 0BD7C8F5BA12B88E0B67BED28BEA73D8,9FD8F69F0804BDB5549F40E9DA1BE472,CMT,1,N,2013-01-05 18:49:41,2013-01-05 18:54:23,1,282,1.10,-74.004707,40.73777,-74.009834,40.726002 DFD2202EE08F7A8DC9A57B02ACB81FE2,51EE87E3205C985EF8431D850C786310,CMT,1,N,2013-01-07 23:54:15,2013-01-07 23:58:20,2,244,.70,-73.974602,40.759945,-73.984734,40.759388 DFD2202EE08F7A8DC9A57B02ACB81FE2,51EE87E3205C985EF8431D850C786310,CMT,1,N,2013-01-07 23:25:03,2013-01-07 23:34:24,1,560,2.10,-73.97625,40.748528,-74.002586,40.747868
+1. Die Datei **trip\_data.csv** enthält Fahrtendetails wie die Anzahl der Fahrgäste, Start- und Zielort, Fahrtdauer und Fahrtlänge. Es folgen einige Beispieleinträge:
 
-2. Die Datei **trip\_fare.csv** enthält Details für jede bezahlte Gebühr, wie Zahlungsart, Fahrpreis, Zuschläge und Steuern, Trinkgelder und Mautgebühren sowie den bezahlten Gesamtbetrag für den Fahrpreis. Es folgen einige Beispieleinträge:
+		medallion,hack_license,vendor_id,rate_code,store_and_fwd_flag,pickup_datetime,dropoff_datetime,passenger_count,trip_time_in_secs,trip_distance,pickup_longitude,pickup_latitude,dropoff_longitude,dropoff_latitude
+		89D227B655E5C82AECF13C3F540D4CF4,BA96DE419E711691B9445D6A6307C170,CMT,1,N,2013-01-01 15:11:48,2013-01-01 15:18:10,4,382,1.00,-73.978165,40.757977,-73.989838,40.751171
+		0BD7C8F5BA12B88E0B67BED28BEA73D8,9FD8F69F0804BDB5549F40E9DA1BE472,CMT,1,N,2013-01-06 00:18:35,2013-01-06 00:22:54,1,259,1.50,-74.006683,40.731781,-73.994499,40.75066
+		0BD7C8F5BA12B88E0B67BED28BEA73D8,9FD8F69F0804BDB5549F40E9DA1BE472,CMT,1,N,2013-01-05 18:49:41,2013-01-05 18:54:23,1,282,1.10,-74.004707,40.73777,-74.009834,40.726002
+		DFD2202EE08F7A8DC9A57B02ACB81FE2,51EE87E3205C985EF8431D850C786310,CMT,1,N,2013-01-07 23:54:15,2013-01-07 23:58:20,2,244,.70,-73.974602,40.759945,-73.984734,40.759388
+		DFD2202EE08F7A8DC9A57B02ACB81FE2,51EE87E3205C985EF8431D850C786310,CMT,1,N,2013-01-07 23:25:03,2013-01-07 23:34:24,1,560,2.10,-73.97625,40.748528,-74.002586,40.747868
+
+2. Die Datei **trip\_fare.csv** enthält Details für jede gezahlte Gebühr wie Zahlungsart, Fahrpreis, Zuschläge und Steuern, Trinkgelder und Mautgebühren sowie den gezahlten Gesamtbetrag für den Fahrpreis. Es folgen einige Beispieleinträge:
 
 		medallion, hack_license, vendor_id, pickup_datetime, payment_type, fare_amount, surcharge, mta_tax, tip_amount, tolls_amount, total_amount
 		89D227B655E5C82AECF13C3F540D4CF4,BA96DE419E711691B9445D6A6307C170,CMT,2013-01-01 15:11:48,CSH,6.5,0,0.5,0,0,7
@@ -45,11 +52,11 @@ Der **eindeutige Schlüssel** für die Zusammenführung von „trip\_data“ und
 - „hack\_license“ und 
 - „pickup\_datetime“.
 
-## <a name="mltasks"></a>Behandeln von drei Typen von Vorhersageaufgaben 
+## <a name="mltasks"></a>Drei Typen von Vorhersageaufgaben 
 
-Wir formulieren drei Vorhersageprobleme basierend auf dem *tip\_amount*, um drei Arten von Modellierungsaufgaben zu veranschaulichen:
+Wir formulieren drei Vorhersageprobleme basierend auf *tip\_amount*, um drei Arten von Modellierungsaufgaben zu veranschaulichen:
 
-1. **Binäre Klassifizierung**: Vorhersage, ob ein Trinkgeld bezahlt wurde. Hierbei repräsentiert ein *tip\_amount* von mehr als 0 $ eine positive Probe, während ein *tip\_amount* mit dem Wert 0 $ eine negative Probe darstellt.
+1. **Binäre Klassifizierung**: Vorhersage, ob ein Trinkgeld gezahlt wurde. Hierbei stellt ein *tip\_amount* von mehr als 0 $ eine positive Probe dar, während ein *tip\_amount* mit dem Wert 0 $ eine negative Probe darstellt.
 
 2. **Multiklassenklassifizierung**: Vorhersage des Trinkgeldbereichs für die Fahrt. Wir teilen *tip\_amount* in fünf Container oder Klassen auf:
 
@@ -86,7 +93,7 @@ Zum Einrichten Ihrer Azure Data Science-Umgebung führen Sie die folgenden Schri
 
 **Stellen Sie mit Visual Studio eine Verbindung mit Ihrem Azure SQL Data Warehouse her.** Eine Anleitung hierzu finden Sie unter [Herstellen einer Verbindung mit Azure SQL Data Warehouse über Visual Studio](sql-data-warehouse-get-started-connect.md) in den Schritten 1 und 2.
 
->[AZURE.NOTE] Führen Sie die folgende SQL-Abfrage für die Datenbank aus, die Sie in SQL Data Warehouse erstellt haben(anstelle der Abfrage, die in Schritt 3 des Verbindungsthemas bereitgestellt wird), um **einen Hauptschlüssel zu erstellen**.
+>[AZURE.NOTE] Führen Sie die folgende SQL-Abfrage für die Datenbank aus, die Sie in SQL Data Warehouse erstellt haben (anstelle der Abfrage, die in Schritt 3 des Verbindungsthemas bereitgestellt wird), um **einen Hauptschlüssel zu erstellen**.
 
 	BEGIN TRY
 	       --Try to create the master key
@@ -100,9 +107,9 @@ Zum Einrichten Ihrer Azure Data Science-Umgebung führen Sie die folgenden Schri
 
 ## <a name="getdata"></a>Laden der Daten in SQL Data Warehouse
 
-Öffnen Sie eine Windows PowerShell-Befehlskonsole. Führen Sie die folgenden PowerShell-Befehle zum Herunterladen der Beispiel-SQL-Skriptdateien aus, die wir für Sie auf Github bereitstellen. Speichern Sie sie in einem lokalen Verzeichnis, das Sie mit dem Parameter *-DestDir* angeben. Sie können den Wert des Parameters *-DestDir* in ein beliebiges lokales Verzeichnis ändern. Wenn *-DestDir* nicht vorhanden ist, wird es vom PowerShell-Skript erstellt.
+Öffnen Sie eine Windows PowerShell-Befehlskonsole. Führen Sie die folgenden PowerShell-Befehle zum Herunterladen der SQL-Beispielskriptdateien aus, die wir für Sie auf GitHub bereitstellen. Speichern Sie sie in einem lokalen Verzeichnis, das Sie mit dem Parameter *-DestDir* angeben. Sie können den Wert des Parameters *-DestDir* in ein beliebiges lokales Verzeichnis ändern. Wenn *-DestDir* nicht vorhanden ist, wird es vom PowerShell-Skript erstellt.
 
->[AZURE.NOTE] Möglicherweise müssen Sie beim Ausführen des folgenden PowerShell-Skripts die Option **Als Administrator ausführen** verwenden, wenn Sie Administratorrechte benötigen, um Ihr *DestDir* zu erstellen oder darin zu schreiben.
+>[AZURE.NOTE] Möglicherweise müssen Sie beim Ausführen des folgenden PowerShell-Skripts die Option **Als Administrator ausführen** verwenden, wenn Sie Administratorrechte benötigen, um Ihr *DestDir*-Verzeichnis zu erstellen oder darin zu schreiben.
 
 	$source = "https://raw.githubusercontent.com/Azure/Azure-MachineLearning-DataScience/master/Misc/SQLDW/Download_Scripts_SQLDW_Walkthrough.ps1"
 	$ps1_dest = "$pwd\Download_Scripts_SQLDW_Walkthrough.ps1"
@@ -124,7 +131,7 @@ Bei der ersten Ausführung des PowerShell-Skripts werden Sie aufgefordert, die I
 
 Diese **PowerShell-Skriptdatei** führt folgende Aufgaben aus:
 
-- **Herunterladen und Installieren von AzCopy**, falls AzCopy noch nicht installiert ist
+- **Herunterladen und Installieren von AzCopy**, falls AzCopy noch nicht installiert ist.
 
 		$AzCopy_path = SearchAzCopy
     	if ($AzCopy_path -eq $null){
@@ -146,7 +153,7 @@ Diese **PowerShell-Skriptdatei** führt folgende Aufgaben aus:
 					$env_path = $env:Path
 				}	
 
-- **Kopieren von Daten in Ihr privates Blobspeicherkonto** aus dem öffentlichen Blob mit AzCopy
+- **Kopieren von Daten in Ihr privates Blobspeicherkonto** aus dem öffentlichen Blob mit AzCopy.
 
 		Write-Host "AzCopy is copying data from public blob to yo storage account. It may take a while..." -ForegroundColor "Yellow"	
 		$start_time = Get-Date
@@ -158,7 +165,7 @@ Diese **PowerShell-Skriptdatei** führt folgende Aufgaben aus:
     	Write-Host "This step (copying data from public blob to your storage account) takes $total_seconds seconds." -ForegroundColor "Green"
 
 
-- **Laden von Daten mithilfe von Polybase (durch Ausführen von LoadDataToSQLDW.sql) in Ihr Azure SQL Data Warehouse** aus Ihrem privaten Blob-Speicherkonto mit den folgenden Befehlen.
+- **Laden von Daten mithilfe von Polybase (durch Ausführen von LoadDataToSQLDW.sql) in Ihr Azure SQL Data Warehouse** aus Ihrem privaten Blobspeicherkonto mit den folgenden Befehlen.
 	
 	- Erstellen eines Schemas
 
@@ -313,7 +320,7 @@ Diese **PowerShell-Skriptdatei** führt folgende Aufgaben aus:
 
 ![Grafik 21][21]
 
->[AZURE.TIP] **Verwenden Ihrer eigenen Daten:** Wenn Ihre Daten auf Ihrem lokalen Computer in einer realen Anwendung gespeichert sind, können Sie AzCopy dennoch zum Hochladen lokaler Daten in Ihren privaten Azure-Blobspeicher verwenden. Sie müssen im AzCopy-Befehl der PowerShell-Skriptdatei nur den **Quellspeicherort**, `$Source = "http://getgoing.blob.core.windows.net/public/nyctaxidataset"`, in das lokale Verzeichnis ändern, das Ihre Daten enthält.
+>[AZURE.TIP] **Verwenden eigener Daten:** Wenn Ihre Daten auf Ihrem lokalen Computer in einer realen Anwendung gespeichert sind, können Sie AzCopy dennoch zum Hochladen lokaler Daten in Ihren privaten Azure-Blobspeicher verwenden. Sie müssen im AzCopy-Befehl der PowerShell-Skriptdatei nur den **Quellspeicherort**, `$Source = "http://getgoing.blob.core.windows.net/public/nyctaxidataset"`, in das lokale Verzeichnis ändern, das Ihre Daten enthält.
 	
 >[AZURE.TIP] Wenn Ihre Daten sich bereits in Ihrem privaten Azure-Blobspeicher in einer realen Anwendung befinden, können Sie den AzCopy-Schritt im PowerShell-Skript überspringen und die Daten direkt in Azure SQL Data Warehouse hochladen. Dies erfordert zusätzliche Bearbeitung des Skripts, um es dem Format Ihrer Daten anzupassen.
 
@@ -326,11 +333,11 @@ Nach erfolgreicher Ausführung wird folgender Bildschirm angezeigt:
 
 ## <a name="dbexplore"></a>Durchsuchen von Daten und Entwickeln von Features in Azure SQL Data Warehouse
 
-In diesem Abschnitt durchsuchen wir Daten und generieren Features durch das direkte Ausführen von SQL-Abfragen für Azure SQL Data Warehouse mit **Visual Studio Data Tools**. Alle in diesem Abschnitt verwendeten SQL-Abfragen finden Sie im Beispielskript *SQLDW\_Explorations.sql*. Diese Datei wurde bereits vom PowerShell-Skript in das lokale Verzeichnis heruntergeladen. Sie können sie auch aus [Github](https://raw.githubusercontent.com/Azure/Azure-MachineLearning-DataScience/master/Misc/SQLDW/SQLDW_Explorations.sql) abrufen. In die Datei in Github sind jedoch keine Azure SQL Data Warehouse-Informationen eingebunden.
+In diesem Abschnitt durchsuchen wir Daten und generieren Features durch das direkte Ausführen von SQL-Abfragen für Azure SQL Data Warehouse mit **Visual Studio Data Tools**. Alle in diesem Abschnitt verwendeten SQL-Abfragen finden Sie im Beispielskript *SQLDW\_Explorations.sql*. Diese Datei wurde bereits vom PowerShell-Skript in das lokale Verzeichnis heruntergeladen. Sie können sie auch aus [GitHub](https://raw.githubusercontent.com/Azure/Azure-MachineLearning-DataScience/master/Misc/SQLDW/SQLDW_Explorations.sql) abrufen. In die Datei in Github sind jedoch keine Azure SQL Data Warehouse-Informationen eingebunden.
 
-Verbinden Sie sich mithilfe von Visual Studio unter Verwendung des Anmeldenamens und Kennworts von SQL Data Warehouse mit Ihrem Azure SQL Data Warehouse, und öffnen Sie den **SQL Objekt-Explorer**, um zu überprüfen, ob Datenbank sowie Tabellen importiert wurden. Rufen Sie die Datei *SQLDW\_Explorations.sql* ab.
+Verbinden Sie sich mithilfe von Visual Studio unter Verwendung des Anmeldenamens und Kennworts von SQL Data Warehouse mit Ihrem Azure SQL Data Warehouse, und öffnen Sie den **SQL-Objekt-Explorer**, um zu überprüfen, ob Datenbank sowie Tabellen importiert wurden. Rufen Sie die Datei *SQLDW\_Explorations.sql* ab.
 
->[AZURE.NOTE] Um einen Parallel Data Warehouse-Abfrage-Editor (PDW) zu öffnen, verwenden Sie den Befehl **Neue Abfrage**, während Ihr PDW im **SQL Objekt-Explorer** ausgewählt wird. Der standardmäßige SQL-Abfrage-Editor wird von PDW nicht unterstützt.
+>[AZURE.NOTE] Um einen Parallel Data Warehouse-Abfrage-Editor (PDW) zu öffnen, verwenden Sie den Befehl **Neue Abfrage**, während Ihr PDW im **SQL-Objekt-Explorer** ausgewählt ist. Der standardmäßige SQL-Abfrage-Editor wird von PDW nicht unterstützt.
 
 Hier sind die Arten der in diesem Abschnitt durchgeführten Aufgaben zum Durchsuchen von Daten und Generieren von Features aufgeführt:
 
@@ -350,7 +357,7 @@ Diese Abfragen ermöglichen eine schnelle Überprüfung der Anzahl der Zeilen un
 	-- Report number of columns in table <nyctaxi_trip>
 	SELECT COUNT(*) FROM information_schema.columns WHERE table_name = '<nyctaxi_trip>' AND table_schema = '<schemaname>'
 
-Sie sollten 173.179.759 Zeilen und 14 Spalten erhalten.
+**Ausgabe**: Sie sollten 173.179.759 Zeilen und 14 Spalten erhalten.
 
 ### Durchsuchen: Verteilung der Fahrten nach "medallion"
 
@@ -362,7 +369,7 @@ In diesem Beispiel werden die „medallions“ (Taxinummern) mit mehr als 100 a
 	GROUP BY medallion
 	HAVING COUNT(*) > 100
 
-Die Abfrage sollte 13.369 „medallions“ zurückgeben.
+**Ausgabe:** Die Abfrage sollte eine Tabelle mit Zeilen zurückgeben, die 13.369 Taxinummern und die Anzahl der mit diesen 2013 erfolgten Fahrten enthalten. Die letzte Spalte enthält die Anzahl erfolgter Fahrten.
 
 ### Durchsuchen: Verteilung der Fahrten nach "medallion" und "hack\_license"
 
@@ -373,6 +380,8 @@ In diesem Beispiel werden die Taxinummern („medallions“) und Fahrer („hack
 	WHERE pickup_datetime BETWEEN '20130101' AND '20130131'
 	GROUP BY medallion, hack_license
 	HAVING COUNT(*) > 100
+
+**Ausgabe:** Die Abfrage sollte eine Tabelle mit 13.369 Zeilen zurückgeben, die 13.369 Fahrzeug-/Fahrer-IDs enthalten, die 2013 mehr als 100 Fahrten absolviert haben. Die letzte Spalte enthält die Anzahl erfolgter Fahrten.
 
 ### Bewertung der Datenqualität: Überprüfen der Einträge auf falsche Werte für „longitude“ und/oder „latitude“
 
@@ -387,9 +396,11 @@ In diesem Beispiel wird untersucht, ob die Felder "longitude" und/oder "latitude
 	OR    (pickup_longitude = '0' AND pickup_latitude = '0')
 	OR    (dropoff_longitude = '0' AND dropoff_latitude = '0'))
 
+**Ausgabe:** Die Abfrage gibt 837.467 Fahrten mit ungültigen Feldern für „longitude“ und/oder „latitude“ zurück.
+
 ### Durchsuchen: Vergleich der Verteilung von Fahrten mit bzw. ohne Trinkgeld
 
-Dieses Beispiel ermittelt die Anzahl von Fahrten mit und ohne Trinkgeld in einem bestimmten Zeitraum (oder im vollständigen Dataset, wenn das ganze Jahr verwendet wird). Diese Verteilung spiegelt die binäre Bezeichnerverteilung wider, die später für die Modellierung der binären Klassifizierung verwendet wird.
+Dieses Beispiel ermittelt die Anzahl von Fahrten mit und ohne Trinkgeld in einem bestimmten Zeitraum (oder im vollständigen Dataset, wenn wie hier das ganze Jahr verwendet wird). Diese Verteilung spiegelt die binäre Bezeichnerverteilung wider, die später für die Modellierung der binären Klassifizierung verwendet wird.
 
 	SELECT tipped, COUNT(*) AS tip_freq FROM (
 	  SELECT CASE WHEN (tip_amount > 0) THEN 1 ELSE 0 END AS tipped, tip_amount
@@ -397,11 +408,11 @@ Dieses Beispiel ermittelt die Anzahl von Fahrten mit und ohne Trinkgeld in einem
 	  WHERE pickup_datetime BETWEEN '20130101' AND '20131231') tc
 	GROUP BY tipped
 
-Die Abfrage sollte die folgenden Werte für Trinkgeldzahlungen zurückgeben: In 90.447.622 Fällen wurde Trinkgeld gegeben und in 82.264.709 Fällen nicht.
+**Ausgabe**: Die Abfrage sollte die folgenden Werte für Trinkgeldzahlungen für 2013 zurückgeben: 90.447.622 Fälle mit Trinkgeld und 82.264.709 Fälle ohne.
 
 ### Durchsuchen: Verteilung von Trinkgeld nach Klasse/Bereich
 
-In diesem Beispiel wird die Verteilung von Trinkgeldbereichen in einem bestimmten Zeitraum (oder im vollständigen DataSet, wenn das ganze Jahr verwendet wird) berechnet. Dies ist die Verteilung der Bezeichnerklassen, die später für die Modellierung der Multiklassenklassifizierung verwendet wird.
+In diesem Beispiel wird die Verteilung von Trinkgeldbereichen in einem bestimmten Zeitraum (oder im vollständigen DataSet, wenn das ganze Jahr verwendet wird) berechnet. Dies ist die Verteilung der Bezeichnerklassen, die später für die Modellierung der Multi-Klassen-Klassifizierung verwendet wird.
 
 	SELECT tip_class, COUNT(*) AS tip_freq FROM (
 		SELECT CASE
@@ -414,6 +425,16 @@ In diesem Beispiel wird die Verteilung von Trinkgeldbereichen in einem bestimmte
 	FROM <schemaname>.<nyctaxi_fare>
 	WHERE pickup_datetime BETWEEN '20130101' AND '20131231') tc
 	GROUP BY tip_class
+
+**Ausgabe:**
+
+|tip\_class | tip\_freq |
+| --------- | -------|
+|1 | 82230915 |
+|2 | 6198803 |
+|3 | 1932223 |
+|0 | 82264625 |
+|4 | 85765 |
 
 ### Durchsuchen: Berechnen und Vergleichen der Fahrtlängen
 
@@ -430,7 +451,7 @@ In diesem Beispiel werden die Werte von "longitude" und "latitude" für Start- u
 	  DROP FUNCTION fnCalculateDistance
 	GO
 
-	-- User-defined function calculate the direct distance between two geographical coordinates.
+	-- User-defined function to calculate the direct distance  in mile between two geographical coordinates.
 	CREATE FUNCTION [dbo].[fnCalculateDistance] (@Lat1 float, @Long1 float, @Lat2 float, @Long2 float)
 	
 	RETURNS float
@@ -511,9 +532,19 @@ Es folgt ein Beispiel zum Aufrufen dieser Funktion, um Features in Ihrer SQL-Abf
 	AND CAST(dropoff_latitude AS float) BETWEEN -90 AND 90
 	AND pickup_longitude != '0' AND dropoff_longitude != '0'
 
+**Ausgabe:** Diese Abfrage generiert eine Tabelle (mit 2.803.538 Zeilen) mit Start- und Zielkoordinaten (in geografischen Breiten- und Längengraden) und entsprechenden direkten Entfernungen in Meilen. Dies sind die Ergebnisse für die ersten 3 Zeilen:
+
+|pickup\_latitude | pickup\_longitude | dropoff\_latitude |dropoff\_longitude | DirectDistance |
+|---| --------- | -------|-------| --------- | -------|
+|1 | 40,731804 | -74,001083 | 40,736622 | -73,988953 | 0,7169601222 |
+|2 | 40,715794 | -74.010635 | 40,725338 | -74,00399 | 0,7448343721 |
+|3 | 40,761456 | -73,999886 | 40,766544 | -73,988228 | 0,7037227967 |
+
+
+
 ### Vorbereiten von Daten für die Modellerstellung
 
-Die folgende Abfrage führt die Tabellen **nyctaxi\_trip** und **nyctaxi\_fare** zusammen, generiert einen Bezeichner **tipped** für die binäre Klassifizierung und einen Bezeichner **tip\_class** für die Multiklassenklassifizierung und extrahiert eine Stichprobe aus dem vollständig verbundenen Dataset. Das Sampling erfolgt durch das Abrufen einer Teilmenge der Fahrten basierend auf der Startzeit. Diese Abfrage kann kopiert und dann direkt in das [Reader][reader]-Modul in [Azure Machine Learning Studio](https://studio.azureml.net) eingefügt werden, um eine direkte Datenerfassung aus der SQL-Datenbankinstanz in Azure zu erzielen. Die Abfrage schließt DataSets mit falschen Koordinaten (0, 0) aus.
+Die folgende Abfrage führt die Tabellen **nyctaxi\_trip** und **nyctaxi\_fare** zusammen, generiert den Bezeichner **tipped** für die binäre Klassifizierung und den Bezeichner **tip\_class** für die Multiklassenklassifizierung und extrahiert eine Stichprobe aus dem vollständig verbundenen Dataset. Die Stichprobennahme erfolgt durch das Abrufen einer Teilmenge der Fahrten basierend auf der Startzeit. Diese Abfrage kann kopiert und dann direkt in das [Reader][reader]-Modul in [Azure Machine Learning Studio](https://studio.azureml.net) eingefügt werden, um eine direkte Datenerfassung aus der SQL-Datenbankinstanz in Azure zu erzielen. Die Abfrage schließt DataSets mit falschen Koordinaten (0, 0) aus.
 
 	SELECT t.*, f.payment_type, f.fare_amount, f.surcharge, f.mta_tax, f.tolls_amount, 	f.total_amount, f.tip_amount,
 	    CASE WHEN (tip_amount > 0) THEN 1 ELSE 0 END AS tipped,
@@ -815,7 +846,7 @@ Wir können nun mit der Modellerstellung und -bereitstellung in [Azure Machine L
 
 
 
-Melden Sie sich zum Starten der Modellierungsübung im **Azure Machine Learning**-Arbeitsbereich an. Wenn Sie noch keinen Machine Learning-Arbeitsbereich erstellt haben, lesen Sie unter [Erstellen eines Azure ML-Arbeitsbereichs](machine-learning-create-workspace.md) nach.
+Melden Sie sich zum Starten der Modellierungsübung bei Ihrem **Azure Machine Learning**-Arbeitsbereich an. Wenn Sie noch keinen Machine Learning-Arbeitsbereich erstellt haben, lesen Sie unter [Erstellen eines Azure ML-Arbeitsbereichs](machine-learning-create-workspace.md) nach.
 
 1. Informationen zu den ersten Schritten in Azure Machine Learning finden Sie unter [Was ist Azure Machine Learning Studio?](machine-learning-what-is-ml-studio.md).
 
@@ -838,7 +869,7 @@ Ein typisches Trainingsexperiment umfasst die folgenden Schritte:
 
 Sie haben in dieser Übung bereits die Daten in SQL Data Warehouse untersucht und bearbeitet und sich für eine Stichprobengröße für die Erfassung in Azure ML entschieden. Im Folgenden ist das Verfahren zum Erstellen eines oder mehrerer der Vorhersagemodelle aufgeführt:
 
-1. Erfassen Sie die Daten in Azure ML mithilfe des [Reader][reader]-Moduls im Bereich **Data Input and Output**. Weitere Informationen finden Sie auf der Referenzseite zum [Reader][reader]-Modul.
+1. Erfassen Sie die Daten in Azure ML mithilfe des [Reader][reader]-Moduls im Abschnitt **Data Input and Output**. Weitere Informationen finden Sie auf der Referenzseite zum [Reader][reader]-Modul.
 
 	![Azure ML-Reader][17]
 
@@ -860,7 +891,7 @@ Ein Beispiel für ein binäres Klassifizierungsexperiment zum Lesen von Daten di
 
 > [AZURE.IMPORTANT] In den Modellierungsbeispielen für Datenextraktion und Stichprobengenerierung in den vorherigen Abschnitten sind **alle Bezeichner für die drei Modellierungsübungen in der Abfrage enthalten**. Ein wichtiger (erforderlicher) Schritt in den einzelnen Modellierungsübungen ist das **Ausschließen** unnötiger Bezeichner für die anderen beiden Probleme und alle anderen **Zielverluste**. Wenn Sie z. B. eine binäre Klassifizierung anwenden, verwenden Sie den Bezeichner **tipped** und schließen die Felder **tip\_class**, **tip\_amount** und **total\_amount** aus. Letztere sind Zielverluste, da sie das bezahlte Trinkgeld beinhalten.
 >
-> Um nicht benötigte Spalten oder Zielverluste auszuschließen, können Sie das Modul [Project Columns][project-columns] oder den [Metadaten-Editor][metadata-editor] verwenden. Weitere Informationen finden Sie auf den Referenzseiten [Project Columns][project-columns] und [Metadaten-Editor][metadata-editor].
+> Um nicht benötigte Spalten oder Zielverluste auszuschließen, können Sie das Modul [Project Columns][project-columns] oder den [Metadata Editor][metadata-editor] verwenden. Weitere Informationen finden Sie auf den Referenzseiten [Project Columns][project-columns] und [Metadaten-Editor][metadata-editor].
 
 ## <a name="mldeploy"></a>Bereitstellen von Modellen in Azure Machine Learning
 
@@ -933,4 +964,4 @@ Diese exemplarische Vorgehensweise und die zugehörigen Skripts und IPython Note
 [project-columns]: https://msdn.microsoft.com/library/azure/1ec722fa-b623-4e26-a44e-a50c6d726223/
 [reader]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

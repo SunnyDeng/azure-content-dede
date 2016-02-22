@@ -9,11 +9,11 @@
 
 <tags 
 	ms.service="service-bus" 
-	ms.workload="tbd" 
+	ms.workload="na" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="nodejs" 
 	ms.topic="article" 
-	ms.date="10/07/2015" 
+	ms.date="02/08/2016" 
 	ms.author="sethm"/>
 
 
@@ -130,7 +130,7 @@ Zwei Filter, die eine Wiederholungslogik implementieren, sind im Azure SDK für 
 
 Themenabonnements werden ebenfalls mit dem **ServiceBusService**-Objekt erstellt. Abonnements werden benannt und können einen optionalen Filter aufweisen, der die Nachrichten einschränkt, die an die virtuelle Warteschlange des Abonnements übermittelt werden.
 
-> [AZURE.NOTE]Abonnements sind persistent und bleiben erhalten, bis sie selbst oder die mit ihnen verbundenen Themen gelöscht werden. Wenn Ihre Anwendung Logik beinhaltet, sollte sie bei der Erstellung eines Abonnements zuerst mithilfe der **getSubscription**-Methode überprüfen, ob das Abonnement bereits vorhanden ist.
+> [AZURE.NOTE] Abonnements sind persistent und bleiben erhalten, bis sie selbst oder die mit ihnen verbundenen Themen gelöscht werden. Wenn Ihre Anwendung Logik beinhaltet, sollte sie bei der Erstellung eines Abonnements zuerst mithilfe der **getSubscription**-Methode überprüfen, ob das Abonnement bereits vorhanden ist.
 
 ### Erstellen eines Abonnements mit dem Standardfilter (MatchAll)
 
@@ -152,7 +152,7 @@ Der von Abonnements unterstützte flexibelste Filtertyp ist **SqlFilter**, der e
 
 Sie können mithilfe der **createRule**-Methode des **ServiceBusService**-Objekts Filter zu einem Abonnement hinzufügen. Durch diese Methode können Sie neue Filter zu einem vorhandenen Abonnement hinzufügen.
 
-> [AZURE.NOTE]Da der Standardfilter automatisch auf alle neuen Abonnements angewendet wird, müssen Sie zuerst den Standardfilter entfernen. Ansonsten überschreibt **MatchAll** alle Filter, die Sie angeben. Sie können die Standardregel mithilfe der **deleteRule**-Methode des **ServiceBusService**-Objekts entfernen.
+> [AZURE.NOTE] Da der Standardfilter automatisch auf alle neuen Abonnements angewendet wird, müssen Sie zuerst den Standardfilter entfernen. Ansonsten überschreibt **MatchAll** alle Filter, die Sie angeben. Sie können die Standardregel mithilfe der **deleteRule**-Methode des **ServiceBusService**-Objekts entfernen.
 
 Mit dem folgenden Beispiel wird ein Abonnement namens `HighMessages` mit einem **SqlFilter** erstellt, der nur Nachrichten auswählt, deren benutzerdefinierte **messagenumber**-Eigenschaft größer ist als 3:
 
@@ -316,7 +316,7 @@ Nachdem Sie nun mit den Grundlagen der Service Bus-Themen vertraut sind, finden 
 -   API-Referenz für [SqlFilter][].
 -   Besuchen Sie das [Azure SDK für Node][]-Repository auf GitHub.
 
-  [Azure SDK für Node]: https://github.com/WindowsAzure/azure-sdk-for-node
+  [Azure SDK für Node]: https://github.com/Azure/azure-sdk-for-node
   [klassische Azure-Portal]: http://manage.windowsazure.com
   [klassischen Azure-Portal]: http://manage.windowsazure.com
   [SqlFilter.SqlExpression]: http://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
@@ -328,4 +328,4 @@ Nachdem Sie nun mit den Grundlagen der Service Bus-Themen vertraut sind, finden 
   [Node.js-Webanwendung mit Speicher]: ../cloud-services/storage-nodejs-use-table-storage-cloud-service-app.md
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0211_2016-->

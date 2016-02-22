@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/13/2015"
+	ms.date="02/10/2016"
 	ms.author="brohrer;garye" />
 
 
@@ -30,7 +30,7 @@ Das **Microsoft Azure Machine Learning – Cheat Sheet für Algorithmen** erleic
 
 Laden Sie das Cheat Sheet für Algorithmen für maschinelles Lernen herunter, mit dem Sie einen Algorithmus für maschinelles Lernen auswählen können. Drucken Sie das Cheat Sheet in Tabloid-Größe (11 x 17 Zoll) aus, um schnell darauf zugreifen zu können.
 
-**Sie können das Cheat Sheet hier herunterladen: [Microsoft Azure Machine Learning Algorithm Cheat Sheet](http://download.microsoft.com/download/A/6/1/A613E11E-8F9C-424A-B99D-65344785C288/microsoft-machine-learning-algorithm-cheat-sheet-v6.pdf) \(in englischer Sprache).**
+**Sie können das Cheat Sheet hier herunterladen: [Microsoft Azure Machine Learning Algorithm Cheat Sheet](http://download.microsoft.com/download/A/6/1/A613E11E-8F9C-424A-B99D-65344785C288/microsoft-machine-learning-algorithm-cheat-sheet-v6.pdf)** (in englischer Sprache).
 
 ![Machine Learning Cheat Sheet für Algorithmen: Wie wähle ich einen Algorithmus für maschinelles Lernen aus?][cheat-sheet]
 
@@ -87,4 +87,4 @@ Laden Sie das Cheat Sheet für Algorithmen für maschinelles Lernen herunter, mi
 [k-means-clustering]: https://msdn.microsoft.com/library/azure/5049a09b-bd90-4c4e-9b46-7c87e3a36810/
 [one-vs-all-multiclass]: https://msdn.microsoft.com/library/azure/7191efae-b4b1-4d03-a6f8-7205f87be664/
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

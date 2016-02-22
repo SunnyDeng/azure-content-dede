@@ -3,7 +3,7 @@
 	description="Zusätzliche Informationen zur Bibliothek des Serialisierungsprogramms im Azure IoT-Geräte-SDK für C"
 	services="iot-hub"
 	documentationCenter=""
-	authors="MichelBarnett"
+	authors="olivierbloch"
 	manager="timlt"
 	editor=""/>
 
@@ -14,13 +14,13 @@
      ms.tgt_pltfrm="na"
      ms.workload="na"
      ms.date="11/10/2015"
-     ms.author="michelb"/>
+     ms.author="obloch"/>
 
 # Microsoft Azure IoT-Geräte-SDK für C – weitere Informationen zum Serialisierungsprogramm
 
 Im [ersten Artikel](iot-hub-device-sdk-c-intro.md) dieser Serie wurde das **Azure IoT-Geräte-SDK für C** vorgestellt. Im nächsten Artikel erhalten Sie eine ausführlichere Beschreibung von [**IoTHubClient**](iot-hub-device-sdk-c-iothubclient.md). Der vorliegende Artikel bietet eine detaillierte Beschreibung der letzten Komponente, der Bibliothek des **Serialisierungsprogramms**, und schließt die Artikelreihe zum SDK ab.
 
-Im Einführungsartikel wurde die Verwendung der Bibliothek des **Serialisierungsprogramms** zum Senden von Ereignissen an und zum Empfangen von Meldungen von IoT Hub beschrieben. In diesem Artikel wird genauer erläutert, wie Sie Ihre Daten mit der Makrosprache des **Serialisierungsprogramms** modellieren. Im Artikel wird ebenfalls im Detail beschrieben, wie die Serialisierung von Nachrichten durch die Bibliothek funktioniert (und wie Sie das Serialisierungsverhalten in einigen Fällen steuern können). Darüber hinaus werden einige Parameter beschrieben, die Sie ändern können und die die Größe der von Ihnen erstellten Modelle bestimmen.
+Im Einführungsartikel wurde die Verwendung der Bibliothek des **Serialisierungsprogramms** zum Senden von Ereignissen an und zum Empfangen von Nachrichten von IoT Hub beschrieben. In diesem Artikel wird genauer erläutert, wie Sie Ihre Daten mit der Makrosprache des **Serialisierungsprogramms** modellieren. Im Artikel wird ebenfalls im Detail beschrieben, wie die Serialisierung von Nachrichten durch die Bibliothek funktioniert (und wie Sie das Serialisierungsverhalten in einigen Fällen steuern können). Darüber hinaus werden einige Parameter beschrieben, die Sie ändern können und die die Größe der von Ihnen erstellten Modelle bestimmen.
 
 Zum Abschluss werden einige in vorherigen Artikeln bereits erläuterte Themen erneut aufgegriffen, wie z. B. die Behandlung von Nachrichten und Eigenschaften. Sie werden feststellen, dass diese Features bei Verwendung der Bibliothek des **Serialisierungsprogramms** genauso funktionieren wie mit der **IoTHubClient**-Bibliothek.
 
@@ -52,7 +52,7 @@ Modelle umfassen eine Definition der Ereignisse, die Sie als Eingangsereignisse 
 
 In diesem Beispiel werden keine weiteren Datentypen gezeigt, die vom SDK unterstützt werden. Darum wird es im Anschluss gehen.
 
-> [AZURE.NOTE]Bei IoT Hub werden die Daten, die ein Gerät an den Hub sendet, als *Ereignisse* bezeichnet, die Modelliersprache dagegen bezeichnet sie als *Daten* (definiert unter Verwendung von **WITH\_DATA**). Ebenso werden bei IoT Hub die an Geräte gesendeten Daten als *Nachrichten* bezeichnet, während die Modelliersprache sie als *Aktionen* bezeichnet (definiert unter Verwendung von **WITH\_ACTION**). Denken Sie daran, dass diese Begriffe in diesem Artikel synonym verwendet werden können.
+> [AZURE.NOTE] Bei IoT Hub werden die Daten, die ein Gerät an den Hub sendet, als *Ereignisse* bezeichnet, die Modelliersprache dagegen bezeichnet sie als *Daten* (definiert unter Verwendung von **WITH\_DATA**). Ebenso werden bei IoT Hub die an Geräte gesendeten Daten als *Nachrichten* bezeichnet, während die Modelliersprache sie als *Aktionen* bezeichnet (definiert unter Verwendung von **WITH\_ACTION**). Denken Sie daran, dass diese Begriffe in diesem Artikel ggf. synonym verwendet werden.
 
 ### Unterstützte Datentypen
 
@@ -188,7 +188,7 @@ Bei Ausführung dieses Codes wird folgende Nachricht an IoT Hub gesendet:
 {"aDouble":1.100000000000000, "aInt":2, "aFloat":3.000000, "aLong":4, "aInt8":5, "auInt8":6, "aInt16":7, "aInt32":8, "aInt64":9, "aBool":true, "aAsciiCharPtr":"ascii string 1", "aDateTimeOffset":"2015-09-14T21:18:21Z", "aGuid":"00010203-0405-0607-0809-0A0B0C0D0E0F", "aBinary":"AQID"}
 ```
 
-Beachten Sie, dass die Serialisierung in JSON erfolgt, dem Format, das durch die Bibliothek des **Serialisierungsprogramms** generiert wird. Beachten Sie auch, dass jedes Element des serialisierten JSON-Objekts den Elementen des in unserem Modell definierten **TestType**-Ereignisses entspricht. Die Werte entsprechen ebenfalls exakt den im Code verwendeten Werten. Beachten Sie jedoch, dass die Binärdaten Base64-codiert sind: „AQID“ ist die Base64-Codierung von {0x01, 0x02, 0x03}.
+Beachten Sie, dass die Serialisierung in JSON erfolgt, dem Format, das von der Bibliothek des **Serialisierungsprogramms** generiert wird. Beachten Sie auch, dass jedes Element des serialisierten JSON-Objekts den Elementen des in unserem Modell definierten **TestType**-Ereignisses entspricht. Die Werte entsprechen ebenfalls exakt den im Code verwendeten Werten. Beachten Sie jedoch, dass die Binärdaten Base64-codiert sind: „AQID“ ist die Base64-Codierung von {0x01, 0x02, 0x03}.
 
 Dieses Beispiel veranschaulicht den Vorteil der Bibliothek des **Serialisierungsprogramms**. Mit dieser Bibliothek können wir JSON-Daten an die Cloud senden, ohne uns explizit mit der Serialisierung in unserer Anwendung beschäftigen zu müssen. Wir müssen nur die Werte der Datenereignisse in unserem Modell festlegen und dann einfach APIs aufrufen, um diese Ereignisse an die Cloud zu senden.
 
@@ -425,7 +425,7 @@ Vorausgesetzt, dass die Werte für Temperatur, Luftfeuchtigkeit und Uhrzeit fest
 {"Temperature":75, "Humidity":45, "Time":"2015-09-17T18:45:56Z"}
 ```
 
-Manchmal sollen jedoch nur *einige* Eigenschaften des Modells an die Cloud gesendet werden (dies gilt insbesondere, wenn das Modell eine große Anzahl von Datenereignissen umfasst). Es ist nützlich, nur eine Teilmenge der Datenereignisse zu senden, so wie im Beispiel weiter oben:
+Mitunter sollen jedoch nur *einige* Eigenschaften des Modells an die Cloud gesendet werden (dies gilt insbesondere, wenn das Modell eine große Anzahl von Datenereignissen umfasst). Es ist nützlich, nur eine Teilmenge der Datenereignisse zu senden, so wie im Beispiel weiter oben:
 
 ```
 {"Temperature":75, "Time":"2015-09-17T18:45:56Z"}
@@ -435,7 +435,7 @@ Damit wird exakt das gleiche serialisierte Ereignis generiert, als ob ein **Temp
 
 Das Entscheidende hier ist: Wenn Sie mehrere Datenereignisse an **SERIALIZE** übergeben, wird angenommen, dass jedes Ereignis eine Eigenschaft in einem einzelnen JSON-Objekt ist.
 
-Die beste Methode hängt von Ihnen und Ihrer Meinung über Ihr Modells ab. Wenn Sie „Ereignisse“ an die Cloud senden und jedes Ereignis einen definierten Satz von Eigenschaften umfasst, ist die erste Methode für Sie sinnvoll. In diesem Fall verwenden Sie **DECLARE\_STRUCT**, um die Struktur jedes Ereignisses zu definieren, und schließen die Ereignisse dann mit dem **WITH\_DATA**-Makro in Ihr Modell ein. Anschließend senden Sie jedes Ereignis auf die gleiche Weise wie im ersten oben gezeigten Beispiel. Bei dieser Methode übergeben Sie nur ein einzelnes Datenereignis an **SERIALIZER**.
+Die beste Methode hängt von Ihnen und Ihrer Meinung über Ihr Modell ab. Wenn Sie „Ereignisse“ an die Cloud senden und jedes Ereignis einen definierten Satz von Eigenschaften umfasst, ist die erste Methode für Sie sinnvoll. In diesem Fall verwenden Sie **DECLARE\_STRUCT**, um die Struktur jedes Ereignisses zu definieren, und schließen die Ereignisse dann mit dem **WITH\_DATA**-Makro in Ihr Modell ein. Anschließend senden Sie jedes Ereignis auf die gleiche Weise wie im ersten oben gezeigten Beispiel. Bei dieser Methode übergeben Sie nur ein einzelnes Datenereignis an **SERIALIZER**.
 
 Wenn Sie Ihr Modell eher aus objektorientierter Perspektive betrachten, eignet sich die zweite Methode wahrscheinlich besser für Sie. In diesem Fall stellen die Elemente, die Sie mithilfe von **WITH\_DATA** definieren, die „Eigenschaften“ Ihres Objekts dar. Sie können eine beliebige Teilmenge von Ereignissen an **SERIALIZE** übergeben, je nachdem, welche Statusinformationen über Ihr „Objekt“ Sie an die Cloud senden möchten.
 
@@ -658,4 +658,4 @@ Dieser Artikel beschreibt detailliert die einzigartigen Aspekte der Bibliothek d
 
 Dies ist auch der Abschluss der dreiteiligen Artikelserie zur Entwicklung von Anwendungen mit dem **Azure IoT-Geräte-SDK für C**. Diese Informationen sollten nicht nur für den Einstieg genügen, sondern vermitteln auch tiefgreifende Kenntnisse zur Funktionsweise der APIs. Für weitere Informationen stehen einige Beispiele im SDK zur Verfügung, die hier nicht behandelt werden. Darüber hinaus ist die [SDK-Dokumentation](https://github.com/Azure/azure-iot-sdks) eine gute Informationsquelle.
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0211_2016-->

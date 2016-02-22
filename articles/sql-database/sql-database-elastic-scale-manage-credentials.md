@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/11/2015" 
+	ms.date="02/04/2016" 
 	ms.author="ddove;sidneyh"/>
 
 # Anmeldeinformationen für den Zugriff auf die Clientbibliothek für elastische Datenbanken
 
-Die [Clientbibliothek für elastische Datenbanken](http://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/) verwendet drei verschiedene Arten von Anmeldeinformationen. Mit den Anmeldeinformationen wird auf den [Shard-Zuordnungs-Manager](sql-database-elastic-scale-shard-map-management.md) zugegriffen. Verwenden Sie jeweils die Anmeldeinformationen mit den geringstmöglichen Zugriffsrechten.
+Die [Clientbibliothek für elastische Datenbanken](http://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/) verwendet drei verschiedene Arten von Anmeldeinformationen für den Zugriff auf den [Shardzuordnungs-Manager](sql-database-elastic-scale-shard-map-management.md). Verwenden Sie jeweils die Anmeldeinformationen mit den geringstmöglichen Zugriffsrechten.
 
 * **Verwaltungsanmeldeinformationen**: Zum Erstellen oder Bearbeiten eines Shard-Zuordnungs-Managers. (Siehe [Glossar](sql-database-elastic-scale-glossary.md)) 
 * **Zugriffsanmeldeinformationen**: Zum Zugreifen auf einen vorhandenen Shard-Zuordnungs-Manager zum Abrufen von Informationen zu Shards
@@ -26,9 +26,9 @@ Die [Clientbibliothek für elastische Datenbanken](http://www.nuget.org/packages
 
 Informationen finden Sie auch unter [Verwalten von Datenbanken und Anmeldungen in Azure SQL-Datenbank](sql-database-manage-logins.md).
  
-## Verwalten von Anmeldeinformationen  
+## Informationen zu Anmeldeinformationen
 
-Die Verwaltungsanmeldeinformationen werden zum Erstellen eines [**ShardMapManager**](https://msdn.microsoft.com/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanager.aspx)-Objekts für Anwendungen verwendet, die Shard-Zuordnungen ändern. (Ein Beispiel finden Sie unter [Hinzufügen eines Shards mithilfe der Tools für elastische Datenbanken](sql-database-elastic-scale-add-a-shard.md).) Der Benutzer der Clientbibliothek für elastische Datenbanken erstellt die SQL-Benutzer und SQL-Anmeldungen und stellt sicher, dass diesen Lese-/Schreibberechtigungen für die globale Shard-Zuordnungsdatenbank und auch alle Shard-Datenbanken gewährt werden. Diese Anmeldeinformationen werden zum Verwalten der globalen und der lokalen Shard-Maps verwendet, wenn Änderungen an der Shard-Map vorgenommen werden. Verwenden Sie beispielsweise die Verwaltungsanmeldeinformationen, um das Objekt für den Shard-Zuordnungs-Manager zu erstellen (mit [**GetSqlShardMapManager**](https://msdn.microsoft.com/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanagerfactory.getsqlshardmapmanager.aspx)):
+Die Verwaltungsanmeldeinformationen werden zum Erstellen eines [**ShardMapManager**](https://msdn.microsoft.com/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanager.aspx)-Objekts für Anwendungen verwendet, die Shard-Zuordnungen ändern. (Ein Beispiel finden Sie unter [Hinzufügen von Shards mit den Tools für elastische Datenbanken](sql-database-elastic-scale-add-a-shard.md) und [Datenabhängiges Routing](sql-database-elastic-scale-data-dependent-routing.md).) Der Benutzer der Clientbibliothek für elastische Datenbanken erstellt die SQL-Benutzer und SQL-Anmeldungen und stellt sicher, dass diesen Lese-/Schreibberechtigungen für die globale Shardzuordnungs-Datenbank und auch alle Sharddatenbanken gewährt werden. Diese Anmeldeinformationen werden zum Verwalten der globalen und der lokalen Shard-Maps verwendet, wenn Änderungen an der Shard-Map vorgenommen werden. Verwenden Sie beispielsweise die Verwaltungsanmeldeinformationen, um das Objekt für den Shard-Zuordnungs-Manager zu erstellen (mit [**GetSqlShardMapManager**](https://msdn.microsoft.com/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanagerfactory.getsqlshardmapmanager.aspx)):
 
 	// Obtain a shard map manager. 
 	ShardMapManager shardMapManager = ShardMapManagerFactory.GetSqlShardMapManager( 
@@ -77,4 +77,4 @@ Genau wie bei den Administratoranmeldeinformationen verwenden Sie keine Werte im
 [AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
  
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0211_2016-->

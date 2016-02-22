@@ -14,7 +14,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="data-management"
-	ms.date="10/30/2015"
+	ms.date="02/04/2016"
 	ms.author="jroth" />
 
 # Gewusst wie: Verbessern der Leistung von SQL-Datenbankanwendungen mithilfe von Batchverarbeitung
@@ -41,7 +41,7 @@ Im ersten Teil dieses Artikels werden verschiedene Batchverarbeitungstechniken f
 ## Batchverarbeitungsstrategien
 
 ### Hinweis zu den Zeitangaben in den Ergebnissen dieses Themas
->[AZURE.NOTE]Die Ergebnisse sind keine Benchmarks, sondern veranschaulichen die **relative Leistung**. Die Zeitangaben basieren auf einem Durchschnittswert von mindestens zehn Testläufen. Bei den Vorgängen handelt es sich um Einfügungen in eine leere Tabelle. Die Testergebnisse wurden vor V12 ermittelt und entsprechen nicht unbedingt dem Durchsatz, der mit einer V12-Datenbank und den neuen [Dienstebenen](sql-database-service-tiers.md) erreicht wird. Der relative Nutzen der Batchverarbeitungstechnik dürfte jedoch ähnlich ausfallen.
+>[AZURE.NOTE] Die Ergebnisse sind keine Benchmarks, sondern veranschaulichen die **relative Leistung**. Die Zeitangaben basieren auf einem Durchschnittswert von mindestens zehn Testläufen. Bei den Vorgängen handelt es sich um Einfügungen in eine leere Tabelle. Die Testergebnisse wurden vor V12 ermittelt und entsprechen nicht unbedingt dem Durchsatz, der mit einer V12-Datenbank und den neuen [Dienstebenen](sql-database-service-tiers.md) erreicht wird. Der relative Nutzen der Batchverarbeitungstechnik dürfte jedoch ähnlich ausfallen.
 
 ### Transaktionen
 Es kommt Ihnen vielleicht etwas merkwürdig vor, die Erläuterung der Batchverarbeitung mit Informationen zu Transaktionen zu beginnen. Die Verwendung clientseitiger Transaktionen hat jedoch dezente Auswirkungen auf die serverseitige Batchverarbeitung, die zu einer Verbesserung der Leistung beitragen. Transaktionen können außerdem mit nur wenigen Codezeilen hinzugefügt werden. Dadurch lässt sich ohne großen Aufwand die Leistung sequenzieller Vorgänge optimieren.
@@ -89,14 +89,14 @@ Transaktionen werden genau genommen in beiden Beispielen verwendet. Im ersten Be
 
 Die folgende Tabelle zeigt einige Ad-hoc-Testergebnisse. Bei den Tests wurden jeweils die gleichen sequenziellen Einfügevorgänge mit und ohne Transaktionen ausgeführt. Zur Verbesserung der Aussagekraft wurde der erste Testsatz remote auf einem Laptop ausgeführt und an die Datenbank in Microsoft Azure gerichtet. Der zweite Testsatz wurde über einen Clouddienst und eine Clouddatenbank ausgeführt, die sich beide im selben Microsoft Azure-Datencenter (USA, Westen) befanden. Die folgende Tabelle zeigt die Dauer sequenzieller Einfügevorgänge mit und ohne Transaktionen (in Millisekunden).
 
-**Lokal zu Azure**:
+**Lokal zu Azure:**
 
 | Vorgänge | Keine Transaktion (ms) | Transaktion (ms) |
 |---|---|---|
 | 1 | 130 | 402 |
 | 10 | 1208 | 1226 |
-| 100 | 12\.662 | 10\.395 |
-| 1000 | 128\.852 | 102\.917 |
+| 100 | 12662 | 10395 |
+| 1000 | 128852 | 102917 |
 
 
 **Azure zu Azure (gleiches Datencenter)**:
@@ -106,9 +106,9 @@ Die folgende Tabelle zeigt einige Ad-hoc-Testergebnisse. Bei den Tests wurden je
 | 1 | 21 | 26 |
 | 10 | 220 | 56 |
 | 100 | 2145 | 341 |
-| 1000 | 21\.479 | 2756 |
+| 1000 | 21479 | 2756 |
 
->[AZURE.NOTE]Die Ergebnisse sind keine Benchmarks. Weitere Informationen finden Sie im [Hinweis zu den Zeitangaben in den Ergebnissen dieses Themas](#note-about-timing-results-in-this-topic).
+>[AZURE.NOTE] Die Ergebnisse sind keine Benchmarks. Weitere Informationen finden Sie im [Hinweis zu den Zeitangaben in den Ergebnissen dieses Themas](#note-about-timing-results-in-this-topic).
 
 Wie Sie den Testergebnissen entnehmen können, verschlechtert sich die Leistung sogar, wenn ein einzelner Vorgang in eine Transaktion eingeschlossen wird. Wenn Sie aber die Anzahl der Vorgänge in einer einzelnen Transaktion erhöhen, ergibt sich eine Verbesserung der Leistung. Der Leistungsunterschied ist außerdem ausgeprägter, wenn alle Vorgänge innerhalb des gleichen Microsoft Azure-Datencenters abgewickelt werden. Die höhere Latenz bei Verwendung von SQL-Datenbank außerhalb des Microsoft Azure-Datencenters beeinträchtigt den Leistungszuwachs, der sich durch die Verwendung von Transaktionen erzielen lässt.
 
@@ -185,9 +185,9 @@ Die folgende Tabelle zeigt Ad-hoc-Testergebnisse für die Verwendung von Tabelle
 | 10 | 131 | 25 |
 | 100 | 338 | 51 |
 | 1000 | 2615 | 382 |
-| 10\.000 | 23\.830 | 3586 |
+| 10000 | 23830 | 3586 |
 
->[AZURE.NOTE]Die Ergebnisse sind keine Benchmarks. Weitere Informationen finden Sie im [Hinweis zu den Zeitangaben in den Ergebnissen dieses Themas](#note-about-timing-results-in-this-topic).
+>[AZURE.NOTE] Die Ergebnisse sind keine Benchmarks. Weitere Informationen finden Sie im [Hinweis zu den Zeitangaben in den Ergebnissen dieses Themas](#note-about-timing-results-in-this-topic).
 
 Der durch die Batchverarbeitung bedingte Leistungsgewinn ist sofort ersichtlich. Im vorherigen sequenziellen Test dauerten 1000 Vorgänge 129 Sekunden (außerhalb des Datencenters) bzw. 21 Sekunden (innerhalb des Datencenters). Mit Tabellenwertparametern dauern 1000 Vorgänge dagegen nur 2,6 Sekunden (außerhalb des Datencenters) bzw. 0,4 Sekunden (innerhalb des Datencenters).
 
@@ -219,16 +219,16 @@ Die folgenden Ad-hoc-Testergebnisse zeigen die Leistung der Batchverarbeitung mi
 | 10 | 441 | 32 |
 | 100 | 636 | 53 |
 | 1000 | 2535 | 341 |
-| 10\.000 | 21\.605 | 2737 |
+| 10000 | 21605 | 2737 |
 
->[AZURE.NOTE]Die Ergebnisse sind keine Benchmarks. Weitere Informationen finden Sie im [Hinweis zu den Zeitangaben in den Ergebnissen dieses Themas](#note-about-timing-results-in-this-topic).
+>[AZURE.NOTE] Die Ergebnisse sind keine Benchmarks. Weitere Informationen finden Sie im [Hinweis zu den Zeitangaben in den Ergebnissen dieses Themas](#note-about-timing-results-in-this-topic).
 
 Bei kleineren Batches wurde mit Tabellenwertparametern eine bessere Leistung erzielt als mit der Klasse **SqlBulkCopy**. Bei 1000 und 10.000 Zeilen war **SqlBulkCopy** jedoch um 12 bis 31 Prozent schneller als die Tabellenwertparameter. **SqlBulkCopy** ist (genau wie Tabellenwertparameter) eine gute Option für Batcheinfügevorgänge – insbesondere verglichen mit der Leistung von Vorgängen ohne Batchverarbeitung.
 
 Weitere Informationen zum Massenkopieren in ADO.NET finden Sie unter [Massenkopiervorgänge in SQL Server](https://msdn.microsoft.com/library/7ek5da1a.aspx).
 
 ### Mehrzeilige parametrisierte INSERT-Anweisungen
-Eine Alternative für kleine Batches ist die Erstellung einer großen parametrisierten INSERT-Anweisung, die mehrere Zeilen eingefügt. Diese Technik wird im folgenden Codebeispiel veranschaulicht:
+Eine Alternative für kleine Batches ist die Erstellung einer großen parametrisierten INSERT-Anweisung, die mehrere Zeilen eingefügt. Diese Technik wird im folgenden Codebeispiel veranschaulicht.
 
 	using (SqlConnection connection = new SqlConnection(CloudConfigurationManager.GetSetting("Sql.ConnectionString")))
 	{
@@ -251,7 +251,7 @@ Eine Alternative für kleine Batches ist die Erstellung einer großen parametris
 
 Dieses Beispiel zeigt das grundlegende Konzept. In einem realistischeren Szenario werden die erforderlichen Entitäten durchlaufen, um gleichzeitig die Abfragezeichenfolge und die Befehlsparameter zu erstellen. Die Anzahl der Abfrageparameter ist auf 2100 begrenzt, was auch die Gesamtzahl der Zeilen begrenzt, die auf diese Weise verarbeitet werden können.
 
-Die folgenden Ad-hoc-Testergebnisse zeigen die Leistung dieser Art von insert-Anweisung (in Millisekunden):
+Die folgenden Ad-hoc-Testergebnisse zeigen die Leistung dieser Art von insert-Anweisung (in Millisekunden).
 
 | Vorgänge | Tabellenwertparameter (ms) | Einzelne INSERT-Anweisung (ms) |
 |---|---|---|
@@ -259,7 +259,7 @@ Die folgenden Ad-hoc-Testergebnisse zeigen die Leistung dieser Art von insert-An
 | 10 | 30 | 25 |
 | 100 | 33 | 51 |
 
->[AZURE.NOTE]Die Ergebnisse sind keine Benchmarks. Weitere Informationen finden Sie im [Hinweis zu den Zeitangaben in den Ergebnissen dieses Themas](#note-about-timing-results-in-this-topic).
+>[AZURE.NOTE] Die Ergebnisse sind keine Benchmarks. Weitere Informationen finden Sie im [Hinweis zu den Zeitangaben in den Ergebnissen dieses Themas](#note-about-timing-results-in-this-topic).
 
 Für Batches mit weniger als 100 Zeilen kann dieser Ansatz etwas schneller sein. Auch wenn die Verbesserung eher überschaubar ausfällt, ist diese Technik dennoch eine weitere Option für Ihr individuelles Anwendungsszenario.
 
@@ -280,7 +280,7 @@ Dieser Ansatz bringt einige Nachteile mit sich:
 
 Aus diesen Gründen wird die Verwendung von XML für Batchabfragen nicht empfohlen.
 
-## Überlegungen in Verbindung mit der Batchverarbeitung
+## Überlegungen zur Batchverarbeitung
 Die folgenden Abschnitte enthalten weitere Hinweise zur Verwendung der Batchverarbeitung in SQL-Datenbankanwendungen.
 
 ### Kompromisse
@@ -298,7 +298,7 @@ In unseren Tests hatte die Aufspaltung großer Batches in kleinere Blöcke in de
 | 100 | 10 | 465 |
 | 50 | 20 | 630 |
 
->[AZURE.NOTE]Die Ergebnisse sind keine Benchmarks. Weitere Informationen finden Sie im [Hinweis zu den Zeitangaben in den Ergebnissen dieses Themas](#note-about-timing-results-in-this-topic).
+>[AZURE.NOTE] Die Ergebnisse sind keine Benchmarks. Weitere Informationen finden Sie im [Hinweis zu den Zeitangaben in den Ergebnissen dieses Themas](#note-about-timing-results-in-this-topic).
 
 Wie Sie sehen, erzielen Sie bei 1000 Zeilen ein optimales Ergebnis, wenn Sie alle auf einmal übermitteln. In anderen Tests (hier nicht gezeigt) wurde bei einem Batch mit 10.000 Zeilen ein geringer Leistungszuwachs erzielt, indem der Batch in zwei Batches mit jeweils 5000 Zeilen aufgeteilt wurde. Das Tabellenschema für diese Tests ist verhältnismäßig einfach. Führen Sie daher am besten Tests mit Ihren spezifischen Daten und Batchgrößen durch, um diese Ergebnisse zu überprüfen.
 
@@ -316,7 +316,7 @@ Was, wenn Sie die Batchgröße verringern, aber mehrere Threads verwenden, um di
 | 250 [4] | 405 | 329 | 265 |
 | 100 [10] | 488 | 439 | 391 |
 
->[AZURE.NOTE]Die Ergebnisse sind keine Benchmarks. Weitere Informationen finden Sie im [Hinweis zu den Zeitangaben in den Ergebnissen dieses Themas](#note-about-timing-results-in-this-topic).
+>[AZURE.NOTE] Die Ergebnisse sind keine Benchmarks. Weitere Informationen finden Sie im [Hinweis zu den Zeitangaben in den Ergebnissen dieses Themas](#note-about-timing-results-in-this-topic).
 
 Für die parallelitätsbedingte Beeinträchtigung der Leistung gibt es mehrere mögliche Ursachen:
 
@@ -604,4 +604,4 @@ Die folgende Liste enthält eine Zusammenfassung der in diesem Thema behandelten
 
 In diesem Artikel ging es in erster Linie darum, wie Datenbankdesign und Programmiertechniken im Zusammenhang mit der Batchverarbeitung die Leistung und Skalierbarkeit Ihrer Anwendung verbessern können. Dies ist jedoch nur einer von vielen Faktoren einer Gesamtstrategie. Weitere Methoden zur Verbesserung der Leistung und Skalierbarkeit finden Sie unter [Leitfaden zur Azure SQL-Datenbankleistung für Einzeldatenbanken](sql-database-performance-guidance.md) sowie unter [Überlegungen zum Preis und zur Leistung eines elastischen Datenbankpools](sql-database-elastic-pool-guidance.md).
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0211_2016-->

@@ -13,12 +13,10 @@
 	ms.tgt_pltfrm="mobile-multiple"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/12/2016"
+	ms.date="02/04/2016"
 	ms.author="kirillg"/>
 
 # <a name="getting-started"> </a>Was sind Mobile Apps?
-
-[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
 
 Azure App Service ist ein vollständiges PaaS-Angebot (Platform as a Service) für professionelle Entwickler, das einen umfangreichen Satz von Funktionen für Web-, mobile und Integrationsszenarien bereitstellt. *Mobile Apps* in *Azure App Service* bietet eine hochgradig skalierbare, global verfügbare Entwicklungsplattform für mobile Anwendungen für Unternehmensentwickler und Systemintegratoren, die umfassende Funktionen für mobile Entwickler bereitstellt.
 
@@ -27,7 +25,7 @@ Azure App Service ist ein vollständiges PaaS-Angebot (Platform as a Service) f�
 ##Warum Mobile Apps?
 *Mobile Apps* in *Azure App Service* bietet eine hochgradig skalierbare, global verfügbare Entwicklungsplattform für mobile Anwendungen für Unternehmensentwickler und Systemintegratoren, die umfassende Funktionen für mobile Entwickler bereitstellt. Mobile Apps bietet folgende Möglichkeiten:
 
-- **Entwickeln systemeigener und plattformübergreifender Apps** – Unabhängig davon, ob Sie systemeigene iOS-, Android- und Windows-Apps oder plattformübergreifende Xamarin- oder Cordova-Apps (Phonegap) erstellen, können Sie mithilfe systemeigener SDKs die Vorteile von App Service nutzen.  
+- **Entwickeln systemeigener und plattformübergreifender Apps** – Unabhängig davon, ob Sie systemeigene iOS-, Android- und Windows-Apps oder plattformübergreifende Xamarin- oder Cordova-Apps (Phonegap) erstellen, können Sie mithilfe systemeigener SDKs die Vorteile von App Service nutzen.
 - **Herstellen einer Verbindung mit Ihren Unternehmenssystemen** – Mit Mobile Apps können Sie die Unternehmensanmeldung innerhalb von Minuten hinzufügen und eine Verbindung mit Ihren lokalen Unternehmensressourcen oder Cloudressourcen herstellen.
 - **Einfache Verbindung mit SaaS-APIs** – Mit mehr als 40 SaaS-API-Connectors können Sie Ihre App einfach in die SaaS-APIs integrieren, die aktuell von Ihrem Unternehmen genutzt werden. Möchten Sie den Kontostatus sowohl im CRM- als auch im Rechnungssystem aktualisieren? Mobile Apps bietet zahlreiche sofort einsatzfähige SaaS-APIs für Unternehmen.
 - **Erstellen von offlinefähigen Apps mit Synchronisierung** – Steigern Sie die Produktivität Ihrer mobilen Mitarbeiter mithilfe von Apps, die auch offline verwendet werden können, und nutzen Sie Mobile Apps zur Datensynchronisierung im Hintergrund, wenn eine Verbindung vorhanden ist – für jede der von Ihnen verwendeten Unternehmensdatenquellen oder SaaS-APIs.
@@ -52,6 +50,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 [Azure App Service]: ../app-service/app-service-value-prop-what-is.md
 [Erste Schritte]: app-service-mobile-ios-get-started.md
 
- 
-
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

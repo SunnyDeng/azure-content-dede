@@ -13,13 +13,13 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/01/2016" 
+	ms.date="02/03/2016" 
 	ms.author="garye"/>
 
 
 # Anleitung Schritt 2: Hochladen vorhandener Daten in ein Azure Machine Learning-Experiment
 
-Dies ist der zweite Teil der Anleitung [Entwickeln einer Vorhersagelösung mit Azure ML](machine-learning-walkthrough-develop-predictive-solution.md)
+Dies ist der zweite Schritt der exemplarischen Vorgehensweise zum [Entwickeln einer Predictive Analytics-Lösung mit Azure Machine Learning](machine-learning-walkthrough-develop-predictive-solution.md).
 
 
 1.	[Erstellen eines Machine Learning-Arbeitsbereichs](machine-learning-walkthrough-1-create-ml-workspace.md)
@@ -31,11 +31,11 @@ Dies ist der zweite Teil der Anleitung [Entwickeln einer Vorhersagelösung mit A
 
 ----------
 
-Um ein Vorhersagemodell für Kreditrisiken zu entwickeln, verwenden wir den Datensatz "UCI Statlog (German Credit Data)" aus dem UCI Machine Learning-Repository. Sie finden den Datensatz unter folgender URL: <a href="http://archive.ics.uci.edu/ml/datasets/Statlog+(German+Credit+Data)">http://archive.ics.uci.edu/ml/datasets/Statlog+(German+Credit+Data)</a>
+Um ein Vorhersagemodell für Kreditrisiken zu entwickeln, benötigen wir Daten, die wir zum Trainieren und anschließenden Testen des Modells verwenden können. In dieser exemplarischen Vorgehensweise verwenden wir den Datensatz „UCI Statlog (German Credit Data)“ aus dem UCI Machine Learning-Repository. Sie finden den Datensatz unter folgender URL: <a href="http://archive.ics.uci.edu/ml/datasets/Statlog+(German+Credit+Data)">http://archive.ics.uci.edu/ml/datasets/Statlog+(German+Credit+Data)</a>
 
 Wir werden die Datei mit dem Namen **german.data** verwenden. Laden Sie die Datei auf Ihre lokale Festplatte herunter.
 
-Dieser Datensatz enthält Zeilen mit 20 Variablen für 1.000 Kreditantragsteller aus der Vergangenheit. Diese 20 Variablen stellen den Funktionsvektor des DataSets dar, der Identifikationseigenschaften für die einzelnen Kreditantragsteller enthält. Eine zusätzliche Spalte in jeder Zeile enthält das Kreditrisiko der Antragsteller. 700 der Antragsteller wurden mit niedrigem Risiko klassifiziert, und 300 mit hohem Risiko.
+Dieser Datensatz enthält Zeilen mit 20 Variablen für 1.000 Kreditantragsteller aus der Vergangenheit. Diese 20 Variablen stellen den Funktionsvektor des DataSets dar, der Identifikationseigenschaften für die einzelnen Kreditantragsteller enthält. Eine zusätzliche Spalte in jeder Zeile enthält das berechnete Kreditrisiko der Antragsteller. 700 der Antragsteller wurden mit niedrigem Risiko klassifiziert und 300 mit hohem Risiko.
 
 Auf der UCI-Website finden Sie eine Beschreibung der Attribute des Funktionsvektors. Enthalten sind z. B. finanzielle Informationen, Bonitätsgeschichte, Beschäftigungsstatus und persönliche Daten. Für jeden Antragsteller wurde eine binäre Bewertung vergeben, um zwischen niedrigem und hohem Kreditrisiko zu unterscheiden.
 
@@ -46,32 +46,37 @@ Hier ist ein interessantes Extra. In der Beschreibung des Datensatzes wird erlä
 ##Konvertieren des Datensatzformats
 Der Originaldatensatz verwendet ein Format mit Trennung durch Leerzeichen. Machine Learning Studio funktioniert besser mit durch Trennzeichen getrennten Dateien (CSV). Daher werden wir den Datensatz konvertieren, indem wir die Leerzeichen durch Kommas ersetzen.
 
-Dazu können wir den folgenden Windows PowerShell-Befehl verwenden:
+Es gibt viele Möglichkeiten zum Konvertieren dieser Daten. Eine ist die Verwendung des folgenden Windows PowerShell-Befehls:
 
 	cat german.data | %{$_ -replace " ",","} | sc german.csv  
 
-Alternativ können wir den folgenden sed-Befehl unter Unix verwenden:
+Eine andere ist die Verwendung des sed-Befehls unter Unix:
 
 	sed 's/ /,/g' german.data > german.csv  
 
+In beiden Fällen haben wir eine durch Kommas getrennte Version der Daten in eine Datei namens **german.csv** erstellt, die wir in unserem Experiment verwenden.
+
 ##Hochladen des DataSets in Machine Learning Studio
 
-Nach dem Konvertieren der Daten in das CSV-Format müssen Sie sie in Machine Learning Studio hochladen.
+Nach dem Konvertieren der Daten in das CSV-Format müssen Sie sie in Machine Learning Studio hochladen. Weitere Informationen zu den ersten Schritten mit Machine Learning Studio finden Sie unter [Microsoft Azure Machine Learning Studio Home](https://studio.azureml.net/).
 
-1.	Melden Sie sich bei Machine Learning Studio ([https://studio.azureml.net](https://studio.azureml.net)) mithilfe des Microsoft-Kontos an, das als Besitzer des Arbeitsbereichs angegeben wurde, und klicken Sie oben auf die Registerkarte **Studio**.
-2.	Klicken Sie im unteren Seitenbereich auf **+NEU**.
-3.	Wählen Sie **DATASET**.
-4.	Klicken Sie auf **AUS LOKALER DATEI**.
-5.	Klicken Sie im Dialogfeld **Neuen Datensatz hochladen** auf **Durchsuchen**, und suchen Sie nach der zuvor erstellten Datei **german.csv**.
-6.	Geben Sie einen Namen für das Dataset ein. In diesem Beispiel nennen wir es "UCI German Credit Card Data".
-7.	Wählen Sie den Datentyp **Generic CSV File With no header (.nh.csv)** aus.
-8.	Fügen Sie bei Bedarf eine Beschreibung hinzu.
-9.	Klicken Sie auf **OK**.  
+1.	Öffnen Sie Machine Learning Studio ([https://studio.azureml.net](https://studio.azureml.net)). Wenn Sie aufgefordert werden, sich anzumelden, verwenden Sie das Konto, das Sie als Besitzer des Arbeitsbereichs angegeben haben.
+1.  Klicken Sie oben auf im Fenster auf die Registerkarte **Studio**.
+1.	Klicken Sie im unteren Seitenbereich auf **+NEU**.
+1.	Wählen Sie **DATASET**.
+1.	Klicken Sie auf **AUS LOKALER DATEI**.
+1.	Klicken Sie im Dialogfeld **Neuen Datensatz hochladen** auf **Durchsuchen**, und suchen Sie nach der zuvor erstellten Datei **german.csv**.
+1.	Geben Sie einen Namen für das Dataset ein. In dieser exemplarischen Vorgehensweise nennen wir es „UCI German Credit Card Data“.
+1.	Wählen Sie den Datentyp **Generic CSV File With no header (.nh.csv)** aus.
+1.	Fügen Sie bei Bedarf eine Beschreibung hinzu.
+1.	Klicken Sie auf **OK**.  
 
 ![Hochladen des DataSets][1]
 
 
 Daraufhin werden die Daten in ein DataSet-Modul hochgeladen, das wir in einem Experiment verwenden können.
+
+> [AZURE.TIP] Um Datasets zu verwalten, die Sie in Studio hochgeladen haben, klicken Sie auf der linken Seite des Studio-Fensters auf die Registerkarte **DATASETS**.
 
 Weitere Informationen zum Importieren von verschiedenen Datentypen in einem Experiment finden Sie unter [Importieren von Trainingsdaten in Azure Machine Learning Studio](machine-learning-data-science-import-data.md).
 
@@ -79,4 +84,4 @@ Weitere Informationen zum Importieren von verschiedenen Datentypen in einem Expe
 
 [1]: ./media/machine-learning-walkthrough-2-upload-data/upload1.png
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

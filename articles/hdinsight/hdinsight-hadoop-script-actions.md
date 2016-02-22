@@ -14,23 +14,23 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/09/2015"
+	ms.date="02/04/2016"
 	ms.author="jgao"/>
 
 # Entwickeln von Script Action-Skripts für HDInsight
 
-Entwickeln von Skriptaktionsskripts für HDInsight Weitere Informationen zu Skriptaktionsskripts finden Sie unter [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen](hdinsight-hadoop-customize-cluster.md). Der gleiche Artikel, der für den HDInsight-Cluster unter einem Linux-Betriebssystem verfasst wurde, befindet sich unter [Entwickeln von Skriptaktionsskripts für HDInsight](hdinsight-hadoop-script-actions-linux.md).
+Entwickeln von Skriptaktionsskripts für HDInsight Weitere Informationen zu Skriptaktionsskripts finden Sie unter [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen](hdinsight-hadoop-customize-cluster.md). Der gleiche Artikel, der für den Linux-basierten HDInsight-Cluster verfasst wurde, befindet sich unter [Entwickeln von Skriptaktionsskripts für HDInsight](hdinsight-hadoop-script-actions-linux.md).
 
 Mit Skriptaktionen (Script Action) kann zusätzliche Software in einem Hadoop-Cluster installiert oder die Konfiguration von in einem Cluster installierten Anwendungen geändert werden. Skriptaktionen sind Skripts, die auf Clusterknoten ausgeführt werden, wenn HDInsight-Cluster bereitgestellt sind. Sie werden dann ausgeführt, sobald die HDInsight-Konfiguration auf Knoten im Cluster abgeschlossen ist. Eine Skriptaktion wird mit Berechtigungen des Systemadministratorkontos ausgeführt und bietet umfassende Zugriffsrechte auf die Clusterknoten. Jeder Cluster kann mit einer Liste von Skriptaktionen bereitgestellt werden, die in der angegebenen Reihenfolge ausgeführt werden.
 
-> [AZURE.NOTE]Möglicherweise erhalten Sie die folgende Fehlermeldung:
+> [AZURE.NOTE] Möglicherweise erhalten Sie die folgende Fehlermeldung:
 > 
 >     System.Management.Automation.CommandNotFoundException; ExceptionMessage : The term 'Save-HDIFile' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
 > Die Ursache dafür ist, dass Sie die Hilfsmethoden nicht mit aufgenommen haben. Informationen finden Sie unter [Hilfsmethoden für benutzerdefinierte Skripts](hdinsight-hadoop-script-actions.md#helper-methods-for-custom-scripts).
 
 ## Beispielskripts
 
-Für die Bereitstellung von HDInsight-Clustern unter einem Windows-Betriebssystem wird als Skriptaktion ein Azure PowerShell-Skript verwendet. Nachfolgend sehen Sie ein Beispielskript für das Konfigurieren der Websitekonfigurationsdateien:
+Für die Erstellung von HDInsight-Clustern unter einem Windows-Betriebssystem wird als Skriptaktion ein Azure PowerShell-Skript verwendet. Nachfolgend sehen Sie ein Beispielskript für das Konfigurieren der Websitekonfigurationsdateien:
 
 	param (
 	    [parameter(Mandatory)][string] $ConfigFileName,
@@ -94,7 +94,7 @@ Name | Skript
 
 Skriptaktionen können über das Azure-Portal, Azure PowerShell oder das HDInsight .NET SDK bereitgestellt werden. Weitere Informationen finden Sie unter [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen][hdinsight-cluster-customize].
 
-> [AZURE.NOTE]Die Beispielskripts funktionieren nur mit HDInsight-Clustern der Version 3.1 oder höher. Weitere Informationen zu HDInsight-Clusterversionen finden Sie unter [HDInsight-Clusterversionen](../hdinsight-component-versioning/).
+> [AZURE.NOTE] Die Beispielskripts funktionieren nur mit HDInsight-Clustern der Version 3.1 oder höher. Weitere Informationen zu HDInsight-Clusterversionen finden Sie unter [HDInsight-Clusterversionen](../hdinsight-component-versioning/).
 
 
 
@@ -213,7 +213,7 @@ or
 
 ### Auslösen einer Ausnahme bei nicht erfolgreicher Clusterbereitstellung
 
-Wenn Sie präzise darüber benachrichtigt werden möchten, dass die Clusteranpassung nicht wie erwartet erfolgt ist, ist es wichtig, eine Ausnahme auszulösen und die Clusterbereitstellung abzubrechen. Sie möchten z. B. eine Datei verarbeiten, wenn sie vorhanden ist, und den Fehlerfall behandeln, wenn die Datei nicht vorhanden ist. Dadurch wird sichergestellt, dass das Skript ordnungsgemäß beendet wird und der Status des Clusters ordnungsgemäß bekannt ist. Der folgende Codeausschnitt zeigt ein Beispiel hierzu:
+Wenn Sie präzise darüber benachrichtigt werden möchten, dass die Clusteranpassung nicht wie erwartet erfolgt ist, ist es wichtig, eine Ausnahme auszulösen und die Clustererstellung abzubrechen. Sie möchten z. B. eine Datei verarbeiten, wenn sie vorhanden ist, und den Fehlerfall behandeln, wenn die Datei nicht vorhanden ist. Dadurch wird sichergestellt, dass das Skript ordnungsgemäß beendet wird und der Status des Clusters ordnungsgemäß bekannt ist. Der folgende Codeausschnitt zeigt ein Beispiel hierzu:
 
 	If(Test-Path($SomePath)) {
 		#Process file in some way
@@ -351,4 +351,4 @@ Bei Auftreten eines Ausführungsfehlers enthält die Protokolldatei auch die bes
 <!--Reference links in article-->
 [1]: https://msdn.microsoft.com/library/96xafkes(v=vs.110).aspx
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0211_2016-->

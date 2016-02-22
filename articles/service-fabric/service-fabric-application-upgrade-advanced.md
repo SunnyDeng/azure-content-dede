@@ -13,14 +13,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="07/17/2015"
+   ms.date="02/04/2016"
    ms.author="subramar"/>
 
 # Service Fabric-Anwendungsupgrade: Weiterführende Themen
 
 ## Manueller Upgrademodus
 
-> [AZURE.NOTE]Der nicht überwachte manuelle Modus sollte ausschließlich bei einem fehlerhaften oder angehaltenen Upgrade in Betracht gezogen werden. Der überwachte Modus ist der für Service Fabric-Anwendungen empfohlene Modus.
+> [AZURE.NOTE]  Der nicht überwachte manuelle Modus sollte ausschließlich bei einem fehlerhaften oder angehaltenen Upgrade in Betracht gezogen werden. Der überwachte Modus ist der für Service Fabric-Anwendungen empfohlene Modus.
 
 Azure Service Fabric umfasst mehrere Upgrademodi zur Unterstützung von Entwicklungs- und Produktionsclustern. Die einzelnen Bereitstellungsoptionen sind jeweils ideal geeignet für die verschiedenen Umgebungen.
 
@@ -49,12 +49,15 @@ Situationen, in denen sich ein Diff-Paket anbietet:
 
 ## Nächste Schritte
 
-[Tutorial für Anwendungsupgrades](service-fabric-application-upgrade-tutorial.md)
+Unter [Upgrade Ihrer Anwendung mit Visual Studio](service-fabric-application-upgrade-tutorial.md) werden Sie schrittweise durch das Upgrade der Anwendung mithilfe von Visual Studio geführt.
 
-[Upgradeparameter](service-fabric-application-upgrade-parameters.md)
+Unter [Upgrade Ihrer Anwendung mithilfe von PowerShell](service-fabric-application-upgrade-tutorial-powershell.md) werden Sie schrittweise durch das Upgrade der Anwendung mithilfe von PowerShell geführt.
 
-[Datenserialisierung](service-fabric-application-upgrade-data-serialization.md)
+Steuern Sie die Upgrades von Anwendungen mithilfe von [Upgradeparametern](service-fabric-application-upgrade-parameters.md).
 
-[Problembehandlung bei Anwendungsupgrades](service-fabric-application-upgrade-troubleshooting.md)
+Machen Sie Ihre Anwendungsupgrades kompatibel, indem Sie sich mit der [Datenserialisierung](service-fabric-application-upgrade-data-serialization.md) vertraut machen.
 
-<!---HONumber=AcomDC_0121_2016-->
+Informationen zum Beheben gängiger Probleme bei Anwendungsupgrades finden Sie in den Anweisungen unter [Problembehandlung bei Anwendungsupgrades](service-fabric-application-upgrade-troubleshooting.md).
+ 
+
+<!---HONumber=AcomDC_0211_2016-->

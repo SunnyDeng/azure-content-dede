@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/29/2015"
+	ms.date="02/09/2016"
 	ms.author="asmalser-msft"/>
 
 #Verwenden von SCIM für die automatische Bereitstellung von Benutzern und Gruppen aus Azure Active Directory für Anwendungen
@@ -682,7 +682,18 @@ In der Abbildung unten sind die Nachrichten dargestellt, die von Azure Active Di
 * Für Anforderungen zum Abrufen von Gruppen wird vorgegeben, dass das members-Attribut aus allen Ressourcen ausgeschlossen wird, die als Antwort auf die Anforderung bereitgestellt werden.  
 * Bei Anforderungen für die Ermittlung, ob ein Referenzattribut einen bestimmten Wert hat, handelt es sich um Anforderungen zum members-Attribut.  
 
-![][5] *Abbildung: Sequenz der Durchführung und Aufhebung einer Gruppenbereitstellung*
+![][5] * Abbildung: Sequenz der Durchführung und Aufhebung einer Gruppenbereitstellung*
+
+##Verwandte Artikel
+
+- [Artikelindex für die Anwendungsverwaltung in Azure Active Directory](active-directory-apps-index.md)
+- [Automatisieren der Bereitstellung/Bereitstellungsaufhebung von Benutzern für SaaS-Apps](active-directory-saas-app-provisioning.md)
+- [Anpassen von Attributzuordnungen für die Benutzerbereitstellung](active-directory-saas-customizing-attribute-mappings.md)
+- [Schreiben von Ausdrücken für Attributzuordnungen](active-directory-saas-writing-expressions-for-attribute-mappings.md)
+- [Bereichsfilter für die Benutzerbereitstellung](active-directory-saas-scoping-filters.md)
+- [Kontobereitstellungsbenachrichtigungen](active-directory-saas-account-provisioning-notifications.md)
+- [Liste der Tutorials zur Integration von SaaS-Apps](active-directory-saas-tutorial-list.md)
+
 
 	
 <!--Image references-->
@@ -692,4 +703,4 @@ In der Abbildung unten sind die Nachrichten dargestellt, die von Azure Active Di
 [4]: ./media/active-directory-scim-provisioning/scim-figure-4.PNG
 [5]: ./media/active-directory-scim-provisioning/scim-figure-5.PNG
 
-<!----HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0211_2016-->

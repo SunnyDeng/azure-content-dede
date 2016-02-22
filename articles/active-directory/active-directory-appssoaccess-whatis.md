@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/28/2015"
+	ms.date="02/09/2016"
 	ms.author="asmalser-msft"/>
 
 #Was bedeuten Anwendungszugriff und einmaliges Anmelden mit Azure Active Directory?
@@ -80,7 +80,7 @@ Die kennwortbasierte einmalige Anmeldung nutzt eine Browsererweiterung, um die A
 
 Für kennwortbasiertes SSO eignen sich folgende Browser des Endbenutzers:
 
-- Internet Explorer 8, 9 und 10 – unter Windows 7 oder höher (Siehe auch [Bereitstellungshandbuch für Internet Explorer-Erweiterungen](active-directory-saas-ie-group-policy.md))
+- Internet Explorer 8, 9, 10, 11 – unter Windows 7 oder höher (siehe auch [Bereitstellungshandbuch für Internet Explorer-Erweiterungen](active-directory-saas-ie-group-policy.md))
 - Chrome – unter Windows 7 oder höher und MacOS x oder höher
 - Firefox 26.0 oder höher – unter Windows XP SP2 oder höher und Mac OS X 10.6 oder höher
 
@@ -210,7 +210,14 @@ Wenn autorisierte Benutzer auf einen dieser anwendungsspezifischen Links klicken
 
 Diese Links verwenden die gleichen Mechanismen der Zugriffssteuerung wie der Zugriffsbereich und Office 365, und nur die Benutzer oder Gruppen, die der Anwendung im Azure-Verwaltungsportal zugewiesen wurden, können sich authentifizieren. Alle nicht autorisierten Benutzer werden in einer Meldung darüber informiert, dass ihnen kein Zugriff gewährt wurde. Anschließend wird ein Link zum Laden des Zugriffsbereichs angezeigt, um verfügbare Anwendungen anzuzeigen, auf die zugegriffen werden kann.
 
-[AZURE.INCLUDE [saas-toc](../../includes/active-directory-saas-toc.md)]
+##Verwandte Artikel
+
+- [Artikelindex für die Anwendungsverwaltung in Azure Active Directory](active-directory-apps-index.md)
+- [Liste der Tutorials zur Integration von SaaS-Apps in Azure Active Directory](active-directory-saas-tutorial-list.md)
+- [Suchen nach nicht genehmigten Cloudanwendungen per Cloud App Discovery](active-directory-cloudappdiscovery-whatis.md)
+- [Einführung in die Verwaltung des Zugriffs auf Apps](active-directory-managing-access-to-apps.md)
+- [Vergleich von Funktionen zum Verwalten externer Identitäten in Azure AD](active-directory-b2b-compare-external-identities.md)
+
 
 <!--Image references-->
 [1]: ./media/active-directory-appssoaccess-whatis/onlineappgallery.png
@@ -220,4 +227,4 @@ Diese Links verwenden die gleichen Mechanismen der Zugriffssteuerung wie der Zug
 [5]: ./media/active-directory-appssoaccess-whatis/workdaymobile.png
 [6]: ./media/active-directory-appssoaccess-whatis/deeplink.png
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

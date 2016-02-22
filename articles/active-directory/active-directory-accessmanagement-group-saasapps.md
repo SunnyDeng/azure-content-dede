@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/17/2015"
+	ms.date="02/09/2016"
 	ms.author="curtand"/>
 
 
@@ -37,14 +37,19 @@ Diese Funktion kann für Hunderte von Anwendungen verwendet werden, die Sie aus 
 4. Sie können auch sehen, welche Benutzer der Anwendung entweder direkt oder durch die Mitgliedschaft in einer Gruppe zugewiesen sind. Ändern Sie hierzu die Anzeige der Dropdownliste **Gruppen** zu **Alle Benutzer**. Die Liste zeigt die Benutzer im Verzeichnis und zeigt an, ob ein Benutzer der Anwendung zugewiesen ist oder nicht. Die Liste zeigt außerdem an, ob die Benutzer der Anwendung direkt (angezeigter Zuweisungstyp "Direkt") oder aufgrund der Gruppenmitgliedschaft (angezeigter Zuweisungstyp "Geerbt") zugewiesen sind.
 
 
-> [AZURE.NOTE]Die Registerkarte "Benutzer und Gruppen" wird nur angezeigt, wenn Sie Azure AD Premium oder Azure AD Basic aktiviert haben.
+> [AZURE.NOTE]
+Die Registerkarte "Benutzer und Gruppen" wird nur angezeigt, wenn Sie Azure AD Premium oder Azure AD Basic aktiviert haben.
+
+##Verwandte Artikel
 
 Diese Artikel enthalten zusätzliche Informationen zum Azure Active Directory.
 
 * [Verwalten des Zugriffs auf Ressourcen mit Azure Active Directory-Gruppen](active-directory-manage-groups.md)
 
+* [Artikelindex für die Anwendungsverwaltung in Azure Active Directory](active-directory-apps-index.md)
+
 * [Was ist Azure Active Directory?](active-directory-whatis.md)
 
 * [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0211_2016-->

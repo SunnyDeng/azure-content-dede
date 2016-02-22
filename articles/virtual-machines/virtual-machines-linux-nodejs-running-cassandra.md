@@ -6,7 +6,7 @@
 	ms.tgt_pltfrm="vm-linux" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/09/2016" 
+	ms.date="02/04/2016" 
 	ms.author="robmcm"/>
 
 # Ausführen von Cassandra mit Linux auf Azure und Zugreifen aus Node.js 
@@ -291,7 +291,7 @@ Stellen Sie sicher, dass der virtuelle Computer markiert ist, und klicken Sie da
 Nach einigen Sekunden sollte das Image im Abschnitt "EIGENE IMAGES" des Image-Katalogs verfügbar sein. Der virtuelle Quellcomputer wird automatisch gelöscht, nachdem das Image erfolgreich erfasst wurde.
 
 ##Bereitstellungsvorgang in einer Region
-**Schritt 1: Erstellen des virtuellen Netzwerks** Melden Sie sich beim klassischen Azure-Portal an, und erstellen Sie ein virtuelles Netzwerk mit den in der Tabelle angegebenen Attributen. Eine ausführliche Beschreibung der erforderlichen Schritte finden Sie unter [Konfigurieren eines virtuellen Netzwerks nur für die Cloud im klassischen Azure-Portal](../virtual-network/virtual-networks-create-vnet.md).
+**Schritt 1: Erstellen des virtuellen Netzwerks** Melden Sie sich beim klassischen Azure-Portal an, und erstellen Sie ein virtuelles Netzwerk mit den in der Tabelle angegebenen Attributen. Eine ausführliche Beschreibung der erforderlichen Schritte finden Sie unter [Konfigurieren eines virtuellen Netzwerks nur für die Cloud im klassischen Azure-Portal](../virtual-network/virtual-networks-create-vnet-classic-portal.md).
 
 <table>
 <tr><th>Attributname des virtuellen Computers</th><th>Wert</th><th>Anmerkungen</th></tr>
@@ -692,4 +692,4 @@ Microsoft Azure ist eine flexible Plattform, die das Ausführen von Microsoft- s
 - [http://www.datastax.com](http://www.datastax.com) 
 - [http://www.nodejs.org](http://www.nodejs.org) 
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

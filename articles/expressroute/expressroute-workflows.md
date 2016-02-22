@@ -34,8 +34,7 @@ Die folgende Abbildung und die zugehörigen Schritte zeigen die Aufgaben, die Si
 	-  Öffentliches Azure-Peering aktivieren – sie müssen das öffentliche Azure-Peering aktivieren, wenn Sie eine Verbindung mit Azure-Diensten herstellen möchten, die unter öffentlichen IP-Adressen gehostet werden. Dies ist eine Voraussetzung, damit auf Azure-Ressourcen zugegriffen werden kann, wenn Sie das Standardrouting für privates Azure-Peering aktiviert haben.
 	-  Microsoft-Peering aktivieren – Sie müssen das Microsoft-Peering aktivieren, um auf Office 365 und CRM-Onlinedienste zugreifen zu können. 
 	
-	>[AZURE.IMPORTANT]Wenn Sie das Microsoft-Peering aktivieren, stellen Sie sicher, dass das öffentliche Azure-Peering ebenfalls aktiviert ist, damit auf Azure AD zugegriffen werden kann. Verwenden Sie für die Verbindung mit Microsoft unbedingt einen anderen Proxy/Edge als für das Internet. Wenn Sie denselben Edge für ExpressRoute und das Internet verwenden, führt das zu asymmetrischem Routing und Konnektivitätsausfällen für Ihr Netzwerk.
-
+	>[AZURE.IMPORTANT] Verwenden Sie für die Verbindung mit Microsoft unbedingt einen anderen Proxy/Edge als für das Internet. Wenn Sie denselben Edge für ExpressRoute und das Internet verwenden, führt das zu asymmetrischem Routing und Konnektivitätsausfällen für Ihr Netzwerk.
 
 	![](./media/expressroute-workflows/expressroute-routing-workflow.png)
 
@@ -110,7 +109,7 @@ Insbesondere beim Microsoft-Peering sollte der BGP-Sitzungszustand überprüft w
 
 Wenn der Zustand der angekündigten öffentlichen Präfixe *validation needed* lautet, ist die BGP-Sitzung nicht aktiviert, da die angekündigten Präfixe keiner AS-Nummer in einer der Routingregistrierungen entsprachen.
 
->[AZURE.IMPORTANT]Wenn der Zustand der angekündigten öffentlichen Präfixe *manual validation* lautet, müssen Sie ein Supportticket beim [Microsoft-Support](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) öffnen, nachweisen, dass Sie der Besitzer der angekündigten IP-Adressen sind, und die zugeordnete autonome Systemnummer angeben.
+>[AZURE.IMPORTANT] Wenn der Zustand der angekündigten öffentlichen Präfixe *manual validation* lautet, müssen Sie ein Supportticket beim [Microsoft-Support](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) öffnen, nachweisen, dass Sie der Besitzer der angekündigten IP-Adressen sind, und die zugeordnete autonome Systemnummer angeben.
 
 
 ## Nächste Schritte
@@ -121,4 +120,4 @@ Wenn der Zustand der angekündigten öffentlichen Präfixe *validation needed* l
 	- [Konfigurieren des Routings](expressroute-howto-routing-arm.md)
 	- [Verknüpfen eines VNet mit einer ExpressRoute-Verbindung](expressroute-howto-linkvnet-arm.md)
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0211_2016-->

@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/29/2016"
+	ms.date="02/05/2016"
 	ms.author="trinadhk;jimpark"/>
 
 # Was ist Azure Backup?
@@ -61,8 +61,7 @@ Als eine hybride Sicherungslösung besteht Azure Backup aus mehreren Komponenten
 | Microsoft SQL Server | Windows Server | <p>[System Center DPM](backup-azure-backup-sql.md),</p> <p>[Azure Backup Server](backup-azure-microsoft-azure-backup.md)</p> |
 | Microsoft SharePoint | Windows Server | <p>[System Center DPM](backup-azure-backup-sql.md),</p> <p>[Azure Backup Server](backup-azure-microsoft-azure-backup.md)</p> |
 | Microsoft Exchange | Windows Server | <p>[System Center DPM](backup-azure-backup-sql.md),</p> <p>[Azure Backup Server](backup-azure-microsoft-azure-backup.md)</p> |
-| Azure IaaS-VMs (Windows)| - | [Azure Backup (VM-Erweiterung)](backup-azure-vms-introduction.md) | 
-| Azure IaaS VMs (Linux) | - | [Azure Backup (VM-Erweiterung)](backup-azure-vms-introduction.md) |
+| Azure IaaS-VMs (Windows)| - | [Azure Backup (VM-Erweiterung)](backup-azure-vms-introduction.md) | | Azure IaaS VMs (Linux) | - | [Azure Backup (VM-Erweiterung)](backup-azure-vms-introduction.md) |
 
 ## Funktionalität
 In diesen fünf Tabellen wird zusammengefasst, wie Azure Backup-Funktionen in jeder Komponente gehandhabt werden:
@@ -150,6 +149,12 @@ Für Kunden, die die Übertragung ihrer Daten an einen Sicherungsserver (System 
 | Wiederherstellungspunkte auf lokalem Datenträger | Nicht zutreffend | Nicht zutreffend | Nicht zutreffend |
 | Wiederherstellungspunkte auf Band | Nicht zutreffend | Nicht zutreffend | Nicht zutreffend |
 
+## Was ist die Datei mit Tresoranmeldeinformationen?
+
+Die Datei mit Tresoranmeldeinformationen ist ein Zertifikat, das vom Portal für jeden Sicherungstresor generiert wird. Das Portal lädt anschließend den öffentlichen Schlüssel in den Access Control Service (ACS) hoch. Der private Schlüssel des Zertifikats wird dem Benutzer während des Workflows zur Verfügung gestellt und dient als Eingabe für den Workflow zur Computerregistrierung. Dadurch wird der Computer zum Senden von Sicherungsdaten an einen identifizierten Tresor im Azure Backup-Dienst authentifiziert.
+
+Die Tresoranmeldeinformationen werden nur während des Registrierungsworkflows verwendet. Es ist Aufgabe des Benutzers sicherzustellen, dass die Datei mit den Tresoranmeldeinformationen sicher aufbewahrt wird. Fällt sie in die Hände eines böswilligen Benutzers, kann dieser die Datei mit den Tresoranmeldeinformationen zur Registrierung weiterer Computer beim selben Tresor verwenden. Da die Sicherungsdaten jedoch durch eine Passphrase verschlüsselt sind, die dem Kunden gehört, sind vorhandene Sicherungsdaten nicht gefährdet. Um dieses Risiko auf ein Mindestmaß zu verringern, laufen die Tresoranmeldeinformationen nach 48 Stunden ab. Sie können die Tresoranmeldeinformationen beliebig oft von einem Sicherungstresor herunterladen – jedoch nur die neueste Datei mit Tresoranmeldeinformationen ist für den Registrierungsworkflow gültig.
+
 ## Wie unterscheidet sich Azure Backup von Azure Site Recovery?
 Viele Kunden verwechseln Sicherungswiederherstellung und Notfallwiederherstellung. Für beide Zwecke werden Daten erfasst und Wiederherstellungsmechanismen bereitgestellt, doch das Hauptanliegen ist in beiden Fällen unterschiedlich.
 
@@ -161,7 +166,7 @@ Um Entscheidungen hinsichtlich der Sicherung und Notfallwiederherstellung zu tre
 | ------- | ------- | ------ | ----------------- |
 | Recovery Point Objective (RPO) | Der Umfang des Datenverlusts, der im Fall einer erforderlichen Wiederherstellung akzeptabel ist. | Sicherungslösungen weisen eine große Varianz beim akzeptablen RPO auf. Sicherungen virtueller Computer haben zumeist ein RPO von einem Tag, während Datenbanksicherungskopien RPOs von bis zu 15 Minuten aufweisen. | Lösungen für die Notfallwiederherstellung haben überaus niedrige RPOs. Die Kopie für die Notfallwiederherstellung kann einige Sekunden bzw. einige Minuten hinterherhinken. |
 | Recovery Time Objective (RTO) | Der Zeitraum, der für eine Wiederherstellung erforderlich ist. | Aufgrund des größeren RPO ist die Datenmenge, die eine Sicherungslösung verarbeiten muss, meist wesentlich größer. Dies führt zu längeren RTOs. Beispielsweise kann das Wiederherstellen von Daten von Bändern Tage dauern, was davon abhängt, wie lange der Transport des Bands von einem standortexternen Aufbewahrungsort dauert. | Lösungen für die Notfallwiederherstellung weisen kleinere RTOs auf, da sie synchroner mit der Quelle sind. Weniger Änderungen müssen verarbeitet werden. |
-| Aufbewahrung | Die Dauer der Datenspeicherung. | <p>Bei Szenarien, in denen die Wiederherstellung des Geschäftsbetriebs (nach Datenbeschädigung, versehentlichem Löschen von Dateien oder Betriebssystemausfällen) erforderlich ist, werden Sicherungsdaten in der Regel maximal 30 Tage lang aufbewahrt.</p> <p>Vom Standpunkt der Compliance aus müssen Daten möglicherweise Monate oder sogar Jahre gespeichert werden. In solchen Fällen sind Sicherungsdaten ideal für die Archivierung geeignet.</p> | Für die Notfallwiederherstellung werden nur Betriebsdaten für die Wiederherstellung benötigt. Diese dauert in der Regel von einigen Stunden bis zu einem Tag. Aufgrund der differenzierten Datensammlung in Lösungen für die Notfallwiederherstellung empfehlen sich Notfallwiederherstellungsdaten nicht für eine langfristige Aufbewahrung. |
+| Aufbewahrung | Die Dauer der Datenspeicherung. | <p>Bei Szenarios, in denen die Wiederherstellung des Geschäftsbetriebs (nach Datenbeschädigung, versehentlichem Löschen von Dateien oder Betriebssystemausfällen) erforderlich ist, werden Sicherungsdaten in der Regel maximal 30 Tage lang aufbewahrt.</p> <p>Vom Standpunkt der Compliance aus müssen Daten möglicherweise Monate oder sogar Jahre gespeichert werden. In solchen Fällen sind Sicherungsdaten ideal für die Archivierung geeignet.</p> | Für die Notfallwiederherstellung werden nur Betriebsdaten für die Wiederherstellung benötigt. Diese dauert in der Regel von einigen Stunden bis zu einem Tag. Aufgrund der differenzierten Datensammlung in Lösungen für die Notfallwiederherstellung empfehlen sich Notfallwiederherstellungsdaten nicht für eine langfristige Aufbewahrung. |
 
 
 ## Nächste Schritte
@@ -175,4 +180,4 @@ Um Entscheidungen hinsichtlich der Sicherung und Notfallwiederherstellung zu tre
 [yellow]: ./media/backup-introduction-to-azure-backup/yellow.png
 [red]: ./media/backup-introduction-to-azure-backup/red.png
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/17/2015"
+	ms.date="02/09/2016"
 	ms.author="curtand"/>
 
 
@@ -176,7 +176,7 @@ Sie können Mitglieder einer Gruppe jetzt basierend auf dem manager-Attribut ein
 So konfigurieren Sie eine Gruppe als Gruppe mit "Vorgesetzten"
 --------------------------------------------------------------------------------
 1. Klicken Sie im Administratorportal auf die Registerkarte **Konfigurieren**, und wählen Sie **ERWEITERTE REGEL** aus.
-2. Geben Sie die Regel mit folgender Syntax ein: Mitarbeiter von *Mitarbeiter von {Benutzer-ID\_von\_Vorgesetztem}* Beispiel für eine gültige Regel für Mitarbeiter: 
+2. Geben Sie die Regel mit folgender Syntax ein: Mitarbeiter von *Mitarbeiter von {Benutzer-ID\_von\_Vorgesetztem}* Beispiel für eine gültige Regel für Mitarbeiter:
 
 Mitarbeiter von „62e19b97-8b3d-4d4a-a106-4ce66896a863“
 
@@ -192,8 +192,10 @@ Diese Artikel enthalten zusätzliche Informationen zum Azure Active Directory.
 
 * [Verwalten des Zugriffs auf Ressourcen mit Azure Active Directory-Gruppen](active-directory-manage-groups.md)
 
+* [Artikelindex für die Anwendungsverwaltung in Azure Active Directory](active-directory-apps-index.md)
+
 * [Was ist Azure Active Directory?](active-directory-whatis.md)
 
 * [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

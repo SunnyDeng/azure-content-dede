@@ -13,14 +13,10 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/20/2015" 
+	ms.date="02/08/2016" 
 	ms.author="bradsev" />
 
 #Durchsuchen von Daten im Cortana-Analyseprozess
-
-Dieses **Menü** enthält Links zu Themen, die die Verwendung von Tools zum Untersuchen von Daten aus verschiedenen Speicherumgebungen beschreiben. Diese Aufgabe ist ein Teil des Cortana-Analyseprozesses (CAP).
-
-[AZURE.INCLUDE [cap-explore-data-selector](../../includes/cap-explore-data-selector.md)]
 
 Dieses Dokument beschreibt die Vorgehensweise beim Durchsuchen von Daten in vier unterschiedlichen Umgebungen, die in der Regel im Cortana-Analyseprozess verwendet werden:
 
@@ -29,4 +25,8 @@ Dieses Dokument beschreibt die Vorgehensweise beim Durchsuchen von Daten in vier
 - **Hive-Tabellendaten**: Daten werden mit Hive-Abfragen untersucht.
 - **Azure Machine Learning (AML) Studio**: Daten werden mit AML-Modulen untersucht .
 
-<!---HONumber=AcomDC_1203_2015-->
+Dieses **Menü** enthält Links zu den Themen, in denen die Verwendung dieser Tools zum Untersuchen von Daten aus verschiedenen Speicherumgebungen beschrieben wird.
+
+[AZURE.INCLUDE [cap-explore-data-selector](../../includes/cap-explore-data-selector.md)]
+
+<!---HONumber=AcomDC_0211_2016-->

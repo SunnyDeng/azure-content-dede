@@ -9,11 +9,11 @@
 
 <tags 
 	ms.service="service-bus" 
-	ms.workload="tbd" 
+	ms.workload="na" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="10/06/2015" 
+	ms.date="02/08/2016" 
 	ms.author="sethm"/>
 
 # Erstellen zuverlässiger und elastischer Cloud-Apps mit Messaging 
@@ -37,7 +37,7 @@ Ein dynamischer Bedarf ist für moderne Anwendungen eine Realität. Ob saisonale
  
 ## Beliebt
 
-- [Azure-Warteschlangen und Azure Service Bus-Warteschlangen - Vergleich und Gegenüberstellung](service-bus-azure-and-service-bus-queues-compared-contrasted.md)
+- [Azure-Warteschlangen und Azure Service Bus-Warteschlangen – Vergleich und Gegenüberstellung](service-bus-azure-and-service-bus-queues-compared-contrasted.md)
 - [Service Bus REST-API-Referenz](http://msdn.microsoft.com/library/azure/hh780717.aspx)
 
 ## Verknüpfte Dienste
@@ -45,4 +45,4 @@ Ein dynamischer Bedarf ist für moderne Anwendungen eine Realität. Ob saisonale
 - [Cloud Services](https://azure.microsoft.com/services/cloud-services/) 
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

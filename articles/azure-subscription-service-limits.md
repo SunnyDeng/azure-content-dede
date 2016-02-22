@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/03/2015"
+	ms.date="02/11/2016"
 	ms.author="jroth"/>
 
 # Einschränkungen für Azure-Abonnements und Dienste, Kontingente und Einschränkungen
@@ -26,13 +26,11 @@ Dieses Dokument beschreibt einige der wichtigsten Einschränkungen in Microsoft 
 
 ## Grenzwerte und der Azure-Ressourcen-Manager
 
-Es ist jetzt möglich, mehrere Azure-Ressourcen in einer einzigen Azure-Ressourcengruppe zu kombinieren. Bei der Verwendung von Ressourcengruppen werden Grenzwerte, die bisher global waren, auf einer regionalen Ebene mit dem Azure-Ressourcen-Manager verwaltet. Weitere Informationen zu Azure- Ressourcengruppen finden Sie unter [Verwenden von Ressourcengruppen zum Verwalten von Azure-Ressourcen](resource-group-portal.md).
+Es ist jetzt möglich, mehrere Azure-Ressourcen in einer einzigen Azure-Ressourcengruppe zu kombinieren. Bei der Verwendung von Ressourcengruppen werden Grenzwerte, die bisher global waren, auf einer regionalen Ebene mit dem Azure-Ressourcen-Manager verwaltet. Weitere Informationen zu Azure- Ressourcengruppen finden Sie unter [Verwenden von Ressourcengruppen zum Verwalten von Azure-Ressourcen](azure-portal/resource-group-portal.md).
 
 In den folgenden Grenzwerten wurde eine neue Tabelle hinzugefügt, um alle abweichenden Grenzwerte bei Verwendung des Azure-Ressourcen-Managers aufzuzeigen. Es gibt beispielsweise eine Tabelle **Einschränkungen für Abonnements** und eine Tabelle **Abonnementgrenzwerte - Azure-Ressourcen-Manager**. Wenn ein Grenzwert für beide Szenarien gilt, wird er nur in der ersten Tabelle angezeigt. Sofern nicht anders angegeben, gelten Grenzwerte global für alle Regionen.
 
-> [AZURE.NOTE]Wichtig ist, dass Kontingente für Ressourcen in Azure-Ressourcengruppen pro Region über Ihr Abonnement zugänglich sind, und nicht wie die Dienstverwaltungskontingente pro Abonnement. Verwenden wir Kernspeicherkontingente als Beispiel. Wenn Sie eine Erhöhung des Kontingents mit Unterstützung für Kernspeicher anfordern müssen, müssen Sie entscheiden, wie viel Kernspeicher Sie in den einzelnen Regionen verwenden möchten, und anschließend eine spezifische Anforderung für Azure-Ressourcengruppen-Kernspeicherkontingente für die gewünschten Beträge und Regionen vornehmen. Wenn Sie für die Ausführung Ihrer Anwendung 30 Kerne in Westeuropa benötigen, sollten Sie daher 30 Kerne in Westeuropa anfordern. In anderen Regionen erfolgt jedoch keine Erhöhung des Kernspeicherkontingents. Das Kontingent von 30 Kernen gilt nur für Westeuropa.
-<!-- -->
-Daher sollten Sie ggf. überlegen, wie hoch Ihre Azure-Ressourcengruppenkontingente für Ihre Workload in jeder Region sein müssen, und diesen Betrag in jeder Region anfordern, in der Sie eine Bereitstellung in Betracht ziehen. Weitere Informationen zum Ermitteln Ihrer aktuellen Kontingente für bestimmte Regionen finden Sie unter [Problembehandlung bei der Bereitstellung](resource-group-deploy-debug.md##authentication-subscription-role-and-quota-issues).
+> [AZURE.NOTE] Wichtig ist, dass Kontingente für Ressourcen in Azure-Ressourcengruppen pro Region über Ihr Abonnement zugänglich sind, und nicht wie die Dienstverwaltungskontingente pro Abonnement. Verwenden wir Kernspeicherkontingente als Beispiel. Wenn Sie eine Erhöhung des Kontingents mit Unterstützung für Kernspeicher anfordern müssen, müssen Sie entscheiden, wie viel Kernspeicher Sie in den einzelnen Regionen verwenden möchten, und anschließend eine spezifische Anforderung für Azure-Ressourcengruppen-Kernspeicherkontingente für die gewünschten Beträge und Regionen vornehmen. Wenn Sie für die Ausführung Ihrer Anwendung 30 Kerne in Westeuropa benötigen, sollten Sie daher 30 Kerne in Westeuropa anfordern. In anderen Regionen erfolgt jedoch keine Erhöhung des Kernspeicherkontingents. Das Kontingent von 30 Kernen gilt nur für Westeuropa. <!-- --> Daher sollten Sie ggf. überlegen, wie hoch Ihre Azure-Ressourcengruppenkontingente für Ihre Workload in jeder Region sein müssen, und diesen Betrag in jeder Region anfordern, in der Sie eine Bereitstellung in Betracht ziehen. Weitere Informationen zum Ermitteln Ihrer aktuellen Kontingente für bestimmte Regionen finden Sie unter [Problembehandlung bei der Bereitstellung](resource-group-deploy-debug.md##authentication-subscription-role-and-quota-issues).
 
 
 ## Dienstspezifische Grenzwerte
@@ -71,14 +69,14 @@ Daher sollten Sie ggf. überlegen, wie hoch Ihre Azure-Ressourcengruppenkontinge
 - [Stream Analytics](#stream-analytics-limits)
 - [Abonnement](#subscription-limits)
 - [Traffic Manager](#traffic-manager-limits)
-- [Virtuelle Computer](#virtual-machines-limits)
+- [Virtual Machines](#virtual-machines-limits)
 
 
-### Einschränkungen für Abonnements
-#### Einschränkungen für Abonnements
+### Grenzwerte für Abonnements
+#### Grenzwerte für Abonnements
 [AZURE.INCLUDE [azure-subscription-limits](../includes/azure-subscription-limits.md)]
 
-#### Abonnementgrenzwerte - Azure-Ressourcen-Manager
+#### Abonnementgrenzwerte – Azure-Ressourcen-Manager
 
 Die folgenden Grenzwerte gelten bei Verwendung des Azure-Ressourcen-Managers und der Azure-Ressourcengruppen. Grenzwerte, die durch den Azure-Ressourcen-Manager nicht geändert wurden, sind im Folgenden nicht aufgeführt. Diese Grenzwerte finden Sie in der vorherigen Tabelle.
 
@@ -91,22 +89,22 @@ Die folgenden Grenzwerte gelten bei Verwendung des Azure-Ressourcen-Managers und
 
 
 ### Grenzwerte für virtuelle Computer
-#### Einschränkungen für virtuelle Computer
+#### Grenzwerte für virtuelle Computer
 [AZURE.INCLUDE [azure-virtual-machines-limits](../includes/azure-virtual-machines-limits.md)]
 
 
-#### Grenzwerte für virtuelle Computer - Azure-Ressourcen-Manager
+#### Grenzwerte für virtuelle Computer – Azure-Ressourcen-Manager
 
 Die folgenden Grenzwerte gelten bei Verwendung des Azure-Ressourcen-Managers und der Azure-Ressourcengruppen. Grenzwerte, die durch den Azure-Ressourcen-Manager nicht geändert wurden, sind im Folgenden nicht aufgeführt. Diese Grenzwerte finden Sie in der vorherigen Tabelle.
 
 [AZURE.INCLUDE [azure-virtual-machines-limits-azure-resource-manager](../includes/azure-virtual-machines-limits-azure-resource-manager.md)]
 
 
-### Netzwerkeinschränkungen
+### Grenzwerte für Netzwerke
 
 [AZURE.INCLUDE [expressroute-limits](../includes/expressroute-limits.md)]
 
-#### Netzwerkeinschränkungen
+#### Grenzwerte für Netzwerke
 [AZURE.INCLUDE [azure-virtual-network-limits](../includes/azure-virtual-network-limits.md)]
 
 #### Traffic Manager-Grenzwerte
@@ -121,11 +119,11 @@ Die folgenden Grenzwerte gelten bei Verwendung des Azure-Ressourcen-Managers und
 
 Weitere Informationen zu Grenzwerten für Speicherkonten finden Sie unter [Skalierbarkeits- und Leistungsziele für Azure Storage](../articles/storage/storage-scalability-targets.md).
 
-#### Grenzen des Speicherdiensts
+#### Grenzwerte für den Speicherdienst
 
 [AZURE.INCLUDE [azure-storage-limits](../includes/azure-storage-limits.md)]
 
-#### Einschränkungen für Datenträger virtueller Computer 
+#### Grenzwerte für Datenträger virtueller Computer
 
 [AZURE.INCLUDE [azure-storage-limits-vm-disks](../includes/azure-storage-limits-vm-disks.md)]
 
@@ -139,7 +137,7 @@ Weitere Informationen finden Sie unter [Größen virtueller Computer](../article
 
 [AZURE.INCLUDE [azure-storage-limits-vm-disks-premium](../includes/azure-storage-limits-vm-disks-premium.md)]
 
-#### Grenzen für Speicherressourcenanbieter
+#### Grenzwerte für Speicherressourcenanbieter
 
 [AZURE.INCLUDE [azure-storage-limits-azure-resource-manager](../includes/azure-storage-limits-azure-resource-manager.md)]
 
@@ -158,7 +156,7 @@ Die folgenden App Service-Grenzwerte umfassen Grenzwerte für Web-Apps, Mobile A
 
 [AZURE.INCLUDE [scheduler-limits-table](../includes/scheduler-limits-table.md)]
 
-### Batchgrenzwerte
+### Batch-Grenzwerte
 
 [AZURE.INCLUDE [azure-batch-limits](../includes/azure-batch-limits.md)]
 
@@ -192,7 +190,7 @@ Der Tarif bestimmt die Kapazität und die Beschränkungen des Suchdiensts.
 
 Weitere Informationen zu Beschränkungen für Schlüssel, Replikat-Partitions-Kombinationen, Anforderungen und Antworten sowie zur Vorgehensweise für das Erzielen einer hohen Verfügbarkeit für unterschiedliche Workloads finden Sie unter [Grenzwerte für den Azure Search-Dienst](search/search-limits-quotas-capacity.md).
 
-### Media Services-Einschränkungen
+### Media Services-Grenzwerte
 
 [AZURE.INCLUDE [azure-mediaservices-limits](../includes/azure-mediaservices-limits.md)]
 
@@ -209,7 +207,7 @@ Weitere Informationen zu Beschränkungen für Schlüssel, Replikat-Partitions-Ko
 [AZURE.INCLUDE [notification-hub-limits](../includes/notification-hub-limits.md)]
 
 
-### Servicebus-Einschränkungen
+### Service Bus-Grenzwerte
 
 [AZURE.INCLUDE [azure-servicebus-limits](../includes/service-bus-quotas-table.md)]
 
@@ -217,7 +215,7 @@ Weitere Informationen zu Beschränkungen für Schlüssel, Replikat-Partitions-Ko
 
 [AZURE.INCLUDE [azure-iothub-limits](../includes/iot-hub-limits.md)]
 
-### Data Factory-Einschränkungen
+### Data Factory-Grenzwerte
 
 [AZURE.INCLUDE [azure-data-factory-limits](../includes/azure-data-factory-limits.md)]
 
@@ -226,9 +224,9 @@ Weitere Informationen zu Beschränkungen für Schlüssel, Replikat-Partitions-Ko
 
 [AZURE.INCLUDE [stream-analytics-limits-table](../includes/stream-analytics-limits-table.md)]
 
-### Active Directory-Einschränkungen
+### Active Directory-Grenzwerte
 
-[AZURE.INCLUDE [AAD-service-limits](../includes/active-directory-service-limits-include.md)]
+[AZURE.INCLUDE [AAD-Diensteinschränkungen](../includes/active-directory-service-limits-include.md)]
 
 
 ### Azure RemoteApp-Grenzwerte
@@ -264,14 +262,14 @@ Weitere Informationen zu Beschränkungen für Schlüssel, Replikat-Partitions-Ko
 
 [AZURE.INCLUDE [redis-cache-service-limits](../includes/redis-cache-service-limits.md)]
 
-### Key Vault-Grenzwerte
+### Schlüsseltresor-Grenzwerte
 
 [AZURE.INCLUDE [key-vault-limits](../includes/key-vault-limits.md)]
 
 ### Multi-Factor Authentication
 [AZURE.INCLUDE [azure-mfa-service-limits](../includes/azure-mfa-service-limits.md)]
 
-### Einschränkungen für SQL-Datenbanken
+### Grenzwerte für SQL-Datenbanken
 
 Einschränkungen für SQL-Datenbanken finden Sie unter [Ressourceneinschränkungen für SQL-Datenbank](sql-database/sql-database-resource-limits.md).
 
@@ -279,6 +277,8 @@ Einschränkungen für SQL-Datenbanken finden Sie unter [Ressourceneinschränkung
 
 [Grundlegendes zu Azure-Einschränkungen und -Steigerungen](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)
 
-[Größen virtueller Computer und Clouddienste für Azure](http://msdn.microsoft.com/library/azure/dn197896.aspx)
+[Größen virtueller Computer und Clouddienste für Azure](virtual-machines/virtual-machines-size-specs.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+[Größen für Cloud Services](cloud-services/cloud-services-sizes-specs.md)
+
+<!---HONumber=AcomDC_0211_2016-->

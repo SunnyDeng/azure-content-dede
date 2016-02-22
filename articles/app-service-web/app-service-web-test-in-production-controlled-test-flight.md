@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/16/2015"
+	ms.date="02/02/2016"
 	ms.author="cephalin"/>
 # Test-Flighting-Bereitstellung (Betatesting) in Azure App Service
 
@@ -32,7 +32,7 @@ Bei einer Test-Flighting-Bereitstellung geht es nicht nur um das Weiterleiten vo
 In diesem Tutorial lernen Sie, wie Sie folgende Szenarien kombinieren, um Ihre App Service-App in der Produktionsumgebung zu testen:
 
 - [Weiterleiten von Produktionsdatenverkehr](app-service-web-test-in-production-get-start.md) an Ihre Beta-App
-- [Instrumentieren Ihrer App](app-insights-web-track-usage.md), um hilfreiche Metriken abzurufen
+- [Instrumentieren Ihrer App](../application-insights/app-insights-web-track-usage.md), um hilfreiche Metriken abzurufen
 - Kontinuierliche Bereitstellung Ihrer Beta-App und Verfolgen von Livemetriken der App
 - Vergleichen von Metriken zwischen der Produktions-App und der Beta-App, um zu erfahren, welche Ergebnisse durch Codeänderungen erzielt werden
 
@@ -44,7 +44,7 @@ In diesem Tutorial lernen Sie, wie Sie folgende Szenarien kombinieren, um Ihre A
 -	Git-Shell (mit [GitHub für Windows](https://windows.github.com/) installiert) – Ermöglicht Ihnen, Git- und PowerShell-Befehle in derselben Sitzung auszuführen.
 -	Neueste [Azure PowerShell](https://github.com/Azure/azure-powershell/releases/download/v0.9.8-September2015/azure-powershell.0.9.8.msi)-Version
 -	Grundlegende Kenntnisse der folgenden Komponenten:
-	-	Bereitstellung der [Azure-Ressourcen-Manager](resource-group-overview.md)-Vorlage (siehe [Vorhersagbares Bereitstellen einer komplexen Anwendung in Azure](app-service-deploy-complex-application-predictably.md))
+	-	Bereitstellung der [Azure-Ressourcen-Manager](../resource-group-overview.md)-Vorlage (siehe [Vorhersagbares Bereitstellen einer komplexen Anwendung in Azure](app-service-deploy-complex-application-predictably.md))
 	-	[Git](http://git-scm.com/documentation)
 	-	[PowerShell](https://technet.microsoft.com/library/bb978526.aspx)
 
@@ -174,7 +174,7 @@ Das ist alles!
 
 In diesem Abschnitt konfigurieren Sie die verschiedenen Bereitstellungsslots, um slotspezifische Telemetriedaten an die gleiche Application Insights-Ressource zu senden. Auf diese Weise können Sie Telemetriedaten aus verschiedenen Slots (Bereitstellungsumgebungen) vergleichen, um die Auswirkungen der Änderungen an Ihrer App leicht zu erkennen. Gleichzeitig können Sie den Produktionsdatenverkehr vom übrigen Datenverkehr trennen, sodass Sie Ihre Produktions-App nach Bedarf überwachen können.
 
-Da Sie Daten zum Clientverhalten erfassen, [fügen Sie Ihrem JavaScript-Code in index.cshtml einen Telemetrieinitialisierer hinzu](app-insights-api-custom-events-metrics.md#js-initializer). Wenn Sie beispielsweise die serverseitige Leistung testen möchten, können Sie im Servercode ähnlich vorgehen (siehe [Application Insights-API für benutzerdefinierte Ereignisse und Metriken](app-insights-api-custom-events-metrics.md)).
+Da Sie Daten zum Clientverhalten erfassen, [fügen Sie Ihrem JavaScript-Code in index.cshtml einen Telemetrieinitialisierer hinzu](../application-insights/app-insights-api-custom-events-metrics.md#js-initializer). Wenn Sie beispielsweise die serverseitige Leistung testen möchten, können Sie im Servercode ähnlich vorgehen (siehe [Application Insights-API für benutzerdefinierte Ereignisse und Metriken](../application-insights/app-insights-api-custom-events-metrics.md)).
 
 1. Fügen Sie zuerst den Code zwischen die beiden `//`-Kommentare in den JavaScript-Block ein, den Sie zuvor zum `<heading>`-Tag hinzugefügt haben.
 
@@ -215,7 +215,7 @@ Da Sie Daten zum Clientverhalten erfassen, [fügen Sie Ihrem JavaScript-Code in 
 
 5. Klicken Sie auf die Schaltfläche **Favoriten**, um die aktuellen Metrik-Explorer-Einstellungen zu speichern, beispielsweise unter **Benutzerdefinierte Ereignisse: Produktion**. Sie können später ganz einfach zwischen dieser Ansicht und der Ansicht eines Bereitstellungsslots wechseln.
 
-    > [AZURE.TIP] Eine noch leistungsstärkere Analyse erhalten Sie durch [Integrieren der Application Insights-Ressource in Power BI](app-insights-export-power-bi.md).
+    > [AZURE.TIP] Eine noch leistungsstärkere Analyse erhalten Sie durch [Integrieren der Application Insights-Ressource in Power BI](../application-insights/app-insights-export-power-bi.md).
 
 ### Hinzufügen von slotspezifischen Tags zu Ihren Server-App-Metriken
 Der Vollständigkeit halber richten Sie jetzt auch die serverseitige App ein. Im Gegensatz zur Client-App, die in JavaScript instrumentiert wird, werden slotspezifische Tags für die Server-App mithilfe von .NET-Code instrumentiert.
@@ -369,10 +369,10 @@ Mit Azure App Service können kleine und mittelgroße Unternehmen ihre kundenori
 -   [Agile Softwareentwicklung mit Azure App Service](app-service-agile-software-development.md)
 -   [Einrichten von Stagingumgebungen für Web-Apps in Azure App Service](web-sites-staged-publishing.md)
 -	[Vorhersagbares Bereitstellen einer komplexen Anwendung in Azure](app-service-deploy-complex-application-predictably.md)
--	[Erstellen von Azure-Ressourcen-Manager-Vorlagen](resource-group-authoring-templates.md)
+-	[Erstellen von Azure-Ressourcen-Manager-Vorlagen](../resource-group-authoring-templates.md)
 -	[JSONLint – The JSON Validator](http://jsonlint.com/)
 -	[Git Branching – Basic Branching and Merging](http://www.git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
--	[Azure PowerShell](powershell-install-configure.md)
+-	[Azure PowerShell](../powershell-install-configure.md)
 -	[Wiki zum Kudu-Projekt](https://github.com/projectkudu/kudu/wiki)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

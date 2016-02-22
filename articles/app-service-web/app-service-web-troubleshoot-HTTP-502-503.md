@@ -50,7 +50,7 @@ Das Feature [App Service-Web-Apps](/services/app-service/web/) bietet Ihnen bei 
 
 ####	Nachverfolgen der Dienstintegrität
 
-Microsoft Azure informiert jeweils aktuell über Dienstunterbrechungen oder Leistungsbeeinträchtigungen. Sie können die Integrität des Diensts im [Azure-Portal](https://portal.azure.com/) nachverfolgen. Weitere Informationen finden Sie unter [Nachverfolgen der Dienstintegrität](insights-service-health.md).
+Microsoft Azure informiert jeweils aktuell über Dienstunterbrechungen oder Leistungsbeeinträchtigungen. Sie können die Integrität des Diensts im [Azure-Portal](https://portal.azure.com/) nachverfolgen. Weitere Informationen finden Sie unter [Nachverfolgen der Dienstintegrität](../azure-portal/insights-service-health.md).
 
 ####	Überwachen Ihrer Web-App
 
@@ -69,7 +69,7 @@ Folgende Metriken können Sie z. B. für Ihre Web-App überwachen:
 Weitere Informationen finden Sie unter:
 
 -	[Überwachen von Web-Apps in Azure App Service](web-sites-monitor.md)
--	[Empfangen von Warnbenachrichtigungen](insights-receive-alert-notifications.md)
+-	[Empfangen von Warnbenachrichtigungen](../azure-portal/insights-receive-alert-notifications.md)
 
 <a name="collect" />
 ### 2\. Sammeln von Daten
@@ -136,6 +136,6 @@ Dies ist oft die einfachste Methode zum Beheben einmaliger Probleme. Im [Azure-P
 
  ![](./media/app-service-web-troubleshoot-HTTP-502-503/2-restart.png)
 
-Sie können Ihre Web-App auch mit Azure PowerShell verwalten. Weitere Informationen finden Sie unter [Verwenden von Azure PowerShell mit dem Azure-Ressourcen-Manager](powershell-azure-resource-manager.md).
+Sie können Ihre Web-App auch mit Azure PowerShell verwalten. Weitere Informationen finden Sie unter [Verwenden von Azure PowerShell mit dem Azure-Ressourcen-Manager](../powershell-azure-resource-manager.md).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

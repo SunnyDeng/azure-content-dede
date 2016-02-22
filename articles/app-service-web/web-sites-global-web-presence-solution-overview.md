@@ -21,13 +21,14 @@
 
 [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714)-Web-Apps bieten alle Funktionen, die Sie zum Einrichten einer globalen Webpräsenz für Ihre Organisationswebsite benötigen. Unabhängig von der Größe Ihrer Organisation benötigen Sie eine stabile, sichere und skalierbare Plattform, um Ihr Unternehmen weiterzuentwickeln, die Bekanntheit Ihrer Marke zu steigern und die Kommunikation mit Ihren Kunden zu verbessern. App Service-Web-Apps können dazu beitragen, Ihre Marke auf Basis von Technologie für Geschäftskontinuität von Microsoft zu stärken.
 
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 Im Folgenden finden Sie ein Beispiel einer in App Service-Web-Apps ausgeführten Organisationswebsite (.com). Dieses Beispiel zeigt, was Sie erreichen können, wenn Sie bei minimalem technischen Aufwand einfach Web-Apps mit anderen Diensten kombinieren. **Klicken Sie auf ein Element in der Topografie, um mehr zu erfahren.**
 
 <object type="image/svg+xml" data="https://sidneyhcontent.blob.core.windows.net/documentation/corp-website-visio.svg" width="100%" height="100%"></object>
 
-> [AZURE.NOTE]In diesem Leitfaden werden einige der häufigsten Themenbereiche und Aufgaben im Zusammenhang mit der Ausführung einer öffentlich zugänglichen .com-Website in Azure App Service-Web-Apps vorgestellt. Es gibt jedoch andere gängige Lösungen, die Sie in Azure App Service-Web-Apps implementieren können. Diese Lösungen finden Sie in den anderen Leitfäden für [digitale Marketingkampagnen](web-sites-digital-marketing-application-solution-overview.md) und [Geschäftsanwendungen](web-sites-business-application-solution-overview.md).
+> [AZURE.NOTE]
+In diesem Leitfaden werden einige der häufigsten Themenbereiche und Aufgaben im Zusammenhang mit der Ausführung einer öffentlich zugänglichen .com-Website in Azure App Service-Web-Apps vorgestellt. Es gibt jedoch andere gängige Lösungen, die Sie in Azure App Service-Web-Apps implementieren können. Diese Lösungen finden Sie in den anderen Leitfäden für [digitale Marketingkampagnen](web-sites-digital-marketing-application-solution-overview.md) und [Geschäftsanwendungen](web-sites-business-application-solution-overview.md).
 
 ## Neuerstellung oder Nutzen von vorhandenen Ressourcen
 
@@ -89,7 +90,7 @@ Erhöhen Sie den Anreiz Ihrer Website mit Rich Media:
 ## Weitere Ressourcen
 
 - [App Service-Web-Apps-Dokumentation](/services/app-service/web/)
-- [Lernkonzept für Azure App Service-Web-Apps](websites-learning-map.md)
+- [Lernkonzept für Azure App Service-Web-Apps](/documentation/learning-paths/appservice-webapps/)
 - [Azure-Web-Blog](/blog/topics/web/)
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../../includes/app-service-web-whats-changed.md)]
@@ -137,4 +138,4 @@ Erhöhen Sie den Anreiz Ihrer Website mit Rich Media:
 
  
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0211_2016-->

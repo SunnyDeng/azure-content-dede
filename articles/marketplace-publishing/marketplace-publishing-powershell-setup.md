@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="10/08/2015"
+   ms.date="02/04/2016"
    ms.author="hascipio"/>
 
 # Einrichten von Azure PowerShell zum Erstellen eines Angebots für Azure Marketplace
@@ -30,4 +30,4 @@ Der erste Befehl ordnet dem Abonnement ein Standardspeicherkonto zu (das für ei
 - [Erste Schritte: Veröffentlichen eines Angebots in Azure Marketplace](marketplace-publishing-getting-started.md)
 - [Erstellen eines VM-Images für den Marketplace](marketplace-publishing-vm-image-creation.md)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0211_2016-->

@@ -1,28 +1,36 @@
-<properties 
-	pageTitle="Hinzufügen von Dateneingaben zu Stream Analytics-Aufträgen | Microsoft Azure" 
-	description="Hinzufügen von Eingaben zu Stream Analytics-Aufträgen | Lernpfadsegment."
+<properties
+	pageTitle="Hinzufügen von Dateneingaben zu Stream Analytics-Aufträgen | Microsoft Azure"
+	description="Erfahren Sie, wie Sie eine Datenquelle als Streamingdateneingabe aus Event Hubs oder als Verweisdaten aus Blobspeicher mit Ihrem Stream Analytics-Auftrag verknüpfen."
 	keywords="Dateneingabe, Streamingdaten"
 	documentationCenter=""
 	services="stream-analytics"
-	authors="jeffstokes72" 
-	manager="paulettm" 
+	authors="jeffstokes72"
+	manager="paulettm"
 	editor="cgronlun"
 />
 
-<tags 
-	ms.service="stream-analytics" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.tgt_pltfrm="na" 
-	ms.workload="data-services" 
-	ms.date="02/04/2016" 
+<tags
+	ms.service="stream-analytics"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="data-services"
+	ms.date="02/04/2016"
 	ms.author="jeffstok"
 />
 
 
-# Hinzufügen von Streamingdateneingaben zu Stream Analytics-Aufträgen
+# Hinzufügen einer Streamingdateneingabe oder von Verweisdaten zu einem Stream Analytics-Auftrag
 
-Azure Stream Analytics-Aufträge können mit einer oder mehreren Dateneingaben verknüpft werden, die jeweils eine Verbindung mit einer vorhandenen Datenquelle definieren. Werden Daten an diese Datenquelle gesendet, werden sie von dem Stream Analytics-Auftrag übernommen und in Echtzeit als Streamingdaten verarbeitet. Stream Analytics verfügt über eine hervorragende Integration in [Azure Event Hubs](https://azure.microsoft.com/services/event-hubs/) und [Azure-Blobspeicher](./storage/storage-dotnet-how-to-use-blobs.md) sowohl innerhalb als auch außerhalb des Auftragsabonnements. Es gibt zwei unterschiedliche Eingabetypen in Stream Analytics: Datenströme und Verweisdaten.
+Erfahren Sie, wie Sie eine Datenquelle als Streamingdateneingabe aus Event Hubs oder als Verweisdaten aus Blobspeicher mit Ihrem Stream Analytics-Auftrag verknüpfen.
+
+Azure Stream Analytics-Aufträge können mit einer oder mehreren Dateneingaben verknüpft werden, die jeweils eine Verbindung mit einer vorhandenen Datenquelle definieren. Werden Daten an diese Datenquelle gesendet, werden sie von dem Stream Analytics-Auftrag übernommen und in Echtzeit als Streamingdaten verarbeitet. Stream Analytics verfügt über eine hervorragende Integration in [Azure Event Hubs](https://azure.microsoft.com/services/event-hubs/) und [Azure-Blobspeicher](./storage/storage-dotnet-how-to-use-blobs.md) sowohl innerhalb als auch außerhalb des Auftragsabonnements.
+
+Dieser Artikel ist ein Schritt im [Stream Analytics-Lernpfad](/documentation/learning-paths/stream-analytics/).
+
+## Dateneingabe: Streamen von Daten und Referenzdaten
+
+Es gibt zwei unterschiedliche Eingabetypen in Stream Analytics: Datenströme und Verweisdaten.
 
 - **Datenströme**: Stream Analytics-Aufträge müssen mindestens eine Datenstromeingabe enthalten, die vom Auftrag genutzt und umgewandelt werden soll. Azure-BLOB-Speicher und Azure Event Hubs werden als Datenstrom-Eingabequellen unterstützt. Azure Event Hubs werden verwendet, um Ereignisströme von verbundenen Geräten, Diensten und Anwendungen zu erfassen. Azure-Blobspeicher kann als eine Eingabequelle für das Erfassen von Massendaten als Strom verwendet werden.  
 - **Verweisdaten**: Stream Analytics unterstützt einen zweiten zusätzlichen Eingabetyp, der als „Verweisdaten“ bezeichnet wird. Im Gegensatz zu Daten in Bewegung sind diese Daten statisch oder ändern sich nur langsam. In der Regel werden Sie zum Durchführen von Suchen und Korrelationen mit Datenströmen verwendet, um einen umfangreicheren Datensatz zu erstellen. Azure-BLOB-Speicher ist derzeit die einzige unterstützte Eingabequelle für Verweisdaten.  
@@ -31,11 +39,11 @@ So fügen Sie Ihrem Stream Analytics-Auftrag eine Eingabe hinzu:
 
 1. Klicken Sie im Azure-Portal auf **Eingaben** und dann in Ihrem Stream Analytics-Auftrag auf **Eingabe hinzufügen**.
 
-    ![Hinzufügen von Streamingdaten als Dateneingabe](./media/stream-analytics-add-inputs/1-stream-analytics-add-inputs.png)
+    ![Klassisches Azure-Portal – Hinzufügen einer Eingabe](./media/stream-analytics-add-inputs/1-stream-analytics-add-inputs.png)
 
-    Klicken Sie im Azure-Vorschauportal in Ihrem Stream Analytics-Auftrag auf die Kachel **Eingaben**.
+    Klicken Sie im Azure-Portal in Ihrem Stream Analytics-Auftrag auf die Kachel **Eingaben**.
 
-    ![Hinzufügen von Streamingdaten als Dateneingabe](./media/stream-analytics-add-inputs/7-stream-analytics-add-inputs.png)
+    ![Azure-Portal – Hinzufügen von Dateneingaben](./media/stream-analytics-add-inputs/7-stream-analytics-add-inputs.png)
 
 2. Geben Sie den Eingabetyp an: entweder **Datenstrom** oder **Verweisdaten**.
 
@@ -69,7 +77,7 @@ So fügen Sie Ihrem Stream Analytics-Auftrag eine Eingabe hinzu:
 
     ![Verbindungstest für die Streamingdateneingabe](./media/stream-analytics-add-inputs/11-stream-analytics-add-inputs.png)
 
-## Hier erhalten Sie Hilfe
+## Abrufen von Hilfe zum Streamen von Dateneingaben
 Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=AzureStreamAnalytics).
 
 ## Nächste Schritte
@@ -80,4 +88,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 - [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

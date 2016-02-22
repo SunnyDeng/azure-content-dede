@@ -14,7 +14,7 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
 	ms.workload="data-services"
-	ms.date="10/13/2015"
+	ms.date="02/10/2016"
 	ms.author="brohrer;garye" />
 
 # Auswählen von Algorithmen für Microsoft Azure Machine Learning
@@ -118,20 +118,7 @@ Einige Lernalgorithmen treffen bestimmte Annahmen über die Struktur der Daten o
 |[Decision Forest (Entscheidungswald)](https://msdn.microsoft.com/library/azure/dn906015.aspx)|●|○| |6| |
 |[Decision Jungle (Entscheidungsdschungel)](https://msdn.microsoft.com/library/azure/dn905963.aspx)|●|○| |6|Niedriger Speicherbedarf|
 |[Neuronales Netzwerk](https://msdn.microsoft.com/library/azure/dn906030.aspx)|●| | |9|[Zusätzliche Anpassung möglich](http://go.microsoft.com/fwlink/?LinkId=402867)|
-|[One-vs-All (eins-gegen-alle)](https://msdn.microsoft.com/library/azure/dn905887.aspx)|-|-|-|-|Siehe die Eigenschaften der ausgewählten zweiklassigen Methode| 
-|**Regression**| | | | | | 
-|[linear ](https://msdn.microsoft.com/library/azure/dn905978.aspx)| |●|●|4| | 
-|[Bayesian Linear](https://msdn.microsoft.com/library/azure/dn906022.aspx)| |○|●|2| | 
-|[Decision Forest (Entscheidungswald)](https://msdn.microsoft.com/library/azure/dn905862.aspx)|●|○| |6| |
-|[Boosted Decision Tree (Verstärkter Entscheidungsbaum)](https://msdn.microsoft.com/library/azure/dn905801.aspx)|●|○| |5|Hoher Speicherbedarf|
-|[Fast Forest Quantile](https://msdn.microsoft.com/library/azure/dn913093.aspx)|●|○| |9|Eher Verteilungen statt Punktvohersagen|
-|[Neuronales Netzwerk](https://msdn.microsoft.com/library/azure/dn905924.aspx)|●| | |9|[Zusätzliche Anpassung möglich](http://go.microsoft.com/fwlink/?LinkId=402867)|
-|[Poisson ](https://msdn.microsoft.com/library/azure/dn905988.aspx)| | |●|5|Technisch log-linear. Für die Vorhersage von Anzahlen.|
-|[ordinal](https://msdn.microsoft.com/library/azure/dn906029.aspx)| | | |0|Für die Vorhersage von Rangreihenfolgen|
-|**Erkennung von Anomalien**| | | | | |
-|[Support Vector Machine](https://msdn.microsoft.com/library/azure/dn913103.aspx)|○|○| |2|Besonders gut für große Merkmalssätze geeignet.|
-|[PCA-basierte Erkennung von Anomalien](https://msdn.microsoft.com/library/azure/dn913102.aspx)| |○|●|3| |
-|[K-Means](https://msdn.microsoft.com/library/azure/5049a09b-bd90-4c4e-9b46-7c87e3a36810/)| |○|●|4|Ein Clustering-Algorithmus.|
+|[One-vs-All (eins-gegen-alle)](https://msdn.microsoft.com/library/azure/dn905887.aspx)|-|-|-|-|Siehe die Eigenschaften der ausgewählten zweiklassigen Methode| |**Regression**| | | | | | |[linear ](https://msdn.microsoft.com/library/azure/dn905978.aspx)| |●|●|4| | |[Bayesian Linear](https://msdn.microsoft.com/library/azure/dn906022.aspx)| |○|●|2| | |[Decision Forest (Entscheidungswald)](https://msdn.microsoft.com/library/azure/dn905862.aspx)|●|○| |6| | |[Boosted Decision Tree (Verstärkter Entscheidungsbaum)](https://msdn.microsoft.com/library/azure/dn905801.aspx)|●|○| |5|Hoher Speicherbedarf| |[Fast Forest Quantile](https://msdn.microsoft.com/library/azure/dn913093.aspx)|●|○| |9|Eher Verteilungen statt Punktvohersagen| |[Neuronales Netzwerk](https://msdn.microsoft.com/library/azure/dn905924.aspx)|●| | |9|[Zusätzliche Anpassung möglich](http://go.microsoft.com/fwlink/?LinkId=402867)| |[Poisson ](https://msdn.microsoft.com/library/azure/dn905988.aspx)| | |●|5|Technisch log-linear. Für die Vorhersage von Anzahlen.| |[ordinal](https://msdn.microsoft.com/library/azure/dn906029.aspx)| | | |0|Für die Vorhersage von Rangreihenfolgen| |**Erkennung von Anomalien**| | | | | | |[Support Vector Machine](https://msdn.microsoft.com/library/azure/dn913103.aspx)|○|○| |2|Besonders gut für große Merkmalssätze geeignet.| |[PCA-basierte Erkennung von Anomalien](https://msdn.microsoft.com/library/azure/dn913102.aspx)| |○|●|3| | |[K-Means](https://msdn.microsoft.com/library/azure/5049a09b-bd90-4c4e-9b46-7c87e3a36810/)| |○|●|4|Ein Clustering-Algorithmus.|
 
 
 **Algorithmuseigenschaften:**
@@ -237,4 +224,4 @@ Azure Machine Learning umfasst außerdem Zugriff auf ein leistungsfähiges Machi
 [9]: ./media/machine-learning-algorithm-choice/image9.png
 [10]: ./media/machine-learning-algorithm-choice/image10.png
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

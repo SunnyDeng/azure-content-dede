@@ -13,7 +13,7 @@
 	ms.workload="search" 
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
-	ms.date="11/04/2015" 
+	ms.date="02/08/2016" 
 	ms.author="eugenesh"/>
 
 #Verbinden von Azure SQL-Datenbank mit Azure Search mithilfe von Indexern
@@ -24,7 +24,7 @@ Derzeit funktioniert der Indexer nur mit Azure SQL-Datenbank, SQL Server auf Azu
 
 In diesem Artikel wird die Verwendung von Indexern behandelt, aber wir werden auch Funktionen und Verhaltensweisen genauer untersuchen, die nur bei SQL-Datenbanken (z. B. integrierte Änderungsnachverfolgung) verfügbar sind.
 
-## Indexer und Datenquellen ##
+## Indexer und Datenquellen
 
 Um einen Azure SQL-Indexer einzurichten und zu konfigurieren, rufen Sie die [Azure Search-REST-API](http://go.microsoft.com/fwlink/p/?LinkID=528173) zum Erstellen und Verwalten mehrerer **Indexer** und **Datenquellen** auf.
 
@@ -38,7 +38,7 @@ Ein **Indexer** ist die Ressource, die Datenquellen mit Zielsuchindizes verbinde
 - Einen Index mit Änderungen an der Datenquelle nach einem Zeitplan aktualisieren.
 - Ausführung bei Bedarf, um den Index je nach Notwendigkeit zu aktualisieren. 
 
-## Gründe für die Verwendung von Azure SQL-Indexern ##
+## Gründe für die Verwendung von Azure SQL-Indexern
 
 Abhängig von verschiedenen Faktoren, die mit den Daten zusammenhängen, kann die Verwendung von Azure SQL-Indexern angebracht oder nicht angebracht sein. Wenn Ihre Daten die folgenden Anforderungen erfüllen, können Sie Azure SQL-Indexer verwenden:
 
@@ -47,10 +47,10 @@ Abhängig von verschiedenen Faktoren, die mit den Daten zusammenhängen, kann di
 - Die in der Datenquelle verwendeten Datentypen werden vom Indexer unterstützt. Es werden die meisten, aber nicht alle SQL-Typen unterstützt. Weitere Informationen finden Sie unter [Zuordnen von Datentypen in Azure Search](http://go.microsoft.com/fwlink/p/?LinkID=528105). 
 - Bei Zeilenänderungen werden keine sehr zeitnahen Aktualisierungen des Index benötigt. 
 	- Der Indexer kann die Tabelle höchstens alle 5 Minuten erneut indizieren. Wenn sich Ihre Daten häufig ändern und die Änderungen innerhalb von Sekunden oder weniger Minuten im Index widergespiegelt werden müssen, sollten Sie direkt die [Index-API von Azure Search](https://msdn.microsoft.com/library/azure/dn798930.aspx) verwenden. 
-- Wenn Sie ein großes Dataset haben und den Indexer nach einem Zeitplan ausführen möchten, können wir anhand Ihres Schemas effizient geänderte (und gelöschte, falls zutreffend) Zeilen identifizieren. Weitere Informationen finden Sie unter "Erfassen geänderter und gelöschter Zeilen" weiter unten. 
+- Wenn Sie ein großes Dataset haben und den Indexer nach einem Zeitplan ausführen möchten, können wir anhand Ihres Schemas effizient geänderte (und ggf. gelöschte) Zeilen identifizieren. Weitere Informationen finden Sie unter "Erfassen geänderter und gelöschter Zeilen" weiter unten. 
 - Die Größe der indizierten Felder in einer Zeile überschreitet nicht die maximale Größe einer Azure Search-Indizierungsanforderung, die 16 MB beträgt . 
 
-## Erstellen und Verwenden eines Azure SQL-Indexers ##
+## Erstellen und Verwenden eines Azure SQL-Indexers
 
 Erstellen Sie zunächst die Datenquelle:
 
@@ -70,7 +70,7 @@ Sie können die Verbindungszeichenfolge mit der Option `ADO.NET connection strin
 
 Dann erstellen Sie den Azure Search-Zielindex, sofern Sie bislang über keinen Index verfügen. Sie können dies von der Azure-[Portal-Benutzeroberfläche](https://portal.azure.com) aus tun oder indem Sie die [Create-Index-API](https://msdn.microsoft.com/library/azure/dn798941.aspx) verwenden. Stellen Sie sicher, dass das Schema des Zielindexes mit dem Schema der Quelltabelle kompatibel ist. Sie finden in der folgende Tabelle Informationen zum Zuordnen der SQL-Datentypen zu Azure Search-Datentypen.
 
-**Zuordnung zwischen SQL-Datentypen und Azure Search-Datentypen**
+****Zuordnung zwischen SQL-Datentypen und Azure Search-Datentypen
 
 |SQL-Datentyp | Zulässige Ziel-Index-Feldtypen |Hinweise 
 |------|-----|----|
@@ -145,7 +145,7 @@ Die Antwort sollte etwa wie folgt aussehen:
 
 Der Ausführungsverlauf enthält bis zu 50 der zuletzt abgeschlossenen Ausführungen. Diese sind in umgekehrter chronologischer Reihenfolge sortiert (somit wird die neueste Ausführung als Erstes in der Antwort aufgelistet). Weitere Informationen zur Antwort finden Sie unter [Abrufen des Indexerstatus](http://go.microsoft.com/fwlink/p/?LinkId=528198)
 
-## Ausführen von Indexern nach einem Zeitplan ##
+## Ausführen von Indexern nach einem Zeitplan
 
 Sie können den Indexer auch so konfigurieren, dass er regelmäßig nach einem Zeitplan ausgeführt wird. Zu diesem Zweck fügen Sie einfach die **schedule**-Eigenschaft beim Erstellen oder Aktualisieren des Indexers hinzu. Das folgende Beispiel zeigt eine PUT-Anforderung den Indexer, um den zu aktualisieren:
 
@@ -179,11 +179,11 @@ Hier geschieht Folgendes:
 
 Sie können mithilfe einer **PUT Indexer**-Anforderung einen Zeitplan für einen vorhandenen Indexer hinzufügen, ändern oder löschen.
 
-## Erfassen neuer, geänderter und gelöschter Zeilen ##
+## Erfassen neuer, geänderter und gelöschter Zeilen
 
 Wenn Sie einen Zeitplan verwenden und die Tabelle eine nicht triviale Anzahl von Zeilen enthält, sollten Sie eine Richtlinie zur Erkennung von Datenänderungen verwenden, damit der Indexer nur die neuen oder geänderten Zeilen abrufen kann, ohne die gesamte Tabelle neu indizieren zu müssen.
 
-### Richtlinie für die integrierte SQL-Änderungsnachverfolgung ###
+### Richtlinie für die integrierte SQL-Änderungsnachverfolgung
 
 Wenn die SQL-Datenbank die [Änderungsnachverfolgung](https://msdn.microsoft.com/library/bb933875.aspx) unterstützt, wird empfohlen, die **Richtlinie für die integrierte SQL-Änderungsnachverfolgung** zu verwenden. Diese Richtlinie ermöglicht die effizienteste Änderungsnachverfolgung und sorgt dafür, dass Azure Search gelöschte Zeilen identifiziert, ohne dass Sie eine explizite "Vorläufig löschen"-Spalte in Ihrer Tabelle angeben müssen.
 
@@ -208,7 +208,7 @@ Um diese Richtlinie zu verwenden, erstellen oder aktualisieren Sie die Datenquel
 	  }
 	}
 
-### Richtlinie zum Erkennen von Änderungen mit oberem Grenzwert ###
+### Richtlinie zum Erkennen von Änderungen mit oberem Grenzwert
 
 Die Richtlinie für die integrierte SQ- Änderungsnachverfolgung wird zwar empfohlen, Sie können sie jedoch nicht verwendet werden, wenn die Daten in einer Sicht enthalten sind oder wenn Sie mit einer älteren Version von Azure SQL-Datenbank arbeiten. In einem solchen Fall sollten Sie die Richtlinie zum Erkennen von Änderungen mit oberem Grenzwert einsetzen. Diese Richtlinie kann verwendet werden, wenn die Tabelle eine Spalte enthält, die die folgenden Kriterien erfüllt:
 
@@ -230,7 +230,7 @@ Beispielsweise ist eine indizierte **rowversion**-Spalte ein idealer Kandidat f�
 	  }
 	}
 
-### Richtlinie zum Erkennen von Löschungen anhand der "Vorläufig löschen"-Spalte ###
+### Richtlinie zum Erkennen von Löschungen anhand der Spalte „Vorläufig löschen“
 
 Wenn Zeilen aus der Quelltabelle gelöscht werden, sollten Sie diese Zeilen auch aus dem Suchindex löschen. Wenn Sie die Richtlinie für die integrierte SQL-Änderungsnachverfolgung verwenden, müssen Sie sich nicht darum kümmern, weil es automatisch geschieht. Die Richtlinie zum Erkennen von Änderungen mit oberem Grenzwert hilft Ihnen allerdings nicht beim Löschen von Zeilen. Vorgehensweise
 
@@ -249,11 +249,11 @@ Wenn Sie die Methode des "vorläufigen Löschens" verwenden, können Sie die Ric
 
 Beachten Sie, dass **softDeleteMarkerValue** eine Zeichenfolge sein muss. Verwenden Sie die Zeichenfolgendarstellung des tatsächlichen Werts. Wenn Sie z. B. über eine "integer"-Spalte verfügen, in der gelöschte Zeilen durch den Wert 1 gekennzeichnet sind, verwenden Sie `"1"`; wenn Sie über eine "BIT"-Spalte verfügen, in der gelöschte Zeilen durch den booleschen Wert "true" markiert werden, verwenden Sie `"True"`.
 
-## Anpassen von Azure SQL-Indexer ##
+## Anpassen von Azure SQL-Indexer
  
 Sie können bestimmte Aspekte des Indexerverhaltens anpassen (z. B. die Batchgröße, wie viele Dokumente übersprungen werden können, bevor eine Indexerausführung fehlschlägt, usw.). Weitere Details finden Sie unter [Anpassen von Azure Search-Indexern](search-indexers-customization.md)
 
-## Häufig gestellte Fragen ##
+## Häufig gestellte Fragen
 
 **F:** Kann ich Azure SQL-Indexer mit SQL-Datenbanken verwenden, die auf IaaS-VMs in Azure ausgeführt werden?
 
@@ -275,8 +275,4 @@ A: Ja. Allerdings kann zu einem gegebenen Zeitpunkt nur ein Indexer auf einem Kn
 
 A: Ja. Indexer werden auf einem der Knoten im Suchdienst ausgeführt, und die Ressourcen dieses Knotens werden für die Indizierung und das Bearbeiten des Datenverkehrs für Abfragen und andere API-Anforderungen gemeinsam genutzt. Wenn Sie intensive Indizierungs- und Abfragearbeitsauslastungen ausführen und viele 503-Fehler oder zunehmend längere Antwortzeiten auftreten, sollten Sie Ihren Suchdienst skalieren.
 
-
-
- 
-
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

@@ -13,13 +13,13 @@
 	ms.tgt_pltfrm="mobile-android"
 	ms.devlang="java"
 	ms.topic="article"
-	ms.date="02/03/2016" 
+	ms.date="02/04/2016"
 	ms.author="ricksal"/>
 
 
 # Verwenden der Android-Clientbibliothek für Mobile Apps
 
-[AZURE.INCLUDE [app-service-mobile-selector-client-library](../../includes/app-service-mobile-selector-client-library.md)]&nbsp;
+[AZURE.INCLUDE [app-service-mobile-selector-client-library](../../includes/app-service-mobile-selector-client-library.md)]
 
 In diesem Leitfaden erfahren Sie, wie Sie das Android-Client-SDK für Mobile Apps zum Implementieren gängiger Szenarien wie dem Abfragen von Daten (Einfügen, Aktualisieren und Löschen), Authentifizieren von Benutzern, zur Fehlerbehandlung und zum Anpassen des Clients verwenden. Er bietet auch eine fundierte Einführung in gängigen Clientcode, der in den meisten mobilen Apps verwendet wird.
 
@@ -42,17 +42,17 @@ Wenn Sie entscheiden, das Schnellstarttutorial nicht zu absolvieren, und eine An
 
 Danach müssen Sie die Schritte ausführen, die in der fundierten Einführung beschrieben werden.
 
-###<a name="gradle-build"></a>Aktualisieren der Gradle-Builddatei 
+###<a name="gradle-build"></a>Aktualisieren der Gradle-Builddatei
 
 Ändern Sie beide **build.gradle**-Dateien:
 
 1. Fügen Sie diesen Code in die *Project*-Ebene der **build.gradle**-Datei im *buildscript*-Tag ein:
- 
+
 		buildscript {
 		    repositories {
 		        jcenter()
 		    }
-		} 
+		}
 
 2. Fügen Sie diesen Code in die *Module app*-Ebene der **build.gradle**-Datei im *dependencies*-Tag ein:
 
@@ -65,7 +65,7 @@ Für den Zugriff auf Azure muss für Ihre App die INTERNET-Berechtigung aktivier
 
 	<uses-permission android:name="android.permission.INTERNET" />
 
-## Die fundierte Einführung  
+## Die fundierte Einführung
 
 In diesem Abschnitt wird ein Teil des Codes der Schnellstart-App erörtert. Wenn Sie das Schnellstarttutorial nicht absolviert haben, müssen Sie diesen Code Ihrer App hinzufügen.
 
@@ -102,7 +102,7 @@ Enthielte sie z. B. eine Integerspalte „Priority“, dann könnten Sie dieses
 	    public Integer getPriority() {
 	        return mPriority;
 	    }
-	
+
 	    /**
 	     * Sets the item priority
 	     *
@@ -303,7 +303,7 @@ Dieser Abschnitt beschreibt, wie Sie Abfragen an Ihr Mobile App-Back-End stellen
 
 Die folgende Abfrage gibt alle Elemente aus der *ToDoItem*-Tabelle zurück.
 
-	List<ToDoItem> results = mToDoTable.execute().get();             
+	List<ToDoItem> results = mToDoTable.execute().get();
 
 Die Variable *results* gibt das Resultset der Abfrage als Liste zurück.
 
@@ -441,7 +441,7 @@ Sie können ein Element auch durch Angabe des **id**-Felds der zu löschenden Ze
 
 	String myRowId = "2FA404AB-E458-44CD-BC1B-3BC847EF0902";
    	mToDoTable.delete(myRowId);
-                    
+
 
 ##<a name="lookup"></a>Gewusst wie: Abfragen bestimmter Elemente
 
@@ -478,7 +478,7 @@ Der folgende Code zeigt, wie Sie Elemente einfügen können. Sie müssen zunäch
 
 Anschließend fügen Sie das Objekt ein.
 
-    mJsonToDoTable.insert(jsonItem).get();                   
+    mJsonToDoTable.insert(jsonItem).get();
 
 
 Verwenden Sie den folgenden Methodenaufruf, falls Sie die ID des eingefügten Objekts abrufen müssen:
@@ -546,23 +546,23 @@ Mit einer benutzerdefinierten API können Sie benutzerdefinierte Endpunkte defin
 Rufen Sie von einem Android-Client aus die **invokeApi**-Methode auf, um den benutzerdefinierten API-Endpunkt aufzurufen. Das folgende Beispiel zeigt, wie ein API-Endpunkt mit dem Namen *completeAll* aufgerufen wird, der eine Auflistungsklasse mit dem Namen „MarkAllResult“ zurückgibt.
 
 	public void completeItem(View view) {
-	    
-	    ListenableFuture<MarkAllResult> result = mClient.invokeApi( "completeAll", MarkAllResult.class ); 
-	    	
+
+	    ListenableFuture<MarkAllResult> result = mClient.invokeApi( "completeAll", MarkAllResult.class );
+
 	    	Futures.addCallback(result, new FutureCallback<MarkAllResult>() {
 	    		@Override
 	    		public void onFailure(Throwable exc) {
 	    			createAndShowDialog((Exception) exc, "Error");
 	    		}
-	    		
+
 	    		@Override
 	    		public void onSuccess(MarkAllResult result) {
 	    			createAndShowDialog(result.getCount() + " item(s) marked as complete.", "Completed Items");
-	                refreshItemsFromTable();	
+	                refreshItemsFromTable();
 	    		}
 	    	});
 	    }
-	
+
 Die **invokeApi**-Methode wird beim Client aufgerufen, der eine POST-Anfrage an die neue benutzerdefinierte API sendet. Das von der benutzerdefinierten API zurückgegebene Ergebnis wird in einem Meldungsdialogfeld angezeigt, ebenso wie jegliche Fehler. Mit anderen Versionen von **invokeApi** können Sie optional ein Objekt im Anforderungshauptteil senden, die HTTP-Methode angeben und Abfrageparameter mit der Anforderung senden. Nicht typisierte Versionen von **invokeApi** werden ebenfalls bereitgestellt.
 
 ##<a name="authentication"></a>Hinzufügen von Authentifizierung zur App
@@ -840,4 +840,4 @@ Sie können diese allgemeine Methode immer dann verwenden, wenn Sie mit komplexe
 [Get started with authentication]: app-service-mobile-android-get-started-users.md
 [Erste Schritte mit Authentifizierungen]: app-service-mobile-android-get-started-users.md
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

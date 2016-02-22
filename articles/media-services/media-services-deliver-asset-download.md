@@ -12,8 +12,8 @@
 	ms.workload="media" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="12/05/2015" 
+	ms.topic="article"
+  ms.date="02/03/2016"
 	ms.author="juliako"/>
 
 #Gewusst wie: Bereitstellen eines Medienobjekts durch Herunterladen
@@ -87,4 +87,4 @@ Dieses Beispiel zeigt, wie Sie Medienobjekte von Media Services auf Ihren lokale
 
 [Bereitstellen von Streaming-Inhalten](media-services-deliver-streaming-content.md)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0211_2016-->

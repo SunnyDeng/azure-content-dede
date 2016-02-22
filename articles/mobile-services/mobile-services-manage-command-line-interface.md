@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="NA"
 	ms.devlang="multiple"
 	ms.topic="article"
-	ms.date="11/02/2015"
+	ms.date="01/27/2016"
 	ms.author="glenga"/>
 
 # Automatisieren von mobilen Diensten mit Befehlszeilentools
@@ -79,7 +79,7 @@ Der Befehl `mobile create` schlägt fehl, wenn der angegebene mobile Dienst vorh
 
 ##Auflisten vorhandener mobiler Dienste in einem Abonnement
 
-> [AZURE.NOTE]In der Befehlszeilenschnittstelle funktionieren Befehle im Zusammenhang mit "List" und "Script" nur mit dem JavaScript-Back-End.
+> [AZURE.NOTE] In der Befehlszeilenschnittstelle funktionieren Befehle im Zusammenhang mit "List" und "Script" nur mit dem JavaScript-Back-End.
 
 Der folgende Befehl gibt eine Liste aller mobilen Dienste in einem Azure-Abonnement zurück:
 
@@ -95,7 +95,7 @@ Sie können die Befehlszeilentools verwenden, um einen vorhandenen mobilen Diens
 
 Durch Einbeziehen der Parameter `-a` und `-q` löscht dieser Befehl außerdem die SQL-Datenbank und den Server, die vom mobilen Dienst verwendet werden, ohne dass dabei eine Eingabeaufforderung angezeigt wird.
 
-> [AZURE.NOTE]Wenn Sie den Parameter <code>-q</code> nicht zusammen mit <code>-a</code> oder <code>-d</code> angeben, wird die Ausführung unterbrochen, und Sie werden aufgefordert, Löschoptionen für die SQL-Datenbank auszuwählen. Verwenden Sie ausschließlich den Parameter <code>-a</code>, wenn kein weiterer Dienst die Datenbank oder den Server verwendet. Verwenden Sie anderenfalls den Parameter <code>-d</code>, um nur die Daten zu löschen, welche zu dem mobilen Dienst gehören, der gelöscht werden soll.
+> [AZURE.NOTE] Wenn Sie den Parameter <code>-q</code> nicht zusammen mit <code>-a</code> oder <code>-d</code> angeben, wird die Ausführung unterbrochen, und Sie werden aufgefordert, Löschoptionen für die SQL-Datenbank auszuwählen. Verwenden Sie ausschließlich den Parameter <code>-a</code>, wenn kein weiterer Dienst die Datenbank oder den Server verwendet. Verwenden Sie anderenfalls den Parameter <code>-d</code>, um nur die Daten zu löschen, welche zu dem mobilen Dienst gehören, der gelöscht werden soll.
 
 ##Erstellen einer Tabelle im mobilen Dienst
 
@@ -187,4 +187,4 @@ Weitere Informationen über das Registrieren von Skripts finden Sie unter [Mobil
 [reference-docs]: http://azure.microsoft.com/documentation/articles/virtual-machines-command-line-tools/#Commands_to_manage_mobile_services
 [Installation der Azure-Befehlszeilentools für Mac und Linux]: http://go.microsoft.com/fwlink/p/?LinkId=275795
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0211_2016-->

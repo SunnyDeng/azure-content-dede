@@ -38,7 +38,7 @@ Zum Konfigurieren der Georeplikation benötigen Sie Folgendes:
 
 - Ein Azure-Abonnement. Wenn Sie ein Azure-Abonnement benötigen, müssen Sie lediglich oben auf dieser Seite auf den Link **Kostenlose Testversion** klicken. Lesen Sie anschließend den Artikel weiter.
 - Eine Azure SQL-Datenbank: Die primäre Datenbank, die in eine andere geografische Region repliziert werden soll.
-- Azure PowerShell 1.0 oder höher Sie können die Azure-PowerShell-Module herunterladen und installieren, indem Sie Anweisungen unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md) befolgen.
+- Azure PowerShell 1.0 oder höher Sie können die Azure-PowerShell-Module herunterladen und installieren, indem Sie Anweisungen unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md) befolgen.
 
 
 
@@ -84,8 +84,8 @@ Wenn die Partnerdatenbank bereits vorhanden ist (z. B. aufgrund der Beendigung 
 
 Mit dem folgenden Befehl erstellen Sie eine nicht lesbare sekundäre Datenbank der „mydb“-Datenbank des Servers „srv2“ in der Ressourcengruppe „rg2“:
 
-    $database = Get-AzureRmSqlDatabase –DatabaseName "mydb"
-    $secondaryLink = $database | New-AzureRmSqlDatabaseSecondary –PartnerResourceGroupName "rg2" –PartnerServerName "srv2" -AllowConnections "None"
+    $database = Get-AzureRmSqlDatabase –DatabaseName "mydb" -ResourceGroupName "rg1" -ServerName "srv1"
+    $secondaryLink = $database | New-AzureRmSqlDatabaseSecondary –PartnerResourceGroupName "rg2" –PartnerServerName "srv2" -AllowConnections "No"
 
 
 
@@ -93,7 +93,7 @@ Mit dem folgenden Befehl erstellen Sie eine nicht lesbare sekundäre Datenbank d
 
 Mit dem folgenden Befehl erstellen Sie eine lesbare sekundäre Datenbank der „mydb“-Datenbank des Servers „srv2“ in der Ressourcengruppe „rg2“:
 
-    $database = Get-AzureRmSqlDatabase –DatabaseName "mydb"
+    $database = Get-AzureRmSqlDatabase –DatabaseName "mydb" -ResourceGroupName "rg1" -ServerName "srv1"
     $secondaryLink = $database | New-AzureRmSqlDatabaseSecondary –PartnerResourceGroupName "rg2" –PartnerServerName "srv2" -AllowConnections "All"
 
 
@@ -103,15 +103,15 @@ Mit dem folgenden Befehl erstellen Sie eine lesbare sekundäre Datenbank der „
 
 Mit dem folgenden Befehl erstellen Sie eine nicht lesbare sekundäre Datenbank der „mydb“-Datenbank im elastischen Datenbankpool „ElasticPool1“ des Servers „srv2“ in der Ressourcengruppe „rg2“:
 
-    $database = Get-AzureRmSqlDatabase –DatabaseName "mydb"
-    $secondaryLink = $database | New-AzureRmSqlDatabaseSecondary –PartnerResourceGroupName "rg2" –PartnerServerName "srv2" –SecondaryElasticPoolName "ElasticPool1" -AllowConnections "None"
+    $database = Get-AzureRmSqlDatabase –DatabaseName "mydb" -ResourceGroupName "rg1" -ServerName "srv1"
+    $secondaryLink = $database | New-AzureRmSqlDatabaseSecondary –PartnerResourceGroupName "rg2" –PartnerServerName "srv2" –SecondaryElasticPoolName "ElasticPool1" -AllowConnections "No"
 
 
 ### Hinzufügen einer lesbaren sekundären Datenbank (elastische Datenbank)
 
 Mit dem folgenden Befehl erstellen Sie eine lesbare sekundäre Datenbank der „mydb“-Datenbank im elastischen Datenbankpool „ElasticPool1“ des Servers „srv2“ in der Ressourcengruppe „rg2“:
 
-    $database = Get-AzureRmSqlDatabase –DatabaseName "mydb"
+    $database = Get-AzureRmSqlDatabase –DatabaseName "mydb" -ResourceGroupName "rg1" -ServerName "srv1"
     $secondaryLink = $database | New-AzureRmSqlDatabaseSecondary –PartnerResourceGroupName "rg2" –PartnerServerName "srv2" –SecondaryElasticPoolName "ElasticPool1" -AllowConnections "All"
 
 
@@ -131,7 +131,7 @@ Zum Entfernen der sekundären Datenbank benötigen die Benutzer Schreibzugriff a
 
 Mit dem folgenden Code entfernen Sie die Replikationsverknüpfung der „mydb“-Datenbank zum Server „srv2“ der Ressourcengruppe „rg2“.
 
-    $database = Get-AzureRmSqlDatabase –DatabaseName "mydb"
+    $database = Get-AzureRmSqlDatabase –DatabaseName "mydb" -ResourceGroupName "rg1" -ServerName "srv1"
     $secondaryLink = $database | Get-AzureRmSqlDatabaseReplicationLink –SecondaryResourceGroup "rg2" –PartnerServerName "srv2"
     $secondaryLink | Remove-AzureRmSqlDatabaseSecondary 
 
@@ -159,7 +159,7 @@ Dieses Cmdlet wird zurückgegeben, wenn der Wechsel von der sekundären zur prim
 
 Mit dem folgenden Befehl werden die Rollen der „mydb“-Datenbank auf dem Server „srv2“ in der Ressourcengruppe „rg2“ mit der primären Datenbank getauscht. Die ursprüngliche primäre Datenbank, mit der „db2“ verbunden war, wird nach der vollständigen Synchronisierung der beiden Datenbanken zur sekundären Datenbank.
 
-    $database = Get-AzureRmSqlDatabase –DatabaseName "mydb” –ResourceGroupName "rg2” –ServerName "srv2”
+    $database = Get-AzureRmSqlDatabase –DatabaseName "mydb" –ResourceGroupName "rg2” –ServerName "srv2”
     $database | Set-AzureRmSqlDatabaseSecondary -Failover
 
 
@@ -181,7 +181,7 @@ Falls die primäre Datenbank mehrere sekundäre Instanzen hat, wird der Befehl t
 
 Mit dem folgenden Befehl tauschen Sie die Rollen der „mydb“-Datenbank, wenn die primäre Datenbank nicht verfügbar ist. Die ursprüngliche primäre Datenbank, mit der „mydb“ verbunden war, wird zur sekundären Datenbank, sobald sie wieder online ist. Zu diesem Zeitpunkt kann bei der Synchronisierung Datenverlust entstehen.
 
-    $database = Get-AzureRmSqlDatabase –DatabaseName "mydb” –ResourceGroupName "rg2” –ServerName "srv2”
+    $database = Get-AzureRmSqlDatabase –DatabaseName "mydb" –ResourceGroupName "rg2” –ServerName "srv2”
     $database | Set-AzureRmSqlDatabaseSecondary –Failover -AllowDataLoss
 
 
@@ -194,7 +194,7 @@ Zu den Überwachungsaufgaben gehören die Überwachung der Konfiguration der Geo
 
 Der folgende Befehl ruft den Status der Replikationsverknüpfung zwischen der primären „mydb“-Datenbank und der sekundären Datenbank auf Server „srv2“ von der Ressourcengruppe „rg2“ auf.
 
-    $database = Get-AzureRmSqlDatabase –DatabaseName "mydb”
+    $database = Get-AzureRmSqlDatabase –DatabaseName "mydb" -ResourceGroupName "rg1" -ServerName "srv1"
     $secondaryLink = $database | Get-AzureRmSqlDatabaseReplicationLink –PartnerResourceGroup "rg2” –PartnerServerName "srv2”
 
 
@@ -215,4 +215,4 @@ Der folgende Befehl ruft den Status der Replikationsverknüpfung zwischen der pr
 - [Übersicht über die Geschäftskontinuität](sql-database-business-continuity.md)
 - [SQL-Datenbankdokumentation](https://azure.microsoft.com/documentation/services/sql-database/)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

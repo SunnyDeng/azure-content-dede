@@ -12,13 +12,13 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/17/2015" 
+	ms.date="02/09/2016" 
 	ms.author="awills"/>
  
 # Diagnostizieren von Problemen mit Abhängigkeiten in Application Insights
 
 
-Eine *Abhängigkeit* ist eine externe Komponente, die von Ihrer App aufgerufen wird. In der Regel handelt es sich um einen Dienst, der über HTTP oder eine Datenbank oder ein Dateisystem aufgerufen wird. In Visual Studio Application Insights können Sie leicht erkennen, wie lange die Anwendung auf Abhängigkeiten wartet und wie oft ein Abhängigkeitsaufruf nicht funktioniert.
+Eine *Abhängigkeit* ist eine externe Komponente, die von Ihrer App aufgerufen wird. In der Regel handelt es sich um einen Dienst, der über HTTP oder eine Datenbank oder ein Dateisystem aufgerufen wird. In Ihrem Webseitenskript kann dies auch ein AJAX-Aufruf an den Server sein. In Visual Studio Application Insights können Sie leicht erkennen, wie lange die Anwendung auf Abhängigkeiten wartet und wie oft ein Abhängigkeitsaufruf nicht funktioniert.
 
 ## Einsatzgebiete
 
@@ -26,6 +26,7 @@ Aktuell steht die integrierte Abhängigkeitsüberwachung für folgende Apps und 
 
 * ASP.NET-Web-Apps und Dienste, die auf einem IIS-Server oder auf Azure ausgeführt werden
 * [Java-Web-Apps](app-insights-java-agent.md)
+* [Webseiten](https://azure.microsoft.com/blog/ajax-collection-in-application-insights/)
 
 Für andere Typen wie Geräte-Apps können Sie mithilfe der [TrackDependency-API](app-insights-api-custom-events-metrics.md#track-dependency) Ihre eigene Überwachung schreiben.
 
@@ -39,7 +40,7 @@ Der standardmäßig verfügbare Abhängigkeitsmonitor meldet derzeit Aufrufe an 
 * Java
  * Aufrufe an eine Datenbank über einen [JDBC](http://docs.oracle.com/javase/7/docs/technotes/guides/jdbc/)-Treiber, z. B. MySQL, SQL Server, PostgreSQL oder SQLite.
 * Webseiten
- * AJAX-Aufrufe
+ * [AJAX-Aufrufe](app-insights-javascript.md)
 
 In diesem Fall könnten Sie Ihre eigenen SDK-Aufrufe zum Überwachen anderer Abhängigkeiten schreiben.
 
@@ -52,10 +53,11 @@ Plattform | Installieren
 IIS-Server | [Statusmonitor](app-insights-monitor-performance-live-website-now.md)
 Azure-Web-App | [Application Insights-Erweiterung](../azure-portal/insights-perf-analytics.md)
 Java-Webserver | [Java-Web-Apps](app-insights-java-agent.md)
+Webseiten | [JavaScript-Monitor](app-insights-javascript.md) (ohne zusätzliche Einrichtung über die Überwachung der Webseite hinaus)
 
 Für den Statusmonitor für IIS-Server müssen Sie das Quellprojekt nicht mit dem Application Insights-SDK neu erstellen.
 
-## <a name="diagnosis"></a> Diagnostizieren von Leistungsproblemen der Abhängigkeit
+## <a name="diagnosis"></a> Diagnostizieren von Leistungsproblemen der Abhängigkeit auf dem Webserver
 
 So bewerten Sie die Leistung der Anforderungen an den Server
 
@@ -74,7 +76,7 @@ Klicken Sie auf diese Zeile, um einzelne Anforderungsereignisse anzuzeigen:
 
 Klicken Sie auf eine beliebige Instanz mit langer Ausführungsdauer, um diese näher zu überprüfen.
 
-> [AZURE.NOTE]Scrollen Sie nach unten, um eine Instanz auszuwählen. Durch Wartezeiten in der Pipeline sind die Daten für die zuerst aufgeführten Instanzen möglicherweise unvollständig.
+> [AZURE.NOTE] Scrollen Sie nach unten, um eine Instanz auszuwählen. Durch Wartezeiten in der Pipeline sind die Daten für die zuerst aufgeführten Instanzen möglicherweise unvollständig.
 
 Scrollen Sie nach unten zu den Remoteabhängigkeitsaufrufen im Zusammenhang mit dieser Anforderung:
 
@@ -129,6 +131,12 @@ Beispiel: Wenn Sie Ihren Code mit einer Assembly erstellen, die Sie nicht selbst
 
 Wenn Sie das Standardmodul für die Nachverfolgung von Abhängigkeiten deaktivieren möchten, entfernen Sie den Verweis auf "DependencyTrackingTelemetryModule" in [ApplicationInsights.config](app-insights-configuration-with-applicationinsights-config.md).
 
-<!--Link references-->
 
-<!---HONumber=AcomDC_0121_2016-->
+## AJAX
+
+Siehe [Webseiten](app-insights-javascript.md).
+
+
+ 
+
+<!---HONumber=AcomDC_0211_2016-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
-   ms.date="01/20/2015"
+   ms.date="02/03/2016"
    ms.author="derrickv"/>
 
 
@@ -34,4 +34,4 @@ Hier sind die Beispiele, die auf GitHub zu finden sind:
 
   Dieses Beispiel zeigt, wie Sie mithilfe der Data Catalog-REST-API Assets aus dem Azure Data Catalog abrufen und in einer Datei serialisieren. Es veranschaulicht außerdem, wie eine Gruppe von Assets als JSON serialisiert und in den Katalog übertragen wird. Es unterstützt das Exportieren einer Teilmenge des Katalogs mithilfe einer Suchabfrage.
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0211_2016-->

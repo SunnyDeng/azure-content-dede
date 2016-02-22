@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/05/2015"   
+ 	ms.date="02/03/2016"  
 	ms.author="juliako"/>
 
 
@@ -43,8 +43,6 @@ Beachten Sie, dass die reservierten Einheiten für Codierungs- und Indizierungsa
 
 Weitere Informationen finden Sie unter [Verwalten von Media Services-Medienobjekte über mehrere Speicherkonten](https://msdn.microsoft.com/library/azure/dn271889.aspx) und [Arbeiten mit Azure Storage](https://msdn.microsoft.com/library/azure/dn767951.aspx).
 
-
-
 ##Media Services-Lernpfade
 
 [AZURE.INCLUDE [media-services-learning-paths-include](../../includes/media-services-learning-paths-include.md)]
@@ -53,4 +51,4 @@ Weitere Informationen finden Sie unter [Verwalten von Media Services-Medienobjek
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0211_2016-->

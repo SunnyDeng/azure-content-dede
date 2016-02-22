@@ -13,16 +13,22 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
-   ms.date="01/29/2016"
+   ms.date="02/04/2016"
    ms.author="maroche"/>
 
 # Neuigkeiten in Azure Data Catalog
 
 Updates für **Azure Data Catalog** werden in regelmäßigen Abständen veröffentlicht. Nicht jede Version umfasst neue Funktionen für Benutzer, da sich einige Versionen auf Back-End-Dienstfunktionen konzentrieren. Auf dieser Seite werden neue Funktionen für Benutzer aufgezeigt, die dem Dienst **Azure Data Catalog** hinzugefügt wurden.
 
+## Neuigkeiten in der Version der Woche ab dem 5. Februar 2016
+
+In der Woche ab dem 5. Februar 2016 wurden **Azure Data Catalog** die folgenden Funktionen hinzugefügt:
+
+- Unterstützung für das Ändern der Azure-Abonnements, die von **Azure Data Catalog** verwendet werden. Administratoren von **Azure Data Catalog** können auf der Seite „Einstellungen“ im **Azure Data Catalog**-Portal zu Abrechnungszwecken ein anderes Azure-Abonnement auswählen.
+
 ## Neuerungen in der Version der Woche ab dem 29. Januar 2016
 
-In der Woche ab dem 29. Januar 2016 wurden **Azure Data Catalog** die folgenden Funktionen hinzugefügt:
+In der Woche ab dem 29. Januar 2016 wurden **Azure Data Catalog** die folgenden Funktionen hinzugefügt:
 
 - Unterstützung für die manuelle Registrierung zusätzlicher Datenquellen. Benutzer können jetzt im **Azure Data Catalog**-Portal manuelle Einträge erstellen oder die **Azure Data Catalog**-REST-API zum Registrieren von der folgenden Datenquellen verwenden:
    + OData – Funktion, Entitätenmenge und Entitätencontainer
@@ -50,7 +56,7 @@ In der Woche ab dem 8. Januar 2016 wurden **Azure Data Catalog** die folgenden
 - Die Möglichkeit zum Anheften und Entfernen von Datenassets im **Azure Data Catalog**-Portal. Benutzer können Datenassets anheften, um sie leichter finden und erneut verwenden zu können.
 - Eine neu gestaltete Startseite im **Azure Data Catalog**-Portal. Die neue Homepage eröffnet Einblick in die aktuelle Benutzeraktivität – darunter kürzlich veröffentlichte Assets, angeheftete Assets und gespeicherte Suchvorgänge – als auch einen Einblick in die Aktivität im Katalog als Ganzes.
 - Unterstützung für persistente Benutzereinstellungen im **Azure Data Catalog**-Portal. Benutzeroberflächeneinstellungen – z. B. Raster- oder Kachelansicht, die Anzahl der Ergebnisse pro Seite und Aktivieren bzw. Deaktivieren von Treffermarkierungen – werden sitzungsübergreifend beibehalten.
-- **Azure Data Catalog** ist jetzt in zwei neuen Azure-Regionen verfügbar. Kunden können **Azure Data Catalog** in Nordeuropa und Südostasien, im Osten und Westen der USA, in Westeuropa und im Osten von Australien bereitstellen. Weitere Informationen finden Sie unter [Azure-Regionen](https://azure.microsoft.com/regions/).
+- **Azure Data Catalog** ist jetzt in zwei neuen Azure-Regionen verfügbar. Kunden können **Azure Data Catalog** nun neben den Regionen „USA, Osten“, „USA, Westen“, „Europa, Westen“ und „Australien, Osten“ auch in den Regionen „Europa, Norden“ und „Asien, Südosten“ bereitstellen. Weitere Informationen finden Sie unter [Azure-Regionen](https://azure.microsoft.com/regions/).
 
 ## Neuigkeiten in der Version der Woche ab dem 18. Dezember 2015
 
@@ -195,4 +201,4 @@ Ab der Woche beginnend am 21. August 2015 wurden **Azure Data Catalog** die folg
 - Nur Standard Edition: Beim Hinzufügen von Besitzern zu Datenbeständen unterstützt **Azure Data Catalog** jetzt sowohl Benutzerkonten als auch Sicherheitsgruppen als Besitzer. Um eine Sicherheitsgruppe als Besitzer für ausgewählte Datenasset hinzuzufügen, können Sie entweder den Anzeigenamen der Gruppe oder die UPN-E-Mail-Adresse der Gruppe (sofern vorhanden) eingeben.
 - Unterstützung für Datenquellen in Azure Blob Storage. Benutzer können nun Azure Storage-Blobs und -Verzeichnisse registrieren und ermitteln.
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

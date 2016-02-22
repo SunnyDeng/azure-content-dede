@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/15/2015" 
+	ms.date="02/03/2016"
 	ms.author="juliako"/>
 
 
@@ -23,7 +23,8 @@ Dieses Thema enthält Informationen zum Einfügen verschiedener Typen von Werbee
 
 Informationen zu Untertiteln und der Unterstützung von Werbeeinblendungen in Livestreaming-Videos finden Sie unter [Standards für unterstützte Untertitel und für Werbeeinblendungen](media-services-manage-channels-overview.md#cc_and_ads).
 
- 
+>[AZURE.NOTE] Azure Media Player unterstützt derzeit keine Werbeeinblendungen.
+
 ##<a id="insert_ads_into_media"></a>Einfügen von Werbeeinblendungen in Ihre Medien
 
 Azure Media Services unterstützt Werbeeinblendungen über die Windows Media-Plattform: Player-Frameworks. Player-Frameworks mit Unterstützung für Werbeeinblendungen sind für Windows 8, Silverlight, Windows Phone 8 und iOS-Geräte verfügbar. Jedes Player-Framework enthält Beispielcode, der zeigt, wie eine Playeranwendung implementiert werden kann. Es gibt drei verschiedene Arten von Werbung, die Sie in Ihre Medien einfügen können.
@@ -812,4 +813,4 @@ Das folgende Beispiel zeigt, wie eine Mid-Roll-Overlay-Werbeeinblendung geplant 
 
 [Entwickeln von Videoplayeranwendungen](media-services-develop-video-players.md)
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0211_2016-->

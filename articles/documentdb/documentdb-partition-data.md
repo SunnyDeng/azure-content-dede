@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"      
     ms.devlang="na"      
     ms.topic="article"      
-    ms.date="10/05/2015"      
+    ms.date="02/09/2016"      
     ms.author="arramac"/>
 
 # Partitionieren und Skalieren von Daten in DocumentDB
@@ -28,7 +28,7 @@ Nach dem Lesen dieses Artikels zur Datenskalierung können Sie die folgenden Fra
  - Wann verwenden Sie die einzelnen Partitionierungsverfahren und warum?
  - Wie erstellen Sie eine partitionierte Anwendung in Azure DocumentDB?
 
-Dieser Artikel stellt einige Konzepte zum Sharding vor. Wenn Sie Code zum Partitionieren von Daten mit dem DocumentDB .NET SDK schreiben möchten, lesen Sie die Informationen unter [Partitionieren von Daten mit dem DocumentDB .NET SDK](documentdb-sharding.md).
+Dieser Artikel stellt einige Konzepte zum Sharding vor. Wenn Sie Code zum Partitionieren von Daten mit dem DocumentDB-SDK schreiben möchten, lesen Sie die Informationen unter [Partitionieren von Daten mit dem DocumentDB-SDK](documentdb-sharding.md).
 
 ## Sammlungen = Partitionen
 
@@ -46,17 +46,17 @@ Lassen Sie uns diese Verfahren einmal näher betrachten.
 
 In einer Bereichspartitionierung werden Partitionen basierend darauf zugewiesen, ob der Partitionsschlüssel in einem bestimmten Bereich liegt. Dies wird häufig für die Partitionierungen mit *time stamp*-Eigenschaften verwendet (z. B. eventTime zwischen dem 1. Februar 2015 und dem 2. Februar 2015).
 
-> [AZURE.TIP]Verwenden Sie die Bereichspartitionierung, wenn Ihre Abfragen des Partitionsschlüssels auf bestimmte Bereichswerte beschränkt sind.
+> [AZURE.TIP] Verwenden Sie die Bereichspartitionierung, wenn Ihre Abfragen des Partitionsschlüssels auf bestimmte Bereichswerte beschränkt sind.
 
 Ein Sonderfall der Bereichspartitionierung ist ein Bereich mit einem einzelnen Wert. Dies wird häufig für Partitionierungen nach diskreten Werten wie Region verwendet (z. B. wenn die Partition für Skandinavien Norwegen, Dänemark und Schweden umfasst).
 
-> [AZURE.TIP]Die Bereichspartitionierung bietet das höchste Maß an Kontrolle bei der Verwaltung einer mehrinstanzenfähigen Anwendung. Sie können einer Sammlung mehrere Mandanten, einer Sammlung einen Mandanten oder sogar mehreren Sammlungen einen Mandanten zuweisen.
+> [AZURE.TIP] Die Bereichspartitionierung bietet das höchste Maß an Kontrolle bei der Verwaltung einer mehrinstanzenfähigen Anwendung. Sie können einer Sammlung mehrere Mandanten, einer Sammlung einen Mandanten oder sogar mehreren Sammlungen einen Mandanten zuweisen.
 
 ## Hashpartitionierung
 
 Bei der Hashpartitionierung werden basierend auf dem Wert einer Hashfunktion Partitionen zugewiesen, sodass Sie Anforderungen und Daten gleichmäßig über eine Anzahl von Partitionen verteilen können. Dies wird häufig zur Partitionierung der Daten verwendet, die aus einer großen Anzahl von unterschiedlichen Clients erstellt oder genutzt werden, und eignet sich zum Speichern von Benutzerprofilen, Katalogelementen und IoT-Gerätetelemetriedaten ("Internet der Dinge").
 
-> [AZURE.TIP]Verwenden Sie die Hashpartitionierung, wenn es zu viele Entitäten gibt, um sie aufzuzählen (z. B. Benutzer oder Geräte), und wenn die Abfragerate zwischen Entitäten einigermaßen gleichmäßig ist.
+> [AZURE.TIP] Verwenden Sie die Hashpartitionierung, wenn es zu viele Entitäten gibt, um sie aufzuzählen (z. B. Benutzer oder Geräte), und wenn die Abfragerate zwischen Entitäten einigermaßen gleichmäßig ist.
 
 ## Auswählen des richtigen Partitionierungsverfahrens
 
@@ -112,4 +112,4 @@ In diesem Artikel haben wir einige gängige Verfahren der Datenpartitionierung m
 
  
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0211_2016-->

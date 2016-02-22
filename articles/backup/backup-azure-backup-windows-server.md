@@ -14,7 +14,7 @@
 	 ms.tgt_pltfrm="na"
 	 ms.devlang="na"
 	 ms.topic="article"
-	 ms.date="01/22/2016"
+	 ms.date="02/05/2016"
 	 ms.author="jimpark;"/>
 
 # Sichern von Windows Server- oder Windows-Clientdateien und -ordnern in Azure
@@ -51,5 +51,6 @@ Das Sichern von Windows-Dateien und -Ordnern in Azure ist mit dieser unkomplizie
 - [Verwalten von Windows-Servern oder Windows-Clients](backup-azure-manage-windows-server.md)
 - [Wiederherstellen von Windows-Servern oder Windows-Clients aus Azure](backup-azure-restore-windows-server.md)
 - [Azure Backup – Häufig gestellte Fragen](backup-azure-backup-faq.md)
+- Besuchen Sie das [Azure Backup-Forum](http://go.microsoft.com/fwlink/p/?LinkId=290933).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

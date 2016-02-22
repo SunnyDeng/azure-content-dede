@@ -13,7 +13,7 @@
   ms.topic="article"
   ms.tgt_pltfrm="Azure"
   ms.workload="na"
-  ms.date="10/08/2015"
+  ms.date="02/04/2016"
   ms.author="hascipio; v-divte"/>
 
 # Entwickeln eines lokalen Images eines virtuellen Computers für Azure Marketplace
@@ -42,10 +42,8 @@ Suchen Sie die Blob-URL im neuen [Microsoft Azure-Portal](https://ms.portal.azur
   ![Abbildung](media/marketplace-publishing-vm-image-creation-on-premise/img03.png)
 
 ### Herunterladen einer VHD-Datei
-Nachdem Sie die Blob-URL kennen, können Sie die virtuelle Festplatte über das [Azure-Portal](http://manage.windowsazure.com/) oder per PowerShell herunterladen.  
-
-> [AZURE.NOTE]Zum Zeitpunkt der Erstellung dieser Anleitung ist die Funktionalität zum Herunterladen einer VHD-Datei noch nicht im neuen Microsoft Azure-Portal vorhanden.  
-
+Nachdem Sie die Blob-URL kennen, können Sie die virtuelle Festplatte über das [Azure-Portal](http://manage.windowsazure.com/) oder per PowerShell herunterladen.
+> [AZURE.NOTE] Zum Zeitpunkt der Erstellung dieser Anleitung ist die Funktionalität zum Herunterladen einer VHD-Datei noch nicht im neuen Microsoft Azure-Portal vorhanden.
 
 **Herunterladen der Betriebssystem-VHD-Datei über das aktuelle [Azure-Portal](http://manage.windowsazure.com/)**
 
@@ -74,10 +72,9 @@ Zusätzlich zur Verwendung des Azure-Portals können Sie das Cmdlet [Save-AzureV
         Save-AzureVhd –Source <storageURIOfVhd> `
         -LocalFilePath <diskLocationOnWorkstation> `
         -StorageKey <keyForStorageAccount>
-Beispiel:
-        Save-AzureVhd -Source „https://baseimagevm.blob.core.windows.net/vhds/BaseImageVM-6820cq00-BaseImageVM-os-1411003770191.vhd“ -LocalFilePath „C:\\Users\\Administrator\\Desktop\\baseimagevm.vhd“ -StorageKey <String>
+Beispiel: Save-AzureVhd -Source „https://baseimagevm.blob.core.windows.net/vhds/BaseImageVM-6820cq00-BaseImageVM-os-1411003770191.vhd“ -LocalFilePath „C:\\Users\\Administrator\\Desktop\\baseimagevm.vhd“ -StorageKey <String>
 
-> [AZURE.NOTE]**Save-AzureVhd** verfügt auch über eine **NumberOfThreads**-Option, mit der die Parallelität so erhöht wird, dass die verfügbare Bandbreite optimal für den Download eingesetzt wird.
+> [AZURE.NOTE] **Save-AzureVhd** verfügt auch über eine **NumberOfThreads**-Option, mit der die Parallelität so erhöht wird, dass die verfügbare Bandbreite optimal für den Download eingesetzt wird.
 
 ## Hochladen von VHD-Dateien in ein Azure-Speicherkonto
 Wenn Sie die virtuellen Festplatten lokal vorbereitet haben, müssen Sie sie in ein Speicherkonto in Azure hochladen. Dieser Schritt erfolgt, nachdem die VHD-Datei lokal erstellt wurde, jedoch bevor eine Zertifizierung für das VM-Image abgerufen wird.
@@ -103,7 +100,7 @@ Um ein Speicherkonto zu erstellen, können Sie das [Microsoft Azure-Portal](http
 
 7.	Wählen Sie auf dem Blatt „Container“ die Option **Hinzufügen** aus, und geben Sie dann einen Containernamen und die Berechtigungen für den Container ein. Wählen Sie **Privat** als Containerberechtigung aus.
 
-> [AZURE.TIP]Es wird empfohlen, einen Container pro SKU zu erstellen, die Sie veröffentlichen möchten.
+> [AZURE.TIP] Es wird empfohlen, einen Container pro SKU zu erstellen, die Sie veröffentlichen möchten.
 
   ![Abbildung](media/marketplace-publishing-vm-image-creation-on-premise/img10.png)
 
@@ -116,7 +113,7 @@ Erstellen Sie anschließend mit dem Cmdlet [NewAzureStorageContainer](http://msd
 
         New-AzureStorageContainer -Name “containername” -Permission “Off”
 
-> [AZURE.NOTE]Bei diesen Befehlen wird davon ausgegangen, dass der aktuelle Kontext des Speicherkontos in PowerShell bereits festgelegt wurde. Weitere Informationen zur Einrichtung von PowerShell finden Sie unter [Einrichten von Azure PowerShell](marketplace-publishing-powershell-setup.md).
+> [AZURE.NOTE] Bei diesen Befehlen wird davon ausgegangen, dass der aktuelle Kontext des Speicherkontos in PowerShell bereits festgelegt wurde. Weitere Informationen zur Einrichtung von PowerShell finden Sie unter [Einrichten von Azure PowerShell](marketplace-publishing-powershell-setup.md).
 ### Erstellen eines Speicherkontos mit dem Befehlszeilentool für Mac und Linux
 Erstellen Sie wie folgt über das [Linux-Befehlszeilentool](../virtual-machines/command-line-tools/) ein Speicherkonto.
 
@@ -135,11 +132,10 @@ Verwenden Sie das Cmdlet [Add-AzureVhd](http://msdn.microsoft.com/library/dn4951
         Add-AzureVhd –Destination “http://mystorageaccount.blob.core.windows.net/containername/vmsku.vhd” -LocalFilePath “C:\Users\Administrator\Desktop\vmsku.vhd”
 
 ### Hochladen einer virtuellen Festplatte über das Befehlszeilentool für Mac und Linux
-Verwenden Sie folgenden Befehl im [Linux-Befehlszeilentool](../virtual-machines/command-line-tools/):
-azure vm image create <image name> --location <Location of the data center> --OS Linux <LocationOfLocalVHD>
+Verwenden Sie folgenden Befehl im [Linux-Befehlszeilentool](../virtual-machines/command-line-tools/): azure vm image create <image name> --location <Location of the data center> --OS Linux <LocationOfLocalVHD>
 
 ## Weitere Informationen
 - [Erstellen eines Images eines virtuellen Computers für den Marketplace](marketplace-publishing-vm-image-creation.md)
 - [Einrichten von Azure PowerShell](marketplace-publishing-powershell-setup.md)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0211_2016-->

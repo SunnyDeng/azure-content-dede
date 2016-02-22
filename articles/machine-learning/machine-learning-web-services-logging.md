@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="big-data" 
-	ms.date="09/04/2015"
+	ms.date="02/04/2016"
 	ms.author="raymondl;garye"/>
 
 #Aktivieren der Protokollierung für Machine Learning-Webdienste  
@@ -44,4 +44,4 @@ Dieses Dokument enthält Informationen zu den Protokollierungsfunktionen der Azu
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0211_2016-->

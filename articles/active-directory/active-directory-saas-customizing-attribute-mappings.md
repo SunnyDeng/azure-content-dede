@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/05/2016"
+	ms.date="02/09/2016"
 	ms.author="markusvi"/>
 
 
@@ -26,7 +26,7 @@ Es ist eine vorkonfigurierte Sammlung von Attributzuordnungen zwischen Azure AD-
 
 Im Azure AD-Portal können Sie auf dieses Feature zugreifen, indem Sie in der Symbolleiste einer SaaS-Anwendung auf "Attribute" klicken.
 
-> [AZURE.NOTE]Der Link **Attribute** ist nur verfügbar, wenn die Benutzerbereitstellung für eine SaaS-Anwendung aktiviert ist.
+> [AZURE.NOTE] Der Link **Attribute** ist nur verfügbar, wenn die Benutzerbereitstellung für eine SaaS-Anwendung aktiviert ist.
 
 
 ![Salesforce][1]
@@ -81,8 +81,16 @@ Zusätzlich zu diesen vier grundlegenden Attributzuordnungstypen unterstützen b
 Microsoft Azure AD stellt eine äußerst effiziente Implementierung eines Synchronisierungsprozesses zur Verfügung. In einer initialisierten Umgebung werden nur Objekte, die eine Aktualisierung erfordern, während eines Synchronisierungszyklus verarbeitet. Das Aktualisieren von Attributzuordnungen besitzt Auswirkungen auf die Leistung eines Synchronisierungszyklus. Der Grund besteht darin, dass nach einer Aktualisierung der Attributzuordnungskonfiguration alle verwalteten Objekte erneut ausgewertet werden müssen. Aus diesem Grund ist es eine empfohlene bewährte Methode, die Anzahl der aufeinanderfolgenden Änderungen an Ihren Attributzuordnungen so gering wie möglich zu halten.
 
 
+##Verwandte Artikel
 
-[AZURE.INCLUDE [saas-toc](../../includes/active-directory-saas-toc.md)]
+- [Artikelindex für die Anwendungsverwaltung in Azure Active Directory](active-directory-apps-index.md)
+- [Automatisieren der Bereitstellung/Bereitstellungsaufhebung von Benutzern für SaaS-Apps](active-directory-saas-app-provisioning.md)
+- [Schreiben von Ausdrücken für Attributzuordnungen](active-directory-saas-writing-expressions-for-attribute-mappings.md)
+- [Bereichsfilter für die Benutzerbereitstellung](active-directory-saas-scoping-filters.md)
+- [Verwenden von SCIM für die automatische Bereitstellung von Benutzern und Gruppen aus Azure Active Directory für Anwendungen](active-directory-scim-provisioning.md)
+- [Kontobereitstellungsbenachrichtigungen](active-directory-saas-account-provisioning-notifications.md)
+- [Liste der Tutorials zur Integration von SaaS-Apps](active-directory-saas-tutorial-list.md)
+
 
 <!--Image references-->
 [1]: ./media/active-directory-saas-customizing-attribute-mappings/ic765497.png
@@ -90,4 +98,4 @@ Microsoft Azure AD stellt eine äußerst effiziente Implementierung eines Synchr
 [3]: ./media/active-directory-saas-customizing-attribute-mappings/ic775420.png
 [4]: ./media/active-directory-saas-customizing-attribute-mappings/ic775421.png
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0211_2016-->

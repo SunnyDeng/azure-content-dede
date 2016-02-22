@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/21/2016"
+	ms.date="02/09/2016"
 	ms.author="kgremban"/>
 
 # Azure AD und Anwendungen: Leitfaden für Entwickler
@@ -77,4 +77,8 @@ Für vertrauenswürdige Anwendungen ist es möglich, dass Administratoren der An
 
 Weitere Informationen über die Benutzerzustimmung und die Oberfläche der Benutzerzustimmung in Azure finden Sie unter [Integrieren von Anwendungen in Azure Active Directory](active-directory-integrating-applications.md).
 
-<!---HONumber=AcomDC_0128_2016-->
+##Verwandte Artikel
+
+- [Artikelindex für die Anwendungsverwaltung in Azure Active Directory](active-directory-apps-index.md)
+
+<!---HONumber=AcomDC_0211_2016-->

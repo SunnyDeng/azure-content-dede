@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
-   ms.date="11/20/2015"
+   ms.date="02/08/2016"
    ms.author="maroche"/>
 
 # Azure Data Catalog-Terminologie
@@ -59,7 +59,7 @@ Eine Vorschau in Azure Data Catalog ist eine Momentaufnahme von bis zu 20 Daten
 
 Ein Datenprofil in Azure Data Catalog ist eine Momentaufnahme der Metadaten eines registrierten Datenassets auf Tabellen- und Spaltenebene, die während der Registrierung aus der Datenquelle extrahiert und mit den Metadaten des Datenassets im Katalog gespeichert werden können. Mit dem Datenprofil können Benutzer, die ein Datenasset ermitteln, die Funktion und den Zweck besser verstehen. Ähnlich wie Vorschauen müssen Datenprofile explizit vom Benutzer während der Registrierung ausgewählt werden.
 
-> [AZURE.NOTE]Die Extraktion eines Datenprofils kann bei großen Tabellen und Sichten ein kostspieliger Vorgang sein, und zudem die für das Registrieren einer Datenquelle erforderliche Zeit erheblich erhöhen.
+> [AZURE.NOTE] Die Extraktion eines Datenprofils kann bei großen Tabellen und Sichten ein kostspieliger Vorgang sein, und zudem die für das Registrieren einer Datenquelle erforderliche Zeit erheblich erhöhen.
 
 ## Perspektive des Benutzers
 
@@ -74,7 +74,7 @@ Ein Experte ist ein Benutzer, der in Bezug auf ein Datenasset über eine fundier
 ## Besitzer
 
 Ein Besitzer ist ein Benutzer mit zusätzlichen Berechtigungen zum Verwalten eines Datenassets in Azure Data Catalog. Benutzer können registrierte Datenassets in Besitz nehmen, und Besitzer können andere Benutzer als Mitbesitzer hinzufügen.
-> [AZURE.NOTE]Diese Besitz- und Verwaltungsfunktionen sind nur in der Standard Edition von Azure Data Catalog verfügbar.
+> [AZURE.NOTE] Diese Besitz- und Verwaltungsfunktionen sind nur in der Standard Edition von Azure Data Catalog verfügbar.
 
 ## Registrierung
 
@@ -86,4 +86,4 @@ Die Registrierung umfasst das Extrahieren der Metadaten eines Datenassets aus ei
 
 - [Erste Schritte mit Azure Data Catalog](data-catalog-get-started.md) Dieser Artikel enthält ein umfassendes Lernprogramm zur Verwendung von Azure Data Catalog für die Ermittlung von Datenquellen.
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0211_2016-->

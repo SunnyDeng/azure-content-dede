@@ -13,13 +13,13 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/08/2015"
+	ms.date="02/03/2016"
 	ms.author="garye"/>
 
 
 # Anleitung Schritt 6: Zugreifen auf den Azure Machine Learning-Webdienst
 
-Dies ist der letzte Teil der Anleitung [Entwickeln einer Vorhersagelösung mit Azure ML](machine-learning-walkthrough-develop-predictive-solution.md)
+Dies ist der letzte Schritt der exemplarischen Vorgehensweise zum [Entwickeln einer Predictive Analytics-Lösung mit Azure Machine Learning](machine-learning-walkthrough-develop-predictive-solution.md).
 
 
 1.	[Erstellen eines Machine Learning-Arbeitsbereichs](machine-learning-walkthrough-1-create-ml-workspace.md)
@@ -31,15 +31,17 @@ Dies ist der letzte Teil der Anleitung [Entwickeln einer Vorhersagelösung mit A
 
 ----------
 
-Damit ein Webdienst nützlich ist, müssen Benutzer in der Lage sein, Daten an ihn zu senden und Ergebnisse zu erhalten. Der Webdienst ist ein Azure-Webdienst, der Daten auf eine von zwei Arten empfangen und ausgeben kann:
+Im vorherigen Schritt in dieser exemplarischen Vorgehensweise haben wir einen Webdienst bereitgestellt, der unser Vorhersagemodell für Kreditrisiken verwendet. Nun müssen Benutzer in der Lage sein, Daten an ihn zu senden und Ergebnisse zu erhalten.
 
--	**Anfrage/Antwort**: Der Benutzer sendet über das HTTP-Protokoll eine oder mehrere Zeilen Kreditdaten an den Dienst, und dieser antwortet mit einem Satz an Ergebnissen.
--	**Batchausführung:** Der Benutzer sendet die URL eines Azure-Blobs an den Dienst, auf dem eine oder mehr Zeilen an Kreditdaten enthalten sind. Der Dienst speichert die Ergebnisse in einem anderen Blob und gibt die URL dieses Containers zurück.  
+Der Webdienst ist ein Azure-Webdienst, der Daten auf eine von zwei Arten über REST-APIs empfangen und zurückgeben kann:
 
-Auf der Registerkarte **DASHBOARD** dieses Webdiensts gibt es zwei Links zu Informationen, mit deren Hilfe Entwickler Code für den Zugriff auf diesen Dienst schreiben können. Klicken Sie auf den Link **API-Hilfeseite** in der Zeile **ANFRAGE/ANTWORT**, und es wird eine Seite geöffnet, die einen Beispielcode für das Verwenden des Anfrage/Antwort-Protokolls des Diensts enthält. In gleicher Weise liefert der Link **BATCHAUSFÜHRUNG** Beispielcode für das Durchführen einer Batchanforderung an den Dienst.
+-	**Anfrage/Antwort:** Der Benutzer sendet über das HTTP-Protokoll eine oder mehrere Zeilen Kreditdaten an den Dienst, und dieser antwortet mit einem oder mehreren Sätzen von Ergebnissen.
+-	**Batchausführung:** Der Benutzer speichert Zeilen von Kreditdaten in einem Azure-Blob und sendet den Speicherorts des Blobs dann an den Dienst. Der Dienst bewertet alle Datenzeilen im Eingabeblob, speichert die Ergebnisse in einem anderen Blob und gibt die URL dieses Containers zurück.  
 
-Die API-Hilfeseite enthält Beispiele für die Programmiersprachen R, C# und Python.
+Die schnellste und einfachste Möglichkeit, auf den Webdienst zuzugreifen, bieten die Web-App-Vorlagen, die im [Azure Marketplace für Web-Apps](https://azure.microsoft.com/marketplace/web-applications/all/) verfügbar sind. Die Web-App-Vorlagen können eine benutzerdefinierte Web-App erstellen, der die Eingabedaten und die zurückgegebenen Ergebnisse des Webdiensts bekannt sind. Dafür müssen Sie nur Zugriff auf den Webdienst und die Daten gewähren, und die Vorlage übernimmt den Rest.
 
-Weitere Informationen zum Zugreifen auf und Verwenden des Webdienstes finden Sie unter [Nutzen eines Azure Machine Learning-Webdiensts, der von einem Machine Learning-Experiment aus veröffentlicht wurde](machine-learning-consume-web-services.md).
+Weitere Informationen zur Verwendung von Web-App-Vorlagen finden Sie unter [Verwenden eines Azure Machine Learning-Webdiensts mit einer Web-App-Vorlage](machine-learning-consume-web-service-with-web-app-template.md).
 
-<!---HONumber=Oct15_HO3-->
+Sie können auch eine benutzerdefinierte Anwendung entwickeln, die mithilfe von in den Programmiersprachen R, C# und Python bereitgestelltem Startcode auf den Webdienst zugreift. Vollständige Details finden Sie unter [Gewusst wie: Nutzen eines Azure Machine Learning-Webdiensts, der von einem Machine Learning-Experiment aus veröffentlicht wurde](machine-learning-consume-web-services.md).
+
+<!---HONumber=AcomDC_0211_2016-->

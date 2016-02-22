@@ -13,16 +13,16 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/13/2015"
+	ms.date="02/09/2016"
 	ms.author="cephalin"/>
 
 # Verbinden eines lokalen SQL-Servers von einer Web-App in Azure App Service über Hybridverbindungen
 
 Hybridverbindungen ermöglichen die Verbindung von [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714)-Web-Apps mit lokalen Ressourcen, die einen statischen TCP-Port verwenden. Zu den unterstützten Ressourcen gehören Microsoft SQL Server, MySQL, HTTP Web APIs, Mobile Services und die meisten benutzerdefinierten Webdienste.
 
-In diesem Tutorial erfahren Sie, wie Sie eine App Service-Web-App im [Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715) erstellen, die Web-App mit der neuen Funktion "Hybridverbindung" mit Ihrer lokalen SQL Server-Datenbank verbinden, eine einfache ASP.NET-Anwendung erstellen, welche die Hybridverbindung verwendet, und die Anwendung auf der App Service-Web-App bereitstellen. Die fertige Web-App in Azure speichert Benutzeranmeldeinformationen in einer lokalen Mitgliedschaftsdatenbank. Bei diesem Tutorial wird davon ausgegangen, dass Sie noch keine Erfahrung mit der Verwendung von Azure oder ASP.NET haben.
+In diesem Tutorial erfahren Sie, wie Sie eine App Service-Web-App im [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715) erstellen, die Web-App mit der neuen Funktion „Hybridverbindung“ mit Ihrer lokalen SQL Server-Datenbank verbinden, eine einfache ASP.NET-Anwendung erstellen, die die Hybridverbindung verwendet, und die Anwendung auf der App Service-Web-App bereitstellen. Die fertige Web-App in Azure speichert Benutzeranmeldeinformationen in einer lokalen Mitgliedschaftsdatenbank. Bei diesem Tutorial wird davon ausgegangen, dass Sie noch keine Erfahrung mit der Verwendung von Azure oder ASP.NET haben.
 
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 >
 >Der Web-Apps-Teil der Funktion "Hybridverbindungen" ist nur im [Azure-Portal](https://portal.azure.com) verfügbar. Informationen zum Erstellen einer Verbindung in BizTalk-Diensten finden Sie unter [Hybridverbindungen](http://go.microsoft.com/fwlink/p/?LinkID=397274).
 
@@ -63,7 +63,7 @@ Wenn Sie SQL Server bereits in einer Konfiguration und Umgebung installiert habe
 <a name="InstallSQL"></a>
 ## A: Installieren von SQL Server Express, Aktivieren von TCP/IP und Erstellen einer lokalen SQL Server-Datenbank ##
 
-In diesem Abschnitt wird erläutert, wie Sie SQL Server Express installieren, TCP/IP aktivieren und eine Datenbank erstellen, damit Ihre Webanwendung in der Azure-Vorschauumgebung funktioniert.
+In diesem Abschnitt wird erläutert, wie Sie SQL Server Express installieren, TCP/IP aktivieren und eine Datenbank erstellen, damit Ihre Webanwendung im Azure-Portal funktioniert.
 
 ### SQL Server Express installieren ###
 
@@ -118,7 +118,7 @@ Für Ihre Visual Studio-Webanwendung benötigen Sie eine Mitgliedschaftsdatenban
 <a name="CreateSite"></a>
 ## B. Erstellen einer Web-App im Azure-Portal ##
 
-> [AZURE.NOTE]Wenn Sie im Azure-Portal bereits eine Web-App erstellt haben, die Sie für dieses Tutorial verwenden möchten, können Sie gleich mit [Erstellen einer Hybridverbindung und eines BizTalk-Diensts](#CreateHC) fortfahren.
+> [AZURE.NOTE] Wenn Sie im Azure-Portal bereits eine Web-App erstellt haben, die Sie für dieses Tutorial verwenden möchten, können Sie gleich mit [Erstellen einer Hybridverbindung und eines BizTalk-Diensts](#CreateHC) fortfahren.
 
 1. Klicken Sie im [Azure-Portal](https://portal.azure.com) auf **Neu** > **Web und mobil** > **Web-App**.
 
@@ -192,7 +192,7 @@ Nachdem die Hybridverbindungsinfrastruktur jetzt vollständig ist, werden Sie ei
 
 In diesem Schritt bearbeiten Sie die Verbindungszeichenfolge, der Ihre Anwendung entnimmt, wo sich die lokale SQL Server Express-Datenbank befindet. Die Verbindungszeichenfolge befindet sich in der Web.config-Datei der Anwendung, welche die Konfigurationsdaten der Anwendung enthält.
 
-> [AZURE.NOTE]Um sicherzustellen, dass Ihre Anwendung die Datenbank, die Sie in SQL Server Express erstellt haben, und nicht die Datenbank aus der LocalDB-Standardinstanz von Visual Studio verwendet, müssen Sie diesen Schritt unbedingt fertigstellen, bevor Sie das Projekt ausführen.
+> [AZURE.NOTE] Um sicherzustellen, dass Ihre Anwendung die Datenbank, die Sie in SQL Server Express erstellt haben, und nicht die Datenbank aus der LocalDB-Standardinstanz von Visual Studio verwendet, müssen Sie diesen Schritt unbedingt fertigstellen, bevor Sie das Projekt ausführen.
 
 1. Doppelklicken Sie im Projektmappen-Explorer auf die Datei "Web.config".
 
@@ -302,7 +302,7 @@ Sie haben jetzt eine ASP.NET-Webanwendung erstellt und bereitgestellt, die eine 
 
 [Erstellen einer echten Hybrid-Cloud mit nahtloser Anwendungsportabilität (Channel 9-Video)](http://channel9.msdn.com/events/TechEd/NorthAmerica/2014/DCIM-B323#fbid=)
 
-[Verbinden mit einem lokalen SQL Server über einen mobilen Azure-Dienst mithilfe von Hybridverbindungen](../mobile-services-dotnet-backend-hybrid-connections-get-started.md)
+[Verbinden mit einem lokalen SQL Server über einen mobilen Azure-Dienst mithilfe von Hybridverbindungen](../mobile-services/mobile-services-dotnet-backend-hybrid-connections-get-started.md)
 
 [Verbinden mit einem lokalen SQL Server über Azure Mobile Services mithilfe von Hybridverbindungen (Channel 9-Video)](http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Connect-to-an-on-premises-SQL-Server-from-Azure-Mobile-Services-using-Hybrid-Connections)
 
@@ -363,4 +363,4 @@ Sie haben jetzt eine ASP.NET-Webanwendung erstellt und bereitgestellt, die eine 
 [HCTestSSMSTree]: ./media/web-sites-hybrid-connection-connect-on-premises-sql-server/F10HCTestSSMSTree.png
 [HCTestShowMemberDb]: ./media/web-sites-hybrid-connection-connect-on-premises-sql-server/F11HCTestShowMemberDb.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0211_2016-->

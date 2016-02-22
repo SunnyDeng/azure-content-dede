@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="multiple"
-   ms.date="11/13/2015"
+   ms.date="02/09/2016"
    ms.author="tomfitz" />
 
 # Bearbeiten von Ressourcen-Manager-Vorlagen mit Visual Studio
@@ -61,7 +61,7 @@ Weitere Informationen zur Struktur der Vorlage finden Sie unter [Erstellen von A
 
 ## Weitere Informationen
 
-[Erstellen und Bereitstellen von Azure-Ressourcengruppen mit Visual Studio](vs-azure-tools-resource-groups-deployment-project-create-deploy.md)
+[Erstellen und Bereitstellen von Azure-Ressourcengruppen mit Visual Studio](vs-azure-tools-resource-groups-deployment-projects-create-deploy.md)
 
 [Azure-Ressourcen-Manager-Cmdlets](https://msdn.microsoft.com/library/azure/dn757692.aspx)
 
@@ -69,4 +69,4 @@ Weitere Informationen zur Struktur der Vorlage finden Sie unter [Erstellen von A
 
 [Channel 9-Video: Azure-Ressourcen-Manager](http://channel9.msdn.com/Events/TechEd/NorthAmerica/2014/DEV-B224#fbid=)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

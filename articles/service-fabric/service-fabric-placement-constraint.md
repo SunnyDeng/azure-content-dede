@@ -36,6 +36,6 @@ NodeProperty – Eine benutzer- oder systemdefinierte Zuordnung einer Zeichenfol
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## Nächste Schritte
 
-Weitere Informationen: [Anwendungsszenarien](../service-fabric-application-scenarios).
+Weitere Informationen: [Anwendungsszenarien](service-fabric-application-scenarios.md).
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

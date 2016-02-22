@@ -18,7 +18,7 @@
 
 # IoT-Geräteverwaltung mithilfe der Azure IoT Suite und Azure IoT Hub
 
-Azure IoT Suite und Azure IoT Hub bieten grundlegende Funktionen, die die Geräteverwaltung für umfangreiche IoT-Lösungen und für verschiedene Geräte und Gerätetopologien ermöglichen. Geräteverwaltung bezieht sich in diesem Artikel ausdrücklich auf die IoT-Geräteverwaltung.
+[Azure IoT Suite][lnk-iot-suite] und Azure IoT Hub bieten grundlegende Funktionen, die die Geräteverwaltung für umfangreiche IoT-Lösungen und für verschiedene Geräte und Gerätetopologien ermöglichen. Geräteverwaltung bezieht sich in diesem Artikel ausdrücklich auf die IoT-Geräteverwaltung.
 
 ## Einführung
 
@@ -30,13 +30,13 @@ Dienstanbieter und Unternehmen oder Organisationen, die IoT-Gerätebestände ver
 
 Wenn Sie die IoT-Geräteverwaltung für Ihre IoT-Lösung aktivieren, sollten Sie die folgenden Funktionen berücksichtigen und deren Bedeutung im Hinblick auf Ihre Geschäftsziele festlegen:
 
-* **[Gerätebereitstellung und -erkennung](#device-provisioning-and-discovery)**: Prozess, mit dem ein Gerät im System registriert wird.
-* **[Geräteregistrierung und -modelle](#device-registry-and-device-models)**: Methode, wie die Gerätemodelle die strukturierte Verwendung von Metadaten für Gerätebeziehungen, Rollen im System und Überprüfungsmethoden abbilden.
+* **[Gerätebereitstellung und -erkennung:](#device-provisioning-and-discovery)** Prozess, mit dem ein Gerät im System registriert wird.
+* **[Geräteregistrierung und -modelle:](#device-registry-and-device-models)** Methode, wie die Gerätemodelle die strukturierte Verwendung von Metadaten für Gerätebeziehungen, Rollen im System und Überprüfungsmethoden abbilden.
 * **[Gerätezugriffsverwaltung](#device-access-management)**: Methode, wie Geräte den Zugriff auf Geräteressourcen von Clouddiensten steuern.
 * **[Remotesteuerung](#remote-control)**: Methode, wie Remotebenutzer Zugriff auf Geräte erhalten und Geräteänderungen anweisen.
-* **[Remoteverwaltung](#remote-administration-and-monitoring)**: Prozess, mit dem ein Administrator die Integrität des Gerätebestands definiert.  
-* **[Remotekonfiguration](#remote-configuration)**: Methode für Administratoren zum Ändern der Gerätekonfiguration.
-* **[Remoteaktualisierung von Firmware und Software](#remote-firmware-and-software-update)**: Prozess, mit dem Administratoren die Gerätefirmware und -software aktualisieren können.
+* **[Remoteverwaltung:](#remote-administration-and-monitoring)** Prozess, mit dem ein Administrator die Integrität des Gerätebestands definiert.  
+* **[Remotekonfiguration:](#remote-configuration)** Methode für Administratoren zum Ändern der Gerätekonfiguration.
+* **[Remoteaktualisierung von Firmware und Software:](#remote-firmware-and-software-update)** Prozess, mit dem Administratoren die Gerätefirmware und -software aktualisieren können.
 
 Die folgenden Abschnitte bieten einen tiefer reichenden Einblick in die einzelnen Geräteverwaltungsfunktionen sowie ein übergeordnetes Modell für die Implementierung dieser Funktionen mithilfe von Azure IoT Hub.
 
@@ -72,7 +72,7 @@ Eine IoT-Produktionsbereitstellung, bei der Netzwerk- und Leistungs-/Verarbeitun
 
 ### Die vorkonfigurierte Lösung zur Remoteüberwachung und das Gerätemodell
 
-Die vorkonfigurierte Azure IoT Suite-Lösung zur Remoteüberwachung implementiert ein selbstdefiniertes Gerätemodell. Mit diesem Modell ist bei der Definition und Entwicklung von Funktionen des Geräts ein schnelles Durchlaufen möglich.
+Die [vorkonfigurierte Azure IoT Suite-Lösung zur Remoteüberwachung][lnk-remote-monitoring] implementiert ein selbstdefiniertes Gerätemodell. Mit diesem Modell ist bei der Definition und Entwicklung von Funktionen des Geräts ein schnelles Durchlaufen möglich.
 
 Sie finden den Quellcode für diese vorkonfigurierte Lösung im GitHub-Repository [azure-iot-solution][lnk-azure-iot-solution].
 
@@ -96,9 +96,9 @@ Remotesteuerung ist kein gültiges Szenario für vorkonfigurierte Azure IoT Suit
 
 In IT-Szenarien wird die Remotesteuerung häufig zur Unterstützung von Remotebenutzern oder zur Remotekonfiguration von Remoteservern verwendet. In IoT-Szenarien haben die meisten Geräte keine spezifischen Benutzer, daher wird die Remotesteuerung in Remotekonfigurations- und Diagnoseszenarien verwendet. Die Remotesteuerung kann mit zwei verschiedenen Modellen implementiert werden:
 
-* **Direktverbindung**: Um die Remotesteuerung über eine Direktverbindung mit einem Gerät zu aktivieren (z. B. SSH unter Linux, Remotedesktop unter Windows oder über Tools zum Remotedebuggen), müssen Sie eine Verbindung mit dem Gerät herstellen können. Aufgrund des Sicherheitsrisikos für ein Gerät, das über das offene Internet erreichbar ist, wird empfohlen, einen Relaydienst (wie den Azure [Service Bus Relay-Dienst][service-bus-relay]) zu verwenden, um die Verbindung zu ermöglichen und Datenverkehr weiterzuleiten. Da eine Relayverbindung eine ausgehende Verbindung vom Gerät ist, lässt sich damit die Angriffsfläche von offenen TCP-Ports auf dem Gerät beschränken.
+* **Direktverbindung:** Um die Remotesteuerung über eine Direktverbindung mit einem Gerät zu aktivieren (z. B. SSH unter Linux, Remotedesktop unter Windows oder über Tools zum Remotedebuggen), müssen Sie eine Verbindung mit dem Gerät herstellen können. Aufgrund des Sicherheitsrisikos für ein Gerät, das über das offene Internet erreichbar ist, wird empfohlen, einen Relaydienst (wie den Azure [Service Bus Relay-Dienst][service-bus-relay]) zu verwenden, um die Verbindung zu ermöglichen und Datenverkehr weiterzuleiten. Da eine Relayverbindung eine ausgehende Verbindung vom Gerät ist, lässt sich damit die Angriffsfläche von offenen TCP-Ports auf dem Gerät beschränken.
 
-* **Gerätebefehl**: Die Remotesteuerung über Gerätebefehle nutzt die vorhandene Verbindung und den Kommunikationskanal zwischen dem Gerät und Azure IoT Hub. Um die Remotesteuerung basierend auf Gerätebefehlen zu aktivieren, müssen Sie die folgenden Anforderungen beachten:
+* **Gerätebefehl:** Die Remotesteuerung über Gerätebefehle nutzt die vorhandene Verbindung und den Kommunikationskanal zwischen dem Gerät und Azure IoT Hub. Um die Remotesteuerung basierend auf Gerätebefehlen zu aktivieren, müssen Sie die folgenden Anforderungen beachten:
   * Die Software, die auf dem Gerät ausgeführt wird, muss den IoT-Dienst darüber informieren, dass die Gerätebefehle auf dem Gerät verfügbar sind. Dies wird in der Regel als Teil des Gerätemodells definiert.
   * Die Software, die auf dem Gerät ausgeführt wird, muss die Remotesteuerungsbefehle implementieren. Diese Gerätebefehle sollten dem Anforderungsmuster (vom IoT-Dienst zum Gerät) und Antwortmuster (vom Gerät zum IoT-Dienst) folgen. Das Ausführen von Gerätebefehlen kann sich auf den Gerätestatus auswirken. Deshalb muss dieser neue Status in der Geräteregistrierung aktualisiert werden.
 
@@ -157,5 +157,7 @@ Weitere Informationen zu Azure IoT Hub finden Sie unter den folgenden Links:
 [service-bus-relay]: ../service-bus/service-bus-relay-overview.md
 [Verbinden Ihres Geräts]: https://azure.microsoft.com/develop/iot/
 [lnk-azure-iot-solution]: https://github.com/Azure/azure-iot-solution
+[lnk-iot-suite]: https://azure.microsoft.com/documentation/suites/iot-suite/
+[lnk-remote-monitoring]: ../iot-suite/iot-suite-remote-monitoring-sample-walkthrough.md
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0211_2016-->

@@ -3,7 +3,7 @@
 	description="Komprimieren von Daten in Azure HDInsight (Hadoop) Hive-Tabellen"
 	services="machine-learning,hdinsight"
 	documentationCenter=""
-	authors="hangzh-msft"
+	authors="bradsev,hangzh-msft"
 	manager="paulettm" 
 	editor="cgronlun"  />
 
@@ -13,28 +13,32 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/20/2015"
+	ms.date="02/07/2016"
 	ms.author="hangzh;bradsev" />
 
 # Extrahieren von Stichproben aus Daten in Azure HDInsight Hive-Tabellen
 
-Dieses **Menü** enthält Links zu Themen, die beschreiben, wie Datenstichproben aus verschiedenen Speicherumgebungen erstellt werden. Diese Aufgabe ist ein Teil des Cortana-Analyseprozesses (CAP).
-
-[AZURE.INCLUDE [cap-sample-data-selector](../../includes/cap-sample-data-selector.md)]
-
 ## Einführung
 
-Wenn das Dataset, das Sie analysieren möchten, groß ist, sollten Sie i. d. R. eine Komprimierung der Daten durchführen, um eine geringere aber immer noch repräsentative Größe zu erhalten. Dies erleichtert das Verständnis der Daten, das Durchsuchen und die Funktionsverarbeitung. Die Funktion besteht innerhalb des Cortana-Analyseprozesses darin, schnell Prototypen der Funktionen zur Datenverarbeitung und Modelle für das maschinelle Lernen zu erstellen.
-
-In diesem Artikel wird das Komprimieren von Daten in Azure HDInsight Hive-Tabellen mithilfe von Hive-Abfragen beschrieben. Dabei werden drei häufig verwendete Samplingmethoden behandelt:
+In diesem Artikel wird das Komprimieren von in Azure HDInsight Hive-Tabellen gespeicherten Daten mithilfe von Hive-Abfragen beschrieben. Dabei werden drei häufig verwendete Samplingmethoden behandelt:
 
 * Einheitliche Stichproben 
 * Zufällige Stichproben nach Gruppen 
 * Geschichtete Stichproben
 
-Sie sollten die Hive-Abfragen über die Hadoop-Befehlszeile auf dem Hauptknoten des Hadoop-Clusters übermitteln. Dazu melden Sie sich auf dem Hauptknoten des Hadoop-Clusters an, öffnen die Hadoop-Befehlszeile und übermitteln die Hive-Abfragen von dort aus. Informationen zum Übermitteln von Hive-Abfragen an der Hadoop-Befehlszeile finden Sie unter [Übermitteln von Hive-Abfragen](machine-learning-data-science-process-hive-tables.md#submit).
+**Warum eine Datenstichprobe entnehmen?** Wenn das Dataset, das Sie analysieren möchten, groß ist, sollten Sie in der Regel eine Komprimierung der Daten durchführen, um eine geringere aber immer noch repräsentative Größe zu erhalten. Dies erleichtert das Verständnis der Daten, das Durchsuchen und die Funktionsverarbeitung. Die Funktion besteht innerhalb des Cortana-Analyseprozesses darin, schnell Prototypen der Funktionen zur Datenverarbeitung und Modelle für das maschinelle Lernen zu erstellen.
 
-## <a name="uniform"></a> Einheitliche Stichproben ##
+Das nachstehende **Menü** enthält Links zu Themen, die beschreiben, wie Datenstichproben aus verschiedenen Speicherumgebungen erstellt werden.
+
+[AZURE.INCLUDE [cap-sample-data-selector](../../includes/cap-sample-data-selector.md)]
+
+Diese Datenstichprobenaufgabe ist ein Teil des [Cortana Analytics-Prozesses (CAP)](https://azure.microsoft.com/documentation/learning-paths/cortana-analytics-process/).
+
+
+## Gewusst wie: Übermitteln von Hive-Abfragen
+Hive-Abfragen können an der Hadoop-Befehlszeile auf dem Hauptknoten des Hadoop-Clusters übermittelt werden. Dazu melden Sie sich auf dem Hauptknoten des Hadoop-Clusters an, öffnen die Hadoop-Befehlszeile und übermitteln die Hive-Abfragen von dort aus. Informationen zum Übermitteln von Hive-Abfragen an der Hadoop-Befehlszeile finden Sie unter [Übermitteln von Hive-Abfragen](machine-learning-data-science-process-hive-tables.md#submit).
+
+## <a name="uniform"></a> Einheitliche Stichproben
 Bei einheitlichen Stichproben hat jede Zeile im Dataset die gleiche Wahrscheinlichkeit, als Stichprobe verwendet zu werden. Dies kann durch das Hinzufügen des zusätzlichen Felds "rand()" zum Dataset in der inneren select-Abfrage und in der äußeren select-Abfrage, die von diesem Zufallsfeld abhängt, implementiert werden.
 
 Dies ist eine Beispielabfrage:
@@ -52,7 +56,7 @@ Dies ist eine Beispielabfrage:
 
 Dabei gibt `<sample rate, 0-1>` den Anteil von Datensätzen an, den die Benutzer erfassen möchten.
 
-## <a name="group"></a> Zufällige Stichproben nach Gruppen ##
+## <a name="group"></a> Zufällige Stichproben nach Gruppen
 
 Beim Extrahieren von Stichproben aus kategorischen Daten sollten Sie entweder alle Instanzen eines bestimmten Werts einer kategorischen Variable ein- oder ausschließen. Das ist mit "Stichprobe nach Gruppe" gemeint. Wenn Sie z. B. die kategorische Variable "State" haben, die als Werte "NY", "MA", "CA", "NJ", "PA" usw. hat, möchten Sie natürlich, dass Datensätze desselben Bundesstaates immer zusammenbleiben, ob als Stichprobe oder auch sonst.
 
@@ -105,4 +109,4 @@ Dies ist eine Beispielabfrage:
 Informationen zu komplexeren Methoden für das Extrahieren von Stichproben, die in Hive verfügbar sind, finden Sie unter [LanguageManual Sampling](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Sampling) (in englischer Sprache).
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_0211_2016-->

@@ -18,9 +18,9 @@
 	ms.author="jodebrui"/>
 
 
-# Überwachen von XTP-In-Memory-Speicher
+# Überwachen des In-Memory-OLTP-Speichers
 
-Bei der Verwendung von [In-Memory](sql-database-in-memory.md) befinden sich die Daten der speicheroptimierten Tabellen und Tabellenvariablen in XTP-In-Memory-Speicher. Jede Premium-Serviceebene hat eine maximale In-Memory-Speichergröße, die im [Artikel zu Serviceebenen von SQL-Datenbanken](sql-database-service-tiers.md#service-tiers-for-single-databases) dokumentiert ist. Wenn dieses Limit überschritten wird, treten bei Einfüge- und Aktualisierungsvorgänge möglicherweise Fehler auf (mit Fehlercode 41805). An diesem Punkt müssen Sie entweder Daten löschen, um Speicherplatz freizugeben, oder ein Upgrade der Leistungsstufe Ihrer Datenbank durchführen.
+Bei der Verwendung von [In-Memory](sql-database-in-memory.md) befinden sich die Daten der speicheroptimierten Tabellen und Tabellenvariablen im In-Memory-OLTP-Speicher. Jede Premium-Serviceebene hat eine maximale In-Memory-Speichergröße, die im [Artikel zu Serviceebenen von SQL-Datenbanken](sql-database-service-tiers.md#service-tiers-for-single-databases) dokumentiert ist. Wenn dieses Limit überschritten wird, treten bei Einfüge- und Aktualisierungsvorgänge möglicherweise Fehler auf (mit Fehlercode 41805). An diesem Punkt müssen Sie entweder Daten löschen, um Speicherplatz freizugeben, oder ein Upgrade der Leistungsstufe Ihrer Datenbank durchführen.
 
 ## Bestimmen, ob genügend In-Memory-Speicherplatz für die Daten vorhanden ist
 
@@ -35,7 +35,7 @@ Beachten Sie, dass sowohl die Tabellen- und Tabellenvariablenzeilen als auch die
 Sie können die Nutzung von In-Memory-Speicher als Prozentsatz der [Speicherabdeckung für Ihre Leistungsebene](sql-database-service-tiers.md#service-tiers-for-single-databases) im Azure-[Portal](https://portal.azure.com/) überwachen:
 
 - Suchen Sie auf dem Blatt „Datenbank“ das Feld „Ressourcenverwendung“, und klicken Sie auf „Bearbeiten“.
-- Wählen Sie dann die Metrik für den Prozentsatz des XTP-In-Memory-Speichers aus.
+- Wählen Sie dann die Metrik für den Prozentsatz des In-Memory-OLTP-Speichers aus.
 - Um eine Warnung hinzuzufügen, klicken Sie auf das Feld „Ressourcenverwendung“, um das Blatt „Metrik“ zu öffnen, und klicken Sie dann auf „Warnung hinzufügen“.
 
 Oder verwenden Sie folgende Abfrage, um die In-Memory-Speicherverwendung anzuzeigen:
@@ -58,4 +58,4 @@ Beheben Sie den Fehler mit einer der folgenden Methoden:
 ## Nächste Schritte
 Weitere Informationen zum [Überwachen von Azure SQL-Datenbank mit dynamischen Verwaltungssichten](sql-database-monitoring-with-dmvs.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

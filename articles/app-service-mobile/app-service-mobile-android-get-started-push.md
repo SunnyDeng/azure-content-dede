@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="mobile-android"
 	ms.devlang="java"
 	ms.topic="article"
-	ms.date="02/03/2016"
+	ms.date="02/04/2016"
 	ms.author="yuaxu"/>
 
 # Hinzufügen von Pushbenachrichtigungen zu Ihrer Android-App
 
-[AZURE.INCLUDE [app-service-mobile-selector-get-started-push](../../includes/app-service-mobile-selector-get-started-push.md)]&nbsp;
+[AZURE.INCLUDE [app-service-mobile-selector-get-started-push](../../includes/app-service-mobile-selector-get-started-push.md)]
 
 ## Übersicht
 In diesem Lernprogramm fügen Sie Pushbenachrichtigungen zum [Android-Schnellstart]projekt hinzu, damit jedes Mal, wenn ein Datensatz eingefügt wird, eine Pushbenachrichtigung gesendet wird. Dieses Lernprogramm baut auf dem [Android-Schnellstart]lernprogramm auf, das Sie zuerst abschließen müssen. Wenn Sie das heruntergeladene Schnellstart-Serverprojekt nicht verwenden, müssen Sie Ihrem Projekt das Pushbenachrichtigungs-Erweiterungspaket hinzufügen. Weitere Informationen zu Servererweiterungspaketen finden Sie unter [Work with the .NET backend server SDK for Azure Mobile Apps](app-service-mobile-dotnet-backend-how-to-use-server-sdk.md) (in englischer Sprache).
@@ -57,7 +57,7 @@ Sie müssen sicherstellen, dass Ihr Android-App-Projekt zur Verarbeitung von Pus
 
 Als Nächstes installieren Sie Google Play Services. Google Cloud Messaging verfügt über einige Mindestanforderungen an den API-Level für Entwicklung und Tests, denen die Eigenschaft **minSdkVersion** im Manifest entsprechen muss.
 
-Wenn Sie auf einem älteren Gerät testen, konsultieren Sie Einrichten des Google Play Services SDK, um herauszufinden, wie niedrig Sie diesen Wert einstellen können. Legen Sie den Wert anschließend entsprechend fest.
+Wenn Sie den Testvorgang mit einem älteren Gerät durchführen, konsultieren Sie [Set Up Google Play Services SDK] (Einrichten des Google Play Services SDK, in englischer Sprache), um zu ermitteln, wie niedrig Sie diesen Wert einstellen können. Legen Sie den Wert anschließend entsprechend fest.
 
 ###Hinzufügen von Google Play Services zum Projekt
 
@@ -78,4 +78,6 @@ Sie können die App testen, indem Sie ein Android-Telefon direkt mit einem USB-K
 <!-- URLs -->
 [Android-Schnellstart]: app-service-mobile-android-get-started.md
 
-<!---HONumber=AcomDC_0204_2016-->
+[Set Up Google Play Services SDK]: https://developers.google.com/android/guides/setup
+
+<!---HONumber=AcomDC_0211_2016-->

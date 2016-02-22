@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="10/07/2015"
+   ms.date="02/08/2016"
    ms.author="sethm" />
 
 # Verwenden von Service Bus aus Python mit AMQP 1.0
@@ -29,11 +29,11 @@ Beachten Sie, dass zum Zeitpunkt der Erstellung dieses Dokuments die SSL-Unterst
 
 ## Verwenden von Service Bus-Warteschlangen, -Themen und -Abonnements
 
-Der folgende Code veranschaulicht, wie Sie Nachrichten aus einer Service Bus-Nachrichtenentität senden und empfangen.
+Der folgende Code veranschaulicht, wie Sie Nachrichten aus einer Service Bus-Messagingentität senden und empfangen.
 
 ### Senden von Nachrichten mithilfe von Proton-Python
 
-Der folgende Code veranschaulicht, wie Sie eine Nachricht an eine Service Bus-Nachrichtenentität senden.
+Der folgende Code veranschaulicht, wie Sie eine Nachricht an eine Service Bus-Messagingentität senden.
 
 ```
 messenger = Messenger()
@@ -47,7 +47,7 @@ messenger.send()
 
 ### Empfangen von Nachrichten mit Proton-Python
 
-Der folgende Code veranschaulicht, wie Sie eine Nachricht von einer Service Bus-Nachrichtenentität empfangen.
+Der folgende Code veranschaulicht, wie Sie eine Nachricht von einer Service Bus-Messagingentität empfangen.
 
 ```
 messenger = Messenger()
@@ -101,7 +101,7 @@ In der folgende Tabelle sind die Python-Eigenschaftentypen den .NET-Eigenschafte
 | lang | int64 |
 | uuid | GUID |
 | bool | bool |
-| Zeichenfolge | Zeichenfolge |
+| string | Zeichenfolge |
 
 #### Service Bus .NET-APIs an Proton-Python
 
@@ -173,4 +173,4 @@ Möchten Sie mehr erfahren? Nutzen Sie die folgenden Links:
 
 [Übersicht über Service Bus AMQP]: service-bus-amqp-overview.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0211_2016-->

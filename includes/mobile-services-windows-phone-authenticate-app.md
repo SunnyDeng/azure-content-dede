@@ -21,9 +21,9 @@
             }
         }
 
-    Auf diese Weise wird eine Membervariable zum Speichern des aktuellen Benutzers erstellt und eine Methode zur Verarbeitung des Authentifizierungsprozesses. Der Benutzer wird mithilfe eines Facebook-Logins authentifiziert.
+    Auf diese Weise wird eine Membervariable zum Speichern des aktuellen Benutzers erstellt und eine Methode zur Verarbeitung des Authentifizierungsprozesses. Der Benutzer wird mithilfe einer Twitter-Anmeldung authentifiziert.
 
-    >[AZURE.NOTE]Falls Sie einen anderen Identitätsanbieter als Facebook verwenden, ändern Sie den Wert für <strong>MobileServiceAuthenticationProvider</strong> oben entsprechend Ihrem Anbieter.</p> </div>
+    >[AZURE.NOTE]Falls Sie einen anderen Identitätsanbieter als Twitter verwenden, ändern Sie den Wert für <strong>MobileServiceAuthenticationProvider</strong> oben entsprechend Ihrem Anbieter.</p> </div>
 
 2. Löschen Sie die vorhandene Methodenüberschreibung **OnNavigatedTo** oder kommentieren diese aus, und ersetzen Sie diese durch folgende Methode, die das Ereignis **Loaded** für die Seite behandelt.
 
@@ -50,4 +50,4 @@
 
    	Wenn Sie sich erfolgreich angemeldet haben, sollte die App fehlerfrei ausgeführt werden, und Sie sollten Mobile Services abfragen und Daten aktualisieren können.
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0211_2016-->

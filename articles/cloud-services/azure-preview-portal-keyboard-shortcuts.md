@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="na"
-   ms.date="12/01/2015"
+   ms.date="02/07/2016"
    ms.author="curtand"/>
 
 # Tastenkombinationen für das klassische Azure-Portal
@@ -37,17 +37,11 @@
 | J | Vorheriges geöffnetes Blatt |
 | K | Nächstes geöffnetes Blatt |
 | L | Letztes geöffnetes Blatt |
-| - | Blatt minimieren oder aus maximiertem Zustand wiederherstellen |
-| + | Blatt maximieren oder aus minimiertem Zustand wiederherstellen |
-| # | Aktuelles Blatt schließen |
-| ¦ | Alle Blätter schließen |
-| , | Fokus in Befehlsleiste verschieben |
-| . | Fokus in Navigationsleiste verschieben |
-| ? | Tastenkombinationen anzeigen |
+| - | Blatt minimieren oder aus maximiertem Zustand wiederherstellen | | + | Blatt maximieren oder aus minimiertem Zustand wiederherstellen | | # | Aktuelles Blatt schließen | | ¦ | Alle Blätter schließen | | , | Fokus in Befehlsleiste verschieben | | . | Fokus in Navigationsleiste verschieben | | ? | Tastenkombinationen anzeigen |
 
 
 ## Nächste Schritte
 
 Weitere Informationen zum klassischen Azure-Portal: http://azure.microsoft.com.
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/07/2016" 
+	ms.date="02/02/2016" 
 	ms.author="elizapo"/>
 
 # Erstellen eines benutzerdefinierten Vorlagenimages für Azure RemoteApp
@@ -46,7 +46,7 @@ Bevor Sie mit der Erstellung des Dienstes beginnen, führen Sie Folgendes aus:
 - [Melden](https://azure.microsoft.com/services/remoteapp/) Sie sich für RemoteApp an.
 - Erstellen Sie ein Benutzerkonto in Active Directory, das als Konto für den RemoteApp-Dienst dient. Beschränken Sie die Berechtigungen für dieses Konto, sodass es nur Computer in die Domäne einbinden kann. Weitere Informationen finden Sie unter [Konfigurieren von Active Directory für Azure RemoteApp](remoteapp-ad.md).
 - Sammeln Sie Informationen zu Ihrem lokalen Netzwerk: IP-Adressdaten und Details zum VPN-Gerät.
-- Installieren Sie das [Azure PowerShell](../install-configure-powershell.md)-Modul.
+- Installieren Sie das [Azure PowerShell](../powershell-install-configure.md)-Modul.
 - Sammeln Sie Informationen zu den Benutzern, denen Sie Zugriff gewähren möchten. Dies können Informationen zu Microsoft-Konten oder Active Directory-Geschäftskonten für Benutzer sein.
 
 
@@ -142,4 +142,4 @@ Nach dem Erstellen des benutzerdefinierten Vorlagenimages müssen Sie dieses Ima
 - [Erstellen einer Cloud-Sammlung von RemoteApp](remoteapp-create-cloud-deployment.md)
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="01/20/2016"
-   ms.author="ryanwi; mani-ramaswamy"/>
+   ms.author="ryanwi"/>
 
 
 # Lebenszyklus der Service Fabric-Anwendung
@@ -34,7 +34,7 @@ Es gibt folgende Rollen im Dienstmodell:
 
 
 ## Entwickeln
-1. Ein *Dienstentwickler* entwickelt unter Verwendung des Programmiermodells [Reliable Actors](service-fabric-reliable-actors-introduction.md) oder [Reliable Services](../service-fabric/service-fabric-reliable-services-introduction.md) verschiedene Diensttypen.
+1. Ein *Dienstentwickler* entwickelt unter Verwendung des Programmiermodells [Reliable Actors](service-fabric-reliable-actors-introduction.md) oder [Reliable Services](service-fabric-reliable-services-introduction.md) verschiedene Diensttypen.
 2. Ein *Dienstentwickler* beschreibt die entwickelten Diensttypen deklarativ in einer Dienstmanifestdatei, die aus einem oder mehreren Code-, Konfigurations- und Datenpaketen besteht.
 3. Ein *Anwendungsentwickler* erstellt dann mit verschiedenen Diensttypen eine Anwendung.
 4. Der *Anwendungsentwickler* beschreibt den Anwendungstyp deklarativ in einem Anwendungsmanifest, indem er auf die Dienstmanifeste der zugehörigen Dienste verweist und verschiedene Konfigurations- und Bereitstellungseinstellungen der zugehörigen Dienste entsprechend überschreibt und parametrisiert.
@@ -113,10 +113,10 @@ Beispiele finden Sie unter [Deploy an application](service-fabric-deploy-remove-
 Weitere Informationen zum Entwickeln, Testen und Verwalten von Service Fabric-Anwendungen und Service Fabric-Diensten:
 
 - [Reliable Actors](service-fabric-reliable-actors-introduction.md)
-- [Reliable Services](../service-fabric/service-fabric-reliable-services-introduction.md)
+- [Reliable Services](service-fabric-reliable-services-introduction.md)
 - [Bereitstellen von Anwendungen](service-fabric-deploy-remove-applications.md)
 - [Anwendungsupgrade](service-fabric-application-upgrade.md)
 - [Testability – Übersicht](service-fabric-testability-overview.md)
 - [REST-basierter Anwendungslebenszyklus – Beispiel](service-fabric-rest-based-application-lifecycle-sample.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

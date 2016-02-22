@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/15/2015"
+ 	ms.date="02/03/2016"  
 	ms.author="juliako"/>
 
 #Gewusst wie: Aktualisieren von Media Services nach dem Austausch der Speicherschlüssel
@@ -89,7 +89,7 @@ Warten Sie nach der Synchronisierung des neuen Speicherschlüssels mit AMS minde
 
 Beachten Sie, dass sich beim Aktualisieren (oder Neuerstellen) eines SAS-Locators die URL immer ändert.
 
->[AZURE.NOTE]Um sicherzustellen, dass die vorhandenen URLs der OnDemand-Locators beibehalten werden, müssen Sie den vorhandenen Locator löschen und einen neuen mit der gleichen ID erstellen.
+>[AZURE.NOTE] Um sicherzustellen, dass die vorhandenen URLs der OnDemand-Locators beibehalten werden, müssen Sie den vorhandenen Locator löschen und einen neuen mit der gleichen ID erstellen.
  
 Im folgenden .NET-Beispiel wird das Neuerstellen eines Locators mit der gleichen ID gezeigt.
 	
@@ -159,4 +159,4 @@ Gehen Sie auf die gleiche Weise wie in [Schritt 3](media-services-roll-storage-a
 
 Wir möchten folgenden Personen für ihre Beiträge zur Erstellung dieses Dokuments danken: Cenk Dingiloglu, Milan Gada, Seva Titov.
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0211_2016-->

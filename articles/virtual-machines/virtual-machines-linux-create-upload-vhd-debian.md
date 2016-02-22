@@ -19,9 +19,9 @@
 
 
 
-#Vorbereiten einer Debian-VHD für Azure
+# Vorbereiten einer Debian-VHD für Azure
 
-##Voraussetzungen
+## Voraussetzungen
 In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein Debian Linux-Betriebssystem aus einer ISO-Datei von der [Debian-Website](https://www.debian.org/distrib/) auf eine virtuelle Festplatte installiert haben. Es gibt mehrere Tools zum Erstellen von VHD-Dateien. Hyper-V ist nur ein Beispiel. Anweisungen zur Verwendung von Hyper-V finden Sie unter [Installieren der Hyper-V-Rolle und Konfigurieren eines virtuellen Computers](https://technet.microsoft.com/library/hh846766.aspx).
 
 
@@ -33,7 +33,7 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein Debian Linux-Be
 - Alle virtuellen Festplatten müssen eine Größe aufweisen, die ein Vielfaches von 1 MB ist.
 
 
-##Debian 7.x und 8.x
+## Debian 7.x und 8.x
 
 1. Wählen Sie im Hyper-V-Manager den virtuellen Computer aus.
 
@@ -47,13 +47,13 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein Debian Linux-Be
 
 5. Erstellen Sie Grub neu und führen Sie Folgendes aus:
 
-        # sudo update-grub 
+        # sudo update-grub
 
 6. Installieren Sie die Abhängigkeitspakete für Azure Linux Agent:
 
         # apt-get install -y git parted
 
-7.	Installieren Sie unter [Anleitung](virtual-machines-linux-update-agent.md) den Azure Linux Agent aus Github und wählen Sie Version 2.0.14:
+7.	Installieren Sie entsprechend der [Anleitung](virtual-machines-linux-update-agent.md) den Azure Linux-Agent aus GitHub, und wählen Sie Version 2.0.14 aus:
 
 			# wget https://raw.githubusercontent.com/Azure/WALinuxAgent/WALinuxAgent-2.0.14/waagent
 			# chmod +x waagent
@@ -65,10 +65,10 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein Debian Linux-Be
         # sudo waagent –force -deprovision
         # export HISTSIZE=0
         # logout
- 
+
 9. Klicken Sie im Hyper-V-Manager auf **Aktion -> Herunterfahren**. Ihre Linux-VHD kann nun in Azure hochgeladen werden.
 
-##Verwenden des Credativ-Skripts zum Erstellen einer Debian-VHD
+## Verwenden eines Credativ-Skripts zum Erstellen einer Debian-VHD
 
 Auf der Credativ-Website steht ein Skript zu Verfügung, mit dem Sie die Debian-VHD automatisch erstellen können. Sie können es [hier](https://gitlab.credativ.com/de/azure-manage) herunterladen und auf Ihrer Linux-VM installieren. Zum Erstellen einer Debian-VHD (z. B. Debian 7) führen Sie Folgendes aus:
 
@@ -78,6 +78,6 @@ Falls bei der Verwendung dieses Skripts ein Problem auftritt, wenden Sie sich [h
 
 ## Nächste Schritte
 
-Nun können Sie mit Ihrer Debian-VHD-Datei neue Azure Virtual Machines erstellen. Falls Sie zum ersten Mal Azure verwenden und die VHD-Datei in Azure hochladen, können Sie sich an die Schritte 2 und 3 in [diesem Leitfaden](virtual-machines-linux-create-upload-vhd.md) halten.
+Sie können jetzt mit Ihrer Debian-VHD-Datei neue virtuelle Azure-Computer in Azure erstellen. Wenn Sie die VHD-Datei zum ersten Mal in Azure hochladen, führen Sie die Schritte 2 und 3 in [Erstellen und Hochladen einer virtuellen Festplatte, die das Linux-Betriebssystem enthält](virtual-machines-linux-create-upload-vhd.md) aus.
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0211_2016-->

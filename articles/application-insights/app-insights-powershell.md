@@ -19,7 +19,7 @@
 
 In diesem Artikel wird beschrieben, wie eine [Application Insights](app-insights-overview.md)-Ressource automatisch in Azure erstellt wird. Dies kann z. B. als Teil eines Buildvorgangs erfolgen. Zusammen mit der grundlegenden Application Insights-Ressource können Sie [Verfügbarkeitswebtests](app-insights-monitor-web-app-availability.md) erstellen, [Warnungen einrichten](app-insights-alerts.md) und andere Azure-Ressourcen erstellen.
 
-Im Wesentlichen werden diese Ressourcen mit JSON-Vorlagen für den [Azure-Ressourcen-Manager](powershell-azure-resource-manager.md) erstellt. Die Vorgehensweise lässt sich wie folgt zusammenfassen: Sie laden die JSON-Definitionen vorhandener Ressourcen herunter, parametrisieren bestimmte Werte, z. B. Namen, und führen dann die Vorlage immer aus, wenn Sie eine neue Ressource erstellen möchten. Sie können mehrere Ressourcen zusammenfassen und in einem Durchgang erstellen, z. B. einen App-Monitor mit Verfügbarkeitstests, Warnungen und Speicher für fortlaufenden Export. Einige Parametrisierungen weisen Besonderheiten auf, die hier erläutert werden.
+Im Wesentlichen werden diese Ressourcen mit JSON-Vorlagen für den [Azure-Ressourcen-Manager](../powershell-azure-resource-manager.md) erstellt. Die Vorgehensweise lässt sich wie folgt zusammenfassen: Sie laden die JSON-Definitionen vorhandener Ressourcen herunter, parametrisieren bestimmte Werte, z. B. Namen, und führen dann die Vorlage immer aus, wenn Sie eine neue Ressource erstellen möchten. Sie können mehrere Ressourcen zusammenfassen und in einem Durchgang erstellen, z. B. einen App-Monitor mit Verfügbarkeitstests, Warnungen und Speicher für fortlaufenden Export. Einige Parametrisierungen weisen Besonderheiten auf, die hier erläutert werden.
 
 ## Einmalige Konfiguration
 
@@ -100,7 +100,7 @@ Installieren Sie das Azure PowerShell-Modul auf dem Computer, auf dem die Skript
 
 ## Parametrisieren der Vorlage
 
-Nun müssen Sie die Namen durch Parameter ersetzen. Zum [Parametrisieren einer Vorlage](resource-group-authoring-templates.md) schreiben Sie Ausdrücke mithilfe einer [Reihe von Hilfsfunktionen](resource-group-template-functions.md).
+Nun müssen Sie die Namen durch Parameter ersetzen. Zum [Parametrisieren einer Vorlage](../resource-group-authoring-templates.md) schreiben Sie Ausdrücke mithilfe einer [Reihe von Hilfsfunktionen](../resource-group-template-functions.md).
 
 Sie können nicht einen Teil einer Zeichenfolge parametrisieren. Verwenden Sie daher `concat()` zum Erstellen von Zeichenfolgen.
 
@@ -311,4 +311,13 @@ Es folgt eine vollständige Vorlage für Komponenten, Webtests und Webtestwarnun
 
 ```
 
-<!---HONumber=AcomDC_0128_2016-->
+## Weitere Informationen
+
+Andere Artikel zu Automation:
+
+* [Erstellen einer Application Insights-Ressource](app-insights-powershell-script-create-resource.md): Schnellverfahren ohne Verwendung einer Vorlage.
+* [Einrichten von Warnungen](app-insights-powershell-alerts.md)
+* [Senden von Azure-Diagnosedaten an Application Insights](app-insights-powershell-azure-diagnostics.md)
+* [Erstellen von Versionsanmerkungen](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/API/CreateReleaseAnnotation.ps1)
+
+<!---HONumber=AcomDC_0211_2016-->

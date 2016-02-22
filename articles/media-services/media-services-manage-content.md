@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/09/2015"
+	ms.date="02/04/2016"   
 	ms.author="juliako"/>
 
 
@@ -105,7 +105,7 @@ Dieser Abschnitt beschreibt die Schritte, die Sie ausführen können, um Ihre In
 ![Prozess2][process2]
 
 
-Im Thema [Systemvoreinstellungen für Media Encoder Standard](https://msdn.microsoft.com/de-DE/library/mt269960) werden die einzelnen Voreinstellungen näher beschrieben.
+Im Thema [Systemvoreinstellungen für Media Encoder Standard](https://msdn.microsoft.com/library/mt269960) werden die einzelnen Voreinstellungen näher beschrieben.
 
 5. Anschließend geben Sie den gewünschten Anzeigenamen für den Inhalt ein oder übernehmen den Standardnamen. Klicken Sie anschließend auf das Häkchen, um den Codiervorgang zu starten. Den Fortschritt des Vorgangs können Sie unten im Portal verfolgen.
 6. Klicken Sie auf "OK".
@@ -220,4 +220,4 @@ Folgende Überlegungen sollten berücksichtigt werden:
 [encrypt]: ./media/media-services-manage-content/media-services-encrypt-content.png
 [AMSPlayer]: ./media/media-services-manage-content/media-services-portal-player.png
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

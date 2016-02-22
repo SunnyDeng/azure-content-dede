@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Absichern eines Service Fabric-Clusters | Microsoft Azure"
+   pageTitle="Schützen eines Service Fabric-Clusters | Microsoft Azure"
    description="Erfahren Sie, wie Sie einen Service Fabric-Cluster schützen. Welche Optionen stehen zur Verfügung?"
    services="service-fabric"
    documentationCenter=".net"
@@ -16,11 +16,11 @@
    ms.date="02/01/2016"
    ms.author="chackdan"/>
 
-# Sichern von Service Fabric-Clustern
+# Schützen von Service Fabric-Clustern
 
-Ein Azure Service Fabric-Cluster ist eine Ressource, die sich in Ihrem Besitz befindet. Um den unbefugten Zugriff auf die Ressource zu verhindern, müssen Sie sie absichern. Dies gilt besonders, wenn darin Workloads für die Produktion ausgeführt werden. Dieser Artikel führt Sie durch den Vorgang zum Sichern eines Service Fabric-Clusters.
+Ein Azure Service Fabric-Cluster ist eine Ressource, die sich in Ihrem Besitz befindet. Um den unbefugten Zugriff auf die Ressource zu verhindern, müssen Sie sie absichern. Dies gilt besonders, wenn darin Workloads für die Produktion ausgeführt werden. Dieser Artikel führt Sie durch den Vorgang zum Schützen eines Service Fabric-Clusters.
 
-##  Szenarien für die Clustersicherheit
+## Szenarien für die Clustersicherheit
 
 Service Fabric bietet Sicherheit für die folgenden Szenarien:
 
@@ -38,10 +38,9 @@ Service Fabric bietet Sicherheit für die folgenden Szenarien:
 
 3. **Rollenbasierte Zugriffssteuerung (RBAC):** Administratorvorgänge auf dem Cluster werden auf einen bestimmten Satz von Zertifikaten beschränkt.
 
+## Schützen eines Service Fabric-Clusters mit Zertifikaten
 
-## Sichern eines Service Fabric-Clusters mit Zertifikaten
-
-Für die Einrichtung eines sicheren Service Fabric-Clusters benötigen Sie mindestens ein X.509-Serverzertifikat. Sie laden das Zertifikat dann in den Azure-Schlüsseltresor hoch und verwenden es im Clustererstellungsprozess.
+Zum Einrichten eines sicheren Service Fabric-Clusters benötigen Sie mindestens ein X.509-Serverzertifikat, das Sie in Azure Key Vault hochladen und bei der Erstellung des Clusters verwenden.
 
 Der Vorgang umfasst drei Schritte:
 
@@ -51,9 +50,8 @@ Der Vorgang umfasst drei Schritte:
 
 ### Schritt 1: Erwerben des X.509-Zertifikats
 
-1. Für Cluster, die Produktionsworkloads ausführen, müssen Sie ein von der [Zertifizierungsstelle](https://en.wikipedia.org/wiki/Certificate_authority) signiertes X509-Zertifikat zur Sicherung des Clusters verwenden. Informationen dazu, wie Sie diese Zertifikate erhalten, finden Sie unter [http://msdn.microsoft.com/library/aa702761.aspx](http://msdn.microsoft.com/library/aa702761.aspx).
-2. Für Cluster, die Sie nur für Testzwecke verwenden, können Sie ein selbstsigniertes Zertifikat verwenden. 
-
+1. Für Cluster, die Produktionsworkloads ausführen, müssen Sie ein von der [Zertifizierungsstelle](https://en.wikipedia.org/wiki/Certificate_authority) signiertes X.509-Zertifikat zum Schutz des Clusters verwenden. Informationen zum Abrufen dieser Zertifikate finden Sie unter [Vorgehensweise: Abrufen eines Zertifikats](http://msdn.microsoft.com/library/aa702761.aspx).
+2. Für Cluster, die Sie nur für Testzwecke verwenden, können Sie ein selbstsigniertes Zertifikat verwenden. In Schritt 2.5 unten wird dieser Vorgang erläutert.
 
 ### Schritt 2: Hochladen des X.509-Zertifikats in Key Vault
 
@@ -61,9 +59,9 @@ Dies ist ein komplexer Vorgang. Wir haben daher ein PowerShell-Modul in ein Git-
 
 **Schritt 2.1**: Kopieren Sie diesen Ordner aus [diesem Git-Repository](https://github.com/ChackDan/Service-Fabric/tree/master/Scripts/ServiceFabricRPHelpers) auf Ihren Computer.
 
-**Schritt 2.2**: Stellen Sie sicher, dass Azure PS 1.0 oder höher auf Ihrem Computer installiert ist. Wenn Sie diese Schritte noch nie durchgeführt haben, sollten Sie unbedingt die Schritte unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md) befolgen.
+**Schritt 2.2**: Stellen Sie sicher, dass mindestens Azure PowerShell 1.0 auf Ihrem Computer installiert ist. Falls noch nicht erfolgt, sollten Sie unbedingt die Schritte unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md) befolgen.
 
-**Schritt 2.3**: Nachdem Sie diese Schritte abgeschlossen haben, öffnen Sie ein Powershell-Fenster und importieren die Datei „ServiceFabricRPHelpers.psm“. (Dies ist das Modul, das Sie in Schritt 2.1 heruntergeladen haben
+**Schritt 2.3**: Öffnen Sie ein PowerShell-Fenster, und importieren Sie die Datei „ServiceFabricRPHelpers.psm“. (Dies ist das Modul, das Sie in Schritt 2.1 heruntergeladen haben.)
 
 ```
 Remove-Module ServiceFabricRPHelpers
@@ -75,15 +73,15 @@ Kopieren Sie das folgende Beispiel, und ändern Sie den Pfad zur PSM1-Datei so a
 Import-Module "C:\Users\chackdan\Documents\GitHub\Service-Fabric\Scripts\ServiceFabricRPHelpers\ServiceFabricRPHelpers.psm1"
 ```
 
-**Schritt 2.4**: Wenn Sie ein Zertifikat verwenden, das Sie bereits erworben haben, befolgen Sie diese Schritte. Fahren Sie andernfalls mit Schritt 2.5 fort. In Schritt 2.5 durchlaufen Sie die Schritte zum Erstellen und Bereitstellen des selbstsignierten Zertifikats für den Schlüsseltresor.
+**Schritt 2.4**: Wenn Sie ein Zertifikat verwenden, das Sie bereits bezogen haben, befolgen Sie das Verfahren in diesem Schritt. Fahren Sie andernfalls mit Schritt 2.5 fort, in dem erläutert wird, wie Sie das selbstsignierte Zertifikat im Schlüsseltresor erstellen und bereitstellen.
 
-Melden Sie sich beim Azure-Konto an. Wenn diese PowerShell aus irgendeinem Grund einen Fehler verursacht, sollten Sie überprüfen, ob Azure PS ordnungsgemäß installiert ist.
+Melden Sie sich beim Azure-Konto an. Wenn dieser PowerShell-Befehl aus irgendeinem Grund Fehler verursacht, sollten Sie prüfen, ob Azure PowerShell ordnungsgemäß installiert ist.
 
 ```
 Login-AzureRmAccount
 ```
 
-Das folgende Skript erstellt eine neue Ressourcengruppe und/oder einen Tresor, sofern diese Elemente noch nicht vorhanden sind.
+Das folgende Skript erstellt eine neue Ressourcengruppe und/oder einen Schlüsseltresor, sofern noch nicht vorhanden.
 
 ```
 Invoke-AddCertToKeyVault -SubscriptionId <your subscription id> -ResourceGroupName <string> -Location <region> -VaultName <Name of the Vault> -CertificateName <Name of the Certificate> -Password <Certificate password> -UseExistingCertificate -ExistingPfxFilePath <Full path to the .pfx file>
@@ -94,29 +92,31 @@ Hier ist ein ausgefülltes Skript als Beispiel angegeben.
 Invoke-AddCertToKeyVault -SubscriptionId 35389201-c0b3-405e-8a23-9f1450994307 -ResourceGroupName chackdankeyvault4doc -Location westus -VaultName chackdankeyvault4doc  -CertificateName chackdantestcertificate2 -Password abcd123 -UseExistingCertificate -ExistingPfxFilePath C:\MyCertificates\ChackdanTestCertificate.pfx
 ```
 
-Nach dem erfolgreichen Abschluss des Skripts erhalten Sie jetzt eine Ausgabe wie unten angegeben. Notieren Sie sich diese Angaben, denn Sie werden sie in Schritt 3 (Einrichten eines sicheren Clusters) benötigen.
+Nach erfolgreichem Abschluss des Skripts erhalten Sie eine Ausgabe wie unten angegeben, die Sie für Schritt 3 (Einrichten eines sicheren Clusters) benötigen.
 
-1. **Zertifikatfingerabdruck**: 2118C3BCE6541A54A0236E14ED2CCDD77EA4567A
-2. **SourceVault** /Ressourcen-ID des Schlüsseltresors: /subscriptions/35389201-c0b3-405e-8a23-9f1450994307/resourceGroups/chackdankeyvault4doc/providers/Microsoft.KeyVault/vaults/chackdankeyvault4doc
-3. **Zertifikat-URL** /URL zum Zertifikatspeicherort im Schlüsseltresor: https://chackdankeyvalut4doc.vault.azure.net:443/secrets/chackdantestcertificate3/ebc8df6300834326a95d05d90e0701ea 
+- **Zertifikatfingerabdruck**: 2118C3BCE6541A54A0236E14ED2CCDD77EA4567A
 
-Jetzt verfügen Sie über die Informationen, die Sie zum Einrichten eines sicheren Clusters benötigen. Fahren Sie mit Schritt 3 fort.
+- **SourceVault** /Ressourcen-ID des Schlüsseltresors: /subscriptions/35389201-c0b3-405e-8a23-9f1450994307/resourceGroups/chackdankeyvault4doc/providers/Microsoft.KeyVault/vaults/chackdankeyvault4doc
+
+- **Zertifikat-URL** /URL zum Zertifikatspeicherort im Schlüsseltresor: https://chackdankeyvalut4doc.vault.azure.net:443/secrets/chackdantestcertificate3/ebc8df6300834326a95d05d90e0701ea
+
+Jetzt verfügen Sie über die Informationen, die Sie zum Einrichten eines sicheren Clusters benötigen. Fahren Sie mit Schritt 3 fort.
 
 **Schritt 2.5**: Wenn Sie *kein* Zertifikat besitzen und ein neues selbstsigniertes Zertifikat erstellen und in den Schlüsseltresor hochladen möchten, gehen Sie folgendermaßen vor.
 
-Melden Sie sich beim Azure-Konto an. Wenn diese PowerShell aus irgendeinem Grund einen Fehler verursacht, sollten Sie überprüfen, ob Azure PS ordnungsgemäß installiert ist.
+Melden Sie sich beim Azure-Konto an. Wenn dieser PowerShell-Befehl aus irgendeinem Grund Fehler verursacht, sollten Sie prüfen, ob Azure PowerShell ordnungsgemäß installiert ist.
 
 ```
 Login-AzureRmAccount
 ```
 
-Das folgende Skript erstellt eine neue Ressourcengruppe und/oder einen Schlüsseltresor, sofern diese Elemente noch nicht vorhanden sind.
+Das folgende Skript erstellt eine neue Ressourcengruppe und/oder einen Schlüsseltresor, sofern noch nicht vorhanden.
 
 ```
 Invoke-AddCertToKeyVault -SubscriptionId <you subscription id> -ResourceGroupName <string> -Location <region> -VaultName <Name of the Vault> -CertificateName <Name of the Certificate> -Password <Certificate password> -CreateSelfSignedCertificate -DnsName <string- see note below.> -OutputPath <Full path to the .pfx file>
 ```
 
-Der Ausgabepfad (OutputPath), den Sie für das Skript angegeben haben, enthält das neue selbstsignierte Zertifikat, das vom Skript in den Schlüsseltresor hochgeladen wurde.
+Der Ausgabepfad (OutputPath), den Sie für das Skript angegeben haben, enthält das neue selbstsignierte Zertifikat, das das Skript in Schlüsseltresor hochgeladen hat.
 
 >[AZURE.NOTE] Die DnsName-Zeichenfolge gibt einen oder mehrere DNS-Namen an, die in die Erweiterung des alternativen Antragstellernamens (subject-alternative-name) des Zertifikats eingefügt werden, wenn ein zu kopierendes Zertifikat nicht über den CloneCert-Parameter angegeben wird. Der erste DNS-Name wird auch als Antragstellername gespeichert. Wenn kein Signaturzertifikat angegeben ist, wird der erste DNS-Name auch als Ausstellername gespeichert.
 
@@ -140,21 +140,25 @@ Import-PfxCertificate -Exportable -CertStoreLocation Cert:\CurrentUser\My -FileP
 
 Nach dem erfolgreichen Abschluss des Skripts erhalten Sie eine Ausgabe wie unten angegeben. Diese benötigen Sie für Schritt 3.
 
-**Zertifikatfingerabdruck**: 64881409F4D86498C88EEC3697310C15F8F1540F **SourceVault** /Ressourcen-ID des Schlüsseltresors: /subscriptions/35389201-c0b3-405e-8a23-9f1450994307/resourceGroups/chackdankeyvault4doc/providers/Microsoft.KeyVault/vaults/chackdankeyvault4doc **Zertifikat URL** /URL zum Zertifikatspeicherort in Key Vault: https://chackdankeyvalut4doc.vault.azure.net:443/secrets/chackdantestcertificate3/fvc8df6300834326a95d05d90e0720ea
+- **Zertifikatfingerabdruck**: 64881409F4D86498C88EEC3697310C15F8F1540F
+
+- **SourceVault** /Ressourcen-ID des Schlüsseltresors: /subscriptions/35389201-c0b3-405e-8a23-9f1450994307/resourceGroups/chackdankeyvault4doc/providers/Microsoft.KeyVault/vaults/chackdankeyvault4doc
+
+- **Zertifikat-URL** /URL zum Zertifikatspeicherort im Schlüsseltresor: https://chackdankeyvalut4doc.vault.azure.net:443/secrets/chackdantestcertificate3/fvc8df6300834326a95d05d90e0720ea
 
 ### Schritt 3: Einrichten eines sicheren Clusters
 
 Führen Sie die Schritte unter [Erstellung eines Service Fabric-Clusters](service-fabric-cluster-creation-via-portal.md) aus, bis Sie zum Abschnitt „Sicherheitskonfigurationen“ gelangen. Fahren Sie mit den hier aufgeführten Anweisungen fort, um Ihre Sicherheitskonfigurationen einzurichten:
 
->[AZURE.NOTE] 
-1\. Die zu verwendenden Zertifikate werden auf der Knotentyp-Ebene unter den Sicherheitskonfigurationen angegeben. 2. Sie müssen diese für jeden Knotentyp in Ihrem Cluster angeben. 3. In diesem Dokument wird die Vorgehensweise im Portal erläutert. Sie können jedoch auch eine ARM-Vorlage verwenden.
+>[AZURE.NOTE]
+Die benötigten Zertifikate werden auf Knotentypebene unter den Sicherheitskonfigurationen angegeben. Sie müssen diese für jeden Knotentyp in Ihrem Cluster angeben. In diesem Dokument wird die Vorgehensweise im Portal erläutert. Sie können jedoch auch eine Azure-Ressourcen-Manager-Vorlage verwenden.
 
 ![Screenshot der Sicherheitskonfigurationen im Azure-Portal][SecurityConfigurations_01]
 
 Erforderliche Parameter:
 
 - **Sicherheitsmodus.** Wählen Sie **X.509-Zertifikat** aus. Dadurch geben Sie Service Fabric an, dass Sie einen sicheren Cluster einrichten möchten.
-- **Clusterschutzebene.** Um zu erfahren, was die einzelnen Werte bedeuten, lesen Sie das Dokument [Grundlagen der Schutzebene](https://msdn.microsoft.com/library/aa347692.aspx). Obwohl hier drei Werte („EncryptAndSign“, „Sign“ und „None“) zulässig sind, empfiehlt es sich, den Standardwert „EncryptAndSign“ beizubehalten. Sie sollten diesen Wert nur ändern, wenn Sie mit dem Vorgang vertraut sind.
+- **Clusterschutzebene.** Informationen dazu, was die einzelnen Werte bedeuten, finden Sie im Dokument [Grundlagen der Schutzebene](https://msdn.microsoft.com/library/aa347692.aspx). Obwohl hier drei Werte („EncryptAndSign“, „Sign“ und „None“) zulässig sind, empfiehlt es sich, den Standardwert „EncryptAndSign“ beizubehalten. Sie sollten diesen Wert nur ändern, wenn Sie mit dem Vorgang vertraut sind.
 - **Quelltresor.** Dies bezieht sich auf die Ressourcen-ID des Schlüsseltresors. Sie sollte folgendes Format aufweisen:
 
     ```
@@ -180,9 +184,7 @@ Admin-Client: Mit diesen Informationen wird überprüft, ob der Client für die 
 
 - **Autorisieren mit.** Gibt für Service Fabric an, ob dieses Zertifikat anhand des Antragstellernamens oder anhand des Fingerabdrucks gesucht werden soll. Die Verwendung des Antragstellernamens für die Autorisierung ist aus Sicherheitsgründen nicht empfehlenswert, lässt jedoch mehr Flexibilität zu.
 - **Antragstellername.** Dies ist nur erforderlich, wenn Sie angegeben haben, dass die Autorisierung mit dem Antragstellernamen erfolgen soll.
-- **Fingerabdruck des Ausstellers.** Stellt eine zusätzliche Sicherheitsstufe dar, die der Server ausführen kann, wenn ein Client seine Anmeldeinformationen an den Server übermittelt.
-
-
+- **Fingerabdruck des Ausstellers.** Stellt eine zusätzliche Sicherheitsprüfung dar, die der Server ausführen kann, wenn ein Client seine Anmeldeinformationen an den Server übermittelt.
 
 Schreibgeschützter Client: Mit diesen Informationen wird überprüft, ob der Client für die Verbindung mit dem Endpunkt der Clusterverwaltung die richtigen Anmeldedaten zum Ausführen schreibgeschützter Vorgänge auf dem Cluster verwendet. Sie können weitere Zertifikate angeben, wenn Sie für schreibgeschützte Vorgänge autorisiert werden möchten.
 
@@ -192,32 +194,39 @@ Schreibgeschützter Client: Mit diesen Informationen wird überprüft, ob der Cl
 
 ## Aktualisieren der Zertifikate im Cluster
 
-Mit Service Fabric können Sie primäre und sekundäre Zertifikate angeben. Das bei der Erstellung festgelegte Zertifikat wird standardmäßig zum primären Zertifikat erklärt. Wenn Sie ein weiteres Zertifikat hinzufügen möchten, müssen Sie das Zertifikat den virtuellen Computern im Cluster bereitstellen. Oben in Schritt 2 dieses Dokuments wird beschrieben, wie Sie ein neues Zertifikat in den Schlüsseltresor hochladen können. Hierfür können Sie denselben Schlüsseltresor wie beim ersten Zertifikat verwenden. Informationen hierzu finden Sie unter [Deploy certificates to VMs from a customer-managed Key Vault](http://blogs.technet.com/b/kv/archive/2015/07/14/vm_2d00_certificates.aspx) (Bereitstellen von Zertifikaten für VMs über einen vom Kunden verwalteten Key Vault).
+Mit Service Fabric können Sie zwei Zertifikate angeben, ein primäres und ein sekundäres. Standardmäßig ist das Zertifikat, das Sie zum Zeitpunkt der Erstellung angeben, das primäre Zertifikat. Um ein weiteres Zertifikat hinzuzufügen, müssen Sie das Zertifikat den virtuellen Computern im Cluster bereitstellen. Im vorherigen Schritt 2 wird erläutert, wie Sie ein neues Zertifikat in den Schlüsseltresor hochladen. Sie können denselben Schlüsseltresor wie für das erste Zertifikat verwenden. Weitere Informationen finden Sie unter [Deploy certificates to VMs from a customer-managed Key Vault](http://blogs.technet.com/b/kv/archive/2015/07/14/vm_2d00_certificates.aspx) (Bereitstellen von Zertifikaten für VMs über einen vom Kunden verwalteten Schlüsseltresor).
 
 Sobald dieser Vorgang abgeschlossen ist, signalisieren Sie Service Fabric über das Portal oder über den Ressourcen-Manager, dass Sie über ein sekundäres Zertifikat verfügen, das ebenfalls verwendet werden kann. Sie benötigen lediglich einen Fingerabdruck.
 
-**Dies ist der Prozess zum Hinzufügen eines neuen Zertifikats** für den zu verwendenden Cluster: Suchen Sie im Portal nach der gewünschten Clusterressource, der Sie dieses Zertifikat hinzufügen möchten. Klicken Sie auf die Zertifikateinstellung, geben Sie den sekundären Zertifikatfingerabdruck ein, und wählen Sie „Speichern“. Eine Bereitstellung wird gestartet und bei erfolgreichem Abschluss dieser Bereitstellung können Sie sowohl die primären als auch die sekundären Zertifikatverwaltungsvorgänge im Cluster ausführen.
+Der Vorgang zum Hinzufügen eines sekundären Zertifikats wird im Folgenden beschrieben:
+
+1. Wechseln Sie im Portal zur Clusterressource, der dieses Zertifikat hinzugefügt werden soll.
+2. Klicken Sie unter **Einstellungen** auf die Zertifikateinstellung, und geben Sie den sekundären Zertifikatfingerabdruck ein.
+3. Klicken Sie auf **Speichern**. Eine Bereitstellung wird gestartet, nach deren erfolgreichem Abschluss Sie sowohl das primäre als auch das sekundäre Zertifikat zum Ausführen von Verwaltungsvorgängen im Cluster verwenden können.
 
 ![Screenshot mit Zertifikatfingerabdrücken im Portal][SecurityConfigurations_02]
 
-**Dies ist der Prozess zum Entfernen alter Zertifikate**, damit sie nicht vom Cluster verwendet werden: Wechseln Sie im Portal zu den Sicherheitseinstellungen des Clusters, und entfernen Sie eines der Zertifikate. Speichern Sie nach dem Entfernen unbedingt, damit eine neue Bereitstellung gestartet wird. Nach Abschluss dieser Bereitstellung kann das entfernte Zertifikat keine Verbindung mehr zum Cluster herstellen.
+Es folgt der Prozess zum Entfernen eines alten Zertifikats, damit der Cluster es nicht mehr verwendet:
 
-Hinweis: Für einen sicheren Cluster muss stets mindestens ein gültiges (nicht widerrufenes oder abgelaufenes) Zertifikat (primär oder sekundär) bereitgestellt werden. Andernfalls können Sie nicht auf den Cluster zugreifen.
+1. Besuchen Sie das Portal, und navigieren Sie zu den Sicherheitseinstellungen Ihres Clusters.
+2. Entfernen Sie eines der Zertifikate.
+3. Klicken Sie auf **Speichern**, woraufhin eine neue Bereitstellung beginnt. Nachdem die Bereitstellung abgeschlossen ist, kann das entfernte Zertifikat nicht mehr zum Verbinden mit dem Cluster verwendet werden.
+
+>[AZURE.NOTE] Für einen sicheren Cluster muss stets mindestens ein gültiges (nicht widerrufenes oder abgelaufenes) Zertifikat (primär oder sekundär) bereitgestellt sein. Andernfalls können Sie nicht auf den Cluster zugreifen.
 
 
-## 
-Details zu den Arten von Zertifikaten, die von Service Fabric verwendet werden.
+## Arten von Zertifikaten, die von Service Fabric verwendet werden
 
-## X.509-Zertifikate
+### X.509-Zertifikate
 
 Digitale X.509-Zertifikate werden in der Regel verwendet, um Clients und Server zu authentifizieren sowie um Nachrichten zu verschlüsseln und digital zu signieren. Weitere Informationen zu diesen Zertifikaten finden Sie unter [Arbeiten mit Zertifikaten](http://msdn.microsoft.com/library/ms731899.aspx) in der MSDN Library.
 
 >[AZURE.NOTE]
-1\. Zertifikate, die in Clustern mit Produktionsworkloads verwendet werden, müssen entweder mit einem korrekt konfigurierten Windows Server-Zertifikatsdienst erstellt oder über eine genehmigte [Zertifizierungsstelle](https://en.wikipedia.org/wiki/Certificate_authority) bezogen werden. 2. Verwenden Sie in der Produktion niemals temporäre oder Testzertifikate, die mit Tools wie „MakeCert.exe“ erstellt wurden. 3. Für Cluster, die Sie nur für Testzwecke verwenden, können Sie ein selbstsigniertes Zertifikat verwenden.
+– Zertifikate, die in Clustern mit Produktionsworkloads verwendet werden, müssen entweder mit einem ordnungsgemäß konfigurierten Windows Server-Zertifikatsdienst erstellt oder über eine genehmigte [Zertifizierungsstelle](https://en.wikipedia.org/wiki/Certificate_authority) bezogen werden. – Verwenden Sie in der Produktion niemals temporäre oder Testzertifikate, die mit Tools wie „MakeCert.exe“ erstellt wurden. – Für Cluster, die Sie nur für Testzwecke verwenden, können Sie ein selbstsigniertes Zertifikat verwenden.
 
-## Serverzertifikate und Clientzertifikate
+### Serverzertifikate und Clientzertifikate
 
-**X.509-Serverzertifikate**
+#### X.509-Serverzertifikate
 
 Serverzertifikate müssen primär einen Server (Knoten) für Clients oder einen Server (Knoten) für einen Server (Knoten) authentifizieren. Eine der ersten Prüfungen bei der Authentifizierung eines Knotens durch einen Client oder Knoten besteht darin, den Wert des allgemeinen Namens im Feld „Antragsteller“ zu prüfen. Dieser allgemeine Name oder einer der alternativen Antragstellernamen der Zertifikate muss in der Liste der zulässigen allgemeinen Namen vorhanden sein.
 
@@ -227,14 +236,16 @@ Im folgenden Artikel erfahren Sie, wie Zertifikate mit alternativen Antragstelle
 
 Der Wert des Felds „Beabsichtigte Zwecke“ des Zertifikats muss einen entsprechenden Wert enthalten, z. B. „Serverauthentifizierung“ oder „Clientauthentifizierung“.
 
-**Clientzertifikate**
+#### Clientzertifikate
 
 Clientzertifikate werden in der Regel nicht von einer Drittanbieter-Zertifizierungsstelle ausgestellt. Stattdessen enthält der persönliche Speicher des aktuellen Benutzerspeicherorts in der Regel Clientzertifikate, die von einer Stammzertifizierungsstelle mit dem beabsichtigten Zweck „Clientauthentifizierung“ platziert werden. Der Client kann ein solches Zertifikat verwenden, wenn eine gegenseitige Authentifizierung erforderlich ist.
 
 >[AZURE.NOTE] Für sämtliche Verwaltungsvorgänge für einen Service Fabric-Cluster sind Serverzertifikate erforderlich. Clientzertifikate können für Verwaltungsaufgaben nicht verwendet werden.
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
+
 ## Nächste Schritte
+
 - [Service Fabric-Cluster-Upgradeprozess und Erwartungen](service-fabric-cluster-upgrade.md)
 - [Verwalten von Service Fabric-Anwendungen in Visual Studio](service-fabric-manage-application-in-visual-studio.md)
 - [Einführung in das Service Fabric-Integritätsmodell](service-fabric-health-introduction.md)
@@ -246,4 +257,4 @@ Clientzertifikate werden in der Regel nicht von einer Drittanbieter-Zertifizieru
 [Node-to-Node]: ./media/service-fabric-cluster-security/node-to-node.png
 [Client-to-Node]: ./media/service-fabric-cluster-security/client-to-node.png
 
-<!----HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

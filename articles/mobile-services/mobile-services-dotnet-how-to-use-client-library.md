@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-multiple"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="11/02/2015"
+	ms.date="01/28/2016"
 	ms.author="glenga"/>
 
 # Verwenden der verwalteten Clientbibliothek für Azure Mobile Services
@@ -69,7 +69,7 @@ Ersetzen Sie im obigen Code `AppUrl` und `AppKey` durch die URL und den Anwendun
 
 ##<a name="instantiating"></a>Gewusst wie: Erstellen von Tabellenverweisen
 
-Jeglicher Code zum Abrufen oder Ändern von Daten in der Mobile Services-Tabelle ruft Funktionen des `MobileServiceTable`-Objekts auf. Sie erhalten einen Verweis auf die Tabelle, indem Sie wie folgt die [GetTable](https://msdn.microsoft.com/library/azure/jj554275.aspx)-Methode für eine Instanz von `MobileServiceClient` aufrufen:
+Jeglicher Code zum Abrufen oder Ändern von Daten in der Mobile Services-Tabelle ruft Funktionen des `MobileServiceTable`-Objekts auf. Sie erhalten einen Verweis auf die Tabelle, indem Sie wie folgt die Methode [GetTable](https://msdn.microsoft.com/library/azure/jj554275.aspx) für eine Instanz von `MobileServiceClient` aufrufen:
 
     IMobileServiceTable<TodoItem> todoTable =
 		client.GetTable<TodoItem>();
@@ -86,7 +86,7 @@ Dieser Abschnitt beschreibt, wie Sie Abfragen an Ihren mobilen Dienst stellen k�
 - [Bestimmte Spalten auswählen]
 - [Daten nach ID abrufen]
 
->[AZURE.NOTE]Es wird die Verwendung einer servergesteuerten Seitengröße erzwungen, um zu verhindern, dass alle Zeilen zurückgegeben werden. Damit wird verhindert, dass Standardabfragen für große Datensätze den Dienst negativ beeinflussen. Verwenden Sie die `Take`-Methode, um mehr als 50 Zeilen zurückzugeben, wie unter [Daten seitenweise zurückgeben] beschrieben.
+>[AZURE.NOTE] Es wird die Verwendung einer servergesteuerten Seitengröße erzwungen, um zu verhindern, dass alle Zeilen zurückgegeben werden. Damit wird verhindert, dass Standardabfragen für große Datensätze den Dienst negativ beeinflussen. Verwenden Sie die `Take`-Methode, um mehr als 50 Zeilen zurückzugeben, wie unter [Daten seitenweise zurückgeben] beschrieben.
 
 ### <a name="filtering"></a>Gewusst wie: Filtern zurückgegebener Daten
 
@@ -211,7 +211,7 @@ Die `LookupAsync`-Funktion kann verwendet werden, um Objekte mit einer bestimmte
 
 ##<a name="inserting"></a>Gewusst wie: Einfügen von Daten in einen mobilen Dienst
 
-> [AZURE.NOTE]Wenn Sie Operationen zum Einfügen, Nachschlagen, Löschen oder Aktualisieren auf einem Typ ausführen möchten, müssen Sie das **Id**-Element aufrufen. Aus diesem Grund hat die Beispielklasse **TodoItem** ein Element mit dem Namen **Id**. Alle Aktualisierungs- und Löschoperationen benötigen eine gültige Id.
+> [AZURE.NOTE] Wenn Sie Operationen zum Einfügen, Nachschlagen, Löschen oder Aktualisieren auf einem Typ ausführen möchten, müssen Sie das **Id**-Element aufrufen. Aus diesem Grund hat die Beispielklasse **TodoItem** ein Element mit dem Namen **Id**. Alle Aktualisierungs- und Löschoperationen benötigen eine gültige Id.
 
 Der folgende Code zeigt, wie Sie neue Zeilen in eine Tabelle einfügen können. Der Parameter enthält die einzufügenden Daten als .NET-Objekt.
 
@@ -769,4 +769,4 @@ Mit dieser Eigenschaft werden alle Eigenschaften während der Serialisierung in 
 [Benutzerdefinierte API in Azure Mobile Services Client SDKs]: http://blogs.msdn.com/b/carlosfigueira/archive/2013/06/19/custom-api-in-azure-mobile-services-client-sdks.aspx
 [InvokeApiAsync]: http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.invokeapiasync.aspx
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0211_2016-->

@@ -3,7 +3,7 @@
   description="Liste der Client-SDKs und Kompatibilität mit Server-SDK-Versionen für Mobile Services und Azure Mobile Apps"
   services="app-service\mobile"
   documentationCenter=""
-  authors="lindydonna" 
+  authors="lindydonna"
   manager="dwrede"
   editor=""/>
 
@@ -13,15 +13,12 @@
   ms.tgt_pltfrm="mobile-multiple"
   ms.devlang="dotnet"
   ms.topic="article"
-  ms.date="12/15/2015"
+  ms.date="02/04/2016"
   ms.author="donnam"/>
 
 # Client- und Serverversionsverwaltung in Mobile Apps und Mobile Services
 
 Die neueste Version von Azure Mobile Services ist das Feature **Mobile Apps** von Azure App Service.
-
-<!-- Azure App Service offers a number of platform benefits over Mobile Services, including continuous integration and deployment, staging lots, and VNET support.
- -->
 
 Die Mobile Apps-Client- und -Server-SDKs basieren ursprünglich auf den SDKs in Mobile Services, aber sie sind *nicht* miteinander kompatibel. Dies bedeutet, dass Sie ein *Mobile Apps*-Client-SDK mit einem *Mobile Apps*-Server-SDK und ebenso für *Mobile Services* verwenden müssen. Dieser Vertrag wird mit einem speziellen Headerwert durchgesetzt, der von den Client- und Server-SDKs verwendet wird: `ZUMO-API-VERSION`.
 
@@ -45,7 +42,7 @@ POST https://service.azurewebsites.net/tables/TodoItem?ZUMO-API-VERSION=2.0.0
 
 Sie können die Versionsüberprüfung deaktivieren, indem Sie den Wert **true** für die App-Einstellung **MS\_SkipVersionCheck** festlegen. Geben Sie dies entweder in der Datei „web.config“ oder im Abschnitt mit den Anwendungseinstellungen im Azure-Portal an.
 
-> [AZURE.NOTE]Es gibt einige Änderungen des Verhaltens zwischen Mobile Services und Mobile Apps, vor allem in den Bereichen der Offlinesynchronisierung, Authentifizierung und Pushbenachrichtigungen. Sie sollten die Versionsüberprüfung nur deaktivieren, nachdem Sie mit umfassenden Tests sichergestellt haben, dass diese Änderungen des Verhaltens nicht zu Problemen bei den Funktionen der App führen.
+> [AZURE.NOTE] Es gibt einige Änderungen des Verhaltens zwischen Mobile Services und Mobile Apps, vor allem in den Bereichen der Offlinesynchronisierung, Authentifizierung und Pushbenachrichtigungen. Sie sollten die Versionsüberprüfung nur deaktivieren, nachdem Sie mit umfassenden Tests sichergestellt haben, dass diese Änderungen des Verhaltens nicht zu Problemen bei den Funktionen der App führen.
 
 ## Zusammenfassung der Kompatibilität für alle Versionen
 
@@ -80,10 +77,9 @@ Hinweis: Die Mobile Services-Client-SDKs senden *keinen* Headerwert für `ZUMO-A
 
 ### Mobile *Services*-Server-SDKs
 
-| Serverplattform | Version                                                                                                        | Akzeptierter Versionsheader |
+| Serverplattform | Version | Akzeptierter Versionsheader |
 | ---------------- | ------------------------------------------------------------                                                   | ----------------------- |
-| .NET             | [WindowsAzure.MobileServices.Backend.* Version 1.0.x](https://www.nuget.org/packages/WindowsAzure.MobileServices.Backend/) | **Kein Versionsheader** |
-| Node.js          | (demnächst verfügbar) |                        **Kein Versionsheader** |
+| .NET | [WindowsAzure.MobileServices.Backend.* Version 1.0.x](https://www.nuget.org/packages/WindowsAzure.MobileServices.Backend/) | **** Kein Versionsheader ** || Node.js | (demnächst verfügbar) | **Kein Versionsheader** |
 
 <!-- TODO: add Node npm version -->
 
@@ -93,7 +89,7 @@ Hinweis: Die Mobile Services-Client-SDKs senden *keinen* Headerwert für `ZUMO-A
 | ---------------- | ---------------------------- | -------- |
 | Nicht angegeben | Beliebig | 200 – OK |
 | Beliebiger Wert | True | 200 – OK |
-| Beliebiger Wert | False/Nicht angegeben | 400 – Ungültige Anforderung | 
+| Beliebiger Wert | False/Nicht angegeben | 400 – Ungültige Anforderung |
 
 ## <a name="2.0.0"></a>Azure Mobile Apps-Client und -Server
 
@@ -141,4 +137,4 @@ Die Versionsüberprüfung ist in den folgenden Versionen des Server-SDK enthalte
 [Mobile App Server SDK]: http://www.nuget.org/packages/microsoft.azure.mobile.server
 [Migrieren eines Mobile Service zu Azure App Service]: app-service-mobile-migrating-from-mobile-services.md
 
-<!----HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0211_2016-->

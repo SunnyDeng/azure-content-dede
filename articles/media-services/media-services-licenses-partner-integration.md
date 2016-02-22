@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/07/2015"  
+ 	ms.date="02/03/2016"  
 	ms.author="juliako"/>
 
 #Übermitteln von Widevine-Lizenzen an Azure Media Services mithilfe von Partnern
@@ -47,4 +47,4 @@ Sie können Widevine-Lizenzen mithilfe von [Axinom](http://www.axinom.com/press/
 
 [Blog von Mingfei](https://azure.microsoft.com/blog/azure-media-services-adds-google-widevine-packaging-for-delivering-multi-drm-stream/)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/21/2015" 
+ 	ms.date="02/03/2016"  
 	ms.author="juliako"/>
 
 #Spezifikation der Fragmented MP4-Echtzeiterfassung für Azure Media Services
@@ -49,14 +49,14 @@ Es folgt eine Liste der speziellen Formatdefinitionen, die für die Echtzeiterfa
 2. Im Abschnitt 3.3.2 in [1] wird ein optionales Feld mit dem Namen "StreamManifestBox" für die Echtzeiterfassung definiert. Aufgrund der Routinglogik des Microsoft Azure-Lastenausgleichsmoduls ist die Verwendung dieses Felds veraltet. Es SOLLTE bei der Erfassung in Microsoft Azure Media Services NICHT vorhanden sein. Wenn dieses Feld vorhanden ist, wird es in Azure Media Services ohne Meldung ignoriert.
 3. Das in Abschnitt 3.2.3.2 in [1] definierte Feld "TrackFragmentExtendedHeaderBox" MUSS für jedes Fragment vorhanden sein.
 4. Version 2 von TrackFragmentExtendedHeaderBox SOLLTE verwendet werden, um Mediensegmente mit identischen URLs in mehreren Rechenzentren zu generieren. Das Fragmentindexfeld ist ERFORDERLICH für das rechenzentrenübergreifende Failover indexbasierter Streaming-Formate wie z. B. Apple HTTP Live Streaming (HLS) und indexbasiertes MPEG-DASH. Zum Aktivieren des rechenzentrenübergreifenden Failovers MUSS der Fragmentindex zwischen mehreren Encodern synchronisiert und für jedes folgende Medienfragment jeweils um 1 erhöht werden, auch bei Neustarts und Fehlern der Encoder.
-5. Im Abschnitt 3.3.6 in [1] wird das Feld mit der Bezeichnung "MovieFragmentRandomAccessBox" („mfra“) definiert, das am Ende der Echtzeiterfassung gesendet werden KANN, um das Ende des Streams (EOS, End-of-Stream) für den Kanal anzugeben. Aufgrund der Erfassungslogik von Azure Media Services ist die Verwendung von EOS (End-of-Stream) veraltet, und das Feld "mfra" für die Echtzeiterfassung SOLLTE NICHT gesendet werden. Wenn es dennoch gesendet wird, wird es in Azure Media Services ohne Meldung ignoriert. Es wird empfohlen, [Channel Reset](https://msdn.microsoft.com/library/azure/dn783458.aspx#reset_channels) zu verwenden, um den Status des Erfassungspunkts zurückzusetzen. Es wird auch empfohlen, [Program Stop](https://msdn.microsoft.com/library/azure/dn783463.aspx#stop_programs) zum Beenden einer Präsentation und eines Streams zu verwenden.
+5. Im Abschnitt 3.3.6 in [1] wird das Feld mit der Bezeichnung MovieFragmentRandomAccessBox („mfra“) definiert, das am Ende der Echtzeiterfassung gesendet werden KANN, um das Ende des Streams (End-of-Stream, EOS) für den Kanal anzugeben. Aufgrund der Erfassungslogik von Azure Media Services ist die Verwendung von EOS (End-of-Stream) veraltet, und das Feld "mfra" für die Echtzeiterfassung SOLLTE NICHT gesendet werden. Wenn es dennoch gesendet wird, wird es in Azure Media Services ohne Meldung ignoriert. Es wird empfohlen, [Channel Reset](https://msdn.microsoft.com/library/azure/dn783458.aspx#reset_channels) zu verwenden, um den Status des Erfassungspunkts zurückzusetzen. Es wird auch empfohlen, [Program Stop](https://msdn.microsoft.com/library/azure/dn783463.aspx#stop_programs) zum Beenden einer Präsentation und eines Streams zu verwenden.
 6. Die Dauer des MP4-Fragments SOLLTE konstant sein, um die Größe der Clientmanifeste zu reduzieren und die Clientdownloadheuristik durch Verwendung von Wiederholungstags zu verbessern. Die Dauer KANN schwanken, um nicht ganzzahlige Frameraten auszugleichen.
 7. Die Dauer des MP4-Fragments SOLLTE zwischen ca. 2 und 6 Sekunden liegen.
 8. Zeitstempel und Indizes des MP4-Fragments (fragment\_absolute\_time und fragment\_index für TrackFragmentExtendedHeaderBox) SOLLTEN in aufsteigender Reihenfolge eingehen. Obwohl Fragmente in Azure Media Services dupliziert werden können, sind die Möglichkeiten, Fragmente entsprechend der Medienzeitachse neu anzuordnen, nur sehr begrenzt.
 
 ##4\. Protokollformat – HTTP
 
-Bei der Fragmented MP4-basierten Echtzeiterfassung für Microsoft Azure Media Services wird eine lang ausgeführte HTTP POST-Standardanforderung verwendet, um codierte Mediendaten im Fragmented MP4-Format an den Dienst zu übertragen. Jede HTTP POST-Anforderung sendet einen vollständigen Fragmented MP4-Bitstrom („Stream“"), der mit Headerfeldern („ftyp“, „Live Server Manifest Box“ und „moov“) beginnt und mit einer Sequenz von Fragmenten (Felder „moof“ und "mdat") fortgesetzt wird. Weitere Informationen zur URL-Syntax für HTTP POST-Anforderungen finden Sie im Abschnitt 9.2 in [1]. Beispiel für die POST-URL:
+Bei der Fragmented MP4-basierten Echtzeiterfassung für Microsoft Azure Media Services wird eine lang ausgeführte HTTP POST-Standardanforderung verwendet, um codierte Mediendaten im Fragmented MP4-Format an den Dienst zu übertragen. Jede HTTP POST-Anforderung sendet einen vollständigen Fragmented MP4-Bitstrom („Stream“), der mit Headerfeldern („ftyp“, „Live Server Manifest Box“ und „moov“) beginnt und mit einer Sequenz von Fragmenten (Felder „moof“ und „mdat“) fortgesetzt wird. Weitere Informationen zur URL-Syntax für HTTP POST-Anforderungen finden Sie im Abschnitt 9.2 in [1]. Beispiel für die POST-URL:
 
 	http://customer.channel.mediaservices.windows.net/ingest.isml/streams(720p)
 
@@ -168,7 +168,7 @@ In diesem Abschnitt werden einige spezielle Formattypen für die Echtzeiterfassu
 
 ###Platzsparende Spur
 
-Bei der Übermittlung einer Live-Streaming-Präsentation mit einer reichhaltigen Clientumgebung ist es häufig erforderlich, zeitsynchronisierte Ereignisse oder In-Band-Signale mit den wichtigsten Mediendaten zu übertragen. Ein Beispiel hierfür ist das dynamische Einfügen von Live-Werbung. Diese Art der Ereignissignalisierung unterscheidet sich aufgrund ihres selteneren Vorkommens vom regulären Audio- und Videostreaming. Mit anderen Worten, die Signalisierungsdaten werden normalerweise nicht kontinuierlich gesendet, und das jeweilige Intervall kann nur schwer vorhergesagt werden. Das Konzept von platzsparenden Spuren wurde speziell entwickelt, um In-Band-Signalisierungsdaten zu erfassen und zu übertragen.
+Bei der Übermittlung einer Live-Streaming-Präsentation mit einer reichhaltigen Clientumgebung ist es häufig erforderlich, zeitsynchronisierte Ereignisse oder In-Band-Signale mit den wichtigsten Mediendaten zu übertragen. Ein Beispiel hierfür ist das dynamische Einfügen von Live-Werbung. Diese Art der Ereignissignalisierung unterscheidet sich aufgrund ihres selteneren Vorkommens vom regulären Audio- und Videostreaming. Mit anderen Worten: Die Signalisierungsdaten werden normalerweise nicht kontinuierlich gesendet, und das jeweilige Intervall kann nur schwer vorhergesagt werden. Das Konzept von platzsparenden Spuren wurde speziell entwickelt, um In-Band-Signalisierungsdaten zu erfassen und zu übertragen.
 
 Es folgt eine empfohlene Implementierung für die Erfassung von platzsparenden Spuren:
 
@@ -221,4 +221,4 @@ Es folgt eine empfohlene Implementierung für redundante Audiospuren:
 
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0211_2016-->

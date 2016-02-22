@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="multiple"
 	ms.topic="article"
-	ms.date="11/30/2015"
+	ms.date="02/07/2016"
 	ms.author="christopheranderson"/>
 
 # Notfallwiederherstellung mobiler Dienste
@@ -59,9 +59,9 @@ So stellen Sie die mobilen Dienste nach einem Ausfall wieder her:
 
 4. Jetzt können Sie den sekundären Dienst verwenden, um den primären wiederherzustellen.
 
-	> [AZURE.IMPORTANT]Zusätzlich zum Migrieren der Dateien aktualisiert der Migrationsbefehl auch den Hostnamen des primären Diensts, um auf den sekundären Dienst zu weisen, sodass Clientanwendungen nicht aktualisiert werden müssen. Allerdings dauert es bis zu 30 Minuten, bis der Hostname in den neuen Dienst aufgelöst wird. Aus diesem Grund empfiehlt es sich, den Migrationsbefehl nur zur Wiederherstellung im Notfall zu verwenden.
+	> [AZURE.IMPORTANT] Zusätzlich zum Migrieren der Dateien aktualisiert der Migrationsbefehl auch den Hostnamen des primären Diensts, um auf den sekundären Dienst zu weisen, sodass Clientanwendungen nicht aktualisiert werden müssen. Allerdings dauert es bis zu 30 Minuten, bis der Hostname in den neuen Dienst aufgelöst wird. Aus diesem Grund empfiehlt es sich, den Migrationsbefehl nur zur Wiederherstellung im Notfall zu verwenden.
 
-	> [AZURE.IMPORTANT]Wenn Sie den Befehl in diesem Schritt ausführen, wird der sekundäre Dienst gelöscht, sodass seine Kapazität verwendet werden kann, um den primären Dienst wiederherzustellen. Wir empfehlen, Ihre Skripts und Einstellungen vor dem Ausführen des Befehls zu sichern, wenn Sie sie behalten möchten.
+	> [AZURE.IMPORTANT] Wenn Sie den Befehl in diesem Schritt ausführen, wird der sekundäre Dienst gelöscht, sodass seine Kapazität verwendet werden kann, um den primären Dienst wiederherzustellen. Wir empfehlen, Ihre Skripts und Einstellungen vor dem Ausführen des Befehls zu sichern, wenn Sie sie behalten möchten.
 
 	Führen Sie diesen Befehl aus, wenn Sie bereit sind:
 
@@ -74,7 +74,7 @@ So stellen Sie die mobilen Dienste nach einem Ausfall wieder her:
 		info:    Migration complete. It may take 30 minutes for DNS to resolve to the migrated site.
 		info:    mobile migrate command OK
 
-    > [AZURE.NOTE]Es kann nach Abschluss des Befehls einige Minuten dauern, bis die Änderungen im klassischen Azure-Portal angezeigt werden.
+    > [AZURE.NOTE] Es kann nach Abschluss des Befehls einige Minuten dauern, bis die Änderungen im klassischen Azure-Portal angezeigt werden.
 
 5. Überprüfen Sie, ob alle Skripts korrekt wiederhergestellt wurden, indem Sie sie mit den Originalen in der Quellcodeverwaltung vergleichen. In den meisten Fällen werden Skripts automatisch ohne Datenverlust wiederhergestellt. Falls Sie aber eine Diskrepanz finden, können Sie das entsprechende Skript manuell wiederherstellen.
 
@@ -114,4 +114,4 @@ Jetzt sollte der mobile Dienst in einer neuen Azure-Region wiederhergestellt wor
 [Azure-Dienstdashboard]: http://www.windowsazure.com/support/service-dashboard/
 [Automatisieren von mobilen Diensten mit Befehlszeilentools]: http://www.windowsazure.com/develop/mobile/tutorials/command-line-administration/
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0211_2016-->

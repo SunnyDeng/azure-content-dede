@@ -137,8 +137,46 @@ Bearbeiten Sie eines des folgenden Skripts, um mit Ihrem Verzeichnis zu arbeiten
 
     echo $REPORT | ./jq-win64.exe -r '.value' | ./jq-win64.exe -r ".[]"
 
-
-
+### Python
+	# Author: Michael McLaughlin (michmcla@microsoft.com)
+	# Date: January 20, 2016
+	# This requires the Python Requests module: http://docs.python-requests.org
+	
+	import requests
+	import datetime
+	import sys
+	
+	client_id = 'your-application-client-id-here'
+	client_secret = 'your-application-client-secret-here'
+	login_url = 'https://login.windows.net/'
+	tenant_domain = 'your-directory-name-here.onmicrosoft.com' 
+	
+	# Get an OAuth access token
+	bodyvals = {'client_id': client_id,
+	            'client_secret': client_secret,
+	            'grant_type': 'client_credentials'}
+	
+	request_url = login_url + tenant_domain + '/oauth2/token?api-version=1.0'
+	token_response = requests.post(request_url, data=bodyvals)
+	
+	access_token = token_response.json().get('access_token')
+	token_type = token_response.json().get('token_type')
+	
+	if access_token is None or token_type is None:
+	    print "ERROR: Couldn't get access token"
+	    sys.exit(1)
+	
+	# Use the access token to make the API request
+	yesterday = datetime.date.strftime(datetime.date.today() - datetime.timedelta(days=1), '%Y-%m-%d')
+	
+	header_params = {'Authorization': token_type + ' ' + access_token}
+	request_string = 'https://graph.windows.net/' + tenant_domain + '/reports/auditEvents?api-version=beta&filter=eventTime%20gt%20' + yesterday   
+	response = requests.get(request_string, headers = header_params)
+	
+	if response.status_code is 200:
+	    print response.content
+	else:
+	    print 'ERROR: API request failed'
 
 
 ## Ausführen des Skripts
@@ -157,4 +195,4 @@ Das Skript gibt Listen aller verfügbaren Berichte und die Ausgabe des Berichts 
 - Unter [Azure AD-Überwachungsberichtsereignisse](active-directory-reporting-audit-events.md) finden Sie weitere Informationen zum Überwachungsbericht.
 - Unter [Azure AD-Berichte und -Ereignisse (Vorschau)](https://msdn.microsoft.com/library/azure/mt126081.aspx) finden Sie weitere Informationen zum Graph-API-REST-Dienst.
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0211_2016-->

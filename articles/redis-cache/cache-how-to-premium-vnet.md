@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/19/2016" 
+	ms.date="02/04/2016" 
 	ms.author="sdanie"/>
 
 # Konfigurieren der Unterstützung virtueller Netzwerke für Azure Redis Cache vom Typ "Premium"
@@ -37,31 +37,27 @@ Zum Konfigurieren der VNET-Unterstützung wählen Sie zunächst auf dem Blatt **
 
 Die VNET-Integration für Azure Redis Cache wird auf dem Blatt **Virtuelles Netzwerk** konfiguriert. Hier können Sie ein vorhandenes klassisches VNET auswählen. Um ein neues VNET zu verwenden, führen Sie die unter [Erstellen eines virtuellen Netzwerks (klassisch) über das Azure-Portal](../virtual-network/virtual-networks-create-vnet-classic-pportal.md) beschriebenen Schritte aus und kehren dann zum Blatt **Redis Cache Virtuelles Netzwerk** zurück, um das erstellte Netzwerk auszuwählen.
 
->[AZURE.NOTE]Azure Redis Cache kann mit klassischen VNETs ausgeführt werden. Informationen zum Erstellen eines klassischen VNET finden Sie unter [Erstellen eines virtuellen Netzwerks (klassisch) über das Azure-Portal](../virtual-network/virtual-networks-create-vnet-classic-pportal.md). Informationen zum Herstellen einer Verbindung von klassischen VNETs mit ARM-VNETS finden Sie unter [Herstellen einer Verbindung zwischen klassischen VNets und neuen VNets](../virtual-network/virtual-networks-arm-asm-s2s.md).
+>[AZURE.NOTE] Azure Redis Cache kann mit klassischen VNETs ausgeführt werden. Informationen zum Erstellen eines klassischen VNET finden Sie unter [Erstellen eines virtuellen Netzwerks (klassisch) über das Azure-Portal](../virtual-network/virtual-networks-create-vnet-classic-pportal.md). Informationen zum Herstellen einer Verbindung von klassischen VNETs mit ARM-VNETS finden Sie unter [Herstellen einer Verbindung zwischen klassischen VNets und neuen VNets](../virtual-network/virtual-networks-arm-asm-s2s.md).
+
+Klicken Sie auf dem Blatt **Neuer Redis Cache** auf **Virtuelles Netzwerk (klassisch)**, und wählen Sie das gewünschte VNET aus der Dropdownliste aus, um Ihr VNET zu konfigurieren.
 
 ![Virtuelles Netzwerk][redis-cache-vnet]
 
-Klicken Sie auf dem Blatt **Virtuelles Netzwerk** auf **Virtuelles Netzwerk**, um Ihr VNET auszuwählen und zu konfigurieren.
-
-![Virtuelles Netzwerk][redis-cache-vnet-select]
-
-Klicken Sie auf das gewünschte VNET, um es auszuwählen.
-
-![Virtuelles Netzwerk][redis-cache-vnet-subnet]
-
-Klicken Sie auf "Subnetz", um das gewünschte Subnetz auszuwählen.
+Wählen Sie das gewünschte Subnetz aus der Dropdownliste **Subnetz** aus.
 
 ![Virtuelles Netzwerk][redis-cache-vnet-ip]
 
 Das Feld **Statische IP-Adresse** ist optional. Wenn hier keine Adresse angegeben wird, wird eine aus dem ausgewählten Subnetz ausgewählt. Wenn eine bestimmte **Statische IP-Adresse** gewünscht ist, geben Sie sie ein, und klicken Sie dann auf **OK**, um die VNET-Konfiguration zu speichern. Wenn die ausgewählte statische IP-Adresse bereits verwendet wird, wird eine Fehlermeldung angezeigt.
 
-Auf den erstellten Cache kann nur über Clients innerhalb des gleichen VNET zugegriffen werden.
+Nachdem der Cache erstellt wurde, können Sie die IP-Adresse und weitere Informationen über das VNET anzeigen, indem Sie auf dem Blatt **Einstellungen** auf **Virtuelles Netzwerk** klicken.
 
->[AZURE.IMPORTANT]Um bei Verwendung eines VNET auf Ihre Azure Redis Cache-Instanz zuzugreifen, übergeben Sie die statische IP-Adresse des Caches im VNET als ersten Parameter, und übergeben Sie einen `sslhost`-Parameter mit dem Endpunkt Ihres Caches. Im folgenden Beispiel ist die statische IP-Adresse `10.10.1.5` und der Cacheendpunkt `contoso5.redis.cache.windows.net`.
+![Virtuelles Netzwerk][redis-cache-vnet-info]
+
+>[AZURE.IMPORTANT] Um bei Verwendung eines VNET auf Ihre Azure Redis Cache-Instanz zuzugreifen, übergeben Sie die statische IP-Adresse des Caches im VNET als ersten Parameter, und übergeben Sie einen `sslhost`-Parameter mit dem Endpunkt Ihres Caches. Im folgenden Beispiel ist die statische IP-Adresse `172.160.0.99` und der Cacheendpunkt `contoso5.redis.cache.windows.net`.
 
 	private static Lazy<ConnectionMultiplexer> lazyConnection = new Lazy<ConnectionMultiplexer>(() =>
 	{
-	    return ConnectionMultiplexer.Connect("10.10.1.5,sslhost=contoso5.redis.cache.windows.net,abortConnect=false,ssl=true,password=password");
+	    return ConnectionMultiplexer.Connect("172.160.0.99,sslhost=contoso5.redis.cache.windows.net,abortConnect=false,ssl=true,password=password");
 	});
 	
 	public static ConnectionMultiplexer Connection
@@ -119,10 +115,8 @@ Informationen zur Verwendung weiterer Funktionen des Premium-Caches finden Sie i
 
 [redis-cache-vnet]: ./media/cache-how-to-premium-vnet/redis-cache-vnet.png
 
-[redis-cache-vnet-select]: ./media/cache-how-to-premium-vnet/redis-cache-vnet-select.png
-
 [redis-cache-vnet-ip]: ./media/cache-how-to-premium-vnet/redis-cache-vnet-ip.png
 
-[redis-cache-vnet-subnet]: ./media/cache-how-to-premium-vnet/redis-cache-vnet-subnet.png
+[redis-cache-vnet-info]: ./media/cache-how-to-premium-vnet/redis-cache-vnet-info.png
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0211_2016-->

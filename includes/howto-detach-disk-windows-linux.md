@@ -4,7 +4,7 @@ Wenn Sie einen Datenträger, der an einen virtuellen Computer angefügt ist, nic
 
 Wenn Sie die vorhandenen Daten erneut auf dem Datenträger verwenden möchten, können Sie ihn erneut an denselben virtuellen Computer oder an einen anderen anfügen.
 
-> [AZURE.NOTE]Es ist nicht möglich, einen Betriebssystem-Datenträger zu trennen, es sei denn, Sie löschen auch den virtuellen Computer.
+> [AZURE.NOTE] Es ist nicht möglich, einen Betriebssystem-Datenträger zu trennen, es sei denn, Sie löschen auch den virtuellen Computer.
 
 
 ## Suchen des Datenträgers
@@ -12,7 +12,7 @@ Wenn Sie die vorhandenen Daten erneut auf dem Datenträger verwenden möchten, k
 Wenn Sie den Namen des Datenträgers nicht kennen oder diesen vor dem Trennen überprüfen möchten, führen Sie die folgenden Schritte aus.
 
 
-1. Melden Sie sich auf dem [Azure-Portal](http://manage.windowsazure.com) an, falls Sie dies noch nicht getan haben.
+1. Melden Sie sich beim [klassischen Azure-Portal](http://manage.windowsazure.com) an.
 
 2. Klicken Sie auf **Virtuelle Computer**, auf den Namen des virtuellen Computers und dann auf **Dashboard**.
 
@@ -33,4 +33,4 @@ Wenn Sie den Namen des Datenträgers nicht kennen oder diesen vor dem Trennen ü
 
 Der Datenträger verbleibt im Speicher, ist jedoch nicht mehr an einen virtuellen Computer angefügt.
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0211_2016-->
