@@ -64,7 +64,7 @@ Es werden drei Datenquellen verwendet:
 Die gesammelten Daten lassen sich in folgende Hauptkategorien unterteilen:
 
 * [Webserver-Telemetriedaten](app-insights-asp-net.md): HTTP-Anforderungen. URI, Anforderungsverarbeitungsdauer, Antwortcode, Client-IP-Adresse. Sitzungs-ID.
-* [Webseiten](articles/app-insights-javascript.md): Seiten-, Benutzer- und Sitzungszähler. Seitenladezeiten. Ausnahmen.
+* [Webseiten](app-insights-javascript.md): Seiten-, Benutzer- und Sitzungszähler. Seitenladezeiten. Ausnahmen. AJAX-Aufrufe.
 * Leistungsindikatoren: Arbeitsspeicher-, CPU-, E/A-, Netzwerkauslastung.
 * Client- und Serverkontext: Betriebssystem, Gebietsschema, Gerätetyp, Browser, Bildschirmauflösung.
 * [Ausnahmen](app-insights-asp-net-exceptions.md) und Abstürze: **Stapelabbilder**, Build-ID, CPU-Typ. 
@@ -191,7 +191,7 @@ Aktion | Gesammelte Datenklassen (siehe nächste Tabelle)
 [Hinzufügen des Application Insights SDK zu Ihrem .NET-Webprojekt][greenbrown] | ServerContext<br/>Inferred<br/>Perf counters<br/>Requests<br/>**Exceptions**<br/>Session<br/>users
 [Installieren des Statusmonitors unter IIS][redfield]<br/>[Hinzufügen einer AI-Erweiterung zu Azure-VM oder Web-App][azure]|Dependencies<br/>ServerContext<br/>Inferred<br/>Perf counters
 [Hinzufügen des Application Insights SDK zu einer Java-Web-App][java]|ServerContext<br/>Inferred<br/>Request<br/>Session<br/>users
-[Hinzufügen des JavaScript SDK zur Webseite][client]|ClientContext <br/>Inferred<br/>Page<br/>ClientPerf
+[Hinzufügen des JavaScript SDK zur Webseite][client]|ClientContext <br/>Inferred<br/>Page<br/>ClientPerf<br/>Ajax
 [Hinzufügen des SDK zur Windows Store-App][windows]|DeviceContext<br/>Users<br/>Crash data
 [Definieren von Standardeigenschaften][apiproperties]|**Properties** für alle standardmäßigen und benutzerdefinierten Ereignisse
 [Aufrufen von TrackMetric][api]|Numerische Werte<br/>**Properties**
@@ -218,6 +218,7 @@ Metriken | Metrikname und -wert
 Ereignisse | Ereignisname und -wert
 PageViews | URL und Seitenname oder Bildschirmname
 Client perf | URL-/Seitenname, Browserladezeit
+AJAX | HTTP-Aufrufe von der Webseite an den Server
 Requests |URL, Dauer, Antwortcode
 Abhängigkeiten|Typ (SQL, HTTP,...), Verbindungszeichenfolge oder URI Sync/Async, Dauer, Erfolg, SQL-Anweisung (mit Statusmonitor)
 **Exceptions** | Typ, **Meldung**, Aufrufliste, Quelldatei und Zeilennummer, Thread-ID
@@ -264,4 +265,4 @@ Dieses Produkt enthält GeoLite2-Daten, die von MaxMind erstellt wurden und unte
 
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

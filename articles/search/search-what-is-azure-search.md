@@ -11,7 +11,7 @@
 	ms.workload="search"
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
-	ms.date="01/12/2016"
+	ms.date="02/09/2016"
 	ms.author="ashmaka"/>
 
 # Was ist Azure Search?
@@ -19,7 +19,7 @@ Azure Search ist eine cloudbasierte SaaS-Lösung, deren Server- und Infrastruktu
 
 ## Leistungsfähige Suchfunktion für Benutzer
 
-Sie können **leistungsfähige Abfragen** formulieren, indem Sie die [einfache Abfragesyntax](https://msdn.microsoft.com/library/azure/dn798920.aspx) verwenden, die über logische Operatoren, Operatoren für die Suche von Ausdrücken, Suffixoperatoren und Rangfolgenoperatoren verfügt. Die [Lucene-Abfragesyntax](https://msdn.microsoft.com/library/azure/mt589323.aspx) (derzeit in der Vorschauphase) ermöglicht zudem die Verwendung von Fuzzy-, Rechtschreibfehler- und NEAR-Suchen, Term Boosts und regulären Ausdrücken. Azure Search unterstützt auch benutzerdefinierte lexikalische Analysen, was Ihrer Anwendung die Behandlung komplexer Suchabfragen mit phonetischem Abgleich und regulären Ausdrücken ermöglicht.
+Sie können **leistungsfähige Abfragen** formulieren, indem Sie die [einfache Abfragesyntax](https://msdn.microsoft.com/library/azure/dn798920.aspx) verwenden, die über logische Operatoren, Operatoren für die Suche von Ausdrücken, Suffixoperatoren und Rangfolgenoperatoren verfügt. Die [Lucene-Abfragesyntax](https://msdn.microsoft.com/library/azure/mt589323.aspx) ermöglicht zudem die Verwendung von Fuzzy- und NEAR-Suchen, Term Boosts und regulären Ausdrücken. Azure Search unterstützt auch benutzerdefinierte lexikalische Analysen, was Ihrer Anwendung die Behandlung komplexer Suchabfragen mit phonetischem Abgleich und regulären Ausdrücken ermöglicht.
 
 **Sprachunterstützung** steht [für 56 Sprachen](https://msdn.microsoft.com/library/azure/dn879793.aspx) zur Verfügung. Durch den kombinierten Einsatz von Lucene- und Microsoft-Analysen (mit jahrelanger Erfahrung bei der Sprachdatenverarbeitung in Office und Bing) kann Text mit Azure Search im Suchfeld Ihrer Anwendung analysiert werden. Sprachspezifische linguistische Probleme können intelligent gelöst werden, z. B. Zeiten von Verben, Geschlecht, unregelmäßiger Plural von Substantiven (Englisch: mouse/mice), Auflösen von zusammengesetzten Wörtern, Worttrennung (für Sprachen ohne Leerstellen) und vieles mehr.
 
@@ -82,4 +82,4 @@ Testen Sie Azure Search noch heute! Wenn Sie bereits über ein Azure-Konto verf�
 
 Falls Sie noch kein Azure-Konto besitzen, können Sie ganz ohne Registrierung eine kostenlose, 60-minütige Sitzung ausprobieren. Wählen Sie unter [Azure App Service testen](http://go.microsoft.com/fwlink/p/?LinkId=618214) die Option „Web-App“ aus. Wählen Sie anschließend die Vorlage „ASP.NET + Azure Search Site“ aus.
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0211_2016-->

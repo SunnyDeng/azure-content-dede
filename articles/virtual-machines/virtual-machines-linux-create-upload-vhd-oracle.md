@@ -20,12 +20,12 @@
 # Vorbereiten eines virtuellen Oracle Linux-Computers für Azure
 
 
-- [Vorbereiten eines virtuellen Oracle Linux 6.4+-Computers für Azure](#oracle6)
-- [Vorbereiten eines virtuellen Oracle Linux 7.0+-Computers für Azure](#oracle7)
+- [Vorbereiten eines virtuellen Oracle Linux 6.4+-Computers für Azure](#oracle6)
+- [Vorbereiten eines virtuellen Oracle Linux 7.0+-Computers für Azure](#oracle7)
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
-##Voraussetzungen##
+## Voraussetzungen ##
 
 In diesem Artikel wird davon ausgegangen, dass Sie bereits ein Oracle Linux-Betriebssystem auf einer virtuellen Festplatte installiert haben. Sie können VHD-Dateien mit unterschiedlichen Tools erstellen, beispielsweise mit einer Virtualisierungslösung wie Hyper-V. Anweisungen hierzu finden Sie unter [Installieren der Hyper-V-Rolle und Konfigurieren eines virtuellen Computers](http://technet.microsoft.com/library/hh846766.aspx).
 
@@ -230,6 +230,6 @@ Die Vorbereitung eines virtuellen Oracle Linux 7-Computers für Azure entspricht
 
 
 ## Nächste Schritte
-Nun können Sie mit Ihrer Oracle Linux-VHD-Datei neue virtuelle Azure-Maschinen in Azure erstellen. Falls Sie zum ersten Mal Azure verwenden und die VHD-Datei in Azure hochladen, können Sie sich an die Schritte 2 und 3 in [diesem Leitfaden](virtual-machines-linux-create-upload-vhd.md) halten.
+Nun können Sie mit Ihrer Oracle Linux-VHD-Datei neue virtuelle Computer in Azure erstellen. Wenn Sie die VHD-Datei zum ersten Mal in Azure hochladen, führen Sie die Schritte 2 und 3 in [Erstellen und Hochladen einer virtuellen Festplatte, die das Linux-Betriebssystem enthält](virtual-machines-linux-create-upload-vhd.md) aus.
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

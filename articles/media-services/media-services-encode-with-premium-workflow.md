@@ -13,12 +13,14 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/28/2016"  
+	ms.date="02/03/2016" 
 	ms.author="juliako"/>
 
 #Erweiterte Codierung mit dem Media Encoder Premium Workflow
 
-**Hinweis** Der in diesem Thema beschriebene Media Encoder Premium Workflow-Medienprozessor ist in China nicht verfügbar.
+>[AZURE.NOTE]Fragen zu Encoder Premium senden Sie per E-Mail an „mepd at Microsoft.com“.
+>
+>Der in diesem Thema beschriebene Media Encoder Premium Workflow-Medienprozessor ist in China nicht verfügbar.
 
 ##Übersicht
 
@@ -33,6 +35,8 @@ In den folgenden Themen erhalten Sie nähere Informationen zum **Media Encoder P
 Dieses Thema demonstriert die Codierung mit **Media Encoder Premium Workflow** unter Verwendung von .NET.
 
 Für Codieraufgaben für den **Media Encoder Premium Workflow** ist eine separate Konfigurationsdatei, die sogenannte Workflowdatei, erforderlich. Diese Dateien haben die Erweiterung .workflow und werden mit dem [Workflow Designer](media-services-workflow-designer.md) erstellt.
+
+>[AZURE.NOTE]Fragen zu Encoder Premium senden Sie per E-Mail an „mepd at Microsoft.com“.
 
 ##Codieren
 
@@ -50,7 +54,9 @@ Es werden folgende Schritte ausgeführt:
 1. Erstellen eines Medienobjekts und Hochladen einer Workflowdatei. 
 2. Erstellen eines Medienobjekts und Hochladen einer Quellmediendatei.
 3. Abrufen des Medienprozessors "Media Encoder Premium Workflow".
-4. Erstellen eines Auftrags und einer Aufgabe.
+4. Erstellen eines Auftrags und einer Aufgabe. 
+
+	In den meisten Fällen die Konfigurationszeichenfolge für die Aufgabe leer (wie im folgenden Beispiel). Es gibt einige erweiterte Szenarios, bei denen Sie eine XML-Zeichenfolge an die Codierungsaufgabe bereitstellen (und Laufzeiteigenschaften dynamisch festlegen) müssen. Beispiele für solche Szenarios sind das Erstellen einer Überlagerung, das parallele oder sequenzielle Zusammenfügen von Medien und die Untertitelung.
 5. Hinzufügen von zwei Medienobjekten zur Aufgabe.
 	
 	a. 1. – das Medienobjekt für den Workflow
@@ -264,10 +270,6 @@ Im folgenden finden Sie ein vollständiges Beispiel. Informationen zum Einrichte
 	}
 
 
-##Bekannte Probleme
-
-Wenn Ihr Eingabevideo keine Untertitel enthält, enthält das Ausgabemedienobjekt trotzdem eine leere TTML-Datei.
-
 
 ##Media Services-Lernpfade
 
@@ -277,4 +279,4 @@ Wenn Ihr Eingabevideo keine Untertitel enthält, enthält das Ausgabemedienobjek
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

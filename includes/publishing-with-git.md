@@ -2,13 +2,13 @@
 
 In diesem Artikel erfahren Sie, wie Sie mithilfe von Git direkt von Ihrem lokalen Computer aus in Web-Apps veröffentlichen (in Azure wird diese Methode der Veröffentlichung **lokales Git** genannt). Außerdem wird erläutert, wie Sie die fortlaufende Bereitstellung von Repositorywebsites aus ermöglichen, z. B. von BitBucket, CodePlex, Dropbox, GitHub oder Mercurial. Informationen zur Verwendung von TFS für die fortlaufende Bereitstellung finden Sie unter [Continuous delivery to Azure using Visual Studio Team Services] (Fortlaufende Bereitstellung für Azure mithilfe von Visual Studio Team Services).
 
-> [AZURE.NOTE]Viele der in diesem Artikel beschriebenen Git-Befehle werden automatisch ausgeführt, wenn Sie eine Web-App mit den [Azure-Befehlszeilentools für Mac und Linux](/develop/nodejs/how-to-guides/command-line-tools/) erstellen
+> [AZURE.NOTE] Viele der in diesem Artikel beschriebenen Git-Befehle werden automatisch ausgeführt, wenn Sie eine Web-App mit den [Azure-Befehlszeilentools für Mac und Linux](/develop/nodejs/how-to-guides/command-line-tools/) erstellen
 
 ## <a id="Step1"></a>Schritt 1: Installieren von Git
 
 Die erforderlichen Schritte zum Installieren von Git variieren je nach Betriebssystem. Informationen zu Betriebssystem-spezifischen Distributionen und zur Installation finden Sie unter [Installieren von Git].
 
-> [AZURE.NOTE]Einige Betriebssysteme verfügen über eine Befehlszeilenversion und eine GUI-Version von Git. Die in diesem Artikel bereitgestellten Anweisungen verwenden die Befehlszeilenversion.
+> [AZURE.NOTE] Einige Betriebssysteme verfügen über eine Befehlszeilenversion und eine GUI-Version von Git. Die in diesem Artikel bereitgestellten Anweisungen verwenden die Befehlszeilenversion.
 
 ## <a id="Step2"></a>Schritt 2: Erstellen eines lokalen Repositorys
 
@@ -42,7 +42,7 @@ Web-Apps unterstützen in verschiedenen Programmiersprachen erstellte Anwendunge
 
 		git add index.html 
 
-	> [AZURE.NOTE]Sie können Hilfeinformationen für jeden Git-Befehl aufrufen, indem Sie nach dem Befehl "-help" oder "--help" eingeben. Geben Sie als Parameteroptionen für den Befehl "add" beispielsweise "git add -help" ein, um Befehlszeilenhilfe zu erhalten, oder "git add --help", um ausführlichere Hilfe anzuzeigen.
+	> [AZURE.NOTE] Sie können Hilfeinformationen für jeden Git-Befehl aufrufen, indem Sie nach dem Befehl "-help" oder "--help" eingeben. Geben Sie als Parameteroptionen für den Befehl "add" beispielsweise "git add -help" ein, um Befehlszeilenhilfe zu erhalten, oder "git add --help", um ausführlichere Hilfe anzuzeigen.
 
 4. Übernehmen Sie dann die Änderungen am Repository mithilfe des folgenden Befehls:
 
@@ -88,7 +88,7 @@ Führen Sie die folgenden Schritte durch, um Ihre Web-App mit einem lokalen Git 
 
 		git remote add azure https://username@needsmoregit.scm.azurewebsites.net:443/NeedsMoreGit.git
 
-    > [AZURE.NOTE]Der Befehl **remote** fügt einem Remoterepository einen benannten Verweis hinzu. In diesem Beispiel wird ein Verweis mit dem Namen "azure" für das Repository Ihrer Web-App erstellt.
+    > [AZURE.NOTE] Der Befehl **remote** fügt einem Remoterepository einen benannten Verweis hinzu. In diesem Beispiel wird ein Verweis mit dem Namen "azure" für das Repository Ihrer Web-App erstellt.
 
 1. Verwenden Sie Folgendes an der Befehlszeile, um die aktuellen Repository-Inhalte aus dem lokalen Repository per Push in das "azure"-Remote-Repository zu übertragen:
 
@@ -108,7 +108,7 @@ Führen Sie die folgenden Schritte durch, um Ihre Web-App mit einem lokalen Git 
 		To https://username@needsmoregit.scm.azurewebsites.net:443/NeedsMoreGit.git
 		* [new branch]		master -> master
 
-	> [AZURE.NOTE]Das für Ihre Web-App erstellte Repository erwartet Pushanforderungen für die <strong>master</strong>-Verzweigung des Repositorys, die dann als Inhalt der Web-App verwendet werden.
+	> [AZURE.NOTE] Das für Ihre Web-App erstellte Repository erwartet Pushanforderungen für die <strong>master</strong>-Verzweigung des Repositorys, die dann als Inhalt der Web-App verwendet werden.
 
 2. Kehren Sie zum Blatt Ihrer Web-App im Azure-Portal zurück. **No deployment found** sollte in **Aktive Bereitstellung** mit einen Protokolleintrag des letzten Pushvorgangs geändert werden.
 
@@ -150,7 +150,7 @@ Das Bereitstellen von Dateien über GitHub, CodePlex oder BitBucket setzt voraus
   
 	![](./media/publishing-with-git/azure7-setup-github-configure.png)
 
-	> [AZURE.NOTE]Wenn Sie die fortlaufende Bereitstellung mit GitHub oder BitBucket aktivieren, werden öffentliche und private Projekte angezeigt.
+	> [AZURE.NOTE] Wenn Sie die fortlaufende Bereitstellung mit GitHub oder BitBucket aktivieren, werden öffentliche und private Projekte angezeigt.
 
 Azure erstellt eine Zuordnung für das ausgewählte Repository und überträgt die Dateien mithilfe von Pull aus dem angegebenen Pfad. Nach Abschluss dieses Vorgangs wird im Bereich **Bereitstellung** des Blatts Ihrer Web-App die Meldung **Aktive Bereitstellung** angezeigt, die auf die erfolgreiche Bereitstellung hinweist.
 
@@ -182,11 +182,9 @@ Die Schritte zur Pushübertragung der Visual Studio-Projektmappe an Web-Apps sin
 		_app/
 		nuget.exe
 
-	>[AZURE.NOTE]Bei Verwendung von GitHub können Sie beim Erstellen Ihres Repositorys optional eine Visual Studio-spezifische GITIGNORE-Datei generieren. Diese enthält alle allgemeinen temporären Dateien, Buildergebnisse usw. Anschließend können Sie sie Ihren Anforderungen entsprechend anpassen.
+	>[AZURE.NOTE] Bei Verwendung von GitHub können Sie beim Erstellen Ihres Repositorys optional eine Visual Studio-spezifische GITIGNORE-Datei generieren. Diese enthält alle allgemeinen temporären Dateien, Buildergebnisse usw. Anschließend können Sie sie Ihren Anforderungen entsprechend anpassen.
 
 -	Fügen Sie Ihrem Repository die gesamte Verzeichnisstruktur des Projekts hinzu, wobei sich die .sln-Datei im Stammverzeichnis des Repositorys befinden muss.
-
--	Damit Visual Studio automatisch fehlende Pakete wiederherstellt, [aktivieren Sie die NuGet-Paketwiederherstellung](http://docs.nuget.org/Consume/Package-Restore) in Ihrem Visual Studio-Projekt.
 
 Nachdem Sie Ihr Repository wie beschrieben eingerichtet und Ihre Web-App in Azure für fortlaufende Veröffentlichung aus einem der Online-Git-Repositorys konfiguriert haben, können Sie Ihre ASP.NET-Anwendung lokal in Visual Studio entwickeln und Ihren Code fortlaufend bereitstellen, indem Sie einfach Ihre Änderungen mithilfe von Push an Ihr Online-Git-Repository übertragen.
 
@@ -265,7 +263,7 @@ Die folgenden Fehler und Probleme treten häufiger auf, wenn Git zum Veröffentl
 * [Git-Dokumentation]
 * [Projekt Kudu](https://github.com/projectkudu/kudu/wiki)
 
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Änderungen
 * Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
@@ -297,4 +295,4 @@ Die folgenden Fehler und Probleme treten häufiger auf, wenn Git zum Veröffentl
 [Verwenden von Dropbox zum Freigeben von Git-Repositorys]: https://gist.github.com/trey/2722927
 [Continuous delivery to Azure using Visual Studio Team Services]: ../articles/cloud-services/cloud-services-continuous-delivery-use-vso.md
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0211_2016-->

@@ -70,7 +70,7 @@ Bereiten Sie Azure Backup wie folgt zum Sichern von DPM-Daten vor:
 - DPM kann die meisten Workloads in Azure Backup sichern. Eine vollständige Liste der Unterstützungen finden Sie in den Azure Backup-Elementen weiter unten.
 - Mit der Option "Kopieren auf Band" können Daten, die in Azure Backup gespeichert sind, nicht wiederhergestellt werden.
 - Sie benötigen ein Azure-Konto mit aktivierter Azure Backup-Funktion. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Erfahren Sie mehr über [Preisgestaltung von Azure Backup](https://azure.microsoft.com/pricing/details/backup/).
-- Für das Verwenden von Azure Backup muss der Azure Backup-Agent auf den Servern installiert werden, die Sie sichern möchten. Jeder Server muss über mindestens 2,5 GB lokalen freien Speicherplatz für den Cachespeicherort verfügen, obwohl 15 GB freier lokaler Speicherplatz für den Cachespeicherort empfohlen wird.
+- Für das Verwenden von Azure Backup muss der Azure Backup-Agent auf den Servern installiert werden, die Sie sichern möchten. Jeder Server muss mindestens 10 % der zu sichernden Datengröße als freien lokalen Speicher bereitstellen. Beispielsweise erfordert das Sichern von 100 GB an Daten mindestens 10 GB freien Speicherplatz im Scratchverzeichnis. Obwohl der Mindestbetrag 10 % ist, werden 15 % freier lokaler Speicherplatz für den Cachespeicherort empfohlen.
 - Daten werden im Azure-Tresorspeicher gespeichert. Es gibt keine Beschränkung der Datenmenge, die Sie in einem Azure Backup-Tresor sichern, aber die Größe einer Datenquelle (z. B. ein virtueller Computer oder eine Datenbank) sollte 54400 GB nicht überschreiten.
 
 Diese Dateitypen werden für die Sicherung in Azure unterstützt:
@@ -92,4 +92,4 @@ Diese werden nicht unterstützt:
 
 >[AZURE.NOTE] Ab System Center 2012 DPM mit SP1 können Sie Workloads, die von DPM geschützt werden, in Azure mithilfe von Microsoft Azure Backup sichern.
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

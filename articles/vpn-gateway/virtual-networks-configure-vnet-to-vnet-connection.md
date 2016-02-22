@@ -4,7 +4,7 @@
    services="vpn-gateway"
    documentationCenter="na"
    authors="cherylmc"
-   manager="carolz"
+   manager="carmonm"
    editor=""/>
 
 <tags
@@ -24,7 +24,7 @@
 - [PowerShell - Azure Resource Manager](vpn-gateway-vnet-vnet-rm-ps.md)
 
 
-Dieser Artikel führt Sie durch die Schritte zum Erstellen und Verbinden virtueller Netzwerke mithilfe des klassischen Bereitstellungsmodells (auch als Dienstverwaltung bezeichnet). Wenn Sie ein anderes Bereitstellungsmodell für diese Konfiguration suchen, verwenden Sie die Registerkarten oben, um den gewünschten Artikel auszuwählen.
+Dieser Artikel führt Sie durch die Schritte zum Erstellen und Verbinden virtueller Netzwerke mithilfe des klassischen Bereitstellungsmodells (auch als Dienstverwaltung bezeichnet). Wenn Sie virtuelle Netzwerke, die mit dem Ressourcen-Manager-Bereitstellungsmodell erstellt wurden, verbinden möchten, finden Sie unter [Konfigurieren einer VNET-zu-VNET-Verbindung für virtuelle Netzwerke im selben Abonnement mit dem Azure-Ressourcen-Manager und PowerShell](vpn-gateway-vnet-vnet-rm-ps.md) weitere Informationen.
 
 **Informationen zu Azure-Bereitstellungsmodellen**
 
@@ -223,4 +223,4 @@ Sobald die Verbindung hergestellt ist, können Sie Ihren virtuellen Netzwerken v
 [2]: http://channel9.msdn.com/Series/Getting-started-with-Windows-Azure-HDInsight-Service/Configure-the-VPN-connectivity-between-two-Azure-virtual-networks
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

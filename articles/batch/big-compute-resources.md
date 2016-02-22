@@ -62,15 +62,17 @@ HPC Pack ist die kostenlose HPC-Lösung von Microsoft, die auf Microsoft Azure u
 * [Burst to Azure Batch with Microsoft HPC Pack (in englischer Sprache)](https://technet.microsoft.com/library/mt612877.aspx)
 
 
-* [Windows-HPC-Foren](https://social.microsoft.com/Forums/de-DE/home?category=windowshpc)
+* [Windows-HPC-Foren](https://social.microsoft.com/Forums/home?category=windowshpc)
 
 ### Linux- und OSS-Clusterlösungen
 
-Mithilfe dieser Azure-Schnellstartvorlagen können Sie Linux-HPC-Cluster mit Open-Source-Tools bereitstellen.
+Verwenden Sie die folgenden Azure-Vorlagen zum Bereitstellen von Linux-HPC-Clustern.
 
 * [Spin up a SLURM cluster](https://azure.microsoft.com/documentation/templates/slurm/) und [Blogbeitrag](http://blogs.technet.com/b/windowshpc/archive/2015/06/06/deploy-a-slurm-cluster-on-azure.aspx)
 
 * [Spin up a Torque cluster](https://azure.microsoft.com/documentation/templates/torque-cluster/)
+
+* [Intel Cloud Edition for Lustre Software – Eval](https://azure.microsoft.com/marketplace/partners/intel/lustre-cloud-edition-evaleval-lustre-2-7/)
 
 ## Microsoft MPI
 
@@ -94,7 +96,7 @@ Azure bietet zum Ausführen Ihrer Linux- und Windows-HPC-Workloads [eine Reihe u
 
 ## Architekturpläne
 
-* [HPC und Datenorchestrierung mit Azure Batch und Azure Data Factory](http://go.microsoft.com/fwlink/?linkid=717686) (PDF) und [Artikel](../data-factory/data-factory-data-processing-using-batch.md)
+* [HPC and data orchestration using Azure Batch and Azure Data Factory](http://go.microsoft.com/fwlink/?linkid=717686) (HPC und Datenorchestrierung mit Azure Batch und Azure Data Factory, PDF) und [Artikel](../data-factory/data-factory-data-processing-using-batch.md)
 
 ## Beispiele und Demos
 
@@ -114,11 +116,25 @@ Azure bietet zum Ausführen Ihrer Linux- und Windows-HPC-Workloads [eine Reihe u
 
 * [Media Services](https://azure.microsoft.com/documentation/services/media-services/)
 
+## Kundenstimmen
 
+* [Towers Watson](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=18222)
+
+* [Milliman](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=14967)
+
+* [ANEO](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=4168)
+
+* [d3View](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=22088)
+
+* [Schlumberger](http://azure.microsoft.com/blog/big-compute-for-large-engineering-simulations)
+
+* [Ludwig Institute of Cancer Research](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=5830)
+
+* [Microsoft Research](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=15634)
 
 ## Nächste Schritte
 
 * Die neuesten Ankündigungen finden Sie im [Blog des HPC- und Batch-Teams von Microsoft](http://blogs.technet.com/b/windowshpc/) und im [Azure-Blog](https://azure.microsoft.com/blog/tag/hpc/).
 * Weitere Informationen finden Sie auch unter [Neuigkeiten bei Batch](https://azure.microsoft.com/updates/?service=batch) oder indem Sie den [RSS-Feed](https://azure.microsoft.com/updates/feed/?service=batch) abonnieren.
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

@@ -36,9 +36,9 @@ Bei einigen Vorgängen aus diesem Dokument kommen die folgenden Tools zum Einsat
 ## Andere Protokollquellen, die gesammelt werden können
 1. **Service Fabric-Protokolle:** Werden von der Plattform für standardmäßige ETW- und EventSource-Kanäle ausgegeben. Protokolle können unterschiedlicher Art sein:
   - Betriebsereignisse: Protokolle für Vorgänge, die von der Service Fabric-Plattform durchgeführt werden. Beispiele hierfür wären die Erstellung von Anwendungen und Diensten, Knotenzustandsänderungen und Upgradeinformationen.
-  - [Ereignisse des Actor-Programmiermodells](https://azure.microsoft.com/service-fabric-reliable-actors-diagnostics/)
-  - [Ereignisse des Reliable Services-Programmiermodells](https://azure.microsoft.com/service-fabric-reliable-services-diagnostics/)
-2. **Anwendungsereignisse:** Ereignisse, die von Ihrem Dienstcode ausgegeben werden und mit der EventSource-Hilfsklasse der Visual Studio-Vorlagen ausgegeben werden. Weitere Informationen zum Schreiben von Protokollen aus Ihrer Anwendung finden Sie in [diesem Artikel zur Überwachung und Diagnose von Diensten in einer lokalen Installation](https://azure.microsoft.com/service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally/).
+  - [Ereignisse des Actor-Programmiermodells](service-fabric-reliable-actors-diagnostics.md)
+  - [Ereignisse des Reliable Services-Programmiermodells](service-fabric-reliable-services-diagnostics.md)
+2. **Anwendungsereignisse:** Ereignisse, die von Ihrem Dienstcode ausgegeben werden und mit der EventSource-Hilfsklasse der Visual Studio-Vorlagen ausgegeben werden. Weitere Informationen zum Schreiben von Protokollen aus Ihrer Anwendung finden Sie in [diesem Artikel zur Überwachung und Diagnose von Diensten in einer lokalen Installation](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md).
 
 
 ## Bereitstellen der Diagnoseerweiterung für einen Service Fabric-Cluster zum Sammeln und Hochladen von Protokollen
@@ -325,4 +325,4 @@ Sie müssen den EtwEventSourceProviderConfiguration-Abschnitt in der Datei „Wa
 ## Nächste Schritte
 Sehen Sie sich die Diagnoseereignisse an, die für [Reliable Actors](service-fabric-reliable-actors-diagnostics.md) und [Reliable Services](service-fabric-reliable-services-diagnostics.md) ausgegeben werden, um besser zu verstehen, welche Ereignisse Sie beim Behandeln von Problemen untersuchen sollten.
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0211_2016-->

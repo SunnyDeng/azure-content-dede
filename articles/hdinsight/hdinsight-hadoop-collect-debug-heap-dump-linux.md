@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/04/2015"
+	ms.date="02/05/2016"
 	ms.author="larryfr"/>
 
 
@@ -24,7 +24,7 @@
 
 Heapdumps enthalten eine Momentaufnahme des Speichers der Anwendung, einschließlich der Werte von Variablen zum Zeitpunkt der Dumperstellung. Daher sind sie sehr nützlich zum Diagnostizieren von Problemen, die bei der Ausführung auftreten.
 
-> [AZURE.NOTE]Die Informationen in diesem Artikel gelten nur für Linux-basierte HDInsight-Cluster. Informationen zu Windows-basierten HDInsight-Clustern finden Sie unter [Aktivieren von Heapdumps für Hadoop-Dienste auf Windows-basierten HDInsight-Clustern](hdinsight-hadoop-collect-debug-heap-dumps.md)
+> [AZURE.NOTE] Die Informationen in diesem Artikel gelten nur für Linux-basierte HDInsight-Cluster. Informationen zu Windows-basierten HDInsight-Clustern finden Sie unter [Aktivieren von Heapdumps für Hadoop-Dienste auf Windows-basierten HDInsight-Clustern](hdinsight-hadoop-collect-debug-heap-dumps.md)
 
 ## <a name="whichServices"></a>Dienste
 
@@ -49,7 +49,7 @@ Mapper- und Reducer-Prozesse unterscheiden sich geringfügig, da dies untergeord
 * **mapreduce.admin.map.child.java.opts**
 * **mapreduce.admin.reduce.child.java.opts**
 
-> [AZURE.NOTE]Wir empfehlen die Verwendung von Ambari zum Ändern der Skripts und der Einstellungen in "mapred-site.xml", da mit Ambari das Replizieren von Änderungen auf Knoten im Cluster verarbeitet wird. Unter [Verwenden von Ambari](#using-ambari) finden Sie die detaillierten Schritte.
+> [AZURE.NOTE] Wir empfehlen die Verwendung von Ambari zum Ändern der Skripts und der Einstellungen in "mapred-site.xml", da mit Ambari das Replizieren von Änderungen auf Knoten im Cluster verarbeitet wird. Unter [Verwenden von Ambari](#using-ambari) finden Sie die detaillierten Schritte.
 
 ###Aktivieren von Heapdumps
 
@@ -59,7 +59,7 @@ Die folgende Option aktiviert Heapdumps bei einem "OutOfMemoryError":
 
 Das **+**-Zeichen gibt an, dass diese Option aktiviert ist. Der Standardwert ist deaktiviert.
 
-> [AZURE.WARNING]Heapdumps sind für Hadoop-Dienste auf HDInsight-Clustern nicht standardmäßig aktiviert, da die Dumpdateien groß sein können. Wenn Sie sie zur Problembehandlung aktivieren, denken Sie daran, sie zu deaktivieren, sobald Sie das Problem reproduziert und die Dumpdateien gesammelt haben.
+> [AZURE.WARNING] Heapdumps sind für Hadoop-Dienste auf HDInsight-Clustern nicht standardmäßig aktiviert, da die Dumpdateien groß sein können. Wenn Sie sie zur Problembehandlung aktivieren, denken Sie daran, sie zu deaktivieren, sobald Sie das Problem reproduziert und die Dumpdateien gesammelt haben.
 
 ###Dumpspeicherort
 
@@ -75,7 +75,7 @@ Sie können auch ein Skript auslösen, wenn ein **OutOfMemoryError** auftritt. S
 
     -XX:OnOutOfMemoryError=/path/to/script
 
-> [AZURE.NOTE]Da Hadoop ein verteiltes System ist, muss jedes verwendete Skript auf allen Knoten im Cluster vorhanden sein, auf denen der Dienst ausgeführt wird.
+> [AZURE.NOTE] Da Hadoop ein verteiltes System ist, muss jedes verwendete Skript auf allen Knoten im Cluster vorhanden sein, auf denen der Dienst ausgeführt wird.
 >
 > Das Skript muss sich zudem an einem Speicherort befinden, auf den das Konto zugreifen kann, mit dem der Dienst ausgeführt wird, und Ausführungsberechtigungen müssen gewährt werden. Sie könnten z. B. Skripts in `/usr/local/bin` speichern und `chmod go+rx /usr/local/bin/filename.sh` zum Gewähren von Lese- und Ausführungsberechtigungen verwenden.
 
@@ -87,7 +87,7 @@ Gehen Sie folgendermaßen vor, um die Konfiguration für einen Dienst zu ändern
 
     Authentifizieren Sie bei der entsprechenden Aufforderung auf der Website mithilfe des HTTP-Kontonamens (Standard: admin) und dem Kennwort für den Cluster.
 
-    > [AZURE.NOTE]Sie könnten ein zweites Mal von Ambari zur Eingabe von Benutzername und Kennwort aufgefordert werden. Geben Sie in diesem Fall einfach den gleichen Kontonamen und das Kennwort erneut ein.
+    > [AZURE.NOTE] Sie könnten ein zweites Mal von Ambari zur Eingabe von Benutzername und Kennwort aufgefordert werden. Geben Sie in diesem Fall einfach den gleichen Kontonamen und das Kennwort erneut ein.
 
 2. Wählen Sie mithilfe der Liste auf der linken Seite den Dienstbereich aus, den Sie ändern möchten. Beispielsweise **HDFS**. Wählen Sie im mittleren Bereich die Registerkarte **Configs** aus.
 
@@ -101,7 +101,7 @@ Gehen Sie folgendermaßen vor, um die Konfiguration für einen Dienst zu ändern
 
     ![HADOOP\_NAMENODE\_OPTS mit -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp/](./media/hdinsight-hadoop-heap-dump-linux/opts.png)
 
-	> [AZURE.NOTE]Beim Aktivieren von Heapdumps für den untergeordneten Mapper- oder Reducer-Prozess suchen Sie stattdessen nach den Feldern mit der Bezeichnung **mapreduce.admin.map.child.java.opts** und **mapreduce.admin.reduce.child.java.opts**.
+	> [AZURE.NOTE] Beim Aktivieren von Heapdumps für den untergeordneten Mapper- oder Reducer-Prozess suchen Sie stattdessen nach den Feldern mit der Bezeichnung **mapreduce.admin.map.child.java.opts** und **mapreduce.admin.reduce.child.java.opts**.
 
     Verwenden Sie die Schaltfläche **Save**, um die Änderungen zu speichern. Sie können einen kurzen Hinweise zur Beschreibung der Änderungen eingeben.
 
@@ -117,8 +117,8 @@ Gehen Sie folgendermaßen vor, um die Konfiguration für einen Dienst zu ändern
 
     ![Eintrag "Restart All Affected"](./media/hdinsight-hadoop-heap-dump-linux/restartbutton.png)
 
-    > [AZURE.NOTE]Die Einträge für die Schaltfläche **Restart** können für andere Dienste anders lauten.
+    > [AZURE.NOTE] Die Einträge für die Schaltfläche **Restart** können für andere Dienste anders lauten.
 
 8. Verwenden Sie nach dem Neustart der Dienste die Schaltfläche **Service Actions**, um **Turn Off Maintenance Mode** auszuwählen. Dadurch setzt Ambari das Überwachen auf Warnungen für den Dienst fort.
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0211_2016-->

@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="10/23/2015"
+    ms.date="02/06/2016"
     ms.author="elizapo" />
 
 
@@ -22,6 +22,9 @@
 
 Einer der Vorteile von Azure RemoteApp besteht darin, dass wir ständig an Verbesserungen arbeiten. Hier werden Sie über solche Änderungen informiert.
 
+## Zukünftige Updates
+Wussten Sie, dass das Azure RemoteApp-Team monatlich Updates im RDS-Blog veröffentlicht? Sie erfahren nicht nur, was sich in Azure RemoteApp ändert, sondern erhalten auch andere Informationen zur Verwendung von RDS. Weitere Informationen finden Sie im Blog [Remote Desktop Services-Blog](https://blogs.msdn.microsoft.com/rds/). Vor einigen Wochen wurde z. B. ein Eintrag zum [Anheben und Verschieben von Workloads mit Azure RemoteApp und Azure AD](https://blogs.msdn.microsoft.com/rds/2016/01/19/lift-and-shift-your-workloads-with-azure-remoteapp-and-azure-ad-domain-services/) veröffentlicht.
+ 
 ## September 2015
 - InfoPath wurde der Microsoft Office 365-Vorlage und dem Katalogimage hinzugefügt. Wenn Sie InfoPath freigeben möchten, müssen Sie unbedingt Ihre Sammlungen mit dem aktuellen Image aktualisieren.
 - Clientupdates:
@@ -72,7 +75,7 @@ Die Erstellung dieses Themas ist bereits einige Erweiterungen (und Monate) her, 
 - [Erstellen Sie ein Azure RemoteApp-Image von einem virtuellen Azure-Computer](remoteapp-image-on-azurevm.md). Dadurch wird das Hochladen Ihres benutzerdefinierten Images beschleunigt.
 - Verwenden Sie ein Azure-VNET statt eines RemoteApp-VNET, um die Ressourcen Ihres Unternehmensnetzwerks mit Azure zu verbinden. Die [Anweisungen für Hybridsammlungen](remoteapp-create-hybrid-deployment.md) wurden aktualisiert, um Ihnen die Erstellung eines Azure-VNET zu erläutern (Schritt 1).
 - Apropos VNETs, sehen Sie sich die [neuen Anleitungen](remoteapp-vnetsizing.md) im Zusammenhang mit VNET-Größenlimits und -Einschränkungen an.
-- Und bezüglich Einschränkungen: Was sind die [Diensteinschränkungen und Standardwerte](remoteapp-servicelimits.md)?
+- Und bezüglich Einschränkungen: Was sind die [Diensteinschränkungen und Standardwerte](../azure-subscription-service-limits.md)?
 
 Sie möchten mehr über Azure RemoteApp erfahren? Das RemoteApp-Team war vor einigen Wochen auf der Ignite. Sehen Sie sich das Video von Eric an: [The Fundamentals of Microsoft Azure RemoteApp Management and Administration](http://channel9.msdn.com/Events/Ignite/2015/BRK3868) (in englischer Sprache).
 
@@ -84,4 +87,4 @@ Vielen Dank, dass Sie uns treu bleiben. Im nächsten Monat gibt es weitere Updat
 ### Helfen Sie uns, Ihnen zu helfen
 Wussten Sie schon, dass Sie diesen Artikel im Bereich unten nicht nur bewerten und kommentieren, sondern ihn auch selbst ändern können? Fehlt etwas? Ist etwas nicht ganz richtig? Habe ich etwas geschrieben, das eher verwirrend ist? Scrollen Sie nach oben, und klicken Sie auf **Edit on GitHub**, um die gewünschten Änderungen vorzunehmen. Ihr Vorschlag wird uns vorgelegt, und wenn wir ihn bestätigt haben, werden Ihre Änderungen und Verbesserungen hier angezeigt.
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0211_2016-->

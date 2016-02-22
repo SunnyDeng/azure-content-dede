@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
-   ms.date="11/20/2015"
+   ms.date="02/08/2016"
    ms.author="maroche"/>
 
 # Versionshinweise für Azure Data Catalog
@@ -37,14 +37,6 @@ Beim Herstellen einer Verbindung mit Teradata-Datenquellen müssen Benutzer den 
 
 Zum Zeitpunkt dieser ADC-Veröffentlichung ist der neueste [Teradata-ODBC-Treiber für Windows (Version 15.10)](http://downloads.teradata.com/download/connectivity/odbc-driver/windows) mit Office 2013, aber nicht mit Office 2016 kompatibel.
 
-## Hinweise zur Azure Data Catalog-Version vom 6. November 2015
-
-### Beim Start des Tools für die Datenquellenregistrierung können Fehler auftreten
-
-Wenn Benutzer, die bereits eine ältere Version des Datenquellenregistrierungs-Tools von **Azure Data Catalog** installiert haben, das Tool über das Portal **Azure Data Catalog** starten, erscheint unter Umständen folgende Meldung: „Die Anwendung kann nicht gestartet werden. Wenden Sie sich an den Hersteller der Anwendung.“
-
-Benutzer, die diese Meldung erhalten, müssen in der Windows-Systemsteuerung die vorhandene Anwendung „Azure Data Catalog“ entfernen und das Tool anschließend erneut über das Portal **Azure Data Catalog** starten.
-
 ## Hinweise für die Azure Data Catalog-Version vom 13. Juli 2015
 
 ### Registrieren bei Oracle Database und Herstellen einer Verbindung
@@ -64,7 +56,7 @@ Die Unterstützung von SQL Server Reporting Services (SSRS)-Datenquellen ist in
 
 Beim Öffnen von Datenressourcen aus dem Portal **Azure Data Catalog** in Microsoft Excel wird Benutzern unter Umständen ein Dialogfeld mit einem Sicherheitshinweis für Microsoft Excel angezeigt. Hierbei handelt es sich um einen Standardvorgang. Benutzer können **Aktivieren** auswählen, um den Vorgang fortzusetzen.
 
-Weitere Informationen finden Sie unter [Aktivieren oder Deaktivieren von Sicherheitswarnungen zu Verknüpfungen und Dateien von verdächtigen Websites](https://support.office.com/de-DE/article/Enable-or-disable-security-alerts-about-links-and-files-from-suspicious-websites-A1AC6AE9-5C4A-4EB3-B3F8-143336039BBE).
+Weitere Informationen finden Sie unter [Aktivieren oder Deaktivieren von Sicherheitswarnungen zu Verknüpfungen und Dateien von verdächtigen Websites](https://support.office.com/article/Enable-or-disable-security-alerts-about-links-and-files-from-suspicious-websites-A1AC6AE9-5C4A-4EB3-B3F8-143336039BBE).
 
 ### Fehlende Blob- und UDT-Spalten in der Vorschau
 
@@ -80,7 +72,7 @@ Für dieses Problem sind zwei Ursachen möglich:
 
 In manchen Fällen tritt dieser Fehler möglicherweise nur dann auf, wenn der Benutzer im Unternehmensnetzwerk ist oder wenn der Benutzer von außerhalb des Unternehmensnetzwerks eine Verbindung herstellt. Mit der globalen Authentifizierungsrichtlinie können separate Authentifizierungsmethoden für Intranet- und Extranetverbindungen aktiviert werden. Anmeldefehler können auftreten, wenn die Formularauthentifizierung nicht für das Netzwerk aktiviert ist, aus dem der Benutzer eine Verbindung herstellt.
 
-Weitere Informationen finden Sie unter [Konfigurieren von Authentifizierungsrichtlinien](https://technet.microsoft.com/de-DE/library/dn486781.aspx).
+Weitere Informationen finden Sie unter [Konfigurieren von Authentifizierungsrichtlinien](https://technet.microsoft.com/library/dn486781.aspx).
 
 **Ursache 2: Netzwerkproxykonfiguration** Wenn das Unternehmensnetzwerk einen Proxyserver verwendet, kann das Registrierungstool möglicherweise aufgrund des Proxys keine Verbindung zu Azure Active Directory herstellen. Um die Funktion des Registrierungstools sicherzustellen, können Benutzer die Konfigurationsdatei bearbeiten , indem sie der Datei diesen Abschnitt hinzufügen:
 
@@ -96,4 +88,4 @@ Weitere Informationen finden Sie unter [Konfigurieren von Authentifizierungsrich
 
 Starten Sie das Registrierungstool, um die Datei "RegistrationTool.exe.config" zu suchen, und öffnen Sie den Windows Task-Manager. Klicken Sie im Task-Manager auf der Registerkarte "Details" mit der rechten Maustaste auf "RegistrationTool.exe", und wählen Sie im Popupmenü "Dateispeicherort öffnen" aus.
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0211_2016-->

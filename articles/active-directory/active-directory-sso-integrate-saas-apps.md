@@ -14,7 +14,7 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="identity"
-    ms.date="01/05/2016"
+    ms.date="02/09/2016"
     ms.author="curtand"/>
 
 # Integrieren des einmaligen Anmeldens mit Azure Active Directory in SaaS-Apps  
@@ -43,7 +43,7 @@ Azure AD bietet mehrere anpassbare Möglichkeiten zum Bereitstellen von Anwendu
 
 Das Einrichten des einmaligen Anmeldens für eine Anwendung, die in Ihrem Unternehmen bereits verwendet wird, ist ein anderer Prozess als das Erstellen neuer Konten für eine neue Anwendung. Beispiele für vorbereitende Schritte sind: Zuordnen von Benutzeridentitäten in der Anwendung zu Azure AD-Identitäten und Ermitteln, wie Benutzer das Anmelden an einer Anmeldung nach der Integration erfahren.
 
-> [AZURE.NOTE]Um SSO für eine vorhandene Anwendung einzurichten, benötigen Sie globale Administratorrechte in Azure AD und der SaaS-Anwendung.
+> [AZURE.NOTE] Um SSO für eine vorhandene Anwendung einzurichten, benötigen Sie globale Administratorrechte in Azure AD und der SaaS-Anwendung.
 
 ### Zuordnen von Benutzerkonten
 
@@ -68,4 +68,8 @@ Wenn die App sich nicht im App-Katalog befindet, können Sie [sie der Azure AD-A
 
 In der Azure.com-Bibliothek finden Sie weitaus umfassendere Informationen zu diesen Problemen, beginnend mit [Was bedeuten Anwendungszugriff und einmaliges Anmelden mit Azure Active Directory](active-directory-appssoaccess-whatis.md).
 
-<!---HONumber=AcomDC_0107_2016-->
+## Weitere Informationen
+
+- [Artikelindex für die Anwendungsverwaltung in Azure Active Directory](active-directory-apps-index.md)
+
+<!---HONumber=AcomDC_0211_2016-->

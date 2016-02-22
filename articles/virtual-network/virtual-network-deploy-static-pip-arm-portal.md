@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Bereitstellen einer VM mit einer statischen öffentlichen IP-Adresse über das Vorschauportal im Ressourcen-Manager | Microsoft Azure"
-   description="Erfahren Sie, wie Sie VMs mit einer statischen öffentlichen IP-Adresse über das Vorschauportal im Ressourcen-Manager bereitstellen."
+   pageTitle="Bereitstellen einer VM mit einer statischen öffentlichen IP-Adresse mit dem Azure-Portal im Ressourcen-Manager | Microsoft Azure"
+   description="Erfahren Sie, wie Sie VMs mit einer statischen öffentlichen IP-Adresse über das Azure-Portal im Ressourcen-Manager bereitstellen."
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="01/08/2016"
+   ms.date="02/04/2016"
    ms.author="telmos" />
 
 # Bereitstellen einer VM mit einer statischen öffentlichen IP-Adresse mithilfe des Azure-Portals
@@ -59,4 +59,4 @@ Führen Sie die unten angegebenen Schritte aus, um eine VM mit einer statischen 
 
 	![Azure-Portal – Öffentliche IP-Adresse erstellen](./media/virtual-network-deploy-static-pip-arm-portal/figure6.png)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

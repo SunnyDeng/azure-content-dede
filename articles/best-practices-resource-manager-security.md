@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/13/2015"
-	ms.author="georgem"/>
+	ms.date="02/09/2016"
+	ms.author="georgem;tomfitz"/>
 
 
 # Sicherheitsaspekte für Azure-Ressourcen-Manager
@@ -147,6 +147,8 @@ Das nachstehende Vorlagenfragment besteht aus übergeordneten Bereitstellungskon
         }
     }
 
+Weitere Informationen dazu, wie Sie einen Wert aus einem Schlüsseltresor während der Bereitstellung einer Vorlage als Parameter übergeben, finden Sie unter [Übergeben sicherer Werte während der Bereitstellung](resource-manager-keyvault-parameter.md).
+
 ## Dienstprinzipale für abonnementübergreifende Interaktionen
 
 Dienstidentitäten werden in Active Directory als Dienstprinzipale dargestellt. Dienstprinzipale stehen im Mittelpunkt der Aktivierung von Schlüsselszenarien für IT-Abteilungen von Unternehmen, Systemintegratoren (SI) und Clouddienstanbietern (Cloud Service Vendor, CSV). Es gibt spezifische Anwendungsfälle, bei denen eine dieser Organisationen mit dem Abonnement eines ihrer Kunden interagieren muss.
@@ -174,7 +176,7 @@ Bei einer NSG handelt es sich um ein Objekt oberster Ebene, das Ihrem Abonnement
 
 Sie können eine NSG einem virtuellen Computer oder einem Subnetz innerhalb eines virtuellen Netzwerks zuordnen. Bei der Zuordnung zu einem virtuellen Computer gilt die NSG für den gesamten ein- und ausgehenden Datenverkehr der VM-Instanz. Bei der Zuordnung zu einem Subnetz in Ihrem virtuellen Netzwerk gilt sie für den gesamten ein- und ausgehenden Datenverkehr aller VM-Instanzen im Subnetz. Ein virtueller Computer bzw. ein Subnetz kann jeweils nur einer einzelnen NSG zugeordnet werden, wobei jede NSG bis zu 200 Regeln enthalten kann. Pro Abonnement können 100 NSGs verwendet werden.
 
->[AZURE.NOTE]Endpunktbasierte ACLs und Netzwerksicherheitsgruppen können nicht für die gleiche VM-Instanz verwendet werden. Wenn Sie eine NSG verwenden möchten und bereits eine Endpunkt-ACL eingerichtet ist, entfernen Sie zuerst die Endpunkt-ACL. Informationen zur Vorgehensweise finden Sie unter [Verwalten von Zugriffssteuerungslisten (ACLs) für Endpunkte mithilfe von PowerShell](../virtual-network/virtual-networks-acl-powershell.md).
+>[AZURE.NOTE]  Endpunktbasierte ACLs und Netzwerksicherheitsgruppen können nicht für die gleiche VM-Instanz verwendet werden. Wenn Sie eine NSG verwenden möchten und bereits eine Endpunkt-ACL eingerichtet ist, entfernen Sie zuerst die Endpunkt-ACL. Informationen zur Vorgehensweise finden Sie unter [Verwalten von Zugriffssteuerungslisten (ACLs) für Endpunkte mithilfe von PowerShell](../virtual-network/virtual-networks-acl-powershell.md).
 
 ### Funktionsweise von Netzwerksicherheitsgruppen
 
@@ -306,7 +308,7 @@ Jedes in einem virtuellen Netzwerk erstellte Subnetz wird automatisch einer Rout
 
 Zum Zeitpunkt der Erstellung dieses Artikels wird [ExpressRoute](expressroute/expressroute-introduction.md) noch nicht vom [Netzwerkressourcenanbieter](virtual-network/resource-groups-networking.md) für den Azure-Ressourcen-Manager unterstützt. Wenn Sie über eine ExpressRoute-Verbindung zwischen dem lokalen Netzwerk und Azure verfügen, können Sie BGP für das Weitergeben der Routen aus Ihrem lokalen Netzwerk an Azure aktivieren, sobald ExpressRoute vom Netzwerkressourcenanbieter unterstützt wird. Diese BGP-Routen werden auf die gleiche Weise wie Standard- und benutzerdefinierte Routen in den einzelnen Azure-Subnetzen verwendet. Weitere Informationen finden Sie unter [Einführung zu ExpressRoute](expressroute/expressroute-introduction.md).
 
->[AZURE.NOTE]Sobald ExpressRoute vom Netzwerkressourcenanbieter unterstützt wird, können Sie die Azure-Umgebung für die Verwendung der Tunnelerzwingung über das lokale Netzwerk konfigurieren, indem Sie für das Subnetz 0.0.0.0/0 eine benutzerdefinierte Route erstellen, die als nächsten Hop das VPN-Gateway verwendet. Dies funktioniert nur mit einem VPN-Gateway, nicht jedoch mit ExpressRoute. In ExpressRoute wird die Tunnelerzwingung über BGP konfiguriert.
+>[AZURE.NOTE] Sobald ExpressRoute vom Netzwerkressourcenanbieter unterstützt wird, können Sie die Azure-Umgebung für die Verwendung der Tunnelerzwingung über das lokale Netzwerk konfigurieren, indem Sie für das Subnetz 0.0.0.0/0 eine benutzerdefinierte Route erstellen, die als nächsten Hop das VPN-Gateway verwendet. Dies funktioniert nur mit einem VPN-Gateway, nicht jedoch mit ExpressRoute. In ExpressRoute wird die Tunnelerzwingung über BGP konfiguriert.
 
 ### Benutzerdefinierte Routen
 
@@ -323,7 +325,7 @@ Für die Subnetze gelten solange Standardrouten, bis diesen eine Routentabelle z
 2.	BGP-Route (bei Verwendung von ExpressRoute)
 3.	Standardroute
 
->[AZURE.NOTE]Benutzerdefinierte Routen sind nur für virtuelle Azure-Computer und Clouddienste möglich. Wenn Sie beispielsweise zwischen dem lokalen Netzwerk und Azure ein virtuelles Firewallgerät hinzufügen möchten, müssen Sie eine benutzerdefinierte Route für die Azure-Routentabellen erstellen, die den gesamten Datenverkehr zum lokalen Adressraum an das virtuelle Gerät weiterleitet. Allerdings durchläuft der eingehende Datenverkehr vom lokalen Adressraum das VPN-Gateway oder den ExpressRoute-Kreis, um unter Umgehung des virtuellen Geräts direkt zur Azure-Umgebung zu gelangen.
+>[AZURE.NOTE] Benutzerdefinierte Routen sind nur für virtuelle Azure-Computer und Clouddienste möglich. Wenn Sie beispielsweise zwischen dem lokalen Netzwerk und Azure ein virtuelles Firewallgerät hinzufügen möchten, müssen Sie eine benutzerdefinierte Route für die Azure-Routentabellen erstellen, die den gesamten Datenverkehr zum lokalen Adressraum an das virtuelle Gerät weiterleitet. Allerdings durchläuft der eingehende Datenverkehr vom lokalen Adressraum das VPN-Gateway oder den ExpressRoute-Kreis, um unter Umgehung des virtuellen Geräts direkt zur Azure-Umgebung zu gelangen.
 
 ### IP-Weiterleitung
 
@@ -337,4 +339,4 @@ Dieser virtuelle Computer muss eingehenden Datenverkehr empfangen können, der n
 - Informationen zum Konfigurieren von Routing und der IP-Weiterleitung finden Sie unter [Erstellen von Routen und Aktivieren der IP-Weiterleitung in Azure](virtual-network/virtual-networks-udr-how-to.md). 
 - Eine Übersicht über die rollenbasierte Zugriffssteuerung finden Sie unter [Rollenbasierte Zugriffssteuerung über das Microsoft Azure-Portal](role-based-access-control-configure.md).
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0211_2016-->

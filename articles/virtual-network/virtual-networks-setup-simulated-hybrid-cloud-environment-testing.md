@@ -14,12 +14,12 @@
 	ms.tgt_pltfrm="Windows" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/14/2016" 
+	ms.date="02/03/2016" 
 	ms.author="josephd"/>
 
-# Einrichten einer simulierten Hybrid Cloud-Umgebung zu Testzwecken
+# Einrichten einer simulierten Hybridcloudumgebung zu Testzwecken (klassischer Bereitstellungsmodus)
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](../virtual-machines/virtual-machines-setup-simulated-hybrid-cloud-environment-testing.md).
 
 In diesem Thema lernen Sie Schritt für Schritt, wie Sie eine simulierte Hybrid Cloud-Umgebung mit Microsoft Azure für Tests mithilfe von zwei separaten virtuellen Azure-Netzwerken erstellen. Verwenden Sie diese Konfiguration als Alternative zum [Einrichten einer Hybridcloudumgebung zu Testzwecken](virtual-networks-setup-hybrid-cloud-environment-testing.md), wenn Sie nicht über eine direkte Internetverbindung und eine erreichbare öffentliche IP-Adresse verfügen. Hier sehen Sie die daraus resultierende Konfiguration.
 
@@ -220,11 +220,7 @@ Die simulierte Hybrid Cloud-Umgebung kann jetzt zum Testen verwendet werden.
 
 ## Nächste Schritte
 
-Einrichten der folgenden Workloads im virtuellen Netzwerk TestVNET:
-
-- [SharePoint-Intranetfarm](virtual-networks-setup-sharepoint-hybrid-cloud-testing.md)
-- [Webbasierte Branchenanwendung](virtual-networks-setup-lobapp-hybrid-cloud-testing.md)
-- [Office 365-Verzeichnissynchronisierungsserver (DirSync)](virtual-networks-setup-dirsync-hybrid-cloud-testing.md)
+- Richten Sie im virtuellen Netzwerk „TestVNET“ eine [SharePoint-Intranetfarm](virtual-networks-setup-sharepoint-hybrid-cloud-testing.md), eine [webbasierte Branchenanwendung](virtual-networks-setup-lobapp-hybrid-cloud-testing.md) oder einen [Office 365-Verzeichnissynchronisierungsserver (DirSync)](virtual-networks-setup-dirsync-hybrid-cloud-testing.md) ein.
 
 
 ## <a id="costs"></a>Minimieren der laufenden Kosten dieser Umgebung
@@ -264,6 +260,5 @@ Setzen Sie anschließend den vorinstallierten Schlüssel für beide Gateways auf
 	Set-AzureVNetGatewayKey -VNetName TestVNET -LocalNetworkSiteName TestLabLNet -SharedKey $preSharedKey
 
 Klicken Sie auf der Seite "Netzwerk" im Azure-Verwaltungsportal auf das virtuelle Netzwerk **TestLab** und anschließend in der Taskleiste auf **Verbinden**. Warten Sie, bis angezeigt wird, dass das virtuelle Netzwerk TestLab mit dem lokalen Netzwerk TestVNET verbunden ist.
- 
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

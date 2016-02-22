@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-management"
-   ms.date="11/16/2015"
+   ms.date="02/09/2016"
    ms.author="elfish"/>
 
 # Übersicht: Geschäftskontinuität für die Cloud und Notfallwiederherstellung für Datenbanken mit SQL-Datenbank
@@ -88,4 +88,4 @@ Die standardmäßige Georeplikation ist nur für Standard- und Premium-Datenbank
 
 Die aktive Georeplikation ist für Premium-Datenbanken verfügbar. Sie wurde für schreibintensive Anwendungen mit den umfassendsten Wiederherstellungsanforderungen entwickelt. Bei der aktiven Georeplikation können Sie bis zu vier lesbare sekundäre Replikate auf Servern in verschiedenen Regionen erstellen. Sie können auf die gleiche Weise wie bei der standardmäßigen Georeplikation ein Failover auf eines der sekundären Replikate initiieren. Darüber hinaus kann die aktive Georeplikation verwendet werden, um Anwendungsupgrades oder die räumliche Verlegung von Anwendungen zu unterstützen, sowie als Lastenausgleich für schreibgeschützte Arbeitsauslastungen. Informationen zur Konfiguration der Georeplikation finden Sie unter [Entwerfen für Geschäftskontinuität](sql-database-business-continuity-design.md) und Details zu einem Failover zu einer sekundären Datenbank unter [Wiederherstellen nach einem Ausfall](sql-database-disaster-recovery.md). Details zur Implementierung von Anwendungsupgrades ohne Ausfallzeit finden Sie unter [Anwendungsupgrades ohne Ausfallzeiten](sql-database-business-continuity-application-upgrade.md).
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

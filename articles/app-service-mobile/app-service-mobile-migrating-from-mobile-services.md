@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/11/2015"
+	ms.date="02/09/2016"
 	ms.author="adrianhall"/>
 
 # <a name="article-top"></a>Migrieren des vorhandenen Azure Mobile Service zu Azure App Service
@@ -65,7 +65,7 @@ Alle Mobile Services-Websites, die einen Hostingplan gemeinsam nutzen, werden gl
 
   1.  Melden Sie sich beim [klassischen Azure-Portal] an.
   2.  Wählen Sie Ihren Mobile Service aus.
-  3.  Wählen Sie die Registerkarte **STAFFELUNG**.
+  3.  Wählen Sie die Registerkarte **ZENTRAL HOCHSKALIEREN** aus.
   4.  Klicken Sie unter **Mobile Serviceebene** auf den Tarif **STANDARD**. Klicken Sie auf das Symbol **SPEICHERN** am unteren Rand der Seite.
 
 Denken Sie daran, den Tarif nach der Migration auf einen geeigneten Wert einzustellen.
@@ -117,7 +117,7 @@ Als Ausgangspunkt empfehlen wir Folgendes:
 
 Beachten Sie die beträchtliche Flexibilität bei der Auswahl des richtigen Tarifs für Ihre Anwendung. Unter [App Service – Preise] finden Sie umfassende Informationen zu den Preisen Ihres neuen App Service.
 
-> [AZURE.TIP]Der App Service-Tarif Standard umfasst den Zugriff auf viele Features, die Sie unter Umständen verwenden möchten, einschließlich [Stagingslots], automatischen Sicherungen und automatischer Skalierung. Informieren Sie sich dort ausführlich über die neuen Funktionen!
+> [AZURE.TIP] Der App Service-Tarif Standard umfasst den Zugriff auf viele Features, die Sie unter Umständen verwenden möchten, einschließlich [Stagingslots], automatischen Sicherungen und automatischer Skalierung. Informieren Sie sich dort ausführlich über die neuen Funktionen!
 
 ### <a name="review-migration-scheduler-jobs"></a>Überprüfen der migrierten Scheduler-Aufträge
 
@@ -143,7 +143,7 @@ Die migrierten Einstellungen für CORS stehen als App-Einstellung **MS\_CrossDom
 
 Dies ist eine optionale Aufgabe, ermöglicht aber im Weiteren eine bessere Verwaltung.
 
-> [AZURE.TIP]Ein Vorteil der Verwendung von Azure App Service ist, dass Sie Ihre Website und den Mobile Service auf der gleichen Website ausführen können. Weitere Informationen finden Sie im Abschnitt [Nächste Schritte](#next-steps).
+> [AZURE.TIP]  Ein Vorteil der Verwendung von Azure App Service ist, dass Sie Ihre Website und den Mobile Service auf der gleichen Website ausführen können. Weitere Informationen finden Sie im Abschnitt [Nächste Schritte](#next-steps).
 
 ### <a name="download-publish-profile"></a>Herunterladen eines neuen Veröffentlichungsprofils
 
@@ -192,7 +192,7 @@ Die meisten Einstellungen für einen migrierten Mobile Service sind über App-Ei
 
 Sie können gleichzeitig mehrere App-Einstellungen aktualisieren.
 
-> [AZURE.TIP]Sie werden feststellen, dass zwei Anwendungseinstellungen den gleichen Wert haben. Es könnte z. B. _ApplicationKey_ und _MS\_ApplicationKey_ angezeigt werden. Sie müssen nur die App-Einstellung mit dem Präfix **MS\_** ändern. Allerdings ist es eine gute Idee, beide App-Einstellungen zur gleichen Zeit zu aktualisieren.
+> [AZURE.TIP]  Sie werden feststellen, dass zwei Anwendungseinstellungen den gleichen Wert haben. Es könnte z. B. _ApplicationKey_ und _MS\_ApplicationKey_ angezeigt werden. Sie müssen nur die App-Einstellung mit dem Präfix **MS\_** ändern. Allerdings ist es eine gute Idee, beide App-Einstellungen zur gleichen Zeit zu aktualisieren.
 
 ### <a name="authentication"></a>Authentifizierung
 
@@ -208,7 +208,7 @@ Alle Authentifizierungseinstellungen sind auf der migrierten Website als App-Ein
 
 Hinweis: **MS\_AadTenants** wird als eine durch Trennzeichen getrennte Liste von Mandantendomänen gespeichert (die Felder „Zulässige Mandanten“ im Mobile Services-Portal).
 
-> [AZURE.WARNING]**Verwenden Sie nicht die Authentifizierungsmechanismen im Menü „Einstellungen“**
+> [AZURE.WARNING] **Verwenden Sie nicht die Authentifizierungsmechanismen im Menü „Einstellungen“**
 >
 > Azure App Service bietet ein separates Authentifizierungs- und Autorisierungssystem „ohne Code“ im Einstellungenmenü für _Authentifizierung/Autorisierung_ und die (veraltete) Option _Mobile Authentifizierung_ im Menü „Einstellungen“. Diese Optionen sind nicht kompatibel mit einem migrierten Azure Mobile Service. Sie können [Ihre Website aktualisieren], um die Azure App Service-Authentifizierung zu nutzen.
 
@@ -277,11 +277,11 @@ Ihr Notification Hub wird über das [Azure-Portal] verwaltet. Notieren Sie den N
   2. Wählen Sie **Durchsuchen**>, und wählen Sie dann **Notification Hubs**.
   3. Klicken Sie auf den Namen des Notification Hubs, der dem Mobile Service zugeordnet ist.
 
-> [AZURE.NOTE]Ihr Notification Hub wird nicht angezeigt, wenn er dem Typ „Gemischt“ entspricht. Notification Hubs des Typs „Gemischt“ setzen sowohl Notification Hubs- als auch ältere Service Bus-Features ein. Sie müssen [Ihre gemischten Namespaces konvertieren]. Sobald die Konvertierung abgeschlossen ist, wird Ihr Notification Hub im [Azure-Portal] angezeigt.
+> [AZURE.NOTE] Ihr Notification Hub wird nicht angezeigt, wenn er dem Typ „Gemischt“ entspricht. Notification Hubs des Typs „Gemischt“ setzen sowohl Notification Hubs- als auch ältere Service Bus-Features ein. Sie müssen [Ihre gemischten Namespaces konvertieren]. Sobald die Konvertierung abgeschlossen ist, wird Ihr Notification Hub im [Azure-Portal] angezeigt.
 
 Weitere Informationen finden Sie in der [Notification Hubs]-Dokumentation.
 
-> [AZURE.TIP]Im [Azure-Portal] befinden sich Notification Hubs-Verwaltungsfeatures noch in der Vorschau. Das [klassische Azure-Portal] bleibt für die Verwaltung Ihrer sämtlichen Notification Hubs verfügbar.
+> [AZURE.TIP] Im [Azure-Portal] befinden sich Notification Hubs-Verwaltungsfeatures noch in der Vorschau. Das [klassische Azure-Portal] bleibt für die Verwaltung Ihrer sämtlichen Notification Hubs verfügbar.
 
 ### <a name="app-settings"></a>Andere App-Einstellungen
 
@@ -394,4 +394,4 @@ Ihre Anwendung ist nicht nur zu App Service migriert, Sie können sogar noch meh
 [VNet]: ../app-service-web/web-sites-integrate-with-vnet.md
 [WebJobs]: ../app-service-web/websites-webjobs-resources.md
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0211_2016-->

@@ -134,7 +134,7 @@ Visual Studio Application Insights bietet Tools zum Filtern und Suchen von Proto
 3. Laden Sie das Projekt hoch, und führen sie es zum Generieren von Protokolldaten aus.
 4. Navigieren Sie im [Azure-Portal](https://portal.azure.com/) zu der neuen Application Insights-Ressource, und öffnen Sie **Suche**. Ihre Protokolldaten werden zusammen mit der Anforderung, Nutzung und sonstiger Telemetrie angezeigt. Einige Telemetrie kann einige Minuten in Anspruch nehmen, bis sie angezeigt wird: Klicken Sie auf "Aktualisieren". [Weitere Informationen](../application-insights/app-insights-diagnostic-search.md)
 
-[Erfahren Sie mehr über die Leistungsüberwachung mit Application Insights](../insights-perf-analytics.md)
+[Erfahren Sie mehr über die Leistungsüberwachung mit Application Insights](../azure-portal/insights-perf-analytics.md)
 
 ##<a name="streamlogs"></a>Vorgehensweise: Streaming von Protokollen
 
@@ -270,4 +270,4 @@ Webserverprotokolle werden im [erweiterten W3C-Protokolldateiformat](http://msdn
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715).
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

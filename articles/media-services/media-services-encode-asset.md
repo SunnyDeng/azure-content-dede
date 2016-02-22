@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/05/2015"  
+ 	ms.date="02/03/2016"  
 	ms.author="juliako"/>
 
 #Azure On-Demand Media Encoder – Überblick und Vergleich
@@ -33,9 +33,9 @@ Um die [dynamische Paketerstellung](media-services-dynamic-packaging-overview.md
 
 Media Services unterstützt die folgenden On-Demand-Encoder, die in diesem Artikel beschrieben werden:
 
-- **Media Encoder Standard**
-- **Azure Media Encoder**
-- **Media Encoder Premium Workflow**
+- [Media Encoder Standard](media-services-encode-asset.md#media-encoder-standard)
+- [Azure Media Encoder](media-services-encode-asset.md#azure-media-encoder)
+- [Media Encoder Premium Workflow](media-services-encode-asset.md#media-encoder-premium-workflow)
 
 Dieser Artikel enthält eine kurze Übersicht über On-Demand-Media Encoder und stellt Links zu Artikeln bereit, die detailliertere Informationen bieten. Das Thema enthält auch einen Encodervergleich.
 
@@ -139,6 +139,11 @@ Die Ausgabemetadaten für den Encoder werden [hier](http://msdn.microsoft.com/li
 Media Encoder Premium Workflow ist mit komplexen Workflows konfiguriert. Workflowdateien können mit dem Tool [Workflow-Designer](media-services-workflow-designer.md) erstellt und aktualisiert werden.
 
 [How to Use Premium Encoding in Azure Media Services (in englischer Sprache)](https://azure.microsoft.com/blog/2015/03/06/how-to-use-premium-encoding-in-azure-media-services/)
+
+###Bekannte Probleme
+
+Wenn Ihr Eingabevideo keine Untertitel enthält, enthält das Ausgabemedienobjekt trotzdem eine leere TTML-Datei.
+
 
 ##<a id="compare_encoders"></a>Vergleich der Encoder
 
@@ -290,4 +295,4 @@ TransientError|Kategorie von Fehlern, mit der vorübergehende Probleme abgedeckt
 <!--Reference links in article-->
 [1]: http://azure.microsoft.com/pricing/details/media-services/
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

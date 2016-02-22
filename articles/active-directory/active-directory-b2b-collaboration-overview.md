@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="01/05/2016"
+   ms.date="02/09/2016"
    ms.author="curtand"/>
 
 # Azure Active Directory (Azure AD) B2B-Zusammenarbeit
@@ -71,5 +71,6 @@ Durchsuchen Sie unsere anderen Artikel zur Azure B2B-Zusammenarbeit
 - [Tokenformat für externe Benutzer](active-directory-b2b-references-external-user-token-format.md)
 - [Objektattributänderungen für externe Benutzer](active-directory-b2b-references-external-user-object-attribute-changes.md)
 - [Aktuelle Einschränkungen der Vorschau](active-directory-b2b-current-preview-limitations.md)
+- [Artikelindex für die Anwendungsverwaltung in Azure Active Directory](active-directory-apps-index.md)
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0211_2016-->

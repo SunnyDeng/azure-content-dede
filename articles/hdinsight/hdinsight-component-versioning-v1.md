@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/09/2015"
+	ms.date="02/04/2016"
 	ms.author="jgao"/>
 
 
@@ -120,7 +120,7 @@ Die SLA ist in Form eines "Supportfensters" definiert. Ein Supportfenster bezieh
 
 Das Datum **Veraltet ab** ist das Datum, nach dem eine Clusterversion nicht mehr in HDInsight erstellt werden kann.
 
-> [AZURE.NOTE]Die HDInsight 2.1- und 3.0-Cluster werden unter dem Azure-Gastbetriebssystem [Family 4](../cloud-services-guestos-update-matrix.md) ausgeführt, das die 64-Bit-Version von Windows Server 2012 R2 verwendet und .NET Framework 4.0, 4.5. und 4.5.1 unterstützt.
+> [AZURE.NOTE] Die HDInsight 2.1- und 3.0-Cluster werden unter dem Azure-Gastbetriebssystem [Family 4](../cloud-services-guestos-update-matrix.md) ausgeführt, das die 64-Bit-Version von Windows Server 2012 R2 verwendet und .NET Framework 4.0, 4.5. und 4.5.1 unterstützt.
 
 ## Hortonworks-Versionshinweise im Zusammenhang mit HDInsight-Versionen##
 
@@ -160,4 +160,4 @@ Das Datum **Veraltet ab** ist das Datum, nach dem eine Clusterversion nicht mehr
 
 [zookeeper]: http://zookeeper.apache.org/
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0211_2016-->

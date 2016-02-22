@@ -252,11 +252,11 @@ Mit [Azure App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714) 
 
 Die Integration von Azure App Service oder Azure Cloud Services in Azure CDN bietet folgende Vorteile:
 
-- Integration der Inhaltsbereitstellung (Bilder, Skripts und Stylesheets) als Teil des [kontinuierlichen Bereitstellungsprozesses](../web-sites-publish-source-control.md) Ihrer Azure-Web-App
+- Integration der Inhaltsbereitstellung (Bilder, Skripts und Stylesheets) als Teil des [kontinuierlichen Bereitstellungsprozesses](../app-service-web/web-sites-publish-source-control.md) Ihrer Azure-Web-App
 - Einfaches Upgrade Ihrer vom CDN verarbeiteten NuGet-Pakete wie jQuery- oder Bootstrap-Versionen 
 - Verwalten der Webanwendung und des vom CDN verarbeiteten Inhalts über dieselbe Visual Studio-Oberfläche
 
-Zugehörige Lernprogramme finden Sie unter [Verwenden von Azure CDN in Azure App Service](../cdn-websites-with-cdn.md) und [Integrieren eines Clouddiensts in Azure CDN](cdn-cloud-service-with-cdn.md).
+Zugehörige Lernprogramme finden Sie unter [Verwenden von Azure CDN in Azure App Service](../app-service-web/cdn-websites-with-cdn.md) und [Integrieren eines Clouddiensts in Azure CDN](cdn-cloud-service-with-cdn.md).
 
 Ohne Integration in Azure App Service-Web-Apps oder Azure Cloud Services können Sie Azure CDN für Ihre Skriptbundles verwenden, allerdings mit den folgenden Nachteilen:
 
@@ -267,10 +267,10 @@ Ohne Integration in Azure App Service-Web-Apps oder Azure Cloud Services können
 
 ## Weitere Informationen ##
 - [Übersicht über das Azure Content Delivery Network (CDN)](cdn-overview.md)
-- [Verwenden von Azure CDN in Azure App Service](../cdn-websites-with-cdn.md)
+- [Verwenden von Azure CDN in Azure App Service](../app-service-web/cdn-websites-with-cdn.md)
 - [Integrieren eines Clouddiensts in Azure CDN](cdn-cloud-service-with-cdn.md)
 - [Zuordnen von CDN-Inhalten (Content Delivery Network) zu einer benutzerdefinierten Domäne](http://msdn.microsoft.com/library/azure/gg680307.aspx)
 - [Verwenden von CDN für Azure](cdn-how-to-use-cdn.md)
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

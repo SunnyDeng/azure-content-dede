@@ -8,7 +8,7 @@ Das Dashboard in der Remoteüberwachungslösung ermöglicht Ihnen das Anzeigen d
 
     ![][18]
 
-3. Wählen Sie im Dashboard Ihr Gerät in der Dropdownliste **Anzuzeigendes Gerät** aus, um seine Telemetrie anzuzeigen. Die Telemetrie der Beispielanwendung ist mit 50 Einheiten für die Innentemperatur, 55 Einheiten für die Außentemperatur und 50 Einheiten für die Luftfeuchtigkeit konfiguriert. Bitte beachten Sie, dass im Dashboard standardmäßig nur die Werte für Temperatur und die Luftfeuchtigkeit angezeigt werden.
+3. Klicken Sie auf **Dashboard**, um zu diesem zurückzukehren. Wählen Sie Ihr Gerät in der Dropdownliste **Anzuzeigendes Gerät** aus, um seine Telemetrie anzuzeigen. Die Telemetrie der Beispielanwendung ist mit 50 Einheiten für die Innentemperatur, 55 Einheiten für die Außentemperatur und 50 Einheiten für die Luftfeuchtigkeit konfiguriert. Bitte beachten Sie, dass im Dashboard standardmäßig nur die Werte für Temperatur und die Luftfeuchtigkeit angezeigt werden.
 
     ![][img-telemetry]
 
@@ -28,7 +28,7 @@ Das Dashboard in der Remoteüberwachungslösung ermöglicht es Ihnen, IoT Hub an
 
     ![][14]
 
-    > [AZURE.NOTE]Der Befehlsverlauf zeigt anfänglich den Befehlsstatus **Ausstehend** an. Wenn das Gerät den Befehl bestätigt, ändert sich der Status in **Erfolgreich**.
+    > [AZURE.NOTE] Der Befehlsverlauf zeigt anfänglich den Befehlsstatus **Ausstehend** an. Wenn das Gerät den Befehl bestätigt, ändert sich der Status in **Erfolgreich**.
 
 5. Stellen Sie auf dem Dashboard sicher, dass das Gerät jetzt 75 als den neuen Temperaturwert sendet.
 
@@ -43,4 +43,4 @@ Der Artikel [Anpassen vorkonfigurierter Lösungen][lnk-customize] beschreibt ein
 [lnk-customize]: ../articles/iot-suite/iot-suite-guidance-on-customizing-preconfigured-solutions.md
 [lnk-dev-messaging]: ../articles/iot-hub/iot-hub-devguide.md#messaging
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0211_2016-->

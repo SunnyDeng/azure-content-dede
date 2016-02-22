@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/05/2016"
+	ms.date="02/09/2016"
 	ms.author="markusvi"/>
 
 
@@ -116,7 +116,7 @@ Damit Benutzer sich bei kennwortbasierten SSO-Anwendungen auf iOS- und Android-G
 
 
 
-> [AZURE.NOTE]Bei Anwendungen, die den Verbund mit Azure AD unterstützen (einschließlich Salesforce, Google Apps, Dropbox, Box, Concur, Workday, Office 365 und mehr als 70 weiteren), kann die Anmeldung mit beinahe jedem Webbrowser auf beliebigen Geräten erfolgen, ohne dass ein Plug-In oder eine mobile App erforderlich ist. Für den restlichen Zugriffsbereich unter [https://myapps.microsoft.com](https://myapps.microsoft.com/) ist es ebenfalls nicht erforderlich, die mobile App "Meine Apps" auf einem mobilen Gerät zu verwenden.
+> [AZURE.NOTE] Bei Anwendungen, die den Verbund mit Azure AD unterstützen (einschließlich Salesforce, Google Apps, Dropbox, Box, Concur, Workday, Office 365 und mehr als 70 weiteren), kann die Anmeldung mit beinahe jedem Webbrowser auf beliebigen Geräten erfolgen, ohne dass ein Plug-In oder eine mobile App erforderlich ist. Für den restlichen Zugriffsbereich unter [https://myapps.microsoft.com](https://myapps.microsoft.com/) ist es ebenfalls nicht erforderlich, die mobile App "Meine Apps" auf einem mobilen Gerät zu verwenden.
  
 
 
@@ -172,8 +172,12 @@ Bei einigen Anwendungen kann es erforderlich sein, dass ein Benutzer sein Kennwo
 
 Beim Konfigurieren der einmaligen Anmeldung für eine Anwendung bietet das Azure-Verwaltungsportal als dritte Möglichkeit die Option "Vorhandenes einmaliges Anmelden". Diese Option ermöglicht es dem Administrator, einfach eine Verknüpfung zu einer Anwendung zu erstellen, und sie für ausgewählte Benutzer im Zugriffsbereich zu platzieren. Ist eine Anwendung beispielsweise zum Authentifizieren von Benutzern mit Active Directory Federation Services 2.0 konfiguriert, kann ein Administrator mit der Option "Vorhandenes einmaliges Anmelden" einen entsprechenden Link im Zugriffsbereich erstellen. Wenn Benutzer auf den Link zugreifen, werden sie mit Active Directory Federation Services 2.0 oder einer beliebigen anderen Lösung für einmaliges Anmelden authentifiziert, die von der Anwendung bereitgestellt wird.
 
+##Verwandte Artikel
 
-[AZURE.INCLUDE [saas-toc](../../includes/active-directory-saas-toc.md)]
+- [Artikelindex für die Anwendungsverwaltung in Azure Active Directory](active-directory-apps-index.md)
+- [Liste der Tutorials zur Integration von SaaS-Apps](active-directory-saas-tutorial-list.md)
+- [Einführung in das einmalige Anmelden und das Verwalten von App-Zugriff mit Azure Active Directory](active-directory-appssoaccess-whatis.md)
+- [Automatisieren der Bereitstellung und Bereitstellungsaufhebung von Benutzern für SaaS-Anwendungen](active-directory-saas-app-provisioning.md)
 
 <!--Image references-->
 [1]: ./media/active-directory-saas-access-panel-introduction/ic767166.png
@@ -181,4 +185,4 @@ Beim Konfigurieren der einmaligen Anmeldung für eine Anwendung bietet das Azure
 [3]: ./media/active-directory-saas-access-panel-introduction/ic767168.png
 [4]: ./media/active-directory-saas-access-panel-introduction/ic767169.png
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0211_2016-->

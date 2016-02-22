@@ -13,14 +13,14 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="12/04/2015"
+    ms.date="02/05/2016"
     ms.author="larryfr"/>
 
 # Entwickeln von Skriptaktionen mit HDInsight
 
 Skriptaktionen stellen eine Möglichkeit zum Anpassen von Azure HDInsight-Clustern dar, indem Cluster-Konfigurationseinstellungen während der Installation angegeben oder zusätzliche Dienste, Tools oder andere Software auf dem Cluster installiert werden.
 
-> [AZURE.NOTE]Die Informationen in diesem Artikel gelten für Linux-basierte HDInsight-Cluster. Informationen zur Verwendung von Skriptaktionen mit Windows-basierten Clustern finden Sie unter [Entwickeln von Skriptaktionen mit HDInsight (Windows)](hdinsight-hadoop-script-actions.md).
+> [AZURE.NOTE] Die Informationen in diesem Artikel gelten für Linux-basierte HDInsight-Cluster. Informationen zur Verwendung von Skriptaktionen mit Windows-basierten Clustern finden Sie unter [Entwickeln von Skriptaktionen mit HDInsight (Windows)](hdinsight-hadoop-script-actions.md).
 
 ## Was sind Skriptaktionen?
 
@@ -43,7 +43,7 @@ Wenn Sie ein benutzerdefiniertes Skript für einen HDInsight-Cluster entwickeln,
 - [Schreiben von Informationen in STDOUT und STDERR](#bPS7)
 - [Speichern von Dateien im ASCII-Format mit LF-Zeilenenden](#bps8)
 
-> [AZURE.IMPORTANT]Skriptaktionen müssen innerhalb von 60 Minuten abgeschlossen sein, andernfalls tritt ein Timeout ein. Während der Knotenbereitstellung wird das Skript gleichzeitig mit anderen Einrichtungs- und Konfigurationsprozessen ausgeführt. Der Wettbewerb um Ressourcen wie CPU-Zeit oder Netzwerkbandbreite kann dazu führen, dass es länger als in Ihrer Entwicklungsumgebung dauert, bis das Skript abgeschlossen ist.
+> [AZURE.IMPORTANT] Skriptaktionen müssen innerhalb von 60 Minuten abgeschlossen sein, andernfalls tritt ein Timeout ein. Während der Knotenbereitstellung wird das Skript gleichzeitig mit anderen Einrichtungs- und Konfigurationsprozessen ausgeführt. Der Wettbewerb um Ressourcen wie CPU-Zeit oder Netzwerkbandbreite kann dazu führen, dass es länger als in Ihrer Entwicklungsumgebung dauert, bis das Skript abgeschlossen ist.
 
 ### <a name="bPS1"></a>Auswählen der Hadoop-Version
 
@@ -55,7 +55,7 @@ Benutzer müssen dafür sorgen, dass alle Skripts und Ressourcen, die im Skript 
 
 Die bewährte Methode ist das Herunterladen und Archivieren aller Daten in einem Azure-Speicherkonto Ihres Abonnements.
 
-> [AZURE.IMPORTANT]Bei dem verwendeten Speicherkonto muss es sich um das Standardspeicherkonto des Clusters oder um einen öffentlichen, schreibgeschützten Container eines anderen Speicherkontos handeln.
+> [AZURE.IMPORTANT] Bei dem verwendeten Speicherkonto muss es sich um das Standardspeicherkonto des Clusters oder um einen öffentlichen, schreibgeschützten Container eines anderen Speicherkontos handeln.
 
 Die von Microsoft bereitgestellten Beispiele sind beispielsweise im Speicherkonto [https://hdiconfigactions.blob.core.windows.net/](https://hdiconfigactions.blob.core.windows.net/) gespeichert, einem öffentlichen, schreibgeschützten Container, der vom HDInsight-Team verwaltet wird.
 
@@ -73,7 +73,7 @@ Beispiel: Wenn ein benutzerdefiniertes Skript bei der ersten Ausführung eine An
 
 Linux-basierte HDInsight-Cluster umfassen zwei Hauptknoten, die im Cluster aktiv sind. Skriptaktionen werden für beide Knoten ausgeführt. Wenn die zu installierenden Komponenten nur einen Hauptknoten erwarten, müssen Sie ein Skript erstellen, mit dem die Komponenten nur auf einem der beiden Hauptknoten im Cluster installiert werden.
 
-> [AZURE.IMPORTANT]Standarddienste, die als Teil von HDInsight installiert werden, sind so konzipiert, dass bei Bedarf ein Failover zwischen den beiden Hauptknoten durchgeführt wird. Diese Funktionalität erstreckt sich jedoch nicht auf benutzerdefinierte Komponenten, die über Skriptaktionen installiert werden. Wenn die über eine Skriptaktion installierten Komponenten eine hohe Verfügbarkeit aufweisen sollen, müssen Sie einen eigenen Failovermechanismus für die beiden verfügbaren Hauptknoten implementieren.
+> [AZURE.IMPORTANT] Standarddienste, die als Teil von HDInsight installiert werden, sind so konzipiert, dass bei Bedarf ein Failover zwischen den beiden Hauptknoten durchgeführt wird. Diese Funktionalität erstreckt sich jedoch nicht auf benutzerdefinierte Komponenten, die über Skriptaktionen installiert werden. Wenn die über eine Skriptaktion installierten Komponenten eine hohe Verfügbarkeit aufweisen sollen, müssen Sie einen eigenen Failovermechanismus für die beiden verfügbaren Hauptknoten implementieren.
 
 ### <a name="bPS6"></a>Konfigurieren benutzerdefinierter Komponenten zur Verwendung von Azure-Blobspeicher
 
@@ -183,7 +183,7 @@ Microsoft bietet Beispielskripts für die Installation von Komponenten in einem 
 - [Installieren und Verwenden von Solr in HDInsight-Clustern](hdinsight-hadoop-solr-install-linux.md)
 - [Installieren und Verwenden von Giraph in HDInsight-Clustern](hdinsight-hadoop-giraph-install-linux.md)  
 
-> [AZURE.NOTE]Die oben aufgeführten Dokumente gelten für Linux-basierte HDInsight-Cluster. Informationen zu Skripts für Windows-basierte HDInsight-Cluster finden Sie unter [Entwickeln von Skriptaktionen mit HDInsight (Windows)](hdinsight-hadoop-script-actions.md), oder über die Links am Seitenanfang der einzelnen Artikel.
+> [AZURE.NOTE] Die oben aufgeführten Dokumente gelten für Linux-basierte HDInsight-Cluster. Informationen zu Skripts für Windows-basierte HDInsight-Cluster finden Sie unter [Entwickeln von Skriptaktionen mit HDInsight (Windows)](hdinsight-hadoop-script-actions.md), oder über die Links am Seitenanfang der einzelnen Artikel.
 
 ##Problembehandlung
 
@@ -197,7 +197,7 @@ Dieses Problem tritt am häufigsten auf, wenn das Skript in einer Windows-Umgebu
 
 _Lösung_: Wenn Ihr Text-Editor über die entsprechende Option verfügt, wählen Sie UNIX als Format oder LF für das Zeilenende aus. In einem UNIX-System können Sie außerdem die folgenden Befehle verwenden, um CR-LF in LF zu ändern:
 
-> [AZURE.NOTE]Mit den folgenden annähernd gleichwertigen Befehlen sollten sich die CR-LF-Zeilenenden in LF ändern lassen. Wählen Sie einen Befehl entsprechend den in Ihrem System verfügbaren Dienstprogrammen aus.
+> [AZURE.NOTE] Mit den folgenden annähernd gleichwertigen Befehlen sollten sich die CR-LF-Zeilenenden in LF ändern lassen. Wählen Sie einen Befehl entsprechend den in Ihrem System verfügbaren Dienstprogrammen aus.
 
 | Befehl | Hinweise |
 | ------- | ----- |
@@ -220,4 +220,4 @@ Ersetzen Sie den oben aufgeführten Befehl __INFILE__ durch die Datei mit Bytere
 
 [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen](hdinsight-hadoop-customize-cluster-linux.md)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0211_2016-->

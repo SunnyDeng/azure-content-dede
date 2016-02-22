@@ -18,7 +18,7 @@
 
 # Einrichten von Application Insights: Diagnose von Ausnahmen
 
-Es tut uns leid. [Diese Seite wurde verschoben](app-insights-asp-net-exception.md).
+Es tut uns leid. [Diese Seite wurde verschoben](app-insights-asp-net-exceptions.md).
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0211_2016-->

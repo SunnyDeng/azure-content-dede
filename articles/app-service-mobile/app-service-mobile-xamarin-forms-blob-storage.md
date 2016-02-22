@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="mobile-xamarin-ios"
     ms.devlang="dotnet"
     ms.topic="article"
-	ms.date="02/03/2015"
+	ms.date="02/03/2016"
     ms.author="donnam"/>
 
 #Herstellen einer Verbindung mit Azure Storage in der Xamarin.Forms-App
@@ -93,7 +93,11 @@ Für dieses Lernprogramm benötigen Sie Folgendes:
             return base.DeleteFileAsync(id, name);
         }
 
-6. Veröffentlichen Sie Ihr Serverprojekt auf dem Back-End für die mobile App.
+6. Aktualisieren Sie die Web-API-Konfiguration, um Attribut-Routing einzurichten. Fügen Sie in **Startup.MobileApp.cs** die folgende Zeile zur `ConfigureMobileApp()`-Methode nach der Definition der `config`-Variablen hinzu:
+
+        config.MapHttpAttributeRoutes();
+
+7. Veröffentlichen Sie Ihr Serverprojekt auf dem Back-End für die mobile App.
 
 ###Vom Speichercontroller registrierte Routen
 
@@ -377,7 +381,7 @@ In diesem Abschnitt fügen Sie eine neue Detailansicht für ein Aufgabenelement 
 
         public static object UIContext { get; set; }
 
-4. Klicken Sie mit der rechten Maustaste auf das Projekt mit der portablen Bibliothek, und wählen Sie **Hinzufügen** -> **Neues Element** -> **Plattformübergreifend** -> **Forms-XAML-Seite**. Geben Sie der Ansicht den Namen `TodoItemDetailsView`.
+4. Klicken Sie mit der rechten Maustaste auf das Projekt mit der portablen Bibliothek, und wählen Sie **Hinzufügen** -> **Neues Element** -> **Plattformübergreifend** -> **Forms-XAML-Seite** aus. Benennen Sie die Ansicht mit `TodoItemDetailsView`.
 
 5. Öffnen Sie die Datei **TodoItemDetailsView.xaml**, und ersetzen Sie den Textkörper von ContentPage durch Folgendes:
 
@@ -690,13 +694,13 @@ In diesem Artikel wird beschrieben, wie Sie die neue Dateiunterstützung im Azur
 
       + `IFileSyncHandler.ProcessFileSynchronizationAction` wird im Rahmen des Dateisynchronisierungsflusses aufgerufen. Es werden ein Dateiverweis und ein FileSynchronizationAction-Enumerationswert bereitgestellt, damit Sie entscheiden können, wie das Ereignis von Ihrer Anwendung behandelt werden soll (z. B. automatisches Herunterladen einer Datei, wenn sie erstellt oder aktualisiert wird, oder Löschen einer Datei vom lokalen Gerät, wenn die Datei auf dem Server gelöscht wird).
 
-- Ein `MobileServiceFile`-Element kann entweder im Online- oder im Offlinemodus genutzt werden, indem entweder `IMobileServiceTable` oder `IMobileServiceSyncTable` verwendet wird. Im Offlineszenario wird der Upload durchgeführt, wenn die App `PushFileChangesAsync` aufruft. Dies führt dazu, dass die Offline-Vorgangswarteschlange verarbeitet wird. Für jeden Dateivorgang ruft das Azure Mobile Client-SDK die `GetDataSource`-Methode auf der `IFileSyncHandler`-Instanz auf, um die Dateiinhalte für den Upload abzurufen.
+- Ein `MobileServiceFile`-Element kann entweder im Online- oder im Offlinemodus genutzt werden, indem entweder `IMobileServiceTable` oder `IMobileServiceSyncTable` verwendet wird. Im Offlineszenario wird der Upload durchgeführt, wenn die App `PushFileChangesAsync` aufruft. Dies führt dazu, dass die Offline-Vorgangswarteschlange verarbeitet wird. Für jeden Dateivorgang ruft das Azure Mobile Client-SDK die `GetDataSource`-Methode für die `IFileSyncHandler`-Instanz auf, um die Dateiinhalte für den Upload abzurufen.
 
 - Rufen Sie zum Abrufen der Dateien eines Elements die `GetFilesAsync`-Methode für die Instanz `IMobileServiceTable<T>` oder IMobileServiceSyncTable<T> auf. Diese Methode gibt eine Liste mit Dateien zurück, die dem bereitgestellten Datenelement zugeordnet sind. (Hinweis: Dies ist ein *lokaler* Vorgang, bei dem die Dateien basierend auf dem Zustand des Objekts bei seiner letzten Synchronisierung zurückgegeben werden. Sie sollten zuerst einen Synchronisierungsvorgang initiieren, um eine aktualisierte Liste mit Dateien vom Server zu erhalten.)
 
         IEnumerable<MobileServiceFile> files = await myTable.GetFilesAsync(myItem);
 
-- Das Feature für die Dateisynchronisierung verwendet im lokalen Speicher Benachrichtigungen über Datensatzänderungen, um die Datensätze abzurufen, die der Client im Rahmen eines Push- oder Pullvorgangs empfangen hat. Dies wird erreicht, indem lokale Benachrichtigungen und Serverbenachrichtigungen für den Synchronisierungskontext mit dem Parameter `StoreTrackingOptions` aktiviert werden.
+- Das Feature für die Dateisynchronisierung verwendet im lokalen Speicher Benachrichtigungen über Datensatzänderungen, um die Datensätze abzurufen, die der Client im Rahmen eines Push- oder Pullvorgangs empfangen hat. Dies wird erreicht, indem lokale Benachrichtigungen und Serverbenachrichtigungen für den Synchronisierungskontext mit dem `StoreTrackingOptions`-Parameter aktiviert werden.
 
         this.client.SyncContext.InitializeAsync(store, StoreTrackingOptions.NotifyLocalAndServerOperations);
 
@@ -721,4 +725,4 @@ In diesem Artikel wird beschrieben, wie Sie die neue Dateiunterstützung im Azur
 [Shared Access Signatures, Teil 1: Grundlagen zum SAS-Modell]: ../storage/storage-dotnet-shared-access-signature-part-1.md
 [Erstellen eines Azure-Speicherkontos]: ../storage/storage-create-storage-account.md#create-a-storage-account
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

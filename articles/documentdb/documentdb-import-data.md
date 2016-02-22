@@ -1,20 +1,19 @@
-<properties 
-	pageTitle="Datenbank-Migrationstools – Konvertieren von CSV zu JSON | Microsoft Azure" 
-	description="Informationen zum Verwenden der Open-Source- Datenmigrationstools für DocumentDB zum Importieren von Daten in DocumentDB. MongoDB, SQL, Table Storage, DynamoDB und CSV in JSON." 
-	keywords="CSV zu JSON, Datenbank-Migrationstools, Konvertieren von CSV zu JSON"
-	services="documentdb" 
-	authors="andrewhoh" 
-	manager="jhubbard" 
-	editor="monicar" 
+<properties
+	pageTitle="Importieren von Daten in DocumentDB | Microsoft Azure"
+	description="Erfahren Sie, wie Sie das Open-Source-basierte DocumentDB-Datenmigrationstool verwenden, um Daten aus verschiedenen Quellen, z. B. JSON-Dateien, CSV-Dateien, SQL, MongoDB, Azure Table Storage, Amazon DynamoDB- und DocumentDB-Sammlungen, in DocumentDB zu importieren."
+	services="documentdb"
+	authors="andrewhoh"
+	manager="jhubbard"
+	editor="monicar"
 	documentationCenter=""/>
 
-<tags 
-	ms.service="documentdb" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="10/16/2015" 
+<tags
+	ms.service="documentdb"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="01/29/2016"
 	ms.author="anhoh"/>
 
 # Importieren von Daten in DocumentDB – Datenbank-Migrationstool
@@ -54,7 +53,7 @@ Das DocumentDB-Datenmigrationstool ist eine Open-Source-Lösung, mit der Daten a
 Das Importtool enthält zwar eine grafische Benutzeroberfläche (dtui.exe), kann aber auch über die Befehlszeile (dt.exe) gesteuert werden. In der Tat gibt es eine Option, mit der nach dem Einrichten eines Imports über die Benutzeroberfläche zugeordnete Befehl ausgegeben werden kann. Quelldateien in Tabellenformat (z. B. SQL Server- oder CSV-Dateien) können so umgewandelt werden, dass während des Imports hierarchische Beziehungen (Filialdokumente) erstellt werden können. Hier erhalten Sie weitere Informationen zu Quelloptionen, Beispielbefehlszeilen zum Importieren aus jedem Quellformat, Zieloptionen und zum Anzeigen der Importergebnisse.
 
 
-##<a id="Install"></a>Installieren des DocumentDB-Datenmigrationstools ##
+##<a id="Install"></a>Installieren des DocumentDB-Datenmigrationstools
 
 Der Quellcode des Migrationstools ist in GitHub in [diesem Repository](https://github.com/azure/azure-documentdb-datamigrationtool) und eine kompilierte Version ist im [Microsoft Download Center](http://www.microsoft.com/downloads/details.aspx?FamilyID=cda7703a-2774-4c07-adcc-ad02ddc1a44d) verfügbar. Sie können die Projektmappe kompilieren oder einfach die kompilierte Version in ein Verzeichnis Ihrer Wahl herunterladen und extrahieren. Führen Sie anschließend eine dieser Dateien aus:
 
@@ -69,7 +68,7 @@ Mit der Importprogrammoption für JSON-Dateiquellen können Sie ein oder mehrere
 
 Hier finden Sie einige Beispiele für Befehlszeilen zum Importieren von JSON-Dateien:
 
-	#Import a single JSON file	
+	#Import a single JSON file
 	dt.exe /s:JsonFile /s.Files:.\Sessions.json /t:DocumentDBBulk /t.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:Sessions /t.CollectionTier:S3
 
 	#Import a directory of JSON files
@@ -139,10 +138,10 @@ Diese Abfrage gibt die folgenden (partiellen) Ergebnisse zurück:
 Beachten Sie die Aliase, wie z. B. Address.AddressType und Address.Location.StateProvinceName. Durch Angabe des Schachtelungstrennzeichens "." erstellt das Importtool während des Imports die Filialdokumente "Address" und "Address.Location". Hier finden Sie ein Beispiel für ein Zieldokument in DocumentDB:
 
 *{ "id": "956", "Name": "Finer Sales and Service", "Address": { "AddressType": "Main Office", "AddressLine1": "#500-75 O'Connor Street", "Location": { "City": "Ottawa", "StateProvinceName": "Ontario" }, "PostalCode": "K4B 1S2", "CountryRegionName": "Canada" } }*
- 
+
 Hier finden Sie einige Beispiele für Befehlszeilen zum Importieren aus SQL Server:
 
-	#Import records from SQL which match a query	
+	#Import records from SQL which match a query
 	dt.exe /s:SQL /s.ConnectionString:"Data Source=<server>;Initial Catalog=AdventureWorks;User Id=advworks;Password=<password>;" /s.Query:"select CAST(BusinessEntityID AS varchar) as Id, * from Sales.vStoreWithAddresses WHERE AddressType='Main Office'" /t:DocumentDBBulk /t.ConnectionString:" AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:Stores /t.IdField:Id /t.CollectionTier:S3
 
 	#Import records from sql which match a query and create hierarchical relationships
@@ -191,7 +190,7 @@ Geben Sie den Namen des Azure-Tabellenspeichers ein, aus dem Daten importiert we
 
 Die Importprogrammoption für Azure-Tabellenspeicherquellen weist die folgenden zusätzlichen Optionen auf:
 
-1. Interne Felder einschließen 
+1. Interne Felder einschließen
 	2. Alle - alle internen Felder einschließen (PartitionKey, RowKey und Timestamp)
 	3. Keine - alle externen Felder ausschließen
 	4. RowKey - nur das RowKey-Feld einschließen
@@ -202,7 +201,7 @@ Hier finden Sie ein Beispiel für eine Befehlszeile zum Importieren aus einem Az
 
 	dt.exe /s:AzureTable /s.ConnectionString:"DefaultEndpointsProtocol=https;AccountName=<Account Name>;AccountKey=<Account Key>" /s.Table:metrics /s.InternalFields:All /s.Filter:"PartitionKey eq 'Partition1' and RowKey gt '00001'" /s.Projection:ObjectCount;ObjectSize  /t:DocumentDBBulk /t.ConnectionString:" AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:metrics /t.CollectionTier:S3
 
-##<a id="DynamoDBSource"></a>Importieren von Amazon DynamoDB ##
+##<a id="DynamoDBSource"></a>Importieren von Amazon DynamoDB
 
 Mit der Importprogrammoption für Amazon DynamoDB-Quellen können Sie aus einer einzelnen Amazon DynamoDB-Tabelle importieren und auf Wunsch die zu importierenden Entitäten filtern. Mehrere Vorlagen werden für einen einfachen Import bereitgestellt.
 
@@ -220,7 +219,7 @@ Hier finden Sie ein Beispiel für die Befehlszeile zum Importieren von Amazon Dy
 
 	dt.exe /s:DynamoDB /s.ConnectionString:ServiceURL=https://dynamodb.us-east-1.amazonaws.com;AccessKey=<accessKey>;SecretKey=<secretKey> /s.Request:"{   """TableName""": """ProductCatalog""" }" /t:DocumentDBBulk /t.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:catalogCollection /t.CollectionTier:S3
 
-##<a id="BlobImport"></a>Importieren von Dateien aus dem Azure-Blob-Speicher##
+##<a id="BlobImport"></a>Importieren von Dateien aus dem Azure-Blob-Speicher
 
 Mit den Importprogrammoptionen für JSON-Dateien, MongoDB-Exportdateien und die CSV-Dateien können Sie eine oder mehrere Dateien aus dem Azure-Blob-Speicher importieren. Nach dem Angeben von Blob-Container-URL und Kontoschlüssel geben Sie einfach einen regulären Ausdruck ein, um die Datei(en) zum Importieren auszuwählen.
 
@@ -269,7 +268,7 @@ Hier finden Sie einige Beispiele für Befehlszeilen zum Importieren aus Document
 	#Export a DocumentDB collection to a JSON file
 	dt.exe /s:DocumentDB /s.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /s.Collection:StoresSub /t:JsonFile /t.File:StoresExport.json /t.Overwrite /t.CollectionTier:S3
 
-##<a id="HBaseSource"></a>Importieren von HBase ##
+##<a id="HBaseSource"></a>Importieren von HBase
 
 Die Importprogrammoption für HBase-Quellen können Sie zum Importieren von Daten aus einer HBase-Tabelle und optional zum Filtern der Daten verwenden. Mehrere Vorlagen werden für einen einfachen Import bereitgestellt.
 
@@ -287,7 +286,7 @@ Hier finden Sie ein Beispiel für die Befehlszeile zum Importieren von HBase:
 
 	dt.exe /s:HBase /s.ConnectionString:ServiceURL=<server-address>;Username=<username>;Password=<password> /s.Table:Contacts /t:DocumentDBBulk /t.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:hbaseimport
 
-##<a id="DocumentDBBulkTarget"></a>Importieren in DocumentDB (Massenimport) ##
+##<a id="DocumentDBBulkTarget"></a>Importieren in DocumentDB (Massenimport)
 
 Mit dem DocumentDB-Massenimportprogramm können Sie Daten aus allen verfügbaren Quelloptionen importieren und dabei zur Erhöhung der Effizienz eine gespeicherte DocumentDB-Prozedur verwenden. Das Tool unterstützt den Import in eine einzelne DocumentDB-Sammlung sowie den Shardimport, bei dem die Daten über mehrere DocumentDB-Sammlungen hinweg partitioniert werden. Weitere Informationen zum Partitionieren von Daten in DocumentDB [finden Sie hier](documentdb-partition-data.md). Mit dem Tool wird die gespeicherte Prozedur erstellt, ausgeführt und dann aus der Zielsammlung bzw. den Zielsammlungen gelöscht.
 
@@ -323,23 +322,24 @@ Darüber hinaus können Sie beim Importieren von Datentypen (z. B. aus SQL Serve
 
 -	Zeichenfolge: Als Zeichenfolgenwert beibehalten
 -	Epoche: Als numerischen Epochenwert beibehalten
--	Beide: Sowohl als Zeichenfolgen- als auch als numerischen Epochenwert beibehalten Diese Option erstellt ein Filialdokument, zum Beispiel: "date\_joined": { "Value": "2013-10-21T21:17:25.2410000Z", "Epoch": 1382390245 } 
+-	Beide: Sowohl als Zeichenfolgen- als auch als numerischen Epochenwert beibehalten Diese Option erstellt ein Filialdokument, zum Beispiel: "date\_joined": { "Value": "2013-10-21T21:17:25.2410000Z", "Epoch": 1382390245 }
 
 
 Das DocumentDB-Massenimportprogramm weist die folgenden erweiterten Optionen auf:
 
 1. Batchgröße: Das Tool verwendet standardmäßig eine Batchgröße von 50. Wenn die zu importierenden Dokumente groß sind, erwägen Sie, die Batchgröße zu verringern. Wenn die zu importierenden Dokumente dagegen klein sind, erwägen Sie, die Batchgröße zu erhöhen.
-2. Maximale Skriptgröße (Byte): Das Tool verwendet standardmäßig eine maximale Skriptgröße von 960 KB.
+2. Maximale Skriptgröße (Byte): Das Tool verwendet standardmäßig eine maximale Skriptgröße von 512 KB.
 3. Automatische ID-Generierung deaktivieren: Wenn jedes zu importierende Dokument ein ID-Feld enthält, kann durch Auswahl dieser Option die Leistung erhöht werden. Dokumente, die kein Feld für eine eindeutige ID enthalten, werden nicht importiert.
-4. Anzahl der Wiederholungsversuche bei Fehler: Gibt an, wie häufig bei einem vorübergehenden Fehler (z. B. Unterbrechung der Netzwerkverbindung) versucht werden soll, eine Verbindung zu DocumentDB herzustellen.
-5. Intervall der Wiederholungsversuche: Gibt an, wie lang bei einem vorübergehenden Fehler (z. B. Unterbrechung der Netzwerkverbindung) gewartet werden soll, bevor erneut versucht wird, eine Verbindung zu DocumentDB herzustellen.
-6. Verbindungsmodus: Gibt den Verbindungsmodus an, der mit DocumentDB verwendet werden soll. Verfügbare Optionen sind DirectTcp, DirectHttps und Gateway. Die Direktverbindungsmodi sind schneller, der Gatewaymodus ist besser für Firewalls geeignet, da nur Port 443 verwendet wird.
+4. Aktualisieren vorhandener Dokumente: Das Tool ersetzt standardmäßig vorhandene Dokumente mit ID-Konflikten nicht. Durch Auswahl dieser Option können vorhandene Dokumente mit übereinstimmenden IDs überschrieben werden. Diese Funktion ist hilfreich für geplante Datenmigrationen, die vorhandene Dokumente aktualisieren.
+5. Anzahl der Wiederholungsversuche bei Fehler: Gibt an, wie häufig bei einem vorübergehenden Fehler (z. B. Unterbrechung der Netzwerkverbindung) versucht werden soll, eine Verbindung zu DocumentDB herzustellen.
+6. Intervall der Wiederholungsversuche: Gibt an, wie lang bei einem vorübergehenden Fehler (z. B. Unterbrechung der Netzwerkverbindung) gewartet werden soll, bevor erneut versucht wird, eine Verbindung zu DocumentDB herzustellen.
+7. Verbindungsmodus: Gibt den Verbindungsmodus an, der mit DocumentDB verwendet werden soll. Verfügbare Optionen sind DirectTcp, DirectHttps und Gateway. Die Direktverbindungsmodi sind schneller, der Gatewaymodus ist besser für Firewalls geeignet, da nur Port 443 verwendet wird.
 
 ![Screenshot der erweiterten Optionen für den DocumentDB-Massenimport](./media/documentdb-import-data/docdbbulkoptions.png)
 
 > [AZURE.TIP] Standardmäßig verwendet das Importtool den Verbindungsmodus DirectTcp. Wenn Firewallprobleme auftreten, wechseln Sie zum Gatewaymodus, da dieser nur Port 443 erfordert.
 
-##<a id="DocumentDBSeqTarget"></a>Importieren in DocumentDB (sequenzieller Datensatzimport) ##
+##<a id="DocumentDBSeqTarget"></a>Importieren in DocumentDB (sequenzieller Datensatzimport)
 
 Mit dem Programm für den Import von sequenziellen DocumentDB-Datensätzen können Sie Datensätze einzeln aus den verfügbaren Quelloptionen importieren. Sie können diese Option auswählen, wenn Sie Datensätze in eine vorhandene Sammlung importieren, die das Kontingent an gespeicherten Prozeduren erreicht hat. Das Tool unterstützt den Import in eine einzelne DocumentDB-Sammlung sowie den Shardimport, bei dem die Daten über mehrere DocumentDB-Sammlungen hinweg partitioniert werden. Weitere Informationen zum Partitionieren von Daten in DocumentDB [finden Sie hier](documentdb-partition-data.md).
 
@@ -371,15 +371,16 @@ Während des Imports steht eine Reihe von erweiterten Optionen zur Verfügung. S
 
 -	Zeichenfolge: Als Zeichenfolgenwert beibehalten
 -	Epoche: Als numerischen Epochenwert beibehalten
--	Beide: Sowohl als Zeichenfolgen- als auch als numerischen Epochenwert beibehalten Diese Option erstellt ein Filialdokument, zum Beispiel: "date\_joined": { "Value": "2013-10-21T21:17:25.2410000Z", "Epoch": 1382390245 } 
+-	Beide: Sowohl als Zeichenfolgen- als auch als numerischen Epochenwert beibehalten Diese Option erstellt ein Filialdokument, zum Beispiel: "date\_joined": { "Value": "2013-10-21T21:17:25.2410000Z", "Epoch": 1382390245 }
 
 Das Programm für den Import von sequenziellen DocumentDB-Datensätzen weist die folgenden erweiterten Optionen auf:
 
 1. Anzahl paralleler Anforderungen: Das Programm verwendet standardmäßig 2 parallele Anforderungen. Wenn die zu importierenden Dokumente klein sind, erwägen Sie, die Anzahl paralleler Anforderungen zu erhöhen. Beachten Sie, dass es zu einer Drosselung beim Import kommen kann, wenn eine zu hohe Anzahl festgelegt wird.
 2. Automatische ID-Generierung deaktivieren: Wenn jedes zu importierende Dokument ein ID-Feld enthält, kann durch Auswahl dieser Option die Leistung erhöht werden. Dokumente, die kein Feld für eine eindeutige ID enthalten, werden nicht importiert.
-3. Anzahl der Wiederholungsversuche bei Fehler: Gibt an, wie häufig bei einem vorübergehenden Fehler (z. B. Unterbrechung der Netzwerkverbindung) versucht werden soll, eine Verbindung zu DocumentDB herzustellen.
-4. Intervall der Wiederholungsversuche: Gibt an, wie lang bei einem vorübergehenden Fehler (z. B. Unterbrechung der Netzwerkverbindung) gewartet werden soll, bevor erneut versucht wird, eine Verbindung zu DocumentDB herzustellen.
-5. Verbindungsmodus: Gibt den Verbindungsmodus an, der mit DocumentDB verwendet werden soll. Verfügbare Optionen sind DirectTcp, DirectHttps und Gateway. Die Direktverbindungsmodi sind schneller, der Gatewaymodus ist besser für Firewalls geeignet, da nur Port 443 verwendet wird.
+3. Aktualisieren vorhandener Dokumente: Das Tool ersetzt standardmäßig vorhandene Dokumente mit ID-Konflikten nicht. Durch Auswahl dieser Option können vorhandene Dokumente mit übereinstimmenden IDs überschrieben werden. Diese Funktion ist hilfreich für geplante Datenmigrationen, die vorhandene Dokumente aktualisieren.
+4. Anzahl der Wiederholungsversuche bei Fehler: Gibt an, wie häufig bei einem vorübergehenden Fehler (z. B. Unterbrechung der Netzwerkverbindung) versucht werden soll, eine Verbindung zu DocumentDB herzustellen.
+5. Intervall der Wiederholungsversuche: Gibt an, wie lang bei einem vorübergehenden Fehler (z. B. Unterbrechung der Netzwerkverbindung) gewartet werden soll, bevor erneut versucht wird, eine Verbindung zu DocumentDB herzustellen.
+6. Verbindungsmodus: Gibt den Verbindungsmodus an, der mit DocumentDB verwendet werden soll. Verfügbare Optionen sind DirectTcp, DirectHttps und Gateway. Die Direktverbindungsmodi sind schneller, der Gatewaymodus ist besser für Firewalls geeignet, da nur Port 443 verwendet wird.
 
 ![Screenshot der erweiterten Optionen für den sequenziellen DocumentDB-Datensatzimport](./media/documentdb-import-data/documentdbsequentialoptions.png)
 
@@ -396,7 +397,6 @@ Mit der erweiterten Option der Indizierungsrichtlinie können Sie eine Indizieru
 Das Tool bietet folgende Richtlinienvorlagen:
 
 - Standard. Diese Richtlinie empfiehlt sich, wenn Sie Gleichheitsabfragen für Zeichenfolgen durchführen und ORDER BY-, Bereichs- und Gleichheitsabfragen für Zahlen verwenden. Der Indexspeicheraufwand dieser Richtlinie ist geringer als bei „Bereich“.
-- Hash. Diese Richtlinie empfiehlt sich, wenn Sie Gleichheitsabfragen für Zahlen und Zeichenfolgen durchführen. Der Indexspeicheraufwand dieser Richtlinie ist geringer als bei Bereich“.
 - Bereich. Wählen Sie diese Richtlinie, wenn Sie ORDER BY-, Bereichs- und Gleichheitsabfragen für Zahlen und Zeichenfolgen durchführen. Der Indexspeicheraufwand dieser Richtlinie ist höher als bei „Standard“ oder „Hash“.
 
 
@@ -417,7 +417,7 @@ Sie können optional die generierte JSON-Datei optimieren, wodurch die Größe d
 
 	Standard JSON export
 	[{"id":"Sample","Title":"About Paris","Language":{"Name":"English"},"Author":{"Name":"Don","Location":{"City":"Paris","Country":"France"}},"Content":"Don's document in DocumentDB is a valid JSON document as defined by the JSON spec.","PageViews":10000,"Topics":[{"Title":"History of Paris"},{"Title":"Places to see in Paris"}]}]
-	
+
 	Prettified JSON export
 	[
  	{
@@ -444,7 +444,7 @@ Sie können optional die generierte JSON-Datei optimieren, wodurch die Größe d
       }
     ]
 	}]
-	
+
 ## Erweiterte Konfiguration
 
 Geben Sie auf dem Bildschirm "Erweiterte Konfiguration" den Speicherort der Protokolldatei an, in die Fehler geschrieben werden sollen. Für diese Seite gelten folgende Regeln:
@@ -453,7 +453,9 @@ Geben Sie auf dem Bildschirm "Erweiterte Konfiguration" den Speicherort der Prot
 2.	Wenn eine Datei ohne ein Verzeichnis angegeben ist, wird die Datei im aktuellen Umgebungsverzeichnis erstellt (oder überschrieben).
 3.	Bei Auswahl einer vorhandenen Datei wird diese Datei überschrieben; es gibt keine Option zum Anfügen.
 
-	![Screenshot des Bildschirms "Erweiterte Konfiguration"](./media/documentdb-import-data/AdvancedConfiguration.png)
+Wählen Sie dann, ob alle, nur die kritischen oder gar keine Fehlermeldungen protokolliert werden sollen. Entscheiden Sie zum Schluss, wie häufig der Fortschritt in der Bildschirmmeldung zur Übertragung aktualisiert wird.
+
+	![Screenshot of Advanced configuration screen](./media/documentdb-import-data/AdvancedConfiguration.png)
 
 ## Bestätigen der Importeinstellungen und Anzeigen der Befehlszeile
 
@@ -475,7 +477,4 @@ Geben Sie auf dem Bildschirm "Erweiterte Konfiguration" den Speicherort der Prot
 
 - Um weitere Informationen zu DocumentDB zu erhalten, klicken Sie [hier](http://azure.com/docdb).
 
-
- 
-
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

@@ -13,18 +13,20 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/13/2015" 
+	ms.date="02/08/2016" 
 	ms.author="hangzh;bradsev" />
 
 # Anpassen von Azure HDInsight Hadoop-Clustern für den Cortana-Analyseprozess 
 
-Dieses Menü enthält Links zu Themen, in denen das Einrichten der verschiedenen Data Science-Umgebungen, die vom Cortana-Analyseprozess (CAP) verwendet werden, beschrieben wird.
-
-[AZURE.INCLUDE [data-science-environment-setup](../../includes/cap-setup-environments.md)]
+## Einführung
 
 In diesem Artikel wird beschrieben, wie HDInsight Hadoop-Cluster durch die Installation von 64-Bit-Anaconda (Python 2.7) auf jedem Knoten angepasst werden, wenn sie im HDInsight-Dienst bereitgestellt werden. Diese Anpassung bereitet den Cluster für die Verwendung mit dem Cortana-Analyseprozess vor. Es wird auch gezeigt, wie Sie auf den Hauptknoten zugreifen, um benutzerdefinierte Aufträge an den Cluster zu übermitteln.
 
 Diese Anpassung macht viele beliebte Python-Module verfügbar, die Bestandteil von Anaconda sind. Dies geschieht sehr benutzerfreundlich in UDFs (User Defined Function, benutzerdefinierte Funktion), die entwickelt wurden, um Hive-Datensätze im Cluster zu verarbeiten. Eine Anleitung für in diesem Szenario verwendeten Prozeduren finden Sie unter [Übermitteln von Hive-Abfragen an HDInsight Hadoop-Cluster im erweiterten Analyseprozess](machine-learning-data-science-hive-queries.md).
+
+Das nachstehende Menü enthält Links zu Themen, in denen das Einrichten der verschiedenen Data Science-Umgebungen, die vom Cortana Analytics-Prozess (CAP) verwendet werden, beschrieben wird.
+
+[AZURE.INCLUDE [data-science-environment-setup](../../includes/cap-setup-environments.md)]
 
 
 ## <a name="customize"></a>Anpassen von Azure HDInsight Hadoop-Clustern
@@ -39,7 +41,7 @@ Geben Sie den Namen des zu erstellenden Clusters auf der 1. Konfigurationsseite
 
 Geben Sie auf der 2. Konfigurationsseite die Anzahl der **DATA NODES** ein, wählen Sie eine Option für **REGION/VIRTUAL NETWORK** aus und wählen Sie dann die Größe für **HEAD NODE** und **DATA NODE** aus. Klicken Sie auf den Pfeil, um zur nächsten Konfigurationsseite zu wechseln.
 
->[AZURE.NOTE]Der Wert für **REGION/VIRTUAL NETWORK** muss mit der Region des Speicherkontos identisch sein, das für den HDInsight Hadoop-Cluster verwendet werden soll. Andernfalls wird auf der vierten Konfigurationsseite nicht das gewünschte Speicherkonto in der Dropdownliste **ACCOUNT NAME** angezeigt.
+>[AZURE.NOTE] Der Wert für **REGION/VIRTUAL NETWORK** muss mit der Region des Speicherkontos identisch sein, das für den HDInsight Hadoop-Cluster verwendet werden soll. Andernfalls wird auf der vierten Konfigurationsseite nicht das gewünschte Speicherkonto in der Dropdownliste **ACCOUNT NAME** angezeigt.
 
 ![Arbeitsbereich erstellen][3]
 
@@ -74,7 +76,7 @@ Sie müssen den Remotezugriff auf den Hadoop-Cluster in Azure aktivieren, damit 
 
 2. Geben Sie im Fenster **Configure Remote Desktop** den BENUTZERNAMEN und das KENNWORT ein, und wählen Sie das Ablaufdatum für den Remotezugriff aus. Klicken Sie anschließend auf das Häkchen, um den Remotezugriff auf den Hauptknoten des Hadoop-Clusters zu aktivieren.
 	
-	>[AZURE.NOTE]
+	>[AZURE.NOTE] 
 	>
 	>1. Der Benutzername und das Kennwort für den Remotezugriff sind nicht der Benutzername und das Kennwort, die Sie zum Erstellen des Hadoop-Clusters verwendet haben. Hierbei handelt es sich um andere Anmeldeinformationen.
 	>
@@ -102,4 +104,4 @@ Unter [Übermitteln von Hive-Abfragen an HDInsight Hadoop-Cluster](machine-learn
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0211_2016-->

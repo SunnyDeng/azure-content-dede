@@ -14,14 +14,14 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/04/2015" 
+	ms.date="02/05/2016" 
 	ms.author="larryfr"/>
 
 #Analysieren von Sensordaten mit der Hive-Abfragekonsole für Hadoop in HDInsight
 
 Erfahren Sie, wie Sie Sensordaten mithilfe der Hive-Abfragekonsole in HDInsight (Hadoop) analysieren und die Daten anschließend in Microsoft Excel mithilfe von Power View visualisieren können.
 
-> [AZURE.NOTE]Die Schritte in diesem Dokument funktionieren nur mit einem Windows-basierten HDInsight-Cluster.
+> [AZURE.NOTE] Die Schritte in diesem Dokument funktionieren nur mit einem Windows-basierten HDInsight-Cluster.
 
 In diesem Beispiel verarbeiten Sie Verlaufsdaten von Klimaanlagensystemen mithilfe von HDInsight, um herauszufinden, welche Systeme nicht in der Lage sind, eine eingestellte Temperatur zu halten. Sie lernen Folgendes:
 
@@ -38,7 +38,7 @@ In diesem Beispiel verarbeiten Sie Verlaufsdaten von Klimaanlagensystemen mithil
 
 * Microsoft Excel 2013 (PowerPivot für Datenanalysten – Microsoft Excel 2010)
 
-	> [AZURE.NOTE]Microsoft Excel dient zur Visualisierung von Daten mithilfe von [Power View](https://support.office.com/Article/Power-View-Explore-visualize-and-present-your-data-98268d31-97e2-42aa-a52b-a68cf460472e?ui=de-DE&rs=de-DE&ad=US).
+	> [AZURE.NOTE] Microsoft Excel dient zur Visualisierung von Daten mithilfe von [Power View](https://support.office.com/Article/Power-View-Explore-visualize-and-present-your-data-98268d31-97e2-42aa-a52b-a68cf460472e?ui=de-DE&rs=de-DE&ad=US).
 
 * [Microsoft Hive ODBC-Treiber](http://www.microsoft.com/download/details.aspx?id=40886)
 
@@ -54,4 +54,4 @@ In diesem Beispiel verarbeiten Sie Verlaufsdaten von Klimaanlagensystemen mithil
 
 3. Folgen Sie den Anweisungen auf der Webseite, um das Beispiel abzuschließen.
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0211_2016-->

@@ -13,12 +13,10 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="multiple"
 	ms.topic="article"
-	ms.date="01/11/2015"
+	ms.date="02/04/2016"
 	ms.author="wesmc"/>
 
 # Synchronisierung von Offlinedaten in Azure Mobile Apps
-
-[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
 
 ## Was ist die Synchronisierung von Offlinedateng?
 
@@ -37,8 +35,8 @@ Die Offlinesynchronisierung bietet eine Reihe an Vorteilen:
 Die folgenden Lernprogramme zeigen, wie Sie die Offlinesynchronisierung zu Ihren mobilen Clients mithilfe von Azure Mobile Apps hinzufügen können:
 
 * [Android: Offlinesynchronisierung aktivieren]
-* [iOS: Offlinesynchronisierung aktivieren]			
-* [Xamarin iOS: Offlinesynchronisierung aktivieren]	
+* [iOS: Offlinesynchronisierung aktivieren]
+* [Xamarin iOS: Offlinesynchronisierung aktivieren]
 * [Xamarin Android: Offlinesynchronisierung aktivieren]
 * [Windows 8.1: Offlinesynchronisierung aktivieren]
 
@@ -65,10 +63,10 @@ Ein lokaler Speicher wird mithilfe einer Initialize-Methode wie `IMobileServices
 <!-- TODO: link to client references -->
 
 
-<!-- 
+<!--
 Client code will interact with the table using the `IMobileServiceSyncTable` interface to support offline buffering. This interface supports all the methods of `IMobileServiceTable` along with additional support for pulling data from a Mobile App backend table and merging it into a local store table. How the local table is synchronized with the backend database is mainly controlled by your logic in the client app.
 
-The sync table uses the [System Properties](https://msdn.microsoft.com/library/azure/dn518225.aspx) on the table to implement change tracking for offline synchronization. 
+The sync table uses the [System Properties](https://msdn.microsoft.com/library/azure/dn518225.aspx) on the table to implement change tracking for offline synchronization.
 
 
 
@@ -103,22 +101,23 @@ Beim Synchronisieren von Tabellen steuert der Clientcode, wann lokale Änderunge
 
   Wenn Sie die inkrementelle Synchronisierung deaktivieren möchten, übergeben Sie `null` als Abfrage-ID. In diesem Fall werden alle Datensätze bei jedem Aufruf von `PullAsync` abgerufen, was möglicherweise ineffizient ist.
 
- 
+
 
 <!--   mymobileservice-code.azurewebsites.net/tables/TodoItem?$filter=(__updatedAt ge datetimeoffset'1970-01-01T00:00:00.0000000%2B00:00')&$orderby=__updatedAt&$skip=0&$top=50&__includeDeleted=true&__systemproperties=__updatedAt%2C__deleted
  -->
+
 * **Löschen**: Sie können den Inhalt des lokalen Speichers mit `IMobileServiceSyncTable.PurgeAsync` löschen. Dies kann erforderlich sein, wenn Sie veraltete Daten in der Clientdatenbank haben, oder wenn Sie alle ausstehende Änderungen verwerfen möchten.
 
   Eine Aufräumaktion löscht eine Tabelle aus dem lokalen Speicher. Wenn es Vorgänge der ausstehenden Synchronisierung mit der Datenbank gibt, löst das Löschen eine Ausnahme aus, sofern nicht der Parameter *Löschen erzwingen* festgelegt ist.
 
   Als Beispiel für veraltete Daten auf dem Client nehmen wir an, dass im Beispiel "todo list" Gerät 1 nur Elemente abruft, die nicht abgeschlossen sind. Das todo-Element "Milch kaufen" wird dann auf dem Server von einem anderen Gerät als abgeschlossen markiert. Allerdings verfügt Gerät 1 weiterhin über das todo-Element "Milch kaufen" im lokalen Speicher, da es nur Elemente abruft, die nicht als abgeschlossen markiert sind. Eine Aufräumaktion löscht dieses veraltete Element.
- 
+
 ## Nächste Schritte
 
-* [iOS: Offlinesynchronisierung aktivieren]			
-* [Xamarin iOS: Offlinesynchronisierung aktivieren]	
+* [iOS: Offlinesynchronisierung aktivieren]
+* [Xamarin iOS: Offlinesynchronisierung aktivieren]
 * [Xamarin Android: Offlinesynchronisierung aktivieren]
-* [Windows 8.1: Offlinesynchronisierung aktivieren]	
+* [Windows 8.1: Offlinesynchronisierung aktivieren]
 
 <!-- Links -->
 
@@ -129,4 +128,4 @@ Beim Synchronisieren von Tabellen steuert der Clientcode, wann lokale Änderunge
 [Windows 8.1: Aktivieren der Offline-Synchronisierung]: ../app-service-mobile-windows-store-dotnet-get-started-offline-data.md
 [Windows 8.1: Offlinesynchronisierung aktivieren]: ../app-service-mobile-windows-store-dotnet-get-started-offline-data.md
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0211_2016-->

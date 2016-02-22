@@ -13,14 +13,15 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="PHP" 
 	ms.topic="article" 
-	ms.date="11/19/2015" 
+	ms.date="02/09/2016" 
 	ms.author="tomfitz"/>
 
 # Erstellen einer PHP-SQL-Web-App und Bereitstellen in Azure App Service mit Git
 
 In diesem Lernprogramm erfahren Sie, wie Sie eine PHP-Web-App in [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714) erstellen, die eine Verbindung mit einer Azure-SQL-Datenbank herstellt, und wie Sie diese über Git bereitstellen. Dieses Tutorial setzt voraus, dass auf dem Computer [PHP][install-php], [SQL Server Express][install-SQLExpress], die [Microsoft-Treiber für SQL Server für PHP](http://www.microsoft.com/download/en/details.aspx?id=20098) und [Git][install-git] installiert sind. Nach der Durchführung dieses Lernprogramms verfügen Sie über eine in Azure ausgeführte PHP-SQL-Web-App.
 
-> [AZURE.NOTE]Sie können PHP, SQL Server Express und die Microsoft-Treiber für SQL Server für PHP mit dem [Microsoft-Webplattform-Installer](http://www.microsoft.com/web/downloads/platform.aspx) installieren und konfigurieren.
+> [AZURE.NOTE]
+Sie können PHP, SQL Server Express und die Microsoft-Treiber für SQL Server für PHP mit dem [Microsoft-Webplattform-Installer](http://www.microsoft.com/web/downloads/platform.aspx) installieren und konfigurieren.
 
 Sie erhalten Informationen zu folgenden Themen:
 
@@ -33,7 +34,7 @@ Mithilfe dieses Lernprogramms erstellen Sie eine einfache Webanwendung für die 
 
 [AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ##Erstellen einer Azure-Web-App und Einrichten der Git-Veröffentlichung
 
@@ -244,12 +245,14 @@ Nachdem Sie Ihre Anwendung lokal getestet haben, können Sie sie über Git in Ih
 	$pwd = "<your password>";
 	$db = "<value of SQL Database>";
 
-> [AZURE.NOTE]Unter <code>$host</code> muss dem Serverwert die Zeichenfolge <code>tcp:</code> vorangestellt werden.
+> [AZURE.NOTE]
+Unter <code>$host</code> muss dem Serverwert die Zeichenfolge <code>tcp:</code> vorangestellt werden.
 
 
 Sie können nun die Git-Veröffentlichung einrichten und die Anwendung veröffentlichen.
 
-> [AZURE.NOTE]Hierbei handelt es sich um die gleichen Schritte, die auch weiter oben am Ende des Abschnitts **Erstellen einer Azure-Web-App und Einrichten der Git-Veröffentlichung** aufgeführt sind.
+> [AZURE.NOTE]
+Hierbei handelt es sich um die gleichen Schritte, die auch weiter oben am Ende des Abschnitts **Erstellen einer Azure-Web-App und Einrichten der Git-Veröffentlichung** aufgeführt sind.
 
 
 1. Öffnen Sie GitBash (oder eine Terminalsitzung, wenn sich Git an Ihrem `PATH` befindet), wechseln Sie zum Stammverzeichnis Ihrer Anwendung (das Verzeichnis **registration**), und führen Sie die folgenden Befehle aus:
@@ -295,4 +298,4 @@ Befolgen Sie die folgenden Schritte, um Änderungen an der Anwendung zu veröffe
 [pdo-sqlsrv]: http://php.net/pdo_sqlsrv
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0211_2016-->

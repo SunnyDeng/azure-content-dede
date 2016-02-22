@@ -13,14 +13,12 @@
 	ms.tgt_pltfrm="mobile-ios"
 	ms.devlang="objective-c"
 	ms.topic="article"
-	ms.date="12/01/2015"
+	ms.date="02/04/2016"
 	ms.author="krisragh"/>
 
 # Aktivieren der Offlinesynchronisierung für Ihre mobile iOS-App
 
 [AZURE.INCLUDE [app-service-mobile-selector-offline](../../includes/app-service-mobile-selector-offline.md)]
-&nbsp;  
-[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
 
 ## Übersicht
 
@@ -30,7 +28,7 @@ Falls Sie noch keine Erfahrung mit Azure Mobile Apps haben, sollten Sie zunächs
 
 Weitere Informationen zur Offlinesynchronisierungsfunktion finden Sie im Thema [Offlinedatensynchronisierung in Azure Mobile Apps].
 
-## <a name="review-sync"></a>Überprüfen des Clientcodes für die Synchronisierung 
+## <a name="review-sync"></a>Überprüfen des Clientcodes für die Synchronisierung
 
 Das Clientprojekt, das Sie für das Lernprogramm [Erstellen einer iOS-App] heruntergeladen haben, enthält bereits Code zur Unterstützung der Offlinesynchronisierung mithilfe einer lokalen auf Kerndaten basierenden Datenbank. Dieser Abschnitt ist eine Zusammenfassung, was bereits im Code des Lernprogramms enthalten ist. Eine grundlegende Übersicht über die Funktion finden Sie unter [Offlinedatensynchronisierung in Azure Mobile Apps].
 
@@ -107,7 +105,7 @@ Bei Verwendung des Offlinespeichers für die Kerndaten müssen Sie bestimmte Tab
       * MS\_TableConfig: Zum Nachverfolgen der letzten aktualisierten Zeit für die letzte Synchronisierung für alle Pullvorgänge
       * TodoItem: Zum Speichern der TODO-Elemente. Die Systemspalten **createdAt**, **updatedAt** und **version** sind optionale Systemeigenschaften.
 
->[AZURE.NOTE]Das Azure Mobile Apps-SDK reserviert Spaltennamen, die mit "**``**" beginnen. Dieses Präfix sollte nur für Systemspalten verwendet werden, andernfalls werden die Spaltennamen bei Verwendung des Remote-Back-Ends geändert.
+>[AZURE.NOTE] Das Azure Mobile Apps-SDK reserviert Spaltennamen, die mit "**``**" beginnen. Dieses Präfix sollte nur für Systemspalten verwendet werden, andernfalls werden die Spaltennamen bei Verwendung des Remote-Back-Ends geändert.
 
 - Zur Verwendung der Funktion zur Offlinesynchronisierung müssen Sie die Systemtabellen definieren, wie unten dargestellt.
 
@@ -247,6 +245,5 @@ Zur Synchronisierung des lokalen Speichers mit dem Server haben Sie die Methoden
 
 [Cloud Cover: Offlinesynchronisierung in Azure Mobile Services]: http://channel9.msdn.com/Shows/Cloud+Cover/Episode-155-Offline-Storage-with-Donna-Malayeri
 [Azure Friday: Offline-enabled apps in Azure Mobile Services]: http://azure.microsoft.com/documentation/videos/azure-mobile-services-offline-enabled-apps-with-donna-malayeri/
- 
 
-<!---HONumber=AcomDC_1203_2015--->
+<!---HONumber=AcomDC_0211_2016-->

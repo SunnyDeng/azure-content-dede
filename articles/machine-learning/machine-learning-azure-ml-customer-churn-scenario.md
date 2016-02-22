@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/28/2015" 
+	ms.date="02/09/2016" 
 	ms.author="jeannt"/>
 
 # Analysieren der Kundenabwanderung mithilfe von Microsoft Azure Machine Learning
@@ -65,7 +65,7 @@ Eine interessante Ergänzung ist hier die Analyse großer Datenmengen. Die heuti
 
  
 ##Implementieren des Modellierungs-Prototyps in Machine Learning Studio
-Wie können wir für das soeben beschriebene Problem einen integrierten Ansatz für die Modellierung und Bewertung implementieren? In diesem Abschnitt wird veranschaulicht, wie dies mithilfe von Azure Machine Learning Studio erreicht wird.
+Wie kann für das soeben beschriebene Problem am besten ein integrierter Ansatz für die Modellierung und Bewertung implementiert werden? In diesem Abschnitt wird veranschaulicht, wie dies mithilfe von Azure Machine Learning Studio erreicht wird.
 
 Der Multi-Modell-Ansatz ist beim Entwerfen eines globalen Prototyps für die Abwanderung zwingend erforderlich. Selbst der (voraussagende) Bewertungsteil des Ansatzes sollte mehrere Modelle einbeziehen.
 
@@ -99,7 +99,9 @@ Die folgenden Diagramme veranschaulichen die verwendeten Daten.
 
 *Abbildung 7: Aus der Datenquelle extrahierte Funktionen*
 > Beachten Sie, dass diese Daten privat sind, weshalb Modell und Daten nicht freigegeben werden dürfen. Sie finden jedoch ein ähnliches Modell mit öffentlich verfügbaren Daten in diesem Beispielexperiment im [Cortana Analytics-Katalog](http://gallery.azureml.net/): [Abwanderung von Kunden eines Telekommunikationsanbieters](http://gallery.azureml.net/Experiment/31c19425ee874f628c847f7e2d93e383).
->
+> 
+> Weitere Informationen zum Implementieren eines Abwanderungsanalysemodells mit Cortana Analytics Suite finden Sie auch in [diesem Video](https://info.microsoft.com/Webinar-Harness-Predictive-Customer-Churn-Model.html) von Senior Program Manager Wee Hyong Tok.
+> 
 
 ###Im Prototyp verwendete Algorithmen
 
@@ -127,7 +129,7 @@ Wir haben das Bewertungs-DataSet auch mit der Desktop-Edition von SAS Enterprise
 In diesem Abschnitt werden unsere Ergebnisse zur Genauigkeit der Modelle auf Basis des Bewertungsdatasets präsentiert.
 
 ###Richtigkeit und Genauigkeit der Bewertung
-Im Allgemeinen ist die Implementierung in Machine Learning etwas ungenauer als SAS, und zwar um etwa 10-15 % (Area Under Curve oder AUC).
+Im Allgemeinen ist die Implementierung in Azure Machine Learning etwas ungenauer als SAS, und zwar um etwa 10–15 % (Area Under Curve oder AUC).
 
 Die wichtigste Kennzahl in Codeänderung ist jedoch die Rate der falschen Klassifizierung: Welcher der vom Klassifizierer vorhergesagten wichtigsten N Abwanderer ist tatsächlich **nicht** abgewandert und hat trotzdem besondere Behandlung erhalten? Das folgende Diagramm vergleicht die Fehlklassifizierungsrate für alle Modelle:
 
@@ -188,7 +190,7 @@ In der Telekommunikationsbranche haben sich verschiedene Methoden zur Analyse de
 	-	**Wettbewerbs- und Geschäftsdaten**. Abrufen aller möglichen Informationen zum Kunden (können nicht verfügbar oder schwer nachzuverfolgen sein).
 -	Verwenden der Gewichtung zur Steuerung der Funktionsauswahl. Das bedeutet, dass das Boosted Decision Tree-Modell immer einen vielversprechenden Ansatz darstellt.  
 
-Die Verwendung der vorherigen vier Kategorien schafft die Illusion, dass ein einfacher *deterministischer* Ansatz basierend auf Indizes, die auf angemessenen Faktoren pro Kategorie geformt sind, ausreichen sollten, um abwanderungsgefährdete Kunden zu identifizieren. Obwohl dieser Gedanke plausibel scheint, beruht er leider auf einem falschen Verständnis. Der Grund hierfür ist, dass die Abwanderung ein temporaler Effekt ist, während die zur Abwanderung führenden Faktoren normalerweise schwankende Zustände aufweisen. Was bringt einen Kunden dazu, zu glauben, dass es einen Unterschied macht, ob er heute oder morgen oder in sechs Monaten abwandert? Daher ist ein *Wahrscheinlichkeitsmodell* erforderlich.
+Die Verwendung dieser vier Kategorien schafft die Illusion, dass ein einfacher *deterministischer* Ansatz basierend auf Indizes, die auf angemessenen Faktoren pro Kategorie geformt sind, ausreichen sollte, um abwanderungsgefährdete Kunden zu identifizieren. Obwohl dieser Gedanke plausibel scheint, beruht er leider auf einem falschen Verständnis. Der Grund hierfür ist, dass die Abwanderung ein temporaler Effekt ist, während die zur Abwanderung führenden Faktoren normalerweise schwankende Zustände aufweisen. Was bringt einen Kunden dazu, zu glauben, dass es einen Unterschied macht, ob er heute oder morgen oder in sechs Monaten abwandert? Daher ist ein *Wahrscheinlichkeitsmodell* erforderlich.
 
 Diese wichtige Beobachtung wird in Unternehmen häufig übersehen, die im Allgemeinen einen Business Intelligence-orientierten Ansatz für die Analyse bevorzugen (hauptsächlich, da er besser zu verkaufen ist und eine unkomplizierte Automatisierung gestattet).
 
@@ -213,13 +215,13 @@ Dieses Feedback hilft uns dabei, die Qualität der von uns veröffentlichten Whi
 ##Referenzen
 [1]Predictive Analytics: Beyond the Predictions, W. McKnight, Information Management, Juli/August 2011, S. 18-20.
 
-[2] [Accuracy and precision](http://en.wikipedia.org/wiki/Accuracy_and_precision) auf Wikipedia
+[2] Wikipedia-Artikel: [Accuracy and precision](http://en.wikipedia.org/wiki/Accuracy_and_precision) (Präzision)
 
 [3] [CRISP-DM 1.0: Step-by-Step Data Mining Guide](http://www.the-modeling-agency.com/crisp-dm.pdf)
 
-[4] Big Data Marketing
+[4] [Big Data Marketing: Engage Your Customers More Effectively and Drive Value](http://www.amazon.com/Big-Data-Marketing-Customers-Effectively/dp/1118733894/ref=sr_1_12?ie=UTF8&qid=1387541531&sr=8-12&keywords=customer+churn) (Big Data Marketing: effektivere Einbindung Ihrer Kunden und Schaffen von Werten)
 
-[5] [Big Data Marketing: Engage Your Customers More Effectively and Drive Value] (http://www.amazon.com/Big-Data-Marketing-Customers-Effectively/dp/1118733894/ref=sr_1_12?ie=UTF8&qid=1387541531&sr=8-12&keywords=customer+churn)
+[5] [Telco churn model template](https://caqs.azure.net/#gallery/telcocustomerchurn) (Vorlage für ein Abwanderungsmodell für Telekommunikationsunternehmen) in der Cortana Analytics Gallery
 ##Anhang
 
 ![][10]
@@ -238,4 +240,4 @@ Dieses Feedback hilft uns dabei, die Qualität der von uns veröffentlichten Whi
 [9]: ./media/machine-learning-azure-ml-customer-churn-scenario/churn-9.png
 [10]: ./media/machine-learning-azure-ml-customer-churn-scenario/churn-10.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0211_2016-->

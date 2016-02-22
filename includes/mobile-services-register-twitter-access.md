@@ -2,11 +2,11 @@
 
 Die neuen Twitter v1.1 APIs erfordern eine Authentifizierung Ihrer App, um auf Ressourcen zugreifen zu können. Zunächst müssen Sie sich die Anmeldedaten für Zugriff mithilfe von OAuth 2.0 besorgen. Anschließend speichern Sie diese sicher in den App-Einstellungen für Ihren mobilen Service.
 
-1. Sofern noch nicht geschehen, führen Sie die Schritte im Thema <a href="../articles/mobile-services/mobile-services-how-to-register-twitter-authentication.md/" target="_blank">Registrieren Ihrer App für die Twitter-Anmeldung mit Mobile Services</a> durch. 
+1. Führen Sie die Schritte im Thema [Registrieren Ihrer App für die Twitter-Anmeldung mit Mobile Services](../../includes/mobile-services-how-to-register-twitter-authentication.md) durch, falls noch nicht geschehen. 
   
   	Twitter erstellt die Anmeldedaten, mithilfe derer Sie auf Twitter v1.1 APIs zugreifen können. Diese Anmeldeinformationen erhalten Sie über die Website für Twitter-Entwickler.
 
-2. Navigieren Sie zur Website für <a href="http://go.microsoft.com/fwlink/p/?LinkId=268300" target="_blank">Twitter-Entwickler</a>, melden Sie sich mit den Anmeldeinformationen für Ihr Twitter-Konto an, und wählen Sie Ihre Twitter-App aus.
+2. Navigieren Sie zur Website für [Twitter-Entwickler](http://go.microsoft.com/fwlink/p/?LinkId=268300), melden Sie sich mit den Anmeldeinformationen für Ihr Twitter-Konto an, und wählen Sie Ihre Twitter-App aus.
 
 3. Notieren Sie sich auf der Registerkarte für die **Schlüssel und Zugriffstoken** der App die folgenden Werte:
 
@@ -36,4 +36,4 @@ Die neuen Twitter v1.1 APIs erfordern eine Authentifizierung Ihrer App, um auf R
 [Twitter Developers]: http://go.microsoft.com/fwlink/p/?LinkId=268300
 [App-Einstellungen]: http://msdn.microsoft.com/library/azure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0211_2016-->

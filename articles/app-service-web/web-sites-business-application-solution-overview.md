@@ -32,7 +32,8 @@ Im Folgenden finden Sie ein Beispiel einer in App Service-Web-Apps ausgeführten
 
 <object type="image/svg+xml" data="https://sidneyhcontent.blob.core.windows.net/documentation/web-app-notitle.svg" width="100%" height="100%"></object>
 
-> [AZURE.NOTE]In diesem Leitfaden werden einige der häufigsten Themenbereichen und Aufgaben im Zusammenhang mit Branchenanwendungen vorgestellt. Azure App Service-Web-Apps bieten jedoch noch weitere Funktionen, die Sie in Ihrer speziellen Implementierung nutzen können. Weitere Informationen zu diesen Funktionen finden Sie in den anderen Leitfäden unter [Globale Webpräsenz](web-sites-global-web-presence-solution-overview.md) und [Digitale Marketingkampagnen](web-sites-digital-marketing-application-solution-overview.md) (beides in englischer Sprache).
+> [AZURE.NOTE]
+In diesem Leitfaden werden einige der häufigsten Themenbereichen und Aufgaben im Zusammenhang mit Branchenanwendungen vorgestellt. Azure App Service-Web-Apps bieten jedoch noch weitere Funktionen, die Sie in Ihrer speziellen Implementierung nutzen können. Weitere Informationen zu diesen Funktionen finden Sie in den anderen Leitfäden unter [Globale Webpräsenz](web-sites-global-web-presence-solution-overview.md) und [Digitale Marketingkampagnen](web-sites-digital-marketing-application-solution-overview.md) (beides in englischer Sprache).
 
 ## Nutzen vorhandener Ressourcen
 
@@ -79,10 +80,10 @@ Im Modus **Standard** erhalten die für die Web-App-Überwachung verantwortliche
 ## Weitere Ressourcen
 
 - [App Service-Web-Apps-Dokumentation](/services/app-service/web/)
-- [Lernkonzept für Azure App Service-Web-Apps](websites-learning-map.md)
+- [Lernkonzept für Azure App Service-Web-Apps](/documentation/learning-paths/appservice-webapps/)
 - [Azure-Web-Blog](/blog/topics/web/)
 
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../../includes/app-service-web-whats-changed.md)]
 
@@ -124,4 +125,4 @@ Im Modus **Standard** erhalten die für die Web-App-Überwachung verantwortliche
 
  
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0211_2016-->

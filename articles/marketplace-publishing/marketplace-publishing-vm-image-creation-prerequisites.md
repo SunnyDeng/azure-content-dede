@@ -13,7 +13,7 @@
   ms.topic="article"
   ms.tgt_pltfrm="Azure"
   ms.workload="na"
-  ms.date="10/09/2015"
+  ms.date="02/04/2016"
   ms.author="hascipio; v-divte"/>
 
 # Technische Voraussetzungen für das Erstellen eines VM-Images für den Azure Marketplace
@@ -33,7 +33,7 @@ Sie können Azure-basierte virtuelle Computer unter Windows oder Linux erstellen
 - Bei Verwendung von Linux finden Sie weitere Informationen im [Leitfaden zum Veröffentlichen von VM-Images](marketplace-publishing-vm-image-creation.md) im Abschnitt „Erstellen einer mit Azure kompatiblen VHD (Linux-basiert)“.
 - Bei Verwendung von Windows finden Sie weitere Informationen im [Leitfaden zum Veröffentlichen von VM-Images](marketplace-publishing-vm-image-creation.md) im Abschnitt „Erstellen einer mit Azure kompatiblen VHD (Windows-basiert)“.
 
-> [AZURE.NOTE]Sie benötigen Zugriff auf einen Windows-basierten Computer, um folgende Aufgaben auszuführen: – Ausführen des Tools für die Zertifizierungsprüfung. – Erstellen der VHD-SAS-URL zum Übermitteln der VHD-Zertifizierung.
+> [AZURE.NOTE] Sie benötigen Zugriff auf einen Windows-basierten Computer, um folgende Aufgaben auszuführen: – Ausführen des Tools für die Zertifizierungsprüfung. – Erstellen der VHD-SAS-URL zum Übermitteln der VHD-Zertifizierung.
 
 ## Entwickeln Ihrer virtuellen Festplatte
 Azure-VHDs können in der Cloud oder lokal entwickelt werden:
@@ -51,4 +51,4 @@ Sie haben die Voraussetzungen überprüft und die erforderlichen Aufgaben ausgef
 
 [link-acct-creation]: marketplace-publishing-accounts-creation-registration.md
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0211_2016-->

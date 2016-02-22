@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Stichprobendaten im Cortana-Analyseprozess" 
-	description="Informationen zum Durchsuchen von Daten in verschiedenen Speicherumgebungen." 
+	pageTitle="Entnehmen von Datenstichproben in Azure-Blobcontainern, SQL Server und Hive-Tabellen | Microsoft Azure" 
+	description="Informationen zum Durchsuchen von Daten, die in verschiedenen Azure-Umgebungen gespeichert sind." 
 	services="machine-learning" 
 	documentationCenter="" 
 	authors="bradsev" 
@@ -13,23 +13,27 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/20/2015" 
+	ms.date="02/07/2016" 
 	ms.author="fashah;garye;bradsev" />
 
-#<a name="heading"></a>Stichprobendaten im Cortana-Analyseprozess
-
-Dieses **Menü** enthält Links zu Themen, die beschreiben, wie Datenstichproben aus verschiedenen Speicherumgebungen erstellt werden. Diese Aufgabe ist ein Teil des Cortana-Analyseprozesses (CAP).
-
-[AZURE.INCLUDE [cap-sample-data-selector](../../includes/cap-sample-data-selector.md)]
+#<a name="heading"></a>Entnehmen von Datenstichproben in Azure-Blobcontainern, SQL Server und Hive-Tabellen
 
 ## Einführung
 
-Dieses Dokument behandelt das Erstellen von Stichproben aus Daten im Azure Blob-Speicher durch programmgesteuertes Herunterladen, um dann mit Python-Code Stichproben zu erstellen. Befolgen Sie dazu die folgenden Schritte:
-
-Dieses Dokument beschreibt, wie Sie Stichproben von Daten entnehmen, die an drei Stellen gespeichert sind, die normalerweise im Cortana-Analyseprozess verwendet werden:
+Dieses Dokument beschreibt, wie Sie Stichproben von an drei Stellen gespeicherten Daten entnehmen, die normalerweise zum Analysieren und Modellieren von Daten im Cortana Analytics-Prozess verwendet werden:
 
 - **Azure Blob-Containerdaten**: Stichproben werden durch programmgesteuertes Herunterladen entnommen, um dann anschließend mit Python-Code Stichproben zu erstellen.
 - **SQL Server-Daten**: Stichproben werden mithilfe von SQL und der Python-Programmiersprache erstellt. 
 - **Hive-Tabellendaten**: Stichproben werden mit Hive-Abfragen erstellt.
 
-<!---HONumber=Nov15_HO1-->
+Das nachstehende **Menü** enthält Links zu Themen, die das Entnehmen von Datenstichproben aus den verschiedenen Azure Storage-Umgebungen beschreiben.
+
+[AZURE.INCLUDE [cap-sample-data-selector](../../includes/cap-sample-data-selector.md)]
+
+Diese Datenstichprobenaufgabe ist ein Teil des [Cortana Analytics-Prozesses (CAP)](https://azure.microsoft.com/documentation/learning-paths/cortana-analytics-process/).
+
+## Warum Datenstichproben entnehmen?
+
+Wenn das Dataset, das Sie analysieren möchten, groß ist, sollten Sie in der Regel eine Komprimierung der Daten durchführen, um eine geringere aber immer noch repräsentative Größe zu erhalten. Dies erleichtert das Verständnis der Daten, das Durchsuchen und die Funktionsverarbeitung. Die Funktion besteht innerhalb des Cortana-Analyseprozesses darin, schnell Prototypen der Funktionen zur Datenverarbeitung und Modelle für das maschinelle Lernen zu erstellen.
+
+<!---HONumber=AcomDC_0211_2016-->

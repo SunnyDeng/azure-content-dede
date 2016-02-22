@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="12/05/2015"
+    ms.date="02/02/2016"
     ms.author="ericor" />
 
 
@@ -26,7 +26,7 @@ Nachdem Sie Ihr benutzerdefiniertes Vorlagenimage erstellt oder aktualisiert hab
 ## Vorbereitung
 
 1.      Vergewissern Sie sich, dass Ihr benutzerdefiniertes Image den [Anforderungen an Images](remoteapp-imagereqs.md) und den [Anforderungen an Anwendungen](remoteapp-appreqs.md) entspricht.
-2.      Installieren Sie das [Azure PowerShell-Modul](../install-configure-powershell.md).
+2.      Installieren Sie das [Azure PowerShell-Modul](../powershell-install-configure.md).
 
 ## So laden Sie ein benutzerdefiniertes Image hoch
 
@@ -43,7 +43,7 @@ Nachdem Sie Ihr benutzerdefiniertes Vorlagenimage erstellt oder aktualisiert hab
 
 11.    Wenn der Upload aufgrund einer Netzwerkstörung oder einem ähnlichen Problem nicht abgeschlossen wird, können Sie den Vorgang jederzeit fortsetzen. Zum Fortsetzen eines Uploads führen Sie das Skript erneut mit derselben Befehlszeile aus.
 
-> [AZURE.WARNING]Ändern Sie niemals das Uploadskript. Es sind verschiedene Tests implementiert, um sicherzustellen, dass das Image den Anforderungen an Images und Anwendungen entspricht.
+> [AZURE.WARNING] Ändern Sie niemals das Uploadskript. Es sind verschiedene Tests implementiert, um sicherzustellen, dass das Image den Anforderungen an Images und Anwendungen entspricht.
 
 ## Häufiger auftretende Probleme
 
@@ -51,4 +51,4 @@ Nachdem Sie Ihr benutzerdefiniertes Vorlagenimage erstellt oder aktualisiert hab
 - Nehmen Sie keine Änderungen am Skript vor, die Überprüfungen sollen Ihnen helfen.
 - Wenn die VHD-Datei beim Upload ausgesperrt wird, kopieren oder verschieben Sie sie an den neuen Speicherort, und wiederholen Sie den Upload. Möglicherweise verhindern bestimmte Windows-Prozesse den Upload.  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0211_2016-->

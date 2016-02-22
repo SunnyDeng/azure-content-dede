@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/08/2015"  
+	ms.date="02/03/2016" 
 	ms.author="juliako"/>
 
 
@@ -65,7 +65,7 @@ In der folgenden Tabelle wird das in castLabs verwendete JWT-Token beschrieben.
 Name|Beschreibung
 ---|---
 optData|Eine JSON-Zeichenfolge, die Informationen über Sie enthält. 
-crt|Eine JSON-Zeichenfolge mit Angaben zum Asset, den zugehörigen Lizenzinformationen und Wiedergaberechten.
+crt|Eine JSON-Zeichenfolge mit Angaben zum Medienobjekt, den zugehörigen Lizenzinformationen und Wiedergaberechten.
 iat|Aktuelles Datum und aktuelle Uhrzeit in der Epoche.
 jti|Ein eindeutiger Bezeichner des Tokens (jedes Token kann im castLabs-System nur einmal verwendet werden).
 
@@ -73,19 +73,19 @@ jti|Ein eindeutiger Bezeichner des Tokens (jedes Token kann im castLabs-System n
 
 Die [Beispiellösung](https://github.com/AzureMediaServicesSamples/CastlabsIntegration) besteht aus zwei Projekten:
 
--	Einer Konsolenanwendung, mit der DRM-Einschränkungen für ein bereits eingefügtes Asset für PlayReady und Widevine festgelegt werden können.
+-	Einer Konsolenanwendung, mit der DRM-Einschränkungen für ein bereits eingefügtes Medienobjekt für PlayReady und Widevine festgelegt werden können.
 -	Einer Webanwendung, die Token ausgibt und als SEHR VEREINFACHTE Version eines STS aufgefasst werden kann.
 
 
 So verwenden Sie die Konsolenanwendung
 
 1.	Ändern Sie die Datei "app.config", und richten Sie die AMS-Anmeldeinformationen, die castLabs-Anmeldeinformationen, die STS-Konfiguration und den gemeinsam verwendeten Schlüssel ein.
-2.	Laden Sie ein Asset in AMS hoch.
-3.	Rufen Sie die UUID aus dem hochgeladenen Asset ab, und ändern Sie die Zeile 32 in der Datei "Program.cs":
+2.	Laden Sie ein Medienobjekt in AMS hoch.
+3.	Rufen Sie die UUID aus dem hochgeladenen Medienobjekt ab, und ändern Sie die Zeile 32 in der Datei "Program.cs":
 
 		 var objIAsset = _context.Assets.Where(x => x.Id == "nb:cid:UUID:dac53a5d-1500-80bd-b864-f1e4b62594cf").FirstOrDefault();
 
-4.	Verwenden Sie zur Benennung des Assets im castLabs-System eine AssetId (Zeile 44 in der Datei "Program.cs").
+4.	Verwenden Sie zur Benennung des Medienobjekts im castLabs-System eine AssetId (Zeile 44 in der Datei "Program.cs").
 
 	Für die AssetId für **castLabs** müssen Sie eine eindeutige alphanumerische Zeichenfolge festlegen.
 
@@ -122,4 +122,4 @@ Ein durch allgemeine Verschlüsselung (PlayReady und/oder Widevine) verschlüsse
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0211_2016-->

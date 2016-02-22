@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="vm-multiple"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/15/2015"
+	ms.date="02/03/2016"
 	ms.author="cynthn"/>
 
 
@@ -52,7 +52,10 @@ So verbinden Sie virtuelle Computer in einem virtuellen Netzwerk:
 So verbinden Sie virtuelle Computer in einem eigenständigen Clouddienst:
 
 1.	Erstellen Sie den Clouddienst im [klassischen Azure-Portal](http://manage.windowsazure.com). Klicken Sie auf **Neu > Compute > Clouddienst > Benutzerdefiniert erstellen**. Alternativ können Sie beim Erstellen des ersten virtuellen Computers den Clouddienst für Ihre Bereitstellung erstellen.
-2.	Wählen Sie beim Erstellen der virtuellen Computer den Namen des im vorherigen Schritts erstellten Clouddiensts aus. ![Hinzufügen eines virtuellen Computers zu einem vorhandenen Clouddienst](./media/howto-connect-vm-cloud-service/Connect-VM-to-CS.png)
+
+2.	Wählen Sie beim Erstellen der virtuellen Computer den Namen des im vorherigen Schritts erstellten Clouddiensts aus.
+
+	![Hinzufügen eines virtuellen Computers zu einem vorhandenen Clouddienst](./media/howto-connect-vm-cloud-service/Connect-VM-to-CS.png)
 
 ##Ressourcen
 [Lastenausgleich virtueller Computer](load-balance-virtual-machines.md)
@@ -65,4 +68,4 @@ Nachdem Sie einen virtuellen Computer erstellt haben, empfiehlt es sich, einen D
 
 [Anfügen eines Datenträgers an einen virtuellen Windows-Computer](storage-windows-attach-disk.md)
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

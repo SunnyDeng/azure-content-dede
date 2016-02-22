@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-multiple"
 	ms.topic="article"
 	ms.devlang="dotnet"
-	ms.date="12/09/2015"
+	ms.date="02/07/2016"
 	ms.author="krisragh"/>
 
 # Dienstseitige Autorisierung von Benutzern in Mobile Services
@@ -37,7 +37,7 @@ Dieses Lernprogramm basiert auf Mobile Services-Schnellstart und setzt auf dem L
 
 		public string UserId { get; set; }
 
-	>[AZURE.NOTE]Um eine Datenmodelländerung durchzuführen und bestehende Daten in der Datenbank beizubehalten, müssen Sie [Code First-Migrationen](mobile-services-dotnet-backend-how-to-use-code-first-migrations.md) verwenden.
+	>[AZURE.NOTE] Um eine Datenmodelländerung durchzuführen und bestehende Daten in der Datenbank beizubehalten, müssen Sie [Code First-Migrationen](mobile-services-dotnet-backend-how-to-use-code-first-migrations.md) verwenden.
 
 2. Erweitern Sie Visual Studio den Controller-Ordner, öffnen Sie **TodoItemController.cs**, und fügen Sie die folgende Using-Anweisung hinzu:
 
@@ -84,4 +84,4 @@ Dieses Lernprogramm basiert auf Mobile Services-Schnellstart und setzt auf dem L
 <!-- URLs. -->
 [Hinzufügen von Authentifizierung zu einer vorhandenen Mobile Services-App]: mobile-services-dotnet-backend-ios-get-started-users.md
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0211_2016-->

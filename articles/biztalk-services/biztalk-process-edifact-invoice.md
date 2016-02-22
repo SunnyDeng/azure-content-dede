@@ -22,7 +22,7 @@ Sie können X12- und EDIFACT-Vereinbarungen im BizTalk Services-Portal konfiguri
 ## Auf diesem Tutorial basierendes Beispiel
 Dieses Tutorial basiert auf dem Beispiel **Process EDIFACT Invoices Using Azure BizTalk Services**, das aus dem [MSDN-Codekatalog](http://go.microsoft.com/fwlink/?LinkId=401005) herunterladen werden kann. Sie können dieses Tutorial anhand des Beispiels durchlaufen, um zu verstehen, wie das Beispiel erstellt wurde. Sie können dieses Tutorial aber auch nutzen, um Ihre eigene Lösung von Grund auf zu erstellen. Dieses Tutorial ist auf den zweiten Ansatz ausgelegt, damit Sie nachvollziehen können, wie diese Lösung entwickelt wurde. Darüber hinaus ist dieses Tutorial so weit wie möglich in Einklang mit dem Beispiel, sodass dieselben Namen für Artefakte (z. B. Schemas und Transformationen) wie im Beispiel verwendet werden.
 
->[AZURE.NOTE]Da diese Lösung das Senden einer Nachricht von einer EAI-Brücke an eine EDI-Brücke umfasst, wird das Beispiel [BizTalk Services Bridge chaining sample – EAI to EDI](http://code.msdn.microsoft.com/BizTalk-Bridge-chaining-2246b104) wiederverwendet.
+>[AZURE.NOTE] Da diese Lösung das Senden einer Nachricht von einer EAI-Brücke an eine EDI-Brücke umfasst, wird das Beispiel [BizTalk Services Bridge chaining sample – EAI to EDI](http://code.msdn.microsoft.com/BizTalk-Bridge-chaining-2246b104) wiederverwendet.
 
 ## Was ist die Aufgabe der Lösung?
 
@@ -40,7 +40,7 @@ Zur Verwirklichung dieses Geschäftsszenarios verwendet Contoso die von Microsof
 
 *   Nach Empfang der Rechnung sendet Northwind eine CONTRL-Nachricht an die EDI-Empfangsbrücke zurück, die als Teil der Vereinbarung bereitgestellt wurde.
 
-> [AZURE.NOTE]Optional veranschaulicht diese Lösung auch das Verwenden der Batchverarbeitung zum Senden von Rechnungen in Batches anstatt einzelner getrennter Rechnungen.
+> [AZURE.NOTE] Optional veranschaulicht diese Lösung auch das Verwenden der Batchverarbeitung zum Senden von Rechnungen in Batches anstatt einzelner getrennter Rechnungen.
 
 Zum Vervollständigen dieses Szenarios verwenden wir Service Bus-Warteschlangen zum Senden der Rechnung von Contoso an Northwind bzw. zum Empfang einer Bestätigung von Northwind. Diese Warteschlangen können mithilfe einer Clientanwendung erstellt werden, die als Download verfügbar und im Beispielpaket enthalten ist, das als Teil dieses Tutorials zur Verfügung steht.
 
@@ -173,7 +173,7 @@ Das BizTalk Services-Projekt **InvoiceProcessingBridge**, das die Umformung der 
 
 7.  Erweitern Sie im Projektmappen-Explorer **MessageFlowItinerary.bcs**, und doppelklicken Sie auf die Datei **EDIBridge.config**. Ersetzen Sie den Inhalt von **EDIBridge.config** durch Folgendes.
 
-    > [AZURE.NOTE]Warum muss ich die CONFIG-Datei bearbeiten? Der externe Dienstendpunkt, den wir dem Zeichenbereich im Brücken-Designer hinzugefügt haben, stellt die EDI-Brücken dar, die wir zuvor bereitgestellt hatten. EDI-Brücken sind bidirektionale Brücken mit einer Sende- und einer Empfangsseite. Die EAI-Brücke, die wir dem Brücken-Designer hinzugefügt haben, ist jedoch eine unidirektionale Brücke. Zum Verarbeiten der verschiedenen Nachrichtenaustauschmuster der beiden Brücken verwenden wir ein benutzerdefiniertes Brückenverhalten, indem wir ihre Konfiguration in die CONFIG-Datei aufnehmen. Darüber hinaus übernimmt das benutzerdefinierte Verhalten auch die Authentifizierung beim Endpunkt der EDI-Sendebrücke.Dieses benutzerdefinierte Verhalten ist als eigenes Beispiel unter [BizTalk Services-Beispiel zur Brückenverkettung – EAI zu EDI](http://code.msdn.microsoft.com/BizTalk-Bridge-chaining-2246b104) verfügbar. Das Beispiel wird in dieser Projektmappe wiederverwendet.
+    > [AZURE.NOTE] Warum muss ich die CONFIG-Datei bearbeiten? Der externe Dienstendpunkt, den wir dem Zeichenbereich im Brücken-Designer hinzugefügt haben, stellt die EDI-Brücken dar, die wir zuvor bereitgestellt hatten. EDI-Brücken sind bidirektionale Brücken mit einer Sende- und einer Empfangsseite. Die EAI-Brücke, die wir dem Brücken-Designer hinzugefügt haben, ist jedoch eine unidirektionale Brücke. Zum Verarbeiten der verschiedenen Nachrichtenaustauschmuster der beiden Brücken verwenden wir ein benutzerdefiniertes Brückenverhalten, indem wir ihre Konfiguration in die CONFIG-Datei aufnehmen. Darüber hinaus übernimmt das benutzerdefinierte Verhalten auch die Authentifizierung beim Endpunkt der EDI-Sendebrücke. Dieses benutzerdefinierte Verhalten steht als eigenes Beispiel unter [BizTalk Services Bridge chaining sample – EAI to EDI](http://code.msdn.microsoft.com/BizTalk-Bridge-chaining-2246b104) (BizTalk Services Bridge-Verkettungsbeispiel – EAI zu EDI) zur Verfügung. Das Beispiel wird in dieser Projektmappe wiederverwendet.
     
     ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -312,4 +312,4 @@ Der wichtigste Aspekt beim Arbeiten mit Batches besteht in der eigentlichen Frei
 [17]: ./media/biztalk-process-edifact-invoice/process-edifact-invoices-with-auzure-bts-17.PNG
 [18]: ./media/biztalk-process-edifact-invoice/process-edifact-invoices-with-auzure-bts-18.PNG
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0211_2016-->

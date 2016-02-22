@@ -26,7 +26,7 @@ Ein Gerät kann sich entweder über die Bibliotheken in den [Microsoft Azure IoT
 
 ## Verwenden der SDKs für Geräteclients
 
-[SDKs für Geräteclients][lnk-mqtt-org] mit Unterstützung des Protokolls MQTT stehen für Java, Node.js, C und C# zur Verfügung. Die SDKs für Geräteclients verwenden die standardmäßige IoT Hub-Verbindungszeichenfolge zum Herstellen einer Verbindung mit einem IoT Hub. Um das MQTT-Protokoll verwenden zu können, muss der Clientprotokollparameter auf **MQTT** festgelegt werden. Standardmäßig verbinden sich die SDKs von Geräteclients mit einem IoT Hub, indem das **CleanSession**-Flag auf **0** festgelegt und **QoS-1** für den Nachrichtenaustausch mit dem IoT Hub verwendet wird.
+[SDKs für Geräteclients][lnk-device-sdks] mit Unterstützung des Protokolls MQTT stehen für Java, Node.js, C und C# zur Verfügung. Die SDKs für Geräteclients verwenden die standardmäßige IoT Hub-Verbindungszeichenfolge zum Herstellen einer Verbindung mit einem IoT Hub. Um das MQTT-Protokoll verwenden zu können, muss der Clientprotokollparameter auf **MQTT** festgelegt werden. Standardmäßig verbinden sich die SDKs von Geräteclients mit einem IoT Hub, indem das **CleanSession**-Flag auf **0** festgelegt und **QoS-1** für den Nachrichtenaustausch mit dem IoT Hub verwendet wird.
 
 Wenn ein Gerät mit einem IoT Hub verbunden ist, bieten die SDKs von Geräteclients Methoden, die dem Gerät das Senden von Nachrichten an und Empfangen von Nachrichten von einem IoT Hub ermöglichen.
 
@@ -63,7 +63,7 @@ Die Geräteclientanwendung kann auch `devices/{did}/messages/events/{property_ba
 
 ### Empfangen von Nachrichten
 
-Zum Empfangen von Nachrichten von einem IoT Hub muss ein Gerät ein Abonnement unter Verwendung von `devices/{did}/messages/devicebound/#”` als **Themenfilter** einrichten. Der IoT Hub übermittelt Nachrichten mit dem **Themenname** `devices/{did}/messages/devicebound/` oder `devices/{did}/messages/devicebound/{property_bag}`, sofern Nachrichteneigenschaften vorhanden sind.`{property_bag}` enthält URL-codierte Schlüssel-Wert-Paare von Nachrichteneigenschaften. Nur Anwendungseigenschaften und vom Benutzer festlegbare Systemeigenschaften (z. B. **messageId** oder **correlationId**) sind im Eigenschaftenbehälter enthalten. Systemeigenschaftennamen haben das Präfix **$**, Anwendungseigenschaften verwenden den ursprünglichen Eigenschaftennamen ohne Präfix.
+Zum Empfangen von Nachrichten von einem IoT Hub muss ein Gerät ein Abonnement unter Verwendung von `devices/{did}/messages/devicebound/#”` als **Themenfilter** einrichten. IoT Hub liefert Nachrichten mit dem **Themennamen** `devices/{did}/messages/devicebound/` oder `devices/{did}/messages/devicebound/{property_bag}`, wenn Nachrichteneigenschaften vorhanden sind. `{property_bag}` enthält URL-codierte Schlüssel-Wert-Paare von Nachrichteneigenschaften. Nur Anwendungseigenschaften und vom Benutzer festlegbare Systemeigenschaften (z. B. **messageId** oder **correlationId**) sind im Eigenschaftenbehälter enthalten. Systemeigenschaftennamen haben das Präfix **$**, Anwendungseigenschaften verwenden den ursprünglichen Eigenschaftennamen ohne Präfix.
 
 ## Nächste Schritte
 
@@ -81,4 +81,4 @@ Weitere Informationen zum Protokoll MQTT finden Sie in der [MQTT-Dokumentation][
 [lnk-sample-c]: https://github.com/Azure/azure-iot-sdks/tree/master/c/iothub_client/samples/iothub_client_sample_mqtt
 [lnk-sample-csharp]: https://github.com/Azure/azure-iot-sdks/tree/master/csharp/device/samples
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

@@ -14,13 +14,13 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/04/2016" 
+	ms.date="02/05/2016" 
 	ms.author="nitinme"/>
 
 
 # Machine Learning: Vorhersageanalyse von Lebensmittelkontrolldaten mithilfe von MLlib mit Spark in HDInsight (Linux)
 
-> [AZURE.TIP]Dieses Tutorial steht auch als Jupyter-Notebook für einen Spark-Cluster (Linux) zur Verfügung, den Sie in HDInsight erstellen. In der Notebook-Umgebung können Sie die Python-Ausschnitte direkt im Notebook ausführen. Wenn Sie das Tutorial innerhalb eines Notebooks ausführen möchten, erstellen Sie einen Spark-Cluster, starten Sie ein Jupyter-Notebook (`https://CLUSTERNAME.azurehdinsight.net/jupyter`), und führen Sie dann das Notebook **Spark Machine Learning - Predictive analysis on food inspection data using MLLib.ipynb** im Ordner **Python** aus.
+> [AZURE.TIP] Dieses Tutorial steht auch als Jupyter-Notebook für einen Spark-Cluster (Linux) zur Verfügung, den Sie in HDInsight erstellen. In der Notebook-Umgebung können Sie die Python-Ausschnitte direkt im Notebook ausführen. Wenn Sie das Tutorial innerhalb eines Notebooks ausführen möchten, erstellen Sie einen Spark-Cluster, starten Sie ein Jupyter-Notebook (`https://CLUSTERNAME.azurehdinsight.net/jupyter`), und führen Sie dann das Notebook **Spark Machine Learning - Predictive analysis on food inspection data using MLLib.ipynb** im Ordner **Python** aus.
 
 
 Dieser Artikel beschreibt, wie Sie **MLLib**, die integrierten Bibliotheken für maschinelles Lernen von Spark, verwenden, um eine einfache Vorhersageanalyse für einen offenen Datensatz durchzuführen. MLLib ist eine Spark-Kernbibliothek, die eine Reihe von Hilfsprogrammen bietet, die nützlich für maschinelle Lernaufgaben sind, darunter auch für folgende Aufgaben geeignete Hilfsprogramme:
@@ -59,7 +59,7 @@ In den folgenden Schritten entwickeln Sie ein Modell, um zu ermitteln, wie Sie e
 
 2. Klicken Sie auf dem Blatt für den Spark-Cluster auf **Quicklinks** und anschließend auf dem Blatt **Cluster Dashboard** auf **Jupyter Notebook**. Geben Sie die Administratoranmeldeinformationen für den Cluster ein, wenn Sie dazu aufgefordert werden.
 
-	> [AZURE.NOTE]Sie können auch das Jupyter Notebook für Ihren Cluster aufrufen, indem Sie in Ihrem Browser die folgende URL öffnen. Ersetzen Sie __CLUSTERNAME__ durch den Namen Ihres Clusters:
+	> [AZURE.NOTE] Sie können auch das Jupyter Notebook für Ihren Cluster aufrufen, indem Sie in Ihrem Browser die folgende URL öffnen. Ersetzen Sie __CLUSTERNAME__ durch den Namen Ihres Clusters:
 	>
 	> `https://CLUSTERNAME.azurehdinsight.net/jupyter`
 
@@ -375,7 +375,9 @@ Nach Ausführen der Anwendung empfiehlt es sich, das Notebook herunterzufahren, 
 
 * [Remoteausführung von Aufträgen in einem Spark-Cluster mithilfe von Livy](hdinsight-apache-spark-livy-rest-interface.md)
 
-### Erweiterungen
+### Tools und Erweiterungen
+
+* [Verwenden des HDInsight-Tools-Plug-Ins für IntelliJ IDEA zum Erstellen und Übermitteln von Spark Scala-Anwendungen](hdinsight-apache-spark-intellij-tool-plugin.md)
 
 * [Verwenden von Zeppelin-Notebooks mit einem Spark-Cluster in HDInsight](hdinsight-apache-spark-use-zeppelin-notebook.md)
 
@@ -385,4 +387,4 @@ Nach Ausführen der Anwendung empfiehlt es sich, das Notebook herunterzufahren, 
 
 * [Verwalten von Ressourcen für den Apache Spark-Cluster in Azure HDInsight](hdinsight-apache-spark-resource-manager.md)
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0211_2016-->

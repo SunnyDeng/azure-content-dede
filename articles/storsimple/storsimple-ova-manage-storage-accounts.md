@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="01/29/2016"
+   ms.date="02/05/2016"
    ms.author="alkohli" />
 
 # Verwalten von Speicherkonten mithilfe des StorSimple Manager-Diensts (Vorschau)
@@ -72,7 +72,7 @@ Sie können ein Speicherkonto bearbeiten, das von Ihrem Gerät verwendet wird. W
 
 3. Gehen Sie im Dialogfeld **Speicherkonten hinzufügen/bearbeiten** folgendermaßen vor:
 
-  1. Wählen Sie in der Dropdownliste **Speicherkonten** ein vorhandenes Konto aus, das Sie ändern möchten. Dies kann auch Speicherkonten umfassen, die bei der ersten Erstellung des Diensts automatisch generiert wurden.
+  1. Wählen Sie in der Dropdownliste **Speicherkonten** ein vorhandenes Konto aus, das Sie ändern möchten.
   2. Ändern Sie ggf. die Auswahl für **SSL-Modus aktivieren**.
   3. Falls gewünscht, können Sie auch die Speicherkonto-Zugriffsschlüssel neu generieren. Weitere Informationen finden Sie unter [Erneutes Generieren von Speicherzugriffsschlüsseln](storage-create-storage-account.md#manage-your-storage-access-keys). Geben Sie den neuen Speicherkonto-Zugriffsschlüssel an. Für ein Azure-Speicherkonto ist dies der primäre Zugriffsschlüssel 
   4. Klicken Sie auf das Häkchensymbol ![Häkchensymbol](./media/storsimple-ova-manage-storage-accounts/checkicon.png) zum Speichern der Einstellungen. Die Einstellungen werden auf der Seite **Konfigurieren** aktualisiert. 
@@ -99,6 +99,6 @@ Sie können ein Speicherkonto bearbeiten, das von Ihrem Gerät verwendet wird. W
 
 ## Nächste Schritte
 
-- Erfahren Sie mehr über das [Verwalten Ihres StorSimple Virtual Arrays mithilfe des StorSimple Manager-Diensts](storsimple-ova-manager-service-administration.md).
+- Erfahren Sie, wie Sie [Ihr StorSimple Virtual Array verwalten](storsimple-ova-web-ui-admin.md).
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

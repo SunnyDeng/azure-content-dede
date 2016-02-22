@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/05/2015"
+ 	ms.date="02/09/2016"  
 	ms.author="juliako"/>
 
 
@@ -33,7 +33,8 @@ In diesem Thema wird gezeigt, wie Sie die folgenden Media Services-Verwaltungsau
 - Auflisten aller Medienobjekte 
 - Auflisten von Aufträgen und Medienobjekten 
 - Auflisten aller Zugriffsrichtlinien 
-- Auflisten aller Locators 
+- Auflisten aller Locators
+- Auflisten von großen Auflistungen von Entitäten
 - Löschen eines Medienobjekts 
 - Löschen eines Auftrags 
 - Löschen einer Zugriffsrichtlinie 
@@ -245,6 +246,47 @@ Beachten Sie, dass ein Locator-Pfad für ein Medienobjekt nur eine Basis-URL des
 	    }
 	}
 
+## Auflisten von großen Auflistungen von Entitäten
+
+Beim Abfragen von Entitäten gibt es ein Limit von 1.000 Entitäten, die gleichzeitig zurückgegeben werden können, da die öffentliche REST-Version 2 Abfrageergebnisse auf 1.000 Ergebnisse begrenzt. Sie müssen für das Auflisten großer Auflistungen von Entitäten „Skip“ und „Take“ verwenden.
+	
+Die folgende Funktion durchläuft alle Aufträge im bereitgestellten Media Services-Konto. Media Services gibt 1.000 Aufträge aus der Auftragsauflistung zurück. Die Funktion nutzt „Skip“ und „Take“, damit alle Aufträge aufgezählt werden (falls Sie mehr als 1.000 Aufträge in Ihrem Konto haben).
+	
+	static void ProcessJobs()
+	{
+	    try
+	    {
+	
+	        int skipSize = 0;
+	        int batchSize = 1000;
+	        int currentBatch = 0;
+	
+	        while (true)
+	        {
+	            // Loop through all Jobs (1000 at a time) in the Media Services account
+	            IQueryable _jobsCollectionQuery = _context.Jobs.Skip(skipSize).Take(batchSize);
+	            foreach (IJob job in _jobsCollectionQuery)
+	            {
+	                currentBatch++;
+	                Console.WriteLine("Processing Job Id:" + job.Id);
+	            }
+	
+	            if (currentBatch == batchSize)
+	            {
+	                skipSize += batchSize;
+	                currentBatch = 0;
+	            }
+	            else
+	            {
+	                break;
+	            }
+	        }
+	    }
+	    catch (Exception ex)
+	    {
+	        Console.WriteLine(ex.Message);
+	    }
+	}
 
 ##Löschen eines Medienobjekts
 
@@ -339,4 +381,4 @@ Im folgenden Codebeispiel wird veranschaulicht, wie Sie einen Verweis auf eine Z
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0211_2016-->

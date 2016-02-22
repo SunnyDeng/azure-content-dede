@@ -21,7 +21,7 @@
 
 In diesem Tutorial erfahren Sie, wie Sie umfangreiche komplexe Anwendungen mit [Azure App Service](/services/app-service/) auf eine Weise erstellen, die die [agile Softwareentwicklung](https://en.wikipedia.org/wiki/Agile_software_development) unterstützt. Es wird davon ausgegangen, dass Sie bereits wissen, wie Sie [komplexe Anwendungen in Azure vorhersehbar bereitstellen](app-service-deploy-complex-application-predictably.md).
 
-Einschränkungen bei den technischen Prozessen stehen einer erfolgreichen Umsetzung agiler Methoden mitunter im Weg. Azure App Service kann mit Features wie [kontinuierliche Veröffentlichung](web-sites-publish-source-control.md), [Stagingumgebungen](web-sites-staged-publishing.md) (Slots) und [Überwachung](web-sites-monitor.md) und bei überlegter Kombination mit der Orchestrierung und Verwaltung der Bereitstellung im [Azure-Ressourcen-Manager](resource-group-overview.md) Teil einer überzeugenden Lösung für Entwickler sein, die die agile Softwareentwicklung bevorzugen.
+Einschränkungen bei den technischen Prozessen stehen einer erfolgreichen Umsetzung agiler Methoden mitunter im Weg. Azure App Service kann mit Features wie [kontinuierliche Veröffentlichung](web-sites-publish-source-control.md), [Stagingumgebungen](web-sites-staged-publishing.md) (Slots) und [Überwachung](web-sites-monitor.md) und bei überlegter Kombination mit der Orchestrierung und Verwaltung der Bereitstellung im [Azure-Ressourcen-Manager](../resource-group-overview.md) Teil einer überzeugenden Lösung für Entwickler sein, die die agile Softwareentwicklung bevorzugen.
 
 Die folgende Tabelle enthält eine kurze Liste der Anforderungen an die agile Entwicklung und wie Azure-Dienste zu deren Erfüllung beitragen.
 
@@ -43,7 +43,7 @@ Sie durchlaufen einen typischen Produktionsworkflow aus Entwicklung/Test/Staging
 
 Hier eine Erläuterung der Abbildung:
 
--	Die Bereitstellungsarchitektur ist in drei verschiedene Umgebungen (bzw. [Ressourcengruppen](resource-group-overview.md) in Azure) aufgeteilt, von denen jede einen eigenen [App Service-Plan](azure-web-sites-web-hosting-plans-in-depth-overview.md), eigene [Skalierungseinstellungen](web-sites-scale.md) und eine eigene SQL-Datenbank hat. 
+-	Die Bereitstellungsarchitektur ist in drei verschiedene Umgebungen (bzw. [Ressourcengruppen](../resource-group-overview.md) in Azure) aufgeteilt, von denen jede einen eigenen [App Service-Plan](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md), eigene [Skalierungseinstellungen](web-sites-scale.md) und eine eigene SQL-Datenbank hat. 
 -	Jede Umgebung kann separat verwaltet werden. Sie können sogar in verschiedenen Abonnements vorhanden sind.
 -	Die Staging- und Produktionsumgebung werden als zwei Slots derselben App Service-App implementiert. Die Hauptverzweigung ist für die kontinuierliche Integration mit dem Stagingslot eingerichtet.
 -	Wenn ein Commit für die Hauptverzweigung im Stagingslot (mit Produktionsdaten) bestätigt wird, wird die überprüfte Staging-App im Produktionsslot [ohne Ausfallzeiten](web-sites-staged-publishing.md) ausgetauscht.
@@ -63,7 +63,7 @@ Sie verwenden auch die übliche Verzweigungsstrategie, bei der Code aus der Entw
 -	Git-Shell (mit [GitHub für Windows](https://windows.github.com/) installiert) – Ermöglicht Ihnen, Git- und PowerShell-Befehle in derselben Sitzung auszuführen. 
 -	Neueste [Azure PowerShell](https://github.com/Azure/azure-powershell/releases/download/0.9.4-June2015/azure-powershell.0.9.4.msi)-Version
 -	Grundlegende Kenntnisse der folgenden Komponenten:
-	-	Bereitstellung der [Azure-Ressourcen-Manager](resource-group-overview.md)-Vorlage (siehe auch [Vorhersagbares Bereitstellen einer komplexen Anwendung in Azure](app-service-deploy-complex-application-predictably.md))
+	-	Bereitstellung der [Azure-Ressourcen-Manager](../resource-group-overview.md)-Vorlage (siehe auch [Vorhersagbares Bereitstellen einer komplexen Anwendung in Azure](app-service-deploy-complex-application-predictably.md))
 	-	[Git](http://git-scm.com/documentation)
 	-	[PowerShell](https://technet.microsoft.com/library/bb978526.aspx)
 
@@ -270,14 +270,14 @@ Eine agile Softwareentwicklung ist für viele Unternehmen unverzichtbar, die Azu
 -	[Vorhersagbares Bereitstellen einer komplexen Anwendung in Azure](app-service-deploy-complex-application-predictably.md)
 -	[Agile Entwicklung in der Praxis: Tipps und Tricks für die Modernisierung des Entwicklungszyklus](http://channel9.msdn.com/Events/Ignite/2015/BRK3707)
 -	[Erweiterte Bereitstellungsstrategien für Azure-Web-Apps mithilfe von Ressourcen-Manager-Vorlagen ](http://channel9.msdn.com/Events/Build/2015/2-620)
--	[Erstellen von Azure-Ressourcen-Manager-Vorlagen](resource-group-authoring-templates.md)
+-	[Erstellen von Azure-Ressourcen-Manager-Vorlagen](../resource-group-authoring-templates.md)
 -	[JSONLint – The JSON Validator](http://jsonlint.com/)
 -	[ARMClient – Set up GitHub publishing to site](https://github.com/projectKudu/ARMClient/wiki/Setup-GitHub-publishing-to-Site)
 -	[Git Branching – Basic Branching and Merging](http://www.git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
 -	[Blog von David Ebbo](http://blog.davidebbo.com/)
--	[Azure PowerShell](powershell-install-configure.md)
--	[Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](xplat-cli-install.md)
+-	[Azure PowerShell](../powershell-install-configure.md)
+-	[Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md)
 -	[Erstellen oder Bearbeiten von Benutzern in Azure AD](https://msdn.microsoft.com/library/azure/hh967632.aspx#BKMK_1)
 -	[Wiki zum Kudu-Projekt](https://github.com/projectkudu/kudu/wiki)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

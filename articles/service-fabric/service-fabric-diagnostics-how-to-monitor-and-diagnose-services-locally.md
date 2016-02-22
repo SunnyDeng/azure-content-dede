@@ -31,7 +31,7 @@
 
 ## Anzeigen von Service Fabric-Ereignissen in Visual Studio
 
-Service Fabric gibt ETW-Ereignisse aus, um die Abläufe in der Plattform für Anwendungsentwickler sichtbar zu machen. Führen Sie jetzt die Schritte unter [Erstellen Ihrer ersten Anwendung in Visual Studio](./service-fabric-create-your-first-application-in-visual-studio.md) aus, falls Sie dies noch nicht getan haben. Mit diesen Informationen können Sie eine Anwendung so einrichten, dass in der Anzeige von Diagnoseereignissen die Ablaufverfolgungsmeldungen erscheinen.
+Service Fabric gibt ETW-Ereignisse aus, um die Abläufe in der Plattform für Anwendungsentwickler sichtbar zu machen. Führen Sie jetzt die Schritte unter [Erstellen Ihrer ersten Anwendung in Visual Studio](service-fabric-create-your-first-application-in-visual-studio.md) aus, falls Sie dies noch nicht getan haben. Mit diesen Informationen können Sie eine Anwendung so einrichten, dass in der Anzeige von Diagnoseereignissen die Ablaufverfolgungsmeldungen erscheinen.
 
 1. Wenn das Fenster „Diagnoseereignisse“ nicht automatisch angezeigt wird, wechseln Sie in Visual Studio zur Registerkarte **Server-Explorer**, klicken Sie mit der rechten Maustaste auf den **Service Fabric-Cluster**, und wählen Sie im Kontextmenü die Option **Diagnoseereignisse anzeigen** aus.
 
@@ -60,4 +60,4 @@ Nachdem Sie die benutzerdefinierte ETW-Ablaufverfolgung dem Dienstcode hinzugef�
 ## Nächste Schritte
 Der Ablaufverfolgungscode, den Sie Ihrer Anwendung für die lokale Diagnose hinzugefügt haben, funktioniert auch mit den Tools für die Anzeige dieser Ereignisse, wenn Sie Ihre Anwendung in einem Azure-Cluster ausführen. Sehen Sie sich diese Artikel an, in denen die unterschiedlichen Optionen für die Tools und deren Einrichtung beschrieben werden. * [Erfassen von Protokollen von einem Service Fabric-Cluster in Azure-Diagnose und Operational Insights](service-fabric-diagnostics-how-to-setup-wad-operational-insights.md) * [Verwenden von ElasticSearch als Service Fabric-Anwendungsüberwachungsspeicher](service-fabric-diagnostic-how-to-use-elasticsearch.md)
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0211_2016-->

@@ -1,7 +1,7 @@
 <properties
  pageTitle="HPC Pack-Clusteroptionen in der Cloud | Microsoft Azure"
  description="Informationen zu Optionen mit Microsoft HPC Pack, um einen HPC-Cluster (High Performance Computing) in der Azure-Cloud zu erstellen und zu verwalten."
- services="virtual-machines,cloud-services"
+ services="virtual-machines,cloud-services,batch"
  documentationCenter=""
  authors="dlepow"
  manager="timlt"
@@ -13,7 +13,7 @@ ms.service="virtual-machines"
  ms.topic="article"
  ms.tgt_pltfrm="vm-multiple"
  ms.workload="big-compute"
- ms.date="01/26/2016"
+ ms.date="02/04/2016"
  ms.author="danlep"/>
 
 # Optionen zum Erstellen und Verwalten eines HPC-Clusters (High Performance Computing) in Azure mit Microsoft HPC Pack
@@ -26,6 +26,19 @@ Nutzen Sie Microsoft HPC Pack und die Azure-Dienste für Berechnung und Infrastr
 
 ## Ausführen eines HPC Pack-Clusters in virtuellen Azure-Computern
 
+### Azure-Vorlagen
+
+* (Marketplace) [HPC Pack cluster for Windows workloads](https://azure.microsoft.com/marketplace/partners/microsofthpc/newclusterwindowscn/) (HPC Pack-Cluster für Windows-Workloads)
+
+* (Marketplace) [HPC Pack cluster for Excel workloads](https://azure.microsoft.com/marketplace/partners/microsofthpc/newclusterexcelcn/) (HPC Pack-Cluster für Excel-Workloads)
+
+* (Marketplace) [HPC Pack cluster for Linux workloads](https://azure.microsoft.com/marketplace/partners/microsofthpc/newclusterlinuxcn/) (HPC Pack-Cluster für Linux-Workloads)
+
+* (Schnellstart) [Create an HPC cluster](https://azure.microsoft.com/documentation/templates/create-hpc-cluster/) (Erstellen eines HPC-Clusters)
+
+* (Schnellstart) [Create an HPC cluster with Linux compute nodes](https://azure.microsoft.com/documentation/templates/create-hpc-cluster-linux-cn/) (Erstellen eines HPC-Clusters mit Linux-Serverknoten)
+
+* (Schnellstart) [Create an HPC cluster with custom compute node image](https://azure.microsoft.com/documentation/templates/create-hpc-cluster-custom-image/) (Erstellen eines HPC-Clusters mit einem benutzerdefinierten Serverknotenimage)
 
 ### Azure VM-Images
 
@@ -35,13 +48,7 @@ Nutzen Sie Microsoft HPC Pack und die Azure-Dienste für Berechnung und Infrastr
 
 * [HPC Pack-Computeknoten mit Excel unter Windows Server 2012 R2](https://azure.microsoft.com/marketplace/partners/microsoft/hpcpack2012r2computenodewithexcelonwindowsserver2012r2/)
 
-### Azure-Schnellstartvorlagen
 
-* [Erstellen eines HPC-Clusters](https://azure.microsoft.com/documentation/templates/create-hpc-cluster/)
-
-* [Erstellen eines HPC-Clusters mit Linux-Computeknoten](https://azure.microsoft.com/documentation/templates/create-hpc-cluster-linux-cn/)
-
-* [Erstellen eines HPC-Clusters mit einem benutzerdefinierten Computeknotenimage](https://azure.microsoft.com/documentation/templates/create-hpc-cluster-custom-image/)
 
 ### PowerShell-Bereitstellungsskript
 
@@ -59,9 +66,7 @@ Nutzen Sie Microsoft HPC Pack und die Azure-Dienste für Berechnung und Infrastr
 
 
 
-### Manuelle Bereitstellung über das klassische Azure-Portal
-
-
+### Manuelle Bereitstellung über das Azure-Portal
 
 * [Einrichten des Hauptknotens eines HPC Pack-Clusters in einem virtuellen Azure-Computer](virtual-machines-hpcpack-cluster-headnode.md)
 
@@ -98,4 +103,4 @@ Nutzen Sie Microsoft HPC Pack und die Azure-Dienste für Berechnung und Infrastr
 
 * [Einrichten eines Linux RDMA-Clusters zum Ausführen von MPI-Anwendungen](virtual-machines-linux-cluster-rdma.md)
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

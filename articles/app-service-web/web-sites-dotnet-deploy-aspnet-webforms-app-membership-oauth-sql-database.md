@@ -3,7 +3,7 @@
 	description="In diesem Lernprogramm wird gezeigt, wie Sie eine sichere ASP.NET 4.5 Web Forms-Anwendung erstellen, die eine SQL-Datenbank beinhaltet, und die Anwendung dann auf Azure bereitstellen." 
 	services="app-service\web" 
 	documentationCenter=".net" 
-	authors="Erikre" 
+	authors="erikre" 
 	manager="wpickett" 
 	editor="jimbe"/>
 
@@ -14,7 +14,7 @@
 	ms.devlang="dotnet" 
 	ms.topic="article" 
 	ms.date="12/10/2015" 
-	ms.author="erikre"/>
+	ms.author="tdykstra"/>
 
 
 # Erstellen und Bereitstellen einer sicheren ASP.NET Web Forms-App mit Mitgliedschaft, OAuth und SQL-Datenbank in Azure-App-Dienst
@@ -52,7 +52,7 @@ Richten Sie zu Beginn Ihre Entwicklungsumgebung ein, indem Sie Visual Studio 201
 2. Installieren Sie [Azure SDK für Visual Studio 2013](http://go.microsoft.com/fwlink/?linkid=324322&clcid=0x409). Für dieses Lernprogramm ist Visual Studio 2013 erforderlich, bevor Sie das Azure SDK für Visual Studio 2013 installieren. Abhängig von der Anzahl an bereits bestehenden SDK-Abhängigkeiten auf Ihrem Computer kann der Installationsvorgang des SDK von mehreren Minuten bis hin zu einer halben Stunde oder länger dauern.  
 
 3. Wenn Sie aufgefordert werden, die ausführbare Installationsdatei auszuführen oder zu speichern, klicken Sie auf **Ausführen**.
-4. Klicken Sie im Fenster **Webplattform-Installer** auf **Installieren**, und setzen Sie die Installation fort. 
+4. Klicken Sie im Fenster **Webplattform-Installer** auf **Installieren**, und setzen Sie die Installation fort.  
 	![Webplattform-Installer](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/Intro-SecureWebForms-01.png)  
 
       Wenn Sie das SDK bereits installiert haben, müssen 0 Elemente installiert werden. Die Anzahl der zu installierenden Elemente wird unten links im Fenster **Webplattform-Installer** angezeigt.
@@ -72,9 +72,9 @@ In diesem Lernprogramm wird Ihre Web-App in einer freigegebenen Hostingumgebung 
 
 Die Azure SQL-Datenbank ist ein cloudbasierter relationaler Datenbankdienst auf Grundlage von SQL Server-Technologien. Die Tools und Anwendungen, die mit SQL Server verwendet werden können, sind auch für die SQL-Datenbank geeignet.
 
-1. Klicken Sie im [klassischen Azure-Portal](https://manage.windowsazure.com/) auf der linken Registerkarte auf **Web-Apps** und dann auf **Neu**.
+1. Klicken Sie im [klassischen Azure-Portal](https://manage.windowsazure.com/) auf der linken Registerkarte auf **Web-Apps** und dann auf **Neu**.  
 	![Webplattform-Installer](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/Intro-SecureWebForms-02.png)
-2. Klicken Sie auf **Web-App** und dann auf **Benutzerdefiniert erstellen**. 
+2. Klicken Sie auf **Web-App** und dann auf **Benutzerdefiniert erstellen**.  
 	![Benutzerdefiniert erstellen](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/Intro-SecureWebForms-03.png) Der Assistent **Neue Web-App - benutzerdefiniert erstellen** wird geöffnet.  
 
 3. Geben Sie im Schritt **Web-App erstellen** des Assistenten eine Zeichenfolge in das Feld **URL** ein, die als eindeutige URL der Anwendung dienen soll. Die vollständige URL besteht aus der hier eingegebenen Zeichenfolge und dem Suffix, das neben dem Textfeld aufgeführt wird. Die Abbildung zeigt eine URL, die wahrscheinlich schon vergeben ist, sodass Sie **eine andere URL auswählen müssen**. 
@@ -83,7 +83,7 @@ Die Azure SQL-Datenbank ist ein cloudbasierter relationaler Datenbankdienst auf 
 5. Wählen Sie in der Dropdownliste **Datenbank** die Option **Create a free 20 MB SQL database** aus.
 6. Ändern Sie im Feld **DB Connection String Name** den Standardwert *DefaultConnection* nicht.
 7. Klicken Sie unten im Feld auf den Pfeil. Der Assistent springt zum Schritt **Specify database settings**.
-8. Geben Sie in das Feld **Name** *`ContactDB`* ein.
+8. Geben Sie in das Feld **Name** *`ContactDB`* ein.  
 	![Datenbankeinstellungen](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/Intro-SecureWebForms-05.png)  
 9. Wählen Sie im Feld **Server** die Option **Neuer SQL-Datenbankserver** aus. Wenn Sie bereits zuvor eine SQL Server-Datenbank erstellt haben, können Sie alternativ diese SQL Server-Instanz aus der Dropdownliste auswählen.
 10. Legen Sie für **Region** dasselbe Gebiet fest wie bei der Erstellung der Web-App.
@@ -94,11 +94,11 @@ Sie kehren im **klassischen Azure-Portal** zur Seite **Web-Apps** zurück, und i
 ##Erstellen einer ASP.NET-Webformularanwendung 
 Sie haben nun eine Web-App erstellt, diese enthält jedoch noch keinen Inhalt. Als Nächstes erstellen Sie die Visual Studio Web App, die Sie auf Azure veröffentlichen.
 ###Erstellen des Projekts 
-1. Wählen Sie in Visual Studio **Neues Projekt** im Menü **Datei** aus.
+1. Wählen Sie in Visual Studio **Neues Projekt** im Menü **Datei** aus.  
 	![Menü "Datei" - "Neues Projekt"](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms01.png)  
 2. Wählen Sie die Vorlagengruppe **Templates** -> **Visual C#** -> **Web** auf der linken Seite aus. 
 3. Wählen Sie die Vorlage **ASP.NET Web Application** in der mittleren Spalte aus.
-4. Benennen Sie Ihr Projekt *ContactManager*, und klicken Sie auf **OK**. 
+4. Benennen Sie Ihr Projekt *ContactManager*, und klicken Sie auf **OK**.  
 	![Dialogfeld "Neues Projekt"](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms02.png)  
 
       Der Name des Projekts in diesem Lernprogramm ist **ContactManager**. Es wird empfohlen, dass Sie genau diesen Projektnamen verwenden, damit der im Lernprogramm angegebene Code wie erwartet funktioniert.
@@ -219,7 +219,7 @@ Nachdem Sie nun die Anwendung erstellt und lokal ausgeführt haben, wird es Zeit
 	  
 3. Falls Sie nicht bereits angemeldet sind, klicken Sie im Dialogfeld **Vorhandene Web-App auswählen** auf die Schaltfläche **Anmelden**. Nachdem Sie die Anmeldung abgeschlossen haben, wählen Sie die Web-App aus, die Sie im ersten Teil dieses Lernprogramms erstellt haben. Klicken Sie auf **OK**, um fortzufahren. 
 	![Dialogfeld "Vorhandene Website auswählen"](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms07.png) Visual Studio lädt Ihre Veröffentlichungseinstellungen herunter.
-4. Klicken Sie im Dialogfeld **Web veröffentlichen** auf **Veröffentlichen**. 
+4. Klicken Sie im Dialogfeld **Web veröffentlichen** auf **Veröffentlichen**.  
 	![Dialogfeld "Web veröffentlichen"](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms08.png) Sie sehen den gesamten Veröffentlichungsstatus im Fenster **Webveröffentlichungsaktivität** in Visual Studio: ![Webveröffentlichungsaktivität](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms09.png)  
 
 Die erstellte Anwendung wird nun in der Cloud ausgeführt. Bei der nächsten Bereitstellung der Anwendung von Visual Studio aus werden nur die geänderten (oder neuen) Dateien bereitgestellt.  
@@ -500,13 +500,13 @@ Mit den folgenden Schritten können Sie einen Google-Authentifizierungsanbieter 
 
 12. Drücken Sie **STRG+F5**, um die Anwendung zu erstellen und auszuführen. Klicken Sie auf den Link **Log in**.
 13. Klicken Sie unter **Einen anderen Dienst zum Anmelden verwenden** auf **Google**. 
-	![Anmelden](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms21d.png)  
+	![Anmelden](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms21d.png) 
 14. Wenn Sie Ihre Anmeldeinformationen eingeben müssen, werden Sie zur Google-Website umgeleitet, wo Sie Ihre Anmeldeinformationen eingeben. 
-	![Google - Anmeldung](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms21e.png)  
-15. Nachdem Sie Ihre Anmeldeinformationen eingegeben haben, werden Sie aufgefordert, Berechtigungen für die soeben erstellten Webanwendung zu erteilen:  
-	![Standard-Dienstkonto für Projekt](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms21f.png)  
-16. Klicken Sie auf **Annehmen**. Sie werden nun zur Seite **Registrieren** der Anwendung **ContactManager** zurück geleitet, wo Sie Ihr Google-Konto registrieren können.  
-	![Registrieren Sie sich mit Ihrem Google-Konto](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms21g.png)  
+ 	![Google - Anmeldung](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms21e.png)  
+15. Nachdem Sie Ihre Anmeldeinformationen eingegeben haben, werden Sie aufgefordert, Berechtigungen für die soeben erstellten Webanwendung zu erteilen:
+ 	![Standard-Dienstkonto für Projekt](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms21f.png)  
+16. Klicken Sie auf **Annehmen**. Sie werden nun zur Seite **Registrieren** der Anwendung **ContactManager** zurück geleitet, wo Sie Ihr Google-Konto registrieren können. 
+![Registrieren Sie sich mit Ihrem Google-Konto](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms21g.png)  
 17. Sie können zwar den lokalen E-Mail-Registrierungsnamen in Ihr Gmail-Konto ändern, im Allgemeinen sollten Sie jedoch den Standard-E-Mail-Aliasnamen beibehalten (den Sie für die Authentifizierung verwendet haben). Klicken Sie auf **Log in**.
 
 ##Verwenden der Mitgliedschafts-API zum Beschränken des Zugriffs 
@@ -702,8 +702,8 @@ Wenn Sie Visual Studio geschlossen und nach dem Erstellen des Veröffentlichungs
 3. Nachdem Sie die unten angegebenen E-Mail-Adresse und das Kennwort eingegeben haben, klicken Sie auf die Schaltfläche **Anmelden**. **E-Mail**: `canEditUser@wideworldimporters.com` **Kennwort**: `Pa$$word1`  
 	![Anmeldeseite](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms28.png)  
 
-4. Geben Sie die neuen Daten für jedes Feld ein, und klicken Sie dann auf die Schaltfläche **Einfügen**.  
-	![Seite "Neuen Kontakt hinzufügen"](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms30.png) Die Seite *EditContactList.aspx* wird mit dem neuen Eintrag angezeigt.  
+4. Geben Sie die neuen Daten für jedes Feld ein, und klicken Sie dann auf die Schaltfläche **Einfügen**. 
+	![Seite "Neuen Kontakt hinzufügen"](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms30.png) Die Seite *EditContactList.aspx* wird mit dem neuen Eintrag angezeigt. 
 	![Seite "Neuen Kontakt hinzufügen"](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms31.png)
 
 5. Klicken Sie auf den Link **Log off**.
@@ -757,4 +757,4 @@ Bitte teilen Sie uns mit, was Ihrer Meinung nach gelungen ist, bzw. verbessert w
 
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

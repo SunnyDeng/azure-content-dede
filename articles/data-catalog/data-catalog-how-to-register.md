@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
-   ms.date="12/18/2015"
+   ms.date="02/08/2016"
    ms.author="maroche"/>
 
 
@@ -49,7 +49,7 @@ In der Standardeinstellung werden nur Metadaten aus Datenquellen extrahiert und 
 Mit dem **Azure Data Catalog**-Tool zum Registrieren von Datenquellen können Benutzer eine Vorschau der Daten in Form einer Momentaufnahme jeder registrierten Tabelle oder Sicht hinzufügen. Wenn sich der Benutzer während der Registrierung für das Einschließen von Vorschauen entscheidet, fügt das Registrierungstool bis zu 20 Datensätze aus jeder Tabelle oder Sicht hinzu. Diese Momentaufnahme wird dann zusammen mit den strukturellen und beschreibenden Metadaten in den Katalog kopiert.
 
 
-> [AZURE.NOTE]Für eine breite Tabellen mit einer großen Anzahl von Spalten werden möglicherweise weniger als 20 Datensätze in deren Vorschau eingefügt.
+> [AZURE.NOTE]  Für eine breite Tabellen mit einer großen Anzahl von Spalten werden möglicherweise weniger als 20 Datensätze in deren Vorschau eingefügt.
 
 
 ## Einschließen von Datenprofilen
@@ -65,7 +65,7 @@ Mit dem **Azure Data Catalog**-Tool zum Registrieren von Datenquellen können Be
 
 Diese statistischen Daten werden dann zusammen mit den strukturellen und beschreibenden Metadaten in den Katalog kopiert.
 
-> [AZURE.NOTE]Für Text- oder Datumsspalten werden keine Durchschnitts- und Standardabweichungswerte in deren Datenprofile eingeschlossen.
+> [AZURE.NOTE]  Für Text- oder Datumsspalten werden keine Durchschnitts- und Standardabweichungswerte in deren Datenprofile eingeschlossen.
 
 ## Aktualisieren von Registrierungen
 
@@ -76,4 +76,4 @@ Beim erneuten Registrieren einer bereits registrierten Datenquelle werden neue O
 ## Zusammenfassung
 Durch die Registrierung einer Datenquelle in **Azure Data Catalog** werden strukturelle und beschreibende Metadaten aus der Datenquelle in den Katalogdienst kopiert, sodass die Datenquelle leichter zu ermitteln und zu verstehen ist. Nachdem eine Datenquelle registriert wurde, kann sie im **Azure Data Catalog**-Portal mit Anmerkungen versehen, verwaltet und ermittelt werden.
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0211_2016-->

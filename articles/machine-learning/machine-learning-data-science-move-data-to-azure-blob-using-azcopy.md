@@ -13,14 +13,10 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/23/2015" 
+	ms.date="02/08/2016" 
 	ms.author="bradsev" />
 
 # Verschieben von Daten in den und aus dem Azure-Blobspeicher mithilfe von AzCopy
-
-Nachstehend finden Sie Links zu Anleitungen für Technologien zum Verschieben von Daten in den und aus dem Azure-BLOB-Speicher:
-
-[AZURE.INCLUDE [blob-storage-tool-selector](../../includes/machine-learning-blob-storage-tool-selector.md)]
 
 ## Einführung
 
@@ -28,9 +24,14 @@ AzCopy ist ein Befehlszeilenprogramm, das zum leistungsstarken Hochladen, Herunt
 
 Anleitungen zur Installation von AzCopy sowie zusätzliche Informationen zu seiner Verwendung mit der Azure-Plattform finden Sie unter [Erste Schritte mit dem Befehlszeilenprogramm AzCopy](../storage-use-azcopy.md).
 
-> [AZURE.NOTE]Wenn Sie einen virtuellen Computer verwenden, der mit den von den [virtuellen Data Science-Computern in Azure](machine-learning-data-science-virtual-machines.md) bereitgestellten Skripts eingerichtet wurde, ist AzCopy bereits auf dem virtuellen Computer installiert.
+Nachstehend finden Sie Links zu Anleitungen für Technologien zum Verschieben von Daten in den und aus dem Azure-BLOB-Speicher:
 
-> [AZURE.NOTE]Eine umfassende Einführung in Azure-Blobspeicher finden Sie unter [Grundlagen zu Azure-Blobspeicher](../storage-dotnet-how-to-use-blobs.md) und [Azure-Blobdienst](https://msdn.microsoft.com/library/azure/dd179376.aspx).
+[AZURE.INCLUDE [blob-storage-tool-selector](../../includes/machine-learning-blob-storage-tool-selector.md)]
+
+
+> [AZURE.NOTE] Wenn Sie einen virtuellen Computer verwenden, der mit den von den [virtuellen Data Science-Computern in Azure](machine-learning-data-science-virtual-machines.md) bereitgestellten Skripts eingerichtet wurde, ist AzCopy bereits auf dem virtuellen Computer installiert.
+
+> [AZURE.NOTE] Eine umfassende Einführung in Azure-Blobspeicher finden Sie unter [Grundlagen zu Azure-Blobspeicher](../storage-dotnet-how-to-use-blobs.md) und [Azure-Blobdienst](https://msdn.microsoft.com/library/azure/dd179376.aspx).
 
 ## Voraussetzungen
 
@@ -69,6 +70,7 @@ Zum Übertragen von Blobs zwischen Azure-Containern verwenden Sie den folgenden 
 
 ## Tipps zur Verwendung von AzCopy
 
-> [AZURE.TIP]1. Beim Hochladen von Dateien wird der Vorgang mit "/S" rekursiv durchgeführt. Ohne diesen Parameter werden Dateien im Unterverzeichnis nicht hochgeladen. 2. Beim Herunterladen von Datei durchsucht "/S" die Container rekursiv, bis alle Dateien im angegebenen Verzeichnis und seinen Unterverzeichnissen oder alle Dateien, die dem angegebenen Muster im angegebenen Verzeichnis und seinen Unterverzeichnissen entsprechen, heruntergeladen wurden. 3. Sie können mit dem "/Source"-Parameter keine bestimmte Blobdatei für das Herunterladen angeben. Um eine bestimmte Datei herunterzuladen, geben Sie den Blobdateinamen mithilfe des "/Pattern"-Parameters an. Der "/S"-Parameter kann verwendet werden, damit AzCopy rekursiv nach einem Dateinamensmuster sucht. Ohne den "/Pattern"-Parameter lädt AzCopy alle Dateien in diesem Verzeichnis herunter.
+> [AZURE.TIP]   
+1\. Beim Hochladen von Dateien wird der Vorgang mit "/S" rekursiv durchgeführt. Ohne diesen Parameter werden Dateien im Unterverzeichnis nicht hochgeladen. 2. Beim Herunterladen von Datei durchsucht "/S" die Container rekursiv, bis alle Dateien im angegebenen Verzeichnis und seinen Unterverzeichnissen oder alle Dateien, die dem angegebenen Muster im angegebenen Verzeichnis und seinen Unterverzeichnissen entsprechen, heruntergeladen wurden. 3. Sie können mit dem "/Source"-Parameter keine bestimmte Blobdatei für das Herunterladen angeben. Um eine bestimmte Datei herunterzuladen, geben Sie den Blobdateinamen mithilfe des "/Pattern"-Parameters an. Der "/S"-Parameter kann verwendet werden, damit AzCopy rekursiv nach einem Dateinamensmuster sucht. Ohne den "/Pattern"-Parameter lädt AzCopy alle Dateien in diesem Verzeichnis herunter.
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0211_2016-->

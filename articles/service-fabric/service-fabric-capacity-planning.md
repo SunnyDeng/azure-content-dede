@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="11/12/2015"
+   ms.date="02/09/2016"
    ms.author="subramar"/>
 
 
@@ -75,4 +75,4 @@ Unter [Partitionieren von Service Fabric-Diensten][10] erfahren Sie mehr über d
 <!--Link references--In actual articles, you only need a single period before the slash-->
 [10]: service-fabric-concepts-partitioning.md
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0211_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/12/2015" 
+	ms.date="02/09/2016" 
 	ms.author="luisca"/>
 
 # Kurzanleitung für die Machine Learning Empfehlungen-API
@@ -89,9 +89,9 @@ Erstellen einer Anforderung „Modell erstellen“:
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
 |	modelName |	Es sind nur Buchstaben (A-Z, a-z), Zahlen (0-9), Bindestriche (-) und Unterstriche (\_) zulässig.<br>Max. Länge: 20 |
-|	apiVersion | 1.0 |
+| apiVersion | 1.0 |
 |||
-| Anforderungstext | KEINE |
+| Anforderungstext | NONE |
 
 
 **Antwort**:
@@ -348,7 +348,7 @@ In diesem Abschnitt wird gezeigt, wie Ereignisse in Echtzeit an Azure Machine Le
 | userDescription | Dies ist der Textbezeichner des Katalogs. Beachten Sie, dass Sie bei Verwendung von Leerzeichen diese stattdessen mit "%20" codieren müssen. Siehe Beispiel oben. <br>Max. Länge: 50 |
 | apiVersion | 1,0 |
 |||
-| Anforderungstext | KEINER |
+| Anforderungstext | KEINE |
 
 **Antwort**:
 
@@ -455,9 +455,9 @@ Gültige Buildstatus:
 - Cancelling: Der Build wird abgebrochen.
 
 Gültige Werte für Buildtyp:
-- Rank: Rangfolgebuild. (Informationen zu Rangfolgebuilds finden Sie in der Dokumentation zu Machine Learning-Empfehlungs-APIs.)
-- Recommendation: Empfehlungsbuild.
-- FBT: FBT-Build (häufig zusammen gekaufte Elemente).
+– Rank: Rangfolgebuild. (Informationen zu Rangfolgebuilds finden Sie in der Dokumentation zu Machine Learning-Empfehlungs-APIs.)
+– Recommendation: Empfehlungsbuild.
+– FBT: FBT-Build (häufig zusammen gekaufte Elemente).
 
 OData-XML
 
@@ -691,7 +691,7 @@ Wenn ein Empfehlungsmodell in der Produktion verwendet wird, können mit diesem 
 | id | Dies ist der eindeutige Bezeichner des Modells (Groß-/Kleinschreibung muss beachtet werden). |
 | apiVersion | 1\.0 |
 |||
-| Anforderungstext | `<ModelUpdateParams xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">`<br>`   <Description>New Description</Description>`<br>`          <ActiveBuildId>-1</ActiveBuildId>`<br>`</ModelUpdateParams>`<br><br>Beachten Sie, dass die Beschreibung der XML-Tags sowie die ActiveBuildId optional sind. Wenn Sie keine Beschreibung oder keine aktive Build-ID festlegen möchten, entfernen Sie das gesamte Tag. |
+| Anforderungstext | `<ModelUpdateParams xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">`<br>`   <Description>New Description</Description>`<br>`          <ActiveBuildId>-1</ActiveBuildId>`<br>`</ModelUpdateParams>`<br><br>Beachten Sie, dass die XML-Tags Description und ActiveBuildId optional sind. Wenn Sie keine Beschreibung oder aktive Build-ID festlegen möchten, entfernen Sie das gesamte Tag. |
 
 **Antwort**:
 
@@ -715,4 +715,4 @@ Dieses Dokument gibt keine Rechte an geistigem Eigentum an irgendeinem Microsoft
 © 2014 Microsoft. Alle Rechte vorbehalten.
  
 
-<!----HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0211_2016-->

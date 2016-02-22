@@ -125,7 +125,6 @@ Nachteile der Bereitstellung mit einer IDE:
 ###<a name="webmatrix"></a>Gewusst wie: Direktes Bereitstellen über WebMatrix
 
 * [Erstellen einer Node.js-Website und Bereitstellen für Azure mit WebMatrix](web-sites-nodejs-use-webmatrix.md)
-* [Erstellen und Bereitstellen einer PHP-MySQL-Web-App mithilfe von WebMatrix](web-sites-php-mysql-use-webmatrix.md).
 * [WebMatrix 3: Integrated Git and Deployment to Azure (Integriertes Git und Bereitstellung für Azure, in englischer Sprache)](http://www.codeproject.com/Articles/577581/Webmatrixplus3-3aplusIntegratedplusGitplusandplusD). In diesem Artikel wird das Verwenden von WebMatrix zum Bereitstellen über ein Git-Repository für die Quellcodeverwaltung beschrieben.
 
 ## <a name="onprem"></a>Bereitstellen über ein lokales Quellcodeverwaltungssystem
@@ -136,7 +135,7 @@ Bei TFS wird Web Deploy für die Bereitstellung für App Service verwendet, und 
 
 Vorteile der Bereitstellung über ein lokales Quellcodeverwaltungssystem:
 
-- Unterstützung der Bereitstellung über alle Sprachen-Frameworks bzw. Git- oder Mercurial-Clients, z. B. [Xcode](https://developer.apple.com/xcode/) und [Eclipse](https://www.eclipse.org)
+- Unterstützung der Bereitstellung über alle Sprachenframeworks bzw. Git- oder Mercurial-Clients, z. B. [Xcode](https://developer.apple.com/xcode/) und [Eclipse](https://www.eclipse.org)
 - Standortbezogene Bereitstellung und mögliche Bereitstellung unterschiedlicher Versionen für separate [Slots](web-sites-staged-publishing)
 - Gut geeignet für Entwicklungsteams jeder Größe
 
@@ -153,11 +152,11 @@ Weitere Vorteile der Bereitstellung mit TFS:
 - Unterstützung von Git für die verteilte Versionskontrolle oder Team Foundation-Versionskontrolle (TFVC) zur Realisierung einer zentralisierten Versionskontrolle 
 - Umfassende Tools für flexible Bereitstellung
 - Fertige Integrationen für [Jenkins](https://jenkins-ci.org), [Slack](https://slack.com), [ZenDesk](https://www.zendesk.com), [Trello](https://trello.com), [Azure Service Bus](/services/service-bus/) und vieles mehr 
-- [Team Foundation Server Express](https://www.microsoft.com/download/details.aspx?id=48259) ist für Teams mit bis zu fünf Entwicklern kostenlos
+- [Team Foundation Server Express](https://www.microsoft.com/download/details.aspx?id=48259) ist für Teams mit bis zu fünf Entwicklern kostenlos.
 
 ###<a name="tfs"></a>Gewusst wie: Kontinuierliches Bereitstellen mit TFS
 
-* [Kontinuierliche Bereitstellung für Cloud Services in Azure](../cloud-services-dotnet-continuous-delivery.md). Dieses Dokument ist in erster Linie für einen Azure-Cloud-Dienst bestimmt. Einige Inhalte gelten allerdings auch für Web-Apps.
+* [Kontinuierliche Bereitstellung für Cloud Services in Azure](../cloud-services/cloud-services-dotnet-continuous-delivery.md). Dieses Dokument ist in erster Linie für einen Azure-Cloud-Dienst bestimmt. Einige Inhalte gelten allerdings auch für Web-Apps.
 
 ###<a name="gitmercurial"></a>Gewusst wie: Bereitstellen aus einem lokalen Git- oder Mercurial-Repository
 
@@ -175,7 +174,7 @@ Vorteile der Bereitstellung über einen cloudbasierten Quellcodeverwaltungsdiens
 
 - Unterstützung aller Sprachen-Frameworks
 - Kontinuierliche Bereitstellung für Git- und Mercurial-Repositorys ohne Konfiguration 
-- Standortbezogene Bereitstellung und Bereitstellung unterschiedlicher Verzweigungen für unterschiedliche [Slots](web-sites-staged-publishing)
+- Verzweigungsbezogene Bereitstellung zur Bereitstellung unterschiedlicher Verzweigungen für unterschiedliche [Slots](web-sites-staged-publishing)
 - Gut geeignet für Entwicklungsteams jeder Größe
 
 Nachteile der Bereitstellung über einen cloudbasierten Quellcodeverwaltungsdienst:
@@ -195,8 +194,8 @@ Weitere Vorteile der Bereitstellung über Visual Studio Team Services:
 
 ###<a name="vsts"></a>Gewusst wie: Fortlaufendes Bereitstellen mit Visual Studio Team Services
 
-- [Continuous Delivery für Azure mithilfe von Visual Studio Team Services und TFVC](../cloud-services-continuous-delivery-use-vso.md). In diesem Tutorial erfahren Sie Schritt für Schritt, wie Continuous Delivery über Visual Studio Team Services für eine Web-App mithilfe von TFVC eingerichtet wird. 
-- [Continuous Delivery für Azure mithilfe von Visual Studio Team Services und Git](../cloud-services-continuous-delivery-use-vso-git.md) Dieses Lernprogramm ist vergleichbar mit dem vorangehenden Lernprogramm, verwendet jedoch anstelle von TFVC das Verwaltungstool Git.
+- [Continuous Delivery für Azure mithilfe von Visual Studio Team Services und TFVC](../cloud-services/cloud-services-continuous-delivery-use-vso.md). In diesem Tutorial erfahren Sie Schritt für Schritt, wie Continuous Delivery über Visual Studio Team Services für eine Web-App mithilfe von TFVC eingerichtet wird. 
+- [Continuous Delivery für Azure mithilfe von Visual Studio Team Services und Git](../cloud-services/cloud-services-continuous-delivery-use-vso-git.md) Dieses Lernprogramm ist vergleichbar mit dem vorangehenden Lernprogramm, verwendet jedoch anstelle von TFVC das Verwaltungstool Git.
 
 ###<a name="cloudgitmercurial"></a>Gewusst wie: Bereitstellen aus einem cloudbasierten Git- oder Mercurial-Repository
 
@@ -284,4 +283,4 @@ Informationen zu weiteren Bereitstellungsthemen finden Sie in den entsprechenden
 * Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

@@ -33,6 +33,6 @@ Bedenken Sie, dass es durchaus sinnvoll ist, verschiedenen Frameworks für versc
 ## Nächste Schritte
 
 - [Erfahren Sie mehr über die Reliable Actors-API.](service-fabric-reliable-actors-introduction.md)
-- [Erfahren Sie mehr über die Reliable Services-API.](../Service-Fabric/service-fabric-reliable-services-introduction.md)
+- [Erfahren Sie mehr über die Reliable Services-API.](service-fabric-reliable-services-introduction.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/23/2015" 
+	ms.date="02/10/2016" 
 	ms.author="awills"/>
 
 
@@ -36,6 +36,7 @@ Der standardmäßig verfügbare Abhängigkeitsmonitor meldet derzeit Aufrufe an 
  * Azure DocumentDb, Tabelle, Blobspeicher und Warteschlange
 * Java
  * Aufrufe an eine Datenbank über einen [JDBC](http://docs.oracle.com/javase/7/docs/technotes/guides/jdbc/)-Treiber, z. B. MySQL, SQL Server, PostgreSQL oder SQLite.
+* JavaScript auf Webseiten: Das [Webseiten-SDK](app-insights-javascript.md) protokolliert automatisch AJAX-Aufrufe als Abhängigkeiten.
 
 Mit der [TrackDependency-API](app-insights-api-custom-events-metrics.md#track-dependency) können Sie eigene SDK-Aufrufe zum Überwachen anderer Abhängigkeiten schreiben.
 
@@ -111,7 +112,7 @@ Klicken Sie auf diese Zeile, um einzelne Anforderungsereignisse anzuzeigen:
 
 Klicken Sie auf eine beliebige Instanz mit langer Ausführungsdauer, um diese näher zu überprüfen.
 
-> [AZURE.NOTE]Scrollen Sie nach unten, um eine Instanz auszuwählen. Durch Wartezeiten in der Pipeline sind die Daten für die zuerst aufgeführten Instanzen möglicherweise unvollständig.
+> [AZURE.NOTE] Scrollen Sie nach unten, um eine Instanz auszuwählen. Durch Wartezeiten in der Pipeline sind die Daten für die zuerst aufgeführten Instanzen möglicherweise unvollständig.
 
 Scrollen Sie nach unten zu den Remoteabhängigkeitsaufrufen im Zusammenhang mit dieser Anforderung:
 
@@ -181,9 +182,7 @@ Wenn Sie das Standardmodul für die Nachverfolgung von Abhängigkeiten deaktivie
 [availability]: app-insights-monitor-web-app-availability.md
 [azure]: ../insights-perf-analytics.md
 [client]: app-insights-javascript.md
-[detect]: app-insights-detect-triage-diagnose.md
 [diagnostic]: app-insights-diagnostic-search.md
-[knowUsers]: app-insights-overview-usage.md
 [metrics]: app-insights-metrics-explorer.md
 [netlogs]: app-insights-asp-net-trace-logs.md
 [perf]: app-insights-web-monitor-performance.md
@@ -191,8 +190,7 @@ Wenn Sie das Standardmodul für die Nachverfolgung von Abhängigkeiten deaktivie
 [qna]: app-insights-troubleshoot-faq.md
 [redfield]: app-insights-asp-net-dependencies.md
 [roles]: app-insights-resources-roles-access-control.md
-[start]: app-insights-overview.md
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0211_2016-->

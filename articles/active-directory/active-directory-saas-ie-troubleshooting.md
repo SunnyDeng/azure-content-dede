@@ -13,7 +13,7 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="identity"
-    ms.date="02/02/2016"
+    ms.date="02/09/2016"
     ms.author="liviodlc"/>
 
 #Problembehandlung in der Zugriffsbereichserweiterung für Internet Explorer
@@ -103,6 +103,10 @@ So deinstallieren Sie die Zugriffsbereichserweiterung auf Ihrem Computer:
 
 Wenn beim Deinstallieren der Erweiterung Probleme auftreten, können Sie diese auch mithilfe des Tools [Microsoft Fix it](https://go.microsoft.com/?linkid=9779673) entfernen.
 
-[AZURE.INCLUDE [saas-toc](../../includes/active-directory-saas-toc.md)]
+## Verwandte Artikel
 
-<!---HONumber=AcomDC_0204_2016-->
+- [Artikelindex für die Anwendungsverwaltung in Azure Active Directory](active-directory-apps-index.md)
+- [Anwendungszugriff und einmaliges Anmelden mit Azure Active Directory](active-directory-appssoaccess-whatis.md)
+- [How to Deploy the Access Panel Extension for Internet Explorer using Group Policy (auf Englisch)](active-directory-saas-ie-group-policy.md)
+
+<!---HONumber=AcomDC_0211_2016-->

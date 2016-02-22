@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/18/2015" 
+	ms.date="02/08/2016" 
 	ms.author="hangzh;bradsev" />
 
 #<a name="heading"></a>Übermitteln von Hive-Abfragen an HDInsight Hadoop-Cluster im Cortana-Analyseprozess
@@ -127,7 +127,7 @@ In diesem Abschnitt werden die folgenden Data Wrangling-Aufgaben mit Hive in Azu
 1. [Durchsuchen von Daten](#hive-dataexploration)
 2. [Generieren von Funktionen](#hive-featureengineering)
 
-> [AZURE.NOTE]Bei den Beispiel-Hive-Abfragen wird davon ausgegangen, dass die Daten in Hive-Tabellen in Azure HDInsight Hadoop-Clustern hochgeladen wurden. Wenn dies nicht der Fall ist, führen Sie die unter [Erstellen und Laden von Daten in Hive-Tabellen](machine-learning-data-science-hive-tables.md) beschriebenen Schritte zum Hochladen von Daten in Hive-Tabellen aus.
+> [AZURE.NOTE] Bei den Beispiel-Hive-Abfragen wird davon ausgegangen, dass die Daten in Hive-Tabellen in Azure HDInsight Hadoop-Clustern hochgeladen wurden. Wenn dies nicht der Fall ist, führen Sie die unter [Erstellen und Laden von Daten in Hive-Tabellen](machine-learning-data-science-hive-tables.md) beschriebenen Schritte zum Hochladen von Daten in Hive-Tabellen aus.
 
 ###<a name="hive-dataexploration"></a>Durchsuchen von Daten
 Hier finden Sie einige Hive-Beispielskripts, die zum Durchsuchen von Daten in den Hive-Tabellen verwendet werden können.
@@ -179,7 +179,7 @@ In diesem Abschnitt werden Methoden zum Generieren von Funktionen mithilfe von H
 4. [Extrahieren von Funktionen aus "Text"-Feldern](#hive-textfeature)
 5. [Berechnen der Entfernung zwischen GPS-Koordinaten](#hive-gpsdistance)
 
-> [AZURE.NOTE]Wenn Sie zusätzliche Funktionen generieren, können Sie diese als Spalten in der vorhandenen Tabelle hinzufügen oder eine neue Tabelle mit den zusätzlichen Funktionen und einem Primärschlüssel erstellen, die dann mit der ursprünglichen Tabelle zusammengeführt werden kann.
+> [AZURE.NOTE] Wenn Sie zusätzliche Funktionen generieren, können Sie diese als Spalten in der vorhandenen Tabelle hinzufügen oder eine neue Tabelle mit den zusätzlichen Funktionen und einem Primärschlüssel erstellen, die dann mit der ursprünglichen Tabelle zusammengeführt werden kann.
 
 ####<a name="hive-frequencyfeature"></a> Häufigkeitsbasierte Funktionsgenerierung
 
@@ -325,4 +325,4 @@ Die Standardeinstellungen für die Parameter von Hive-Clustern eignen sich mögl
 
  
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0211_2016-->

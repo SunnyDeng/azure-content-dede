@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/21/2015"
+	ms.date="02/08/2016"
 	ms.author="curtand;viviali"/>
 
 # Erstellen oder Bearbeiten von Benutzern in Azure AD
@@ -25,12 +25,12 @@ Sie müssen für jeden Benutzer, der auf einen Microsoft-Clouddienst zugreifen s
 1. Klicken Sie auf **Active Directory**, und wählen Sie dann den Namen des Verzeichnisses Ihrer Organisation.
 2. Klicken Sie auf der Seite **Benutzer** auf **Benutzer hinzufügen**.
 3. Wählen Sie auf der Seite **Informationen über diesen Benutzer** unter **Art des Benutzers** eine der folgenden Optionen:
-	
+
 	- **Neuer Benutzer in Ihrem Unternehmen:** Dient zum Erstellen eines neuen Benutzerkontos in Ihrem Verzeichnis.
 	- **Benutzer mit einem vorhandenen Microsoft-Konto:** Dient zum Hinzufügen eines vorhandenen Microsoft-Kundenkontos (z. B. eines Outlook-Kontos) zu Ihrem Verzeichnis.
 	- **Benutzer in einem anderen Microsoft Azure AD-Verzeichnis:** Dient zum Hinzufügen eines Benutzerkontos zu Ihrem Verzeichnis, das aus einem anderen Azure AD-Verzeichnis erstellt wurde. (Hinweis: Sie müssen Mitglied des anderen Verzeichnisses sein, um darin einen Benutzer auswählen zu können.)
-	- **Benutzer in Partnerunternehmen:** Dient zum Einladen und Autorisieren eines Partnerunternehmens für Ihr Verzeichnis (siehe [Azure Active Directory B2B](active-directory-b2b-what-is-azure-ad-b2b.md)).
-	
+	- **Benutzer in Partnerunternehmen:** dient zum Einladen und Autorisieren eines Partnerunternehmens für Ihr Verzeichnis (siehe [Azure Active Directory B2B-Zusammenarbeit](active-directory-b2b-what-is-azure-ad-b2b.md)).
+
 
 4. Geben Sie je nach ausgewählter Option entweder einen Benutzernamen oder eine E-Mail-Adresse ein, oder laden Sie eine CSV-Datei für Partnerbenutzer hoch.
 5. Geben Sie auf der Seite **Profil** des Benutzers den Vornamen und Nachnamen des Benutzers, einen benutzerfreundlichen Namen und über das Dropdownmenü „Rollen“ eine Benutzerrolle an. Weitere Informationen zu Benutzer- und Administratorrollen finden Sie unter [Zuweisen von Administratorrollen in Azure AD](active-directory-assign-admin-roles.md). Geben Sie an, ob **Mehrstufige Authentifizierung aktivieren** verwendet werden soll.
@@ -87,7 +87,7 @@ Die bekannten Einschränkungen für externe Azure AD-Benutzer lauten:
 - Externe Benutzer, bei denen es sich um Administratoren handelt, können Benutzer von Partnerunternehmen nicht Verzeichnissen (B2B) außerhalb ihres Basisverzeichnisses hinzufügen.
 - Externe Benutzer können mehrinstanzenfähigen Anwendungen in Verzeichnissen außerhalb ihres Basisverzeichnisses nicht ihre Zustimmung geben.
 - Visual Studio Online unterstützt den Zugriff durch externe Benutzer derzeit nicht.
-- PowerBI unterstützt den Zugriff durch externe Benutzer derzeit nicht. 
+- PowerBI unterstützt den Zugriff durch externe Benutzer derzeit nicht.
 - Das Office-Portal unterstützt die Lizenzierung externer Benutzer nicht.
 
 ## Gäste
@@ -99,7 +99,7 @@ Gäste verfügen im Verzeichnis über eingeschränkte Berechtigungen. Diese Bere
 - Anzeigen anderer Benutzer und Gruppen eines Azure-Abonnements, dem der Gast zugeordnet ist
 - Anzeigen der Mitglieder von Gruppen, denen der Gast angehört
 - Suchen nach anderen Benutzern im Verzeichnis, falls die vollständige E-Mail-Adresse des Benutzers bekannt ist
-- Anzeigen einer begrenzten Gruppe von Attributen der gesuchten Benutzer (Anzeigename, E-Mail-Adresse, Benutzerprinzipalname (UPN) und Miniaturbild) 
+- Anzeigen einer begrenzten Gruppe von Attributen der gesuchten Benutzer (Anzeigename, E-Mail-Adresse, Benutzerprinzipalname (UPN) und Miniaturbild)
 - Abrufen einer Liste der überprüften Domänen des Mandanten
 - Erteilen der Zustimmung für Anwendungen und Gewähren des gleichen Zugriffs, der für den Gast in Ihrem Verzeichnis gilt
 
@@ -124,4 +124,4 @@ Anschließend können Sie die Optionen zur Zugriffssteuerung für externe Benutz
 [1]: ./media/active-directory-create-users/RBACDirConfigTab.png
 [2]: ./media/active-directory-create-users/RBACGuestAccessControls.png
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

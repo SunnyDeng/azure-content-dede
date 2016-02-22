@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Erstellen eines IoT-Hubs mithilfe einer Ressourcen-Manager-Vorlage | Microsoft Azure"
-	description="Führen Sie dieses Tutorial für erste Schritte mit Ressourcen-Manager-Vorlagen zum Erstellen eines IoT-Hubs durch."
+	description="Führen Sie dieses Tutorial für erste Schritte mit Ressourcen-Manager-Vorlagen zum Erstellen eines IoT Hubs mit einem C#-Programm oder PowerShell durch."
 	services="iot-hub"
 	documentationCenter=".net"
 	authors="dominicbetts"
@@ -31,6 +31,8 @@ Zum Durchführen dieses Lernprogramms benötigen Sie Folgendes:
 - Microsoft Visual Studio 2015.
 - Ein aktives Azure-Konto. <br/>Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion][lnk-free-trial].
 - [Microsoft Azure PowerShell 1.0][lnk-powershell-install] oder höher.
+
+> [AZURE.TIP] Dieser Artikel beschreibt, wie Sie einen neuen IoT Hub mithilfe eines C#-Programms und einer ARM-Vorlage erstellen. Sie können auch die [ARM-Vorlage](#submit-a-template-to-create-an-iot-hub) im aktuellen Artikel mit einem PowerShell-Skript anstelle eines C#-Programms verwenden. Im Artikel [Verwenden von Azure PowerShell mit dem Azure-Ressourcen-Manager][lnk-powershell-arm] wird beschrieben, wie Sie ein PowerShell-Skript schreiben, das mithilfe einer ARM-Vorlage eine Azure-Ressource wie z. B. einen IoT Hub erstellt.
 
 [AZURE.INCLUDE [iot-hub-prepare-resource-manager](../../includes/iot-hub-prepare-resource-manager.md)]
 
@@ -189,6 +191,7 @@ Sie können die Anwendung jetzt durch Aufrufen der Methoden **CreateIoTHub** und
 [lnk-azure-portal]: https://portal.azure.com/
 [lnk-powershell-install]: https://azure.microsoft.com/de-DE/blog/azps-1-0-pre/
 [lnk-rest-api]: https://msdn.microsoft.com/library/mt589014.aspx
-[lnk-azure-rm-overview]: https://azure.microsoft.com/documentation/articles/resource-group-overview/
+[lnk-azure-rm-overview]: ./resource-group-overview.md
+[lnk-powershell-arm]: ./powershell-azure-resource-manager.md
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

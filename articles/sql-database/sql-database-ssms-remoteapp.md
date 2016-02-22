@@ -1,10 +1,16 @@
-<properties pageTitle="Herstellen einer Verbindung mit SQL-Datenbank per SQL Server Management Studio in Azure RemoteApp | Microsoft Azure" description="In diesem Lernprogramm erfahren Sie, wie Sie SQL Server Management Studio in Azure RemoteApp beim Herstellen einer Verbindung mit SQL-Datenbank für die Bereiche Sicherheit und Leistung verwenden." services="sql-database" documentationCenter="" authors="adhurwit" manager="" tags=""//>
+<properties 
+	pageTitle="Herstellen einer Verbindung mit SQL-Datenbank mit SQL Server Management Studio in Azure RemoteApp | Microsoft Azure" 
+	description="Sie erfahren in diesem Tutorial, wie Sie SQL Server Management Studio in Azure RemoteApp für Sicherheit und Leistung beim Verbinden mit SQL-Datenbank verwenden."
+	services="sql-database" 
+	documentationCenter=""
+	authors="adhurwit" 
+	manager=""/>
 
 <tags 
 	ms.service="sql-database" 
 	ms.workload="data" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
 	ms.topic="article" 
 	ms.date="01/20/2016" 
 	ms.author="adhurwit"/>
@@ -51,7 +57,7 @@ Verwenden Sie das Image „Windows Server Remote Desktop Session Host Windows Se
 
 ### 2\. Installieren von SSMS aus SQL Express
 
-Wechseln Sie auf die neue virtuelle Maschine, und navigieren Sie zu dieser Downloadseite: [Microsoft® SQL Server® 2014 Express](https://www.microsoft.com/de-DE/download/details.aspx?id=42299).
+Wechseln Sie auf den neuen virtuellen Computer, und navigieren Sie zu dieser Downloadseite: [Microsoft® SQL Server® 2014 Express](https://www.microsoft.com/de-DE/download/details.aspx?id=42299).
 
 Es ist eine Option zum Herunterladen von SSMS vorhanden. Navigieren Sie nach dem Download in das Installationsverzeichnis, und führen Sie das Setup zum Installieren von SSMS aus.
 
@@ -66,7 +72,7 @@ Auf dem Desktop der virtuellen Maschine befindet sich ein PowerShell-Skript mit 
 
 Nachdem Sysprep abgeschlossen ist, wird die VM heruntergefahren.
 
-Weitere Informationen zum Erstellen eines Azure RemoteApp-Images finden Sie unter [How to create a RemoteApp template image in Azure](http://blogs.msdn.com/b/rds/archive/2015/03/17/how-to-create-a-remoteapp-template-image-in-azure.aspx).
+Weitere Informationen zum Erstellen eines Azure RemoteApp-Images finden Sie unter [How to create a RemoteApp template image in Azure](http://blogs.msdn.com/b/rds/archive/2015/03/17/how-to-create-a-remoteapp-template-image-in-azure.aspx) (Gewusst wie: Erstellen eines RemoteApp-Vorlagenimages in Azure).
 
 
 ### 4\. Erfassen des Images
@@ -152,4 +158,4 @@ Das ist erst einmal alles. Viel Spaß!
 [5]: ./media/sql-database-ssms-remoteapp/publish.png
 [6]: ./media/sql-database-ssms-remoteapp/user.png
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0211_2016-->

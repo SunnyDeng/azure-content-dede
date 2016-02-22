@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/08/2015" 
+	ms.date="02/10/2016" 
 	ms.author="stefsch"/>
 
 # Sicheres Verbinden mit Back-End-Ressourcen von einer App Service-Umgebung aus #
@@ -28,6 +28,8 @@ Beispielsweise kann ein SQL Server auf einem Cluster virtueller Computer ausgef�
 Als weiteres Beispiel können vertrauliche Endpunkte lokal ausgeführt werden und mit Azure entweder über [Site-to-Site][SiteToSite]- oder [Azure ExpressRoute][ExpressRoute]-Verbindungen verbunden sein. Daher können nur Ressourcen in virtuellen Netzwerken, die mit den Site-to-Site- oder ExpressRoute-Tunneln verbunden sind, auf lokale Standorte zugreifen.
 
 In all diesen Szenarien können Apps, die in einer App Service-Umgebung ausgeführt werden, sich sicher mit den verschiedenen Servern und Ressourcen verbinden. Ausgehender Datenverkehr von in einer App Service-Umgebung ausgeführten Apps zu privaten Endpunkte in demselben virtuellen Netzwerk (oder die mit demselben virtuellen Netzwerk verbunden sind) wird nur über das virtuelle Netzwerk geleitet. Ausgehender Datenverkehr an private Endpunkte verläuft nicht über das öffentliche Internet.
+
+Eine Einschränkung gilt für ausgehenden Datenverkehr von einer App Service-Umgebung zu Endpunkten in einem virtuellen Netzwerk. App Service-Umgebungen können Endpunkte von virtuellen Computern nicht erreichen, die sich im **gleichen** Subnetz wie die App Service-Umgebung befinden. Dies sollte normalerweise kein Problem darstellen, wenn die App Service-Umgebungen in einem Subnetz bereitgestellt werden, das ausschließlich für die Verwendung durch die App Service-Umgebung reserviert ist.
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
@@ -114,4 +116,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 [NetworkAccessControlListExample]: ./media/app-service-app-service-environment-securely-connecting-to-backend-resources/NetworkAcl01.png
 [DefaultNetworkSecurityRules]: ./media/app-service-app-service-environment-securely-connecting-to-backend-resources/DefaultNetworkSecurityRules01.png
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0211_2016-->

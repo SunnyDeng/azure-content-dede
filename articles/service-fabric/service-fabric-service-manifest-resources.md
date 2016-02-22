@@ -36,7 +36,7 @@ Wenn eine Endpunktressource im Dienstmanifest definiert wird, weist Service Fabr
 </Resources>
 ```
 
-Weitere Informationen zum Verweisen auf Endpunkte aus der Datei mit den Konfigurationspaketeinstellungen (settings.xml) finden Sie unter [Konfigurieren zustandsbehafteter Reliable Services](../Service-Fabric/service-fabric-reliable-services-configuration.md).
+Weitere Informationen zum Verweisen auf Endpunkte aus der Datei mit den Konfigurationspaketeinstellungen („settings.xml“) finden Sie unter [Konfigurieren zustandsbehafteter Reliable Services](service-fabric-reliable-services-configuration.md).
 
 ## Beispiel: Angeben eines HTTP-Endpunkts für Ihren Dienst
 
@@ -137,4 +137,4 @@ Hier sehen Sie ein Beispiel für ein Anwendungsmanifest, das Sie für HTTPS fest
 </ApplicationManifest>
 ```
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

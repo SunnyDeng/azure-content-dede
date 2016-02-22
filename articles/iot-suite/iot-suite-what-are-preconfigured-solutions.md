@@ -26,23 +26,20 @@ Bei den vorkonfigurierten Azure IoT Suite-Lösungen handelt es sich um Implement
 
 Mit jeder vorkonfigurierten Lösung wird ein gängiges IoT-Szenario implementiert. Es handelt sich um eine vollständige End-to-End-Implementierung, bei der simulierte Geräte zum Generieren von Telemetriedaten verwendet werden.
 
-Sie können nicht nur die vorkonfigurierten Lösungen in Azure bereitstellen und ausführen, sondern auch den kompletten Quellcode herunterladen und die Lösung dann gemäß Ihren speziellen IoT-Anforderungen anpassen und erweitern.
+Sie können nicht nur die Lösungen in Azure bereitstellen und ausführen, sondern auch den kompletten Quellcode herunterladen und die Lösung dann gemäß Ihren speziellen IoT-Anforderungen anpassen und erweitern.
 
-Folgende vorkonfigurierte Lösungen sind verfügbar:
+> [AZURE.NOTE] Der Artikel [Erste Schritte mit den vorkonfigurierten IoT-Lösungen][lnk-preconf-get-started] beschreibt das Bereitstellen und Ausführen der Lösungen.
 
-- [Remoteüberwachung][lnk-remote-monitoring]
-- [Vorhersagbarer Wartungsbedarf][lnk-predictive-maintenance]
-
-In der folgenden Tabelle wird gezeigt, wie diese vorkonfigurierten Lösungen bestimmten IoT-Funktionen zugeordnet sind:
+In der folgenden Tabelle wird gezeigt, welchen IoT-Features die Lösungen zugeordnet sind:
 
 | Lösung | Datenerfassung | Geräteidentität | Befehl und Steuerung | Regeln und Aktionen | Predictive Analytics |
 |------------------------|-----|-----|-----|-----|-----|
-| Remoteüberwachung | Ja | Ja | Ja | Ja | – |
-| Vorbeugende Wartung | Ja | Ja | Ja | Ja | Ja |
+| [Remoteüberwachung][lnk-remote-monitoring] | Ja | Ja | Ja | Ja | – |
+| [Vorbeugende Wartung][lnk-predictive-maintenance] | Ja | Ja | Ja | Ja | Ja |
 
 ## Übersicht über die vorkonfigurierte Lösung zur Remoteüberwachung
 
-In diesem Abschnitt werden einige wichtige Elemente der vorkonfigurierten Lösung für die Remoteüberwachung beschrieben. Die Remoteüberwachung ist die einfachste aller vorkonfigurierten Lösungen und dient zur Veranschaulichung gängiger Entwurfselemente, die auch in den anderen vorkonfigurierten Lösungen enthalten sind.
+Die vorkonfigurierte Lösung zur Remoteüberwachung wird in diesem Artikel beschrieben, weil sie die einfachste aller vorkonfigurierten Lösungen ist und zur Veranschaulichung gängiger Entwurfselemente dient, die auch in den anderen vorkonfigurierten Lösungen enthalten sind.
 
 Im folgenden Diagramm sind die wichtigsten Elemente der Remoteüberwachungslösung dargestellt. Die folgenden Abschnitte enthalten weitere Informationen zu diesen Elementen.
 
@@ -85,6 +82,8 @@ Bei dieser vorkonfigurierten Lösung bildet der Ereignisprozessor einen Teil des
 
 ## Lösungsportal
 
+![Lösungsdashboard][img-dashboard]
+
 Das Lösungsportal ist eine webbasierte Benutzeroberfläche, die in der Cloud als Teil der vorkonfigurierten Lösung bereitgestellt wird. Hiermit haben Sie folgende Möglichkeiten:
 
 - Anzeigen von Telemetriedaten und Alarmverlauf in einem Dashboard
@@ -93,7 +92,7 @@ Das Lösungsportal ist eine webbasierte Benutzeroberfläche, die in der Cloud al
 - Senden von Befehlen an bestimmte Geräte
 - Verwalten von Regeln und Aktionen
 
-> [AZURE.NOTE] Im Lösungsportal bleibt die [Registrierung der IoT Hub-Geräteidentität][lnk-identity-registry] mit den umfassenderen Gerätestatusinformationen in der DocumentDB-Datenbank der Lösung synchronisiert.
+> [AZURE.NOTE]Im Lösungsportal bleibt die [Registrierung der IoT Hub-Geräteidentität][lnk-identity-registry] mit den umfassenderen Gerätestatusinformationen in der DocumentDB-Datenbank der Lösung synchronisiert.
 
 Bei dieser vorkonfigurierten Lösung bildet das Lösungsportal einen Teil des *IoT-Lösungs-Back-Ends* und einen Teil der *Verarbeitungsverbindung und Business Connectivity* in einer typischen [IoT-Lösungsarchitektur][lnk-what-is-azure-iot].
 
@@ -101,10 +100,11 @@ Bei dieser vorkonfigurierten Lösung bildet das Lösungsportal einen Teil des *I
 
 Unter den folgenden Ressourcen erhalten Sie weitere Informationen zu vorkonfigurierten IoT-Lösungen:
 
-- [Übersicht über vorkonfigurierte Azure IoT-Lösungen][lnk-suite-overview]
 - [Erste Schritte mit den vorkonfigurierten IoT-Lösungen][lnk-preconf-get-started]
+- [Übersicht über die vorkonfigurierte Lösung für vorhersagbaren Wartungsbedarf][lnk-predictive-maintenance]
 
 [img-remote-monitoring-arch]: ./media/iot-suite-what-are-preconfigured-solutions/remote-monitoring-arch1.png
+[img-dashboard]: ./media/iot-suite-what-are-preconfigured-solutions/dashboard.png
 [lnk-remote-monitoring]: iot-suite-remote-monitoring-sample-walkthrough.md
 [lnk-what-is-azure-iot]: iot-suite-what-is-azure-iot.md
 [lnk-asa]: https://azure.microsoft.com/documentation/services/stream-analytics/
@@ -116,4 +116,4 @@ Unter den folgenden Ressourcen erhalten Sie weitere Informationen zu vorkonfigur
 [lnk-preconf-get-started]: iot-suite-getstarted-preconfigured-solutions.md
 [lnk-predictive-maintenance]: iot-suite-predictive-overview.md
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

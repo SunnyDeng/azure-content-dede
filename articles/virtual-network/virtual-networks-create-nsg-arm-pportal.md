@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Erstellen von NSGs im ARM-Modus mit dem Vorschauportal | Microsoft Azure"
-   description="Hier erhalten Sie Informationen zum Erstellen und Bereitstellen von NSGs im ARM-Modus über das Vorschauportal."
+   pageTitle="Gewusst wie: Erstellen von NSGs im ARM-Modus über das Azure-Portal | Microsoft Azure"
+   description="Erfahren Sie, wie Sie NSGs im ARM-Modus über das Azure-Portal erstellen und bereitstellen."
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="12/11/2015"
+   ms.date="02/04/2016"
    ms.author="telmos" />
 
 # Verwalten von NSGs mithilfe des Vorschauportals
@@ -56,4 +56,4 @@ Führen Sie die Schritte unten aus, um im Vorschauportal Regeln in einer vorhand
 
 ![Vorschauportal – Neue Regel](./media/virtual-networks-create-nsg-arm-pportal/figure5.png)
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0211_2016-->

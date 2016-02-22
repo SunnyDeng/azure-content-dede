@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Erstellen eines virtuellen Netzwerks mit dem Azure-Vorschauportal | Microsoft Azure"
-   description="Erfahren Sie, wie Sie ein virtuelles Netzwerk mit dem Azure-Vorschauportal erstellen."
+   pageTitle="Erstellen eines virtuellen Netzwerks mit dem Azure-Portal | Microsoft Azure"
+   description="Erfahren Sie, wie Sie ein virtuelles Netzwerk mit dem Azure-Portal erstellen."
    services="virtual-network"
    documentationCenter=""
    authors="telmosampaio"
@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="12/07/2015"
+   ms.date="02/03/2016"
    ms.author="telmos"/>
 
 # Erstellen eines virtuellen Netzwerks (klassisch) über das Azure-Vorschauportal
@@ -29,4 +29,4 @@
 
 [AZURE.INCLUDE [virtual-networks-create-vnet-classic-pportal-include](../../includes/virtual-networks-create-vnet-classic-pportal-include.md)]
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0211_2016-->

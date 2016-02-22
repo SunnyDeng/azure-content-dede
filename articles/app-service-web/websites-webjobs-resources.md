@@ -34,7 +34,7 @@ Das WebJobs-Dashboard im Azure-Portal bietet leistungsstarke Verwaltungsfunktion
 * [Azure WebJobs are awesome and you should start using them right now! (Setzen Sie ab sofort das großartige Azure WebJobs ein; in englischer Sprache)](http://www.troyhunt.com/2015/01/azure-webjobs-are-awesome-and-you.html) (Blogbeitrag von Troy Hunt)
 * [Funktionen von Azure WebJobs](/blog/2014/10/22/webjobs-goes-into-full-production/)
 * [Was ist das WebJobs-SDK?](websites-dotnet-webjobs-sdk.md)
-* [Anleitungen für Hintergrundaufträge von Microsoft Patterns and Practices](https://github.com/mspnp/azure-guidance/blob/master/Background-Jobs.md)
+* [Anleitungen für Hintergrundaufträge von Microsoft Patterns and Practices](/documentation/articles/best-practices-background-jobs/)
 * [Ankündigung der Version 1.1.0 RTM des Microsoft Azure WebJobs-SDK](/blog/azure-webjobs-sdk-1-1-0-rtm/)
 * [Erste Schritte mit dem Azure WebJobs SDK](websites-dotnet-webjobs-sdk-get-started.md)
 * [Verwenden von Azure-Warteschlangenspeicher mit dem WebJobs-SDK](websites-dotnet-webjobs-sdk-storage-queues-how-to.md)
@@ -139,4 +139,4 @@ Weitere Informationen finden Sie auch in den Abschnitten [Bereitstellen von WebJ
 * [Twitter](http://twitter.com/). Verwenden Sie das Hashtag #AzureWebJobs
 * [Report a WebJobs bug or issue (Melden eines WebJobs-Fehlers oder -Problems; in englischer Sprache)](https://github.com/projectkudu/kudu/wiki/Reporting-WebJobs-issues)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->
