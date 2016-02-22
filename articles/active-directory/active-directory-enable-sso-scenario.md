@@ -13,7 +13,7 @@
       ms.topic="article"
       ms.tgt_pltfrm="na"
       ms.workload="identity"
-      ms.date="10/16/2015"
+      ms.date="02/09/2016"
       ms.author="inhenk"/>
 
 # Verwalten von Anwendungen mit Azure Active Directory (AD)
@@ -56,7 +56,7 @@ Was hält Organisationen im Allgemeinen davon ab, integrierte IAM-Lösungen einz
 
 Azure Active Directory (AD) ist die umfassende (IDaaS)-Lösung (Identity-as-a-Service) von Microsoft, die IAM als Clouddienst ermöglicht und eine integrierte Zugriffsverwaltung, einmaliges Anmelden (Single Sign-On, SSO) und Berichtfunktionen [vorinstalliert in Tausenden von Anwendungen](https://azure.microsoft.com/marketplace/active-directory/) bereitstellt, einschließlich Salesforce, Google Apps, Box, Concur und vielen mehr. Mit Azure AD gelten für Anwendungen, die Sie für Ihre Partner und Kunden (Business oder Consumer) veröffentlichen, dieselben Identitäts- und Zugriffsverwaltungsfunktionen, sodass Sie sich auf Ihr Hauptgeschäft konzentrieren können.
 
-Der Nutzen von Azure AD geht über Cloudanwendungen hinaus. Sie können es auch mit lokalen Anwendungen einsetzen, indem Sie sicheren Remotezugriff bereitstellen. Somit sind VPNs oder andere herkömmliche Systeme zur Remotezugriffsverwaltung nicht erforderlich.
+Der Nutzen von Azure AD geht über Cloudanwendungen hinaus. Sie können es auch mit lokalen Anwendungen einsetzen, indem Sie sicheren Remotezugriff bereitstellen. Somit sind VPNs oder andere herkömmliche Systeme zur Remotezugriffsverwaltung nicht erforderlich.
 
 Was geschieht, wenn Sie eine Anwendung implementieren müssen, die im Anwendungskatalog noch nicht aufgeführt ist? Auch wenn es etwas zeitaufwändiger ist als das Konfigurieren von SSO für Anwendungen über den Katalog, bietet Azure AD einen Assistenten, der Sie bei der Konfiguration unterstützt.
 
@@ -94,7 +94,7 @@ Wenn ein Benutzer Ihrer Organisation beitritt, müssen Sie z. B. für die primä
 
 ## Zugriffserkennung
 
-In modernen Unternehmen sind die IT-Abteilungen häufig nicht über alle verwendeten Cloudanwendungen unterrichtet. Mit Cloud App Discovery bietet Azure Active Directory Ihnen auch eine Lösung zum Erkennen dieser Apps.
+In modernen Unternehmen sind die IT-Abteilungen häufig nicht über alle verwendeten Cloudanwendungen unterrichtet. Mit Cloud App Discovery bietet Azure AD Ihnen auch eine Lösung zum Erkennen dieser Anwendungen.
 
 ## Kontenverwaltung
 
@@ -102,7 +102,7 @@ Ursprünglich ist das Verwalten von Konten in den verschiedenen Anwendungen ein 
 
 ## Automatisierte Benutzerbereitstellung
 
-Einige Anwendungen bieten Automatisierungsschnittstellen für die Erstellung und Entfernung (oder Deaktivierung) von Konten. Wenn ein Anbieter eine solche Schnittstelle anbietet, wird sie von Azure AD genutzt. Dadurch werden die Betriebskosten reduziert, da Verwaltungsaufgaben automatisch ausgeführt werden, und die Sicherheit Ihrer Umgebung verbessert sich, da das Risiko eines unbefugten Zugriffs sinkt.
+Einige Anwendungen bieten Automatisierungsschnittstellen für die Erstellung und Entfernung (oder Deaktivierung) von Konten. Wenn ein Anbieter eine solche Schnittstelle anbietet, wird sie von Azure AD genutzt. Dadurch werden die Betriebskosten reduziert, da Verwaltungsaufgaben automatisch ausgeführt werden, und die Sicherheit Ihrer Umgebung verbessert sich, da das Risiko eines unbefugten Zugriffs sinkt.
 
 ## Zugriffsverwaltung
 
@@ -118,10 +118,14 @@ Azure AD bietet integrierte Berichterstellungs- und Überwachungsfunktionen, mit
 
 ## Zugehörige Funktionen
 
-Mit Azure AD können Sie Ihre Anwendungen mit fein abgestimmten Zugriffsrichtlinien und vorinstallierter MFA sichern. Weitere Informationen zu Azure MFA finden Sie unter [Azure MFA](https://azure.microsoft.com/services/multi-factor-authentication/).
+Mit Azure AD können Sie Ihre Anwendungen mit fein abgestimmten Zugriffsrichtlinien und vorinstallierter MFA sichern. Weitere Informationen zu Azure MFA finden Sie unter [Azure MFA](https://azure.microsoft.com/services/multi-factor-authentication/).
 
 ## Erste Schritte
 
 Erste Schritte in die Anwendungsintegration in Azure AD finden Sie unter [Erste Schritte zur Integration von Azure Active Directory in Anwendungen](active-directory-integrating-applications-getting-started.md).
 
-<!---HONumber=Oct15_HO4-->
+## Weitere Informationen
+
+[Artikelindex für die Anwendungsverwaltung in Azure Active Directory](active-directory-apps-index.md)
+
+<!---HONumber=AcomDC_0211_2016-->

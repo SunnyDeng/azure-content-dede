@@ -13,7 +13,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="tbd" 
-	ms.date="02/03/2015" 
+	ms.date="02/08/2016" 
 	ms.author="bradsev;ankarloff" />
 
 
@@ -363,4 +363,4 @@ Die Ausführungsumgebung für das R-Skript verwendet die gleiche Version von R w
 
  
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

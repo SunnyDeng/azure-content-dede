@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="ne" 
 	ms.topic="article" 
-	ms.date="10/05/2015" 
+	ms.date="02/03/2016" 
 	ms.author="juliako"/>
 
 #Kopieren eines vorhandenen Blobs in ein Media Services-Medienobjekt
@@ -316,4 +316,4 @@ Mit dem Codebeispiel unten werden die folgenden Aufgaben ausgeführt:
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

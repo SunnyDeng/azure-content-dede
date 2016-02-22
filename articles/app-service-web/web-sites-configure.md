@@ -14,7 +14,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="12/08/2015" 
-	ms.author="erikre"/>
+	ms.author="tdykstra"/>
 
 
 # Konfigurieren von Web-Apps in Azure App Service #
@@ -25,7 +25,7 @@ In diesem Thema wird erläutert, wie Sie eine Web-App mit dem [Azure-Portal](htt
 
 ## Anwendungseinstellungen
 
-1. Öffnen Sie im [Azure-Portal](https://portal.azure.com) das Blatt für die Web-App.
+1. Öffnen Sie im [Azure-Portal](https://portal.azure.com/) das Blatt für die Web-App.
 2. Klicken Sie auf **Alle Einstellungen**.
 3. Klicken Sie auf **Anwendungseinstellungen**.
 
@@ -177,4 +177,4 @@ Weitere Informationen finden Sie unter [Vorgehensweise: Überwachen des Web-Endp
 * Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

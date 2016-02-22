@@ -12,14 +12,14 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="01/07/2016"
+    ms.date="02/02/2016"
     ms.author="elizapo" />
 
 # Planen des virtuellen Netzwerks für Azure RemoteApp
 
-Dieses Dokument beschreibt, wie Sie Ihr virtuelles Azure-Netzwerk (VNET) und das Subnetz für Azure RemoteApp einrichten. Falls Sie noch nicht mit virtuellen Azure-Netzwerken vertraut sind: Dies ist eine Funktion, mit der Sie Ihre Netzwerkinfrastruktur für die Cloud virtualisieren und Hybridlösungen mit Azure und Ihren lokalen Ressourcen erstellen können. Weitere Informationen dazu finden Sie [hier](virtual-networks-overview.md).
+Dieses Dokument beschreibt, wie Sie Ihr virtuelles Azure-Netzwerk (VNET) und das Subnetz für Azure RemoteApp einrichten. Falls Sie noch nicht mit virtuellen Azure-Netzwerken vertraut sind: Dies ist eine Funktion, mit der Sie Ihre Netzwerkinfrastruktur für die Cloud virtualisieren und Hybridlösungen mit Azure und Ihren lokalen Ressourcen erstellen können. Weitere Informationen dazu finden Sie [hier](../virtual-network/virtual-networks-overview.md).
 
-Wenn Sie Sicherheitsrichtlinien für eingehenden und ausgehenden Datenverkehr in dem virtuellen Netzwerk definieren möchten, in dem Sie Azure RemoteApp bereitstellen, empfiehlt es sich dringend, ein Subnetz für Azure RemoteApp zu erstellen, das von Ihren anderen Bereitstellungen im virtuellen Azure-Netzwerk getrennt ist. Weitere Informationen zum Definieren von Sicherheitsrichtlinien in einem Subnetz Ihres virtuellen Azure-Netzwerks erhalten Sie unter [Was ist eine Netzwerksicherheitsgruppe (NSG)?](virtual-networks-nsg.md).
+Wenn Sie Sicherheitsrichtlinien für eingehenden und ausgehenden Datenverkehr in dem virtuellen Netzwerk definieren möchten, in dem Sie Azure RemoteApp bereitstellen, empfiehlt es sich dringend, ein Subnetz für Azure RemoteApp zu erstellen, das von Ihren anderen Bereitstellungen im virtuellen Azure-Netzwerk getrennt ist. Weitere Informationen zum Definieren von Sicherheitsrichtlinien in einem Subnetz Ihres virtuellen Azure-Netzwerks erhalten Sie unter [Was ist eine Netzwerksicherheitsgruppe (NSG)?](../virtual-network/virtual-networks-nsg.md).
 
 ## Arten von Azure RemoteApp-Sammlungen in virtuellen Azure-Netzwerken
 
@@ -53,6 +53,6 @@ Folgende Aspekte müssen Sie im Subnetz Ihres virtuellen Netzwerks aktivieren:
 
 ## Virtuelles Netzwerk mit Tunnelerzwingung
 
-[Tunnelerzwingung](vpn-gateway-about-forced-tunneling.md) wird jetzt für alle neuen Azure RemoteApp-Sammlungen unterstützt. Die Migration einer vorhandenen Sammlung zur Unterstützung der Tunnelerzwingung wird zurzeit nicht unterstützt. Sie müssen alle vorhandenen Sammlungen löschen, die das mit Azure RemoteApp verknüpfte VNET nutzen, und ein neues virtuelles Netzwerk erstellen, um die Tunnelerzwingung für Ihre Sammlungen zu aktivieren.
+[Tunnelerzwingung](../vpn-gateway/vpn-gateway-about-forced-tunneling.md) wird jetzt für alle neuen Azure RemoteApp-Sammlungen unterstützt. Die Migration einer vorhandenen Sammlung zur Unterstützung der Tunnelerzwingung wird zurzeit nicht unterstützt. Sie müssen alle vorhandenen Sammlungen löschen, die das mit Azure RemoteApp verknüpfte VNET nutzen, und ein neues virtuelles Netzwerk erstellen, um die Tunnelerzwingung für Ihre Sammlungen zu aktivieren.
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0211_2016-->

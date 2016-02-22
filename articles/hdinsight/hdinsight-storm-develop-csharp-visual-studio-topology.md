@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="01/28/2016"
+   ms.date="02/05/2016"
    ms.author="larryfr"/>
 
 # Entwickeln von C#-Topologien für Apache Storm in HDInsight mithilfe von Hadoop-Tools für Visual Studio
@@ -41,7 +41,7 @@ Außerdem erfahren Sie, wie hybride Topologien erstellt werden, die C#- und Java
 
     > [AZURE.NOTE] HDInsight-Tools für Visual Studio werden von Visual Studio Express nicht unterstützt
 
--	Apache Storm in HDInsight-Cluster: Informationen zum Erstellen eines Clusters finden Sie unter [Erste Schritte mit Apache Storm in HDInsight](hdinsight-apache-storm-tutorial-getting-started.md).
+-	Apache Storm in HDInsight-Cluster: Informationen zum Erstellen eines Clusters finden Sie unter [Erste Schritte mit Apache Storm in HDInsight](hdinsight-apache-storm-tutorial-get-started.md).
 
 	> [AZURE.NOTE] Die HDInsight-Tools für Visual Studio unterstützen derzeit nur Storm auf HDInsight-Clustern der Version 3.2.
 
@@ -658,4 +658,4 @@ Weitere Möglichkeiten zum Arbeiten mit HDInsight sowie weitere Beispiele für S
 
 -	[Erste Schritte mit HBase in HDInsight](hdinsight-hbase-tutorial-get-started.md)
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

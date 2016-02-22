@@ -25,7 +25,7 @@ Diese Elemente werden in [Hinzufügen eines Shards mithilfe der Tools für elast
 
 **Datenbank:** eine Azure SQL-Datenbank.
 
-**Datenabhängiges Routing:** die Funktionen, die es einer Anwendung ermöglicht, eine Verbindung mit einem Shard unter Verwendung eines bestimmten Sharding-Schlüssels herzustellen. Vgl. **Abfragen mehrerer Shards**.
+**Datenabhängiges Routing:** die Funktionen, die es einer Anwendung ermöglicht, eine Verbindung mit einem Shard unter Verwendung eines bestimmten Sharding-Schlüssels herzustellen. Siehe [Datenabhängiges Routing](sql-database-elastic-scale-data-dependent-routing.md). Vgl. **[Abfragen mehrerer Shards](sql-database-elastic-scale-multishard-querying.md)**.
 
 **Globale Shard-Zuordnung:** die Zuordnungen zwischen Sharding-Schlüsseln und den zugehörigen Shards in einer **Shard-Gruppe**. Die globale Shard-Zuordnung wird im **Shard-Zuordnungs-Manager** gespeichert. Vgl. **lokale Shard-Zuordnung**.
 
@@ -82,4 +82,4 @@ Diese Elemente werden in [Hinzufügen eines Shards mithilfe der Tools für elast
 [3]: ./media/sql-database-elastic-scale-glossary/h_versus_vert.png
  
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

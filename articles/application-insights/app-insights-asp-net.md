@@ -114,7 +114,7 @@ Suchen Sie nach Daten in der Übersichtsdiagrammen. Zuerst sehen Sie lediglich e
 
 Klicken Sie sich durch ein beliebiges Diagramm, um ausführlichere Metriken anzuzeigen. [Weitere Informationen zu Metriken.][perf]
 
-* *Keine Daten zu Benutzern oder Seiten?* - [Hinzufügen von Daten zu Benutzern und Seiten](app-insights-asp-net-client.md)
+* *Keine Daten zu Benutzern oder Seiten?* - [Hinzufügen von Daten zu Benutzern und Seiten](app-insights-web-track-usage.md)
 
 ### Suche: Einzelne Ereignisse
 
@@ -146,7 +146,7 @@ Beim Betrieb im Debugmodus wird Telemetrie über die Pipeline geliefert, sodass 
 
 #### Probleme auf dem Buildserver?
 
-Weitere Informationen finden Sie in [diesem Artikel zur Problembehandlung](app-insights-troubleshoot-faq.md#NuGetBuild).
+Weitere Informationen finden Sie in [diesem Artikel zur Problembehandlung](app-insights-asp-net-troubleshoot-no-data.md#NuGetBuild).
 
 > [AZURE.NOTE] Wenn die Anwendung viele Telemetriedaten generiert (und Sie Version 2.0.0-beta3 oder höher des ASP.NET-SDK verwenden), reduziert das adaptive Stichprobenmodul automatisch die an das Portal gesendete Datenmenge, indem nur ein repräsentativer Bruchteil der Ereignisse gesendet wird. Ereignisse, die mit derselben Anforderung im Zusammenhang stehen, werden als Gruppe aus- oder abgewählt, sodass Sie zwischen verwandten Ereignissen navigieren können. [Erfahren Sie mehr über das Erstellen von Stichproben.](app-insights-sampling.md)
 
@@ -169,7 +169,7 @@ Dies ist besonders hilfreich, wenn Sie über [benutzerdefinierte Telemetriedaten
 
 ## Nächste Schritte
 
-- [Daten zu Seiten und Benutzern](../article/application-insights/app-insights-asp-net-client.md#selector1)
+- [Daten zu Seiten und Benutzern](../article/application-insights/app-insights-javascript.md#selector1)
 - [Ausnahmen](../article/application-insights/app-insights-asp-net-exception-mvc.md#selector1)
 - [Abhängigkeiten](../article/application-insights/app-insights-asp-net-dependencies.md#selector1)
 - [Verfügbarkeit](../article/application-insights/app-insights-monitor-web-app-availability.md#selector1)
@@ -212,4 +212,4 @@ Wenn Sie Anpassungen an der Datei "ApplicationInsights.config" vorgenommen haben
 
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

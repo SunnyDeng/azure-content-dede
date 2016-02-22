@@ -49,7 +49,8 @@ Die Web-App muss im **Standard**- oder **Premium**-Modus ausgeführt werden, dam
 
 	![Neuen Bereitstellungs-Steckplatz hinzufügen][QGAddNewDeploymentSlot]
 
-	> [AZURE.NOTE]Wenn die Web-App nicht bereits im **Standard**- oder **Premium** -Modus ausgeführt wird, wird eine Meldung angezeigt, in der auf die unterstützten Modi für die Veröffentlichung in einer Stagingumgebung hingewiesen wird. An diesem Punkt können Sie **Upgrade** auswählen und zur Registerkarte **Skalierung** der Web-App navigieren, bevor Sie den Vorgang fortsetzen.
+	> [AZURE.NOTE]
+	Wenn die Web-App nicht bereits im **Standard**- oder **Premium** -Modus ausgeführt wird, wird eine Meldung angezeigt, in der auf die unterstützten Modi für die Veröffentlichung in einer Stagingumgebung hingewiesen wird. An diesem Punkt können Sie **Upgrade** auswählen und zur Registerkarte **Skalierung** der Web-App navigieren, bevor Sie den Vorgang fortsetzen.
 
 2. Weisen Sie dem Slot auf dem Blatt **Slot hinzufügen** einen Namen zu, und wählen Sie aus, ob Sie die Web-App-Konfiguration von einem anderen vorhandenen Bereitstellungsslot klonen möchten. Klicken Sie auf das Häkchen, um fortzufahren.
 
@@ -97,7 +98,7 @@ Um eine App-Einstellung oder einen Verbindungszeichenfolge so zu konfigurieren, 
 <a name="Swap"></a>
 ## Überführung von Bereitstellungsslots ##
 
->[AZURE.IMPORTANT]Bevor Sie eine Web-App aus einem Bereitstellungsslot in die Produktion überführen, stellen Sie sicher, dass alle nicht Slot-spezifischen Einstellungen im Austauschziel genau wie gewünscht konfiguriert sind.
+>[AZURE.IMPORTANT] Bevor Sie eine Web-App aus einem Bereitstellungsslot in die Produktion überführen, stellen Sie sicher, dass alle nicht Slot-spezifischen Einstellungen im Austauschziel genau wie gewünscht konfiguriert sind.
 
 1. Um Bereitstellungsslots auszutauschen, klicken Sie in der Befehlsleiste der Web-App oder der Befehlsleiste eines Bereitstellungsslots auf die Schaltfläche **Austauschen**. Stellen Sie sicher, dass die Austauschquelle und das Austauschziel ordnungsgemäß festgelegt wurden. Normalerweise ist das Austauschziel ein Produktionsslot.  
 
@@ -109,7 +110,7 @@ Um eine App-Einstellung oder einen Verbindungszeichenfolge so zu konfigurieren, 
 
 Auto Swap rationalisiert DevOps-Szenarios, bei denen Ihre Web-App ständig ohne Kaltstarts und ohne Ausfallzeiten für Endkunden der Web-App bereitgestellt werden soll. Wenn ein Bereitstellungsslot für Auto Swap in der Produktion konfiguriert wurde, tauscht App Service bei jeder Codeaktualisierung per Push die Web-App in die Produktion, nachdem bereits eine Anlaufzeit im Slot verbraucht wurde.
 
->[AZURE.IMPORTANT]Wenn Sie Auto Swap für einen Slot aktivieren, stellen Sie sicher, dass die Slotkonfiguration genau der erforderlichen Konfiguration für den Zielslot (normalerweise der Produktionsslot) entspricht.
+>[AZURE.IMPORTANT] Wenn Sie Auto Swap für einen Slot aktivieren, stellen Sie sicher, dass die Slotkonfiguration genau der erforderlichen Konfiguration für den Zielslot (normalerweise der Produktionsslot) entspricht.
 
 Das Konfigurieren von Auto Swap für einen Slot ist einfach. Führen Sie die folgenden Schritte aus:
 
@@ -123,7 +124,7 @@ Das Konfigurieren von Auto Swap für einen Slot ist einfach. Führen Sie die fol
 
 	![][Autoswap2]
 
-	>[AZURE.NOTE]Um Auto Swap für Ihre Web-App zu testen, können Sie zunächst unter **Auto Swap-Slot** einen Nicht-Produktionszielslot auswählen, um sich mit der Funktion vertraut zu machen.
+	>[AZURE.NOTE] Um Auto Swap für Ihre Web-App zu testen, können Sie zunächst unter **Auto Swap-Slot** einen Nicht-Produktionszielslot auswählen, um sich mit der Funktion vertraut zu machen.
 
 3. Führen Sie einen Code-Push für diesen Bereitstellungsslot aus. Auto Swap erfolgt nach kurzer Zeit, und die Aktualisierung wird an der URL des Zielslots wiedergegeben.
 
@@ -134,7 +135,18 @@ Ein mehrstufiger Austausch steht zur Verfügung, um die Validierung im Kontext v
 
 <a name="Rollback"></a>
 ## So setzen Sie eine Produktions-App nach dem Austausch wieder zurück ##
+
 Wenn nach dieser Aktion Fehler in der Produktionswebsite feststellen, führen Sie ein Rollback in den Zustand vor dem Austausch aus, indem Sie dieselben beiden Slots sofort austauschen.
+
+<a name="Warm-up"></a>
+## Benutzerdefiniertes Aufwärmen vor dem Austausch ##
+
+Einige Apps erfordern benutzerdefinierte Aufwärmaktionen. Über das Konfigurationselement applicationInitialization in der Datei „web.config“ können Sie benutzerdefinierte Initialisierungsaktionen angeben, die vor dem Empfang einer Anforderung ausgeführt werden. Der Austauschvorgang wartet dann, bis diese benutzerdefinierte Aufwärmphase abgeschlossen ist. Im Folgenden finden Sie ein Beispielfragment aus der Datei „Web.config“.
+
+    <applicationInitialization>
+        <add initializationPage="/" hostName="[web app hostname]" />
+        <add initializationPage="/Home/About" hostname="[web app hostname]" />
+    </applicationInitialization>
 
 <a name="Delete"></a>
 ## So löschen Sie einen Bereitstellungsslot##
@@ -150,7 +162,7 @@ Klicken Sie auf dem Blatt für den Bereitstellungsslot in der Befehlsleiste auf 
 
 Azure PowerShell ist ein Modul, das Cmdlets für die Verwaltung von Azure über Windows PowerShell bietet, einschließlich Unterstützung bei der Verwaltung von Web-App-Bereitstellungsslots für Azure App Service.
 
-- Informationen zum Installieren und Konfigurieren von Azure PowerShell sowie zur Authentifizierung von Azure PowerShell mit Ihrem Azure-Abonnement finden Sie unter [Installieren und Konfigurieren von Microsoft Azure PowerShell](../install-configure-powershell.md).  
+- Informationen zum Installieren und Konfigurieren von Azure PowerShell sowie zur Authentifizierung von Azure PowerShell mit Ihrem Azure-Abonnement finden Sie unter [Installieren und Konfigurieren von Microsoft Azure PowerShell](../powershell-install-configure.md).  
 
 - Um den neuen Azure-Ressourcen-Manager-Modus für PowerShell-Cmdlets verwenden zu können, beginnen Sie mit dem folgenden: `Switch-AzureMode -Name AzureResourceManager`.
 
@@ -233,7 +245,7 @@ Um einen nicht mehr benötigten Bereitstellungsslot zu löschen, verwenden Sie w
 
 ----------
 
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Nächste Schritte ##
 [Azure App Service-Web-App – Blockieren des Webzugriffs auf Nicht-Produktionsslots](http://ruslany.net/2014/04/azure-web-sites-block-web-access-to-non-production-deployment-slots/)
@@ -259,4 +271,4 @@ Um einen nicht mehr benötigten Bereitstellungsslot zu löschen, verwenden Sie w
 [SlotSettings]: ./media/web-sites-staged-publishing/SlotSetting.png
  
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0211_2016-->

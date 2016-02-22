@@ -13,7 +13,7 @@
 	ms.workload="search"
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
-	ms.date="11/04/2015"
+	ms.date="02/09/2016"
 	ms.author="liamca"/>
 
 # Durchsuchen von Stack Exchange-Daten mithilfe von Azure Search
@@ -41,7 +41,7 @@ Bei diesem Beispiel übergeben wir einfach das Wort "Azure" als Suchparameter un
 
 > <http://fiddle.jshell.net/liamca/gkvfLe6s/1/?index=stackexchange&apikey=252044BE3886FE4A8E3BAA4F595114BB&query=api-version=2015-02-28%26search=azure%26$filter=tagsCollection/any(t:+t+eq+'architecture')%26$orderby=viewCount+desc>
 
--	`Spelling Mistakes`: Unsere neue Unterstützung für [Lucene-Abfrageausdrücke](https://msdn.microsoft.com/library/mt589323.aspx) (in der Vorschauphase) ermöglicht Ihnen nützliche Abfragen, wie z. B. nach Fuzzyübereinstimmungen von Ergebnissen und Begrenzen der Suche auf bestimmte Felder. Bei diesem Beispiel wird das Titelfeld auf das Wort „visualize“ durchsucht, doch das Tildezeichen (~) bedeutet Fuzzyübereinstimmungen, was heißt, dass auch Ergebnisse wie „visualise“ und „visualizing“ zurückgegeben werden.
+-	`Fuzzy Search`: Unsere neue Unterstützung für [Lucene-Abfrageausdrücke](https://msdn.microsoft.com/library/mt589323.aspx) ermöglicht Ihnen nützliche Abfragen, wie z. B. nach Fuzzyübereinstimmungen von Ergebnissen und Begrenzen der Suche auf bestimmte Felder. Bei diesem Beispiel wird das Titelfeld auf das Wort „visualize“ durchsucht, doch das Tildezeichen (~) bedeutet Fuzzyübereinstimmungen, was heißt, dass auch Ergebnisse wie „visualise“ und „visualizing“ zurückgegeben werden.
 
 > <http://fiddle.jshell.net/liamca/gkvfLe6s/1/?index=stackexchange&apikey=252044BE3886FE4A8E3BAA4F595114BB&query=api-version=2015-02-28&search%3Dtitle%3Avisualise~%26querytype%3Dfull%26searchMode%3Dall%26%24select%3Dtitle>
 
@@ -109,4 +109,4 @@ Sobald dies erfolgt ist, können Sie im [klassischen Azure-Portal](https://porta
     Server=tcp:azs-playground.database.windows.net,1433;Database=StackExchange;User ID=reader@azs-playground;
     Password=EdrERBt3j6mZDP;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

@@ -550,15 +550,15 @@ Die [Bundle](http://msdn.microsoft.com/library/system.web.optimization.bundle.as
 7. Aktualisieren Sie Ihr Browserfenster für die Azure-Web-App. Jetzt sollte angezeigt werden, dass alle Skripts und Stylesheets ordnungsgemäß geladen sind.
 
 ## Weitere Informationen 
-- [Übersicht über das Azure Content Delivery Network (CDN)](../cdn-overview.md)
-- [Verarbeiten von Inhalt aus Azure CDN in einer Webanwendung](../cdn-serve-content-from-cdn-in-your-web-application.md)
-- [Integrieren eines Clouddiensts in Azure CDN](../cdn-cloud-service-with-cdn.md)
+- [Übersicht über das Azure Content Delivery Network (CDN)](../cdn/cdn-overview.md)
+- [Verarbeiten von Inhalt aus Azure CDN in einer Webanwendung](../cdn/cdn-serve-content-from-cdn-in-your-web-application.md)
+- [Integrieren eines Clouddiensts in Azure CDN](../cdn/cdn-cloud-service-with-cdn.md)
 - [ASP.NET-Bündelung und -Minimierung](http://www.asp.net/mvc/tutorials/mvc-4/bundling-and-minification)
-- [Verwenden von CDN für Azure](../cdn-how-to-use-cdn.md)
+- [Verwenden von CDN für Azure](../cdn/cdn-how-to-use-cdn.md)
 
 ## Änderungen
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

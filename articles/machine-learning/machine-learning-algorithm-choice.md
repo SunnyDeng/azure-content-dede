@@ -14,7 +14,7 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
 	ms.workload="data-services"
-	ms.date="10/13/2015"
+	ms.date="02/10/2016"
 	ms.author="brohrer;garye" />
 
 # Auswählen von Algorithmen für Microsoft Azure Machine Learning
@@ -118,10 +118,10 @@ Einige Lernalgorithmen treffen bestimmte Annahmen über die Struktur der Daten o
 |[Decision Forest (Entscheidungswald)](https://msdn.microsoft.com/library/azure/dn906015.aspx)|●|○| |6| |
 |[Decision Jungle (Entscheidungsdschungel)](https://msdn.microsoft.com/library/azure/dn905963.aspx)|●|○| |6|Niedriger Speicherbedarf|
 |[Neuronales Netzwerk](https://msdn.microsoft.com/library/azure/dn906030.aspx)|●| | |9|[Zusätzliche Anpassung möglich](http://go.microsoft.com/fwlink/?LinkId=402867)|
-|[One-vs-All (eins-gegen-alle)](https://msdn.microsoft.com/library/azure/dn905887.aspx)|-|-|-|-|Siehe die Eigenschaften der ausgewählten zweiklassigen Methode| 
-|**Regression**| | | | | | 
-|[linear ](https://msdn.microsoft.com/library/azure/dn905978.aspx)| |●|●|4| | 
-|[Bayesian Linear](https://msdn.microsoft.com/library/azure/dn906022.aspx)| |○|●|2| | 
+|[One-vs-All (eins-gegen-alle)](https://msdn.microsoft.com/library/azure/dn905887.aspx)|-|-|-|-|Siehe die Eigenschaften der ausgewählten zweiklassigen Methode|
+|**Regression**| | | | | |
+|[linear ](https://msdn.microsoft.com/library/azure/dn905978.aspx)| |●|●|4| |
+|[Bayesian Linear](https://msdn.microsoft.com/library/azure/dn906022.aspx)| |○|●|2| |
 |[Decision Forest (Entscheidungswald)](https://msdn.microsoft.com/library/azure/dn905862.aspx)|●|○| |6| |
 |[Boosted Decision Tree (Verstärkter Entscheidungsbaum)](https://msdn.microsoft.com/library/azure/dn905801.aspx)|●|○| |5|Hoher Speicherbedarf|
 |[Fast Forest Quantile](https://msdn.microsoft.com/library/azure/dn913093.aspx)|●|○| |9|Eher Verteilungen statt Punktvohersagen|
@@ -156,7 +156,7 @@ Obwohl es verwirrenderweise "Regression" im Namen trägt, handelt es sich bei de
 
 ![Logistische Regression mit zweiklassigen Daten mit nur einem Merkmal][4]
 
-***Eine logistische Regression mit zweiklassigen Daten mit nur einem Merkmal****– die Klassengrenze ist der Punkt, an dem die logistische Kurve gleich nah an beiden Klassen ist*
+***Eine logistische Regression mit zweiklassigen Daten mit nur einem Merkmal*** *– die Klassengrenze ist der Punkt, an dem die logistische Kurve gleich nah an beiden Klassen ist*
 
 ### Bäume, Wälder und Dschungel
 
@@ -237,4 +237,4 @@ Azure Machine Learning umfasst außerdem Zugriff auf ein leistungsfähiges Machi
 [9]: ./media/machine-learning-algorithm-choice/image9.png
 [10]: ./media/machine-learning-algorithm-choice/image10.png
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

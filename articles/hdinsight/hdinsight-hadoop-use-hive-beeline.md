@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="12/04/2015"
+   ms.date="02/05/2016"
    ms.author="larryfr"/>
 
 #Verwenden von Hive mit Hadoop in HDInsight über Beeline
@@ -23,7 +23,7 @@
 
 In diesem Artikel erfahren Sie, wie Sie mit SSH (Secure Shell) eine Verbindung mit einem Linux-basierten HDInsight-Cluster herstellen und dann Hive-Abfragen mithilfe des [Beeline](https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients#HiveServer2Clients-Beeline–NewCommandLineShell)-Befehlszeilentools interaktiv übermitteln.
 
-> [AZURE.NOTE]Für Beeline wird JDBC für die Verbindung mit Hive verwendet. Weitere Informationen zur Verwendung von JDBC mit Hive finden Sie unter [Herstellen einer Verbindung mit Hive unter Azure HDInsight per Hive-JDBC-Treiber](hdinsight-connect-hive-jdbc-driver.md).
+> [AZURE.NOTE] Für Beeline wird JDBC für die Verbindung mit Hive verwendet. Weitere Informationen zur Verwendung von JDBC mit Hive finden Sie unter [Herstellen einer Verbindung mit Hive unter Azure HDInsight per Hive-JDBC-Treiber](hdinsight-connect-hive-jdbc-driver.md).
 
 ##<a id="prereq"></a>Voraussetzungen
 
@@ -123,7 +123,7 @@ Weitere Informationen zum Verwenden von PuTTY finden Sie unter [Verwenden von SS
     * **AUSWÄHLEN** – Wählt die Anzahl aller Zeilen aus, bei denen die Spalte **t4** den Wert **[FEHLER]** enthält. Dadurch sollte der Wert **3** zurückgegeben werden, da dieser Wert in drei Zeilen enthalten ist.
     * **INPUT\_\_FILE\_\_NAME LIKE '%.log'**: Teilt Hive mit, dass nur Daten aus Dateien mit der Erweiterung „.log“ zurückgegeben werden sollen. Normalerweise befinden sich in einem Ordner beim Abfragen mit Hive nur Daten mit dem gleichen Schema. Diese Beispielprotokolldatei wird aber mit anderen Datenformaten gespeichert.
 
-    > [AZURE.NOTE]Wenn erwartet wird, dass die zugrunde liegenden Daten über eine externe Quelle, z. B. einen automatisierten Prozess zum Hochladen von Daten, oder über einen anderen MapReduce-Vorgang aktualisiert, aber von Hive immer die neuesten Daten verwendet werden, sollten externe Tabellen verwendet werden.
+    > [AZURE.NOTE] Wenn erwartet wird, dass die zugrunde liegenden Daten über eine externe Quelle, z. B. einen automatisierten Prozess zum Hochladen von Daten, oder über einen anderen MapReduce-Vorgang aktualisiert, aber von Hive immer die neuesten Daten verwendet werden, sollten externe Tabellen verwendet werden.
     >
     > Durch das Löschen einer externen Tabelle werden **nicht** die Daten, sondern nur die Tabellendefinitionen gelöscht.
     
@@ -172,7 +172,7 @@ Beeline kann auch verwendet werden, um eine Datei auszuführen, die HiveQL-Anwei
     * **ALS ORC GESPEICHERT** – Speichert die Daten im ORC-Format (Optimized Row Columnar). Dies ist ein stark optimiertes und effizientes Format zum Speichern von Hive-Daten.
     * **ÜBERSCHREIBEN EINFÜGEN ... AUSWÄHLEN**: Wählt die Zeilen aus der Tabelle **log4jLogs** aus, die **[FEHLER]** enthalten. Dann werden die Daten in die Tabelle **errorLogs** eingefügt.
     
-    > [AZURE.NOTE]Im Gegensatz zu externen Tabellen werden beim Ablegen von internen Tabellen auch die zugrunde liegenden Daten gelöscht.
+    > [AZURE.NOTE] Im Gegensatz zu externen Tabellen werden beim Ablegen von internen Tabellen auch die zugrunde liegenden Daten gelöscht.
     
 3. Verwenden Sie __STRG__+___\_X__, um die Datei zu speichern, und geben Sie dann __J__ ein, und drücken Sie die __EINGABETASTE__.
 
@@ -237,4 +237,4 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 
 [powershell-here-strings]: http://technet.microsoft.com/library/ee692792.aspx
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0211_2016-->

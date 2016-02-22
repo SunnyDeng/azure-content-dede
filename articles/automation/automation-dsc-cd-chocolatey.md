@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="vm-windows"
    ms.workload="na"
-   ms.date="11/11/2015"
+   ms.date="02/04/2016"
    ms.author="golive"/>
 
 # Anwendungsbeispiel: Fortlaufende Bereitstellung auf virtuellen Computern mit Automation DSC und Chocolatey
@@ -78,7 +78,7 @@ Der PowerShell-Katalog wird genutzt, um DSC-Ressourcen in Ihrem Azure Automation
 Es gibt auch eine manuelle Vorgehensweise. Die Ordnerstruktur eines PowerShell-Integrationsmoduls für einen Windows-Computer unterscheidet sich etwas von der Ordnerstruktur, die von Azure Automation erwartet wird. Hierfür ist es erforderlich, dass Sie eine kleine Optimierung vornehmen. Dies ist aber nicht schwierig und muss nur einmal pro Ressource durchgeführt werden (es sei denn, Sie möchten später ein Upgrade durchführen). Weitere Informationen zum Erstellen von PowerShell-Integrationsmodulen finden Sie im Artikel [Erstellen von Integrationsmodulen für Azure Automation](https://azure.microsoft.com/blog/authoring-integration-modules-for-azure-automation/).
 
 -   Installieren Sie das Modul, das Sie auf Ihrer Arbeitsstation benötigen, wie folgt:
-    -   Installieren Sie [Windows Management Framework, v5](http://aka.ms/wmf5latest). 
+    -   Installieren Sie [Windows Management Framework, Version 5](http://www.microsoft.com/download/details.aspx?id=48729) (unter Windows 10 nicht erforderlich).
     -   `Install-Module  –ModuleName MODULENAME` <—Holt sich das Modul aus dem PowerShell-Katalog. 
 -   Kopieren Sie den Modulordner unter `c:\Program Files\WindowsPowerShell\Modules\MODULE-NAME` in einen temporären Ordner. 
 -   Löschen Sie Beispiele und Dokumentation aus dem Hauptordner. 
@@ -88,7 +88,7 @@ Es gibt auch eine manuelle Vorgehensweise. Die Ordnerstruktur eines PowerShell-I
 
         New-AzureAutomationModule ``
             -ResourceGroupName MY-AUTOMATION-RG -AutomationAccountName MY-AUTOMATION-ACCOUNT ``
-            -Name MODULE-NAME –ContentLink "https://STORAGE-URI/public/MODULE-NAME.zip"
+            -Name MODULE-NAME –ContentLink "https://STORAGE-URI/CONTAINERNAME/MODULE-NAME.zip"
         
 
 Im beigefügten Beispiel werden diese Schritte für cChoco und xNetworking ausgeführt. Informationen finden Sie in den [Hinweisen](#notes) zum besonderen Umgang mit cChoco.
@@ -177,8 +177,6 @@ Sie müssen keine ARM-Vorlage und dann die VM-Erweiterung verwenden, um dieses V
 
 Wenn Sie ein Paket auf einem virtuellen Computer aktualisieren, der sich in der Produktion befindet, müssen Sie diesen virtuellen Computer natürlich aus der Rotation nehmen, während das Update installiert wird. Die Vorgehensweise kann dabei stark variieren. Beispielsweise können Sie bei einem virtuellen Computer hinter einem Azure Load Balancer einen benutzerdefinierten Test hinzufügen. Richten Sie dies so ein, dass der Testendpunkt während der Aktualisierung des virtuellen Computers eine „400“ zurückgibt. Die erforderliche Optimierung für diese Änderung kann sich innerhalb Ihrer Konfiguration befinden. Dies gilt auch für den Wechsel zurück zur Rückgabe einer „200“, nachdem das Update abgeschlossen ist.
 
-Die Version der cChoco-DSC-Ressource im PowerShell-Katalog ist gegenüber ihrer Quelle nicht ganz aktuell. Die Datei „cChoco.zip“ im GitHub-Quellprojekt ist aktuell. Verwenden Sie das manuelle Verfahren oben in Schritt 3 für die Installation.
-
 Den vollständigen Quellcode für dieses Anwendungsbeispiel finden Sie in [diesem Visual Studio-Projekt](https://github.com/sebastus/ARM/tree/master/CDIaaSVM) bei GitHub.
 
 ##Verwandte Artikel##
@@ -187,4 +185,4 @@ Den vollständigen Quellcode für dieses Anwendungsbeispiel finden Sie in [diese
 - [Azure Automation DSC-Cmdlets](https://msdn.microsoft.com/library/mt244122.aspx)
 - [Integrieren von Computern für die Verwaltung durch Azure Automation DSC](automation-dsc-onboarding.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

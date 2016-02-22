@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD" 
-   ms.date="02/01/2016"
+   ms.date="02/04/2016"
    ms.author="alkohli"/>
 
 # StorSimple-Software, hohe Verfügbarkeit und Netzwerkanforderungen
@@ -36,7 +36,7 @@ Die folgenden Softwareanforderungen gelten für Speicherclients, die auf das Sto
 | Unterstützte Betriebssysteme | Erforderliche Version | Weitere Anforderungen/Hinweise |
 | --------------------------- | ---------------- | ------------- |
 | Windows Server | 2008 R2 SP1, 2012, 2012 R2 |StorSimple iSCSI-Volumes werden nur für die Verwendung auf den folgenden Windows-Datenträgertypen unterstützt:<ul><li>Einfaches Volume auf einfachem Datenträger</li><li>Einfaches und gespiegeltes Volume auf dynamischem Datenträger</li></ul>Schlanke Speicherzuweisung für Windows Server 2012 und ODX-Features werden bei Verwendung eines StorSimple iSCSI-Volumes unterstützt.<br><br>Mit StorSimple können Volumes mit schlanker und vollständiger Speicherzuweisung erstellt werden. Es können damit keine teilweise bereitgestellten Volumes erstellt werden.<br><br>Das erneute Formatieren eines mit schlanker Speicherzuweisung erstellten Volumes kann lange dauern. Es wird empfohlen, das Volume zu löschen und dann ein neues Volume zu erstellen, anstatt neu zu formatieren. Falls Sie trotzdem das Neuformatieren eines Volumes vorziehen:<ul><li>Führen Sie vor dem Neuformatieren den folgenden Befehl aus, um Verzögerungen bei der Speicherplatzrückgewinnung zu vermeiden: <br>`fsutil behavior set disabledeletenotify 1`</br></li><li>Verwenden Sie nach Abschluss der Formatierung den folgenden Befehl, um die Speicherplatzrückgewinnung wieder zu aktivieren:<br>`fsutil behavior set disabledeletenotify 0`</br></li><li>Wenden Sie den Windows Server 2012-Hotfix, der unter [KB2878635](https://support.microsoft.com/kb/2870270) beschrieben ist, auf Ihren Windows Server-Computer an.</li></ul></li></ul></ul> Greifen Sie auf [Softwareanforderungen für optionale Komponenten](#software-requirements-for-optional-components) zu, wenn Sie StorSimple Snapshot Manager oder den StorSimple-Adapter für SharePoint konfigurieren.|
-| VMWare ESX | 5.5 | Wird für VMware vSphere als iSCSI-Client unterstützt. Die VAAI-Blockfunktion wird für VMware vSphere auf StorSimple-Geräten unterstützt. 
+| VMWare ESX | 5\.1 und 5.5 | Wird für VMware vSphere als iSCSI-Client unterstützt. Die VAAI-Blockfunktion wird für VMware vSphere auf StorSimple-Geräten unterstützt. 
 | Linux RHEL/CentOS | 5 und 6 | Unterstützung für Linux-iSCSI-Clients mit Open-iSCSI-Initiator, Versionen 5 und 6. |
 | Linux | SUSE Linux 11 | |
  > [AZURE.NOTE] IBM AIX wird für StorSimple derzeit nicht unterstützt.
@@ -67,7 +67,7 @@ Das StorSimple-Gerät ist ein gesperrtes Gerät. Allerdings müssen Ports in der
 
 <sup>1</sup> Es müssen keine eingehenden Ports für das öffentliche Internet geöffnet werden.
 
-<sup>2</sup> Wenn mehrere Ports eine Gatewaykonfiguration besitzen, wird die Reihenfolge des ausgehenden weitergeleiteten Datenverkehrs basierend auf der unten unter [Portweiterleitung](#port-routing) beschriebenen Reihenfolge der Portweiterleitungen ermittelt.
+<sup>2</sup> Wenn mehrere Ports eine Gatewaykonfiguration besitzen, wird die Reihenfolge des ausgehenden weitergeleiteten Datenverkehrs basierend auf der unten unter [Portweiterleitung](#routing-metric) beschriebenen Reihenfolge der Portweiterleitungen ermittelt.
 
 <sup>3</sup> Die festen IP-Adressen der Controller im StorSimple-Gerät müssen routingfähig sein und eine Verbindung mit dem Internet herstellen können. Die festen IP-Adressen werden für Anwendung von Updates auf dem Gerät verwendet. Wenn die Gerätecontroller über die festen IP-Adressen keine Verbindung mit dem Internet herstellen können, können Sie das StorSimple-Gerät nicht aktualisieren.
 
@@ -77,7 +77,7 @@ Das StorSimple-Gerät ist ein gesperrtes Gerät. Allerdings müssen Ports in der
 
 Eine Routingmetrik ist den Schnittstellen und dem Gateway zugeordnet, die die Daten an die angegebenen Netzwerke weiterleiten. Das Routingprotokoll errechnet anhand der Routingmetrik die beste Route für ein bestimmtes Ziel, wenn festgestellt wird, dass mehrere Pfade zum gleichen Ziel vorhanden sind. Je niedriger die Routingmetrik, desto höher ist die Voreinstellung.
 
-Im Kontext von StorSimple gilt: Wenn mehrere Netzwerkschnittstellen und Gateways für das Weiterleiten von Datenverkehr konfiguriert sind, wird die Routingmetrik eingesetzt, um die relative Reihenfolge für die Verwendung der Schnittstellen festzulegen. Die Routingmetrik kann vom Benutzer nicht geändert werden. Mit dem `Get-HcsRoutingTable`-Cmdlet können Sie jedoch die Routingtabelle (und die Metrik) auf Ihrem StorSimple-Gerät ausgeben. Weitere Informationen zum [Cmdlet „Get-HcsRoutingTable“](storsimple-troubleshoot-deployment.md#troubleshoot-with-the-get-hcsroutingtable-cmdlet)
+Im Kontext von StorSimple gilt: Wenn mehrere Netzwerkschnittstellen und Gateways für das Weiterleiten von Datenverkehr konfiguriert sind, wird die Routingmetrik eingesetzt, um die relative Reihenfolge für die Verwendung der Schnittstellen festzulegen. Die Routingmetrik kann vom Benutzer nicht geändert werden. Mit dem `Get-HcsRoutingTable`-Cmdlet können Sie jedoch die Routingtabelle (und die Metrik) auf Ihrem StorSimple-Gerät ausgeben. Weitere Informationen zum Cmdlet Get-HcsRoutingTable finden Sie unter [Problembehandlung bei der StorSimple-Bereitstellung](storsimple-troubleshoot-deployment.md).
 
 Die Algorithmen der Routingmetrik unterscheiden sich je nach Version der Software auf Ihrem StorSimple-Gerät.
 
@@ -215,7 +215,7 @@ Informationen zur Einbindung Ihres Geräts in das Netzwerk, um eine hohe Verfüg
 
 #### SSDs und HDDs
 
-StorSimple-Geräte enthalten Solid-State-Datenträger (SSDs) und Festplattenlaufwerke (HDDs), die mit gespiegelten Speicherbereichen geschützt werden. Für die Festplattenlaufwerke ist ein Hot-Spare-Austausch möglich. Durch die Verwendung von gespiegelten Speicherbereichen wird sichergestellt, dass das Gerät Fehler von einzelnen oder mehreren SSDs oder HDDs tolerieren kann.
+StorSimple-Geräte enthalten Solid-State-Datenträger (SSDs) und Festplattenlaufwerke (HDDs), die mit gespiegelten Speicherbereichen geschützt werden. Durch die Verwendung von gespiegelten Speicherbereichen wird sichergestellt, dass das Gerät Fehler von einzelnen oder mehreren SSDs oder HDDs tolerieren kann.
 
 - Stellen Sie sicher, dass alle SSD- und HDD-Module installiert sind.
 
@@ -256,9 +256,9 @@ Lesen Sie sich diese bewährten Methoden sorgfältig durch, um eine hohe Verfüg
 ## Nächste Schritte
 
 - [Informationen über StorSimple-Systemeinschränkungen](storsimple-limits.md).
-- [Informationen zum Bereitstellen der StorSimple-Lösung](storsimple-deployment-walkthrough.md).
+- [Informationen zum Bereitstellen der StorSimple-Lösung](storsimple-deployment-walkthrough-u2.md).
  
 <!--Reference links-->
 [1]: https://technet.microsoft.com/library/cc731844(v=WS.10).aspx
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

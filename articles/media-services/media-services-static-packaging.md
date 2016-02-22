@@ -19,7 +19,7 @@
 
 # Ausführen von Aufgaben zur statischen Paketerstellung mithilfe von Azure Media Packager
 
->[AZURE.NOTE]Das Datum für das Ende der Nutzung von Windows Azure Media Packager und Windows Azure Media Encryptor wurde auf den 1. März 2017 verlegt. Vor diesem Datum werden die Funktionen dieser Prozessoren in Media Encoder Standard (MES) hinzugefügt. Kunden erhalten eine Anleitung zum Migrieren ihrer Workflows, sodass Aufträge an MES gesendet werden. Funktionen zur Formatkonvertierung und Verschlüsselung stehen außerdem über die dynamische Paketerstellung und die dynamische Verschlüsselung zur Verfügung.
+>[AZURE.NOTE]Das Datum für das Ende der Nutzung von Microsoft Azure Media Packager und Microsoft Azure Media Encryptor wurde auf den 1. März 2017 verlegt. Vor diesem Datum werden die Funktionen dieser Prozessoren in Media Encoder Standard (MES) hinzugefügt. Kunden erhalten eine Anleitung zum Migrieren ihrer Workflows, sodass Aufträge an MES gesendet werden. Funktionen zur Formatkonvertierung und Verschlüsselung stehen außerdem über die dynamische Paketerstellung und die dynamische Verschlüsselung zur Verfügung.
 
 ## Übersicht
 
@@ -1447,4 +1447,4 @@ Media Services bietet jetzt einen Dienst für die Bereitstellung von Microsoft P
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

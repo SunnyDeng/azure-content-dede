@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="ne" 
 	ms.topic="article" 
-	ms.date="10/15/2015"  
+	ms.date="02/03/2016"   
 	ms.author="juliako"/>
 
 #Verwenden des NewTek TriCaster-Encoders zum Senden eines Single-Bitrate-Livedatenstroms
@@ -54,12 +54,12 @@ Stellen Sie sicher, dass die Option **Neuen Kanal jetzt starten** ausgewählt is
 
 3. Klicken Sie auf **Kanal erstellen**. ![Tricaster](./media/media-services-tricaster-live-encoder/media-services-tricaster2.png)
 
->[AZURE.NOTE]Das Starten des Kanals kann bis zu 20 Minuten dauern.
+>[AZURE.NOTE] Das Starten des Kanals kann bis zu 20 Minuten dauern.
 
 
 Während der Kanal gestartet wird, können Sie [den Encoder konfigurieren](media-services-configure-tricaster-live-encoder.md#configure_tricaster_rtmp).
 
->[AZURE.IMPORTANT]Beachten Sie, dass die Abrechnung beginnt, sobald der Kanal betriebsbereit ist. Weitere Informationen finden Sie unter [Kanalstatus](media-services-manage-live-encoder-enabled-channels.md#states).
+>[AZURE.IMPORTANT] Beachten Sie, dass die Abrechnung beginnt, sobald der Kanal betriebsbereit ist. Weitere Informationen finden Sie unter [Kanalstatus](media-services-manage-live-encoder-enabled-channels.md#states).
 
 ##<a id=configure_tricaster_rtmp></a>Konfigurieren des NewTek TriCaster-Encoders
 
@@ -119,7 +119,7 @@ In diesem Tutorial werden die folgenden Ausgabeeinstellungen verwendet. Im restl
 
 	![Tricaster](./media/media-services-tricaster-live-encoder/media-services-tricaster11.png)
 
->[AZURE.IMPORTANT]Bevor Sie auf **Streamen** klicken, **müssen** Sie sicherstellen, dass der Kanal bereit ist. Stellen Sie außerdem sicher, dass der Kanal nicht länger als 15 Minuten ohne ein Eingabe in einem betriebsbereiten Zustand verbleibt.
+>[AZURE.IMPORTANT] Bevor Sie auf **Streamen** klicken, **müssen** Sie sicherstellen, dass der Kanal bereit ist. Stellen Sie außerdem sicher, dass der Kanal nicht länger als 15 Minuten ohne ein Eingabe in einem betriebsbereiten Zustand verbleibt.
 
 ##Testen der Wiedergabe
   
@@ -162,4 +162,4 @@ Eine Anleitung finden Sie im Thema [Problembehandlung](media-services-troublesho
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0211_2016-->

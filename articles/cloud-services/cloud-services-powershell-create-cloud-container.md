@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="powershell"
    ms.workload="na"
-   ms.date="01/13/2015"
+   ms.date="02/09/2016"
    ms.author="cawa"/>
 
 # Verwenden des Azure PowerShell-Befehls zum Erstellen eines leeren Clouddienstcontainers
@@ -46,4 +46,4 @@ Get-help New-AzureService
 
  * Um Ihr Clouddienst-Projekt in Azure zu veröffentlichen, nutzen Sie das Codebeispiel **PublishCloudService.ps1** auf der Seite [Kontinuierliche Zustellung für Cloud Services in Azure](cloud-services-dotnet-continuous-delivery.md).
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

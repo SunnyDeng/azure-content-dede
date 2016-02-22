@@ -18,7 +18,7 @@
 
 # Architektur der Cortana Analytics-Lösungsvorlage für vorbeugende Wartung in der Luft- und Raumfahrt und anderen Unternehmen
 
-Das nachstehende Diagramm bietet eine Architekturübersicht über die [Cortana Analytics-Lösungsvorlage für vorbeugende Wartung](cortana-analytics-playbook-predictive-maintenance.md).
+Das nachstehende Diagramm bietet eine Architekturübersicht über die [Cortana Analytics-Lösungsvorlage für vorbeugende Wartung](https://gallery.cortanaanalytics-int.com/SolutionTemplate/Predictive-Maintenance-for-Aerospace-1).
 
 Eine Version des Diagramms in voller Größe können Sie hier herunterladen: [Architecture diagram: Solution Template for predictive maintenance](http://download.microsoft.com/download/1/9/B/19B815F0-D1B0-4F67-AED3-A40544225FD1/ca-topologies-maintenance-prediction.png) (in englischer Sprache).
 
@@ -26,4 +26,4 @@ Eine Version des Diagramms in voller Größe können Sie hier herunterladen: [Ar
 
 [image]: ./media/cortana-analytics-architecture-predictive-maintenance/ca-topologies-maintenance-prediction.png
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0211_2016-->

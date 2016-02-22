@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/05/2015"    
+ 	ms.date="02/03/2016"  
 	ms.author="juliako"/>
 
 #Anleitung zur Behandlung von Problemen bei Livestreaming
@@ -65,7 +65,7 @@ Dieser Abschnitt enthält Empfehlungen zum Beheben von Problemen im Zusammenhang
 
 	**Problembehandlungsschritte**: Navigieren Sie im AMSE-Tool zur Registerkarte "Streamingendpunkt", und stellen Sie sicher, dass ein Streamingendpunkt mit einer Streamingeinheit ausgeführt wird.
 	
->[AZURE.NOTE]Wenn Sie nach dem Ausführen der Problembehandlungsschritte immer noch nicht streamen können, senden Sie über das klassische Azure-Portal ein Supportticket.
+>[AZURE.NOTE] Wenn Sie nach dem Ausführen der Problembehandlungsschritte immer noch nicht streamen können, senden Sie über das klassische Azure-Portal ein Supportticket.
 
 ##Media Services-Lernpfade
 
@@ -75,4 +75,4 @@ Dieser Abschnitt enthält Empfehlungen zum Beheben von Problemen im Zusammenhang
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0211_2016-->

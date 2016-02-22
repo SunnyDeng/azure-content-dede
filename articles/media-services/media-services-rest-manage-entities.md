@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/05/2015"
+ 	ms.date="02/09/2016"  
 	ms.author="juliako"/>
 
 #Verwalten von Media Services-Entitäten mit der REST-API
@@ -27,10 +27,11 @@ Microsoft Azure Media Services ist ein REST-basierter Dienst auf Grundlage von O
 
 - Hinzufügen von Entitäten 
 - Abfragen von Entitäten 
+- Auflisten von großen Auflistungen von Entitäten
 - Aktualisieren von Entitäten 
 - Löschen von Entitäten 
 
->[AZURE.NOTE]Beim Verwenden der Media Services REST-API gelten die folgenden Überlegungen:
+>[AZURE.NOTE] Beim Verwenden der Media Services REST-API gelten die folgenden Überlegungen:
 >
 >Wenn Sie in Media Services auf Entitäten zugreifen, müssen Sie bestimmte Headerfelder und Werte in Ihren HTTP-Anforderungen festlegen. Weitere Informationen finden Sie unter [Installation für die Entwicklung mit der Media Services-REST-API](media-services-rest-how-to-use.md).
 
@@ -100,7 +101,9 @@ Im folgenden Beispiel wird nur die State-Eigenschaft aller Aufträge zurückgege
 	x-ms-version: 2.11
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=youraccountname&urn%3aSubscriptionId=2f84471d-b1ae-4e75-aa09-010f0fc0cf5b&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1337078831&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=suFkxhvPWxQVMjOYelOJfYEWkyTWJCBc02pF0N7NghI%3d
 	Host: media.windows.net
-	The following example returns all JobTemplates with the name "SampleTemplate."
+
+Das folgende Beispiel gibt alle JobTemplates mit dem Namen „SampleTemplate“ zurück.
+
 	GET https://media.windows.net/API/JobTemplates?$filter=startswith(Name,%20'SampleTemplate') HTTP/1.1
 	Content-Type: application/json;odata=verbose
 	Accept: application/json;odata=verbose
@@ -112,6 +115,20 @@ Im folgenden Beispiel wird nur die State-Eigenschaft aller Aufträge zurückgege
 
 >[AZURE.NOTE]Der $expand-Vorgang wird in Media Services nicht unterstützt, ebenso wie die in den LINQ-Informationen (WCF Data Services) beschriebenen LINQ-Methoden.
 
+##Auflisten von großen Auflistungen von Entitäten
+
+Beim Abfragen von Entitäten gibt es ein Limit von 1.000 Entitäten, die gleichzeitig zurückgegeben werden können, da die öffentliche REST-Version 2 Abfrageergebnisse auf 1.000 Ergebnisse begrenzt. Verwenden Sie **skip** und **top** zum Auflisten großer Auflistungen von Entitäten.
+
+Das folgende Beispiel zeigt, wie Sie **skip** und **top** zum Überspringen der ersten 2.000 Aufträge und zum Abrufen der nächsten 1.000 Aufträge verwenden.
+
+	GET https://media.windows.net/api/Jobs()?$skip=2000&$top=1000 HTTP/1.1
+	Content-Type: application/json;odata=verbose
+	Accept: application/json;odata=verbose
+	DataServiceVersion: 3.0
+	MaxDataServiceVersion: 3.0
+	x-ms-version: 2.11
+	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=youraccountname&urn%3aSubscriptionId=2f84471d-b1ae-4e75-aa09-010f0fc0cf5b&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1337078831&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=suFkxhvPWxQVMjOYelOJfYEWkyTWJCBc02pF0N7NghI%3d
+	Host: media.windows.net
 
 ##Aktualisieren von Entitäten
 
@@ -158,4 +175,4 @@ Im folgenden Beispiel wird das Löschen eines Locator veranschaulicht, mit dem e
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0211_2016-->

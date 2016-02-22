@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/12/2015"
+   ms.date="02/02/2016"
    ms.author="telmos" />
 
 #Bereitstellen von Multi-NIC-VMs (klassisch) mit PowerShell
@@ -31,7 +31,7 @@ Da virtuelle Computer mit nur einer Netzwerkschnittstellenkarte (NIC) zurzeit ni
 
 ## Voraussetzungen
 
-Bevor Sie die Back-End-Server bereitstellen können, müssen Sie den Hauptclouddienst mit den erforderlichen Ressourcen für dieses Szenario bereitstellen. Sie müssen zumindest ein virtuelles Netzwerk mit einem Subnetz für das Back-End erstellen. Unter [Erstellen eines virtuellen Netzwerks über PowerShell](virtual-networks-create-vnet-classic-ps.md) finden Sie Informationen über das Bereitstellen eines virtuellen Netzwerks.
+Bevor Sie die Back-End-Server bereitstellen können, müssen Sie den Hauptclouddienst mit den erforderlichen Ressourcen für dieses Szenario bereitstellen. Sie müssen zumindest ein virtuelles Netzwerk mit einem Subnetz für das Back-End erstellen. Unter [Erstellen eines virtuellen Netzwerks über PowerShell](virtual-networks-create-vnet-classic-netcfg-ps.md) finden Sie Informationen über das Bereitstellen eines virtuellen Netzwerks.
 
 [AZURE.INCLUDE [azure-ps-prerequisites-include.md](../../includes/azure-ps-prerequisites-include.md)]
 
@@ -40,12 +40,12 @@ Bevor Sie die Back-End-Server bereitstellen können, müssen Sie den Hauptcloudd
 Die Back-End-VMs sind auf die Erstellung der im Folgenden aufgelisteten Ressourcen angewiesen.
 
 - **Back-End-Subnetz**. Die Datenbankserver gehören zum Aufteilen des Datenverkehrs einem separaten Subnetz an. Das folgende Skript erwartet dieses Subnetz in einem Vnet namens *WTestVnet*.
-- **Speicherkonto für Datenträger**. Für eine bessere Leistung verwenden die Datenträger auf den Datenbankservern Solid State Drive (SSD)-Technologie. Dafür ist ein Premium-Speicherkonto erforderlich. Achten Sie darauf, dass der Azure-Speicherort für die Bereitstellung Storage Premium unterstützt.
+- **Speicherkonto für Datenträger**. Für eine bessere Leistung verwenden die Datenträger auf den Datenbankservern Solid State Drive (SSD)-Technik. Dafür ist ein Storage Premium-Konto erforderlich. Achten Sie darauf, dass der Azure-Speicherort für die Bereitstellung Storage Premium unterstützt.
 - **Verfügbarkeitsgruppe**. Alle Datenbankserver werden einer einzigen Verfügbarkeitsgruppe hinzugefügt, damit sichergestellt ist, dass mindestens ein virtueller Computer während der Wartung ausgeführt wird. 
 
 ### Schritt 1: Starten des Skripts
 
-Sie können das verwendete PowerShell-Skript ungekürzt [hier](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/IaaS-Story/11-MultiNIC/classic/multinic.ps1) herunterladen. Gehen Sie folgendermaßen vor, um das Skript an Ihre Arbeitsumgebung anzupassen.
+Sie können das verwendete PowerShell-Skript ungekürzt [hier](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/IaaS-Story/11-MultiNIC/classic/virtual-network-deploy-multinic-classic-ps.ps1) herunterladen. Gehen Sie folgendermaßen vor, um das Skript an Ihre Arbeitsumgebung anzupassen.
 
 1. Ändern Sie die Werte der nachstehenden Variablen basierend auf der im obigen Abschnitt [Voraussetzungen](#Prerequisites) bereitgestellten Ressourcengruppe.
 
@@ -157,7 +157,7 @@ Sie müssen die gewünschte Anzahl an virtuellen Computern mithilfe einer Schlei
 
 Führen Sie das Skript aus, nachdem sie es heruntergeladen und angepasst haben, um die Back-End-VMs mit mehreren Netzwerkkarten zu erstellen.
 
-1. Speichern Sie Ihr Skript und führen Sie es von der **PowerShell**-Eingabeaufforderung oder in **PowerShell ISE** aus. Anfänglich wird die folgende Ausgabe angezeigt.
+1. Speichern Sie Ihr Skript, und führen Sie es an der **PowerShell**-Eingabeaufforderung oder in **PowerShell ISE** aus. Anfänglich wird die folgende Ausgabe angezeigt.
 
 		OperationDescription    OperationId                          OperationStatus
 		--------------------    -----------                          ---------------
@@ -171,4 +171,4 @@ Führen Sie das Skript aus, nachdem sie es heruntergeladen und angepasst haben, 
 		New-AzureVM             xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx Succeeded
 		New-AzureVM             xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx Succeeded 
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0211_2016-->

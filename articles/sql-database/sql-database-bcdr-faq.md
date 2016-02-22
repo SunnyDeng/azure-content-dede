@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-management" 
-   ms.date="11/16/2015"
+   ms.date="02/09/2016"
    ms.author="elfish"/>
 
 # Häufig gestellte Fragen zur Geschäftskontinuität
@@ -60,4 +60,4 @@ Für aktive Georeplikation können alle sekundären Datenbanken (bis zu vier sek
 
 Verwenden Sie die dynamische Verwaltungsansicht (DMV) [sys.dm\_geo\_replication\_link\_status](https://msdnstage.redmond.corp.microsoft.com/library/mt575504.aspx), um den Zeitpunkt der letzten Replikation, die Verzögerung der letzten Replikation und andere Informationen über den Replikationslink zu erhalten.
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0211_2016-->

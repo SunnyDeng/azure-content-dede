@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="01/20/2016"
+   ms.date="02/05/2016"
    ms.author="alkohli"/>
 
 # Bereitstellen von StorSimple Virtual Array – Einrichten als Dateiserver (Vorschau)
@@ -94,6 +94,10 @@ Verwenden Sie die folgende Schritt-für-Schritt-Anleitung, um Ihr virtuelles Sto
 1.  Klicken Sie auf **Übernehmen**. Die Geräteeinstellungen werden angewendet und überprüft.
 
 	![](./media/storsimple-ova-deploy3-fs-setup/image8.png)
+
+	> [AZURE.NOTE]
+	> 
+	> Stellen Sie sicher, dass sich Ihr virtuelles Array in einer eigenen Organisationseinheit (OU) für Active Directory befindet und keine Gruppenrichtlinienobjekte (GPO) darauf angewendet werden.
 
 1.  Optional: Konfigurieren Sie Ihren Webproxyserver. Die Webproxykonfiguration ist optional. Achten Sie jedoch bei Verwendung eines Webproxys darauf, dass dieser nur hier konfiguriert werden kann.
 
@@ -231,4 +235,4 @@ Im Video wird gezeigt, wie Sie ein StorSimple Virtual Array als Dateiserver konf
 
 Erfahren Sie, wie Sie die lokale Webbenutzeroberfläche verwenden, um [Ihr StorSimple Virtual Array zu verwalten](storsimple-ova-web-ui-admin.md).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

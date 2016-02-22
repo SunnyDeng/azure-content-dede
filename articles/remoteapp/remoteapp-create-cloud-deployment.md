@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/04/2015" 
+	ms.date="02/05/2016" 
 	ms.author="elizapo"/>
 
 # Erstellen einer Cloudsammlung von Azure RemoteApp
@@ -80,9 +80,9 @@ Falls Sie Active Directory verwenden möchten, benötigt Azure RemoteApp eine Ve
 
 ## Schritt 3: Veröffentlichen von Apps ##
 
-Eine Azure RemoteApp-App ist die App oder das Programm, die bzw. das Sie den Benutzern zur Verfügung stellen. Es befindet sich im Vorlagenimage, das Sie für die Sammlung hochgeladen haben. Wenn ein Benutzer auf die App zugreift, scheint diese in der lokalen Umgebung des Benutzers ausgeführt zu werden, tatsächlich wird sie aber in Azure ausgeführt.
+Eine Azure RemoteApp-App ist die App oder das Programm, die bzw. das Sie den Benutzern zur Verfügung stellen. Es befindet sich im Vorlagenimage, das Sie für die Sammlung hochgeladen haben. Wenn ein Benutzer auf die App zugreift, scheint diese in der lokalen Umgebung des Benutzers ausgeführt zu werden, tatsächlich wird sie aber auf einem virtuellen Computer in Azure ausgeführt.
 
-Bevor ein Benutzer aber auf die Apps zugreifen kann, müssen Sie sie im Endbenutzer-Feed – einer Liste verfügbarer Apps, auf die der Benutzer über den Remotedesktopclient zugreift – veröffentlichen.
+Bevor Ihre Benutzer auf Apps zugreifen können, müssen Sie diese veröffentlichen – durch das Veröffentlichen von Apps können Benutzer über den Remotedesktopclient darauf zugreifen.
  
 Sie können in Ihrer Azure RemoteApp-Sammlung mehrere Apps veröffentlichen. Um ein Programm hinzuzufügen, klicken Sie auf der Veröffentlichungsseite auf **Veröffentlichen**. Sie können die App entweder aus dem **Startmenü** des Vorlagenimages veröffentlichen oder den Pfad zur App im Vorlagenimage angeben. Wenn Sie die App aus dem **Startmenü** hinzufügen möchten, wählen Sie die zu veröffentlichende App aus. Wenn Sie den Pfad angeben möchten, geben Sie den Namen der App sowie den Pfad an, in dem die App auf dem Vorlagenimage installiert ist.
 
@@ -109,4 +109,4 @@ Geschafft – Sie haben Ihre Azure RemoteApp-Cloudsammlung erfolgreich erstellt 
 ### Helfen Sie uns, Ihnen zu helfen 
 Wussten Sie schon, dass Sie diesen Artikel im Bereich unten nicht nur bewerten und kommentieren, sondern ihn auch selbst ändern können? Fehlt etwas? Ist etwas nicht ganz richtig? Habe ich etwas geschrieben, das eher verwirrend ist? Scrollen Sie nach oben, und klicken Sie auf **Edit on GitHub**, um die gewünschten Änderungen vorzunehmen. Ihr Vorschlag wird uns vorgelegt, und wenn wir ihn bestätigt haben, werden Ihre Änderungen und Verbesserungen hier angezeigt.
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

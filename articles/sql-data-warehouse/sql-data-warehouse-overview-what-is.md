@@ -13,23 +13,25 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/07/2016"
+   ms.date="02/09/2016"
    ms.author="lodipalm;barbkess;mausher;jrj;sonyama;"/>
 
 
 # Was ist Azure SQL Data Warehouse?
 
-Azure SQL Data Warehouse ist eine verteilte Datenbank der Enterprise-Klasse, die sehr große Mengen an relationalen und nicht relationalen Daten verarbeiten kann. Es handelt sich hierbei um das erste Cloud-Data Warehouse der Branche, bei dem bewährte SQL-Funktionen mit der Fähigkeit verbunden werden, innerhalb von Sekunden zu vergrößern, zu verkleinern und zu pausieren. SQL Data Warehouse ist außerdem tief in Azure integriert und kann problemlos innerhalb weniger Sekunden bereitgestellt werden. Der Dienst ist zudem vollständig verwaltet, und es ist nicht mehr erforderlich, Zeit für Softwarepatches, Wartung und Backups aufzuwenden. Die automatischen integrierten Backups von SQL Data Warehouse unterstützen die Fehlertoleranz und die Self-Service-Wiederherstellung. Bei der Erstellung von SQL Data Warehouse haben wir den Schwerpunkt auf einige wichtige Attribute gelegt. Es sollte sichergestellt werden, dass Azure vollständig genutzt und ein Data Warehouse erstellt wird, das für jede Unternehmens-Workload geeignet ist.
+Azure SQL Data Warehouse ist eine verteilte Datenbank der Enterprise-Klasse, die sehr große Mengen an relationalen und nicht relationalen Daten verarbeiten kann. Es handelt sich hierbei um das erste Cloud-Data Warehouse der Branche, bei dem bewährte SQL-Funktionen mit der Fähigkeit verbunden werden, innerhalb von Sekunden zu vergrößern, zu verkleinern und zu pausieren. SQL Data Warehouse ist außerdem tief in Azure integriert und kann problemlos innerhalb weniger Sekunden bereitgestellt werden. Der Dienst ist zudem vollständig verwaltet, und es ist nicht mehr erforderlich, Zeit für Softwarepatches, Wartung und Backups aufzuwenden. Die automatischen integrierten Backups von SQL Data Warehouse unterstützen die Fehlertoleranz und die Self-Service-Wiederherstellung.
+
+Bei der Erstellung von SQL Data Warehouse haben wir den Schwerpunkt auf einige wichtige Attribute gelegt. Es sollte sichergestellt werden, dass Azure vollständig genutzt und ein Data Warehouse erstellt wird, das für jede Unternehmens-Workload geeignet ist.
 
 ## Optimiert
 
 ### Data Warehouse-Architektur
 
-Im Kern wird SQL Data Warehouse mit der MPP-Architektur (Massive Parallel Processing) von Microsoft ausgeführt, die ursprünglich entworfen wurde, um einige der größten lokalen Data Warehouses von Unternehmen auszuführen. Bei dieser Architektur werden integrierte Data Warehousing-Leitungsverbesserungen genutzt. Außerdem ist es für SQL Data Warehouse möglich, ohne Probleme das horizontale Hochskalieren und das Parallelisieren der Berechnung komplexer SQL-Abfragen durchzuführen. Die Architektur von SQL Data Warehouse ist zudem so ausgelegt, dass die Einbindung in Azure genutzt wird. Indem diese beiden Aspekte kombiniert werden, wird die Architektur in vier Hauptkomponenten unterteilt:
+Im Kern verwendet SQL Data Warehouse die MPP-Architektur (Massive Parallel Processing) von Microsoft, die ursprünglich entworfen wurde, um einige der größten lokalen Data Warehouses von Unternehmen auszuführen. Bei dieser Architektur werden integrierte Data Warehousing-Leitungsverbesserungen genutzt. Außerdem ist es für SQL Data Warehouse möglich, ohne Probleme das horizontale Hochskalieren und das Parallelisieren der Berechnung komplexer SQL-Abfragen durchzuführen. Die Architektur von SQL Data Warehouse ist zudem so ausgelegt, dass die Einbindung in Azure genutzt wird. Indem diese beiden Aspekte kombiniert werden, wird die Architektur in vier Hauptkomponenten unterteilt:
 
 ![SQL Data Warehouse-Architektur][1]
 
-- **Steuerknoten**: Sie stellen eine Verbindung mit dem Steuerknoten her, wenn Sie SQL Data Warehouse mit Entwicklungs-, Lade- oder Business Intelligence-Tools verwenden. In SQL Data Warehouse ist der Steuerknoten eine SQL-Datenbank, und beim Herstellen der Verbindung besteht kein Unterschied zu Standard-SQL-Datenbanken. Im Hintergrund werden aber alle Datenbewegungen und -berechnungen koordiniert, die im System durchgeführt werden. Wenn ein Befehl an den Steuerknoten ausgegeben wird, wird er in mehrere Abfragen unterteilt, die an die Compute-Knoten des Diensts übergeben werden.
+- **Steuerknoten:** Sie stellen eine Verbindung mit dem Steuerknoten her, wenn Sie SQL Data Warehouse mit Entwicklungs-, Lade- oder Business Intelligence-Tools verwenden. In SQL Data Warehouse ist der Steuerknoten eine SQL-Datenbank, und beim Herstellen der Verbindung besteht kein Unterschied zu Standard-SQL-Datenbanken. Im Hintergrund werden aber alle Datenbewegungen und -berechnungen koordiniert, die im System durchgeführt werden. Wenn ein Befehl an den Steuerknoten ausgegeben wird, wird er in mehrere Abfragen unterteilt, die an die Serverknoten des Diensts übergeben werden.
 
 - **Serverknoten:** Wie der Steuerknoten auch werden die Serverknoten von SQL Data Warehouse mit SQL-Datenbanken betrieben. Ihre Aufgabe besteht darin, als Compute-Komponente des Diensts zu fungieren. Im Hintergrund werden Daten, die in SQL Data Warehouse geladen werden, auf die Knoten des Diensts verteilt. Immer wenn der Steuerknoten dann einen Befehl erhält, wird er für die einzelnen Compute-Knoten in mehrere Teile unterteilt. Die Compute-Knoten verarbeiten dann jeweils ihre entsprechenden Daten. Nach Abschluss der Berechnung übergeben die Compute-Knoten die Teilergebnisse an den Steuerknoten, auf dem die Ergebnisse dann zusammengefasst werden, bevor eine Antwort zurückgegeben wird.
 
@@ -85,7 +87,7 @@ Generell möchten wir DWUs einfach halten. Falls Sie schnellere Ergebnisse benö
 
 - Damit Sie verstehen, wie Ihr idealer DWU-Wert lautet, sollten Sie versuchsweise hoch- und herunterskalieren und nach dem Laden der Daten einige Abfragen ausführen. Da die Skalierung schnell geht, können Sie es mit mehreren unterschiedlichen Leistungsebenen probieren, ohne dass dies länger als eine Stunde dauert.
 
-> [AZURE.NOTE]Beachten Sie Folgendes: Aufgrund der Architektur bzw. von SQL Data Warehouse erzielen Sie bei kleineren Datenvolumen unter Umständen nicht die erwartete Leistungsskalierung. Wir empfehlen Ihnen, mit Datenvolumen von 1 TB oder höher zu beginnen, um bei Leistungstests genaue Ergebnisse zu erzielen.
+> [AZURE.NOTE] Beachten Sie Folgendes: Aufgrund der Architektur bzw. von SQL Data Warehouse erzielen Sie bei kleineren Datenvolumen unter Umständen nicht die erwartete Leistungsskalierung. Wir empfehlen Ihnen, mit Datenvolumen von 1 TB oder höher zu beginnen, um bei Leistungstests genaue Ergebnisse zu erzielen.
 
 ## Integriert
 
@@ -124,7 +126,7 @@ PolyBase ist benutzerfreundlich und ermöglicht es Ihnen, Ihre Daten aus untersc
 
 Nachdem Sie jetzt einige Informationen zu SQL Data Warehouse erhalten haben, können Sie mit der [Data Warehouse-Workload], der [Bereitstellung] und dem Laden von [Beispieldaten] fortfahren.
 
->[AZURE.NOTE]Wir möchten diesen Artikel verbessern. Wenn Sie auf die Frage „War dieser Artikel hilfreich?“ mit „Nein“ antworten, bitten wir Sie, einen kurzen Vorschlag dazu einzufügen, was fehlt oder wie der Artikel zu verbessern ist. Vielen Dank im Voraus!
+>[AZURE.NOTE] Wir möchten diesen Artikel verbessern. Wenn Sie auf die Frage „War dieser Artikel hilfreich?“ mit „Nein“ antworten, bitten wir Sie, einen kurzen Vorschlag dazu einzufügen, was fehlt oder wie der Artikel zu verbessern ist. Vielen Dank im Voraus!
 
 <!--Image references-->
 [1]: ./media/sql-data-warehouse-overview-what-is/dwarchitecture.png
@@ -138,4 +140,4 @@ Nachdem Sie jetzt einige Informationen zu SQL Data Warehouse erhalten haben, kö
 
 <!--Other Web references-->
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0211_2016-->

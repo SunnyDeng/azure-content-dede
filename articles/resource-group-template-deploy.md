@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="02/02/2015"
+   ms.date="02/02/2016"
    ms.author="tomfitz"/>
 
 # Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage
@@ -271,7 +271,7 @@ Bei der Verwendung einer Parameterdatei zum Übergeben von Parameterwerten an Ih
 
 Die Parameterdatei darf nicht größer als 64 KB sein.
 
-Informationen zum Definieren von Parametern in der Vorlage finden Sie unter [Erstellen von Vorlagen](resource-group-authoring-templates.md/#parameters). Ausführliche Informationen zum KeyVault-Verweis zum Übergeben sicherer Werte finden Sie unter [Übergeben sicherer Werte während der Bereitstellung](resource-manager-keyvault-parameter.md).
+Informationen zum Definieren von Parametern in der Vorlage finden Sie unter [Erstellen von Vorlagen](../resource-group-authoring-templates/#parameters). Ausführliche Informationen zum KeyVault-Verweis zum Übergeben sicherer Werte finden Sie unter [Übergeben sicherer Werte während der Bereitstellung](resource-manager-keyvault-parameter.md).
 
 ## Nächste Schritte
 - Ein Beispiel für die Bereitstellung von Ressourcen über die .NET-Clientbibliothek finden Sie unter [Bereitstellen von Ressourcen mithilfe von .NET-Bibliotheken und einer Vorlage](./virtual-machines/arm-template-deployment.md).
@@ -282,4 +282,4 @@ Informationen zum Definieren von Parametern in der Vorlage finden Sie unter [Ers
 
  
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="12/04/2015"
+   ms.date="02/05/2016"
    ms.author="larryfr"/>
 
 #Ermitteln von beliebten Twitter-Themen mit Apache Storm in HDInsight
@@ -23,7 +23,7 @@ Erfahren Sie, wie Sie mit Trident eine Storm-Topologie erstellen, die beliebte T
 
 Trident ist eine allgemeine Abstraktion, die Tools wie Verknüpfungen, Aggregationen, Gruppierungen, Funktionen und Filter bereitstellt. Darüber hinaus bietet Trident Stammfunktionen für die statusbehaftete, inkrementelle Verarbeitung. In diesem Beispiel wird veranschaulicht, wie Sie mithilfe eines benutzerdefinierten Spouts, einer Funktion und verschiedenen, von Trident bereitgestellten integrierten Funktionen eine Topologie erstellen können.
 
-> [AZURE.NOTE]Das Beispiel basiert in großen Teilen auf dem [Trident Storm](https://github.com/jalonsoramos/trident-storm)-Beispiel von Juan Alonso.
+> [AZURE.NOTE] Das Beispiel basiert in großen Teilen auf dem [Trident Storm](https://github.com/jalonsoramos/trident-storm)-Beispiel von Juan Alonso.
 
 ##Anforderungen
 
@@ -47,7 +47,7 @@ Die Topologie für dieses Beispiel sieht wie folgt aus:
 
 ![Topologie](./media/hdinsight-storm-twitter-trending/trident.png)
 
-> [AZURE.NOTE]Dies ist eine vereinfachte Ansicht der Topologie. Mehrere Instanzen der Komponenten werden über die Knoten im Cluster verteilt.
+> [AZURE.NOTE] Dies ist eine vereinfachte Ansicht der Topologie. Mehrere Instanzen der Komponenten werden über die Knoten im Cluster verteilt.
 
 Der Trident-Code, der die Topologie implementiert, lautet wie folgt:
 
@@ -69,7 +69,7 @@ Im Code werden folgende Schritte ausgeführt:
 
 4. Da wir für eine bestimmte Gruppe von Tweets nur an den am häufigsten verwendeten Hashtags interessiert sind, wird die **FirstN**-Assembly angewendet, um nur die 10 größten Werte zurückzugeben, die auf dem Feld "count" basieren.
 
-> [AZURE.NOTE]Im Gegensatz zu Spout und "HashtagExtractor" verwenden wir integrierte Trident-Funktionen.
+> [AZURE.NOTE] Im Gegensatz zu Spout und "HashtagExtractor" verwenden wir integrierte Trident-Funktionen.
 >
 > Informationen zu integrierten Vorgängen finden Sie unter <a href="https://storm.apache.org/apidocs/storm/trident/operation/builtin/package-summary.html" target="_blank">Package storm.trident.operation.builtin</a>.
 >
@@ -140,4 +140,4 @@ Weitere Storm-Beispiele für HDInsight:
 
 * [Beispiele für Storm-Topologien für Storm in HDInsight](hdinsight-storm-example-topology.md)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0211_2016-->

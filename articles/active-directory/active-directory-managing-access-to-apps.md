@@ -13,7 +13,7 @@
   ms.tgt_pltfrm="na"
   ms.devlang="na"
   ms.topic="article"
-  ms.date="12/08/2015"
+  ms.date="02/09/2016"
   ms.author="stevenpo"/>
 
 
@@ -68,7 +68,8 @@ Zu den Azure AD-Features zur gemeinsamen Nutzung von Konten gehören folgende Fu
 
 ## Wo kann ich mehr erfahren?
 
+- [Artikelindex für die Anwendungsverwaltung in Azure Active Directory](active-directory-apps-index.md)
 - [Schützen von Apps durch bedingten Zugriff](active-directory-conditional-access.md)
 - [Self-Service-Gruppenverwaltung/SSAA](active-directory-accessmanagement-self-service-group-management.md)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0211_2016-->

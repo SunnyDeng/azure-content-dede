@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-multiple"
 	ms.devlang="multiple"
 	ms.topic="article"
-	ms.date="12/28/2015"
+	ms.date="02/07/2016"
 	ms.author="mahender"/>
 
 # Erste Schritte mit der benutzerdefinierten Authentifizierung
@@ -26,11 +26,11 @@
 ## Übersicht
 Dieses Thema zeigt, wie Benutzer im Azure Mobile Services .NET-Back-End mithilfe eines von Ihnen herausgegebenen Mobile Services Authentifizierungstokens authentifiziert werden. In diesem Lernprogramm fügen Sie die Authentifizierung mithilfe eines benutzerdefinierten Benutzernamens und Kennworts zum Schnellstartprojekt hinzu.
 
->[AZURE.NOTE]Dieses Lernprogramm erläutert eine erweiterte Methode zur Authentifizierung von Mobile Services mit benutzerdefinierten Anmeldeinformationen. Viele Apps eignen sich stattdessen am besten für die Verwendung des integrierten Social-Identitätsanbieters, sodass sich Benutzer über Facebook, Twitter, Google, ein Microsoft-Konto und Azure Active Directory anmelden können. Falls Sie noch keine Erfahrung mit Authentifizierung in Mobile Services haben, sollten Sie das Lernprogramm [Hinzufügen von Authentifizierung zur App] bearbeiten.
+>[AZURE.NOTE] Dieses Lernprogramm erläutert eine erweiterte Methode zur Authentifizierung von Mobile Services mit benutzerdefinierten Anmeldeinformationen. Viele Apps eignen sich stattdessen am besten für die Verwendung des integrierten Social-Identitätsanbieters, sodass sich Benutzer über Facebook, Twitter, Google, ein Microsoft-Konto und Azure Active Directory anmelden können. Falls Sie noch keine Erfahrung mit Authentifizierung in Mobile Services haben, sollten Sie das Lernprogramm [Hinzufügen von Authentifizierung zur App] bearbeiten.
 
 Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen zunächst das Lernprogramm [Erste Schritte mit Mobile Services] abschließen.
 
->[AZURE.IMPORTANT]Mit diesem Lernprogramm wird gezeigt, wie man einen Authentifizierungstoken für Mobile Services herausgibt. Dies ist nicht als Sicherheitsanleitung zu verstehen. Bei der Entwicklung einer App müssen Sie sich der Sicherheitsauswirkungen einer Kennwortspeicherung bewusst sein und eine Strategie für den Umgang mit Brute-Force-Angriffen haben.
+>[AZURE.IMPORTANT] Mit diesem Lernprogramm wird gezeigt, wie man einen Authentifizierungstoken für Mobile Services herausgibt. Dies ist nicht als Sicherheitsanleitung zu verstehen. Bei der Entwicklung einer App müssen Sie sich der Sicherheitsauswirkungen einer Kennwortspeicherung bewusst sein und eine Strategie für den Umgang mit Brute-Force-Angriffen haben.
 
 ## Einrichten der Kontentabelle
 
@@ -336,7 +336,7 @@ Als Nächstes erstellen Sie einen Endpunkt für die Benutzeranmeldung. Der Benut
 
         [AuthorizeLevel(AuthorizationLevel.Anonymous)]
 
->[AZURE.IMPORTANT]Ihr `CustomLoginController` für die Produktion sollte außerdem eine Strategie zur Erkennung von Brute-Force-Angriffen enthalten. Ansonsten kann Ihre Anmeldelösung anfällig für Angriffe sein.
+>[AZURE.IMPORTANT] Ihr `CustomLoginController` für die Produktion sollte außerdem eine Strategie zur Erkennung von Brute-Force-Angriffen enthalten. Ansonsten kann Ihre Anmeldelösung anfällig für Angriffe sein.
 
 ## Konfigurieren des mobilen Diensts zur Verwendung von Authentifizierung
 
@@ -381,13 +381,13 @@ Sie müssen in Idrer Client-Anwendung einen angepassten Anmeldebildschirm defini
 
  	![](./media/mobile-services-dotnet-backend-get-started-custom-authentication/mobile-services-dotnet-backend-custom-auth-access-success.png)
 
->[AZURE.IMPORTANT]Wenn Sie dieses Projekt für den mobilen Dienst auch in Azure veröffentlichen möchten, zum testen möchten, denken Sie daran, dass die Anmeldungs- und Authentifizierungsanbieter anfällig für Angriffe sind. Stellen Sie sicher, dass sie entweder mit entsprechenden verstärkten Sicherheitsfunktionen ausgestattet werden oder dass die zu schützenden Testdaten nicht für Sie wichtig sind. Gehen Sie äußerst vorsichtig vor, wenn Sie ein benutzerdefiniertes Authentifizierungsschema zum Sichern einer Produktionsumgebung verwenden möchten.
+>[AZURE.IMPORTANT] Wenn Sie dieses Projekt für den mobilen Dienst auch in Azure veröffentlichen möchten, zum testen möchten, denken Sie daran, dass die Anmeldungs- und Authentifizierungsanbieter anfällig für Angriffe sind. Stellen Sie sicher, dass sie entweder mit entsprechenden verstärkten Sicherheitsfunktionen ausgestattet werden oder dass die zu schützenden Testdaten nicht für Sie wichtig sind. Gehen Sie äußerst vorsichtig vor, wenn Sie ein benutzerdefiniertes Authentifizierungsschema zum Sichern einer Produktionsumgebung verwenden möchten.
 
 ## Anmelden unter Verwendung der benutzerdefinierten Authentifizierung vom Client
 
 In diesem Abschnitt werden die Schritte beschrieben, die Sie ausführen müssen, um vom Client auf benutzerdefinierte Authentifizierungsendpunkte zuzugreifen, um das zum Zugriff auf den mobilen Dienst benötigte Authentifizierungstoken zu erhalten. Da von Ihrem Client abhängt, welcher Clientcode im Einzelnen benötigt wird, ist die hier bereitgestellte Anleitung plattformunabhängig.
 
->[AZURE.NOTE]Die Mobile Services-Clientbibliotheken kommunizieren über HTTPS mit dem Dienst. Da diese Lösung erfordert, dass Kennwörter als Klartext gesendet werden, müssen Sie sicherstellen, dass Sie beim Aufrufen dieser Endpunkt mithilfe von direkten REST-Anforderungen HTTPS verwenden.
+>[AZURE.NOTE] Die Mobile Services-Clientbibliotheken kommunizieren über HTTPS mit dem Dienst. Da diese Lösung erfordert, dass Kennwörter als Klartext gesendet werden, müssen Sie sicherstellen, dass Sie beim Aufrufen dieser Endpunkt mithilfe von direkten REST-Anforderungen HTTPS verwenden.
 
 1. Erstellen Sie die erforderliche Benutzeroberflächenelemente in Ihrer Clientanwendung, damit die Benutzer einen Benutzernamen und ein Kennwort eingeben können.
 
@@ -395,7 +395,7 @@ In diesem Abschnitt werden die Schritte beschrieben, die Sie ausführen müssen,
 
 	Sie müssen den **CustomRegistration**-Endpunkt nur einmal aufrufen, um ein Konto für einen bestimmten Benutzer zu erstellen, sofern Sie die Anmeldeinformationen des Benutzers in der Tabelle Accounts speichern. Beispiele zum Aufrufen einer benutzerdefinierten API auf den verschiedenen unterstützten Clientplattformen finden Sie im Artikel [Benutzerdefinierte API in Azure Mobile Services – Client SDKs](http://blogs.msdn.com/b/carlosfigueira/archive/2013/06/19/custom-api-in-azure-mobile-services-client-sdks.aspx).
 
-	> [AZURE.IMPORTANT]Da dieser Schritt für die Benutzerbereitstellung nur einmal vorkommt, sollten Sie das Benutzerkonto auf irgendeine Weise extern erstellen. Für einen öffentlichen Registrierungsendpunkt sollten Sie die Implementierung einer SMS- oder e-Mail-basierten Überprüfung oder andere Schutzmaßnahmen in Betracht ziehen, um zu verhindern, dass Konten in betrügerischer Absicht generiert werden. Sie können die Twilio zum Senden von SMS-Nachrichten von Mobile Services verwenden. Sie können auch SendGrid verwenden, um E-Mail-Nachrichten von Mobile Services aus zu senden. Weitere Informationen zum Verwenden von SendGrid finden Sie unter [Senden von E-Mails in Mobile Services mit SendGrid](store-sendgrid-mobile-services-send-email-scripts.md).
+	> [AZURE.IMPORTANT] Da dieser Schritt für die Benutzerbereitstellung nur einmal vorkommt, sollten Sie das Benutzerkonto auf irgendeine Weise extern erstellen. Für einen öffentlichen Registrierungsendpunkt sollten Sie die Implementierung einer SMS- oder e-Mail-basierten Überprüfung oder andere Schutzmaßnahmen in Betracht ziehen, um zu verhindern, dass Konten in betrügerischer Absicht generiert werden. Sie können die Twilio zum Senden von SMS-Nachrichten von Mobile Services verwenden. Sie können auch SendGrid verwenden, um E-Mail-Nachrichten von Mobile Services aus zu senden. Weitere Informationen zum Verwenden von SendGrid finden Sie unter [Senden von E-Mails in Mobile Services mit SendGrid](store-sendgrid-mobile-services-send-email-scripts.md).
 
 3. Verwenden Sie die entsprechende **invokeApi** Methode erneut, um den **CustomLogin**-Endpunkt aufzurufen, und übergeben Sie die zur Laufzeit bereitgestellten Angaben für Benutzername und Kennwort im Nachrichtentext.
 
@@ -424,4 +424,4 @@ Damit ist dieses Lernprogramm abgeschlossen.
 [ClaimsIdentity]: https://msdn.microsoft.com/library/system.security.claims.claimsidentity(v=vs.110).aspx
 [ProviderCredentials]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobile.service.security.providercredentials.aspx
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0211_2016-->

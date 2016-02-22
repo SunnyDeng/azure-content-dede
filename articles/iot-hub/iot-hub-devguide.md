@@ -98,7 +98,7 @@ Geräteidentitäten werden als JSON-Dokumente mit den folgenden Eigenschaften da
 
 | Eigenschaft | Optionen | Beschreibung |
 | -------- | ------- | ----------- |
-| deviceId | erforderlich, bei Aktualisierungen schreibgeschützt | Eine Zeichenfolge mit Berücksichtigung von Klein-/Großschreibung (bis zu 128 Zeichen lang), die aus alphanumerischen ASCII-Zeichen (7 Bit) + `{'-', ':', '.', '+', '&percnt;', '_', '&num;', '&ast;', '?', '!', '(', ')', ',', '=', '&commat;', ';', '&dollar;', '''}` besteht. |
+| deviceId | erforderlich, bei Aktualisierungen schreibgeschützt | Eine Zeichenfolge mit Berücksichtigung von Klein-/Großschreibung (bis zu 128 Zeichen lang), die aus alphanumerischen ASCII-Zeichen (7 Bit) + `{'-', ':', '.', '+', '%', '_', '#', '*', '?', '!', '(', ')', ',', '=', '@', ';', '$', '''}` besteht. |
 | generationId | erforderlich, schreibgeschützt | Eine vom Hub generierte Zeichenfolge mit Berücksichtigung von Klein-/Großschreibung, die bis zu 128 Zeichen lang ist. Diese Zeichenfolge dient zur Unterscheidung von Geräten mit derselben **deviceId**, wenn diese gelöscht und neu erstellt wurden. |
 | etag | erforderlich, schreibgeschützt | Eine Zeichenfolge, die ein schwaches Etag für die Geräteidentität gemäß [RFC7232][lnk-rfc7232] darstellt.|
 | auth | optional | Ein zusammengesetztes Objekt, das Authentifizierungsinformationen und Sicherheitsdaten enthält. |
@@ -272,11 +272,11 @@ Sie können Berechtigungen auf folgende Weise festlegen:
 
 * **Sicherheitsanmeldeinformationen auf Gerätebasis**. Jeder IoT Hub enthält eine [Geräteidentitätsregistrierung](#device-identity-registry). Sie können für jedes Gerät in dieser Registrierung Sicherheitsanmeldeinformationen konfigurieren, die **DeviceConnect**-Berechtigungen erteilen, deren Gültigkeitsbereich auf die entsprechenden Geräteendpunkte festgelegt ist.
 
-**Beispiel**. In einer typischen IoT-Lösung gilt Folgendes: 
-– Die Komponente zur Geräteverwaltung verwendet die *registryReadWrite*-Richtlinie. 
-– Die Ereignisprozessorkomponente nutzt die *service*-Richtlinie. 
-– Die Laufzeit-Geschäftslogikkomponente für Geräte verwendet die *service*-Richtlinie. 
-– Einzelne Geräte stellen unter Verwendung von Anmeldeinformationen eine Verbindung her, die in der IoT Hub-Identitätsregistrierung gespeichert sind.
+**Beispiel**. In einer typischen IoT-Lösung gilt Folgendes:
+- Die Komponente zur Geräteverwaltung verwendet die *registryReadWrite*-Richtlinie.
+- Die Ereignisprozessorkomponente nutzt die *service*-Richtlinie.
+- Die Laufzeit-Geschäftslogikkomponente für Geräte verwendet die *service*-Richtlinie.
+- Einzelne Geräte stellen unter Verwendung von Anmeldeinformationen eine Verbindung her, die in der IoT Hub-Identitätsregistrierung gespeichert sind.
 
 Einen Leitfaden zu IoT Hub-Sicherheitsthemen finden Sie im Abschnitt zur Sicherheit unter [Entwerfen der Lösung][lnk-guidance-security].
 
@@ -348,8 +348,8 @@ Dieser Mechanismus ist mit einer [Event Hubs-Herausgeberrichtlinie][lnk-event-hu
 
 ## Nachrichten
 
-IoT Hub stellt Messaginggrundtypen für die Kommunikation zwischen folgenden Komponenten bereit: 
-– [C2D](#c2d): von einem Anwendungs-Back-End (*Dienst* oder *Cloud*) zu einem Gerät. 
+IoT Hub stellt Messaginggrundtypen für die Kommunikation zwischen folgenden Komponenten bereit:
+– [C2D](#c2d): von einem Anwendungs-Back-End (*Dienst* oder *Cloud*) zu einem Gerät.
 – [D2C](#d2c): von einem Gerät zu einem Anwendungs-Back-End.
 
 Die wichtigsten Eigenschaften beim IoT Hub-Messaging sind eine zuverlässige und stabile Übermittlung von Nachrichten. Dies bietet Ausfallsicherheit bei zeitweiligen Verbindungsproblemen auf Geräteseite und Lastspitzen bei der Ereignisverarbeitung auf Cloudseite. IoT Hub implementiert *mindestens einmalig* Übermittlungsgarantien für das D2C- und C2D-Messaging.
@@ -372,10 +372,10 @@ Die folgende Tabelle zeigt den Satz an Systemeigenschaften in IoT Hub-Nachrichte
 | -------- | ----------- |
 | MessageId | Eine vom Benutzer festgelegte Kennung für die Nachricht, wird üblicherweise für Anforderung-Antwort-Muster verwendet. Format: Eine Zeichenfolge mit Berücksichtigung von Klein-/Großschreibung (bis zu 128 Zeichen lang), die aus alphanumerischen ASCII-Zeichen (7 Bit) + `{'-', ':',’.', '+', '%', '_', '#', '*', '?', '!', '(', ')', ',', '=', '@', ';', '$', '''}` besteht. |
 | Sequenznummer | Eine Nummer (für jede Gerätewarteschlange eindeutig), die jeder C2D-Nachricht von IoT Hub zugewiesen wird |
-| To | Gibt in [C2D](#c2d)-Nachrichten das Feld für das Ziel an.|
+| To | Gibt in [C2D](#c2d)-Nachrichten das Ziel an. |
 | ExpiryTimeUtc | Datum und Uhrzeit des Nachrichtenablaufs. |
-| EnqueuedTime | Zeitpunkt des Empfangs der Nachricht durch IoT Hub. |
-| CorrelationId | Zeichenfolgeneigenschaft, die üblicherweise die Nachrichten-ID der Anforderung bei Anforderung-Antwort-Mustern enthält. |
+| EnqueuedTime | Datum und Uhrzeit des Empfangs der Nachricht durch IoT Hub. |
+| CorrelationId | Zeichenfolgeneigenschaft in einer Antwortnachricht, die normalerweise die Nachrichten-ID der Anforderung im Anforderung-Antwort-Muster enthält. |
 | UserId | Dient zum Festlegen des Ursprungs von Nachrichten. Wenn IoT Hub Nachrichten generiert, wird diese Eigenschaft auf `{iot hub name}` festgelegt. |
 | Ack | Wird in C2D-Nachrichten verwendet, um IoT Hub anzuweisen, als Ergebnis der Nachrichtenverarbeitung durch das Gerät Feedback zu generieren. Mögliche Werte: **none** (Standardeinstellung): es wird keine Feedbacknachricht generiert, **positive**: Feedbacknachricht empfangen, wenn die Nachricht abgeschlossen wurde, **negative**: Feedbacknachricht empfangen, wenn die Nachricht ohne vollständige Verarbeitung durch das Gerät abgelaufen ist (oder die maximale Anzahl von Zustellversuchen erreicht wurde), **full**: Feedback wird sowohl bei erfolgreicher als auch nicht erfolgreicher Nachrichtenverarbeitung generiert. Weitere Informationen finden Sie unter [Nachrichtenfeedback](#feedback). |
 | ConnectionDeviceId | Wird von IoT Hub für D2C-Nachrichten festgelegt. Diese Eigenschaft enthält die **deviceId** des Geräts, das die Nachricht sendet. |
@@ -424,7 +424,7 @@ Es gibt jedoch einige wichtige Unterschiede zwischen dem D2C-Messaging von IoT H
 * IoT Hub ermöglicht keine zufällige Partitionierung mit **PartitionKey**. D2C-Nachrichten werden basierend auf ihrer ursprünglichen **Geräte-ID** partitioniert.
 * Die Skalierung funktioniert in IoT Hub etwas anders als in Event Hubs. Weitere Informationen finden Sie unter [Skalieren von IoT Hub][lnk-guidance-scale].
 
-Hinweis: Dies bedeutet nicht, dass Sie in allen Szenarien IoT Hub durch Event Hubs ersetzen können. In einigen Szenarien mit Ereignisverarbeitung kann es beispielsweise erforderlich sein, Ereignisse in Bezug auf eine andere Eigenschaft oder ein anderes Feld neu zu partitionieren, bevor die Datenströme analysiert werden können. In diesem Szenario können Sie mit einem Event Hub zwei Bestandteile der Pipeline zur Datenstromverarbeitung entkoppeln.
+Hinweis: Dies bedeutet nicht, dass Sie in allen Szenarien IoT Hub durch Event Hubs ersetzen können. In einigen Szenarien mit Ereignisverarbeitung kann es beispielsweise erforderlich sein, Ereignisse in Bezug auf eine andere Eigenschaft oder ein anderes Feld neu zu partitionieren, bevor die Datenströme analysiert werden können. In diesem Szenario können Sie mit einem Event Hub zwei Bestandteile der Pipeline zur Datenstromverarbeitung entkoppeln. Weitere Informationen finden Sie unter *Partitionen* in [Übersicht über Azure Event Hubs][lnk-eventhub-partitions].
 
 Ausführliche Informationen zum Verwenden des D2C-Messaging finden Sie unter [IoT Hub-APIs und -SDKs][lnk-apis-sdks].
 
@@ -434,7 +434,7 @@ Ausführliche Informationen zum Verwenden des D2C-Messaging finden Sie unter [Io
 
 In vielen Fällen senden Geräte nicht nur Telemetriedatenpunkte, sondern auch Nachrichten und Anforderungen, die eine Ausführung und Verarbeitung auf der Anwendungsschicht mit der Geschäftslogik erfordern. Beispiele: Kritische Warnungen, die eine bestimmte Aktion im Back-End auslösen müssen, oder Geräteantworten auf vom Back-End gesendete Befehle.
 
-Weitere Informationen zur besten Verarbeitungsmethode für diese Art von Nachrichten finden Sie im Abschnitt zur [D2C-Verarbeitung][lnk-guidance-d2c-processing].
+Weitere Informationen zur besten Verarbeitungsmethode für diese Art von Nachrichten finden Sie im Abschnitt [D2C-Verarbeitung][lnk-guidance-d2c-processing].
 
 #### Optionen für die D2C-Konfiguration <a id="d2cconfiguration"></a>
 
@@ -471,7 +471,7 @@ Die Eigenschaft **ConnectionAuthMethod** enthält ein serialisiertes JSON-Objekt
 
 Wie im Abschnitt [Endpunkte](#endpoints) beschrieben, können Sie C2D-Nachrichten über einen dienstseitigen Endpunkt (**/messages/devicebound**) senden, und ein Gerät kann diese Nachrichten über einen geräteseitigen Endpunkt (**/devices/{Geräte-ID}/messages/devicebound**) empfangen.
 
-Jede C2D-Nachricht ist für ein einziges Gerät bestimmt, indem die **to**-Eigenschaft auf **/devices/{Geräte-ID}/messages/devicebound** festgelegt wird.
+Jede C2D-Nachricht wird einem bestimmten Gerät zugeordnet, indem die **to**-Eigenschaft auf **/devices/{Geräte-ID}/messages/devicebound** festgelegt wird.
 
 **Wichtig**: Jede Gerätewarteschlange kann maximal 50 C2D-Nachrichten enthalten. Der Versuch, eine größere Anzahl von Nachrichten an dasselbe Gerät zu senden, führt zu einem Fehler.
 
@@ -488,10 +488,10 @@ Die folgende Abbildung zeigt den Lebenszyklus einer C2D-Nachricht und ihren jewe
 Wenn der Dienst eine Nachricht sendet, wird diese als *Zur Warteschlange hinzugefügt* betrachtet. Wenn ein Gerät eine Nachricht *empfangen* möchte, *sperrt* IoT Hub die Nachricht (Status wird auf **Nicht sichtbar** gesetzt), um anderen Threads auf demselben Gerät das Empfangen anderer Nachrichten zu ermöglichen. Wenn ein Gerätethread die Verarbeitung für ein Gerät abschließt, wird IoT Hub hierüber durch den *Abschluss* der Nachricht benachrichtigt.
 
 Darüber hinaus bestehen folgende Möglichkeiten:
- – Ein Gerät kann die Nachricht *ablehnen*, woraufhin IoT Hub sie in den Status **Unzustellbar** versetzt.
- – Das Gerät kann den Vorgang auch *abbrechen*, woraufhin IoT die Nachricht wieder in die Warteschlange einreiht (Status **Zur Warteschlange hinzugefügt**).
+- Ein Gerät kann die Nachricht *ablehnen*, woraufhin IoT Hub sie in den Status **Unzustellbar** versetzt.
+- Das Gerät kann den Vorgang auch *abbrechen*, woraufhin IoT die Nachricht wieder in die Warteschlange einreiht (Status **Zur Warteschlange hinzugefügt**).
 
-Bei der Nachrichtenverarbeitung durch den Thread könnte ein Fehler auftreten, ohne dass IoT Hub hierüber benachrichtigt wird. In diesem Fall werden Nachrichten automatisch vom Status **Nicht sichtbar** zurück in den Status **Zur Warteschlange hinzugefügt** versetzt, wenn ein *Timeout für die Sichtbarkeit (oder Sperrung)* abgelaufen ist (Standardeinstellung: 1 Minute). Eine Nachricht kann zwischen den Statuswerten **Zur Warteschlange hinzugefügt** und **Nicht sichtbar** maximal so oft wechseln, wie in der Eigenschaft *Anzahl maximaler Zustellungen* in IoT Hub festgelegt wurde. Nachdem diese Anzahl überschritten wurde, legt IoT Hub den Status der Nachricht als **Unzustellbar** fest. Ebenso kennzeichnet IoT Hub eine Nachricht als **unzustellbar**, wenn ihre Gültigkeitsdauer abgelaufen ist (siehe [Gültigkeitsdauer](#ttl)).
+Bei der Nachrichtenverarbeitung durch den Thread könnte ein Fehler auftreten, ohne dass IoT Hub hierüber benachrichtigt wird. In diesem Fall werden Nachrichten automatisch vom Status **Nicht sichtbar** zurück in den Status **Zur Warteschlange hinzugefügt** versetzt, wenn ein *Timeout für die Sichtbarkeit (oder Sperrung)* abgelaufen ist (Standardeinstellung: 1 Minute). Eine Nachricht kann zwischen den Statuswerten **Zur Warteschlange hinzugefügt** und **Nicht sichtbar** maximal so oft wechseln, wie in der Eigenschaft *Anzahl maximaler Zustellungen* in IoT Hub festgelegt wurde. Nachdem diese Anzahl überschritten wurde, legt IoT Hub den Status der Nachricht als **Unzustellbar** fest. Ebenso kennzeichnet IoT Hub eine Nachricht als **Unzustellbar**, wenn ihre Gültigkeitsdauer abgelaufen ist (siehe [Gültigkeitsdauer](#ttl)).
 
 Ein Tutorial zu C2D-Nachrichten finden Sie unter [Erste Schritte mit Azure IoT Hub-Nachrichten zwischen Cloud und Gerät][lnk-getstarted-c2d-tutorial]. Informationen dazu, wie verschiedene APIs und SDKs die C2D-Funktionalität verfügbar machen, finden Sie unter [IoT Hub-APIs und -SDKs][lnk-apis-sdks].
 
@@ -509,13 +509,15 @@ Beim Senden einer C2D-Nachricht kann der Dienst das Übermitteln von Feedback au
 - Wenn Sie die **Ack**-Eigenschaft auf **negative** festlegen, generiert IoT Hub nur dann eine Feedbacknachricht, wenn die C2D-Nachricht den Status **Unzustellbar** erreicht.
 - Bei Festlegung der **Ack**-Eigenschaft auf **full** generiert IoT Hub in beiden Fällen eine Feedbacknachricht.
 
-Wie im Abschnitt [Endpunkte](#endpoints) erläutert, übermittelt IoT Hub Feedback in Form von Nachrichten über einen dienstseitigen Endpunkt (**/messages/servicebound/feedback**). Die Semantik für den Empfang von Feedback stimmt mit der für C2D-Nachrichten überein, die den gleichen Nachrichtenlebenszyklus aufweisen. Nachrichtenfeedback wird nach Möglichkeit in einer einzigen Nachricht zusammengefasst, die das folgende Format aufweist.
+> [AZURE.NOTE] Wenn **Ack** als **full** festgelegt ist und keine Feedbacknachricht empfangen wird, bedeutet dies, dass die Feedbacknachricht abgelaufen ist. Der Dienst kann in diesem Fall nicht ermitteln, wo die ursprüngliche Nachricht abgeblieben ist. In der Praxis sollte ein Dienst sicherstellen, dass Feedback verarbeitet werden kann, bevor es abläuft. Die maximale Ablaufzeit beträgt zwei Tage, daher sollte ausreichend Zeit verbleiben, um den Dienst zu starten, wenn ein Fehler auftritt.
 
-Jede vom Feedbackendpunkt empfangene Nachricht umfasst die folgenden Eigenschaften:
+Wie im Abschnitt [Endpunkte](#endpoints) erläutert, übermittelt IoT Hub Feedback in Form von Nachrichten über einen dienstseitigen Endpunkt (**/messages/servicebound/feedback**). Die Semantik für den Empfang von Feedback stimmt mit der für C2D-Nachrichten überein und weist den gleichen [Nachrichtenlebenszyklus](#message lifecycle) auf. Nachrichtenfeedback wird nach Möglichkeit in einer einzigen Nachricht zusammengefasst, die das folgende Format aufweist.
+
+Jede von einem Gerät vom Feedback-Endpunkt empfangene Nachricht umfasst die folgenden Eigenschaften:
 
 | Eigenschaft | Beschreibung |
 | -------- | ----------- |
-| EnqueuedTime | Zeitstempel, der die Erstellung des Batches angibt. |
+| EnqueuedTime | Zeitstempel, der die Erstellung der Nachricht angibt. |
 | UserId | `{iot hub name}` |
 | ContentType | `application/vnd.microsoft.iothub.feedback.json` |
 
@@ -525,9 +527,11 @@ Der Nachrichtenkörper ist ein serialisiertes JSON-Array aus Datensätzen, von d
 | -------- | ----------- |
 | EnqueuedTimeUtc | Zeitstempel, der den Zeitpunkt des Nachrichtenergebnisses angibt. Diese Eigenschaft kann beispielsweise angeben, wann das Gerät abgeschlossen wurde oder die Nachricht abgelaufen ist. |
 | OriginalMessageId | **MessageId** der C2D-Nachricht, auf die sich das Feedback bezieht. |
-| Beschreibung | Zeichenfolgenwerte für die zuvor genannten Ergebnisse. |
+| StatusCode | Erforderlicher Ganzzahlwert. In von IoT Hub erzeugten Feedbacknachrichten verwendet. <br/> 0 = Erfolg <br/> 1 = Nachricht abgelaufen <br/> 2 = max. Anzahl von Sendungen überschritten <br/> 3 = Nachricht abgelehnt |
+| Beschreibung | Zeichenfolgenwerte für **StatusCode**. |
 | DeviceId | **DeviceId** des Zielgeräts für die C2D-Nachricht, auf die sich das Feedback bezieht. |
 | DeviceGenerationId | **DeviceGenerationId** des Zielgeräts für die C2D-Nachricht, auf die sich das Feedback bezieht. |
+
 
 **Wichtig**: Der Dienst muss eine **MessageId** für die C2D-Nachricht angeben, damit das Feedback der ursprünglichen Nachricht zugeordnet werden kann.
 
@@ -538,6 +542,7 @@ Der Nachrichtenkörper ist ein serialisiertes JSON-Array aus Datensätzen, von d
   {
     "OriginalMessageId": "0987654321",
     "EnqueuedTimeUtc": "2015-07-28T16:24:48.789Z",
+    "StatusCode": 0
     "Description": "Success",
     "DeviceId": "123",
     "DeviceGenerationId": "abcdefghijklmnopqrstuvwxyz"
@@ -560,6 +565,8 @@ Jeder IoT Hub legt die folgenden Konfigurationsoptionen für das C2D-Messaging o
 | feedback.ttlAsIso8601 | Aufbewahrungsdauer für dienstgebundene Feedbacknachrichten. | ISO\_8601-Intervall bis 2D (mindestens 1 Minute). Standardwert: 1 Stunde. |
 | feedback.maxDeliveryCount | Maximale Zustellungsanzahl für Feedbackwarteschlangen. | 1 bis 100. Standardwert: 100. |
 
+Weitere Informationen finden Sie unter [Verwalten von IoT Hub][lnk-manage].
+
 ## Kontingente und Drosselung <a id="throttling"></a>
 
 Jedes Azure-Abonnement kann maximal 10 IoT Hubs enthalten.
@@ -577,14 +584,14 @@ Die nachfolgende Liste zeigt alle erzwungenen Werte für die Drosselung. Die Wer
 | Drosselung | Wert pro Hub |
 | -------- | ------------- |
 | Identitätsregistrierungsvorgänge (Erstellen, Abrufen, Aktualisieren, Löschen) | 100/Minute/Einheit, bis zu 5.000/Minute |
-| Geräteverbindungen | 120/Sekunden/Einheit (für S2), 12/Sekunden/Einheit (für S1); mindestens 100/Sekunde |
-| Senden von Nachrichten von Geräten an die Cloud | 120/Sekunden/Einheit (für S2), 12/Sekunden/Einheit (für S1); mindestens 100/Sekunde |
+| Geräteverbindungen | 120/Sekunden/Einheit (für S2), 12/Sekunden/Einheit (für S1); <br/>Mindestens 100/Sekunde. <br/> Zwei S1-Einheiten entsprechen beispielsweise 2*12 = 24/s, es sind jedoch mindestens 100/s auf die Einheiten verteilt vorhanden. Mit neun S1-Einheiten erhalten Sie 108/s (9*12) über alle Einheiten. |
+| Senden von Nachrichten von Geräten an die Cloud | 120/Sekunden/Einheit (für S2), 12/Sekunden/Einheit (für S1); <br/>Mindestens 100/Sekunde. <br/> Zwei S1-Einheiten entsprechen beispielsweise 2*12 = 24/s, es sind jedoch mindestens 100/s auf die Einheiten verteilt vorhanden. Mit neun S1-Einheiten erhalten Sie 108/s (9*12) über alle Einheiten. |
 | C2D-Sendevorgänge | 100/Minute/Einheit |
 | C2D-Empfangsvorgänge | 1000/Minuten/Einheit |
 
 **Hinweis**: Die Kontingente oder Drosselungsgrenzwerte können jederzeit angehoben werden, indem die Anzahl von bereitgestellten Einheiten in einem IoT Hub erhöht wird.
 
-**Wichtig**: Identitätsregistrierungsvorgänge sind für die Verwendung zur Laufzeit in Szenarien für die Geräteverwaltung und -bereitstellung vorgesehen. Das Lesen oder Aktualisieren einer großen Anzahl von Geräte-Identitäten wird durch [Import-/Exportaufträge](#importexport) unterstützt.
+**Wichtig:** Identitätsregistrierungsvorgänge sind für die Verwendung zur Laufzeit in Szenarios für die Geräteverwaltung und -bereitstellung vorgesehen. Das Lesen oder Aktualisieren einer großen Anzahl von Geräteidentitäten wird durch [Import-/Exportaufträge](#importexport) unterstützt.
 
 ## Nächste Schritte
 
@@ -637,5 +644,7 @@ Nachdem Sie in diesem Dokument einen Überblick über die Entwicklung für IoT H
 [lnk-tls]: https://tools.ietf.org/html/rfc5246
 [lnk-iotdev]: https://azure.microsoft.com/develop/iot/
 [lnk-bulk-identity]: iot-hub-bulk-identity-mgmt.md
+[lnk-eventhub-partitions]: event-hubs-overview.md#partitions
+[lnk-manage]: iot-hub-manage-through-portal.md
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

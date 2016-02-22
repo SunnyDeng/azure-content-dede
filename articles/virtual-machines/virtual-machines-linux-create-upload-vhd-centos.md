@@ -25,7 +25,7 @@
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
-##Voraussetzungen##
+## Voraussetzungen ##
 
 In diesem Artikel wird davon ausgegangen, dass Sie bereits ein CentOS-Linux-Betriebssystem (oder eine ähnliche Ableitung) auf einer virtuellen Festplatte installiert haben. Sie können VHD-Dateien mit unterschiedlichen Tools erstellen, beispielsweise mit einer Virtualisierungslösung wie Hyper-V. Anweisungen hierzu finden Sie unter [Installieren der Hyper-V-Rolle und Konfigurieren eines virtuellen Computers](http://technet.microsoft.com/library/hh846766.aspx).
 
@@ -82,7 +82,7 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein CentOS-Linux-Betr
 		# sudo chkconfig network on
 
 
-8. **Nur CentOS 6.3**: Installieren Sie die Treiber für die Linux-Integrationsdienste (LIS).
+8. **Nur CentOS 6.3:** Installieren Sie die Treiber für die Linux-Integrationsdienste (LIS).
 
 	**Important: Dieser Schritt gilt nur für CentOS 6.3 und ältere Versionen.** In CentOS 6.4+ sind die Linux-Integrationsdienste *bereits im Standardkernel verfügbar*.
 
@@ -156,11 +156,11 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein CentOS-Linux-Betr
 
 		# yum clean all
 
-14. **Nur CentOS 6.3**; aktualisieren Sie den Kernel mit dem folgenden Befehl:
+14. **Nur CentOS 6.3:** Aktualisieren Sie den Kernel mit dem folgenden Befehl:
 
 		# sudo yum --disableexcludes=all install kernel
 
-15.	Modifizieren Sie die Boot-Zeile des Kernels in Ihrer Grub-Konfiguration, um zusätzliche Kernel-Parameter für Azure einzubinden. Öffnen Sie dafür „/boot/grub/menu.lst“ in einem Text-Editor. Stellen Sie sicher, dass der Standardkernel die folgenden Parameter enthält:
+15.	Modifizieren Sie die Boot-Zeile des Kernels in Ihrer Grub-Konfiguration, um zusätzliche Kernel-Parameter für Azure einzubinden. Öffnen Sie dafür "/boot/grub/menu.lst" in einem Text-Editor. Stellen Sie sicher, dass der Standardkernel die folgenden Parameter enthält:
 
 		console=ttyS0 earlyprintk=ttyS0 rootdelay=300 numa=off
 
@@ -355,7 +355,6 @@ Die Vorbereitung eines virtuellen CentOS 7-Computers für Azure entspricht in et
 17. Klicken Sie im Hyper-V-Manager auf **Aktion -> Herunterfahren**. Ihre Linux-VHD kann nun in Azure hochgeladen werden.
 
 ## Nächste Schritte
-Nun können Sie mit Ihrer CentOS Linux-VHD-Datei neue virtuelle Azure-Maschinen in Azure erstellen. Falls Sie zum ersten Mal Azure verwenden und die VHD-Datei in Azure hochladen, können Sie die Schritte 2 und 3 in [diesem Leitfaden](virtual-machines-linux-create-upload-vhd.md) ausführen.
- 
+Sie können jetzt mit Ihrer CentOS-Linux-VHD-Datei neue virtuelle Azure-Computer in Azure erstellen. Wenn Sie die VHD-Datei zum ersten Mal in Azure hochladen, führen Sie die Schritte 2 und 3 in [Erstellen und Hochladen einer virtuellen Festplatte, die das Linux-Betriebssystem enthält](virtual-machines-linux-create-upload-vhd.md) aus.
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0211_2016-->

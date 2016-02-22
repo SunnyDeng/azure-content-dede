@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="tbd" 
-	ms.date="09/17/2015"
+	ms.date="02/10/2016"
 	ms.author="himad"/>
 
 
@@ -41,4 +41,4 @@ Dadurch können Benutzer von Azure Machine Learning Webdienste erstellen, die si
 Nach dem Erstellen kann der Endpunkt über synchrone APIs, Batch-APIs und Excel-Arbeitsblätter genutzt werden. Zusätzlich zum Hinzufügen von Endpunkten über diese Benutzeroberfläche können Sie auch die Endpunktverwaltungs-APIs verwenden, um Endpunkte programmgesteuert hinzuzufügen. Weitere Informationen zum Zugreifen auf einen Machine Learning-Webdienst finden Sie unter [Nutzen eines veröffentlichten Azure Machine Learning-Webdiensts](machine-learning-consume-web-services.md).
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0211_2016-->

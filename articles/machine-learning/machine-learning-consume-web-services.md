@@ -3,7 +3,7 @@
 	description="Sobald ein Machine Learning-Dienst bereitgestellt wurde, kann der zur Verfügung gestellte RESTFul-Webdienst als Antwort-/Anfrage-Dienst oder als Stapelausführungsdienst genutzt werden."
 	services="machine-learning"
 	documentationCenter=""
-	authors="bradsev"
+	authors="garyericson"
 	manager="paulettm"
 	editor="cgronlun" />
 
@@ -13,8 +13,8 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="tbd"
-	ms.date="10/19/2015"
-	ms.author="bradsev" />
+	ms.date="02/10/2016"
+	ms.author="garye" />
 
 
 # Nutzen eines Azure Machine Learning-Webdiensts, der von einem Machine Learning-Experiment aus bereitgestellt wurde
@@ -33,13 +33,13 @@ Dies bedeutet, dass die Dienste von Webanwendungen, mobilen Anwendungen, benutze
 
 Ein Azure Machine Learning-Webdienst kann auf zwei unterschiedliche Arten verarbeitet werden, als Antwort-/Anfrage-Dienst oder als Stapelausführungsdienst. In jedem Szenario wird die Funktionalität über den RESTFul-Webdienst bereitgestellt, der für die Nutzung verfügbar gemacht wird, sobald das Experiment bereitgestellt wurde. Durch Bereitstellen eines Machine Learning-Webdiensts in Azure mit einem Azure-Webdienst-Endpunkt, bei dem der Dienst automatisch anhand der Nutzung skaliert wird, können Sie im Vorfeld anfallende und fortlaufende Kosten für Hardwareressourcen vermeiden.
 
-> [AZURE.TIP]Eine einfache Möglichkeit zum Erstellen einer Web-App für den Zugriff auf Ihren Vorhersagewebdienst finden Sie unter [Verwenden eines Azure Machine Learning-Webdiensts mit einer Web-App-Vorlage](machine-learning-consume-web-service-with-web-app-template.md).
+> [AZURE.TIP] Eine einfache Möglichkeit zum Erstellen einer Web-App für den Zugriff auf Ihren Vorhersagewebdienst finden Sie unter [Verwenden eines Azure Machine Learning-Webdiensts mit einer Web-App-Vorlage](machine-learning-consume-web-service-with-web-app-template.md).
 
 <!-- When this article gets published, fix the link and uncomment
 For more information on how to manage Azure Machine Learning web service endpoints using the REST API, see **Azure machine learning web service endpoints**.
 -->
 
-Weitere Informationen zum Erstellen und Bereitstellen eines Machine Learning-Webdiensts finden Sie unter [Bereitstellen eines Azure Machine Learning-Webdiensts][publish]. Eine schrittweise Anleitung zum Erstellen und Bereitstellen eines Machine Learning-Experiments finden Sie unter [Entwickeln einer Vorhersagelösung mit Azure Machine Learning][walkthrough].
+Weitere Informationen zum Erstellen und Bereitstellen eines Machine Learning-Webdiensts finden Sie unter [Bereitstellen eines Azure Machine Learning-Webdiensts][publish]. Eine schrittweise Anleitung zum Erstellen und Bereitstellen eines Machine Learning-Experiments finden Sie unter [Entwickeln einer Predictive Analytics-Lösung mit Azure Machine Learning][walkthrough].
 
 [publish]: machine-learning-publish-a-machine-learning-web-service.md
 [walkthrough]: machine-learning-walkthrough-develop-predictive-solution.md
@@ -56,24 +56,24 @@ Ein Beispiel für RRS ist das Überprüfen der Authentizität einer Anwendung. H
 
 ## Stapelausführungsdienst (Batch Execution Service BES)
 
-Ein Stapelausführungsdienst (Batch Execution Service, BES) ist ein Dienst zur asynchronen Bewertung eines umfangreichen Stapels von Datensätzen. Die Eingabe für den BES enthält einen Stapel von Datensätzen aus verschiedenen Quellen, z. B. Blobs, Tabellen in Azure, SQL Azure, HDInsight (beispielsweise Ergebnisse einer Hive-Abfrage) oder HTTP-Quellen. Die Ausgabe des BES enthält die Ergebnisse der Wertung. Die Ergebnisse werden in eine Datei im Azure-Blob-Speicher geschrieben, und Daten aus dem Speicherendgerät werden in der Antwort zurückgegeben.
+Ein Stapelausführungsdienst (Batch Execution Service, BES) ist ein Dienst zur asynchronen Bewertung eines umfangreichen Stapels von Datensätzen. Die Eingabe für den BES enthält einen Stapel von Datensätzen aus verschiedenen Quellen, z. B. Blobs, Tabellen in Azure, SQL Azure, HDInsight (beispielsweise Ergebnisse einer Hive-Abfrage) oder HTTP-Quellen. Die Ausgabe des BES enthält die Ergebnisse der Wertung. Die Ergebnisse werden in eine Datei im Azure-Blob-Speicher geschrieben, und Daten aus dem Speicherendpunkt werden in der Antwort zurückgegeben.
 
 Ein BES ist nützlich, wenn Antworten nicht sofort benötigt werden, z. B. für regelmäßig geplante Bewertungen für einzelne Benutzer oder Geräte im Internet der Dinge (IOT).
 
 ## Beispiele
-Zum Erläutern der Funktionsweise von RRS und BES greifen wir auf ein Beispiel für einen Azure-Webdienst zurück. Dieser Dienst wird in einem IOT-Szenario (Internet der Dinge) verwendet werden. Der Einfachheit halber sendet unser Gerät nur einen Wert, `cog_speed`, und erhält eine einzelne Antwort zurück.
+Zum Erläutern der Funktionsweise von RRS und BES greifen wir auf ein Beispiel eines Azure-Webdiensts zurück. Dieser Dienst wird in einem IOT-Szenario (Internet der Dinge) verwendet werden. Der Einfachheit halber sendet unser Gerät nur einen Wert, `cog_speed`, und erhält eine einzelne Antwort zurück.
 
-Vier Arten von Informationen sind erforderlich, um den RRS- oder den BES-Dienst aufzurufen. Diese Informationen sind jederzeit auf den Dienstseiten der [Azure Machine Learning-Dienstseiten](https://studio.azureml.net) verfügbar, nachdem das Experiment bereitgestellt wurde. Klicken Sie auf den Link "WEB SERVICES" auf der linken Seite des Bildschirms, um die bereitgestellten Dienste anzuzeigen. Zum Suchen von Informationen über einen bestimmten Dienst gibt es Links zu API-Hilfeseiten für RRS und BES.
+Vier Arten von Informationen sind erforderlich, um den RRS- oder den BES-Dienst aufzurufen. Diese Informationen sind jederzeit auf den Dienstseiten in [Azure Machine Learning Studio](https://studio.azureml.net) verfügbar, nachdem das Experiment bereitgestellt wurde. Klicken Sie auf die Registerkarte WEB SERVICES auf der linken Seite des Bildschirms, um die bereitgestellten Dienste anzuzeigen. Wenn Sie auf einen Dienst klicken, werden die folgenden Links und Informationen für RRS und BES angezeigt:
 
-1.	Der **Dienst-API-Schlüssel**, verfügbar auf der Hauptseite der Dienste
-2.	Die **Dienst-URI**, verfügbar auf der API-Hilfeseite für den ausgewählten Dienst
-3.	Der erwartete **API-Anforderungstext**, verfügbar auf der API-Hilfeseite für den ausgewählten Dienst
-4.	Der erwartete **API-Antworttext**, verfügbar auf der API-Hilfeseite für den ausgewählten Dienst
+1.	Der **API-Schlüssel** des Dienst, der im Dashboard der Dienste verfügbar ist
+2.	Der **Anforderungs-URI** des Diensts, der auf der API-Hilfeseite für den ausgewählten Dienst verfügbar ist
+3.	Die erwarteten **Anforderungsheader** und der **Text** der API, die auf der API-Hilfeseite für den ausgewählten Dienst verfügbar sind
+4.	Die erwarteten **Antwortheader** und der **Text** der API, die auf der API-Hilfeseite für den ausgewählten Dienst verfügbar sind
 
 In den folgenden beiden Beispielen wird die Sprache C# verwendet, um den erforderlichen Code zu veranschaulichen. Die Zielplattform ist dabei ein Windows 8-Desktop.
 
 ### RRS-Beispiel
-Auf der API-Hilfeseite finden Sie neben der URI Eingabe- und Ausgabedefinitionen sowie Codebeispiele. Die API-Eingabe wird speziell für diesen Dienst aufgerufen und bildet die Nutzlast des API-Aufrufs.
+Klicken Sie auf dem Dashboard des Diensts unter **API HELP PAGE** auf **REQUEST/RESPONSE**, um die API-Hilfeseite anzuzeigen. Auf dieser Seite finden Sie neben dem URI Eingabe- und Ausgabedefinitionen sowie Codebeispiele. Die API-Eingabe speziell für diesen Dienst wird nachstehend gezeigt und bildet die Nutzlast des API-Aufrufs.
 
 **Beispiel für eine Anforderung**
 
@@ -97,7 +97,7 @@ Auf der API-Hilfeseite finden Sie neben der URI Eingabe- und Ausgabedefinitionen
 	}
 
 
-Auf ähnliche Weise wird auch die API-Antwort speziell erneut für diesen Dienst aufgerufen.
+Auch die API-Antwort für diesen Dienst wird nachstehend gezeigt.
 
 **Beispiel für eine Antwort**
 
@@ -125,7 +125,7 @@ Auf ähnliche Weise wird auch die API-Antwort speziell erneut für diesen Dienst
 	  "GlobalParameters": {}
 	}
 
-Unten auf der Seite finden Sie die Codebeispiele. Im Folgenden finden Sie das Codebeispiel für die Implementierung in C#.
+Unten auf der Hilfeseite finden Sie die Codebeispiele. Nachstehend sehen Sie das Codebeispiel für die C#-Implementierung.
 
 **Beispielcode**
 
@@ -200,7 +200,7 @@ Unten auf der Seite finden Sie die Codebeispiele. Im Folgenden finden Sie das Co
 	}
 
 ### BES-Beispiel
-Auf der API-Hilfeseite finden Sie neben der URI Informationen über mehrere verfügbare Aufrufe. Im Gegensatz zum RRS-Dienst ist der BES-Dienst asynchron. Dies bedeutet, dass die Bus-API einen auszuführenden Auftrag in die Warteschlange reiht und der Aufrufer den Auftragsstatus abruft, um zu sehen, wann dieser abgeschlossen wurde. Hier sind die Vorgänge, die derzeit für Batchaufträge unterstützt werden:
+Im Gegensatz zum RRS-Dienst ist der BES-Dienst asynchron. Dies bedeutet, dass die Bus-API einen auszuführenden Auftrag in die Warteschlange reiht und der Aufrufer den Auftragsstatus abruft, um zu sehen, wann dieser abgeschlossen wurde. Hier sind die Vorgänge, die derzeit für Batchaufträge unterstützt werden:
 
 1. Erstellen (Einreichen) eines Batchauftrags
 1. Starten des Batchauftrags
@@ -209,17 +209,19 @@ Auf der API-Hilfeseite finden Sie neben der URI Informationen über mehrere verf
 
 **1. Erstellen Sie einen Batchausführungsauftrag**
 
-Beim Erstellen eines Batchauftrags für Ihren Azure Machine Learning-Dienstendpunkt können mehrere Parameter angeben werden, die diese Batchausführung definieren:
+Beim Erstellen eines Batchauftrags für Ihren Azure Machine Learning-Dienstendpunkt können Sie mehrere Parameter angeben, die diese Batchausführung definieren:
 
-* **Input**: ein Blob-Verweis auf den Speicherort der Eingabe des Batchauftrags.
-* **GlobalParameters**: stellt eine Gruppe globaler Parameter dar, die für ein Experiment definiert werden können. Ein Azure Machine Learning-Experiment kann erforderliche und optionale Parameter haben, die die Ausführung des Diensts individuell anpassen. Außerdem wird vom Aufrufer erwartet, ggf. alle benötigten Parameter bereitzustellen. Diese Parameter werden als eine Auflistung von Schlüssel-Wert-Paaren angegeben.
-* **Outputs**: Wenn der Dienst eine oder mehrere Ausgaben definiert hat, wird dem Aufrufer gestattet, beliebig viele an einen Azure-Blob-Speicherort seiner Wahl umzuleiten. Dadurch können Sie die Ausgabe(n) des Dienst an einem gewünschten Speicherort und unter einem vorhersagbaren Namen speichern, da ansonsten der Name vom Ausgabe-Blob zufällig generiert wird. **HINWEIS:** Der Dienst erwartet, dass der Ausgabe-Inhalt aufgrund seines Typs in unterstützten Formaten gespeichert wird:
-  - DataSet-Ausgaben: können als**.csv, .tsv, .arff** gespeichert werden
-  - Trainierte Modell-Ausgaben: können als**.ilearner** gespeichert werden
+* **Input**: ein Blobverweis auf den Speicherort der Eingabe des Batchauftrags.
+* **GlobalParameters**: eine Gruppe globaler Parameter, die für ein Experiment definiert werden können. Ein Azure Machine Learning-Experiment kann erforderliche und optionale Parameter haben, die die Ausführung des Diensts individuell anpassen. Außerdem wird vom Aufrufer erwartet, ggf. alle benötigten Parameter bereitzustellen. Diese Parameter werden als eine Auflistung von Schlüssel-Wert-Paaren angegeben.
+* **Outputs**: wenn für den Dienst eine oder mehrere Ausgaben definiert sind, kann der Aufrufer beliebig viele an einen Azure-Blobspeicherort umleiten. Dadurch können Sie die Ausgaben des Dienst an einem gewünschten Speicherort und unter einem vorhersagbaren Namen speichern, da ansonsten der Name des Ausgabeblobs zufällig generiert wird. 
 
-  Die Ausgabe-Speicherort-Überschreibungen werden als Auflistung von *<output name  blob reference>*-Paaren angegeben, in denen der *Ausgabename* der benutzerdefinierte Name für einen bestimmten Ausgabeknoten ist (auch auf der API-Hilfeseite des Diensts angezeigt) und der *Blob-Verweis* ein Verweis auf einen Azure-Blob-Speicherort ist, an den die Ausgabe umgeleitet werden soll.
+    Der Dienst erwartet, dass der Inhalt der Ausgabe basierend auf seinem Typ in unterstützten Formaten gespeichert wird:
+  - Datasetausgaben können als **.csv, .tsv, .arff** gespeichert werden.
+  - Ausgaben trainierter Modelle können als **.ilearner** gespeichert werden.
 
-Diese Auftragserstellungsparameter können je nach Art Ihres Diensts optional sein. Dienste ohne definierten Eingabeknoten erfordern z. B. keine Übergabe an einen *Eingabe*-Parameter und die Ausgabe-Speicherort-Überschreibungsfunktion ist gänzlich optional, da Ausgaben andernfalls im Standard-Speicherkonto gespeichert werden, das für Ihren Azure Machine Learning-Arbeitsbereich eingerichtet wurde. Im Folgenden wird eine Beispiel-Anforderungsnutzlast für einen Dienst als an die REST-API übergeben gezeigt, in dem nur die Eingabe-Informationen übergeben werden:
+  Die Überschreibungen des Ausgabespeicherorts werden als Auflistung von *<output name  blob reference>*-Paaren angegeben, in denen der *output name* der benutzerdefinierte Name eines bestimmten Ausgabeknotens ist (der auch auf der API-Hilfeseite des Diensts angezeigt wird). *blob reference* ist ein Verweis auf einen Azure-Blobspeicherort ist, an den die Ausgabe umgeleitet werden soll.
+
+Diese Auftragserstellungsparameter können je nach Art Ihres Diensts optional sein. Dienste ohne definierten Eingabeknoten erfordern z. B. nicht, das an sie ein *Input*-Parameter übergeben wird. Die Überschreibungsfunktion für den Ausgabespeicherort ist gänzlich optional, da Ausgaben andernfalls im Standardspeicherkonto gespeichert werden, das für Ihren Azure Machine Learning-Arbeitsbereich eingerichtet wurde. Nachstehend wird ein Beispiel einer Anforderungsnutzlast für einen Dienst als an die REST-API übergeben gezeigt, bei dem nur die Eingabe-Informationen übergeben werden:
 
 **Beispiel für eine Anforderung**
 
@@ -235,7 +237,7 @@ Diese Auftragserstellungsparameter können je nach Art Ihres Diensts optional se
 	  "GlobalParameters": null
 	}
 
-Die Antwort auf die Batchauftragserstellungs-API ist die eindeutige Auftrags-ID, die mit Ihrem Job verknüpft war. Diese ID ist sehr wichtig, da sie die einzige Möglichkeit für Sie darstellt, auf diesen Auftrag im System für andere Vorgänge zu verweisen.
+Die Antwort auf die Batchauftragserstellungs-API ist die eindeutige Auftrags-ID, die mit Ihrem Auftrags verknüpft war. Diese ID ist sehr wichtig, da sie Ihre einzige Möglichkeit darstellt, für andere Vorgänge auf diesen Auftrag im System zu verweisen.
 
 **Beispiel für eine Antwort**
 
@@ -243,11 +245,11 @@ Die Antwort auf die Batchauftragserstellungs-API ist die eindeutige Auftrags-ID,
 
 **2. Starten eines Batchausführungsauftrags**
 
-Ein erstellter Batchauftrag wird nur innerhalb des Systems registriert und erhält den Zustand*nicht gestartet*. Um tatsächlich die Ausführung des Auftrags zu planen, müssen Sie die **start**-API aufrufen, die auf der API-Hilfeseite des Dienstendpunkts beschrieben ist, und die Auftrags-ID angeben, die erhalten wurde, als der Auftrag erstellt wurde.
+Ein erstellter Batchauftrag wird innerhalb des Systems registriert und erhält den Zustand *Not started*. Um tatsächlich die Ausführung des Auftrags zu planen, rufen Sie die **start**-API auf, die auf der API-Hilfeseite des Dienstendpunkts beschrieben ist, und geben die Auftrags-ID an, die vergeben wurde, als der Auftrag erstellt wurde.
 
 **3. Abrufen des Status eines Batchausführungsauftrags**
 
-Sie können jederzeit den Status Ihres asynchronen Batchauftrags abrufen, indem Sie die Auftrags-ID an die GetJobStatus-API übergeben. Die API-Antwort wird einen Indikator für den aktuellen Status des Auftrags sowie die tatsächlichen Ergebnisse des Batchauftrags enthalten, wenn der Vorgang erfolgreich abgeschlossen wurde. Im Fall eines Fehlers werden weitere Informationen über die tatsächlichen Gründe für den Fehler in der Eigenschaft *Details* zurückgegeben.
+Sie können jederzeit den Status Ihres asynchronen Batchauftrags abfragen, indem Sie die Auftrags-ID an die „GetJobStatus“-API übergeben. Die API-Antwort enthält einen Indikator für den aktuellen Status des Auftrags sowie die tatsächlichen Ergebnisse des Batchauftrags, wenn der Vorgang erfolgreich abgeschlossen wurde. Bei einem Fehler werden weitere Informationen über die tatsächlichen Gründe für den Fehler in der Eigenschaft *Details* zurückgegeben (siehe die folgende Abbildung):
 
 **Antwortnutzlast**
 
@@ -265,7 +267,7 @@ Der *StatusCode* kann wie folgt lauten:
 * Abgebrochen
 * Abgeschlossen
 
-Die Eigenschaft *Ergebnisse* wird nur aufgefüllt, wenn der Auftrag erfolgreich abgeschlossen wurde (andernfalls ist er **null**). Wenn der Auftrag abgeschlossen wurde und der Dienst mindestens einen Ausgabeknoten definiert hat, werden die Ergebnisse als eine Auflistung von *[Ausgabename, Blob-Verweis]*-Paaren zurückgegeben, für die der Blob-Verweis ein SAS-schreibgeschützter Verweis auf das Blob mit dem tatsächlichen Ergebnis ist.
+Die Eigenschaft *Ergebnisse* wird nur aufgefüllt, wenn der Auftrag erfolgreich abgeschlossen wurde (andernfalls ist er **null**). Wenn der Auftrag abgeschlossen wurde und für Dienst mindestens ein Ausgabeknoten definiert ist, werden die Ergebnisse als Auflistung von Paaren von *[Ausgabename, Blobverweis]* zurückgegeben, für die der Blobverweis ein SAS-schreibgeschützter Verweis auf das Blob mit dem tatsächlichen Ergebnis ist.
 
 **Beispiel für eine Antwort**
 
@@ -297,11 +299,11 @@ Ein Batchauftrag, der ausgeführt wird, kann jederzeit abgebrochen werden, indem
 
 
 
-#### Verwenden von [BES SDK](machine-learning-consume-web-services.md#batch-execution-service-sdk)
+#### Verwenden des BES SDK
 
-Das [BES SDK NuGet-Paket](http://www.nuget.org/packages/Microsoft.Azure.MachineLearning/) bietet Funktionen, die das Aufrufen von BES zur Bewertung im Batchmodus vereinfachen. Um das NuGet-Paket in Visual Studio zu installieren, wählen Sie unter Tools den NuGet-Paket-Manager und klicken Sie auf Paket-Manager-Konsole.
+Das [NuGet-Paket mit dem BES SDK ](http://www.nuget.org/packages/Microsoft.Azure.MachineLearning/) bietet Funktionen, die das Aufrufen von BES zur Bewertung im Batchmodus vereinfachen. Um das NuGet-Paket zu installieren, wählen Sie in Visual Studio unter **Tools** den **NuGet-Paket-Manager** aus und klicken dann auf **Paket-Manager-Konsole**.
 
-AzureML-Experimente, die als Webdienste bereitgestellt werden, können Webdienst-Eingabemodule umschließen, d.h. sie gehen davon aus, dass die Eingabe durch den Webdienstaufruf in Form eines Verweises auf einen Blobspeicherort bereitgestellt wird. Es gibt auch die Möglichkeit, kein Webdienst-Eingabemodul zu verwenden und stattdessen ein Leser-Modul zu nutzen. In diesem Fall würde der Leser in der Regel von einer SQL-Datenbank lesen, indem eine Abfrage zur Laufzeit genutzt wird, um die Daten abzurufen. Webdienst-Parameter können verwendet werden, um dynamisch auf andere Server oder Tabellen usw. zu verweisen. Das SDK unterstützt beide dieser Muster.
+Azure Machine Learning-Experimente, die als Webdienste bereitgestellt werden, können Webdienst-Eingabemodule einschließen. Dies bedeutet, dass sie erwarten, dass die Eingabe über den Webdienstaufruf in Form eines Verweises auf einen Blobspeicherort bereitgestellt wird. Es gibt auch die Möglichkeit, kein Webdienst-Eingabemodul zu verwenden und stattdessen ein **Reader**-Modul zu nutzen. In diesem Fall liest das **Reader**-Modul in der Regel Daten aus einer SQL-Datenbank, indem zur Laufzeit Daten mithilfe einer Abfrage abgerufen werden. Webdienst-Parameter können verwendet werden, um dynamisch auf andere Server oder Tabellen usw. zu verweisen. Das SDK unterstützt beide dieser Muster.
 
 Im folgenden Codebeispiel wird veranschaulicht, wie Sie einen Batchauftrag anhand eines Azure Machine Learning-Dienstendpunkts mithilfe von BES SDK senden und überwachen können. Beachten Sie die Kommentare für Informationen zu den Einstellungen und Aufrufen.
 
@@ -433,4 +435,4 @@ Im folgenden Codebeispiel wird veranschaulicht, wie Sie einen Batchauftrag anhan
 	    }
 	}
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_0211_2016-->

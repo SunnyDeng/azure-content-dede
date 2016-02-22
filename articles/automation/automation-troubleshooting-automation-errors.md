@@ -18,18 +18,19 @@
 
 # Tipps zur Problembehandlung für häufige Fehler in Azure Automation
 
-Wenn beim Verwenden von Automation-Ressourcen wie Runbooks, Modulen und Automation-Ressourcen ein Problem auftritt, müssen Sie ermitteln, wo der Fehler liegt. In diesem Artikel werden einige häufige Fehler beschrieben, die bei der Arbeit mit Azure Automation auftreten können, und es werden mögliche Abhilfemaßnahmen vorgeschlagen.
+In diesem Artikel werden einige häufige Fehler beschrieben, die bei der Arbeit mit Azure Automation auftreten können, und es werden mögliche Abhilfemaßnahmen vorgeschlagen.
 
 ## Problembehandlung für Authentifizierungsfehler bei der Arbeit mit Azure Automation-Runbooks  
 
+### Szenario: Fehler beim Anmelden am Azure-Konto
 
-**Szenario: Fehler beim Anmelden am Azure-Konto**
+**Fehler:** Beim Verwenden des Cmdlets Add-AzureAccount oder Login-AzureRmAccount wird der Fehler „Unknown\_user\_type: Unbekannter Benutzertyp“ ausgegeben.
 
-**Fehler:** Sie erhalten beim Verwenden des Add-AzureAccount- oder Login-AzureRmAccount-Cmdlets den Fehler „Unknown\_user\_type: Unbekannter Benutzertyp“.
+**Ursache des Fehlers:** Dieser Fehler tritt auf, wenn der Assetname für die Anmeldeinformationen ungültig ist oder Benutzername und Kennwort, die Sie zur Einrichtung des Automation-Anmeldeinformationsassets verwendet haben, nicht gültig sind.
 
 **Tipps zur Problembehandlung:** Führen Sie die folgenden Schritte aus, um zu ermitteln, wo der Fehler liegt:
 
-1. Stellen Sie sicher, dass keine Sonderzeichen (einschließlich des Zeichens **@**) im Namen der Ressource mit den Automation-Anmeldeinformationen enthalten sind, die Sie zum Herstellen der Verbindung mit Azure verwenden.  
+1. Stellen Sie sicher, dass keine Sonderzeichen (einschließlich des Zeichens **@**) im Namen des Assets mit den Automation-Anmeldeinformationen enthalten sind, die Sie zum Herstellen der Verbindung mit Azure verwenden.  
 
 2. Überprüfen Sie, ob Sie den Benutzernamen und das Kennwort aus den Azure Automation-Anmeldeinformationen in Ihrem lokalen PowerShell ISE-Editor verwenden können. Hierfür können Sie die folgenden Cmdlets in der PowerShell ISE ausführen:
 
@@ -37,38 +38,37 @@ Wenn beim Verwenden von Automation-Ressourcen wie Runbooks, Modulen und Automati
         #Using Azure Service Management   
         Add-AzureAccount –Credential $Cred  
         #Using Azure Resource Manager  
-        Login-AzureRmAccount – Credential $Cred
+        Login-AzureRmAccount –Credential $Cred
 
-3. Wenn die Authentifizierung lokal fehlschlägt, bedeutet dies, dass Sie Ihre Azure Active Directory-Anmeldeinformationen nicht richtig eingerichtet haben. Informationen zur richtigen Einrichtung des Active Directory-Kontos finden Sie im Blogbeitrag [Authenticating to Azure using Azure Active Directory](https://azure.microsoft.com/blog/azure-automation-authenticating-to-azure-using-azure-active-directory/) (Authentifizieren gegenüber Azure per Azure Active Directory).
+3. Wenn die Authentifizierung lokal fehlschlägt, bedeutet dies, dass Sie Ihre Azure Active Directory-Anmeldeinformationen nicht richtig eingerichtet haben. Informationen zur richtigen Einrichtung des Azure Active Directory-Kontos finden Sie im Blogbeitrag [Authenticating to Azure using Azure Active Directory](https://azure.microsoft.com/blog/azure-automation-authenticating-to-azure-using-azure-active-directory/) (Authentifizieren gegenüber Azure per Azure Active Directory).
 
+  <br/>
+### Szenario: Azure-Abonnement nicht gefunden
 
-**Szenario: Azure-Abonnement nicht gefunden**
+**Fehler:** Beim Verwenden des Cmdlets Select-AzureSubscription oder Select-AzureRmSubscription wird Fehler „Das Abonnement mit dem Namen ``<subscription name>`` wurde nicht gefunden“ ausgegeben.
 
-**Fehler:** Sie erhalten beim Verwenden des Cmdlets Select-AzureSubscription oder Select-AzureRmSubscription den Fehler „Das Abonnement mit dem Namen ``<subscription name>`` wurde nicht gefunden“.
- 
+**Ursache des Fehlers:** Dieser Fehler tritt auf, wenn der Name des Abonnements ungültig ist oder wenn der Azure Active Directory-Benutzer, der versucht, die Abonnementdetails abzurufen, nicht als Administrator des Abonnements konfiguriert ist.
+
 **Tipps zur Problembehandlung:** Führen Sie die folgenden Schritte aus, um zu ermitteln, ob die Authentifizierung gegenüber Azure richtig durchgeführt wurde und ob Sie Zugriff auf das Abonnement haben, das Sie auswählen möchten:
 
-1. Achten Sie darauf, **Add-AzureAccount** auszuführen, bevor Sie das **Select-AzureSubscription**-Cmdlet ausführen.  
+1. Achten Sie darauf, **Add-AzureAccount** auszuführen, bevor Sie das Cmdlet **Select-AzureSubscription** ausführen.  
 
-2. Wenn diese Fehlermeldung weiterhin angezeigt wird, ändern Sie Ihren Code, indem Sie das **Get-AzureSubscription**-Cmdlet nach dem **Add-AzureAccount**-Cmdlet hinzufügen und dann den Code ausführen. Überprüfen Sie jetzt, ob die Ausgabe von Get-AzureSubscription Ihre Abonnementdetails enthält.
+2. Wenn diese Fehlermeldung weiterhin angezeigt wird, ändern Sie Ihren Code, indem Sie das Cmdlet **Get-AzureSubscription** nach dem Cmdlet **Add-AzureAccount** hinzufügen und dann den Code ausführen. Überprüfen Sie jetzt, ob die Ausgabe von Get-AzureSubscription Ihre Abonnementdetails enthält.
     * Falls in der Ausgabe keine Abonnementdetails angezeigt werden, bedeutet dies, dass das Abonnement noch nicht initialisiert wurde.  
-    * Wenn die Abonnementdetails in der Ausgabe zu sehen sind, sollten Sie sich vergewissern, dass Sie den richtigen Abonnementnamen bzw. die richtige ID für das **Select-AzureSubscription**-Cmdlet verwenden.   
+    * Wenn die Abonnementdetails in der Ausgabe zu sehen sind, sollten Sie sich vergewissern, dass Sie den richtigen Abonnementnamen bzw. die richtige ID für das Cmdlet **Select-AzureSubscription** verwenden.   
 
+  <br/>
+### Szenario: Fehler bei der Authentifizierung gegenüber Azure, da Multi-Factor Authentication aktiviert ist
 
+**Fehler:** Der Fehler „Add-AzureAccount: AADSTS50079: Sichere Authentifizierungsregistrierung (Nachweis) erforderlich“ wird ausgegeben, wenn Sie sich für Azure mit Ihrem Azure-Benutzernamen und -Kennwort authentifizieren.
 
-**Szenario: Fehler bei der Authentifizierung gegenüber Azure, da Multi-Factor Authentication aktiviert ist**
-
-**Fehler:** Sie erhalten den Fehler „Add-AzureAccount: AADSTS50079: Sichere Authentifizierungsregistrierung (Nachweis) erforderlich“, wenn Sie sich für Azure mit Ihrem Azure-Benutzernamen und -Kennwort authentifizieren.
-
-**Ursache des Fehlers:** Falls Sie für Ihr Azure-Konto über Multi-Factor Authentication verfügen, können Sie für die Authentifizierung gegenüber Azure keinen Active Directory-Benutzer verwenden. Stattdessen müssen Sie ein Zertifikat oder einen Dienstprinzipal für die Authentifizierung gegenüber Azure verwenden.
+**Ursache des Fehlers:** Falls Sie für Ihr Azure-Konto über Multi-Factor Authentication verfügen, können Sie für die Authentifizierung gegenüber Azure keinen Azure Active Directory-Benutzer verwenden. Stattdessen müssen Sie ein Zertifikat oder einen Dienstprinzipal für die Authentifizierung gegenüber Azure verwenden.
 
 **Tipps zur Problembehandlung:** Informationen zur Verwendung eines Zertifikats mit den Azure Service Management-Cmdlets finden Sie unter [Managing Azure Services with the Microsoft Azure Automation Preview Service](http://blogs.technet.com/b/orchestrator/archive/2014/04/11/managing-azure-services-with-the-microsoft-azure-automation-preview-service.aspx) (Verwalten von Azure Services mit dem Microsoft Azure Automation Preview-Dienst). Informationen zur Verwendung eines Dienstprinzipals mit Azure-Ressourcen-Manager-Cmdlets finden Sie unter [Erstellen eines Dienstprinzipals mit dem Azure-Portal](./resource-group-create-service-principal-portal.md) und [Authentifizieren eines Dienstprinzipals mit dem Azure-Ressourcen-Manager](./resource-group-authenticate-service-principal.md).
 
-
-
-## Problembehandlung für häufige Fehler bei der Arbeit mit Runbooks 
-
-**Szenario: Beim Ausführen eines Runbooks können keine Parameter gebunden werden**
+  <br/>
+## Problembehandlung für häufige Fehler bei der Arbeit mit Runbooks  
+### Szenario: Runbookfehler aufgrund eines deserialisierten Objekts
 
 **Fehler:** Für Ihr Runbook tritt folgender Fehler auf: „Der Parameter ``<ParameterName>`` kann nicht gebunden werden. Der Wert ``<ParameterType>`` mit dem Typ ‚Deserialisiert‘ ``<ParameterType>`` kann nicht in den Typ ``<ParameterType>`` konvertiert werden.“
 
@@ -81,8 +81,8 @@ Wenn beim Verwenden von Automation-Ressourcen wie Runbooks, Modulen und Automati
 
 3. Verwenden Sie anstelle eines PowerShell-Workflow-Runbooks ein PowerShell-Runbook.
 
-
-**Szenario: Fehler beim Runbookauftrag, da das zugeordnete Kontingent überschritten wurde**
+  <br/>
+### Szenario: Fehler beim Runbookauftrag, da das zugeordnete Kontingent überschritten wurde
 
 **Fehler:** Ihr Runbookauftrag schlägt mit dem Fehler „Das Kontingent für die monatliche Gesamtausführungsdauer des Auftrags wurde für dieses Abonnement erreicht“ fehl.
 
@@ -95,8 +95,8 @@ Wenn beim Verwenden von Automation-Ressourcen wie Runbooks, Modulen und Automati
 3. Klicken Sie auf **Einstellungen** > **Tarif und Nutzung** > **Tarif**.  
 4. Wählen Sie auf dem Blatt **Tarif wählen** die Option **Basic**.    
 
-
-**Szenario: Cmdlet wird beim Ausführen eines Runbooks nicht erkannt**
+  <br/>
+### Szenario: Cmdlet wird beim Ausführen eines Runbooks nicht erkannt
 
 **Fehler:** Für Ihren Runbookauftrag tritt der folgende Fehler auf: „``<cmdlet name>``: Die Benennung ``<cmdlet name>`` wurde nicht als Name eines Cmdlets, einer Funktion, einer Skriptdatei oder eines ausführbaren Programms erkannt.“
 
@@ -110,10 +110,12 @@ Wenn beim Verwenden von Automation-Ressourcen wie Runbooks, Modulen und Automati
 
 - Falls ein Namenskonflikt vorliegt und das Cmdlet in zwei unterschiedlichen Modulen verfügbar ist, können Sie dies beheben, indem Sie den vollqualifizierten Namen für das Cmdlet verwenden. Sie können beispielsweise **ModuleName\\CmdletName** verwenden.
 
+- Wenn Sie das Runbook lokal in einer Hybrid Worker-Gruppe ausführen, stellen Sie sicher, dass das Modul/Cmdlet auf dem Computer installiert ist, auf dem der Hybrid Worker gehostet wird.
 
+  <br/>
 ## Problembehandlung für häufige Fehler beim Importieren von Modulen 
 
-**Szenario: Fehler beim Modulimport oder Cmdlets können nach dem Importieren nicht ausgeführt werden**
+### Szenario: Fehler beim Modulimport oder Cmdlets können nach dem Importieren nicht ausgeführt werden
 
 **Fehler:** Ein Modul kann nicht importiert werden, oder der Import ist erfolgreich, aber es werden keine Cmdlets extrahiert.
 
@@ -125,7 +127,7 @@ Wenn beim Verwenden von Automation-Ressourcen wie Runbooks, Modulen und Automati
 
 - Für das Modul fehlen die Abhängigkeiten im Ordner.
 
-- Das **New-AzureRmAutomationModule**-Cmdlet wird zum Hochladen des Moduls verwendet, und Sie haben nicht den vollständigen Speicherpfad angegeben oder haben das Modul nicht mit einer öffentlich zugänglichen URL geladen.
+- Das Cmdlet **New-AzureRmAutomationModule** wird zum Hochladen des Moduls verwendet, und Sie haben nicht den vollständigen Speicherpfad angegeben oder haben das Modul nicht mit einer öffentlich zugänglichen URL geladen.
 
 **Tipps zur Problembehandlung:** Sie können dieses Problem wie folgt beheben:
 
@@ -135,7 +137,7 @@ Wenn beim Verwenden von Automation-Ressourcen wie Runbooks, Modulen und Automati
 
 - Stellen Sie sicher, dass alle referenzierten DLLs im Modulordner vorhanden sind.
 
-
+  <br/>
 
 ## Nächste Schritte
 
@@ -145,8 +147,8 @@ Sie haben folgende Möglichkeiten, wenn Sie die oben genannten Schritte zur Prob
 
 - Erstellen Sie einen Azure-Supportfall. Klicken Sie auf der [Azure-Support-Website](https://azure.microsoft.com/support/options/) unter **Technischer und Abrechnungssupport** auf **Support erhalten**.
 
-- Senden Sie im [Script Center](https://azure.microsoft.com/documentation/scripts/) eine Skriptanforderung, wenn Sie nach einer Azure Automation-Runbook-Lösung oder einem Integrationsmodul suchen.
+- Senden Sie im [Script Center](https://azure.microsoft.com/documentation/scripts/) eine Skriptanforderung, wenn Sie nach einer Azure Automation-Runbooklösung oder einem Integrationsmodul suchen.
 
-- Veröffentlichen Sie Feedback oder Vorschläge zu Features für Azure Automation auf [User Voice](https://feedback.azure.com/forums/34192--general-feedback).
+- Veröffentlichen Sie Feedback oder Vorschläge zu Features für Azure Automation unter [User Voice](https://feedback.azure.com/forums/34192--general-feedback) (Aussagen von Benutzern).
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

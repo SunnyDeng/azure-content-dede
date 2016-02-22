@@ -47,8 +47,8 @@ App Service-Web-Apps ist eine Option für das Hosten solcher Anwendungen, denn e
 
 Eine alternative Lösung besteht darin, Ihre vorhandenen lokalen Investitionen zu verwenden. In diesem Beispielszenario, einem Mitarbeiterkostensystem, können Sie Ihren Datenspeicher innerhalb Ihrer eigenen internen Infrastruktur verwalten. Dies kann für die Integration mit internen Systemen (Reporting, Lohnbuchhaltung, Abrechnung usw.) oder zur Erfüllung von IT-Governance-Anforderungen verwendet werden. Web-Apps bietet eine Reihe von Methoden zur Aktivierung der Verbindung mit Ihrer lokalen Infrastruktur:
 
-- [App Service-Umgebungen](../app-service-app-service-environment-intro.md): App Service-Umgebungen (ASE) sind ein neues Premium-Feature, das dem Microsoft Azure App Service-Angebot vor kurzem hinzugefügt wurde. ASEs bieten eine vollständig isolierte und dedizierte Umgebung zur sicheren Ausführung von Azure App Service-Apps bei hoher Skalierung und sorgen außerdem für Isolation und sicheren Netzwerkzugriff.   
-- [Hybridverbindungen](../integration-hybrid-connection-overview.md) – Hybridverbindungen sind ein Feature von Microsoft Azure BizTalk Services. Damit kann Web-Apps eine Verbindung zu lokalen Ressourcen herstellen, wie z. B. zu SQL Server, MySQL, Web-APIs und benutzerdefinierten Webdiensten. 
+- [App Service-Umgebungen](app-service-app-service-environment-intro.md): App Service-Umgebungen (ASE) sind ein neues Premium-Feature, das dem Microsoft Azure App Service-Angebot vor kurzem hinzugefügt wurde. ASEs bieten eine vollständig isolierte und dedizierte Umgebung zur sicheren Ausführung von Azure App Service-Apps bei hoher Skalierung und sorgen außerdem für Isolation und sicheren Netzwerkzugriff.   
+- [Hybridverbindungen](../biztalk-services/integration-hybrid-connection-overview.md) – Hybridverbindungen sind ein Feature von Microsoft Azure BizTalk Services. Damit kann Web-Apps eine Verbindung zu lokalen Ressourcen herstellen, wie z. B. zu SQL Server, MySQL, Web-APIs und benutzerdefinierten Webdiensten. 
 - [Virtuelle Netzwerkintegration](https://azure.microsoft.com/blog/2014/09/15/azure-websites-virtual-network-integration/) – Durch Web-Apps-Integration mit Azure Virtual Network können Sie Ihre Web-App mit einem virtuellen Azure-Netzwerk verbinden, das wiederum mit Ihrer lokalen Infrastruktur über ein Site-to-Site-VPN verbunden werden kann. 
 
 Im folgenden Diagramm ist eine beispielhafte allgemeine Lösung mit Konnektivitätsoptionen für lokale Ressourcen zu sehen. Das erste Beispiel zeigt deren Umsetzung mithilfe der Standardfeatures von Azure App Service, und das zweite zeigt, wie diese durch Verwendung des Premium-Angebots der App Service-Umgebungen zu erreichen ist.
@@ -159,4 +159,4 @@ Weitere Informationen zu Azure App Service-Web-Apps finden sie unter [http://aka
  
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

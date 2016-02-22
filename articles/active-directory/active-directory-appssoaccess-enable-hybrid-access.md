@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/16/2015"
+	ms.date="02/09/2016"
 	ms.author="femila"/>
 
 # Ermöglichen des Hybrid-Zugriffs mit App-Proxy
@@ -39,7 +39,8 @@ Für die Aktivierung des Zugriffs auf eine Webanwendung gibt es nur eine Anforde
 7. Die Antwort wird über den Anwendungsproxy an den Benutzer gesendet.
 
 ## Verwandte Artikel
+- [Artikelindex für die Anwendungsverwaltung in Azure Active Directory](active-directory-apps-index.md)
 - [Aktivieren des Azure AD-Anwendungsproxys](active-directory-application-proxy-enable.md#step-1-enable-application-proxy-in-azure-ad)
 - [Veröffentlichen von Anwendungen über den Azure AD-App-Proxy](active-directory-application-proxy-publish.md)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_0211_2016-->

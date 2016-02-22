@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
-   ms.date="11/10/2015"
+   ms.date="02/08/2016"
    ms.author="maroche"/>
 
 
@@ -48,7 +48,7 @@ In der Vorschauversion von **Azure Data Catalog** werden die folgenden Anmerkung
 ## Hinzufügen einer Anmerkung zu mehreren Datenressourcen
 Benutzer können mehrere Datenressourcen im **Azure Data Catalog**-Portal auswählen und allen ausgewählten Ressourcen in nur einem Arbeitsschritt eine Anmerkung hinzufügen. Da Anmerkungen für alle ausgewählten Datenressourcen gelten, ist es ganz einfach, einheitliche Beschreibungen, Tags und Experten für verwandte Datenressourcen bereitzustellen.
 
-> [AZURE.NOTE]Tags und Experten können auch beim Registrieren von Datenressourcen mit dem **Azure Data Catalog**-Tool zur Datenquellenregistrierung angegeben werden.
+> [AZURE.NOTE] Tags und Experten können auch beim Registrieren von Datenressourcen mit dem **Azure Data Catalog**-Tool zur Datenquellenregistrierung angegeben werden.
 
 Bei Auswahl mehrerer Tabellen und Ansichten werden nur Spalten, die in allen Datenressourcen vorhanden sind, im **Azure Data Catalog**-Portal angezeigt. So können Benutzer Tags und Beschreibungen für alle Spalten hinzufügen, die für alle ausgewählten Datenressourcen den gleichen Namen aufweisen.
 
@@ -58,4 +58,4 @@ Genau wie die Metadaten, die bei der Registrierung aus der Datenquelle extrahier
 ## Zusammenfassung
 Durch die Registrierung einer Datenquelle in **Azure Data Catalog** werden strukturelle und beschreibende Metadaten aus der Datenquelle in den Katalogdienst kopiert, sodass die darin enthaltenen Daten leichter auffindbar sind. Sobald eine Datenquelle registriert wurde, können Benutzer im **Azure Data Catalog**-Portal Anmerkungen hinzufügen, um das Verständnis der Daten zu erleichtern und die Ermittlung zu vereinfachen.
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0211_2016-->

@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="11/10/2015"
+   ms.date="02/04/2016"
    ms.author="dobett"/>
 
 
@@ -43,13 +43,13 @@
     HostName={your IoT Hub hostname};DeviceId={your device id};SharedAccessKey={your device key}
     ```
 
-5. Wenn der IoT Hub-Hostname **contoso** und die Geräte-ID **mydevice** lautet, ergibt sich folgende Verbindungszeichenfolge:
+    Wenn der IoT Hub-Hostname **contoso** und die Geräte-ID **mydevice** lautet, ergibt sich folgende Verbindungszeichenfolge:
 
     ```
     var connectionString = "HostName=contoso.azure-devices.net;DeviceId=mydevice;SharedAccessKey=2s ... =="
     ```
 
-6. Speichern Sie die Datei. Führen Sie die folgenden Befehle im Ordner mit diesen Dateien aus:
+5. Speichern Sie die Datei. Führen Sie die folgenden Befehle in der Eingabeaufforderung im Ordner mit diesen Dateien ein, um die erforderlichen Pakete zu installieren. Führen Sie dann die Beispielanwendung aus:
 
     ```
     npm install
@@ -60,6 +60,6 @@
 
 [lnk-github-repo]: https://github.com/azure/azure-iot-sdks
 [lnk-node-installers]: https://nodejs.org/download/
-[lnk-github-prepare]: https://github.com/Azure/azure-iot-sdks/blob/master/node/device/doc/devbox_setup.md
+[lnk-github-prepare]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/get_started/node-devbox-setup.md
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

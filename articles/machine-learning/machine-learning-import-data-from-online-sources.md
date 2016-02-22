@@ -14,11 +14,13 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/07/2015"
+	ms.date="02/09/2016"
 	ms.author="bradsev;garye;gopitk" />
 
 
 # Importieren von Trainingsdaten aus verschiedenen Onlinedatenquellen mit dem "Reader"-Modul in Azure Machine Learning Studio
+
+In diesem Dokument werden die Unterstützung des Importierens von Onlinedaten aus verschiedenen Datenquellen und die erforderlichen Informationen zum Verschieben von Daten aus diesen Quellen in ein Azure Machine Learning-Experiment beschrieben.
 
 [AZURE.INCLUDE [import-data-into-aml-studio-selector](../../includes/machine-learning-import-data-into-aml-studio.md)]
 
@@ -32,14 +34,13 @@ Sie können in Azure Machine Learning Studio auf Daten aus einer von mehreren On
 - Azure-Tabelle
 - Azure SQL-Datenbank oder SQL Server in Azure VM
 - Datenfeedanbieter (derzeit OData)
-
-In diesem Dokument werden diese unterstützten Datenquellen und die erforderlichen Informationen zum Verschieben von Daten aus diesen Quellen in ein Azure Machine Learning-Experiment beschrieben.
+ 
 
 Der Workflow für Ihre Experimente in Azure Machine Learning Studio besteht aus dem Ziehen und Ablegen von Komponenten auf die Canvas. Für den Zugriff auf Onlinedatenquellen fügen Sie Ihrem Experiment das [Reader][reader]-Modul hinzu, wählen **Data source** aus und geben dann die für den Zugriff auf die Daten erforderlichen Parameter an. In der folgenden Tabelle werden die unterstützten Onlinedatenquellen beschrieben. Diese Tabelle enthält auch die unterstützten Dateiformate und die Parameter für den Zugriff auf die Daten.
 
-> [AZURE.NOTE]Dieser Artikel bietet allgemeine Informationen über das [Reader][reader]-Modul. Ausführlichere Informationen zu den Datentypen, auf die Sie zugreifen können, zu Formaten, Parametern und Antworten auf häufige Fragen finden Sie im Modulreferenzthema zum [Reader][reader]-Modul.
+> [AZURE.NOTE] Dieser Artikel bietet allgemeine Informationen über das [Reader][reader]-Modul. Ausführlichere Informationen zu den Datentypen, auf die Sie zugreifen können, zu Formaten, Parametern und Antworten auf häufige Fragen finden Sie im Modulreferenzthema zum [Reader][reader]-Modul.
 
-> [AZURE.NOTE]Da auf diese Trainingsdaten zugegriffen wird, während das Experiment läuft, stehen sie nur in diesem Experiment zur Verfügung. Im Vergleich dazu stehen Daten, die in Datasetmodulen gespeichert sind, allen Experimente in Ihrem Arbeitsbereich zur Verfügung.
+> [AZURE.NOTE] Da auf diese Trainingsdaten zugegriffen wird, während das Experiment läuft, stehen sie nur in diesem Experiment zur Verfügung. Im Vergleich dazu stehen Daten, die in Datasetmodulen gespeichert sind, allen Experimente in Ihrem Arbeitsbereich zur Verfügung.
 
 
 ## Unterstützte Onlinedatenquellen
@@ -58,4 +59,4 @@ Data Feed Provider | Liest Daten aus einem unterstützten Feedanbieter. Derzeit 
 <!-- Module References -->
 [reader]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_0211_2016-->

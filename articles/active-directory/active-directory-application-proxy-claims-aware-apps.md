@@ -13,14 +13,14 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/07/2016"
+	ms.date="02/09/2016"
 	ms.author="kgremban"/>
 
 
 
 # Arbeiten mit Ansprüche unterstützenden Apps im Anwendungsproxy
 
-> [AZURE.IMPORTANT]Das Feature "Anwendungsproxy" ist nur verfügbar, wenn Sie Azure Active Directory auf die Premium oder Basic Edition aktualisiert haben. Weitere Informationen finden Sie unter [Azure Active Directory-Editionen](active-directory-editions.md).
+> [AZURE.IMPORTANT] Das Feature "Anwendungsproxy" ist nur verfügbar, wenn Sie Azure Active Directory auf die Premium oder Basic Edition aktualisiert haben. Weitere Informationen finden Sie unter [Azure Active Directory-Editionen](active-directory-editions.md).
 
 Ansprüche unterstützende Apps führen eine Umleitung zum Sicherheitstokendienst (STS, Security Token Service) durch, der wiederum Anmeldeinformationen vom Benutzer im Austausch gegen ein Token anfordert, bevor der Benutzer zur Anwendung umgeleitet wird. Damit der Anwendungsproxy mit diesen Umleitungen arbeiten kann, müssen die folgenden Schritte ausgeführt werden.
 
@@ -59,7 +59,10 @@ Der Anwendungsproxy bietet Ihnen noch viele weitere Möglichkeiten:
 
 ## Zusätzliche Ressourcen
 
-* [Als Organisation für Azure registrieren](sign-up-organization.md)
-* [Azure-Identität](fundamentals-identity.md)
+- [Artikelindex für die Anwendungsverwaltung in Azure Active Directory](active-directory-apps-index.md)
+- [Bereitstellen eines sicheren Remotezugriffs auf lokale Anwendungen](active-directory-application-proxy-get-started.md)
+- [Aktivieren von systemeigenen Client-Apps für die Interaktion mit Proxyanwendungen](active-directory-application-proxy-native-client.md)
+- [Als Organisation für Azure registrieren](sign-up-organization.md)
+- [Azure-Identität](fundamentals-identity.md)
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0211_2016-->

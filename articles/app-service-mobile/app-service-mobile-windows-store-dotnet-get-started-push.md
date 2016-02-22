@@ -1,26 +1,24 @@
-<properties 
-	pageTitle="Hinzufügen von Pushbenachrichtigungen zu Ihrer universellen Windows Runtime 8.1-App | Azure Mobile Apps" 
-	description="Erfahren Sie, wie Sie Azure Mobile App Service-Apps und Azure Notification Hubs verwenden, um Pushbenachrichtigungen an Ihre Windows-App zu senden." 
-	services="app-service\mobile,notification-hubs" 
-	documentationCenter="windows" 
-	authors="ggailey777" 
-	manager="dwrede" 
+<properties
+	pageTitle="Hinzufügen von Pushbenachrichtigungen zu Ihrer universellen Windows Runtime 8.1-App | Azure Mobile Apps"
+	description="Erfahren Sie, wie Sie Azure Mobile App Service-Apps und Azure Notification Hubs verwenden, um Pushbenachrichtigungen an Ihre Windows-App zu senden."
+	services="app-service\mobile,notification-hubs"
+	documentationCenter="windows"
+	authors="ggailey777"
+	manager="dwrede"
 	editor=""/>
 
-<tags 
-	ms.service="app-service-mobile" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-windows" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="11/25/2015" 
+<tags
+	ms.service="app-service-mobile"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-windows"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="02/04/2016"
 	ms.author="glenga"/>
 
 # Hinzufügen von Pushbenachrichtigungen zu Ihrer universellen Windows Runtime 8.1-App
 
 [AZURE.INCLUDE [app-service-mobile-selector-get-started-push](../../includes/app-service-mobile-selector-get-started-push.md)]
-&nbsp;  
-[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
 
 ##Übersicht
 
@@ -34,7 +32,7 @@ Für dieses Lernprogramm benötigen Sie Folgendes:
 
 * Ein aktives [Microsoft Store-Konto](http://go.microsoft.com/fwlink/p/?LinkId=280045)
 * [Visual Studio Community 2013.](https://go.microsoft.com/fwLink/p/?LinkID=391934)
-* Schließen Sie das [Schnellstart-Lernprogramm](../app-service-mobile-windows-store-dotnet-get-started.md) ab.  
+* Schließen Sie das [Schnellstart-Lernprogramm](../app-service-mobile-windows-store-dotnet-get-started.md) ab.
 
 
 ##<a name="create-hub"></a>Erstellen eines Notification Hubs
@@ -73,16 +71,16 @@ Nachdem die Pushbenachrichtigungen in der App aktiviert wurden, müssen Sie ihr 
 	    HttpConfiguration config = this.Configuration;
 	    MobileAppSettingsDictionary settings =
 	        this.Configuration.GetMobileAppSettingsProvider().GetMobileAppSettings();
-	
+
 	    // Get the Notification Hubs credentials for the Mobile App.
 	    string notificationHubName = settings.NotificationHubName;
 	    string notificationHubConnection = settings
 	        .Connections[MobileAppSettingsKeys.NotificationHubConnectionString].ConnectionString;
-	
+
 	    // Create the notification hub client.
 	    NotificationHubClient hub = NotificationHubClient
 	        .CreateClientFromConnectionString(notificationHubConnection, notificationHubName);
-	
+
 	    // Define a WNS payload
 	    var windowsToastPayload = @"<toast><visual><binding template=""ToastText01""><text id=""1"">"
 	                            + item.Text + @"</text></binding></visual></toast>";
@@ -90,7 +88,7 @@ Nachdem die Pushbenachrichtigungen in der App aktiviert wurden, müssen Sie ihr 
 	    {
 	        // Send the push notification.
 	        var result = await hub.SendWindowsNativeNotificationAsync(windowsToastPayload);
-	
+
 	        // Write the success result to the logs.
 	        config.Services.GetTraceWriter().Info(result.State.ToString());
 	    }
@@ -100,7 +98,7 @@ Nachdem die Pushbenachrichtigungen in der App aktiviert wurden, müssen Sie ihr 
 	        config.Services.GetTraceWriter()
 	            .Error(ex.Message, null, "Push.SendAsync Error");
 	    }
-	
+
 	Dieser Code weist das Benachrichtigungshub an, nach dem Einfügen eines neuen Elements eine Pushbenachrichtigung zu senden.
 
 4. Veröffentlichen Sie das Serverprojekt erneut.
@@ -114,18 +112,18 @@ Nachdem die Pushbenachrichtigungen in der App aktiviert wurden, müssen Sie ihr 
 		var azureMobileApps = require('azure-mobile-apps'),
 	    promises = require('azure-mobile-apps/src/utilities/promises'),
 	    logger = require('azure-mobile-apps/src/logger');
-	
+
 		var table = azureMobileApps.table();
-		
+
 		table.insert(function (context) {
-	    // For more information about the Notification Hubs JavaScript SDK,  
+	    // For more information about the Notification Hubs JavaScript SDK,
 	    // see http://aka.ms/nodejshubs
 	    logger.info('Running TodoItem.insert');
-	    
+
 	    // Define the WNS payload that contains the new item Text.
 	    var payload = "<toast><visual><binding template=\ToastText01><text id="1">"
 		                            + context.item.text + "</text></binding></visual></toast>";
-	    
+
 	    // Execute the insert.  The insert returns the results as a Promise,
 	    // Do the push as a post-execute action within the promise flow.
 	    return context.execute()
@@ -149,7 +147,7 @@ Nachdem die Pushbenachrichtigungen in der App aktiviert wurden, müssen Sie ihr 
 	        });
 		});
 
-		module.exports = table;  
+		module.exports = table;
 
 	Damit wird eine WNS-Popupbenachrichtigung gesendet, die „item.text“ enthält, wenn ein neues Todo-Element eingefügt wird.
 
@@ -159,11 +157,11 @@ Nachdem die Pushbenachrichtigungen in der App aktiviert wurden, müssen Sie ihr 
 
 1. Öffnen Sie die freigegebene Projektdatei **App.xaml.cs**, und fügen Sie folgenden `using`-Anweisungen hinzu:
 
-		using System.Threading.Tasks;  
-        using Windows.Networking.PushNotifications;       
+		using System.Threading.Tasks;
+        using Windows.Networking.PushNotifications;
 
 2. Fügen Sie in derselben Datei der **App**-Klasse die folgende **InitNotificationsAsync**-Methodendefinition hinzu:
-    
+
         private async Task InitNotificationsAsync()
         {
             // Get a channel URI from WNS.
@@ -173,9 +171,9 @@ Nachdem die Pushbenachrichtigungen in der App aktiviert wurden, müssen Sie ihr 
             // Register the channel URI with Notification Hubs.
             await App.MobileService.GetPush().RegisterAsync(channel.Uri);
         }
-    
+
     Dieser Code ruft "ChannelURI" für die App aus WNS ab und registriert anschließend "ChannelURI" für Ihre mobile App Service-App.
-    
+
 3. Fügen Sie in der Datei **App.xaml.cs** am Anfang des **OnLaunched**-Ereignishandlers den **async**-Modifizierer zur Methodendefinition hinzu, und fügen Sie den folgenden Aufruf wie im Beispiel unten zu der neuen **InitNotificationsAsync**-Methode hinzu:
 
         protected async override void OnLaunched(LaunchActivatedEventArgs e)
@@ -212,4 +210,4 @@ Ihre App kann jetzt Popupbenachrichtigungen empfangen.
 
 <!-- Images. -->
 
-<!----HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0211_2016-->

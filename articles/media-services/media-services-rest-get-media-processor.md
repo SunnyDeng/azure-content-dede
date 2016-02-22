@@ -37,9 +37,9 @@ Media Encoder Standard|Zur Ausführung von Codieraufgaben mit dem Media Encoder 
 Media Encoder Premium Workflow|Zur Ausführung von Codieraufgaben mit dem Media Encoder Premium Workflow.|[Media Encoder Premium Workflow](media-services-encode-asset.md#media_encoder_premium_wokrflow)
 Azure Media Indexer| Macht Mediendateien und Inhalte durchsuchbar und generiert Untertitelspuren und Schlüsselwörter.|[Indizieren von Mediendateien mit Azure Media Indexer](media-services-index-content.md)
 Azure Media Hyperlapse (Vorschau)|Ermöglicht es Ihnen, die "Unregelmäßigkeiten" in Ihrem Video mithilfe von Videostabilisierung auszugleichen. Darüber hinaus können Sie Ihre Inhalte beschleunigen, um einen verwendbaren Clip zu erhalten.|		[Azure Media Hyperlapse](https://azure.microsoft.com/blog/?p=286281&preview=1&_ppp=61e1a0b3db)</a>
-Storage Decryption| Entschlüsselt Medienobjekte, die mit der Speicherverschlüsselung verschlüsselt wurden.|–
-Windows Azure Media Packager|Konvertiert Medienobjekte von .mp4 in das Smooth Streaming-Format. Konvertiert außerdem Medienobjekte vom Smooth Streaming-Format in das Apple HTTP Live Streaming (HLS)-Format.|[Systemvoreinstellungen für den Azure Media Packager](http://msdn.microsoft.com/library/hh973635.aspx)
-Windows Azure Media Encryptor|Verschlüsselt Medienobjekte mit dem PlayReady-Schutz.|[Aufgabenvoreinstellungen für den Azure Media Packager](http://msdn.microsoft.com/library/hh973610.aspx)
+Storage Decryption| Entschlüsselt Medienobjekte, die mit der Speicherverschlüsselung verschlüsselt wurden.|N/V
+Azure Media Packager|Konvertiert Medienobjekte von .mp4 in das Smooth Streaming-Format. Konvertiert außerdem Medienobjekte vom Smooth Streaming-Format in das Apple HTTP Live Streaming (HLS)-Format.|[Systemvoreinstellungen für den Azure Media Packager](http://msdn.microsoft.com/library/hh973635.aspx)
+Azure Media Encryptor|Verschlüsselt Medienobjekte mit dem PlayReady-Schutz.|[Aufgabenvoreinstellungen für den Azure Media Packager](http://msdn.microsoft.com/library/hh973610.aspx)
 
 ##Abrufen von MediaProcessor
 
@@ -103,4 +103,4 @@ Sie sind nun in der Lage, eine Medienprozessor-Instanz zu erstellen, und können
 [Task Preset Strings for the Azure Media Encoder]: http://msdn.microsoft.com/library/jj129582.aspx
 [How to: Connect to Media Services Programmatically]: ../media-services-rest-connect_programmatically/
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

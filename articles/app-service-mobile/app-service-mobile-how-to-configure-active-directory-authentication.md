@@ -1,26 +1,24 @@
-<properties 
-	pageTitle="Konfigurieren der Azure Active Directory-Authentifizierung für die App Services-Anwendung" 
-	description="Erfahren Sie, wie Sie die Azure Active Directory-Authentifizierung für die App Services-Anwendung konfigurieren." 
-	authors="mattchenderson" 
-	services="app-service\mobile" 
-	documentationCenter="" 
-	manager="dwrede" 
+<properties
+	pageTitle="Konfigurieren der Azure Active Directory-Authentifizierung für die App Services-Anwendung"
+	description="Erfahren Sie, wie Sie die Azure Active Directory-Authentifizierung für die App Services-Anwendung konfigurieren."
+	authors="mattchenderson"
+	services="app-service\mobile"
+	documentationCenter=""
+	manager="dwrede"
 	editor=""/>
 
-<tags 
-	ms.service="app-service-mobile" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
-	ms.date="11/20/2015" 
+<tags
+	ms.service="app-service-mobile"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="na"
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.date="02/04/2016"
 	ms.author="mahender"/>
 
 # So konfigurieren Sie Ihre App Service-Anwendung zur Verwendung der Azure Active Directory-Anmeldung
 
-[AZURE.INCLUDE [app-service-mobile-selector-authentication](../../includes/app-service-mobile-selector-authentication.md)]&nbsp;
-
-[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
+[AZURE.INCLUDE [app-service-mobile-selector-authentication](../../includes/app-service-mobile-selector-authentication.md)]
 
 In diesem Thema wird veranschaulicht, wie Sie Azure App Services zur Verwendung von Azure Active Directory als Authentifizierungsanbieter konfigurieren.
 
@@ -38,7 +36,7 @@ In diesem Thema wird veranschaulicht, wie Sie Azure App Services zur Verwendung 
 16. Klicken Sie auf **OK**, um die Anwendung in Azure Active Directory zu registrieren. Dadurch wird eine neue Registrierung erstellt. Wenn Sie stattdessen eine vorhandene Registrierung auswählen möchten, klicken Sie auf **Vorhandene App auswählen**, und suchen Sie nach dem Namen einer zuvor erstellten Registrierung des Mandanten. Klicken Sie auf die Registrierung, um sie auszuwählen, und klicken Sie auf **OK**. Klicken Sie dann auf dem Blatt „Azure Active Directory-Einstellungen“ auf **OK**.
 
     ![][0]
-	
+
 	Standardmäßig erfolgt die Authentifizierung über App Service, wobei jedoch der Zugriff auf die Inhalte Ihrer Website und APIs nicht autorisiert wird. Sie müssen die Benutzer in Ihrem App-Code autorisieren.
 
 17. (Optional) Um den Zugriff auf Ihre Website ausschließlich auf Benutzer zu beschränken, die von Azure Active Directory authentifiziert werden, legen Sie **Auszuführende Aktion bei nicht authentifizierter Anforderung** auf **Azure Active Directory** fest. Dies erfordert, dass alle Anforderungen authentifiziert werden müssen. Alle nicht authentifizierten Anforderungen werden zur Authentifizierung an Azure Active Directory umgeleitet.
@@ -69,8 +67,8 @@ Sie können Konfigurationseinstellungen auch manuell bereitstellen Dies ist die 
 8. Nachdem die Anwendung hinzugefügt wurde, klicken Sie auf die Registerkarte **Konfigurieren**. Ändern Sie unter **Einmaliges Anmelden** die **Antwort-URL** in die URL Ihrer Anwendung mit angehängtem Pfad _/.auth/login/aad/callback_. Beispiel: `https://contoso.azurewebsites.net/.auth/login/aad/callback`. Stellen Sie sicher, dass Sie das HTTPS-Schema verwenden.
 
     ![][3]
-	
-	
+
+
 	> [AZURE.NOTE]
 	Wenn anstelle des Authentifizierungs-/Autorisierungsfeatures von App Service das App Service-Gateway verwendet wird, greift Ihre Umleitungs-URL stattdessen auf die Gateway-URL mit dem Pfad _/signin-aad_ zurück.
 
@@ -94,7 +92,7 @@ Wenn Sie das App Service-Gateway verwenden, ignorieren Sie diesen Abschnitt und 
 15. Klicken Sie auf **Azure Active Directory** und dann unter **Verwaltungsmodus** auf **Erweitert**. Fügen Sie die Werte für Client-ID und Aussteller-URL ein, die Sie zuvor abgerufen haben. Klicken Sie dann auf **OK**.
 
     ![][1]
-	
+
 	Standardmäßig erfolgt die Authentifizierung über App Service, wobei jedoch der Zugriff auf die Inhalte Ihrer Website und APIs nicht autorisiert wird. Sie müssen die Benutzer in Ihrem App-Code autorisieren.
 
 17. (Optional) Um den Zugriff auf Ihre Website ausschließlich auf Benutzer zu beschränken, die von Azure Active Directory authentifiziert werden, legen Sie **Auszuführende Aktion bei nicht authentifizierter Anforderung** auf **Azure Active Directory** fest. Dies erfordert, dass alle Anforderungen authentifiziert werden müssen. Alle nicht authentifizierten Anforderungen werden zur Authentifizierung an Azure Active Directory umgeleitet.
@@ -146,4 +144,4 @@ Sie haben nun eine systemeigene Clientanwendung mit Zugriff auf Ihre App Service
 [ios-adal]: ../app-service-mobile-xamarin-ios-aad-sso.md
 [alternative Methode]: #advanced
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

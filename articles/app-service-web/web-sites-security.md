@@ -62,7 +62,7 @@ Aktivieren von [HTTPS](https://en.wikipedia.org/wiki/HTTPS) kann gegen MITM-Angr
 
 ## Sichern der Datenebene
 
-App Service ist mit der SQL-Datenbank so vernetzt, dass alle Verbindungszeichenfolgen durchgehend verschlüsselt werden. Nur auf dem virtuellen Computer, auf dem die Anwendung ausgeführt wird, kann diese entschlüsselt werden *und* auch nur wenn die Anwendung ausgeführt wird. Darüber hinaus enthält die Azure SQL-Datenbank viele Sicherheitsfeatures zum Schutz Ihrer Anwendungsdaten vor Bedrohungen aus dem Internet, darunter [ruhende Verschlüsselung](https://msdn.microsoft.com/library/dn948096.aspx), [immer verschlüsselt](https://msdn.microsoft.com/library/mt163865.aspx), [dynamische Datenmaskierung](sql-database-dynamic-data-masking-get-started.md), und [Bedrohungserkennung](sql-database-threat-detection-get-started). Wenn Sie vertrauliche Daten oder Compliance-Anforderungen haben, lesen Sie [Sichern Ihrer SQL-Datenbank](sql-database-security.md) für weitere Informationen zum Schutz Ihrer Daten.
+App Service ist mit der SQL-Datenbank so vernetzt, dass alle Verbindungszeichenfolgen durchgehend verschlüsselt werden. Nur auf dem virtuellen Computer, auf dem die Anwendung ausgeführt wird, kann diese entschlüsselt werden *und* auch nur wenn die Anwendung ausgeführt wird. Darüber hinaus enthält die Azure SQL-Datenbank viele Sicherheitsfeatures zum Schutz Ihrer Anwendungsdaten vor Bedrohungen aus dem Internet, darunter [ruhende Verschlüsselung](https://msdn.microsoft.com/library/dn948096.aspx), [immer verschlüsselt](https://msdn.microsoft.com/library/mt163865.aspx), [dynamische Datenmaskierung](../sql-database/sql-database-dynamic-data-masking-get-started.md) und [Bedrohungserkennung](sql-database-threat-detection-get-started). Wenn für Sie Anforderungen aufgrund vertraulicher Daten oder der Compliance gelten, finde Sie unter [Sichern Ihrer SQL-Datenbank](../sql-database/sql-database-security.md) weitere Informationen zum Schutz Ihrer Daten.
 
 Wenn Sie eine Drittanbieter-Datenbank, wie z. B. ClearDB verwenden, sollten Sie sich an die vom Provider bereitgestellte Dokumentation zum Thema bewährte Sicherheitsmethoden halten.
 
@@ -123,4 +123,4 @@ Weitere Informationen zum Protokollieren von Informationen für App Service-Apps
 
 * Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

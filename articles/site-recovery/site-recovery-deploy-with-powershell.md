@@ -75,17 +75,17 @@ Tipps für die Verwendung von Cmdlets, z. B. wie Parameterwerte, Eingaben und Au
 
 Führen Sie diese Cmdlets in PowerShell aus:
 
+```
+$UserName = "<user@live.com>"
+$Password = "<password>"
+$AzureSubscriptionName = "prod_sub1"
 
+$SecurePassword = ConvertTo-SecureString -AsPlainText $Password -Force
+$Cred = New-Object System.Management.Automation.PSCredential -ArgumentList $UserName, $securePassword
+Add-AzureAccount -Credential $Cred;
+$AzureSubscription = Select-AzureSubscription -SubscriptionName $AzureSubscriptionName
 
-			$UserName = "<user@live.com>"
-	$Password = "<password>"
-	$AzureSubscriptionName = "prod_sub1"
-
-	$SecurePassword = ConvertTo-SecureString -AsPlainText $Password -Force
-	$Cred = New-Object System.Management.Automation.PSCredential -ArgumentList $UserName, $securePassword
-	Add-AzureAccount -Credential $Cred;
-	$AzureSubscription = Select-AzureSubscription -SubscriptionName $AzureSubscriptionName
-
+```
 
 Ersetzen Sie die Elemente in "< >" durch Ihre jeweiligen Informationen.
 
@@ -95,16 +95,16 @@ Ersetzen Sie in PowerShell die Elemente in "< >" durch Ihre jeweiligen Informati
 
 ```
 
-	$VaultName = "<testvault123>"
-	$VaultGeo  = "<Southeast Asia>"
-	$OutputPathForSettingsFile = "<c:>"
+$VaultName = "<testvault123>"
+$VaultGeo  = "<Southeast Asia>"
+$OutputPathForSettingsFile = "<c:>"
 
 ```
 
 
 ```
-	New-AzureSiteRecoveryVault -Location $VaultGeo -Name $VaultName;
-	$vault = Get-AzureSiteRecoveryVault -Name $VaultName;
+New-AzureSiteRecoveryVault -Location $VaultGeo -Name $VaultName;
+$vault = Get-AzureSiteRecoveryVault -Name $VaultName;
 
 ```
 
@@ -116,20 +116,22 @@ Generieren Sie einen Registrierungsschlüssel im Tresor. Nachdem Sie den Azure S
 	
 	```
 	
-		$VaultName = "<testvault123>"
-		$VaultGeo  = "<Southeast Asia>"
-		$OutputPathForSettingsFile = "<c:>"
+	$VaultName = "<testvault123>"
+	$VaultGeo  = "<Southeast Asia>"
+	$OutputPathForSettingsFile = "<c:>"
 	
-		$VaultSetingsFile = Get-AzureSiteRecoveryVaultSettingsFile -Location $VaultGeo -Name $VaultName -Path $OutputPathForSettingsFile;
+	$VaultSetingsFile = Get-AzureSiteRecoveryVaultSettingsFile -Location $VaultGeo -Name $VaultName -Path $OutputPathForSettingsFile;
 	
 	```
 	
 2.	Legen Sie den Tresorkontext durch Ausführen der folgenden Befehle fest:
 	
-	```	
-		$VaultSettingFilePath = $vaultSetingsFile.FilePath 
-		$VaultContext = Import-AzureSiteRecoveryVaultSettingsFile -Path $VaultSettingFilePath -ErrorAction Stop
-```
+	```
+	
+	$VaultSettingFilePath = $vaultSetingsFile.FilePath 
+	$VaultContext = Import-AzureSiteRecoveryVaultSettingsFile -Path $VaultSettingFilePath -ErrorAction Stop
+	
+	```
 
 ## Schritt 4: Installieren des Azure Site Recovery-Anbieters
 
@@ -137,19 +139,19 @@ Generieren Sie einen Registrierungsschlüssel im Tresor. Nachdem Sie den Azure S
 	
 	```
 	
-		pushd C:\ASR\
+	pushd C:\ASR\
 	
 	```
 	
-2. Extrahieren Sie die Dateien mithilfe des heruntergeladenen Anbieters durch Ausführen des folgenden Befehls.
+2.	Extrahieren Sie die Dateien mithilfe des heruntergeladenen Anbieters durch Ausführen des folgenden Befehls.
 	
 	```
 	
-		AzureSiteRecoveryProvider.exe /x:. /q
+	AzureSiteRecoveryProvider.exe /x:. /q
 	
 	```
 	
-3. Installieren Sie den Anbieter mithilfe der folgenden Befehls:
+3.	Installieren Sie den Anbieter mithilfe der folgenden Befehls:
 	
 	```
 	
@@ -162,18 +164,18 @@ Generieren Sie einen Registrierungsschlüssel im Tresor. Nachdem Sie den Azure S
 	$installationRegPath = "hklm:\software\Microsoft\Microsoft System Center Virtual Machine Manager Server\DRAdapter"
 	do
 	{
-	                $isNotInstalled = $true;
-	                if(Test-Path $installationRegPath)
-	                {
-	                                $isNotInstalled = $false;
-	                }
+		$isNotInstalled = $true;
+		if(Test-Path $installationRegPath)
+		{
+			$isNotInstalled = $false;
+		}
 	}While($isNotInstalled)
 	
 	```
 	
 	Warten Sie, bis die Installation abgeschlossen ist.
 	
-4. Registrieren Sie den Server beim Tresor mithilfe des folgenden Befehls:
+4.	Registrieren Sie den Server beim Tresor mithilfe des folgenden Befehls:
 	
 	```
 	
@@ -208,7 +210,7 @@ Führen Sie den folgenden Befehl auf allen VMM-Hosts aus.
 
 ```
 
-	marsagentinstaller.exe /q /nu
+marsagentinstaller.exe /q /nu
 
 ```
 
@@ -220,8 +222,7 @@ Führen Sie den folgenden Befehl auf allen VMM-Hosts aus.
 	```
 	
 	$ReplicationFrequencyInSeconds = "300";
-	$ProfileResult = New-AzureSiteRecoveryProtectionProfileObject -ReplicationProvider 	HyperVReplica -RecoveryAzureSubscription $AzureSubscriptionName `
-	-RecoveryAzureStorageAccount $StorageAccountName -ReplicationFrequencyInSeconds 	$ReplicationFrequencyInSeconds;
+	$ProfileResult = New-AzureSiteRecoveryProtectionProfileObject -ReplicationProvider HyperVReplica -RecoveryAzureSubscription $AzureSubscriptionName -RecoveryAzureStorageAccount $StorageAccountName -ReplicationFrequencyInSeconds 	$ReplicationFrequencyInSeconds;
 	
 	```
 	
@@ -229,8 +230,8 @@ Führen Sie den folgenden Befehl auf allen VMM-Hosts aus.
 	
 	```
 	
-		$PrimaryCloud = "testcloud"
-		$protectionContainer = Get-AzureSiteRecoveryProtectionContainer -Name $PrimaryCloud;	
+	$PrimaryCloud = "testcloud"
+	$protectionContainer = Get-AzureSiteRecoveryProtectionContainer -Name $PrimaryCloud;	
 	
 	```
 	
@@ -238,26 +239,42 @@ Führen Sie den folgenden Befehl auf allen VMM-Hosts aus.
 	
 	```
 	
-		$associationJob = Start-AzureSiteRecoveryProtectionProfileAssociationJob -	ProtectionProfile $profileResult -PrimaryProtectionContainer $protectionContainer;		
+	$associationJob = Start-AzureSiteRecoveryProtectionProfileAssociationJob -ProtectionProfile $profileResult -PrimaryProtectionContainer $protectionContainer;		
 	
 	```
 	
 4.	Nachdem der Auftrag abgeschlossen ist, führen Sie den folgenden Befehl aus:
 
-			$job = Get-AzureSiteRecoveryJob -Id $associationJob.JobId;
-			if($job -eq $null -or $job.StateDescription -ne "Completed")
-			{
-				$isJobLeftForProcessing = $true;
-			}
-5. Nachdem die Verarbeitung des Auftrags abgeschlossen ist, führen Sie den folgenden Befehl aus:
+	```
+	
+	$job = Get-AzureSiteRecoveryJob -Id $associationJob.JobId;
+	if($job -eq $null -or $job.StateDescription -ne "Completed")
+	{
+		$isJobLeftForProcessing = $true;
+	}
+	
+	```
 
+5.	Nachdem die Verarbeitung des Auftrags abgeschlossen ist, führen Sie den folgenden Befehl aus:
+
+	```
+	Do
+	{
+		$job = Get-AzureSiteRecoveryJob -Id $associationJob.JobId;
+		Write-Host "Job State:{0}, StateDescription:{1}" -f Job.State, $job.StateDescription;
+		if($job -eq $null -or $job.StateDescription -ne "Completed")
+		{
+			$isJobLeftForProcessing = $true;
+		}
+		
 		if($isJobLeftForProcessing)
-			{
+		{
 			Start-Sleep -Seconds 60
-			}
-				}While($isJobLeftForProcessing)
-	
-	
+		}
+	}While($isJobLeftForProcessing)
+		
+	```
+
 Um den Abschluss des Vorgangs zu überprüfen, führen Sie die Schritte in [Überwachen der Aktivität](#monitor) aus.
 
 ## Schritt 8: Konfigurieren der Netzwerkzuordnung
@@ -267,16 +284,16 @@ Wenn das Zielnetzwerk mehrere Subnetze enthält und eines dieser Subnetze densel
 
 Der erste Befehl ruft Server für den aktuellen Azure Site Recovery-Tresor ab. Der Befehl speichert die Microsoft Azure Site Recovery-Server in der "$Servers"-Arrayvariablen.
 
+```
+$Servers = Get-AzureSiteRecoveryServer
 
-
-	$Servers = Get-AzureSiteRecoveryServer
-
+```
 
 Der zweite Befehl ruft das Site Recovery-Netzwerk für den ersten Server im "$Servers"-Array ab. Der Befehl speichert die Netzwerke in der "$Networks"-Variablen.
 
 ```
 
-	$Networks = Get-AzureSiteRecoveryNetwork -Server $Servers[0]
+$Networks = Get-AzureSiteRecoveryNetwork -Server $Servers[0]
 
 ```
 
@@ -284,7 +301,7 @@ Der dritte Befehl ruft die Azure-Abonnements mithilfe des "Get-AzureSubscription
 
 ```
 
-	$Subscriptions = Get-AzureSubscription
+$Subscriptions = Get-AzureSubscription
 
 ```
 
@@ -292,7 +309,7 @@ Der vierte Befehl ruft virtuelle Azure-Netzwerke mithilfe des "Get-AzureVNetSite
 
 ```
 
-	$AzureVmNetworks = Get-AzureVNetSite
+$AzureVmNetworks = Get-AzureVNetSite
 
 ```
 
@@ -328,14 +345,16 @@ Um den Schutz zu aktivieren, müssen die Eigenschaften "Betriebssystem" und "Bet
 	
 	$protectionEntity = Get-AzureSiteRecoveryProtectionEntity -Name $VMName -ProtectionContainer $protectionContainer
 		
-		```
-			
+	```
+		
 3. Aktivieren Sie den DR für den virtuellen Computer, indem Sie den folgenden Befehl ausführen:
 
+	```
 	
-	$jobResult = $protectionEntity Set-AzureSiteRecoveryProtectionEntity - ProtectionEntity-Schutz aktivieren - Force
+	$jobResult = Set-AzureSiteRecoveryProtectionEntity -ProtectionEntity $protectionEntity 	-Protection Enable -Force
 	
-
+	```
+	
 ## Testen der Bereitstellung
 
 Um Ihre Bereitstellung zu testen, können Sie ein Testfailover für einen einzelnen virtuellen Computer durchführen oder einen Wiederherstellungsplan erstellen, der mehrere virtuelle Computer umfasst, und ein Testfailover für diesen Plan durchführen. Das Testfailover simuliert Ihre Failover- und Wiederherstellungsmechanismen in einem isolierten Netzwerk. Beachten Sie Folgendes:
@@ -395,21 +414,21 @@ Um den Abschluss des Vorgangs zu überprüfen, führen Sie die Schritte in [Übe
 	
 	```
 	
-		$RPCreationJob = New-AzureSiteRecoveryRecoveryPlan -File $TemplatePath -WaitForCompletion;
+	$RPCreationJob = New-AzureSiteRecoveryRecoveryPlan -File $TemplatePath -WaitForCompletion;
 	
 	```
 	
 ### Durchführen eines Test-Failovers
 
-1. Rufen Sie das "RecoveryPlan"-Objekt durch Ausführen des folgenden Befehls ab:
+1.	Rufen Sie das "RecoveryPlan"-Objekt durch Ausführen des folgenden Befehls ab:
 	
 	```
 	
-		$RPObject = Get-AzureSiteRecoveryRecoveryPlan -Name $RPName;
+	$RPObject = Get-AzureSiteRecoveryRecoveryPlan -Name $RPName;
 	
 	```
 	
-2. Starten Sie dann den Test-Failover, indem Sie den folgenden Befehl ausführen:
+2.	Starten Sie dann den Test-Failover, indem Sie den folgenden Befehl ausführen:
 	
 	```
 	
@@ -425,21 +444,17 @@ Verwenden Sie die folgenden Befehle zum Überwachen der Aktivität. Beachten Sie
 
 Do
 {
-                $job = Get-AzureSiteRecoveryJob -Id $associationJob.JobId;
-                Write-Host "Job State:{0}, StateDescription:{1}" -f Job.State, $job.StateDescription;
-                if($job -eq $null -or $job.StateDescription -ne "Completed")
-                {
-                                $isJobLeftForProcessing = $true;
-                }
+        $job = Get-AzureSiteRecoveryJob -Id $associationJob.JobId;
+        Write-Host "Job State:{0}, StateDescription:{1}" -f Job.State, $job.StateDescription;
+        if($job -eq $null -or $job.StateDescription -ne "Completed")
+        {
+        	$isJobLeftForProcessing = $true;
+        }
 
-```
-
-```
-
-if($isJobLeftForProcessing)
-                {
-                                Start-Sleep -Seconds 60
-                }
+	if($isJobLeftForProcessing)
+        {
+        	Start-Sleep -Seconds 60
+        }
 }While($isJobLeftForProcessing)
 
 ```
@@ -449,4 +464,4 @@ if($isJobLeftForProcessing)
 
 [Erfahren Sie mehr](https://msdn.microsoft.com/library/dn850420.aspx) über PowerShell-Cmdlets für Azure Site Recovery. </a>
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

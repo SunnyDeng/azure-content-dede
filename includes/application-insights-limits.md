@@ -19,6 +19,6 @@ Länge von Metriknamen | 100 | 100
 
 <sup>2</sup> Sie können zusätzliche Kapazitäten über 50 Mio. erwerben.
  
-[Informationen zu Preisen und Kontingenten für Application Insights](app-insights-pricing.md)
+[Informationen zu Preisen und Kontingenten für Application Insights](../articles/application-insights/app-insights-pricing.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

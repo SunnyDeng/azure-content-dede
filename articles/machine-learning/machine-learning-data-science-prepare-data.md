@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/20/2015"
+	ms.date="02/08/2016"
 	ms.author="bradsev" />
 
 
@@ -111,4 +111,4 @@ Das **Durchsuchen von Daten** ermöglicht einen frühzeitigen Einblick in die Da
 >Jiawei Han, Micheline Kamber und Jian Pei: *Data Mining: Concepts and Techniques*, 3. Auflage, Morgan Kaufmann, 2011
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

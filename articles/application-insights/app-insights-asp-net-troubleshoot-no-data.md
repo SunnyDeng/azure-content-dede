@@ -191,4 +191,8 @@ Sie können diese Funktion deaktivieren, aber dies ist nicht zu empfehlen. Die S
 
 Die Dimensionen für Ort, Region und Land werden von IP-Adressen abgeleitet und sind nicht immer exakt.
 
-<!---HONumber=AcomDC_0204_2016-->
+## Noch nicht funktionsfähig ...
+
+* [Application Insights-Forum](https://social.msdn.microsoft.com/Forums/vstudio/de-DE/home?forum=ApplicationInsights)
+
+<!---HONumber=AcomDC_0211_2016-->

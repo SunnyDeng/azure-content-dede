@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="article" 
-    ms.date="12/16/2015" 
+    ms.date="02/08/2016" 
     ms.author="elizapo" />
 
 
@@ -26,9 +26,11 @@ Bei der Bereitstellung von Azure RemoteApp verwenden Sie wahrscheinlich ein Azur
 Informationen zum Bereitstellen von Office 365-Clientanwendungen finden Sie unter [Verwenden Ihres Office 365-Abonnements mit Azure RemoteApp](remoteapp-officesubscription.md).
  
 ## Phase 1: Registrieren Sie Ihr kostenloses Abonnement für Office 365 Azure Active Directory.
-Führen Sie [Ändern des Azure Active Directory-Mandanten in Azure RemoteApp](remoteapp-changetenant.md) aus, um administrativen Zugriff auf Ihr Azure AD über das Azure-Verwaltungsportal zu erhalten. Als Ergebnis dieses Prozesses sollten Sie sich beim Azure-Portal anmelden können und dort Ihr Verzeichnis sehen – an diesem Punkt wird nicht viel mehr angezeigt, da sich das vollständige Azure-Abonnement, das Sie mit Azure RemoteApp verwenden, in einem anderen Verzeichnis befindet.
+Wenn Sie das klassische Azure-Portal verwenden, gehen Sie anhand der Schritte unter [Registrieren Ihres kostenlosen Azure Active Directory-Abonnements](https://technet.microsoft.com/library/dn832618.aspx) vor, um Administratorzugriff auf Ihr Azure AD über das Azure-Verwaltungsportal zu erhalten. Als Ergebnis dieses Prozesses sollten Sie sich beim Azure-Portal anmelden können und dort Ihr Verzeichnis sehen – an diesem Punkt wird nicht viel mehr angezeigt, da sich das vollständige Azure-Abonnement, das Sie mit Azure RemoteApp verwenden, in einem anderen Verzeichnis befindet.
 
 Merken Sie sich den Namen und das Kennwort des Administratorkontos, das Sie in diesem Schritt erstellt haben – sie werden in Phase 2 benötigt.
+
+Wenn Sie das Azure-Portal verwenden, lesen Sie [How to register and activate a free Azure Active Directory using Office 365 portal](http://azureblogger.com/2016/01/how-to-register-and-activate-a-free-azure-active-directory-using-office-365-portal/) (Gewusst wie: Registrieren und Aktivieren eines kostenlosen Azure Active Directory mit dem Office 365-Portal).
 
 ## Phase 2: Ändern Sie das Azure AD, das mit Ihrem Azure-Abonnement verknüpft ist.
 Wir werden Ihr Azure-Abonnement von ihrem aktuellen Verzeichnis in das Office 365-Verzeichnis ändern, mit dem wir in Phase 1 gearbeitet haben.
@@ -43,4 +45,4 @@ Befolgen Sie die Anweisungen in [Ändern des Azure Active Directory-Mandanten in
 
 An diesem Punkt ist Ihr Azure RemoteApp-Abonnement Ihrem Office 365 Azure AD zugeordnet. Sie können die vorhandenen Office 365-Benutzerkonten mit Azure RemoteApp verwenden!
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0211_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/05/2016"
+	ms.date="02/09/2016"
 	ms.author="markusvi"/>
 
 
@@ -40,10 +40,20 @@ Sie können eine Verteilerliste als Empfänger eingeben. Beachten Sie jedoch unb
 Wenn Sie Benachrichtigungen zur Kontobereitstellung aktiviert haben, erhalten Sie E-Mail-Nachrichten zu wichtigen Problemen, die sich auf die Benutzerbereitstellung beziehen. Damit eine zu große Anzahl von E-Mails vermieden wird, erhalten Sie jedoch nur eine Benachrichtigungs-E-Mail pro Tag für jede SaaS-Anwendung, für die Benachrichtigungs-E-Mails aktiviert sind.
 
 
-[AZURE.INCLUDE [saas-toc](../../includes/active-directory-saas-toc.md)]
+##Verwandte Artikel
+
+- [Artikelindex für die Anwendungsverwaltung in Azure Active Directory](active-directory-apps-index.md)
+- [Automatisieren der Bereitstellung/Bereitstellungsaufhebung von Benutzern für SaaS-Apps](active-directory-saas-app-provisioning.md)
+- [Anpassen von Attributzuordnungen für die Benutzerbereitstellung](active-directory-saas-customizing-attribute-mappings.md)
+- [Schreiben von Ausdrücken für Attributzuordnungen](active-directory-saas-writing-expressions-for-attribute-mappings.md)
+- [Bereichsfilter für die Benutzerbereitstellung](active-directory-saas-scoping-filters.md)
+- [Verwenden von SCIM für die automatische Bereitstellung von Benutzern und Gruppen aus Azure Active Directory für Anwendungen](active-directory-scim-provisioning.md)
+- [Liste der Tutorials zur Integration von SaaS-Apps](active-directory-saas-tutorial-list.md)
+
+
 
 <!--Image references-->
 [1]: ./media/active-directory-saas-account-provisioning-notifications/ic766307.png
 [2]: ./media/active-directory-saas-account-provisioning-notifications/ic766308.png
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0211_2016-->

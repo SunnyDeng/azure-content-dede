@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="javascript" 
 	ms.topic="article" 
-	ms.date="10/14/2015" 
+	ms.date="02/10/2016" 
 	ms.author="luisca"/>
 
 # Azure Machine Learning-Empfehlungen – JavaScript-Integration
@@ -39,21 +39,21 @@ In der ersten Phase fügen Sie eine kleine JavaScript-Bibliothek in die HTML-Sei
 
 In der zweiten Phase wählen Sie eine der folgenden Optionen, wenn die Empfehlungen auf der Seite angezeigt werden sollen:
 
-1. Ihr Server ruft (beim Rendern der Seite) Azure ML Empfehlungen-Server (über Data Market) auf, um Empfehlungen abzurufen. Die Ergebnisse enthalten eine Liste mit Element-IDs. Der Server muss die Ergebnisse mit den Elementmetadaten (z. B. Bilder, Beschreibung) ausstatten und die erstellte Seite an den Browser senden.
+1\. Ihr Server ruft (beim Rendern der Seite) Azure ML Empfehlungen-Server (über Data Market) auf, um Empfehlungen abzurufen. Die Ergebnisse enthalten eine Liste mit Element-IDs. Der Server muss die Ergebnisse mit den Elementmetadaten (z. B. Bilder, Beschreibung) ausstatten und die erstellte Seite an den Browser senden.
 
 ![Drawing2][2]
 
-2. Die andere Option besteht darin, die kleine JavaScript-Datei aus Phase 1 zu verwenden, um eine einfache Liste der empfohlenen Elemente abzurufen. Die daraus resultierenden Daten sind schlanker als bei der ersten Option.
+2\. Die andere Option besteht darin, die kleine JavaScript-Datei aus Phase 1 zu verwenden, um eine einfache Liste der empfohlenen Elemente abzurufen. Die daraus resultierenden Daten sind schlanker als bei der ersten Option.
 
 ![Drawing3][3]
 
-##2. Voraussetzungen
+##2\. Voraussetzungen
 
 1. Erstellen Sie ein neues Modell mit den APIs. Informationen zur Vorgehensweise finden Sie in der Kurzanleitung.
 2. Codieren Sie die Anmeldeinformationen &lt;dataMarketUser&gt;:&lt;dataMarketKey&gt; mit base64. (Dies wird zur Standardauthentifizierung verwendet, damit der JS-Code die APIs aufrufen kann).
 
 
-##3. Senden von Datensammlungsereignissen mit JavaScript
+##3\. Senden von Datensammlungsereignissen mit JavaScript
 Die folgenden Schritte erleichtern das Senden von Ereignissen:
 
 1.	Binden Sie die JQuery-Bibliothek in Ihren Code ein. Sie können ihn über die folgende URL von Nuget herunterladen.
@@ -78,13 +78,13 @@ Die folgenden Schritte erleichtern das Senden von Ereignissen:
 		</script>
 
 
-###3.1. Einschränkungen und Browserunterstützung
+###3\.1. Einschränkungen und Browserunterstützung
 Dies ist eine Referenzimplementierung, die ohne Mängelgewähr bereitgestellt wird. Sie sollte allen wichtigen Browser unterstützen.
 
-###3.2. Ereignistypen
+###3\.2. Ereignistypen
 Es gibt fünf Arten von Ereignissen, die von der Bibliothek unterstützt werden: Klicken (click), auf Empfehlung klicken (recommendationclick), dem Einkaufswagen etwas hinzufügen (addshopcart), etwas aus dem Einkaufswagen entfernen (removeshopcart) und einkaufen (purchase). Es ist ein weiteres Ereignis namens Login verfügbar, das zum Festlegen des Benutzerkontexts verwendet wird.
 
-####3.2.1. Click-Ereignis
+####3\.2.1. Click-Ereignis
 Dieses Ereignis sollte jedes Mal, wenn ein Benutzer auf ein Element klickt, verwendet werden. Wenn der Benutzer auf ein Element klickt, wird in der Regel eine neue Seite mit den Elementdetails geöffnet. Auf dieser Seite sollte dieses Ereignis ausgelöst werden.
 
 Parameter:
@@ -107,11 +107,11 @@ Oder mit optionalen Daten:
 		</script>
 
 
-####3.2.2. Recommendationclick-Ereignis
+####3\.2.2. Recommendationclick-Ereignis
 Dieses Ereignis sollte jedes Mal verwendet werden, wenn ein Benutzer auf ein Element klickt, das von Azure ML-Empfehlungen als empfohlenes Element empfangen wurde. Wenn der Benutzer auf ein Element klickt, wird in der Regel eine neue Seite mit den Elementdetails geöffnet. Auf dieser Seite sollte dieses Ereignis ausgelöst werden.
 
 Parameter:
-- Parameter: - event (Zeichenfolge, obligatorisch) – "recommendationclick"
+- event (Zeichenfolge, obligatorisch) – "recommendationclick"
 - item (Zeichenfolge, obligatorisch) – eindeutiger Bezeichner des Elements
 - itemName (Zeichenfolge, optional) – der Name des Elements
 - itemDescription (Zeichenfolge, optional) – die Beschreibung des Elements
@@ -132,8 +132,9 @@ Oder mit optionalen Daten:
 		</script>
 
 
-####3.2.3. Addshopcart-Ereignis
+####3\.2.3. Addshopcart-Ereignis
 Dieses Ereignis sollte verwendet werden, wenn der Benutzer ein Element zum Einkaufswagen hinzufügt.
+
 Parameter:
 * event (Zeichenfolge, obligatorisch) – "addshopcart"
 * item (Zeichenfolge, obligatorisch) – eindeutiger Bezeichner des Elements
@@ -146,7 +147,7 @@ Parameter:
 			AzureMLRecommendationsEvent.push({event: "addshopcart", item: "13221118" });
 		</script>
 
-####3.2.4. Removeshopcart-Ereignis
+####3\.2.4. Removeshopcart-Ereignis
 Dieses Ereignis sollte verwendet werden, wenn der Benutzer ein Element aus dem Einkaufswagen entfernt.
 
 Parameter:
@@ -161,7 +162,7 @@ Parameter:
 			AzureMLRecommendationsEvent.push({ event: "removeshopcart", item: "111118" });
 		</script>
 
-####3.2.5. Purchase-Ereignis
+####3\.2.5. Purchase-Ereignis
 Dieses Ereignis sollte verwendet werden, wenn der Benutzer seinen Einkaufswagen gekauft hat.
 
 Parameter:
@@ -179,7 +180,7 @@ Das folgende Beispiel zeigt den Kauf von 3 Elementen (33, 34, 35), zwei Elemente
 			AzureMLRecommendationsEvent.push({ event: "purchase", items: [{ item: "33", count: "1", price: "10" }, { item: "34", count: "2" }, { item: "35", count: "1", price: "210" }] });
 		</script>
 
-####3.2.6. Userlogin-Ereignis
+####3\.2.6. Userlogin-Ereignis
 Die Ereignisbibliothek für Azure ML-Empfehlungen Bibliothek erstellt und verwendet ein Cookie , um Ereignisse zu identifizieren, die vom selben Browser stammen. Um die Modellergebnisse zu verbessern, kann in Azure ML-Empfehlungen eine eindeutige Kennung für Benutzer festgelegt werden, die die Verwendung von Cookies außer Kraft setzt.
 
 Dieses Ereignis sollte nach der Benutzeranmeldung auf Ihrer Website verwendet werden.
@@ -189,13 +190,13 @@ Parameters:
 * user (string) – eindeutige ID des Benutzers.
 		<script>
 			if (typeof AzureMLRecommendationsEvent=="undefined") { AzureMLRecommendationsEvent = ; }
-			 AzureMLRecommendationsEvent.push({event: "userlogin", user: “ABCD10AA” });
+			AzureMLRecommendationsEvent.push({event: "userlogin", user: “ABCD10AA” });
 		</script>
 
-##4. Nutzen von Empfehlungen über JavaScript
+##4\. Nutzen von Empfehlungen über JavaScript
 Der Code, der die Empfehlung nutzt, wird durch ein JavaScript-Ereignis von der Client-Webseite ausgelöst. Die Antwort mit der Empfehlung enthält die Ids der empfohlenen Elemente, deren Namen und ihre Bewertungen. Es empfiehlt sich, diese Option nur für eine Listenanzeige der empfohlenen Elemente zu verwenden. Eine komplexere Aufbereitung (wie z. B. das Hinzufügen von Metadaten des Elements) sollte in der serverseitigen Integration erledigt werden.
 
-###4.1 Nutzen der Empfehlungen
+###4\.1 Nutzen der Empfehlungen
 Um Empfehlungen nutzen zu können, müssen Sie die erforderlichen JavaScript-Bibliotheken in die Seite einbinden und AzureMLRecommendationsStart aufrufen. Siehe Abschnitt 2.
 
 Um Empfehlungen für ein oder mehrere Elemente zu nutzen, müssen Sie eine Methode namens AzureMLRecommendationsGetI2IRecommendation aufrufen.
@@ -228,4 +229,4 @@ Beispiel: Mit dem folgenden Code werden acht Empfehlungen für das Element "64f6
 [3]: ./media/machine-learning-recommendation-api-javascript-integration/Drawing3.png
  
 
-<!----HONumber=Oct15_HO3-->
+<!----HONumber=AcomDC_0211_2016-->

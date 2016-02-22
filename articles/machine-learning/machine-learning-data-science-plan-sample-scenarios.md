@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/18/2015"
+	ms.date="02/08/2016"
 	ms.author="msolhab;bradsev" />
 
 
@@ -28,7 +28,7 @@ Die **Entscheidungsstruktur**, mit deren Hilfe Sie die für Ihre Daten und Ziele
 
 In jedem der folgenden Abschnitte wird ein Beispielszenario vorgestellt. Für jedes Szenario werden ein möglicher Ablauf für Datenwissenschaft oder erweiterte Analyse sowie die unterstützenden Azure-Ressourcen aufgeführt.
 
->[AZURE.NOTE]**Für alle folgenden Szenarien müssen Sie diese Schritte ausführen:**
+>[AZURE.NOTE] **Für alle folgenden Szenarien müssen Sie diese Schritte ausführen:**
 
 *   [Erstellen eines Speicherkontos](storage-whatis-account.md)
 *   [Erstellen eines Azure ML-Arbeitsbereichs](machine-learning/machine-learning-create-workspace.md)
@@ -168,7 +168,7 @@ In jedem der folgenden Abschnitte wird ein Beispielszenario vorgestellt. Für je
 
     f. Wenn Tabellenverknüpfungen erforderlich sind, erstellen Sie Indizes, um Verknüpfungen zu beschleunigen.
 
- >[AZURE.NOTE]Zum schnelleren Laden großer Datenmengen empfiehlt es sich, die Erstellung partitionierter Tabellen und den Massenimport der Daten parallel durchzuführen. Weitere Informationen finden Sie unter [Paralleler Datenimport in partitionierte SQL-Tabellen](machine-learning/machine-learning-data-science-parallel-load-sql-partitioned-tables.md).
+ > [AZURE.NOTE] Zum schnelleren Laden großer Datenmengen empfiehlt es sich, die Erstellung partitionierter Tabellen und den Massenimport der Daten parallel durchzuführen. Weitere Informationen finden Sie unter [Paralleler Datenimport in partitionierte SQL-Tabellen](machine-learning/machine-learning-data-science-parallel-load-sql-partitioned-tables.md).
 
 5.  Erkunden Sie die Daten, und erstellen Sie Features nach Bedarf. Beachten Sie, dass die Features nicht in den Datenbanktabellen materialisiert werden müssen. Beachten Sie nur die erforderliche Abfrage, um sie zu erstellen.
 
@@ -208,7 +208,7 @@ In jedem der folgenden Abschnitte wird ein Beispielszenario vorgestellt. Für je
 
 	f. Wenn Tabellenverknüpfungen erforderlich sind, erstellen Sie Indizes, um Verknüpfungen zu beschleunigen.
 
-> [AZURE.NOTE]Zum schnelleren Laden großer Datenmengen führen Sie die Erstellung partitionierter Tabellen und den Massenimport der Daten parallel durch. Weitere Informationen finden Sie unter [Paralleler Datenimport in partitionierte SQL-Tabellen](machine-learning/machine-learning-data-science-parallel-load-sql-partitioned-tables.md).
+> [AZURE.NOTE] Zum schnelleren Laden großer Datenmengen führen Sie die Erstellung partitionierter Tabellen und den Massenimport der Daten parallel durch. Weitere Informationen finden Sie unter [Paralleler Datenimport in partitionierte SQL-Tabellen](machine-learning/machine-learning-data-science-parallel-load-sql-partitioned-tables.md).
 
 5.  Erkunden Sie die Daten, und erstellen Sie Features nach Bedarf. Beachten Sie, dass die Features nicht in den Datenbanktabellen materialisiert werden müssen. Beachten Sie nur die erforderliche Abfrage, um sie zu erstellen.
 
@@ -264,7 +264,7 @@ Um die gesamte SQL Server-Datenbank auf dem virtuellen SQL Server-Computer zu re
 
     d. Führen Sie die Strukturabfragen aus, um die Datenbank und die Tabellen zu erstellen, und laden Sie Daten aus dem Blobspeicher in die Strukturtabellen.
 
- 	> [AZURE.NOTE]Wenn es sich um große Datenmengen handelt, können Benutzer die Strukturtabelle mit Partitionen erstellen. Benutzer können dann mithilfe einer `for`-Schleife in der Hadoop-Befehlszeile auf dem Hauptknoten Daten in die partitionierte Strukturtabelle laden.
+ 	> [AZURE.NOTE] Wenn es sich um große Datenmengen handelt, können Benutzer die Strukturtabelle mit Partitionen erstellen. Benutzer können dann mithilfe einer `for`-Schleife in der Hadoop-Befehlszeile auf dem Hauptknoten Daten in die partitionierte Strukturtabelle laden.
 
 6.  Erkunden Sie die Daten, und erstellen Sie in der Hadoop-Befehlszeile Features nach Bedarf. Beachten Sie, dass die Features nicht in den Datenbanktabellen materialisiert werden müssen. Beachten Sie nur die erforderliche Abfrage, um sie zu erstellen.
 
@@ -314,4 +314,4 @@ Umfassende exemplarische Vorgehensweisen zu Azure Machine Learning, die die Adva
 <!-- Module References -->
 [reader]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_0211_2016-->

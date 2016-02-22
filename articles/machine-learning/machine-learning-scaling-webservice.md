@@ -14,7 +14,7 @@
    ms.workload="data-services"
    ms.tgt_pltfrm="na"
    ms.topic="article"
-   ms.date="10/27/2015"
+   ms.date="02/04/2016"
    ms.author="neerajkh"/>
 
 # Skalieren von Webdiensten
@@ -43,4 +43,4 @@ Informationen zum Hinzufügen neuer Endpunkte finden Sie unter [Erstellen von En
 [1]: ./media/machine-learning-scaling-webservice/machlearn-1.png
 [2]: ./media/machine-learning-scaling-webservice/machlearn-2.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0211_2016-->

@@ -13,14 +13,12 @@
 	ms.tgt_pltfrm="mobile-windows"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="11/22/2015"
+	ms.date="02/04/2016"
 	ms.author="wesmc"/>
 
 # Aktivieren der Offlinesynchronisierung für Ihre Windows-App
 
 [AZURE.INCLUDE [app-service-mobile-selector-offline](../../includes/app-service-mobile-selector-offline.md)]
-&nbsp;  
-[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
 
 ## Übersicht
 
@@ -48,11 +46,11 @@ Offlinefunktionen der mobilen Azure-App ermöglichen Ihnen die Interaktion mit e
     * **Windows 8.1-Runtime:** Installieren Sie [SQLite für Windows 8.1].
     * **Windows Phone 8.1:** Installieren Sie [SQLite für Windows Phone 8.1].
 
-    >[AZURE.NOTE]Diese Anweisungen lassen sich auch für Windows 10 UAP-Projekte verwenden, doch es empfiehlt sich, stattdessen [SQLite für Windows 10] zu installieren.
+    >[AZURE.NOTE] Diese Anweisungen lassen sich auch für Windows 10 UAP-Projekte verwenden, doch es empfiehlt sich, stattdessen [SQLite für Windows 10] zu installieren.
 
 2. Öffnen Sie in Visual Studio das Projekt, das Sie in [Erstellen einer Windows-App] abgeschlossen haben. Installieren Sie das **Microsoft.Azure.Mobile.Client.SQLiteStore**-NuGet-Paket für Windows 8.1-Laufzeit- und für Windows Phone 8.1-Projekte. Fügen Sie den Windows Store 8.1- und den Windows Phone 8.1-Projekten den NuGet-Verweis hinzu.
 
-    >[AZURE.NOTE]Wenn die Installation einen zusätzlichen Verweis auf eine andere Version von SQLite erstellt als die von Ihnen installierte, erhalten Sie einen Kompilierungsfehler. Sie sollten den Fehler beheben, indem Sie das Duplikat im Knoten **Verweise** in Ihren Projekten entfernen.
+    >[AZURE.NOTE] Wenn die Installation einen zusätzlichen Verweis auf eine andere Version von SQLite erstellt als die von Ihnen installierte, erhalten Sie einen Kompilierungsfehler. Sie sollten den Fehler beheben, indem Sie das Duplikat im Knoten **Verweise** in Ihren Projekten entfernen.
 
 3. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf **Verweise** für Windows 8.1-Runtime- und Windows Phone 8.1-Plattformprojekte, und vergewissern Sie sich, dass ein Verweis auf SQLite vorhanden ist, der sich im Abschnitt **Erweiterungen** befindet.
 
@@ -180,14 +178,14 @@ In diesem Abschnitt ändern Sie die Client-App, um ein Offlineszenario durch Kap
 
 1. Bearbeiten Sie "App.xaml.cs" im freigegebenen Projekt. Kommentieren Sie die Initialisierung von **MobileServiceClient** aus, und fügen Sie die folgenden Zeilen hinzu, die eine ungültige mobile App-URL verwenden:
 
-         public static MobileServiceClient MobileService = 
+         public static MobileServiceClient MobileService =
 				new MobileServiceClient("https://your-service.azurewebsites.fail");
 
 	Beachten Sie, dass bei der Anmeldung ein Fehler auftritt, wenn in Ihrer App auch Authentifizierung verwendet wird. Sie können auch Offlineverhalten demonstrieren, indem Sie Wi-Fi- und Mobilnetzwerke auf dem Gerät deaktivieren oder den Flugzeugmodus verwenden.
 
 2. Drücken Sie **F5**, um die Anwendung zu erstellen und auszuführen. Beachten Sie, dass die Synchronisierung bei der Aktualisierung fehlgeschlagen ist, als die App gestartet wurde.
-3. Geben Sie neue "todoitems" ein, und klicken Sie jeweils auf **Speichern**. Der Pushvorgang führt jeweils zu einem Fehler (`PushResult.Status=CancelledByNetworkError`). Die neuen Todo-Elemente existieren nur im lokalen Speicher, bis sie per Push zum mobilen App-Back-End übertragen werden können. 
- 
+3. Geben Sie neue "todoitems" ein, und klicken Sie jeweils auf **Speichern**. Der Pushvorgang führt jeweils zu einem Fehler (`PushResult.Status=CancelledByNetworkError`). Die neuen Todo-Elemente existieren nur im lokalen Speicher, bis sie per Push zum mobilen App-Back-End übertragen werden können.
+
 	Sie können den Ausnahmedialog für `PushResult.Status=CancelledByNetworkError` unterdrücken. Die Client-App verhält sich dann so, als ob Sie mit dem mobilen App-Back-End verbunden ist, das alle CRUD-Vorgänge (Erstellen, Lesen, Aktualisieren, Löschen) nahtlos unterstützt.
 
 4. Schließen Sie die App und starten Sie sie erneut, um zu überprüfen, ob die neuen Elemente dauerhaft im lokalen Speicher gespeichert wurden.
@@ -269,8 +267,8 @@ Zur Synchronisierung des lokalen Speichers mit dem Server wurden die Methoden `I
 [SQLite für Windows 10]: http://go.microsoft.com/fwlink/?LinkID=716921
 
 [sqlite store nuget]: https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client.SQLiteStore/
- 
+
 [Cloud Cover: Offlinesynchronisierung in Azure Mobile Services]: http://channel9.msdn.com/Shows/Cloud+Cover/Episode-155-Offline-Storage-with-Donna-Malayeri
 [Azure Friday: Offlinefähige Apps in Azure Mobile Services]: http://azure.microsoft.com/documentation/videos/azure-mobile-services-offline-enabled-apps-with-donna-malayeri/
 
-<!---HONumber=AcomDC_1203_2015--->
+<!---HONumber=AcomDC_0211_2016-->

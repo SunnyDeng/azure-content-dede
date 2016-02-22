@@ -12,14 +12,12 @@
 	ms.tgt_pltfrm="mobile-android"
 	ms.devlang="java"
 	ms.topic="article"
-	ms.date="12/01/2015"
+	ms.date="02/04/2016"
 	ms.author="donnam"/>
 
 # Aktivieren der Offlinesynchronisierung für Ihre mobile Android-App
 
 [AZURE.INCLUDE [app-service-mobile-selector-offline](../../includes/app-service-mobile-selector-offline.md)]
-&nbsp;  
-[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
 
 ## Übersicht
 
@@ -36,7 +34,7 @@ Bei der Offlinesynchronisierung wird in eine *Synchronisierungstabelle* geschrie
 Zum Übertragen von Änderungen per Push und Pull zwischen dem Gerät und Azure Mobile Services verwenden Sie einen *Synchronisierungskontext* (*MobileServiceClient.SyncContext*), den Sie mit der lokalen Datenbank initialisieren, in der Sie die Daten lokal speichern.
 
 1. Kommentieren Sie in `TodoActivity.java` die vorhandene Definition von `mToDoTable` und entfernen Sie den Kommentar für die Version der Synchronisierungstabelle:
-    
+
 	    private MobileServiceSyncTable<ToDoItem> mToDoTable;
 
 2. Kommentieren Sie in der `onCreate`-Methode die vorhandene Initialisierung `mToDoTable` und entfernen Sie den Kommentar für diese Definition:
@@ -118,4 +116,4 @@ Wenn Sie auf diese Schaltfläche klicken, wird eine neue Hintergrundaufgabe gest
 [Cloud Cover: Offlinesynchronisierung in Azure Mobile Services]: http://channel9.msdn.com/Shows/Cloud+Cover/Episode-155-Offline-Storage-with-Donna-Malayeri
 [Azure Friday: Offline-enabled apps in Azure Mobile Services]: http://azure.microsoft.com/documentation/videos/azure-mobile-services-offline-enabled-apps-with-donna-malayeri/
 
-<!---HONumber=AcomDC_1203_2015--->
+<!---HONumber=AcomDC_0211_2016-->

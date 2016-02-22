@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/17/2015" 
+ 	ms.date="02/03/2016"  
 	ms.author="juliako"/>
 
 
@@ -108,7 +108,7 @@ Im Code werden folgende Schritte ausgeführt:
  	
 - 	Hochladen der Dateien in Media Services mithilfe der **UploadAsync**-Methode.
  	
->[AZURE.NOTE]Verwenden Sie die UploadAsync-Methode, um sicherzustellen, dass die Aufrufe nicht blockiert und die Dateien parallel hochgeladen werden.
+>[AZURE.NOTE] Verwenden Sie die UploadAsync-Methode, um sicherzustellen, dass die Aufrufe nicht blockiert und die Dateien parallel hochgeladen werden.
  	
  	
         static public IAsset CreateAssetAndUploadMultipleFiles(AssetCreationOptions assetCreationOptions, string folderPath)
@@ -315,4 +315,4 @@ Sie haben nun ein Medienobjekt in den Mediendienst hochgeladen und können mit d
 [Abrufen eines Medienprozessors]: media-services-get-media-processor.md
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0211_2016-->

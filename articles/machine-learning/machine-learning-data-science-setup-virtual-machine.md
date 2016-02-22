@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/13/2015"
+	ms.date="02/08/2016"
 	ms.author="mohabib;xibingao;bradsev" />
 
 # Einrichten eines virtuellen Azure-Computers als IPython Notebook-Server für die erweiterte Analyse
@@ -104,7 +104,7 @@ IPython Notebooks bieten eine einfache Möglichkeit für das Hochladen vorhanden
 
 Virtuelle Azure-Computer werden **nach Nutzung abgerechnet**. Damit Sie nicht für ungenutzte virtuelle Computer bezahlen müssen, sollten Sie diese in den Status **Angehalten (Zuordnung aufgehoben)** versetzen, wenn sie nicht mehr benötigt werden.
 
-> [AZURE.NOTE]Beim Herunterfahren virtueller Computer aus der VM heraus (mithilfe der Windows-Energieoptionen) wird der virtuelle Computer beendet, er bleibt jedoch weiterhin zugeordnet. Um sicherzustellen, dass virtuelle Computer nicht weiterhin abgerechnet werden, beenden Sie sie immer im [klassischen Azure-Portal](http://manage.windowsazure.com/). Sie können die VM auch über PowerShell beenden, indem Sie **ShutdownRoleOperation** mit der "PostShutdownAction" "StoppedDeallocated" aufrufen.
+> [AZURE.NOTE] Beim Herunterfahren virtueller Computer aus der VM heraus (mithilfe der Windows-Energieoptionen) wird der virtuelle Computer beendet, er bleibt jedoch weiterhin zugeordnet. Um sicherzustellen, dass virtuelle Computer nicht weiterhin abgerechnet werden, beenden Sie sie immer im [klassischen Azure-Portal](http://manage.windowsazure.com/). Sie können die VM auch über PowerShell beenden, indem Sie **ShutdownRoleOperation** mit der "PostShutdownAction" "StoppedDeallocated" aufrufen.
 
 So fahren Sie den virtuellen Computer herunter und heben die Zuordnung auf:
 
@@ -143,4 +143,4 @@ Die nächsten Schritte in Advanced Analytics Process and Technology sind unter [
 [29]: ./media/machine-learning-data-science-setup-virtual-machine/create-virtual-machine-6.png
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0211_2016-->

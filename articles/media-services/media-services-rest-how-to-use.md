@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="12/05/2015"
+ 	ms.date="02/09/2016"  
 	ms.author="juliako"/>
 
 
@@ -23,6 +23,15 @@
 
 Microsoft Azure Media Services ist ein Dienst, der OData-basierte HTTP-Anforderungen akzeptiert und mit ausführlichem JSON- oder atom+pub-Code darauf antworten kann. Da Media Services mit den Azure-Entwicklungsrichtlinien konform ist, muss jeder Client bei der Verbindung mit Media Services eine Reihe obligatorischer HTTP-Header verwenden. Darüber hinaus stehen verschiedene optionale Header zur Verfügung. In den folgenden Abschnitten werden die Header und HTTP-Verben beschrieben, die Sie verwenden können, um Anforderungen zu erstellen und Antworten von Media Services zu empfangen.
 
+##Überlegungen 
+
+Berücksichtigen Sie Folgendes, wenn Sie REST verwenden:
+
+
+- Wenn Sie JSON verwenden, MÜSSEN Sie den Accept-Header auf das [ausführliche JSON-Format](http://www.odata.org/documentation/odata-version-3-0/json-verbose-format/) festlegen. OData versteht die \_\_metadata-Eigenschaft in der Anforderung nur, wenn Sie das ausführliche Format verwenden.
+
+	**Accept:** application/json;odata=verbose
+- Beim Abfragen von Entitäten gibt es ein Limit von 1.000 Entitäten, die gleichzeitig zurückgegeben werden können, da die öffentliche REST-Version 2 Abfrageergebnisse auf 1.000 Ergebnisse begrenzt. Sie müssen **Skip** und **Take** (.NET) bzw. **top** (REST) wie in [diesem .NET-Beispiel](media-services-dotnet-manage-entities.md#enumerating-through-large-collections-of-entities) und [diesem REST-API-Beispiel](media-services-rest-manage-entities.md#enumerating-through-large-collections-of-entities) beschrieben verwenden. 
 
 ## Von Media Services unterstützte standardmäßige HTTP-Anforderungsheader
 
@@ -38,7 +47,7 @@ MaxDataServiceVersion|Decimal|3\.0
 
 
 
->[AZURE.NOTE]Da Media Services OData verwendet, um das zugrunde liegenden Repository für Medienobjekt-Metadaten über REST-APIs verfügbar zu machen, sollten der DataServiceVersion- Header und der MaxDataServiceVersion-Header in jede Anforderung eingeschlossen werden. Falls dies nicht geschieht, geht Media Services aktuell davon aus, dass der DataServiceVersion-Wert 3.0 verwendet wird.
+>[AZURE.NOTE] Da Media Services OData verwendet, um das zugrunde liegenden Repository für Medienobjekt-Metadaten über REST-APIs verfügbar zu machen, sollten der DataServiceVersion- Header und der MaxDataServiceVersion-Header in jede Anforderung eingeschlossen werden. Falls dies nicht geschieht, geht Media Services aktuell davon aus, dass der DataServiceVersion-Wert 3.0 verwendet wird.
 
 Im Folgenden finden Sie eine Reihe optionaler Header:
 
@@ -81,6 +90,10 @@ LÖSCHEN|Löscht ein Objekt.
 MERGE|Aktualisiert ein vorhandenes Objekt anhand von Änderungen der benannten Eigenschaft.
 HEAD|Gibt die Metadaten eines Objekts für eine GET-Antwort zurück.
 
+##Einschränkung
+
+Beim Abfragen von Entitäten gibt es ein Limit von 1.000 Entitäten, die gleichzeitig zurückgegeben werden können, da die öffentliche REST-Version 2 Abfrageergebnisse auf 1.000 Ergebnisse begrenzt. Sie müssen **Skip** und **Take** (.NET) bzw. **top** (REST) wie in [diesem .NET-Beispiel](media-services-dotnet-manage-entities.md#enumerating-through-large-collections-of-entities) und [diesem REST-API-Beispiel](media-services-rest-manage-entities.md#enumerating-through-large-collections-of-entities) beschrieben verwenden.
+
 
 ## Ermitteln des Media Services-Modells
 
@@ -105,4 +118,4 @@ Sie sollten "?api-version=2.x" an das Ende des URIs anhängen, wenn Sie die Meta
 
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0211_2016-->

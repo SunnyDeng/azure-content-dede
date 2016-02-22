@@ -1,8 +1,8 @@
 <properties
 	pageTitle="Hinzufügen von Pushbenachrichtigungen zur Xamarin.Android-App mit Azure App Service"
 	description="Erfahren Sie, wie Sie Azure App Service und Azure Notification Hubs verwenden, um Pushbenachrichtigungen an Ihre Xamarin.Android-App zu senden."
-	services="app-service\mobile" 
-	documentationCenter="xamarin" 
+	services="app-service\mobile"
+	documentationCenter="xamarin"
 	authors="ggailey777"
 	manager="dwrede"
 	editor=""/>
@@ -13,14 +13,12 @@
 	ms.tgt_pltfrm="mobile-xamarin-android"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="12/18/2015" 
+	ms.date="02/04/2016"
 	ms.author="glenga"/>
 
 # Hinzufügen von Pushbenachrichtigungen zur Xamarin.Android-App
 
 [AZURE.INCLUDE [app-service-mobile-selector-get-started-push](../../includes/app-service-mobile-selector-get-started-push.md)]
-&nbsp;  
-[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
 
 ##Übersicht
 
@@ -31,7 +29,7 @@ In diesem Tutorial fügen Sie Pushbenachrichtigungen zum [Xamarin.Android-Schnel
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
 + Ein aktives Google-Konto Sie können sich unter [accounts.google.com](http://go.microsoft.com/fwlink/p/?LinkId=268302) für ein Google-Konto registrieren.
-   
+
 + [Google Cloud Messaging Client-Komponente](http://components.xamarin.com/view/GCMClient/) Sie fügen diese Komponente während des Lernprogramms hinzu.
 
 + Schließen Sie das [Xamarin.Android-Schnellstart-Tutorial] ab.
@@ -65,7 +63,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
 Sie können die App mithilfe eines virtuellen Geräts im Emulgator testen. Es sind zusätzliche Konfigurationsschritte erforderlich, wenn für das Ausführen ein Emulgator verwendet wird.
 
-1. Stellen Sie sicher, dass die Bereitstellung oder das Debuggen auf einem virtuellen Gerät stattfindet, bei dem Google-APIs als Ziel festgelegt sind, wie unten beim Android Virtual Device (AVD)-Manager dargestellt. 
+1. Stellen Sie sicher, dass die Bereitstellung oder das Debuggen auf einem virtuellen Gerät stattfindet, bei dem Google-APIs als Ziel festgelegt sind, wie unten beim Android Virtual Device (AVD)-Manager dargestellt.
 
 	![](./media/app-service-mobile-xamarin-android-get-started-push/google-apis-avd-settings.png)
 
@@ -86,4 +84,4 @@ Sie können die App mithilfe eines virtuellen Geräts im Emulgator testen. Es si
 [Xamarin.Android]: http://xamarin.com/download/
 [Azure Mobile Services Component]: http://components.xamarin.com/view/azure-mobile-services/
 
-<!----HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0211_2016-->

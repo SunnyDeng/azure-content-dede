@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="09/17/2015"
+   ms.date="02/09/2016"
    ms.author="bwren" />
 
 # Untergeordnete Runbooks in Azure Automation
@@ -94,4 +94,4 @@ Die folgende Tabelle enthält eine Zusammenfassung der Unterschiede zwischen den
 - [Starten eines Runbooks in Azure Automation](automation-starting-a-runbook.md)
 - [Runbookausgabe und -meldungen in Azure Automation](automation-runbook-output-and-messages.md)
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

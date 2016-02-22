@@ -13,7 +13,7 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="identity"
-    ms.date="02/02/2016"
+    ms.date="02/09/2016"
     ms.author="liviodlc"/>
 
 #Tutorial: Integrieren von Google Apps in Azure Active Directory
@@ -258,7 +258,10 @@ Wenn Sie das einmalige Anmelden lieber manuell einrichten möchten, führen Sie 
 
 4. Um Ihre Einstellungen für einmaliges Anmelden zu testen, öffnen Sie den Zugriffsbereich unter [https://myapps.microsoft.com](https://myapps.microsoft.com/), melden Sie sich bei Ihrem Testkonto an, und klicken Sie auf **Google Apps**.
 
-[AZURE.INCLUDE [saas-toc](../../includes/active-directory-saas-toc.md)]
+## Verwandte Artikel
+
+- [Artikelindex für die Anwendungsverwaltung in Azure Active Directory](active-directory-apps-index.md)
+- [Liste der Tutorials zur Integration von SaaS-Apps](active-directory-saas-tutorial-list.md)
 
 [0]: ./media/active-directory-saas-google-apps-tutorial/azure-active-directory.png
 [1]: ./media/active-directory-saas-google-apps-tutorial/applications-tab.png
@@ -292,4 +295,4 @@ Wenn Sie das einmalige Anmelden lieber manuell einrichten möchten, führen Sie 
 [29]: ./media/active-directory-saas-google-apps-tutorial/assign-users.png
 [30]: ./media/active-directory-saas-google-apps-tutorial/assign-confirm.png
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

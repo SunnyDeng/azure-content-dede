@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/30/2015"
+	ms.date="02/09/2016"
 	ms.author="femila"/>
 
 # Bedingter Zugriff unter Azure – Vorschau für SaaS-Apps
@@ -86,4 +86,8 @@ Im folgenden Beispiel wird veranschaulicht, wie lokale MFA mithilfe des [Set-Mso
 
 Zusätzlich zum Festlegen dieses Kennzeichens muss die AD FS-Instanz des Verbundmandanten für die Ausführung der mehrstufigen Authentifizierung konfiguriert werden. Befolgen Sie die Anleitungen für die lokale Bereitstellung von Azure Multi-Factor Authentication.
 
-<!---HONumber=Nov15_HO2-->
+##Verwandte Artikel
+
+- [Artikelindex für die Anwendungsverwaltung in Azure Active Directory](active-directory-apps-index.md)
+
+<!---HONumber=AcomDC_0211_2016-->

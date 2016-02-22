@@ -2,6 +2,7 @@
    pageTitle="Vorschau der Azure AD B2B-Zusammenarbeit: Funktionsweise | Microsoft Azure"
    description="Beschreibt, wie die Azure Active Directory B2B-Zusammenarbeit Geschäftspartnern den gezielten Zugriff auf Ihre Unternehmensanwendungen ermöglicht und so Ihre unternehmensübergreifenden Beziehungen unterstützt."
    services="active-directory"
+   documentationCenter=""
    authors="viv-liu"
    manager="cliffdi"
    editor=""
@@ -41,5 +42,6 @@ Obwohl zur Nutzung von Azure AD B2B kein kostenpflichtiges Azure AD-Abonnement (
  - [Tokenformat für externe Benutzer](active-directory-b2b-references-external-user-token-format.md)
  - [Objektattributänderungen für externe Benutzer](active-directory-b2b-references-external-user-object-attribute-changes.md)
  - [Aktuelle Einschränkungen der Vorschau](active-directory-b2b-current-preview-limitations.md)
+ - [Artikelindex für die Anwendungsverwaltung in Azure Active Directory](active-directory-apps-index.md)
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

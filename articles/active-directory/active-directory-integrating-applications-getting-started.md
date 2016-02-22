@@ -13,7 +13,7 @@
       ms.topic="article"
       ms.tgt_pltfrm="na"
       ms.workload="identity"
-      ms.date="10/16/2015"
+      ms.date="02/09/2016"
       ms.author="inhenk"/>
 
 # Erste Schritte zur Integration von Anwendungen in Azure Active Directory
@@ -87,4 +87,8 @@ Wenn Sie eine neue Anwendung schreiben und Entwickler beim Nutzen von Azure AD u
 
 Wenn Sie Ihre benutzerdefinierte Anwendung dem Azure-Anwendungskatalog hinzufügen möchten, finden Sie weitere Informationen unter [„Bring your own app“ mit Azure AD-Konfiguration für Self-Service SAML](http://blogs.technet.com/b/ad/archive/2015/06/17/bring-your-own-app-with-azure-ad-self-service-saml-configuration-gt-now-in-preview.aspx).
 
-<!---HONumber=AcomDC_0107_2016-->
+## Weitere Informationen
+
+- [Artikelindex für die Anwendungsverwaltung in Azure Active Directory](active-directory-apps-index.md)
+
+<!---HONumber=AcomDC_0211_2016-->

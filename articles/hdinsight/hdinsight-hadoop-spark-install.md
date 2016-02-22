@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/15/2015"
+	ms.date="02/05/2016"
 	ms.author="nitinme"/>
 
 # Installieren und Verwenden von Spark in HDInsight-Clustern mithilfe von Script Action
 
-> [AZURE.IMPORTANT]Dieser Artikel ist jetzt veraltet. HDInsight verfügt jetzt über Spark als erstklassigen Clustertyp für Windows-basierte Cluster. Dies bedeutet, dass Sie einen Spark-Cluster jetzt direkt erstellen können, ohne einen Hadoop-Cluster mithilfe von Skriptaktionen ändern zu müssen. Mit dem Spark-Clustertyp erhalten Sie einen HDInsight-Cluster der Version 3.2 mit Spark-Version 1.3.1. Sie können Skriptaktionen verwenden, um verschiedene Versionen von Spark zu installieren. HDInsight verfügt über ein Beispielskript für Skriptaktionen.
+> [AZURE.IMPORTANT] Dieser Artikel ist jetzt veraltet. HDInsight verfügt jetzt über Spark als erstklassigen Clustertyp für Windows-basierte Cluster. Dies bedeutet, dass Sie einen Spark-Cluster jetzt direkt erstellen können, ohne einen Hadoop-Cluster mithilfe von Skriptaktionen ändern zu müssen. Mit dem Spark-Clustertyp erhalten Sie einen HDInsight-Cluster der Version 3.2 mit Spark-Version 1.3.1. Sie können Skriptaktionen verwenden, um verschiedene Versionen von Spark zu installieren. HDInsight verfügt über ein Beispielskript für Skriptaktionen.
 
 Erfahren Sie, wie Sie Spark für HDInsight auf Windows-Basis installieren, indem Sie Skriptaktionen verwenden, und wie Sie Spark-Abfragen auf HDInsight-Clustern ausführen.
 
@@ -50,7 +50,7 @@ Ein Beispielskript zum Installieren von Spark in einem HDInsight-Cluster steht i
 
 Sie können dieses Skript ändern oder ein eigenes Skript zum Installieren von anderen Versionen von Spark installieren.
 
-> [AZURE.NOTE]Das Beispielskript funktioniert nur mit HDInsight-Clustern der Version 3.1 und 3.2. Weitere Informationen zu HDInsight-Clusterversionen finden Sie unter [HDInsight-Clusterversionen](hdinsight-component-versioning.md).
+> [AZURE.NOTE] Das Beispielskript funktioniert nur mit HDInsight-Clustern der Version 3.1 und 3.2. Weitere Informationen zu HDInsight-Clusterversionen finden Sie unter [HDInsight-Clusterversionen](hdinsight-component-versioning.md).
 
 1. Beginnen Sie mit dem Erstellen eines Clusters, indem Sie die Option **BENUTZERDEFINIERT ERSTELLEN** verwenden, die unter [Erstellen von Hadoop-Clustern in HDInsight](hdinsight-provision-clusters.md#portal) beschrieben ist. Wählen Sie die Clusterversion abhängig von Folgendem:
 
@@ -118,7 +118,7 @@ Führen Sie die folgenden Schritte aus, um Spark-Abfragen über eine interaktive
 
 Mit Spark SQL können Sie mit Spark relationale Abfragen (SQL = Structured Query Language), HiveQL oder Scala auszuführen. In diesem Abschnitt untersuchen wir, wie mit Spark eine Hive-Abfrage auf einer Hive-Beispieltabelle ausgeführt wird. Die in diesem Abschnitt verwendete Hive-Tabelle (mit dem Namen **hivesampletable**) ist standardmäßig verfügbar, wenn Sie einen Cluster erstellen.
 
->[AZURE.NOTE]Das folgende Beispiel wurde für **Spark 1.2.0** erstellt, das installiert wird, wenn Sie die Skriptaktion beim Erstellen von HDInsight 3.2-Clustern ausführen.
+>[AZURE.NOTE] Das folgende Beispiel wurde für **Spark 1.2.0** erstellt, das installiert wird, wenn Sie die Skriptaktion beim Erstellen von HDInsight 3.2-Clustern ausführen.
 
 1. Aktivieren Sie im Azure-Portal Remotedesktop für den Cluster, den Sie mit installiertem Spark erstellt haben, und stellen Sie dann eine Remoteverbindung mit dem Cluster her. Anweisungen hierzu finden Sie unter [Herstellen einer Verbindung mit HDInsight-Clustern mit RDP](hdinsight-administer-use-management-portal.md#rdp).
 
@@ -201,7 +201,7 @@ In diesem Abschnitt verwenden Sie das <a href="http://www.scala-sbt.org/0.13/doc
 
 
 
-	>[AZURE.NOTE]Stellen Sie sich, dass Sie die leeren Zeilen in der Datei beibehalten.
+	>[AZURE.NOTE] Stellen Sie sich, dass Sie die leeren Zeilen in der Datei beibehalten.
 
 
 3. Erstellen Sie unter dem Ordner **SimpleScalaApp** die Verzeichnisstruktur **\\src\\main\\scala**, und fügen Sie das zuvor erstellte Scala-Programm (**SimpleApp.scala**) unter dem Ordner „\\src\\main\\scala“ ein.
@@ -317,4 +317,4 @@ Weitere Informationen finden Sie unter [Anpassen von HDInsight-Clustern mithilfe
 [hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster.md
 [powershell-install-configure]: ../install-configure-powershell.md
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0211_2016-->

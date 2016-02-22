@@ -13,7 +13,7 @@
       ms.topic="article"
       ms.tgt_pltfrm="na"
       ms.workload="na"
-      ms.date="10/28/2015"
+      ms.date="02/06/2016"
       ms.author="hascipio; v-divte" />
 
 # Leitfaden zum Erstellen einer Lösungsvorlage für den Azure Marketplace
@@ -56,7 +56,7 @@ Sie können den Erstellungsvorgang auch testen, ohne eine tatsächliche Bereitst
 
 4. Kopieren Sie die URL, fügen Sie sie in einen beliebigen Browser ein, und testen Sie die Benutzerfreundlichkeit für die Datei „createUiDefinition.json“.
 
-  >[AZURE.TIP]Während Ihre Entwickler die Topologien für die Lösungsvorlagen erstellen und diese zertifizieren lassen, können die Business-, Marketing- und/oder Rechtsabteilungen Ihres Unternehmens mit der Arbeit an den Marketinginhalten und den rechtlichen Inhalten beginnen.
+  > [AZURE.TIP] Während Ihre Entwickler die Topologien für die Lösungsvorlagen erstellen und diese zertifizieren lassen, können die Business-, Marketing- und/oder Rechtsabteilungen Ihres Unternehmens mit der Arbeit an den Marketinginhalten und den rechtlichen Inhalten beginnen.
 
 ## Nächste Schritte
 Nun, da Sie Ihre Lösungsvorlage erstellt und die ZIP-Datei mit den erforderlichen Dateien für die Zertifizierung übermittelt haben, können Sie die Anweisungen im [Leitfaden für Marketplace-Marketinginhalte](marketplace-publishing-push-to-staging.md) befolgen, bevor Sie Ihr Angebot auf die Tests in der Stagingumgebung vorbereiten. Alle Artikel zum Veröffentlichen in Marketplace finden Sie unter [Erste Schritte: Veröffentlichen eines Angebots im Microsoft Azure Marketplace](marketplace-publishing-getting-started.md).
@@ -76,4 +76,4 @@ Folgende Artikel könnten für Sie ebenfalls von Interesse sein:
 [link-acct-creation]: marketplace-publishing-microsoft-accounts-creation-registration.md
 [link-pubportal]: https://publish.windowsazure.com
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0211_2016-->

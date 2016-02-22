@@ -13,10 +13,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/05/2015"
+ 	ms.date="02/03/2016"  
 	ms.author="juliako"/>
-
-
 
 #<a id="monitormediaservicesaccount"></a>Überwachen eines Media Services-Kontos
 
@@ -24,7 +22,7 @@ Das Azure Media Services-Dashboard stellt Nutzungsmetriken und Kontoinformatione
 
 Sie können die Anzahl der Codierungsjobs in der Warteschlange, fehlgeschlagene Codierungsaufgaben, aktive Codierungsjobs, die durch die Eingabe- und Ausgabedaten des Encoders dargestellt werden, sowie die Blob-Speichernutzung Ihres Media Services-Kontos überwachen. Wenn Sie Inhalte per Streaming an Kunden übertragen, können Sie außerdem verschiedene Streaming-Metriken abrufen. Sie können Ihre Daten der letzten 6 Stunden, 24 Stunden oder 7 Tage überwachen.
  
->[AZURE.NOTE]Beim Überwachen der Speicherdaten im klassischen Azure-Portal entstehen zusätzliche Kosten. Weitere Informationen finden Sie unter [Speicheranalyse und Speicheranalysekosten](http://go.microsoft.com/fwlink/?LinkId=256667).
+>[AZURE.NOTE] Beim Überwachen der Speicherdaten im klassischen Azure-Portal entstehen zusätzliche Kosten. Weitere Informationen finden Sie unter [Speicheranalyse und Speicheranalysekosten](http://go.microsoft.com/fwlink/?LinkId=256667).
 
 ##<a id="configuremonitoring"></a>Überwachen eines Media Services-Kontos
 
@@ -38,7 +36,7 @@ Sie können die Anzahl der Codierungsjobs in der Warteschlange, fehlgeschlagene 
 1. Klicken Sie im Abschnitt **Auf einen Blick** auf den Namen des **Speicherkontos**.
 2. Klicken Sie auf der Speicherkontoseite auf den Link **configure page**, und blättern Sie bis zu den Einstellungen **monitoring** für die Blob-, Tabellen- und Warteschlangendienste nach unten.
 
-	>[AZURE.NOTE]Blobs sind der einzige unterstützte Speichertyp in Media Services.
+	>[AZURE.NOTE] Blobs sind der einzige unterstützte Speichertyp in Media Services.
 
 	![Speicheroptionen][storage_options_scoped]
 
@@ -73,4 +71,4 @@ Sie können die Anzahl der Codierungsjobs in der Warteschlange, fehlgeschlagene 
 
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0211_2016-->

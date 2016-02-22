@@ -32,7 +32,7 @@ Möglicherweise interessieren Sie sich auch für [Azure IoT Suite][lnk-iot-suite
 [lnk-getstarted]: iot-hub-csharp-csharp-getstarted.md
 [lnk-device-sdks]: https://github.com/Azure/azure-iot-sdks/blob/master/readme.md
 [lnk-iot-hub]: iot-hub-what-is-iot-hub.md
-[lnk-iot-suite]: http://azure.microsoft.com/solutions/iot/
+[lnk-iot-suite]: https://azure.microsoft.com/documentation/suites/iot-suite/
 [lnk-iotdev]: https://azure.microsoft.com/develop/iot/
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

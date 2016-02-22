@@ -13,7 +13,7 @@
   ms.topic="article"
   ms.tgt_pltfrm="na"
   ms.workload="data-services"
-  ms.date="01/29/2015"
+  ms.date="01/29/2016"
   ms.author="andrl"/>
 
 # Communityportal
@@ -267,4 +267,4 @@ DocumentDB-Genies sind wichtige Mitglieder der Community, die sich durch ein bei
 
 Möchten Sie ein DocumentDB-Genie werden? Wenngleich es nicht unbedingt ein bestimmtes Kriterium gibt, das erfüllt sein muss, um ein DocumentDB-Genie zu werden, bewerten wir u. a. den Einfluss der Beiträge des Kandidaten zu Onlineforen wie StackOverflow und MSDN, Wikis, Online-Inhalten, Konferenzen, Benutzergruppen, Podcasts, Websites, Blogs und sozialen Medien sowie Artikeln und Büchern. [Senden uns eine E-Mail](mailto:askdocdb@microsoft.com), um sich selbst oder jemand anderen vorzuschlagen.
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

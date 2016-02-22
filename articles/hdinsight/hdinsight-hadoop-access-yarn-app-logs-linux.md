@@ -14,14 +14,14 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/04/2015"
+	ms.date="02/05/2016"
 	ms.author="larryfr"/>
 
 # Zugriff auf YARN-Anwendungsprotokolle unter Linux-basiertem HDInsight
 
 Dieses Dokument erläutert den Zugriff auf Protokolle für YARN (Yet Another Resource Negotiator)-Anwendungen, die auf einem Hadoop-Cluster in Azure HDInsight abgeschlossen wurden.
 
-> [AZURE.NOTE]Die Informationen in diesem Artikel gelten für Linux-basierte HDInsight-Cluster. Informationen zu Windows-basierten Clustern finden Sie unter [Zugriff auf YARN-Anwendungsprotokolle in Windows-basiertem HDInsight](hdinsight-hadoop-access-yarn-app-logs.md)
+> [AZURE.NOTE] Die Informationen in diesem Artikel gelten für Linux-basierte HDInsight-Cluster. Informationen zu Windows-basierten Clustern finden Sie unter [Zugriff auf YARN-Anwendungsprotokolle in Windows-basiertem HDInsight](hdinsight-hadoop-access-yarn-app-logs.md)
 
 ## Voraussetzungen
 
@@ -96,4 +96,4 @@ Nachdem Sie einen SSH-Tunnel erstellt haben, zeigen Sie die YARN-Protokolle mith
 [binary-format]: https://issues.apache.org/jira/browse/HADOOP-3315
 [YARN-concepts]: http://hortonworks.com/blog/apache-hadoop-yarn-concepts-and-applications/
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0211_2016-->

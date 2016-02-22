@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/26/2015" 
+	ms.date="01/26/2016" 
 	ms.author="ryancraw"/>
 
 # Sicherer Zugriff auf Daten in DocumentDB #
@@ -163,4 +163,4 @@ Um alle einem bestimmten Benutzer zugeordneten Berechtigungsressourcen abzurufen
 - Informationen zum Erstellen von DocumentDB-Autorisierungstoken finden klicken Sie [hier](https://msdn.microsoft.com/library/azure/dn783368.aspx)
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

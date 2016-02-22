@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="12/04/2015"
+   ms.date="02/05/2016"
    ms.author="larryfr"/>
 
 #Ausführen von Pig-Aufträgen über eine Remotedesktopverbindung
@@ -85,7 +85,7 @@ Aktivieren Sie Remotedesktop für den HDInsight-Cluster, und stellen Sie anschli
 
 		STORE RESULT into 'wasb:///example/data/pigout'
 
-	> [AZURE.NOTE]Die Daten werden im angegebenen Verzeichnis in Dateien namens **part-nnnnn** gespeichert. Wenn das Verzeichnis bereits vorhanden ist, erhalten Sie eine Fehlermeldung.
+	> [AZURE.NOTE] Die Daten werden im angegebenen Verzeichnis in Dateien namens **part-nnnnn** gespeichert. Wenn das Verzeichnis bereits vorhanden ist, erhalten Sie eine Fehlermeldung.
 
 7. Geben Sie die folgende Anweisung ein, um die grunt-Eingabeaufforderung zu beenden.
 
@@ -136,4 +136,4 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 
 * [Verwenden von MapReduce mit Hadoop in HDInsight](hdinsight-use-mapreduce.md)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0211_2016-->

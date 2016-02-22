@@ -103,7 +103,7 @@ Mit HDInsight-Tools im Server-Explorer können Sie in Hive-Datenbanken und verkn
 
 ###<a id="mobile">Microsoft Azure Mobile App SDK
 
-Tools für die Arbeit mit [Azure App Service Mobile Apps](app-service-mobile/app-service-mobile-value-prop-preview.md).
+Tools für die Arbeit mit [Azure App Service Mobile Apps](app-service-mobile/app-service-mobile-value-prop.md).
 
 ###<a id="ps"></a>Microsoft Azure PowerShell
 
@@ -186,4 +186,4 @@ Quellcode des Azure-SDK für .NET, einschließlich Clientbibliotheken, finden Si
 
 Referenzdokumentation für Azure-Clientbibliotheken finden Sie unter [Azure .NET-Referenz](/documentation/api/).
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

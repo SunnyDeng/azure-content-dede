@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/08/2015" 
+	ms.date="02/09/2016" 
 	ms.author="dariagrigoriu"/>
 
 # Übersicht zur Azure App-Service Bereitstellung
@@ -23,4 +23,4 @@ Azure App Service bietet umfassende integrierte Funktionen zum Erstellen von lei
 
 [AZURE.INCLUDE [app-service-blueprint-deployment](../../includes/app-service-blueprint-deployment.md)]
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0211_2016-->

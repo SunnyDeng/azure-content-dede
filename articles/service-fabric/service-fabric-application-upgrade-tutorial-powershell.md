@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="07/17/2015"
+   ms.date="02/04/2016"
    ms.author="subramar"/>
 
 
@@ -33,7 +33,7 @@ Diese Schritte können durchgeführt werden, indem Sie die Anwendung von GitHub 
 
 Nachdem Sie die Dateien dem Projekt hinzugefügt haben, erstellen und veröffentlichen Sie die Anwendung, indem Sie mit der rechten Maustaste auf das Anwendungsprojekt **VisualObjectsApplication** klicken und wie folgt im Menü „Service Fabric“ den Befehl **Veröffentlichen** auswählen. Weitere Informationen finden Sie im [Tutorial für Service Fabric-Anwendungsupgrades](service-fabric-application-upgrade-tutorial.md). Alternativ können Sie Ihre Anwendung mithilfe von PowerShell bereitstellen.
 
-> [AZURE.NOTE]Bevor Sie Service Fabric-Befehle in PowerShell verwenden können, müssen Sie zunächst mit dem Cmdlet `Connect-ServiceFabricCluster` eine Verbindung mit dem Cluster herstellen. Auch wird davon ausgegangen, dass der Cluster bereits auf dem lokalen Computer eingerichtet wurde. Siehe dazu den Artikel [Set up your Service Fabric development environment](service-fabric-get-started.md) (in englischer Sprache).
+> [AZURE.NOTE] Bevor Sie Service Fabric-Befehle in PowerShell verwenden können, müssen Sie zunächst mit dem Cmdlet `Connect-ServiceFabricCluster` eine Verbindung mit dem Cluster herstellen. Auch wird davon ausgegangen, dass der Cluster bereits auf dem lokalen Computer eingerichtet wurde. Siehe dazu den Artikel [Set up your Service Fabric development environment](service-fabric-get-started.md) (in englischer Sprache).
 
 Nach dem Erstellen des Projekts in Visual Studio können Sie das Anwendungspaket über den PowerShell-Befehl **Copy-ServiceFabricApplicationPackage** in den ImageStore kopieren. Nach diesem Schritt folgt die Registrierung der Anwendung bei der Service Fabric-Laufzeit mit dem Cmdlet **Register-ServiceFabricApplicationPackage**. Im letzten Schritt wird eine Instanz der Anwendung mit dem Cmdlet **New-ServiceFabricApplication** gestartet. Diese drei Schritte entsprechen der Verwendung des Menüelements **Bereitstellen** in Visual Studio.
 
@@ -136,4 +136,4 @@ Erfahren Sie, wie Sie erweiterte Funktionen beim Upgrade Ihrer Anwendung nutzen,
 
 Informationen zum Beheben gängiger Probleme bei Anwendungsupgrades finden Sie in den Anweisungen unter [Problembehandlung bei Anwendungsupgrades](service-fabric-application-upgrade-troubleshooting.md).
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0211_2016-->

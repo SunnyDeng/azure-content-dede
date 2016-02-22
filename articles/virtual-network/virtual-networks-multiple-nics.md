@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="12/11/2015"
+   ms.date="02/02/2016"
    ms.author="telmos" />
 
 # Erstellen eines virtuellen Computers mit mehreren Netzwerkschnittstellenkarten (NICs)
@@ -97,7 +97,7 @@ Wenn ein Subnetz einer NSG zugeordnet ist und eine Netzwerkkarte in diesem Subne
 - ****Eingehender Datenverkehr**, dessen Ziel die fragliche Netzwerkkarte ist, durchläuft zunächst das Subnetz, wobei die NSG-Regeln des Subnetzes angewendet werden, bevor er an die Netzwerkkarte übergeben wird, wodurch die NSG-Regeln der NIC zum Tragen kommen.
 - **Ausgehender Datenverkehr**, dessen Quelle die fragliche Netzwerkkarte ist, durchläuft zunächst die NIC, wobei die NSG-Regeln der NIC angewendet werden, bevor er an das Subnetz übergeben wird, wodurch die NSG-Regeln des Subnetzes zum Tragen kommen. 
 
-Hier finden Sie weitere Informationen zu [Netzwerksicherheitsgruppen](virtual-networks-nsg) und deren Anwendung auf Grundlage von Zuordnungen zu Subnetzen, virtuellen Computern und Netzwerkkarte.
+Hier finden Sie weitere Informationen zu [Netzwerksicherheitsgruppen](virtual-networks-nsg.md) und deren Anwendung auf Grundlage von Zuordnungen zu Subnetzen, virtuellen Computern und Netzwerkkarte.
 
 ## So konfigurieren Sie eine Multi-NIC-VM in einer klassischen Bereitstellung.
 
@@ -164,7 +164,7 @@ Führen Sie die folgenden Schritte aus, um einen virtuellen Computer mit mehrere
 
 		New-AzureVM -ServiceName "MultiNIC-CS" –VNetName "MultiNIC-VNet" –VMs $vm
 
->[AZURE.NOTE]Das virtuelle Netzwerk, das Sie hier angeben, muss bereits vorhanden sein (wie unter den Voraussetzungen angegeben). Im folgenden Beispiel wird ein virtuelles Netzwerk mit dem Namen **MultiNIC-VNet** angegeben.
+>[AZURE.NOTE] Das virtuelle Netzwerk, das Sie hier angeben, muss bereits vorhanden sein (wie unter den Voraussetzungen angegeben). Im folgenden Beispiel wird ein virtuelles Netzwerk mit dem Namen **MultiNIC-VNet** angegeben.
 
 ## Sekundärer Netzwerkkartenzugriff auf andere Subnetze
 
@@ -265,4 +265,4 @@ Da virtuelle Linux-Computer im Standardverhalten schwaches Hostrouting verwenden
 - Bereitstellen von [MultiNIC-VMs in einem Anwendungsszenario mit 2-Ebenen in einer Ressourcen-Manager-Bereitstellung](virtual-network-deploy-multinic-arm-template.md).
 - Bereitstellen von [MultiNIC-VMs in einem Anwendungsszenario mit 2-Ebenen in einer klassischen Bereitstellung](virtual-network-deploy-multinic-classic-ps.md).
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0211_2016-->

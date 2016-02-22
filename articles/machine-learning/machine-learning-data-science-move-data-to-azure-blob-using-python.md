@@ -13,16 +13,13 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/23/2015" 
+	ms.date="02/08/2016" 
 	ms.author="bradsev" />
 
 # Verschieben von Daten in den und aus dem Azure-Blobspeicher mithilfe von Python
 
-Nachstehend finden Sie Links zu Anleitungen für Technologien zum Verschieben von Daten in den und aus dem Azure-BLOB-Speicher:
-
-[AZURE.INCLUDE [blob-storage-tool-selector](../../includes/machine-learning-blob-storage-tool-selector.md)]
-
 ## Einführung
+Dieses Thema beschreibt das Auflisten, Hochladen und Herunterladen von Blobs mit der Python-API.
 
 Mit der Python-API im Azure SDK können Sie folgende Aufgaben ausführen:
 
@@ -32,11 +29,16 @@ Mit der Python-API im Azure SDK können Sie folgende Aufgaben ausführen:
 - Auflisten der Blobs in einem Container
 - Löschen eines Blobs
 
-In diesem Abschnitt wird beschrieben, wie Blobs aufgelistet, hochgeladen und heruntergeladen werden. Weitere Informationen zur Verwendung der Python-API finden Sie unter [Verwenden des Blob-Speicherdiensts in Python](../storage-python-how-to-use-blob-storage.md).
+Weitere Informationen zur Verwendung der Python-API finden Sie unter [Verwenden des Blob-Speicherdiensts in Python](../storage-python-how-to-use-blob-storage.md).
 
-> [AZURE.NOTE]Wenn Sie einen virtuellen Computer verwenden, der mit den von den [virtuellen Data Science-Computern in Azure](machine-learning-data-science-virtual-machines.md) bereitgestellten Skripts eingerichtet wurde, ist AzCopy bereits auf dem virtuellen Computer installiert.
+Nachstehend finden Sie Links zu Anleitungen für Technologien zum Verschieben von Daten in den und aus dem Azure-BLOB-Speicher:
 
-> [AZURE.NOTE]Eine umfassende Einführung in Azure-Blobspeicher finden Sie unter [Grundlagen zu Azure-Blobspeicher](../storage-dotnet-how-to-use-blobs.md) und [Azure-Blobdienst](https://msdn.microsoft.com/library/azure/dd179376.aspx).
+[AZURE.INCLUDE [blob-storage-tool-selector](../../includes/machine-learning-blob-storage-tool-selector.md)]
+
+
+> [AZURE.NOTE] Wenn Sie einen virtuellen Computer verwenden, der mit den von den [virtuellen Data Science-Computern in Azure](machine-learning-data-science-virtual-machines.md) bereitgestellten Skripts eingerichtet wurde, ist AzCopy bereits auf dem virtuellen Computer installiert.
+
+> [AZURE.NOTE] Eine umfassende Einführung in Azure-Blobspeicher finden Sie unter [Grundlagen zu Azure-Blobspeicher](../storage-dotnet-how-to-use-blobs.md) und [Azure-Blobdienst](https://msdn.microsoft.com/library/azure/dd179376.aspx).
 
 ## Voraussetzungen
 
@@ -123,4 +125,4 @@ Der folgende Beispielcode lädt alle Blobs aus einem Container herunter. Dabei w
 	    except:
 	        print "something wrong happened when downloading the data %s"%blob.name
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0211_2016-->

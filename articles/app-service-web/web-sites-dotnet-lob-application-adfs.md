@@ -283,9 +283,14 @@ public ActionResult Contact()
 
 	![](./media/web-sites-dotnet-lob-application-adfs/13-authorize-adfs-error.png)
 
-	Wenn Sie diesen Fehler in der Ereignisanzeige auf dem AD FS-Server untersuchen, sehen Sie diese Ausnahmemeldung: 
-	<pre class="prettyprint"> 
-	Microsoft.IdentityServer.Web.InvalidRequestException: MSIS7042: <mark>The same client browser session has made '6' requests in the last '11' seconds.</mark> Ausführliche Informationen erhalten Sie bei Ihrem Administrator unter Microsoft.IdentityServer.Web.Protocols.PassiveProtocolHandler.UpdateLoopDetectionCookie(WrappedHttpListenerContext context) unter Microsoft.IdentityServer.Web.Protocols.WSFederation.WSFederationProtocolHandler.SendSignInResponse(WSFederationContext context, MSISSignInResponse response) unter Microsoft.IdentityServer.Web.PassiveProtocolListener.ProcessProtocolRequest(ProtocolContext protocolContext, PassiveProtocolHandler protocolHandler) unter Microsoft.IdentityServer.Web.PassiveProtocolListener.OnGetContext(WrappedHttpListenerContext context) </pre>
+	Wenn Sie diesen Fehler in der Ereignisanzeige auf dem AD FS-Server untersuchen, sehen Sie diese Ausnahmemeldung:
+	 <pre class="prettyprint">
+	  Microsoft.IdentityServer.Web.InvalidRequestException: MSIS7042: <mark>The same client browser session has made '6' requests in the last '11' seconds.</mark> Ausführliche Informationen erhalten Sie bei Ihrem Administrator 
+	  unter Microsoft.IdentityServer.Web.Protocols.PassiveProtocolHandler.UpdateLoopDetectionCookie(WrappedHttpListenerContext context) 
+	  unter Microsoft.IdentityServer.Web.Protocols.WSFederation.WSFederationProtocolHandler.SendSignInResponse(WSFederationContext context, MSISSignInResponse response) 
+	  unter Microsoft.IdentityServer.Web.PassiveProtocolListener.ProcessProtocolRequest(ProtocolContext protocolContext, PassiveProtocolHandler protocolHandler) 
+	  unter Microsoft.IdentityServer.Web.PassiveProtocolListener.OnGetContext(WrappedHttpListenerContext context) 
+	 </pre>
 
 	Der Grund hierfür ist, dass MVC standardmäßig die Fehlermeldung "401 - Nicht autorisiert" zurückgibt, wenn die Rollen des Benutzers nicht autorisiert sind. Dadurch wird eine Anforderung zur erneuten Authentifizierung an Ihren Identitätsanbieter (AD FS) ausgelöst. Da der Benutzer bereits authentifiziert ist, kehrt AD FS zur selben Seite zurück- Diese gibt dann wiederum eine 401-Fehlermeldung aus, sodass eine Umleitungsschleife entsteht. Überschreiben Sie die `HandleUnauthorizedRequest`-Methode von "AuthorizeAttribute" mit einfacher Logik, um etwas Sinnvolles anzuzeigen, anstatt die Umleitungsschleife fortzusetzen.
 
@@ -327,7 +332,7 @@ public ActionResult Contact()
 
 Ein Grund dafür, Ihre Line-of-Business-Anwendung mit AD FS statt mit Azure Active Directory zu implementieren, sind Kompatibilitätsprobleme beim externen Speichern von Organisationsdaten. Dies kann auch bedeuten, dass Ihre Web-App in Azure auf lokale Datenbanken zugreifen muss, da Sie [SQL-Datenbank](/services/sql-database/) nicht als Datenebene für Ihre Web-Apps verwenden dürfen.
 
-Azure App Service-Web-Apps unterstützen zwei Methoden für den Zugriff auf lokale Datenbanken: [Hybridverbindungen](../integration-hybrid-connection-overview.md) und [Virtuelle Netzwerke](web-sites-integrate-with-vnet.md). Weitere Informationen finden Sie unter [Using VNET integration and Hybrid connections with Azure App Service Web Apps](https://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/) (Verwenden der VNET-Integration und von Hybridverbindungen in Azure App Service-Web-Apps, in englischer Sprache).
+Azure App Service-Web-Apps unterstützen zwei Methoden für den Zugriff auf lokale Datenbanken: [Hybridverbindungen](../biztalk-services/integration-hybrid-connection-overview.md) und [Virtuelle Netzwerke](web-sites-integrate-with-vnet.md). Weitere Informationen finden Sie unter [Using VNET integration and Hybrid connections with Azure App Service Web Apps](https://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/) (Verwenden der VNET-Integration und von Hybridverbindungen in Azure App Service-Web-Apps, in englischer Sprache).
 
 <a name="bkmk_resources"></a>
 ## Weitere Ressourcen
@@ -345,4 +350,4 @@ Azure App Service-Web-Apps unterstützen zwei Methoden für den Zugriff auf loka
  
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

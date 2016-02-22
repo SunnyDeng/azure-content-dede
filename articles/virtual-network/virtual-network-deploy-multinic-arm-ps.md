@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/20/2015"
+   ms.date="02/02/2016"
    ms.author="telmos" />
 
 #Bereitstellen von Multi-NIC-VMs mit PowerShell
@@ -37,7 +37,7 @@ Bevor Sie die Back-End-Server bereitstellen können, müssen Sie die Hauptressou
 2. Klicken Sie auf dieser Vorlagenseite rechts neben **Parent Resource group** auf **Deploy to Azure**.
 3. Ändern Sie bei Bedarf die Parameterwerte, und führen Sie die folgenden Schritte im Azure-Vorschauportal aus, um die Ressourcengruppe bereitzustellen.
 
-> [AZURE.IMPORTANT]Achten Sie darauf, eindeutige Speicherkontonamen zu verwenden. In Azure können keine doppelten Speicherkontonamen verwendet werden.
+> [AZURE.IMPORTANT] Achten Sie darauf, eindeutige Speicherkontonamen zu verwenden. In Azure können keine doppelten Speicherkontonamen verwendet werden.
 
 [AZURE.INCLUDE [azure-ps-prerequisites-include.md](../../includes/azure-ps-prerequisites-include.md)]
 
@@ -51,7 +51,7 @@ Die Back-End-VMs sind auf die Erstellung der im Folgenden aufgelisteten Ressourc
 
 ### Schritt 1: Starten des Skripts
 
-Sie können das verwendete PowerShell-Skript ungekürzt [hier](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/IaaS-Story/11-MultiNIC/arm/multinic.ps1) herunterladen. Gehen Sie folgendermaßen vor, um das Skript an Ihre Arbeitsumgebung anzupassen.
+Sie können das verwendete PowerShell-Skript ungekürzt [hier](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/IaaS-Story/11-MultiNIC/arm/virtual-network-deploy-multinic-arm-ps.ps1) herunterladen. Gehen Sie folgendermaßen vor, um das Skript an Ihre Arbeitsumgebung anzupassen.
 
 [AZURE.INCLUDE [powershell-preview-include.md](../../includes/powershell-preview-include.md)]
 
@@ -308,4 +308,4 @@ Führen Sie das Skript aus, nachdem sie es heruntergeladen und angepasst haben, 
 		RequestId           : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 		StatusCode          : OK
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0211_2016-->

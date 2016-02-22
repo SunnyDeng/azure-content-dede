@@ -13,19 +13,19 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/12/2015" 
+	ms.date="02/08/2016" 
 	ms.author="hangzh;bradsev" />
 
  
 #Erstellen und Laden von Daten in Hive-Tabellen aus Azure-Blob-Speicher
 
+## Einführung
+In **diesem Dokument** werden allgemeine Hive-Abfragen beschrieben, mit denen Hive-Tabellen erstellt und Daten aus dem Azure-Blobspeicher geladen werden. Es werden auch einige Hinweise zur Partitionierung der Hive-Tabellen und zur Verwendung des ORC-Formats (Optimized Row Columnar) zur Verbesserung der Abfrageleistung bereitgestellt.
+
 Dieses **Menü** bietet Links zu Themen, in denen beschrieben wird, wie Daten in Zielumgebungen erfasst werden, in denen die Daten während des Cortana-Analyseprozesses (CAP) gespeichert und verarbeitet werden.
 
 [AZURE.INCLUDE [cap-ingest-data-selector](../../includes/cap-ingest-data-selector.md)]
 
- 
-## Einführung
-In **diesem Dokument** werden allgemeine Hive-Abfragen beschrieben, mit denen Hive-Tabellen erstellt und Daten aus dem Azure-Blobspeicher geladen werden. Es werden auch einige Hinweise zur Partitionierung der Hive-Tabellen und zur Verwendung des ORC-Formats (Optimized Row Columnar) zur Verbesserung der Abfrageleistung bereitgestellt.
 
 ## Voraussetzungen
 In diesem Artikel wird davon ausgegangen, dass Sie Folgendes abgeschlossen haben:
@@ -168,7 +168,7 @@ Mit dieser Hive-Abfrage laden Sie Daten eine Hive-Tabelle.
 
 - **&#60;Pfad zu Blobdaten>**: Wenn sich die in die Hive-Tabelle hochzuladende Blobdatei im Standardcontainer des HDInsight Hadoop-Clusters befindet, sollte *&#60;Pfad zu Blobdaten>* das Format *'wasb:///&#60;Verzeichnis in diesem Container>/&#60;Blobdateiname>'* haben. Die Blobdatei kann sich auch in einem zusätzlichen Container des HDInsight Hadoop-Clusters befinden. In diesem Fall muss *& #60;Pfad zu Blobdaten>* das Format *'wasb://&#60;Containername>@&#60;Speicherkontoname>.blob.core.windows.net/&#60;Blobdateiname>'* haben.
 
-	>[AZURE.NOTE]Die Blobdaten, die in die Hive-Tabelle hochgeladen werden sollen, müssen sich im Standard- oder einem zusätzlichen Container des Speicherkontos für den Hadoop-Cluster befinden. Andernfalls misslingt die Abfrage *LOAD DATA*, weil sie keinen Zugriff auf die Daten hat.
+	>[AZURE.NOTE] Die Blobdaten, die in die Hive-Tabelle hochgeladen werden sollen, müssen sich im Standard- oder einem zusätzlichen Container des Speicherkontos für den Hadoop-Cluster befinden. Andernfalls misslingt die Abfrage *LOAD DATA*, weil sie keinen Zugriff auf die Daten hat.
 
 
 ## <a name="partition-orc"></a>Weiterführende Themen: Partitionieren von Tabellen und Speichern von Hive-Daten im ORC-Format
@@ -232,7 +232,7 @@ Sie können nicht direkt Daten im ORC-Speicherformat aus dem Blob in Hive-Tabell
 		INSERT OVERWRITE TABLE <database name>.<ORC table name>
             SELECT * FROM <database name>.<external textfile table name>;
 
-	>[AZURE.NOTE]Wenn die TEXTFILE-Tabelle *&#60;Datenbankname>.&#60;Name der externen TEXTFILE-Tabelle>* Partitionen aufweist, fügt der `SELECT * FROM <database name>.<external textfile table name>`-Befehl in Schritt 3 die Partitionsvariable als ein Feld in das zurückgegebene Dataset ein. Das Einfügen in *&#60;Datenbankname>.&#60;ORC-Tabellenname>* misslingt, da *&#60;Datenbankname>.&#60;ORC-Tabellenname>* nicht die Partitionsvariable als Feld im Tabellenschema enthält. In diesem Fall müssen Sie die in *&#60;Datenbankname>.&#60;ORC-Tabellenname>* einzufügenden Felder explizit wie folgt auswählen:
+	>[AZURE.NOTE] Wenn die TEXTFILE-Tabelle *&#60;Datenbankname>.&#60;Name der externen TEXTFILE-Tabelle>* Partitionen aufweist, fügt der `SELECT * FROM <database name>.<external textfile table name>`-Befehl in Schritt 3 die Partitionsvariable als ein Feld in das zurückgegebene Dataset ein. Das Einfügen in *&#60;Datenbankname>.&#60;ORC-Tabellenname>* misslingt, da *&#60;Datenbankname>.&#60;ORC-Tabellenname>* nicht die Partitionsvariable als Feld im Tabellenschema enthält. In diesem Fall müssen Sie die in *&#60;Datenbankname>.&#60;ORC-Tabellenname>* einzufügenden Felder explizit wie folgt auswählen:
 
 		INSERT OVERWRITE TABLE <database name>.<ORC table name> PARTITION (<partition variable>=<partition value>)
 		   SELECT field1, field2, ..., fieldN
@@ -250,4 +250,4 @@ Sie besitzen nun eine einsatzbereite Tabelle mit Daten im ORC-Format.
 
 Im letzten Abschnitt werden Parameter beschrieben, mit denen Sie die Leistung der Hive-Abfragen optimieren können.
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0211_2016-->

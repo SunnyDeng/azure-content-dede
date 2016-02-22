@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/11/2015" 
+	ms.date="02/05/2016" 
 	ms.author="awills"/>
 
 # Gewusst wie – in Application Insights
@@ -36,7 +36,7 @@ Wenn Sie eine Warnung für **Serverausnahmen** einrichten möchten, müssen Sie 
 ### E-Mail für Ausnahmen
 
 1. [Einrichten der Ausnahmeüberwachung](app-insights-asp-net-exceptions.md)
-2. [Einrichten einer Warnung](app-insights-alert.md) für die Metrik der Anzahl von Ausnahmen
+2. [Einrichten einer Warnung](app-insights-alerts.md) für die Metrik der Anzahl von Ausnahmen
 
 
 ### E-Mail über ein Ereignis in meiner App
@@ -57,7 +57,7 @@ Da Warnungen zwei Zustände aufweisen, müssen Sie einen niedrigen Wert senden, 
 
     telemetry.TrackMetric("Alarm", 0.5);
 
-Erstellen Sie ein Diagramm im [Metrik-Explorer](app-insights-metric-explorer.md), um Ihre Warnung anzuzeigen:
+Erstellen Sie ein Diagramm im [Metrik-Explorer](app-insights-metrics-explorer.md), um Ihre Warnung anzuzeigen:
 
 ![](./media/app-insights-how-do-i/010-alarm.png)
 
@@ -201,6 +201,7 @@ Wenn Sie eine Liste von Benutzern mit bestimmten Daten erstellen möchten, z. B
 
 * Deaktivieren Sie in [ApplicationInsights.config](app-insights-configuration-with-applicationinsights-config.md) alle nicht benötigten Module, z. B. die Leistungsindikatorsammlung.
 * Verwenden Sie im SDK [Stichprobenerstellung und Filterung](app-insights-api-filtering-sampling.md).
+* Begrenzen Sie für Ihre Webseiten die Anzahl der AJAX-Aufrufe, die für jede Seitenansicht gemeldet werden. Fügen Sie im Skriptausschnitt hinter `instrumentationKey:...` Folgendes ein: `,maxAjaxCallsPerView:3` (oder eine geeignete Anzahl).
 * Berechnen Sie bei Verwendung von [TrackMetric](app-insights-api-custom-events-metrics.md#track-metric) das Aggregat der Batches von Metrikwerten vor dem Senden des Ergebnisses. Eine Überladung von TrackMetric() ist dafür vorgesehen.
 
 
@@ -240,4 +241,4 @@ Zu den Metriken, die Sie im Metrik-Explorer anzeigen können, zählt u. a. eine
 * Fügen Sie zunächst [ein neues Diagramm hinzu](app-insights-metrics-explorer.md), und prüfen Sie dann, ob der gewünschte Leistungsindikator im angebotenen grundlegenden Satz enthalten ist.
 * Wenn dies nicht der Fall ist, [fügen Sie den Leistungsindikator dem über das Leistungsindikatormodul erfassten Satz hinzu](app-insights-web-monitor-performance.md#system-performance-counters).
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0211_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="12/05/2015" 
+  ms.date="02/03/2016"
 	ms.author="juliako"/>
 
 
@@ -44,7 +44,7 @@ Sie finden diese Werte im Azure-Verwaltungsportal: Wählen Sie Ihr Media Service
 
 Wenn Sie mit der Programmierung für Media Services beginnen möchten, müssen Sie eine **CloudMediaContext**-Instanz erstellen, die den Serverkontext darstellt. **CloudMediaContext** umfasst Verweise auf wichtige Auflistungen, z. B. Aufträge, Medienobjekte, Dateien, Zugriffsrichtlinien und Locators.
 
->[AZURE.NOTE]Die **CloudMediaContext**-Klasse ist nicht threadsicher. Sie sollten für jeden Thread oder für jeden Satz von Vorgängen einen neuen CloudMediaContext erstellen.
+>[AZURE.NOTE] Die **CloudMediaContext**-Klasse ist nicht threadsicher. Sie sollten für jeden Thread oder für jeden Satz von Vorgängen einen neuen CloudMediaContext erstellen.
 
 
 CloudMediaContext verfügt über fünf Konstruktorüberladungen. Es wird empfohlen, Konstruktoren zu verwenden, die **MediaServicesCredentials** als Parameter akzeptieren. Weitere Informationen finden Sie im folgenden Thema **Wiederverwenden von Token des Zugriffssteuerungsdiensts**.
@@ -196,4 +196,4 @@ Zum Abrufen von Verbindungswerten aus der Konfiguration können Sie die **Config
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0211_2016-->

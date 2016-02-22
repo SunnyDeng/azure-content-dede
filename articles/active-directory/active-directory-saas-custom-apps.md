@@ -10,7 +10,7 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="11/18/2015" 
+    ms.date="02/09/2016" 
     ms.author="asmalser" />
 
 #Konfigurieren des einmaligen Anmeldens für Anwendungen, die nicht im Azure Active Directory-Anwendungskatalog enthalten sind
@@ -111,6 +111,12 @@ Nachdem Sie auf **Weiter** geklickt haben, werden Sie aufgefordert, die URL für
 
 Hinweis: Sie können ein Kachellogo für die Anwendung hochladen. Verwenden Sie dazu die Schaltfläche **Logo hochladen** auf der Registerkarte **Konfigurieren** für die Anwendung.
 
+## Verwandte Artikel
+
+- [Artikelindex für die Anwendungsverwaltung in Azure Active Directory](active-directory-apps-index.md)
+- [Gewusst wie: Anpassen ausgestellter Ansprüche im SAML-Token für bereits integrierte Apps](active-directory-saml-claims-customization.md)
+- [Problembehandlung bei SAML-basiertem einmaligem Anmelden](active-directory-saml-debugging.md)
+
 <!--Image references-->
 [1]: ./media/active-directory-saas-custom-apps/customapp1.png
 [2]: ./media/active-directory-saas-custom-apps/customapp2.png
@@ -120,4 +126,4 @@ Hinweis: Sie können ein Kachellogo für die Anwendung hochladen. Verwenden Sie 
 [6]: ./media/active-directory-saas-custom-apps/customapp6.png
 [7]: ./media/active-directory-saas-custom-apps/customapp7.png
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0211_2016-->

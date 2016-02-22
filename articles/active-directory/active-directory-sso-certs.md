@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/02/2016"
+	ms.date="02/09/2016"
 	ms.author="liviodlc"/>
 
 #Verwalten von Zertifikaten für die einmalige Verbundanmeldung in Azure Active Directory
@@ -76,6 +76,10 @@ Im Idealfall sollte die unten gezeigten Schritte zur Erneuerung keine wesentlich
 
 	![Herunterladen und Hochladen des Zertifikats](./media/active-directory-sso-certs/renew-config-app.PNG)
 
-[AZURE.INCLUDE [saas-toc](../../includes/active-directory-saas-toc.md)]
+## Verwandte Artikel
 
-<!---HONumber=AcomDC_0204_2016-->
+- [Artikelindex für die Anwendungsverwaltung in Azure Active Directory](active-directory-apps-index.md)
+- [Anwendungszugriff und einmaliges Anmelden mit Azure Active Directory](active-directory-appssoaccess-whatis.md)
+- [Problembehandlung bei SAML-basiertem einmaligem Anmelden](active-directory-saml-debugging.md)
+
+<!---HONumber=AcomDC_0211_2016-->

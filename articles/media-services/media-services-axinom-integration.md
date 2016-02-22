@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/15/2015"  
+	ms.date="02/03/2016"  
 	ms.author="juliako"/>
 
 #Bereitstellen von Widevine-Lizenzen für Azure Media Services mithilfe von Axinom  
@@ -209,4 +209,4 @@ Inhaltsschlüssel-ID|Muss als Teil des Werts des Anspruchs "entitlement\_message
 
 Wir möchten folgenden Personen für ihre Beiträge zur Erstellung dieses Dokuments danken: Kristjan Jõgi von Axinom, Mingfei Yan und Amit Rajput.
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

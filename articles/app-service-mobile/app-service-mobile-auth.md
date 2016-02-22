@@ -3,7 +3,7 @@
 	description="Eine grundlegende Übersicht über das Feature „Authentifizierung/Autorisierung“ für Azure Mobile Apps"
 	services="app-service\mobile"
 	documentationCenter=""
-	authors="mattchenderson" 
+	authors="mattchenderson"
 	manager="dwrede"
 	editor=""/>
 
@@ -13,12 +13,10 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="multiple"
 	ms.topic="article"
-	ms.date="11/30/2015"
+	ms.date="02/04/2016"
 	ms.author="mahender"/>
 
 # Authentifizierung und Autorisierung in Azure Mobile Apps
-
-[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
 
 ## Was ist App Service-Authentifizierung/Autorisierung?
 
@@ -52,7 +50,7 @@ Sobald das Back-End entsprechend konfiguriert ist, können Sie Ihren Client für
 - Lassen Sie das Mobile Apps-Client-SDK die Anmeldung von Benutzern unter Verwendung einer einzelnen Codezeile durchführen.
 - Nutzen Sie ein von einem bestimmten Identitätsanbieter veröffentlichtes SDK zum Einrichten der Identität und für den Zugriff auf App Service.
 
->[AZURE.TIP]Die meisten Anwendungen sollten ein Anbieter-SDK verwenden, um eine homogenere Anmeldeumgebung zu bieten und von Aktualisierungsunterstützung sowie anderen anbieterspezifischen Vorteile zu profitieren.
+>[AZURE.TIP] Die meisten Anwendungen sollten ein Anbieter-SDK verwenden, um eine homogenere Anmeldeumgebung zu bieten und von Aktualisierungsunterstützung sowie anderen anbieterspezifischen Vorteile zu profitieren.
 
 ### Funktionsweise der Authentifizierung ohne ein Anbieter-SDK
 
@@ -106,4 +104,4 @@ Einige weitere Details finden Sie auch in den oben beschriebenen Workflows in de
 [Konfigurieren Ihrer App Service-Anwendung zur Verwendung der Microsoft-Kontoanmeldung]: app-service-mobile-how-to-configure-microsoft-authentication.md
 [Konfigurieren Ihrer App Service-Anwendung zur Verwendung der Twitter-Anmeldung]: app-service-mobile-how-to-configure-twitter-authentication.md
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0211_2016-->

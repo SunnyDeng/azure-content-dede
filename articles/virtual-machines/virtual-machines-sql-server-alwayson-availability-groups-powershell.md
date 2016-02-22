@@ -19,8 +19,9 @@
 # Konfigurieren von AlwaysOn-Verfügbarkeitsgruppen in virtuellen Azure-Computern (PowerShell)
 
 > [AZURE.SELECTOR]
-- [Azure classic portal](virtual-machines-sql-server-alwayson-availability-groups-gui.md)
-- [PowerShell](virtual-machines-sql-server-alwayson-availability-groups-powershell.md)
+- [Portal - Resource Manager](virtual-machines-sql-server-alwayson-availability-groups-gui-arm.md)
+- [Portal - Classic](virtual-machines-sql-server-alwayson-availability-groups-gui.md)
+- [PowerShell - Classic](virtual-machines-sql-server-alwayson-availability-groups-powershell.md)
 
 <br/>
 
@@ -61,7 +62,7 @@ Dieses Tutorial soll Ihnen die erforderlichen Schritte für das Einrichten der o
 
 	Der Befehl **Get-AzurePublishgSettingsFile** erstellt automatisch ein Verwaltungszertifikat für Azure, das auf Ihren Computer heruntergeladen wird. Ein Browser wird automatisch geöffnet, und Sie werden aufgefordert, die Anmeldeinformationen Ihres Microsoft-Kontos für Ihr Azure-Abonnement einzugeben. Die heruntergeladene **PUBLISHSETTINGS**-Datei enthält alle Informationen, die Sie zum Verwalten Ihres Azure-Abonnements benötigen. Importieren Sie diese Datei, nachdem Sie sie in einem lokalen Verzeichnis gespeichert haben, mithilfe des Befehls **Import-AzurePublishSettingsFile**.
 
-	>[AZURE.NOTE]Die PUBLISHSETTINGS-Datei enthält Ihre Anmeldeinformationen (unverschlüsselt) für die Verwaltung Ihrer Azure-Abonnements und -Dienste. Die bewährte Sicherheitsmethode für diese Datei besteht im vorübergehenden Speichern außerhalb Ihrer Quellcodeverzeichnisse (beispielsweise im Ordner "Libraries\\Documents"). Löschen Sie sie nach Abschluss des Importvorgangs. Böswillige Benutzer, die Zugriff auf die „PUBLISHSETTINGS“-Datei erlangen, können Ihre Azure-Dienste bearbeiten, erstellen und löschen.
+	>[AZURE.NOTE] Die PUBLISHSETTINGS-Datei enthält Ihre Anmeldeinformationen (unverschlüsselt) für die Verwaltung Ihrer Azure-Abonnements und -Dienste. Die bewährte Sicherheitsmethode für diese Datei besteht im vorübergehenden Speichern außerhalb Ihrer Quellcodeverzeichnisse (beispielsweise im Ordner "Libraries\\Documents"). Löschen Sie sie nach Abschluss des Importvorgangs. Böswillige Benutzer, die Zugriff auf die „PUBLISHSETTINGS“-Datei erlangen, können Ihre Azure-Dienste bearbeiten, erstellen und löschen.
 
 1. Definieren Sie eine Reihe von Variablen, die Sie zum Erstellen Ihrer Cloud-IT-Infrastruktur verwenden.
 
@@ -631,4 +632,4 @@ Sie haben nun erfolgreich SQL Server AlwaysOn implementiert, indem Sie eine Verf
 
 Weitere Informationen zur Verwendung von SQL Server in Azure finden Sie unter [SQL Server auf virtuellen Azure-Computern](../articles/virtual-machines/virtual-machines-sql-server-infrastructure-services.md).
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0211_2016-->

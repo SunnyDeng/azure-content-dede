@@ -12,7 +12,7 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="article" 
-    ms.date="01/07/2016" 
+    ms.date="02/02/2016" 
     ms.author="elizapo" />
 
 
@@ -80,7 +80,7 @@ Wenn Sie Azure AD-Konten verwenden möchten, müssen Sie sicherstellen, dass der
 
 Hybrid-Sammlungen erfordern die Verwendung von Azure AD und lokalem Active Directory. Sie müssen die beiden Verzeichnisse mithilfe von AD Connect integrieren. Sie können jedoch AD Connect auf verschiedene Weise konfigurieren.
 
-Es gibt zwei AD Connect-Szenarien – Verwendung von Kennwortsynchronisierung oder Verwendung von AD-Verbunddiensten. Ziehen Sie die [Informationen zu AD Connect](active-directory-aadconnect.md) zurate, um das Szenario zu ermitteln, das sich am besten für Ihre Anforderungen eignet.
+Es gibt zwei AD Connect-Szenarien – Verwendung von Kennwortsynchronisierung oder Verwendung von AD-Verbunddiensten. Ziehen Sie die [Informationen zu AD Connect](../active-directory/active-directory-aadconnect.md) zurate, um das Szenario zu ermitteln, das sich am besten für Ihre Anforderungen eignet.
 
 Sie können auch Azure AD und AD mit einer Cloudsammlung verwenden. Stellen Sie sicher, dass Sie die gleichen Konfigurationsschritte ausführen.
 
@@ -91,4 +91,4 @@ Ich denke, ich habe jetzt alles erklärt, was Sie wissen müssen. Jetzt bleibt n
 
 [Erstellen Sie eine Cloudsammlung](remoteapp-create-cloud-deployment.md), oder [erstellen Sie eine Hybrid-Sammlung](remoteapp-create-hybrid-deployment.md) – fangen Sie einfach an.
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

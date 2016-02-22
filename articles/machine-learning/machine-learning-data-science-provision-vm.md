@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/17/2015" 
+	ms.date="02/08/2016" 
 	ms.author="bradsev" />
 
 
@@ -144,4 +144,4 @@ Mit den folgenden Schritten können Sie noch mehr lernen und entdecken.
 * Erfahren Sie, wie Sie mithilfe des [Data Science Process](https://azure.microsoft.com/documentation/learning-paths/cortana-analytics-process/) systematisch vollständige Analyselösungen erstellen. 
 * Öffnen Sie den [Cortana Analytics Katalog](http://gallery.cortanaanalytics.com), um Anwendungsbeispiele der Cortana Analytics Suite für die Bereiche Machine Learning und Datenanalysen zu erhalten. Für den einfachen Zugriff haben wir auch ein Symbol auf dem Desktop und im Startmenü der virtuellen Maschine bereitgestellt. 
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

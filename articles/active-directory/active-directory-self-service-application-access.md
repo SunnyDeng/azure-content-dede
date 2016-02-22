@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/14/2015"
+	ms.date="02/09/2016"
 	ms.author="asmalser"/>
 
 #Self-Service-Anwendungszugriff und delegierte Verwaltung mit Azure Active Directory
@@ -101,9 +101,12 @@ Die Kachel **Konfigurieren** wird nur angezeigt, wenn die Anwendung vom IT-Admin
 
 * **Benutzer werden automatisch mithilfe eines einzelnen Kontos angemeldet, das ich verwalte** – Dies ist ein Sonderfall, der dafür geeignet ist, allen zugewiesenen Benutzern den Zugriff mithilfe eines einzelnen freigegebenen Kontos zu erteilen. Am häufigsten tritt dies bei Social Media-Anwendungen auf, bei denen eine Organisation ein einzelnes „Unternehmenskonto“ besitzt und mehrere Benutzer darin Aktualisierungen vornehmen. Dies entspricht auch dem Kennwort-SSO-Fall, bei dem die [Administratoren die Anmeldeinformationen verwalten](active-directory-appssoaccess-whatis.md#password-based-single-sign-on). Nachdem diese Option ausgewählt wurde, wird die genehmigende Person jedoch dazu aufgefordert, den Benutzernamen und das Kennwort für das einzelne freigegebene Konto einzugeben. Nach Fertigstellung werden alle zugewiesenen Benutzer mit diesem Konto angemeldet, wenn sie in ihrem Azure AD-Zugriffsbereich oder in Office 365 auf die Anwendung klicken.
 
+##Zusätzliche Ressourcen
+- [Artikelindex für die Anwendungsverwaltung in Azure Active Directory](active-directory-apps-index.md)
+
 <!--Image references-->
 [1]: ./media/active-directory-self-service-application-access/ssaa_admin.PNG
 [2]: ./media/active-directory-self-service-application-access/ssaa_ap_manage_app.PNG
 [3]: ./media/active-directory-self-service-application-access/ssaa_ap_manage_app_config.PNG
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

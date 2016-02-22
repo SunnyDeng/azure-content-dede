@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Einrichten von Azure Active Directory zur Self-Service-Verwaltung des Anwendungszugriffs | Microsoft Azure"
-	description="Übersicht der Self-Service-Gruppenverwaltung, die Benutzern das Erstellen und Verwalten von Sicherheitsgruppen in Microsoft Azure Active Directory ermöglicht und die Möglichkeit bietet, die Mitgliedschaft in Sicherheitsgruppen anzufordern."
+	description="Übersicht der Self-Service-Gruppenverwaltung, die Benutzern das Erstellen und Verwalten von Sicherheitsgruppen oder Office-Gruppen in Microsoft Azure Active Directory ermöglicht und die Möglichkeit bietet, die Mitgliedschaft in Sicherheitsgruppen oder Office-Gruppen anzufordern."
 	services="active-directory"
 	documentationCenter=""
   authors="curtand"
@@ -14,12 +14,12 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/17/2015"
+	ms.date="02/09/2016"
 	ms.author="curtand"/>
 
-# Einrichten von Azure Active Directory zur Self-Service-Verwaltung des Anwendungszugriffs
+# Einrichten von Azure Active Directory zur Self-Service-Gruppenverwaltung
 
-Die Self-Service-Gruppenverwaltung ermöglicht Benutzern das Erstellen und Verwalten von Sicherheitsgruppen in Microsoft Azure Active Directory (Azure AD) und bietet die Möglichkeit, die Mitgliedschaft in Sicherheitsgruppen anzufordern, die anschließend vom Besitzer der Gruppe genehmigt oder abgelehnt werden kann. Mithilfe der Funktionen für die Self-Service-Gruppenverwaltung kann die tagtägliche Steuerung der Gruppenmitgliedschaft an Personen delegiert werden, die den Geschäftskontext für die betreffende Mitgliedschaft verstehen. Self-Service-Funktionen zur Gruppenverwaltung sind nur für Sicherheitsgruppen und Office 365-Gruppen, und nicht für E-Mail-aktivierte Sicherheitsgruppen oder Verteilerlisten verfügbar.
+Die Self-Service-Gruppenverwaltung ermöglicht Benutzern das Erstellen und Verwalten von Sicherheitsgruppen oder Office-Gruppen in Microsoft Azure Active Directory (Azure AD) und bietet die Möglichkeit, die Mitgliedschaft in Sicherheitsgruppen oder Office-Gruppen anzufordern, die anschließend vom Besitzer der Gruppe genehmigt oder abgelehnt werden kann. Mithilfe der Funktionen für die Self-Service-Gruppenverwaltung kann die tagtägliche Steuerung der Gruppenmitgliedschaft an Personen delegiert werden, die den Geschäftskontext für die betreffende Mitgliedschaft verstehen. Self-Service-Funktionen zur Gruppenverwaltung sind nur für Sicherheitsgruppen und Office 365-Gruppen, und nicht für E-Mail-aktivierte Sicherheitsgruppen oder Verteilerlisten verfügbar.
 
 Die Self-Service-Gruppenverwaltung unterstützt zurzeit zwei grundlegende Szenarien: delegierte Gruppenverwaltung und Self-Service-Gruppenverwaltung.
 
@@ -31,9 +31,9 @@ Die Self-Service-Gruppenverwaltung unterstützt zurzeit zwei grundlegende Szenar
 
 ## Einrichten einer Gruppe für Self-Service durch Endbenutzer
 
-Aktivieren Sie im Azure-Portal auf der Registerkarte **Konfigurieren** sowohl die Option **Delegierte Gruppenverwaltung** als auch die Option **Benutzer können Gruppen erstellen**.
+Aktivieren Sie im Azure-Portal auf der Registerkarte **Konfigurieren** die Option **Delegierte Gruppenverwaltung** und anschließend die Option **Benutzer können Sicherheitsgruppen erstellen** oder **Benutzer können Office-Gruppen erstellen**.
 
-Wenn die Option **Benutzer können Gruppen erstellen** auf **Aktiviert** festgelegt ist, können alle Benutzer in Ihrem Verzeichnis neue Sicherheitsgruppen erstellen und diesen Gruppen Mitglieder hinzuzufügen. Diese neuen Gruppen werden auch im Zugriffsbereich für alle anderen Benutzer angezeigt und andere Benutzer können Beitrittsanfragen für diese Gruppen erstellen, wenn die Richtlinieneinstellung für die Gruppe dies zulässt. Wenn diese Option auf "Deaktiviert" festgelegt ist, können Benutzer keine Gruppen erstellen und vorhandene Gruppen, deren Besitzer sie sind, nicht ändern. Sie können jedoch weiterhin die Mitgliedschaften in diesen Gruppen verwalten und Anforderungen anderer Benutzer zum Beitritt zu ihren Gruppen genehmigen.
+Wenn die Option **Benutzer können Sicherheitsgruppen erstellen** auf **Aktiviert** festgelegt ist, können alle Benutzer in Ihrem Verzeichnis neue Sicherheitsgruppen erstellen und diesen Gruppen Mitglieder hinzuzufügen. Diese neuen Gruppen werden auch im Zugriffsbereich für alle anderen Benutzer angezeigt und andere Benutzer können Beitrittsanfragen für diese Gruppen erstellen, wenn die Richtlinieneinstellung für die Gruppe dies zulässt. Wenn diese Option auf "Deaktiviert" festgelegt ist, können Benutzer keine Gruppen erstellen und vorhandene Gruppen, deren Besitzer sie sind, nicht ändern. Sie können jedoch weiterhin die Mitgliedschaften in diesen Gruppen verwalten und Anforderungen anderer Benutzer zum Beitritt zu ihren Gruppen genehmigen.
 
 Sie können auch mithilfe der Option **Benutzer, die Self-Service für Sicherheitsgruppen verwenden** eine genauer abgestufte Steuerung des Zugriffs auf die Self-Service-Gruppenverwaltungsfunktionen für Ihre Benutzer einrichten. Wenn die Option **Benutzer können Gruppen erstellen** aktiviert ist, können alle Benutzer in Ihrem Verzeichnis neue Sicherheitsgruppen erstellen und diesen Gruppen Mitglieder hinzuzufügen. Indem Sie die Option **Benutzer, die Self-Service für Sicherheitsgruppen verwenden** auf „Einige“ festlegen, können Sie die Verwaltung der Sicherheitsgruppe auf eine begrenzte Gruppe von Benutzern einschränken. Wenn diese Option auf "Einige" festgelegt ist, wird eine Gruppe namens "SSGMSecurityGroupsUsers" in Ihrem Verzeichnis erstellt, und nur diejenigen Benutzer, die Sie als Mitglieder dieser Gruppe hinzugefügt haben, können in Ihrem Verzeichnis neue Sicherheitsgruppen erstellen und diesen Mitglieder hinzufügen. Indem Sie die Option **Benutzer, die Self-Service für Sicherheitsgruppen verwenden** auf „Alle“ festlegen, können alle Benutzer in Ihrem Verzeichnis neue Sicherheitsgruppen erstellen.
 
@@ -45,8 +45,10 @@ Diese Artikel enthalten zusätzliche Informationen zu Azure Active Directory.
 
 * [Verwalten des Zugriffs auf Ressourcen mit Azure Active Directory-Gruppen](active-directory-manage-groups.md)
 
+* [Artikelindex für die Anwendungsverwaltung in Azure Active Directory](active-directory-apps-index.md)
+
 * [Was ist Azure Active Directory?](active-directory-whatis.md)
 
 * [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0211_2016-->

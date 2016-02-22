@@ -15,13 +15,17 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/06/2015"
+	ms.date="02/08/2016"
 	ms.author="fashah;bradsev" />
 
 
 # Verschieben von Daten von einem lokalen SQL Server zu SQL Azure mithilfe von Azure Data Factory
 
 In diesem Thema wird gezeigt, wie Sie mithilfe von Azure Data Factory (ADF) Daten aus einer lokalen SQL Server-Datenbank über Azure Blob-Speicher in eine SQL Azure-Datenbank verschieben.
+
+Das nachstehende **Menü** bietet Links zu Themen, in denen beschrieben wird, wie Daten in anderen Zielumgebungen erfasst werden, in denen die Daten während des Cortana Analytics-Prozesses (CAP) gespeichert und verarbeitet werden.
+
+[AZURE.INCLUDE [cap-ingest-data-selector](../../includes/cap-ingest-data-selector.md)]
 
 ## <a name="intro"></a>Einführung: Was ist ADF und wann sollte es für die Migration von Daten eingesetzt werden?
 
@@ -137,7 +141,7 @@ Die Tabellendefinition für den lokalen SQL Server wird in der folgenden JSON-Da
 		    	}
 	    	}
     	}
-Beachten Sie, dass die Spaltennamen hier nicht enthalten sind. Sie können eine Unterauswahl in den Spalten treffen, indem Sie sie hier aufnehmen (Details finden Sie in der [ADF-Dokumentation](data-factory-copy-activity.md)).
+Beachten Sie, dass die Spaltennamen hier nicht enthalten sind. Sie können eine Unterauswahl in den Spalten treffen, indem Sie sie hier aufnehmen (Details finden Sie in der [ADF-Dokumentation](data-factory-data-movement-activities.md)).
 
 Kopieren Sie die JSON-Definition der Tabelle in eine Datei namens *onpremtabledef.json*, und speichern Sie sie an einem bekannten Speicherort (hier wird *C:\\temp\\onpremtabledef.json* vorausgesetzt). Erstellen Sie die Tabelle in ADF mit dem folgenden Azure PowerShell-Cmdlet.
 
@@ -211,7 +215,7 @@ Geben Sie die Aktivitäten an, die zu der Pipeline gehören, und erstellen Sie d
 * Das Skript setzt voraus, dass der **Pipelinename** *AMLDSProcessPipeline* lautet.
 * Beachten Sie außerdem, dass wir die Häufigkeit auf eine tägliche Ausführung festgelegt haben und die Standardausführungszeit des Auftrags verwenden (12 Uhr UTC).
 
-> [AZURE.NOTE]  Die folgenden Verfahren verwenden Azure PowerShell zum Definieren und Erstellen der ADF-Pipeline. Diese Aufgabe können Sie allerdings auch über das Azure-Portal ausführen. Details finden Sie unter [Erstellen und Ausführen einer Pipeline](data-factory-use-onpremises-datasources.md#step-4-create-and-run-a-pipeline).
+> [AZURE.NOTE]  Die folgenden Verfahren verwenden Azure PowerShell zum Definieren und Erstellen der ADF-Pipeline. Diese Aufgabe können Sie allerdings auch über das Azure-Portal ausführen. Details finden Sie unter [Erstellen und Ausführen einer Pipeline](../data-factory/data-factory-use-onpremises-datasources.md#step-4-create-and-run-a-pipeline).
 
 Unter Verwendung der oben angegebenen Tabellendefinitionen wird die Pipeline-Definition für die ADF wie folgt angegeben:
 
@@ -301,4 +305,4 @@ Sobald die Pipeline ausgeführt wird, sollten Sie die Daten sehen können, die i
 
 Beachten Sie, dass wir nicht die Funktionalität von ADF zum inkrementellen Übertragen von Daten per Pipe genutzt haben. Weitere Detailinformationen zur Vorgehensweise sowie zu weiteren von ADF bereitgestellten Funktionen finden Sie in der [ADF-Dokumentation](https://azure.microsoft.com/services/data-factory/).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0211_2016-->

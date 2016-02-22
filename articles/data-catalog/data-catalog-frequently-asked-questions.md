@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
-   ms.date="11/20/2015"
+   ms.date="02/04/2016"
    ms.author="maroche"/>
 
 # Häufig gestellte Fragen zu Azure Data Catalog
@@ -41,10 +41,12 @@ Mit **Azure Data Catalog** werden Probleme bei der Ermittlung von Datenquellen u
 
 Während der Vorschauphase sind **Azure Data Catalog**-Dienste nur in den folgenden Rechenzentren verfügbar:
 
-- USA, Westen
-- USA, Osten
+- USA (West)
+- USA (Ost)
 - Westeuropa
+- Nordeuropa
 - Australien (Osten)
+- Südostasien
 
 ## F: Welche Grenzwerte gelten für die Anzahl der Datenassets in Azure Data Catalog?
 
@@ -80,11 +82,11 @@ Die spezifischen Eigenschaften variieren je nach Datenquelle, aber im Allgemeine
 - Datentypen von Attributen/Spalten
 - Beschreibung von Attributen/Spalten
 
-> [AZURE.IMPORTANT]Durch das Registrieren von Datenassets mit **Azure Data Catalog** werden Ihre Daten nicht in die Cloud verschoben oder kopiert. Beim Registrieren von Assets einer Datenquelle werden die Metadaten des Assets nach Azure kopiert, aber die eigentlichen Daten verbleiben am vorhandenen Speicherort der Datenquelle. Die einzige Ausnahme von dieser Regel ist, wenn ein Benutzer sich beim Registrieren von Assets zum Hochladen von Vorschaudatensätzen oder eines Datenprofils entscheidet. Beim Einschließen einer Vorschau werden bis zu 20 Datensätze aus jedem Asset kopiert und als Momentaufnahme in **Azure Data Catalog** gespeichert. Beim Einschließen eines Datenprofils werden aggregierte Informationen (z. B. die Größe von Tabellen, der Prozentsatz von NULL-Werten pro Spalte und die niedrigsten, höchsten und durchschnittlichen Werte für Spalten) berechnet und in die im Katalog gespeicherten Metadaten eingeschlossen.
+> [AZURE.IMPORTANT] Durch das Registrieren von Datenassets mit **Azure Data Catalog** werden Ihre Daten nicht in die Cloud verschoben oder kopiert. Beim Registrieren von Assets einer Datenquelle werden die Metadaten des Assets nach Azure kopiert, aber die eigentlichen Daten verbleiben am vorhandenen Speicherort der Datenquelle. Die einzige Ausnahme von dieser Regel ist, wenn ein Benutzer sich beim Registrieren von Assets zum Hochladen von Vorschaudatensätzen oder eines Datenprofils entscheidet. Beim Einschließen einer Vorschau werden bis zu 20 Datensätze aus jedem Asset kopiert und als Momentaufnahme in **Azure Data Catalog** gespeichert. Beim Einschließen eines Datenprofils werden aggregierte Informationen (z. B. die Größe von Tabellen, der Prozentsatz von NULL-Werten pro Spalte und die niedrigsten, höchsten und durchschnittlichen Werte für Spalten) berechnet und in die im Katalog gespeicherten Metadaten eingeschlossen.
 
 <br/>
 
-> [AZURE.NOTE]Für Datenquellen wie SQL Server Analysis Services, die über eine leistungsstarke **Description**-Eigenschaft verfügen, wird dieser Eigenschaftswert von der **Azure Data Catalog**-Veröffentlichungsanwendung extrahiert. Für relationale SQL Server-Datenbanken ohne leistungsstarke **Description**-Eigenschaft extrahiert die **Azure Data Catalog**-Veröffentlichungsanwendung den Wert für Objekte und Spalten aus der erweiterten ms\_description-Eigenschaft. Weitere Informationen finden Sie bei TechNet unter [Verwenden von erweiterten Eigenschaften für Datenbankobjekte](https://technet.microsoft.com/library/ms190243%28v=sql.105%29.aspx).
+> [AZURE.NOTE] Für Datenquellen wie SQL Server Analysis Services, die über eine leistungsstarke **Description**-Eigenschaft verfügen, wird dieser Eigenschaftswert von der **Azure Data Catalog**-Veröffentlichungsanwendung extrahiert. Für relationale SQL Server-Datenbanken ohne leistungsstarke **Description**-Eigenschaft extrahiert die **Azure Data Catalog**-Veröffentlichungsanwendung den Wert für Objekte und Spalten aus der erweiterten ms\_description-Eigenschaft. Weitere Informationen finden Sie bei TechNet unter [Verwenden von erweiterten Eigenschaften für Datenbankobjekte](https://technet.microsoft.com/library/ms190243%28v=sql.105%29.aspx).
 
 ## F: Wie lange sollte es dauern, bis neu registrierte Assets in Azure Data Catalog angezeigt werden?
 
@@ -147,4 +149,4 @@ Wenn Probleme auftreten oder falls Sie Hilfe mit der Vorschauversion von **Azure
 
 Wechseln Sie in das [Azure Data Catalog-Forum](http://go.microsoft.com/fwlink/?LinkID=616424&clcid=0x409). Fragen, die dort gestellt werden, werden in diesen Artikel aufgenommen.
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0211_2016-->

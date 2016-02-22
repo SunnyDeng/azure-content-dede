@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Datenstichproben im Azure-Blob-Speicher | Microsoft Azure" 
+	pageTitle="Datenstichproben in Azure Blob Storage | Microsoft Azure" 
 	description="Erstellen von Datenstichproben im Azure-Blobspeicher" 
 	services="machine-learning,storage" 
 	documentationCenter="" 
@@ -13,21 +13,26 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/20/2015" 
+	ms.date="02/07/2016" 
 	ms.author="sunliangms;fashah;garye;bradsev" />
 
 #<a name="heading"></a>Datenstichproben im Azure-Blob-Speicher
-
-Dieses **Menü** enthält Links zu Themen, die beschreiben, wie Datenstichproben aus verschiedenen Speicherumgebungen erstellt werden. Diese Aufgabe ist ein Teil des Cortana-Analyseprozesses (CAP).
-
-[AZURE.INCLUDE [cap-sample-data-selector](../../includes/cap-sample-data-selector.md)]
 
 ## Einführung
 
 Dieses Dokument behandelt das Erstellen von Stichproben aus Daten im Azure Blob-Speicher durch programmgesteuertes Herunterladen, um dann mit Python-Code Stichproben zu erstellen. Befolgen Sie dazu die folgenden Schritte:
 
+**Warum eine Datenstichprobe entnehmen?** Wenn das Dataset, das Sie analysieren möchten, groß ist, sollten Sie in der Regel eine Komprimierung der Daten durchführen, um eine geringere aber immer noch repräsentative Größe zu erhalten. Dies erleichtert das Verständnis der Daten, das Durchsuchen und die Funktionsverarbeitung. Die Funktion besteht innerhalb des Cortana-Analyseprozesses darin, schnell Prototypen der Funktionen zur Datenverarbeitung und Modelle für das maschinelle Lernen zu erstellen.
+
+Das nachstehende **Menü** enthält Links zu Themen, die beschreiben, wie Datenstichproben aus verschiedenen Speicherumgebungen erstellt werden.
+
+[AZURE.INCLUDE [cap-sample-data-selector](../../includes/cap-sample-data-selector.md)]
+
+Diese Datenstichprobenaufgabe ist ein Teil des [Cortana Analytics-Prozesses (CAP)](https://azure.microsoft.com/documentation/learning-paths/cortana-analytics-process/).
+
+
 ## Download und Downsampling von Daten
-1. Laden Sie die Daten aus dem Azure-Blobspeicher mithilfe des Blob-Diensts aus dem folgenden Python-Beispielcode herunter: 
+1. Laden Sie die Daten aus dem Azure-Blobspeicher mithilfe des Blobdiensts aus dem folgenden Python-Beispielcode herunter: 
 
 	    from azure.storage import BlobService
     	import tables
@@ -103,4 +108,4 @@ Mit dem folgenden Beispielcode können Sie ein Downsampling der Daten durchführ
 [reader]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_0211_2016-->

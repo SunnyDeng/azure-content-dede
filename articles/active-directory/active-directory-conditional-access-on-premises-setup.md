@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/24/2015"
+	ms.date="02/09/2016"
 	ms.author="femila"/>
 
 
@@ -119,7 +119,8 @@ Diese Anleitung hilft Ihnen bei der Integration Ihres Azure AD-Mandanten in das 
 5.	Führen Sie im Abschnitt **Bereitstellen und verwalten** die Schritte 1 bis 3 aus, um Azure Active Directory in Ihr lokales Verzeichnis zu integrieren.
   1.	Fügen Sie Domänen hinzu.
   2.	Installieren und Ausführen von Azure AD Connect: Installieren Sie Azure AD Connect, indem Sie die Anleitung unter [Benutzerdefinierte Installation von Azure AD Connect](active-directory-aadconnect-get-started-custom.md) verwenden.
-  3. Überprüfen und verwalten Sie die Verzeichnissynchronisierung. In diesem Schritt sind Anweisungen zum einmaligen Anmelden enthalten. >[AZURE.NOTE] Konfigurieren Sie die Partnerbeziehung mit AD FS wie im oben verlinkten Dokument beschrieben. >[AZURE.NOTE] Sie müssen keine Preview-Funktionen konfigurieren.
+  3. Überprüfen und verwalten Sie die Verzeichnissynchronisierung. In diesem Schritt sind Anweisungen zum einmaligen Anmelden enthalten.
+  >[AZURE.NOTE] Konfigurieren Sie die Partnerbeziehung mit AD FS, wie im oben verlinkten Dokument beschrieben.[AZURE.NOTE] Sie müssen keine Preview-Funktionen konfigurieren.
   
    
 
@@ -187,7 +188,7 @@ Diese URL kann auf unterschiedlichste Weise an die Benutzer kommuniziert werden.
 4. Melden Sie sich bei Aufforderung mit Ihren Anmeldeinformationen an. Das Gerät ist jetzt verknüpft.
 
 ###Verknüpfen eines Windows 7-Geräts mithilfe der Azure Active Directory-Geräteregistrierung
-Zum Registrieren von in eine Domäne eingebundenen Windows 7-Geräten müssen Sie das Geräteregistrierung-Softwarepaket bereitstellen. Das Softwarepaket heißt „Arbeitsplatzeinbindung für Windows 7“ und steht zum Download auf der [Microsoft Connect-Website](https://connect.microsoft.com/site1164) zur Verfügung. Eine Anleitung zum Verwenden des Pakets finden Sie unter [Konfigurieren der automatischen Geräteregistrierung für in eine Domäne eingebundene Windows 7-Geräte](active-directory-conditional-access-automatic-device-registration-windows7.md).
+Zum Registrieren von in eine Domäne eingebundenen Windows 7-Geräten müssen Sie das Geräteregistrierung-Softwarepaket bereitstellen. Das Softwarepaket heißt „Arbeitsplatzeinbindung für Windows 7“ und steht zum Download auf der [Microsoft Connect-Website](https://connect.microsoft.com/site1164) zur Verfügung. Eine Anleitung zum Verwenden des Pakets finden Sie unter [Konfigurieren der automatischen Geräteregistrierung für in eine Domäne eingebundene Windows 7-Geräte](active-directory-conditional-access-automatic-device-registration-windows7.md).
 
 ### Verknüpfen eines Android-Geräts mithilfe der Azure Active Directory-Geräteregistrierung
 
@@ -244,4 +245,8 @@ Wenn Benutzer auf Ihre Anwendung jetzt über ein Gerät zugreifen, das nicht unt
 
 ![Screenshot eines Fehlers, den Benutzer erhalten, wenn sie ihr Gerät nicht unter Azure AD registriert haben](./media/active-directory-conditional-access/error-azureDRS-device-not-registered.gif)
 
-<!---HONumber=AcomDC_0128_2016-->
+##Verwandte Artikel
+
+- [Artikelindex für die Anwendungsverwaltung in Azure Active Directory](active-directory-apps-index.md)
+
+<!---HONumber=AcomDC_0211_2016-->
