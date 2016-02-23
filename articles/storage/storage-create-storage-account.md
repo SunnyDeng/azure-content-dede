@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="01/26/2016"
+	ms.date="02/14/2016"
 	ms.author="robinsh"/>
 
 
@@ -28,7 +28,7 @@ Ein Azure-Speicherkonto bietet Ihnen Zugriff auf die Azure Blob-, Warteschlangen
 Zwei Typen von Speicherkonten stehen zur Verfügung:
 
 - Ein Standardspeicherkonto umfasst Blob-, Tabellen- und Warteschlangenspeicher.
-- Ein Storage Premium-Konto unterstützt aktuell ausschließlich Festplatten virtueller Azure-Computer. Eine ausführliche Übersicht über Azure Premium Storage finden Sie unter [Premium Storage: Hochleistungsspeicher für Workloads auf virtuellen Azure-Computern](storage-premium-storage-preview-portal.md).
+- Ein Storage Premium-Konto unterstützt aktuell ausschließlich Festplatten virtueller Azure-Computer. Eine ausführliche Übersicht über Azure Premium Storage finden Sie unter [Premium Storage: Hochleistungsspeicher für Workloads auf virtuellen Azure-Maschinen](storage-premium-storage.md).
 
 ## Speicherkontoabrechnung
 
@@ -39,9 +39,9 @@ Die Rechnungsstellung für Azure-Speicher basiert auf Ihrem Speicherkonto. Speic
 - Transaktionen beziehen sich auf alle Lese- und Schreibvorgänge im Azure-Speicher.
 - Datenausgang bezieht sich auf Daten, die aus einer Azure-Region übertragen werden. Wenn eine Anwendung, die nicht in der gleichen Region ausgeführt wird und entweder ein Clouddienst oder ein anderer Anwendungstyp ist, auf die Daten in Ihrem Speicherkonto zugreift, fallen Gebühren für den Datenausgang an. (Für Azure-Dienste können Sie Maßnahmen durchführen, um Daten und Dienste in den gleichen Rechenzentren zu gruppieren und so Datenausgangsgebühren zu reduzieren oder zu eliminieren.)  
 
-Die Seite [Azure-Preise](https://azure.microsoft.com/pricing/details/#storage) bietet detaillierte Preisinformationen für Speicherkapazität, Replikation und Transaktionen. Auf der Seite [Datenübertragungen – Preisübersicht](https://azure.microsoft.com/pricing/details/data-transfers/) finden Sie detaillierte Preisinformationen für den Datenausgang.
+Die Seite [Preise für Azure Storage](https://azure.microsoft.com/pricing/details/storage) bietet detaillierte Preisinformationen für Speicherkapazität, Replikation und Transaktionen. Auf der Seite [Datenübertragungen – Preisübersicht](https://azure.microsoft.com/pricing/details/data-transfers/) finden Sie detaillierte Preisinformationen für den Datenausgang.
 
-Weitere Informationen zu Kapazität und Leistungszielen von Speicherkonten finden Sie unter [Ziele für Skalierbarkeit und Leistung des Azure-Speichers](http://msdn.microsoft.com/library/azure/dn249410.aspx).
+Weitere Informationen zu Kapazität und Leistungszielen von Speicherkonten finden Sie unter [Ziele für Skalierbarkeit und Leistung des Azure-Speichers](storage-scalability-targets.md).
 
 > [AZURE.NOTE] Wenn Sie einen virtuellen Azure-Computer erstellen, wird für Sie automatisch ein Speicherkonto in der Bereitstellungsregion erstellt, falls Sie noch kein Speicherkonto in der entsprechenden Region haben. Es ist nicht erforderlich, den unten aufgeführten Schritten zum Anlegen eines Speicherkontos für die Festplatten Ihres virtuelles Computers zu folgen. Der Name des Speicherkontos basiert auf dem Namen des virtuellen Computers. In der [Dokumentation zu Virtual Machines](https://azure.microsoft.com/documentation/services/virtual-machines/) finden Sie weitere Einzelheiten.
 
@@ -61,7 +61,7 @@ Wenn Ihr Speicherkonto beispielsweise *meinspeicherkonto* heißt, dann sind die 
 
 Die URL für den Zugriff auf ein Objekt in einem Speicherkonto wird durch Anhängen des Objektstandorts im Speicherkonto an den Endpunkt generiert. Eine Blob-Adresse kann beispielsweise folgendes Format haben: http://*mystorageaccount*.blob.core.windows.net/*mycontainer*/*myblob*
 
-Sie können auch einen benutzerdefinierten Domänennamen konfigurieren, den Sie mit Ihrem Speicherkonto verwenden. Weitere Informationen finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für Blob-Daten in einem Azure-Speicherkonto](storage-custom-domain-name.md).
+Sie können auch einen benutzerdefinierten Domänennamen konfigurieren, den Sie mit Ihrem Speicherkonto verwenden. Details für klassische Speicherkonten finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für Ihren Blob Storage-Endpunkt](storage-custom-domain-name.md). Für ARM-Speicherkonten wurde diese Funktion im [Azure-Portal](https://portal.azure.com) noch nicht hinzugefügt, Sie können jedoch PowerShell für die Konfiguration verwenden. Weitere Informationen finden Sie unter dem Cmdlet [Set-AzureRmStorageAccount](https://msdn.microsoft.com/library/mt607146.aspx).
 
 ## Erstellen Sie ein Speicherkonto.
 
@@ -83,13 +83,13 @@ Sie können auch einen benutzerdefinierten Domänennamen konfigurieren, den Sie 
 
 	Der Standardtyp für ein Speicherkonto ist **Standard-RAGRS**. Dies ist ein Standardspeicherkonto mit schreibgeschützter georedundanter Replikation. Dieser Speicherkontotyp wird in eine sekundäre Region repliziert, die weit von der primären Region entfernt ist, und bietet Lesezugriff auf den sekundären Standort.
 
-	Weitere Details zu den Replikationsoptionen für Azure Storage finden Sie unter [Azure Storage-Replikation](storage-redundancy.md). Weitere Informationen zu Standard- und Premium-Speicherkonten finden Sie unter [Einführung in Storage](storage-introduction.md) und [Premium-Speicher: Hochleistungsspeicher für Arbeitslasten auf virtuellen Azure-Computern](storage-premium-storage-preview-portal.md)
+	Weitere Details zu den Replikationsoptionen für Azure Storage finden Sie unter [Azure Storage-Replikation](storage-redundancy.md). Weitere Informationen zu Standard- und Premium-Speicherkonten finden Sie unter [Einführung in Microsoft Azure Storage](storage-introduction.md) und [Premium-Speicher: Hochleistungsspeicher für Arbeitslasten auf virtuellen Azure-Computern](storage-premium-storage.md)
 
 6. Geben Sie an, ob Sie für die Diagnose Ihr Speicherkonto aktivieren möchten. Zur Diagnose gehören Protokollierung und Metriken der Speicheranalyse.
 
 7. Wenn Sie mehr als ein Azure-Abonnement besitzen, wird das Feld **Abonnement** angezeigt. Wählen Sie das Abonnement aus, in dem Sie das neue Speicherkonto erstellen möchten.
 
-8. Geben Sie eine neue Ressourcengruppe an, oder wählen Sie eine vorhandene Ressourcengruppe aus. Weitere Informationen zu Ressourcengruppen finden Sie unter [Verwenden des Azure-Portals zum Verwalten von Azure-Ressourcen](../azure-portal/resource-group-portal.md).
+8. Geben Sie eine neue Ressourcengruppe an, oder wählen Sie eine vorhandene Ressourcengruppe aus. Weitere Informationen zu Ressourcengruppen finden Sie unter [Verwenden des Azure-Portals zum Verwalten Ihrer Azure-Ressourcen](../azure-portal/resource-group-portal.md).
 
 9. Wählen Sie den geografischen Standort für das Speicherkonto aus.
 
@@ -99,7 +99,7 @@ Sie können auch einen benutzerdefinierten Domänennamen konfigurieren, den Sie 
 
 Wenn Sie ein Speicherkonto erstellen, generiert Azure zwei 512-Bit-Speicherzugriffsschlüssel, die für die Authentifizierung verwendet werden, wenn der Zugriff auf das Speicherkonto erfolgt. Durch Bereitstellen von zwei Speicherzugriffsschlüsseln ermöglicht Azure Ihnen das erneute Generieren der Schlüssel ohne Unterbrechung des Speicherdiensts oder Zugriff auf diesen Dienst.
 
-> [AZURE.NOTE] Sie sollten das Weitergeben von Speicherzugriffsschlüsseln an andere vermeiden. Um den Zugriff auf Speicherressourcen zu gewähren, ohne den Zugriffsschlüssel weiterzugeben, verwenden Sie eine *Shared Access Signature*. Eine Shared Access Signature (SAS) bietet Zugriff auf eine Ressource in Ihrem Konto für ein von Ihnen definiertes Zeitintervall und mit den von Ihnen festgelegten Berechtigungen. Weitere Informationen finden Sie im [SAS-Lernprogramm](storage-dotnet-shared-access-signature-part-1.md).
+> [AZURE.NOTE] Sie sollten das Weitergeben von Speicherzugriffsschlüsseln an andere vermeiden. Um den Zugriff auf Speicherressourcen zu gewähren, ohne den Zugriffsschlüssel weiterzugeben, verwenden Sie eine *Shared Access Signature*. Eine Shared Access Signature (SAS) bietet Zugriff auf eine Ressource in Ihrem Konto für ein von Ihnen definiertes Zeitintervall und mit den von Ihnen festgelegten Berechtigungen. Weitere Informationen finden Sie unter [Shared Access Signatures: Grundlagen zum SAS-Modell](storage-dotnet-shared-access-signature-part-1.md).
 
 ### Anzeigen und Kopieren von Speicherzugriffsschlüssel
 
@@ -137,7 +137,7 @@ Um ein Speicherkonto löschen zu können, das einer virtuellen Azure-Maschine zu
 
     Failed to delete storage account <vm-storage-account-name>. Unable to delete storage account <vm-storage-account-name>: 'Storage account <vm-storage-account-name> has some active image(s) and/or disk(s). Ensure these image(s) and/or disk(s) are removed before deleting this storage account.'.
 
-Führen Sie im klassischen Azure-Portal die folgenden Schritte aus, um einen Datenträger der virtuellen Maschine zu entfernen:
+Wenn das Speicherkonto das klassische Bereitstellungsmodell verwendet, können Sie den Datenträger der virtuellen Maschine entfernen, indem Sie folgende Schritte im [klassischen Azure-Portal](https://manage.windowsazure.com) ausführen:
 
 1. Navigieren Sie zum [klassischen Azure-Portal](https://manage.windowsazure.com).
 2. Navigieren Sie zur Registerkarte „Virtuelle Computer“.
@@ -145,13 +145,13 @@ Führen Sie im klassischen Azure-Portal die folgenden Schritte aus, um einen Dat
 4. Wählen Sie Ihren Datenträger aus, und klicken Sie dann auf „Datenträger löschen“.
 5. Um Datenträgerimages zu löschen, navigieren Sie zur Registerkarte „Images“. Löschen Sie alle unter dem Konto gespeicherten Images.
 
-Weitere Informationen finden Sie unter [Virtual Machines documentation](http://azure.microsoft.com/documentation/services/virtual-machines/) (Dokumentation zu virtuellen Maschinen).
+Weitere Informationen finden Sie unter [Dokumentation zu virtuellen Maschinen](http://azure.microsoft.com/documentation/services/virtual-machines/).
 
 ## Nächste Schritte
 
 - [Azure Storage-Replikation](storage-redundancy.md)
-- [Konfigurieren einer Verbindungszeichenfolge für Azure Storage](storage-configure-connection-string.md)
+- [Konfigurieren von Azure Storage-Verbindungszeichenfolgen](storage-configure-connection-string.md)
 - [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy.md)
 - Besuchen Sie den [Blog des Azure-Speicherteams](http://blogs.msdn.com/b/windowsazurestorage/).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

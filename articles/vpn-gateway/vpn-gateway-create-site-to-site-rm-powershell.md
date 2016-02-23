@@ -14,7 +14,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="02/04/2016"
+   ms.date="02/16/2016"
    ms.author="cherylmc"/>
 
 # Erstellen eines virtuellen Netzwerks mit einer Standort-zu-Standort-VPN-Verbindung mit PowerShell
@@ -38,12 +38,9 @@ Vergewissern Sie sich vor Beginn der Konfiguration, dass Sie über Folgendes ver
 - Eine externe öffentliche IP-Adresse für Ihr VPN-Gerät. Diese IP-Adresse darf sich nicht hinter einer NAT befinden.
 	
 - Ein Azure-Abonnement. Wenn Sie noch kein Abonnement haben, können Sie Ihre [MSDN-Abonnentenvorteile](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) aktivieren oder sich für eine [kostenlose Testversion](https://azure.microsoft.com/pricing/free-trial/) registrieren.
-
-## Installieren der PowerShell-Module
-
-Sie benötigen die neueste Version der PowerShell-Cmdlets für Azure-Ressourcen-Manager zum Konfigurieren der Verbindung.
 	
-[AZURE.INCLUDE [vpn-gateway-ps-rm-howto](../../includes/vpn-gateway-ps-rm-howto-include.md)]
+- Sie müssen die aktuelle Version der PowerShell-Cmdlets für Azure-Ressourcen-Manager installieren. Weitere Informationen zur Installation der PowerShell-Cmdlets finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
+
 
 ## 1\. Verbinden mit Ihrem Abonnement 
 
@@ -63,8 +60,7 @@ Geben Sie das Abonnement an, das Sie verwenden möchten.
 
 ## 2\. Erstellen eines virtuelles Netzwerks und eines Gatewaysubnetzes
 
-- Wenn Sie bereits über ein virtuelles Netzwerk mit einem Gatewaysubnetz verfügen, können Sie direkt mit **Schritt 3: Hinzufügen Ihres lokalen Standorts** fortfahren. 
-- Falls Sie bereits über ein virtuelles Netzwerk verfügen und Sie dem VNet ein Gatewaysubnetz hinzufügen möchten, helfen Ihnen die Informationen unter [Hinzufügen eines Gatewaysubnetzes zu einem VNet](#gatewaysubnet) weiter.
+Die folgenden Beispiele zeigen ein Gateway-Subnetz von /28. Es ist zwar möglich, ein kleines Gateway-Subnetz von /29 zu erstellen, empfohlen wird dies jedoch nicht. Wir empfehlen, ein Gateway-Subnetz von /27 oder größer (/26, /25 usw.) zu erstellen, um zusätzlichen Funktionsanforderungen gerecht zu werden. Wenn Sie bereits über ein virtuelles Netzwerk mit einem Gatewaysubnetz von /29 oder größer verfügen, können Sie direkt mit **Schritt 3: Hinzufügen Ihres lokalen Standorts** fortfahren.
 
 ### So erstellen Sie ein virtuelles Netzwerk und ein Gatewaysubnetz
 
@@ -82,11 +78,11 @@ Im folgenden Beispiel werden ein virtuelles Netzwerk mit dem Namen *testvnet* un
 	$subnet2 = New-AzureRmVirtualNetworkSubnetConfig -Name 'Subnet1' -AddressPrefix '10.0.1.0/28'
 	New-AzureRmVirtualNetwork -Name testvnet -ResourceGroupName testrg -Location 'West US' -AddressPrefix 10.0.0.0/16 -Subnet $subnet1, $subnet2
 
-### <a name="gatewaysubnet"></a>So fügen Sie einem VNet ein Gatewaysubnetz hinzu (optional)
+### <a name="gatewaysubnet"></a>So fügen Sie einem virtuellen Netzwerk, das Sie bereits erstellt haben, ein Gateway-Subnetz hinzu
 
 Dieser Schritt ist nur erforderlich, wenn Sie einem VNet ein Gatewaysubnetz hinzufügen müssen, das Sie zuvor erstellt haben.
 
-Wenn Sie bereits über ein vorhandenes virtuelles Netzwerk verfügen und ein Gatewaysubnetz hinzufügen möchten, können Sie Ihr Gatewaysubnetz anhand des folgenden Beispiels erstellen. Achten Sie darauf, dass Sie das Gatewaysubnetz "GatewaySubnet" nennen. Wenn Sie einen anderen Namen verwenden, erstellen Sie zwar ein Subnetz, aber es wird von Azure nicht als Gatewaysubnetz angesehen.
+Sie können das Gateway-Subnetz anhand des folgenden Beispiels erstellen. Achten Sie darauf, dass Sie das Gatewaysubnetz "GatewaySubnet" nennen. Wenn Sie einen anderen Namen verwenden, erstellen Sie zwar ein Subnetz, aber es wird von Azure nicht als Gatewaysubnetz angesehen.
 
 	$vnet = Get-AzureRmVirtualNetwork -ResourceGroupName testrg -Name testvnet
 	Add-AzureRmVirtualNetworkSubnetConfig -Name 'GatewaySubnet' -AddressPrefix 10.0.3.0/28 -VirtualNetwork $vnet
@@ -143,8 +139,8 @@ In diesem Schritt erstellen Sie das Gateway des virtuellen Netzwerks. Beachten S
 
 Verwenden Sie die folgenden Werte:
 
-- Der Gatewaytyp ist *Vpn*.
-- „VpnType“ kann routenbasiert* (in einigen Dokumentationen als dynamisches Gateway bezeichnet) oder *richtlinienbasiert* sein (in einigen Dokumentationen als statisches Gateway bezeichnet). Weitere Informationen zu VPN-Gatewaytypen finden Sie unter [Informationen zu VPN-Gateways](vpn-gateway-about-vpngateways.md). 	
+- Der **- GatewayType** für eine Standort-zu-Standort-Konfiguration ist **Vpn**. Der Gatewaytyp ist immer spezifisch für die Konfiguration, die Sie implementieren. Beispielsweise können andere Gatewaykonfigurationen „-GatewayType ExpressRoute“ oder „GatewayType VNet2VNet“ erfordern. **Standort-zu-Standort erfordert Vpn**.
+- **-VpnType** kann **routenbasiert** (in einigen Dokumentationen als dynamisches Gateway bezeichnet) oder **richtlinienbasiert** sein (in einigen Dokumentationen als statisches Gateway bezeichnet). Weitere Informationen zu VPN-Gatewaytypen finden Sie unter [Informationen zu VPN-Gateways](vpn-gateway-about-vpngateways.md). 	
 
 		New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg -Location 'West US' -IpConfigurations $gwipconfig -GatewayType Vpn -VpnType RouteBased
 
@@ -246,4 +242,4 @@ Sie können das folgende Beispiel als Hilfe verwenden.
 
 Sobald die Verbindung hergestellt ist, können Sie Ihren virtuellen Netzwerken virtuelle Computer hinzufügen. Für diese Schritte finden Sie Informationen unter [Erstellen eines virtuellen Computers](../virtual-machines/virtual-machines-windows-tutorial.md).
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0218_2016-->

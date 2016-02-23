@@ -25,11 +25,11 @@ So konfigurieren Sie die Verbindungszeichenfolge in der Azure-Dienstkonfiguratio
 
 5.  Wählen Sie aus, ob das Ziel der Speicheremulator (simulierter Microsoft Azure-Speicher auf dem lokalen Computer) oder ein Speicherkonto in der Cloud sein soll. Der Code in diesem Leitfaden kann mit beiden Optionen verwendet werden.
 
-	> [AZURE.NOTE]Sie können den Speicheremulator als Ziel festlegen, um jegliche Kosten im Zusammenhang mit Azure Storage zu vermeiden. Wenn jedoch ein Azure-Speicherkonto in der Cloud das Ziel sein soll, sind die Kosten für das Ausführen dieses Lernprogramms vernachlässigbar.
+	> [AZURE.NOTE] Sie können den Speicheremulator als Ziel festlegen, um jegliche Kosten im Zusammenhang mit Azure Storage zu vermeiden. Wenn jedoch ein Azure-Speicherkonto in der Cloud das Ziel sein soll, sind die Kosten für das Ausführen dieses Lernprogramms vernachlässigbar.
 
-	Wenn Sie ein Speicherkonto in der Cloud als Ziel verwenden, geben Sie den primären Zugriffsschlüssel für dieses Speicherkonto ein. Informationen zum Kopieren des primären Zugriffsschlüssels über das Azure-Verwaltungsportal finden Sie unter [Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln](storage-create-storage-account.md#view-copy-and-regenerate-storage-access-keys).
+	Wenn Sie ein Speicherkonto in der Cloud als Ziel verwenden, geben Sie den primären Zugriffsschlüssel für dieses Speicherkonto ein. Informationen zum Kopieren des primären Zugriffsschlüssels über das Azure-Verwaltungsportal finden Sie unter [Anzeigen und Kopieren von Speicherzugriffsschlüsseln](../articles/storage/storage-create-storage-account.md#view-and-copy-storage-access-keys).
 
-	> [AZURE.NOTE]Ihr Speicherkontoschlüssel ähnelt dem Stammkennwort für das Speicherkonto. Achten Sie darauf, Ihren Schlüssel zu schützen. Geben Sie ihn nicht an andere Benutzer weiter, und speichern Sie ihn nicht in einer Nur-Text-Datei, auf die andere Benutzer zugreifen können. Generieren Sie Ihren Schlüssel mithilfe des Verwaltungsportals erneut, wenn Sie der Meinung sind, dass er nicht mehr sicher ist.
+	> [AZURE.NOTE] Ihr Speicherkontoschlüssel ähnelt dem Stammkennwort für das Speicherkonto. Achten Sie darauf, Ihren Schlüssel zu schützen. Geben Sie ihn nicht an andere Benutzer weiter, und speichern Sie ihn nicht in einer Nur-Text-Datei, auf die andere Benutzer zugreifen können. Generieren Sie Ihren Schlüssel mithilfe des Verwaltungsportals erneut, wenn Sie der Meinung sind, dass er nicht mehr sicher ist.
 	
     ![Zielumgebung auswählen][connection-string4]
 
@@ -63,4 +63,4 @@ Sie sind nun bereit für die Gewusst-wie-Aufgaben in diesem Leitfaden.
 
 [Configuring Connection Strings]: http://msdn.microsoft.com/library/azure/ee758697.aspx
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0218_2016-->

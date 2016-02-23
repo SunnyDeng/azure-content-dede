@@ -46,7 +46,7 @@ Eine Service Fabric-Anwendung kann einen oder mehrere Dienste enthalten, die jew
 
 	![Dialogfeld „Neuer Dienst“ in Visual Studio][2]
 
-	>[AZURE.NOTE]Weitere Informationen zu den Optionen finden Sie unter [Auswählen eines Frameworks](service-fabric-choose-framework.md).
+	>[AZURE.NOTE] Weitere Informationen zu den Optionen finden Sie unter [Auswählen eines Frameworks](service-fabric-choose-framework.md).
 
 	Visual Studio erstellt das Anwendungsprojekt und das Projekt für den zustandsbehafteten Dienst und zeigt sie im Projektmappen-Explorer an.
 
@@ -68,7 +68,7 @@ Jetzt ist eine Anwendung vorhanden, die Sie ausführen können.
 
 1. Drücken Sie in Visual Studio F5, um die Anwendung für das Debuggen bereitzustellen.
 
-	>[AZURE.NOTE]Dies dauert beim ersten Mal eine Weile, da Visual Studio einen lokalen Cluster für die Entwicklung erstellt. Ein lokaler Cluster führt den gleichen Plattformcode aus, den Sie in einem Cluster mit mehreren Computern erstellen, aber auf einem einzelnen Computer. Der Status der Clustererstellung wird im Ausgabefenster von Visual Studio angezeigt.
+	>[AZURE.NOTE] Dies dauert beim ersten Mal eine Weile, da Visual Studio einen lokalen Cluster für die Entwicklung erstellt. Ein lokaler Cluster führt den gleichen Plattformcode aus, den Sie in einem Cluster mit mehreren Computern erstellen, aber auf einem einzelnen Computer. Der Status der Clustererstellung wird im Ausgabefenster von Visual Studio angezeigt.
 
 	Wenn der Cluster bereit ist, erhalten Sie eine Benachrichtigung von der Taskleistenanwendung Local Cluster Manager, die im SDK enthalten ist.
 
@@ -86,7 +86,7 @@ Jetzt ist eine Anwendung vorhanden, die Sie ausführen können.
 
 	Der lokale Cluster enthält fünf Knoten, die auf einem einzelnen Computer gehostet werden. Er imitiert einen Cluster mit fünf Knoten auf unterschiedlichen Computern. Deaktivieren Sie einen der Knoten im lokalen Cluster, um den Verlust eines Computers zu simulieren, und führen Sie gleichzeitig den Visual Studio-Debugger aus.
 
-    >[AZURE.NOTE]Von der Projektvorlage ausgegebene Anwendungsdiagnoseereignisse verwenden die `ServiceEventSource`-Klasse. Weitere Informationen finden Sie unter [Lokales Überwachen und Diagnostizieren von Diensten](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally).
+    >[AZURE.NOTE] Von der Projektvorlage ausgegebene Anwendungsdiagnoseereignisse verwenden die `ServiceEventSource`-Klasse. Weitere Informationen finden Sie unter [Lokales Überwachen und Diagnostizieren von Diensten](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md).
 
 4. Suchen Sie in Ihrem Dienstprojekt die Klasse, die von „StatefulService“ abgeleitet ist (z. B. „MyStatefulService“), und legen Sie in der ersten Zeile der `RunAsync`-Methode einen Haltepunkt fest.
 
@@ -142,4 +142,4 @@ Jetzt ist eine Anwendung vorhanden, die Sie ausführen können.
 [systray-launch-sfx]: ./media/service-fabric-create-your-first-application-in-visual-studio/launch-sfx.png
 [diagnostic-events-viewer-detail-post-failover]: ./media/service-fabric-create-your-first-application-in-visual-studio/diagnostic-events-viewer-detail-post-failover.png
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0218_2016-->

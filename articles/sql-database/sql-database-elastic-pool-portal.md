@@ -4,15 +4,15 @@
 	keywords="Skalierbare Datenbank, Datenbankkonfiguration"
 	services="sql-database"
 	documentationCenter=""
-	authors="stevestein"
-	manager="jeffreyg"
+	authors="sidneyh"
+	manager="jhubbard"
 	editor=""/>
 
 <tags
 	ms.service="sql-database"
 	ms.devlang="NA"
-	ms.date="02/02/2015"
-	ms.author="sstein"
+	ms.date="02/12/2016"
+	ms.author="sidneyh"
 	ms.workload="data-management"
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="NA"/>
@@ -30,7 +30,10 @@ Dieser Artikel beschreibt, wie Sie im Azure-Portal einen skalierbaren [Pool für
 > [AZURE.NOTE] Pools für elastische Datenbanken sind derzeit als Vorschauversion ausschließlich für Server mit SQL-Datenbank V12 verfügbar. Wenn Sie über einen SQL-Datenbank V11-Server verfügen, können Sie in einem Schritt [mithilfe von PowerShell auf V12 aktualisieren und einen Pool erstellen](sql-database-upgrade-server-powershell.md).
 
 
-Bevor Sie beginnen, benötigen Sie eine Datenbank auf einem SQL-Datenbank V12-Server. Wenn Sie keine besitzen, finden Sie Informationen zum Erstellen einer Datenbank in weniger als fünf Minuten unter [Erstellen Sie Ihre erste Azure SQL-Datenbank](sql-database-get-started.md). Oder wenn Sie bereits über einen SQL-Datenbank V11-Server verfügen, können Sie [im Portal auf V12 aktualisieren](sql-database-v12-upgrade.md), dann zurückkommen, und diese Anleitung zum Erstellen eines Pools befolgen.
+## Voraussetzungen
+
+* Eine Datenbank auf einem SQL-Datenbank-V12-Server Wenn Sie keine besitzen, finden Sie Informationen zum Erstellen einer Datenbank in weniger als fünf Minuten unter [Erstellen Sie Ihre erste Azure SQL-Datenbank](sql-database-get-started.md). 
+* Oder wenn Sie bereits über einen SQL-Datenbank V11-Server verfügen, können Sie [im Portal auf V12 aktualisieren](sql-database-v12-plan-prepare-upgrade.md), dann zurückkommen, und diese Anleitung zum Erstellen eines Pools befolgen.
 
 
 ## Schritt 1: Erstellen eines neuen Pools
@@ -173,8 +176,7 @@ Nach dem Erstellen eines Pools können Sie folgende Aktionen ausführen:
 
 Wenn Sie einen vorhandenen Pool auswählen, können Sie die Ressourcenverwendung des Pools sehen. Klicken Sie auf das Diagramm **Ressourcenverwendung**, um das Blatt **Metrik** zu öffnen, auf dem Sie die Diagrammanzeige anpassen und Warnungen einrichten können.
 
-![Überwachen eines elastischen Pools][4] 
-![Ressourcenverwendung][6]
+![Überwachen eines elastischen Pools][4] ![Ressourcenverwendung][6]
 
 Klicken Sie auf **Diagramm bearbeiten**, um Parameter hinzuzufügen, mit denen Sie Telemetriedaten für den Pool problemlos anzeigen können.
 
@@ -201,4 +203,4 @@ Nach dem Erstellen eines Pools für elastische Datenbanken können Sie die Daten
 [7]: ./media/sql-database-elastic-pool-portal/edit-chart.png
 [10]: ./media/sql-database-elastic-pool-portal/star.png
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0218_2016-->

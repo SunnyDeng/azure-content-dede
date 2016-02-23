@@ -10,7 +10,7 @@
 <tags
    ms.service="multiple"
    ms.devlang="multiple"
-   ms.topic="article"
+   ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="big-compute"
    ms.date="01/26/2016"
@@ -38,7 +38,7 @@ Erfahren Sie mehr über Big Compute-Optionen in Azure, und wählen Sie den richt
 
 * [Tutorial: Erste Schritte mit der Azure Batch-Bibliothek für .NET](batch-dotnet-get-started.md)
 
-* [Batch-Forum](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=azurebatch)
+* [Batch-Forum](https://social.msdn.microsoft.com/Forums/home?forum=azurebatch)
 
 * [Batch-Videos](https://azure.microsoft.com/documentation/videos/index/?services=batch)
 
@@ -83,8 +83,7 @@ Verwenden Sie die folgenden Azure-Vorlagen zum Bereitstellen von Linux-HPC-Clust
 
 * [MS-MPI-Referenz](https://msdn.microsoft.com/library/dn473458.aspx)
 
-* [MPI-Forum](https://social.microsoft.com/Forums/de-DE/home?forum=windowshpcmpi)
-
+* [MPI-Forum](https://social.microsoft.com/Forums/home?forum=windowshpcmpi)
 
 ## Rechenintensive Instanzen
 
@@ -137,4 +136,4 @@ Azure bietet zum Ausführen Ihrer Linux- und Windows-HPC-Workloads [eine Reihe u
 * Die neuesten Ankündigungen finden Sie im [Blog des HPC- und Batch-Teams von Microsoft](http://blogs.technet.com/b/windowshpc/) und im [Azure-Blog](https://azure.microsoft.com/blog/tag/hpc/).
 * Weitere Informationen finden Sie auch unter [Neuigkeiten bei Batch](https://azure.microsoft.com/updates/?service=batch) oder indem Sie den [RSS-Feed](https://azure.microsoft.com/updates/feed/?service=batch) abonnieren.
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0218_2016-->

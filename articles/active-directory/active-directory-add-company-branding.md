@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="01/26/2016" 
+	ms.date="02/12/2016" 
 	ms.author="MarkVi"/>
 
 # Hinzufügen Ihres Unternehmensbranding zur Anmelde- und Zugriffsbereichsseite
@@ -186,4 +186,4 @@ Hintergrundfarbe auf der Anmeldeseite | Die Hintergrundfarbe auf der Anmeldeseit
 [7]: ./media/active-directory-add-company-branding/SignInPage_aftercustomization_croppedtop.png
 [8]: ./media/active-directory-add-company-branding/APBranding.png
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

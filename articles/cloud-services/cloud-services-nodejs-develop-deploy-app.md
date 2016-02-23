@@ -51,7 +51,7 @@ Die Anwendung ist eine einfache "Hello World"-Anwendung:
 Führen Sie folgende Aufgaben durch, um ein neues Azure-Clouddienstprojekt sowie ein einfaches Node.js-Gerüst zu erstellen:
 
 
-1. Führen Sie **Azure PowerShell** als Administrator aus. (Suchen Sie im **Startmenü** oder auf der **Startseite** nach **Azure PowerShell**.)
+1. Führen Sie **Windows PowerShell** als Administrator aus. (Suchen Sie im **Startmenü** oder auf der **Startseite** nach **Windows PowerShell**.)
 
 2.  [Verbinden Sie PowerShell](powershell-install-configure.md#how-to-connect-to-your-subscription) mit Ihrem Abonnement.
 3.  Geben Sie das folgende PowerShell-Cmdlet ein, um das Projekt zu erstellen:
@@ -198,4 +198,4 @@ Weitere Informationen finden Sie im [Node.js Developer Center](/develop/nodejs/)
 [powershell-menu]: ./media/cloud-services-nodejs-develop-deploy-app/azure-powershell-start.png
  
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0218_2016-->

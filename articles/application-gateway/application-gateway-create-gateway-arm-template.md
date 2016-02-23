@@ -13,7 +13,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/10/2015"
+   ms.date="02/02/2016"
    ms.author="joaoma"/>
 
 
@@ -42,7 +42,7 @@ In diesem Szenario führen Sie Folgendes durch:
 - Sie erstellen ein Subnetz mit dem Namen Appgatewaysubnet, für das 10.0.0.0/28 als CIDR-Block verwendet wird.
 - Sie richten zwei zuvor konfigurierte Back-End-IP-Adressen für die Webserver ein, die zum Durchführen des Lastenausgleichs verwendet werden sollen. In diesem Vorlagenbeispiel werden die Back-End-IP-Adressen 10.0.1.10 und 10.0.1.11 verwendet.
 
->[AZURE.NOTE]Dies sind die Parameter für diese Vorlage. Zum Anpassen der Vorlage können Sie Regeln, den Listener und das SSL-Element ändern, mit dem „azuredeploy.json“ geöffnet wird.
+>[AZURE.NOTE] Dies sind die Parameter für diese Vorlage. Zum Anpassen der Vorlage können Sie Regeln, den Listener und das SSL-Element ändern, mit dem „azuredeploy.json“ geöffnet wird.
 
 
 
@@ -73,7 +73,7 @@ Sie können die vorhandene Azure-Ressourcen-Manager-Vorlage herunterladen, um ei
 	| **backendaddress2** | IP-Adresse des zweiten Webservers |
 
 
->[AZURE.IMPORTANT]Azure-Ressourcen-Manager-Vorlagen, die in GitHub verwaltet werden, können sich im Laufe der Zeit ändern. Überprüfen Sie die Vorlage stets, bevor Sie sie verwenden.
+>[AZURE.IMPORTANT] Azure-Ressourcen-Manager-Vorlagen, die in GitHub verwaltet werden, können sich im Laufe der Zeit ändern. Überprüfen Sie die Vorlage stets, bevor Sie sie verwenden.
 
 6. Überprüfen Sie den Inhalt unter **resources**, und beachten Sie Folgendes:
 
@@ -284,4 +284,4 @@ Weitere Informationen zu Lastenausgleichsoptionen im Allgemeinen finden Sie unte
 - [Azure-Lastenausgleich](https://azure.microsoft.com/documentation/services/load-balancer/)
 - [Azure Traffic Manager](https://azure.microsoft.com/documentation/services/traffic-manager/)
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0218_2016-->

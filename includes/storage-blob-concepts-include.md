@@ -28,7 +28,7 @@ Der BLOB-Dienst umfasst die folgenden Komponenten:
     
 	*Seitenblobs* können bis zu 1 TB groß sein und sind besonders für häufige Lese-und Schreibvorgänge effizient. Virtuelle Azure-Computer verwenden Seitenblobs als Betriebssystem und Datenträger.
 
-	Weitere Informationen über Blobs finden Sie unter [Grundlegendes zu Blockblobs, Seitenblobs und Anfügeblobs](https://msdn.microsoft.com/library/azure/ee691964.aspx).
+	Weitere Informationen über Blobs finden Sie unter [Grundlegendes zu Blockblobs, Anfügeblobs und Seitenblobs](https://msdn.microsoft.com/library/azure/ee691964.aspx).
 
 ## Benennen von Containern und Blobs und verweisen auf diese
 
@@ -71,4 +71,4 @@ Sie können das Trennzeichen verwenden, um Blobs hierarchisch aufzulisten.
 
 [Blob1]: ./media/storage-blob-concepts-include/blob1.jpg
 
-<!----HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0218_2016-->

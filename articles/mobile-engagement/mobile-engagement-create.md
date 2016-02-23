@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="mobile-windows-store"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="11/22/2015"  
-	ms.author="juliako"/>
+	ms.date="02/17/2016"  
+	ms.author="piyushjo"/>
 
 
 # Erstellen einer Azure Mobile Engagement-App
@@ -23,7 +23,7 @@ Dieser Artikel beschreibt, wie Sie mithilfe der Methode **Schnellerfassung** ein
 
 Beachten Sie, dass Sie ein Mindestmaß an „einfacher Integration“ hinzufügen müssen, um Daten für Ihre Anwendung erfassen und Pushbenachrichtigungen senden zu können. Die vollständige Dokumentation zur Integration finden Sie im Artikel [Integrieren von Mobile Engagement](mobile-engagement-windows-store-integrate-engagement.md).
 
-> [AZURE.IMPORTANT]Sie benötigen ein aktives Azure-Konto, um Azure Mobile Engagement-Tutorials absolvieren zu können. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-DE%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F" target="_blank">Kostenlose Azure-Testversion</a>.
+> [AZURE.IMPORTANT] Sie benötigen ein aktives Azure-Konto, um Azure Mobile Engagement-Tutorials absolvieren zu können. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-DE%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F" target="_blank">Kostenlose Azure-Testversion</a>.
 
 ##Einrichten von Mobile Engagement für Ihre mobile App in Azure
 
@@ -48,4 +48,4 @@ Im Mobile Engagement-Portal können Sie Segmente analysieren, erstellen und verw
 
 [Erste Schritte mit Azure Mobile Engagement](mobile-engagement-windows-store-dotnet-get-started.md) (Sie können oben auf der Seite andere mobile Plattformen auswählen).
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0218_2016-->
