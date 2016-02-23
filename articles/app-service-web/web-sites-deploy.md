@@ -18,7 +18,7 @@
     
 # Bereitstellen der App in Azure App Service
 
-Dieser Artikel hilft Ihnen beim Ermitteln der besten Option für die Bereitstellung der Dateien für Ihre Web-App, das Back-End der mobilen App oder der API-App für [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714). Er enthält auch Links zu den entsprechenden Artikeln und Blogs mit Gewusst-wie-Anleitungen für die jeweils bevorzugte Option.
+Dieser Artikel hilft Ihnen beim Ermitteln der besten Option für die Bereitstellung der Dateien für Ihre Web-App, das Back-End der mobilen App oder der API-App für [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714). Er enthält auch Links zu den entsprechenden Artikeln und Blogs mit "Gewusst wie"-Anleitungen für die jeweils bevorzugte Option.
 
 ## <a name="overview"></a>Übersicht über die Bereitstellungsprozesse
 
