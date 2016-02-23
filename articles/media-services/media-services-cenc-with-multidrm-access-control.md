@@ -242,7 +242,7 @@ Die Implementierung umfasst die folgenden Schritte:
 **Widevine**|Chrome unter Windows 10|Erfolg|Kein Erfolg
 **FairPlay** |Noch nicht festgelegt||
 
-George Trifonov vom Azure Media Services-Team hat einen Blog mit detaillierten Schritten zur Einrichtung von Azure Active Directory für eine ASP.NET MVC-Player-App geschrieben: [Integrate Azure Media Services OWIN MVC based app with Azure Active Directory and restrict content key delivery based on JWT claims](http://gtrifonov.com/2015/01/24/mvc-owin-azure-media-services-ad-integration/).
+George Trifonov vom Azure Media Services-Team hat einen Blog mit detaillierten Schritten zur Einrichtung von Azure Active Directory für eine ASP.NET MVC-Player-App geschrieben: [Integrieren einer Azure Media Services-OWIN MVC-basierten App in Azure Active Directory und Einschränken der Übermittlung von Inhaltsschlüsseln auf Grundlage von JWT-Ansprüchen](http://gtrifonov.com/2015/01/24/mvc-owin-azure-media-services-ad-integration/).
 
 Ein weiterer Blog von George hat den Titel: [JWT token Authentication in Azure Media Services and Dynamic Encryption](http://gtrifonov.com/2015/01/03/jwt-token-authentication-in-azure-media-services-and-dynamic-encryption/). Und hier ist sein [Beispiel für die Azure AD-Integration in die Azure Media Services-Schlüsselbereitstellung](https://github.com/AzureMediaServicesSamples/Key-delivery-with-AAD-integration/).
 
