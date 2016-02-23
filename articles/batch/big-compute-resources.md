@@ -38,7 +38,7 @@ Erfahren Sie mehr über Big Compute-Optionen in Azure, und wählen Sie den richt
 
 * [Tutorial: Erste Schritte mit der Azure Batch-Bibliothek für .NET](batch-dotnet-get-started.md)
 
-* [Batch-Forum](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=azurebatch)
+* [Batch-Forum](https://social.msdn.microsoft.com/Forums/home?forum=azurebatch)
 
 * [Batch-Videos](https://azure.microsoft.com/documentation/videos/index/?services=batch)
 
@@ -83,7 +83,7 @@ Verwenden Sie die folgenden Azure-Vorlagen zum Bereitstellen von Linux-HPC-Clust
 
 * [MS-MPI-Referenz](https://msdn.microsoft.com/library/dn473458.aspx)
 
-* [MPI-Forum](https://social.microsoft.com/Forums/de-DE/home?forum=windowshpcmpi)
+* [MPI-Forum](https://social.microsoft.com/Forums/home?forum=windowshpcmpi)
 
 ## Rechenintensive Instanzen
 
