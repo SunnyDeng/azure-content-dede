@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article" 
-	ms.date="01/28/2015"
+	ms.date="01/28/2016"
 	ms.author="anhoh"/>
 
 # Anzeigen, Bearbeiten, Erstellen und Hochladen von JSON-Dokumenten mithilfe von DocumentDB-Dokument-Explorer #
@@ -84,7 +84,7 @@ Mit Dokument-Explorer können Sie problemlos Dokumente erstellen, bearbeiten und
 
 	![Screenshot des Dokument-Explorers – Ansicht der Dokumenteigenschaften](./media/documentdb-view-JSON-document-explorer/documentproperties.png)
 
-	> [AZURE.NOTE] Die Zeitstempeleigenschaft (_ts) wird intern als Epochenzeit dargestellt, im Dokument-Explorer wird der Wert jedoch in einem vom Menschen lesbaren GMT-Format angezeigt.
+	> [AZURE.NOTE] Die Zeitstempeleigenschaft (\_ts) wird intern als Epochenzeit dargestellt, im Dokument-Explorer wird der Wert jedoch in einem vom Menschen lesbaren GMT-Format angezeigt.
 
 ##<a id="Navigate"></a>Navigationsoptionen und erweiterte Einstellungen für den Dokument-Explorer##
 
@@ -145,4 +145,4 @@ Dokument-Explorer unterstützt die Sammelerfassung von vorhandenen JSON-Dokument
 
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

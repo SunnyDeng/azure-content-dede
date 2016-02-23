@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="get-started-article" 
-	ms.date="12/29/2015" 
+	ms.date="02/11/2016" 
 	ms.author="tomfitz"/>
 
 
@@ -21,11 +21,12 @@
 
 ## Einführung
 
-Um eine Ressource (z. B. ein Datenbankserver, eine Datenbank oder eine Web-App) in Microsoft Azure zu verwalten, konnten Sie Vorgänge bisher nur an jeweils einer Ressource ausführen. Wenn Sie eine komplexe Anwendung verwendet haben, die aus mehreren Ressourcen besteht, mussten Sie Änderungen an der Infrastruktur der Anwendung manuell koordinieren. Im Azure-Portal können Sie den Azure-Ressourcen-Manager nutzen, um Ressourcengruppen zu erstellen, mit denen alle Ressourcen einer Anwendung zusammen bereitgestellt und verwaltet werden können.
+Azure-Ressourcen-Manager ermöglicht Ihnen die Bereitstellung und Verwaltung Ihrer Lösungen über Ressourcengruppen. Dieses Thema enthält eine Übersicht über die Nutzung von Ressourcengruppen im Azure-Portal. Normalerweise enthält eine Ressourcengruppe Ressourcen, die sich auf eine bestimmte Anwendung beziehen. Eine Gruppe kann z. B. eine Web-App enthalten, die Ihre öffentliche Website hostet, eine SQL-Datenbank, in der von der Website verwendete relationale Daten gespeichert sind, und ein Speicherkonto, in dem nicht-relationale Ressourcen gespeichert sind. Jede Ressource in einer Ressourcengruppe sollte den gleichen Lebenszyklus aufweisen. Weitere Informationen zum Ressourcen-Manager finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md).
 
-Normalerweise enthält eine Ressourcengruppe Ressourcen, die sich auf eine bestimmte Anwendung beziehen. Eine Gruppe kann z. B. eine Web-App enthalten, die Ihre öffentliche Website hostet, eine SQL-Datenbank, in der von der Website verwendete relationale Daten gespeichert sind, und ein Speicherkonto, in dem nicht-relationale Ressourcen gespeichert sind. Jede Ressource in einer Ressourcengruppe sollte den gleichen Lebenszyklus aufweisen. Weitere Informationen zum Ressourcen-Manager finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md).
+Das Portal und der Ressourcen-Manager werden derzeit nicht von allen Diensten unterstützt. Verwenden Sie für diese Dienste das [klassische Portal](https://manage.windowsazure.com). Den Status der einzelnen Dienste finden Sie im [Verfügbarkeitsdiagramm für das Azure-Portal](https://azure.microsoft.com/features/azure-portal/availability/).
 
-Dieses Thema enthält eine Übersicht über die Nutzung von Ressourcengruppen im Azure-Portal. Das Portal und der Ressourcen-Manager werden derzeit nicht von allen Diensten unterstützt. Verwenden Sie für diese Dienste das [klassische Portal](https://manage.windowsazure.com). Den Status der einzelnen Dienste finden Sie im [Verfügbarkeitsdiagramm für das Azure-Portal](https://azure.microsoft.com/features/azure-portal/availability/).
+Sie können Ressourcen auch über Azure PowerShell und die Azure-Befehlszeilenschnittstelle verwalten. Weitere Informationen zur Verwendung dieser Schnittstellen finden Sie unter [Verwenden von Azure PowerShell mit dem Azure-Ressourcen-Manager](../powershell-azure-resource-manager.md) und [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Azure-Ressourcen-Manager](../xplat-cli-azure-resource-manager.md).
+
 
 ## Erstellen von Ressourcengruppen und Ressourcen
 
@@ -37,13 +38,17 @@ Sie vergeben einen Namen und Speicherort und wählen, falls erforderlich, ein Ab
 
 ![Gruppenwerte festlegen](./media/resource-group-portal/set-group-properties.png)
 
-Es ist aber nicht erforderlich, explizit eine leere Ressourcengruppe zu erstellen. Beim Erstellen einer neuen Ressource können Sie entweder eine neue Ressourcengruppe erstellen oder eine vorhandene Ressourcengruppe verwenden. Die folgende Abbildung veranschaulicht, wie Sie eine neue Web-App erstellen und dabei eine vorhandene Ressourcengruppe auswählen oder eine neue erstellen.
+Sie können Ihre Ressourcen in der von Ihnen erstellten Ressourcengruppe bereitstellen. Die folgende Abbildung zeigt, wie eine neue Web-App in einer vorhandenen Ressourcengruppe erstellt wird.
 
 ![Ressourcengruppe erstellen](./media/resource-group-portal/select-existing-group.png)
 
+Sie können aber auch beim Bereitstellen Ihrer Ressourcen eine neue Ressourcengruppe erstellen. Wählen Sie anstelle einer vorhandenen Ressourcengruppe in Ihrem Abonnement die Option **Neu**, und geben Sie der Ressourcengruppe einen Namen.
+
+![neue Ressourcengruppe erstellen](./media/resource-group-portal/select-new-group.png)
+
 ## Durchsuchen von Ressourcengruppen
 
-Sie können alle Ressourcengruppen durchsuchen, indem Sie auf **Alle durchsuchen** und **Ressourcengruppen** klicken.
+Sie können alle Ressourcengruppen durchsuchen, indem Sie auf **Ressourcengruppen** klicken.
 
 ![Ressourcengruppen durchsuchen](./media/resource-group-portal/browse-groups.png)
 
@@ -54,6 +59,20 @@ Wenn Sie eine bestimmte Ressourcengruppe auswählen, wird ein Ressourcengruppen-
 Das Ressourcengruppen-Blatt bietet auch eine zusammenfassende Ansicht Ihrer Abrechnungs- und Überwachungsinformationen für alle Ressourcen in der Ressourcengruppe.
 
 ![Überwachung und Abrechnung](./media/resource-group-portal/monitoring-billing.png)
+
+## Anzeigen Ihres Abonnements und der Kosten
+
+Sie können Informationen zu Ihrem Abonnement und die zusammengefassten Kosten für alle Ihre Ressourcen anzeigen. Wählen Sie **Abonnements** und das Abonnement, das Sie anzeigen möchten. Möglicherweise steht nur ein Abonnement zur Auswahl.
+
+![Abonnement](./media/resource-group-portal/select-subscription.png)
+
+Im Blatt „Abonnement“ wird eine Verbrauchsrate angezeigt.
+
+![Verbrauchsrate](./media/resource-group-portal/burn-rate.png)
+
+Eine Aufschlüsselung der Kosten nach Ressourcentyp wird ebenfalls angezeigt.
+
+![Ressourcenkosten](./media/resource-group-portal/cost-by-resource.png)
 
 ## Anpassen der Benutzeroberfläche
 
@@ -131,13 +150,13 @@ Sie können Ressourcengruppen und Ressourcen Tags zuordnen, um sie logisch zu or
 
 Wenn Sie eine Bereitstellung ausführen möchten, ohne eine der Vorlagen des Marketplace zu nutzen, können Sie eine angepasste Vorlage erstellen, mit der die Infrastruktur für Ihre Lösung definiert wird. Weitere Informationen zu Vorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](../resource-group-authoring-templates.md).
 
-Wählen Sie zum Bereitstellen einer angepassten Vorlage über das Portal die Optionen **Neu**, **Marketplace** und **Alles**.
-
-![Vorlagenbereitstellung finden](./media/resource-group-portal/launch-template.png)
-
-Suchen Sie nach **Vorlagenbereitstellung**, und wählen Sie die Option in der zurückgegebenen Liste aus.
+Wählen Sie zum Bereitstellen einer benutzerdefinierten Vorlage über das Portal die Option **Neu**, und starten Sie eine Suche nach **Bereitstellungen von Vorlagen**, bis Sie sie aus den Optionen auswählen können.
 
 ![Vorlagenbereitstellung suchen](./media/resource-group-portal/search-template.png)
+
+Wählen Sie **Bereitstellungen von Vorlagen** aus den verfügbaren Ressourcen aus.
+
+![Vorlagenbereitstellung auswählen](./media/resource-group-portal/select-template.png)
 
 Nach dem Starten der Vorlagenbereitstellung können Sie die benutzerdefinierte Vorlage erstellen und Werte für die Bereitstellung festlegen.
 
@@ -146,12 +165,8 @@ Nach dem Starten der Vorlagenbereitstellung können Sie die benutzerdefinierte V
 ## Nächste Schritte
 Erste Schritte
 
-- Eine Einführung in die Konzepte des Ressourcen-Managers finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md).  
+- Eine Einführung in die Konzepte des Ressourcen-Managers finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md).
 - Eine Einführung zur Verwendung von Azure PowerShell für das Bereitstellen von Ressourcen finden Sie unter [Verwenden von Windows PowerShell mit dem Azure-Ressourcen-Manager](../powershell-azure-resource-manager.md).
-- Eine Einführung zur Verwendung der Azure-Befehlszeilenschnittstelle für das Bereitstellen von Ressourcen finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit der Azure-Ressourcenverwaltung](../xplat-cli-azure-resource-manager.md). 
-  
+- Eine Einführung zur Verwendung der Azure-Befehlszeilenschnittstelle für das Bereitstellen von Ressourcen finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit der Azure-Ressourcenverwaltung](../xplat-cli-azure-resource-manager.md).
 
-
- 
-
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0218_2016-->

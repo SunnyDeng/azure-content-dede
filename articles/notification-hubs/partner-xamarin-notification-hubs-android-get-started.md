@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-xamarin-android"
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
-	ms.date="11/17/2015"
+	ms.date="02/16/2016"
 	ms.author="wesmc"/>
 
 # Erste Schritte mit Notification Hubs mit Xamarin für Android
@@ -41,7 +41,6 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
 + [Xamarin.Android]
 + Ein aktives Google-Konto
-+ [Azure Mobile Services-Komponente]
 + [Azure Messaging-Komponente]
 + [Google Cloud Messaging Client-Komponente]
 
@@ -423,7 +422,7 @@ In diesem Abschnitt senden Sie Benachrichtigungen mithilfe einer .NET-Konsolen-A
         private static async void SendNotificationAsync()
         {
             NotificationHubClient hub = NotificationHubClient.CreateClientFromConnectionString("<connection string with full access>", "<hub name>");
-            await hub.SendGcmNativeNotificationAsync("{ \"data\" : {\"message\":\"Hello from Azure!\"}}");
+            await hub.SendGcmNativeNotificationAsync("{ "data" : {"message":"Hello from Azure!"}}");
         }
 
 6. Fügen Sie folgende Zeilen zur **Main**-Methode hinzu:
@@ -519,8 +518,7 @@ In diesem einfachen Beispiel haben Sie Benachrichtigungen an alle Android-Gerät
 [Xamarin.NotificationHub GitHub page]: https://github.com/SaschaDittmann/Xamarin.NotificationHub
 [GitHub]: http://go.microsoft.com/fwlink/p/?LinkId=331329
 [Xamarin.Android]: http://xamarin.com/download/
-[Azure Mobile Services-Komponente]: http://components.xamarin.com/view/azure-mobile-services/
 [Google Cloud Messaging Client-Komponente]: http://components.xamarin.com/view/GCMClient/
 [Azure Messaging-Komponente]: http://components.xamarin.com/view/azure-messaging
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

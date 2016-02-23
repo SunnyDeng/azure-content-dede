@@ -14,8 +14,8 @@
 	ms.workload="identity" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="01/25/2016" 
+	ms.topic="get-started-article" 
+	ms.date="02/10/2016" 
 	ms.author="femila"/>
 
 # Windows 10 für Unternehmen: Möglichkeiten der geschäftlichen Nutzung von Geräten
@@ -35,4 +35,4 @@ Die folgenden Themen bieten Einblicke in unterschiedliche Funktionen von Windows
 | Bereitstellung | [Verwendungsszenarios und Bereitstellungsaspekte für Azure AD Join](active-directory-azureadjoin-deployment-aadjoindirect.md) <br><br> [Verbinden von in die Domäne eingebundenen Geräten mit Azure AD für Windows 10-Funktionen](active-directory-azureadjoin-devices-group-policy.md)<br><br>[Microsoft Passport for Work in Unternehmen aktivieren](active-directory-azureadjoin-passport-deployment.md)<br><br> [Enable Enterprise State Roaming for Windows 10](active-directory-windows-enterprise-state-roaming-overview.md) (Aktivieren des Zustandsroamings für Windows 10 in Unternehmen)<br><br> |
 | Benutzeraufgaben | [Einrichten eines neuen Windows 10-Geräts mit Azure AD während des Setups](active-directory-azureadjoin-user-frx.md) <br><br> [Einrichten eines Windows 10-Geräts mit Azure AD in den Einstellungen)](active-directory-azureadjoin-user-upgrade.md) <br><br> [Verknüpfen eines persönlichen Windows 10-Geräts mit Ihrer Organisation](active-directory-azureadjoin-personal-device.md) |
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0218_2016-->

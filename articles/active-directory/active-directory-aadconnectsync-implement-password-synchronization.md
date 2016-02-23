@@ -6,14 +6,13 @@
 	authors="markusvi"
 	manager="stevenpo"
 	editor=""/>
-
 <tags
 	ms.service="active-directory"
 	ms.workload="identity"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="article"
-	ms.date="01/21/2016"
+	ms.topic="get-started-article"
+	ms.date="02/12/2016"
 	ms.author="markusvi;andkjell"/>
 
 
@@ -160,4 +159,4 @@ Das Erzwingen einer vollständigen Synchronisierung aller Kennwörter sollte in 
 * [Azure AD Connect-Synchronisierung: Anpassen von Synchronisierungsoptionen](active-directory-aadconnectsync-whatis.md)
 * [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

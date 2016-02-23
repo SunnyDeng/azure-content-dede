@@ -1,20 +1,19 @@
 <properties
-   pageTitle="Azure AD Connect-Synchronisierung: Grundlegendes zur Standardkonfiguration | Microsoft Azure"
-   description="Dieser Artikel beschreibt die Standardkonfiguration der Azure AD Connect-Synchronisierung."
-   services="active-directory"
-   documentationCenter=""
-   authors="andkjell"
-   manager="stevenpo"
-   editor=""/>
-
+    pageTitle="Azure AD Connect-Synchronisierung: Grundlegendes zur Standardkonfiguration | Microsoft Azure"
+    description="Dieser Artikel beschreibt die Standardkonfiguration der Azure AD Connect-Synchronisierung."
+    services="active-directory"
+    documentationCenter=""
+    authors="andkjell"
+    manager="stevenpo"
+    editor=""/>
 <tags
-   ms.service="active-directory"
-   ms.workload="identity"
-   ms.tgt_pltfrm="na"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.date="01/21/2016"
-   ms.author="andkjell"/>
+    ms.service="active-directory"
+    ms.workload="identity"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+	ms.topic="get-started-article"
+    ms.date="02/12/2016"
+    ms.author="andkjell"/>
 
 # Azure AD Connect-Synchronisierung: Grundlegendes zur Standardkonfiguration
 
@@ -241,4 +240,4 @@ Jetzt wissen wir genug über Synchronisierungsregeln, um die Funktionsweise der 
 * [Azure AD Connect-Synchronisierung: Anpassen von Synchronisierungsoptionen](active-directory-aadconnectsync-whatis.md)
 * [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

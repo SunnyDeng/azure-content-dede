@@ -12,7 +12,7 @@
 	ms.workload="na"
 	ms.tgt_pltfrm="na"
 	ms.devlang="multiple"
-	ms.topic="article"
+	ms.topic="get-started-article"
 	ms.date="12/09/2015"
 	ms.author="sethm"/>
 
@@ -56,4 +56,4 @@ Weitere Informationen zu Service Bus Messaging finden Sie in folgenden Themen.
 - [Verwenden von Service Bus-Themen](service-bus-dotnet-how-to-use-topics-subscriptions.md)
  
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0218_2016-->

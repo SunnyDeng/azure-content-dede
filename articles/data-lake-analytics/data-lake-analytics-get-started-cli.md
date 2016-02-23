@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
-   ms.date="11/02/2015"
+   ms.date="02/10/2016"
    ms.author="jgao"/>
 
 # Lernprogramm: Erste Schritte mit Azure Data Lake Analytics mithilfe der Azure-Befehlszeilenschnittstelle (CLI)
@@ -39,7 +39,7 @@ In diesem Tutorial entwickeln Sie einen Auftrag, bei dem eine Datei mit tabulato
 Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
 - **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/).
-- **Azure-Befehlszeilenschnittstelle**. Weitere Informationen finden Sie unter [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](xplat-cli.md).
+- **Azure-Befehlszeilenschnittstelle**. Weitere Informationen finden Sie unter [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md).
 	- Laden Sie für diese Demo die **Vorabversion** von [Azure Command-line Tools (CLI) for Data Lake](https://github.com/MicrosoftBigData/AzureDataLake/releases) herunter, und installieren Sie sie.
 - **Authentifizierung**. Verwenden Sie den folgenden Befehl:
 
@@ -53,7 +53,7 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
 Zum Ausführen von Aufträgen ist ein Data Lake Analytics-Konto erforderlich. Zum Erstellen eines Data Lake Analytics-Kontos müssen Sie Folgendes angeben:
 
-- **Azure-Ressourcengruppe**: Es muss ein Data Lake Analytics-Konto in einer Azure-Ressourcengruppe erstellt werden. Mit dem [Azure-Ressourcen-Manager](resource-group-overview.md) können Sie mit den Ressourcen in Ihrer Anwendung als Gruppe arbeiten. Sie können alle Ressourcen für Ihre Anwendung in einem einzigen, koordinierten Vorgang bereitstellen, aktualisieren oder löschen.  
+- **Azure-Ressourcengruppe**: Es muss ein Data Lake Analytics-Konto in einer Azure-Ressourcengruppe erstellt werden. Mit dem [Azure-Ressourcen-Manager](../resource-group-overview.md) können Sie mit den Ressourcen in Ihrer Anwendung als Gruppe arbeiten. Sie können alle Ressourcen für Ihre Anwendung in einem einzigen, koordinierten Vorgang bereitstellen, aktualisieren oder löschen.  
 
 	So listen Sie die Ressourcengruppen in Ihrem Abonnement auf:
     
@@ -75,7 +75,7 @@ Zum Ausführen von Aufträgen ist ein Data Lake Analytics-Konto erforderlich. Zu
 
 		azure datalake store account create "<Data Lake Store Account Name>" "<Azure Location>" "<Resource Group Name>"
 
-	> [AZURE.NOTE]Der Data Lake-Kontoname darf nur Kleinbuchstaben und Zahlen enthalten.
+	> [AZURE.NOTE] Der Data Lake-Kontoname darf nur Kleinbuchstaben und Zahlen enthalten.
 
 
 
@@ -88,7 +88,7 @@ Zum Ausführen von Aufträgen ist ein Data Lake Analytics-Konto erforderlich. Zu
 
 ![Data Lake Analytics-Beispielkonto](./media/data-lake-analytics-get-started-cli/data-lake-analytics-show-account-cli.png)
 
-> [AZURE.NOTE]Der Data Lake Analytics-Kontoname darf nur Kleinbuchstaben und Zahlen enthalten.
+> [AZURE.NOTE] Der Data Lake Analytics-Kontoname darf nur Kleinbuchstaben und Zahlen enthalten.
 
 
 ## Hochladen von Daten in den Data Lake-Speicher
@@ -102,7 +102,7 @@ Zum Hochladen von Dateien über die Befehlszeilenschnittstelle verwenden Sie den
   	azure datalake store filesystem import "<Data Lake Store Account Name>" "<Path>" "<Destination>"
   	azure datalake store filesystem list "<Data Lake Store Account Name>" "<Path>"
 
-Data Lake Analytics hat auch Zugriff auf den Azure-Blob-Speicher. Informationen zum Hochladen von Daten nach Azure Blob Storage finden Sie unter [Verwenden der Azure-CLI mit Azure Storage](storage-azure-cli.md).
+Data Lake Analytics hat auch Zugriff auf den Azure-Blob-Speicher. Informationen zum Hochladen von Daten nach Azure Blob Storage finden Sie unter [Verwenden der Azure-CLI mit Azure Storage](../storage/storage-azure-cli.md).
 
 ## Übermitteln von Data Lake Analytics-Aufträgen
 
@@ -139,7 +139,7 @@ Die Data Lake Analytics-Aufträge werden in der Sprache U-SQL geschrieben. Weite
     
         wasb://<BlobContainerName>@<StorageAccountName>.blob.core.windows.net/Samples/Data/SearchLog.tsv
 
-    >[AZURE.NOTE]Azure-BLOB-Container mit öffentlichen Blobs oder Zugriffsberechtigungen für öffentliche Container werden derzeit nicht unterstützt.
+    >[AZURE.NOTE] Azure-BLOB-Container mit öffentlichen Blobs oder Zugriffsberechtigungen für öffentliche Container werden derzeit nicht unterstützt.
 
 	
 **So übermitteln Sie den Auftrag**
@@ -169,4 +169,4 @@ Nachdem der Auftrag abgeschlossen wurde, können Sie die folgenden Cmdlets verwe
 - Informationen zu Verwaltungsaufgaben finden Sie unter [Verwalten von Azure Data Lake Analytics mithilfe des Azure-Portals](data-lake-analytics-manage-use-portal.md).
 - Eine Übersicht über Data Lake Analytics finden Sie unter [Azure Data Lake Analytics – Übersicht](data-lake-analytics-overview.md).
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0218_2016-->

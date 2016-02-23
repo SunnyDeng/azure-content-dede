@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="01/26/2016"
+	ms.date="02/11/2016"
 	ms.author="awills"/>
 
 # Überwachen der Verfügbarkeit und Reaktionsfähigkeit von Websites
@@ -129,7 +129,7 @@ Um einen mehrstufigen Ttest zu erstellen, zeichnen das Szenario mit Visual Studi
 
 Beachten Sie, dass Sie keine codierten Funktionen in den Tests verwenden können: Die Szenarioschritte müssen als Skript in der Webtest-Datei enthalten sein.
 
-#### 1. Aufzeichnen eines Szenarios
+#### 1\. Aufzeichnen eines Szenarios
 
 Verwenden Sie Visual Studio Enterprise oder Ultimate, um eine Websitzung aufzuzeichnen.
 
@@ -160,7 +160,7 @@ Verwenden Sie Visual Studio Enterprise oder Ultimate, um eine Websitzung aufzuze
     ![Öffnen Sie in Visual Studio die WEBTEST-Datei, und klicken Sie auf "Ausführen".](./media/app-insights-monitor-web-app-availability/appinsights-71webtest-multi-vs-run.png)
 
 
-#### 2. Hochladen des Webtests in Application Insights
+#### 2\. Hochladen des Webtests in Application Insights
 
 1. Erstellen Sie im Application Insights-Portal einen neuen Webtest.
 
@@ -207,19 +207,22 @@ Webtest-Plug-Ins bieten dazu die entsprechende Möglichkeit.
 
 Laden Sie nun den Test in das Portal hoch. Bei jeder Ausführung des Tests werden die dynamischen Werte verwendet.
 
-## OAuth-Anmeldung
+## Umgang mit der Anmeldung
 
-Wenn sich die Benutzer bei Ihrer App mit dem OAuth-Kennwort (beispielsweise für Microsoft, Google oder Facebook) anmelden, können Sie in Ihrem mehrstufigen Webtest die Anmeldung mithilfe des SAML-Plug-Ins simulieren.
+Wenn sich Benutzer bei Ihrer App anmelden, stehen Ihnen eine Reihe von Optionen für die Anmeldungssimulation zur Verfügung, damit Sie Seiten testen können, die auf die Anmeldung folgen. Der verwendete Ansatz hängt vom Typ der von der App bereitgestellten Sicherheit ab.
 
-![Beispielwebtest für OAuth](./media/app-insights-monitor-web-app-availability/81.png)
+In allen Fällen sollten Sie ein Konto erstellen, das nur Testzwecken dient. Schränken Sie die Berechtigungen des Kontos möglichst so ein, dass es schreibgeschützt ist.
 
-Im Beispieltest werden die folgenden Schritte ausgeführt:
+* Einfacher Benutzername und einfaches Kennwort: Zeichnen Sie einfach einen Webtest auf die übliche Weise auf. Löschen Sie zuerst Cookies.
+* SAML-Authentifizierung Dazu können Sie das für Webtests verfügbare SAML-Plug-In verwenden.
+* Geheimer Clientschlüssel: Wenn die Anmelderoute Ihrer App einen geheimen Clientschlüssel umfasst, verwenden Sie diesen. Azure Active Directory Premium stellt diese Funktion bereit. 
+* Offene Authentifizierung – z. B. Anmeldung mit Ihrem Microsoft- oder Google-Konto Viele Apps, die OAuth verwenden, stellen die Alternative mit dem geheimen Clientschlüssel bereit; die erste Taktik besteht also darin, dies zu untersuchen. Ist bei Ihrem Test die Anmeldung mit OAuth erforderlich, ist die allgemeine Vorgehensweise wie folgt:
+ * Verwenden Sie ein Tool wie Fiddler, um den Datenverkehr zwischen Ihrem Webbrowser, der Authentifizierungswebsite und Ihrer App zu untersuchen. 
+ * Führen Sie mindestens zwei Anmeldungen auf verschiedenen Computern bzw. in verschiedenen Browsern oder mit großen zeitlichen Abständen durch (damit Token ablaufen können).
+ * Vergleichen Sie verschiedene Sitzungen, um das von der authentifizierenden Website zurückgegebene Token zu identifizieren, das nach der Anmeldung dann an Ihren App-Server übergeben wird. 
+ * Zeichnen Sie einen Webtests mit Visual Studio auf. 
+ * Parametrisieren Sie die Token, indem Sie den Parameter festlegen, wenn das Token vom Authentifikator zurückgegeben wird, und ihn in der Abfrage an die Website verwenden. (Visual Studio versucht, den Test zu parametrisieren, die Token werden jedoch nicht ordnungsgemäß parametrisiert.)
 
-1. Fragen Sie mit der zu testenden Web-App die Adresse des OAuth-Endpunkts ab.
-2. Melden Sie sich mit dem SAML-Plug-In an.
-3. Führen Sie den Rest des Tests in angemeldetem Zustand aus.
-
-Das SAML-Plug-In legt die Variable `Assert` fest, die in Schritt 2 verwendet wird.
 
 ## <a name="edit"></a> Bearbeiten oder Deaktivieren eines Tests
 
@@ -263,4 +266,4 @@ Sie können Webtests beispielsweise deaktivieren, während Sie Wartungsarbeiten 
 [qna]: app-insights-troubleshoot-faq.md
 [start]: app-insights-overview.md
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0218_2016-->

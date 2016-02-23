@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="01/05/2016"
+	ms.date="02/11/2016"
 	ms.author="curtand"/>
 
 # Beziehung zwischen Azure-Abonnements und Azure Active Directory
@@ -34,7 +34,8 @@ Azure erlaubte ursprünglich nur den Zugriff durch Benutzer mit Microsoft-Konten
 
 Hier meldet sich z. B. ein Benutzer mit einem Microsoft-Konto beim klassischen Azure-Portal an.
 
-> [AZURE.NOTE]Damit die Anmeldung beim klassischen Azure-Portal erfolgen kann, muss msmith@hotmail.com über ein Abonnement für Azure verfügen. Das Konto muss einem Dienstadministrator oder Co-Administrator des Abonnements gehören.
+> [AZURE.NOTE]
+Damit die Anmeldung beim klassischen Azure-Portal erfolgen kann, muss msmith@hotmail.com über ein Abonnement für Azure verfügen. Das Konto muss einem Dienstadministrator oder Co-Administrator des Abonnements gehören.
 
 ![][1]
 
@@ -104,19 +105,33 @@ Wenn Sie sich für Office 365 mit einem Geschäfts- oder Schulkonto registriert
 
 Führen Sie diese Schritte aus, um beide Verzeichnisse im klassischen Azure-Portal zu verwalten.
 
-> [AZURE.NOTE]Diese Schritte können nur ausgeführt werden, während ein Benutzer mit einem Microsoft-Konto angemeldet ist. Wenn der Benutzer mit einem Geschäfts- oder Schulkonto angemeldet ist, steht die Option **Vorhandenes Verzeichnis verwenden** nicht zur Verfügung. Ein Geschäfts- oder Schulkonto kann nur mithilfe seines Stammverzeichnisses authentifiziert werden (dies ist das Verzeichnis, in dem das Geschäfts- oder Schulkonto gespeichert wird, das im Besitz der Organisation oder Schule ist).
+> [AZURE.NOTE]
+Diese Schritte können nur ausgeführt werden, während ein Benutzer mit einem Microsoft-Konto angemeldet ist. Wenn der Benutzer mit einem Geschäfts- oder Schulkonto angemeldet ist, steht die Option **Vorhandenes Verzeichnis verwenden** nicht zur Verfügung. Ein Geschäfts- oder Schulkonto kann nur mithilfe seines Stammverzeichnisses authentifiziert werden (dies ist das Verzeichnis, in dem das Geschäfts- oder Schulkonto gespeichert wird, das im Besitz der Organisation oder Schule ist).
 
 1. Melden Sie sich mit Ihrem Microsoft-Konto beim klassischen Azure-Portal an.
+
 2. Klicken Sie auf **Neu** -> **App Services** -> **Active Directory** -> **Verzeichnis** -> **Benutzerdefiniert erstellen**.
+
 3. Klicken Sie auf **Vorhandenes Verzeichnis verwenden**, und aktivieren Sie das Kontrollkästchen **Ich bin jetzt für die Abmeldung bereit**, um die Aktion abzuschließen.
+
 4. Melden Sie sich beim klassischen Azure-Portal mit einem Konto an, das über globale Administratorrechte für das Geschäfts- oder Schulverzeichnis verfügt.
+
 5. Wenn Sie aufgefordert werden, **das Verzeichnis "Contoso" mit Azure zu verwenden**, klicken Sie auf **Weiter**.
+
 6. Klicken Sie auf **Jetzt abmelden**.
+
 7. Melden Sie sich mit Ihrem Microsoft-Konto wieder beim klassischen Azure-Portal an. Beide Verzeichnisse werden in der Active Directory-Erweiterung angezeigt.
 
 
 ## Nächste Schritte
-[Als Organisation für Azure registrieren](sign-up-organization.md)
+
+- Weitere Informationen zum Ändern von Administratoren für ein Azure-Abonnement finden Sie unter [Hinzufügen oder Ändern von Azure-Administratorrollen](../billing-add-change-azure-subscription-administrator.md).
+
+- Informationen dazu, wie der Zugriff auf Ressourcen in Microsoft Azure gesteuert wird, finden Sie unter [Grundlegendes zum Zugriff auf Ressourcen in Azure](active-directory-understanding-resource-access.md)
+
+- Informationen zum Zuweisen von Rollen in Azure AD finden Sie unter [Zuweisen von Administratorrollen in Azure Active Directory](active-directory-assign-admin-roles.md)
+
+- [Als Organisation für Azure registrieren](sign-up-organization.md)
 
 
 <!--Image references-->
@@ -124,4 +139,4 @@ Führen Sie diese Schritte aus, um beide Verzeichnisse im klassischen Azure-Port
 [2]: ./media/active-directory-how-subscriptions-associated-directory/WAAD_OrgAccountSubscription.png
 [3]: ./media/active-directory-how-subscriptions-associated-directory/WAAD_SignInDisambiguation.PNG
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0218_2016-->

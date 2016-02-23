@@ -12,213 +12,127 @@
  ms.tgt_pltfrm="na"
  ms.devlang="dotnet"
  ms.topic="hero-article"
- ms.date="12/04/2015"
+ ms.date="02/17/2016"
  ms.author="krisragh"/>
 
-# Erste Schritte mit Azure Scheduler im klassischen Azure-Portal
+# Erste Schritte mit Azure Scheduler im Azure-Portal
 
-## Erste Schritte
+Das Erstellen geplanter Aufträge in Azure Scheduler ist einfach. In diesem Tutorial erfahren Sie, wie ein Auftrag erstellt wird. Außerdem erhalten Sie Informationen zu den Überwachungs- und Verwaltungsfunktionen von Scheduler.
 
-Sie können ganz einfach Aufträge und Auftragssammlungen für Azure Scheduler erstellen. Dieses Tutorial erläutert das Erstellen der Auftragssammlung zum Speichern von Aufträgen sowie das Erstellen eines Auftrags in einer Auftragssammlung und bietet eine Übersicht über die verfügbaren Aufgaben für die Auftragsüberwachung und -verwaltung. In diesem Lernprogramm werden keine Azure-Vorkenntnisse vorausgesetzt.
+## Erstellen eines Auftrags
 
-Wenn Sie das klassische Azure-Portal zum ersten Mal öffnen, ist automatisch die Registerkarte **ALLE ELEMENTE** geöffnet. Die Spalten auf der Registerkarte **ALL ITEMS** können sortiert werden. Klicken Sie zum Anzeigen Ihrer Scheduler-Aufträge und -Auftragssammlungen auf die Registerkarte **SCHEDULER**.
+1.  Melden Sie sich beim [Azure-Portal](https://portal.azure.com/) an.  
 
-![][1]
+2.  Klicken Sie auf **+ Neu** > geben Sie im Suchfeld _Scheduler_ ein > wählen Sie in den Ergebnissen **Scheduler** > klicken Sie auf **Erstellen**.
 
-## Erstellen einer Auftragssammlung und eines Auftrags
+   ![][marketplace-create]
 
-1.  Melden Sie sich beim [klassischen Azure-Portal](https://manage.windowsazure.com/) an.  
+3.  In diesem Beispiel erstellen wir einen einfachen Auftrag mit einer GET-Anforderung für „http://www.microsoft.com/“. Geben Sie auf dem Bildschirm **Scheduler-Auftrag** die folgenden Informationen ein:
 
-2.  Klicken Sie auf **App Services** > **Neu erstellen** > **Scheduler** und dann auf **Benutzerdefiniert erstellen**. <br /><br /> ![][2]
+    1.  **Name:** `getmicrosoft`  
 
-3.  Wählen Sie unter **Auftragssammlung** den Namen der vorhandenen Auftragssammlung in der Dropdownliste **Auftragssammlung** aus. Wenn noch keine Auftragssammlung vorhanden ist, der Sie den Auftrag hinzufügen möchten, wählen Sie **Neu erstellen**, und geben Sie einen Namen für Ihre neue Auftragssammlung ein.<br /><br /> ![][3]
+    2.  **Abonnement:** Ihr Azure-Abonnement
 
-4.  Wählen Sie unter **Region** die geografische Region für die Auftragssammlung aus.
+    3.  **Auftragssammlung:** Wählen Sie eine vorhandene Auftragssammlung aus, oder klicken Sie auf **Neu erstellen** > geben Sie einen Namen ein.
 
-5.  Klicken Sie auf den Pfeil, um die Auftragssammlung zu erstellen und mit der Auftragserstellung zu beginnen.
+4.  Definieren Sie dann unter **Aktionseinstellungen** die folgenden Werte:
 
-6.  In diesem Beispiel erstellen wir einen einfachen Auftrag mit einer GET-Anforderung für „http://www.microsoft.com/“. Legen Sie auf dem Bildschirm **Auftragsaktion** die folgenden Werte für die angeforderten Formularfelder fest:
+    1.  **Aktionstyp:** ` HTTP`  
 
-    1.  **Name:** ` getmicrosoft`  
+    2.  **Methode:** `GET`
 
-    2.  **Aktionstyp:** ` HTTP`
+    3.  **URL:** ` http://www.microsoft.com`
 
-    3.  **Methode:** ` GET`
+   ![][action-settings]
 
-    4.  **URI:** ` http://www.microsoft.com`
+5.  Jetzt definieren wir einen Zeitplan. Der Auftrag kann natürlich auch als einmaliger Auftrag definiert werden, in diesem Beispiel verwenden wir aber einen Wiederholungszeitplan.
 
-   	![][4]
+    1. **Wiederholung**: `Recurring`
 
-7.  Legen Sie nach dem Erstellen eines Auftrags einen Zeitplan fest. Der Auftrag kann natürlich auch als einmaliger Auftrag definiert werden, in diesem Beispiel verwenden wir aber einen Wiederholungszeitplan. Auf einigen Screenshots in diesem Lernprogramm ist zwar zur Veranschaulichung eine Wiederholung von einer Minute angegeben, wir verwenden aber eine Wiederholung von 12 Stunden.
+    2. **Start**: Das heutige Datum
 
-    1.  **Wiederholen alle:** ` 12 Hours`  
+    3. **Wiederholen alle:** `12 Hours`
 
-    2.  **Wird gestartet:** ` Now`
+    4. **Endet am**: Zwei Tage nach dem heutigen Datum
 
-    3.  **Endet am:** ` Select date 2 days after current day and any time`
+   ![][recurrence-schedule]
 
-   	![][5]
+6.  Klicken Sie auf **Erstellen**.
 
-8.  Klicken Sie auf **OK**. 
-    Die Erstellung des Auftrags und der Auftragssammlung kann eine Weile dauern. Sie können die Benachrichtigungen unten im Portal überwachen, um den Status zu überprüfen.
+## Verwalten und Überwachen Aufträgen
 
-   	![][6]
+Sobald ein Auftrag erstellt wurde, wird er im Azure-Hauptdashboard angezeigt. Wenn Sie auf den Auftrag klicken, wird ein neues Fenster mit folgenden Registerkarten angezeigt:
 
-   	Nach der Erstellung des Auftrags und der Auftragssammlung erhalten Sie jeweils eine Benachrichtigung, dass der Auftrag bzw. die Auftragssammlung erstellt wurde. Der Auftrag wird im Scheduler-Abschnitt unter „Aufträge“ aufgeführt. Die Auftragssammlung wird im Abschnitt „Auftragssammlungen“ aufgeführt. Informationen zum Konfigurieren zusätzlicher erweiterter Einstellungen für den Auftrag finden Sie weiter unten im Abschnitt „Konfigurieren eines Auftrags“.
+1.  Eigenschaften  
 
-   	![][7]
+2.  Aktionseinstellungen
 
-## Verwalten und Überwachen von Auftragssammlungen und Aufträgen
+3.  Zeitplan
 
-Erstellte Auftragssammlungen werden im Hauptverwaltungsbildschirm von Scheduler angezeigt.
+4.  Verlauf
 
-![][8]
+5.  Benutzer
 
-Wenn Sie auf eine Auftragssammlung klicken, wird ein neues Fenster mit folgenden Optionen angezeigt:
+   ![][job-overview]
 
-1.  Dashboard  
+### Eigenschaften
 
-2.  Skalieren
+Diese schreibgeschützte Eigenschaften beschreiben die Metadaten für den Scheduler-Auftrag.
 
-3.  Verlauf
+   ![][job-properties]
 
-4.  Aufträge
 
-Diese Registerkarten werden im Anschluss ausführlicher beschrieben:
+### Aktionseinstellungen
 
-### Dashboard
+Wenn Sie auf dem Bildschirm **Aufträge** auf einen Auftrag klicken, können Sie diesen konfigurieren. Hier können Sie erweiterte Einstellungen konfigurieren, wenn Sie diese nicht bereits im Schnellerstellungs-Assistenten konfiguriert haben.
 
-Wenn Sie auf den Namen Ihrer Auftragssammlung klicken, wird die Registerkarte **Dashboard** angezeigt. Auf dem Dashboard werden die folgenden Informationen angezeigt:
+Sie können die Wiederholungsrichtlinie und die Fehleraktion für alle Aktionstypen ändern.
 
-![][9]
+Bei HTTP- und HTTPS Auftragsaktionstypen können Sie für die Methode ein beliebiges zulässiges HTTP-Verb festlegen. Darüber hinaus können Sie die Header sowie grundlegende Authentifizierungsinformationen hinzufügen, löschen oder ändern.
 
-#### „Überblick Auftragsnutzung“ und „Überblick über Ausführung und Nutzung“
+Bei Speicherwarteschlangen-Aktionstypen können Sie das Speicherkonto, den Warteschlangennamen, das SAS-Token und den Text ändern.
 
-Eine Tabelle und eine Reihe von Diagrammen mit einer festen Liste von Metriken. Diese Metriken liefern Echtzeitwerte zum Status Ihrer Auftragssammlung, wie etwa:
+Für Service Bus-Aktionstypen können Sie den Namespace, den Thema-/Warteschlangenpfad, die Authentifizierungseinstellungen, den Transporttyp, die Nachrichteneigenschaften und den Nachrichtentext ändern.
 
-1.  Aktuelle Aufträge  
+   ![][job-action-settings]
 
-2.  Abgeschlossene Aufträge
+### Zeitplan
 
-3.  Fehlerhafte Aufträge
+Damit können Sie den Zeitplan neu konfigurieren, wenn Sie den im Schnellerstellungs-Assistenten erstellten Zeitplan ändern möchten.
 
-4.  Aktivierte Aufträge
+Dies ist eine Möglichkeit zum Erstellen [komplexer Zeitpläne und erweiterter Serien in Ihrem Auftrag](scheduler-advanced-complexity.md).
 
-5.  Deaktivierte Aufträge
+Sie können die Startzeit (Datum und Uhrzeit), den Wiederholungszeitplan und die Endzeit (Datum und Uhrzeit) ändern (sofern es sich um einen wiederkehrenden Auftrag handelt).
 
-6.  Auftragsausführungen
+   ![][job-schedule]
 
-#### Auf einen Blick
-
-Eine Tabelle mit einer festen Liste mit Status- und Einstellungsmetriken. Diese Metriken liefern Echtzeitwerte zu Status und Einstellungen für Ihre Auftragssammlung, wie etwa:
-
-1.  Status  
-
-2.  Region
-
-3.  Anzahl von Fehlern
-
-4.  Anzahl von Vorkommensfehlern
-
-5.  URI
-
-### Skalieren
-
-Auf der Registerkarte **Skalieren** können Sie die Einstellungen und die Dienstebene für Scheduler ändern.
-
-![][10]
-
-#### Allgemein
-
-Hier sehen Sie, ob Sie den Tarif **Free** oder den Tarif **Standard** verwenden.
-
-#### Kontingente
-
-Azure Scheduler implementiert Kontingente auf der Grundlage mehrerer Bedingungen. In diesem Abschnitt können Sie die Kontingentschwellenwerte anzeigen und ändern. Standardmäßig ist eine Gruppe von Kontingenten konfiguriert. Die Grenzwerte dieser Kontingenteinstellungen werden durch Ihren Plan beschränkt. Eine Änderung des Plans kann sich auf den Preis auswirken. Kontingente können zur Skalierung von Scheduler geändert werden. Folgende Optionen sind verfügbar:
-
-1.  Maximale Auftragsanzahl  
-
-2.  Maximale Häufigkeit
-
-3.  Maximales Intervall
 
 ### Verlauf
 
-Die Registerkarte **Verlauf** enthält folgende Informationen für den ausgewählten Auftrag:
-
-![][11]
-
-#### Verlaufstabelle
-
-Eine Tabelle mit ausgewählten Metriken für jede Auftragsausführung im System für den ausgewählten Auftrag. Diese Metriken liefern Echtzeitwerte zum Status von Scheduler.
-
-#### Verfügbare Metriken
-
-Die folgenden Leistungsindikatoren/Metriken stehen zur Verfügung:
+Die Registerkarte **Verlauf** zeigt ausgewählte Metriken für jede Auftragsausführung im System für den ausgewählten Auftrag an. Diese Metriken liefern Echtzeitwerte zum Status von Scheduler:
 
 1.  Status  
 
 2.  Details
 
-3.  Wiederholungsversuch
+3.  Wiederholungsversuche
 
-4.  Anzahl von Ausführungen (1., 2., 3. usw..)
+4.  Vorkommen: 1., 2., 3. usw.
 
-5.  Zeitstempel der Ausführung
+5.  Startzeit der Ausführung
 
-Durch Klicken auf **Verlaufsdetails anzeigen** können Sie die vollständige Antwort für jede Ausführung anzuzeigen. In diesem Dialogfeld können Sie auch die Antwort in die Zwischenablage kopieren.
+6.  Endzeit der Ausführung
 
-![][12]
+   ![][job-history]
 
-### Aufträge
+Klicken Sie auf eine Ausführung, um die **Verlaufsdetails** anzuzeigen, einschließlich der vollständigen Antwort für jede Ausführung. In diesem Dialogfeld können Sie auch die Antwort in die Zwischenablage kopieren.
 
-Die Registerkarte „Aufträge“ zeigt folgende Informationen zur Überwachung des Ausführungsverlaufs von Aufträgen:
+   ![][job-history-details]
 
-![][13]
+### Benutzer
 
-#### Auftragstabelle
+Die rollenbasierte Access Control in Azure (RBAC) ermöglicht eine präzise Zugriffsverwaltung für Azure Scheduler. Informationen zur Verwendung der Registerkarte „Benutzer“ finden Sie unter [Rollenbasierte Zugriffssteuerung in Azure](../active-directory/role-based-access-control-configure.md)
 
-Eine Tabelle mit ausgewählten Metriken für jeden Auftrag im System. Diese Metriken liefern Echtzeitwerte zum Status von Scheduler.
-
-#### Deaktivieren, Aktivieren oder Löschen eines Auftrags
-
-Wenn Sie auf einen Auftragsnamen klicken, können Sie den Auftrag aktivieren, deaktivieren oder löschen. Gelöschte Aufträge können unter Umständen nicht wiederhergestellt werden.
-
-#### Verfügbare Metriken
-
-Folgende Leistungsindikatoren und Metriken stehen zur Verfügung:
-
-1.  Name  
-
-2.  Letzte Ausführung
-
-3.  Nächste Ausführung
-
-4.  Status
-
-5.  Häufigkeit
-
-6.  Fehler
-
-7.  Ausfälle
-
-8.  Ausführungen
-
-9.  Aktionstyp
-
-### Konfigurieren eines Auftrags
-
-Wenn Sie auf dem Bildschirm **Aufträge** auf einen Auftrag klicken, können Sie diesen konfigurieren. So können Sie zusätzliche erweiterte Einstellungen konfigurieren, die im Schnellerstellungs-Assistenten nicht zur Verfügung stehen. Klicken Sie zum Konfigurieren eines Auftrags auf dem Bildschirm **Aufträge** neben dem Namen des Auftrags auf den Pfeil nach rechts.
-
-Auf der Auftragskonfigurationsseite können Sie die Einstellungen für den Auftrag aktualisieren. Im Anschluss sehen Sie die Auftragskonfigurationsseite für HTTP- und HTTPS-Aufträge. Bei HTTP- und HTTPS Auftragsaktionstypen können Sie für die Methode ein beliebiges zulässiges HTTP-Verb festlegen. Darüber hinaus können Sie die Header sowie grundlegende Authentifizierungsinformationen hinzufügen, löschen oder ändern.
-
-![][14]
-
-Im Anschluss sehen Sie die Auftragskonfigurationsseite für Speicherwarteschlangenaufträge. Bei Speicherwarteschlangen-Aktionstypen können Sie das Speicherkonto, den Warteschlangennamen, das SAS-Token und den Text ändern. Der (hier nicht dargestellte) Zeitplanabschnitt entspricht dem Zeitplanabschnitt für HTTP-/HTTPS-Auftragsaktionstypen.
-
-![][15]
-
-Bei allen Aktionstypen können Zeitplan und Wiederholungsverhalten geändert werden. Sie können die Startzeit (Datum und Uhrzeit), den Wiederholungszeitplan und die Endzeit (Datum und Uhrzeit) ändern (sofern es sich um einen wiederkehrenden Auftrag handelt). Klicken Sie anschließend auf **Speichern**, um die vorgenommenen Änderungen zu speichern, oder auf **Verwerfen**, um die Änderungen zu verwerfen.
 
 ## Weitere Informationen
 
@@ -241,6 +155,16 @@ Bei allen Aktionstypen können Zeitplan und Wiederholungsverhalten geändert wer
  [Ausgehende Authentifizierung von Scheduler](scheduler-outbound-authentication.md)
 
 
+[marketplace-create]: ./media/scheduler-get-started-portal/scheduler-v2-portal-marketplace-create.png
+[action-settings]: ./media/scheduler-get-started-portal/scheduler-v2-portal-action-settings.png
+[recurrence-schedule]: ./media/scheduler-get-started-portal/scheduler-v2-portal-recurrence-schedule.png
+[job-properties]: ./media/scheduler-get-started-portal/scheduler-v2-portal-job-properties.png
+[job-overview]: ./media/scheduler-get-started-portal/scheduler-v2-portal-job-overview-1.png
+[job-action-settings]: ./media/scheduler-get-started-portal/scheduler-v2-portal-job-action-settings.png
+[job-schedule]: ./media/scheduler-get-started-portal/scheduler-v2-portal-job-schedule.png
+[job-history]: ./media/scheduler-get-started-portal/scheduler-v2-portal-job-history.png
+[job-history-details]: ./media/scheduler-get-started-portal/scheduler-v2-portal-job-history-details.png
+
 
 [1]: ./media/scheduler-get-started-portal/scheduler-get-started-portal001.png
 [2]: ./media/scheduler-get-started-portal/scheduler-get-started-portal002.png
@@ -258,4 +182,4 @@ Bei allen Aktionstypen können Zeitplan und Wiederholungsverhalten geändert wer
 [14]: ./media/scheduler-get-started-portal/scheduler-get-started-portal014.png
 [15]: ./media/scheduler-get-started-portal/scheduler-get-started-portal015.png
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

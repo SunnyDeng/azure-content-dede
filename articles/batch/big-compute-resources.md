@@ -10,7 +10,7 @@
 <tags
    ms.service="multiple"
    ms.devlang="multiple"
-   ms.topic="article"
+   ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="big-compute"
    ms.date="01/26/2016"
@@ -85,7 +85,6 @@ Verwenden Sie die folgenden Azure-Vorlagen zum Bereitstellen von Linux-HPC-Clust
 
 * [MPI-Forum](https://social.microsoft.com/Forums/de-DE/home?forum=windowshpcmpi)
 
-
 ## Rechenintensive Instanzen
 
 Azure bietet zum Ausführen Ihrer Linux- und Windows-HPC-Workloads [eine Reihe unterschiedlicher Größen](../virtual-machines/virtual-machines-size-specs.md) an, einschließlich rechenintensiver [A8- und A9-Instanzen](../virtual-machines/virtual-machines-a8-a9-a10-a11-specs.md), die mit einem Back-End-RDMA-Netzwerk verbunden werden können.
@@ -137,4 +136,4 @@ Azure bietet zum Ausführen Ihrer Linux- und Windows-HPC-Workloads [eine Reihe u
 * Die neuesten Ankündigungen finden Sie im [Blog des HPC- und Batch-Teams von Microsoft](http://blogs.technet.com/b/windowshpc/) und im [Azure-Blog](https://azure.microsoft.com/blog/tag/hpc/).
 * Weitere Informationen finden Sie auch unter [Neuigkeiten bei Batch](https://azure.microsoft.com/updates/?service=batch) oder indem Sie den [RSS-Feed](https://azure.microsoft.com/updates/feed/?service=batch) abonnieren.
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0218_2016-->

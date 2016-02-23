@@ -13,7 +13,7 @@
    ms.workload="storage-backup-recovery"
 	 ms.tgt_pltfrm="na"
 	 ms.devlang="na"
-	 ms.topic="article"
+	 ms.topic="get-started-article"
 	 ms.date="01/28/2016"
 	 ms.author="trinadhk; giridham; arunak; markgal; jimpark;"/>
 
@@ -100,6 +100,10 @@ Im Folgenden finden Sie eine Liste häufig gestellter Fragen zu Azure Backup. We
 - *.microsoftonline.com
 - *.windows.net
 
+**F21. Kann ich den Azure Backup-Agent auf einer Azure-VM installieren, die mithilfe der VM-Erweiterung bereits vom Azure Backup-Dienst gesichert wurde?** <br/> A21. Absolut. Azure Backup bietet die Sicherung von Azure-VMs auf VM-Ebene mithilfe der VM-Erweiterung, und Sie können den Azure Backup-Agent auf einem Windows-Gastbetriebssystem installieren, um Dateien und Ordner in einem Gast-BS zu schützen.
+
+**F22. Kann ich den Azure Backup-Agent auf einer Azure-VM installieren, um Dateien und Ordner in temporärem Speicher zu schützen, der von der Azure-VM bereitgestellt wird?** <br/> A22. Sie können den Azure Backup-Agent auf dem Windows-Gastbetriebssystem installieren und Dateien und Ordner in temporärem Speicher sichern. Beachten Sie jedoch, dass Sicherungen fehlschlagen, wenn Daten im temporären Speicher entfernt werden. Außerdem kann die Wiederherstellung nur auf nicht-temporären Speicher erfolgen, wenn Daten im temporären Speicher gelöscht wurden.
+
 
 ## Sicherung und Aufbewahrung
 **F1. Gibt es eine Größenbeschränkung für die einzelnen Datenquellen, die gesichert werden?** <br/> A1. Ab August 2015 gelten folgende Größenbeschränkung für die einzelnen Datenquellen für die verschiedenen Betriebssysteme:
@@ -183,4 +187,4 @@ Die Größe der Datenquelle wird wie folgt gemessen.
 
 Sobald die Sicherungen erfolgreich mit dem neuen Cachespeicherort ausgeführt werden, können Sie den ursprünglichen Cacheordner entfernen.
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0218_2016-->

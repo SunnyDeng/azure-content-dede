@@ -30,7 +30,7 @@
 Wenn Sie PowerShell noch nicht eingerichtet haben, müssen Sie PowerShell herunterladen und konfigurieren.
 
 1. Führen Sie zum Herunterladen des Azure PowerShell-Moduls den [Microsoft-Webplattform-Installer](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409) aus.
-2. Geben Sie zum Ausführen des Moduls auf der Startseite **Microsoft Azure PowerShell** ein.
+2. Geben Sie zum Ausführen des Moduls auf der Startseite **Windows PowerShell** ein.
 3. Führen Sie dieses Cmdlet aus, um sich am Azure-Ressourcen-Manager anzumelden. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][].
 
 	```
@@ -96,4 +96,4 @@ Weitere Informationen zur programmgesteuerten Verwaltung von SQL Data Warehouse 
 [firewall rules]: ../sql-database/sql-database-configure-firewall-settings.md
 [Installieren und Konfigurieren von Azure PowerShell]: ./powershell-install-configure.md
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

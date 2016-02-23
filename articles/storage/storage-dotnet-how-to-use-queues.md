@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
-	ms.date="01/24/2016"
+	ms.date="02/14/2016"
 	ms.author="gusapost"/>
 
 # Erste Schritte mit Azure Queue Storage mit .NET
@@ -51,7 +51,7 @@ Stellen Sie sicher, dass auf die `Microsoft.WindowsAzure.Storage.dll`-Assembly v
 
 ## Erstellen einer Warteschlange
 
-Mit einem **CloudQueueClient**-Objekt können Sie Referenzobjekte für Warteschlangen abrufen. Der folgende Code erstellt ein **CloudQueueClient**-Objekt. Der gesamte Code in diesem Leitfaden verwendet eine in der Dienstkonfiguration der Azure-Anwendung gespeicherte Speicherverbindungszeichenfolge. Es gibt auch andere Möglichkeiten zum Erstellen eines **CloudStorageAccount**-Objekts. Ausführliche Informationen dazu finden Sie in der [CloudStorageAccount][]-Dokumentation.
+Mit einem **CloudQueueClient**-Objekt können Sie Referenzobjekte für Warteschlangen abrufen. Der folgende Code erstellt ein **CloudQueueClient**-Objekt. Der gesamte Code in diesem Leitfaden verwendet eine in der Dienstkonfiguration der Azure-Anwendung gespeicherte Speicherverbindungszeichenfolge. Es gibt auch andere Möglichkeiten zum Erstellen eines **CloudStorageAccount**-Objekts. Ausführliche Informationen dazu finden Sie in der [CloudStorageAccount](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.cloudstorageaccount_methods.aspx)-Dokumentation.
 
     // Retrieve storage account from connection string
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -246,20 +246,18 @@ Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gem
 - Vollständige Informationen zu verfügbaren APIs finden Sie in der Warteschlangendienst-Referenzdokumentation:
     - [Referenz zur Storage-Clientbibliothek für .NET](http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409)
     - [REST-API-Referenz](http://msdn.microsoft.com/library/azure/dd179355)
-- Erfahren Sie, wie Sie mithilfe des [Azure WebJobs SDK](../websites-dotnet-webjobs-sdk/) den geschriebenen Code so vereinfachen, dass er mit Azure Storage funktioniert.
+- Erfahren Sie, wie Sie mithilfe des [Azure WebJobs SDK](../app-service-web/websites-dotnet-webjobs-sdk.md) den geschriebenen Code so vereinfachen, dass er mit Azure Storage funktioniert.
 - Weitere Informationen zu zusätzlichen Optionen für das Speichern von Daten in Azure finden Sie in den anderen Featureleitfäden.
-    - Verwenden Sie [Tabellenspeicher](storage-dotnet-how-to-use-tables.md) zum Speichern strukturierter Daten.
-    - Verwenden Sie [Blobspeicher](storage-dotnet-how-to-use-blobs.md) zum Speichern unstrukturierter Daten.
-    - Verwenden Sie eine [SQL-Datenbank](sql-database-dotnet-how-to-use.md) zum Speichern relationaler Daten.
+    - [Erste Schritte mit Azure Table Storage mit .NET](storage-dotnet-how-to-use-tables.md) zum Speichern strukturierter Daten.
+    - [Erste Schritte mit Azure Blob Storage mit .NET](storage-dotnet-how-to-use-blobs.md) zum Speichern unstrukturierter Daten.
+    - [Verwenden von Azure SQL-Datenbank in .NET-Anwendungen](sql-database-dotnet-how-to-use.md) zum Speichern relationaler Daten
 
   [Download and install the Azure SDK for .NET]: /develop/net/
   [.NET client library reference]: http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409
   [Creating a Azure Project in Visual Studio]: http://msdn.microsoft.com/library/azure/ee405487.aspx
-  [CloudStorageAccount]: http://msdn.microsoft.com/library/azure/microsoft.windowsazure.cloudstorageaccount_methods.aspx
   [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
-  [Configuring Connection Strings]: http://msdn.microsoft.com/library/azure/ee758697.aspx
   [OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
   [Edm]: http://nuget.org/packages/Microsoft.Data.Edm/5.0.2
   [Spatial]: http://nuget.org/packages/System.Spatial/5.0.2
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

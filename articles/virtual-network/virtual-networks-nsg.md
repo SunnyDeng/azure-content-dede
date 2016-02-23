@@ -1,6 +1,6 @@
 <properties 
    pageTitle="Was ist eine Netzwerksicherheitsgruppe (NSG)?"
-   description="Informationen zu Netzwerksicherheitsgruppen (NSGs)"
+   description="Erfahren Sie mehr zur verteilten Firewall in Azure mit Netzwerksicherheitsgruppen (NSGs) und zur Verwendung von NSGs zum Isolieren und Steuern von Datenverkehr in Ihren virtuellen Netzwerken (VNets)."
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
@@ -9,15 +9,17 @@
 <tags 
    ms.service="virtual-network"
    ms.devlang="na"
-   ms.topic="article"
+   ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="12/11/2015"
+   ms.date="02/11/2016"
    ms.author="telmos" />
 
 # Was ist eine Netzwerksicherheitsgruppe (NSG)?
 
-Eine Netzwerksicherheitsgruppe (NSG) enthält eine Zugriffssteuerungsliste (Access control list, ACL) zum Zulassen/Verweigern von Netzwerktraffic an Ihre VM-Instanzen in einem virtuellen Netzwerkwerk. NSGs können Subnetzen oder einzelnen VM-Instanzen innerhalb dieses Subnetzes zugeordnet werden. Wenn eine NSG einem Subnetz zugeordnet ist, gelten die ACL-Regeln für alle VM-Instanzen in diesem Subnetz. Darüber hinaus kann Datenverkehr zu einer einzelnen virtuellen Maschine weiter beschränkt werden, indem eine NSG direkt diesem virtuellen Computer zugewiesen wird.
+Eine Netzwerksicherheitsgruppe (NSG) enthält eine Zugriffssteuerungsliste (Access Control List, ACL) zum Zulassen oder Verweigern von Netzwerkdatenverkehr an Ihre VM-Instanzen in einem virtuellen Netzwerkwerk. NSGs können Subnetzen oder einzelnen VM-Instanzen innerhalb dieses Subnetzes zugeordnet werden. Wenn eine NSG einem Subnetz zugeordnet ist, gelten die ACL-Regeln für alle VM-Instanzen in diesem Subnetz. Darüber hinaus kann Datenverkehr zu einer einzelnen virtuellen Maschine weiter beschränkt werden, indem eine NSG direkt diesem virtuellen Computer zugewiesen wird.
+
+## NSG-Ressource
 
 NSGs haben die folgenden Eigenschaften:
 
@@ -28,7 +30,7 @@ NSGs haben die folgenden Eigenschaften:
 |Ressourcengruppe|Die Ressourcengruppe, zu der die NSG gehört|Obwohl eine NSG zu einer Ressourcengruppe gehört, kann sie Ressourcen in beliebigen Ressourcengruppen zugeordnet werden, sofern die Ressource zu derselben Azure-Region gehört wie die NSG.|Ressourcengruppen werden verwendet, um mehrere Ressourcen gemeinsam als eine Bereitstellungseinheit zu verwalten.<br/>Unter Umständen ist es ratsam, NSGs mit den Ressourcen zu gruppieren, denen sie zugeordnet sind.|
 |Regeln|Regeln definieren, welcher Datenverkehr zugelassen oder verweigert wird.||Siehe Abschnitt [NSG-Regeln](#Nsg-rules) unten.| 
 
->[AZURE.NOTE]Endpunktbasierte ACLs und Netzwerksicherheitsgruppen können nicht für die gleiche VM-Instanz verwendet werden. Wenn Sie eine NSG verwenden möchten und bereits eine Endpunkt-ACL eingerichtet ist, entfernen Sie zuerst die Endpunkt-ACL. Informationen zur Vorgehensweise finden Sie unter [Verwalten von Zugriffssteuerungslisten (ACLs) für Endpunkte mithilfe von PowerShell](virtual-networks-acl-powershell.md).
+>[AZURE.NOTE] Endpunktbasierte ACLs und Netzwerksicherheitsgruppen können nicht für die gleiche VM-Instanz verwendet werden. Wenn Sie eine NSG verwenden möchten und bereits eine Endpunkt-ACL eingerichtet ist, entfernen Sie zuerst die Endpunkt-ACL. Informationen zur Vorgehensweise finden Sie unter [Verwalten von Zugriffssteuerungslisten (ACLs) für Endpunkte mithilfe von PowerShell](virtual-networks-acl-powershell.md).
 
 ### NSG-Regeln
 
@@ -45,6 +47,12 @@ NSG-Regeln haben die folgenden Eigenschaften:
 |**Richtung**|Richtung des Datenverkehrs entsprechend der Regel|Eingehend oder ausgehend|Die Regeln für eingehenden und ausgehenden Datenverkehr werden getrennt verarbeitet, abhängig von der Richtung.|
 |**Priority**|Regeln werden in der Reihenfolge ihrer Priorität überprüft. Sobald eine Regel erfüllt ist, werden keine Übereinstimmungen mit weiteren Regeln gesucht.|Eine Zahl zwischen 100 und 65535|Vergeben Sie beim Erstellen von Regeln die Prioritäten am besten jeweils in Hunderterschritten, damit noch Platz für später hinzukommende Regeln bleibt, die von der Priorität her zwischen die bestehenden Regeln eingeordnet werden müssen.|
 |**Access**|Typ des Zugriffs bei Übereinstimmung mit der Regel|Zulassen oder verweigern|Beachten Sie, dass ein Paket verworfen wird, wenn keine Zulassungsregel dafür gefunden wird.|
+
+NGSs enthalten zwei Regelsätze: eingehende und ausgehende Regeln. Die Priorität für eine Regel muss innerhalb jedes Satzes eindeutig sein.
+
+![Verarbeitung von NSG-Regeln](./media/virtual-network-nsg-overview/figure3.png)
+
+Die Abbildung oben zeigt, wie die NSG-Regeln verarbeitet werden.
 
 ### Standardtags
 
@@ -97,11 +105,25 @@ Sie können verschiedene NSGs einem virtuellen Computer (oder einer Netzwerkkart
 	2. Auf die Netzwerkkarte angewendete NSG (Ressourcen-Manager) oder auf den virtuellen Computer angewendete NSG (klassisch)
 - **Ausgehender Datenverkehr**
 	1. Auf die Netzwerkkarte angewendete NSG (Ressourcen-Manager) oder auf den virtuellen Computer angewendete NSG (klassisch)
-	3. Auf das Subnetz angewendete NSG
+	2. Auf das Subnetz angewendete NSG
 
 ![NSG-ACLs](./media/virtual-network-nsg-overview/figure2.png)
 
->[AZURE.NOTE]Sie können einem Subnetz, einem virtuellen Computer oder einer Netzwerkkarte zwar nur eine einzelne NSG zuordnen, Sie können eine solche NSG aber beliebig vielen Ressourcen zuordnen.
+>[AZURE.NOTE] Sie können einem Subnetz, einem virtuellen Computer oder einer Netzwerkkarte zwar nur eine einzelne NSG zuordnen, Sie können eine solche NSG aber beliebig vielen Ressourcen zuordnen.
+
+## Implementierung
+Sie können NSGs mit den verschiedenen unten aufgeführten Tools im klassischen oder im Ressourcen-Manager-Bereitstellungsmodell implementieren.
+
+|Bereitstellungstool|Klassisch|Ressourcen-Manager|
+|---|---|---|
+|Klassisches Portal|![Nein][red]|![Nein][red]|
+|Azure-Portal|![Nein][red]|<a href="https://azure.microsoft.com/documentation/articles/virtual-networks-create-nsg-arm-pportal">![Ja][green]</a>|
+|PowerShell|<a href="https://azure.microsoft.com/documentation/articles/virtual-networks-create-nsg-classic-ps">![Ja][green]</a>|<a href="https://azure.microsoft.com/documentation/articles/virtual-networks-create-nsg-arm-ps">![Ja][green]</a>|
+|Azure-Befehlszeilenschnittstelle|<a href="https://azure.microsoft.com/documentation/articles/virtual-networks-create-nsg-classic-cli">![Ja][green]</a>|<a href="https://azure.microsoft.com/documentation/articles/virtual-networks-create-nsg-arm-cli">![Ja][green]</a>|
+|ARM-Vorlage|![Nein][red]|<a href="https://azure.microsoft.com/documentation/articles/virtual-networks-create-nsg-arm-template">![Ja][green]</a>|
+
+|**Schlüssel**|![Ja][green] Unterstützt Klicken Sie, um den Artikel aufzurufen.|![Nein][red] Nicht unterstützt|
+|---|---|---|
 
 ## Planung
 
@@ -111,7 +133,7 @@ Bevor Sie NSGs implementieren, müssen Sie folgende Fragen beantworten:
 
 2. Sind die Ressourcen, für die Sie eingehenden oder ausgehenden Datenverkehr filtern möchten, mit Subnetzen in vorhandenen VNETs verbunden, oder werden sie mit neuen VNETs oder Subnetzen verbunden?
  
-Weitere Informationen zum Planen der Netzwerksicherheit in Azure finden Sie in den [bewährten Verfahren für Clouddienste und Netzwerksicherheit](best-practices-network-security.md).
+Weitere Informationen zum Planen der Netzwerksicherheit in Azure finden Sie in den [bewährten Verfahren für Clouddienste und Netzwerksicherheit](../best-practices-network-security.md).
 
 ## Überlegungen zum Entwurf
 
@@ -127,7 +149,7 @@ Sie müssen die folgenden Begrenzungen berücksichtigen, wenn Sie Ihre NSGs entw
 |NSGs pro Region und Abonnement|100|Standardmäßig wird für jeden im Azure-Portal erstellten virtuellen Computer eine neue NSG erstellt. Wenn Sie dieses Standardverhalten zulassen, werden Ihnen die NSGs schnell ausgehen. Denken Sie beim Entwurf an dieses Limit, und teilen Sie Ihre Ressourcen gegebenenfalls auf mehrere Regionen oder Abonnements auf. |
 |NSG-Regeln pro NSG|200|Verwenden Sie einen breiten Bereich von IP-Adressen und Ports, um dieses Limit nicht zu überschreiten. |
 
->[AZURE.IMPORTANT]Sehen Sie sich alle [Einschränkungen an, die es hinsichtlich der Netzwerkdienste in Azure gibt](../azure-subscription-service-limits/#networking-limits), bevor Sie Ihre Lösung entwerfen. Einige Einschränkungen können durch Öffnen eines Supporttickets erhöht werden.
+>[AZURE.IMPORTANT] Sehen Sie sich alle [Einschränkungen an, die es hinsichtlich der Netzwerkdienste in Azure gibt](../azure-subscription-service-limits.md#networking-limits), bevor Sie Ihre Lösung entwerfen. Einige Einschränkungen können durch Öffnen eines Supporttickets erhöht werden.
 
 ### Entwurf von VNET und Subnetz
 
@@ -222,7 +244,7 @@ Die Anforderungen 1–6 (außer 3) beschränken sich alle auf Subnetzräume. Die
 |---|---|---|---|---|---|---|---|
 |RDP aus dem Internet zulassen|Zulassen|100|INTERNET|**|*|3389|TCP|
 
->[AZURE.NOTE]Beachten Sie, dass der Quelladressbereich für dieser Regel **Internet** ist und nicht die VIP des Load Balancers; der Quellport ist ***** und nicht 500001. Verwechseln Sie NAT-Regeln und Lastenausgleichsregeln nicht mit NSG-Regeln. Die NSG-Regeln beziehen sich immer auf die ursprüngliche Quelle und das endgültige Ziel des Datenverkehrs, **NICHT** auf den zwischen beiden liegenden Load Balancer.
+>[AZURE.NOTE] Beachten Sie, dass der Quelladressbereich für dieser Regel **Internet** ist und nicht die VIP des Load Balancers; der Quellport ist ***** und nicht 500001. Verwechseln Sie NAT-Regeln und Lastenausgleichsregeln nicht mit NSG-Regeln. Die NSG-Regeln beziehen sich immer auf die ursprüngliche Quelle und das endgültige Ziel des Datenverkehrs, **NICHT** auf den zwischen beiden liegenden Load Balancer.
 
 ### NSG für Verwaltungsnetzwerkkarten in „BackEnd“
 
@@ -248,4 +270,8 @@ Da einige der oben aufgeführten NSGs einzelnen Netzwerkkarten zugeordnet werden
 - [Bereitstellen von NSGs im Ressourcen-Manager](virtual-networks-create-nsg-arm-pportal.md)
 - [Verwalten von NSG-Protokollen](virtual-network-nsg-manage-log.md)
 
-<!---HONumber=AcomDC_1217_2015-->
+[green]: ./media/virtual-network-nsg-overview/green.png
+[yellow]: ./media/virtual-network-nsg-overview/yellow.png
+[red]: ./media/virtual-network-nsg-overview/red.png
+
+<!---HONumber=AcomDC_0218_2016-->

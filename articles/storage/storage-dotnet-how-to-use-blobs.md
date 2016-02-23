@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
-	ms.date="01/22/2016"
+	ms.date="02/14/2016"
 	ms.author="tamram"/>
 
 
@@ -353,8 +353,8 @@ Nachdem Sie sich nun mit den Grundlagen von Blobspeichern vertraut gemacht haben
 - [Erste Schritte mit Tabellenspeicher für .NET](storage-dotnet-how-to-use-tables.md)
 - [Erste Schritte mit Warteschlangenspeicher für .NET](storage-dotnet-how-to-use-queues.md)
 - [Erste Schritte mit Dateispeicher für .NET](storage-dotnet-how-to-use-files.md)
-- [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy)
-- [Verwenden einer SQL-Datenbank zum Speichern relationaler Daten](../sql-database/articles/sql-database-dotnet-how-to-use.md)
+- [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy.md)
+- [Verwenden von Azure SQL-Datenbank in .NET-Anwendungen](../sql-database/sql-database-dotnet-how-to-use.md)
 - [Verwenden von Azure-Blobspeicher mit dem WebJobs-SDK](../app-service-web/websites-dotnet-webjobs-sdk-storage-blobs-how-to.md)
 
   [Blob5]: ./media/storage-dotnet-how-to-use-blobs/blob5.png
@@ -368,4 +368,4 @@ Nachdem Sie sich nun mit den Grundlagen von Blobspeichern vertraut gemacht haben
   [.NET client library reference]: http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409
   [REST API reference]: http://msdn.microsoft.com/library/azure/dd179355
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

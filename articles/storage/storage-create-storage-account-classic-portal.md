@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="01/20/2016"
+	ms.date="02/14/2016"
 	ms.author="robinsh"/>
 
 
@@ -28,7 +28,7 @@ Ein Azure-Speicherkonto bietet Ihnen Zugriff auf die Azure Blob-, Warteschlangen
 Zwei Typen von Speicherkonten stehen zur Verfügung:
 
 - Ein Standardspeicherkonto umfasst Blob-, Tabellen- und Warteschlangenspeicher.
-- Ein Storage Premium-Konto unterstützt aktuell ausschließlich Festplatten virtueller Azure-Computer. Eine ausführliche Übersicht über Azure Premium Storage finden Sie unter [Premium Storage: Hochleistungsspeicher für Workloads auf virtuellen Azure-Computern](storage-premium-storage-preview-portal.md).
+- Ein Storage Premium-Konto unterstützt aktuell ausschließlich Festplatten virtueller Azure-Computer. Eine ausführliche Übersicht über Azure Premium Storage finden Sie unter [Premium Storage: Hochleistungsspeicher für Workloads auf virtuellen Azure-Maschinen](storage-premium-storage.md).
 
 ## Speicherkontoabrechnung
 
@@ -39,9 +39,9 @@ Die Rechnungsstellung für Azure-Speicher basiert auf Ihrem Speicherkonto. Speic
 - Transaktionen beziehen sich auf alle Lese- und Schreibvorgänge im Azure-Speicher.
 - Datenausgang bezieht sich auf Daten, die aus einer Azure-Region übertragen werden. Wenn eine Anwendung, die nicht in der gleichen Region ausgeführt wird und entweder ein Clouddienst oder ein anderer Anwendungstyp ist, auf die Daten in Ihrem Speicherkonto zugreift, fallen Gebühren für den Datenausgang an. (Für Azure-Dienste können Sie Maßnahmen durchführen, um Daten und Dienste in den gleichen Rechenzentren zu gruppieren und so Datenausgangsgebühren zu reduzieren oder zu eliminieren.)  
 
-Die Seite [Azure-Preise](https://azure.microsoft.com/pricing/details/#storage) bietet detaillierte Preisinformationen für Speicherkapazität, Replikation und Transaktionen. Auf der Seite [Datenübertragungen – Preisübersicht](https://azure.microsoft.com/pricing/details/data-transfers/) finden Sie detaillierte Preisinformationen für den Datenausgang.
+Die Seite [Preise für Azure Storage](https://azure.microsoft.com/pricing/details/storage) bietet detaillierte Preisinformationen für Speicherkapazität, Replikation und Transaktionen. Auf der Seite [Datenübertragungen – Preisübersicht](https://azure.microsoft.com/pricing/details/data-transfers/) finden Sie detaillierte Preisinformationen für den Datenausgang.
 
-Weitere Informationen zu Kapazität und Leistungszielen von Speicherkonten finden Sie unter [Ziele für Skalierbarkeit und Leistung des Azure-Speichers](http://msdn.microsoft.com/library/azure/dn249410.aspx).
+Weitere Informationen zu Kapazität und Leistungszielen von Speicherkonten finden Sie unter [Ziele für Skalierbarkeit und Leistung des Azure-Speichers](storage-scalability-targets.md).
 
 > [AZURE.NOTE] Wenn Sie einen virtuellen Azure-Computer erstellen, wird für Sie automatisch ein Speicherkonto in der Bereitstellungsregion erstellt, falls Sie noch kein Speicherkonto in der entsprechenden Region haben. Es ist nicht erforderlich, den unten aufgeführten Schritten zum Anlegen eines Speicherkontos für die Festplatten Ihres virtuelles Computers zu folgen. Der Name des Speicherkontos basiert auf dem Namen des virtuellen Computers. In der [Dokumentation zu Virtual Machines](https://azure.microsoft.com/documentation/services/virtual-machines/) finden Sie weitere Einzelheiten.
 
@@ -65,7 +65,7 @@ Weitere Informationen zu Kapazität und Leistungszielen von Speicherkonten finde
 
 	Beachten Sie, dass Sie bei der Erstellung Ihres Speicherkontos eine solche Affinitätsgruppe auswählen müssen. Sie können kein vorhandenes Konto in eine Affinitätsgruppe verschieben. Weitere Informationen zu Affinitätsgruppen finden Sie unter [Dienst am selben Standort wie Affinitätsgruppe](#service-co-location-with-an-affinity-group) (siehe unten).
 
-	>[AZURE.IMPORTANT] Um zu ermitteln, welche Standorte für Ihr Abonnement verfügbar sind, können Sie den [Anbieter auflisten](https://msdn.microsoft.com/library/azure/dn790524.aspx)-Vorgang aufrufen. Um Anbieter aus PowerShell aufzulisten, rufen Sie [Get-AzureLocation](https://msdn.microsoft.com/library/azure/dn757693.aspx) auf. Verwenden Sie in .NET die [List](https://msdn.microsoft.com/library/azure/microsoft.azure.management.resources.provideroperationsextensions.list.aspx)-Methode der ProviderOperationsExtensions-Klasse.
+	>[AZURE.IMPORTANT] Um zu ermitteln, welche Standorte für Ihr Abonnement verfügbar sind, können Sie den Vorgang [Alle Ressourcenanbieter auflisten](https://msdn.microsoft.com/library/azure/dn790524.aspx) aufrufen. Um Anbieter aus PowerShell aufzulisten, rufen Sie [Get-AzureLocation](https://msdn.microsoft.com/library/azure/dn757693.aspx) auf. Verwenden Sie in .NET die [List](https://msdn.microsoft.com/library/azure/microsoft.azure.management.resources.provideroperationsextensions.list.aspx)-Methode der ProviderOperationsExtensions-Klasse.
 	>
 	>Darüber hinaus finden Sie unter [Azure-Regionen](https://azure.microsoft.com/regions/#services) weitere Informationen dazu, welche Dienste in welcher Region verfügbar sind.
 
@@ -99,7 +99,7 @@ Sie sehen die Endpunkte für Ihr Speicherkonto im Dashboard des Speichers, sobal
 
 Die URL für den Zugriff auf ein Objekt in einem Speicherkonto wird durch Anhängen des Objektstandorts im Speicherkonto an den Endpunkt generiert. Eine Blob-Adresse kann beispielsweise folgendes Format haben: http://*mystorageaccount*.blob.core.windows.net/*mycontainer*/*myblob*
 
-Sie können auch einen benutzerdefinierten Domänennamen konfigurieren, den Sie mit Ihrem Speicherkonto verwenden. Weitere Informationen finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für Blob-Daten in einem Azure-Speicherkonto](storage-custom-domain-name.md).
+Sie können auch einen benutzerdefinierten Domänennamen konfigurieren, den Sie mit Ihrem Speicherkonto verwenden. Details finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für Ihren Blob Storage-Endpunkt](storage-custom-domain-name.md).
 
 ### Dienstzusammenstellung mit einer Affinitätsgruppe
 
@@ -111,13 +111,13 @@ Eine *Affinitätsgruppe* ist eine geografische Gruppierung Ihrer Azure-Dienste u
 
 Wenn Sie ein Speicherkonto erstellen, generiert Azure zwei 512-Bit-Speicherzugriffsschlüssel, die für die Authentifizierung verwendet werden, wenn der Zugriff auf das Speicherkonto erfolgt. Durch Bereitstellen von zwei Speicherzugriffsschlüsseln ermöglicht Azure Ihnen das erneute Generieren der Schlüssel ohne Unterbrechung des Speicherdiensts oder Zugriff auf diesen Dienst.
 
-> [AZURE.NOTE] Sie sollten das Weitergeben von Speicherzugriffsschlüsseln an andere vermeiden. Um den Zugriff auf Speicherressourcen zu gewähren, ohne den Zugriffsschlüssel weiterzugeben, verwenden Sie eine *Shared Access Signature*. Eine Shared Access Signature (SAS) bietet Zugriff auf eine Ressource in Ihrem Konto für ein von Ihnen definiertes Zeitintervall und mit den von Ihnen festgelegten Berechtigungen. Weitere Informationen finden Sie im [SAS-Lernprogramm](storage-dotnet-shared-access-signature-part-1.md).
+> [AZURE.NOTE] Sie sollten das Weitergeben von Speicherzugriffsschlüsseln an andere vermeiden. Um den Zugriff auf Speicherressourcen zu gewähren, ohne den Zugriffsschlüssel weiterzugeben, verwenden Sie eine *Shared Access Signature*. Eine Shared Access Signature (SAS) bietet Zugriff auf eine Ressource in Ihrem Konto für ein von Ihnen definiertes Zeitintervall und mit den von Ihnen festgelegten Berechtigungen. Weitere Informationen finden Sie unter [Shared Access Signatures: Grundlagen zum SAS-Modell](storage-dotnet-shared-access-signature-part-1.md).
 
 Verwenden Sie im [klassischen Azure-Portal](https://manage.windowsazure.com) die Option **Schlüssel verwalten** auf dem Dashboard oder die Seite **Storage**, um die Speicherzugriffsschlüssel, die für den Zugriff auf Blob-, Tabellen- und Warteschlangendienste verwendet werden, anzuzeigen, zu kopieren und erneut zu generieren.
 
 ### Kopieren eines Speicherzugriffsschlüssels  
 
-Sie können **Schlüssel verwalten** verwenden, um einen Speicherzugriffsschlüssel für die Verwendung in einer Verbindungszeichenfolge zu kopieren. Die Verbindungszeichenfolge benötigt für die Authentifizierung den Namen des Speicherkontos und einen Schlüssel. Informationen zum Konfigurieren von Verbindungszeichenfolgen für den Zugriff auf Azure-Speicherdienste finden Sie unter [Konfigurieren von Azure-Verbindungszeichenfolgen](http://msdn.microsoft.com/library/azure/ee758697.aspx).
+Sie können **Schlüssel verwalten** verwenden, um einen Speicherzugriffsschlüssel für die Verwendung in einer Verbindungszeichenfolge zu kopieren. Die Verbindungszeichenfolge benötigt für die Authentifizierung den Namen des Speicherkontos und einen Schlüssel. Informationen zum Konfigurieren von Verbindungszeichenfolgen für den Zugriff auf Azure-Speicherdienste finden Sie unter [Konfigurieren von Azure Storage-Verbindungszeichenfolgen](storage-configure-connection-string.md).
 
 1. Klicken Sie im [klassischen Azure-Portal](https://manage.windowsazure.com) auf **Storage** und dann auf den Namen des Speicherkontos, um das Dashboard zu öffnen.
 
@@ -169,8 +169,8 @@ Um ein nicht mehr verwendetes Speicherkonto zu entfernen, verwenden Sie **Lösch
 
 ## Nächste Schritte
 
-- Weitere Informationen über Azure Storage finden Sie in der Azure Storage-Dokumentation auf [Azure.com](https://azure.microsoft.com/documentation/services/storage/).
+- Weitere Informationen über Azure Storage finden Sie in der [Azure Storage-Dokumentation](https://azure.microsoft.com/documentation/services/storage/).
 - Besuchen Sie den [Blog des Azure-Speicherteams](http://blogs.msdn.com/b/windowsazurestorage/).
 - [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

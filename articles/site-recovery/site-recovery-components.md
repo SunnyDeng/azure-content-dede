@@ -13,100 +13,176 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="12/07/2015"
+	ms.date="02/16/2016"
 	ms.author="raynew"/>
 
 # Wie funktioniert Azure Site Recovery?
 
-## Informationen zum Artikel
-
 In diesem Artikel werden die zugrunde liegende Architektur von Site Recovery und die dafür erforderlichen Komponenten beschrieben. Sollten Sie nach der Lektüre dieses Artikels Fragen haben, können Sie diese im [Azure Recovery Services-Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr) stellen.
-
 
 ## Übersicht
 
-Organisationen benötigen eine Strategie für die Bereiche Geschäftskontinuität und Notfallwiederherstellung (Business Continuity and Disaster Recovery, BCDR), mit der bestimmt wird, wie Apps, Workloads und Daten bei geplanten und ungeplanten Ausfallzeiten verfügbar bleiben und so schnell wie möglich die normalen Arbeitsbedingungen wiederhergestellt werden können. Bei Ihrer BCDR-Strategie geht es hauptsächlich um Lösungen, bei denen die Unternehmensdaten sicher sind und wiederhergestellt werden können und Workloads auch nach dem Eintreten eines Notfalls ständig verfügbar sind.
+Organisationen benötigen eine Strategie für die Bereiche Geschäftskontinuität und Notfallwiederherstellung (Business Continuity and Disaster Recovery, BCDR), mit der bestimmt wird, wie Apps, Workloads und Daten bei geplanten und ungeplanten Ausfallzeiten verfügbar bleiben und die normalen Arbeitsbedingungen so schnell wie möglich wiederhergestellt werden können. Bei Ihrer BCDR-Strategie geht es hauptsächlich um Lösungen, bei denen die Unternehmensdaten sicher sind und wiederhergestellt werden können und Workloads auch nach dem Eintreten eines Notfalls ständig verfügbar sind.
 
 Site Recovery ist ein Azure-Dienst, der einen Beitrag zu Ihrer BCDR-Strategie leistet, indem die Replikation von lokalen physischen Servern und virtuellen Maschinen in die Cloud (Azure) oder in ein sekundäres Rechenzentrum orchestriert wird. Wenn es an Ihrem primären Standort zu Ausfällen kommt, wird ein Failover zum sekundären Standort durchgeführt, um die Verfügbarkeit von Apps und Workloads zu erhalten. Wenn wieder Normalbetrieb herrscht, führen Sie das Failback zum primären Standort durch.
 
 Site Recovery kann in verschiedenen Szenarien verwendet werden und für den Schutz mehrerer Workloads sorgen.
 
-- **Schützen von virtuellen VMware-Maschinen**: Sie können lokale virtuelle VMware-Maschinen schützen, indem Sie sie zu Azure oder in ein sekundäres Rechenzentrum replizieren. **Schützen von Hyper-V-VMs**: Sie können lokale virtuelle Hyper-V-Maschinen schützen, indem Sie sie in die Cloud (Azure) oder in ein sekundäres Rechenzentrum replizieren.  
-- **Schützen von physischen Servern**: Sie können physische Computer, auf denen Windows oder Linux ausgeführt wird, schützen, indem Sie sie zu Azure oder in ein sekundäres Rechenzentrum replizieren.
-- **Migrieren von VMs**: Sie können Site Recovery verwenden, um Azure-IaaS-VMs zwischen Regionen zu migrieren oder AWS Windows-Instanzen zu Azure-IaaS-VMs migrieren.
+- **Schützen virtueller VMware-Maschinen**: Sie können lokale virtuelle VMware-Maschinen schützen, indem Sie sie zu [Azure](site-recovery-vmware-to-azure-classic.md) oder in ein [sekundäres Datencenter](site-recovery-vmware-to-vmware.md) replizieren.
+- **Schützen von Hyper-V-VMs**: Sie können lokale virtuelle Hyper-V-Maschinen in VMM-Clouds schützen, indem Sie sie zu [Azure](site-recovery-vmm-to-azure.md) oder in ein [sekundäres Datencenter](site-recovery-vmm-to-vmm.md) replizieren. Sie können Hyper-V-VMs, die nicht von VMM verwaltet werden, zu [Azure](site-recovery-hyper-v-site-to-azure.md) replizieren.
+- **Schützen physischer Servern auf Azure**: Sie können physische Computer, auf denen Windows oder Linux ausgeführt wird, schützen, indem Sie sie zu [Azure](site-recovery-vmware-to-azure-classic.md) oder in ein [sekundäres Datencenter](site-recovery-vmware-to-vmware.md) replizieren.
+- **Migrieren von VMs**: Sie können Site Recovery verwenden, um [Azure-IaaS-VMs](site-recovery-migrate-azure-to-azure.md) zwischen Regionen zu migrieren oder um [AWS Windows-Instanzen](site-recovery-migrate-aws-to-azure.md) zu Azure-IaaS-VMs zu migrieren.
 
-Eine vollständige Zusammenfassung der unterstützten Bereitstellungen finden Sie unter [Was ist Azure Site Recovery?](site-recovery-overview.md) und 
-[Welche Workloads können mit Azure Site Recovery geschützt werden?](site-recovery-workload.md).
+Site Recovery kann die meisten auf diesen virtuellen Maschinen und physischen Servern ausgeführten Apps replizieren. Eine vollständige Zusammenfassung der unterstützten Apps finden Sie unter [Welche Workloads können mit Azure Site Recovery geschützt werden?](site-recovery-workload.md).
 
-## Replizieren zwischen einem lokalen physischen Server oder einer virtuellen VMware-Maschine und Azure
+
+## Replizieren lokaler virtueller VMware-Maschinen oder physischer Server auf Azure
 
 Wenn Sie VMware-VMs oder physische Windows/Linux-Computer per Replikation zu Azure schützen möchten, benötigen Sie die unten angegebenen Dinge.
 
-**Standort** | **Erforderliches Element** 
---- | --- 
- Lokal | **Prozessserver**: Mit diesem Server werden Daten von geschützten virtuellen VMware-Maschinen oder physischen Windows/Linux-Computern optimiert, bevor sie an Azure gesendet werden. Außerdem werden hiermit die Pushinstallation der Mobilitätsdienstkomponente auf dem geschützten Computer und die automatische Ermittlung von virtuellen VMware-Maschinen durchgeführt. <br/><br/> **VMware vCenter-Server**: Beim Schützen von VMware-VMs benötigen Sie einen VMwave vCenter-Server zum Verwalten der vSphere-Hypervisors.<br/><br/> **ESX-Server**: Beim Schützen von VMware-VMs benötigen Sie einen Server, auf dem ESX/ESXi Version 5.1 oder 5.5 mit den neuesten Updates ausgeführt wird.<br/><br/> **Maschinen**: Beim Schützen von VMware sollten Sie über VMware-VMs verfügen, auf den die VMware-Tools installiert sind und ausgeführt werden. Wenn Sie physische Computer schützen, sollte darauf ein unterstütztes Windows- oder Linux-Betriebssystem ausgeführt werden. Weitere Informationen finden Sie unter [Unterstützung](site-recovery-vmware-to-azure.md/#before-you-start). <br/><br/> **Mobilitätsdienst**: Wird auf Maschinen installiert, die Sie schützen möchten, um Änderungen zu erfassen und an den Prozessserver zu übermitteln. <br/><br/>Drittanbieterkomponenten: Diese Bereitstellung ist von einigen [Drittanbieterkomponenten](http://download.microsoft.com/download/C/D/7/CD79E327-BF5A-4026-8FF4-9EB990F9CEE2/Third-Party_Notices.txt) abhängig.
-Azure | **Konfigurationsserver**: Standardmäßige A3 Azure-VM zum Koordinieren der Kommunikation zwischen geschützten Computern, dem Prozessserver und den Masterzielservern in Azure. Dient zum Einrichten der Replikation und Koordinieren der Wiederherstellung, wenn ein Failover eintritt. <br/><br/>**Masterzielserver**: Azure-VM mit replizierten Daten von geschützten Computern, indem angefügte VHDs verwendet werden, die in der Blob Storage-Komponente Ihres Azure-Speicherkontos erstellt wurden. Ein Failback-Masterzielserver wird lokal ausgeführt, damit Sie für Azure-VMs das Failback auf VMware-VMs durchführen können. <br/><br/> **Site Recovery-Tresor**: Mindestens ein Azure Site Recovery-Tresor (Einrichtung mit einem Abonnement des Site Recovery-Diensts). <br/><br/> **Virtual Network**: Ein Azure-Netzwerk, in dem sich der Konfigurationsserver und die Masterzielserver befinden (unter demselben Abonnement und in derselben Region wie der Site Recovery-Dienst. <br/><br/> **Azure-Speicher**: Azure-Speicherkonto zum Speichern der replizierten Daten. Hierbei sollte es sich um ein standardmäßiges georedundantes Konto oder Premium-Konto in derselben Region wie das Site Recovery-Abonnement handeln.
+Für diese Replikation stehen derzeit zwei verschiedene Architekturen zur Verfügung:
+
+- **Legacy-Architektur**: Diese Architektur sollte für neue Bereitstellungen nicht verwendet werden. 
+- **Verbesserte Architektur**: Dies ist die aktuelle Lösung, die für alle neuen Bereitstellungen empfohlen wird. Sie können [Ihre Legacy-Architektur](site-recovery-vmware-to-azure-classic-legacy.md#migrate-to-the-enhanced-deployment) ebenfalls zu dieser neuen Lösung migrieren.
+
+Im Folgenden sehen Sie die Architektur für die erweiterte Bereitstellung
+
+![Verbessert](./media/site-recovery-components/arch-enhanced.png)
+
+- **Lokal**: Wenn Sie die verbesserte Architektur bereitstellen, ist es nicht erforderlich, Infrastruktur-VMs in Azure bereitzustellen. Außerdem ist der gesamte Datenverkehr verschlüsselt, und die Replikationsverwaltungskommunikation wird über HTTPS 443 übermittelt. In Ihrer lokalen Infrastruktur benötigen Sie Folgendes:
+
+	- **Verwaltungsserver**: ein einzelner Verwaltungsserver, der alle Site Recovery-Komponenten ausführt, darunter:
+
+		- **Konfigurationsserver**: zum Koordinieren der Kommunikation zwischen Ihrer lokalen Umgebung und Azure sowie zum Verwalten von Datareplikations- und Wiederherstellungsprozessen.
+		- **Prozessserver**: fungiert als Replikationsgateway. Er empfängt Daten aus geschützten Quellcomputern, optimiert sie durch Zwischenspeicherung, Komprimierung und Verschlüsselung und sendet die Replikationsdaten an den Azure-Speicher. Außerdem wickelt er die Pushinstallation des Mobilitätsdiensts auf geschützten Computern ab und führt die automatische Ermittlung von virtuellen VMware-Computern durch. Mit zunehmender Größe die Bereitstellung können Sie zusätzliche dedizierte Server hinzufügen, die als Prozessserver für größere Mengen an Replikationsdatenverkehr genutzt werden.
+		- **Masterzielserver**: behandelt die Replikationsdaten beim Failback von Azure. 
+
+	- **VMware ESX/ESXi-Host und vCenter-Server**: mindestens ein ESX/ESXi-Host-Server, auf dem sich VMware-VMs befinden. Zum Verwalten dieser Hosts empfiehlt sich ein vCenter-Server. Beachten Sie, dass Sie auch für den Schutz physischer Server eine VMware-Umgebung benötigen, damit ein Failback von Azure zum lokalen Standort möglich ist.
+	
+	- **Geschützte Computer**: Für jeden Computer, den Sie in Azure replizieren möchten, muss die Mobilitätsdienstkomponente installiert sein. Er erfasst die Datenschreibvorgänge auf dem Computer und sendet sie an den Prozessserver. Die Komponente kann manuell oder mittels Push automatisch durch den Prozessserver installiert werden, wenn der Schutz für den Computer aktiviert wird.
+
+- **Azure**: In Ihrer Azure-Infrastruktur benötigen Sie Folgendes:
+	- **Azure-Konto**: Sie benötigen ein Microsoft Azure-Konto.
+	- **Azure-Speicher**: Sie benötigen ein Azure-Speicherkonto, um replizierte Daten zu speichern. Replizierte Daten werden im Azure-Speicher gespeichert, und virtuelle Azure-Computer werden bei einem Failover hochgefahren. 
+	- **Azure-Netzwerk**: Sie benötigen ein virtuelles Azure-Netzwerk, mit dem die Azure-VMs bei einem Failover eine Verbindung herstellen, wenn ein Failover stattfindet. Sie benötigen außerdem eine VPN-Verbindung (oder Azure ExpressRoute) zwischen dem Azure-Netzwerk und dem lokalen Standort.
+
+	![Verbessert](./media/site-recovery-components/arch-enhanced2.png)
+
+Erfahren Sie mehr über die genauen [Voraussetzungen für die Bereitstellung](site-recovery-vmware-to-azure-classic.md#before-you-start-deployment).
+
+### Failback-Architektur
+
+- Ein Failback von Azure muss zu VMware-VMs ausgeführt werden. Ein Failback zu einem physischen Server ist derzeit nicht möglich.
+- Für ein Failback benötigen Sie eine VPN-Verbindung (oder Azure ExpressRoute) zwischen dem Azure-Netzwerk und Ihrem lokalen Netzwerk.
+- Sie benötigen einen Prozessserver in Azure, um das Failback auszuführen. Nach Beendigung des Failbacks können Sie diesen löschen.
+- Sie benötigen einen lokalen Masterzielserver. Ein Masterzielserver ist bei lokaler Einrichtung standardmäßig auf dem Verwaltungsserver installiert. Für größere Mengen an Datenverkehr empfiehlt es sich jedoch, lokal einen separaten Masterzielserver für das Failback einzurichten.
+
+![Verbessertes Failback](./media/site-recovery-components/enhanced-failback.png)
+
+Weitere Informationen zum [Failback](site-recovery-failback-azure-to-vmware-classic.md).
+
+### Legacy-Architektur
+
+Legacy-Architektur erfordert einen lokalen Konfigurationsserver sowie einen Prozesserver, VMware ESX/ESXi-Hosts und vCenter-Server. Auf den Computern, die Sie schützen möchten, muss der Mobilitätsdienst installiert sein. Richten Sie in Azure Azure-VMs in Azure für den Konfigurationsserver und den Masterzielserver ein. Außerdem benötigen Sie ein Azure-Abonnement,ein Speicherkonto und ein virtuelles Netzwerk.
 
 
-Bei diesem Szenario kann die Kommunikation über eine VPN-Verbindung mit internen Ports im Azure-Netzwerk (per Azure ExpressRoute oder einem Site-to-Site-VPN) erfolgen, oder es kann eine sichere Internetverbindung mit den zugeordneten öffentlichen Endpunkten im Azure-Clouddienst für die Konfigurations- und Masterzielserver-VMs verwendet werden.
 
-Der Mobilitätsdienst auf geschützten Computern sendet die Replikationsdaten an den Prozessserver und die Replikationsmetadaten an den Konfigurationsserver. Der Prozessserver kommuniziert mit dem Konfigurationsserver, um Informationen zur Verwaltung und Steuerung auszutauschen. Er sendet Replikationsinformationen an den Masterzielserver und optimiert und sendet replizierte Daten an den Masterzielserver.
-
-## Replizieren von Hyper-V-VMs zu Azure (mit VMM)
+## Replizieren Sie Hyper-V-VMs in VMM-Clouds zu Azure.
 
 Wenn sich Ihre VMs auf einem Hyper-V-Host befinden, der sich in einer System Center-VMM-Cloud befindet, benötigen Sie für die Replikation zu Azure die folgenden Dinge.
 
-**Standort** | **Erforderliches Element** 
---- | --- 
-Lokal | **VMM-Server**: Mindestens einen VMM-Server, für den mindestens eine private VMM-Cloud eingerichtet ist. Der Azure Site Recovery-Anbieter wird auf jedem VMM-Server installiert.<br/><br/>**Hyper-V-Server**: Mindestens ein Hyper-V-Hostserver in der VMM-Cloud. Der Microsoft Recovery Services-Agent wird auf jedem Hyper-V-Server installiert. <br/><br/> **Virtuelle Maschinen**: Mindestens eine virtuelle Maschine, die auf dem Hyper-V-Server ausgeführt wird. Auf der virtuellen Maschine wird nichts installiert.
-Azure | **Site Recovery-Tresor**: Mindestens ein Azure Site Recovery-Tresor (Einrichtung mit einem Abonnement des Site Recovery-Diensts). <br/><br/>**Speicherkonto**: Ein Azure-Speicherkonto unter demselben Abonnement wie der Site Recovery-Dienst. Replizierte Computer werden im Azure-Speicher gespeichert. 
+- Lokal: 
+	- **VMM-Server**: Mindestens einen VMM-Server, für den mindestens eine private VMM-Cloud eingerichtet ist. Der Server sollte auf System Center 2012 R2 ausgeführt werden. Der VMM-Server benötigt eine Internetverbindung. Richten Sie die Netzwerkzuordnung ein, damit Azure-VMs nach einem Failover mit einem Netzwerk verbunden sind. Dafür müssen Sie Quell-VMs mit einem VMM-VM-Netzwerk verbinden. Dieses Netzwerk sollte mit einem logischen Netzwerk verbunden sein, das der Cloud zugeordnet ist.
+	- **Hyper-V-Server**: Mindestens ein Hyper-V-Hostserver in der VMM-Cloud. Hyper-V-Hosts müssen Windows Server 2012 R2 ausführen.
+	- **Geschützte Computer**: Der Quell-Hyper-V-Hostserver muss eine mindestens eine zu schützende VM enthalten.
+	
+- Azure:
+	- **Azure-Konto**: Sie benötigen ein Microsoft Azure-Konto.
+	- **Azure-Speicher**: Sie benötigen ein Azure-Speicherkonto, um replizierte Daten zu speichern. Replizierte Daten werden im Azure-Speicher gespeichert, und virtuelle Azure-Computer werden bei einem Failover hochgefahren.
+	- **Azure-Netzwerk**: Richten Sie die Netzwerkzuordnung ein, damit Azure-VMs nach einem Failover mit einem Netzwerk verbunden sind. Hierzu müssen Sie ein Azure-Netzwerk einrichten.
 
-Bei diesem Szenario koordiniert und orchestriert der auf dem VMM-Server ausgeführte Anbieter die Replikation mit dem Site Recovery-Dienst über das Internet. Die Daten werden zwischen dem Recovery Services-Agent, der auf dem lokalen Hyper-V-Server ausgeführt wird, und dem Azure-Speicher über HTTPS 443 repliziert. Sowohl die Kommunikation vom Anbieter als auch vom Agent ist sicher und verschlüsselt. Die replizierten Daten im Azure-Speicher werden ebenfalls verschlüsselt.
+	![VMM zu Azure](./media/site-recovery-components/arch-onprem-onprem-azure-vmm.png)
 
-![Lokaler VMM zu Azure](./media/site-recovery-components/arch-onprem-onprem-azure-vmm.png)
+In diesem Szenario ist der Azure Site Recovery-Anbieter auf dem VMM-Server während der Bereitstellung von Site Recovery installiert. Dieser koordiniert und orchestriert die Replikation mit dem Site Recovery-Dienst über das Internet. Der Azure Recovery Services-Agent ist während der Bereitstellung von Site Recovery auf dem Hyper-V-Hostserver installiert, und die Daten werden über HTTPS 443 zwischen ihm und dem dem Azure-Speicher repliziert. Sowohl die Kommunikation vom Anbieter als auch vom Agent ist sicher und verschlüsselt. Die replizierten Daten im Azure-Speicher werden ebenfalls verschlüsselt.
+
+Erfahren Sie mehr über die genauen [Voraussetzungen für die Bereitstellung](site-recovery-vmm-to-azure.md#before-you-start).
 
 ## Replizieren von Hyper-V-VMs zu Azure (ohne VMM)
 
 Wenn Sie Ihre VMs nicht über einen System Center-VMM-Server verwalten, müssen Sie die Replikation zu Azure wie folgt durchführen:
 
-**Standort** | **Erforderliches Element**
---- | --- 
- Lokal | **Hyper-V-Server**: Mindestens ein Hyper-V-Hostserver. Der Azure Site Recovery-Anbieter und der Microsoft Recovery Services-Agent werden auf jedem Hyper-V-Server installiert. <br/><br/>**Virtuelle Maschinen**: Mindestens eine virtuelle Maschine, die auf dem Hyper-V-Server ausgeführt wird. Auf der virtuellen Maschine wird nichts installiert.
-Azure | **Site Recovery-Tresor**: Mindestens ein Azure Site Recovery-Tresor (Einrichtung mit einem Abonnement des Site Recovery-Diensts). <br/><br/>**Speicherkonto**: Ein Azure-Speicherkonto unter demselben Abonnement wie der Site Recovery-Dienst. Replizierte Computer werden im Azure-Speicher gespeichert.
+- Lokal: 
+	- **Hyper-V-Server**: Mindestens ein Hyper-V-Hostserver. Hyper-V-Hosts müssen Windows Server 2012 R2 ausführen.
+	- **Geschützte Computer**: Der Quell-Hyper-V-Hostserver muss eine mindestens eine zu schützende VM enthalten.
+	
+- Azure:
+	- **Azure-Konto**: Sie benötigen ein Microsoft Azure-Konto.
+	- **Azure-Speicher**: Sie benötigen ein Azure-Speicherkonto, um replizierte Daten zu speichern. Replizierte Daten werden im Azure-Speicher gespeichert, und virtuelle Azure-Computer werden bei einem Failover hochgefahren.
 
-Bei diesem Szenario koordiniert und orchestriert der auf dem Hyper-V-Server ausgeführte Anbieter die Replikation mit dem Site Recovery-Dienst über das Internet. Die Daten werden zwischen dem Recovery Services-Agent, der auf dem lokalen Hyper-V-Server ausgeführt wird, und dem Azure-Speicher über HTTPS 443 repliziert. Sowohl die Kommunikation vom Anbieter als auch vom Agent ist sicher und verschlüsselt. Die replizierten Daten im Azure-Speicher werden ebenfalls verschlüsselt.
+	![Hyper-V-Standort zu Azure](./media/site-recovery-components/arch-onprem-azure-hypervsite.png)
 
-![Lokaler VMM zu Azure](./media/site-recovery-components/arch-onprem-azure-hypervsite.png)
+In diesem Szenario sind der Azure Site Recovery-Anbieter und derAzure Recovery Services-Agent auf dem VMM-Server während der Bereitstellung von Site Recovery installiert. Der Anbieter koordiniert und orchestriert die Replikation mit dem Site Recovery-Dienst über das Internet. Der-Agent verarbeitet die Replikation von Daten über HTTPS 443. Sowohl die Kommunikation vom Anbieter als auch vom Agent ist sicher und verschlüsselt. Die replizierten Daten im Azure-Speicher werden ebenfalls verschlüsselt.
 
-
+Erfahren Sie mehr über die genauen [Voraussetzungen für die Bereitstellung](site-recovery-hyper-v-site-to-azure.md#before-you-start).
 
 ## Replizieren von Hyper-V-VMs in ein sekundäres Rechenzentrum
 
 Wenn Sie Ihre Hyper-V-VMs schützen möchten, indem Sie sie in ein sekundäres Rechenzentrum replizieren, gehen Sie wie unten angegeben vor. Beachten Sie, dass dies nur möglich ist, wenn Ihr Hyper-V-Hostserver in einer System Center-VMM-Cloud verwaltet wird.
 
-**Standort** | **Erforderliches Element** 
---- | --- 
- Lokal | **VMM-Server**: Ein VMM-Server am primären Standort und ein VMM-Server am sekundären Standort. Der Azure Site Recovery-Anbieter wird auf beiden VMM-Servern installiert.<br/><br/>**Hyper-V-Server**: Mindestens ein Hyper-V-Hostserver in einer VMM-Cloud am primären Standort und sekundären Standort. Auf den Hyper-V-Servern wird nichts installiert. <br/><br/> **Virtuelle Maschinen**: Mindestens eine virtuelle Maschine, die auf dem Hyper-V-Server ausgeführt wird. Auf der virtuellen Maschine wird nichts installiert.
-Azure | **Site Recovery-Tresor**: Mindestens ein Azure Site Recovery-Tresor (Einrichtung mit einem Abonnement des Site Recovery-Diensts). 
+- **Lokal**: 
+	- **VMM-Server**: Wir empfehlen einen VMM-Server am primären Standort sowie einen am sekundären Standort, von denen jeder mindestens eine private VMM-Cloud enthält. Der Server sollte mindestens mit System Center 2012 SP1 mit neuesten Updates ausgeführt werden und mit dem Internet verbunden sein. Für die Clouds sollte das Hyper-V-Funktionsprofil eingestellt sein.
+	- **Hyper-V Server**: Hyper-V-Hostserver in der primären sowie in der sekundären VMM-Cloud. Die Hostserver müssen mindestens mit Windows Server 2012 mit den neuesten Updates ausgeführt werden und über eine Internetverbindung verfügen.
+	- **Geschützte Computer**: Der Quell-Hyper-V-Hostserver muss eine mindestens eine zu schützende VM enthalten.
+	
+- **Azure**: Sie benötigen auch ein Azure-Abonnement.
 
-Bei diesem Szenario koordiniert und orchestriert der Anbieter auf dem VMM-Server die Replikation mit dem Site Recovery-Dienst über das Internet. Die Daten werden zwischen dem primären und sekundären Hyper-V-Hostserver über das Internet per Kerberos- oder Zertifikatauthentifizierung repliziert. Die Kommunikation vom Anbieter und zwischen den Hyper-V-Hostservern ist jeweils sicher und verschlüsselt.
+	![Lokal zu lokal](./media/site-recovery-components/arch-onprem-onprem.png)
 
-![Lokal zu lokal](./media/site-recovery-components/arch-onprem-onprem.png)
+In diesem Szenario ist der Azure Site Recovery-Anbieter auf dem VMM-Server während der Bereitstellung von Site Recovery installiert. Dieser koordiniert und orchestriert die Replikation mit dem Site Recovery-Dienst über das Internet. Die Daten werden zwischen dem primären und sekundären Hyper-V-Hostserver über das LAN oder VPN per Kerberos- oder Zertifikatauthentifizierung repliziert. Die Kommunikation vom Anbieter und zwischen den Hyper-V-Hostservern ist jeweils sicher und verschlüsselt.
+
+Erfahren Sie mehr über die genauen [Voraussetzungen für die Bereitstellung](site-recovery-vmm-to-vmm.md#before-you-start).
+
+
 
 ## Replizieren von Hyper-V-VMs in ein sekundäres Rechenzentrum per SAN-Replikation
 
 Wenn sich Ihre VMs auf einem Hyper-V-Host befinden, der in einer System Center-VMM-Cloud verwaltet wird, und wenn Sie einen SAN-Speicher verwenden, müssen Sie bei der Replikation zwischen zwei Rechenzentren wie unten angegeben vorgehen.
 
-**Standort** | **Erforderliches Element** 
---- | --- 
- Primäres Rechenzentrum | **SAN-Array**: Ein [unterstütztes SAN-Array](http://social.technet.microsoft.com/wiki/contents/articles/28317.deploying-azure-site-recovery-with-vmm-and-san-supported-storage-arrays.aspx), das vom primären VMM-Server verwaltet wird. Das SAN verfügt über eine gemeinsame Netzwerkinfrastruktur mit einem anderen SAN-Array am sekundären Standort. <br/><br/> **VMM-Server**: Mindestens ein VMM-Server, für den eine oder mehrere VMM-Clouds und Replikationsgruppen eingerichtet wurden. Der Azure Site Recovery-Anbieter wird auf allen VMM-Servern installiert. <br/><br/> **Hyper-V-Server**: Mindestens ein Hyper-V-Hostserver mit virtuellen Maschinen, die in der Replikationsgruppe angeordnet sind. Auf den Hyper-V-Hostservern wird nichts installiert.<br/><br/> **Virtuelle Maschinen**: Mindestens eine virtuelle Maschine, die auf dem Hyper-V-Hostserver ausgeführt wird. Auf der virtuellen Maschine wird nichts installiert. 
-Sekundäres Datencenter | **SAN-Array**: Ein [unterstütztes SAN-Array](http://social.technet.microsoft.com/wiki/contents/articles/28317.deploying-azure-site-recovery-with-vmm-and-san-supported-storage-arrays.aspx), das vom sekundären VMM-Server verwaltet wird. <br/><br/>**VMM-Server**: Mindestens ein VMM-Server mit einer oder mehreren VMM-Clouds.<br/><br/> **Hyper-V-Server**: Mindestens ein Hyper-V-Hostserver. 
-Azure | **Site Recovery-Tresor**: Mindestens ein Azure Site Recovery-Tresor (Einrichtung mit einem Abonnement des Site Recovery-Diensts).
+- **Lokal**: 
+	- **SAN-Array**: Ein [unterstütztes SAN-Array](http://social.technet.microsoft.com/wiki/contents/articles/28317.deploying-azure-site-recovery-with-vmm-and-san-supported-storage-arrays.aspx), das vom primären VMM-Server verwaltet wird. Das SAN teilt eine Netzwerkinfrastruktur mit einem anderen SAN-Array am sekundären Standort.
+	- **VMM-Server**: Wir empfehlen einen VMM-Server am primären Standort sowie einen am sekundären Standort, von denen jeder mindestens eine private VMM-Cloud enthält. Der Server sollte mindestens mit System Center 2012 SP1 mit neuesten Updates ausgeführt werden und mit dem Internet verbunden sein. Für die Clouds sollte das Hyper-V-Funktionsprofil eingestellt sein.
+	- **Hyper-V Server**: Hyper-V-Hostserver in der primären sowie in der sekundären VMM-Cloud. Die Hostserver müssen mindestens mit Windows Server 2012 mit den neuesten Updates ausgeführt werden und über eine Internetverbindung verfügen.
+	- **Geschützte Computer**: Der Quell-Hyper-V-Hostserver muss eine mindestens eine zu schützende VM enthalten.
+	
+- **Azure**: Sie benötigen auch ein Azure-Abonnement.
 
-Bei diesem Szenario koordiniert und orchestriert der Anbieter auf dem VMM-Server die Replikation mit dem Site Recovery-Dienst über das Internet. Die Daten werden zwischen den primären und sekundären Speicherarrays per synchroner SAN-Replikation repliziert.
+	![SAN-Replikation](./media/site-recovery-components/arch-onprem-onprem-san.png)
 
-![Lokal zu lokal](./media/site-recovery-components/arch-onprem-onprem-san.png)
+In diesem Szenario ist der Azure Site Recovery-Anbieter auf dem VMM-Server während der Bereitstellung von Site Recovery installiert. Dieser koordiniert und orchestriert die Replikation mit dem Site Recovery-Dienst über das Internet. Die Daten werden zwischen den primären und sekundären Speicherarrays per synchroner SAN-Replikation repliziert.
 
+Erfahren Sie mehr über die genauen [Voraussetzungen für die Bereitstellung](site-recovery-vmm-san.md#before-you-start).
+
+
+## Replizieren virtueller VMware-Maschinen oder physischer Server an einem sekundären Standort
+
+Wenn Sie VMware-VMs oder physische Windows/Linux-Computer per Replikation zwischen zwei lokalen Rechenzentren schützen möchten, benötigen Sie die unten angegebenen Dinge.
+
+- **Lokaler primären Standort**: 
+	- **Prozessserver**: Richten Sie die Prozessserverkomponente an Ihrem primären Standort ein, um das Caching, die Komprimierung und die Datenoptimierung zu behandeln. Außerdem erfolgt hierüber die Pushinstallation des vereinheitlichten Agents auf Maschinen, die Sie schützen möchten.
+	- **VMware ESX/ESXi und vCenter Server**: Zum Schutz von VMware-VMs benötigen Sie einen VMware EXS/ESXi-Hypervisor oder einen VMware vCenter-Server, der mehrere Hypervisoren verwaltet.
+	- Geschützte Computer: Auf VMware-VMs oder physischen Windows/Linux-Server, die geschützt werden sollen, muss der vereinheitlichte Agent installiert sein. Der vereinheitlichte Agent wird auch auf Computern installiert, die als Masterzielserver dienen. Der Agent fungiert als Kommunikationsanbieter zwischen allen InMage-Komponenten.
+	
+- **Lokaler sekundärer Standort**:
+	- **Konfigurationsserver**: Der Konfigurationsserver ist die erste Komponente, die Sie installieren. Er wird am sekundären Standort installiert, um Ihre Bereitstellung zu verwalten, zu konfigurieren und zu überwachen, und zwar entweder mit der Verwaltungswebsite oder der vContinuum-Konsole. Der Konfigurationsserver enthält auch den Pushmechanismus für die Remotebereitstellung des vereinheitlichten Agents. Es gibt nur einen Konfigurationsserver in einer Bereitstellung, der auf einem Computer mit Windows Server 2012 R2 installiert sein muss.
+	- **vContinuum-Server**: Es handelt sich um eine Installation am gleichen Speicherort (sekundärer Standort) wie der Konfigurationsserver. Er enthält eine Konsole zum Verwalten und Überwachen Ihrer geschützten Umgebung. Bei einer standardmäßigen Installation ist der vContinuum-Server der erste Masterzielserver und verfügt über eine Installation des vereinheitlichten Agents.
+	- **Masterzielserver**: Der Masterzielserver enthält replizierte Daten. Er empfängt Daten vom Prozessserver und erstellt einen Replikatcomputer am sekundären Standort. Außerdem enthält er die Punkte für die Beibehaltung der Daten. Die Anzahl der benötigten Masterzielserver richtet sich nach der Anzahl der Computer, die Sie schützen. Wenn Sie ein Failback zum primären Standort durchführen möchten, benötigen Sie dort ebenfalls einen Masterzielserver. 
+
+- **Azure**: Sie benötigen auch ein Azure-Abonnement. Laden Sie InMage Scout herunter, um die Bereitstellung nach dem Erstellen des Site Recovery-Tresors einzurichten. Außerdem installieren Sie das neueste Update für alle InMage-Komponentenserver.
+
+
+	![VMware zu VMware](./media/site-recovery-components/vmware-to-vmware.png)
+
+In diesem Szenario werden Deltareplikationsänderungen vom vereinheitlichten Agent, der auf dem geschützten Computer ausgeführt wird, an den Prozessserver gesendet. Der Prozessserver optimiert diese Daten und überträgt sie an den Masterzielserver am sekundären Standort. Der Konfigurationsserver verwaltet den Replikationsprozess.
 
 
 ## Lebenszyklus des Hyper-V-Schutzes
@@ -124,36 +200,8 @@ Dieser Workflow verdeutlicht den Prozess zum Schützen, Replizieren und Durchfü
 
 ![Workflow](./media/site-recovery-components/arch-hyperv-azure-workflow.png)
 
-## Replizieren von virtuellen VMware-Maschinen und physischen Servern zu Azure
-
-Sie können virtuelle VMware-Maschinen und physische Server (Windows/Linux) über eine Site-to-Site-VPN-Verbindung oder das Internet zu Azure replizieren.
-
-### Replizieren über eine Site-to-Site-VPN-Verbindung (oder ExpressRoute) zu Azure
-
-![VMware- oder physischer Computer zu Azure über das Internet](./media/site-recovery-components/arch-onprem-azure-vmware-vpn.png)
-
-#### Replizieren über das Internet
-
-![VMware- oder physischer Computer zu Azure über das Internet](./media/site-recovery-components/arch-onprem-azure-vmware-internet.png)
-
-## Replizieren zwischen lokalen physischen Servern oder virtuellen VMware-Maschinen in primären und sekundären Rechenzentren
-
-Wenn Sie VMware-VMs oder physische Windows/Linux-Computer per Replikation zwischen zwei lokalen Rechenzentren schützen möchten, benötigen Sie die unten angegebenen Dinge.
-
-**Standort** | **Erforderliches Element** 
---- | --- 
- Lokaler primären Standort | **Prozessserver**: Richten Sie die Prozessserverkomponente an Ihrem primären Standort ein, um das Caching, die Komprimierung und die Datenoptimierung zu behandeln. Außerdem erfolgt hierüber die Pushinstallation des vereinheitlichten Agents auf Maschinen, die Sie schützen möchten. <br/><br/> **VMware-Schutz**: Beim Schützen von VMware-VMs benötigen Sie einen VMware EXS/ESXi-Hypervisor oder einen VMware vCenter-Server zum Verwalten mehrerer Hypervisors.<br/><br/> **Schutz physischer Server**: Wenn Sie physische Computer schützen, sollte darauf Windows oder Linux ausgeführt werden. <br/><br/> **Vereinheitlichter Agent**: Wird auf Maschinen installiert, die Sie schützen möchten, sowie auf der Maschine, die als Masterzielserver dient. Der Agent fungiert als Kommunikationsanbieter zwischen allen InMage-Komponenten.
-Lokaler sekundärer Standort | **Konfigurationsserver**: Der Konfigurationsserver ist die erste Komponente, die Sie installieren. Er wird am sekundären Standort installiert, um Ihre Bereitstellung zu verwalten, zu konfigurieren und zu überwachen, und zwar entweder mit der Verwaltungswebsite oder der vContinuum-Konsole. Der Konfigurationsserver enthält auch den Pushmechanismus für die Remotebereitstellung des vereinheitlichten Agents. Eine Bereitstellung enthält nur einen Konfigurationsserver. Er muss auf einem Computer installiert sein, auf dem Windows Server 2012 R2 ausgeführt wird. <br/><br/> **vContinuum-Server**: Installieren Sie diesen Server an demselben Ort (sekundärer Standort) wie den Konfigurationsserver. Er enthält eine Konsole zum Verwalten und Überwachen Ihrer geschützten Umgebung. Bei einer standardmäßigen Installation ist der vContinuum-Server der erste Masterzielserver und verfügt über eine Installation des vereinheitlichten Agents. <br/><br/> **Masterzielserver**: Der Masterzielserver enthält replizierte Daten. Er empfängt Daten vom Prozessserver und erstellt einen Replikatcomputer am sekundären Standort. Außerdem enthält er die Punkte für die Beibehaltung der Daten. Die Anzahl der benötigten Masterzielserver richtet sich nach der Anzahl der Computer, die Sie schützen. Wenn Sie ein Failback zum primären Standort durchführen möchten, benötigen Sie dort ebenfalls einen Masterzielserver. 
-Azure | **Site Recovery-Tresor**: Mindestens ein Azure Site Recovery-Tresor (Einrichtung mit einem Abonnement des Site Recovery-Diensts). Sie laden InMage Scout herunter, um die Bereitstellung nach dem Erstellen des Tresors einzurichten. Außerdem installieren Sie das neueste Update für alle InMage-Komponentenserver.
-
-
-In diesem Szenario werden Deltareplikationsänderungen vom vereinheitlichten Agent, der auf dem geschützten Computer ausgeführt wird, an den Prozessserver gesendet. Der Prozessserver optimiert diese Daten und überträgt sie an den Masterzielserver am sekundären Standort. Der Konfigurationsserver verwaltet den Replikationsprozess.
-
-
-
-
 ## Nächste Schritte
 
 [Bereiten Sie sich auf die Bereitstellung vor](site-recovery-best-practices.md).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

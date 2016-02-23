@@ -12,7 +12,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/12/2015"
+   ms.date="02/09/2016"
    ms.author="joaoma" />
 
 # Verweisen einer Unternehmensinternetdomäne auf eine Azure Traffic Manager-Domäne
@@ -25,7 +25,7 @@ Um beispielsweise mit dem Unternehmens-Domänennamen www.contoso.com auf den Tra
 
 Alle Datenverkehrsanforderungen an *www.contoso.com* werden jetzt an *contoso.trafficmanager.net* umgeleitet.
 
->[AZURE.IMPORTANT]Sie können nicht mit Domänen der zweiten Ebene wie *contoso.com* auf Traffic Manager-Domänen verweisen. Dies ist eine Einschränkung des DNS-Protokolls, das keine CNAME-Datensätze für Domänennamen der zweiten Ebene zulässt.
+>[AZURE.IMPORTANT] Sie können nicht mit Domänen der zweiten Ebene wie *contoso.com* auf Traffic Manager-Domänen verweisen. Dies ist eine Einschränkung des DNS-Protokolls, das keine CNAME-Datensätze für Domänennamen der zweiten Ebene zulässt.
 
 ## Nächste Schritte
 
@@ -35,4 +35,4 @@ Alle Datenverkehrsanforderungen an *www.contoso.com* werden jetzt an *contoso.tr
 
 [Deaktivieren oder Aktivieren eines Traffic Manager-Endpunkts](disable-or-enable-an-endpoint.md)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0218_2016-->

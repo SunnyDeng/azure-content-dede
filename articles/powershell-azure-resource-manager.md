@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="powershell" 
 	ms.devlang="na" 
 	ms.topic="get-started-article" 
-	ms.date="01/08/2016" 
+	ms.date="02/17/2016" 
 	ms.author="tomfitz"/>
 
 # Verwenden von Windows PowerShell mit dem Azure-Ressourcen-Manager
@@ -34,9 +34,9 @@ Für dieses Tutorial benötigen Sie Folgendes:
   + Sie können [ein Azure-Konto kostenlos erstellen](/pricing/free-trial/?WT.mc_id=A261C142F): Sie erhalten ein Guthaben, das Sie zum Ausprobieren zahlungspflichtiger Azure-Dienste nutzen können, und Sie können das Konto selbst dann behalten und die kostenlosen Azure-Dienste wie Websites nutzen, wenn das Guthaben aufgebraucht ist. Ihre Kreditkarte wird nur dann belastet, wenn Sie Ihre Einstellungen explizit ändern und mit einer Zahlung einverstanden sind.
   
   + Sie können Ihre [Vorteile für MSDN-Abonnenten aktivieren](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F): Ihr MSDN-Abonnement beinhaltet ein monatliches Guthaben, das Sie für zahlungspflichtige Azure-Dienste nutzen können.
-- Azure PowerShell 1.0. Informationen zu dieser Version und wie Sie diese installieren finden Sie unter [Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0/) (in englischer Sprache).
+- Azure PowerShell 1.0. Informationen zu dieser Version und wie Sie diese installieren finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md).
 
-Dieses Lernprogramm richtet sich an PowerShell-Anfänger. Es wird aber vorausgesetzt, dass Sie die grundlegenden Konzepte verstehen, z. B. Module, Cmdlets und Sitzungen. Weitere Informationen zu Windows PowerShell finden Sie unter [Erste Schritte mit Windows PowerShell](http://technet.microsoft.com/library/hh857337.aspx).
+Dieses Lernprogramm richtet sich an PowerShell-Anfänger. Es wird aber vorausgesetzt, dass Sie die grundlegenden Konzepte verstehen, z. B. Module, Cmdlets und Sitzungen.
 
 ## Was Sie bereitstellen
 
@@ -358,6 +358,8 @@ Wenn Sie den Befehl eingeben, werden Sie zur Angabe des fehlenden obligatorische
     (Type !? for Help.)
     administratorLoginPassword: ********
 
+Enthält die Vorlage einen Parameter mit einem Namen, der einem der Parameter im Befehl zum Bereitstellen der Vorlage entspricht (z. B. einen Parameter namens **ResourceGroupName** in der Vorlage, der mit dem Parameter **ResourceGroupName** im Cmdlet [New-AzureRmResourceGroupDeployment](https://msdn.microsoft.com/library/azure/mt679003.aspx) identisch ist), werden Sie aufgefordert, einen Wert für einen Parameter mit dem Postfix **FromTemplate** anzugeben (z. B. **ResourceGroupNameFromTemplate**). Im Allgemeinen sollten Sie diese Verwirrung vermeiden, indem Sie Parametern nicht dieselben Namen wie Parametern für Bereitstellungsvorgänge geben.
+
 Der Befehl wird ausgeführt und gibt Meldungen zurück, während die Ressourcen erstellt werden. Schließlich wird das Ergebnis der Bereitstellung angezeigt.
 
     DeploymentName    : azuredeploy
@@ -461,4 +463,4 @@ Sie können vorhandene Ressourcen in eine neue Ressourcengruppe verschieben. Bei
 - Ein ausführliches Beispiel für das Bereitstellen eines Projekts finden Sie unter [Vorhersagbares Bereitstellen von Microservices in Azure](app-service-web/app-service-deploy-complex-application-predictably.md).
 - Weitere Informationen zur Problembehandlung bei einer nicht erfolgreichen Bereitstellung finden Sie unter [Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure](./virtual-machines/resource-group-deploy-debug.md).
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0218_2016-->

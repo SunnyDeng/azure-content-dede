@@ -10,7 +10,7 @@
 <tags
 	ms.service="batch"
 	ms.devlang="multiple"
-	ms.topic="article"
+	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
 	ms.workload="big-compute"
 	ms.date="01/21/2016"
@@ -20,7 +20,7 @@
 
 Dieser Artikel bietet eine grundlegende Übersicht über die wichtigsten API-Features des Azure Batch-Diensts. Unabhängig davon, ob Sie eine verteilte rechnerische Lösung mit der [Batch REST][batch_rest_api]- oder der [Batch .NET][batch_net_api]-API entwickeln, werden Sie viele der unten erläuterten Entitäten und Features verwenden.
 
-> [AZURE.TIP]Eine allgemeinere technische Übersicht über Batch finden Sie unter [Azure Batch – Grundlagen](batch-technical-overview.md).
+> [AZURE.TIP] Eine allgemeinere technische Übersicht über Batch finden Sie unter [Azure Batch – Grundlagen](batch-technical-overview.md).
 
 ## <a name="workflow"></a>Workflow des Batch-Diensts
 
@@ -38,7 +38,7 @@ Der folgende allgemeine Workflow wird typischerweise in nahezu allen verteilten 
 
 6. Überwachen Sie den Auftragsfortschritt, und rufen Sie die Ergebnisse ab.
 
-> [AZURE.NOTE]Sie benötigen ein [Batch-Konto](batch-account-create-portal.md) zum Verwenden des Batch-Diensts, und fast alle Lösungen verwenden ein [Azure Storage][azure_storage]-Konto zum Speichern und Abrufen von Dateien.
+> [AZURE.NOTE] Sie benötigen ein [Batch-Konto](batch-account-create-portal.md) zum Verwenden des Batch-Diensts, und fast alle Lösungen verwenden ein [Azure Storage][azure_storage]-Konto zum Speichern und Abrufen von Dateien.
 
 In den folgenden Abschnitten erfahren Sie mehr zu den einzelnen Ressourcen, die im obigen Workflow genannt werden, sowie zu vielen weiteren Features von Batch, die Ihr verteiltes Rechenszenario unterstützen.
 
@@ -253,7 +253,8 @@ Eine Skalierungsformel kann auf den folgenden Metriken basieren:
 
 Weitere Informationen zur automatischen Skalierung einer Anwendung finden Sie unter [Automatisches Skalieren von Computeknoten in einem Azure Batch-Pool](batch-automatic-scaling.md).
 
-> [AZURE.TIP]Einzelne Knoten können aus einem Pool entfernt werden, dies ist jedoch nur sehr selten erforderlich. Wenn beispielsweise ein Knoten weniger zuverlässig erscheint, kann er aus dem Pool entfernt werden, damit keine weiteren Tasks zugewiesen werden.
+> [AZURE.TIP]
+ Einzelne Knoten können aus einem Pool entfernt werden, dies ist jedoch nur sehr selten erforderlich. Wenn beispielsweise ein Knoten weniger zuverlässig erscheint, kann er aus dem Pool entfernt werden, damit keine weiteren Tasks zugewiesen werden.
 
 ## <a name="cert"></a>Sicherheit mit Zertifikaten
 
@@ -294,7 +295,7 @@ Für jeden Task, der innerhalb eines Auftrags geplant ist, wird vom Dienst-Batch
 | `AZ_BATCH_TASK_ID` | Die ID des aktuellen Tasks |
 | `AZ_BATCH_TASK_WORKING_DIR` | Der vollständige Pfad des Aufgabenarbeitsverzeichnisses auf dem Knoten. |
 
->[AZURE.NOTE]Keine der oben beschriebenen systemdefinierten Variablen kann überschrieben werden – sie sind schreibgeschützt.
+>[AZURE.NOTE] Keine der oben beschriebenen systemdefinierten Variablen kann überschrieben werden – sie sind schreibgeschützt.
 
 ## <a name="errorhandling"></a>Fehlerbehandlung
 
@@ -319,7 +320,7 @@ Während der Ausführung generiert eine Anwendung unter Umständen eine Diagnose
 
 Noch umfangreicheres Debuggen kann durchgeführt werden, indem Sie sich mit *Remotedesktop* bei einem Computeknoten anmelden. Für die Remoteanmeldung können Sie [eine Remotedesktop-Protokolldatei von einem Knoten abrufen][rest_rdp] (Batch REST-API) oder die Methode [ComputeNode.GetRDPFile][net_rdp] einsetzen (Batch .NET API).
 
->[AZURE.NOTE]Um über RDP eine Verbindung mit einem Knoten herzustellen, müssen Sie zuerst einen Benutzer auf dem Knoten erstellen. [Fügen Sie in der Batch REST-API einem Knoten ein Benutzerkonto hinzu][rest_create_user], oder verwenden Sie die Methode [ComputeNode.CreateComputeNodeUser][net_create_user] in Batch .NET.
+>[AZURE.NOTE] Um über RDP eine Verbindung mit einem Knoten herzustellen, müssen Sie zuerst einen Benutzer auf dem Knoten erstellen. [Fügen Sie in der Batch REST-API einem Knoten ein Benutzerkonto hinzu][rest_create_user], oder verwenden Sie die Methode [ComputeNode.CreateComputeNodeUser][net_create_user] in Batch .NET.
 
 ### Erläuterung zu Taskfehlern oder Unterbrechungen
 
@@ -371,4 +372,4 @@ Jeder Knoten in einem Pool erhält eine eindeutige ID, und der Knoten, auf dem e
 [rest_update_job]: https://msdn.microsoft.com/library/azure/dn820162.aspx
 [rest_rdp]: https://msdn.microsoft.com/library/azure/dn820120.aspx
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0218_2016-->
