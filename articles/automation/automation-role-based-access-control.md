@@ -9,10 +9,10 @@
 <tags 
    ms.service="automation"
    ms.devlang="na"
-   ms.topic="article"
+   ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="01/13/2016"
+   ms.date="02/11/2016"
    ms.author="sngun"/>
 
 # Rollenbasierte Zugriffssteuerung in Azure Automation
@@ -139,4 +139,4 @@ Ersetzen Sie in den obigen Cmdlets den Anmeldenamen, die Abonnement-ID, den Name
 - Weitere Informationen zu verschiedenen Methoden zum Starten eines Runbooks finden Sie unter [Starten eines Runbooks in Azure Automation](automation-starting-a-runbook.md).
 - Weitere Informationen zu verschiedenen Typen finden Sie unter [Azure Automation-Runbooktypen](automation-runbook-types.md).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

@@ -13,11 +13,10 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/10/2015"
+   ms.date="02/09/2016"
    ms.author="joaoma"/>
 
 # Erste Schritte mit Azure DNS mithilfe der Befehlszeilenschnittstelle (CLI)
-
 
 
 > [AZURE.SELECTOR]
@@ -40,7 +39,7 @@ Installieren Sie die Azure-Befehlszeilenschnittstelle. Sie können die Azure-Bef
 	Azure network
 
 
->[AZURE.IMPORTANT]Die DNS-Befehle erfordern Version 0.9.8 der Azure-Befehlszeilenschnittstelle oder höher. Geben Sie `azure -v` ein, um zu überprüfen, welche Version der Azure-Befehlszeilenschnittstelle derzeit auf Ihrem Computer installiert ist.
+>[AZURE.IMPORTANT] Die DNS-Befehle erfordern Version 0.9.8 der Azure-Befehlszeilenschnittstelle oder höher. Geben Sie `azure -v` ein, um zu überprüfen, welche Version der Azure-Befehlszeilenschnittstelle derzeit auf Ihrem Computer installiert ist.
  
 ### Schritt 2
 
@@ -90,7 +89,7 @@ Eine DNS-Zone wird mit dem `azure network dns zone create`-Befehl erstellt. Im f
     Azure network dns zone create -n contoso.com -g myresourcegroup
 
 
->[AZURE.NOTE]In Azure DNS sollten Zonennamen ohne einen terminierenden '.' angegeben werden, z. B. 'contoso.com' statt 'contoso.com.'.
+>[AZURE.NOTE] In Azure DNS sollten Zonennamen ohne einen terminierenden '.' angegeben werden, z. B. 'contoso.com' statt 'contoso.com.'.
 
 
 Die DNS-Zone wurde nun in Azure DNS erstellt. Beim Erstellen einer DNS-Zone werden auch die folgenden DNS-Einträge erstellt:
@@ -140,7 +139,7 @@ Im folgenden Beispiel ergibt das Ausführen des Befehls mit der Ressourcengruppe
 	data:
 	info:    network dns-record-set show command OK
 
->[AZURE.NOTE]Datensatzgruppen am Stamm (oder der "Spitze") einer DNS-Zone verwenden "@" als Datensatzgruppennamen.
+>[AZURE.NOTE] Datensatzgruppen am Stamm (oder der "Spitze") einer DNS-Zone verwenden "@" als Datensatzgruppennamen.
 
 Nach der Erstellung Ihrer ersten DNS-Zone können Sie sie mithilfe von DNS-Tools wie "nslookup", "DIG" oder mit dem PowerShell-Cmdlet **Resolve-DnsName** testen. Wenn Sie Ihre Domäne noch nicht delegiert haben, um die neue Zone in Azure DNS zu verwenden, müssen Sie die DNS-Abfrage direkt auf einen der Namenserver für die Zone leiten. Die Namenserver für die Zone sind in den NS-Einträgen enthalten, die von "azure network dns-record-set show" aufgelistet werden. Ersetzen Sie im folgenden Befehl die Werte durch die für Ihre Zone ordnungsgemäßen Werte.
 
@@ -170,7 +169,6 @@ Im folgenden Beispiel wird DIG zum Abfragen der Domäne "contoso.com" mithilfe d
 
 ## Nächste Schritte
 
+Nach dem Erstellen einer DNS-Zone müssen Sie [Datensatzgruppen und Einträge](dns-getstarted-create-recordset-cli.md) zum Auflösen von Namen für Ihre Internetdomäne erstellen.<BR> Außerdem erhalten Sie Informationen zum [Verwalten von DNS-Zonen](dns-operations-dnszones-cli.md) und den zugehörigen DNS-Zonenvorgängen.<BR> Erfahren Sie mehr zum [Verwalten von DNS-Einträgen](dns-operations-recordsets-cli.md) und zum [Automatisieren von Azure-Vorgängen mit .NET SDK](dns-sdk.md)<BR> in der [REST-API-Referenz für Azure DNS](https://msdn.microsoft.com/library/azure/mt163862.aspx).
 
-[Erste Schritte beim Erstellen von Datensatzgruppen und Einträgen](dns-getstarted-create-recordset-cli.md)<BR> [Verwalten von DNS-Zonen](dns-operations-dnszones-cli.md)<BR> [Verwalten von DNS-Einträgen](dns-operations-recordsets-cli.md)<BR> [Automatisieren von Azure-Vorgängen mit dem .NET SDK](dns-sdk.md)<BR> [Referenz zur Azure DNS-REST-API](https://msdn.microsoft.com/library/azure/mt163862.aspx)
-
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0218_2016-->

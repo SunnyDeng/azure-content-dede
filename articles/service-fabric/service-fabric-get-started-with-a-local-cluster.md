@@ -10,7 +10,7 @@
 <tags
    ms.service="service-fabric"
    ms.devlang="dotNet"
-   ms.topic="hero-article"
+   ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="11/20/2015"
@@ -19,7 +19,7 @@
 # Erste Schritte beim Bereitstellen und Aktualisieren von Anwendungen im lokalen Cluster
 Das Azure Service Fabric-SDK umfasst eine vollständige lokale Entwicklungsumgebung, die Sie verwenden können, um schnell mit der Bereitstellung und Verwaltung von Anwendungen in einem lokalen Cluster zu beginnen. In diesem Artikel verwenden Sie Windows PowerShell, um einen lokalen Cluster zu erstellen, eine vorhandene Anwendung bereitzustellen und die Anwendung auf eine neue Version zu aktualisieren.
 
-> [AZURE.NOTE]In diesem Artikel wird vorausgesetzt, dass Sie bereits [eine Entwicklungsumgebung eingerichtet haben](service-fabric-get-started.md).
+> [AZURE.NOTE] In diesem Artikel wird vorausgesetzt, dass Sie bereits [eine Entwicklungsumgebung eingerichtet haben](service-fabric-get-started.md).
 
 ## Erstellen eines lokalen Clusters
 Ein Service Fabric-Cluster ist ein Satz von Hardwareressourcen, auf dem Sie Anwendungen bereitstellen können. Normalerweise umfasst ein Cluster zwischen fünf und mehreren Tausend Computern. Das Service Fabric-SDK enthält aber eine Clusterkonfiguration, die auf einem einzelnen Computer ausgeführt werden kann.
@@ -28,7 +28,7 @@ Sie müssen dabei bedenken, dass der lokale Service Fabric-Cluster kein Emulator
 
 Das SDK bietet zwei Möglichkeiten zum Einrichten eines lokalen Clusters: ein Windows PowerShell-Skript und die Taskleisten-App Local Cluster Manager. In diesem Tutorial wird das PowerShell-Skript verwendet.
 
-> [AZURE.NOTE]Wenn Sie bereits einen lokalen Cluster durch die Bereitstellung einer Anwendung über Visual Studio erstellt haben, können Sie diesen Abschnitt überspringen.
+> [AZURE.NOTE] Wenn Sie bereits einen lokalen Cluster durch die Bereitstellung einer Anwendung über Visual Studio erstellt haben, können Sie diesen Abschnitt überspringen.
 
 
 1. Starten Sie als Administrator ein neues PowerShell-Fenster.
@@ -125,7 +125,7 @@ Nach dem Bereitstellen der Anwendung sehen wir uns nun die App-Details in PowerS
 
     ![Anzeigen von Anwendungsdetails im Service Fabric-Explorer][sfx-service-overview]
 
-    > [AZURE.NOTE]Weitere Informationen zum Service Fabric-Explorer finden Sie unter [Visualisieren des Clusters mit dem Service Fabric-Explorer](service-fabric-visualizing-your-cluster.md).
+    > [AZURE.NOTE] Weitere Informationen zum Service Fabric-Explorer finden Sie unter [Visualisieren des Clusters mit dem Service Fabric-Explorer](service-fabric-visualizing-your-cluster.md).
 
 ## Upgraden einer Anwendung
 Service Fabric ermöglicht Upgrades ohne Ausfallzeit, indem die Integrität der Anwendung überwacht wird, während sie im Cluster bereitgestellt wird. Führen Sie nun ein einfaches Upgrade der WordCount-Anwendung durch.
@@ -186,4 +186,4 @@ Die neue Version der Anwendung zählt nur die Wörter, die mit einem Vokal begin
 [sfx-upgradeprogress]: ./media/service-fabric-get-started-with-a-local-cluster/SfxUpgradeOverview.png
 [sfx-service-overview]: ./media/service-fabric-get-started-with-a-local-cluster/sfx-service-overview.png
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0218_2016-->

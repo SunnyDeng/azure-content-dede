@@ -9,7 +9,7 @@
 <tags 
    ms.service="service-bus"
    ms.devlang="na"
-   ms.topic="article"
+   ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="11/06/2015"
@@ -69,4 +69,4 @@ Nach dieser Übersicht über die Funktionsweise von Service Bus können Sie sich
 - [Service Bus – Grundlagen](service-bus-fundamentals-hybrid-solutions.md)
 - [Eine Messaginglösung mit Warteschlange unter Verwendung von Service Bus-Warteschlangen](service-bus-dotnet-multi-tier-app-using-service-bus-queues.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0218_2016-->

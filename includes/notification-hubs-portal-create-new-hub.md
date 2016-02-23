@@ -1,28 +1,25 @@
 
 
-1. Melden Sie sich beim [klassischen Azure-Portal](https://manage.windowsazure.com/) an, und klicken Sie im unteren Teil des Bildschirms auf **+NEW**.
+1. Melden Sie sich beim [Azure-Portal](https://portal.windowsazure.com/) an, und klicken Sie im unteren Teil des Bildschirms auf **+NEW**.
 
-2. Klicken Sie auf **App-Dienste**, **Service Bus**, **Notification Hub** und zuletzt auf **Schnellerfassung**.
+2. Klicken Sie auf **Neu**, **Web- und mobile Anwendungen**, **Notification Hub** und dann auf **Schnellerfassung**.
 
-   	![](./media/notification-hubs-portal-create-new-hub/notification-hubs-create-from-portal.png)
+   	![Azure-Portal – Erstellen von Notification Hubs](./media/notification-hubs-portal-create-new-hub/notification-hubs-azure-portal-create.png)
 
-
-3. Geben Sie einen **Namen für den Notification Hub** ein. Wählen Sie die gewünschten Einstellungen für **Region** und **Abonnement**.
+3. Achten Sie darauf, im Feld **Notification Hub** einen eindeutigen Namen einzugeben. Wählen Sie Ihre bevorzugte **Region**, das **Abonnement** und die **Ressourcengruppe** (sofern bereits vorhanden) aus.
  
-	Wenn Sie bereits einen Service Bus-Namespace haben, in dem Sie den Hub erstellen möchten, wählen Sie Ihren **Namespacenamen** aus. Andernfalls können Sie den standardmäßigen **Namespacenamen** verwenden, der basierend auf dem Hubnamen erstellt wird, solange der Namespacename verfügbar ist.
+	Wenn Sie bereits über einen Service Bus-Namespace verfügen, in dem Sie den Hub erstellen möchten, wählen Sie ihn über die Option **Vorhandene auswählen** im Feld **Namespace** aus. Andernfalls können Sie den standardmäßigen Namen verwenden, der basierend auf dem Hubnamen erstellt wird, solange der Namespacename verfügbar ist.
 
-	Klicken Sie auf **Neuen Benachrichtigungs-Hub erstellen**.
+	Sobald Sie fertig sind, klicken Sie auf **Erstellen**.
 
-   	![Festlegen von Eigenschaften für den Notification Hub](./media/notification-hubs-portal-create-new-hub/notification-hubs-create-from-portal2.png)
+   	![Azure-Portal – Festlegen von Eigenschaften für den Notification Hub](./media/notification-hubs-portal-create-new-hub/notification-hubs-azure-portal-settings.png)
 
-4. Nachdem der Namespace und Notification Hub erstellt wurden, werden Ihre Namespaces in Service Bus angezeigt. Klicken Sie auf den Namespace, in dem Sie Ihren Hub erstellt haben (in der Regel ***Name des Notification Hubs*-ns**).
+4. Sobald der Namespace und der Notification Hub erstellt sind, werden Sie zur entsprechenden Portalseite weitergeleitet.
 
-5. Klicken Sie oben auf der Seite „Namespace“ auf die Registerkarte **Notification Hubs** und dann auf den soeben erstellen Notification Hub. Dadurch wird das Dashboard für den neuen Notification Hub geöffnet.
+   	![Azure-Portal – Portalseite für den Notification Hub](./media/notification-hubs-portal-create-new-hub/notification-hubs-azure-portal-page.png)
+       
+5. Klicken Sie auf **Einstellungen** und **Zugriffsrichtlinien**. Notieren Sie die beiden Verbindungszeichenfolgen, die Ihnen zur Verfügung gestellt werden, da Sie diese später zum Behandeln von Pushbenachrichtigungen benötigen.
 
-6. Klicken Sie auf dem Dashboard Ihres neuen Hubs auf **Verbindungszeichenfolge anzeigen** Notieren Sie sich die beiden Verbindungszeichenfolgen. Sie werden diese weiter unten verwenden.
+   	![Azure-Portal – Verbindungszeichenfolgen für den Notification Hub](./media/notification-hubs-portal-create-new-hub/notification-hubs-connection-strings-portal.png)
 
-   	![](./media/notification-hubs-portal-create-new-hub/notification-hubs-view-connection-strings.png)
-
-	![](./media/notification-hubs-portal-create-new-hub/notification-hubs-connection-strings.png)
-
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0218_2016-->

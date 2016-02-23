@@ -12,8 +12,8 @@
 	ms.workload="identity"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="article"
-	ms.date="01/21/2016"
+	ms.topic="get-started-article"
+	ms.date="02/18/2016"
 	ms.author="billmath"/>
 
 # Vergleich von Tools für die Verzeichnisintegration
@@ -27,8 +27,7 @@ Im Laufe der Jahre sind die Tools für die Verzeichnisintegration umfangreicher 
 
 Verwenden Sie den folgenden Schlüssel für jede der Tabellen.
 
-● = Jetzt verfügbar</br> BV = Bald verfügbar</br> ÖV = Öffentliche Vorschau</br>
-
+● = Jetzt verfügbar BV = Bald verfügbar ÖV = Öffentliche Vorschau
 
 ## Synchronisierung vom lokalen Standort zur Cloud
 
@@ -72,7 +71,7 @@ Verwenden Sie den folgenden Schlüssel für jede der Tabellen.
 | Unterstützt die Installation auf einem Domänencontroller | ● | ● | ● | |
 | Unterstützt die Installation mit SQL Express | ● | ● | ● | |
 | Einfaches Upgrade von DirSync |● | | | |
-| Lokalisierung in die Windows Server-Sprachen | BV | ● | ● | |
+| Lokalisierung in die Windows Server-Sprachen | ● | ● | ● | |
 | Unterstützung für Windows Server 2008 und Windows Server 2008 R2 | ● für Synchronisierung, nicht für den Verbund| ● | ● | ● |
 | Unterstützung für Windows Server 2012 und Windows Server 2012 R2 | ● | ● | ● | Nur 2012 |
 
@@ -91,4 +90,4 @@ Zulassen einer erweiterten Anpassung des Attributflusses | ● | ● | | ●
 ## Nächste Schritte
 Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

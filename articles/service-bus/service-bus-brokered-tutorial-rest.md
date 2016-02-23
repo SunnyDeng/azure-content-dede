@@ -9,7 +9,7 @@
 <tags 
    ms.service="service-bus"
    ms.devlang="na"
-   ms.topic="article"
+   ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="09/15/2015"
@@ -634,4 +634,4 @@ Weitere Informationen finden Sie in den folgenden Artikeln:
 [klassische Azure-Portal]: http://manage.windowsazure.com
 [klassischen Azure-Portals]: http://manage.windowsazure.com
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0218_2016-->

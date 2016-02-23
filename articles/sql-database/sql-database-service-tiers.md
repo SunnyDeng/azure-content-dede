@@ -14,7 +14,7 @@
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
 	ms.workload="data-management"
-	ms.date="02/03/2016"
+	ms.date="02/17/2016"
 	ms.author="jeffreyg"/>
 
 # SQL-Datenbankoptionen und -leistung: Grundlegendes zum Angebot in den einzelnen Tarifen
@@ -30,7 +30,7 @@ Die Dienstebenen "Basic", "Standard" und "Premium" haben alle eine Betriebszeit-
 | **Standard** | Die richtige Wahl für die meisten Cloudanwendungen mit Unterstützung mehrerer gleichzeitiger Abfragen. Beispiele hierfür sind Arbeitsgruppen-oder Webanwendungen. |
 | **Premium** | Konzipiert für hohe Transaktionsvolumen, unterstützt eine große Anzahl gleichzeitiger Benutzer und erfordert die höchste Stufe der Funktionen für Geschäftskontinuität. Beispiele hierfür sind Datenbanken für unternehmenskritische Anwendungen. |
 
->[AZURE.NOTE] Web Edition und Business Edition sind nicht mehr verfügbar. Erfahren Sie, wie Sie ein [Upgrade von Web- und Business-Editionen](sql-database-upgrade-new-service-tiers.md) durchführen. Bitte informieren Sie sich unter [Häufig gestellte Fragen zur Einstellung von Web und Business Edition](https://azure.microsoft.com/pricing/details/sql-database/web-business/), wenn Sie Web- und Business-Editionen weiterhin verwenden möchten.
+>[AZURE.NOTE] Web Edition und Business Edition sind nicht mehr verfügbar. Informieren Sie sich unter [Häufig gestellte Fragen zur Einstellung von Web und Business Edition](https://azure.microsoft.com/pricing/details/sql-database/web-business/), wenn Sie Web- und Business-Editionen weiterhin verwenden möchten.
 
 ### Tarife und Leistungsstufen für Einzeldatenbanken
 Für Einzeldatenbanken sind mehrere Leistungsstufen innerhalb jeder Dienstebene verfügbar, sodass Sie flexibel die Ebene auswählen können, die Ihren Workloadanforderungen am besten entspricht. Wenn Sie zentral hoch- oder herunterskalieren müssen, können Sie die Ebenen Ihrer Datenbank problemlos und **ohne Ausfallzeiten der Anwendung** ändern. Ausführlichere Informationen finden Sie unter [Ändern der Dienstebenen und -Leistungsstufen von Datenbanken](sql-database-scale-up.md).
@@ -83,7 +83,7 @@ Wenn Sie beispielsweise einen Anstieg der Workload Ihrer Datenbank erwarten, kö
 
 Anhand der Leistungsmetriken können Sie auch ermitteln, ob Sie möglicherweise eine Herabstufung auf eine niedrigere Leistungsstufe vornehmen können. Angenommen, Sie verwenden eine Datenbank der Dienstebene "Standard S2", und alle Leistungsmetriken zeigen, dass die Datenbank zu jedem Zeitpunkt durchschnittlich nicht mehr als 10 % nutzt. Hier ist es wahrscheinlich, dass sich die Datenbank auch mit der Dienstebene "Standard S1" verwenden lässt. Bevor Sie sich für einen Wechsel zu einer niedrigeren Leistungsstufe entscheiden, müssen Sie aber auch Workloads berücksichtigen, die Spitzen oder Schwankungen aufweisen können.
 
-Dieselben Metriken, die im Portal bereitgestellt werden, sind auch über Systemsichten verfügbar: [sys.resource_stats](https://msdn.microsoft.com/library/dn269979.aspx) in der logischen **„master“-Datenbank** Ihres Servers und [sys.dm_db_resource_stats](https://msdn.microsoft.com/library/dn800981.aspx) in der Benutzerdatenbank (**sys.dm_db_resource_stats** werden in jeder Basic-, Standard- und Premium-Benutzerdatenbank erstellt. Web- und Business Edition-Datenbanken geben ein leeres Resultset zurück.) Verwenden Sie **sys.resource_stats**, wenn Sie weniger differenzierte Daten über einen längeren Zeitraum überwachen möchten. Verwenden Sie **sys.dm_db_resource_stats**, wenn Sie differenzierte Daten in einem kürzeren Zeitraum überwachen möchten. Weitere Informationen finden Sie unter [Leitfaden zur Leistung für Azure SQL-Datenbanken](sql-database-performance-guidance.md#monitoring-resource-use-with-sysresourcestats).
+Dieselben Metriken, die im Portal bereitgestellt werden, sind auch über Systemsichten verfügbar: [sys.resource\_stats](https://msdn.microsoft.com/library/dn269979.aspx) in der logischen **„master“-Datenbank** Ihres Servers und [sys.dm\_db\_resource\_stats](https://msdn.microsoft.com/library/dn800981.aspx) in der Benutzerdatenbank (**sys.dm\_db\_resource\_stats** werden in jeder Basic-, Standard- und Premium-Benutzerdatenbank erstellt. Web- und Business Edition-Datenbanken geben ein leeres Resultset zurück.) Verwenden Sie **sys.resource\_stats**, wenn Sie weniger differenzierte Daten über einen längeren Zeitraum überwachen möchten. Verwenden Sie **sys.dm\_db\_resource\_stats**, wenn Sie differenzierte Daten in einem kürzeren Zeitraum überwachen möchten. Weitere Informationen finden Sie unter [Leitfaden zur Leistung für Azure SQL-Datenbanken](sql-database-performance-guidance.md#monitoring-resource-use-with-sysresourcestats).
 
 In Pools für elastische Datenbanken können Sie Einzeldatenbanken im Pool mit den in diesem Abschnitt beschriebenen Methoden überwachen. Sie können den Pool jedoch auch als Ganzes überwachen. Informationen dazu finden Sie unter [Erstellen und Verwalten eines elastischen Azure SQL-Datenbankpools](sql-database-elastic-pool-portal.md#monitor-and-manage-an-elastic-database-pool).
 
@@ -94,4 +94,4 @@ Wenn Sie mehrere Datenbanken als Gruppe verwalten möchten, finden Sie entsprech
 
 Nachdem Sie jetzt die Ebenen der SQL-Datenbank kennen, können Sie sie mit einer [kostenlosen Testversion](https://azure.microsoft.com/pricing/free-trial/) ausprobieren und sich mit der [Erstellung Ihrer ersten SQL-Datenbank](sql-database-get-started.md) befassen!
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0218_2016-->

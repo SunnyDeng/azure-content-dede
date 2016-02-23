@@ -12,7 +12,7 @@
 	ms.workload="na"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="article"
+	ms.topic="get-started-article"
 	ms.date="10/15/2015"
 	ms.author="darosa"/>
 
@@ -57,4 +57,4 @@ Weitere Informationen zu Service Bus Messaging finden Sie in folgenden Themen.
 - [Übersicht über die Architektur von Azure Service Bus](service-bus-fundamentals-hybrid-solutions.md)
 - [Verwenden von Service Bus-Warteschlangen](service-bus-dotnet-how-to-use-queues.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

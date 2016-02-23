@@ -10,10 +10,10 @@
 <tags
    ms.service="active-directory"
    ms.devlang="na"
-   ms.topic="article"
+   ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="02/01/2016"
+   ms.date="02/10/2016"
    ms.author="curtand;kenhoff"/>
 
 # Erste Schritte mit Azure Active Directory-Berichten
@@ -156,4 +156,4 @@ Unter der E-Mail-Adresse [aadreportinghelp@microsoft.com](mailto:aadreportinghel
 
 > [AZURE.TIP] Weitere Dokumentationen zu Azure AD Reporting finden Sie unter [Anzeigen von Zugriffs- und Nutzungsberichten](active-directory-view-access-usage-reports.md).
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0218_2016-->

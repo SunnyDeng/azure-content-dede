@@ -3,7 +3,7 @@
 	description="Hier erhalten Sie Informationen über den Azure Batch-Dienst für umfangreiche parallele Workloads und HPC-Workloads."
 	services="batch"
 	documentationCenter=""
-	authors="dlepow"
+	authors="mmacy"
 	manager="timlt"
 	editor=""/>
 
@@ -13,94 +13,127 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="11/19/2015"
-	ms.author="danlep"/>
+	ms.date="02/16/2016"
+	ms.author="marsma"/>
 
 # Grundlagen von Azure Batch
 
-Azure Batch unterstützt Sie beim effizienten Ausführen von größeren parallelen und leistungsstarken Anwendungen (High Performance Computing, HPC) in der Cloud. Es handelt sich um einen Plattformdienst zur Planung rechenintensiver Aufgaben für die Ausführung auf einer verwalteten Sammlung von virtuellen Computern (Computeknoten), die zur Erfüllung der Anforderungen des Auftrags skaliert werden können. Mit dem Batch-Dienst können Sie Azure-Computeressourcen und umfangreiche Batchaufträge programmgesteuert definieren, die bedarfsgesteuert oder zeitplanabhängig ausgeführt werden. Es ist deshalb nicht erforderlich, einen HPC-Cluster, einzelne VMs, virtuelle Netzwerke oder einen Auftragsplaner zu konfigurieren und zu verwalten.
+Azure Batch ermöglicht Ihnen die effiziente Ausführung von größeren parallelen und leistungsstarken Anwendungen (High Performance Computing, HPC) in der Cloud. Es handelt sich um einen Plattformdienst zur Planung rechenintensiver Aufgaben für die Ausführung auf einer verwalteten Sammlung von virtuellen Maschinen, und die Computeressourcen können automatisch skaliert werden, um die Anforderungen Ihrer Aufträge zu erfüllen.
 
-## Anwendungsfälle
+Mit dem Batch-Dienst definieren Sie Azure-Computeressourcen auf programmgesteuerte Weise, um Batchaufträge größeren Umfangs auszuführen. Sie können diese Aufträge bedarfsgesteuert oder nach einem Zeitplan ausführen. Es ist nicht erforderlich, einen HPC-Cluster, einzelne virtuelle Maschinen, virtuelle Netzwerke oder einen Auftragsplaner manuell zu konfigurieren und zu verwalten.
 
-Batch ist ein verwalteter Dienst für die *Batchverarbeitung* bzw. das *Batchcomputing* – Es werden große Mengen an ähnlichen Aufgaben ausgeführt, um das gewünschte Ergebnis zu erzielen. Batchcomputing ist ein gängiges Muster für Unternehmen, die große Datenmengen verarbeiten, transformieren und analysieren – entweder nach einem Zeitplan oder nach Bedarf. Beispielunternehmen sind Finanzdienstleister und Maschinenbauer.
+## Anwendungsfälle für Batch
 
-Batch funktioniert sehr gut bei intrinsisch parallelen (mitunter als „hochgradig parallel“ bezeichneten) Anwendungen oder Workloads, mit denen parallele Aufgaben auf mehreren Computern ausgeführt werden. Siehe Abbildung 1.
+Batch ist ein verwalteter Azure-Dienst, der für die *Batchverarbeitung* bzw. das *Batchcomputing* verwendet wird. Es werden große Mengen an ähnlichen Aufgaben ausgeführt, um das gewünschte Ergebnis zu erzielen. Batchcomputing wird am häufigsten von Unternehmen eingesetzt, die regelmäßig große Mengen an Daten verarbeiten, transformieren und analysieren.
 
-![Parallele Aufgaben][parallel]
+Batch funktioniert gut mit intrinsisch parallelen Anwendungen und Workloads (auch als „hochgradig parallel“ bezeichnet). Intrinsisch parallele Workloads können leicht in mehrere Aufgaben unterteilt werden, mit denen die Arbeitsschritte gleichzeitig auf mehreren Computern ausgeführt werden.
 
-**Abbildung 1: Parallele Aufgaben, die auf mehreren Computern ausgeführt werden**
+![Parallele Aufgaben][1]<br/>
 
-Beispiele:
+Beispiele für Workloads, die mit diesem Verfahren häufig verarbeitet werden:
 
 * Risikomodellierung im Finanzbereich
-* Bildrendering und-verarbeitung
+* Datenanalysen für die Bereiche Klima und Hydrologie
+* Bildrendering, -analyse und -verarbeitung
 * Mediencodierung und-transcodierung
 * Analyse genetischer Sequenzen
+* Belastungsanalysen für den Maschinenbau
 * Testen von Software
 
 Batch kann auch parallele Berechnungen mit einem abschließenden Reduzierungsschritt sowie komplexere HPC-Workloads ausführen, z. B. MPI-Anwendungen (Message Passing Interface).
 
->[AZURE.NOTE]Derzeit unterstützt Batch nur Workloads, die auf Windows Server-basierten virtuellen Computern ausgeführt werden.
+Ein Vergleich zwischen Batch und anderen HPC-Lösungsoptionen in Azure finden Sie unter [Batch und HPC-Lösungen](batch-hpc-solutions.md).
 
-Ein Vergleich von Batch mit anderen HPC-Lösungsoptionen in Azure finden Sie unter [Batch und HPC-Lösungen](batch-hpc-solutions.md).
+>[AZURE.NOTE] Derzeit unterstützt Batch nur Workloads, die auf Windows Server-basierten virtuellen Maschinen ausgeführt werden.
 
 ## Entwickeln mit Batch
 
-Entwickeln Sie mit den Batch-APIs, um verwaltete Pools von Computeknoten zu erstellen und zu verwalten sowie um die Aufträge und Aufgaben zu planen, die auf diesen ausgeführt werden. Schreiben Sie Clientanwendungen oder Front-Ends, um Aufträge und Aufgaben nach Bedarf, nach einem Zeitplan oder als Teil eines größeren von Tools wie [Azure Data Factory](https://azure.microsoft.com/documentation/services/data-factory/) verwalteten Workflows auszuführen.
+Beim Erstellen von Lösungen, bei denen Azure Batch für die Verarbeitung paralleler Workloads verwendet wird, gehen Sie unter Einsatz der Batch-APIs programmgesteuert vor. Mit den Batch-APIs erstellen und verwalten Sie Pools mit Computeknoten (virtuellen Maschinen) und planen Aufträge und Aufgaben, die auf diesen Knoten ausgeführt werden. Für eine Clientanwendung oder einen Dienst, die bzw. den Sie erstellen, werden die Batch-APIs zum Kommunizieren mit dem Batch-Dienst verwendet. Sie können größere Workloads für Ihr Unternehmen auf effiziente Weise verarbeiten oder ein Dienst-Front-End für Ihre Kunden bereitstellen, damit sie Aufträge und Aufgaben ausführen können – bedarfsgesteuert oder nach Zeitplan auf einem, Hunderten oder Tausenden von Knoten. Sie können Batch auch als Teil eines größeren Workflows nutzen, der mit Tools verwaltet wird, z. B. [Azure Data Factory][data_factory].
 
-In der [Übersicht über Azure Batch-Features](batch-api-basics.md) finden Sie weitere Informationen zu den Batch-Konzepten.
+> [AZURE.TIP] Wenn Sie ein besseres Verständnis der Funktionen der Batch-API entwickeln möchten, können Sie sich die [Übersicht über Azure Batch-Features](batch-api-basics.md) ansehen.
 
-### Benötigte Konten
+### Benötigte Azure-Konten
 
-+ **Azure-Konto und -Abonnement** Wenn Sie kein Konto haben, können Sie Ihre [MSDN-Abonnentenleistungen](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) in Anspruch nehmen oder sich für eine [kostenlose Testversion](https://azure.microsoft.com/pricing/free-trial/) registrieren.
+Beim Entwickeln von Batch-Lösungen verwenden Sie in Microsoft Azure die folgenden Konten:
 
-+ **Batch-Konto**: Sie verwenden den Namen und die URL des Batch-Kontos und einen Zugriffsschlüssel als Anmeldeinformationen, wenn Sie Batch-APIs aufrufen. Alle Ihre Batch-Ressourcen, wie z. B. Computeknoten, Pools, Aufträge und Aufgaben, sind einem Batch-Konto zugeordnet. Im [Azure-Portal](batch-account-create-portal.md) können Sie ein Batch-Konto erstellen und Zugriffsschlüssel für das Konto verwalten.
+- **Azure-Konto und -Abonnement:** Wenn Sie noch kein Azure-Konto haben, können Sie Ihre [MSDN-Abonnentenleistungen][msdn_benefits] in Anspruch nehmen oder sich für eine [kostenlose Testversion][free_trial] registrieren. Beim Erstellen eines Kontos wird für Sie ein Standardabonnement erstellt.
 
-+ **Speicherkonto**: Für die meisten Batch-Szenarien benötigen Sie ein Azure-Speicherkonto zum Speichern Ihrer Datenein- und -ausgaben sowie der Skripts oder ausführbaren Dateien, die auf den Computeknoten ausgeführt werden. Informationen zum Erstellen eines Speicherkontos finden Sie unter [Informationen zu Azure-Speicherkonten](../storage/storage-create-storage-account.md).
+- **Batch-Konto:** Wenn Ihre Anwendungen mit dem Batch-Dienst interagieren, werden der Kontoname, die URL des Kontos und ein Zugriffsschlüssel als Anmeldeinformationen verwendet. Ihre Batch-Ressourcen, z. B. Pools, Computeknoten, Aufträge und Aufgaben, sind einem Batch-Konto zugeordnet. Sie können [ein Batch-Konto im Azure-Portal erstellen und verwalten](batch-account-create-portal.md).
+
+- **Speicherkonto:** Batch enthält integrierte Unterstützung zum Verwenden von Dateien in [Azure Storage][azure_storage]. Für nahezu jedes Batch-Szenario wird Azure Storage für das Staging von Dateien verwendet: für die Programme, die von Ihren Aufgaben ausgeführt werden, und für die dabei verarbeiteten Daten – sowie für die Speicherung der Ausgabedaten, die von Ihren Aufgaben generiert werden. Informationen zum Erstellen eines Speicherkontos finden Sie unter [Informationen zu Azure-Speicherkonten](./../storage/storage-create-storage-account.md).
 
 ### Batch-Entwicklungsbibliotheken und -Tools
 
-Verwenden Sie diese .NET-Bibliotheken und -Tools mit Visual Studio, um Azure Batch-Anwendungen zu entwickeln und zu verwalten.
+Zum Erstellen von Lösungen mit Azure Batch können Sie die Batch .NET-Clientbibliotheken oder PowerShell verwenden, oder Sie können auch direkte REST-API-Aufrufe ausgeben. Nutzen Sie diese Tools, um Clientanwendungen und Dienste zu entwickeln, die Aufträge in Batch ausführen.
 
-+ [.NET-Bibliothek für Batch-Clients](http://www.nuget.org/packages/Azure.Batch/) (NuGet) – Dient zum Entwickeln von Clientanwendungen zum Ausführen von Aufträgen mit dem Batch-Dienst.
-+ [.NET-Bibliothek für die Batch-Verwaltung](http://www.nuget.org/packages/Microsoft.Azure.Management.Batch/) (NuGet) – Dient zum Verwalten von Batch-Konten.
-+ [Batch-Explorer](https://github.com/Azure/azure-batch-samples/tree/master/CSharp/BatchExplorer) (GitHub) – Erstellen Sie diese GUI-Anwendung zum Durchsuchen von, Zugreifen auf und Aktualisieren von Ressourcen in einem Batch-Konto, einschließlich Aufträgen und Aufgaben, Computeknoten und Pools sowie Dateien auf einem Computeknoten. Weitere Informationen finden Sie in diesem [Blogbeitrag](http://blogs.technet.com/b/windowshpc/archive/2015/01/20/azure-batch-explorer-sample-walkthrough.aspx).
+- [Batch .NET][api_net]-Clientbibliothek: Die meisten Batch-Lösungen werden mit der Batch .NET-Clientbibliothek erstellt, die [unter NuGet verfügbar][api_net_nuget] ist.
 
+- [Batch Management .NET][api_net_mgmt]-Clientbibliothek: Ist auch [unter NuGet verfügbar][api_net_mgmt_nuget]. Verwenden Sie die Batch Management .NET-Clientbibliothek, um Batch-Konten in Ihren Clientanwendungen oder Diensten programmgesteuert zu verwalten.
+
+- [Batch REST][batch_rest]-API: Die Batch REST-APIs bieten die gleiche Funktionalität wie die Batch .NET-Clientbibliothek. Die Batch .NET-Bibliothek selbst nutzt die Batch REST-API im Hintergrund für die Interaktion mit dem Batch-Dienst.
+
+- [Batch PowerShell-Cmdlets:][batch_ps] Mit den Azure Batch-Cmdlets im [Azure PowerShell](./../powershell-install-configure.md)-Modul können Sie Batch-Ressourcen mit PowerShell verwalten.
+
+- [Azure Batch-Explorer:][batch_explorer] Der Batch-Explorer ist eine der Batch .NET-Beispielanwendungen, die [bei GitHub verfügbar][github_samples] sind. Erstellen Sie diese Windows Presentation Foundation-Anwendung (WPF) mit Visual Studio 2013 oder 2015, und verwenden Sie sie zum Durchsuchen und Verwalten der Ressourcen in Ihrem Batch-Konto, während Sie Ihre Batch-Lösungen entwickeln und debuggen. Sehen Sie sich Details zu Aufträgen, Pools und Aufgaben an, laden Sie Dateien von Computeknoten herunter, oder stellen Sie eine Remoteverbindung mit Remotedesktopdateien (RDP) her, die Sie nach wenigen Klicks auf der Batch-Explorer-Oberfläche erhalten.
+
+- [Microsoft Azure-Speicher-Explorer:][storage_explorer] Dies ist zwar kein Azure Batch-Tool, aber der Speicher-Explorer ist ein weiteres wertvolles Tool, das Sie beim Entwickeln und Debuggen Ihrer Batch-Lösungen einsetzen können.
 
 ## Szenario: Horizontales Hochskalieren eines parallelen Workloads
 
-Ein gängiges Szenario mit den Batch-APIs ist das horizontale Hochskalieren einer intrinsisch parallelen Aufgabe wie dem Bildrendering in einem Pool von Computeknoten, die Tausende von Computekernen bereitstellen.
+Eine gängige Lösung, bei der die Batch-APIs zum Interagieren mit dem Batch-Dienst verwendet werden, umfasst das horizontale Hochskalieren von intrinsisch parallelen Arbeitsschritten – z. B. das Rendern von Bildern für 3D-Szenen – für einen Pool mit Computeknoten. Dieser Pool mit Computeknoten kann als Ihre „Renderfarm“ dienen, mit der für Ihren Renderauftrag beispielsweise Dutzende, Hunderte oder sogar Tausende von Kernen bereitgestellt werden können.
 
-Abbildung 2 zeigt einen Workflow, der die Batch .NET-Clientanwendung verwendet, um einen parallelen Workload mit dem Batch-Dienst auszuführen.
+Im folgenden Diagramm ist ein gängiger Batch-Workflow dargestellt, bei dem eine Clientanwendung oder ein gehosteter Dienst Batch zum Ausführen einer parallelen Workload verwendet.
 
+![Batch-Lösungsworkflow][2]
 
-![Workflow für Arbeitsaufgaben][work_item_workflow]
+Bei diesem häufigen Szenario verarbeitet Ihre Anwendung bzw. Ihr Dienst eine Workloadberechnung in Azure Batch, indem die folgenden Schritte ausgeführt werden:
 
-**Abbildung 2: Horizontales Hochskalieren eines parallelen Workloads auf Batch**
+1. Hochladen der **Eingabedateien** und der **Anwendung**, mit der diese Dateien verarbeitet werden, in Ihr Azure Storage-Konto. Die Eingabedateien können alle Daten sein, die von Ihrer Anwendung verarbeitet werden, z. B. Daten für Finanzmodelle oder zu transcodierende Videodateien. Bei den Anwendungsdateien kann es sich um alle Anwendungen handeln, die zum Verarbeiten der Daten verwendet werden, z. B. eine 3D-Renderanwendung oder einen Medien-Transcoder.
 
-1.	Hochladen von Eingabedateien (z. B. Quelldaten oder Bilder), die für einen Auftrag zu einem Azure-Speicherkonto erforderlich sind. Der Batch-Dienst lädt Dateien auf Computeknoten, wenn die Aufgaben im Auftrag ausgeführt werden.
+2. Erstellen Sie einen Batch-**Pool** mit Computeknoten in Ihrem Batch-Konto. Dies sind die virtuellen Maschinen, mit denen Ihre Aufgaben ausgeführt werden. Sie geben Eigenschaften, z. B. die [Knotengröße](./../cloud-services/cloud-services-sizes-specs.md), das Betriebssystem und den Speicherort in Azure Storage für die Anwendung an, die installiert werden soll, wenn die Knoten dem Pool beitreten (die in Schritt 1 hochgeladene Anwendung). Sie können für den Pool auch die [automatische Skalierung](batch-automatic-scaling.md) konfigurieren – indem Sie die Anzahl von Computeknoten im Pool dynamisch anpassen –, um auf die Workload zu reagieren, die von Ihren Aufgaben generiert wird.
 
-2.	Laden Sie die Programmdateien oder Skripts, die auf den Computeknoten ausgeführt werden sollen, in das Speicherkonto hoch. Dazu können Binärdateien mit ihren abhängigen Assemblys gehören. Der Batch-Dienst lädt diese Dateien auch auf die Computeknoten hoch, wenn die Aufgaben ausgeführt werden.
+3. Erstellen Sie einen Batch-**Auftrag**, um die Workload im Pool mit den Computeknoten auszuführen. Wenn Sie einen Auftrag erstellen, ordnen Sie ihn einem Batch-Pool zu.
 
-3.	Erstellen Sie programmgesteuert einen Pool von Batch-Computeknoten in Ihrem Batch-Konto, und geben Sie Eigenschaften an, wie z. B. ihre Größe oder das ausgeführte Betriebssystem. Sie können auch bestimmen, wie die Anzahl der Knoten im Pool dem Workload entsprechend [nach oben oder unten skaliert](batch-automatic-scaling.md) wird. Wenn eine Aufgabe ausgeführt wird, wird ihr ein Knoten aus diesem Pool zugewiesen.
+4. Fügen Sie dem Auftrag **Aufgaben** hinzu. Wenn Sie einem Auftrag Aufgaben hinzufügen, plant der Batch-Dienst die Aufgaben automatisch für die Ausführung auf den Computeknoten im Pool ein. Jede Aufgabe verwendet die Anwendung, die Sie hochgeladen haben, zum Verarbeiten der Eingabedateien.
 
-4.	Definieren Sie programmgesteuert einen Batch-Auftrag aus, um den Workload im Knotenpool auszuführen.
+    - 4a. Bevor eine Aufgabe ausgeführt wird, können die zu verarbeitenden Daten (die Eingabedateien) auf den zugewiesenen Computeknoten heruntergeladen werden. Falls die Anwendung nicht bereits auf dem Knoten installiert wurde (siehe Schritt 2), kann sie stattdessen hier heruntergeladen werden. Nach Abschluss der Downloads werden die Aufgaben auf ihren zugewiesenen Knoten ausgeführt.
 
-5.	Hinzufügen von Aufgaben zum Auftrag. Jede Aufgabe verwendet das Programm, das Sie hochgeladen haben, um Informationen aus einer hochgeladenen Datei zu verarbeiten. Je nach Workload möchten Sie ggf. [mehrere Aufgaben gleichzeitig](batch-parallel-node-tasks.md) auf jedem Computeknoten zum Maximieren der Ressourcenauslastung ausführen. Batch unterstützt auch spezielle [Auftragsvorbereitungs- und -ausführungsaufgaben](batch-job-prep-release.md) zum Vorbereiten der Computeknoten vor der Ausführung geplanter Aufgaben und zur Bereinigung im Anschluss.
+5. Während der Ausführung der Aufgaben können Sie Batch abfragen, um den Fortschritt des Auftrags und seiner Aufgaben zu überwachen. Die Clientanwendung bzw. der Dienst kommuniziert mit dem Batch-Dienst per HTTPS. Da Sie unter Umständen Tausende von Aufgaben auf Tausenden von Computeknoten überwachen müssen, sollten Sie für ein [effizientes Abfragen des Batch-Diensts](batch-efficient-list-queries.md) sorgen.
 
-6.	Führen Sie den Batch-Workload aus, und überwachen Sie Fortschritt und Ergebnisse. Die Anwendung kommuniziert über HTTPS mit dem Batch-Dienst. Um die Leistung der Anwendung zu verbessern, wenn eine große Anzahl von Pools, Aufträgen und Aufgaben überwacht wird, nutzen Sie [effiziente Verfahren zur Abfrage](batch-efficient-list-queries.md) des Batch-Diensts.
+6. Nach Abschluss der Aufgaben können die Ergebnisdaten in Azure Storage hochgeladen werden. Sie können Dateien auch direkt von Computeknoten abrufen.
 
+7. Wenn bei der Überwachung erkannt wird, dass die Aufgaben Ihres Auftrags abgeschlossen wurden, kann Ihre Clientanwendung bzw. der Dienst die Ausgabedaten zur weiteren Verarbeitung oder Auswertung herunterladen.
 
-
-
-
+Bedenken Sie, dass dies nur eine Möglichkeit zur Verwendung von Batch ist und dass in diesem Szenario nur einige der verfügbaren Features beschrieben werden. Beispielsweise können Sie auf jedem Computeknoten [mehrere Aufgaben parallel](batch-parallel-node-tasks.md) ausführen, und Sie können die [Vorbereitung und den Abschluss von Aufträgen](batch-job-prep-release.md) nutzen, um die Knoten für Ihre Aufträge vorzubereiten. Anschließend können Sie die Bereinigung durchführen.
 
 ## Nächste Schritte
 
-* Erste Schritte beim Entwickeln Ihrer ersten Anwendung mit der [.NET-Bibliothek für Batch-Clients](batch-dotnet-get-started.md)
-* Durchsuchen der Batch-Codebeispiele auf [GitHub](https://github.com/Azure/azure-batch-samples)
+Nachdem Sie nun ein Beispiel für ein Batch-Szenario gesehen haben, sollten Sie tiefer in den Dienst einsteigen und sich darüber informieren, wie Sie ihn zum Verarbeiten Ihrer rechenintensiven parallelen Workloads verwenden können.
 
-[parallel]: ./media/batch-technical-overview/parallel.png
-[work_item_workflow]: ./media/batch-technical-overview/work_item_workflow.png
+- Lesen Sie [Erste Schritte mit der Azure Batch-Bibliothek für .NET](batch-dotnet-get-started.md), um zu erfahren, wie Sie C# und die Batch .NET-Bibliothek verwenden, um die oben beschriebenen Verfahren durchzuführen. Dies sollte beim Erlernen des Batch-Diensts einer Ihrer ersten Anlaufpunkte sein.
 
-<!---HONumber=AcomDC_0128_2016-->
+- Sehen Sie sich die [Übersicht über Azure Batch-Features](batch-api-basics.md) an, um eingehendere Informationen zu den API-Features zu erhalten, die von Batch für die Verarbeitung Ihrer rechenintensiven Workloads bereitgestellt werden.
+
+- Zusätzlich zum Batch-Explorer verdeutlichen die anderen [Codebeispiele bei GitHub][github_samples] die Nutzung vieler Batch-Features mithilfe der Batch .NET-Bibliothek.
+
+- Sehen Sie sich den [Batch-Lernpfad][learning_path] an, um sich über die Ressourcen zu informieren, die zum Erlernen des Umgangs mit Batch verfügbar sind.
+
+[azure_storage]: https://azure.microsoft.com/services/storage/
+[api_net]: https://msdn.microsoft.com/library/azure/mt348682.aspx
+[api_net_nuget]: https://www.nuget.org/packages/Azure.Batch/
+[api_net_mgmt]: https://msdn.microsoft.com/library/azure/mt463120.aspx
+[api_net_mgmt_nuget]: https://www.nuget.org/packages/Microsoft.Azure.Management.Batch/
+[batch_explorer]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/BatchExplorer
+[batch_ps]: https://msdn.microsoft.com/library/azure/mt125957.aspx
+[batch_rest]: https://msdn.microsoft.com/library/azure/Dn820158.aspx
+[data_factory]: https://azure.microsoft.com/documentation/services/data-factory/
+[free_trial]: https://azure.microsoft.com/pricing/free-trial/
+[github_samples]: https://github.com/Azure/azure-batch-samples
+[learning_path]: https://azure.microsoft.com/documentation/learning-paths/batch/
+[msdn_benefits]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
+[storage_explorer]: http://storageexplorer.com/
+
+[1]: ./media/batch-technical-overview/tech_overview_01.png
+[2]: ./media/batch-technical-overview/tech_overview_02.png
+
+<!---HONumber=AcomDC_0218_2016-->

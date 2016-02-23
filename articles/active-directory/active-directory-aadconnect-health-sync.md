@@ -1,20 +1,20 @@
 
-<properties 
-	pageTitle="Verwenden von Azure AD Connect Health mit Synchronisierung | Microsoft Azure" 
-	description="Auf dieser Seite zu Azure AD Connect Health wird erläutert, wie eine Überwachung mit Azure AD Connect für die Synchronisierung durchgeführt wird." 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="stevenpo" 
+<properties
+	pageTitle="Verwenden von Azure AD Connect Health mit Synchronisierung | Microsoft Azure"
+	description="Auf dieser Seite zu Azure AD Connect Health wird erläutert, wie eine Überwachung mit Azure AD Connect für die Synchronisierung durchgeführt wird."
+	services="active-directory"
+	documentationCenter=""
+	authors="billmath"
+	manager="stevenpo"
 	editor="curtand"/>
 
-<tags 
-	ms.service="active-directory" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="get-started-article" 
-	ms.date="01/21/2016" 
+<tags
+	ms.service="active-directory"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="get-started-article"
+	ms.date="02/16/2016"
 	ms.author="billmath"/>
 
 # Verwenden von Azure AD Connect Health für die Synchronisierung
@@ -55,4 +55,4 @@ Dieses Feature bietet eine grafische Darstellung des Trends bei der Anzahl von a
 * [Verwenden von Azure AD Connect Health mit AD FS](active-directory-aadconnect-health-adfs.md)
 * [Azure AD Connect Health – FAQ](active-directory-aadconnect-health-faq.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

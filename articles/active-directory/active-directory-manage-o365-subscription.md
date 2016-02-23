@@ -10,10 +10,10 @@
 <tags
    ms.service="active-directory"
    ms.devlang="na"
-   ms.topic="article"
+   ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="01/05/2016"
+   ms.date="02/10/2016"
    ms.author="curtand"/>
 
 #Verwalten des Verzeichnisses für Ihr Office 365-Abonnement in Azure
@@ -48,7 +48,8 @@ In diesem Fall sind die beiden Verzeichnisse unabhängig voneinander.
 ##Zwei unabhängige Verzeichnisse verwalten
 Damit Michael Smith beide Verzeichnisse verwalten kann, während er in Azure als msmith@hotmail.com angemeldet ist, muss er die folgenden Schritte ausführen:
 
-> [AZURE.NOTE]Diese Schritte können nur ausgeführt werden, wenn ein Benutzer mit einem Microsoft-Konto angemeldet ist. Wenn der Benutzer mit einem Geschäfts- oder Schulkonto angemeldet ist, steht die Option **Vorhandenes Verzeichnis verwenden** nicht zur Verfügung. Ein Geschäfts- oder Schulkonto kann nur mithilfe seines Stammverzeichnisses authentifiziert werden (dies ist das Verzeichnis, in dem das Geschäfts- oder Schulkonto gespeichert wird, das im Besitz der Organisation oder Schule ist).
+> [AZURE.NOTE]
+Diese Schritte können nur ausgeführt werden, wenn ein Benutzer mit einem Microsoft-Konto angemeldet ist. Wenn der Benutzer mit einem Geschäfts- oder Schulkonto angemeldet ist, steht die Option **Vorhandenes Verzeichnis verwenden** nicht zur Verfügung. Ein Geschäfts- oder Schulkonto kann nur mithilfe seines Stammverzeichnisses authentifiziert werden (dies ist das Verzeichnis, in dem das Geschäfts- oder Schulkonto gespeichert wird, das im Besitz der Organisation oder Schule ist).
 
 1.	Melden Sie sich als msmith@hotmail.com beim klassischen Azure-Portal an.
 2.	Klicken Sie auf **Neu** -> **App Services** -> **Active Directory** -> **Verzeichnis** -> **Benutzerdefiniert erstellen**.
@@ -70,4 +71,4 @@ Nehmen wir nun an, dass John Doe sich beim klassischen Azure-Portal anmelden und
 ##Nächste Schritte
 Weitere Informationen über die Beziehung zwischen Abonnements und Verzeichnissen finden Sie unter [Zuordnung zwischen einem Abonnement und einem Verzeichnis](active-directory-how-subscriptions-associated-directory.md).
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0218_2016-->

@@ -1,6 +1,6 @@
 <properties
   pageTitle="Häufig gestellte Fragen zu Azure IoT Suite | Microsoft Azure | Microsoft Azure"
-  description="Häufig gestellte Fragen zu IoT-Suite."
+  description="Häufig gestellte Fragen zu IoT Suite"
   services=""
   suite="iot-suite"
   documentationCenter=""
@@ -11,13 +11,13 @@
 <tags
   ms.service="iot-suite"
   ms.devlang="na"
-  ms.topic="article"
+  ms.topic="get-started-article"
   ms.tgt_pltfrm="na"
   ms.workload="na"
   ms.date="11/17/2015"
   ms.author="araguila"/>
    
-# Häufig gestellte Fragen
+# Häufig gestellte Fragen zu IoT Suite
 
 ### Wie viele Instanzen von DocumentDB kann ich in einem Abonnement bereitstellen?
 
@@ -43,4 +43,4 @@ Siehe den Blogbeitrag von Eric Golpe [Walkthrough of Deleting an Azure AD Tenant
 [lnk-classic-portal]: https://manage.windowsazure.com
 [lnk-delete-aad-tennant]: http://blogs.msdn.com/b/ericgolpe/archive/2015/04/30/walkthrough-of-deleting-an-azure-ad-tenant.aspx
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

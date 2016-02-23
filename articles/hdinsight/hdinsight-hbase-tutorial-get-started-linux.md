@@ -25,14 +25,14 @@
 
 Erfahren Sie, wie Sie einen HBase-Cluster in HDInsight erstellen, HBase-Tabellen erstellen und Tabellen mit Hive abfragen. Allgemeine Informationen zu HBase finden Sie unter [Überblick zu HDInsight HBase][hdinsight-hbase-overview].
 
-Die Informationen in diesem Artikel gelten für Linux-basierte HDInsight-Cluster. Informationen zu Windows-basierten Clustern finden Sie unter Erste Schritte mit Apache HBase mit Hadoop in HDInsight Windows.
+Die Informationen in diesem Artikel gelten für Linux-basierte HDInsight-Cluster. Informationen zu Windows-basierten Clustern erhalten Sie, indem Sie die Registerkartenauswahl oben auf der Seite zum Umschalten verwenden.
 
 ###Voraussetzungen
 
 Bevor Sie mit diesem Lernprogramm zu HBase beginnen können, benötigen Sie Folgendes:
 
 - **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
-- [Secure Shell (SSU)](hdinsight-hadoop-linux-use-ssh-unixl.md). 
+- [Secure Shell (SSU)](hdinsight-hadoop-linux-use-ssh-unix.md) 
 - [curl](http://curl.haxx.se/download.html).
 
 ## Erstellen eines HBase-Clusters
@@ -201,7 +201,7 @@ Sie können Daten in HBase-Tabellen mit Hive abfragen. In diesem Abschnitt erste
 
 HBase in HDInsight wird mit einer Web-Benutzeroberfläche ausgeliefert, über die Cluster überwacht werden können. In dieser Web-Benutzeroberfläche können Sie Statistiken und Informationen zu Regionen anfordern.
 
-SSH kann auch zum Tunneln lokaler Anforderungen, z. B. Webanforderungen, zum HDInsight-Cluster verwendet werden. Die Anforderung wird dann zur angeforderten Ressource weitergeleitet, als ob sie vom Stammknoten des HDInsight-Clusters stammen würde. Weitere Informationen finden Sie unter [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Windows (Vorschau)](hdinsight-hadoop-linux-use-ssh-windows.md#tunnel).
+SSH kann auch zum Tunneln lokaler Anforderungen, z. B. Webanforderungen, zum HDInsight-Cluster verwendet werden. Die Anforderung wird dann zur angeforderten Ressource weitergeleitet, als ob sie vom Stammknoten des HDInsight-Clusters stammen würde. Weitere Informationen finden Sie unter [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Windows](hdinsight-hadoop-linux-use-ssh-windows.md#tunnel).
 
 **So richten Sie eine SSH-Tunnelsitzung ein**
 
@@ -287,4 +287,4 @@ Weitere Informationen finden Sie unter:
 [img-hbase-sample-data-tabular]: ./media/hdinsight-hbase-tutorial-get-started-linux/hdinsight-hbase-contacts-tabular.png
 [img-hbase-sample-data-bigtable]: ./media/hdinsight-hbase-tutorial-get-started-linux/hdinsight-hbase-contacts-bigtable.png
 
-<!------HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0218_2016-->

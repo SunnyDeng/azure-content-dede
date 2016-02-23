@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Übersicht über benutzerdefinierte Routen und die IP-Weiterleitung"
-   description="Grundlegende Informationen zu UDR und IP-Weiterleitung"
+   pageTitle="Was sind benutzerdefinierte Routen und IP-Weiterleitung?"
+   description="Erfahren Sie, wie benutzerdefinierte Routen (User Defined Routes, UDR) und die IP-Weiterleitung zum Weiterleiten von Datenverkehr an virtuelle Netzwerkgeräte in Azure verwendet werden."
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
@@ -9,13 +9,13 @@
 <tags 
    ms.service="virtual-network"
    ms.devlang="na"
-   ms.topic="article"
+   ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="12/11/2015"
    ms.author="telmos" />
 
-# Benutzerdefinierte Routen und IP-Weiterleitung
+# Was sind benutzerdefinierte Routen und IP-Weiterleitung?
 Wenn Sie virtuelle Computer in einem virtuellen Netzwerk (VNet) in Azure hinzufügen, werden Sie feststellen, dass die virtuellen Computer automatisch über das Netzwerk miteinander kommunizieren können. Sie müssen kein Gateway angeben, auch wenn die virtuellen Computer sich in unterschiedlichen Subnetzen befinden. Das gleiche gilt für die Kommunikation zwischen den virtuellen Computern und dem öffentlichen Internet und sogar für das lokale Netzwerk, wenn eine Hybridverbindung zwischen Azure und Ihrem eigenen Rechenzentrum vorhanden ist.
 
 Dieser Kommunikationsfluss ist möglich, weil Azure eine Reihe von Systemrouten verwendet, um den IP-Datenverkehr zu definieren. Mit Systemrouten kann der Kommunikationsfluss in den folgenden Szenarien gesteuert werden:
@@ -36,7 +36,7 @@ Die folgende Abbildung zeigt ein Beispiel für benutzerdefinierte Routen und IP-
 
 ![Systemrouten in Azure](./media/virtual-networks-udr-overview/Figure2.png)
 
->[AZURE.IMPORTANT]Benutzerdefinierte Routen werden nur auf den ein Subnetz verlassenden Datenverkehr angewendet. Sie können keine Routen erstellen, um anzugeben, wie Datenverkehr z. B. aus dem Internet in ein Subnetz gelangt. Das Gerät, an das Sie Datenverkehr weiterleiten, darf sich außerdem nicht in dem gleichen Subnetz befinden, aus dem der Datenverkehr stammt. Erstellen Sie immer ein separates Subnetz für Ihre Geräte.
+>[AZURE.IMPORTANT] Benutzerdefinierte Routen werden nur auf den ein Subnetz verlassenden Datenverkehr angewendet. Sie können keine Routen erstellen, um anzugeben, wie Datenverkehr z. B. aus dem Internet in ein Subnetz gelangt. Das Gerät, an das Sie Datenverkehr weiterleiten, darf sich außerdem nicht in dem gleichen Subnetz befinden, aus dem der Datenverkehr stammt. Erstellen Sie immer ein separates Subnetz für Ihre Geräte.
 
 ## Routing
 Pakete werden über ein TCP/IP-Netzwerk weitergeleitet, das auf einer Routentabelle beruht, die auf den einzelnen Knoten im physischen Netzwerk definiert wird. Eine Routentabelle ist eine Sammlung der einzelnen Routen, anhand derer entschieden wird, wohin die Pakete beruhend auf der Ziel-IP-Adresse weitergeleitet werden. Eine Route besteht aus den folgenden Elementen:
@@ -71,14 +71,14 @@ Für die Subnetze gelten solange Systemrouten, bis dem Subnetz eine Routentabell
 1. BGP-Route (bei Verwendung von ExpressRoute)
 1. Systemroute
 
-Informationen zum Erstellen von benutzerdefinierten Routen finden Sie unter [Erstellen von Routen und Aktivieren der IP-Weiterleitung in Azure](../virtual-networks-udr-how-to#How-to-manage-routes).
+Informationen zum Erstellen von benutzerdefinierten Routen finden Sie unter [Erstellen von Routen und Aktivieren der IP-Weiterleitung in Azure](virtual-networks-udr-how-to.md#How-to-manage-routes).
 
->[AZURE.IMPORTANT]Benutzerdefinierte Routen sind nur für virtuelle Azure-Computer und Clouddienste möglich. Wenn Sie beispielsweise zwischen dem lokalen Netzwerk und Azure ein virtuelles Firewallgerät hinzufügen möchten, müssen Sie eine benutzerdefinierte Route für die Azure-Routentabellen erstellen, die den gesamten Datenverkehr zum lokalen Adressraum an das virtuelle Gerät weiterleitet. Allerdings durchläuft der eingehende Datenverkehr vom lokalen Adressraum das VPN-Gateway oder den ExpressRoute-Kreis, um unter Umgehung des virtuellen Geräts direkt zur Azure-Umgebung zu gelangen.
+>[AZURE.IMPORTANT] Benutzerdefinierte Routen sind nur für virtuelle Azure-Computer und Clouddienste möglich. Wenn Sie beispielsweise zwischen dem lokalen Netzwerk und Azure ein virtuelles Firewallgerät hinzufügen möchten, müssen Sie eine benutzerdefinierte Route für die Azure-Routentabellen erstellen, die den gesamten Datenverkehr zum lokalen Adressraum an das virtuelle Gerät weiterleitet. Allerdings durchläuft der eingehende Datenverkehr vom lokalen Adressraum das VPN-Gateway oder den ExpressRoute-Kreis, um unter Umgehung des virtuellen Geräts direkt zur Azure-Umgebung zu gelangen.
 
 ## BGP-Routen
-Wenn Sie über eine ExpressRoute-Verbindung zwischen dem lokalen Netzwerk und Azure verfügen, können Sie BGP für das Weitergeben der Routen aus Ihrem lokalen Netzwerk an Azure aktivieren. Diese BGP-Routen werden auf die gleiche Weise wie System- und benutzerdefinierte Routen in den einzelnen Azure-Subnetzen verwendet. Weitere Informationen finden Sie unter [Einführung zu ExpressRoute](../expressroute-introduction).
+Wenn Sie über eine ExpressRoute-Verbindung zwischen dem lokalen Netzwerk und Azure verfügen, können Sie BGP für das Weitergeben der Routen aus Ihrem lokalen Netzwerk an Azure aktivieren. Diese BGP-Routen werden auf die gleiche Weise wie System- und benutzerdefinierte Routen in den einzelnen Azure-Subnetzen verwendet. Weitere Informationen finden Sie unter [Einführung zu ExpressRoute](../articles/expressroute/expressroute-introduction.md).
 
->[AZURE.IMPORTANT]Sie können die Azure-Umgebung für die Verwendung der Tunnelerzwingung über das lokale Netzwerk konfigurieren, indem Sie für das Subnetz 0.0.0.0/0 eine benutzerdefinierte Route erstellen, die als nächsten Hop das VPN-Gateway verwendet. Dies funktioniert nur mit einem VPN-Gateway, nicht jedoch mit ExpressRoute. In ExpressRoute wird die Tunnelerzwingung über BGP konfiguriert.
+>[AZURE.IMPORTANT] Sie können die Azure-Umgebung für die Verwendung der Tunnelerzwingung über das lokale Netzwerk konfigurieren, indem Sie für das Subnetz 0.0.0.0/0 eine benutzerdefinierte Route erstellen, die als nächsten Hop das VPN-Gateway verwendet. Dies funktioniert nur mit einem VPN-Gateway, nicht jedoch mit ExpressRoute. In ExpressRoute wird die Tunnelerzwingung über BGP konfiguriert.
 
 ## SSL-Weiterleitung
 Wie oben angeführt, ist einer der wichtigsten Gründe für das Erstellen einer benutzerdefinierten Route das Weiterleiten von Datenverkehr an virtuelle Geräte. Ein virtuelles Gerät ist letztlich nur ein virtueller Computer, der eine Anwendung zur Verarbeitung des Netzwerkverkehrs ausführt, z. B. eine Firewall oder ein NAT-Gerät.
@@ -87,7 +87,7 @@ Dieser virtuelle Computer muss eingehenden Datenverkehr empfangen können, der n
 
 ## Nächste Schritte
 
-- Erfahren Sie, wie Sie [Routen im Ressourcen-Manager-Bereitstellungsmodell erstellen](../virtual-network-create-udr-arm-template) und diese Subnetzen zuordnen. 
-- Erfahren Sie, wie Sie [Routen im klassischen Bereitstellungsmodell erstellen](../virtual-network-create-udr-classic-ps) und diese Subnetzen zuordnen.
+- Erfahren Sie, wie Sie [Routen im Ressourcen-Manager-Bereitstellungsmodell erstellen](virtual-network-create-udr-arm-template.md) und diese Subnetzen zuordnen. 
+- Erfahren Sie, wie Sie [Routen im klassischen Bereitstellungsmodell erstellen](virtual-network-create-udr-classic-ps.md) und diese Subnetzen zuordnen.
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0218_2016-->

@@ -239,31 +239,33 @@ Web-API-CORS-Unterstützung ist flexibler als App Service-CORS-Unterstützung. 
 
 In den folgenden Schritten ist der Prozess zum Aktivieren der Web-API-Unterstützung zusammengefasst. Weitere Informationen finden Sie unter [Aktivieren von ursprungsübergreifenden Anforderungen in ASP.NET Web-API 2](http://www.asp.net/web-api/overview/security/enabling-cross-origin-requests-in-web-api).
 
-1. Fügen Sie in einem Web-API-Projekt, wie im folgenden Beispiel gezeigt, eine `config.EnableCors()`-Codezeile in die **Register**-Methode der **WebApiConfig**-Klasse ein. 
+1. Installieren Sie in einem Web-API-Projekt das NuGet-Paket [Microsoft.AspNet.WebApi.Cors](https://www.nuget.org/packages/Microsoft.AspNet.WebApi.Cors/).
+
+1. Fügen Sie wie im folgenden Beispiel gezeigt eine `config.EnableCors()`-Codezeile in die **Register**-Methode der **WebApiConfig**-Klasse ein.
 
 		public static class WebApiConfig
-	    {
-	        public static void Register(HttpConfiguration config)
-	        {
-	            // Web API configuration and services
+		{
+		    public static void Register(HttpConfiguration config)
+		    {
+		        // Web API configuration and services
 	            
 		        // The following line enables you to control CORS by using Web API code
-				config.EnableCors();
+		        config.EnableCors();
 	
-	            // Web API routes
-	            config.MapHttpAttributeRoutes();
+		        // Web API routes
+		        config.MapHttpAttributeRoutes();
 	
-	            config.Routes.MapHttpRoute(
-	                name: "DefaultApi",
-	                routeTemplate: "api/{controller}/{id}",
-	                defaults: new { id = RouteParameter.Optional }
-	            );
-	        }
-	    }
+		        config.Routes.MapHttpRoute(
+		            name: "DefaultApi",
+		            routeTemplate: "api/{controller}/{id}",
+		            defaults: new { id = RouteParameter.Optional }
+		        );
+		    }
+		}
 
-1. Fügen Sie im Web-API-Controller das `EnableCors`-Attribut der Controllerklasse oder einzelnen Aktionsmethoden hinzu. Im folgenden Beispiel gilt die CORS-Unterstützung für den gesamten Controller.
+1. Fügen Sie im Web-API-Controller eine `using`-Anweisung für den `System.Web.Http.Cors`-Namespace und der Controllerklasse oder einzelnen Aktionsmethoden das `EnableCors`-Attribut hinzu. Im folgenden Beispiel gilt die CORS-Unterstützung für den gesamten Controller.
 
-		namespace ToDoListAPI.Controllers
+		namespace ToDoListAPI.Controllers 
 		{
 		    [HttpOperationExceptionFilterAttribute]
 		    [EnableCors(origins:"*", headers:"*", methods: "*")]
@@ -275,4 +277,4 @@ In den folgenden Schritten ist der Prozess zum Aktivieren der Web-API-Unterstüt
 
 In diesem Tutorial haben Sie erfahren, wie Sie App Service-CORS-Unterstützung aktivieren, sodass der JavaScript-Clientcode eine API in einer anderen Domäne aufrufen kann. Im nächsten Artikel der Serie zu ersten Schritten mit API-Apps lernen Sie die [Authentifizierung für App Service-API-Apps](app-service-api-authentication.md) kennen.
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0218_2016-->

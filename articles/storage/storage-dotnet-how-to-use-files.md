@@ -12,7 +12,7 @@
       ms.tgt_pltfrm="na"
       ms.devlang="dotnet"
       ms.topic="hero-article"
-      ms.date="02/03/2016"
+      ms.date="02/14/2016"
       ms.author="robinsh" />
 
 # Erste Schritte mit Azure File Storage unter Windows
@@ -55,7 +55,7 @@ In diesem Lernprogramm für die ersten Schritte veranschaulichen wir die Grundla
 	- Kopieren Sie eine Datei in ein Blob im selben Speicherkonto.
 - Verwenden von Azure-Speichermetriken für die Problembehandlung
 
-Der Dateispeicher wird jetzt für alle Speicherkonten unterstützt, sodass Sie entweder ein vorhandenes Speicherkonto verwenden oder ein neues Speicherkonto erstellen können. Informationen zum Erstellen eines neuen Speicherkontos finden Sie unter [Erstellen, Verwalten und Löschen eines Speicherkontos](storage-create-storage-account.md#create-a-storage-account).
+Der Dateispeicher wird jetzt für alle Speicherkonten unterstützt, sodass Sie entweder ein vorhandenes Speicherkonto verwenden oder ein neues Speicherkonto erstellen können. Informationen zum Erstellen eines neuen Speicherkontos finden Sie unter [Erstellen eines Speicherkontos](storage-create-storage-account.md#create-a-storage-account).
 
 ## Verwenden des Azure-Portals zum Verwalten einer Dateifreigabe
 
@@ -130,11 +130,11 @@ Alternativ können Sie Azure PowerShell zum Erstellen und Verwalten von Dateifre
 
 ### Installieren der PowerShell-Cmdlets für den Azure-Speicher
 
-Laden Sie die Azure PowerShell-Cmdlets herunter und installieren Sie diese anschließend, um die Verwendung von PowerShell vorzubereiten. Informationen zum Installationspunkt und zu Installationsanweisungen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md).
+Laden Sie die Azure PowerShell-Cmdlets herunter und installieren Sie diese anschließend, um die Verwendung von PowerShell vorzubereiten. Informationen zum Installationspunkt und zu Installationsanweisungen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
 
 > [AZURE.NOTE] Sie sollten daher das neueste Azure PowerShell-Modul herunterladen und installieren bzw. ein Upgrade durchführen.
 
-Öffnen Sie ein Azure PowerShell-Fenster, indem Sie auf **Start** klicken und **Azure PowerShell** eingeben. Im Azure PowerShell-Fenster wird das Azure Powershell-Modul geladen.
+Öffnen Sie ein Azure PowerShell-Fenster, indem Sie auf **Start** klicken und **Windows PowerShell** eingeben. Im PowerShell-Fenster wird das Azure Powershell-Modul geladen.
 
 ### Erstellen von Kontexten für Speicherkonten und -schlüssel
 
@@ -210,8 +210,8 @@ Wenn ein Client auf den Dateispeicher zugreift, richtet sich die verwendete SMB-
 
 Um zu veranschaulichen, wie eine Azure-Dateifreigabe eingebunden wird, erstellen wir nun einen virtuellen Azure-Computer unter Windows und greifen zum Einbinden der Freigabe remote darauf zu.
 
-1. Erstellen Sie zunächst einen neuen virtuellen Azure-Computer, indem Sie die Anweisungen in [Erstellen eines virtuellen Windows Server-Computers](../virtual-machines-windows-tutorial.md) befolgen.
-2. Als Nächstes greifen Sie remote auf den virtuellen Computer zu, indem Sie die Anweisungen in [Anmeldung auf einem virtuellen Windows Server-Computer](../virtual-machines-log-on-windows-server.md) befolgen.
+1. Erstellen Sie zunächst eine neue virtuelle Azure-Maschine, indem Sie die Anweisungen in [Erstellen einer virtuellen Windows-Maschine im Azure-Portal](../virtual-machines/virtual-machines-windows-tutorial.md) befolgen.
+2. Erstellen Sie als nächstes eine neue virtuelle Maschine, indem Sie die Anweisungen in [Anmelden bei einer virtuellen Windows-Maschine über das Azure-Portal](../virtual-machines/virtual-machines-arm-log-on-windows-vm.md) befolgen.
 3. Öffnen Sie ein PowerShell-Fenster auf dem virtuellen Computer.
 
 ### Fortbestehen der Anmeldeinformationen Ihres Speicherkontos für den virtuellen Computer
@@ -419,13 +419,13 @@ Im folgenden Beispiel wird eine SAS-Richtlinie für eine Freigabe erstellt und d
         Console.WriteLine(fileSas.DownloadText());
     }
 
-Weitere Informationen zum Erstellen und Verwenden von Shared Access Signatures finden Sie unter [Shared Access Signatures: Grundlagen zum SAS-Modell](storage-dotnet-shared-access-signature-part-1.md) und [Erstellen und Verwenden einer SAS mit dem Blobdienst](storage-dotnet-shared-access-signature-part-2.md).
+Weitere Informationen zum Erstellen und Verwenden von Shared Access Signatures finden Sie unter [Shared Access Signatures: Grundlagen zum SAS-Modell](storage-dotnet-shared-access-signature-part-1.md) und [Erstellen und Verwenden einer SAS mit Blob Storage](storage-dotnet-shared-access-signature-part-2.md).
 
 ### Kopieren von Dateien
 
 Ab Version 5.x der Azure Storage-Clientbibliothek können Sie eine Datei in eine andere Datei, eine Datei in ein Blob oder ein Blob in eine Datei kopieren. In den nächsten Abschnitten wird demonstriert, wie diese Kopiervorgänge programmgesteuert ausgeführt werden.
 
-Sie können auch AzCopy verwenden, um eine Datei in eine andere oder ein BLOB in eine Datei oder umgekehrt zu kopieren. Ausführliche Informationen zum Kopieren von Dateien mit AzCopy finden Sie unter [Verwenden von AzCopy mit Microsoft Azure Storage](storage-use-azcopy.md#copy-files-in-azure-file-storage-with-azcopy).
+Sie können auch AzCopy verwenden, um eine Datei in eine andere oder ein BLOB in eine Datei oder umgekehrt zu kopieren. Siehe [Kopieren von Dateien im Azure-Dateispeicher mit AzCopy](storage-use-azcopy.md#copy-files-in-azure-file-storage-with-azcopy).
 
 > [AZURE.NOTE] Wenn Sie ein BLOB in eine Datei oder eine Datei in ein BLOB kopieren, müssen Sie eine SAS verwenden, um das Quellobjekt zu authentifizieren. Dies gilt selbst dann, wenn Sie innerhalb desselben Speicherkontos kopieren.
 
@@ -586,8 +586,7 @@ Weitere Informationen zum Azure-Dateispeicher erhalten Sie über diese Links.
 
 ### Konzeptionelle Artikel und Videos
 
-- Azure-Dateispeicher: ein reibungsloses Cloud-SMB-Dateisystem für Windows und Linux
-- https://azure.microsoft.com/documentation/videos/azurecon-2015-azure-files-storage-a-frictionless-cloud-smb-file-system-for-windows-and-linux/)
+- [Azure-Dateispeicher: ein reibungsloses Cloud-SMB-Dateisystem für Windows und Linux](https://azure.microsoft.com/documentation/videos/azurecon-2015-azure-files-storage-a-frictionless-cloud-smb-file-system-for-windows-and-linux/)
 - [Verwenden des Azure-Dateispeichers unter Linux](storage-how-to-use-files-linux.md)
 
 ### Toolunterstützung für Dateispeicher
@@ -608,4 +607,4 @@ Weitere Informationen zum Azure-Dateispeicher erhalten Sie über diese Links.
 - [Einführung in den Microsoft Azure-Dateidienst](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
 - [Beibehalten von Verbindungen zu Microsoft Azure-Dateien](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0218_2016-->

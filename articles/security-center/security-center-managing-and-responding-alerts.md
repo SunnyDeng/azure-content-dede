@@ -13,9 +13,9 @@
    ms.devlang="na"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="02/09/2016"
+   ms.date="02/11/2016"
    ms.author="yurid"/>
-
+ 
 # Verwalten von und Reagieren auf Sicherheitswarnungen in Azure Security Center
 In diesem Dokument erfahren Sie, wie Sie Azure Security Center-Funktionen verwenden, um Sicherheitswarnungen zu verwalten und auf diese zu reagieren.
 
@@ -25,7 +25,9 @@ In diesem Dokument erfahren Sie, wie Sie Azure Security Center-Funktionen verwen
  Security Center unterstützt Sie beim Vorbeugen, Erkennen und Beheben von Bedrohungen. Mit dieser Cloudlösung gewinnen Sie mehr Transparenz und bessere Kontrolle über die Sicherheit Ihrer Azure-Ressourcen. Es bietet integrierte Sicherheitsüberwachung und Richtlinienverwaltung für Ihre Abonnements, hilft bei der Erkennung von Bedrohungen, die andernfalls möglicherweise unbemerkt bleiben, und kann gemeinsam mit einem breiten Sektrum an Sicherheitslösungen verwendet werden.
 
 ## Was sind Sicherheitswarnungen?
-Security Center erfasst, analysiert und vereinigt automatisch Protokolldaten von Ihren Azure-Ressourcen, aus dem Netzwerk und von integrierter Antischadsoftware und von Firewalls, um echte Bedrohungen zu erkennen und falsch positive Ergebnisse zu reduzieren. Eine Liste mit priorisierten Sicherheitswarnungen, z. B. Warnungen integrierter Partnerlösungen, wird im Security Center zusammen mit den Informationen angezeigt, die Sie zum schnellen Untersuchen von Problemen benötigen. Außerdem sind Empfehlungen zum Reagieren auf einen Angriff vorhanden. Microsoft-Sicherheitsexperten analysieren ständig neue weltweite Bedrohungen, z. B. neue Angriffsmuster und Trends, die für die unternehmenseigenen Verbraucher- und Unternehmensprodukte und Onlinedienste auftreten. Für Security Center können so die Erkennungsalgorithmen aktualisiert werden, wenn neue Sicherheitsrisiken und Exploits erkannt werden, und Kunden können über die sich verändernde Bedrohungslage informiert werden. Beispiele für Arten von Bedrohungen, die mit Security Center erkannt werden können:
+Security Center erfasst, analysiert und vereinigt automatisch Protokolldaten von Ihren Azure-Ressourcen, aus dem Netzwerk und von integrierter Antischadsoftware und von Firewalls, um echte Bedrohungen zu erkennen und falsch positive Ergebnisse zu reduzieren. Eine Liste mit priorisierten Sicherheitswarnungen, z. B. Warnungen integrierter Partnerlösungen, wird im Security Center zusammen mit den Informationen angezeigt, die Sie zum schnellen Untersuchen von Problemen benötigen. Außerdem sind Empfehlungen zum Reagieren auf einen Angriff vorhanden.
+ 
+Microsoft-Sicherheitsexperten analysieren ständig neue weltweite Bedrohungen, z. B. neue Angriffsmuster und Trends, die für die unternehmenseigenen Verbraucher- und Unternehmensprodukte und Onlinedienste auftreten. Für Security Center können so die Erkennungsalgorithmen aktualisiert werden, wenn neue Sicherheitsrisiken und Exploits erkannt werden, und Kunden können über die sich verändernde Bedrohungslage informiert werden. Beispiele für Arten von Bedrohungen, die mit Security Center erkannt werden können:
 
 - **Brute-Force-Erkennung über Netzwerkdaten**: Hierbei werden Machine Learning-Modelle verwendet, die typische Muster von Netzwerkdatenverkehr für Ihre Anwendungen verstehen. Dies ermöglicht eine effektivere Erkennung von Zugriffsversuchen, die nicht von berechtigten Benutzern durchgeführt werden, sondern zu unlauteren Zwecken.
 - **Brute-Force-Erkennung über Endpunktdaten**: Basiert auf der Analyse von Computerprotokollen. Dies ermöglicht eine Unterscheidung zwischen fehlerhaften und erfolgreichen Versuchen.
@@ -75,14 +77,14 @@ In diesem Fall bezieht sich die ausgelöste Warnung auf eine verdächtige RDP-Ak
 
 ![Vorschläge für die Bearbeitung von Sicherheitswarnungen in Azure Security Center](./media/security-center-managing-and-responding-alerts/security-center-managing-and-responding-alerts-fig8.png)
 
-> [AZURE.NOTE] Die von Security Center vorgeschlagene Wiederherstellung variiert je nach Sicherheitshinweis. In einigen Fällen müssen Sie möglicherweise weitere Azure-Funktionen verwenden, um die empfohlenen Lösungen zu implementieren. Beispielsweise kann die Abhilfe für diesen Angriff darin bestehen, die IP-Adresse, die den Angriff generiert, durch Verwenden einer [Netzwerk-ACL](virtual-networks-acl.md) oder einer Regel für die [Netzwerksicherheitsgruppe](virtual-networks-nsg.md) auf eine Negativliste zu setzen.
+> [AZURE.NOTE] Die von Security Center vorgeschlagene Wiederherstellung variiert je nach Sicherheitshinweis. In einigen Fällen müssen Sie möglicherweise weitere Azure-Funktionen verwenden, um die empfohlenen Lösungen zu implementieren. Beispielsweise kann die Abhilfe für diesen Angriff darin bestehen, die IP-Adresse, die den Angriff generiert, durch Verwenden einer [Netzwerk-ACL](../virtual-network/virtual-networks-acl.md) oder einer Regel für die [Netzwerksicherheitsgruppe](../virtual-network/virtual-networks-nsg.md) auf eine Negativliste zu setzen.
 
 
 ## Nächste Schritte
 In diesem Dokument haben Sie erfahren, wie Sie Sicherheitsrichtlinien in Security Center konfigurieren können. Weitere Informationen zu Security Center finden Sie in den folgenden Quellen:
 
-- [Überwachen der Sicherheitsintegrität in Azure Security Center](security-center-monitoring.md): Erfahren Sie, wie Sie die Integrität Ihrer Azure-Ressourcen überwachen.
-- [Azure Security Center – häufig gestellte Fragen](security-center-faq.md): Hier finden Sie häufig gestellte Fragen zur Verwendung des Diensts.
-- [Azure Security Blog](http://blogs.msdn.com/b/azuresecurity/): Hier finden Sie Blogbeiträge über Azure-Sicherheit und -Compliance.
+- [Überwachen der Sicherheitsintegrität in Azure Security Center](security-center-monitoring.md) – erfahren Sie, wie Sie die Integrität Ihrer Azure-Ressourcen überwachen.
+- [Azure Security Center – häufig gestellte Fragen](security-center-faq.md) zur Verwendung des Diensts.
+- [Azure Security Blog](http://blogs.msdn.com/b/azuresecurity/) – suchen Sie nach Blogbeiträgen über Azure-Sicherheit und -Compliance.
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0218_2016-->
