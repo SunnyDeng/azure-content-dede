@@ -81,30 +81,30 @@ Die Beispielanwendung in diesem Lernprogramm ([WebApp-WSFederation-DotNet](https
 
 5.	Ändern Sie in der Datei "App_Start\\Startup.Auth.cs" die Definitionen für statische Zeichenfolgen wie unten hervorgehoben:
 	<pre class="prettyprint">
-private static string realm = ConfigurationManager.AppSettings["ida:<mark>RPIdentifier</mark>"];
-<mark><del>private static string aadInstance = ConfigurationManager.AppSettings["ida:AADInstance"];</del></mark>
-<mark><del>private static string tenant = ConfigurationManager.AppSettings["ida:Tenant"];</del></mark>
-<mark><del>private static string metadata = string.Format("{0}/{1}/federationmetadata/2007-06/federationmetadata.xml", aadInstance, tenant);</del></mark>
-<mark>private static string metadata = string.Format("https://{0}/federationmetadata/2007-06/federationmetadata.xml", ConfigurationManager.AppSettings["ida:ADFS"]);</mark>
+	private static string realm = ConfigurationManager.AppSettings["ida:<mark>RPIdentifier</mark>"];
+	<mark><del>private static string aadInstance = ConfigurationManager.AppSettings["ida:AADInstance"];</del></mark>
+	<mark><del>private static string tenant = ConfigurationManager.AppSettings["ida:Tenant"];</del></mark>
+	<mark><del>private static string metadata = string.Format("{0}/{1}/federationmetadata/2007-06/federationmetadata.xml", aadInstance, tenant);</del></mark>
+	<mark>private static string metadata = string.Format("https://{0}/federationmetadata/2007-06/federationmetadata.xml", ConfigurationManager.AppSettings["ida:ADFS"]);</mark>
 
-<mark><del>string authority = String.Format(CultureInfo.InvariantCulture, aadInstance, tenant);</del></mark>
-</pre>
+	<mark><del>string authority = String.Format(CultureInfo.InvariantCulture, aadInstance, tenant);</del></mark>
+	</pre>
 
 6.	Nehmen Sie jetzt die entsprechenden Änderungen in der Datei "Web.config" vor. Öffnen Sie die Datei "Web.config", und ändern Sie die App-Einstellungen wie unten dargestellt:
 	<pre class="prettyprint">
-&lt;appSettings>
-  &lt;add key="webpages:Version" value="3.0.0.0" />
-  &lt;add key="webpages:Enabled" value="false" />
-  &lt;add key="ClientValidationEnabled" value="true" />
-  &lt;add key="UnobtrusiveJavaScriptEnabled" value="true" />
-  <mark><del>&lt;add key="ida:Wtrealm" value="[App-ID-URI von WebApp-WSFederation-DotNet https://contoso.onmicrosoft.com/WebApp-WSFederation-DotNet eingeben]" /></del></mark>
-  <mark><del>&lt;add key="ida:AADInstance" value="https://login.windows.net" /></del></mark>
-  <mark><del>&lt;add key="ida:Tenant" value="[Mandantenname eingeben, z.&#160;B. contoso.onmicrosoft.com]" /></del></mark>
-  <mark>&lt;add key="ida:RPIdentifier" value="[ID für vertrauende Seite gemäß Konfiguration in AD&#160;FS eingeben, z.&#160;B. https://localhost:44320/]" /></mark>
-  <mark>&lt;add key="ida:ADFS" value="[FQDN des AD&#160;FS-Diensts eingeben, z.&#160;B. adfs.contoso.com]" /></mark>
+	&lt;appSettings>
+	  &lt;add key="webpages:Version" 	value="3.0.0.0" />
+	  &lt;add key="webpages:Enabled" value="false" />
+	  &lt;add key="ClientValidationEnabled" value="true" />
+	  &lt;add key="UnobtrusiveJavaScriptEnabled" value="true" />
+	  <mark><del>&lt;add key="ida:Wtrealm" value="[App-ID-URI von WebApp-WSFederation-DotNet https://contoso.onmicrosoft.com/WebApp-WSFederation-DotNet eingeben]" /></del></mark>
+	  <mark><del>&lt;add key="ida:AADInstance" value="https://login.windows.net" /></del></mark>
+	  <mark><del>&lt;add key="ida:Tenant" value="[Mandantenname eingeben, z.&#160;B. contoso.onmicrosoft.com]" /></del></mark>
+	  <mark>&lt;add key="ida:RPIdentifier" value="[ID für vertrauende Seite gemäß Konfiguration in AD&#160;FS eingeben, z.&#160;B. https://localhost:44320/]" /></mark>
+	  <mark>&lt;add key="ida:ADFS" value="[FQDN des AD&#160;FS-Diensts eingeben, z.&#160;B. adfs.contoso.com]" /></mark>
 
-&lt;/appSettings>
-</pre>Tragen Sie die Schlüsselwerte entsprechend Ihrer jeweiligen Umgebung ein.
+	&lt;/appSettings>
+	</pre>Tragen Sie die Schlüsselwerte entsprechend Ihrer jeweiligen Umgebung ein.
 
 7.	Erstellen Sie die Anwendung, um sicherzustellen, dass keine Fehler vorliegen.
 
@@ -261,22 +261,22 @@ Da Sie Gruppenmitgliedschaften als Rollenansprüche in die RP-Vertrauensstellung
 1. Öffnen Sie die Datei "Controllers\\HomeController.cs".
 2. Dekorieren Sie die Aktionsmethoden `About` und `Contact` ähnlich wie unten mit Mitgliedschaften in Sicherheitsgruppen, über die Ihr authentifizierter Benutzer verfügt.  
 	<pre class="prettyprint">
-<mark>[Authorize(Roles="Test Group")]</mark>
-public ActionResult About()
-{
-    ViewBag.Message = "Your application description page.";
+	<mark>[Authorize(Roles="Test Group")]</mark>
+	public ActionResult About()
+	{
+	    ViewBag.Message = "Your application description page.";
 
-    return View();
-}
+	    return View();
+	}
 
-<mark>[Authorize(Roles="Domain Admins")]</mark>
-public ActionResult Contact()
-{
-    ViewBag.Message = "Your contact page.";
+	<mark>[Authorize(Roles="Domain Admins")]</mark>
+	public ActionResult Contact()
+	{
+	    ViewBag.Message = "Your contact page.";
 
-    return View();
-}
-</pre>Da ich in meiner AD FS-Testumgebung dem Element **Testgruppe** den Eintrag **Testbenutzer** hinzugefügt habe, verwende ich die Testgruppe zum Testen der Autorisierung in `About`. Für `Contact` teste ich den negativen Fall für **Domänenadministratoren**. Dies ist eine Gruppe, der der **Testbenutzer** nicht angehört.
+	    return View();
+	}
+	</pre>Da ich in meiner AD FS-Testumgebung dem Element **Testgruppe** den Eintrag **Testbenutzer** hinzugefügt habe, verwende ich die Testgruppe zum Testen der Autorisierung in `About`. Für `Contact` teste ich den negativen Fall für **Domänenadministratoren**. Dies ist eine Gruppe, der der **Testbenutzer** nicht angehört.
 
 3. Starten Sie den Debugger durch Drücken von `F5`, melden Sie sich an, und klicken Sie auf **Info**. Sie sollten jetzt die Seite `~/About/Index` sehen können, wenn der authentifizierte Benutzer für diese Aktion berechtigt ist.
 4. Klicken Sie nun auf **Kontakt**. In meinem Fall sollte keine Autorisierung von **Testbenutzer** für die Aktion erfolgen. Allerdings wird der Browser zu AD FS umgeleitet, und schließlich wird diese Meldung angezeigt:

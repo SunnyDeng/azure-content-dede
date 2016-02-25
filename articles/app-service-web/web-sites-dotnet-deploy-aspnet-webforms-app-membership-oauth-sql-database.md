@@ -426,13 +426,13 @@ Mit den folgenden Schritten können Sie einen Google-Authentifizierungsanbieter 
 6. Klicken Sie auf **Neue Client-ID erstellen** unter **OAuth**. Das Dialogfeld **Client-ID erstellen** wird angezeigt.  
 	![Google - Client-ID erstellen](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms21c.png)  
 7. Behalten Sie im Dialogfeld **Client-ID erstellen** den Standardwert **Webanwendung** für den Anwendungstyp bei.  
-8. Legen Sie die **Authorized JavaScript Origins** auf die SSL-URL fest, die Sie zuvor in diesem Lernprogramm verwendet haben (****https://localhost:44300/** sofern Sie keine anderen SSL-Projekte erstellt haben). Diese URL ist der Ursprung für Ihre Anwendung. In diesem Beispiel geben Sie nur die Test-URL "localhost" ein. Sie können jedoch mehrere URLs eingeben, um "localhost" und die Produktion einzubeziehen.
+8. Legen Sie die **Authorized JavaScript Origins** auf die SSL-URL fest, die Sie zuvor in diesem Lernprogramm verwendet haben (**https://localhost:44300/** sofern Sie keine anderen SSL-Projekte erstellt haben). Diese URL ist der Ursprung für Ihre Anwendung. In diesem Beispiel geben Sie nur die Test-URL "localhost" ein. Sie können jedoch mehrere URLs eingeben, um "localhost" und die Produktion einzubeziehen.
 
 9. Legen Sie **Authorized Redirect URI** folgendermaßen fest:
 
 		https://localhost:44300/signin-google  
 
-	Dieser Wert steht für den URI, den ASP.NET OAuth-Benutzer zur Kommunikation mit dem Google OAuth-Server verwenden. Geben Sie die oben verwendete SSL-URL ein (****https://localhost:44300/** sofern Sie nicht andere SSL-Projekte erstellt haben).
+	Dieser Wert steht für den URI, den ASP.NET OAuth-Benutzer zur Kommunikation mit dem Google OAuth-Server verwenden. Geben Sie die oben verwendete SSL-URL ein (**https://localhost:44300/** sofern Sie nicht andere SSL-Projekte erstellt haben).
  
 10. Klicken Sie auf die Schaltfläche **Erstellen**.
 11. Aktualisieren Sie in Visual Studio die `UseGoogleAuthentication`-Methode der Seite *Startup.Auth.cs*, indem Sie **AppId** und **App Secret** kopieren und in die Methode einfügen. Die unten dargestellten Werte für **AppId** und **App Secret** sind Beispiele und funktionieren nicht.  
