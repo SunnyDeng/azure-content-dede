@@ -242,9 +242,9 @@ Die Anforderungen 1–6 (außer 3) beschränken sich alle auf Subnetzräume. Die
 
 |Regel|Access|Priority|Quelladressbereich|Quellport|Zieladressbereich|Zielport|Protokoll|
 |---|---|---|---|---|---|---|---|
-|RDP aus dem Internet zulassen|Zulassen|100|INTERNET|**|*|3389|TCP|
+|RDP aus dem Internet zulassen|Zulassen|100|INTERNET|*|\*|3389|TCP|
 
->[AZURE.NOTE] Beachten Sie, dass der Quelladressbereich für dieser Regel **Internet** ist und nicht die VIP des Load Balancers; der Quellport ist ***** und nicht 500001. Verwechseln Sie NAT-Regeln und Lastenausgleichsregeln nicht mit NSG-Regeln. Die NSG-Regeln beziehen sich immer auf die ursprüngliche Quelle und das endgültige Ziel des Datenverkehrs, **NICHT** auf den zwischen beiden liegenden Load Balancer.
+>[AZURE.NOTE] Beachten Sie, dass der Quelladressbereich für dieser Regel **Internet** ist und nicht die VIP des Load Balancers; der Quellport ist **\*** und nicht 500001. Verwechseln Sie NAT-Regeln und Lastenausgleichsregeln nicht mit NSG-Regeln. Die NSG-Regeln beziehen sich immer auf die ursprüngliche Quelle und das endgültige Ziel des Datenverkehrs, **NICHT** auf den zwischen beiden liegenden Load Balancer.
 
 ### NSG für Verwaltungsnetzwerkkarten in „BackEnd“
 
@@ -252,7 +252,7 @@ Die Anforderungen 1–6 (außer 3) beschränken sich alle auf Subnetzräume. Die
 
 |Regel|Access|Priority|Quelladressbereich|Quellport|Zieladressbereich|Zielport|Protokoll|
 |---|---|---|---|---|---|---|---|
-|RDP von FrontEnd zulassen|Zulassen|100|192\.168.1.0/24|**|*|3389|TCP|
+|RDP von FrontEnd zulassen|Zulassen|100|192\.168.1.0/24|*|\*|3389|TCP|
 
 ### NSG für die Datenbankzugriffs-Netzwerkkarten in „BackEnd“
 
@@ -260,7 +260,7 @@ Die Anforderungen 1–6 (außer 3) beschränken sich alle auf Subnetzräume. Die
 
 |Regel|Access|Priority|Quelladressbereich|Quellport|Zieladressbereich|Zielport|Protokoll|
 |---|---|---|---|---|---|---|---|
-|SQL von FrontEnd zulassen|Zulassen|100|192\.168.1.0/24|**|*|1433|TCP|
+|SQL von FrontEnd zulassen|Zulassen|100|192\.168.1.0/24|*|\*|1433|TCP|
 
 Da einige der oben aufgeführten NSGs einzelnen Netzwerkkarten zugeordnet werden müssen, müssen Sie dieses Szenario als Ressourcen-Manager-Bereitstellung bereitstellen. Beachten Sie, wie der Regeln für die Subnetz- und Netzwerkkartenebene je nach Notwendigkeit kombiniert werden.
 
