@@ -56,7 +56,7 @@ Wenn Sie lieber Ihre eigenen Penetrationstests ausführen möchten oder eine and
 
 ##<a name="https"></a> Sichere Kommunikation mit Kunden
 
-Wenn Sie den Domänennamen „***.azurewebsites.net**“ nutzen, der für Ihren App Service erstellt wurde, können Sie HTTPS sofort verwenden, da ein SSL-Zertifikat für alle Domänennamen vom Typ „***.azurewebsites.net**“ bereitgestellt wird. Wenn Ihre Site einen [kundenspezifischen Domänennamen](web-sites-custom-domain-name.md) verwendet, können Sie ein SSL-Zertifikat hochladen, um für die kundenspezifische Domäne [HTTPS zu aktivieren](web-sites-configure-ssl-certificate.md).
+Wenn Sie den Domänennamen „**\*.azurewebsites.net**“ nutzen, der für Ihren App Service erstellt wurde, können Sie HTTPS sofort verwenden, da ein SSL-Zertifikat für alle Domänennamen vom Typ „**\*.azurewebsites.net**“ bereitgestellt wird. Wenn Ihre Site einen [kundenspezifischen Domänennamen](web-sites-custom-domain-name.md) verwendet, können Sie ein SSL-Zertifikat hochladen, um für die kundenspezifische Domäne [HTTPS zu aktivieren](web-sites-configure-ssl-certificate.md).
 
 Aktivieren von [HTTPS](https://en.wikipedia.org/wiki/HTTPS) kann gegen MITM-Angriffe auf die Kommunikation zwischen Ihrer Anwendung und deren Benutzern schützen.
 

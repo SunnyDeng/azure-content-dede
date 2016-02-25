@@ -142,7 +142,25 @@ In der folgende Tabelle sind die .NET-Eigenschaftentypen den Python-Eigenschafte
 
 | .NET-Eigenschaftentyp | Python-Eigenschaftentyp | Hinweise |
 |--------------------|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| byte | int | - | | sbyte | int | - | | char | char | Proton-Python-Klasse | | short | int | - | | ushort | int | - | | int | int | - | | uint | int | - | | long | int | - | | ulong | long | Proton-Python-Klasse | | float | float | - | | double | float | - | | decimal | String | „decimal“ wird für Proton derzeit nicht unterstützt. | | bool | bool | - | | Guid | uuid | Proton-Python-Klasse | | string | string | - | | DateTime | timestamp | Proton-Python-Klasse | | DateTimeOffset | DescribedType | DateTimeOffset.UtcTicks ist AMQP-Typ zugeordnet:<type name=”datetime-offset” class=restricted source=”long”> <descriptor name=”com.microsoft:datetime-offset” /></type> | | TimeSpan | DescribedType | Timespan.Ticks ist AMQP-Typ zugeordnet:<type name=”timespan” class=restricted source=”long”> <descriptor name=”com.microsoft:timespan” /></type> | | Uri | DescribedType | Uri.AbsoluteUri ist AMQP-Typ zugeordnet:<type name=”uri” class=restricted source=”string”> <descriptor name=”com.microsoft:uri” /></type> |
+| byte | int | - |
+| sbyte | int | - |
+| char | char | Proton-Python-Klasse |
+| short | int | - |
+| ushort | int | - |
+| int | int | - |
+| uint | int | - |
+| long | int | - |
+| ulong | long | Proton-Python-Klasse |
+| float | float | - |
+| double | float | - |
+| decimal | String | „decimal“ wird für Proton derzeit nicht unterstützt. |
+| bool | bool | - |
+| Guid | uuid | Proton-Python-Klasse |
+| string | string | - |
+| DateTime | timestamp | Proton-Python-Klasse |
+| DateTimeOffset | DescribedType | DateTimeOffset.UtcTicks ist AMQP-Typ zugeordnet:<type name=”datetime-offset” class=restricted source=”long”> <descriptor name=”com.microsoft:datetime-offset” /></type> |
+| TimeSpan | DescribedType | Timespan.Ticks ist AMQP-Typ zugeordnet:<type name=”timespan” class=restricted source=”long”> <descriptor name=”com.microsoft:timespan” /></type> |
+| Uri | DescribedType | Uri.AbsoluteUri ist AMQP-Typ zugeordnet:<type name=”uri” class=restricted source=”string”> <descriptor name=”com.microsoft:uri” /></type> |
 
 ### Standardeigenschaften
 
@@ -155,11 +173,36 @@ Die folgenden Tabellen enthalten die Zuordnung zwischen den Proton-Python-Standa
 | durable | – | Service Bus unterstützt nur dauerhafte Nachrichten. |
 | priority | – | Service Bus unterstützt nur eine Nachrichtenpriorität. |
 | Ttl | Message.TimeToLive | Konvertierung, Proton-Python-TTL-Wert wird in Millisekunden definiert. |
-| first\_acquirer | n/a | - | | delivery\_count | n/a | - | | Id | Message.MessageID | - | | user\_id | n/a | - | | address | Message.To | - | | subject | Message.Label | - | | reply\_to | Message.ReplyTo | - | | correlation\_id | Message.CorrelationID | - | | content\_type | Message.ContentType | - | | content\_encoding | n/a | - | | expiry\_time | n/a | - | | creation\_time | n/a | - | | group\_id | Message.SessionId | - | | group\_sequence | n/a | - | | reply\_to\_group\_id | Message.ReplyToSessionId | - | | format | n/a | - |
+| first\_acquirer | n/a | - |
+| delivery\_count | n/a | - |
+| Id | Message.MessageID | - |
+| user\_id | n/a | - |
+| address | Message.To | - |
+| subject | Message.Label | - |
+| reply\_to | Message.ReplyTo | - |
+| correlation\_id | Message.CorrelationID | - |
+| content\_type | Message.ContentType | - |
+| content\_encoding | n/a | - |
+| expiry\_time | n/a | - |
+| creation\_time | n/a | - |
+| group\_id | Message.SessionId | - |
+| group\_sequence | n/a | - |
+| reply\_to\_group\_id | Message.ReplyToSessionId | - |
+| format | n/a | - |
 
 | Service Bus .NET | Proton | Hinweise |
 |-------------------------|------------------------------|-----------------------------------------------------------|
-| ContentType | Message.content\_type | - | | CorrelationId | Message.correlation\_id | - | | EnqueuedTimeUtc | n/a | - | | Label | Message.subject | - | | MessageId | Message.id | - | | ReplyTo | Message.reply\_to | - | | ReplyToSessionId | Message.reply\_to\_group\_id | - | | ScheduledEnqueueTimeUtc | n/a | - | | SessionId | Message.group\_id | - | | TimeToLive | Message.ttl | Konvertierung, Proton-Python-TTL-Wert wird in Millisekunden definiert. | | To | Message.address | - |
+| ContentType | Message.content\_type | - |
+| CorrelationId | Message.correlation\_id | - |
+| EnqueuedTimeUtc | n/a | - |
+| Label | Message.subject | - |
+| MessageId | Message.id | - |
+| ReplyTo | Message.reply\_to | - |
+| ReplyToSessionId | Message.reply\_to\_group\_id | - |
+| ScheduledEnqueueTimeUtc | n/a | - |
+| SessionId | Message.group\_id | - |
+| TimeToLive | Message.ttl | Konvertierung, Proton-Python-TTL-Wert wird in Millisekunden definiert. |
+| To | Message.address | - |
 
 ## Nächste Schritte
 
