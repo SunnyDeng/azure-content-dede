@@ -13,7 +13,7 @@
 	ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="identity" 
-	ms.date="11/11/2015"
+	ms.date="02/10/2016"
 	ms.author="femila"/>
 
 # Planen des Hybrid-Identitätslebenszyklus 
@@ -64,4 +64,4 @@ Eines der Ziele eines Identitäts-Managers besteht darin, alle Identitätsanbiet
 ## Weitere Informationen
 [Überlegungen zum Entwurf – Übersicht](active-directory-hybrid-identity-design-considerations-overview.md)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0218_2016-->

@@ -36,7 +36,7 @@ Das Azure-SDK für .NET installiert folgende Produkte:
 - [Microsoft Azure-Speicheremulator](#stgemulator)
 - [Microsoft Azure-Speichertools](#stgtools)
 - [Microsoft Azure-Bibliotheken für .NET](#libraries)
-- [HDInsight-Tools für Visual Studio](#hdinsight) und [Microsoft Hive ODBC-Treiber](#hdinsight)
+- [HDInsight-Tools für Visual Studio und Microsoft Hive ODBC-Treiber](#hdinsight)
 - [Microsoft Azure Mobile App SDK V1.0](#mobile)
 - [Microsoft Azure PowerShell](#ps)
 
@@ -101,7 +101,7 @@ Dies umfasst Folgendes:
 
 Mit HDInsight-Tools im Server-Explorer können Sie in Hive-Datenbanken und verknüpften Speicherkonten für HDInsight-Cluster navigieren, Tabellen erstellen sowie Hive-Abfragen erstellen und übermitteln. Weitere Informationen finden Sie unter [Erste Schritte mit den HDInsight Hadoop-Tools für Visual Studio](hdinsight/hdinsight-hadoop-visual-studio-tools-get-started.md).
 
-###<a id="mobile">Microsoft Azure Mobile App SDK
+###<a id="mobile"></a>Microsoft Azure Mobile App SDK 1.0
 
 Tools für die Arbeit mit [Azure App Service Mobile Apps](app-service-mobile/app-service-mobile-value-prop.md).
 
@@ -180,10 +180,10 @@ Um festzustellen, welche Version aktuell ist, oder um ältere Versionen herunter
 
 ##<a id="resources"></a>Ressourcen
 
-Das aktuelle Azure-SDK für .NET oder Clientbibliotheken können Sie auf der [Azure Download-Seite](/downloads/) herunterladen.
+Das aktuelle Azure-SDK für .NET oder Clientbibliotheken können Sie auf der Azure Download-Seite herunterladen.
 
 Quellcode des Azure-SDK für .NET, einschließlich Clientbibliotheken, finden Sie unter [GitHub.com/Azure](https://github.com/azure/).
 
 Referenzdokumentation für Azure-Clientbibliotheken finden Sie unter [Azure .NET-Referenz](/documentation/api/).
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0218_2016-->

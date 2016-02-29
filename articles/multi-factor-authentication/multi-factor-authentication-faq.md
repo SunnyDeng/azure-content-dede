@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/11/2016" 
+	ms.date="02/16/2016" 
 	ms.author="billmath"/>
 
 # Azure Multi-Factor Authentication – Häufig gestellte Fragen
@@ -75,7 +75,8 @@ Diese Gebühren werden vollständig durch die Kosten abgedeckt, die pro Benutzer
 
 Azure Multi-Factor Authentication ist als eigenständiger Dienst mit Abrechnungsoptionen „Pro Benutzer“ und „Pro Authentifizierung“ oder im Paket mit Azure Active Directory Premium, Enterprise Mobility Suite und Enterprise Cloud Suite verfügbar. Der eigenständige Dienst wird basierend auf der Nutzung abgerechnet. Die Abrechnung erfolgt entweder monatlich über Azure-Zahlungsverpflichtungen oder über eine jährliche Lizenz pro Benutzer, die sie im Rahmen eines Microsoft Enterprise Agreement, das offene Volumenlizenzprogramm, das Programm für Microsoft Cloud-Lösungsanbieter oder auch über Direktbezug erhalten.
 
->[AZURE.IMPORTANT]Die Regionen in Australien sind für Kunden mit Geschäftspräsenz in Australien und Neuseeland verfügbar.
+>[AZURE.IMPORTANT]
+Die Regionen in Australien sind für Kunden mit Geschäftspräsenz in Australien und Neuseeland verfügbar.
 
 Abrechnungsmodell | Preis
 ------------- | ------------- |
@@ -136,7 +137,7 @@ Sie können alle App-Kennwörter des Benutzers löschen, um nicht autorisierte Z
 Informationen zum Erstellen von App-Kennwörtern finden Sie in der [Hilfe zu App-Kennwörtern](multi-factor-authentication-end-user-app-passwords.md).
 
 
->[AZURE.NOTE]Moderne Authentifizierung für Office 2013-Clients
+>[AZURE.NOTE] Moderne Authentifizierung für Office 2013-Clients
 >
 > Office 2013-Clients (einschließlich Outlook) unterstützen jetzt neue Authentifizierungsprotokolle und bieten die Möglichkeit zum Aktivieren von Multi-Factor Authentication. Damit sind nach der Aktivierung keine App-Kennwörter mehr für Office 2013-Clients erforderlich. Weitere Informationen finden Sie unter [Office 2013 modern authentication public preview announced](https://blogs.office.com/2015/03/23/office-2013-modern-authentication-public-preview-announced/) („Öffentliche Preview für moderne Authentifizierung in Office 2013“, in englischer Sprache).
 
@@ -177,6 +178,6 @@ Wenn Sie Windows Server 2012 R2 verwenden, benötigen Sie jedoch ein RD-Gateway.
 
 Derzeit kann die zusätzliche Sicherheitsüberprüfung nur für Anwendungen und Dienste verwendet werden, auf die Sie über Ihren Browser zugreifen können. Nicht-Browser-Anwendungen (auch bezeichnet als Rich Client-Anwendungen), die auf dem lokalen Computer installiert sind, z. B. Windows Powershell, können nicht zusammen mit Konten verwendet werden, bei denen eine zusätzliche Sicherheitsüberprüfung erforderlich ist. In diesem Fall wird von der Anwendung der Fehler "0x800434D4L" ausgegeben.
 
-Als Problemumgehung können Sie zusätzlich zu Ihrem normalen Konto ein separates Benutzerkonto für Administratoraufgaben erstellen. Anschließend können Sie die Postfächer beider Konten miteinander verknüpfen, sodass Sie für die Anmeldung bei Outlook lediglich ihr normales Konto benötigen. Weitere Informationen hierzu finden Sie unter [Einem Administrator das Öffnen und Anzeigen des Inhalts des Postfachs eines Benutzers ermöglichen](http://help.outlook.com/141/gg709759(d=loband).aspx?sl=1).
+Als Problemumgehung können Sie zusätzlich zu Ihrem normalen Konto ein separates Benutzerkonto für Administratoraufgaben erstellen. Anschließend können Sie die Postfächer beider Konten miteinander verknüpfen, sodass Sie für die Anmeldung bei Outlook lediglich ihr normales Konto benötigen. Weitere Informationen hierzu finden Sie unter [Einem Administrator das Öffnen und Anzeigen des Inhalts des Postfachs eines Benutzers ermöglichen]http://help.outlook.com/141/gg709759(d=loband).aspx?sl=1).
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0218_2016-->

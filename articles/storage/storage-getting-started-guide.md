@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="12/17/2015" 
+	ms.date="02/14/2016" 
 	ms.author="tamram"/>
 
 # Erste Schritte mit Azure Storage – Einstieg in fünf Minuten 
@@ -30,7 +30,7 @@ Folgende Voraussetzungen müssen erfüllt sein, bevor Sie beginnen:
 
 1. Zum Kompilieren und Erstellen der Anwendung muss [Visual Studio](https://www.visualstudio.com/) auf Ihrem Computer installiert sein. 
 
-2. Installieren Sie die neueste Version von [Azure SDK für .NET](https://azure.microsoft.com/downloads/). Das SDK enthält die Azure-Schnellstart-Beispielprojekte, den Azure-Speicheremulator und die [Azure Storage Client Library for .NET](https://msdn.microsoft.com/library/azure/wa_storage_30_reference_home.aspx).
+2. Installieren Sie die neueste Version von [Azure SDK für .NET](https://azure.microsoft.com/downloads/). Das SDK enthält die Azure-Schnellstart-Beispielprojekte, den Azure-Speicheremulator und die [Azure Storage Client Library for .NET](https://msdn.microsoft.com/library/azure/dn261237.aspx).
 
 3. Stellen Sie sicher, dass [.NET Framework 4.5](http://www.microsoft.com/download/details.aspx?id=30653) auf Ihrem Computer installiert ist, da es von den Azure-Schnellstart-Beispielprojekte benötigt wird, die wir in diesem Lernprogramm verwenden.
 
@@ -39,7 +39,7 @@ Folgende Voraussetzungen müssen erfüllt sein, bevor Sie beginnen:
 4. Sie benötigen ein Azure-Abonnement und ein Azure-Speicherkonto.
 
     - Informationen zum Erhalt eines Azure-Abonnements finden Sie unter [Kostenlose Testversion](https://azure.microsoft.com/pricing/free-trial/), [Kaufoptionen](https://azure.microsoft.com/pricing/purchase-options/) und [Angebote für Mitglieder](https://azure.microsoft.com/pricing/member-offers/) (für Mitglieder von MSDN, Microsoft Partner Network, BizSpark und anderen Microsoft-Programmen).
-    - Informationen zum Erstellen eines Speicherkontos in Azure finden Sie unter [Erstellen, Verwalten oder Löschen eines Speicherkontos](storage-create-storage-account.md).
+    - Informationen zum Erstellen eines Speicherkontos in Azure finden Sie unter [Erstellen eines Speicherkontos](storage-create-storage-account.md#create-a-storage-account).
 
 ## Ausführen Ihrer ersten Azure Storage-Anwendung über Azure Storage in der Cloud
 
@@ -98,15 +98,16 @@ Führen Sie nun die Beispielanwendung im Azure-Speicheremulator aus:
 Weitere Informationen zu Azure Storage finden Sie in den folgenden Ressourcen:
 
 * [Einführung in Microsoft Azure Storage](storage-introduction.md)
-* [Verwenden des Blob-Speichers mit .NET](storage-dotnet-how-to-use-blobs.md)
-* [Verwenden des Tabellenspeichers mit .NET](storage-dotnet-how-to-use-tables.md)
-* [Verwenden des Warteschlangenspeichers mit .NET](storage-dotnet-how-to-use-queues.md)
-* [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy)
+* [Erste Schritte mit Azure Blob Storage mit .NET](storage-dotnet-how-to-use-blobs.md)
+* [Erste Schritte mit Azure Table Storage mit .NET](storage-dotnet-how-to-use-tables.md)
+* [Erste Schritte mit Azure Queue Storage mit .NET](storage-dotnet-how-to-use-queues.md)
+* [Erste Schritte mit Azure File Storage unter Windows](storage-dotnet-how-to-use-files.md)
+* [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy.md)
 * [Azure-Speicherdokumentation](https://azure.microsoft.com/documentation/services/storage/)
-* [Azure Storage Client Library](https://msdn.microsoft.com/library/azure/wa_storage_30_reference_home.aspx)
-* [Azure Storage-REST-API](https://msdn.microsoft.com/library/azure/dd179355.aspx)
+* [Microsoft Azure-Speicherclientbibliothek für .NET](https://msdn.microsoft.com/library/azure/dn261237.aspx)
+* [REST-API für Azure-Speicherdienste](https://msdn.microsoft.com/library/azure/dd179355.aspx)
 
 [Image1]: ./media/storage-getting-started-guide/QuickStart.png
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

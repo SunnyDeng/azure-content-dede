@@ -1,6 +1,7 @@
 <properties
-	pageTitle="Importieren von Daten in DocumentDB | Microsoft Azure"
-	description="Erfahren Sie, wie Sie das Open-Source-basierte DocumentDB-Datenmigrationstool verwenden, um Daten aus verschiedenen Quellen, z. B. JSON-Dateien, CSV-Dateien, SQL, MongoDB, Azure Table Storage, Amazon DynamoDB- und DocumentDB-Sammlungen, in DocumentDB zu importieren."
+	pageTitle="Datenbank-Migrationstool für DocumentDB | Microsoft Azure"
+	description="Erfahren Sie, wie Sie das Open-Source-basierte DocumentDB-Datenmigrationstool verwenden, um Daten aus verschiedenen Quellen, z. B. MongoDB, SQL Server, Azure Table Storage, Amazon DynamoDB, CSV- und JSON-Dateien, zu importieren. CSV-zu-JSON-Konvertierung."
+	keywords="CSV zu JSON, Datenbank-Migrationstools, Konvertieren von CSV zu JSON" 
 	services="documentdb"
 	authors="andrewhoh"
 	manager="jhubbard"
@@ -16,7 +17,7 @@
 	ms.date="01/29/2016"
 	ms.author="anhoh"/>
 
-# Importieren von Daten in DocumentDB – Datenbank-Migrationstool
+# Importieren von Daten in DocumentDB mit dem Datenbank-Migrationstool
 
 Dieser Artikel beschreibt, wie Sie das Open-Source-basierte DocumentDB-Datenmigrationstool verwenden, um Daten aus verschiedenen Quellen, z. B. JSON-Dateien, CSV-Dateien, SQL, MongoDB, Azure-Tabellenspeicher, Amazon DynamoDB und DocumentDB-Sammlungen, in [Microsoft Azure DocumentDB](https://azure.microsoft.com/services/documentdb/) zu importieren.
 
@@ -477,4 +478,4 @@ Wählen Sie dann, ob alle, nur die kritischen oder gar keine Fehlermeldungen pro
 
 - Um weitere Informationen zu DocumentDB zu erhalten, klicken Sie [hier](http://azure.com/docdb).
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0218_2016-->

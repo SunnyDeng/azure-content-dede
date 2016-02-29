@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/16/2015" 
+	ms.date="02/16/2016" 
 	ms.author="asteen"/>
 
 # Weitere Informationen zur Kennwortverwaltung
@@ -101,7 +101,7 @@ Weitere Informationen zum Bereitstellen der Kennwortrückschreibung finden Sie u
 ### Welche Daten werden bei der Kennwortzurücksetzung verwendet?
 In der folgenden Tabelle wird beschrieben, wo und wie diese Daten während des Vorgangs der Kennwortzurücksetzung verwendet werden. Diese Aufstellung soll Sie dabei unterstützen, die für Ihre Organisation geeigneten Authentifizierungsoptionen auszuwählen. Diese Tabelle zeigt auch Formatierungsanforderungen für Fälle, in denen Sie Daten im Namen des Benutzers aus Eingabepfaden bereitstellen, die diese Daten nicht validieren.
 
-> [AZURE.NOTE]Die Option "Bürotelefon" wird im Registrierungsportal nicht angezeigt, da Benutzer diese Eigenschaft zurzeit nicht im Verzeichnis bearbeiten können.
+> [AZURE.NOTE] Die Option "Bürotelefon" wird im Registrierungsportal nicht angezeigt, da Benutzer diese Eigenschaft zurzeit nicht im Verzeichnis bearbeiten können.
 
 <table>
           <tbody><tr>
@@ -379,4 +379,4 @@ Im Folgenden finden Sie Links zu allen Webseiten mit Informationen zur Kennwortz
 [001]: ./media/active-directory-passwords-learn-more/001.jpg "Image_001.jpg"
 [002]: ./media/active-directory-passwords-learn-more/002.jpg "Image_002.jpg"
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0218_2016-->

@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="12/02/2015"
+   ms.date="01/26/2016"
    ms.author="alkohli" />
 
 # Verwalten von Zugriffssteuerungsdatensätzen mithilfe des StorSimple Manager-Diensts
@@ -27,7 +27,7 @@ In diesem Tutorial werden die folgenden häufig durchgeführten ACR-bezogenen Au
 - Bearbeiten von Zugriffssteuerungsdatensätzen 
 - Löschen von Zugriffssteuerungsdatensätzen 
 
-> [AZURE.IMPORTANT]
+> [AZURE.IMPORTANT] 
 > 
 > - Achten Sie beim Zuweisen eines ACR zu einem Volume darauf, dass dabei nicht gleichzeitig von mehreren nicht gruppierten Hosts auf das Volume zugegriffen wird, da dadurch das Volume beschädigt werden könnte. 
 > - Stellen Sie beim Löschen eines ACR von einem Volume sicher, dass der entsprechende Host nicht auf das Volume zugreift, da das Löschen zu einer Unterbrechung des Lese-/ Schreibzugriff führen kann.
@@ -47,7 +47,7 @@ Führen Sie die folgenden Schritte aus, um einen ACR hinzuzufügen:
 3. Geben Sie unter **iSCSI-Initiatorname** den qualifizierten iSCSI-Namen (IQN) des Windows-Hosts an. Gehen Sie zum Abrufen des IQN des Windows Server-Hosts folgendermaßen vor:
 
    - Starten Sie den Microsoft iSCSI-Initiator auf dem Windows-Host.
-   - Wählen Sie im Fenster "iSCSI Initiator Properties" auf der Registerkarte "Configuration" die Zeichenfolge im Feld "Initiator Name" aus, und kopieren Sie sie.
+   - Wählen Sie im Fenster **iSCSI Initiator Properties** auf der Registerkarte **Configuration** die Zeichenfolge im Feld **Initiator Name** aus, und kopieren Sie sie.
    - Fügen Sie diese Zeichenfolge im klassischen Azure-Portal in das Feld **iSCSI-Initiatorname** der ACR-Tabelle ein.
 
 4. Klicken Sie auf **Speichern**, um den neu erstellten ACR zu speichern. Die tabellarische Auflistung wird mit dem hinzugefügten Eintrag aktualisiert.
@@ -56,7 +56,7 @@ Führen Sie die folgenden Schritte aus, um einen ACR hinzuzufügen:
 
 Navigieren Sie im klassischen Azure-Portal zur Seite **Konfigurieren**, um ACRs zu bearbeiten.
 
-> [AZURE.NOTE]Sie können nur die ACRs ändern, die derzeit nicht verwendet werden. Zum Bearbeiten eines ACR, der einem das momentan verwendeten Volume zugeordnet ist, müssen Sie zunächst das Volume offline schalten.
+> [AZURE.NOTE] Sie können nur die ACRs ändern, die derzeit nicht verwendet werden. Zum Bearbeiten eines ACR, der einem das momentan verwendeten Volume zugeordnet ist, müssen Sie zunächst das Volume offline schalten.
 
 Führen Sie die folgenden Schritte aus, um einen ACR zu bearbeiten:
 
@@ -74,7 +74,7 @@ Führen Sie die folgenden Schritte aus, um einen ACR zu bearbeiten:
 
 Navigieren Sie im klassischen Azure-Portal zur Seite **Konfigurieren**, um ACRs zu löschen.
 
-> [AZURE.NOTE]Sie können nur die ACRs löschen, die derzeit nicht verwendet werden. Zum Löschen eines ACR, der einem momentan verwendeten Volume zugeordnet ist, müssen Sie zunächst das Volume offline schalten.
+> [AZURE.NOTE] Sie können nur die ACRs löschen, die derzeit nicht verwendet werden. Zum Löschen eines ACR, der einem momentan verwendeten Volume zugeordnet ist, müssen Sie zunächst das Volume offline schalten.
 
 Führen Sie die folgenden Schritte aus, um einen Zugriffssteuerungsdatensatz zu löschen.
 
@@ -95,4 +95,4 @@ Führen Sie die folgenden Schritte aus, um einen Zugriffssteuerungsdatensatz zu 
 - Erfahren Sie mehr zum [Verwenden Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
  
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0218_2016-->

@@ -12,7 +12,7 @@ ms.workload="tbd"
 ms.tgt_pltfrm="na" 
 ms.devlang="na" 
 ms.topic="article" 
-ms.date="01/19/2016" 
+ms.date="02/17/2016" 
 ms.author="saurabh"/>
 
 # Aktivieren einer Remotedesktopverbindung für eine Rolle in Azure Cloud Services
@@ -93,7 +93,7 @@ Sie können den REST-Vorgang [Download RDP File](https://msdn.microsoft.com/libr
 
 Diese Methode ermöglicht das Aktivieren von Remotedesktop für die Anwendung während der Entwicklung. Dieser Ansatz erfordert die Speicherung verschlüsselter Kennwörter in Ihrer Dienstkonfigurationsdatei, und alle Aktualisierungen der Remotedesktopkonfiguration würden eine erneute Bereitstellung der Anwendung erfordern. Wenn Sie diese Nachteile umgehen möchten, sollten Sie den oben beschriebenen Ansatz mit der Remotedesktoperweiterung verwenden.
 
-Sie können Visual Studio verwenden, um mithilfe Ansatzes mit der Dienstdefinitionsdatei eine [Remotedesktopverbindung zu aktivieren](https://msdn.microsoft.com/library/gg443832.aspx). Die folgenden Schritte beschreiben die erforderlichen Änderungen an den Dienstmodelldateien, um Remotedesktop zu aktivieren. Visual Studio nimmt diese Änderungen bei der Veröffentlichung automatisch vor.
+Sie können Visual Studio verwenden, um mithilfe Ansatzes mit der Dienstdefinitionsdatei eine [Remotedesktopverbindung zu aktivieren](../vs-azure-tools-remote-desktop-roles.md). Die folgenden Schritte beschreiben die erforderlichen Änderungen an den Dienstmodelldateien, um Remotedesktop zu aktivieren. Visual Studio nimmt diese Änderungen bei der Veröffentlichung automatisch vor.
 
 ### Einrichten der Verbindung im Dienstmodell 
 Verwenden Sie das **Imports**-Element zum Importieren der **RemoteAccess**-und **RemoteForwarder**-Module in die Datei [ServiceDefinition.csdef](cloud-services-model-and-package.md#csdef).
@@ -121,7 +121,7 @@ Die Dienstdefinitionsdatei sollte dem folgenden Beispiel mit hinzugefügtem `<Im
     </WebRole>
 </ServiceDefinition>
 ```
-Die Datei [ServiceConfiguration.cscfg](cloud-services-model-and-package.md#cscfg) sollte dem folgenden Beispiel mit ähneln; beachten Sie die hinzugefügtem Elemente `<ConfigurationSettings>` und `<Certificates>`. Das angegebene Zertifikat muss [zum Clouddienst hochgeladen werden](cloud-services-how-to-create-deploy/#how-to-upload-a-certificate-for-a-cloud-service).
+Die Datei [ServiceConfiguration.cscfg](cloud-services-model-and-package.md#cscfg) sollte dem folgenden Beispiel mit ähneln; beachten Sie die hinzugefügtem Elemente `<ConfigurationSettings>` und `<Certificates>`. Das angegebene Zertifikat muss [zum Clouddienst hochgeladen werden](../cloud-services-how-to-create-deploy.md#how-to-upload-a-certificate-for-a-cloud-service).
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -147,4 +147,4 @@ Die Datei [ServiceConfiguration.cscfg](cloud-services-model-and-package.md#cscfg
 
 [Konfigurieren von Clouddiensten](cloud-services-how-to-configure.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

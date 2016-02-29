@@ -15,7 +15,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="02/04/2016" 
+	ms.date="02/16/2016" 
 	ms.author="jeffstok"
 />
 
@@ -37,7 +37,7 @@ Nach Abschluss dieses Tutorials, werden Sie in der Lage sein, folgende Aufgaben 
 
 Für den erfolgreichen Abschluss dieses Tutorials wird Folgendes vorausgesetzt:
 
--   Die neueste [Azure PowerShell](../install-configure-powershell.md)-Version
+-   Aktuelle [Azure PowerShell](../powershell-install-configure.md)-Version
 -   Visual Studio 2015 oder die kostenlose [Visual Studio Community](https://www.visualstudio.com/products/visual-studio-community-vs.aspx)
 -   [Azure-Abonnement](https://azure.microsoft.com/pricing/free-trial/)
 -   Administratorrechte auf dem Computer
@@ -150,7 +150,7 @@ Das Skript „Setup.ps1“ im Ordner TollApp auf GitHub kann verwendet werden, u
 
 Laden Sie die unterstützenden [TollApp](https://github.com/streamanalytics/samples/releases)-Ordner und Dateien herunter und speichern Sie sie. Stellen Sie sicher, dass Sie die neueste Version herunterladen.
 
-Öffnen Sie ein Microsoft Azure PowerShell-Fenster **ALS ADMINISTRATOR**. Falls Sie Azure PowerShell noch nicht besitzen, befolgen Sie die folgende Anleitung, um es zu installieren: [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md)
+Öffnen Sie ein Microsoft Azure PowerShell-Fenster **ALS ADMINISTRATOR**. Falls Sie Azure PowerShell noch nicht besitzen, können Sie diese Installationsanleitung befolgen: [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md)
 
 Windows blockiert automatisch ps1-, dll- und exe-Dateien, die aus dem Internet heruntergeladen werden. Vor der Ausführung des Skripts müssen wir die Ausführungsrichtlinie festlegen. Stellen Sie sicher, dass das Azure PowerShell-Fenster mit Administratorberechtigung ausgeführt wird. Führen Sie „Set-ExecutionPolicy unrestricted“ aus. Wenn Sie dazu aufgefordert werden, geben Sie „Y“ ein.
 
@@ -534,4 +534,4 @@ Beachten Sie, dass Ressourcen anhand des Namens identifiziert werden. Stellen Si
 
 ![](media/stream-analytics-build-an-iot-solution-using-stream-analytics/image57.png)
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0218_2016-->

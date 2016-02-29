@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/04/2016"
+	ms.date="02/12/2016"
 	ms.author="raymondl;garye"/>
 
 
@@ -96,6 +96,8 @@ Diagramm 1: Übersicht über den Prozess des erneuten Trainings
 
 7. *Aktualisieren des trainierten Modells für den hinzugefügten Endpunkt* Um den Prozess abzuschließen, müssen wir das trainierte Modell des oben in Schritt 4 erstellten Vorhersageendpunkts aktualisieren.
 
+	(Wenn Sie den neuen Endpunkt mit dem Azure-Portal hinzugefügt haben, können Sie auf den Namen des neuen Endpunkts klicken, und klicken Sie dann auf den UpdateResource-Link, um die URL abzurufen, die Sie benötigen, um das Modell des Endpunkts zu aktualisieren.)
+
 	Die oben genannten BES-Ausgabe zeigt die Informationen für das Ergebnis des erneuten Trainings für "output1", das die Speicherortinformationen für das erneut trainierte Modell enthält. Nun müssen Sie dieses trainierte Modell anwenden und den Bewertungsendpunkt (der in Schritt 4 erstellt wurde) aktualisieren. Der Beispielcode lautet folgendermaßen:
 
 	```C#
@@ -138,7 +140,7 @@ Diagramm 1: Übersicht über den Prozess des erneuten Trainings
 	}
 	```
 
-	Im Endpunkt-Dashboard werden die Werte für "apiKey" und "endpointUrl" für diesen Aufruf angezeigt.
+	Im Endpunkt-Dashboard werden die Werte für "apiKey" und "endpointUrl" für diesen Aufruf angezeigt. Der Parameter „Name“ in „Resources“ sollte mit dem Namen des gespeicherten trainierten Modells im Vorhersageexperiment übereinstimmen.
 
 	Nachdem dieser Aufruf erfolgreich ausgeführt wurde, beginnt der neue Endpunkt innerhalb von etwa 15 Sekunden, das neu trainierte Modell zu verwenden.
 
@@ -156,4 +158,4 @@ Mithilfe der Retraining-APIs können wir das trainierte Modell eines Vorhersagew
 <!-- Module References -->
 [train-model]: https://msdn.microsoft.com/library/azure/5cc7053e-aa30-450d-96c0-dae4be720977/
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0218_2016-->

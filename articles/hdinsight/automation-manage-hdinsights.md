@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/20/2015"
+	ms.date="02/16/2016"
 	ms.author="elcooper"/>
 
 
@@ -44,4 +44,4 @@ Nun, da Sie die Grundlagen von Azure Automation kennen und wissen, wie es zum Ve
 
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

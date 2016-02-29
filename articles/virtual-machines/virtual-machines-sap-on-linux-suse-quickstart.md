@@ -14,7 +14,7 @@
    ms.topic="campaign-page"
    ms.tgt_pltfrm="vm-linux"
    ms.workload="na"
-   ms.date="11/26/2015"
+   ms.date="02/12/2016"
    ms.author="hermannd"/>
 
 # Testen von SAP NetWeaver in Microsoft Azure SUSE-Linux-VMs
@@ -76,9 +76,24 @@ Stellen Sie niemals Azure-Datenträger in einer Azure Linux-VM per Geräte-ID be
 
 Das Problem mit der Geräte-ID besteht darin, dass diese sich ändern kann und die Azure-VM sich dann möglicherweise beim Startvorgang aufhängt. Sie können das Problem dann mit dem Hinzufügen des Parameters „nofail“ in „/etc/fstab“ beheben. Beachten Sie jedoch, dass Anwendungen bei Verwendung von „nofail“ den Bereitstellungspunkt wie zuvor verwenden könnten und für den Fall, dass ein externer Azure-Datenträger während des Startvorgangs nicht bereitgestellt wurde, in das Stammdateisystem schreiben könnten.
 
+Die einzige Ausnahme in Bezug auf die Bereitstellung per UUID bezieht sich auf das Anfügen eines Betriebssystem-Datenträgers zu Problembehandlungszwecken. Dies ist im folgenden Abschnitt beschrieben.
+
+## Problembehandlung bei SUSE-VM (kein Zugriff mehr)
+
+Es kann zu Situationen kommen, in denen eine SUSE-VM unter Azure beim Startvorgang hängen bleibt (z. B. aufgrund eines Fehlers bei der Bereitstellung von Datenträgern). Sie können das Problem untersuchen, indem Sie beispielsweise das Startdiagnosefeature im Portal für v2-VMs verwenden ([siehe Blog](https://azure.microsoft.com/blog/boot-diagnostics-for-virtual-machines-v2/)).
+
+Eine Möglichkeit zum Lösen des Problems ist das Anfügen des Betriebssystem-Datenträgers der fehlerhaften VM an eine andere SUSE-VM unter Azure und das anschließende Vornehmen entsprechender Änderungen. Beispiele hierfür sind das Bearbeiten von „/etc/fstab“ oder das Entfernen von Netzwerkregeln. Dies ist im nächsten Abschnitt beschrieben.
+
+Es ist aber wichtig, einen Aspekt zu berücksichtigen. Beim Bereitstellen mehrerer SUSE-VMs über dasselbe Azure-Katalogimage (z. B. SLES 11 SP4) wird klar, dass der Betriebssystem-Datenträger immer mit der gleichen UUID bereitgestellt wird. Das Anfügen eines Betriebssystem-Datenträgers von einer anderen VM per UUID, die mit demselben Azure-Katalogimage bereitgestellt wurde, führt daher zu zwei identischen UUIDs. Dies führt zu Problemen und kann bedeuten, dass die für die Problembehandlung bestimmte VM vom angefügten und fehlerhaften Betriebssystem-Datenträger gestartet wird, anstatt vom ursprünglichen Datenträger.
+
+Es gibt zwei Möglichkeiten, wie Sie dies vermeiden können:
+
+* Verwenden eines anderen Azure-Katalogimage für die Problembehandlungs-VM (z. B. SLES 12 anstelle von SLES 11 SP4)
+* Vermeiden des Anfügens des fehlerhaften Betriebssystem-Datenträgers von einer anderen VM per UUID und Verwenden einer anderen Komponente
+
 ## Hochladen einer SUSE-VM vom lokalen Standort nach Azure
 
-[Dieser Artikel](virtual-machines-linux-create-upload-vhd-suse.md) beschreibt die Schritte zum Hochladen einer SUSE VM in Azure von Ihrem lokalen Standort aus.
+[Dieser Artikel](virtual-machines-linux-create-upload-vhd-suse.md) beschreibt die Schritte zum Hochladen einer SUSE-VM in Azure von Ihrem lokalen Standort aus.
 
 Wenn Sie eine VM hochladen möchten, ohne die Bereitstellung zum Schluss aufzuheben, z. B. um eine vorhandene SAP-Installation sowie den Hostnamen zu behalten, müssen Sie folgendes beachten:
 
@@ -99,7 +114,7 @@ Neue SUSE VMs sollten über JSON-Vorlagendateien im neuen Azure-Ressourcen-Manag
 
    ``` Weitere Informationen zu JSON-Vorlagen finden Sie in diesem [Artikel](resource-group-authoring-templates.md) und auf dieser [Webseite](https://azure.microsoft.com/documentation/templates/).
 
-Weitere Informationen zur Befehlszeilenschnittstelle (CLI) und Azure-Ressourcen-Manager finden Sie in diesem [Artikel](xplat-cli-azure-resource-manager.md):
+Weitere Informationen zur Befehlszeilenschnittstelle (CLI) und zum Azure-Ressourcen-Manager finden Sie in diesem [Artikel](xplat-cli-azure-resource-manager.md):
 
 ## SAP-Lizenz und Hardwareschlüssel
 
@@ -147,4 +162,4 @@ Wenn Sie Gnome Desktop für die Installation eines vollständigen SAP-Demosystem
 
 Es gibt eine Supporteinschränkung von Oracle unter Linux in virtualisierten Umgebungen. Dies ist ein allgemeines und kein Azure spezifisches Thema. Dennoch ist das Verständnis wichtig. In öffentlichen Clouds wie Azure werden Oracle, SUSE oder Red Hat nicht von SAP unterstützt. Die Kunden sollten sich direkt an Oracle wenden, um das Thema zu diskutieren.
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0218_2016-->

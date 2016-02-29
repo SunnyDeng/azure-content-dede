@@ -24,9 +24,9 @@ In diesem Lernprogramm erfahren Sie, wie Sie die clientseitige Speicherverschlü
 
 **Geschätzter Zeitaufwand:** 20 Minuten
 
-Eine Übersicht über den Azure-Schlüsseltresor finden Sie unter [Was ist der Azure-Schlüsseltresor?](key-vault/key-vault-whatis.md).
+Eine Übersicht über den Azure-Schlüsseltresor finden Sie unter [Was ist der Azure-Schlüsseltresor?](../key-vault/key-vault-whatis.md)
 
-Übersichtsinformationen zur clientseitigen Verschlüsselung für Azure Storage finden Sie unter [Erste Schritte der clientseitigen Verschlüsselung für Microsoft Azure Storage](storage-client-side-encryption.md).
+Übersichtsinformationen zur clientseitigen Verschlüsselung für Azure Storage finden Sie unter [Clientseitige Verschlüsselung und Azure Key Vault für Microsoft Azure Storage](storage-client-side-encryption.md).
 
 
 ## Voraussetzungen
@@ -51,7 +51,7 @@ Hier eine kurze Beschreibung zur Funktionsweise der clientseitigen Verschlüssel
 
 
 ## Einrichten des Azure-Schlüsseltresors
-Zum Fortsetzen dieses Lernprogramms müssen Sie die folgenden Schritte ausführen, die im Lernprogramm [Erste Schritte mit dem Azure-Schlüsseltresor](key-vault/key-vault-get-started.md) beschrieben sind.
+Zum Fortsetzen dieses Lernprogramms müssen Sie die folgenden Schritte ausführen, die im Lernprogramm [Erste Schritte mit dem Azure-Schlüsseltresor](../key-vault/key-vault-get-started.md) beschrieben sind.
 
 - Erstellen eines Schlüsseltresors
 - Hinzufügen eines Schlüssels oder geheimen Schlüssels zum Schlüsseltresor
@@ -235,4 +235,4 @@ Aktuelle Informationen zu Microsoft Azure Storage finden Sie im [Microsoft Azure
 <!--Image references-->
 [1]: ./media/storage-encrypt-decrypt-blobs-key-vault/blobmetadata.png
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

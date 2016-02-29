@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/09/2015"
+   ms.date="02/09/2016"
    ms.author="joaoma" />
 
 # Erste Schritte zum Erstellen eines internen Lastenausgleichs (klassisch) für Clouddienste
@@ -32,7 +32,7 @@ Der interne Lastenausgleich wird sowohl für virtuelle Computer als auch für Cl
 
 Die Konfiguration des internen Lastenausgleichs muss während der Erstellung der ersten Bereitstellung im Clouddienst festgelegt werden, wie im folgenden Beispiel dargestellt.
 
->[AZURE.IMPORTANT]Voraussetzung für die Ausführung der folgenden Schritte ist, dass Sie bereits ein virtuelles Netzwerk für die Cloudbereitstellung erstellt haben. Zum Erstellen des internen Lastenausgleichs benötigen Sie den Namen des virtuellen Netzwerks und den Subnetznamen.
+>[AZURE.IMPORTANT] Voraussetzung für die Ausführung der folgenden Schritte ist, dass Sie bereits ein virtuelles Netzwerk für die Cloudbereitstellung erstellt haben. Zum Erstellen des internen Lastenausgleichs benötigen Sie den Namen des virtuellen Netzwerks und den Subnetznamen.
 
 ### Schritt 1
 
@@ -87,8 +87,8 @@ Der Lastenausgleich für den Netzwerkdatenverkehr erfolgt für eingehende Anford
 
 ## Nächste Schritte
 
-[Konfigurieren Sie einen Lastenausgleichs-Verteilungsmodus mithilfe der Quell-IP-Affinität](load-balancer-distribution-mode.md)
+[Konfigurieren eines Load Balancer-Verteilungsmodus mithilfe der Quell-IP-Affinität](load-balancer-distribution-mode.md)
 
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0218_2016-->

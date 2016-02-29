@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Kopieren von Ausgabedaten in eine lokale SQL Server-Datenbank (Azure PowerShell)" 
+	pageTitle="Exemplarische Vorgehensweise: Kopieren von Ausgabedaten in eine SQL Server-Datenbank (Azure PowerShell)" 
 	description="Diese exemplarische Vorgehensweise baut auf dem Tutorial mit Verwendung der Azure PowerShell auf, indem die Pipeline Ausgabedaten in eine SQL Server-Datenbank kopiert."
 	services="data-factory" 
 	documentationCenter="" 
@@ -17,7 +17,7 @@
 	ms.author="spelluru"/>
 
 
-# Exemplarische Vorgehensweise: Kopieren von Daten zur Kampagneneffektivität in eine lokale SQL Server-Datenbank
+# Exemplarische Vorgehensweise: Kopieren von Ausgabedaten in eine lokale SQL Server-Datenbank (Azure PowerShell)
 In dieser exemplarischen Vorgehensweise erfahren Sie, wie die Umgebung eingerichtet werden muss, damit die Pipeline mit lokalen Daten arbeiten kann.
  
 Im letzten Schritt des Protokollverarbeitungszenarios aus der ersten exemplarischen Vorgehensweise mit dem Workflow "Partition -> Enrich -> Analyze" wurde die Ausgabe der Wirksamkeit der Marketingkampagne in eine Azure SQL-Datenbank kopiert. Sie können diese Daten auch in einen lokalen SQL Server für Analysen innerhalb Ihrer Organisation verschieben.
@@ -170,4 +170,4 @@ Glückwunsch! Sie haben die exemplarische Vorgehensweise zur Verwendung Ihrer lo
 
  
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0218_2016-->

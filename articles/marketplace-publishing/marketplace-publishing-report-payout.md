@@ -31,9 +31,13 @@ Berichte sind 45 Tage nach Ende des Quartals verfügbar und werden abzüglich e
 ### Zugriff auf Auszahlungsberichte im Dev Center
 
 1. Navigieren Sie zum Dev Center unter https://dev.windows.com/de-DE.
-2. Klicken Sie auf **Dashboard**. ![LandingPageDashboardHighlight][1]
+2. Klicken Sie auf **Dashboard**.
 
-3. Klicken Sie auf **Auszahlungszusammenfassung**. ![DashboardPayoutSummary][2]
+    ![LandingPageDashboardHighlight][1]
+
+3. Klicken Sie auf **Auszahlungszusammenfassung**.
+
+    ![DashboardPayoutSummary][2]
 
 
 ## Anzeigen von Auszahlungsberichten im Dev Center
@@ -58,7 +62,9 @@ Im Auszahlungsbericht für die einzelnen Quartale werden alle Transaktionen für
 
 1. Navigieren Sie zum Veröffentlichungsportal (https://publish.windowsazure.com).
 2. Klicken Sie im Abschnitt **Herausgeber** auf **Auszahlungsberichte**.
-3. Klicken Sie auf die Dropdownliste, um alle verfügbaren vierteljährlichen Auszahlungsberichte anzuzeigen. ![accessingpayoutreport][5]
+3. Klicken Sie auf die Dropdownliste, um alle verfügbaren vierteljährlichen Auszahlungsberichte anzuzeigen.
+
+    ![accessingpayoutreport][5]
 
 
 ### Lesen von Auszahlungsberichten
@@ -94,7 +100,7 @@ Wenden Sie sich bei Fragen zu Ihren Auszahlungen an unser Supportteam.
 
 ## Nächste Schritte
 
-Erstellen Sie bei anderen Problemen eine Supportanfrage unter https://portal.azure.com.
+Erstellen Sie bei anderen Problemen eine Supportanfrage unter <https://portal.azure.com>.
 
 [1]: ./media/marketplace-publishing-report-payout/LandingPage-DashboardHighlight.png
 [2]: ./media/marketplace-publishing-report-payout/Dashboard-PayoutSummary.png
@@ -106,4 +112,4 @@ Erstellen Sie bei anderen Problemen eine Supportanfrage unter https://portal.azu
 [8]: ./media/marketplace-publishing-report-payout/ledgerdefinitions.png
 [9]: ./media/marketplace-publishing-report-payout/payoutquestions.png
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0218_2016-->

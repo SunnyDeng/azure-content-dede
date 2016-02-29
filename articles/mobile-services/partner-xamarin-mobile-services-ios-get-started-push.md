@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-xamarin-ios"
 	ms.devlang="objective-c"
 	ms.topic="article"
-	ms.date="12/03/2015"
+	ms.date="02/11/2016"
 	ms.author="yuaxu"/>
 
 # Hinzufügen von Pushbenachrichtigungen zur Mobile Services-App
@@ -36,7 +36,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 + [Xamarin.iOS Studio]
 + [Azure Mobile Services-Komponente]
 
->[AZURE.IMPORTANT]Pushbenachrichtigungen müssen aufgrund von APNS-Anforderungen auf einem iOS-fähigen Gerät (iPhone oder iPad) anstatt im Emulator bereitgestellt und getestet werden.
+>[AZURE.IMPORTANT] Pushbenachrichtigungen müssen aufgrund von APNS-Anforderungen auf einem iOS-fähigen Gerät (iPhone oder iPad) anstatt im Emulator bereitgestellt und getestet werden.
 
 APNS verwendet Zertifikate zur Authentifizierung Ihres mobilen Diensts. Folgen Sie diesen Anweisungen zum Erstellen der erforderlichen Zertifikate und zum Hochladen auf Ihren mobilen Dienst. Die offizielle Dokumentation der APNS-Merkmale finden Sie unter [Apple Push Notification Service].
 
@@ -310,7 +310,7 @@ Ihre App kann Pushbenachrichtigungen nun unterstützen.
 
     Auf diese Weise wird ein neues Einfügeskript registriert, das über das [apns-Objekt] eine Pushbenachrichtigung (den eingefügten Text) zum in der Einfügeanforderung angegebenen Gerät sendet.
 
-   >[AZURE.NOTE]Dieses Skript verzögert die Übermittlung der Benachrichtigung, um Ihnen Zeit zum Schließen der App für den Empfang einer Toastbenachrichtigung zu geben.
+   >[AZURE.NOTE] Dieses Skript verzögert die Übermittlung der Benachrichtigung, um Ihnen Zeit zum Schließen der App für den Empfang einer Toastbenachrichtigung zu geben.
 
 ## <a name="test"></a>Testen von Pushbenachrichtigungen in der App
 
@@ -318,7 +318,7 @@ Ihre App kann Pushbenachrichtigungen nun unterstützen.
 
     ![][23]
 
-   >[AZURE.NOTE]Sie müssen Pushbenachrichtigungen von Ihrer App ausdrücklich akzeptieren. Diese Anforderung tritt nur beim ersten Lauf der App auf.
+   >[AZURE.NOTE] Sie müssen Pushbenachrichtigungen von Ihrer App ausdrücklich akzeptieren. Diese Anforderung tritt nur beim ersten Lauf der App auf.
 
 2. In der App geben Sie eine Beschreibung ein, wie zum Beispiel _Neue Mobile Services-Aufgabe_, und klicken Sie dann auf das Plussymbol (**+**).
 
@@ -403,4 +403,4 @@ Sie haben dieses Lernprogramm erfolgreich abgeschlossen.
 [completed example project]: http://go.microsoft.com/fwlink/p/?LinkId=331303
 [Xamarin.iOS]: http://xamarin.com/download
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0218_2016-->

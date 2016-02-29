@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Replizieren von Hyper-V-VMs (in einer VMM-Cloud) an einen sekundären Standort mit Azure Site Recovery per SAN | Microsoft Azure"
-	description="Azure Site Recovery koordiniert Replikation, Failover und Wiederherstellung von virtuellen Hyper-V-Computern zwischen lokalen Standorten mithilfe der SAN-Replikation."
+	pageTitle="Replizieren von Hyper-V-VMs in einer VMM-Cloud an einen sekundären Standort mit Azure Site Recovery per SAN | Microsoft Azure"
+	description="In diesem Artikel wird beschrieben, wie Sie virtuelle Hyper-V-Maschinen zwischen zwei Standorten mit Azure Site Recovery per SAN-Replikation replizieren."
 	services="site-recovery"
 	documentationCenter=""
 	authors="rayne-wiselman"
@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/12/2016"
+	ms.date="02/16/2016"
 	ms.author="raynew"/>
 
-# Replizieren von Hyper-V-VMs (in einer VMM-Cloud) an einen sekundären Standort mit Azure Site Recovery per SAN
+# Replizieren von Hyper-V-VMs in einer VMM-Cloud an einen sekundären Standort mit Azure Site Recovery per SAN
 
-Azure Site Recovery unterstützt Ihre Strategie für Geschäftskontinuität und Notfallwiederherstellung, indem Replikation, Failover und Wiederherstellung virtueller Computer und physischer Server aufeinander abgestimmt werden. Computer können in Azure oder in einem sekundären lokalen Datencenter repliziert werden. Eine kurze Übersicht Eine kurze Übersicht über das Gesamtthema finden Sie unter [Was ist Azure Site Recovery?](site-recovery-overview.md).
+Der Dienst Azure Site Recovery unterstützt Ihre Strategie für Geschäftskontinuität und Notfallwiederherstellung, indem Replikation, Failover und Wiederherstellung virtueller Computer und physischer Server aufeinander abgestimmt werden. Computer können in Azure oder in einem sekundären lokalen Datencenter repliziert werden. Eine kurze Übersicht Eine kurze Übersicht über das Gesamtthema finden Sie unter [Was ist Azure Site Recovery?](site-recovery-overview.md).
 
 ## Übersicht
 
@@ -26,18 +26,18 @@ In diesem Artikel wird beschrieben, wie Sie Site Recovery bereitstellen, um den 
 
 Der Artikel enthält eine Übersicht und informiert über die Voraussetzungen für die Bereitstellung. Hier erfahren Sie, wie Sie die Replikation in VMM und im Site Recovery-Tresor konfigurieren und aktivieren. Sie bestimmen und klassifizieren SAN-Speicher in VMM, stellen LUNs bereit und weisen Hyper-V-Clustern Speicher zu. Zum Schluss wird das Failover getestet, um sicherzustellen, dass alles wie erwartet funktioniert.
 
-Etwaige Fragen können Sie im [Azure Recovery Services-Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr) stellen.
+Kommentare oder Fragen können Sie am Ende dieses Artikels oder im [Forum zu Azure Recovery Services](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr) veröffentlichen.
 
-Beispiele für geschäftliche Vorteile dieses Szenarios:
+## Welche Gründe sprechen für die Replikation mit SAN?
+
+Hier ist angegeben, was bei diesem Szenario bereitgestellt wird:
 
 - Bereitstellung einer skalierbaren und durch Site Recovery automatisierten Replikationslösung für Unternehmen.
-- Nutzung der SAN-Replikationsfunktionen gewerblicher Speicherpartner (sowohl über Fibre Channel als auch über iSCSI). Eine Liste mit unseren SAN-Speicherpartnern finden Sie [hier](http://go.microsoft.com/fwlink/?LinkId=518669).
-- Nutzung Ihrer vorhandenen SAN-Infrastruktur zum Schutz unternehmenskritischer, in Hyper-V-Clustern bereitgestellter Anwendungen.
+- Nutzung der SAN-Replikationsfunktionen gewerblicher Speicherpartner (sowohl über Fibre Channel als auch über iSCSI). Eine Liste mit unseren SAN-Speicherpartnern finden Sie [hier](http://social.technet.microsoft.com/wiki/contents/articles/28317.deploying-azure-site-recovery-with-vmm-and-san-supported-storage-arrays.aspx).
+- Nutzung Ihrer vorhandenen SAN-Infrastruktur zum Schützen unternehmenskritischer, in Hyper-V-Clustern bereitgestellter Anwendungen.
 - Unterstützung von Gastclustern.
-- Gewährleistung der Replikationskonsistenz auf verschiedenen Ebenen einer Anwendung mit synchronisierter Replikation für niedrige RTO- und RPO-Werte sowie mit nicht synchronisierter Replikation für hohe Flexibilität (abhängig von den Funktionen des Speicherarrays).  
-- VMM-Integration zur SAN-Verwaltung über die VMM-Konsole und SMI-S in VMM zur Erkennung des vorhandenen Speichers.  
-
-
+- Gewährleistung der Replikationskonsistenz auf verschiedenen Ebenen einer Anwendung mit synchronisierter Replikation zur Erzielung niedriger RTO- und RPO-Werte sowie mit nicht synchronisierter Replikation zur Erzielung einer hohen Flexibilität (abhängig von den Funktionen des Speicherarrays).  
+- VMM-Integration für die SAN-Verwaltung über die VMM-Konsole und SMI-S in VMM zur Erkennung des vorhandenen Speichers.  
 
 ## Architektur
 
@@ -59,10 +59,10 @@ Stellen Sie sicher, dass diese Voraussetzungen erfüllt werden:
 
 **Voraussetzungen** | **Details** 
 --- | ---
-**Azure**| Sie benötigen ein [Microsoft Azure](https://azure.microsoft.com/)-Konto. Für den Einstieg steht eine [kostenlose Testversion](https://azure.microsoft.com/pricing/free-trial/) zur Verfügung. [Erfahren Sie mehr](https://azure.microsoft.com/pricing/details/site-recovery/) über die Preise für Site Recovery. 
-**VMM** | Sie benötigen mindestens einen VMM-Server, der als physischer oder virtueller eigenständiger Server oder als virtueller Cluster bereitgestellt wird. <br/><br/>Auf dem VMM-Server sollte System Center 2012 R2 mit den neuesten kumulativen Updates ausgeführt werden.<br/><br/>Sie benötigen mindestens eine Cloud, die auf dem zu schützenden primären VMM-Server konfiguriert ist, und eine Cloud, die auf dem sekundären VMM-Server für den Schutz und die Wiederherstellung konfiguriert ist.<br/><br/>Die Quellcloud, die geschützt werden soll, muss mindestens eine VMM-Hostgruppe enthalten.<br/><br/>Für alle VMM-Clouds muss das Hyper-V-Kapazitätsprofil eingestellt sein.<br/><br/>Weitere Informationen zum Einrichten von VMM-Clouds finden Sie unter [Konfigurieren der VMM-Cloud-Fabric](https://msdn.microsoft.com/library/azure/dn469075.aspx#BKMK_Fabric) und [Walkthrough: Creating Private Clouds with System Center 2012 SP1 Virtual Machine Manager](http://blogs.technet.com/b/keithmayer/archive/2013/04/18/walkthrough-creating-private-clouds-with-system-center-2012-sp1-virtual-machine-manager-build-your-private-cloud-in-a-month.aspx).
-**Hyper-V** | Sie benötigen mindestens einen Hyper-V-Cluster an den primären und sekundären Standorten und mindestens eine VM im Hyper-V-Quellcluster. VMM-Hostgruppen an primären und sekundären Standorten sollten in jeder Gruppe über mindestens einen Hyper-V-Cluster verfügen.<br/><br/>Auf den Hyper-V-Host- und -Zielservern muss mindestens Windows Server 2012 mit der Hyper-V-Rolle ausgeführt werden, und die aktuellen Updates müssen installiert sein.<br/><br/>Alle Hyper-V-Server mit zu schützenden VMs müssen in einer VMM-Cloud angeordnet sein.<br/><br/>Bedenken Sie beim Ausführen von Hyper-V in einem Cluster, dass der Clusterbroker nicht automatisch erstellt wird, wenn Sie einen Cluster mit statischen IP-Adressen verwenden. Sie müssen den Clusterbroker manuell konfigurieren. [Weitere Informationen](http://social.technet.microsoft.com/wiki/contents/articles/18792.configure-replica-broker-role-cluster-to-cluster-replication.aspx)
-**SAN-Speicher** | Mithilfe der SAN-Replikation können virtuelle Computer in Gastclustern mit iSCSI- oder Fibre Channel-Speicher oder freigegebenen virtuellen Festplatten (VHDX) replizieren.<br/><br/>Sie benötigen zwei eingerichtete SAN-Arrays, eines am primären und eines am sekundären Standort.<br/><br/>Zwischen den Arrays muss Netzwerkinfrastruktur eingerichtet sein. Peering und Replikation müssen konfiguriert sein. Replikationslizenzen müssen in Einklang mit den Anforderungen an Speicherarrays eingerichtet sein.<br/><br/>Zwischen den Hyper-V-Hostservern und dem Speicherarray müssen Netzwerkverbindungen eingerichtet sein, damit die Hosts über iSCSI oder Fibre Channel mit den Speicher-LUNs kommunizieren können.<br/><br/> Sehen Sie sich die [Liste mit den unterstützten Speicherarrays](http://social.technet.microsoft.com/wiki/contents/articles/28317.deploying-azure-site-recovery-with-vmm-and-san-supported-storage-arrays.aspx) an.<br/><br/>Von den Speicherarray-Herstellern bereitgestellte SMI-S-Anbieter müssen installiert sein, und die SAN-Arrays müssen vom Anbieter verwaltet werden. Richten Sie den Anbieter gemäß der Dokumentation ein.<br/><br/>Vergewissern Sie sich, dass sich der SMI-S-Anbieter des Arrays auf einem Server befindet, auf den der VMM-Server über das Netzwerk per IP-Adresse oder FQDN zugreifen kann.<br/><br/>Für jedes SAN-Array muss mindestens ein Speicherpool in dieser Bereitstellung verfügbar sein. Der VMM-Server am primären Standort muss das primäre Array und der sekundäre VMM-Server das sekundäre Array verwalten.<br/><br/>Der VMM-Server am primären Standort muss das primäre Array verwalten, und der sekundäre VMM-Server kümmert sich um die Verwaltung des sekundären Arrays.
+**Azure**| Sie benötigen ein [Microsoft Azure](https://azure.microsoft.com/)-Konto. Für den Einstieg steht eine [kostenlose Testversion](https://azure.microsoft.com/pricing/free-trial/) zur Verfügung. Erfahren Sie mehr über die [Preise für Site Recovery](https://azure.microsoft.com/pricing/details/site-recovery/). 
+**VMM** | Sie benötigen mindestens einen VMM-Server, der als physischer oder virtueller eigenständiger Server oder als virtueller Cluster bereitgestellt wird. <br/><br/>Auf dem VMM-Server sollte System Center 2012 R2 mit den neuesten kumulativen Updates ausgeführt werden.<br/><br/>Sie benötigen mindestens eine Cloud, die auf dem zu schützenden primären VMM-Server konfiguriert ist, und eine Cloud, die auf dem sekundären VMM-Server für den Schutz und die Wiederherstellung konfiguriert ist.<br/><br/>Die Quellcloud, die geschützt werden soll, muss mindestens eine VMM-Hostgruppe enthalten.<br/><br/>Für alle VMM-Clouds muss das Hyper-V-Kapazitätsprofil eingestellt sein.<br/><br/>Weitere Informationen zum Einrichten von VMM-Clouds finden Sie unter [Konfigurieren der VMM-Cloud-Fabric](https://msdn.microsoft.com/library/azure/dn469075.aspx#BKMK_Fabric) und [Walkthrough: Creating Private Clouds with System Center 2012 SP1 Virtual Machine Manager](http://blogs.technet.com/b/keithmayer/archive/2013/04/18/walkthrough-creating-private-clouds-with-system-center-2012-sp1-virtual-machine-manager-build-your-private-cloud-in-a-month.aspx) (Exemplarische Vorgehensweise: Erstellen von privaten Clouds mit System Center 2012 SP1 VMM).
+**Hyper-V** | Sie benötigen mindestens einen Hyper-V-Cluster an den primären und sekundären Standorten und mindestens eine VM im Hyper-V-Quellcluster. VMM-Hostgruppen an primären und sekundären Standorten sollten in jeder Gruppe über mindestens einen Hyper-V-Cluster verfügen.<br/><br/>Auf den Hyper-V-Host- und -Zielservern muss mindestens Windows Server 2012 mit der Hyper-V-Rolle ausgeführt werden, und die aktuellen Updates müssen installiert sein.<br/><br/>Alle Hyper-V-Server mit zu schützenden VMs müssen in einer VMM-Cloud angeordnet sein.<br/><br/>Bedenken Sie beim Ausführen von Hyper-V in einem Cluster, dass der Clusterbroker nicht automatisch erstellt wird, wenn Sie einen Cluster mit statischen IP-Adressen verwenden. Sie müssen den Clusterbroker manuell konfigurieren. [Weitere Informationen](https://www.petri.com/use-hyper-v-replica-broker-prepare-host-clusters) finden Sie im Blogbeitrag von Aidan Finn.
+**SAN-Speicher** | Mithilfe der SAN-Replikation können virtuelle Computer in Gastclustern mit iSCSI- oder Fibre Channel-Speicher oder freigegebenen virtuellen Festplatten (VHDX) replizieren.<br/><br/>Sie benötigen zwei eingerichtete SAN-Arrays, eines am primären und eines am sekundären Standort.<br/><br/>Zwischen den Arrays muss Netzwerkinfrastruktur eingerichtet sein. Peering und Replikation müssen konfiguriert sein. Replikationslizenzen müssen im Einklang mit den Anforderungen an Speicherarrays eingerichtet sein.<br/><br/>Zwischen den Hyper-V-Hostservern und dem Speicherarray müssen Netzwerkverbindungen eingerichtet sein, damit die Hosts über iSCSI oder Fibre Channel mit den Speicher-LUNs kommunizieren können.<br/><br/> Sehen Sie sich die [Liste mit den unterstützten Speicherarrays](http://social.technet.microsoft.com/wiki/contents/articles/28317.deploying-azure-site-recovery-with-vmm-and-san-supported-storage-arrays.aspx) an.<br/><br/>Von den Speicherarray-Herstellern bereitgestellte SMI-S-Anbieter müssen installiert sein, und die SAN-Arrays müssen vom Anbieter verwaltet werden. Richten Sie den Anbieter gemäß der Dokumentation ein.<br/><br/>Vergewissern Sie sich, dass sich der SMI-S-Anbieter des Arrays auf einem Server befindet, auf den der VMM-Server über das Netzwerk per IP-Adresse oder FQDN zugreifen kann.<br/><br/>Für jedes SAN-Array muss mindestens ein Speicherpool in dieser Bereitstellung verfügbar sein. Der VMM-Server am primären Standort muss das primäre Array und der sekundäre VMM-Server das sekundäre Array verwalten.<br/><br/>Der VMM-Server am primären Standort muss das primäre Array verwalten, und der sekundäre VMM-Server kümmert sich um die Verwaltung des sekundären Arrays.
 **Netzwerkzuordnung** | Sie können eine Netzwerkzuordnung konfigurieren, um sicherzustellen, dass replizierte virtuelle Maschinen nach einem Failover optimal auf sekundären Hyper-V-Hostservern platziert werden und eine Verbindung mit den entsprechenden VM-Netzwerken herstellen können. Wenn Sie die Netzwerkzuordnung nicht konfigurieren, wird für Replikat-VMs nach dem Failover keine Netzwerkverbindung hergestellt.<br/><br/>Stellen Sie zum Einrichten der Netzwerkzuordnung während der Bereitstellung sicher, dass für die virtuellen Maschinen auf dem Hyper-V-Quellhostserver Verbindungen mit einem VMM-VM-Netzwerk bestehen. Dieses Netzwerk sollte mit einem logischen Netzwerk verbunden sein, das der Cloud zugeordnet ist.<br/<br/>Für die Zielcloud auf dem sekundären VMM-Server, die Sie für die Wiederherstellung verwenden, sollte ein entsprechendes VM-Netzwerk konfiguriert sein. Dieses sollte wiederum mit einem entsprechenden logischen Netzwerk verknüpft sein, das der Zielcloud zugeordnet ist.<br/><br/>Lesen Sie sich die [weiteren Informationen](site-recovery-network-mapping.md) zur Netzwerkzuordnung durch.
 
 
@@ -78,10 +78,7 @@ Die Vorbereitung der VMM-Infrastruktur umfasst folgende Schritte:
 
 ### Sicherstellen, dass VMM-Clouds eingerichtet sind
 
-Site Recovery orchestriert den Schutz für virtuelle Computer auf lokalen Hyper-V-Hostservern in VMM-Clouds. Sie müssen sicherstellen, dass diese Clouds ordnungsgemäß eingerichtet sind, bevor Sie mit der Bereitstellung von Site Recovery beginnen. Hilfreiche Ressourcen:
-
-- [Vorbereiten der VMM-Infrastruktur – SAN](https://msdn.microsoft.com/library/azure/dn883636.aspx#BKMK_Fabric)
-- [Creating Private Clouds](http://blogs.technet.com/b/keithmayer/archive/2013/04/18/walkthrough-creating-private-clouds-with-system-center-2012-sp1-virtual-machine-manager-build-your-private-cloud-in-a-month.aspx) im Blog von Keith Mayer
+Site Recovery orchestriert den Schutz für virtuelle Computer auf lokalen Hyper-V-Hostservern in VMM-Clouds. Sie müssen sicherstellen, dass diese Clouds ordnungsgemäß eingerichtet sind, bevor Sie mit der Bereitstellung von Site Recovery beginnen. Weitere Informationen finden Sie unter [Creating private clouds](http://blogs.technet.com/b/keithmayer/archive/2013/04/18/walkthrough-creating-private-clouds-with-system-center-2012-sp1-virtual-machine-manager-build-your-private-cloud-in-a-month.aspx) (Erstellen privater Clouds) im Blog von Keith Mayer.
 
 ### Integrieren und Klassifizieren von SAN-Speicher in VMM
 
@@ -148,7 +145,7 @@ Wenn Sie eine Netzwerkzuordnung konfigurieren möchten, gehen Sie wie folgt vor:
 
 4. Geben Sie unter **Name** einen Anzeigenamen ein, über den der Tresor identifiziert wird.
 
-5. Wählen Sie unter **Region** die geografische Region für den Tresor aus. Eine Liste mit den unterstützten Regionen finden Sie unter [Azure Site Recovery-Preisübersicht](http://go.microsoft.com/fwlink/?LinkId=389880) unter „Geografische Verfügbarkeit“.
+5. Wählen Sie unter **Region** die geografische Region für den Tresor aus. Eine Liste mit den unterstützten Regionen finden Sie unter [Azure Site Recovery-Preisübersicht](https://azure.microsoft.com/pricing/details/site-recovery/) unter „Geografische Verfügbarkeit“.
 
 6. Klicken Sie auf **Tresor erstellen**.
 
@@ -357,4 +354,4 @@ Testen Sie Ihre Bereitstellung, um sicherzustellen, dass das Failover von virtue
 
 Nachdem Sie ein Testfailover ausgeführt haben, um die richtige Funktionsweise der Umgebung zu überprüfen, können Sie sich die [Informationen](site-recovery-failover.md) zu den unterschiedlichen Arten von Failovern durchlesen.
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

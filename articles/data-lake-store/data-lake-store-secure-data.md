@@ -112,14 +112,14 @@ Indem Sie dem Azure Data Lake-Dateisystem Benutzer oder Sicherheitsgruppen zuwei
 	![Berechtigungen für Gruppe zuweisen](./media/data-lake-store-secure-data/adl.acl.4.png "Berechtigungen für Gruppe zuweisen")
 
 
-	>[AZURE.NOTE]Die Berechtigung zum Ausführen (Execute) ist für die Aufzählung von Verzeichnissen erforderlich und wird häufig benötigt, wenn für einen Benutzer oder eine Gruppe der schreibgeschützte Zugriff auf Daten bereitgestellt wird.
+	>[AZURE.NOTE] Die Berechtigung zum Ausführen (Execute) ist für die Aufzählung von Verzeichnissen erforderlich und wird häufig benötigt, wenn für einen Benutzer oder eine Gruppe der schreibgeschützte Zugriff auf Daten bereitgestellt wird.
 
 
 6. Klicken Sie auf dem Blatt **Benutzerdefinierten Zugriff hinzufügen** auf **OK**. Die neu hinzugefügte Gruppe mit den zugeordneten Berechtigungen wird jetzt auf dem Blatt **Zugriff** aufgelistet.
 
 	![Berechtigungen für Gruppe zuweisen](./media/data-lake-store-secure-data/adl.acl.5.png "Berechtigungen für Gruppe zuweisen")
 
-	> [AZURE.IMPORTANT]In der aktuellen Version können unter **Benutzerdefinierter Zugriff** nur zwölf Einträge vorhanden sein. Wenn Sie mehr als zwölf Benutzer hinzufügen möchten, sollten Sie Sicherheitsgruppen erstellen, die Benutzer den Sicherheitsgruppen hinzufügen und für das Data Lake-Speicherkonto den Zugriff auf diese Sicherheitsgruppen gewähren.
+	> [AZURE.IMPORTANT] In der aktuellen Version können unter **Benutzerdefinierter Zugriff** nur neun Einträge vorhanden sein. Wenn Sie mehr als neun Benutzer hinzufügen möchten, sollten Sie Sicherheitsgruppen erstellen, die Benutzer den Sicherheitsgruppen hinzufügen und für das Data Lake-Speicherkonto den Zugriff auf diese Sicherheitsgruppen gewähren.
 
 7. Falls erforderlich, können Sie die Zugriffsberechtigungen auch ändern, nachdem Sie die Gruppe hinzugefügt haben. Deaktivieren oder aktivieren Sie das Kontrollkästchen für jeden Berechtigungstyp (Lesen, Schreiben, Ausführen) in Abhängigkeit davon, ob Sie die Berechtigung für die Sicherheitsgruppe entfernen oder zuweisen möchten. Klicken Sie auf **Speichern**, um die Änderungen zu speichern, oder auf **Verwerfen**, um die Änderungen rückgängig zu machen.
 
@@ -165,4 +165,4 @@ Wenn Sie Zugriffssteuerungslisten von Sicherheitsgruppen aus dem Azure Data Lake
 - [Erste Schritte mit Data Lake-Speicher mithilfe von PowerShell](data-lake-store-get-started-powershell.md)
 - [Erste Schritte mit Data Lake-Speicher mithilfe des .NET SDK](data-lake-store-get-started-net-sdk.md)
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0218_2016-->

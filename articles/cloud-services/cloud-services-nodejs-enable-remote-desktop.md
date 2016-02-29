@@ -35,7 +35,7 @@ Um Remotedesktop verwenden zu können, müssen Sie die Azure-Dienstdefinition un
 
 Führen Sie die folgenden Schritte auf einem Computer aus, der die Quelldateien für die App enthält.
 
-1. Führen Sie **Azure PowerShell** als Administrator aus. (Suchen Sie im **Startmenü** oder auf der **Startseite** nach **Azure PowerShell**.)
+1. Führen Sie **Windows PowerShell** als Administrator aus. (Suchen Sie im Startmenü oder auf dem Startbildschirm nach **Windows PowerShell**.)
 
 2.  Navigieren Sie zu dem Verzeichnis, das die Dienstdefinitionsdateien (.csdef) und die Dienstkonfigurationsdateien (.cscfg) enthält.
 
@@ -73,7 +73,7 @@ Nachdem Sie die aktualisierte Dienstdefinition veröffentlicht haben, können Si
 
     ![Windows-Sicherheitshinweis][5]
 
-4.  Klicken Sie auf **Verbinden**. Ein Sicherheitshinweis wird angezeigt, mit dem gemeldet wird, dass Sie Ihre Anmeldedaten eingeben müssen, um auf die Instanz zuzugreifen. Geben Sie das Kennwort ein, das Sie in [Schritt 1]\[Schritt 1: Konfigurieren des Diensts für Remotedesktopzugriff mit Azure PowerShell] erstellt haben, und klicken Sie dann auf **OK.**
+4.  Klicken Sie auf **Verbinden**. Ein Sicherheitshinweis wird angezeigt, mit dem gemeldet wird, dass Sie Ihre Anmeldedaten eingeben müssen, um auf die Instanz zuzugreifen. Geben Sie das Kennwort ein, das Sie in [Schritt 1][Schritt 1: Konfigurieren des Diensts für Remotedesktopzugriff mit Azure PowerShell] erstellt haben, und klicken Sie dann auf **OK.**
 
     ![Hinweis auf Benutzernamen/Kennwort][6]
 
@@ -115,4 +115,4 @@ Wenn Sie die Remotedesktopverbindungen zu den Rolleninstanzen in der Cloud nicht
 [Verwenden von Remotedesktop mit Azure-Rollen]: http://msdn.microsoft.com/library/windowsazure/gg443832.aspx
  
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0218_2016-->

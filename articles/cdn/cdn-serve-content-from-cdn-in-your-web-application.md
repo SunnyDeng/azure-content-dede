@@ -151,8 +151,8 @@ In diesem Abschnitt haben Sie erfahren, wie Sie einen CDN-Endpunkt erstellen, In
 
 Wenn Sie all Ihre statischen Inhalte Ihrer ASP.NET-Webanwendung zu einem CDN-Endpunkt hochladen möchten, oder wenn Sie die Webanwendung mit kontinuierlicher Zustellung bereitstellen (ein Beispiel finden Sie unter [Kontinuierliche Zustellung für Cloud Services in Azure](../cloud-services/cloud-services-dotnet-continuous-delivery.md)), können Sie Azure PowerShell verwenden, um die Synchronisierung der neuesten Inhaltsdateien zu Azure-Blobs bei jeder Bereitstellung der Webanwendung zu automatisieren. Sie können zum Beispiel das Skript unter [Upload Content Files from ASP.NET Application to Azure Blobs](http://gallery.technet.microsoft.com/scriptcenter/Upload-Content-Files-from-41c2142a) ausführen, um alle Inhaltsdateien in einer ASP.NET-Anwendung hochzuladen. So verwenden Sie dieses Skript:
 
-4. Führen Sie im Menü **Start** **Microsoft Azure PowerShell** aus.
-5. Führen Sie im Azure PowerShell-Fenster `Get-AzurePublishSettingsFile` aus, um eine Einstellungsveröffentlichungsdatei für Ihr Azure-Konto herunterzuladen.
+4. Führen Sie **Windows PowerShell** im Startmenü aus.
+5. Führen Sie im PowerShell-Fenster `Get-AzurePublishSettingsFile` aus, um eine Einstellungsveröffentlichungsdatei für Ihr Azure-Konto herunterzuladen.
 6. Führen Sie nach dem Herunterladen der Einstellungsveröffentlichungsdatei Folgendes aus: 
 
 		Import-AzurePublishSettingsFile "<yourDownloadedFilePath>"
@@ -273,4 +273,4 @@ Ohne Integration in Azure App Service-Web-Apps oder Azure Cloud Services können
 - [Verwenden von CDN für Azure](cdn-how-to-use-cdn.md)
  
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0218_2016-->

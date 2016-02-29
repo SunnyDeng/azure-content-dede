@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/09/2016"
+	ms.date="02/11/2016"
 	ms.author="jeedes"/>
 
 
@@ -23,7 +23,8 @@ In diesem Tutorial erfahren Sie, wie Sie LearnUpon in Azure Active Directory (Az
 
 - Sie können in Azure AD steuern, wer Zugriff auf LearnUpon hat.
 - Sie können es Benutzern ermöglichen, sich mit ihren Azure AD-Konten automatisch bei LearnUpon anzumelden (einmaliges Anmelden).
-- Sie können Ihre Konten an einem zentralen Ort verwalten: im klassischen Azure Active Directory-Portal.
+- Sie können Ihre Konten an einem zentralen Ort verwalten: im klassischen Azure Active Directory-Portal. 
+- 
 
 Weitere Informationen zur Integration von SaaS-Apps in Azure AD finden Sie unter [Was bedeuten Anwendungszugriff und einmaliges Anmelden mit Azure Active Directory?](active-directory-appssoaccess-whatis.md).
 
@@ -64,8 +65,7 @@ Zum Konfigurieren der Integration von LearnUpon in Azure AD müssen Sie LearnUpo
 4. Klicken Sie unten auf der Seite auf **Hinzufügen**.<br><br> ![Anwendungen][3]<br>
 5. Klicken Sie im Dialogfeld **What do you want to do** auf **Anwendung aus dem Katalog hinzufügen**.<br><br> ![Anwendungen][4]<br>
 6. Geben Sie im Suchfeld als Suchbegriff **LearnUpon** ein.<br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-learnupon-tutorial/tutorial_learnupon_01.png)<br>
-7. Wählen Sie im Ergebnisbereich **LearnUpon** aus, und klicken Sie dann auf **Abschließen**, um die Anwendung hinzuzufügen. <br><br>
-
+7. Wählen Sie im Ergebnisbereich **LearnUpon** aus, und klicken Sie dann auf **Abschließen**, um die Anwendung hinzuzufügen. <br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-learnupon-tutorial/tutorial_learnupon_02.png)<br>
 ##  Konfigurieren und Testen der einmaligen Anmeldung von Azure AD
 In diesem Abschnitt soll anhand einer Testbenutzerin namens Britta Simon veranschaulicht werden, wie das einmalige Anmelden von Azure AD in LearnUpon konfiguriert und getestet werden kann.
 
@@ -73,7 +73,7 @@ Damit einmaliges Anmelden funktioniert, muss Azure AD wissen, welcher Benutzer i
 
 Zum Konfigurieren und Testen des einmaligen Anmeldens in Azure AD bei LearnUpon müssen Sie die folgenden Bausteine ausführen:
 
-1. **[Konfigurieren des einmaligen Anmeldens von Azure AD](#configuring-azure-ad-single-single-sign-on)**, um Ihren Benutzern das Verwenden dieser Funktion zu ermöglichen.
+1. **[Konfigurieren von Azure AD – einmaliges Anmelden](#configuring-azure-ad-single-single-sign-on)**, um Ihren Benutzern das Verwenden dieser Funktion zu ermöglichen.
 2. **[Erstellen eines Azure AD-Testbenutzers](#creating-an-azure-ad-test-user)**, um das einmalige Anmelden mit Azure AD mit dem Testbenutzer Britta Simon zu testen.
 4. **[Erstellen eines LearnUpon-Testbenutzers](#creating-a-learnupon-test-user)**, um eine Entsprechung von Britta Simon in LearnUpon zu erhalten, die mit ihrer Entsprechung in Azure AD verknüpft ist.
 5. **[Zuweisen des Azure AD-Testbenutzers](#assigning-the-azure-ad-test-user)**, um Britta Simon für das einmalige Anmelden von Azure AD zu aktivieren.
@@ -106,7 +106,7 @@ Das Ziel dieses Abschnitts besteht darin, das einmalige Anmelden von Azure AD im
 
 5. Öffnen Sie eine weitere Browserinstanz, und melden Sie sich bei der LearnUpon-Instanz als Admin-Benutzer an, um **SAML-SSO** auf der LearnUpon-Seite festzulegen. Wenn Sie bei LearnUpon angemeldet sind, wird in etwa folgender Bildschirm angezeigt. <br><br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-learnupon-tutorial/tutorial_learnupon_06.png) <br>
 
-	a. Klicken Sie auf die Registerkarte **settings**, um das Fenster mit den Einstellungen zu öffnen.<br> b. Klicken Sie auf **Single Sign On – SAML**.<br> c. Klicken Sie auf **General Settings**, um die SAML-Einstellungen zu konfigurieren. <br><br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-learnupon-tutorial/tutorial_learnupon_07.png) <br> d. Füllen Sie das Formular unter **General Settings** wie folgt aus: <br><br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-learnupon-tutorial/tutorial_learnupon_08.png) <br> d1. Aktivieren Sie das Kontrollkästchen **Enabled**, um SAML in diesem Portal zu aktivieren<br> d2. Wählen Sie **Version 2.0**<br> d3. Wählen Sie **Skip Conditions – No**<br> d4. **SAML Token POST param name** ist der Name des POST-Parameters der Anforderung zur oben angegebenen SAML-Verbraucher-URL, die die zu überprüfende und authentifizierende SAML-Assertion enthält. Beispiel: **SAMLResponse** <br> d5. **Name Identifier Format** gibt an, an welcher Stelle in der SAML-Assertion sich die Benutzer-ID (E-Mail-Adresse) befindet, z. B. **urn:oasis:names:tc:SAML:1.1:nameid- format:emailAddress**.<br> d6. An die unter **Identify Provider Location** angegebene Adresse leiten wir Benutzer weiter, wenn sie im Portal-Anmeldebildschirm auf das von Ihnen hochgeladene Symbol klicken.<br> d7. Kopieren Sie die **Dienst-URL für einmalige Anmeldung** vom Azure-Konfigurationsbildschirm in das Feld **Sign out URL**. <br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-learnupon-tutorial/tutorial_learnupon_09.png) <br> d8. Klicken Sie auf den Link **Manage finger prints** unter „Certificate Finger Print“, um den Fingerabdruck des Zertifikats hochzuladen. <br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-learnupon-tutorial/tutorial_learnupon_10.png) <br> d9. Klicken Sie auf die Schaltfläche „Save“. e. Klicken Sie auf **User Settings**, um die SAML-Benutzereinstellungen zu konfigurieren. <br><br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-learnupon-tutorial/tutorial_learnupon_11.png) <br> e1. **First Name Identifier Format** gibt an, an welcher Stelle in der SAML-Assertion sich der Vorname des Benutzers befindet, z. B. **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/ givenname**. e2. **Last Name Identifier Format** gibt an, an welcher Stelle in der SAML-Assertion sich der Nachname des Benutzers befindet, z. B. **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname**.
+	a. Klicken Sie auf die Registerkarte **settings**, um das Fenster mit den Einstellungen zu öffnen.<br> b. Klicken Sie auf **Single Sign On – SAML**.<br> c. Klicken Sie auf **General Settings**, um die SAML-Einstellungen zu konfigurieren. <br><br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-learnupon-tutorial/tutorial_learnupon_07.png) <br> d. Füllen Sie das Formular unter **General Settings** wie folgt aus: <br><br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-learnupon-tutorial/tutorial_learnupon_08.png) <br> d1. Aktivieren Sie das Kontrollkästchen **Enabled**, um SAML in diesem Portal zu aktivieren<br> d2. Wählen Sie **Version 2.0**<br> d3. Wählen Sie **Skip Conditions > No**<br> d4. **SAML Token POST param name** ist der Name des POST-Parameters der Anforderung zur oben angegebenen SAML-Verbraucher-URL, die die zu überprüfende und authentifizierende SAML-Assertion enthält. Beispiel: **SAMLResponse** <br> d5. **Name Identifier Format** gibt an, an welcher Stelle in der SAML-Assertion sich die Benutzer-ID (E-Mail-Adresse) befindet, z. B. **urn:oasis:names:tc:SAML:1.1:nameid- format:emailAddress**.<br> d6. An die unter **Identify Provider Location** angegebene Adresse leiten wir Benutzer weiter, wenn sie im Portal-Anmeldebildschirm auf das von Ihnen hochgeladene Symbol klicken.<br> d7. Kopieren Sie die **Dienst-URL für einmalige Anmeldung** vom Azure-Konfigurationsbildschirm in das Feld **Sign out URL**. <br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-learnupon-tutorial/tutorial_learnupon_09.png) <br> d8. Klicken Sie auf den Link **Manage finger prints** unter „Certificate Finger Print“, um den Fingerabdruck des Zertifikats hochzuladen. <br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-learnupon-tutorial/tutorial_learnupon_10.png) <br> d9. Klicken Sie auf die Schaltfläche „Save“. e. Klicken Sie auf **User Settings**, um die SAML-Benutzereinstellungen zu konfigurieren. <br><br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-learnupon-tutorial/tutorial_learnupon_11.png) <br> e1. **First Name Identifier Format** gibt an, an welcher Stelle in der SAML-Assertion sich der Vorname des Benutzers befindet, z. B. **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/ givenname**. e2. **Last Name Identifier Format** gibt an, an welcher Stelle in der SAML-Assertion sich der Nachname des Benutzers befindet, z. B. **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname**.
 
 
 6. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration der einmaligen Anmeldung aus, und klicken Sie dann auf **Weiter**. <br><br>![Azure AD – einmaliges Anmelden][10]<br>
@@ -215,4 +215,4 @@ Das Ziel dieses Abschnitts ist das Testen Ihrer Azure AD-Konfiguration für einm
 [204]: ./media/active-directory-saas-learnupon-tutorial/tutorial_general_204.png
 [205]: ./media/active-directory-saas-learnupon-tutorial/tutorial_general_205.png
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0218_2016-->

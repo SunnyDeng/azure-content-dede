@@ -37,17 +37,19 @@ Zum Laden aus einer lokalen SQL Server-Instanz in SQL Data Warehouse werden folg
 
 In den folgenden Abschnitten werden die einzelnen Schritte ausführlich beschrieben und Beispiele für den Prozess gezeigt.
 
-> [AZURE.NOTE]Vor dem Verschieben von Daten aus einem System wie SQL Server wird empfohlen, die Artikel zum [Migrieren des Schemas][] und [Migrieren von Code][] in der Dokumentation zu lesen.
+> [AZURE.NOTE] Vor dem Verschieben von Daten aus einem System wie SQL Server wird empfohlen, die Artikel zum [Migrieren des Schemas][] und [Migrieren von Code][] in der Dokumentation zu lesen.
 
 ## Exportieren von Dateien mit BCP
 
 Um die Dateien für das Verschieben in Azure vorzubereiten, müssen Sie diese in Flatfiles exportieren. Dazu eignet sich besonders das Befehlszeilenprogramm BCP. Wenn Sie noch nicht über dieses Dienstprogramm verfügen, können Sie es mit den [Microsoft-Befehlszeilenprogrammen für SQL Server][] herunterladen. Ein BCP-Beispielbefehl kann wie folgt aussehen:
 
 ```
-bcp "<Directory><File>" -c -T -S <Server Name> -d <Database Name>
+bcp "select top 10 * from <table>" queryout "<Directory><File>" -c -T -S <Server Name> -d <Database Name> -- Export Query
+or
+bcp <table> out "<Directory><File>" -c -T -S <Server Name> -d <Database Name> -- Export Table
 ```
 
-Mit diesem Befehl werden die Ergebnisse einer Abfrage übernommen und in eine Datei im Verzeichnis Ihrer Wahl exportiert. Sie können den Prozess parallelisieren, indem Sie mehrere BCP-Befehle für separate Tabellen gleichzeitig ausführen. Dadurch können Sie bis zu einen BCP-Prozess pro Kern des Servers ausführen. Es wird jedoch empfohlen, einige kleinere Vorgänge mit unterschiedlichen Konfigurationen auszuprobieren, um festzustellen, was für Ihre Umgebung am besten geeignet ist.
+Um den Durchsatz zu maximieren, können Sie versuchen, den Prozess durch das gleichzeitige Ausführen mehrerer BCP-Befehle für separate Tabellen oder separate Partitionen in einer einzelnen Tabelle zu parallelisieren. Dadurch können Sie den CPU-Verbrauch durch BCP auf mehrere Kerne auf dem Server verteilen, auf dem BCP ausgeführt wird. Wenn Sie von einem SQL DW oder PDW-System extrahieren, müssen Sie Ihrem BCP-Befehl das Argument als Bezeichner „-q“ in Anführungszeichen hinzufügen. Möglicherweise müssen Sie auch „-U“ und „-P“ hinzufügen, um Benutzername und Kennwort anzugeben, wenn in Ihrer Umgebung nicht Active Directory verwendet wird.
 
 Beachten Sie außerdem in Hinsicht auf das Laden mit PolyBase, dass UTF-16 noch nicht von PolyBase unterstützt wird und alle Dateien UTF-8 aufweisen müssen. Dies kann auf einfache Weise durch Einfügen des "-c"-Flags in den BCP-Befehl erreicht werden, oder Sie können auch mit dem folgenden Code Flatfiles aus UTF-16 in UTF-8 konvertieren:
 
@@ -62,7 +64,7 @@ Wenn Sie Daten im Bereich von 5 bis 10 Terabyte oder mehr verschieben, wird empf
 
 In den folgenden Schritten wird ausführlich erläutert, wie Daten mit AZCopy von einem lokalen Konto in ein Azure-Speicherkonto verschoben werden. Wenn Sie über kein Azure-Speicherkonto in der gleichen Region verfügen, können Sie eines mithilfe der [Azure-Speicherdokumentation][] erstellen. Sie können auch Daten aus einem Speicherkonto in einer anderen Region laden, doch ist die Leistung in diesem Fall nicht optimal.
 
-> [AZURE.NOTE]In dieser Dokumentation wird davon ausgegangen, dass Sie das Befehlszeilenprogramm AZCopy installiert haben und es mit Powershell ausführen können. Wenn das nicht der Fall ist, folgen Sie den [Installationsanweisungen für AZCopy][].
+> [AZURE.NOTE] In dieser Dokumentation wird davon ausgegangen, dass Sie das Befehlszeilenprogramm AZCopy installiert haben und es mit Powershell ausführen können. Wenn das nicht der Fall ist, folgen Sie den [Installationsanweisungen für AZCopy][].
 
 Da eine Gruppe von Dateien vorhanden ist, die mit BCP erstellt wurden, kann AZCopy einfach aus Azure Powershell oder durch Ausführen eines Powershell-Skripts ausgeführt werden. Im Allgemeinen weist die zum Ausführen von AZCopy benötigte Eingabeaufforderung die folgende Form auf:
 
@@ -201,4 +203,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 [Azure-Speicherdokumentation]: https://azure.microsoft.com/de-DE/documentation/articles/storage-create-storage-account/
 [Dokumentation zu ExpressRoute]: http://azure.microsoft.com/documentation/services/expressroute/
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0218_2016-->

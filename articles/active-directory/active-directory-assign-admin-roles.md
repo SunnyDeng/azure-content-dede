@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/01/2016"
+	ms.date="02/11/2016"
 	ms.author="curtand"/>
 
 # Zuweisen von Administratorrollen in Azure Active Directory (Azure AD)
@@ -25,12 +25,14 @@ Das Verständnis dafür ist wichtig, dass ein Benutzer mit einer Administratorro
 Die folgenden Administratorrollen sind verfügbar:
 
 - **Rechnungsadministrator**: erledigt Käufe, verwaltet Abonnements, verwaltet Support-Tickets und überwacht die Integrität des Dienstes.
+
 - **Globaler Administrator**: hat Zugriff auf alle administrativen Funktionen. Die Person, die die Anmeldung für das Azure-Konto vornimmt, wird ein globaler Administrator. Nur globale Administratoren können weitere Administratorrollen zuweisen. In Ihrem Unternehmen können mehrere globale Administratoren vorhanden sein.
+
 - **Kennwortadministrator**: setzt Kennwörter zurück, verwaltet Dienstanforderungen und überwacht die Integrität des Diensts. Kennwortadministratoren können Kennwörter nur für Benutzer und andere Kennwortadministratoren zurücksetzen.
+
 - **Dienstadministrator**: verwaltet Dienstanforderungen und überwacht die Integrität des Dienstes.
 
-> [AZURE.NOTE]
-> Um einem Benutzer die Dienstadministratorrolle zuzuweisen, muss der globale Administrator zunächst dem Benutzer Administratorberechtigungen im Dienst (z. B. Exchange Online) zuweisen, und anschließend die Dienstadministratorrolle im klassischen Azure-Portal.
+	> [AZURE.NOTE] Um einem Benutzer die Dienstadministratorrolle zuzuweisen, muss der globale Administrator zunächst dem Benutzer Administratorberechtigungen im Dienst (z. B. Exchange Online) zuweisen, und anschließend die Dienstadministratorrolle im klassischen Azure-Portal.
 
 - **Benutzeradministrator**: setzte Kennwörter zurück, überwacht die Dienstintegrität und verwaltet Benutzerkonten, Benutzergruppen und Dienstanforderungen. Für die Berechtigungen eines Benutzerverwaltungsadministrators gelten einige Einschränkungen. Sie können z. B. keinen globalen Administrator löschen oder andere Administratoren erstellen. Sie können außerdem keine Kennwörter für Abrechnungs-, globale und Dienstadministratoren zurücksetzen.
 
@@ -72,19 +74,32 @@ Der globale Administrator hat Zugriff auf alle administrativen Funktionen. Stand
 
 ## Zuweisen oder Entfernen von Administratorrollen
 
-
 1. Klicken Sie im klassischen Azure-Portal auf **Active Directory**, und klicken Sie dann auf den Namen des Verzeichnisses Ihrer Organisation.
+
 2. Auf der Seite **Benutzer** klicken Sie auf den Anzeigenamen des Benutzers, den Sie bearbeiten möchten.
+
 3. In der Liste **Organisationsrolle** wählen Sie die Administratorrolle, die diesem Benutzer zugewiesen werden soll, oder wählen Sie **Benutzer**, wenn Sie eine vorhandene Administratorrolle entfernen möchten.
+
 4. Im Feld **Alternative E-Mail-Adresse** geben Sie eine E-Mail-Adresse ein. Diese E-Mail-Adresse wird für wichtige Benachrichtigungen, einschließlich des automatischen Zurücksetzens des Kennworts verwendet, so dass der Benutzer Zugriff auf das E-Mail-Konto benötigt, und zwar unabhängig davon, ob er auf Azure zugreifen kann oder nicht.
+
 5. Wählen Sie **Zulassen** oder **Blockieren**, um anzugeben, ob der Benutzer sich anmelden kann und Zugriff auf die Dienste bekommt.
+
 6. Geben Sie einen Speicherort aus der Dropdown-Liste **Nutzungsspeicherort** an.
+
 7. Wenn Sie fertig sind, klicken Sie auf **Speichern**.
 
 ## Nächste Schritte
 
-- [Verwalten von Benutzern](../active-directory-create-users.md)
+- Weitere Informationen zum Ändern von Administratoren für ein Azure-Abonnement finden Sie unter [Hinzufügen oder Ändern von Azure-Administratorrollen](../billing-add-change-azure-subscription-administrator.md).
+
+- Informationen dazu, wie der Zugriff auf Ressourcen in Microsoft Azure gesteuert wird, finden Sie unter [Grundlegendes zum Zugriff auf Ressourcen in Azure](active-directory-understanding-resource-access.md)
+
+- Weitere Informationen zur Beziehung von Azure Active Directory zu Ihrem Azure-Abonnement finden Sie unter [Beziehung zwischen Azure-Abonnements und Azure Active Directory](active-directory-how-subscriptions-associated directory.md).
+
+- [Verwalten von Benutzern](active-directory-create-users.md)
+
 - [Verwalten von Kennwörtern](active-directory-manage-passwords.md)
+
 - [Gruppen verwalten](active-directory-manage-groups.md)
 
-<!-----HONumber=AcomDC_0204_2016--->
+<!---HONumber=AcomDC_0218_2016-->

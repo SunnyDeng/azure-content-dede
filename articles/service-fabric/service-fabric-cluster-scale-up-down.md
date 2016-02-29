@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="01/29/2016"
+   ms.date="02/12/2016"
    ms.author="chackdan"/>
 
 
@@ -63,6 +63,8 @@ Das Entfernen von Knoten ist ein zweistufiger Prozess:
 
     d. Klicken Sie auf das Symbol **Löschen**, um den virtuellen Computer zu löschen.
 
+>[AZURE.NOTE] Um Verfügbarkeit sicherzustellen und den Zustand beizubehalten, muss eine bestimmte Anzahl von Knoten in einem Service Fabric-Cluster stets in Betrieb sein. Dies wird auch als „Aufrechterhalten eines Quorums“ bezeichnet. Daher ist es üblicherweise nicht sicher, alle Computer innerhalb des Clusters herunterzufahren, sofern Sie nicht zunächst eine [vollständige Sicherung des Zustands](service-fabric-reliable-services-backup-restore.md) durchgeführt haben.
+
 ## Automatisches Skalieren von Service Fabric-Clustern
 
 Derzeit unterstützen Service Fabric-Cluster keine automatische Skalierung. In naher Zukunft werden Cluster aufbauend auf Skalierungssätzen für virtuelle Computer erstellt. Ab diesem Zeitpunkt wird auch automatische Skalierung möglich sein und sich ähnlich verhalten wie die automatische Skalierung, die in Clouddiensten verfügbar ist.
@@ -79,4 +81,4 @@ In diesem Artikel wird die Skalierung von Clustern mithilfe des Portals behandel
 <!--Image references-->
 [BrowseServiceFabricClusterResource]: ./media/service-fabric-cluster-scale-up-down/BrowseServiceFabricClusterResource.png
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0218_2016-->

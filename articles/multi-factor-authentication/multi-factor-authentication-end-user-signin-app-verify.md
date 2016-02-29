@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/19/2015" 
+	ms.date="02/16/2016" 
 	ms.author="billmath"/>
 
 # Anmelden bei der mobilen App mithilfe eines Bestätigungscodes mit Azure Multi-Factor Authentication
@@ -39,4 +39,4 @@ Im Folgenden wird der Vorgang für Multi-Factor Authentication mit der mobilen A
 
 <li>Sie sollten jetzt angemeldet sein.</li>
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0218_2016-->

@@ -39,13 +39,13 @@ Erfahren Sie, wie Zeppelin Notebooks auf Spark-Clustern installiert und wie Zepp
 
 ## Installieren von Zeppelin im Rahmen der Clustererstellung
 
-Sie können Zeppelin mithilfe von Skriptaktionen in einem Spark-Cluster installieren. Skriptaktionen verwenden benutzerdefinierte Skripts zum Installieren von Komponenten im Cluster, die nicht standardmäßig verfügbar sind. Das benutzerdefinierte Skript zum Installieren von Zeppelin in einem Spark-Cluster finden Sie unter **https://hdiconfigactions.blob.core.windows.net/linuxincubatorzeppelinv01/install-zeppelin-spark151-v01.sh**.
+Sie können Zeppelin mithilfe von Skriptaktionen in einem Spark-Cluster installieren. Skriptaktionen verwenden benutzerdefinierte Skripts zum Installieren von Komponenten im Cluster, die nicht standardmäßig verfügbar sind. Das benutzerdefinierte Skript zum Installieren von Zeppelin in einem Spark-Cluster finden Sie unter ****https://hdiconfigactions.blob.core.windows.net/linuxincubatorzeppelinv01/install-zeppelin-spark151-v01.sh**.
 
 ### Verwenden des Azure-Portals
 
 Eine Anleitung zur Verwendung des HDInsight .NET SDK zum Ausführen der Skriptaktion zum Installieren von Zeppelin finden Sie unter [Anpassen von HDInsight-Clustern mithilfe von Skriptaktion](hdinsight-hadoop-customize-cluster-linux.md#use-a-script-action-from-the-azure-portal). Sie müssen an den Anweisungen in diesem Artikel einige Änderungen vornehmen.
 
-* Sie müssen das Skript zum Installieren von Zeppelin verwenden. Das zu verwendende Skript ist **https://hdiconfigactions.blob.core.windows.net/linuxincubatorzeppelinv01/install-zeppelin-spark151-v01.sh**.
+* Sie müssen das Skript zum Installieren von Zeppelin verwenden. Das zu verwendende Skript ist ****https://hdiconfigactions.blob.core.windows.net/linuxincubatorzeppelinv01/install-zeppelin-spark151-v01.sh**.
 
 * Sie müssen die Skriptaktion nur auf dem Hauptknoten ausführen.
 
@@ -55,7 +55,7 @@ Eine Anleitung zur Verwendung des HDInsight .NET SDK zum Ausführen der Skriptak
 
 Eine Anleitung zur Verwendung des HDInsight .NET SDK zum Ausführen der Skriptaktion zum Installieren von Zeppelin finden Sie unter [Anpassen von HDInsight-Clustern mithilfe von Skriptaktion](hdinsight-hadoop-customize-cluster-linux.md#use-a-script-action-from-the-hdinsight-net-sdk). Sie müssen an den Anweisungen in diesem Artikel einige Änderungen vornehmen.
 
-* Sie müssen das Skript zum Installieren von Zeppelin verwenden. Das zu verwendende Skript ist **https://hdiconfigactions.blob.core.windows.net/linuxincubatorzeppelinv01/install-zeppelin-spark151-v01.sh**.
+* Sie müssen das Skript zum Installieren von Zeppelin verwenden. Das zu verwendende Skript ist ****https://hdiconfigactions.blob.core.windows.net/linuxincubatorzeppelinv01/install-zeppelin-spark151-v01.sh**.
 
 * Das Skript benötigt keine Parameter.
 
@@ -63,7 +63,7 @@ Eine Anleitung zur Verwendung des HDInsight .NET SDK zum Ausführen der Skriptak
 
 ### Verwenden von Azure PowerShell
 
-Verwenden Sie den folgenden PowerShell-Codeausschnitt, um einen Spark-Cluster unter HDInsight Linux mit Installation von Zeppelin zu erstellen. Stellen Sie vor dem Fortfahren sicher, dass PowerShell installiert ist. Entsprechende Anweisungen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md).
+Verwenden Sie den folgenden PowerShell-Codeausschnitt, um einen Spark-Cluster unter HDInsight Linux mit Installation von Zeppelin zu erstellen. Stellen Sie vor dem Fortfahren sicher, dass PowerShell installiert ist. Entsprechende Anweisungen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
 
 	Login-AzureRMAccount
 	
@@ -322,14 +322,14 @@ Nach dem Einrichten des SSH-Tunneling können Sie die folgenden Schritte ausfüh
 * [Verwalten von Ressourcen für den Apache Spark-Cluster in Azure HDInsight](hdinsight-apache-spark-resource-manager.md)
 
 
-[hdinsight-versions]: ../hdinsight-component-versioning/
-[hdinsight-upload-data]: ../hdinsight-upload-data/
-[hdinsight-storage]: ../hdinsight-use-blob-storage/
+[hdinsight-versions]: hdinsight-component-versioning.md
+[hdinsight-upload-data]: hdinsight-upload-data.md
+[hdinsight-storage]: hdinsight-hadoop-use-blob-storage.md
 
 [azure-purchase-options]: http://azure.microsoft.com/pricing/purchase-options/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
 [azure-free-trial]: http://azure.microsoft.com/pricing/free-trial/
 [azure-management-portal]: https://manage.windowsazure.com/
-[azure-create-storageaccount]: ../storage-create-storage-account/
+[azure-create-storageaccount]: storage-create-storage-account.md
 
-<!----HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0218_2016-->

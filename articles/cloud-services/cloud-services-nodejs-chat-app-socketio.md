@@ -36,7 +36,7 @@ Stellen Sie sicher, dass die folgenden Produkte und Versionen installiert sind, 
 
 Mit den folgenden Schritten wird das Cloud-Dienst-Projekt erstellt, in dem die Socket.IO-Anwendung gehostet wird.
 
-1. Suchen Sie im **Startmenü** oder auf der **Startseite** nach **Azure PowerShell**. Klicken Sie dann mit der rechten Maustaste auf **Azure PowerShell**, und wählen Sie **Als Administrator ausführen**.
+1. Suchen Sie im Startmenü oder auf dem Startbildschirm nach **Windows PowerShell**. Klicken Sie dann mit der rechten Maustaste auf **Windows PowerShell**, und wählen Sie **Als Administrator ausführen** aus.
 
 	![Azure PowerShell-Symbol][powershell-menu]
 
@@ -170,4 +170,4 @@ Weitere Informationen finden Sie außerdem im [Node.js Developer Center](/develo
   
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

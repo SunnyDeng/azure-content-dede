@@ -1,4 +1,4 @@
-Die Daten in Ihrem Microsoft Azure-Speicherkonto werden stets repliziert, um Beständigkeit und hohe Verfügbarkeit sicherzustellen sowie die [Azure Storage-SLA](https://azure.microsoft.com/support/legal/sla/) auch bei vorübergehend auftretenden Hardwareausfällen zu erfüllen. Wenn Sie ein Speicherkonto erstellen, müssen Sie eine der folgenden Replikationsoptionen auswählen:
+Die Daten in Ihrem Microsoft Azure-Speicherkonto werden stets repliziert, um Beständigkeit und hohe Verfügbarkeit sicherzustellen sowie die [SLA für Speicher](https://azure.microsoft.com/support/legal/sla/storage/) auch bei vorübergehend auftretenden Hardwareausfällen zu erfüllen. Wenn Sie ein Speicherkonto erstellen, müssen Sie eine der folgenden Replikationsoptionen auswählen:
 
 - **Lokal redundanter Speicher (LRS)** Lokal redundanter Speicher verwaltet drei Kopien Ihrer Daten. LRS wird innerhalb eines einzelnen Standorts dreimal in einer einzelnen Region repliziert. LRS schützt Ihre Daten vor normalen Hardware-Ausfällen, jedoch nicht vor dem Ausfall eines einzelnen Standorts.  
   
@@ -24,6 +24,6 @@ Weitere Details zu den Speicherreplikationsoptionen finden Sie unter [Azure-Spei
 
 Preisinformationen für die Speicherkontoreplikation finden Sie unter [Preise für Azure Storage](https://azure.microsoft.com/pricing/details/storage/).
 
-Architekturdetails zur Beständigkeit von Azure Storage finden Sie im [SOSP-Dokument zu Azure Storage](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx).
+Architekturdetails zur Beständigkeit von Azure Storage finden Sie unter [SOSP Paper – Azure Storage: A Highly Available Cloud Storage Service with Strong Consistency](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx) (SOSP-Dokument – Azure Storage: Ein hoch verfügbarer Cloud-Speicherdienst mit starker Konsistenz).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

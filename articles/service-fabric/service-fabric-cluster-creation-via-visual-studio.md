@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="11/13/2015"
+   ms.date="02/12/2016"
    ms.author="karolz@microsoft.com"/>
 
 # Einrichten eines Service Fabric-Clusters mit Visual Studio
@@ -45,7 +45,7 @@ Bevor die Vorlage bereitgestellt wird, um den Cluster zu erstellen, müssen Sie 
 |sourceVaultValue |Die *Ressourcen-ID* des Schlüsseltresors, in dem das Zertifikat zum Schutz des Clusters gespeichert ist.|
 |certificateUrlValue |Die URL des Sicherheitszertifikats des Clusters.|
 
-Die Visual Studio Service Fabric-Ressourcen-Manager-Vorlage erstellt einen sicheren Cluster, der durch ein Zertifikat geschützt ist. Dieses Zertifikat wird durch die letzten drei Vorlagenparameter (`certificateThumbprint`, `sourceVaultValue` und `certificateUrlValue`) identifiziert und muss in einem **Azure Key Vault** vorhanden sein. Weitere Informationen zum Erstellen des Sicherheitszertifikats des Clusters finden Sie im Artikel [Schützen eines Service Fabric-Clusters mit Zertifikaten](service-fabric-cluster-security.md).
+Die Visual Studio Service Fabric-Ressourcen-Manager-Vorlage erstellt einen sicheren Cluster, der durch ein Zertifikat geschützt ist. Dieses Zertifikat wird durch die letzten drei Vorlagenparameter (`certificateThumbprint`, `sourceVaultValue` und `certificateUrlValue`) identifiziert und muss in einem **Azure Key Vault** vorhanden sein. Weitere Informationen zum Erstellen des Sicherheitszertifikats des Clusters finden Sie im Artikel [Schützen eines Service Fabric-Clusters mit Zertifikaten](service-fabric-cluster-security.md#secure-a-service-fabric-cluster-by-using-certificates).
 
 ## Optional: Hinzufügen öffentlicher Anwendungsports
 Vielleicht möchten Sie auch die öffentlichen Anwendungsports für den Cluster vor seiner Bereitstellung ändern. Standardmäßig öffnet die Vorlage nur zwei öffentliche TCP-Ports (80 und 8081). Wenn Sie für Ihre Anwendungen mehr benötigen, ändern Sie die Azure-Load Balancer-Definition in der Vorlage. Die Definition ist in der Hauptvorlagendatei (`SecureFabricCluster.json`) gespeichert. Öffnen Sie die Datei, und suchen Sie nach `loadBalancedAppPort`. Sie werden feststellen, dass jeder Port mit drei Artefakten verknüpft ist:
@@ -106,6 +106,8 @@ Sie können den Status des Bereitstellungsprozesses im Ausgabefenster von Visual
 
 Wenn Fehler auftreten, wechseln Sie zum [Azure-Portal](https://portal.azure.com/), und überprüfen Sie **Benachrichtigungen**. Falls die Bereitstellung einer Ressourcengruppe keinen Erfolg hatte, finden Sie dort detaillierte Diagnoseinformationen.
 
+>[AZURE.NOTE] Um Verfügbarkeit sicherzustellen und den Zustand beizubehalten, muss eine bestimmte Anzahl von Knoten in einem Service Fabric-Cluster stets in Betrieb sein. Dies wird auch als „Aufrechterhalten eines Quorums“ bezeichnet. Daher ist es üblicherweise nicht sicher, alle Computer innerhalb des Clusters herunterzufahren, sofern Sie nicht zunächst eine [vollständige Sicherung des Zustands](service-fabric-reliable-services-backup-restore.md) durchgeführt haben.
+
 ## Nächste Schritte
 - [Informationen zum Einrichten eines Service Fabric-Clusters mit dem Azure-Portal](service-fabric-cluster-creation-via-portal.md)
 - [Informationen zum Verwalten und Bereitstellen von Service Fabric-Anwendungen mit Visual Studio](service-fabric-manage-application-in-visual-studio.md)
@@ -115,4 +117,4 @@ Wenn Fehler auftreten, wechseln Sie zum [Azure-Portal](https://portal.azure.com/
 [2]: ./media/service-fabric-cluster-creation-via-visual-studio/selecting-azure-template.png
 [3]: ./media/service-fabric-cluster-creation-via-visual-studio/deploy-to-azure.png
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

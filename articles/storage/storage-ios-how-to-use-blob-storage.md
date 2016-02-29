@@ -21,7 +21,7 @@
 
 ## Übersicht
 
-In diesem Artikel wird die Durchführung gängiger Szenarien mit Microsoft Azure-Blobspeicher demonstriert. Die Beispiele sind in Objective-C geschrieben und greifen auf die [Azure Storage-iOS-Bibliothek](https://github.com/Azure/azure-storage-ios) zurück. Die hier beschriebenen Szenarien umfassen das **Hochladen**, **Auflisten**, **Herunterladen** und **Löschen** von Blobs. Weitere Informationen zu Blobs finden Sie im Abschnitt [Nächste Schritte](#next-steps). Sie können auch die [Beispielapp](https://github.com/Azure/azure-storage-ios/tree/master/BlobSample) herunterladen, um eine schnelle Demonstration der Verwendung von Azure Storage in einer iOS-Anwendung zu sehen.
+In diesem Artikel wird die Durchführung gängiger Szenarien mit Microsoft Azure-Blobspeicher demonstriert. Die Beispiele sind in Objective-C geschrieben und greifen auf die [Azure-Speicherclientbibliothek für iOS](https://github.com/Azure/azure-storage-ios) zurück. Die hier beschriebenen Szenarien umfassen das **Hochladen**, **Auflisten**, **Herunterladen** und **Löschen** von Blobs. Weitere Informationen zu Blobs finden Sie im Abschnitt [Nächste Schritte](#next-steps). Sie können auch die [Beispielapp](https://github.com/Azure/azure-storage-ios/tree/master/BlobSample) herunterladen, um eine schnelle Demonstration der Verwendung von Azure Storage in einer iOS-Anwendung zu sehen.
 
 [AZURE.INCLUDE [storage-blob-concepts-include](../../includes/storage-blob-concepts-include.md)]
 
@@ -88,7 +88,7 @@ Die empfohlene Methode für eine iOS-Anwendung zum Authentifizieren einer Anford
 
 Das folgende Beispiel zeigt, wie Sie die Azure-CLI verwenden, um ein SAS-Token zu generieren, das bis 12:00 Uhr (UTC) am 5. September 2015 Lese- und Schreibberechtigungen für den Container *sascontainer* gewährt.
 
-1. Befolgen Sie zunächst diese [Anleitung](../xplat-cli/#how-to-install-the-azure-cli), um zu erfahren, wie Sie die Azure-CLI installieren und eine Verbindung mit Ihrem Azure-Abonnement herstellen können.
+1. Lesen Sie zunächst unter [Installieren der Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md) nach, um zu erfahren, wie Sie die Azure-CLI installieren und eine Verbindung mit Ihrem Azure-Abonnement herstellen können.
 
 2. Geben Sie anschließend den folgenden Befehl in Azure-CLI ein, um die Verbindungszeichenfolge für Ihr Konto abzurufen:
 
@@ -111,7 +111,7 @@ Das folgende Beispiel zeigt, wie Sie die Azure-CLI verwenden, um ein SAS-Token z
 		// Get a reference to a container in your Storage account
     	AZSCloudBlobContainer *blobContainer = [[AZSCloudBlobContainer alloc] initWithUrl:[NSURL URLWithString:@" your SAS URL"]];
 
-Wie Sie sehen, machen Sie den Kontonamen und Kontoschlüssel in der iOS-Anwendung nicht verfügbar, wenn Sie ein SAS-Token verwenden. Weitere Informationen zu SAS erhalten Sie im [SAS-Tutorial](../storage-dotnet-shared-access-signature-part-1).
+Wie Sie sehen, machen Sie den Kontonamen und Kontoschlüssel in der iOS-Anwendung nicht verfügbar, wenn Sie ein SAS-Token verwenden. Weitere Informationen zu SAS erhalten Sie unter [Shared Access Signatures: Grundlagen zum SAS-Modell](../storage-dotnet-shared-access-signature-part-1).
 
 ##Asynchrone Vorgänge
 > [AZURE.NOTE] Alle Methoden, die eine Anforderung für den Dienst ausführen, sind asynchrone Vorgänge. In den Codebeispielen werden Sie feststellen, dass diese Methoden einen Abschlusshandler haben. Der Code im Abschlusshandler wird **nach** Abschluss der Anforderung ausgeführt. Der Code nach dem Abschlusshandler wird **während** der Anforderung ausgeführt.
@@ -348,15 +348,11 @@ Das folgende Beispiel zeigt den Löschvorgang eines Containers.
 
 Nachdem Sie sich nun mit den Grundlagen des Blob-Speichers vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
 
-- [Azure Storage-iOS-Bibliothek]
-- [Azure Storage-REST-API]
-- [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy)
-- [Azure Storage-Teamblog]
+- [Azure Storage-Clientbibliothek für iOS](https://github.com/azure/azure-storage-ios)
+- [REST-API für Azure-Speicherdienste](https://msdn.microsoft.com/library/azure/dd179355.aspx)
+- [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy.md)
+- [Azure Storage-Teamblog](http://blogs.msdn.com/b/windowsazurestorage)
 
 Stellen Sie Fragen zu dieser Bibliothek in unserem [MSDN Azure-Forum](http://social.msdn.microsoft.com/Forums/windowsazure/home?forum=windowsazuredata) oder unter [Stack Overflow](http://stackoverflow.com/questions/tagged/windows-azure-storage+or+windows-azure-storage+or+azure-storage-blobs+or+azure-storage-tables+or+azure-table-storage+or+windows-azure-queues+or+azure-storage-queues+or+azure-storage-emulator+or+azure-storage-files). Vorschläge für Azure Storage-Funktionen können Sie unter [Feedback zu Azure Storage](https://feedback.azure.com/forums/217298-storage/) machen.
 
-[Azure Storage-iOS-Bibliothek]: https://github.com/azure/azure-storage-ios
-[Azure Storage-REST-API]: https://msdn.microsoft.com/library/azure/dd179355.aspx
-[Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage
-
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

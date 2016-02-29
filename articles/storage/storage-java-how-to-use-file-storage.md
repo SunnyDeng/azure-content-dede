@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="Java"
 	ms.topic="article"
-	ms.date="02/03/2016"
+	ms.date="02/16/2016"
 	ms.author="jutang"/>
 
 # Verwenden des Dateispeichers mit Java
@@ -208,12 +208,12 @@ Das Löschen einer Freigabe erfolgt durch Aufrufen der **deleteIfExists**-Method
 
 Folgen Sie diesen Links, wenn Sie mehr über andere Azure-Speicher-APIs erfahren möchten.
 
-- [Azure-SDK für Java](http://azure.microsoft.com/develop/java/)
+- [Java Developer Center](http://azure.microsoft.com/develop/java/)
 - [Azure Storage-SDK für Java](https://github.com/azure/azure-storage-java)
 - [Azure Storage-SDK für Android](https://github.com/azure/azure-storage-android)
 - [Referenz für Azure Storage-Client-SDKs](http://dl.windowsazure.com/storage/javadoc/)
-- [Azure Storage-REST-API](https://msdn.microsoft.com/library/azure/dd179355.aspx)
+- [REST-API für Azure-Speicherdienste](https://msdn.microsoft.com/library/azure/dd179355.aspx)
 - [Azure Storage-Teamblog](http://blogs.msdn.com/b/windowsazurestorage/)
 - [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy.md)
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0218_2016-->

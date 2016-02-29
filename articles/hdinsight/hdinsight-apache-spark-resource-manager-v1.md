@@ -20,7 +20,7 @@
 
 # Verwalten von Ressourcen für den Apache Spark-Cluster in Azure HDInsight (Windows)
 
-> [AZURE.NOTE]HDInsight bietet jetzt Spark-Cluster unter Linux. Informationen zum Verwalten von Ressourcen für einen Spark-Cluster in HDInsight unter Linux finden Sie unter [Verwalten von Ressourcen für den Apache Spark-Cluster in Azure HDInsight (Linux)](hdinsight-apache-spark-resource-manager.md).
+> [AZURE.NOTE] HDInsight bietet jetzt Spark-Cluster unter Linux. Informationen zum Verwalten von Ressourcen für einen Spark-Cluster in HDInsight unter Linux finden Sie unter [Verwalten von Ressourcen für den Apache Spark-Cluster in Azure HDInsight (Linux)](hdinsight-apache-spark-resource-manager.md).
 
 Der Ressourcen-Manager ist eine Komponente des Spark-Clusterdashboards, das zum Verwalten von Ressourcen wie z. B. Kernen und Arbeitsspeicher dient, die von den einzelnen Anwendungen im Cluster genutzt werden.
 
@@ -73,15 +73,15 @@ Geben Sie als Anzahl von Thrift-Serverkernen und Thrift-Executor-Serverspeicher 
 * [Verwenden von Spark in HDInsight zum Erstellen von Echtzeit-Streaminganwendungen](hdinsight-apache-spark-csharp-apache-zeppelin-eventhub-streaming.md)
 
 
-[hdinsight-versions]: ../hdinsight-component-versioning/
-[hdinsight-upload-data]: ../hdinsight-upload-data/
-[hdinsight-storage]: ../hdinsight-use-blob-storage/
+[hdinsight-versions]: hdinsight-component-versioning.md
+[hdinsight-upload-data]: hdinsight-upload-data.md
+[hdinsight-storage]: hdinsight-hadoop-use-blob-storage.md
 
 
 [azure-purchase-options]: http://azure.microsoft.com/pricing/purchase-options/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
 [azure-free-trial]: http://azure.microsoft.com/pricing/free-trial/
 [azure-management-portal]: https://manage.windowsazure.com/
-[azure-create-storageaccount]: ../storage-create-storage-account/
+[azure-create-storageaccount]: storage-create-storage-account.md
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0218_2016-->

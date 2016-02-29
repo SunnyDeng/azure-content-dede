@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/06/2015"
+   ms.date="02/09/2016"
    ms.author="joaoma" />
 
 # Erste Schritte zum Erstellen eines Load Balancers mit Internetzugriff (klassisch) mithilfe der Azure-Befehlszeilenschnittstelle
@@ -116,7 +116,7 @@ Ausgabe:
 
 ## Erstellen eines Remotedesktopendpunkts für einen virtuellen Computer
 
-Sie können mithilfe von `azure vm endpoint create` einen Remotedesktopendpunkt erstellen, um für einen bestimmten virtuellen Computer Netzwerkdatenverkehr von einem öffentlichen Port an einen lokalen Port weiterzuleiten.
+Sie können mithilfe von `azure vm endpoint create` einen Remotedesktop-Endpunkt erstellen, um für einen bestimmten virtuellen Computer Netzwerkdatenverkehr von einem öffentlichen Port an einen lokalen Port weiterzuleiten.
 
 	azure vm endpoint create web1 54580 -k 3389 
 
@@ -130,7 +130,7 @@ Sie müssen den der Load Balancer-Gruppe zugeordneten Endpunkt vom virtuellen Co
 	azure vm endpoint delete web1 tcp-80-80
 
 
->[AZURE.NOTE]Mit dem Befehl `azure vm endpoint --help` können Sie weitere Optionen zum Verwalten von Endpunkten ausprobieren.
+>[AZURE.NOTE] Mit dem Befehl `azure vm endpoint --help` können Sie weitere Optionen zum Verwalten von Endpunkten ausprobieren.
 
 
 ## Nächste Schritte
@@ -143,4 +143,4 @@ Sie müssen den der Load Balancer-Gruppe zugeordneten Endpunkt vom virtuellen Co
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0218_2016-->

@@ -16,7 +16,12 @@
 	ms.date="01/04/2016" 
 	ms.author="spelluru"/>
 
+
 # Überwachen und Verwalten von Azure Data Factory-Pipelines
+> [AZURE.SELECTOR]
+- [Using Azure Portal/Azure PowerShell](data-factory-monitor-manage-pipelines.md)
+- [Using Monitoring and Management App](data-factory-monitor-manage-app.md)
+
 Der Data Factory-Dienst bietet eine zuverlässige und umfassende Ansicht der Speicherungs-, Verarbeitungs- und Datenverschiebungsdienste. Der Dienst hilft Ihnen, die Integrität der Datenpipeline von A bis Z schnell zu bewerten, Probleme auszumachen und Korrekturmaßnahmen zu ergreifen. Sie können auch die Datenherkunft und die Beziehungen zwischen Ihrer Daten in allen Ihren Quellen visuell nachverfolgen und eine vollständige Verlaufsübersicht von Auftragsausführung, Systemstatus und Abhängigkeiten in einem zentralen Überwachungsdashboard anzeigen.
 
 In diesem Artikel wird das Überwachen, Verwalten und Debuggen Ihrer Pipelines beschrieben. Ferner wird erläutert, wie Warnungen erstellt und Benachrichtigungen bei Fehlern eingerichtet werden.
@@ -96,7 +101,7 @@ Die Datasetslices in Data Factory können einen der folgenden Status haben:
 <td>ValidationRetry</td><td>Es wird auf die Wiederholung der Überprüfung gewartet.</td>
 </tr>
 <tr>
-
+&lt; tr
 <td rowspan="2">In Bearbeitung</td><td>Die Überprüfen erfolgt.</td><td>Die Überprüfung wird ausgeführt.</td>
 </tr>
 <td></td>
@@ -270,15 +275,13 @@ Für den Fall, dass der Slice die Überprüfung aufgrund eines Richtlinienfehler
 
 ### Verwenden von Azure PowerShell
 
-Sie können Ausführungen, bei denen Fehler aufgetreten sind, mit dem Cmdlet „Set-AzureRmDataFactorySliceStatus“ wiederholen.
+Sie können Ausführungen, bei denen Fehler aufgetreten sind, mit dem Cmdlet „Set-AzureRmDataFactorySliceStatus“ wiederholen. Im Thema [Set-AzureRmDataFactorySliceStatus](https://msdn.microsoft.com/library/mt603522.aspx) finden Sie die Syntax und ausführliche Informationen zum Cmdlet.
 
-	Set-AzureRmDataFactorySliceStatus [-ResourceGroupName] <String> [-DataFactoryName] <String> [-TableName] <String> [-StartDateTime] <DateTime> [[-EndDateTime] <DateTime> ] [-Status] <String> [[-UpdateType] <String> ] [-Profile <AzureProfile> ] [ <CommonParameters>]
+**Beispiel:** Im folgenden Beispiel wird der Status aller Slices für die Tabelle „DAWikiAggregatedData“ in der Azure Data Factory „WikiADF“ auf „Waiting“ festgelegt.
 
-**Beispiel:** Im folgenden Beispiel wird der Status aller Slices für die Tabelle "DAWikiAggregatedData" in der Azure Data Factory "WikiADF" auf "PendingExecution" festgelegt.
+**Hinweis:** „UpdateType“ ist auf „UpstreamInPipeline“ festgelegt, was bedeutet, dass der Status der einzelnen Slices für die Tabelle und aller abhängigen (nachgelagerten) Tabellen, die als Eingabetabellen für Aktivitäten in der Pipeline verwendet werden, auf „Waiting“ festgelegt ist. Ein anderer möglicher Wert für diesen Parameter ist "Individual".
 
-**Hinweis:** "UpdateType" ist auf "UpstreamInPipeline" festgelegt, was bedeutet, dass der Status der einzelnen Slices für die Tabelle und aller abhängigen (nachgelagerten) Tabellen, die als Eingabetabellen für Aktivitäten in der Pipeline verwendet werden, auf "PendingExecution" festgelegt ist. Ein anderer möglicher Wert für diesen Parameter ist "Individual".
-
-	Set-AzureRmDataFactorySliceStatus -ResourceGroupName ADF -DataFactoryName WikiADF -TableName DAWikiAggregatedData -Status PendingExecution -UpdateType UpstreamInPipeline -StartDateTime 2014-05-21T16:00:00 -EndDateTime 2014-05-21T20:00:00
+	Set-AzureRmDataFactorySliceStatus -ResourceGroupName ADF -DataFactoryName WikiADF -TableName DAWikiAggregatedData -Status Waiting -UpdateType UpstreamInPipeline -StartDateTime 2014-05-21T16:00:00 -EndDateTime 2014-05-21T20:00:00
 
 
 ## Erstellen von Warnungen
@@ -567,4 +570,4 @@ Folgende Meldung sollte nach erfolgreicher Bereitstellung angezeigt werden:
 
 Zum Bereitstellen einer Warnungsregel können Sie auch das Cmdlet **Add-AlertRule** verwenden. Detaillierte Informationen und Beispiele finden Sie im Thema [Add-AlertRule](https://msdn.microsoft.com/library/mt282468.aspx).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->
