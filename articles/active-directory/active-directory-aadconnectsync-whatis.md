@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/22/2016"
+	ms.date="02/16/2016"
 	ms.author="markusvi;andkjell"/>
 
 
@@ -39,6 +39,7 @@ Dieses Thema ist das zentrale Thema für **Azure AD Connect Sync** (auch als **�
 | **Features** ||
 | [Implementieren der Kennwortsynchronisierung](active-directory-aadconnectsync-implement-password-synchronization.md) | Es wird beschrieben, wie die Synchronisierung von Kennwörtern funktioniert und wie die Implementierung sowie der Betrieb und die Problembehandlung durchgeführt werden. |
 | [Verhindern von versehentlichen Löschungen](active-directory-aadconnectsync-feature-prevent-accidental-deletes.md) | Beschreibt das Feature zum *Verhindern von versehentlichen Löschungen* und dessen Konfiguration. |
+| [Scheduler](active-directory-aadconnectsync-feature-scheduler.md) | Beschreibt den integrierten Scheduler zum Importieren, Synchronisieren und Exportieren von Daten. |
 | **Vorgänge** ||
 | [Operative Aufgaben und Überlegungen](active-directory-aadconnectsync-operations.md) | Es werden operative Aspekte beschrieben, z. B. die Notfallwiederherstellung. |
 | **Weitere Informationen und Referenzen** ||
@@ -50,4 +51,4 @@ Dieses Thema ist das zentrale Thema für **Azure AD Connect Sync** (auch als **�
 
 * [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

@@ -14,7 +14,7 @@
 	ms.devlang="Java"
 	ms.topic="article"
 	ms.date="12/01/2015"
-	ms.author="micurd"/>
+	ms.author="rmcmurray"/>
 
 # Lokale Anwendungen mit Blob-Speicher
 
@@ -366,4 +366,4 @@ Unter den folgenden Links erhalten Sie weitere Informationen zu komplexeren Spei
   [Referenz für Azure Storage-Client-SDKs]: http://dl.windowsazure.com/storage/javadoc/
   [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0218_2016-->

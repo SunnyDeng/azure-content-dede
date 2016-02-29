@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="01/22/2016"
+   ms.date="02/17/2016"
    ms.author="alkohli" />
 
 # Verwaltung des StorSimple Virtual Array (Vorschau) mithilfe der Web-UI
@@ -94,7 +94,7 @@ Ein Protokollpaket enthält alle relevanten Protokolle, die das Microsoft Suppor
 
 ## Herunterfahren und Neustarten des Geräts
 
-Sie können Ihr virtuelles Gerät über die lokale Web-UI herunterfahren oder neu starten.
+Sie können Ihr virtuelles Gerät über die lokale Web-UI herunterfahren oder neu starten. Wir empfehlen, die Volumes oder Freigaben vor dem Neustart auf dem Host und dann auf dem Gerät offline zu nehmen. So wird das Risiko einer Datenbeschädigung minimiert.
 
 #### So fahren Sie das virtuelle Gerät herunter
 
@@ -136,4 +136,4 @@ Sie können Ihr virtuelles Gerät über die lokale Web-UI herunterfahren oder ne
 
 Erfahren Sie, wie Sie den [StorSimple Manager-Dienst zum Verwalten Ihres Geräts verwenden](storsimple-manager-service-administration.md).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

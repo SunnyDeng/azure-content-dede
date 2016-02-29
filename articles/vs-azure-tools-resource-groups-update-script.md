@@ -94,19 +94,12 @@ Die folgenden Anweisungen beziehen sich auf Zeilennummern. Das Verfahren zum Akt
 		-Location $ResourceGroupLocation `
 		-Verbose -Force -ErrorAction Stop
 
-	Test-AzureRmResourceGroupDeployment `
+	New-AzureRMResourceGroupDeployment `
+		-Name ((Get-ChildItem $TemplateFile).BaseName + '-' + ((Get-Date).ToUniversalTime()).ToString('MMdd-HHmm')) `
 		-ResourceGroupName $ResourceGroupName `
 		-TemplateFile $TemplateFile `
 		-TemplateParameterFile $TemplateParametersFile `
 		@OptionalParameters `
-		-ErrorAction Stop 	
-
-	New-AzureRMResourceGroupDeployment
-		-Name ((Get-ChildItem $TemplateFile).BaseName + '-' + ((Get-Date).ToUniversalTime()).ToString('MMdd-HHmm')) `
-	    -ResourceGroupName $ResourceGroupName `
-	    -TemplateFile $TemplateFile `
-	    -TemplateParameterFile $TemplateParametersFile `
-	    @OptionalParameters `
 		-Verbose -Force
 	```
 
@@ -212,21 +205,14 @@ New-AzureRMResourceGroup `
 	-Location $ResourceGroupLocation `
 	-Verbose -Force -ErrorAction Stop
 
-Test-AzureRmResourceGroupDeployment `
+New-AzureRMResourceGroupDeployment `
+	-Name ((Get-ChildItem $TemplateFile).BaseName + '-' + ((Get-Date).ToUniversalTime()).ToString('MMdd-HHmm')) `
 	-ResourceGroupName $ResourceGroupName `
 	-TemplateFile $TemplateFile `
 	-TemplateParameterFile $TemplateParametersFile `
 	@OptionalParameters `
-	-ErrorAction Stop 	
-
-New-AzureRMResourceGroupDeployment `
-	-Name ((Get-ChildItem $TemplateFile).BaseName + '-' + ((Get-Date).ToUniversalTime()).ToString('MMdd-HHmm')) `
-    -ResourceGroupName $ResourceGroupName `
-    -TemplateFile $TemplateFile `
-    -TemplateParameterFile $TemplateParametersFile `
-    @OptionalParameters `
 	-Verbose -Force
 
 ```
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0218_2016-->

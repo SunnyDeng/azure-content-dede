@@ -18,7 +18,7 @@
 
 # IoT Hub MQTT-Unterstützung
 
-IoT Hub ermöglicht Geräten mithilfe des Protokolls [MQTT 3.1.1][lnk-mqtt-org] das Kommunizieren mit den IoT Hub-Geräteendpunkten.
+IoT Hub ermöglicht Geräten mithilfe des Protokolls [MQTT v3.1.1][lnk-mqtt-org] das Kommunizieren mit den IoT Hub-Geräteendpunkten auf Port 8883. IoT Hub setzt voraus, dass die gesamte Gerätekommunikation mithilfe von TLS/SSL gesichert wird.
 
 ## Herstellen einer Verbindung mit einem IoT Hub
 
@@ -81,4 +81,4 @@ Weitere Informationen zum Protokoll MQTT finden Sie in der [MQTT-Dokumentation][
 [lnk-sample-c]: https://github.com/Azure/azure-iot-sdks/tree/master/c/iothub_client/samples/iothub_client_sample_mqtt
 [lnk-sample-csharp]: https://github.com/Azure/azure-iot-sdks/tree/master/csharp/device/samples
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0218_2016-->

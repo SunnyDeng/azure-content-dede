@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows-store"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="11/12/2015"
+	ms.date="02/11/2016"
 	ms.author="glenga"/>
 
 
@@ -56,7 +56,7 @@ In diesem Lernprogramm wird exemplarisch gezeigt, wie das [Todo Offline-Beispiel
 
 3. Öffnen Sie in Visual Studio 2013 die Projektmappendatei *mobile-services-samples\\TodoOffline\\WindowsUniversal\\TodoOffline-Universal.sln*. Drücken Sie die Taste **F5**, um das Projekt erneut zu erstellen und auszuführen. Überprüfen Sie, ob die NuGet-Pakete wiederhergestellt wurden und die Verweise korrekt sind.
 
-    >[AZURE.NOTE]Möglicherweise müssen Sie alte Verweise auf die SQLite-Laufzeit löschen und wie im Lernprogramm [Erste Schritte mit Offlinedaten] beschrieben durch den aktualisierten Verweis ersetzen.
+    >[AZURE.NOTE] Möglicherweise müssen Sie alte Verweise auf die SQLite-Laufzeit löschen und wie im Lernprogramm [Erste Schritte mit Offlinedaten] beschrieben durch den aktualisierten Verweis ersetzen.
 
 4. Geben Sie in der App Text unter **Insert a TodoItem** (TodoItem einfügen) ein, und klicken Sie auf **Save** (Speichern), um "todoitems" zum lokalen Store hinzuzufügen. Schließen Sie dann die App.
 
@@ -87,7 +87,7 @@ Testen Sie jetzt die App mit Mobile Services.
 
 In einem realen Szenario würde ein Synchronisierungskonflikt auftreten, wenn eine App Aktualisierungen per Push-Vorgang auf einen Datensatz in der Datenbank überträgt und dann eine andere App versucht, eine Aktualisierung per Push-Vorgang auf denselben Datensatz zu übertragen, jedoch basierend auf einem veralteten Versionsfeld dieses Datensatzes. Wie Sie in [Erste Schritte mit Offlinedaten] gesehen haben, ist die "version"-Systemeigenschaft zur Unterstützung der Offlinesynchronisierungsfunktionen erforderlich. Diese Versionsinformationen werden bei jeder Datenbankaktualisierung überprüft. Wenn eine Instanz der App versucht, einen Datensatz mit einer veralteten Version zu aktualisieren, tritt ein Konflikt auf, der als `MobileServicePreconditionFailedException` in der App erfasst wird. Wenn die App die `MobileServicePreconditionFailedException` nicht erfasst, wird eine `MobileServicePushFailedException` ausgelöst, die die Anzahl der gefundenen Synchronisierungsfehler beschreibt.
 
->[AZURE.NOTE]Um die Synchronisierung der gelöschten Datensätze mit der Offlinedatensynchronisierung zu unterstützen, sollten Sie [Vorläufiges Löschen](mobile-services-using-soft-delete.md) aktivieren. Andernfalls müssen Sie Datensätze im lokalen Speicher manuell entfernen oder `IMobileServiceSyncTable::PurgeAsync()` aufrufen, um den lokalen Speicher zu löschen.
+>[AZURE.NOTE] Um die Synchronisierung der gelöschten Datensätze mit der Offlinedatensynchronisierung zu unterstützen, sollten Sie [Vorläufiges Löschen](mobile-services-using-soft-delete.md) aktivieren. Andernfalls müssen Sie Datensätze im lokalen Speicher manuell entfernen oder `IMobileServiceSyncTable::PurgeAsync()` aufrufen, um den lokalen Speicher zu löschen.
 
 
 In den folgenden Schritten wird gezeigt, wie die Windows Phone 8.1- und Windows Store 8.1-Clients gleichzeitig ausgeführt werden, um einen Konflikt auszulösen und anhand des Beispiels zu lösen.
@@ -168,4 +168,4 @@ Wenn ein Pushvorgang abgebrochen wird, löst `PushAsync` eine `MobileServicePush
 [GitHub-Repository mit Mobile Services-Beispielen]: http://go.microsoft.com/fwlink/?LinkId=512865
 [Todo Offline-Beispiel für Mobile Services]: http://go.microsoft.com/fwlink/?LinkId=512866
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0218_2016-->

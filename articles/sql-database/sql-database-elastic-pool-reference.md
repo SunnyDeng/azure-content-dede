@@ -4,15 +4,15 @@
 	keywords="eDTU"
 	services="sql-database"
 	documentationCenter=""
-	authors="stevestein"
-	manager="jeffreyg"
+	authors="sidneyh"
+	manager="jhubbard"
 	editor=""/>
 
 <tags
 	ms.service="sql-database"
 	ms.devlang="NA"
-	ms.date="02/08/2015"
-	ms.author="sstein"
+	ms.date="02/17/2016"
+	ms.author="sidneyh"
 	ms.workload="data-management"
 	ms.topic="article"
 	ms.tgt_pltfrm="NA"/>
@@ -20,14 +20,9 @@
 
 # SQL-Datenbank – Pool für elastische Datenbanken
 
-Diese Referenz enthält Details und Links zu Artikeln über Pools für elastische Datenbanken sowie Informationen zur Programmierbarkeit. Für SaaS-Entwickler, die Dutzende, Hunderte oder sogar Tausende von Datenbanken haben, vereinfacht ein elastischer Datenbankpool das Erstellen, Warten und Verwalten der Leistung und Kosten der gesamten Datenbankgruppe.
-
-Ein Pool für elastische Datenbanken ist eine Sammlung elastischer Datenbank-Durchsatzeinheiten (eDTUs) und Speicher (GB), die von mehreren Datenbanken gemeinsam verwendet werden. Elastische Datenbanken können hinzugefügt und jederzeit aus dem Pool entfernt werden. Elastische Datenbanken im Pool verwenden nur die Ressourcen, die sie aus diesem benötigen, und geben somit Ressourcen für die aktiven Datenbanken frei. Hilfe beim Ermitteln, ob Ihre Datenbanken von einem Pool für elastische Datenbanken profitieren würden, finden Sie unter [Überlegungen zum Preis und zur Leistung eines elastischen Datenbankpools](sql-database-elastic-pool-guidance.md).
-
-
+Für SaaS-Entwickler, die Dutzende, Hunderte oder sogar Tausende von Datenbanken verwenden, vereinfacht ein [Pool für elastische Datenbanken](sql-database-elastic-pool.md) das Erstellen, Warten und Verwalten der Leistung und Kosten der gesamten Datenbankgruppe.
 
 ## Voraussetzungen für das Erstellen und Verwalten von Pools für elastische Datenbanken
-
 
 - Pools für elastische Datenbanken sind nur auf Servern in Azure SQL-Datenbank V12 verfügbar. Informationen zum Upgraden auf V12 und zum Migrieren Ihrer Datenbanken direkt in einen Pool finden Sie unter [Upgrade auf Azure SQL-Datenbank V12](sql-database-upgrade-server-powershell.md).
 - Das Erstellen und Verwalten von Pools für elastische Datenbanken wird nur vom [Azure-Portal](https://portal.azure.com), von [PowerShell](sql-database-elastic-pool-powershell.md) und von einer .NET-Clientbibliothek (nur Azure-Ressourcen-Manager) unterstützt. Das [klassische Portal](https://manage.windowsazure.com/) und Dienstverwaltungsbefehle werden nicht unterstützt.
@@ -44,7 +39,7 @@ Die folgenden Artikel helfen Ihnen beim Einstieg in elastische Datenbanken und e
 | [Überlegungen zum Preis und zur Leistung](sql-database-elastic-pool-guidance.md) | Informationen zum Bewerten, ob der Einsatz eines Pools für elastische Datenbanken wirtschaftlich ist |
 | [Erstellen und Verwalten von Pools für elastische Datenbanken mit dem Azure-Portal](sql-database-elastic-pool-portal.md) | Informationen zum Erstellen und Verwalten eines Pools für elastische Datenbanken im Azure-Portal |
 | [Erstellen und Verwalten eines Pools für elastische SQL-Datenbanken mit PowerShell](sql-database-elastic-pool-powershell.md) | Erstellen und Verwalten eines Pools für elastische Datenbanken mit PowerShell-Cmdlets |
-| [Erstellen und Verwalten einer SQL-Datenbank mit der Azure SQL-Datenbankbibliothek für .NET](sql-database-elastic-pool-powershell.md) | Informationen zum Erstellen und Verwalten eines Pools für elastische Datenbanken mit C# |
+| [Erstellen und Verwalten einer SQL-Datenbank mit der Azure SQL-Datenbankbibliothek für .NET](sql-database-elastic-pool-csharp.md) | Informationen zum Erstellen und Verwalten eines Pools für elastische Datenbanken mit C# |
 | [Übersicht über elastische Datenbankaufträge](sql-database-elastic-jobs-overview.md) | Eine Übersicht über den Dienst für elastische Aufträge, der die Ausführung von T-SQL-Skripts in allen elastischen Datenbanken in einem Pool ermöglicht |
 | [Installieren der Komponente für elastische Datenbankaufträge](sql-database-elastic-jobs-service-installation.md) | Installieren des Diensts für elastische Datenbankaufträge |
 | [Sichern der SQL-Datenbank](sql-database-security.md) | Um ein Skript für elastische Datenbankaufträge ausführen zu können, muss zu jeder Datenbank im Pool ein Benutzer mit den entsprechenden Berechtigungen hinzugefügt werden. |
@@ -163,4 +158,4 @@ Der eDTU-Einzelpreis für einen elastischen Anwendungspool ist höher als der DT
 | 40891 | EX\_USER | Die Mindestanzahl von DTUs pro Datenbank (%d) darf die Höchstanzahl von DTUs pro Datenbank (%d) nicht überschreiten. | DTU-Mindestanzahl pro Datenbank; DTU-Höchstanzahl pro Datenbank. | Es wurde versucht, die DTU-Mindestanzahl pro Datenbank höher festzulegen, als die maximale DTU-Anzahl pro Datenbank. | Stellen Sie sicher, dass die Mindestanzahl von DTUs pro Datenbank nicht die Höchstanzahl von DTUs pro Datenbank überschreitet. |
 | TBD | EX\_USER | Die Speichergröße für eine einzelne Datenbank in einem elastischen Pool darf die maximal zulässige Größe für die Dienstebene des elastischen Pools "%.*ls" nicht überschreiten. | Dienstebene des elastischen Pools | Die maximale Größe der Datenbank überschreitet die maximale Größe, die von der Dienstebene des elastische Pools zugelassen wird. | Legen Sie die maximale Größe der Datenbank höchstens auf die maximal zulässige Größe der Dienstebene des elastische Pools fest. |
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0218_2016-->

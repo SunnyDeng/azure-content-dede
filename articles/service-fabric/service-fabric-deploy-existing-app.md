@@ -1,40 +1,40 @@
 <properties
-   pageTitle="Bereitstellen benutzerdefinierter Anwendungen in Azure Service Fabric | Microsoft Azure"
+   pageTitle="Bereitstellen einer ausführbaren Gastanwendungsdatei in Azure Service Fabric | Microsoft Azure"
    description="Exemplarische Vorgehensweise beim Packen einer vorhandenen Anwendung, um diese in einem Azure Service Fabric-Cluster bereitzustellen"
    services="service-fabric"
    documentationCenter=".net"
    authors="bmscholl"
    manager="timlt"
    editor=""/>
-
+   
 <tags
    ms.service="service-fabric"
    ms.devlang="dotnet"
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="11/17/2015"
+   ms.date="02/12/2016"
    ms.author="bscholl"/>
 
-# Bereitstellen benutzerdefinierter Anwendungen in Service Fabric
+# Bereitstellen einer ausführbaren Gastanwendungsdatei in Service Fabric
 
-Sie können beliebige vorhandene Anwendungen, z. B. Node.js-, Java- oder systemeigene Anwendungen, in Azure Service Fabric ausführen. Service Fabric behandelt diese Anwendungen wie zustandslose Dienste und platziert sie basierend auf der Verfügbarkeit und anderen Metriken auf Knoten in einem Cluster. In diesem Artikel wird das Packen und Bereitstellen einer vorhandenen Anwendung in einem Service Fabric-Cluster beschrieben.
+Sie können beliebige Anwendungen, z. B. Node.js-, Java- oder native Anwendungen, in Azure Service Fabric ausführen. Im Zusammenhang mit Service Fabric werden diese Anwendungen als ausführbare Gastanwendungsdateien bezeichnet. Ausführbare Gastanwendungsdateien werden von Service Fabric wie zustandslose Dienste behandelt. Folglich werden sie basierend auf Verfügbarkeit und anderen Metriken auf Knoten innerhalb eines Clusters platziert. In diesem Artikel wird das Verpacken und Bereitstellen einer ausführbaren Gastanwendungsdatei in einem Service Fabric-Cluster beschrieben.
 
-## Vorteile der Ausführung einer benutzerdefinierten Anwendung in Service Fabric
+## Vorteile der Ausführung einer ausführbaren Gastanwendungsdatei in Service Fabric
 
-Das Ausführen einer Anwendung in einem Service Fabric-Cluster bietet mehrere Vorteile:
+Das Ausführen einer ausführbaren Gastanwendungsdatei in einem Service Fabric-Cluster bietet mehrere Vorteile:
 
 - Hohe Verfügbarkeit. Anwendungen, die in Service Fabric ausgeführt werden, sind standardmäßig hoch verfügbar. Service Fabric stellt sicher, dass stets eine Instanz einer Anwendung ausgeführt wird.
 - Systemüberwachung. Die standardmäßige Service Fabric-Systemüberwachung erkennt, ob eine Anwendung ausgeführt wird, und bietet bei Fehlern Diagnoseinformationen.   
 - Application Lifecycle Management. Service Fabric ermöglicht nicht nur Upgrades ohne Ausfallzeiten, sondern auch das Zurücksetzen auf die Vorversion, sollte während eines Upgrades ein Problem auftreten.    
 - Dichte. Sie können mehrere Anwendungen in einem Cluster ausführen, sodass nicht mehr jede Anwendung auf eigener Hardware ausgeführt werden muss.
 
-In diesem Artikel werden die grundlegenden Schritte zum Packen einer vorhandenen Anwendung und ihre Bereitstellung in Service Fabric beschrieben.
+In diesem Artikel werden die grundlegenden Schritte zum Verpacken einer ausführbaren Gastanwendungsdatei sowie ihre Bereitstellung in Service Fabric beschrieben.
 
 
 ## Kurzübersicht über die Anwendungs- und Dienstmanifestdateien
 
-Bevor Sie in Bezug auf die Bereitstellung einer vorhandenen Anwendung ins Detail gehen, ist es hilfreich, das Service Fabric-Modell für das Packen und Bereitstellen zu verstehen. Das Service Fabric-Packmodell beruht hauptsächlich auf zwei Dateien:
+Bevor Sie sich im Detail mit der Bereitstellung einer ausführbaren Gastanwendungsdatei befassen, sollten Sie das Service Fabric-Modell für das Verpacken und Bereitstellen von Anwendungen kennen. Das Service Fabric-Packmodell beruht hauptsächlich auf zwei Dateien:
 
 
 * **Anwendungsmanifest**
@@ -44,12 +44,64 @@ Bevor Sie in Bezug auf die Bereitstellung einer vorhandenen Anwendung ins Detail
   In der Service Fabric-Terminologie ist eine Anwendung eine „aktualisierbare Einheit“. Eine Anwendung kann als eine Einheit aktualisiert werden, wobei potenzielle Fehler (und mögliche Zurücksetzungen) von der Plattform verwaltet werden. Durch die Plattform wird sichergestellt, dass der Upgradevorgang vollständig erfolgreich ist bzw. dass die Anwendung bei einem Upgradefehler nicht in einem unbekannten/instabilen Zustand belassen wird.
 
 
+  ```xml
+  <?xml version="1.0" encoding="utf-8"?>
+  <ApplicationManifest ApplicationTypeName="actor2Application"
+                       ApplicationTypeVersion="1.0.0.0"
+                       xmlns="http://schemas.microsoft.com/2011/01/fabric"
+                       xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <ServiceManifestImport>
+      <ServiceManifestRef ServiceManifestName="actor2Pkg" ServiceManifestVersion="1.0.0.0" />
+      <ConfigOverrides />
+    </ServiceManifestImport>
+
+    <DefaultServices>
+      <Service Name="actor2">
+        <StatelessService ServiceTypeName="actor2Type">
+          <SingletonPartition />
+        </StatelessService>
+      </Service>
+    </DefaultServices>
+
+  </ApplicationManifest> 
+  ```
+
 * **Dienstmanifest**
 
   Das Dienstmanifest beschreibt die Komponenten eines Diensts. Es enthält Daten, z. B. den Namen und den Typ des Diensts (die Informationen, die Service Fabric zur Verwaltung des Diensts verwendet), und seine Code-, Konfigurations- und Datenkomponenten. Das Dienstmanifest enthält auch einige zusätzliche Parameter, die verwendet werden können, um den Dienst zu konfigurieren, nachdem er bereitgestellt wurde.
 
-  Hier werden nicht die Details aller unterschiedlichen Parameter beschrieben, die im Dienstmanifest verfügbar sind. Wir werden auf den Teil eingehen, der erforderlich ist, damit eine vorhandene Anwendung mit Service Fabric ausgeführt werden.
+  Hier werden nicht die Details aller unterschiedlichen Parameter beschrieben, die im Dienstmanifest verfügbar sind. Wir werden auf den relevanten Abschnitt eingehen, um eine ausführbare Gastanwendungsdatei in Service Fabric auszuführen.
 
+  ```xml
+  <?xml version="1.0" encoding="utf-8"?>
+  <ServiceManifest Name="actor2Pkg"
+                   Version="1.0.0.0"
+                   xmlns="http://schemas.microsoft.com/2011/01/fabric"
+                   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ServiceTypes>
+      <StatelessServiceType ServiceTypeName="actor2Type" />
+    </ServiceTypes>
+
+    <CodePackage Name="Code" Version="1.0.0.0">
+      <EntryPoint>
+        <ExeHost>
+          <Program>actor2.exe</Program>
+        </ExeHost>
+      </EntryPoint>
+    </CodePackage>
+
+    <ConfigPackage Name="Config" Version="1.0.0.0" />
+
+    <Resources>
+      <Endpoints>
+        <Endpoint Name="ServiceEndpoint" />
+      </Endpoints>
+    </Resources>
+  </ServiceManifest>
+  ```
 
 ## Dateistruktur des Anwendungspakets
 Damit eine Anwendung in Service Fabric bereitgestellt werden kann, muss die Anwendung einer vordefinierten Verzeichnisstruktur folgen. Es folgt ein Beispiel dieser Struktur.
@@ -75,14 +127,14 @@ Hinweis: Sie müssen die Verzeichnisse `config` und `data` nur erstellen, falls 
 
 ## Prozess zum Packen einer vorhandenen Anwendung
 
-Der Prozess zum Packen einer vorhandenen Anwendung basiert auf folgenden Schritten:
+Der Vorgang zum Verpacken einer ausführbaren Gastanwendungsdatei basiert auf folgenden Schritten:
 
 1. Erstellen der Verzeichnisstruktur des Pakets.
 2. Hinzufügen von Anwendungscode und Konfigurationsdateien.
 3. Bearbeiten der Dienstmanifestdatei.
 4. Bearbeiten der Anwendungsmanifestdatei.
 
->[AZURE.NOTE]Wir stellen ein Packtool bereit, mit dem Sie das Anwendungspaket automatisch erstellen können. Das Tool befindet sich derzeit in der Vorschauphase. Sie können es [hier](http://aka.ms/servicefabricpacktool) herunterladen.
+>[AZURE.NOTE] Wir stellen ein Packtool bereit, mit dem Sie das Anwendungspaket automatisch erstellen können. Das Tool befindet sich derzeit in der Vorschauphase. Sie können es [hier](http://aka.ms/servicefabricpacktool) herunterladen.
 
 ### Erstellen der Verzeichnisstruktur des Pakets
 Sie können zunächst die Verzeichnisstruktur wie zuvor beschrieben erstellen.
@@ -92,7 +144,7 @@ Nachdem Sie die Verzeichnisstruktur erstellt haben, können Sie den Anwendungsco
 
 Service Fabric erstellt eine XCopy des Inhalts des Stammverzeichnisses der Anwendung. Außer dem Erstellen der beiden übergeordneten Verzeichnisse „code“ und „settings“ gibt es also keine vordefinierte Struktur, die verwendet werden muss. (Sie können auch andere Namen verwenden. Weitere Informationen finden Sie im nächsten Abschnitt.)
 
->[AZURE.NOTE]Stellen Sie sicher, dass Sie alle Dateien/Abhängigkeiten einbeziehen, die für die Anwendung erforderlich sind. Service Fabric kopiert den Inhalt des Anwendungspakets auf alle Knoten im Cluster, auf denen die Anwendungsdienste bereitgestellt werden sollen. Das Paket muss den gesamten Code enthalten, den die Anwendung zur Ausführung benötigt. Es ist nicht empfehlenswert, davon auszugehen, dass die Abhängigkeiten bereits installiert sind.
+>[AZURE.NOTE] Stellen Sie sicher, dass Sie alle Dateien/Abhängigkeiten einbeziehen, die für die Anwendung erforderlich sind. Service Fabric kopiert den Inhalt des Anwendungspakets auf alle Knoten im Cluster, auf denen die Anwendungsdienste bereitgestellt werden sollen. Das Paket muss den gesamten Code enthalten, den die Anwendung zur Ausführung benötigt. Es ist nicht empfehlenswert, davon auszugehen, dass die Abhängigkeiten bereits installiert sind.
 
 ### Bearbeiten der Dienstmanifestdatei
 Im nächsten Schritt wird die Dienstmanifestdatei so bearbeitet, dass sie folgende Informationen enthält:
@@ -220,7 +272,7 @@ Im Element `ServiceManifestImport` können Sie einen oder mehrere Dienste angebe
 ```
 
 ### Einrichten der Protokollierung
-Bei vorhandenen Anwendungen ist es äußerst praktisch, Konsolenprotokolle anzeigen zu können, um festzustellen, ob die Anwendungs- und Konfigurationskripts Fehler aufweisen. In der Datei `ServiceManifest.xml` kann mit dem Element `ConsoleRedirection` eine Konsolenumleitung konfiguriert werden.
+Bei ausführbaren Gastanwendungsdateien ist es äußerst nützlich, Konsolenprotokolle anzeigen zu können, um festzustellen, ob die Anwendungs- und Konfigurationskripts Fehler aufweisen. In der Datei `ServiceManifest.xml` kann mit dem Element `ConsoleRedirection` eine Konsolenumleitung konfiguriert werden.
 
 ```xml
 <EntryPoint>
@@ -284,10 +336,10 @@ Wenn Sie in Server-Explorer zum Verzeichnis wechseln, sehen Sie das Arbeitsverze
 
 
 ## Nächste Schritte
-In diesem Artikel wurden das Packen einer vorhandenen Anwendung und ihre Bereitstellung in Service Fabric beschrieben. Als nächsten Schritt können Sie weitere Informationen zu diesem Thema lesen.
+In diesem Artikel wurden das Verpacken einer ausführbaren Gastanwendungsdatei sowie ihre Bereitstellung in Service Fabric beschrieben. Als nächsten Schritt können Sie weitere Informationen zu diesem Thema lesen.
 
-- [Beispiel für das Packen und Bereitstellen einer vorhandenen Anwendung auf GitHub](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started/tree/master/Custom/SimpleApplication), einschließlich Vorabversion des Packtools
-- [Bereitstellen mehrerer benutzerdefinierter Anwendungen](service-fabric-deploy-multiple-apps.md)
+- [Beispiel für das Verpacken und Bereitstellen einer ausführbaren Gastanwendungsdatei auf GitHub](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started/tree/master/Custom/SimpleApplication), einschließlich eines Links zur Vorabversion des Packtools
+- [Bereitstellen mehrerer ausführbarer Gastanwendungsdateien](service-fabric-deploy-multiple-apps.md)
 - [Erstellen Ihrer ersten Service Fabric-Anwendung in Visual Studio](service-fabric-create-your-first-application-in-visual-studio.md)
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0218_2016-->

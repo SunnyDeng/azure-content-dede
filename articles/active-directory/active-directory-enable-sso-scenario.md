@@ -1,11 +1,11 @@
 <properties
-   pageTitle="Verwalten von Anwendungen mit Azure Active Directory | Microsoft Azure"
-   description="Dieser Artikel erläutert die Vorteile der Integration von Azure Active Directory in lokale, Cloud- und SaaS-Anwendungen."
-   services="active-directory"
-   documentationCenter=""
-   authors="ihenkel"
-   manager="stevenpo"
-   editor=""/>
+    pageTitle="Verwalten von Anwendungen mit Azure Active Directory | Microsoft Azure"
+    description="Dieser Artikel erläutert die Vorteile der Integration von Azure Active Directory in lokale, Cloud- und SaaS-Anwendungen."
+    services="active-directory"
+    documentationCenter=""
+    authors="markusvi"
+    manager="stevenpo"
+    editor=""/>
 
    <tags
       ms.service="active-directory"
@@ -13,12 +13,10 @@
       ms.topic="article"
       ms.tgt_pltfrm="na"
       ms.workload="identity"
-      ms.date="02/09/2016"
-      ms.author="inhenk"/>
+      ms.date="02/16/2016"
+      ms.author="markvi"/>
 
-# Verwalten von Anwendungen mit Azure Active Directory (AD)
-
-## Übersicht
+# Verwalten von Anwendungen mit Azure Active Directory
 
 Abgesehen vom eigentlichen Workflow oder Inhalt gibt es für Unternehmen zwei grundlegende Anforderungen für alle Anwendungen:
 
@@ -30,9 +28,9 @@ In Bezug auf Cloudanwendungen gelingt dies am besten über Identitäten, mit den
 
 In Computerterminologie:
 
-- Das *Wer* wird als *Identität* bezeichnet – ein Datenspeicher, der aus Benutzern und Gruppen besteht.
+- Das *Wer* bezeichnet man als *Identität*: die Verwaltung von Benutzern und Gruppen.
 
-- Das *Was* nennt man *Zugriffsverwaltung* – die Verwaltung des Zugriffs auf geschützte Ressourcen.
+- Das *Was* nennt man *Zugriffsverwaltung*: die Verwaltung des Zugriffs auf geschützte Ressourcen.
 
 Beide Komponenten werden zusammen als *Identity and Access Management (IAM)* (Identitäts- und Zugriffsverwaltung) bezeichnet, was durch die [Gartner](http://www.gartner.com/it-glossary/identity-and-access-management-iam)-Gruppe definiert wird als „die Sicherheitsdisziplin, die den richtigen Personen zur rechten Zeit und aus den richtigen Gründen den Zugriff auf die richtigen Ressourcen ermöglicht*“.
 
@@ -40,7 +38,7 @@ Wo liegt also das Problem? Wenn IAM *nicht zentral mit einer integrierten Lösun
 
 - Identitätsadministratoren müssen die einzelnen Benutzerkonten in allen Anwendungen separat erstellen und aktualisieren – eine redundante und zeitaufwändig Aktivität.
 
-- Benutzer müssen sich für den Zugriff auf die Anwendungen, die sie für ihre Arbeit benötigen, mehrere Anmeldeinformationen merken, da sie insbesondere dazu aufgefordert werden, aus Sicherheitsgründen nicht dasselbe Kennwort für jede Anwendung zu verwenden. Demzufolge neigen Benutzer dazu, ihre Kennwörter aufzuschreiben oder andere Lösungen zur Kennwortverwaltung zu verwenden, was zu weiteren Risiken für die Datensicherheit führt.
+- Benutzer müssen sich für den Zugriff auf die Anwendungen, mit denen sie arbeiten müssen, mehrere Anmeldeinformationen merken. Demzufolge neigen Benutzer dazu, ihre Kennwörter aufzuschreiben oder andere Lösungen zur Kennwortverwaltung zu verwenden, was zu weiteren Risiken für die Datensicherheit führt.
 
 - Durch redundante, zeitaufwändige Aktivitäten verringert sich der Zeitraum, in dem Benutzer und Administratoren sich den Geschäftsaktivitäten widmen, die das Betriebsergebnis Ihres Unternehmens erhöhen.
 
@@ -54,13 +52,22 @@ Was hält Organisationen im Allgemeinen davon ab, integrierte IAM-Lösungen einz
 
 ## Azure Active Directory-Integration in Anwendungen
 
-Azure Active Directory (AD) ist die umfassende (IDaaS)-Lösung (Identity-as-a-Service) von Microsoft, die IAM als Clouddienst ermöglicht und eine integrierte Zugriffsverwaltung, einmaliges Anmelden (Single Sign-On, SSO) und Berichtfunktionen [vorinstalliert in Tausenden von Anwendungen](https://azure.microsoft.com/marketplace/active-directory/) bereitstellt, einschließlich Salesforce, Google Apps, Box, Concur und vielen mehr. Mit Azure AD gelten für Anwendungen, die Sie für Ihre Partner und Kunden (Business oder Consumer) veröffentlichen, dieselben Identitäts- und Zugriffsverwaltungsfunktionen, sodass Sie sich auf Ihr Hauptgeschäft konzentrieren können.
+Azure Active Directory ist die umfassende IDaaS-Lösung (Identity as a Service) von Microsoft, die folgende Vorteile bietet:
 
-Der Nutzen von Azure AD geht über Cloudanwendungen hinaus. Sie können es auch mit lokalen Anwendungen einsetzen, indem Sie sicheren Remotezugriff bereitstellen. Somit sind VPNs oder andere herkömmliche Systeme zur Remotezugriffsverwaltung nicht erforderlich.
+- Sie ermöglicht IAM als Clouddienst. 
+
+- Sie stellt eine zentrale Zugriffsverwaltung, einmaliges Anmelden (SSO) und Berichterstellung bereit.
+
+- Sie unterstützt die integrierte Zugriffsverwaltung für [Tausende von Anwendungen](https://azure.microsoft.com/marketplace/active-directory/) im Anwendungskatalog, einschließlich Salesforce, Google Apps, Box, Concur und viele mehr.
+
+
+Mit Azure Active Directory gelten für alle Anwendungen, die Sie für Ihre Partner und Kunden (Geschäftskunden oder Heimanwender) veröffentlichen, dieselben Identitäts- und Zugriffsverwaltungsfunktionen.<br> Dadurch können Sie die Betriebskosten erheblich reduzieren.
 
 Was geschieht, wenn Sie eine Anwendung implementieren müssen, die im Anwendungskatalog noch nicht aufgeführt ist? Auch wenn es etwas zeitaufwändiger ist als das Konfigurieren von SSO für Anwendungen über den Katalog, bietet Azure AD einen Assistenten, der Sie bei der Konfiguration unterstützt.
 
-Durch die Bereitstellung einer zentralen Zugriffsverwaltung und der einmaligen Anmeldung (SSO) für all Ihre Anwendungen bietet Azure AD die Lösung für Probleme mit der Datensicherheit und Produktivität.
+Der Nutzen von Azure AD geht über Cloudanwendungen hinaus. Sie können es durch die Bereitstellung eines sicheren Remotezugriffs auch mit lokalen Anwendungen verwenden. Mit dem sicheren Remotezugriff sind VPNs oder andere herkömmliche Implementierungen der Remotezugriffsverwaltung nicht länger erforderlich.
+
+Durch die Bereitstellung einer zentralen Zugriffsverwaltung und der einmaligen Anmeldung (SSO) für all Ihre Anwendungen bietet Azure AD die Lösung für die wichtigsten Probleme mit der Datensicherheit und Produktivität.
 
 - Benutzer können mit einer einzigen Anmeldung auf mehrere Anwendungen zugreifen und mehr Zeit auf Verdienstmöglichkeiten oder Geschäftsvorgänge verwenden.
 
@@ -128,4 +135,4 @@ Erste Schritte in die Anwendungsintegration in Azure AD finden Sie unter [Erste 
 
 [Artikelindex für die Anwendungsverwaltung in Azure Active Directory](active-directory-apps-index.md)
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0218_2016-->

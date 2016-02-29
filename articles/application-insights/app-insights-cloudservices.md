@@ -125,7 +125,7 @@ Siehe dazu die zwei Beispielworkerrollen, die zum Melden von Anforderungen instr
 
 ## Azure-Diagnose
 
-Die Daten aus [Azure-Diagnose](vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines.md) enthalten Ereignisse bei der Rollenverwaltung, Leistungsindikatoren und Anwendungsprotokolle. Sie können veranlassen, dass diese Daten an Application Insights gesendet werden. Dort können Sie sie gemeinsam mit der übrigen Telemetrie betrachten und so Probleme leichter diagnostizieren.
+Die Daten aus [Azure-Diagnose](../vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines.md) enthalten Ereignisse bei der Rollenverwaltung, Leistungsindikatoren und Anwendungsprotokolle. Sie können veranlassen, dass diese Daten an Application Insights gesendet werden. Dort können Sie sie gemeinsam mit der übrigen Telemetrie betrachten und so Probleme leichter diagnostizieren.
 
 Die Azure-Diagnosedaten sind besonders nützlich, wenn eine Rolle unerwartet ausfällt oder gar nicht erst gestartet wird.
 
@@ -261,7 +261,7 @@ Das ist alles! Die Portalfunktionalität ist bereits angeschlossen, damit Sie al
 ## Verwandte Themen
 
 * [Konfigurieren der Azure-Diagnose zum Protokollieren in Application Insights](app-insights-azure-diagnostics.md)
-* [Senden von Azure-Diagnosedaten an Application Insights mit PowerShell])(app-insights-powershell-azure-diagnostics.md)
+* [Senden von Azure-Diagnosedaten an Application Insights mit PowerShell](app-insights-powershell-azure-diagnostics.md)
 
 
 
@@ -279,4 +279,4 @@ Das ist alles! Die Portalfunktionalität ist bereits angeschlossen, damit Sie al
 [redfield]: app-insights-monitor-performance-live-website-now.md
 [start]: app-insights-overview.md
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

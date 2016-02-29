@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/21/2016"
+	ms.date="02/16/2016"
 	ms.author="markusvi;andkjell"/>
 
 
@@ -28,19 +28,15 @@ Die Azure AD Connect-Synchronisierung läuft unter einem Dienstkonto, das vom In
 - Das Ändern oder Zurücksetzen des Kennworts des Dienstkontos wird **nicht unterstützt**. Dadurch würden die Verschlüsselungsschlüssel gelöscht, und der Dienst wäre nicht in der Lage, auf die Datenbank zuzugreifen und zu starten.
 
 ## Änderungen am Scheduler
-Die Azure AD Connect-Synchronisierung ist so eingestellt, dass die Identitätsdaten alle 3 Stunden synchronisiert werden. Während der Installation wird eine geplante Aufgabe erstellt, die mit den Berechtigungen für den Betrieb des Synchronisierungsservers unter einem Dienstkonto ausgeführt wird.
-
-- Änderungen an der geplanten Aufgabe werden **nicht unterstützt**. Das Kennwort für das Dienstkonto ist nicht bekannt. Siehe [Änderungen des Dienstkontos](#changes-to-the-service-account).
-- Eine häufigere Synchronisierung als standardmäßig 3 Stunden wird **nicht unterstützt**.
-	- Einmalige Synchronisierungen beim Testen einer neuen Konfiguration werden unterstützt. Sie sollten jedoch keine regelmäßigen Exporte nach Azure AD durchführen.
+Ab den Versionen von Build 1.1 (Februar 2016) können Sie den [Scheduler](active-directory-aadconnectsync-feature-scheduler.md) so konfigurieren, dass ein anderer Synchronisierungszyklus als der Standardwert von 30 Minuten verwendet wird.
 
 ## Änderungen an Synchronisierungsregeln
 Der Installations-Assistent verfügt über eine Konfiguration, die für die meisten gängigen Szenarien funktioniert. Falls Sie Änderungen an der Konfiguration vornehmen müssen, müssen Sie diese Regeln befolgen, um weiterhin über eine unterstützte Konfiguration zu verfügen.
 
-- Sie können [Attributflüsse ändern](#change-attribute-flows), wenn die standardmäßigen direkten Attributflüsse für Ihre Organisation nicht geeignet sind.
-- Wenn Sie das [„Fließen“ eines Attributs verhindern ](#do-not-flow-an-attribute) und alle vorhandenen Attributwerte in Azure AD entfernen möchten, müssen Sie eine Regel dafür erstellen.
-- [Deaktivieren Sie eine unerwünschte Synchronisierungsregel](#disable-an-unwanted-sync-rule) anstatt sie zu löschen. Eine gelöschte Regel wird bei einem Upgrade neu erstellt.
-- Zum [Ändern einer standardmäßigen Regel](#change-an-out-of-box-rule) sollten Sie eine Kopie der Originalregel erstellen und die standardmäßige Regel deaktivieren. Der Synchronisierungsregel-Editor wird angezeigt und dient Ihnen als Unterstützung.
+- Sie können [Attributflüsse ändern](#change-attribute-flows), wenn die standardmäßig festgelegten direkten Attributflüsse für Ihre Organisation nicht geeignet sind.
+- Wenn Sie das [„Fließen“ eines Attributs verhindern](#do-not-flow-an-attribute) und alle vorhandenen Attributwerte in Azure AD entfernen möchten, müssen Sie dafür eine Regel erstellen.
+- [Deaktivieren Sie eine unerwünschte Synchronisierungsregel](#disable-an-unwanted-sync-rule), statt sie zu löschen. Eine gelöschte Regel wird bei einem Upgrade neu erstellt.
+- Zum [Ändern einer vordefinierten Regel](#change-an-out-of-box-rule) sollten Sie eine Kopie der Originalregel erstellen und die vordefinierte Regel deaktivieren. Der Synchronisierungsregel-Editor wird angezeigt und dient Ihnen als Unterstützung.
 - Exportieren Sie Ihre benutzerdefinierten Synchronisierungsregeln mit dem Synchronisierungsregel-Editor. Dadurch erhalten Sie ein PowerShell-Skript, mit dem Sie die Regeln bei einem Notfallwiederherstellungsszenario problemlos neu erstellen können.
 
 >[AZURE.WARNING] Die standardmäßigen Synchronisierungsregeln verfügen über einen Fingerabdruck. Wenn Sie eine Änderung an diesen Regeln vornehmen, stimmt der Fingerabdruck überein. Daher kann es später zu Problemen kommen, wenn Sie versuchen, eine neue Version von Azure AD Connect anzuwenden. Führen Sie Änderungen nur wie in diesem Artikel beschrieben durch.
@@ -61,14 +57,14 @@ Mit einer Standardkonfiguration sieht ein Objekt aus der lokalen Gesamtstruktur 
 
 Führen Sie folgende Schritte aus, um eine Regel mit anderen Attributflüssen zu erstellen:
 
-- Öffnen Sie im Startmenü den **Synchronisierungsregel-Editor**.
-- Während auf der linken Seite noch **Eingehend** ausgewählt ist, klicken Sie auf die Schaltfläche **neue Regel hinzufügen**.
-- Benennen Sie die Regel und fügen Sie eine Beschreibung hinzu. Wählen Sie das lokale Active Directory und die entsprechenden Objekttypen aus. Wählen Sie für **Verknüpfungstyp** die Option **Join**. Wählen Sie als Rangfolge eine Zahl, die nicht von einer anderen Regel verwendet wird. Die standardmäßigen Regeln beginnen mit 100; in diesem Beispiel kann also der Wert 50 verwendet werden. ![Attributfluss 2](./media/active-directory-aadconnectsync-best-practices-changing-default-configuration/attributeflowjp2.png)
+- Öffnen Sie im Menü „Start“ den **Synchronisierungsregel-Editor**.
+- Während auf der linken Seite noch **Eingehend** ausgewählt ist, klicken Sie auf die Schaltfläche **Neue Regel hinzufügen**.
+- Benennen Sie die Regel und fügen Sie eine Beschreibung hinzu. Wählen Sie das lokale Active Directory und die entsprechenden Objekttypen aus. Wählen Sie für **Verknüpfungstyp** die Option **Join**. Wählen Sie als Rangfolge eine Zahl, die nicht von einer anderen Regel verwendet wird. Die vordefinierten Regeln beginnen mit 100; in diesem Beispiel kann also der Wert 50 verwendet werden. ![Attributfluss 2](./media/active-directory-aadconnectsync-best-practices-changing-default-configuration/attributeflowjp2.png)
 - Lassen Sie den Bereich leer (d. h. die Regel sollte für alle Benutzerobjekte in der Gesamtstruktur gelten).
 - Lassen Sie die Verknüpfungsregeln leer (d. h. alle Verknüpfungen sollen von der standardmäßigen Regel behandelt werden).
-- Erstellen Sie in Transformationen die folgenden Abläufe. ![Attributfluss 3](./media/active-directory-aadconnectsync-best-practices-changing-default-configuration/attributeflowjp3.png)
+- Erstellen Sie unter „Transformationen“ die folgenden Abläufe. ![Attributfluss 3](./media/active-directory-aadconnectsync-best-practices-changing-default-configuration/attributeflowjp3.png)
 - Klicken Sie auf **Hinzufügen**, um die Regel zu speichern.
-- Wechseln Sie zu **Synchronization Service Manager**. Wählen Sie unter **Connectors** den Connector, wo wir die Regel hinzugefügt haben. Wählen Sie **Ausführen**, und **Vollständige Synchronisierung**. Bei einer vollständigen Synchronisierung werden alle Objekte neu berechnet, die die aktuellen Regeln verwenden.
+- Wechseln Sie zu **Synchronization Service Manager**. Wählen Sie unter **Connectors** den Connector, für den wir die Regel hinzugefügt haben. Wählen Sie **Ausführen** und **Vollständige Synchronisierung**. Bei einer vollständigen Synchronisierung werden alle Objekte neu berechnet, die die aktuellen Regeln verwenden.
 
 Dies ist das Endergebnis für dasselbe Objekt mit dieser benutzerdefinierten Regel:
 
@@ -113,4 +109,4 @@ Weitere Informationen zur Konfiguration der [Azure AD Connect-Synchronisierung](
 
 Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

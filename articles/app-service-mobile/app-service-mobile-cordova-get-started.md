@@ -4,13 +4,15 @@
     services="app-service\mobile"
     documentationCenter="javascript"
     authors="adrianhall"
-    manager="glenga"
-    editor=""/>
+    manager="ggailey777"
+    editor=""
+    tags=""
+    keywords="cordova,javascript,mobile,client" />
 
 <tags
     ms.service="app-service-mobile"
     ms.workload="na"
-    ms.tgt_pltfrm="mobile-javascript"
+    ms.tgt_pltfrm="mobile-html"
     ms.devlang="javascript"
     ms.topic="article"
     ms.date="02/09/2016"
@@ -48,6 +50,22 @@ Sie können auch Visual Studio umgehen und direkt die Apache Cordova-Befehlszeil
 
 [AZURE.INCLUDE [app-service-mobile-cordova-run-app](../../includes/app-service-mobile-cordova-run-app.md)]
 
+## Nächste Schritte
+
+Nachdem Sie dieses Schnellstarttutorial abgeschlossen haben, fahren Sie mit einem der folgenden Tutorials fort:
+
+* [Hinzufügen von Authentifizierung] zu Ihrer Apache Cordova-App.
+* [Hinzufügen von Pushbenachrichtigungen] zu Ihrer Apache Cordova-App.
+
+Erfahren Sie mehr über die Schlüsselkonzepte von Azure App Service.
+
+* [Authentifizierung]
+* [Pushbenachrichtigungen]
+
+Erfahren Sie, wie Sie die SDKs nutzen,
+
+* [ASP.NET Server-SDK]
+* [Node.js Server-SDK]
 
 <!-- Images. -->
 
@@ -55,5 +73,11 @@ Sie können auch Visual Studio umgehen und direkt die Apache Cordova-Befehlszeil
 [Azure portal]: https://portal.azure.com/
 [Visual Studio Community 2015]: http://www.visualstudio.com/
 [Visual Studio-Tools für Apache Cordova]: https://www.visualstudio.com/de-DE/features/cordova-vs.aspx
+[Hinzufügen von Authentifizierung]: app-service-mobile-cordova-get-started-users.md
+[Hinzufügen von Pushbenachrichtigungen]: app-service-mobile-cordova-get-started-push.md
+[Authentifizierung]: app-service-mobile-auth.md
+[Pushbenachrichtigungen]: ../notification-hubs/notification-hubs-overview.md
+[ASP.NET Server-SDK]: app-service-mobile-dotnet-backend-how-to-use-server-sdk.md
+[Node.js Server-SDK]: app-service-mobile-node-backend-how-to-use-server-sdk.md
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0218_2016-->

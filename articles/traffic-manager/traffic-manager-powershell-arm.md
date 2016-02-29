@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="01/25/2016"
+   ms.date="02/02/2016"
    ms.author="joaoma" />
 
 # Azure-Ressourcen-Manager-Unterstützung für Azure Traffic Manager – Vorschau
@@ -136,15 +136,23 @@ So ändern Sie beispielsweise die Profilgültigkeitsdauer:
 	PS C:\> Set-AzureTrafficManagerProfile –TrafficManagerProfile $profile
 
 ## Hinzufügen von Traffic Manager-Endpunkten
-Es gibt drei Arten von Traffic Manager-Endpunkten: 1. Azure-Endpunkte: Diese Endpunkte stellen in Azure gehostete Dienste dar. 2. Externe Endpunkte: Diese Endpunkte stellen außerhalb von Azure gehostete Dienste dar. 3. Geschachtelte Endpunkte: Diese Endpunkte werden verwendet, um geschachtelte Hierarchien von Traffic Manager-Profilen zu erstellen und dadurch erweiterte Konfigurationen für Datenverkehrrouting für komplexere Anwendungen zu ermöglichen. Sie werden über die ARM-API noch nicht unterstützt.
+Es gibt drei Arten von Traffic Manager-Endpunkten:
 
-In allen drei Fällen können Endpunkte auf zwei Arten hinzugefügt werden: 1. Mithilfe von drei Schritten, die dem unter [Aktualisieren eines Traffic Manager-Profils](#update-traffic-manager-profile) beschriebenen Vorgang ähneln: Abrufen des Profilobjekts mithilfe von „Get-AzureRmTrafficManagerProfile“, Aktualisieren im Offlinemodus zum Hinzufügen eines Endpunkts mithilfe von „Add-AzureRmTrafficManagerEndpointConfig“ und Hochladen von Änderungen in Azure Traffic Manager mithilfe von „Set-AzureRmTrafficManagerProfile“. Der Vorteil dieser Methode besteht darin, dass mehrere Änderungen am Endpunkt mit nur einer Aktualisierung vorgenommen werden können. 2. Mithilfe des Cmdlets „New-AzureRmTrafficManagerEndpoint“. Mit diesem Cmdlet wird einem vorhandenen Traffic Manager-Profil in einem Schritt ein Endpunkt hinzugefügt.
+1. Azure-Endpunkte: Diese Endpunkte stellen in Azure gehostete Dienste dar.<BR>
+2. Externe Endpunkte: Diese Endpunkte stellen außerhalb von Azure gehostete Dienste dar.<BR>
+3. Geschachtelte Endpunkte: Diese Endpunkte werden verwendet, um geschachtelte Hierarchien von Traffic Manager-Profilen zu erstellen und dadurch erweiterte Konfigurationen für Datenverkehrrouting für komplexere Anwendungen zu ermöglichen. Sie werden über die ARM-API noch nicht unterstützt.<BR>
+
+In allen drei Fällen können Endpunkte auf zwei Arten hinzugefügt werden:<BR>
+
+1. Mithilfe von drei Schritten, die dem unter [Aktualisieren eines Traffic Manager-Profils](#update-traffic-manager-profile) beschriebenen Vorgang ähneln: Abrufen des Profilobjekts mithilfe von „Get-AzureRmTrafficManagerProfile“, Aktualisieren im Offlinemodus zum Hinzufügen eines Endpunkts mithilfe von „Add-AzureRmTrafficManagerEndpointConfig“ und Hochladen von Änderungen in Azure Traffic Manager mithilfe von „Set-AzureRmTrafficManagerProfile“. Der Vorteil dieser Methode besteht darin, dass mehrere Änderungen am Endpunkt mit nur einer Aktualisierung vorgenommen werden können.<BR>
+
+2. Mithilfe des Cmdlets „New-AzureRmTrafficManagerEndpoint“. Mit diesem Cmdlet wird einem vorhandenen Traffic Manager-Profil in einem Schritt ein Endpunkt hinzugefügt.
 
 ### Hinzufügen von Azure-Endpunkten
 
-Azure-Endpunkte verweisen auf andere in Azure gehostete Dienste. Derzeit werden 3 Arten von Azure-Endpunkten unterstützt: 1. Azure-Web-Apps 2. Klassische Clouddienste (die entweder einen PaaS-Dienst oder virtuelle IaaS-Computer enthalten können) 3. ARM Microsoft.Network/publicIpAddress-Ressourcen (die an einen Load Balancer oder an die Netzwerkkarte eines virtuellen Computers angefügt werden können). Beachten Sie, dass der publicIpAddress-Ressource ein DNS-Name zugewiesen werden muss, damit sie in Traffic Manager verwendet werden kann.
+Azure-Endpunkte verweisen auf andere in Azure gehostete Dienste. Derzeit werden drei Arten von Azure-Endpunkten unterstützt:<BR>1. Azure-Web-Apps <BR> 2. Klassische Clouddienste (die entweder einen PaaS-Dienst oder virtuelle IaaS-Computer enthalten können)<BR> 3. ARM Microsoft.Network/publicIpAddress-Ressourcen (die an einen Load Balancer oder an die Netzwerkkarte eines virtuellen Computers angefügt werden können). Beachten Sie, dass der publicIpAddress-Ressource ein DNS-Name zugewiesen werden muss, damit sie in Traffic Manager verwendet werden kann.
 
-In jedem Fall gilt: - Der Dienst wird mithilfe des Parameters „targetResourceId“ von „Add-AzureRmTrafficManagerEndpointConfig“ oder „New-AzureRmTrafficManagerEndpoint“ angegeben. - Die Parameter „Target“ und „EndpointLocation“ müssen nicht angegeben werden. Sie werden von dem oben angegebenen TargetResourceId-Element impliziert. - Die Angabe von „Weight“ ist optional. „Weights“ wird nur verwendet, wenn das Profil für die Verwendung der Datenverkehr-Routingmethode „Weighted“ konfiguriert ist, andernfalls wird der Parameter ignoriert. Wird der Parameter angegeben, muss er im Bereich 1 bis 1.000 liegen. Der Standardwert lautet „1“. - Die Angabe der Priorität ist optional. Prioritäten werden nur verwendet, wenn das Profil für die Verwendung der Datenverkehr-Routingmethode „Priority“ konfiguriert ist, andernfalls wird der Parameter ignoriert. Gültige Werte liegen zwischen 1 und 1.000 (niedrigere Werte stehen für eine höhere Priorität). Wenn Sie für einen Endpunkt Prioritäten angeben, müssen Sie für alle Endpunkte Prioritäten angeben. Wenn keine Prioritäten angegeben werden, werden Standardwerte beginnend mit 1, 2, 3 usw. in der Reihenfolge angewendet, in der Endpunkte bereitgestellt werden.
+In jedem Fall gilt: - Der Dienst wird mithilfe des Parameters „targetResourceId“ von „Add-AzureRmTrafficManagerEndpointConfig“ oder „New-AzureRmTrafficManagerEndpoint“ angegeben.<BR> - Die Parameter „Target“ und „EndpointLocation“ müssen nicht angegeben werden. Sie werden von dem oben angegebenen TargetResourceId-Element impliziert.<BR> - Die Angabe von „Weight“ ist optional. „Weights“ wird nur verwendet, wenn das Profil für die Verwendung der Datenverkehr-Routingmethode „Weighted“ konfiguriert ist, andernfalls wird der Parameter ignoriert. Wird der Parameter angegeben, muss er im Bereich 1 bis 1.000 liegen. Der Standardwert lautet „1“.<BR> - Die Angabe der Priorität ist optional. Prioritäten werden nur verwendet, wenn das Profil für die Verwendung der Datenverkehr-Routingmethode „Priority“ konfiguriert ist, andernfalls wird der Parameter ignoriert. Gültige Werte liegen zwischen 1 und 1.000 (niedrigere Werte stehen für eine höhere Priorität). Wenn Sie für einen Endpunkt Prioritäten angeben, müssen Sie für alle Endpunkte Prioritäten angeben. Wenn keine Prioritäten angegeben werden, werden Standardwerte beginnend mit 1, 2, 3 usw. in der Reihenfolge angewendet, in der Endpunkte bereitgestellt werden.
 
 #### Beispiel 1: Hinzufügen von Web-App-Endpunkten mithilfe von „Add-AzureRmTrafficManagerEndpointConfig“
 In diesem Beispiel erstellen wir ein neues Traffic Manager-Profil und fügen zwei Web-App-Endpunkte mithilfe des Cmdlets „Add-AzureRmTrafficManagerEndpointConfig“ hinzu. Anschließend übergeben wir das aktualisierte Profil mithilfe von „Set-AzureRmTrafficManagerProfile“ an Azure Traffic Manager.
@@ -171,7 +179,8 @@ In diesem Beispiel wird eine ARM-Ressource für eine öffentliche IP-Adresse zum
 ### Hinzufügen externer Endpunkte
 Traffic Manager verwendet externe Endpunkte zum Weiterleiten von Datenverkehr an außerhalb von Azure gehostete Dienste. Wie bei Azure-Endpunkten können externe Endpunkte entweder mithilfe von „Add-AzureRmTrafficManagerEndpointConfig“ gefolgt von „Set-AzureRmTrafficManagerProfile“ oder mithilfe von „New-AzureRMTrafficManagerEndpoint“ hinzugefügt werden.
 
-Beim Angeben externer Endpunkte: - Der Domänenname des Endpunkts muss mithilfe des Parameters „Target“ angegeben werden. - „EndpointLocation“ ist erforderlich, wenn die Datenverkehr-Routingmethode „Performance“ verwendet wird. Andernfalls ist der Parameter optional. Der Wert muss ein [gültiger Azure-Regionsname](https://azure.microsoft.com/regions/) sein. - Die Parameter „Weight“ und „Priority“ sind wie bei Azure-Endpunkten optional.
+Beim Angeben externer Endpunkte: - Der Domänenname des Endpunkts muss mithilfe des Parameters „Target“ angegeben werden.<BR> - „EndpointLocation“ ist erforderlich, wenn die Datenverkehr-Routingmethode „Performance“ verwendet wird. Andernfalls ist der Parameter optional. Der Wert muss ein [gültiger Azure-Regionsname](https://azure.microsoft.com/regions/) sein.<BR> - Die Parameter „Weight“ und „Priority“ sind wie bei Azure-Endpunkten optional.<BR>
+ 
 
 #### Beispiel 1: Hinzufügen externer Endpunkte mithilfe von „Add-AzureRmTrafficManagerEndpointConfig“ und „Set-AzureRmTrafficManagerProfile“
 In diesem Beispiel erstellen wir ein neues Traffic Manager-Profil, fügen zwei externe Endpunkte hinzu und übernehmen die Änderungen.
@@ -192,12 +201,12 @@ Der Traffic Manager erlaubt Ihnen, ein Traffic Manager-Profil (hier als „unter
 
 Geschachtelte Traffic Manager erlauben Ihnen flexiblere und stärkere Datenverkehrs-Routing und Failoverschemata zu erstellen und die Bedürfnisse größerer, komplexerer Bereitstellungen zu unterstützen. [Dieser Blogbeitrag](https://azure.microsoft.com/blog/new-azure-traffic-manager-nested-profiles/) enthält mehrere Beispiele.
 
-Geschachtelte Endpunkte sind beim übergeordneten Profil mittels eines speziellen Endpunkttyps „NestedEndpoints“ konfiguriert. Beim Angeben geschachtelter Endpunkte: - Der Endpunkt (z. B. das untergeordnete Profil) muss mithilfe des Parameters „targetResourceId“ angegeben werden. -Die „EndpointLocation“ ist erforderlich, wenn die Datenverkehr-Routingmethode „Performance“ verwendet wird. Andernfalls ist der Parameter optional. Der Wert muss ein [gültiger Azure-Regionsname](http://azure.microsoft.com/regions/) sein. – Die Parameter „Weight“ und „Priority“ sind wie bei Azure-Endpunkten optional. Der Parameter „MinChildEndpoints“ ist optional, der Standardwert ist „1“. Falls die Anzahl der verfügbaren Endpunkte im untergeordneten Profil unter diesen Schwellenwert fällt, betrachtet das übergeordnete Profil das untergeordnete als „heruntergestuft“ und leitet den Verkehr auf die anderen Endpunkte des übergeordneten Profils um.
+Geschachtelte Endpunkte sind beim übergeordneten Profil mittels eines speziellen Endpunkttyps „NestedEndpoints“ konfiguriert. Beim Angeben geschachtelter Endpunkte: - Der Endpunkt (z. B. das untergeordnete Profil) muss mithilfe des Parameters „targetResourceId“ angegeben werden.<BR> -Die „EndpointLocation“ ist erforderlich, wenn die Datenverkehr-Routingmethode „Performance“ verwendet wird. Andernfalls ist der Parameter optional. Der Wert muss ein gültiger [Azure-Regionsname](http://azure.microsoft.com/regions/) sein.<BR> - Die Parameter „Weight“ und „Priority“ sind wie bei Azure-Endpunkten optional.<BR> - Der Parameter „MinChildEndpoints“ ist optional, der Standardwert ist „1“. Falls die Anzahl der verfügbaren Endpunkte im untergeordneten Profil unter diesen Schwellenwert fällt, betrachtet das übergeordnete Profil das untergeordnete Profil als „heruntergestuft“ und leitet den Verkehr auf die anderen Endpunkte des übergeordneten Profils um.<BR>
 
 
 #### Beispiel 1: Hinzufügen geschachtelter Endpunkte mithilfe von „Add-AzureRmTrafficManagerEndpointConfig“ und „Set-AzureRmTrafficManagerProfile“
 
-In diesem Beispiel erstellen wir neue unter- und übergeordnete Traffic Manager-Profile, fügen die untergeordneten Profile den übergeordneten als geschachtelte Endpunkte hinzu und übermitteln diese Änderungen. (Kurz gesagt werden wir weder dem über- noch dem untergeordneten Profil anderen Endpunkte hinzufügen, obwohl dies normalerweise erforderlich wäre.)
+In diesem Beispiel erstellen wir neue unter- und übergeordnete Traffic Manager-Profile, fügen die untergeordneten Profile den übergeordneten als geschachtelte Endpunkte hinzu und übermitteln diese Änderungen. (Zur Vereinfachung fügen wir weder dem über- noch dem untergeordneten Profil weitere Endpunkte hinzu, obwohl dies normalerweise erforderlich wäre.)<BR>
 
 	PS C:\> $child = New-AzureRmTrafficManagerProfile –Name child -ResourceGroupName MyRG -TrafficRoutingMethod Priority -RelativeDnsName child -Ttl 30 -MonitorProtocol HTTP -MonitorPort 80 -MonitorPath "/"
 	PS C:\> $parent = New-AzureRmTrafficManagerProfile –Name parent -ResourceGroupName MyRG -TrafficRoutingMethod Performance -RelativeDnsName parent -Ttl 30 -MonitorProtocol HTTP -MonitorPort 80 -MonitorPath "/"
@@ -213,7 +222,10 @@ In diesem Beispiel fügen wir ein vorhandenes untergeordnetes Profil als einen g
 
 
 ## Aktualisieren eines Traffic Manager-Endpunkts
-Es gibt zwei Möglichkeiten zum Aktualisieren eines vorhandenen Traffic Manager-Endpunkts: 1. Rufen Sie das Traffic Manager-Profil mithilfe von „Get-AzureRmTrafficManagerProfile“ ab, aktualisieren Sie die Endpunkteigenschaften im Profil, und übernehmen Sie anschließend die Änderungen mit „Set-AzureRmTrafficManagerProfile“. Diese Methode hat den Vorteil, dass mehrere Endpunkte in einem Schritt aktualisiert werden können. 2. Rufen Sie den Traffic Manager-Endpunkt mithilfe von „Get-AzureRmTrafficManagerEndpoint“ ab, aktualisieren Sie die Endpunkteigenschaften, und übernehmen Sie die Änderungen mit „Set-AzureRmTrafficManagerEndpoint“. Diese Methode ist einfacher, da keine Indizierung im Endpunktarray im Profil erforderlich ist.
+Es gibt zwei Möglichkeiten zum Aktualisieren eines vorhandenen Traffic Manager-Endpunkts:<BR>
+
+1. Rufen Sie das Traffic Manager-Profil mithilfe von „Get-AzureRmTrafficManagerProfile“ ab, aktualisieren Sie die Endpunkteigenschaften im Profil, und übernehmen Sie anschließend die Änderungen mit „Set-AzureRmTrafficManagerProfile“. Diese Methode hat den Vorteil, dass mehrere Endpunkte in einem Schritt aktualisiert werden können.<BR>
+2. Rufen Sie den Traffic Manager-Endpunkt mithilfe von „Get-AzureRmTrafficManagerEndpoint“ ab, aktualisieren Sie die Endpunkteigenschaften, und übernehmen Sie die Änderungen mit „Set-AzureRmTrafficManagerEndpoint“. Diese Methode ist einfacher, da keine Indizierung im Endpunktarray im Profil erforderlich ist.<BR>
 
 #### Beispiel 1: Aktualisieren von Endpunkten mithilfe von „Get-AzureRmTrafficManagerProfile“ und „Set-AzureRmTrafficManagerProfile“
 In diesem Beispiel ändern wir die Priorität für zwei Endpunkte innerhalb eines vorhandenen Profils.
@@ -285,4 +297,4 @@ Diese Sequenz kann auch weitergeleitet werden:
 [Leistungsüberlegungen zu Traffic Manager](traffic-manager-performance-considerations.md)
  
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0218_2016-->

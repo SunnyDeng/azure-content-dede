@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="01/26/2016"
+   ms.date="02/05/2016"
    ms.author="alkohli" />
 
 # Bereitstellen des StorSimple Manager-Diensts für StorSimple Virtual Array
@@ -105,10 +105,10 @@ Führen Sie die folgenden Schritte durch, um den Dienstregistrierungsschlüssel 
 
 ## Nächste Schritte
 
-- Erfahren Sie mehr über die [ersten Schritte](storsimple-ova-deploy1-portal-prep.md) zum Bereitstellen eines virtuellen StorSimple-Arrays.
+- Erfahren Sie mehr zu den [ersten Schritten](storsimple-ova-deploy1-portal-prep.md) mit einem virtuellen StorSimple-Array.
 	
-- Erfahren Sie mehr über das [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-ova-manager-service-administration.md).
+- Erfahren Sie, wie Sie [Ihr StorSimple-Gerät verwalten](storsimple-ova-web-ui-admin.md).
 
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

@@ -210,7 +210,7 @@ Hinweis: **MS\_AadTenants** wird als eine durch Trennzeichen getrennte Liste von
 
 > [AZURE.WARNING] **Verwenden Sie nicht die Authentifizierungsmechanismen im Menü „Einstellungen“**
 >
-> Azure App Service bietet ein separates Authentifizierungs- und Autorisierungssystem „ohne Code“ im Einstellungenmenü für _Authentifizierung/Autorisierung_ und die (veraltete) Option _Mobile Authentifizierung_ im Menü „Einstellungen“. Diese Optionen sind nicht kompatibel mit einem migrierten Azure Mobile Service. Sie können [Ihre Website aktualisieren], um die Azure App Service-Authentifizierung zu nutzen.
+> Azure App Service bietet ein separates Authentifizierungs- und Autorisierungssystem „ohne Code“ im Einstellungenmenü für _Authentifizierung/Autorisierung_ und die (veraltete) Option _Mobile Authentifizierung_ im Menü „Einstellungen“. Diese Optionen sind nicht kompatibel mit einem migrierten Azure Mobile Service. Sie können [Ihre Website aktualisieren](app-service-mobile-net-upgrading-from-mobile-services.md), um die Azure App Service-Authentifizierung zu nutzen.
 
 ### <a name="easytables"></a>Daten
 
@@ -394,4 +394,4 @@ Ihre Anwendung ist nicht nur zu App Service migriert, Sie können sogar noch meh
 [VNet]: ../app-service-web/web-sites-integrate-with-vnet.md
 [WebJobs]: ../app-service-web/websites-webjobs-resources.md
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0218_2016-->

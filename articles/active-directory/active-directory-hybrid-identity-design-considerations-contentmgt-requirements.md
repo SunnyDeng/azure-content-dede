@@ -13,7 +13,7 @@
 	ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="identity" 
-	ms.date="11/11/2015"
+	ms.date="02/12/2016"
 	ms.author="yuridio"/>
 
 # Ermitteln der Content Management-Anforderungen für Ihre Hybrid-Identitätslösung
@@ -32,7 +32,8 @@ Im Allgemeinen wird Ihr Identitätsverwaltungssystem in den folgenden Bereichen 
 - Klassifizierung von Daten: Identifizieren des Benutzers bzw. der Gruppe und der Zugriffsebene für ein Objekt nach seiner Klassifizierung. 
 - Schutz vor Datenlecks: Sicherheitskontrollen, die als Schutz vor Datenlecks dienen, müssen mit dem Identitätssystem interagieren, um die Identität des Benutzers zu überprüfen. Dies ist auch für Überwachungspfadzwecke wichtig.
 
->[AZURE.NOTE]Weitere Informationen zu den bewährten Methoden und Richtlinien für die Datenklassifizierung finden Sie unter [Datenklassifizierung für Cloud Readiness](http://download.microsoft.com/download/0/A/3/0A3BE969-85C5-4DD2-83B6-366AA71D1FE3/Data-Classification-for-Cloud-Readiness.pdf).
+>[AZURE.NOTE]
+Weitere Informationen zu den bewährten Methoden und Richtlinien für die Datenklassifizierung finden Sie unter [Datenklassifizierung für Cloud Readiness](http://download.microsoft.com/download/0/A/3/0A3BE969-85C5-4DD2-83B6-366AA71D1FE3/Data-Classification-for-Cloud-Readiness.pdf).
 
 Stellen Sie beim Planen Ihrer Hybrid-Identitätslösung sicher, dass die folgenden Fragen gemäß den Anforderungen Ihres Unternehmens beantwortet werden:
 
@@ -50,7 +51,8 @@ Stellen Sie beim Planen Ihrer Hybrid-Identitätslösung sicher, dass die folgend
 - Muss Ihr Unternehmen alle Dokumente/Inhalte verschlüsseln, die mit externen Geschäftspartnern ausgetauscht werden?
 - Muss Ihr Unternehmen für bestimmte Arten von E-Mails (Nicht beantworten, Nicht weiterleiten) Unternehmensrichtlinien durchsetzen?
  
->[AZURE.NOTE]Notieren Sie sich alle Antworten, und stellen Sie sicher, dass Ihnen die Begründung der Antwort jeweils klar ist. Unter [Definieren der Strategie zum Schutz von Daten](active-directory-hybrid-identity-design-considerations-data-protection-strategy.md) sind die verfügbaren Optionen und die jeweiligen Vor- und Nachteile beschrieben. Indem Sie diese Fragen beantworten, wählen Sie aus, welche Option Ihre Geschäftsanforderungen am besten erfüllt.
+>[AZURE.NOTE]
+Notieren Sie sich alle Antworten, und stellen Sie sicher, dass Ihnen die Begründung der Antwort jeweils klar ist. Unter [Definieren der Strategie zum Schutz von Daten](active-directory-hybrid-identity-design-considerations-data-protection-strategy.md) sind die verfügbaren Optionen und die jeweiligen Vor- und Nachteile beschrieben. Indem Sie diese Fragen beantworten, wählen Sie aus, welche Option Ihre Geschäftsanforderungen am besten erfüllt.
 
 
 ## Nächste Schritte
@@ -59,4 +61,4 @@ Stellen Sie beim Planen Ihrer Hybrid-Identitätslösung sicher, dass die folgend
 ## Weitere Informationen
 [Überlegungen zum Entwurf – Übersicht](active-directory-hybrid-identity-design-considerations-overview.md)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0218_2016-->

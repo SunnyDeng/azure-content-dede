@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/29/2015" 
+	ms.date="01/29/2016" 
 	ms.author="anhoh"/>
 
 # Hierarchisches Ressourcenmodell und Konzepte von DocumentDB
@@ -71,9 +71,9 @@ id|Vom Benutzer festlegbar|Benutzerdefinierter eindeutiger Name der Ressource We
 DocumentDB verfügt über keine proprietären Erweiterungen des JSON-Standards oder besonderer Codierungen, und kann nur mit standardkonformen JSON-Dokumenten verwendet werden.
  
 ### Adressieren einer Ressource
-Alle Ressourcen können über URI aufgerufen werden. Der Wert der **_self**-Eigenschaft einer Ressource stellt den relativen URI der Ressource dar. Das Format des URI besteht aus den /\<feed>/{_rid}-Pfadsegmenten:  
+Alle Ressourcen können über URI aufgerufen werden. Der Wert der **\_self**-Eigenschaft einer Ressource stellt den relativen URI der Ressource dar. Das Format des URI besteht aus den /\<feed>/{\_rid}-Pfadsegmenten:
 
-|Wert von \_self |Beschreibung
+|Wert von „\_self“ |Beschreibung 
 |-------------------|-----------
 |/dbs |Feed der Datenbanken in einem Datenbankkonto
 |/dbs/{\_rid-db} |Datenbank mit einer ID mit dem Wert {\_rid-db}
@@ -415,4 +415,4 @@ Weitere Informationen zum Arbeiten mit Ressourcen mithilfe von HTTP-Befehlen fin
 [2]: media/documentdb-resources/resources2.png
 [3]: media/documentdb-resources/resources3.png
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0218_2016-->

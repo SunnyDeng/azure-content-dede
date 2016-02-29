@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="data-management"
-   ms.date="11/24/2015"
+   ms.date="02/16/2016"
    ms.author="rickbyh"/>
 
 # Sicherheitsrichtlinien und Einschränkungen von Azure SQL-Datenbank
@@ -37,7 +37,7 @@ Legen Sie ``Encrypt=True`` und ``TrustServerCertificate=False`` in der Datenbank
 
 SQL Server Management Studio unterstützt ebenfalls die Überprüfung von Zertifikaten. Klicken Sie im Dialogfeld **Mit Server verbinden** auf der Registerkarte **Verbindungseigenschaften** auf **Verbindung verschlüsseln**
 
-> [AZURE.NOTE]SQL Server Management Studio unterstützt in den Versionen vor SQL Server 2008 R2 keine Verbindungen mit SQL-Datenbank.
+> [AZURE.NOTE] SQL Server Management Studio unterstützt in den Versionen vor SQL Server 2008 R2 keine Verbindungen mit SQL-Datenbank.
 
 SQL-Datenbank wird von SQLCMD zwar ab Version SQL Server 2008 unterstützt, aber in Versionen vor SQL Server 2008 R2 ist keine Unterstützung der Zertifikatüberprüfung vorhanden. Verwenden Sie die Befehlszeilenoption ``-N`` und nicht die Option ``-C``, um Zertifikate ab Version SQL Server 2008 R2 mit SQLCMD zu überprüfen. Mit der Option „-N“ fordert SQLCMD eine verschlüsselte Verbindung an. Indem nicht die Option ``-C`` verwendet wird, vertraut SQLCMD dem Serverzertifikat nicht implizit und ist gezwungen, das Zertifikat zu überprüfen.
 
@@ -49,7 +49,7 @@ Die Active Directory-Authentifizierung (integrierte Sicherheit) ist als Vorschau
 
 Mit [SQL-Datenbank V12](sql-database-v12-whats-new.md) können sich Benutzer gegenüber der Datenbank authentifizieren, indem sie Benutzer für eigenständige Datenbanken verwenden. Weitere Informationen finden Sie unter [Eigenständige Datenbankbenutzer - machen Sie Ihre Datenbank portabel](https://msdn.microsoft.com/library/ff929188.aspx), [CREATE USER (Transact-SQL)](https://technet.microsoft.com/library/ms173463.aspx) und [Eigenständige Datenbanken](https://technet.microsoft.com/library/ff929071.aspx).
 
-> [AZURE.NOTE]Microsoft empfiehlt die Verwendung von Benutzern für eigenständige Datenbanken, um die Skalierbarkeit zu verbessern.
+> [AZURE.NOTE] Microsoft empfiehlt die Verwendung von Benutzern für eigenständige Datenbanken, um die Skalierbarkeit zu verbessern.
 
 Das Datenbankmodul schließt Verbindungen, die sich länger als 30 Minuten im Leerlauf befinden. Für die Verbindung muss dann eine erneute Anmeldung durchgeführt werden, bevor sie verwendet werden kann.
 
@@ -64,7 +64,7 @@ Für die Serverebenenprinzipal-Anmeldung gelten die folgenden Einschränkungen:
 - Der Datenbankbenutzer in der Masterdatenbank, der zur Serverebenenprinzipal-Anmeldung gehört, kann nicht geändert oder verworfen werden. 
 - Auch wenn die Serverebenenprinzipal-Anmeldung kein Mitglied der beiden Datenbankrollen **dbmanager** und **loginmanager** in der Datenbank **master** ist, verfügt sie über alle Berechtigungen, die diesen beiden Rollen gewährt werden.
 
-> [AZURE.NOTE]Diese Anmeldung wird während der Serverbereitstellung erstellt und ähnelt der Anmeldung **sa** in einer Instanz von SQL Server.
+> [AZURE.NOTE] Diese Anmeldung wird während der Serverbereitstellung erstellt und ähnelt der Anmeldung **sa** in einer Instanz von SQL Server.
 
 Für alle Anmeldungen gelten die folgenden Einschränkungen:
 
@@ -111,4 +111,4 @@ Berücksichtigen Sie die folgenden Punkte, um Ihre Azure SQL-Datenbank-Anwendung
 
 [Sicherheitscenter für SQL Server-Datenbankmodul und Azure SQL-Datenbank](https://msdn.microsoft.com/library/bb510589)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0218_2016-->

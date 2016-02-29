@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/15/2015" 
+	ms.date="02/16/2016" 
 	ms.author="spelluru"/>
 
 # Verschieben von Daten in und aus DocumentDB mithilfe von Azure Data Factory
@@ -411,7 +411,7 @@ Wenn bei der Kopieraktivität "source" den Typ **DocumentDbCollectionSource** ha
 
 	**Antwort:** Wenn Datensätze über ein ID-Feld verfügen und beim Kopiervorgang versucht wird, einen Datensatz mit der gleichen ID einzufügen, löst der Kopiervorgang einen Fehler aus.
  
-3. **Frage:** Unterstützt Data Factory die [bereichs- oder hashbasierte Datenpartitionierung]( https://azure.microsoft.com/documentation/articles/documentdb-partition-data/)?
+3. **Frage:** Unterstützt Data Factory die [bereichs- oder hashbasierte Datenpartitionierung](https://azure.microsoft.com/documentation/articles/documentdb-partition-data/)?
 
 	**Antwort:** Nein. 
 4. **Frage**: Können mehrere DocumentDB-Auflistungen für eine Tabelle angegeben werden?
@@ -419,4 +419,4 @@ Wenn bei der Kopieraktivität "source" den Typ **DocumentDbCollectionSource** ha
 	**Antwort:** Nein. Zurzeit kann nur eine Auflistung angegeben werden.
      
 
-<!----HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0218_2016-->

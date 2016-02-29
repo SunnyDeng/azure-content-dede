@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/19/2015" 
+	ms.date="02/16/2016" 
 	ms.author="billmath"/>
 
 
@@ -30,7 +30,7 @@ Als Erstes müssen Sie den Registrierungsprozess ausführen. Bevor Sie mit diese
 - **Anruf auf dem Mobiltelefon, SMS oder mobile App** – Wenn Sie ein Mobiltelefon verwenden, können Sie auswählen, ob Sie einen Anruf oder eine SMS erhalten oder die mobile App verwenden möchten.
 - **Mobile Anwendung mit einer Benachrichtigung oder Überprüfungscode** – Wenn Sie die mobile App verwenden, wählen Sie aus, ob Sie eine Benachrichtigung, auf die Sie antworten, oder einen Überprüfungscode erhalten möchten.
 
-> [AZURE.NOTE]Beachten Sie, dass Ihre IT-Abteilung eine oder mehrere der oben aufgeführten Optionen möglicherweise deaktiviert hat. Dann stehen diese Optionen während des Registrierungsprozesses nicht zur Verfügung.
+> [AZURE.NOTE]  Beachten Sie, dass Ihre IT-Abteilung eine oder mehrere der oben aufgeführten Optionen möglicherweise deaktiviert hat. Dann stehen diese Optionen während des Registrierungsprozesses nicht zur Verfügung.
 
 Nachdem Sie sich für eine Bestätigungsmethode entschieden haben, können Sie sich registrieren. Rufen Sie den Link [Setupfunktionalität](multi-factor-authentication-end-user-first-time.md) auf, um eine schrittweise Anleitung des Registrierungsprozesses zu lesen.
 
@@ -49,4 +49,4 @@ Thema|Beschreibung
 
  
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0218_2016-->

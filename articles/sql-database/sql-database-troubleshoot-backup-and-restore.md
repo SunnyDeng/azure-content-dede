@@ -4,7 +4,7 @@
 	services="sql-database"
 	documentationCenter=""
 	authors="dalechen"
-	manager="msmets"
+	manager="felixwu"
 	editor=""/>
 
 <tags
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/10/2015"
+	ms.date="02/14/2016"
 	ms.author="daleche"/>
 
 # Wiederherstellen einer Datenbank zu einem früheren Zeitpunkt, einer gelöschten Datenbank oder eines Rechenzentrums nach einem Ausfall
@@ -42,4 +42,4 @@ Azure bietet zudem Sicherungen aller Datenbanken in einer anderen Region (als so
 
 - Klicken Sie im [Azure-Portal](https://azure.microsoft.com/) auf **Neu**, dann auf **Daten und Speicher**, danach auf **SQL-Datenbank**, und wählen Sie als Datenbankquelle **Sicherung** aus. Einzelheiten finden Sie unter [Wiederherstellen einer Azure SQL-Datenbank nach einem Ausfall](sql-database-disaster-recovery.md).
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0218_2016-->

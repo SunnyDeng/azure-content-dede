@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
-   ms.date="11/11/2015"
+   ms.date="02/11/2016"
    ms.author="jgao"/>
 
 
@@ -35,9 +35,9 @@ Die Fensterfunktionen sind in die folgenden Kategorien unterteilt:
 
 - Durchlaufen Sie die folgenden beiden Tutorials:
 
-    - [Erste Schritte mit Azure Data Lake-Tools für Visual Studio](data-lake-analytics-use-data-lake-tools.md).
+    - [Erste Schritte mit Azure Data Lake-Tools für Visual Studio](data-lake-analytics-data-lake-tools-get-started.md).
     - [Erste Schritte mit U-SQL für Azure Data Lake Analytics-Aufträge](data-lake-analytics-u-sql-get-started.md).
-- Erstellen Sie ein Data Lake Analytic-Konto gemäß den Anweisungen unter [Erste Schritte mit Azure Data Lake-Tools für Visual Studio](data-lake-analytics-use-data-lake-tools.md).
+- Erstellen Sie ein Data Lake Analytic-Konto gemäß den Anweisungen unter [Erste Schritte mit Azure Data Lake-Tools für Visual Studio](data-lake-analytics-data-lake-tools-get-started.md).
 - Erstellen Sie ein Visual Studio-U-SQL-Projekt gemäß den Anweisungen unter [Erste Schritte mit U-SQL für Azure Data Lake Analytics-Aufträge](data-lake-analytics-u-sql-get-started.md).
 
 ## Beispieldatasets
@@ -136,7 +136,7 @@ Die folgende Abfrage verwendet eine Aggregation, um die Summe der Gehälter alle
             SUM(Salary) AS TotalSalary
         FROM @employees;
     
->[AZURE.NOTE]Anweisungen zum Testen und Überprüfen der Ausgabe finden Sie unter [Erste Schritte mit U-SQL für Azure Data Lake Analytics-Aufträge](data-lake-analytics-u-sql-get-started.md).
+>[AZURE.NOTE] Anweisungen zum Testen und Überprüfen der Ausgabe finden Sie unter [Erste Schritte mit U-SQL für Azure Data Lake Analytics-Aufträge](data-lake-analytics-u-sql-get-started.md).
 
 Das Ergebnis ist eine einzelne Zeile mit einer einzelnen Spalte. $165000 ist die Summe der Gehaltswerte in der gesamten Tabelle.
 
@@ -144,7 +144,7 @@ Das Ergebnis ist eine einzelne Zeile mit einer einzelnen Spalte. $165000 ist die
 |-----------
 |165000
 
->[AZURE.NOTE]Wenn Sie noch nicht mit Fensterfunktionen vertraut sind, ist es hilfreich, die Werte in den Ausgaben zu speichern.
+>[AZURE.NOTE] Wenn Sie noch nicht mit Fensterfunktionen vertraut sind, ist es hilfreich, die Werte in den Ausgaben zu speichern.
 
 Die folgende Anweisung verwendet die GROUP BY-Klausel, um die gesamten Gehaltskosten für jede Abteilung zu berechnen:
 
@@ -225,7 +225,7 @@ Wiederum entspricht die Anzahl der Eingabezeilen der Anzahl der Ausgabezeilen. J
 
 
 
-## Berichtsaggrationsfunktionen
+## Berichtsaggregationsfunktionen
 
 Fensterfunktionen unterstützen auch die folgenden Aggregate:
 
@@ -340,7 +340,7 @@ Die folgenden Rangfolgefunktionen werden unterstützt:
 	        [ORDER BY <identifier, > …[n] [ASC|DESC]] 
 	) AS <alias>
 
-- Die ORDER BY-Klausel ist für Rangfolgefunktionen optional. Falls ORDER BY angegeben ist, wird damit die Reihenfolge für die Rangfolge bestimmt. Falls ORDER BY nicht angegeben ist, werden Werte von U-SQL auf Grundlage der Lesereihenfolge von Datensätzen zugewiesen. Dies führt zu einem nicht deterministischen Wert für ROW\_NUMBER, RANK und DENSE\_RANK für den Fall, dass die ORDER BY-Klausel nicht angegeben wurde.
+- Die ORDER BY-Klausel ist für Rangfolgefunktionen optional. Falls ORDER BY angegeben ist, wird damit die Rangfolge bestimmt. Falls ORDER BY nicht angegeben ist, werden Werte von U-SQL auf Grundlage der Lesereihenfolge von Datensätzen zugewiesen. Dies führt zu einem nicht deterministischen Wert für ROW\_NUMBER, RANK und DENSE\_RANK für den Fall, dass die ORDER BY-Klausel nicht angegeben wurde.
 - NTILE erfordert einen Ausdruck, der in eine positive ganze Zahl ausgewertet wird. Diese Zahl gibt die Anzahl der Gruppen an, in die jede Partition unterteilt werden muss. Dieser Bezeichner wird nur bei der Rangfolgefunktion NTILE verwendet. 
 
 Weitere Informationen zur OVER-Klausel finden Sie in der [U-SQL-Referenz]().
@@ -739,8 +739,8 @@ PERCENTILE\_DISC interpoliert keine Werte, weshalb der Median für „Web“ 200
 - [Verwenden interaktiver Lernprogramme zu Azure Data Lake Analytics](data-lake-analytics-use-interactive-tutorials.md)
 - [Analysieren von Websiteprotokollen mit Azure Data Lake Analytics](data-lake-analytics-analyze-weblogs.md)
 - [Erste Schritte mit der Sprache U-SQL für Azure Data Lake Analytics](data-lake-analytics-u-sql-get-started.md)
-- [Verwalten von Azure Data Lake Analytics mithilfe des Azure-Portals](data-lake-analytics-use-portal.md)
-- [Verwalten von Azure Data Lake Analytics mithilfe von Azure PowerShell](data-lake-analytics-use-powershell.md)
+- [Verwalten von Azure Data Lake Analytics mithilfe des Azure-Portals](data-lake-analytics-manage-use-portal.md)
+- [Verwalten von Azure Data Lake Analytics mithilfe von Azure PowerShell](data-lake-analytics-manage-use-powershell.md)
 - [Überwachen und Problembehandeln von Azure Data Lake Analytics-Aufträgen mithilfe des Azure-Portals](data-lake-analytics-monitor-and-troubleshoot-jobs-tutorial.md)
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0218_2016-->

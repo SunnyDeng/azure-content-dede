@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/16/2015"
+   ms.date="02/09/2016"
    ms.author="joaoma" />
 
 # Erste Schritte zum Erstellen eines internen Load Balancers mithilfe der Azure-Befehlszeilenschnittstelle
@@ -91,7 +91,7 @@ Erstellen Sie mit dem Befehl `azure network lb create` einen internen Load Balan
  	
 	azure network lb create -n nrprg -l westus
 
->[AZURE.NOTE]Alle Ressourcen für einen internen Load Balancer, wie z. B. das virtuelle Netzwerk und das Subnetz des virtuellen Netzwerks, müssen sich in derselben Ressourcengruppe und in derselben Region befinden.
+>[AZURE.NOTE] Alle Ressourcen für einen internen Load Balancer, wie z. B. das virtuelle Netzwerk und das Subnetz des virtuellen Netzwerks, müssen sich in derselben Ressourcengruppe und in derselben Region befinden.
 
 
 ### Schritt 2 
@@ -148,7 +148,7 @@ Erstellen Sie Integritätstests für den Load Balancer. Eine Integritätstest ü
 
 **-g:** Ressourcengruppe **-l:** Name der internen Load Balancer-Gruppe **-n:** Name des Integritätstests **-p:** Protokoll für den Integritätstest **-i:** Testintervall in Sekunden **-c:** Anzahl der Prüfungen
 
->[AZURE.NOTE]Die Microsoft Azure-Plattform nutzt eine statische, öffenlich routingfähige IPv4-Adresse für eine Vielzahl von administrativen Szenarien. Die IP-Adresse lautet 168.63.129.16. Diese IP-Adresse sollte nicht durch Firewalls blockiert werden, da dies zu unerwartetem Verhalten führen kann. In Bezug auf den internen Lastenausgleich in Azure wird diese IP-Adresse von Überwachungstests aus dem Lastenausgleich verwendet, um den Integritätsstatus von virtuellen Computern in einer Lastenausgleichsgruppe zu bestimmen. Wenn eine Netzwerksicherheitsgruppe verwendet wird, um den Datenverkehr auf virtuellen Azure-Computern in einer internen Lastenausgleichsgruppe einzuschränken, oder wenn eine Netzwerksicherheitsgruppe einem Subnetz eines virtuellen Netzwerks zugewiesen ist, stellen Sie sicher, dass eine Netzwerksicherheitsregel hinzugefügt wird, um Datenverkehr von 168.63.129.16 zuzulassen.
+>[AZURE.NOTE] Die Microsoft Azure-Plattform nutzt eine statische, öffenlich routingfähige IPv4-Adresse für eine Vielzahl von administrativen Szenarien. Die IP-Adresse lautet 168.63.129.16. Diese IP-Adresse sollte nicht durch Firewalls blockiert werden, da dies zu unerwartetem Verhalten führen kann. In Bezug auf den internen Lastenausgleich in Azure wird diese IP-Adresse von Überwachungstests aus dem Lastenausgleich verwendet, um den Integritätsstatus von virtuellen Computern in einer Lastenausgleichsgruppe zu bestimmen. Wenn eine Netzwerksicherheitsgruppe verwendet wird, um den Datenverkehr auf virtuellen Azure-Computern in einer internen Lastenausgleichsgruppe einzuschränken, oder wenn eine Netzwerksicherheitsgruppe einem Subnetz eines virtuellen Netzwerks zugewiesen ist, stellen Sie sicher, dass eine Netzwerksicherheitsregel hinzugefügt wird, um Datenverkehr von 168.63.129.16 zuzulassen.
 
 ## Erstellen von NICs
 
@@ -208,7 +208,7 @@ Erstellen Sie einen virtuellen Computer (VM) mit dem Namen *DB1*, und ordnen Sie
 
 	azure vm create --resource-group nrprg --name DB1 --location eastus --vnet-name nrpvnet --vnet-subnet-name nrpvnetsubnet --nic-name lb-nic1-be --availset-name nrp-avset --storage-account-name web1nrp --os-type Windows --image-urn MicrosoftWindowsServer:WindowsServer:2012-R2-Datacenter:4.0.20150825
 
->[AZURE.IMPORTANT]VMs in einem Load Balancer müssen in derselben Verfügbarkeitsgruppe enthalten sein. Erstellen Sie mit `azure availset create` eine Verfügbarkeitsgruppe.
+>[AZURE.IMPORTANT] VMs in einem Load Balancer müssen in derselben Verfügbarkeitsgruppe enthalten sein. Erstellen Sie mit `azure availset create` eine Verfügbarkeitsgruppe.
 
 ### Schritt 4
 
@@ -232,4 +232,4 @@ Verwenden Sie zum Entfernen eines Load Balancers den folgenden Befehl:
 
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0218_2016-->

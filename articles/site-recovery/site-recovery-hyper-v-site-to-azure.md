@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Replizieren zwischen lokalen virtuellen Hyper-V-Maschinen und Azure (ohne VMM) mit Site Recovery | Microsoft Azure"
-	description="Azure Site Recovery koordiniert Replikation, Failover und Wiederherstellung virtueller Computer auf lokalen Hyper-V-Servern zu Azure."
+	description="Dieser Artikel beschreibt, wie virtuelle Hyper-V-Maschinen in Azure mit Azure Site Recovery repliziert werden, wenn Computer nicht in VMM-Clouds verwaltet werden."
 	services="site-recovery"
 	documentationCenter=""
 	authors="rayne-wiselman"
@@ -13,24 +13,27 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery"
-	ms.date="12/10/2015"
+	ms.date="02/16/2016"
 	ms.author="raynew"/>
 
 
 # Replizieren zwischen lokalen virtuellen Hyper-V-Maschinen und Azure (ohne VMM) mit Azure Site Recovery
 
-Azure Site Recovery unterstützt Ihre Strategie für Geschäftskontinuität und Notfallwiederherstellung, indem Replikation, Failover und Wiederherstellung virtueller Maschinen und physischer Server in einer Vielzahl von Bereitstellungsszenarios aufeinander abgestimmt werden. Lesen Sie die [weiteren Informationen](site-recovery-overview.md) zu Site Recovery.
+Der Dienst Azure Site Recovery unterstützt Ihre Strategie für Geschäftskontinuität und Notfallwiederherstellung, indem Replikation, Failover und Wiederherstellung virtueller Computer und physischer Server aufeinander abgestimmt werden. Computer können in Azure oder in einem sekundären lokalen Datencenter repliziert werden. Eine kurze Übersicht Eine kurze Übersicht über das Gesamtthema finden Sie unter [Was ist Azure Site Recovery?](site-recovery-overview.md).
 
 ## Übersicht
 
-In diesem Artikel wird beschrieben, wie Sie Site Recovery für die Replikation von virtuellen Hyper-V-Maschinen bereitstellen, wenn Hyper-V-Hosts mit Windows Server 2012 R2 nicht in einer System Center Virtual Machine Manager-Cloud (VMM) verwaltet werden.
+In diesem Artikel wird beschrieben, wie Sie Site Recovery für die Replikation von virtuellen Hyper-V-Maschinen bereitstellen, wenn Hyper-V-Hosts nicht in System Center Virtual Machine Manager-Clouds (VMM) verwaltet werden.
 
-Dieser Artikel enthält eine Zusammenfassung der Bereitstellungsvoraussetzungen und unterstützt Sie beim Konfigurieren der Replikationseinstellungen sowie beim Aktivieren des Schutzes für virtuelle Computer. Zum Schluss wird das Failover getestet, um sicherzustellen, dass alles wie erwartet funktioniert. Sollten Probleme auftreten, besuchen Sie das [Azure Recovery Services-Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
+Dieser Artikel enthält eine Zusammenfassung der Bereitstellungsvoraussetzungen und unterstützt Sie beim Konfigurieren der Replikationseinstellungen sowie beim Aktivieren des Schutzes für virtuelle Computer. Zum Schluss wird das Failover getestet, um sicherzustellen, dass alles wie erwartet funktioniert.
+
+
+Kommentare oder Fragen können Sie am Ende dieses Artikels oder im [Forum zu Azure Recovery Services](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr) veröffentlichen.
 
 
 ## Vorbereitung
 
-Vergewissern Sie sich, dass Sie alle Voraussetzungen erfüllen, ehe Sie starten.
+Vergewissern Sie sich, dass alle Voraussetzungen erfüllt sind, ehe Sie starten.
 
 ### Voraussetzungen für Azure
 
@@ -61,7 +64,7 @@ Im Rahmen der Azure Site Recovery-Bereitstellung werden auf jedem Hyper-V-Serv
 	- *.backup.windowsazure.com
 	- *.blob.core.windows.net
 	- *.store.core.windows.net
-	
+ 
 - Lassen Sie außerdem die unter [IP-Bereiche des Azure-Rechenzentrums](https://www.microsoft.com/download/details.aspx?id=41653) angegebenen IP-Adressen sowie das HTTPS-Protokoll (443) zu. Fügen Sie die IP-Adressbereiche der zu verwendenden Azure-Region sowie die IP-Adressbereiche der westlichen USA einer Positivliste hinzu.
 
 
@@ -260,7 +263,7 @@ Wenn Sie ein Testfailover durchführen möchten, ohne ein Azure-Netzwerk anzugeb
 Für ein Testfailover mit einem Azure-Zielnetzwerk müssen Sie ein neues Azure-Netzwerk erstellen, das von Ihrem Azure-Produktionsnetzwerk isoliert ist (Standardverhalten bei der Erstellung eines neuen Netzwerks in Azure). Unter [Ausführen eines Testfailovers](site-recovery-failover.md#run-a-test-failover) finden Sie weitere Details.
 
 
-Um Ihre Replikation und Netzwerkbereitstellung vollständig zu testen, müssen Sie die Infrastruktur einrichten, damit die replizierte virtuelle Maschine wie erwartet funktioniert. Eine Möglichkeit ist: Richten Sie eine virtuelle Maschine als Domänencontroller mit DNS ein, und replizieren Sie sie zu Azure. Verwenden Sie Site Recovery für die Erstellung im Testnetzwerk, indem Sie ein Testfailover ausführen. Lesen Sie sich die [weiteren Informationen](site-recovery-active-directory.md#considerations-for-test-failover) zu den Testfailover-Aspekten für Active Directory durch.
+Um Ihre Replikation und Netzwerkbereitstellung vollständig zu testen, müssen Sie die Infrastruktur einrichten, damit die replizierte virtuelle Maschine wie erwartet funktioniert. Eine Möglichkeit ist: Richten Sie eine virtuelle Maschine als Domänencontroller mit DNS ein, und replizieren Sie sie in Azure. Verwenden Sie Site Recovery für die Erstellung im Testnetzwerk, indem Sie ein Testfailover ausführen. Lesen Sie sich die [weiteren Informationen](site-recovery-active-directory.md#considerations-for-test-failover) zu den Testfailover-Aspekten für Active Directory durch.
 
 Führen Sie das Testfailover wie folgt aus:
 
@@ -274,7 +277,7 @@ Führen Sie das Testfailover wie folgt aus:
 5. Nach dem Failover können Sie das Testreplikat des virtuellen Computers im Azure-Portal sehen. Wenn Sie den Zugriff auf virtuelle Computer aus Ihrem lokalen Netzwerk eingerichtet haben, können Sie eine Remotedesktopverbindung mit dem virtuellen Computer herstellen.
 
 	1. Prüfen Sie, ob die virtuellen Computer erfolgreich starten.
-    2. Wenn Sie nach dem Failover eine Verbindung mit dem virtuellen Computer in Azure über Remote Desktop herstellen möchten, aktivieren Sie die Remote Desktop-Verbindung auf dem virtuellen Computer, bevor Sie das Test-Failover ausführen. Außerdem müssen Sie dem virtuellen Computer einen RDP-Endpunkt hinzufügen. Hierzu können Sie ein Azure Automation-Runbook[](site-recovery-runbook-automation.md) verwenden.
+    2. Wenn Sie nach dem Failover eine Verbindung mit dem virtuellen Computer in Azure über Remote Desktop herstellen möchten, aktivieren Sie die Remote Desktop-Verbindung auf dem virtuellen Computer, bevor Sie das Test-Failover ausführen. Außerdem müssen Sie dem virtuellen Computer einen RDP-Endpunkt hinzufügen. Hierzu können Sie ein [Azure Automation-Runbook](site-recovery-runbook-automation.md) verwenden.
     3. Falls Sie nach dem Failover über eine öffentliche IP-Adresse eine Remotedesktopverbindung mit dem virtuellen Computer in Azure herstellen, achten Sie darauf, dass keine Domänenrichtlinien vorhanden sind, die dies verhindern.
 
 6. Gehen Sie nach dem Test wie folgt vor:
@@ -292,4 +295,4 @@ Führen Sie das Testfailover wie folgt aus:
 
 Wenn die Bereitstellung eingerichtet ist und ausgeführt wird, informieren Sie sich über [Failover](site-recovery-failover.md).
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0218_2016-->

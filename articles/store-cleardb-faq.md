@@ -55,7 +55,7 @@ Die Standardoption Datenbanken ist Titan zum Preis von 3,50 $. Während der Date
 
 ## Ich führe MySQL auf meiner eigenen Azure-VM aus. Kann ich meine Azure-Web-App mit meiner Datenbank verbinden?
 
-Ja. Solange Ihrer Azure-VM Remotezugriff auf Ihre Web-App gewährt wird, können Sie Ihre Web-App mit Ihrer Datenbank verbinden. Klicken Sie hier, um ausführliche Informationen zu erhalten.
+Ja. Solange Ihrer Azure-VM Remotezugriff auf Ihre Web-App gewährt wird, können Sie Ihre Web-App mit Ihrer Datenbank verbinden. Weitere Informationen finden Sie unter [Installieren von MySQL auf einem virtuellen Computer](../virtual-machines/virtual-machines-mysql-windows-server-2008r2.md).
 
 ## In welchen Ländern werden ClearDB Premium MySQL-Cluster unterstützt?
 
@@ -75,7 +75,7 @@ Azure Marketplace ist nicht für Kunden verfügbar, die in Aserbaidschan, Kroati
 
 ## Welche Tarif sollte ich für eine Produktions-Web-App und Datenbank wählen?
 
-Wählen Sie für Web-Apps mindestens den Tarif Basic. Für ClearDB empfehlen wir den Tarif Saturn oder Jupiter. Überprüfen Sie die Features und Grenzen der einzelnen Tarife für sowohl [Web-Apps](/pricing/details/app-service/) als auch [ClearDB MySQL-Datenbanken](/marketplace/partners/cleardb/databases/), um den für Sie am besten geeigneten zu bestimmen.
+Wählen Sie für Web-Apps mindestens den Tarif Basic. Für ClearDB empfehlen wir den Tarif Saturn oder Jupiter. Machen Sie sich mit den Features und Grenzen der einzelnen Tarife sowohl für [Web-Apps](/pricing/details/app-service/) als auch für [ClearDB MySQL-Datenbanken](/marketplace/partners/cleardb/databases/) vertraut, um den für Sie am besten geeigneten Tarif zu ermitteln.
 
 ## Wie kann ich meinen ClearDB-Datenbanktarif ändern?
 
@@ -85,9 +85,17 @@ Nutzen Sie hierfür den [ClearDB-Upgrade-Assistenten](https://www.cleardb.com/st
 
 Wenden Sie sich bei sämtlichen Datenbankproblemen an den [ClearDB-Support](https://www.cleardb.com/developers/help/support). Stellen Sie bei Aufforderung Ihre Azure-Abonnementdaten bereit.
 
+## Kann ich für meine ClearDB MySQL-Datenbank-Clusterlösung zusätzliche Benutzer erstellen?  
+
+Nein. Zusätzliche Benutzer können nicht erstellt werden. Sie können jedoch zusätzliche Datenbanken in Ihrem ClearDB-Datenbankcluster erstellen.
+
+## Wird meine ClearDB MySQL-Datenbank ebenfalls migriert, wenn ich meine Ressourcen von einem Abonnement zu einem anderen migriere?  
+
+Bei der Ressourcenmigration zwischen Abonnements gelten einige [Einschränkungen](app-service-move-resources.md). Eine ClearDB MySQL-Datenbank ist ein Drittanbieterdienst und wird daher nicht migriert, wenn Sie eine Migration zwischen Azure-Abonnements durchführen. Ihre ClearDB MySQL-Datenbank wird möglicherweise deaktiviert, wenn Sie die Migration der MySQL-Datenbank nicht vor der Migration der Azure-Ressourcen planen und durchführen. Migrieren Sie zunächst manuell Ihre Datenbanken, und führen Sie dann die Azure-Abonnementmigration für Ihre Web-App durch.
+
 ## Kann ich Scalable WordPress mit einem EA-Abonnement (Enterprise Agreement) erwerben?
 
-Der Prozess ist bei allen Abonnements gleich. Wechseln Sie im [Azure-Portal](https://portal.azure.com/) zu Azure Marketplace, und wählen Sie [Scalable WordPress](https://portal.azure.com/?feature.customportal=false#create/WordPress.ScalableWordPress) aus, um mit dem Erstellen der App beginnen. Scalable WordPress unterstützt nur die ClearDB-Tarife Saturn und Jupiter. Ihr EA-Guthaben wird sowohl für Ihre Webanwendung, die im standardmäßigen Web-App-Tarif ausgeführt wird, als auch für die kostenpflichtige (freigegebene) ClearDB MySQL-Datenbank in Anspruch genommen.[/marketplace/faq/](/marketplace/faq/) Im Rahmen Ihres EA wird Ihnen vierteljährlich für alle Einkäufe im Azure Store eine gesonderte Sammelrechnung ausgestellt.
+Der Prozess ist bei allen Abonnements gleich. Wechseln Sie im [Azure-Portal](https://portal.azure.com/) zum Azure Marketplace, und wählen Sie [Scalable WordPress](https://portal.azure.com/?feature.customportal=false#create/WordPress.ScalableWordPress) aus, um mit dem Erstellen der App zu beginnen. Scalable WordPress unterstützt nur die ClearDB-Tarife „Saturn“ und „Jupiter“. Ihr EA-Guthaben wird sowohl für Ihre Webanwendung, die im Web-Apps-Tarif „Standard“ ausgeführt wird, als auch für die kostenpflichtige (freigegebene) ClearDB MySQL-Datenbank in Anspruch genommen.[/marketplace/faq/](/marketplace/faq/) Ihre gesamten Einkäufe im Store werden einmal pro Quartal in einer separaten Rechnung zusammengefasst und über Ihr EA abgerechnet.
 
 ## Kann ich eine ClearDB-Datenbank aus einem kreditkartengestützten Abonnement in ein EA-Abonnement übertragen?
 
@@ -110,10 +118,10 @@ Der Zugriff auf Azure Marketplace für Dienste von Drittanbietern kann von Ihren
 
 ## An wen wende ich mich bei Fragen zu meiner Rechnung für ClearDB-Dienste in meinem EA-Abonnement?
 
-Wenden Sie sich an den [Enterprise-Kundensupport](http://aka.ms/AzureEntSupport), wenn Sie Fragen zur Abrechnung im Rahmen Ihres EA-Vertrags haben. Der Supportteam des EA-Portals beantwortet Ihre Fragen und hilft beim Lösen Ihres Problems.
+Wenden Sie sich an den [Support für EA-Kunden](http://aka.ms/AzureEntSupport), wenn Sie Fragen zur Abrechnung über Ihre EA-Registrierung haben. Der Supportteam des EA-Portals beantwortet Ihre Fragen und hilft beim Lösen Ihres Problems.
 
 ## Weitere Informationen
 
 [Azure Marketplace – häufig gestellte Fragen](/marketplace/faq/)
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0218_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/21/2016"
+	ms.date="02/16/2016"
 	ms.author="markusvi;andkjell"/>
 
 
@@ -426,6 +426,27 @@ Diese Attribute werden vom Azure AD auf das lokale Active Directory zurückgesch
 | msExchUserHoldPolicies| X| | | Beweissicherungsverfahren: Ermöglicht Clouddiensten, zu bestimmen, welche Benutzer einem Beweissicherungsverfahren unterliegen.|
 | proxyAddresses| X| X| X| Nur die x500-Adresse von Exchange Online wird eingefügt.|
 
+## Geräterückschreiben
+Geräteobjekte werden in Active Directory erstellt. Dabei kann es sich um Geräte, die mit Azure AD verknüpft sind, oder um in eine Domäne eingebundene Windows 10-Computer handeln.
+
+| Attributname| Gerät| Kommentar |
+| --- | :-: | --- |
+| altSecurityIdentities | X| |
+| displayName | X| |
+| dn | X| |
+| msDS-CloudAnchor | X| |
+| msDS-DeviceID | X| |
+| msDS-DeviceObjectVersion | X| |
+| msDS-DeviceOSType | X| |
+| msDS-DeviceOSVersion | X| |
+| msDS-DevicePhysicalIDs | X| |
+| msDS-KeyCredentialLink | X| Nur mit Windows Server 2016-AD-Schema |
+| msDS-IsCompliant | X| |
+| msDS-IsEnabled | X| |
+| msDS-IsManaged | X| |
+| msDS-RegisteredOwner | X| |
+
+
 ## Hinweise zu Attributen
 - Bei Verwendung einer alternativen ID wird das lokale Attribut userPrincipalName mit dem Azure AD-Attribut onPremisesUserPrincipalName synchronisiert. Das alternative ID-Attribut, z. B. Mail, wird mit dem Azure AD-Attribut userPrincipalName synchronisiert.
 
@@ -435,4 +456,4 @@ Weitere Informationen zur Konfiguration der [Azure AD Connect-Synchronisierung](
 
 Weitere Informationen zum [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

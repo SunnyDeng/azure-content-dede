@@ -11,17 +11,14 @@
 	ms.service="mobile-services"
 	ms.workload="mobile"
 	ms.tgt_pltfrm="na"
-	ms.devlang="multiple"
+	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="12/11/2015"
+	ms.date="02/05/2016"
 	ms.author="glenga"/>
 
 # Erstellen eines mobilen .NET-Back-End-Diensts, der den Tabellenspeicher verwendet
 
 [AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
-
-&nbsp;
-
 
 In diesem Thema erfahren Sie, wie Sie einen nicht relationalen Datenspeicher für Ihren mobilen .NET-Back-End-Dienst verwenden. In diesem Lernprogramm ändern Sie das Azure Mobile Services-Schnellstartprojekt, um den Azure-Tabellenspeicher statt des standardmäßigen Azure SQL-Datenbank-Datenspeichers zu verwenden.
 
@@ -39,7 +36,7 @@ Zunächst müssen Sie den mobilen Dienst und das .NET Back-End-Codeprojekt zum H
 
   	Dadurch wird dem Projekt für den mobilen .NET-Back-End-Dienst Unterstützung für Azure-Speicherdienste hinzugefügt.
 
-3. Wenn Sie das Speicherkonto noch nicht erstellt haben, lesen Sie [So erstellen Sie ein Speicherkonto](../storage-create-storage-account.md).
+3. Wenn Sie das Speicherkonto noch nicht erstellt haben, lesen Sie [So erstellen Sie ein Speicherkonto](../storage/storage-create-storage-account.md).
 
 4. Klicken Sie im [klassischen Azure-Portal] auf **Speicher**, klicken Sie auf das Speicherkonto, und klicken Sie dann auf **Schlüssel verwalten**.
 
@@ -142,7 +139,7 @@ Da Sie jetzt gesehen haben, wie einfach sich der Tabellenspeicher mit dem .NET B
 
 + [Herstellen einer Verbindung mit einem lokalen SQL Server mithilfe von Hybridverbindungen](mobile-services-dotnet-backend-hybrid-connections-get-started.md)</br>Hybridverbindungen ermöglichen Ihnen das Herstellen einer sicheren Verbindung des mobilen Diensts mit den lokalen Ressourcen. Auf diese Weise können Sie Ihre lokalen Daten mithilfe von Azure für Ihre mobilen Clients zugänglich machen. Unterstützt werden unter anderem alle Ressourcen, die auf einem statischen TCP-Port laufen, inklusive Microsoft SQL Server, MySQL, HTTP Web-APIs und die meisten selbst entwickelten Webdienste.
 
-+ [Hochladen von Bildern in den Azure-Speicher mithilfe von Mobile Services](mobile-services-dotnet-backend-windows-store-dotnet-upload-data-blob-storage.md)</br>In diesem Thema wird gezeigt, wie Sie das TodoList-Beispielprojekt erweitern, damit Sie Bilder von Ihrer App in den Azure-BLOB-Speicher hochladen können.
++ [Hochladen von Bildern in den Azure-Speicher mithilfe von Mobile Services](mobile-services-dotnet-backend-windows-universal-dotnet-upload-data-blob-storage.md)</br>In diesem Thema wird gezeigt, wie Sie das TodoList-Beispielprojekt erweitern, damit Sie Bilder von Ihrer App in den Azure-BLOB-Speicher hochladen können.
 
 <!-- Anchors. -->
 [Create a non-relational store]: #create-store
@@ -159,4 +156,4 @@ Da Sie jetzt gesehen haben, wie einfach sich der Tabellenspeicher mit dem .NET B
 [What is the Table Service]: ../storage-dotnet-how-to-use-tables.md#what-is
 [MongoLab Add-on Page]: /gallery/store/mongolab/mongolab
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0218_2016-->

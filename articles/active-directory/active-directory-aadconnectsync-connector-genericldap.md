@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.devlang="na"
    ms.topic="article"
-   ms.date="01/21/2016"
+   ms.date="02/16/2016"
    ms.author="andkjell"/>
 
 # Technische Referenz für den generischen LDAP-Connector
@@ -38,8 +38,8 @@ Im Anschluss finden Sie einen allgemeinen Überblick über die von der aktuellen
 
 | Funktion | Support |
 | --- | --- |
-| Verbundene Datenquelle | Der Connector wird für alle (RFC 4510-konformen) LDAP v3-Server unterstützt. Getestet wurde er mit Folgendem: <li>Microsoft Active Directory Lightweight Directory Services (AD LDS)</li><li>Microsoft Active Directory – Globaler Katalog (AD GC)</li><li>389 Directory Server</li><li>Apache Directory Server</li><li>IBM Tivoli DS</li><li>Isode Directory</li><li>NetIQ eDirectory</li><li>Novell eDirectory</li><li>Open DJ</li><li>Open DS</li><li>Open LDAP (openldap.org)</li><li>Oracle (ehemals Sun) Directory Server Enterprise Edition</li><li>RadiantOne Virtual Directory Server (VDS)</li><li>Sun One Directory Server</li>Relevante nicht unterstützte Verzeichnisse: <li>Microsoft Active Directory Domain Services (AD DS) [Verwenden Sie stattdessen den integrierten Active Directory-Connector.]</li><li>Oracle Internet Directory (OID)</li> |
-| Szenarios | <li>Objektlebenszyklusverwaltung</li><li>Gruppenverwaltung</li><li>Kennwortverwaltung</li> |
+| Verbundene Datenquelle | Der Connector wird für alle (RFC 4510-konformen) LDAP v3-Server unterstützt. Er wurde mit folgenden Tools getestet: <li>Microsoft Active Directory Lightweight Directory Services (AD LDS)</li><li>Microsoft Active Directory – Globaler Katalog (AD GC)</li><li>389 Directory Server</li><li>Apache Directory Server</li><li>IBM Tivoli DS</li><li>Isode Directory</li><li>NetIQ eDirectory</li><li>Novell eDirectory</li><li>Open DJ</li><li>Open DS</li><li>Open LDAP (openldap.org)</li><li>Oracle (vorher Sun) Directory Server Enterprise Edition</li><li>RadiantOne Virtual Directory Server (VDS)</li><li>Sun One Directory Server</li>**Wichtige nicht unterstützte Verzeichnisse:** <li>Microsoft Active Directory-Domänendienste (AD DS) [Verwenden Sie stattdessen den integrierten Active Directory Connector]</li><li>Oracle Internet Directory (OID)</li> |
+| Szenarien | <li>Objektlebenszyklusverwaltung</li><li>Gruppenverwaltung</li><li>Kennwortverwaltung</li> |
 | Vorgänge |Die folgenden Vorgänge werden für alle LDAP-Verzeichnisse unterstützt: <li>Vollständiger Import</li><li>Export</li>Folgende Vorgänge werden nur für angegebene Verzeichnisse unterstützt:<li>Deltaimport</li><li>Kennwort festlegen, Kennwort ändern</li> |
 | Schema | <li>Das Schema wird auf der Grundlage des LDAP-Schemas erkannt (RFC3673 und RFC4512/4.2).</li><li>Unterstützt strukturelle Klassen, Erweiterungsklassen und die Objektklasse „extensibleObject“ (RFC4512/4.3).</li>
 
@@ -279,4 +279,4 @@ Bei Verzeichnissen mit einem datums-/uhrzeitbasierten Delta-Änderungsprotokoll 
 
 -	Informationen zum Aktivieren der Protokollierung für die Behandlung von Connectorproblemen finden Sie unter [Vorgehensweise: Aktivieren der ETW-Ablaufverfolgung für Connectors](http://go.microsoft.com/fwlink/?LinkId=335731).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/19/2015" 
+	ms.date="02/16/2016" 
 	ms.author="billmath"/>
 
 
@@ -33,7 +33,7 @@ Die alte Multi-Factor Authentication wird durch die Veröffentlichung der Azure 
 
 Stellen Sie zunächst sicher, dass Sie für das hinzuzufügende Konto den QR-Code der den Code und die URL für die manuelle Eingabe zur Hand haben.
 
-> [AZURE.NOTE]Sie wissen nicht, wie Sie den QR-Code abrufen können? Für Hilfe wenden Sie sich an den Helpdesk.
+> [AZURE.NOTE] Sie wissen nicht, wie Sie den QR-Code abrufen können? Für Hilfe wenden Sie sich an den Helpdesk.
 > 
 > Das Aktivieren Ihres Kontos in der neuen App funktioniert nicht? Wenden Sie sich an den Helpdesk.
 >
@@ -164,4 +164,4 @@ Danach müssen Sie zum Verifizieren Ihrer Anmeldung nur noch auf die erhaltene P
 
 ![Touch ID](./media/multi-factor-authentication-azure-authenticator/touchid2.png)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0218_2016-->

@@ -47,7 +47,7 @@ Dank des MPP-Verfahrens kann SQL Data Warehouse wie oben beschrieben einen Ansat
 
 - Zusätzlich zur Erstellung optimaler Abfragepläne setzt SQL Data Warehouse erweiterte Algorithmen und Techniken ein, mit denen Daten je nach Bedarf auf effiziente Weise zwischen den Berechnungsressourcen verschoben werden, um die Abfrage durchzuführen. Diese Vorgänge sind in die Datenverschiebungsdienste von Data Warehouse integriert, und die Optimierungen werden automatisch durchgeführt.
 
-- Die Einbindung von im Cluster gruppierten Columnstore-Indizes in die Appliance ist ebenfalls wichtig, um eine schnelle Abfrageleistung zu erzielen. Mithilfe des spaltenbasierten Speichers erreicht SQL Data Warehouse eine bis zu fünfmal höhere Komprimierung als mit dem herkömmlichen zeilenorientierten Speicher und eine bis zu zehnmal höhere Abfrageleistung. Data Warehouse-Abfragen sind sehr gut für Columnstore-Indizes geeignet, da hierbei häufig die gesamte Tabelle oder Partition einer Tabelle gescannt wird und die Auswirkungen der Datenverschiebung für Abfrageschritte reduziert werden.
+- Die Einbindung von im Cluster gruppierten Columnstore-Indizes in SQL Data Warehouse ist ebenfalls wichtig, um eine schnelle Abfrageleistung zu erzielen. Mithilfe des spaltenbasierten Speichers erreicht SQL Data Warehouse eine bis zu fünfmal höhere Komprimierung als mit dem herkömmlichen zeilenorientierten Speicher und eine bis zu zehnmal höhere Abfrageleistung. Data Warehouse-Abfragen sind sehr gut für Columnstore-Indizes geeignet, da hierbei häufig die gesamte Tabelle oder Partition einer Tabelle gescannt wird und die Auswirkungen der Datenverschiebung für Abfrageschritte reduziert werden.
 
 ## Skalierbar
 
@@ -140,4 +140,4 @@ Nachdem Sie jetzt einige Informationen zu SQL Data Warehouse erhalten haben, kö
 
 <!--Other Web references-->
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0218_2016-->

@@ -4,7 +4,7 @@
    services="storsimple"
    documentationCenter=""
    authors="alkohli"
-   manager="carolz"
+   manager="carmonm"
    editor="" />
 <tags 
    ms.service="storsimple"
@@ -12,18 +12,18 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="TBD"
-   ms.date="12/02/2015"
+   ms.date="02/12/2016"
    ms.author="alkohli" />
 
 # Konfigurieren von CHAP für Ihr StorSimple-Gerät
 
-In diesem Tutorial erfahren Sie, wie Sie CHAP für Ihr StorSimple-Gerät konfigurieren. CHAP steht für Challenge Handshake Authentication-Protokoll. Dabei handelt es sich um ein Authentifizierungsschema, das von Servern zum Überprüfen der Identität von Remoteclients verwendet wird. Die Überprüfung basiert auf einem freigegebenen Kennwort oder geheimen Schlüssel.
+In diesem Tutorial erfahren Sie, wie Sie CHAP für Ihr StorSimple-Gerät konfigurieren. Das in diesem Artikel beschriebene Verfahren gilt für die StorSimple 8000-Serie sowie StorSimple 1200-Geräte.
 
-CHAP kann unidirektional oder bidirektional verwendet werden. Bei unidirektionalem CHAP authentifiziert das Ziel einen Initiator. Bei bidirektionalem (oder umgekehrtem) CHAP muss dagegen das Ziel den Initiator und der Initiator wiederum das Ziel authentifizieren. Die Initiatorauthentifizierung kann ohne Zielauthentifizierung implementiert werden. Die Zielauthentifizierung kann dagegen nur implementiert werden, wenn auch die Initiatorauthentifizierung implementiert ist.
+CHAP steht für Challenge Handshake Authentication-Protokoll. Dabei handelt es sich um ein Authentifizierungsschema, das von Servern zum Überprüfen der Identität von Remoteclients verwendet wird. Die Überprüfung basiert auf einem freigegebenen Kennwort oder geheimen Schlüssel. CHAP kann unidirektional oder bidirektional verwendet werden. Bei unidirektionalem CHAP authentifiziert das Ziel einen Initiator. Bei bidirektionalem (oder umgekehrtem) CHAP muss dagegen das Ziel den Initiator und der Initiator wiederum das Ziel authentifizieren. Die Initiatorauthentifizierung kann ohne Zielauthentifizierung implementiert werden. Die Zielauthentifizierung kann dagegen nur implementiert werden, wenn auch die Initiatorauthentifizierung implementiert ist.
 
 Es empfiehlt sich, CHAP zu verwenden, um die iSCSI-Sicherheit zu verbessern.
 
->[AZURE.NOTE]Bedenken Sie, dass IPsec auf StorSimple-Geräte derzeit nicht unterstützt wird.
+>[AZURE.NOTE] Bedenken Sie, dass IPsec auf StorSimple-Geräte derzeit nicht unterstützt wird.
 
 Die CHAP-Einstellungen auf dem StorSimple-Gerät können wie folgt konfiguriert werden:
 
@@ -49,8 +49,11 @@ Bei der unidirektionalen Authentifizierung authentifiziert das Ziel den Initiato
 
 	2. Geben Sie ein Kennwort für den CHAP-Initiator an.
 
-    > [AZURE.IMPORTANT]Der CHAP-Benutzername darf maximal 233 Zeichen enthalten. Das CHAP-Kennwort muss zwischen 12 und 16 Zeichen umfassen. Längere Benutzernamen oder Kennwörtern haben einen Authentifizierungsfehler auf dem Windows-Host zur Folge.
+   		 > [AZURE.IMPORTANT] Der CHAP-Benutzername darf maximal 233 Zeichen enthalten. Das CHAP-Kennwort muss zwischen 12 und 16 Zeichen umfassen. Längere Benutzernamen oder Kennwörtern haben einen Authentifizierungsfehler auf dem Windows-Host zur Folge.
+    
+	3. Bestätigen Sie das Kennwort.
 
+4. Klicken Sie auf **Speichern**. Eine Bestätigungsmeldung wird angezeigt. Klicken Sie zum Speichern der Änderungen auf **OK**.
 #### So konfigurieren Sie die unidirektionale Authentifizierung auf dem Windows-Hostserver
 
 1. Starten Sie auf dem Windows-Hostserver den iSCSI-Initiator.
@@ -83,9 +86,11 @@ Bei der unidirektionalen Authentifizierung authentifiziert das Ziel den Initiato
 
 		![Erweiterte Einstellungen (allgemein)](./media/storsimple-configure-chap/IC740946.png)
 
-5. Im Fenster **Eigenschaften von iSCSI-Initiator** wird auf der Registerkarte **Ziele** der Gerätestatus **Verbunden** angezeigt.
+5. Im Fenster **Eigenschaften von iSCSI-Initiator** wird auf der Registerkarte **Ziele** der Gerätestatus **Verbunden** angezeigt. Wenn Sie ein StorSimple 1200-Gerät verwenden, wird jedes Volume wie unten dargestellt als iSCSI-Ziel bereitgestellt. Daher müssen die Schritte 3 und 4 für jedes Volume wiederholt werden.
 
-    > [AZURE.IMPORTANT]Wenn Sie den iSCSI-Namen ändern, wird für neue iSCSI-Sitzungen der neue Name verwendet. Neue Einstellungen werden erst dann für vorhandene Sitzungen verwendet, wenn Sie sich ab- und wieder anmelden.
+	![Als separate Ziele bereitgestellte Volumes](./media/storsimple-configure-chap/chap4.png)
+
+    > [AZURE.IMPORTANT] Wenn Sie den iSCSI-Namen ändern, wird für neue iSCSI-Sitzungen der neue Name verwendet. Neue Einstellungen werden erst dann für vorhandene Sitzungen verwendet, wenn Sie sich ab- und wieder anmelden.
 
 Weitere Informationen zum Konfigurieren von CHAP auf dem Windows-Hostserver finden Sie unter [Zusätzliche Überlegungen](#additional-considerations).
 
@@ -153,7 +158,7 @@ Bei der bidirektionalen Authentifizierung muss das Ziel den Initiator und der In
 		![Erweiterte Einstellungen (wechselseitige Authentifizierung)](./media/storsimple-configure-chap/IC740950.png)
 
 	5. Klicken Sie auf **OK**, um die CHAP-Konfiguration abzuschließen.
-
+	 
 Weitere Informationen zum Konfigurieren von CHAP auf dem Windows-Hostserver finden Sie unter [Zusätzliche Überlegungen](#additional-considerations).
 
 ## Zusätzliche Überlegungen
@@ -192,4 +197,4 @@ Mit den folgenden Schritten können Sie überprüfen, ob CHAP verwendet wird.
 
 - Erfahren Sie mehr zum [Verwenden Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0218_2016-->
