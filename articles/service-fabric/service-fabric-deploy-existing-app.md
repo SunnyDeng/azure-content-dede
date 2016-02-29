@@ -44,12 +44,64 @@ Bevor Sie sich im Detail mit der Bereitstellung einer ausführbaren Gastanwendun
   In der Service Fabric-Terminologie ist eine Anwendung eine „aktualisierbare Einheit“. Eine Anwendung kann als eine Einheit aktualisiert werden, wobei potenzielle Fehler (und mögliche Zurücksetzungen) von der Plattform verwaltet werden. Durch die Plattform wird sichergestellt, dass der Upgradevorgang vollständig erfolgreich ist bzw. dass die Anwendung bei einem Upgradefehler nicht in einem unbekannten/instabilen Zustand belassen wird.
 
 
+  ```xml
+  <?xml version="1.0" encoding="utf-8"?>
+  <ApplicationManifest ApplicationTypeName="actor2Application"
+                       ApplicationTypeVersion="1.0.0.0"
+                       xmlns="http://schemas.microsoft.com/2011/01/fabric"
+                       xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <ServiceManifestImport>
+      <ServiceManifestRef ServiceManifestName="actor2Pkg" ServiceManifestVersion="1.0.0.0" />
+      <ConfigOverrides />
+    </ServiceManifestImport>
+
+    <DefaultServices>
+      <Service Name="actor2">
+        <StatelessService ServiceTypeName="actor2Type">
+          <SingletonPartition />
+        </StatelessService>
+      </Service>
+    </DefaultServices>
+
+  </ApplicationManifest> 
+  ```
+
 * **Dienstmanifest**
 
   Das Dienstmanifest beschreibt die Komponenten eines Diensts. Es enthält Daten, z. B. den Namen und den Typ des Diensts (die Informationen, die Service Fabric zur Verwaltung des Diensts verwendet), und seine Code-, Konfigurations- und Datenkomponenten. Das Dienstmanifest enthält auch einige zusätzliche Parameter, die verwendet werden können, um den Dienst zu konfigurieren, nachdem er bereitgestellt wurde.
 
   Hier werden nicht die Details aller unterschiedlichen Parameter beschrieben, die im Dienstmanifest verfügbar sind. Wir werden auf den relevanten Abschnitt eingehen, um eine ausführbare Gastanwendungsdatei in Service Fabric auszuführen.
 
+  ```xml
+  <?xml version="1.0" encoding="utf-8"?>
+  <ServiceManifest Name="actor2Pkg"
+                   Version="1.0.0.0"
+                   xmlns="http://schemas.microsoft.com/2011/01/fabric"
+                   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ServiceTypes>
+      <StatelessServiceType ServiceTypeName="actor2Type" />
+    </ServiceTypes>
+
+    <CodePackage Name="Code" Version="1.0.0.0">
+      <EntryPoint>
+        <ExeHost>
+          <Program>actor2.exe</Program>
+        </ExeHost>
+      </EntryPoint>
+    </CodePackage>
+
+    <ConfigPackage Name="Config" Version="1.0.0.0" />
+
+    <Resources>
+      <Endpoints>
+        <Endpoint Name="ServiceEndpoint" />
+      </Endpoints>
+    </Resources>
+  </ServiceManifest>
+  ```
 
 ## Dateistruktur des Anwendungspakets
 Damit eine Anwendung in Service Fabric bereitgestellt werden kann, muss die Anwendung einer vordefinierten Verzeichnisstruktur folgen. Es folgt ein Beispiel dieser Struktur.

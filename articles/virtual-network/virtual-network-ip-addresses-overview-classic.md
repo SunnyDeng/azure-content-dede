@@ -23,7 +23,7 @@ Sie können Azure-Ressourcen IP-Adressen zuweisen, um die Kommunikation mit ande
 
 Private IP-Adressen werden für die Kommunikation innerhalb eines virtuellen Azure-Netzwerks (VNet), Clouddiensts und Ihres lokalen Netzwerks verwendet, wenn Sie Ihr Netzwerk mithilfe eines VPN-Gateways oder einer ExpressRoute-Verbindung auf Azure ausdehnen.
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager deployment model](virtual-network-ip-addresses-overview-arm.md).
+[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/learn-about-deployment-models-classic-include.md)] [Ressourcen-Manager-Bereitstellungsmodell](virtual-network-ip-addresses-overview-arm.md).
 
 ## Öffentliche IP-Adressen
 Öffentliche IP-Adressen ermöglichen Azure-Ressourcen die Kommunikation mit dem Internet und öffentlichen Azure-Diensten wie [Azure Redis Cache](https://azure.microsoft.com/services/cache/), [Azure Event Hubs](https://azure.microsoft.com/services/event-hubs/), [SQL-Datenbanken](../sql-database/sql-database-technical-overview.md) und [Azure Storage](../storage/storage-introduction.md).
@@ -136,7 +136,7 @@ Die folgende Tabelle gibt Aufschluss über die einzelnen Ressourcentypen, die m�
 
 Folgende Tabelle zeigt die Einschränkungen für die IP-Adressierung in Azure gemäß Abonnement. Sie können sich [an den Support wenden](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade), um die Standardlimits Ihren Unternehmensanforderungen entsprechend auf die maximalen Grenzwerte zu erhöhen.
 
-|Standardlimit|Maximales Limit|
+||Standardlimit|Maximales Limit|
 |---|---|---|
 |Öffentliche IP-Adressen (dynamisch)|5|Support kontaktieren|
 |Reservierte öffentliche IP-Adressen|20|Support kontaktieren|
@@ -152,16 +152,16 @@ In den meisten Fällen sind öffentliche IP-Adressen kostenlos. Es wird eine Sch
 ## Unterschiede zwischen Ressourcen-Manager-Bereitstellungen und klassischen Bereitstellungen
 Im Folgenden werden IP-Adressfeatures im Ressourcen-Manager-Bereitstellungsmodell und im klassischen Bereitstellungsmodell miteinander verglichen.
 
-|Ressource|Klassisch|Ressourcen-Manager|
+||Ressource|Klassisch|Ressourcen-Manager|
 |---|---|---|---|
 |**Öffentliche IP-Adresse**|VM|Bezeichnet als ILPIP (nur dynamisch)|Bezeichnet als öffentliche IP-Adresse (dynamisch oder statisch)|
-|Einem virtuellen IaaS-Computer oder einer PaaS-Rolleninstanz zugewiesen|Der NIC des virtuellen Computers zugeordnet|
-|Load Balancer mit Internetzugriff|Bezeichnet als VIP (dynamisch) oder reservierte IP-Adresse (statisch)|Bezeichnet als öffentliche IP-Adresse (dynamisch oder statisch)|
-|Einem Clouddienst zugewiesen|Der Front-End-Konfiguration des Load-Balancer zugeordnet|
-|
+|||Einem virtuellen IaaS-Computer oder einer PaaS-Rolleninstanz zugewiesen|Der NIC des virtuellen Computers zugeordnet|
+||Load Balancer mit Internetzugriff|Bezeichnet als VIP (dynamisch) oder reservierte IP-Adresse (statisch)|Bezeichnet als öffentliche IP-Adresse (dynamisch oder statisch)|
+|||Einem Clouddienst zugewiesen|Der Front-End-Konfiguration des Load-Balancer zugeordnet|
+||||
 |**Private IP-Adresse**|VM|Bezeichnet als DIP|Bezeichnet als private IP-Adresse|
-|Einem virtuellen IaaS-Computer oder einer PaaS-Rolleninstanz zugewiesen|Der NIC des virtuellen Computers zugewiesen|
-|Interner Load Balancer (ILB)|Dem ILB (dynamisch oder statisch) zugewiesen|Der ILB-Front-End-Konfiguration (dynamisch oder statisch) zugewiesen|
+|||Einem virtuellen IaaS-Computer oder einer PaaS-Rolleninstanz zugewiesen|Der NIC des virtuellen Computers zugewiesen|
+||Interner Load Balancer (ILB)|Dem ILB (dynamisch oder statisch) zugewiesen|Der ILB-Front-End-Konfiguration (dynamisch oder statisch) zugewiesen|
 
 ## Nächste Schritte
 - [Bereitstellen einer VM mit einer statischen privaten IP-Adresse](virtual-networks-static-private-ip-classic-pportal.md) mithilfe des klassischen Portals.

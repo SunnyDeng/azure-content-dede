@@ -34,7 +34,8 @@ Wie das folgende Diagramm veranschaulicht, besteht das hierarchische **Ressource
 
 >[AZURE.NOTE] DocumentDB bietet ein hoch effizientes TCP-Protokoll mit einem RESTful-basierten Kommunikationsmodell, das über das [.NET Client-SDK](https://msdn.microsoft.com/library/azure/dn781482.aspx) verfügbar ist.
 
-![Hierarchisches Ressourcenmodell von DocumentDB][1] **Hierarchisches Ressourcenmodell**
+![Hierarchisches Ressourcenmodell von DocumentDB][1]  
+**Hierarchisches Ressourcenmodell**
 
 Um mit Ressourcen zu arbeiten, müssen Sie über Ihr Azure-Abonnement [ein DocumentDB-Datenbankkonto erstellen](documentdb-create-account.md). Ein Datenbankkonto kann aus einer Reihe von **Datenbanken** mit jeweils mehreren **Sammlungen** bestehen, die jeweils wiederum **gespeicherte Prozeduren, Trigger, UDFs, Dokumente** und zugehörige **Anlagen** (Vorschaufunktion) enthalten. Einer Datenbank sind zudem **Benutzer** zugeordnet, die jeweils über eine Reihe von **Berechtigungen** verfügen, um auf Sammlungen, gespeicherte Prozeduren, Trigger, UDFs, Dokumente oder Anhänge zuzugreifen. Während Datenbanken, Benutzer, Berechtigungen und Sammlungen vom System definierte Ressourcen mit bekannten Schemas sind, enthalten Dokumente und Anhänge beliebige, benutzerdefinierte JSON-Inhalte.
 
@@ -60,15 +61,30 @@ Ressourcen wie Datenbankkonten, Datenbanken, Sammlungen, Benutzer, Berechtigunge
 
 Eigenschaft |Vom Benutzer einstellbar oder systemgeneriert?|Zweck
 ---|---|---
-_\_rid|Vom System generiert|Vom System generierter, eindeutiger und hierarchischer Bezeichner der Ressource \_etag|Vom System generiert|ETag der Ressource, das für die Steuerung optimistischer Parallelität erforderlich ist \_ts|Vom System generiert|Zuletzt aktualisierter Zeitstempel der Ressource \_self|Vom System generiert|Eindeutiger aufrufbarer URI der Ressource id|Vom Benutzer festlegbar|Benutzerdefinierter eindeutiger Name der Ressource Wenn der Benutzer keine ID angibt, wird eine ID vom System generiert.
+_rid|Vom System generiert|Vom System generierter, eindeutiger und hierarchischer Bezeichner der Ressource
+_etag|Vom System generiert|ETag der Ressource, das für die Steuerung optimistischer Parallelität erforderlich ist
+_ts|Vom System generiert|Zuletzt aktualisierter Zeitstempel der Ressource
+_self|Vom System generiert|Eindeutiger aufrufbarer URI der Ressource
+id|Vom Benutzer festlegbar|Benutzerdefinierter eindeutiger Name der Ressource Wenn der Benutzer keine ID angibt, wird eine ID vom System generiert.
 
 ### Übermittlungsdarstellung der Ressourcen
 DocumentDB verfügt über keine proprietären Erweiterungen des JSON-Standards oder besonderer Codierungen, und kann nur mit standardkonformen JSON-Dokumenten verwendet werden.
  
 ### Adressieren einer Ressource
-Alle Ressourcen können über URI aufgerufen werden. Der Wert der **\_self**-Eigenschaft einer Ressource stellt den relativen URI der Ressource dar. Das Format des URI besteht aus den /<feed>/{\_rid}-Pfadsegmenten:
+Alle Ressourcen können über URI aufgerufen werden. Der Wert der **\_self**-Eigenschaft einer Ressource stellt den relativen URI der Ressource dar. Das Format des URI besteht aus den /\<feed>/{\_rid}-Pfadsegmenten:
 
-|Wert von „\_self“ |Beschreibung |-------------------|----------- |/dbs |Feed der Datenbanken in einem Datenbankkonto |/dbs/{\_rid-db} |Datenbank mit einer ID mit dem Wert {\_rid-db} |/dbs/{\_rid-db}/colls/ |Feed der Sammlungen in einer Datenbank |/dbs/{\_rid-db}/colls/{\_rid-coll} |Sammlung mit einer ID mit dem Wert {\_rid-coll} |/dbs/{\_rid-db}/colls/{\_rid-coll}/docs |Feed von Dokumenten in einer Sammlung |/dbs/{\_rid-db}/colls/{\_rid-coll}/docs/{\_rid-doc} |Dokument mit einer ID mit dem Wert {\_rid-doc} |/dbs/{\_rid-db}/users/ |Feed der Benutzer in einer Datenbank |/dbs/{\_rid-db}/users/{\_rid-user} |Benutzer mit einer ID mit dem Wert {\_rid-user} |/dbs/{\_rid-db}/users/{\_rid-user}/permissions |Feed der Berechtigungen für einen Benutzer |/dbs/{\_rid-db}/users/{\_rid-user}/permissions/{\_rid-permission} |Berechtigung mit einer ID mit dem Wert {\_rid-permission}.
+|Wert von „\_self“ |Beschreibung 
+|-------------------|-----------
+|/dbs |Feed der Datenbanken in einem Datenbankkonto
+|/dbs/{\_rid-db} |Datenbank mit einer ID mit dem Wert {\_rid-db}
+|/dbs/{\_rid-db}/colls/ |Feed der Sammlungen in einer Datenbank
+|/dbs/{\_rid-db}/colls/{\_rid-coll} |Sammlung mit einer ID mit dem Wert {\_rid-coll}
+|/dbs/{\_rid-db}/colls/{\_rid-coll}/docs |Feed von Dokumenten in einer Sammlung
+|/dbs/{\_rid-db}/colls/{\_rid-coll}/docs/{\_rid-doc} |Dokument mit einer ID mit dem Wert {\_rid-doc}
+|/dbs/{\_rid-db}/users/ |Feed der Benutzer in einer Datenbank
+|/dbs/{\_rid-db}/users/{\_rid-user} |Benutzer mit einer ID mit dem Wert {\_rid-user}
+|/dbs/{\_rid-db}/users/{\_rid-user}/permissions |Feed der Berechtigungen für einen Benutzer
+|/dbs/{\_rid-db}/users/{\_rid-user}/permissions/{\_rid-permission} |Berechtigung mit einer ID mit dem Wert {\_rid-permission}.
   
 Jede Ressource verfügt über einen eindeutigen benutzerdefinierten Namen, der über die ID-Eigenschaft bereitgestellt wird. Hinweis: Wenn der Benutzer für Dokumente keine ID angibt, generiert das System automatisch eine eindeutige ID für das Dokument. Die ID ist eine benutzerdefinierte Zeichenfolge mit bis zu 256 Zeichen Länge, die innerhalb des Kontexts einer bestimmten übergeordneten Ressource eindeutig ist. Der Wert der ID-Eigenschaft aller Dokumente innerhalb einer bestimmten Sammlung ist z. B. eindeutig, ist jedoch sammlungsübergreifend möglicherweise nicht eindeutig. Der Wert der ID-Eigenschaft aller Berechtigungen eines bestimmten Benutzers ist ebenso eindeutig, ist jedoch benutzerübergreifend möglicherweise eindeutig. Die \_rid-Eigenschaft wird zum Erstellen eines aufrufbaren \_self-Links einer Ressource verwendet.
 
@@ -96,7 +112,8 @@ Beachten Sie, dass Sie zusätzlich zur Bereitstellung, Konfiguration und Verwalt
 ## Datenbanken
 Eine DocumentDB-Datenbank ist ein logischer Container einer oder mehrerer Sammlungen und Benutzer, wie im folgenden Diagramm dargestellt. Sie können eine beliebige Anzahl von Datenbanken unter einem DocumentDB-Datenbankkonto erstellen, abhängig von der angegebenen Grenze.
 
-![Hierarchisches Modell für Datenbankkonten und -sammlungen][2] **Eine Datenbank ist ein logischer Container von Benutzern und Sammlungen**
+![Hierarchisches Modell für Datenbankkonten und -sammlungen][2]  
+**Eine Datenbank ist ein logischer Container von Benutzern und Sammlungen**
 
 Eine Datenbank kann praktisch unbegrenzten Dokumentspeicher enthalten, der in Sammlungen unterteilt ist, die die Transaktionsdomänen für die darin enthaltenen Dokumente bilden.
 
@@ -378,7 +395,8 @@ Da sich die Skalierung Ihrer Anwendung an die zunehmende Anzahl der Benutzer anp
 
 Unabhängig von der gewählten Strategie für die horizontale Partitionierung können Sie Ihre realen Benutzer als Benutzer in der DocumentDB-Datenbank abbilden und den einzelnen Benutzern differenzierte Berechtigungen zuweisen.
 
-![Benutzersammlungen][3] **Shardingstrategien und Benutzermodellierung**
+![Benutzersammlungen][3]  
+**Shardingstrategien und Benutzermodellierung**
 
 Wie alle anderen Ressourcen können Benutzer in DocumentDB mithilfe der REST-APIs oder eines Client-SDKs einfach erstellt, ersetzt, gelöscht, gelesen und aufgezählt werden. DocumentDB bietet für das Lesen oder Abfragen der Metadaten einer Benutzerressource immer eine hohe Konsistenz. Es sollte dabei darauf hingewiesen werden, dass das Löschen eines Benutzers automatisch sicherstellt, dass Sie auf keine der ihm zugeordneten Berechtigungen zugreifen können. Obwohl das Kontingent der Berechtigungen als Teil des gelöschten Benutzers im Hintergrund von DocumentDB freigegeben wird, stehen die gelöschten Berechtigungen sofort wieder für Sie zur Verfügung.
 

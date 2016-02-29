@@ -37,7 +37,11 @@ Die folgende Tabelle zeigt die Grundvoraussetzungen für eine Verbindung mit Azu
 | URL | Port | Beschreibung |
 | ---- | ---- | ---- |
 | mscrl.microsoft.com | HTTP/80 | Wird verwendet um CRL-Listen (Zertifikatsperrlisten) herunterzuladen. |
-| **.verisign.com | HTTP/80 | Wird zum Herunterladen von CRL-Listen verwendet. | | *.trust.com | HTTP/80 | Wird zum Herunterladen von CRL-Listen für MFA verwendet. | | *.windows.net | HTTPS/443 | Wird zum Anmelden bei Azure AD verwendet. | | secure.aadcdn.microsoftonline-p.com | HTTPS/443 | Wird für MFA verwendet. | | *.microsoftonline.com | HTTPS/443 | Wird zum Konfigurieren Ihres Azure AD-Verzeichnisses und zum Importieren/Exportieren von Daten verwendet. |
+| **.verisign.com | HTTP/80 | Wird zum Herunterladen von CRL-Listen verwendet. |
+| *.trust.com | HTTP/80 | Wird zum Herunterladen von CRL-Listen für MFA verwendet. |
+| *.windows.net | HTTPS/443 | Wird zum Anmelden bei Azure AD verwendet. |
+| secure.aadcdn.microsoftonline-p.com | HTTPS/443 | Wird für MFA verwendet. |
+| *.microsoftonline.com | HTTPS/443 | Wird zum Konfigurieren Ihres Azure AD-Verzeichnisses und zum Importieren/Exportieren von Daten verwendet. |
 
 ## Fehler im Assistenten
 Der Installations-Assistent verwendet zwei verschiedene Sicherheitskontexte. Auf der Seite **Mit Azure AD verbinden** verwendet er den aktuell angemeldeten Benutzer. Auf der Seite **Konfigurieren** wechselt er auf das [Konto, das den Dienst für das Synchronisierungsmodul ausführt](active-directory-aadconnect-accounts-permissions.md#azure-ad-connect-sync-service-accounts). Die Proxykonfigurationen, die wir vornehmen, gelten für den ganzen Computer. Daher werden auftretende Probleme höchstwahrscheinlich bereits auf der Seite **Mit Azure AD verbinden** des Assistenten angezeigt.

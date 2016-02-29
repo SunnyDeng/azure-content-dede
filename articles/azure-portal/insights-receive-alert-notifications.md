@@ -32,13 +32,16 @@ Beim Erstellen einer Warnungsregel können Sie Optionen auswählen, um eine E-Ma
 
 2. Klicken Sie im Bereich **Operations** auf die Kachel **Warnungsregeln**.
 
-3. Klicken Sie auf den Befehl **Warnung hinzufügen**. ![Warnung hinzufügen](./media/insights-receive-alert-notifications/Insights_AddAlert.png)
+3. Klicken Sie auf den Befehl **Warnung hinzufügen**.
+    ![Warnung hinzufügen](./media/insights-receive-alert-notifications/Insights_AddAlert.png)
 
 4. Sie können einen Namen für die Warnungsregel eingeben und eine Beschreibung auswählen, die in der Benachrichtigungs-E-Mail angezeigt wird.
 
-5. Bei Auswahl von **Metrics** geben Sie eine Bedingung und einen Schwellenwert für die Metrik an. Dies ist der Zeitraum, den Azure verwendet, um die Warnungsaktivität zu überwachen und darzustellen. ![Bedingung und Schwellenwert](./media/insights-receive-alert-notifications/Insights_ConditionAndThreshold.png)
+5. Bei Auswahl von **Metrics** geben Sie eine Bedingung und einen Schwellenwert für die Metrik an. Dies ist der Zeitraum, den Azure verwendet, um die Warnungsaktivität zu überwachen und darzustellen.
+    ![Bedingung und Schwellenwert](./media/insights-receive-alert-notifications/Insights_ConditionAndThreshold.png)
 
-6. Sie können auch **Events** auswählen, um eine Benachrichtigung zu erhalten, wenn ein bestimmtes Ereignis auftritt. ![Ereignisse](./media/insights-receive-alert-notifications/Insights_Events.png)
+6. Sie können auch **Events** auswählen, um eine Benachrichtigung zu erhalten, wenn ein bestimmtes Ereignis auftritt. 
+    ![Ereignisse](./media/insights-receive-alert-notifications/Insights_Events.png)
 
 7. Anschließend können Sie festlegen, dass eine E-Mail-Benachrichtigung an die zuständigen Administratoren gesendet wird.
 

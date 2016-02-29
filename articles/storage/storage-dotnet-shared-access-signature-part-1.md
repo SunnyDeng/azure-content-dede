@@ -314,6 +314,8 @@ Shared Access Signatures sind nützlich für die Vergabe eingeschränkter Berech
 - [Erste Schritte mit Azure File Storage unter Windows](storage-dotnet-how-to-use-files.md)
 - [Verwalten des anonymen Lesezugriffs auf Container und Blobs](storage-manage-access-to-resources.md)
 - [Delegieren des Zugriffs mit einer Shared Access Signature](http://msdn.microsoft.com/library/azure/ee395415.aspx)
-- [Einführung in Tabellen- und Warteschlangen-SAS](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/06/12/introducing-table-sas-shared-access-signature-queue-sas-and-update-to-blob-sas.aspx) [sas-storage-fe-proxy-service]: ./media/storage-dotnet-shared-access-signature-part-1/sas-storage-fe-proxy-service.png [sas-storage-provider-service]: ./media/storage-dotnet-shared-access-signature-part-1/sas-storage-provider-service.png
+- [Einführung in Tabellen- und Warteschlangen-SAS](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/06/12/introducing-table-sas-shared-access-signature-queue-sas-and-update-to-blob-sas.aspx)
+[sas-storage-fe-proxy-service]: ./media/storage-dotnet-shared-access-signature-part-1/sas-storage-fe-proxy-service.png
+[sas-storage-provider-service]: ./media/storage-dotnet-shared-access-signature-part-1/sas-storage-provider-service.png
 
 <!---HONumber=AcomDC_0218_2016-->
