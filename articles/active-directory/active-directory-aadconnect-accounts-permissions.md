@@ -13,11 +13,11 @@
    ms.tgt_pltfrm="na"
    ms.devlang="na"
    ms.topic="article"
-   ms.date="01/21/2016"
+   ms.date="02/16/2016"
    ms.author="andkjell;billmath"/>
 
 
-# Erforderliche Konten und Berechtigungen für Azure AD Connect
+# Azure AD Connect: Konten und Berechtigungen
 
 Der Azure AD Connect-Installations-Assistent bietet zwei verschiedene Methoden:
 
@@ -36,7 +36,7 @@ Wenn Sie die Dokumentation zum [Integrieren Ihrer lokalen Identitäten in Azure 
 
 
 ## Installation mit Express-Einstellungen
-In den Express-Einstellungen fordert der Installations-Assistent zur Angabe von Enterprise-Administratoranmeldeinfos auf, daher kann Ihr lokales Active Directory mit den erforderlichen Berechtigungen für Azure AD Connect konfiguriert werden. Bei einem Upgrade von DirSync werden die Enterprise-Administratoranmeldeinfos verwendet, um das Kennwort für das von Dirsync verwendete Konto zurückzusetzen.
+In den Expresseinstellungen fordert der Installations-Assistent zur Angabe von AD DS Enterprise-Administratoranmeldeinformationen auf, damit Ihr lokales Active Directory mit den erforderlichen Berechtigungen für Azure AD Connect konfiguriert werden kann. Bei einem Upgrade von DirSync werden die AD DS Enterprise-Administratoranmeldeinformationen verwendet, um das Kennwort für das von DirSync verwendete Konto zurückzusetzen. Sie müssen außerdem Ihre globalen Azure AD-Administratoranmeldeinformationen eingeben.
 
 Seite des Assistenten | Erfasste Anmeldeinformationen | Erforderliche Berechtigungen| Verwendung
 ------------- | ------------- |------------- |------------- |
@@ -48,10 +48,22 @@ Herstellen einer Verbindung mit AD DS | Lokale Active Directory-Anmeldeinformati
 Diese Anmeldeinformationen werden nur während der Installation verwendet und nicht mehr, nachdem die Installation abgeschlossen ist. Es handelt sich um Enterprise-Administratoren und nicht um Domänenadministratoren, um sicherzustellen, dass die Berechtigungen in Active Directory in allen Domänen festgelegt werden können.
 
 ### Globale Administratoranmeldeinfos
-Diese Anmeldeinformationen werden nur während der Installation verwendet und nicht mehr, nachdem die Installation abgeschlossen ist. Sie dienen zum Erstellen des [Azure AD-Kontos](#azure-ad-service-account) zum Synchronisieren der Änderungen mit Azure AD. Das Konto aktiviert auch Synchronisierung als Feature in Azure AD. Für das verwendete Konto kann keine MFA aktiviert werden.
+Diese Anmeldeinformationen werden nur während der Installation verwendet und nicht mehr, nachdem die Installation abgeschlossen ist. Sie dienen zum Erstellen des [Azure AD-Kontos](#azure-ad-service-account) zum Synchronisieren der Änderungen mit Azure AD. Das Konto aktiviert auch Synchronisierung als Feature in Azure AD.
+
+### Berechtigungen für das erstellte AD DS-Konto für Expresseinstellungen
+Das [Konto](#active-directory-account), das für Lese- und Schreibvorgänge in AD DS erstellt wurde, besitzt die folgenden Berechtigungen, wenn es über die Expresseinstellungen erstellt wird:
+
+| Berechtigung | Verwendung |
+| ---- | ---- |
+| <li>Verzeichnisänderungen replizieren</li><li> Verzeichnisänderungen replizieren: Alle | Kennwortsynchronisierung |
+| Alle Eigenschaften lesen/schreiben: Benutzer | Importieren und Exchange-Hybridbereitstellung |
+| Alle Eigenschaften lesen/schreiben: iNetOrgPerson | Importieren und Exchange-Hybridbereitstellung |
+| Alle Eigenschaften lesen/schreiben: Gruppe | Importieren und Exchange-Hybridbereitstellung |
+| Alle Eigenschaften lesen/schreiben: Kontakt | Importieren und Exchange-Hybridbereitstellung |
+| Kennwort zurücksetzen | Vorbereitung für das Aktivieren des Rückschreibens von Kennwörtern |
 
 ## Installation mit benutzerdefinierten Einstellungen
-Wenn Sie benutzerdefinierte Einstellungen verwenden, muss das Konto für die Verbindung mit Active Directory vor der Installation erstellt werden.
+Wenn Sie benutzerdefinierte Einstellungen verwenden, muss das Konto für die Verbindung mit Active Directory vor der Installation erstellt werden. Die Berechtigungen, die Sie diesem Konto erteilen müssen, finden Sie unter [Erstellen des AD DS-Kontos](#create-the-ad-ds-account).
 
 Seite des Assistenten | Erfasste Anmeldeinformationen | Erforderliche Berechtigungen| Verwendung
 ------------- | ------------- |------------- |-------------
@@ -74,7 +86,7 @@ Welche Berechtigungen Sie benötigen, hängt von den aktivierten optionalen Funk
 | Kennwortsynchronisierung | <li>Verzeichnisänderungen replizieren</li> <li>Alle Verzeichnisänderungen replizieren |
 | Exchange-Hybridbereitstellung | Schreibberechtigungen für die Attribute, die in [Exchange-Hybridrückschreiben](active-directory-aadconnectsync-attributes-synchronized.md#exchange-hybrid-writeback) für Benutzer, Gruppen und Kontakte dokumentiert sind. |
 | Rückschreiben von Kennwörtern | Schreibberechtigungen für die Attribute, die in [Erste Schritte mit der Kennwortverwaltung](active-directory-passwords-getting-started.md#step-4-set-up-the-appropriate-active-directory-permissions) für Benutzer dokumentiert sind. |
-| Geräterückschreiben | Berechtigungen, die mit einem PowerShell-Skript erteilt wurden, wie unter [Geräterückschreiben](active-directory-aadconnect-get-started-custom-device-writeback.md) beschrieben.|
+| Geräterückschreiben | Berechtigungen, die mit einem PowerShell-Skript erteilt wurden, wie unter [Geräterückschreiben](active-directory-aadconnect-feature-device-writeback.md) beschrieben.|
 | Gruppenrückschreiben | Lesen, Erstellen, Aktualisieren und Löschen von Gruppenobjekten in der Organisationseinheit, in der sich die Verteilergruppen befinden sollen.|
 
 ## Upgrade
@@ -95,13 +107,13 @@ Wenn Sie Express-Einstellungen verwenden, wird ein Konto für die Synchronisieru
 ![AD-Konto](./media/active-directory-aadconnect-accounts-permissions/adsyncserviceaccount.png)
 
 ### Azure AD Connect-Synchronisierungsdienstkonten
-Der Installations-Assistent erstellt zwei lokale Dienstkonten (sofern das zu verwendende Konto nicht in den benutzerdefinierten Einstellungen angegeben wird). Das Konto mit dem Präfix **AAD\_** wird zur Ausführung des eigentlichen Synchronisierungsdiensts verwendet. Wenn Sie Azure AD Connect auf einem Domänencontroller installieren, werden die Konten in der Domäne erstellt. Wenn Sie SQL Server auf einem Remoteserver verwenden, muss sich das Dienstkonto **AAD\_** in der Domäne befinden. Das Konto mit dem Präfix **AADSyncSched\_** wird für die geplante Aufgabe verwendet, mit der das Synchronisierungsmodul ausgeführt wird.
+Der Installations-Assistent erstellt ein lokales Dienstkonto (sofern das Konto nicht zur Verwendung in benutzerdefinierten Einstellungen angegeben wird). Das Konto ist mit dem Präfix **AAD\_** versehen und wird zur Ausführung des eigentlichen Synchronisierungsdiensts verwendet. Wenn Sie Azure AD Connect auf einem Domänencontroller installieren, wird das Konto in der Domäne erstellt. Wenn Sie SQL Server auf einem Remoteserver verwenden, muss sich das Dienstkonto **AAD\_** in der Domäne befinden.
 
 ![Synchronisierungsdienstkonto](./media/active-directory-aadconnect-accounts-permissions/syncserviceaccount.png)
 
-Die Konten werden mit einem langen komplexen Kennwort erstellt, das nicht abläuft.
+Das Konto wird mit einem langen komplexen Kennwort erstellt, das nicht abläuft.
 
-Das Dienstkonto für das Synchronisierungsmodul wird von Windows verwendet, um die Verschlüsselungsschlüssel zu speichern. Darum darf das Kennwort für dieses Konto nicht zurückgesetzt oder geändert werden.
+Dieses Konto wird von Windows verwendet, um die Verschlüsselungsschlüssel zu speichern, daher sollte das Kennwort für dieses Konto nicht zurückgesetzt oder geändert werden.
 
 Bei Verwendung eines vollständigen SQL Servers wird das Dienstkonto zum DBO der Datenbank, die für das Synchronisierungsmodul erstellt wurde. Der Dienst funktioniert mit anderen Berechtigungen nicht wie vorgesehen. Eine SQL-Anmeldung wird ebenfalls erstellt.
 
@@ -122,4 +134,4 @@ Das Dienstkonto wird mit einem langen komplexen Kennwort erstellt, das nicht abl
 
 Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

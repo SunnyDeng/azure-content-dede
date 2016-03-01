@@ -201,7 +201,7 @@ Definitionen von Oozie-Workflows werden in hPDL (einer XML-Prozessdefinitionsspr
 
 Die folgenden Schritte dienen zum Erstellen der Azure SQL-Datenbank, in die Daten exportiert werden sollen.
 
-> [AZURE.IMPORTANT] Vor dem Ausführen dieser Schritte müssen Sie die [Azure-Befehlszeilenschnittstelle installieren und konfigurieren](xplat-cli-install.md). Das Installieren der Befehlszeilenschnittstelle und die Schritte zum Erstellen einer Datenbank können entweder im HDInsight-Cluster oder auf der lokalen Arbeitsstation ausgeführt werden.
+> [AZURE.IMPORTANT] Vor dem Ausführen dieser Schritte müssen Sie die [Azure-Befehlszeilenschnittstelle installieren und konfigurieren](../xplat-cli-install.md). Das Installieren der Befehlszeilenschnittstelle und die Schritte zum Erstellen einer Datenbank können entweder im HDInsight-Cluster oder auf der lokalen Arbeitsstation ausgeführt werden.
 
 1. Verwenden Sie den folgenden Befehl, um einen neuen Azure SQL-Datenbankserver zu erstellen:
 
@@ -721,4 +721,4 @@ In diesem Lernprogramm haben Sie gelernt, wie ein Oozie-Workflow definiert und e
 
 [technetwiki-hive-error]: http://social.technet.microsoft.com/wiki/contents/articles/23047.hdinsight-hive-error-unable-to-rename.aspx
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0218_2016-->

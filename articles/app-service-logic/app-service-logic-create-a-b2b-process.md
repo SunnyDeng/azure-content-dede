@@ -10,15 +10,15 @@
 <tags
    ms.service="app-service-logic"
    ms.devlang="multiple"
-   ms.topic="article"
+	ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="integration" 
-   ms.date="12/07/2015"
+   ms.date="02/18/2016"
    ms.author="rajram"/>
-
 
 # Erstellen eines B2B-Prozesses
 
+>[AZURE.NOTE] Diese Version des Artikels gilt für die Schemavorschauversion (Stand: 01.12.2014) für Logik-Apps.
 
 ## Geschäftsszenario 
 Contoso und Northwind sind Geschäftspartner. Contoso (der Einzelhändler) sendet Bestellungen über einen branchenüblichen Transportweg wie AS2 an Northwind (den Lieferanten). Bei Northwind werden alle eingehenden Bestellungen im eigenen Cloud-Speicher gespeichert. Die Bestellungen sind XML-Nachrichten zwischen diesen beiden Partnern. Sobald die Nachricht im Cloud-Speicher von Northwind gespeichert ist, wird die Bestellung ab diesem Punkt mithilfe interner Prozesse bei Northwind verarbeitet.
@@ -69,4 +69,4 @@ In diesem Tutorial wird davon ausgegangen, dass Sie ein grundlegendes Verständn
 [2]: ./media/app-service-logic-create-a-b2b-process/Tracking.png
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0224_2016-->

@@ -13,7 +13,7 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="identity"
-    ms.date="02/09/2016"
+    ms.date="02/17/2016"
     ms.author="liviodlc"/>
 
 #Tutorial: Integrieren von Google Apps in Azure Active Directory
@@ -22,7 +22,7 @@ In diesem Tutorial erfahren Sie, wie Sie Ihre Google Apps-Umgebung mit Ihrem Azu
 
 ##Voraussetzungen
 
-1. Um über das [Azure-Verwaltungsportal](https://manage.windowsazure.com) auf Azure Active Directory zuzugreifen, benötigen Sie ein gültiges Azure-Abonnement.
+1. Um über das [klassische Azure-Portal](https://manage.windowsazure.com) auf Azure Active Directory zuzugreifen, müssen Sie über ein gültiges Azure-Abonnement verfügen.
 
 2. Sie benötigen einen gültigen Mandanten für [Google Apps for Work](https://www.google.com/work/apps/) oder [Google Apps for Education](https://www.google.com/edu/products/productivity-tools/). Sie können ein kostenloses Testkonto für einen der Dienste verwenden.
 
@@ -32,9 +32,27 @@ So aktivieren Sie das einmalige Anmelden bei Google Apps in zwei Minuten
 
 > [AZURE.VIDEO enable-single-sign-on-to-google-apps-in-2-minutes-with-azure-ad]
 
+##Häufig gestellte Fragen
+
+1. **F: Sind Chromebooks und andere Chrome-Geräte mit dem einmaligen Anmelden in Azure AD kompatibel?**
+
+	A: Ja, Benutzer können sich mit ihren Azure AD-Anmeldeinformationen bei ihren Chromebook-Geräten anmelden. In diesem [Google Apps-Supportartikel](https://support.google.com/chrome/a/answer/6060880) finden Sie Informationen darüber, warum Benutzer möglicherweise zweimal zum Eingeben der Anmeldeinformationen aufgefordert werden.
+
+2. **F: Wenn ich einmaliges Anmelden aktiviere, können Benutzer dann ihre Azure AD-Anmeldeinformationen zum Anmelden bei Google-Produkten wie Google Classroom, GMail, Google Drive, YouTube usw. verwenden?**
+
+	A: Ja, je nachdem, [welche Google-Apps](https://support.google.com/a/answer/182442?hl=en&ref_topic=1227583) Sie für Ihre Organisation aktivieren oder deaktivieren.
+
+3. **F: Kann ich einmaliges Anmelden nur für einen Teil meiner Google Apps-Benutzer aktivieren?**
+
+	A: Nein. Wenn Sie einmaliges Anmelden aktivieren, müssen sich all Ihre Google Apps-Benutzer sofort mit ihren Azure AD-Anmeldeinformationen authentifizieren. Da Google Apps die Verwendung mehrerer Identitätsanbieter nicht unterstützt, kann entweder Azure AD oder Google als Identitätsanbieter für Ihre Google Apps-Umgebung dienen – aber nicht beide gleichzeitig.
+
+4. **F: Wenn ein Benutzer über Windows angemeldet ist, wird er dann automatisch bei Google Apps authentifiziert, ohne dass er zur Eingabe eines Kennworts aufgefordert wird?**
+
+	A: Es gibt zwei Optionen zum Aktivieren dieses Szenarios. Benutzer können sich über die [Azure Active Directory-Einbindung](active-directory-azureadjoin-overview.md) bei Windows 10-Geräten anmelden. Alternativ dazu können Benutzer sich bei Windows-Geräten anmelden, die über eine Domäne mit einem lokalen Active Directory verbunden sind, das für einmaliges Anmelden bei Azure AD über eine [AD FS](active-directory-aadconnect-user-signin.md)-Bereitstellung (Active Directory-Verbunddienste) aktiviert wurde. Für beide Optionen müssen Sie das Tutorial unten befolgen, um einmaliges Anmelden zwischen Azure AD und Google Apps zu aktivieren.
+
 ##Schritt 1: Hinzufügen von Google Apps zu Ihrem Verzeichnis
 
-1. Klicken Sie im linken Navigationsbereich des [Azure-Verwaltungsportals](https://manage.windowsazure.com) auf **Active Directory**.
+1. Klicken Sie im linken Navigationsbereich des [klassischen Azure-Portals](https://manage.windowsazure.com) auf **Active Directory**.
 
 	![Wählen Sie im linken Navigationsbereich "Active Directory".][0]
 
@@ -76,7 +94,7 @@ So aktivieren Sie das einmalige Anmelden bei Google Apps in zwei Minuten
 
 	![Geben Sie Ihre Mandanten-URL ein.][8]
 
-4. Geben Sie auf der Seite **Einmaliges Anmelden automatisch konfigurieren** die Domäne für Ihren Google Apps-Mandanten ein. Klicken Sie auf dann die Schaltfläche **Konfigurieren**.
+4. Geben Sie auf der Seite **Einmaliges Anmelden automatisch konfigurieren** die Domäne für Ihren Google Apps-Mandanten ein. Klicken Sie dann auf die Schaltfläche **Konfigurieren**.
 
 	![Geben Sie Ihren Domänennamen ein, und klicken Sie auf „Konfigurieren“.](./media/active-directory-saas-google-apps-tutorial/ga-auto-config.png)
 
@@ -176,7 +194,7 @@ Wenn Sie das einmalige Anmelden lieber manuell einrichten möchten, führen Sie 
 
 4. Wenn Sie Ihrem Azure Active Directory noch keinen benutzerdefinierten Domänennamen hinzugefügt haben, führen Sie die folgenden Schritte aus:
 
-	- Klicken Sie im linken Navigationsbereich des [Azure-Verwaltungsportals](https://manage.windowsazure.com) auf **Active Directory**. Wählen Sie in der Verzeichnisliste Ihr Verzeichnis aus. 
+	- Klicken Sie im linken Navigationsbereich des [klassischen Azure-Portals](https://manage.windowsazure.com) auf **Active Directory**. Wählen Sie in der Verzeichnisliste Ihr Verzeichnis aus. 
 
 	- Klicken Sie im Menü der obersten Ebene auf **Domänen**, und klicken Sie dann auf **Benutzerdefinierte Domäne hinzufügen**.
 
@@ -295,4 +313,4 @@ Wenn Sie das einmalige Anmelden lieber manuell einrichten möchten, führen Sie 
 [29]: ./media/active-directory-saas-google-apps-tutorial/assign-users.png
 [30]: ./media/active-directory-saas-google-apps-tutorial/assign-confirm.png
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0218_2016-->

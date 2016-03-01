@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="get-started-article" 
-	ms.date="12/18/2015" 
+	ms.date="02/22/2016" 
 	ms.author="mimig"/>
 
 # So erstellen Sie eine DocumentDB-Sammlung über das Azure-Portal
@@ -22,26 +22,30 @@ Für die Verwendung von Microsoft Azure DocumentDB benötigen Sie ein [DocumentD
 
 Sie wissen nicht, was eine Sammlung ist? Dann lesen Sie den Abschnitt [Was ist eine DocumentDB-Sammlung?](#what-is-a-documentdb-collection).
 
-![Screenshot mit „DocumentDB-Konten“ in der Navigationsleiste, mit dem Konto im Blatt „DocumentDB-Konten“ und mit der Datenbank im Blatt „DocumentDB-Konten“ im Fokus „Datenbanken“](./media/documentdb-create-collection/docdb-database-creation-1-3.png)
+1.  Klicken Sie im [Azure-Portal](https://portal.azure.com/) in der Navigationsleiste auf **DocumentDB-Konten**. Wenn **DocumentDB-Konten** nicht sichtbar ist, klicken Sie auf **Durchsuchen** und dann auf **DocumentDB-Konten**.
 
-1.  Klicken Sie im [Azure-Portal](https://portal.azure.com/) in der Navigationsleiste auf **DocumentDB-Konten**. 
+    ![Screenshot mit „DocumentDB-Konten“ in der Navigationsleiste, mit dem Konto im Blatt „DocumentDB-Konten“ und mit der Datenbank im Blatt „DocumentDB-Konten“ im Fokus „Datenbanken“](./media/documentdb-create-collection/docdb-database-creation-1-2.png)
 
 2.  Wählen Sie auf dem Blatt **DocumentDB-Konten** das Konto aus, in dem Sie eine Sammlung hinzufügen möchten. Wenn keine Konten aufgeführt sind, müssen Sie [ein DocumentDB-Konto erstellen](documentdb-create-account.md).
 
 3. Scrollen Sie im Blatt **DocumentDB-Konto** für das ausgewählte Konto nach unten zum Fokus **Datenbanken**, und wählen Sie dann die Datenbank aus, in der eine Sammlung hinzugefügt werden soll.
-    
+
+    ![Screenshot mit „DocumentDB-Konten“ in der Navigationsleiste, mit dem Konto im Blatt „DocumentDB-Konten“ und mit der Datenbank im Blatt „DocumentDB-Konten“ im Fokus „Datenbanken“](./media/documentdb-create-collection/docdb-database-creation-3.png)
+
 4. Klicken Sie auf dem Blatt **Datenbank** auf **Sammlungen hinzufügen**.
 
-	![Screenshot mit Schaltfläche „Sammlung hinzufügen“ auf dem Blatt „Datenbank“, mit den Einstellungen im Blatt „Sammlung hinzufügen“ und Schaltfläche „OK“ – Azure-Portal für DocumentDB – Cloudbasierte Datenbankerstellung für NoSQL-JSON-Datenbanken](./media/documentdb-create-collection/docdb-collection-creation-4-7.png)
+	![Screenshot mit Schaltfläche „Sammlung hinzufügen“ auf dem Blatt „Datenbank“, mit den Einstellungen im Blatt „Sammlung hinzufügen“ und Schaltfläche „OK“ – Azure-Portal für DocumentDB – Cloudbasierte Datenbankerstellung für NoSQL-JSON-Datenbanken](./media/documentdb-create-collection/docdb-collection-creation-4.png)
 
-5. Geben Sie auf dem Blatt **Sammlung hinzufügen** die ID für Ihre neue Sammlung ein. Der Namen einer Sammlung muss zwischen 1 und 255 Zeichen lang sein und darf weder `/ \ # ?` noch nachstehende Leerzeichen enthalten. Wenn der Name überprüft wurde, wird im ID-Feld ein grünes Häkchen angezeigt.
+5. Geben Sie auf dem Blatt **Sammlung hinzufügen** im Feld **ID** die ID für Ihre neue Sammlung ein. Der Namen einer Sammlung muss zwischen 1 und 255 Zeichen lang sein und darf weder `/ \ # ?` noch nachstehende Leerzeichen enthalten. Wenn der Name überprüft wurde, wird im ID-Feld ein grünes Häkchen angezeigt.
+
+	![Screenshot mit Schaltfläche „Sammlung hinzufügen“ auf dem Blatt „Datenbank“, mit den Einstellungen im Blatt „Sammlung hinzufügen“ und Schaltfläche „OK“ – Azure-Portal für DocumentDB – Cloudbasierte Datenbankerstellung für NoSQL-JSON-Datenbanken](./media/documentdb-create-collection/docdb-collection-creation-5-8.png)
 
 6. Wählen Sie einen Tarif für die neue Sammlung aus. Bei jeder erstellten Sammlung handelt es sich um eine fakturierbare Entität. Weitere Informationen zu den verfügbaren Leistungsebenen finden Sie unter [Leistungsebenen in DocumentDB](documentdb-performance-levels.md).
 
 7. Wählen Sie eine der folgenden **Indizierungsrichtlinien** aus:
 
 	- **Standard** Bei dieser Richtlinie wird eine Hashindizierung für Zeichenfolgen und eine Bereichsindizierung für Zahlen verwendet. Sie eignet sich am besten für Gleichheitsabfragen an Zeichenfolgen, für ORDER BY und für Bereichs- und Gleichheitsabfragen an Zahlen. Bei dieser Richtlinie ist der Indexspeicheraufwand relativ gering, und sie schließt eine Geoindizierung ein.
-	- **Bereich** Wählen Sie diese Richtlinie, wenn Sie ORDER BY-, Bereichs- und Gleichheitsabfragen für Zahlen und Zeichenfolgen durchführen. Bei dieser Richtlinie ist der Indexspeicheraufwand höher als bei der Richtlinie **Standard**, und sie schließt eine Geoindizierung ein.
+	- **Hash**. Wählen Sie diese Richtlinie, wenn Sie ORDER BY-, Bereichs- und Gleichheitsabfragen für Zahlen und Zeichenfolgen durchführen. Bei dieser Richtlinie ist der Indexspeicheraufwand höher als bei der Richtlinie **Standard**, und sie schließt eine Geoindizierung ein.
 
 	Weitere Informationen zu den Indizierungsrichtlinien finden Sie unter [Indizierungsrichtlinien für DocumentDB](documentdb-indexing-policies.md).
 
@@ -50,7 +54,7 @@ Sie wissen nicht, was eine Sammlung ist? Dann lesen Sie den Abschnitt [Was ist e
 
 9. Die neue Sammlung wird jetzt im Fokus **Auflistungen** auf dem Blatt **Datenbank** angezeigt.
  
-	![Screenshot mit der neuen Sammlung in Blatt „Datenbank“ – Azure-Portal für DocumentDB – Cloudbasierte Datenbankerstellung für NoSQL-JSON-Datenbanken](./media/documentdb-create-collection/docdb-collection-creation-8.png)
+	![Screenshot mit der neuen Sammlung in Blatt „Datenbank“ – Azure-Portal für DocumentDB – Cloudbasierte Datenbankerstellung für NoSQL-JSON-Datenbanken](./media/documentdb-create-collection/docdb-collection-creation-9.png)
 
 ## Was ist eine DocumentDB-Sammlung? 
 
@@ -62,7 +66,7 @@ Sammlungen sind nicht identisch mit Tabellen in relationalen Datenbanken. Sammlu
 
 ## Weitere Methoden zum Erstellen einer DocumentDB-Sammlung
 
-Sammlungen müssen nicht über das Portal erstellt werden. Sie können diese auch mithilfe der [DocumentDB-SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) erstellen. Ein C#-Codebeispiel, das veranschaulicht, wie eine Sammlung mit dem DocumentDB .NET SDK erstellt wird, finden Sie in der Datei [Program.cs](https://github.com/Azure/azure-documentdb-net/blob/master/samples/code-samples/CollectionManagement/Program.cs) im CollectionManagement-Projekt. Dieses steht im Repository [azure-documentdb-net](https://github.com/Azure/azure-documentdb-net) auf [GitHub.com](https://github.com) zur Verfügung.
+Sammlungen müssen nicht über das Portal erstellt werden. Sie können diese auch mithilfe der [DocumentDB-SDKs](documentdb-sdk-dotnet.md) erstellen. C#-Codebeispiele, die die Verwendung von Sammlungen mithilfe des DocumentDB .NET SDK veranschaulichen, finden Sie unter [C#-Sammlungsbeispiele](documentdb-dotnet-samples.md#collection-examples). Node.js-Codebeispiele, die die Verwendung von Sammlungen mithilfe des DocumentDB Node.js SDK veranschaulichen, finden Sie unter [Node.js-Sammlungsbeispiele](documentdb-nodejs-samples.md#collection-examples).
 
 ## Problembehandlung
 
@@ -74,8 +78,8 @@ Nachdem Sie nun über eine Sammlung verfügen, besteht der nächste Schritt dari
 
 - Sie können [Dokumente hinzufügen](documentdb-view-json-document-explorer.md), indem Sie den Dokument-Explorer im Portal verwenden.
 - Sie können [Dokumente und Daten importieren](documentdb-import-data.md), indem Sie das Datenmigrationstool für DocumentDB verwenden, mit dem Sie JSON- und CSV-Dateien importieren können. Sie können auch Daten aus SQL Server, MongoDB, dem Azure-Tabellenspeicher und anderen DocumentDB-Sammlungen importieren. 
-- Sie können Dokumente auch mithilfe eines der [DocumentDB-SDKs](documentdb-sdk-dotnet.md) hinzufügen. DocumentDB verfügt über SDKs für .NET, Java, Python, Node.js und JavaScript-API. Die Datei [Program.cs](https://github.com/Azure/azure-documentdb-net/blob/master/samples/code-samples/DocumentManagement/Program.cs) im Projekt „DatabaseManagement“ (steht im Repository [azure-documentdb-net](https://github.com/Azure/azure-documentdb-net) auf [GitHub.com](https://github.com) zur Verfügung) veranschaulicht CRUD-Vorgänge für Dokumente mit dem DocumentDB .NET SDK.
+- Sie können Dokumente auch mithilfe eines der [DocumentDB-SDKs](documentdb-sdk-dotnet.md) hinzufügen. DocumentDB verfügt über SDKs für .NET, Java, Python, Node.js und JavaScript-API. C#-Codebeispiele, die die Verwendung von Dokumenten mithilfe des DocumentDB .NET SDK veranschaulichen, finden Sie unter [C#-Dokumentbeispiele](documentdb-dotnet-samples.md#document-examples). Node.js-Codebeispiele, die die Verwendung von Dokumenten mithilfe des DocumentDB Node.js SDK veranschaulichen, finden Sie unter [Node.js-Dokumentbeispiele](documentdb-nodejs-samples.md#document-examples).
 
 Wenn eine Sammlung Dokumente enthält, können Sie in [DocumentDB SQL](documentdb-sql-query.md) an den Dokumenten [Abfragen ausführen](documentdb-sql-query.md#executing-queries), indem Sie den [Abfrage-Explorer](documentdb-query-collections-query-explorer.md) im Portal, die [REST-API](https://msdn.microsoft.com/library/azure/dn781481.aspx) oder eines der [SDKs](documentdb-sdk-dotnet.md) verwenden.
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0224_2016-->

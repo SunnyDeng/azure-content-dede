@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/07/2016"
+   ms.date="02/17/2016"
    ms.author="sahajs;barbkess;sonyama"/>
 
 # Wiederherstellen einer Datenbank nach einem Benutzerfehler in SQL Data Warehouse
@@ -25,8 +25,10 @@ SQL Data Warehouse verfügt über zwei Hauptfunktionen für die Wiederherstellun
 
 Bei beiden Funktionen wird eine neue Datenbank auf demselben Server wiederhergestellt.
 
+Es gibt zwei verschiedene APIs, die eine Wiederherstellung der SQL Data Warehouse-Datenbank unterstützen: Azure PowerShell und REST-API. Sie können beide für den Zugriff auf die Wiederherstellungsfunktion von SQL Data Warehouse verwenden.
+
 ## Wiederherstellen einer Livedatenbank
-Wenn es durch einen Benutzerfehler zu einer unbeabsichtigten Änderung von Daten kommt, können Sie für die Datenbank alle Wiederherstellungspunkte innerhalb der Aufbewahrungsdauer wiederherstellen. Die Datenbankmomentaufnahmen für eine Livedatenbank werden alle acht Stunden erstellt und sieben Tage lang aufbewahrt.
+Wenn es durch einen Benutzerfehler zu einer unbeabsichtigten Änderung von Daten kommt, können Sie für die Datenbank alle Wiederherstellungspunkte innerhalb der Aufbewahrungsdauer wiederherstellen. Die Datenbankmomentaufnahmen für eine Livedatenbank werden mindestens alle acht Stunden erstellt und sieben Tage lang aufbewahrt.
 
 ### PowerShell
 
@@ -136,4 +138,4 @@ Informationen zu den Geschäftskontinuitätsfeatures anderer Azure SQL-Datenbank
 
 <!--Other Web references-->
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0218_2016-->

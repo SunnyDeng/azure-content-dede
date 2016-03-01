@@ -7,14 +7,7 @@
 	manager="stevenpo" 
 	editor="curtland"/>
 
-<tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="11/19/2015" 
-	ms.author="billmath"/>
+<tags ms.service="multi-factor-authentication" ms.workload="identity" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="get-started-article" ms.date="02/18/2016"" ms.author="billmath"/>
 
 
 # Sichern von Cloud- und lokalen Ressourcen mithilfe von Azure Multi-Factor Authentication-Server mit Windows Server 2012 R2 AD FS
@@ -33,6 +26,7 @@ Bei der Installation von Azure Multi-Factor Authentication-Server haben Sie zwei
 Bevor Sie beginnen, sollten Sie Folgendes beachten:
 
 - Es ist nicht erforderlich, den Azure Multi-Factor Authentication-Server auf dem AD FS-Verbundserver zu installieren. Der Multi-Factor Authentication-Adapter für AD FS muss jedoch auf einem Server mit Windows Server 2012 R2 installiert werden, auf dem AD FS ausgeführt wird. Sie können den Server auf einem anderen Computer installieren, sofern es sich um eine unterstützte Version handelt, und den AD FS-Adapter separat auf dem AD FS-Verbundserver installieren. Im folgenden Verfahren finden Sie Anweisungen, wie Sie den Adapter separat installieren.
+- Bei der Entwicklung des AD FS-Adapters des Multi-Factor Authentication-Servers wurde erwartet, dass AD FS den Namen der vertrauenden Seite an den Adapter übergibt und als Anwendungsname verwendet. Dies war jedoch nicht der Fall. Wenn Sie als Authentifizierungsmethode SMS oder mobile Apps verwenden, enthalten die in den Unternehmenseinstellungen festgelegten Zeichenfolgen einen Platzhalter: <$application\_name$>. Dieser Platzhalter wird bei Verwendung des AD FS-Adapters nicht ersetzt. Aus diesem Grund wird empfohlen, beim Sichern von AD FS den Platzhalter aus den entsprechenden Zeichenfolgen zu entfernen.
 
 - Das angemeldete Konto muss über Berechtigungen zum Erstellen von Sicherheitsgruppen in Active Directory verfügen.
 
@@ -229,4 +223,4 @@ Führen Sie nun das Skript „\\Programme\\Multi-Factor Authentication Server\\R
 
  
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0224_2016-->

@@ -28,29 +28,17 @@ Azure PowerShell ist ein Modul, das Cmdlets zum Verwalten von Azure mit Windows 
 
 Es folgen die beiden Methoden, mit denen Sie Azure PowerShell installieren können. Sie können sie entweder per WebPI oder über den PowerShell-Katalog installieren:
 
-> [AZURE.NOTE]Unter Umständen müssen Sie nach der Installation einen Neustart durchführen, um alle Befehle in der Windows PowerShell Integrated Scripting Environment (ISE) anzuzeigen.
+> [AZURE.NOTE] Unter Umständen müssen Sie nach der Installation einen Neustart durchführen, um alle Befehle in der Windows PowerShell Integrated Scripting Environment (ISE) anzuzeigen.
 
 ###Installieren von Azure PowerShell per WebPI
 
 Die Installation von Azure PowerShell 1.0 und höher per WebPI ist mit der Installation der Version 0.9.x identisch. Laden Sie [Azure Powershell](http://aka.ms/webpi-azps) herunter, und starten Sie die Installation. Falls Sie Azure PowerShell 0.9.x installiert haben, werden Sie aufgefordert, diese Version zu deinstallieren. Wenn Sie Azure PowerShell-Module aus dem PowerShell-Katalog installiert haben, müssen Sie vor der Installation die Module entfernen, um die Einheitlichkeit der Azure PowerShell-Umgebung sicherzustellen.
 
-> [AZURE.NOTE]Falls Sie die Azure-Module aus dem PowerShell-Katalog installiert haben, werden Sie aufgefordert, diese zu deinstallieren. Dies soll Verwirrung in Bezug darauf vermeiden, welche Module Sie installiert haben und wo sich diese befinden. Module des PowerShell-Katalogs werden normalerweise unter **%Programme%\\WindowsPowerShell\\Modules** installiert. Im Gegensatz dazu installiert das WebPI-Installationsprogramm die Azure-Module unter **%Programme%\\Microsoft SDKs\\Azure\\PowerShell**. **PowerShellGet** deinstalliert Module und lässt DLL-Dateien und deren Ordner zurück, wenn bei der Deinstallation eine Modulabhängigkeit geladen wird. Wenn Sie die Module des PowerShell-Katalogs deinstalliert haben und den Fehler beim Installieren weiterhin erhalten, sollten Sie die Azure*-Ordner im Ordner **%Programme%\\WindowsPowerShell\\Modules** entfernen.
+> [AZURE.NOTE] Wenn Sie die Azure-Module aus dem PowerShell-Katalog installiert haben, entfernt das Installationsprogramm diese automatisch. Dies soll Verwirrung in Bezug darauf vermeiden, welche Module Sie installiert haben und wo sich diese befinden. Module des PowerShell-Katalogs werden normalerweise unter **%Programme%\\WindowsPowerShell\\Modules** installiert. Im Gegensatz dazu installiert das WebPI-Installationsprogramm die Azure-Module unter **%Programme%\\Microsoft SDKs\\Azure\\PowerShell**. **PowerShellGet** deinstalliert Module und lässt DLL-Dateien und deren Ordner zurück, wenn bei der Deinstallation eine Modulabhängigkeit geladen wird. Wenn während der Installation ein Fehler auftritt, entfernen Sie die Azure*-Ordner aus dem Ordner **%ProgramFiles%\\WindowsPowerShell\\Modules**.
 
-Falls Sie Azure PowerShell über den PowerShell-Katalog installiert haben und stattdessen die WebPI-Installation verwenden möchten, können Sie vor der WebPI-Installation die unten angegebenen Befehle ausführen.
+Wenn Sie Azure PowerShell über den PowerShell-Katalog installiert haben, aber stattdessen die WebPI-Installation verwenden möchten, werden bei der WebPI-Installation automatisch die über den Katalog installierten Cmdlets entfernt.
 
-    # Uninstall the AzureRM component modules
-    Uninstall-AzureRM
-
-    # Uninstall AzureRM module
-    Uninstall-Module AzureRM
-
-    # Uninstall the Azure module
-    Uninstall-Module Azure
-
-    # Or, you can remove all Azure modules
-    # Uninstall-Module Azure* -Force
-
-> [AZURE.NOTE]Es gibt ein bekanntes Problem beim PowerShell-Element **$env:PSModulePath**, das bei der Installation per WebPI auftritt. Wenn Ihr Computer einen Neustart aufgrund von Systemupdates oder anderen Installationen benötigt, kann dies dazu führen, dass **$env:PSModulePath** nicht den Pfad enthält, unter dem Azure PowerShell installiert ist. Dies kann behoben werden, indem ein Neustart des Computers durchgeführt oder der Azure PowerShell-Pfad **$env:PSModulePath** hinzugefügt wird.
+> [AZURE.NOTE] Es gibt ein bekanntes Problem beim PowerShell-Element **$env:PSModulePath**, das bei der Installation per WebPI auftritt. Wenn Ihr Computer aufgrund von Systemupdates oder anderen Installationen neu gestartet werden muss, kann dies dazu führen, dass **$env:PSModulePath** nicht den Pfad enthält, in dem Azure PowerShell installiert ist. Dies kann durch einen Neustart des Computers behoben werden.
 
 ###Installieren von Azure PowerShell aus dem Katalog
 
@@ -79,11 +67,11 @@ Installieren Sie Azure PowerShell 1.0 oder höher mit den folgenden Befehlen au
 
 
 ## Schritt 2: Starten
-Das Modul installiert eine benutzerdefinierte Konsole für Azure PowerShell. Sie können die Cmdlets über die Windows PowerShell-Standardkonsole oder über die Azure PowerShell-Konsole ausführen. Die Methode, die Sie zum Öffnen einer der beiden Konsolen verwenden, ist abhängig von der ausgeführten Windows-Version:
+Sie können die Cmdlets über die Windows PowerShell-Standardkonsole oder über die PowerShell Integrated Scripting Environment (ISE) ausführen. Die Methode, die Sie zum Öffnen einer der beiden Konsolen verwenden, ist abhängig von der ausgeführten Windows-Version:
 
-- Auf einem Computer, auf dem mindestens Windows 8 oder Windows Server 2012 ausgeführt wird, können Sie die integrierte Suche verwenden. Beginnen Sie auf dem **Start**bildschirm mit der Eingabe von „power“. Daraufhin wird eine entsprechende Liste von Anwendungen zurückgegeben, die auch Windows PowerShell und Azure PowerShell umfasst. Klicken Sie auf eine dieser beiden Anwendungen, um die Konsole zu öffnen. (Klicken Sie mit der rechten Maustaste auf das Symbol, um die Anwendung an den **Start**bildschirm anzuheften.)
+- Auf einem Computer, auf dem mindestens Windows 8 oder Windows Server 2012 ausgeführt wird, können Sie die integrierte Suche verwenden. Beginnen Sie auf dem Bildschirm **Start** mit der Eingabe von „power“. Daraufhin wird eine entsprechende Liste von Anwendungen zurückgegeben, die auch Windows PowerShell umfasst. Klicken Sie auf eine dieser beiden Anwendungen, um die Konsole zu öffnen. (Klicken Sie mit der rechten Maustaste auf das Symbol, um die Anwendung an den **Startbildschirm** anzuheften.)
 
-- Verwenden Sie auf einem Computer, auf dem eine niedrigere Version als Windows 8 oder Windows Server 2012 ausgeführt wird, das Menü **Start**. Klicken Sie im Menü **Start** auf **Alle Programme** und dann auf **Azure** und **Azure PowerShell**.
+- Verwenden Sie auf einem Computer, auf dem eine niedrigere Version als Windows 8 oder Windows Server 2012 ausgeführt wird, das **Startmenü**. Klicken Sie im **Startmenü** auf **Alle Programme**, **Zubehör** und den **Windows PowerShell**-Ordner, und klicken Sie dann auf **Windows PowerShell**.
 
 Sie können auch die **Windows PowerShell ISE** ausführen, um Menüelemente und Tastenkombinationen zum Durchführen vieler Aufgaben zu nutzen, die Sie auch in der Windows PowerShell-Konsole durchführen würden. Geben Sie zum Verwenden der ISE in der Windows PowerShell-Konsole „Cmd.exe“ ein, oder geben Sie im Feld **Ausführen** den Befehl **powershell\_ise.exe** ein.
 
@@ -138,12 +126,12 @@ Melden Sie sich mit Ihrem Geschäfts- oder Schulkonto an:
 
     $cred = Get-Credential
     Login-AzureRmAccount -Credential $cred
-> [AZURE.NOTE]Wenn Sie Ihrem Unternehmenskonto mehrere Mandanten zugeordnet haben, geben Sie den Parameter „TenantId“ ein:
+> [AZURE.NOTE] Wenn Sie Ihrem Unternehmenskonto mehrere Mandanten zugeordnet haben, geben Sie den Parameter „TenantId“ ein:
 
     $loadersubscription = Get-AzureRmSubscription -SubscriptionName $YourSubscriptionName -TenantId $YourAssociatedSubscriptionTenantId
 
 
-> [AZURE.NOTE]Diese nicht-interaktive Anmeldemethode funktioniert nur mit einem Geschäfts- oder Schulkonto. Bei einem Geschäfts- oder Schulkonto handelt es sich um ein von Ihrem Unternehmen bzw. Ihrer Bildungseinrichtung verwaltetes Benutzerkonto, das in der entsprechenden Azure Active Directory-Instanz definiert ist. Wenn Sie derzeit kein Geschäfts- oder Schulkonto besitzen und sich mit einem Microsoft-Konto bei Ihrem Azure-Abonnement anmelden, können Sie mit den folgenden Schritten auf einfache Weise ein solches Konto erstellen.
+> [AZURE.NOTE] Diese nicht-interaktive Anmeldemethode funktioniert nur mit einem Geschäfts- oder Schulkonto. Bei einem Geschäfts- oder Schulkonto handelt es sich um ein von Ihrem Unternehmen bzw. Ihrer Bildungseinrichtung verwaltetes Benutzerkonto, das in der entsprechenden Azure Active Directory-Instanz definiert ist. Wenn Sie derzeit kein Geschäfts- oder Schulkonto besitzen und sich mit einem Microsoft-Konto bei Ihrem Azure-Abonnement anmelden, können Sie mit den folgenden Schritten auf einfache Weise ein solches Konto erstellen.
 
 > 1. Melden Sie sich beim [Azure-Verwaltungsportal](https://manage.windowsazure.com) an, und klicken Sie auf **Active Directory**.
 
@@ -188,6 +176,6 @@ Einfache Anleitungen zur Verwendung von Windows PowerShell finden Sie unter [Ver
 
 Referenzinformationen zu den Cmdlets finden Sie unter [Azure-Cmdlet-Referenz](https://msdn.microsoft.com/library/windowsazure/jj554330.aspx).
 
-Beispielskripts und Anleitungen als Unterstützung beim Erlernen der Skripterstellung zum Verwalten von Azure finden Sie im [Script Center](http://go.microsoft.com/fwlink/p/?LinkId=321940).
+Beispielskripts und Anleitungen zur Unterstützung bei der Erstellung von Skripts zum Verwalten von Azure finden Sie im [Script Center](http://go.microsoft.com/fwlink/p/?LinkId=321940).
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0218_2016-->

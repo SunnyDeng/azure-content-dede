@@ -3,6 +3,7 @@
 	description="Ermöglichen Sie den Zugriff auf Apps, die in Ihrem privaten Netzwerk ausgeführt werden, von außerhalb des Netzwerks mit Azure Active Directory."
 	services="active-directory"
 	documentationCenter=""
+	keywords="Anwendungszugriff, App-Proxy, Hybridzugriff"
 	authors="femila"
 	manager="stevenpo"
 	editor=""/>
@@ -13,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/09/2016"
+	ms.date="02/10/2016"
 	ms.author="femila"/>
 
 # Ermöglichen des Hybrid-Zugriffs mit App-Proxy
@@ -43,4 +44,4 @@ Für die Aktivierung des Zugriffs auf eine Webanwendung gibt es nur eine Anforde
 - [Aktivieren des Azure AD-Anwendungsproxys](active-directory-application-proxy-enable.md#step-1-enable-application-proxy-in-azure-ad)
 - [Veröffentlichen von Anwendungen über den Azure AD-App-Proxy](active-directory-application-proxy-publish.md)
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0218_2016-->

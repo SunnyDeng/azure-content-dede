@@ -3,7 +3,7 @@
 	description="Erfahren Sie, welche Vorteile App Service für Ihre vorhandenen Mobile Services-Projekte bietet."
 	services="app-service\mobile"
 	documentationCenter="ios"
-	authors="kirillg"
+	authors="adrianhall"
 	manager="dwrede"
 	editor=""/>
 
@@ -12,9 +12,9 @@
 	ms.workload="mobile"
 	ms.tgt_pltfrm="mobile-multiple"
 	ms.devlang="na"
-	ms.topic="article"
-	ms.date="01/12/2016"
-	ms.author="kirillg"/>
+	ms.topic="get-started-article"
+	ms.date="02/17/2016"
+	ms.author="adrianha"/>
 
 # <a name="getting-started"> </a>Ich verwende Mobile Services. Welche Vorteile bietet App Service?
 
@@ -23,12 +23,10 @@ Ihr vorhandener Mobile Service ist sicher und wird weiterhin unterstützt. Die *
 
 - Einfacheres und kostengünstigeres Angebot für Apps, die sowohl Web- als auch mobile Clients enthalten
 - Neue Hostfunktionen, einschließlich Webaufträgen, benutzerdefinierter CNames, besserer Überwachung
-- Gebrauchsfertige Integration in Office 365, Dynamics CRM, Salesforce und andere wichtige SaaS-APIs
-- Unterstützung für Java- und PHP-Back-End-Code zusätzlich zu Node.js und .NET
 - Gebrauchsfertige Integration in Traffic Manager
 - Konnektivität mit lokalen Ressourcen und VPNs mit VNet zusätzlich zu Hybridverbindungen
-- Überwachung und Problembehandlung für Ihre App mit NewRelic oder AppInsights sowie Warnungen
-- Umfangreicheres Spektrum an zugrunde liegenden Serverressourcen, z. B. VM-Größen
+- Überwachung, Warnungen und Problembehandlung für Ihre App mit NewRelic oder AppInsights
+- Umfangreicheres Spektrum an zugrunde liegenden Computeressourcen und Preisen
 - Integrierte automatische Skalierung, Lastenausgleich und Leistungsüberwachung
 - Integrierte Funktionen für Staging, Sicherung, Rollback und Produktionstests
 
@@ -39,24 +37,21 @@ In *Azure App Service* wird der *Mobile App*-Back-End-Code in demselben Containe
 - Sicherstellen der ständigen Ausführung des Back-End-Codes
 - Verwenden benutzerdefinierter CNames zum Bereitstellen benutzerfreundlicher und stabiler Namen für Ihre mobilen Back-End-Endpunkte
 - Geoskalierung Ihrer App mit Traffic Manager
-- Fügen Sie alle Bibliotheken und Pakete hinzu, die Sie möchten. In .NET sind die von Ihnen bereitgestellten Assemblys diejenigen, die zur Laufzeit verwendet werden. In der Hostingumgebung gibt es nie Versionskonflikte.
+- Fügen Sie alle Bibliotheken und Pakete hinzu, die Sie möchten.
 - (Für .NET) Nutzen Sie alle Features von ASP.NET, einschließlich MVC
-
-
-##Verbinden Ihrer *Mobile App* mit SaaS-API
-*Azure App Service* erleichtert das Verbinden Ihrer Mobile App mit SaaS-APIs wie Office 365, Dynamics, Salesforce, SAP und vielen mehr. *Azure App Service* bietet eine sofort einsetzbare Authentifizierung im Namen des Benutzers und ermöglicht Ihnen einmaliges Anmelden über alle SaaS-APIs hinweg, indem Token für einzelne SaaS-APIs Ihrer primären Identität zugeordnet werden.
+- (For Node.js) Nutzen Sie jede reine JavaScript-Bibliothek des Knotenökosystems, einschließlich gemeinsamer MVC-Bibliotheken.
 
 ##Zugriff auf lokale Daten über VNet
 Mit Mobile Services können Sie schon heute Hybridverbindungen für den Zugriff auf lokale Ressourcen verwenden. Es gibt jedoch Situationen, in denen eine VPN-Lösung bevorzugt wird. Mit *Azure App Service* können Sie Azure-VNet für Mobile App-Back-End-Code verwenden.
 
 ##Verwenden Ihrer bevorzugten Back-End-Sprache
-*Azure App Service* bietet eine breitere und umfassendere Unterstützung für Entwicklerplattformen, einschließlich Java, PHP und Python zusätzlich zu .NET und Node.js, die in Mobile Services unterstützt werden.
+*Azure App Service* bietet umfangreichere Unterstützung mit mehr Funktionen für ASP.NET- und Node.js-Plattformen, einschließlich Zugriff auf die neuesten Laufzeiten.
 
 ##Einrichten der automatischen Skalierung
 Mit Mobile Services wurden alle Instanzen des Back-End-Codes auf kleinen virtuellen Computern ausgeführt. Mit *Azure App Service* können Sie die Größe der virtuellen Computer aus einem umfassenderen Satz von Optionen auswählen. Sie können zudem schnell zentral oder horizontal hochskalieren, um die gesamte von den Kunden eingehende Workload basierend auf verschiedenen Leistungsmetriken zu bewältigen.
 
 ##Auf dem Laufenden bleiben
-Reagieren Sie auf Probleme in Echtzeit mithilfe von Überwachung und Warnungen, durch die Sie und Ihr Team automatisch benachrichtigt werden. Integrieren Sie die erweiterten App-Analyse- und Überwachungsfunktionen von New Relic und AppInsights, und erhalten Sie noch umfangreichere Informationen zur Leistung Ihrer mobilen App. Mit *Azure App Service* können Sie jetzt programmgesteuert und über das Portal Warnungen basiert auf verschiedenen Leistungsmetriken einrichten.
+Reagieren Sie auf Probleme in Echtzeit mithilfe von Überwachung und Warnungen, durch die Sie und Ihr Team automatisch benachrichtigt werden. Integrieren Sie die erweiterten App-Analyse- und Überwachungsfunktionen von New Relic und AppInsights, und erhalten Sie noch umfangreichere Informationen zur Leistung Ihrer mobilen App. Mit *Azure App Service* können Sie jetzt programmgesteuert oder über das Azure-Portal Warnungen basierend auf verschiedenen Leistungsmetriken einrichten.
 
 ##Schützen Ihrer Ressourcen
 Sichern Sie automatisch Back-End und Datenbank. Ihr Code und Ihre Daten werden in Notfällen geschützt und können problemlos wiederhergestellt werden, sodass Sie sich keine Sorgen um Ihr Unternehmen machen müssen.
@@ -65,6 +60,5 @@ Sichern Sie automatisch Back-End und Datenbank. Ihr Code und Ihre Daten werden i
 Mit *Azure App Service* können Sie jetzt mehrere private Test- und Stagingumgebungen für Ihre mobilen Apps erstellen. Verwenden Sie sie zum Durchführen von Tests vor der Bereitstellung. Wechseln Sie ohne Ausfallzeiten in die Produktion. Web-Apps werden vorab geladen, um höchste Kundenzufriedenheit zu gewährleisten.
 
 Sie können mithilfe dieses [Tutorials](app-service-mobile-migrating-from-mobile-services.md) die Vorteile von *App Service* für Ihre vorhandenen Mobile Service-Projekte nutzen.
- 
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0224_2016-->

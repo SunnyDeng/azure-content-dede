@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="11/23/2015"
+   ms.date="02/16/2016"
    ms.author="chackdan"/>
 
 # Upgrade von Service Fabric-Clustern
@@ -37,8 +37,6 @@ Wenn die Cluster-Integritätsrichtlinien nicht erfüllt sind, wird das Upgrade z
 Wir versuchen, dasselbe Upgrade ein paar weitere Male auszuführen, falls ein Upgrade aus Gründen der Infrastruktur fehlgeschlagen ist. Nach n Tagen, ab dem Sendedatum der E-Mail, fahren wir mit Phase 2 fort.
 
 Wenn die Clusterintegritätsrichtlinien erfüllt sind, wird das Upgrade als erfolgreich betrachtet und als abgeschlossen markiert. Dies kann in dieser Phase während des anfänglichen Upgrades oder während einer der Wiederholungen des Upgrades erfolgen. Bei einer erfolgreichen Ausführung gibt es keine Bestätigung per E-Mail. Dadurch soll das Senden zu vieler E-Mails verhindert werden. Der Empfang einer E-Mail soll eine Ausnahme vom Normalfall sein. Wir erwarten, dass die meisten Clusterupgrades ohne Beeinträchtigung der Verfügbarkeit der Anwendung funktionieren.
-
-Weitere Informationen zum Festlegen benutzerdefinierter Integritätsrichtlinien für Ihren Cluster finden Sie unter [Upgrade- und Integritätsparameter für Cluster](service-fabric-cluster-health-parameters.md).
 
 ### Phase 2: Das Upgrade erfolgt unter ausschließlicher Befolgung der Standardintegritätsrichtlinien
 
@@ -76,7 +74,7 @@ Sie können die primären oder sekundären Zertifikate einfach über das Portal 
 
 ![Screenshot mit dem Zertifikatfingerabdruck im Azure-Portal.][CertificateUpgrade]
 
->[AZURE.NOTE]Bevor Sie ein Zertifikat bestimmen, das Sie für die Clusterressourcen verwenden möchten, müssen Sie die folgenden Schritte ausführen. Andernfalls wird das neue Zertifikat nicht verwendet: 1. Laden Sie das neue Zertifikat in den Azure-Schlüsseltresor hoch. Anweisungen finden Sie in unter [Service Fabric-Sicherheit](service-fabric-cluster-security.md). Beginnen Sie mit Schritt 2 in diesem Dokument. 2. Aktualisieren Sie alle virtuellen Computer, die Ihren Cluster bilden, sodass das Zertifikat auf ihnen bereitgestellt wird. Weitere Informationen hierzu finden Sie im [Azure Key Vault-Teamblog](http://blogs.technet.com/b/kv/archive/2015/07/14/vm_2d00_certificates.aspx).
+>[AZURE.NOTE] Bevor Sie ein Zertifikat bestimmen, das Sie für die Clusterressourcen verwenden möchten, müssen Sie die folgenden Schritte ausführen. Andernfalls wird das neue Zertifikat nicht verwendet: 1. Laden Sie das neue Zertifikat in den Azure-Schlüsseltresor hoch. Eine Anleitung finden Sie unter [Service Fabric security (Service Fabric-Sicherheit)](service-fabric-cluster-security.md). Beginnen Sie mit Schritt 2 in diesem Dokument. 2. Aktualisieren Sie alle virtuellen Computer, die Ihren Cluster bilden, sodass das Zertifikat auf ihnen bereitgestellt wird. Weitere Informationen hierzu finden Sie im [Azure Key Vault-Teamblog](http://blogs.technet.com/b/kv/archive/2015/07/14/vm_2d00_certificates.aspx).
 
 ### Anwendungsports
 
@@ -101,7 +99,7 @@ Um einen neuen Port auf allen VMs in einem Knotentyp öffnen zu können, führen
 
 Für die einzelnen Knotentypen können Sie benutzerdefinierte Placement-Eigenschaften hinzufügen, die Sie in Ihrer Anwendung verwenden möchten. „NodeType“ ist eine Standardeigenschaft, die Sie verwenden können, ohne dass sie explizit hinzugefügt werden muss.
 
->[AZURE.NOTE]Informationen zur Verwendung der Placement-Eigenschaften finden Sie in der [Übersicht der Platzierungseinschränkungen](service-fabric-placement-constraint.md).
+>[AZURE.NOTE] Informationen zur Verwendung der Placement-Eigenschaften finden Sie in der [Übersicht der Platzierungseinschränkungen](service-fabric-placement-constraint.md).
 
 ### Kapazitätsmetriken
 
@@ -125,4 +123,4 @@ Wenn Sie das verwendete Betriebssystemimage auf den virtuellen Computern des Clu
 [AddingProbes]: ./media/service-fabric-cluster-upgrade/addingProbes.png
 [AddingLBRules]: ./media/service-fabric-cluster-upgrade/addingLBRules.png
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0218_2016-->

@@ -31,7 +31,8 @@ Zum Testen der Datenerfassungsleistung wurde der JUnit-Code mithilfe von Eclipse
 
 ## Installieren der erforderlichen Komponenten
 
-Sie benötigen die [Java Runtime Environment](http://www.java.com/en/download/ie_manual.jsp) auf Ihrem Entwicklungscomputer. Sie müssen außerdem die [Eclipse-IDE für Java-Entwickler](https://www.eclipse.org/downloads/index.php?show_instructions=TRUE) installieren.
+Sie benötigen die [Java Runtime Environment](http://www.java.com/en/download/ie_manual.jsp) auf Ihrem Entwicklungscomputer.
+Sie müssen außerdem die [Eclipse-IDE für Java-Entwickler](https://www.eclipse.org/downloads/index.php?show_instructions=TRUE) installieren.
 
 > [AZURE.NOTE] Wenn Sie die im Abschnitt [Konfigurieren der Leistungstestumgebung](#overview) beschriebene JMeter-Master-VM als Entwicklungsumgebung verwenden, laden Sie die Windows-32-Bit-Version des Installationsprogramms für Eclipse herunter.
 
@@ -77,7 +78,7 @@ Sie benötigen die [Java Runtime Environment](http://www.java.com/en/download/ie
 
 ![](./media/guidance-elasticsearch-jmeter-deploy15.png)
 
-11.  In dem Bereich, der unterhalb des POM-Editors angezeigt wird, wird möglicherweise folgende Warnung angezeigt: *Build path specifies execution environment J2SE-1.5. There are no JREs installed in the workspace that are strictly compatible with this environment*. Dies hängt von der Version von Java ab, die Sie auf Ihrem Entwicklungscomputer installiert haben. Wenn Sie eine Java-Version verwenden, die neuer ist als Version 1.5, können Sie diese Warnung gefahrlos ignorieren.
+11.  In dem Bereich, der unterhalb des POM-Editors angezeigt wird, wird möglicherweise folgende Warnung angezeigt: *Buildpfad gibt Ausführungsumgebung J2SE-1.5 an. Es sind keine JREs im Arbeitsbereich installiert, die vollständig mit dieser Umgebung kompatibel sind*. Dies hängt von der Version von Java ab, die Sie auf Ihrem Entwicklungscomputer installiert haben. Wenn Sie eine Java-Version verwenden, die neuer ist als Version 1.5, können Sie diese Warnung gefahrlos ignorieren.
 
 ![](./media/guidance-elasticsearch-jmeter-deploy16.png)
 
@@ -148,7 +149,7 @@ Sie benötigen die [Java Runtime Environment](http://www.java.com/en/download/ie
 
 6.  Kopieren Sie mithilfe des Windows-Explorers jede JAR-Datei, auf die im Ordner mit den Maven-Abhängigkeiten verwiesen wird, in den Ordner *apache-jmeter-2.13\\lib\\junit* auf der JMeter-Master-VM.
 
-> [AZURE.NOTE] Wenn der Ordner „l*Ib\\junit*“ bereits ältere Versionen dieser JAR-Dateien enthält, entfernen Sie sie. Wenn Sie diese am selben Ort belassen, funktioniert der JUnit-Test möglicherweise nicht, weil Verweise in die falschen JARs aufgelöst werden könnten.
+> [AZURE.NOTE] Wenn der Ordner „*lIb\\junit*“ bereits ältere Versionen dieser JAR-Dateien enthält, entfernen Sie sie. Wenn Sie diese am selben Ort belassen, funktioniert der JUnit-Test möglicherweise nicht, weil Verweise in die falschen JARs aufgelöst werden könnten.
 
 7.  Beenden Sie JMeter auf der JMeter-Master-VM, wenn es derzeit ausgeführt wird.
 
@@ -170,10 +171,10 @@ Sie benötigen die [Java Runtime Environment](http://www.java.com/en/download/ie
 
 12.  Schließen Sie JMeter. Es ist nicht erforderlich, den Testplan zu speichern.
 
-13.  Kopieren Sie die JAR-Datei mit der JUnit-Testklasse in den Ordner */home/&lt;Benutzername&gt;/apache-jmeter-2.13/lib/junit* auf jeder der untergeordneten JMeter-VMs. (*&lt;Benutzername&gt;* ist der Name des Administrators, den Sie beim Erstellen des virtuellen Computers angegeben haben. Weitere Informationen finden Sie unter [Erstellen der untergeordneten virtuellen JMeter-Computer](#_Creating_the_JMeter_2).)
+13.  Kopieren Sie die JAR-Datei mit der JUnit-Testklasse in den Ordner */home/&lt;Benutzername&gt;/apache-jmeter-2.13/lib/junit* auf jeder der untergeordneten JMeter-VMs. *&lt;Benutzername&gt;* ist der Name des Administrators, den Sie beim Erstellen des virtuellen Computers angegeben haben. Weitere Informationen finden Sie unter [Erstellen der untergeordneten virtuellen JMeter-Computer](#_Creating_the_JMeter_2).
 
 14.  Kopieren Sie die abhängigen JAR-Dateien, die für die JUnit-Testklasse erforderlich sind, in den Ordner */home/&lt;Benutzername&gt;/apache-jmeter-2.13/lib/junit* auf jedem untergeordneten virtuellen JMeter-Computer. Entfernen Sie zunächst unbedingt alle älteren Versionen der JAR-Dateien aus diesem Ordner.
 
 > [AZURE.NOTE] Mit dem Dienstprogramm pscp können Sie Dateien von einem Windows-Computer nach Ubuntu kopieren.
 
-<!---HONumber=AcomDC_0211_2016-->
+<!----HONumber=AcomDC_0211_2016-->

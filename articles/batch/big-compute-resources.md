@@ -38,7 +38,7 @@ Erfahren Sie mehr über Big Compute-Optionen in Azure, und wählen Sie den richt
 
 * [Tutorial: Erste Schritte mit der Azure Batch-Bibliothek für .NET](batch-dotnet-get-started.md)
 
-* [Batch-Forum](https://social.msdn.microsoft.com/Forums/home?forum=azurebatch)
+* [Batch-Forum](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=azurebatch)
 
 * [Batch-Videos](https://azure.microsoft.com/documentation/videos/index/?services=batch)
 
@@ -83,7 +83,7 @@ Verwenden Sie die folgenden Azure-Vorlagen zum Bereitstellen von Linux-HPC-Clust
 
 * [MS-MPI-Referenz](https://msdn.microsoft.com/library/dn473458.aspx)
 
-* [MPI-Forum](https://social.microsoft.com/Forums/home?forum=windowshpcmpi)
+* [MPI-Forum](https://social.microsoft.com/Forums/de-DE/home?forum=windowshpcmpi)
 
 ## Rechenintensive Instanzen
 
@@ -117,23 +117,32 @@ Azure bietet zum Ausführen Ihrer Linux- und Windows-HPC-Workloads [eine Reihe u
 
 ## Kundenstimmen
 
-* [Towers Watson](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=18222)
 
-* [Milliman](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=14967)
-
-* [ANEO](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=4168)
+* [ANEO](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=4168) 
 
 * [d3View](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=22088)
-
-* [Schlumberger](http://azure.microsoft.com/blog/big-compute-for-large-engineering-simulations)
 
 * [Ludwig Institute of Cancer Research](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=5830)
 
 * [Microsoft Research](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=15634)
+
+* [Milliman](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=14967)
+
+* [Mitsubishi UFJ Securities International](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=26266)
+
+* [Schlumberger](http://azure.microsoft.com/blog/big-compute-for-large-engineering-simulations)
+
+* [Towers Watson](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=18222)
+
+
+
+
+
+
 
 ## Nächste Schritte
 
 * Die neuesten Ankündigungen finden Sie im [Blog des HPC- und Batch-Teams von Microsoft](http://blogs.technet.com/b/windowshpc/) und im [Azure-Blog](https://azure.microsoft.com/blog/tag/hpc/).
 * Weitere Informationen finden Sie auch unter [Neuigkeiten bei Batch](https://azure.microsoft.com/updates/?service=batch) oder indem Sie den [RSS-Feed](https://azure.microsoft.com/updates/feed/?service=batch) abonnieren.
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0224_2016-->

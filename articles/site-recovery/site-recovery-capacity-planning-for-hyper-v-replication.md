@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Planen der Kapazität für die Replikation virtueller Hyper-V-Maschinen"
-	description="Dieser Artikel enthält Informationen zur Verwendung des Tools Capacity Planner für Azure Site Recovery."
+	pageTitle="Ausführen des Hyper-V Capacity Planner-Tools für Site Recovery | Microsoft Azure"
+	description="Dieser Artikel enthält Anweisungen zur Verwendung des Hyper-V Capacity Planner-Tools für Azure Site Recovery."
 	services="site-recovery"
 	documentationCenter="na"
 	authors="rayne-wiselman"
@@ -9,15 +9,19 @@
 <tags
 	ms.service="site-recovery"
 	ms.devlang="na"
-	ms.topic="get-started-article"
+	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery"
-	ms.date="12/01/2015"
+	ms.date="02/15/2016"
 	ms.author="raynew" />
 
-# Planen der Kapazität für die Replikation virtueller Hyper-V-Maschinen
+# Ausführen des Hyper-V Capacity Planner-Tools für Site Recovery
 
-Für Azure Site Recovery werden Hyper-V-Replikate zum Replizieren von virtuellen Hyper-V-Maschinen von einem lokalen Standort zu Azure oder in ein sekundäres Rechenzentrum verwendet. Das Tool „Capacity Planner“ für Site Recovery dient Ihnen als Unterstützung beim Ermitteln der Replikations- und Bandbreitenanforderungen für die Replikation virtueller Hyper-V-Maschinen.
+Als Teil Ihrer Azure Site Recovery-Bereitstellung müssen Sie die Replikations- und Bandbreitenanforderungen ermitteln. Das Hyper-V Capacity Planner-Tool für Site Recovery dient Ihnen als Unterstützung beim Ermitteln der Replikations- und Bandbreitenanforderungen für die Replikation virtueller Hyper-V-Maschinen.
+
+
+In diesem Artikel wird beschrieben, wie Sie das Hyper-V Capacity Planner-Tool ausführen. Dieses Tool sollte zusammen mit den anderen Kapazitätsplanungstools und den unter [Kapazitätsplanung für Site Recovery](site-recovery-capacity-planner.md) beschriebenen Informationen verwendet werden.
+
 
 ## Vorbereitung
 
@@ -32,7 +36,7 @@ Vor dem Ausführen des Tools müssen Sie den primären Standort vorbereiten. Wen
 
 
 ## Schritt 1: Vorbereiten des primären Standorts
-1. Erstellen Sie am primären Standort eine Liste mit allen virtuellen Hyper-V-Maschinen, die Sie replizieren möchten, sowie mit den Hyper-V-Hosts/-Clustern, auf denen sich die Maschinen befinden. Das Tool kann jeweils für mehrere eigenständige Hosts oder für einen einzelnen Cluster ausgeführt werden, aber nicht für beides zusammen. Außerdem muss es für jedes Betriebssystem separat ausgeführt werden. Erfassen und notieren Sie Ihre Hyper-V-Server also wie folgt: 
+1. Erstellen Sie am primären Standort eine Liste mit allen virtuellen Hyper-V-Maschinen, die Sie replizieren möchten, sowie mit den Hyper-V-Hosts/-Clustern, auf denen sich die Maschinen befinden. Das Tool kann jeweils für mehrere eigenständige Hosts oder für einen einzelnen Cluster ausgeführt werden, aber nicht für beides zusammen. Außerdem muss es für jedes Betriebssystem separat ausgeführt werden. Erfassen und notieren Sie Ihre Hyper-V-Server also wie folgt:
 
   - Eigenständige Windows Server® 2012-Server
   - Windows Server® 2012-Cluster
@@ -57,8 +61,8 @@ Wir empfehlen Ihnen, einen zentralen Hyper-V-Host als Wiederherstellungsserver e
 
 	- Öffnen Sie im **Server-Manager** den **Failovercluster-Manager**.
 	- Stellen Sie eine Verbindung mit dem Cluster her, markieren Sie den Clusternamen, und klicken Sie auf **Aktionen** > **Rolle konfigurieren**, um den Assistenten für hohe Verfügbarkeit zu öffnen.
-	- Klicken Sie unter **Rolle auswählen** auf **Hyper-V-Replikatbroker**. Geben Sie im Assistenten einen **NetBIOS-Namen** und eine **IP-Adresse** als Verbindungspunkt mit dem Cluster (als Clientzugriffspunkt bezeichnet) an. Der **Hyper-V-Replikatbroker** wird konfiguriert. Notieren Sie sich den Clientzugriffspunkt, der erstellt wird. 
-	- Vergewissern Sie sich, dass die Rolle "Hyper-V-Replikatbroker" erfolgreich online geschaltet wird und ein Failover zwischen allen Knoten des Clusters ausführen kann. Klicken Sie dazu auf die Rolle, zeigen Sie auf **Verschieben**, und klicken Sie dann auf **Knoten auswählen**. Wählen Sie einen Knoten aus, und klicken Sie auf **OK**. 
+	- Klicken Sie unter **Rolle auswählen** auf **Hyper-V-Replikatbroker**. Geben Sie im Assistenten einen **NetBIOS-Namen** und eine **IP-Adresse** als Verbindungspunkt mit dem Cluster (als Clientzugriffspunkt bezeichnet) an. Der **Hyper-V-Replikatbroker** wird konfiguriert. Notieren Sie sich den Clientzugriffspunkt, der erstellt wird.
+	- Vergewissern Sie sich, dass die Rolle "Hyper-V-Replikatbroker" erfolgreich online geschaltet wird und ein Failover zwischen allen Knoten des Clusters ausführen kann. Klicken Sie dazu auf die Rolle, zeigen Sie auf **Verschieben**, und klicken Sie dann auf **Knoten auswählen**. Wählen Sie einen Knoten aus, und klicken Sie auf **OK**.
 	- Stellen Sie bei Verwendung der zertifikatbasierten Authentifizierung sicher, dass für jeden Clusterknoten und den Clientzugriffspunkt das Zertifikat installiert ist.
 2.  Aktivieren eines Replikatservers:
 
@@ -66,14 +70,14 @@ Wir empfehlen Ihnen, einen zentralen Hyper-V-Host als Wiederherstellungsserver e
 	- Öffnen Sie für einen eigenständigen Server den Hyper-V-Manager. Klicken Sie im Bereich **Aktionen** für den Server, den Sie aktivieren möchten, auf **Hyper-V-Einstellungen**. Klicken Sie dann unter **Replikationskonfiguration** auf **Diesen Computer als Replikatserver aktivieren**.
 3. Einrichten der Authentifizierung:
 
-	- Wählen Sie unter **Authentifizierung und Ports** die Authentifizierungsart für den primären Server und die Authentifizierungsports aus. Klicken Sie bei Verwendung eines Zertifikats auf **Zertifikat auswählen**, um ein Zertifikat auszuwählen. Verwenden Sie Kerberos, wenn sich der primäre Hyper-V-Host und Hyper-V-Wiederherstellungshost in derselben Domäne oder vertrauenswürdigen Domänen befinden. Verwenden Sie Zertifikate für unterschiedliche Domänen oder eine Arbeitsgruppenbereitstellung.
+	- Wählen Sie unter **Authentifizierung und Ports** die Authentifizierungsart für den primären Server und die Authentifizierungsports aus. Klicken Sie bei Verwendung eines Zertifikats auf **Zertifikat auswählen**, um ein Zertifikat auszuwählen. Verwenden Sie Kerberos, wenn sich der primäre Hyper-V-Host und der Hyper-V-Wiederherstellungshost in derselben Domäne oder in vertrauenswürdigen Domänen befinden. Verwenden Sie Zertifikate für unterschiedliche Domänen oder eine Arbeitsgruppenbereitstellung.
 	- Lassen Sie im Bereich **Autorisierung und Speicherung** für **alle** authentifizierten (primären) Server das Senden von Replikationsdaten an diesen Replikatserver zu. Klicken Sie auf **OK** oder **Übernehmen**.
 
 	![](./media/site-recovery-capacity-planning-for-hyper-v-replication/image1.png)
 
 	- Führen Sie **netsh http show servicestate** aus, um zu überprüfen, ob der Listener für das von Ihnen angegebene Protokoll bzw. den Port ausgeführt wird:  
 4. Einrichten von Firewalls: Bei der Hyper-V-Installation werden Firewallregeln erstellt, um den Datenverkehr über die Standardports zuzulassen (443 für HTTPS, 80 für Kerberos). Aktivieren Sie diese Regeln wie folgt:
-	
+
 		- Certificate authentication on cluster (443): **Get-ClusterNode | ForEach-Object {Invoke-command -computername \$\_.name -scriptblock {Enable-Netfirewallrule -displayname "Hyper-V Replica HTTPS Listener (TCP-In)"}}**
 		- Kerberos authentication on cluster (80): **Get-ClusterNode | ForEach-Object {Invoke-command -computername \$\_.name -scriptblock {Enable-Netfirewallrule -displayname "Hyper-V Replica HTTP Listener (TCP-In)"}}**
 		- Certificate authentication on standalone server: **Enable-Netfirewallrule -displayname "Hyper-V Replica HTTPS Listener (TCP-In)"**
@@ -127,14 +131,18 @@ Hier werden die wichtigen Ergebnisse angegeben. Sie können Metriken ignorieren,
 
 - Ausführliche Informationen zu diesem Tool finden Sie in dem Dokument, das dem Tool beigefügt ist.
 - Sehen Sie sich eine exemplarische Vorgehensweise zum Tool im [TechNet-Blog](http://blogs.technet.com/b/keithmayer/archive/2014/02/27/guided-hands-on-lab-capacity-planner-for-windows-server-2012-hyper-v-replica.aspx) von Keith Mayer an.
-- Sehen Sie sich die [Ergebnisse](http://blogs.technet.com/b/keithmayer/archive/2014/02/27/guided-hands-on-lab-capacity-planner-for-windows-server-2012-hyper-v-replica.aspx) unserer Leistungstests für die Hyper-V-Replikation zwischen zwei lokalen Standorten an.
+- Sehen Sie sich die [Ergebnisse](site-recovery-performance-and-scaling-testing-on-premises-to-on-premises.md) unserer Leistungstests für die Hyper-V-Replikation zwischen zwei lokalen Standorten an.
 
 
 
 ## Nächste Schritte
 
+Nachdem Sie die Planung abgeschlossen haben, können Sie mit der Bereitstellung von Site Recovery beginnen:
+
 - [Einrichten von Schutz zwischen einem lokalen VMM-Standort und Azure](site-recovery-vmm-to-azure.md)
 - [Einrichten von Schutz zwischen einem lokalen Hyper-V-Standort und Azure](site-recovery-hyper-v-site-to-azure.md)
 - [Einrichten von Schutz zwischen zwei lokalen VMM-Standorten](site-recovery-vmm-to-vmm.md)
+- [Einrichten von Schutz zwischen lokalen VMM-Standorten mit einem SAN](site-recovery-vmm-san.md)
+- [Einrichten von Schutz mit einem einzelnen VMM-Server](site-recovery-single-vmm.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0218_2016-->

@@ -71,7 +71,7 @@ Verschiedene WebHCat-Aufträge, darunter Hive, MapReduce, Hadoop Streaming und P
 Blobspeicher kann für strukturierte und unstrukturierte Daten verwendet werden. In Blob-Speichercontainern werden Daten als Schlüssel/Wert-Paare gespeichert, und es gibt keine Verzeichnishierarchie. Allerdings kann im Schlüsselnamen der Schrägstrich (/) verwendet werden, damit es so aussieht, als wäre eine Datei in einer Verzeichnisstruktur gespeichert. Der Schlüssel eines Blobs kann z. B. *input/log1.txt* heißen. Das Verzeichnis *input* existiert zwar nicht, wegen des Schrägstrichs (/) im Schlüsselnamen sieht es jedoch so aus, als gäbe es einen Dateipfad.
 
 ###<a id="benefits"></a>Vorteile von Blobspeicher
-Der Leistungsaufwand, der damit verbunden ist, dass die Computecluster und Speicherressourcen nicht am selben Ort vorliegen, wird dadurch abgeschwächt, dass die Computecluster nahe an den Speicherkontoressourcen im Azure-Rechenzentrum erstellt werden, wo das Hochgeschwindigkeitsnetzwerk den Zugriff auf die Daten im Azure Blob Storage für die Serverknoten sehr effizient macht.
+Der Leistungsaufwand, der damit verbunden ist, dass die Computecluster und Speicherressourcen nicht am selben Ort vorliegen, wird dadurch abgeschwächt, dass die Computecluster nahe an den Speicherkontoressourcen in der Azure-Region erstellt werden. Hier macht das Hochgeschwindigkeitsnetzwerk den Zugriff auf die Daten im Azure Blob Storage für die Serverknoten sehr effizient.
 
 Die Speicherung von Daten im Azure-Blobspeicher statt im HDFS hat mehrere Vorteile:
 
@@ -87,7 +87,7 @@ Bestimmte MapReduce-Jobs und -Pakete können zu Zwischenergebnissen führen, die
 
 ## Erstellen eines Blob-Containers
 
-Um Blobs zu verwenden, erstellen Sie zuerst ein [Azure-Speicherkonto][azure-storage-create]. Dabei geben Sie ein Azure-Datencenter an, in dem die mithilfe dieses Kontos erstellten Objekte gespeichert werden. Der Cluster und das Speicherkonto müssen sich im gleichen Datencenter befinden. Die Hive-Metastore-SQL Server-Datenbank und Oozie-Metastore-SQL Server-Datenbank müssen sich ebenfalls im gleichen Datencenter befinden.
+Um Blobs zu verwenden, erstellen Sie zuerst ein [Azure-Speicherkonto][azure-storage-create]. Dabei geben Sie eine Azure-Region an, in der die mithilfe dieses Kontos erstellten Objekte gespeichert werden. Cluster und Speicherkonto müssen sich in der gleichen Region befinden. Die SQL Server-Datenbanken für den Hive- und Oozie-Metastore müssen sich ebenfalls in der gleichen Region befinden.
 
 Ein Blob gehört unabhängig davon, wo es sich befindet, stets zu einem Container Ihres Azure-Speicherkontos. Dieser Container kann ein außerhalb von HDInsight erstelltes Blob sein, oder es handelt sich um einen Container, der für einen HDInsight-Cluster erstellt wird.
 
@@ -155,7 +155,7 @@ Das URI-Schema für den Zugriff auf Dateien im Blobspeicher aus HDInsight ist:
 
 
 
-Das URI-Schema bietet unverschlüsselten Zugriff (mit dem Präfix *wasb:*) wie auch SSL-verschlüsselten Zugriff (mit *wasbs*). Wir empfehlen die Verwendung von *wasbs*, selbst für den Zugriff auf Daten, die sich in Azure im selben Datencenter befinden.
+Das URI-Schema bietet unverschlüsselten Zugriff (mit dem Präfix *wasb:*) wie auch SSL-verschlüsselten Zugriff (mit *wasbs*). Wir empfehlen die Verwendung von *wasbs*, selbst für den Zugriff auf Daten, die sich in Azure in derselben Region befinden.
 
 &lt;BlobStorageContainerName&gt; ist der Name des Containers im Azure-Blobspeicher. &lt;StorageAccountName&gt; ist der Name des Azure-Speicherkontos. Ein vollqualifizierter Domänenname (FQDN) ist erforderlich.
 
@@ -286,7 +286,7 @@ Weitere Informationen finden Sie unter:
 * [Verwenden von Azure Storage Shared Access Signatures zum Einschränken des Zugriffs auf Daten mit HDInsight][hdinsight-use-sas]
 
 [hdinsight-use-sas]: hdinsight-storage-sharedaccesssignature-permissions.md
-[powershell-install]: ../install-configure-powershell.md
+[powershell-install]: powershell-install-configure.md
 [hdinsight-creation]: hdinsight-provision-clusters.md
 [hdinsight-get-started]: hdinsight-hadoop-tutorial-get-started-windows.md
 [hdinsight-upload-data]: hdinsight-upload-data.md
@@ -300,4 +300,4 @@ Weitere Informationen finden Sie unter:
 [img-hdi-quick-create]: ./media/hdinsight-hadoop-use-blob-storage/HDI.QuickCreateCluster.png
 [img-hdi-custom-create-storage-account]: ./media/hdinsight-hadoop-use-blob-storage/HDI.CustomCreateStorageAccount.png
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0218_2016-->

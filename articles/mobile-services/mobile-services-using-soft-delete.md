@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="12/07/2015"
+	ms.date="02/11/2016"
 	ms.author="wesmc"/>
 
 # Vorläufiges Löschen in Mobile Services
@@ -25,9 +25,9 @@
 
 ##Übersicht
 
-Für Tabellen, die mit dem JavaScript- oder .NET-Backend erstellt wurden, kann das vorläufige Löschen aktiviert sein. Bei Verwendung des vorläufigen Löschens wird eine neue Spalte *\_\_deleted* vom [SQL-Bit-Typ] zur Datenbank hinzugefügt. Bei aktiviertem vorläufigem Löschen werden Reihen nicht physisch aus der Datenbank gelöscht; stattdessen wird der Wert der gelöschten Spalte auf „TRUE“ gesetzt.
+Für Tabellen, die mit dem JavaScript- oder .NET-Backend erstellt wurden, kann das vorläufige Löschen aktiviert sein. Bei Verwendung des vorläufigen Löschens wird eine neue Spalte *\_\_deleted* vom [SQL-Bit-Typ] zur Datenbank hinzugefügt. Bei aktiviertem vorläufigem Löschen werden Zeilen nicht physisch aus der Datenbank gelöscht; stattdessen wird der Wert der gelöschten Spalte auf „TRUE“ gesetzt.
 
-Bei der Abfrage von Datensätzen in einer Tabelle mit aktiviertem vorläufigem Löschen werden gelöschte Reihen standardmäßig nicht zurückgegeben. Um diese Reihen anzufordern, müssen Sie einen Abfrageparameter *\_\_includeDeleted=true* in den [REST-Abfragevorgang](http://msdn.microsoft.com/library/azure/jj677199.aspx) einschließen. Im .NET-Client-SDK können Sie zudem die Hilfsmethode `IMobileServiceTable.IncludeDeleted()` nutzen.
+Bei der Abfrage von Datensätzen in einer Tabelle mit aktiviertem vorläufigem Löschen werden gelöschte Zeilen standardmäßig nicht zurückgegeben. Um diese Zeilen anzufordern, müssen Sie einen Abfrageparameter *\_\_includeDeleted=true* in den [REST-Abfragevorgang](http://msdn.microsoft.com/library/azure/jj677199.aspx) einschließen. Im .NET-Client-SDK können Sie zudem die Hilfsmethode `IMobileServiceTable.IncludeDeleted()` nutzen.
 
 Unterstützung für vorläufiges Löschen für das .NET-Backend wurde erstmalig mit Version 1.0.402 des .NET-Backend von Microsoft Azure Mobile Services veröffentlicht. Die neuesten NuGet-Pakete stehen unter [Microsoft Azure Mobile Services .NET Backend](http://go.microsoft.com/fwlink/?LinkId=513165) (in englischer Sprache) zur Verfügung.
 
@@ -36,7 +36,7 @@ Potenzielle Vorteile der Verwendung von vorläufigem Löschen:
 
 * Bei Verwendung der [Offlinedaten-Synchronisierung für Mobile Services] fragt das Client-SDK automatisch gelöschte Datensätze ab und entfernt sie aus der lokalen Datenbank. Ist das vorläufige Löschen nicht aktiviert, müssen Sie zusätzlichen Code in das Backend schreiben, damit das Client-SDK weiß, welche Datensätze aus dem lokalen Speicher entfernt werden sollen. Andernfalls sind lokaler Client-Speicher und Backend im Hinblick auf diese gelöschten Datensätze inkonsistent und die Client-Methode `PurgeAsync()` muss aufgerufen werden, um den lokalen Speicher zu leeren.
 * Bei einigen Anwendungen werden Daten entsprechend einer Geschäftsanforderung niemals physisch gelöscht oder erst nach einem Audit gelöscht. In einem solchen Szenario kann die Funktion zum vorläufigen Löschen nützlich sein.
-* Mit vorläufigem Löschen kann eine "undelete"-Funktion implementiert werden, damit versehentlich gelöschte Daten wiederhergestellt werden können. Allerdings nehmen vorläufig gelöschte Datensätze Speicherplatz in der Datenbank in Anspruch. Daher sollten Sie ggf. einen geplanten Auftrag erstellen, mit dem vorläufig gelöschte Datensätze in regelmäßigen Abständen dauerhaft gelöscht werden. Ein Beispiel dazu finden Sie unter [Verwenden des vorläufigen Löschens mit dem .NET-Back-End] und [Verwenden des vorläufigen Löschens mit dem JavaScript-Back-End]. Ihr Client-Code sollte zudem regelmäßig `PurgeAsync()` aufrufen, damit diese dauerhaft gelöschten Datensätze nicht im lokalen Datenspeicher des Geräts verbleiben.
+* Mit vorläufigem Löschen kann eine "undelete"-Funktion implementiert werden, damit versehentlich gelöschte Daten wiederhergestellt werden können. Allerdings nehmen vorläufig gelöschte Datensätze Speicherplatz in der Datenbank in Anspruch. Daher sollten Sie ggf. einen geplanten Auftrag erstellen, mit dem vorläufig gelöschte Datensätze in regelmäßigen Abständen dauerhaft gelöscht werden. Ein Beispiel dazu finden Sie unter [Verwenden des vorläufigen Löschens mit dem .NET-Backend](#using-with-dotnet) und [Verwenden des vorläufigen Löschens mit dem JavaScript-Backend](#using-with-javascript). Ihr Client-Code sollte zudem regelmäßig `PurgeAsync()` aufrufen, damit diese dauerhaft gelöschten Datensätze nicht im lokalen Datenspeicher des Geräts verbleiben.
 
 
 
@@ -113,7 +113,7 @@ Weitere Informationen zum Planen von periodischen Aufträgen mit Mobiles Service
 
 
 
-##Verwenden des vorläufigen Löschens mit dem JavaScript-Backend
+## <a name="using-with-javascript"></a> Verwenden des vorläufigen Löschens mit dem JavaScript-Back-End
 
 Sie verwenden Tabellenskripte, um der Funktion für das vorläufige Löschen mit Mobile Services mit JavaScript-Backend Logik hinzuzufügen.
 
@@ -165,4 +165,4 @@ Weitere Informationen zum Planen von periodischen Aufträgen mit Mobiles Service
 [Offlinedaten-Synchronisierung für Mobile Services]: mobile-services-windows-store-dotnet-get-started-offline-data.md
 [klassischen Azure-Portal]: https://manage.windowsazure.com/
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0218_2016-->

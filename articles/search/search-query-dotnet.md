@@ -14,7 +14,7 @@
 	ms.workload="search"
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
-	ms.date="11/10/2015"
+	ms.date="02/10/2016"
 	ms.author="heidist"/>
 
 #Erstellen von Abfragen in Azure Search in .NET
@@ -63,4 +63,4 @@ Im ersten Aufruf werden alle Dokumente mit den Abfrageausdrücken „fancy“ un
 
 Der zweite Aufruf verwendet den OData-Ausdruck „$filter“ mit „Luxury“ als Kategorie. Diese Suche gibt dadurch nur Dokumente zurück, deren Kategoriefeld genau der Zeichenfolge „Luxury“ entspricht. Weitere Informationen zur OData-Syntax finden Sie auf der Seite [OData-Ausdruckssyntax für Azure Search](https://msdn.microsoft.com/library/azure/dn798921.aspx).
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0224_2016-->

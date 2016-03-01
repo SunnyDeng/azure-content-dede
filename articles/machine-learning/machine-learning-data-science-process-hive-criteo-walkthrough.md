@@ -88,7 +88,7 @@ Die Daten befinden sich an einem öffentlichen Speicherort für [Azure-Blob-Spei
 	2. Der Unterordner *raw/train/* enthält nur die Daten des Tages "day\_21".
 	3. Der Unterordner *raw/test/* enthält die Daten der beiden Tage "day\_22" und "day\_23".
 
-2. Wenn Sie mit den gzip-Rohdaten beginnen möchten, finden Sie diese im Hauptordner */raw * als "day\_NN.gz", wobei "NN" von 00 bis 23 reicht.
+2. Wenn Sie mit den gzip-Rohdaten beginnen möchten, finden Sie diese im Hauptordner *raw/* als "day\_NN.gz", wobei "NN" von 00 bis 23 reicht. 
 
 Ein alternativer Ansatz für das Zugreifen, Untersuchen und Modellieren, der keine lokalen Downloads erfordert, wird später in dieser exemplarischen Vorgehensweise erläutert, wenn wir die Hive-Tabellen erstellen.
 
@@ -663,4 +663,4 @@ Wir sehen, dass wir für die beiden angefragten Testbeispiele (im JSON-Framework
 
 Damit sind wir am Ende unser ausführlichen exemplarischen Vorgehensweise zum Behandeln umfangreicher DataSets mithilfe von Azure Machine Learning angekommen. Wir haben mit einem Terabyte an Daten begonnen, ein Vorhersagemodell erstellt und dieses als Webdienst in der Cloud bereitgestellt.
 
-<!---HONumber=AcomDC_0211_2016-->
+<!----HONumber=AcomDC_0211_2016-->

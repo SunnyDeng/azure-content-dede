@@ -14,7 +14,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="data-services"
-	ms.date="02/04/2016"
+	ms.date="02/16/2016"
 	ms.author="jeffstok"/>
 
 # Skalieren von Azure Stream Analytics-Aufträgen zur Erhöhung des Durchsatzes bei der Streamingdatenverarbeitung
@@ -24,7 +24,7 @@ Erfahren Sie, wie Sie Analyseaufträge optimieren, *Streamingeinheiten* für ein
 ## Welche Teile hat ein Stream Analytics-Auftrag?
 Eine Stream Analytics-Auftragsdefinition umfasst Eingaben, Abfrage und Ausgabe. Bei der Eingabe liest der Auftrag den eingehenden Datenstrom, bei der Ausgabe sendet der Auftrag die Auftragsergebnisse, und bei der Abfrage wird der Dateneingabestrom umgewandelt.
 
-Für einen Auftrag wird mindestens eine Eingabequelle für Datenstreaming benötigt. Die Datenstrom-Eingabequelle kann entweder ein Azure Service Bus Event Hub oder ein Azure-BLOB-Speicher sein. Weitere Informationen finden Sie unter [Einführung in Azure Stream Analytics](stream-analytics-introduction.md), [Erste Schritte mit Azure Stream Analytics](stream-analytics-get-started.md) und [Azure Stream Analytics-Entwicklerhandbuch](../stream-analytics-developer-guide.md).
+Für einen Auftrag wird mindestens eine Eingabequelle für Datenstreaming benötigt. Die Datenstrom-Eingabequelle kann entweder ein Azure Service Bus Event Hub oder ein Azure-BLOB-Speicher sein. Weitere Informationen finden Sie unter [Einführung in Azure Stream Analytics](stream-analytics-introduction.md) und [Erste Schritte mit Azure Stream Analytics](stream-analytics-get-started.md).
 
 ## Konfigurieren von Streamingeinheiten
 Streamingeinheiten (Streaming Units, SUs) sind eine abstrakte Repräsentation für die Ressourcen und Leistung, die zum Ausführen eines Azure Stream Analytics-Auftrags benötigt werden. SUs bieten anhand eines kombinierten Maßes aus CPU, Arbeitsspeicher und Schreib- und Leseraten eine Möglichkeit zur Beschreibung der relativen Ereignisverarbeitungskapazität. Jede Streaming-Einheit entspricht etwa einem Durchsatz von 1 MB/s.
@@ -40,7 +40,7 @@ In diesem Artikel sehen Sie, wie Sie die Abfrage so berechnen und optimieren, da
 ## Hochgradig paralleler Auftrag
 Der hochgradig parallele Auftrag ist das am stärksten skalierbare Szenario, das in Azure Stream Analytics zur Verfügung steht. Er verbindet eine Partition der Eingabe mit einer Instanz der Abfrage und einer Partition der Ausgabe. Um diese Parallelität zu erreichen, müssen einige Anforderungen erfüllt sein:
 
-1.  Wenn Ihre Abfragelogik davon abhängig ist, dass der gleiche Schlüssel durch die gleiche Abfrageinstanz verarbeitet wird, müssen Sie sicherstellen, dass die Ereignisse in die gleiche Partition Ihrer Eingabe aufgenommen werden. Für Event Hubs bedeutet das, dass für die Ereignisdaten ein **PartitionKey** festgelegt werden muss. Alternativ können Sie auch partitionierte Absender verwenden. Für Blob bedeutet das, dass die Ereignisse an den gleichen Partitionsordner gesendet werden. Wenn es für Ihre Abfragelogik nicht erforderlich ist, dass der gleiche Schlüssel von der gleichen Abfrageinstanz verarbeitet wird, können Sie diese Anforderung ignorieren. Ein Beispiel hierfür wäre eine einfache Auswahl-, Projekt- oder Filterabfrage.  
+1.  Wenn Ihre Abfragelogik davon abhängig ist, dass der gleiche Schlüssel durch die gleiche Abfrageinstanz verarbeitet wird, müssen Sie sicherstellen, dass die Ereignisse in die gleiche Partition Ihrer Eingabe aufgenommen werden. Für Event Hubs bedeutet dies, dass für die Ereignisdaten ein **PartitionKey** festgelegt werden muss. Alternativ können Sie auch partitionierte Absender verwenden. Für Blob bedeutet das, dass die Ereignisse an den gleichen Partitionsordner gesendet werden. Wenn es für Ihre Abfragelogik nicht erforderlich ist, dass der gleiche Schlüssel von der gleichen Abfrageinstanz verarbeitet wird, können Sie diese Anforderung ignorieren. Ein Beispiel hierfür wäre eine einfache Auswahl-, Projekt- oder Filterabfrage.  
 2.	Nachdem die Daten auf der Eingabeseite wie erforderlich angeordnet und gegliedert wurden, müssen Sie sicherstellen, dass die Abfrage partitioniert wird. Dazu müssen Sie in allen Schritten **Partition By** verwenden. Es sind mehrere Schritte zulässig, aber sie müssen alle durch den gleichen Schlüssel partitioniert werden. Außerdem müssen Sie beachten, dass der Partitionierungsschlüssel derzeit auf **PartitionId** festgelegt werden muss, um einen vollständig parallelen Auftrag zu erhalten.  
 3.	Derzeit unterstützen nur Event Hubs und Blob eine partitionierte Ausgabe. Für die Event Hubs-Ausgabe müssen Sie für das Feld **PartitionKey** den Wert **PartitionId** konfigurieren. Für Blob müssen Sie nichts tun.  
 4.	Sie müssen beachten, dass die Anzahl von Eingabepartitionen gleich der Anzahl von Ausgabepartitionen sein muss. Die Blob-Ausgabe unterstützt derzeit keine Partitionen. Das ist aber kein Problem, weil sie das Partitionierungsschema von der vorgelagerten Abfrage erbt. Beispiele für Partitionswerte, die einen vollständig parallelen Auftrag ermöglichen:  
@@ -71,7 +71,7 @@ Eingabe: Event Hubs mit 8 Partitionen. Ausgabe: Blob
     FROM Input1 Partition By PartitionId
     GROUP BY TumblingWindow(minute, 3), TollBoothId, PartitionId
 
-Diese Abfrage enthält einen Gruppierungsschlüssel. Hier muss der gleiche Schlüssel von der gleichen Abfrageinstanz verarbeitet werden. Das bedeutet, dass die Ereignisse auf partitionierte Weise an Event Hubs gesendet werden müssen. Um welchen Schlüssel müssen wir uns kümmern? **PartitionId** ist ein logisches Konzept auf Auftragsebene. Der Schlüssel, um den es wirklich geht, ist **TollBoothId**. Das heißt, wir müssen den **PartitionKey** der an Event Hubs gesendeten Ereignisse so festlegen, dass er die **TollBoothId** des Ereignisses ist. Bei der Abfrage ist **Partition By** auf **PartitionId** festgelegt, das ist also in Ordnung. Da die Ausgabe in Blob erfolgt, brauchen wir uns um die Konfiguration von **PartitionKey** nicht zu kümmern. Was die vierte Anforderung betrifft: Hier geht es um Blob, wir brauchen uns also darum nicht zu kümmern. Diese Topologie ist hochgradig parallel.
+Diese Abfrage enthält einen Gruppierungsschlüssel. Hier muss der gleiche Schlüssel von der gleichen Abfrageinstanz verarbeitet werden. Das bedeutet, dass die Ereignisse auf partitionierte Weise an Event Hubs gesendet werden müssen. Um welchen Schlüssel müssen wir uns kümmern? **PartitionId** ist ein logisches Konzept auf Auftragsebene. Der Schlüssel, um den es wirklich geht, ist **TollBoothId**. Das heißt, wir müssen den **PartitionKey** der an Event Hubs gesendeten Ereignisse so festlegen, dass er die **TollBoothId** des Ereignisses ist. Bei der Abfrage ist **Partition By** auf **PartitionId** festgelegt. Dies ist also in Ordnung. Da die Ausgabe als Blob erfolgt, brauchen wir uns um die Konfiguration von **PartitionKey** nicht zu kümmern. Was die vierte Anforderung betrifft: Hier geht es um Blob, wir brauchen uns also darum nicht zu kümmern. Diese Topologie ist hochgradig parallel.
 
 ### Mehrschrittige Abfrage mit Gruppierungsschlüssel ###
 Eingabe: Event Hub mit 8 Partitionen. Ausgabe: Event Hub mit 8 Partitionen
@@ -88,7 +88,7 @@ Eingabe: Event Hub mit 8 Partitionen. Ausgabe: Event Hub mit 8 Partitionen
     FROM Step1 Partition By PartitionId
     GROUP BY TumblingWindow(minute, 3), TollBoothId, PartitionId
 
-Diese Abfrage enthält einen Gruppierungsschlüssel. Hier muss der gleiche Schlüssel von der gleichen Abfrageinstanz verarbeitet werden. Wir können hier die gleiche Strategie wie in der vorherigen Abfrage verwenden. Die Abfrage umfasst mehrere Schritte. Ist für jeden Schritt **Partition By** auf **PartitionId** festgelegt? Ja. Das wäre also in Ordnung. Für die Ausgabe muss wie oben erörtert **PartitionKey** auf **PartitionId** festgelegt werden, und wir können auch feststellen, dass die Anzahl von Partitionen der Eingabe entspricht. Diese Topologie ist hochgradig parallel.
+Diese Abfrage enthält einen Gruppierungsschlüssel. Hier muss der gleiche Schlüssel von der gleichen Abfrageinstanz verarbeitet werden. Wir können hier die gleiche Strategie wie in der vorherigen Abfrage verwenden. Die Abfrage umfasst mehrere Schritte. Ist für jeden Schritt **Partition By** auf **PartitionId** festgelegt? Ja. Das wäre also in Ordnung. Für die Ausgabe muss wie oben beschrieben **PartitionKey** auf **PartitionId** festgelegt werden, und wir können auch feststellen, dass die Anzahl von Partitionen der Eingabe entspricht. Diese Topologie ist hochgradig parallel.
 
 
 ## Beispielszenarien OHNE hochgradige Parallelität
@@ -148,7 +148,7 @@ Die vorherige Abfrage umfasst zwei Schritte.
 
 Für die Partitionierung eines Schrittes gelten die folgenden Voraussetzungen:
 
-- Die Eingabequelle muss partitioniert sein. Siehe [Azure Stream Analytics-Entwicklerhandbuch](../stream-analytics-developer-guide.md) und [Azure Event Hubs-Entwicklerhandbuch](../event-hubs/event-hubs-programming-guide.md).
+- Die Eingabequelle muss partitioniert sein. Weitere Informationen finden Sie im [Programmierleitfaden für Event Hubs](../event-hubs/event-hubs-programming-guide.md).
 - Die **SELECT**-Anweisung der Abfrage muss aus einer partitionierten Eingabequelle lesen.
 - Die Abfrage im Schritt muss das Schlüsselwort **Partition By** aufweisen.
 
@@ -345,11 +345,10 @@ Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://so
 [azure.management.portal]: http://manage.windowsazure.com
 [azure.event.hubs.developer.guide]: http://msdn.microsoft.com/library/azure/dn789972.aspx
 
-[stream.analytics.developer.guide]: ../stream-analytics-developer-guide.md
 [stream.analytics.introduction]: stream-analytics-introduction.md
 [stream.analytics.get.started]: stream-analytics-get-started.md
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
  
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0218_2016-->

@@ -6,10 +6,21 @@
    authors="Jim-Parker"
    manager="jwhit"
    editor=""/>
-<tags  ms.service="backup" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="storage-backup-recovery" ms.date="12/15/2015" ms.author="jimpark"; "aashishr"; "sammehta"/>
+<tags
+   ms.service="backup"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="storage-backup-recovery"
+   ms.date="02/09/2016"
+   ms.author="jimpark;"/>
 
 # Verwenden von Azure Backup als Ersatz für Ihre Bandinfrastruktur
-Azure Backup- und System Center Data Protection Manager-Kunden haben folgende Möglichkeiten: - Sichern von Daten in Zeitplänen, welche am besten ihren Organisationsanforderungen entsprechen - Längeres Aufbewahren der Sicherungsdaten - Integrieren von Azure in ihre Anforderungen zur langfristigen Aufbewahrung (anstelle von Bändern)
+Kunden von Azure Backup und System Center Data Protection Manager haben folgende Möglichkeiten:
+
+- Sichern von Daten anhand von Zeitplänen, die den Anforderungen ihrer Organisation am besten entsprechen
+- Beibehalten der Sicherungsdaten für längere Zeiträume
+- Integrieren von Azure in ihre Anforderungen zur langfristigen Aufbewahrung (anstelle von Bändern)
 
 In diesem Artikel wird erläutert, wie Kunden Sicherungs- und Aufbewahrungsrichtlinien aktivieren können. Kunden, die für ihre Anforderungen an eine langfristige Aufbewahrung Bänder verwenden, steht jetzt dank dieses Features eine leistungsstarke und geeignete Alternative zur Verfügung. Das Feature ist in der neuesten Version von Azure Backup aktiviert (die [hier](http://aka.ms/azurebackup_agent) erhältlich ist). SCDPM-Kunden müssen zunächst auf UR5 umstellen, bevor sie dieses Feature verwenden können.
 
@@ -60,4 +71,4 @@ Weitere Informationen zu Azure Backup finden Sie unter
 - [Einführung in Azure Backup](backup-introduction-to-azure-backup.md)
 - [Azure Backup testen](backup-try-azure-backup-in-10-mins)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

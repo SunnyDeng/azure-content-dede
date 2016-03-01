@@ -27,7 +27,7 @@ Analog dazu können die REST-APIs für **SQL Azure-Datenbank** auch für Instanz
 ## Abrufen und Ausführen der Azure PowerShell-Cmdlets
 
 1. Führen Sie zum Herunterladen des Azure PowerShell-Moduls den [Microsoft-Webplattform-Installer](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409) aus. 
-2. Geben Sie zum Ausführen des Moduls auf der Startseite **Microsoft Azure PowerShell** ein.
+2. Geben Sie zum Ausführen des Moduls auf der Startseite **Windows PowerShell** ein.
 3. Falls Sie Ihr Konto noch nicht dem Computer hinzugefügt haben, führen Sie das folgende Cmdlet aus. (Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell]():
 
 	```
@@ -133,4 +133,4 @@ Weitere Referenzinformationen finden Sie unter [SQL Data Warehouse-Referenz – 
 [yah]: http://search.yahoo.com/
 [msn]: http://search.msn.com/
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0218_2016-->

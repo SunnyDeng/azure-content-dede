@@ -1,5 +1,6 @@
 <properties 
-    pageTitle="Tutorial: Azure Active Directory-Integration mit Salesforce Sandbox | Microsoft Azure" description="Erfahren Sie, wie Sie Salesforce Sandbox mit Azure Active Directory verwenden können, um einmalige Anmeldung, automatisierte Bereitstellung und mehr zu aktivieren!" 
+    pageTitle="Tutorial: Azure Active Directory-Integration mit Salesforce Sandbox | Microsoft Azure"
+    description="Erfahren Sie, wie Sie Salesforce Sandbox mit Azure Active Directory verwenden können, um einmalige Anmeldung, automatisierte Bereitstellung und mehr zu aktivieren!" 
     services="active-directory" 
     authors="jeevansd"  
     documentationCenter="na" 
@@ -206,4 +207,4 @@ Nach 10 Minuten können Sie überprüfen, ob das Konto mit Salesforce Sandbox s
   
 Wenn Sie die Einstellungen für einmaliges Anmelden testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0218_2016-->

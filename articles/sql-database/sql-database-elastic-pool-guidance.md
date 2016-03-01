@@ -20,7 +20,7 @@
 # Überlegungen zum Preis und zur Leistung eines elastischen Datenbankpools
 
 
-Dieses Dokument enthält Anleitungen, die Ihnen bei der Einschätzung helfen, ob ein elastischer Datenbankpool für eine Datenbankgruppe im Hinblick auf die Datenbankverwendungsmuster und die Preisunterschiede zwischen einem elastischen Datenbankpool und einzelnen Datenbanken für Sie kostengünstiger ist. Darüber hinaus sind weitere Anleitungen enthalten, die Sie bei der Ermittlung der aktuellen Poolgröße für eine vorhandene Reihe von SQL-Datenbanken unterstützen.
+Schätzen Sie ein, ob ein Pool für elastische Datenbanken für eine Datenbankgruppe im Hinblick auf die Datenbankverwendungsmuster und die Preisunterschiede zwischen einem Pool für elastische Datenbanken und einzelnen Datenbanken für Sie kostengünstiger ist. Darüber hinaus sind weitere Anleitungen enthalten, die Sie bei der Ermittlung der aktuellen Poolgröße für eine vorhandene Reihe von SQL-Datenbanken unterstützen.
 
 - Eine Übersicht über elastische Datenbankpools finden Sie unter [Elastische Datenbankpools für SQL-Datenbanken](sql-database-elastic-pool.md).
 - Detaillierte Informationen zu elastischen Datenbankpools finden Sie unter [Referenz: Elastische Datenbankpools für SQL-Datenbanken](sql-database-elastic-pool-reference.md).
@@ -30,7 +30,7 @@ Dieses Dokument enthält Anleitungen, die Ihnen bei der Einschätzung helfen, ob
 
 ## Elastische Datenbankpools
 
-SaaS-ISVs (Internet-Service Provider, die „Software as a Service“ anbieten) entwickeln Anwendungen, die auf der obersten von umfangreichen Datenebenen aufsetzen, die wiederum aus zahlreichen Datenbanken bestehen können. Es kommt häufig vor, dass es für diese Datenbanken unterschiedliche Kunden mit eindeutig voneinander abweichenden und nicht vorhersehbaren Verwendungsmustern gibt. Daher kann es für den ISV schwierig werden, die Ressourcenanforderungen für jede einzelne Datenbank vorherzusehen. Unter diesen Umständen kann es vorkommen, dass der ISV zu viele Ressourcen bereitstellt, um den bestmöglichen Datendurchsatz und die optimale Antwortzeit für alle Datenbanken zu gewährleisten, was jedoch mit erheblichen Kosten verbunden ist. Auf der anderen Seite riskiert der ISV eine schlechtere Leistung bei geringeren Kosten für seine Kunden.
+SaaS-ISVs (Internet-Service Provider, die „Software as a Service“ anbieten) entwickeln Anwendungen, die auf der obersten von umfangreichen Datenebenen aufsetzen, die wiederum aus zahlreichen Datenbanken bestehen können. Ein allgemeines Anwendungsmuster dient dazu, jedem Kunden eine eigene Datenbank bereitzustellen. Verschiedene Kunden weisen jedoch unterschiedliche und unvorhersehbare Verwendungsmuster auf, und es ist schwierig, den Ressourcenbedarf der einzelnen Datenbankbenutzer vorherzusagen. Daher kann es vorkommen, dass der ISV zu viele Ressourcen bereitstellt, um den bestmöglichen Datendurchsatz und die optimale Antwortzeit für alle Datenbanken zu gewährleisten, was jedoch mit erheblichen Kosten verbunden ist. Auf der anderen Seite riskiert der ISV eine schlechtere Leistung bei geringeren Kosten für seine Kunden.
 
 Mit elastischen Datenbankpools in Azure SQL-Datenbanken sind SaaS-ISVs in der Lage, das Preis-/Leistungs-Verhältnis für eine Gruppen von Datenbanken im Rahmen eines vorgegebenen Budgets zu optimieren und können dennoch eine flexible Leistung für jede Datenbank sicherstellen. Mit elastischen Datenbankpools kann der ISV elastische Datenbankdurchsatzeinheiten (Elastic Database Throughput Units, eDTUs) für einen Pool erwerben, der von mehreren Datenbanken gemeinsam genutzt wird, um unvorhersehbare Nutzungszeiten von einzelnen Datenbanken abzufedern. Die eDTU-Anforderungen eines Pools werden anhand der zusammengefassten Auslastung der hierin befindlichen Datenbanken ermittelt. Die Anzahl der für den Pool verfügbaren eDTUs wird vom Budget des ISVs gesteuert. Elastische Datenbankpools machen es dem ISV leicht, Argumente für die Auswirkungen des Budgets auf die Leistung und umgekehrt auf den Pool zu finden. Der ISV fügt dem Pool einfach Datenbanken hinzu, legt alle erforderlichen eDTU-Garantien oder -Beschränkungen für die Datenbanken fest und berechnet dann die eDTUs des Pools basierend auf dem vorhandenen Budget. Mithilfe von elastischen Datenbankpools können ISVs ihre Dienste nahtlos von einem schlanken Einstieg für Startups bis zu einem Angebot für gut eingeführte Unternehmen mit ständig wachsenden Anforderungen skalieren.
   
@@ -435,4 +435,4 @@ Nicht alle eigenständigen Datenbanken sind gute Kandidaten für elastische Date
 [2]: ./media/sql-database-elastic-pool-guidance/four-databases.png
 [3]: ./media/sql-database-elastic-pool-guidance/twenty-databases.png
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

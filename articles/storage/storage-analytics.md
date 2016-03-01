@@ -3,7 +3,7 @@
 	description="Mit der Speicheranalyse können Sie Metrikdaten für alle Speicherdienste nachverfolgen und Protokolle für Blob-, Warteschlangen- und Tabellenspeicher erfassen."
 	services="storage"
 	documentationCenter=""
-	authors="tamram"
+	authors="robinsh"
 	manager="carmonm"
 	editor="tysonn"/>
 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="01/07/2016"
-	ms.author="tamram"/>
+	ms.date="02/14/2016"
+	ms.author="robinsh"/>
 
 # Speicheranalyse
 
@@ -22,11 +22,11 @@
 
 Die Azure-Speicheranalyse führt die Protokollierung aus und stellt Metrikdaten für ein Speicherkonto bereit. Mit diesen Daten können Sie Anforderungen verfolgen, Verwendungstrends analysieren und Probleme mit dem Speicherkonto diagnostizieren.
 
-Zum Verwenden der Speicheranalyse müssen Sie sie einzeln für jeden zu überwachenden Dienst aktivieren. Sie können sie über das [Azure-Portal](https://portal.azure.com) aktivieren. Ausführliche Informationen finden Sie unter [Überwachen eines Speicherkontos](http://www.azure.com/manage/services/storage/how-to-monitor-a-storage-account/). Sie können die Speicheranalyse auch programmgesteuert über die REST-API oder die Clientbibliothek aktivieren. Über die Vorgänge [Blob-Diensteigenschaften abrufen](https://msdn.microsoft.com/library/hh452239.aspx), [Warteschlangendiensteigenschaften abrufen](https://msdn.microsoft.com/library/hh452243.aspx) und [Tabellendiensteigenschaften abrufen](https://msdn.microsoft.com/library/hh452238.aspx) können Sie die Speicheranalyse für jeden Dienst aktivieren.
+Zum Verwenden der Speicheranalyse müssen Sie sie einzeln für jeden zu überwachenden Dienst aktivieren. Sie können sie über das [Azure-Portal](https://portal.azure.com) aktivieren. Details finden Sie unter [Überwachen eines Speicherkontos im Azure-Portal](storage-monitor-storage-account.md). Sie können die Speicheranalyse auch programmgesteuert über die REST-API oder die Clientbibliothek aktivieren. Über die Vorgänge [Blob-Diensteigenschaften abrufen](https://msdn.microsoft.com/library/hh452239.aspx), [Warteschlangendiensteigenschaften abrufen](https://msdn.microsoft.com/library/hh452243.aspx), [Tabellendiensteigenschaften abrufen](https://msdn.microsoft.com/library/hh452238.aspx) und [Dateidiensteigenschaften abrufen](https://msdn.microsoft.com/library/mt427369.aspx) können Sie die Speicheranalyse für jeden Dienst aktivieren.
 
 Die aggregierten Daten werden in einem bekannten BLOB (zur Protokollierung) und in bekannten Tabellen (als Metrik) gespeichert. Der Zugriff erfolgt über APIs für den BLOB-Dienst und Tabellendienst.
 
-Bei der Speicheranalyse ist die Menge der gespeicherten Daten auf 20 TB beschränkt. Diese Beschränkung gilt unabhängig vom Gesamtlimit für Ihr Speicherkonto. Weitere Informationen zu Abrechnungs- und Datenaufbewahrungsrichtlinien finden Sie unter [Speicheranalyse und Speicheranalysekosten](https://msdn.microsoft.com/library/hh360997.aspx). Weitere Informationen zu Speicherkontobegrenzungen finden Sie unter [Skalierbarkeits- und Leistungsziele für Azure Storage](https://msdn.microsoft.com/library/dn249410.aspx).
+Bei der Speicheranalyse ist die Menge der gespeicherten Daten auf 20 TB beschränkt. Diese Beschränkung gilt unabhängig vom Gesamtlimit für Ihr Speicherkonto. Weitere Informationen zu Abrechnungs- und Datenaufbewahrungsrichtlinien finden Sie unter [Speicheranalyse und Speicheranalysekosten](https://msdn.microsoft.com/library/hh360997.aspx). Weitere Informationen zu Speicherkontobegrenzungen finden Sie unter [Skalierbarkeits- und Leistungsziele für Azure Storage](storage-scalability-targets.md).
 
 Eine ausführliche Anleitung zum Verwenden der Speicheranalyse sowie weiterer Tools, um Azure Storage-bezogene Probleme zu identifizieren, zu diagnostizieren und zu beheben, finden Sie unter [Microsoft Azure Storage: Überwachung, Diagnose und Problembehandlung](storage-monitoring-diagnosing-troubleshooting.md).
 
@@ -36,6 +36,8 @@ Eine ausführliche Anleitung zum Verwenden der Speicheranalyse sowie weiterer To
 Die Speicheranalyse protokolliert ausführliche Informationen zu erfolgreichen und nicht erfolgreichen Anforderungen an einen Speicherdienst. Anhand dieser Informationen können einzelne Anforderungen überwacht und Probleme mit einem Speicherdienst untersucht werden. Anforderungen werden auf Grundlage der besten Leistung protokolliert.
 
 Protokolleinträge werden nur bei einer Speicherdienstaktivität erstellt. Wenn beispielsweise ein Speicherkonto Aktivität im BLOB-Dienst, jedoch nicht im Tabellen- oder Warteschlangendienst aufweist, werden nur Protokolle für den BLOB-Dienst erstellt.
+
+Protokollierung durch die Speicheranalyse ist für den Azure-Dateidienst nicht verfügbar.
 
 ### Protokollierung authentifizierter Anforderungen
 
@@ -62,12 +64,12 @@ Die folgenden Typen anonymer Anforderungen werden protokolliert:
 
 - Mit Fehlercode 304 (Nicht geändert) misslungene GET-Anforderungen
 
-Alle anderen misslungenen anonymen Anforderungen werden nicht protokolliert. Eine vollständige Liste der protokollierten Daten ist in den Themen [Protokollierte Speicheranalysevorgänge und Statusmeldungen](https://msdn.microsoft.com/library/hh343260.aspx) und [Protokollformat der Speicheranalyse](](https://msdn.microsoft.com/library/hh343259.aspx)) dokumentiert.
+Alle anderen misslungenen anonymen Anforderungen werden nicht protokolliert. Eine vollständige Liste der protokollierten Daten ist in den Themen [Protokollierte Speicheranalysevorgänge und Statusmeldungen](https://msdn.microsoft.com/library/hh343260.aspx) und [Protokollformat der Speicheranalyse](https://msdn.microsoft.com/library/hh343259.aspx) dokumentiert.
 
 ### Wie Protokolle gespeichert werden
 Alle Protokolle werden in Block-BLOBs in einem Container namens "$logs" gespeichert, der automatisch erstellt wird, wenn die Speicheranalyse für ein Speicherkonto aktiviert ist. Der Container „$logs“ befindet sich im BLOB-Namespace des Speicherkontos. Beispiel: `http://<accountname>.blob.core.windows.net/$logs`. Dieser Container kann nicht gelöscht werden, nachdem die Speicheranalyse aktiviert wurde. Sein Inhalt kann hingegen gelöscht werden.
 
->[Azure.NOTE] Der Container „$logs“ wird nicht angezeigt, wenn ein Containerauflistungsvorgang erfolgt, wie z. B. mit der [ListContainers](https://msdn.microsoft.com/library/ee758348.aspx)-Methode. Der Zugriff auf ihn muss direkt erfolgen. Beispielsweise können Sie die [ListBlobs](https://msdn.microsoft.com/library/ee772878.aspx)-Methode verwenden, um auf die Blobs im Container `$logs` zugreifen. Sobald Anforderungen protokolliert werden, lädt die Speicheranalyse Zwischenergebnisse als Blöcke hoch. Die Speicheranalyse führt regelmäßig Commits dieser Blöcke aus und macht sie als BLOB verfügbar.
+>[Azure.NOTE] Der Container „$logs“ wird nicht angezeigt, wenn ein Containerauflistungsvorgang erfolgt, wie z. B. mit der [ListContainers](https://msdn.microsoft.com/library/azure/dd179352.aspx)-Methode. Der Zugriff auf ihn muss direkt erfolgen. Beispielsweise können Sie die [ListBlobs](https://msdn.microsoft.com/library/azure/dd135734.aspx)-Methode verwenden, um auf die Blobs im Container `$logs` zugreifen. Sobald Anforderungen protokolliert werden, lädt die Speicheranalyse Zwischenergebnisse als Blöcke hoch. Die Speicheranalyse führt regelmäßig Commits dieser Blöcke aus und macht sie als BLOB verfügbar.
 
 Für Protokolle, die in derselben Stunde erstellt werden, können doppelte Einträge vorhanden sein. Sie können feststellen, ob ein Datensatz ein Duplikat ist, indem Sie **RequestId** und **Vorgangsnummer** prüfen.
 
@@ -126,7 +128,7 @@ Auf alle Daten im Container `$logs` kann mithilfe der Blob-Dienst-APIs zugegriff
 
 Von der Speicheranalyse können Metriken gespeichert werden, zu denen aggregierte Transaktionsstatistiken und Kapazitätsdaten für die an einen Speicherdienst gesendeten Anforderungen zählen. Berichte zu Transaktionen werden sowohl auf API-Vorgangsebene als auch auf Speicherdienstebene erstellt, während Berichte zur Kapazität nur auf Speicherdienstebene erstellt werden. Mit den Metrikdaten können die Speicherdienstnutzung analysiert, Probleme mit Anforderungen für den Speicherdienst diagnostiziert und die Leistung von Anwendungen verbessert werden, die einen Dienst verwenden.
 
-Zum Verwenden der Speicheranalyse müssen Sie sie einzeln für jeden zu überwachenden Dienst aktivieren. Sie können sie über das [Azure-Portal](https://portal.azure.com) aktivieren. Ausführliche Informationen finden Sie unter [Überwachen eines Speicherkontos](../how-to-monitor-a-storage-account.md). Sie können die Speicheranalyse auch programmgesteuert über die REST-API oder die Clientbibliothek aktivieren. Über die Vorgänge [Blob-Diensteigenschaften abrufen, Warteschlangendiensteigenschaften abrufen](https://msdn.microsoft.com/library/hh452239.aspx) und [Tabellendiensteigenschaften abrufen](https://msdn.microsoft.com/library/hh452238.aspx) können Sie die Speicheranalyse für jeden Dienst aktivieren.
+Zum Verwenden der Speicheranalyse müssen Sie sie einzeln für jeden zu überwachenden Dienst aktivieren. Sie können sie über das [Azure-Portal](https://portal.azure.com) aktivieren. Details finden Sie unter [Überwachen eines Speicherkontos im Azure-Portal](storage-monitor-storage-account.md). Sie können die Speicheranalyse auch programmgesteuert über die REST-API oder die Clientbibliothek aktivieren. Über die Vorgänge [Blob-Diensteigenschaften abrufen](https://msdn.microsoft.com/library/hh452239.aspx), [Warteschlangendiensteigenschaften abrufen](https://msdn.microsoft.com/library/hh452243.aspx), [Tabellendiensteigenschaften abrufen](https://msdn.microsoft.com/library/hh452238.aspx) und [Dateidiensteigenschaften abrufen](https://msdn.microsoft.com/library/mt427369.aspx) können Sie die Speicheranalysemetriken für jeden Dienst aktivieren.
 
 ### Transaktionsmetriken
 
@@ -178,7 +180,7 @@ Die Speicheranalyse wird vom Speicherkontobesitzer aktiviert. Standardmäßig is
 
 Die folgenden Aktionen der Speicheranalyse sind gebührenpflichtig:
 
-- Anforderungen zum Erstellen von Blobs für die Protokollierung
+- Anforderungen zum Erstellen von Blobs für die Protokollierung 
 
 - Anforderungen zum Erstellen von Tabellenentitäten für Metriken
 
@@ -193,17 +195,17 @@ Wenn Sie Speicheranalysedaten überprüfen, können Sie anhand der Tabellen im T
 ## Nächste Schritte
 
 ### Einrichten der Speicheranalyse
-- [Überwachen eines Speicherkontos](../how-to-monitor-a-storage-account.md)
+- [Überwachen eines Speicherkontos im Azure-Portal](storage-monitor-storage-account.md)
 - [Aktivieren und Konfigurieren der Speicheranalyse](https://msdn.microsoft.com/library/hh360996.aspx)
 
 ### Protokollierung durch die Speicheranalyse  
 - [Informationen zur Protokollierung durch die Speicheranalyse](https://msdn.microsoft.com/library/hh343262.aspx)
 - [Protokollformat der Speicheranalyse](https://msdn.microsoft.com/library/hh343259.aspx)
-- [Protokollierte Speicheranalysevorgänge und Statusmeldungen](https://msdn.microsoftcom/library/hh343260.aspx)
+- [Protokollierte Speicheranalysevorgänge und Statusmeldungen](https://msdn.microsoft.com/library/hh343260.aspx)
 
 ### Metriken der Speicheranalyse
 - [Informationen zu Metriken der Speicheranalyse](https://msdn.microsoft.com/library/hh343258.aspx)
 - [Schema der Tabellen für Speicheranalysemetriken](https://msdn.microsoft.com/library/hh343264.aspx)
 - [Protokollierte Speicheranalysevorgänge und Statusmeldungen](https://msdn.microsoft.com/library/hh343260.aspx)  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

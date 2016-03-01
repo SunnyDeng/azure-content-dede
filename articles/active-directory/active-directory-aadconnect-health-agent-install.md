@@ -12,8 +12,8 @@
 	ms.workload="identity"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="article"
-	ms.date="01/21/2016"
+	ms.topic="get-started-article"
+	ms.date="02/17/2016"
 	ms.author="billmath"/>
 
 
@@ -21,7 +21,7 @@
 
 
 
-# Installieren des Azure AD Connect Health-Agents 
+# Installieren des Azure AD Connect Health-Agents
 
 In diesem Dokument werden Sie durch die Installation und Konfiguration des Azure AD Connect Health-Agents für AD FS und für die Synchronisierung geleitet.
 
@@ -123,7 +123,7 @@ Um sicherzustellen, dass der Agent installiert wurde, öffnen Sie die Dienste un
 
 - Azure AD Connect Health AadSync Insights-Dienst
 - Azure AD Connect Health AadSync-Überwachungsdienst
- 
+
 ![Überprüfen von Azure AD Connect Health für die Synchronisierung](./media/active-directory-aadconnect-health-sync/services.png)
 
 >[Azure.NOTE] Denken Sie daran, dass Sie Azure AD Connect Health nur mit Azure AD Premium nutzen können. Nur wenn Sie über Azure AD Premium verfügen, können Sie die Konfiguration im Azure-Portal abschließen. Weitere Informationen finden Sie in den [hier](active-directory-aadconnect-health.md#requirements) beschriebenen Anforderungen.
@@ -176,7 +176,23 @@ Mit dem folgenden Befehl können Sie die aktuell konfigurierten Proxyeinstellung
 	Get-AzureAdConnectHealthProxySettings
 
 
-[//]: # "Ende des Abschnitts für die Konfiguration des Agent-Proxys"
+## Testen der Verbindung mit dem Azure AD Connect Health-Dienst
+Es können Probleme auftreten, die dazu führen, dass die Verbindung zwischen dem Azure AD Connect Health-Agent und dem Azure AD Connect Health-Dienst unterbrochen wird. Dazu gehören Netzwerkprobleme, Berechtigungsprobleme oder verschiedene andere Ursachen.
+
+Wenn der Agent für mehr als zwei Stunden keine Daten an den Azure AD Connect Health-Dienst senden kann, wird Ihnen eine Warnung mit dem Hinweis angezeigt, dass die Daten des Health-Diensts nicht auf dem aktuellen Stand sind. In diesem Fall können Sie jetzt testen, ob die Azure AD Connect Health-Agents Daten an den Azure AD Connect Health-Dienst hochladen können, indem Sie den folgenden PowerShell-Befehl auf dem Computer ausführen, auf dem das Problem mit dem Agent vorliegt.
+
+    Test-AzureADConnectHealthConnectivity -Role Adfs
+
+Der Rollenparameter akzeptiert derzeit die folgenden Werte:
+	
+- Adfs
+- Synchronisierung
+
+Sie können das Flag -ShowResults im Befehl verwenden, um detaillierte Protokolle anzuzeigen. Nehmen Sie das folgende Beispiel:
+
+    Test-AzureADConnectHealthConnectivity -Role Sync -ShowResults
+
+>[AZURE.NOTE]Um das Konnektivitätstool zu verwenden, müssen Sie zunächst die Agent-Registrierung abschließen. Wenn Sie die Agent-Registrierung nicht abschließen können, stellen Sie sicher, dass alle [Anforderungen](active-directory-aadconnect-health.md#requirements) für Azure AD Connect Health erfüllt sind. Dieser Verbindungstest wird standardmäßig bei der Agent-Registrierung durchgeführt.
 
 
 ## Verwandte Links
@@ -186,5 +202,6 @@ Mit dem folgenden Befehl können Sie die aktuell konfigurierten Proxyeinstellung
 * [Verwenden von Azure AD Connect Health mit AD FS](active-directory-aadconnect-health-adfs.md)
 * [Verwenden von Azure AD Connect Health für die Synchronisierung](active-directory-aadconnect-health-sync.md)
 * [Azure AD Connect Health – FAQ](active-directory-aadconnect-health-faq.md)
+* [Azure AD Connect Health: Versionsverlauf](active-directory-aadconnect-health-version-history.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0224_2016-->

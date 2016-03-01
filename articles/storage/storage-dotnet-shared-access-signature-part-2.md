@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="01/07/2016"
+	ms.date="02/14/2016"
 	ms.author="tamram"/>
 
 
@@ -543,9 +543,9 @@ Führen Sie die Konsolenanwendung aus, und beobachten Sie die Ausgabe, um heraus
 
 ## Nächste Schritte
 
-[Shared Access Signatures, Teil 1: Grundlagen zum SAS-Modell](../storage-dotnet-shared-access-signature-part-1/)
+[Shared Access Signatures, Teil 1: Grundlagen zum SAS-Modell](storage-dotnet-shared-access-signature-part-1.md)
 
-[Verwalten des Zugriffs auf Azure Storage-Ressourcen](http://msdn.microsoft.com/library/azure/ee393343.aspx)
+[Verwalten des anonymen Lesezugriffs auf Container und Blobs](storage-manage-access-to-resources.md)
 
 [Delegieren des Zugriffs mit einer Shared Access Signature (REST API)](http://msdn.microsoft.com/library/azure/ee395415.aspx)
 
@@ -554,4 +554,4 @@ Führen Sie die Konsolenanwendung aus, und beobachten Sie die Ausgabe, um heraus
 [sas-console-output-1]: ./media/storage-dotnet-shared-access-signature-part-2/sas-console-output-1.PNG
 [sas-console-output-2]: ./media/storage-dotnet-shared-access-signature-part-2/sas-console-output-2.PNG
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

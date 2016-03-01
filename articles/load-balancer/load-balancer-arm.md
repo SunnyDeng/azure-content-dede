@@ -4,7 +4,7 @@
    services="load-balancer"
    documentationCenter="na"
    authors="joaoma"
-   manager="adinah"
+   manager="carmonm"
    editor="tysonn" />
 <tags
    ms.service="load-balancer"
@@ -63,7 +63,7 @@ Beispiele für Vorlagen:
 
 [Azure Networking Cmdlets](https://msdn.microsoft.com/library/azure/mt163510.aspx) können verwendet werden, um einen Lastenausgleich zu erstellen. Erste Schritte mit ARM-Cmdlets und REST-APIs
 
-- [Erstellen eines Load Balancers mit dem Azure-Ressourcen-Manager](../load-balancer-arm-powershell)
+- [Erstellen eines Load Balancers mit dem Azure-Ressourcen-Manager](load-balancer-get-started-internet-arm-ps.md)
 
 - [Verwenden der Azure-CLI mit der Azure-Ressourcenverwaltung](../xplat-cli-azure-resource-manager)
 
@@ -76,4 +76,4 @@ Sie können auch einen [Lastenausgleich mit Internetzugriff erstellen](load-bala
 
 Wenn es für Ihre Anwendung erforderlich ist, dass Verbindungen mit Servern hinter einem Lastenausgleich aufrechterhalten werden, informieren Sie sich über [TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md). Hier erfahren Sie mehr über das Verhalten von Leerlaufverbindungen bei der Verwendung des Azure-Lastenausgleichs.
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

@@ -25,7 +25,7 @@ Die Diagnose und das Beheben von Problemen ist eine wichtige Fähigkeit für die
 
 In diesem Lernprogramm wird veranschaulicht, wie Clients bestimmte Fehler identifizieren, die sich möglicherweise auf die Leistung auswirken, und wie die End-to-End-Problembehandlung mithilfe von Tools von Microsoft und des Azure-Speichers zur Optimierung der Clientanwendung funktioniert.
 
-Dieses Lernprogramm bietet eine praktische Beschreibung eines Szenarios der End-to-End-Problembehandlung. Ein detailliertes konzeptionelles Handbuch für die Problembehandlung von Azure-Speicheranwendungen finden Sie unter [Überwachung, Diagnose und Problembehandlung im Speicher](storage-monitoring-diagnosing-troubleshooting.md).
+Dieses Lernprogramm bietet eine praktische Beschreibung eines Szenarios der End-to-End-Problembehandlung. Ein detailliertes konzeptionelles Handbuch für die Problembehandlung von Azure-Speicheranwendungen finden Sie unter [Überwachung, Diagnose und Problembehandlung in Microsoft Azure Storage](storage-monitoring-diagnosing-troubleshooting.md).
 
 ## Tools zur Problembehandlung von Azure-Speicheranwendungen
 
@@ -38,9 +38,9 @@ Um Probleme in Clientanwendungen mit Microsoft Azure-Speicher zu beheben, könne
 
 - **Klassisches Azure-Portal**. Sie können die Protokollierung und Metriken für das Speicherkonto im [klassischen Azure-Portal](https://manage.windowsazure.com) konfigurieren. Sie können auch Diagramme und Grafiken anzeigen, die darstellen, welche Leistung die Anwendung über einen gewissen Zeitraum hinweg erbringt, und Warnungen konfigurieren, die Sie benachrichtigen, wenn die Leistung bezüglich einer bestimmten Metrik von den Erwartungen abweicht.
 	
-	Informationen zum Konfigurieren der Überwachung im klassischen Azure-Portal finden Sie unter [Überwachen eines Speicherkontos](storage-monitor-storage-account.md).
+	Informationen zum Konfigurieren der Überwachung im Azure-Portal finden Sie unter [Überwachen eines Speicherkontos im klassischen Azure-Portal](storage-monitor-storage-account.md).
 
-- **AzCopy**. Serverprotokolle für den Azure-Speicher werden als Blobs gespeichert, damit Sie AzCopy verwenden können, um die Protokoll-Blobs für die Analyse mithilfe von Microsoft Message Analyzer in ein lokales Verzeichnis zu kopieren. Weitere Informationen zu AzCopy finden Sie unter [Verwenden von AzCopy mit Microsoft Azure Storage](storage-use-azcopy.md).
+- **AzCopy**. Serverprotokolle für den Azure-Speicher werden als Blobs gespeichert, damit Sie AzCopy verwenden können, um die Protokoll-Blobs für die Analyse mithilfe von Microsoft Message Analyzer in ein lokales Verzeichnis zu kopieren. Weitere Informationen zu AzCopy finden Sie unter [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy.md).
 
 - **Microsoft Message Analyzer**. Message Analyzer ist ein Tool, das Protokolldateien in einem grafischen Format anzeigt, das es Ihnen erleichtert, Protokolldaten zu filtern, zu durchsuchen und zu gruppieren und so nützliche Zusammenstellungen für die Analyse von Fehlern und Leistungsproblemen zu erhalten. Weitere Informationen zu Message Analyzer finden Sie unter [Microsoft Message Analyzer Operating Guide](http://technet.microsoft.com/library/jj649776.aspx) (in englischer Sprache).
 
@@ -92,7 +92,7 @@ Zunächst müssen wir die Azure-Speicherprotokollierung und -metriken konfigurie
 
 **Über das klassische Azure-Portal**
 
-Folgen Sie zum Konfigurieren der Protokollierung und der Metriken für das Speicherkonto den Anweisungen unter [Überwachen eines Speicherkontos](storage-monitor-storage-account.md).
+Folgen Sie zum Konfigurieren der Protokollierung und der Metriken für das Speicherkonto mit dem Portal den Anweisungen unter [Überwachen eines Speicherkontos im Azure-Portal](storage-monitor-storage-account.md).
 
 > [AZURE.NOTE] Es ist nicht möglich, mithilfe des klassischen Azure-Portals Minutenmetriken festzulegen. Allerdings empfiehlt es sich für dieses Lernprogramm sowie für die Untersuchung von Leistungsproblemen mit Ihrer Anwendung, diese Metriken festzulegen. Sie können die Minutenmetriken wie unten beschrieben mithilfe von PowerShell, programmgesteuert oder über das klassische Azure-Pportal festlegen.
 >
@@ -100,7 +100,7 @@ Folgen Sie zum Konfigurieren der Protokollierung und der Metriken für das Speic
 
 **Über PowerShell**
 
-Informationen zum Einstieg in PowerShell für Azure finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md).
+Informationen zum Einstieg in PowerShell für Azure finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
 
 1. Verwenden Sie das [Add-AzureAccount](http://msdn.microsoft.com/library/azure/dn722528.aspx)-Cmdlet, um Ihr Azure-Benutzerkonto dem PowerShell-Fenster hinzuzufügen:
 
@@ -130,11 +130,9 @@ Informationen zum Einstieg in PowerShell für Azure finden Sie unter [Installier
 
 ### Konfigurieren der clientseitigen .NET-Protokollierung
 
-Aktivieren Sie zum Konfigurieren der clientseitigen Protokollierung für eine .NET-Anwendung die .NET-Diagnose in der Konfigurationsdatei der Anwendung (web.config oder app.config). Weitere Informationen finden Sie unter [Clientseitige Protokollierung mit der .NET-Speicherclientbibliothek](http://msdn.microsoft.com/library/azure/dn782839.aspx) und [Clientseitige Protokollierung mit dem Microsoft Azure Storage SDK für Java](http://msdn.microsoft.com/library/azure/dn782844.aspx) auf MSDN.
+Aktivieren Sie zum Konfigurieren der clientseitigen Protokollierung für eine .NET-Anwendung die .NET-Diagnose in der Konfigurationsdatei der Anwendung (web.config oder app.config). Weitere Informationen finden Sie unter [Clientseitige Protokollierung mit der .NET Storage Client Library](http://msdn.microsoft.com/library/azure/dn782839.aspx) und [Clientseitige Protokollierung mit dem Microsoft Azure Storage SDK für Java](http://msdn.microsoft.com/library/azure/dn782844.aspx) auf der MSDN-Website.
 
 Das clientseitige Protokoll enthält detaillierte Informationen darüber, wie der Client die Anfrage vorbereitet und die Antwort empfängt und verarbeitet.
-
-Die clientseitige Protokollfunktion wird in der Datei app.config oder web.config in der Anwendung konfiguriert. Weitere Informationen finden Sie unter [Clientseitige Protokollierung mit der .NET-Speicherclientbibliothek](http://msdn.microsoft.com/library/azure/dn782839.aspx) auf MSDN.
 
 Die Speicherclientbibliothek speichert clientseitige Protokolldaten an dem in der Konfigurationsdatei der Anwendung (web.config oder app.config) festgelegten Speicherort.
 
@@ -182,7 +180,7 @@ Im klassischen Azure-Portal wird nun **Prozentsatz erfolgreich** im Überwachung
 
 ![Metrikdiagramm im Verwaltungsportal](./media/storage-e2e-troubleshooting-classic-portal/portal-metrics-chart-1.png)
 
-Weitere Informationen zum Hinzufügen von Metriken auf der Seite "Überwachen" finden Sie unter [Hinzufügen von Metriken zur Metrikentabelle](storage-monitor-storage-account.md#addmonitoringmetrics).
+Weitere Informationen zum Hinzufügen von Metriken auf der Seite "Überwachen" finden Sie unter [Hinzufügen von Metriken zur Metrikentabelle](storage-monitor-storage-account.md#how-to-add-metrics-to-the-metrics-table).
 
 > [AZURE.NOTE] Es dauert einige Zeit, bis die Metrikdaten im klassischen Azure-Portal angezeigt werden, nachdem Sie die Speichermetriken aktiviert haben. Dies liegt daran, dass stündliche Metriken für die vergangene Stunde dort erst angezeigt werden, wenn die Stunde vergangen ist. Darüber hinaus werden Minutenmetriken nicht im klassischen Azure-Portal angezeigt. Je nach Zeitpunkt der Metrikaktivierung kann es also bis zu zwei Stunden dauern, bis die Metrikdaten angezeigt werden.
 
@@ -194,7 +192,7 @@ Sie können das AzCopy-Befehlszeilentool verwenden, um diese serverseitigen Prot
 
 	AzCopy.exe /Source:http://<storageaccountname>.blob.core.windows.net/$logs /Dest:C:\Temp\Logs\Server /Pattern:"blob/2015/01/02" /SourceKey:<storageaccountkey> /S /V
 
-AzCopy steht zum Download auf der Seite [Azure-Downloads](https://azure.microsoft.com/downloads/) zur Verfügung. Ausführliche Informationen zum Verwenden von AzCopy finden Sie unter [Verwenden von AzCopy mit Microsoft Azure Storage](storage-use-azcopy.md).
+AzCopy steht zum Download auf der Seite [Azure-Downloads](https://azure.microsoft.com/downloads/) zur Verfügung. Details zur Verwendung von AzCopy finden Sie unter [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy.md).
 
 Weitere Informationen zum Herunterladen serverseitiger Protokolle finden Sie unter [Herunterladen von Protokolldaten der Speicherprotokollierung](http://msdn.microsoft.com/library/azure/dn782840.aspx#DownloadingStorageLogginglogdata).
 
@@ -347,17 +345,17 @@ Nachdem Sie nun mit der Verwendung von Message Analyzer zum Analysieren Ihrer Da
 | Zum Untersuchen von... | Verwenden Sie folgenden Filterausdruck... | Ausdruck gilt für Protokoll (Client, Server, Netzwerk, Alle) |
 |------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------|
 | Unerwartete Verzögerungen bei der Nachrichtenübermittlung in einer Warteschlange | AzureStorageClientDotNetV4.Description contains "Retrying failed operation." | Client |
-| HTTP-Zunahme von PercentThrottlingError | HTTP.Response.StatusCode == 500 &#124;&#124; HTTP.Response.StatusCode == 503 | Netzwerk |
+| HTTP-Zunahme von PercentThrottlingError | HTTP.Response.StatusCode == 500 || HTTP.Response.StatusCode == 503 | Netzwerk |
 | Zunahme von PercentTimeoutError | HTTP.Response.StatusCode == 500 | Netzwerk |
 | Zunahme von PercentTimeoutError (alle) |    *StatusCode == 500 | All |
-| Zunahme von PercentNetworkError | AzureStorageClientDotNetV4.EventLogEntry.Level < 2 | Client | 
-| HTTP 403 (Verboten)-Meldungen | HTTP.Response.StatusCode == 403 | Network | 
-| HTTP 404 (Nicht gefunden)-Meldungen | HTTP.Response.StatusCode == 404 | Network | 
-| 404 (Alle) | *StatusCode == 404 | All | 
+| Zunahme von PercentNetworkError | AzureStorageClientDotNetV4.EventLogEntry.Level < 2 | Client |
+| HTTP 403 (Verboten)-Meldungen | HTTP.Response.StatusCode == 403 | Network |
+| HTTP 404 (Nicht gefunden)-Meldungen | HTTP.Response.StatusCode == 404 | Network |
+| 404 (Alle) | *StatusCode == 404 | All |
 | Autorisierungsproblem für Shared Access Signature (SAS) | AzureStorageLog.RequestStatus == "SASAuthorizationError" | Network |
 | HTTP 409 (Konflikt)-Meldungen | HTTP.Response.StatusCode == 409 | Network |
 | 409 (Alle) | *StatusCode == 409 | All |
-| "Low PercentSuccess" oder Analyseprotokolleinträge verfügen über Vorgänge mit Transaktionsstatus "ClientOtherErrors" | AzureStorageLog.RequestStatus == "ClientOtherError" | Server |
+| „Low PercentSuccess“ oder Analyseprotokolleinträge verfügen über Vorgänge mit Transaktionsstatus „ClientOtherErrors“ | AzureStorageLog.RequestStatus == "ClientOtherError" | Server |
 | Nagle-Warnung | ((AzureStorageLog.EndToEndLatencyMS - AzureStorageLog.ServerLatencyMS) > (AzureStorageLog.ServerLatencyMS * 1.5)) and (AzureStorageLog.RequestPacketSize <1460) and (AzureStorageLog.EndToEndLatencyMS - AzureStorageLog.ServerLatencyMS >= 200) | Server |
 | Zeitraum in Server- und Netzwerkprotokollen | #Timestamp >= 2014-10-20T16:36:38 and #Timestamp <= 2014-10-20T16:36:39 | Server, Network |
 | Zeitraum in Serverprotokollen | AzureStorageLog.Timestamp >= 2014-10-20T16:36:38 and AzureStorageLog.Timestamp <= 2014-10-20T16:36:39 | Server |
@@ -367,12 +365,12 @@ Nachdem Sie nun mit der Verwendung von Message Analyzer zum Analysieren Ihrer Da
 
 Weitere Informationen zur Problembehandlung in End-to-End-Szenarien im Azure-Speicher finden Sie hier:
 
-- [Monitor, diagnose, and troubleshoot Storage (in englischer Sprache)](storage-monitoring-diagnosing-troubleshooting.md)
+- [Microsoft Azure-Speicher: Überwachung, Diagnose und Problembehandlung](storage-monitoring-diagnosing-troubleshooting.md)
 - [Speicheranalyse](http://msdn.microsoft.com/library/azure/hh343270.aspx)
-- [Überwachen eines Speicherkontos](storage-monitor-storage-account.md)
-- [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy)
+- [Überwachen eines Speicherkontos im Azure-Portal](storage-monitor-storage-account.md)
+- [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy.md)
 - [Microsoft Message Analyzer Operating Guide (in englischer Sprache)](http://technet.microsoft.com/library/jj649776.aspx)
  
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

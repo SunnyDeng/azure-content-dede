@@ -15,7 +15,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="big-data"
-	ms.date="01/28/2016"
+	ms.date="02/16/2016"
 	ms.author="larryfr"/>
 
 # Verwenden von Hive und HiveQL mit Hadoop in HDInsight zum Analysieren einer Apache Log4j-Beispieldatei
@@ -122,6 +122,11 @@ Diese Anweisungen führen die folgenden Aktionen aus:
 
 Die [Hive mit Tez-Designdokumente](https://cwiki.apache.org/confluence/display/Hive/Hive+on+Tez) enthalten weitere Details zu Implementierungsauswahl und Konfigurationseinstellungen.
 
+Zur Unterstützung des Debuggings von in Tez ausgeführten Aufträgen bietet HDInsight die folgenden Webbenutzeroberflächen zum Anzeigen von Details zu Tez-Aufträgen:
+
+* [Verwenden der Tez-Benutzeroberfläche in Windows-basiertem HDInsight](hdinsight-debug-tez-ui.md)
+
+* [Verwenden der Ambari-Tez-Ansicht in Linux-basiertem HDInsight](hdinsight-debug-ambari-tez-view.md)
 
 ##<a id="run"></a>Wählen der richtigen Ausführung des HiveQL-Auftrags
 
@@ -199,4 +204,4 @@ Nachdem Sie erfahren haben, was Hive ist und wie Sie es mit Hadoop in HDInsight 
 
 [cindygross-hive-tables]: http://blogs.msdn.com/b/cindygross/archive/2013/02/06/hdinsight-hive-internal-and-external-tables-intro.aspx
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0218_2016-->

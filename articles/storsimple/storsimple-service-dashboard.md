@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="12/02/2015"
+   ms.date="02/01/2016"
    ms.author="v-sharos" />
 
 # Verwenden des Dashboards des StorSimple Manager-Diensts
@@ -22,8 +22,6 @@
 Auf der Dashboard-Seite des StorSimple Manager-Diensts erhalten Sie einen Überblick über alle Geräte, die mit dem StorSimple Manager-Dienst verbunden sind. Dienste, die die Aufmerksamkeit des Systemadministrators erfordern, sind dabei markiert. Dieses Tutorial bietet eine Einführung zur Dashboardseite, erläutert die Dashboardinhalte und -funktion und beschreibt die Aufgaben, die Sie auf dieser Seite ausführen können.
 
 ![Dienstdashboard](./media/storsimple-service-dashboard/HCS_ServiceDashboard.png)
-
-**Abbildung 1: Dashboard des StorSimple Manager-Diensts**
 
 Das Dashboard des StorSimple Manager-Diensts zeigt die folgenden Informationen an:
 
@@ -78,4 +76,4 @@ Sie können die Vorgangsprotokolle anzeigen, indem Sie auf den entsprechenden Li
 
 - Erfahren Sie mehr über das [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0218_2016-->

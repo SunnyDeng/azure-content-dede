@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/16/2015" 
+	ms.date="02/16/2016" 
 	ms.author="asteen"/>
 
 # Häufig gestellte Fragen zur Kennwortverwaltung
@@ -55,7 +55,7 @@ Diese FAQ sind in folgende Abschnitte unterteilt:
 
  - **F: Wie erkennt das Registrierungsportal, welche Optionen meinen Benutzern angezeigt werden sollen?**
  
- > **A:** Das Portal zum Registrieren der Kennwortzurücksetzung zeigt nur die Optionen an, die Sie auf der Registerkarte "Konfigurieren" Ihres Verzeichnisses im Abschnitt zur Kennwortzurücksetzungsrichtlinie für Ihre Benutzer aktiviert haben. Wenn Sie also z. B. die Sicherheitsfragen nicht aktivieren, können Benutzer sich für diese Option nicht registrieren.
+ > **A:** Das Portal zum Registrieren der Kennwortzurücksetzung zeigt nur die Optionen an, die Sie auf der Registerkarte „Konfigurieren“ Ihres Verzeichnisses im Abschnitt zur Kennwortzurücksetzungsrichtlinie für Ihre Benutzer aktiviert haben. Wenn Sie also z. B. die Sicherheitsfragen nicht aktivieren, können Benutzer sich für diese Option nicht registrieren.
 
  - **F: Wann gilt ein Benutzer als registriert?**
  
@@ -70,17 +70,17 @@ Diese FAQ sind in folgende Abschnitte unterteilt:
 
  - **F: Welche Sprachen werden von der Kennwortzurücksetzung unterstützt?**
  
- > **A:** Die Benutzeroberfläche der Kennwortzurücksetzung, der SMS-Nachrichten und der Sprachanrufe wurden in denselben 40 Sprachen lokalisiert, die in Office 365 unterstützt werden. Diese sind: Arabisch, Bulgarisch, vereinfachtes Chinesisch, traditionelles Chinesisch, Kroatisch, Tschechisch, Dänisch, Niederländisch, Englisch, Estnisch, Finnisch, Französisch, Deutsch, Griechisch, Hebräisch, Hindi, Ungarisch, Indonesisch, Italienisch, Japanisch, Kasachisch, Koreanisch, Lettisch, Litauisch, Malaiisch (Malaysia), Norwegisch (Bokmål), Polnisch, Portugiesisch (Brasilien), Portugiesisch (Portugal), Rumänisch, Russisch, Serbisch (Lateinisch), Slowakisch, Slowenisch, Spanisch, Schwedisch, Thai, Türkisch, Ukrainisch und Vietnamesisch.
+ > **A:** Die Benutzeroberfläche der Kennwortzurücksetzung, der SMS-Nachrichten und der Sprachanrufe wurden in dieselben 40 Sprachen lokalisiert, die in Office 365 unterstützt werden. Diese sind: Arabisch, Bulgarisch, vereinfachtes Chinesisch, traditionelles Chinesisch, Kroatisch, Tschechisch, Dänisch, Niederländisch, Englisch, Estnisch, Finnisch, Französisch, Deutsch, Griechisch, Hebräisch, Hindi, Ungarisch, Indonesisch, Italienisch, Japanisch, Kasachisch, Koreanisch, Lettisch, Litauisch, Malaiisch (Malaysia), Norwegisch (Bokmål), Polnisch, Portugiesisch (Brasilien), Portugiesisch (Portugal), Rumänisch, Russisch, Serbisch (Lateinisch), Slowakisch, Slowenisch, Spanisch, Schwedisch, Thai, Türkisch, Ukrainisch und Vietnamesisch.
 
  - **F: Welche Teile der Oberfläche zum Zurücksetzen von Kennwörtern werden angepasst, wenn ich organisationsspezifisches Branding auf der Registerkarte "Konfigurieren" für mein Verzeichnis festlege?**
  
- > **A:** Das Portal zur Kennwortzurücksetzung zeigt das Logo Ihrer Organisation und erlaubt Ihnen zudem, den Link "Wenden Sie sich an Ihren Administrator" so zu konfigurieren, dass er auf eine benutzerdefinierte E-Mail-Adresse oder eine URL verweist. E-Mails, die von der Kennwortzurücksetzung gesendet werden, enthalten das Logo, die Farben (in diesem Fall rot) sowie den Namen Ihrer Organisation im Nachrichtentext der E-Mail. Zudem weisen sie einen angepassten "Von"-Namen auf. Unten sehen Sie ein Beispiel mit allen organisationsspezifisch angepassten Elementen. Weitere Informationen finden Sie unter "Anpassen des Aussehens und Verhaltens der Kennwortzurücksetzung".
+ > **A:** Das Portal zur Kennwortzurücksetzung zeigt das Logo Ihrer Organisation und erlaubt Ihnen zudem, den Link „Wenden Sie sich an Ihren Administrator“ so zu konfigurieren, dass er auf eine benutzerdefinierte E-Mail-Adresse oder eine URL verweist. E-Mails, die von der Kennwortzurücksetzung gesendet werden, enthalten das Logo, die Farben (in diesem Fall rot) sowie den Namen Ihrer Organisation im Nachrichtentext der E-Mail. Zudem weisen sie einen angepassten "Von"-Namen auf. Unten sehen Sie ein Beispiel mit allen organisationsspezifisch angepassten Elementen. Weitere Informationen finden Sie unter "Anpassen des Aussehens und Verhaltens der Kennwortzurücksetzung".
 
   ![][001]
 
  - **F: Wie informiere ich meine Benutzer, wo sie ihre Kennwörter zurücksetzen können?**
  
- > **A:** Sie können Ihre Benutzer direkt an https://passwordreset.microsoftonline.com verweisen, oder Sie können sie auffordern, auf den Link "Sie können nicht auf Ihr Konto zugreifen" zu klicken, der auf jedem Anmeldebildschirm für die Schul- oder Arbeits-ID angezeigt wird. Sie können diese Links an jeder Stelle veröffentlichen (oder URL-Umleitungen darauf erstellen), die für die Benutzer leicht zugänglich ist.
+ > **A:** Sie können Ihre Benutzer direkt an https://passwordreset.microsoftonline.com verweisen, oder Sie können sie auffordern, auf den Link „Sie können nicht auf Ihr Konto zugreifen“ zu klicken, der auf jedem Anmeldebildschirm für die Schul- oder Geschäfts-ID angezeigt wird. Sie können diese Links an jeder Stelle veröffentlichen (oder URL-Umleitungen darauf erstellen), die für die Benutzer leicht zugänglich ist.
 
  - **F: Kann ich diese Seite von einem mobilen Gerät aus verwenden?**
  
@@ -203,4 +203,4 @@ Im Folgenden finden Sie Links zu allen Webseiten mit Informationen zur Kennwortz
 [001]: ./media/active-directory-passwords-faq/001.jpg "Image_001.jpg"
 [002]: ./media/active-directory-passwords-faq/002.jpg "Image_002.jpg"
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

@@ -1,20 +1,20 @@
-<properties 
-	pageTitle="Erstellen eines NoSQL-Datenbankkontos – kostenlose Testversion | Microsoft Azure" 
+<properties
+	pageTitle="Erstellen eines NoSQL-Datenbankkontos – kostenlose Testversion | Microsoft Azure"
 	description="Erfahren Sie, wie Sie Datenbankkonten mit dem Online-Datenbankersteller für Azure DocumentDB, einer verwalteten NoSQL-Dokumentendatenbank für JSON, erstellen. Holen Sie sich noch heute eine kostenlose Testversion."
 	keywords="Free trial, online database creator, create a database, create database, documentdb, azure, Microsoft azure"
-	services="documentdb" 
-	documentationCenter="" 
-	authors="mimig1" 
-	manager="jhubbard" 
+	services="documentdb"
+	documentationCenter=""
+	authors="mimig1"
+	manager="jhubbard"
 	editor="monicar"/>
 
-<tags 
-	ms.service="documentdb" 
+<tags
+	ms.service="documentdb"
 	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="get-started-article" 
-	ms.date="12/17/2015" 
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="get-started-article"
+	ms.date="02/23/2016"
 	ms.author="mimig"/>
 
 # So erstellen Sie ein DocumentDB-Datenbankkontos über das Azure-Portal
@@ -36,7 +36,7 @@ Nachdem Sie nun über ein DocumentDB-Datenbankkonto verfügen, besteht der näch
 - Mit den C# .NET-Beispielen im Projekt [DatabaseManagement](https://github.com/Azure/azure-documentdb-net/tree/master/samples/code-samples/DatabaseManagement) des [azure-documentdb-net](https://github.com/Azure/azure-documentdb-net/tree/master/samples/code-samples)-GitHub-Repositorys.
 - Im Azure-Portal, wie unter [Erstellen einer DocumentDB-Datenbank über das Azure-Portal](documentdb-create-database.md) beschrieben.
 - Die umfassenden Lernprogramme: [.NET](documentdb-get-started.md), [.NET MVC](documentdb-dotnet-application.md), [Java](documentdb-java-application.md), [Node.js](documentdb-nodejs-application.md) oder [Python](documentdb-python-application.md).
-- Die [DocumentDB-SDKs](documentdb-sdk-dotnet.md). DocumentDB verfügt über SDKs für .NET, Java, Python, Node.js und JavaScript-API. 
+- Die [DocumentDB-SDKs](documentdb-sdk-dotnet.md). DocumentDB verfügt über SDKs für .NET, Java, Python, Node.js und JavaScript-API.
 
 
 Nach dem Erstellen der Datenbank müssen Sie der Datenbank [mindestens eine Sammlung hinzufügen](documentdb-create-collection.md) und den Sammlungen dann [Dokumente hinzufügen](documentdb-view-json-document-explorer.md).
@@ -48,6 +48,4 @@ Weitere Informationen zu DocumentDB finden Sie in folgenden Ressourcen:
 -	[Lernpfad für DocumentDB](https://azure.microsoft.com/documentation/learning-paths/documentdb/)
 -	[Ressourcenmodell und Konzepte von DocumentDB](documentdb-resources.md)
 
- 
-
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0224_2016-->

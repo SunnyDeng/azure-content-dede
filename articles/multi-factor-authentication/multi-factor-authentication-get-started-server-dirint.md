@@ -12,8 +12,8 @@
 	ms.workload="identity" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="11/19/2015" 
+	ms.topic="get-started-article" 
+	ms.date="02/18/2016" 
 	ms.author="billmath"/>
 
 # Verzeichnisintegration zwischen Azure MFA-Server und Active Directory
@@ -137,4 +137,4 @@ Zusätzliche Multi-Factor Authentication-Server können als RADIUS-Backupproxy, 
 
 ![Multi-Factor Authentication-Server](./media/multi-factor-authentication-get-started-server-dirint/dirint6.png)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0224_2016-->

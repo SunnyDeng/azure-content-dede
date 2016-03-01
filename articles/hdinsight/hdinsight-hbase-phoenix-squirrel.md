@@ -20,7 +20,7 @@
 
 Erfahren Sie, wie Sie [Apache Phoenix](http://phoenix.apache.org/) in HDInsight verwenden und wie Sie SQuirreL auf Ihrer Arbeitsstation für die Verbindung mit einem HBase-Cluster in HDInsight installieren und konfigurieren. Weitere Informationen zu Phoenix finden Sie unter [Phoenix innerhalb von 15 Minuten oder weniger](http://phoenix.apache.org/Phoenix-in-15-minutes-or-less.html). Eine Beschreibung der Phoenix-Grammatik finden Sie unter [Phoenix-Grammatik](http://phoenix.apache.org/language/index.html).
 
->[AZURE.NOTE]Versionshinweise für Phoenix finden Sie in HDInsight unter [Neuheiten in den von HDInsight bereitgestellten Hadoop-Clusterversionen?][hdinsight-versions]
+>[AZURE.NOTE] Versionshinweise für Phoenix finden Sie in HDInsight unter [Neuheiten in den von HDInsight bereitgestellten Hadoop-Clusterversionen?][hdinsight-versions]
 
 ##Verwendung von SQLLine
 [SQLLine](http://sqlline.sourceforge.net/) ist ein Befehlszeilenprogramm zum Ausführen von SQL.
@@ -91,7 +91,7 @@ Bevor Sie die Vorgehensweise befolgen, müssen Sie über Folgendes verfügen:
 
 - Ein HBase-Cluster das auf einem virtuellen Azure-Netzwerk mit einem virtuellen DNS-Computer bereitgestellt wird. Anweisungen finden Sie unter [Bereitstellen von HBase-Clustern im virtuellen Azure-Netzwerk][hdinsight-hbase-provision-vnet]. 
 
-	>[AZURE.IMPORTANT]Sie müssen einen DNS-Server auf dem virtuellen Netzwerk installieren. Anweisungen finden Sie unter [Konfigurieren von DNS zwischen zwei virtuellen Netzwerken in Azure](hdinsight-hbase-geo-replication-configure-DNS.md).
+	>[AZURE.IMPORTANT] Sie müssen einen DNS-Server auf dem virtuellen Netzwerk installieren. Anweisungen finden Sie unter [Konfigurieren von DNS zwischen zwei virtuellen Netzwerken in Azure](hdinsight-hbase-geo-replication-configure-DNS.md).
 
 - Rufen Sie das verbindungsspezifische DNS-Suffix des HBase-Clusters ab. Rufen Sie dazu mittels RDP den Cluster auf und führen Sie IPConfig aus. Das DNS-Suffix ähnelt:
 
@@ -155,7 +155,7 @@ Eine Möglichkeit zum Erstellen eines X.509-Zertifikats ist mithilfe des Tools z
 
 	Schließen Sie die Eingabeaufforderung nicht. Sie benötigen diese im nächsten Verfahren.
 
-	>[AZURE.NOTE]Da Sie ein Stammzertifikat erstellt haben, aus dem Client-Zertifikate generiert werden, ist es empfehlenswert, dass Sie dieses Zertifikat zusammen mit dessen privaten Schlüssel exportieren und an einem sicheren Ort speichern, von dem es wiederhergestellt werden kann.
+	>[AZURE.NOTE] Da Sie ein Stammzertifikat erstellt haben, aus dem Client-Zertifikate generiert werden, ist es empfehlenswert, dass Sie dieses Zertifikat zusammen mit dessen privaten Schlüssel exportieren und an einem sicheren Ort speichern, von dem es wiederhergestellt werden kann.
 
 **Erstellen eines Client-Zertifikats**
 
@@ -216,7 +216,7 @@ Eine Möglichkeit zum Erstellen eines X.509-Zertifikats ist mithilfe des Tools z
 2. Die Jar-Datei öffnen/ausführen. Hierzu ist die [Java-Laufzeitumgebung](http://www.oracle.com/technetwork/java/javase/downloads/jre7-downloads-1880261.html) erforderlich.
 3. Klicken Sie zwei Mal auf **Weiter**.
 4. Geben Sie einen Pfad an, an dem die Schreibberechtigung besitzen und klicken Sie dann auf **Weiter**.
-	>[AZURE.NOTE]Der Standardinstallationsordner ist im Ordner „C:\\Programme\\Microsoft Files\\squirrel-Sql-3.6“. Um in diesen Pfad schreiben zu können, müssen dem Installationsprogramm Administratorrechte gewährt werden. Sie können eine Eingabeaufforderung als Administrator öffnen, zum Ordner „Bin“ von Java navigieren und dann ausführen
+	>[AZURE.NOTE] Der Standardinstallationsordner ist im Ordner „C:\\Programme\\Microsoft Files\\squirrel-Sql-3.6“. Um in diesen Pfad schreiben zu können, müssen dem Installationsprogramm Administratorrechte gewährt werden. Sie können eine Eingabeaufforderung als Administrator öffnen, zum Ordner „Bin“ von Java navigieren und dann ausführen
 	>
 	>     java.exe -jar [the path of the SQuirreL jar file] 
 5. Klicken Sie auf **OK**, um das Zielverzeichnis zu erstellen.
@@ -244,7 +244,7 @@ STRG + V).
 	- **Beispiel-URL**: jdbc:phoenix:zookeeper2.contoso-hbase-eu.f5.internal.cloudapp.net
 	- **Klassenname**: org.apache.phoenix.jdbc.PhoenixDriver
 
-	>[AZURE.WARNING]Verwenden Sie in der Beispiel-URL nur Kleinbuchstaben. Falls eines von diesen ausgefallen ist, können Sie das vollständige Zookeeper-Quorum verwenden. Die Hostnamen sind zookeeper0, zookeeper1 und zookeeper2.
+	>[AZURE.WARNING] Verwenden Sie in der Beispiel-URL nur Kleinbuchstaben. Falls eines von diesen ausgefallen ist, können Sie das vollständige Zookeeper-Quorum verwenden. Die Hostnamen sind zookeeper0, zookeeper1 und zookeeper2.
 
 	![HDInsight HBase SQuirreL-Treiber][img-squirrel-driver]
 4. Klicken Sie auf **OK**.
@@ -291,7 +291,7 @@ In diesem Artikel haben Sie erfahren, wie Sie Apache Phoenix in HDInsight verwen
 [vnet-point-to-site-connectivity]: https://msdn.microsoft.com/library/azure/09926218-92ab-4f43-aa99-83ab4d355555#BKMK_VNETPT
 
 [hdinsight-versions]: hdinsight-component-versioning.md
-[hdinsight-hbase-get-started]: ../hdinsight-hbase-get-started.md
+[hdinsight-hbase-get-started]: hdinsight-hbase-tutorial-get-started.md
 [hdinsight-manage-portal]: hdinsight-administer-use-management-portal.md#connect-to-hdinsight-clusters-by-using-rdp
 [hdinsight-hbase-provision-vnet]: hdinsight-hbase-provision-vnet.md
 [hdinsight-hbase-overview]: hdinsight-hbase-overview.md
@@ -308,4 +308,4 @@ In diesem Artikel haben Sie erfahren, wie Sie Apache Phoenix in HDInsight verwen
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0218_2016-->

@@ -1,4 +1,3 @@
-
 <properties
 	pageTitle="Automatisches Skalieren von Computeknoten in einem Azure Batch-Pool | Microsoft Azure"
 	description="Aktivieren Sie das automatische Skalieren in einem Cloudpool, um die Anzahl von Computeknoten im Pool dynamisch anzupassen."
@@ -51,7 +50,7 @@ $TargetDedicated = min(10, $averageActiveTaskCount);
 
 In den nächsten Abschnitten dieses Artikels werden die verschiedenen Elemente erläutert, mit denen Ihre Formeln für die automatische Skalierung gebildet werden. Dazu zählen Variablen, Operatoren, Operationen und Funktionen. Sie lernen, wie Sie verschiedene Metriken zu Compute-Ressourcen und Aufgaben in Batch abrufen. Sie können diese Metriken verwenden, um die Knotenanzahl des Pools basierend auf Ressourcenverbrauch und Aufgabenstatus automatisch anzupassen. Anschließend erfahren Sie, wie Sie mit der REST-API und der .NET-API von Batch eine Formel erstellen und die automatische Skalierung für einen Pool aktivieren. Zum Abschluss werden nun verschiedene Beispielformeln gezeigt.
 
-> [AZURE.NOTE]Jedes Azure Batch-Konto ist auf eine bestimmte Anzahl von Computeknoten beschränkt, die für die Verarbeitung verwendet werden können. Der Batch-Dienst wird Knoten nur bis zu dieser Anzahl erstellen. Daher wird die durch die Formel angegebene Zielanzahl möglicherweise nicht erreicht. Unter [Kontingente und Limits für den Azure Batch-Dienst](batch-quota-limit.md) finden Sie Informationen zum Anzeigen und Erhöhen Ihrer Kontokontingente.
+> [AZURE.NOTE] Jedes Azure Batch-Konto ist auf eine bestimmte Anzahl von Computeknoten beschränkt, die für die Verarbeitung verwendet werden können. Der Batch-Dienst wird Knoten nur bis zu dieser Anzahl erstellen. Daher wird die durch die Formel angegebene Zielanzahl möglicherweise nicht erreicht. Unter [Kontingente und Limits für den Azure Batch-Dienst](batch-quota-limit.md) finden Sie Informationen zum Anzeigen und Erhöhen Ihrer Kontokontingente.
 
 ## <a name="variables"></a>Variablen
 
@@ -153,7 +152,7 @@ Sie können die Werte dieser **vom System definierten Variablen** *abrufen*, um 
   </tr>
 </table>
 
-> [AZURE.TIP]Die obigen vom System definierten schreibgeschützten Variablen sind *Objekte*, die verschiedene Methoden für den Zugriff auf ihre dazugehörigen Daten bereitstellen. Weitere Informationen finden Sie weiter unten unter [Erfassen von Stichprobendaten](#getsampledata).
+> [AZURE.TIP] Die obigen vom System definierten schreibgeschützten Variablen sind *Objekte*, die verschiedene Methoden für den Zugriff auf ihre dazugehörigen Daten bereitstellen. Weitere Informationen finden Sie weiter unten unter [Erfassen von Stichprobendaten](#getsampledata).
 
 ## Typen
 
@@ -433,7 +432,7 @@ Für mehr Sicherheit können Sie ein *Fehlschlagen* einer Formelauswertung erzwi
 
 Aufgrund der zuvor erwähnten Verzögerung bei der Verfügbarkeit von Stichproben müssen Sie stets einen Zeitraum mit einer Startzeit wählen, die mehr als eine Minute zurückliegt. Der Grund ist, dass es ca. eine Minute dauert, bis Stichproben das System durchlaufen haben, weshalb Stichproben im Bereich `(0 * TimeInterval_Second, 60 * TimeInterval_Second)` häufig nicht verfügbar sind. In diesem Fall können Sie den Prozentsatzparameter von `GetSample()` angeben, um einen bestimmten Prozentsatz von Stichproben zu erzwingen.
 
-> [AZURE.IMPORTANT]Es wird **ausdrücklich empfohlen**, sich **nicht *nur* auf `GetSample(1)` in Ihren Formeln für die automatische Skalierung zu verlassen**. Der Grund ist, dass `GetSample(1)` im Wesentlichen den Batch-Dienst anweist, die letzte vorhandene Stichprobe unabhängig vom Zeitpunkt ihrer Erfassung bereitzustellen. Da es sich nur um ein Stichprobe handelt, die ggf. schon älter ist, ist diese möglicherweise nicht für den aktuellen Aufgaben- oder Ressourcenstatus repräsentativ. Wenn Sie `GetSample(1)` verwenden, stellen Sie sicher, dass dieser Wert zu einer längeren Anweisung gehört und nicht der einzige Datenpunkt ist, auf dem Ihre Formel basiert.
+> [AZURE.IMPORTANT] Es wird **ausdrücklich empfohlen**, sich **nicht *nur* auf `GetSample(1)` in Ihren Formeln für die automatische Skalierung zu verlassen**. Der Grund ist, dass `GetSample(1)` im Wesentlichen den Batch-Dienst anweist, die letzte vorhandene Stichprobe unabhängig vom Zeitpunkt ihrer Erfassung bereitzustellen. Da es sich nur um ein Stichprobe handelt, die ggf. schon älter ist, ist diese möglicherweise nicht für den aktuellen Aufgaben- oder Ressourcenstatus repräsentativ. Wenn Sie `GetSample(1)` verwenden, stellen Sie sicher, dass dieser Wert zu einer längeren Anweisung gehört und nicht der einzige Datenpunkt ist, auf dem Ihre Formel basiert.
 
 ## Metriken
 
@@ -506,7 +505,7 @@ $TotalNodes = (avg($CPUPercent.GetSample(TimeInterval_Minute*60)) < 0.2) ? ($Cur
 $TargetDedicated = min(400, $TotalNodes)
 ```
 
-> [AZURE.NOTE]Eine Formel für das automatische Skalieren besteht aus [Batch-REST][rest_api]-API-Variablen, -Typen, -Vorgängen und -Funktionen. Sie können diese auch dann in Formelzeichenfolgen verwenden, wenn Sie mit der [Batch .NET][net_api]-Bibliothek arbeiten.
+> [AZURE.NOTE] Eine Formel für das automatische Skalieren besteht aus [Batch-REST][rest_api]-API-Variablen, -Typen, -Vorgängen und -Funktionen. Sie können diese auch dann in Formelzeichenfolgen verwenden, wenn Sie mit der [Batch .NET][net_api]-Bibliothek arbeiten.
 
 ## Erstellen eines Pools mit aktiviertem automatischen Skalieren
 
@@ -516,7 +515,7 @@ Zum Aktivieren der automatischen Skalierung beim Erstellen eines Pools verwenden
 - [BatchClient.PoolOperations.CreatePool](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.createpool.aspx): Nachdem diese .NET-Methode zum Erstellen eines Pools aufgerufen wurde, legen Sie die [CloudPool.AutoScaleEnabled](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudpool.autoscaleenabled.aspx)-Eigenschaft und die [CloudPool.AutoScaleFormula](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudpool.autoscaleformula.aspx)-Eigenschaft für den Pool fest, um die automatische Skalierung zu aktivieren.
 - [Hinzufügen eines Pools zu einem Konto](https://msdn.microsoft.com/library/azure/dn820174.aspx): Das enableAutoScale-Element und das autoScaleFormula-Element werden in dieser REST-API-Anforderung verwendet, um beim Erstellen des Pools die automatische Skalierung für diesen einzurichten.
 
-> [AZURE.IMPORTANT]Wenn Sie mithilfe einer der genannten Methoden einen für die automatische Skalierung aktivierten Pool erstellen, darf der *targetDedicated*-Parameter **nicht** für den Pool angegeben werden. Beachten Sie auch, dass Sie für eine manuelle Anpassung der Größe eines für die automatische Skalierung aktivierten Pools (z. B. mit [BatchClient.PoolOperations.ResizePool][net_poolops_resizepool]) zunächst die automatische Skalierung **deaktivieren** müssen, bevor Sie die Größe des Pools ändern können.
+> [AZURE.IMPORTANT] Wenn Sie mithilfe einer der genannten Methoden einen für die automatische Skalierung aktivierten Pool erstellen, darf der *targetDedicated*-Parameter **nicht** für den Pool angegeben werden. Beachten Sie auch, dass Sie für eine manuelle Anpassung der Größe eines für die automatische Skalierung aktivierten Pools (z. B. mit [BatchClient.PoolOperations.ResizePool][net_poolops_resizepool]) zunächst die automatische Skalierung **deaktivieren** müssen, bevor Sie die Größe des Pools ändern können.
 
 Der folgende Codeausschnitt zeigt die Erstellung eines Pools mit aktivierter automatischer Skalierung ([CloudPool][net_cloudpool]) mithilfe der [Batch .NET][net_api]-Bibliothek. Die Formel für die automatische Skalierung des Pools legt die vorgegebene Anzahl von Knoten auf 5 am Montag und auf 1 an allen anderen Wochentagen fest. Darüber hinaus wird das Intervall für die automatische Skalierung auf 30 Minuten festgelegt (siehe [Intervall für die automatische Skalierung](#interval) weiter unten). In diesem und anderen C#-Ausschnitten in diesem Artikel ist „myBatchClient“ eine ordnungsgemäß initialisierte Instanz von [BatchClient][net_batchclient].
 
@@ -537,7 +536,7 @@ Standardmäßig passt der Batch-Dienst die Poolgröße gemäß seiner Formel fü
 
 Das kürzeste Intervall ist fünf Minuten, das längste 168 Stunden. Wenn ein Intervall außerhalb dieses Bereichs angegeben wird, gibt der Batch-Dienst einen Fehler des Typs „Unzulässige Anforderung (400)“ zurück.
 
-> [AZURE.NOTE]Die automatische Skalierung ist derzeit nicht als Reaktion im Zeitraum unter einer Minute auf Änderungen vorgesehen, sondern dient eher zum allmählichen Anpassen der Größe Ihres Pools während der Ausführung Ihres Workloads.
+> [AZURE.NOTE] Die automatische Skalierung ist derzeit nicht als Reaktion im Zeitraum unter einer Minute auf Änderungen vorgesehen, sondern dient eher zum allmählichen Anpassen der Größe Ihres Pools während der Ausführung Ihres Workloads.
 
 ## Aktivieren der automatischen Skalierung nach der Erstellung eines Pools
 
@@ -546,7 +545,7 @@ Wenn Sie bereits anhand des *targetDedicated*-Parameters einen Pool mit einer fe
 - [BatchClient.PoolOperations.EnableAutoScale][net_enableautoscale]\: Diese .NET-Methode erfordert die ID eines vorhandenen Pools und die auf den Pool anzuwendende Formel für die automatische Skalierung.
 - [Aktivieren der automatischen Skalierung für einen Pool][rest_enableautoscale]\: Diese REST-API-Anforderung erfordert die ID des vorhandenen Pools im URI und die Formel für die automatische Skalierung im Anforderungstext.
 
-> [AZURE.NOTE]Wenn beim Erstellen des Pools für den *targetDedicated*-Parameter ein Wert angegeben wurde, wird dieser beim Auswerten der Formel für das automatische Skalieren ignoriert.
+> [AZURE.NOTE] Wenn beim Erstellen des Pools für den *targetDedicated*-Parameter ein Wert angegeben wurde, wird dieser beim Auswerten der Formel für das automatische Skalieren ignoriert.
 
 Dieser Codeausschnitt zeigt, wie die automatische Skalierung mithilfe der [Batch .NET][net_api]-Bibliothek für einen vorhandenen Pool aktiviert wird. Beachten Sie, dass sowohl für das Aktivieren als auch für das Aktualisieren der Formel für einen vorhandenen Pool dasselbe Verfahren verwendet wird. Wenn das automatische Skalieren bereits aktiviert wurde, wird mithilfe des Verfahrens die Formel für den angegebenen Pool *aktualisiert*. Im Codeausschnitt wird angenommen, dass „mypool“ die ID eines vorhandenen [CloudPool][net_cloudpool] ist.
 
@@ -565,7 +564,7 @@ Es ist stets empfehlenswert, eine Formel auszuwerten, bevor Sie sie in Ihrer Anw
 - [BatchClient.PoolOperations.EvaluateAutoScale](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.evaluateautoscale.aspx) oder [BatchClient.PoolOperations.EvaluateAutoScaleAsync](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.evaluateautoscaleasync.aspx): Diese .NET-Methoden erfordern die ID eines vorhandenen Pools sowie die Zeichenfolge mit der Formel für die automatische Skalierung. Die Ergebnisse des Aufrufs befinden sich in einer Instanz der [AutoScaleEvaluation](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.autoscaleevaluation.aspx)-Klasse.
 - [Eine Formel für die automatische Skalierung auswerten](https://msdn.microsoft.com/library/azure/dn820183.aspx) – In dieser REST-API-Anforderung ist die Pool-ID im URI angegeben. Die Formel für die automatische Skalierung wird im Element *AutoScaleFormula* des Anforderungstexts angeben. Die bei der Anfrage generierte Antwort enthält Fehlerinformationen, die in Zusammenhang mit der Formel stehen können.
 
-> [AZURE.NOTE]Damit Sie eine Formel für die automatische Skalierung auswerten können, müssen Sie zuerst die automatische Skalierung für den Pool mithilfe einer gültigen Formel aktivieren.
+> [AZURE.NOTE] Damit Sie eine Formel für die automatische Skalierung auswerten können, müssen Sie zuerst die automatische Skalierung für den Pool mithilfe einer gültigen Formel aktivieren.
 
 In diesem Codeausschnitt, der die [Batch-Bibliothek für .NET][net_api] verwendet, werten wir eine Formel aus, bevor diese auf den Pool( [CloudPool][net_cloudpool]) angewandt wird.
 
@@ -729,4 +728,4 @@ Die Formel im oben stehenden Codeausschnitt bewirkt Folgendes:
 [rest_autoscaleinterval]: https://msdn.microsoft.com/de-DE/library/azure/dn820173.aspx
 [rest_enableautoscale]: https://msdn.microsoft.com/library/azure/dn820173.aspx
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0218_2016-->

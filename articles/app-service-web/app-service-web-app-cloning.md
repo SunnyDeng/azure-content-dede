@@ -87,7 +87,7 @@ Das Szenario: Der Benutzer möchte eine Web-App in eine andere Region klonen, w�
 
 ### Hinzufügen neuer geklonter Web-Apps zu einem vorhandenen Traffic Manager-Profil ###
 
-Das Szenario: Der Benutzer hat bereits ein ARM Traffic Manager-Profil, dem er beide Web-Apps als Endpunkte hinzufügen möchte. Zu diesem Zweck müssen wir zuerst die vorhandene Traffic Manager-Profil-ID zusammenstellen. Dazu benötigen wir die Abonnement-ID, den Namen der Ressourcengruppe und den vorhandenen Traffic Manager-Profilnamen.
+Szenario: Der Benutzer besitzt bereits ein ARM Traffic Manager-Profil, dem er beide Web-Apps als Endpunkte hinzufügen möchte. Zu diesem Zweck müssen wir zuerst die vorhandene Traffic Manager-Profil-ID zusammenstellen. Dazu benötigen wir die Abonnement-ID, den Namen der Ressourcengruppe und den vorhandenen Traffic Manager-Profilnamen.
 
     $TMProfileID = "/subscriptions/<Your subscription ID goes here>/resourceGroups/<Your resource group name goes here>/providers/Microsoft.TrafficManagerProfiles/ExistingTrafficManagerProfileName"
 
@@ -114,4 +114,4 @@ Dieses Feature ist zurzeit in der Vorschau. Wir arbeiten daran, neue Funktionen 
 - [Einführung in die App Service-Umgebung](app-service-app-service-environment-intro.md)
 - [Verwenden von Windows PowerShell mit dem Azure-Ressourcen-Manager](../powershell-azure-resource-manager.md)
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0218_2016-->

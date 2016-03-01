@@ -268,4 +268,4 @@ Der Azure API Management-Dienst ist ein idealer Ort zum Erfassen des HTTP-Datenv
 	-	[log-to-eventhub policy reference](https://msdn.microsoft.com/library/azure/dn894085.aspx#log-to-eventhub)
 	
 
-<!----HONumber=Nov15_HO3-->
+<!-----HONumber=Nov15_HO3-->

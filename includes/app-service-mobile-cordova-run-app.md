@@ -1,7 +1,7 @@
 
 1. Besuchen Sie das [Azure-Portal]. Klicken Sie auf **Alle durchsuchen** > **Mobile Apps** > Back-End, das Sie gerade erstellt haben. Klicken Sie in den Einstellungen der mobilen App auf **Schnellstart** > **Cordova**. Klicken Sie unter **Clientanwendung konfigurieren**, auf **Neue App erstellen**, und klicken Sie dann auf **Download**. Damit laden Sie ein vollständiges Cordova-Projekt für eine App herunter, das für eine Verbindung mit dem Back-End vorkonfiguriert ist.
 
-2. Entpacken Sie heruntergeladene ZIP-Datei in ein Verzeichnis auf Ihrer Festplatte.
+2. Entpacken Sie die heruntergeladene ZIP-Datei in ein Verzeichnis auf Ihrer Festplatte.
 
 3. Öffnen Sie das Projekt in **Visual Studio**. Klicken Sie auf **Öffnen** > **Projekt/Projektmappe**.
 
@@ -17,4 +17,4 @@
 
 [Azure-Portal]: https://portal.azure.com/
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0218_2016-->

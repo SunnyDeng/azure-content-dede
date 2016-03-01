@@ -13,13 +13,13 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/16/2015" 
+	ms.date="02/16/2016" 
 	ms.author="asteen"/>
 	
 
 # Zurücksetzen des Azure AD-Kennworts für Benutzer und Administratoren
 
-  >[AZURE.IMPORTANT]Sind Sie hier, weil Sie Ihr Azure- oder Office 365-Kennwort zurücksetzen möchten? Wenn das der Fall ist, [überspringen Sie diesen Abschnitt](#users-how-to-manage-your-own-password).
+  >[AZURE.IMPORTANT] Sind Sie hier, weil Sie Ihr Azure- oder Office 365-Kennwort zurücksetzen möchten? Wenn das der Fall ist, [überspringen Sie diesen Abschnitt](#users-how-to-manage-your-own-password).
   
 Als Maßnahme zur Reduzierung von Kosten und Arbeitsaufwand ist Self-Service seit jeher ein wichtiges Ziel für IT-Abteilungen auf der ganzen Welt. Tatsächlich ist der Markt überflutet mit Produkten, mit denen Sie Ihre lokalen Gruppen, Kennwörter oder Benutzerprofile über die Cloud oder lokal verwalten können. Azure AD unterscheidet sich von diesen Angeboten durch die Bereitstellung einiger der benutzerfreundlichsten und leistungsstärksten Self-Service-Funktionen, die gegenwärtig verfügbar sind.
 
@@ -252,4 +252,4 @@ Im Folgenden finden Sie Links zu allen Webseiten mit Informationen zur Kennwortz
 * [**Problembehandlung**](active-directory-passwords-troubleshoot.md) – Erfahren Sie, wie Sie Probleme mit dem Dienst schnell beheben.
 * [**Weitere Informationen**](active-directory-passwords-learn-more.md) – Erhalten Sie tiefgehende technische Details zur Funktionsweise des Diensts.
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0218_2016-->

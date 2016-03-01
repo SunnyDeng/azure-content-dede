@@ -10,7 +10,7 @@
 <tags
    ms.service="data-catalog"
    ms.devlang="NA"
-   ms.topic="article"
+   ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
    ms.date="02/08/2016"
@@ -110,4 +110,4 @@ Das ultimative Ziel der Datenermittlung besteht darin, die erforderlichen Daten 
 1.	Für Clientanwendungen, die von **Azure Data Catalog** direkt unterstützt werden, können Benutzer im Portal auf der Datenquellenkachel auf das Menü **Öffnen in** klicken. Die Clientanwendung wird mit einer hergestellten Verbindung mit der gewählten Datenquelle gestartet.
 2.	Für alle Clientanwendungen können Benutzer die Verbindungsinformationen verwenden, die im Eigenschaftenbereich für eine ausgewählte Datenquelle angezeigt werden. Diese Informationen enthalten alle Details (z. B. Servername, Datenbankname und Objektname), die zum Herstellen der Verbindung mit den Daten erforderlich sind. Sie können in die Verbindungsumgebung des Clienttools kopiert werden. Wenn Details zur Zugriffsanforderung für eine Datenquelle bereitgestellt wurden, werden diese Information neben den Verbindungsdetails angezeigt.
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0224_2016-->

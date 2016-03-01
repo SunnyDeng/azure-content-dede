@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/16/2015" 
+	ms.date="02/16/2016" 
 	ms.author="asteen"/>
 
 # Aktualisieren Ihres eigenen Kennworts
@@ -48,7 +48,7 @@ Am schnellsten können Sie sich für die Kennwortzurücksetzung registrieren, in
  
     ![][015]
 
- >[AZURE.IMPORTANT]Wenn Ihr Administrator es Ihnen ermöglicht, sich für mehrere Optionen zu registrieren, empfehlen wir Ihnen dringend, dass Sie sich zur Sicherheit auch für eine zweite Option registrieren. Dadurch sorgen Sie für den Fall vor, dass Sie Ihr Telefon oder den Zugang zu Ihrer E-Mail verlieren.
+ >[AZURE.IMPORTANT] Wenn Ihr Administrator es Ihnen ermöglicht, sich für mehrere Optionen zu registrieren, empfehlen wir Ihnen dringend, dass Sie sich zur Sicherheit auch für eine zweite Option registrieren. Dadurch sorgen Sie für den Fall vor, dass Sie Ihr Telefon oder den Zugang zu Ihrer E-Mail verlieren.
 
 ## Ändern des Kennworts in Office 365
 Führen Sie die folgenden Schritte aus, um das Kennwort für Ihr Geschäfts- oder Schulkonto in Office 365 zu ändern. Falls Sie Ihr Kennwort vergessen haben und es zurücksetzen möchten, führen Sie [diese Schritte](#how-to-reset-your-password) aus.
@@ -76,7 +76,7 @@ Führen Sie die folgenden Schritte aus, um das Kennwort für Ihr Geschäfts- ode
 
 Führen Sie die folgenden Schritte aus, um das Kennwort für Ihr Geschäfts- oder Schulkonto in einem beliebigen Anmeldebildschirm für Geschäfts- oder Schulkonten zurückzusetzen.
 
- >[AZURE.IMPORTANT]Dieses Feature steht nur zur Verfügung, wenn Ihr Administrator es aktiviert hat. Wenn es nicht aktiviert ist, weist eine Nachricht Sie darauf hin, dass dieses Feature für Ihr Konto nicht aktiviert ist. In diesem Fall können Sie über den Link „Wenden Sie sich an den Administrator“ mit Ihrem Administrator Kontakt aufnehmen und ihn bitten, Ihr Konto zu entsperren.<br><br>Wenn Ihr Administrator das Feature für Sie aktiviert hat, müssen Sie sich dafür registrieren, bevor Sie es verwenden können. Sie können das hier erledigen: http://aka.ms/ssprsetup.
+ >[AZURE.IMPORTANT] Dieses Feature steht nur zur Verfügung, wenn Ihr Administrator es aktiviert hat. Wenn es nicht aktiviert ist, weist eine Nachricht Sie darauf hin, dass dieses Feature für Ihr Konto nicht aktiviert ist. In diesem Fall können Sie über den Link „Wenden Sie sich an den Administrator“ mit Ihrem Administrator Kontakt aufnehmen und ihn bitten, Ihr Konto zu entsperren.<br><br>Wenn Ihr Administrator das Feature für Sie aktiviert hat, müssen Sie sich dafür registrieren, bevor Sie es verwenden können. Sie können das hier erledigen: http://aka.ms/ssprsetup.
  
 
  1. Klicken Sie auf einer beliebigen Anmeldeseite für Geschäfts- oder Schulkonten entweder auf den Link „Kein Zugriff auf Ihr Konto?“ oder auf den Link „Kennwort vergessen?“, oder navigieren Sie direkt zu https://passwordreset.microsoftonline.com.
@@ -123,7 +123,7 @@ Gibt es ein Problem beim Zurücksetzen Ihres Kennworts? Dann lesen Sie den Absch
 ## Entsperren Ihres Kontos
 Führen Sie die folgenden Schritte aus, um Ihr lokales Konto in einem beliebigen Anmeldebildschirm für Geschäfts- oder Schulkonten zurückzusetzen. **Hinweis: Sie können Ihr Konto nur entsperren, wenn es lokal gesperrt wurde.**
 
- >[AZURE.IMPORTANT]Dieses Feature steht nur zur Verfügung, wenn Ihr Administrator es aktiviert hat. Wenn es nicht aktiviert ist, weist eine Nachricht Sie darauf hin, dass dieses Feature für Ihr Konto nicht aktiviert ist. In diesem Fall können Sie über den Link „Wenden Sie sich an den Administrator“ mit Ihrem Administrator Kontakt aufnehmen und ihn bitten, Ihr Konto zu entsperren.<br><br>Wenn Ihr Administrator das Feature für Sie aktiviert hat, müssen Sie sich dafür registrieren, bevor Sie es verwenden können. Sie können das hier erledigen: http://aka.ms/ssprsetup.
+ >[AZURE.IMPORTANT] Dieses Feature steht nur zur Verfügung, wenn Ihr Administrator es aktiviert hat. Wenn es nicht aktiviert ist, weist eine Nachricht Sie darauf hin, dass dieses Feature für Ihr Konto nicht aktiviert ist. In diesem Fall können Sie über den Link „Wenden Sie sich an den Administrator“ mit Ihrem Administrator Kontakt aufnehmen und ihn bitten, Ihr Konto zu entsperren.<br><br>Wenn Ihr Administrator das Feature für Sie aktiviert hat, müssen Sie sich dafür registrieren, bevor Sie es verwenden können. Sie können das hier erledigen: http://aka.ms/ssprsetup.
 
 
  1. Klicken Sie auf einer beliebigen Anmeldeseite für Geschäfts- oder Schulkonten entweder auf den Link „Kein Zugriff auf Ihr Konto?“ oder auf den Link „Kennwort vergessen?“, oder navigieren Sie direkt zu https://passwordreset.microsoftonline.com.
@@ -162,7 +162,7 @@ Führen Sie die folgenden Schritte aus, um Ihr lokales Konto in einem beliebigen
  
     ![][010]
   
- >[AZURE.IMPORTANT]Stellen Sie sicher, dass Sie das Kennwort auf all Ihren Geräten aktualisieren. Nicht selten ist eine vergessene App mit einem alten Kennwort (z. B. der E-Mail-Client auf Ihrem Smartphone) die Ursache dafür, dass ein Konto gesperrt wird.
+ >[AZURE.IMPORTANT] Stellen Sie sicher, dass Sie das Kennwort auf all Ihren Geräten aktualisieren. Nicht selten ist eine vergessene App mit einem alten Kennwort (z. B. der E-Mail-Client auf Ihrem Smartphone) die Ursache dafür, dass ein Konto gesperrt wird.
  
 Gibt es ein Problem beim Entsperren Ihres Kontos? Dann lesen Sie den Abschnitt über [häufige Probleme und Lösungen](#common-problems-and-their-solutions).
 
@@ -203,7 +203,7 @@ Hier finden Sie einige häufige Fehler und die passenden Lösungen:
               <p>Nach dem Eingeben meiner Benutzer-ID erhalte ich die Fehlermeldung „Ihr Konto ist für ein Zurücksetzen des Kennworts nicht aktiviert“.</p>
             </td>
             <td>
-              <p>Ihr Konto ist für ein Zurücksetzen des Kennworts nicht aktiviert.<br><br>Leider hat der Administrator Ihr Konto nicht zum Verwenden dieses Diensts eingerichtet.<br><br> Wenn Sie möchten, können wir einen Administrator in Ihrer Organisation kontaktieren, um Ihr Kennwort für Sie zurückzusetzen.</p>
+              <p>Ihr Konto ist für ein Zurücksetzen des Kennworts nicht aktiviert.<br><br>Ihr Administrator hat Ihr Konto nicht zur Verwendung mit diesem Dienst eingerichtet.<br><br> Wenn Sie möchten, können wir einen Administrator in Ihrer Organisation kontaktieren, um Ihr Kennwort für Sie zurückzusetzen.</p>
             </td>
             <td>
               <p>Diese Meldung wird angezeigt, weil Ihr Administrator die Kennwortzurücksetzung über den Link <b>Kein Zugriff auf Ihr Konto?</b> für Ihre Organisation nicht aktiviert hat oder weil er Ihnen die Nutzung dieser Funktion nicht gestattet hat. <br><br> Klicken Sie zum Zurücksetzen Ihres Kennworts auf den Link <b>Wenden Sie sich an einen Administrator</b>, und teilen Sie dem Administrator Ihres Unternehmens in einer E-Mail mit, dass Sie Ihr Kennwort in Office&#160;365 zurücksetzen möchten. Er kann dann dieses Feature für Sie aktivieren.</p>
@@ -252,4 +252,4 @@ Im Folgenden finden Sie Links zu allen Webseiten mit Informationen zur Kennwortz
 [014]: ./media/active-directory-passwords-update-your-own-password/014.jpg "Image_014.jpg"
 [015]: ./media/active-directory-passwords-update-your-own-password/015.jpg "Image_015.jpg"
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0218_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/16/2015" 
+	ms.date="02/16/2016" 
 	ms.author="asteen"/>
 
 # Anpassen der Kennwortverwaltung an die Anforderungen Ihrer Organisation
@@ -130,7 +130,7 @@ In der folgenden Tabelle werden die Auswirkungen der einzelnen Steuerelemente au
 ## Verhalten der Kennwortverwaltung
 In der folgenden Tabelle werden die Auswirkungen der einzelnen Steuerelemente auf die bereitgestellte Funktionalität für Benutzer beschrieben, die sich für die Kennwortzurücksetzung registrieren und ihre Kennwörter zurücksetzen. Sie können diese Optionen im Abschnitt **Richtlinie zum Zurücksetzen des Benutzerkennworts** auf der Registerkarte **Konfigurieren** Ihres Verzeichnisses im [Azure-Verwaltungsportal](https://manage.windowsazure.com) konfigurieren.
 
-> [AZURE.NOTE]Dem von Ihnen verwendeten Administratorkonto muss eine AAD Premium-Lizenz zugewiesen sein, damit diese Richtliniensteuerelemente angezeigt werden.<br><br>Diese Richtliniensteuerelemente gelten nur für Endbenutzer, die ihre Kennwörter zurücksetzen, nicht für Administratoren. **Administratoren besitzen eine Standardrichtlinie einer alternativen E-Mail-Adresse und/oder eines Mobiltelefons. Diese wird von Microsoft angegeben und kann nicht geändert werden.**
+> [AZURE.NOTE] Dem von Ihnen verwendeten Administratorkonto muss eine AAD Premium-Lizenz zugewiesen sein, damit diese Richtliniensteuerelemente angezeigt werden.<br><br>Diese Richtliniensteuerelemente gelten nur für Endbenutzer, die ihre Kennwörter zurücksetzen, nicht für Administratoren. **Administratoren besitzen eine Standardrichtlinie einer alternativen E-Mail-Adresse und/oder eines Mobiltelefons. Diese wird von Microsoft angegeben und kann nicht geändert werden.**
 
 <table>
             <tbody><tr>
@@ -762,7 +762,7 @@ In der folgenden Tabelle werden die Auswirkungen der einzelnen Steuerelemente au
                 </p>
                 <ul>
                   <li class="unordered">
-												Um dieses Feature verwenden zu können, müssen Sie die Azure&#160;AD Connect-Version von August&#160;2015 oder später (Version 1.0.8667.0 oder höher) installieren.<br><br><a href="http://www.microsoft.com/download/details.aspx?id=47594">Klicken Sie hier, um die aktuelle Version von Azure&#160;AD Connect herunterzuladen</a>.</li>
+												Um dieses Feature verwenden zu können, müssen Sie die Azure&#160;AD Connect-Version von August&#160;2015 oder später (Version 1.0.8667.0 oder höher) installieren.<br><br><a href="http://www.microsoft.com/download/details.aspx?id=47594">Klicken Sie hier, um die aktuelle Version von Azure&#160;AD Connect herunterzuladen.</a></li>
                         
                   <li class="unordered">
                     <strong>Hinweis</strong>: Um diese Funktion zu testen, muss das Kennwortrückschreiben aktiviert sein sowie ein lokal erstelltes Konto (beispielsweise eines Verbundbenutzers oder synchronisierten Benutzers) verwendet werden, bei dem ein gesperrtes Konto vorliegt. Benutzern, die nicht lokal bereitgestellt sind und über kein gesperrtes Konto verfügen, wird die Option zum Entsperren ihres Kontos nicht angezeigt.</li>
@@ -872,4 +872,4 @@ Im Folgenden finden Sie Links zu allen Webseiten mit Informationen zur Kennwortz
 
 [001]: ./media/active-directory-passwords-customize/001.jpg "Image_001.jpg"
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0218_2016-->

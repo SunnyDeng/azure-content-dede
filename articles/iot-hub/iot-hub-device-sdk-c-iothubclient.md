@@ -115,7 +115,7 @@ while ((IoTHubClient_LL_GetSendStatus(iotHubClientHandle, &status) == IOTHUB_CLI
 }
 ```
 
-Dieser Code ruft **IoTHubClient\_LL\_DoWork** auf, bis alle Ereignisse im Puffer an den IoT Hub gesendet wurden. Achtung: Das bedeutet nicht, dass alle Nachrichten in der Warteschlange empfangen wurden. Das liegt zum Teil daran, dass die Überprüfung auf „alle“ Nachrichten keine allzu deterministische Aktion ist. Was würde geschehen, wenn Sie „alle“ Nachrichten abrufen und dann eine weitere direkt danach an das Gerät gesendet wird? Eine bessere Möglichkeit für dieses Problem ist ein programmierter Timeout. Die Nachrichtenrückruffunktion könnte beispielsweise jedes Mal einen Timer zurücksetzen, wenn sie aufgerufen wird. Anschließend schreiben Sie die Logik, um die Verarbeitung fortzusetzen, wenn z. B. in den letzten *x* Sekunden keine Nachrichten empfangen wurden.
+Dieser Code ruft **IoTHubClient\_LL\_DoWork** auf, bis alle Ereignisse im Puffer an den IoT Hub gesendet wurden. Achtung: Das bedeutet nicht, dass alle Nachrichten in der Warteschlange empfangen wurden. Das liegt zum Teil daran, dass die Überprüfung auf „alle“ Nachrichten keine allzu deterministische Aktion ist. Was würde geschehen, wenn Sie „alle“ Nachrichten abrufen und dann eine weitere direkt danach an das Gerät gesendet wird? Eine bessere Möglichkeit für dieses Problem ist ein programmierter Timeout. Die Nachrichtenrückruffunktion könnte beispielsweise jedes Mal einen Timer zurücksetzen, wenn sie aufgerufen wird. Anschließend schreiben Sie die Logik, um die Verarbeitung fortzusetzen, wenn z. B. in den letzten *x* Sekunden keine Nachrichten empfangen wurden.
 
 Stellen Sie nach Abschluss der Übergabe von Ereignissen und des Empfangs von Nachrichten sicher, dass Sie die entsprechende Funktion aufrufen, um die Ressourcen zu bereinigen.
 
@@ -278,4 +278,4 @@ Die Batchverarbeitung ist eine wichtige Option. Standardmäßig übergibt die Bi
 
 In diesem Artikel wird das Verhalten der **IoTHubClient**-Bibliothek im **Azure IoT-Geräte-SDK für C** ausführlich beschrieben. Diese Informationen sollten Ihnen eine umfassende Übersicht über die Funktionen der **IoTHubClient**-Bibliothek bieten. Im [nächsten Artikel](iot-hub-device-sdk-c-serializer.md) stellen wir ähnliche Details zur Bibliothek des **Serialisierungsprogramms** vor.
 
-<!---HONumber=AcomDC_0211_2016-->
+<!----HONumber=AcomDC_0211_2016-->

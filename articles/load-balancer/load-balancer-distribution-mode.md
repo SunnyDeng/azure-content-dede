@@ -4,7 +4,7 @@
    services="load-balancer"
    documentationCenter="na"
    authors="joaoma"
-   manager="adinah"
+   manager="carmonm"
    editor="tysonn" />
 <tags 
    ms.service="load-balancer"
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/02/2015"
+   ms.date="02/02/2016"
    ms.author="joaoma" />
 
 
@@ -42,7 +42,7 @@ Fügen Sie einem virtuellen Computer einen Azure-Endpunkt hinzu, und legen Sie d
 
 	Get-AzureVM -ServiceName mySvc -Name MyVM1 | Add-AzureEndpoint -Name HttpIn -Protocol TCP -PublicPort 80 -LocalPort 8080 –LoadBalancerDistribution sourceIP | Update-AzureVM
 
->[AZURE.NOTE]"LoadBalancerDistribution" kann für eine 2-Tupel-Konfiguration (Quell-IP, Ziel-IP) auf "sourceIP", für eine 3-Tupel-Konfiguration (Quell-IP, Ziel-IP, Protokoll) auf "sourceIPProtocol" oder gar nicht festgelegt werden, um das Standardverhalten (5-Tupel-Lastenausgleich) zu verwenden.
+>[AZURE.NOTE] "LoadBalancerDistribution" kann für eine 2-Tupel-Konfiguration (Quell-IP, Ziel-IP) auf "sourceIP", für eine 3-Tupel-Konfiguration (Quell-IP, Ziel-IP, Protokoll) auf "sourceIPProtocol" oder gar nicht festgelegt werden, um das Standardverhalten (5-Tupel-Lastenausgleich) zu verwenden.
 
 
 Abrufen einer Lastenausgleichs-Verteilungsmoduskonfiguration für einen Endpunkt
@@ -149,4 +149,4 @@ Der Wert von "LoadBalancerDistribution" kann "sourceIP" (2-Tupel-Affinität) ode
 
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0218_2016-->

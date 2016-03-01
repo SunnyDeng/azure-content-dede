@@ -14,7 +14,7 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="powershell"
     ms.workload="data-management" 
-    ms.date="12/01/2015"
+    ms.date="02/23/2016"
     ms.author="adamkr; sstein"/>
 
 # Erstellen eines Pools für elastische Datenbanken mit PowerShell zum horizontalen Hochskalieren von Ressourcen für mehrere SQL-Datenbanken 
@@ -26,7 +26,7 @@
 
 Erfahren Sie wie Sie mehrere Datenbanken verwalten können, indem Sie mithilfe von PowerShell-Cmdlets einen [Pool für elastische Datenbanken](sql-database-elastic-pool.md) erstellen.
 
-> [AZURE.NOTE]Pools für elastische Datenbanken sind derzeit als Vorschauversion ausschließlich für Server mit SQL-Datenbank V12 verfügbar. Wenn Sie über einen SQL-Datenbank V11-Server verfügen, können Sie in einem Schritt [mithilfe von PowerShell auf V12 aktualisieren und einen Pool erstellen](sql-database-upgrade-server.md).
+> [AZURE.NOTE] Pools für elastische Datenbanken sind derzeit als Vorschauversion ausschließlich für Server mit SQL-Datenbank V12 verfügbar. Wenn Sie über einen SQL-Datenbank V11-Server verfügen, können Sie in einem Schritt [mithilfe von PowerShell auf V12 aktualisieren und einen Pool erstellen](sql-database-upgrade-server-portal.md).
 
 Pools für elastische Datenbanken ermöglichen das horizontale Hochskalieren von Datenbankressourcen und -verwaltung für mehrere SQL-Datenbanken.
 
@@ -47,7 +47,7 @@ Zum Ausführen von PowerShell-Cmdlets muss Azure PowerShell installiert sein und
 
 Da jetzt das Azure-Ressourcen-Manager-Modul ausgeführt wird, haben Sie Zugriff auf alle erforderlichen Cmdlets zum Erstellen und Konfigurieren eines Pools für elastische Datenbanken. Zuerst müssen Sie den Zugriff auf Ihr Azure-Konto einrichten. Führen Sie Folgendes aus. Es wird eine Anmeldeseite angezeigt, auf der Sie Ihre Anmeldeinformationen eingeben müssen. Verwenden Sie die E-Mail-Adresse und das Kennwort für die Anmeldung beim Azure-Portal.
 
-	Add-AzureRmAccount
+	Login-AzureRmAccount
 
 Nach der erfolgreichen Anmeldung sollten einige Informationen auf dem Bildschirm angezeigt werden, wie die ID, mit der Sie sich angemeldet haben, und die Azure-Abonnements, auf die Sie zugreifen können.
 
@@ -237,4 +237,4 @@ Nach dem Erstellen eines Pools für elastische Datenbanken können Sie elastisch
 
 Weitere Informationen über elastische Datenbanken und elastische Datenbankpools, einschließlich API- und Fehlerinformationen, finden Sie unter [Referenz für elastische Datenbankpools](sql-database-elastic-pool-reference.md).
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0224_2016-->

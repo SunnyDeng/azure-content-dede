@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/19/2015" 
+	ms.date="02/16/2016" 
 	ms.author="billmath"/>
 
 # Erfahren Sie mehr über die Multi-Factor Authentication
@@ -38,4 +38,4 @@ Folgendes ist eine Sammlung von zusätzlichen Ressourcen, mit denen Sie alle Fun
 
  
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0218_2016-->

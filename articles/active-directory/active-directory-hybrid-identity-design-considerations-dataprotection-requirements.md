@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Überlegungen zum Entwurf der Azure Active Directory-Hybrid-Identität – Ermitteln der Anforderungen in Bezug auf den Schutz von Daten | Microsoft Azure"
-	description="Beim Planen der Hybrid-Identitätslösung müssen Sie die Anforderungen für den Schutz der Daten ermitteln, die für Ihr Unternehmen gelten. Außerdem müssen Sie wissen, welche Optionen verfügbar sind, um diese Anforderungen am besten zu erfüllen."
+	pageTitle="Überlegungen zum Entwurf der Azure Active Directory-Hybrididentität – Ermitteln der Anforderungen in Bezug auf den Schutz von Daten | Microsoft Azure"
+	description="Beim Planen der Hybrididentitätslösung müssen Sie die Anforderungen für den Schutz der Daten ermitteln, die für Ihr Unternehmen gelten. Außerdem müssen Sie wissen, welche Optionen verfügbar sind, um diese Anforderungen am besten zu erfüllen."
 	documentationCenter=""
 	services="active-directory"
 	authors="yuridio"
@@ -13,7 +13,7 @@
 	ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="identity" 
-	ms.date="11/11/2015"
+	ms.date="02/12/2016"
 	ms.author="yuridio"/>
 
 #Planen einer Erweiterung der Datensicherheit mit einer starken Identitätslösung
@@ -26,7 +26,8 @@ Der erste Schritt zum Schützen der Daten besteht in der Identifizierung, wer au
 
 Beim Planen Ihrer Hybrid-Identitätslösung müssen Sie die Anforderungen für den Schutz der Daten kennen, die für Ihr Unternehmen gelten. Außerdem müssen Sie wissen, welche Optionen verfügbar sind, um diese Anforderungen am besten zu erfüllen.
  
->[AZURE.NOTE]Nach Abschluss der Planung für den Schutz der Daten sollten Sie sich die Informationen unter [Ermitteln der Anforderungen für die Multi-Factor Authentication](active-directory-hybrid-identity-design-considerations-multifactor-auth-requirements.md) durchlesen. So können Sie sicherstellen, dass Ihre Auswahl in Bezug auf Multi-Factor Authentication-Anforderungen nicht negativ von den Entscheidungen beeinflusst wird, die Sie in diesem Abschnitt getroffen haben.
+>[AZURE.NOTE]
+Nach Abschluss der Planung für den Schutz der Daten sollten Sie sich die Informationen unter [Ermitteln der Anforderungen für die Multi-Factor Authentication](active-directory-hybrid-identity-design-considerations-multifactor-auth-requirements.md) durchlesen. So können Sie sicherstellen, dass Ihre Auswahl in Bezug auf Multi-Factor Authentication-Anforderungen nicht negativ von den Entscheidungen beeinflusst wird, die Sie in diesem Abschnitt getroffen haben.
 
 ## Bestimmen der Datenschutzanforderungen
 Im Zeitalter der Mobilität haben die meisten Unternehmen das gleiche Ziel: Benutzer sollen mit ihren mobilen Geräten lokal oder per Remoteverbindung an jedem Ort produktiv arbeiten können, um die Produktivität zu steigern. Dies ist zwar ein häufiges Ziel, aber Unternehmen mit dieser Anforderung sorgen sich auch um die zahlreichen Bedrohungen, denen begegnet werden muss, um die Daten des Unternehmens zu schützen und den Datenschutz für Benutzer zu wahren. Die jeweiligen Anforderungen unterscheiden sich hierbei von Unternehmen zu Unternehmen. Unterschiedliche Compliance-Regeln, die häufig von der Branche des Unternehmens abhängen, führen zu unterschiedlichen Entwurfsentscheidungen.
@@ -70,13 +71,14 @@ Die Regulierungen, Gesetze und Compliance-Anforderungen variieren je nach Branch
 - Ist die Hybrid-Identitätslösung mit den gesetzlichen Vorschriften für Ihr Unternehmen kompatibel?
 - Verfügt die Hybrid-Identitätslösung über integrierte Funktionen, die Ihr Unternehmen in die Lage versetzen, die gesetzlichen Vorschriften zu erfüllen? 
  
->[AZURE.NOTE]Notieren Sie sich alle Antworten, und stellen Sie sicher, dass Ihnen die Begründung der Antwort jeweils klar ist. Unter [Definieren der Strategie zum Schutz von Daten](active-directory-hybrid-identity-design-considerations-data-protection-strategy.md) sind die verfügbaren Optionen und die jeweiligen Vor- und Nachteile beschrieben. Indem Sie diese Fragen beantworten, wählen Sie aus, welche Option Ihre Geschäftsanforderungen am besten erfüllt.
+>[AZURE.NOTE]
+Notieren Sie sich alle Antworten, und stellen Sie sicher, dass Ihnen die Begründung der Antwort jeweils klar ist. Unter [Definieren der Strategie zum Schutz von Daten](active-directory-hybrid-identity-design-considerations-data-protection-strategy.md) sind die verfügbaren Optionen und die jeweiligen Vor- und Nachteile beschrieben. Indem Sie diese Fragen beantworten, wählen Sie aus, welche Option Ihre Geschäftsanforderungen am besten erfüllt.
 
 ## Nächste Schritte
  [Bestimmen der Content Management-Anforderungen](active-directory-hybrid-identity-design-considerations-contentmgt-requirements.md)
 
 
 ## Siehe auch
-[Überlegungen zum Entwurf – Übersicht](active-directory-hybrid-identity-design-considerations-directory-overview.md)
+[Überlegungen zum Entwurf – Übersicht](active-directory-hybrid-identity-design-considerations-overview.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0218_2016-->

@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="01/13/2016"
+    ms.date="02/11/2016"
     ms.author="elizapo" />
 
 
@@ -32,26 +32,14 @@ Wenn eine Meldung wie „GoldImageInvalid“ angezeigt wird, während Sie darauf
 
 
 ## Sind in Ihrem VNET Netzwerksicherheitsgruppen definiert? ##
-Wenn im Subnetz, das Sie für die Sammlung verwenden, Netzwerksicherheitsgruppen definiert sind, stellen Sie sicher, dass auf die folgenden URLs von innerhalb des Subnetzes zugegriffen werden kann:
-
-	https://management.remoteapp.windowsazure.com  
-	https://opsapi.mohoro.com  
-	https://telemetry.remoteapp.windowsazure.com  
-	https://*.remoteapp.windowsazure.com  
-	https://login.windows.net (if you have Active Directory)  
-	https://login.microsoftonline.com  
-	Azure storage *.remoteapp.windowsazure.com  
-	*.core.windows.net  
-	https://www.remoteapp.windowsazure.com  
-	https://www.remoteapp.windowsazure.com  
-
-Öffnen Sie die folgenden Ports im Subnetz des virtuellen Netzwerks:
-
-Eingehend - TCP: 3030 TCP: 443 Ausgehend – TCP: 443
+Wenn in dem Subnetz, das Sie für die Sammlung verwenden, Netzwerksicherheitsgruppen definiert sind, stellen Sie sicher, dass aus dem Subnetz auf die folgenden [URLs und Ports](remoteapp-ports.md) zugegriffen werden kann:
 
 Sie können den im Subnetz bereitgestellten virtuellen Computern für eine bessere Kontrolle zusätzliche Netzwerksicherheitsgruppen hinzufügen.
 
 ## Verwenden Sie eigene DNS-Server? Kann darauf aus dem VNET-Subnetz zugegriffen werden? ##
+>[AZURE.NOTE] Sie müssen sicherstellen, dass die DNS-Server in Ihrem VNET jederzeit verfügbar und in der Lage sind, die im VNET gehosteten virtuellen Computer aufzulösen. Verwenden Sie hierfür nicht Google DNS.
+
+
 Für Hybridsammlungen verwenden Sie eigene DNS-Server. Sie geben sie in Ihrem Netzwerkkonfigurationsschema oder über das Verwaltungsportal beim Erstellen des virtuellen Netzwerks an. DNS-Server werden in der Reihenfolge verwendet, in der sie zum Failover angegeben sind (im Gegensatz zu Roundrobin).
 
 Stellen Sie sicher, dass auf die DNS-Server für die Sammlung zugegriffen werden kann und dass sie über das VNET-Subnetz, dass Sie für diese Sammlung angegeben haben, verfügbar sind.
@@ -79,4 +67,4 @@ Stellen Sie sicher, dass die Domänendetails gültig sind und dass der Domänenc
 
 Der erstellte oder hinzugefügte Domänenname muss ein interner Domänenname sein (nicht Ihr Azure AD-Domänenname), und er muss in das DNS-Format auflösbar sein (contoso.local). Angenommen, Sie verfügen über einen internen Active Directory-Namen (contoso.local) und eine Active Directory-UPN (contoso.com), dann müssen Sie den internen Namen verwenden, wenn Sie eine Sammlung erstellen.
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0218_2016-->

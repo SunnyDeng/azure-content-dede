@@ -12,7 +12,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="02/08/2016"
+   ms.date="02/12/2016"
    ms.author="cherylmc"/>
 
 
@@ -118,7 +118,7 @@ Sie können mehr als eine ExpressRoute-Verbindung pro geopolitischer Region erwe
 
 Microsoft kennzeichnet Präfixe, die über das öffentliche Peering und Microsoft-Peering angekündigt werden, mit den passenden BGP-Communitywerten, um die Region anzugeben, in der die Präfixe gehostet werden. Sie können die Communitywerte nutzen, um die richtigen Routingentscheidungen zu treffen und Kunden optimales Routing zu bieten.
 
-| **Geopolitische Region** | **Microsoft Azure-Region (dasselbe gilt für Office 365)** | **BGP-Communitywert** |
+| **Geopolitische Region** | **Microsoft Azure-Region** | **BGP-Communitywert** |
 |---|---|---|
 | **Nordamerika** | | |
 | | USA (Ost) | 12076:51004 |
@@ -174,4 +174,4 @@ Microsoft berücksichtigt keine BGP-Communitywerte, die von Ihnen festgelegt wer
 	- [Konfigurieren des Routings für das klassische Bereitstellungsmodell](expressroute-howto-routing-classic.md) oder [Konfigurieren des Routings für das Ressourcen-Manager-Bereitstellungsmodell](expressroute-howto-routing-arm.md)
 	- [Verknüpfen eines klassischen VNet mit einer ExpressRoute-Verbindung](expressroute-howto-linkvnet-classic.md) oder [Verknüpfen eines Ressourcen-Manager-VNet mit einer ExpressRoute-Verbindung](expressroute-howto-linkvnet-arm.md)
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0224_2016-->

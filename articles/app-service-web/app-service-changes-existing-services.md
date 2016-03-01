@@ -1,20 +1,20 @@
-<properties 
-	pageTitle="Azure App Service und seine Auswirkungen auf vorhandene Azure-Dienste" 
-	description="Erläutert, wie sich der neue Azure App Service und seine Funktionen auf vorhandene Dienste in Azure auswirken." 
-	authors="yochayk" 
-	writer="yochayk" 
-	editor="yochayk" 
-	manager="nirma" 
-	services="app-service" 
+<properties
+	pageTitle="Azure App Service und seine Auswirkungen auf vorhandene Azure-Dienste"
+	description="Erläutert, wie sich der neue Azure App Service und seine Funktionen auf vorhandene Dienste in Azure auswirken."
+	authors="yochayk"
+	writer="yochayk"
+	editor="yochayk"
+	manager="nirma"
+	services="app-service"
 	documentationCenter=""/>
 
-<tags 
-	ms.service="app-service" 
-	ms.workload="na" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="12/24/2015" 
+<tags
+	ms.service="app-service"
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="02/12/2016"
 	ms.author="yochayk"/>
 
 
@@ -24,7 +24,7 @@ Dieser Artikel beschreibt die Änderungen an vorhandenen Azure-Diensten, die im 
 
 [AZURE.INCLUDE [app-service-mobile-to-web-and-api](../../includes/app-service-web-to-api-and-mobile.md)]
 
-## Übersicht 
+## Übersicht
 
 [Azure App Service](https://azure.microsoft.com/services/app-service/) ist ein neuer, besonderer Clouddienst, der es Entwicklern ermöglicht, Web- und mobile Anwendungen für beliebige Plattformen und Geräte zu entwickeln. App Service ist eine integrierte Lösung für die Optimierung wiederholt ausgeführter Codierungsaufgaben, die Integration in Unternehmens- und SaaS-Systeme und die Automatisierung von Geschäftsprozessen bei gleichzeitiger Erfüllung Ihrer Anforderungen an Sicherheit, Zuverlässigkeit und Skalierbarkeit.
 
@@ -60,8 +60,8 @@ In der folgenden Tabelle wird erläutert, wie vorhandene Azure-Dienste App Servi
 <td align="left">Azure Mobile Services</td>
 <td align="left">Mobile Apps</td>
 <td align="left"><p><li>Mobile Services steht weiterhin als eigenständiger Dienst zur Verfügung und wird weiter vollständig unterstützt.</p>
-<p><li>Mobile Apps ist ein neuer App-Typ in App Service, der die gesamte Funktionalität von Mobile Services und vieles mehr integriert. Mobile Apps ist als öffentliche Vorschau verfügbar.</p>
-<p><li>Es ist einfach, [von Mobile Services zu Mobile Apps zu migrieren](../app-service-mobile/app-service-mobile-migrating-from-mobile-services.md). Da sich der Mobile Apps-Dienst noch in der Vorschauphase befindet, sollte er nicht für die Ausführung von Produktions-Apps genutzt werden.</p>
+<p><li>Mobile Apps ist ein App-Typ in App Service, der die gesamte Funktionalität von Mobile Services und vieles mehr integriert.</p>
+<p><li>Eine <a href="http://go.microsoft.com/fwlink/?LinkID=724279&clcid=0x409">Migration von Mobile Services zu Mobile Apps</a> ist einfach durchführbar.</p>
 <p><li>Als Bestandteil von App Service umfasst Mobile Apps Features, die über Mobile Services hinausgehen. Dazu gehören beispielsweise die Integration in lokale und SaaS-Systeme, Stagingslots, WebJobs, bessere Skalierungsoptionen und vieles mehr.</p>
 <p><li><a href="http://azure.microsoft.com/services/app-service/mobile/">Weitere Informationen zu Mobile Apps</a>.</p>
 </tr>
@@ -91,6 +91,5 @@ In der folgenden Tabelle wird erläutert, wie vorhandene Azure-Dienste App Servi
 </table>
 
 Weitere Informationen finden Sie in der[ App Service-Dokumentation](https://azure.microsoft.com/documentation/services/app-service/).
- 
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

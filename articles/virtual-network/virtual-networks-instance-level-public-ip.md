@@ -12,13 +12,17 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="12/11/2015"
+   ms.date="02/10/2016"
    ms.author="telmos" />
 
 # Überblick über die öffentliche IP-Adresse auf Instanzebene
 Eine öffentliche IP-Adresse auf Instanzebene (Instance-Level Public IP, ILPIP) ist eine öffentliche IP-Adresse, die Sie Ihrer VM- oder Rolleninstanz direkt zuweisen können, statt dem Clouddienst, in dem sich die VM- oder Rolleninstanz befindet. Sie tritt nicht an die Stelle der VIP (Virtual IP), die dem Clouddienst zugeordnet ist. Es ist vielmehr eine zusätzliche IP-Adresse, mit der Sie direkt eine Verbindung mit der VM oder Rolleninstanz herstellen können.
 
->[AZURE.NOTE]In der Vergangenheit wurde die ILPIP als PIP bezeichnet, was für Public IP bzw. öffentliche IP-Adresse steht.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](virtual-network-ip-addresses-overview-arm.md).
+
+Stellen Sie sicher, dass Sie die Funktionsweise von [IP-Adressen](virtual-network-ip-addresses-overview-classic.md) in Azure verstehen.
+
+>[AZURE.NOTE] In der Vergangenheit wurde die ILPIP als PIP bezeichnet, was für Public IP bzw. öffentliche IP-Adresse steht.
 
 ![Unterscheidung zwischen ILPIP und VIP](./media/virtual-networks-instance-level-public-ip/Figure1.png)
 
@@ -29,7 +33,7 @@ Bei der Erstellung eines Clouddiensts in Azure werden automatisch entsprechende 
 - contosoweb\_IN\_0.contosoadservice.cloudapp.net
 - contosoweb\_IN\_1.contosoadservice.cloudapp.net 
 
->[AZURE.NOTE]Sie können einer VM- oder Rolleninstanz jeweils nur eine ILPIP zuweisen. Sie können bis zu 5 ILPIPs pro Abonnement verwenden. Derzeit wird die ILPIP nicht für virtuelle Computer mit mehreren Netzwerkkarten unterstützt.
+>[AZURE.NOTE] Sie können einer VM- oder Rolleninstanz jeweils nur eine ILPIP zuweisen. Sie können bis zu 5 ILPIPs pro Abonnement verwenden. Derzeit wird die ILPIP nicht für virtuelle Computer mit mehreren Netzwerkkarten unterstützt.
 
 ## Warum sollte ich ein ILPIP anfordern?
 Wenn Sie über eine direkt zugewiesene IP-Adresse eine Verbindung mit Ihrer VM- oder Rolleninstanz herstellen möchten, statt VIP:&lt;Portnummer&gt; des Clouddiensts zu verwenden, dann fordern Sie eine ILPIP für die VM- oder Rolleninstanz an. - **Passives FTP** – Wenn dem virtuellen Computer eine ILPIP zugewiesen ist, können Sie an fast allen Ports Daten empfangen und müssen keinen Endpunkt für das Empfangen von Daten öffnen. Dadurch werden Szenarien wie passives FTP möglich, in denen die Ports dynamisch ausgewählt werden. – **Ausgehende IP** – Der vom virtuellen Computer ausgehende Datenverkehr wird mit der ILPIP als Quelle gesendet, und dadurch wird der virtuelle Compter gegenüber externen Entitäten eindeutig identifiziert.
@@ -118,9 +122,9 @@ Eine ILPIP kann auch mithilfe einer Dienstkonfigurationsdatei einem virtuellen C
 
 ## Nächste Schritte
 
-[Reservierte IP](../virtual-networks-reserved-public-ip)
+- Informieren Sie sich über die [IP-Adressierung](virtual-network-ip-addresses-overview-classic.md) im klassischen Bereitstellungsmodell.
 
-[Reservierte IP-REST-APIs](https://msdn.microsoft.com/library/azure/dn722420.aspx)
+- Informationen zu [reservierten IPs](../virtual-networks-reserved-public-ip)
  
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0218_2016-->

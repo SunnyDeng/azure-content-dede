@@ -25,7 +25,13 @@
 
 Azure Blob Storage ist ein Dienst, bei dem Dateidaten in der Cloud gespeichert werden. In Blob Storage können alle Arten von Text- oder Binärdaten gespeichert werden, z. B. ein Dokument, eine Mediendatei oder ein Installer einer Anwendung. Blob Storage wird auch als Objektspeicher bezeichnet.
 
-In diesem Tutorial wird gezeigt, wie Sie .NET-Code für einige häufig verwendete Szenarien mit Azure Blob Storage schreiben. Die beschriebenen Szenarien umfassen das Hochladen, Auflisten, Herunterladen und Löschen von Blobs. Das Durcharbeiten des Tutorials sollte maximal eine Stunde dauern.
+### Informationen zu diesem Lernprogramm
+
+In diesem Tutorial wird gezeigt, wie Sie .NET-Code für einige häufig verwendete Szenarien mit Azure Blob Storage schreiben. Die beschriebenen Szenarien umfassen das Hochladen, Auflisten, Herunterladen und Löschen von Blobs.
+
+**Geschätzter Zeitaufwand:** 45 Minuten
+
+**Voraussetzungen:**
 
 [AZURE.INCLUDE [storage-dotnet-client-library-version-include](../../includes/storage-dotnet-client-library-version-include.md)]
 
@@ -326,7 +332,7 @@ Das folgende Beispiel erstellt ein neues Anfügeblob und fügt einige Daten hinz
     Random rnd = new Random();
     byte[] bytes = new byte[numBlocks];
     rnd.NextBytes(bytes);
-
+        
     //Simulate a logging operation by writing text data and byte data to the end of the append blob.
     for (int i = 0; i < numBlocks; i++)
     {
@@ -353,9 +359,9 @@ Nachdem Sie sich nun mit den Grundlagen von Blobspeichern vertraut gemacht haben
 - [Erste Schritte mit Tabellenspeicher für .NET](storage-dotnet-how-to-use-tables.md)
 - [Erste Schritte mit Warteschlangenspeicher für .NET](storage-dotnet-how-to-use-queues.md)
 - [Erste Schritte mit Dateispeicher für .NET](storage-dotnet-how-to-use-files.md)
-- [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy.md)
-- [Verwenden von Azure SQL-Datenbank in .NET-Anwendungen](../sql-database/sql-database-dotnet-how-to-use.md)
+- [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy)
 - [Verwenden von Azure-Blobspeicher mit dem WebJobs-SDK](../app-service-web/websites-dotnet-webjobs-sdk-storage-blobs-how-to.md)
+- [Verwenden von SQL-Datenbanken mit .NET (C#)](../sql-database/sql-database-dotnet-how-to-use.md)
 
   [Blob5]: ./media/storage-dotnet-how-to-use-blobs/blob5.png
   [Blob6]: ./media/storage-dotnet-how-to-use-blobs/blob6.png
@@ -368,4 +374,4 @@ Nachdem Sie sich nun mit den Grundlagen von Blobspeichern vertraut gemacht haben
   [.NET client library reference]: http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409
   [REST API reference]: http://msdn.microsoft.com/library/azure/dd179355
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0224_2016-->

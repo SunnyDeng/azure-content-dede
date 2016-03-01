@@ -164,7 +164,7 @@ Lokale Linux-Computer und Linux-Computer in Azure sowie in anderen Clouds könne
 
 	*    Informationen zum Suchen des Registrierungsschlüssels und der Registrierungs-URL für Ihr Automation-Konto finden Sie im Abschnitt [**Sichere Registrierung**](#secure-registration) weiter unten.
 
-	Wenn die Standardwerte des lokalen Konfigurations-Managers von PowerShell DSC ****nicht**** zu Ihrem Anwendungsszenario passen, oder Sie Computer so integrieren möchten, dass Sie nur an Azure Automation DSC berichten und keine Konfigurationen oder PowerShell-Module davon abrufen, führen Sie die Schritte 3 - 6 aus. Fahren Sie andernfalls direkt mit Schritt 6 fort.
+	Wenn die Standardwerte des lokalen Konfigurations-Managers von PowerShell DSC **nicht** zu Ihrem Anwendungsszenario passen, oder Sie Computer so integrieren möchten, dass Sie nur an Azure Automation DSC berichten und keine Konfigurationen oder PowerShell-Module davon abrufen, führen Sie die Schritte 3 - 6 aus. Fahren Sie andernfalls direkt mit Schritt 6 fort.
 
 3.	Führen Sie die Schritte im Abschnitt [**Generieren von DSC-Metakonfigurationen**](#generating-dsc-metaconfigurations) aus, um einen Ordner mit den erforderlichen DSC-Metakonfigurationen zu generieren.
 4.  Wenden Sie die PowerShell DSC-Metakonfiguration remote auf die Computer an, die Sie integrieren möchten:
@@ -288,18 +288,23 @@ Sie können eine DSC-Metakonfiguration generieren, um einen beliebigen Computer 
         
         # Create the metaconfigurations
         # TODO: edit the below as needed for your use case
-        DscMetaConfigs `
-            -RegistrationUrl "<fill me in>" `
-            -RegistrationKey "<fill me in>" `
-            -ComputerName "<some VM to onboard>", "<some other VM to onboard>" `
-            -NodeConfigurationName "SimpleConfig.webserver" `
-            -RefreshFrequencyMins 30 `
-            -ConfigurationModeFrequencyMins 15 `
-            -RebootNodeIfNeeded $False `
-            -AllowModuleOverwrite $False `
-            -ConfigurationMode "ApplyAndMonitor" `
-            -ActionAfterReboot "ContinueConfiguration" `
-            -ReportOnly $False # Set to $True to have machines only report to AA DSC but not pull from it
+        $Params = @{
+             RegistrationUrl = '<fill me in>';
+             RegistrationKey = '<fill me in>';
+             ComputerName = @('<some VM to onboard>', '<some other VM to onboard>');
+             NodeConfigurationName = 'SimpleConfig.webserver';
+             RefreshFrequencyMins = 30;
+             ConfigurationModeFrequencyMins = 15;
+             RebootNodeIfNeeded = $False;
+             AllowModuleOverwrite = $False;
+             ConfigurationMode = 'ApplyAndMonitor';
+             ActionAfterReboot = 'ContinueConfiguration';
+             ReportOnly = $False;  # Set to $True to have machines only report to AA DSC but not pull from it
+        }
+        
+        # Use PowerShell splatting to pass parameters to the DSC configuration being invoked
+        # For more info about splatting, run: Get-Help -Name about_Splatting
+        DscMetaConfigs @Params
 
 3.	Geben Sie den Registrierungsschlüssel und die URL für Ihr Automation-Konto sowie die Namen der Computer ein, die integriert werden sollen. Alle anderen Parameter sind optional. Informationen zum Suchen des Registrierungsschlüssels und der Registrierungs-URL für Ihr Automation-Konto finden Sie im Abschnitt [**Sichere Registrierung**](#secure-registration) weiter unten.
 
@@ -316,7 +321,17 @@ Wenn die Standardwerte des lokalen Konfigurations-Managers von PowerShell DSC zu
 
 3.	Laden Sie von dem Automation-Konto, in das Sie Knoten integrieren möchten, die PowerShell DSC-Metakonfigurationen für die Computer herunter, die Sie integrieren möchten:
 
-        Get-AzureRmAutomationDscOnboardingMetaconfig -ResourceGroupName MyResourceGroup -AutomationAccountName MyAutomationAccount -ComputerName MyServer1, MyServer2 -OutputFolder C:\Users\joe\Desktop
+        # Define the parameters for Get-AzureRmAutomationDscOnboardingMetaconfig using PowerShell Splatting
+        $Params = @{
+            ResourceGroupName = 'ContosoResources'; # The name of the ARM Resource Group that contains your Azure Automation Account
+            AutomationAccountName = 'ContosoAutomation'; # The name of the Azure Automation Account where you want a node on-boarded to
+            ComputerName = @('web01', 'web02', 'sql01'); # The names of the computers that the meta configuration will be generated for
+            OutputFolder = "$env:UserProfile\Desktop";
+        }
+        
+        # Use PowerShell splatting to pass parameters to the Azure Automation cmdlet being invoked
+        # For more info about splatting, run: Get-Help -Name about_Splatting
+        Get-AzureRmAutomationDscOnboardingMetaconfig @Params
 
 Nun sollte ein Ordner namens ***DscMetaConfigs*** mit den PowerShell DSC-Metakonfigurationen der zu integrierenden VMs bestehen.
 
@@ -359,4 +374,4 @@ Eine erneute Registrierung kann auf die gleiche Weise wie beim ersten Registrier
 * [Azure Automation DSC-Cmdlets](https://msdn.microsoft.com/library/mt244122.aspx)
 * [Azure Automation DSC – Preise](https://azure.microsoft.com/pricing/details/automation/)
 
-<!---HONumber=AcomDC_0211_2016-->
+<!----HONumber=AcomDC_0218_2016-->

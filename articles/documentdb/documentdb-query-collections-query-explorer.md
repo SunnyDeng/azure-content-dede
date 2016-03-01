@@ -1,81 +1,82 @@
-<properties 
-	pageTitle="Erstellen, Bearbeiten und Ausführen von SQL-Abfragen in einer DocumentDB-Sammlung mithilfe des Abfrage-Explorers | Microsoft Azure" 
-	description="Erfahren Sie mehr über den DocumentDB-Abfrage-Explorer, ein Azure-Portaltool zum Erstellen, Bearbeiten und Ausführen von SQL-Abfragen in einer DocumentDB-Sammlung." 
-	services="documentdb" 
-	authors="AndrewHoh" 
-	manager="jhubbard" 
-	editor="monicar" 
+<properties
+	pageTitle="DocumentDB-Abfrage-Explorer: SQL-Abfrage-Editor | Microsoft Azure"
+	description="Sie erhalten Informationen zum DocumentDB-Abfrage-Explorer, einem SQL-Abfrage-Editor im Azure-Portal zum Schreiben von SQL-Abfragen und Ausführen dieser Abfragen für eine NoSQL-DocumentDB-Sammlung."
+	keywords="SQL-Abfragen schreiben, SQL-Abfrage-Editor"
+	services="documentdb"
+	authors="AndrewHoh"
+	manager="jhubbard"
+	editor="monicar"
 	documentationCenter=""/>
 
-<tags 
-	ms.service="documentdb" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
+<tags
+	ms.service="documentdb"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="12/01/2015" 
+	ms.date="02/23/2016"
 	ms.author="anhoh"/>
 
-# Erstellen, Bearbeiten und Ausführen von SQL-Abfragen in einer DocumentDB-Sammlung mithilfe des Abfrage-Explorers #
+# Schreiben, Bearbeiten und Ausführen von SQL-Abfragen für DocumentDB mit dem Abfrage-Explorer 
 
-Dieser Artikel bietet eine Übersicht über den Abfrage-Explorer von [Microsoft Azure DocumentDB](https://azure.microsoft.com/services/documentdb/), ein Microsoft Azure-Portaltool, mit dem Sie Abfragen in einer DocumentDB-Sammlung erstellen, bearbeiten und ausführen können.
+Dieser Artikel enthält eine Übersicht über den Abfrage-Explorer von [Microsoft Azure DocumentDB](https://azure.microsoft.com/services/documentdb/). Hierbei handelt es sich um ein Tool im Azure-Portal, mit dem Sie SQL-Abfragen in einer [DocumentDB-Sammlung](documentdb-create-collection) schreiben, bearbeiten und ausführen können.
 
-Nach Abschluss dieses Lernprogramms können Sie die folgenden Fragen beantworten:
+1. Klicken Sie in der Navigationsleiste im Azure-Portal auf **DocumentDB-Konten**. Wenn **DocumentDB-Konten** nicht sichtbar ist, klicken Sie auf **Durchsuchen** und dann auf **DocumentDB-Konten**.
 
--	Wie kann ich über einen Webbrowser auf einfache Weise Abfragen in einer DocumentDB-Sammlung erstellen, bearbeiten und ausführen?
--	Wie kann ich über einen Webbrowser einfach durch Seiten der DocumentDB-Abfrageergebnisse navigieren?
--	Wie kann Syntaxfehler meiner DocumentDB-Abfrage beheben? 
+2. Klicken Sie oben im Blatt **DocumentDB-Konto** auf **Abfrage-Explorer**.
 
-##<a id="Launch"></a>Starten des Abfrage-Explorers und Navigieren im Abfrage-Explorer##
+	![Screenshot: Azure-Portal mit hervorgehobenem Abfrage-Explorer](./media/documentdb-query-collections-query-explorer/queryexplorercommand.png)
 
-Der Abfrage-Explorer kann über jedes DocumentDB-Blatt "Konto", "Datenbank" und "Sammlung" gestartet werden.
-  
-1. Klicken Sie einfach oben auf dem Blatt des DocumentDB-Kontos oder der Datenbank auf den Befehl **Abfrage-Explorer**.
+    >[AZURE.NOTE] Der Abfrage-Explorer wird auch auf den Blättern für Datenbanken und Sammlungen angezeigt.
 
-	![Screenshot des Abfrage-Explorer-Befehls](./media/documentdb-query-collections-query-explorer/queryexplorercommand.png)
+3. Wählen Sie auf dem Blatt **Abfrage-Explorer** in den Dropdownlisten die **Datenbanken** und **Sammlungen** aus, die abgefragt werden sollen, und geben Sie die auszuführende Abfrage ein.
 
-2. Alternativ dazu befindet sich am unteren Rand jedes Blatts der Fokus **Entwicklertools**, der die Kachel **Abfrage-Explorer** enthält.
-	
-	![Screenshot des Abfrage-Explorer-Details](./media/documentdb-query-collections-query-explorer/queryexplorerpart.png)
+    Die Dropdownlisten **Datenbanken** und **Sammlungen** werden basierend auf dem Kontext, in dem Sie den Abfrage-Explorer starten, automatisch ausgefüllt.
 
-2. Klicken Sie einfach auf die Kachel, um den Abfrage-Explorer zu starten.
+    Die Standardabfrage `SELECT TOP 100 * FROM c` ist bereits vorhanden. Sie können die Standardabfrage akzeptieren oder eine eigene Abfrage erstellen. Verwenden Sie hierfür die SQL-Abfragesprache, die unter [Spickzettel für SQL-Abfragen](documentdb-sql-query-cheat-sheet.md) bzw. im Artikel [SQL-Abfrage und SQL-Syntax](documentdb-sql-query.md) beschrieben wird.
 
-	Die Dropdownlistenfelder **Datenbank** und **Sammlung** werden basierend auf dem Kontext, in dem Sie den Abfrage-Explorer starten, automatisch ausgefüllt. Wenn Sie diesen z. B. aus einem Datenbankblatt starten, sind die Felder der aktuellen Datenbank bereits ausgefüllt. Wenn Sie diesen aus einem Auflistungsblatt starten, sind die Felder der aktuellen Auflistung ausgefüllt.
+    Klicken Sie auf **Abfrage ausführen**, um die Ergebnisse anzuzeigen.
 
-	![Screenshot des Abfrage-Explorers](./media/documentdb-query-collections-query-explorer/queryexplorerinitial.png)
+	![Screenshot: Schreiben von SQL-Abfragen im Abfrage-Explorer, SQL-Abfrage-Editor](./media/documentdb-query-collections-query-explorer/queryexplorerinitial.png)
 
-##<a id="Create"></a>Erstellen, Bearbeiten und Ausführen von Abfragen mit dem Abfrage-Explorer##
+4. Auf dem Blatt **Ergebnisse** wird die Ausgabe der Abfrage angezeigt.
 
-Mit dem Abfrage-Explorer können Sie problemlos Abfragen für eine DocumentDB-Sammlung erstellen, bearbeiten und ausführen. Darüber hinaus bietet er grundlegende Funktionen zum Hervorheben von Stichwörtern und Werten, um die Abfragebearbeitung zu verbessern.
+	![Screenshot: Ergebnisse des Schreibens von SQL-Abfragen im Abfrage-Explorer](./media/documentdb-query-collections-query-explorer/queryresults1.png)
 
-- Beim ersten Öffnen des Abfrage-Explorers wird die Standardabfrage "SELECT * FROM c" bereitgestellt. Sie können die Standardabfrage akzeptieren oder eine eigene Abfrage erstellen. Klicken Sie dann auf die Schaltfläche **Abfrage ausführen**, um die Ergebnisse anzuzeigen. Der Abfrage-Explorer unterstützt die SQL-Abfragesprache von DocumentDB, wie in [Abfragen von DocumentDB](documentdb-sql-query.md) beschrieben.
+## Arbeiten mit Ergebnissen
 
-	![Screenshot des Abfrage-Explorers – Abfrageergebnisse](./media/documentdb-query-collections-query-explorer/queryresults1.png)
+Standardmäßig zeigt der Abfrage-Explorer die Ergebnisse in Gruppen von jeweils 100 zurück. Wenn Ihre Abfrage mehr als 100 Ergebnisse erzeugt, verwenden Sie einfach die Befehle **Nächste Seite** und **Vorherige Seite**, um durch die Ergebnisse zu navigieren.
 
-- Sie können auch mehrere Abfragen eingeben, diejenige Abfrage markieren, die Sie ausführen möchten, und dann auf die Schaltfläche **Abfrage ausführen** klicken, um die Ergebnisse anzuzeigen.
+![Screenshot des Abfrage-Explorers – Seitennummerierung](./media/documentdb-query-collections-query-explorer/queryresultspagination.png)
 
-	![Screenshot des Abfrage-Explorers – markieren und ausführen](./media/documentdb-query-collections-query-explorer/queryexplorerhighlightandrun.png)
+Um erfolgreiche Abfragen zu erhalten, enthält der Bereich **Informationen** Kennzahlen, z. B. die Anforderungskosten, die Anzahl von Roundtrips der Abfrage und den aktuell angezeigten Ergebnissatz. Sie erfahren auch, ob weitere Ergebnisse vorhanden sind, die – wie bereits erwähnt – über den Befehl **Nächste Seite** angezeigt werden können.
 
-- Mithilfe des Befehls **Datei laden** können Sie die Inhalte einer vorhandenen Datei laden.
+![Screenshot der Abfrage-Explorers – Abfrageinformationen](./media/documentdb-query-collections-query-explorer/queryinformation.png)
 
-	![Screenshot des Abfrage-Explorers – Datei laden](./media/documentdb-query-collections-query-explorer/loadqueryfile.png)
+## Verwenden mehrerer Abfragen
 
-- Standardmäßig zeigt der Abfrage-Explorer die Ergebnisse in Gruppen von jeweils 100 zurück. Wenn Ihre Abfrage mehr als 100 Ergebnisse erzeugt, verwenden Sie einfach die Befehle **Nächste Seite** und **Vorherige Seite**, um durch die Ergebnisse zu navigieren.
+Wenn Sie mehrere Abfragen verwenden und schnell zwischen den Abfragen wechseln möchten, können Sie alle Abfragen in das Abfragetextfeld im Blatt **Abfrage-Explorer** eingeben und dann die Abfrage markieren, die Sie ausführen möchten. Klicken Sie anschließend auf **Abfrage ausführen**, um die Ergebnisse anzuzeigen.
 
-	![Screenshot des Abfrage-Explorers – Seitennummerierung](./media/documentdb-query-collections-query-explorer/queryresultspagination.png)
+![Screenshot: Schreiben mehrerer SQL-Abfragen im Abfrage-Explorer (SQL-Abfrage-Editor) und Markieren und Ausführen einzelner Abfragen](./media/documentdb-query-collections-query-explorer/queryexplorerhighlightandrun.png)
 
-- Erfolgreiche Abfragen bieten Informationen, wie z. B. die Anforderungskosten und den aktuell angezeigten Ergebnissatz. Sie erfahren auch, ob weitere Ergebnisse vorhanden sind, die – wie bereits erwähnt – über den Befehl **Nächste Seite** angezeigt werden können.
+## Hinzufügen von Abfragen aus einer Datei in den SQL-Abfrage-Editor
 
-	![Screenshot der Abfrage-Explorers – Abfrageinformationen](./media/documentdb-query-collections-query-explorer/queryinformation.png)
+Mithilfe des Befehls **Datei laden** können Sie die Inhalte einer vorhandenen Datei laden.
 
-- Wenn eine Abfrage mit Fehlern abgeschlossen wird, zeigt der Abfrage-Explorer eine Liste der Fehler an, die Sie bei der Fehlerbehebung unterstützen.
+![Screenshot: Laden von SQL-Abfragen aus einer Datei in den Abfrage-Explorer per „Datei laden“](./media/documentdb-query-collections-query-explorer/loadqueryfile.png)
 
-	![Screenshot der Abfrage-Explorers – Abfragefehler](./media/documentdb-query-collections-query-explorer/queryerror.png)
+## Problembehandlung
 
-##<a name="NextSteps"></a>Nächste Schritte
+Wenn eine Abfrage mit Fehlern abgeschlossen wird, zeigt der Abfrage-Explorer eine Liste der Fehler an, die Sie bei der Fehlerbehebung unterstützen.
 
-- Um weitere Informationen zu DocumentDB zu erhalten, klicken Sie [hier](http://azure.com/docdb).
-- Weitere Informationen zur DocumentDB-SQL-Grammatik, die im Abfrage-Explorer unterstützt wird, finden Sie [hier](documentdb-sql-query.md).
- 
+![Screenshot der Abfrage-Explorers – Abfragefehler](./media/documentdb-query-collections-query-explorer/queryerror.png)
 
-<!---HONumber=AcomDC_0128_2016-->
+## Ausführen von DocumentDB-SQL-Abfragen außerhalb des Portals
+
+Der Abfrage-Explorer im Azure-Portal ist nur eine Möglichkeit, um SQL-Abfragen für DocumentDB auszuführen. Sie können SQL-Abfragen auch mit der [REST-API](https://msdn.microsoft.com/library/azure/dn781481.aspx) oder den [Client-SDKs](documentdb-sdk-dotnet.md) ausführen. Weitere Informationen zur Verwendung dieser oder anderer Methoden finden Sie unter [Ausführen von SQL-Abfragen](documentdb-sql-query.md#executing-sql-queries).
+
+## Nächste Schritte
+
+Weitere Informationen zur DocumentDB-SQL-Grammatik, die im Abfrage-Explorer unterstützt wird, finden Sie im Artikel [SQL-Abfrage und SQL-Syntax](documentdb-sql-query.md), oder drucken Sie sich den [Spickzettel für SQL-Abfragen](documentdb-sql-query-cheat-sheet.md) aus. Sie können auch experimentieren, indem Sie auf den [Query Playground](https://www.documentdb.com/sql/demo) zugreifen, um Abfragen online mit einem Beispieldataset zu testen.
+
+<!---HONumber=AcomDC_0224_2016-->

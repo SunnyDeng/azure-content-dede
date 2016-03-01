@@ -40,7 +40,7 @@ Die folgenden Installer-Pakete sind verfügbar:
 
 ## Installieren von "Node.js" und "npm"
 
-Wenn Node.js bereits auf Ihrem System installiert ist, verwenden Sie den folgenden Befehl, um die Azure-Befehlszeilenschnittstelle zu installieren:
+Wenn Node.js bereits auf Ihrem System installiert ist, verwenden Sie alternativ den folgenden Befehl, um die Azure-Befehlszeilenschnittstelle zu installieren:
 
 	npm install azure-cli -g
 
@@ -137,7 +137,7 @@ Jetzt sind Sie soweit. Um Zugriff auf alle CLI-Befehle für die Arbeit mit Ihren
 Microsoft veröffentlicht regelmäßig aktualisierte Versionen der Azure-Befehlszeilenschnittstelle. Installieren Sie die CLI erneut mit dem Installationsprogramm für Ihr Betriebssystem. Wenn „Node.js“ und „npm“ installiert sind, aktualisieren Sie sie, indem Sie Folgendes eingeben (in Linux-Distributionen müssen Sie möglicherweise **sudo** verwenden):
 
 ```
-npm upgrade -g azure-cli
+npm update -g azure-cli
 ```
 
 ## Zusätzliche Ressourcen
@@ -158,4 +158,4 @@ npm upgrade -g azure-cli
 [cliasm]: virtual-machines/virtual-machines-command-line-tools.md
 [cliarm]: virtual-machines/xplat-cli-azure-resource-manager.md
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0218_2016-->

@@ -14,7 +14,7 @@
      ms.topic="get-started-article"
      ms.tgt_pltfrm="na"
      ms.workload="na"
-     ms.date="11/27/2015"
+     ms.date="02/19/2016"
      ms.author="dobett"/>
 
 # Übersicht über Azure IoT Suite
@@ -49,13 +49,13 @@ Eine Übersicht über die Architektur einer typischen IoT-Lösung finden Sie unt
 
 ## Vorkonfigurierte Lösungen
 
-Die IoT Suite enthält vorkonfigurierte Lösungen, die einen schneller Einstieg und Einblick in die mit der Azure IoT Suite möglichen Szenarien ermöglichen. Sie können die Lösungen für Ihr Azure-Abonnement bereitstellen und dann eine vollständige End-to-End-IoT-Lösung bereitstellen.
+Die IoT Suite enthält vorkonfigurierte Lösungen, die einen schneller Einstieg und Einblick in die mit der Azure IoT Suite möglichen IoT-Szenarien ermöglichen, wie etwa *Remoteüberwachung* und *Vorhersagbarer Wartungsbedarf*. Sie können die Lösungen für Ihr Azure-Abonnement bereitstellen und dann ein vollständiges End-to-End-IoT-Szenario ausführen.
 
 ## Nächste Schritte
 
 Sie haben nun einen Überblick über die Möglichkeiten der IoT-Suite erlangt und kennen ihre wichtigsten Komponenten. Fahren Sie mit folgenden Themen fort:
 
-- Weitere Informationen zu den vorkonfigurierten Lösungen der IoT Suite finden Sie unter [Was sind vorkonfigurierte Azure IoT-Suite-Lösungen?][lnk-what-are-preconfig]
+- Weitere Informationen zu den vorkonfigurierten Lösungen der IoT Suite finden Sie unter [Was sind vorkonfigurierte Azure IoT-Suite-Lösungen?][lnk-what-are-preconfig].
 
 - Informationen zum Einstieg in eine der vorkonfigurierten Lösungen finden Sie unter [Erste Schritte mit den vorkonfigurierten IoT-Lösungen][lnk-preconfig-start].
 
@@ -74,4 +74,4 @@ Sie haben nun einen Überblick über die Möglichkeiten der IoT-Suite erlangt un
 [lnk-preconfig-start]: iot-suite-getstarted-preconfigured-solutions/
 [lnk-iot-hub]: https://azure.microsoft.com/documentation/services/iot-hub/
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0224_2016-->

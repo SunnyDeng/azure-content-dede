@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="mobile-xamarin-ios"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="11/30/2015"
+	ms.date="02/11/2016"
 	ms.author="donnam"/>
 
 # Hinzufügen von Authentifizierung zur Mobile Services-App
@@ -78,7 +78,7 @@ Als Nächstes werden Sie die App aktualisieren, um Benutzer zu authentifizieren,
             }
         }
 
-	> [AZURE.NOTE]Falls Sie einen anderen Identitätsanbieter als ein Microsoft-Konto verwenden, ändern Sie den an **LoginAsync** übergebenen Wert auf einen der folgenden Werte: _Facebook_, _Twitter_, _Google_ oder _WindowsAzureActiveDirectory_.
+	> [AZURE.NOTE] Falls Sie einen anderen Identitätsanbieter als ein Microsoft-Konto verwenden, ändern Sie den an **LoginAsync** übergebenen Wert auf einen der folgenden Werte: _Facebook_, _Twitter_, _Google_ oder _WindowsAzureActiveDirectory_.
 
 3. Verschieben Sie Anforderung für die **ToDoItem**-Tabelle vom **ToDoService**-Konstruktor in eine neue **CreateTable**-Methode:
 
@@ -155,4 +155,4 @@ Im nächsten Lernprogramm [Autorisieren von Benutzern mit Skripts] werden Sie de
 [abgeschlossene Beispielprojekt]: http://go.microsoft.com/fwlink/p/?LinkId=331328
 [Xamarin.iOS]: http://xamarin.com/download
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0218_2016-->

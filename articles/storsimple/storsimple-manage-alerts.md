@@ -4,15 +4,15 @@
    services="storsimple"
    documentationCenter="NA"
    authors="SharS"
-   manager="carolz"
+   manager="carmonm"
    editor="" />
 <tags 
    ms.service="storsimple"
    ms.devlang="NA"
    ms.topic="article"
    ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="12/14/2015"
+   ms.workload="NA"
+   ms.date="02/09/2016"
    ms.author="v-sharos" />
 
 # Anzeigen und Verwalten von StorSimple-Warnungen mithilfe des StorSimple Manager-Diensts
@@ -31,7 +31,7 @@ Ihr StorSimple-Gerät generiert Warnungen als Reaktion auf viele verschiedene Be
 
 - **Hardwareprobleme** – Diese Warnungen informieren Sie über die Integrität der Hardware. Sie erfahren, wann Firmwareaktualisierungen erforderlich sind, ob für eine Netzwerkschnittstelle ein Problem besteht oder ob ein Fehler für ein Datenlaufwerk aufgetreten ist.
 
-- **Konnektivitätsprobleme**: Diese Warnungen werden angezeigt, wenn es beim Übertragen von Daten zu Schwierigkeiten kommt. Kommunikationsprobleme können während der Übertragung von Daten auf das bzw. aus dem Azure-Speicherkonto oder aufgrund einer fehlenden Verbindung zwischen den Geräten und dem StorSimple Manager-Dienst auftreten. Die Behebung von Kommunikationsproblemen ist besonders schwierig, da die Anzahl der möglichen Fehlerquellen hoch ist. Sie sollten sich immer zuerst vergewissern, dass die Netzwerkverbindung und der Internetzugriff verfügbar sind, bevor Sie sich mit der eingehenderen Problembehandlung beschäftigen. Weitere Informationen zur Problembehandlung finden Sie unter [Problembehandlung mit dem Cmdlet „Test-Connection“](storsimple-troubleshoot-deployment.md/#troubleshoot-with-the-test-hcsmconnection-cmdlet).
+- **Konnektivitätsprobleme**: Diese Warnungen werden angezeigt, wenn es beim Übertragen von Daten zu Schwierigkeiten kommt. Kommunikationsprobleme können während der Übertragung von Daten auf das bzw. aus dem Azure-Speicherkonto oder aufgrund einer fehlenden Verbindung zwischen den Geräten und dem StorSimple Manager-Dienst auftreten. Die Behebung von Kommunikationsproblemen ist besonders schwierig, da die Anzahl der möglichen Fehlerquellen hoch ist. Sie sollten sich immer zuerst vergewissern, dass die Netzwerkverbindung und der Internetzugriff verfügbar sind, bevor Sie sich mit der eingehenderen Problembehandlung beschäftigen. Weitere Informationen zur Problembehandlung finden Sie unter [Problembehandlung mit dem Cmdlet „Test-Connection“](storsimple-troubleshoot-deployment.md).
 
 - **Leistungsprobleme** – Diese Warnungen werden verursacht, wenn Ihr System keine optimale Leistung aufweist, z. B. bei einer hohen Auslastung.
 
@@ -49,9 +49,9 @@ Warnungen haben unterschiedliche Schweregrade. Diese richten sich nach den Auswi
 
 ## Konfigurieren der Warnungseinstellungen
 
-Sie können auswählen, ob Sie per E-Mail über die Warnungsbedingungen für die einzelnen StorSimple-Geräte informiert werden möchten. Sie können auch andere Empfänger von Warnungsbenachrichtigungen angeben, indem Sie deren E-Mail-Adressen im Feld **ANDERE E-MAIL-EMPFÄNGER** durch Semikolons getrennt eingeben.
+Sie können auswählen, ob Sie per E-Mail über die Warnungsbedingungen für die einzelnen StorSimple-Geräte informiert werden möchten. Sie können auch andere Empfänger von Warnungsbenachrichtigungen angeben, indem Sie deren E-Mail-Adressen im Feld **Andere E-Mail-Empfänger** durch Semikolons getrennt eingeben.
 
->[AZURE.NOTE]Sie können maximal 20 E-Mail-Adressen pro Gerät eingeben.
+>[AZURE.NOTE] Sie können maximal 20 E-Mail-Adressen pro Gerät eingeben.
 
 Nachdem Sie die E-Mail-Benachrichtigung für ein Gerät aktiviert haben, erhalten die Mitglieder der Benachrichtigungsliste jedes Mal eine E-Mail-Nachricht, wenn eine kritische Warnung vorliegt. Die Nachrichten werden von der Adresse **storsimple-alerts-noreply@mail.windowsazure.com* gesendet und enthalten eine Beschreibung der Warnungsbedingung. Empfänger können auf **Abonnement kündigen** klicken, um das Entfernen aus der E-Mail-Benachrichtigungsliste durchzuführen.
 
@@ -61,21 +61,21 @@ Nachdem Sie die E-Mail-Benachrichtigung für ein Gerät aktiviert haben, erhalte
 
 2. Legen Sie unter **Warnungseinstellungen** Folgendes fest:
 
-    1. Klicken Sie im Feld **E-MAIL-BENACHRICHTIGUNG SENDEN** auf **JA**.
+    1. Klicken Sie im Feld **E-Mail-Benachrichtigung senden** auf **JA**.
 
-    2. Klicken Sie im Feld **E-MAIL AN DIENSTADMINISTRATOREN** auf **JA**, wenn der Dienstadministrator und alle Co-Administratoren die Warnungsbenachrichtigungen erhalten sollen.
+    2. Klicken Sie im Feld **E-Mail an Dienstadministratoren** auf **JA**, wenn der Dienstadministrator und alle Co-Administratoren die Warnungsbenachrichtigungen erhalten sollen.
 
-    3. Geben Sie im Feld **ANDERE E-MAIL-EMPFÄNGER** die E-Mail-Adressen aller weiteren Empfänger ein, die die Warnungsbenachrichtigungen erhalten sollen. Geben Sie Namen im folgenden Format ein: **someone@somewhere.com*. Verwenden Sie Semikolons, um mehrere E-Mail-Adressen zu trennen. Sie können maximal 20 E-Mail-Adressen pro Gerät konfigurieren.
+    3. Geben Sie im Feld **Andere E-Mail-Empfänger** die E-Mail-Adressen aller weiteren Empfänger ein, die die Warnungsbenachrichtigungen erhalten sollen. Geben Sie Namen im folgenden Format ein: **someone@somewhere.com*. Verwenden Sie Semikolons, um mehrere E-Mail-Adressen zu trennen. Sie können maximal 20 E-Mail-Adressen pro Gerät konfigurieren.
 
         ![Konfiguration von Warnungsbenachrichtigungen](./media/storsimple-manage-alerts/AlertNotify.png)
 
-3. Um eine E-Mail-Benachrichtigung als Test zu senden, klicken Sie auf das Pfeilsymbol neben **TEST-E-MAIL SENDEN**. Der StorSimple Manager-Dienst zeigt beim Weiterleiten der Testbenachrichtigung Statusmeldungen an.
+3. Um eine E-Mail-Benachrichtigung als Test zu senden, klicken Sie auf das Pfeilsymbol neben **Test-E-Mail senden**. Der StorSimple Manager-Dienst zeigt beim Weiterleiten der Testbenachrichtigung Statusmeldungen an.
 
 4. Wenn die folgende Meldung angezeigt wird, klicken Sie auf **OK**.
 
     ![E-Mail zum Testen der Warnungsbenachrichtigung](./media/storsimple-manage-alerts/HCS_AlertNotificationConfig3.png)
 
-    >[AZURE.NOTE]Wenn die Testbenachrichtigung nicht gesendet werden kann, zeigt der StorSimple Manager-Dienst eine entsprechende Meldung an. Klicken Sie auf **OK**, warten Sie einige Minuten, und versuchen Sie dann, die Testnachricht erneut zu senden.
+    >[AZURE.NOTE] Wenn die Testbenachrichtigung nicht gesendet werden kann, zeigt der StorSimple Manager-Dienst eine entsprechende Meldung an. Klicken Sie auf **OK**, warten Sie einige Minuten, und versuchen Sie dann, die Testnachricht erneut zu senden.
 
 ## Anzeigen und Nachverfolgen von Warnungen
 
@@ -91,7 +91,7 @@ Wenn Sie in der Liste auf eine Warnung klicken, werden weitere Details zur Warnu
 
 ![Beispiel für Hardwarewarnung](./media/storsimple-manage-alerts/admin_alerts_hardware.png)
 
-Sie können die Details der Warnung in eine Textdatei kopieren, wenn Sie die Informationen an den Microsoft Support senden möchten. Nachdem Sie die Empfehlung befolgt und die Warnungsbedingung lokal behoben haben, sollten Sie die Warnung vom Gerät löschen, indem Sie sie auf der Registerkarte **Warnungen** markieren und auf **Löschen** klicken. Halten Sie zum Löschen mehrerer Warnungen die STRG-TASTE gedrückt, während Sie die Warnungen markieren, und klicken Sie dann auf **Löschen**. Beachten Sie, dass einige Warnungen automatisch gelöscht werden, wenn das Problem behoben ist oder wenn die Warnung mit neuen Informationen aktualisiert wird.
+Sie können die Details der Warnung in eine Textdatei kopieren, wenn Sie die Informationen an den Microsoft Support senden möchten. Nachdem Sie die Empfehlung befolgt und die Warnungsbedingung lokal behoben haben, sollten Sie die Warnung vom Gerät löschen, indem Sie sie auf der Registerkarte **Warnungen** markieren und auf **Löschen** klicken. Zum Löschen mehrerer Warnungen wählen Sie die einzelnen Warnungen aus und klicken auf eine beliebige Spalte (außer der Spalte **Warnung**). Klicken Sie dann auf **Löschen**, nachdem Sie alle zu löschenden Warnungen ausgewählt haben. Beachten Sie, dass einige Warnungen automatisch gelöscht werden, wenn das Problem behoben ist oder wenn die Warnung mit neuen Informationen aktualisiert wird.
 
 Wenn Sie auf **Löschen** klicken, können Sie Kommentare zur Warnung und die Schritte zur Behebung des Problems angeben. Einige Ereignisse werden gelöscht, falls ein anderes Ereignis mit neuen Informationen ausgelöst wird. In diesem Fall wird die folgende Meldung angezeigt:
 
@@ -254,4 +254,4 @@ Wenn die Cloudverbindung für das StorSimple-Gerät in der Produktion ausfällt,
 
 Erfahren Sie mehr über [Problembehandlung bei einem betriebsbereiten StorSimple-Gerät](storsimple-troubleshoot-operational-device.md).
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0218_2016-->

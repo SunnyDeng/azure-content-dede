@@ -138,7 +138,7 @@ Die folgenden NuGet-basierten Erweiterungspakete bieten verschiedene mobile Funk
 
 ## <a name="publish-server-project"></a>Vorgehensweise: Veröffentlichen des Serverprojekts
 
-In diesem Abschnitt erfahren Sie, wie Sie Ihr .NET-Back-End-Projekt über Visual Studio veröffentlichen. Sie können Ihr Back-End-Projekt auch mithilfe von Git oder einer der anderen Methoden bereitstellen, die in der [Dokumentation zur Azure App Service-Bereitstellung](../app-service-web/web-site-deploy.md) behandelt werden.
+In diesem Abschnitt erfahren Sie, wie Sie Ihr .NET-Back-End-Projekt über Visual Studio veröffentlichen. Sie können Ihr Back-End-Projekt auch mithilfe von Git oder einer der anderen Methoden bereitstellen, die in der [Dokumentation zur Azure App Service-Bereitstellung](../app-service-web/web-sites-deploy.md) behandelt werden.
 
 1. Erstellen Sie das Projekt in Visual Studio neu, um die NuGet-Pakete wiederherzustellen.
 
@@ -445,4 +445,4 @@ Ihr lokal ausgeführter Server kann nun Token überprüfen, die der Client vom c
 [Microsoft.Azure.Mobile.Server.Login]: http://www.nuget.org/packages/Microsoft.Azure.Mobile.Server.Login/
 [Microsoft.Azure.Mobile.Server.Notifications]: http://www.nuget.org/packages/Microsoft.Azure.Mobile.Server.Notifications/
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0218_2016-->

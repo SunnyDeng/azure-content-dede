@@ -12,8 +12,8 @@
 	ms.workload="identity" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="11/19/2015" 
+	ms.topic="get-started-article" 
+	ms.date="02/18/2016" 
 	ms.author="billmath"/>
 
 # Remotedesktop-Gateway und Azure Multi-Factor Authentication-Server mithilfe von RADIUS
@@ -59,4 +59,4 @@ Der Azure Multi-Factor Authentication-Server wird als RADIUS-Proxy zwischen dem 
 
 ![RADIUS-Authentifizierung](./media/multi-factor-authentication-get-started-server-rdg/radius.png)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0224_2016-->

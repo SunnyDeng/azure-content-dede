@@ -23,6 +23,7 @@ Mit der Veröffentlichung von Microsoft Azure PowerShell Version 1.1.0 wurde ein
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 
+
 ## Hochladen und Binden eines neuen SSL-Zertifikats ##
 
 Das Szenario: Der Benutzer möchte ein SSL-Zertifikat an eine seiner Web-Apps binden.
@@ -30,6 +31,15 @@ Das Szenario: Der Benutzer möchte ein SSL-Zertifikat an eine seiner Web-Apps bi
 Mit dem Namen der Ressourcengruppe, die die Web-App enthält, dem Namen der Web-App, dem Zertifikat des PFX-Dateipfads auf dem Computer des Benutzers, dem Kennwort für das Zertifikat und dem benutzerdefinierten Hostnamen können wir den folgenden PowerShell-Befehl verwenden, um die SSL-Bindung zu erstellen:
 
     New-AzureRmWebAppSSLBinding -ResourceGroupName myresourcegroup -WebAppName mytestapp -CertificateFilePath PathToPfxFile -CertificatePassword PlainTextPwd -Name www.contoso.com
+
+Beachten Sie Folgendes: Bevor Sie eine SSL-Bindung zu einer Web-App hinzufügen können, muss bereits ein Hostname (benutzerdefinierte Domäne) konfiguriert sein. Wenn kein Hostname konfiguriert ist, erhalten Sie beim Ausführen von New-AzureRmWebAppSSLBinding einen Fehler, dass der Hostname nicht existiert. Sie können einen Hostnamen direkt über das Portal oder mithilfe von Azure PowerShell hinzufügen. Mit folgendem PowerShell-Codeausschnitt können Sie den Hostnamen konfigurieren, bevor Sie New-AzureRmWebAppSSLBinding ausführen.
+  
+    $webApp = Get-AzureRmWebApp -Name mytestapp -ResourceGroupName myresourcegroup  
+    $hostNames = $webApp.HostNames  
+    $HostNames.Add("www.contoso.com")  
+    Set-AzureRmWebApp -Name mytestapp -ResourceGroupName myresourcegroup -HostNames $HostNames   
+  
+Wichtiger Hinweis: Das Cmdlet Set-AzureRmWebApp überschreibt die Hostnamen für die Web-App. Daher fügt der oben stehende PowerShell-Codeausschnitt die Hostnamen an die vorhandene Liste der Hostnamen für die Web-App an.
 
 ## Hochladen und Binden eines bereits existierenden SSL-Zertifikats ##
 
@@ -61,4 +71,4 @@ Beachten Sie, dass das Zertifikat standardmäßig gelöscht wird, wenn die entfe
 - [Einführung in die App Service-Umgebung](app-service-app-service-environment-intro.md)
 - [Verwenden von Windows PowerShell mit dem Azure-Ressourcen-Manager](../powershell-azure-resource-manager.md)
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0218_2016-->

@@ -171,7 +171,7 @@ Protokolldateien können per FTP, mit Azure PowerShell oder mit der Azure-Befehl
 
 **Azure PowerShell**
 
-1. Suchen Sie im **Startmenü** oder auf der **Startseite** nach **Azure PowerShell**. Klicken Sie mit der rechten Maustaste auf den Eintrag **Azure PowerShell**, und wählen Sie **Als Administrator ausführen** aus.
+1. Suchen Sie auf der **Startseite** oder im **Startmenü** nach **Windows PowerShell**. Klicken Sie mit der rechten Maustaste auf den Eintrag **Windows PowerShell**, und wählen Sie **Als Administrator ausführen** aus.
 
 	> [AZURE.NOTE] Falls **Azure PowerShell** nicht installiert ist, finden Sie Informationen zur Installation und Konfiguration unter [Erste Schritte mit Azure PowerShell-Cmdlets](http://msdn.microsoft.com/library/windowsazure/jj554332.aspx).
 
@@ -289,4 +289,4 @@ Weitere Informationen zur Web-App-Endpunktüberwachung erhalten Sie in den folge
 [vmsizes]: http://go.microsoft.com/fwlink/?LinkID=309169
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

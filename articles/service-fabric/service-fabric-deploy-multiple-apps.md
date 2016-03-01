@@ -1,6 +1,6 @@
 <properties
    pageTitle="Bereitstellen einer Node.js-Anwendung mit MongoDB | Microsoft Azure"
-   description="Exemplarische Vorgehensweise des Packens einer vorhandenen Anwendung, um sie in einem Azure Service Fabric-Cluster bereitzustellen"
+   description="Exemplarische Vorgehensweise zum Verpacken mehrerer ausführbarer Gastanwendungsdateien, um sie in einem Azure Service Fabric-Cluster bereitzustellen"
    services="service-fabric"
    documentationCenter=".net"
    authors="bmscholl"
@@ -13,15 +13,15 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="11/17/2015"
+   ms.date="02/12/2016"
    ms.author="bscholl"/>
 
 
-# Bereitstellen mehrerer benutzerdefinierter Anwendungen
+# Bereitstellen mehrerer ausführbarer Gastanwendungsdateien
 
-In diesem Artikel wird das Packen mehrerer Anwendungen und ihre Bereitstellung in Azure Service Fabric mithilfe der Vorschauversion des Service Fabric-Packtools erläutert, die unter [http://aka.ms/servicefabricpacktool](http://aka.ms/servicefabricpacktool) verfügbar ist.
+In diesem Artikel wird das Verpacken mehrerer ausführbarer Gastanwendungsdateien sowie ihre Bereitstellung in Azure Service Fabric mithilfe der Vorschauversion des Service Fabric-Packtools erläutert, die unter [http://aka.ms/servicefabricpacktool](http://aka.ms/servicefabricpacktool) verfügbar ist.
 
-Informationen zum manuellen Erstellen eines Service Fabric-Pakets finden Sie im Artikel [Bereitstellen einer vorhandenen Anwendung in Service Fabric](service-fabric-deploy-existing-app.md).
+Informationen zum manuellen Erstellen eines Service Fabric-Pakets finden Sie im Abschnitt zum [Bereitstellen einer ausführbaren Gastanwendungsdatei in Service Fabric](service-fabric-deploy-existing-app.md).
 
 In dieser exemplarischen Vorgehensweise wird zwar das Bereitstellen einer Anwendung mit einem Node.js-Front-End gezeigt, die MongoDB als Datenspeicher nutzt, aber diese Schritte gelten für alle Anwendungen mit Abhängigkeiten von einer anderen Anwendung.
 
@@ -125,7 +125,7 @@ Service Fabric muss MongoDB mit einem Befehl starten, der dem unten angegebenen 
 ```
 mongod.exe --dbpath [path to data]
 ```
-> [AZURE.NOTE]Die Daten werden bei einem Ausfall eines Knotens nicht beibehalten, wenn Sie das MongoDB-Datenverzeichnis in das lokale Verzeichnis des Knotens einfügen. Sie müssen entweder beständigen Speicher verwenden oder eine MongoDB-Replikatgruppe implementieren, um Datenverluste zu vermeiden.
+> [AZURE.NOTE] Die Daten werden bei einem Ausfall eines Knotens nicht beibehalten, wenn Sie das MongoDB-Datenverzeichnis in das lokale Verzeichnis des Knotens einfügen. Sie müssen entweder beständigen Speicher verwenden oder eine MongoDB-Replikatgruppe implementieren, um Datenverluste zu vermeiden.
 
 Über PowerShell oder die Befehlsshell führen wir das Packtool mit den folgenden Parametern aus:
 
@@ -182,7 +182,7 @@ Der letzte Schritt ist das Veröffentlichen der Anwendung im lokalen Service Fab
 Connect-ServiceFabricCluster localhost:19000
 
 Write-Host 'Copying application package...'
-Copy-ServiceFabricApplicationPackage -ApplicationPackagePath '[yourtargetdirectory]' -ImageStoreConnectionString 'file:C:\SfDevCluster\Data\ImageStore' -ApplicationPackagePathInImageStore 'Store\NodeAppType'
+Copy-ServiceFabricApplicationPackage -ApplicationPackagePath '[yourtargetdirectory]' -ImageStoreConnectionString 'file:C:\SfDevCluster\Data\ImageStoreShare' -ApplicationPackagePathInImageStore 'Store\NodeAppType'
 
 Write-Host 'Registering application type...'
 Register-ServiceFabricApplicationType -ApplicationPathInImageStore 'Store\NodeAppType'
@@ -196,6 +196,6 @@ In diesem Tutorial haben Sie gelernt, wie Sie zwei vorhandene Anwendungen leicht
 
 ## Nächste Schritte
 
-- Erfahren Sie, wie Sie [eine einzelne Anwendung manuell packen](service-fabric-deploy-existing-app.md).
+- Erfahren Sie, wie Sie [eine Gastanwendung manuell verpacken](service-fabric-deploy-existing-app.md).
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0218_2016-->

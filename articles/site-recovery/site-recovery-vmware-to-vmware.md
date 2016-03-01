@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Einrichten von Schutz zwischen lokalen VMware-Standorten"
-	description="Verwenden Sie diesen Artikel, um Schutz zwischen zwei VMware-Standorten mithilfe von Azure Site Recovery zu konfigurieren."
+	pageTitle="Replizieren von lokalen virtuellen VMware-Maschinen oder physischen Servern an einen sekundären Standort | Microsoft Azure"
+	description="Verwenden Sie diesen Artikel, wenn Sie VMware-VMs oder physische Windows-/Linux-Server mithilfe von Azure Site Recovery an einen sekundären Standort replizieren möchten."
 	services="site-recovery"
 	documentationCenter=""
 	authors="rayne-wiselman"
@@ -13,11 +13,11 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/03/2015"
+	ms.date="02/16/2016"
 	ms.author="raynew"/>
 
 
-# Einrichten von Schutz zwischen lokalen VMware-Standorten
+# Replizieren von lokalen virtuellen VMware-Maschinen oder physischen Servern an einen sekundären Standort
 
 
 ## Übersicht
@@ -27,7 +27,7 @@ InMage Scout in Azure Site Recovery ermöglicht eine Echtzeitreplikation zwische
 
 ## Voraussetzungen
 
-- **Azure-Konto**: Sie benötigen ein [Microsoft Azure](https://azure.microsoft.com/)-Konto. Für den Einstieg steht ein [kostenloses Testkonto](pricing/free-trial/) zur Verfügung.
+- **Azure-Konto**: Sie benötigen ein [Microsoft Azure](https://azure.microsoft.com/)-Konto. Für den Einstieg steht ein [kostenloses Testkonto](https://azure.microsoft.com/pricing/free-trial/) zur Verfügung. [Erfahren Sie mehr](https://azure.microsoft.com/pricing/details/site-recovery/) über die Preise für Site Recovery.
 
 
 ## Schritt 1: Erstellen eines Tresors
@@ -36,7 +36,7 @@ InMage Scout in Azure Site Recovery ermöglicht eine Echtzeitreplikation zwische
 2. Klicken Sie auf **Data Services** > **Recovery Services** > **Site Recovery-Tresor**.
 3. Klicken Sie auf **Neu erstellen** > **Schnellerfassung**.
 4. Geben Sie unter **Name** einen aussagekräftigen Anzeigenamen für den Tresor ein.
-5. Wählen Sie unter **Region** die geografische Region für den Tresor aus. Eine Liste mit den unterstützten Regionen finden Sie in den [Preisdetails zu Azure Site Recovery](pricing/details/site-recovery/) unter „Geografische Verfügbarkeit“.
+5. Wählen Sie unter **Region** die geografische Region für den Tresor aus. Eine Liste mit den unterstützten Regionen finden Sie in den [Preisdetails zu Azure Site Recovery](https://azure.microsoft.com/pricing/details/site-recovery/) unter „Geografische Verfügbarkeit“.
 
 Überprüfen Sie auf der Statusleiste, ob der Tresor erfolgreich erstellt wurde. Der Tresor wird auf der Hauptseite von Recovery Services als **aktiv** aufgelistet.
 
@@ -130,4 +130,4 @@ Dieses neueste Update enthält Fehlerbehebungen und neue Funktionen:
 
 Etwaige Fragen können Sie im [Azure Recovery Services-Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr) stellen.
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->
