@@ -12,8 +12,8 @@
 	ms.workload="identity" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="02/16/2016" 
+	ms.topic="get-started-article" 
+	ms.date="02/18/2016" 
 	ms.author="billmath"/>
 
 # Windows-Authentifizierung und Azure Multi-Factor Authentication-Server
@@ -49,4 +49,4 @@ Mit dem Abschnitt für die Windows-Authentifizierung kann der Administrator die 
 10. Wählen Sie "Subnetz", wenn Sie einen IP-Bereich mithilfe der Subnetznotation angeben möchten. Geben Sie die Start-IP des Subnetzes an, und wählen Sie die entsprechende Netzmaske aus der Dropdown-Liste. 
 11. Klicken Sie auf die Schaltfläche "OK".
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0224_2016-->

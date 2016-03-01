@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article" 
-	ms.date="02/11/2016"
-	ms.author="bwren;sngun"/>
+	ms.date="02/18/2016"
+	ms.author="magoedte;bwren"/>
 
 # Azure Automation – Übersicht
 
@@ -41,7 +41,7 @@ Der [Runbookkatalog](automation-runbook-gallery.md#runbooks-in-runbook-gallery) 
 
 ## Erstellen von Runbooks mit Azure Automation 
 
-Sie können völlig neue [eigene Runbooks erstellen](automation-creating-importing-runbook.md) oder die Runbooks aus dem [Runbookkatalog](http://msdn.microsoft.com/library/azure/dn781422.aspx) für Ihre eigenen Anforderungen anpassen. Sie können zwischen drei verschiedenen [Runbooktypen](automation-runbook-types.md) basierend auf Ihren Anforderungen und Ihrer Erfahrung mit PowerShell wählen. Wenn Sie lieber direkt mit PowerShell-Code arbeiten, können Sie ein [PowerShell-Runbook](automation-runbook-types.md#powershell-runbooks) oder [PowerShell-Workflow-Runbook](automation-runbook-types.md#powershell-workflow-runbooks) verwenden, das Sie offline oder [mit dem Text-Editor](http://msdn.microsoft.com/library/azure/dn879137.aspx) im Azure-Portal bearbeiten. Wenn Sie ein Runbook lieber bearbeiten möchten, ohne sich mit dem zugrunde liegende Code zu befassen, können Sie mit dem [Grafik-Editor](automation-graphical-authoring-intro.md) im Azure-Vorschauportal ein [grafisches Runbook](automation-runbook-types.md#graphical-runbooks) erstellen.
+Sie können völlig neue [eigene Runbooks erstellen](automation-creating-importing-runbook.md) oder die Runbooks aus dem [Runbookkatalog](http://msdn.microsoft.com/library/azure/dn781422.aspx) für Ihre eigenen Anforderungen anpassen. Sie können zwischen drei verschiedenen [Runbooktypen](automation-runbook-types.md) basierend auf Ihren Anforderungen und Ihrer Erfahrung mit PowerShell wählen. Wenn Sie lieber direkt mit PowerShell-Code arbeiten, können Sie ein [PowerShell-Runbook](automation-runbook-types.md#powershell-runbooks) oder [PowerShell-Workflow-Runbook](automation-runbook-types.md#powershell-workflow-runbooks) verwenden, das Sie offline oder [mit dem Text-Editor](http://msdn.microsoft.com/library/azure/dn879137.aspx) im Azure-Portal bearbeiten. Wenn Sie ein Runbook lieber bearbeiten möchten, ohne sich mit dem zugrunde liegenden Code zu befassen, können Sie mit dem [Grafik-Editor](automation-graphical-authoring-intro.md) im Azure-Portal ein [grafisches Runbook](automation-runbook-types.md#graphical-runbooks) erstellen.
 
 Möchten Sie sich lieber ein Video ansehen? Sehen Sie sich das folgende Video aus einer Microsoft Ignite-Veranstaltung im Mai 2015 an. Hinweis: Wenngleich die Konzepte und Features, die in diesem Video erläutert werden, weiter zutreffend sind, hat sich Azure Automation seit der Aufzeichnung des Videos wesentlich weiterentwickelt. Die Lösung bietet nun im Azure-Portal eine umfangreichere Benutzeroberfläche und unterstützt weitere Funktionen.
 
@@ -62,7 +62,7 @@ Mit [DSC-Konfigurationen](automation-dsc-overview.md#azure-automation-dsc-terms)
 
 ## Abrufen von Modulen und Konfigurationen 
 
-Sie können [PowerShell-Module](automation-runbook-gallery.md#modules-in-powershell-gallery) mit Cmdlets abrufen, die Sie in Ihren Runbooks und DSC-Konfigurationen aus dem [PowerShell-Katalog](http://www.powershellgallery.com/) verwenden können. Sie starten diesen Katalog über das Azure-Vorschauportal und importieren Module direkt in Azure Automation. Sie können sie auch herunterladen und manuell importieren. Die Module können nicht direkt über das Azure-Portal installiert werden, Sie können sie jedoch herunterladen und installieren wie alle anderen Module auch.
+Sie können [PowerShell-Module](automation-runbook-gallery.md#modules-in-powershell-gallery) mit Cmdlets abrufen, die Sie in Ihren Runbooks und DSC-Konfigurationen aus dem [PowerShell-Katalog](http://www.powershellgallery.com/) verwenden können. Sie starten diesen Katalog über das Azure-Portal und importieren Module direkt in Azure Automation. Sie können sie auch herunterladen und manuell importieren. Die Module können nicht direkt über das Azure-Portal installiert werden, Sie können sie jedoch herunterladen und installieren wie alle anderen Module auch.
 
 
 ## Beispiel: Praktische Anwendung von Azure Automation 
@@ -101,4 +101,4 @@ Um mehr über Azure Automation zu erfahren und Ihre eigenen Runbooks zu erstelle
 
 **Bitte geben Sie uns Feedback!** Wenn Sie nach einer Azure Automation-Runbook-Lösung oder einem Integrationsmodul suchen, senden Sie im Script Center eine Skriptanforderung. Wenn Sie Feedback oder Vorschläge zu Features für Azure Automation haben, veröffentlichen Sie sie auf [User Voice](http://feedback.windowsazure.com/forums/34192--general-feedback). Vielen Dank!
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0224_2016-->

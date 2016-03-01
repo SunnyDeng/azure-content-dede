@@ -192,15 +192,9 @@ Weitere Informationen zu Auftragsvorbereitungs- und -freigabetasks finden Sie un
 
 #### <a name="multiinstance"></a>Tasks mit mehreren Instanzen
 
-Ein [Task mit mehreren Instanzen][rest_multiinstance] ist ein Task, der für die gleichzeitige Ausführung auf mehreren Computeknoten konfiguriert ist. Tasks mit mehreren Instanzen ermöglichen Szenarien, die eine hohe Leistung benötigen, wie z. B. das Message Passing Interface (MPI), und erfordern, dass Computeknoten zu einer Gruppe gebündelt werden, um einen einzelnen Workload zu bearbeiteten.
+Ein [Task mit mehreren Instanzen](batch-mpi.md) ist ein Task, der für die gleichzeitige Ausführung auf mehreren Computeknoten konfiguriert ist. Tasks mit mehreren Instanzen ermöglichen Szenarien, die eine hohe Leistung benötigen, wie z. B. das Message Passing Interface (MPI), und erfordern, dass Computeknoten zu einer Gruppe gebündelt werden, um einen einzelnen Workload zu bearbeiteten.
 
-Sie können in Batch Tasks mit mehreren Instanzen erstellen, indem Sie bei einem normalen [Task](#task) Einstellungen für Tasks mit mehreren Instanzen vornehmen. Dazu gehören die Anzahl der Computeknoten zum Ausführen des Tasks, eine Befehlszeile für den Haupttask (der „Anwendungsbefehl“), ein Koordinationsbefehl und eine Liste der allgemeinen Ressourcendateien für jeden Task.
-
-Wenn Sie einen Task mit mehreren Instanzen an einen Auftrag übermitteln, führt der Batch-Dienst Folgendes aus:
-
-1. Er erstellt automatisch einen primären Task und eine ausreichende Anzahl an Subtasks, die gemeinsam auf der von Ihnen angegebenen Gesamtzahl an Knoten ausgeführt werden. Batch plant dann die Ausführung dieser Tasks auf den Computeknoten, die zuerst die von Ihnen angegebenen gemeinsamen Ressourcendateien herunterladen.
-2. Nachdem die gemeinsamen Ressourcendateien heruntergeladen wurden, wird der Koordinationsbefehl vom Primärtask und den Subtasks ausgeführt. Dieser Koordinationsbefehl startet in der Regel einen Hintergrunddienst (z. B. `smpd.exe`von [MS-MPI][msmpi]) und stellt sicher, dass die Knoten zum Verarbeiten von Nachrichten zwischen den Knoten bereit sind.
-3. Nach erfolgreicher Ausführung des Koordinationsbefehls durch den Primärtask und alle Subtasks wird die Befehlszeile des Task (der „Anwendungsbefehl“) nur von dem Primärtask ausgeführt, der eine benutzerdefinierte MPI-fähige Anwendung startet, die den Workload auf den Knoten verarbeitet. In einem Windows MPI-Szenario würden Sie typischerweise Ihre MPI-fähige Anwendung mithilfe des Anwendungsbefehls über [MS-MPI][msmpi]`mpiexec.exe` ausführen.
+Ausführliche Informationen zum Ausführen von MPI-Tasks in Batch mithilfe der Batch .NET-Bibliothek finden Sie unter [Use multi-instance tasks to run Message Passing Interface (MPI) applications in Azure Batch](batch-mpi.md) (Ausführen von Message Passing Interface-Anwendungen (MPI) in Azure Batch mithilfe von Tasks mit mehreren Instanzen).
 
 ### <a name="jobschedule"></a>Geplante Aufträge
 
@@ -372,4 +366,4 @@ Jeder Knoten in einem Pool erhält eine eindeutige ID, und der Knoten, auf dem e
 [rest_update_job]: https://msdn.microsoft.com/library/azure/dn820162.aspx
 [rest_rdp]: https://msdn.microsoft.com/library/azure/dn820120.aspx
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0224_2016-->

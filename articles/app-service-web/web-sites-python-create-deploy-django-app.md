@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="python"
 	ms.topic="hero-article" 
-	ms.date="11/16/2015"
+	ms.date="02/19/2016"
 	ms.author="huvalo"/>
 
 
@@ -26,7 +26,7 @@ Sie erstellen eine Anwendung mit dem Webframework Django (siehe auch alternative
 
 [AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 
 ## Voraussetzungen
@@ -57,7 +57,6 @@ Sie sollten Python und Git bereits installiert haben, doch stellen Sie sicher, d
 Der erste Schritt beim Erstellen einer App ist das Erstellen der Web-App über das [Azure-Portal](https://portal.azure.com).
 
 1. Klicken Sie im Azure-Portal in der unteren linken Ecke auf **NEU**.
-2. Klicken Sie auf **Web und mobil**.
 3. Geben Sie im Suchfeld "python" ein.
 4. Wählen Sie in den Suchergebnissen **Django** aus, und klicken Sie dann auf **Erstellen**.
 5. Konfigurieren Sie die neue Django-App, indem Sie beispielsweise einen neuen App Service-Plan und eine neue Ressourcengruppe dafür erstellen. Klicken Sie dann auf **Erstellen**.
@@ -118,7 +117,7 @@ IIS-Konfigurationsdateien. Das Bereitstellungsskript verwendet die entsprechende
 
 ### Optionale Dateien - Anpassung der Bereitstellung
 
-[AZURE.INCLUDE [web-sites-python-customizing-deployment](../../includes/web-sites-python-customizing-deployment.md)]
+[AZURE.INCLUDE [web-sites-python-django-customizing-deployment](../../includes/web-sites-python-django-customizing-deployment.md)]
 
 ### Optionale Dateien - Python-Laufzeit
 
@@ -496,7 +495,7 @@ Weitere Informationen finden Sie im [Python Developer Center](/develop/python/).
 
 
 ## Änderungen
-* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
+* Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 
 
 <!--Link references-->
@@ -518,4 +517,4 @@ Weitere Informationen finden Sie im [Python Developer Center](/develop/python/).
 [Python Tools für Visual Studio – Dokumentation]: http://aka.ms/ptvsdocs
 [Dokumentation zu Django]: https://www.djangoproject.com/
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0224_2016-->

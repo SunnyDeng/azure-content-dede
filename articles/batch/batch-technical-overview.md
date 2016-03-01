@@ -40,7 +40,7 @@ Beispiele für Workloads, die mit diesem Verfahren häufig verarbeitet werden:
 * Belastungsanalysen für den Maschinenbau
 * Testen von Software
 
-Batch kann auch parallele Berechnungen mit einem abschließenden Reduzierungsschritt sowie komplexere HPC-Workloads ausführen, z. B. MPI-Anwendungen (Message Passing Interface).
+Batch kann auch parallele Berechnungen mit einem abschließenden Reduzierungsschritt sowie komplexere HPC-Workloads ausführen, z. B. [MPI](batch-mpi.md)-Anwendungen (Message Passing Interface).
 
 Ein Vergleich zwischen Batch und anderen HPC-Lösungsoptionen in Azure finden Sie unter [Batch und HPC-Lösungen](batch-hpc-solutions.md).
 
@@ -56,7 +56,7 @@ Beim Erstellen von Lösungen, bei denen Azure Batch für die Verarbeitung parall
 
 Beim Entwickeln von Batch-Lösungen verwenden Sie in Microsoft Azure die folgenden Konten:
 
-- **Azure-Konto und -Abonnement:** Wenn Sie noch kein Azure-Konto haben, können Sie Ihre [MSDN-Abonnentenleistungen][msdn_benefits] in Anspruch nehmen oder sich für eine [kostenlose Testversion][free_trial] registrieren. Beim Erstellen eines Kontos wird für Sie ein Standardabonnement erstellt.
+- **Azure-Konto und -Abonnement:** Wenn Sie noch kein Azure-Abonnement haben, können Sie Ihre [MSDN-Abonnentenleistungen][msdn_benefits] in Anspruch nehmen oder sich für ein [kostenloses Azure-Konto][free_account] registrieren. Beim Erstellen eines Kontos wird für Sie ein Standardabonnement erstellt.
 
 - **Batch-Konto:** Wenn Ihre Anwendungen mit dem Batch-Dienst interagieren, werden der Kontoname, die URL des Kontos und ein Zugriffsschlüssel als Anmeldeinformationen verwendet. Ihre Batch-Ressourcen, z. B. Pools, Computeknoten, Aufträge und Aufgaben, sind einem Batch-Konto zugeordnet. Sie können [ein Batch-Konto im Azure-Portal erstellen und verwalten](batch-account-create-portal.md).
 
@@ -112,7 +112,7 @@ Nachdem Sie nun ein Beispiel für ein Batch-Szenario gesehen haben, sollten Sie 
 
 - Lesen Sie [Erste Schritte mit der Azure Batch-Bibliothek für .NET](batch-dotnet-get-started.md), um zu erfahren, wie Sie C# und die Batch .NET-Bibliothek verwenden, um die oben beschriebenen Verfahren durchzuführen. Dies sollte beim Erlernen des Batch-Diensts einer Ihrer ersten Anlaufpunkte sein.
 
-- Sehen Sie sich die [Übersicht über Azure Batch-Features](batch-api-basics.md) an, um eingehendere Informationen zu den API-Features zu erhalten, die von Batch für die Verarbeitung Ihrer rechenintensiven Workloads bereitgestellt werden.
+- Sehen Sie sich die [Übersicht über Azure Batch-Features](batch-api-basics.md) an, um ausführlichere Informationen zu den API-Features zu erhalten, die von Batch für die Verarbeitung Ihrer rechenintensiven Workloads bereitgestellt werden.
 
 - Zusätzlich zum Batch-Explorer verdeutlichen die anderen [Codebeispiele bei GitHub][github_samples] die Nutzung vieler Batch-Features mithilfe der Batch .NET-Bibliothek.
 
@@ -127,7 +127,7 @@ Nachdem Sie nun ein Beispiel für ein Batch-Szenario gesehen haben, sollten Sie 
 [batch_ps]: https://msdn.microsoft.com/library/azure/mt125957.aspx
 [batch_rest]: https://msdn.microsoft.com/library/azure/Dn820158.aspx
 [data_factory]: https://azure.microsoft.com/documentation/services/data-factory/
-[free_trial]: https://azure.microsoft.com/pricing/free-trial/
+[free_account]: https://azure.microsoft.com/free/
 [github_samples]: https://github.com/Azure/azure-batch-samples
 [learning_path]: https://azure.microsoft.com/documentation/learning-paths/batch/
 [msdn_benefits]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
@@ -136,4 +136,4 @@ Nachdem Sie nun ein Beispiel für ein Batch-Szenario gesehen haben, sollten Sie 
 [1]: ./media/batch-technical-overview/tech_overview_01.png
 [2]: ./media/batch-technical-overview/tech_overview_02.png
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0224_2016-->

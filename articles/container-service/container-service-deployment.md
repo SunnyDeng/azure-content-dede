@@ -28,8 +28,8 @@ In diesem Dokument werden die Bereitstellung und die Verwendung des [Azure-Porta
  
 Wählen Sie zum Bereitstellen eines Mesos- oder Docker Swarm-Clusters eine der folgenden Vorlagen aus. **Hinweis** – Mit Ausnahme der standardmäßigen Orchestrator-Auswahl sind diese beiden Vorlagen identisch.
  
-* Mesos: [https://github.com/Azure/azure-quickstart-templates/tree/master/acs-mesos](https://github.com/Azure/azure-quickstart-templates/tree/master/acs-mesos)
-* Swarm: [https://github.com/Azure/azure-quickstart-templates/tree/master/acs-swarm](https://github.com/Azure/azure-quickstart-templates/tree/master/acs-swarm)
+* Mesos: [https://github.com/Azure/azure-quickstart-templates/tree/master/101-acs-mesos](https://github.com/Azure/azure-quickstart-templates/tree/master/101-acs-mesos)
+* Swarm: [https://github.com/Azure/azure-quickstart-templates/tree/master/101-acs-swarm](https://github.com/Azure/azure-quickstart-templates/tree/master/101-acs-swarm)
  
 Jede Vorlagenseite verfügt über die Schaltfläche „Bereitstellen in Azure“. Durch Betätigen dieser Schaltfläche wird das Azure-Portal mit einem Formular gestartet, das etwa wie folgt aussieht. <br />
 
@@ -67,8 +67,8 @@ Um eine Instanz des Azure Container Service über die Befehlszeile zu erstellen,
  
 Wählen Sie zum Bereitstellen eines Mesos- oder Docker Swarm-Clusters eine der folgenden Vorlagen aus. **Hinweis** – Mit Ausnahme der standardmäßigen Orchestrator-Auswahl sind diese beiden Vorlagen identisch.
  
-* Mesos: [https://github.com/Azure/azure-quickstart-templates/tree/master/acs-mesos](https://github.com/Azure/azure-quickstart-templates/tree/master/acs-mesos)
-* Swarm: [https://github.com/Azure/azure-quickstart-templates/tree/master/acs-swarm](https://github.com/Azure/azure-quickstart-templates/tree/master/acs-swarm)
+* Mesos: [https://github.com/Azure/azure-quickstart-templates/tree/master/101-acs-mesos](https://github.com/Azure/azure-quickstart-templates/tree/master/101-acs-mesos)
+* Swarm: [https://github.com/Azure/azure-quickstart-templates/tree/master/101-acs-swarm](https://github.com/Azure/azure-quickstart-templates/tree/master/101-acs-swarm)
  
 Als Nächstes stellen Sie sicher, dass die Azure-Befehlszeilenschnittstelle mit einem Azure-Abonnement verbunden ist. Dies kann mithilfe des folgenden Befehls erfolgen:
 
@@ -127,8 +127,8 @@ Ein ACS-Cluster kann auch mit PowerShell bereitgestellt werden. Dieses Dokument 
 
 Wählen Sie zum Bereitstellen eines Mesos- oder Docker Swarm-Clusters eine der folgenden Vorlagen aus. **Hinweis** – Mit Ausnahme der standardmäßigen Orchestrator-Auswahl sind diese beiden Vorlagen identisch.
  
-* Mesos: [https://github.com/Azure/azure-quickstart-templates/tree/master/acs-mesos](https://github.com/Azure/azure-quickstart-templates/tree/master/acs-mesos)
-* Swarm: [https://github.com/Azure/azure-quickstart-templates/tree/master/acs-swarm](https://github.com/Azure/azure-quickstart-templates/tree/master/acs-swarm)
+* Mesos: [https://github.com/Azure/azure-quickstart-templates/tree/master/101-acs-mesos](https://github.com/Azure/azure-quickstart-templates/tree/master/101-acs-mesos)
+* Swarm: [https://github.com/Azure/azure-quickstart-templates/tree/master/101-acs-swarm](https://github.com/Azure/azure-quickstart-templates/tree/master/101-acs-swarm)
 
 Prüfen Sie vor dem Erstellen eines Clusters in Ihrem Azure-Abonnement, dass Ihre PowerShell-Sitzung bei Azure angemeldet ist. Dies ist mithilfe des Befehls `Get-AzureRMSubscription` möglich.
 
@@ -173,4 +173,4 @@ Da Sie nun einen funktionierenden Cluster haben, lesen Sie die folgenden Dokumen
 
  
 
-<!----HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0224_2016-->

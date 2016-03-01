@@ -11,7 +11,7 @@
 <tags 
 	ms.service="stream-analytics" 
 	ms.devlang="na" 
-	ms.topic="article" 
+	ms.topic="hero-article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
 	ms.date="02/11/2016"
@@ -119,4 +119,4 @@ Hier verwenden wir **LEFT OUTER JOIN** für denselben Datenstrom (Selbstverknüp
 
 In diesem Tutorial werden die Grundlagen dazu vermittelt, wie Sie verschiedene SAQL-Abfragen schreiben und die Ergebnisse im Browser in unterschiedlichen Mustern für die Daten anzeigen können. Dies ist aber erst der Anfang. Sie haben mit Stream Analytics noch viele weitere Möglichkeiten. Als Nächstes erfahren Sie, wie Sie den Stream Analytics-Auftrag mit Eingaben und Ausgaben verbinden und ihn unter Azure bereitstellen. Sie können sich weiter über Stream Analytics informieren, indem Sie den [Lernpfad](https://azure.microsoft.com/documentation/learning-paths/stream-analytics/) verwenden. Weitere Informationen zum Schreiben von Abfragen erhalten Sie im Artikel [Gängige Abfragemuster](./stream-analytics-stream-analytics-query-patterns.md#query-example-detect-the-absence-of-events).
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0224_2016-->
