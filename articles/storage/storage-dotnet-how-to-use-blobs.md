@@ -332,7 +332,7 @@ Das folgende Beispiel erstellt ein neues Anfügeblob und fügt einige Daten hinz
     Random rnd = new Random();
     byte[] bytes = new byte[numBlocks];
     rnd.NextBytes(bytes);
-
+        
     //Simulate a logging operation by writing text data and byte data to the end of the append blob.
     for (int i = 0; i < numBlocks; i++)
     {
