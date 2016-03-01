@@ -53,11 +53,11 @@ Geben Sie auf der 4. Konfigurationsseite den Speicherkontonamen und den Standar
 
 ![Arbeitsbereich erstellen][5]
 
-Klicken Sie auf der letzten Konfigurationsseite zu **Script Actions** auf die Schaltfläche** add script action** und füllen Sie die Felder mit den folgenden Werten aus.
+Klicken Sie auf der letzten Konfigurationsseite zu **Script Actions** auf die Schaltfläche **add script action** und füllen Sie die Felder mit den folgenden Werten aus.
  
 * **NAME** - eine beliebige Zeichenfolge als Name für diese Skriptaktion. 
 * **NODE TYPE** - wählen Sie **All nodes** aus. 
-* **SCRIPT URI** - **http://getgoing.blob.core.windows.net/publicscripts/Azure_HDI_Setup_Windows.ps1*
+* **SCRIPT URI** - *http://getgoing.blob.core.windows.net/publicscripts/Azure_HDI_Setup_Windows.ps1*
 	* *publicscripts* ist ein öffentlicher Container im Speicherkonto. 
 	* *getgoing* wird für die Freigabe der PowerShell-Skriptdateien verwendet, um den Benutzern die Arbeit in Azure zu vereinfachen. 
 * **PARAMETERS** - (leer lassen)
@@ -104,4 +104,4 @@ Unter [Übermitteln von Hive-Abfragen an HDInsight Hadoop-Cluster](machine-learn
 
  
 
-<!---HONumber=AcomDC_0211_2016-->
+<!----HONumber=AcomDC_0211_2016-->
