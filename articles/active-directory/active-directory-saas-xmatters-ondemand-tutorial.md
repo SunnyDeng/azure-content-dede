@@ -1,5 +1,6 @@
 <properties 
-    pageTitle="Tutorial: Azure Active Directory-Integration mit xMatters OnDemand | Microsoft Azure" description="Hier erfahren Sie, wie Sie xMatters OnDemand mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
+    pageTitle="Tutorial: Azure Active Directory-Integration mit xMatters OnDemand | Microsoft Azure"
+    description="Hier erfahren Sie, wie Sie xMatters OnDemand mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
     services="active-directory" 
     authors="markusvi"  
     documentationCenter="na" 
@@ -83,7 +84,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
 4.  Klicken Sie zum Herunterladen des Zertifikats auf der Seite **Einmaliges Anmelden konfigurieren für xMatters OnDemand** auf **Zertifikat herunterladen**, und speichern Sie das Zertifikat lokal als: **c:\\XMatters OnDemand.cer**.
 
-    >[AZURE.IMPORTANT]Sie müssen das Zertifikat an das xMatters-Supportteam weiterleiten. Das Zertifikat muss vom xMatters-Supportteam hochgeladen werden, bevor Sie die Konfiguration der einmaligen Anmeldung abschließen können.
+    >[AZURE.IMPORTANT] Sie müssen das Zertifikat an das xMatters-Supportteam weiterleiten. Das Zertifikat muss vom xMatters-Supportteam hochgeladen werden, bevor Sie die Konfiguration der einmaligen Anmeldung abschließen können.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-xmatters-ondemand-tutorial/IC776794.png "Einmaliges Anmelden konfigurieren")
 
@@ -130,7 +131,7 @@ Um Azure AD-Benutzern die Anmeldung bei xMatters OnDemand zu ermöglichen, müss
     1.  Geben Sie die **Benutzer-ID**, den **Vornamen**, den **Nachnamen** und die **Website** eines gültigen AAD-Kontos ein, das Sie bereitstellen möchten.
     2.  Klicken Sie auf **Speichern**.
 
->[AZURE.NOTE]Sie können AAD-Benutzerkonten auch mithilfe anderer Tools zum Erstellen von xMatters OnDemand-Benutzerkonten oder mithilfe der von xMatters OnDemand bereitgestellten APIs erstellen.
+>[AZURE.NOTE] Sie können AAD-Benutzerkonten auch mithilfe anderer Tools zum Erstellen von xMatters OnDemand-Benutzerkonten oder mithilfe der von xMatters OnDemand bereitgestellten APIs erstellen.
 
 ##Zuweisen von Benutzern
   
@@ -150,4 +151,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0218_2016-->

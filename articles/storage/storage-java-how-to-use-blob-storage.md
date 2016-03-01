@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="Java"
 	ms.topic="article"
-	ms.date="12/01/2015"
+	ms.date="02/16/2016"
 	ms.author="micurd"/>
 
 # Verwenden des Blob-Speichers mit Java
@@ -22,7 +22,7 @@
 
 ## Übersicht
 
-In diesem Artikel wird die Durchführung gängiger Szenarien mit dem Microsoft Azure-Blob-Speicher demonstriert. Die Beispiele wurden in Java geschrieben und verwenden das [Azure Storage-SDK für Java][]. Die hier beschriebenen Szenarien umfassen das **Hochladen**, **Auflisten**, **Herunterladen** und **Löschen** von Blobs. Weitere Informationen zu Blobs finden Sie im Abschnitt [Nächste Schritte](#NextSteps).
+In diesem Artikel wird die Durchführung gängiger Szenarien mit dem Microsoft Azure-Blob-Speicher demonstriert. Die Beispiele wurden in Java geschrieben und verwenden das [Azure Storage-SDK für Java][]. Die hier beschriebenen Szenarien umfassen das **Hochladen**, **Auflisten**, **Herunterladen** und **Löschen** von Blobs. Weitere Informationen zu Blobs finden Sie im Abschnitt [Nächste Schritte](#Next-Steps).
 
 > [AZURE.NOTE] Ein SDK steht für Entwickler zur Verfügung, die Azure Storage auf Android-Geräten verwenden. Weitere Informationen finden Sie unter [Azure Storage-SDK für Android][].
 
@@ -268,4 +268,4 @@ Weitere Informationen finden Sie außerdem im [Java Developer Center](/develop/j
 [Azure Storage-REST-API]: https://msdn.microsoft.com/library/azure/dd179355.aspx
 [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

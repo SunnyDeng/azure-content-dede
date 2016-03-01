@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="01/27/2016"
+   ms.date="02/17/2016"
    ms.author="alkohli" />
 
 # StorSimple-Systemeinschränkungen
@@ -34,7 +34,7 @@ StorSimple bietet skalierbaren und flexiblen Speicher für Ihr Rechenzentrum. Es
 | Maximale Anzahl von iSCSI-Verbindungen von Initiatoren | 512 | |
 | Maximale Anzahl von Zugriffssteuerungsdatensätzen pro Gerät | 64 | |
 | Maximale Anzahl von Volumes pro Sicherungsrichtlinie | 24 | |
-| Maximale Anzahl von Sicherungen, die pro Sicherungsrichtlinie beibehalten werden | 64 | |
+| Maximale Anzahl von Sicherungen, die pro Zeitplan (in einer Sicherungsrichtlinie) beibehalten werden | 64 | |
 | Maximale Anzahl von Zeitplänen pro Sicherungsrichtlinie | 10 | |
 | Maximale Anzahl von Momentaufnahmen beliebigen Typs, die pro Volume beibehalten werden können | 256 | Dies beinhaltet lokale Momentaufnahmen und Cloud-Momentaufnahmen. |
 | Maximale Anzahl von Momentaufnahmen, die in einem Gerät vorhanden sein können | 10\.000 | |
@@ -52,4 +52,4 @@ StorSimple bietet skalierbaren und flexiblen Speicher für Ihr Rechenzentrum. Es
 
 Überprüfen Sie die [StorSimple-Systemanforderungen](storsimple-system-requirements.md).
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0218_2016-->

@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="09/02/2015"
+   ms.date="02/02/2016"
    ms.author="joaoma" />
 
 # Namensauflösung für virtuelle Computer und Rolleninstanzen
@@ -158,7 +158,7 @@ Sie können mehrere DNS-Server angeben, die von Ihren virtuellen Computern und R
 
 ### Angeben eines DNS-Servers im Verwaltungsportal
 
-Beim Erstellen eines virtuellen Netzwerks im Verwaltungsportal können Sie die IP-Adresse und den Namen des DNS-Servers (oder der Server) angeben, die Sie verwenden möchten. Nach dem Erstellen des virtuellen Netzwerks werden die virtuellen Computer und Rolleninstanzen, die Sie im virtuellen Netzwerk bereitstellen, automatisch mit den angegebenen DNS-Einstellungen konfiguriert. DNS-Server, die für einen bestimmten Clouddienst (klassisches Azure) oder eine Netzwerkschnittstellenkarte (ARM-basierte Bereitstellungen) angegeben werden, haben Vorrang vor denen für das virtuelle Netzwerk. Siehe [Informationen zum Konfigurieren eines virtuellen Netzwerks im Verwaltungsportal](virtual-networks-settings.md).
+Beim Erstellen eines virtuellen Netzwerks im Verwaltungsportal können Sie die IP-Adresse und den Namen des DNS-Servers (oder der Server) angeben, die Sie verwenden möchten. Nach dem Erstellen des virtuellen Netzwerks werden die virtuellen Computer und Rolleninstanzen, die Sie im virtuellen Netzwerk bereitstellen, automatisch mit den angegebenen DNS-Einstellungen konfiguriert. DNS-Server, die für einen bestimmten Clouddienst (klassisches Azure) oder eine Netzwerkschnittstellenkarte (ARM-basierte Bereitstellungen) angegeben werden, haben Vorrang vor denen für das virtuelle Netzwerk.
 
 ### Angeben eines DNS-Servers mithilfe von Konfigurationsdateien (klassisches Azure)
 
@@ -177,8 +177,6 @@ Die Dienstkonfigurationsdatei wird für jeden Clouddienst erstellt, den Sie in A
 
 [Konfigurationsschema für virtuelle Netzwerke](https://msdn.microsoft.com/library/azure/jj157100)
 
-[Informationen zum Konfigurieren von Einstellungen für virtuelle Netzwerke im Verwaltungsportal](virtual-networks-settings.md)
-
 [Konfigurieren eines virtuellen Netzwerks mithilfe einer Netzwerkkonfigurationsdatei](virtual-networks-using-network-configuration-file.md)
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0218_2016-->

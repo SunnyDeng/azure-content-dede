@@ -36,7 +36,7 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
 - **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 
-- **Eine Arbeitsstation mit Azure PowerShell**. Siehe [Install and use Azure PowerShell](https://azure.microsoft.com/documentation/videos/install-and-use-azure-powershell/) (Installieren und Verwenden von Azure PowerShell, in englischer Sprache). Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md). Um Azure PowerShell-Skripts ausführen zu können, müssen Sie Azure PowerShell als Administrator ausführen und die Ausführungsrichtlinie auf *RemoteSigned* setzen. Siehe [Verwenden des Cmdlet „Set-ExecutionPolicy“][2].
+- **Eine Arbeitsstation mit Azure PowerShell**. Siehe [Install and use Azure PowerShell](https://azure.microsoft.com/documentation/videos/install-and-use-azure-powershell/) (Installieren und Verwenden von Azure PowerShell, in englischer Sprache). Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md). Um Azure PowerShell-Skripts ausführen zu können, müssen Sie Azure PowerShell als Administrator ausführen und die Ausführungsrichtlinie auf *RemoteSigned* setzen. Siehe [Verwenden des Cmdlet „Set-ExecutionPolicy“][2].
 
 	Stellen Sie vor dem Ausführen von Azure PowerShell-Skripts mithilfe des folgenden Cmdlets sicher, dass eine Verbindung mit Ihrem Azure-Abonnement besteht:
 
@@ -84,7 +84,7 @@ Ein DNS-Server ist optional, aber in einigen Fällen erforderlich. Die Vorgehens
 
 **So erstellen Sie ein Azure-Speicherkonto und einen Blobspeichercontainer zur Verwendung im Cluster**
 
-> [AZURE.NOTE] HDInsight-Cluster nutzen den Azure-BLOB-Speicher zum Speichern von Daten. Weitere Informationen finden Sie unter [Verwenden von Azure Blob-Speicher mit HDInsight](../hdinsight-use-blob-storage.md). Sie benötigen ein Speicherkonto und einen Blob-Speichercontainer. Der Speicherort des Speicherkontos muss dem Speicherort des virtuellen Netzwerks und des Clusters entsprechen.
+> [AZURE.NOTE] HDInsight-Cluster nutzen den Azure-BLOB-Speicher zum Speichern von Daten. Weitere Informationen finden Sie unter [Verwenden von Azure Blob-Speicher mit HDInsight](hdinsight-hadoop-use-blob-storage.md). Sie benötigen ein Speicherkonto und einen Blob-Speichercontainer. Der Speicherort des Speicherkontos muss dem Speicherort des virtuellen Netzwerks und des Clusters entsprechen.
 
 Wie andere HDInsight-Cluster erfordert ein HBase-Cluster ein Azure-Speicherkonto und einen Blobspeichercontainer als Standarddateisystem. Der Speicherort des Speicherkontos muss dem Speicherort des virtuellen Netzwerks und des Clusters entsprechen. Weitere Informationen finden Sie unter [Verwenden von Azure Blob-Speicher mit HDInsight][hdinsight-storage]. Wenn Sie einen HBase-Cluster bereitstellen, können Sie entweder ein neues Speicherkonto und einen neuen Blobspeichercontainer erstellen oder ein vorhandenes Speicherkonto und einen vorhandenen Blobspeichercontainer verwenden. Mit den folgenden Schritten wird veranschaulicht, wie Sie ein Speicherkonto und einen Blobspeichercontainer im klassischen Azure-Portal erstellen.
 
@@ -133,8 +133,8 @@ Wie andere HDInsight-Cluster erfordert ein HBase-Cluster ein Azure-Speicherkonto
 	<tr><td>Größe des Hauptknotens</td><td><p>Wählen Sie eine VM-Größe für den Hauptknoten aus.</p></td></tr>
 	<tr><td>Datenknotengröße</td><td><p>Wählen Sie eine VM-Größe für die Datenknoten aus.</p></td></tr>
 	<tr><td>Zookeeper-Größe</td><td><p>Wählen Sie eine VM-Größe für den Zookeeper-Knoten aus.</p></td></tr>
-	</table>
-	>[AZURE.NOTE]Je nach Wahl der VMs können Ihre Kosten variieren. HDInsight verwendet für Clusterknoten VMs mit Standardtarif. Informationen über die Auswirkungen der VM-Größe auf Ihre Kosten finden Sie unter <a href="http://azure.microsoft.com/pricing/details/hdinsight/" target="_blank">HDInsight-Preise</a>.
+  </table>
+	>[AZURE.NOTE] Je nach Wahl der VMs können Ihre Kosten variieren. HDInsight verwendet für Clusterknoten VMs mit Standardtarif. Informationen über die Auswirkungen der VM-Größe auf Ihre Kosten finden Sie unter <a href="http://azure.microsoft.com/pricing/details/hdinsight/" target="_blank">HDInsight-Preise</a>.
 
 	Klicken Sie auf die rechte Taste.
 
@@ -178,8 +178,8 @@ Wie andere HDInsight-Cluster erfordert ein HBase-Cluster ein Azure-Speicherkonto
         <p>Falls Sie einen neuen Speicher erstellen oder einen Speicher aus einem anderen Azure-Abonnement verwenden, müssen Sie den Namen des Standardcontainers angeben.</p>
     </td></tr>
 	<tr><td>Zusätzliche Speicherkonten</td>
-			<td>Geben Sie bei Bedarf weitere Storage-Konten für den Cluster an. HDInsight unterstützt mehrere Speicherkonten. Es gibt keine Beschränkung in Bezug auf die zusätzlichen Speicherkonten, die von einem Cluster verwendet werden können. Wenn Sie den Cluster jedoch im Azure-Portal erstellen, können Sie aufgrund von Einschränkungen der Benutzeroberfläche maximal sieben Speicherkonten einrichten. Für jedes angegebene Storage-Konto wird eine zusätzliche Seite <strong>Speicherkonto</strong> im Assistenten hinzugefügt, auf der Sie die Kontoinformationen angeben können. Im oben abgebildeten Screenshot wurde z. B. kein zusätzliches Speicherkonto hinzugefügt. Daher wurde dem Assistenten auch keine zusätzliche Seite hinzugefügt.</td></tr>
-	</table>
+		<td>Geben Sie bei Bedarf weitere Storage-Konten für den Cluster an. HDInsight unterstützt mehrere Speicherkonten. Es gibt keine Beschränkung in Bezug auf die zusätzlichen Speicherkonten, die von einem Cluster verwendet werden können. Wenn Sie den Cluster jedoch im klassischen Azure-Portal erstellen, können Sie aufgrund von Einschränkungen der Benutzeroberfläche maximal sieben Speicherkonten einrichten. Für jedes angegebene Storage-Konto wird eine zusätzliche Seite <strong>Speicherkonto</strong> im Assistenten hinzugefügt, auf der Sie die Kontoinformationen angeben können. Im oben abgebildeten Screenshot wurde z. B. kein zusätzliches Speicherkonto hinzugefügt. Daher wurde dem Assistenten auch keine zusätzliche Seite hinzugefügt.</td></tr>
+</table>
 	Klicken Sie auf den Pfeil nach rechts.
 
 7. Klicken Sie auf der Seite **Skriptaktionen** unten rechts auf das Häkchen. Klicken Sie nicht auf die Schaltfläche **Skriptaktion hinzufügen**, da in diesem Lernprogramm kein angepasstes Clustersetup erforderlich ist.
@@ -188,11 +188,11 @@ Wie andere HDInsight-Cluster erfordert ein HBase-Cluster ein Azure-Speicherkonto
 
 	> [AZURE.NOTE] Diese Seite kann zum Anpassen des Clusters während des Setups verwendet werden. Weitere Informationen finden Sie unter [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen](hdinsight-hadoop-customize-cluster.md).
 
-Führen Sie die Schritte unter [Erste Schritte mit HBase mit Hadoop in HDInsight](../hdinsight-hbase-get-started.md) aus, um mit Ihrem neu erstellten HBase-Cluster zu arbeiten.
+Führen Sie die Schritte unter [Erste Schritte mit HBase mit Hadoop in HDInsight](hdinsight-hbase-tutorial-get-started.md) aus, um mit Ihrem neu erstellten HBase-Cluster zu arbeiten.
 
 ##Herstellen einer Verbindung mit dem im virtuellen Netzwerk bereitgestellten HBase-Cluster unter Verwendung von HBase Java RPC-APIs
 
-1.	Stellen Sie einen virtuellen IaaS-Computer (Infrastructure-as-a-Service) im gleichen virtuellen Azure-Netzwerk und im gleichen Subnetz bereit. Dadurch verwenden der virtuelle Computer und der HBase-Cluster denselben internen DNS-Server für die Auflösung von Hostnamen. Hierfür müssen Sie die Option **Aus Katalog** und das virtuelle Netzwerk statt eines Datencenters auswählen. Anweisungen dazu finden Sie unter [Erstellen eines virtuellen Windows Server-Computers](../virtual-machines-windows-tutorial.md). Ein standardmäßiges Windows Server 2012-Image mit kleinem virtuellen Computer ist ausreichend.
+1.	Stellen Sie einen virtuellen IaaS-Computer (Infrastructure-as-a-Service) im gleichen virtuellen Azure-Netzwerk und im gleichen Subnetz bereit. Dadurch verwenden der virtuelle Computer und der HBase-Cluster denselben internen DNS-Server für die Auflösung von Hostnamen. Hierfür müssen Sie die Option **Aus Katalog** und das virtuelle Netzwerk statt eines Datencenters auswählen. Anweisungen dazu finden Sie unter [Erstellen eines virtuellen Windows Server-Computers](../virtual-machines/virtual-machines-windows-tutorial.md). Ein standardmäßiges Windows Server 2012-Image mit kleinem virtuellen Computer ist ausreichend.
 
 2.	Für Remote-Verbindungen zwischen Java-Anwendungen und HBase müssen Sie den vollqualifizierten Domänennamen (FQDN) verwenden. Rufen Sie hierzu das verbindungsspezifische DNS-Suffix des HBase-Clusters ab. Dazu können Sie entweder Ambari mit Curl abfragen oder per Remotedesktop eine Verbindung mit dem Cluster herstellen.
 
@@ -380,11 +380,11 @@ Führen Sie die unter [Verwenden von Maven zur Entwicklung von Java-Anwendungen,
 
 In diesem Lernprogramm haben Sie erfahren, wie Sie einen HBase-Cluster bereitstellen. Weitere Informationen finden Sie unter:
 
-- [Erste Schritte mit HDInsight](../hdinsight-get-started.md)
+- [Erste Schritte mit HDInsight](hdinsight-hadoop-linux-tutorial-get-started.md)
 - [Konfigurieren der HBase-Replikation in HDInsight](hdinsight-hbase-geo-replication.md)
 - [Bereitstellen von Hadoop-Clustern in HDInsight](hdinsight-provision-clusters.md)
-- [Erste Schritte mit HBase mit Hadoop in HDInsight](../hdinsight-hbase-get-started.md)
-- [Analysieren der Twitter-Stimmungen mit HBase in HDInsight](../hdinsight-hbase-twitter-sentiment.md)
+- [Erste Schritte mit HBase mit Hadoop in HDInsight](hdinsight-hbase-tutorial-get-started.md)
+- [Analysieren der Twitter-Stimmungen mit HBase in HDInsight](hdinsight-hbase-analyze-twitter-sentiment.md)
 - [Virtuelle Netzwerke im Überblick][vnet-overview]
 
 
@@ -392,10 +392,10 @@ In diesem Lernprogramm haben Sie erfahren, wie Sie einen HBase-Cluster bereitste
 [2]: http://technet.microsoft.com/library/ee176961.aspx
 [3]: http://technet.microsoft.com/library/hh847889.aspx
 
-[hbase-get-started]: ../hdinsight-hbase-get-started.md
-[hbase-twitter-sentiment]: ../hdinsight-hbase-twitter-sentiment.md
+[hbase-get-started]: hdinsight-hbase-tutorial-get-started.md
+[hbase-twitter-sentiment]: hdinsight-hbase-analyze-twitter-sentiment.md
 [vnet-overview]: ../virtual-network/virtual-networks-overview.md
-[vm-create]: ../virtual-machines-windows-tutorial.md
+[vm-create]: ../virtual-machines/virtual-machines-windows-tutorial.md
 
 [azure-portal]: https://management.windowsazure.com
 [azure-create-storageaccount]: ../storage-create-storage-account.md
@@ -413,15 +413,15 @@ In diesem Lernprogramm haben Sie erfahren, wie Sie einen HBase-Cluster bereitste
 [twitter-statuses-filter]: https://dev.twitter.com/docs/api/1.1/post/statuses/filter
 
 
-[powershell-install]: ../install-configure-powershell.md
+[powershell-install]: ../powershell-install-configure.md
 
 
 [hdinsight-customize-cluster]: hdinsight-hadoop-customize-cluster.md
 [hdinsight-provision]: hdinsight-provision-clusters.md
-[hdinsight-get-started]: ../hdinsight-get-started.md
-[hdinsight-storage-powershell]: ../hdinsight-use-blob-storage.md#powershell
+[hdinsight-get-started]: hdinsight-hadoop-linux-tutorial-get-started.md
+[hdinsight-storage-powershell]: hdinsight-hadoop-use-blob-storage.md#powershell
 [hdinsight-analyze-flight-delay-data]: hdinsight-analyze-flight-delay-data.md
-[hdinsight-storage]: ../hdinsight-use-blob-storage.md
+[hdinsight-storage]: hdinsight-hadoop-use-blob-storage.md
 [hdinsight-use-sqoop]: hdinsight-use-sqoop.md
 [hdinsight-power-query]: hdinsight-connect-excel-power-query.md
 [hdinsight-hive-odbc]: hdinsight-connect-excel-hive-ODBC-driver.md
@@ -432,4 +432,4 @@ In diesem Lernprogramm haben Sie erfahren, wie Sie einen HBase-Cluster bereitste
 [img-provision-cluster-page1]: ./media/hdinsight-hbase-provision-vnet/hbasewizard1.png "Bereitstellen von Details für den neuen HBase-Cluster"
 [img-provision-cluster-page5]: ./media/hdinsight-hbase-provision-vnet/hbasewizard5.png "Verwenden von Skriptaktionen zum Anpassen eines HBase-Clusters"
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

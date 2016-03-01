@@ -4,7 +4,7 @@
 	services="active-directory"
 	documentationCenter=""
 	authors="jeevansd"
-	manager="prasannas"
+	manager="stevenpo"
 	editor=""/>
 
 <tags
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/04/2015"
+	ms.date="02/17/2016"
 	ms.author="jeedes"/>
 
 
@@ -35,7 +35,7 @@ Um die Azure AD-Integration mit UserEcho konfigurieren zu können, benötigen S
 - Ein UserEcho-Abonnement, für das einmaliges Anmelden aktiviert ist
 
 
-> [AZURE.NOTE]Um die Schritte in diesem Tutorial zu testen, wird empfohlen, keine Produktionsumgebung zu verwenden.
+> [AZURE.NOTE] Um die Schritte in diesem Tutorial zu testen, wird empfohlen, keine Produktionsumgebung zu verwenden.
 
 
 Um die Schritte in diesem Tutorial zu testen, sollten Sie folgende Empfehlungen beachten:
@@ -101,7 +101,7 @@ Das Ziel dieses Abschnitts ist, das einmalige Anmelden von Azure AD im klassisc
  
 4. Führen Sie auf der Seite **Einmaliges Anmelden konfigurieren für UserEcho** die folgenden Schritte aus: <br><br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-userecho-tutorial/tutorial_userecho_05.png) <br>
 
-    a. Klicken Sie auf **Zertifikat herunterladen**, und speichern Sie die Datei auf Ihrem Computer.
+    a. Klicken Sie auf **Zertifikat herunterladen** und speichern Sie die Datei auf Ihrem Computer.
 
     b. Klicken Sie auf **Weiter**.
 
@@ -129,7 +129,7 @@ Das Ziel dieses Abschnitts ist, das einmalige Anmelden von Azure AD im klassisc
     e. Klicken Sie auf **Speichern**.
 
 
-6. Wählen Sie im klassischen Azure-Portal die Bestätigung zur Konfiguration der einmaligen Anmeldung aus, und klicken Sie dann auf **Weiter**. <br><br>![Azure AD – einmaliges Anmelden][10]<br>
+6. Wählen Sie im klassischen Azure-Portal die Bestätigung zur Konfiguration der einmaligen Anmeldung aus und klicken Sie dann auf **Weiter**. <br><br>![Azure AD – einmaliges Anmelden][10]<br>
 
 7. Klicken Sie auf der Seite **Bestätigung zur einmaligen Anmeldung** auf **Fertig stellen**. <br><br>![Azure AD – einmaliges Anmelden][11]
 
@@ -141,7 +141,7 @@ Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta S
 
 **Um einen Testbenutzer in Azure AD zu erstellen, führen Sie die folgenden Schritte aus:**
 
-1. Klicken Sie im **klassischen Azure-Portal** im linken Navigationsbereich auf **Active Directory**. <br><br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-userecho-tutorial/create_aaduser_09.png) <br> 
+1. Klicken Sie im **klassischen Azure-Portal** im linken Navigationsbereich auf **Active Directory**. <br><br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-userecho-tutorial/create_aaduser_09.png)<br> 
 
 2. Wählen Sie in der Liste **Verzeichnis** das Verzeichnis aus, für das Sie die Verzeichnisintegration aktivieren möchten.
 
@@ -253,4 +253,4 @@ Das Ziel dieses Abschnitts ist das Testen Ihrer Azure AD-Konfiguration für einm
 [204]: ./media/active-directory-saas-userecho-tutorial/tutorial_general_204.png
 [205]: ./media/active-directory-saas-userecho-tutorial/tutorial_general_205.png
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0218_2016-->

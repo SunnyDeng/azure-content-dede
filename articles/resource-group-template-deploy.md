@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="02/02/2016"
+   ms.date="02/17/2016"
    ms.author="tomfitz"/>
 
 # Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage
@@ -107,6 +107,8 @@ Sie gebenden Bereitstellungstyp über die **Mode**-Eigenschaft an, wie in den Be
           Are you sure you want to use the complete deployment mode? Resources in the resource group 'ExampleResourceGroup' which are not
           included in the template will be deleted.
           [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
+
+     Wenn die Vorlage einen Parameter mit einem Namen enthält, der einem Parameter im Befehl zum Bereitstellen der Vorlage entspricht (z. B. der Parameter **ResourceGroupName** in Ihrer Vorlage, der dem Parameter **ResourceGroupName** im Cmdlet [New-AzureRmResourceGroupDeployment](https://msdn.microsoft.com/library/azure/mt679003.aspx) entspricht), werden Sie aufgefordert, einen Wert für einen Parameter mit dem Postfix **FromTemplate** anzugeben (z. B. **ResourceGroupNameFromTemplate**). Im Allgemeinen sollten Sie diese Verwirrung vermeiden, indem Sie Parametern nicht dieselben Namen wie Parametern für Bereitstellungsvorgänge geben.
 
 6. Abrufen von Informationen über Fehler bei der Bereitstellung.
 
@@ -282,4 +284,4 @@ Informationen zum Definieren von Parametern in der Vorlage finden Sie unter [Ers
 
  
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0218_2016-->

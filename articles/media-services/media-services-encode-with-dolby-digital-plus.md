@@ -3,7 +3,7 @@
 	description="In diesem Thema wird beschrieben, wie Sie Medien mithilfe von Dolby Digital Plus codieren." 
 	services="media-services" 
 	documentationCenter="" 
-	authors="juliako" 
+	authors="anilmur" 
 	manager="dwrede" 
 	editor=""/>
 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/07/2015"   
-	ms.author="juliako"/>
+	ms.date="02/17/2016"   
+	ms.author="anilmur"/>
 
 #Codieren Ihrer Medien mit Dolby Digital Plus
 
@@ -659,4 +659,4 @@ Alle Attribute werden im Folgenden beschrieben.
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0218_2016-->

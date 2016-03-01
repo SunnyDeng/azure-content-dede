@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="01/29/2016"
+   ms.date="02/12/2016"
    ms.author="chackdan"/>
 
 
@@ -52,7 +52,9 @@ Es gibt zwei Methoden zum Erstellen einer benutzerdefinierten Ressourcen-Manager
 
 ## Bereitstellen der Ressourcen-Manager-Vorlage über Azure PowerShell
 
-Ausführliche Verfahrensweisen zum Bereitstellen der Vorlage mit PowerShell finden Sie unter [Bereitstellen von Azure-Ressourcen-Manager-Vorlagen mithilfe von PowerShell](resource-group-template-deploy.md).
+Ausführliche Verfahrensweisen zum Bereitstellen der Vorlage mit PowerShell finden Sie unter [Bereitstellen von Azure-Ressourcen-Manager-Vorlagen mithilfe von PowerShell](../resource-group-template-deploy.md).
+
+>[AZURE.NOTE] Um Verfügbarkeit sicherzustellen und den Zustand beizubehalten, muss eine bestimmte Anzahl von Knoten in einem Service Fabric-Cluster stets in Betrieb sein. Dies wird auch als „Aufrechterhalten eines Quorums“ bezeichnet. Daher ist es üblicherweise nicht sicher, alle Computer innerhalb des Clusters herunterzufahren, sofern Sie nicht zunächst eine [vollständige Sicherung des Zustands](service-fabric-reliable-services-backup-restore.md) durchgeführt haben.
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## Nächste Schritte
@@ -63,4 +65,4 @@ Ausführliche Verfahrensweisen zum Bereitstellen der Vorlage mit PowerShell find
 <!--Image references-->
 [DownloadTemplate]: ./media/service-fabric-cluster-creation-via-arm/DownloadTemplate.png
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0218_2016-->

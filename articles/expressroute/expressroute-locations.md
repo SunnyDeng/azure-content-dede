@@ -43,7 +43,7 @@ In der folgenden Tabelle finden Sie Informationen zu Regionen und geopolitischen
 
 |**Geopolitische Region**|**Azure-Regionen**|**ExpressRoute-Standorte**|
 |---|---|---|---|
-|**US-Government Cloud**|US-Behörde Iowa, US-Behörde Virginia|Chicago, Washington DC|
+|**US-Government Cloud**|US-Behörde Iowa, US-Behörde Virginia|Chicago, New York+, Washington DC|
 |**China-Cloud**|China (Norden), China (Osten)|Peking, Shanghai|
 
 
@@ -65,12 +65,12 @@ Konnektivität zwischen geopolitischen Regionen wird bei der ExpressRoute-Standa
 | **Comcast** | Unterstützt | Nicht unterstützt | Silicon Valley, Washington, D.C. |
 | **CoreSite** | Unterstützt | Unterstützt | Los Angeles | 
 | **[Equinix](http://www.equinix.com/partners/microsoft-azure/)** | Unterstützt | Unterstützt | Amsterdam, Atlanta, Chicago, Dallas, Hongkong, London, Los Angeles, Melbourne, New York, Osaka, São Paulo, Seattle, Silicon Valley, Singapur, Sydney, Tokio, Toronto+, Washington, D.C. |
-| **[Internet Initiative Japan Inc. - IIJ](http://www.iij.ad.jp/en/news/pressrelease/2013/pdf/Azure_E.pdf)** | Unterstützt | Unterstützt | Osaka, Tokio |
+| **[Internet Initiative Japan Inc. - IIJ](http://www.iij.ad.jp/en/news/pressrelease/2015/1216-2.html)** | Unterstützt | Unterstützt | Osaka, Tokio |
 | **[InterCloud](https://www.intercloud.com/)** | Unterstützt | Unterstützt | Amsterdam, London, Singapur, Washington, D.C. |
 | **Internet Solutions – Cloud Connect** | Unterstützt | Unterstützt | Amsterdam, London |
-| **Interxion** | Unterstützt | Unterstützt | Amsterdam |
+| **Interxion** | Unterstützt | Unterstützt | Amsterdam, London |
 | **[Level 3 Communications](http://your.level3.com/LP=882?WT.tsrc=02192014LP882AzureVanityAzureText)** | Unterstützt | Unterstützt | Chicago, Dallas, London, Seattle, Silicon Valley, Washington, D.C. |
-| **Megaport** | Unterstützt | Unterstützt | Melbourne, Sydney |
+| **Megaport** | Unterstützt | Unterstützt | Dallas, Los Angeles, Melbourne, New York, Seattle, Sydney, Washington DC |
 | **MTN** | Unterstützt | Unterstützt | London |
 | **NEXTDC** | Unterstützt | Unterstützt | Melbourne, Sydney |
 | **NTT Communications** | Unterstützt | In Kürze verfügbar | London, Tokyo |
@@ -83,7 +83,7 @@ Konnektivität zwischen geopolitischen Regionen wird bei der ExpressRoute-Standa
 | **[Telstra Corporation](http://www.telstra.com.au/business-enterprise/network-services/networks/cloud-direct-connect/)** | Unterstützt | Nicht unterstützt | Melbourne, Sydney |
 | **[Verizon](http://www.verizonenterprise.com/products/networking/secure-cloud-interconnect/)** | Unterstützt | Unterstützt | Amsterdam, Hongkong, London, Silicon Valley, Sydney, Tokio, Washington, D.C. |
 | **Vodafone** | Unterstützt | Nicht unterstützt | London | 
-| **[Zayo Group](http://www.zayo.com/)** | Unterstützt | Unterstützt | Chicago, Los Angeles, New York, Seattle, Silicon Valley, Washington, D.C. |
+| **[Zayo Group](http://www.zayo.com/solutions/industries/connect-to-cloud-data-centers/cloud-connectivity/microsoft-expressroute/)** | Unterstützt | Unterstützt | Chicago, Los Angeles, New York, Seattle, Silicon Valley, Washington, D.C. |
 
  **+** steht für "In Kürze"
 
@@ -141,4 +141,4 @@ Je nach Ihrer Netzwerkgröße kann das Aktivieren privater Verbindungen für Ihr
 - Weitere Informationen über ExpressRoute finden Sie unter [ExpressRoute – FAQ](expressroute-faqs.md).
 - Stellen Sie sicher, dass alle Voraussetzungen erfüllt sind. Informationen finden Sie unter [ExpressRoute-Voraussetzungen](expressroute-prerequisites.md).
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0224_2016-->

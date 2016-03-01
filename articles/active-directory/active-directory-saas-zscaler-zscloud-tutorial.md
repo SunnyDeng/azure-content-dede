@@ -1,5 +1,6 @@
 <properties 
-    pageTitle="Tutorial: Azure Active Directory-Integration mit ZScaler ZSCloud | Microsoft Azure" description="Hier erfahren Sie, wie Sie ZScaler ZSCloud mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
+    pageTitle="Tutorial: Azure Active Directory-Integration mit ZScaler ZSCloud | Microsoft Azure"
+    description="Hier erfahren Sie, wie Sie ZScaler ZSCloud mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
     services="active-directory" 
     authors="markusvi"  
     documentationCenter="na" 
@@ -83,7 +84,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![App-URL konfigurieren](./media/active-directory-saas-zscaler-zscloud-tutorial/IC800280.png "App-URL konfigurieren")
 
-    >[AZURE.NOTE]Sie erhalten bei Bedarf den tatsächlichen Wert für Ihre Umgebung von Ihrem Zscaler ZSCloud-Supportteam.
+    >[AZURE.NOTE] Sie erhalten bei Bedarf den tatsächlichen Wert für Ihre Umgebung von Ihrem Zscaler ZSCloud-Supportteam.
 
 4.  Klicken Sie zum Herunterladen des Zertifikats auf der Seite **Einmaliges Anmelden konfigurieren für Zscaler ZSCloud** auf **Zertifikat herunterladen**, und speichern Sie das Zertifikat auf Ihrem Computer.
 
@@ -181,7 +182,7 @@ Damit sich Azure AD-Benutzer bei ZScaler ZSCloud anmelden können, müssen sie i
     1.  Geben Sie die **Benutzer-ID**, den **Benutzeranzeigenamen**, das **Kennwort** und **Kennwort bestätigen** ein, und wählen Sie dann **Gruppen** und die **Abteilung** eines gültigen AAD-Kontos, das Sie bereitstellen möchten.
     2.  Klicken Sie auf **Speichern**.
 
->[AZURE.NOTE]Sie können AAD-Benutzerkonten auch mithilfe anderer Tools zum Erstellen von ZScaler ZSCloud-Benutzerkonten oder mithilfe der von ZScaler ZSCloud bereitgestellten APIs erstellen.
+>[AZURE.NOTE] Sie können AAD-Benutzerkonten auch mithilfe anderer Tools zum Erstellen von ZScaler ZSCloud-Benutzerkonten oder mithilfe der von ZScaler ZSCloud bereitgestellten APIs erstellen.
 
 ##Zuweisen von Benutzern
   
@@ -201,4 +202,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0218_2016-->

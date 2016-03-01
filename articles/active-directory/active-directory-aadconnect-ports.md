@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/01/2016"
+	ms.date="02/09/2016"
 	ms.author="billmath"/>
 
 # Erforderliche Ports und Protokolle für die Hybrid-Identität
@@ -74,15 +74,14 @@ In dieser Tabelle werden die Ports und Protokolle beschrieben, die für die Komm
 In den folgenden Tabellen werden die Endpunkte, Ports und Protokolle beschrieben, die für die Kommunikation zwischen Azure AD Connect Health-Agents und Azure AD erforderlich sind.
 
 ### Tabelle 6a: Ports und Protokolle für den Azure AD Connect Health-Agent für (AD FS/Sync) und Azure AD
-In dieser Tabelle werden die Ports und Protokolle beschrieben, die für die Kommunikation zwischen Azure AD Connect Health-Agents und Azure AD erforderlich sind.
+In dieser Tabelle werden die folgenden ausgehenden Ports und Protokolle beschrieben, die für die Kommunikation zwischen Azure AD Connect Health-Agents und Azure AD erforderlich sind.
 
 | Protokoll |Ports |Beschreibung
 | --------- | --------- |--------- |
-| HTTP|80 (TCP/UDP)|
-|HTTPS|443 (TCP/UDP)|
-|Azure Service Bus|5671 (TCP/UDP)|
+|HTTPS|443 (TCP/UDP)| Ausgehend
+|Azure Service Bus|5671 (TCP/UDP)| Ausgehend
 
 ### Tabelle 6b: Endpunkte für Azure AD Connect Health-Agent für (AD FS/Sync) und Azure AD
 Eine Liste mit Endpunkten finden Sie im [Abschnitt mit den Anforderungen für den Azure AD Connect Health-Agent](active-directory-aadconnect-health.md#requirements).
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0218_2016-->

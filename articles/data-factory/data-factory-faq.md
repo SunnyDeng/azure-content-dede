@@ -132,9 +132,9 @@ Im obigen Beispiel stellen "otherLinkedServiceName1" und "otherLinkedServiceName
 Sie können einen Slice auf eine der folgenden Arten erneut ausführen:
 
 - Klicken Sie im Portal auf der Befehlsleiste für den Slice auf dem Blatt **DATENSLICE** auf **Ausführen**. 
-- Führen Sie das Cmdlet **Set-AzureRmDataFactorySliceStatus** aus, und legen Sie dabei den Status für den Slice auf **PendingExecution** fest.   
+- Führen Sie das Cmdlet **Set-AzureRmDataFactorySliceStatus** aus, und legen Sie dabei den Status für den Slice auf **Waiting** fest.   
 	
-		Set-AzureRmDataFactorySliceStatus -Status PendingExecution -ResourceGroupName $ResourceGroup -DataFactoryName $df -TableName $table -StartDateTime "02/26/2015 19:00:00" -EndDateTime "02/26/2015 20:00:00" 
+		Set-AzureRmDataFactorySliceStatus -Status Waiting -ResourceGroupName $ResourceGroup -DataFactoryName $df -TableName $table -StartDateTime "02/26/2015 19:00:00" -EndDateTime "02/26/2015 20:00:00" 
 
 Unter [Set-AzureRmDataFactorySliceStatus][set-azure-datafactory-slice-status] finden Sie ausführliche Informationen zum Cmdlet.
 
@@ -174,4 +174,4 @@ Wenn Sie alle Ausführungen wirklich sofort beenden möchten, ist die einzige M�
 [hdinsight-alternate-storage-2]: http://blogs.msdn.com/b/cindygross/archive/2014/05/05/use-additional-storage-accounts-with-hdinsight-hive.aspx
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

@@ -13,14 +13,14 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="search" 
-   ms.date="01/13/2016"
+   ms.date="02/21/2016"
    ms.author="heidist"/>
 
 # Kostenloses Testen von Azure Search mit Azure App Service
 
 Sie können jetzt **Azure Search** in einer Sitzung mit unserem [Azure App Service testen](https://tryappservice.azure.com/) – eine Stunde lang, in einem beliebigen Webbrowser, vollkommen kostenlos und ohne Registrierung für ein Abonnement. Diese Website bietet Ihnen mehrere Vorlagen zur Auswahl. Wenn Sie die ASP.NET-Vorlage auswählen, die auch Azure Search beinhaltet, erhalten Sie Zugriff auf eine voll funktionsfähige Website sowie auf alle ausgewählten unterstützenden Dienste.
 
-Bei unserem Angebot [Azure App Service testen](https://tryappservice.azure.com/) wurde der Azure Search-Dienst bereits für Sie erstellt – er kann sofort für Suchabfragen verwendet werden. Sie können keinen eigenen Index und keine eigenen Daten hochladen oder verwenden, aber Sie können Abfragen ausführen und eine Reihe von Codeänderungen vornehmen, um das Benutzererlebnis anzupassen.
+Bei unserem Angebot **Azure App Service testen** wurde der Azure Search-Dienst bereits für Sie erstellt – er kann sofort für Suchabfragen verwendet werden. Sie können keinen eigenen Index und keine eigenen Daten hochladen oder verwenden, aber Sie können Abfragen ausführen und eine Reihe von Codeänderungen vornehmen, um das Benutzererlebnis anzupassen.
 
 Die Suchdaten stammen aus der [United States Geological Survey (USGS)](http://geonames.usgs.gov/domestic/download_data.htm), bestehend aus ungefähr 3 Millionen Zeilen mit Sehenswürdigkeiten, historischen Stätten, Gebäuden und anderen Landmarken in den USA.
 
@@ -28,7 +28,8 @@ Die Suchdaten stammen aus der [United States Geological Survey (USGS)](http://ge
 
 Wenn die einstündige Sitzung noch nicht begonnen hat, gehen Sie wie folgt vor, um loszulegen.
 
-1. Wechseln Sie zu [https://tryappservice.azure.com](https://tryappservice.azure.com/) und scrollen Sie nach unten auf **Web App**. 
+1. Klicken Sie mit der rechten Maustaste auf [https://tryappservice.azure.com](https://tryappservice.azure.com/), um diese Website in einem neuen Browserfenster zu öffnen.
+2. Führen Sie einen Bildlauf nach unten aus, um **Web-App** auszuwählen. 
 2. Klicken Sie auf **Weiter**.
 3. Wählen Sie die Vorlage **ASP.NET + Azure Search Site** aus.
 
@@ -100,7 +101,7 @@ Der Unterschied ist ziemlich groß. Anstelle von sieben Suchergebnissen erhalten
  
 Das beobachtete Verhalten liegt am enthaltenen `NOT`-Operator (in diesem Fall "-ND"), der *ODER* statt *UND* verwendet, wenn **SearchMode** auf `Any` festgelegt ist.
 
-Bei dieser Konfiguration beinhalten die Suchergebnisse Treffer für die Suchbegriffe `Yellowstone`, `center`und `building`, aber auch jedes Dokument, das `NOT North Dakota` ist. Da nur 13.081 Dokumente mit dem Ausdruck `North Dakota` vorhanden sind, wird fast das komplette Dataset zurückgegeben.
+Bei dieser Konfiguration beinhalten die Suchergebnisse Treffer für die Suchbegriffe `Yellowstone`, `center`und `building`, aber auch jedes Dokument, das `NOT North Dakota` ist. Da nur 13.081 Dokumente mit dem Ausdruck `North Dakota` vorhanden sind, wird fast der komplette Datensatz zurückgegeben.
 
 Dieses Szenario ist zwar zugegebenermaßen unwahrscheinlich, veranschaulicht aber die Auswirkungen von **SearchMode** auf Suchausdrücke, die den `NOT`-Operator enthalten. Daher ist das Verständnis dafür hilfreich, warum das Verhalten auftritt, und wie es geändert werden kann, wenn es unerwünscht ist.
 
@@ -523,4 +524,4 @@ Der folgende Screenshot zeigt das verwendete Schema, um den in dieser Vorlage ve
 [13]: ./media/search-tryappservice/AzSearch-TryAppService-Schema.png
 [14]: ./media/search-tryappservice/AzSearch-TryAppService-HitHighlight.png
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0224_2016-->

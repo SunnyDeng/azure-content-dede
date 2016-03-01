@@ -14,7 +14,7 @@
 	ms.workload="search"
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
-	ms.date="11/17/2015"
+	ms.date="02/17/2016"
 	ms.author="heidist"/>
 
 # Importieren von Daten in Azure Search über die REST-API
@@ -84,4 +84,4 @@ Bei erfolgreicher Aktualisierung des Indexes wird der Statuscode „200 OK“ au
 
 Weitere Informationen zu Dokumentaktionen und Antworten bei Erfolg/Fehler finden Sie [auf dieser Seite](https://msdn.microsoft.com/library/azure/dn798930.aspx).
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0224_2016-->

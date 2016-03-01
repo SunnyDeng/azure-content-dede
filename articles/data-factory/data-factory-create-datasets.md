@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Erstellen von Datasets" 
+	pageTitle="Datasets in Azure Data Factory | Microsoft Azure" 
 	description="Lernen Sie Azure Data Factory-Datasets kennen, und erfahren Sie, wie Sie sie erstellen können." 
 	services="data-factory" 
 	documentationCenter="" 
@@ -16,7 +16,7 @@
 	ms.date="01/26/2016" 
 	ms.author="spelluru"/>
 
-# Datasets
+# Datasets in Azure Data Factory
 
 ## Beschreibung
 Ein Dataset ist eine logische Beschreibung der Daten. Die Daten, die beschrieben werden, können von einfachen Bytes und halbstrukturieren Daten wie CSV-Dateien bis hin zu relationalen Tabellen oder sogar Modellen reichen. Der Mechanismus (Adresse, Protokoll, Authentifizierungsschema) für den Zugriff auf die Daten ist im verknüpften Dienst definiert, und in der Definition des Datasets wird auf den Mechanismus verwiesen.
@@ -208,4 +208,4 @@ Wenn Sie eine Pipeline jeden Monat an einem bestimmten Tag und zu einer bestimmt
 	  }
 	}
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0218_2016-->

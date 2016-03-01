@@ -14,7 +14,7 @@
 	ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="identity" 
-	ms.date="11/06/2015"
+	ms.date="02/12/2016"
 	ms.author="yuridio"/>
 
 # Bestimmen der Anforderungen an Reaktionen auf Vorfälle für Ihre Hybrid-Identitätslösung
@@ -54,7 +54,8 @@ Während der Phase der Schadensbegrenzung und Risikominderung ist es wichtig, di
  - Wenn ja: Kann die aktuelle Lösung in das System für die Hybrid-Identitätsverwaltung integriert werden, das Sie einführen möchten?
 - Muss Ihr Unternehmen den bedingten Zugriff für Benutzer durchsetzen, die sich in Quarantäne befinden? 
  
->[AZURE.NOTE]Notieren Sie sich alle Antworten, und stellen Sie sicher, dass Ihnen die Begründung der Antwort jeweils klar ist. Unter [Definieren der Strategie zum Schutz von Daten](active-directory-hybrid-identity-design-considerations-data-protection-strategy.md) sind die verfügbaren Optionen und die jeweiligen Vor- und Nachteile beschrieben. Indem Sie diese Fragen beantworten, wählen Sie aus, welche Option Ihre Geschäftsanforderungen am besten erfüllt.
+>[AZURE.NOTE]
+Notieren Sie sich alle Antworten, und stellen Sie sicher, dass Ihnen die Begründung der Antwort jeweils klar ist. Unter [Definieren der Strategie zum Schutz von Daten](active-directory-hybrid-identity-design-considerations-data-protection-strategy.md) sind die verfügbaren Optionen und die jeweiligen Vor- und Nachteile beschrieben. Indem Sie diese Fragen beantworten, wählen Sie aus, welche Option Ihre Geschäftsanforderungen am besten erfüllt.
 
 ## Nächste Schritte
 [Definieren der Strategie zum Schutz von Daten](active-directory-hybrid-identity-design-considerations-data-protection-strategy.md)
@@ -62,4 +63,4 @@ Während der Phase der Schadensbegrenzung und Risikominderung ist es wichtig, di
 ## Weitere Informationen
 [Überlegungen zum Entwurf – Übersicht](active-directory-hybrid-identity-design-considerations-overview.md)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0218_2016-->

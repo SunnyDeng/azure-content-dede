@@ -105,7 +105,7 @@ Es folgt eine Beschreibung der Aufgaben ausgewählter Abschnitte des Azure Power
         }
     ```
 
-1.	Durchlaufen Sie die Auflistung der JSON-Parameter. Wenn „*\_artifactsLocation*“ oder „*\_artifactsLocationSasToken*“ ein Parameterwert zugewiesen wurde, geben Sie die Variable *$OptionalParameters* mit diesen Werten an. Dadurch wird verhindert, dass das Skript versehentlich Parameterwerte überschreibt, die Sie bereitstellen.
+1.	Durchlaufen Sie die Auflistung der JSON-Parameter. Wenn „*_artifactsLocation*“ oder „*_artifactsLocationSasToken*“ ein Parameterwert zugewiesen wurde, geben Sie die Variable *$OptionalParameters* mit diesen Werten an. Dadurch wird verhindert, dass das Skript versehentlich Parameterwerte überschreibt, die Sie bereitstellen.
 
     ```
     $JsonParameters | Get-Member -Type NoteProperty | ForEach-Object {
@@ -264,4 +264,4 @@ Weitere Informationen zum Azure-Ressourcen-Manager finden Sie unter [Übersicht 
 [4]: ./media/vs-azure-tools-resource-groups-how-script-works/deploy5c.png
 [5]: ./media/vs-azure-tools-resource-groups-how-script-works/deploy6c.png
 
-<!---HONumber=AcomDC_0211_2016-->
+<!----HONumber=AcomDC_0211_2016-->

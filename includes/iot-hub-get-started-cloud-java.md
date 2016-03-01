@@ -22,7 +22,7 @@ In diesem Abschnitt erstellen Sie eine Java-Konsolen-App, mit der eine neue Ger�
     
 4. Speichern und schließen Sie die Datei „pom.xml“.
 
-5. Öffnen Sie die Datei „create-device-identity\src\main\java\com\mycompany\app\App.java“ mit einem Text-Editor.
+5. Öffnen Sie die Datei „create-device-identity\\src\\main\\java\\com\\mycompany\\app\\App.java“ mit einem Text-Editor.
 
 6. Fügen Sie der Datei die folgenden **import**-Anweisungen hinzu:
 
@@ -54,7 +54,7 @@ In diesem Abschnitt erstellen Sie eine Java-Konsolen-App, mit der eine neue Ger�
     ```
     RegistryManager registryManager = RegistryManager.createFromConnectionString(connectionString);
 
-    Device device = Device.createFromId(deviceId);
+    Device device = Device.createFromId(deviceId, null, null);
     try {
       device = registryManager.addDevice(device);
     } catch (IotHubException iote) {
@@ -110,7 +110,7 @@ In diesem Abschnitt erstellen Sie eine Java-Konsolen-App, die D2C-Nachrichten (D
 
 4. Speichern und schließen Sie die Datei „pom.xml“.
 
-5. Öffnen Sie die Datei „read-d2c-messages\src\main\java\com\mycompany\app\App.java“ mit einem Text-Editor.
+5. Öffnen Sie die Datei „read-d2c-messages\\src\\main\\java\\com\\mycompany\\app\\App.java“ mit einem Text-Editor.
 
 6. Fügen Sie der Datei die folgenden **import**-Anweisungen hinzu:
 
@@ -228,4 +228,4 @@ In diesem Abschnitt erstellen Sie eine Java-Konsolen-App, die D2C-Nachrichten (D
 [lnk-event-hubs-overview]: event-hubs-overview.md
 [lnk-processd2c-tutorial]: iot-hub-csharp-csharp-process-d2c.md
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0218_2016-->

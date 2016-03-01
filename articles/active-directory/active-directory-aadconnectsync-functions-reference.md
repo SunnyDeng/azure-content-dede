@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/21/2016"
+	ms.date="02/16/2016"
 	ms.author="markusvi"/>
 
 
@@ -536,7 +536,7 @@ Wird verwendet, um zu bestimmen, ob "CGuid()" erfolgreich eingesetzt werden kann
 
 **Hinweise:** <br> Für ein Attribut wird dies als True ausgewertet, wenn das Attribut nicht vorhanden ist oder zwar vorhanden, jedoch eine leere Zeichenfolge ist.<br> Die Umkehrung dieser Funktion heißt "IsPresent".
 
-**Beispiel:** <br> `IsNull([displayName])` <br> Gibt True zurück, wenn das Attribut nicht vorhanden oder eine leere Zeichenfolge in CS oder MV ist.
+**Beispiel:** <br> `IsNullOrEmpty([displayName])` <br> Gibt True zurück, wenn das Attribut nicht vorhanden oder eine leere Zeichenfolge in CS oder MV ist.
 
 
 
@@ -1058,4 +1058,4 @@ Wenn "string" weniger als "WordNumber" Wörter enthält, oder "string" keine Wö
 
 <!--Image references-->
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

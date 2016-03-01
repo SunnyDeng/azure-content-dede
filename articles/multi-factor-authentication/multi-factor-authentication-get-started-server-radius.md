@@ -12,8 +12,8 @@
 	ms.workload="identity" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="11/19/2015" 
+	ms.topic="get-started-article" 
+	ms.date="02/18/2016" 
 	ms.author="billmath"/>
 
 
@@ -21,6 +21,10 @@
 # RADIUS-Authentifizierung und Azure Multi-Factor Authentication-Server
 
 Der Abschnitt für die RADIUS-Authentifizierung hilft Ihnen dabei, die RADIUS-Authentifizierung für den Azure Multi-Factor Authentication-Server zu aktivieren und zu konfigurieren. RADIUS ist ein Standardprotokoll, um Authentifizierungsanforderungen zu akzeptieren und diese Anforderungen zu verarbeiten. Der Azure Multi-Factor Authentication-Server fungiert als RADIUS-Server und wird zwischen Ihren RADIUS-Client (z. B. einer VPN-Appliance) und Ihr Authentifizierungsziel, z. B. Active Directory (AD), einem LDAP-Verzeichnis oder einen anderen RADIUS-Server eingefügt, um Multi-Factor Authentication hinzuzufügen. Damit Azure Multi-Factor Authentication funktioniert, müssen Sie den Azure Multi-Factor Authentication-Server so konfigurieren, dass er sowohl mit den Clientservern als auch dem Authentifizierungsziel kommunizieren kann. Der Azure Multi-Factor Authentication-Server akzeptiert Anforderungen von einem RADIUS-Client, überprüft die Anmeldeinformationen für das Authentifizierungsziel, fügt Azure Multi-Factor Authentication hinzu, und sendet eine Antwort zurück an den RADIUS-Client. Die gesamte Authentifizierung ist nur erfolgreich, wenn die primäre Authentifizierung und die mehrstufige Authentifizierung über Azure Multi-Factor Authentication erfolgreich verlaufen sind.
+
+>[AZURE.NOTE]
+Der MFA-Server unterstützt die RADIUS-Protokolle PAP (Kennwortauthentifizierungsprotokoll) und MSCHAPv2 (Microsoft Challenge-Handshake Authentication-Protokoll) nur, wenn er als RADIUS-Server agiert. Andere Protokolle wie EAP (Extensible Authentication-Protokoll) können verwendet werden, wenn der MFA-Server als RADIUS-Proxy zu einem anderen RADIUS-Server fungiert, der dieses Protokoll unterstützt, wie z. B. Microsoft NPS. </br> Bei der Verwendung anderer Protokolle in dieser Konfiguration funktionieren unidirektionale SMS- und OATH-Token nicht, weil der MFA-Server keine erfolgreiche RADIUS-Abfrage/Rückmeldung über dieses Protokoll initiieren kann.
+
 
 ![RADIUS-Authentifizierung](./media/multi-factor-authentication-get-started-server-rdg/radius.png)
 
@@ -56,4 +60,4 @@ Verwenden Sie die folgenden Richtlinien, um den RADIUS-Client zu konfigurieren:
 - Verwenden Sie den gleichen gemeinsamen geheimen Schlüssel, der weiter oben konfiguriert wurde. 
 - Konfigurieren Sie den RADIUS-Timeout auf 30 bis 60 Sekunden, sodass genug Zeit ist, die Anmeldeinformationen des Benutzers zu überprüfen, die mehrstufige Authentifizierung auszuführen, deren Antwort zu empfangen, und dann auf die RADIUS-Zugriffsanforderung zu reagieren.
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0224_2016-->

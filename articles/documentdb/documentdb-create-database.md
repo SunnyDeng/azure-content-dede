@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Gewusst wie: Erstellen einer Datenbank in DocumentDB | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie eine Datenbank mit dem Onlinedienstportal für Azure DocumentDB, einer NoSQL-Dokumentendatenbank für JSON, erstellen. Holen Sie sich noch heute eine kostenlose Testversion." 
+	description="Erfahren Sie, wie Sie eine Datenbank mit dem Onlinedienstportal für Azure DocumentDB, einer NoSQL-Dokumentendatenbank für JSON, erstellen. Erhalten Sie noch heute ein kostenloses Konto." 
 	keywords="So erstellen Sie eine Datenbank" 
 	services="documentdb" 
 	authors="mimig1" 
@@ -14,18 +14,20 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="get-started-article" 
-	ms.date="11/18/2015" 
+	ms.date="02/19/2016" 
 	ms.author="mimig"/>
 
 # So erstellen Sie über das Azure-Portal eine Datenbank für DocumentDB
 
-Um Microsoft Azure DocumentDB zu verwenden, müssen Sie über ein [DocumentDB-Konto](documentdb-create-account.md), eine Datenbank, eine Sammlung und Dokumente verfügen. Dieses Thema beschreibt die Erstellung einer Datenbank für DocumentDB im Microsoft Azure-Portal.
+Um Microsoft Azure DocumentDB zu verwenden, müssen Sie über ein [DocumentDB-Konto](documentdb-create-account.md), eine Datenbank, eine Sammlung und Dokumente verfügen. Dieses Thema beschreibt die Erstellung einer Datenbank für DocumentDB im Microsoft Azure-Portal. Informationen zum Erstellen einer Datenbank mit einem der SDKs finden Sie unter [Weitere Methoden zum Erstellen einer DocumentDB-Datenbank](#other-ways-to-create-a-documentdb-database).
 
-![Screenshot zur Erstellung einer Datenbank mit Schaltfläche "Durchsuchen", DocumentDB-Konten auf dem Blatt "Durchsuchen" und einem DocumentDB-Konto auf dem Blatt "DocumentDB-Konten"](./media/documentdb-create-database/docdb-database-creation-1-3.png)
+![Screenshot zur Erstellung einer Datenbank mit DocumentDB-Konten auf dem Blatt „Durchsuchen“ und einem DocumentDB-Konto auf dem Blatt „DocumentDB-Konten“](./media/documentdb-create-database/docdb-database-creation-1-2.png)
 
-1.  Klicken Sie in der Navigationsleiste im [Azure-Portal](https://portal.azure.com/) auf **DocumentDB-Konten**. 
+1.  Klicken Sie im [Azure-Portal](https://portal.azure.com/) in der Navigationsleiste auf **DocumentDB-Konten**. Wenn **DocumentDB-Konten** nicht sichtbar ist, klicken Sie auf **Durchsuchen** und dann auf **DocumentDB-Konten**.
 
 2.  Wählen Sie auf dem Blatt**DocumentDB-Konten** das Konto aus, in dem Sie die NoSQL-Datenbank hinzufügen möchten. Wenn keine Konten aufgeführt sind, müssen Sie [ein DocumentDB-Konto erstellen](documentdb-create-account.md).
+
+    ![Screenshot zur Erstellung einer Datenbank mit der Schaltfläche „Datenbank hinzufügen“, dem Feld „ID“ und der Schaltfläche „OK“](./media/documentdb-create-database/docdb-database-creation-3-5.png)
 
 3. Klicken Sie auf dem Blatt **DocumentDB-Konto** auf **Datenbank hinzufügen**.
 
@@ -33,20 +35,20 @@ Um Microsoft Azure DocumentDB zu verwenden, müssen Sie über ein [DocumentDB-Ko
 
 5. Klicken Sie am unteren Bildschirmrand auf **OK**, um die neue Datenbank zu erstellen.
 
-7. Die neue Datenbank wird im Fokus **Datenbanken** des Blatts **DocumentDB-Konto** angezeigt.
+6. Die neue Datenbank wird im Fokus **Datenbanken** des Blatts **DocumentDB-Konto** angezeigt.
  
-	![Screenshot der neuen Datenbank auf dem Blatt "DocumentDB-Konto"](./media/documentdb-create-database/docdb-database-creation-7.png)
+	![Screenshot der neuen Datenbank auf dem Blatt "DocumentDB-Konto"](./media/documentdb-create-database/docdb-database-creation-6.png)
 
 ## Weitere Methoden zum Erstellen einer DocumentDB-Datenbank
 
-Datenbanken müssen nicht über das Portal erstellt werden. Sie können diese auch mithilfe der [DocumentDB-SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) erstellen. Ein C#-Codebeispiel, das veranschaulicht, wie eine Datenbank mit dem DocumentDB .NET SDK erstellt wird, finden Sie in der Datei [Program.cs](https://github.com/Azure/azure-documentdb-net/blob/master/samples/code-samples/DatabaseManagement/Program.cs) im DatabaseManagement-Projekt. Dieses steht im Repository [azure-documentdb-net](https://github.com/Azure/azure-documentdb-net) auf [GitHub.com](https://github.com) zur Verfügung.
+Datenbanken müssen nicht über das Portal erstellt werden. Sie können diese auch mithilfe der [DocumentDB-SDKs](documentdb-sdk-dotnet.md) oder der [REST-API](https://msdn.microsoft.com/library/mt489072.aspx) erstellen. Informationen zum Arbeiten mit Datenbanken mithilfe des .NET SDK finden Sie unter [.NET-Datenbankbeispiele](documentdb-dotnet-samples.md#database-examples). Informationen zum Arbeiten mit Datenbanken mithilfe des Node.js SDK finden Sie unter [Node.js-Datenbankbeispiele](documentdb-nodejs-samples.md#database-examples).
 
 ## Nächste Schritte
 
 Nachdem Sie nun gelernt haben, wie eine DocumentDB-Datenbank erstellt wird, besteht der nächste Schritt darin, [eine Sammlung zu erstellen](documentdb-create-collection.md).
 
-Sobald die Sammlung erstellt ist, können Sie mithilfe des Dokument-Explorers im Portal [JSON-Dokumente hinzufügen](documentdb-view-json-document-explorer.md), das DocumentDB-Datenmigrationstool zum [Importieren von Dokumenten](documentdb-import-data.md) in der Sammlung verwenden oder mit einem der [DocumentDB SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) CRUD-Vorgänge ausführen. DocumentDB verfügt über SDKs für .NET, Java, Python, Node.js und JavaScript-API. .NET-Codebeispiele, die veranschaulichen, wie Sie Dokumente erstellen, entfernen, aktualisieren und löschen, finden Sie in [Program.cs](https://github.com/Azure/azure-documentdb-net/blob/master/samples/code-samples/DocumentManagement/Program.cs) im DocumentManagement-Projekt im Repository „azure-documentdb-net“ auf „GitHub.com“.
+Sobald die Sammlung erstellt ist, können Sie mithilfe des Dokument-Explorers im Portal [JSON-Dokumente hinzufügen](documentdb-view-json-document-explorer.md), das DocumentDB-Datenmigrationstool zum [Importieren von Dokumenten](documentdb-import-data.md) in der Sammlung verwenden oder mit einem der [DocumentDB SDKs](documentdb-sdk-dotnet.md) CRUD-Vorgänge ausführen. DocumentDB verfügt über SDKs für .NET, Java, Python, Node.js und JavaScript-API. .NET-Codebeispiele, die das Erstellen, Entfernen, Aktualisieren und Löschen von Dokumenten veranschaulichen, finden Sie unter [.NET-Dokumentbeispiele](documentdb-dotnet-samples.md#document-examples). Informationen zum Arbeiten mit Dokumenten mithilfe des Node.js SDK finden Sie unter [Node.js-Dokumentbeispiele](documentdb-nodejs-samples.md#document-examples).
 
-Nachdem eine Sammlung Dokumente enthält, können Sie in [DocumentDB SQL](documentdb-sql-query.md) an den Dokumenten [Abfragen ausführen](documentdb-sql-query.md#executing-queries), indem Sie den [Abfrage-Explorer](documentdb-query-collections-query-explorer.md) im Portal, die [REST-API](https://msdn.microsoft.com/library/azure/dn781481.aspx) oder eines der [SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) verwenden.
+Wenn eine Sammlung Dokumente enthält, können Sie in [DocumentDB SQL](documentdb-sql-query.md) an den Dokumenten [Abfragen ausführen](documentdb-sql-query.md#executing-sql-queries), indem Sie den [Abfrage-Explorer](documentdb-query-collections-query-explorer.md) im Portal, die [REST-API](https://msdn.microsoft.com/library/azure/dn781481.aspx) oder eines der [SDKs](documentdb-sdk-dotnet.md) verwenden.
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0224_2016-->

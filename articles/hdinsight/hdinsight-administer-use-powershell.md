@@ -68,7 +68,7 @@ WebPI wird monatlich aktualisiert. Der PowerShell-Katalog wird fortlaufend aktua
 
 Ein HDInsight-Cluster erfordert eine Azure-Ressourcengruppe und einen Blob-Container in einem Azure-Speicherkonto:
 
-- Eine Azure-Ressourcengruppe ist ein logischer Container für Azure-Ressourcen. Die Azure-Ressourcengruppe und der HDInsight-Cluster müssen sich nicht am gleichen Speicherort befinden. Weitere Informationen finden Sie unter [Verwenden von Azure PowerShell mit dem Azure-Ressourcen-Manager](powershell-azure-resource-manager.md).
+- Eine Azure-Ressourcengruppe ist ein logischer Container für Azure-Ressourcen. Die Azure-Ressourcengruppe und der HDInsight-Cluster müssen sich nicht am gleichen Speicherort befinden. Weitere Informationen finden Sie unter [Verwenden von Azure PowerShell mit dem Azure-Ressourcen-Manager](../powershell-azure-resource-manager.md).
 - HDInsight verwendet einen Blobcontainer eines Azure-Speicherkontos als Standarddateisystem. Sie benötigen ein Azure-Speicherkonto und einen Speichercontainer, bevor Sie ein HDInsight-Cluster erstellen können. Das Standardspeicherkonto und der HDInsight-Cluster müssen sich am gleichen Speicherort befinden.
 
 [AZURE.INCLUDE [provisioningnote](../../includes/hdinsight-provisioning.md)]
@@ -94,7 +94,7 @@ Ein HDInsight-Cluster erfordert eine Azure-Ressourcengruppe und einen Blob-Conta
 [AZURE.INCLUDE [Datencenter-Liste](../../includes/hdinsight-pricing-data-centers-clusters.md)]
 
 
-Informationen zum Erstellen eines Azure-Speicherkontos im Azure-Portal finden Sie unter [Informationen zu Azure-Speicherkonten](storage-create-storage-account.md).
+Informationen zum Erstellen eines Azure-Speicherkontos im Azure-Portal finden Sie unter [Informationen zu Azure-Speicherkonten](../storage/storage-create-storage-account.md).
 
 Falls Sie bereits ein Speicherkonto haben, jedoch den Kontonamen und den Kontoschlüssel nicht kennen, können Sie diese Informationen mit den folgenden Befehlen abrufen:
 
@@ -103,7 +103,7 @@ Falls Sie bereits ein Speicherkonto haben, jedoch den Kontonamen und den Kontosc
 	# List the keys for a Storage account
 	Get-AzureRmStorageAccountKey -ResourceGroupName <Azure Resource Group Name> -name $storageAccountName <Azure Storage Account Name>
 
-Ausführliche Informationen zum Abrufen dieser Informationen über das Vorschauportal finden Sie unter [Informationen zu Azure-Speicherkonten](storage-create-storage-account.md) im Abschnitt „Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln“.
+Ausführliche Informationen zum Abrufen dieser Informationen über das Vorschauportal finden Sie unter [Informationen zu Azure-Speicherkonten](../storage/storage-create-storage-account.md) im Abschnitt „Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln“.
 
 **So erstellen Sie einen Azure-Speichercontainer**
 
@@ -313,14 +313,14 @@ Siehe [Hochladen von Daten in HDInsight][hdinsight-upload-data].
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
 [azure-free-trial]: http://azure.microsoft.com/pricing/free-trial/
 
-[hdinsight-get-started]: ../hdinsight-get-started.md
+[hdinsight-get-started]: hdinsight-hadoop-linux-tutorial-get-started.md
 [hdinsight-provision]: hdinsight-provision-clusters.md
 [hdinsight-provision-custom-options]: hdinsight-provision-clusters.md#configuration
 [hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically.md
 
 [hdinsight-admin-cli]: hdinsight-administer-use-command-line.md
 [hdinsight-admin-portal]: hdinsight-administer-use-management-portal.md
-[hdinsight-storage]: ../hdinsight-use-blob-storage.md
+[hdinsight-storage]: hdinsight-hadoop-use-blob-storage.md
 [hdinsight-use-hive]: hdinsight-use-hive.md
 [hdinsight-use-mapreduce]: hdinsight-use-mapreduce.md
 [hdinsight-upload-data]: hdinsight-upload-data.md
@@ -328,8 +328,8 @@ Siehe [Hochladen von Daten in HDInsight][hdinsight-upload-data].
 
 [hdinsight-powershell-reference]: https://msdn.microsoft.com/library/dn858087.aspx
 
-[powershell-install-configure]: ../install-configure-powershell.md
+[powershell-install-configure]: powershell-install-configure.md
 
 [image-hdi-ps-provision]: ./media/hdinsight-administer-use-powershell/HDI.PS.Provision.png
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

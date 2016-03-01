@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/18/2015" 
+	ms.date="02/16/2016" 
 	ms.author="mimig"/>
 
 # Einführung in DocumentDB: JSON-NoSQL-Datenbanken
@@ -77,11 +77,11 @@ DocumentDB stellt Ressourcen über eine REST-API zur Verfügung, die in jeder Sp
 Herunterladen | Dokumentation
 --- | ---
 [.NET SDK](http://go.microsoft.com/fwlink/?LinkID=402989) | [.NET-Bibliothek](https://msdn.microsoft.com/library/azure/dn948556.aspx)
-[Node.js SDK](http://go.microsoft.com/fwlink/?LinkID=402990) | [Node.js-Bibliothek](http://dl.windowsazure.com/documentDB/nodedocs/)
-[Java SDK](http://go.microsoft.com/fwlink/?LinkID=402380) | [Java-Bibliothek](http://dl.windowsazure.com/documentdb/javadoc/)
-[JavaScript SDK](http://go.microsoft.com/fwlink/?LinkID=402991) | [JavaScript-Bibliothek](http://dl.windowsazure.com/documentDB/jsclientdocs/)
-– | [Serverseitiges JavaScript SDK](http://dl.windowsazure.com/documentDB/jsserverdocs/)
-[Python SDK](https://pypi.python.org/pypi/pydocumentdb) | [Python-Bibliothek](http://dl.windowsazure.com/documentDB/pythondocs/)
+[Node.js SDK](http://go.microsoft.com/fwlink/?LinkID=402990) | [Node.js-Bibliothek](http://azure.github.io/azure-documentdb-node/)
+[Java SDK](http://go.microsoft.com/fwlink/?LinkID=402380) | [Java-Bibliothek](http://azure.github.io/azure-documentdb-java/)
+[JavaScript SDK](http://go.microsoft.com/fwlink/?LinkID=402991) | [JavaScript-Bibliothek](http://azure.github.io/azure-documentdb-js/)
+– | [Serverseitiges JavaScript SDK](http://azure.github.io/azure-documentdb-js-server/)
+[Python SDK](https://pypi.python.org/pypi/pydocumentdb) | [Python-Bibliothek](http://azure.github.io/azure-documentdb-python/)
 
 Abgesehen von den grundlegenden Erstellungs-, Lese-, Aktualisierungs- und Löschvorgängen bietet Azure DocumentDB eine funktionsreiche SQL-Abfrageschnittstelle für den Abruf von JSON-Dokumenten und serverseitige Unterstützung für die transaktionale Ausführung von JavaScript-Anwendungslogik. Die Schnittstellen für die Abfrage- und Skriptausführung sind über alle Plattformbibliotheken verfügbar. Gleiches gilt für die REST-APIs.
 
@@ -111,4 +111,4 @@ Wenn Sie mehr erfahren möchten, besuchen Sie unseren [Lernpfad](https://azure.m
 [1]: ./media/documentdb-introduction/json-database-resources1.png
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

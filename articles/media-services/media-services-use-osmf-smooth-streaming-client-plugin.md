@@ -3,7 +3,7 @@
 	description="Erfahren Sie, wie Sie das Smooth Streaming-Plug-In von Azure Media Services für das Adobe Open Source Media-Framework verwenden." 
 	services="media-services" 
 	documentationCenter="" 
-	authors="juliako" 
+	authors="amitr" 
 	manager="dwrede" 
 	editor=""/>
 
@@ -13,14 +13,13 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/28/2015" 
-	ms.author="juliako"/>
+	ms.date="02/17/2016"
+	ms.author="amitr"/>
 
 
+# Verwenden des Microsoft Smooth Streaming-Plug-Ins für das Adobe Open Source Media-Framework
 
-# Verwenden des Microsoft Smooth Streaming-Plug-Ins für das Adobe Open Source Media-Framework #
-
-##Übersicht ##
+##Übersicht
 
 
 Das Microsoft Smooth Streaming-Plug-In für das Open Source Media-Framework 2.0 (SS für OSMF) erweitert die OSMF-Standardfunktionen und bietet Abspielfunktionen für Microsoft Smooth Streaming-Inhalte für neue und existierende OSMF-Player. Das Plug-In bietet außerdem Smooth Streaming-Wiedergabefähigkeiten für Strobe Media Playback (SMP).
@@ -202,9 +201,8 @@ package
 
 Der folgende Codeausschnitt zeigt, wie Sie das SS-Plug-In für OSMF dynamisch laden und ein einfaches Video mit der OSMF MediaFactory-Klasse abspielen können. Bevor Sie den SS für OSMF-Code hinzufügen, sollten Sie das dynamische Plug-In "MSAdaptiveStreamingPlugin-v1.0.3-osmf2.0.swf" in den Projektordner kopieren, falls Sie das FILE-Protokoll verwenden möchten, bzw. in einen Webserver kopieren, falls Sie das HTTP-Protokoll verwenden möchten. "MSAdaptiveStreamingPlugin-v1.0.3-osmf2.0.swc" muss nicht in die Projektverweise eingebunden werden.
 
-```
-package 
-{
+ 
+package {
 	
 	import flash.display.*;
 	import org.osmf.media.*;
@@ -334,9 +332,9 @@ package
 		
 	}
 }
-```
 
 ##Strobe Media Playback mit dem dynamischen SS ODMF-Plug-In
+
 Das dynamische Smooth Streaming für OSMF-Plug-In unterstützt [Strobe Media Playback (SMP)](http://osmf.org/strobe_mediaplayback.html). Sie können das Smooth Streaming für OSMF-Plug-In für die Smooth Streaming-Wiedergabe von SMP verwenden. Kopieren Sie dazu "MSAdaptiveStreamingPlugin-v1.0.3-osmf2.0.swf" in einen Webserver für die HTTP-Funktion, indem Sie die folgenden Schritte ausführen:
 
 1.	Öffnen Sie die [Strobe Media Playback-Einrichtungsseite](http://osmf.org/dev/2.0gm/setup.html). 
@@ -412,4 +410,4 @@ Weitere allgemeine Informationen zu OSMF-Entwicklung finden Sie auf der offiziel
 
 [Microsoft Adaptive Streaming Plugin for OSMF Update (in englischer Sprache)](https://azure.microsoft.com/blog/2014/10/27/microsoft-adaptive-streaming-plugin-for-osmf-update/)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

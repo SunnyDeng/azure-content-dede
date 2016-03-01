@@ -4,7 +4,7 @@
 	services="app-service\logic"
 	documentationCenter=""
 	authors="MandiOhlinger"
-	manager="dwrede"
+	manager="erikre"
 	editor="cgronlun"/>
 
 <tags
@@ -12,17 +12,19 @@
 	ms.workload="integration"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="article"
-	ms.date="12/03/2015"
+	ms.topic="get-started-article"
+	ms.date="02/11/2016"
 	ms.author="mandia"/>
 
 
 # Liste der Connectors und API-Apps in Logik-Apps
+>[AZURE.NOTE] Diese Version des Artikels gilt für die Schemavorschauversion (Stand: 01.12.2014) für Logik-Apps. Um die Schemavorschauversion (Stand: 01.08.2015) aufzurufen, klicken Sie auf [API-Liste](../connectors/apis-list.md).
+
 Hier werden alle verfügbaren Connectors und API-Apps aufgelistet, die von Microsoft für die Verwendung in Logik-Apps erstellt wurden.
 
 Informationen zu Preisen und eine Liste der auf den einzelnen Dienstebenen verfügbaren Komponenten finden Sie unter [Azure App Service-Preise](https://azure.microsoft.com/pricing/details/app-service/).
 
-> [AZURE.NOTE] Wenn Sie Azure Logik-Apps ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [Logik-App testen](https://tryappservice.azure.com/?appservice=logic) sofort kostenlos eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+> [AZURE.NOTE] Wenn Sie Azure-Logik-Apps ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, besuchen Sie [Logik-App testen](https://tryappservice.azure.com/?appservice=logic). Sie können sofort eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Wichtige Connectors
 Die folgende Tabelle listet alle verfügbaren von Microsoft erstellten Connectors und API-Apps auf, die als Haupt-Connectors zur Verfügung stehen:
@@ -32,8 +34,7 @@ Name | Beschreibung
 [Azure HDInsight](app-service-logic-connector-hdinsight.md) | Mit diesem Connector können Sie einen Hadoop-Cluster in Azure erstellen, verschiedene Hadoop-Aufträge übermitteln und vieles mehr.
 [Azure Service Bus](app-service-logic-connector-azureservicebus.md) | Kann Nachrichten aus Service Bus-Warteschlangen und -Themen senden sowie Nachrichten aus Service Bus-Warteschlangen und -Abonnements empfangen.
 [Azure Storage-Blob](app-service-logic-connector-azurestorageblob.md) | Stellt eine Verbindung mit dem Blob-Speicher her und kann zum Abrufen, Löschen, Auflisten usw. verwendet werden. 
-Bing-Suche | Für die Suche in Bing im Web und nach Bildern, Nachrichten, und Videos.
-Bing Translate | Für Übersetzungen von Text in eine andere Sprache in Bing.
+[Bing-Übersetzer](https://azure.microsoft.com/marketplace/partners/microsoft_com/bingtranslator) | Für Übersetzungen von Text in eine andere Sprache in Bing.
 [Box](app-service-logic-connector-box.md) | Stellt eine Verbindung mit Box her und kann zum Hochladen, Abrufen, Löschen, Auflisten und weitere Dateiaufgaben verwendet werden.
 [Chatter](app-service-logic-connector-chatter.md) | Stellt eine Verbindung mit Chatter her und kann Nachrichten posten und suchen und sogar neue Nachrichten abrufen.
 [Dropbox](app-service-logic-connector-dropbox.md) | Stellt eine Verbindung mit Dropbox her und kann zum Abrufen, Löschen, Auflisten und weitere Dateiaufgaben verwendet werden.
@@ -94,4 +95,4 @@ Connectors können innerhalb Ihrer Logik-App auch als Aktionen verwendet werden.
 ## Weitere Informationen zu Connectors und API-Apps
 [Was sind Connectors und BizTalk-API-Apps?](app-service-logic-what-are-biztalk-api-apps.md) [Verwenden des Hybrid Connection Managers in Azure App Service](app-service-logic-hybrid-connection-manager.md) [Verwalten und Überwachen integrierter API-Apps und Connectors](app-service-logic-monitor-your-connectors.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0224_2016-->

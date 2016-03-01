@@ -14,12 +14,12 @@
   ms.tgt_pltfrm="na" 
   ms.devlang="na" 
   ms.topic="article" 
-  ms.date="01/22/2016" 
+  ms.date="02/17/2016" 
   ms.author="tamram"/>
 
 # Azure Storage-Replikation
 
-Die Daten in Ihrem Microsoft Azure-Speicherkonto werden stets repliziert, um Beständigkeit und hohe Verfügbarkeit sicherzustellen sowie die [Azure Storage-SLA](https://azure.microsoft.com/support/legal/sla/) auch bei vorübergehend auftretenden Hardwareausfällen zu erfüllen.
+Die Daten in Ihrem Microsoft Azure-Speicherkonto werden stets repliziert, um Beständigkeit und hohe Verfügbarkeit sicherzustellen sowie die [Azure Storage-SLA](https://azure.microsoft.com/support/legal/sla/storage) auch bei vorübergehend auftretenden Hardwareausfällen zu erfüllen.
 
 Wenn Sie ein Speicherkonto erstellen, müssen Sie eine der folgenden Replikationsoptionen auswählen:
 
@@ -66,8 +66,12 @@ Georedundanter Speicher (GRS) repliziert Ihre Daten in eine sekundäre Region, d
 Bei ein Speicherkonto mit aktiviertem GRS wird für ein Update zuerst ein Commit in der primären Region ausgeführt, in der es drei Mal repliziert wird. Danach wird das Update in die sekundäre Region repliziert, in der es auch dreimal in getrennten Fehler- und Upgradedomänen repliziert wird.
 
 
-> [AZURE.NOTE] Bei GRS werden Anforderungen zum Schreiben von Daten asynchron in die sekundäre Region repliziert. Wichtig ist der Hinweis, dass die Entscheidung für GRS die Latenz von Anforderungen an die primäre Region nicht beeinflusst. Da eine asynchrone Replikation eine Verzögerung einschließt, ist es bei einem regionalen Notfall möglich, dass Änderungen, die noch nicht in die sekundäre Region repliziert wurden, möglicherweise verloren gehen, wenn die Daten nicht aus der primären Region wiederhergestellt werden können. Wenn Sie ein Speicherkonto erstellen, wählen Sie die primäre Region für das Konto aus. Die sekundäre Region wird basierend auf der primären Region bestimmt und kann nicht geändert werden. Die folgende Tabelle zeigt die Paare primärer und sekundärer Regionen | Primär | Sekundär |
-|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------|
+> [AZURE.NOTE] Bei GRS werden Anforderungen zum Schreiben von Daten asynchron in die sekundäre Region repliziert. Wichtig ist der Hinweis, dass die Entscheidung für GRS die Latenz von Anforderungen an die primäre Region nicht beeinflusst. Da eine asynchrone Replikation eine Verzögerung einschließt, ist es bei einem regionalen Notfall möglich, dass Änderungen, die noch nicht in die sekundäre Region repliziert wurden, möglicherweise verloren gehen, wenn die Daten nicht aus der primären Region wiederhergestellt werden können.
+ 
+Wenn Sie ein Speicherkonto erstellen, wählen Sie die primäre Region für das Konto aus. Die sekundäre Region wird basierend auf der primären Region bestimmt und kann nicht geändert werden. In der folgenden Tabelle werden die Paare primärer und sekundärer Regionen gezeigt:
+ 
+| Primär | Sekundär |
+|---------------------|---------------------|
 | USA (Mitte/Norden) | USA (Mitte/Süden) |
 | USA (Mitte/Süden) | USA (Mitte/Norden) |
 | USA (Ost) | USA (West) |
@@ -87,8 +91,6 @@ Bei ein Speicherkonto mit aktiviertem GRS wird für ein Update zuerst ein Commit
 | Australien (Südost) | Australien (Ost) |
 | Indien, Süden | Indien, Mitte |
 | Indien, Mitte | Indien, Süden |
- |
-uth
 
 
 ## Georedundanter Speicher mit Lesezugriff
@@ -99,10 +101,10 @@ Wenn Sie den schreibgeschützten Zugriff auf Ihre Daten in der sekundären Regio
 
 ## Nächste Schritte
 
-- [Informationen zu Azure-Speicherkonten](storage-create-storage-account)
-- [Skalierbarkeits- und Leistungsziele für Azure Storage](storage-scalability-targets.md)
+- [Informationen zu Azure-Speicherkonten](storage-create-storage-account.md)
+- [Skalierbarkeits- und Leistungsziele für Azure-Speicher](storage-scalability-targets.md)
 - [Microsoft Azure Storage Redundancy Options and Read Access Geo Redundant Storage (in englischer Sprache)](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/11/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx)  
 - [Microsoft Azure Storage Emulator 3.1 with RA-GRS (in englischer Sprache)](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/08/microsoft-azure-storage-emulator-3-1-with-ra-grs.aspx)
-- [SOSP-Dokument zu Azure Storage](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)  
+- [SOSP Paper - Azure Storage: A Highly Available Cloud Storage Service with Strong Consistency](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx) (SOSP-Dokument – Azure Storage: ein hochverfügbarer Cloudspeicherdienst mit starker Konsistenz)  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

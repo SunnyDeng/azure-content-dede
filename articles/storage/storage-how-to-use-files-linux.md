@@ -12,7 +12,7 @@
       ms.tgt_pltfrm="na"
       ms.devlang="na"
       ms.topic="article"
-      ms.date="12/17/2015"
+      ms.date="02/15/2016"
       ms.author="jutang" />
 
 
@@ -121,13 +121,12 @@ Weitere Informationen zum Azure-Dateispeicher erhalten Sie über diese Links.
 ### Konzeptionelle Artikel und Videos
 
 - [Azure-Dateispeicher: ein reibungsloses Cloud-SMB-Dateisystem für Windows und Linux](https://azure.microsoft.com/documentation/videos/azurecon-2015-azure-files-storage-a-frictionless-cloud-smb-file-system-for-windows-and-linux/)
-- [Verwenden des Azure-Dateispeichers unter Windows](storage-dotnet-how-to-use-files.md)
-- [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy)
+- [Erste Schritte mit Azure File Storage unter Windows](storage-dotnet-how-to-use-files.md)
 
 ### Toolunterstützung für Dateispeicher
 
-- [Verwenden von AzCopy mit Microsoft Azure Storage](storage-use-azcopy.md)
-- [Verwenden der Azure-Befehlszeilenschnittstelle mit Azure-Speicher](storage-azure-cli.md#create-and-manage-file-shares)
+- [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy.md)
+- [Erstellen und Verwalten von Dateifreigaben](storage-azure-cli.md#create-and-manage-file-shares) mithilfe der Azure-Befehlszeilenschnittstelle
 
 ### Referenz
 
@@ -135,9 +134,9 @@ Weitere Informationen zum Azure-Dateispeicher erhalten Sie über diese Links.
 
 ### Blogbeiträge
 
-- [Azure-Dateispeicher ist jetzt allgemein verfügbar](http://go.microsoft.com/fwlink/?LinkID=626728&clcid=0x409)
-- [Ausführliche Informationen zu Azure-Dateispeicher](http://go.microsoft.com/fwlink/?LinkID=626729&clcid=0x409)
+- [Azure-Dateispeicher ist jetzt allgemein verfügbar](https://azure.microsoft.com/blog/azure-file-storage-now-generally-available/)
+- [Azure-Dateispeicher](https://azure.microsoft.com/blog/inside-azure-file-storage/)
 - [Einführung in den Microsoft Azure-Dateidienst](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
 - [Beibehalten von Verbindungen zu Microsoft Azure-Dateien](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

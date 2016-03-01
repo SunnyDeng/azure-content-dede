@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="02/09/2016"
+	ms.date="02/19/2016"
 	ms.author="awills"/>
 
 # Application Insights für Webseiten
@@ -170,7 +170,7 @@ Klicken Sie auf eine beliebige Zeile, um besondere Details anzuzeigen.
 
 > [AZURE.NOTE] Wenn Sie den Filter „Browser“ auf dem Blatt löschen, werden sowohl die Serverabhängigkeiten als auch die AJAX-Abhängigkeiten in diese Diagramme eingebunden. Klicken Sie auf „Standard wiederherstellen“, um den Filter neu zu konfigurieren.
 
-Eine schnelle Möglichkeit zum **Durchführen eines Drilldowns für fehlgeschlagene Ajax-Aufrufe** ist das Ändern des Fehlerdiagramms in ein Raster und das anschließende Klicken auf eine Zeile, um bestimmte Instanzen anzuzeigen.
+Führen Sie zum **Ausführen eines Drilldowns für fehlgeschlagene Ajax-Aufrufe ** einen Bildlauf nach unten zum Raster mit den Abhängigkeitsfehlern aus, und klicken Sie anschließend auf eine Zeile, um bestimmte Instanzen anzuzeigen.
 
 ![](./media/app-insights-javascript/37.png)
 
@@ -238,4 +238,4 @@ Möchten Sie herausfinden, wofür die Benutzer Ihre App verwenden?
 * [Benutzerdefinierte Ereignisse und Metriken](app-insights-api-custom-events-metrics.md)
 * [Erstellen-Messen-Lernen](app-insights-overview-usage.md)
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0224_2016-->

@@ -629,4 +629,4 @@ Ersetzen Sie __hdinsightclustername__ durch den Namen Ihres HDInsight-Clusters.
 
 Verwenden Sie den Parameter `-showErr`, wenn Sie den Standardfehler (STDERR) sehen möchten, der während der Ausführung des Auftrags erzeugt wurde.
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0218_2016-->

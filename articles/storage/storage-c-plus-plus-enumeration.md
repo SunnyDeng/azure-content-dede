@@ -12,14 +12,14 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="01/05/2016"
+    ms.date="02/14/2016"
     ms.author="dineshm"/>
 
 # Auflisten von Azure Storage-Ressourcen in C++
 
 Auflistungsvorgänge sind der Schlüssel für viele Entwicklungsszenarien mit Azure Storage. Dieser Artikel beschreibt, wie Objekte in Azure Storage mit den Auflistungs-APIs, die in der Microsoft Azure Storage Client Library for C++ bereitgestellt werden, am effizientesten aufgelistet werden können.
 
->[AZURE.NOTE] Diese Anleitung gilt für die Version 1.x der Azure Storage Client Library for C++, die über [NuGet](http://www.nuget.org/packages/wastorage) oder [GitHub](https://github.com/Azure/azure-storage-cpp) verfügbar ist.
+>[AZURE.NOTE] Diese Anleitung gilt für die Version 2.x der Azure Storage Client Library for C++, die über [NuGet](http://www.nuget.org/packages/wastorage) oder [GitHub](https://github.com/Azure/azure-storage-cpp) verfügbar ist.
 
 Die Storage Client Library stellt eine Vielzahl von Methoden bereit, um Objekte in Azure Storage aufzulisten oder abzufragen. Dieser Artikel behandelt die folgenden Szenarien:
 
@@ -33,7 +33,7 @@ Jede dieser Methoden wird mit unterschiedlichen Überladungen für unterschiedli
 
 ## Asynchrone und synchrone Vorgänge
 
-Da die Storage Client Library for C++ auf Basis des [C++ REST SDK (Projekt Casablanca)](http://casablanca.codeplex.com/) erstellt wurde, werden asynchrone Vorgänge unmittelbar unterstützt, indem [pplx::task](http://microsoft.github.io/cpprestsdk/classpplx_1_1task.html) verwendet wird. Beispiel:
+Da die Storage Client Library for C++ auf Basis der [C++ REST-Bibliothek](https://github.com/Microsoft/cpprestsdk) erstellt wurde, werden asynchrone Vorgänge unmittelbar unterstützt, indem [pplx::task](http://microsoft.github.io/cpprestsdk/classpplx_1_1task.html) verwendet wird. Beispiel:
 
 	pplx::task<list_blob_item_segment> list_blobs_segmented_async(continuation_token& token) const;
 
@@ -162,7 +162,7 @@ Beachten Sie, dass faules Auflisten nur im synchronen Modus verfügbar ist.
 
 Im Gegensatz zum gierigen Auflisten werden beim faulen Auflisten Daten nur bei Bedarf abgerufen. Konkret heißt das, faules Auflisten ruft nur dann Daten aus Azure Storage ab, wenn der nächste Iterator in das nächste Segment verschoben wird. Daher wird die Arbeitsspeichernutzung mit einer begrenzten Größe gesteuert, und der Vorgang ist schnell.
 
-APIs für faules Auflisten sind in der Version 1.0.0 der Storage Client Library for C++ enthalten.
+APIs für faules Auflisten sind in der Version 2.2.0 der Storage Client Library for C++ enthalten.
 
 ## Zusammenfassung
 
@@ -184,4 +184,4 @@ Weitere Informationen zu Azure Storage und zur Client Library for C++ finden Sie
 -	[Azure Storage-Teamblog](http://blogs.msdn.com/b/windowsazurestorage/)
 -	[Azure-Speicherdokumentation](https://azure.microsoft.com/documentation/services/storage/)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

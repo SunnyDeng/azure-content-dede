@@ -37,6 +37,10 @@ Die Standardgrößen bestehen aus mehreren Serien: A, D, DS, G und GS. Beachten 
 
 *   Virtuelle Computer der DS- und der GS-Serie können Premium-Speicher nutzen, der Hochleistungsspeicher mit geringer Latenz für E/A-intensive Workloads bietet. Diese virtuellen Computer nutzen Solid State Drives (SSDs) zum Hosten der Datenträger eines virtuellen Computers und stellen zudem einen lokalen SSD-Datenträgercache bereit. Premium-Speicher ist in bestimmten Regionen verfügbar. Nähere Informationen finden Sie unter [Premium-Speicher: Hochleistungsspeicher für Arbeitslasten auf virtuellen Azure-Computern](../storage-premium-storage-preview-portal.md).
 
+*   Die VMs der A-Reihe können auf vielen verschiedenen Hardwaretypen und Prozessoren bereitgestellt werden. Die Größe ist basierend auf der Hardware gedrosselt, um eine konsistente Prozessorleistung für die ausgeführte Instanz zu ermöglichen – unabhängig von der Hardware, die für die Bereitstellung gewählt wird. Fragen Sie die virtuelle Hardware über die virtuelle Maschine ab, um die physische Hardware zu ermitteln, auf der diese Größe bereitgestellt wird.
+
+*   Die Größe „A0“ ist auf der physischen Hardware „überzeichnet“. Nur für diese spezielle Größe kann es dazu kommen, dass sich andere Kundenbereitstellungen negativ auf die Leistung Ihrer aktiven Workload auswirken. Die relative Leistung ist unten als erwartete Baseline beschrieben und unterliegt einer ungefähren Variabilität von 15 Prozent.
+
 Die Größe des virtuellen Computers wirkt sich auf den Preis aus. Die Größe beeinflusst auch die Verarbeitung, den Arbeitsspeicher und die Speicherkapazität des virtuellen Computers. Speicherkosten werden separat basierend auf bereits verwendete Seiten im Speicherkonto berechnet. Weitere Informationen finden Sie unter [Virtuelle Computer – Preisdetails](https://azure.microsoft.com/pricing/details/virtual-machines/) und [Preisdetails zu Azure Storage](https://azure.microsoft.com/pricing/details/storage/). Ausführlichere Informationen zu virtuellen Computern finden Sie unter [Informationen zu Datenträgern und VHDs für virtuelle Computer](virtual-machines-disks-vhds.md).
 
 Die folgenden Überlegungen können Ihnen bei der Entscheidung über die Größe behilflich sein:
@@ -63,10 +67,10 @@ Wir haben das Konzept der Azure-Berechnungseinheit ACU (Azure Compute Unit) erst
 |[Standard\_A0 (sehr klein)](#standard-tier-a-series) |50 |
 |[Standard\_A1-4 (klein – groß)](#standard-tier-a-series) |100 |
 |[Standard\_A5-7](#standard-tier-a-series) |100 |
-|[A8-A11](#standard-tier-a-series) |225 *| 
-|[D1-14](#standard-tier-d-series) |160 | 
-|[D1-14v2](#standard-tier-dv2-series) |210 - 250 *| 
-|[DS1-14](#standard-tier-ds-series) |160 | 
+|[A8-A11](#standard-tier-a-series) |225 *|
+|[D1-14](#standard-tier-d-series) |160 |
+|[D1-14v2](#standard-tier-dv2-series) |210 - 250 *|
+|[DS1-14](#standard-tier-ds-series) |160 |
 |[G1-5](#standard-tier-g-series) |180 - 240 *|
 |[GS1-5](#standard-tier-gs-series) |180 - 240 *|
 
@@ -189,4 +193,4 @@ Hinweis: Informationen und Überlegungen zum Verwenden dieser Größen finden Si
 
 [Informationen zu den rechenintensiven A8-, A9-, A10- und A11-Instanzen](virtual-machines-a8-a9-a10-a11-specs.md)
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0218_2016-->

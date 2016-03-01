@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="hero-article"
-	ms.date="01/19/2016"
+	ms.date="02/23/2016"
 	ms.author="cabailey"/>
 
 # Erste Schritte mit dem Azure-Schlüsseltresor #
@@ -22,9 +22,9 @@ Azure-Tresorschlüssel ist in den meisten Regionen verfügbar. Weitere Informati
 ## Einführung  
 Verwenden Sie dieses Tutorial für den Einstieg in Azure-Schlüsseltresor, um einen geschützten Container (einen Tresor) in Azure zu erstellen, in dem Sie kryptografische und geheime Schlüssel in Azure speichern und verwalten. Sie werden durch den Vorgang der Verwendung von Azure PowerShell zum Erstellen eines Tresors geleitet, der einen Schlüssel oder ein Kennwort enthält, den/das Sie anschließend mit einer Azure-Anwendung verwenden können. Anschließend wird gezeigt, wie eine Anwendung diesen Schlüssel bzw. das Kennwort verwenden kann.
 
-*Geschätzter Zeitaufwand*:* 20 Minuten.
+**Geschätzter Zeitaufwand:** 20 Minuten
 
->[AZURE.NOTE] Dieses Tutorial enthält keine Anweisungen zum Schreiben der in einem der Schritte verwendeten Azure-Anwendung, die dazu dient, eine Anwendung zum Verwenden eines Schlüssels oder geheimen Schlüssels im Schlüsseltresor zu autorisieren.
+>[AZURE.NOTE]  Dieses Tutorial enthält keine Anweisungen zum Schreiben der in einem der Schritte verwendeten Azure-Anwendung, die dazu dient, eine Anwendung zum Verwenden eines Schlüssels oder geheimen Schlüssels im Schlüsseltresor zu autorisieren.
 >
 >Derzeit können Sie den Azure-Schlüsseltresor nicht im Azure-Portal konfigurieren. Sie müssen stattdessen die Anweisungen für Azure PowerShell verwenden. Anleitungen für die plattformübergreifende Befehlszeilenschnittstelle finden Sie in [diesem entsprechenden Tutorial](key-vault-manage-with-cli.md).
 
@@ -34,7 +34,7 @@ Eine Übersicht über den Azure-Schlüsseltresor finden Sie unter [Was ist der A
 
 Für dieses Tutorial benötigen Sie Folgendes:
 
-- Ein Abonnement für Microsoft Azure. Wenn Sie kein Abonnement haben, können Sie sich für eine [kostenlose Testversion](../../../../pricing/free-trial) registrieren.
+- Ein Abonnement für Microsoft Azure. Falls Sie kein Abonnement besitzen, können Sie sich für ein [kostenloses Konto](../../../../pricing/free-trial) anmelden.
 - Azure PowerShell, **mindestens Version 1.1.0**. Um Azure PowerShell zu installieren und Ihrem Azure-Abonnement zuzuordnen, lesen Sie [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md). Wenn Sie Azure PowerShell bereits installiert haben und die Version nicht kennen, geben Sie über die Azure PowerShell-Konsole `(Get-Module azure -ListAvailable).Version` ein. Wenn Sie Azure PowerShell in den Versionen 0.9.1 bis 0.9.8 installiert haben, können Sie diese Tutorial mit einigen kleineren Änderungen verwenden. Sie müssen z. B. den Befehl `Switch-AzureMode AzureResourceManager` verwenden, und einige der Befehle des Azure-Schlüsseltresors wurden geändert. Eine Liste der Schlüsseltresor-Cmdlets für die Versionen 0.9.1 bis 0.9.8 finden Sie unter [Cmdlets für den Azure-Schlüsseltresor](https://msdn.microsoft.com/library/azure/dn868052(v=azure.98).aspx). 
 - Eine Anwendung, die zur Verwendung des Schlüssels oder Kennworts konfiguriert wird, den bzw. das Sie in diesem Lernprogramm erstellen. Eine Beispielanwendung erhalten Sie im [Microsoft Download Center](http://www.microsoft.com/de-DE/download/details.aspx?id=45343). Anweisungen finden Sie in der zugehörigen Readme-Datei.
 
@@ -98,6 +98,9 @@ Die Ausgabe dieses Cmdlets zeigt die Eigenschaften des Schlüsseltresors, den Si
 
 Ihr Azure-Konto ist jetzt autorisiert, Vorgänge in diesem Schlüsseltresor durchzuführen. Bisher sind Sie der einzige Benutzer mit dieser Berechtigung.
 
+>[AZURE.NOTE]  Wenn beim Erstellen des neuen Schlüsseltresors die Fehlermeldung **Das Abonnement ist nicht für die Verwendung des Namespace „Microsoft.KeyVault“ registriert.** angezeigt wird, führen Sie `Register-AzureRmResourceProvider -ProviderNamespace "Microsoft.KeyVault"` aus, und führen Sie dann erneut den Befehl „New-AzureRmKeyVault“ aus. Weitere Informationen finden Sie unter [Register-AzureRmProvider](https://msdn.microsoft.com/library/mt679020.aspx).
+>
+
 ## <a id="add"></a>Hinzufügen eines Schlüssels oder geheimen Schlüssels zum Schlüsseltresor ##
 
 Wenn Sie mit dem Azure-Schlüsseltresor einen softwaregeschützten Schlüssel erstellen möchten, verwenden Sie hierzu das Cmdlet [Add-AzureKeyVaultKey](https://msdn.microsoft.com/library/azure/dn868048.aspx). Geben Sie Folgendes ein:
@@ -154,7 +157,7 @@ Anwendungen, die einen Schlüsseltresor verwenden, müssen sich mithilfe eines A
 
 So registrieren Sie die Anwendungen in Azure Active Directory
 
-1. Melden Sie sich beim Azure-Portal an.
+1. Melden Sie sich am klassischen Azure-Portal an.
 2. Klicken Sie auf der linken Seite auf **Active Directory**, und wählen Sie das Verzeichnis, in dem Sie Ihre Anwendung registrieren möchten. <br> <br> **Hinweis**: Sie müssen dasselbe Verzeichnis auswählen, das auch das Azure-Abonnement enthält, mit dem Sie Ihren Schlüsseltresor erstellt haben. Wenn Sie nicht wissen, welches Verzeichnis dies ist, klicken Sie auf **Einstellungen**, ermitteln Sie das Abonnement, mit dem Sie Ihren Schlüsseltresor erstellt haben, und notieren Sie sich den Namen des Verzeichnisses, der in der letzten Spalte angezeigt wird.
 
 3. Klicken Sie auf **ANWENDUNGEN**. Wenn Ihrem Verzeichnis keine Apps hinzugefügt wurden, wird auf dieser Seite der Link **App hinzufügen** angezeigt. Klicken Sie auf den Link, oder klicken Sie alternativ auf der Befehlsleiste auf **HINZUFÜGEN**.
@@ -242,4 +245,4 @@ Eine Liste der aktuellen Azure PowerShell-Cmdlets für den Azure-Schlüsseltreso
 
 Eine Referenz zur Programmierung finden Sie im [Entwicklerhandbuch für den Azure-Schlüsseltresor](key-vault-developers-guide.md).
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0224_2016-->

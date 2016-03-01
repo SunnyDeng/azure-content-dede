@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/21/2016" 
+	ms.date="02/16/2016" 
 	ms.author="billmath"/>
 
 # Konfigurieren von Azure Multi-Factor Authentication
@@ -36,7 +36,7 @@ Funktion| Beschreibung| Inhalt
 [Vertrauenswürdige IPs](#trusted-ips)|Vertrauenswürdige IP-Adressen ist ein Feature der mehrstufigen Authentifizierung, mit der Administratoren eines verwalteten oder verbundenen Mandanten die mehrstufige Authentifizierung für Benutzer umgehen können, die sich vom lokalen Intranet des Unternehmens aus anmelden.|Konfigurieren und Einrichten von IP-Adressen, die von der mehrstufigen Authentifizierung ausgenommen sind	
 [App-Kennwörter](#app-passwords)|Mit App-Kennwörtern kann eine Anwendung, die die mehrstufige Authentifizierung nicht erkennt, diese umgehen und weiter ausgeführt werden.|Informationen zu App-Kennwörter.
 [Multi-Factor Authentication für gespeicherte Geräte und Browser (Öffentliche Vorschau) aussetzen](#suspend-multi-factor-authentication-for-remembered-devices-and-browsers-public-preview)|Dadurch können Sie die Multi-Factor Authentication für eine festgelegte Anzahl von Tagen aussetzen, nachdem ein Benutzer erfolgreich angemeldet wurde.|Informationen zum Aktivieren dieser Funktion und zum Einrichten der Anzahl von Tagen.
-
+[Auswählbare Verifizierungsmethoden (öffentliche Vorschau)](#selectable-verification-methods-public-preview)|Ermöglicht Ihnen die Auswahl der Authentifizierungsmethoden, die Sie den Benutzern zur Verfügung stellen möchten.|Informationen zum Aktivieren oder Deaktivieren bestimmter Authentifizierungsmethoden, beispielweise per Anruf oder SMS.
 
 
 
@@ -45,12 +45,12 @@ Die Betrugswarnung kann so konfiguriert und eingerichtet werden, dass Ihre Benut
 
 ### Einrichten und Konfigurieren der Betrugswarnung
 
-1.	Melden Sie sich unter http://azure.microsoft.com an.
+1.	Melden Sie sich bei http://azure.microsoft.com an.
 2.	Folgen Sie den Anweisungen im oberen Teil dieser Seite, um zum MFA-Verwaltungsportal zu gelangen.
 3.	Klicken Sie im Abschnitt „Konfigurieren“ des Azure Multi-Factor Authentication-Verwaltungsportals auf „Einstellungen“.
 4.	Aktivieren Sie das Kontrollkästchen „Benutzern gestatten, Betrugswarnungen zu übermitteln“ im Abschnitt „Betrugswarnung“ auf der Seite „Einstellungen“.
 5.	Wenn ein Benutzer gesperrt werden soll, so aktivieren Sie das Kontrollkästchen "Benutzer sperren", sobald ein Betrug gemeldet wurde.
-6.	Geben Sie im Textfeld zu „**Code zur Meldung von Betrug während der Begrüßung**“ einen Nummerncode ein, der bei jeder Anrufüberprüfung genutzt werden kann. Wenn ein Benutzer diesen Code anstelle des #-Zeichens oder zusätzlich zu diesem eingibt, wird eine Betrugswarnung gemeldet. 
+6.	Geben Sie im Textfeld „**Code zur Meldung von Betrug während der Begrüßung**“ einen Nummerncode ein, der während der Anrufüberprüfung genutzt werden kann. Wenn ein Benutzer diesen Code anstelle des #-Zeichens oder zusätzlich zu diesem eingibt, wird eine Betrugswarnung gemeldet. 
 7.	Klicken Sie unten auf "Speichern".
 
 >[AZURE.NOTE]
@@ -66,7 +66,7 @@ Eine Betrugswarnung kann auf zwei Arten gemeldet werden. Entweder über die mobi
 
 
 
-1. Wenn eine Überprüfung an Ihr Telefon gesendet wird, klicken Sie darauf, sodass die Multi-Factor Authentication-App gestartet wird.
+1. Wenn eine Überprüfung an Ihr Telefon gesendet wird, klicken Sie darauf, sodass die Azure Authenticator-App gestartet wird.
 2. Zum Melden eines Betrugs klicken Sie auf "Abbrechen und Betrug melden". Hierdurch wird ein Feld mit dem Hinweis angezeigt, dass der IT-Support Ihres Unternehmens benachrichtigt wird. 
 3. Klicken Sie auf "Betrug melden".
 4. Klicken Sie in der App auf "Schließen".
@@ -75,7 +75,7 @@ Eine Betrugswarnung kann auf zwei Arten gemeldet werden. Entweder über die mobi
 
 ### Melden einer Betrugswarnung per Telefon
 
-1. Beantworten Sie den Überprüfungsanruf auf Ihr Telefon.</li>
+1. Beantworten Sie den Überprüfungsanruf an Ihr Telefon.</li>
 2. Zur Betrugsmeldung geben Sie den Code ein, der konfiguriert wurde, um der telefonischen Betrugsmeldung zu entsprechen, und anschließend das #-Zeichen. Sie werden benachrichtigt, dass eine Betrugswarnung gesendet wurde.
 3. Beenden Sie den Anruf.
 
@@ -95,12 +95,12 @@ Mit einer Einmalumgehung kann sich ein Benutzer ein einziges Mal authentifiziere
 
 ### Erstellen Sie einer Einmalumgehung
 
-1.	Melden Sie sich unter http://azure.microsoft.com an.
+1.	Melden Sie sich bei http://azure.microsoft.com an.
 2.	Folgen Sie den Anweisungen im oberen Teil dieser Seite, um zum MFA-Verwaltungsportal zu gelangen.
 3.	Wenn im Azure Multi-Factor Authentication-Verwaltungsportal links neben dem Namen Ihres Mandanten oder Azure MFA-Anbieters ein Pluszeichen („+“) angezeigt wird, klicken Sie darauf, um die verschiedenen Replikationsgruppen des MFA-Servers und die Azure Standardgruppe anzuzeigen. Klicken Sie auf die passende Gruppe.
-4.	Klicken Sie unter „Benutzerverwaltung“ auf „**Einmalumgehung**“![Cloud](./media/multi-factor-authentication-whats-next/create1.png).
-5.	Klicken Sie auf der Seite „Einmalumgehung“ auf „**Neue Einmalumgehung**“.
-6.	Geben Sie den Benutzernamen, die Anzahl der Sekunden, die die Umgehung vorhanden ist und den Grund für die Umgehung, und klicken Sie dann auf „**Umgehen**“.![Cloud](./media/multi-factor-authentication-whats-next/create2.png)
+4.	Klicken Sie unter „Benutzerverwaltung“ auf **Einmalumgehung**. ![Cloud](./media/multi-factor-authentication-whats-next/create1.png)
+5.	Klicken Sie auf der Seite „Einmalumgehung“ auf **Neue Einmalumgehung**.
+6.	Geben Sie den Benutzernamen, die Anzahl von Sekunden, für die die Umgehung vorhanden sein soll, und den Grund für die Umgehung ein, und klicken Sie dann auf **Umgehen**. ![Cloud](./media/multi-factor-authentication-whats-next/create2.png)
 7.	An diesem Punkt muss sich der Benutzer anmelden, bevor die Einmalumgehung abläuft.
 
 
@@ -131,13 +131,13 @@ Bevor Sie beginnen, sollten Sie Folgendes beachten:
 
 ### Einrichten von benutzerdefinierten Sprachnachrichten in Multi-Factor Authentication
 1.	Erstellen Sie eine Sprachnachricht in einem der unterstützten Dateiformate.
-2.	Melden Sie sich unter http://azure.microsoft.com an.
+2.	Melden Sie sich bei http://azure.microsoft.com an.
 3.	Folgen Sie den Anweisungen im oberen Teil dieser Seite, um zum MFA-Verwaltungsportal zu gelangen.
 4.	Klicken Sie im Abschnitt „Konfigurieren“ des Azure Multi-Factor Authentication-Verwaltungsportals auf „Sprachnachrichten“.
-5.	Klicken Sie im Abschnitt „Sprachnachrichten“ auf „**Neue Sprachnachricht**“.![Cloud](./media/multi-factor-authentication-whats-next/custom1.png)
-6.	Klicken Sie auf der Seite „Konfigurieren: Neue Sprachnachrichten“ auf „**Audiodateien verwalten**“.![Cloud](./media/multi-factor-authentication-whats-next/custom2.png)
-7.	Klicken Sie auf der Seite „Konfigurieren: Neue Audiodateien“ auf „**Audiodatei hochladen**“.![Cloud](./media/multi-factor-authentication-whats-next/custom3.png)
-8.	Klicken Sie auf der Seite „Konfigurieren: Audiodatei hochladen“ auf „**Durchsuchen**“, und navigieren Sie zu Ihrer Sprachnachricht. Klicken Sie dann auf „**Öffnen**“.![Cloud](./media/multi-factor-authentication-whats-next/custom4.png)
+5.	Klicken Sie im Abschnitt „Sprachnachrichten“ auf **Neue Sprachnachricht**. ![Cloud](./media/multi-factor-authentication-whats-next/custom1.png)
+6.	Klicken Sie auf der Seite „Konfigurieren: Neue Sprachnachrichten“ auf **Audiodateien verwalten**. ![Cloud](./media/multi-factor-authentication-whats-next/custom2.png)
+7.	Klicken Sie auf der Seite „Konfigurieren: Audiodateien“ auf **Audiodatei hochladen**. ![Cloud](./media/multi-factor-authentication-whats-next/custom3.png)
+8.	Klicken Sie auf der Seite „Konfigurieren: Audiodatei hochladen“ auf **Durchsuchen**, navigieren Sie zu Ihrer Sprachnachricht, und klicken Sie dann auf **Öffnen**. ![Cloud](./media/multi-factor-authentication-whats-next/custom4.png)
 9.	Fügen Sie eine Beschreibung hinzu, und klicken Sie auf "Hochladen".
 10.	Sobald dies abgeschlossen ist, sehen Sie eine Meldung, dass Sie die Datei erfolgreich hochgeladen haben.
 11.	Klicken Sie auf der linken Seite auf "Sprachnachrichten".
@@ -146,7 +146,7 @@ Bevor Sie beginnen, sollten Sie Folgendes beachten:
 14.	Wenn diese Nachricht für eine bestimmte Anwendung gedacht ist, geben Sie dies im Feld "Anwendung" ein.
 15.	Wählen Sie in "Nachrichtentyp" den Nachrichtentyp aus, der von der neuen benutzerdefinierten Nachricht überschrieben wird.
 16.	Wählen Sie aus der Dropdownliste "Audiodatei" Ihre Audiodatei aus.
-17.	Klicken Sie auf **Erstellen**. Sie sehen eine Meldung, die besagt, dass Sie erfolgreich eine Sprachnachricht erstellt haben.![Cloud](./media/multi-factor-authentication-whats-next/custom5.png)</center>
+17.	Klicken Sie auf **Erstellen**. Es wird eine Meldung angezeigt, die besagt, dass Sie erfolgreich eine Sprachnachricht erstellt haben. ![Cloud](./media/multi-factor-authentication-whats-next/custom5.png)</center>
 
 
 
@@ -157,7 +157,7 @@ Durch Zwischenspeichern können Sie einen bestimmten Zeitraum festlegen, sodass 
 
 ### Einrichten der Zwischenspeicherung in Azure Multi-Factor Authentication
 
-1.	Melden Sie sich unter http://azure.microsoft.com an.
+1.	Melden Sie sich bei http://azure.microsoft.com an.
 2.	Folgen Sie den Anweisungen im oberen Teil dieser Seite, um zum MFA-Verwaltungsportal zu gelangen.
 3.	Klicken Sie im Abschnitt „Konfigurieren“ des Azure Multi-Factor Authentication-Verwaltungsportals auf „Zwischenspeichern“.
 4.	Klicken Sie auf der Seite "Zwischenspeicherung konfigurieren" auf "Neuer Cache".
@@ -187,7 +187,7 @@ Außerhalb des Unternehmensnetzwerks|Für Browserflüsse, für die eine mehrstuf
 
 ### Aktivieren von vertrauenswürdigen IP-Adressen
 
-1. Melden Sie sich im Azure-Verwaltungsportal an.
+1. Melden Sie sich beim klassischen Azure-Portal an.
 2. Klicken Sie im linken Bereich auf "Active Directory".
 3. Klicken Sie unter "Verzeichnis" auf das Verzeichnis, für das Sie eine vertrauenswürdige IP-Anmeldung einrichten möchten.
 4. Klicken Sie im ausgewählten Verzeichnis auf "Konfigurieren".
@@ -202,7 +202,7 @@ Außerhalb des Unternehmensnetzwerks|Für Browserflüsse, für die eine mehrstuf
 
 
 
-![Cloud](./media/multi-factor-authentication-whats-next/trustedips2.png)
+![Vertrauenswürdige IP-Adressen](./media/multi-factor-authentication-whats-next/trustedips3.png)
 
 
 
@@ -261,7 +261,7 @@ Nehmen wir beispielsweise an, Sie verfügen über eine Architektur, die Folgende
 - Sie verwenden Azure Multi-Factor Authentication,
 
 
-<center>![Proofup](./media/multi-factor-authentication-whats-next/federated.png)</center>
+![Proofup](./media/multi-factor-authentication-whats-next/federated.png)
 
  In diesen Fällen müssen Sie Folgendes tun:
 
@@ -275,7 +275,7 @@ Standardmäßig können keine Benutzer App-Kennwörter erstellen. Dieses Feature
 
 
 
-1. Melden Sie sich im Azure-Verwaltungsportal an.
+1. Melden Sie sich beim klassischen Azure-Portal an.
 2. Klicken Sie im linken Bereich auf "Active Directory".
 3. Klicken Sie unter "Verzeichnis" auf das Verzeichnis für den Benutzer, dem Sie die Erlaubnis erteilen möchten.
 4. Klicken Sie oben auf "Benutzer".
@@ -283,7 +283,8 @@ Standardmäßig können keine Benutzer App-Kennwörter erstellen. Dieses Feature
 6. Klicken Sie oben auf der Seite "Multi-Factor Authentication" auf "Diensteinstellungen".
 7. Stellen Sie sicher, dass das Optionsfeld neben "Benutzern die Erstellung von App-Kennwörtern zum Anmelden bei Nicht-Browser-Anwendungen erlauben" aktiviert ist.
 
-<center>![Cloud](./media/multi-factor-authentication-whats-next/trustedips.png)</center>
+
+![App-Kennwörter erstellen](./media/multi-factor-authentication-whats-next/trustedips3.png)
 
 ### Erstellen von App-Kennwörtern
 Benutzer können App-Kennwörter während ihrer ersten Registrierung erstellen. Sie erhalten am Ende des Registrierungsprozesses eine Option, die sie dazu befähigt.
@@ -308,7 +309,7 @@ Darüber hinaus können Benutzer App-Kennwörter auch später erstellen, durch �
 
 ### Erstellen von App-Kennwörtern im Azure-Portal
 --------------------------------------------------------------------------------
-1. Melden Sie sich beim Azure-Verwaltungsportal an.
+1. Melden Sie sich beim klassischen Azure-Portal an.
 3. Klicken Sie oben mit der rechten Maustaste auf Ihren Benutzernamen, und wählen Sie "Zusätzliche Sicherheitsüberprüfung" aus.
 5. Wählen Sie auf der Seite „Proofup“ oben „App-Kennwörter“.
 6. Klicken Sie auf **Erstellen**.
@@ -316,7 +317,7 @@ Darüber hinaus können Benutzer App-Kennwörter auch später erstellen, durch �
 8. Kopieren Sie das App-Kennwort in die Zwischenablage, und fügen Sie es in Ihrer Anwendung hinzu.
 
 
-<center>![Cloud](./media/multi-factor-authentication-whats-next/app2.png)</center>
+![App-Kennwörter](./media/multi-factor-authentication-whats-next/app2.png)
 
 ### Erstellen von App-Kennwörtern ohne Office 365- oder Azure-Abonnement
 --------------------------------------------------------------------------------
@@ -328,7 +329,7 @@ Darüber hinaus können Benutzer App-Kennwörter auch später erstellen, durch �
 7. Geben Sie einen Namen für das App-Kennwort an, und klicken Sie auf **Weiter**.
 8. Kopieren Sie das App-Kennwort in die Zwischenablage, und fügen Sie es in Ihrer Anwendung hinzu.
 
-<center>![Cloud](./media/multi-factor-authentication-whats-next/myapp.png)</center>
+![App-Kennwörter](./media/multi-factor-authentication-whats-next/myapp.png)
 
 ## Multi-Factor Authentication für gespeicherte Geräte und Browser (Öffentliche Vorschau) aussetzen
 
@@ -343,13 +344,36 @@ Um sicherzustellen, dass die Benutzerkonten geschützt sind, sollten Sie die Mul
 
 ### Vorgehensweise beim Aktivieren/Aussetzen der Multi-Factor Authentication für gespeicherte Geräte und Festlegen
 
-<ol>
-<li>Melden Sie sich im Azure-Verwaltungsportal an.</li>
-<li>Klicken Sie im linken Bereich auf "Active Directory".</li>
-<li>Klicken Sie unter Active Directory auf das Verzeichnis, in dem Sie das Aussetzen von Multi-Factor Authentication für gespeicherte Geräte einrichten möchten.</li>
-<li>Klicken Sie im ausgewählten Verzeichnis auf "Konfigurieren".</li>
-<li>Klicken Sie im Abschnitt "Multi-Factor Authentication" auf "Diensteinstellungen verwalten".</li>
-<li>Auf der Seite "Einstellungen" unter "Geräteeinstellungen von Benutzern verwalten", **Aktivieren/Deaktivieren Sie mehrstufige Authentifizierung anhalten, indem ein Gerät gespeichert wird**.</li>
-![Aussetzen von Geräten](./media/multi-factor-authentication-manage-users-and-devices/suspend.png) <li>Legen Sie die Anzahl der Tage fest, an denen Sie die Aussetzung zulassen möchten. Der Standardwert ist 14 Tage.</li> <li>Klicken Sie auf "Speichern".</li> <li>Klicken Sie auf "Schließen".</li>
+1. Melden Sie sich beim klassischen Azure-Portal an.
+2. Klicken Sie im linken Bereich auf "Active Directory".
+3. Klicken Sie unter Active Directory auf das Verzeichnis, in dem Sie das Aussetzen von Multi-Factor Authentication für gespeicherte Geräte einrichten möchten.
+4. Klicken Sie im ausgewählten Verzeichnis auf "Konfigurieren".
+5. Klicken Sie im Abschnitt "Multi-Factor Authentication" auf "Diensteinstellungen verwalten".
+6. Aktivieren/deaktivieren Sie auf der Seite „Diensteinstellungen“ unter „Geräteeinstellungen von Benutzern verwalten“ die Option **Benutzern die Aussetzung der mehrstufigen Authentifizierung ermöglichen, indem ihre Geräte gespeichert werden**. ![Aussetzen von Geräten](./media/multi-factor-authentication-manage-users-and-devices/suspend.png)
+8. Legen Sie die Anzahl von Tagen fest, an denen Sie die Aussetzung zulassen möchten. Der Standardwert ist 14 Tage.
+9. Klicken Sie auf "Speichern".
+10. Klicken Sie auf "Schließen".
 
-<!---HONumber=AcomDC_0128_2016-->
+
+## Auswählbare Verifizierungsmethoden (öffentliche Vorschau)
+Es ist jetzt möglich, die Authentifizierungsmethoden auszuwählen, die Ihren Benutzern bei der Azure Multi-Factor Authentication zur Verfügung stehen. Dieses Feature war zuvor nur in der lokalen Serverversion verfügbar. Die Tabelle unten bietet einen kurzen Überblick über die verschiedenen Authentifizierungsmethoden, die Sie für Ihre Benutzer aktivieren oder deaktivieren können.
+
+Methode|Beschreibung
+:------------- | :------------- | 
+[Auf Telefon anrufen](multi-factor-authentication-end-user-first-time-mobile-phone.md)| Startet einen automatisierten Anruf an das Telefon für die Authentifizierung. Der Benutzer nimmt den Anruf an und drückt die #-Taste auf der Telefontastatur, um sich zu authentifizieren. Diese Telefonnummer wird nicht mit dem lokalen Active Directory synchronisiert.
+[Textnachricht an Telefon](multi-factor-authentication-end-user-first-time-mobile-phone.md)|Sendet eine Textnachricht mit einem Überprüfungscode an den Benutzer. Der Benutzer wird aufgefordert, mit dem Überprüfungscode auf die Textnachricht zu antworten oder den Überprüfungscode auf der Anmeldeseite einzugeben.
+[Benachrichtigung über mobile App](multi-factor-authentication-end-user-first-time-mobile-app.md)|In diesem Modus kann die Azure Authenticator-App nicht autorisierte Zugriffe auf Konten sowie betrügerische Transaktionen verhindern. Zu diesem Zweck wird eine Pushbenachrichtigung an Ihr Telefon oder registriertes Gerät gesendet. Überprüfen Sie einfach die Benachrichtigung, und wählen Sie „Bestätigen“, wenn Sie den Zugriff zulassen möchten. Bei einem nicht autorisierten Zugriff können Sie den Zugriff verweigern und optional die betrügerische Benachrichtigung melden. Informationen zum Senden von Berichten zu betrügerischen Benachrichtigungen finden Sie unter „Verwenden der Funktion ,Ablehnen und Betrug melden‘ für Multi-Factor Authentication“.</br></br>Die Azure Authenticator-App steht für [Windows Phone](http://www.windowsphone.com/de-DE/store/app/azure-authenticator/03a5b2bf-6066-418f-b569-e8aecbc06e50), [Android](https://play.google.com/store/apps/details?id=com.azure.authenticator) und [iOS](https://itunes.apple.com/us/app/azure-authenticator/id983156458) zur Verfügung.|
+[Überprüfungscode von der mobilen App](multi-factor-authentication-end-user-first-time-mobile-app.md)|In diesem Modus kann die Azure Authenticator-App als Softwaretoken zum Generieren eines OATH-Überprüfungscode verwendet werden. Dieser Überprüfungscode kann dann zusammen mit dem Benutzernamen und Kennwort als zweite Authentifizierungsmethode eingegeben werden.</li><br><p> Die Azure Authenticator-App ist für [Windows Phone](http://www.windowsphone.com/de-DE/store/app/azure-authenticator/03a5b2bf-6066-418f-b569-e8aecbc06e50), [Android](https://play.google.com/store/apps/details?id=com.azure.authenticator) und [iOS](https://itunes.apple.com/us/app/azure-authenticator/id983156458) verfügbar.
+
+### Aktivieren/Deaktivieren von Authentifizierungsmethoden
+
+1. Melden Sie sich beim klassischen Azure-Portal an.
+2. Klicken Sie im linken Bereich auf "Active Directory".
+3. Klicken Sie unter „Active Directory“ auf das Verzeichnis, für das Sie Authentifizierungsmethoden aktivieren oder deaktivieren möchten.
+4. Klicken Sie im ausgewählten Verzeichnis auf "Konfigurieren".
+5. Klicken Sie im Abschnitt "Multi-Factor Authentication" auf "Diensteinstellungen verwalten".
+6. Aktivieren/deaktivieren Sie auf der Seite „Diensteinstellungen“ unter „Überprüfungsoptionen“ die Optionen, die Sie verwenden bzw. nicht verwenden möchten.</br></br> ![Aussetzen von Geräten](./media/multi-factor-authentication-whats-next/authmethods.png)
+9. Klicken Sie auf "Speichern".
+10. Klicken Sie auf "Schließen".
+
+<!---HONumber=AcomDC_0218_2016-->

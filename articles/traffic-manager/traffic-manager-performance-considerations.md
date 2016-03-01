@@ -13,22 +13,17 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/12/2015"
+   ms.date="02/09/2016"
    ms.author="joaoma" />
 
 
 # Leistungsüberlegungen zu Traffic Manager
 
-
-Im Hinblick auf Azure Traffic Manager stellt sich häufig die Frage der potenziellen Leistungsprobleme, zu denen dieser Dienst führen kann. In diesem Zusammenhang treten normalerweise folgende Fragen auf, z. B. "Welche Latenz ergibt sich durch Traffic Manager für meine Website?", "Meine Website war gestern einige Stunden lang langsam – gab es zu diesem Zeitpunkt Probleme mit Traffic Manager?", "Wo befinden sich die Traffic Manager-Server? Ich möchte sichergehen, dass sie sich im gleichen Rechenzentrum wie meine Website befinden, sodass die Leistung nicht beeinträchtigt wird".
-
-Auf dieser Seite werden die direkten Leistungsbeeinträchtigungen erörtert, die sich durch Traffic Manager für Websites ergeben können. Wenn Sie über eine Website im Osten der USA und über eine Website in Asien verfügen und die Traffic Manager-Tests für die Website im Osten der USA fehlschlagen, werden alle Benutzer an die Website in Asien weitergeleitet. Dabei ergeben sich Leistungseinbußen, die aber nicht auf Traffic Manager selbst zurückzuführen sind.
+Auf dieser Seite werden Überlegungen zur Leistung bei der Verwendung von Traffic Manager erläutert. Beispielszenarien: Sie verfügen über eine Website in den USA und eine in Asien, und eine davon besteht die Integritätsprüfung für Traffic Manager-Tests nicht. Daraufhin werden alle Benutzer in die fehlerfreie Region geleitet. Das Verhalten kann wie ein Leistungsproblem erscheinen, aber es würde sich basierend auf der Entfernung für die Benutzeranforderung um erwartetes Verhalten handeln.
 
   
 
 ## Wichtiger Hinweis zur Funktionsweise von Traffic Manager
-
-[Traffic Manager – Übersicht](traffic-manager-overview.md) ist eine hervorragende Ressource, um Informationen zur Funktionsweise von Traffic Manager zu erhalten. Die Informationen auf dieser Seite sind jedoch sehr umfangreich, und die Suche nach den Schlüsselinformationen im Hinblick auf die Leistung kann sich als schwierig erweisen. Die wichtigen Punkte in der MSDN-Dokumentation sind Schritt 5 und Schritt 6 zu Abbildung 3, die ich hier ausführlicher erläutern werde:
 
 - Traffic Manager dient im Wesentlichen nur einem Zweck – der DNS-Auflösung. Dies bedeutet, dass sich die einzige Leistungsbeeinträchtigung, die Traffic Manager für Websites haben kann, bei der ersten DNS-Suche ergibt.
 - Klarstellung zur DNS-Suche durch Traffic Manager. Traffic Manager füllt und aktualisiert regelmäßig die regulären Microsoft DNS-Stammserver auf Grundlage Ihrer Richtlinie und der Testergebnisse. So erfolgt auch die erste DNS-Suche ohne Beteiligung von Traffic Manager, da die DNS-Anforderung von den regulären Microsoft DNS-Stammservern verarbeitet wird. Wenn Traffic Manager "ausfällt" (d. h. ein Fehler in den virtuellen Computern auftritt, die die Richtlinientests und die DNS-Aktualisierung durchführen), hat dies keine Auswirkungen auf den Traffic Manager-DNS-Namen, da die Einträge in den Microsoft DNS-Servern weiterhin beibehalten werden. Als einzige Auswirkungen werden die Tests und Aktualisierungen auf Grundlage der Richtlinie nicht durchgeführt (d. h., wenn der primäre Standort ausfällt, kann Traffic Manager das DNS nicht so aktualisieren, dass es auf den Failoverstandort verweist).
@@ -77,11 +72,6 @@ http://www.whatsmydns.net/ – diese Website führt eine DNS-Suche von 20 versch
 
 http://www.digwebinterface.com – ähnelt der Watchmouse-Website, gibt jedoch detailliertere DNS-Informationen an, darunter CNAMEs- und A-Datensätze. Achten Sie darauf, dass Sie die Optionen "Colorize output" und "Stats" aktivieren und unter "Nameservers" die Option "All" auswählen.
 
-## Zusammenfassung
-
-Aus den oben stehenden Informationen wissen wir, dass sich die einzige Leistungsbeeinträchtigung, die Traffic Manager für eine Website hat, bei der ersten DNS-Suche ergibt (die Zeiten variieren, ca. 50 ms im Durchschnitt). Anschließend ergeben sich null Leistungseinbußen für die DNS-Gültigkeitsdauer (Standardwert 300 Sekunden). Und auch dann wird der DNS-Cache nach Ablauf der Gültigkeitsdauer wieder aktualisiert. Daher lautet die Antwort auf die Frage "Welche Latenz ergibt sich durch Traffic Manager für meine Website?" im Grunde "keine Latenz".
-
-
 ## Nächste Schritte
 
 
@@ -94,4 +84,4 @@ Aus den oben stehenden Informationen wissen wir, dass sich die einzige Leistungs
 [Azure Traffic Manager-Cmdlets](http://go.microsoft.com/fwlink/p/?LinkId=400769)
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0218_2016-->

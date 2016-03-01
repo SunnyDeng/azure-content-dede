@@ -21,7 +21,7 @@
 
 [AZURE.INCLUDE [Auswahl](../../includes/hdinsight-create-windows-cluster-selector.md)]
 
-Erfahren Sie, wie Sie einen Hadoop-Cluster in HDInsight über das Azure-Portal erstellen. Das Microsoft [Azure-Portal](azure-portal-overview.md) ist eine zentrale Anlaufstelle zum Bereitstellen und Verwalten von Azure-Ressourcen. Das Azure-Portal ist eines der Tools, die Sie zum Erstellen Linux-basierter oder Windows-basierter Hadoop-Cluster in HDInsight verwenden können. Andere Tools und Features zur Clustererstellung finden Sie, indem Sie oben auf dieser Seite auf die Registerkartenauswahl klicken, oder unter [Methoden zur Clustererstellung](hdinsight-provision-clusters.md#cluster-creation-methods).
+Erfahren Sie, wie Sie einen Hadoop-Cluster in HDInsight über das Azure-Portal erstellen. Das Microsoft [Azure-Portal](../azure-portal-overview.md) ist eine zentrale Anlaufstelle zum Bereitstellen und Verwalten von Azure-Ressourcen. Das Azure-Portal ist eines der Tools, die Sie zum Erstellen Linux-basierter oder Windows-basierter Hadoop-Cluster in HDInsight verwenden können. Andere Tools und Features zur Clustererstellung finden Sie, indem Sie oben auf dieser Seite auf die Registerkartenauswahl klicken, oder unter [Methoden zur Clustererstellung](hdinsight-provision-clusters.md#cluster-creation-methods).
 
 ###Voraussetzungen:
 
@@ -49,7 +49,7 @@ Bevor Sie die Anweisungen in diesem Artikel ausführen können, benötigen Sie F
   * **Ressourcengruppe**: Wählen Sie eine vorhandene Ressourcengruppe aus, oder erstellen Sie eine neue Ressourcengruppe. Dieser Eintrag ist standardmäßig auf eine Ihrer vorhandenen Ressourcengruppen festgelegt (sofern verfügbar).
   * **Anmeldeinformationen**: Konfigurieren Sie den Benutzernamen und das Kennwort für den Hadoop-Benutzer (HTTP-Benutzer). Wenn Sie Remotedesktop für den Cluster aktivieren, müssen Sie den Benutzernamen und das Kennwort für den Remotedesktopbenutzer konfigurieren und ein Ablaufdatum für das Konto festlegen. Klicken Sie unten auf **Auswählen**, um die Änderungen zu speichern.
 
-	   	![Clusteranmeldeinformationen eingeben](./media/hdinsight-provision-clusters/HDI.CreateCluster.3.png "Provide cluster credentials")
+	   	![Provide cluster credentials](./media/hdinsight-provision-clusters/HDI.CreateCluster.3.png "Provide cluster credentials")
 
   * **Datenquelle**: Erstellen Sie ein neues Azure-Speicherkonto, oder wählen Sie ein vorhandenes Azure-Speicherkonto aus, das als Standarddateisystem für den Cluster verwendet werden soll.
 
@@ -73,7 +73,7 @@ Bevor Sie die Anweisungen in diesem Artikel ausführen können, benötigen Sie F
 
 			![Blatt „Virtuelles Netzwerk“](./media/hdinsight-provision-clusters/HDI.CreateCluster.6.png "Specify virtual network details")
 
-			>[AZURE.NOTE] Windows-basierte HDInsight-Cluster können nur in einem klassischen virtuellen Netzwerk bereitgestellt werden.
+			For information on using HDInsight with a Virtual Network, including specific configuration requirements for the Virtual Network, see [Extend HDInsight capbilities by using an Azure Virtual Network](hdinsight-extend-hadoop-virtual-network.md).
   
 
   		
@@ -136,8 +136,8 @@ Bevor Sie die Anweisungen in diesem Artikel ausführen können, benötigen Sie F
 ##Nächste Schritte
 In diesem Artikel haben Sie mehrere Möglichkeiten zum Erstellen von HDInsight-Clustern kennengelernt. Weitere Informationen finden Sie in den folgenden Artikeln:
 
-* [Erste Schritte mit Azure HDInsight](hdinsight-get-started.md) – Erfahren Sie, wie Sie die Arbeit mit Ihrem HDInsight-Cluster aufnehmen können.
+* [Erste Schritte mit Azure HDInsight](hdinsight-hadoop-linux-tutorial-get-started.md) – Erfahren Sie, wie Sie die Arbeit mit Ihrem HDInsight-Cluster aufnehmen können.
 * [Programmgesteuerte Übermittlung von Hadoop-Jobs](hdinsight-submit-hadoop-jobs-programmatically.md) – Erfahren Sie, wie Sie Aufträge programmgesteuert an HDInsight übermitteln können.
 * [Verwalten von Hadoop-Clustern in HDInsight mit dem Azure-Portal](hdinsight-administer-use-management-portal.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

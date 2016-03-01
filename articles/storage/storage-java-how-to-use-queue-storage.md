@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="Java"
 	ms.topic="article"
-	ms.date="12/01/2015"
+	ms.date="02/16/2016"
 	ms.author="micurd"/>
 
 # Verwenden des Warteschlangenspeichers mit Java
@@ -22,7 +22,7 @@
 
 ## Übersicht
 
-In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Azure-Warteschlangen-Speicherdienst demonstriert. Die Beispiele wurden in Java geschrieben und verwenden das [Azure Storage-SDK für Java][]. Zu den Szenarien gehören das **Einfügen**, **Einsehen**, **Abrufen** und **Löschen** von Warteschlangennachrichten sowie das **Erstellen** und **Löschen** von Warteschlangen. Weitere Informationen zu Warteschlangen finden Sie im Abschnitt [Nächste Schritte](#NextSteps).
+In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Azure-Warteschlangen-Speicherdienst demonstriert. Die Beispiele wurden in Java geschrieben und verwenden das [Azure Storage-SDK für Java][]. Zu den Szenarien gehören das **Einfügen**, **Einsehen**, **Abrufen** und **Löschen** von Warteschlangennachrichten sowie das **Erstellen** und **Löschen** von Warteschlangen. Weitere Informationen zu Warteschlangen finden Sie im Abschnitt [Nächste Schritte](#Next-Steps).
 
 Hinweis: Es steht ein SDK für Entwickler zur Verfügung, die Azure Storage auf Android-Geräten verwenden. Weitere Informationen finden Sie unter [Azure Storage-SDK für Android][].
 
@@ -381,7 +381,7 @@ Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gem
 
 - [Azure Storage-SDK für Java][]
 - [Referenz für Azure Storage-Client-SDKs][]
-- [Azure Storage-REST-API][]
+- [REST-API für Azure-Speicherdienste][]
 - [Azure Storage-Teamblog][]
 
 [Azure SDK for Java]: http://go.microsoft.com/fwlink/?LinkID=525671
@@ -389,7 +389,7 @@ Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gem
 [Azure Storage-SDK für Android]: https://github.com/azure/azure-storage-android
 [Azure Storage-Client-SDK-Referenz]: http://dl.windowsazure.com/storage/javadoc/
 [Referenz für Azure Storage-Client-SDKs]: http://dl.windowsazure.com/storage/javadoc/
-[Azure Storage-REST-API]: https://msdn.microsoft.com/library/azure/dd179355.aspx
+[REST-API für Azure-Speicherdienste]: https://msdn.microsoft.com/library/azure/dd179355.aspx
 [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

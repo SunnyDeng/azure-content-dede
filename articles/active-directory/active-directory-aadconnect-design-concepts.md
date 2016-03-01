@@ -13,10 +13,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="Identity"
-   ms.date="01/21/2016"
+   ms.date="02/16/2016"
    ms.author="andkjell"/>
 
-# Entwurfskonzepte für Azure AD Connect
+# Azure AD Connect: Designkonzepte
 Dieses Themas beschreibt, welche Aspekte bei der Planung der Implementierung von Azure AD Connect berücksichtigt werden müssen. Bestimmte Aspekte werden hier sehr gründlich behandelt, und diese Konzepte werden in anderen Themen auch kurz beschrieben.
 
 ## sourceAnchor
@@ -43,7 +43,6 @@ Der Attributwert muss den folgenden Regeln entsprechen:
 - Groß-/Kleinschreibung sollte nicht relevant sein und Werte, die sich nach Groß-/Kleinschreibung unterscheiden, sollten vermieden werden
 - Sollte bei Erstellung des Objekts zugewiesen werden
 
-
 Ist das ausgewählte Attribut sourceAnchor nicht vom Typ Zeichenfolge, unterzieht Azure AD Connect den Wert des Attributs einem Base64Encode-Prozess, um sicherzustellen, dass keine Sonderzeichen angezeigt werden. Wenn Sie einen andere Verbundserver als ADFS verwenden, stellen Sie sicher, dass Ihr Server auch in der Lage ist, das Attribut einem Base64Encode-Prozess zu unterziehen.
 
 Beim Attribut sourceAnchor wird die Groß-/Kleinschreibung berücksichtigt. Der Wert "JohnDoe" ist nicht identisch mit "johndoe".
@@ -68,4 +67,4 @@ Aus diesem Grund gelten die folgenden Einschränkungen für Azure AD Connect:
 ## Nächste Schritte
 Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

@@ -1,6 +1,20 @@
-<properties pageTitle="Azure Search-Verwaltungs-REST-API Version 2015-02-28 | Microsoft Azure | Gehosteter Cloudsuchdienst" description="Azure Search-Verwaltungs-REST-API: Version 2015-02-28" services="search" documentationCenter="" authors="HeidiSteen" manager="mblythe" editor=""/>
+<properties
+	pageTitle="Azure Search-Verwaltungs-REST-API Version 2015-02-28 | Microsoft Azure | Gehosteter Cloudsuchdienst"
+	description="Azure Search-Verwaltungs-REST-API: Version 2015-02-28"
+	services="search"
+	documentationCenter=""
+	authors="HeidiSteen"
+	manager="mblythe"
+	editor=""/>
 
-<tags ms.service="search" ms.devlang="rest-api" ms.workload="search" ms.topic="article"  ms.tgt_pltfrm="na" ms.date="11/04/2015" ms.author="heidist" />
+<tags
+	ms.service="search"
+	ms.devlang="rest-api"
+	ms.workload="search"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.date="11/04/2015"
+	ms.author="heidist" />
 
 # Management-API: Version 2015-02-28
 
@@ -39,7 +53,7 @@ Beachten Sie, dass Sie, wenn Ihr Anwendungscode sowohl *Dienstverwaltungs-* als 
 
 Die im Abschnitt [Erste Schritte mit der Azure Search-Verwaltungs-REST-API](http://go.microsoft.com/fwlink/p/?linkID=516968) dokumentierte Beispielanwendung zeigt die Authentifizierungsmethoden für jede Art von Operation. Anweisungen zur Konfiguration einer Clientanwendung für Active Directory sind in den ersten Schritten enthalten.
 
-Die Zugriffssteuerung für den Azure-Ressourcen-Manager verwendet die integrierten Rollen "Besitzer", "Mitwirkender" und "Leser". Administratoren sind standardmäßig Mitglieder der Rolle "Besitzer". Details hierzu finden Sie im Artikel [Rollenbasierte Zugriffssteuerung im klassischen Azure-Portal](../role-based-access-control-configure.md).
+Die Zugriffssteuerung für den Azure-Ressourcen-Manager verwendet die integrierten Rollen "Besitzer", "Mitwirkender" und "Leser". Administratoren sind standardmäßig Mitglieder der Rolle "Besitzer". Details hierzu finden Sie im Artikel [Rollenbasierte Zugriffssteuerung im klassischen Azure-Portal](../active-directory/role-based-access-control-configure.md).
 
 
 ### Übersicht über die APIs ##
@@ -812,4 +826,4 @@ Bei erfolgreicher Ausführung lautet der Statuscode HTTP 200 (OK).
 
 Keiner.
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0218_2016-->

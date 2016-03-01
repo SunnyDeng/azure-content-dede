@@ -4,7 +4,7 @@
 	services="virtual-machines"
 	documentationCenter=""
 	authors="joaoma"
-	manager="adinah"
+	manager="carmonm"
 	editor=""/>
 
 <tags
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="vm-multiple"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/21/2015"
+	ms.date="02/02/2016"
 	ms.author="joaoma"/>
 
 
@@ -77,12 +77,17 @@ Das folgende Diagramm zeigt ein Beispiel eines internen Endpunkts mit Lastenausg
 
 ![loadbalancing](./media/virtual-machines-load-balance/LOBServers.png)
 
+## Überlegungen zu Load Balancer
+
+Ein Load Balancer ist standardmäßig so konfiguriert, dass ein Timeout erfolgt, wenn sich eine Sitzung 4 Minuten im Leerlauf befindet. Wenn Ihre Anwendung hinter einem Load Balancer eine Verbindung länger als 4 Minuten im Leerlauf lässt und keine Keep-Alive-Konfiguration aufweist, wird die Verbindung getrennt. Sie können das Load Balancer-Verhalten so ändern, dass eine [längere Timeouteinstellung für Azure Load Balancer](../load-balancer/load-balancer-tcp-idle-timeout.md) zugelassen wird.
+
+Eine weitere Überlegung betrifft den Typ des Verteilungsmodus, der von Azure Load Balancer unterstützt wird. Sie können die Quell-IP-Affinität (Quell-IP, Ziel-IP) oder das Quell-IP-Protokoll (Quell-IP, Ziel-IP und Protokoll) konfigurieren. Weitere Informationen finden Sie unter [Azure Load Balancer-Verteilungsmodus (Quell-IP-Affinität)](../load-balancer/load-balancer-distribution-mode.md).
+
+
 ## Nächste Schritte
 
 Die Schritte zum Erstellen einer Gruppe mit Lastenausgleich finden Sie unter [Konfigurieren einer internen Gruppe mit Lastenausgleich](../load-balancer/load-balancer-internal-getstarted.md).
 
 Weitere Informationen zum Lastenausgleich finden Sie unter [Interner Lastenausgleich](../load-balancer/load-balancer-internal-overview.md).
 
-<!-- LINKS -->
-
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_0218_2016-->

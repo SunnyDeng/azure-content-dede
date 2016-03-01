@@ -71,4 +71,4 @@ Sie können das Trennzeichen verwenden, um Blobs hierarchisch aufzulisten.
 
 [Blob1]: ./media/storage-blob-concepts-include/blob1.jpg
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0224_2016-->

@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/24/2015"
+	ms.date="02/17/2016"
 	ms.author="jgao"/>
 
 # Verwalten von Hadoop-Clustern in HDInsight mit dem Azure-Portal
@@ -36,7 +36,7 @@ Klicken Sie auf die Registerkartenauswahl, um Informationen zum Erstellen von Ha
 Bevor Sie mit diesem Artikel beginnen können, benötigen Sie Folgendes:
 
 - **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
-- **Azure-Speicherkonto** – Ein HDInsight-Cluster verwendet einen Azure-Blobspeichercontainer als Standarddateisystem. Weitere Informationen über Azure-Blobspeicher und dessen nahtlose Integration in HDInsight-Cluster finden Sie unter [Verwenden von Azure-Blobspeicher mit HDInsight](../hdinsight-use-blob-storage.md). Weitere Informationen zum Erstellen eines Azure-Speicherkontos finden Sie unter [Erstellen eines Speicherkontos](../storage-create-storage-account.md).
+- **Azure-Speicherkonto** – Ein HDInsight-Cluster verwendet einen Azure-Blobspeichercontainer als Standarddateisystem. Weitere Informationen über Azure-Blobspeicher und dessen nahtlose Integration in HDInsight-Cluster finden Sie unter [Verwenden von Azure-Blobspeicher mit HDInsight](hdinsight-hadoop-use-blob-storage.md). Weitere Informationen zum Erstellen eines Azure-Speicherkontos finden Sie unter [Erstellen eines Speicherkontos](../storage/storage-create-storage-account.md).
 
 ##Öffnen des Portals
 
@@ -95,7 +95,7 @@ Die Installation von benutzerdefinierter Software auf dem Cluster über eine Rem
 	- Klicken Sie zum Anpassen des Menüs mit der rechten Maustaste auf eine beliebige Stelle im Menü, und klicken Sie dann auf **Anpassen**.
 	- **Einstellungen** und **Alle Einstellungen**: Zeigt das Blatt **Einstellungen** für den Cluster an, über das Sie auf detaillierte Konfigurationsinformationen für den Cluster zugreifen können.
 	- **Dashboard**, **Cluster-Dashboard** und **URL**: Über diese Optionen können Sie auf das Cluster-Dashboard zugreifen (Ambari Web für Linux-basierte Cluster).
-- **Remotedesktop**: Stellen Sie per RDP eine Verbindung mit dem Cluster her.
+	- **Remotedesktop**: Stellen Sie per RDP eine Verbindung mit dem Cluster her.
 	- **Cluster skalieren**: Dient zum Ändern der Anzahl von Workerknoten für den Cluster.
 	- **Löschen**: Löscht den Cluster.
 	- **Schnellstart** (![Cloud- und Blitzsymbol = Schnellstart](./media/hdinsight-administer-use-portal-linux/quickstart.png)): Zeigt hilfreiche Informationen für die ersten Schritte mit HDInsight an.
@@ -211,12 +211,12 @@ Auswirkungen der Änderung der Anzahl von Datenknoten für die von HDInsight unt
 
 ##Anhalten/Herunterfahren von Clustern
 
-Die meisten Hadoop-Aufträge sind Batch-Aufträge, die nur gelegentlich ausgeführt werden. Bei den meisten Hadoop-Clustern wird der Cluster immer wieder für einen längeren Zeitraum nicht zur Verarbeitung verwendet. Mit HDInsight werden Ihre Daten im Azure-Speicher gespeichert, sodass Sie einen Cluster problemlos löschen können, wenn er nicht verwendet wird. 
+Die meisten Hadoop-Aufträge sind Batch-Aufträge, die nur gelegentlich ausgeführt werden. Bei den meisten Hadoop-Clustern wird der Cluster immer wieder für einen längeren Zeitraum nicht zur Verarbeitung verwendet. Mit HDInsight werden Ihre Daten im Azure-Speicher gespeichert, sodass Sie einen Cluster problemlos löschen können, wenn er nicht verwendet wird.
 Für einen HDInsight-Cluster fallen auch dann Gebühren an, wenn er nicht verwendet wird. Da die Gebühren für den Cluster erheblich höher sind als die Kosten für den Speicher, ist es sinnvoll, nicht verwendete Cluster zu löschen.
 
 Es gibt viele Methoden, mit denen Sie den Prozess programmieren können:
 
-- Verwenden Sie Azure Data Factory. Unter [Verknüpfter Azure HDInsight-Dienst](../data-factory-compute-linked-services.md/#azure-hdinsight-linked-service) und [Transformation und Analyse mit Azure Data Factory](../data-factory-data-transformation-activities.md) finden Sie Informationen über bedarfsgesteuerte und selbstdefinierte mit HDInsight verknüpfte Dienste.
+- Verwenden Sie Azure Data Factory. Unter [Verknüpfter Azure HDInsight-Dienst](../data-factory/data-factory-compute-linked-services.md/#azure-hdinsight-linked-service) und [Transformation und Analyse mit Azure Data Factory](../data-factory/data-factory-data-transformation-activities.md) finden Sie Informationen über bedarfsgesteuerte und selbstdefinierte mit HDInsight verknüpfte Dienste.
 - Verwenden Sie Azure PowerShell. Weitere Informationen hierzu finden Sie unter [Analysieren von Flugverspätungsdaten mit Hive in HDInsight](hdinsight-analyze-flight-delay-data.md).
 - Verwenden Sie die Azure-Befehlszeilenschnittstelle. Weitere Informationen hierzu finden Sie unter [Verwalten von Hadoop-Clustern in HDInsight mit der Azure-Befehlszeilenschnittstelle](hdinsight-administer-use-command-line.md).
 - Verwenden das Sie HDInsight .NET-SDK. Weitere Informationen hierzu finden Sie unter [Übermitteln von Hadoop-Aufträgen in HDInsight](hdinsight-submit-hadoop-jobs-programmatically.md).
@@ -394,10 +394,10 @@ In diesem Artikel haben Sie erfahren, wie ein HDInsight-Cluster mit dem Azure-Po
 * [Verwalten von HDInsight mit der Azure-CLI](hdinsight-administer-use-command-line.md)
 * [Erstellen von Hadoop-Clustern in HDInsight](hdinsight-provision-clusters.md)
 * [Programmgesteuerte Übermittlung von Hadoop-Aufträgen](hdinsight-submit-hadoop-jobs-programmatically.md)
-* [Erste Schritte mit Azure HDInsight](../hdinsight-get-started.md)
+* [Erste Schritte mit Azure HDInsight](hdinsight-hadoop-linux-tutorial-get-started.md)
 * [Welche Hadoop-Version wird in Azure HDInsight verwendet?](hdinsight-component-versioning.md)
 
 [azure-portal]: https://portal.azure.com
 [image-hadoopcommandline]: ./media/hdinsight-administer-use-management-portal/hdinsight-hadoop-command-line.png "Hadoop-Befehlszeile"
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

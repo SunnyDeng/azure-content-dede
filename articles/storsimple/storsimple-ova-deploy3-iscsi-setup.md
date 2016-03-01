@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="01/20/2016"
+   ms.date="02/08/2016"
    ms.author="alkohli" />
 
 
@@ -26,9 +26,9 @@ Dieses Tutorial zur Bereitstellung bezieht sich nur auf Microsoft Azure StorSimp
 
 Die hier beschriebenen Verfahren dauern zwischen 30 Minuten und einer Stunde. Die in diesem Artikel veröffentlichten Informationen gelten nur für StorSimple Virtual Arrays.
 
->[AZURE.IMPORTANT]
+>[AZURE.IMPORTANT] 
 >
->- StorSimple Virtual Array befindet sich in der Vorschauphase und ist für die Evaluierung und Bereitstellungsplanung vorgesehen. Die Installation dieser Vorschau in einer Produktionsumgebung wird nicht unterstützt. 
+>- StorSimple Virtual Array befindet sich in der Vorschauphase und ist für die Evaluierung und Bereitstellungsplanung vorgesehen. Die Installation dieser Vorschauversion in einer Produktionsumgebung wird nicht unterstützt. 
 >- Wenn Probleme mit StorSimple Virtual Array auftreten, posten Sie sie im [StorSimple-MSDN-Forum](https://social.msdn.microsoft.com/Forums/home?forum=StorSimple).
 
 ## Voraussetzungen für das Setup
@@ -99,6 +99,11 @@ Verwenden Sie die folgende Schritt-für-Schritt-Anleitung, um Ihr virtuelles Sto
     5. Ein Dialogfeld wird angezeigt. Geben Sie die Anmeldeinformationen für die Domäne im angegebenen Format ein. Klicken Sie auf das Häkchensymbol ![Häkchensymbol](./media/storsimple-ova-deploy3-iscsi-setup/image15.png). Die Anmeldeinformationen für die Domäne werden überprüft. Es wird eine Fehlermeldung angezeigt, wenn die Anmeldeinformationen falsch sind.
 
         ![Anmeldeinformationen](./media/storsimple-ova-deploy3-iscsi-setup/image8.png)
+        
+           > [AZURE.NOTE]
+	   > 
+	   > Stellen Sie beim Beitritt Ihres iSCSI-Servers zu einer Domäne sicher, dass sich Ihr virtuelles Array in seiner eigenen Organisationseinheit für Microsoft Azure Active Directory befindet und keine Gruppenrichtlinienobjekte darauf angewendet sind.
+	   
 
     6. Klicken Sie auf **Übernehmen**. Die Geräteeinstellungen werden angewendet und überprüft.
  
@@ -134,7 +139,7 @@ Verwenden Sie die folgende Schritt-für-Schritt-Anleitung, um Ihr virtuelles Sto
 
     1. Geben Sie den **Dienstregistrierungsschlüssel** ein, den Sie in **Schritt 2: Abrufen des Dienstregistrierungsschlüssels** unter [Bereitstellen des StorSimple Virtual Array – Vorbereiten des Portals](storsimple-ova-deploy1-portal-prep.md#step-2-get-the-service-registration-key) beschafft haben.
 
-    2. Falls dies nicht das erste Gerät ist, das Sie bei diesem Dienst registrieren, müssen Sie den **Dienstdaten-Verschlüsselungsschlüssel** angeben. Dieser Schlüssel ist zusammen mit dem Dienstregistrierungsschlüssel zum Registrieren weiterer Geräte beim StorSimple Manager-Dienst erforderlich. Sehen Sie sich die weiteren Informationen zum [Abrufen des Dienstdaten-Verschlüsselungsschlüssels](storsimple-ova-web-ui-admin.md#get-the-service-data-encryption-key) für Ihre lokale Webbenutzeroberfläche an.
+    2. Falls dies nicht das erste Gerät ist, das Sie bei diesem Dienst registrieren, müssen Sie den **Dienstdaten-Verschlüsselungsschlüssel** angeben. Dieser Schlüssel ist zusammen mit dem Dienstregistrierungsschlüssel zum Registrieren weiterer Geräte beim StorSimple Manager-Dienst erforderlich. Sehen Sie sich die weiteren Informationen zum [Abrufen des Verschlüsselungsschlüssels für Dienstdaten](storsimple-ova-web-ui-admin.md#get-the-service-data-encryption-key) für Ihre lokale Webbenutzeroberfläche an.
 
     3. Klicken Sie auf **Registrieren**. Das Gerät wird neu gestartet. Sie müssen ggf. zwei bis drei Minuten warten, bis das Gerät erfolgreich registriert wurde. Nachdem das Gerät neu gestartet wurde, wird die Anmeldeseite angezeigt.
 
@@ -244,7 +249,7 @@ Führen Sie die folgenden Schritte aus, um Ihre StorSimple-Volumes auf einem Win
 
     ![Ermittelte Ziele](./media/storsimple-ova-deploy3-iscsi-setup/image24.png)
 
-5. Wählen Sie ein Zielgerät aus, und klicken Sie dann auf **Verbinden**. Nachdem das Gerät verbunden ist, sollte sich der Status in **Verbunden** ändern. Weitere Informationen zum Verwenden des Microsoft iSCSI-Initiators finden Sie unter [Installieren und Konfigurieren des Microsoft iSCSI-Initiators][1].
+5. Wählen Sie ein Zielgerät aus, und klicken Sie dann auf **Verbinden**. Nachdem das Gerät verbunden ist, sollte sich der Status in **Verbunden** ändern. (Weitere Informationen zum Verwenden des Microsoft iSCSI-Initiators finden Sie unter [Installieren und Konfigurieren des Microsoft iSCSI-Initiators][1].)
 
     ![Zielgerät auswählen](./media/storsimple-ova-deploy3-iscsi-setup/image25.png)
 
@@ -305,4 +310,4 @@ Führen Sie die folgenden Schritte aus, um den IQN (iSCSI Qualified Name) eines 
 <!--Reference link-->
 [1]: https://technet.microsoft.com/library/ee338480(WS.10).aspx
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0218_2016-->

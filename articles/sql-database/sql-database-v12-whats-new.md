@@ -150,7 +150,7 @@ Ein anderes Verfahren zum Ermitteln der Version besteht in der Ausführung der `
 Eine V12-Datenbank kann nur auf einem logischen V12-Server gehostet werden. Und ein V12-Server kann nur V12 Datenbanken hosten.
 
 
-Wenn Sie noch nicht V12 ausführen, können Sie ein Upgrade des logischen Servers ausführen, indem Sie die Schritte unter [Upgrade auf SQL-Datenbank V12 vorhanden](sql-database-v12-upgrade.md) befolgen.
+Wenn Sie noch nicht V12 ausführen, können Sie ein Upgrade des logischen Servers ausführen, indem Sie die Schritte unter [Upgrade auf SQL-Datenbank V12 vorhanden](sql-database-v12-plan-prepare-upgrade.md) befolgen.
 
 
 ## <a name="V12AzureSqlDbPreviewGaTable"></a> Regionen mit allgemeiner Verfügbarkeit
@@ -161,4 +161,4 @@ Wenn Sie noch nicht V12 ausführen, können Sie ein Upgrade des logischen Server
 
 [Ergänzende Nutzungsbedingungen für Microsoft Azure-Vorschauversionen](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0218_2016-->

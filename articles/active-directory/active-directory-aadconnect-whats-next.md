@@ -13,11 +13,18 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/21/2016"
+	ms.date="02/16/2016"
 	ms.author="billmath"/>
 
 # Nächste Schritte und Verwalten von Azure AD Connect
 Anhand der Anweisungen in den folgenden weiterführenden Themen können Sie Azure Active Directory Connect entsprechend den Bedürfnissen und Anforderungen Ihrer Organisation anpassen.
+
+## Optionale Konfiguration für den AD FS-Dienst
+Sie können die Abbildung und das Logo für Ihre AD FS-Anmeldeseiten anpassen, indem Sie sich bei den AD FS anmelden und PSH verwenden, um diese Konfiguration vorzunehmen.
+
+	Set-AdfsWebTheme -TargetName default -Logo @{path="c:\Contoso\logo.png"} –Illustration @{path=”c:\Contoso\illustration.png”}
+
+Eine vollständige Beschreibung der Optionen zur Konfiguration finden Sie unter [Anpassen der AD FS-Anmeldeseiten](https://technet.microsoft.com/library/dn280950.aspx).
 
 ## Zuweisen von Lizenzen für Benutzer von Azure AD Premium und Enterprise Mobility
 
@@ -69,4 +76,4 @@ Stagingmodus aktivieren | Hiermit können Sie Informationen bereitstellen, die s
 ## Nächste Schritte
 Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

@@ -57,9 +57,11 @@ In Abbildung 1 sind die wesentlichen Aspekte eines Elasticsearch-Clusters mit d
 
 ![](media/guidance-elasticsearch-general-cluster1.png)
 
-**Abbildung 1.** Einfacher Elasticsearch-Cluster mit zwei primären Knoten und zwei Replikatsätzen
+**Abbildung 1.**
+Einfacher Elasticsearch-Cluster mit zwei primären Knoten und zwei Replikatsätzen
 
-In diesem Cluster befinden sich das primäre Shard 1 und das primäre Shard 2 auf separaten Knoten, um die Last gleichmäßig zu verteilen. Die Replikate werden auf ähnliche Weise verteilt. Wenn eine einzelner Knoten ausfällt, verfügen die verbleibenden Knoten über genügend Informationen, damit das System weiterhin funktioniert. Falls erforderlich, macht Elasticsearch ein Replikat-Shard zu einem primären Shard, wenn das entsprechende primäre Shard nicht verfügbar ist. Zu Beginn der Ausführung eines Knotens kann entweder ein neuer Cluster initiiert (wenn es der erste Knoten im Cluster ist) oder der Beitritt zu einem vorhandenen Cluster durchgeführt werden. Der Cluster, zu dem ein Knoten gehört, wird anhand der Einstellung *cluster.name* in der Datei „elasticsearch.yml“ bestimmt.
+In diesem Cluster befinden sich das primäre Shard 1 und das primäre Shard 2 auf separaten Knoten, um die Last gleichmäßig zu verteilen. Die Replikate werden auf ähnliche Weise verteilt. Wenn eine einzelner Knoten ausfällt, verfügen die verbleibenden Knoten über genügend Informationen, damit das System weiterhin funktioniert. Falls erforderlich, macht Elasticsearch ein Replikat-Shard zu einem primären Shard, wenn das entsprechende primäre Shard nicht verfügbar ist.
+Zu Beginn der Ausführung eines Knotens kann entweder ein neuer Cluster initiiert (wenn es der erste Knoten im Cluster ist) oder der Beitritt zu einem vorhandenen Cluster durchgeführt werden. Der Cluster, zu dem ein Knoten gehört, wird anhand der Einstellung *cluster.name* in der Datei „elasticsearch.yml“ bestimmt.
 
 ### Knotenrollen
 
@@ -104,7 +106,8 @@ Datenknoten können weiterhin mit anderen Datenknoten, Clientknoten und dedizier
 
 ![](media/guidance-elasticsearch-general-cluster2.png)
 
-**Abbildung 2.** Elasticsearch-Cluster mit verschiedenen Knotentypen
+**Abbildung 2.**
+Elasticsearch-Cluster mit verschiedenen Knotentypen
 
 ### Vor- und Nachteile der Verwendung von Clientknoten
 
@@ -145,7 +148,8 @@ var client = new ElasticsearchClient(config);
 
 ![](media/guidance-elasticsearch-general-clientappinstances.png)
 
-**Abbildung 3.** Verbindung von Clientanwendungsinstanzen mit einem Elasticsearch-Cluster über den Azure Load Balancer
+**Abbildung 3.**
+Verbindung von Clientanwendungsinstanzen mit einem Elasticsearch-Cluster über den Azure Load Balancer
 
 **Benutzerdefinierter Lastenausgleich**: Sie können [nginx][] als Reverseproxyserver anstelle von Azure Load Balancer verwenden. „nginx“ bietet mehrere Methoden für den Lastenausgleich, z. B. Roundrobin, „wenigste Verbindungen“ (eine Anforderung wird an das Ziel mit den derzeit wenigsten Verbindungen geleitet) und Hashing basierend auf der IP-Adresse des Clients.
 
@@ -174,7 +178,8 @@ Wenn Sie einen Elasticsearch-Cluster in einem Azure VNET hosten, können Sie ang
 
 > [AZURE.NOTE] Für die aktuelle Version des Azure-Cloud-Plug-Ins ist es erforderlich, dass Sie das Verwaltungszertifikat für Ihr Azure-Abonnement im Java-Schlüsselspeicher auf dem Elasticsearch-Knoten installieren und den Speicherort und die Anmeldeinformationen für den Zugriff auf den Schlüsselspeicher in der Datei „elasticsearch.yml“ angeben. Diese Datei wird als Klartext vorgehalten. Es ist also sehr wichtig sicherzustellen, dass auf diese Datei nur mit dem Konto zugegriffen werden kann, auf dem der Elasticsearch-Dienst ausgeführt wird. Außerdem ist dieser Ansatz unter Umständen nicht mit Azure-Ressourcen-Manager-Bereitstellungen (ARM) kompatibel. Daher wird empfohlen, statische IP-Adressen für Masterknoten zu verwenden und diese Knoten zum Implementieren von Unicast-Nachrichten für die Zen-Ermittlung im gesamten Cluster einzusetzen. In der folgenden Konfiguration (aus der Datei „elasticsearch.yml“ für einen Beispieldatenknoten) verweisen die Host-IP-Adressen auf Masterknoten im Cluster:
 
->`discovery.zen.ping.multicast.enabled: false` `discovery.zen.ping.unicast.hosts: ["10.0.0.10","10.0.0.11","10.0.0.12"]`
+>`discovery.zen.ping.multicast.enabled: false`  
+`discovery.zen.ping.unicast.hosts: ["10.0.0.10","10.0.0.11","10.0.0.12"]`
 
 ## Allgemeine Systemrichtlinien
 
@@ -239,7 +244,9 @@ Sie können Elasticsearch unter Windows oder Linux ausführen. Der Elasticsearch
 
 ### Bereitstellen von Elasticsearch unter Azure
 
-Es ist nicht schwierig, eine einzelne Instanz von Elasticsearch bereitzustellen, aber das Erstellen von mehreren Knoten und das Installieren und Konfigurieren von Elasticsearch auf jedem Knoten kann ein zeitaufwändiger und fehleranfälliger Prozess sein. Wenn Sie die Ausführung von Elasticsearch auf Azure VMs erwägen, haben Sie zwei Möglichkeiten, um die Wahrscheinlichkeit von Fehlern zu reduzieren. - Verwenden Sie die [Azure-Ressourcen-Manager-Vorlage (ARM)](http://azure.microsoft.com/documentation/templates/elasticsearch/) zum Erstellen des Clusters. Diese Vorlage ist vollständig parametrisiert, damit Sie die Größe und Leistungsebene für die VMs, die die Knoten implementieren, die Anzahl der zu verwendenden Datenträger und andere gängige Faktoren angeben können. Mit der Vorlage kann ein Cluster basierend auf Windows Server 2012 oder Ubuntu Linux 14.0.4 erstellt werden. -Verwenden Sie Skripts, die automatisiert oder unbeaufsichtigt ausgeführt werden können. Skripts, mit denen ein Elasticsearch-Cluster erstellt und bereitgestellt werden kann, finden Sie unter [Azure-Schnellstartvorlagen][].
+Es ist nicht schwierig, eine einzelne Instanz von Elasticsearch bereitzustellen, aber das Erstellen von mehreren Knoten und das Installieren und Konfigurieren von Elasticsearch auf jedem Knoten kann ein zeitaufwändiger und fehleranfälliger Prozess sein. Wenn Sie die Ausführung von Elasticsearch auf Azure VMs erwägen, haben Sie zwei Möglichkeiten, um die Wahrscheinlichkeit von Fehlern zu reduzieren.
+- Verwenden Sie die [Azure-Ressourcen-Manager-Vorlage (ARM)](http://azure.microsoft.com/documentation/templates/elasticsearch/) zum Erstellen des Clusters. Diese Vorlage ist vollständig parametrisiert, damit Sie die Größe und Leistungsebene für die VMs, die die Knoten implementieren, die Anzahl der zu verwendenden Datenträger und andere gängige Faktoren angeben können. Mit der Vorlage kann ein Cluster basierend auf Windows Server 2012 oder Ubuntu Linux 14.0.4 erstellt werden.
+- Verwenden Sie Skripts, die automatisiert oder unbeaufsichtigt ausgeführt werden können. Skripts, mit denen ein Elasticsearch-Cluster erstellt und bereitgestellt werden kann, finden Sie unter [Azure-Schnellstartvorlagen][].
 
 ## Aspekte der Größenauslegung von Clustern und Knoten und der Skalierbarkeit
 
@@ -251,7 +258,8 @@ In Abbildung 4 ist ein Ausgangspunkt zum Entwerfen einer Elasticsearch-Topologi
 
 ![](media/guidance-elasticsearch-general-startingpoint.png)
 
-**Abbildung 4.** Vorschlag für einen Ausgangspunkt zum Erstellen eines Elasticsearch-Clusters mit Azure
+**Abbildung 4.**
+Vorschlag für einen Ausgangspunkt zum Erstellen eines Elasticsearch-Clusters mit Azure
 
 Diese Topologie besteht aus sechs Datenknoten sowie drei Clientknoten und drei Masterknoten (es ist nur ein Masterknoten ausgewählt, aber die anderen beiden Knoten können bei einem Ausfall des Masterknotens einspringen). Jeder Knoten wird als separate VM implementiert. Azure-Webanwendungen werden über einen Load Balancer an Clientknoten geleitet. In diesem Beispiel befinden sich alle Knoten und die Webanwendungen in demselben Azure VNET, sodass sie praktisch von der Außenwelt abgeschnitten sind. Falls der Cluster extern verfügbar sein muss (z. B. als Teil einer Hybridlösung mit lokalen Clients), können Sie den Azure Load Balancer zum Bereitstellen einer öffentlichen IP-Adresse verwenden. Sie müssen aber zusätzliche Sicherheitsvorkehrungen treffen, um den unbefugten Zugriff auf den Cluster zu verhindern. Die optionale „Jumpbox“ ist eine VM, die nur für Administratoren verfügbar ist. Diese VM verfügt über eine Netzwerkverbindung mit dem Azure VNET, aber auch über eine nach außen gerichtete Netzwerkverbindung, um die Administratoranmeldung aus einem externen Netzwerk zu ermöglichen (diese Anmeldung sollte durch ein sicheres Kennwort oder ein Zertifikat geschützt sein). Ein Administrator kann sich an der Jumpbox anmelden und von dort aus eine direkte Verbindung mit den Knoten im Cluster herstellen. Alternative Ansätze sind beispielsweise die Verwendung einer Site-to-Site-VPN-Verbindung zwischen einem Unternehmen und dem VNET oder von [ExpressRoute][]-Verbindungen mit dem VNET. Diese Verfahren ermöglichen den Administratorzugriff auf den Cluster, ohne dass der Cluster für das öffentliche Internet verfügbar gemacht wird.
 
@@ -269,7 +277,8 @@ Bei diesem Verfahren kann jeder Cluster die Daten enthalten, auf die von lokalen
 
 ![](media/guidance-elasticsearch-general-tribenode.png)
 
-**Abbildung 5.** Clientanwendung, die über einen Tribe-Knoten auf mehrere Cluster zugreift
+**Abbildung 5.**
+Clientanwendung, die über einen Tribe-Knoten auf mehrere Cluster zugreift
 
 In diesem Beispiel stellt die Clientanwendung eine Verbindung mit dem Tribe-Knoten in Cluster 1 her (in derselben Region angeordnet). Dieser Knoten ist aber so konfiguriert, dass auf Cluster 2 und Cluster 3 zugegriffen werden kann, die sich in unterschiedlichen Regionen befinden können. Die Clientanwendung kann Anforderungen senden, mit denen Daten in den Clustern abgerufen oder geändert werden können.
 
@@ -284,13 +293,15 @@ Große Topologien, bei denen die Cluster aus dedizierten Master-, Client- und Da
 
 ![](media/guidance-elasticsearch-general-threenodecluster.png)
 
-**Abbildung 6.** Cluster mit drei Knoten sowie drei Shards und Replikaten
+**Abbildung 6.**
+Cluster mit drei Knoten sowie drei Shards und Replikaten
 
 Wenn Sie eine Entwicklungsinstallation auf einem eigenständigen Computer ausführen, können Sie einen Cluster mit einem einzelnen Knoten konfigurieren, der als Master, Client und Datenspeicher fungiert. Alternativ dazu können Sie mehrere Knoten starten, die auf demselben Computer als Cluster ausgeführt werden, indem Sie mehr als eine Instanz von Elasticsearch starten. Abbildung 7 enthält ein Beispiel.
 
 ![](media/guidance-elasticsearch-general-developmentconfiguration.png)
 
-**Abbildung 7.** Entwicklungskonfiguration mit Ausführung mehrerer Elasticsearch-Knoten auf demselben Computer
+**Abbildung 7.**
+Entwicklungskonfiguration mit Ausführung mehrerer Elasticsearch-Knoten auf demselben Computer
 
 Beachten Sie, dass keine dieser eigenständigen Konfigurationen für eine Produktionsumgebung zu empfehlen ist. Sie können zu Konflikten führen, es sei denn, Ihr Entwicklungscomputer verfügt über sehr viel Arbeitsspeicher und mehrere schnelle Datenträger. Außerdem kann die hohe Verfügbarkeit nicht sichergestellt werden. Wenn der Computer ausfällt, gehen alle Knoten verloren.
 
@@ -300,11 +311,18 @@ Elasticsearch kann in zwei Richtungen skaliert werden: vertikal (mit größeren 
 
 **Vertikales Skalieren von Elasticsearch-Datenknoten**
 
-Wenn Sie einen Elasticsearch-Cluster hosten, indem Sie Azure VMs verwenden, kann jeder Knoten einer VM entsprechen. Die vertikale Skalierbarkeit eines Knotens wird vor allem durch die SKU der VM und die allgemeinen Einschränkungen bestimmt, die für einzelne Speicherkonten und Azure-Abonnements gelten. Auf der Seite [Einschränkungen für Azure-Abonnements und Dienste, Kontingente und Einschränkungen](azure-subscription-service-limits/) sind die Einschränkungen ausführlich beschrieben. Was die Erstellung eines Elasticsearch-Clusters betrifft, sind die Angaben in der folgenden Liste am wichtigsten. Außerdem sollten Sie ohne triftigen Grund keine VMs mit mehr als 64 GB Arbeitsspeicher verwenden. Wie im Abschnitt [Arbeitsspeicheranforderungen][] beschrieben, sollten Sie nicht mehr als 30 GB RAM auf jeder VM für die JVM zuordnen und es dem Betriebssystem ermöglichen, den restlichen Arbeitsspeicher für die E/A-Pufferung zu nutzen: - Jedes Speicherkonto ist auf 20.000 IOPS beschränkt. Die Verwendung desselben Speicherkontos für mehrere VHDs kann zu einer Beeinträchtigung der Leistung dieser VHDs führen. - Die Anzahl der Datenknoten in einem VNET. Wenn Sie nicht den Azure-Ressourcen-Manager (ARM) verwenden, gilt eine Obergrenze von 2048 VM-Instanzen pro VNET. Dies ist für viele Fälle zwar ausreichend, aber es kann eine Einschränkung darstellen, wenn Sie über eine sehr große Konfiguration mit Tausenden von Knoten verfügen. - Anzahl von Speicherkonten pro Abonnement und Region. Sie können bis zu 100 Speicherkonten pro Azure-Abonnement in jeder Region erstellen. Speicherkonten werden zum Vorhalten von virtuellen Datenträgern verwendet, und jedes Speicherkonto weist eine Speicherplatzbeschränkung von 500 TB auf. - Anzahl der Kerne pro Abonnement. Die Standardobergrenze beträgt 20 Kerne pro Abonnement, aber dies kann von Microsoft auf bis zu 10.000 Kerne erhöht werden. Denken Sie daran, dass einige VM-Größen (A9, A11, D14 und DS14) 16 Kerne enthalten können, während eine G5-VM 32 Kerne hat. - Die Arbeitsspeichermenge pro VM-Größe. Für kleinere VMs sind beschränkte Mengen von Arbeitsspeicher verfügbar (D1-Maschinen haben 3,5 GB, und D2-Maschinen haben 7 GB). Diese Maschinen sind unter Umständen nicht für Szenarien geeignet, in denen Elasticsearch große Mengen von Daten zwischenspeichern muss, um eine gute Leistung zu erzielen (z. B. das Aggregieren von Daten oder Analysieren einer großen Zahl von Dokumenten während der Datenerfassung). - Die maximale Anzahl von Datenträgern pro VM-Größe. Durch diese Einschränkung können Größe und Leistung eines Clusters begrenzt werden. Eine geringere Zahl von Datenträgern bedeutet, dass weniger Daten vorgehalten werden können, und die Leistung kann reduziert werden, indem weniger Datenträger für das Striping verfügbar sind. - Die Anzahl von Updatedomänen/Fehlerdomänen pro Verfügbarkeitsgruppe. Wenn Sie VMs per ARM erstellen, kann jede Verfügbarkeitsgruppe bis zu drei Fehlerdomänen und 20 Updatedomänen zugeordnet werden. Diese Einschränkung kann sich auf die Resilienz eines großen Clusters auswirken, für das häufig rollierende Updates durchgeführt werden.
+Wenn Sie einen Elasticsearch-Cluster hosten, indem Sie Azure VMs verwenden, kann jeder Knoten einer VM entsprechen. Die vertikale Skalierbarkeit eines Knotens wird vor allem durch die SKU der VM und die allgemeinen Einschränkungen bestimmt, die für einzelne Speicherkonten und Azure-Abonnements gelten. Auf der Seite [Einschränkungen für Azure-Abonnements und Dienste, Kontingente und Einschränkungen](azure-subscription-service-limits/) sind die Einschränkungen ausführlich beschrieben. Was die Erstellung eines Elasticsearch-Clusters betrifft, sind die Angaben in der folgenden Liste am wichtigsten. Außerdem sollten Sie ohne triftigen Grund keine VMs mit mehr als 64 GB Arbeitsspeicher verwenden. Wie im Abschnitt [Arbeitsspeicheranforderungen][] beschrieben, sollten Sie nicht mehr als 30 GB RAM auf jeder VM für die JVM zuordnen und es dem Betriebssystem ermöglichen, den restlichen Arbeitsspeicher für die E/A-Pufferung zu nutzen:
+- Jedes Speicherkonto ist auf 20.000 IOPS beschränkt. Die Verwendung desselben Speicherkontos für mehrere VHDs kann zu einer Beeinträchtigung der Leistung dieser VHDs führen.
+- Die Anzahl der Datenknoten in einem VNET. Wenn Sie nicht den Azure-Ressourcen-Manager (ARM) verwenden, gilt eine Obergrenze von 2048 VM-Instanzen pro VNET. Dies ist für viele Fälle zwar ausreichend, aber es kann eine Einschränkung darstellen, wenn Sie über eine sehr große Konfiguration mit Tausenden von Knoten verfügen.
+- Anzahl von Speicherkonten pro Abonnement und Region. Sie können bis zu 100 Speicherkonten pro Azure-Abonnement in jeder Region erstellen. Speicherkonten werden zum Vorhalten von virtuellen Datenträgern verwendet, und jedes Speicherkonto weist eine Speicherplatzbeschränkung von 500 TB auf.
+- Anzahl der Kerne pro Abonnement. Die Standardobergrenze beträgt 20 Kerne pro Abonnement, aber dies kann von Microsoft auf bis zu 10.000 Kerne erhöht werden. Denken Sie daran, dass einige VM-Größen (A9, A11, D14 und DS14) 16 Kerne enthalten können, während eine G5-VM 32 Kerne hat.
+- Die Arbeitsspeichermenge pro VM-Größe. Für kleinere VMs sind beschränkte Mengen von Arbeitsspeicher verfügbar (D1-Maschinen haben 3,5 GB, und D2-Maschinen haben 7 GB). Diese Maschinen sind unter Umständen nicht für Szenarien geeignet, in denen Elasticsearch große Mengen von Daten zwischenspeichern muss, um eine gute Leistung zu erzielen (z. B. das Aggregieren von Daten oder Analysieren einer großen Zahl von Dokumenten während der Datenerfassung).
+- Die maximale Anzahl von Datenträgern pro VM-Größe. Durch diese Einschränkung können Größe und Leistung eines Clusters begrenzt werden. Eine geringere Zahl von Datenträgern bedeutet, dass weniger Daten vorgehalten werden können, und die Leistung kann reduziert werden, indem weniger Datenträger für das Striping verfügbar sind.
+- Die Anzahl von Updatedomänen/Fehlerdomänen pro Verfügbarkeitsgruppe. Wenn Sie VMs per ARM erstellen, kann jede Verfügbarkeitsgruppe bis zu drei Fehlerdomänen und 20 Updatedomänen zugeordnet werden. Diese Einschränkung kann sich auf die Resilienz eines großen Clusters auswirken, für das häufig rollierende Updates durchgeführt werden.
 
 Aufgrund dieser Einschränkungen sollten Sie die virtuellen Datenträger für die VMs in einem Cluster immer auf Speicherkonten verteilen, um die Wahrscheinlichkeit einer E/A-Drosselung zu reduzieren. In einem sehr großen Cluster müssen Sie unter Umständen Ihre logische Infrastruktur neu entwerfen und in separate funktionale Partitionen aufteilen. Unter Umständen müssen Sie den Cluster beispielsweise auf Abonnements aufteilen. Dieser Prozess kann aber zu weiteren Komplikationen führen, weil VNETs verbunden werden müssen.
 
->	[AZURE.NOTE] Be aware that with Azure, storage accounts are pinned to a specific storage stamp. This is an internal mechanism used to maintain consistency and availability. The paper [A Highly Available Cloud Storage Service with Strong Consistency][] provides more details on how this works. If you have a storage outage loca]lized to a specific stamp, you will get errors on all drives created using that account. When this occurs, any VMs using these drives may fail. Using multiple storage accounts to host the different drives for a VM can therefore increase the risk of failure for that VM. For this reason, it is recommended that you use a single storage account per node, and store the system drive and all data drives in that account.
+>	[AZURE.NOTE] Beachten Sie, dass Speicherkonten in Azure mit einem spezifischen Speicherstempel verknüpft werden. Dies ist ein interner Testmechanismus, mit dem Konsistenz und Verfügbarkeit sichergestellt werden. Im Dokument [A Highly Available Cloud Storage Service with Strong Consistency][] (Ein hoch verfügbarer Cloudspeicherdienst mit hoher Konsistenz) werden weitere Informationen zur Funktionsweise bereitgestellt. Wenn es für einen spezifischen Stempel zu einem Speicherausfall kommt,  erhalten Sie Fehler für alle Laufwerke, die mit diesem Konto erstellt wurden. Wenn dieser Fall eintritt, kann es zu Fehlern für alle virtuellen Computer kommen, die diese Laufwerke verwenden.Das Verwenden mehrerer Speicherkonten zum Hosten unterschiedlicher Laufwerke für einen virtuellen Computer kann deshalb das Risiko eines Ausfalls für diesen virtuellen Computer erhöhen. Aus diesem Grund wird empfohlen, pro Knoten ein einziges Speicherkonto zu verwenden und das Systemlaufwerk und alle Datenlaufwerke in diesem Konto zu speichern.
 
 **Horizontales Skalieren eines Elasticsearch-Clusters**
 
@@ -378,11 +396,19 @@ Elasticsearch ist ein Netzwerkdienst. Die Knoten in einem Elasticsearch-Cluster 
 
 Alle Anforderungen von Clients an den Cluster sollten authentifiziert werden. Außerdem sollten Sie verhindern, dass nicht autorisierte Knoten dem Cluster beitreten, da auf diese Weise eine „Backdoor“ für das System geschaffen werden kann, um die Authentifizierung zu umgehen.
 
-Es sind Elasticsearch-Plug-Ins verfügbar, mit denen unterschiedliche Arten von Authentifizierung durchgeführt werden können, z. B.: - HTTP-Standardauthentifizierung. Hierbei sind jeweils Benutzernamen und Kennwörter enthalten. Alle Anforderungen sollten per SSL/TLS oder unter Verwendung einer gleichwertigen Schutzebene verschlüsselt werden. - LDAP- und Active Directory-Integration. Bei diesem Ansatz ist es erforderlich, dass Clients Rollen in LDAP- oder AD-Gruppen zugewiesen werden. - Native Authentifizierung mit Identitäten, die im Elasticsearch-Cluster selbst definiert werden. - TLS-Authentifizierung in einem Cluster zum Authentifizieren aller Knoten. - IP-Filterung, um für Clients aus nicht autorisierten Subnetzen die Verbindungsherstellung zu verhindern und auszuschließen, dass Knoten aus diesen Subnetzen dem Cluster beitreten.
+Es sind Elasticsearch-Plug-Ins verfügbar, mit denen unterschiedliche Arten von Authentifizierung durchgeführt werden können, z. B.:
+- HTTP-Standardauthentifizierung. Hierbei sind jeweils Benutzernamen und Kennwörter enthalten. Alle Anforderungen sollten per SSL/TLS oder unter Verwendung einer gleichwertigen Schutzebene verschlüsselt werden.
+- LDAP- und Active Directory-Integration. Bei diesem Ansatz ist es erforderlich, dass Clients Rollen in LDAP- oder AD-Gruppen zugewiesen werden.
+- Native Authentifizierung mit Identitäten, die im Elasticsearch-Cluster selbst definiert werden.
+- TLS-Authentifizierung in einem Cluster zum Authentifizieren aller Knoten.
+- IP-Filterung, um für Clients aus nicht autorisierten Subnetzen die Verbindungsherstellung zu verhindern und auszuschließen, dass Knoten aus diesen Subnetzen dem Cluster beitreten.
 
 ### Autorisieren von Clientanforderungen
 
-Die Autorisierung ist von dem Elasticsearch-Plug-In abhängig, das zum Bereitstellen dieses Diensts verwendet wird. Ein Plug-In für die Standardauthentifizierung stellt normalerweise Features bereit, mit denen die Ebene der Authentifizierung definiert wird. Bei einem Plug-In, für das LDAP oder AD verwendet wird, werden dagegen Clients normalerweise Rollen zugeordnet, und diesen Rollen werden dann Zugriffsrechte zugewiesen. Bei Verwendung aller Plug-Ins sollten Sie die folgenden Punkte berücksichtigen: - Müssen Sie die Vorgänge beschränken, die von einem Client durchgeführt werden können? Sollte es für einen Client beispielsweise möglich sein, den Status des Clusters zu überwachen oder Indizes zu erstellen und zu löschen? - Sollte der Client auf bestimmte Indizes beschränkt werden? Dies ist in Situationen mit mehreren Mandanten hilfreich, in denen Mandanten ein eigener spezieller Satz von Indizes zugewiesen werden kann und diese Indizes für andere Mandanten unzugänglich sein sollen. - Sollte der Client Daten in einem Index lesen und in einen Index schreiben können? Beispielsweise kann ein Client in der Lage sein, Suchen durchzuführen, bei denen Daten mit einem Index abgerufen werden. Es soll aber verhindert werden, dass dem Index Daten hinzugefügt oder daraus gelöscht werden.
+Die Autorisierung ist von dem Elasticsearch-Plug-In abhängig, das zum Bereitstellen dieses Diensts verwendet wird. Ein Plug-In für die Standardauthentifizierung stellt normalerweise Features bereit, mit denen die Ebene der Authentifizierung definiert wird. Bei einem Plug-In, für das LDAP oder AD verwendet wird, werden dagegen Clients normalerweise Rollen zugeordnet, und diesen Rollen werden dann Zugriffsrechte zugewiesen. Bei Verwendung aller Plug-Ins sollten Sie die folgenden Punkte berücksichtigen:
+- Müssen Sie die Vorgänge beschränken, die von einem Client durchgeführt werden können? Sollte es für einen Client beispielsweise möglich sein, den Status des Clusters zu überwachen oder Indizes zu erstellen und zu löschen?
+- Sollte der Client auf bestimmte Indizes beschränkt werden? Dies ist in Situationen mit mehreren Mandanten hilfreich, in denen Mandanten ein eigener spezieller Satz von Indizes zugewiesen werden kann und diese Indizes für andere Mandanten unzugänglich sein sollen.
+- Sollte der Client Daten in einem Index lesen und in einen Index schreiben können? Beispielsweise kann ein Client in der Lage sein, Suchen durchzuführen, bei denen Daten mit einem Index abgerufen werden. Es soll aber verhindert werden, dass dem Index Daten hinzugefügt oder daraus gelöscht werden.
 
 Bei den meisten Sicherheits-Plug-Ins sind die Vorgänge auf die Cluster- oder Indexebene beschränkt, und nicht auf Subnetze mit Dokumenten in Indizes. Dies ist aus Effizienzgründen der Fall. Daher ist es nicht einfach, Anforderungen auf bestimmte Dokumente in einem Index zu beschränken. Falls Sie diesen Grad an Granularität benötigen, sollten Sie Dokumente in separaten Indizes speichern und Aliase verwenden, unter denen Indizes gruppiert werden. Gehen Sie beispielsweise wie folgt vor, wenn Benutzer A in einem Personalverwaltungssystem Zugriff auf alle Dokumente benötigt, die Informationen zu Mitarbeitern von Abteilung X enthalten, Benutzer B Zugriff auf alle Dokumente mit Informationen zu Mitarbeitern in Abteilung Y und Benutzer C Zugriff auf alle Dokumente mit Informationen zu Mitarbeitern in beiden Abteilungen: Erstellen Sie zwei Indizes (für Abteilung X und Abteilung Y) und einen Alias, der auf beide Indizes verweist. Gewähren Sie Benutzer A Lesezugriff auf den ersten Index, gewähren Sie Benutzer B Lesezugriff auf den zweiten Index, und gewähren Sie Benutzer C Lesezugriff auf beide Indizes über den Alias. Weitere Informationen finden Sie unter [Faking Index per User with Aliases][] („Faken“ des Index pro Benutzer mit Aliasen).
 
@@ -415,7 +441,8 @@ Gehen Sie proaktiv vor. Erkennen und stoppen Sie schädliche Aktivitäten, bevor
 
 ### Schützen der Daten
 
-Sie können Daten quasi „im Vorübergehen“ schützen, indem Sie SSL/TLS nutzen. Elasticsearch bietet aber keine integrierte Form der Datenverschlüsselung für Informationen, die auf Datenträger gespeichert werden. Beachten Sie, dass diese Informationen in normalen Datenträgerdateien vorgehalten werden. Jeder Benutzer mit Zugriff auf diese Dateien kann die darin enthaltenen Daten manipulieren, indem er sie beispielsweise in seinen eigenen Cluster kopiert. Beachten Sie die folgenden Punkte: - Schützen Sie die Dateien, die von Elasticsearch zum Vorhalten der Daten verwendet werden. Verhindern Sie den willkürlichen Lese- oder Schreibzugriff auf andere Identitäten als den Elasticsearch-Dienst.
+Sie können Daten quasi „im Vorübergehen“ schützen, indem Sie SSL/TLS nutzen. Elasticsearch bietet aber keine integrierte Form der Datenverschlüsselung für Informationen, die auf Datenträger gespeichert werden. Beachten Sie, dass diese Informationen in normalen Datenträgerdateien vorgehalten werden. Jeder Benutzer mit Zugriff auf diese Dateien kann die darin enthaltenen Daten manipulieren, indem er sie beispielsweise in seinen eigenen Cluster kopiert. Beachten Sie die folgenden Punkte:
+- Schützen Sie die Dateien, die von Elasticsearch zum Vorhalten der Daten verwendet werden. Verhindern Sie den willkürlichen Lese- oder Schreibzugriff auf andere Identitäten als den Elasticsearch-Dienst.
 
 - Verschlüsseln Sie die Daten in diesen Dateien mit einem Encrypting File System.
 
@@ -482,7 +509,8 @@ Die folgende Ausgabe wurde mit dieser API generiert:
 }
 ```
 
-Dieser Cluster enthält zwei Indizes mit den Namen *systwo* und *sysfour*. Wichtige Statistiken für die Überwachung eines Index sind „status“, „active\_shards“ und „unassigned\_shards“. Die Statusanzeige sollte grün sein, die Anzahl unter „active\_shards“ sollte die Anzahl von „number\_of\_shards“ und „number\_of\_replicas“ widerspiegeln, und „unassigned\_shards“ sollte den Wert 0 haben. Wenn die Statusanzeige rot ist, fehlt ein Teil des Index oder wurde beschädigt. Sie können dies überprüfen, indem Sie sich die Einstellungen ansehen: *active\_shards* ist kleiner als *number\_of\_shards* - (*number\_of\_replicas* + 1), und „unassigned\_shards“ ist nicht 0. Beachten Sie, dass eine gelbe Statusanzeige auf Folgendes hinweist: Ein Index befindet sich in einem Übergangszustand, entweder als Ergebnis der Hinzufügung weiterer Replikate oder aufgrund einer Neuanordnung von Shards. Der Status sollte grün angezeigt werden, wenn der Übergang abgeschlossen ist. Falls der Status längere Zeit gelb angezeigt wird oder sich in rot ändert, sollten Sie nachsehen, ob auf Betriebssystemebene signifikante E/A-Ereignisse (z. B. ein Datenträger- oder Netzwerkausfall) aufgetreten sind. Die API „\_nodes/stats“ liefert umfassende Informationen zu jedem Knoten im Cluster:
+Dieser Cluster enthält zwei Indizes mit den Namen *systwo* und *sysfour*. Wichtige Statistiken für die Überwachung eines Index sind „status“, „active\_shards“ und „unassigned\_shards“. Die Statusanzeige sollte grün sein, die Anzahl unter „active\_shards“ sollte die Anzahl von „number\_of\_shards“ und „number\_of\_replicas“ widerspiegeln, und „unassigned\_shards“ sollte den Wert 0 haben. Wenn die Statusanzeige rot ist, fehlt ein Teil des Index oder wurde beschädigt. Sie können dies überprüfen, indem Sie sich die Einstellungen ansehen: *active\_shards* ist kleiner als *number\_of\_shards* - (*number\_of\_replicas* + 1), und „unassigned\_shards“ ist nicht 0. Beachten Sie, dass eine gelbe Statusanzeige auf Folgendes hinweist: Ein Index befindet sich in einem Übergangszustand, entweder als Ergebnis der Hinzufügung weiterer Replikate oder aufgrund einer Neuanordnung von Shards. Der Status sollte grün angezeigt werden, wenn der Übergang abgeschlossen ist. Falls der Status längere Zeit gelb angezeigt wird oder sich in rot ändert, sollten Sie nachsehen, ob auf Betriebssystemebene signifikante E/A-Ereignisse (z. B. ein Datenträger- oder Netzwerkausfall) aufgetreten sind.
+Die API „\_nodes/stats“ liefert umfassende Informationen zu jedem Knoten im Cluster:
 
 `GET _nodes/stats`
 
@@ -564,4 +592,4 @@ JMeter wurde zum Durchführen von Benchmarking und anderen Auslastungstests genu
 [Watcher]: https://www.elastic.co/products/watcher
 [Zen]: https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-discovery-zen.html
 
-<!---HONumber=AcomDC_0211_2016-->
+<!----HONumber=AcomDC_0211_2016-->

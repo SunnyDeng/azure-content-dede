@@ -112,12 +112,13 @@ Wenn die Bereitstellung abgeschlossen ist, können Sie Ihren Cluster im Portal p
 
 1. Wechseln Sie zu **Durchsuchen**, und klicken Sie auf **Service Fabric-Cluster**.
 
-2. Suchen Sie Ihren Cluster, und klicken Sie darauf. 
-	![Screenshot der Suche nach dem Cluster im Portal.][BrowseCluster]
+2. Suchen Sie Ihren Cluster, und klicken Sie darauf. ![Screenshot der Suche nach dem Cluster im Portal.][BrowseCluster]
 
 3. Sie können jetzt die Details Ihres Clusters, einschließlich der öffentlichen IP-Adresse, im Dashboard anzeigen. Wenn Sie die Maus über **Öffentliche IP-Adresse des Clusters** bewegen, wird eine Zwischenablage angezeigt, in die Sie die Adresse durch Klicken kopieren können. ![Screenshot der Clusterdetails im Dashboard.][ClusterDashboard]
 
   Der Abschnitt **Knotenmonitor** auf dem Dashboardblatt des Clusters gibt die Anzahl der virtuellen Computer an, die fehlerfrei bzw. fehlerhaft sind. Weitere Informationen zur Clusterintegrität finden Sie unter [Einführung in die Service Fabric-Integritätsüberwachung](service-fabric-health-introduction.md).
+
+>[AZURE.NOTE] Um Verfügbarkeit sicherzustellen und den Zustand beizubehalten, muss eine bestimmte Anzahl von Knoten in einem Service Fabric-Cluster stets in Betrieb sein. Dies wird auch als „Aufrechterhalten eines Quorums“ bezeichnet. Daher ist es üblicherweise nicht sicher, alle Computer innerhalb des Clusters herunterzufahren, sofern Sie nicht zunächst eine [vollständige Sicherung des Zustands](service-fabric-reliable-services-backup-restore.md) durchgeführt haben.
 
 ## Herstellen einer Verbindung mit dem Cluster und Bereitstellen einer Anwendung
 
@@ -206,4 +207,4 @@ Nachdem Sie die Verbindung hergestellt haben, führen Sie die folgenden Befehle 
 [ClusterDashboard]: ./media/service-fabric-cluster-creation-via-portal/ClusterDashboard.png
 [SecureConnection]: ./media/service-fabric-cluster-creation-via-portal/SecureConnection.png
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0218_2016-->

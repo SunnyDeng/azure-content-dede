@@ -3,7 +3,7 @@
 	description="In diesem Thema wird beschrieben, wie Sie den Elemental Live-Encoder zum Senden eines Single-Bitrate-Livedatenstroms an AMS-Kanäle konfigurieren, die für das Live Encoding aktiviert sind." 
 	services="media-services" 
 	documentationCenter="" 
-	authors="Juliako,cenkdin,anilmur" 
+	authors="cenkdin" 
 	manager="dwrede" 
 	editor=""/>
 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="ne" 
 	ms.topic="article" 
-	ms.date="10/15/2015"  
-	ms.author="juliako"/>
+	ms.date="02/17/2016"
+	ms.author="cenkdin;anilmur;juliako"/>
 
 #Verwenden des Elemental Live-Encoders zum Senden eines Single-Bitrate-Livedatenstroms
 
@@ -60,11 +60,11 @@ Stellen Sie sicher, dass die Option **Neuen Kanal jetzt starten** ausgewählt is
 
 3. Klicken Sie auf **Kanal erstellen**. ![Elemental](./media/media-services-elemental-live-encoder/media-services-elemental12.png)
 
->[AZURE.NOTE]Das Starten des Kanals kann bis zu 20 Minuten dauern.
+>[AZURE.NOTE] Das Starten des Kanals kann bis zu 20 Minuten dauern.
 
 Während der Kanal gestartet wird, können Sie [den Encoder konfigurieren](media-services-configure-elemental-live-encoder.md#configure_elemental_rtp).
 
->[AZURE.IMPORTANT]Beachten Sie, dass die Abrechnung beginnt, sobald der Kanal betriebsbereit ist. Weitere Informationen finden Sie unter [Kanalstatus](media-services-manage-live-encoder-enabled-channels.md#states).
+>[AZURE.IMPORTANT] Beachten Sie, dass die Abrechnung beginnt, sobald der Kanal betriebsbereit ist. Weitere Informationen finden Sie unter [Kanalstatus](media-services-manage-live-encoder-enabled-channels.md#states).
 
 ###<a id=configure_elemental_rtp></a>Konfigurieren des Elemental Live-Encoders 
 
@@ -95,7 +95,7 @@ In diesem Tutorial werden die folgenden Ausgabeeinstellungen verwendet. Im restl
 	
 	![Elemental](./media/media-services-elemental-live-encoder/media-services-elemental13.png)
 	
-	>[AZURE.NOTE]Es wird empfohlen, den Zeitcode für das Elemental-Ereignis auf „Systemuhr“ festzulegen, damit der Encoder die Verbindung bei einem Ausfall des Datenstroms erneut herstellen kann.
+	>[AZURE.NOTE] Es wird empfohlen, den Zeitcode für das Elemental-Ereignis auf „Systemuhr“ festzulegen, damit der Encoder die Verbindung bei einem Ausfall des Datenstroms erneut herstellen kann.
 
 4. Klicken Sie nach dem Erstellen der Ausgabe nun auf **Datenstrom hinzufügen**. Jetzt können die Ausgabeeinstellungen konfiguriert werden.
 5. Führen Sie einen Bildlauf zum gerade erstellten Element „Datenstrom 1“ durch, klicken Sie links auf die Registerkarte **Video**, und erweitern Sie den Abschnitt mit den erweiterten Einstellungen (**Erweitert**). 
@@ -129,7 +129,7 @@ In diesem Tutorial werden die folgenden Ausgabeeinstellungen verwendet. Im restl
 	
 7. Klicken Sie auf **Erstellen** (bei Erstellung eines neuen Ereignisses) oder **Aktualisieren** (bei Bearbeitung eines vorhandenen Ereignisses), und fahren Sie dann fort, um den Encoder zu starten.
 
->[AZURE.IMPORTANT]Bevor Sie auf der Elemental Live-Webschnittstelle auf **Start** klicken, **müssen** Sie sicherstellen, dass der Kanal bereit ist. Stellen Sie außerdem sicher, dass der Kanal nicht länger als 15 Minuten ohne Ereignis in einem betriebsbereiten Zustand verbleibt.
+>[AZURE.IMPORTANT] Bevor Sie auf der Elemental Live-Webschnittstelle auf **Start** klicken, **müssen** Sie sicherstellen, dass der Kanal bereit ist. Stellen Sie außerdem sicher, dass der Kanal nicht länger als 15 Minuten ohne Ereignis in einem betriebsbereiten Zustand verbleibt.
 
 Nachdem der Datenstrom 30 Sekunden lang ausgeführt wurde, navigieren Sie zurück zum AMSE-Tool, und testen sie die Wiedergabe.
 
@@ -173,4 +173,4 @@ Eine Anleitung finden Sie im Thema [Problembehandlung](media-services-troublesho
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0218_2016-->

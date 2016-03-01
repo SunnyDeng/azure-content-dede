@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/03/2016" 
+	ms.date="02/14/2016" 
 	ms.author="juliako"/>
 
 #Arbeiten mit Kanälen, die zum Ausführen von Livecodierung mit Azure Media Services aktiviert wurden
@@ -32,6 +32,9 @@ Mit Media Services-Version 2.10 können Sie beim Erstellen eines Kanals angeben,
 - **Standard**: Wählen Sie diesen Wert, wenn Sie Media Services verwenden möchten, um einen Single-Bitrate-Livedatenstrom in einen Multi-Bitrate-Datenstrom zu codieren. Beachten Sie, dass das Live Encoding sich auf die Abrechnung auswirkt und dass die Beibehaltung des Status „Wird ausgeführt“ für einen Live Encoding-Kanal mit Gebühren verbunden ist. Es wird empfohlen, die Ausführung der Kanäle sofort zu beenden, wenn das Livestreaming-Ereignis abgeschlossen ist, um das Anfallen zusätzlicher Stundengebühren zu vermeiden.
 
 >[AZURE.NOTE]In diesem Thema werden die Attribute der Kanäle erläutert, welche zum Ausführen der Livecodierung aktiviert sind (Codierungstyp **Standard**). Informationen zum Arbeiten mit Kanälen, die nicht zum Ausführen der Livecodierung aktiviert sind, finden Sie unter [Arbeiten mit Kanälen, von denen Multi-Bitrate-Livedatenströme aus lokalen Encodern empfangen werden](media-services-manage-channels-overview.md).
+>
+>Lesen Sie unbedingt den Abschnitt [Überlegungen](media-services-manage-live-encoder-enabled-channels.md#Considerations).
+
 
 
 ##Hinweise zur Gebührenberechnung
@@ -261,7 +264,7 @@ Sie können die IP-Adressen definieren, die zum Herstellen einer Verbindung mit 
 
 In diesem Abschnitt wird beschrieben, wie die Einstellungen für den Liveencoder innerhalb des Kanals angepasst werden können, wenn der **Codierungstyp** des Kanals die Einstellung **Standard** aufweist.
 
->[AZURE.NOTE]Bei der Eingabe mehrerer Sprachspuren und beim Ausführen von Live Encoding mit Azure wird nur RTP für die Eingabe mehrerer Sprachen unterstützt. Sie können bis zu 8 Audiodatenströme mit MPEG-2 TS über RTP definieren. Das Erfassen mehrerer Audiospuren mit RTMP oder Smooth Streaming wird derzeit nicht unterstützt. Beim Durchführen von Live Encoding mit [lokalen Liveencodern](media-services-manage-channels-overview.md) gibt es keine solche Einschränkung, weil alle an AMS gesendeten Daten ohne weitere Verarbeitung über einen Kanal weitergeleitet werden.
+>[AZURE.NOTE]Bei der Eingabe mehrerer Sprachspuren und beim Ausführen von Live Encoding mit Azure wird nur RTP für die Eingabe mehrerer Sprachen unterstützt. Sie können bis zu 8 Audiodatenströme mit MPEG-2 TS über RTP definieren. Das Erfassen mehrerer Audiospuren mit RTMP oder Smooth Streaming wird derzeit nicht unterstützt. Beim Ausführen von Live Encoding mit [lokalen Liveencodern](media-services-manage-channels-overview.md) gibt es keine solche Einschränkung, weil alle an AMS gesendeten Daten ohne weitere Verarbeitung über einen Kanal weitergeleitet werden.
 
 ###Quelle für AD-Marker
 
@@ -436,7 +439,8 @@ Beendet|Beendet|Nein
 - Es werden nur Kanäle in Rechnung gestellt, die den Status **Running** (Wird ausgeführt) aufweisen. Weitere Informationen finden Sie in [diesem Abschnitt](media-services-manage-live-encoder-enabled-channels.md#states).
 - Die maximal empfohlene Dauer eines Liveereignisses beträgt derzeit 8 Stunden. Wenden Sie sich an „AMSLiveD at Microsoft.com“, wenn Sie einen Kanal für längere Zeit laufen lassen müssen.
 - Stellen Sie sicher, dass auf dem Streamingendpunkt, von dem Sie Inhalte streamen möchten, mindestens eine für das Streaming reservierte Einheit verfügbar ist.
-- Bei der Eingabe mehrerer Sprachspuren und beim Ausführen von Live Encoding mit Azure wird nur RTP für die Eingabe mehrerer Sprachen unterstützt. Sie können bis zu 8 Audiodatenströme mit MPEG-2 TS über RTP definieren. Das Erfassen mehrerer Audiospuren mit RTMP oder Smooth Streaming wird derzeit nicht unterstützt. Beim Durchführen von Live Encoding mit [lokalen Liveencodern](media-services-manage-channels-overview.md) gibt es keine solche Einschränkung, weil alle an AMS gesendeten Daten ohne weitere Verarbeitung über einen Kanal weitergeleitet werden.
+- Bei der Eingabe mehrerer Sprachspuren und beim Ausführen von Live Encoding mit Azure wird nur RTP für die Eingabe mehrerer Sprachen unterstützt. Sie können bis zu 8 Audiodatenströme mit MPEG-2 TS über RTP definieren. Das Erfassen mehrerer Audiospuren mit RTMP oder Smooth Streaming wird derzeit nicht unterstützt. Beim Ausführen von Live Encoding mit [lokalen Liveencodern](media-services-manage-channels-overview.md) gibt es keine solche Einschränkung, weil alle an AMS gesendeten Daten ohne weitere Verarbeitung über einen Kanal weitergeleitet werden.
+- Die Codierungsvoreinstellung verwendet das Konzept der „max. Bildfrequenz“ von 30 BpS. Wenn die Eingabe 60 BpS/59.97i beträgt, werden die Eingabeframes per Deinterlacing auf 30/29.97 BpS gesenkt. Wenn die Eingabe 50 BpS/50i beträgt, werden die Eingabeframes per Deinterlacing auf 25 BpS gesenkt. Wenn die Eingabe 25 BpS beträgt, bleibt die Ausgabe bei 25 BpS.
 - Vergessen Sie nicht, IHRE KANÄLE ZU BEENDEN, wenn Sie fertig sind. Wenn Sie dies nicht tun, werden weiter Gebühren berechnet. 
 
 ##Bekannte Probleme
@@ -476,4 +480,4 @@ Wählen Sie **Portal**, **.NET** oder **REST API**, um auf Informationen zum Ers
 [live-overview]: ./media/media-services-manage-live-encoder-enabled-channels/media-services-live-streaming-new.png
  
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0218_2016-->

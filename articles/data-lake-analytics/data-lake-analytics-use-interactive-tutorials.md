@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
-   ms.date="10/28/2015"
+   ms.date="02/11/2016"
    ms.author="jgao"/>
 
 
@@ -22,7 +22,7 @@
 Das Azure-Portal bietet ein interaktives Lernprogramm für die ersten Schritte mit Data Lake Analytics. In diesem Artikel wird gezeigt, wie Sie das Lernprogramm für die Analyse von Websiteprotokollen durchlaufen.
 
 
->[AZURE.NOTE]Falls Sie dasselbe Lernprogramm für Visual Studio durchlaufen möchten, lesen Sie hierzu [Analysieren von Websiteprotokollen mit Data Lake Analytics](data-lake-analytics-analyze-weblogs.md). Weitere interaktive Lernprogramme werden dem Portal demnächst hinzugefügt.
+>[AZURE.NOTE] Falls Sie dasselbe Lernprogramm für Visual Studio durchlaufen möchten, lesen Sie hierzu [Analysieren von Websiteprotokollen mit Data Lake Analytics](data-lake-analytics-analyze-weblogs.md). Weitere interaktive Lernprogramme werden dem Portal demnächst hinzugefügt.
 
 
 Weitere Lernprogramme finden Sie unter:
@@ -42,7 +42,7 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
 Zum Ausführen von Aufträgen ist ein Data Lake Analytics-Konto erforderlich.
 
-Jedes Data Lake Analytics-Konto ist von einem [Azure Data Lake-Speicherkonto](data-lake-store-overview.md) abhängig. Dieses Konto wird als Data Lake-Standardspeicherkonto bezeichnet. Sie können das Data Lake-Speicherkonto vorher oder während der Erstellung Ihres Data Lake Analytics-Kontos erstellen. In diesem Lernprogramm erstellen Sie das Data Lake-Speicherkonto zusammen mit dem Analytics-Konto.
+Jedes Data Lake Analytics-Konto ist von einem [Azure Data Lake-Speicher](../data-lake-store/data-lake-store-overview.md)konto abhängig. Dieses Konto wird als Data Lake-Standardspeicherkonto bezeichnet. Sie können das Data Lake-Speicherkonto vorher oder während der Erstellung Ihres Data Lake Analytics-Kontos erstellen. In diesem Lernprogramm erstellen Sie das Data Lake-Speicherkonto zusammen mit dem Analytics-Konto.
 
 **So erstellen Sie ein Data Lake Analytics-Konto**
 
@@ -56,9 +56,9 @@ Jedes Data Lake Analytics-Konto ist von einem [Azure Data Lake-Speicherkonto](da
 
     ![Portalblatt für Azure Data Lake Analytics](./media/data-lake-analytics-get-started-portal/data-lake-analytics-portal-create-adla.png)
 
-	- **Name**: Geben Sie dem Analysekonto einen Namen.
-	- **Data Lake Store**: Jedes Data Lake Analytics-Konto verfügt über ein zugehöriges Data Lake-Speicherkonto. Das Data Lake Analytics-Konto und das abhängige Data Lake-Speicherkonto müssen sich in demselben Azure-Rechenzentrum befinden. Führen Sie die Anweisungen zum Erstellen eines neuen Data Lake-Speicherkontos aus, oder wählen Sie ein vorhandenes Konto aus.
-	- **Abonnement**: Wählen Sie das Azure-Abonnement aus, das für das Analysekonto verwendet wird.
+	- **Name**: Geben Sie dem Analytics-Konto einen Namen.
+	- **Data Lake-Speicher**: Jedes Data Lake Analytics-Konto verfügt über ein abhängiges Data Lake-Speicherkonto. Das Data Lake Analytics-Konto und das abhängige Data Lake-Speicherkonto müssen sich in demselben Azure-Rechenzentrum befinden. Führen Sie die Anweisungen zum Erstellen eines neuen Data Lake-Speicherkontos aus, oder wählen Sie ein vorhandenes Konto aus.
+	- **Abonnement**: Wählen Sie das Azure-Abonnement aus, das für das Analytics-Konto verwendet wird.
 	- **Ressourcengruppe**. Wählen Sie eine vorhandene Ressourcengruppe aus, oder erstellen Sie eine neue Ressourcengruppe. Anwendungen bestehen normalerweise aus vielen Komponenten, z. B. Web-App, Datenbank, Datenbankserver, Speicher und Drittanbieterdiensten. Mit dem Azure-Ressourcen-Manager (ARM) können Sie mit den Ressourcen in Ihrer Anwendung als Gruppe arbeiten, was als Azure-Ressourcengruppe bezeichnet wird. Sie können alle Ressourcen für Ihre Anwendung in einem einzigen, koordinierten Vorgang bereitstellen, aktualisieren, überwachen oder löschen. Sie verwenden eine Vorlage für die Bereitstellung, die für unterschiedliche Umgebungen geeignet sein kann, z. B. Testing, Staging und Produktion. Sie können die Abrechnung für Ihre Organisation vereinfachen, indem Sie die zusammengefassten Kosten für die gesamte Gruppe anzeigen. Weitere Informationen finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](resource-group-overview.md). 
 	- **Standort**. Wählen Sie ein Azure-Rechenzentrum für das Data Lake Analytics-Konto aus. 
 7. Wählen Sie **An Startmenü anheften** aus. Dies ist für das folgende Tutorial erforderlich.
@@ -88,4 +88,4 @@ Jedes Data Lake Analytics-Konto ist von einem [Azure Data Lake-Speicherkonto](da
 - [Entwickeln von U-SQL-Skripts mit Data Lake-Tools für Visual Studio](data-lake-analytics-data-lake-tools-get-started.md)
 - [Analysieren von Websiteprotokollen mit Azure Data Lake Analytics](data-lake-analytics-analyze-weblogs.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0218_2016-->

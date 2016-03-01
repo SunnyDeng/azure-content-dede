@@ -21,17 +21,17 @@ Azure Active Directory muss alle Aufgaben authentifizieren, die Sie mithilfe des
 2. Erstellen Sie ein **ResourceManagementClient**-Objekt, das das Token verwendet. Fügen Sie dazu folgenden Code am Ende der **Main**-Methode hinzu:
 
     ```
-    var creds = new TokenCloudCredentials(subscriptionId, token.AccessToken);
+    var creds = new TokenCredentials(token.AccessToken);
     var client = new ResourceManagementClient(creds);
+    client.SubscriptionId = subscriptionId;
     ```
 
 3. Erstellen Sie oder erhalten Sie einen Verweis auf die Ressourcengruppe, die Sie verwenden:
 
     ```
-    var rgResponse = client.ResourceGroups.CreateOrUpdateAsync(rgName,
-        new ResourceGroup("East US")).Result;
-    if (rgResponse.StatusCode != HttpStatusCode.Created
-        && rgResponse.StatusCode != HttpStatusCode.OK)
+    var rgResponse = client.ResourceGroups.CreateOrUpdate(rgName,
+        new ResourceGroup("East US"));
+    if (rgResponse.Properties.ProvisioningState != "Succeeded")
     {
       Console.WriteLine("Problem creating resource group");
       return;
@@ -40,4 +40,4 @@ Azure Active Directory muss alle Aufgaben authentifizieren, die Sie mithilfe des
 
 [lnk-authenticate-arm]: https://msdn.microsoft.com/library/azure/dn790557.aspx
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0218_2016-->

@@ -139,6 +139,42 @@ In diesem Artikel werden einige häufige Fehler beschrieben, die bei der Arbeit 
 
   <br/>
 
+## Beheben von Problemen beim Arbeiten mit der Konfiguration des gewünschten Zustands (Desired State Configuration, DSC)  
+
+### Szenario: Der Knoten hat den Fehlerstatus „Nicht gefunden“
+
+**Fehler:** Der Knoten weist den Status „Fehler“ mit der Meldung „Fehler beim Versuch, die Aktion vom Server ‚https://<url>//accounts/<account-id>/Nodes(AgentId=<agent-id>)/GetDscAction‘ abzurufen, weil keine gültige <guid>-Konfiguration gefunden wurde.“ auf.
+
+**Grund dieses Fehlers:** Dieser Fehler tritt normalerweise auf, wenn der Knoten einem Konfigurationsnamen (z. B. ABC) anstatt einem Knotenkonfigurationsnamen (z. B. ABC.WebServer) zugewiesen ist.
+
+**Tipps zur Problembehandlung:** Vergewissern Sie sich, dass der Name der Knotenkonfiguration und nicht der Name der Konfiguration verwendet wird. Sie können entweder im Portal auf dem Blatt „Knoten“ auf die Schaltfläche „Knotenkonfiguration zuweisen“ klicken oder das Cmdlet „Set-AzureRMAutomationDscNode“ verwenden, um den Knoten einer gültigen Knotenkonfiguration zuzuordnen.
+
+### Szenario: Bei der Kompilierung der Konfiguration wurden keine Knotenkonfigurationen (MOF-Dateien) erstellt.
+
+**Fehler:** Der DSC-Kompilierungsauftrag wurde mit dem folgenden Fehler angehalten: „Kompilierung erfolgreich abgeschlossen, ohne dass MOF-Dateien mit Knotenkonfigurationen erstellt wurden.“
+
+**Grund des Fehlers:** Wenn der Ausdruck neben „node“ in der DSC-Konfiguration mit „$null“ ausgewertet wird, werden keine Knotenkonfigurationen erstellt.
+
+**Tipps zur Problembehandlung:** Vergewissern Sie sich, dass der Ausdruck neben „node“ nicht mit „$null“ ausgewertet wird. Wenn Sie Konfigurationsdaten übergeben, stellen Sie sicher, dass Sie die erwarteten Werte übergeben, die die Konfiguration aus den Konfigurationsdaten verlangt. Beispiel: $AllNodes. Weitere Informationen finden Sie unter https://azure.microsoft.com/de-DE/documentation/articles/automation-dsc-compile/#configurationdata.
+
+### Szenario: DSC-Knotenbericht bleibt mit dem Status „In Bearbeitung“ hängen.
+
+**Fehler:** DSC-Agent gibt die Meldung „Keine Instanz mit den angegebenen Eigenschaftswerten gefunden.“ aus.
+
+**Grund des Fehlers:** Sie haben Ihre WMF-Version aktualisiert und WMI beschädigt.
+
+**Tipps zur Problembehandlung:** Folgen Sie den Anweisungen in diesem Beitrag, um das Problem zu beheben: https://msdn.microsoft.com/de-DE/powershell/wmf/limitation_dsc
+
+### Szenario: In einer DSC-Konfiguration können keine Anmeldeinformationen verwendet werden. 
+
+**Fehler:** Der DSC-Kompilierungsauftrag wurde mit dem folgenden Fehler angehalten: Fehler „System.InvalidOperationException“ beim Verarbeiten der „Credential“-Eigenschaft vom Typ „<some resource name>“: Das Konvertieren und Speichern eines verschlüsselten Kennworts als Klartext ist nur zulässig, wenn „PSDscAllowPlainTextPassword“ auf „true“ festgelegt ist.
+
+**Grund des Fehlers:** Sie haben versucht, Anmeldeinformationen in einer Konfiguration zu verwenden, aber nicht die ordnungsgemäßen Konfigurationsdaten übergeben, über die „PSAllowPlainTextPassword“ für jede Knotenkonfiguration auf „true“ festgelegt wird.
+
+**Tipps zur Problembehandlung:** Stellen Sie sicher, dass Sie die ordnungsgemäßen Konfigurationsdaten übergeben, über die „PSAllowPlainTextPassword“ für jede Knotenkonfiguration auf „true“ festgelegt wird. Weitere Informationen finden Sie unter https://azure.microsoft.com/de-DE/documentation/articles/automation-dsc-compile/#assets.
+
+  <br/>
+
 ## Nächste Schritte
 
 Sie haben folgende Möglichkeiten, wenn Sie die oben genannten Schritte zur Problembehandlung befolgt haben und an diesem Punkt des Artikels weitere Hilfe benötigen:
@@ -151,4 +187,4 @@ Sie haben folgende Möglichkeiten, wenn Sie die oben genannten Schritte zur Prob
 
 - Veröffentlichen Sie Feedback oder Vorschläge zu Features für Azure Automation unter [User Voice](https://feedback.azure.com/forums/34192--general-feedback) (Aussagen von Benutzern).
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0218_2016-->

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Jeder Artikel zur Anwendungsverwaltung in Azure Active Directory | Microsoft Azure"
+	pageTitle="Artikelindex für die Anwendungsverwaltung in Azure Active Directory | Microsoft Azure"
 	description="Erfahren Sie, wie Sie das Ablaufdatum für Verbundzertifikate anpassen und Zertifikate erneuern, die in Kürze ablaufen."
 	services="active-directory"
 	documentationCenter=""
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/09/2016"
+	ms.date="02/16/2016"
 	ms.author="markvi;liviodlc"/>
 
 #Artikelindex für die Anwendungsverwaltung in Azure Active Directory
@@ -24,7 +24,7 @@ Für jeden größeren Funktionsbereich gibt es eine kurze Einführung sowie Anle
 
 ##Übersichtsartikel
 
-Die folgenden Artikel sind gute Ausgangspunkte für diejenigen, die lediglich eine kurze Erläuterung zu den Funktionen der Azure AD-Anwendungsverwaltung benötigen. Diese Themen werden im weiteren Verlauf dieses Leitfadens im Detail behandelt.
+Die folgenden Artikel sind gute Ausgangspunkte für diejenigen, die lediglich eine kurze Erläuterung zu den Funktionen der Azure AD-Anwendungsverwaltung benötigen.
 
 | Artikelleitfaden | |
 | :---: | --- |
@@ -32,6 +32,18 @@ Die folgenden Artikel sind gute Ausgangspunkte für diejenigen, die lediglich ei
 | Eine Übersicht über die verschiedenen Funktionen in Azure AD im Zusammenhang mit dem Aktivieren der einmaligen Anmeldung, dem Definieren des Zugriffs auf Apps sowie dem Festlegen der Startmethode für Apps | [Anwendungszugriff und einmaliges Anmelden in Azure Active Directory](active-directory-appssoaccess-whatis.md) |
 | Ein Blick auf die verschiedenen Schritte beim Integrieren von Apps in Ihr Azure AD | [Integrieren von Anwendungen in Azure Active Directory](active-directory-integrating-applications-getting-started.md)<br /><br />[Aktivieren des einmaligen Anmeldens bei SaaS-Apps](active-directory-sso-integrate-saas-apps.md)<br /><br />[Verwalten des Zugriffs auf Apps](active-directory-managing-access-to-apps.md) |
 | Eine technische Erklärung zur Darstellung von Apps in Azure AD | [Wie und warum werden Anwendungen zu Azure AD hinzugefügt?](active-directory-how-applications-are-added.md) |
+
+##Artikel zur Problembehandlung
+
+Dieser Abschnitt bietet schnellen Zugriff auf relevante Anweisungen zur Problembehandlung. Weitere Informationen zu den einzelnen Featurebereichen finden Sie im weiteren Verlauf dieser Seite.
+
+| Featurebereich | |
+| :---: | --- |
+| Einmalige Verbundanmeldung | [Problembehandlung bei SAML-basiertem einmaligem Anmelden](active-directory-saml-debugging.md) |
+| Kennwortbasiertes einmaliges Anmelden | [Problembehandlung in der Zugriffsbereichserweiterung für Internet Explorer](active-directory-saas-ie-troubleshooting.md) |
+| Anwendungsproxy | [Handbuch zur Problembehandlung beim App-Proxy](active-directory-application-proxy-troubleshoot.md) |
+| Einmaliges Anmelden zwischen lokalem AD und Azure AD | [Problembehandlung bei der Kennwortsynchronisierung](active-directory-aadconnectsync-implement-password-synchronization.md#managing-password-synchronization)<br /><br />[Problembehandlung beim Kennwortrückschreiben](active-directory-passwords-troubleshoot.md#troubleshoot-password-writeback) | 
+| Dynamische Gruppenmitgliedschaften | [Problembehandlung bei dynamischen Mitgliedschaften in Gruppen](active-directory-accessmanagement-troubleshooting.md) |
 
 ##Einmaliges Anmelden (Single Sign-On, SSO)
 
@@ -42,7 +54,7 @@ Durch einmaliges Anmelden können Benutzer mit nur einem Satz von Anmeldeinforma
 | Artikelleitfaden | |
 | :---: | --- |
 | Eine Einführung in den Verbund und andere Arten von Anmeldungen | [Einmaliges Anmelden mit Azure AD](active-directory-appssoaccess-whatis.md) |
-| Tausende von SaaS-Apps, die bereits in Azure AD integriert sind, mit vereinfachten Schritten zur Konfiguration der einmaligen Anmeldung | [Erste Schritte mit dem Azure AD-Anwendungskatalog](active-directory-appssoaccess-whatis.md#get-started-with-the-azure-ad-application-gallery)<br /><br />[Vollständige Liste der vorintegrierten Apps, die den Verbund unterstützen](http://aka.ms/aadfederatedapps)<br /><br />[Hinzufügen Ihrer App zum Azure AD-App-Katalog](active-directory-app-gallery-listing.md) |
+| Tausende von SaaS-Apps, die bereits in Azure AD integriert sind, mit vereinfachten Schritten zur Konfiguration der einmaligen Anmeldung | [Erste Schritte mit dem Azure AD-Anwendungskatalog](active-directory-appssoaccess-whatis.md#get-started-with-the-azure-ad-application-gallery)<br /><br />[Vollständige Liste der vorintegrierten Apps, die den Verbund unterstützen](http://aka.ms/aadfederatedapps)<br /><br />[Hinzufügen Ihrer App zum Azure AD-App-Katalog](active-directory-app-gallery-listing.md) |
 | Mehr als 150 App-Tutorials zur Konfiguration des einmaligen Anmeldens für Apps wie [Salesforce](active-directory-saas-salesforce-tutorial.md), [ServiceNow](active-directory-saas-servicenow-tutorial.md), [Google Apps](active-directory-saas-google-apps-tutorial.md), [Workday](active-directory-saas-workday-tutorial.md) und viele mehr | [Liste der Tutorials zur Integration von SaaS-Apps in Azure Active Directory](active-directory-saas-tutorial-list.md) |
 | Vorgehensweise zum manuellen Einrichten und Anpassen Ihrer Konfiguration für einmaliges Anmelden | [Konfigurieren des einmaliges Anmeldens im Verbund für Apps, die nicht im Azure Active Directory-Anwendungskatalog enthalten sind](active-directory-saas-custom-apps.md)<br /><br />[Anpassen ausgestellter Ansprüche im SAML-Token für vorintegrierte Apps](active-directory-saml-claims-customization.md) |
 | Handbuch zur Problembehandlung für Verbund-Apps, die das SAML-Protokoll verwenden | [Problembehandlung bei SAML-basiertem einmaligem Anmelden](active-directory-saml-debugging.md) |
@@ -77,7 +89,7 @@ Wenn Sie in Ihrem privaten Netzwerk Anwendungen verwenden, die für Benutzer und
 
 Der Anwendungsproxy steht für alle Editionen von Azure AD für bis zu zehn Apps pro Benutzer zur Verfügung. [Azure AD Premium](https://azure.microsoft.com/pricing/details/active-directory/) unterstützt eine unbegrenzte Anzahl von Anwendungen. Wenn Ihre Organisation [Azure AD Basic](https://azure.microsoft.com/pricing/details/active-directory/) oder [Azure AD Premium](https://azure.microsoft.com/pricing/details/active-directory/) verwendet, können Sie [den Zugriff auf Anwendungen mithilfe von Gruppen zuweisen](#how-to-manage-who-has-access-to-which-apps).
 
-Möglicherweise interessieren Sie sich auch für die [Azure Active Directory-Domänendienste](active-directory-ds-overview.md), die Ihnen das Migrieren Ihrer lokalen Anwendungen zu Azure ermöglichen und gleichzeitig die Identitätsanforderungen dieser Anwendungen erfüllen.
+Möglicherweise interessieren Sie sich auch für die [Azure Active Directory-Domänendienste](../active-directory-domain-services/active-directory-ds-overview.md), die Ihnen das Migrieren Ihrer lokalen Anwendungen zu Azure ermöglichen und gleichzeitig die Identitätsanforderungen dieser Anwendungen erfüllen.
 
 ###Aktivieren des einmaligen Anmeldens zwischen Azure AD und lokalem AD
 
@@ -87,7 +99,9 @@ Wenn Ihr Unternehmen eine lokale Version von Windows Server Active Directory par
 | :---: | --- |
 | Eine Übersicht über die Optionen für das einmalige Anmelden in Azure AD Connect sowie Informationen zur Verwaltung von Hybridumgebungen | [Azure AD Connect-Optionen für die Benutzeranmeldung](active-directory-aadconnect-user-signin.md) |
 | Allgemeine Richtlinien für die Verwaltung von Umgebungen mit lokalem Active Directory und Azure Active Directory | [Überlegungen zum Entwurf der Azure Active Directory-Hybrididentität](active-directory-hybrid-identity-design-considerations-overview.md)<br /><br />[Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md) |
-| Anleitung zum Verwenden der Kennwortsynchronisierung zum Aktivieren von SSO und Verwenden des Kennwortrückschreibens mit der Self-Service-Kennwortzurücksetzung in Azure AD | [Implementieren der Kennwortsynchronisierung mit Azure AD Connect](active-directory-aadconnectsync-implement-password-synchronization.md)<br /><br />[Erste Schritte mit der Kennwortverwaltung in Azure AD](active-directory-passwords-getting-started.md) |
+| Anleitung zur Verwendung der Kennwortsynchronisierung zum Aktivieren von SSO | [Implementieren der Kennwortsynchronisierung mit Azure AD Connect](active-directory-aadconnectsync-implement-password-synchronization.md)<br /><br />[Problembehandlung bei der Kennwortsynchronisierung](https://support.microsoft.com/de-DE/kb/2855271) |
+| Anleitung zur Verwendung des Kennwortrückschreibens zum Aktivieren von SSO | [Erste Schritte mit der Kennwortverwaltung in Azure AD](active-directory-passwords-getting-started.md)<br /><br />[Problembehandlung beim Kennwortrückschreiben](active-directory-passwords-troubleshoot.md#troubleshoot-password-writeback) |
+| Anleitung zur Verwendung externer Identitätsanbieter zum Aktivieren von SSO | [Liste der kompatiblen externen Identitätsanbieter zum Aktivieren der einmaligen Anmeldung](https://aka.ms/ssoproviders) | 
 | Genießen der Vorteile des einmaligen Anmeldens über Azure AD Join für Windows 10-Benutzer | [Erweitern von Cloudfunktionen auf Windows 10-Geräte über Azure Active Directory Join](active-directory-azureadjoin-overview.md) |
 
 Azure AD Connect steht für [alle Editionen von Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/) zur Verfügung. Die Azure AD-Self-Service-Kennwortzurücksetzung ist in [Azure AD Basic](https://azure.microsoft.com/pricing/details/active-directory/) und [Azure AD Premium](https://azure.microsoft.com/pricing/details/active-directory/) verfügbar. Das Kennwortrückschreiben in das lokale Active Directory ist ein Feature von [Azure AD Premium](https://azure.microsoft.com/pricing/details/active-directory/).
@@ -128,7 +142,7 @@ Automatisieren Sie das Erstellen, Warten und Entfernen von Benutzeridentitäten 
 
 | Artikelleitfaden | |
 | :---: | --- |
-| Weitere Informationen zur Funktionsweise und Antworten auf häufig gestellte Fragen | [Automatisieren der Bereitstellung/Bereitstellungsaufhebung von Benutzern für SaaS-Apps](active-directory-saas-app-provisioning.md) |
+| Weitere Informationen zur Funktionsweise und Antworten auf häufig gestellte Fragen | [Automatisieren der Bereitstellung und Bereitstellungsaufhebung von Benutzern für SaaS-Apps](active-directory-saas-app-provisioning.md) |
 | Konfigurieren der Zuordnung von Informationen zwischen Azure AD und Ihrer SaaS-App | [Anpassen von Attributzuordnungen](active-directory-saas-customizing-attribute-mappings.md)<br><br>[Schreiben von Ausdrücken für Attributzuordnungen](active-directory-saas-writing-expressions-for-attribute-mappings.md) |
 | Aktivieren der automatisierten Bereitstellung in jeder App, die das SCIM-Protokoll unterstützt | [Einrichten der automatischen Bereitstellung von Benutzern für SCIM-fähige Apps](active-directory-scim-provisioning.md) |
 | Erhalten von Benachrichtigungen bei Bereitstellungsfehlern | [Bereitstellungsbenachrichtigungen](active-directory-saas-account-provisioning-notifications.md) |
@@ -214,4 +228,4 @@ Um herauszufinden, welche Berichte in verschiedenen Editionen von Azure Active D
 
 [Azure Multi-Factor Authentication](https://azure.microsoft.com/services/multi-factor-authentication/)
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0218_2016-->

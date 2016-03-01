@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
-   ms.date="10/22/2015"
+   ms.date="02/10/2016"
    ms.author="jgao"/>
 
 
@@ -26,9 +26,9 @@ Hier erfahren Sie, wie Sie benutzerdefinierte Operatoren zur Verwendung und Wied
 - Visual Studio 2015, Visual Studio 2013 Update 4 oder Visual Studio 2012 mit Installation von Visual C++ 
 - Microsoft Azure SDK für .NET, Version 2.5 oder höher. Führen Sie die Installation mit dem Webplattform-Installer durch.
 - Data Lake Analytics-Konto. Siehe [Erste Schritte mit Azure Data Lake Analytics mithilfe des Azure-Portals](data-lake-analytics-get-started-portal.md).
-- Arbeiten Sie das Lernprogramm [Erste Schritte mit U-SQL-Studio für Azure Data Lake Analytics](data-lake-analytics-u-sql-studio-get-started.md) durch.
-- Stellen Sie eine Verbindung mit Azure her (siehe [Erste Schritte mit U-SQL-Studio für Azure Data Lake Analytics](data-lake-analytics-u-sql-studio-get-started.md#connect-to-azure)). 
-- Laden Sie die Datenquelle hoch (siehe [Erste Schritte mit U-SQL-Studio für Azure Data Lake Analytics](data-lake-analytics-u-sql-studio-get-started.md#upload-source-data-files)). 
+- Arbeiten Sie das Lernprogramm [Erste Schritte mit U-SQL-Studio für Azure Data Lake Analytics](data-lake-analytics-u-sql-get-started.md) durch.
+- Stellen Sie eine Verbindung mit Azure her (siehe [Erste Schritte mit U-SQL-Studio für Azure Data Lake Analytics](data-lake-analytics-u-sql-get-started.md#connect-to-azure)). 
+- Laden Sie die Datenquelle hoch (siehe [Erste Schritte mit U-SQL-Studio für Azure Data Lake Analytics](data-lake-analytics-u-sql-get-started.md#upload-source-data-files)). 
 
 ## Definieren und Verwenden von benutzerdefinierten Operatoren in U-SQL
 
@@ -147,4 +147,4 @@ Hier erfahren Sie, wie Sie benutzerdefinierte Operatoren zur Verwendung und Wied
 - [Erste Schritte mit Data Lake Analytics mithilfe des Azure-Portals](data-lake-analytics-get-started-portal.md)
 - [Verwenden von Data Lake-Tools für Visual Studio zum Entwickeln von U-SQL-Anwendungen](data-lake-analytics-data-lake-tools-get-started.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0218_2016-->

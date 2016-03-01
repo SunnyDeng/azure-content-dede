@@ -35,11 +35,11 @@ Neben den im Thema „Tutorial – Übersicht“ aufgeführten vorausgesetzten K
 - **Installieren Sie Azure PowerShell**. Befolgen Sie die Anweisungen im Artikel [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md) zum Installieren der neuesten Version von Azure PowerShell auf Ihrem Computer.
 - Dieser Artikel bietet keine grundlegende Übersicht über den Azure Data Factory-Dienst. Eine ausführliche Übersicht über den Dienst finden Sie unter [Einführung in Azure Data Factory](data-factory-introduction.md). 
 - Informationen zu Azure-Ressourcen-Manager-Vorlagen (ARM-Vorlagen) finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](../resource-group-authoring-templates.md). 
- 
+
 
 ## Schritt 1: Erstellen der ARM-Vorlage
 
-Erstellen Sie eine JSON-Datei mit dem Namen **ADFTutorialARM.json** im Ordner **C:\ADFGetStarted** mit dem folgenden Inhalt:
+Erstellen Sie eine JSON-Datei mit dem Namen **ADFTutorialARM.json** im Ordner **C:\\ADFGetStarted** mit dem folgenden Inhalt:
 
 > [AZURE.IMPORTANT] Ändern Sie die Werte für die Variablen **storageAccountName** und **storageAccountKey**. Ändern Sie auch **dataFactoryName**, denn dieser Name muss eindeutig sein.
 
@@ -223,6 +223,8 @@ Beachten Sie Folgendes:
 
 Ausführliche Informationen finden Sie unter [Bedarfsgesteuerter verknüpfter HDInsight-Dienst](data-factory-compute-linked-services.md#azure-hdinsight-on-demand-linked-service).
 
+> [AZURE.NOTE] Ein weiteres Beispiel einer ARM-Vorlage zum Erstellen eines Azure Data Factory-Diensts finden Sie auf [Github](https://github.com/Azure/azure-quickstart-templates/blob/master/101-data-factory-blob-to-sql/azuredeploy.json).
+
 ## Schritt 2: Bereitstellen von Data Factory-Entitäten mit der ARM-Vorlage
 
 1. Starten Sie Azure PowerShell, und führen Sie den folgenden Befehl aus. Lassen Sie Azure PowerShell bis zum Ende dieses Tutorials geöffnet. Wenn Sie PowerShell schließen und erneut öffnen, müssen Sie die Befehle erneut ausführen.
@@ -250,4 +252,4 @@ Ausführliche Informationen finden Sie unter [Bedarfsgesteuerter verknüpfter HD
 10. Sobald der Slice den Status **Bereit** hat, überprüfen Sie, ob die Ausgabedaten sich in Ihrem Blobspeicher im Ordner **partitioneddata** im Container **adfgetstarted** befinden.  
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0224_2016-->

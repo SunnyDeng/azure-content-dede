@@ -14,7 +14,7 @@
 	ms.workload="search"
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
-	ms.date="11/17/2015"
+	ms.date="02/17/2016"
 	ms.author="heidist"/>
 
 # Erstellen von Abfragen in Azure Search mithilfe von REST-Aufrufen
@@ -67,4 +67,4 @@ Durchsuchen des gesamten Indexes und Sortieren nach einem bestimmten Feld (lastR
 
 Bei erfolgreicher Abfrageanforderung wird der Statuscode „200 OK“ ausgegeben, und die Suchergebnisse liegen im Antworttext im JSON-Format vor. Weitere Informationen finden Sie im Abschnitt „Antwort“ [dieser Seite](https://msdn.microsoft.com/library/azure/dn798927.aspx).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0224_2016-->

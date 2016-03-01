@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/05/2016"
+	ms.date="02/17/2016"
 	ms.author="tamram"/>
 
 # Konfigurieren von Azure Storage-Verbindungszeichenfolgen
@@ -37,7 +37,7 @@ Die Anwendung muss die Verbindungszeichenfolge speichern, um den Zugriff auf Azu
 
 Das Speichern der Verbindungszeichenfolge in der Konfigurationsdatei erleichtert die Aktualisierung der Verbindungszeichenfolge, um zwischen dem Speicheremulator und einem Azure-Speicherkonto in der Cloud zu wechseln. Sie müssen die Verbindungszeichenfolge nur so bearbeiten, dass sie auf Ihr Speicherkonto verweist.
 
-Über die Azure-Klasse [CloudConfigurationManager](https://msdn.microsoft.com/library/microsoft.windowsazure.cloudconfigurationmanager.aspx) können Sie zur Laufzeit auf die Verbindungszeichenfolge zugreifen, unabhängig davon, wo Ihre Anwendung ausgeführt wird.
+Über die [Microsoft Azure Configuration Manager](https://www.nuget.org/packages/Microsoft.WindowsAzure.ConfigurationManager/)-Klasse können Sie zur Laufzeit auf die Verbindungszeichenfolge zugreifen, unabhängig davon, wo Ihre Anwendung ausgeführt wird.
 
 ## Erstellen einer Verbindungszeichenfolge mit dem Speicheremulator
 
@@ -57,7 +57,7 @@ Ihre Verbindungszeichenfolge sollte der folgenden Beispiel-Verbindungszeichenfol
 	AccountName=storagesample;
 	AccountKey=<account-key>
 
-> [AZURE.NOTE]Azure Storage unterstützt sowohl HTTP als auch HTTPS. Die Verwendung von HTTPS wird jedoch ausdrücklich empfohlen.
+> [AZURE.NOTE] Azure Storage unterstützt sowohl HTTP als auch HTTPS. Die Verwendung von HTTPS wird jedoch ausdrücklich empfohlen.
 
 ## Erstellen einer Verbindungszeichenfolge für einen bestimmten Speicherendpunkt
 
@@ -119,4 +119,4 @@ Ihre Verbindungszeichenfolge sollte der folgenden Beispiel-Verbindungszeichenfol
 	AccountKey=<account-key>;
 	EndpointSuffix=core.chinacloudapi.cn;
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0218_2016-->

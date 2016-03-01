@@ -14,17 +14,17 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="big-data"
-	ms.date="02/04/2016"
+	ms.date="02/17/2016"
 	ms.author="jeffstok"/>
 
 
-# Abfragebeispiele für gängige Stream Analytics-Verwendungsmuster #
+# Abfragebeispiele für gängige Stream Analytics-Verwendungsmuster
 
-## Einführung ##
+## Einführung
 
 Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache gestellt, die im [Stream Analytics Query Language Reference](https://msdn.microsoft.com/library/azure/dn834998.aspx) dokumentiert ist. Dieser Artikel zeigt anhand von Praxisbeispielen Lösungen für mehrere weit verbreitete Abfragemuster. Das Dokument wird nach und nach mit weiteren Mustern aktualisiert.
 
-## Abfragebeispiel: Konvertierungen von Datentypen ##
+## Abfragebeispiel: Konvertierungen von Datentypen
 **Beschreibung**: Definieren der Arten von Eigenschaften im Eingabedatenstrom. Beispiel: Das Fahrzeuggewicht ist im Eingabedatenstrom als Zeichenfolge angegeben und muss zur Summenbildung in INT konvertiert werden.
 
 **Eingabe**:
@@ -53,7 +53,8 @@ Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache
 
 **Erläuterung**: Verwenden Sie eine CAST-Anweisung für das Gewichtsfeld (Weight), um dessen Typ anzugeben. (Eine Liste mit unterstützten Datentypen finden Sie [hier](https://msdn.microsoft.com/library/azure/dn835065.aspx).)
 
-## Abfragebeispiel: Musterabgleich mithilfe von „Like“/„Not like“ ##
+
+## Abfragebeispiel: Musterabgleich mithilfe von „Like“/„Not like“
 **Beschreibung**: Sicherstellen, dass ein Feldwert des Ereignisses einem bestimmten Muster entspricht. Beispiel: Zurückgeben von Nummernschildern, die mit „A“ beginnen und mit „9“ enden.
 
 **Eingabe**:
@@ -82,7 +83,7 @@ Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache
 
 **Erläuterung**: Verwenden Sie die LIKE-Anweisung, um sicherzustellen, dass der Wert im Feld „LicensePlate“ mit „A“ beginnt, anschließend eine beliebige Zeichenfolge mit null oder mehr Zeichen enthält und dann mit „9“ endet.
 
-## Abfragebeispiel: Logik für verschiedene Fälle/Werte (CASE-Anweisungen) ##
+## Abfragebeispiel: Logik für verschiedene Fälle/Werte (CASE-Anweisungen)
 **Beschreibung**: Angeben einer kriterienbasierten Berechnung für ein Feld. Beispiel: Bereitstellen einer Zeichenfolge, die beschreibt, wie viele Fahrzeuge der gleichen Marke vorbeigefahren sind (mit einem Sonderfall für „1“).
 
 **Eingabe**:
@@ -116,7 +117,7 @@ Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache
 
 **Erläuterung**: Mit der CASE-Klausel kann auf der Grundlage einiger Kriterien (in unserem Fall die Fahrzeuganzahl im Aggregierungszeitraum) eine abweichende Berechnung angegeben werden.
 
-## Abfragebeispiel: Senden von Daten an mehrere Ausgaben ##
+## Abfragebeispiel: Senden von Daten an mehrere Ausgaben
 **Beschreibung**: Senden von Daten an mehrere Ausgabeziele über einen einzelnen Auftrag. Beispiel: Analysieren von Daten für eine schwellenwertbasierte Warnung und Archivieren aller Ereignisse im BLOB-Speicher.
 
 **Eingabe**:
@@ -224,7 +225,7 @@ Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache
 
 **Erläuterung**: Bei einer ersten Aggregierung werden individuelle Marken innerhalb des Zeitraums ermittelt. Anschließend wird mithilfe einer Aggregierung deren Anzahl ermittelt. Wenn alle eindeutigen Werte in einem Zeitraum den gleichen Zeitstempel erhalten, muss der Zeitraum für die zweite Aggregierung sehr klein sein, damit nicht zwei Zeiträume aus dem ersten Schritt aggregiert werden.
 
-## Abfragebeispiel: Ermitteln, ob ein Wert geändert wurde ##
+## Abfragebeispiel: Ermitteln, ob ein Wert geändert wurde#
 **Beschreibung**: Betrachten eines vorherigen Werts, um zu ermitteln, ob er sich vom aktuellen Wert unterscheidet. Beispiel: Handelt es sich beim aktuellen Fahrzeug auf der mautpflichtigen Straße um die gleiche Marke wie beim vorherigen Fahrzeug?
 
 **Eingabe**:
@@ -252,7 +253,7 @@ Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache
 
 **Erläuterung**: Verwenden Sie „LAG“, um im Eingabedatenstrom einen Blick auf das vorherige Ereignis zu werfen und den Make-Wert zu ermitteln. Vergleichen Sie ihn dann mit dem Make-Wert des aktuellen Ereignisses, und geben Sie das Ereignis aus, falls sich die Werte unterscheiden.
 
-## Abfragebeispiel: Ermitteln des ersten Ereignisses in einem Zeitraum ##
+## Abfragebeispiel: Ermitteln des ersten Ereignisses in einem Zeitraum
 **Beschreibung**: Ermitteln des jeweils ersten Fahrzeugs in einem Zehn-Minuten-Intervall.
 
 **Eingabe**:
@@ -306,7 +307,7 @@ Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache
 	WHERE 
 		IsFirst(minute, 10) OVER (PARTITION BY Make) = 1
 
-## Abfragebeispiel: Ermitteln des letzten Ereignisses in einem Zeitraum ##
+## Abfragebeispiel: Ermitteln des letzten Ereignisses in einem Zeitraum
 **Beschreibung**: Ermitteln des jeweils letzten Fahrzeugs in einem Zehn-Minuten-Intervall.
 
 **Eingabe**:
@@ -351,7 +352,7 @@ Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache
 
 **Erläuterung**: Die Abfrage umfasst zwei Schritte: Im ersten Schritt wird der neueste Zeitstempel des jeweiligen Zehn-Minuten-Intervalls gesucht. Im zweiten Schritt werden die Ergebnisse der ersten Abfrage mit dem ursprünglichen Datenstrom zusammengeführt, um nach Ereignissen zu suchen, die dem letzten Zeitstempel des jeweiligen Intervalls entsprechen.
 
-## Abfragebeispiel: Erkennen der Abwesenheit von Ereignissen ##
+## Abfragebeispiel: Erkennen der Abwesenheit von Ereignissen
 **Beschreibung**: Überprüfen, ob der Datenstrom einen Wert enthält, der einem bestimmten Kriterium entspricht. Beispiel: Wurde die mautpflichtige Straße in einem Zeitraum von 90 Sekunden von zwei aufeinanderfolgenden Fahrzeugen der gleichen Marke befahren?
 
 **Eingabe**:
@@ -413,7 +414,7 @@ Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache
 
 **Erläuterung**: Verwenden Sie die „LAST“-Funktion, um den letzten Zeitpunkt (Time value) mit dem Ereignistyp „Start“ zu ermittelt. Beachten Sie, dass die LAST-Funktion PARTITION BY [user] verwendet, um anzuzeigen, dass das Ergebnis einzeln pro Benutzer berechnet wird. Die Abfrage hat einen maximalen Schwellenwert von einer Stunde für die Zeitdifferenz zwischen Start- und Stoppereignissen, ist aber nach Bedarf konfigurierbar (LIMIT DURATION(hour, 1).
 
-## Abfragebeispiel: Ermitteln der Dauer einer Bedingung ##
+## Abfragebeispiel: Ermitteln der Dauer einer Bedingung
 **Beschreibung**: Ermitteln, wie lange eine Bedingung angedauert hat. Beispiel: Aufgrund eines Fehlers wurde für alle Fahrzeuge ein Gewicht von über 20.000 Pfund erfasst, und wir möchten nun ermitteln, wie lange dieser Fehler aufgetreten ist.
 
 **Eingabe**:
@@ -454,16 +455,59 @@ WHERE
 
 **Erläuterung**: Verwenden Sie LAG, um den Eingabedatenstrom für 24 Stunden anzusehen und suchen Sie nach Instanzen, bei denen „StartFault“ und „StopFault“ von Gewichten unter 20.000 umgeben sind.
 
+## Beispiel für eine Abfrage: Ausfüllen der fehlenden Werte
+**Beschreibung**: Für den Ereignisdatenstrom mit fehlenden Werten erzeugen Sie einen Ereignisdatenstrom mit regelmäßigen Intervallen. Generieren Sie z. B. alle 5 Sekunden ein Ereignis, das den zuletzt angezeigten Datenpunkt meldet.
+
+**Eingabe**:
+
+| t | value |
+|--------------------------|-------|
+| "2014-01-01T06:01:00" | 1 |
+| "2014-01-01T06:01:05" | 2 |
+| "2014-01-01T06:01:10" | 3 |
+| "2014-01-01T06:01:15" | 4 |
+| "2014-01-01T06:01:30" | 5 |
+| "2014-01-01T06:01:35" | 6 |
+
+**Ausgabe (erste 10 Zeilen)**:
+
+| windowend | lastevent.t | lastevent.value |
+|--------------------------|--------------------------|--------|
+| 2014-01-01T14:01:00.000Z | 2014-01-01T14:01:00.000Z | 1 |
+| 2014-01-01T14:01:05.000Z | 2014-01-01T14:01:05.000Z | 2 |
+| 2014-01-01T14:01:10.000Z | 2014-01-01T14:01:10.000Z | 3 |
+| 2014-01-01T14:01:15.000Z | 2014-01-01T14:01:15.000Z | 4 |
+| 2014-01-01T14:01:20.000Z | 2014-01-01T14:01:15.000Z | 4 |
+| 2014-01-01T14:01:25.000Z | 2014-01-01T14:01:15.000Z | 4 |
+| 2014-01-01T14:01:30.000Z | 2014-01-01T14:01:30.000Z | 5 |
+| 2014-01-01T14:01:35.000Z | 2014-01-01T14:01:35.000Z | 6 |
+| 2014-01-01T14:01:40.000Z | 2014-01-01T14:01:35.000Z | 6 |
+| 2014-01-01T14:01:45.000Z | 2014-01-01T14:01:35.000Z | 6 |
+
+    
+**Lösung**:
+
+    SELECT
+    	System.Timestamp AS windowEnd,
+    	TopOne() OVER (ORDER BY t DESC) AS lastEvent
+    FROM
+    	input TIMESTAMP BY t
+    GROUP BY HOPPINGWINDOW(second, 300, 5)
+
+
+**Erklärung**: Diese Abfrage generiert Ereignisse alle 5 Sekunden und gibt das letzte Ereignis aus, das zuvor empfangen wurde. Die Dauer des [springenden Fensters](https://msdn.microsoft.com/library/dn835041.aspx "Springendes Fenster – Azure Stream Analytics") legt fest, wie weit die Abfrage zurückreicht, um das letzte Ereignis zu suchen (in diesem Beispiel 300 Sekunden).
+
+
 ## Hier erhalten Sie Hilfe
 Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=AzureStreamAnalytics).
 
 ## Nächste Schritte
 
 - [Einführung in Azure Stream Analytics](stream-analytics-introduction.md)
-- [Erste Schritte mit Azure Stream Analytics](../stream.analytics.get.started.md)
+- [Erste Schritte mit Azure Stream Analytics](stream-analytics-get-started.md)
 - [Skalieren von Azure Stream Analytics-Aufträgen](stream-analytics-scale-jobs.md)
 - [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
  
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0218_2016-->

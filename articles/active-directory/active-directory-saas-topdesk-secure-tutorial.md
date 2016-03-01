@@ -1,5 +1,6 @@
 <properties 
-    pageTitle="Tutorial: Azure Active Directory-Integration mit TOPdesk - Secure | Microsoft Azure" description="Hier erfahren Sie, wie Sie TOPdesk - Secure mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
+    pageTitle="Tutorial: Azure Active Directory-Integration mit TOPdesk - Secure | Microsoft Azure"
+    description="Hier erfahren Sie, wie Sie TOPdesk - Secure mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
     services="active-directory" 
     authors="markusvi"  
     documentationCenter="na" 
@@ -15,8 +16,7 @@
 
 #Tutorial: Azure Active Directory-Integration mit TOPdesk - Secure
   
-In diesem Tutorial wird die Integration von Azure und TOPdesk - Secure erläutert.  
-Das in diesem Lernprogramm verwendete Szenario setzt voraus, dass Sie bereits über die folgenden Elemente verfügen:
+In diesem Tutorial wird die Integration von Azure und TOPdesk - Secure erläutert. Das in diesem Lernprogramm verwendete Szenario setzt voraus, dass Sie bereits über die folgenden Elemente verfügen:
 
 -   Ein gültiges Azure-Abonnement
 -   Ein TOPdesk - Secure-Abonnement, für das einmaliges Anmelden aktiviert ist
@@ -66,8 +66,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für TOP
 
 ##Konfigurieren der einmaligen Anmeldung
   
-In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei TOPdesk - Secure zu authentifizieren.  
-Für das Konfigurieren des einmaligen Anmeldens für TOPdesk - Secure müssen Sie eine Logosymboldatei hochladen. Um die Symboldatei zu erhalten, wenden Sie sich an das TOPdesk-Supportteam.
+In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei TOPdesk - Secure zu authentifizieren. Für das Konfigurieren des einmaligen Anmeldens für TOPdesk - Secure müssen Sie eine Logosymboldatei hochladen. Um die Symboldatei zu erhalten, wenden Sie sich an das TOPdesk-Supportteam.
 
 ###So konfigurieren Sie einmaliges Anmelden:
 
@@ -94,7 +93,7 @@ Für das Konfigurieren des einmaligen Anmeldens für TOPdesk - Secure müssen Si
         ![Assertion Consumer Service](./media/active-directory-saas-topdesk-secure-tutorial/IC790856.png "Assertion Consumer Service")
     3.  Kopieren Sie den Wert **AssertionConsumerService**.  
 
-        >[AZURE.NOTE]Sie benötigen den Wert später im Tutorial im Abschnitt **App-URL konfigurieren**.
+        >[AZURE.NOTE] Sie benötigen den Wert später im Tutorial im Abschnitt **App-URL konfigurieren**.
 
 6.  Melden Sie sich in einem anderen Webbrowserfenster beim **Azure Active Directory** Portal als Administrator an.
 
@@ -160,8 +159,7 @@ Für das Konfigurieren des einmaligen Anmeldens für TOPdesk - Secure müssen Si
 
 ##Konfigurieren der Benutzerbereitstellung
   
-Damit sich Azure AD-Benutzer bei TOPdesk - Secure anmelden können, müssen sie in TOPdesk - Secure bereitgestellt werden.  
-Im Fall von TOPdesk - Secure ist die Bereitstellung eine manuelle Aufgabe.
+Damit sich Azure AD-Benutzer bei TOPdesk - Secure anmelden können, müssen sie in TOPdesk - Secure bereitgestellt werden. Im Fall von TOPdesk - Secure ist die Bereitstellung eine manuelle Aufgabe.
 
 ###So konfigurieren Sie die Benutzerbereitstellung
 
@@ -181,7 +179,7 @@ Im Fall von TOPdesk - Secure ist die Bereitstellung eine manuelle Aufgabe.
     4.  Geben Sie in das Textfeld **Anmeldename** des Abschnitts **TOPdesk-Anmeldung** einen Anmeldenamen für den Benutzer ein.
     5.  Klicken Sie auf **Speichern**.
 
->[AZURE.NOTE]Sie können AAD-Benutzerkonten auch mithilfe anderer Tools zum Erstellen von TOPdesk - Secure-Benutzerkonten oder mithilfe der von TOPdesk - Secure bereitgestellten APIs erstellen.
+>[AZURE.NOTE] Sie können AAD-Benutzerkonten auch mithilfe anderer Tools zum Erstellen von TOPdesk - Secure-Benutzerkonten oder mithilfe der von TOPdesk - Secure bereitgestellten APIs erstellen.
 
 ##Zuweisen von Benutzern
   
@@ -201,4 +199,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!----HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0218_2016-->

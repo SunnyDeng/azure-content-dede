@@ -148,15 +148,6 @@ Als Alternative zur Verwendung einer PKI-Infrastruktur können Sie das schlüsse
 
 ## Häufig gestellte Fragen
 
-###Welche Produkte von MDM-Drittanbietern können in Azure AD integriert werden?
-
-Die folgenden Produkte von Anbietern können für die einheitliche Registrierung und den bedingten Zugriff unter Windows 10 in Azure AD integriert werden:
-
-- AirWatch von VMware
-- Citrix Xenmobile
-- Lightspeed Mobile Manager
-- Lokales MDM von SOTI
-
 ###Wie sieht es unter Windows 10 mit der Arbeitsbereichverknüpfung aus?
 Die Arbeitsbereichverknüpfung wurde unter Windows 8.1 zum Aktivieren von BYOD verwendet. Unter Windows 10 wird BYOD durch das Hinzufügen eines Geschäftskontos aktiviert. Dies wurde weiter oben in diesem Artikel erläutert. Für Unternehmen, die die mobile Geräteverwaltung (MDM) nicht in Azure AD integrieren, können Benutzer das Gerät über **Einstellungen** > **Konten** > **Arbeitsplatzzugriff** manuell bei der Verwaltung registrieren.
 
@@ -170,7 +161,7 @@ Für Benutzer, die ein Upgrade von Windows 8.1-Geräten mit Domänenbeitritt du
 * [Windows 10 für Unternehmen: Möglichkeiten der geschäftlichen Nutzung von Geräten](active-directory-azureadjoin-windows10-devices-overview.md)
 * [Erweitern von Cloudfunktionen auf Windows 10-Geräte über Azure Active Directory Join](active-directory-azureadjoin-user-upgrade.md)
 * [Weitere Informationen zu Verwendungsszenarios für Azure AD Join](active-directory-azureadjoin-deployment-aadjoindirect.md)
-* [Verbinden von einer Domäne beigetretenen Geräten mit Azure AD für Windows 10-Benutzeroberflächen](active-directory-azureadjoin-devices-group-policy.md)
+* [Benutzererfahrungen beim Verknüpfen von in die Domäne eingebundenen Windows 10-Geräten mit Azure AD](active-directory-azureadjoin-devices-group-policy.md)
 * [Einrichten von Azure AD Join](active-directory-azureadjoin-setup.md)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0218_2016-->

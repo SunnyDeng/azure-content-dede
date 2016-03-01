@@ -12,7 +12,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="01/05/2016"
+    ms.date="02/14/2016"
     ms.author="micurd"/>
 
 # Verwenden der Azure-Befehlszeilenschnittstelle mit Azure-Speicher
@@ -33,7 +33,7 @@ Diese Anleitung verwendet für Beispiele Ubuntu, andere Betriebssystemplattforme
 
 **Neu in Azure:** Holen Sie Sich ein Microsoft Azure-Abonnement und ein Microsoft-Konto für dieses Abonnement. Informationen zu Azure-Kaufoptionen finden Sie unter [Kostenlose Testversion](https://azure.microsoft.com/pricing/free-trial/), [Kaufoptionen](https://azure.microsoft.com/pricing/purchase-options/) und [Angebote für Mitglieder](https://azure.microsoft.com/pricing/member-offers/) (für Mitglieder von MSDN, Microsoft Partner Network, BizSpark und anderen Microsoft-Programmen).
 
-Weitere Informationen zu Azure-Abonnements finden Sie unter [Verwalten von Konten, Abonnements und Administratorrollen](https://msdn.microsoft.com/library/azure/hh531793.aspx).
+Unter [Zuweisen von Administratorrollen in Azure Active Directory (Azure AD)](https://msdn.microsoft.com/library/azure/hh531793.aspx) finden Sie weitere Informationen zu Azure-Abonnements.
 
 **Nach der Erstellung eines Microsoft Azure-Abonnements und eines Kontos:**
 
@@ -94,7 +94,7 @@ Nachdem das Skript ausgeführt wird, sollten Sie über einen lokalen Ordner verf
 
 ### Verbinden mit Ihrem Azure-Abonnement
 
-Obwohl die meisten Speicherbefehle ohne Azure-Abonnement funktionieren, empfehlen wir Ihnen, eine Verbindung zu Ihrem Abonnement über die Azure-Befehlszeilenschnittstelle herzustellen. Um die Azure-Befehlszeilenschnittstelle für Ihr Abonnement zu konfigurieren, führen Sie die Schritte in [Herstellen einer Verbindung zu Ihrem Azure-Abonnement](../xplat-cli-install.md#how-to-connect-to-your-azure-subscription) aus.
+Obwohl die meisten Speicherbefehle ohne Azure-Abonnement funktionieren, empfehlen wir Ihnen, eine Verbindung zu Ihrem Abonnement über die Azure-Befehlszeilenschnittstelle herzustellen. Zum Konfigurieren der Azure-Befehlszeilenschnittstelle für die Verwendung mit Ihrem Abonnement führen Sie die Schritte unter [Herstellen einer Verbindung mit einem Azure-Abonnement über die Azure-Befehlszeilenschnittstelle](../xplat-cli-connect.md) aus.
 
 ### Erstellen eines neuen Speicherkontos
 
@@ -121,7 +121,7 @@ Kopieren Sie dann die Ausgabeverbindungszeichenfolge und legen Sie sie auf die U
 
 ## Erstellen und Verwalten von Blobs
 
-Der Azure-Blob-Speicher ist ein Dienst zur Speicherung großer Mengen unstrukturierter Daten, beispielsweise Text- oder Binärdaten, auf die von überall auf der Welt über HTTP oder HTTPS zugegriffen werden kann. Dieser Abschnitt setzt voraus, dass Sie mit den Konzepten des Azure-Blob-Speichers bereits vertraut sind. Weitere Informationen finden Sie unter [Verwenden des Blob-Speichers mit .NET](storage-dotnet-how-to-use-blobs.md) und [Blob-Dienst-Konzepte](http://msdn.microsoft.com/library/azure/dd179376.aspx).
+Der Azure-Blob-Speicher ist ein Dienst zur Speicherung großer Mengen unstrukturierter Daten, beispielsweise Text- oder Binärdaten, auf die von überall auf der Welt über HTTP oder HTTPS zugegriffen werden kann. Dieser Abschnitt setzt voraus, dass Sie mit den Konzepten des Azure-Blob-Speichers bereits vertraut sind. Ausführliche Informationen finden Sie unter [Erste Schritte mit Azure Blob Storage mit .NET](storage-dotnet-how-to-use-blobs.md) und [Konzepte des Blob-Diensts](http://msdn.microsoft.com/library/azure/dd179376.aspx).
 
 ### Erstellen eines Containers
 
@@ -129,11 +129,11 @@ Jeder Blob im Azure-Speicher muss sich in einem Container befinden. Mit dem Befe
 
         azure storage container create mycontainer
 
-> [AZURE.NOTE] Es gibt drei Stufen des anonymen Lesezugriffs: **Off**, **Blob** und **Container**. Legen Sie für den Parameter "Permission" den Wert **Off** fest, um den anonymen Zugriff auf Blobs zu verhindern. Der neue Container ist standardmäßig privat, und der Zugriff ist ausschließlich dem Kontobesitzer gestattet. Um den anonymen öffentlichen Lesezugriff auf Blob-Ressourcen, jedoch nicht auf Containermetadaten oder die Liste der im Container enthaltenen Blobs zuzulassen, legen Sie für den Parameter "Permission" den Wert **Blob** fest. Um den vollständigen öffentlichen Lesezugriff auf Blob-Ressourcen, Containermetadaten und die Liste der im Container enthaltenen Blobs zuzulassen, legen Sie für den Parameter "Permission" den Wert **Container** fest. Weitere Informationen finden Sie unter [Verwalten des Zugriffs auf Azure-Speicherressourcen](storage-manage-access-to-resources.md).
+> [AZURE.NOTE] Es gibt drei Stufen des anonymen Lesezugriffs: **Off**, **Blob** und **Container**. Legen Sie für den Parameter "Permission" den Wert **Off** fest, um den anonymen Zugriff auf Blobs zu verhindern. Der neue Container ist standardmäßig privat, und der Zugriff ist ausschließlich dem Kontobesitzer gestattet. Um den anonymen öffentlichen Lesezugriff auf Blob-Ressourcen, jedoch nicht auf Containermetadaten oder die Liste der im Container enthaltenen Blobs zuzulassen, legen Sie für den Parameter "Permission" den Wert **Blob** fest. Um den vollständigen öffentlichen Lesezugriff auf Blob-Ressourcen, Containermetadaten und die Liste der im Container enthaltenen Blobs zuzulassen, legen Sie für den Parameter "Permission" den Wert **Container** fest. Weitere Informationen finden Sie unter [Verwalten des anonymen Lesezugriffs auf Container und Blobs](storage-manage-access-to-resources.md).
 
 ### Hochladen eines Blobs in einen Container
 
-Azure Blob-Speicher unterstützt Blockblobs und Seitenblobs. Weitere Informationen finden Sie unter [Grundlegendes zu Blockblobs und Seitenblobs](http://msdn.microsoft.com/library/azure/ee691964.aspx).
+Azure Blob-Speicher unterstützt Blockblobs und Seitenblobs. Weitere Informationen finden Sie unter [Grundlegendes zu Blockblobs, Anfügeblobs und Seitenblobs](http://msdn.microsoft.com/library/azure/ee691964.aspx).
 
 Um Blobs in einen Container hochzuladen, können Sie den Befehl `azure storage blob upload` verwenden. Dieser Befehl lädt standardmäßig die lokalen Dateien in einen Blockblob hoch. Um den Blob-Typ anzugeben, können Sie den Parameter `--blobtype` verwenden.
 
@@ -169,7 +169,7 @@ Verwenden Sie den nachfolgenden Befehl, um ein Blob zu löschen.
 
 ## Erstellen und Verwalten von Dateifreigaben
 
-Der Azure-Dateispeicher bietet einen gemeinsam genutzten Speicher für Anwendungen und verwendet dabei das SMB-Protokoll. Microsoft Azure Virtual Machines und Clouddienste können wie lokale Anwendungen Dateidaten mithilfe bereitgestellter Freigaben teilen. Dateifreigaben und Dateidaten können über die Azure-Befehlszeilenschnittstelle verwaltet werden. Ausführliche Informationen zum Azure-Dateispeicher finden Sie unter [Verwenden des Azure-Dateispeichers mit Windows](storage-dotnet-how-to-use-files) und [Verwenden des Azure-Dateispeichers mit Windows mit Linux](storage-how-to-use-files-linux.md).
+Der Azure-Dateispeicher bietet einen gemeinsam genutzten Speicher für Anwendungen und verwendet dabei das SMB-Protokoll. Microsoft Azure Virtual Machines und Clouddienste können wie lokale Anwendungen Dateidaten mithilfe bereitgestellter Freigaben teilen. Dateifreigaben und Dateidaten können über die Azure-Befehlszeilenschnittstelle verwaltet werden. Weitere Informationen zum Azure-Dateispeicher finden Sie unter [Erste Schritte mit Azure File Storage unter Windows](storage-dotnet-how-to-use-files.md) und [Verwenden des Azure-Dateispeichers unter Linux](storage-how-to-use-files-linux.md).
 
 ### Erstellen einer Dateifreigabe
 
@@ -221,4 +221,4 @@ In den folgenden Artikeln und Ressourcen finden Sie weitere Informationen zum Az
 
 [Image1]: ./media/storage-azure-cli/azure_command.png
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

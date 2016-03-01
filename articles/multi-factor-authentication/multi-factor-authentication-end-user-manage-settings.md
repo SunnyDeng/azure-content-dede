@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/25/2016" 
+	ms.date="02/16/2016" 
 	ms.author="billmath"/>
 
 # Beheben von Problemen mit Azure Multi-Factor Authentication
@@ -25,13 +25,13 @@ Die folgende Informationen sollen Ihnen helfen, einige der häufigsten Probleme,
 
 
 - [Korrelations-ID-Fehler](#correlation-id-errors)
-- [Ich habe mein Telefon verloren, oder es wurde mir gestohlen](#i-have-lost-my-phone-or-it-was-stolen?)
+- [Ich habe mein Telefon verloren, oder es wurde mir gestohlen](#i-have-lost-my-phone-or-it-was-stolen)
 - [Ich möchte meine Telefonnummer ändern](#i-want-to-change-my-phone-number)
 - [Ich habe ein neues Telefon und muss meine Telefonnummer ändern](#i-have-a-new-phone-and-need-to-change-my-phone-number)
-- [Ich empfange keinen Code auf meinem Telefon](#i-am-not-receiving-a-code-on-my-phone)
+- [Ich empfange keinen Code auf meinem Telefon](#i-am-not-receiving-a-code-or-a-call-on-my-phone)
 - [App-Kennwörter funktionieren nicht](#app-passwords-are-not-working)
 - [Wie entferne ich Azure Authenticator von meinem alten Gerät, und wie wechsle ich zu einem neuen?](#how-do-i-clean-up-azure-authenticator-from-my-old-device-and-move-to-a-new-one)
-- [Ich konnte keine Lösung für mein Problem finden](#i-didn't-find-an-answer-to-my-problem)
+- [Ich konnte keine Lösung für mein Problem finden](#i-didnt-find-an-answer-to-my-problem)
 
 ##Korrelations-ID-Fehler
 Wenn Sie die nachstehenden Schritte zur Problembehandlung ausgeführt haben und weiterhin Fehler auftreten, können Sie in den [Azure AD-Foren](https://social.msdn.microsoft.com/forums/azure/home?forum=WindowsAzureAD) eine Frage stellen, [die Microsoft Knowledge Base (KB) durchsuchen](https://www.microsoft.com/de-DE/Search/result.aspx?q=azure%20active%20directory%20connect&form=mssupport) oder [sich an den Support wenden](https://support.microsoft.com/de-DE). Wir bemühen uns, möglichst schnell eine Lösung für Ihr Problem zu finden.
@@ -147,7 +147,7 @@ Zunächst müssen Sie Folgendes sicherstellen:
 - Wenn Sie das Empfangen von Überprüfungscodes per Textnachricht auf Ihrem Mobiltelefon ausgewählt haben, vergewissern Sie sich, dass Ihr Tarif und Gerät die Übermittlung von Textnachrichten unterstützen. Übertragungsgeschwindigkeit und Verfügbarkeit können je nach Region und Dienstanbieter variieren. Stellen Sie auch sicher, dass das Mobilfunksignal stark genug ist, um diese Codes zu empfangen.
 - Wenn Sie das Empfangen einer Überprüfung über die mobile App gewählt haben, stellen Sie sicher, dass das Mobilfunksignal stark genug ist. Beachten Sie auch, dass Übertragungsgeschwindigkeit und Verfügbarkeit je nach Region und Dienstanbieter variieren können. 
 
-Bei Smartphones wird empfohlen, die [Azure Authenticator-App](multi-factor-authentication-azure-authenticator) zu nutzen.
+Bei Smartphones wird empfohlen, die [Azure Authenticator-App](multi-factor-authentication-azure-authenticator.md) zu nutzen.
 
 Sie können vom Empfang von Überprüfungscodes per Textnachrichten zum Empfang per mobiler App wechseln, indem Sie beim Anmelden **Andere Überprüfungsoption verwenden** auswählen.
 
@@ -172,4 +172,4 @@ Außerdem können Sie Ihren Administrator oder die Person, die Multi-Factor Auth
 
 Geben Sie abschließend bitte detailliertes Feedback auf dieser Seite ab, damit wir diese Seite aktualisieren und durch weitere Informationen verbessern können.
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0218_2016-->

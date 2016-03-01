@@ -1,8 +1,8 @@
 <properties
 	pageTitle="Konfigurieren von Azure-Warnungen zum Senden an andere Systeme"
 	description="Umleiten von Azure-Warnungen an andere Azure-fremde Systeme."
-	authors="rboucher"
-	manager="ronmart"
+	authors="kamathashwin"
+	manager=""
 	editor=""
 	services="azure-portal"
 	documentationCenter="na"/>
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/25/2015"
-	ms.author="robb"/>
+	ms.date="02/16/2016"
+	ms.author="ashwink"/>
 
 # Konfigurieren von Webhooks für Warnungen
 
@@ -73,7 +73,7 @@ Der POST-Vorgang enthält die folgende JSON-Nutzlast und das folgende JSON-Schem
 }
 ```
 
->[AZURE.NOTE]Bei der nächsten Aktualisierung wird die Unterstützung von Warnungen für Ereignisse hinzugefügt ("conditionType" : "Event").
+>[AZURE.NOTE] Bei der nächsten Aktualisierung wird die Unterstützung von Warnungen für Ereignisse hinzugefügt ("conditionType" : "Event").
 
 
 | Feld | Erforderlich? | Feste Gruppe von Werten? | Hinweise |
@@ -103,7 +103,7 @@ Der POST-Vorgang enthält die folgende JSON-Nutzlast und das folgende JSON-Schem
 |Eigenschaften |N |Optional |Eine Gruppe von <Key  Value> Paaren (d. h. Wörterbuch<String  String>), die Details zum Ereignis enthält. Das Feld "properties" ist optional. In einer angepassten Benutzeroberfläche oder einem auf Logik-Apps basierenden Workflow können Benutzer Schlüssel und Werte eingeben, die über die Nutzlast übergeben werden können. Alternativ können benutzerdefinierte Eigenschaften direkt über den Webhook-URI an den Webhook zurückgegeben werden (als Abfrageparameter).|
 
 
->[AZURE.NOTE]Das Feld "properties" kann nicht über das Portal verwendet werden. In der nächsten Version des Insights SDK können Sie die Eigenschaften über die Warnung-API festlegen.
+>[AZURE.NOTE] Das Feld "properties" kann nicht über das Portal verwendet werden. In der nächsten Version des Insights SDK können Sie die Eigenschaften über die Warnung-API festlegen.
 
 ## Nächste Schritte
 
@@ -123,4 +123,4 @@ Verwenden Sie Azure-Warnungen zum Senden von Nachrichten an andere Dienste. Zum 
 
 [Use Logic App to send messages to an Azure Queue (in englischer Sprache)](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-queue-with-logic-app)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0218_2016-->
