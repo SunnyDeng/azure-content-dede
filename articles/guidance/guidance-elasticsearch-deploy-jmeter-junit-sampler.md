@@ -171,10 +171,10 @@ Sie müssen außerdem die [Eclipse-IDE für Java-Entwickler](https://www.eclipse
 
 12.  Schließen Sie JMeter. Es ist nicht erforderlich, den Testplan zu speichern.
 
-13.  Kopieren Sie die JAR-Datei mit der JUnit-Testklasse in den Ordner */home/&lt;Benutzername&gt;/apache-jmeter-2.13/lib/junit* auf jeder der untergeordneten JMeter-VMs. (*&lt;Benutzername&gt;* ist der Name des Administrators, den Sie beim Erstellen des virtuellen Computers angegeben haben. Weitere Informationen finden Sie unter [Erstellen der untergeordneten virtuellen JMeter-Computer](#_Creating_the_JMeter_2).)
+13.  Kopieren Sie die JAR-Datei mit der JUnit-Testklasse in den Ordner */home/&lt;Benutzername&gt;/apache-jmeter-2.13/lib/junit* auf jeder der untergeordneten JMeter-VMs. *&lt;Benutzername&gt;* ist der Name des Administrators, den Sie beim Erstellen des virtuellen Computers angegeben haben. Weitere Informationen finden Sie unter [Erstellen der untergeordneten virtuellen JMeter-Computer](#_Creating_the_JMeter_2).
 
 14.  Kopieren Sie die abhängigen JAR-Dateien, die für die JUnit-Testklasse erforderlich sind, in den Ordner */home/&lt;Benutzername&gt;/apache-jmeter-2.13/lib/junit* auf jedem untergeordneten virtuellen JMeter-Computer. Entfernen Sie zunächst unbedingt alle älteren Versionen der JAR-Dateien aus diesem Ordner.
 
 > [AZURE.NOTE] Mit dem Dienstprogramm pscp können Sie Dateien von einem Windows-Computer nach Ubuntu kopieren.
 
-<!---HONumber=AcomDC_0211_2016-->
+<!----HONumber=AcomDC_0211_2016-->

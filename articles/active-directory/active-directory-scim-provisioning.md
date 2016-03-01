@@ -22,7 +22,8 @@
 
 Über Azure Active Directory können Benutzer und Gruppen automatisch für alle Anwendungen oder Identitätsspeicher bereitgestellt werden, denen ein Webdienst mit einer Schnittstelle vorgelagert ist, wie sie in der [SCIM 2.0-Protokollspezifikation](https://tools.ietf.org/html/draft-ietf-scim-api-19) definiert ist. Azure Active Directory kann Anforderungen senden, um Benutzer und Gruppen für diesen Webdienst zu erstellen, zu ändern und zu löschen, und dann können diese Anforderungen in Vorgänge im Zielidentitätsspeicher übersetzt werden.
 
-![][1] *Abbildung: Bereitstellung aus Azure Active Directory in einem Identitätsspeicher per Webdienst*
+![][1]
+*Abbildung: Bereitstellung aus Azure Active Directory in einem Identitätsspeicher per Webdienst*
 
 Diese Funktion kann zusammen mit der Funktion „[Bring your own app](http://blogs.technet.com/b/ad/archive/2015/06/17/bring-your-own-app-with-azure-ad-self-service-saml-configuration-gt-now-in-preview.aspx)“ in Azure AD verwendet werden, um das einmalige Anmelden und die automatische Benutzerbereitstellung für Anwendungen zu ermöglichen, die einen SCIM-Webdienst bereitstellen oder denen ein solcher vorgelagert ist.
 
@@ -375,7 +376,7 @@ Gruppenressourcen werden über den Schemabezeichner http://schemas.microsoft.com
 
 In der Abbildung unten sind die Nachrichten dargestellt, die von Azure Active Directory an einen SCIM-Dienst gesendet werden, um den Lebenszyklus eines Benutzers in einem anderen Identitätsspeicher zu verwalten. In der Abbildung ist auch zu sehen, wie ein SCIM-Dienst, der mit den Common Language Infrastructure-Bibliotheken von Microsoft zum Erstellen dieser Dienste implementiert wird, diese Anforderungen in Aufrufe der Methoden eines Anbieters übersetzt.
 
-![][4]* Abbildung: Sequenz der Durchführung und Aufhebung einer Benutzerbereitstellung*
+![][4]*Abbildung: Sequenz der Durchführung und Aufhebung einer Benutzerbereitstellung*
 
 **1.** Azure Active Directory fragt den Dienst nach einem Benutzer mit einem externalId-Attributwert ab, der mit dem mailNickname-Attributwert eines Benutzers in Azure Active Directory übereinstimmt. Die Abfrage wird als Hypertext Transfer Protocol-Anforderung wie in diesem Beispiel ausgedrückt, wobei „jyoung“ ein Beispiel für ein mailNickname-Element eines Benutzers in Azure Active Directory ist:
 
@@ -703,4 +704,4 @@ In der Abbildung unten sind die Nachrichten dargestellt, die von Azure Active Di
 [4]: ./media/active-directory-scim-provisioning/scim-figure-4.PNG
 [5]: ./media/active-directory-scim-provisioning/scim-figure-5.PNG
 
-<!---HONumber=AcomDC_0211_2016-->
+<!----HONumber=AcomDC_0211_2016-->
