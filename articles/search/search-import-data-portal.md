@@ -14,7 +14,7 @@
 	ms.workload="search"
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
-	ms.date="11/09/2015"
+	ms.date="02/09/2016"
 	ms.author="heidist"/>
 
 # Importieren von Daten in Azure Search über das Portal
@@ -36,6 +36,8 @@ Bei Verwenden des Assistenten besteht der Datenimport aus drei Teilen:
 Zum Verwenden eines Indexers oder des Befehls **Daten importieren** muss Ihre primäre Datenquelle eine der folgenden unterstützten Datenquellen sein: Azure SQL-Datenbank, relationale SQL Server-Datenbank in einer Azure-VM oder Azure DocumentDB.
 
 Sie können Daten nur aus einer einzelnen Tabelle, Sicht oder entsprechenden Datenstruktur importieren. Sie müssen diese Datenstruktur ggf. zunächst in Ihrer Anwendungsdatenquelle erstellen, damit die richtigen Metadaten und Dateneingaben in Ihren Suchindex gelangen.
+
+Sie können diesen Workflow mithilfe von Beispieldaten testen. Informationen zum Einstieg finden Sie unter [Erste Schritte mit Azure Search im Azure-Portal](search-get-started-portal.md).
 
 ##Konfigurieren des Datenimports
 
@@ -74,4 +76,4 @@ Beim gerade abgeschlossenen Datenimportvorgang wird im Hintergrund ein Indexer e
 
 Doppelklicken Sie im Dashboard des Diensts auf die Kachel „Indexer“, um eine Liste aller Indexer einzublenden, die für Ihr Abonnement erstellt wurden. Doppelklicken Sie auf einen der Indexer, um ihn auszuführen, zu bearbeiten oder zu löschen.
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0224_2016-->

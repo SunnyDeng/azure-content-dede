@@ -12,7 +12,7 @@
 	ms.workload="web"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="article"
+	ms.topic="get-started-article"
 	ms.date="01/09/2016"
 	ms.author="jaime.espinosa"/>
 
@@ -45,7 +45,7 @@ Azure App Service-Web-Apps ist eine vollständig verwaltete Plattform, auf der S
 - **Bereitstellungsslots** – Implementieren Sie die [Stagingbereitstellung][Slots], um Ihren Code in einer Präproduktionsumgebung zu überprüfen, die mit Ihrer Webanwendung in der Produktion in Azure App Service identisch ist. Wenn Sie mit dem Ergebnis zufrieden sind, geben Sie durch einen Ersetzungsvorgang eine neue Version der Anwendung ohne Ausfallzeiten frei. 
 - **Test in der Produktion** – Heben Sie Stagingbereitstellungen auf die nächste Stufe, und führen Sie A/B-Tests aus, um Ihren neuen Code mit einem konfigurierbaren Bruchteil Ihres aktiven Datenverkehrs zu überprüfen. 
 - **WebJobs** – Führen Sie Programme oder Skripts auf virtuellen Web-Apps-Computern aus. Führen Sie Aufträge fortlaufend oder gemäß einem Zeitplan aus, und nehmen Sie eine Skalierung zur Ausführung auf mehreren virtuellen Computern vor. Nutzen Sie das Azure [WebJobs SDK][Webjobs] für die Integration in Azure Storage oder Service Bus.
-- **Hybridverbindungen** – Zugriff auf lokale Daten mit [Hybridverbindungen](../integration-hybrid-connection-overview.md) und [VNET](../app-service-web/web-sites-integrate-with-vnet.md).
+- **Hybridverbindungen** – Zugriff auf lokale Daten mit [Hybridverbindungen](../biztalk-services/integration-hybrid-connection-overview.md) und [VNET](../app-service-web/web-sites-integrate-with-vnet.md).
 
 ## Erste Schritte ##
 Führen Sie zum Einstieg in Web-Apps das Lernprogramm [Erstellen einer ASP.NET-Web-App][create] aus.
@@ -64,4 +64,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0224_2016-->

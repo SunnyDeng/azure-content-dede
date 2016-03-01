@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="02/09/2016"
+   ms.date="02/23/2016"
    ms.author="terrylan"/>
 
 # Verwalten von Sicherheitsempfehlungen in Azure Security Center
@@ -38,7 +38,7 @@ Unter [Festlegen von Sicherheitsrichtlinien in Azure Security Center](security-c
 - Aktivieren der Datensammlung
 - Auswählen der Empfehlungen, die Sie als Teil Ihrer Sicherheitsrichtlinie verwenden möchten
 
-Aktuelle Richtlinienempfehlungen beziehen sich auf Systemupdates, Grundregeln, Antischadsoftware, [ACLs für Endpunkte](../virtual-machines/virtual-machines-set-up-endpoints.md), [Netzwerksicherheitsgruppen](../virtual-networks/virtual-networks-nsg.md) für Subnetze und Netzwerkschnittstellen, Überwachung der SQL-Datenbank, Transparent Data Encryption für die SQL-Datenbank und Web Application Firewall. [Einrichten von Sicherheitsrichtlinien](security-center-policies.md) enthält eine Beschreibung der einzelnen Empfehlungsoptionen.
+Aktuelle Richtlinienempfehlungen beziehen sich auf Systemupdates, Grundregeln, Antischadsoftware, [ACLs für Endpunkte](../virtual-machines/virtual-machines-set-up-endpoints.md), [Netzwerksicherheitsgruppen](../virtual-network/virtual-networks-nsg.md) für Subnetze und Netzwerkschnittstellen, Überwachung der SQL-Datenbank, Transparent Data Encryption für die SQL-Datenbank und Web Application Firewall. [Einrichten von Sicherheitsrichtlinien](security-center-policies.md) enthält eine Beschreibung der einzelnen Empfehlungsoptionen.
 
 ### Überwachen von Empfehlungen
 Nach Einstellung einer Sicherheitsrichtlinie analysiert Security Center den Sicherheitsstatus Ihrer Ressourcen, um potenzielle Sicherheitsrisiken zu erkennen. Auf der Kachel **Empfehlungen** des Blatts **Security Center** können Sie die Gesamtzahl der von Security Center identifizierten Empfehlungen sehen.
@@ -64,15 +64,17 @@ Die Empfehlungen werden in einem Tabellenformat angezeigt, wobei jede Zeile eine
 
 Der folgenden Tabelle können Sie entnehmen, welche Empfehlungen verfügbar sind und welche Aktionen jeweils ausgeführt werden, wenn Sie sie anwenden:
 
+> [AZURE.NOTE] Erfahren Sie mehr über das [klassische und das Resource Manager-Bereitstellungsmodell](../azure-classic-rm.md) für Azure-Ressourcen.
+
 |Empfehlungen|Beschreibung|
 |-----|-----|
 |Sammlung von Daten für Abonnements/virtuelle Computer aktivieren|Empfiehlt Ihnen, in der Sicherheitsrichtlinie die Datensammlung für alle Abonnements oder für ausgewählte virtuelle Maschinen zu aktivieren.|
 |Grundregelkonflikte lösen|Empfiehlt Ihnen, OS-Konfigurationen an den empfohlenen Grundregeln zu orientieren, z. B. nicht zuzulassen, dass Kennwörter gespeichert werden.|
 |Systemupdates anwenden|Empfiehlt Ihnen, fehlende Systemupdates und kritische Updates für virtuelle Maschinen (nur Windows-VMs) bereitzustellen.|
 |ACLs für Endpunkte konfigurieren|Empfiehlt Ihnen, Zugriffssteuerungslisten zu konfigurieren, um den eingehenden Zugriff auf virtuelle Maschinen (nur klassische VMs) einzuschränken.|
-|Web Application Firewall hinzufügen|Empfiehlt Ihnen, eine Web Application Firewall (WAF) für Webendpunkte bereitzustellen (nur Ressourcen-Manager-VMs).|
+|[Web Application Firewall hinzufügen](security-center-add-web-application-firewall.md)|Empfiehlt Ihnen, eine Web Application Firewall (WAF) für Webendpunkte bereitzustellen. Der automatische Bereitstellungsvorgang basiert auf (mit dem Resource Manager-Bereitstellungsmodell erstellten) WAF-Paketen, die in einem separaten VNet bereitgestellt werden. Der Zugriff auf die geschützten Webanwendungen auf VMs (klassisch) ist auf die WAF-Geräte beschränkt, die nur NSG verwenden. Diese Unterstützung wird in Zukunft auf eine vollständig angepasste Bereitstellung von WAF-Paketen (klassisch) erweitert.|
 |Web Application Firewall-Setup abschließen|Um die Konfiguration einer WAF abzuschließen, muss Datenverkehr an das WAF-Gerät umgeleitet werden. Nach dieser Empfehlung werden die erforderlichen Setupänderungen vorgenommen.|
-|Antischadsoftware aktivieren|Empfiehlt Ihnen, Antischadsoftware für virtuelle Maschinen bereitzustellen (nur Windows-VMs).|
+|[Antischadsoftware aktivieren](security-center-enable-antimalware.md)|Empfiehlt Ihnen, Antischadsoftware für virtuelle Maschinen bereitzustellen (nur Windows-VMs).|
 |Netzwerksicherheitsgruppen für Subnetze/Netzwerkschnittstellen aktivieren|Empfiehlt Ihnen, Netzwerksicherheitsgruppen (NSGs) für Subnetze und Netzwerkschnittstellen zu aktivieren (nur Ressourcen-Manager-VMs).|
 |Zugriff über öffentliche externe Endpunkte einschränken|Empfiehlt Ihnen, Regeln für eingehenden Datenverkehr für NSGs zu konfigurieren.|
 |Überwachung von SQL-Server aktivieren|Empfiehlt Ihnen, die Überwachung für Azure SQL-Server zu aktivieren (nur Azure SQL-Dienst, keine Ausführung von SQL auf Ihren virtuellen Maschinen).|
@@ -101,33 +103,15 @@ Nach Auswertung aller Empfehlungen entscheiden Sie, welche zuerst angewendet wer
 4. Weitere Informationen zur Antischadsoftware-Lösung werden angezeigt. Klicken Sie auf **Erstellen**.
 5. Geben Sie die erforderlichen Konfigurationseinstellungen auf dem Blatt **Erweiterung hinzufügen** ein, und wählen Sie anschließend **OK**. ![][6]
 
-[Microsoft Antimalware](../azure-security/azure-security-antimalware.md) ist jetzt auf dem ausgewählten virtuellen Computer aktiv.
+[Microsoft Antimalware](../azure-security-antimalware.md) ist jetzt auf dem ausgewählten virtuellen Computer aktiv.
 
-### Bereitstellen empfohlener Partnerlösungen
-
-Eine andere Empfehlung könnte lauten, eine integrierte Sicherheitslösung von einem Microsoft-Partner bereitzustellen. Wir sehen uns nun ein Beispiel zu dieser Vorgehensweise an.
-
-1. Kehren Sie zum Blatt **Empfehlungen** zurück.
-2.	Wählen Sie die Empfehlung **Secure web application using web application firewall**. Daraufhin wird das Blatt **Unprotected Web Applications** geöffnet. ![][7]
-3. Wählen Sie eine Webanwendung aus, um das Blatt **Add a Web Application Firewall** zu öffnen.
-4. Wählen Sie **Barracuda Web Application Firewall** aus. Ein Blatt wird geöffnet, das Ihnen Informationen zur **Barracuda Web Application Firewall** liefert.
-5. Klicken Sie auf dem Informationsblatt auf **Erstellen**. Das Blatt **New Web Application Firewall** wird geöffnet, auf dem Sie Schritte zur **VM-Konfiguration** ausführen und **WAF-Informationen** bereitstellen können.
-6. Wählen Sie **VM-Konfiguration** aus. Auf dem Blatt **VM-Konfiguration** können Sie Informationen eingeben, die erforderlich sind, um den virtuellen Computer einzurichten, auf dem die WAF ausgeführt wird. ![][8]
-7. Kehren Sie zum Blatt **New Web Application Firewall** zurück, und wählen Sie **WAF-Informationen**. Auf dem Blatt **WAF-Informationen** können Sie die WAF selbst konfigurieren. In Schritt 6 können Sie den virtuellen Computer konfigurieren, auf dem die WAF ausgeführt wird, und in Schritt 7 können Sie die WAF selbst bereitstellen.
-
-8. Kehren Sie zum Blatt **Empfehlungen** zurück. Ein neuer Eintrag wurde generiert, nachdem Sie die WAF erstellt haben: **Web Application Firewall-Setup abschließen**. Dank dieses Eintrags wissen Sie, dass Sie den Prozess der eigentlichen „Verdrahtung“ der WAF in Azure Virtual Network abschließen müssen, damit die Anwendung geschützt werden kann. ![][9]
-
-9. Wählen Sie **Web Application Firewall-Setup abschließen**. Ein neues Blatt wird geöffnet. Sie sehen, dass eine Webanwendung vorhanden ist, für die der Datenverkehr umgeleitet muss.
-10. Wählen Sie die Webanwendung aus. Es wird ein Blatt geöffnet, in dem Sie Schritte zum Abschließen des Web Application Firewall-Setups ausführen können. Führen Sie die Schritte aus, und klicken Sie dann auf **Datenverkehr einschränken**. Security Center führt die Verkabelung dann für Sie durch. ![][10]
-
-Die Protokolle dieser WAF sind nun vollständig integriert. Security Center kann automatisch beginnen, die Protokolle zu sammeln und zu analysieren, damit Sie wichtige Sicherheitswarnungen erhalten können.
 
 ## Nächste Schritte
 In diesem Dokument wurden Ihnen die Sicherheitsempfehlungen in Security Center vorgestellt. Weitere Informationen zu Security Center finden Sie in den folgenden Quellen:
 
 - [Festlegen von Sicherheitsrichtlinien in Azure Security Center](security-center-policies.md): Erfahren Sie, wie Sie Sicherheitsrichtlinien konfigurieren.
 - [Überwachen der Sicherheitsintegrität in Azure Security Center](security-center-monitoring.md): Erfahren Sie, wie Sie die Integrität Ihrer Azure-Ressourcen überwachen.
-- [Verwalten von und Reagieren auf Sicherheitswarnungen in Azure Security Center](security-center-managing-and-responding-alerts.md): Erfahren Sie, wie Sie Sicherheitswarnungen verwalten und darauf reagieren.
+- [Verwalten von und Reagieren auf Sicherheitswarnungen in Azure Security Center](security-center-managing-and-responding-alerts.md): Erfahren Sie, wie Sie Sicherheitswarnungen verwalten und auf diese reagieren.
 - [Azure Security Center – häufig gestellte Fragen](security-center-faq.md): Hier finden Sie häufig gestellte Fragen zur Verwendung des Diensts.
 - [Azure Security Blog](http://blogs.msdn.com/b/azuresecurity/): Hier finden Sie Blogbeiträge über Azure-Sicherheit und -Compliance.
 
@@ -137,9 +121,5 @@ In diesem Dokument wurden Ihnen die Sicherheitsempfehlungen in Security Center v
 [4]: ./media/security-center-recommendations/dismiss-recommendations.png
 [5]: ./media/security-center-recommendations/select-enable-antimalware.png
 [6]: ./media/security-center-recommendations/install-antimalware.png
-[7]: ./media/security-center-recommendations/secure-web-application.png
-[8]: ./media/security-center-recommendations/vm-configuration.png
-[9]: ./media/security-center-recommendations/finalize-waf.png
-[10]: ./media/security-center-recommendations/restrict-traffic.png
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0224_2016-->

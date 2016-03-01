@@ -14,7 +14,7 @@
  ms.topic="get-started-article"
  ms.tgt_pltfrm="na"
  ms.workload="na"
- ms.date="11/30/2015"
+ ms.date="02/19/2016"
  ms.author="dobett"/>
 
 # Was sind vorkonfigurierte Azure IoT Suite-Lösungen?
@@ -34,8 +34,7 @@ In der folgenden Tabelle wird gezeigt, welchen IoT-Features die Lösungen zugeor
 
 | Lösung | Datenerfassung | Geräteidentität | Befehl und Steuerung | Regeln und Aktionen | Predictive Analytics |
 |------------------------|-----|-----|-----|-----|-----|
-| [Remoteüberwachung][lnk-remote-monitoring] | Ja | Ja | Ja | Ja | – |
-| [Vorbeugende Wartung][lnk-predictive-maintenance] | Ja | Ja | Ja | Ja | Ja |
+| [Remoteüberwachung][lnk-remote-monitoring] | Ja | Ja | Ja | Ja | – | | [Vorbeugende Wartung][lnk-predictive-maintenance] | Ja | Ja | Ja | Ja | Ja |
 
 ## Übersicht über die vorkonfigurierte Lösung zur Remoteüberwachung
 
@@ -47,18 +46,22 @@ Im folgenden Diagramm sind die wichtigsten Elemente der Remoteüberwachungslösu
 
 ## Geräte
 
-Wenn Sie die vorkonfigurierte Lösung für die Remoteüberwachung bereitstellen, enthält die Bereitstellung Instanzen eines Softwaregerätesimulators, mit dem ein physisches Kühlgerät simuliert wird. Die simulierten Geräte senden Telemetriedaten zu Temperatur und Luftfeuchtigkeit an einen IoT Hub-Endpunkt. Außerdem reagieren die simulierten Geräte auch auf die folgenden Befehle, die vom Lösungsportal über den IoT Hub gesendet werden:
+Wenn Sie die vorkonfigurierte Lösung für die Remoteüberwachung bereitstellen, werden vier simulierte Geräte in der Lösung vorab bereitgestellt, mit denen ein Kühlgerät simuliert wird. Diese simulierte Geräte verfügen über ein integriertes Temperatur- und Luftfeuchtigkeitsmodell, das Telemetriedaten ausgibt.
 
-- Ping Device (Gerät pingen)
-- Start Telemetry (Telemetrie starten)
-- Stop Telemetry (Telemetrie beenden)
-- Change Set Point Temperature (Festgelegte Punkttemperatur ändern)
-- Diagnostic Telemetry (Diagnosetelemetrie)
-- Change Device State (Gerätestatus ändern)
+Bei der ersten Verbindung eines Geräts mit IoT Hub in der vorkonfigurierten Lösung für die Remoteüberwachung werden in der an den IoT Hub gesendeten Geräteinformationsmeldung die Befehle aufgelistet, auf die das Gerät reagieren kann. In der vorkonfigurierten Lösung für die Remoteüberwachung sind das die folgenden Befehle:
+
+- *Gerät pingen* Das Gerät reagiert auf diesen Befehl mit einer Bestätigung. Dies ist hilfreich, um sicherzustellen, dass das Gerät noch aktiv ist und überwacht wird.
+- *Telemetrie starten* Weist das Gerät an, mit dem Senden von Telemetriedaten zu beginnen.
+- *Telemetrie beenden* Weist das Gerät an, das Senden von Telemetriedaten zu beenden.
+- *Festgelegte Punkttemperatur ändern* Steuert die simulierten Temperaturtelemetriewerte, die das Gerät sendet. Dies ist hilfreich beim Testen.
+- *Diagnosetelemetrie* Steuert, ob das Gerät die externen Temperaturtelemetriedaten sendet.
+- *Gerätestatus ändern* Legt die Metadateneigenschaft des Gerätezustands fest, den das Gerät meldet. Dies ist hilfreich beim Testen.
+
+Sie können der Lösung weitere simulierte Geräte hinzufügen, die die gleichen Telemetriedaten ausgeben und auf die gleichen Befehle reagieren.
 
 ## IoT Hub
 
-Ein IoT Hub empfängt Telemetriedaten von den Kühlgeräten an einem Endpunkt. Ein IoT Hub verwaltet auch gerätespezifische Endpunkte, wobei jedes Gerät die Befehle abrufen kann, z. B. den Befehl **Ping Device**, die an das Gerät gesendet werden.
+Ein IoT Hub empfängt Telemetriedaten von den Kühlgeräten an einem Endpunkt. Ein IoT Hub verwaltet auch gerätespezifische Endpunkte, wobei jedes Gerät die Befehle abrufen kann, die an das Gerät gesendet werden.
 
 Der IoT Hub stellt die erhaltenen Telemetriedaten über einen Consumergruppen-Endpunkt zur Verfügung.
 
@@ -68,15 +71,16 @@ Bei dieser vorkonfigurierten Lösung entspricht die IoT Hub-Instanz dem *Cloud-G
 
 Die vorkonfigurierte Lösung verwendet drei [Azure Stream Analytics][lnk-asa]-Aufträge (ASA), um den Telemetriedatenstrom von den Kühlgeräten zu filtern:
 
-- Auftrag 1 sendet alle Telemetriedaten zu Cold Storage-Zwecken an die Azure Blob Storage-Einheit.
-- Auftrag 2 filtert den Telemetriedatenstrom, um Befehlsantwortnachrichten und Gerätestatusnachrichten von den Geräten zu identifizieren, und sendet diese speziellen Nachrichten an einen Azure Event Hub-Endpunkt.
-- Auftrag 3 filtert den Telemetriedatenstrom nach Werten, die Alarme auslösen. Wenn ein Wert einen Alarm auslöst, zeigt die Lösung die Benachrichtigung in der Tabelle mit dem Alarmverlauf in der Dashboardanzeige des Lösungsportals an.
+
+- *DeviceInfo-Auftrag* – sendet geräteregistrierungspezifische Meldungen an die Geräteregistrierung der Lösung (eine DocumentDB-Datenbank).
+- *Telemetrieauftrag* – sendet alle Telemetrierohdaten zu Cold Storage-Zwecken an den Azure-Blobspeicher und berechnet Telemetrieaggregationen, die im Lösungsdashboard angezeigt werden.
+- *Regelauftrag* – filtert den Telemetriedatenstrom, um Werte zu identifizieren, die Regelschwellenwerte überschreiten. Wenn eine Regel ausgelöst wird, wird dieses Ereignis in der Dashboardansicht des Lösungsportals in der Tabelle mit dem Alarmverlauf als neue Zeile angezeigt. Außerdem wird basierend auf den im Lösungsportal in den Ansichten „Regeln“ und „Aktionen“ definierten Einstellungen eine Aktion ausgelöst.
 
 Bei dieser vorkonfigurierten Lösung bilden die ASA-Aufträge einen Teil des *IoT-Lösungs-Back-Ends* in einer typischen [IoT-Lösungsarchitektur][lnk-what-is-azure-iot].
 
 ## Ereignisprozessor
 
-Eine [EventPocessorHost][lnk-event-processor]-Instanz, die in einem [WebJob][lnk-web-job] ausgeführt wird, verarbeitet die von ASA-Auftrag 2 identifizierten Befehlsantwort- und Gerätestatusnachrichten und speichert diese Informationen dann in einer [Azure DocumentDB][lnk-document-db]-Datenbank.
+Eine [EventPocessorHost][lnk-event-processor]-Instanz, die in einem [WebJob][lnk-web-job] ausgeführt wird, verarbeitet die Ausgabe aus den DeviceInfo- und Regelaufträgen.
 
 Bei dieser vorkonfigurierten Lösung bildet der Ereignisprozessor einen Teil des *IoT-Lösungs-Back-Ends* in einer typischen [IoT-Lösungsarchitektur][lnk-what-is-azure-iot].
 
@@ -92,7 +96,7 @@ Das Lösungsportal ist eine webbasierte Benutzeroberfläche, die in der Cloud al
 - Senden von Befehlen an bestimmte Geräte
 - Verwalten von Regeln und Aktionen
 
-> [AZURE.NOTE] Im Lösungsportal bleibt die [Registrierung der IoT Hub-Geräteidentität][lnk-identity-registry] mit den umfassenderen Gerätestatusinformationen in der DocumentDB-Datenbank der Lösung synchronisiert.
+> [AZURE.NOTE] In der vorkonfigurierten Lösung bleibt die [Registrierung der IoT-Hub Geräteidentität][lnk-identity-registry] mit der Registrierung (DocumentDB-Datenbank) der Geräteidentität der Lösung synchronisiert, in der umfangreichere Gerätemetadaten gespeichert werden.
 
 Bei dieser vorkonfigurierten Lösung bildet das Lösungsportal einen Teil des *IoT-Lösungs-Back-Ends* und einen Teil der *Verarbeitungsverbindung und Business Connectivity* in einer typischen [IoT-Lösungsarchitektur][lnk-what-is-azure-iot].
 
@@ -116,4 +120,4 @@ Unter den folgenden Ressourcen erhalten Sie weitere Informationen zu vorkonfigur
 [lnk-preconf-get-started]: iot-suite-getstarted-preconfigured-solutions.md
 [lnk-predictive-maintenance]: iot-suite-predictive-overview.md
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0224_2016-->

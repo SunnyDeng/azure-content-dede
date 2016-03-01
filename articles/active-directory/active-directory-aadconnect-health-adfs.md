@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="02/16/2016"
+	ms.date="02/17/2016"
 	ms.author="billmath"/>
 
 # Verwenden von Azure AD Connect Health mit AD FS
@@ -73,5 +73,6 @@ Wenn Sie die Filteroption oben im Blatt auswählen, können Sie eine Filterung n
 * [Azure AD Connect Health-Vorgänge](active-directory-aadconnect-health-operations.md)
 * [Verwenden von Azure AD Connect Health für die Synchronisierung](active-directory-aadconnect-health-sync.md)
 * [Azure AD Connect Health – FAQ](active-directory-aadconnect-health-faq.md)
+* [Azure AD Connect Health: Versionsverlauf](active-directory-aadconnect-health-version-history.md)
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0224_2016-->

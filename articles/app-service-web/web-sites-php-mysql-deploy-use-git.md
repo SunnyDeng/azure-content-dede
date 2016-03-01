@@ -13,7 +13,7 @@
 	ms.workload="web"
 	ms.tgt_pltfrm="na"
 	ms.devlang="PHP"
-	ms.topic="article"
+	ms.topic="hero-article"
 	ms.date="02/09/2016"
 	ms.author="tomfitz"/>
 
@@ -213,7 +213,7 @@ Befolgen Sie die unten stehenden Schritte, um die Anwendung lokal zu erstellen u
 
 		php -S localhost:8000
 
-Nun können Sie zu **http://localhost:8000/** navigieren, um die Anwendung zu testen.
+Nun können Sie zu ****http://localhost:8000/** navigieren, um die Anwendung zu testen.
 
 
 ##Veröffentlichen der App
@@ -303,4 +303,4 @@ Weitere Informationen finden Sie im [PHP Developer Center](/develop/php/).
 [sql-database-editions]: http://msdn.microsoft.com/library/windowsazure/ee621788.aspx
  
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0224_2016-->

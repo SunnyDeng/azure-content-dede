@@ -12,7 +12,7 @@
 	ms.workload="na"
 	ms.tgt_pltfrm="mobile-multiple"
 	ms.devlang="na"
-	ms.topic="article"
+	ms.topic="get-started-article"
 	ms.date="02/04/2016"
 	ms.author="kirillg"/>
 
@@ -50,4 +50,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 [Azure App Service]: ../app-service/app-service-value-prop-what-is.md
 [Erste Schritte]: app-service-mobile-ios-get-started.md
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0224_2016-->

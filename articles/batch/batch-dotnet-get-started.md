@@ -28,9 +28,9 @@ In diesem Artikel wird davon ausgegangen, dass Sie über C#- und Visual Studio-G
 
 ### Konten
 
-- **Azure-Konto:** Wenn Sie nicht bereits über ein Azure-Abonnement verfügen, können Sie innerhalb weniger Minuten unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/) ein kostenloses Testkonto erstellen.
+- **Azure-Konto:** Wenn Sie nicht bereits über ein Azure-Abonnement verfügen, können Sie ein [kostenloses Azure-Konto erstellen][azure_free_account].
 - **Batch-Konto:** Wenn Sie über ein Azure-Abonnement verfügen, können Sie ein [Azure Batch-Konto erstellen und verwalten](batch-account-create-portal.md).
-- **Storage-Konto:** Weitere Informationen finden Sie unter [Informationen zu Azure-Speicherkonten](../storage-create-storage-account.md) im Abschnitt „Erstellen eines Speicherkontos“.
+- **Storage-Konto:** Weitere Informationen finden Sie unter [Informationen zu Azure-Speicherkonten](./../storage/storage-create-storage-account.md) im Abschnitt „Erstellen eines Speicherkontos“.
 
 ### Visual Studio
 
@@ -626,6 +626,7 @@ Nachdem Sie sich jetzt mit dem grundlegenden Workflow einer Batch-Lösung vertra
 - Sehen Sie sich eine andere Implementierung einer Verarbeitung der Workload „Oberste N Wörter“ mit Batch im Beispiel [TopNWords][github_topnwords] an.
 
 [azure_batch]: https://azure.microsoft.com/services/batch/
+[azure_free_account]: https://azure.microsoft.com/free/
 [azure_portal]: https://portal.azure.com
 [batch_explorer_blog]: http://blogs.technet.com/b/windowshpc/archive/2015/01/20/azure-batch-explorer-sample-walkthrough.aspx
 [batch_learning_path]: https://azure.microsoft.com/documentation/learning-paths/batch/
@@ -680,4 +681,4 @@ Nachdem Sie sich jetzt mit dem grundlegenden Workflow einer Batch-Lösung vertra
 [10]: ./media/batch-dotnet-get-started/credentials_storage_sm.png "Storage-Anmeldeinformationen im Portal"
 [11]: ./media/batch-dotnet-get-started/batch_workflow_minimal_sm.png "Batch-Lösungsworkflow (reduziertes Diagramm)"
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0224_2016-->

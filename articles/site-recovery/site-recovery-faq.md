@@ -76,7 +76,7 @@ Ja. Sie können Hyper-V-VMs in der Cloud auf dem VMM-Server in Azure replizieren
 
 Sie können physische Server unter Windows und Linux in Azure oder einen sekundären Standort schützen. [Informationen](site-recovery-vmware-to-azure-classic.md#before-you-start-deployment) zu Betriebssystemanforderugen: Unabhängig davon, ob Sie physische Server in Azure oder einen sekundären Standort replizieren, gelten die gleichen Einschränkungen.
 
-Beachten Sie, dass physische Server als VMs in Azure ausgeführt werden, wenn der lokale Server ausfällt. Das Failback zu einem lokalen physischen Server wird derzeit nicht unterstützt. Sie müssen ein Failback zu einer VMWare-VM durchführen.
+Beachten Sie, dass physische Server als VMs in Azure ausgeführt werden, wenn der lokale Server ausfällt. Das Failback zu einem lokalen physischen Server wird derzeit nicht unterstützt. Sie können nur ein Failback zu einer virtuellen Maschine unter VMware ausführen.
 
 ### Welche VMware-VMs können geschützt werden?
 
@@ -219,4 +219,4 @@ Ja, Sie können virtuelle Hyper-V-Computer in Azure oder zwischen Dienstanbieter
 - Lesen Sie die [Site Recovery-Übersicht](site-recovery-overview.md).
 - Erfahren Sie mehr über die [Site Recovery-Architektur](site-recovery-components.md).  
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0224_2016-->

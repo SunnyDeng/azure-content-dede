@@ -4,13 +4,13 @@
 
 3. Wählen Sie im Feld **Ressourcengruppe** eine vorhandene Ressourcengruppe aus. Wenn Sie keine Ressourcengruppen besitzen, geben Sie den gleichen Namen wie für Ihre App ein.
  
-	An dieser Stelle wird der standardmäßige App Service-Plan ausgewählt, bei dem es sich um den kostenlosen Tarif handelt. Die Einstellungen für den App Service-Plan bestimmen den Standort, die Funktionen und die Computeressourcen Ihrer App. Sie können einen anderen vorhandenen App Service-Plan auswählen oder einen neuen Plan erstellen. Weitere Informationen zu App Service-Plänen und zum Erstellen eines neuen Plans finden Sie unter [Azure App Service-Pläne – Detaillierte Übersicht](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md).
+	An dieser Stelle wird der standardmäßige App Service-Plan ausgewählt, bei dem es sich um den [Standard-Tarif](https://azure.microsoft.com/pricing/details/app-service/) handelt. Die Einstellungen für den App Service-Plan bestimmen den Standort, die Funktionen und die Computeressourcen Ihrer App. Sie können einen anderen vorhandenen App Service-Plan auswählen oder einen neuen Plan erstellen. Weitere Informationen zu App Service-Plänen sowie zum Erstellen eines neuen Plans in einem anderen Tarif und am gewünschten Standort finden Sie unter [Azure App Service-Pläne – Detaillierte Übersicht](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md).
 
 4. Verwenden Sie den standardmäßigen App Service-Plan, wählen Sie einen anderen Plan aus, oder [erstellen Sie einen neuen Plan](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md#create-an-app-service-plan), und klicken Sie auf **Erstellen**.
 	
 	Dadurch wird das Back-End für mobile Apps erstellt. Später werden Sie Ihr Serverprojekt in diesem Back-End bereitstellen. Die Bereitstellung eines Back-Ends für mobile Apps kann mehrere Minuten dauern. Nach Abschluss wird das Blatt **Einstellungen** für das mobile App-Back-End angezeigt. Bevor Sie das Back-End für mobile Apps verwenden können, müssen Sie auch eine Verbindung zu einem Datenspeicher definieren.
 
-    > [AZURE.NOTE]Im Rahmen dieses Tutorials erstellen Sie eine neue SQL-Datenbankinstanz und einen neuen SQL-Datenbankserver. Sie können diese neue Datenbank wiederverwenden und wie jede andere SQL-Datenbankinstanz verwalten. Wenn Sie bereits über eine Datenbank an demselben Standort wie dem des neuen mobilen App-Back-Ends verfügen, können Sie stattdessen **Vorhandene Datenbank verwenden** wählen und dann diese Datenbank auswählen. Die Verwendung einer Datenbank an einem anderen Standort wird nicht empfohlen, da zusätzliche Kosten für Bandbreite anfallen können und es zu höherer Latenz kommen kann. Es stehen weitere Datenspeicheroptionen zur Verfügung.
+    > [AZURE.NOTE] Im Rahmen dieses Tutorials erstellen Sie eine neue SQL-Datenbankinstanz und einen neuen SQL-Datenbankserver. Sie können diese neue Datenbank wiederverwenden und wie jede andere SQL-Datenbankinstanz verwalten. Wenn Sie bereits über eine Datenbank an demselben Standort wie dem des neuen mobilen App-Back-Ends verfügen, können Sie stattdessen **Vorhandene Datenbank verwenden** wählen und dann diese Datenbank auswählen. Die Verwendung einer Datenbank an einem anderen Standort wird nicht empfohlen, da zusätzliche Kosten für Bandbreite anfallen können und es zu höherer Latenz kommen kann. Es stehen weitere Datenspeicheroptionen zur Verfügung.
 
 6. Klicken Sie auf dem Blatt **Einstellungen** für das neue Back-End für mobile Apps auf **Schnellstart** > Ihre Clientanwendungsplattform > **Verbindung mit Datenbank herstellen**.
 
@@ -30,4 +30,4 @@
 <!-- URLs. -->
 [Azure-Portal]: https://portal.azure.com/
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0224_2016-->

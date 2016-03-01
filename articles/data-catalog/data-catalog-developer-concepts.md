@@ -10,7 +10,7 @@
 <tags 
    ms.service="data-catalog"
    ms.devlang="NA"
-   ms.topic="article"
+   ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
    ms.date="02/03/2016"
@@ -190,7 +190,7 @@ Mit den Ansichtselementanforderungen **PUT** und **POST** können Sie Rollen und
 
 > [AZURE.NOTE]
 >
-> **\_\_permissions** gilt nur für ein Stammelement.
+> **__**\_\_permissions** gilt nur für ein Stammelement.
 >
 > Die Rolle **Besitzer** gilt nur für ein Stammelement.
 >
@@ -262,4 +262,4 @@ Mit den Ansichtselementanforderungen **PUT** und **POST** können Sie Rollen und
 <!--Image references-->
 [1]: ./media/data-catalog-developer-concepts/concept2.png
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0224_2016-->

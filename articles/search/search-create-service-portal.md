@@ -14,7 +14,7 @@
 	ms.workload="search"
 	ms.topic="hero-article"
 	ms.tgt_pltfrm="na"
-	ms.date="02/05/2016"
+	ms.date="02/18/2016"
 	ms.author="heidist"/>
 
 # Erstellen eines Azure Search-Diensts im Azure-Portal
@@ -25,7 +25,7 @@ Die Preise für Azure Search reichen von kostenlos (Shared) bis zu Standard, wob
 
 ## Kostenloses Hinzufügen von Azure Search zu Ihrem Abonnement
 
-Bei Verwendung der Option „Shared“ können Administratoren Azure Search einem vorhandenen Azure-Abonnement kostenlos hinzufügen. Registrieren Sie sich für ein [kostenloses Testabonnement](../includes/free-trial-note.md), um Ihre Evaluierung zu beginnen.
+Bei Verwendung der Option „Shared“ können Administratoren Azure Search einem vorhandenen Azure-Abonnement kostenlos hinzufügen. Registrieren Sie sich für ein [kostenloses Testabonnement](../../includes/free-trial-note.md), um Ihre Evaluierung zu beginnen.
 
 1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
 
@@ -126,4 +126,4 @@ Nachdem der Dienst erstellt wurde, können Sie die nächsten Schritte ausführen
 [2]: ./media/search-create-service-portal/create-search-portal-2.PNG
 [3]: ./media/search-create-service-portal/create-search-portal-3.PNG
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0224_2016-->

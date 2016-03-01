@@ -13,13 +13,12 @@
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery" 
-	ms.date="12/14/2015" 
+	ms.date="02/22/2016" 
 	ms.author="raynew"/>
 
 #  Was ist Site Recovery?
 
-Site Recovery ist ein Azure-Dienst zur Optimierung Ihrer Strategie für Geschäftskontinuität und Notfallwiederherstellung. Dazu erfolgt eine Orchestrierung der Replikation Ihrer lokalen Server und virtuellen Computer in ein sekundäres Datencenter oder Azure. Site Recovery übernimmt die Replikation, und Sie können ein Failover oder eine Wiederherstellung über einen einfachen Mausklick auslösen. Im Abschnitt [Häufig gestellte Fragen](site-recovery-faq.md) finden Sie eine Liste häufig gestellter Fragen.
-
+Der Dienst Azure Site Recovery unterstützt Ihre Strategie für Geschäftskontinuität und Notfallwiederherstellung, indem Replikation, Failover und Wiederherstellung virtueller Computer und physischer Server aufeinander abgestimmt werden. Computer können in Azure oder in einem sekundären lokalen Datencenter repliziert werden. Allgemeine Fragen finden Sie in den [Häufig gestellten Fragen](site-recovery-faq.md).
 
 ## Gründe für Azure Site Recovery 
 
@@ -68,4 +67,4 @@ Unter [Welche Workloads kann Site Recovery schützen?](site-recovery-workload.md
 Nach dieser Übersicht erfahren Sie [hier](site-recovery-components.md) mehr über die Site Recovery-Architektur.
  
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0224_2016-->

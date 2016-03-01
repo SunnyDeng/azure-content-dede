@@ -14,7 +14,7 @@
 	ms.workload="search"
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
-	ms.date="11/09/2015"
+	ms.date="02/18/2016"
 	ms.author="heidist"/>
 
 # Erstellen eines Azure Search-Index mit .NET
@@ -24,7 +24,7 @@
 - [.NET](search-create-index-dotnet.md)
 - [REST](search-create-index-rest-api.md)
 
-Dieser Artikel beschreibt, wie Sie einen Index mit dem [Azure Search .NET SDK](https://msdn.microsoft.com/library/azure/dn951165.aspx) erstellen. Der folgende Inhalt ist ein Auszug des Artikels [Verwenden von Azure Search aus einer .NET-Anwendung](search-howto-dotnet-sdk.md). Ausführliche Anweisungen finden Sie im übergeordneten Artikel.
+Dieser Artikel beschreibt, wie Sie einen Index mit dem [Azure Search .NET SDK](https://msdn.microsoft.com/library/azure/dn951165.aspx) erstellen. Der folgende Inhalt ist eine Teilmenge des Artikels [Verwenden von Azure Search aus einer .NET-Anwendung](search-howto-dotnet-sdk.md). Ausführliche Anweisungen finden Sie im übergeordneten Artikel.
 
 Zu den Voraussetzungen zum Erstellen eines Index gehört das vorherige Einrichten einer Verbindung mit Ihrem Suchdienst, was üblicherweise über einen `SearchServiceClient` erfolgt. Eine bewährte Methode zur Sicherstellung einer reibungslosen erneuten Bereitstellung ist das Löschen eines vorhandenen Index mit dem gleichen Namen, wenn er bereits vorhanden ist.
 
@@ -66,4 +66,4 @@ Um einen neuen Index namens „hotels“ zu erstellen, erstellen Sie eine Method
 
 Diese Methode erstellt ein neues `Index`-Objekt mit einer Liste von `Field`-Objekten, die das Schema des neuen Index definiert. Jedes Feld weist einen Namen, einen Datentyp und mehrere Attribute auf, die das Suchverhalten des Felds definieren. Neben Feldern können Sie dem Index auch Wertungsprofile, Vorschläge oder CORS-Optionen hinzufügen, die im Beispiel fehlen, um es einfach zu halten. Weitere Informationen zum Indexobjekt und seinen Komponenten finden Sie in der SDK-Referenz auf [MSDN](https://msdn.microsoft.com/library/azure/microsoft.azure.search.models.index_members.aspx) sowie in der [Azure Search-REST-API-Referenz](https://msdn.microsoft.com/library/azure/dn798935.aspx).
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0224_2016-->
