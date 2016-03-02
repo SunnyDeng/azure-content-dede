@@ -19,7 +19,7 @@ In diesem Schritt erstellen Sie manuell den Verfügbarkeitsgruppenlistener im Fa
 	 - Wählen Sie **Statische IP-Adresse** aus, weisen Sie eine nicht verwendete IP-Adresse zu, und klicken Sie dann auf **OK**.
 
 1. Klicken Sie mit der rechten Maustaste auf die IP-Adressressource, die Ihrem Azure-Subnetz entspricht, und wählen Sie dann "Eigenschaften" aus.
-	>[AZURE.NOTE]Kann der Listener später durch eine in Konflikt stehende IP-Adresse, die von DHCP ausgewählt wird, nicht online geschaltet werden, können Sie im Eigenschaftenfenster eine gültige statische IP-Adresse konfigurieren.
+	>[AZURE.NOTE] Kann der Listener später durch eine in Konflikt stehende IP-Adresse, die von DHCP ausgewählt wird, nicht online geschaltet werden, können Sie im Eigenschaftenfenster eine gültige statische IP-Adresse konfigurieren.
 
 1. Ändern Sie im gleichen Eigenschaftenfenster **IP-Adresse** den Wert für **IP-Adressname**. Dieser IP-Adressname wird in der Variablen **$IPResourceName** des PowerShell-Skripts verwendet. Wiederholen Sie diesen Schritt für jede IP-Ressource, wenn die Lösung mehrere Azure-VNets umfasst.
 

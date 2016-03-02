@@ -31,7 +31,7 @@ Sie können auswählen, ob Sie per E-Mail über die Warnungsbedingungen für die
 
 >[AZURE.NOTE] Sie können maximal 20 E-Mail-Adressen pro virtuellem Gerät eingeben.
 
-Nachdem Sie die E-Mail-Benachrichtigung für ein virtuelles Gerät aktiviert haben, erhalten die Mitglieder der Benachrichtigungsliste jedes Mal eine E-Mail-Nachricht, wenn eine kritische Warnung vorliegt. Die Nachrichten werden von der Adresse **storsimple-alerts-noreply@mail.windowsazure.com* gesendet und enthalten eine Beschreibung der Warnungsbedingung. Empfänger können auf **Abonnement kündigen** klicken, um das Entfernen aus der E-Mail-Benachrichtigungsliste durchzuführen.
+Nachdem Sie die E-Mail-Benachrichtigung für ein virtuelles Gerät aktiviert haben, erhalten die Mitglieder der Benachrichtigungsliste jedes Mal eine E-Mail-Nachricht, wenn eine kritische Warnung vorliegt. Die Nachrichten werden von der Adresse *storsimple-alerts-noreply@mail.windowsazure.com* gesendet und enthalten eine Beschreibung der Warnungsbedingung. Empfänger können auf **Abonnement kündigen** klicken, um das Entfernen aus der E-Mail-Benachrichtigungsliste durchzuführen.
 
 #### So aktivieren Sie E-Mail-Benachrichtigungen über Warnungen für ein virtuelles Gerät
 
@@ -45,7 +45,7 @@ Nachdem Sie die E-Mail-Benachrichtigung für ein virtuelles Gerät aktiviert hab
 
     2. Klicken Sie im Feld **E-Mail an Dienstadministratoren** auf **JA**, wenn der Dienstadministrator und alle Co-Administratoren die Warnungsbenachrichtigungen erhalten sollen.
 
-    3. Geben Sie im Feld **Andere E-Mail-Empfänger** die E-Mail-Adressen aller weiteren Empfänger ein, die die Warnungsbenachrichtigungen erhalten sollen. Geben Sie Namen im folgenden Format ein: **someone@somewhere.com*. Verwenden Sie Semikolons, um mehrere E-Mail-Adressen zu trennen. Sie können maximal 20 E-Mail-Adressen pro virtuellem Gerät konfigurieren.
+    3. Geben Sie im Feld **Andere E-Mail-Empfänger** die E-Mail-Adressen aller weiteren Empfänger ein, die die Warnungsbenachrichtigungen erhalten sollen. Geben Sie Namen im folgenden Format ein: *someone@somewhere.com*. Verwenden Sie Semikolons, um mehrere E-Mail-Adressen zu trennen. Sie können maximal 20 E-Mail-Adressen pro virtuellem Gerät konfigurieren.
 
         ![Konfiguration von Warnungsbenachrichtigungen](./media/storsimple-ova-manage-alerts/alerts3.png)
 
