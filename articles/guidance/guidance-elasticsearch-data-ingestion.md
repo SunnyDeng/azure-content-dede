@@ -29,7 +29,7 @@ Der Zweck der Benchmarks bestand nicht darin, absolute Leistungsangaben für die
 
 * Berücksichtigen Sie die Gesamtgröße der gesendeten Nutzlast und nicht nur die Anzahl von Elementen in jeder Masseneinfügungsanfrage. Je nach Ressource, die zur Verarbeitung der einzelnen Anfragen verfügbar ist, kann eine kleinere Anzahl großer Massenelemente in jeder Anfrage besser geeignet sein als eine größere Anzahl.
 
-  > [AZURE.NOTE] Sie können die Auswirkungen verschiedener Masseneinfügungsanfrage mit Marvel anhand der E/A-Indikatoren *readbytes*/writebytes* mit JMeter und Betriebssystemtools wie *iostat* und *vmstat* unter Ubuntu überwachen.
+  > [AZURE.NOTE] Sie können die Auswirkungen verschiedener Masseneinfügungsanfrage mit Marvel anhand der E/A-Indikatoren *readbytes*/*writebytes* mit JMeter und Betriebssystemtools wie *iostat* und *vmstat* unter Ubuntu überwachen.
 
 * Führen Sie Leistungstests durch, und sammeln Sie Telemetriedaten, um die CPU-Verarbeitungszeiten und E/A-Wartezeiten, die Datenträgerlatenz, den Durchsatz und die Reaktionszeiten zu messen. Diese Informationen können Ihnen dabei helfen, potenzielle Engpässe zu identifizieren sowie die Kosten und Vorteile der Verwendung von Storage Premium zu bewerten. Bedenken Sie, dass die CPU- und Datenträgerauslastung je nach Methode, die zur Verteilung von Shards und Replikaten im Cluster verwendet wird, möglicherweise nicht auf allen Knoten gleich ist (einige Knoten können mehr Shards als andere enthalten).
 
@@ -671,7 +671,7 @@ Viele Aspekte der Leistung werden nicht nur intern innerhalb des Systems, sonder
 	* Erneutes Indizieren von Daten
 	* Debuggen von Anfragen und Aggregationen durch Anzeige des Originaldokuments
 
-	Im folgenden Beispiel wird das Feld *\_source*für den *Protokolltyp* im *systembase*-Index deaktiviert.
+	Im folgenden Beispiel wird das Feld *\_source* für den *Protokolltyp* im *systembase*-Index deaktiviert.
 
   ```http
   PUT /systembase

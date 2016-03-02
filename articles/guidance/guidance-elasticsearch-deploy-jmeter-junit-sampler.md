@@ -149,7 +149,7 @@ Sie müssen außerdem die [Eclipse-IDE für Java-Entwickler](https://www.eclipse
 
 6.  Kopieren Sie mithilfe des Windows-Explorers jede JAR-Datei, auf die im Ordner mit den Maven-Abhängigkeiten verwiesen wird, in den Ordner *apache-jmeter-2.13\\lib\\junit* auf der JMeter-Master-VM.
 
-> [AZURE.NOTE] Wenn der Ordner „*lIb\\junit*“ bereits ältere Versionen dieser JAR-Dateien enthält, entfernen Sie sie. Wenn Sie diese am selben Ort belassen, funktioniert der JUnit-Test möglicherweise nicht, weil Verweise in die falschen JARs aufgelöst werden könnten.
+> [AZURE.NOTE] Wenn der Ordner „ l*Ib\\junit* “ bereits ältere Versionen dieser JAR-Dateien enthält, entfernen Sie sie. Wenn Sie diese am selben Ort belassen, funktioniert der JUnit-Test möglicherweise nicht, weil Verweise in die falschen JARs aufgelöst werden könnten.
 
 7.  Beenden Sie JMeter auf der JMeter-Master-VM, wenn es derzeit ausgeführt wird.
 
