@@ -40,7 +40,7 @@ Um ein SSL-Zertifikat für die Verwendung mit Azure App Service zu erhalten, mü
 - [Abrufen eines SubjectAltName-Zertifikats mit OpenSSL](#bkmk_subjectaltname)
 - [Generieren selbstsignierter Zertifikate (nur für Testzwecke)](#bkmk_selfsigned)
 
-> [AZURE.NOTE] Wenn Sie die Schritte befolgen, werden Sie aufgefordert, einen **Allgemeinen Namen**, z. B. `www.contoso.com` einzugeben. Für Platzhalterzertifikate sollte dieser Wert \*.domainname (z. B. \*.contoso.com) lauten. Wenn Sie einen Platzhalternamen wie \*.contoso.com und einen Stammdomänennamen wie contoso.com unterstützen müssen, können Sie ein Platzhalterzertifikat für einen alternativen Antragstellernamen (subjectAltName) verwenden.
+> [AZURE.NOTE] Wenn Sie die Schritte befolgen, werden Sie aufgefordert, einen **Allgemeinen Namen**, z. B. `www.contoso.com` einzugeben. Für Platzhalterzertifikate sollte dieser Wert \*\.domainname (z. B. \*\.contoso.com) lauten. Wenn Sie einen Platzhalternamen wie \*\.contoso.com und einen Stammdomänennamen wie contoso.com unterstützen müssen, können Sie ein Platzhalterzertifikat für einen alternativen Antragstellernamen (subjectAltName) verwenden.
 >
 > Zertifikate für die Kryptografie für elliptische Kurven (ECC) werden für Azure App Service zwar unterstützt, sie sind jedoch noch relativ neu, daher sollten Sie bei Ihrer Zertifizierungsstelle erfragen, wie genau Sie die CSR-Datei erstellen.
 
@@ -561,4 +561,4 @@ Weitere Informationen zum IIS-URL-Rewrite-Modul finden Sie unter der Dokumentati
 [certwiz3]: ./media/configure-ssl-web-site/waws-certwiz3.png
 [certwiz4]: ./media/configure-ssl-web-site/waws-certwiz4.png
 
-<!----HONumber=AcomDC_0211_2016-->
+<!-----HONumber=AcomDC_0211_2016-->
