@@ -575,9 +575,9 @@ Sie erstellen einen Ordner namens *Admin*, auf den nur Benutzer, die der Rolle "
 
 1. Fügen Sie im **Projektmappen-Explorer** einen Unterordner zum Ordner *Contacts* hinzu, und nennen Sie den neuen Unterordner *Admin*.
 2. Verschieben Sie die folgenden Dateien aus dem Ordner *Contacts* in den Ordner *Contacts/Admin*:  
-	- *Delete.aspx *und* Delete.aspx.cs*
-	- *Edit.aspx *und* Edit.aspx.cs*
-	- *Insert.aspx *und* Insert.aspx.cs*
+	- *Delete.aspx* und *Delete.aspx.cs*
+	- *Edit.aspx* und *Edit.aspx.cs*
+	- *Insert.aspx* und *Insert.aspx.cs*
 3. Aktualisieren Sie die Linkverweise unter *Contacts/Default.aspx*, indem Sie "Admin/" vor den Seitenverweisen hinzufügen, die wie unten gezeigt auf *Insert.aspx*, *Edit.aspx* und *Delete.aspx* verweisen:  
 
 		<%@ Page Title="ContactsList" Language="C#" MasterPageFile="~/Site.Master" CodeBehind="Default.aspx.cs" Inherits="ContactManager.Contacts.Default" ViewStateMode="Disabled" %>
@@ -757,4 +757,4 @@ Bitte teilen Sie uns mit, was Ihrer Meinung nach gelungen ist, bzw. verbessert w
 
  
 
-<!---HONumber=AcomDC_0211_2016-->
+<!----HONumber=AcomDC_0211_2016-->
