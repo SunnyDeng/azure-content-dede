@@ -313,11 +313,11 @@ Einige dieser Fehlermeldungen können auch im Azure-Portal angezeigt werden, wen
 
 ### <a id="UnableToResolveDNS"></a>UnableToResolveDNS
 - **Beschreibung**: DNS *IhreDnsUrl* konnte nicht aufgelöst werden. Stellen Sie sicher, dass die vollqualifizierte URL für den Blobendpunkt bereitgestellt wird.  
-- **Lösung**: Geben Sie eine gültige Blob-URL an. Die URL MUSS uneingeschränkt gültig sein, d. h., sie muss mit „**http://*“ beginnen und auf *.com* enden.
+- **Lösung**: Geben Sie eine gültige Blob-URL an. Die URL MUSS uneingeschränkt gültig sein, d. h., sie muss mit „*http://* “ beginnen und auf *.com* enden.
 
 ### <a id="UnableToVerifyLocationOfResource"></a>UnableToVerifyLocationOfResource
 - **Beschreibung**: Der Speicherort der Ressource *IhreDnsUrl* konnte nicht überprüft werden. Stellen Sie sicher, dass die vollqualifizierte URL für den Blobendpunkt bereitgestellt wird.  
-- **Lösung**: Geben Sie eine gültige Blob-URL an. Die URL MUSS uneingeschränkt gültig sein, d. h., sie muss mit „**http://*“ beginnen und auf *.com* enden.
+- **Lösung**: Geben Sie eine gültige Blob-URL an. Die URL MUSS uneingeschränkt gültig sein, d. h., sie muss mit „*http://* “ beginnen und auf *.com* enden.
 
 ### <a id="VersionCapabilityNotAvailable"></a>VersionCapabilityNotAvailable
 - **Beschreibung**: Die Versionsfunktion ist nicht für Version *AngegebeneVersion* und Abonnement-ID *IhreAbonnementID* verfügbar.  
@@ -339,4 +339,4 @@ Einige dieser Fehlermeldungen können auch im Azure-Portal angezeigt werden, wen
 
 [Debuggen von Tez-Aufträgen in HDInsight mithilfe von Ambari-Ansichten](hdinsight-debug-ambari-tez-view.md)[Aktivieren von Heapdumps für Hadoop-Dienste auf Linux-basierten HDInsight-Clustern](hdinsight-hadoop-collect-debug-heap-dump-linux.md)[Verwalten von HDInsight-Clustern mithilfe der Ambari-Webbenutzeroberfläche](hdinsight-hadoop-manage-ambari.md)
 
-<!---HONumber=AcomDC_0218_2016-->
+<!----HONumber=AcomDC_0218_2016-->

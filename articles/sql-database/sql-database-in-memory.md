@@ -531,4 +531,4 @@ Wenn eine Datenbank eine der folgenden Arten von In-Memory OLTP-Objekten oder -T
 
 - [Überwachen von In-Memory-Speicher](sql-database-in-memory-oltp-monitoring.md) für In-Memory OLTP
 
-<!---HONumber=AcomDC_0218_2016-->
+<!----HONumber=AcomDC_0218_2016-->
