@@ -113,7 +113,7 @@ Verwenden Sie die folgende Schritt-für-Schritt-Anleitung, um Ihr virtuelles Sto
 
     Auf der Seite **Webproxy**:
 
-    1. Geben Sie die **Webproxy-URL** in diesem Format an: *http://host-IP-Adresse * oder *FQDN:Portnummer*. Beachten Sie, dass HTTPS-URLs nicht unterstützt werden.
+    1. Geben Sie die **Webproxy-URL** in diesem Format an: *http://host-IP-Adresse* oder *FQDN:Portnummer*. Beachten Sie, dass HTTPS-URLs nicht unterstützt werden.
 
     2. Geben Sie unter **Authentifizierung** die Option **Einfach**, **NTLM**, oder **Keine** an.
 
@@ -310,4 +310,4 @@ Führen Sie die folgenden Schritte aus, um den IQN (iSCSI Qualified Name) eines 
 <!--Reference link-->
 [1]: https://technet.microsoft.com/library/ee338480(WS.10).aspx
 
-<!---HONumber=AcomDC_0218_2016-->
+<!----HONumber=AcomDC_0218_2016-->
