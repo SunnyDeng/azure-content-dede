@@ -753,4 +753,4 @@ The complete file may be found on the [Microsoft Download Center](http://go.micr
 
 [Informieren Sie sich über das Failback](site-recovery-failback-azure-to-vmware-classic.md) von unter Azure ausgeführten Computern zur lokalen Umgebung.
 
-<!----HONumber=AcomDC_0218_2016-->
+<!-----HONumber=AcomDC_0218_2016-->

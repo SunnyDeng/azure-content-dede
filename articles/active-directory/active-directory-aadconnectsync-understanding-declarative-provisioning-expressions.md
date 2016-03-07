@@ -76,7 +76,7 @@ Folgende Operatoren können verwendet werden:
 - **Logischer Ausdruck**: && (and), || (or)
 - **Auswertungsreihenfolge**: ( )
 
-Operatoren werden von links nach rechts ausgewertet und haben bei der Auswertung die gleiche Priorität. Das bedeutet, dass der Multiplikator (*) nicht vor der Subtraktion (-) ausgewertet wird. „2*(5+3)“ ist nicht dasselbe wie „2*5+3“. Die Klammern werden verwendet, um die Reihenfolge der Auswertung zu ändern, wenn die Auswertungsreihenfolge von links nach rechts nicht geeignet ist.
+Operatoren werden von links nach rechts ausgewertet und haben bei der Auswertung die gleiche Priorität. Das bedeutet, dass der Multiplikator (\*) nicht vor der Subtraktion (-) ausgewertet wird. „2\*(5+3)“ ist nicht dasselbe wie „2\*5+3“. Die Klammern werden verwendet, um die Reihenfolge der Auswertung zu ändern, wenn die Auswertungsreihenfolge von links nach rechts nicht geeignet ist.
 
 ## Häufige Szenarios
 
@@ -130,4 +130,4 @@ Eine vollständige Liste der Funktionen finden Sie unter [Azure AD Connect-Synch
 
 <!--Image references-->
 
-<!---HONumber=AcomDC_0218_2016-->
+<!----HONumber=AcomDC_0218_2016-->
