@@ -13,13 +13,13 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/06/2015" 
+	ms.date="02/06/2016" 
 	ms.author="spelluru"/>
 
 # Erstellen von Vorhersagepipelines mithilfe von Azure Machine Learning-Aktivitäten   
 ## Übersicht
 
-> [AZURE.NOTE]In den Artikeln [Einführung in Azure Data Factory](data-factory-introduction.md) und [Erstellen der ersten Pipeline](data-factory-build-your-first-pipeline.md) finden Sie Informationen für den schnellen Einstieg in den Azure Data Factory-Dienst.
+> [AZURE.NOTE] In den Artikeln [Einführung in Azure Data Factory](data-factory-introduction.md) und [Erstellen der ersten Pipeline](data-factory-build-your-first-pipeline.md) finden Sie Informationen für den schnellen Einstieg in den Azure Data Factory-Dienst.
 
 ## Einführung
 
@@ -61,7 +61,7 @@ Mit Azure Data Factory können Sie die Verschiebung und Verarbeitung von Daten o
 ### Szenario: Experimente mit Eingaben/Ausgaben für den Webdienst, die auf Daten im Azure-Blob-Speicher verweisen
 In diesem Szenario werden mit dem Azure Machine Learning-Webdienst anhand der Daten aus einer Datei eines Azure-Blob-Speichers Vorhersagen erstellt und die Vorhersageergebnisse im Blob-Speicher gespeichert. Das folgende JSON-Skript definiert eine Azure Data Factory-Pipeline mit einer AzureMLBatchExecution-Aktivität. Die Aktivität enthält das Dataset **DecisionTreeInputBlob** als Eingabe und **DecisionTreeResultBlob** als Ausgabe. **DecisionTreeInputBlob** wird mithilfe der JSON-Eigenschaft **webServiceInput** als Eingabe an den Webdienst und **DecisionTreeResultBlob** mithilfe der JSON-Eigenschaft **webServiceOutputs** als Ausgabe an den Webdienst übergeben.
 
-> [AZURE.NOTE]Datasets, auf die die Eigenschaften **webServiceInput** und **webServiceOutputs** (in **typeProperties**) verweisen, müssen auch in den Aktivitäten **inputs** und **outputs** enthalten sein.
+> [AZURE.NOTE] Datasets, auf die die Eigenschaften **webServiceInput** und **webServiceOutputs** (in **typeProperties**) verweisen, müssen auch in den Aktivitäten **inputs** und **outputs** enthalten sein.
 
 
 	{
@@ -104,7 +104,7 @@ In diesem Szenario werden mit dem Azure Machine Learning-Webdienst anhand der Da
 	  }
 	}
 
-> [AZURE.NOTE]Nur Eingaben und Ausgaben der AzureMLBatchExecution-Aktivität können als Parameter an den Webdienst übergeben werden. Im JSON-Codeausschnitt oben ist beispielsweise "DecisionTreeInputBlob" eine Eingabe für die AzureMLBatchExecution-Aktivität, die über den webServiceInput-Parameter als Eingabe an den Webdienst übergeben wird.
+> [AZURE.NOTE] Nur Eingaben und Ausgaben der AzureMLBatchExecution-Aktivität können als Parameter an den Webdienst übergeben werden. Im JSON-Codeausschnitt oben ist beispielsweise "DecisionTreeInputBlob" eine Eingabe für die AzureMLBatchExecution-Aktivität, die über den webServiceInput-Parameter als Eingabe an den Webdienst übergeben wird.
 
 ### Beispiel
 
@@ -218,7 +218,7 @@ Es wird empfohlen, dass Sie zunächst das Lernprogramm [Erstellen der ersten Pip
 		}
 5. Erstellen Sie abschließend eine Pipeline, die eine **AzureMLBatchExecution**-Aktivität enthält. Dadurch werden der Speicherort der Eingabedatei aus Ihren Eingabedatasets abgerufen, die Azure Machine Learning-Batchausführungs-API aufgerufen und die Batchausführungsausgabe in das im Ausgabedataset angegebene Blob kopiert. 
 
-	> [AZURE.NOTE]Die AzureMLBatchExecution-Aktivität kann über keine oder mehrere Eingaben sowie über eine oder mehrere Ausgaben verfügen.
+	> [AZURE.NOTE] Die AzureMLBatchExecution-Aktivität kann über keine oder mehrere Eingaben sowie über eine oder mehrere Ausgaben verfügen.
 
 		{
 		  "name": "PredictivePipeline",
@@ -260,19 +260,19 @@ Es wird empfohlen, dass Sie zunächst das Lernprogramm [Erstellen der ersten Pip
 		  }
 		}
 
-	Datum und Uhrzeit von **Start** und **Ende** müssen im [ISO-Format](http://en.wikipedia.org/wiki/ISO_8601) angegeben werden. Beispiel: 2014-10-14T16:32:41Z. Die Zeit für **end** ist optional. Wenn Sie für die **end**-Eigenschaft keinen Wert angeben, wird sie als "**start + 48 Stunden**" berechnet. Um die Pipeline auf unbestimmte Zeit auszuführen, geben Sie als Wert für die **end**-Eigenschaft **9999-09-09** an. Informationen zu JSON-Eigenschaften finden Sie in der [JSON-Skriptreferenz](https://msdn.microsoft.com/library/dn835050.aspx).
+	Datum und Uhrzeit von **Start** und **Ende** müssen im [ISO-Format](http://en.wikipedia.org/wiki/ISO_8601) angegeben werden. Beispiel: 2014-10-14T16:32:41Z. Die Zeit für **end** ist optional. Wenn Sie für die **end**-Eigenschaft keinen Wert angeben, wird sie als "**start + 48 Stunden**" berechnet. Um die Pipeline auf unbestimmte Zeit auszuführen, geben Sie als Wert für die **end**-Eigenschaft **9999-09-09** an. Informationen zu JSON-Eigenschaften finden Sie in der [JSON-Skriptreferenz](https://msdn.microsoft.com/library/dn835050.aspx).
 
-	> [AZURE.NOTE]Das Festlegen der Eingaben für die AzureMLBatchExecution-Aktivität erfolgt optional.
+	> [AZURE.NOTE] Das Festlegen der Eingaben für die AzureMLBatchExecution-Aktivität erfolgt optional.
 
 ### Szenario: Experimente mit Reader- und Writer-Modulen zum Verweisen auf Daten in verschiedenen Speichern
 
 Ein weiteres gängiges Szenario beim Erstellen von Azure ML-Experimenten ist die Verwendung von Reader- und Writer-Modulen. Das Reader-Modul wird verwendet, um Daten in einem Experiment zu laden, während mit dem Writer-Modul Daten aus den Experimenten gespeichert werden. Ausführliche Informationen zu Reader- und Writer-Modulen finden Sie in den Themen [Reader](https://msdn.microsoft.com/library/azure/dn905997.aspx) und [Writer](https://msdn.microsoft.com/library/azure/dn905984.aspx) in der MSDN Library.
 
-Bei Verwendung der Reader- und Writer-Module empfiehlt es sich, einen Webdienstparameter für jede Eigenschaft dieser Module zu verwenden. Durch diese Webparameter können Sie die Werte zur Laufzeit konfigurieren. Sie können z. B. ein Experiment mit einem Reader-Modul erstellen, das eine Azure SQL-Datenbank mit dem Namen "XXX.database.windows.net" verwendet. Nach der Bereitstellung des Webdiensts sollen die Nutzer des Webdiensts einen weiteren Azure SQL Server mit dem Namen "YYY.database.windows.net" angeben können. Durch Verwendung eines Webdienstparameters wird ermöglicht, dass dieser Wert konfiguriert werden kann.
+Bei Verwendung der Reader- und Writer-Module empfiehlt es sich, einen Webdienstparameter für jede Eigenschaft dieser Module zu verwenden. Durch diese Webparameter können Sie die Werte zur Laufzeit konfigurieren. Sie können z. B. ein Experiment mit einem Reader-Modul erstellen, das eine Azure SQL-Datenbank mit dem Namen "XXX.database.windows.net" verwendet. Nach der Bereitstellung des Webdiensts sollen die Nutzer des Webdiensts einen weiteren Azure SQL Server mit dem Namen "YYY.database.windows.net" angeben können. Durch Verwendung eines Webdienstparameters wird ermöglicht, dass dieser Wert konfiguriert werden kann.
 
-> [AZURE.NOTE]Eingaben und Ausgaben für den Webdienst unterscheiden sich von Webdienstparametern. Im ersten Szenario haben Sie gesehen, wie Eingaben und Ausgaben für einen Azure ML-Webdienst angegeben werden können. In diesem Szenario übergeben Sie Parameter für einen Webdienst, die Eigenschaften von Reader- und Writer-Modulen entsprechen.
+> [AZURE.NOTE] Eingaben und Ausgaben für den Webdienst unterscheiden sich von Webdienstparametern. Im ersten Szenario haben Sie gesehen, wie Eingaben und Ausgaben für einen Azure ML-Webdienst angegeben werden können. In diesem Szenario übergeben Sie Parameter für einen Webdienst, die Eigenschaften von Reader- und Writer-Modulen entsprechen.
 
-Betrachten wir nun ein Szenario für die Verwendung von Webdienstparametern. Sie haben einen Azure Machine Learning-Webdienst bereitgestellt, bei dem Daten mithilfe eines Reader-Moduls aus einer der von Azure Machine Learning unterstützten Datenquellen (z. B. Azure SQL-Datenbank) gelesen werden. Nach der Batchausführung werden die Ergebnisse mit einem Writer-Modul (Azure SQL-Datenbank) geschrieben. In den Experimenten sind keine Eingaben und Ausgaben für den Webdienst definiert. In diesem Fall wird empfohlen, dass Sie die entsprechenden Webdienstparameter für das Reader- und das Writer-Modul einrichten. Dadurch können das Reader- und Writer-Modul bei Verwendung der AzureMLBatchExecution-Aktivität konfiguriert werden. Sie geben die Webdienstparameter wie folgt im Abschnitt **globalParameters** im JSON-Code der Aktivität an.
+Betrachten wir nun ein Szenario für die Verwendung von Webdienstparametern. Sie haben einen Azure Machine Learning-Webdienst bereitgestellt, bei dem Daten mithilfe eines Reader-Moduls aus einer der von Azure Machine Learning unterstützten Datenquellen (z. B. Azure SQL-Datenbank) gelesen werden. Nach der Batchausführung werden die Ergebnisse mit einem Writer-Modul (Azure SQL-Datenbank) geschrieben. In den Experimenten sind keine Eingaben und Ausgaben für den Webdienst definiert. In diesem Fall wird empfohlen, dass Sie die entsprechenden Webdienstparameter für das Reader- und das Writer-Modul einrichten. Dadurch können das Reader- und Writer-Modul bei Verwendung der AzureMLBatchExecution-Aktivität konfiguriert werden. Sie geben die Webdienstparameter wie folgt im Abschnitt **globalParameters** im JSON-Code der Aktivität an.
 
 
 	"typeProperties": {
@@ -290,12 +290,12 @@ Sie können auch [Data Factory-Funktionen ](https://msdn.microsoft.com/library/d
     	}
   	}
  
-> [AZURE.NOTE]Bei Webdienstparametern wird Groß-/Kleinschreibung unterschieden, weshalb Sie sicherstellen müssen, dass die Namen, die Sie im JSON-Code der Aktivität angeben, denjenigen entsprechen, die vom Webdienst verfügbar gemacht werden.
+> [AZURE.NOTE] Bei Webdienstparametern wird Groß-/Kleinschreibung unterschieden, weshalb Sie sicherstellen müssen, dass die Namen, die Sie im JSON-Code der Aktivität angeben, denjenigen entsprechen, die vom Webdienst verfügbar gemacht werden.
 
 ### Lesen von Daten aus mehreren Dateien im Azure-Blob mithilfe eines Reader-Moduls
 Big Data-Pipelines (Pig, Hive usw.) können eine oder mehrere Ausgabedateien ohne Erweiterung generieren. Wenn Sie beispielsweise eine externe Hive-Tabelle angeben, können die Daten für die externe Hive-Tabelle im Azure-Blob-Speicher unter dem Namen "000000\_0" gespeichert werden. Mithilfe des Reader-Moduls in einem Experiment können Sie mehrere Dateien lesen und für Vorhersagen verwenden.
 
-Wenn Sie das Reader-Modul in einem Azure Machine Learning-Experiment verwenden, können Sie das Azure-Blob als Eingabe angeben. Bei den Dateien im Azure-Blobspeicher kann es sich um die Ausgabedateien (z. B. 000000\_0) handeln, die von einem Pig- und Hive-Skript unter HDInsight erstellt werden. Mit dem Reader-Modul können Sie Dateien (ohne Erweiterung) lesen, indem Sie die Eigenschaft **Path to container, directory or blob** des Reader-Moduls so konfigurieren, dass sie auf den Container/Ordner mit den Dateien verweist (wie unten dargestellt). Das Sternchen (*) **gibt an, dass alle Dateien im Container/Ordner (d. h. data/aggregateddata/year=2014/month=6/*)** als Teil des Experiments gelesen werden.
+Wenn Sie das Reader-Modul in einem Azure Machine Learning-Experiment verwenden, können Sie das Azure-Blob als Eingabe angeben. Bei den Dateien im Azure-Blobspeicher kann es sich um die Ausgabedateien (z. B. 000000\_0) handeln, die von einem Pig- und Hive-Skript unter HDInsight erstellt werden. Mit dem Reader-Modul können Sie Dateien (ohne Erweiterung) lesen, indem Sie die Eigenschaft **Path to container, directory or blob** des Reader-Moduls so konfigurieren, dass sie auf den Container/Ordner mit den Dateien verweist (wie unten dargestellt). Das Sternchen (*) **gibt an, dass alle Dateien im Container/Ordner (d. h. data/aggregateddata/year=2014/month=6/*)** als Teil des Experiments gelesen werden.
 
 ![Azure-Blobeigenschaften](./media/data-factory-create-predictive-pipelines/azure-blob-properties.png)
 
@@ -352,13 +352,13 @@ Wenn Sie das Reader-Modul in einem Azure Machine Learning-Experiment verwenden, 
 Im obigen JSON-Beispiel:
 
 - Der bereitgestellte Azure Machine Learning-Webdienst verwendet ein Reader- und ein Writer-Modul zum Lesen und Schreiben von Daten aus einer und in eine Azure SQL-Datenbank. Der Webdienst stellt die vier folgenden Parameter bereit: "Database server name", "Database name", "Server user account name" und "Server user account password".  
-- Datum und Uhrzeit von **Start** und **Ende** müssen im [ISO-Format](http://en.wikipedia.org/wiki/ISO_8601) angegeben werden. Beispiel: 2014-10-14T16:32:41Z. Die Zeit für **end** ist optional. Wenn Sie für die **end**-Eigenschaft keinen Wert angeben, wird sie als "**start + 48 Stunden**" berechnet. Um die Pipeline auf unbestimmte Zeit auszuführen, geben Sie als Wert für die **end**-Eigenschaft **9999-09-09** an. Informationen zu JSON-Eigenschaften finden Sie in der [JSON-Skriptreferenz](https://msdn.microsoft.com/library/dn835050.aspx).
+- Datum und Uhrzeit von **Start** und **Ende** müssen im [ISO-Format](http://en.wikipedia.org/wiki/ISO_8601) angegeben werden. Beispiel: 2014-10-14T16:32:41Z. Die Zeit für **end** ist optional. Wenn Sie für die **end**-Eigenschaft keinen Wert angeben, wird sie als "**start + 48 Stunden**" berechnet. Um die Pipeline auf unbestimmte Zeit auszuführen, geben Sie als Wert für die **end**-Eigenschaft **9999-09-09** an. Informationen zu JSON-Eigenschaften finden Sie in der [JSON-Skriptreferenz](https://msdn.microsoft.com/library/dn835050.aspx).
 
 ### Andere Szenarien
 
 #### Webdienst erfordert keine Eingabe
 
-Mit Webdiensten zur Azure ML-Batchausführung können beliebige Workflows ausgeführt werden, z. B. R- oder Python-Skripts, keine Eingaben erfordern. Das Experiment könnte auch mit einem Reader-Modul konfiguriert werden, das keine GlobalParameters verfügbar macht. In diesem Fall würde die AzureMLBatchExecution-Aktivität wie folgt konfiguriert werden:
+Mit Webdiensten zur Azure ML-Batchausführung können beliebige Workflows ausgeführt werden, z. B. R- oder Python-Skripts, keine Eingaben erfordern. Das Experiment könnte auch mit einem Reader-Modul konfiguriert werden, das keine GlobalParameters verfügbar macht. In diesem Fall würde die AzureMLBatchExecution-Aktivität wie folgt konfiguriert werden:
 
 	{
         "name": "scoring service",
@@ -384,7 +384,7 @@ Mit Webdiensten zur Azure ML-Batchausführung können beliebige Workflows ausge
    
 
 #### Webdienst erfordert keine Ein-/Ausgabe
-Für den Webdienst zur Azure ML-Batchausführung ist möglicherweise keine Webdienst-Ausgabe konfiguriert. In diesem Beispiel ist weder eine Webdienst-Ein-/Ausgabe, noch sind GlobalParameters konfiguriert. Beachten Sie, dass immer noch eine Ausgabe in der Aktivität selbst konfiguriert ist, aber nicht als „webServiceOutput“.
+Für den Webdienst zur Azure ML-Batchausführung ist möglicherweise keine Webdienst-Ausgabe konfiguriert. In diesem Beispiel ist weder eine Webdienst-Ein-/Ausgabe, noch sind GlobalParameters konfiguriert. Beachten Sie, dass immer noch eine Ausgabe in der Aktivität selbst konfiguriert ist, aber nicht als „webServiceOutput“.
 
 	{
         "name": "retraining",
@@ -455,20 +455,20 @@ In der folgenden Tabelle werden die in diesem Beispiel verwendeten Webdienste be
 | Webdiensttyp | description 
 | :------------------ | :---------- 
 | **Trainingswebdienst** | Empfängt Trainingsdaten und erzeugt trainierte Modelle. Die Ausgabe des erneuten Trainierens ist eine iLearner-Datei in einem Azure-Blobspeicher. Der **Standardendpunkt** wird automatisch erstellt, wenn Sie das Trainingsexperiment als Webdienst veröffentlichen. Sie können weitere Endpunkte erstellen, aber im Beispiel wird nur der Standardendpunkt verwendet. |
-| **Bewertungswebdienst** | Empfängt Datenbeispiele ohne Bezeichnung und macht Vorhersagen. Die Ausgabe der Vorhersage kann verschiedene Formen aufweisen, z. B. eine CSV-Datei oder Zeilen in einer Azure SQL-Datenbank, dies ist abhängig von der Konfiguration des Experiments. Der Standardendpunkt wird automatisch erstellt, wenn Sie das Vorhersageexperiment als Webdienst veröffentlichen. Sie müssen einen zweiten **nicht standardmäßigen und aktualisierbaren Endpunkt** mithilfe des [klassischen Azure-Portals](https://manage.windowsazure.com) erstellen. Sie können weitere Endpunkte erstellen, aber im Beispiel wird nur der nicht standardmäßige aktualisierbare Endpunkt verwendet. Die Schritte sind im Artikel [Erstellen von Endpunkten](../machine-learning/machine-learning-create-endpoint.md) aufgeführt.       
+| **Bewertungswebdienst** | Empfängt Datenbeispiele ohne Bezeichnung und macht Vorhersagen. Die Ausgabe der Vorhersage kann verschiedene Formen aufweisen, z. B. eine CSV-Datei oder Zeilen in einer Azure SQL-Datenbank, dies ist abhängig von der Konfiguration des Experiments. Der Standardendpunkt wird automatisch erstellt, wenn Sie das Vorhersageexperiment als Webdienst veröffentlichen. Sie müssen einen zweiten **nicht standardmäßigen und aktualisierbaren Endpunkt** mithilfe des [klassischen Azure-Portals](https://manage.windowsazure.com) erstellen. Sie können weitere Endpunkte erstellen, aber im Beispiel wird nur der nicht standardmäßige aktualisierbare Endpunkt verwendet. Die Schritte sind im Artikel [Erstellen von Endpunkten](../machine-learning/machine-learning-create-endpoint.md) aufgeführt.       
  
 Die folgende Abbildung zeigt die Beziehung zwischen Trainings- und Bewertungsendpunkten in Azure ML.
 
 ![Webdienste](./media/data-factory-azure-ml-batch-execution-activity/web-services.png)
 
 
-Sie können die **Azure ML-Batchausführungsaktivität** verwenden, um den **Trainingswebdienst** aufzurufen. Dies gleicht dem Aufrufen eines Azure ML-Webdiensts (Bewertungswebdienst) für Bewertungsdaten. In den oben aufgeführten Abschnitten wird detailliert beschrieben, wie ein Azure ML-Webdienst über eine Azure Data Factory-Pipeline aufgerufen wird.
+Sie können die **Azure ML-Batchausführungsaktivität** verwenden, um den **Trainingswebdienst** aufzurufen. Dies gleicht dem Aufrufen eines Azure ML-Webdiensts (Bewertungswebdienst) für Bewertungsdaten. In den oben aufgeführten Abschnitten wird detailliert beschrieben, wie ein Azure ML-Webdienst über eine Azure Data Factory-Pipeline aufgerufen wird.
   
 Sie können den **Bewertungswebdienst** aufrufen, indem Sie die **Azure ML-Ressourcenaktualisierungsaktivität** verwenden, um den Webdienst mit dem neu trainierten Modell zu aktualisieren. Wie in der Tabelle oben bereits erwähnt, müssen Sie den nicht standardmäßigen aktualisierbaren Endpunkt erstellen und verwenden. Sie sollten zudem alle vorhandenen verknüpften Dienste in der Data Factory aktualisieren, sodass sie den nicht standardmäßigen Endpunkt verwenden, damit sie immer das aktuellste neu trainierte Modell verwenden.
 
 Das folgende Szenario bietet weitere Informationen anhand eines Beispiels für das erneute Trainieren und Aktualisieren von Azure ML-Modellen über eine Azure Data Factory-Pipeline.
  
-### Szenario: Erneutes Trainieren und Aktualisieren eines Azure ML-Modells
+### Szenario: Erneutes Trainieren und Aktualisieren eines Azure ML-Modells
 Dieser Abschnitt enthält eine Beispielpipeline, die die **Azure ML-Batchausführungsaktivität** verwendet, um ein Modell neu zu trainieren, und die die **Azure ML-Ressourcenaktualisierungsaktivität** verwendet, um das Modell im Bewertungswebdienst zu aktualisieren. Darüber hinaus enthält er JSON-Codeausschnitte für alle verknüpften Dienste, Datasets und Pipelines im Beispiel.
 
 Im Folgenden ist die Diagrammansicht der Beispielpipeline dargestellt. Wie Sie sehen können, übernimmt die Azure ML-Batchausführungsaktivität die Trainingseingabe und erzeugt eine Trainingsausgabe (iLearner-Datei). Die Azure ML-Ressourcenaktualisierungsaktivität verwendet die Trainingsausgabe und aktualisiert das Modell im Bewertungswebdienst-Endpunkt. Die Ressourcenaktualisierungsaktivität erzeugt keine Ausgabe. „placeholderBlob“ ist nur ein Platzhalter für ein Ausgabedataset, das für den Azure Data Factory-Dienst zum Ausführen der Pipeline erforderlich ist.
@@ -479,8 +479,8 @@ Im Folgenden ist die Diagrammansicht der Beispielpipeline dargestellt. Wie Sie s
 #### Mit Azure-Blobspeicher verknüpfter Dienst:
 Der Azure-Speicher enthält die folgenden Daten:
 
-- Trainingsdaten: Dies sind die Eingabedaten für den Azure ML-Trainingswebdienst.  
-- iLearner-Datei: Dies ist die Ausgabe des Azure ML-Trainingswebdiensts. Es ist darüber hinaus die Eingabe für die Ressourcenaktualisierungsaktivität.  
+- Trainingsdaten: Dies sind die Eingabedaten für den Azure ML-Trainingswebdienst.  
+- iLearner-Datei: Dies ist die Ausgabe des Azure ML-Trainingswebdiensts. Es ist darüber hinaus die Eingabe für die Ressourcenaktualisierungsaktivität.  
    
 Dies ist die JSON-Beispieldefinition des verknüpften-Diensts:
 
@@ -496,7 +496,7 @@ Dies ist die JSON-Beispieldefinition des verknüpften-Diensts:
 
 
 #### Trainingseingabedataset:
-Das folgende Dataset stellt die Trainingseingabedaten für den Azure ML-Trainingswebdienst dar. Die Azure ML-Batchausführungsaktivität verwendet dieses Dataset als Eingabe.
+Das folgende Dataset stellt die Trainingseingabedaten für den Azure ML-Trainingswebdienst dar. Die Azure ML-Batchausführungsaktivität verwendet dieses Dataset als Eingabe.
 
 	{
 	    "name": "trainingData",
@@ -525,7 +525,7 @@ Das folgende Dataset stellt die Trainingseingabedaten für den Azure ML-Trainin
 	}
 
 #### Trainingsausgabedataset:
-Das folgende Dataset stellt die iLearner-Ausgabedatei des Azure ML-Trainingswebdiensts dar. Die Azure ML-Batchausführungsaktivität erzeugt dieses Dataset. Dieses Dataset ist darüber hinaus die Eingabe für die Azure ML-Ressourcenaktualisierungsaktivität.
+Das folgende Dataset stellt die iLearner-Ausgabedatei des Azure ML-Trainingswebdiensts dar. Die Azure ML-Batchausführungsaktivität erzeugt dieses Dataset. Dieses Dataset ist darüber hinaus die Eingabe für die Azure ML-Ressourcenaktualisierungsaktivität.
 
 	{
 	    "name": "trainedModelBlob",
@@ -584,7 +584,7 @@ Der folgende JSON-Codeausschnitt definiert einen mit Azure Machine Learning verk
 	}
 
 
-Vor dem Erstellen und Bereitstellen eines mit Azure ML verknüpften Diensts führen Sie die Schritte im Artikel [Erstellen von Endpunkten](../machine-learning/machine-learning-create-endpoint.md) aus, um einen zweiten (nicht standardmäßigen und aktualisierbaren) Endpunkt für den Bewertungswebdienst zu erstellen.
+Vor dem Erstellen und Bereitstellen eines mit Azure ML verknüpften Diensts führen Sie die Schritte im Artikel [Erstellen von Endpunkten](../machine-learning/machine-learning-create-endpoint.md) aus, um einen zweiten (nicht standardmäßigen und aktualisierbaren) Endpunkt für den Bewertungswebdienst zu erstellen.
 
 Klicken Sie nach dem Erstellen des nicht standardmäßigen aktualisierbaren Endpunkts auf **BATCH-AUSFÜHRUNG**, um den URI-Wert für die JSON-Eigenschaft **mlEndpoint** abzurufen. Klicken Sie dann auf den Link **RESSOURCE AKTUALISIEREN**, um den URI-Wert für die JSON-Eigenschaft **updateResourceEndpoint** abzurufen. Den API-Schlüssel finden Sie auf der Seite des Endpunkts (unten rechts).
 
@@ -697,7 +697,7 @@ Ausführliche Informationen zu Azure-Blob/Azure SQL Reader/Writer finden Sie in 
 ## Azure ML-Batchbewertungsaktivität
 Wenn Sie derzeit die Aktivität **AzureMLBatchScoring** für die Integration in Azure Machine Learning verwenden, empfiehlt es sich, die neueste **AzureMLBatchExecution**-Aktivität zu verwenden.
 
-Die AzureMLBatchExecution-Aktivität wird in den Azure SDK- und Azure PowerShell-Versionen von August 2015 eingeführt.
+Die AzureMLBatchExecution-Aktivität wird in den Azure SDK- und Azure PowerShell-Versionen von August 2015 eingeführt.
 
 Wenn Sie weiterhin die AzureMLBatchScoring-Aktivität verwenden möchten, lesen Sie weiterhin diesen Abschnitt.
 
@@ -755,7 +755,7 @@ Sie können auch [Data Factory-Funktionen ](https://msdn.microsoft.com/library/d
     	}
   	}
  
-> [AZURE.NOTE]Bei Webdienstparametern wird Groß-/Kleinschreibung unterschieden, weshalb Sie sicherstellen müssen, dass die Namen, die Sie im JSON-Code der Aktivität angeben, denjenigen entsprechen, die vom Webdienst verfügbar gemacht werden.
+> [AZURE.NOTE] Bei Webdienstparametern wird Groß-/Kleinschreibung unterschieden, weshalb Sie sicherstellen müssen, dass die Namen, die Sie im JSON-Code der Aktivität angeben, denjenigen entsprechen, die vom Webdienst verfügbar gemacht werden.
 
 ## Siehe auch
 
@@ -772,4 +772,4 @@ Sie können auch [Data Factory-Funktionen ](https://msdn.microsoft.com/library/d
 
  
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0224_2016-->

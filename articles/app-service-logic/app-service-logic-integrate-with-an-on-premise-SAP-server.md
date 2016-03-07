@@ -13,12 +13,15 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/17/2015"
+	ms.date="02/18/2016"
 	ms.author="sameerch"/>
 
 
 # Integration in einen lokalen SAP-Server
-Mithilfe des SAP-Connectors können Sie Web-, mobile und Logik-Apps von Azure App Services in Ihren vorhandenen SAP-Server integrieren. Dadurch können Sie RFCs, BAPIs und tRFCs aufrufen sowie IDocs an den SAP-Server senden, auch wenn dieser sich hinter Ihrer lokalen Firewall befindet.
+
+>[AZURE.NOTE] Diese Version des Artikels gilt für die Logik-Apps-Schemaversion 2014-12-01-preview.
+
+Mithilfe des [SAP-Connectors](app-service-logic-connector-sap.md) können Sie Web-, mobile und Logik-Apps von Azure App Services in Ihren vorhandenen SAP-Server integrieren. Dadurch können Sie RFCs, BAPIs und tRFCs aufrufen sowie IDocs an den SAP-Server senden, auch wenn dieser sich hinter Ihrer lokalen Firewall befindet.
 
 Wenn Sie über einen lokalen SAP-Server verfügen, verwenden Sie einen Hybridlistener, um wie dargestellt eine Verbindung zum SAP-Connector herzustellen:
 
@@ -106,7 +109,7 @@ Wählen Sie **Triggers and actions** aus. Der Workflow-Designer für Logik-Apps 
 
 Wählen Sie im rechten Bereich den SAP-Connector aus, und wählen Sie auf der Registerkarte "Aktionen" eine Aktion aus.
 
-> [AZURE.NOTE]Die Liste der Aktionen basiert auf der Konfiguration, die Sie eingegeben haben, als Sie den SAP-Connector erstellt haben.
+> [AZURE.NOTE] Die Liste der Aktionen basiert auf der Konfiguration, die Sie eingegeben haben, als Sie den SAP-Connector erstellt haben.
 
 Für die ausgewählte Aktion sehen Sie die Eingabe- und Ausgabeparameter. Sie können die Eingaben für die Aktion eingeben und die Ausgabe der aktuellen Aktion in anderen API-Apps ggf. für die weitere Entscheidungsfindung im Workflow nutzen.
 
@@ -121,4 +124,4 @@ Für die ausgewählte Aktion sehen Sie die Eingabe- und Ausgabeparameter. Sie k�
 [8]: ./media/app-service-logic-integrate-with-an-on-premise-SAP-server/SAPConnector.HybridConnection.Connected.PNG
 [9]: http://www.microsoft.com/download/details.aspx?id=35552
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0224_2016-->

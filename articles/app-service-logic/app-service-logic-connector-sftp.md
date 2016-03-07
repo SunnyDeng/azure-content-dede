@@ -2,7 +2,7 @@
 	pageTitle="Verwendung des SFTP-Connectors in Logik-Apps | Microsoft Azure App Service"
 	description="Erstellen und Konfigurieren des SFTP-Connectors oder einer API-App und Verwenden in einer Logik-App in Azure App Service"
 	authors="anuragdalmia"
-	manager="dwrede"
+	manager="erikre"
 	editor=""
 	services="app-service\logic"
 	documentationCenter=""/>
@@ -13,10 +13,12 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/30/2015"
+	ms.date="02/11/2016"
 	ms.author="sameerch"/>
 
 # Erste Schritte mit dem SFTP-Connector und das Hinzufügen zur Logik-App
+>[AZURE.NOTE] Diese Version des Artikels gilt für die Logik-Apps-Schemaversion 2014-12-01-preview. Um die Schemaversion 2015-08-01-preview aufzurufen, klicken Sie auf [SFTP-API](../connectors/create-api-sftp.md).
+
 Mit dem SFTP-Connector können Sie Daten von einem und auf einen SFTP-Server verschieben. Sie können Dateien auf einem SFTP-Server herunterladen, hochladen oder auflisten.
 
 Logik-Apps können basierend auf einer Vielzahl von Datenquellen ausgelöst werden und Connectors anbieten, um Daten als Teil des Datenflusses abzurufen und zu verarbeiten. Sie können den SFTP-Connector dem geschäftlichen Workflow hinzufügen und Daten im Rahmen dieses Workflows in einer Logik-App verarbeiten.
@@ -56,18 +58,17 @@ Sobald Ihre API-App erstellt wurde, können Sie jetzt den SFTP-Connector als Tri
 
 5.	Sie können nun den SFTP-Connector im Datenfluss verwenden. Sie können die aus dem SFTP-Trigger abgerufene Datei ("TriggerOnFileAvailable") in anderen Datenflussaktionen verwenden.
 
-	> [AZURE.IMPORTANT]Der SFTP-Trigger "TriggerOnFileAvailable" löscht die abgerufene Datei nach ihrer Verarbeitung.
+	> [AZURE.IMPORTANT] Der SFTP-Trigger "TriggerOnFileAvailable" löscht die abgerufene Datei nach ihrer Verarbeitung.
 
 6.	Konfigurieren Sie die Eingabeeigenschaften für SFTP-Trigger wie folgt:
 
 	- **Ordnerpfad** – Geben Sie den Pfad des Ordners ein, aus dem die Dateien abgerufen werden sollen.
 	- **Typ der Datei: Text oder binär** – Wählen Sie den Dateityp aus.
 	- **Dateimaske** – Geben Sie die Dateimaske an, die für das Abrufen von Dateien angewendet werden soll. Mit "*" werden alle Dateien im angegebenen Ordner abgerufen.
-	- **Dateimaske ausschließen** – Geben Sie die Dateimaske zum Ausschließen von Dateien an. Wenn auch die Eigenschaft "Dateimaske" festgelegt ist, wird zuerst "Dateimaske ausschließen" angewendet.
+- **Dateimaske ausschließen** – Geben Sie die Dateimaske zum Ausschließen von Dateien an. Wenn auch die Eigenschaft "Dateimaske" festgelegt ist, wird zuerst "Dateimaske ausschließen" angewendet.
 
 
-	![][9]  
-	![][10]
+	![][9] ![][10]
 
 7.	Auf ähnliche Weise können Sie die SFTP-Aktionen im Datenfluss verwenden. Sie können die Aktion "Datei hochladen" zum Hochladen einer Datei auf den SFTP-Server verwenden. Konfigurieren Sie die Eingabeeigenschaften für die Aktion "Datei hochladen" wie folgt:
 
@@ -76,15 +77,14 @@ Sobald Ihre API-App erstellt wurde, können Sie jetzt den SFTP-Connector als Tri
 	- **Dateipfad** – Geben Sie den Dateipfad der Datei an, die hochgeladen werden soll.
 	- **Überschreiben** – Legen Sie dies auf "True" fest, um die Datei ggf. zu überschreiben.
 	- ****Anfügen, falls vorhanden** – Legen Sie hierfür "True" oder "False" fest. Wenn diese Option auf "True" festgelegt ist, werden die Daten an die Datei angefügt, wenn sie vorhanden ist. Ist "False" angegeben, wird eine ggf. vorhandene Datei überschrieben.
-	- **Temporärer Ordner** – Falls angegeben, lädt der Adapter die Datei in den "Pfad des temporären Ordners". Nach Abschluss des Uploads wird die Datei in den "Ordnerpfad" verschoben. Der Pfad des temporären Ordners sollte sich auf dem gleichen physischen Datenträger befinden wie der Ordnerpfad, um sicherzustellen, dass der Verschiebevorgang atomarisch verläuft. Temporäre Ordner können nur verwendet werden, wenn die Eigenschaft "Anfügen, falls vorhanden" deaktiviert ist.
+- **Temporärer Ordner** – Falls angegeben, lädt der Adapter die Datei in den "Pfad des temporären Ordners". Nach Abschluss des Uploads wird die Datei in den "Ordnerpfad" verschoben. Der Pfad des temporären Ordners sollte sich auf dem gleichen physischen Datenträger befinden wie der Ordnerpfad, um sicherzustellen, dass der Verschiebevorgang atomarisch verläuft. Temporäre Ordner können nur verwendet werden, wenn die Eigenschaft "Anfügen, falls vorhanden" deaktiviert ist.
 
-	![][11]  
-	![][12]
+	![][11] ![][12]
 
 ## Mehr mit Ihrem Connector machen
 Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
->[AZURE.NOTE]Wenn Sie Azure Logik-Apps ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [Logik-App testen](https://tryappservice.azure.com/?appservice=logic) sofort kostenlos eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure Logik-Apps ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [Logik-App testen](https://tryappservice.azure.com/?appservice=logic) sofort kostenlos eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
 
@@ -105,4 +105,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [11]: ./media/app-service-logic-connector-sftp/img11.PNG
 [12]: ./media/app-service-logic-connector-sftp/img12.PNG
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0224_2016-->

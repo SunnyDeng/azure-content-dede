@@ -14,14 +14,16 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="required" 
-   ms.date="11/04/2015"
+   ms.date="02/04/2016"
    ms.author="heidist"/>
 
 # Überwachen der Nutzung und Statistiken eines Azure-Suchdiensts
 
 Durch Nachverfolgen des Wachstums von Indizes und Dokumentgröße können Sie die Kapazität proaktiv anpassen, bevor die Obergrenze, die Sie für den Dienst festgelegt haben, erreicht wird.
 
-Zum Überwachen der Ressourcennutzung können die Zähler und Statistiken einfach im [Azure-Portal](https://portal.azure.com) angezeigt werden. Sie können diese Informationen aber auch programmgesteuert abrufen, wenn Sie ein benutzerdefiniertes Dienstverwaltungstool erstellen. In diesem Artikel werden die Schritte für beide Verfahren behandelt.
+Zum Überwachen der Ressourcennutzung können die Zähler und Statistiken für Ihren Dienst einfach im [Azure-Portal](https://portal.azure.com) angezeigt werden. Sie können diese Informationen aber auch programmgesteuert abrufen, wenn Sie ein benutzerdefiniertes Dienstverwaltungstool erstellen. In diesem Artikel werden die Schritte für beide Verfahren behandelt.
+
+Sie können auch die neue Funktion zum Durchsuchen der Datenverkehrsanalyse verwenden, um Einblicke in die Aktivitäten auf Indexebene zu erhalten. Die ersten Schritte finden Sie unter [„Datenverkehrsanalyse durchsuchen“ für Azure Search](search-traffic-analytics.md).
 
 ##Anzeigen von Anzahl und Metriken im Portal 
 
@@ -57,4 +59,4 @@ Weitere Informationen zur Dienstverwaltung finden Sie unter [Verwalten Ihres Suc
 
  
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0224_2016-->

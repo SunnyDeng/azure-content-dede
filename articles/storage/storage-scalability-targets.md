@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="storage"
-   ms.date="12/04/2015"
+   ms.date="02/21/2016"
    ms.author="robinsh" />
 
 # Skalierbarkeits- und Leistungsziele für Azure Storage
@@ -29,7 +29,7 @@ In diesem Thema werden die Skalierbarkeits- und Leistungsaspekte von Microsoft A
 
 >Wenn Ihre Anwendung die Grenze dessen erreicht, was eine Partition an Workload bewältigen kann, dann gibt Azure Storage den Fehlercode 503 (Server ausgelastet) oder den Fehlercode 500 (Zeitüberschreitung für Vorgang) zurück. In diesem Fall sollte die Anwendung eine exponentielle Backoffrichtlinie für Wiederholungen verwenden. Durch exponentielle Backoffs kann die Auslastung der Partition verringert werden, um die Datenverkehrsspitzen bei dieser Partition auszugleichen.
 
-Wenn die Anforderungen Ihrer Anwendung die Skalierbarkeitsziele eines einzelnen Speicherkontos überschreiten, können Sie die Anwendung so erstellen, dass mehrere Speicherkonten verwendet werden, und die Datenobjekte in diesen Speicherkonten partitionieren. Informationen zu Volumenpreisen finden Sie unter [Speicherpreisdetails](https://azure.microsoft.com/pricing/details/storage/).
+Wenn die Anforderungen Ihrer Anwendung die Skalierbarkeitsziele eines einzelnen Speicherkontos überschreiten, können Sie die Anwendung so erstellen, dass mehrere Speicherkonten verwendet werden, und die Datenobjekte in diesen Speicherkonten partitionieren. Informationen zu Volumenpreisen finden Sie unter [Preise für Azure Storage](https://azure.microsoft.com/pricing/details/storage/).
 
 
 ## Skalierbarkeitsziele für Blobs, Warteschlangen, Tabellen und Dateien
@@ -40,7 +40,7 @@ Wenn die Anforderungen Ihrer Anwendung die Skalierbarkeitsziele eines einzelnen 
 
 [AZURE.INCLUDE [azure-storage-limits-vm-disks](../../includes/azure-storage-limits-vm-disks.md)]
 
-Weitere Informationen finden Sie unter [Größen virtueller Computer](../virtual-machines/virtual-machines-size-specs.md).
+Weitere Informationen finden Sie unter [Größen für virtuelle Computer](../virtual-machines/virtual-machines-size-specs.md).
 
 ### Standardspeicherkonten
 
@@ -58,7 +58,7 @@ Weitere Informationen finden Sie unter [Größen virtueller Computer](../virtual
 
 Jedes Objekt, das Daten enthält, die in Azure Storage (Blobs, Nachrichten, Entitäten und Dateien) gespeichert werden, gehört zu einer Partition und wird durch einen Partitionsschlüssel identifiziert. Die Partition bestimmt, wie in Azure Storage der Lastenausgleich für Blobs, Nachrichten, Entitäten und Dateien auf Servern erfolgt, sodass die Datenverkehrsanforderungen dieser Objekte erfüllt werden. Der Partitionsschlüssel ist innerhalb des Speicherkontos eindeutig und wird verwendet, um einen Blob, eine Nachricht oder eine Entität zu suchen.
 
-In der Tabelle oben unter [Skalierbarkeitsziele für Standardspeicherkonten](#scalability-targets-for-standard-storage-accounts) sind die Leistungsziele für eine einzelne Partition für jeden Dienst aufgeführt.
+In der Tabelle oben unter [Skalierbarkeitsziele für Standardspeicherkonten](#standard-storage-accounts) sind die Leistungsziele für eine einzelne Partition für jeden Dienst aufgeführt.
 
 Partitionen wirken sich wie folgt auf den Lastenausgleich und die Skalierbarkeit der einzelnen Speicherdienste aus:
 
@@ -80,9 +80,9 @@ Partitionen wirken sich wie folgt auf den Lastenausgleich und die Skalierbarkeit
 
 - [Speicher – Preisdetails](https://azure.microsoft.com/pricing/details/storage/)
 - [Einschränkungen für Azure-Abonnements und Dienste, Kontingente und Einschränkungen](../azure-subscription-service-limits.md)
-- [Premium-Speicher: Hochleistungsspeicher für Workloads in Azure Virtual Machine](storage-premium-storage-preview-portal/)
+- [Premium-Speicher: Hochleistungsspeicher für Workloads in Azure Virtual Machine](storage-premium-storage.md)
 - [Azure Storage-Replikation](storage-redundancy.md)
 - [Checkliste zu Leistung und Skalierbarkeit von Microsoft Azure Storage](storage-performance-checklist.md)
 - [Microsoft Azure Storage: A Highly Available Cloud Storage Service with Strong Consistency (in englischer Sprache)](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0224_2016-->

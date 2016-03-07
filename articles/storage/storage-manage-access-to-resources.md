@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/05/2016" 
+	ms.date="02/19/2016" 
 	ms.author="tamram"/>
 
 # Verwalten des anonymen Lesezugriffs auf Container und Blobs
@@ -40,7 +40,7 @@ Sie können Containerberechtigungen auf folgende Weise festlegen:
 
 - Im [Azure-Portal](https://portal.azure.com)
 - Programmgesteuert mithilfe der Speicherclientbibliothek oder der REST-API.
-- Mit PowerShell Informationen zum Festlegen von Containerberechtigungen über Azure PowerShell finden Sie unter [Verwenden von Azure PowerShell mit Azure Storage](storage-powershell-guide-full#how-to-manage-azure-blobs).
+- Mit PowerShell Informationen zum Festlegen von Containerberechtigungen über Azure PowerShell finden Sie unter [Verwenden von Azure PowerShell mit Azure Storage](storage-powershell-guide-full.md#how-to-manage-azure-blobs).
 
 ### Festlegen von Containerberechtigungen im Azure-Portal
 
@@ -155,4 +155,4 @@ Die folgende Tabelle zeigt, welche Vorgänge von anonymen Benutzern aufgerufen w
 - [Shared Access Signatures: Grundlagen zum SAS-Modell](storage-dotnet-shared-access-signature-part-1.md)
 - [Delegieren des Zugriffs mit einer Shared Access Signature](https://msdn.microsoft.com/library/azure/ee395415.aspx) 
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0224_2016-->

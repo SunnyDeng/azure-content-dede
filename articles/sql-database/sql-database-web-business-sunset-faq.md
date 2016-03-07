@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="data-management"
-   ms.date="12/01/2015"
+   ms.date="02/23/2016"
    ms.author="sstein" />
 
 # Häufig gestellte Fragen zur Einstellung von Web Edition und Business Edition
@@ -31,13 +31,13 @@ Um Sie bei der Aktualisierung von Web- und Business-Datenbanken zu unterstützen
 
 ## Warum werden meine Web und Business Edition-Datenbanken im Azure-Portal als zurückgezogen angezeigt?
 
-Da Datenbanken der Web und Business Editionen nach September 2015 nicht mehr verfügbar sind, werden Web- und Business-Datenbanken im Portal als zurückgezogen gekennzeichnet. Web- und Business-Datenbanken können noch wie gewohnt bereitgestellt und verwaltet werden, aber die Kennzeichnung "Zurückgezogen" dient als Erinnerung, dass für neue Datenbanken die Dienstebenen Basic, Standard oder Premium verwendet werden sollten. Die Bezeichnung "Zurückgezogen" soll auch daran erinnern, dass vorhandene Web- und Business-Datenbanken auf Standard, Basic oder Premium aktualisiert werden sollten. Ausführliche Informationen zum Aktualisieren vorhandener Web- oder Business-Datenbanken auf die neuen Dienstebenen finden Sie unter [Upgrade von Web-/Business-Datenbanken der SQL-Datenbank auf neue Dienstebenen](sql-database-upgrade-new-service-tiers.md).
+Da Datenbanken der Web und Business Editionen nach September 2015 nicht mehr verfügbar sind, werden Web- und Business-Datenbanken im Portal als zurückgezogen gekennzeichnet. Die Bezeichnung "Zurückgezogen" soll auch daran erinnern, dass vorhandene Web- und Business-Datenbanken auf Standard, Basic oder Premium aktualisiert werden sollten. Ausführliche Informationen zum Aktualisieren vorhandener Web- oder Business-Datenbanken auf die neuen Dienstebenen finden Sie unter [Upgrade auf Azure SQL-Datenbank V12](sql-database-upgrade-server-portal.md).
 
 ## Welche neue Dienstebene ist die beste Wahl für die Aktualisierung meiner vorhandenen Web- oder Business-Datenbank?
 
 Die Auswahl einer geeigneten neuen Dienstebene und Leistungsstufe für vorhandene Web- oder Business-Datenbanken hängt von den spezifischen Feature- und Leistungsanforderungen der Anwendung ab.
 
-Nutzen Sie die Tarifempfehlungen oben, oder lesen Sie ausführliche Informationen zur Auswahl einer geeigneten neue Dienstebene unter [Upgrade von Web-/Business-Datenbanken der SQL-Datenbank auf neue Dienstebenen](sql-database-upgrade-new-service-tiers.md).
+Nutzen Sie die Tarifempfehlungen oben, oder lesen Sie ausführliche Informationen zur Auswahl einer geeigneten neuen Dienstebene unter [Upgrade auf Azure SQL-Datenbank V12](sql-database-upgrade-server-portal.md).
 
 ## Warum führt Microsoft neue Dienstebenen ein?
 
@@ -66,6 +66,6 @@ Azure SQL-Datenbanken der Editionen Basic, Standard und Premium werden nach Stun
 
 [Dienstebenen](sql-database-service-tiers.md)
 
-[Upgrade von Web-/Business-Datenbanken der SQL-Datenbank auf neue Dienstebenen](sql-database-upgrade-new-service-tiers.md)
+[Upgrade auf SQL-Datenbank V12](sql-database-upgrade-server-portal.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0224_2016-->

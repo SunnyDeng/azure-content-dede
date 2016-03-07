@@ -13,7 +13,7 @@
 	ms.workload="search" 
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
-	ms.date="11/04/2015" 
+	ms.date="02/04/2016" 
 	ms.author="eugenesh"/>
 
 #Anpassen von Azure Search-Indexern
@@ -29,7 +29,7 @@ Wenn Sie nicht mit Azure Search-Indexern vertraut sind, sollten Sie zunächst di
 
 ##Umbenennen von Feldern zwischen einer Datenquelle und einem Zielindex##
 
-**Feldzuordnungen** sind Eigenschaften, die Unterschiede zwischen Felddefinitionen ausgleichen. Die häufigsten Beispiele finden sich in Feldnamen, die gegen Azure Search-Benennungsregeln verstoßen. Nehmen wir als Beispiel eine Quelltabelle, in der ein oder mehrere Feldnamen mit einem führenden Unterstrich beginnen (z. B. `_id`). Da Feldnamen in Azure Search nicht mit einem Unterstrich beginnen dürfen, muss das Feld umbenannt werden.
+**Feldzuordnungen** sind Eigenschaften, die Unterschiede zwischen Felddefinitionen ausgleichen. Die häufigsten Beispiele finden sich in Feldnamen, die gegen Azure Search-Benennungsregeln verstoßen. Nehmen wir als Beispiel eine Quelltabelle, in der ein oder mehrere Feldnamen mit einem führenden Unterstrich beginnen (z. B. `_id`). Da Feldnamen in Azure Search nicht mit einem Unterstrich beginnen dürfen, muss das Feld umbenannt werden.
 
 Im folgenden Beispiel wird veranschaulicht, wie ein Indexer so geändert wird, dass mit einer Feldzuordnung das Feld `_id` der Datenquelle in das Feld `id` im Zielindex "umbenannt" wird:
 
@@ -74,7 +74,7 @@ Wenn Sie einfach den REST-API-Vorgang "PUT datasource" aufrufen, um Ihre Datenba
 
 	"Change detection policy cannot be changed for data source '…' because indexer '…' references this data source and has a non-empty change tracking state. You can use Reset API to reset the indexer's change tracking state, and retry this call."
 
- Sie würden sich wahrscheinlich fragen, was dies bedeutet und wie Sie den Fehler umgehen können. Dieser Fehler tritt auf, weil Azure Search einen internen Zustand verwaltet, der mit der Änderungserkennungsrichtlinie verknüpft ist. Bei Änderungen an der Richtlinie wird der vorhandene Zustand ungültig, da er für die neue Richtlinie nicht gilt. Das bedeutet, dass der Indexer die Datenquelle mithilfe der neuen Richtlinie von Grund auf neu indizieren muss. Dies hat möglicherweise auch Auswirkungen auf Sie (z. B. zusätzliche Auslastung der Datenbank oder zusätzliche Bandbreitengebühren für das Netzwerk). Daher werden Sie in Azure Search aufgefordert, den [API-Vorgang "Indexer zurücksetzen"](https://msdn.microsoft.com/library/azure/dn946897.aspx) aufzurufen, um den mit der aktuellen Änderungserkennungsrichtlinie verknüpften Zustand zurückzusetzen. Anschließend kann die Richtlinie mit einem regulären "PUT datasource"-Aufruf geändert werden. Natürlich könnte die Zurücksetzung in Azure Search automatisch erfolgen, wir fanden es jedoch wichtig, dass Sie sich ausdrücklich mit den Auswirkungen vertraut machen, die sich aus dem Aufruf des API-Vorgangs "Indexer zurücksetzen" ergeben.
+ Sie würden sich wahrscheinlich fragen, was dies bedeutet und wie Sie den Fehler umgehen können. Dieser Fehler tritt auf, weil Azure Search einen internen Zustand verwaltet, der mit der Änderungserkennungsrichtlinie verknüpft ist. Bei Änderungen an der Richtlinie wird der vorhandene Zustand ungültig, da er für die neue Richtlinie nicht gilt. Das bedeutet, dass der Indexer die Datenquelle mithilfe der neuen Richtlinie von Grund auf neu indizieren muss. Dies hat möglicherweise auch Auswirkungen auf Sie (z. B. zusätzliche Auslastung der Datenbank oder zusätzliche Bandbreitengebühren für das Netzwerk). Daher werden Sie in Azure Search aufgefordert, den [API-Vorgang "Indexer zurücksetzen"](https://msdn.microsoft.com/library/azure/dn946897.aspx) aufzurufen, um den mit der aktuellen Änderungserkennungsrichtlinie verknüpften Zustand zurückzusetzen. Anschließend kann die Richtlinie mit einem regulären "PUT datasource"-Aufruf geändert werden. Natürlich könnte die Zurücksetzung in Azure Search automatisch erfolgen, wir fanden es jedoch wichtig, dass Sie sich ausdrücklich mit den Auswirkungen vertraut machen, die sich aus dem Aufruf des API-Vorgangs "Indexer zurücksetzen" ergeben.
 
 ##Durchführen der URL-Codierung von Dokumentschlüsseln, die URL-unsichere Zeichen enthalten##
 
@@ -96,7 +96,7 @@ HINWEIS: Wenn Sie eine Suche oder Filterung nach Schlüsselfeldern durchführen 
 
 ##Tolerieren von Fehlern beim Indizieren von Dokumenten##
 
-In der Standardeinstellung beendet ein Azure Search-Indexer die Indizierung, sobald beim Indizieren bei nur einem Dokument Fehler auftreten. Abhängig von Ihrem Szenario können Sie festlegen, dass einige Fehler toleriert werden (wenn Sie z. B. die gesamte Datenquelle wiederholt neu indizieren). Azure Search umfasst zwei Indexerparameter zum Feinabstimmen dieses Verhaltens:
+In der Standardeinstellung beendet ein Azure Search-Indexer die Indizierung, sobald beim Indizieren bei nur einem Dokument Fehler auftreten. Abhängig von Ihrem Szenario können Sie festlegen, dass einige Fehler toleriert werden (wenn Sie z. B. die gesamte Datenquelle wiederholt neu indizieren). Azure Search umfasst zwei Indexerparameter zum Feinabstimmen dieses Verhaltens:
 
 - **maxFailedItems**: Die maximale Anzahl der Elemente, deren Indizierung fehlschlagen darf. Wenn diese Anzahl überschritten wird, gilt die Ausführung des Indexers als fehlgeschlagen. Der Standardwert ist 0.
 - **maxFailedItemsPerBatch**: Die maximale Anzahl der Elemente, deren Indizierung in einem einzelnen Batch fehlschlagen darf. Wenn diese Anzahl überschritten wird, gilt die Ausführung des Indexers als fehlgeschlagen. Der Standardwert ist 0.
@@ -117,4 +117,4 @@ Selbst wenn Sie die Tolerierung einiger Fehler festlegen, werden durch den [API-
 Damit sind wir am Ende angelangt. Wenn Sie Ideen oder Vorschläge für zukünftige Artikel haben, senden Sie uns einen Tweet mit dem Hashtag #AzureSearch, oder geben Sie Ihre Anregungen auf unserer [UserVoice-Seite](https://feedback.azure.com/forums/263029-azure-search/) ein.
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0224_2016-->

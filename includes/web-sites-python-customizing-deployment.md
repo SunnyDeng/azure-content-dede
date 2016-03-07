@@ -16,10 +16,6 @@ Wenn Sie alle Python-spezifischen Bereitstellungsschritte überspringen möchten
 
     \.skipPythonDeployment
 
-Wenn Sie die Sammlung statischer Dateien für die Django-Anwendung zu überspringen möchten:
-
-    \.skipDjango 
-
 Für mehr Kontrolle über die Bereitstellung können Sie das Standardskript für die Bereitstellung überschreiben, indem Sie die folgenden Dateien erstellen:
 
     \.deployment
@@ -33,4 +29,4 @@ Wenn diese Dateien nicht vorhanden sind, wird von Azure ein temporäres Bereitst
 
 [Azure-Befehlszeilenschnittstelle]: http://azure.microsoft.com/downloads/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0224_2016-->

@@ -4,7 +4,7 @@
    services="app-service\logic"
    documentationCenter=".net,nodejs,java"
    authors="anuragdalmia"
-   manager="dwrede"
+   manager="erikre"
    editor=""/>
 
 <tags
@@ -13,18 +13,20 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="11/30/2015"
+   ms.date="02/10/2016"
    ms.author="sameerch"/>
 
 
 # Erste Schritte mit dem Chatter-Connector und das Hinzufügen zur Logik-App 
-Sie stellen eine Verbindung mit Chatter her und veröffentlichen eine Nachricht oder durchsuchen einen Feed. Sie können z. B. einen Chatter-Feed durchsuchen, und sobald Sie etwas Bestimmtes finden, diese Chatter-Nachricht an die Gruppe "Vertrieb" senden.
+>[AZURE.NOTE] Diese Version des Artikels gilt für die Logik-Apps-Schemaversion 2014-12-01-preview.
+
+Sie stellen eine Verbindung mit Chatter her und veröffentlichen eine Nachricht oder durchsuchen einen Feed. Sie können z. B. einen Chatter-Feed durchsuchen, und sobald Sie etwas Bestimmtes finden, diese Chatter-Nachricht an die Gruppe "Vertrieb" senden.
 
 Sie können den Chatter-Connector dem geschäftlichen Workflow hinzufügen und Daten im Rahmen dieses Workflows in einer Logik-App verarbeiten.
 
 ## Trigger und Aktionen
 
-Ein Trigger startet eine neue Instanz basierend auf einem bestimmten Ereignis wie dem Eingang einer neuen Chatter-Nachricht. Eine Aktion ist das Ergebnis einer Aktion, wie z. B. nach dem Empfang einer Chatter-Nachricht das Senden der Nachricht an eine andere Chatter-Gruppe oder Social Media-Website wie Facebook oder Twitter.
+Ein Trigger startet eine neue Instanz basierend auf einem bestimmten Ereignis wie dem Eingang einer neuen Chatter-Nachricht. Eine Aktion ist das Ergebnis einer Aktion, wie z. B. nach dem Empfang einer Chatter-Nachricht das Senden der Nachricht an eine andere Chatter-Gruppe oder Social Media-Website wie Facebook oder Twitter.
 
 Der Chatter-Connector kann als ein Trigger oder eine Aktion in einer Logik-App verwendet werden und unterstützt Daten im JSON- und XML-Format. Der Chatter-Connector verfügt über folgende Trigger und Aktionen:
 
@@ -69,7 +71,7 @@ Auf ähnliche Weise können Sie die Chatter-Aktion im Datenfluss verwenden, um e
 ## Mehr mit Ihrem Connector machen
 Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
->[AZURE.NOTE]Wenn Sie Azure Logik-Apps ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [Logik-App testen](https://tryappservice.azure.com/?appservice=logic) sofort kostenlos eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure Logik-Apps ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [Logik-App testen](https://tryappservice.azure.com/?appservice=logic) sofort kostenlos eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
 
@@ -89,4 +91,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [10]: ./media/app-service-logic-connector-chatter/img10.PNG
 [11]: ./media/app-service-logic-connector-chatter/img11.PNG
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0224_2016-->

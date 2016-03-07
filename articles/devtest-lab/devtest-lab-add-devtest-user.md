@@ -13,10 +13,12 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/03/2016"
+	ms.date="02/18/2016"
 	ms.author="tarcher"/>
 
 # Hinzufügen von Besitzern und Benutzern zu einem DevTest Lab
+
+> [AZURE.NOTE] Klicken Sie auf den folgenden Link, um das Video zu diesem Artikel anzuzeigen: [Gewusst wie: Festlegen der Sicherheit in Ihrem DevTest Lab](/documentation/videos/how-to-set-security-in-your-devtest-lab).
 
 ## Übersicht
 
@@ -28,10 +30,10 @@ Sie gewähren über zwei Rollen Zugriff auf Ihr DevTest Lab:
 
      > [AZURE.NOTE] Rollen vom Typ **Besitzer**, die auf anderen RBAC-Ebenen als der Abonnementebene zugewiesen sind, werden in DevTest Lab nicht unterstützt. Das Zuweisen eines Benutzers zur Rolle **Besitzer** wird in DevTest Lab nicht unterstützt.
 
- -  **DevTest Lab-Benutzer**: Benutzer, die der Rolle **DevTest Lab-Benutzer** zugewiesen sind, können virtuelle Computer im angegebenen Lab erstellen, aktualisieren und löschen. Benutzer können entweder *intern* (ein Mitglied von Azure Active Directory für das Abonnement) oder *extern* (ein Benutzer, der kein Mitglied von Azure AD ist, z. B. ein Mitglied einer Partnerorganisation) sein.
+ -  **DevTest Lab-Benutzer**: Benutzer, die der Rolle **DevTest Lab-Benutzer** zugewiesen sind, können virtuelle Computer im angegebenen Lab erstellen, aktualisieren und löschen. Benutzer können entweder *intern* (ein Mitglied von Azure Active Directory für das Abonnement) oder *extern* (ein Benutzer, der kein Mitglied von Azure AD ist, z. B. ein Mitglied einer Partnerorganisation) sein.
 	-  Die Rolle **DevTest Lab-Benutzer** muss über die Kachel **Benutzer hinzufügen** des Labs zugewiesen werden.
 	-  Benutzer mit der Rolle **DevTest Lab-Benutzer** können diese Vorgänge nur in dem Lab ausführen, dem sie zugewiesen sind. Beispiel: Ein **DevTest Lab-Benutzer** kann keinen virtuellen Computer mithilfe des Diensts für virtuelle Computer des Abonnements erstellen. Das Erstellen eines virtuellen Computers ist nur über das DevTest Lab-Konto zulässig.
-	- *Externe* Benutzer müssen über ein Konto in einer der Microsoft-Kontodomänen verfügen (d. h. @hotmail.com, @live.com, @msn.com, @passport.com, @outlook.com oder eine Variante für ein bestimmtes Land).
+	- *Externe* Benutzer müssen über ein Konto in einer der Microsoft-Kontodomänen verfügen (d. h. @hotmail.com, @live.com, @msn.com, @passport.com, @outlook.com oder eine Variante für ein bestimmtes Land).
 
 ## Hinzufügen eines Besitzers zum Lab
 
@@ -101,4 +103,4 @@ Um einen DevTest Lab-Benutzer zum Lab hinzuzufügen, gehen Sie folgendermaßen v
 
 	1. Auf dem Blatt **Benutzer** werden die hinzugefügten Rollen und Benutzer angezeigt.
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0224_2016-->

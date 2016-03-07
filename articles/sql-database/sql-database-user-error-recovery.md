@@ -28,6 +28,7 @@ Weitere Informationen zu diesen Funktionen finden Sie in diesem [Blogbeitrag](ht
 Eine Azure-SQL-Datenbank wird immer in eine neue Datenbank wiederhergestellt. Diese Wiederherstellungsfunktionen sind für alle Basic-, Standard- und Premium-Datenbanken verfügbar.
 
 ##Zeitpunktwiederherstellung
+
 Bei einem Benutzerfehler oder unbeabsichtigter Datenänderung kann die Zeitpunktwiederherstellung verwendet werden, um die Datenbank bis zu einem beliebigen Zeitpunkt innerhalb der Datenbankaufbewahrungsdauer wiederherzustellen.
 
 Basic-Datenbanken haben eine Aufbewahrungsdauer von 7 Tagen, Standard-Datenbanken eine Aufbewahrungsdauer von 14 Tagen, und Premium-Datenbanken eine Aufbewahrungsdauer von 35 Tagen. Weitere Informationen zur Datenbankaufbewahrungsdauer finden Sie unter [Übersicht über die Geschäftskontinuität](sql-database-business-continuity.md).
@@ -35,6 +36,8 @@ Basic-Datenbanken haben eine Aufbewahrungsdauer von 7 Tagen, Standard-Datenbanke
 > [AZURE.NOTE] Beim Wiederherstellen einer Datenbank wird eine neue Datenbank erstellt. Es muss sichergestellt werden, dass der Server, auf dem die Wiederherstellung erfolgt, über ausreichend DTU-Kapazität für die neue Datenbank verfügt. [Wenden Sie sich an den Support](https://azure.microsoft.com/blog/azure-limits-quotas-increase-requests/), um dieses Kontingent zu erhöhen.
 
 ###Azure-Portal
+> [AZURE.NOTE] Für Datenbanken in Pools für elastische Datenbanken unterstützt das Azure-Portal nur die Point-in-Time-Wiederherstellung im selben Pool. Wenn Sie die Point-in-Time-Wiederherstellung für eine Datenbank als eigenständige Datenbank durchführen möchten, verwenden Sie die REST-API.
+
 Führen Sie die folgenden Schritte aus, um die Point-in-Time-Wiederherstellung im Azure-Portal zu verwenden.
 
 1. Melden Sie sich beim [Azure-Portal](https://portal.Azure.com) an.
@@ -55,13 +58,7 @@ Verwenden Sie PowerShell für die programmgesteuerte Ausführung einer Point-in-
 		 
 
 ###REST-API 
-Verwenden Sie REST für eine programmatische Durchführung der Datenbankwiederherstellung.
-
-1. Rufen Sie die Datenbank, die wiederhergestellt werden soll, mithilfe des Vorgangs [Datenbank abrufen](http://msdn.microsoft.com/library/azure/dn505708.aspx) ab.
-
-2.	Erstellen Sie die Wiederherstellungsanforderung mithilfe des Vorgangs [Datenbankwiederherstellungsanforderung erstellen](http://msdn.microsoft.com/library/azure/dn509571.aspx).
-	
-3.	Verfolgen Sie die Wiederherstellungsanforderung mithilfe des Vorgangs [Datenbank-Betriebsstatus](http://msdn.microsoft.com/library/azure/dn720371.aspx) nach.
+Verwenden Sie REST für eine programmatische Durchführung der Datenbankwiederherstellung. Erstellen Sie dazu die Wiederherstellungsanforderung über den Vorgang [Erstellen einer Datenbank](https://msdn.microsoft.com/library/azure/mt163685.aspx), und geben Sie als **Erstellungsmodus** **PointInTimeRestore** an.
 
 ##Wiederherstellen einer gelöschten Datenbank
 Falls eine Datenbank gelöscht wird, bietet Ihnen die Azure-SQL-Datenbank die Möglichkeit, die gelöschte Datenbank zum Zeitpunkt des Löschens wiederherzustellen. Die Azure-SQL-Datenbank speichert die gelöschte Datenbanksicherung während der Aufbewahrungsdauer der Datenbank.
@@ -76,7 +73,7 @@ Führen Sie die folgenden Schritte aus, um eine gelöschte Datenbank über das A
 1. Melden Sie sich beim [Azure-Portal](https://portal.Azure.com) an.
 2. Wählen Sie auf der linken Bildschirmseite **DURCHSUCHEN** und dann **SQL Server** aus.
 3. Navigieren Sie zu Ihrem Server, und wählen Sie ihn aus.
-4. Scrollen Sie auf dem Blatt für Ihren Server zu **Vorgänge**, und klicken Sie auf die Kachel **Gelöschte Datenbanken**.
+4. Scrollen Sie auf dem Blatt für Ihren Server nach unten zu **Vorgänge**, und klicken Sie auf die Kachel **Gelöschte Datenbanken**.
 5. Klicken Sie auf die Datenbank, die Sie wiederherstellen möchten.
 6. Geben Sie einen Datenbanknamen an, und klicken Sie auf **Erstellen**.
 7. Der Datenbank-Wiederherstellungsvorgang beginnt und kann mithilfe von **BENACHRICHTIGUNGEN** auf der linken Bildschirmseite überwacht werden.
@@ -106,4 +103,4 @@ Verwenden Sie REST für eine programmatische Durchführung der Datenbankwiederhe
 	
 4.	Verfolgen Sie den Status der Wiederherstellung mithilfe des Vorgangs [Datenbank-Betriebsstatus](http://msdn.microsoft.com/library/azure/dn720371.aspx) nach.
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0224_2016-->

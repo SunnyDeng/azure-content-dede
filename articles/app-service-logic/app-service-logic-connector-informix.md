@@ -4,7 +4,7 @@
    services="app-service\logic"
    documentationCenter=".net,nodejs,java"
    authors="gplarsen"
-   manager="dwrede"
+   manager="erikre"
    editor=""/>
 
 <tags
@@ -13,12 +13,13 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="12/03/2015"
+   ms.date="02/10/2016"
    ms.author="plarsen"/>
 
 # Informix-Connector
+>[AZURE.NOTE] Diese Version des Artikels gilt für die Logik-Apps-Schemaversion 2014-12-01-preview.
 
-Der Microsoft Connector für Informix ist eine API-App zum Verbinden von Anwendungen per Azure App Service mit Ressourcen, die in einer IBM Informix-Datenbank gespeichert sind. Der Connector enthält einen Microsoft-Client zum Herstellen einer Verbindung mit Informix-Remoteservercomputern über eine TCP/IP-Netzwerkverbindung, z. B. Azure-Hybridverbindungen mit lokalen Informix-Servern per Azure Service Bus Relay. Der Connector unterstützt die folgenden Datenbankvorgänge:
+Der Microsoft Connector für Informix ist eine API-App zum Verbinden von Anwendungen per Azure App Service mit Ressourcen, die in einer IBM Informix-Datenbank gespeichert sind. Der Connector enthält einen Microsoft-Client zum Herstellen einer Verbindung mit Informix-Remoteservercomputern über eine TCP/IP-Netzwerkverbindung, z. B. Azure-Hybridverbindungen mit lokalen Informix-Servern per Azure Service Bus Relay. Der Connector unterstützt die folgenden Datenbankvorgänge:
 
 - Lesen von Zeilen mit SELECT
 - Durchführen einer Leseabfrage für Zeilen mit SELECT COUNT gefolgt von SELECT
@@ -45,19 +46,19 @@ Sie können einen Connector in einer Logik-App oder über den Azure Marketplace 
 2. Geben Sie auf dem Blatt **Alles** im Feld **Alles durchsuchen** den Text **informix** ein, und drücken Sie die EINGABETASTE.
 3. Wählen Sie im Ergebnisbereich „Alles durchsuchen“ die Option **Informix-Connector** aus.
 4. Wählen Sie auf dem Blatt mit der Beschreibung des Informix-Connectors die Option **Erstellen**.
-5. Geben Sie auf dem Blatt mit dem Informix-Connectorpaket den Namen (z. B. „InformixConnectorNewOrders“), App Service-Plan und andere Eigenschaften ein.
+5. Geben Sie auf dem Blatt mit dem Informix-Connectorpaket den Namen (z. B. „InformixConnectorNewOrders“), App Service-Plan und andere Eigenschaften ein.
 6. Wählen Sie **Paketeinstellungen**, und geben Sie die folgenden Paketeinstellungen ein:
 
 	Name | Erforderlich | Beschreibung
 --- | --- | ---
-ConnectionString | Ja | Informix-Clientverbindungszeichenfolge (z. B. „Network Address=servername;Network Port=9089;User ID=username;Password=password;Initial Catalog=nwind;Default Schema=informix“).
-Tabellen | Ja | Durch Kommas getrennte Liste von Tabellen-, Sicht- und Aliasnamen, die für OData-Vorgänge und zum Generieren der Swagger-Dokumentation mit Beispielen erforderlich sind (z. B. „NEWORDERS“).
-Prozeduren | Ja | Durch Kommas getrennte Liste mit Prozedur- und Funktionsnamen (z. B. „SPORDERID“).
+ConnectionString | Ja | Informix-Clientverbindungszeichenfolge (z. B. „Network Address=servername;Network Port=9089;User ID=username;Password=password;Initial Catalog=nwind;Default Schema=informix“).
+Tabellen | Ja | Durch Kommas getrennte Liste von Tabellen-, Sicht- und Aliasnamen, die für OData-Vorgänge und zum Generieren der Swagger-Dokumentation mit Beispielen erforderlich sind (z. B. „NEWORDERS“).
+Prozeduren | Ja | Durch Kommas getrennte Liste mit Prozedur- und Funktionsnamen (z. B. „SPORDERID“).
 OnPremise | Nein | Lokale Bereitstellung mit Azure Service Bus Relay
 ServiceBusConnectionString | Nein | Azure Service Bus Relay-Verbindungszeichenfolge
-PollToCheckData | Nein | SELECT COUNT-Anweisung zum Verwenden mit einem Logik-App-Auslöser (z. B. „SELECT COUNT(*) FROM NEWORDERS WHERE SHIPDATE IS NULL“).
-PollToReadData | Nein | SELECT-Anweisung zum Verwenden mit einem Logik-App-Auslöser (z. B. „SELECT * FROM NEWORDERS WHERE SHIPDATE IS NULL FOR UPDATE“).
-PollToAlterData | Nein | UPDATE- oder DELETE-Anweisung zum Verwenden mit einem Logik-App-Auslöser (z. B. „UPDATE NEWORDERS SET SHIPDATE = CURRENT DATE WHERE CURRENT OF &lt;CURSOR&gt;“).
+PollToCheckData | Nein | SELECT COUNT-Anweisung zum Verwenden mit einem Logik-App-Auslöser (z. B. „SELECT COUNT(*) FROM NEWORDERS WHERE SHIPDATE IS NULL“).
+PollToReadData | Nein | SELECT-Anweisung zum Verwenden mit einem Logik-App-Auslöser (z. B. „SELECT * FROM NEWORDERS WHERE SHIPDATE IS NULL FOR UPDATE“).
+PollToAlterData | Nein | UPDATE- oder DELETE-Anweisung zum Verwenden mit einem Logik-App-Auslöser (z. B. „UPDATE NEWORDERS SET SHIPDATE = CURRENT DATE WHERE CURRENT OF &lt;CURSOR&gt;“).
 
 7. Wählen Sie **OK** und anschließend **Erstellen**.
 8. Nach Abschluss des Vorgangs sehen die Paketeinstellungen etwa wie folgt aus: ![][1]
@@ -66,10 +67,10 @@ PollToAlterData | Nein | UPDATE- oder DELETE-Anweisung zum Verwenden mit einem L
 ## Logik-App mit Informix-Connectoraktion zum Hinzufügen von Daten ##
 Sie können eine Logik-App-Aktion definieren, um Daten einer Informix-Tabelle mit einem OData-Vorgang vom Typ „API einfügen“ oder „Post an Entität“ hinzuzufügen. Beispielsweise können Sie einen neuen Datensatz mit einer Kundenbestellung einfügen, indem Sie eine SQL INSERT-Anweisung für eine Tabelle verarbeiten, die mit einer Identitätsspalte definiert wurde, und den Identitätswert oder die betroffenen Zeilen an die Logik-App zurückgeben (SELECT ORDID FROM FINAL TABLE (INSERT INTO NEWORDERS (CUSTID,SHIPNAME,SHIPADDR,SHIPCITY,SHIPREG,SHIPZIP) VALUES (?,?,?,?,?,?))).
 
-> [AZURE.TIP]Mit der Informix-Verbindung „*Post an EntitySet*“ wird der Wert der Identitätsspalte zurückgegeben, und mit „*API einfügen*“ werden betroffene Zeilen zurückgegeben.
+> [AZURE.TIP] Mit der Informix-Verbindung „*Post an EntitySet*“ wird der Wert der Identitätsspalte zurückgegeben, und mit „*API einfügen*“ werden betroffene Zeilen zurückgegeben.
 
 1. Wählen Sie im Azure-Startmenü **+** (Pluszeichen), **Web und mobil** und dann **Logik-App**.
-2. Geben Sie den Namen (z. B. „NewOrdersInformix“), den App Service-Plan und andere Eigenschaften ein, und wählen Sie **Erstellen**.
+2. Geben Sie den Namen (z. B. „NewOrdersInformix“), den App Service-Plan und andere Eigenschaften ein, und wählen Sie **Erstellen**.
 3. Wählen Sie im Azure-Startmenü die gerade erstellte Logik-App aus, und wählen Sie dann **Einstellungen** und **Auslöser und Aktionen** aus.
 4. Wählen Sie auf dem Blatt „Auslöser und Aktionen“ in den Vorlagen der Logik-App die Option **Von Grund auf neu erstellen**.
 5. Wählen Sie im Bereich mit den API-Apps die Option **Wiederholung**, legen Sie eine Häufigkeit und ein Intervall fest, und aktivieren Sie die Option durch das **Häkchen**.
@@ -96,8 +97,8 @@ SHIPZIP | 99362
 #### Wichtige Informationen
 
 - Der Connector schneidet Informix-Tabellennamen ab, wenn die Namen von Logik-App-Aktionen gebildet werden. Ein Vorgang mit dem Namen **Insert into NEWORDERS** wird beispielsweise abgeschnitten und lautet **Insert into NEWORDER**.
-- Nach dem Speichern der **Auslöser und Aktionen** der Logik-App verarbeitet die Logik-App den Vorgang. Es kann eine Verzögerung von einigen Sekunden geben (z. B. 3 bis 5 Sekunden), bevor die Logik-App den Vorgang verarbeitet. Optional können Sie auf **Jetzt ausführen** klicken, um den Vorgang zu verarbeiten.
-- Der Informix-Connector definiert EntitySet-Member mit Attributen, einschließlich der Angabe, ob der Member einer Informix-Spalte mit einer Standardspalte oder generierten Spalten (z. B. Identität) entspricht. Die Logik-App zeigt ein rotes Sternchen neben dem Namen der EntitySet-Member-ID an, um Informix-Spalten anzugeben, die Werte erfordern. Sie sollten keinen Wert für den ORDID-Member eingeben, der der Informix-Identitätsspalte entspricht. Sie können Werte für andere optionale Member eingeben (ITEMS, ORDDATE, REQDATE, SHIPID, FREIGHT, SHIPCTRY), die den Informix-Spalten mit Standardwerten entsprechen. 
+- Nach dem Speichern der **Auslöser und Aktionen** der Logik-App verarbeitet die Logik-App den Vorgang. Es kann eine Verzögerung von einigen Sekunden geben (z. B. 3 bis 5 Sekunden), bevor die Logik-App den Vorgang verarbeitet. Optional können Sie auf **Jetzt ausführen** klicken, um den Vorgang zu verarbeiten.
+- Der Informix-Connector definiert EntitySet-Member mit Attributen, einschließlich der Angabe, ob der Member einer Informix-Spalte mit einer Standardspalte oder generierten Spalten (z. B. Identität) entspricht. Die Logik-App zeigt ein rotes Sternchen neben dem Namen der EntitySet-Member-ID an, um Informix-Spalten anzugeben, die Werte erfordern. Sie sollten keinen Wert für den ORDID-Member eingeben, der der Informix-Identitätsspalte entspricht. Sie können Werte für andere optionale Member eingeben (ITEMS, ORDDATE, REQDATE, SHIPID, FREIGHT, SHIPCTRY), die den Informix-Spalten mit Standardwerten entsprechen. 
 - Der Informix-Connector gibt für die Logik-App die Antwort von „Post an EntitySet“ zurück, die die Werte für die Identitätsspalten enthält (per Ableitung aus DRDA SQLDARD (SQL Data Area Reply Data) in der vorbereiteten SQL INSERT-Anweisung). Der Informix-Server gibt die eingefügten Werte für Spalten mit Standardwerten nicht zurück.  
 
 
@@ -105,7 +106,7 @@ SHIPZIP | 99362
 Sie können eine Logik-App-Aktion definieren, um Daten einer Informix-Tabelle mit einer API-Masseneinfügung hinzuzufügen. Beispielsweise können Sie zwei neue Datensätze mit einer Kundenbestellung einfügen, indem Sie eine SQL INSERT-Anweisung mit einem Array mit Zeilenwerten für eine Tabelle verarbeiten, die mit einer Identitätsspalte definiert wurde, und die betroffenen Zeilen an die Logik-App zurückgeben (SELECT ORDID FROM FINAL TABLE (INSERT INTO NEWORDERS (CUSTID,SHIPNAME,SHIPADDR,SHIPCITY,SHIPREG,SHIPZIP) VALUES (?,?,?,?,?,?))).
 
 1. Wählen Sie im Azure-Startmenü **+** (Pluszeichen), **Web und mobil** und dann **Logik-App**.
-2. Geben Sie den Namen (z. B. „NewOrdersBulkInformix“), den App Service-Plan und andere Eigenschaften ein, und wählen Sie **Erstellen**.
+2. Geben Sie den Namen (z. B. „NewOrdersBulkInformix“), den App Service-Plan und andere Eigenschaften ein, und wählen Sie **Erstellen**.
 3. Wählen Sie im Azure-Startmenü die gerade erstellte Logik-App aus, und wählen Sie dann **Einstellungen** und **Auslöser und Aktionen**.
 4. Wählen Sie auf dem Blatt „Auslöser und Aktionen“ in den Vorlagen der Logik-App die Option **Von Grund auf neu erstellen**.
 5. Wählen Sie im Bereich mit den API-Apps die Option **Wiederholung**, legen Sie eine Häufigkeit und ein Intervall fest, und aktivieren Sie die Option durch das **Häkchen**.
@@ -127,8 +128,8 @@ Sie können eine Logik-App-Aktion definieren, um Daten einer Informix-Tabelle mi
 
 - Der Connector schneidet Informix-Tabellennamen ab, wenn die Namen von Logik-App-Aktionen gebildet werden. Ein Vorgang mit dem Namen **Bulk Insert into NEWORDERS** wird beispielsweise abgeschnitten und lautet **Bulk Insert into NEW**.
 - In einer Informix-Datenbank wird unter Umständen die Groß-/Kleinschreibung von Tabellen- und Spaltennamen berücksichtigt. Beispielsweise kann es sein, dass die Arrayspaltennamen des Vorgangs für die Masseneinfügung nicht in Großbuchstaben („CUSTID“), sondern in Kleinbuchstaben („custid“) angegeben werden müssen.
-- Die Informix-Datenbank generiert Werte, indem Identitätsspalten (z. B. ORDID), nullbare Spalten (z. B. SHIPDATE) und Spalten mit Standardwerten (z. B. ORDDATE, REQDATE, SHIPID, FREIGHT, SHIPCTRY) weggelassen werden.
-- Durch das Angeben von „today“ und „tomorrow“ generiert der Informix-Connector die Funktionen „CURRENT DATE“ und „CURRENT DATE + 1 DAY“ (z. B. REQDATE). 
+- Die Informix-Datenbank generiert Werte, indem Identitätsspalten (z. B. ORDID), nullbare Spalten (z. B. SHIPDATE) und Spalten mit Standardwerten (z. B. ORDDATE, REQDATE, SHIPID, FREIGHT, SHIPCTRY) weggelassen werden.
+- Durch das Angeben von „today“ und „tomorrow“ generiert der Informix-Connector die Funktionen „CURRENT DATE“ und „CURRENT DATE + 1 DAY“ (z. B. REQDATE). 
 
 
 ## Logik-App mit Informix-Connector-Auslöser zum Lesen, Ändern oder Löschen von Daten ##
@@ -161,7 +162,7 @@ PollToAlterData | DELETE NEWORDERS WHERE CURRENT OF &lt;CURSOR&gt;
 In diesem Beispiel werden die Daten mit der Logik-App in der Informix-Tabelle abgefragt, gelesen, aktualisiert und dann erneut gelesen.
 
 1. Wählen Sie im Azure-Startmenü **+** (Pluszeichen), **Web und mobil** und dann **Logik-App**.
-2. Geben Sie den Namen (z. B. „ShipOrdersInformix“), den App Service-Plan und andere Eigenschaften ein, und wählen Sie **Erstellen**.
+2. Geben Sie den Namen (z. B. „ShipOrdersInformix“), den App Service-Plan und andere Eigenschaften ein, und wählen Sie **Erstellen**.
 3. Wählen Sie im Azure-Startmenü die gerade erstellte Logik-App aus, und wählen Sie dann **Einstellungen** und **Auslöser und Aktionen**.
 4. Wählen Sie auf dem Blatt „Auslöser und Aktionen“ in den Vorlagen der Logik-App die Option **Von Grund auf neu erstellen**.
 5. Wählen Sie im Bereich mit den API-Apps die Option **Informix-Connector**, legen Sie eine Häufigkeit und ein Intervall fest, und aktivieren Sie die Option durch das **Häkchen**.
@@ -180,13 +181,13 @@ Sie können eine Logik-App-Aktion definieren, um Daten aus einer Informix-Tabell
 Sie können im Azure Marketplace eine neue Logik-App erstellen und den Informix-Connector dann als Aktion zum Entfernen von Kundenbestellungen verwenden. Beispielsweise können Sie den bedingten Informix-Connector-Löschvorgang nutzen, um eine DELETE-SQL-Anweisung zu verarbeiten (DELETE FROM NEWORDERS WHERE ORDID >= 10000).
 
 1. Klicken Sie im Hub-Menü des Azure-**Start**menüs auf **+** (Pluszeichen), **Web und mobil** und dann auf **Logik-App**. 
-2. Geben Sie auf dem Blatt **Logik-App erstellen** einen **Namen** ein, z. B. **RemoveOrdersInformix**.
-3. Wählen oder definieren Sie Werte für die anderen Einstellungen (z. B. Dienstplan, Ressourcengruppe).
+2. Geben Sie auf dem Blatt **Logik-App erstellen** einen **Namen** ein, z. B. **RemoveOrdersInformix**.
+3. Wählen oder definieren Sie Werte für die anderen Einstellungen (z. B. Dienstplan, Ressourcengruppe).
 4. Die Einstellungen sollten wie folgt aussehen: Klicken Sie auf **Erstellen**: ![][12]
 5. Klicken Sie auf dem Blatt **Einstellungen** auf **Auslöser und Aktionen**.
 6. Klicken Sie auf dem Blatt **Auslöser und Aktionen** in der Liste mit den **Logik-App-Vorlagen** auf **Von Grund auf neu erstellen**.
 7. Klicken Sie auf dem Blatt **Auslöser und Aktionen** im Bereich **API-Apps** in der Ressourcengruppe auf **Wiederholung**.
-8. Klicken Sie auf der Entwurfsoberfläche der Logik-App auf die Option **Wiederholung**, und legen Sie eine **Häufigkeit** und ein **Intervall** fest, z. B. **Tage** und **1**. Klicken Sie dann auf das **Häkchen**, um die Einstellungen für die Wiederholungsoption zu speichern.
+8. Klicken Sie auf der Entwurfsoberfläche der Logik-App auf die Option **Wiederholung**, und legen Sie eine **Häufigkeit** und ein **Intervall** fest, z. B. **Tage** und **1**. Klicken Sie dann auf das **Häkchen**, um die Einstellungen für die Wiederholungsoption zu speichern.
 9. Klicken Sie auf dem Blatt **Auslöser und Aktionen** im Bereich **API-Apps** in der Ressourcengruppe auf **Informix-Connector**.
 10. Klicken Sie auf der Entwurfsoberfläche der Logik-App auf das Aktionselement **Informix-Connector**, klicken Sie auf die Auslassungszeichen (**...**), um die Liste mit den Vorgängen zu erweitern, und klicken Sie dann auf **Bedingtes Löschen aus N**.
 11. Geben Sie im Aktionselement „Informix-Connector“ **ordid ge 10000** für einen **Ausdruck ein, der eine Teilmenge der Einträge identifiziert**.
@@ -199,7 +200,7 @@ Sie können im Azure Marketplace eine neue Logik-App erstellen und den Informix-
 **Hinweis:** Der Logik-App-Designer schneidet Tabellennamen ab. Beispielsweise wird ein Vorgang mit dem Namen **Conditional delete from NEWORDERS** abgeschnitten und lautet **Conditional delete from N**.
 
 
-> [AZURE.TIP]Verwenden Sie die folgenden SQL-Anweisungen, um die Beispieltabelle und die gespeicherten Prozeduren zu erstellen.
+> [AZURE.TIP] Verwenden Sie die folgenden SQL-Anweisungen, um die Beispieltabelle und die gespeicherten Prozeduren zu erstellen.
 
 Sie können die NEWORDERS-Beispieltabelle mit den folgenden Informix-SQL-DDL-Anweisungen erstellen:
  
@@ -242,7 +243,7 @@ Sie können die gespeicherte Prozedur SPORDERID als Beispiel erstellen, indem Si
 
 ## Hybridkonfiguration (optional)
 
-> [AZURE.NOTE]Dieser Schritt ist nur bei lokaler Verwendung von DB2-Connector hinter Ihrer Firewall erforderlich.
+> [AZURE.NOTE] Dieser Schritt ist nur bei lokaler Verwendung von DB2-Connector hinter Ihrer Firewall erforderlich.
 
 App Service verwendet den Hybrid-Konfigurations-Manager, um sicher eine Verbindung auf Ihr lokales System herzustellen. Wenn für den Connector ein lokaler IBM DB2-Server für Windows verwendet wird, ist der Hybrid Connection Manager erforderlich.
 
@@ -273,4 +274,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [13]: ./media/app-service-logic-connector-informix/LogicApp_RemoveOrdersInformix_TriggersActions.png
 [14]: ./media/app-service-logic-connector-informix/LogicApp_RemoveOrdersInformix_Outputs.png
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0224_2016-->

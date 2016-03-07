@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Steuern des Routings und Verwenden virtueller Geräte im Ressourcen-Manager mithilfe von PowerShell | Microsoft Azure"
-   description="Erfahren Sie, wie Sie das Routing steuern und virtuelle Geräte in Azure PowerShell verwenden."
+   pageTitle="Steuern des Routings und Verwenden virtueller Geräte im Resource Manager mithilfe von PowerShell | Microsoft Azure"
+   description="Erfahren Sie, wie Sie im Resource Manager mithilfe von PowerShell das Routing steuern und virtuelle Geräte verwenden."
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
@@ -14,10 +14,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/20/2015"
+   ms.date="02/23/2016"
    ms.author="telmos" />
 
-#Erstellen benutzerdefinierter Routen in PowerShell
+#Erstellen von benutzerdefinierten Routen (UDR) im Resource Manager mit PowerShell
 
 [AZURE.INCLUDE [virtual-network-create-udr-arm-selectors-include.md](../../includes/virtual-network-create-udr-arm-selectors-include.md)]
 
@@ -56,7 +56,7 @@ Führen Sie zum Erstellen der Routingtabelle und der für das Front-End-Subnetz 
 		Set-AzureRmVirtualNetworkSubnetConfig -VirtualNetwork $vnet -Name FrontEnd `
 			-AddressPrefix 192.168.1.0/24 -RouteTable $routeTable
 
->[AZURE.WARNING]Die Ausgabe des obigen Befehls zeigt den Inhalt des Konfigurationsobjekts des virtuellen Netzwerks an, das nur auf dem Computer vorhanden ist, auf dem PowerShell ausgeführt wird. Zum Speichern der Änderungen in Azure müssen Sie das Cmdlet **Set-AzureVirtualNetwork** ausführen.
+>[AZURE.WARNING] Die Ausgabe des obigen Befehls zeigt den Inhalt des Konfigurationsobjekts des virtuellen Netzwerks an, das nur auf dem Computer vorhanden ist, auf dem PowerShell ausgeführt wird. Zum Speichern der Änderungen in Azure müssen Sie das Cmdlet **Set-AzureVirtualNetwork** ausführen.
 
 7. Speichern Sie die neue Subnetzkonfiguration in Azure.
 
@@ -68,7 +68,7 @@ Führen Sie zum Erstellen der Routingtabelle und der für das Front-End-Subnetz 
 		ResourceGroupName : TestRG
 		Location          : westus
 		Id                : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG/providers/Microsoft.Network/virtualNetworks/TestVNet
-		Etag              : W/"7df26c0e-652f-4754-bc4e-733fef7d5b2b"
+		Etag              : W/"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 		ProvisioningState : Succeeded
 		Tags              : 
 		                    Name         Value
@@ -236,4 +236,4 @@ Führen Sie zum Aktivieren der IP-Weiterleitung in der von **FW1** verwendeten N
 		NetworkSecurityGroup : null
 		Primary              : True
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0224_2016-->

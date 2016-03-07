@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="javascript" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="12/01/2015" 
+	ms.date="02/23/2016" 
 	ms.author="ricksal"/>
 
 
@@ -106,7 +106,7 @@ Tabellenvorgänge müssen mindestens eine der folgenden Funktionen des [Anforder
  
 + **respond-Funktion**: Eine benutzerdefinierte Antwort wird zurückgegeben.
 
-> [AZURE.IMPORTANT]Falls ein Skript einen Codepfad enthält, in dem weder **execute** noch **respond** aufgerufen wird, kann es passieren, dass der Vorgang nicht reagiert.
+> [AZURE.IMPORTANT] Falls ein Skript einen Codepfad enthält, in dem weder **execute** noch **respond** aufgerufen wird, kann es passieren, dass der Vorgang nicht reagiert.
 
 Das folgende Skript ruft die **execute**-Funktion auf, um den vom Client angeforderten Datenvorgang abzuschließen:
 
@@ -340,7 +340,7 @@ Sie können Serverskripts, die für HTTP-Methoden in einem Endpunkt einer benutz
 
 	![2][2]
 	
-	Zugriffsberechtigungen für Methoden von benutzerdefinierten APIs werden in der Registerkarte Berechtigungen zugewiesen. Informationen zur Erstellung der API finden Sie unter [Aufrufen benutzerdefinierter APIs vom Client, in englischer Sprache].  
+	Zugriffsberechtigungen für Methoden von benutzerdefinierten APIs werden in der Registerkarte Berechtigungen zugewiesen. Informationen zur Erstellung der API finden Sie unter [Call a custom API from the client] (Aufrufen benutzerdefinierter APIs vom Client, in englischer Sprache.
 
 + Mithilfe von Quellcodeverwaltung. Falls Sie die Quellcodeverwaltung aktiviert haben, erstellen Sie einfach eine Datei mit dem Namen "<em>`<custom_api>`</em>.js" im Unterordner ".\\service\\api" in Ihrem Git-Repository, wobei <em>`<custom_api>`</em> der Name der benutzerdefinierten API ist, die registriert wird. Die Skriptdatei enthält eine _exported_-Funktion für jede HTTP-Methode, die von der benutzerdefinierten API verfügbar gemacht wird. Die Berechtigungen werden in einer separaten .json-Datei definiert. Weitere Informationen finden Sie unter [Quellcodeverwaltung und freigegebener Code][Source control, shared code, and helper functions].
 
@@ -513,7 +513,7 @@ Sie können über Ihre Quellcodeverwaltung und den Node.js-Paket-Manager (npm) s
 
 Nachdem Sie die Daten package.json oder Ihre benutzerdefinierten Module im Repository für Ihren Mobile Service übernommen haben, können Sie die Module über deren Namen mit **require** einbinden.
 
->[AZURE.NOTE]Module, die Sie in package.json angeben oder auf Ihren Mobile Service hochladen, werden ausschließlich in Ihrem Serverskript-Code verwendet. Diese Module werden nicht von der Mobile Services-Runtime verwendet.
+>[AZURE.NOTE] Module, die Sie in package.json angeben oder auf Ihren Mobile Service hochladen, werden ausschließlich in Ihrem Serverskript-Code verwendet. Diese Module werden nicht von der Mobile Services-Runtime verwendet.
 
 ###<a name="helper-functions"></a>Gewusst wie: Arbeiten mit Hilfsfunktionen
 
@@ -661,7 +661,7 @@ Skripts in benutzerdefinierten APIs können über die <strong>service</strong>-E
 
 		var todoItemsTable = request.service.tables.getTable('TodoItem');
 
-> [AZURE.NOTE]Freigegebene Funktionen können nicht direkt auf das **Tabellenobjekt** zugreifen. In freigegebenen Funktionen müssen Sie das Tabellenobjekt an die Funktion übergeben.
+> [AZURE.NOTE] Freigegebene Funktionen können nicht direkt auf das **Tabellenobjekt** zugreifen. In freigegebenen Funktionen müssen Sie das Tabellenobjekt an die Funktion übergeben.
 
 Sobald Sie ein [Tabellenobjekt] haben, können Sie die folgenden Funktionen für Tabellenvorgänge aufrufen: insert, update, delete oder read. Das folgende Beispiel ruft Berechtigungen eines Benutzers aus einer Berechtigungstabelle ab:
 
@@ -924,7 +924,7 @@ Debugging und Problembehandlung Ihrer Serverskript erledigen Sie am Besten, inde
 
 Verwenden Sie das globale [Konsolenobjekt], um in die Protokolle zu schreiben. Mit den Funktionen **log** oder **info** können Sie Warnungen auf der Informationsebene schreiben. Die Funktionen **warning** und **error** schreiben Einträge auf ihrer jeweiligen Ebene, die in den Protokollen hervorgehoben werden.
 
-> [AZURE.NOTE]Um die Protokolle für Ihren Mobile Service anzuzeigen, melden Sie sich beim [klassischen Azure-Portal](https://manage.windowsazure.com/) an, wählen Sie Ihren Mobile Service aus, und wählen Sie die Registerkarte **Protokolle** aus.
+> [AZURE.NOTE] Um die Protokolle für Ihren Mobile Service anzuzeigen, melden Sie sich beim [klassischen Azure-Portal](https://manage.windowsazure.com/) an, wählen Sie Ihren Mobile Service aus, und wählen Sie die Registerkarte **Protokolle** aus.
 
 Sie können außerdem die Protokollfunktionen des [Konsolenobjekts] verwenden, um Ihre Nachrichten mithilfe von Parametern zu formatieren. Im folgenden Beispiel wird ein JSON-Objekt als Parameter an die Nachrichten-Zeichenfolge übergeben:
 
@@ -1044,7 +1044,7 @@ Um Ihr Protokoll nicht zu überladen, sollten Sie Aufrufe von console.log() entf
 [util API]: http://go.microsoft.com/fwlink/p/?LinkId=288806
 [zlib API]: http://go.microsoft.com/fwlink/p/?LinkId=288807
 [Benutzerdefinierte API]: http://msdn.microsoft.com/library/windowsazure/dn280974.aspx
-[Aufrufen benutzerdefinierter APIs vom Client, in englischer Sprache]: /develop/mobile/tutorials/call-custom-api-dotnet/#define-custom-api
+[Call a custom API from the client]: /develop/mobile/tutorials/call-custom-api-dotnet/#define-custom-api
 [express.js-Bibliothek]: http://go.microsoft.com/fwlink/p/?LinkId=309046
 [Define a custom API that supports periodic notifications]: /develop/mobile/tutorials/create-pull-notifications-dotnet/
 [express-Objekt in express.js]: http://expressjs.com/api.html#express
@@ -1056,4 +1056,4 @@ Um Ihr Protokoll nicht zu überladen, sollten Sie Aufrufe von console.log() entf
 [Support for package.json in Azure Mobile Services]: http://go.microsoft.com/fwlink/p/?LinkId=391036
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0224_2016-->

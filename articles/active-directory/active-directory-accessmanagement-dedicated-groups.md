@@ -25,11 +25,24 @@ Sobald der Schalter "Zugeordnete Gruppen aktivieren" auf **Ja** festgelegt ist, 
 
 Die dedizierte Gruppe "Alle Benutzer" ist hilfreich, wenn Sie allen Benutzer in Ihrem Verzeichnis die gleichen Berechtigungen zuweisen möchten. Beispielsweise können Sie allen Benutzern in Ihrem Verzeichnis Zugriff auf eine SaaS-Anwendung gewähren, indem Sie der dedizierten Gruppe "Alle Benutzer" Zugriff auf diese Anwendung zuweisen.
 
-Diese Artikel enthalten zusätzliche Informationen zum Azure Active Directory.
+Bitte beachten Sie, dass die dedizierte Gruppe „Alle Benutzer“ alle Benutzer im Verzeichnis umfasst, also auch Gäste und externe Benutzer. Wenn Sie eine Gruppe benötigen, die externe Benutzer ausschließt, können Sie dazu eine Gruppe mit einer dynamischen Regel erstellen, z. B.:
+
+(user.userPrincipalName -notContains "#EXT#@")
+
+Verwenden Sie für eine Gruppe, die alle Gäste ausschließt, eine Regel wie:
+
+(user.userType -ne "Guest")
+
+In diesem Artikel wird näher erläutert näher, wie eine Regel zum Verwalten von Mitgliedern einer Gruppe in Azure Active Directory erstellt wird:
+
+* [Erstellen einer einfachen Regel zum Konfigurieren von dynamischen Mitgliedschaften für eine Gruppe](active-directory-accessmanagement-simplerulegroup.md)
+
+
+Diese Artikel enthalten zusätzliche Informationen zu Azure Active Directory.
 
 * [Verwalten des Zugriffs auf Ressourcen mit Azure Active Directory-Gruppen](active-directory-manage-groups.md)
 * [Artikelindex für die Anwendungsverwaltung in Azure Active Directory](active-directory-apps-index.md)
 * [Was ist Azure Active Directory?](active-directory-whatis.md)
 * [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0224_2016-->

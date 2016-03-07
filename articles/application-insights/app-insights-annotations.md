@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Bereitstellungsanmerkungen für Application Insights | Microsoft Azure"
+    pageTitle="Versionsanmerkungen für Application Insights | Microsoft Azure"
     description="Fügen Sie den Diagrammen im Metrik-Explorer in Application Insights Bereitstellungs- oder Buildmarker hinzu."
     services="application-insights"
     documentationCenter=".net"
@@ -12,7 +12,7 @@
     ms.tgt_pltfrm="ibiza"
     ms.devlang="na"
     ms.topic="article"
-	ms.date="01/19/2016"
+	ms.date="02/22/2016"
     ms.author="awills"/>
 
 # Versionsanmerkungen in Application Insights
@@ -42,7 +42,7 @@ Diesen Schritt müssen Sie für jede Versionsvorlage ausführen, für die Sie Ve
 1. Melden Sie sich im [Microsoft Azure-Portal](https://portal.azure.com) an, und öffnen Sie die Application Insights-Ressource, mit der Sie Ihre Anwendung überwachen. (Oder [erstellen Sie nun eine Ressource](app-insights-overview.md), sofern noch nicht geschehen.)
 2. Klicken Sie auf **Einstellungen**, anschließend auf **API-Zugriff**, und kopieren Sie die **Application Insights-ID**.
 
-    ![Öffnen Sie unter „portal.azure.com“ die Application Insights-Ressource, und wählen Sie „Einstellungen“. Öffnen Sie „API-Zugriff“. Kopieren Sie](./media/app-insights-annotations/20.png)
+    ![Öffnen Sie unter „portal.azure.com“ die Application Insights-Ressource, und wählen Sie „Einstellungen“. Öffnen Sie „API-Zugriff“. Kopieren der Anwendungs-ID](./media/app-insights-annotations/20.png)
 
 2. Öffnen (oder erstellen) Sie in einem separaten Browserfenster die Versionsvorlage, mit der Ihre Bereitstellungen über Visual Studio Team Services verwaltet werden.
 
@@ -69,8 +69,13 @@ Diesen Schritt müssen Sie für jede Versionsvorlage ausführen, für die Sie Ve
 
 5. **Speichern** Sie abschließend die Versionsdefinition.
 
-## Bereitstellungsanmerkungen
+## Versionsanmerkungen
 
 Wenn Sie nun diese Versionsvorlage zum Bereitstellen einer neuen Version verwenden, wird jedes Mal eine Anmerkung an Application Insights gesendet. Die Anmerkungen werden in Diagrammen im Metrik-Explorer angezeigt.
 
-<!---HONumber=AcomDC_0121_2016-->
+Klicken Sie auf einen Anmerkungsmarker, um Details zur Version, einschließlich Anfordernder, Quellcodeverwaltungsverzweigung, Versionsdefinition, Umgebung usw., anzuzeigen.
+
+
+![Klicken Sie auf einen Versionsanmerkungsmarker.](./media/app-insights-annotations/60.png)
+
+<!---HONumber=AcomDC_0224_2016-->

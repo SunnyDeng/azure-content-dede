@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/18/2015" 
+	ms.date="02/16/2016" 
 	ms.author="mimig"/>
 
 # SQL-Abfragespickzettel-PDF-Datei für DocumentDB
@@ -39,4 +39,4 @@ Schreiben Sie Ihre Abfragen schneller, indem Sie den SQL-Abfragespickzettel heru
 - Eine exemplarische Vorgehensweise der Abfrageoptionen, die in DocumentDB verfügbar sind, finden Sie unter [Abfragen von DocumentDB](documentdb-sql-query.md).
 - Die zugehörige Referenzdokumentation finden Sie unter [SQL-Abfragesprache von DocumentDB](https://msdn.microsoft.com/library/azure/dn782250.aspx).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0224_2016-->

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Flask und Azure-Tabellenspeicher in Azure mit Python Tools 2.2 für Visual Studio" 
+	pageTitle="Flask und Azure-Tabellenspeicher in Azure mit Python Tools 2.2 für Visual Studio" 
 	description="Erfahren Sie, wie Sie mithilfe der Python-Tools für Visual Studio eine Flask-Web-App erstellen, die Daten in Azure Table Storage speichert, und die Web-App für Azure App Service-Web-Apps bereitstellen." 
 	services="app-service\web"
 	tags="python"
@@ -14,13 +14,13 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="python" 
 	ms.topic="article" 
-	ms.date="11/18/2015"
+	ms.date="02/20/2016"
 	ms.author="huvalo"/>
 
 
 
 
-# Flask und Azure-Tabellenspeicher in Azure mit Python Tools 2.2 für Visual Studio 
+# Flask und Azure-Tabellenspeicher in Azure mit Python Tools 2.2 für Visual Studio 
 
 In diesem Tutorial erstellen wir mit [Python-Tools für Visual Studio] eine einfache Web-App für Umfragen mithilfe einer der PTVS-Beispielvorlagen. Dieses Tutorial steht auch als [Video](https://www.youtube.com/watch?v=qUtZWtPwbTk) zur Verfügung.
 
@@ -32,15 +32,15 @@ Weitere Artikel finden Sie im [Python Developer Center], wo die Entwicklung von 
 
 ## Voraussetzungen
 
- - Visual Studio 2013 oder 2015
+ - Visual Studio 2013 oder 2015
  - [Python Tools 2.2 für Visual Studio]
- - [Python Tools 2.2 für Visual Studio, Beispiel-VSIX]
+ - [Python Tools 2.2 für Visual Studio, Beispiel-VSIX]
  - [Azure SDK-Tools für VS 2013] oder [Azure SDK-Tools für VS 2015]
  - [Python 2.7 32-Bit] oder [Python 3.4 32-Bit]
 
 [AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Erstellen des Projekts
 
@@ -74,9 +74,7 @@ Für Speichervorgänge benötigen Sie ein Azure-Speicherkonto. Mit den folgenden
 
 2. Klicken Sie oben links im Portal auf das Symbol **Neu** und dann auf **Daten und Speicher** > **Speicherkonto**. Klicken Sie auf **Erstellen**, geben Sie dem Speicherkonto einen eindeutigen Namen, und erstellen Sie eine neue [Ressourcengruppe](../resource-group-overview.md) dafür.
 
-  	<!-- ![New Button](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonAzurePlusNew.png) -->
-
-	Wenn das Speicherkonto erstellt wurde, leuchtet auf der Schaltfläche **Benachrichtigungen** grün **ERFOLG**. Das Blatt des Speicherkontos wird geöffnet, und darauf wird angezeigt, dass es zu der neu erstellten Ressourcengruppe gehört.
+  	<!-- ![New Button](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonAzurePlusNew.png) -->Wenn das Speicherkonto erstellt wurde, leuchtet auf der Schaltfläche **Benachrichtigungen** grün **ERFOLG**. Das Blatt des Speicherkontos wird geöffnet, und darauf wird angezeigt, dass es zu der neu erstellten Ressourcengruppe gehört.
 
 5. Klicken Sie auf dem Blatt des Speicherkontos auf den Abschnitt **Einstellungen**. Notieren Sie sich den Kontonamen und den Primärschlüssel.
 
@@ -104,7 +102,7 @@ In diesem Abschnitt konfigurieren wir unsere Anwendung, sodass sie das eben erst
 
 1.  Drücken Sie `F5`, um die Anwendung auszuführen. Die mittels **Beispielumfrage erstellen** erstellten Umfragen sowie die bei der Abstimmung erfassten Daten werden in Azure Table Storage serialisiert.
 
-	> [AZURE.NOTE]Die virtuelle Umgebung für Python 2.7 wird möglicherweise eine unerwartete Unterbrechung in Visual Studio verursachen. Drücken Sie `F5`, um das Laden des Webprojekts fortzusetzen.
+	> [AZURE.NOTE] Die virtuelle Umgebung für Python 2.7 wird möglicherweise eine unerwartete Unterbrechung in Visual Studio verursachen. Drücken Sie `F5`, um das Laden des Webprojekts fortzusetzen.
 
 1.  Navigieren Sie zur Seite **Info**, und prüfen Sie, ob die Anwendung das Repository **Azure Table Storage** verwendet.
 
@@ -114,7 +112,7 @@ In diesem Abschnitt konfigurieren wir unsere Anwendung, sodass sie das eben erst
 
 Das Anzeigen und Bearbeiten von Speichertabellen in Visual Studio ist mit Server-Explorer ganz einfach. In diesem Abschnitt verwenden wir Server-Explorer für die Anzeige der Inhalte aus den Tabellen der Umfrage-App.
 
-> [AZURE.NOTE]Dafür müssen die Microsoft Azure-Tools installiert sein, die als Teil des [Azure SDK für .NET] erhältlich sind.
+> [AZURE.NOTE] Dafür müssen die Microsoft Azure-Tools installiert sein, die als Teil des [Azure SDK für .NET] erhältlich sind.
 
 1.  Öffnen Sie **Server-Explorer**. Erweitern Sie **Azure**, **Speicher**, Ihr Speicherkonto und dann **Tabellen**.
 
@@ -199,7 +197,7 @@ Unter den folgenden Links finden Sie weitere Informationen zu Python Tools für 
 [Azure SDK für .NET]: http://azure.microsoft.com/downloads/
 [Python-Tools für Visual Studio]: http://aka.ms/ptvs
 [Python Tools 2.2 für Visual Studio]: http://go.microsoft.com/fwlink/?LinkID=624025
-[Python Tools 2.2 für Visual Studio, Beispiel-VSIX]: http://go.microsoft.com/fwlink/?LinkID=624025
+[Python Tools 2.2 für Visual Studio, Beispiel-VSIX]: http://go.microsoft.com/fwlink/?LinkID=624025
 [Azure SDK-Tools für VS 2013]: http://go.microsoft.com/fwlink/?LinkId=323510
 [Azure SDK-Tools für VS 2015]: http://go.microsoft.com/fwlink/?linkid=518003
 [Python 2.7 32-bit]: http://go.microsoft.com/fwlink/?LinkId=517190
@@ -213,4 +211,4 @@ Unter den folgenden Links finden Sie weitere Informationen zu Python Tools für 
 [Azure-SDK für Python]: https://github.com/Azure/azure-sdk-for-python
  
 
-<!----HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0224_2016-->

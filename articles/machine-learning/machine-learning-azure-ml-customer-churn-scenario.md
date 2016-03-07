@@ -27,14 +27,14 @@ Dieses Experiment wurde entwickelt und getestet von Serge Berger, Princial Data 
 [AZURE.INCLUDE [machine-learning-kostenlose-Testversion](../../includes/machine-learning-free-trial.md)]
 
 ##Das Problem der Kundenabwanderung
-Firmen müssen sich sowohl auf dem Verbrauchermarkt als auch in allen Unternehmenssektoren mit der Kundenabwanderung auseinandersetzen. Gelegentlich kann es zur übermäßigen Abwanderung kommen, die dann Grundsatzentscheidungen beeinflusst. Die traditionelle Lösung besteht darin, eine starke Abwanderungsbereitschaft von Kunden vorherzusagen und sich über einen Concierge-Dienst, Marketingkampagnen oder Sonderregelungen mit ihren Bedürfnissen auseinanderzusetzen. Diese Ansätze können von Branche zu Branche unterschiedlich sein und auch innerhalb einer Branche (z. B. Telekommunikation) je nach bestimmter Verbrauchergruppe variieren.
+Firmen müssen sich sowohl auf dem Verbrauchermarkt als auch in allen Unternehmenssektoren mit der Kundenabwanderung auseinandersetzen. Gelegentlich kann es zur übermäßigen Abwanderung kommen, die dann Grundsatzentscheidungen beeinflusst. Die traditionelle Lösung besteht darin, eine starke Abwanderungsbereitschaft von Kunden vorherzusagen und sich über einen Concierge-Dienst, Marketingkampagnen oder Sonderregelungen mit ihren Bedürfnissen auseinanderzusetzen. Diese Ansätze können von Branche zu Branche unterschiedlich sein und auch innerhalb einer Branche (z. B. Telekommunikation) je nach bestimmter Verbrauchergruppe variieren.
 
 Die Gemeinsamkeit besteht darin, dass die Unternehmen diese besonderen Bemühungen zur Kundenbindung minimieren müssen. Eine natürliche Methode wäre somit, jeden Kunden mit einer Abwanderungswahrscheinlichkeit zu bewerten und sich mit einer bestimmten Anzahl (N) der Kunden mit den höchsten Werten zu befassen. Die Kunden mit den höchsten Bewertungen sind möglicherweise die einträglichsten Kunden. In komplexeren Szenarios wird bei der Auswahl der Anwärter für Sonderregelungen eine Gewinnfunktion verwendet. Diese Überlegungen sind jedoch nur ein Teil der ganzheitlichen Strategie zur Behandlung der Abwanderung. Die Unternehmen müssen auch das Risiko (und die zugehörige Risikobereitschaft), das Interventionsniveau und die zugehörigen Kosten sowie die eingängige Kundensegmentierung berücksichtigen.
 
 ##Branchenprognose und Ansätze
 Ein durchdachter Umgang mit der Abwanderung ist ein Zeichen für eine gefestigte Branche. Das klassische Beispiel ist die Telekommunikationsbranche, in der Kunden häufig den Anbieter wechseln. Diese spontane Abwanderung ist ein wesentliches Problem. Darüber hinaus haben die Anbieter wichtige Erfahrungen zu *Abwanderungsargumenten* gesammelt, die für die Kunden die Faktoren für einen Wechsel darstellen.
 
-In der Mobilfunkbranche stellt z. B. die Auswahl an Mobiltelefonen oder Geräten ein bekanntes Argument für eine Abwanderung dar. Daher besteht eine beliebte Strategie darin, den Preis für ein Mobiltelefon für Neukunden zu subventionieren und Bestandskunden bei einem Upgrade den vollen Preis zu berechnen. Diese Strategie hat in der Vergangenheit dazu geführt, dass die Kunden von einem Anbieter zum nächsten wechseln, um einen neuen Rabatt zu erhalten. Dies hat die Anbieter wiederum dazu veranlasst, ihre Strategien zu überarbeiten.
+In der Mobilfunkbranche stellt z. B. die Auswahl an Mobiltelefonen oder Geräten ein bekanntes Argument für eine Abwanderung dar. Daher besteht eine beliebte Strategie darin, den Preis für ein Mobiltelefon für Neukunden zu subventionieren und Bestandskunden bei einem Upgrade den vollen Preis zu berechnen. Diese Strategie hat in der Vergangenheit dazu geführt, dass die Kunden von einem Anbieter zum nächsten wechseln, um einen neuen Rabatt zu erhalten. Dies hat die Anbieter wiederum dazu veranlasst, ihre Strategien zu überarbeiten.
 
 Die hohe Volatilität bei den Mobiltelefonangeboten ist ein Faktor, der Abwanderungsmodelle sehr schnell entkräftet, die auf aktuellen Mobiltelefonmodellen basieren. Zudem sind Mobiltelefone nicht nur Telekommunikationsgeräte, sondern auch Prestigeobjekte (denken Sie an das iPhone), und diese gesellschaftlichen Einflusswerte befinden sich außerhalb des Bereichs normaler Telekommunikationsdatenbestände.
 
@@ -43,7 +43,7 @@ Das Endergebnis hinsichtlich der Modellerstellung ist, dass Sie keinen vernünft
 Die Unternehmen führen großangelegte Datenanalysen, insbesondere zur Abwanderungserkennung auf Basis großer Datenmengen, mit umfangreichen Datenbeständen zu ihren Kunden als effektiven Lösungsansatz für das Problem durch. Weitere Informationen zum Ansatz mit der Analyse großer Datenmengen für das Abwanderungsproblem finden Sie im Abschnitt mit den Empfehlungen zu ETL.
 
 ##Methode zum Abbilden der Kundenabwanderung
-Ein allgemeiner Problemlösungsprozess für die Kundenabwanderung ist in den Abbildungen 1 bis 3 dargestellt:
+Ein allgemeiner Problemlösungsprozess für die Kundenabwanderung ist in den Abbildungen 1 bis 3 dargestellt:
 
 1.	Mit einem Risikomodell können Sie berücksichtigen, wie sich Aktionen auf die Wahrscheinlichkeit und das Risiko auswirken.
 2.	Mit einem Interventionsmodell können Sie berücksichtigen, wie sich das Interventionsniveau auf die Abwanderungswahrscheinlichkeit und den Langzeitwert von Kundenbeziehungen (Customer Lifetime Value, CLV) auswirken kann.
@@ -78,11 +78,11 @@ Das folgende Diagramm zeigt den erstellten Prototyp, der vier Bewertungsalgorith
 Die folgenden Abschnitte enthalten Einzelheiten zum Bewertungsmodell des Prototyps, das wir mithilfe von Machine Learning Studio implementiert haben.
 
 ###Datenauswahl und Vorbereitung
-Die zum Erstellen der Modelle und zum Bewerten der Kunden verwendeten Daten wurden aus einer vertikalen CRM-Lösung abgerufen, wobei die Daten verschleiert wurden, um den Datenschutz der Kunden zu gewährleisten. Die Daten enthalten Informationen über 8.000 Abonnements in den USA, und es werden drei Quellen kombiniert: Bereitstellungsdaten (Abonnementmetadaten), Aktivitätsdaten (Nutzung des Systems) und Kundensupportdaten. Die Daten beziehen keine geschäftlichen Daten der Kunden ein, so sind z. B. keine Treuemetadaten oder Bonitätsbewertungen enthalten.
+Die zum Erstellen der Modelle und zum Bewerten der Kunden verwendeten Daten wurden aus einer vertikalen CRM-Lösung abgerufen, wobei die Daten verschleiert wurden, um den Datenschutz der Kunden zu gewährleisten. Die Daten enthalten Informationen über 8.000 Abonnements in den USA, und es werden drei Quellen kombiniert: Bereitstellungsdaten (Abonnementmetadaten), Aktivitätsdaten (Nutzung des Systems) und Kundensupportdaten. Die Daten beziehen keine geschäftlichen Daten der Kunden ein, so sind z. B. keine Treuemetadaten oder Bonitätsbewertungen enthalten.
 
 Der Einfachheit halber liegen die ETL- und Datenbereinigungsprozesse außerhalb des Anwendungsbereichs, da wir annehmen, dass die Vorbereitung der Daten bereits an anderer Stelle durchgeführt wurde.
 
-Die Funktionsauswahl für die Modellerstellung basiert auf der Bewertung der vorläufigen Signifikanz für eine Reihe von in den Prozess einbezogenen Einflusswerten, wobei das Random Forest-Modul verwendet wird. Für die Implementierung in Machine Learning Studio haben wir den Mittelwert, den Medianwert und Bereiche für repräsentative Funktionen berechnet. Es wurden z. B. Mengen für die qualitativen Daten hinzugefügt, etwa Mindest- und Höchstwerte für die Benutzeraktivität.
+Die Funktionsauswahl für die Modellerstellung basiert auf der Bewertung der vorläufigen Signifikanz für eine Reihe von in den Prozess einbezogenen Einflusswerten, wobei das Random Forest-Modul verwendet wird. Für die Implementierung in Machine Learning Studio haben wir den Mittelwert, den Medianwert und Bereiche für repräsentative Funktionen berechnet. Es wurden z. B. Mengen für die qualitativen Daten hinzugefügt, etwa Mindest- und Höchstwerte für die Benutzeraktivität.
 
 Zudem wurden temporale Informationen für die letzten sechs Monate erfasst. Wir haben die Daten eines Jahres analysiert und dabei bewiesen, dass die Auswirkung auf die Abwanderung nach sechs Monaten erheblich abnimmt, auch wenn statistisch signifikante Trends vorhanden sind.
 
@@ -129,9 +129,9 @@ Wir haben das Bewertungs-DataSet auch mit der Desktop-Edition von SAS Enterprise
 In diesem Abschnitt werden unsere Ergebnisse zur Genauigkeit der Modelle auf Basis des Bewertungsdatasets präsentiert.
 
 ###Richtigkeit und Genauigkeit der Bewertung
-Im Allgemeinen ist die Implementierung in Azure Machine Learning etwas ungenauer als SAS, und zwar um etwa 10–15 % (Area Under Curve oder AUC).
+Im Allgemeinen ist die Implementierung in Azure Machine Learning etwas ungenauer als SAS, und zwar um etwa 10–15 % (Area Under Curve oder AUC).
 
-Die wichtigste Kennzahl in Codeänderung ist jedoch die Rate der falschen Klassifizierung: Welcher der vom Klassifizierer vorhergesagten wichtigsten N Abwanderer ist tatsächlich **nicht** abgewandert und hat trotzdem besondere Behandlung erhalten? Das folgende Diagramm vergleicht die Fehlklassifizierungsrate für alle Modelle:
+Die wichtigste Kennzahl in Codeänderung ist jedoch die Rate der falschen Klassifizierung: Welcher der vom Klassifizierer vorhergesagten wichtigsten N Abwanderer ist tatsächlich **nicht** abgewandert und hat trotzdem besondere Behandlung erhalten? Das folgende Diagramm vergleicht die Fehlklassifizierungsrate für alle Modelle:
 
 ![][7]
 
@@ -141,13 +141,13 @@ Die wichtigste Kennzahl in Codeänderung ist jedoch die Rate der falschen Klassi
 ###Verwenden von AUC zum Vergleichen von Ergebnissen
 „Area Under Curve“ (AUC) ist eine Metrik, die eine globale Maßeinheit für die *Trennbarkeit* zwischen den Verteilungen von Punktzahlen für positive und negative Bestände. Sie ähnelt dem traditionellen ROC-Diagramm (Receiver Operator Characteristic), aber ein wesentlicher Unterschied ist, dass die AUC-Kennzahl von Ihnen keinen Schwellenwert erfordert. Stattdessen fasst sie die Ergebnisse über **alle** möglichen Optionen zusammen. Im Gegensatz dazu zeigt das traditionelle ROC-Diagramm den positiven Wert an der vertikalen und den falsch positiven Wert an der horizontalen Achse an, wobei der Schwellenwert für die Klassifizierung variiert.
 
-AUC wird i. Allg. als Maßstab für den Wert verschiedener Algorithmen (oder verschiedener Systeme) verwendet, da die Kennzahl den Vergleich von Modellen anhand ihrer AUC-Werte gestattet. Dies ist ein beliebter Ansatz in Branchen wie der Meteorologie oder Biosciences. Somit stellt AUC ein beliebtes Werkzeug zur Bewertung der Leistung von Klassifizierern dar.
+AUC wird i. Allg. als Maßstab für den Wert verschiedener Algorithmen (oder verschiedener Systeme) verwendet, da die Kennzahl den Vergleich von Modellen anhand ihrer AUC-Werte gestattet. Dies ist ein beliebter Ansatz in Branchen wie der Meteorologie oder Biosciences. Somit stellt AUC ein beliebtes Werkzeug zur Bewertung der Leistung von Klassifizierern dar.
 
 ###Vergleichen der Fehlklassifikationsraten
 Wir haben die Fehlklassifikationsraten für das fragliche Dataset mithilfe der CRM-Daten von ungefähr 8.000 Kunden verglichen.
 
--	Die SAS-Fehlklassifizierungsrate lag bei 10-15 %.
--	Die Fehlklassifizierungsrate von Machine Learning Studio lag für die obersten 200-300 Abwanderer bei 15-20 %.  
+-	Die SAS-Fehlklassifizierungsrate lag bei 10-15 %.
+-	Die Fehlklassifizierungsrate von Machine Learning Studio lag für die obersten 200-300 Abwanderer bei 15-20 %.  
 
 In der Telekommunikationsbranche ist es wichtig, sich nur mit den Kunden mit dem höchsten Abwanderungsrisiko zu befassen, indem ihnen ein Concierge-Dienst oder andere Sonderbehandlungen angeboten werden. In dieser Hinsicht erzielt die Machine Learning Studio-Implementierung Ergebnisse, die mit dem SAS-Modell vergleichbar sind.
 
@@ -178,14 +178,14 @@ Die folgende Tabelle fasst die Leistung der Algorithmen zusammen:
 --|--|--|--|
 Durchschnittliches Modell|	Bestes Modell|	Unterdurchschnittliches Modell|	Durchschnittliches Modell
 
-Die in Machine Learning Studio gehosteten Modelle haben SAS hinsichtlich der Ausführungsgeschwindigkeit um 15-25 % übertroffen, aber die Richtigkeit war größtenteils vergleichbar.
+Die in Machine Learning Studio gehosteten Modelle haben SAS hinsichtlich der Ausführungsgeschwindigkeit um 15-25 % übertroffen, aber die Richtigkeit war größtenteils vergleichbar.
 
 ##Diskussion und Empfehlungen
 In der Telekommunikationsbranche haben sich verschiedene Methoden zur Analyse der Abwanderung entwickelt, darunter:
 
 -	Ableitung der Metriken für vier grundlegende Kategorien:
 	-	**Entität (z. B. ein Abonnement)**. Bereitstellung grundlegender Informationen zum Abonnement und/oder Kunden, das/der Gegenstand der Abwanderung ist.
-	-	**Aktivität**: Abrufen aller möglichen Nutzungsinformationen, die sich auf die Entität beziehen, z. B. die Anzahl der Anmeldungen.
+	-	**Aktivität**: Abrufen aller möglichen Nutzungsinformationen, die sich auf die Entität beziehen, z. B. die Anzahl der Anmeldungen.
 	-	**Kundensupport**. Sammeln von Informationen aus Kundensupportprotokollen, um anzuzeigen, ob es für das Abonnement Probleme oder Interaktionen mit dem Kundensupport gab.
 	-	**Wettbewerbs- und Geschäftsdaten**. Abrufen aller möglichen Informationen zum Kunden (können nicht verfügbar oder schwer nachzuverfolgen sein).
 -	Verwenden der Gewichtung zur Steuerung der Funktionsauswahl. Das bedeutet, dass das Boosted Decision Tree-Modell immer einen vielversprechenden Ansatz darstellt.  
@@ -213,7 +213,7 @@ Dieses Feedback hilft uns dabei, die Qualität der von uns veröffentlichten Whi
 
 [Feedback senden](mailto:sqlfback@microsoft.com).
 ##Referenzen
-[1]Predictive Analytics: Beyond the Predictions, W. McKnight, Information Management, Juli/August 2011, S. 18-20.
+[1]Predictive Analytics: Beyond the Predictions, W. McKnight, Information Management, Juli/August 2011, S. 18-20.
 
 [2] Wikipedia-Artikel: [Accuracy and precision](http://en.wikipedia.org/wiki/Accuracy_and_precision) (Präzision)
 
@@ -221,7 +221,7 @@ Dieses Feedback hilft uns dabei, die Qualität der von uns veröffentlichten Whi
 
 [4] [Big Data Marketing: Engage Your Customers More Effectively and Drive Value](http://www.amazon.com/Big-Data-Marketing-Customers-Effectively/dp/1118733894/ref=sr_1_12?ie=UTF8&qid=1387541531&sr=8-12&keywords=customer+churn) (Big Data Marketing: effektivere Einbindung Ihrer Kunden und Schaffen von Werten)
 
-[5] [Telco churn model template](https://caqs.azure.net/#gallery/telcocustomerchurn) (Vorlage für ein Abwanderungsmodell für Telekommunikationsunternehmen) in der Cortana Analytics Gallery
+[5] [Telco churn model template](http://gallery.cortanaanalytics.com/Experiment/Telco-Customer-Churn-5) (Vorlage für ein Abwanderungsmodell für Telekommunikationsunternehmen) in der Cortana Analytics Gallery
 ##Anhang
 
 ![][10]
@@ -240,4 +240,4 @@ Dieses Feedback hilft uns dabei, die Qualität der von uns veröffentlichten Whi
 [9]: ./media/machine-learning-azure-ml-customer-churn-scenario/churn-9.png
 [10]: ./media/machine-learning-azure-ml-customer-churn-scenario/churn-10.png
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0224_2016-->

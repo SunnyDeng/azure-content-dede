@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Verwendung von Azure Search: Fallstudien und Kundenberichte | Microsoft Azure | Gehosteter Cloudsuchdienst"
+	pageTitle="Verwendung von Azure Search: Fallstudien und Kundenberichte | Microsoft Azure | Benutzerszenarios"
 	description="Fallstudien und Erfahrungsberichte von Kunden zu Azure Search, einem in Microsoft Azure gehosteten Cloudsuchdienst."
 	services="search"
 	documentationCenter=""
@@ -14,7 +14,7 @@
 	ms.workload="search"
 	ms.topic="article" 
 	ms.tgt_pltfrm="na"
-	ms.date="11/13/2015"
+	ms.date="02/18/2016"
 	ms.author="heidist"/>
 
 # Verwendung von Azure Search: Fallstudien und Kundenberichte
@@ -47,7 +47,7 @@ Als Startup mit großen Plänen für seine Suchwebsite im Bereich des Gesundheit
 
 ##[Weichert Realtors](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=21252)
 
-Weichert Realtors stellt auf die Cloud um, was zu einer starken Veränderung bei den Geschäftsabläufen des Unternehmens führt. Durch die Migration zu Microsoft Azure konnte das Unternehmen seine Betriebskosten um 60 Prozent reduzieren, nachdem teure lokale Hardware und Software ausgemustert wurde, die CRM-Lösung mit robusten Suchfunktionen komplett erneuert wurde und viele neue Datendienste ermöglicht wurden, die für die Zukunft des Unternehmens von entscheidender Bedeutung sind. [Weitere Informationen](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=21252)
+Weichert Realtors stellt auf die Cloud um, was zu einer starken Veränderung bei den Geschäftsabläufen des Unternehmens führt. Durch die Migration zu Microsoft Azure konnte das Unternehmen seine Betriebskosten um 60 Prozent reduzieren, nachdem teure lokale Hardware und Software ausgemustert wurde, die CRM-Lösung mit robusten Suchfunktionen komplett erneuert wurde und viele neue Datendienste ermöglicht wurden, die für die Zukunft des Unternehmens von entscheidender Bedeutung sind. [Weitere Informationen](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=21252)
 
 ##[Whattopedia.com](search-dev-case-study-whattopedia.md)
 
@@ -61,4 +61,4 @@ Sie erfahren, wie dieses schwedische Startup ein Infomedia-Portal erstellt hat, 
 [5]: ./media/search-case-studies/weichert_m.png
 [xomni]: ./media/search-case-studies/xomni_m.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0224_2016-->

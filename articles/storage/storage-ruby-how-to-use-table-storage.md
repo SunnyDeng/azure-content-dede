@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="ruby"
 	ms.topic="article"
-	ms.date="12/16/2015"
+	ms.date="02/17/2016"
 	ms.author="tomfitz"/>
 
 
@@ -31,7 +31,7 @@ In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Azure-Tab
 
 ## Erstellen einer Ruby-Anwendung
 
-Informationen zum Erstellen einer Ruby-Anwendung finden Sie unter [Erstellen einer Ruby-Anwendung in Azure](/develop/ruby/tutorials/web-app-with-linux-vm/).
+Anweisungen zum Erstellen einer Ruby-Anwendung finden Sie unter [Ruby on Rails-Webanwendung auf einer Azure-VM](../virtual-machines/virtual-machines-ruby-rails-web-app-linux.md).
 
 ## Konfigurieren der Anwendung für den Zugriff auf Storage
 
@@ -56,15 +56,21 @@ Das Azure-Modul liest die Umgebungsvariablen **AZURE\_STORAGE\_ACCOUNT** und **A
 	Azure.config.storage_account_name = "<your azure storage account>"
 	Azure.config.storage_access_key = "<your azure storage access key>"
 
-So rufen Sie diese Werte ab:
+So rufen Sie diese Werte aus einem klassischen oder ARM-Speicherkonto im Azure-Portal ab
 
 1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
+2. Navigieren Sie zum Speicherkonto, das Sie verwenden möchten.
+3. Klicken Sie auf dem Blatt „Einstellungen“ auf der rechten Seite auf **Zugriffsschlüssel**.
+4. Auf dem angezeigten Blatt „Zugriffsschlüssel“ sehen Sie Zugriffsschlüssel 1 und Zugriffsschlüssel 2. Sie können beide verwenden. 
+5. Klicken Sie auf das Symbol „Kopieren“, um den Schlüssel in die Zwischenablage zu kopieren. 
 
-2. Navigieren Sie zum Speicherkonto.
+So rufen Sie diese Werte aus einem klassischen Speicherkonto im klassischen Portal ab
 
-3. Wählen Sie auf dem Blatt **Einstellungen** die Option **Schlüssel** aus.
-
-4. Kopieren Sie den gewünschten Zugriffsschlüsselwert.
+1. Melden Sie sich beim [klassischen Portal](https://manage.windowsazure.com) an.
+2. Navigieren Sie zum Speicherkonto, das Sie verwenden möchten.
+3. Klicken Sie unten im Navigationsbereich auf **ZUGRIFFSSCHLÜSSEL VERWALTEN**.
+4. Im eingeblendeten Dialog wird der Name des Speicherkontos, der primäre Zugriffsschlüssel und der sekundäre Zugriffsschlüssel angezeigt. Verwenden Sie den primären oder sekundären Zugriffsschlüssel. 
+5. Klicken Sie auf das Symbol „Kopieren“, um den Schlüssel in die Zwischenablage zu kopieren.
 
 ## Erstellen einer Tabelle
 
@@ -157,4 +163,4 @@ Unter den folgenden Links erhalten Sie weitere Informationen zu komplexeren Spei
 - [Azure Storage-Teamblog](http://blogs.msdn.com/b/windowsazurestorage/)
 - [Azure SDK for Ruby](http://github.com/WindowsAzure/azure-sdk-for-ruby)-Repository auf GitHub
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0224_2016-->

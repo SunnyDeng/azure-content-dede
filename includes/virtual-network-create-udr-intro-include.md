@@ -5,6 +5,6 @@ Beispiele für Fälle, in denen virtuelle Geräte verwendet werden können:
 - Überwachen des Netzwerkverkehrs mit einem Intrusion Detection System (IDS)
 - Steuerung des Datenverkehrs mit einer Firewall
 
-Weitere Informationen zu UDR und IP-Weiterleitung finden Sie unter [Benutzerdefinierte Routen und IP-Weiterleitung](./virtual-networks-udr-overview.md).
+Weitere Informationen zu UDR und IP-Weiterleitung finden Sie unter [Benutzerdefinierte Routen und IP-Weiterleitung](../articles/virtual-network/virtual-networks-udr-overview.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0224_2016-->

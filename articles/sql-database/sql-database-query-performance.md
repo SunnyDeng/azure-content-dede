@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="data-management" 
-   ms.date="02/03/2015"
+   ms.date="02/03/2016"
    ms.author="sstein"/>
 
 # Query Performance Insight für Azure SQL-Datenbank
@@ -27,13 +27,13 @@ Das Verwalten und Abstimmen der Leistung von relationalen Datenbanken ist eine a
 
 ## Voraussetzungen
 
-- Query Performance Insight ist nur unter Azure SQL-Datenbank V12 verfügbar.
+- Query Performance Insight ist nur unter Azure SQL-Datenbank V12 verfügbar.
 - Query Performance Insight erfordert, dass der [Abfragespeicher](https://msdn.microsoft.com/library/dn817826.aspx) für Ihre Datenbank ausgeführt wird. Das Portal fordert Sie auf, den Abfragespeicher zu aktivieren, falls noch nicht erfolgt.
 
  
 ## Berechtigungen
 
-Die folgenden Berechtigungen der [rollenbasierten Zugriffssteuerung](role-based-access-control-configure.md) sind für die Verwendung von Query Performance Insight erforderlich:
+Die folgenden Berechtigungen der [rollenbasierten Zugriffssteuerung](../active-directory/role-based-access-control-configure.md) sind für die Verwendung von Query Performance Insight erforderlich:
 
 - Die Berechtigungen **Leser**, **Besitzer**, **Mitwirkender**, **Mitwirkender von SQL DB** oder **Mitwirkender von SQL Server** sind erforderlich, um die Abfragen und Diagramme mit dem höchsten Ressourcenverbrauch anzuzeigen. 
 - Die Berechtigungen **Besitzer**, **Mitwirkender**, **Mitwirkender von SQL DB** oder **Mitwirkender von SQL Server** sind zum Anzeigen von Abfragetext erforderlich.
@@ -65,7 +65,7 @@ Gehen Sie im [Portal](http://portal.azure.com) wie folgt vor:
 
     Die Ansicht der Abfragen mit höchstem Verbrauch wird geöffnet, und die Abfragen mit der höchsten CPU-Auslastung werden aufgelistet.
 
-1. Klicken Sie an verschiedenen Stellen auf das Diagramm, um die Details anzuzeigen.<br>In der obersten Zeile wird der Gesamtwert für DTU% für die Datenbank angezeigt, und die Balken zeigen die Werte für die CPU%-Auslastung der ausgewählten Abfragen während des ausgewählten Intervalls an (wenn z. B. **Letzte Woche** ausgewählt ist, entspricht jeder ausgewählte Balken 1 Tag).
+1. Klicken Sie an verschiedenen Stellen auf das Diagramm, um die Details anzuzeigen.<br>In der obersten Zeile wird der Gesamtwert für DTU% für die Datenbank angezeigt, und die Balken zeigen die Werte für die CPU%-Auslastung der ausgewählten Abfragen während des ausgewählten Intervalls an (wenn z. B. **Letzte Woche** ausgewählt ist, entspricht jeder ausgewählte Balken 1 Tag).
 
     ![Abfragen mit höchstem Verbrauch][2]
 
@@ -120,7 +120,7 @@ Diese Meldungen werden in der Regel angezeigt, wenn der Abfragespeicher keine ne
 Es gibt zwei Arten von Aufbewahrungsrichtlinien:
 
 - Größenbasiert – bei Festlegung auf AUTO werden Daten automatisch bereinigt, wenn die maximale Größe fast erreicht ist.
-- Zeitbasiert – standardmäßig legen wir ein Limit von 30 Tagen fest, d. h., wenn der Speicherplatz im Abfragespeicher zur Neige geht, werden Abfragedaten gelöscht, die älter als 30 Tage sind. 
+- Zeitbasiert – standardmäßig legen wir ein Limit von 30 Tagen fest, d. h., wenn der Speicherplatz im Abfragespeicher zur Neige geht, werden Abfragedaten gelöscht, die älter als 30 Tage sind. 
 
 Die Erfassungsrichtlinie sollte festgelegt werden auf:
 
@@ -128,7 +128,7 @@ Die Erfassungsrichtlinie sollte festgelegt werden auf:
 - **Auto** – seltene Abfragen und Abfragen mit unbedeutender Erstellungs- und Ausführungsdauer werden ignoriert. Die Schwellenwerte für Ausführungszahl, Erstellungs- und Ausführungsdauer werden intern bestimmt.
 - **Keine** – der Abfragespeicher beendet die Erfassung neuer Abfragen.
 	
-Sie sollten alle Richtlinien auf AUTO setzen und die Bereinigungsrichtlinie auf 30 Tage:
+Sie sollten alle Richtlinien auf AUTO setzen und die Bereinigungsrichtlinie auf 30 Tage:
 
     ALTER DATABASE [YourDB] 
     SET QUERY_STORE (SIZE_BASED_CLEANUP_MODE = AUTO);
@@ -170,4 +170,4 @@ Um weitere Empfehlungen zur Verbesserung der Leistung Ihrer SQL-Datenbank zu erh
 [2]: ./media/sql-database-query-performance/top-queries.png
 [3]: ./media/sql-database-query-performance/query-details.png
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0224_2016-->

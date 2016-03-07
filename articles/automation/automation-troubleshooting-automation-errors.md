@@ -86,9 +86,9 @@ In diesem Artikel werden einige häufige Fehler beschrieben, die bei der Arbeit 
 
 **Fehler:** Ihr Runbookauftrag schlägt mit dem Fehler „Das Kontingent für die monatliche Gesamtausführungsdauer des Auftrags wurde für dieses Abonnement erreicht“ fehl.
 
-**Ursache des Fehlers:** Dieser Fehler tritt auf, wenn die Auftragsausführung das kostenlose Kontingent von 500 Minuten für Ihr Konto überschreitet. Dieses Kontingent gilt für alle Arten von Auftragsausführungsaufgaben, z. B. Testen eines Auftrags, Starten eines Auftrags im Portal, Ausführen eines Auftrags per Webhook und Planen der Ausführung eines Auftrags per Azure-Portal oder in Ihrem Rechenzentrum. Weitere Informationen zu den Preisen für Automation finden Sie unter [Automation – Preise](https://azure.microsoft.com/pricing/details/automation/).
+**Ursache des Fehlers:** Dieser Fehler tritt auf, wenn die Auftragsausführung das kostenlose Kontingent von 500 Minuten für Ihr Konto überschreitet. Dieses Kontingent gilt für alle Arten von Auftragsausführungsaufgaben, z. B. Testen eines Auftrags, Starten eines Auftrags im Portal, Ausführen eines Auftrags per Webhook und Planen der Ausführung eines Auftrags per Azure-Portal oder in Ihrem Rechenzentrum. Weitere Informationen zu den Preisen für Automation finden Sie unter [Automation – Preise](https://azure.microsoft.com/pricing/details/automation/).
 
-**Tipps zur Problembehandlung:** Wenn Sie mehr als 500 Minuten an Verarbeitungszeit pro Monat nutzen möchten, müssen Sie Ihr Abonnement vom Tarif „Free“ auf den Tarif „Basic“ umstellen. Sie können das Upgrade auf den Tarif „Basic“ mit den folgenden Schritten durchführen:
+**Tipps zur Problembehandlung:** Wenn Sie mehr als 500 Minuten an Verarbeitungszeit pro Monat nutzen möchten, müssen Sie Ihr Abonnement vom Tarif „Free“ auf den Tarif „Basic“ umstellen. Sie können das Upgrade auf den Tarif „Basic“ mit den folgenden Schritten durchführen:
 
 1. Melden Sie sich bei Ihrem Azure-Abonnement an.  
 2. Wählen Sie das Automation-Konto aus, das Sie aktualisieren möchten.  
@@ -110,7 +110,7 @@ In diesem Artikel werden einige häufige Fehler beschrieben, die bei der Arbeit 
 
 - Falls ein Namenskonflikt vorliegt und das Cmdlet in zwei unterschiedlichen Modulen verfügbar ist, können Sie dies beheben, indem Sie den vollqualifizierten Namen für das Cmdlet verwenden. Sie können beispielsweise **ModuleName\\CmdletName** verwenden.
 
-- Wenn Sie das Runbook lokal in einer Hybrid Worker-Gruppe ausführen, stellen Sie sicher, dass das Modul/Cmdlet auf dem Computer installiert ist, auf dem der Hybrid Worker gehostet wird.
+- Wenn Sie das Runbook lokal in einer Hybrid Worker-Gruppe ausführen, stellen Sie sicher, dass das Modul/Cmdlet auf dem Computer installiert ist, auf dem der Hybrid Worker gehostet wird.
 
   <br/>
 ## Problembehandlung für häufige Fehler beim Importieren von Modulen 
@@ -143,35 +143,47 @@ In diesem Artikel werden einige häufige Fehler beschrieben, die bei der Arbeit 
 
 ### Szenario: Der Knoten hat den Fehlerstatus „Nicht gefunden“
 
-**Fehler:** Der Knoten weist den Status „Fehler“ mit der Meldung „Fehler beim Versuch, die Aktion vom Server ‚https://<url>//accounts/<account-id>/Nodes(AgentId=<agent-id>)/GetDscAction‘ abzurufen, weil keine gültige <guid>-Konfiguration gefunden wurde.“ auf.
+**Fehler:** Für den Knoten wurde ein Bericht ausgegeben mit einem **Fehlerstatus** und der Fehlermeldung „Fehler beim Versuch, die Aktion vom Server https://``<url>``//accounts/``<account-id>``/Nodes(AgentId=``<agent-id>``)/GetDscAction failed because a valid configuration ``<guid>``-Konfiguration gefunden wurde.“.
 
-**Grund dieses Fehlers:** Dieser Fehler tritt normalerweise auf, wenn der Knoten einem Konfigurationsnamen (z. B. ABC) anstatt einem Knotenkonfigurationsnamen (z. B. ABC.WebServer) zugewiesen ist.
+**Ursache des Fehlers:** Dieser Fehler tritt normalerweise auf, wenn der Knoten einem Konfigurationsnamen (z. B. ABC) anstatt einem Knotenkonfigurationsnamen (z. B. ABC.WebServer) zugewiesen ist.
 
-**Tipps zur Problembehandlung:** Vergewissern Sie sich, dass der Name der Knotenkonfiguration und nicht der Name der Konfiguration verwendet wird. Sie können entweder im Portal auf dem Blatt „Knoten“ auf die Schaltfläche „Knotenkonfiguration zuweisen“ klicken oder das Cmdlet „Set-AzureRMAutomationDscNode“ verwenden, um den Knoten einer gültigen Knotenkonfiguration zuzuordnen.
+**Tipps zur Problembehandlung:**
 
-### Szenario: Bei der Kompilierung der Konfiguration wurden keine Knotenkonfigurationen (MOF-Dateien) erstellt.
+- Stellen Sie sicher, dass Sie den Knoten mit dem „Knotenkonfigurationsnamen“ und nicht mit dem „Konfigurationsnamen“ zuweisen.  
 
-**Fehler:** Der DSC-Kompilierungsauftrag wurde mit dem folgenden Fehler angehalten: „Kompilierung erfolgreich abgeschlossen, ohne dass MOF-Dateien mit Knotenkonfigurationen erstellt wurden.“
+- Einem Knoten können Sie über das Azure-Portal oder mit einem PowerShell-Cmdlet eine Knotenkonfiguration zuweisen.
+    - Um über das Azure-Portal einem Knoten eine Knotenkonfiguration zuzuweisen, öffnen Sie das Blatt **DSC-Knoten**, wählen Sie dann einen Knoten aus, und klicken Sie auf die Schaltfläche **Knotenkonfiguration zuweisen**.  
+    - Um einem Knoten mit einem PowerShell-Cmdlet eine Knotenkonfiguration zuzuweisen, verwenden Sie das Cmdlet **Set-AzureRmAutomationDscNode**.
 
-**Grund des Fehlers:** Wenn der Ausdruck neben „node“ in der DSC-Konfiguration mit „$null“ ausgewertet wird, werden keine Knotenkonfigurationen erstellt.
 
-**Tipps zur Problembehandlung:** Vergewissern Sie sich, dass der Ausdruck neben „node“ nicht mit „$null“ ausgewertet wird. Wenn Sie Konfigurationsdaten übergeben, stellen Sie sicher, dass Sie die erwarteten Werte übergeben, die die Konfiguration aus den Konfigurationsdaten verlangt. Beispiel: $AllNodes. Weitere Informationen finden Sie unter https://azure.microsoft.com/de-DE/documentation/articles/automation-dsc-compile/#configurationdata.
+### Szenario: Bei der Kompilierung einer Konfiguration wurden keine Knotenkonfigurationen (MOF-Dateien) erstellt.
 
-### Szenario: DSC-Knotenbericht bleibt mit dem Status „In Bearbeitung“ hängen.
+**Fehler:** Der DSC-Kompilierungsauftrag wird mit dem folgenden Fehler angehalten: „Kompilierung erfolgreich abgeschlossen, ohne dass MOF-Dateien mit Knotenkonfigurationen erstellt wurden.“
+
+**Ursache des Fehlers:** Wenn der Ausdruck nach dem Schlüsselwort **Node** in der DSC-Konfiguration mit „$null“ ausgewertet wird, werden keine Knotenkonfigurationen erstellt.
+
+**Tipps zur Problembehandlung:** Sie können dieses Problem wie folgt beheben:
+
+- Stellen Sie sicher, dass der Ausdruck neben dem Schlüsselwort **Node** in der Konfigurationsdefinition nicht mit „$null“ ausgewertet wird.  
+- Wenn Sie bei der Kompilierung der Konfiguration Konfigurationsdaten übergeben, stellen Sie sicher, dass Sie die erwarteten Werte übergeben, die für die Konfiguration aus [configurationData](automation-dsc-compile.md#configurationdata) erforderlich sind.
+
+
+### Szenario: Der DSC-Knotenbericht bleibt mit dem Status „In Bearbeitung“ hängen.
 
 **Fehler:** DSC-Agent gibt die Meldung „Keine Instanz mit den angegebenen Eigenschaftswerten gefunden.“ aus.
 
-**Grund des Fehlers:** Sie haben Ihre WMF-Version aktualisiert und WMI beschädigt.
+**Ursache des Fehlers:** Sie haben Ihre WMF-Version aktualisiert und WMI beschädigt.
 
-**Tipps zur Problembehandlung:** Folgen Sie den Anweisungen in diesem Beitrag, um das Problem zu beheben: https://msdn.microsoft.com/de-DE/powershell/wmf/limitation_dsc
+**Tipps zur Problembehandlung:** Befolgen Sie die Anweisungen im Blogbeitrag zu [bekannten Problemen und Einschränkungen in DSC](https://msdn.microsoft.com/powershell/wmf/limitation_dsc), um das Problem zu beheben.
 
 ### Szenario: In einer DSC-Konfiguration können keine Anmeldeinformationen verwendet werden. 
 
-**Fehler:** Der DSC-Kompilierungsauftrag wurde mit dem folgenden Fehler angehalten: Fehler „System.InvalidOperationException“ beim Verarbeiten der „Credential“-Eigenschaft vom Typ „<some resource name>“: Das Konvertieren und Speichern eines verschlüsselten Kennworts als Klartext ist nur zulässig, wenn „PSDscAllowPlainTextPassword“ auf „true“ festgelegt ist.
+**Fehler:** Der DSC-Kompilierungsauftrag wurde mit dem folgenden Fehler angehalten: Fehler „System.InvalidOperationException“ beim Verarbeiten der Credential-Eigenschaft vom Typ ``<some resource name>``: Das Konvertieren und Speichern eines verschlüsselten Kennworts als Klartext ist nur zulässig, wenn PSDscAllowPlainTextPassword auf „true“ festgelegt ist.
 
-**Grund des Fehlers:** Sie haben versucht, Anmeldeinformationen in einer Konfiguration zu verwenden, aber nicht die ordnungsgemäßen Konfigurationsdaten übergeben, über die „PSAllowPlainTextPassword“ für jede Knotenkonfiguration auf „true“ festgelegt wird.
+**Ursache des Fehlers:** Sie haben Anmeldeinformationen in einer Konfiguration verwendet, aber nicht die ordnungsgemäßen **Konfigurationsdaten** angegeben, über die **PSDscAllowPlainTextPassword** für jede Knotenkonfiguration auf „true“ festgelegt wird.
 
-**Tipps zur Problembehandlung:** Stellen Sie sicher, dass Sie die ordnungsgemäßen Konfigurationsdaten übergeben, über die „PSAllowPlainTextPassword“ für jede Knotenkonfiguration auf „true“ festgelegt wird. Weitere Informationen finden Sie unter https://azure.microsoft.com/de-DE/documentation/articles/automation-dsc-compile/#assets.
+**Tipps zur Problembehandlung:** - Stellen Sie sicher, dass Sie die ordnungsgemäßen **Konfigurationsdaten** übergeben, über die **PSDscAllowPlainTextPassword** für jede Knotenkonfiguration auf „true“ festgelegt wird. Weitere Informationen finden Sie im [Abschnitt zu den Ressourcen in Azure Automation DSC](automation-dsc-compile.md#assets).
+
 
   <br/>
 
@@ -187,4 +199,4 @@ Sie haben folgende Möglichkeiten, wenn Sie die oben genannten Schritte zur Prob
 
 - Veröffentlichen Sie Feedback oder Vorschläge zu Features für Azure Automation unter [User Voice](https://feedback.azure.com/forums/34192--general-feedback) (Aussagen von Benutzern).
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0224_2016-->

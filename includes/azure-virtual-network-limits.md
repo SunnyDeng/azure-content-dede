@@ -3,7 +3,7 @@ Die folgenden Limits gelten nur für Netzwerkressourcen, die über das klassisch
 Ressource| Standardlimit | Maximales Limit
 --- | --- | --- 
 Virtuelle Netzwerke pro Abonnement | 50 | 100
-Lokale Netzwerkstandorte pro virtuellem Netzwerk | 20 | Support kontaktieren
+Lokale Netzwerkstandorte pro Abonnement | 20 | Support kontaktieren
 DNS-Server pro virtuellem Netzwerk | 20 | 100
 Virtuelle Computer und Rolleninstanzen pro virtuellem Netzwerk | 2048 | 2\.048
 Parallele TCP-Verbindungen für einen virtuellen Computer bzw. eine Rolleninstanz | 500K | 500K 
@@ -43,4 +43,4 @@ Anwendungsgateways | 50 | 50
 
 Wenden Sie sich an den Support, falls Sie Limits gegenüber den Standardwerten erhöhen müssen.
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0224_2016-->

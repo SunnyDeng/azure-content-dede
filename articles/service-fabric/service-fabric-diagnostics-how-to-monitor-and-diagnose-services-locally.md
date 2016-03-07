@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="11/04/2015"
-   ms.author="kunalds"/>
+   ms.date="02/12/2016"
+   ms.author="toddabel"/>
 
 
 # Überwachen und Diagnostizieren von Diensten in einer Entwicklungsumgebung auf einem lokalen Computer
@@ -58,6 +58,6 @@ Für Projekte, die mit **Actor-Vorlagen** (zustandsbehaftet oder zustandslos) er
 Nachdem Sie die benutzerdefinierte ETW-Ablaufverfolgung dem Dienstcode hinzugefügt haben, können Sie die Anwendung erneut erstellen, bereitstellen und ausführen, um die Ereignisse in der Diagnoseereignisanzeige anzuzeigen. Beim Debuggen der Anwendung mit **F5** wird die Diagnoseereignisanzeige automatisch geöffnet.
 
 ## Nächste Schritte
-Der Ablaufverfolgungscode, den Sie Ihrer Anwendung für die lokale Diagnose hinzugefügt haben, funktioniert auch mit den Tools für die Anzeige dieser Ereignisse, wenn Sie Ihre Anwendung in einem Azure-Cluster ausführen. Sehen Sie sich diese Artikel an, in denen die unterschiedlichen Optionen für die Tools und deren Einrichtung beschrieben werden. * [Erfassen von Protokollen von einem Service Fabric-Cluster in Azure-Diagnose und Operational Insights](service-fabric-diagnostics-how-to-setup-wad-operational-insights.md) * [Verwenden von ElasticSearch als Service Fabric-Anwendungsüberwachungsspeicher](service-fabric-diagnostic-how-to-use-elasticsearch.md)
+Der Ablaufverfolgungscode, den Sie Ihrer Anwendung für die lokale Diagnose hinzugefügt haben, funktioniert auch mit den Tools für die Anzeige dieser Ereignisse, wenn Sie Ihre Anwendung in einem Azure-Cluster ausführen. Sehen Sie sich diese Artikel an, in denen die unterschiedlichen Optionen für die Tools und deren Einrichtung beschrieben werden. * [Erfassen von Protokollen von einem Service Fabric-Cluster in Azure-Diagnose und Operational Insights](service-fabric-diagnostics-how-to-setup-wad-operational-insights.md) * [Verwenden von ElasticSearch als Service Fabric-Anwendungsüberwachungsspeicher](service-fabric-diagnostic-how-to-use-elasticsearch.md)
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0224_2016-->

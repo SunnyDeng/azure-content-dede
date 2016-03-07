@@ -21,7 +21,7 @@
 
 Unter Umständen müssen Sie Softwareupdates oder -hotfixes installieren, um StorSimple Virtual Array auf dem neuesten Stand zu halten. Im Allgemeinen wird empfohlen, Updates über das klassische Azure-Portal zu installieren. Wenn das Portal nicht verfügbar ist, können Sie zum Anwenden von Hotfixes oder Updates jedoch auch die lokale Webbenutzeroberfläche verwenden. In diesem Tutorial wird beschrieben, wie Sie die lokale Webbenutzeroberfläche zum Anwenden eines Updates oder Hotfixes nutzen. (Informationen zur Vorgehensweise beim Installieren von Updates über das klassische Portal finden Sie unter [Installieren regelmäßiger Updates im klassischen Azure-Portal](storsimple-update-device.md#install-regular-updates-via-the-azure-classic-portal).)
 
-Bedenken Sie, dass bei der Update- oder Hotfixinstallation das Gerät unter Umständen neu gestartet wird. Falls es sich bei StorSimple Virtual Array um ein Gerät mit einem Knoten handelt, werden alle aktuellen IOs unterbrochen, und das Gerät fällt einige Zeit aus.
+Bedenken Sie, dass bei der Update- oder Hotfixinstallation das Gerät unter Umständen neu gestartet wird. Falls es sich bei StorSimple Virtual Array um ein Gerät mit einem Knoten handelt, werden alle aktuellen IOs unterbrochen, und das Gerät fällt einige Zeit aus. Es wird außerdem empfohlen, die Volumes oder Freigaben vor dem Übernehmen eines Updates auf dem Host und dann auf dem Gerät offline zu nehmen. So wird das Risiko einer Datenbeschädigung minimiert.
 
 ## Verwenden der lokalen Webbenutzeroberfläche zum Anwenden eines Updates oder Hotfixes
 
@@ -39,4 +39,4 @@ Stellen Sie vor der Update- oder Hotfixinstallation sicher, dass das Update oder
 
 Erfahren Sie, wie Sie [StorSimple Virtual Array verwalten](storsimple-ova-web-ui-admin.md).
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0224_2016-->

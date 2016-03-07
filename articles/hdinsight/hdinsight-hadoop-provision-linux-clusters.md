@@ -20,7 +20,7 @@
 
 #Erstellen von Linux-basierten Hadoop-Clustern in HDInsight
 
-[AZURE.INCLUDE [Auswahl](../../includes/hdinsight-create-linux-cluster-selector.md)]
+[AZURE.INCLUDE [Auswahl](../../includes/hdinsight-selector-create-clusters.md)]
 
 In diesem Dokument lernen Sie die verschiedenen Methoden zum Erstellen eines Linux-basierten HDInsight-Clusters in Azure sowie verschiedene optionale Konfigurationen kennen, die für Ihren Cluster verwendet werden können. HDInsight stellt Apache Hadoop, Apache Storm und Apache HBase als Dienste auf der Azure-Cloudplattform bereit.
 
@@ -45,27 +45,27 @@ Während der Konfiguration wählen Sie einen dieser Typen für den Cluster aus. 
 
 Jeder Clustertyp verfügt über eine eigene Terminologie für Knoten im Cluster, sowie über eine eigene Anzahl von Knoten und eine eigene VM-Standardgröße für jeden Knotentyp:
 
-> [AZURE.IMPORTANT] Wenn Sie mehr als 32 Workerknoten planen, entweder bei Erstellung des Clusters oder durch eine Skalierung des Clusters nach der Erstellung, müssen Sie eine Hauptknotengröße von mindestens 8 Kernen und 14 GB Arbeitsspeicher (RAM) auswählen.
+> [AZURE.IMPORTANT] Wenn Sie mehr als 32 Workerknoten planen, entweder bei Erstellung des Clusters oder durch eine Skalierung des Clusters nach der Erstellung, müssen Sie eine Hauptknotengröße von mindestens 8 Kernen und 14 GB Arbeitsspeicher (RAM) auswählen.
 
 ![HDInsight-Hadoop-Clusterknoten](./media/hdinsight-provision-clusters/HDInsight.Hadoop.roles.png)
 
 Hadoop-Cluster für HDInsight verfügen über zwei Knotentypen:
 
-- Hauptknoten (2 Knoten)
-- Datenknoten (mindestens 1 Knoten)
+- Hauptknoten (2 Knoten)
+- Datenknoten (mindestens 1 Knoten)
 
 ![HDInsight-HBase-Clusterknoten](./media/hdinsight-provision-clusters/HDInsight.HBase.roles.png)
 
-HBase-Cluster für HDInsight verfügen über drei Knotentypen: – Hauptserver (2 Knoten) – Regionsserver (mindestens 1 Knoten) – Master-/Zookeeperknoten (3 Knoten)
+HBase-Cluster für HDInsight verfügen über drei Knotentypen: – Hauptserver (2 Knoten) – Regionsserver (mindestens 1 Knoten) – Master-/Zookeeperknoten (3 Knoten)
 
 ![HDInsight-Storm-Clusterknoten](./media/hdinsight-provision-clusters/HDInsight.Storm.roles.png)
 
-Storm-Cluster für HDInsight verfügen über drei Knotentypen: – Nimbusknoten (2 Knoten) – Supervisorserver (mindestens 1 Knoten) – Zookeeperknoten (3 Knoten)
+Storm-Cluster für HDInsight verfügen über drei Knotentypen: – Nimbusknoten (2 Knoten) – Supervisorserver (mindestens 1 Knoten) – Zookeeperknoten (3 Knoten)
 
 
 ![HDInsight-Spark-Clusterknoten](./media/hdinsight-provision-clusters/HDInsight.Spark.roles.png)
 
-Spark-Cluster für HDInsight verfügen über drei Knotentypen: – Hauptknoten (2 Knoten) – Workerknoten (mindestens 1 Knoten) – Zookeeperknoten (3 Knoten) (für Zookeeper-VM-Größen vom Typ "A1" kostenlos)
+Spark-Cluster für HDInsight verfügen über drei Knotentypen: – Hauptknoten (2 Knoten) – Workerknoten (mindestens 1 Knoten) – Zookeeperknoten (3 Knoten) (für Zookeeper-VM-Größen vom Typ "A1" kostenlos)
 
 ###Azure Storage für HDInsight
 
@@ -81,7 +81,7 @@ Der Clustername stellt einen eindeutigen Bezeichner für den Cluster bereit und 
 
 Für den Clusternamen gelten die folgenden Richtlinien:
 
-- Das Feld muss eine Zeichenfolge mit 3 bis 63 Zeichen enthalten.
+- Das Feld muss eine Zeichenfolge mit 3 bis 63 Zeichen enthalten.
 - Das Feld darf nur Buchstaben, Zahlen und Bindestriche enthalten.
 
 ###Clustertyp
@@ -101,9 +101,9 @@ Sie können diesen grundlegenden Typen mithilfe von [Skriptaktionen](#scriptacti
 
 Sie können HDInsight-Cluster unter einem der beiden folgenden Betriebssysteme bereitstellen:
 
-- **HDInsight unter Windows (Windows Server 2012 R2 Datacenter)**: Wählen Sie diese Option, wenn eine Integration in Windows-basierte Dienste und Technologien erforderlich ist, die im Hadoop-Cluster ausgeführt werden, oder wenn Sie eine Migration von einer vorhandenen Windows-basierten Hadoop-Distribution durchführen.
+- **HDInsight unter Windows (Windows Server 2012 R2 Datacenter)**: Wählen Sie diese Option, wenn eine Integration in Windows-basierte Dienste und Technologien erforderlich ist, die im Hadoop-Cluster ausgeführt werden, oder wenn Sie eine Migration von einer vorhandenen Windows-basierten Hadoop-Distribution durchführen.
 
-- **HDInsight unter Linux (Ubuntu 12.04 LTS für Linux)**: Wählen Sie diese Lösung, wenn Sie mit Linux oder Unix vertraut sind, eine Migration von einer vorhandenen Linux-basierten Hadoop-Lösung durchführen oder wenn Sie eine einfache Integration mit Komponenten des Hadoop-Systems wünschen, die für Linux konzipiert wurden. Weitere Informationen finden Sie unter [Erste Schritte mit Hadoop unter Linux in HDInsight](hdinsight-hadoop-linux-tutorial-get-started.md).
+- **HDInsight unter Linux (Ubuntu 12.04 LTS für Linux)**: Wählen Sie diese Lösung, wenn Sie mit Linux oder Unix vertraut sind, eine Migration von einer vorhandenen Linux-basierten Hadoop-Lösung durchführen oder wenn Sie eine einfache Integration mit Komponenten des Hadoop-Systems wünschen, die für Linux konzipiert wurden. Weitere Informationen finden Sie unter [Erste Schritte mit Hadoop unter Linux in HDInsight](hdinsight-hadoop-linux-tutorial-get-started.md).
 
 > [AZURE.NOTE] Bei den Informationen in diesem Artikel wird angenommen, dass Sie einen Linux-basierten HDInsight-Cluster verwenden. Spezifische Informationen für Windows-basierte Cluster finden Sie unter [Erstellen von Windows-basierten Hadoop-Clustern in HDInsight](hdinsight-provision-clusters.md).
 
@@ -113,7 +113,7 @@ Wenn Sie über mehrere Azure-Abonnements verfügen, wählen Sie mithilfe dieser 
 
 ###Ressourcengruppe
 
-Anwendungen bestehen normalerweise aus vielen Komponenten, z. B. Web-App, Datenbank, Datenbankserver, Speicher und Drittanbieterdiensten. Mit dem Azure-Ressourcen-Manager (ARM) können Sie mit den Ressourcen in Ihrer Anwendung als Gruppe arbeiten, was als Azure-Ressourcengruppe bezeichnet wird. Sie können alle Ressourcen für Ihre Anwendung in einem einzigen, koordinierten Vorgang bereitstellen, aktualisieren, überwachen oder löschen. Sie verwenden eine Vorlage für die Bereitstellung, die für unterschiedliche Umgebungen geeignet sein kann, z. B. Testing, Staging und Produktion. Sie können die Abrechnung für Ihre Organisation vereinfachen, indem Sie die zusammengefassten Kosten für die gesamte Gruppe anzeigen. Weitere Informationen finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md).
+Anwendungen bestehen normalerweise aus vielen Komponenten, z. B. Web-App, Datenbank, Datenbankserver, Speicher und Drittanbieterdiensten. Mit dem Azure-Ressourcen-Manager (ARM) können Sie mit den Ressourcen in Ihrer Anwendung als Gruppe arbeiten, was als Azure-Ressourcengruppe bezeichnet wird. Sie können alle Ressourcen für Ihre Anwendung in einem einzigen, koordinierten Vorgang bereitstellen, aktualisieren, überwachen oder löschen. Sie verwenden eine Vorlage für die Bereitstellung, die für unterschiedliche Umgebungen geeignet sein kann, z. B. Testing, Staging und Produktion. Sie können die Abrechnung für Ihre Organisation vereinfachen, indem Sie die zusammengefassten Kosten für die gesamte Gruppe anzeigen. Weitere Informationen finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md).
 
 ###Anmeldeinformationen
 
@@ -129,7 +129,7 @@ Der SSH-Benutzer kann mit einem Kennwort oder einem Zertifikat authentifiziert w
 
 Weitere Informationen zur Verwendung von SSH mit HDInsight, beispielsweise zur Erstellung und Verwendung von SSH-Schlüsseln finden Sie in den folgenden Artikeln:
 
-* [Verwenden von SSH mit HDInsight auf Linux-, Unix- oder Mac OS X-Clients](hdinsight-hadoop-linux-use-ssh-unix.md)
+* [Verwenden von SSH mit HDInsight auf Linux-, Unix- oder Mac OS X-Clients](hdinsight-hadoop-linux-use-ssh-unix.md)
 * [Verwenden von SSH mit HDInsight auf Windows-Clients](hdinsight-hadoop-linux-use-ssh-windows.md)
 
 ###Datenquelle
@@ -152,13 +152,13 @@ Dieser Container weist standardmäßig denselben Namen auf wie der Cluster. Weit
 
 ###Knotengröße
 
-Sie können die Größe der Computeressourcen auswählen, die vom Cluster genutzt werden sollen. Wenn Sie z. B. wissen, dass Sie Vorgänge mit hohem Arbeitsspeicherbedarf ausführen werden, sollten Sie eine Computeressource mit großem Arbeitsspeicher auswählen.
+Sie können die Größe der Computeressourcen auswählen, die vom Cluster genutzt werden sollen. Wenn Sie z. B. wissen, dass Sie Vorgänge mit hohem Arbeitsspeicherbedarf ausführen werden, sollten Sie eine Computeressource mit großem Arbeitsspeicher auswählen.
 
 >[AZURE.NOTE] Die von Ihrem Cluster verwendeten Knoten zählen nicht als virtuelle Computer, da die VM-Images, die für die Knoten verwendet werden, ein Implementierungsdetail des HDInsight-Diensts sind. Die von den Knoten verwendeten Computekerne zählen jedoch zur Gesamtanzahl von Computekernen, die für Ihr Abonnement verfügbar sind. Sie können die Anzahl der Kerne, die vom Cluster verwendet werden sollen, sowie die Anzahl der verfügbaren Kerne beim Erstellen eines HDInsight-Clusters auf dem Blatt „Knotenpreisstufen“ im Abschnitt „Zusammenfassung“ anzeigen.
 
 Unterschiedliche Clustertypen weisen verschiedene Knotentypen, eine unterschiedliche Anzahl von Knoten sowie verschiedene Knotengrößen auf. Ein Hadoop-Cluster beispielsweise besitzt zwei _Hauptknoten_ sowie standardmäßig vier _Datenknoten_. Ein Storm-Cluster dagegen weist zwei _Nimbusknoten_, drei _Zookeeperknoten_ und standardmäßig vier _Supervisorknoten_ auf.
 
-> [AZURE.IMPORTANT] Wenn Sie mehr als 32 Workerknoten planen – entweder bei Erstellung des Clusters oder durch Skalierung des Clusters nach der Erstellung – müssen Sie eine Hauptknotengröße von mindestens 8 Kernen und 14 GB RAM auswählen.
+> [AZURE.IMPORTANT] Wenn Sie mehr als 32 Workerknoten planen – entweder bei Erstellung des Clusters oder durch Skalierung des Clusters nach der Erstellung – müssen Sie eine Hauptknotengröße von mindestens 8 Kernen und 14 GB RAM auswählen.
 
 Wenn Sie das Azure-Vorschauportal zum Konfigurieren des Clusters verwenden, ist die Knotengröße auf dem Blatt __Knotentarif__ verfügbar. Hier werden auch die Kosten für die verschiedenen Knotengrößen angezeigt.
 
@@ -190,7 +190,7 @@ Weitere Informationen zur Verwendung von HDInsight mit einem virtuellen Netzwerk
 
 ### Metastore
 
-Metastore enthält Hive- und Oozie-Metadaten, wie z. B. Informationen zu Hive-Tabellen, -Partitionen, -Schemata und -Spalten. Mithilfe von Metastore können Sie Ihre Hive- und Oozie-Metadaten beibehalten, sodass Sie Hive-Tabellen oder Oozie-Aufträge nicht neu erstellen müssen, wenn Sie einen neuen Cluster erstellen.
+Metastore enthält Hive- und Oozie-Metadaten, wie z. B. Informationen zu Hive-Tabellen, -Partitionen, -Schemata und -Spalten. Mithilfe von Metastore können Sie Ihre Hive- und Oozie-Metadaten beibehalten, sodass Sie Hive-Tabellen oder Oozie-Aufträge nicht neu erstellen müssen, wenn Sie einen neuen Cluster erstellen.
 
 Mit der Metastore-Konfigurationsoption können Sie einen externen Metastore angeben, der eine SQL-Datenbank verwendet. Auf diese Weise bleiben die Metadateninformationen erhalten, wenn Sie einen Cluster löschen, da diese extern in der Datenbank gespeichert sind. Informationen zum Erstellen einer SQL-Datenbank in Azure finden Sie unter [Erstellen einer ersten Azure SQL-Datenbank](../sql-database/sql-database-get-started.md).
 
@@ -212,7 +212,7 @@ Weitere Informationen zu sekundären Blobspeichern finden Sie unter [Verwenden v
 
 In diesem Artikel haben Sie grundlegende Informationen zum Erstellen eines Linux-basierten HDInsight-Clusters erhalten. In der folgenden Tabelle finden Sie spezifische Informationen zum Erstellen von Clustern mit der Methode, die Ihren Anforderungen am besten entspricht:
 
-| Clustererstellung | Webbrowser | Befehlszeile | REST-API | SDK | Linux, Mac OS X oder Unix | Windows |
+| Clustererstellung | Webbrowser | Befehlszeile | REST-API | SDK | Linux, Mac OS X oder Unix | Windows |
 | ------------------------------- |:----------------------:|:--------------------:|:------------------:|:------------:|:-----------------------------:|:------------:|
 | [Azure-Vorschauportal](hdinsight-hadoop-create-linux-clusters-portal.md) | ✔ | &nbsp; | &nbsp; | &nbsp; | ✔ | ✔ |
 | [Azure-Befehlszeilenschnittstelle](hdinsight-hadoop-create-linux-clusters-azure-cli.md) | &nbsp; | ✔ | &nbsp; | &nbsp; | ✔ | ✔ |
@@ -268,4 +268,4 @@ In diesem Artikel haben Sie grundlegende Informationen zum Erstellen eines Linux
 
   [89e2276a]: /documentation/articles/hdinsight-use-sqoop/ "Verwenden von Sqoop mit HDInsight"
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0224_2016-->

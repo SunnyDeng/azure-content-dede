@@ -4,7 +4,7 @@
    services="app-service\logic"
    documentationCenter=".net,nodejs,java"
    authors="anuragdalmia"
-   manager="dwrede"
+   manager="erikre"
    editor=""/>
 
 <tags
@@ -13,10 +13,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="11/30/2015"
+   ms.date="02/11/2016"
    ms.author="sameerch"/>
 
 # Erste Schritte mit dem SharePoint-Connector und das Hinzufügen zur Logik-App
+>[AZURE.NOTE] Diese Version des Artikels gilt für die Logik-Apps-Schemaversion 2014-12-01-preview.
+
 Stellen Sie eine Verbindung mit dem SharePoint-Server oder mit SharePoint Online her, um Dokumente und Listenelemente zu verwalten. Sie können verschiedene Aktionen ausführen, beispielsweise das Erstellen, Aktualisieren, Abrufen und Löschen für Dokumente und Listenelemente. Bei Verwendung eines lokalen SharePoint-Servers geben Sie Service Bus-Verbindungszeichenfolgen als Teil der Connectorkonfiguration ein installieren den lokalen Listener-Agent für die Verbindung mit dem Server.
 
 Die Katalog-App für den SharePoint Online-Connector und den SharePoint Server-Connector bietet Trigger und Aktionen als Mechanismen für die Interaktion mit SharePoint.
@@ -34,11 +36,9 @@ Ein Connector kann innerhalb einer Logik-App oder direkt über den Azure Marketp
 
 	Name | Erforderlich | Beschreibung
 --- | --- | ---
-Website-URL | Ja | Geben Sie die vollständige URL der SharePoint-Website ein. Geben Sie z. B. Folgendes ein: *https://microsoft.sharepoint.com/teams/wabstest*.
- Document Library / List Relative URLs | Yes | Geben Sie die URLS von Dokumentbibliotheken/Listen relativ zur SharePoint-Website-URL ein, die vom Connector geändert werden dürfen. Geben Sie z. B. ein: *Listen/Aufgabe, Freigegebene Dokumente*.
+Website-URL | Ja | Geben Sie die vollständige URL der SharePoint-Website ein. Geben Sie z. B. Folgendes ein: **https://microsoft.sharepoint.com/teams/wabstest*. Document Library / List Relative URLs | Yes | Geben Sie die URLS von Dokumentbibliotheken/Listen relativ zur SharePoint-Website-URL ein, die vom Connector geändert werden dürfen. Geben Sie z. B. ein: *Listen/Aufgabe, Freigegebene Dokumente*.
 
-5. Nach Abschluss des Vorgangs sehen die Paketeinstellungen etwa wie folgt aus:  
-![][1]
+5. Nach Abschluss des Vorgangs sehen die Paketeinstellungen etwa wie folgt aus: ![][1]
 
 Sobald Sie fertig sind, können Sie jetzt in derselben Ressourcengruppe eine Logik-App zur Verwendung des SharePoint Online-Connectors erstellen.
 
@@ -53,15 +53,13 @@ Ein Connector kann innerhalb einer Logik-App oder direkt über den Azure Marketp
 
 	Name | Erforderlich | Beschreibung
 --- | --- | ---
-Website-URL | Ja | Geben Sie die vollständige URL der SharePoint-Website ein. Geben Sie z. B. Folgendes ein: *https://microsoft.sharepoint.com/teams/wabstest*.
-Authentication Mode | Yes | Geben Sie den Authentifizierungsmodus zum Verbinden mit einer SharePoint-Website ein. Optionen umfassen:<ul><li>Standard</li><li>WindowsAuthentication</li><li>FormBasedAuthentication</li></ul><br/><br/>Wenn Sie "Standard" wählen, werden die Anmeldeinformationen für den SharePoint-Connector verwendet. Benutzername und Kennwort sind nicht erforderlich. Benutzername und Kennwort sind für andere Authentifizierungstypen erforderlich.<br/><br/>**Hinweis** anonyme Authentifizierung wird nicht unterstützt.
+Website-URL | Ja | Geben Sie die vollständige URL der SharePoint-Website ein. Geben Sie z. B. Folgendes ein: *https://microsoft.sharepoint.com/teams/wabstest*. Authentication Mode | Yes | Geben Sie den Authentifizierungsmodus zum Verbinden mit einer SharePoint-Website ein. Optionen umfassen:<ul><li>Standard</li><li>WindowsAuthentication</li><li>FormBasedAuthentication</li></ul><br/><br/>Wenn Sie "Standard" wählen, werden die Anmeldeinformationen für den SharePoint-Connector verwendet. Benutzername und Kennwort sind nicht erforderlich. Benutzername und Kennwort sind für andere Authentifizierungstypen erforderlich.<br/><br/>** Hinweis ** anonyme Authentifizierung wird nicht unterstützt.
 Benutzername | Nein | Geben Sie einen gültigen Benutzernamen zum Verbinden mit einer SharePoint-Website ein, wenn als Authentifizierungsmodus nicht "Standard" verwendet wird.
 Kennwort | Nein | Geben Sie ein gültiges Kennwort zum Verbinden mit einer SharePoint-Website ein, wenn als Authentifizierungsmodus nicht "Standard" verwendet wird.
 Relative URLs zur Dokumentbibliothek/Liste | Ja | Geben Sie die URLS von Dokumentbibliotheken/Listen relativ zur SharePoint-Website-URL ein, die vom Connector geändert werden dürfen. Geben Sie z. B. ein: *Listen/Aufgabe, Freigegebene Dokumente*.
 Service Bus-Verbindungszeichenfolge | Nein | Wenn Sie lokale eine Verbindung herstellen, geben Sie die Verbindungszeichenfolge von Service Bus Relay ein.<br/><br/>[Verwendung mit dem Hybrid Connection Manager](app-service-logic-hybrid-connection-manager.md)<br/>[Service Bus-Preise](https://azure.microsoft.com/pricing/details/service-bus/)
 
-5. Nach Abschluss des Vorgangs sehen die Paketeinstellungen etwa wie folgt aus:  
-![][2]
+5. Nach Abschluss des Vorgangs sehen die Paketeinstellungen etwa wie folgt aus: ![][2]
 
 Sobald Sie fertig sind, können Sie jetzt in derselben Ressourcengruppe eine Logik-App zur Verwendung des SharePoint Server-Connectors erstellen.
 
@@ -76,20 +74,15 @@ Sobald Ihre API-App erstellt wurde, können Sie jetzt den SharePoint-Connector a
 
 3. Wenn der SharePoint-Connector am Anfang der Logik-App aktiviert ist, fungiert dieser wie ein Trigger. Andernfalls könnte Aktionen auf dem SharePoint-Konto über den Connector ausgeführt werden.
 
-4. Wenn Sie den SharePoint-Online-Connector verwenden, müssen Logik-Apps in Ihrem Namen authentifiziert und autorisiert werden. Zum Starten der Autorisierung klicken Sie im SharePoint-Connector auf **Autorisieren**:  
-![][3]
+4. Wenn Sie den SharePoint-Online-Connector verwenden, müssen Logik-Apps in Ihrem Namen authentifiziert und autorisiert werden. Zum Starten der Autorisierung klicken Sie im SharePoint-Connector auf **Autorisieren**: ![][3]
 
-5. Durch das Klicken auf "Autorisieren" wird das Authentifizierungsdialogfeld von SharePoint angezeigt. Geben Sie die Anmeldeinformationen des SharePoint-Kontos an, mit dem Sie die Vorgänge ausführen möchten:  
-![][4]
+5. Durch das Klicken auf "Autorisieren" wird das Authentifizierungsdialogfeld von SharePoint angezeigt. Geben Sie die Anmeldeinformationen des SharePoint-Kontos an, mit dem Sie die Vorgänge ausführen möchten: ![][4]
 
-6. Erteilen Sie Logik-Apps Zugriff auf Ihr Konto, um Vorgänge in Ihrem Namen auszuführen:  
-![][5]
+6. Erteilen Sie Logik-Apps Zugriff auf Ihr Konto, um Vorgänge in Ihrem Namen auszuführen: ![][5]
 
-7. Wenn der SharePoint-Connector als Trigger konfiguriert ist, werden die Trigger angezeigt. Andernfalls wird die Liste der Aktionen angezeigt, und Sie können die entsprechenden Vorgänge auswählen, die Sie ausführen möchten:  
-![][6]
+7. Wenn der SharePoint-Connector als Trigger konfiguriert ist, werden die Trigger angezeigt. Andernfalls wird die Liste der Aktionen angezeigt, und Sie können die entsprechenden Vorgänge auswählen, die Sie ausführen möchten: ![][6]
   
-**Für Dokumentbibliothek konfigurierte relative URL**  
-![][7]
+**Für Dokumentbibliothek konfigurierte relative URL**![][7]
 
 **Für Dokumentliste konfigurierte relative URL**
 
@@ -107,7 +100,7 @@ Dieser Trigger wird ausgelöst, wenn ein neues Dokument in "Freigegebene Dokumen
 
 Name | Erforderlich | Beschreibung
 --- | --- | ---
-Ansichtsname | Nein | Geben Sie eine gültige Ansicht zum Filtern der zur Auswahl stehenden Dokumente ein. Geben Sie z. B. "Genehmigte Aufträge" ein. Lassen Sie dieses Feld leer, um alle vorhandenen Dokumente zu verarbeiten.
+Ansichtsname | Nein | Geben Sie eine gültige Ansicht zum Filtern der zur Auswahl stehenden Dokumente ein. Geben Sie z. B. "Genehmigte Aufträge" ein. Lassen Sie dieses Feld leer, um alle vorhandenen Dokumente zu verarbeiten.
 Archivspeicherort | Nein | Geben Sie eine gültige Ordner-URL relativ zur SharePoint-Website ein, in der die verarbeiteten Dokumente archiviert werden.
 In Archiv überschreiben | Nein | Aktivieren Sie diese Option, um eine Datei im Archivpfad zu überschreiben, wenn sie bereits vorhanden ist.
 CAML-Abfrage | Nein, erweitert | Geben Sie eine gültige CAML-Abfrage zum Filtern von Dokumenten ein. Geben Sie z. B. Folgendes ein: `<Where><Geq><FieldRef Name='ID'/><Value Type='Number'>10</Value></Geq></Where>`
@@ -130,7 +123,7 @@ Dieser Trigger wird ausgelöst, wenn der Liste "Aufgaben" ein neues Element hinz
 
 Name | Erforderlich | Beschreibung
 --- | --- | ---
-Ansichtsname | Nein | Geben Sie eine gültige Ansicht zum Filtern von Elementen in der Liste ein. Geben Sie z. B. "Genehmigte Aufträge" ein. Lassen Sie dieses Feld leer, um alle neuen Elemente zu verarbeiten.
+Ansichtsname | Nein | Geben Sie eine gültige Ansicht zum Filtern von Elementen in der Liste ein. Geben Sie z. B. "Genehmigte Aufträge" ein. Lassen Sie dieses Feld leer, um alle neuen Elemente zu verarbeiten.
 Archivspeicherort | Nein | Geben Sie eine gültige Ordner-URL relativ zur SharePoint-Website ein, in der die verarbeiteten Listenelemente archiviert werden.
 CAML-Abfrage | Nein, erweitert | Geben Sie eine gültige CAML-Abfrage zum Filtern von Dokumenten ein. Geben Sie z. B. Folgendes ein: `<Where><Geq><FieldRef Name='ID'/><Value Type='Number'>10</Value></Geq></Where>`
 
@@ -149,7 +142,7 @@ Dieser Trigger wird ausgelöst, wenn ein neues Dokument in "Freigegebene Dokumen
 
 Name | Erforderlich | Beschreibung
 --- | --- | ---
-Ansichtsname | Nein | Geben Sie eine gültige Ansicht zum Filtern der zur Auswahl stehenden Dokumente ein. Geben Sie z. B. "Genehmigte Aufträge" ein. Lassen Sie dieses Feld leer, um alle vorhandenen Dokumente zu verarbeiten.
+Ansichtsname | Nein | Geben Sie eine gültige Ansicht zum Filtern der zur Auswahl stehenden Dokumente ein. Geben Sie z. B. "Genehmigte Aufträge" ein. Lassen Sie dieses Feld leer, um alle vorhandenen Dokumente zu verarbeiten.
 Archivspeicherort | Nein | Geben Sie eine gültige Ordner-URL relativ zur SharePoint-Website ein, in der die verarbeiteten Listendokumente archiviert werden.
 In Archiv überschreiben | Nein | Aktivieren Sie diese Option, um eine Datei im Archivpfad zu überschreiben, wenn sie bereits vorhanden ist.
 CAML-Abfrage | Nein, erweitert | Geben Sie eine gültige CAML-Abfrage zum Filtern von Dokumenten ein. Geben Sie z. B. Folgendes ein: `<Where><Geq><FieldRef Name='ID'/><Value Type='Number'>10</Value></Geq></Where>`
@@ -172,7 +165,7 @@ Name | Erforderlich | Beschreibung
 --- | --- | ---
 Ansichtsname | Nein | Geben Sie eine gültige Ansicht zum Filtern von Elementen in der Liste ein. Beispiel: "Genehmigte Aufträge". Lassen Sie dieses Feld leer, um alle neuen Elemente zu verarbeiten.
 Archivspeicherort | Nein | Geben Sie eine gültige Ordner-URL relativ zur SharePoint-Website ein, in der die verarbeiteten Listenelemente archiviert werden.
-CAML-Abfrage | Nein, erweitert | Geben Sie eine gültige CAML-Abfrage zum Filtern der Listenelemente ein. Geben Sie z. B. Folgendes ein: `<Where><Geq><FieldRef Name='ID'/><Value Type='Number'>10</Value></Geq></Where>`
+CAML-Abfrage | Nein, erweitert | Geben Sie eine gültige CAML-Abfrage zum Filtern der Listenelemente ein. Geben Sie z. B. Folgendes ein: `<Where><Geq><FieldRef Name='ID'/><Value Type='Number'>10</Value></Geq></Where>`
 
 #### Ausgabe
 
@@ -346,7 +339,7 @@ Diese Aktion listet alle Dokumente in einer Dokumentbibliothek auf. Sie können 
 
 Name | Erforderlich | Beschreibung
 --- | --- | ---
-Ansichtsname | Nein | Geben Sie eine gültige Ansicht zum Filtern der zur Auswahl stehenden Dokumente ein. Geben Sie z. B. "Genehmigte Aufträge" ein. Lassen Sie dieses Feld leer, um alle vorhandenen Dokumente zu verarbeiten.
+Ansichtsname | Nein | Geben Sie eine gültige Ansicht zum Filtern der zur Auswahl stehenden Dokumente ein. Geben Sie z. B. "Genehmigte Aufträge" ein. Lassen Sie dieses Feld leer, um alle vorhandenen Dokumente zu verarbeiten.
 CAML-Abfrage | Nein | Geben Sie eine gültige CAML-Abfrage zum Filtern von Dokumenten ein. Geben Sie z. B. Folgendes ein: `<Where><Geq><FieldRef Name='ID'/><Value Type='Number'>10</Value></Geq></Where>`
 
 #### Ausgabe
@@ -465,11 +458,11 @@ Informationen finden Sie unter [Hybrid Connection Manager konfigurieren](app-ser
 ## Mehr mit Ihrem Connector machen
 Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
->[AZURE.NOTE] Wenn Sie Azure Logik-Apps ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [Logik-App testen](https://tryappservice.azure.com/?appservice=logic) sofort kostenlos eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie sich zunächst mit Azure-Logik-Apps vertraut machen möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie [Logik-Apps testen](https://tryappservice.azure.com/?appservice=logic). Sie können sofort eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
 
-Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [API-Apps und Connector verwalten und überwachen](app-service-api-manage-in-portal.md).
+Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [API-Apps und Connector verwalten und überwachen](../app-service-api/app-service-api-manage-in-portal.md).
 
 
 <!--Image references-->
@@ -481,4 +474,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [6]: ./media/app-service-logic-connector-sharepoint/image_5.png
 [7]: ./media/app-service-logic-connector-sharepoint/image_6.png
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0224_2016-->

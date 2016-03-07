@@ -15,14 +15,14 @@
       ms.topic="article"
       ms.tgt_pltfrm="na"
       ms.workload="identity"
-      ms.date="11/17/2015"
+      ms.date="02/22/2016"
       ms.author="v-jibran@microsoft.com"/>
 
 # Schnellstart für die Azure AD Graph-API
 
-Die Azure Active Directory (AD) Graph-API ermöglicht programmgesteuerten Zugriff auf Azure AD über OData-REST-API-Endpunkte. Anwendungen können die Graph-API verwenden, um CRUD-Vorgänge (Erstellen, Lesen, Aktualisieren und Löschen) für Verzeichnisdaten und Objekte auszuführen. Beispielsweise können Sie die Graph-API verwenden, um einen neuen Benutzer zu erstellen, Eigenschaften des Benutzers anzuzeigen oder zu aktualisieren, das Kennwort des Benutzers zu ändern, die Gruppenmitgliedschaft für den rollenbasierten Zugriff zu überprüfen, den Benutzer zu deaktivieren oder zu löschen. Weitere Informationen zu den Graph-API-Funktionen und -Anwendungsszenarios finden Sie unter [Azure AD Graph API reference](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog) (in englischer Sprache) und [AD-Graph REST](https://msdn.microsoft.com/library/hh974476(Azure.100).aspx).
+Die Azure Active Directory (AD) Graph-API ermöglicht programmgesteuerten Zugriff auf Azure AD über OData-REST-API-Endpunkte. Anwendungen können die Graph-API verwenden, um CRUD-Vorgänge (Erstellen, Lesen, Aktualisieren und Löschen) für Verzeichnisdaten und Objekte auszuführen. Beispielsweise können Sie die Graph-API verwenden, um einen neuen Benutzer zu erstellen, Eigenschaften des Benutzers anzuzeigen oder zu aktualisieren, das Kennwort des Benutzers zu ändern, die Gruppenmitgliedschaft für den rollenbasierten Zugriff zu überprüfen, den Benutzer zu deaktivieren oder zu löschen. Weitere Informationen zu den Graph-API-Funktionen und Anwendungsszenarien finden Sie unter [Azure AD Graph-API](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog) und [Voraussetzungen für die Azure AD Graph-API](https://msdn.microsoft.com/library/hh974476(Azure.100).aspx).
 
-> [AZURE.IMPORTANT]Die Azure AD Graph-API-Funktionen sind auch durch [Microsoft Graph](https://graph.microsoft.io/) verfügbar. Diese einheitliche API enthält APIs von anderen Microsoft-Diensten, z. B. Outlook, OneDrive, OneNote, Planer und Office Graph, und macht sie über einen einzelnen Endpunkt und ein einzelnes Zugriffstoken verfügbar.
+> [AZURE.IMPORTANT] Die Azure AD Graph-API-Funktionen sind auch durch [Microsoft Graph](https://graph.microsoft.io/) verfügbar. Diese einheitliche API enthält APIs von anderen Microsoft-Diensten, z. B. Outlook, OneDrive, OneNote, Planer und Office Graph, und macht sie über einen einzelnen Endpunkt und ein einzelnes Zugriffstoken verfügbar.
 
 ## Erstellen einer Graph-API-URL
 
@@ -60,7 +60,7 @@ Beispielsweise gibt `https://graph.windows.net/contoso.com/tenantDetails?api-ver
 
 Mit dem Graph-Explorer für die Azure AD Graph-API können Sie Verzeichnisdaten abfragen, während Sie eine Anwendung erstellen.
 
-> [AZURE.IMPORTANT]Der Graph-Explorer unterstützt das Schreiben oder Löschen von Daten aus einem Verzeichnis nicht. Sie können mit dem Graph-Explorer nur Lesevorgänge in Ihrem Azure AD-Verzeichnis ausführen.
+> [AZURE.IMPORTANT] Der Graph-Explorer unterstützt das Schreiben oder Löschen von Daten aus einem Verzeichnis nicht. Sie können mit dem Graph-Explorer nur Lesevorgänge in Ihrem Azure AD-Verzeichnis ausführen.
 
 Im Folgenden wird die Ausgabe angezeigt, die Sie sehen würden, wenn Sie zum Graph-Explorer navigieren, "Demo-Unternehmen verwenden" auswählen und `https://graph.windows.net/GraphDir1.OnMicrosoft.com/users?api-version=1.5` zur Anzeige aller Benutzer im Demo-Verzeichnis eingeben:
 
@@ -94,7 +94,7 @@ Im folgenden Beispiel verwenden Sie den Fiddler-Webdebugger, um die neue Sicherh
 2. Da Sie eine neue Sicherheitsgruppe erstellen möchten, wählen Sie **Post** als HTTP-Methode aus dem Dropdownmenü aus. Weitere Informationen zu Vorgängen und Berechtigungen für eine Gruppe finden Sie unter [Gruppe](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/entity-and-complex-type-reference#GroupEntity) innerhalb der [Azure AD Graph-REST-API-Referenz](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog).
 3. Geben Sie in das Feld neben **Post** Folgendes als URL der Anforderung ein: `https://graph.windows.net/mytenantdomain/groups?api-version=1.5`.
 
-    > [AZURE.NOTE]Ersetzen Sie "mytenantdomain" mit dem Domänennamen Ihres eigenen Azure AD-Verzeichnisses.
+    > [AZURE.NOTE] Ersetzen Sie "mytenantdomain" mit dem Domänennamen Ihres eigenen Azure AD-Verzeichnisses.
 
 4. Geben Sie im Feld direkt unterhalb des Dropdownmenüs "Post" Folgendes ein:
 
@@ -104,7 +104,7 @@ Authorization: your access token
 Content-Type: application/json
 ```
 
-    > [AZURE.NOTE]Ersetzen Sie "&lt;your access token&gt;" mit dem Zugriffstoken für Ihr Azure AD-Verzeichnis.
+    > [AZURE.NOTE] Ersetzen Sie "&lt;your access token&gt;" mit dem Zugriffstoken für Ihr Azure AD-Verzeichnis.
 
 5. Geben Sie im Feld **Anforderungstext** Folgendes ein:
 
@@ -125,4 +125,4 @@ Weitere Informationen zu Azure AD-Entitäten und -Typen, die von Graph bereitges
 
 Erfahren Sie mehr über die [Azure AD Graph-API](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0224_2016-->

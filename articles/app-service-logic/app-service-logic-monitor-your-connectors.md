@@ -13,10 +13,12 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/07/2015" 
+	ms.date="02/18/2016" 
 	ms.author="mandia"/>
 
 # Verwalten und Überwachen integrierter API-Apps und Connectors
+
+>[AZURE.NOTE] Diese Version des Artikels gilt für die Logik-Apps-Schemaversion 2014-12-01-preview.
 
 Sie haben eine integrierte API-App erstellt. Was nun?
 
@@ -40,11 +42,11 @@ Ihre Möglichkeiten:
 - Klicken Sie zum Steuern der API-App auf die Schaltflächen **Starten** und **Beenden**.
 - Wenn Produktupdates an den zugrunde liegenden Dateien erfolgen, die von Ihrer App-API verwendet werden, können Sie auf **Aktualisieren** klicken, um die neuesten Versionen zu erhalten. Wenn z. B. eine Korrektur oder ein Sicherheitsupdate von Microsoft veröffentlicht wird, wird Ihre App-API durch Klicken auf **Aktualisieren** automatisch mit dieser Korrektur aktualisiert. 
 - Klicken Sie auf **Plan ändern**, um ein Upgrade oder Downgrade anhand der Datenverwendung Ihrer API-App vorzunehmen. Dieses Feature dient auch zum Anzeigen Ihrer Datennutzung.
-- Wenn Sie einen Connector erstellen, der Tabellen aufweist, wie z. B. der SQL-Connector, können Sie optional den Namen einer Tabelle eingeben, mit der eine Verbindung hergestellt werden soll. Ein Schema auf Grundlage der Tabelle wird automatisch erstellt und ist verfügbar, wenn Sie auf **Schemas herunterladen** klicken. Dieses heruntergeladene Schema können Sie dann zum Erstellen einer Transformation oder Zuordnung nutzen. 
+- Wenn Sie einen Connector erstellen, der Tabellen aufweist, wie z. B. der SQL-Connector, können Sie optional den Namen einer Tabelle eingeben, mit der eine Verbindung hergestellt werden soll. Ein Schema auf Grundlage der Tabelle wird automatisch erstellt und ist verfügbar, wenn Sie auf **Schemas herunterladen** klicken. Dieses heruntergeladene Schema können Sie dann zum Erstellen einer Transformation oder Zuordnung nutzen. 
 
 ## Ändern Sie den Connector oder API-Konfigurationswerte, die Sie eingegeben haben.
 
-Nachdem Sie Connector konfiguriert oder erstellt haben, können Sie die Werte ändern, die Sie eingegeben haben. Wenn Sie z. B. den SQL-Connector konfiguriert haben und den SQL Server-Namen oder Tabellennamen ändern möchten, ist dies auf dem Blatt "API-App" für den Connector möglich.
+Nachdem Sie Connector konfiguriert oder erstellt haben, können Sie die Werte ändern, die Sie eingegeben haben. Wenn Sie z. B. den SQL-Connector konfiguriert haben und den SQL Server-Namen oder Tabellennamen ändern möchten, ist dies auf dem Blatt "API-App" für den Connector möglich.
 
 Dazu müssen diese Schritte ausgeführt werden:
 
@@ -68,7 +70,7 @@ Der Hybrid Connection Manager bietet Ihnen die Möglichkeit zur Verbindungsherst
 
 Siehe [Verwenden des Hybrid Connection Managers in Azure App Service](app-service-logic-hybrid-connection-manager.md).
 
-> [AZURE.NOTE]Der Hybrid Connection Manager wird nur benötigt, wenn Sie auf eine lokale Ressource hinter der Firewall eine Verbindung herstellen wollen. Wenn Sie keine Verbindung mit einem lokalen System herstellen möchten, ist der Hybrid Connection Manager ggf. nicht auf Ihrem Blatt "Connector" aufgeführt.
+> [AZURE.NOTE] Der Hybrid Connection Manager wird nur benötigt, wenn Sie auf eine lokale Ressource hinter der Firewall eine Verbindung herstellen wollen. Wenn Sie keine Verbindung mit einem lokalen System herstellen möchten, ist der Hybrid Connection Manager ggf. nicht auf Ihrem Blatt "Connector" aufgeführt.
 
 ## Überwachen der Leistung
 Leistungsmetriken sind integrierte Features und gehören zu jeder API-App, die Sie erstellen. Diese Metriken sind spezifisch für Ihre in Azure gehostete API-App. Beispielmetriken:
@@ -94,7 +96,7 @@ Mitwirkender | Verfügen über Vollzugriff auf die Verwaltungsfunktionen. Könne
 Reader | Können alle Ressourcen mit Ausnahme geheimer Schlüssel anzeigen.
 Benutzerzugriffsadministrator | Können alle Ressourcen anzeigen, Rollen erstellen/verwalten und Supporttickets erstellen/verwalten.
 
-Siehe [Rollenbasierte Zugriffssteuerung über das Microsoft Azure-Portal](role-based-access-control-configure.md).
+Siehe [Rollenbasierte Zugriffssteuerung über das Microsoft Azure-Portal](../active-directory/role-based-access-control-configure.md).
 
 Sie können Benutzer problemlos hinzufügen und ihnen bestimmte Rollen für Ihre API-App zuweisen. Das Portal zeigt die Benutzer, die Zugriff haben, und die ihnen zugewiesene Rolle:
 
@@ -108,23 +110,18 @@ Sie können Benutzer problemlos hinzufügen und ihnen bestimmte Rollen für Ihre
 - Wählen Sie **API-Definition** aus, um die für Ihre spezifische API automatisch erstellte Swagger-Datei zu öffnen.
 - Wählen Sie **Abhängigkeiten** aus, um die von Ihrer API-App benötigten Dateien anzuzeigen. Wenn Sie z. B. den SAP-Connector verwenden, installieren Sie einige zusätzlichen Dateien für den lokalen Hybrid Connection Manager. Diese Abhängigkeiten werden auf dem Blatt "API-App" angezeigt. 
 
-> [AZURE.IMPORTANT]Wenn Sie die Eigenschaften Ihrer API-App öffnen und unter **Essentials** nachsehen, gibt es die Links **Host** und **Gateway**, über die neue Blätter geöffnet werden:
+> [AZURE.IMPORTANT] Wenn Sie die Eigenschaften Ihrer API-App öffnen und unter **Essentials** nachsehen, gibt es die Links **Host** und **Gateway**, über die neue Blätter geöffnet werden:
 > 
 > ![][host]
 > 
-> Diese Eigenschaften sind spezifisch für die Website, die Ihre API-App hostet. Bei Verwendung einer integrierten API-App oder eines Connectors gelten die meisten dieser Eigenschaften nicht wirklich, und es wird empfohlen, dass Sie diese Eigenschaften nicht aktualisieren. Wenn Sie Ihre eigenen API-App in Visual Studio erstellt und in Ihrem Azure-Abonnement bereitgestellt haben, können Sie die Blätter "Host" und "Gateway" verwenden. Unter [Verwalten von API-Apps](../app-service-api/app-service-api-manage-in-portal.md) finden weitere Informationen zu den Aufgaben, die Sie auf diesen Blättern für Ihre benutzerdefiniert erstellte API-App ausführen können. 
+> Diese Eigenschaften sind spezifisch für die Website, die Ihre API-App hostet. Bei Verwendung einer integrierten API-App oder eines Connectors gelten die meisten dieser Eigenschaften nicht wirklich, und es wird empfohlen, dass Sie diese Eigenschaften nicht aktualisieren. Wenn Sie Ihre eigenen API-App in Visual Studio erstellt und in Ihrem Azure-Abonnement bereitgestellt haben, können Sie die Blätter "Host" und "Gateway" verwenden. Unter [Verwalten von API-Apps](../app-service-api/app-service-api-manage-in-portal.md) finden weitere Informationen zu den Aufgaben, die Sie auf diesen Blättern für Ihre benutzerdefiniert erstellte API-App ausführen können.
 
 
-
->[AZURE.NOTE]Wenn Sie Azure Logik-Apps ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [Logik-App testen](https://tryappservice.azure.com/?appservice=logic) sofort kostenlos eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte und keine Verpflichtungen erforderlich.
-
+>[AZURE.NOTE] Wenn Sie sich zunächst mit Azure-Logik-Apps vertraut machen möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie [Logik-Apps testen](https://tryappservice.azure.com/?appservice=logic). Sie können eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte und keine Verpflichtungen erforderlich.
 
 ## Weitere Informationen
 
-[Überwachen von Logik-App](app-service-logic-monitor-your-logic-apps.md)<br/>
-[Liste der Connectors und API-Apps in Microsoft Azure App Service](app-service-logic-connectors-list.md)<br/>
-[Rollenbasierte Zugriffssteuerung über das Microsoft Azure-Portal](role-based-access-control-configure.md)<br/>
-[Verwenden des Hybrid Connection Managers in Azure App Service](app-service-logic-hybrid-connection-manager.md)
+[Überwachen von Logik-App](app-service-logic-monitor-your-logic-apps.md)<br/>[Liste der Connectors und API-Apps in Microsoft Azure App Service](app-service-logic-connectors-list.md)<br/>[Rollenbasierte Zugriffssteuerung über das Microsoft Azure-Portal](../active-directory/role-based-access-control-configure.md)<br/>[Verwenden des Hybrid Connection Managers in Azure App Service](app-service-logic-hybrid-connection-manager.md)
 
 
 <!--Image references-->
@@ -137,4 +134,4 @@ Sie können Benutzer problemlos hinzufügen und ihnen bestimmte Rollen für Ihre
 [hostsettings]: ./media/app-service-logic-monitor-your-connectors/hostsettings.png
 [apiapphost]: ./media/app-service-logic-monitor-your-connectors/apiapphost.png
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0224_2016-->

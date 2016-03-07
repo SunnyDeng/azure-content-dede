@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/22/2016" 
+	ms.date="02/19/2016" 
 	ms.author="awills"/>
  
 # Einrichten von Warnungen in Application Insights
@@ -100,6 +100,10 @@ Zu den gängigen Warnungen zählen Folgende:
 * **Serverantwortzeit** und **Anforderungsfehler** für die Serverseite von Webanwendungen. Achten Sie neben der Einrichtung von Warnungen auf diese Metriken, um festzustellen, ob sie bei hohen Anforderungsraten unverhältnismäßig variieren: Dies kann darauf hindeuten, dass für Ihre App nicht genügend Systemressourcen vorhanden sind.
 * **Serverausnahmen** erfordern ein [zusätzliches Setup](app-insights-asp-net-exceptions.md), damit sie angezeigt werden.
 
+## Automation
+
+* [Verwenden von PowerShell zum Automatisieren der Einrichtung von Warnungen](app-insights-powershell-alerts.md)
+* [Verwenden von Webhooks zum Automatisieren der Reaktion auf Warnungen](../azure-portal/insights-webhooks-alerts.md)
 
 ## Weitere Informationen
 
@@ -119,4 +123,4 @@ Zu den gängigen Warnungen zählen Folgende:
 
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0224_2016-->

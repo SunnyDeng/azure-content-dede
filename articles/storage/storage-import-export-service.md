@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/09/2016"
+	ms.date="02/19/2016"
 	ms.author="renash"/>
 
 
@@ -27,10 +27,10 @@ Sie können eine oder mehrere Festplatten mit Daten an ein Azure-Datacenter schi
 
 Es gibt zwei Möglichkeiten für die Erstellung und die Verwaltung von Import- und Exportaufträgen:
 
-- Über das klassische Azure-Portal
+- Über das [klassische Azure-Portal](https://manage.windowsazure.com)
 - Über eine REST-Schnittstelle zum Dienst
 
-Dieser Artikel bietet eine Übersicht über den Import-/Export-Dienst und beschreibt die Verwendung des klassischen Portals für den Import-/Export-Dienst. Weitere Informationen zur REST-API finden Sie unter [Import/Export Service REST API Reference](http://go.microsoft.com/fwlink/?LinkID=329099) (Import-/Export-Dienst REST-API-Verweis, in englischer Sprache).
+Dieser Artikel bietet eine Übersicht über den Import-/Export-Dienst und beschreibt die Verwendung des klassischen Portals für den Import-/Export-Dienst. Weitere Informationen zur REST-API finden Sie unter [Speicher-Import/Export Service REST-API-Referenz](http://go.microsoft.com/fwlink/?LinkID=329099).
 
 ## Einführung in den Import/Export-Dienst ##
 
@@ -49,17 +49,20 @@ Für die Erstellung eines Import- oder Exportauftrags benötigen Sie außerdem d
 
 ### Anforderungen und Umfang
 
-1.	**Abonnement und Speicherkonten:** Sie müssen über ein Azure-Abonnement und ein oder mehrere Speicherkonten verfügen, um den Import/Export-Dienst nutzen zu können. Bei jedem Auftrag können lediglich Daten auf ein oder von einem Speicherkonto übertragen werden. In anderen Worten: Ein Auftrag kann nicht mehrere Speicherkonten umfassen. Weitere Informationen zum Erstellen eines neuen Speicherkontos finden Sie unter [Erstellen eines Speicherkontos](storage-create-storage-account.md).
-2.	**Festplatten:** Für den Import/Export-Dienst werden lediglich interne 3,5-Zoll-SATA II/III-Festplatten unterstützt. Es werden Festplatten mit bis zu 6 TB unterstützt. Bei Importaufträgen wird nur das erste Datenvolume auf dem Laufwerk verarbeitet. Das Datenvolume muss mit NTFS formatiert sein. Sie können SATA II/III-Laufwerke über einen externen SATA II/III-USB-Adapter extern an die meisten Computer anschließen.
+1.	**Abonnement und Speicherkonten:** Sie müssen über ein Azure-Abonnement und ein oder mehrere Speicherkonten verfügen, um den Import/Export-Dienst nutzen zu können. Bei jedem Auftrag können lediglich Daten auf ein oder von einem klassischen Speicherkonto übertragen werden. In anderen Worten: Ein Auftrag kann nicht mehrere Speicherkonten umfassen. Weitere Informationen zum Erstellen eines neuen Speicherkontos finden Sie unter [Erstellen eines Speicherkontos](storage-create-storage-account.md#create-a-storage-account). 
+
+  > [AZURE.NOTE] Wenn Sie ein ARM-Speicherkonto haben, wenden Sie sich an den Azure-Support.
+
+2.	**Festplatten:** Für den Import/Export-Dienst werden lediglich interne 3,5-Zoll-SATA II/III-Festplatten unterstützt. Es werden Festplatten mit bis zu 8 TB unterstützt. Bei Importaufträgen wird nur das erste Datenvolume auf dem Laufwerk verarbeitet. Das Datenvolume muss mit NTFS formatiert sein. Sie können SATA II/III-Laufwerke über einen externen SATA II/III-USB-Adapter extern an die meisten Computer anschließen.
 3.	**BitLocker-Verschlüsselung:** Alle auf den Festplatten gespeicherten Daten müssen mit BitLocker verschlüsselt sein. Dabei müssen die Verschlüsselungsschlüssel durch numerische Kennwörter geschützt sein.
 4.	**Blobspeicherziele**: Daten können auf Blockblobs und Seitenblobs hochgeladen bzw. von dort heruntergeladen werden.
 5.	**Anzahl der Aufträge:** Jeder Kunde kann bis zu 20 aktive Aufträge pro Speicherkonto haben.
 6.	**Maximale Größe eines Auftrags:** Die Größe eines Auftrags wird durch die Kapazität der verwendeten Festplatten und der maximalen Menge an Daten bestimmt, die in einem Speicherkonto gespeichert werden kann. Jeder Auftrag kann maximal zehn Festplatten umfassen.
-7.  **Unterstütztes Betriebssystem:** Kunden können eines der folgenden Betriebssysteme verwenden, um die Festplatte mithilfe des Import/Export-Tools von Azure vor dem Versand an Azure vorzubereiten – Windows 7, Windows 8, Windows 8.1, Windows 10*, Windows Server 2008 R2, Windows Server 2012, Windows Server 2012 R2.  
+7.  **Unterstütztes Betriebssystem:** Kunden können eines der folgenden 64-Bit-Betriebssysteme verwenden, um die Festplatte mithilfe des Import-/Exporttools von Azure vor dem Versand an Azure vorzubereiten – Windows 7, Windows 8, Windows 8.1, Windows 10*, Windows Server 2008 R2, Windows Server 2012, Windows Server 2012 R2.  
 
   > [AZURE.IMPORTANT]
   >  
-  >  - Im Abschnitt mit den [häufig gestellten Fragen](#frequently-asked-questions) finden Sie spezielle Anweisungen, die hilfreich sind, wenn Sie einen Computer mit Windows 10 für das Vorbereiten der Festplatte verwenden.
+  >  - Wenn Sie die Festplatte mit einem Computer unter Windows 10 vorbereiten, laden Sie die neueste Version des Import-/Exporttools für Azure herunter.
   >  
   >  - Externe Festplattenlaufwerke mit einem integrierten USB-Adapter werden von diesem Dienst nicht unterstützt. Bereiten Sie keine externe Festplatte vor. Der Datenträger im externen Gehäuse kann ebenfalls nicht für das Importieren von Daten verwendet werden. Verwenden Sie eine **interne** 3,5-Zoll-SATA II/III-Festplatte. Wenn Sie die SATA-Festplatte nicht direkt mit Ihrem Computer verbinden können, verwenden Sie einen externen SATA-auf-USB-Adapter. Im Abschnitt zu häufig gestellten Fragen finden Sie eine Liste empfohlener Adapter.
 
@@ -69,19 +72,19 @@ Erstellen Sie einen Importauftrag, um den Import-/Export-Dienst darüber zu info
 
 ### Vorbereiten Ihrer Laufwerke
 
-Bevor Sie einen Importauftrag erstellen, müssen Sie Ihre Laufwerke mit dem Microsoft Azure Import-/Exporttool vorbereiten. Weitere Details zum Microsoft Azure Import-/Exporttool finden Sie in der [Referenz zum Microsoft Azure Import-/Exporttool](http://go.microsoft.com/fwlink/?LinkId=329032). Sie können das [Microsoft Azure Import-/Exporttool](http://go.microsoft.com/fwlink/?LinkID=301900&clcid=0x409) als eigenständiges Paket herunterladen.
+Bevor Sie einen Importauftrag erstellen, müssen Sie Ihre Laufwerke mit dem Import-/Exporttool für Azure vorbereiten. Weitere Details zum Microsoft Import-/Exporttool für Azure finden Sie in der [Referenz zum Azure-Import-/Exporttool](http://go.microsoft.com/fwlink/?LinkId=329032). Sie können das [Import-/Exporttool für Azure](http://go.microsoft.com/fwlink/?LinkID=301900&clcid=0x409) als eigenständiges Paket herunterladen.
 
 Führen Sie die folgenden drei Schritte durch, um Ihre Laufwerke vorzubereiten:
 
 1.	Bestimmen Sie die zu importierenden Daten und die Anzahl der benötigten Laufwerke.
 2.	Geben Sie die Zielblobs für Ihre Daten in Blob Storage an.
-3.	Verwenden Sie das Microsoft Azure Import-/Exporttool, um Ihre Daten auf eine oder mehrere Festplatten zu kopieren.
+3.	Verwenden Sie das Import-/Exporttool für Azure, um Ihre Daten auf eine oder mehrere Festplatten zu kopieren.
 
-Das Microsoft Azure Import-/Exporttool generiert für jedes Laufwerk bei der Vorbereitung eine *Journaldatei*. Die Laufwerkprotokolldatei wird auf Ihrem lokalen Computer gespeichert, nicht auf dem Laufwerk selbst. Beim Erstellen des Importauftrags laden Sie die Protokolldatei hoch. Eine Laufwerkprotokolldatei enthält die Laufwerk-ID und die BitLocker-Schlüssel sowie weitere Informationen über das Laufwerk.
+Das Import-/Exporttool für Azure generiert für jedes Laufwerk bei der Vorbereitung ein *Laufwerkjournal*. Die Laufwerkprotokolldatei wird auf Ihrem lokalen Computer gespeichert, nicht auf dem Laufwerk selbst. Beim Erstellen des Importauftrags laden Sie die Protokolldatei hoch. Eine Laufwerkprotokolldatei enthält die Laufwerk-ID und die BitLocker-Schlüssel sowie weitere Informationen über das Laufwerk.
 
 ### Importauftrag erstellen
 
-1.	Sobald Sie Ihr Laufwerk vorbereitet haben, navigieren Sie zum Speicherkonto im klassischen Portal und zeigen das Dashboard an. Klicken Sie unter **Schnelleinsicht** auf **Create an Import Job**.
+1.	Sobald Sie Ihr Laufwerk vorbereitet haben, navigieren Sie zum Speicherkonto im [klassischen Portal](https://manage.windowsazure.com) und zeigen das Dashboard an. Klicken Sie unter **Schnelleinsicht** auf **Create an Import Job**.
 
 2.	Geben Sie im ersten Schritt des Assistenten an, dass Sie Ihr Laufwerk vorbereitet haben und dass Sie die Laufwerkprotokolldatei zur Hand haben.
 
@@ -99,7 +102,7 @@ Das Microsoft Azure Import-/Exporttool generiert für jedes Laufwerk bei der Vor
 
 	Falls Sie Ihre Nachverfolgungsnummer haben, wählen Sie Ihr Transportunternehmen in der Liste aus und geben Sie die Nummer ein.
 
-	Wenn Sie noch keine Tracking-Nummer haben, wählen Sie **Ich werde die Versanddaten für diesen Importauftrag an, sobald ich mein Paket verschickt habe**, und schließen Sie den Importprozess ab.
+	Wenn Sie noch keine Tracking-Nummer haben, wählen Sie **I will provide my shipping information for this import job once I have shipped my package**, und schließen Sie den Importprozess ab.
 
 7. Um Ihre Nachverfolgungsnummer einzugeben, nachdem Sie Ihr Paket verschickt haben, kehren Sie zur Seite **Import/Export** für Ihr Speicherkonto im klassischen Portal zurück, wählen Ihren Auftrag in der Liste aus und klicken auf **Versandinformationen**. Navigieren Sie durch den Assistenten und geben Sie Ihre Nachverfolgungsnummer in Schritt 2 ein.
 
@@ -111,7 +114,7 @@ Das Microsoft Azure Import-/Exporttool generiert für jedes Laufwerk bei der Vor
 
 Erstellen Sie einen Exportauftrag, um den Import-/Export-Dienst darüber zu informieren, dass Sie ein oder mehrere leere Laufwerke an das Datacenter schicken. So können die Daten von Ihrem Speicherkonto auf die Laufwerke exportiert werden, und die Laufwerke werden Ihnen dann zugeschickt.
 
-1. 	Navigieren Sie zum Speicherkonto im klassischen Portal und zeigen Sie das Dashboard an, um einen Exportauftrag zu erstellen. Klicken Sie unter **Schnelleinsicht** auf **Create an Export Job**, und fahren Sie mit dem Assistenten fort.
+1. 	Navigieren Sie zum Speicherkonto im [klassischen Portal](https://manage.windowsazure.com), und zeigen Sie das Dashboard an, um einen Exportauftrag zu erstellen. Klicken Sie unter **Schnelleinsicht** auf **Create an Export Job**, und fahren Sie mit dem Assistenten fort.
 
 2. 	Geben Sie im zweiten Schritt die Kontaktinformationen des Ansprechpartners für diesen Exportauftrag an. Wenn Sie ausführliche Protokolldaten für den Exportauftrag speichern möchten, wählen Sie die Option **Save the verbose log in my 'waimportexport' blob container**.
 
@@ -178,20 +181,9 @@ Bei Exportaufträgen können Sie die BitLocker-Schlüssel, die vom Dienst für I
 
 ### Allgemein
 
-**Wie bereite ich die Festplatte unter Windows 10 vor?**
-  
-Befolgen Sie die Anweisungen unten, wenn Sie Ihre Festplatte mithilfe von Windows 10 vorbereiten:
- 
-- Aktivieren Sie manuell die BitLocker-Verschlüsselung für die Festplatte, die Sie für den Import/Export-Dienst von Azure vorbereiten. Klicken Sie im Datei-Explorer mit der rechten Maustaste auf den Laufwerkbuchstaben der Festplatte, wählen Sie „BitLocker aktivieren“ aus, und schließen Sie den Assistenten ab.  
-- Notieren Sie sich unbedingt den Wiederherstellungsschlüssel.  
-- Wählen Sie, wenn Sie zur Auswahl des Verschlüsselungsmodus aufgefordert werden, den Modus **Kompatibler Modus (für Laufwerke, die von diesem Gerät entfernt werden können)** aus.  
-- Wenn die Verschlüsselung abgeschlossen ist, führen Sie das Import/Export-Tool von Azure aus, um Daten auf diese Festplatte zu kopieren.   
-- Verwenden Sie den */bk*-Parameter, und geben Sie den Wiederherstellungsschlüssel in diesem Parameterwert an.   
-- Verwenden Sie NICHT die Parameter */format* und */encrypt*.  
-
 **Wie viel kostet der Import/Export-Dienst?**
 
-- Weitere Informationen hierzu finden Sie unter [Import/Export Preisübersicht](http://go.microsoft.com/fwlink/?LinkId=329033).
+- Preisinformationen finden Sie unter [Preise für Import/Export](http://go.microsoft.com/fwlink/?LinkId=329033).
 
 **Wie lange dauert der Import oder Export meiner Daten?**
 
@@ -204,7 +196,7 @@ Befolgen Sie die Anweisungen unten, wenn Sie Ihre Festplatte mithilfe von Window
 	- Anker 68UPSHHDS-BU
 	- Startech SATADOCK22UE
 
-> [AZURE.NOTE] Falls Sie einen Konverter haben, der nicht in der Liste enthalten ist, können Sie versuchen, das Microsoft Azure-Import-/Exporttool mit Ihrem Konverter zur Vorbereitung des Laufwerks auszuführen, bevor Sie einen unterstützten Konverter kaufen.
+> [AZURE.NOTE] Falls Sie einen Konverter haben, der nicht in der Liste enthalten ist, können Sie versuchen, das Import-/Exporttool für Azure mit Ihrem Konverter zur Vorbereitung des Laufwerks auszuführen, bevor Sie einen unterstützten Konverter erwerben.
 
 - Eine externe Festplatte mit einem integrierten USB-Adapter wird nicht unterstützt.
 
@@ -228,7 +220,7 @@ Befolgen Sie die Anweisungen unten, wenn Sie Ihre Festplatte mithilfe von Window
 
 **Wie lange kann ich den Status abgeschlossener Aufträge im klassischen Portal anzeigen?**
 
-- Den Status abgeschlossener Aufträge können Sie bis zu 90 Tage lang anzeigen. Abgeschlossene Aufträge werden nach 90 Tagen gelöscht.
+- Den Status abgeschlossener Aufträge können Sie bis zu 90 Tage lang anzeigen. Abgeschlossene Aufträge werden nach 90 Tagen gelöscht.
 
 **Ist die BitLocker-Verschlüsselung zwingend erforderlich?**
 
@@ -238,8 +230,7 @@ Befolgen Sie die Anweisungen unten, wenn Sie Ihre Festplatte mithilfe von Window
 
 - Nein, alle Laufwerke müssen mit BitLocker vorbereitet sein.
 
-**Muss ich den Datenträger beim Erstellen eines Exportauftragsvorbereiten?**
-- Nein, aber es empfiehlt sich, einige Vorabüberprüfungen durchzuführen. Überprüfen Sie die Anzahl der erforderlichen Datenträger mithilfe des Befehls [PreviewExport](https://msdn.microsoft.com/library/azure/dn722414.aspx) Import/Export-Tools. Sie können damit eine Vorschau der Festplattenverwendung für Blobs anzeigen, die Sie ausgewählt haben, basierend auf der Größe der Laufwerke, die Sie verwenden möchten. Überprüfen Sie außerdem, ob Sie Lese-/Schreibzugriff auf die Festplatte haben, die für den Exportauftrag versendet werden soll.
+**Muss ich den Datenträger beim Erstellen eines Exportauftragsvorbereiten?** – Nein, aber es empfiehlt sich, einige Vorabüberprüfungen durchzuführen. Überprüfen Sie die Anzahl der erforderlichen Datenträger mithilfe des PreviewExport-Befehls aus dem Import-/Exporttool für Azure. Weitere Informationen finden Sie unter [Vorschau der Laufwerknutzung für einen Exportauftrag](https://msdn.microsoft.com/library/azure/dn722414.aspx). Sie können damit eine Vorschau der Festplattenverwendung für Blobs anzeigen, die Sie ausgewählt haben, basierend auf der Größe der Laufwerke, die Sie verwenden möchten. Überprüfen Sie außerdem, ob Sie Lese-/Schreibzugriff auf die Festplatte haben, die für den Exportauftrag versendet werden soll.
 
 ### Versand
 
@@ -247,13 +238,13 @@ Befolgen Sie die Anweisungen unten, wenn Sie Ihre Festplatte mithilfe von Window
 
 - Für US- und europäische Regionen wird nur [Federal Express](http://www.fedex.com/us/oadr/) (FedEx) unterstützt. Alle Pakete werden per FedEx Ground oder FedEx International Economy zurückgeschickt.
 
-- Für asiatische Regionen wird nur [DHL](http://www.dhl-welcome.com/Tutorial/) unterstützt. Alle Pakete werden per DHL Express Worldwide zurückgeschickt.
+- Für asiatische Regionen wird nur [DHL](http://www.dhl.com/) unterstützt. Alle Pakete werden per DHL Express Worldwide zurückgeschickt.
 
 	> [AZURE.IMPORTANT] Sie müssen Ihre Tracking-Nummer an den Azure Import-/Export-Dienst übertragen, ansonsten kann Ihr Auftrag nicht verarbeitet werden.
 
 **Entstehen Kosten für den Rückversand?**
 
-- Microsoft verwendet die Kontonummer für das Transportunternehmen, die Sie bei der Auftragserstellung angegeben haben, um die Laufwerke vom Rechenzentrum an Ihre Absenderadresse zu schicken. Geben Sie daher unbedingt eine Kontonummer für ein Transportunternehmen an, das in der Region des Rechenzentrums unterstützt wird. Sie können ein Konto bei [FedEx](http://www.fedex.com/us/oadr/) (für USA und Europa) oder [DHL](http://www.dhl-welcome.com/Tutorial/) (Asien) erstellen, falls Sie kein solches Konto haben.
+- Microsoft verwendet die Kontonummer für das Transportunternehmen, die Sie bei der Auftragserstellung angegeben haben, um die Laufwerke vom Rechenzentrum an Ihre Absenderadresse zu schicken. Geben Sie daher unbedingt eine Kontonummer für ein Transportunternehmen an, das in der Region des Rechenzentrums unterstützt wird. Sie können ein Konto bei [FedEx](http://www.fedex.com/us/oadr/) (für USA und Europa) oder [DHL](http://www.dhl.com/) (Asien) erstellen, falls Sie kein solches Konto haben.
 
 - Die Rücksendegebühren werden Ihrem Konto beim Transportunternehmen berechnet und hängen vom Transportunternehmen ab.
 
@@ -283,13 +274,17 @@ Befolgen Sie die Anweisungen unten, wenn Sie Ihre Festplatte mithilfe von Window
 
 - Bitte verschicken Sie nur Ihre Laufwerke. Legen Sie keine Gegenstände wie z. B. Strom- oder USB-Kabel bei.
 
+**Warum wird als Auftragsstatus im klassischen Portal*Versand* angezeigt, während auf der Website des Transportunternehmens angezeigt wird, dass mein Paket zugestellt wird?**
+
+- Der Portalstatus ändert sich von *Versand* in *Übertragung*, wenn die Laufwerksverarbeitung beginnt. Wenn das Laufwerk den Standort erreicht hat, aber die Verarbeitung noch nicht gestartet wurde, wird als Auftragsstatus *Versand* angezeigt.
+
 ## Weitere Informationen
 
-[Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy)
+[Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy.md)
 
 
 [import-job-03]: ./media/storage-import-export-service-classic-portal/import-job-03.png
 [export-job-03]: ./media/storage-import-export-service-classic-portal/export-job-03.png
 [export-job-bitlocker-keys]: ./media/storage-import-export-service-classic-portal/export-job-bitlocker-keys.png
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0224_2016-->

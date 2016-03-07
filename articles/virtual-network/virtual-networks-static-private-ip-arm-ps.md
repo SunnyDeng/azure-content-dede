@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Einrichten einer statischen privaten IP-Adresse im ARM-Modus mithilfe von PowerShell | Microsoft Azure"
-   description="Grundlegendes zu statischen IP-Adressen (DIPs) und zur Verwaltung dieser IP-Adressen im ARM-Modus mithilfe von PowerShell"
+   pageTitle="Gewusst wie: Einrichten einer statischen privaten IP-Adresse in Azure Resource Manager mit PowerShell | Microsoft Azure"
+   description="Grundlegendes zu statischen privaten IP-Adressen und der Verwaltung in Azure Resource Manager mithilfe von PowerShell"
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
@@ -14,10 +14,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/20/2015"
+   ms.date="02/23/2016"
    ms.author="telmos" />
 
-# Einrichten einer statischen privaten IP-Adresse in PowerShell
+# Gewusst wie: Einrichten einer statischen privaten IP-Adresse in Resource Manager mit PowerShell
 
 [AZURE.INCLUDE [virtual-networks-static-private-ip-selectors-arm-include](../../includes/virtual-networks-static-private-ip-selectors-arm-include.md)]
 
@@ -190,6 +190,6 @@ Führen Sie folgenden Befehl aus, um dem virtuellen Computer, der mit dem obigen
 
 - Erfahren Sie mehr über [reservierte öffentliche IP-Adressen](../virtual-networks-reserved-public-ip).
 - Erfahren Sie mehr über [öffentliche IP-Adressen auf Instanzebene (ILPIP)](../virtual-networks-instance-level-public-ip).
-- Lesen Sie die Informationen unter [Vorgänge für reservierte IP-Adressen](https://msdn.microsoft.com/library/azure/dn722420.aspx).
+- Lesen Sie die Informationen zu [REST-APIs für reservierte IP-Adressen](https://msdn.microsoft.com/library/azure/dn722420.aspx).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0224_2016-->

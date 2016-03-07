@@ -10,7 +10,7 @@
 <tags
    ms.service="data-catalog"
    ms.devlang="NA"
-   ms.topic="article"
+   ms.topic=" hero-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
    ms.date="01/28/2016"
@@ -110,14 +110,14 @@ Eines der geschäftlichen Probleme, die mit **Azure Data Catalog** gelöst werde
 -	Weitere Informationen zum Ermitteln von Datenquellen finden Sie unter [Suchen nach Datenquellen](data-catalog-get-started.md#exercise-3-discovering-registered-data-assets).
 
 ### Klein anfangen und konzentriert bleiben
-Bei den meisten Pilotprojekten in Unternehmen sollten Sie den Katalog mit nützlichen Datenquellen füllen, damit die Benutzer den Nutzen von Data Catalog schnell erkennen können. Die IT-Abteilung ist ein guter Ort, um mit der Ermittlung von allgemeinen Datenquellen zu beginnen, die für Ihr Pilotprojektteam interessant sind. Für unterstützte Datenquellen, z. B. SQL Server, empfehlen wir die Verwendung des Registrierungstools für **Azure Data Catalog**-Datenquellen. Mit dem Registrierungstool für Datenquellen können Sie viele unterschiedliche Datenquellen, z. B. SQL Server- und Oracle-Datenbanken, sowie SQL Server Reporting Services-Berichte registrieren. Eine vollständige Liste mit aktuellen Datenquellen finden Sie unter [Von Azure Data Catalog unterstützte Datenquellen](data-catalog-dsr.md).
+Bei den meisten Pilotprojekten in Unternehmen sollten Sie den Katalog mit nützlichen Datenquellen füllen, damit die Benutzer den Nutzen von Data Catalog schnell erkennen können. Die IT-Abteilung ist ein guter Ort, um mit der Ermittlung von allgemeinen Datenquellen zu beginnen, die für Ihr Pilotprojektteam interessant sind. Für unterstützte Datenquellen, z. B. SQL Server, empfehlen wir die Verwendung des Registrierungstools für **Azure Data Catalog**-Datenquellen. Mit dem Registrierungstool für Datenquellen können Sie viele unterschiedliche Datenquellen, z. B. SQL Server- und Oracle-Datenbanken, sowie SQL Server Reporting Services-Berichte registrieren. Eine vollständige Liste mit aktuellen Datenquellen finden Sie unter [Von Azure Data Catalog unterstützte Datenquellen](data-catalog-dsr.md).
 
-Nachdem Sie wichtige Datenquellen ermittelt und registriert haben, können Sie auch Beschreibungen von Datenquellen importieren, die an anderen Orten gespeichert sind. Mit der Data Catalog-API können Entwickler Beschreibungen und Anmerkungen von einem anderen Speicherort laden, z. B. die Excel-Arbeitsmappe, die von David erstellt und verwaltet wird.
+Nachdem Sie wichtige Datenquellen ermittelt und registriert haben, können Sie auch Beschreibungen von Datenquellen importieren, die an anderen Orten gespeichert sind. Mit der Data Catalog-API können Entwickler Beschreibungen und Anmerkungen von einem anderen Speicherort laden, z. B. die Excel-Arbeitsmappe, die von David erstellt und verwaltet wird.
 
 Im nächsten Abschnitt wird ein Beispielprojekt von Adventure Works beschrieben.
 
 ### Beispielprojekt
-In diesem Beispiel erstellt Nancy als Business Analyst Berichte für ihr Team, indem sie die Daten einer SQL Server-Datenbank nutzt. Das Problem besteht darin, dass sie erst von der Datenquelle erfahren hat, nachdem sie mit mehreren Kolleginnen und Kollegen gesprochen hat. Sie hätte diese Datenquellen schnell finden können, wenn sie an einem zentralen Ort, also z. B. in **Azure Data Catalog**, registriert und mit Anmerkungen versehen worden wären.
+In diesem Beispiel erstellt Nancy als Business Analyst Berichte für ihr Team, indem sie die Daten einer SQL Server-Datenbank nutzt. Das Problem besteht darin, dass sie erst von der Datenquelle erfahren hat, nachdem sie mit mehreren Kolleginnen und Kollegen gesprochen hat. Sie hätte diese Datenquellen schnell finden können, wenn sie an einem zentralen Ort, also z. B. in **Azure Data Catalog**, registriert und mit Anmerkungen versehen worden wären.
 
 Zu Veranschaulichung, wie leicht Nancy und ihr Team Datenquellen von hohem Nutzen finden können, verwenden Sie das Registrierungstool für Datenquellen, um den Katalog mit Informationen (Metadaten) zu den Datenquellen zu füllen. So sind die Informationen zur Datenbank für das Team und das gesamte Unternehmen verfügbar, nicht nur für einzelne Personen. Nachdem die Datenquellen in Data Catalog registriert wurden, können Nancy und ihr Team leicht auf die benötigten Datenquellen zugreifen. Das Ergebnis ist ein umfassenderer und relevanterer Datenkatalog für ihr Team und das Unternehmen. Wenn Data Catalog von immer mehr Teams genutzt wird, wird es einfacher, geschäftliche Datenquellen zu finden und zu verwenden. So wird für ein Umfeld mit besserer Datenorientierung gesorgt, und Sie können mit Ihren Daten mehr erreichen.
 
@@ -172,4 +172,4 @@ In diesem Artikel ging es um die ersten Schritte bei der Nutzung von **Azure Dat
 -	[Hinzufügen von Anmerkungen zu Datenquellen](data-catalog-get-started.md#exercise-4-annotating-registered-data-sources)
 - [Crowdsourcing für Metadaten](data-catalog-get-started.md#exercise-5-crowdsourcing-metadata)
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0224_2016-->

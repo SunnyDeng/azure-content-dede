@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Machine Learning APIs: Text Analytics | Microsoft Azure"
-	description="Von Azure Machine Learning gebotene Text Analytics-APIs. Die API kann verwendet werden, um unstrukturierten Text für Aufgaben wie Stimmungsanalyse, Schlüsselwortextraktion und Spracherkennung zu analysieren."
+	description="Mit den Textanalyse-APIs von Microsoft Machine Learning kann unstrukturierter Text für Aufgaben wie Stimmungsanalyse, Schlüsselausdruckextraktion, Sprach- und Themenerkennung analysiert werden."
 	services="machine-learning"
 	documentationCenter=""
 	authors="onewth"
@@ -13,15 +13,15 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/17/2015"
+	ms.date="02/22/2016"
 	ms.author="onewth"/>
 
 
-# Machine Learning APIs: Text Analytics für Stimmungsanalyse, Schlüsselwortextraktion und Spracherkennung
+# Machine Learning APIs: Textanalyse für Stimmungsanalyse, Schlüsselausdruckextraktion, Sprach- und Themenerkennung
 
 ## Übersicht
 
-Die Text Analytics-API ist eine Zusammenstellung von [Webdiensten](https://datamarket.azure.com/dataset/amla/text-analytics) zur Textanalyse, die mit Azure Machine Learning erstellt wurden. Die API kann verwendet werden, um unstrukturierten Text für Aufgaben wie Stimmungsanalyse, Schlüsselwortextraktion und Spracherkennung zu analysieren. Zur Verwendung dieser API sind keine Trainingsdaten erforderlich. Geben Sie einfach Ihre Textdaten ein. Diese API greift auf erweiterte Techniken der natürlichen Sprachverarbeitung zurück, um bestmögliche Vorhersagen zu treffen.
+Die Text Analytics-API ist eine Zusammenstellung von [Webdiensten](https://datamarket.azure.com/dataset/amla/text-analytics) zur Textanalyse, die mit Azure Machine Learning erstellt wurden. Die API kann verwendet werden, um unstrukturierten Text für Aufgaben wie Stimmungsanalyse, Schlüsselausdruckextraktion, Sprach- und Themenerkennung zu analysieren. Zur Verwendung dieser API sind keine Trainingsdaten erforderlich. Geben Sie einfach Ihre Textdaten ein. Diese API greift auf erweiterte Techniken der natürlichen Sprachverarbeitung zurück, um bestmögliche Vorhersagen zu treffen.
 
 Auf unserer [Demowebsite](https://text-analytics-demo.azurewebsites.net/) können Sie Textanalysen in Aktion sehen. Hier finden Sie auch [Beispiele](https://text-analytics-demo.azurewebsites.net/Home/SampleCode) in C# und Python zum Implementieren von Textanalysen.
 
@@ -39,7 +39,11 @@ Die API gibt eine Liste von Zeichenfolgen zurück, die die wichtigsten Themen im
 
 ## Spracherkennung
 
-Die API gibt die erkannte Sprache und einen numerischen Wert von 0 bis 1 zurück. Werte nahe 1 stehen für 100 %-ige Sicherheit, dass die identifizierte Sprache stimmt. Insgesamt werden 120 Sprachen unterstützt.
+Die API gibt die erkannte Sprache und einen numerischen Wert von 0 bis 1 zurück. Werte nahe 1 stehen für 100 %-ige Sicherheit, dass die identifizierte Sprache stimmt. Insgesamt werden 120 Sprachen unterstützt.
+
+## Themenerkennung
+
+Diese neu veröffentlichte API gibt die am meisten erkannten Themen für eine Liste übermittelter Textdatensätze zurück. Ein Thema wird anhand eines Schlüsselausdrucks identifiziert, der aus einem oder mehreren darauf bezogenen Wörtern bestehen kann. Dieser API müssen mindestens 100 Datensätze übermittelt werden, aber sie kann Themen in Hunderten bis Tausenden von Datensätzen erkennen. Beachten Sie, dass diese API pro übermittelten Textdatensatz 1 Transaktion berechnet. Die API eignet sich ideal für kurzen, von Menschen geschriebenen Text, z. B. Kritiken und Feedback von Benutzern.
 
 ---
 
@@ -161,14 +165,14 @@ Anforderungstext:
 	{"Inputs":
 	[
 	    {"Id":"1","Text":"hello world"},
-    	    {"Id":"2","Text":"hello foo world"},
-    	    {"Id":"3","Text":"hello my world"},
+	    {"Id":"2","Text":"hello foo world"},
+	    {"Id":"3","Text":"hello my world"},
 	]}
 
 In der folgenden Antwort erhalten Sie die Bewertungsliste im Zusammenhang mit Ihren Text-IDs:
 
 	{
-	  "odata.metadata":"https://api.datamarket.azure.com/data.ashx/amla/text-analytics/v1/$metadata", 
+	  "odata.metadata":"<url>", 
 	  "SentimentBatch":
 	  [
 		{"Score":0.9549767,"Id":"1"},
@@ -210,7 +214,7 @@ Anforderungstext:
 
 In der folgenden Antwort erhalten Sie die Schlüsselwortliste im Zusammenhang mit Ihren Text-IDs:
 
-	{ "odata.metadata":"https://api.datamarket.azure.com/data.ashx/amla/text-analytics/v1/$metadata",
+	{ "odata.metadata":"<url>",
 	 	"KeyPhrasesBatch":
 		[
 		   {"KeyPhrases":["unique decor","friendly staff","wonderful hotel"],"Id":"1"},
@@ -261,4 +265,122 @@ Dies ergibt die folgende Antwort, wobei Englisch in der ersten Eingabe und Franz
        "Errors": []
     }
 
-<!---HONumber=AcomDC_1125_2015-->
+---
+
+## Themenerkennung-APIs
+
+Diese neu veröffentlichte API gibt die am meisten erkannten Themen für eine Liste übermittelter Textdatensätze zurück. Ein Thema wird anhand eines Schlüsselausdrucks identifiziert, der aus einem oder mehreren darauf bezogenen Wörtern bestehen kann. Beachten Sie, dass diese API pro übermittelten Textdatensatz 1 Transaktion berechnet.
+
+Dieser API müssen mindestens 100 Datensätze übermittelt werden, aber sie kann Themen in Hunderten bis Tausenden von Datensätzen erkennen.
+
+
+### Themen – Auftrag senden
+
+**URL**
+
+	https://api.datamarket.azure.com/data.ashx/amla/text-analytics/v1/StartTopicDetection
+
+**Beispiel für eine Anforderung**
+
+
+Im folgenden POST-Aufruf fordern wir Themen für einen Satz von 100 Artikeln an, wobei der zuerst und zuletzt eingegebene Artikel angezeigt werden und zwei „StopPhrases“ enthalten sind.
+
+	POST https://api.datamarket.azure.com/data.ashx/amla/text-analytics/v1/StartTopicDetection HTTP/1.1
+
+Anforderungstext:
+
+	{"Inputs":[
+		{"Id":"1","Text":"I loved the food at this restaurant"},
+		...,
+		{"Id":"100","Text":"I hated the decor"}
+	],
+	"StopPhrases":[
+		"restaurant", “visitor"
+	]}
+
+In der folgenden Antwort erhalten Sie die „JobId“ für den gesendeten Auftrag:
+
+	{
+		"odata.metadata":"<url>",
+		"JobId":"<JobId>"
+	}
+
+Eine Liste von Ausdrücken, die aus einem oder mehreren Wörtern bestehen, die nicht als Themen zurückgegeben werden sollen. Sie kann verwendet werden, um sehr allgemeine Themen herauszufiltern. In einem Dataset zu Hotelkritiken könnten z. B. „Hotel“ und „Hostel“ sinnvolle Stoppausdrücke sein.
+
+### Themen – Abrufen von Auftragsergebnissen
+
+**URL**
+
+	https://api.datamarket.azure.com/data.ashx/amla/text-analytics/v1/GetTopicDetectionResult
+
+**Beispiel für eine Anforderung**
+
+Übergeben Sie die „JobId“ zum Abrufen der Ergebnisse aus dem Schritt „Auftrag senden“, um die Ergebnisse abzurufen. Sie sollten diesen Endpunkt minütlich abrufen, bis die Antwort „Status= ‚Complete‘“ enthält. Es dauert ungefähr 10 Minuten, bis ein Auftrag abgeschlossen ist – bei Aufträgen mit Tausenden von Datensätzen auch länger.
+
+	GET https://api.datamarket.azure.com/data.ashx/amla/text-analytics/v1/GetTopicDetectionResult?JobId=<JobId>
+
+
+Während der Ausführung fällt die Antwort wie folgt aus:
+
+	{
+		"odata.metadata":"<url>",
+		"Status":"Running",
+ 		"TopicInfo":[],
+		"TopicAssignment":[],
+		"Errors":[]
+	}
+
+
+Die API gibt die Ausgabe folgendermaßen im JSON-Format zurück:
+
+	{
+		"odata.metadata":"<url>",
+		"Status":"Finished",
+		"TopicInfo":[
+		{
+			"TopicId":"ed00480e-f0a0-41b3-8fe4-07c1593f4afd",
+			"Score":8.0,
+			"KeyPhrase":"food"
+		},
+		...
+		{
+			"TopicId":"a5ca3f1a-fdb1-4f02-8f1b-89f2f626d692",
+			"Score":6.0,
+			"KeyPhrase":"decor"
+    		}
+  		],
+		"TopicAssignment":[
+		{
+			"Id":"1",
+			"TopicId":"ed00480e-f0a0-41b3-8fe4-07c1593f4afd",
+			"Distance":0.7809
+		},
+		...
+		{
+			"Id":"100",
+			"TopicId":"a5ca3f1a-fdb1-4f02-8f1b-89f2f626d692",
+			"Distance":0.8034
+		}
+		],
+		"Errors":[]
+
+
+Die Eigenschaften für jeden Teil der Antwort lauten:
+
+**TopicInfo-Eigenschaften**
+
+| Schlüssel | Beschreibung |
+|:-----|:----|
+| TopicId | Ein eindeutiger Bezeichner für jedes Thema. |
+| Punkte | Anzahl der Datensätze, die dem Thema zugewiesen sind. |
+| KeyPhrase | Eine Zusammenfassung des Themas in einem Wort oder Ausdruck. Kann aus 1 oder mehreren Wörtern bestehen. |
+
+**TopicAssignment-Eigenschaften**
+
+| Schlüssel | Beschreibung |
+|:-----|:----|
+| ID | Bezeichner des Datensatzes. Entspricht der in der Eingabe enthaltenen ID. |
+| TopicId | Die Themen-ID, der der Datensatz zugewiesen wurde. |
+| Distance | Zuverlässigkeit, dass der Datensatz zu dem Thema gehört. Je näher „Distance“ an 0 liegt, desto höher ist die Zuverlässigkeit. |
+
+<!---HONumber=AcomDC_0224_2016-->

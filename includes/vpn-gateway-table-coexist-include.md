@@ -1,7 +1,9 @@
-A Site-to-Site connection and an ExpressRoute connection can be configured to coexist. See the table below for more information. We update this table as new articles, new deployment models and tools become available for this configuration. When an article is available, we link directly to it from the table.
+Standort-zu-Standort-Verbindungen und ExpressRoute-Verbindungen können per Konfiguration gleichzeitig vorhanden sein. Weitere Informationen finden Sie in der folgenden Tabelle. Wir aktualisieren diese Tabelle, wenn neue Artikel, neue Bereitstellungsmodelle und Tools für diese Konfiguration verfügbar werden. Wenn ein Artikel verfügbar ist, fügen wir in der Tabelle einen direkten Link dazu ein.
 
-| **Deployment Models and Tools** | **Classic Deployment**  | **Resource Manager Deployment**|
+| **Bereitstellungsmodelle und Tools** | **Klassische Bereitstellung** | **Resource Manager-Bereitstellung**|
 |-----------------------------|-------------|---------------------|
-| **Classic Portal**          | Not Supported          | Not Supported                  |
-| **Azure Portal**            | Not Supported         | Not Supported                  |
-| **PowerShell** | [Article](../articles/expressroute/expressroute-howto-coexist-classic.md) | Not Supported |
+| **Klassisches Portal** | Nicht unterstützt | Nicht unterstützt |
+| **Azure-Portal** | Nicht unterstützt | Nicht unterstützt |
+| **PowerShell** | [Artikel](../articles/expressroute/expressroute-howto-coexist-classic.md) | Nicht unterstützt |
+
+<!---HONumber=AcomDC_0224_2016-->

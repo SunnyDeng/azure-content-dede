@@ -4,7 +4,7 @@
    services="app-service\logic"
    documentationCenter=".net,nodejs,java"
    authors="anuragdalmia"
-   manager="dwrede"
+   manager="erikre"
    editor=""/>
 
 <tags
@@ -13,11 +13,13 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="11/30/2015"
+   ms.date="02/10/2016"
    ms.author="sameerch"/>
 
 
 # Erste Schritte mit dem QuickBooks-Connector und das Hinzufügen zur Logik-App
+>[AZURE.NOTE] Diese Version des Artikels gilt für die Logik-Apps-Schemaversion 2014-12-01-preview.
+
 Mit dem QuickBooks-Connector können Sie unterschiedliche QuickBooks-Entitäten erstellen und bearbeiten. Die folgende Tabelle enthält die unterstützten Entitäten.
 
 Entitäten|Beschreibung
@@ -27,7 +29,7 @@ CreditMemo|CreditMemo ist eine finanzielle Transaktion, die für eine Rückersta
 Kunde|Ein Kunde ist der Konsument der Dienstleistung oder des Produkts, das Ihr Unternehmen anbietet.
 Schätzung|Die Schätzung stellt einen Vorschlag einschließlich Preisangebot für Waren oder Dienstleistungen bei einer finanziellen Transaktion zwischen einem Unternehmen und einem Kunden dar.
 Rechnung|Eine Rechnung stellt ein Verkaufsformular dar, mit dem der Kunde für ein Produkt oder einen Dienst bezahlt. Weitere Informationen zur Verwendung des Rechnungsdatenmodells finden Sie hier.
-Item|Ein Artikel ist etwas, das Ihr Unternehmen kauft, verkauft oder weiterverkauft, wie z. B. Produkte, Versand- und Bearbeitungsgebühren, Rabatte und Mehrwertsteuer (falls zutreffend). Ein Artikel wird als Position in einer Rechnung oder einem Verkaufsformular angezeigt.
+Item|Ein Artikel ist etwas, das Ihr Unternehmen kauft, verkauft oder weiterverkauft, wie z. B. Produkte, Versand- und Bearbeitungsgebühren, Rabatte und Mehrwertsteuer (falls zutreffend). Ein Artikel wird als Position in einer Rechnung oder einem Verkaufsformular angezeigt.
 SalesReceipt|Diese Entität repräsentiert die Verkaufsbestätigung, die einem Kunden zugewiesen wird.
 
 Logik-Apps können basierend auf einer Vielzahl von Datenquellen ausgelöst werden und Connectors anbieten, um Daten als Teil des Datenflusses abzurufen und zu verarbeiten. Sie können den QuickBooks-Connector dem geschäftlichen Workflow hinzufügen und Daten im Rahmen dieses Workflows in einer Logik-App verarbeiten.
@@ -121,7 +123,7 @@ Wir erstellen eine einfache Logik-App, die ein Konto in QuickBooks erstellt, und
 ## Mehr mit Ihrem Connector machen
 Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
->[AZURE.NOTE]Wenn Sie Azure Logik-Apps ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [Logik-App testen](https://tryappservice.azure.com/?appservice=logic) sofort kostenlos eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure Logik-Apps ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [Logik-App testen](https://tryappservice.azure.com/?appservice=logic) sofort kostenlos eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
 
@@ -142,4 +144,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [12]: ./media/app-service-logic-connector-quickbooks/12_Update_Account_Address.png
 [13]: ./media/app-service-logic-connector-quickbooks/13_Create_new_quickbooks_connector.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0224_2016-->

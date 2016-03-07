@@ -1,11 +1,4 @@
-<properties
-	pageTitle="Azure AD B2C-Vorschau: Aufrufen von Web-APIs aus einer Android-Anwendung | Microsoft Azure"
-	description="In diesem Artikel wird beschrieben, wie Sie eine Android-App für Aufgabenlisten erstellen, die eine node.js-Web-API mithilfe von OAuth 2.0-Bearertoken aufruft. Sowohl die Android-App als auch die Web-API verwenden Azure AD B2C zum Verwalten von Benutzeridentitäten und zum Authentifizieren von Benutzern."
-	services="active-directory-b2c"
-	documentationCenter="android"
-	authors="brandwe"
-	manager="msmbaldwin"
-	editor=""/>
+<properties pageTitle="Azure AD B2C-Vorschau: Aufrufen von Web-APIs aus einer Android-Anwendung | Microsoft Azure" description="In diesem Artikel wird beschrieben, wie Sie eine Android-App für Aufgabenlisten erstellen, die eine node.js-Web-API mithilfe von OAuth 2.0-Bearertoken aufruft. Sowohl die Android-App als auch die Web-API verwenden Azure AD B2C zum Verwalten von Benutzeridentitäten und zum Authentifizieren von Benutzern." services="active-directory-b2c" documentationCenter="android" authors="brandwe" manager="msmbaldwin" editor=""/>
 
 <tags
 	ms.service="active-directory-b2c"
@@ -13,48 +6,48 @@
 	ms.tgt_pltfrm="mobile-android"
 	ms.devlang="java"
 	ms.topic="article"
-	ms.date="11/19/2015"
+	ms.date="02/17/2016"
 	ms.author="brandwe"/>
 
-# Azure AD B2C-Vorschau: Aufrufen von Web-APIs aus einer Android-Anwendung
+# Azure AD B2C-Vorschau: Aufrufen von Web-APIs aus einer Android-Anwendung
 
-Mit Azure AD B2C können Sie Ihren Android-Apps und Web-APIs in wenigen Schritten leistungsstarke Self-Service-Features zur Identitätsverwaltung hinzufügen. In diesem Artikel wird gezeigt, wie Sie eine Android-App für Aufgabenlisten erstellen, die eine node.js-Web-API mithilfe von OAuth 2.0-Bearertoken aufruft. Sowohl die Android-App als auch die Web-API verwenden Azure AD B2C zum Verwalten von Benutzeridentitäten und zum Authentifizieren von Benutzern.
+Mit Azure AD B2C können Sie Ihren Android-Apps und Web-APIs in wenigen Schritten leistungsstarke Self-Service-Features zur Identitätsverwaltung hinzufügen. In diesem Artikel wird gezeigt, wie Sie eine Android-App für Aufgabenlisten erstellen, die eine node.js-Web-API mithilfe von OAuth 2.0-Bearertoken aufruft. Sowohl die Android-App als auch die Web-API verwenden Azure AD B2C zum Verwalten von Benutzeridentitäten und zum Authentifizieren von Benutzern.
 
 [AZURE.INCLUDE [active-directory-b2c-preview-note](../../includes/active-directory-b2c-preview-note.md)]
 
  	
 > [AZURE.NOTE]
-	Für diesen Schnellstart benötigen Sie als Voraussetzung eine Web-API, die durch Azure AD mit B2C geschützt wird. Wir haben sowohl für .NET als auch für node.js eine für Sie vorbereitet. Bei dieser exemplarischen Vorgehensweise wird davon ausgegangen, dass das node.js-Web-API-Beispiel konfiguriert wurde. Weitere Informationen dazu finden Sie unter [Azure AD B2C-Web-API-Lernprogramm für Node.js](active-directory-b2c-devquickstarts-api-node.md).
+	Für diesen Schnellstart benötigen Sie als Voraussetzung eine Web-API, die durch Azure AD mit B2C geschützt wird. Wir haben sowohl für .NET als auch für node.js eine für Sie vorbereitet. Bei dieser exemplarischen Vorgehensweise wird davon ausgegangen, dass das node.js-Web-API-Beispiel konfiguriert wurde. Weitere Informationen dazu finden Sie unter [Azure AD B2C-Web-API-Lernprogramm für Node.js](active-directory-b2c-devquickstarts-api-node.md).
 
  
 > [AZURE.NOTE]
-	Dieser Artikel behandelt nicht das Implementieren der Anmeldung, Registrierung und Profilverwaltung mit Azure AD B2C. Er konzentriert sich auf das Aufrufen von Web-APIs aufrufen, nachdem der Benutzer bereits authentifiziert wurde. Wenn nicht bereits erfolgt, sollten Sie mit dem [Lernprogramm "Erste Schritte mit .NET-Web-App"](active-directory-b2c-devquickstarts-web-dotnet.md) beginnen, um Informationen zu den Grundlagen von Azure AD B2C zu erhalten.
+	Dieser Artikel behandelt nicht das Implementieren der Anmeldung, Registrierung und Profilverwaltung mit Azure AD B2C. Er konzentriert sich auf das Aufrufen von Web-APIs aufrufen, nachdem der Benutzer bereits authentifiziert wurde. Wenn nicht bereits erfolgt, sollten Sie mit dem [Lernprogramm "Erste Schritte mit .NET-Web-App"](active-directory-b2c-devquickstarts-web-dotnet.md) beginnen, um Informationen zu den Grundlagen von Azure AD B2C zu erhalten.
 
 
 Für Android-Clients, die auf geschützte Ressourcen zugreifen müssen, ist unter Azure AD die Active Directory-Authentifizierungsbibliothek (ADAL) verfügbar. Die einzige Aufgabe der ADAL besteht darin, Ihrer App das Abrufen von Zugriffstoken zu erleichtern. Um Ihnen zu zeigen, wie einfach es geht, erstellen wir hier eine Android-Anwendung mit einer Aufgabenliste, mit der folgende Aktionen ausgeführt werden können:
 
--	Abrufen von Zugriffstoken zum Aufrufen einer Aufgabenlisten-API mit dem [OAuth 2.0-Authentifizierungsprotokoll](https://msdn.microsoft.com/library/azure/dn645545.aspx)
+-	Abrufen von Zugriffstoken zum Aufrufen einer Aufgabenlisten-API mit dem [OAuth 2.0-Authentifizierungsprotokoll](https://msdn.microsoft.com/library/azure/dn645545.aspx)
 -	Abrufen der Aufgabenliste eines Benutzers
 -	Abmelden von Benutzern
 
 
 
-### Schritt 1: Erstellen eines Azure AD B2C-Verzeichnisses
+### Schritt 1: Erstellen eines Azure AD B2C-Verzeichnisses
 
-Bevor Sie Azure AD B2C verwenden können, müssen Sie ein Verzeichnis oder einen Mandanten erstellen. Ein Verzeichnis ist ein Container für alle Benutzer, Apps, Gruppen usw. Wenn Sie noch nicht über ein Verzeichnis verfügen, [erstellen Sie ein B2C-Verzeichnis](active-directory-b2c-get-started.md), bevor Sie fortfahren.
+Bevor Sie Azure AD B2C verwenden können, müssen Sie ein Verzeichnis oder einen Mandanten erstellen. Ein Verzeichnis ist ein Container für alle Benutzer, Apps, Gruppen usw. Wenn Sie noch nicht über ein Verzeichnis verfügen, [erstellen Sie ein B2C-Verzeichnis](active-directory-b2c-get-started.md), bevor Sie fortfahren.
 
-### Schritt 2: Erstellen einer Anwendung
+### Schritt 2: Erstellen einer Anwendung
 
 Nun müssen Sie eine App in Ihrem B2C-Verzeichnis erstellen, sodass Azure AD die Informationen erhält, die für die sichere Kommunikation mit Ihrer App erforderlich sind. Die App und die Web-API werden in diesem Fall durch eine einzelne **Anwendungs-ID** dargestellt, da sie zusammen eine logische App bilden. Befolgen Sie zum Erstellen einer App [diese Anweisungen](active-directory-b2c-app-registration.md). Ersetzen Sie
 
 - Fügen Sie der Anwendung eine **Web-App/Web-API** hinzu.
 - Geben Sie `urn:ietf:wg:oauth:2.0:oob` als **Antwort-URL** ein – dies ist die Standard-URL für dieses Codebeispiel.
-- Erstellen Sie einen **geheimen Schlüssel für Ihre Anwendung**, und notieren Sie ihn sich. Sie benötigen ihn später.
+- Erstellen Sie einen **geheimen Schlüssel für Ihre Anwendung**, und notieren Sie ihn sich. Sie benötigen sie später. Beachten Sie, dass dieser Wert vor der Verwendung in [XML-Escapezeichen](https://www.w3.org/TR/2006/REC-xml11-20060816/#dt-escape) gesetzt werden muss.
 - Notieren Sie die **Anwendungs-ID**, die Ihrer App zugewiesen ist. Sie benötigen sie ebenfalls in Kürze.
 
 [AZURE.INCLUDE [active-directory-b2c-devquickstarts-v2-apps](../../includes/active-directory-b2c-devquickstarts-v2-apps.md)]
 
-### Schritt 3: Erstellen der Richtlinien
+### Schritt 3: Erstellen der Richtlinien
 
 [AZURE.INCLUDE [active-directory-b2c-devquickstarts-policy](../../includes/active-directory-b2c-devquickstarts-policy.md)]
 
@@ -68,9 +61,9 @@ In Azure AD B2C wird jede Benutzeroberfläche durch eine [**Richtlinie**](active
 
 Nachdem Sie die drei Richtlinien erfolgreich erstellt haben, können Sie Ihre App erstellen.
 
-Beachten Sie, dass in diesem Artikel nicht behandelt wird, wie die gerade erstellten Richtlinien verwendet werden. Weitere Informationen zur Funktionsweise von Richtlinien in Azure AD B2C finden Sie im [Lernprogramm "Erste Schritte mit .NET-Web-Apps"](active-directory-b2c-devquickstarts-web-dotnet.md).
+Beachten Sie, dass in diesem Artikel nicht behandelt wird, wie die gerade erstellten Richtlinien verwendet werden. Weitere Informationen zur Funktionsweise von Richtlinien in Azure AD B2C finden Sie im [Lernprogramm "Erste Schritte mit .NET-Web-Apps"](active-directory-b2c-devquickstarts-web-dotnet.md).
 
-### Schritt 4: Herunterladen des Codes
+### Schritt 4: Herunterladen des Codes
 
 Der Code für dieses Lernprogramm wird [auf GitHub](https://github.com/AzureADQuickStarts/B2C-NativeClient-Android) verwaltet. Zum Erstellen des Beispiels können Sie [ein Projektgerüst als ZIP-Datei herunterladen](https://github.com/AzureADQuickStarts/B2C-NativeClient-Android/archive/skeleton.zip) oder das Gerüst klonen:
 
@@ -78,7 +71,7 @@ Der Code für dieses Lernprogramm wird [auf GitHub](https://github.com/AzureADQu
 git clone --branch skeleton https://github.com/AzureADQuickStarts/B2C-NativeClient-Android.git
 ```
 
-> [AZURE.NOTE]**Das Herunterladen des Gerüsts ist für das Abschließen dieses Lernprogramms erforderlich.** Aufgrund der Komplexität der Implementierung einer voll funktionsfähigen Anwendung unter Android verfügt das **Gerüst** über UX-Code, der ausgeführt wird, nachdem Sie das folgende Lernprogramm abgeschlossen haben. Mit dieser Maßnahme sollen Entwickler Zeit sparen. Der UX-Code ist für das Thema des Hinzufügens von B2C zu einer Android-Anwendung nicht von Belang.
+> [AZURE.NOTE] **Das Herunterladen des Gerüsts ist für das Abschließen dieses Lernprogramms erforderlich.** Aufgrund der Komplexität der Implementierung einer voll funktionsfähigen Anwendung unter Android verfügt das **Gerüst** über UX-Code, der ausgeführt wird, nachdem Sie das folgende Lernprogramm abgeschlossen haben. Mit dieser Maßnahme sollen Entwickler Zeit sparen. Der UX-Code ist für das Thema des Hinzufügens von B2C zu einer Android-Anwendung nicht von Belang.
 
 Die fertige App ist ebenfalls [als ZIP-Datei verfügbar](https://github.com/AzureADQuickStarts/B2C-NativeClient-Android/archive/complete.zip) oder unter der Verzweigung `complete` im gleichen Repository enthalten.
 
@@ -87,7 +80,7 @@ Für die Erstellung mit Maven können Sie die Datei „pom.xml“ auf der oberst
 
 
   * Führen Sie die Schritte im Abschnitt mit den [Voraussetzungen zum Einrichten von Maven für Android](https://github.com/MSOpenTech/azure-activedirectory-library-for-android/wiki/Setting-up-maven-environment-for-Android) aus.
-  * Einrichten des Emulators mit SDK 21
+  * Einrichten des Emulators mit SDK 21
   * Wechseln Sie zu dem Stammordner, in dem Sie das Repository geklont haben.
   * Führen Sie den folgenden Befehl aus: mvn clean install.
   * Wechseln Sie in das Verzeichnis mit dem Schnellstartbeispiel: cd samples\\hello.
@@ -97,7 +90,7 @@ Für die Erstellung mit Maven können Sie die Datei „pom.xml“ auf der oberst
 
 Zusätzlich zum AAR-Paket werden auch JAR-Pakete übermittelt.
 
-### Schritt 5: Herunterladen der Android-ADAL und Hinzufügen zum Android Studio-Arbeitsbereich
+### Schritt 5: Herunterladen der Android-ADAL und Hinzufügen zum Android Studio-Arbeitsbereich
 
 Wir haben die Verwendung für Sie vereinfacht. Sie haben mehrere Möglichkeiten zur Verwendung dieser Bibliothek in Ihrem Android-Projekt:
 
@@ -106,7 +99,7 @@ Wir haben die Verwendung für Sie vereinfacht. Sie haben mehrere Möglichkeiten 
 
 
 
-####Option 1: Binärdateien über Gradle (empfohlen)
+####Option 1: Binärdateien über Gradle (empfohlen)
 
 Sie können die Binärdateien aus dem zentralen Repository von Maven abrufen. Das AAR-Paket kann wie folgt in Ihr Projekt unter Android Studio eingefügt werden (Beispiel: in `build.gradle`):
 
@@ -128,7 +121,7 @@ dependencies {
 }
 ```
 
-####Option 2: AAR über Maven
+####Option 2: AAR über Maven
 
 Wenn Sie in Eclipse das m2e-Plug-In verwenden, können Sie die Abhängigkeit in Ihrer Datei "`pom.xml`" angeben:
 
@@ -141,7 +134,7 @@ Wenn Sie in Eclipse das m2e-Plug-In verwenden, können Sie die Abhängigkeit in 
 </dependency>
 ```
 
-####Option 3: Quelle über Git (letzte Möglichkeit)
+####Option 3: Quelle über Git (letzte Möglichkeit)
 
 Geben Sie einfach Folgendes ein, um den Quellcode des SDK über Git abzurufen:
 
@@ -151,7 +144,7 @@ Geben Sie einfach Folgendes ein, um den Quellcode des SDK über Git abzurufen:
     use the branch "convergence"
 
 
-### Schritt 6: Einrichten Ihrer Konfigurationsdatei
+### Schritt 6: Einrichten Ihrer Konfigurationsdatei
 
 Wir verwenden die Konfiguration, die Sie oben im B2C-Portal zum Konfigurieren des Android-Projekts eingerichtet haben.
 
@@ -198,19 +191,12 @@ public class Constants {
 
 
 ```
-**SCOPES**: Die Bereiche, die wir an den Server übergeben und die wir vom Server für den anzumeldenden Benutzer anfordern möchten. Für B2C Preview übergeben wir die „client\_id“. Zukünftig wird sich dies für das Lesen von Bereichen jedoch ändern. Dieses Dokument wird dann aktualisiert.
-**ADDITIONAL\_SCOPES**: Hierbei handelt es sich um zusätzliche Bereiche, die Sie möglicherweise für Ihre Anwendung verwenden möchten. Wird zukünftig verwendet.
-**CLIENT\_ID**: Die Anwendungs-ID, die Sie aus dem Portal erhalten haben.
-**REDIRECT\_URL**: Die Umleitung, die für das Postback des Tokens erwartet wird.
-**EXTRA\_QP**: Alle anderen Daten, die Sie im URL-codierten Format an den Server übergeben möchten.
-**FB\_POLICY**: Die Richtlinie, die Sie aufrufen. Der wichtigste Teil dieser exemplarischen Vorgehensweise.
-**EMAIL\_SIGNIN\_POLICY**: Die Richtlinie, die Sie aufrufen. Der wichtigste Teil dieser exemplarischen Vorgehensweise.
-**EMAIL\_SIGNUP\_POLICY**: Die Richtlinie, die Sie aufrufen. Der wichtigste Teil dieser exemplarischen Vorgehensweise.
+**SCOPES**: Die Bereiche, die wir an den Server übergeben und die wir vom Server für den anzumeldenden Benutzer anfordern möchten. Für B2C Preview übergeben wir die „client\_id“. Zukünftig wird sich dies für das Lesen von Bereichen jedoch ändern. Dieses Dokument wird dann aktualisiert. **ADDITIONAL\_SCOPES**: Hierbei handelt es sich um zusätzliche Bereiche, die Sie möglicherweise für Ihre Anwendung verwenden möchten. Wird zukünftig verwendet. **CLIENT\_ID**: Die Anwendungs-ID, die Sie aus dem Portal erhalten haben. **REDIRECT\_URL**: Die Umleitung, die für das Postback des Tokens erwartet wird. **EXTRA\_QP**: Alle anderen Daten, die Sie im URL-codierten Format an den Server übergeben möchten. **FB\_POLICY**: Die Richtlinie, die Sie aufrufen. Der wichtigste Teil dieser exemplarischen Vorgehensweise. **EMAIL\_SIGNIN\_POLICY**: Die Richtlinie, die Sie aufrufen. Der wichtigste Teil dieser exemplarischen Vorgehensweise. **EMAIL\_SIGNUP\_POLICY**: Die Richtlinie, die Sie aufrufen. Der wichtigste Teil dieser exemplarischen Vorgehensweise.
 
-### Schritt 7: Hinzufügen von Verweisen auf die ADAL für Android zum Projekt
+### Schritt 7: Hinzufügen von Verweisen auf die ADAL für Android zum Projekt
 
 
-> [AZURE.NOTE]Für ADAL für Android wird zum Aufrufen der Authentifizierung ein Intent-basiertes Modell verwendet. Intent-Elemente sind zum Ausführen von Schritten „oberhalb“ der App angeordnet. In diesem gesamten Beispiel – und allgemein für ADAL für Android – werden Intent-Elemente verwaltet, und es werden Informationen zwischen diesen Elementen übergeben.
+> [AZURE.NOTE]	Für ADAL für Android wird zum Aufrufen der Authentifizierung ein Intent-basiertes Modell verwendet. Intent-Elemente sind zum Ausführen von Schritten „oberhalb“ der App angeordnet. In diesem gesamten Beispiel – und allgemein für ADAL für Android – werden Intent-Elemente verwaltet, und es werden Informationen zwischen diesen Elementen übergeben.
 
 
 Zuerst müssen wir Android über das Layout unserer Anwendung informieren, was auch die gewünschten „Intents()“ betrifft. Ich werde auf diese Intent-Elemente später noch ausführlicher eingehen.
@@ -286,7 +272,7 @@ Sie sehen, dass wir fünf Aktivitäten definieren, die wir verwenden möchten.
 
 
 
-### Schritt 8: Erstellen der Anmeldeaktivität
+### Schritt 8: Erstellen der Anmeldeaktivität
 
 Sie erstellen nun eine Hauptaktivität und geben ihr den Namen `LoginActivity`.
 
@@ -375,7 +361,7 @@ public class LoginActivity extends Activity {
 ```
 Wir erstellen Schaltflächen, mit denen unser ToDoActivity-Intent-Element (von dem ADAL aufgerufen wird, wenn wir ein Token benötigen) mit unserer eigenen Aktivität als Referenz und einem zusätzlichen Parameter aufgerufen wird. Dieser zusätzliche Parameter wird von der `intent.putExtra()`-Methode übergeben. Sie sehen, dass wir hier „thePolicy“ so wie in `Constants.java` angegeben definieren. So weiß das Intent-Element, welche Richtlinie während der Authentifizierung aufgerufen werden soll.
 
-### Schritt 9: Erstellen der Settings-Aktivität
+### Schritt 9: Erstellen der Settings-Aktivität
 
 Dies ist lediglich eine Aktivität, mit der die UI mit den Einstellungen aufgefüllt wird.
 
@@ -499,7 +485,7 @@ public class SettingsActivity extends Activity {
 }
 ```
 
-### Schritt 10: Erstellen der AddTask-Aktivität
+### Schritt 10: Erstellen der AddTask-Aktivität
 
 Hiermit können wir unserem REST-API-Endpunkt eine Aufgabe hinzufügen. Auch dies ist recht einfach.
 
@@ -552,7 +538,7 @@ public class AddTaskActivity extends Activity {
 
 ```
 
-### Schritt 11: Erstellen der ToDoList-Aktivität
+### Schritt 11: Erstellen der ToDoList-Aktivität
 
 Jetzt geht es um die wichtigste Aktivität. Mit dieser Aktivität können wir ein Token aus Azure AD für die Richtlinie abrufen, um es dann zum Aufrufen des REST-API-Aufgabenservers zu verwenden.
 
@@ -746,7 +732,7 @@ public class ToDoActivity extends Activity {
 ```
 
         
- Sie werden vielleicht feststellen, dass dies auf Methoden beruht, die wir noch nicht geschrieben haben, z. B. `updateLoggedInUser()`, `clearSessionCookie()` und `getTasks()`. Diese Methoden schreiben wir jetzt. Sie können die Fehler in Android Studio vorerst ohne Bedenken ignorieren.
+ Sie werden vielleicht feststellen, dass dies auf Methoden beruht, die wir noch nicht geschrieben haben, z. B. `updateLoggedInUser()`, `clearSessionCookie()` und `getTasks()`. Diese Methoden schreiben wir jetzt. Sie können die Fehler in Android Studio vorerst ohne Bedenken ignorieren.
 
 Erklärung der Parameter:
 
@@ -760,14 +746,14 @@ Erklärung der Parameter:
 
   Der Rückruf verfügt über das Objekt „AuthenticationResult“, mit dem die Informationen „accesstoken“, „date expired“ und „idtoken“ bereitgestellt werden.
 
-> [AZURE.NOTE]Die Unternehmensportal-App von Microsoft Intune stellt die Brokerkomponente bereit und kann auf dem Gerät des Benutzers installiert werden. Entwickler sollten auf ihre Nutzung vorbereitet sein, da damit SSO für alle Anwendungen auf dem Gerät bereitgestellt werden kann. ADAL für Android nutzt das Brokerkonto, wenn im Authentifikator ein Benutzerkonto erstellt wird. Um den Broker verwenden zu können, müssen Entwickler ein spezielles redirectUri-Element für die Brokernutzung registrieren. „redirectUri“ liegt im Format msauth://packagename/Base64UrlencodedSignature vor. Sie können "redirectUri" für Ihre App abrufen, indem Sie das Skript `brokerRedirectPrint.ps1` oder den API-Aufruf `mContext.getBrokerRedirectUri()` nutzen. Die Signatur bezieht sich auf die Signaturzertifikate aus dem Google Play Store.
+> [AZURE.NOTE]	Die Unternehmensportal-App von Microsoft Intune stellt die Brokerkomponente bereit und kann auf dem Gerät des Benutzers installiert werden. Entwickler sollten auf ihre Nutzung vorbereitet sein, da damit SSO für alle Anwendungen auf dem Gerät bereitgestellt werden kann. ADAL für Android nutzt das Brokerkonto, wenn im Authentifikator ein Benutzerkonto erstellt wird. Um den Broker verwenden zu können, müssen Entwickler ein spezielles redirectUri-Element für die Brokernutzung registrieren. „redirectUri“ liegt im Format msauth://packagename/Base64UrlencodedSignature vor. Sie können "redirectUri" für Ihre App abrufen, indem Sie das Skript `brokerRedirectPrint.ps1` oder den API-Aufruf `mContext.getBrokerRedirectUri()` nutzen. Die Signatur bezieht sich auf die Signaturzertifikate aus dem Google Play Store.
 
  Ein Entwickler kann den Brokerbenutzer wie folgt überspringen:
 
     ```java
      AuthenticationSettings.Instance.setSkipBroker(true);
     ```
-> [AZURE.NOTE]Um die Komplexität dieser B2C-Schnellstartanleitung zu verringern, haben wir uns im Beispiel für das Auslassen des Brokers entschieden.
+> [AZURE.NOTE] Um die Komplexität dieser B2C-Schnellstartanleitung zu verringern, haben wir uns im Beispiel für das Auslassen des Brokers entschieden.
 
 Als Nächstes erstellen wir einige Hilfsmethoden, mit denen das Token während unserer Authentifizierungsaufrufe der Aufgaben-API allein abgerufen wird.
 
@@ -785,7 +771,7 @@ Als Nächstes erstellen wir einige Hilfsmethoden, mit denen das Token während u
     }
 ```
 
-Außerdem fügen wir einige Methoden hinzu, mit denen wir unser AuthenticationResult (mit unserem Token) für die globalen CONSTANTS festlegen und abrufen („set“ und „get“). Dies ist erforderlich, da unsere anderen Aktivitäten keinen Zugriff auf das Token hätten (z. B. zum Hinzufügen einer Aufgabe in `AddTaskActivity.java`), obwohl **sResult** von `ToDoActivity.java` in seinen Abläufen verwendet wird.
+Außerdem fügen wir einige Methoden hinzu, mit denen wir unser AuthenticationResult (mit unserem Token) für die globalen CONSTANTS festlegen und abrufen („set“ und „get“). Dies ist erforderlich, da unsere anderen Aktivitäten keinen Zugriff auf das Token hätten (z. B. zum Hinzufügen einer Aufgabe in `AddTaskActivity.java`), obwohl **sResult** von `ToDoActivity.java` in seinen Abläufen verwendet wird.
 
 ```
 
@@ -801,7 +787,7 @@ Außerdem fügen wir einige Methoden hinzu, mit denen wir unser AuthenticationRe
 
     
 ```
-### Schritt 12: Erstellen einer Methode zum Zurückgeben eines UserIdentifier-Elements
+### Schritt 12: Erstellen einer Methode zum Zurückgeben eines UserIdentifier-Elements
 
 ADAL für Android stellt den Benutzer in Form eines **UserIdentifier**-Objekts dar. So wird der Benutzer verwaltet, und wir wissen, ob derselbe Benutzer in unseren Aufrufen verwendet wird. Daher können wir uns auf den Cache verlassen und müssen keinen neuen Aufruf an den Server durchführen. Um dies zu vereinfachen, erstellen wir ein `getUserInfo()`-Element. So können wir ein UserIdentifier-Element zurückgeben, das wir für `acquireToken()` nutzen können. Außerdem erstellen wir eine getUniqueId()-Methode, mit der die ID des UserIdentifier-Elements in unserem Cache schnell zurückgegeben werden kann.
 
@@ -824,7 +810,7 @@ ADAL für Android stellt den Benutzer in Form eines **UserIdentifier**-Objekts d
     
 ```
  
-### Schritt 13: Schreiben von Hilfsmethoden
+### Schritt 13: Schreiben von Hilfsmethoden
 
 Wir müssen einige Hilfsmethoden schreiben, die uns beim Löschen der Cookies helfen und ein AuthenticationCallback-Element bereitstellen. Diese werden ausschließlich für das Beispiel verwendet, um sicherzustellen, dass wir uns beim Aufrufen unserer ToDo-Aktivität in einem bereinigten Zustand befinden.
 
@@ -849,7 +835,7 @@ Wir müssen einige Hilfsmethoden schreiben, die uns beim Löschen der Cookies he
     
 ```   
 
-### Schritt 14: Aufrufen der Aufgaben-API
+### Schritt 14: Aufrufen der Aufgaben-API
 
 Da unsere Aktivität jetzt bereit für die anspruchsvolle Aufgabe der Tokenbeschaffung ist, schreiben wir unsere API für den Zugriff auf den Aufgabenserver.
 
@@ -907,23 +893,14 @@ Zuerst schreiben wir unser `getTask`-Element:
  
  **In derselben Datei** mit dem Namen `ToDoActivity.java`
  
- ```
-    private URL getEndpointUrl() {
-        URL endpoint = null;
-        try {
-            endpoint = new URL(Constants.SERVICE_URL);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-        return endpoint;
-    }
+ ``` private URL getEndpointUrl() { URL endpoint = null; try { endpoint = new URL(Constants.SERVICE\_URL); } catch (MalformedURLException e) { e.printStackTrace(); } return endpoint; }
 
  ```
 
 
 Beachten Sie, dass wir das Zugriffstoken der Anforderung im folgenden Code hinzufügen:
 
-### Schritt 15: Schreiben einiger UX-Methoden
+### Schritt 15: Schreiben einiger UX-Methoden
 
 Für Android müssen wird einige Rückrufe behandeln, um die App zu betreiben. Dies sind `createAndShowDialog` und `onResume()`. Dies sollte Ihnen ziemlich einfach und vertraut vorkommen, wenn Sie bereits Android-Code geschrieben haben.
 
@@ -981,7 +958,7 @@ Das ist alles! Sie sollten nun über eine Datei `ToDoActivity.java` verfügen, d
     
 
 
-### Schritt 16: Ausführen der Beispiel-App
+### Schritt 16: Ausführen der Beispiel-App
 
 Abschließend werden Sie die App in Android Studio oder Eclipse erstellen und ausführen. Registrieren Sie sich bei der App, oder melden Sie sich bei der App an, und erstellen Sie Aufgaben für den angemeldeten Benutzer. Melden Sie sich ab, melden Sie sich als ein anderer Benutzer wieder an, und erstellen Sie für diesen Benutzer Aufgaben.
 
@@ -997,20 +974,16 @@ Als Referenz stellen wir das [vollständige Beispiel hier als ZIP-Datei](https:/
 
 #### Verschlüsselung
 
-Mit ADAL werden die Token verschlüsselt und standardmäßig unter SharedPreferences gespeichert. Sehen Sie sich die StorageHelper-Klasse an, um einen Einblick in die Details zu erhalten. Für Android wurde AndroidKeyStore für 4.3 (API18) zum sicheren Speichern privater Schlüssel eingeführt. ADAL nutzt dieses Verfahren für API18 und höher. Falls Sie ADAL für frühere SDK-Versionen verwenden möchten, müssen Sie unter „AuthenticationSettings.INSTANCE.setSecretKey“ einen geheimen Schlüssel angeben.
+Mit ADAL werden die Token verschlüsselt und standardmäßig unter SharedPreferences gespeichert. Sehen Sie sich die StorageHelper-Klasse an, um einen Einblick in die Details zu erhalten. Für Android wurde AndroidKeyStore für 4.3 (API18) zum sicheren Speichern privater Schlüssel eingeführt. ADAL nutzt dieses Verfahren für API18 und höher. Falls Sie ADAL für frühere SDK-Versionen verwenden möchten, müssen Sie unter „AuthenticationSettings.INSTANCE.setSecretKey“ einen geheimen Schlüssel angeben.
 
 #### Sitzungscookies in Webview
 
-In Android Webview werden Sitzungscookies nach dem Schließen der App nicht gelöscht. Sie können dies mit dem unten angegebenen Beispielcode behandeln:
-```
+In Android Webview werden Sitzungscookies nach dem Schließen der App nicht gelöscht. Sie können dies mit dem unten angegebenen Beispielcode behandeln: ```
 CookieSyncManager.createInstance(getApplicationContext());
 CookieManager cookieManager = CookieManager.getInstance();
 cookieManager.removeSessionCookie();
 CookieSyncManager.getInstance().sync();
-```
-Weitere Informationen zu Cookies: http://developer.android.com/reference/android/webkit/CookieSyncManager.html
+``` Weitere Informationen zu Cookies: http://developer.android.com/reference/android/webkit/CookieSyncManager.html
  
 
-<!---HONumber=AcomDC_1125_2015-->
-
-
+<!---HONumber=AcomDC_0224_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/04/2015" 
+	ms.date="02/21/2016" 
 	ms.author="robinsh"/>
 
 # Checkliste zu Leistung und Skalierbarkeit von Microsoft Azure Storage
@@ -102,10 +102,7 @@ Wenn sich Ihre Anwendung den Skalierbarkeitszielen für ein Speicherkonto näher
 -	Wenn Ihre Anwendung die Skalierbarkeitsziele erreicht, stellen Sie sicher, dass Sie exponentiell ansteigende Wartezeiten für Wiederholungsversuche verwenden (siehe [Wiederholungsversuche](#subheading14)). Sie sollten besser sicherstellen, dass Sie sich nicht an die Skalierbarkeitsziele annähern (mit einer der oben angegebenen Methoden), aber dies sorgt ebenfalls dafür, dass die Anwendung keine schnellen Wiederholungen versucht, sodass die Drosselung schlimmer wird.  
 
 ####Nützliche Ressourcen
-Die folgenden Links bieten zusätzliche Details zu Skalierbarkeitszielen: 
-–	Sie können die aktuellen Skalierbarkeitsziele unter [Ziele für Skalierbarkeit und Leistung des Azure-Speichers](storage-scalability-targets.md) anzeigen. 
-– 	Mehr über Speicherredundanzoptionen erfahren Sie unter [Azure Storage-Replikation](storage-redundancy.md) und im Blogbeitrag [Azure Storage-Redundanzoptionen und georedundanter Speicher mit Lesezugriff](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/11/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx). 
-–	Aktuelle Informationen zu den Preisdetails für Azure-Dienste finden Sie unter [Azure-Preise](https://azure.microsoft.com/pricing/overview/).
+Die folgenden Links bieten zusätzliche Details zu Skalierbarkeitszielen: – Sie können die aktuellen Skalierbarkeitsziele unter [Ziele für Skalierbarkeit und Leistung des Azure-Speichers](storage-scalability-targets.md) anzeigen. – Mehr über Speicherredundanzoptionen erfahren Sie unter [Azure Storage-Replikation](storage-redundancy.md) und im Blogbeitrag [Azure Storage-Redundanzoptionen und georedundanter Speicher mit Lesezugriff](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/11/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx). – Aktuelle Informationen zu den Preisdetails für Azure-Dienste finden Sie unter [Azure-Preise](https://azure.microsoft.com/pricing/overview/).
 
 ###Netzwerk
 Auch wenn die API-Aufrufe eine Rolle spielen, haben häufig die physischen Netzwerkeinschränkungen deutliche Auswirkungen auf die Leistung. Nachfolgend sind einige der Einschränkungen beschrieben, auf die Benutzer treffen können.
@@ -123,10 +120,10 @@ Weitere Informationen über Größen von virtuellen Computern und zur zugewiesen
 ####<a name="subheading4"></a>Standort
 In jeder verteilten Umgebung wird die beste Leistung erzielt, indem der Client in der Nähe des Servers platziert wird. Zum Zugriff auf den Azure-Speicher mit der niedrigsten Latenz befindet sich der beste Standort für den Client innerhalb derselben Azure-Region. Wenn Sie beispielsweise eine Azure-Website haben, die den Azure-Speicher verwendet, sollten Sie beide innerhalb derselben Region platzieren (z. B. Westeuropa oder Südostasien). Dadurch werden Latenz und Kosten verringert – zum Redaktionszeitpunkt war die Bandbreitennutzung innerhalb einer Region kostenlos.
 
-Wenn Ihre Clientanwendungen nicht in Azure gehostet werden (beispielsweise Apps für Mobilgeräte oder lokale Enterprise Services), wird die Latenz ebenfalls durch Platzierung des Speicherkontos in einer Region in der Nähe der Geräte, die darauf zugreifen, reduziert. Falls Ihre Clients weit verteilt sind (z. B. einige in Nordamerika und andere in Europa), sollten Sie die Verwendung mehrerer Speicherkonten in Betracht ziehen: eines in Nordamerika und eines in Europa. Dadurch wird die Latenz für Benutzer in beiden Regionen reduziert. Diese Vorgehensweise ist meist einfacher zu implementieren, wenn die in der Anwendung gespeicherten Daten speziell für bestimmte Benutzer gelten und keine Datenreplikation zwischen den Speicherkonten erforderlich ist. Für eine verbreitete Inhaltsverteilung wird ein CDN empfohlen. Weitere Details dazu finden Sie im nächsten Abschnitt.
+Wenn Ihre Clientanwendungen nicht in Azure gehostet werden (beispielsweise Apps für Mobilgeräte oder lokale Enterprise Services), wird die Latenz ebenfalls durch Platzierung des Speicherkontos in einer Region in der Nähe der Geräte, die darauf zugreifen, reduziert. Falls Ihre Clients weit verteilt sind (z. B. einige in Nordamerika und andere in Europa), sollten Sie die Verwendung mehrerer Speicherkonten in Betracht ziehen: eines in Nordamerika und eines in Europa. Dadurch wird die Latenz für Benutzer in beiden Regionen reduziert. Diese Vorgehensweise ist meist einfacher zu implementieren, wenn die in der Anwendung gespeicherten Daten speziell für bestimmte Benutzer gelten und keine Datenreplikation zwischen den Speicherkonten erforderlich ist. Für eine verbreitete Inhaltsverteilung wird ein CDN empfohlen. Weitere Details dazu finden Sie im nächsten Abschnitt.
 
 ###<a name="subheading5"></a>Inhaltsverteilung
-Manchmal muss eine Anwendung denselben Inhalt für mehrere Benutzer bereitstellen (z. B. ein Produkt-Demovideo auf der Startseite einer Website), die sich entweder in derselben oder in verschiedenen Regionen befinden. In diesem Fall sollten Sie ein Content Delivery Network (CDN) wie das Azure CDN verwenden, und das CDN nutzt den Azure-Speicher als Datenursprung. Im Gegensatz zum Azure-Speicherkonto, das in genau einer Region vorhanden ist und Inhalte nicht mit niedriger Latenz an andere Regionen liefern kann, verwendet das Azure CDN Server in mehreren Rechenzentren weltweit. Darüber hinaus unterstützt ein CDN in der Regel höhere Ausgangsgrenzen als ein einzelnes Speicherkonto.
+Manchmal muss eine Anwendung denselben Inhalt für mehrere Benutzer bereitstellen (z. B. ein Produkt-Demovideo auf der Startseite einer Website), die sich entweder in derselben oder in verschiedenen Regionen befinden. In diesem Fall sollten Sie ein Content Delivery Network (CDN) wie das Azure CDN verwenden, und das CDN nutzt den Azure-Speicher als Datenursprung. Im Gegensatz zum Azure-Speicherkonto, das in genau einer Region vorhanden ist und Inhalte nicht mit niedriger Latenz an andere Regionen liefern kann, verwendet das Azure CDN Server in mehreren Rechenzentren weltweit. Darüber hinaus unterstützt ein CDN in der Regel höhere Ausgangsgrenzen als ein einzelnes Speicherkonto.
 
 Weitere Informationen zum Azure CDN finden Sie unter [Azure CDN](https://azure.microsoft.com/services/cdn/).
 
@@ -194,7 +191,7 @@ In einigen Fällen kann der Speicherdienst Ihre Anwendung drosseln oder einfach 
 Beachten Sie, dass Verbindungsfehler sofort wiederholt werden können, da sie kein Ergebnis einer Drosselung sind und nur vorübergehend bestehen sollten.
 
 ####<a name="subheading15"></a>Nicht wiederholbare Fehler
-Die Clientbibliotheken erkennen, welche Fehler Wiederholungsversuche nach sich ziehen und welche nicht. Wenn Sie Ihren eigenen Code für den Speicher-REST-API schreiben, beachten Sie, dass einige Fehler auftreten, die nicht erneut versucht werden dürfen: z. B. die Antwort 400 (Ungültige Anforderung) weist darauf hin, dass die Clientanwendung eine Anforderung gesendet hat, die nicht verarbeitet werden konnte, weil sie ein unerwartetes Format hatte. Das erneute Senden dieser Anforderung führt jedes Mal zur selben Antwort, daher ist es nicht sinnvoll, es wiederholt zu versuchen. Wenn Sie Ihren eigenen Code für die Speicher-REST-API schreiben, beachten Sie, was die Fehlercodes bedeuten und ob sie Wiederholungsversuche nach sich ziehen sollten.
+Die Clientbibliotheken erkennen, welche Fehler Wiederholungsversuche nach sich ziehen und welche nicht. Wenn Sie Ihren eigenen Code für den Speicher-REST-API schreiben, beachten Sie, dass einige Fehler auftreten, die nicht erneut versucht werden dürfen: z. B. die Antwort 400 (Ungültige Anforderung) weist darauf hin, dass die Clientanwendung eine Anforderung gesendet hat, die nicht verarbeitet werden konnte, weil sie ein unerwartetes Format hatte. Das erneute Senden dieser Anforderung führt jedes Mal zur selben Antwort, daher ist es nicht sinnvoll, es wiederholt zu versuchen. Wenn Sie Ihren eigenen Code für die Speicher-REST-API schreiben, beachten Sie, was die Fehlercodes bedeuten und ob sie Wiederholungsversuche nach sich ziehen sollten.
 
 ####Nützliche Ressourcen
 Weitere Informationen zu Speicherfehlercodes finden Sie unter [Status- und Fehlercodes](http://msdn.microsoft.com/library/azure/dd179382.aspx) auf der Microsoft Azure-Website.
@@ -219,13 +216,13 @@ Beachten Sie, dass Kopien im selben Speicherkonto normalerweise sehr schnell abg
 Weitere Informationen finden Sie unter [Copy Blob](http://msdn.microsoft.com/library/azure/dd894037.aspx).
 
 ####<a name="subheading18"></a>Verwenden von AzCopy
-Das Azure-Speicherteam hat ein Befehlszeilentool namens „AzCopy“ veröffentlicht, das die Massenübertragung von vielen Blobs von, an und über Speicherkonten hinweg unterstützen soll. Dieses Tool ist für dieses Szenario optimiert und kann hohe Übertragungsraten erzielen. Die Verwendung wird für Massenszenarien beim Hochladen, Herunterladen und Kopieren empfohlen. Weitere Informationen und einen Download finden Sie [hier](storage-use-azcopy.md).
+Das Azure-Speicherteam hat ein Befehlszeilentool namens „AzCopy“ veröffentlicht, das die Massenübertragung von vielen Blobs von, an und über Speicherkonten hinweg unterstützen soll. Dieses Tool ist für dieses Szenario optimiert und kann hohe Übertragungsraten erzielen. Die Verwendung wird für Massenszenarien beim Hochladen, Herunterladen und Kopieren empfohlen. Weitere Informationen sowie den Download finden Sie unter [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy.md).
 
 ####<a name="subheading19"></a>Azure Import/Export-Dienst
-Für größere Datenmengen (mehr als 1 TB) bietet der Azure-Speicher einen Import-/Export-Dienst, der das Hochladen in und Herunterladen aus dem Blob-Speicher durch den Versand von Festplatten ermöglicht. Sie können Ihre Daten auf eine Festplatte speichern und zum Hochladen an Microsoft senden oder eine leere Festplatte zum Herunterladen der Daten an Microsoft schicken. Weitere Informationen dazu finden Sie [hier](storage-import-export-service.md). Dies kann sehr viel effizienter als das Hochladen/Herunterladen einer derartigen Datenmenge über das Netzwerk sein.
+Für größere Datenmengen (mehr als 1 TB) bietet der Azure-Speicher einen Import-/Export-Dienst, der das Hochladen in und Herunterladen aus dem Blob-Speicher durch den Versand von Festplatten ermöglicht. Sie können Ihre Daten auf eine Festplatte speichern und zum Hochladen an Microsoft senden oder eine leere Festplatte zum Herunterladen der Daten an Microsoft schicken. Weitere Informationen finden Sie unter [Verwenden des Microsoft Azure Import/Export-Diensts zum Übertragen von Daten in den Blobspeicher](storage-import-export-service.md). Dies kann sehr viel effizienter als das Hochladen/Herunterladen einer derartigen Datenmenge über das Netzwerk sein.
 
 ###<a name="subheading20"></a>Verwenden von Metadaten
-Der Blobdienst unterstützt Header-Anforderungen, die Metadaten zum Blob enthalten können. Wenn Ihre Anwendung beispielsweise die EXIF-Daten eines Fotos benötigt, kann sie das Foto herunterladen und diese extrahieren. Die Anwendung kann, um Bandbreite zu sparen und die Leistung zu verbessern, die EXIF-Daten in den Blob-Metadaten speichern, wenn die Anwendung das Foto hochgeladen hat. Sie können dann mit einer HEAD-Anfrage die EXIF-Daten in den Metadaten abrufen und so erhebliche Bandbreiten- und Verarbeitungszeit sparen, die jedes Mal zum Extrahieren der EXIF-Daten beim Lesen des Blob benötigt wird. Dies kann in Fällen nützlich sein, wenn Sie nur die Metadaten benötigen und nicht den vollständigen Inhalt eines Blobs. Beachten Sie, dass pro Blob nur 8 KB Metadaten gespeichert werden können (der Dienst akzeptiert keine Anfrage, mit der mehr als das gespeichert werden soll); wenn die Daten also diese Größe überschreiten, können Sie diese Vorgehensweise nicht anwenden.
+Der Blobdienst unterstützt Header-Anforderungen, die Metadaten zum Blob enthalten können. Wenn Ihre Anwendung beispielsweise die EXIF-Daten eines Fotos benötigt, kann sie das Foto herunterladen und diese extrahieren. Die Anwendung kann, um Bandbreite zu sparen und die Leistung zu verbessern, die EXIF-Daten in den Blob-Metadaten speichern, wenn die Anwendung das Foto hochgeladen hat. Sie können dann mit einer HEAD-Anfrage die EXIF-Daten in den Metadaten abrufen und so erhebliche Bandbreiten- und Verarbeitungszeit sparen, die jedes Mal zum Extrahieren der EXIF-Daten beim Lesen des Blob benötigt wird. Dies kann in Fällen nützlich sein, wenn Sie nur die Metadaten benötigen und nicht den vollständigen Inhalt eines Blobs. Beachten Sie, dass pro Blob nur 8 KB Metadaten gespeichert werden können (der Dienst akzeptiert keine Anfrage, mit der mehr als das gespeichert werden soll); wenn die Daten also diese Größe überschreiten, können Sie diese Vorgehensweise nicht anwenden.
 
 Ein Beispiel für das Abrufen der Blob-Metadaten mithilfe von .NET finden Sie unter [Festlegen und Abrufen von Eigenschaften und Metadaten](storage-properties-metadata.md).
 
@@ -246,7 +243,7 @@ Um viele Blobs schnell hochzuladen, laden Sie die Blobs parallel hoch. Dies funk
 ###<a name="subheading23"></a>Auswählen des richtigen Blobtyps
 Azure Storage unterstützt zwei Blobtypen: *Seitenblobs* und *Blockblobs*. Je nach Nutzungsszenario wirkt sich die Auswahl des Blobtyps auf die Leistung und Skalierbarkeit der Lösung aus. Block-Blobs sind geeignet, wenn Sie große Datenmengen effizient hochladen möchten: z. B. eine Clientanwendung, die Fotos oder Videos in einen Blob-Speicher hochladen muss. Seiten-Blobs sind für Anwendungen geeignet, die sequentielle Schreibvorgänge auf den Daten ausführen: z. B. werden Azure-VHDs als Seiten-Blobs gespeichert.
 
-Weitere Informationen finden Sie unter [Grundlegendes zu Blockblobs und Seitenblobs](http://msdn.microsoft.com/library/azure/ee691964.aspx).
+Weitere Informationen finden Sie unter [Grundlegendes zu Block-BLOBs, Anhang-BLOBS und Seiten-BLOBs](http://msdn.microsoft.com/library/azure/ee691964.aspx).
 
 ##Tabellen
 Zusätzlich zu den zuvor beschriebenen bewährten Vorgehensweisen für [Alle Dienste](#allservices) können die folgenden bewährten Vorgehensweisen speziell für den Tabellendienst angewendet werden.
@@ -283,7 +280,7 @@ Wie Sie Ihre Daten präsentieren und abfragen, ist der größte Faktor mit Auswi
 ####<a name="subheading27"></a>Tabellen und Partitionen
 Tabellen sind in Partitionen unterteilt. Jede in einer Partition gespeicherte Entität verwendet denselben Partitionsschlüssel und hat einen eindeutigen Zeilenschlüssel, damit sie innerhalb der Partition identifiziert werden kann. Partitionen bieten Vorteile, führen jedoch auch zu Skalierbarkeitsgrenzen.
 
--	Vorteile: Sie können die Entitäten innerhalb derselben Partition in einer einzigen, unteilbaren Batchtransaktion aktualisieren, die bis zu 100 separate Speichervorgänge enthalten kann (Gesamtgrößenlimit 4 MB). Bei derselben Menge abzurufender Entitäten können Sie auch die Daten innerhalb einer Partition effizienter abfragen als Daten, die sich über mehrere Partitionen verteilen (lesen Sie für noch mehr Empfehlungen zur Abfrage von Tabellendaten weiter).
+-	Vorteile: Sie können die Entitäten innerhalb derselben Partition in einer einzigen, unteilbaren Batchtransaktion aktualisieren, die bis zu 100 separate Speichervorgänge enthalten kann (Gesamtgrößenlimit 4 MB). Bei derselben Menge abzurufender Entitäten können Sie auch die Daten innerhalb einer Partition effizienter abfragen als Daten, die sich über mehrere Partitionen verteilen (lesen Sie für noch mehr Empfehlungen zur Abfrage von Tabellendaten weiter).
 -	Skalierbarkeitsgrenze: Für den Zugriff auf Entitäten, die in einer einzigen Partition gespeichert sind, kann kein Lastenausgleich erfolgen, da die Partitionen unteilbare Batchtransaktionen unterstützen. Aus diesem Grund ist das Skalierbarkeitsziel für eine einzelne Tabellenpartition niedriger als für den gesamten Tabellendienst.  
 
 Aufgrund dieser Eigenschaften von Tabellen und Partitionen sollten Sie die folgenden Entwurfsprinzipien beachten:
@@ -368,21 +365,21 @@ Sie können bis zu 32 Nachrichten aus einer Warteschlange in einem einzigen Vorg
 ###<a name=subheading43"></a>Abrufintervall für die Warteschlange
 Die meisten Anwendungen fragen Nachrichten aus einer Warteschlange ab. Für die Anwendung kann es sich dabei um die größte Quelle für Transaktionen handeln. Wählen Sie das Abrufintervall mit Bedacht aus: Abrufe, die zu häufig stattfinden, können dazu führen, dass die Anwendung die Skalierbarkeitsziele für die Warteschlange erreicht. Bei 200.000 Transaktionen für 0,01 US-Dollar (zum Redaktionszeitpunkt) betragen die Kosten für einen einzelnen Prozessor, der im Monat einen Abruf pro Sekunde macht, jedoch weniger als 15 Cent. Daher sind Kosten üblicherweise kein Auswahlkriterium für das Abrufintervall.
 
-Aktuelle Kosteninformationen finden Sie unter [Speicherpreisdetails](https://azure.microsoft.com/pricing/details/storage/).
+Aktuelle Kosteninformationen finden Sie unter [Preise für Azure Storage](https://azure.microsoft.com/pricing/details/storage/).
 
 ###<a name=subheading44"></a>UpdateMessage
 Sie können **UpdateMessage** verwenden, um das Unsichtbarkeits-Zeitlimit zu erhöhen oder die Statusinformationen einer Nachricht zu aktualisieren. Trotz der Möglichkeiten dieser Option sollten Sie beachten, dass jeder **UpdateMessage**-Vorgang für das Skalierbarkeitsziel zählt. Dies kann jedoch sehr viel effizienter sein als ein Workflow, der einen Auftrag von einer Warteschlange zur nächsten verschiebt, wenn der jeweilige Schritt abgeschlossen ist. Mithilfe des Vorgangs **UpdateMessage** kann Ihre Anwendung den Auftragsstatus in der Nachricht speichern und dann weiterarbeiten, statt die Nachricht jedes Mal für den nächsten Schritt erneut in die Warteschlange zu stellen.
 
-Weitere Informationen finden Sie im Artikel [Ändern des Inhalts von Nachrichten in der Warteschlange](../storage-dotnet-how-to-use-queues/#change-contents).
+Weitere Informationen finden Sie im Artikel [Ändern des Inhalts von Nachrichten in der Warteschlange](storage-dotnet-how-to-use-queues#change-the-contents-of-a-queued-message).
 
 ###<a name=subheading45"></a>Anwendungsarchitektur
 Verwenden Sie Warteschlangen, um die Anwendungsarchitektur skalierbar zu machen. Nachfolgend sind einige Möglichkeiten aufgelistet, wie Sie Warteschlangen verwenden können, um Ihre Anwendung skalierbarer zu gestalten:
 
--	Sie können Warteschlangen verwenden, um Arbeits-Backlogs zur Verarbeitung zu erstellen und die Arbeitsauslastung in der Anwendung gleichmäßig zu verteilen. Sie können z. B. Benutzeranfragen in die Warteschlange stellen, um prozessorintensive Arbeiten durchzuführen, wie das Ändern der Größe hochgeladener Bilder.
+-	Sie können Warteschlangen verwenden, um Arbeits-Backlogs zur Verarbeitung zu erstellen und die Arbeitsauslastung in der Anwendung gleichmäßig zu verteilen. Sie können z. B. Benutzeranfragen in die Warteschlange stellen, um prozessorintensive Arbeiten durchzuführen, wie das Ändern der Größe hochgeladener Bilder.
 -	Sie können Warteschlangen verwenden, um Teile Ihrer Anwendung zu entkoppeln, damit diese unabhängig skaliert werden können. Beispielsweise kann ein Web-Front-End Umfrageergebnisse von Benutzern zur späteren Analyse und Speicherung in eine Warteschlange stellen. Sie können mehr Workerrollen-Instanzen hinzufügen, um die Warteschlangendaten nach Bedarf zu verarbeiten.  
 
 ##Zusammenfassung
 In diesem Artikel wurden einige der häufigsten bewährten Vorgehensweisen zur Leistungsoptimierung bei der Verwendung des Azure-Speichers erläutert. Wir empfehlen jedem Anwendungsentwickler, seine Anwendung anhand dieser Vorgehensweisen zu überprüfen und ggf. die Empfehlungen umzusetzen, um bessere Leistung für ihre Anwendungen zu erzielen, die Azure-Speicher verwenden.
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0224_2016-->
