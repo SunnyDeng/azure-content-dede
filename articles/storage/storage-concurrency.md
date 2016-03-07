@@ -281,6 +281,6 @@ Weitere Informationen zu Azure Storage finden Sie unter:
 - [Microsoft Azure Storage-Startseite](https://azure.microsoft.com/services/storage/)
 - [Einführung in Azure Storage](storage-introduction.md)
 - Storage – Erste Schritte mit [Blobs](storage-dotnet-how-to-use-blobs.md), [Tabellen](storage-dotnet-how-to-use-tables.md), [Warteschlangen](storage-dotnet-how-to-use-queues.md) und [Dateien](storage-dotnet-how-to-use-files.md)
-- Speicherarchitektur – [Windows Azure Storage: A Highly Available Cloud Storage Service with Strong Consistency](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx) (Microsoft Azure Storage: Ein hochverfügbarer Cloudspeicherdienst mit starker Konsistenz)
+- Speicherarchitektur – [Microsoft Azure Storage: A Highly Available Cloud Storage Service with Strong Consistency](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx) (Microsoft Azure Storage: Ein hochverfügbarer Cloudspeicherdienst mit starker Konsistenz)
 
 <!---HONumber=AcomDC_0224_2016-->
