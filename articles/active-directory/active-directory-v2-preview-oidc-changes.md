@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Änderungen am Azure AD v2.0-App-Modell | Microsoft Azure"
-	description="Enthält eine Beschreibung der Änderungen, die an den Protokollen des App-Modells v2. 0 (öffentliche Vorschau) vorgenommen werden."
+	pageTitle="Änderungen am Azure AD v2.0-Endpunkt | Microsoft Azure"
+	description="Enthält eine Beschreibung der Änderungen, die an den Protokollen des App-Modells v2. 0 (öffentliche Vorschau) vorgenommen werden."
 	services="active-directory"
 	documentationCenter=""
 	authors="dstrockis"
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/11/2016"
+	ms.date="02/20/2016"
 	ms.author="dastrock"/>
 
 # Wichtige Updates für die v2.0-Authentifizierungsprotokolle
@@ -67,12 +67,10 @@ Bisher wurde vom v2.0-Endpunkt ein JSON-Objekt mit base64-Codierung in Tokenantw
 https://login.microsoftonline.com/common/oauth2/v2.0/token
 ```
 
-Die Antwort sieht wie das folgende JSON-Objekt aus:
-
-```
+Die Antwort sieht wie das folgende JSON-Objekt aus: ```
 { 
 	"token_type": "Bearer",
-	"expires_in": "3599",
+	"expires_in": 3599,
 	"scope": "https://outlook.office.com/mail.read",
 	"access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsI...",
 	"refresh_token": "OAAABAAAAiL9Kn2Z27UubvWFPbm0gL...",
@@ -87,7 +85,7 @@ Wir entfernen nun den Wert `profile_info`. Machen Sie sich aber keine Sorgen: Di
 ```
 { 
 	"token_type": "Bearer",
-	"expires_in": "3599",
+	"expires_in": 3599,
 	"scope": "https://outlook.office.com/mail.read",
 	"access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsI...",
 	"refresh_token": "OAAABAAAAiL9Kn2Z27UubvWFPbm0gL...",
@@ -102,7 +100,7 @@ Im Laufe der nächsten beiden Wochen sollten Sie Ihre App so codieren, dass die 
 > [AZURE.IMPORTANT] **Ihre Aufgabe: Stellen Sie sicher, dass Ihre App nicht vom Vorhandensein des Werts `profile_info` abhängig ist.**
 
 ### Entfernen von „id\_token\_expires\_in“
-Ähnlich wie `profile_info` entfernen wir auch den Parameter `id_token_expires_in` aus Antworten. Bisher hat der v2.0-Endpunkt einen Wert für `id_token_expires_in` zusammen mit jeder id\_token-Antwort zurückgegeben, z. B. in einer Autorisierungsantwort:
+Ähnlich wie `profile_info` entfernen wir auch den Parameter `id_token_expires_in` aus Antworten. Bisher hat der v2.0-Endpunkt einen Wert für `id_token_expires_in` zusammen mit jeder id\_token-Antwort zurückgegeben, z. B. in einer Autorisierungsantwort:
 
 ```
 https://myapp.com?id_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsI...&id_token_expires_in=3599...
@@ -113,7 +111,7 @@ Oder in einer Tokenantwort:
 ```
 { 
 	"token_type": "Bearer",
-	"id_token_expires_in": "3599",
+	"id_token_expires_in": 3599,
 	"scope": "openid",
 	"id_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsI...",
 	"refresh_token": "OAAABAAAAiL9Kn2Z27UubvWFPbm0gL...",
@@ -145,7 +143,7 @@ Bei diesem Update ändern wir die Informationen, auf die für Ihre App über den
 ```
 { 
 	"aud": "580e250c-8f26-49d0-bee8-1c078add1609",
-	"iss": "https://login.microsoftonline.com/b9410318-09af-49c2-b0c3-653adc1f376e/v2.0",
+	"iss": "https://login.microsoftonline.com/b9410318-09af-49c2-b0c3-653adc1f376e/v2.0 ",
 	"iat": 1449520283,
 	"nbf": 1449520283,
 	"exp": 1449524183,
@@ -186,7 +184,7 @@ https://login.microsoftonline.com/{some-guid}/v2.0/
 Die GUID war die tenantId des Azure AD-Mandanten, von dem das Token ausgestellt wurde. Mit diesen Änderungen lautet der Ausstellerwert wie folgt:
 
 ```
-https://login.microsoftonline.com/{some-guid}/v2.0
+https://login.microsoftonline.com/{some-guid}/v2.0 
 ```
 
 (in beiden Token und im OpenID Connect Discovery-Dokument)
@@ -212,12 +210,10 @@ Falls Sie weitere Fragen zum Umfang der Änderungen haben, erreichen Sie uns bei
 ## Wie häufig werden Protokolländerungen durchgeführt?
 Im Moment stehen keine weiteren beeinträchtigenden Änderungen von Authentifizierungsprotokollen an. Wir fassen diese Änderungen bewusst unter einer Version zusammen, damit Sie diese Art von Aktualisierungsprozess nicht in Kürze noch einmal durchführen müssen. Natürlich werden wir dem konvergierten v2.0-Authentifizierungsdienst auch weiterhin Features hinzufügen, die Sie nutzen können. Diese Änderungen sind voraussichtlich aber ergänzender Art und sollten nicht zu einer Beeinträchtigung des Codes führen.
 
-Allerdings befindet sich der v2.0-Endpunkt immer noch in der Vorschauphase. Seien Sie also vorsichtig beim Veröffentlichen von Apps für die Produktion, die davon abhängig sind, und seien Sie auf die Einarbeitung von Änderungen vorbereitet, wenn es zu einer Situation wie dieser kommt. Erst wenn der v2.0-Endpunkt den Status der allgemeinen Verfügbarkeit (General Availability, GA) erreicht hat, können wir Entwicklern empfehlen, basierend auf dem aktuellen Status des Diensts Abhängigkeiten einzurichten.
-
-Abschließend möchten wir Ihnen dafür danken, dass Sie während dieser Vorschauphase viele verschiedene Dinge ausprobiert haben. Die Erkenntnisse und Erfahrungen unserer „Early Adopters“ sind schon jetzt sehr nützlich, und wir hoffen, dass Sie uns Ihre Meinungen und Ideen auch weiterhin mitteilen.
+Abschließend möchten wir Ihnen dafür danken, dass Sie während der Vorschauphase viele verschiedene Dinge ausprobiert haben. Die Erkenntnisse und Erfahrungen unserer „Early Adopters“ sind schon jetzt sehr nützlich, und wir hoffen, dass Sie uns Ihre Meinungen und Ideen auch weiterhin mitteilen.
 
 Viel Spaß beim Programmieren!
 
 Microsoft Identity Division
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0224_2016-->

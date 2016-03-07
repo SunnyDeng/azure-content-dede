@@ -13,10 +13,13 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="01/19/2016"
+   ms.date="02/22/2016"
    ms.author="stepsic"/>
 
 #JavaScript-API-App
+
+>[AZURE.NOTE] Diese Version des Artikels gilt für die Logik-Apps-Schemaversion 2014-12-01-preview.
+
 Die JavaScript-API-App bietet Ihnen eine gute Möglichkeit, einfache JavaScript-Ausdrücke auszuführen, *während Ihre Logik-App ausgeführt wird*.
 
 ##Wann sollten Sie diese API-App verwenden?
@@ -35,7 +38,7 @@ Um die JavaScript-API-App verwenden zu können, müssen Sie zunächst eine Insta
 ###Trigger
 Sie können einen Trigger erstellen, der den Logik-App-Dienst abruft (in einem von Ihnen definierten Intervall). Wenn Inhalt zurückgegeben wird, wird die Logik-App ausgeführt, andernfalls wartet sie bis zur Überprüfung im nächsten Abrufintervall.
 
-Die Eingaben für den Trigger sind: – **JavaScript-Ausdruck** – Ein Ausdruck, der ausgewertet wird. Er wird in einer Funktion aufgerufen und muss `false` zurückgeben, wenn die Logik-App nicht ausgeführt werden soll. Er kann beliebige Werte zurückgeben, wenn die Logik-App ausgeführt werden soll. Sie können den Inhalt der Antwort in den Aktionen der Logik-App verwenden. – **Kontextobjekt** – Ein optionales Objekt, das an den Trigger übergeben werden kann. Sie können beliebig viele Eigenschaften definieren, aber die Entität der obersten Ebene muss ein Objekt sein, z. B. `{ "bar" : 0}`.
+Die Eingaben für den Trigger sind: - **JavaScript-Ausdruck** - Ein Ausdruck, der ausgewertet wird. Er wird in einer Funktion aufgerufen und muss `false` zurückgeben, wenn die Logik-App nicht ausgeführt werden soll. Er kann beliebige Werte zurückgeben, wenn die Logik-App ausgeführt werden soll. Sie können den Inhalt der Antwort in den Aktionen der Logik-App verwenden. - **Kontextobjekt** - Ein optionales Objekt, das an den Trigger übergeben werden kann. Sie können beliebig viele Eigenschaften definieren, aber die Entität der obersten Ebene muss ein Objekt sein, z. B. `{ "bar" : 0}`.
 
 Angenommen, Sie verfügen über einen einfachen Trigger, der die Logik-App nur zwischen :15 und :30 einer Stunde ausführt:
 
@@ -47,7 +50,7 @@ var d = new Date(); return (d.getMinutes() > 15) && (d.getMinutes() < 30);
 
 Ebenso können Sie eine auszuführende Aktion bereitstellen.
 
-Die Eingaben für die Aktion sind: – **JavaScript-Ausdruck** – Ein Ausdruck, der ausgewertet wird. Sie müssen die `return`-Anweisung aufnehmen, um Inhalte abzurufen. – **Kontextobjekt** – Ein optionales Objekt, das an den Trigger übergeben werden kann. Sie können beliebig viele Eigenschaften definieren, aber die Entität der obersten Ebene muss ein Objekt sein, z. B. `{ "bar" : 0}`.
+Die Eingaben für die Aktion sind: - **JavaScript-Ausdruck** - Ein Ausdruck, der ausgewertet wird. Sie müssen die `return`-Anweisung aufnehmen, um Inhalte abzurufen. – **Kontextobjekt** – Ein optionales Objekt, das an den Trigger übergeben werden kann. Sie können beliebig viele Eigenschaften definieren, aber die Entität der obersten Ebene muss ein Objekt sein, z. B. `{ "bar" : 0}`.
 
 Angenommen, Sie verwenden den Office 365-Trigger **Neue E-Mail**. Damit wird das folgende Objekt zurückgegeben: ```
 {
@@ -91,4 +94,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 <!--Links -->
 [Creating a Logic App]: app-service-logic-create-a-logic-app.md
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0224_2016-->

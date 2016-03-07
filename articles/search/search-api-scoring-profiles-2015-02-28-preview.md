@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Bewertungsprofile (Azure Search-REST-API Version 2015-02-28-Preview) | Microsoft Azure | Gehosteter Cloudsuchdienst"
+	pageTitle="Bewertungsprofile (Azure Search-REST-API, Version 2015-02-28-Preview) | Microsoft Azure | Azure Search-Vorschau-API"
 	description="Azure Search ist ein gehosteter Cloudsuchdienst, der die Optimierung der Rangfolge von Ergebnissen basierend auf benutzerdefinierten Bewertungsprofilen unterstützt."
 	services="search"
 	documentationCenter=""
@@ -14,11 +14,11 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.author="heidist"
-	ms.date="11/04/2015" />
+	ms.date="02/18/2016" />
 
 # Bewertungsprofile (Azure Search REST-API Version 2015-02-28-Preview)
 
-> [AZURE.NOTE]Dieser Artikel beschreibt die Bewertungsprofile in [2015-02-28-Preview](search-api-2015-02-28-preview.md). Derzeit besteht kein Unterschied zwischen der `2015-02-28`-Version, die auf [MSDN](http://msdn.microsoft.com/library/azure/mt183328.aspx) dokumentiert ist, und der hier beschriebenen `2015-02-28-Preview`-Version.
+> [AZURE.NOTE] Dieser Artikel beschreibt die Bewertungsprofile in [2015-02-28-Preview](search-api-2015-02-28-preview.md). Zurzeit besteht kein Unterschied zwischen der Version `2015-02-28`, die auf [MSDN](http://msdn.microsoft.com/library/azure/mt183328.aspx) dokumentiert ist, und der hier beschriebenen Version `2015-02-28-Preview`. Wir stellen dieses Dokument jedoch trotzdem bereit, damit die gesamte API dokumentiert ist.
 
 ## Übersicht
 
@@ -55,7 +55,7 @@ Um dieses Bewertungsprofil zu verwenden, muss die Abfrage so formuliert werden, 
 
     GET /indexes/hotels/docs?search=inn&scoringProfile=geo&scoringParameter=currentLocation:-122.123,44.77233&api-version=2015-02-28-Preview
 
-Diese Abfrage sucht nach dem Begriff "inn" und übergibt die aktuelle Position. Beachten Sie, dass diese Abfrage weitere Parameter einbezieht, z. B. `scoringParameter`. Eine Beschreibung der Abfrageparameter finden Sie unter [Dokumente durchsuchen (Azure Search-API)](search-api-2015-02-28-preview/#SearchDocs.md).
+Diese Abfrage sucht nach dem Begriff "inn" und übergibt die aktuelle Position. Beachten Sie, dass diese Abfrage weitere Parameter einbezieht, z. B. `scoringParameter`. Eine Beschreibung der Abfrageparameter finden Sie unter [Dokumente durchsuchen (Azure Search-API)](search-api-2015-02-28-preview/#SearchDocs).
 
 Klicken Sie auf [Beispiel](#example), um ein ausführlicheres Beispiel für ein Bewertungsprofil zu überprüfen.
 
@@ -67,7 +67,7 @@ Standardmäßig wird eine Suchbewertung auf Basis der statistischen Eigenschafte
 
 Wenn keine benutzerdefinierte Sortierung erfolgt, werden die Ergebnisse nach Suchbewertung sortiert, bevor sie an die aufrufende Anwendung zurückgegeben werden. Wenn `$top` nicht angegeben ist, werden die 50 Elemente mit der höchsten Suchbewertung zurückgegeben.
 
-Suchbewertungswerte können in einem Resultset wiederholt vorkommen. Es können z. B. 10 Elemente mit einer Bewertung von 1,2, 20 Elemente mit einer Bewertung von 1,0 und 20 Elemente mit einer Bewertung von 0,5 vorliegen. Wenn mehrere Treffer dieselbe Suchbewertung aufweisen, ist die Sortierung von Elementen mit gleicher Bewertung nicht definiert und somit auch nicht stabil. Führen Sie die Abfrage erneut aus, um zu sehen, wie sich die Position der Elemente ändert. Wenn zwei Elemente mit identischer Bewertung vorliegen, kann nicht garantiert werden, welches Element zuerst angezeigt wird.
+Suchbewertungswerte können in einem Resultset wiederholt vorkommen. Es können z. B. 10 Elemente mit einer Bewertung von 1,2, 20 Elemente mit einer Bewertung von 1,0 und 20 Elemente mit einer Bewertung von 0,5 vorliegen. Wenn mehrere Treffer dieselbe Suchbewertung aufweisen, ist die Sortierung von Elementen mit gleicher Bewertung nicht definiert und somit auch nicht stabil. Führen Sie die Abfrage erneut aus, um zu sehen, wie sich die Position der Elemente ändert. Wenn zwei Elemente mit identischer Bewertung vorliegen, kann nicht garantiert werden, welches Element zuerst angezeigt wird.
 
 ## Verwenden der benutzerdefinierten Bewertung
 
@@ -339,7 +339,7 @@ Interpolationen ermöglichen Ihnen die Definition der Steigung, in der die Bewer
 <a name="bkmk_boostdur"></a>
 ##Festlegen von boostingDuration
 
-`boostingDuration` ist ein Attribut der Funktion "freshness". Sie können damit eine Ablaufdauer festlegen, nach der die Verstärkung für ein bestimmtes Dokument beendet wird. Um beispielsweise eine Produktlinie oder Marke für einen zehntägigen Werbezeitraum zu verstärken, können Sie den zehntägigen Zeitraum für diese Dokumente z. B. als "P10D" angeben. Oder geben Sie "-P7D" an, um bevorstehende Ereignisse in der nächsten Woche zu verstärken.
+`boostingDuration` ist ein Attribut der Funktion "freshness". Sie können damit eine Ablaufdauer festlegen, nach der die Verstärkung für ein bestimmtes Dokument beendet wird. Um beispielsweise eine Produktlinie oder Marke für einen zehntägigen Werbezeitraum zu verstärken, können Sie den zehntägigen Zeitraum für diese Dokumente z. B. als "P10D" angeben. Oder geben Sie "-P7D" an, um bevorstehende Ereignisse in der nächsten Woche zu verstärken.
 
 `boostingDuration` muss als XSD-Wert "dayTimeDuration" formatiert sein (eine eingeschränkte Teilmenge eines ISO 8601-Zeitdauerwerts). Das Muster hierfür lautet wie folgt:
 
@@ -373,4 +373,4 @@ Weitere Beispiele finden Sie unter [XML-Schema: Datentypen (W3.org-Website)](htt
 <!--Image references-->
 [1]: ./media/search-api-scoring-profiles-2015-02-28-Preview/scoring_interpolations.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0224_2016-->

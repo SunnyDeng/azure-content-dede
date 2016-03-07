@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na" 
-   ms.date="12/17/2015"
+   ms.date="01/21/2016"
    ms.author="guayan"/>
 
 # Registrieren einer Microsoft-verwalteten API oder einer IT-verwalteten API
@@ -26,7 +26,7 @@ Damit Sie **Microsoft-verwaltete** oder **IT-verwaltete** APIs verwenden können
 
 - Registrieren einer vorgefertigten Microsoft-verwalteten API oder einer IT-verwalteten API (in diesem Thema)
 - Registrieren einer Web-App, einer API-App und einer mobilen App, die in Ihrer [App Service-Umgebung](powerapps-register-api-hosted-in-app-service.md) gehostet werden
-- Registrieren eigener Swagger-APIs mit einer [Swagger 2.0-API-Definition](powerapps-register-existing-api-from-api-definition.md)
+- Registrieren eigener Swagger-APIs mit einer [Swagger 2.0-API-Definition](powerapps-register-existing-api-from-api-definition.md)
 
 Dieser Artikel konzentriert sich auf das **Registrieren von vorgefertigten Microsoft-verwalteten APIs und von IT-verwalteten APIs**.
 
@@ -42,7 +42,7 @@ Die **Microsoft-verwalteten** APIs werden mit PowerApps Enterprise bereitgestell
 Einige zusätzliche Vorteile sind:
 
 - Sie erhalten alle Microsoft-verwalteten APIs, die für Sie verfügbar sind, um Ihre eigene Instanz zu registrieren. 
-- Die Ressourcen, einschließlich Netzwerk, Arbeitsspeicher oder Sicherheitskonfigurationen, werden automatisch überwacht. Wenn Sie z. B. mehr Arbeitsspeicher benötigen, um Excel-Daten in Ihrer App anzuzeigen, wird automatisch mehr Arbeitsspeicher hinzugefügt. 
+- Die Ressourcen, einschließlich Netzwerk, Arbeitsspeicher oder Sicherheitskonfigurationen, werden automatisch überwacht. Wenn Sie z. B. mehr Arbeitsspeicher benötigen, um Excel-Daten in Ihrer App anzuzeigen, wird automatisch mehr Arbeitsspeicher hinzugefügt. 
 - Eine Vertrauensstellung zwischen Ihrer App und der API, etwa Office und Twitter, wird automatisch erstellt. 
 
 
@@ -70,12 +70,12 @@ Einige zusätzliche Vorteile sind:
 
 - Die Ressourcen, einschließlich Netzwerk, Arbeitsspeicher oder Sicherheitskonfigurationen, werden von Ihnen überwacht. Wenn Sie beispielsweise mehr Arbeitsspeicher benötigen, um Excel-Daten in Ihrer App anzuzeigen, steuern Sie, wie viel Arbeitsspeicher in Ihrer Umgebung hinzugefügt werden soll. 
 - Sie richten Sie die Vertrauensstellung zwischen Ihren Apps und der API ein und kontrollieren die Sicherheit zwischen den Apps und der API. Beispielsweise bestimmen Sie, ob die Office 365-API Microsoft-verwaltet sein kann (automatische Vertrauensstellung), oder ob die Office 365-API in Ihrer Umgebung (erstellen Sie Ihre eigene Vertrauensstellung) verwendet werden soll. 
-- **Alle** Microsoft-verwalteten APIs können auch IT-verwaltete APIs sein. Dies ist z. B. möglich, wenn Sie eine eigene Instanz von Office 365 erstellen und vollständige Kontrolle über diese Instanz haben. Sie können dann Ihre IT-verwaltete Office 365-API und die Microsoft-verwaltete Office 365-API in derselben Umgebung verwenden. Dies hängt tatsächlich von den Anforderungen Ihrer App ab.
+- **Alle** Microsoft-verwalteten APIs können auch IT-verwaltete APIs sein. Dies ist z. B. möglich, wenn Sie eine eigene Instanz von Office 365 erstellen und vollständige Kontrolle über diese Instanz haben. Sie können dann Ihre IT-verwaltete Office 365-API und die Microsoft-verwaltete Office 365-API in derselben Umgebung verwenden. Dies hängt tatsächlich von den Anforderungen Ihrer App ab.
 - Wenn Sie Verbindungen mit lokalen Systemen herstellen oder die Bing-Suche-API verwenden, steuern Sie Sicherheit, Authentifizierung, Lizenzierung und vieles mehr.
 
 
 #### IT-verwaltete APIs
-> [AZURE.NOTE]Es sei daran erinnert, dass **alle** Microsoft-verwalteten APIs auch IT-verwaltete APIs sein können. Die folgenden APIs sind nur IT-verwaltete APIs. Sie können keine Microsoft-verwalteten APIs sein.
+> [AZURE.NOTE] Es sei daran erinnert, dass **alle** Microsoft-verwalteten APIs auch IT-verwaltete APIs sein können. Die folgenden APIs sind nur IT-verwaltete APIs. Sie können keine Microsoft-verwalteten APIs sein.
 
 API | Beschreibung | Link zu Schritten
 --- | --- | ---
@@ -107,17 +107,18 @@ In der folgenden Tabelle sind die Funktionen von Microsoft-verwalteten und IT-ve
 
 ## Registrieren einer Microsoft-verwalteten oder IT-verwalteten API
 
-1. Wählen Sie im [Azure-Portal](https://portal.azure.com/) die Option **PowerApps** und dann **Manage APIs** aus: ![][17]
-2. Wählen Sie in „Manage APIs“ die Option **Add** aus: ![][18]  
-3. Geben Sie in **Add API** die API-Eigenschaften ein:  
+1. Melden Sie sich mit Ihrem Geschäftskonto (*IhrBenutzername*@*IhrUnternehmen*.com) beim [Azure-Portal](https://portal.azure.com/) an. Sie werden automatisch mit Ihrem Unternehmensabonnement angemeldet.
+2. Wählen Sie **Durchsuchen**, **PowerApps** und dann **APIs verwalten** aus: ![][17].
+3. Wählen Sie in „Manage APIs“ die Option **Add** aus: ![][18]  
+4. Geben Sie in **Add API** die API-Eigenschaften ein:  
 
 	- Geben Sie unter **Name** einen Namen für die API ein. Beachten Sie, dass der eingegebene Name in die Laufzeit-URL der API eingefügt wird. Geben Sie einen aussagekräftigen und innerhalb Ihrer Organisation eindeutigen Namen ein.
 	- Wählen Sie in **Source** die Option **From available APIs** aus: ![][19]
-4. Wählen Sie **API** aus, und wählen Sie dann die API aus, die Sie registrieren möchten: ![][20]
-5. Wählen Sie Ihre spezielle API aus, und fügen Sie alle konfigurierbaren Eigenschaften hinzu.
-6. Wählen Sie **ADD** aus, um diese Schritte abzuschließen.
+5. Wählen Sie **API** aus, und wählen Sie dann die API aus, die Sie registrieren möchten: ![][20]
+6. Wählen Sie Ihre spezielle API aus, und fügen Sie alle konfigurierbaren Eigenschaften hinzu.
+7. Wählen Sie **ADD** aus, um diese Schritte abzuschließen.
 
-> [AZURE.TIP]Wenn Sie eine API registrieren, wird diese in Ihrer App Service-Umgebung registriert. Nach der Registrierung in der App Service-Umgebung kann sie von anderen Apps innerhalb der gleichen App Service-Umgebung verwendet werden.
+> [AZURE.TIP] Wenn Sie eine API registrieren, wird diese in Ihrer App Service-Umgebung registriert. Nach der Registrierung in der App Service-Umgebung kann sie von anderen Apps innerhalb der gleichen App Service-Umgebung verwendet werden.
 
 
 ## Zusammenfassung und nächste Schritte
@@ -151,4 +152,4 @@ In diesem Thema haben Sie erfahren, wie Sie eine eigene Instanz der verfügbaren
 [42]: ./media/powerapps-register-from-available-apis/sqlserver.png
 [43]: ./media/powerapps-register-from-available-apis/twitter.png
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0224_2016-->

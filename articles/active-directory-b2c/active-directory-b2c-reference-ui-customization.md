@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Azure Active Directory B2C-Vorschau: Anpassung der Benutzeroberfläche (UI) | Microsoft Azure"
-	description="Ein Thema über das Anpassungsfeatures für die Benutzeroberfläche (UI) in Azure Active Directory B2C"
+	description="Ein Thema über die Anpassungsfeatures für die Benutzeroberfläche (UI) in Azure Active Directory B2C"
 	services="active-directory-b2c"
 	documentationCenter=""
 	authors="swkrish"
@@ -18,40 +18,40 @@
 
 # Azure Active Directory B2C-Vorschau: Anpassen der Azure AD B2C-Benutzeroberfläche (UI)
 
-Benutzerfreundlichkeit ist in einer kundenorientierten Anwendung entscheidend. Dies ist der Unterschied zwischen einer guten Anwendung und einer hervorragenden – und zwischen lediglich aktiven Consumern und wirklich engagierten. Azure Active Directory (AD) B2C ermöglicht es Ihnen, die Seiten für die Registrierung und Anmeldung von Consumern (*siehe Hinweis unten*) und für die Profilbearbeitung mit einer präzisen Kontrolle anzupassen.
+Benutzerfreundlichkeit ist in einer kundenorientierten Anwendung entscheidend. Dies ist der Unterschied zwischen einer guten Anwendung und einer hervorragenden – und zwischen lediglich aktiven Consumern und wirklich engagierten. Azure Active Directory (Azure AD) B2C ermöglicht es Ihnen, die Seiten für die Registrierung und Anmeldung von Endkunden (*siehe Hinweis unten*) und für die Profilbearbeitung mit einer präzisen Kontrolle anzupassen.
 
 > [AZURE.NOTE]
 Gegenwärtig sind Anmeldeseiten für lokale Konten, Überprüfungs-E-Mails und Seiten zum eigenständigen Zurücksetzen des Kennworts nur mithilfe des [Features für Unternehmensbranding](../active-directory/active-directory-add-company-branding.md) anpassbar, nicht durch die Mechanismen, die in diesem Artikel beschrieben sind.
 
 Dieser Artikel enthält Folgendes:
 
-- Übersicht über das Anpassungsfeature für die Seitenbenutzeroberfläche (UI).
+- Das Anpassungsfeature für die Seitenbenutzeroberfläche (UI).
 - Ein Hilfsprogramm, mit dem Sie das Anpassungsfeature für die Seiten-UI mit unserem Beispielinhalt testen können.
 - Die wichtigsten UI-Elemente in jedem Seitentyp.
 - Bewährte Methoden beim Üben des Umgangs mit diesem Feature.
 
 [AZURE.INCLUDE [active-directory-b2c-preview-note](../../includes/active-directory-b2c-preview-note.md)]
 
-## Anpassungsfeature für die Seitenbenutzeroberfläche (UI)
+## Das Anpassungsfeature für die Seiten-UI
 
-Mit dem Anpassungsfeature für die Seiten-UI können Sie das Aussehen und Verhalten der Seiten für die Registrierung und Anmeldung von Consumern und für die Profilbearbeitung anpassen (durch Konfigurieren von [Richtlinien](active-directory-b2c-reference-policies.md)). Beim Navigieren zwischen der Anwendung und den Seiten, die vom Azure AD B2C-Dienst verarbeitet werden, wird den Consumern eine einheitliche Benutzeroberfläche angeboten.
+Mit dem Anpassungsfeature für die Seiten-UI können Sie das Aussehen und Verhalten der Seiten für die Registrierung und Anmeldung von Endkunden und für die Profilbearbeitung anpassen (durch Konfigurieren von [Richtlinien](active-directory-b2c-reference-policies.md)). Beim Navigieren zwischen der Anwendung und den Seiten, die vom Azure AD B2C-Dienst verarbeitet werden, wird den Endkunden eine einheitliche Benutzeroberfläche angeboten.
 
-Im Gegensatz zu anderen Diensten, in denen Optionen beschränkt oder nur über APIs verfügbar sind, verwendet Azure AD B2C eine moderne (und einfachere) Vorgehensweise bei der Anpassung der Seiten-UI. So funktioniert es: Azure AD B2C führt Code im Browser des Consumers aus und verwendet einen modernen Ansatz namens [Cross-Origin Resource Sharing (CORS)](http://www.w3.org/TR/cors/) zum Laden des Inhalts von einer URL, die Sie in einer Richtlinie angeben. Sie können verschiedene URLs für unterschiedliche Seiten angeben. Der Code führt den Azure AD B2C-Inhalt (UI-Elemente genannt) und den Inhalt, der von der URL geladen wird, zusammen und zeigt die Seite für den Consumer an. Sie müssen lediglich wohlgeformten HTML5-Inhalt mit einem `<div id="api"></div>`-Element irgendwo in `<body>` erstellen, wo der Azure AD B2C-Inhalt zusammengeführt wird. Hosten Sie diese Inhalte auf einem HTTPS-Endpunkt (auf dem CORS zulässig ist). Sie können zudem Azure AD B2C-UI-Elemente vollständig formatieren.
+Im Gegensatz zu anderen Diensten, in denen UI-Optionen beschränkt oder nur über APIs verfügbar sind, verwendet Azure AD B2C eine moderne (und einfachere) Vorgehensweise bei der Anpassung der Seiten-UI. So funktioniert es: Azure AD B2C führt Code im Browser des Consumers aus und verwendet einen modernen Ansatz namens [Cross-Origin Resource Sharing (CORS)](http://www.w3.org/TR/cors/) zum Laden des Inhalts von einer URL, die Sie in einer Richtlinie angeben. Sie können verschiedene URLs für unterschiedliche Seiten angeben. Der Code führt die UI-Elemente aus Azure AD B2C mit dem Inhalt, der von der URL geladen wird, zusammen und zeigt die Seite für den Endkunden an. Sie müssen lediglich wohlgeformten HTML5-Inhalt mit einem `<div id="api"></div>`-Element an einer beliebigen Stelle in `<body>` erstellen. Dieses Element markiert die Stelle, an der der Azure AD B2C-Inhalt eingefügt wird. Diese Inhalte müssen auf einem HTTPS-Endpunkt (auf dem CORS zulässig ist) gehostet werden. Sie können Azure AD B2C-UI-Elemente zudem vollständig formatieren.
 
-## Ausprobieren des Anpassungsfeatures für die Benutzeroberfläche
+## Ausprobieren des Anpassungsfeatures für die Benutzeroberfläche (UI)
 
-Wenn Sie das Anpassungsfeature für die Benutzeroberfläche mithilfe unseres auf dem Azure-Blobspeicher gehosteten HTML- und CSS-Beispielinhalts ausprobieren möchten, haben wir [ein einfaches Hilfsprogramm](active-directory-b2c-reference-ui-customization-helper-tool.md) zum Hochladen und Konfigurieren des statischen Inhalts bereitgestellt.
+Wenn Sie das UI-Anpassungsfeature anhand unseres auf Azure Blob Storage gehosteten HTML- und CSS-Beispielinhalts ausprobieren möchten, haben wir [ein einfaches Hilfsprogramm](active-directory-b2c-reference-ui-customization-helper-tool.md) zum Hochladen und Konfigurieren des statischen Inhalts bereitgestellt.
 
-## Die wichtigsten UI-Elemente in jedem Seitentyp
+## Die wichtigsten UI-Elemente in den einzelnen Seitentypen
 
-Im folgenden Abschnitt finden Sie Beispiele für HTML5-Fragmente (für jeden Seitentyp), die Azure AD B2C im <div id="api"></div>-Element in Ihrem Inhalt zusammenführt. Sie können diese UI-Elemente mit Ihren eigenen Stylesheets anpassen. Diese Stylesheets müssen die standardmäßigen Stylesheets überschreiben, die wir in diesen Seiten in den <head>-Fragmenten hinzufügen.
+In den folgenden Abschnitten finden Sie Beispiele für HTML5-Fragmente (für die einzelnen Seitentypen), die Azure AD B2C im <div id="api"></div>-Element in Ihrem Inhalt zusammenführt. Sie können diese UI-Elemente mit Ihren eigenen Stylesheets anpassen. Diese Stylesheets müssen die standardmäßigen Stylesheets überschreiben, die wir in diesen Seiten in den <head>-Fragmenten hinzufügen.
 
 > [AZURE.IMPORTANT]
-	Gehen Sie in der Vorschau davon aus, dass sich die genauen UI-Elemente ändern, da sie an Ihr Feedback angepasst werden. Überprüfen Sie immer den Quellcode der Standardseiten auf die neuesten Aktualisierungen. Tatsächlich ist die erste Änderung, die berücksichtigt wird, das Entfernen unserer Standardstylesheets. Dies bedeutet, dass Sie immer Ihre eigenen Stylesheets für diese UI-Elemente in Ihrem Inhalt bereitstellen müssen.
+	Gehen Sie in der Vorschau davon aus, dass sich die genauen UI-Elemente ändern, da sie an Ihr Feedback angepasst werden. Überprüfen Sie immer den Quellcode der Standardseiten auf die neuesten Aktualisierungen. Tatsächlich wird als erste Änderung in Betracht gezogen, unsere Standardstylesheets zu entfernen. Dies bedeutet, dass Sie immer Ihre eigenen Stylesheets für diese UI-Elemente in Ihrem Inhalt bereitstellen müssen.
 
-## Auswahlseite für Identitätsanbieter
+### Auswahlseite für Identitätsanbieter
 
-Diese Seite enthält eine Liste der Identitätsanbieter, aus denen der Benutzer während der Registrierung und Anmeldung auswählen kann. Dies sind entweder Identitätsanbieter in Form von sozialen Netzwerken wie Facebook und Google+ oder lokale Konten (basierend auf E-Mail-Adressen oder Benutzernamen).
+Diese Seite enthält eine Liste der Identitätsanbieter, aus denen der Benutzer bei der Registrierung oder Anmeldung auswählen kann. Dabei handelt es sich entweder um Identitätsanbieter in Form von sozialen Netzwerken wie Facebook und Google+ oder um lokale Konten (basierend auf E-Mail-Adressen oder Benutzernamen).
 
 ```HTML
 
@@ -59,7 +59,7 @@ Diese Seite enthält eine Liste der Identitätsanbieter, aus denen der Benutzer 
 	<div class="intro">
          <p>Sign up</p>
 	</div>
-	
+
 	<div>
 		<ul>
 			<li>
@@ -77,27 +77,27 @@ Diese Seite enthält eine Liste der Identitätsanbieter, aus denen der Benutzer 
 
 ```
 
-## Registrierungsseite für lokales Konto
+### Registrierungsseite für lokales Konto
 
-Diese Seite enthält ein Registrierungsformular, das der Benutzer ausfüllen muss, wenn die Registrierung mit einer auf einem lokalen Konto basierenden E-Mail-Adresse oder einem entsprechenden Benutzernamen erfolgt. Das Formular kann verschiedene Eingabesteuerelemente enthalten, z. B. Texteingabefelder, Kennworteingabefelder, Optionsfelder, Dropdownlisten mit einer Auswahlmöglichkeit und Kontrollkästchen mit mehreren Optionen.
+Diese Seite enthält ein Registrierungsformular, das der Benutzer bei der Registrierung für ein lokales Konto ausfüllen muss, das auf einer E-Mail-Adresse oder einem Benutzernamen basiert. Das Formular kann verschiedene Eingabesteuerelemente enthalten, z. B. Texteingabefelder, Kennworteingabefelder, Optionsfelder, Dropdownfelder mit einer Auswahlmöglichkeit und Kontrollkästchen mit mehreren Optionen.
 
 ```HTML
 
-<div id="api" data-name="SelfAsserted"> 
-	<div class="intro"> 
+<div id="api" data-name="SelfAsserted">
+	<div class="intro">
 		<p>Create your account by providing the following details</p>
 	</div>
-	
-	<div id="attributeVerification"> 
+
+	<div id="attributeVerification">
 		<div class="errorText" id="passwordEntryMismatch" style="display: none;">The password entry fields do not match. Please enter the same password in both fields and try again.</div>
 		<div class="errorText" id="requiredFieldMissing" style="display: none;">A required field is missing. Please fill out all required fields and try again.</div>
 		<div class="errorText" id="fieldIncorrect" style="display: none;">One or more fields are filled out incorrectly. Please check your entries and try again.</div>
 		<div class="errorText" id="claimVerificationServerError" style="display: none;"></div>
-		<div class="attr" id="attributeList"> 
+		<div class="attr" id="attributeList">
 			<ul>
-				<li> 
+				<li>
 					<div class="attrEntry validate">
-						<div> 
+						<div>
 							<div class="verificationInfoText" id="email_intro" style="display: inline;">Verification is necessary. Please click Send button.</div>
 							<div class="verificationInfoText" id="email_info" style="display:none">Verification code has been sent to your inbox. Please copy it to the input box below.</div>
 							<div class="verificationSuccessText" id="email_success" style="display:none">E-mail address verified. You can now continue.</div>
@@ -111,40 +111,40 @@ Diese Seite enthält ein Registrierungsformular, das der Benutzer ausfüllen mus
 						<label>Email</label>
 						<input id="email" class="textInput" type="text" placeholder="Email" required="" autofocus=""><a href="javascript:void(0)" onclick="selfAssertedClient.showHelp('Email address that can be used to contact you.');" class="tiny">What is this?</a>
 
-					<div class="buttons verify" claim_id="email"> 
+					<div class="buttons verify" claim_id="email">
 						<div id="email_ver_wait" class="working" style="display: none;"></div>
-							<label id="email_ver_input_label" for="email_ver_input" style="display: none;">Verification code</label> 
+							<label id="email_ver_input_label" for="email_ver_input" style="display: none;">Verification code</label>
 							<input id="email_ver_input" type="text" placeholder="Verification code" style="display:none">
 							<button id="email_ver_but_send" class="sendButton" type="button" style="display: inline;">Send verification code</button>
 							<button id="email_ver_but_verify" class="verifyButton" type="button" style="display:none">Verify code</button>
 							<button id="email_ver_but_resend" class="sendButton" type="button" style="display:none">Send new code</button>
 							<button id="email_ver_but_edit" class="editButton" type="button" style="display:none">Change e-mail</button>
-							<button id="email_ver_but_default" class="defaultButton" type="button" style="display:none">Default</button> 
+							<button id="email_ver_but_default" class="defaultButton" type="button" style="display:none">Default</button>
 						</div>
 					</div>
 				</li>
-				<li> 
+				<li>
 					<div class="attrEntry">
 						<div class="helpText">8-16 characters, containing 3 out of 4 of the following: Lowercase characters, uppercase characters, digits (0-9), and one or more of the following symbols: @ # $ % ^ &amp; * - _ + = [ ] { } | \ : ' , ? / ` ~ " ( ) ; .This information is required</div>
 						<label>Enter password</label>
 						<input id="password" class="textInput" type="password" placeholder="Enter password" pattern="^((?=.*[a-z])(?=.*[A-Z])(?=.*\d)|(?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])|(?=.*[a-z])(?=.*\d)(?=.*[^A-Za-z0-9])|(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]))([A-Za-z\d@#$%^&amp;*-_+=[]{}|\\:',?/`~";();!]|\.(?!@)){8,16}$" title="8-16 characters, containing 3 out of 4 of the following: Lowercase characters, uppercase characters, digits (0-9), and one or more of the following symbols: @ # $ % ^ &amp; * - _ + = [ ] { } | \ : ' , ? / ` ~ "; ( ) ; ." required=""><a href="javascript:void(0)" onclick="selfAssertedClient.showHelp('Enter password');" class="tiny">What is this?</a>
 					</div>
 				</li>
-				<li> 
+				<li>
 					<div class="attrEntry">
 						<div class="helpText"> This information is required</div>
 						<label>Reenter password</label>
 						<input id="reenterPassword" class="textInput" type="password" placeholder="Reenter password" pattern="^((?=.*[a-z])(?=.*[A-Z])(?=.*\d)|(?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])|(?=.*[a-z])(?=.*\d)(?=.*[^A-Za-z0-9])|(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]))([A-Za-z\d@#$%^&amp;*-_+=[]{}|\\:',?/`~";();!]|\.(?!@)){8,16}$" title=" " required=""><a href="javascript:void(0)" onclick="selfAssertedClient.showHelp('Reenter password');" class="tiny">What is this?</a>
 					</div>
 				</li>
-				<li> 
+				<li>
 					<div class="attrEntry">
 						<div class="helpText">This information is required</div>
 						<label>Name</label>
 						<input id="displayName" class="textInput" type="text" placeholder="Name" required=""><a href="javascript:void(0)" onclick="selfAssertedClient.showHelp('Your display name.');" class="tiny">What is this?</a>
 					</div>
 				</li>
-				<li> 
+				<li>
 					<div class="attrEntry">
 						<div class="helpText"></div>
 						<label>Gender</label>
@@ -155,14 +155,14 @@ Diese Seite enthält ein Registrierungsformular, das der Benutzer ausfüllen mus
 						<a href="javascript:void(0)" onclick="selfAssertedClient.showHelp('');" class="tiny">What is this?</a>
 					</div>
 				</li>
-				<li> 
+				<li>
 					<div class="attrEntry">
 						<div class="helpText"></div>
 						<label>Loyalty number</label>
 						<input id="extension_MemNum" class="textInput" type="text" placeholder="Loyalty number"><a href="javascript:void(0)" onclick="selfAssertedClient.showHelp('Membership number');" class="tiny">What is this?</a>
 					</div>
 				</li>
-				<li> 
+				<li>
 					<div class="attrEntry">
 						<div class="helpText"></div>
 						<label>State</label>
@@ -175,18 +175,18 @@ Diese Seite enthält ein Registrierungsformular, das der Benutzer ausfüllen mus
 						<a href="javascript:void(0)" onclick="selfAssertedClient.showHelp('Your residential state or province.');" class="tiny">What is this?</a>
 					</div>
 				</li>
-				<li> 
+				<li>
 					<div class="attrEntry">
 						<div class="helpText">This information is required</div>
 						<label>Zip code</label>
 						<input id="postalCode" class="textInput" type="text" placeholder="Zip code" required=""><a href="javascript:void(0)" onclick="selfAssertedClient.showHelp('The postal code of your address.');" class="tiny">What is this?</a>
 					</div>
 				</li>
-			</ul> 
+			</ul>
 		</div>
 		<div class="buttons"> <button id="continue" disabled="">Create</button> <button id="cancel">Cancel</button></div>
 	</div>
-	<div class="verifying-modal"> 
+	<div class="verifying-modal">
 		<div class="preloader"> <img src="https://login.microsoftonline.com/static/img/win8loader.gif" alt="Please wait"></div>
 		<div id="verifying_blurb"></div>
 	</div>
@@ -194,13 +194,13 @@ Diese Seite enthält ein Registrierungsformular, das der Benutzer ausfüllen mus
 
 ```
 
-## Registrierungsseite für Konten sozialer Netzwerke
+### Registrierungsseite für Konten sozialer Netzwerke
 
 Diese Seite enthält ein Registrierungsformular, das der Consumer ausfüllen muss, wenn die Registrierung mit einem vorhandenen Konto bei einem sozialen Netzwerk wie Facebook oder Google+ als Identitätsanbieter erfolgt. Diese Seite ähnelt der Registrierungsseite für lokale Konten (siehe Abschnitt oben), eine Ausnahme bilden die Kennworteingabefelder.
 
-## Seite für Multi-Factor Authentication
+### Seite für die mehrstufige Authentifizierung
 
-Diese Seite ermöglicht es Benutzern, während der Registrierung oder Anmeldung ihre Telefonnummern (mit Text oder Stimme) zu überprüfen.
+Auf dieser Seite können Benutzer während der Registrierung oder Anmeldung ihre Telefonnummern überprüfen (per SMS oder Sprachnachricht).
 
 ```HTML
 
@@ -244,8 +244,7 @@ Diese Seite ermöglicht es Benutzern, während der Registrierung oder Anmeldung 
 
 ```
 
-## Fehlerseite
-
+### Fehlerseite
 
 ```HTML
 
@@ -262,12 +261,12 @@ Diese Seite ermöglicht es Benutzern, während der Registrierung oder Anmeldung 
 
 ```
 
-## Wichtige Aspekte beim Erstellen der eigenen Inhalte
+## Wichtige Aspekte beim Erstellen eigener Inhalte
 
 Wenn Sie das Anpassungsfeature für die Seiten-UI verwenden möchten, beachten Sie die folgenden bewährten Methoden:
 
-- Kopieren Sie nicht die Azure AD B2C-Standardvorlage, um zu versuchen, sie zu ändern. Es wird empfohlen, eigene HTML5-Inhalte von Grund auf neu zu erstellen und die Standardvorlage als Referenz zu verwenden.
-- Aus Gründen der Sicherheit ist es nicht zulässig, JavaScript in Ihren Inhalt aufzunehmen. Das meiste, was Sie benötigen, sollte ohne Bearbeitungsaufwand verfügbar sein. Falls nicht, fordern Sie über [User Voice](http://feedback.azure.com/forums/169401-azure-active-directory) neue Funktionen an.
+- Sie sollten nicht die Azure AD B2C-Standardvorlage kopieren und versuchen, sie zu ändern. Es wird empfohlen, eigene HTML5-Inhalte von Grund auf neu zu erstellen und die Standardvorlage als Referenz zu verwenden.
+- Aus Gründen der Sicherheit ist es nicht zulässig, JavaScript in Ihren Inhalt aufzunehmen. Das meiste, was Sie benötigen, sollte im Programmumfang enthalten sein. Falls nicht, fordern Sie über [User Voice](http://feedback.azure.com/forums/169401-azure-active-directory) neue Funktionen an.
 - Unterstützte Browserversionen:
 	- Internet Explorer 11
 	- Internet Explorer 10
@@ -278,4 +277,4 @@ Wenn Sie das Anpassungsfeature für die Seiten-UI verwenden möchten, beachten S
 	- Mozilla Firefox 38.0
 	- Mozilla Firefox 37.0
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0224_2016-->

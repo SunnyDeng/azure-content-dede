@@ -13,10 +13,12 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/03/2016"
+	ms.date="02/21/2016"
 	ms.author="tarcher"/>
 
 # Hinzufügen eines Git-Artefaktrepositorys zu Ihrem DevTest Lab
+
+> [AZURE.NOTE] Klicken Sie auf den folgenden Link, um das Video zu diesem Artikel anzuzeigen: [Gewusst wie: Hinzufügen eines privaten Artefaktrepositorys in einem DevTest Lab](/documentation/videos/how-to-add-your-private-artifacts-repository-in-a-devtest-lab).
 
 ## Übersicht
 
@@ -75,7 +77,7 @@ Um Ihrem Lab ein Visual Studio Git-Artefaktrepository hinzuzufügen, rufen Sie z
 
 ### Visual Studio-Webseite des Artefaktprojekts
 
-1. Öffnen Sie die Startseite Ihrer Teamauflistung (z. B. `https://contoso-web-team.visualstudio.com`), und tippen Sie dann auf das Artefaktprojekt.
+1. Öffnen Sie die Startseite Ihrer Teamauflistung (z. B. `https://contoso-web-team.visualstudio.com`), und tippen Sie dann auf das Artefaktprojekt.
 
 2. Tippen Sie auf der Startseite des Projekts auf **Code**.
 
@@ -115,4 +117,4 @@ Um Ihrem Lab ein Visual Studio Git-Artefaktrepository hinzuzufügen, rufen Sie z
     3. Geben Sie das gespeicherte **Persönliche Zugriffstoken** für das Artefaktrepository ein.
     4. Tippen Sie auf **Speichern**.
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0224_2016-->

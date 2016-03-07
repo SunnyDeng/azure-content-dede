@@ -12,8 +12,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="01/19/2016"
-   ms.author="bwren" />
+   ms.date="02/18/2016"
+   ms.author="magoedte;bwren" />
 
 # Grafische Erstellung in Azure Automation
 
@@ -30,7 +30,7 @@ Alle Runbooks in Azure Automation sind Windows PowerShell-Workflows. Grafische R
 
 ## Übersicht über den grafischen Editor
 
-Sie können den grafischen Editor im Azure-Vorschauportal öffnen, indem Sie ein grafisches Runbook erstellen oder bearbeiten.
+Sie können den grafischen Editor im Azure-Portal öffnen, indem Sie ein grafisches Runbook erstellen oder bearbeiten.
 
 ![Grafischer Arbeitsbereich](media/automation-graphical-authoring-intro/graphical-editor.png)
 
@@ -79,7 +79,7 @@ Sie können eine grafische Runbookdatei importieren, indem Sie die Option **Impo
 
 ### Testen eines grafischen Runbooks
 
-Sie können die Entwurfsversion eines Runbooks im Azure-Vorschauportal testen und dabei die veröffentliche Version des Runbooks unverändert lassen, oder Sie testen ein neues Runbook, bevor Sie dieses veröffentlichen. Auf diese Weise stellen Sie sicher, dass das Runbook ordnungsgemäß arbeitet, bevor Sie die veröffentlichte Version ersetzen. Wenn Sie ein Runbook testen, wird die Entwurfsversion des Runbooks ausgeführt, und alle darin ausgeführten Aktionen werden abgeschlossen. Es wird kein Auftragsverlauf erstellt, aber im Fensterbereich "Testausgabe" wird die Ausgabe angezeigt.
+Sie können die Entwurfsversion eines Runbooks im Azure-Portal testen und dabei die veröffentlichte Version des Runbooks unverändert lassen, oder Sie testen ein neues Runbook, bevor Sie dieses veröffentlichen. Auf diese Weise stellen Sie sicher, dass das Runbook ordnungsgemäß arbeitet, bevor Sie die veröffentlichte Version ersetzen. Wenn Sie ein Runbook testen, wird die Entwurfsversion des Runbooks ausgeführt, und alle darin ausgeführten Aktionen werden abgeschlossen. Es wird kein Auftragsverlauf erstellt, aber im Fensterbereich "Testausgabe" wird die Ausgabe angezeigt.
 
 Sie öffnen das Steuerelement "Test" für ein Runbook, indem Sie das Runbook zur Bearbeitung öffnen und dann auf die Schaltfläche **Testbereich** klicken.
 
@@ -108,7 +108,7 @@ Sie haben außerdem die Möglichkeit, ein Runbook auf die veröffentlichte Versi
 
 ## Aktivitäten
 
-Aktivitäten sind die Bausteine eines Runbooks. Bei einer Aktivität kann es sich um ein PowerShell-Cmdlet, um ein untergeordnetes Runbook oder um eine Workflowaktivität handeln. Sie fügen dem Runbook eine Aktivität hinzu, indem Sie mit der rechten Maustaste im Steuerelement "Bibliothek" auf das Runbook klicken und die Option **Zu Zeichenbereich hinzufügen** auswählen. Anschließend können Sie die Aktivität per Drag & Drop an einer beliebigen Stelle im Zeichenbereich platzieren. Die Position der Aktivität im Zeichenbereich hat keinerlei Einfluss auf den Vorgang im Runbook. Sie können das Layout Ihres Runbooks so wählen, wie es Ihnen zur visuellen Darstellung der Vorgänge am geeignetsten erscheint.
+Aktivitäten sind die Bausteine eines Runbooks. Bei einer Aktivität kann es sich um ein PowerShell-Cmdlet, um ein untergeordnetes Runbook oder um eine Workflowaktivität handeln. Sie fügen dem Runbook eine Aktivität hinzu, indem Sie mit der rechten Maustaste im Steuerelement "Bibliothek" auf das Runbook klicken und die Option **Zu Zeichenbereich hinzufügen** auswählen. Anschließend können Sie die Aktivität per Drag & Drop an einer beliebigen Stelle im Zeichenbereich platzieren. Die Position der Aktivität im Zeichenbereich hat keinerlei Einfluss auf den Vorgang im Runbook. Sie können das Layout Ihres Runbooks so wählen, wie es Ihnen zur visuellen Darstellung der Vorgänge am geeignetsten erscheint.
 
 ![Zum Zeichenbereich hinzufügen](media/automation-graphical-authoring-intro/add-to-canvas.png)
 
@@ -298,9 +298,9 @@ Sie müssen beim Start des Runbooks und nach jedem Prüfpunkt eine Authentifizie
 
 ### Runbookeingabe
 
-Ein Runbook erfordert möglicherweise Eingaben durch den Benutzer, wenn es über das Azure-Vorschauportal oder (wenn das aktuelle Runbook als untergeordnetes Runbook verwendet wird) aus einem anderen Runbook gestartet wird. Wenn Sie beispielsweise über ein Runbook verfügen, das einen virtuellen Computer erstellt, müssen Sie bei jedem Start des Runbooks möglicherweise Informationen wie den Namen des virtuellen Computers und andere Eigenschaften bereitstellen.
+Ein Runbook erfordert möglicherweise Eingaben durch den Benutzer, wenn es über das Azure-Portal oder (wenn das aktuelle Runbook als untergeordnetes Runbook verwendet wird) aus einem anderen Runbook gestartet wird. Wenn Sie beispielsweise über ein Runbook verfügen, das einen virtuellen Computer erstellt, müssen Sie bei jedem Start des Runbooks möglicherweise Informationen wie den Namen des virtuellen Computers und andere Eigenschaften bereitstellen.
 
-Sie akzeptieren eine Eingabe für ein Runbook, indem Sie einen oder mehrere Eingabeparameter definieren. Die Werte für diese Parameter werden bei jedem Start des Runbooks bereitgestellt. Wenn Sie ein Runbook mit dem Azure-Vorschauportal starten, werden Sie aufgefordert, Werte für jeden Eingabeparameter des Runbooks einzugeben.
+Sie akzeptieren eine Eingabe für ein Runbook, indem Sie einen oder mehrere Eingabeparameter definieren. Die Werte für diese Parameter werden bei jedem Start des Runbooks bereitgestellt. Wenn Sie ein Runbook im Azure-Portal starten, werden Sie aufgefordert, Werte für jeden Eingabeparameter des Runbooks einzugeben.
 
 Sie können auf die Eingabeparameter für ein Runbook zugreifen, indem Sie auf die Schaltfläche **Eingabe und Ausgabe** auf der Symbolleiste des Runbooks klicken.
 
@@ -316,7 +316,7 @@ Jeder Eingabeparameter wird durch die Eigenschaften in der folgenden Tabelle def
 |:---|:---|
 | Name | Der eindeutige Name des Parameters. Dieser darf nur aus alphanumerischen Zeichen bestehen und darf keine Leerzeichen enthalten. |
 | Beschreibung | Eine optionale Beschreibung für den Eingabeparameter. |
-| Typ | Der für den Parameterwert erwartete Datentyp. Im Azure-Vorschauportal wird bei Eingabeanforderung ein geeignetes Steuerelement für den jeweiligen Datentyp des Parameters angezeigt. |
+| Typ | Der für den Parameterwert erwartete Datentyp. Im Azure-Portal wird bei der Eingabeaufforderung ein geeignetes Steuerelement für den jeweiligen Datentyp des Parameters angezeigt. |
 | Erforderlich | Gibt an, ob ein Wert für den Parameter bereitgestellt werden muss. Das Runbook kann nicht gestartet werden, wenn der Wert für einen erforderlichen Parameter fehlt, für den kein Standardwert definiert wurde. |
 | Standardwert | Gibt an, welcher Wert für den Parameter verwendet wird, wenn kein Wert bereitgestellt wird. Dieser Wert kann entweder "Null" lauten oder einen spezifischen Wert angeben. |
 
@@ -366,7 +366,7 @@ Falls für die Eigenschaft anstelle einer einfachen Eigenschaft das Objekt des v
 
 	$ActivityOutput['Get-AzureVm']
 
-Sie können die Ausgabe einer Aktivität auch in einem komplexeren Ausdruck verwenden, z. B. wie im folgenden Beispiel, in dem Text mit dem Namen des virtuellen Computers verkettet wird.
+Sie können die Ausgabe einer Aktivität auch in einem komplexeren Ausdruck verwenden, z. B. wie im folgenden Beispiel, in dem Text mit dem Namen des virtuellen Computers verkettet wird.
 
 	"The computer name is " + $ActivityOutput['Get-AzureVm'].Name
 
@@ -419,4 +419,4 @@ Im folgenden Beispiel wird die Ausgabe eine Aktivität mit dem Namen *Get Twitte
 - [Operatoren](https://technet.microsoft.com/library/hh847732.aspx)
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0224_2016-->

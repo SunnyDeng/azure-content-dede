@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="tbd"
-	ms.date="02/10/2016"
+	ms.date="02/21/2016"
 	ms.author="garye" />
 
 
@@ -56,9 +56,9 @@ Ein Beispiel für RRS ist das Überprüfen der Authentizität einer Anwendung. H
 
 ## Stapelausführungsdienst (Batch Execution Service BES)
 
-Ein Stapelausführungsdienst (Batch Execution Service, BES) ist ein Dienst zur asynchronen Bewertung eines umfangreichen Stapels von Datensätzen. Die Eingabe für den BES enthält einen Stapel von Datensätzen aus verschiedenen Quellen, z. B. Blobs, Tabellen in Azure, SQL Azure, HDInsight (beispielsweise Ergebnisse einer Hive-Abfrage) oder HTTP-Quellen. Die Ausgabe des BES enthält die Ergebnisse der Wertung. Die Ergebnisse werden in eine Datei im Azure-Blob-Speicher geschrieben, und Daten aus dem Speicherendpunkt werden in der Antwort zurückgegeben.
+Ein Stapelausführungsdienst (Batch Execution Service, BES) ist ein Dienst zur asynchronen Bewertung eines umfangreichen Stapels von Datensätzen. Die Eingabe für den BES enthält einen Stapel von Datensätzen aus verschiedenen Quellen, z. B. Blobs, Tabellen in Azure, SQL Azure, HDInsight (beispielsweise Ergebnisse einer Hive-Abfrage) oder HTTP-Quellen. Die Ausgabe des BES enthält die Ergebnisse der Wertung. Die Ergebnisse werden in eine Datei im Azure-Blob-Speicher geschrieben, und Daten aus dem Speicherendpunkt werden in der Antwort zurückgegeben.
 
-Ein BES ist nützlich, wenn Antworten nicht sofort benötigt werden, z. B. für regelmäßig geplante Bewertungen für einzelne Benutzer oder Geräte im Internet der Dinge (IOT).
+Ein BES ist nützlich, wenn Antworten nicht sofort benötigt werden, z. B. für regelmäßig geplante Bewertungen für einzelne Benutzer oder Geräte im Internet der Dinge (IOT).
 
 ## Beispiele
 Zum Erläutern der Funktionsweise von RRS und BES greifen wir auf ein Beispiel eines Azure-Webdiensts zurück. Dieser Dienst wird in einem IOT-Szenario (Internet der Dinge) verwendet werden. Der Einfachheit halber sendet unser Gerät nur einen Wert, `cog_speed`, und erhält eine einzelne Antwort zurück.
@@ -70,7 +70,7 @@ Vier Arten von Informationen sind erforderlich, um den RRS- oder den BES-Dienst 
 3.	Die erwarteten **Anforderungsheader** und der **Text** der API, die auf der API-Hilfeseite für den ausgewählten Dienst verfügbar sind
 4.	Die erwarteten **Antwortheader** und der **Text** der API, die auf der API-Hilfeseite für den ausgewählten Dienst verfügbar sind
 
-In den folgenden beiden Beispielen wird die Sprache C# verwendet, um den erforderlichen Code zu veranschaulichen. Die Zielplattform ist dabei ein Windows 8-Desktop.
+In den folgenden beiden Beispielen wird die Sprache C# verwendet, um den erforderlichen Code zu veranschaulichen. Die Zielplattform ist dabei ein Windows 8-Desktop.
 
 ### RRS-Beispiel
 Klicken Sie auf dem Dashboard des Diensts unter **API HELP PAGE** auf **REQUEST/RESPONSE**, um die API-Hilfeseite anzuzeigen. Auf dieser Seite finden Sie neben dem URI Eingabe- und Ausgabedefinitionen sowie Codebeispiele. Die API-Eingabe speziell für diesen Dienst wird nachstehend gezeigt und bildet die Nutzlast des API-Aufrufs.
@@ -127,7 +127,7 @@ Auch die API-Antwort für diesen Dienst wird nachstehend gezeigt.
 
 Unten auf der Hilfeseite finden Sie die Codebeispiele. Nachstehend sehen Sie das Codebeispiel für die C#-Implementierung.
 
-**Beispielcode**
+**Beispielcode in C#**
 
 	using System;
 	using System.Collections.Generic;
@@ -199,6 +199,58 @@ Unten auf der Hilfeseite finden Sie die Codebeispiele. Nachstehend sehen Sie das
 	    }
 	}
 
+**Beispielcode in Java**
+
+Der folgende Beispielcode veranschaulicht die Erstellung einer REST-API-Anforderung in Java. Es wird davon ausgegangen, dass die Variablen („apikey“ und „apiurl“) die erforderlichen API-Details aufweisen, und die Variable „jsonBody“ über ein korrektes JSON-Objekt gemäß Erwartung der REST-API verfügt, um eine erfolgreiche Vorhersage zu gewährleisten. Sie können den vollständigen Code von Github herunterladen – [https://github.com/nk773/AzureML\_RRSApp](https://github.com/nk773/AzureML_RRSApp). Dieses Java-Beispiel erfordert die [Apache-HTTP-Clientbibliothek](https://hc.apache.org/downloads.cgi).
+
+	/**
+	 * Download full code from github - [https://github.com/nk773/AzureML_RRSApp](https://github.com/nk773/AzureML_RRSApp)
+ 	 */
+    	/**
+     	  * Call REST API for retrieving prediction from Azure ML 
+     	  * @return response from the REST API
+     	  */	
+    	public static String rrsHttpPost() {
+        
+        	HttpPost post;
+        	HttpClient client;
+        	StringEntity entity;
+        
+        	try {
+            		// create HttpPost and HttpClient object
+            		post = new HttpPost(apiurl);
+            		client = HttpClientBuilder.create().build();
+            
+            		// setup output message by copying JSON body into 
+            		// apache StringEntity object along with content type
+            		entity = new StringEntity(jsonBody, HTTP.UTF_8);
+            		entity.setContentEncoding(HTTP.UTF_8);
+            		entity.setContentType("text/json");
+
+            		// add HTTP headers
+            		post.setHeader("Accept", "text/json");
+            		post.setHeader("Accept-Charset", "UTF-8");
+        
+            		// set Authorization header based on the API key
+            		post.setHeader("Authorization", ("Bearer "+apikey));
+            		post.setEntity(entity);
+
+            		// Call REST API and retrieve response content
+            		HttpResponse authResponse = client.execute(post);
+            
+            		return EntityUtils.toString(authResponse.getEntity());
+            
+        	}
+        	catch (Exception e) {
+            
+            		return e.toString();
+        	}
+    
+    	}
+    
+    	
+ 
+
 ### BES-Beispiel
 Im Gegensatz zum RRS-Dienst ist der BES-Dienst asynchron. Dies bedeutet, dass die Bus-API einen auszuführenden Auftrag in die Warteschlange reiht und der Aufrufer den Auftragsstatus abruft, um zu sehen, wann dieser abgeschlossen wurde. Hier sind die Vorgänge, die derzeit für Batchaufträge unterstützt werden:
 
@@ -219,7 +271,7 @@ Beim Erstellen eines Batchauftrags für Ihren Azure Machine Learning-Dienstendpu
   - Datasetausgaben können als **.csv, .tsv, .arff** gespeichert werden.
   - Ausgaben trainierter Modelle können als **.ilearner** gespeichert werden.
 
-  Die Überschreibungen des Ausgabespeicherorts werden als Auflistung von *<output name  blob reference>*-Paaren angegeben, in denen der *output name* der benutzerdefinierte Name eines bestimmten Ausgabeknotens ist (der auch auf der API-Hilfeseite des Diensts angezeigt wird). *blob reference* ist ein Verweis auf einen Azure-Blobspeicherort ist, an den die Ausgabe umgeleitet werden soll.
+  Die Überschreibungen des Ausgabespeicherorts werden als Auflistung von *<output name  blob reference>*-Paaren angegeben, in denen der *output name* der benutzerdefinierte Name eines bestimmten Ausgabeknotens ist (der auch auf der API-Hilfeseite des Diensts angezeigt wird). *blob reference* ist ein Verweis auf einen Azure-Blobspeicherort, an den die Ausgabe umgeleitet werden soll.
 
 Diese Auftragserstellungsparameter können je nach Art Ihres Diensts optional sein. Dienste ohne definierten Eingabeknoten erfordern z. B. nicht, das an sie ein *Input*-Parameter übergeben wird. Die Überschreibungsfunktion für den Ausgabespeicherort ist gänzlich optional, da Ausgaben andernfalls im Standardspeicherkonto gespeichert werden, das für Ihren Azure Machine Learning-Arbeitsbereich eingerichtet wurde. Nachstehend wird ein Beispiel einer Anforderungsnutzlast für einen Dienst als an die REST-API übergeben gezeigt, bei dem nur die Eingabe-Informationen übergeben werden:
 
@@ -267,7 +319,7 @@ Der *StatusCode* kann wie folgt lauten:
 * Abgebrochen
 * Abgeschlossen
 
-Die Eigenschaft *Ergebnisse* wird nur aufgefüllt, wenn der Auftrag erfolgreich abgeschlossen wurde (andernfalls ist er **null**). Wenn der Auftrag abgeschlossen wurde und für Dienst mindestens ein Ausgabeknoten definiert ist, werden die Ergebnisse als Auflistung von Paaren von *[Ausgabename, Blobverweis]* zurückgegeben, für die der Blobverweis ein SAS-schreibgeschützter Verweis auf das Blob mit dem tatsächlichen Ergebnis ist.
+Die Eigenschaft *Ergebnisse* wird nur aufgefüllt, wenn der Auftrag erfolgreich abgeschlossen wurde (andernfalls ist er **null**). Wenn der Auftrag abgeschlossen wurde und für den Dienst mindestens ein Ausgabeknoten definiert ist, werden die Ergebnisse als Auflistung von Paaren von *[Ausgabename, Blobverweis]* zurückgegeben, für die der Blobverweis ein SAS-schreibgeschützter Verweis auf das Blob mit dem tatsächlichen Ergebnis ist.
 
 **Beispiel für eine Antwort**
 
@@ -301,7 +353,7 @@ Ein Batchauftrag, der ausgeführt wird, kann jederzeit abgebrochen werden, indem
 
 #### Verwenden des BES SDK
 
-Das [NuGet-Paket mit dem BES SDK ](http://www.nuget.org/packages/Microsoft.Azure.MachineLearning/) bietet Funktionen, die das Aufrufen von BES zur Bewertung im Batchmodus vereinfachen. Um das NuGet-Paket zu installieren, wählen Sie in Visual Studio unter **Tools** den **NuGet-Paket-Manager** aus und klicken dann auf **Paket-Manager-Konsole**.
+Das [BES SDK NuGet-Paket](http://www.nuget.org/packages/Microsoft.Azure.MachineLearning/) bietet Funktionen, die das Aufrufen von BES zur Bewertung im Batchmodus vereinfachen. Um das NuGet-Paket zu installieren, wählen Sie in Visual Studio unter **Tools** den **NuGet-Paket-Manager** aus und klicken dann auf **Paket-Manager-Konsole**.
 
 Azure Machine Learning-Experimente, die als Webdienste bereitgestellt werden, können Webdienst-Eingabemodule einschließen. Dies bedeutet, dass sie erwarten, dass die Eingabe über den Webdienstaufruf in Form eines Verweises auf einen Blobspeicherort bereitgestellt wird. Es gibt auch die Möglichkeit, kein Webdienst-Eingabemodul zu verwenden und stattdessen ein **Reader**-Modul zu nutzen. In diesem Fall liest das **Reader**-Modul in der Regel Daten aus einer SQL-Datenbank, indem zur Laufzeit Daten mithilfe einer Abfrage abgerufen werden. Webdienst-Parameter können verwendet werden, um dynamisch auf andere Server oder Tabellen usw. zu verweisen. Das SDK unterstützt beide dieser Muster.
 
@@ -435,4 +487,202 @@ Im folgenden Codebeispiel wird veranschaulicht, wie Sie einen Batchauftrag anhan
 	    }
 	}
 
-<!---HONumber=AcomDC_0211_2016-->
+#### Beispielcode in Java für BES
+Der Batchausführungsdienst REST-API akzeptiert die JSON, die aus einem Verweis auf eine Eingabebeispiel-CSV- und eine Ausgabebeispiel-CSV-Datei – wie unten dargestellt – besteht, und erstellt in Azure ML einen Auftrag zur Ausführung der Batchvorhersagen. Sie können den gesamten Code in [Github](https://github.com/nk773/AzureML_BESApp/tree/master/src/azureml_besapp) anzeigen. Dieses Java-Beispiel erfordert die [Apache-HTTP-Clientbibliothek](https://hc.apache.org/downloads.cgi).
+
+
+	{ "GlobalParameters": {}, 
+    	"Inputs": { "input1": { "ConnectionString": 	"DefaultEndpointsProtocol=https;
+			AccountName=myAcctName; AccountKey=Q8kkieg==", 
+        	"RelativeLocation": "myContainer/sampleinput.csv" } }, 
+    	"Outputs": { "output1": { "ConnectionString": 	"DefaultEndpointsProtocol=https;
+			AccountName=myAcctName; AccountKey=kjC12xQ8kkieg==", 
+        	"RelativeLocation": "myContainer/sampleoutput.csv" } } 
+	} 
+
+
+#####Erstellen eines BES-Auftrags	
+	    
+	    /**
+	     * Call REST API to create a job to Azure ML 
+	     * for batch predictions
+	     * @return response from the REST API
+	     */	
+	    public static String besCreateJob() {
+	        
+	        HttpPost post;
+	        HttpClient client;
+	        StringEntity entity;
+	        
+	        try {
+	            // create HttpPost and HttpClient object
+	            post = new HttpPost(apiurl);
+	            client = HttpClientBuilder.create().build();
+	            
+	            // setup output message by copying JSON body into 
+	            // apache StringEntity object along with content type
+	            entity = new StringEntity(jsonBody, HTTP.UTF_8);
+	            entity.setContentEncoding(HTTP.UTF_8);
+	            entity.setContentType("text/json");
+	
+	            // add HTTP headers
+	            post.setHeader("Accept", "text/json");
+	            post.setHeader("Accept-Charset", "UTF-8");
+	        
+	            // set Authorization header based on the API key
+				// note a space after the word "Bearer " - don't miss that
+	            post.setHeader("Authorization", ("Bearer "+apikey));
+	            post.setEntity(entity);
+	
+	            // Call REST API and retrieve response content
+	            HttpResponse authResponse = client.execute(post);
+	            
+	            jobId = EntityUtils.toString(authResponse.getEntity()).replaceAll(""", "");
+	            
+	            
+	            return jobId;
+	            
+	        }
+	        catch (Exception e) {
+	            
+	            return e.toString();
+	        }
+	    
+	    }
+	    
+#####Starten eines zuvor erstellten BES-Auftrags	        
+	    /**
+	     * Call REST API for starting prediction job previously submitted 
+	     * 
+	     * @param job job to be started 
+	     * @return response from the REST API
+	     */	
+	    public static String besStartJob(String job){
+	        HttpPost post;
+	        HttpClient client;
+	        StringEntity entity;
+	        
+	        try {
+	            // create HttpPost and HttpClient object
+	            post = new HttpPost(startJobUrl+"/"+job+"/start?api-version=2.0");
+	            client = HttpClientBuilder.create().build();
+	         
+	            // add HTTP headers
+	            post.setHeader("Accept", "text/json");
+	            post.setHeader("Accept-Charset", "UTF-8");
+	        
+	            // set Authorization header based on the API key
+	            post.setHeader("Authorization", ("Bearer "+apikey));
+	
+	            // Call REST API and retrieve response content
+	            HttpResponse authResponse = client.execute(post);
+	            
+	            if (authResponse.getEntity()==null)
+	            {
+	                return authResponse.getStatusLine().toString();
+	            }
+	            
+	            return EntityUtils.toString(authResponse.getEntity());
+	            
+	        }
+	        catch (Exception e) {
+	            
+	            return e.toString();
+	        }
+	    }
+#####Abbrechen eines zuvor erstellten BES-Auftrags
+	    
+	    /**
+	     * Call REST API for canceling the batch job 
+	     * 
+	     * @param job job to be started 
+	     * @return response from the REST API
+	     */	
+	    public static String besCancelJob(String job) {
+	        HttpDelete post;
+	        HttpClient client;
+	        StringEntity entity;
+	        
+	        try {
+	            // create HttpPost and HttpClient object
+	            post = new HttpDelete(startJobUrl+job);
+	            client = HttpClientBuilder.create().build();
+	         
+	            // add HTTP headers
+	            post.setHeader("Accept", "text/json");
+	            post.setHeader("Accept-Charset", "UTF-8");
+	        
+	            // set Authorization header based on the API key
+	            post.setHeader("Authorization", ("Bearer "+apikey));
+	
+	            // Call REST API and retrieve response content
+	            HttpResponse authResponse = client.execute(post);
+	         
+	            if (authResponse.getEntity()==null)
+	            {
+	                return authResponse.getStatusLine().toString();
+	            }
+	            return EntityUtils.toString(authResponse.getEntity());
+	            
+	        }
+	        catch (Exception e) {
+	            
+	            return e.toString();
+	        }
+	    }
+	    
+###Andere Programmierumgebungen
+Sie können den Code auch in vielen anderen Sprachen generieren, indem Sie ein Swagger-Dokument aus der API-Hilfeseite verwenden und die Anweisungen auf der Website [swagger.io](http://swagger.io/) befolgen. Wechseln Sie zu [swagger.io](http://swagger.io/swagger-codegen/), und befolgen Sie die Anweisungen zum Herunterladen von Swagger-Code, Java und Apache Maven. Hier ist die Zusammenfassung der Anweisungen zum Einrichten von Swagger für andere Programmierumgebungen.
+
+* Stellen Sie sicher, dass Java 7 oder höher installiert ist.
+* Installieren Sie Apache Maven (unter Ubuntu können Sie *apt-get install mvn* verwenden)
+* Rufen Sie Github für Swagger auf, und laden Sie das Swagger-Projekt als ZIP-Datei herunter
+* Entzippen Sie Swagger
+* Erstellen Sie die Swagger-Tools durch Ausführen von *mvn package* im Swagger-Quellverzeichnis
+
+Jetzt können Sie beliebige Swagger-Tools verwenden. Hier sind die Anweisungen, um Java-Clientcode zu generieren.
+
+* Rufen Sie die Azure ML-API-Hilfeseite auf (Beispiel [hier](https://studio.azureml.net/apihelp/workspaces/afbd553b9bac4c95be3d040998943a4f/webservices/4dfadc62adcc485eb0cf162397fb5682/endpoints/26a3afce1767461ab6e73d5a206fbd62/jobs))
+* Suchen Sie die URL für „swagger.json“ für Azure ML-REST-APIs (zweitletztes Aufzählungszeichen oben auf der API-Hilfeseite)
+* Klicken Sie auf den Link zum Swagger-Dokument (Beispiel [hier](https://management.azureml.net/workspaces/afbd553b9bac4c95be3d040998943a4f/webservices/4dfadc62adcc485eb0cf162397fb5682/endpoints/26a3afce1767461ab6e73d5a206fbd62/apidocument))
+* Verwenden Sie den folgenden Befehl, wie in der [Readme-Datei von Swagger](https://github.com/swagger-api/swagger-codegen/blob/master/README.md) gezeigt, zum Generieren von Clientcode
+
+**Beispielbefehlszeile zum Generieren von Clientcode**
+
+	java -jar swagger-codegen-cli.jar generate\
+	 -i https://ussouthcentral.services.azureml.net:443/workspaces/\
+	fb62b56f29fc4ba4b8a8f900c9b89584/services/26a3afce1767461ab6e73d5a206fbd62/swagger.json\
+	 -l java -o /home/username/sample
+
+* Kombinieren Sie die Werte in den Feldern „host“, „basePath“ und „/swagger.JSON“ im Beispiel einer unten gezeigten Swagger-[API-Hilfeseite](https://management.azureml.net/workspaces/afbd553b9bac4c95be3d040998943a4f/webservices/4dfadc62adcc485eb0cf162397fb5682/endpoints/26a3afce1767461ab6e73d5a206fbd62/apidocument), um die in der obigen Befehlszeile verwendete Swagger-URL zu erstellen
+
+**Beispiel-API-Hilfeseite**
+
+
+	{
+	  "swagger": "2.0",
+	  "info": {
+	    "version": "2.0",
+	    "title": "Sample 5: Binary Classification with Web Service: Adult Dataset [Predictive Exp.]",
+	    "description": "No description provided for this web service.",
+	    "x-endpoint-name": "default"
+	  },
+	  "host": "ussouthcentral.services.azureml.net:443",
+	  "basePath": "/workspaces/afbd553b9bac4c95be3d040998943a4f/services/26a3afce1767461ab6e73d5a206fbd62",
+	  "schemes": [
+	    "https"
+	  ],
+	  "consumes": [
+	    "application/json"
+	  ],
+	  "produces": [
+	    "application/json"
+	  ],
+	  "paths": {
+	    "/swagger.json": {
+	      "get": {
+	        "summary": "Get swagger API document for the web service",
+	        "operationId": "getSwaggerDocument",
+	        
+
+<!---HONumber=AcomDC_0224_2016-->

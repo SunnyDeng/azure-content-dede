@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/05/2016" 
+	ms.date="02/21/2016" 
 	ms.author="tamram"/>
 
 # Einsatz des Azure-Speicheremulators für Entwicklung und Tests
@@ -21,13 +21,13 @@
 
 Der Microsoft Azure-Speicheremulator bietet eine lokale Umgebung, die die Azure-Blob-, -Warteschlangen- und -Tabellendienste für Entwicklungszwecke emuliert. Durch Verwendung des Speicheremulators können Sie die Anwendung bezüglich der Speicherdienste lokal testen, ohne ein Azure-Abonnement zu erwerben oder sonstige Kosten zu verursachen. Wenn Sie mit der Funktion der Anwendung im Emulator zufrieden sind, können Sie zur Verwendung eines Azure-Speicherkontos in der Cloud wechseln.
 
-> [AZURE.NOTE]Der Speicheremulator ist als Teil des [Microsoft Azure-SDK](https://azure.microsoft.com/downloads/) verfügbar. Sie können den Speicheremulator auch als eigenständiges Paket installieren. Zum Konfigurieren des Speicheremulators benötigen Sie Administratorrechte auf dem Computer.
+> [AZURE.NOTE] Der Speicheremulator ist als Teil des [Microsoft Azure-SDK](https://azure.microsoft.com/downloads/) verfügbar. Sie können den Speicheremulator auch als eigenständiges Paket installieren. Zum Konfigurieren des Speicheremulators benötigen Sie Administratorrechte auf dem Computer.
 >  
 > Beachten Sie, dass der Zugriff auf die Daten, die in einer bestimmten Version des Speicheremulators erstellt wurden, bei Verwendung einer anderen Version nicht gewährleistet ist. Wenn Sie die Daten langfristig beibehalten müssen, wird empfohlen, diese Daten in einem Azure Storage-Konto und nicht im Speicheremulator zu speichern.
 
 ## Funktionsweise des Speicheremulators
  
-Der Speicheremulator verwendet zum Emulieren der Azure Storage-Dienste eine lokale Microsoft SQL Server-Instanz und das lokale Dateisystem. Der Speicheremulator verwendet standardmäßig eine Datenbank in Microsoft SQL Server 2012 Express LocalDB. Sie können den Speicheremulator für den Zugriff auf eine lokale Instanz von SQL Server statt für den Zugriff auf die LocalDB-Instanz konfigurieren. Weitere Informationen finden Sie unten unter [Starten und Initialisieren des Speicheremulators](#start-and-initialize-the-storage-emulator).
+Der Speicheremulator verwendet zum Emulieren der Azure Storage-Dienste eine lokale Microsoft SQL Server-Instanz und das lokale Dateisystem. Der Speicheremulator verwendet standardmäßig eine Datenbank in Microsoft SQL Server 2012 Express LocalDB. Sie können den Speicheremulator für den Zugriff auf eine lokale Instanz von SQL Server statt für den Zugriff auf die LocalDB-Instanz konfigurieren. Weitere Informationen finden Sie unten unter [Starten und Initialisieren des Speicheremulators](#start-and-initialize-the-storage-emulator).
 
 Sie können für die Verwaltung der LocalDB-Installation SQL Server Management Studio Express installieren. Der Speicheremulator stellt über die Windows-Authentifizierung eine Verbindung mit SQL Server oder LocalDB her.
 
@@ -41,11 +41,11 @@ Wie bei Azure Storage in der Cloud muss jede Anforderung, die Sie mit dem Speich
 
 [AZURE.INCLUDE [storage-emulator-connection-string-include](../../includes/storage-emulator-connection-string-include.md)]
 
-Weitere Informationen zu Verbindungszeichenfolgen finden Sie unter [Konfigurieren von Verbindungszeichenfolgen für Azure Storage](storage-configure-connection-string.md).
+Weitere Informationen zu Verbindungszeichenfolgen finden Sie unter [Konfigurieren von Azure Storage-Verbindungszeichenfolgen](storage-configure-connection-string.md).
 
 ### Authentifizierung mit einer SAS (Shared Access Signature) 
 
-Einige Azure Storage-Clientbibliotheken, wie z. B. die Xamarin-Bibliothek, unterstützen nur Authentifizierung mit einem SAS (Shared Access Signature)-Token. Sie benötigen zum Erstellen dieses SAS-Tokens ein Tool oder eine Anwendung mit Unterstützung für die Authentifizierung mit einem gemeinsam verwendeten Schlüssel. Eine einfache Möglichkeit zum Generieren des SAS-Tokens bietet Azure PowerShell:
+Einige Azure Storage-Clientbibliotheken, wie z. B. die Xamarin-Bibliothek, unterstützen nur Authentifizierung mit einem SAS (Shared Access Signature)-Token. Sie benötigen zum Erstellen dieses SAS-Tokens ein Tool oder eine Anwendung mit Unterstützung für die Authentifizierung mit einem gemeinsam verwendeten Schlüssel. Eine einfache Möglichkeit zum Generieren des SAS-Tokens bietet Azure PowerShell:
 
 1. Installieren Sie Azure PowerShell, sofern noch nicht geschehen. Es empfiehlt sich, die neueste Version der Azure PowerShell-Cmdlets zu verwenden. Installationsanweisungen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../articles/powershell-install-configure.md#Install).
 
@@ -63,7 +63,7 @@ Der resultierende SAS-URI für den neuen Container sollte dem folgenden ähneln:
 
 	https://storageaccount.blob.core.windows.net/sascontainer?sv=2012-02-12&se=2015-07-08T00%3A12%3A08Z&sr=c&sp=wl&sig=t%2BbzU9%2B7ry4okULN9S0wst%2F8MCUhTjrHyV9rDNLSe8g%3Dsss
 
-Die mit diesem Beispiel erstellte SAS gilt für einen Tag. Die Signatur gewährt uneingeschränkten Zugriff (z. B. Lesen, Schreiben, Löschen und Auflisten) auf die Blobs im Container.
+Die mit diesem Beispiel erstellte SAS gilt für einen Tag. Die Signatur gewährt uneingeschränkten Zugriff (z. B. Lesen, Schreiben, Löschen und Auflisten) auf die Blobs im Container.
 
 Weitere Informationen zu SAS finden Sie unter [Shared Access Signatures: Grundlagen zum SAS-Modell](storage-dotnet-shared-access-signature-part-1.md).
 
@@ -87,7 +87,7 @@ Der Speicheremulator wird standardmäßig im Verzeichnis "C:\\Programme (x86)\\M
 Sie können das Speicheremulator-Befehlszeilentool zum Initialisieren des Speicheremulators verwenden, damit dieser auf eine andere SQL-Datenbankinstanz als die Standardinstanz von LocalDB verweist. Beachten Sie, dass Sie das Befehlszeilentool mit Administratorberechtigungen ausführen müssen, um die Back-End-Datenbank für den Speicheremulator zu initialisieren:
 
 1. Klicken Sie auf die Schaltfläche **Start**, oder drücken Sie die **Windows**-Taste. Geben Sie `Azure Storage Emulator` ein, und wählen Sie den Speicheremulator aus, wenn er angezeigt wird, um das Speicheremulator-Befehlszeilentool aufzurufen.
-2. Geben Sie im Eingabeaufforderungsfenster den folgenden Befehl ein, wobei `<SQLServerInstance>` der Name der SQL Server-Instanz ist. Geben Sie als SQL Server-Instanz `(localdb)\v11.0` ein, um LocalDB zu verwenden.
+2. Geben Sie im Eingabeaufforderungsfenster den folgenden Befehl ein, wobei `<SQLServerInstance>` der Name der SQL Server-Instanz ist. Geben Sie als SQL Server-Instanz `(localdb)\v11.0` ein, um LocalDB zu verwenden.
 
 		AzureStorageEmulator init /server <SQLServerInstance> 
     
@@ -109,7 +109,7 @@ Wenn Sie eine Ressource in einem Azure-Speicherkonto adressieren, verwenden Sie 
 
     <http|https>://<account-name>.<service-name>.core.windows.net/<resource-path>
 
-Der folgende URI ist z. B. eine gültige Adresse für ein Blob in einem Azure-Speicherkonto:
+Der folgende URI ist z. B. eine gültige Adresse für ein Blob in einem Azure-Speicherkonto:
 
 	https://myaccount.blob.core.windows.net/mycontainer/myblob.txt
 
@@ -133,13 +133,13 @@ Ab Version 3.1 unterstützt das Speicheremulatorkonto georedundante Replikation 
 
     http://127.0.0.1:10000/myaccount-secondary/mycontainer/myblob.txt 
 
-> [AZURE.NOTE]Für programmgesteuerten Zugriff auf den sekundären Speicherort mit dem Speicheremulator verwenden Sie die Speicherclientbibliothek für .NET, Version 3.2 oder höher. Ausführliche Informationen finden Sie unter [Microsoft Azure-Speicherclientbibliothek für .NET](https://msdn.microsoft.com/library/azure/dn261237.aspx).
+> [AZURE.NOTE] Für programmgesteuerten Zugriff auf den sekundären Speicherort mit dem Speicheremulator verwenden Sie die Speicherclientbibliothek für .NET, Version 3.2 oder höher. Unter [Microsoft Azure-Speicherclientbibliothek für .NET](https://msdn.microsoft.com/library/azure/dn261237.aspx) finden Sie weitere Einzelheiten.
 
 ## Referenz zum Speicheremulator-Befehlszeilentool
 
-Ab Version 3.0 wird beim Start des Speicheremulators ein Befehlszeilenfenster angezeigt. In diesem Befehlszeilenfenster können Sie den Emulator starten und beenden, den Status abfragen und weitere Operationen ausführen.
+Ab Version 3.0 wird beim Start des Speicheremulators ein Befehlszeilenfenster angezeigt. In diesem Befehlszeilenfenster können Sie den Emulator starten und beenden, den Status abfragen und weitere Operationen ausführen.
 
-> [AZURE.NOTE]Falls Sie den Microsoft Azure-Serveremulator installiert haben, wird beim Start des Speicheremulators ein Taskleistensymbol angezeigt. Klicken Sie mit der rechten Maustaste auf das Symbol, um ein Menü zu öffnen, das eine grafische Möglichkeit bietet, den Speicheremulator zu starten und zu beenden.
+> [AZURE.NOTE] Falls Sie den Microsoft Azure-Serveremulator installiert haben, wird beim Start des Speicheremulators ein Taskleistensymbol angezeigt. Klicken Sie mit der rechten Maustaste auf das Symbol, um ein Menü zu öffnen, das eine grafische Möglichkeit bietet, den Speicheremulator zu starten und zu beenden.
 
 ### Befehlszeilensyntax
 
@@ -169,7 +169,7 @@ Da der Speicheremulator eine emulierte Umgebung darstellt, die in einer lokalen 
 
 - Ab Version 3.1 unterstützt das Speicheremulatorkonto georedundante Replikation mit Lesezugriff (Read-Access Geo-Redundant Replication, RA-GRS). Im Emulator ist für alle Konten RA-GRS aktiviert, und es entsteht niemals eine Verzögerung zwischen den primären und sekundären Replikaten. Die Vorgänge "Get Blob Service Stats", "Get Queue Service Stats" und "Get Table Service Stats" werden für das sekundäre Konto unterstützt. Sie geben immer den Wert des `LastSyncTime`-Antwortelements als aktuelle Uhrzeit der zugrunde liegenden SQL-Datenbank zurück.
 
-	Für programmgesteuerten Zugriff auf den sekundären Speicherort mit dem Speicheremulator verwenden Sie die Speicherclientbibliothek für .NET, Version 3.2 oder höher. Ausführliche Informationen finden Sie unter [Microsoft Azure-Speicherclientbibliothek für .NET](https://msdn.microsoft.com/library/azure/dn261237.aspx).
+	Für programmgesteuerten Zugriff auf den sekundären Speicherort mit dem Speicheremulator verwenden Sie die Speicherclientbibliothek für .NET, Version 3.2 oder höher. Unter [Microsoft Azure-Speicherclientbibliothek für .NET](https://msdn.microsoft.com/library/azure/dn261237.aspx) finden Sie weitere Einzelheiten.
 
 - Die Endpunkte für Dateidienst und SMB-Protokolldienst werden im Speicheremulator zurzeit nicht unterstützt.
 
@@ -179,7 +179,7 @@ Da der Speicheremulator eine emulierte Umgebung darstellt, die in einer lokalen 
 
 Die folgenden Unterschiede gelten für Blob-Speicher im Emulator:
 
-- Der Speicheremulator unterstützt nur Blob-Größen bis 2 GB.
+- Der Speicheremulator unterstützt nur Blob-Größen bis 2 GB.
 
 - Ein Ablegevorgang für ein Blob kann bei einem Blob, das im Speicheremulator vorhanden ist und über eine aktive Lease verfügt, erfolgreich durchgeführt werden, auch wenn die Lease-ID nicht in der Anforderung angegeben wurde.
 
@@ -189,11 +189,11 @@ Die folgenden Unterschiede gelten für Blob-Speicher im Emulator:
 
 Die folgenden Unterschiede gelten für Tabellenspeicher im Emulator:
 
-- Datumseigenschaften im Tabellendienst im Speicheremulator unterstützen nur den von SQL Server 2005 unterstützten Bereich (*d. h.*, sie müssen nach dem 1. Januar 1753 liegen). Alle Datumsangaben vor dem 1. Januar 1753 werden in diesen Wert geändert. Die Genauigkeit der Daten ist begrenzt auf die Genauigkeit von SQL Server 2005, d. h., Datumsangaben sind auf 1/300 Sekunde genau.
+- Datumseigenschaften im Tabellendienst im Speicheremulator unterstützen nur den von SQL Server 2005 unterstützten Bereich (*d. h.*, sie müssen nach dem 1. Januar 1753 liegen). Alle Datumsangaben vor dem 1. Januar 1753 werden in diesen Wert geändert. Die Genauigkeit der Daten ist begrenzt auf die Genauigkeit von SQL Server 2005, d. h., Datumsangaben sind auf 1/300 Sekunde genau.
 
-- Der Speicheremulator unterstützt Eigenschaftenwerte für Partitions- und Zeilenschlüssel von jeweils weniger als 512 Byte. Darüber hinaus darf die Gesamtgröße von Kontoname, Tabellenname und Schlüsseleigenschaftennamen 900 Byte nicht überschreiten.
+- Der Speicheremulator unterstützt Eigenschaftenwerte für Partitions- und Zeilenschlüssel von jeweils weniger als 512 Byte. Darüber hinaus darf die Gesamtgröße von Kontoname, Tabellenname und Schlüsseleigenschaftennamen 900 Byte nicht überschreiten.
 
-- Die Gesamtgröße einer Zeile in einer Tabelle im Speicheremulator ist auf weniger als 1 MB beschränkt.
+- Die Gesamtgröße einer Zeile in einer Tabelle im Speicheremulator ist auf weniger als 1 MB beschränkt.
 
 - Im Speicheremulator unterstützen Eigenschaften des Datentyps `Edm.Guid` oder `Edm.Binary` in Filterzeichenfolgen für Abfragen nur die Vergleichsoperatoren `Equal (eq)` und `NotEqual (ne)`.
 
@@ -205,31 +205,31 @@ Es bestehen keine Unterschiede beim Warteschlangenspeicher im Emulator.
 
 ### Version 4.2
 
-- Der Speicheremulator unterstützt nun Version 2015-04-05 der Speicherdienste auf Blob-, Warteschlangen- und Tabellenspeicherdienst-Endpunkten.
+- Der Speicheremulator unterstützt nun Version 2015-04-05 der Speicherdienste auf Blob-, Warteschlangen- und Tabellenspeicherdienst-Endpunkten.
 
 ### Version 4.1
 
-- Der Speicheremulator unterstützt nun Version 2015-02-21 der Speicherdienste auf Blob-, Warteschlangen- und Dienstendpunkten, mit Ausnahme der neuen Anfügeblob-Funktionen. 
+- Der Speicheremulator unterstützt nun Version 2015-02-21 der Speicherdienste auf Blob-, Warteschlangen- und Dienstendpunkten, mit Ausnahme der neuen Anfügeblob-Funktionen. 
 
 - Der Speicheremulator gibt jetzt eine sinnvolle Fehlermeldung zurück, wenn Sie eine Version der Speicherdienste verwenden, die von dieser Version des Emulators noch nicht unterstützt wird. Es wird empfohlen, die neueste Version des Emulators zu verwenden. Wenn Sie den Fehler „VersionNotSupportedByEmulator“ (HTTP-Statuscode 400 – Ungültige Anforderung) erhalten, laden Sie die neueste Version des Speicheremulators herunter.
 
 - Es wurde ein Fehler behoben, bei der eine Racebedingung während der gleichzeitigen Zusammenführungsvorgänge zu falschen Tabellenentitätsdaten geführt hat.
 
-### Version 4.0
+### Version 4.0
 
 - Die ausführbare Datei des Speicheremulators wurde in *AzureStorageEmulator.exe* umbenannt.
 
-### Version 3.2
-- Der Speicheremulator unterstützt nun Version 2014-02-14 der Speicherdienste auf Blob-, Warteschlangen- und Dienstendpunkten. Beachten Sie, dass Endpunkte für den Dateidienst im Speicheremulator zurzeit nicht unterstützt werden. Ausführliche Informationen über die Version 2014-02-14 finden Sie unter [Versionsverwaltung für den Blob-Dienst, den Warteschlangendienst und den Tabellendienst in Microsoft Azure](https://msdn.microsoft.com/library/azure/dd894041.aspx).
+### Version 3.2
+- Der Speicheremulator unterstützt nun Version 2014-02-14 der Speicherdienste auf Blob-, Warteschlangen- und Dienstendpunkten. Beachten Sie, dass Endpunkte für den Dateidienst im Speicheremulator zurzeit nicht unterstützt werden. Ausführliche Informationen über die Version 2014-02-14 finden Sie unter [Versionsverwaltung für den Blob-Dienst, den Warteschlangendienst und den Tabellendienst in Microsoft Azure](https://msdn.microsoft.com/library/azure/dd894041.aspx).
 
-### Version 3.1
-- Lesezugriff auf den geografisch redundanten Speicher (RA-GRS) wird nun im Speicheremulator unterstützt. Die API-Vorgänge "Get Blob Service Stats", "Get Queue Service Stats" und "Get Table Service Stats" werden für das sekundäre Konto unterstützt. Sie geben immer den Wert des LastSyncTime-Antwortelements als aktuelle Uhrzeit der zugrunde liegenden SQL-Datenbank zurück. Für programmgesteuerten Zugriff auf den sekundären Speicherort mit dem Speicheremulator verwenden Sie die Speicherclientbibliothek für .NET, Version 3.2 oder höher. Ausführliche Informationen finden Sie in der Referenz zur Speicherclientbibliothek.
+### Version 3.1
+- Lesezugriff auf den geografisch redundanten Speicher (RA-GRS) wird nun im Speicheremulator unterstützt. Die API-Vorgänge "Get Blob Service Stats", "Get Queue Service Stats" und "Get Table Service Stats" werden für das sekundäre Konto unterstützt. Sie geben immer den Wert des LastSyncTime-Antwortelements als aktuelle Uhrzeit der zugrunde liegenden SQL-Datenbank zurück. Für programmgesteuerten Zugriff auf den sekundären Speicherort mit dem Speicheremulator verwenden Sie die Speicherclientbibliothek für .NET, Version 3.2 oder höher. In der Referenz zur Microsoft Azure Storage-Clientbibliothek für .NET finden Sie weitere Einzelheiten.
 
-### Version 3.0
+### Version 3.0
 - Der Azure-Speicheremulator wird nicht mehr im gleichen Paket wie der Serveremulator ausgeliefert.
 
-- Die grafische Benutzeroberfläche des Speicheremulators wird durch eine skriptfähige Befehlszeilenschnittstelle ersetzt. Ausführliche Informationen zur Befehlszeilenschnittstelle finden Sie in der Referenz zum Speicheremulator-Befehlszeilentool. Die grafische Benutzeroberfläche wird weiterhin in Version 3.0 enthalten sein, es kann aber nur sie zugegriffen werden, wenn der Serveremulator installiert ist, indem Sie mit der rechten Maustaste auf das Taskleistensymbol klicken und die Speicheremulator-Benutzeroberfläche auswählen.
+- Die grafische Benutzeroberfläche des Speicheremulators wird durch eine skriptfähige Befehlszeilenschnittstelle ersetzt. Ausführliche Informationen zur Befehlszeilenschnittstelle finden Sie in der Referenz zum Speicheremulator-Befehlszeilentool. Die grafische Benutzeroberfläche wird weiterhin in Version 3.0 enthalten sein, es kann aber nur sie zugegriffen werden, wenn der Serveremulator installiert ist, indem Sie mit der rechten Maustaste auf das Taskleistensymbol klicken und die Speicheremulator-Benutzeroberfläche auswählen.
 
-- Version 2013-08-15 der Azure Storage-Dienste wird jetzt vollständig unterstützt. (Zuvor wurde diese Version nur von Version 2.2.1 Preview des Speicheremulators unterstützt.)
+- Version 2013-08-15 der Azure Storage-Dienste wird jetzt vollständig unterstützt. (Zuvor wurde diese Version nur von Version 2.2.1 Preview des Speicheremulators unterstützt.)
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0224_2016-->

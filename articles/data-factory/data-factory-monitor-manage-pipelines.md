@@ -47,7 +47,7 @@ Klicken Sie oben auf der Data Factory-Startseite auf **Diagramm**, um die Diagra
 
 ![Diagrammansicht](./media/data-factory-monitor-manage-pipelines/diagram-view.png)
 
-Sie können die Ansicht vergrößern, verkleinern, auf 100 % anpassen, das Layout des Diagramms sperren, Pipelines und Tabellen automatisch positionieren und Informationen zur Datenherkunft anzeigen (d. h. vor- und nachgelagerte Elemente ausgewählter Elemente anzeigen).
+Sie können die Ansicht vergrößern, verkleinern, auf 100 % anpassen, das Layout des Diagramms sperren, Pipelines und Tabellen automatisch positionieren und Informationen zur Datenherkunft anzeigen (d. h. vor- und nachgelagerte Elemente ausgewählter Elemente anzeigen).
  
 
 ### Aktivitäten innerhalb einer Pipeline 
@@ -68,7 +68,7 @@ Im folgenden Beispiel wurde die **BlobPartitionHiveActivity** erfolgreich ausgef
 
 ![Status der Pipeline](./media/data-factory-monitor-manage-pipelines/state-of-pipeline.png)
 
-Durch Doppelklicken auf **PartitionedProductsUsageTable** in der Diagrammansicht werden alle Slices gezeigt, die innerhalb einer Pipeline von verschiedenen Aktivitätsausführungen erzeugt wurden. Sie sehen, dass die **BlobPartitionHiveActivity** in den letzten 8 Monaten jeden Monat erfolgreich ausgeführt wurde und Slices mit dem Status **Ready** erzeugt hat.
+Durch Doppelklicken auf **PartitionedProductsUsageTable** in der Diagrammansicht werden alle Slices gezeigt, die innerhalb einer Pipeline von verschiedenen Aktivitätsausführungen erzeugt wurden. Sie sehen, dass die **BlobPartitionHiveActivity** in den letzten 8 Monaten jeden Monat erfolgreich ausgeführt wurde und Slices mit dem Status **Ready** erzeugt hat.
 
 Die Datasetslices in Data Factory können einen der folgenden Status haben:
 
@@ -165,7 +165,7 @@ Sie können Ihre Pipelines mit Azure PowerShell verwalten. Sie können z. B. mit
 ### Anhalten und Fortsetzen von Pipelines
 Sie können Pipelines mit dem PowerShell-Cmdlet **Suspend-AzureRmDataFactoryPipeline** anhalten. Dies ist hilfreich, wenn Sie ein Problem in Ihren Daten festgestellt haben und die Pipelines nicht weiter zum Verarbeiten von Daten ausführen möchten, bis das Problem behoben ist.
 
-Im nachstehende Screenshot wurde z. B. ein Problem in der **PartitionProductsUsagePipeline** in der Data Factory **productrecgamalbox1dev** festgestellt, weshalb die Pipeline angehalten werden soll.
+Im nachstehende Screenshot wurde z. B. ein Problem in der **PartitionProductsUsagePipeline** in der Data Factory **productrecgamalbox1dev** festgestellt, weshalb die Pipeline angehalten werden soll.
 
 ![Pipeline, die angehalten werden soll](./media/data-factory-monitor-manage-pipelines/pipeline-to-be-suspended.png)
 
@@ -271,7 +271,7 @@ Nachdem Sie eine Problembehandlung und ein Debugging für Fehler in einer Pipeli
 
 ![Wiederholen eines fehlerhaften Slices](./media/data-factory-monitor-manage-pipelines/rerun-slice.png)
 
-Für den Fall, dass der Slice die Überprüfung aufgrund eines Richtlinienfehlers (z. B. Daten nicht verfügbar) nicht besteht, können Sie den Fehler korrigieren und die Überprüfung erneut ausführen, indem Sie auf der Befehlsleiste auf **Überprüfen** klicken. ![Beheben von Fehlern und Überprüfen](./media/data-factory-monitor-manage-pipelines/fix-error-and-validate.png)
+Für den Fall, dass der Slice die Überprüfung aufgrund eines Richtlinienfehlers (z. B. Daten nicht verfügbar) nicht besteht, können Sie den Fehler korrigieren und die Überprüfung erneut ausführen, indem Sie auf der Befehlsleiste auf **Überprüfen** klicken. ![Beheben von Fehlern und Überprüfen](./media/data-factory-monitor-manage-pipelines/fix-error-and-validate.png)
 
 ### Verwenden von Azure PowerShell
 
@@ -295,6 +295,8 @@ Azure-Ereignisse bieten hilfreiche Einblicke in die Aktivitäten in Ihren Azure-
 - Ein bedarfsbezogener HDInsight-Cluster wird erstellt und entfernt.
 
 Sie können Warnungen zu diesen Benutzerereignissen erstellen und sie so konfigurieren, dass E-Mail-Benachrichtigungen an den Administrator und an Co-Administratoren des Abonnements gesendet werden. Darüber hinaus können Sie zusätzliche E-Mail-Adressen von Benutzern angeben, die E-Mail-Benachrichtigungen erhalten sollen, wenn bestimmte Bedingungen erfüllt werden. Diese sind sehr nützlich, wenn Sie sich bei Fehlern benachrichtigen lassen und Ihre Data Factory nicht kontinuierlich überwachen möchten.
+
+> [AZURE.NOTE] Das Portal zeigt zurzeit keine Warnungen für Ereignisse an. Verwenden Sie die [App „Überwachung und Verwaltung“](data-factory-monitor-manage-app.md), um alle Warnungen anzuzeigen.
 
 #### Angeben einer Warnungsdefinition:
 Um eine Warnungsdefinition anzugeben, erstellen Sie eine JSON-Datei mit einer Beschreibung der Vorgänge, zu denen Sie benachrichtigt werden möchten. Im folgenden Beispiel sendet die Warnung eine E-Mail-Benachrichtigung für den "RunFinished"-Vorgang. Genauer gesagt: Es wird eine E-Mail-Benachrichtigung gesendet, wenn eine Ausführung in der Data Factory abgeschlossen wurde und ein Fehler aufgetreten ist (Status = FailedExecution).
@@ -355,7 +357,7 @@ OnDemandClusterDeleted | Succeeded
 Unter [Benachrichtigungsregel erstellen](https://msdn.microsoft.com/library/azure/dn510366.aspx) finden Sie ausführliche Informationen zu JSON-Elementen, die im Beispiel oben verwendet werden.
 
 #### Bereitstellen der Warnung 
-Verwenden Sie zum Bereitstellen der Warnung das Azure-PowerShell-Cmdlet **New-AzureRmResourceGroupDeployment**, wie im folgenden Beispiel gezeigt:
+Verwenden Sie zum Bereitstellen der Warnung das Azure PowerShell-Cmdlet **New-AzureRmResourceGroupDeployment**, wie im folgenden Beispiel gezeigt:
 
 	New-AzureRmResourceGroupDeployment -ResourceGroupName adf -TemplateFile .\ADFAlertFailedSlice.json  
 
@@ -547,7 +549,7 @@ Ersetzen Sie "subscriptionId", "resourceGroupName" und "dataFactoryName" im obig
 
 **Bereitstellen der Warnung:**
 
-Verwenden Sie zum Bereitstellen der Warnung das Azure-PowerShell-Cmdlet **New-AzureRmResourceGroupDeployment**, wie im folgenden Beispiel gezeigt:
+Verwenden Sie zum Bereitstellen der Warnung das Azure PowerShell-Cmdlet **New-AzureRmResourceGroupDeployment**, wie im folgenden Beispiel gezeigt:
 
 	New-AzureRmResourceGroupDeployment -ResourceGroupName adf -TemplateFile .\FailedRunsGreaterThan5.json
 
@@ -568,6 +570,15 @@ Folgende Meldung sollte nach erfolgreicher Bereitstellung angezeigt werden:
 	Outputs           
 
 
-Zum Bereitstellen einer Warnungsregel können Sie auch das Cmdlet **Add-AlertRule** verwenden. Detaillierte Informationen und Beispiele finden Sie im Thema [Add-AlertRule](https://msdn.microsoft.com/library/mt282468.aspx).
+Zum Bereitstellen einer Warnungsregel können Sie auch das Cmdlet **Add-AlertRule** verwenden. Ausführliche Informationen und Beispiele finden Sie im Thema [Add-AlertRule](https://msdn.microsoft.com/library/mt282468.aspx).
 
-<!---HONumber=AcomDC_0218_2016-->
+## Verschieben von Data Factory in eine andere Ressourcengruppe oder ein anderes Abonnement
+Sie können eine Data Factory mithilfe der Schaltfläche **Verschieben** auf der Befehlsleiste auf der Homepage Ihrer Data Factory in eine andere Ressourcengruppe oder ein anders Abonnement verschieben.
+
+![Data Factory verschieben](./media/data-factory-monitor-manage-pipelines/MoveDataFactory.png)
+
+Sie können auch alle zugehörigen Ressourcen (z. B. mit der Data Factory verknüpfte Warnungen) zusammen mit der Data Factory verschieben.
+
+![Dialogfeld „Ressourcen verschieben“](./media/data-factory-monitor-manage-pipelines/MoveResources.png)
+
+<!---HONumber=AcomDC_0224_2016-->

@@ -4,7 +4,7 @@
    services="app-service\logic"
    documentationCenter=".net,nodejs,java"
    authors="rajeshramabathiran"
-   manager="dwrede"
+   manager="erikre"
    editor=""/>
 
 <tags
@@ -13,11 +13,13 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="11/11/2015"
+   ms.date="02/11/2016"
    ms.author="rajram"/>
 
 # Erste Schritte mit dem Box-Connector und das Hinzufügen zur Logik-App 
-Stellen Sie eine Verbindung mit Box her, um z. B. Dateien abzurufen, hochzuladen, zu löschen. Connectors werden als Teil eines "Workflows" in Logik-Apps verwendet.
+>[AZURE.NOTE] Diese Version des Artikels gilt für die Logik-Apps-Schemaversion 2014-12-01-preview. Um die Schemaversion 2015-08-01-preview aufzurufen, klicken Sie auf [Box-API](../connectors/create-api-box.md).
+
+Stellen Sie eine Verbindung mit Box her, um z. B. Dateien abzurufen, hochzuladen, zu löschen. Connectors werden als Teil eines "Workflows" in Logik-Apps verwendet.
 
 Es gibt Situationen, in denen Sie möglicherweise mit Box arbeiten müssen, um Daten sicher mit anderen Personen zu teilen – auch außerhalb Ihrer Firewall. Logik-Apps können basierend auf einer Vielzahl von Datenquellen ausgelöst werden und Connectors anbieten, um Daten als Teil des Datenflusses abzurufen und zu verarbeiten.
 
@@ -33,7 +35,7 @@ Parametername | Beschreibung | Erforderlich
 --- | --- | ---
 Ordnerpfad | Pfad des Ordners zur Liste. | Ja
 
-> [AZURE.NOTE]Hierdurch werden keine Dateiinhalte zurückgegeben.
+> [AZURE.NOTE] Hierdurch werden keine Dateiinhalte zurückgegeben.
 
 b. *Datei abrufen:* Dieser Vorgang ruft eine Datei mit ihren Inhalten und Eigenschaften ab. Liste der Parameter, die für die Aktion erforderlich sind:
 
@@ -42,7 +44,7 @@ Parametername | Beschreibung | Erforderlich
 Dateipfad | Pfad des Ordners, in dem sich die Datei befindet. | Ja
 Dateityp | Gibt an, ob die Datei im Text- oder im Binärformat vorliegt. | Nein
 
-> [AZURE.NOTE]Bei diesem Vorgang wird die Datei nach dem Lesen nicht gelöscht.
+> [AZURE.NOTE] Bei diesem Vorgang wird die Datei nach dem Lesen nicht gelöscht.
 
 
 c. *Datei hochladen*: Wie der Name schon sagt, wird die Datei durch diese Aktion in ein Box-Konto hochgeladen. Wenn die Datei bereits vorhanden ist, wird sie nicht überschrieben, und ein Fehler wird ausgelöst. Liste der Parameter, die für die Aktion erforderlich sind:
@@ -77,7 +79,7 @@ Sobald Ihre API-App erstellt wurde, können Sie den Box-Connector als Aktion in 
 
 1. Öffnen Sie in der Logik-App **Trigger und Aktionen**, um den Logik-Apps-Designer zu öffnen und den Datenfluss zu konfigurieren. Der Box-Connector wird im Katalog aufgeführt. Wählen Sie ihn aus, um ihn automatisch dem Logik-Apps-Designer hinzuzufügen:
 
-	> [AZURE.NOTE]Wenn der Box-Connector am Anfang der Logik-App aktiviert ist, fungiert dieser wie ein Trigger. Andernfalls könnte Aktionen auf das Box-Konto über den Connector angewendet werden. Der Box-Connector verfügte über keine Trigger, als dieser Artikel verfasst wurde.
+	> [AZURE.NOTE] Wenn der Box-Connector am Anfang der Logik-App aktiviert ist, fungiert dieser wie ein Trigger. Andernfalls könnte Aktionen auf das Box-Konto über den Connector angewendet werden. Der Box-Connector verfügte über keine Trigger, als dieser Artikel verfasst wurde.
 
 2. Authentifizieren und autorisieren Sie Logik-Apps, um Vorgänge in Ihrem Namen durchzuführen. Wählen Sie **Autorisieren** für den Box-Connector aus: 
 	![][2]
@@ -94,7 +96,7 @@ Sobald Ihre API-App erstellt wurde, können Sie den Box-Connector als Aktion in 
 ## Mehr mit Ihrem Connector machen
 Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
->[AZURE.NOTE]Wenn Sie Azure Logik-Apps ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [Logik-App testen](https://tryappservice.azure.com/?appservice=logic) sofort kostenlos eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure Logik-Apps ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [Logik-App testen](https://tryappservice.azure.com/?appservice=logic) sofort kostenlos eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
 
@@ -107,4 +109,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [4]: ./media/app-service-logic-connector-box/image_3.jpg
 [5]: ./media/app-service-logic-connector-box/image_4.jpg
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0224_2016-->

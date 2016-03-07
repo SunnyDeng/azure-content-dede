@@ -14,26 +14,33 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="10/21/2015"
+   ms.date="02/23/2016"
    ms.author="cherylmc" />
 
-# Konfigurieren eines VPN-Gateways im klassischen Azure-Portal
+# Konfigurieren eines VPN Gateways für das klassische Bereitstellungsmodell
 
->[AZURE.NOTE]Sie sollten wissen, dass Azure derzeit mit zwei Bereitstellungsmodellen arbeitet: der Bereitstellung mit dem Ressourcen-Manager und der klassischen Bereitstellung. Bevor Sie Ihre Konfiguration beginnen, sollten Sie sicherstellen, dass Sie die Bereitstellungsmodelle und -tools verstehen. Informationen zu den Bereitstellungsmodellen finden Sie unter [Azure-Bereitstellungsmodelle](../azure-classic-rm.md).
 
-Dieser Artikel wurde für das klassische Bereitstellungsmodell und das klassische Azure-Portal (nicht das Azure-Portal) geschrieben. Wenn Sie ein VPN-Gateway für das klassische Bereitstellungsmodell mithilfe eines Portals konfigurieren möchten, müssen Sie derzeit das klassische Azure-Portal verwenden.
+Wenn Sie eine sichere standortübergreifende Verbindung zwischen Azure und Ihrem lokalen Standort erstellen möchten, benötigen Sie ein konfiguriertes VPN-Gateway. Es gibt verschiedene Arten von VPN Gateways, und die Art des zu erstellenden VPN Gateways hängt sowohl von Ihrem Netzwerkentwurf als auch vom gewünschten lokalen VPN-Gerät ab.
 
-Wenn Sie eine sichere standortübergreifende Verbindung zwischen Azure und Ihrem lokalen Standort erstellen möchten, benötigen Sie ein konfiguriertes VPN-Gateway. Es gibt verschiedene Arten von Gateways, und die Art des zu erstellenden Gateways hängt sowohl von Ihrem Netzwerkentwurf als auch vom gewünschten lokalen VPN-Gerät ab. Einige Konnektivitätsoptionen (wie etwa Punkt-zu-Standort-Verbindungen) setzen ein Gateway mit dynamischem Routing voraus. Wenn Sie Ihr Gateway so konfigurieren möchten, dass es gleichzeitig Punkt-zu-Standort-Verbindungen (P2S) und eine Standort-zu-Standort-Verbindung (S2S) unterstützt, müssen Sie ein Gateway mit dynamischem Routing konfigurieren, auch wenn für die Standort-zu-Standort-Verbindung eigentlich ein beliebiger Gateway-Routingtyp konfiguriert werden kann. Darüber hinaus müssen Sie sicherstellen, dass das Gerät, das Sie für Ihre Standort-zu-Standort-Verbindung verwenden möchten, den gewünschten Gatewaytyp unterstützt. Siehe [Zu VPN-Gateways](vpn-gateway-about-vpngateways.md).
+Einige Konnektivitätsoptionen (wie etwa Punkt-zu-Standort-Verbindungen) setzen ein Gateway mit dynamischem Routing voraus. Wenn Sie Ihr Gateway so konfigurieren möchten, dass es gleichzeitig Punkt-zu-Standort-Verbindungen (P2S) und eine Standort-zu-Standort-Verbindung (S2S) unterstützt, müssen Sie ein Gateway mit dynamischem Routing konfigurieren, auch wenn für die Standort-zu-Standort-Verbindung eigentlich ein beliebiger Gateway-Routingtyp konfiguriert werden kann.
+
+Darüber hinaus müssen Sie sicherstellen, dass das Gerät, das Sie für Ihre Verbindung verwenden möchten, den gewünschten VPN-Typ unterstützt. Weitere Informationen finden Sie unter [Informationen zu VPN-Geräten](vpn-gateway-about-vpn-devices.md).
+
+
+**Informationen zum Artikel**
+
+Dieser Artikel wurde für das klassische Bereitstellungsmodell mit dem [klassischen Portal](https://manage.windowsazure.com) (nicht das Azure-Portal) geschrieben. Sobald ein Artikel für das Resource Manager-Bereitstellungsmodell verfügbar ist, stellen wir hier einen Link bereit.
+
+**Informationen zu Azure-Bereitstellungsmodellen**
+
+[AZURE.INCLUDE [vpn-gateway-clasic-rm](../../includes/vpn-gateway-classic-rm-include.md)]
 
 ## Konfigurationsübersicht
 
 Das folgende Verfahren führt Sie durch die Konfiguration des VPN-Gateways im klassischen Azure-Portal. Diese Schritte gelten für Gateways für VNets, die mit dem Service Management-Modus erstellt wurden und im klassischen Azure-Portal sichtbar sind. Es handelt sich nicht um die Schritte zur Verwendung des Vorschauportals oder für VNets, die mithilfe des Ressourcen-Manager-Modus konfiguriert wurden. Informationen zum Erstellen von VNET-Gateways für virtuelle Netzwerke, die mit dem Ressourcen-Manager-Modus erstellt wurden, finden Sie unter [Erstellen eines virtuellen Netzwerks mit einer Standort-zu-Standort-Verbindung unter Verwendung von Azure-Ressourcen-Manager und PowerShell ](vpn-gateway-create-site-to-site-rm-powershell.md).
 
-Vor dem Konfigurieren Ihres Gateways müssen Sie zuerst Ihr virtuelles Netzwerk erstellen. Die Schritte zum Erstellen eines virtuellen Netzwerks für standortübergreifende Verbindungen finden Sie unter [Konfigurieren eines virtuellen Netzwerks mit einer Standort-zu-Standort-VPN-Verbindung](vpn-gateway-site-to-site-create.md) bzw. unter [Konfigurieren eines virtuellen Netzwerks mit einer Punkt-zu-Standort-VPN-Verbindung](vpn-gateway-point-to-site-create.md). Führen Sie anschließend die folgenden Schritte durch, um das VPN-Gateway zu konfigurieren und die Informationen zu sammeln, die Sie zum Konfigurieren des VPN-Geräts benötigen.
 
-Wenn Sie bereits über ein VPN-Gateway verfügen und den Routingtyp ändern möchten, lesen Sie unter [Ändern des VPN-Gatewaytyps](#how-to-change-your-vpn-gateway-type) weiter.
-
-1. [Erstellen eines VPN-Gateways](#create-a-vpn-gateway)
+1. [Erstellen eines VPN Gateways für Ihr VNET](#create-a-vpn-gateway)
 
 1. [Sammeln von Konfigurationsinformationen für Ihr VPN-Gerät](#gather-information-for-your-vpn-device-configuration)
 
@@ -41,9 +48,15 @@ Wenn Sie bereits über ein VPN-Gateway verfügen und den Routingtyp ändern möc
 
 1. [Überprüfen der lokalen Netzwerkbereiche und der IP-Adresse des VPN-Gateways](#verify-your-local-network-ranges-and-vpn-gateway-ip-address)
 
+### Voraussetzungen
+
+Vor dem Konfigurieren Ihres Gateways müssen Sie zuerst Ihr virtuelles Netzwerk erstellen. Die Schritte zum Erstellen eines virtuellen Netzwerks für standortübergreifende Verbindungen finden Sie unter [Konfigurieren eines virtuellen Netzwerks mit einer Standort-zu-Standort-VPN-Verbindung](vpn-gateway-site-to-site-create.md) bzw. unter [Konfigurieren eines virtuellen Netzwerks mit einer Punkt-zu-Standort-VPN-Verbindung](vpn-gateway-point-to-site-create.md). Führen Sie anschließend die folgenden Schritte durch, um das VPN-Gateway zu konfigurieren und die Informationen zu sammeln, die Sie zum Konfigurieren des VPN-Geräts benötigen.
+
+Wenn Sie bereits über ein VPN Gateway verfügen und den Routingtyp ändern möchten, lesen Sie unter [Gewusst wie: Ändern des VPN-Routingtyps für das Gateway](#how-to-change-your-vpn-gateway-type) weiter.
+
 ## Erstellen eines VPN-Gateways
 
-1. Vergewissern Sie sich, dass im klassischen Azure-Portal auf der Seite **Netzwerke** in der Statusspalte für Ihr virtuelles Netzwerk **Erstellt** angezeigt wird.
+1. Vergewissern Sie sich, dass im [klassischen Azure-Portal](https://manage.windowsazure.com) auf der Seite **Netzwerke** in der Statusspalte für Ihr virtuelles Netzwerk **Erstellt** angezeigt wird.
 
 1. Klicken Sie in der Spalte **Name** auf den Namen Ihres virtuellen Netzwerks.
 
@@ -52,11 +65,11 @@ Wenn Sie bereits über ein VPN-Gateway verfügen und den Routingtyp ändern möc
 ![Gateway nicht erstellt](./media/vpn-gateway-configure-vpn-gateway-mp/IC717025.png)
 
 
-Klicken Sie anschließend am unteren Seitenrand auf **Gateway erstellen**. Sie haben die Wahl zwischen *Statisches Routing* und *Dynamisches Routing*. Bei der Wahl des Routingtyps müssen einige Faktoren berücksichtigt werden. Dazu zählt beispielsweise die Frage, was das VPN-Gerät unterstützt und ob Punkt-zu-Standort-Verbindungen unterstützt werden müssen. Informieren Sie sich unter [Informationen zu VPN-Geräten und Gateways für virtuelle Netzwerkverbindungen](vpn-gateway-about-vpn-devices.md) darüber, welchen Routingtyp Sie benötigen. Wenn Sie den Gatewaytyp nach der Erstellung ändern möchten, müssen Sie das Gateway löschen und neu erstellen. Wenn Sie zum Bestätigen der Gatewayerstellung aufgefordert werden, klicken Sie auf **Ja**.
+Klicken Sie anschließend am unteren Seitenrand auf **Gateway erstellen**. Sie haben die Wahl zwischen *Statisches Routing* und *Dynamisches Routing*. Bei der Wahl des Routingtyps müssen einige Faktoren berücksichtigt werden. Dazu zählt beispielsweise die Frage, was das VPN-Gerät unterstützt und ob Punkt-zu-Standort-Verbindungen unterstützt werden müssen. Informieren Sie sich unter [Informationen zu VPN-Geräten und Gateways für virtuelle Netzwerkverbindungen](vpn-gateway-about-vpn-devices.md) darüber, welchen Routingtyp Sie benötigen. Wenn Sie die VPN-Routingtypen nach der Erstellung des Gateways ändern möchten, müssen Sie das Gateway löschen und neu erstellen. Wenn Sie zum Bestätigen der Gatewayerstellung aufgefordert werden, klicken Sie auf **Ja**.
 
-![Gatewaytyp](./media/vpn-gateway-configure-vpn-gateway-mp/IC717026.png)
+![VPN-Routingtyp des Gateways](./media/vpn-gateway-configure-vpn-gateway-mp/IC717026.png)
 
-Während der Gatewayerstellung wechselt die Gatewaygrafik auf der Seite zu Gelb und zeigt *Gateway wird erstellt* an. Die Gatewayerstellung kann bis zu 25 Minuten dauern. Warten Sie, bis die Gatewayerstellung abgeschlossen ist, bevor Sie mit anderen Konfigurationseinstellungen fortfahren.
+Während der Gatewayerstellung wechselt die Gatewaygrafik auf der Seite zu Gelb und zeigt *Gateway wird erstellt* an. Die Gatewayerstellung kann bis zu 25 Minuten dauern. Warten Sie, bis die Gatewayerstellung abgeschlossen ist, bevor Sie mit anderen Konfigurationseinstellungen fortfahren.
 
 ![Gatewayerstellung](./media/vpn-gateway-configure-vpn-gateway-mp/IC717027.png)
 
@@ -103,7 +116,7 @@ Damit ein Gateway ordnungsgemäß eine Verbindung herstellen kann, muss die IP-A
 
 ### Überprüfen der Adressbereiche für Ihre lokalen Netzwerke
 
-Damit der richtige Datenverkehr über das Gateway an Ihren lokalen Standort gelangt, müssen Sie sicherstellen, dass Sie jeden IP-Adressbereich aufgeführt haben, der in der Konfiguration des lokalen Netzwerks enthalten sein soll. Abhängig von der Netzwerkkonfiguration Ihres lokalen Standorts kann dies eine recht umfangreiche Angelegenheit sein, da jeder Bereich in der Azure-Konfiguration **Lokale Netzwerke** aufgeführt sein muss. Datenverkehr für eine IP-Adresse, die in den aufgeführten Bereichen enthalten ist, wird über das VPN-Gateway des virtuellen Netzwerks gesendet. Bei den aufgeführten IP-Adressbereichen muss es sich nicht um private Bereiche handeln. Es empfiehlt sich jedoch zu überprüfen, ob die lokale Konfiguration den eingehenden Datenverkehr empfangen kann.
+Damit der richtige Datenverkehr über das Gateway an Ihren lokalen Standort gelangt, müssen Sie sicherstellen, dass Sie jeden IP-Adressbereich aufgeführt haben, der in der Konfiguration des lokalen Netzwerks enthalten sein soll. Abhängig von der Netzwerkkonfiguration Ihres lokalen Standorts kann dies eine recht umfangreiche Angelegenheit sein, da jeder Bereich in der Azure-Konfiguration **Lokale Netzwerke** aufgeführt sein muss. Datenverkehr für eine IP-Adresse, die in den aufgeführten Bereichen enthalten ist, wird über das VPN-Gateway des virtuellen Netzwerks gesendet. Bei den aufgeführten IP-Adressbereichen muss es sich nicht um private Bereiche handeln. Es empfiehlt sich jedoch zu überprüfen, ob mit der lokalen Konfiguration eingehender Datenverkehr empfangen werden kann.
 
 Gehen Sie zum Hinzufügen oder Bearbeiten der Bereiche für ein lokales Netzwerk wie folgt vor:
 
@@ -128,15 +141,15 @@ Auf der Dashboardseite wird Folgendes angezeigt:
 - Der gemeinsam verwendete Schlüssel, mit dem die Gatewayverbindung mit Ihrem VPN-Gerät konfiguriert wurde.
 
 
-## Ändern des VPN-Gatewaytyps
+## Gewusst wie: Ändern des VPN-Routingtyps für Ihr Gateway
 
-Da einige Konnektivitätskonfigurationen nur für bestimmte Gatewaytypen verfügbar sind, kann es vorkommen, dass Sie den Gatewaytyp eines vorhandenes VPN-Gateways ändern müssen. Ein Beispiel: Sie möchten eine bereits vorhandene Standort-zu-Standort-Verbindung mit statischem Gateway um Punkt-zu-Standort-Verbindungen erweitern. Für Punkt-zu-Standort-Verbindungen wird jedoch ein dynamisches Gateway benötigt. Daher müssen Sie den Gatewaytyp von „statisch“ in „dynamisch“ ändern, um die Konfiguration zu ermöglichen.
+Da einige Konnektivitätskonfigurationen nur für bestimmte Gatewayroutingtypen verfügbar sind, kann es vorkommen, dass Sie den VPN-Routingtyp eines vorhandenen VPN Gateways ändern müssen. Ein Beispiel: Sie möchten eine bereits vorhandene Standort-zu-Standort-Verbindung mit statischem Gateway um Punkt-zu-Standort-Verbindungen erweitern. Für Punkt-zu-Standort-Verbindungen wird jedoch ein dynamisches Gateway benötigt. Daher müssen Sie den VPN-Routingtyp des Gateways von statisch in dynamisch ändern, um die Konfiguration zu ermöglichen.
 
-Zum Ändern des Routingtyps eines VPN-Gateways müssen Sie das vorhandene Gateway löschen und es anschließend mit dem neuen Routingtyp erneut erstellen. Das virtuelle Netzwerk muss für diese Änderung nicht gelöscht werden.
+Zum Ändern des VPN-Routingtyps eines Gateways müssen Sie das vorhandene Gateway löschen und anschließend mit dem neuen Routingtyp erneut erstellen. Das virtuelle Netzwerk muss für diese Änderung nicht gelöscht werden.
 
-Vergewissern Sie sich vor dem Ändern des Gatewaytyps, dass Ihr VPN-Gerät den gewünschten Gatewaytyp unterstützt. Unter [Informationen zu VPN-Geräten und Gateways für virtuelle Netzwerkverbindungen](vpn-gateway-about-vpn-devices.md) können Sie neue Routingkonfigurationsbeispiele herunterladen und sich über die Anforderungen von VPN-Geräten informieren.
+Vergewissern Sie sich vor dem Ändern des VPN-Typs des Gateways, dass Ihr VPN-Gerät den gewünschten Gatewaytyp unterstützt. Unter [Informationen zu VPN-Geräten und Gateways für virtuelle Netzwerkverbindungen](vpn-gateway-about-vpn-devices.md) können Sie neue Routingkonfigurationsbeispiele herunterladen und sich über die Anforderungen von VPN-Geräten informieren.
 
->[AZURE.IMPORTANT]Wenn Sie ein VPN-Gateway für das virtuelle Netzwerk löschen, wird die dem Gateway zugewiesene VIP freigegeben. Wenn Sie das Gateway neu erstellen, wird ihm eine neue VIP zugewiesen.
+>[AZURE.IMPORTANT] Wenn Sie ein VPN-Gateway für das virtuelle Netzwerk löschen, wird die dem Gateway zugewiesene VIP freigegeben. Wenn Sie das Gateway neu erstellen, wird ihm eine neue VIP zugewiesen.
 
 1. **Löschen Sie das vorhandene VPN-Gateway.**
 
@@ -157,4 +170,4 @@ Wenn Sie eine Punkt-zu-Standort-VPN-Verbindung konfigurieren möchten, helfen Ih
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0224_2016-->

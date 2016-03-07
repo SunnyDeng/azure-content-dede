@@ -4,7 +4,7 @@
    services="storsimple"
    documentationCenter="NA"
    authors="SharS"
-   manager="carolz"
+   manager="carmonm"
    editor=""/>
 <tags 
    ms.service="storsimple"
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="na"
-   ms.date="02/16/2016"
+   ms.date="02/22/2016"
    ms.author="v-sharos" />
 
 # Verwenden des StorSimple Manager-Diensts zum Anzeigen von Aufträgen für das StorSimple Virtual Array (Vorschau)
@@ -60,8 +60,16 @@ Führen Sie die folgenden Schritte aus, um die Details eines Auftrags anzuzeigen
  
     ![Seite „Auftragsdetails“](./media/storsimple-ova-manage-jobs/ovajobs2.png)
 
+#### Auftragsfehler, wenn der virtuelle Computer im Hypervisor angehalten wird
+
+Wenn ein Auftrag im virtuellen StorSimple-Array ausgeführt wird und das Gerät (bereitgestellter virtueller Computer im Hypervisor) für mehr als 15 Minuten angehalten wurde, schlägt der Auftrag fehl. Dies ist darauf zurückzuführen, dass die Zeit Ihres virtuellen StorSimple-Arrays nicht mehr synchron mit der Microsoft Azure-Zeit ist. Ein Beispiel für einen Fehler des Wiederherstellungsauftrags wird im folgenden Screenshot gezeigt.
+
+![Fehler bei Wiederherstellungsauftrag](./media/storsimple-ova-manage-jobs/restorejobfailure.png)
+
+Diese Fehler betreffen Sicherungs-, Wiederherstellungs-, Aktualisierungs- und Failover-Aufträge. Wenn der virtuelle Computer in Hyper-V bereitgestellt wird, synchronisiert der Computer die Zeit letztendlich mit dem Hypervisor. Sobald dies geschieht, können Sie den Auftrag neu starten.
+
 ## Nächste Schritte
 
-Erfahren Sie, wie Sie die lokale Webbenutzeroberfläche verwenden, um [Ihr StorSimple Virtual Array zu verwalten](storsimple-ova-web-ui-admin.md).
+[Erfahren Sie, wie Sie Ihr StorSimple Virtual Array über die lokale Webbenutzeroberfläche verwalten](storsimple-ova-web-ui-admin.md).
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0224_2016-->

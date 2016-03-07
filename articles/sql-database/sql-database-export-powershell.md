@@ -10,7 +10,7 @@
 <tags
 	ms.service="sql-database"
 	ms.devlang="NA"
-	ms.date="12/01/2015"
+	ms.date="02/23/2016"
 	ms.author="sstein"
 	ms.workload="data-management"
 	ms.topic="article"
@@ -19,7 +19,6 @@
 
 # Erstellen und Exportieren eines BACPAC einer Azure SQL-Datenbank mit PowerShell
 
-**Einzeldatenbank**
 
 > [AZURE.SELECTOR]
 - [Azure portal](sql-database-export.md)
@@ -30,7 +29,7 @@ Dieser Artikel enthält Anweisungen zum Exportieren einer BACPAC-Datei der Azure
 
 Ein [BACPAC](https://msdn.microsoft.com/library/ee210546.aspx#Anchor_4) ist eine .bacpac-Datei, die ein Datenbankschema und Daten enthält. Der Hauptverwendungszweck einer BACPAC-Datei besteht darin, eine Datenbank von einem Server auf einen anderen zu verschieben, [eine lokale Datenbank in die Cloud zu migrieren](sql-database-cloud-migrate.md) und eine vorhandene Datenbank in einem offenen Format zu archivieren.
 
-> [AZURE.NOTE]BACPAC-Dateien eignen sich nicht für Backup- und Wiederherstellungsvorgänge. Azure SQL-Datenbank erstellt für jede Benutzerdatenbank automatisch Sicherungen. Weitere Informationen finden Sie unter [Übersicht über die Geschäftskontinuität](sql-database-business-continuity.md).
+> [AZURE.NOTE] BACPAC-Dateien eignen sich nicht für Backup- und Wiederherstellungsvorgänge. Azure SQL-Datenbank erstellt für jede Benutzerdatenbank automatisch Sicherungen. Weitere Informationen finden Sie unter [Übersicht über die Geschäftskontinuität](sql-database-business-continuity.md).
 
 
 Das BACPAC wird in einen Azure-Speicherblobcontainer exportiert, den Sie nach dem erfolgreichen Abschluss des Vorgangs herunterladen können.
@@ -40,8 +39,8 @@ Damit Sie die Anweisungen in diesem Artikel ausführen können, benötigen Sie F
 
 - Ein Azure-Abonnement. Wenn Sie ein Azure-Abonnement benötigen, müssen Sie lediglich oben auf dieser Seite auf den Link **Kostenlose Testversion** klicken. Lesen Sie anschließend den Artikel weiter.
 - Azure SQL-Datenbank. Wenn Sie nicht über eine SQL-Datenbank verfügen, können Sie die Erstellung anhand der Schritte im folgenden Artikel durchführen: [Erstellen der ersten Azure SQL-Datenbank](sql-database-get-started.md).
-- Ein [Azure-Speicherkonto](storage-create-storage-account.md) mit einem BLOB-Container zum Speichern des BACPAC. Derzeit muss für das Speicherkonto das klassische Bereitstellungsmodell verwendet werden. Wählen Sie also **Klassisch**, wenn Sie ein Speicherkonto erstellen.
-- Azure PowerShell. Sie können die Azure PowerShell-Module herunterladen und installieren, indem Sie den [Microsoft-Webplattform-Installer](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409) ausführen. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md).
+- Ein [Azure-Speicherkonto](../storage/storage-create-storage-account.md) mit einem BLOB-Container zum Speichern des BACPAC. Derzeit muss für das Speicherkonto das klassische Bereitstellungsmodell verwendet werden. Wählen Sie also **Klassisch**, wenn Sie ein Speicherkonto erstellen.
+- Azure PowerShell. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
 
 
 
@@ -94,7 +93,7 @@ Wenn Sie das **Get-Credential**-Cmdlet ausführen, werden Sie in einem Fenster z
 
 Mit diesem Befehl wird eine Anforderung zum Exportieren der Datenbank an den Dienst gesendet. Je nach Größe Ihrer Datenbank kann es einige Zeit dauern, bis der Exportvorgang abgeschlossen ist.
 
-> [AZURE.IMPORTANT]Um eine im Hinblick auf Transaktionen konsistente BACPAC-Datei sicherzustellen, sollten Sie zunächst [eine Kopie Ihrer Datenbank erstellen](sql-database-copy-powershell.md) und dann die Datenbankkopie exportieren.
+> [AZURE.IMPORTANT] Um eine im Hinblick auf Transaktionen konsistente BACPAC-Datei sicherzustellen, sollten Sie zunächst [eine Kopie Ihrer Datenbank erstellen](sql-database-copy-powershell.md) und dann die Datenbankkopie exportieren.
 
 
     $exportRequest = Start-AzureSqlDatabaseExport -SqlConnectionContext $SqlCtx -StorageContainer $Container -DatabaseName $DatabaseName -BlobName $BlobName
@@ -148,4 +147,4 @@ Beim Ausführen dieses Befehls werden Sie zur Eingabe eines Kennworts aufgeforde
 - [Warnungen zur Notfallwiederherstellung](sql-database-disaster-recovery-drills.md)
 - [SQL-Datenbank-Dokumentation](https://azure.microsoft.com/documentation/services/sql-database/)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0224_2016-->

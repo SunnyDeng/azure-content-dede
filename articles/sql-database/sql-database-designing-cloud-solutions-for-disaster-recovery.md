@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-management"
-   ms.date="10/07/2015"
+   ms.date="02/23/2016"
    ms.author="sashan"/>
 
 # Entwerfen einer Anwendung für die cloudbasierte Notfallwiederherstellung mithilfe der Georeplikation in SQL-Datenbank
@@ -77,7 +77,7 @@ Diese cloudbasierte Notfallwiederherstellung eignet sich am besten für Anwendun
 
 Wenn Ihre Anwendung diese Merkmale aufweist, kann ein Lastenausgleich der Endbenutzerverbindungen über mehrere Anwendungsinstanzen in verschiedenen Regionen die Leistung und Benutzerfreundlichkeit verbessern. Um dies zu erreichen, muss jede Region über eine aktive Instanz der Anwendung verfügen, wobei die Lese-/Schreiblogik mit der primären Datenbank in der primären Region verbunden ist. Die schreibgeschützte Logik muss mit einer sekundären Datenbank in derselben Region wie die Anwendungsinstanz verbunden werden. Traffic Manager muss so eingerichtet werden, dass für jede Anwendungsinstanz das [Roundrobin-Routing](traffic-manager-configure-round-robin-load-balancing.md) oder das [Leistungsrouting](traffic-manager-configure-performance-load-balancing.md) mit [Endpunktüberwachung](traffic-manager-monitoring.md) aktiviert wird.
 
-Wie bei Muster 1 sollten Sie das Bereitstellen einer ähnlichen Überwachungsanwendung erwägen. Doch im Gegensatz zu Muster 1 ist diese nicht für das Auslösen des Endpunktfailovers zuständig.
+Wie bei Muster 1 sollten Sie das Bereitstellen einer ähnlichen Überwachungsanwendung erwägen. Doch im Gegensatz zu Muster 1 ist diese nicht für das Auslösen des Endpunktfailovers zuständig.
 
 > [AZURE.NOTE] Wenngleich bei diesem Muster mehr als eine sekundäre Datenbank zum Einsatz kommt, wird nur eine dieser sekundären Datenbanken aus den zuvor genannten Gründen für das Failover genutzt. Da dieses Muster einen schreibgeschützten Zugriff auf die sekundäre Datenbank verlangt, ist eine [aktive Georeplikation](https://msdn.microsoft.com/library/azure/dn741339.aspx) erforderlich.
 
@@ -148,4 +148,4 @@ Für Ihre spezifische Strategie einer cloudbasierten Notfallwiederherstellung k�
 | Aktiv-/Aktiv-Bereitstellung für den Anwendungslastenausgleich | Lese-/Schreibzugriff < 5 Sek. | Ausfallerkennungszeit + Aufruf der Failover-API + Änderung der SQL-Verbindungszeichenfolge + Anwendungsüberprüfungstest
 | Aktiv-/Passiv-Bereitstellung für die Beibehaltung von Daten | Schreibgeschützter Zugriff < 5 Sek. Lese-/ Schreibzugriff = 0 (null) | Schreibgeschützter Zugriff = Erkennungszeit für Verbindungsausfall + Anwendungsüberprüfungstest <br>Lese-/Schreibzugriff = Zeit zum Beseitigen der Ausfallursache
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0224_2016-->

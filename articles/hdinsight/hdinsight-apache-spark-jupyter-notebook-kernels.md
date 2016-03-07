@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Verfügbare Kernel für Jupyter Notebooks in HDInsight Spark-Clustern unter Linux | Microsoft Azure" 
-	description="Hier erhalten Sie Informationen zu zusätzlichen Jupyter Notebook-Kerneln, die in Spark-Clustern unter HDInsight (Linux) zur Verfügung stehen." 
+	pageTitle="Verfügbare Kernel für Jupyter Notebooks in HDInsight Spark-Clustern unter Linux | Microsoft Azure" 
+	description="Hier erhalten Sie Informationen zu zusätzlichen Jupyter Notebook-Kerneln, die in Spark-Clustern unter HDInsight (Linux) zur Verfügung stehen." 
 	services="hdinsight" 
 	documentationCenter="" 
 	authors="nitinme" 
@@ -14,16 +14,16 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/05/2016" 
+	ms.date="02/17/2016" 
 	ms.author="nitinme"/>
 
 
 # Verfügbare Kernels für Jupyter Notebooks mit Spark-Clustern unter HDInsight (Linux)
 
-Apache Spark-Cluster unter HDInsight (Linux) beinhalten Jupyter Notebooks, die Sie zum Testen Ihrer Anwendungen verwenden können. Standardmäßig verfügt ein Jupyter Notebook über einen Kernel vom Typ **Python2**. HDInsight Spark-Cluster bieten zwei zusätzliche Kernel, die Sie für das Jupyter Notebook verwenden können. Dies sind:
+Apache Spark-Cluster unter HDInsight (Linux) beinhalten Jupyter Notebooks, die Sie zum Testen Ihrer Anwendungen verwenden können. Standardmäßig verfügt ein Jupyter Notebook über einen Kernel vom Typ **Python2**. Ein Kernel ist ein Programm, das ausgeführt wird und Ihren Code interpretiert. HDInsight Spark-Cluster bieten zwei zusätzliche Kernel, die Sie für das Jupyter Notebook verwenden können. Dies sind:
 
-1. **Spark** (für in Scala geschriebene Anwendungen)
-2. **PySpark** (für in Python geschriebene Anwendungen)
+1. **PySpark** (für in Python geschriebene Anwendungen)
+2. **Spark** (für in Scala geschriebene Anwendungen)
 
 In diesem Artikel erfahren Sie, wie Sie diese Kernel verwenden und welche Vorteile sie Ihnen bringen.
 
@@ -32,7 +32,7 @@ In diesem Artikel erfahren Sie, wie Sie diese Kernel verwenden und welche Vortei
 Sie benötigen Folgendes:
 
 - Ein Azure-Abonnement. Siehe [How to get Azure Free trial for testing Hadoop in HDInsight](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/) (in englischer Sprache).
-- Einen Apache Spark-Cluster unter HDInsight (Linux). Eine Anleitung finden Sie unter [Erstellen von Apache Spark-Clustern in Azure HDInsight](hdinsight-apache-spark-jupyter-spark-sql.md).
+- Einen Apache Spark-Cluster unter HDInsight (Linux). Eine Anleitung finden Sie unter [Erstellen von Apache Spark-Clustern in Azure HDInsight](hdinsight-apache-spark-jupyter-spark-sql.md).
 
 ## Vorgehensweise zum Verwenden der Kernel 
 
@@ -54,7 +54,7 @@ Sie benötigen Folgendes:
 
 Die Verwendung der neuen Kernel bringt einige Vorteile mit sich.
 
-1. Bei Verwendung des standardmäßigen Kernels vom Typ **Python2** müssen Sie die Spark-, SQL-, oder Hive-Kontexte festlegen, um mit der Anwendung, die Sie entwickeln, arbeiten zu können. Bei Verwendung der neuen Kernel (**Spark** oder **PySpark**) stehen Ihnen diese Kontexte dagegen standardmäßig zur Verfügung. Diese Kontexte sind:
+1. **Voreingestellte Kontexte**. Bei Verwendung des standardmäßigen Kernels vom Typ **Python2**, der mit Jupyter-Notebooks verfügbar ist, müssen Sie die Spark-, SQL-, oder Hive-Kontexte festlegen, um mit der Anwendung, die Sie entwickeln, arbeiten zu können. Bei Verwendung der neuen Kernel (**PySpark** oder **Spark**) stehen Ihnen diese Kontexte dagegen standardmäßig zur Verfügung. Diese Kontexte sind:
 
 	* **sc** (Spark-Kontext)
 	* **sqlContext** (SQL-Kontext)
@@ -72,10 +72,24 @@ Die Verwendung der neuen Kernel bringt einige Vorteile mit sich.
 
 	Stattdessen können Sie in Ihrer Anwendung direkt die vordefinierten Kontexte verwenden.
 	
-2. Die Elemente **%sql** und **%hive** können direkt für SQL- bzw. Hive-Abfragen verwendet werden. Dadurch können Sie also beispielsweise direkt (sprich: ohne einleitende Codeanweisungen) einen Ansatz wie den folgenden verwenden:
+2. **Zellen-Magics**. Der PySpark-Kernel bietet einige vordefinierte „Magics“, spezielle Befehle, die Sie mit `%%` (z. B. `%%MAGIC` <args>) aufrufen können. Der Magic-Befehl muss das erste Wort in einer Codezelle sein und ermöglicht mehrere Inhaltszeilen. Das Magic-Wort sollte das erste Wort in der Zelle sein. Beliebige Hinzufügungen vor dem Magic, auch Kommentare, verursachen einen Fehler. Weitere Informationen zu Magics finden Sie [hier](http://ipython.readthedocs.org/en/stable/interactive/magics.html).
 
-		%hive
-		SELECT * FROM hivesampletable LIMIT 10
+	In der folgenden Tabelle sind die verschiedenen über den Kernel verfügbaren Magics aufgeführt.
+
+	| Magic | Beispiel | Beschreibung |
+	|-----------|---------------------------------|--------------|
+	| help | `%%help` | Generiert eine Tabelle mit allen verfügbaren Magics mit Beispiel und Beschreibung. |
+	| info | `%%info` | Gibt Sitzungsinformationen für den aktuellen Livy-Endpunkt heraus. |
+	| Konfigurieren | `%%configure -f {"executorMemory": "1000M", "executorCores": 4`} | Konfiguriert die Parameter für das Erstellen einer neuen Sitzung. Das Force-Flag (-f) ist obligatorisch, wenn bereits eine Sitzung erstellt wurde, und die Sitzung gelöscht und neu erstellt wird. Unter [„Request Body“ in „POST /sessions“ für Livy](https://github.com/cloudera/livy#request-body) finden Sie eine Liste der gültigen Parameter. Parameter müssen als JSON-Zeichenfolge übergeben werden. |
+	| sql | `%%sql -o <variable name>`<br> `SHOW TABLES` | Führt eine SQL-Abfrage für sqlContext aus. Wenn der Parameter `-o` übergeben wird, wird das Ergebnis der Abfrage im %%local-Python-Kontext als [Pandas](http://pandas.pydata.org/)-Datenrahmen beibehalten. |
+	| hive | `%%hive -o <variable name>`<br> `SHOW TABLES` | Führt eine Hive-Abfrage für hivelContext aus. Wenn der Parameter -o übergeben wird, wird das Ergebnis der Abfrage im %%local-Python-Kontext als [Pandas](http://pandas.pydata.org/)-Datenrahmen beibehalten. |
+	| local | `%%local`<br>`a=1` | Der gesamte Code in den folgenden Zeilen wird lokal ausgeführt. Der Code muss gültiger Python-Code sein. |
+	| Protokolle | `%%logs` | Gibt die Protokolle für die aktuelle Livy-Sitzung aus. |
+	| delete | `%%delete -f -s <session number>` | Löscht eine bestimmte Sitzung des aktuellen Livy-Endpunkts. Beachten Sie, dass Sie die Sitzung, die für den Kernel selbst initiiert wird, nicht löschen können. |
+	| cleanup | `%%cleanup -f` | Löscht alle Sitzungen für den aktuellen Livy-Endpunkt, einschließlich dieser Notebook-Sitzung. Das Force-Flag „-f“ ist obligatorisch |
+
+3. **Automatische Visualisierung**. Der **PySpark**-Kernel visualisiert automatisch die Ausgabe der Hive- und SQL-Abfragen. Sie können zwischen verschiedenen Arten von Visualisierungen wählen, inklusive Tabelle, Kreis-, Linie-, Flächen- und Balkendiagramm.
+
 
 ## Überlegungen bei der Verwendung der neuen Kernel
 
@@ -88,14 +102,14 @@ Bei PySpark- und Spark-Kernels sind die Kontexte dagegen vorkonfiguriert. Eine e
 
 Wenn Sie ein Jupyter Notebook öffnen, sind auf der Stammebene zwei Ordner verfügbar.
 
-* Der Ordner **Python** enthält Beispiele für Notebooks, die den standardmäßigen Kernel vom Typ **Python2** verwenden.
+* Der Ordner **PySpark** enthält Beispiele für Notebooks, die den neuen Kernel vom Typ **Python** verwenden.
 * Der Ordner **Scala** enthält Beispiele für Notebooks, die den neuen Kernel vom Typ **Spark** verwenden.
 
-Wenn Sie in beiden Ordnern das gleiche Notebook (etwa **READ ME FIRST – Learn the Basics of Spark on HDInsight**) öffnen, sehen Sie, dass das Python2-Notebook immer zuerst die erforderlichen Kontexte festlegt, während das Spark-Notebook einfach die vorkonfigurierten Kontexte verwendet.
+Sie können das Notebook **00 - [READ ME FIRST] Spark Magic Kernel Features** im Ordner **PySpark** oder **Spark** öffnen, um Informationen zu den verschiedenen verfügbaren Magics zu erhalten. Sie können auch anhand der anderen in den beiden Ordnern verfügbaren Beispiel-Notebooks erfahren, wie Sie verschiedene Szenarien der Verwendung von Jupyter-Notebooks mit HDInsight Spark-Clustern realisieren können.
 
 ## Feedback
 
-Die neuen Kernel sind noch ziemlich neu und werden im Laufe der Zeit weiterentwickelt. Im Zuge dieser Entwicklung ändern sich unter Umständen auch APIs. Wir freuen uns über Ihr Feedback zur Verwendung der neuen Kernel. Dies hilft uns bei der Gestaltung der endgültigen Kernelversion. Kommentare/Feedback können Sie im Kommentarbereich am Ende dieses Artikels hinterlassen.
+Die neuen Kernels befinden sich in der Entwicklungsphase und werden mit der Zeit ausreifen. Im Zuge dieser Entwicklung ändern sich unter Umständen auch APIs. Wir freuen uns über Ihr Feedback zur Verwendung der neuen Kernel. Dies hilft uns bei der Gestaltung der endgültigen Kernelversion. Kommentare/Feedback können Sie im Kommentarbereich am Ende dieses Artikels hinterlassen.
 
 
 ## <a name="seealso"></a>Weitere Informationen
@@ -131,4 +145,4 @@ Die neuen Kernel sind noch ziemlich neu und werden im Laufe der Zeit weiterentwi
 
 * [Verwalten von Ressourcen für den Apache Spark-Cluster in Azure HDInsight](hdinsight-apache-spark-resource-manager.md)
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0224_2016-->

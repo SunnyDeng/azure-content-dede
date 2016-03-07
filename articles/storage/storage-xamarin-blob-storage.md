@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/22/2016"
+	ms.date="02/21/2016"
 	ms.author="micurd"/>
 
 # Verwenden des Blob-Speichers mit Xamarin (Vorschau)
@@ -47,9 +47,9 @@ Der SAS-URI für den neuen Container sollte dem folgenden ähneln:
 
 	https://storageaccount.blob.core.windows.net/sascontainer?sv=2012-02-12&se=2013-04-13T00%3A12%3A08Z&sr=c&sp=wl&sig=t%2BbzU9%2B7ry4okULN9S0wst%2F8MCUhTjrHyV9rDNLSe8g%3Dsss
 
-Die für den Container erstellte SAS ist für den nächsten Tag gültig. Die Signatur gewährt uneingeschränkte Berechtigungen (*z. B.* Lese-, Schreib-, Lösch- und Listenberechtigung) für Blobs im Container.
+Die für den Container erstellte SAS ist für den nächsten Tag gültig. Die Signatur gewährt uneingeschränkte Berechtigungen (*z. B.* Lese-, Schreib-, Lösch- und Listenberechtigung) für Blobs im Container.
 
-Weitere Informationen zu SAS finden Sie im [SAS-Lernprogramm für .NET](storage-dotnet-shared-access-signature-part-2.md).
+Weitere Informationen zum Erstellen einer Shared Access Signature finden Sie unter [Shared Access Signatures: Erstellen und Verwenden einer SAS mit Blob Storage](storage-dotnet-shared-access-signature-part-2.md).
 
 ## Erstellen einer neuen Xamarin-Anwendung
 
@@ -173,10 +173,11 @@ In diesem Lernprogramm haben Sie erfahren, wie Sie den Azure-Blob-Speicher und S
 
 Weitere Informationen zu Blobs, Tabellen und Warteschlangen finden Sie über die folgenden Links:
 
-[Einführung in Microsoft Azure Storage](storage-introduction.md) 
-[Verwenden des Blob Storage mit .NET](storage-dotnet-how-to-use-blobs.md) 
-[Verwenden des Table Storage mit .NET](storage-dotnet-how-to-use-tables.md) 
-[Verwenden des Queue Storage mit .NET](storage-dotnet-how-to-use-queues.md) 
-[Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy)
+- [Einführung in Microsoft Azure Storage](storage-introduction.md)
+- [Erste Schritte mit Azure Blob Storage mit .NET](storage-dotnet-how-to-use-blobs.md)
+- [Erste Schritte mit Azure Table Storage mit .NET](storage-dotnet-how-to-use-tables.md)
+- [Erste Schritte mit Azure Queue Storage mit .NET](storage-dotnet-how-to-use-queues.md)
+- [Erste Schritte mit Azure File Storage unter Windows](storage-dotnet-how-to-use-files.md)
+- [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0224_2016-->

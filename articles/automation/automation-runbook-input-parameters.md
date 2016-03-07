@@ -75,7 +75,7 @@ Um ein [grafisches Runbook](automation-first-runbook-graphical.md) mit Eingabepa
 
 [**Get-AzureVM**](https://msdn.microsoft.com/library/azure/dn495236.aspx) zum Abrufen aller virtuellen Computer.
 
-Sie können mit der Aktivität [**Write-Output**](https://technet.microsoft.com/library/hh849921.aspx) die Namen von virtuellen Computern abrufen. Die Aktivität **Get-AzureVM** wird zwei Parameter akzeptieren: den „**Namen der virtuellen Computers**” und den „**Dienstkontonamen**”. Da diese Parameter bei jedem Start des Runbooks unterschiedliche Werte benötigen könnten, können Sie Ihrem Runbook Eingabeparameter hinzufügen. Mit diesen Schritten fügen Sie Eingabeparameter hinzu:
+Sie können mit der Aktivität [**Write-Output**](https://technet.microsoft.com/library/hh849921.aspx) die Namen von virtuellen Computern abrufen. Die Aktivität **Get-AzureVM** akzeptiert zwei Parameter: den **Namen des virtuellen Computers** und den **Dienstnamen**. Da diese Parameter bei jedem Start des Runbooks unterschiedliche Werte benötigen könnten, können Sie Ihrem Runbook Eingabeparameter hinzufügen. Mit diesen Schritten fügen Sie Eingabeparameter hinzu:
 
 1. Wählen Sie das grafische Runbook im Blatt **Runbooks** aus, und [bearbeiten](automation-graphical-authoring-intro.md) Sie es.
 
@@ -98,17 +98,9 @@ Sie können mit der Aktivität [**Write-Output**](https://technet.microsoft.com/
 
 4. Erstellen Sie zwei Parameter mit den folgenden Eigenschaften, die von der Aktivität **Get-AzureVM** verwendet werden:
 
-    * **Parameter1:** 
-    Name--VMName, 
-    Type--Zeichenfolge, 
-    Erforderlich--Nein
+    * **Parameter1:** Name--VMName, Type--Zeichenfolge, Erforderlich--Nein
 
-    * **Parameter2:** 
-    Name--VMNameServiceName, 
-    Typ--Zeichenfolge, 
-    Erforderlich--Nein, 
-    Standardwert--Benutzerdefiniert, 
-    Benutzerdefinierter Standardwert--<Name des Standarddienstes das die virtuellen Computer enthält>
+    * **Parameter2:** Name--ServiceName, Typ--Zeichenfolge, Erforderlich--Nein, Standardwert--Benutzerdefiniert, Benutzerdefinierter Standardwert--<Name des Standarddiensts, der die virtuellen Computer enthält>
 
 5. Wenn Sie die Parameter hinzugefügt haben, klicken Sie auf **OK**. Sie können die Parameter jetzt im Blatt „**Eingabe und Ausgabe**” sehen. Klicken Sie nochmal auf „**OK**”, dann auf „**Speichern**”, und „**Veröffentlichen**” Sie Ihr Runbook.
 
@@ -140,12 +132,12 @@ In der Beschriftung unter dem Eingabefeld können Sie sehen, welche Attribute f�
     **Beispiel:**
 
       ```
-       $params = @{„VMName“=„WSVMClassic“; „ServiceName“=„WSVMClassicSG“}
+        $params = @{„VMName“=„WSVMClassic“; „ServiceName“=„WSVMClassicSG“}
 
         Start-AzureAutomationRunbook -AutomationAccountName “TestAutomation” -Name “Get-AzureVMGraphical” -Parameters $params
       ```
 
-    - **Azure Resource Manager- Cmdlets:** Sie können ein Automation-Runbook, das in einer Ressourcengruppe erstellt wurde, mit „[Start-AzureRMAutomationRunbook](https://msdn.microsoft.com/library/mt603661.aspx)” starten.
+    - **Azure Resource Manager-Cmdlets:** Sie können ein Automation-Runbook, das in einer Ressourcengruppe erstellt wurde, mit [Start-AzureRmAutomationRunbook](https://msdn.microsoft.com/library/mt603661.aspx) starten.
 
 
     **Beispiel:**
@@ -153,7 +145,7 @@ In der Beschriftung unter dem Eingabefeld können Sie sehen, welche Attribute f�
       ```
         $params = @{„VMName“=„WSVMClassic“;„ServiceName“=„WSVMClassicSG“}
 
-        Start-AzureRMAutomationRunbook -AutomationAccountName “TestAutomationRG” -Name “Get-AzureVMGraphical” –ResourceGroupName “RG1” -Parameters $params
+        Start-AzureRmAutomationRunbook -AutomationAccountName “TestAutomationRG” -Name “Get-AzureVMGraphical” –ResourceGroupName “RG1” -Parameters $params
       ```
 
 >[AZURE.NOTE] Wenn Sie ein Runbook mit PowerShell-Cmdlets starten, wird der Standardparameter „**MicrosoftApplicationManagementStartedBy**” mit dem Wert „**PowerShell**” erstellt. Sie können diesen Parameter im Blatt „**Auftragsdetails**” ansehen.
@@ -224,7 +216,7 @@ Ersetzen Sie in der Anforderungs-URI die folgenden Parameter:
 * **subscription-id**: Ihre Azure-Abonnement-ID.  
 * **cloud-service-name:** Der Name des Clouddiensts,an den die Anforderung geschickt werden soll.  
 * **automation-account-name**: Name Ihres Automation-Kontos, das im angegebenen Clouddienst gehostet wird.  
-* **job-id**: Die GUID für den Auftrag. Die GUID in PowerShell kann mit dem Cmdlet „**[GUID]::NewGuid().ToString()**” erstellt werden.
+* **job-id**: Die GUID für den Auftrag. Die GUID in PowerShell kann mit dem Befehl **[GUID]::NewGuid().ToString()** erstellt werden.
 
 Um Parameter an den Runbookauftrag zu übergeben, verwenden Sie den Anforderungstext. Die folgenden zwei Eigenschaften werden im JSON-Format benötigt:
 
@@ -279,4 +271,4 @@ Wenn Sie einen Webhook verwenden, um ein Runbook ausführen zu lassen, wird der 
 - Informationen zum Bearbeiten eines Textrunbooks finden Sie unter [Bearbeiten von Textrunbooks](automation-edit-textual-runbook.md).
 - Informationen zum Bearbeiten eines grafischen Runbooks finden Sie unter [Grafische Erstellung in Azure Automation](automation-graphical-authoring-intro.md).
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0224_2016-->

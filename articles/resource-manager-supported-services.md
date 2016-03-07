@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="01/23/2016"
+   ms.date="02/22/2016"
    ms.author="tomfitz"/>
 
 # Anbieter, Regionen, API-Versionen und Schemas für den Ressourcen-Manager
@@ -113,8 +113,7 @@ Cloud Services (klassisch) kann mit anderen klassischen Ressourcen verwendet wer
 | ------- | ------- | -------- | ------ | ------ |
 | BizTalk Services | Ja | | [2014-04-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2014-04-01/Microsoft.BizTalkServices.json) | [Microsoft.BizTalkServices](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.BizTalkServices%22&type=Code) |
 | Service Bus | Ja | | | [Microsoft.ServiceBus](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.ServiceBus%22&type=Code) |
-| Backup | Nein | - | - |
-| Site Recovery | Nein | - | - |
+| Backup | Nein | - | - | | Site Recovery | Nein | - | - |
 
 ## Identitäts- und Zugriffsverwaltung 
 
@@ -183,7 +182,22 @@ Die Ausgabe ähnelt der folgenden:
     
 ### Azure-Befehlszeilenschnittstelle
 
-Mit dem folgenden Befehl können Sie die Informationen für einen Ressourcenanbieter in einer Datei speichern.
+Im folgenden Beispiel wird veranschaulicht, wie Sie alle verfügbaren Ressourcenanbieter abrufen.
+
+    azure provider list
+    
+Die Ausgabe ähnelt der folgenden:
+
+    info:    Executing command provider list
+    + Getting ARM registered providers
+    data:    Namespace                        Registered
+    data:    -------------------------------  -------------
+    data:    Microsoft.ApiManagement          Unregistered
+    data:    Microsoft.AppService             Registered
+    data:    Microsoft.Authorization          Registered
+    ...
+
+Mit dem folgenden Befehl können Sie die Informationen für einen bestimmten Ressourcenanbieter in einer Datei speichern.
 
     azure provider show Microsoft.Web -vv --json > c:\temp.json
 
@@ -277,4 +291,4 @@ Sie können die Datei öffnen und nach dem Element **apiVersions** suchen.
 - Weitere Informationen zum Erstellen von Ressourcen-Manager-Vorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](resource-group-authoring-templates.md).
 - Informationen zum Bereitstellen von Vorlagen finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](resource-group-template-deploy.md).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0224_2016-->

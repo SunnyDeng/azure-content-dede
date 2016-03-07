@@ -4,7 +4,7 @@
    services="app-service\logic"
    documentationCenter=".net,nodejs,java"
    authors="rajeshramabathiran"
-   manager="dwrede"
+   manager="erikre"
    editor=""/>
 
 <tags
@@ -13,18 +13,20 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="11/11/2015"
+   ms.date="02/11/2016"
    ms.author="rajram"/>
 
 
 # Erste Schritte mit dem SMTP-Connector und das Hinzufügen zur Logik-App
+>[AZURE.NOTE] Diese Version des Artikels gilt für die Logik-Apps-Schemaversion 2014-12-01-preview. Um die Schemaversion 2015-08-01-preview aufzurufen, klicken Sie auf [SMTP-API](../connectors/create-api-smtp.md).
+
 Stellen Sie eine Verbindung mit einem SMTP-Server her, und senden Sie E-Mails mit und ohne Anlagen. Mit der SMTP-Connector-Aktion "E-Mail senden" können Sie eine E-Mail an die angegebenen E-Mail-Adressen senden.
 
 Logik-Apps können basierend auf einer Vielzahl von Datenquellen ausgelöst werden und Connectors anbieten, um Daten als Teil eines Workflows abzurufen und zu verarbeiten. Sie können den SMTP-Connector dem geschäftlichen Workflow hinzufügen und Daten im Rahmen dieses Workflows in einer Logik-App verarbeiten.
 
 
 ## Trigger und Aktionen
-*Trigger* sind Ereignisse, die stattfinden. Z. B. wenn ein Auftrag aktualisiert oder ein neuer Kunde hinzugefügt wird. Eine *Aktion* ist das Ergebnis des Triggers. Wenn z. B. ein Auftrag aktualisiert oder ein neuer Kunde hinzugefügt wird, senden Sie eine E-Mail an den neuen Kunden.
+*Trigger* sind Ereignisse, die stattfinden. Z. B. wenn ein Auftrag aktualisiert oder ein neuer Kunde hinzugefügt wird. Eine *Aktion* ist das Ergebnis des Triggers. Wenn z. B. ein Auftrag aktualisiert oder ein neuer Kunde hinzugefügt wird, senden Sie eine E-Mail an den neuen Kunden.
 
 Der SMTP-Connector kann als ein Trigger oder eine Aktion in einer Logik-App verwendet werden und unterstützt Daten im JSON- und XML-Format. Es gibt derzeit keine Trigger für diesen Connector.
 
@@ -54,7 +56,7 @@ Ein Connector kann innerhalb einer Logik-App oder direkt über den Azure Marketp
 
 6. Klicken Sie auf **Erstellen**.
 
-> [AZURE.IMPORTANT]Einige SMTP-Server haben möglicherweise Probleme mit der Funktionsweise dieses Connectors (SendGrid und Gmail). Wenn Sie E-Mails von SendGrid senden möchten, bietet unser [GitHub-Repository](https://github.com/logicappsio/SendGridAPI) eine benutzerdefinierte API, die eine direkte Schnittstelle zu den SendGrid-APIs darstellt.
+> [AZURE.IMPORTANT] Einige SMTP-Server haben möglicherweise Probleme mit der Funktionsweise dieses Connectors (SendGrid und Gmail). Wenn Sie E-Mails von SendGrid senden möchten, bietet unser [GitHub-Repository](https://github.com/logicappsio/SendGridAPI) eine benutzerdefinierte API, die eine direkte Schnittstelle zu den SendGrid-APIs darstellt.
 
 ## Verwenden des SMTP-Connectors in Logik-Apps
 Sobald Ihr Connector erstellt wurde, können Sie den SMTP-Connector als Aktion für Ihre Logik-App verwenden. Gehen Sie dazu folgendermaßen vor:
@@ -86,7 +88,7 @@ Sie können nun den SMTP-Connector zur Verwendung in Ihrem Workflow konfiguriere
 ## Mehr mit Ihrem Connector machen
 Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
->[AZURE.NOTE]Wenn Sie Azure Logik-Apps ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [Logik-App testen](https://tryappservice.azure.com/?appservice=logic) sofort kostenlos eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure Logik-Apps ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [Logik-App testen](https://tryappservice.azure.com/?appservice=logic) sofort kostenlos eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
 
@@ -100,4 +102,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [5]: ./media/app-service-logic-connector-smtp/img5.PNG
 [6]: ./media/app-service-logic-connector-smtp/img6.PNG
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0224_2016-->

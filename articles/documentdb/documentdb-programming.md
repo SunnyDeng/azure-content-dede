@@ -6,7 +6,7 @@
 	documentationCenter="" 
 	authors="aliuy" 
 	manager="jhubbard" 
-	editor="cgronlun"/>
+	editor="mimig"/>
 
 <tags 
 	ms.service="documentdb" 
@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/11/2015" 
+	ms.date="02/16/2016" 
 	ms.author="andrl"/>
 
 # DocumentDB-serverseitige Programmierung : gespeicherte Prozeduren, Datenbanktrigger und benutzerdefinierte Funktionen
@@ -50,7 +50,9 @@ Dieser Ansatz von *„JavaScript als modernes T-SQL“* befreit die Anwendungsen
 	-	Es wird eine Abstraktionsschicht über den Rohdaten hinzugefügt, die es Datenarchitekten gestattet, ihre Anwendungen unabhängig von den Daten zu entwickeln. Dies ist aufgrund der komplizierten Annahmen, die bei der direkten Behandlung der Daten zur Anwendung hinzugefügt werden müssen, insbesondere bei schemafreien Daten von Vorteil.  
 	-	Durch diese Abstraktion können Unternehmen ihre Daten schützen, indem sie den Zugriff über die Scripts optimieren.  
 
-Die Erstellung und Ausführung von Datenbanktriggern, gespeicherten Prozeduren und benutzerdefinierten Abfrageoperatoren wird auf vielen Plattformen, z. B. .NET, Node.js und JavaScript, über die [REST-API](https://msdn.microsoft.com/library/azure/dn781481.aspx) und [Client-SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) unterstützt. **In diesem Tutorial wird das [Node.js-SDK](http://dl.windowsazure.com/documentDB/nodedocs/)** verwendet, um die Syntax und Verwendung von gespeicherten Prozeduren, Triggern und benutzerdefinierten Funktionen (User Defined Functions, UDFs) zu veranschaulichen.
+Die Erstellung und Ausführung von Datenbanktriggern, gespeicherten Prozeduren und benutzerdefinierten Abfrageoperatoren wird auf vielen Plattformen, z. B. .NET, Node.js und JavaScript, über die [REST-API](https://msdn.microsoft.com/library/azure/dn781481.aspx), [DocumentDB Studio](https://github.com/mingaliu/DocumentDBStudio/releases) und [Client-SDKs](documentdb-sdk-dotnet.md) unterstützt.
+
+**In diesem Tutorial wird das [Node.js-SDK mit Q Promises](http://azure.github.io/azure-documentdb-node-q/) verwendet**, um die Syntax und Verwendung von gespeicherten Prozeduren, Triggern und benutzerdefinierten Funktionen (User Defined Functions, UDFs) zu veranschaulichen.
 
 ## Gespeicherte Prozeduren
 
@@ -92,7 +94,7 @@ Nachdem die gespeicherte Prozedur registriert wurde, können wir sie für die Sa
 		});
 
 
-Das Kontextobjekt bietet Zugriff auf alle Vorgänge, die für den DocumentDB-Speicher ausgeführt werden können, sowie Zugriff auf die Anforderungs- und Antwortobjekte. In diesem Fall haben wir das Antwortobjekt dazu verwendet, den Text der Antwort festzulegen, der an den Client zurückgesendet wurde. Weitere Informationen finden Sie in der [Dokumentation zum DocumentDB JavaScript-Server-SDK](http://dl.windowsazure.com/documentDB/jsserverdocs/).
+Das Kontextobjekt bietet Zugriff auf alle Vorgänge, die für den DocumentDB-Speicher ausgeführt werden können, sowie Zugriff auf die Anforderungs- und Antwortobjekte. In diesem Fall haben wir das Antwortobjekt dazu verwendet, den Text der Antwort festzulegen, der an den Client zurückgesendet wurde. Weitere Informationen finden Sie in der [Dokumentation zum DocumentDB JavaScript-Server-SDK](http://azure.github.io/azure-documentdb-js-server/).
 
 Dieses Beispiel möchten wir jetzt erweitern und datenbankbezogenere Funktionen zur gespeicherten Prozedur hinzufügen. Gespeicherte Prozeduren können Dokumente und Anhänge innerhalb der Sammlung erstellen, aktualisieren, lesen, abfragen und löschen.
 
@@ -289,7 +291,7 @@ Nachfolgend finden Sie ein Beispiel einer gespeicherten Prozedur, die für den m
 
 ## <a id="trigger"></a> Datenbanktrigger
 ### Vorangestellte Datenbanktrigger
-DocumentDB stellt Trigger bereit, die durch einen für ein Dokument erfolgten Vorgang ausgeführt oder ausgelöst werden. Sie können z. B. einen vorangestellten Trigger angeben, wenn Sie ein Dokument erstellen. Dieser vorangestellte Trigger wird ausgeführt, bevor das Dokument erstellt wird. Nachfolgend finden Sie ein Beispiel dafür, wie vorangestellte Trigger zum Überprüfen der Eigenschaften eines zu erstellenden Dokuments verwendet werden können:
+DocumentDB stellt Trigger bereit, die durch einen für ein Dokument erfolgten Vorgang ausgeführt oder ausgelöst werden. Sie können z. B. einen vorangestellten Trigger angeben, wenn Sie ein Dokument erstellen. Dieser vorangestellte Trigger wird ausgeführt, bevor das Dokument erstellt wird. Nachfolgend finden Sie ein Beispiel dafür, wie vorangestellte Trigger zum Überprüfen der Eigenschaften eines zu erstellenden Dokuments verwendet werden können:
 
 	var validateDocumentContentsTrigger = {
 	    name: "validateDocumentContents",
@@ -343,7 +345,7 @@ Der entsprechende clientseitige Node.js-Registrierungscode für den Trigger sieh
 
 Vorangestellte Trigger können keine Eingabeparameter übernehmen. Das Anforderungsobjekt kann dazu verwendet werden, um die Anforderungsnachricht zu verändern, die dem Vorgang zugeordnet ist. Hier wird der vorangestellte Trigger mit der Erstellung eines Dokuments ausgeführt, und der Text der Anforderungsnachricht enthält das im JSON-Format zu erstellende Dokument.
 
-Wenn Trigger registriert werden, können die Benutzer die Vorgänge angeben, mit denen sie ausgeführt werden können. Dieser Trigger wurde mit "TriggerOperation.Create" erstellt, d. h. Folgendes ist nicht zulässig:
+Wenn Trigger registriert werden, können die Benutzer die Vorgänge angeben, mit denen sie ausgeführt werden können. Dieser Trigger wurde mit "TriggerOperation.Create" erstellt, d. h. Folgendes ist nicht zulässig:
 
 	var options = { preTriggerInclude: "validateDocumentContents" };
 	
@@ -428,7 +430,7 @@ Der Trigger kann, wie im folgenden Beispiel gezeigt, registriert werden.
 
 Dieser Trigger fragt das Metadatendokument ab und aktualisiert es mit den Details zum neu erstellten Dokument.
 
-Ein wichtiges Element ist die **transaktionale** Ausführung von Triggern in DocumentDB. Dieser nachgestellte Trigger wird als Teil derselben Transaktion wie bei der Erstellung des ursprünglichen Dokuments ausgeführt. Daher schlägt die gesamte Transaktion fehl und es wird ein Rollback ausgeführt, wenn vom nachgestellten Trigger eine Ausnahme ausgelöst wird (wenn das Metadatendokument z. B. nicht aktualisiert werden konnte). Es wird kein Dokument erstellt und stattdessen eine Ausnahme zurückgegeben.
+Ein wichtiges Element ist die **transaktionale** Ausführung von Triggern in DocumentDB. Dieser nachgestellte Trigger wird als Teil derselben Transaktion wie bei der Erstellung des ursprünglichen Dokuments ausgeführt. Daher schlägt die gesamte Transaktion fehl und es wird ein Rollback ausgeführt, wenn vom nachgestellten Trigger eine Ausnahme ausgelöst wird (wenn das Metadatendokument z. B. nicht aktualisiert werden konnte). Es wird kein Dokument erstellt und stattdessen eine Ausnahme zurückgegeben.
 
 ##<a id="udf"></a>Benutzerdefinierte Funktionen
 Mithilfe der benutzerdefinierten Funktionen (UDFs) kann die Grammatik der SQL-Abfragesprache von DocumentDB erweitert und eine benutzerdefinierte Geschäftslogik implementiert werden. Sie können ausschließlich innerhalb von Abfragen aufgerufen werden. Sie haben keinen Zugriff auf das Kontextobjekt und sind als JavaScript-Komponente vorgesehen, die ausschließlich der Berechnung dient. Daher können benutzerdefinierte Funktionen auf sekundären Replikaten des DocumentDB-Diensts ausgeführt werden.
@@ -473,9 +475,9 @@ Die UDF kann anschließend wie im folgenden Beispiel in Abfragen verwendet werde
 	});
 
 ## JavaScript-Language Integrated Query (LINQ)-API
-Zusätzlich zu Abfragen mithilfe der SQL-Grammatik von DocumentDB ermöglicht das serverseitige SDK die Durchführung optimierter Abfragen mithilfe einer flüssigen JavaScript-Schnittstelle, die keinerlei SQL-Kenntnisse voraussetzt. Mit der JavaScript-Abfrage-API können Sie programmgesteuert Abfragen erstellen, indem Sie unter Verwendung einer Syntax, die mit den integrierten und weit verbreiteten JavaScript-Bibliotheken von ECMAScript5 wie lodash vergleichbar ist, Prädikatfunktionen in verkettbare Funktionsaufrufe übergeben. Abfragen werden von der JavaScript-Laufzeit zur effizienten Ausführung mithilfe von DocumentDB-Indizes analysiert.
+Zusätzlich zu Abfragen mithilfe der SQL-Grammatik von DocumentDB ermöglicht das serverseitige SDK die Durchführung optimierter Abfragen mithilfe einer flüssigen JavaScript-Schnittstelle, die keinerlei SQL-Kenntnisse voraussetzt. Mit der JavaScript-Abfrage-API können Sie programmgesteuert Abfragen erstellen, indem Sie unter Verwendung einer Syntax, die mit den integrierten und weit verbreiteten JavaScript-Bibliotheken von ECMAScript5 wie lodash vergleichbar ist, Prädikatfunktionen in verkettbare Funktionsaufrufe übergeben. Abfragen werden von der JavaScript-Laufzeit zur effizienten Ausführung mithilfe von DocumentDB-Indizes analysiert.
 
-> [AZURE.NOTE]`__` (doppelter Unterstrich) ist ein Alias für `getContext().getCollection()`.
+> [AZURE.NOTE] `__` (doppelter Unterstrich) ist ein Alias für `getContext().getCollection()`.
 > <br/>
 > Sie können also `__` oder `getContext().getCollection()` verwenden, um auf die JavaScript-Abfrage-API zuzugreifen.
 
@@ -549,7 +551,7 @@ Die folgenden JavaScript-Konstrukte werden nicht für DocumentDB-Indizes optimie
 * Ablaufsteuerung (z. B. if, for, while)
 * Funktionsaufrufe
 
-Weitere Informationen finden Sie in unseren [serverseitigen JSDocs](http://dl.windowsazure.com/documentDB/jsserverdocs/).
+Weitere Informationen finden Sie in unseren [serverseitigen JSDocs](http://azure.github.io/azure-documentdb-js-server/).
 
 ### Beispiel: Schreiben einer gespeicherten Prozedur mit der JavaScript-Abfrage-API
 
@@ -610,7 +612,7 @@ Das folgende Codebeispiel zeigt, wie die JavaScript-Abfrage-API im Kontext einer
 ## Cheat Sheet für SQL und Javascript
 In der folgenden Tabelle sind verschiedene SQL-Abfragen und die entsprechenden JavaScript-Abfragen aufgeführt.
 
-Wie bei SQL-Abfragen muss bei Key-Eigenschaften von Dokumenten (z. B. `doc.id`) die Groß-/Kleinschreibung beachtet werden.
+Wie bei SQL-Abfragen muss bei Key-Eigenschaften von Dokumenten (z. B. `doc.id`) die Groß-/Kleinschreibung beachtet werden.
 
 <br/>
 <table border="1" width="100%">
@@ -634,7 +636,7 @@ FROM docs
 </td>
 <td>
 <pre>
-__.map(function(doc) {
+\_\_.map(function(doc) {
     return doc;
 });
 </pre>
@@ -649,7 +651,7 @@ SELECT docs.id, docs.message AS msg, docs.actions FROM docs
 </td>
 <td>
 <pre>
-__.map(function(doc) {
+\_\_.map(function(doc) {
     return {
         id: doc.id,
         msg: doc.message,
@@ -670,7 +672,7 @@ WHERE docs.id="X998\_Y998"
 </td>
 <td>
 <pre>
-__.filter(function(doc) {
+\_\_.filter(function(doc) {
     return doc.id === "X998\_Y998";
 });
 </pre>
@@ -681,12 +683,12 @@ __.filter(function(doc) {
 <td>
 <pre>
 SELECT *
-FROM docs WHERE ARRAY_CONTAINS(docs.Tags, 123)
+FROM docs WHERE ARRAY\_CONTAINS(docs.Tags, 123)
 </pre>
 </td>
 <td>
 <pre>
-__.filter(function(x) {
+\_\_.filter(function(x) {
     return x.Tags && x.Tags.indexOf(123) > -1;
 });
 </pre>
@@ -697,12 +699,12 @@ __.filter(function(x) {
 <td>
 <pre>
 SELECT docs.id, docs.message AS msg
-FROM docs WHERE docs.id="X998_Y998"
+FROM docs WHERE docs.id="X998\_Y998"
 </pre>
 </td>
 <td>
 <pre>
-__.chain()
+\_\_.chain()
     .filter(function(doc) {
         return doc.id === "X998\_Y998";
     })
@@ -723,30 +725,30 @@ __.chain()
 SELECT VALUE tag
 FROM docs
 JOIN tag IN docs.Tags
-ORDER BY docs._ts
+ORDER BY docs.\_ts
 </pre>
 </td>
 <td>
 <pre>
-__.chain()
+\_\_.chain()
     .filter(function(doc) {
         return doc.Tags && Array.isArray(doc.Tags);
     })
     .sortBy(function(doc) {
-    	return doc._ts;
+    	return doc.\_ts;
     })
     .pluck("Tags")
     .flatten()
     .value()
 </pre>
 </td>
-<td>Filtert nach Dokumenten mit einer Array-Eigenschaft „Tags“, sortiert die resultierenden Dokumente anhand der Zeitstempel-Systemeigenschaft „_ts“ und projiziert und vereinfacht anschließend das Tags-Array.</td>
+<td>Filtert nach Dokumenten mit einer Array-Eigenschaft „Tags“, sortiert die resultierenden Dokumente anhand der Zeitstempel-Systemeigenschaft „\_ts“ und projiziert und vereinfacht anschließend das Tags-Array.</td>
 </tr>
 </tbody>
 </table>
 
 ## Laufzeitunterstützung
-Das [serverseitige DocumentDB JavaScript-SDK](http://dl.windowsazure.com/documentDB/jsserverdocs/) unterstützt die meisten gängigen Funktionen der JavaScript-Sprache gemäß dem [ECMA-262](http://www.ecma-international.org/publications/standards/Ecma-262.htm)-Standard.
+Das [serverseitige DocumentDB JavaScript-SDK](http://azure.github.io/azure-documentdb-js-server/) unterstützt die meisten gängigen Funktionen der JavaScript-Sprache gemäß dem [ECMA-262](http://www.ecma-international.org/publications/standards/Ecma-262.htm)-Standard.
 
 ### Sicherheit
 Gespeicherte Prozeduren und Trigger werden bei JavaScript in einer Sandkastenlösung verwaltet, damit die Auswirkungen eines Skripts nicht zu den anderen Skripts gelangen, ohne die Momentaufnahmetransaktionsisolation der Datenbankschicht zu durchlaufen. Die Laufzeitumgebungen werden in einem Pool zusammengefasst, aber nach jeder Ausführung vom Kontext bereinigt. Daher sind sie untereinander garantiert vor unbeabsichtigten Nebeneffekten geschützt.
@@ -755,7 +757,7 @@ Gespeicherte Prozeduren und Trigger werden bei JavaScript in einer Sandkastenlö
 Gespeicherte Prozeduren, Trigger und benutzerdefinierte Funktionen (UDFs) werden implizit in das Bytecodeformat vorkompiliert, um den Kompilierungsaufwand zum Zeitpunkt des jeweiligen Skriptaufrufs zu vermeiden. Dadurch wird sichergestellt, dass gespeicherte Prozeduren schnell aufgerufen werden können und kompakt sind.
 
 ## Client-SDK-Unterstützung
-Zusätzlich zum [Node.js](http://dl.windowsazure.com/documentDB/nodedocs/)-Client unterstützt DocumentDB [.NET](https://msdn.microsoft.com/library/azure/dn948556.aspx)-, [Java](http://dl.windowsazure.com/documentdb/javadoc/)-, [ JavaScript](http://dl.windowsazure.com/documentDB/jsclientdocs/)- und [Python](http://dl.windowsazure.com/documentDB/pythondocs/)-SDKs. Gespeicherte Prozeduren, Trigger und benutzerdefinierte Funktionen können jedem dieser SDKs erstellt und ausgeführt werden. Das folgende Beispiel zeigt, wie eine gespeicherte Prozedur mithilfe des .NET-Clients erstellt und ausgeführt wird. Beachten Sie, wie die .NET-Typen als JSON an die gespeicherte Prozedur übergeben und eingelesen werden.
+Zusätzlich zum [Node.js](documentdb-sdk-node.md)-Client unterstützt DocumentDB [.NET](documentdb-sdk-dotnet.md)-, [Java](documentdb-sdk-java.md)-, [ JavaScript](http://azure.github.io/azure-documentdb-js/)- und [Python](documentdb-sdk-python.md)-SDKs. Gespeicherte Prozeduren, Trigger und benutzerdefinierte Funktionen können jedem dieser SDKs erstellt und ausgeführt werden. Das folgende Beispiel zeigt, wie eine gespeicherte Prozedur mithilfe des .NET-Clients erstellt und ausgeführt wird. Beachten Sie, wie die .NET-Typen als JSON an die gespeicherte Prozedur übergeben und eingelesen werden.
 
 	var markAntiquesSproc = new StoredProcedure
 	{
@@ -898,7 +900,7 @@ Hier wird der mit der Anforderung auszuführende vorangestellte Trigger im Heade
 
 ## Beispielcode
 
-Weitere Beispiele für serverseitigen Code (einschließlich [upsert](https://github.com/Azure/azure-documentdb-js-server/tree/master/samples/stored-procedures/upsert.js), [Massenlöschung](https://github.com/Azure/azure-documentdb-js-server/tree/master/samples/stored-procedures/bulkDelete.js) und [Aktualisieren](https://github.com/Azure/azure-documentdb-js-server/tree/master/samples/stored-procedures/update.js)) finden Sie in unserem [Github-Repository](https://github.com/Azure/azure-documentdb-js-server/tree/master/samples).
+Weitere Beispiele für serverseitigen Code (einschließlich [Massenlöschung](https://github.com/Azure/azure-documentdb-js-server/tree/master/samples/stored-procedures/bulkDelete.js) und [Aktualisierung](https://github.com/Azure/azure-documentdb-js-server/tree/master/samples/stored-procedures/update.js)) finden Sie in unserem [GitHub-Repository](https://github.com/Azure/azure-documentdb-js-server/tree/master/samples).
 
 Möchten Sie Ihre fantastische gespeicherte Prozedur freigeben? Bitte senden Sie uns eine Pull-Anforderung!
 
@@ -909,11 +911,12 @@ Sobald Sie eine oder mehrere gespeicherte Prozeduren, Trigger und benutzerdefini
 Weitere Informationen zur serverseitigen DocumentDB-Programmierung finden Sie auch in den folgenden Referenzen und Ressourcen:
 
 - [Azure DocumentDB SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx)
+- [DocumentDB Studio](https://github.com/mingaliu/DocumentDBStudio/releases)
 - [JSON](http://www.json.org/) 
 - [JavaScript-ECMA-262](http://www.ecma-international.org/publications/standards/Ecma-262.htm)
--	[JavaScript – JSON-Typsystem](http://www.json.org/js.html) 
--	[Sichere und portable Erweiterbarkeit von Datenbanken](http://dl.acm.org/citation.cfm?id=276339) 
--	[Dienstorientierte Datenbankarchitektur](http://dl.acm.org/citation.cfm?id=1066267&coll=Portal&dl=GUIDE) 
--	[Hosten der .NET-Lautzeitumgebung in Microsoft SQL Server](http://dl.acm.org/citation.cfm?id=1007669)  
+- [JavaScript – JSON-Typsystem](http://www.json.org/js.html) 
+- [Sichere und portable Erweiterbarkeit von Datenbanken](http://dl.acm.org/citation.cfm?id=276339) 
+- [Dienstorientierte Datenbankarchitektur](http://dl.acm.org/citation.cfm?id=1066267&coll=Portal&dl=GUIDE) 
+- [Hosten der .NET-Lautzeitumgebung in Microsoft SQL Server](http://dl.acm.org/citation.cfm?id=1007669)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0224_2016-->

@@ -31,7 +31,7 @@ Anstatt feste DWU-Ausgangspunkte bereitzustellen, die möglicherweise gut für e
 4. Erhöhen oder verringern Sie die Anzahl der ausgewählten DWUs. Der Dienst reagiert schnell und passt die Computeressourcen gemäß den DWU-Anforderungen an.
 5. Nehmen Sie weitere Anpassungen vor, bis Sie die optimale Leistungsstufe für Ihre geschäftlichen Anforderungen erreichen.
 
-Wenn Sie eine Anwendung mit wechselnder Workload haben, verschieben Sie die Leistungsstufen nach oben oder unten, um Spitzen und Tiefpunkte zu berücksichtigen. Wenn z. B. eine Workload in der Regel am Ende des Monats einen Spitzenwert aufweist, fügen Sie während dieser Spitzenzeiten weitere DWUs hinzu, und entfernen Sie sie wieder, wenn diese Spitzenzeiten vorbei sind.
+Wenn Sie eine Anwendung mit wechselnder Workload haben, verschieben Sie die Leistungsstufen nach oben oder unten, um Spitzen und Tiefpunkte zu berücksichtigen. Wenn z. B. eine Workload in der Regel am Ende des Monats einen Spitzenwert aufweist, fügen Sie während dieser Spitzenzeiten weitere DWUs hinzu, und entfernen Sie sie wieder, wenn diese Spitzenzeiten vorbei sind.
  
 ## Aufwärts- und Abwärtsskalieren von Compute-Ressourcen
 Unabhängig vom Cloudspeicher ermöglicht Ihnen die Flexibilität von SQL Data Warehouse das Vergrößern, Verkleinern oder Anhalten der Rechenleistung mithilfe eines Schiebereglers für Data Warehouse-Einheiten (DWUs). Dies bietet Ihnen die Flexibilität, die Rechenleistung auf einen Idealwert für Ihr Unternehmen zu optimieren.
@@ -58,6 +58,8 @@ SQL Data Warehouse bietet die einzigartige Möglichkeit zum Pausieren und Fortse
 
 Durch das Pausieren werden die Serverressourcen zurück an den Pool der verfügbaren Ressourcen im Rechenzentrum gegeben, und das Fortsetzen ruft die erforderlichen Serverressourcen für die DWUs ab, die Sie festgelegt haben, und weist sie der Data Warehouse-Instanz zu.
 
+> [AZURE.NOTE] Da der Speicher vom Server getrennt ist, wird der Speicher von der Pause nicht beeinträchtigt.
+
 Das Pausieren und Fortsetzen der Rechenleistung erfolgt über das [klassische Azure-Portal][], über REST-APIs oder über Powershell. Durch das Pausieren werden alle ausgeführten oder sich in einer Warteschlange befindenden Aktivitäten abgebrochen. Wenn Sie zurückkehren, können Sie die Compute-Ressourcen innerhalb weniger Sekunden wieder in Betrieb nehmen.
 
 Der folgende Code zeigt, wie Sie eine Pause mithilfe von PowerShell ausführen:
@@ -73,9 +75,9 @@ Das Fortsetzen des Diensts ist mit PowerShell ebenfalls sehr einfach:
 Resume-AzureSqlDatabase –ResourceGroupName "ResourceGroup11" –ServerName "Server01" –DatabaseName "Database02"
 ```
 
-Weitere Informationen zur Verwendung von PowerShell finden Sie im Artikel [Einführung in PowerShell-Cmdlets][].
+Weitere Informationen zur Verwendung von PowerShell finden Sie unter [Verwenden von PowerShell-Cmdlets und REST-APIs mit SQL Data Warehouse][].
 
-> [Azure.Note]Da der Speicher vom Server getrennt ist, wird der Speicher von der Pause nicht beeinträchtigt.
+
 
 ## Nächste Schritte
 Die Leistungsübersicht finden Sie unter [Leistungsübersicht][].
@@ -84,7 +86,7 @@ Die Leistungsübersicht finden Sie unter [Leistungsübersicht][].
 
 <!--Article references-->
 [Leistungsübersicht]: sql-data-warehouse-overview-performance.md
-[Einführung in PowerShell-Cmdlets]: sql-data-warehouse-get-started-powershell-cmdlets.md
+[Verwenden von PowerShell-Cmdlets und REST-APIs mit SQL Data Warehouse]: sql-data-warehouse-reference-powershell-cmdlets.md
 
 <!--MSDN references-->
 
@@ -94,4 +96,4 @@ Die Leistungsübersicht finden Sie unter [Leistungsübersicht][].
 [klassische Azure-Portal]: http://portal.azure.com/
 [klassischen Azure-Portal]: http://portal.azure.com/
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0224_2016-->

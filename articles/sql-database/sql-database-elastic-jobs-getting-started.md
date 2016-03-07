@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/01/2015"
+	ms.date="02/23/2016"
 	ms.author="sidneyh; ddove" />
 
 # Erste Schritte mit Aufträgen für die elastische Datenbank
@@ -29,7 +29,7 @@ Laden Sie das Beispiel [Erste Schritte mit den Tools für die elastische Datenba
 
 Hier erstellen Sie einen Shardzuordnungs-Manager und mehrere Shards und fügen anschließend Daten in die Shards ein. Wenn Sie bereits über Shards verfügen, die Shardingdaten enthalten, können Sie die folgenden Schritte überspringen und zum nächsten Abschnitt wechseln.
 
-1. Erstellen Sie die Beispielanwendung aus **Erste Schritte mit den Tools für die elastische Datenbank**, und führen Sie sie aus. Führen Sie die Schritte bis Schritt 7 im Abschnitt [Herunterladen und Ausführen der Beispiel-App](sql-database-elastic-scale-get-started.md#Getting-started-with-elastic-database-tools) aus. Am Ende von Schritt 7 wird die folgende Eingabeaufforderung angezeigt:
+1. Erstellen Sie die Beispielanwendung aus **Erste Schritte mit den Tools für die elastische Datenbank**, und führen Sie sie aus. Führen Sie die Schritte bis Schritt 7 im Abschnitt [Herunterladen und Ausführen der Beispiel-App](sql-database-elastic-scale-get-started.md#Getting-started-with-elastic-database-tools) aus. Am Ende von Schritt 7 wird die folgende Eingabeaufforderung angezeigt:
 
 	![Eingabeaufforderung][1]
 
@@ -416,7 +416,7 @@ Um die Fortsetzung der Auftragsausführung durch einen Auftragsauslöser aufzuhe
 
  Sie können die Ergebnisse einer Abfrage in eine Excel-Datei importieren.
 
-1. Öffnen Sie Excel 2013.
+1. Öffnen Sie Excel 2013.
 2. 	Navigieren Sie zum Menüband **Daten**.
 3. 	Klicken Sie auf **Aus anderen Quellen** und dann auf **Von SQL Server**.
 
@@ -429,7 +429,7 @@ Um die Fortsetzung der Auftragsausführung durch einen Auftragsauslöser aufzuhe
 Die Excel-Tabelle wird mit allen Zeilen aus der Tabelle **Customers** gefüllt, die in verschiedenen Shards gespeichert sind.
 
 ## Nächste Schritte
-Sie können jetzt die leistungsstarken Datenfunktionen von Excel verwenden. Sie können die Verbindungszeichenfolge mit dem Servernamen, Datenbanknamen und den Anmeldeinformationen zur Verbindung der BI und der Datenintegrationstools mit der elastischen Abfragedatenbank verwenden. Stellen Sie sicher, dass SQL Server als Datenquelle für das Tool unterstützt wird. Sie können auf die elastische Abfragedatenbank und die externen Tabellen wie auf jede andere SQL Server-Datenbank und SQL Server-Tabelle verweisen, zu denen Sie mit dem Tool eine Verbindung herstellen würden.
+Sie können jetzt die Datenfunktionen von Excel verwenden. Verwenden Sie die Verbindungszeichenfolge mit dem Servernamen, dem Datenbanknamen und den Anmeldeinformationen zum Verbinden der BI und der Datenintegrationstools mit der elastischen Abfragedatenbank. Stellen Sie sicher, dass SQL Server als Datenquelle für das Tool unterstützt wird. Verweisen Sie auf die elastische Abfragedatenbank und die externen Tabellen wie auf jede andere SQL Server-Datenbank und SQL Server-Tabelle, zu denen Sie mit dem Tool eine Verbindung herstellen würden.
 
 ### Kosten
 Es gibt keine zusätzlichen Gebühren für die Verwendung der Abfragefunktion für elastische Datenbanken. Zum jetzigen Zeitpunkt steht dieses Feature nur für Premium-Datenbanken als Endpunkt zur Verfügung, die Shards können jedoch aus jeder Dienstebene stammen.
@@ -447,4 +447,4 @@ Preisinformationen finden Sie in der [SQL-Datenbank – Preisdetails](https://az
 [5]: ./media/sql-database-elastic-query-getting-started/exel-sources.png
 <!--anchors-->
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0224_2016-->

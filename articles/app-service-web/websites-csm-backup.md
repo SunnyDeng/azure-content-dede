@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/18/2015"
+	ms.date="02/23/2016"
 	ms.author="nicking"/>
 
 # Verwenden von REST zum Sichern und Wiederherstellen von App Service-Apps
@@ -29,7 +29,7 @@ Um REST-Anforderungen senden zu können, müssen Sie **Name**, **Ressourcengrupp
 
 <a name="backup-restore-rest-api"></a>
 ## Sichern und Wiederherstellen einer REST-API
-Es folgen mehrere Beispiele dafür, wie Sie die REST-API zum Sichern und Wiederherstellen einer App verwenden. Jedes Beispiel enthält eine URL und einen HTTP-Anforderungstext. Die Beispiel-URL enthält Platzhalter, die in geschweiften Klammern stehen, z. B. {subscriptionId}. Ersetzen Sie diese Platzhalter durch die entsprechenden Informationen für Ihre App. Zu Referenzzwecken werden hier kurz die Platzhalter beschrieben, die in den Beispiel-URLs verwendet werden.
+Es folgen mehrere Beispiele dafür, wie Sie die REST-API zum Sichern und Wiederherstellen einer App verwenden. Jedes Beispiel enthält eine URL und einen HTTP-Anforderungstext. Die Beispiel-URL enthält Platzhalter, die in geschweiften Klammern stehen, z. B. {subscriptionId}. Ersetzen Sie diese Platzhalter durch die entsprechenden Informationen für Ihre App. Zu Referenzzwecken werden hier kurz die Platzhalter beschrieben, die in den Beispiel-URLs verwendet werden.
 
 * subscriptionId – ID des Azure-Abonnements, in dem die App enthalten ist
 * resourceGroupName – Name der Ressourcengruppe, in der die App enthalten ist
@@ -92,7 +92,7 @@ Ein Backup der App beginnt sofort, nachdem die Anforderung empfangen wurde. Der 
 }
 ```
 
->[AZURE.NOTE]Die Fehlermeldungen finden Sie in der log-Eigenschaft der HTTP-Antwort.
+>[AZURE.NOTE] Die Fehlermeldungen finden Sie in der log-Eigenschaft der HTTP-Antwort.
 
 <a name="schedule-automatic-backups"></a>
 ## Planen von automatischen Backups
@@ -123,7 +123,7 @@ Der Anforderungstext muss ein JSON-Objekt enthalten, mit dem die Konfiguration d
 }
 ```
 
-Im Beispiel wird die App so konfiguriert, dass alle sieben Tage ein automatisches Backup durchgeführt wird. Mit den Parametern **frequencyInterval** und **frequencyUnit** wird bestimmt, wie häufig die Backups erstellt werden sollen. Gültige Werte für **frequencyUnit** sind **hour** und **day**. Wenn eine App beispielsweise alle zwölf Stunden gesichert werden soll, legen Sie „frequencyInterval“ auf 12 und „frequencyUnit“ auf eine Stunde fest.
+Im Beispiel wird die App so konfiguriert, dass alle sieben Tage ein automatisches Backup durchgeführt wird. Mit den Parametern **frequencyInterval** und **frequencyUnit** wird bestimmt, wie häufig die Backups erstellt werden sollen. Gültige Werte für **frequencyUnit** sind **hour** und **day**. Wenn eine App beispielsweise alle zwölf Stunden gesichert werden soll, legen Sie „frequencyInterval“ auf 12 und „frequencyUnit“ auf eine Stunde fest.
 
 Alte Backups werden automatisch aus dem Speicherkonto entfernt. Sie können steuern, wie alt die Backups sein sollen, indem Sie den Parameter **retentionPeriodInDays** festlegen. Wenn unabhängig vom Alter immer mindestens ein Backup gespeichert sein soll, legen Sie **keepAtLeastOneBackup** auf „true“ fest.
 
@@ -225,9 +225,9 @@ Senden Sie im Anforderungstext ein JSON-Objekt, das die neue SAS-URL enthält. B
 }
 ```
 
->[AZURE.NOTE]Aus Sicherheitsgründen wird die einem Backup zugeordnete SAS-URL nicht zurückgegeben, wenn eine GET-Anforderung für ein bestimmtes Backup gesendet wird. Wenn Sie die SAS-URL anzeigen möchten, die einem Backup zugeordnet ist, senden Sie eine POST-Anforderung an die obige URL und fügen einfach ein leeres JSON-Objekt in den Anforderungstext ein. Die Antwort des Servers enthält alle Informationen zum Backup, einschließlich der SAS-URL.
+>[AZURE.NOTE] Aus Sicherheitsgründen wird die einem Backup zugeordnete SAS-URL nicht zurückgegeben, wenn eine GET-Anforderung für ein bestimmtes Backup gesendet wird. Wenn Sie die SAS-URL anzeigen möchten, die einem Backup zugeordnet ist, senden Sie eine POST-Anforderung an die obige URL und fügen einfach ein leeres JSON-Objekt in den Anforderungstext ein. Die Antwort des Servers enthält alle Informationen zum Backup, einschließlich der SAS-URL.
 
 <!-- IMAGES -->
 [SampleWebsiteInformation]: ./media/websites-csm-backup/01siteconfig.png
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0224_2016-->

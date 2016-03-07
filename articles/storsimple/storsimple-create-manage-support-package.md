@@ -4,7 +4,7 @@
    services="storsimple"
    documentationCenter=""
    authors="alkohli"
-   manager="carolz"
+   manager="carmonm"
    editor="" />
 <tags 
    ms.service="storsimple"
@@ -24,7 +24,7 @@ Dieses Tutorial beschreibt die verschiedenen Aufgaben im Zusammenhang mit der Er
 
 Dieses Tutorial enthält schrittweise Anleitungen für die Erstellung und Verwaltung des Unterstützungspakets mithilfe von:
 
-- Abschnitt **Unterstützungspaket** auf der Seite **Wartung** des StorSimple Manager-Diensts
+- Abschnitt **Unterstützungspaket** auf der Seite **Wartung** des StorSimple Manager-Diensts
 - Windows PowerShell für StorSimple
 
 In diesem Tutorial lernen Sie Folgendes:
@@ -35,7 +35,7 @@ In diesem Tutorial lernen Sie Folgendes:
 
 ## Erstellen eines Unterstützungspakets im klassischen Azure-Portal
 
-Zur Behandlung möglicher Probleme mit dem StorSimple Manager-Dienst können Sie im klassischen Azure-Portal über die Seite **Wartung** des Diensts ein Unterstützungspaket erstellen und an die Microsoft Support-Website hochladen. Für den Upload wird ein Unterstützungshauptschlüssel benötigt. Den Unterstützungshauptschlüssel erhalten Sie per E-Mail vom zuständigen Supporttechniker. Ein unverschlüsseltes, komprimiertes Unterstützungspaket (CAB-Datei) wird erstellt. Dieses Paket kann dann vom Supporttechniker über die Support-Website abgerufen werden, wenn er den Hauptschlüssel bereitstellt.
+Zur Behandlung möglicher Probleme mit dem StorSimple Manager-Dienst können Sie im klassischen Azure-Portal über die Seite **Wartung** des Diensts ein Unterstützungspaket erstellen und an die Microsoft Support-Website hochladen. Für den Upload wird ein Unterstützungshauptschlüssel benötigt. Den Unterstützungshauptschlüssel erhalten Sie per E-Mail vom zuständigen Supporttechniker. Ein unverschlüsseltes, komprimiertes Unterstützungspaket (CAB-Datei) wird erstellt. Dieses Paket kann dann vom Supporttechniker über die Support-Website abgerufen werden, wenn er den Hauptschlüssel bereitstellt.
 
 Führen Sie im klassischen Portal die folgenden Schritte aus, um ein Unterstützungspaket zu erstellen:
 
@@ -65,11 +65,11 @@ Führen Sie die folgenden Schritte aus, um ein Unterstützungspaket in Windows P
 
 #### So erstellen Sie ein Unterstützungspaket in Windows PowerShell für StorSimple
 
-1. Geben Sie den folgenden Befehl ein, um auf dem Remotecomputer, über den eine Verbindung mit dem StorSimple-Gerät hergestellt wird, eine Windows PowerShell-Sitzung als Administrator zu starten:
+1. Geben Sie den folgenden Befehl ein, um auf dem Remotecomputer, über den eine Verbindung mit dem StorSimple-Gerät hergestellt wird, eine Windows PowerShell-Sitzung als Administrator zu starten:
 
 	`Start PowerShell`
 
-2. Stellen Sie in der Windows PowerShell-Sitzung eine Verbindung mit dem SSAdminConsole-Runspace des Geräts her:
+2. Stellen Sie in der Windows PowerShell-Sitzung eine Verbindung mit dem SSAdminConsole-Runspace des Geräts her:
 
 
 	- Geben Sie an der Eingabeaufforderung Folgendes ein: 
@@ -123,9 +123,9 @@ Die folgende Tabelle enthält die verschiedenen Parameter, die für das Cmdlet �
 
 Unter Umständen muss ein Unterstützungspaket nach der Generierung bearbeitet werden, um kundenspezifische Informationen wie Volumenamen, Geräte-IP-Adressen und Sicherungsnamen aus den Protokolldateien zu entfernen.
 
-> [AZURE.IMPORTANT]Unterstützungspakete können nur bearbeitet werden, wenn sie mit Windows PowerShell für StorSimple generiert wurden. Pakete, die im klassischen Azure-Portal mit dem StorSimple Manager-Dienst erstellt wurden, können nicht bearbeitet werden.
+> [AZURE.IMPORTANT] Unterstützungspakete können nur bearbeitet werden, wenn sie mit Windows PowerShell für StorSimple generiert wurden. Pakete, die im klassischen Azure-Portal mit dem StorSimple Manager-Dienst erstellt wurden, können nicht bearbeitet werden.
 
-Wenn Sie ein Unterstützungspaket vor dem Hochladen an die Microsoft Support-Website bearbeiten möchten, müssen Sie es entschlüsseln, die Dateien bearbeiten und es anschließend wieder verschlüsseln. Führen Sie zum Bearbeiten eines Unterstützungspakets die folgenden Schritte aus:
+Wenn Sie ein Unterstützungspaket vor dem Hochladen an die Microsoft Support-Website bearbeiten möchten, müssen Sie es entschlüsseln, die Dateien bearbeiten und es anschließend wieder verschlüsseln. Führen Sie zum Bearbeiten eines Unterstützungspakets die folgenden Schritte aus:
 
 #### So bearbeiten Sie ein Unterstützungspaket in Windows PowerShell für StorSimple
 
@@ -133,7 +133,7 @@ Wenn Sie ein Unterstützungspaket vor dem Hochladen an die Microsoft Support-We
 
 2. [Laden Sie das Skript](http://gallery.technet.microsoft.com/scriptcenter/Script-to-decrypt-a-a8d1ed65) lokal auf den Client herunter.
 
-3. Importieren Sie das Windows PowerShell-Modul. Geben Sie den Pfad des lokalen Ordners an, in den Sie das Skript heruntergeladen haben. Geben Sie zum Importieren des Moduls Folgendes ein:
+3. Importieren Sie das Windows PowerShell-Modul. Geben Sie den Pfad des lokalen Ordners an, in den Sie das Skript heruntergeladen haben. Geben Sie zum Importieren des Moduls Folgendes ein:
  
 	`Import-module <Path to the folder that contains the Windows PowerShell script>`
 
@@ -143,7 +143,7 @@ Wenn Sie ein Unterstützungspaket vor dem Hochladen an die Microsoft Support-We
 
 	Dadurch werden die Dateien dekomprimiert und entschlüsselt. Außerdem werden die Dateien nun mit ihrer tatsächlichen Dateierweiterung angezeigt.
 	
-	![Bearbeiten des Unterstützungspakets 3](./media/storsimple-create-manage-support-package/IC750706.png)
+	![Bearbeiten des Unterstützungspakets 3](./media/storsimple-create-manage-support-package/IC750706.png)
 
 
 5. Geben Sie die bei der Paketerstellung verwendete Verschlüsselungspassphrase ein, wenn Sie dazu aufgefordert werden.
@@ -158,7 +158,7 @@ Wenn Sie ein Unterstützungspaket vor dem Hochladen an die Microsoft Support-We
 
 	`Close-HcsSupportPackage <Path to the folder that contains support package files>`
 
-	![Bearbeiten des Unterstützungspakets 2](./media/storsimple-create-manage-support-package/IC750707.png)
+	![Bearbeiten des Unterstützungspakets 2](./media/storsimple-create-manage-support-package/IC750707.png)
 
 8. Geben Sie eine Verschlüsselungspassphrase für das geänderte Unterstützungspaket ein, wenn Sie dazu aufgefordert werden.
 
@@ -172,7 +172,7 @@ Wenn Sie ein Unterstützungspaket vor dem Hochladen an die Microsoft Support-We
 
 Das folgende Beispiel veranschaulicht das Entschlüsseln, Bearbeiten und erneute Verschlüsseln eines Unterstützungspakets:
 
-![Bearbeiten des Unterstützungspakets 1](./media/storsimple-create-manage-support-package/IC750708.png)
+![Bearbeiten des Unterstützungspakets 1](./media/storsimple-create-manage-support-package/IC750708.png)
 
     	PS C:\WINDOWS\system32> Import-module C:\Users\Default\StorSimple\SupportPackage\HCSSupportPackageTools.psm1
     
@@ -198,6 +198,6 @@ Das folgende Beispiel veranschaulicht das Entschlüsseln, Bearbeiten und erneute
 
 - Informieren Sie sich darüber, wie Sie [mithilfe von Unterstützungspaketen und Geräteprotokollen Probleme bei der Gerätebereitstellung behandeln](storsimple-troubleshoot-deployment.md#support-packages-and-device-logs-available-for-troubleshooting).
 
-- Erfahren Sie mehr über das [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
+- Erfahren Sie mehr über das [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0224_2016-->

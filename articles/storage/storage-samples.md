@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="storage"
-   ms.date="01/06/2016"
+   ms.date="02/21/2016"
    ms.author="tamram" />
 
 # Beispiele für Azure Storage
@@ -22,18 +22,18 @@ Verwenden Sie die unten aufgeführten Links, um Arbeitsbeispiele für Azure-Spei
 
 ## Bibliothek mit Azure-Codebeispielen
 
-Die [Bibliothek mit Azure-Codebeispielen](https://azure.microsoft.com/documentation/samples/?service=storage) enthält Beispiele für Azure Storage, die Sie herunterladen und lokal ausführen können. Die Bibliothek mit Codebeispielen enthält Beispielcode im ZIP-Format. Alternativ können Sie die einzelnen Beispiele im GitHub-Repository suchen und klonen.
+Die [Bibliothek mit Azure-Codebeispielen](https://azure.microsoft.com/documentation/samples/?service=storage) enthält Beispiele für Azure Storage, die Sie herunterladen und lokal ausführen können. Die Bibliothek mit Codebeispielen enthält Beispielcode im ZIP-Format. Alternativ können Sie die einzelnen Beispiele im GitHub-Repository suchen und klonen.
 
 ## Beispiele für .NET
 
 Um die Beispiele für .NET zu untersuchen, laden Sie die [Speicherclientbibliothek für .NET](https://www.nuget.org/packages/WindowsAzure.Storage/) aus NuGet herunter. Die .NET-Speicherclientbibliothek ist auch im [Azure SDK für .NET](https://azure.microsoft.com/downloads/) verfügbar.
 
-* [Erste Schritte mit Azure-Blobs, -Tabellen und -Warteschlangen in 5 Minuten](storage-getting-started-guide.md)
+* [Erste Schritte mit Azure Storage – Einstieg in fünf Minuten](storage-getting-started-guide.md)
 * [Managing Concurrency using Azure Storage – Sample Application (in englischer Sprache)](https://code.msdn.microsoft.com/Managing-Concurrency-using-56018114)
 * [Erste Schritte mit Blobs](https://github.com/Azure/azure-storage-net/tree/master/Samples/GettingStarted/VisualStudioQuickStarts/DataBlobStorage)
 * [Erste Schritte mit Tabellen](https://github.com/Azure/azure-storage-net/tree/master/Samples/GettingStarted/VisualStudioQuickStarts/DataTableStorage)
 * [Erste Schritte mit Warteschlangen](https://github.com/Azure/azure-storage-net/tree/master/Samples/GettingStarted/VisualStudioQuickStarts/DataStorageQueue)
-* [Erste Schritte mit Dateien](https://github.com/Azure/azure-storage-net/tree/master/Samples/GettingStarted/VisualStudioQuickStarts/DataTableStorage)
+* [Erste Schritte mit Dateien](https://github.com/Azure/azure-storage-net/tree/master/Samples/GettingStarted/VisualStudioQuickStarts/DataFileStorage)
 
 ## Beispiele für Java
 
@@ -85,4 +85,4 @@ Um die Beispiele für C++ zu untersuchen, laden Sie die [Speicherclientbibliothe
 - [Quellcode für die Speicherclientbibliothek für C++](https://github.com/Azure/azure-storage-cpp)
 - [Referenz zur C++-Clientbibliothek](http://azure.github.io/azure-storage-cpp/)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0224_2016-->

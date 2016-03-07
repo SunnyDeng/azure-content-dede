@@ -13,16 +13,16 @@
 	ms.tgt_pltfrm="vs-getting-started"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/30/2016"
+	ms.date="02/21/2016"
 	ms.author="tarcher"/>
 
 # Erste Schritte mit Blobspeicher und verbundenen Visual Studio-Diensten (ASP.NET)
 
 ## Übersicht
 
-Dieser Artikel beschreibt, wie die ersten Schritte bei der Verwendung des Azure-Blob-Speichers aussehen, nachdem Sie über das Visual Studio-Dialogfeld **Verbundene Dienste hinzufügen** in einer ASP.NET-App ein Azure-Speicherkonto erstellt oder auf ein solches Konto verwiesen haben. Im Artikel wird erläutert, wie Sie Blob-Container erstellen und andere allgemeine Aufgaben ausführen. Dazu zählen u. a. das Hochladen, Auflisten, Herunterladen und Löschen von Blobs. Die Beispiele sind in C# geschrieben und greifen auf die [Azure-Speicherclientbibliothek für .NET](https://msdn.microsoft.com/library/azure/dn261237.aspx) zurück.
+Dieser Artikel beschreibt, wie die ersten Schritte bei der Verwendung des Azure-Blob-Speichers aussehen, nachdem Sie über das Visual Studio-Dialogfeld **Verbundene Dienste hinzufügen** in einer ASP.NET-App ein Azure-Speicherkonto erstellt oder auf ein solches Konto verwiesen haben. Im Artikel wird erläutert, wie Sie Blob-Container erstellen und andere allgemeine Aufgaben ausführen. Dazu zählen u. a. das Hochladen, Auflisten, Herunterladen und Löschen von Blobs. Die Beispiele sind in C# geschrieben und greifen auf die [Microsoft Azure-Speicherclientbibliothek für .NET](https://msdn.microsoft.com/library/azure/dn261237.aspx) zurück.
 
- - Weitere allgemeine Informationen zur Verwendung von Azure-Blob-Speicher finden Sie unter [Verwenden des Blobspeichers mit .NET](storage-dotnet-how-to-use-blobs.md).
+ - Weitere allgemeine Informationen zur Verwendung von Azure Blob Storage finden Sie unter [Erste Schritte mit Azure Blob Storage mit .NET](storage-dotnet-how-to-use-blobs.md).
  - Weitere Informationen zu ASP.NET-Projekten finden Sie unter [ASP.NET](http://www.asp.net).
 
 
@@ -60,7 +60,7 @@ Für den programmgesteuerten Zugriff auf Blobs in ASP.NET-Projekten müssen Sie 
         // Get a reference to a container named “mycontainer.”
         CloudBlobContainer container = blobClient.GetContainerReference("mycontainer");
 
-> [AZURE.NOTE] Einige der APIs, die Aufrufe des Azure-Speichers in ASP.NET 5 ausführen, sind asynchron. Unter [Asynchrone Programmierung mit Async und Await](http://msdn.microsoft.com/library/hh191443.aspx) finden Sie weitere Informationen.
+> [AZURE.NOTE] Einige der APIs, die Aufrufe des Azure-Speichers in ASP.NET 5 ausführen, sind asynchron. Unter [Asynchrone Programmierung mit Async und Await](http://msdn.microsoft.com/library/hh191443.aspx) finden Sie weitere Informationen.
 
 
 ## Erstellen eines BLOB-Containers in Code
@@ -76,8 +76,6 @@ Azure-Blob-Speicher unterstützt Blockblobs und Seitenblobs. In den meisten Fäl
 
 Rufen Sie einen Containerverweis ab und verwenden Sie diesen zum Abrufen eines Blockblobverweises, um eine Datei in einen Blockblob hochzuladen. Sobald Sie über einen Blobverweis verfügen, können Sie jeden Datenstrom in diesen hochladen, indem Sie die **UploadFromStream**-Methode aufrufen. Bei diesem Vorgang wird das Blob erstellt, falls es nicht bereits vorhanden ist, oder überschrieben, falls es vorhanden ist. Im folgenden Beispiel wird gezeigt, wie ein Blob in einen bereits erstellten Container hochgeladen wird.
 
-    // Get a CloudBlobContainer named 'container' as described in "Access blob containers in code."
-
     // Create or overwrite the "myblob" blob with contents from a local file.
     using (var fileStream = System.IO.File.OpenRead(@"path\myfile"))
     {
@@ -87,8 +85,6 @@ Rufen Sie einen Containerverweis ab und verwenden Sie diesen zum Abrufen eines B
 ## Auflisten der Blobs in einem Container
 
 Wenn Sie die Blobs in einem Container auflisten möchten, rufen Sie die Blobs und/oder die darin enthaltenen Verzeichnisse mit der **ListBlobs**-Methode ab. Damit Sie auf die zahlreichen Eigenschaften und Methoden für ein zurückgegebenes **IListBlobItem**-Objekt zugreifen können, müssen Sie es in ein **CloudBlockBlob**-, **CloudPageBlob**- oder **CloudBlobDirectory**-Objekt umwandeln. Wenn der Typ unbekannt ist, können Sie eine Typenüberprüfung durchführen, um zu bestimmen, in welchen Typ die Umwandlung erfolgen soll. Im folgenden Code wird gezeigt, wie der URI der einzelnen Elemente im Container **Fotos** abgerufen und ausgegeben wird.
-
-    // Get a CloudBlobContainer named 'container' as described in "Access blob containers in code."
 
 	// Loop over items within the container and output the length and URI.
 	foreach (IListBlobItem item in container.ListBlobs(null, false))
@@ -158,8 +154,6 @@ Und das nächste Beispiel enthält die Ergebnisse.
 
 Verwenden Sie zum Herunterladen von Blobs die **DownloadToStream**-Methode. Im folgenden Beispiel wird die **DownloadToStream**-Methode verwendet, um den Blobinhalt auf ein Datenstromobjekt zu übertragen, das danach in einer lokalen Datei gespeichert werden kann.
 
-    // Get a CloudBlobContainer named 'container' as described in "Access blob containers in code"
-
     // Retrieve a reference to a blob named "photo1.jpg".
     CloudBlockBlob blockBlob = container.GetBlockBlobReference("photo1.jpg");
 
@@ -170,8 +164,6 @@ Verwenden Sie zum Herunterladen von Blobs die **DownloadToStream**-Methode. Im f
     }
 
 Sie können auch die **DownloadToStream**-Methode verwenden, um den Inhalt eines Blobs als Textzeichenfolge herunterzuladen.
-
-    // Get a CloudBlobContainer named 'container' as described in "Access blob containers in code"
 
 	// Retrieve a reference to a blob named "myblob.txt"
 	CloudBlockBlob blockBlob2 = container.GetBlockBlobReference("myblob.txt");
@@ -186,8 +178,6 @@ Sie können auch die **DownloadToStream**-Methode verwenden, um den Inhalt eines
 ## Löschen von Blobs
 
 Verwenden Sie zum Löschen eines Blobs die **Delete**-Methode.
-
-    // Get a CloudBlobContainer named 'container' as described in "Access blob containers in code"
 
     // Retrieve reference to a blob named "myblob.txt".
     CloudBlockBlob blockBlob = container.GetBlockBlobReference("myblob.txt");
@@ -237,4 +227,4 @@ Da die Beispielmethode eine asynchrone Methode aufruft, muss sie mit dem Schlüs
 
 [AZURE.INCLUDE [vs-storage-dotnet-blobs-next-steps](../../includes/vs-storage-dotnet-blobs-next-steps.md)]
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0224_2016-->

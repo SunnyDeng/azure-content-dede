@@ -13,7 +13,7 @@ Im Folgenden sind Fehlerbedingungen angegeben, die zu einer Ausnahme führen:
 3.	Das Ergebnis der SQL-Abfrage enthält keinen Spaltennamen, der in der Zuordnung angegeben ist.
 
 ## Beispiele für Spaltenzuordnungen
-> [AZURE.NOTE]Die folgenden Beispiele beziehen sich auf Azure SQL und Azure-Blob, gelten jedoch auch für beliebige Datenspeicher, die rechteckige Tabellen unterstützen. Sie müssen die Definitionen von Datasets und verknüpften Diensten in den folgenden Beispielen anpassen, damit sie auf Daten in der relevanten Datenquelle verweisen.
+> [AZURE.NOTE] Die folgenden Beispiele beziehen sich auf Azure SQL und Azure Blob, sie gelten aber auch für beliebige Datenspeicher, die rechteckige Datasets unterstützen. Sie müssen die Definitionen von Datasets und verknüpften Diensten in den folgenden Beispielen anpassen, damit sie auf Daten in der relevanten Datenquelle verweisen.
 
 ### Beispiel 1 – Spaltenzuordnung von Azure SQL zu Azure-Blob
 In diesem Beispiel verfügt die Eingabetabelle über eine Struktur und diese verweist auf eine SQL-Tabelle in einer Azure SQL-Datenbank.
@@ -149,4 +149,4 @@ In diesem Fall werden die Abfrageergebnisse zuerst den in "structure" der Quelle
 
 ![Ablauf der Spaltenzuordnung-2](./media/data-factory-data-stores-with-rectangular-tables/column-mapping-flow-2.png)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0224_2016-->

@@ -1,10 +1,10 @@
 <properties 
-pageTitle="Indexer-Vorgänge (REST-API für Azure Search-Dienst: 2015-02-28-Preview) | Microsoft Azure | Gehosteter Cloudsuchdienst" 
+pageTitle="Indexer-Vorgänge (REST-API für Azure Search-Dienst: 2015-02-28-Preview) | Azure Search-Vorschau-API" 
 description="Indexer-Vorgänge (REST-API für Azure Search-Dienst: 2015-02-28-Preview)" 
 services="search" 
 documentationCenter="" 
-authors="HeidiSteen" 
-manager="mblythe" 
+authors="chaosrealm" 
+manager="pablocas"
 editor="" />
 
 <tags 
@@ -13,16 +13,16 @@ ms.devlang="rest-api"
 ms.workload="search" 
 ms.topic="article"  
 ms.tgt_pltfrm="na" 
-ms.date="11/04/2015" 
-ms.author="heidist" />
+ms.date="02/18/2016" 
+ms.author="eugenesh" />
 
 #Indexer-Vorgänge (REST-API für Azure Search-Dienst: 2015-02-28-Preview)#
 
-> [AZURE.NOTE] Dieser Artikel beschreibt die Indexer in Version [2015-02-28-Preview](./search-api-2015-02-28-preview). Derzeit besteht kein Unterschied zwischen der `2015-02-28`-Version, die auf [MSDN](http://go.mirosoft.com/fwlink/p/?LinkID=528173) dokumentiert ist, und der hier beschriebenen `2015-02-28-Preview`-Version. Dieser Artikel ist hier enthalten, um eine vollständige Dokumentation für `2015-02-28-Preview` bereitzustellen. Die API selbst wurde jedoch nicht geändert.
+> [AZURE.NOTE] Dieser Artikel beschreibt die Indexer in Version [2015-02-28-Preview](./search-api-2015-02-28-preview). Diese API-Version fügt einen Azure-Blobspeicher-Indexer mit Dokumentextraktion sowie weitere Verbesserungen hinzu.
 
 ## Übersicht ##
 
-Azure Search ist ein in Microsoft Azure gehosteter Cloudsuchdienst. Azure Search kann direkt mit einigen allgemeinen Datenquellen integrieren. Das Schreiben von Code zum Indizieren Ihrer Daten ist somit überflüssig. Um diese Funktion einzurichten, rufen Sie die Azure Search-API zum Erstellen und Verwalten mehrerer**Indexer** und **Datenquellen** auf.
+Azure Search kann direkt mit einigen allgemeinen Datenquellen integrieren. Das Schreiben von Code zum Indizieren Ihrer Daten ist somit überflüssig. Um diese Funktion einzurichten, rufen Sie die Azure Search-API zum Erstellen und Verwalten mehrerer**Indexer** und **Datenquellen** auf.
 
 Ein **Indexer** ist die Ressource, die Datenquellen mit Zielsuchindizes verbindet. Ein Indexer kann folgendermaßen verwendet werden:
 
@@ -32,14 +32,15 @@ Ein **Indexer** ist die Ressource, die Datenquellen mit Zielsuchindizes verbinde
 
 Ein **Indexer** ist nützlich, wenn regelmäßige Aktualisierungen eines Indexes durchgeführt werden sollen. Sie können einen eingebetteten Zeitplan als Teil der Definition eines Indexers einrichten oder den Indexer bei Bedarf mit [Indexer ausführen](#RunIndexer) ausführen.
 
-Eine **Datenquelle** gibt an, welche Daten indiziert werden müssen. Sie legt außerdem die Anmeldeinformationen für den Zugriff auf die Daten sowie die Richtlinien zur Aktivierung von Azure Search fest, um Änderungen an den Daten effizient identifizieren zu können (wie z. B. geänderte oder gelöschte Zeilen in einer Datenbanktabelle). Die Datenquelle wird als unabhängige Ressource definiert, sodass sie von mehreren Indexern verwendet werden kann.
+Eine **Datenquelle** gibt an, welche Daten indiziert werden müssen. Sie legt außerdem die Anmeldeinformationen für den Zugriff auf die Daten sowie die Richtlinien zur Aktivierung von Azure Search fest, um Änderungen an den Daten effizient identifizieren zu können (wie z. B. geänderte oder gelöschte Zeilen in einer Datenbanktabelle). Die Datenquelle wird als unabhängige Ressource definiert, sodass sie von mehreren Indexern verwendet werden kann.
 
 Die folgenden Datenquellen werden derzeit unterstützt:
 
-- Azure SQL-Datenbank und SQL Server in Azure VMs
-- Azure DocumentDB 
-
-Unterstützung für zusätzliche Datenquellen ist für einen späteren Zeitpunkt geplant. Damit wir unsere Entscheidungen besser priorisieren können, lassen Sie uns im [Feedback-Forum für Azure Search](https://feedback.azure.com/forums/263029-azure-search/) Ihr Feedback zukommen.
+- **Azure SQL-Datenbank** und **SQL Server in Azure VMs**. Eine gezielte exemplarische Vorgehensweise finden Sie [in diesem Artikel](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers-2015-02-28/). 
+- **Azure DocumentDB**. Eine gezielte exemplarische Vorgehensweise finden Sie [in diesem Artikel](../documentdb/documentdb-search-indexer). 
+- **Azure-Blobspeicher**, einschließlich der folgenden Dokumentformate: PDF, Microsoft Office (DOCX/DOC, XSLX/XLS, PPTX/PPT, MSG), HTML, XML, ZIP und Nur-Text-Dateien (einschließlich JSON). Eine gezielte exemplarische Vorgehensweise finden Sie [in diesem Artikel](search-howto-indexing-azure-blob-storage.md).
+	 
+Unterstützung für zusätzliche Datenquellen ist für einen späteren Zeitpunkt geplant. Damit wir unsere Entscheidungen besser priorisieren können, lassen Sie uns im [Feedback-Forum für Azure Search](http://feedback.azure.com/forums/263029-azure-search) Ihr Feedback zukommen.
 
 Informationen zu maximalen Grenzwerten mit Bezug auf Indexer- und Datenquellenressourcen finden Sie unter [Grenzwerte](search-limits-quotas-capacity.md).
 
@@ -93,7 +94,7 @@ In der folgenden Liste werden die erforderlichen und optionalen Anforderungshead
 - `Content-Type`: Erforderlich. Auf `application/json` festlegen.
 - `api-key`: Erforderlich. `api-key` wird zum Authentifizieren der Anforderung beim Search-Dienst verwendet. Es handelt sich um einen für Ihren Dienst eindeutigen Zeichenfolgenwert. Die Anforderung **Datenquelle erstellen** muss einen `api-key`-Header enthalten, der auf Ihren Admin-Schlüssel (im Gegensatz zum Abfrageschlüssel) festgelegt ist. 
  
-Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im [klassischen Azure-Portal](https://portal.azure.com/) abrufen. Hilfe bei der Seitennavigation finden Sie unter [Search-Dienst im Portal erstellen](search-create-service-portal.md).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie finden den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im [Azure-Verwaltungsportal](https://portal.azure.com/). Hilfe bei der Seitennavigation finden Sie unter [Search-Dienst im Portal erstellen](search-create-service-portal.md).
 
 <a name="CreateDataSourceRequestSyntax"></a> **Syntax des Anforderungstextes**
 
@@ -105,9 +106,9 @@ Die Syntax für die Strukturierung der Anforderungsnutzlast ist wie folgt. Eine 
     { 
 		"name" : "Required for POST, optional for PUT. The name of the data source",
     	"description" : "Optional. Anything you want, or nothing at all",
-    	"type" : "Required. Must be 'azuresql' or 'documentdb'",
+    	"type" : "Required. Must be one of 'azuresql', 'documentdb', or 'azureblob'",
     	"credentials" : { "connectionString" : "Required. Connection string for your data source" },
-    	"container" : { "name" : "Required. The name of the table or collection you wish to index" },
+    	"container" : { "name" : "Required. The name of the table, collection, or blob container you wish to index" },
     	"dataChangeDetectionPolicy" : { Optional. See below for details }, 
     	"dataDeletionDetectionPolicy" : { Optional. See below for details }
 	}
@@ -119,22 +120,28 @@ Die Anforderung enthält die folgenden Eigenschaften:
 - `type`: Erforderlich. Dabei muss es sich um einen der unterstützten Datenquellentypen handeln:
 	- `azuresql`: Azure SQL-Datenbank und SQL Server in Azure VMs
 	- `documentdb`: Azure DocumentDB
+	- `azureblob` - Azure-Blobspeicher
 - `credentials`:
 	- Die erforderlichen Eigenschaft `connectionString` gibt die Verbindungszeichenfolge für die Datenquelle an. Das Format der Verbindungszeichenfolge hängt vom Typ der Datenquelle ab: 
-		- Für SQL Azure ist dies die übliche SQL Server-Verbindungszeichenfolge. Wenn Sie die Verbindungszeichenfolge über das klassische Azure-Portal abrufen, verwenden Sie die Option `ADO.NET connection string`.
-		- Für DocumentDB muss die Verbindungszeichenfolge folgenden Format aufweisen: `"AccountEndpoint=https://[your account name].documents.azure.com;AccountKey=[your account key];Database=[your database id]"`. Alle Werte sind erforderlich. Informationen zu den Werten finden Sie im [klassischen Azure-Portal](https://portal.azure.com/).   
+		- Für SQL Azure ist dies die übliche SQL Server-Verbindungszeichenfolge. Wenn Sie die Verbindungszeichenfolge über das Azure-Portal abrufen, verwenden Sie die Option `ADO.NET connection string`.
+		- Für DocumentDB muss die Verbindungszeichenfolge folgenden Format aufweisen: `"AccountEndpoint=https://[your account name].documents.azure.com;AccountKey=[your account key];Database=[your database id]"`. Alle Werte sind erforderlich. Informationen zu den Werten finden Sie im [Azure-Portal](https://portal.azure.com/).  
+		- Für Azure-Blobspeicher ist dies die Speicherkonto-Verbindungszeichenfolge. Das Format wird [hier](https://azure.microsoft.com/documentation/articles/storage-configure-connection-string/) beschrieben. Ein HTTPS-Endpunktprotokoll ist erforderlich.  
 		
-- `container`:
-	- Die erforderliche Eigenschaft `name` gibt die Tabelle bzw. Ansicht (für Azure SQL-Datenquelle) oder eine Sammlung (für DocumentDB-Datenquelle) an, die indiziert werden soll. 
-	- Lassen Sie für SQL-Datenquellen Schemapräfixe wie z. B. „dbo.“ aus, sodass der Container nur aus dem Namen der Tabelle oder der Ansicht besteht.
-	- DocumentDB-Datenquellen unterstützen die optionale Eigenschaft `query` zum Angeben einer Abfrage, die ein beliebiges JSON-Dokumentlayout in ein Flatfile-Schema reduziert, welches von Azure Search indiziert werden kann.   
-- Die optionalen Richtlinien `dataChangeDetectionPolicy` und `dataDeletionDetectionPolicy` werden im Folgenden beschrieben.
+- `container`, erforderlich: gibt die zu indizierenden Daten mithilfe der Eigenschaften `name` und `query` an:
+	- `name`, erforderlich:
+		- Azure SQL: Gibt die Tabelle oder Sicht an. Sie können schemaqualifizierte Namen verwenden, z. B. `[dbo].[mytable]`.
+		- DocumentDB: Gibt die Auflistung an. 
+		- Azure-Blobspeicher: gibt den Speichercontainer an. 
+	- `query`, optional:
+		- DocumentDB: zum Angeben einer Abfrage, die ein beliebiges JSON-Dokumentlayout in ein Flatfile-Schema reduziert, welches von Azure Search indiziert werden kann.  
+		- Azure-Blobspeicher: zum Angeben eines virtuellen Ordners im Blobcontainer. Für den Blobpfad können beispielsweise `mycontainer/documents/blob.pdf`, `documents` als virtuelle Ordner verwendet werden.
+		- Azure SQL: Abfrage wird nicht unterstützt. Wenn Sie diese Funktion benötigen, nutzen Sie [diese Empfehlung](https://feedback.azure.com/forums/263029-azure-search/suggestions/9893490-support-user-provided-query-in-sql-indexer)
+   
+- Die optionalen Eigenschaften `dataChangeDetectionPolicy` und `dataDeletionDetectionPolicy` werden im Folgenden beschrieben.
 
 <a name="DataChangeDetectionPolicies"></a>**Richtlinien zur Erkennung von Datenänderungen**
 
 Die Richtlinie zum Erkennen von Datenänderungen dient einer effizienten Identifizierung geänderter Datenelemente. Unterstützte Richtlinien hängen vom Typ der Datenquelle ab. Die Richtlinien werden in den folgenden Abschnitten beschrieben.
-
-**HINWEIS:** Sie können die Richtlinien zur Erkennung von Datenänderungen nach der Erstellung des Indexers ändern, indem Sie die API [Indexer zurücksetzen](#ResetIndexer) verwenden.
 
 ***Richtlinie zum Erkennen von Änderungen mit oberem Grenzwert***
 
@@ -147,8 +154,6 @@ Verwenden Sie diese Richtlinie, wenn Ihre Datenquelle eine Spalte oder Eigenscha
 
 Wenn Sie beispielsweise Azure-SQL-Datenquellen verwenden, eignet sich eine indizierte `rowversion`-Spalte ideal für die Verwendung mit der Richtlinie mit oberem Grenzwert.
 
-Wenn Sie DocumentDB-Datenquellen verwenden, müssen Sie die von DocumentDB bereitgestellte Eigenschaft `_ts` verwenden.
- 
 Diese Richtlinie kann wie folgt angegeben werden:
 
 	{ 
@@ -156,13 +161,17 @@ Diese Richtlinie kann wie folgt angegeben werden:
 		"highWaterMarkColumnName" : "[a row version or last_updated column name]" 
 	} 
 
+> [AZURE.NOTE] Wenn Sie DocumentDB-Datenquellen verwenden, müssen Sie die von DocumentDB bereitgestellte Eigenschaft `_ts` verwenden.
+
+> [AZURE.NOTE] Bei der Nutzung von Azure-Blobdatenquellen verwendet Azure Search automatisch eine Änderungserkennungsrichtlinie für hohe Grenzwerte auf Basis der letzten Änderung des Blobzeitstempels. Sie müssen eine solche Richtlinie nicht selbst angeben.
+
 ***Richtlinie für die integrierte SQL-Erkennung von Änderungen***
 
 Wenn die SQL-Datenbank die [integrierte SQL-Änderungsnachverfolgung](https://msdn.microsoft.com/library/bb933875.aspx) unterstützt, wird empfohlen, die Richtlinie für die integrierte SQL-Änderungsnachverfolgung zu verwenden. Diese Richtlinie ermöglicht die effizienteste Änderungsnachverfolgung und sorgt dafür, dass Azure Search gelöschte Zeilen identifiziert, ohne dass Sie eine explizite "Vorläufig löschen"-Spalte in Ihrem Schema angeben müssen.
 
 Die integrierte SQL-Änderungsnachverfolgung wird beginnend mit den folgenden SQL-Datenbank-Versionen unterstützt: - SQL Server 2008 R2, wenn Sie SQL Server auf Azure VMs verwenden – Azure SQL-Datenbank V12, wenn Sie Azure SQL-Datenbank verwenden.
 
-Wenn Sie die Richtlinie für die integrierte SQL-Änderungsnachverfolgung verwenden, geben Sie keine separate Richtlinie für das Erkennen gelöschter Daten an – Unterstützung für die Identifizierung gelöschter Zeilen ist in der Richtlinie bereits integriert.
+Wenn Sie die Richtlinie für die integrierte SQL-Änderungsnachverfolgung verwenden, geben Sie keine separate Richtlinie für das Erkennen gelöschter Daten an – Unterstützung für die Identifizierung gelöschter Zeilen ist in der Richtlinie bereits integriert.
 
 Diese Richtlinie kann nur mit Tabellen verwendet werden; sie kann nicht mit Ansichten verwendet werden. Sie müssen die Änderungsnachverfolgung für die verwendete Tabelle aktivieren, bevor Sie diese Richtlinie verwenden können. Anweisungen finden Sie unter [Aktivieren und Deaktivieren der Änderungsnachverfolgung](https://msdn.microsoft.com/library/bb964713.aspx).
  
@@ -225,11 +234,19 @@ Sie können eine vorhandene Datenquelle mithilfe einer HTTP-PUT-Anforderung aktu
 
 `api-key` muss ein Admin-Schlüssel sein (im Gegensatz zu einer Abfrageschlüssel). Weitere Informationen zu Schlüsseln finden Sie unter [REST-API für den Search-Dienst](https://msdn.microsoft.com/library/azure/dn798935.aspx) im Abschnitt "Authentifizierung". In [Erstellen eine Search-Dienstes im Portal](search-create-service-portal.md) wird erläutert, wie Sie die Dienst-URL und Schlüsseleigenschaften, die in der Anforderung verwendet werden, abrufen können.
 
-**Anforderung** Die Syntax des Anforderungstexts ist mit der für [Anforderungen zum Erstellen von Datenquellen](#CreateDataSourceRequestSyntax) identisch.
+**Anforderung**
 
-**Antwort** Bei erfolgreicher Anforderung: "201 Erstellt", wenn eine neue Datenquelle erstellt wurde; "204 Kein Inhalt", wenn eine vorhandene Datenquelle aktualisiert wurde.
+Die Syntax des Anforderungstexts ist mit der für [Anforderungen zum Erstellen von Datenquellen](#CreateDataSourceRequestSyntax) identisch.
 
-**HINWEIS:** Manche Eigenschaften vorhandener Datenquellen können nicht aktualisiert werden. Sie können z. B. nicht den Typ einer vorhandenen Datenquelle ändern.
+> [AZURE.NOTE]
+Manche Eigenschaften vorhandener Datenquellen können nicht aktualisiert werden. Sie können z. B. nicht den Typ einer vorhandenen Datenquelle ändern.
+
+> [AZURE.NOTE]
+Wenn Sie die Verbindungszeichenfolge für eine vorhandene Datenquelle nicht ändern möchten, können Sie das Literal `<unchanged>` für die Verbindungszeichenfolge angeben. Dies ist hilfreich in Situationen, in denen Sie eine Datenquelle aktualisieren müssen, aber keinen bequemen Zugriff auf die Verbindungszeichenfolge haben, da sie zu den vertraulichen Daten zählt.
+
+**Antwort**
+
+Bei erfolgreicher Anforderung: „201 Erstellt“, wenn eine neue Datenquelle erstellt wurde; „204 Kein Inhalt“, wenn eine vorhandene Datenquelle aktualisiert wurde.
 
 <a name="ListDataSource"></a>
 ## Datenquellen auflisten ##
@@ -303,7 +320,7 @@ Die Antwort ähnelt den Beispielen unter [Beispiele für Anforderung "Datenquell
 			"softDeleteMarkerValue" : "true" }
 	}
 
-**HINWEIS** Legen Sie beim Aufrufen dieser API den `Accept`-Anforderungsheader nicht auf `application/json;odata.metadata=none` fest. Andernfalls wird das `@odata.type`-Attribut nicht in der Antwort berücksichtigt, sodass Sie nicht zwischen den Richtlinien für die Erkennung geänderter und gelöschter Änderungen verschiedener Typen unterscheiden können.
+> [AZURE.NOTE] Legen Sie beim Aufrufen dieser API den `Accept`-Anforderungsheader nicht auf `application/json;odata.metadata=none` fest. Andernfalls wird das `@odata.type`-Attribut nicht in der Antwort berücksichtigt, sodass Sie nicht zwischen den Richtlinien für die Erkennung geänderter und gelöschter Daten verschiedener Typen unterscheiden können.
 
 <a name="DeleteDataSource"></a>
 ## Datenquelle löschen ##
@@ -313,7 +330,7 @@ Der Vorgang **Datenquelle löschen** entfernt eine Datenquelle aus Ihrem Azure S
     DELETE https://[service name].search.windows.net/datasources/[datasource name]?api-version=[api-version]
     api-key: [admin key]
 
-**HINWEIS** Wenn die zu löschende Datenquelle von einem Indexer referenziert wird, wird der Löschvorgang dennoch normal fortgesetzt. Der Indexer geht jedoch bei der nächsten Ausführung in den Fehlerstatus über.
+> [AZURE.NOTE] Wenn die zu löschende Datenquelle von einem Indexer referenziert wird, wird der Löschvorgang dennoch normal fortgesetzt. Der Indexer geht jedoch bei der nächsten Ausführung in den Fehlerstatus über.
 
 `api-version` ist erforderlich. Die aktuelle Version ist `2015-02-28`. Unter [Versionsverwaltung für Azure Search](https://msdn.microsoft.com/library/azure/dn864560.aspx) finden Sie nähere Angaben und weitere Informationen zu alternativen Versionen.
 
@@ -336,7 +353,7 @@ Alternativ können Sie PUT verwenden und den Namen der Datenquelle für den URI 
 
     PUT https://[service name].search.windows.net/indexers/[indexer name]?api-version=[api-version]
 
-**Hinweis**: Die maximal zulässige Anzahl von Indexern variiert je nach Preisstufe. Der kostenlose Dienst kann bis zu 3 Indexer enthalten. Der Standard-Dienst kann 50 Indexer enthalten. In den [Einschränkungen für Dienste](search-limits-quotas-capacity.md) finden Sie weitere Informationen.
+> [AZURE.NOTE] Die maximal zulässige Anzahl von Indexern variiert je nach Preisstufe. Der kostenlose Dienst kann bis zu 3 Indexer enthalten. Der Standard-Dienst kann 50 Indexer enthalten. In den [Einschränkungen für Dienste](search-limits-quotas-capacity.md) finden Sie weitere Informationen.
 
 `api-version` ist erforderlich. Die aktuelle Version ist `2015-02-28`. Unter [Versionsverwaltung für Azure Search](https://msdn.microsoft.com/library/azure/dn864560.aspx) finden Sie nähere Angaben und weitere Informationen zu alternativen Versionen.
 
@@ -365,7 +382,7 @@ Die Syntax für die Strukturierung der Anforderungsnutzlast ist wie folgt. Eine 
 
 Ein Indexer kann optional einen Zeitplan angeben. Wenn ein Zeitplan vorliegt, wird der Indexer regelmäßig gemäß Zeitplan ausgeführt. Der Zeitplan besitzt die folgenden Attribute:
 
-- `interval`: Erforderlich. Ein Zeitdauerwert, der ein Intervall oder den Zeitraum für Indexer-Ausführungen angibt. Das kleinste zulässige Intervall beträgt 5 Minuten. Das längste ist ein Tag. Es muss als XSD-Wert "dayTimeDuration" formatiert sein (eine eingeschränkte Teilmenge eines [ISO 8601-Zeitdauerwerts](http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration)). Das Muster hierfür lautet wie folgt: `P[nD][T[nH][nM]]`. Beispiele: `PT15M` = alle 15 Minuten, `PT2H` = alle 2 Stunden. 
+- `interval`: Erforderlich. Ein Zeitdauerwert, der ein Intervall oder den Zeitraum für Indexer-Ausführungen angibt. Das kleinste zulässige Intervall beträgt 5 Minuten. Das längste ist ein Tag. Es muss als XSD-Wert "dayTimeDuration" formatiert sein (eine eingeschränkte Teilmenge eines [ISO 8601-Zeitdauerwerts](http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration)). Das Muster hierfür lautet wie folgt: `"P[nD][T[nH][nM]]"`. Beispiele: `PT15M` = alle 15 Minuten, `PT2H` = alle 2 Stunden. 
 
 - `startTime`: Erforderlich. Ein UTC-DateTime-Wert, der angibt, wann die Ausführung des Indexers beginnen soll.
 
@@ -378,6 +395,9 @@ Optional kann ein Indexer mehrere Parameter angeben, die sein Verhalten beeinflu
 - `maxFailedItemsPerBatch` : Die maximale Anzahl der Elemente in jedem Batch, deren Indizierung fehlschlagen darf. Wird die Anzahl überschritten, gilt die Ausführung des Indexers als fehlgeschlagen. Der Standardwert ist 0.
 
 - `base64EncodeKeys`: Gibt an, ob Dokumentschlüssel mit base-64 codiert werden. In Azure Search gelten Einschränkungen für Zeichen, die in einem Dokumentschlüssel vorhanden sein können. Allerdings können die Werte in Ihren Quelldaten Zeichen enthalten, die ungültig sind. Wenn solche Werte als Dokumentschlüssel indiziert werden sollen, können Sie dieses Kennzeichen auf "true" festlegen. Der Standardwert ist `false`.
+
+- `batchSize`: Gibt die Anzahl der Elemente an, die aus einer Datenquelle gelesen und als einzelner Batch indiziert werden, um die Leistung zu verbessern. Der Standardwert hängt vom Datenquellentyp ab: 1.000 für Azure SQL und DocumentDB und 10 für Azure-Blobspeicher.
+
 
 **Feldzuordnungen**
 
@@ -647,7 +667,7 @@ Der Status der Indexer-Ausführung erfasst den Status einer einzelnen Indexer-Au
 <a name="ResetIndexer"></a>
 ## Indexer zurücksetzen ##
 
-Der Vorgang **Indexer zurücksetzen** setzt den mit dem Indexer verknüpften Status der Änderungsnachverfolgung zurück. Dies ermöglicht Ihnen, eine komplett neue Indizierung durchführen (z. B. wenn Ihr Datenquellenschema geändert wurde) oder die Richtlinie für die Änderungsnachverfolgung für Daten für eine mit dem Indexer verknüpfte Datenquelle zu ändern.
+Der Vorgang **Indexer zurücksetzen** setzt den mit dem Indexer verknüpften Status der Änderungsnachverfolgung zurück. Dies ermöglicht Ihnen, eine komplett neue Indizierung durchführen (z. B. wenn Ihr Datenquellenschema geändert wurde) oder die Richtlinie für die Änderungsnachverfolgung für Daten für eine mit dem Indexer verknüpfte Datenquelle zu ändern.
 
 	POST https://[service name].search.windows.net/indexers/[indexer name]/reset?api-version=[api-version]
     api-key: [admin key]
@@ -777,4 +797,4 @@ Statuscode "204 Kein Inhalt" bei erfolgreicher Antwort.
 </tr>
 </table>
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0224_2016-->

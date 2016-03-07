@@ -1,6 +1,7 @@
 <properties
-	pageTitle="Anzeigen von gespeicherten Prozeduren, Triggern und benutzerdefinierten Funktionen mit dem DocumentDB-Skript-Explorer | Microsoft Azure"
-	description="Erfahren Sie mehr über den DocumentDB-Skript-Explorer, ein Azure-Portaltool, das Ihnen die Anzeige von serverseitigen DocumentDB-Programmierartefakten ermöglicht, z. B. gespeicherte Prozeduren, Trigger und benutzerdefinierte Funktionen."
+	pageTitle="DocumentDB-Skript-Explorer, ein JavaScript-Editor | Microsoft Azure"
+	description="Erfahren Sie mehr über den DocumentDB-Skript-Explorer, ein Azure-Portaltool, das Ihnen die Verwaltung von serverseitigen DocumentDB-Programmierartefakten ermöglicht, z. B. gespeicherte Prozeduren, Trigger und benutzerdefinierte Funktionen."
+	keywords="JavaScript-Editor"
 	services="documentdb"
 	authors="AndrewHoh"
 	manager="jhubbard"
@@ -12,46 +13,31 @@
 	ms.workload="data-services"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="article" 
-	ms.date="12/01/2015"
+	ms.topic="article"
+	ms.date="02/23/2016"
 	ms.author="anhoh"/>
 
-# Anzeigen, Bearbeiten und Erstellen von gespeicherten Prozeduren, Triggern und benutzerdefinierten Funktionen mit dem DocumentDB-Skript-Explorer
+# Erstellen und Ausführen von gespeicherten Prozeduren, Triggern und benutzerdefinierten Funktionen mit dem DocumentDB-Skript-Explorer
 
-Dieser Artikel bietet eine Übersicht über den [Microsoft Azure DocumentDB](https://azure.microsoft.com/services/documentdb/)-Skript-Explorer, ein Azure-Portaltool, das Ihnen die Anzeige von serverseitigen DocumentDB-Programmierartefakten ermöglicht, z. B. gespeicherte Prozeduren, Trigger und benutzerdefinierte Funktionen. Weitere Informationen über die serverseitige DocumentDB-Programmierung finden Sie [hier](documentdb-programming.md).
+Dieser Artikel bietet eine Übersicht über den [Microsoft Azure DocumentDB](https://azure.microsoft.com/services/documentdb/)-Skript-Explorer, einen JavaScript-Editor im Azure-Portal, der Ihnen die Anzeige von serverseitigen DocumentDB-Programmierartefakten ermöglicht, z. B. gespeicherte Prozeduren, Trigger und benutzerdefinierte Funktionen. Im Artikel [DocumentDB-serverseitige Programmierung: gespeicherte Prozeduren, Datenbanktrigger und benutzerdefinierte Funktionen](documentdb-programming.md) erfahren Sie mehr über DocumentDB-serverseitige Programmierung.
 
-Nach Abschluss dieses Lernprogramms können Sie die folgenden Fragen beantworten:
+## Starten des Skript-Explorers
 
--	Wie kann ich einfach in DocumentDB gespeicherte Prozeduren über einen Webbrowser anzeigen?
--	Wie kann ich einfach DocumentDB-Trigger über einen Webbrowser anzeigen?
--	Wie kann ich einfach benutzerdefinierte DocumentDB-Funktionen über einen Webbrowser anzeigen?
+1. Klicken Sie im Azure-Portal in der Navigationsleiste auf **DocumentDB-Konten**. Wenn **DocumentDB-Konten** nicht sichtbar ist, klicken Sie auf **Durchsuchen** und dann auf **DocumentDB-Konten**.
 
-## Starten des Skript-Explorers und Navigieren im Skript-Explorer
-
-Der Skript-Explorer kann über jedes DocumentDB-Konto, jede -Datenbank und jedes -Sammlungsblatt gestartet werden.
-
-1. Klicken Sie einfach oben auf dem Blatt des DocumentDB-Kontos oder der Datenbank auf den Befehl **Skript-Explorer**.
+2. Klicken Sie oben im Blatt **DocumentDB-Konto** auf **Skript-Explorer**.
 
 	![Screenshot des Skript-Explorer-Befehls](./media/documentdb-view-scripts/scriptexplorercommand.png)
  
-2. Alternativ befindet sich am unteren Rand von jedem Blatt ein Bereich **Entwicklertools**, der den Bereich **Skript-Explorer** enthält.
+    >[AZURE.NOTE] Der Skript-Explorer wird auch auf den Blättern für Datenbanken und Sammlungen angezeigt.
 
-	![Screenshot des Skript-Explorer-Teils](./media/documentdb-view-scripts/scriptexplorerpart.png)
-
-2. Klicken Sie einfach auf den Befehl oder den Teil, um den Skript-Explorer zu starten.
-
-	<p>Die Dropdown-Listen **Datenbank** und **Sammlung** werden basierend auf dem Kontext, in dem der Skript-Explorer gestartet wird, automatisch ausgefüllt. Wenn Sie diesen z. B. aus einem Datenbankblatt starten, sind die Felder der aktuellen Datenbank bereits ausgefüllt. Wenn Sie diesen aus einem Auflistungsblatt starten, sind die Felder der aktuellen Auflistung ausgefüllt.
+    Die Dropdown-Listen **Datenbank** und **Sammlung** werden basierend auf dem Kontext, in dem der Skript-Explorer gestartet wird, automatisch ausgefüllt. Wenn Sie diesen z. B. aus einem Datenbankblatt starten, sind die Felder der aktuellen Datenbank bereits ausgefüllt. Wenn Sie diesen aus einem Auflistungsblatt starten, sind die Felder der aktuellen Auflistung ausgefüllt.
 
 	![Screenshot des Skript-Explorers](./media/documentdb-view-scripts/scriptexplorerinitial.png)
 
+4.  Mit den Dropdownlistenfeldern **Datenbank** und **Sammlung** können Sie die Sammlung, aus der aktuell Skripte angezeigt werden, auf einfache Weise ändern, ohne den Skript-Explorer beenden oder erneut starten zu müssen.
 
-3. Mit den Dropdownlistenfeldern **Datenbank** und **Sammlung** können Sie die Sammlung, aus der aktuell Skripte angezeigt werden, auf einfache Weise ändern, ohne den Skript-Explorer beenden oder erneut starten zu müssen.
-
-4. Der Skript-Explorer unterstützt auch das Filtern des aktuell geladenen Skriptsets nach der id-Eigenschaft. Geben Sie diese einfach im Filterfeld ein.
-
-	![Screenshot des Skript-Explorers mit hervorgehobenem Filter](./media/documentdb-view-scripts/scriptexplorerfilter.png)
-
-	Die Ergebnisse in der Skript-Explorer-Liste sind nun basierend auf den angegebenen Kriterien gefiltert.
+5. Der Skript-Explorer unterstützt auch das Filtern des aktuell geladenen Skriptsets nach der id-Eigenschaft. Nehmen Sie einfach eine Eingabe im Filterfeld vor, und die Ergebnisse werden in der Skript-Explorer-Liste basierend auf den angegebenen Kriterien gefiltert.
 
 	![Screenshot des Skript-Explorers mit gefilterten Ergebnissen](./media/documentdb-view-scripts/scriptexplorerfilterresults.png)
 
@@ -63,13 +49,13 @@ Der Skript-Explorer kann über jedes DocumentDB-Konto, jede -Datenbank und jedes
 	![Screenshot des Befehls Aktualisieren in Skript-Explorer](./media/documentdb-view-scripts/scriptexplorerrefresh.png)
 
 
-## Anzeigen, Bearbeiten, Erstellen und Löschen von gespeicherten Prozeduren, Triggern und benutzerdefinierten Funktionen mit dem Skript-Explorer
+## Erstellen, Anzeigen und Bearbeiten von gespeicherten Prozeduren, Triggern und benutzerdefinierten Funktionen
 
 Mit dem Skript-Explorer können Sie problemlos CRUD-Vorgänge an serverseitigen Programmierartefakten in DocumentDB durchführen.
 
-- Um ein Skript zu erstellen, klicken Sie im Skript-Explorer auf den entsprechenden Erstellungsbefehl, geben Sie eine ID an, geben Sie den Inhalt des Skripts ein, und klicken Sie auf den Befehl **Speichern**.
+- Um ein Skript zu erstellen, klicken Sie im Skript-Explorer auf den entsprechenden Erstellungsbefehl, geben Sie eine ID an, geben Sie den Inhalt des Skripts ein, und klicken Sie auf **Speichern**.
 
-	![Screenshot der Erstellungsoption im Skript-Explorer](./media/documentdb-view-scripts/scriptexplorercreatecommand.png)
+	![Screenshot der Option zum Erstellen des Skript-Explorers, der den JavaScript-Editor zeigt](./media/documentdb-view-scripts/scriptexplorercreatecommand.png)
 
 - Wenn Sie einen Trigger erstellen, müssen Sie auch Triggertyp und Triggervorgang angeben.
 
@@ -79,7 +65,7 @@ Mit dem Skript-Explorer können Sie problemlos CRUD-Vorgänge an serverseitigen 
 
 	![Screenshot der Ansicht Skript-Erfahrung in Skript-Explorer](./media/documentdb-view-scripts/scriptexplorerviewscript.png)
 
-- Um ein Skript zu bearbeiten, nehmen Sie einfach die gewünschten Änderungen vor, und klicken Sie auf den Befehl **Speichern**.
+- Um ein Skript zu bearbeiten, nehmen Sie einfach die gewünschten Änderungen im JavaScript-Editor vor, und klicken Sie auf **Speichern**.
 
 	![Screenshot der Ansicht Skript-Erfahrung in Skript-Explorer](./media/documentdb-view-scripts/scriptexplorereditscript.png)
 
@@ -101,9 +87,34 @@ Mit dem Skript-Explorer können Sie problemlos CRUD-Vorgänge an serverseitigen 
 
 	![Screenshot des Befehls "Löschen" im Skript-Explorer](./media/documentdb-view-scripts/scriptexplorerdeletescript2.png)
 
+## Ausführen einer gespeicherten Prozedur
+
+Mit dem Skript-Explorer können Sie serverseitige gespeicherte Prozeduren über das Azure-Portal ausführen.
+
+- Beim Öffnen eines Blatts einer neu zu erstellenden gespeicherten Prozedur wird bereits ein Standardskript (*Präfix*) bereitgestellt. Fügen Sie zum Ausführen des *Präfixskripts* oder Ihres eigenen Skripts eine *ID* und *Eingaben* hinzu. Für gespeicherte Prozeduren, die mehrere Parameter akzeptieren, müssen alle Eingaben in einem Array liegen (z. B. *[„Foo“, „Bar“]*).
+
+	![Screenshot des Skript-Explorer-Blatts „Gespeicherte Prozeduren“ zum Hinzufügen der Eingabe und Ausführen einer gespeicherten Prozedur](./media/documentdb-view-scripts/documentdb-execute-a-stored-procedure-input.png)
+
+- Um eine gespeicherte Prozedur auszuführen, klicken Sie im Skript-Editor-Bereich auf den Befehl **Speichern und ausführen**.
+
+	> [AZURE.NOTE] Der Befehl **Speichern und ausführen** speichert die gespeicherte Prozedur vor der Ausführung, d. h. die zuvor gespeicherte Version der gespeicherten Prozedur wird überschrieben.
+
+- Erfolgreiche Ausführungen gespeicherter Prozeduren erhalten den Status *Die gespeicherte Prozedur wurde erfolgreich gespeichert und ausgeführt*, und die zurückgegebenen Ergebnisse werden im Bereich*Ergebnisse* eingetragen.
+
+	![Screenshot des Skript-Explorer-Blatts „Gespeicherte Prozeduren“ zum Ausführen einer gespeicherten Prozedur](./media/documentdb-view-scripts/documentdb-execute-a-stored-procedure.png)
+
+- Wenn bei der Ausführung ein Fehler auftritt, wird der Fehler im Bereich *Ergebnisse* eingetragen.
+
+	![Screenshot der Skripteigenschaftenansicht im Skript-Explorer Ausführen einer gespeicherten Prozedur mit Fehlern](./media/documentdb-view-scripts/documentdb-execute-a-stored-procedure-error.png)
+
+## Arbeiten mit Skripts außerhalb des Portals
+
+Der Skript-Explorer im Azure-Portal ist nur eine Möglichkeit, mit gespeicherten Prozeduren, Triggern und benutzerdefinierten Funktionen in DocumentDB zu arbeiten. Sie können mit Skripts auch arbeiten, indem Sie die REST-API und die [Client-SDKs](documentdb-sdk-dotnet.md) verwenden. Die REST-API-Dokumentation enthält Beispiele für die Arbeit mit [gespeicherten Prozeduren mithilfe von REST](https://msdn.microsoft.com/library/azure/mt489092.aspx), [benutzerdefinierten Funktionen mithilfe von REST](https://msdn.microsoft.com/library/azure/dn781481.aspx) und [Triggern mithilfe von REST](https://msdn.microsoft.com/library/azure/mt489116.aspx). Beispiele sind ebenfalls verfügbar, die das [Arbeiten mit Skripts mit C#](documentdb-dotnet-samples.md#server-side-programming-examples) und [Arbeiten mit Skripts mithilfe von Node.js](documentdb-nodejs-samples.md#server-side-programming-examples) zeigen.
+
 ## Nächste Schritte
 
-Um weitere Informationen zu DocumentDB zu erhalten, klicken Sie [hier](http://azure.com/docdb).
- 
+Im Artikel [DocumentDB-serverseitige Programmierung: gespeicherte Prozeduren, Datenbanktrigger und benutzerdefinierte Funktionen](documentdb-programming.md) erfahren Sie mehr über DocumentDB-serverseitige Programmierung.
 
-<!---HONumber=AcomDC_0128_2016-->
+Der [Lernpfad](https://azure.microsoft.com/documentation/learning-paths/documentdb/) ist auch ein nützlicher Anhaltspunkt, um mehr über DocumentDB zu erfahren.
+
+<!---HONumber=AcomDC_0224_2016-->

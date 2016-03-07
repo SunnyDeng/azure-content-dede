@@ -4,7 +4,7 @@
    services="storsimple"
    documentationCenter=""
    authors="SharS"
-   manager="carolz"
+   manager="carmonm"
    editor="" />
 <tags 
    ms.service="storsimple"
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="02/16/2016"
+   ms.date="02/18/2016"
    ms.author="v-sharos" />
 
 # Verwenden des Dashboards des StorSimple Manager-Diensts für das StorSimple Virtual Array (Vorschau)
@@ -31,7 +31,7 @@ Das Dashboard des StorSimple Manager-Diensts zeigt die folgenden Informationen a
 
 - Der Bereich **Warnungen** stellt eine Momentaufnahme aller aktiven Warnungen auf sämtlichen virtuellen Geräten bereit, gruppiert nach dem jeweiligen Schweregrad. Durch Klicken auf den Schweregrad wird die Seite mit den **Warnungen** geöffnet, auf der nur die betreffenden Warnungen angezeigt werden. Auf der Seite mit den **Warnungen** können Sie auf einzelne Warnungen klicken, um weitere Details zur jeweiligen Warnung anzuzeigen, einschließlich empfohlener Aktionen. Sie können die Warnung auch löschen, falls das Problem behoben wurde.
 
-- Der Bereich **Aufträge** bietet eine Momentaufnahme der kürzlich ausgeführten Aufträge auf allen virtuellen Geräten, die mit dem Dienst verbunden sind. Es sind Links angegeben, die Sie zum Anzeigen von derzeit in Bearbeitung befindlichen Aufträgen verwenden können, oder von Aufträgen, die innerhalb der letzten 24 Stunden erfolgreich oder nicht erfolgreich abgeschlossen wurden.
+- Der Bereich **Aufträge** bietet eine Momentaufnahme der kürzlich ausgeführten Aufträge auf allen virtuellen Geräten, die mit dem Dienst verbunden sind. Es sind Links angegeben, die Sie zum Anzeigen von derzeit in Bearbeitung befindlichen Aufträgen verwenden können, oder von Aufträgen, die innerhalb der letzten 24 Stunden erfolgreich oder nicht erfolgreich abgeschlossen wurden.
 
 - Der **Schnellansichtsbereich** rechts auf der Seite enthält nützliche Informationen wie den Dienststatus, die Gesamtzahl der mit dem Dienst verbundenen virtuellen Geräte, den Standort des Diensts sowie Details zum Abonnement, das dem Dienst zugeordnet ist. Es gibt auch ein Link zum Vorgangsprotokoll. Klicken Sie auf den Link, um eine Liste aller abgeschlossenen Vorgänge des StorSimple Manager-Diensts anzuzeigen.
 
@@ -62,4 +62,4 @@ Sie können die Vorgangsprotokolle anzeigen, indem Sie auf den entsprechenden Li
 
 Erfahren Sie, wie Sie die lokale Webbenutzeroberfläche verwenden, um [Ihr StorSimple Virtual Array zu verwalten](storsimple-ova-web-ui-admin.md).
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0224_2016-->

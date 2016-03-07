@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Was ist mit dem ASP.NET 5-Projekt passiert (verbundene Visual Studio-Dienste) | Microsoft Azure Storage"
-	description="Erfahren Sie, was nach dem Herstellen einer Verbindung mit einem Azure-Speicherkonto mithilfe von verbundenen Visual Studio-Diensten in einem ASP.NET 5-Projekt in Visual Studio passiert."
+	pageTitle="Was ist mit dem ASP.NET 5-Projekt passiert (verbundene Visual Studio-Dienste) | Microsoft Azure Storage"
+	description="Erfahren Sie, was nach dem Herstellen einer Verbindung mit einem Azure-Speicherkonto mithilfe von verbundenen Visual Studio-Diensten in einem ASP.NET 5-Projekt in Visual Studio passiert."
 	services="storage"
 	documentationCenter=""
 	authors="TomArcher"
@@ -13,10 +13,10 @@
 	ms.tgt_pltfrm="vs-what-happened"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/16/2015"
+	ms.date="02/21/2016"
 	ms.author="tarcher"/>
 
-# Was ist mit dem ASP.NET 5-Projekt passiert (verbundene Visual Studio-Dienste für Azure Storage)?
+# Was ist mit dem ASP.NET 5-Projekt passiert (verbundene Visual Studio-Dienste für Azure Storage)?
 
 ## Verweise wurden hinzugefügt
 
@@ -36,6 +36,6 @@ Außerdem wurde das NuGet-Paket **Microsoft.Framework.Configuration.Json** hinzu
 ## Die Verbindungszeichenfolge für Azure Storage wurde hinzugefügt
 In der Datei config.json Ihres Projekts wurde ein Element mit der Verbindungszeichenfolge und dem Schlüssel des ausgewählten Speicherkontos erstellt.
 
-Weitere Informationen finden Sie unter [ASP.NET 5](http://www.asp.net/vnext).
+Weitere Informationen finden Sie unter [ASP.NET 5](http://www.asp.net/vnext).
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0224_2016-->

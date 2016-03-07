@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/07/2016"
+	ms.date="02/19/2016"
 	ms.author="tamram"/>
 
 # Erstellen einer Momentaufnahme eines Blobs
@@ -22,7 +22,7 @@
 
 Eine Momentaufnahme ist eine schreibgeschützte Version eines Blobs, die zu einem bestimmten Zeitpunkt erstellt wird. Momentaufnahmen sind nützlich, um Blobs zu sichern. Nachdem eine Momentaufnahme erstellt wurde, kann sie gelesen, kopiert oder gelöscht, aber nicht mehr geändert werden.
 
-Für den Namen der Momentaufnahme eines Blobs wird der Name des Basisblobs verwendet, aus dem die Momentaufnahme erstellt wurde, und zusätzlich ein **DateTime**-Wert angefügt, der den Zeitpunkt angibt, an dem die Momentaufnahme erstellt wurde. Wenn der Seitenblob-URI `http://storagesample.core.blob.windows.net/mydrives/myvhd` ist, lautet der Momentaufnahmen-URI z. B. `http://storagesample.core.blob.windows.net/mydrives/myvhd?snapshot=2011-03-09T01:42:34.9360000Z`. Die Momentaufnahmen eines Blobs verwenden denselben URI und unterscheiden sich nur durch den angefügten **DateTime**-Wert.
+Für den Namen der Momentaufnahme eines Blobs wird der Name des Basisblobs verwendet, aus dem die Momentaufnahme erstellt wurde, und zusätzlich ein **DateTime**-Wert angefügt, der den Zeitpunkt angibt, an dem die Momentaufnahme erstellt wurde. Wenn der Seitenblob-URI `http://storagesample.core.blob.windows.net/mydrives/myvhd` ist, lautet der Momentaufnahmen-URI z. B. `http://storagesample.core.blob.windows.net/mydrives/myvhd?snapshot=2011-03-09T01:42:34.9360000Z`. Die Momentaufnahmen eines Blobs verwenden denselben URI und unterscheiden sich nur durch den angefügten **DateTime**-Wert.
 
 Für ein Blob kann eine beliebige Anzahl von Momentaufnahmen vorhanden sein. Momentaufnahmen bleiben bestehen, bis sie explizit gelöscht werden, wobei eine Momentaufnahme jedoch nicht ohne das zugehörige Quellblob existieren kann. Sie können alle einem Blob zugeordneten Momentaufnahmen auflisten, um die aktuell vorhandenen Momentaufnahmen nachzuverfolgen.
 
@@ -59,7 +59,7 @@ Die Verwendung von Momentaufnahmen mit Premium-Speicher unterliegt den folgenden
 
 - Das Lesen von Momentaufnahmen eines Seitenblobs in einem Premium-Speicherkonto über „Get Blob“ wird nicht unterstützt. Der Aufruf von „Get Blob“ für eine Momentaufnahme in einem Storage Premium-Konto gibt Fehlercode 400 (**InvalidOperation**) zurück. Der Aufruf von "Get Blob Properties" und "Get Blob Metadata" für eine Momentaufnahme wird hingegen unterstützt.
 
-- Zum Lesen einer Momentaufnahme können Sie eine Momentaufnahme mithilfe des Copy Blob-Vorgangs in ein anderes Seitenblob im Konto kopieren. Das Ziel-Blob für den Kopiervorgang darf keine vorhandenen Momentaufnahmen besitzen. Wenn das Zielblob Momentaufnahmen aufweist, gibt der Copy Blob-Vorgang den Fehlercode 409 (**SnapshotsPresent**) zurück.
+- Zum Lesen einer Momentaufnahme können Sie eine Momentaufnahme mithilfe des Copy Blob-Vorgangs in ein anderes Seitenblob im Konto kopieren. Das Ziel-Blob für den Kopiervorgang darf keine vorhandenen Momentaufnahmen besitzen. Wenn das Zielblob Momentaufnahmen aufweist, gibt der Copy Blob-Vorgang den Fehlercode 409 (**SnapshotsPresent**) zurück.
 
 ## Zurückgeben des absoluten URI zu einer Momentaufnahme
 
@@ -109,20 +109,20 @@ Die folgende Liste enthält wichtige Punkte, die beim Erstellen einer Momentaufn
 
 Die folgenden Szenarien veranschaulichen, wie Gebühren für ein Block-BLOB und zugehörige Momentaufnahmen berechnet werden.
 
-In Szenario 1 wurde das Basis-Blob nicht aktualisiert, nachdem die Momentaufnahme erstellt wurde, sodass Gebühren nur für die eindeutigen Blöcke 1, 2 und 3 berechnet werden:
+In Szenario 1 wurde das Basis-Blob nicht aktualisiert, nachdem die Momentaufnahme erstellt wurde, sodass Gebühren nur für die eindeutigen Blöcke 1, 2 und 3 berechnet werden:
 
-![Azure Storage-Ressourcen](./media/storage-blob-snapshots/storage-blob-snapshots-billing-scenario-1.png)
+![Azure Storage-Ressourcen](./media/storage-blob-snapshots/storage-blob-snapshots-billing-scenario-1.png)
 
-In Szenario 2 wurde das Basisblob aktualisiert, die Momentaufnahme jedoch nicht. Block 3 wurde aktualisiert. Obwohl er die gleichen Daten und dieselbe ID enthält, ist er nicht identisch mit dem Block 3 der Momentaufnahme. Daher wird das Konto mit Gebühren für vier Blöcke belastet:
+In Szenario 2 wurde das Basisblob aktualisiert, die Momentaufnahme jedoch nicht. Block 3 wurde aktualisiert. Obwohl er die gleichen Daten und dieselbe ID enthält, ist er nicht identisch mit dem Block 3 der Momentaufnahme. Daher wird das Konto mit Gebühren für vier Blöcke belastet:
 
-![Azure Storage-Ressourcen](./media/storage-blob-snapshots/storage-blob-snapshots-billing-scenario-2.png)
+![Azure Storage-Ressourcen](./media/storage-blob-snapshots/storage-blob-snapshots-billing-scenario-2.png)
 
-In Szenario 3 wurde das Basisblob aktualisiert, die Momentaufnahme jedoch nicht. Block 3 wurde im Basis-BLOB durch Block 4 ersetzt, die Momentaufnahme enthält aber immer noch den Block 3. Daher wird das Konto mit Gebühren für vier Blöcke belastet:
+In Szenario 3 wurde das Basisblob aktualisiert, die Momentaufnahme jedoch nicht. Block 3 wurde im Basis-BLOB durch Block 4 ersetzt, die Momentaufnahme enthält aber immer noch den Block 3. Daher wird das Konto mit Gebühren für vier Blöcke belastet:
 
-![Azure Storage-Ressourcen](./media/storage-blob-snapshots/storage-blob-snapshots-billing-scenario-3.png)
+![Azure Storage-Ressourcen](./media/storage-blob-snapshots/storage-blob-snapshots-billing-scenario-3.png)
 
-In Szenario 4 wurde das Basis-Blob vollständig aktualisiert und enthält keinen der ursprünglichen Blöcke. Daher wird das Konto für alle acht eindeutigen Blöcke belastet. Dieses Szenario kann auftreten, wenn Sie eine der Updatemethoden **UploadFile**, **UploadText**, **UploadFromStream** oder **UploadByteArray** verwenden, da diese Methoden alle Inhalte eines Blobs ersetzen.
+In Szenario 4 wurde das Basis-Blob vollständig aktualisiert und enthält keinen der ursprünglichen Blöcke. Daher wird das Konto für alle acht eindeutigen Blöcke belastet. Dieses Szenario kann auftreten, wenn Sie eine der Updatemethoden **UploadFile**, **UploadText**, **UploadFromStream** oder **UploadByteArray** verwenden, da diese Methoden alle Inhalte eines Blobs ersetzen.
 
-![Azure Storage-Ressourcen](./media/storage-blob-snapshots/storage-blob-snapshots-billing-scenario-4.png)
+![Azure Storage-Ressourcen](./media/storage-blob-snapshots/storage-blob-snapshots-billing-scenario-4.png)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0224_2016-->

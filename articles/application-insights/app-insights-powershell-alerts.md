@@ -12,12 +12,14 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/22/2016" 
+	ms.date="02/19/2016" 
 	ms.author="awills"/>
  
 # Einrichten von Warnungen in Application Insights mithilfe von PowerShell
 
 Sie können die Konfiguration von [Warnungen](app-insights-alerts.md) in [Visual Studio Application Insights](app-insights-overview.md) automatisieren.
+
+Darüber hinaus können Sie [Webhooks zum Automatisieren Ihrer Reaktion auf eine Warnung festlegen](../azure-portal/insights-webhooks-alerts.md).
 
 ## Einmalige Konfiguration
 
@@ -25,13 +27,13 @@ Wenn Sie PowerShell noch nicht mit Ihrem Azure-Abonnement verwendet haben:
 
 Installieren Sie das Azure-PowerShell-Modul auf dem Computer, auf dem die Skripts ausgeführt werden sollen.
 
- * Installieren Sie [Microsoft-Webplattform-Installer (Version 5 oder höher)](http://www.microsoft.com/web/downloads/platform.aspx).
+ * Installieren Sie [Microsoft-Webplattform-Installer (Version 5 oder höher)](http://www.microsoft.com/web/downloads/platform.aspx).
  * Installieren Sie hiermit Microsoft Azure PowerShell.
 
 
 ## Herstellen einer Verbindung mit Azure
 
-Starten Sie Azure PowerShell, und [stellen Sie eine Verbindung mit Ihrem Abonnement her](powershell-install-configure.md):
+Starten Sie Azure PowerShell, und [stellen Sie eine Verbindung mit Ihrem Abonnement her](../powershell-install-configure.md):
 
 ```PowerShell
 
@@ -80,7 +82,7 @@ Die GUID ist die Abonnement-ID (nicht der Instrumentierungsschlüssel der Anwend
 
 ## Beispiel 2
 
-Ich habe eine Anwendung, in der ich mit [TrackMetric()](app-insights-api-custom-events-metrics.md#track-metric) eine Metrik namens „salesPerHour“ melde. Eine E-Mail an meine Kollegen senden, wenn "salesPerHour" gemittelt über 24 Stunden unter 100 fällt.
+Ich habe eine Anwendung, in der ich mit [TrackMetric()](app-insights-api-custom-events-metrics.md#track-metric) eine Metrik namens „salesPerHour“ melde. Eine E-Mail an meine Kollegen senden, wenn "salesPerHour" gemittelt über 24 Stunden unter 100 fällt.
 
     Add-AlertRule -Name "poor sales" `
      -Description "slow sales alert" `
@@ -93,7 +95,7 @@ Ich habe eine Anwendung, in der ich mit [TrackMetric()](app-insights-api-custom-
      -CustomEmails "satish@fabrikam.com","lei@fabrikam.com" `
      -Location "East US" -RuleType Metric
 
-Dieselbe Regel kann für die Metrik verwendet werden, die mit dem [Messparameter](app-insights-api-custom-events-metrics.md#properties) eines anderen Trackingaufrufs gemeldet wird, z. B. TrackEvent oder trackPageView.
+Dieselbe Regel kann für die Metrik verwendet werden, die mit dem [Messparameter](app-insights-api-custom-events-metrics.md#properties) eines anderen Trackingaufrufs gemeldet wird, z. B. TrackEvent oder trackPageView.
 
 ## Metriknamen
 
@@ -131,6 +133,9 @@ performanceCounter | [Leistung](app-insights-configuration-with-applicationinsig
 remoteDependencyFailed| [Abhängigkeit](app-insights-configuration-with-applicationinsights-config.md#nuget-package-1)
 request,<br/>requestFailed|[Serveranfrage](app-insights-configuration-with-applicationinsights-config.md#nuget-package-2)
 
+## Webhooks
+
+Sie können [Ihre Reaktion auf eine Warnung automatisieren](../azure-portal/insights-webhooks-alerts.md). Azure ruft eine Webadresse Ihrer Wahl auf, wenn eine Warnung ausgelöst wird.
 
 ## Weitere Informationen
 
@@ -138,8 +143,9 @@ request,<br/>requestFailed|[Serveranfrage](app-insights-configuration-with-appli
 * [Skript zum Konfigurieren von Application Insights](app-insights-powershell-script-create-resource.md)
 * [Erstellen von Application Insights- und Webtestressourcen aus Vorlagen](app-insights-powershell.md)
 * [Automatisieren der Kopplung der Microsoft Azure-Diagnose mit Application Insights](app-insights-powershell-azure-diagnostics.md)
+* [Automatisieren Ihrer Reaktion auf eine Warnung](../azure-portal/insights-webhooks-alerts.md)
 
 
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0224_2016-->

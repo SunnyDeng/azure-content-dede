@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="data-management"
-   ms.date="02/16/2016"
+   ms.date="02/18/2016"
    ms.author="rick.byham@microsoft.com"/>
 
 # Azure SQL-Datenbank – Abweichungen bei Transact-SQL
@@ -53,7 +53,7 @@ Azure SQL-Datenbank V12 unterstützt einige, aber nicht alle Argumente, die in d
 
 - Sortierung von Systemobjekten
 - Verbindungsbezogen: Endpunktanweisungen, ORIGINAL\_DB\_NAME. Die Windows-Authentifizierung ist für Anmeldungen oder eigenständige Datenbanken nicht verfügbar.
-- Plattformübergreifende Datenbankabfragen mit drei oder vier Teilnamen. (Schreibgeschützte datenbankübergreifende Abfragen werden durch die Verwendung einer Abfrage von elastischen Datenbanken unterstützt.)
+- Plattformübergreifende Datenbankabfragen mit drei oder vier Teilnamen. (Schreibgeschützte datenbankübergreifende Abfragen werden durch die Verwendung einer [Abfrage von elastischen Datenbanken](sql-database-elastic-query-overview.md) unterstützt.)
 - Datenbankübergreifende Besitzverkettung, TRUSTWORTHY-Einstellung
 - Datensammler
 - Datenbankdiagramme
@@ -104,8 +104,8 @@ Weitere Informationen zu Transact-SQL-Grammatik und -Syntax sowie Beispiele find
 
 Die Transact-SQL-Referenz umfasst Themen zu SQL Server-Versionen ab 2008. Unter der Themenüberschrift sind normalerweise unter „Gilt für“ die SQL Server-Versionen und möglicherweise auch andere Produktnamen aufgeführt. Häufig ist dort auch Azure SQL-Datenbank aufgeführt. Wenn Azure SQL-Datenbank nicht angegeben ist, gilt der Inhalt des Themas nicht für Azure SQL-Datenbank. Wenn unter „Gilt für“ mehrere Produkte aufgeführt sind, wird mit einem kleinen Symbol angegeben, ob das Thema jeweils für die einzelnen Produkte gilt.
 
- Beispielsweise wurden Verfügbarkeitsgruppen in SQL Server 2012 eingeführt. Das Thema **VERFÜGBARKEITSGRUPPE ERSTELLEN** gibt an, dass es für **SQL Server (SQL Server 2012 bis zur aktuellen Version)** gilt. Es gilt nicht für SQL Server 2008, SQL Server 2008 R2 oder Azure SQL-Datenbank.
+ Beispielsweise wurden Verfügbarkeitsgruppen in SQL Server 2012 eingeführt. Das Thema **VERFÜGBARKEITSGRUPPE ERSTELLEN** gibt an, dass es für **SQL Server (SQL Server 2012 bis zur aktuellen Version)** gilt. Es gilt nicht für SQL Server 2008, SQL Server 2008 R2 oder Azure SQL-Datenbank.
 
 In einigen Fällen kann der allgemeine Gegenstand eines Themas in einem Produkt verwendet werden, es liegen jedoch kleine Unterschiede im Hinblick auf die verschiedenen Produkte vor. Die Unterschiede werden dann im Thema entsprechend angegeben.
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0224_2016-->

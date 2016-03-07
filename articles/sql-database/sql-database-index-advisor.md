@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="data-management" 
-   ms.date="01/23/2015"
+   ms.date="01/23/2016"
    ms.author="sstein"/>
 
 # SQL-Datenbank-Indexratgeber
@@ -33,7 +33,7 @@ Dieser Artikel beschreibt den Indexratgeber für V12-Server. Es stehen Indexempf
 
 ### Berechtigungen
 
-Zum Anzeigen und Erstellen von Indexempfehlungen benötigen Sie die richtigen Berechtigungen für [rollenbasierte Zugriffssteuerung](role-based-access-control-configure.md) in Azure.
+Zum Anzeigen und Erstellen von Indexempfehlungen benötigen Sie die richtigen Berechtigungen für [rollenbasierte Zugriffssteuerung](../active-directory/role-based-access-control-configure.md) in Azure.
 
 - Die Berechtigungen **Reader** und **SQL DB Contributor** sind zum Anzeigen von Empfehlungen erforderlich.
 - Die Berechtigungen **Owner** und **SQL DB Contributor** sind erforderlich, um Aktionen ausführen zu können, Indizes zu erstellen oder zu löschen und die Indexerstellung abzubrechen.
@@ -179,4 +179,4 @@ Der Indexratgeber stellt Indexempfehlungen bereit und bietet Funktionen zum auto
 
 Überwachen Sie Ihre Indexempfehlungen, und wenden Sie sie weiterhin an, um die Leistung zu optimieren. Datenbankworkloads sind dynamisch und ändern sich ständig. Der Indexratgeber setzt die Überwachung fort und empfiehlt Indizes, die die Leistung Ihrer Datenbank potenziell erhöhen können.
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0224_2016-->

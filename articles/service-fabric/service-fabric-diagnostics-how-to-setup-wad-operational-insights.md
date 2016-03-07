@@ -1,6 +1,6 @@
 <properties
    pageTitle="Sammeln von Protokollen mit Azure-Diagnose und Azure Operational Insights | Microsoft Azure"
-   description="In diesem Artikel wird beschrieben, wie Sie Azure-Diagnose und Azure Operational Insights so konfigurieren, dass Protokolle aus einem Service Fabric-Cluster unter Azure gesammelt werden."
+   description="In diesem Artikel wird beschrieben, wie Sie Azure-Diagnose und Azure Operational Insights so konfigurieren, dass Protokolle aus einem Service Fabric-Cluster unter Azure gesammelt werden."
    services="service-fabric"
    documentationCenter=".net"
    authors="kunaldsingh"
@@ -13,17 +13,17 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="10/20/2015"
-   ms.author="kunalds"/>
+   ms.date="02/12/2016"
+   ms.author="toddabel"/>
 
 
-# Sammeln von Protokollen aus einem Service Fabric-Cluster mit Azure-Diagnose und Operational Insights
+# Sammeln von Protokollen aus einem Service Fabric-Cluster mit Azure-Diagnose und Operational Insights
 
-Bei Verwendung eines Azure Service Fabric-Clusters empfiehlt es sich, die Protokolle aller Knoten an einem zentralen Ort zu sammeln. Das Sammeln der Protokolle an einem zentralen Ort vereinfacht die Analyse und Behandlung von Problemen, die ggf. in Ihrem Cluster oder in den Anwendungen und Diensten des Clusters auftreten. Eine Möglichkeit zum Hochladen und Sammeln von Protokollen ist die Verwendung der Erweiterung „Azure-Diagnose“, mit der Protokolle an Azure Storage hochgeladen werden.
+Bei Verwendung eines Azure Service Fabric-Clusters empfiehlt es sich, die Protokolle aller Knoten an einem zentralen Ort zu sammeln. Das Sammeln der Protokolle an einem zentralen Ort vereinfacht die Analyse und Behandlung von Problemen, die ggf. in Ihrem Cluster oder in den Anwendungen und Diensten des Clusters auftreten. Eine Möglichkeit zum Hochladen und Sammeln von Protokollen ist die Verwendung der Erweiterung „Azure-Diagnose“, mit der Protokolle an Azure Storage hochgeladen werden.
 
-Bei Azure Operational Insights (Teil der Microsoft Operations Management Suite) handelt es sich um eine SaaS-Lösung, die das Analysieren und Durchsuchen von Protokollen vereinfacht. In den folgenden Schritten wird beschrieben, wie Sie die Erweiterung „Azure-Diagnose“ auf den VMs in einem Cluster einrichten, um Protokolle an einen zentralen Speicherort hochzuladen. Anschließend erfahren Sie, wie Sie Operational Insights so konfigurieren, dass die Protokolle abgerufen werden und im Operational Insights-Portal angezeigt werden können.
+Bei Azure Operational Insights (Teil der Microsoft Operations Management Suite) handelt es sich um eine SaaS-Lösung, die das Analysieren und Durchsuchen von Protokollen vereinfacht. In den folgenden Schritten wird beschrieben, wie Sie die Erweiterung „Azure-Diagnose“ auf den VMs in einem Cluster einrichten, um Protokolle an einen zentralen Speicherort hochzuladen. Anschließend erfahren Sie, wie Sie Operational Insights so konfigurieren, dass die Protokolle abgerufen werden und im Operational Insights-Portal angezeigt werden können.
 
-Operational Insights identifiziert die Quellen für die unterschiedlichen Arten von Protokollen, die von einem Service Fabric-Cluster hochgeladen werden, anhand der Namen der Speichertabellen, in denen sie gespeichert sind. Die Erweiterung „Azure-Diagnose“ muss daher so konfiguriert werden, dass die Namen der Speichertabellen, an die die Protokolle hochgeladen werden, den Namen entsprechen, nach denen von Operational Insights gesucht wird. Die Namen der Speichertabellen können Sie den in diesem Dokument enthaltenen Beispielkonfigurationseinstellungen entnehmen.
+Operational Insights identifiziert die Quellen für die unterschiedlichen Arten von Protokollen, die von einem Service Fabric-Cluster hochgeladen werden, anhand der Namen der Speichertabellen, in denen sie gespeichert sind. Die Erweiterung „Azure-Diagnose“ muss daher so konfiguriert werden, dass die Namen der Speichertabellen, an die die Protokolle hochgeladen werden, den Namen entsprechen, nach denen von Operational Insights gesucht wird. Die Namen der Speichertabellen können Sie den in diesem Dokument enthaltenen Beispielkonfigurationseinstellungen entnehmen.
 
 ## Empfohlene Artikel
 * [Azure-Diagnose](../cloud-services/cloud-services-dotnet-diagnostics.md) (bezieht sich auf Azure Cloud Services, enthält jedoch hilfreiche Informationen und Beispiele)
@@ -34,15 +34,15 @@ Operational Insights identifiziert die Quellen für die unterschiedlichen Arten 
 Bei einigen Vorgängen aus diesem Dokument kommen die folgenden Tools zum Einsatz: * [Azure PowerShell](https://azure.microsoft.com/powershell-install-configure/) * [Azure-Ressourcen-Manager (Client)](https://github.com/projectkudu/ARMClient)
 
 ## Andere Protokollquellen, die gesammelt werden können
-1. **Service Fabric-Protokolle:** Werden von der Plattform für standardmäßige ETW- und EventSource-Kanäle ausgegeben. Protokolle können unterschiedlicher Art sein:
-  - Betriebsereignisse: Protokolle für Vorgänge, die von der Service Fabric-Plattform durchgeführt werden. Beispiele hierfür wären die Erstellung von Anwendungen und Diensten, Knotenzustandsänderungen und Upgradeinformationen.
+1. **Service Fabric-Protokolle:** Werden von der Plattform für standardmäßige ETW- und EventSource-Kanäle ausgegeben. Protokolle können unterschiedlicher Art sein:
+  - Betriebsereignisse: Protokolle für Vorgänge, die von der Service Fabric-Plattform durchgeführt werden. Beispiele hierfür wären die Erstellung von Anwendungen und Diensten, Knotenzustandsänderungen und Upgradeinformationen.
   - [Ereignisse des Actor-Programmiermodells](service-fabric-reliable-actors-diagnostics.md)
   - [Ereignisse des Reliable Services-Programmiermodells](service-fabric-reliable-services-diagnostics.md)
-2. **Anwendungsereignisse:** Ereignisse, die von Ihrem Dienstcode ausgegeben werden und mit der EventSource-Hilfsklasse der Visual Studio-Vorlagen ausgegeben werden. Weitere Informationen zum Schreiben von Protokollen aus Ihrer Anwendung finden Sie in [diesem Artikel zur Überwachung und Diagnose von Diensten in einer lokalen Installation](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md).
+2. **Anwendungsereignisse:** Ereignisse, die von Ihrem Dienstcode ausgegeben werden und mit der EventSource-Hilfsklasse der Visual Studio-Vorlagen ausgegeben werden. Weitere Informationen zum Schreiben von Protokollen aus Ihrer Anwendung finden Sie in [diesem Artikel zur Überwachung und Diagnose von Diensten in einer lokalen Installation](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md).
 
 
-## Bereitstellen der Diagnoseerweiterung für einen Service Fabric-Cluster zum Sammeln und Hochladen von Protokollen
-Zum Sammeln von Protokollen muss zunächst die Diagnoseerweiterung auf allen VMs des Service Fabric-Clusters bereitgestellt werden. Die Diagnoseerweiterung sammelt Protokolle auf allen VMs und lädt sie an das angegebene Speicherkonto hoch. Je nachdem, ob Sie das Azure-Portal oder den Azure-Ressourcen-Manager verwenden und ob die Bereitstellung im Rahmen der Clustererstellung oder für einen bereits vorhandenen Cluster erfolgt, variieren die Schritte etwas. Wir sehen uns nun die Schritte für die einzelnen Szenarien an.
+## Bereitstellen der Diagnoseerweiterung für einen Service Fabric-Cluster zum Sammeln und Hochladen von Protokollen
+Zum Sammeln von Protokollen muss zunächst die Diagnoseerweiterung auf allen VMs des Service Fabric-Clusters bereitgestellt werden. Die Diagnoseerweiterung sammelt Protokolle auf allen VMs und lädt sie an das angegebene Speicherkonto hoch. Je nachdem, ob Sie das Azure-Portal oder den Azure-Ressourcen-Manager verwenden und ob die Bereitstellung im Rahmen der Clustererstellung oder für einen bereits vorhandenen Cluster erfolgt, variieren die Schritte etwas. Wir sehen uns nun die Schritte für die einzelnen Szenarien an.
 
 ### Bereitstellen der Diagnoseerweiterung im Rahmen der Clustererstellung über das Portal
 Um die Diagnoseerweiterung im Rahmen der Clustererstellung für die im Cluster enthaltenen VMs bereitzustellen, wird die in der folgenden Abbildung gezeigte Diagnoseeinstellung verwendet. Sie ist standardmäßig aktiviert. ![Azure-Diagnose-Einstellung im Portal für die Clustererstellung](./media/service-fabric-diagnostics-how-to-setup-wad-operational-insights/portal-cluster-creation-diagnostics-setting.png)
@@ -165,7 +165,7 @@ Ersetzen Sie „vmNamePrefix“ durch das Präfix, das Sie beim Erstellen des Cl
 }
 ```
 
-Passen Sie die wie oben beschrieben erstellten JSON-Dateien an die Einzelheiten Ihrer Umgebung an. Rufen Sie dann den folgenden Befehl auf, und übergeben Sie dabei den Namen der Ressourcengruppe für Ihren Service Fabric-Cluster. Nach erfolgreicher Ausführung des Befehls wird die Diagnose auf allen VMs bereitgestellt, und es wird damit begonnen, die Protokolle aus dem Cluster an Tabellen im angegebenen Azure-Speicherkonto hochzuladen.
+Passen Sie die wie oben beschrieben erstellten JSON-Dateien an die Einzelheiten Ihrer Umgebung an. Rufen Sie dann den folgenden Befehl auf, und übergeben Sie dabei den Namen der Ressourcengruppe für Ihren Service Fabric-Cluster. Nach erfolgreicher Ausführung des Befehls wird die Diagnose auf allen VMs bereitgestellt, und es wird damit begonnen, die Protokolle aus dem Cluster an Tabellen im angegebenen Azure-Speicherkonto hochzuladen.
 
 Vor dem Aufrufen des Bereitstellungsbefehls sind unter Umständen noch einige Setupschritte erforderlich – etwa das Hinzufügen Ihres Azure-Kontos (`Add-AzureAccount`), das Auswählen des richtigen Abonnements (`Select-AzureSubscription`) und das Wechseln in den Ressourcen-Manager-Modus (`Switch-AzureMode AzureResourceManager`).
 
@@ -175,15 +175,15 @@ New-AzureResourceGroupDeployment -ResourceGroupName $resourceGroupName -Name $de
 ```
 
 ## Einrichten von Operational Insights zum Anzeigen und Durchsuchen von Clusterprotokollen
-Nachdem die Diagnose im Cluster eingerichtet wurde und Protokolle an ein Speicherkonto hochgeladen werden, muss Operational Insights so eingerichtet werden, dass Sie alle Clusterprotokolle über das Operational Insights-Portal anzeigen, durchsuchen und abfragen können.
+Nachdem die Diagnose im Cluster eingerichtet wurde und Protokolle an ein Speicherkonto hochgeladen werden, muss Operational Insights so eingerichtet werden, dass Sie alle Clusterprotokolle über das Operational Insights-Portal anzeigen, durchsuchen und abfragen können.
 
 ### Erstellen eines Operational Insights-Arbeitsbereichs
-Die Schritte zum Erstellen eines Operational Insights-Arbeitsbereichs werden im unten angegebenen Artikel beschrieben. Dort werden zwei unterschiedliche Vorgehensweisen für die Arbeitsbereichserstellung beschrieben. Wählen Sie die Methode, die auf der Verwendung von Azure-Portal und Abonnement basiert. Sie benötigen den Namen des Operational Insights-Arbeitsbereichs in den weiteren Abschnitten dieses Dokuments. Erstellen Sie den Operational Insights-Arbeitsbereich mit dem Abonnement, das Sie auch zum Erstellen aller Clusterressourcen (einschließlich Speicherkonten) verwendet haben.
+Die Schritte zum Erstellen eines Operational Insights-Arbeitsbereichs werden im unten angegebenen Artikel beschrieben. Dort werden zwei unterschiedliche Vorgehensweisen für die Arbeitsbereichserstellung beschrieben. Wählen Sie die Methode, die auf der Verwendung von Azure-Portal und Abonnement basiert. Sie benötigen den Namen des Operational Insights-Arbeitsbereichs in den weiteren Abschnitten dieses Dokuments. Erstellen Sie den Operational Insights-Arbeitsbereich mit dem Abonnement, das Sie auch zum Erstellen aller Clusterressourcen (einschließlich Speicherkonten) verwendet haben.
 
 [Operational Insights-Onboarding](https://technet.microsoft.com/library/mt484118.aspx)
 
-### Konfigurieren eines Operational Insights-Arbeitsbereichs zum Anzeigen der Clusterprotokolle
-Nachdem Sie den Operational Insights-Arbeitsbereich wie oben beschrieben erstellt haben, muss er so konfiguriert werden, dass die Protokolle aus den Azure-Speichertabellen abgerufen werden, an die sie von der Diagnoseerweiterung aus dem Cluster hochgeladen werden. Diese Konfiguration kann derzeit nicht über das Operational Insights-Portal, sondern nur über PowerShell-Befehle durchgeführt werden. Führen Sie das folgende PowerShell-Skript aus:
+### Konfigurieren eines Operational Insights-Arbeitsbereichs zum Anzeigen der Clusterprotokolle
+Nachdem Sie den Operational Insights-Arbeitsbereich wie oben beschrieben erstellt haben, muss er so konfiguriert werden, dass die Protokolle aus den Azure-Speichertabellen abgerufen werden, an die sie von der Diagnoseerweiterung aus dem Cluster hochgeladen werden. Diese Konfiguration kann derzeit nicht über das Operational Insights-Portal, sondern nur über PowerShell-Befehle durchgeführt werden. Führen Sie das folgende PowerShell-Skript aus:
 
 ```powershell
 
@@ -286,14 +286,14 @@ if ($existingConfig) {
 }
 ```
 
-Sobald Sie den Operational Insights-Arbeitsbereich so konfiguriert haben, dass die Azure-Tabellen in Ihrem Speicherkonto ausgelesen werden, sollten Sie sich beim Portal anmelden und zur Registerkarte **Speicher** für die Operational Insights-Ressource wechseln. Diese sollte in etwa wie folgt aussehen: ![Operational Insights-Speicherkonfiguration im Azure-Portal](./media/service-fabric-diagnostics-how-to-setup-wad-operational-insights/oi-connected-tables-list.png)
+Sobald Sie den Operational Insights-Arbeitsbereich so konfiguriert haben, dass die Azure-Tabellen in Ihrem Speicherkonto ausgelesen werden, sollten Sie sich beim Portal anmelden und zur Registerkarte **Speicher** für die Operational Insights-Ressource wechseln. Diese sollte in etwa wie folgt aussehen: ![Operational Insights-Speicherkonfiguration im Azure-Portal](./media/service-fabric-diagnostics-how-to-setup-wad-operational-insights/oi-connected-tables-list.png)
 
 ### Durchsuchen und Anzeigen von Protokollen in Operational Insights
-Nachdem Sie den Operational Insights-Arbeitsbereich für das Auslesen der Daten aus dem angegebenen Speicherkonto konfiguriert haben, kann es bis zu zehn Minuten dauern, bis die Protokolle auf der Benutzeroberfläche von Operational Insights angezeigt werden. Um sich zu vergewissern, dass neue Protokolle generiert werden, empfiehlt es sich, in Ihrem Cluster eine Service Fabric-Anwendung bereitzustellen, da dabei Betriebsereignisse der Service Fabric-Plattform generiert werden.
+Nachdem Sie den Operational Insights-Arbeitsbereich für das Auslesen der Daten aus dem angegebenen Speicherkonto konfiguriert haben, kann es bis zu zehn Minuten dauern, bis die Protokolle auf der Benutzeroberfläche von Operational Insights angezeigt werden. Um sich zu vergewissern, dass neue Protokolle generiert werden, empfiehlt es sich, in Ihrem Cluster eine Service Fabric-Anwendung bereitzustellen, da dabei Betriebsereignisse der Service Fabric-Plattform generiert werden.
 
-1. Wählen Sie auf der Hauptseite des Operational Insights-Portals die Option für die Protokollsuche aus, um die Protokolle anzuzeigen. ![Operational Insights – Option für die Protokollsuche](./media/service-fabric-diagnostics-how-to-setup-wad-operational-insights/log-search-button-oi.png)
+1. Wählen Sie auf der Hauptseite des Operational Insights-Portals die Option für die Protokollsuche aus, um die Protokolle anzuzeigen. ![Operational Insights – Option für die Protokollsuche](./media/service-fabric-diagnostics-how-to-setup-wad-operational-insights/log-search-button-oi.png)
 
-2. Verwenden Sie auf der Seite für die Protokollsuche die Abfrage **Type=ServiceFabricOperationalEvent**. Die Betriebsprotokolle Ihres Clusters sollten wie unten dargestellt angezeigt werden. Verwenden Sie zum Anzeigen aller Protokolle des Actor-Programmiermodells die Abfrage **Type=ServiceFabricReliableActorEvent**. Geben Sie zum Anzeigen aller Protokolle des Reliable Services-Programmiermodells die Abfrage **Type=ServiceFabricReliableServiceEvent** ein. ![Operational Insights – Protokollabfrage und -anzeige](./media/service-fabric-diagnostics-how-to-setup-wad-operational-insights/view-logs-oi.png)
+2. Verwenden Sie auf der Seite für die Protokollsuche die Abfrage **Type=ServiceFabricOperationalEvent**. Die Betriebsprotokolle Ihres Clusters sollten wie unten dargestellt angezeigt werden. Verwenden Sie zum Anzeigen aller Protokolle des Actor-Programmiermodells die Abfrage **Type=ServiceFabricReliableActorEvent**. Geben Sie zum Anzeigen aller Protokolle des Reliable Services-Programmiermodells die Abfrage **Type=ServiceFabricReliableServiceEvent** ein. ![Operational Insights – Protokollabfrage und -anzeige](./media/service-fabric-diagnostics-how-to-setup-wad-operational-insights/view-logs-oi.png)
 
 ### Beispielabfragen für die Problembehandlung
 Im Anschluss finden Sie einige Beispiele für Szenarien und die dazugehörigen Abfragen für die Problembehandlung.
@@ -325,4 +325,4 @@ Sie müssen den EtwEventSourceProviderConfiguration-Abschnitt in der Datei „Wa
 ## Nächste Schritte
 Sehen Sie sich die Diagnoseereignisse an, die für [Reliable Actors](service-fabric-reliable-actors-diagnostics.md) und [Reliable Services](service-fabric-reliable-services-diagnostics.md) ausgegeben werden, um besser zu verstehen, welche Ereignisse Sie beim Behandeln von Problemen untersuchen sollten.
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0224_2016-->

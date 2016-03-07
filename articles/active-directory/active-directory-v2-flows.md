@@ -1,6 +1,6 @@
 <properties
-	pageTitle="App-Modell v2.0: App-Typen | Microsoft Azure"
-	description="Die App- und Szenariotypen, die vom Azure AD-App-Modell v2.0 (öffentliche Vorschaufunktion) unterstützt werden."
+	pageTitle="Typen des v2.0-Endpunkts | Microsoft Azure"
+	description="App- und Szenariotypen, die vom Azure AD v2.0-Endpunkt unterstützt werden."
 	services="active-directory"
 	documentationCenter=""
 	authors="dstrockis"
@@ -13,43 +13,32 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/09/2015"
+	ms.date="02/20/2016"
 	ms.author="dastrock"/>
 
-# App-Modell v2.0 (Vorschauversion): App-Typen
-Das App-Modell v2.0 unterstützt die Authentifizierung für eine Vielzahl moderner App-Architekturen, die alle auf den branchenüblichen Protokollen [OAuth 2.0](active-directory-v2-protocols.md#oauth2-authorization-code-flow) und/oder [OpenID Connect](active-directory-v2-protocols.md#openid-connect-sign-in-flow) basieren. Dieses Dokument beschreibt die App-Typen, die Sie unabhängig von der bevorzugten Sprache oder Plattform erstellen können. Es hilft Ihnen beim Verständnis der Szenarien auf oberer Ebene, bevor Sie [sich direkt an den Code wagen](active-directory-appmodel-v2-overview.md#getting-started).
+# Typen des v2.0-Endpunkts
+Der v2.0-Endpunkt unterstützt die Authentifizierung für eine Vielzahl moderner App-Architekturen, die alle auf den branchenüblichen Protokollen [OAuth 2.0](active-directory-v2-protocols.md#oauth2-authorization-code-flow) und/oder [OpenID Connect](active-directory-v2-protocols.md#openid-connect-sign-in-flow) basieren. Dieses Dokument beschreibt die App-Typen, die Sie unabhängig von der bevorzugten Sprache oder Plattform erstellen können. Es hilft Ihnen beim Verständnis der Szenarien auf oberer Ebene, bevor Sie [sich direkt an den Code wagen](active-directory-appmodel-v2-overview.md#getting-started).
 
-> [AZURE.NOTE]Diese Informationen gelten für App-Modell v2.0 (öffentliche Vorschauversion). Anweisungen zum Integrieren in den allgemein verfügbaren Azure AD-Dienst finden Sie im [Azure Active Directory-Entwicklerhandbuch](active-directory-developers-guide.md).
+> [AZURE.NOTE]
+	Nicht alle Szenarios und Funktionen von Azure Active Directory werden vom v2.0-Endpunkt unterstützt. Lesen Sie die Informationen zu den [Einschränkungen des v2.0-Endpunkts](active-directory-v2-limitations.md), um zu bestimmen, ob Sie den v2.0-Endpunkt verwenden sollten.
 
-## Die Grundlagen
-Jede App, die das App-Modell v2.0 nutzt, muss unter [apps.dev.microsoft.com](https://apps.dev.microsoft.com) registriert werden. Der Registrierungsprozess für die App sammelt einige Werte und weist ihr einige Werte zu:
+## Grundlagen
+Jede App, die den v2.0-Endpunkt nutzt, muss unter [apps.dev.microsoft.com](https://apps.dev.microsoft.com) registriert werden. Der Registrierungsprozess für die App sammelt einige Werte und weist ihr einige Werte zu:
 
 - Eine **Anwendungs-ID**, die Ihre Anwendung eindeutig identifiziert.
 - Einen **Umleitungs-URI**, der zum Umleiten von Antworten zurück an die App verwendet werden kann.
 - Einige andere szenariospezifische Werte. Erfahren Sie nähere Einzelheiten, wie Sie [eine App registrieren](active-directory-v2-app-registration.md).
 
-Sobald die App registriert ist, kommuniziert sie mit Azure AD, indem sie Anforderungen an den v2.0-Endpunkt sendet:
+Nach dem Registrieren kommuniziert eine App mit Azure AD, indem Anforderungen an den Azure Active Directory v2.0-Endpunkt gesendet werden. Wir stellen Open Source-Frameworks und -Bibliotheken bereit, über die die Details dieser Anforderungen verarbeitet werden. Wahlweise können Sie auch selbst die Authentifizierungslogik implementieren, indem Sie Anforderungen an diese Endpunkte erstellen:
 
 ```
 https://login.microsoftonline.com/common/oauth2/v2.0/authorize
 https://login.microsoftonline.com/common/oauth2/v2.0/token
 ```
-
-Jede Interaktion der App mit dem v2.0-Endpunkt folgt einem ähnlichen Muster auf oberer Ebene:
-
-1. Die App leitet den Endbenutzer zur Anmeldung an den v2.0-Endpunkt.
-2. Der Benutzer authentifiziert sich, indem er beispielsweise Benutzernamen und Kennwort eingibt.
-3. Der Benutzer autorisiert die App, an seiner Stelle zu agieren, indem er der App die angeforderten Berechtigungen erteilt.
-4. Die Anwendung erhält ein bestimmtes Sicherheitstoken vom v2.0-Endpunkt.
-5. Die App verwendet das Sicherheitstoken für den Zugriff auf vertrauliche Informationen oder eine Ressource.
-6. Der Ressourcenserver überprüft das Sicherheitstoken, um sicherzustellen, dass der Zugriff gewährt werden kann.
-7. Die Anwendung aktualisiert das Sicherheitstoken in regelmäßigen Abständen.
-
 <!-- TODO: Need a page for libraries to link to -->
-Jeder dieser sieben Schritte unterscheidet sich je nach Typ der erstellten Anwendung geringfügig. In unseren Open Source-Bibliotheken werden die Einzelheiten abgedeckt. Weitere Informationen finden Sie unter [Berechtigungen, Zustimmung und Bereiche](active-directory-v2-scopes.md) und in den konkreten Beispielen.
 
 ## Web-Apps
-Für Web-Apps (.NET, PHP, Java, Ruby, Python, Knoten usw.), auf die der Zugriff über einen Browser erfolgt, unterstützt das App-Modell v2.0 die Benutzeranmeldung mit [OpenID Connect](active-directory-v2-protocols.md#openid-connect-sign-in-flow). In OpenID Connect empfängt die Web-App ein `id_token`, ein Sicherheitstoken, das die Identität des Benutzers überprüft und Informationen über den Benutzer in Form von Ansprüchen enthält:
+Bei Web-Apps (.NET, PHP, Java, Ruby, Python, Node usw.), auf die der Zugriff über einen Browser erfolgt, können Sie die Benutzeranmeldung mit [OpenID Connect](active-directory-v2-protocols.md#openid-connect-sign-in-flow) durchführen. In OpenID Connect empfängt die Web-App ein `id_token`, ein Sicherheitstoken, das die Identität des Benutzers überprüft und Informationen über den Benutzer in Form von Ansprüchen enthält:
 
 ```
 // Partial raw id_token
@@ -74,10 +63,10 @@ Die Überprüfung des ID-Tokens mit einem öffentlichen Signaturschlüssel, der 
 
 Um dieses Szenario in Aktion zu sehen, testen Sie eines der Web-App-Codebeispiele für die Anmeldung im Abschnitt [Erste Schritte](active-directory-appmodel-v2-overview.md#getting-started).
 
-Neben der einfachen Anmeldung benötigt eine Webserver-App möglicherweise auch den Zugriff auf einige andere Webdienste wie z. B. eine REST-API. In diesem Fall kann die Webserver-App in einem kombinierten OpenID Connect- und OAuth 2.0-Vorgang ausgeführt werden, indem der [OAuth 2.0-Autorisierungscodefluss](active-directory-v2-protocols.md#oauth2-authorization-code-flow) verwendet wird. Dieses Szenario wird weiter unten im [Abschnitt zu den Web-APIs](#web-apis) und im [Thema „Erste Schritte mit Web-Apps/Web-APIs“](active-directory-v2-devquickstarts-webapp-webapi-dotnet.md) abgedeckt.
+Neben der einfachen Anmeldung benötigt eine Webserver-App möglicherweise auch den Zugriff auf einige andere Webdienste wie z. B. eine REST-API. In diesem Fall kann die Webserver-App in einem kombinierten OpenID Connect- und OAuth 2.0-Vorgang ausgeführt werden, indem der [OAuth 2.0-Autorisierungscodefluss](active-directory-v2-protocols.md#oauth2-authorization-code-flow) verwendet wird. Dieses Szenario wird in den [ersten Schritten zu Web-Apps und Web-APIs](active-directory-v2-devquickstarts-webapp-webapi-dotnet.md) abgedeckt.
 
 ## Web-APIs
-Sie können das App-Modell v2.0 auch zum Absichern von Webdiensten verwenden, wie z. B. die RESTful-Web-API Ihrer App. Anstelle von ID-Token und Sitzungscookies verwenden Web-APIs OAuth 2.0-Zugriffstoken zum Sichern ihrer Daten und zum Authentifizieren eingehender Anforderungen. Der Aufrufer einer Web-API fügt ein Zugriffstoken in den Autorisierungs-Header einer HTTP-Anforderung an:
+Sie können den v2.0-Endpunkt auch zum Schützen von Webdiensten verwenden, z. B. der REST-Web-API Ihrer App. Anstelle von ID-Token und Sitzungscookies verwenden Web-APIs OAuth 2.0-Zugriffstoken zum Sichern ihrer Daten und zum Authentifizieren eingehender Anforderungen. Der Aufrufer einer Web-API fügt ein Zugriffstoken in den Autorisierungs-Header einer HTTP-Anforderung an:
 
 ```
 GET /api/items HTTP/1.1
@@ -91,40 +80,42 @@ Die Web-API kann dann das Zugriffstoken zum Überprüfen der Identität des API-
 
 Eine Web-API kann Benutzern die Möglichkeit geben, sich für oder gegen bestimmte Funktionen oder Daten zu entschieden, indem sie Berechtigungen erhalten, die auch [Bereiche](active-directory-v2-scopes.md) genannt werden. Damit eine aufrufende App Berechtigungen für einen Bereich erhält, muss der Benutzer für den Bereich während eines Ablaufs seine Zustimmung erteilen. Der v2.0-Endpunkt kümmert sich darum, den Benutzer um Erlaubnis zu fragen, und zeichnet die Berechtigungen in allen Zugriffstoken auf, die die Web-API empfängt. Die Web-API muss nur noch die erhaltenen Zugriffstoken überprüfen, die sie bei jedem Aufruf erhält, und die entsprechenden Autorisierungsprüfungen durchführen.
 
-Eine Web-API kann Zugriffstoken von allen Apptypen empfangen, einschließlich Webserver-Apps, Desktop-Apps, mobilen Apps, Single Page-Apps, serverseitigen Daemons und sogar anderen Web-APIs. Als Beispiel sehen wir uns den vollständigen Vorgang für eine Webserver-App an, die eine Web-API aufruft.
+Eine Web-API kann Zugriffstoken von allen Apptypen empfangen, einschließlich Webserver-Apps, Desktop-Apps, mobilen Apps, Single Page-Apps, serverseitigen Daemons und sogar anderen Web-APIs. Der allgemeine Ablauf bei der Authentifizierung einer Web-API ist im Folgenden skizziert:
 
-![Abbildung der Web-App-Web-API-Verantwortlichkeitsbereiche](../media/active-directory-v2-flows/convergence_scenarios_webapp_webapi.png)
+![Abbildung der Web-API-Verantwortlichkeitsbereiche](../media/active-directory-v2-flows/convergence_scenarios_webapi.png)
 
 Weitere Informationen zu Autorisierungscodes, Aktualisierungstoken und die detaillierten Schritte zum Abrufen von Zugriffstoken finden Sie im [OAuth 2.0-Protokoll](active-directory-v2-protocols-oauth-code.md).
 
-Weitere Informationen zum Sichern einer Web-API mit den App-Modell v2.0- und OAuth 2.0-Zugriffstoken finden Sie in den Web-API-Codebeispielen im [Abschnitt "Erste Schritte"](active-directory-appmodel-v2-overview.md#getting-started).
+Informationen zum Schützen einer Web-API mit OAuth2-Zugriffstoken finden Sie in den Web-API-Codebeispielen im [Abschnitt „Erste Schritte“](active-directory-appmodel-v2-overview.md#getting-started).
 
 
-## Mobile und systemeigene Apps
-Auf einem Gerät installierte Apps wie mobile und Desktop-Apps benötigen häufig Zugriff auf Back-End-Dienste oder Web-APIs, die Daten speichern und verschiedene Funktionen im Auftrag eines Benutzers ausführen. Diese Apps können sich auf Back-End-Diensten anmelden und die Autorisierung hinzufügen, und zwar mithilfe des v2.0-Modells und des [OAuth 2.0-Autorisierungscodeflusses](active-directory-v2-protocols-oauth-code.md).
+## Mobile und native Apps
+Auf einem Gerät installierte Apps wie mobile und Desktop-Apps benötigen häufig Zugriff auf Back-End-Dienste oder Web-APIs, die Daten speichern und verschiedene Funktionen im Auftrag eines Benutzers ausführen. Diese Apps können sich mithilfe des [OAuth 2.0-Autorisierungscodeflusses](active-directory-v2-protocols-oauth-code.md) auf Back-End-Diensten anmelden und die Autorisierung hinzufügen.
 
 Bei diesem Vorgang empfängt die App bei der Anmeldung des Benutzers einen Autorisierungscode vom v2.0-Endpunkt, der die Berechtigung für die App darstellt, Back-End-Dienste für den derzeit angemeldeten Benutzer aufzurufen. Die App kann den Autorisierungscode dann in den Hintergrund treten lassen und gegen ein OAuth 2.0-Zugriffstoken und ein -Aktualisierungstoken austauschen. Die App kann mithilfe des Zugriffstokens Web-APIs in HTTP-Anforderungen authentifizieren und kann das Aktualisierungstoken verwenden, um neue Zugriffstoken zu erhalten, wenn die älteren abgelaufen sind.
 
 ![Abbildung der Verantwortlichkeitsbereiche systemeigener Apps](../media/active-directory-v2-flows/convergence_scenarios_native.png)
 
-## Singe Page-Apps (Javascript)
-Viele moderne Apps verfügen über ein Single Page-App-Front-End, das in erster Linie in Javascript geschrieben ist und häufig SPA-Frameworks wie z. B. AngularJS, Ember.js oder Durandal verwendet. Version 2.0 des Azure AD-App-Modells unterstützt diese Apps mithilfe des [impliziten OAuth 2.0-Flusses](active-directory-v2-protocols-implicit.md).
+## Single Page-Apps (JavaScript)
+Viele moderne Anwendungen verfügen über ein Single-Page-Application (SPA)-Front-End, das in erster Linie in JavaScript geschrieben ist und häufig Frameworks verwendet, z. B. AngularJS, Ember.js, Durandal usw. Der Azure AD v2.0-Endpunkt unterstützt diese Apps mithilfe des [impliziten OAuth 2.0-Flusses](active-directory-v2-protocols-implicit.md).
 
-In diesem Datenfluss empfängt die App Token vom Autorisierungsendpunkt der Version 2.0 direkt, ohne dass eine Kommunikation zwischen Back-End-Server und Server stattfindet. Dadurch können sämtliche Authentifizierungslogik und die Verarbeitung der Sitzung vollständig im JavaScript-Client erfolgen, ohne Seitenumleitungen durchzuführen.
+In diesem Datenfluss empfängt die App Token vom Autorisierungsendpunkt der Version 2.0 direkt, ohne dass eine Kommunikation zwischen Back-End-Server und Server stattfindet. Dadurch können sämtliche Authentifizierungslogik und die Verarbeitung der Sitzung vollständig im JavaScript-Client erfolgen, ohne Seitenumleitungen durchzuführen.
+
+![Abbildung der Verantwortlichkeitsbereiche impliziter Abläufe](../media/active-directory-v2-flows/convergence_scenarios_implicit.png)
 
 Um dieses Szenario in Aktion zu sehen, testen Sie eines der Codebeispiele für die App mit einer einzigen Seite im Abschnitt [Erste Schritte](active-directory-appmodel-v2-overview.md#getting-started).
 
-## Aktuelle Einschränkungen der Vorschau
-Diese Typen von Apps werden derzeit von der App-Modell v2.0-Vorschau nicht unterstützt, sind jedoch in Planung, um bei allgemeiner Verfügbarkeit rechtzeitig unterstützt zu werden. Zusätzliche Einschränkungen für die öffentliche Vorschauversion von App-Modell v2.0 werden im [Artikel „Einschränkungen der v2.0-Vorschau“](active-directory-v2-limitations.md) beschrieben.
+## Aktuelle Einschränkungen
+Diese Typen von Apps werden derzeit vom v2.0-Endpunkt nicht unterstützt, dies ist jedoch in Planung. Weitere Einschränkungen für den v2.0-Endpunkt sind im [Artikel zu den Einschränkungen](active-directory-v2-limitations.md) beschrieben.
 
 ### Daemons und serverseitige Apps
-Apps, die lang andauernde Prozesse enthalten oder ohne das Vorhandensein eines Benutzers arbeiten, benötigen ebenfalls die Möglichkeit, auf sichere Ressourcen wie Web-APIs zuzugreifen. Diese Apps können mithilfe der App-Identität (anstelle der delegierten Benutzeridentität) die Authentifizierung durchführen und Token erhalten. Dies funktioniert über den [OAuth 2.0-Client-Anmeldeinformationsfluss](active-directory-v2-protocols.md#oauth2-client-credentials-grant-flow).
+Apps, die lang andauernde Prozesse enthalten oder ohne das Vorhandensein eines Benutzers arbeiten, benötigen ebenfalls die Möglichkeit, auf sichere Ressourcen wie Web-APIs zuzugreifen. Diese Apps können mithilfe der App-Identität (anstelle der delegierten Benutzeridentität) die Authentifizierung durchführen und Token erhalten. Dies funktioniert über den OAuth 2.0-Client-Anmeldeinformationsfluss.
 
-Dieser Vorgang wird derzeit nicht vom App-Modell v2.0 unterstützt, d. h. Apps können nur dann Token abrufen, nachdem ein interaktiver Benutzeranmeldevorgang aufgetreten ist. Der Vorgang für die Client-Anmeldeinformationen wird in naher Zukunft hinzugefügt. Falls die Client-Anmeldeinformationen an den allgemein verfügbaren Azure AD-Service übertragen werden sollen, sehen Sie sich das [Daemon-Beispiel auf GitHub](https://github.com/AzureADSamples/Daemon-DotNet) an.
+Der Ablauf für die Client-Anmeldeinformationen wird derzeit im v2.0-Endpunkt nicht unterstützt. Informationen zu diesem Vorgang im allgemein verfügbaren Azure AD-Dienst finden Sie im [Daemon-Codebeispiel auf GitHub](https://github.com/AzureADSamples/Daemon-DotNet).
 
 ### Verkettete Web-APIs (Im-Auftrag-von)
-Viele Architekturen umfassen eine Web-API, die eine andere heruntergestreamte Web-API aufrufen muss. Beide werden vom App-Modell v2.0 gesichert. Dieses Szenario kommt häufig in systemeigenen Clients mit Web-API-Back-End vor, das wiederum einen Microsoft Online-Dienst aufruft, wie z. B. Office 365 oder die Graph-API.
+Viele Architekturen umfassen eine Web-API, die eine andere Downstream-Web-API aufrufen muss. Beide sind jeweils durch den v2.0-Endpunkt gesichert. Dieses Szenario kommt häufig in systemeigenen Clients mit Web-API-Back-End vor, das wiederum einen Microsoft Online-Dienst aufruft, wie z. B. Office 365 oder die Graph-API.
 
-Dieses Szenario der verketteten Web-API kann mithilfe der Berechtigung für Anmeldeinformationen über den OAuth 2.0-JWT-Bearer unterstützt werden, auch bekannt als [Im-Auftrag-von-Vorgang](active-directory-v2-protocols.md#oauth2-on-behalf-of-flow). Der Im-Auftrag-von-Vorgang ist in der Vorschaufunktion des App-Modells v2.0 derzeit noch nicht implementiert. Um sich die Funktionsweise dieses Vorgangs im allgemein verfügbaren Azure AD-Dienst anzusehen, wechseln Sie zum [Im-Auftrag-von-Codebeispiel auf GitHub](https://github.com/AzureADSamples/WebAPI-OnBehalfOf-DotNet).
+Dieses Szenario der verketteten Web-API kann mithilfe der Berechtigung für Anmeldeinformationen über den OAuth 2.0-JWT-Bearer unterstützt werden, auch bekannt als [Im-Auftrag-von-Vorgang](active-directory-v2-protocols.md#oauth2-on-behalf-of-flow). Der Im-Auftrag-von-Vorgang ist im v2.0-Endpunkt derzeit jedoch noch nicht implementiert. Um sich die Funktionsweise dieses Vorgangs im allgemein verfügbaren Azure AD-Dienst anzusehen, wechseln Sie zum [Im-Auftrag-von-Codebeispiel auf GitHub](https://github.com/AzureADSamples/WebAPI-OnBehalfOf-DotNet).
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0224_2016-->

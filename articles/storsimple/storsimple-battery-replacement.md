@@ -4,7 +4,7 @@
    services="storsimple"
    documentationCenter=""
    authors="alkohli"
-   manager="carolz"
+   manager="carmonm"
    editor="" />
 <tags 
    ms.service="storsimple"
@@ -27,7 +27,7 @@ In diesem Tutorial werden folgende Punkte erläutert:
 - Installieren eines neuen Notfallakkus
 - Warten des Notfallakkus
 
->[AZURE.IMPORTANT]Vor dem Entfernen und Austauschen eines Notfallakkus überprüfen Sie die Sicherheitsinformationen in der [Einführung in den Austausch von StorSimple-Hardwarekomponenten](storsimple-hardware-component-replacement.md).
+>[AZURE.IMPORTANT] Vor dem Entfernen und Austauschen eines Notfallakkus überprüfen Sie die Sicherheitsinformationen in der [Einführung in den Austausch von StorSimple-Hardwarekomponenten](storsimple-hardware-component-replacement.md).
 
 ## Entfernen des Notfallakkus
 
@@ -37,7 +37,7 @@ Der Notfallakku für Ihr Microsoft Azure StorSimple-Gerät ist eine vor Ort aust
 
 1. Navigieren Sie im klassischen Azure-Portal zu **Geräte** > **Wartung** > **Hardwarestatus**. Überprüfen Sie den Status des Akkus unter **Gemeinsam genutzte Komponenten**.
 
-2. Stellen Sie fest, in welchem PCM der Akkufehler aufgetreten ist. Abbildung 1 zeigt die Rückseite des StorSimple-Geräts.
+2. Stellen Sie fest, in welchem PCM der Akkufehler aufgetreten ist. Abbildung 1 zeigt die Rückseite des StorSimple-Geräts.
 
     ![Rückwand des Geräts – Primäre Gehäusemodule](./media/storsimple-battery-replacement/IC740994.png)
 
@@ -45,12 +45,12 @@ Der Notfallakku für Ihr Microsoft Azure StorSimple-Gerät ist eine vor Ort aust
 
     |Bezeichnung|Beschreibung|
     |:----|:----------|
-    |1|PCM 0|
-    |2|PCM 1|
-    |3|Controller 0|
-    |4|Controller 1|
+    |1|PCM 0|
+    |2|PCM 1|
+    |3|Controller 0|
+    |4|Controller 1|
 
-    Wie unter Nummer 3 in Abbildung 2 dargestellt, sollte die Überwachungs-LED an PCM 0, die für einen **Akkufehler** steht, leuchten.
+    Wie unter Nummer 3 in Abbildung 2 dargestellt, sollte die Überwachungs-LED an PCM 0, die für einen **Akkufehler** steht, leuchten.
 
     ![Rückwand des Geräts – PCM-Überwachungs-LEDs](./media/storsimple-battery-replacement/IC740992.png)
 
@@ -95,24 +95,24 @@ Führen Sie die folgenden Schritte aus, um den Notfallakku im primären Gehäuse
 
 Der Notfallakku sorgt für die Stromzufuhr des Controllers bei einem Stromausfall. Dadurch kann das StorSimple-Gerät vor dem kontrollierten Herunterfahren wichtige Daten speichern. Mit zwei vollständig geladenen Akkus in den PCMs kann das System zwei aufeinanderfolgende Stromausfälle verkraften.
 
-Auf der Seite **Wartung** unter **Hardwarestatus** wird im klassischen Azure-Portal angezeigt, ob der Akku fehlerhaft ist oder ob seine Lebensdauer sich dem Ende zuneigt. Der Akkustatus wird durch +++**Akku in PCM 0** oder **Akku in PCM 1** unter **Gemeinsam genutzte Komponenten** angezeigt. Auf dieser Seite wird der Status **HERUNTERGESTUFT** angezeigt, wenn sich die Lebensdauer dem Ende zuneigt, und **FEHLGESCHLAGEN** zum Ende der Lebensdauer.
+Auf der Seite **Wartung** unter **Hardwarestatus** wird im klassischen Azure-Portal angezeigt, ob der Akku fehlerhaft ist oder ob seine Lebensdauer sich dem Ende zuneigt. Der Akkustatus wird durch +++**Akku in PCM 0** oder **Akku in PCM 1** unter **Gemeinsam genutzte Komponenten** angezeigt. Auf dieser Seite wird der Status **HERUNTERGESTUFT** angezeigt, wenn sich die Lebensdauer dem Ende zuneigt, und **FEHLGESCHLAGEN** zum Ende der Lebensdauer.
 
->[AZURE.NOTE]Der Akku meldet möglicherweise **FEHLGESCHLAGEN**, wenn er lediglich aufgeladen werden muss.
+>[AZURE.NOTE] Der Akku meldet möglicherweise **FEHLGESCHLAGEN**, wenn er lediglich aufgeladen werden muss.
  
 Wenn der Status **HERUNTERGESTUFT** angezeigt wird, empfehlen wir die folgende Vorgehensweise:
 
-- Im System ist möglicherweise kürzlich ein Stromausfall aufgetreten, oder die Akkus werden derzeit eventuell einer Routinewartung unterzogen. Beobachten Sie das System für 12 Stunden, bevor Sie fortfahren.
+- Im System ist möglicherweise kürzlich ein Stromausfall aufgetreten, oder die Akkus werden derzeit eventuell einer Routinewartung unterzogen. Beobachten Sie das System für 12 Stunden, bevor Sie fortfahren.
 
-    - Wenn der Status nach 12 Stunden ununterbrochener Stromversorgung bei aktivem Controller und PCMs immer noch **HERUNTERGESTUFT** ist, muss der Akku ausgetauscht werden. Wenden Sie sich zum Erhalt eines neuen Notfallakkus an [den Microsoft Support](storsimple-contact-microsoft-support.md).
+    - Wenn der Status nach 12 Stunden ununterbrochener Stromversorgung bei aktivem Controller und PCMs immer noch **HERUNTERGESTUFT** ist, muss der Akku ausgetauscht werden. Wenden Sie sich zum Erhalt eines neuen Notfallakkus an [den Microsoft Support](storsimple-contact-microsoft-support.md).
 
-    - Wenn der Status nach 12 Stunden "OK" lautet, ist der Akku betriebsbereit, und es war nur ein Wartungsladezyklus erforderlich.
+    - Wenn der Status nach 12 Stunden "OK" lautet, ist der Akku betriebsbereit, und es war nur ein Wartungsladezyklus erforderlich.
 
 - Wenn kein Stromausfall stattgefunden hat, das PCM eingeschaltet und mit dem Stromnetz verbunden ist, muss der Akku ausgetauscht werden. Wenden Sie sich zum Erhalt eines neuen Notfallakkus an [den Microsoft Support](storsimple-contact-microsoft-support.md).
 
->[AZURE.IMPORTANT]Entsorgen Sie den defekten Akku den geltenden Vorschriften Ihres Landes entsprechend.
+>[AZURE.IMPORTANT] Entsorgen Sie den defekten Akku den geltenden Vorschriften Ihres Landes entsprechend.
 
 ## Nächste Schritte
 
 Weitere Informationen zum [Austauschen von StorSimple-Hardwarekomponenten](storsimple-hardware-component-replacement.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0224_2016-->

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="App-Modell v2.0 iOS-App | Microsoft Azure"
+	pageTitle="Azure AD v2.0: iOS-App | Microsoft Azure"
 	description="Vorgehensweise beim Erstellen einer iOS-App, bei der sich Benutzer sowohl mit ihrem persönlichen Microsoft-Konto als auch ihrem Geschäfts- oder Schulkonto anmelden können."
 	services="active-directory"
 	documentationCenter=""
@@ -13,13 +13,14 @@
 	ms.tgt_pltfrm="mobile-ios"
 	ms.devlang="objective-c"
 	ms.topic="article"
-	ms.date="12/09/2015"
+	ms.date="02/20/2016"
 	ms.author="brandwe"/>
 
-# App-Modell v2. 0 (Vorschauversion): Hinzufügen der Anmeldung zu einer iOS-App
+# Hinzufügen der Anmeldung zu einer iOS-App mit dem v2.0-Endpunkt
 
 Das Schnellstart-Tutorial für iOS ist noch nicht ausgereift... Kommen Sie bald zurück und halten Sie außerdem nach Updates von @AzureAD auf Twitter Ausschau.
 
-> [AZURE.NOTE]Diese Informationen gelten für App-Modell v2.0 (öffentliche Vorschauversion). Anweisungen zum Integrieren in den allgemein verfügbaren Azure AD-Dienst finden Sie im [Azure Active Directory-Entwicklerhandbuch](active-directory-developers-guide.md).
+> [AZURE.NOTE]
+	Nicht alle Szenarios und Funktionen von Azure Active Directory werden vom v2.0-Endpunkt unterstützt. Lesen Sie die Informationen zu den [Einschränkungen des v2.0-Endpunkts](active-directory-v2-limitations.md), um zu bestimmen, ob Sie den v2.0-Endpunkt verwenden sollten.
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0224_2016-->

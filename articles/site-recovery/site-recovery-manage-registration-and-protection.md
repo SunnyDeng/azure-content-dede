@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Aufheben der Registrierung von Servern und Deaktivieren des Schutzes | Microsoft Azure" 
-	description="Azure Site Recovery koordiniert Replikation, Failover und Wiederherstellung virtueller Computer auf lokalen Servern zu Azure oder einem sekundären Rechenzentrum. In diesem Artikel erfahren Sie, wie Sie die Registrierung von Servern im Site Recovery-Tresor aufheben und den Schutz für virtuelle Computer und physische Server deaktivieren." 
+	pageTitle="Entfernen von Servern und Deaktivieren des Schutzes | Microsoft Azure" 
+	description="In diesem Artikel wird erläutert, wie Sie die Registrierung von Servern im Site Recovery-Tresor aufheben und den Schutz für virtuelle Computer und physische Server deaktivieren." 
 	services="site-recovery" 
 	documentationCenter="" 
 	authors="rayne-wiselman" 
@@ -13,16 +13,22 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery" 
-	ms.date="12/14/2015" 
+	ms.date="02/22/2016" 
 	ms.author="raynew"/>
 
-# Aufheben der Registrierung von Servern und Deaktivieren des Schutzes
+# Entfernen von Servern und Deaktivieren des Schutzes
 
-In diesem Artikel erfahren Sie, wie Sie die Registrierung von Servern im Site Recovery-Tresor aufheben und wie Sie den Site Recovery-Schutz für virtuelle Computer deaktivieren. Sollten Sie nach der Lektüre dieses Artikels noch Fragen haben, stellen Sie diese bitte im [Azure Recovery Services-Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
+Der Dienst Azure Site Recovery unterstützt Ihre Strategie für Geschäftskontinuität und Notfallwiederherstellung, indem Replikation, Failover und Wiederherstellung virtueller Computer und physischer Server aufeinander abgestimmt werden. Computer können in Azure oder in einem sekundären lokalen Datencenter repliziert werden. Eine kurze Übersicht über das Gesamtthema finden Sie unter [Was ist Azure Site Recovery?](site-recovery-overview.md)
+
+## Übersicht
+
+In diesem Artikel erfahren Sie, wie Sie die Registrierung von Servern im Site Recovery-Tresor aufheben und wie Sie den Site Recovery-Schutz für virtuelle Computer deaktivieren.
+
+Kommentare oder Fragen können Sie am Ende dieses Artikels oder im [Forum zu Azure Recovery Services](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr) veröffentlichen.
 
 ## Aufheben der Registrierung eines VMM-Servers
 
-Wenn Sie die Registrierung eines VMM-Servers in einem Tresor aufheben möchten, müssen Sie den Server im Azure Site Recovery-Portal auf der Registerkarte **Server** löschen. Beachten Sie Folgendes:
+Wenn Sie die Registrierung eines VMM-Servers in einem Tresor aufheben möchten, müssen Sie den Server im Azure Site Recovery-Portal auf der Registerkarte **Server** löschen. Beachten Sie Folgendes:
 
 -  **Verbundener VMM-Server**: Es empfiehlt sich, die Registrierung des VMM-Servers aufzuheben, während dieser mit Azure verbunden ist. Dadurch wird sichergestellt, dass Einstellungen auf dem lokalen VMM-Server sowie die zugeordneten VMM-Server (VMM-Server mit Clouds, die Clouds auf dem zu löschenden Server zugeordnet sind) ordnungsgemäß bereinigt werden. Nicht verbundene Server sollten nur im Falle eines dauerhaften Konnektivitätsproblems entfernt werden.
 - **Unverbundener VMM-Server**: Wenn der VMM-Server beim Löschen nicht verbunden ist, müssen Sie manuell ein Bereinigungsskript ausführen. Dieses Skript finden Sie im [Microsoft-Katalog](https://gallery.technet.microsoft.com/scriptcenter/Cleanup-Script-for-Windows-95101439). Notieren Sie sich für die manuelle Bereinigung die VMM-ID des Servers.
@@ -42,7 +48,7 @@ Führen Sie auf dem zu entfernenden VMM-Server die folgenden Schritte aus:
 
 Gehen Sie auf VMM-Servern mit Clouds, die mit Clouds auf dem zu entfernenden Server gekoppelt sind, wie folgt vor:
 
-1. Führen Sie das Bereinigungsskript sowie die Schritte 2 bis 4 aus.
+1. Führen Sie das Bereinigungsskript sowie die Schritte 2 bis 4 aus.
 2. Geben Sie die VMM-ID für den VMM-Server an, dessen Registrierung aufgehoben wurde. 
 3. Dieses Skript entfernt die Registrierungsinformationen für den VMM-Server sowie die Informationen zur Cloud-Kopplung.
 
@@ -52,7 +58,7 @@ Gehen Sie auf VMM-Servern mit Clouds, die mit Clouds auf dem zu entfernenden Ser
 Wenn Azure Site Recovery zum Schutz virtueller Computer auf einem Hyper-V-Server an einem Hyper-V-Standort (ohne VMM-Server) bereitgestellt wurde, können Sie die Registrierung eines Hyper-V-Servers im Tresor wie folgt aufheben:
 
 1. Deaktivieren Sie den Schutz für virtuelle Computer auf dem Hyper-V-Server.
-2. Wählen Sie im Azure Site Recovery-Portal auf der Registerkarte **Server** den Server aus, und klicken Sie auf „Löschen“. Der Server muss zu diesem Zeitpunkt nicht mit Azure verbunden sein.
+2. Wählen Sie im Azure Site Recovery-Portal auf der Registerkarte **Server** den Server aus, und klicken Sie auf „Löschen“. Der Server muss zu diesem Zeitpunkt nicht mit Azure verbunden sein.
 3. Führen Sie das folgende Skript aus, um die Einstellungen auf dem Server zu bereinigen und die Registrierung im Tresor aufzuheben: 
 
 	    pushd .
@@ -210,6 +216,8 @@ Wenn Sie den Schutz für eine virtuelle VMware-Maschine oder einen physischen Se
 			- Sie dürfen den Mobilitätsdienst nicht von der virtuellen Maschine deinstallieren.
 	
 	- **Schutz deaktivieren**: Wenn Sie diese Option aktivieren und speichern, wird der Computer nicht mehr durch Site Recovery geschützt. Die Sicherheitseinstellungen für den Computer werden automatisch bereinigt.
-	- **Aus dem Tresor entfernen**: Wenn Sie diese Option auswählen, wird der Computer nur aus dem Site Recovery-Tresor entfernt. Lokale Sicherheitseinstellungen für den Computer sind nicht betroffen. Um die Einstellungen vom Computer und den virtuellen Computer aus dem Azure-Abonnement zu entfernen, müssen Sie die Einstellungen bereinigen, indem Sie den Mobilitätsdienst deinstallieren. ![Optionen entfernen](./media/site-recovery-manage-registration-and-protection/RegistrationProtection_RemoveVM.png)
+	- **Aus dem Tresor entfernen**: Wenn Sie diese Option auswählen, wird der Computer nur aus dem Site Recovery-Tresor entfernt. Lokale Sicherheitseinstellungen für den Computer sind nicht betroffen. Um die Einstellungen vom Computer und den virtuellen Computer aus dem Azure-Abonnement zu entfernen, müssen Sie die Einstellungen bereinigen, indem Sie den Mobilitätsdienst deinstallieren.
+	
+		![Optionen entfernen](./media/site-recovery-manage-registration-and-protection/remove-vm.png)
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0224_2016-->

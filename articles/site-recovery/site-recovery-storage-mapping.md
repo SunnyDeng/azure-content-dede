@@ -13,16 +13,16 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery"
-	ms.date="12/14/2015"
+	ms.date="02/22/2016"
 	ms.author="raynew"/>
 
 
 # Vorbereiten der Speicherzuordnung für die Replikation virtueller Hyper-V-Computer zwischen zwei lokalen Datencentern mithilfe von Azure Site Recovery
 
 
-Azure Site Recovery unterstützt Ihre Strategie für Geschäftskontinuität und Notfallwiederherstellung, indem Replikation, Failover und Wiederherstellung virtueller Computer und physischer Server aufeinander abgestimmt werden. In diesem Artikel wird die Netzwerkzuordnung beschrieben, die zur optimalen Nutzung von Speicher diente, wenn Sie Site Recovery zum Replizieren virtueller Hyper-V-Computer zwischen zwei lokalen Datencentern verwenden.
+Azure Site Recovery unterstützt Ihre Strategie für Geschäftskontinuität und Notfallwiederherstellung, indem Replikation, Failover und Wiederherstellung virtueller Computer und physischer Server aufeinander abgestimmt werden. In diesem Artikel wird die Netzwerkzuordnung beschrieben, die zur optimalen Nutzung von Speicher diente, wenn Sie Site Recovery zum Replizieren virtueller Hyper-V-Computer zwischen zwei lokalen VMM-Rechenzentren verwenden.
 
-Sollten Sie nach der Lektüre dieses Artikels Fragen haben, können Sie diese im [Azure Recovery Services-Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr) stellen.
+Kommentare oder Fragen können Sie am Ende dieses Artikels oder im [Forum zu Azure Recovery Services](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr) veröffentlichen.
 
 ## Übersicht
 
@@ -61,7 +61,7 @@ Chicago | VMM\_Target | | GOLD\_TARGET | Nicht zugeordnet |
 | | | SILVER\_TARGET | Nicht zugeordnet |
  | | | BRONZE\_TARGET | Nicht zugeordnet
 
-Diese Einstellungen werden im Site Recovery-Portal auf der Registerkarte **Serverspeicher** der Seite **Ressourcen** konfiguriert.
+Diese Einstellungen werden im Site Recovery-Portal auf der Registerkarte **Serverspeicher** der Seite **Ressourcen** konfiguriert.
 
 ![Konfigurieren der Speicherzuordnung](./media/site-recovery-storage-mapping/storage-mapping1.png)
 
@@ -84,7 +84,7 @@ New York | GOLD | <p>C:\\ClusterStorage\\SourceVolume1</p><p>\\FileServer\\Sourc
 Chicago | GOLD\_TARGET | <p>C:\\ClusterStorage\\TargetVolume1</p><p>\\FileServer\\TargetShare1</p>
  | SILVER\_TARGET| <p>C:\\ClusterStorage\\TargetVolume2</p><p>\\FileServer\\TargetShare2</p>
 
-Die folgende Tabelle zeigt, was passiert, wenn Sie den Schutz für virtuelle Computer (VM1 - VM5) in dieser Beispielumgebung aktivieren:
+Die folgende Tabelle zeigt, was passiert, wenn Sie den Schutz für virtuelle Computer (VM1 - VM5) in dieser Beispielumgebung aktivieren:
 
 **Virtueller Computer** | **Quellspeicher** | **Quellklassifizierung** | **Zugeordneter Zielspeicher**
 ---|---|---|---
@@ -98,4 +98,4 @@ VM5 | C:\\ClusterStorage\\SourceVolume3 | N/V | Keine Zuordnung, daher Verwendun
 
 Nachdem Sie sich mit der Speicherzuordnung vertraut gemacht haben, können Sie mit der [Azure Site Recovery-Bereitstellung beginnen](site-recovery-best-practices.md).
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0224_2016-->

@@ -204,4 +204,4 @@ In diesem Abschnitt erstellen Sie eine Jenkins-Aufgabe, die auf einen untergeord
 
 Jenkins erstellt dann einen untergeordneten Knoten mithilfe der im vorherigen Abschnitt erstellten Vorlage und führt das Skript aus, das Sie im Buildschritt für diese Aufgabe angegeben haben.
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0224_2016-->

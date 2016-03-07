@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="Java"
 	ms.topic="article"
-	ms.date="12/01/2015"
+	ms.date="02/20/2016"
 	ms.author="rmcmurray"/>
 
 # Lokale Anwendungen mit Blob-Speicher
@@ -26,8 +26,9 @@ Das folgende Beispiel zeigt, wie Sie den Azure-Speicher zur Speicherung von Bild
 
 - Java Developer Kit (JDK), Version 1.6 oder höher ist installiert.
 - Das Azure SDK ist installiert.
-- Die JAR-Datei der Azure-Bibliotheken für Java und alle sonstigen JAR-Abhängigkeiten sind installiert und im Buildpfad Ihres Java-Compilers eingebunden. Weitere Informationen zur Installation der Azure-Bibliotheken für Java finden Sie auf der [Downloadseite des Azure SDK für Java][].
-- Ein Azure-Speicherkonto wurde eingerichtet. Der Code in diesem Artikel verwendet Kontonamen und Kontoschlüssel des Speicherkontos. Unter [Erstellen eines Speicherkontos] finden Sie Informationen zum Einrichten von Speicherkonten, und unter [Verwalten von Speicherkonten][] erfahren Sie, wie Sie Ihren Kontoschlüssel ermitteln können.
+- Die JAR-Datei der Azure-Bibliotheken für Java und alle sonstigen JAR-Abhängigkeiten sind installiert und im Buildpfad Ihres Java-Compilers eingebunden. Weitere Informationen zur Installation der Azure-Bibliotheken für Java finden Sie auf der [Downloadseite des Azure SDK für Java](java-download-azure-sdk.md).
+- Ein Azure-Speicherkonto wurde eingerichtet. Der Code in diesem Artikel verwendet Kontonamen und Kontoschlüssel des Speicherkontos. Unter [Gewusst wie: Erstellen von Speicherkonten](storage-create-storage-account.md#create-a-storage-account) finden Sie Informationen zum Erstellen von Speicherkonten, und unter [Anzeigen und Verwalten von Speicherzugriffsschlüsseln](storage-create-storage-account.md#view-and-copy-storage-access-keys) erfahren Sie, wie Sie den Kontoschlüssel abrufen.
+
 - Sie haben eine lokale Bilddatei unter dem Pfad c:\\myimages\\image1.jpg erstellt. Alternativ können Sie den **FileInputStream**-Konstruktor im Beispiel verändern, um einen anderen Pfad bzw. Dateinamen zu verwenden.
 
 [AZURE.INCLUDE [create-account-note](../../includes/create-account-note.md)]
@@ -347,23 +348,15 @@ Um die **CloudBlobContainer.delete**-Methode aufzurufen, müssen Sie die **Cloud
         }
     }
 
-Eine Übersicht über andere Blobspeicher-Klassen und Methoden finden Sie unter [Verwenden des Blob-Speicherdiensts in Python].
+Eine Übersicht über andere Blob Storage-Klassen und -Methoden finden Sie unter [Gewusst wie: Verwenden von Blob Storage mit Java](storage-java-how-to-use-blob-storage.md).
 
 ## Nächste Schritte
 
 Unter den folgenden Links erhalten Sie weitere Informationen zu komplexeren Speicheraufgaben:
 
-- [Azure Storage-SDK für Java][]
-- [Referenz für Azure Storage-Client-SDKs][]
-- [Azure Storage-REST-API][]
-- [Azure Storage-Teamblog][]
+- [Azure Storage-SDK für Java](https://github.com/azure/azure-storage-java)
+- [Referenz für Azure Storage-Client-SDKs](http://dl.windowsazure.com/storage/javadoc/)
+- [REST-API für Azure-Speicherdienste](https://msdn.microsoft.com/library/azure/dd179355.aspx)
+- [Azure Storage-Teamblog](http://blogs.msdn.com/b/windowsazurestorage/)
 
-  [Downloadseite des Azure SDK für Java]: http://go.microsoft.com/fwlink/?LinkID=525671
-  [Erstellen eines Speicherkontos]: storage-create-storage-account.md#create-a-storage-account
-  [Verwalten von Speicherkonten]: storage-create-storage-account.md#view-copy-and-regenerate-storage-access-keys
-  [Verwenden des Blob-Speicherdiensts in Python]: storage-java-how-to-use-blob-storage.md
-  [Azure Storage-SDK für Java]: https://github.com/azure/azure-storage-java
-  [Referenz für Azure Storage-Client-SDKs]: http://dl.windowsazure.com/storage/javadoc/
-  [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
-
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0224_2016-->

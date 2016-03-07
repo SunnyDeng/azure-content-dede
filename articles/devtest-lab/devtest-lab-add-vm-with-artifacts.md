@@ -13,16 +13,18 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/03/2016"
+	ms.date="02/18/2016"
 	ms.author="tarcher"/>
 
 # Hinzufügen einer VM mit Artefakten zu einem Azure DevTest Lab
+
+> [AZURE.NOTE] Klicken Sie auf den folgenden Link, um das Video zu diesem Artikel anzuzeigen: [Gewusst wie: Erstellen von VMs mit Artefakten in einem DevTest Lab](/documentation/videos/how-to-create-vms-with-artifacts-in-a-devtest-lab).
 
 ## Übersicht
 
 Sie erstellen einen virtuellen Computer in einem DevTest Lab aus einem Azure-Basisimage oder aus einem Image, das Sie in Ihr Lab hochgeladen haben.
 
-Mit DevTest Lab-*Artefakten* können Sie Aktionen angeben, die ausgeführt werden, wenn die VM erstellt wird. Artefaktaktionen können Prozeduren durchführen, z. B. die Ausführung von PowerShell- und Bash-Befehlen, und Software installieren. Mit *Parametern* für Artefakte können Sie das Artefakt für ein bestimmtes Szenario anpassen.
+Mit DevTest Lab-*Artefakten* können Sie Aktionen angeben, die ausgeführt werden, wenn die VM erstellt wird. Artefaktaktionen können Prozeduren durchführen, z. B. die Ausführung von PowerShell- und Bash-Befehlen, und Software installieren. Mit *Parametern* für Artefakte können Sie das Artefakt für ein bestimmtes Szenario anpassen.
 
 Ihr Lab enthält Artefakte aus dem öffentlichen DevTest Lab-Artefaktrepository sowie Artefakte, die erstellt und Ihrem eigenen Artefaktrepository hinzugefügt wurden.
 
@@ -96,6 +98,6 @@ Gehen Sie zum Anzeigen oder Ändern der Parameter ausgewählter Artefakte wie fo
 
 ## Nächste Schritte
 
-Erfahren Sie, wie Sie [benutzerdefinierte Artefakte für Ihre VM erstellen](devtest-lab-artifact-author.md).
+- Erfahren Sie, wie Sie [benutzerdefinierte Artefakte für Ihre VM erstellen](devtest-lab-artifact-author.md).
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0224_2016-->

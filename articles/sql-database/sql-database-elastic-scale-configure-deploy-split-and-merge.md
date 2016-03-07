@@ -4,7 +4,7 @@
 	services="sql-database"  
 	documentationCenter=""
 	authors="sidneyh"
-	manager="jeffreyg"
+	manager="jhubbard"
 	editor=""/>
 
 <tags
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/01/2015"
+	ms.date="02/23/2016"
 	ms.author="sidneyh" />
 
 # Lernprogramm zum Split-Merge-Tool für elastische Datenbanken
@@ -42,11 +42,11 @@ Mit den oben genannten Schritten werden die Split-Merge-Dateien in das aktuelle 
 
 ### Konfiguration des Split-Merge-Diensts
 
-1. Erstellen Sie in dem Ordner, in den Sie die Split/Merge-Komponenten heruntergeladen haben, eine Kopie der Datei **ServiceConfiguration.Template.cscfg**, die zusammen mit **SplitMergeService.cspkg** bereitgestellt wurde, und nennen Sie sie **ServiceConfiguration.cscfg**.
+1. Erstellen Sie in dem Ordner, in den Sie die Split/Merge-Assemblys heruntergeladen haben, eine Kopie der Datei **ServiceConfiguration.Template.cscfg**, die zusammen mit **SplitMergeService.cspkg** bereitgestellt wurde, und benennen Sie sie in **ServiceConfiguration.cscfg** um.
 
-2. Öffnen Sie „ServiceConfiguration.cscfg“ in Ihrem bevorzugten Text-Editor. Wir empfehlen die Verwendung von Visual Studio, da Eingaben, z. B. das Format von Zertifikatfingerabdrücken, von der Software überprüft werden.
+2. Öffnen Sie **ServiceConfiguration.cscfg** in einem Texteditor wie z. B. Visual Studio, der Eingaben wie das Format von Zertifikatfingerabdrücken überprüft.
 
-3. Erstellen Sie entweder eine neue Datenbank, oder wählen Sie eine vorhandene Datenbank als Statusdatenbank für Teilungs-/Zusammenführungsvorgänge (Split/Merge) aus, und rufen Sie die Verbindungszeichenfolge dieser Datenbank ab.
+3. Erstellen Sie eine neue Datenbank, oder wählen Sie eine vorhandene Datenbank als Statusdatenbank für Teilungs-/Zusammenführungsvorgänge (Split/Merge) aus, und rufen Sie die Verbindungszeichenfolge dieser Datenbank ab.
 
 	**Wichtig** Zu diesem Zeitpunkt muss die Statusdatenbank die Sortierreihenfolge "Latin" verwenden (SQL\_Latin1\_General\_CP1\_CI\_AS). Weitere Informationen finden Sie unter [Name der Windows-Sortierreihenfolge (Transact-SQL)](https://msdn.microsoft.com/library/ms188046.aspx).
 
@@ -334,4 +334,4 @@ Wenn Sie keine Anforderungen übermitteln können, wird möglicherweise Folgende
 [5]: ./media/sql-database-elastic-scale-configure-deploy-split-and-merge/storage.png
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0224_2016-->
