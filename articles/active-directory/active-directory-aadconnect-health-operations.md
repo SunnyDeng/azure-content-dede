@@ -106,13 +106,17 @@ Berechtigungen werden erteilt, wenn ein Benutzer Zugriff auf Verzeichnisebene od
 #### Schritt 1: Auswählen des entsprechenden Zugriffsbereichs
 Um einem Benutzer Zugriff auf der Ebene *Alle Dienstinstanzen* innerhalb von Azure AD Connect Health zu gewähren, öffnen Sie das Hauptblatt in Azure AD Connect Health.<br>
 #### Schritt 2: Hinzufügen von Benutzern und Gruppen sowie Zuweisen von Rollen
-1. Klicken Sie im Abschnitt „Konfigurieren“ auf den Bereich „Benutzer“.<br> ![Azure AD Connect Health – RBAC Hauptblatt](./media/active-directory-aadconnect-health/RBAC_main_blade.png)
+1. Klicken Sie im Abschnitt „Konfigurieren“ auf den Bereich „Benutzer“.<br> 
+![Azure AD Connect Health – RBAC Hauptblatt](./media/active-directory-aadconnect-health/RBAC_main_blade.png)
 2. Wählen Sie "Hinzufügen" aus.
-3. Wählen Sie „Rolle“ aus, beispielsweise „Besitzer“<br> ![Azure AD Connect Health – RBAC Benutzer hinzufügen](./media/active-directory-aadconnect-health/RBAC_add.png)
-4. Geben Sie den Namen oder die Kennung des entsprechenden Benutzers oder der Gruppe ein. Sie können einen oder mehrere Benutzer oder Gruppen gleichzeitig auswählen. Klicken Sie auf „Auswählen“. ![Azure AD Connect Health – RBAC Benutzer auswählen](./media/active-directory-aadconnect-health/RBAC_select_users.png)
+3. Wählen Sie „Rolle“ aus, beispielsweise „Besitzer“<br> 
+![Azure AD Connect Health – RBAC Benutzer hinzufügen](./media/active-directory-aadconnect-health/RBAC_add.png)
+4. Geben Sie den Namen oder die Kennung des entsprechenden Benutzers oder der Gruppe ein. Sie können einen oder mehrere Benutzer oder Gruppen gleichzeitig auswählen. Klicken Sie auf „Auswählen“. 
+![Azure AD Connect Health – RBAC Benutzer auswählen](./media/active-directory-aadconnect-health/RBAC_select_users.png)
 5. Klicken Sie auf „OK“.<br>
 
-6. Nach Abschluss der Rollenzuordnung werden die Benutzer und/oder Gruppen in der Liste angezeigt.<br> ![Azure AD Connect Health – RBAC Benutzerliste](./media/active-directory-aadconnect-health/RBAC_user_list.png)
+6. Nach Abschluss der Rollenzuordnung werden die Benutzer und/oder Gruppen in der Liste angezeigt.<br>
+![Azure AD Connect Health – RBAC Benutzerliste](./media/active-directory-aadconnect-health/RBAC_user_list.png)
 
 Diese Schritte ermöglichen den aufgeführten Benutzern und der Gruppe Zugriff basierend auf den zugewiesenen Rollen.
 >[AZURE.NOTE]
@@ -120,13 +124,14 @@ Diese Schritte ermöglichen den aufgeführten Benutzern und der Gruppe Zugriff b
 
 #### Schritt 3: Freigeben des Blattspeicherorts für Benutzer oder Gruppen
 1. Nach dem Zuweisen von Berechtigungen kann ein Benutzer auf Azure AD Connect Health zugreifen, indem er [http://aka.ms/aadconnecthealth](http://aka.ms/aadconnecthealth) aufruft.
-2. Auf dem Blatt kann der Benutzer das Blatt oder verschiedene Teile an das Dashboard heften, indem er auf „An Dashboard anheften“ klickt<br> ![Azure AD Connect Health – RBAC Blatt anhaften](./media/active-directory-aadconnect-health/RBAC_pin_blade.png)
-
+2. Auf dem Blatt kann der Benutzer das Blatt oder verschiedene Teile an das Dashboard heften, indem er auf „An Dashboard anheften“ klickt<br> 
+![Azure AD Connect Health – RBAC Blatt anhaften](./media/active-directory-aadconnect-health/RBAC_pin_blade.png)
 
 >[AZURE.NOTE] Ein Benutzer mit der Rolle "Leser" kann den Vorgang "Erstellen" nicht ausführen, um die Azure AD Connect Health-Erweiterung aus dem Azure Marketplace abzurufen. Dieser Benutzer kann weiterhin über den oben aufgeführten Link auf das Blatt zugreifen. Für nachfolgende Verwendungen kann der Benutzer das Blatt an das Dashboard anheften.
 
 ### Entfernen von Benutzern und/oder Gruppen
-Sie können einen der rollenbasierten Azure AD Connect Health-Zugriffsteuerung hinzugefügten Benutzer oder eine Gruppe entfernen, indem Sie mit der rechten Maustaste darauf klicken und „Entfernen“ auswählen.<br> ![Azure AD Connect Health – RBAC Benutzer entfernen](./media/active-directory-aadconnect-health/RBAC_remove.png)
+Sie können einen der rollenbasierten Azure AD Connect Health-Zugriffsteuerung hinzugefügten Benutzer oder eine Gruppe entfernen, indem Sie mit der rechten Maustaste darauf klicken und „Entfernen“ auswählen.<br> 
+![Azure AD Connect Health – RBAC Benutzer entfernen](./media/active-directory-aadconnect-health/RBAC_remove.png)
 
 [//]: # "Ende des RBAC-Abschnitts"
 

@@ -1,4 +1,11 @@
-<properties pageTitle="Azure AD B2C-Vorschau: Aufrufen von Web-APIs aus einer Android-Anwendung | Microsoft Azure" description="In diesem Artikel wird beschrieben, wie Sie eine Android-App für Aufgabenlisten erstellen, die eine node.js-Web-API mithilfe von OAuth 2.0-Bearertoken aufruft. Sowohl die Android-App als auch die Web-API verwenden Azure AD B2C zum Verwalten von Benutzeridentitäten und zum Authentifizieren von Benutzern." services="active-directory-b2c" documentationCenter="android" authors="brandwe" manager="msmbaldwin" editor=""/>
+<properties
+	pageTitle="Azure AD B2C-Vorschau: Aufrufen von Web-APIs aus einer Android-Anwendung | Microsoft Azure"
+	description="In diesem Artikel wird beschrieben, wie Sie eine Android-App für Aufgabenlisten erstellen, die eine node.js-Web-API mithilfe von OAuth 2.0-Bearertoken aufruft. Sowohl die Android-App als auch die Web-API verwenden Azure AD B2C zum Verwalten von Benutzeridentitäten und zum Authentifizieren von Benutzern."
+	services="active-directory-b2c"
+	documentationCenter="android"
+	authors="brandwe"
+	manager="msmbaldwin"
+	editor=""/>
 
 <tags
 	ms.service="active-directory-b2c"
@@ -191,7 +198,14 @@ public class Constants {
 
 
 ```
-**SCOPES**: Die Bereiche, die wir an den Server übergeben und die wir vom Server für den anzumeldenden Benutzer anfordern möchten. Für B2C Preview übergeben wir die „client\_id“. Zukünftig wird sich dies für das Lesen von Bereichen jedoch ändern. Dieses Dokument wird dann aktualisiert. **ADDITIONAL\_SCOPES**: Hierbei handelt es sich um zusätzliche Bereiche, die Sie möglicherweise für Ihre Anwendung verwenden möchten. Wird zukünftig verwendet. **CLIENT\_ID**: Die Anwendungs-ID, die Sie aus dem Portal erhalten haben. **REDIRECT\_URL**: Die Umleitung, die für das Postback des Tokens erwartet wird. **EXTRA\_QP**: Alle anderen Daten, die Sie im URL-codierten Format an den Server übergeben möchten. **FB\_POLICY**: Die Richtlinie, die Sie aufrufen. Der wichtigste Teil dieser exemplarischen Vorgehensweise. **EMAIL\_SIGNIN\_POLICY**: Die Richtlinie, die Sie aufrufen. Der wichtigste Teil dieser exemplarischen Vorgehensweise. **EMAIL\_SIGNUP\_POLICY**: Die Richtlinie, die Sie aufrufen. Der wichtigste Teil dieser exemplarischen Vorgehensweise.
+**SCOPES**: Die Bereiche, die wir an den Server übergeben und die wir vom Server für den anzumeldenden Benutzer anfordern möchten. Für B2C Preview übergeben wir die „client\_id“. Zukünftig wird sich dies für das Lesen von Bereichen jedoch ändern. Dieses Dokument wird dann aktualisiert.
+**ADDITIONAL\_SCOPES**: Hierbei handelt es sich um zusätzliche Bereiche, die Sie möglicherweise für Ihre Anwendung verwenden möchten. Wird zukünftig verwendet.
+**CLIENT\_ID**: Die Anwendungs-ID, die Sie aus dem Portal erhalten haben.
+**REDIRECT\_URL**: Die Umleitung, die für das Postback des Tokens erwartet wird.
+**EXTRA\_QP**: Alle anderen Daten, die Sie im URL-codierten Format an den Server übergeben möchten.
+**FB\_POLICY**: Die Richtlinie, die Sie aufrufen. Der wichtigste Teil dieser exemplarischen Vorgehensweise.
+**EMAIL\_SIGNIN\_POLICY**: Die Richtlinie, die Sie aufrufen. Der wichtigste Teil dieser exemplarischen Vorgehensweise.
+**EMAIL\_SIGNUP\_POLICY**: Die Richtlinie, die Sie aufrufen. Der wichtigste Teil dieser exemplarischen Vorgehensweise.
 
 ### Schritt 7: Hinzufügen von Verweisen auf die ADAL für Android zum Projekt
 
@@ -893,7 +907,16 @@ Zuerst schreiben wir unser `getTask`-Element:
  
  **In derselben Datei** mit dem Namen `ToDoActivity.java`
  
- ``` private URL getEndpointUrl() { URL endpoint = null; try { endpoint = new URL(Constants.SERVICE\_URL); } catch (MalformedURLException e) { e.printStackTrace(); } return endpoint; }
+ ```
+    private URL getEndpointUrl() {
+        URL endpoint = null;
+        try {
+            endpoint = new URL(Constants.SERVICE\_URL);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        return endpoint;
+    }
 
  ```
 
@@ -978,12 +1001,14 @@ Mit ADAL werden die Token verschlüsselt und standardmäßig unter SharedPrefere
 
 #### Sitzungscookies in Webview
 
-In Android Webview werden Sitzungscookies nach dem Schließen der App nicht gelöscht. Sie können dies mit dem unten angegebenen Beispielcode behandeln: ```
+In Android Webview werden Sitzungscookies nach dem Schließen der App nicht gelöscht. Sie können dies mit dem unten angegebenen Beispielcode behandeln:
+```
 CookieSyncManager.createInstance(getApplicationContext());
 CookieManager cookieManager = CookieManager.getInstance();
 cookieManager.removeSessionCookie();
 CookieSyncManager.getInstance().sync();
-``` Weitere Informationen zu Cookies: http://developer.android.com/reference/android/webkit/CookieSyncManager.html
+```
+Weitere Informationen zu Cookies: http://developer.android.com/reference/android/webkit/CookieSyncManager.html
  
 
 <!---HONumber=AcomDC_0224_2016-->

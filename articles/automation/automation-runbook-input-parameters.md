@@ -131,7 +131,8 @@ In der Beschriftung unter dem Eingabefeld können Sie sehen, welche Attribute f�
 
     **Beispiel:**
 
-      ``` $params = @{„VMName“=„WSVMClassic“; „ServiceName“=„WSVMClassicSG“}
+      ```
+        $params = @{„VMName“=„WSVMClassic“; „ServiceName“=„WSVMClassicSG“}
 
         Start-AzureAutomationRunbook -AutomationAccountName “TestAutomation” -Name “Get-AzureVMGraphical” -Parameters $params
       ```
@@ -141,7 +142,8 @@ In der Beschriftung unter dem Eingabefeld können Sie sehen, welche Attribute f�
 
     **Beispiel:**
 
-      ``` $params = @{„VMName“=„WSVMClassic“;„ServiceName“=„WSVMClassicSG“}
+      ```
+        $params = @{„VMName“=„WSVMClassic“;„ServiceName“=„WSVMClassicSG“}
 
         Start-AzureRmAutomationRunbook -AutomationAccountName “TestAutomationRG” -Name “Get-AzureVMGraphical” –ResourceGroupName “RG1” -Parameters $params
       ```

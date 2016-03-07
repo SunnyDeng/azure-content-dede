@@ -467,23 +467,23 @@ Weitere Informationen finden Sie unter [Verwenden interaktiver Befehle zur Probl
 |Typ|Befehl|Beschreibung|
 |---|---|---|
 |**iSCSI**|`service iscsid start`|Starten des iSCSI-Diensts|
-|`service iscsid stop`|Beenden des iSCSI-Diensts|
-|`service iscsid restart`|Neustarten des iSCSI-Diensts|
-|`iscsiadm -m discovery -t sendtargets -p <TARGET_IP>`|Ermitteln verfügbarer Ziele für die angegebene Adresse|
-|`iscsiadm -m node --login -T <TARGET_IQN>`|Anmelden am iSCSI-Ziel|
-|`iscsiadm -m node --logout -p <Target_IP>`|Abmelden vom iSCSI-Ziel|
-|`cat /etc/iscsi/initiatorname.iscsi`|Drucken des iSCSI-Initiatornamens|
-|`iscsiadm –m session –s <sessionid> -P 3`|Überprüfen des Status der iSCSI-Sitzung und des auf dem Host ermittelten Volumes|
-|`iscsi –m session`|Zeigt alle iSCSI-Sitzungen zwischen dem Host und dem StorSimple-Gerät|
+||`service iscsid stop`|Beenden des iSCSI-Diensts|
+||`service iscsid restart`|Neustarten des iSCSI-Diensts|
+||`iscsiadm -m discovery -t sendtargets -p <TARGET_IP>`|Ermitteln verfügbarer Ziele für die angegebene Adresse|
+||`iscsiadm -m node --login -T <TARGET_IQN>`|Anmelden am iSCSI-Ziel|
+||`iscsiadm -m node --logout -p <Target_IP>`|Abmelden vom iSCSI-Ziel|
+||`cat /etc/iscsi/initiatorname.iscsi`|Drucken des iSCSI-Initiatornamens|
+||`iscsiadm –m session –s <sessionid> -P 3`|Überprüfen des Status der iSCSI-Sitzung und des auf dem Host ermittelten Volumes|
+||`iscsi –m session`|Zeigt alle iSCSI-Sitzungen zwischen dem Host und dem StorSimple-Gerät|
 | | | |
 |**Multipfad**|`service multipathd start`|Starten des Multipfad-Daemons|
-|`service multipathd stop`|Beenden des Multipfad-Daemons|
-|`service multipathd restart`|Neustarten des Multipfad-Daemons|
-|`chkconfig multipathd on` </br> ODER </br> `mpathconf –with_chkconfig y`|Aktivieren des Multipfad-Daemons beim Systemstart|
-|`multipathd –k`|Starten der interaktiven Konsole für die Problembehandlung|
-|`multipath –l`|Auflisten von Multipfad-Verbindungen und -Geräten|
-|`mpathconf --enable`|Erstellen einer Beispiel-Multipfad-Konfigurationsdatei in `/etc/mulitpath.conf`|
-|
+||`service multipathd stop`|Beenden des Multipfad-Daemons|
+||`service multipathd restart`|Neustarten des Multipfad-Daemons|
+||`chkconfig multipathd on` </br> ODER </br> `mpathconf –with_chkconfig y`|Aktivieren des Multipfad-Daemons beim Systemstart|
+||`multipathd –k`|Starten der interaktiven Konsole für die Problembehandlung|
+||`multipath –l`|Auflisten von Multipfad-Verbindungen und -Geräten|
+||`mpathconf --enable`|Erstellen einer Beispiel-Multipfad-Konfigurationsdatei in `/etc/mulitpath.conf`|
+||||
 
 ## Nächste Schritte
 

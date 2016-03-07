@@ -20,8 +20,9 @@
 
 [AZURE.INCLUDE [active-directory-b2c-preview-note](../../includes/active-directory-b2c-preview-note.md)]
 
-
-> [AZURE.NOTE] Dieser Artikel behandelt nicht das Implementieren der Anmeldung, Registrierung und Profilverwaltung mit Azure AD B2C. Der Schwerpunkt liegt auf dem Aufrufen von Web-APIs, nachdem der Benutzer authentifiziert wurde. Wenn nicht bereits erfolgt, sollten Sie mit dem [Tutorial „Erste Schritte mit .NET-Web-App“](active-directory-b2c-devquickstarts-web-dotnet.md) beginnen, um Informationen zu den Grundlagen von Azure Active Directory B2C zu erhalten.
+> [AZURE.NOTE]
+	Dieser Artikel behandelt nicht das Implementieren der Anmeldung, Registrierung und Profilverwaltung mit Azure AD B2C. Der Schwerpunkt liegt auf dem Aufrufen von Web-APIs, nachdem der Benutzer authentifiziert wurde. 
+Wenn nicht bereits erfolgt, sollten Sie mit dem [Tutorial „Erste Schritte mit .NET-Web-App“](active-directory-b2c-devquickstarts-web-dotnet.md) beginnen, um Informationen zu den Grundlagen von Azure Active Directory B2C zu erhalten.
 
 
 > [AZURE.NOTE]	Dieses Beispiel wurde geschrieben, um es mit unserer [iOS B2C-Beispielanwendung](active-directory-b2c-devquickstarts-ios.md) zu verbinden. Führen Sie zunächst diese exemplarische Vorgehensweise durch, und machen Sie dann mit dem Beispiel weiter.

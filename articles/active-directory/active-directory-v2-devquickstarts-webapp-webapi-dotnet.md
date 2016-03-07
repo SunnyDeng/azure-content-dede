@@ -109,7 +109,9 @@ In der `AuthorizationCodeReceived`-Benachrichtigung möchten wir [OAuth 2.0 zusa
 
 - Installieren Sie zunächst die Vorschauversion von ADAL:
 
-```PM> Install-Package Microsoft.Experimental.IdentityModel.Clients.ActiveDirectory -ProjectName TodoList-WebApp -IncludePrerelease``` – Und fügen Sie eine weitere `using`-Anweisung zu der `App_Start\Startup.Auth.cs`-Datei für ADAL hinzu. – Fügen Sie nun eine neue Methode hinzu, den `OnAuthorizationCodeReceived`-Ereignishandler. Dieser Handler nutzt ADAL zum Abrufen eines Zugriffstokens auf die To-Do List-API und speichert das Token im Tokencache von ADAL für spätere Zwecke:
+```PM> Install-Package Microsoft.Experimental.IdentityModel.Clients.ActiveDirectory -ProjectName TodoList-WebApp -IncludePrerelease```
+– Und fügen Sie eine weitere `using`-Anweisung zu der `App_Start\Startup.Auth.cs`-Datei für ADAL hinzu.
+– Fügen Sie nun eine neue Methode hinzu, den `OnAuthorizationCodeReceived`-Ereignishandler. Dieser Handler nutzt ADAL zum Abrufen eines Zugriffstokens auf die To-Do List-API und speichert das Token im Tokencache von ADAL für spätere Zwecke:
 
 ```C#
 private async Task OnAuthorizationCodeReceived(AuthorizationCodeReceivedNotification notification)
@@ -191,6 +193,8 @@ Als Referenz stellen wir [hier](https://github.com/AzureADQuickStarts/AppModelv2
 
 ## Nächste Schritte
 
-Weitere Ressourcen: - [v2.0-Entwicklerhandbuch >>](active-directory-appmodel-v2-overview.md) - [StackOverflow-Tag „adal“ >>](http://stackoverflow.com/questions/tagged/adal)
+Weitere Ressourcen: 
+- [v2.0-Entwicklerhandbuch >>](active-directory-appmodel-v2-overview.md) 
+- [StackOverflow-Tag „adal“ >>](http://stackoverflow.com/questions/tagged/adal)
 
 <!---HONumber=AcomDC_0224_2016-->

@@ -121,7 +121,10 @@ Sie können Benutzer problemlos hinzufügen und ihnen bestimmte Rollen für Ihre
 
 ## Weitere Informationen
 
-[Überwachen von Logik-App](app-service-logic-monitor-your-logic-apps.md)<br/>[Liste der Connectors und API-Apps in Microsoft Azure App Service](app-service-logic-connectors-list.md)<br/>[Rollenbasierte Zugriffssteuerung über das Microsoft Azure-Portal](../active-directory/role-based-access-control-configure.md)<br/>[Verwenden des Hybrid Connection Managers in Azure App Service](app-service-logic-hybrid-connection-manager.md)
+[Überwachen von Logik-App](app-service-logic-monitor-your-logic-apps.md)<br/> 
+[Liste der Connectors und API-Apps in Microsoft Azure App Service](app-service-logic-connectors-list.md)<br/>
+[Rollenbasierte Zugriffssteuerung über das Microsoft Azure-Portal](../active-directory/role-based-access-control-configure.md)<br/>
+[Verwenden des Hybrid Connection Managers in Azure App Service](app-service-logic-hybrid-connection-manager.md)
 
 
 <!--Image references-->

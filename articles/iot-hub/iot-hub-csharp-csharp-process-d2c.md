@@ -91,15 +91,15 @@ Weitere Informationen zu IoT Hub:
 
 <!-- Links -->
 
-[Azure Blob storage]: https://azure.microsoft.com/de-DE/documentation/articles/storage-dotnet-how-to-use-blobs/
+[Azure Blob storage]: https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/
 [Azure Data Factory]: https://azure.microsoft.com/de-DE/documentation/services/data-factory/
-[HDInsight (Hadoop)]: https://azure.microsoft.com/de-DE/documentation/services/hdinsight/
+[HDInsight (Hadoop)]: https://azure.microsoft.com/documentation/services/hdinsight/
 [Service Bus-Warteschlange]: https://azure.microsoft.com/de-DE/documentation/articles/service-bus-dotnet-how-to-use-queues/
 [EventProcessorHost]: http://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventprocessorhost(v=azure.95).aspx
 
 
 
-[Entwicklungsleitfaden für Azure IoT Hub – Device to Cloud (D2C)]: https://azure.microsoft.com/de-DE/documentation/articles/iot-hub-devguide/#d2c
+[Entwicklungsleitfaden für Azure IoT Hub – Device to Cloud (D2C)]: https://azure.microsoft.com/documentation/articles/iot-hub-devguide/#d2c
 
 [Azure Storage]: https://azure.microsoft.com/de-DE/documentation/services/storage/
 [Azure Service Bus]: https://azure.microsoft.com/de-DE/documentation/services/service-bus/
@@ -107,6 +107,7 @@ Weitere Informationen zu IoT Hub:
 
 
 [Senden von C2D-Nachrichten mit IoT Hub]: iot-hub-csharp-csharp-c2d.md
+
 [Hochladen von Dateien von Geräten]: iot-hub-csharp-csharp-file-upload.md
 
 [Übersicht zu IoT Hub]: iot-hub-what-is-iot-hub.md

@@ -41,17 +41,25 @@ Der Edifact-Connector kann als Trigger oder als Aktion verwendet werden.
 
 ### Trigger
 - Starten Sie den Azure-Datenfluss-Designer für Logik-Apps.
-- Klicken Sie im rechten Bereich auf den Edifact-Connector: ![Triggereinstellungen][3]
-- Klicken Sie auf ->: ![Triggeroptionen][4]
-- Der EDIFACT-Connector stellt einen einzelnen Trigger bereit. Wählen Sie *Batch veröffentlichen* aus: ![Eingabe für Release Batch][5]
-- Dieser Trigger weist keine Eingaben auf. Klicken Sie auf ->: ![Release Batch konfiguriert][6]
+- Klicken Sie im rechten Bereich auf den Edifact-Connector:  
+![Triggereinstellungen][3]
+- Klicken Sie auf ->:  
+![Triggeroptionen][4]
+- Der EDIFACT-Connector stellt einen einzelnen Trigger bereit. Wählen Sie *Batch veröffentlichen* aus:  
+![Eingabe für Release Batch][5]
+- Dieser Trigger weist keine Eingaben auf. Klicken Sie auf ->:  
+![Release Batch konfiguriert][6]
 - Im Rahmen der Ausgabe gibt der Connector die Edifact-Nutzlast, die Vereinbarungs-ID sowie Informationen dazu zurück, ob die Nachricht als Batch ausgeführt wird.
 
 ### Aktion
-- Klicken Sie im rechten Bereich auf den Edifact-Connector: ![Aktionseinstellungen][7]
-- Klicken Sie auf ->: ![Liste der Aktionen][8]
-- Der Edifact-Connector unterstützt zahlreiche Aktionen. Wählen Sie *Codieren* aus: ![Eingabe codieren][9]
-- Nehmen Sie die Eingaben für die Aktion vor, und konfigurieren Sie sie: ![Konfigurierte Elemente codieren][10]
+- Klicken Sie im rechten Bereich auf den Edifact-Connector:  
+![Aktionseinstellungen][7]
+- Klicken Sie auf ->:  
+![Liste der Aktionen][8]
+- Der Edifact-Connector unterstützt zahlreiche Aktionen. Wählen Sie *Codieren* aus:  
+![Eingabe codieren][9]
+- Nehmen Sie die Eingaben für die Aktion vor, und konfigurieren Sie sie:  
+![Konfigurierte Elemente codieren][10]
 
 	Parameter|Typ|Beschreibung des Parameters
 ---|---|---
