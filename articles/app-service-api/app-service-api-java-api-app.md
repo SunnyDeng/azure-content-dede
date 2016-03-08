@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="java"
 	ms.topic="get-started-article"
-	ms.date="11/27/2015"
+	ms.date="02/22/2016"
 	ms.author="bradygaster"/>
 
 # Erstellen und Bereitstellen einer Java-API-App in Azure App Service
@@ -195,14 +195,14 @@ In diesem Abschnitt ersetzen Sie die serverseitige Implementierung des generiert
             }
   
             @Override
-            public Response contactsGet()
+            public Response contactsGet(SecurityContext securityContext)
             throws NotFoundException {
                 ArrayList<Contact> list = loadContacts();
                 return Response.ok().entity(list).build();
                 }
   
             @Override
-            public Response contactsGetById(Integer id)
+            public Response contactsGetById(Integer id, SecurityContext securityContext)
             throws NotFoundException {
                 ArrayList<Contact> list = loadContacts();
                 Contact ret = null;
@@ -295,4 +295,4 @@ Aufbauend auf diesem Beispiel können Sie mehr über das [Storage SDK für Java]
 
 Weitere Informationen zum Verwenden von Java in Azure finden Sie im [Java Developer Center](/develop/java/).
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0302_2016-->

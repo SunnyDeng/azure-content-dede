@@ -20,6 +20,8 @@
 
 ## Übersicht ##
 Sie können den Zugriff auf Ihre Azure-Web-App einschränken, indem Sie verschiedene Arten von Authentifizierung für sie aktivieren. Eine Möglichkeit hierzu ist die Authentifizierung mithilfe eines Clientzertifikats, wenn die Anforderung über TLS/SSL erfolgt. Dieser Mechanismus wird gegenseitige TLS-Authentifizierung oder Clientzertifikatauthentifizierung genannt. In diesem Artikel wird das Einrichten Ihrer Web-App für die Clientzertifikatauthentifizierung ausführlich beschrieben.
+> **Hinweis:** Wenn Sie über HTTP und nicht HTTPS auf Ihre Website zugreifen, erhalten Sie kein Clientzertifikat. Wenn Ihre Anwendung also Clientzertifikate erfordert, sollten Sie keine Anfragen an Ihre Anwendung über HTTP zulassen.
+> 
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
@@ -39,7 +41,7 @@ Passen Sie den Wert von "location" an die Region Ihrer Web-App an, z. B. USA, No
 
 
 ## Zugreifen auf das Clientzertifikat in Web-Apps ##
-Wenn Ihre Web-App für das Verwenden der Clientzertifikatauthentifizierung konfiguriert ist, steht das Clientzertifikat Ihrer App über einen mit base64 codierten Wert im Anforderungsheader "X-ARR-ClientCert" zur Verfügung. Ihre Anwendung kann anhand dieses Werts ein Zertifikat erstellen und es für Authentifizierungs- und Autorisierungszwecke in Ihrer Anwendung verwenden.
+Wenn Sie ASP.NET verwenden und Ihre App für die Authentifizierung mit Clientzertifikaten konfigurieren, ist das Zertifikat über die **HttpRequest.ClientCertificate**-Eigenschaft verfügbar. Für andere Anwendungsstapel steht das Clientzertifikat Ihrer App über einen mit Base64 codierten Wert im Anforderungsheader „X-ARR-ClientCert“ zur Verfügung. Ihre Anwendung kann anhand dieses Werts ein Zertifikat erstellen und es für Authentifizierungs- und Autorisierungszwecke in Ihrer Anwendung verwenden.
 
 ## Besondere Aspekte bei der Zertifikatüberprüfung ##
 Das Clientzertifikat, das an die Anwendung gesendet wird, durchläuft keinerlei Überprüfung seitens der Azure Web Apps-Plattform. Für das Überprüfen dieses Zertifikats ist die Web-App zuständig. Hier ist ASP.NET-Beispielcode, mit dem die Zertifikateigenschaften zum Zweck der Authentifizierung überprüft werden.
@@ -121,7 +123,7 @@ Das Clientzertifikat, das an die Anwendung gesendet wird, durchläuft keinerlei 
                 if (certificate == null || !String.IsNullOrEmpty(errorString)) return false;
                 
                 // 1. Check time validity of certificate
-                if (DateTime.Compare(DateTime.Now, certificate.NotBefore) < 0 && DateTime.Compare(DateTime.Now, certificate.NotAfter) > 0) return false;
+                if (DateTime.Compare(DateTime.Now, certificate.NotBefore) < 0 || DateTime.Compare(DateTime.Now, certificate.NotAfter) > 0) return false;
                 
                 // 2. Check subject name of certificate
                 bool foundSubject = false;
@@ -179,4 +181,4 @@ Das Clientzertifikat, das an die Anwendung gesendet wird, durchläuft keinerlei 
         }
     }
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0224_2016-->

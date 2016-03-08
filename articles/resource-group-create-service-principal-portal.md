@@ -24,7 +24,7 @@ Bei Verwendung eines automatisierten Prozesses oder einer automatisierten Anwend
 In diesem Thema wird erklärt, wie eine neue Anwendung und ein neuer Dienstprinzipal mithilfe des klassischen Portals erstellt werden. Derzeit müssen Sie das klassische Portal zum Erstellen einer neuen Active Directory-Anwendung verwenden. Das Azure-Portal wird in einer späteren Version um diese Möglichkeit erweitert. Im Portal können Sie die Anwendung einer Rolle zuweisen. Sie können diese Schritte auch über Azure PowerShell oder Azure CLI ausführen. Informationen zur Verwendung von PowerShell oder CLI mit dem Dienstprinzipal finden Sie unter [Authentifizieren eines Dienstprinzipals mit dem Azure-Ressourcen-Manager](resource-group-authenticate-service-principal.md).
 
 ## Konzepte
-1. Azure Active Directory (AAD) - ein Cloud-Dienst für Identitäts- und Zugriffsverwaltung. Weitere Informationen finden Sie unter [Was ist das Azure Active Directory](active-directory/active-directory-whatis.md)
+1. Azure Active Directory (AAD) - ein Cloud-Dienst für Identitäts- und Zugriffsverwaltung. Weitere Informationen finden Sie unter [Was ist Azure Active Directory](active-directory/active-directory-whatis.md)
 2. Dienstprinzipal - ein Anwendungsbeispiel in einem Verzeichnis.
 3. AD-Anwendung - ein Verzeichnisdatensatz im AAD, der eine Anwendung für AAD identifiziert. 
 
@@ -229,4 +229,4 @@ Sie können das Token im Anforderungsheader mit dem folgenden Code übergeben:
 [12]: ./media/resource-group-create-service-principal-portal/add-icon.png
 [13]: ./media/resource-group-create-service-principal-portal/save-icon.png
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0224_2016-->

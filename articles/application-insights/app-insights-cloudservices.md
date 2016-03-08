@@ -59,7 +59,7 @@ Als Alternative könnten Sie Daten aus allen Rollen an nur eine Ressource senden
     ![Klicken Sie mit der rechten Maustaste auf das Projekt, und wählen Sie "NuGet-Pakete verwalten".](./media/app-insights-cloudservices/03-nuget.png)
 
 
-2. Fügen Sie das NuGet-Paket [Application Insights for Web](http://www.nuget.org/packages/Microsoft.ApplicationInsights.Web) hinzu. Diese Version des SDK enthält Module, die Serverkontext wie z. B. Rolleninformationen hinzufügen. Verwenden Sie für Workerrollen Application Insights für Windows-Dienste.
+2. Fügen Sie das NuGet-Paket [Application Insights for Web](http://www.nuget.org/packages/Microsoft.ApplicationInsights.Web) hinzu. Diese Version des SDK enthält Module, die Serverkontext wie z. B. Rolleninformationen hinzufügen. Verwenden Sie für Workerrollen Application Insights für Windows-Dienste.
 
     ![Suchen Sie nach "Application Insights".](./media/app-insights-cloudservices/04-ai-nuget.png)
 
@@ -169,7 +169,7 @@ Wenn Sie jedoch bereits das Log4N- oder NLog-Framework verwenden, können Sie au
 
 ## Abhängigkeiten
 
-Das Application Insights-SDK kann Aufrufe melden, die Ihre App an externe Abhängigkeiten sendet, z. B. an REST-APIs und SQL-Server. Auf diese Weise können Sie feststellen, ob eine bestimmte Abhängigkeit langsame Antworten oder Fehler verursacht.
+Das Application Insights-SDK kann Aufrufe melden, die Ihre App an externe Abhängigkeiten sendet, z. B. an REST-APIs und SQL-Server. Auf diese Weise können Sie feststellen, ob eine bestimmte Abhängigkeit langsame Antworten oder Fehler verursacht.
 
 Um Abhängigkeiten nachzuverfolgen, müssen Sie die Web- oder Workerrolle mit dem [Application Insights-Agent](app-insights-monitor-performance-live-website-now.md) einrichten, der auch als "Statusmonitor" bezeichnet wird.
 
@@ -197,10 +197,10 @@ Hier ein Beispiel für die Ansicht im Application Insights-Portal:
 
 Informationen zum Sammeln von Ausnahmefehlern von verschiedenen Webanwendungstypen finden Sie unter [Monitoring Exceptions in Application Insights](app-insights-asp-net-exceptions.md) (in englischer Sprache).
 
-Die Beispielwebrolle verfügt über MVC5- und Web-API 2-Controller. Die Ausnahmefehler von beiden werden wie folgt erfasst:
+Die Beispielwebrolle verfügt über MVC5- und Web-API 2-Controller. Die Ausnahmefehler von beiden werden wie folgt erfasst:
 
 * [AiHandleErrorAttribute](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/MvcWebRole/Telemetry/AiHandleErrorAttribute.cs), wird [hier](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/MvcWebRole/App_Start/FilterConfig.cs#L12) für MVC5-Controller eingerichtet
-* [AiWebApiExceptionLogger](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/MvcWebRole/Telemetry/AiWebApiExceptionLogger.cs), wird [hier](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/MvcWebRole/App_Start/WebApiConfig.cs#L25) für Web-API 2-Controller eingerichtet
+* [AiWebApiExceptionLogger](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/MvcWebRole/Telemetry/AiWebApiExceptionLogger.cs), wird [hier](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/MvcWebRole/App_Start/WebApiConfig.cs#L25) für Web-API 2-Controller eingerichtet
 
 Für Workerrollen gibt es zwei Möglichkeiten zum Nachverfolgen von Ausnahmen.
 
@@ -258,6 +258,10 @@ Das ist alles! Die Portalfunktionalität ist bereits angeschlossen, damit Sie al
 
 [In diesem Beispiel](https://github.com/Microsoft/ApplicationInsights-Home/tree/master/Samples/AzureEmailService) wird ein Dienst mit einer Webrolle und zwei Workerrollen überwacht.
 
+## Ausnahme „Methode nicht gefunden“ bei der Ausführung in Azure Cloud Services
+
+Haben Sie für .NET 4.6 erstellt? 4.6 wird nicht automatisch in Azure Cloud Services-Rollen unterstützt. [Installieren Sie 4.6 für jede Rolle](../cloud-services/cloud-services-dotnet-install-dotnet.md), bevor Sie Ihre App ausführen.
+
 ## Verwandte Themen
 
 * [Konfigurieren der Azure-Diagnose zum Protokollieren in Application Insights](app-insights-azure-diagnostics.md)
@@ -279,4 +283,4 @@ Das ist alles! Die Portalfunktionalität ist bereits angeschlossen, damit Sie al
 [redfield]: app-insights-monitor-performance-live-website-now.md
 [start]: app-insights-overview.md
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0224_2016-->

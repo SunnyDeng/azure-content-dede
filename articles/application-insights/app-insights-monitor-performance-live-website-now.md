@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="02/18/2016"
+	ms.date="03/01/2016"
 	ms.author="awills"/>
 
 
@@ -35,7 +35,7 @@ Bei der Anwendung von Application Insights auf die IIS-Webanwendungen können Si
 * **Laufzeit:** Verwenden Sie den Statusmonitor zum Instrumentieren Ihrer Web-App auf dem Server.
  * Überwachen von Web-Apps, die bereits ausgeführt werden. Es ist nicht erforderlich, sie neu zu erstellen oder erneut zu veröffentlichen.
  * Eine Reihe von Standardtelemetriedaten zur Diagnose und Nutzung.
- * Abhängigkeitsdiagnose – Ermitteln Sie Fehler oder eine schlechte Leistung, wenn Ihre Anwendung andere Komponenten wie z. B. Datenbanken, REST-APIs oder andere Dienste verwendet.
+ * Abhängigkeitsdiagnose – Ermitteln Sie Fehler oder eine schlechte Leistung, wenn Ihre Anwendung andere Komponenten wie z. B. Datenbanken, REST-APIs oder andere Dienste verwendet.
  * Beheben von Problemen mit der Telemetrie.
 * **Beides:** Kompilieren Sie das SDK in Ihrem Web-App-Code, und führen Sie den Statusmonitor auf Ihrem Webserver aus. Die Vorteile beider Ansätze:
  * Standardtelemetriedaten zur Diagnose und Nutzung.
@@ -46,7 +46,7 @@ Bei der Anwendung von Application Insights auf die IIS-Webanwendungen können Si
 
 ## Installieren des Application Insights-Statusmonitors
 
-Sie benötigen ein [Microsoft Azure](http://azure.com)-Abonnement.
+Sie benötigen ein [Microsoft Azure](http://azure.com)-Abonnement.
 
 ### Wenn Ihre App auf Ihrem IIS-Server ausgeführt wird
 
@@ -87,7 +87,7 @@ Nach Abschluss des Assistenten können Sie die Konfiguration des Agenten später
 
 ### Wenn Ihre App als Azure-Web-App ausgeführt wird
 
-Fügen Sie in der Systemsteuerung Ihrer Azure-Web-App die Application Insights-Erweiterung hinzu.
+Fügen Sie in der Systemsteuerung Ihrer Azure-Web-App die Application Insights-Erweiterung hinzu.
 
 ![In der Web-App: "Einstellungen" > "Erweiterungen" > "Hinzufügen" > "Application Insights"](./media/app-insights-monitor-performance-live-website-now/05-extend.png)
 
@@ -147,16 +147,14 @@ Sie müssen einige ausgehende Ports in der Firewall des Servers öffnen, damit d
 
 + Telemetrie – die folgenden sind jederzeit erforderlich:
  +	`dc.services.visualstudio.com:80`
- +	`f5.services.visualstudio.com:80`
  +	`dc.services.visualstudio.com:443`
- +	`f5.services.visualstudio.com:443`
- +	`dc.services.vsallin.net:443`
+ +	`dc.applicationinsights.microsoft.com`
 + Konfiguration – nur erforderlich, wenn Änderungen vorgenommen werden:
  -	`management.core.windows.net:443`
  -	`management.azure.com:443`
  -	`login.windows.net:443`
  -	`login.microsoftonline.com:443`
- -	`secure.aadcdn.microsoftonline-p.com:443`
+ -	`secure.addcdn.microsoftonline-p.com:443`
  -	`auth.gfx.ms:443`
  -	`login.live.com:443`
 + Installation:
@@ -221,4 +219,4 @@ IIS-Unterstützung: IIS 7, 7.5, 8, 8.5 (IIS ist erforderlich)
 [roles]: app-insights-resources-roles-access-control.md
 [usage]: app-insights-web-track-usage.md
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

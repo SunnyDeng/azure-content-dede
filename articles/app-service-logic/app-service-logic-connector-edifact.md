@@ -4,7 +4,7 @@
    services="app-service\logic" 
    documentationCenter=".net,nodejs,java" 
    authors="rajeshramabathiran" 
-   manager="dwrede" 
+   manager="erikre" 
    editor=""/>
 
 <tags
@@ -13,10 +13,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration" 
-   ms.date="12/17/2015"
+   ms.date="02/10/2016"
    ms.author="rajram"/>
 
 # Erste Schritte mit dem BizTalk Edifact-Connector und das Hinzufügen zur Logik-App  
+>[AZURE.NOTE] Diese Version des Artikels gilt für die Logik-Apps-Schemaversion 2014-12-01-preview.
+
 Sie können mit dem Edifact-Dienst bei der Business-to-Business-Kommunikation Nachrichten über das Edifact-Protokoll empfangen und senden. Edifact wird häufig auch als ASC Edifact (Accredited Standards Committee Edifact) bezeichnet und ist branchenweit verbreitet.
 
 Sie können den BizTalk Edifact-Connector dem geschäftlichen Workflow hinzufügen und Daten im Rahmen dieses Workflows in einer Logik-App verarbeiten.
@@ -41,18 +43,18 @@ Der Edifact-Connector kann als Trigger oder als Aktion verwendet werden.
 - Starten Sie den Azure-Datenfluss-Designer für Logik-Apps.
 - Klicken Sie im rechten Bereich auf den Edifact-Connector:  
 ![Triggereinstellungen][3]
-- Klicken Sie auf:  
+- Klicken Sie auf ->:  
 ![Triggeroptionen][4]
-- Der EDIFACT-Connector stellt einen einzelnen Trigger bereit. Wählen Sie *Batch veröffentlichen* aus: 
+- Der EDIFACT-Connector stellt einen einzelnen Trigger bereit. Wählen Sie *Batch veröffentlichen* aus:  
 ![Eingabe für Release Batch][5]
-- Dieser Trigger weist keine Eingaben auf. Klicken Sie auf ->: 
+- Dieser Trigger weist keine Eingaben auf. Klicken Sie auf ->:  
 ![Release Batch konfiguriert][6]
 - Im Rahmen der Ausgabe gibt der Connector die Edifact-Nutzlast, die Vereinbarungs-ID sowie Informationen dazu zurück, ob die Nachricht als Batch ausgeführt wird.
 
 ### Aktion
 - Klicken Sie im rechten Bereich auf den Edifact-Connector:  
 ![Aktionseinstellungen][7]
-- Klicken Sie auf ->: 
+- Klicken Sie auf ->:  
 ![Liste der Aktionen][8]
 - Der Edifact-Connector unterstützt zahlreiche Aktionen. Wählen Sie *Codieren* aus:  
 ![Eingabe codieren][9]
@@ -78,7 +80,7 @@ Die Aktion gibt bei erfolgreichem Abschluss ein Objekt mit der EDIFACT-Nutzlast 
 ## Optimale Nutzung Ihres Connectors
 Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
->[AZURE.NOTE]Wenn Sie Azure Logik-Apps ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [Logik-App testen](https://tryappservice.azure.com/?appservice=logic) sofort kostenlos eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure Logik-Apps ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [Logik-App testen](https://tryappservice.azure.com/?appservice=logic) sofort kostenlos eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
 
@@ -97,4 +99,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [9]: ./media/app-service-logic-connector-edifact/EncodeInput.PNG
 [10]: ./media/app-service-logic-connector-edifact/EncodeConfigured.PNG
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0224_2016-->

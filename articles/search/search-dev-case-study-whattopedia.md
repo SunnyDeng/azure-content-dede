@@ -12,7 +12,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="search" 
-	ms.date="11/04/2015" 
+	ms.date="02/18/2016" 
 	ms.author="heidist"/>
 
 # Azure Search-Fallstudie für Entwickler
@@ -52,7 +52,7 @@ Unsere Vorstellung bestand darin, eine komplette Infrastruktur zu erstellen, die
  
 ### Spitzenkomponenten
 
-Wir haben ein Unternehmen erstellt, nicht nur eine Website. Die Unterstützung des gesamten Projekts erforderte einen umfassenden Satz an Tools und Anwendungen. Wir haben Visual Studio und Visual Studio Team Services für die Entwicklung, Team Foundation Service (TFS) Online für die Quellcodeverwaltung und die Scrum-Verwaltung, Office 365 für Kommunikation und Zusammenarbeit und natürlich Microsoft Azure für alle websitebezogenen Vorgänge und Speicher verwendet. Die Visual Studio-IDE bietet direkte Bereitstellung in Azure mit Integration in TFS Online, wodurch sich eine zusätzliche Produktivitätssteigerung ergibt.
+Wir haben ein Unternehmen erstellt, nicht nur eine Website. Die Unterstützung des gesamten Projekts erforderte einen umfassenden Satz an Tools und Anwendungen. Wir haben Visual Studio und Visual Studio Team Services für die Entwicklung, Team Foundation Service (TFS) Online für die Quellcodeverwaltung und die Scrum-Verwaltung, Office 365 für Kommunikation und Zusammenarbeit und natürlich Microsoft Azure für alle websitebezogenen Vorgänge und Speicher verwendet. Die Visual Studio-IDE bietet direkte Bereitstellung in Azure mit Integration in TFS Online, wodurch sich eine zusätzliche Produktivitätssteigerung ergibt.
 
 Die folgende Abbildung veranschaulicht die in der WhatToPedia-Infrastruktur verwendeten Spitzenkomponenten.
 
@@ -64,7 +64,7 @@ Wenn Sie die grünen Kästchen in der vorherigen Abbildung betrachten, sehen Sie
 
 - [Azure Search](https://azure.microsoft.com/services/search/)
 - [Azure-Websites, für die MVC 4 verwendet wird](https://azure.microsoft.com/services/websites/)
-- [Azure WebJobs für geplante Aufgaben](../websites-webjobs-resources.md)
+- [Azure WebJobs für geplante Aufgaben](../app-service-web/websites-webjobs-resources.md)
 - [Azure SQL-Datenbank](https://azure.microsoft.com/services/sql-database/)
 - [Azure-Blobspeicher](https://azure.microsoft.com/services/storage/)
 - [E-Mail-Zustellung über SendGrid](https://azure.microsoft.com/marketplace/partners/sendgrid/sendgrid-azure/)
@@ -421,4 +421,4 @@ Der folgende Code erstellt den Indexer, der im Abschnitt über die Erstellung de
 [Link 3 to another azure.microsoft.com documentation topic]: ../storage-whatis-account.md
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0224_2016-->

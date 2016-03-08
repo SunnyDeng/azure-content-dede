@@ -4,7 +4,7 @@
    services="app-service\logic"
    documentationCenter=".net,nodejs,java"
    authors="rajeshramabathiran"
-   manager="dwrede"
+   manager="erikre"
    editor=""/>
 
 <tags
@@ -13,11 +13,13 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="11/11/2015"
+   ms.date="02/11/2016"
    ms.author="rajram"/>
 
 
 # Erste Schritte mit dem Facebook-Connector und das Hinzufügen zur Logik-App
+>[AZURE.NOTE] Diese Version des Artikels gilt für die Logik-Apps-Schemaversion 2014-12-01-preview. Um die Schemaversion 2015-08-01-preview aufzurufen, klicken Sie auf [Facebook-API](../connectors/create-api-facebook.md).
+
 Stellen Sie eine Verbindung mit einem Facebook-Konto her, um eine Nachricht oder ein Foto zu veröffentlichen. Logik-Apps können basierend auf einer Vielzahl von Datenquellen ausgelöst werden und Connectors anbieten, um Daten als Teil des Datenflusses abzurufen und zu verarbeiten.
 
 Der Facebook-Connector ermöglicht Folgendes:
@@ -56,12 +58,12 @@ Sie können nun die vom Facebook-Trigger abgerufenen Beiträge in anderen Aktion
 
 Auf ähnliche Weise können Sie Datenflüsse mit Facebook-Connector-Aktionen erstellen. Im folgenden Datenfluss werden neue Nachrichten, die in der Yammer-Gruppe veröffentlicht werden, abgerufen und auf der vom Benutzer verwalteten Facebook-Seite veröffentlicht: ![][11]
 
-> [AZURE.TIP]Zum Abrufen der Facebook-Seiten-ID oder der Yammer-Gruppen-ID suchen Sie nach dem numerischen Code in der URL.
+> [AZURE.TIP] Zum Abrufen der Facebook-Seiten-ID oder der Yammer-Gruppen-ID suchen Sie nach dem numerischen Code in der URL.
 
 ## Mehr mit Ihrem Connector machen
 Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
->[AZURE.NOTE]Wenn Sie Azure Logik-Apps ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [Logik-App testen](https://tryappservice.azure.com/?appservice=logic) sofort kostenlos eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure Logik-Apps ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [Logik-App testen](https://tryappservice.azure.com/?appservice=logic) sofort kostenlos eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
 
@@ -80,4 +82,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [10]: ./media/app-service-logic-connector-facebook/img10.png
 [11]: ./media/app-service-logic-connector-facebook/img11.png
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0224_2016-->

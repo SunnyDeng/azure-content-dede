@@ -12,7 +12,7 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="12/18/2015" 
+    ms.date="02/22/2016" 
     ms.author="jeedes" />
 
 
@@ -45,7 +45,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Sal
 
 ###So aktivieren Sie die Anwendungsintegration für Salesforce Sandbox:
 
-1.  Klicken Sie im linken Navigationsbereich des Azure-Verwaltungsportals auf **Active Directory**.
+1.  Klicken Sie im klassischen Azure-Portal im linken Navigationsbereich auf **Active Directory**.
 
     ![Active Directory](./media/active-directory-saas-salesforce-sandbox-tutorial/IC700993.png "Active Directory")
 
@@ -72,7 +72,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
 ###So konfigurieren Sie einmaliges Anmelden
 
-1.  Klicken Sie im Azure AD-Portal auf der Anwendungsintegrationsseite für **Salesforce Sandbox** auf **Einmaliges Anmelden konfigurieren**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu öffnen.
+1.  Klicken Sie im klassischen Azure-Portal auf der Anwendungsintegrationsseite für **Salesforce Sandbox** auf **Einmaliges Anmelden konfigurieren**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu öffnen.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-salesforce-sandbox-tutorial/IC749323.png "Einmaliges Anmelden konfigurieren")
 
@@ -111,18 +111,18 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![SAML-Einstellungen für einmaliges Anmelden](./media/active-directory-saas-salesforce-sandbox-tutorial/IC781027.png "SAML-Einstellungen für einmaliges Anmelden")
 
-    1.  Geben Sie im Textfeld "Name" den Namen der Konfiguration (z. B.: *SPSSOWAAD\_Test*) ein.
-    2.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren um Salesforce Sandbox** den Wert der **Aussteller-URL**, und fügen Sie ihn in das Textfeld **Aussteller** ein.
+    1.  Geben Sie im Textfeld "Name" den Namen der Konfiguration (z. B.: *SPSSOWAAD\_Test*) ein.
+    2.  Kopieren Sie im klassischen Azure-Portal auf der Dialogseite **Einmaliges Anmelden konfigurieren um Salesforce Sandbox** den Wert für **Aussteller-URL**, und fügen Sie ihn in das Textfeld **Aussteller** ein.
     3.  Geben Sie im Textfeld **Entitäts-ID** die Zeichenfolge **https://test.salesforce.com** ein, wenn dies die erste Salesforce Sandbox-Instanz ist, die Sie Ihrem Verzeichnis hinzufügen. Wenn Sie bereits eine Instanz der Salesforce Sandbox hinzugefügt haben, geben Sie die **Entitäts-ID** die **Anmelde-URL** im folgenden Format ein: `http://company.my.salesforce.com`
     4.  Klicken Sie auf **Durchsuchen**, um das heruntergeladene Zertifikat hochzuladen.
     5.  Wählen Sie für **SAML Identity Type** die Option **Assertion contains the Federation ID from the User object** aus.
     6.  Wählen Sie als **SAML Identity Location** die Option **Identity is in the NameIdentifier element of the Subject statement** aus.
-    7.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren um Salesforce Sandbox** den Wert der **Remoteanmelde-URL**, und fügen Sie ihn in das Textfeld **Identity Provider Login URL** ein.
-    8.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren um Salesforce Sandbox** den Wert der **Remoteabmelde-URL**, und fügen Sie ihn in das Textfeld **Identity Provider Logout URL** ein.
+    7.  Kopieren Sie im klassischen Azure-Portal auf der Dialogseite **Einmaliges Anmelden konfigurieren um Salesforce Sandbox** den Wert für **Remoteanmelde-URL**, und fügen Sie ihn in das Textfeld **Anmelde-URL des Identitätsanbieters** ein.
+    8.  Kopieren Sie im klassischen Azure-Portal auf der Dialogseite **Einmaliges Anmelden konfigurieren um Salesforce Sandbox** den Wert für **Remoteabmelde-URL**, und fügen Sie ihn in das Textfeld **Abmelde-URL des Identitätsanbieters** ein.
     9.  Wählen Sie für **Service Provider Initiated Request Binding** die Option **HTTP Post** aus.
     10. Klicken Sie auf **Speichern**.
 
-10. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
+10. Wählen Sie im klassischen Azure-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-salesforce-sandbox-tutorial/IC781028.png "Einmaliges Anmelden konfigurieren")
 
@@ -164,11 +164,11 @@ In diesem Abschnitt wird erläutert, wie Sie die Bereitstellung von Active Direc
 
     ![Neues Token](./media/active-directory-saas-salesforce-sandbox-tutorial/IC698776.png "Neues Token")
 
-5.  Prüfen Sie Ihren Posteingang auf eine E-Mail von Salesforce.com mit "**salesforce.com.com Security Bestätigung **" als Betreff.
+5.  Prüfen Sie Ihren Posteingang auf eine E-Mail von Salesforce.com mit "**salesforce.com.com Security Bestätigung**" als Betreff.
 
 6.  Öffnen Sie die E-Mail, und kopieren Sie das Sicherheitstoken.
 
-7.  Klicken Sie im Azure-Verwaltungsportal auf der Anwendungsintegrationsseite für **Salesforce Sandbox** auf **Benutzerbereitstellung konfigurieren**, um das Dialogfeld **Benutzerbereitstellung konfigurieren** zu öffnen.
+7.  Klicken Sie im klassischen Azure-Portal auf der Anwendungsintegrationsseite für **Salesforce Sandbox** auf **Benutzerbereitstellung konfigurieren**, um das Dialogfeld **Benutzerbereitstellung konfigurieren** zu öffnen.
 
     ![Konfigurieren der Benutzerbereitstellung](./media/active-directory-saas-salesforce-sandbox-tutorial/IC769573.png "Konfigurieren der Benutzerbereitstellung")
 
@@ -193,7 +193,7 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
 
 ###So weisen Sie Salesforce Sandbox Benutzer zu:
 
-1.  Erstellen Sie im Azure AD-Portal ein Testkonto.
+1.  Erstellen Sie im klassischen Azure-Portal ein Testkonto.
 
 2.  Klicken Sie auf der Anwendungsintegrationsseite für Salesforce Sandbox auf **Benutzer zuweisen**.
 
@@ -203,8 +203,8 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
 
     ![Ja](./media/active-directory-saas-salesforce-sandbox-tutorial/IC767830.png "Ja")
   
-Nach 10 Minuten können Sie überprüfen, ob das Konto mit Salesforce Sandbox synchronisiert wurde.
+Nach 10 Minuten können Sie überprüfen, ob das Konto mit Salesforce Sandbox synchronisiert wurde.
   
 Wenn Sie die Einstellungen für einmaliges Anmelden testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=AcomDC_0218_2016-->
+<!----HONumber=AcomDC_0224_2016-->

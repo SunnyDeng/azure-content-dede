@@ -13,7 +13,7 @@
 	ms.workload="search" 
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
-	ms.date="11/04/2015" 
+	ms.date="02/04/2016" 
 	ms.author="heidist"/>
 
 #Umstellung von der Vorschau-API-Version = 2014* auf API-Version = 2015 *#
@@ -33,7 +33,7 @@ Zudem führen wir gerade die nächste Vorschauversion [2015-02-28-Preview](searc
 
 - Überprüfen Sie die Hinweise zu wichtigen Änderungen, um zu ermitteln, ob Ihre Lösung betroffen ist.
 - Ändern Sie die API-Version für die gesperrte Version in `2015-02-28`. Diese Version unterliegt einer Vereinbarung zum Servicelevel (SLA). Wenn Probleme auftreten, können Sie sie schneller beheben.
-- Erstellen, Bereitstellen, Testen. Abgesehen von den wichtigen Änderungen, sollte das Suchverhalten zu 100 % gleichwertig sein.
+- Erstellen, Bereitstellen, Testen. Abgesehen von den wichtigen Änderungen, sollte das Suchverhalten zu 100 % gleichwertig sein.
 - Einführen in die Produktionsumgebung.
 - Bewerten Sie die neuen Features hinsichtlich der Einführung künftiger Features. Ändern Sie die Version wieder in 2015-02-28-Preview, wenn Sie die Microsoft Natural Language-Prozessoren oder `morelikethis` testen möchten.
 
@@ -144,4 +144,4 @@ Die API-Version `2015-02-28` unterliegt einer Vereinbarung zum Servicelevel (SLA
 
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0224_2016-->

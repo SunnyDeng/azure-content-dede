@@ -19,15 +19,15 @@
 
 #Erstellen von Linux-basierten Clustern in HDInsight mithilfe der Azure-Befehlszeilenschnittstelle
 
-[AZURE.INCLUDE [Auswahl](../../includes/hdinsight-create-linux-cluster-selector.md)]
+[AZURE.INCLUDE [Auswahl](../../includes/hdinsight-selector-create-clusters.md)]
 
 Die Azure-Befehlszeilenschnittstelle ist ein plattformübergreifendes Befehlszeilentool zur Verwaltung von Azure-Diensten. Es kann mit Azure-Ressourcen-Manager-Vorlagen zum Erstellen eines HDInsight-Clusters verwendet werden, zusammen mit zugeordneten Speicherkonten und anderen Diensten.
 
-Bei Azure-Ressourcen-Manager-Vorlagen handelt es sich um JSON-Dokumente, mit denen eine __Ressourcengruppe__ und alle darin enthaltenen Ressourcen (z. B. HDInsight) beschrieben werden. Dieser vorlagenbasierte Ansatz ermöglicht Ihnen das Definieren aller für HDInsight benötigten Ressourcen in einer einzigen Vorlage sowie das Verwalten von Änderungen an der gesamten Gruppe durch __Bereitstellungen__, mit denen Änderungen an der Gruppe vorgenommen werden.
+Bei Azure-Ressourcen-Manager-Vorlagen handelt es sich um JSON-Dokumente, mit denen eine __Ressourcengruppe__ und alle darin enthaltenen Ressourcen (z. B. HDInsight) beschrieben werden. Dieser vorlagenbasierte Ansatz ermöglicht Ihnen das Definieren aller für HDInsight benötigten Ressourcen in einer einzigen Vorlage sowie das Verwalten von Änderungen an der gesamten Gruppe durch __Bereitstellungen__, mit denen Änderungen an der Gruppe vorgenommen werden.
 
 Anhand der Schritte in diesem Dokument werden Sie durch die Erstellung eines neuen HDInsight-Clusters mithilfe der Azure-Befehlszeilenschnittstelle und einer Vorlage geführt.
 
-> [AZURE.IMPORTANT] Bei den Schritten in diesem Dokument wird die Standardanzahl von Workerknoten (4) für einen HDInsight-Cluster verwendet. Wenn Sie mehr als 32 Workerknoten planen, entweder bei Erstellung des Clusters oder durch eine Skalierung des Clusters nach der Erstellung, müssen Sie eine Hauptknotengröße von mindestens 8 Kernen und 14 GB Arbeitsspeicher (RAM) auswählen.
+> [AZURE.IMPORTANT] Bei den Schritten in diesem Dokument wird die Standardanzahl von Workerknoten (4) für einen HDInsight-Cluster verwendet. Wenn Sie mehr als 32 Workerknoten planen, entweder bei Erstellung des Clusters oder durch eine Skalierung des Clusters nach der Erstellung, müssen Sie eine Hauptknotengröße von mindestens 8 Kernen und 14 GB Arbeitsspeicher (RAM) auswählen.
 >
 > Weitere Informationen zu Knotengrößen und damit verbundenen Kosten finden Sie unter [HDInsight – Preise](https://azure.microsoft.com/pricing/details/hdinsight/).
 
@@ -92,7 +92,7 @@ Die folgenden Schritte müssen in einer Befehlszeilen-, Shell- oder Terminalsitz
 
     Nachdem die Bereitstellung akzeptiert wurde, sollte eine Meldung wie die folgende angezeigt werden: `group deployment create command ok`.
 
-7. Es kann einige Zeit dauern, bis die Bereitstellung abgeschlossen ist (ca. 15 Minuten). Sie können Informationen zur Bereitstellung mit dem folgenden Befehl anzeigen. Ersetzen Sie __RESOURCEGROUPNAME__ durch den Namen der Ressourcengruppe aus dem vorherigen Schritt:
+7. Es kann einige Zeit dauern, bis die Bereitstellung abgeschlossen ist (ca. 15 Minuten). Sie können Informationen zur Bereitstellung mit dem folgenden Befehl anzeigen. Ersetzen Sie __RESOURCEGROUPNAME__ durch den Namen der Ressourcengruppe aus dem vorherigen Schritt:
 
         azure group log show -l RESOURCEGROUPNAME
     
@@ -121,4 +121,4 @@ Nachdem Sie einen HDInsight-Cluster erfolgreich erstellt haben, nutzen Sie die f
 * [Verwenden von Python-Komponenten in Storm in HDInsight](hdinsight-storm-develop-python-topology.md)
 * [Bereitstellen und Überwachen von Topologien mit Storm in HDInsight](hdinsight-storm-deploy-monitor-topology-linux.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0224_2016-->

@@ -13,14 +13,14 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/01/2015" 
+	ms.date="02/23/2015" 
 	ms.author="pengxia"/>
 
 
 
 #Lexikonbasierte Stimmungsanalyse 
 
-Wie können Sie die Meinungen und Einstellungen Ihrer Benutzer zu Marken oder Themen in sozialen Netzwerken wie z. B. Facebook-Beiträgen, Tweets, Rezensionen usw. messen? Die Stimmungsanalyse bietet eine Methode, solche Fragen zu analysieren.
+Wie können Sie die Meinungen und Einstellungen Ihrer Benutzer zu Marken oder Themen in sozialen Netzwerken wie z. B. Facebook-Beiträgen, Tweets, Rezensionen usw. messen? Die Stimmungsanalyse bietet eine Methode, solche Fragen zu analysieren.
 
 
 [AZURE.INCLUDE [machine-learning-free-trial](../../includes/machine-learning-free-trial.md)]
@@ -33,7 +33,7 @@ Der [Dienst](https://datamarket.azure.com/dataset/aml_labs/lexicon_based_sentime
 
 ##Nutzung des Webdiensts
 
-Die Eingabedaten können ein beliebiger Text sein, aber der Webdienst funktioniert besser mit kurzen Sätzen. Die Ausgabe ist ein numerischer Wert zwischen-1 und 1. Jeder Wert unter 0 zeigt, dass die Stimmung des Texts negativ ist. Bei jedem Wert über 0 ist sie positiv. Der absolute Wert des Ergebnisses zeigt die Stärke der zugehörigen Stimmung.
+Die Eingabedaten können ein beliebiger Text sein, aber der Webdienst funktioniert besser mit kurzen Sätzen. Die Ausgabe ist ein numerischer Wert zwischen-1 und 1. Jeder Wert unter 0 zeigt, dass die Stimmung des Texts negativ ist. Bei jedem Wert über 0 ist sie positiv. Der absolute Wert des Ergebnisses zeigt die Stärke der zugehörigen Stimmung.
 
 >Dieser Dienst, der im Azure Marketplace gehostet wird, ist ein OData-Dienst. Diese Dienste können durch POST- oder GET-Methoden aufgerufen werden.
 
@@ -139,7 +139,7 @@ In Azure Machine Learning wurde ein neues leeres Experiment erstellt. Die nachfo
 
 ##Einschränkungen
 
-Hinsichtlich des Algorithmus ist die lexikonbasierte Stimmungsanalyse ein allgemeines Stimmungsanalysetool, das für bestimmte Felder möglicherweise keine bessere Leistung bietet als die Klassifizierungsmethode. Das Problem der Negation wird nicht gut gelöst. Sie hartcodieren mehrere Negation Wörter im Programm, eine bessere Möglichkeit ist jedoch die Verwendung eines Negationswörterbuchs und die Erstellung einiger Regeln. Der Webdienst bietet eine bessere Leistung bei kurzen und einfachen Sätzen, wie z. B. Tweets und Facebook-Beiträgen, als bei langen und komplexen Sätzen wie z. B. Rezensionen auf Amazon.
+Hinsichtlich des Algorithmus ist die lexikonbasierte Stimmungsanalyse ein allgemeines Stimmungsanalysetool, das für bestimmte Felder möglicherweise keine bessere Leistung bietet als die Klassifizierungsmethode. Das Problem der Negation wird nicht gut gelöst. Sie hartcodieren mehrere Negation Wörter im Programm, eine bessere Möglichkeit ist jedoch die Verwendung eines Negationswörterbuchs und die Erstellung einiger Regeln. Der Webdienst bietet eine bessere Leistung bei kurzen und einfachen Sätzen, wie z. B. Tweets und Facebook-Beiträgen, als bei langen und komplexen Sätzen wie z. B. Rezensionen auf Amazon.
 
 ##Häufig gestellte Fragen
 Häufig gestellte Fragen zur Nutzung des Webdiensts und zum Veröffentlichen im Azure Marketplace finden Sie [hier](machine-learning-marketplace-faq.md).
@@ -153,4 +153,4 @@ Häufig gestellte Fragen zur Nutzung des Webdiensts und zum Veröffentlichen im 
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0224_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/30/2015" 
+	ms.date="02/20/2016" 
 	ms.author="anwestg"/>
 
 # Azure App Service-Web-Apps-Angebote für Enterprise Whitepaper #
@@ -49,7 +49,7 @@ Eine alternative Lösung besteht darin, Ihre vorhandenen lokalen Investitionen z
 
 - [App Service-Umgebungen](app-service-app-service-environment-intro.md): App Service-Umgebungen (ASE) sind ein neues Premium-Feature, das dem Microsoft Azure App Service-Angebot vor kurzem hinzugefügt wurde. ASEs bieten eine vollständig isolierte und dedizierte Umgebung zur sicheren Ausführung von Azure App Service-Apps bei hoher Skalierung und sorgen außerdem für Isolation und sicheren Netzwerkzugriff.   
 - [Hybridverbindungen](../biztalk-services/integration-hybrid-connection-overview.md) – Hybridverbindungen sind ein Feature von Microsoft Azure BizTalk Services. Damit kann Web-Apps eine Verbindung zu lokalen Ressourcen herstellen, wie z. B. zu SQL Server, MySQL, Web-APIs und benutzerdefinierten Webdiensten. 
-- [Virtuelle Netzwerkintegration](https://azure.microsoft.com/blog/2014/09/15/azure-websites-virtual-network-integration/) – Durch Web-Apps-Integration mit Azure Virtual Network können Sie Ihre Web-App mit einem virtuellen Azure-Netzwerk verbinden, das wiederum mit Ihrer lokalen Infrastruktur über ein Site-to-Site-VPN verbunden werden kann. 
+- [Virtuelle Netzwerkintegration](https://azure.microsoft.com/blog/2014/09/15/azure-websites-virtual-network-integration/) – Durch Web-Apps-Integration mit Azure Virtual Network können Sie Ihre Web-App mit einem virtuellen Azure-Netzwerk verbinden, das wiederum über ein Site-to-Site-VPN mit Ihrer lokalen Infrastruktur verbunden werden kann. 
 
 Im folgenden Diagramm ist eine beispielhafte allgemeine Lösung mit Konnektivitätsoptionen für lokale Ressourcen zu sehen. Das erste Beispiel zeigt deren Umsetzung mithilfe der Standardfeatures von Azure App Service, und das zweite zeigt, wie diese durch Verwendung des Premium-Angebots der App Service-Umgebungen zu erreichen ist.
 
@@ -83,9 +83,9 @@ App Service-Web-Apps bietet eine stabile, zuverlässige Plattform, die nachweisl
 
 Die Microsoft Azure-Plattform ermöglicht rollenbasierte Zugriffssteuerung auf Organisationsebene für Ressourcen in Web-Apps. RBAC bietet Unternehmen die Möglichkeit, ihre eigenen Zugriffsmanagementrichtlinien für alle ihre Ressourcen in der Azure-Umgebung zu implementieren, und zwar durch Zuweisen von Benutzern zu Gruppen und wiederum Zuweisen der erforderlichen Berechtigungen zu diesen Gruppen für eine Ressource, wie z. B. eine Web-App. Weitere Informationen zu RBAC in Azure finden Sie unter [http://aka.ms/azurerbac](../role-based-access-control-configure/). Durch Nutzung von Web-Apps können Sie sicher sein, dass Ihre Webanwendungen in einer sicheren und zuverlässigen Umgebung bereitgestellt werden, und verfügen über die vollständige Kontrolle, in welcher Region Ihrer Ressourcen bereitgestellt werden.
 
-Azure App Service-Umgebungen [http://aka.ms/aseintro] sind eine neue Option des Premium-Diensttarifs für Unternehmenskunden, die Azure App Service nutzen möchten, und bieten diesen Kunden eine vollständig isolierte und dedizierte Umgebung. In dieser Umgebung können Unternehmenskunden Anwendungen bereitstellen, die eine umfangreiche Skalierung nutzen können, und gleichzeitig die vollständige Kontrolle über ein- und ausgehenden Netzwerkverkehr behalten. Zudem ermöglichen ASEs den Anwendungen sichere Hochgeschwindigkeitsverbindungen mit lokalen Ressourcen über virtuelle Netzwerke.
+Azure App Service-Umgebungen [http://aka.ms/aseintro](http://aka.ms/aseintro) sind eine neue Option des Premium-Diensttarifs für Unternehmenskunden, die Azure App Service nutzen möchten, und bieten diesen Kunden eine vollständig isolierte und dedizierte Umgebung. In dieser Umgebung können Unternehmenskunden Anwendungen bereitstellen, die eine umfangreiche Skalierung nutzen können, und gleichzeitig die vollständige Kontrolle über ein- und ausgehenden Netzwerkverkehr behalten. Zudem ermöglichen ASEs den Anwendungen sichere Hochgeschwindigkeitsverbindungen mit lokalen Ressourcen über virtuelle Netzwerke.
 
-App Service-Web-Apps kann auch vollständig Ihre lokalen Investitionen nutzen, denn es ermöglicht die Herstellung einer Verbindung zurück zu Ihren internen Ressourcen, wie z. B. Ihrem Data Warehouse oder Ihrer SharePoint-Umgebung. Wie bereits in [High-Level-Lösung] erwähnt, können Sie mithilfe von Hybridverbindungen und virtueller Netzwerkkonnektivität Verbindungen mit einer lokaler Infrastruktur und lokalen Diensten herstellen.
+App Service-Web-Apps kann auch vollständig Ihre lokalen Investitionen nutzen, denn es ermöglicht die Herstellung einer Verbindung zurück zu Ihren internen Ressourcen, wie z. B. Ihrem Data Warehouse oder Ihrer SharePoint-Umgebung. Wie bereits in [High-Level-Lösung](#highlevel) erwähnt, können Sie mithilfe von Hybridverbindungen und virtueller Netzwerkkonnektivität Verbindungen zu lokaler Infrastruktur und Diensten herstellen.
 
 ### Globale Skalierbarkeit ###
 
@@ -109,11 +109,11 @@ Schritt 1 der Gesamtlösung für das Verschieben einer Line-of-Business-Anwendun
 
 Bei der Migration einer Anwendung aus einer lokalen Umgebung sollten Sie bedenken, dass für Web-Apps Beschränkungen bestehen. Einige wichtige Themen, die bei der Migration von Webanwendungen nach Web-Apps beachtet werden sollten, finden Sie unter: ([http://aka.ms/websitesmigrationresources](http://aka.ms/websitesmigrationresources)):
 
--	Portbindungen – Web-Apps unterstützt nur Port 80 für HTTP- und Port 443 für HTTPS-Datenverkehr. Wenn Ihre Anwendung einen anderen Anschluss verwendet, möchte die Anwendung nach erfolgter Migration Port 80 für HTTP und Port 443 für HTTPS-Datenverkehr nutzen. Dies ist häufig ein harmloses Problem, da lokale Bereitstellungen häufig verschiedene Ports verwenden,um die Verwendung von Domänennamen zu umgehen, vor allem in Entwicklungs- und Testumgebungen.
+-	Portbindungen – Web-Apps unterstützt nur Port 80 für HTTP- und Port 443 für HTTPS-Datenverkehr. Wenn Ihre Anwendung einen anderen Anschluss verwendet, möchte die Anwendung nach erfolgter Migration Port 80 für HTTP und Port 443 für HTTPS-Datenverkehr nutzen. Dies ist häufig ein harmloses Problem, da lokale Bereitstellungen häufig verschiedene Ports verwenden,um die Verwendung von Domänennamen zu umgehen, vor allem in Entwicklungs- und Testumgebungen.
 -	Authentifizierung – Web-Apps unterstützt standardmäßig die anonyme Authentifizierung sowie Formularauthentifizierung, sofern von einer Anwendung angegeben. Web-Apps kann Windows-Authentifizierung bieten, wenn die Anwendung nur mit Azure Active Directory und AD FS integriert ist. Diese Funktion wird [hier](http://aka.ms/azurebizapp) ausführlicher erläutert. 
 -	GAC-basierte Assemblys – Web-Apps unterstützt nicht die Bereitstellung von Assemblys für den globalen Assemblycache (GAC). Wenn daher die zu migrierende Anwendung diese lokale Funktion nutzt, sollten Sie die Assemblys in den Papierkorb der Anwendung verschieben.
 -	IIS5-Kompatibilitätsmodus – Web-Apps unterstützt nicht den IIS5-Kompatibilitätsmodus. Daher wird jede Web-Apps-Instanz und jede Webanwendung unter der übergeordneten Web-Apps-Instanz im selben Arbeitsprozess in einem einzelnen Anwendungspool ausgeführt.
--	Verwendung von COM-Bibliotheken – Web-Apps erlaubt nicht die Registrierung von COM-Komponenten auf der Plattform. Wenn daher die Anwendung COM-Komponenten verwendet, müssen diese in verwaltetem Code neu geschrieben und mit der Anwendung bereitgestellt werden.
+-	Verwendung von COM-Bibliotheken – Web-Apps erlaubt nicht die Registrierung von COM-Komponenten auf der Plattform. Wenn daher die Anwendung COM-Komponenten verwendet, müssen diese in verwaltetem Code neu geschrieben und mit der Anwendung bereitgestellt werden.
 -	ISAPI-Filter – ISAPI-Filter können auf Web-Apps unterstützt werden. Sie müssen als Teil der Anwendung bereitgestellt und in der web.config-Datei der Webanwendung registriert werden. Weitere Informationen finden Sie unter [http://aka.ms/azurewebsitesxdt](../web-sites-transform-extend/). 
 
 Nachdem diese Punkte berücksichtigt wurden, müsste Ihre Webanwendung bereit für die Cloud sein. Und keine Sorge, wenn einige Themen nicht vollständig beachtet werden, bringt das Migrationstool die bestmögliche Migrationsleistung.
@@ -135,7 +135,7 @@ Die Azure-Plattform bietet eine Reihe von Alternativen zur Verwendung von Azure 
 #### Verbindung zu lokalen Ressourcen ####
 App Service-Web-Apps bietet mehrere Optionen zum Herstellen einer Verbindung zu lokalen Ressourcen, wie z. B. Datenbanken, welche die Wiederverwendung von vorhandener hochwertiger Infrastruktur ermöglichen. Die Optionen sind unten aufgeführt:
 
-- App Service-Umgebungen sind isoliert und werden in einem Subnetz eines virtuellen Netzwerks erstellt. So kann die Umgebung mit privaten Endpunkten kommunizieren, die sich in demselben virtuellen Netzwerk befinden - [http://aka.ms/appserviceasenetworking]
+- App Service-Umgebungen sind isoliert und werden in einem Subnetz eines virtuellen Netzwerks erstellt. So kann die Umgebung mit privaten Endpunkten kommunizieren, die sich in demselben virtuellen Netzwerk befinden – [http://aka.ms/appserviceasenetworking](http://aka.ms/appserviceasenetworking).
 - Die Virtual Network-Integration von Web-Apps unterstützt die Integration zwischen Web-Apps und Azure Virtual Network und ermöglicht Ihnen den Zugriff auf Ressourcen in Ihrem virtuellen Netzwerk, was bei Verbindung mit Ihrem lokalen Netzwerk mit Site-to-Site-VPN-Verbindung die direkte Konnektivität zu Ihren lokalen Systemen erlaubt.
 - Hybridverbindungen sind ein Feature von Azure BizTalk Services und bieten eine einfache Möglichkeit zum Herstellen einer Verbindung zu einzelnen Ressourcen wie z. B. SQL Server, MySQL, HTTP-Web-APIs und viele benutzerdefinierte Webdienste.
 
@@ -159,4 +159,4 @@ Weitere Informationen zu Azure App Service-Web-Apps finden sie unter [http://aka
  
  
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0224_2016-->

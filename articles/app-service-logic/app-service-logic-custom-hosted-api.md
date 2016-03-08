@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"	
 	ms.topic="article"
-	ms.date="01/04/2016"
+	ms.date="02/23/2016"
 	ms.author="stepsic"/>
 	
 # Verwenden der in App Service gehosteten benutzerdefinierten API mit Logik-Apps
@@ -22,28 +22,20 @@ Zwar weisen Logik-Apps einen umfangreichen Satz von mehr als 40 Connectors für 
 
 ## Bereitstellen der Web-App
 
-Zunächst müssen Sie die API als Web-App in App Service bereitstellen. Die hier bereitgestellten Anweisungen decken eine einfache Bereitstellung ab: [Erstellen einer ASP.NET-Web-App](web-sites-dotnet-get-started.md).
+Zunächst müssen Sie die API als Web-App in App Service bereitstellen. Die hier bereitgestellten Anweisungen decken eine einfache Bereitstellung ab: [Erstellen einer ASP.NET-Web-App](../app-service-web/web-sites-dotnet-get-started.md). Obwohl Sie jede API aus einer Logik-App aufrufen können, sollten Sie am besten Swagger-Metadaten hinzufügen, um die Integration in Logik-Apps-Aktionen zu vereinfachen. Details finden Sie unter [Hinzufügen von Swagger](../app-service-api/app-service-api-dotnet-get-started.md/#use-swagger-metadata-and-ui).
 
-Sie müssen die **URL** der Web-App ermitteln. Sie wird unter **Essentials** oben in der Web-App angezeigt.
+### API-Einstellungen
+
+Damit der Logik-Apps-Designer Ihren Swagger-Code analysieren kann, müssen Sie CORS aktivieren und die APIDefinition-Eigenschaften der Web-App festlegen. Das Festlegen ist im Azure-Portal sehr einfach. Öffnen Sie einfach das Blatt „Einstellungen“ der Web-App, und legen Sie im API-Abschnitt die „API-Definition“ auf die URL der Datei „swagger.JSON“ fest (dies ist in der Regel https://{name}.azurewebsites.net/swagger/docs/v1). Fügen Sie anschließend noch eine CORS-Richtlinie für „*“ hinzu, um Anfragen vom Logik-Apps-Designer zu ermöglichen.
 
 ## Aufrufen der API
 
-Erstellen Sie zunächst eine neue leere Logik-App. Nachdem Sie eine leere Logik-App erstellt haben, klicken Sie auf **Bearbeiten** oder **Trigger und Aktionen**, und wählen Sie **Neu erstellen** aus.
+Wenn Sie im Logik-Apps-Portal CORS und die API-Definitionseigenschaften festgelegt haben, sollten Sie auf einfache Weise Aktionen benutzerdefinierter APIs im Datenfluss hinzufügen können. Sie können im Designer Ihre Abonnementwebsites durchsuchen, um die Websites aufzulisten, für die eine Swagger-URL definiert wurde. Sie können auch die Aktion „HTTP + Swagger“ verwenden, um auf Swagger zu verweisen und die verfügbaren Aktionen und Eingaben aufzulisten. Und schließlich können Sie jederzeit eine Anforderung mit der HTTP-Aktion erstellen, um beliebige APIs aufzurufen. Dazu gehören auch solche, die nicht über ein Swagger-Dokument verfügbar oder ein solches verfügbar machen.
 
-Zunächst möchten Sie wahrscheinlich einen Wiederholungstrigger verwenden oder auf **Diese Logik manuell ausführen** klicken. Als Nächstes sollten Sie Ihre API tatsächlich aufrufen. Klicken Sie hierzu auf die grüne **HTTP**-Aktion auf der rechten Seite.
+Wenn Sie Ihre API schützen möchten, gibt es verschiedene Möglichkeiten:
 
-1. Wählen Sie die **Methode** aus. Sie wird im API-Code definiert.
-2. Fügen Sie im Abschnitt **URL** die **URL** für die bereitgestellte Web-App ein.
-3. Wenn Sie **Header** benötigen, nehmen Sie sie im JSON-Format wie folgt auf: `{"Content-type" : "application/json", "Accept" : "application/json" }`
-4. Wenn die API öffentlich ist, können Sie die **Authentifizierung** leer lassen. Wenn Sie Aufrufe an die API sichern möchten, beachten Sie die folgenden Abschnitte.
-5. Nehmen Sie schließlich den **Text** der Frage auf, die Sie in Ihrer API definiert haben.
-
-Klicken Sie in der Befehlsleiste auf **Speichern**. Wenn Sie auf **Jetzt ausführen** klicken, sollten der Aufruf der API und die Antwort in der Ausführungsliste angezeigt werden.
-
-Bei einer öffentlichen API funktioniert dies sehr gut. Wenn Sie Ihre API jedoch sichern möchten, gibt es verschiedene Möglichkeiten:
-
-1. *Keine Codeänderung erforderlich* – Azure Active Directory kann verwendet werden, um ohne Änderung des Codes oder ohne eine erneute Bereitstellung Ihre API zu schützen.
-2. Erzwingen Sie die Standardauthentifizierung, die AAD-Authentifizierung oder die Zertifikatauthentifizierung im Code der API. 
+1. Keine Codeänderung erforderlich: Azure Active Directory kann verwendet werden, um ohne Änderung des Codes oder ohne eine erneute Bereitstellung Ihre API zu schützen.
+1. Erzwingen Sie die Standardauthentifizierung, die AAD-Authentifizierung oder die Zertifikatauthentifizierung im Code der API.
 
 ## Sichern der Aufrufe Ihrer API ohne eine Änderung des Codes 
 
@@ -51,7 +43,7 @@ In diesem Abschnitt erstellen Sie zwei Azure Active Directory-Anwendungen – ei
 
 ### Teil 1: Einrichten einer Anwendungsidentität für Ihre Logik-App
 
-Auf diese Weise wird die Logik-App bei Active Directory authentifiziert. Sie *müssen* dies nur einmal für Ihr Verzeichnis ausführen. Sie können z. B. die gleiche Identität für alle Logik-Apps verwenden, Sie könnten bei Bedarf aber auch pro Logik-App eindeutige Identitäten erstellen. Sie können dies in der Benutzeroberfläche oder mithilfe von PowerShell durchführen.
+Auf diese Weise wird die Logik-App bei Active Directory authentifiziert. Sie *müssen* dies nur einmal für Ihr Verzeichnis ausführen. Sie können z. B. die gleiche Identität für alle Logik-Apps verwenden, Sie könnten bei Bedarf aber auch pro Logik-App eindeutige Identitäten erstellen. Sie können dies in der Benutzeroberfläche oder mithilfe von PowerShell durchführen.
 
 #### Erstellen der Anwendungsidentität mithilfe des klassischen Azure-Portals
 
@@ -82,7 +74,7 @@ Wenn Ihre Web-App bereits bereitgestellt wurde, können Sie sie einfach im Porta
 2. Klicken Sie auf **Autorisierung/Authentifizierung**. 
 3. **Aktivieren** Sie sie.
 
-An diesem Punkt wird eine Anwendung automatisch für Sie erstellt. Sie benötigen die Client-ID dieser Anwendung für Teil 3, daher müssen Sie folgende Schritte ausführen:
+An diesem Punkt wird eine Anwendung automatisch für Sie erstellt. Sie benötigen die Client-ID dieser Anwendung für Teil 3, daher müssen Sie folgende Schritte ausführen:
 
 1. Wechseln Sie zu [Active Directory im klassischen Azure-Portal](https://manage.windowsazure.com/#Workspaces/ActiveDirectoryExtension/directory), und wählen Sie Ihr Verzeichnis aus. 
 2. Suchen Sie mit dem Suchfeld nach der App.
@@ -92,7 +84,7 @@ An diesem Punkt wird eine Anwendung automatisch für Sie erstellt. Sie benötige
 
 #### Bereitstellen Ihrer Web-App mit einer ARM-Vorlage
 
-Zunächst müssen Sie eine Anwendung für Ihre Web-App erstellen. Dies sollte eine andere Anwendung sein als die, die für Ihre Logik-App verwendet wird. Folgen Sie den Schritten in Teil 1 oben, verwenden Sie aber nun für **HomePage** und **IdentifierUris** den tatsächlichen Wert für https://**URL** der Web-App.
+Zunächst müssen Sie eine Anwendung für Ihre Web-App erstellen. Dies sollte eine andere Anwendung sein als die, die für Ihre Logik-App verwendet wird. Folgen Sie den Schritten in Teil 1 oben, verwenden Sie aber nun für **HomePage** und **IdentifierUris** den tatsächlichen Wert für https://**URL** der Web-App.
 
 >[AZURE.NOTE]Wenn Sie die Anwendung für Ihre Web-App erstellen, müssen Sie das [klassische Azure-Portal](https://manage.windowsazure.com/#Workspaces/ActiveDirectoryExtension/directory) verwenden, da mit dem PowerShell-Cmdlet die erforderlichen Berechtigungen zum Anmelden von Benutzern bei einer Website nicht eingerichtet werden.
 
@@ -132,7 +124,7 @@ Der Abschnitt für die **Autorisierung** der **HTTP**-Aktion: `{"tenant":"<<tena
 | type | Die Art der Authentifizierung. Für die ActiveDirectoryOAuth-Authentifizierung lautet der Wert "ActiveDirectoryOAuth". |
 | tenant | Die Mandanten-ID zum Identifizieren des AD-Mandanten. |
 | audience | Erforderlich. Die Ressource, mit der Sie eine Verbindung herstellen. |
-| clientID | Die Client-ID für die Azure AD-Anwendung. |
+| clientID | Die Client-ID für die Azure AD-Anwendung. |
 | secret | Erforderlich. Der geheime Schlüssel des Clients, der das Token anfordert. | 
 
 In der obigen Vorlage ist dies bereits eingerichtet, aber wenn Sie die Logik-App direkt erstellen, müssen Sie den gesamten Abschnitt für die Autorisierung aufnehmen.
@@ -141,7 +133,7 @@ In der obigen Vorlage ist dies bereits eingerichtet, aber wenn Sie die Logik-App
 
 ### Zertifikatauthentifizierung
 
-Clientzertifikate können zum Überprüfen der eingehenden Anforderungen bei der Web-App verwendet werden. Informationen zum Einrichten des Codes finden Sie unter [Konfigurieren der gegenseitigen TLS-Authentifizierung für eine Web-App](app-service-web-configure-tls-mutual-auth.md).
+Clientzertifikate können zum Überprüfen der eingehenden Anforderungen bei der Web-App verwendet werden. Informationen zum Einrichten des Codes finden Sie unter [Konfigurieren der gegenseitigen TLS-Authentifizierung für eine Web-App](../app-service-web/app-service-web-configure-tls-mutual-auth.md).
 
 Im Abschnitt für die *Autorisierung* sollten Sie Folgendes angeben: `{"type": "clientcertificate","password": "test","pfx": "long-pfx-key"}`.
 
@@ -153,7 +145,7 @@ Im Abschnitt für die *Autorisierung* sollten Sie Folgendes angeben: `{"type": "
 
 ### Standardauthentifizierung
 
-Mit der Standardauthentifizierung (z. B. Benutzername und Kennwort) können Sie die eingehenden Anforderungen überprüfen. Die Standardauthentifizierung ist ein gängiges Muster, und Sie können sie in jeder beliebigen Sprache verwenden, in der Sie Ihre App erstellen.
+Mit der Standardauthentifizierung (z. B. Benutzername und Kennwort) können Sie die eingehenden Anforderungen überprüfen. Die Standardauthentifizierung ist ein gängiges Muster, und Sie können sie in jeder beliebigen Sprache verwenden, in der Sie Ihre App erstellen.
 
 Im Abschnitt für die *Autorisierung* sollten Sie Folgendes angeben: `{"type": "basic","username": "test","password": "test"}`.
 
@@ -165,12 +157,12 @@ Im Abschnitt für die *Autorisierung* sollten Sie Folgendes angeben: `{"type": "
  
 ### Verarbeiten der AAD-Authentifizierung im Code
 
-Standardmäßig führt die Azure Active Directory-Authentifizierung, die Sie im Portal aktivieren, keine fein abgestufte Autorisierung durch. Die API wird z. B. nicht auf einen bestimmten Benutzer oder eine App festgelegt, sondern nur auf einen bestimmten Mandanten.
+Standardmäßig führt die Azure Active Directory-Authentifizierung, die Sie im Portal aktivieren, keine fein abgestufte Autorisierung durch. Die API wird z. B. nicht auf einen bestimmten Benutzer oder eine App festgelegt, sondern nur auf einen bestimmten Mandanten.
 
-Wenn Sie die API z. B. im Code nur auf die Logik-App einschränken möchten, können Sie den Header extrahieren, der das JWT enthält, und überprüfen, wer der Aufrufer ist, und dabei die nicht übereinstimmenden Anforderungen zurückweisen.
+Wenn Sie die API z. B. im Code nur auf die Logik-App einschränken möchten, können Sie den Header extrahieren, der das JWT enthält, und überprüfen, wer der Aufrufer ist, und dabei die nicht übereinstimmenden Anforderungen zurückweisen.
 
-Wenn Sie dies darüber hinaus vollständig in Ihrem eigenen Code implementieren möchten, ohne die Portal-Funktion zu nutzen, können Sie den folgenden Artikel lesen: [Verwenden von Active Directory für die Authentifizierung in Azure App Service](web-sites-authentication-authorization.md).
+Wenn Sie dies darüber hinaus vollständig in Ihrem eigenen Code implementieren möchten, ohne die Portal-Funktion zu nutzen, können Sie den folgenden Artikel lesen: [Verwenden von Active Directory für die Authentifizierung in Azure App Service](../app-service-web/web-sites-authentication-authorization.md).
 
 Sie müssen dennoch die obigen Schritte ausführen, um die Anwendungsidentität für Ihre Logik-App zu erstellen und diese zum Aufrufen der API zu verwenden.
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0224_2016-->

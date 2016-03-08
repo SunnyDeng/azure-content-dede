@@ -49,9 +49,9 @@ Diagramm 1: Übersicht über den Prozess des erneuten Trainings
 
 	![][3]
 
-	Nachdem die Ausführung des Experiments beendet ist, klicken wir auf „Create Predictive Experiment“. Wie unten dargestellt, wird daraufhin ein Vorhersageexperiment erstellt. Das Modell wird als trainiertes Modell gespeichert, und es werden Ein- und Ausgabemodule, wie unten gezeigt, für den Webdienst hinzugefügt. Als Nächstes klicken wir auf "Run" (Ausführen).
+	Nachdem die Ausführung des Experiments beendet ist, klicken wir auf „Vorhersageexperiment erstellen“. Wie unten dargestellt, wird daraufhin ein Vorhersageexperiment erstellt. Das Modell wird als trainiertes Modell gespeichert, und es werden Ein- und Ausgabemodule, wie unten gezeigt, für den Webdienst hinzugefügt. Als Nächstes klicken wir auf "Run" (Ausführen).
 
-	Nach Abschluss der Ausführung des Experiments wird das Vorhersageexperiment durch Klicken auf „Publish Web Service“ veröffentlicht und ein Standardendpunkt erstellt. Das trainierte Modell in diesem Webdienst ist aktualisierbar, wie unten dargestellt. Die Details für diesen Endpunkt werden dann auf dem Bildschirm angezeigt.  
+	Nach Abschluss der Ausführung des Experiments wird das Vorhersageexperiment durch Klicken auf „Webdienst veröffentlichen“ veröffentlicht und ein Standardendpunkt erstellt. Das trainierte Modell in diesem Webdienst ist aktualisierbar, wie unten dargestellt. Die Details für diesen Endpunkt werden dann auf dem Bildschirm angezeigt.  
 3. *Veröffentlichen des Trainingsexperiments als Webdienst* Damit das trainierte Modell erneut trainiert werden kann, müssen wir das Trainingsexperiment, das wir in Schritt 1 erstellt haben, als Webdienst veröffentlichen. Dieser Webdienst benötigt ein Webdienst-Ausgabemodul, das mit dem Modul [Train Model][train-model] verbunden ist, um neue trainierte Modelle erzeugen zu können. Klicken Sie auf das Symbol für Experimente im linken Bereich, und klicken Sie dann auf das Experiment namens "Census Model", um wieder zum Trainingsexperiment zurückzukehren.  
 
 	Wir fügen dem Workflow dann ein Webdienst-Eingabemodul und zwei Webdienst-Ausgabemodule hinzu. Die Webdienst-Ausgabe für "Train Model" liefert uns das neue trainierte Modell. Das mit dem Modul "Evaluate Model" verknüpfte Ausgabemodul gibt die Ausgabe dieses Moduls für das Bewertungsmodell zurück.
@@ -98,7 +98,7 @@ Diagramm 1: Übersicht über den Prozess des erneuten Trainings
 
 	(Wenn Sie den neuen Endpunkt mit dem Azure-Portal hinzugefügt haben, können Sie auf den Namen des neuen Endpunkts klicken, und klicken Sie dann auf den UpdateResource-Link, um die URL abzurufen, die Sie benötigen, um das Modell des Endpunkts zu aktualisieren.)
 
-	Die oben genannten BES-Ausgabe zeigt die Informationen für das Ergebnis des erneuten Trainings für "output1", das die Speicherortinformationen für das erneut trainierte Modell enthält. Nun müssen Sie dieses trainierte Modell anwenden und den Bewertungsendpunkt (der in Schritt 4 erstellt wurde) aktualisieren. Der Beispielcode lautet folgendermaßen:
+	Die oben genannten BES-Ausgabe zeigt die Informationen für das Ergebnis des erneuten Trainings für "output1", das die Speicherortinformationen für das erneut trainierte Modell enthält. Nun müssen Sie dieses trainierte Modell anwenden und den Bewertungsendpunkt (der in Schritt 4 erstellt wurde) aktualisieren. Der Beispielcode lautet folgendermaßen:
 
 	```C#
 	private async Task OverwriteModel()
@@ -158,4 +158,4 @@ Mithilfe der Retraining-APIs können wir das trainierte Modell eines Vorhersagew
 <!-- Module References -->
 [train-model]: https://msdn.microsoft.com/library/azure/5cc7053e-aa30-450d-96c0-dae4be720977/
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0224_2016-->

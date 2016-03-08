@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/16/2016"    
+	ms.date="02/18/2016"    
 	ms.author="juliako"/>
 
 
@@ -37,7 +37,7 @@ Im folgenden Codebeispiel wird das Media Services-.NET-SDK verwendet, um die fol
 
 - Erstellen eines Codierungsauftrags.
 - Abrufen eines Verweises auf den Media Encoder Standard-Encoder
-- Laden der benutzerdefinierten XML- oder JSON-Voreinstellung. Sie können die XML- oder JSON-Voreinstellung (z. B. [XML](media-services-custom-mes-presets-with-dotnet.md#xml) oder [JSON](media-services-custom-mes-presets-with-dotnet.md#json)) in einer Datei speichern und die Datei mit dem folgenden Code laden:
+- Laden der benutzerdefinierten XML- oder JSON-Voreinstellung. Sie können die XML- oder JSON-Voreinstellung (z. B. [XML](media-services-custom-mes-presets-with-dotnet.md#xml) oder [JSON](media-services-custom-mes-presets-with-dotnet.md#json)) in einer Datei speichern und die Datei mit dem folgenden Code laden:
 
 			// Load the XML (or JSON) from the local file.
 		    string configuration = File.ReadAllText(fileName);  
@@ -135,14 +135,33 @@ Im folgenden Codebeispiel wird das Media Services-.NET-SDK verwendet, um die fol
 				    return job.OutputMediaAssets[0];
 				}
 		
-		        static public IAsset EncodeWithOverlay(IAsset assetSource, IAsset assetOverlay, string customPresetFileName)
+		        static public IAsset UploadMediaFilesFromFolder(string folderPath)
+		        {
+		            IAsset asset = _context.Assets.CreateFromFolder(folderPath, AssetCreationOptions.None);
+		
+		            foreach (var af in asset.AssetFiles)
+		            {
+		                // The following code assumes 
+		                // you have an input folder with one MP4 and one overlay image file.
+		                if (af.Name.Contains(".mp4"))
+		                    af.IsPrimary = true;
+		                else
+		                    af.IsPrimary = false;
+		
+		                af.Update();
+		            }
+		
+		            return asset;
+		        }
+		
+		
+		        static public IAsset EncodeWithOverlay(IAsset assetSource, string customPresetFileName)
 		        {
 		            // Declare a new job.
 		            IJob job = _context.Jobs.Create("Media Encoder Standard Job");
 		            // Get a media processor reference, and pass to it the name of the 
 		            // processor to use for the specific task.
 		            IMediaProcessor processor = GetLatestMediaProcessorByName("Media Encoder Standard");
-		
 		
 		            // Load the XML (or JSON) from the local file.
 		            string configuration = File.ReadAllText(customPresetFileName);
@@ -154,8 +173,8 @@ Im folgenden Codebeispiel wird das Media Services-.NET-SDK verwendet, um die fol
 		                TaskOptions.None);
 		
 		            // Specify the input assets to be encoded.
+		            // This asset contains a source file and an overlay file.
 		            task.InputAssets.Add(assetSource);
-		            task.InputAssets.Add(assetOverlay);
 		
 		            // Add an output asset to contain the results of the job. 
 		            task.OutputAssets.AddNew("Output asset",
@@ -167,6 +186,7 @@ Im folgenden Codebeispiel wird das Media Services-.NET-SDK verwendet, um die fol
 		
 		            return job.OutputMediaAssets[0];
 		        }
+		
 
 		        private static void JobStateChanged(object sender, JobStateChangedEventArgs e)
 		        {
@@ -409,8 +429,8 @@ Es gelten die folgenden Bedingungen:
 - Bei der Verwendung von expliziten Zeitstempeln für "Start"/"Step"/"Range" wird davon ausgegangen, dass die Dauer der Eingabequelle mindestens 1 Minute beträgt.
 - Jpg-/Png-/BmpImage-Elemente weisen Start-, Step- und Range-Zeichenfolgenattribute auf. Diese können folgendermaßen interpretiert werden:
 
-	- Framenummer, wenn es sich nicht um negative ganze Zahlen handelt, z. B. "Start": "120",
-	- Relativ zur Quelldauer bei Ausdrücken mit dem Suffix "%", z. B. "Start": "15%" ODER
+	- Framenummer, wenn es sich nicht um negative ganze Zahlen handelt, z. B. "Start": "120",
+	- Relativ zur Quelldauer bei Ausdrücken mit dem Suffix "%", z. B. "Start": "15%" ODER
 	- Zeitstempel bei Ausdrücken im Format "HH:MM:SS". Beispiel: "Start" : "00:01:00"
 
 	Sie können die Formate nach Belieben mischen.
@@ -424,7 +444,7 @@ Es gelten die folgenden Bedingungen:
 
 Dieser Abschnitt befasst sich mit dem Ändern der Encoder-Voreinstellungen zum Beschneiden oder Kürzen des Eingabevideos, wenn es sich bei der Eingabe um eine sogenannte Zwischendatei (Mezzanine File) oder bedarfsgesteuerte Datei handelt. Der Encoder kann darüber hinaus zum Beschneiden oder Kürzen eines Assets verwendet werden, das aus einem Livedatenstrom erfasst oder archiviert wird. Ausführliche Informationen hierzu finden Sie [diesem Blog](https://azure.microsoft.com/blog/sub-clipping-and-live-archive-extraction-with-media-encoder-standard/).
 
-Zum Kürzen Ihrer Videos können Sie alle [hier](https://msdn.microsoft.com/library/mt269960.aspx) dokumentierten MES-Voreinstellungen verwenden und das **Sources**-Element (wie unten gezeigt) ändern. Der Wert von „StartTime“ muss mit den absoluten Zeitstempeln des Eingabevideos übereinstimmen. Wenn z. B. der erste Frame des Eingabevideos den Zeitstempel 12:00:10.000 trägt, sollte „StartTime“ mindestens 12:00:10.000 betragen. Im folgenden Beispiel wird davon ausgegangen, dass das Eingabevideo den Startzeitstempel 0 trägt. Beachten Sie, dass **Sources** oben im Schemas platziert werden muss.
+Zum Kürzen Ihrer Videos können Sie alle [hier](https://msdn.microsoft.com/library/mt269960.aspx) dokumentierten MES-Voreinstellungen verwenden und das **Sources**-Element (wie unten gezeigt) ändern. Der Wert von „StartTime“ muss mit den absoluten Zeitstempeln des Eingabevideos übereinstimmen. Wenn z. B. der erste Frame des Eingabevideos den Zeitstempel 12:00:10.000 trägt, sollte „StartTime“ mindestens 12:00:10.000 betragen. Im folgenden Beispiel wird davon ausgegangen, dass das Eingabevideo den Startzeitstempel 0 trägt. Beachten Sie, dass **Sources** oben im Schemas platziert werden muss.
  
 ###<a id="json"></a>JSON-Voreinstellung
 	
@@ -669,9 +689,15 @@ Zum Kürzen Ihrer Videos können Sie alle [hier](https://msdn.microsoft.com/libr
 
 Media Encoder Standard ermöglicht die Überlagerung eines Bildes mit einem vorhandenen Video. Derzeit werden die folgenden Formate unterstützt: png, jpg, gif und bmp. Die unten definierte Voreinstellung ist ein einfaches Beispiel einer Videoüberlagerung.
 
->[AZURE.NOTE]Die Einstellung für die Deckkraft der Überlagerung wird derzeit nicht unterstützt.
+Zusätzlich zur Definition einer Voreinstellungsdatei müssen Sie Media Services darüber informieren, welche Datei im Asset das Überlagerungsbild und welche Datei das Quellvideo darstellt, das mit dem Bild überlagert werden soll. Die Videodatei muss die **primäre** Datei sein.
 
-Zusätzlich zur Definition einer Voreinstellungsdatei müssen Sie Media Services darüber informieren, welches Asset ein Überlagerungsbild und welches Asset das Quellvideo enthält, das mit dem Bild überlagert werden soll. Sehen Sie sich das .NET-Beispiel der oben definierten **EncodeWithOverlay**-Methode an.
+Das obige .NET-Beispiel definiert zwei Funktionen: **UploadMediaFilesFromFolder** und **EncodeWithOverlay**. Die UploadMediaFilesFromFolder-Funktion lädt Dateien aus einem Ordner hoch (z. B. „BigBuckBunny.mp4“ und „Image001.png“) und legt die MP4-Datei als primäre Datei im Asset fest. Die **EncodeWithOverlay**-Funktion verwendet die übergebene benutzerdefinierte Voreinstellungsdatei (z. B. die darauf folgende Einstellung) zum Erstellen der Codierungsaufgabe.
+
+>[AZURE.NOTE]Aktuelle Einschränkungen:
+>
+>Die Einstellung für die Deckkraft der Überlagerung wird nicht unterstützt.
+>
+>Der Videoquelldatei und die Überlagerungsdatei müssen sich im selben Asset befinden.
 
 ###JSON-Voreinstellung
 	
@@ -699,7 +725,7 @@ Zusätzlich zur Definition einer Voreinstellungsdatei müssen Sie Media Services
 	              "InputLoop": true
 	            }
 	          ],
-	          "Source": "Image001.jpg",
+	          "Source": "Image001.png",
 	          "Clip": {
 	            "Duration": "00:00:05"
 	          },
@@ -759,7 +785,7 @@ Zusätzlich zur Definition einer Voreinstellungsdatei müssen Sie Media Services
 	      <Streams />
 	      <Filters>
 	        <VideoOverlay>
-	          <Source>Image001.jpg</Source>
+	          <Source>Image001.png</Source>
 	          <Clip Duration="PT5S" />
 	          <FadeInDuration Duration="PT1S" />
 	          <FadeOutDuration StartTime="PT3S" Duration="PT4S" />
@@ -839,7 +865,7 @@ Sie können alle [hier](https://msdn.microsoft.com/library/mt269960.aspx) dokume
       <Bitrate>96</Bitrate>
     </AACAudio>
 
-##<a id="deinterlacing"></a>Deaktivieren des automatischen De-Interlacings
+##<a id="deinterlacing"></a>Deaktivieren des automatischen Deinterlacings
 
 Kunden müssen nichts tun, wenn sie wünschen, dass das Interlacing der die Interlace-Inhalte automatisch aufgehoben wird. Bei Aktivierung des automatischen Deinterlacings (Standard) übernimmt MWS die automatische Erkennung von Frames mit Zeilensprung und hebt das Interlacing nur für Frames auf, die als Interlaced markiert sind.
 
@@ -884,4 +910,4 @@ Sie können das automatische Deinterlacing deaktivieren. Diese Option wird jedoc
 
 [Media Services-Codierung (Übersicht)](media-services-encode-asset.md)
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0224_2016-->

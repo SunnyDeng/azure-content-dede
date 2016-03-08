@@ -13,7 +13,7 @@
 	ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="identity" 
-	ms.date="02/02/2016"
+	ms.date="02/23/2016"
 	ms.author="billmath"/>
 
 # Ermitteln der Anforderungen an die Verzeichnissynchronisierung
@@ -32,14 +32,16 @@ Beantworten Sie die folgenden Fragen:
   
 - Verwenden Sie derzeit lokal ein Synchronisierungstool?
   - Wenn ja: Ist für Ihre Benutzer ein virtuelles Verzeichnis bzw. eine Integration der Identitäten vorhanden?
-- Sind lokal noch weitere Verzeichnisse vorhanden, die synchronisiert werden sollen (z. B. LDAP-Verzeichnis, HR-Datenbank usw.)?
+- Sind lokal noch weitere Verzeichnisse vorhanden, die synchronisiert werden sollen (z. B. LDAP-Verzeichnis, HR-Datenbank usw.)?
   - Sollen GALSync-Vorgänge durchgeführt werden?
   - Welchen aktuellen Stand haben UPNs in Ihrem Unternehmen? 
   - Verwenden Sie ein anderes Verzeichnis, das für die Authentifizierung der Benutzer eingesetzt wird?
   - Wird in Ihrem Unternehmen Microsoft Exchange verwendet?
-    - Ist eine Hybrid-Exchange-Bereitstellung geplant? 
+    - Ist eine Hybrid-Exchange-Bereitstellung geplant?
+
+Nachdem Sie nun eine Vorstellung von Ihren Synchronisierungsanforderungen gewonnen haben, müssen Sie bestimmen, welches Tool sich am besten zur Erfüllung dieser Anforderungen eignet. Microsoft bietet verschiedene Tools zur Integration und Synchronisierung von Verzeichnissen. Weitere Informationen finden Sie unter [Hybrid Identity directory integration tools comparison](active-directory-hybrid-identity-design-considerations-tools-comparison.md) (Vergleich von Tools für die Verzeichnisintegration für Hybrid-Identitäten).
    
-Nachdem Sie nun Erkenntnisse zu den Synchronisierungsanforderungen für ihr Unternehmen gewonnen haben, müssen Sie die Anwendungen auswerten, von denen diese Verzeichnisdienste verwendet werden. Diese Auswertung ist wichtig, um die technischen Anforderungen zum Integrieren dieser Anwendungen in die Cloud zu definieren. Beantworten Sie die folgenden Fragen:
+Nachdem Sie nun Erkenntnisse zu Ihren Synchronisierungsanforderungen und dem richtigen Tool für ihr Unternehmen gewonnen haben, müssen Sie die Anwendungen auswerten, von denen diese Verzeichnisdienste verwendet werden. Diese Auswertung ist wichtig, um die technischen Anforderungen zum Integrieren dieser Anwendungen in die Cloud zu definieren. Beantworten Sie die folgenden Fragen:
 
 - Werden diese Anwendungen in die Cloud verschoben, und soll das Verzeichnis dafür genutzt werden?
 - Gibt es spezielle Attribute, die mit der Cloud synchronisiert werden müssen, damit sie von den Anwendungen erfolgreich genutzt werden können?
@@ -50,7 +52,7 @@ Außerdem müssen Sie die Sicherheitsanforderungen und Einschränkungen der Verz
 
 - Wo soll sich der Synchronisierungsserver befinden?
 - Soll er Mitglied einer Domäne sein?
-- Befindet sich der Server in einem eingeschränkten Netzwerk hinter einer Firewall, z. B. einer DMZ?
+- Befindet sich der Server in einem eingeschränkten Netzwerk hinter einer Firewall, z. B. einer DMZ?
   - Können Sie die erforderlichen Firewallports öffnen, um die Synchronisierung zu unterstützen?
 - Verfügen Sie für den Synchronisierungsserver über einen Plan für die Notfallwiederherstellung?
 - Verfügen Sie über ein Konto mit den richtigen Berechtigungen für alle Gesamtstrukturen, für die eine Synchronisierung durchgeführt werden soll?
@@ -66,4 +68,4 @@ Notieren Sie sich alle Antworten, und stellen Sie sicher, dass Ihnen die Begrün
 ## Weitere Informationen
 [Überlegungen zum Entwurf – Übersicht](active-directory-hybrid-identity-design-considerations-overview.md)
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0224_2016-->

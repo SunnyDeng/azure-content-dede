@@ -1,10 +1,10 @@
 Nachdem die Datensätze für Ihren Domänennamen weitergegeben wurden, müssen Sie sie Ihrer Web-App zuweisen. Verwenden Sie die folgenden Schritte, um die Domänennamen mit dem Webbrowser zu aktivieren.
 
-> [AZURE.NOTE]Es kann einige Zeit dauern, bis die CNAME-Einträge, die in den vorherigen Schritten erstellt wurden, über das DNS-System weitergegeben werden. Sie können den Domänennamen Ihrer Web-App erst dann hinzufügen, nachdem CNAME weitergegeben wurde. Wenn Sie einen A-Datensatz verwenden, können Sie den Domänennamen des A-Datensatzes erst dann der Web-App hinzufügen, wenn der im vorigen Schritt erstellte CNAME **awverify** weitergegeben wurde.
+> [AZURE.NOTE] Es kann einige Zeit dauern, bis die CNAME-Einträge, die in den vorherigen Schritten erstellt wurden, über das DNS-System weitergegeben werden. Sie können den Domänennamen Ihrer Web-App erst dann hinzufügen, nachdem CNAME weitergegeben wurde. Wenn Sie einen A-Datensatz verwenden, können Sie den Domänennamen des A-Datensatzes erst dann der Web-App hinzufügen, wenn der im vorigen Schritt erstellte CNAME **awverify** weitergegeben wurde.
 >
-> Mithilfe eines Diensts wie <a href="http://www.digwebinterface.com/">http://www.digwebinterface.com/</a> können Sie überprüfen, ob der CNAME verfügbar ist.
+> Mithilfe eines Services wie <a href="http://www.digwebinterface.com/">http://www.digwebinterface.com/</a> können Sie überprüfen, ob der CNAME verfügbar ist.
 
-1. Öffnen Sie das [Azure-Verwaltungsportal](https://portal.azure.com) in Ihrem Browser.
+1. Öffnen Sie in Ihrem Browser das [Azure-Portal](https://portal.azure.com).
 
 2. Klicken Sie auf der Registerkarte **Web-Apps** auf den Namen der Web-App, wählen Sie **Einstellungen** und dann **Benutzerdefinierte Domänen und SSL** aus.
 
@@ -24,4 +24,4 @@ Nachdem die Datensätze für Ihren Domänennamen weitergegeben wurden, müssen S
 
 Jetzt sollten Sie den benutzerdefinierten Domänennamen in Ihren Browser eingeben können und und auf diese Weise erfolgreich zu Ihrer Web-App gelangen.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0224_2016-->

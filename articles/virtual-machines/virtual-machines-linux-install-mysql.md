@@ -185,4 +185,4 @@ Wir verwenden hier eine Linux-VM mit OpenSUSE.
 ###Nächster Schritt
 Weitere Informationen zur Verwendung von MySQL finden Sie [hier](https://www.mysql.com/).
 
-<!---HONumber=AcomDC_0204_2016-->
+<!----HONumber=AcomDC_0204_2016-->

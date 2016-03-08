@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Erste Schritte mit Warteschlangenspeicher und verbundenen Visual Studio-Diensten (WebJob-Projekte) | Microsoft Azure"
-	description="Erste Schritte mit Azure-Warteschlangenspeicher in einem WebJob-Projekt nach dem Herstellen einer Verbindung mit einem Speicherkonto mithilfe von verbundenen Visual Studio-Diensten."
+	description="Erste Schritte mit Azure-Warteschlangenspeicher in einem WebJob-Projekt nach dem Herstellen einer Verbindung mit einem Speicherkonto mithilfe von verbundenen Visual Studio-Diensten."
 	services="storage"
 	documentationCenter=""
 	authors="TomArcher"
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="vs-getting-started"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/30/2016"
+	ms.date="02/21/2016"
 	ms.author="tarcher"/>
 
 # Erste Schritte mit Azure-Warteschlangenspeicher und verbundenen Visual Studio-Diensten (WebJob-Projekte)
@@ -24,13 +24,13 @@ Dieser Artikel beschreibt die ersten Schritte bei der Verwendung von Azure-Warte
 
 Dieser Artikel enthält C#-Codebeispiele, die zeigen, wie das Azure WebJobs-SDK (Version 1.x) mit dem Azure-Warteschlangenspeicherdienst verwendet wird.
 
-Die Warteschlangenspeicherung in Azure ist ein Dienst zur Speicherung großer Anzahlen von Nachrichten, auf die von überall auf der Welt mit authentifizierten Anrufen über HTTP oder HTTPS zugegriffen werden kann. Eine einzelne Warteschlangennachricht kann bis zu 64 KB groß sein, und eine Warteschlange kann Millionen von Nachrichten enthalten. Deren Anzahl ist nur durch die Kapazität des Speicherkontos begrenzt. Weitere Informationen finden Sie unter [Verwenden des Warteschlangenspeichers aus .NET](storage-dotnet-how-to-use-queues.md). Weitere Informationen zu ASP.NET finden Sie unter [ASP.NET](http://www.asp.net).
+Die Warteschlangenspeicherung in Azure ist ein Dienst zur Speicherung großer Anzahlen von Nachrichten, auf die von überall auf der Welt mit authentifizierten Anrufen über HTTP oder HTTPS zugegriffen werden kann. Eine einzelne Warteschlangennachricht kann bis zu 64 KB groß sein, und eine Warteschlange kann Millionen von Nachrichten enthalten. Deren Anzahl ist nur durch die Kapazität des Speicherkontos begrenzt. Weitere Informationen finden Sie unter [Erste Schritte mit Azure Queue Storage mit .NET](storage-dotnet-how-to-use-queues.md). Weitere Informationen zu ASP.NET finden Sie unter [ASP.NET](http://www.asp.net).
 
 
 
 ## Auslösen einer Funktion, wenn eine Warteschlangennachricht empfangen wird
 
-Zum Schreiben einer Funktion, die das WebJobs-SDK aufruft, wenn eine Warteschlangennachricht empfangen wird, verwenden Sie das **QueueTrigger**-Attribut. Der Attributkonstruktor verwendet einen Zeichenfolgenparameter, der den Namen der Warteschlange angibt. Sie können den [Warteschlangennamen auch dynamisch festlegen](how-to-set-configuration-options).
+Zum Schreiben einer Funktion, die das WebJobs-SDK aufruft, wenn eine Warteschlangennachricht empfangen wird, verwenden Sie das **QueueTrigger**-Attribut. Der Attributkonstruktor verwendet einen Zeichenfolgenparameter, der den Namen der Warteschlange angibt. Informationen zum dynamischen Festlegen des Warteschlangennamens finden Sie unter [Gewusst wie: Festlegen von Konfigurationsoptionen](#how-to-set-configuration-options).
 
 ### Zeichenfolgen-Warteschlangennachrichten
 
@@ -241,7 +241,7 @@ Sie können das **Queue**-Attribut für die folgenden Parametertypen verwenden:
 
 ### Verwenden von WebJobs-SDK-Attributen im Hauptteil einer Funktion
 
-Wenn Sie weitere Aufgaben in Ihrer Funktion vor der Verwendung eines Attributs des WebJobs-SDK erledigen möchten, z. B. **Queue**, **Blob** oder **Table**, können Sie die **IBinder**-Schnittstelle verwenden.
+Wenn Sie weitere Aufgaben in Ihrer Funktion vor der Verwendung eines Attributs des WebJobs-SDK erledigen möchten, z. B. **Queue**, **Blob** oder **Table**, können Sie die **IBinder**-Schnittstelle verwenden.
 
 Im folgenden Beispiel wird aus einer Nachricht der Eingabewarteschlange eine neue Nachricht mit dem gleichen Inhalt in einer Ausgabewarteschlange erstellt. Der Name der Ausgabewarteschlangenname wird durch Code im Text der Funktion festgelegt.
 
@@ -259,7 +259,7 @@ Sie können die **IBinder**-Schnittstelle auch mit den Attributen **Table** und 
 
 ## Lesen und Bearbeiten von Blobs beim Verarbeiten einer Warteschlangennachricht
 
-Die Attribute **Blob** und **Table** ermöglichen Ihnen das Lesen und Schreiben von Blobs und Tabellen. Die Beispiele in diesem Abschnitt gelten für Blobs. Codebeispiele, die zeigen, wie Sie Prozesse auslösen, wenn Blobs erstellt oder aktualisiert werden, finden Sie unter [Verwenden von Azure-Blobspeicher mit dem WebJobs-SDK](/app-service-web/websites-dotnet-webjobs-sdk-storage-blobs-how-to.md). Codebeispiele für das Lesen und Schreiben von Tabellen finden Sie unter [Verwenden von Azure-Tabellenspeicher mit dem WebJobs-SDK](/app-service-web/websites-dotnet-webjobs-sdk-storage-tables-how-to.md).
+Die Attribute **Blob** und **Table** ermöglichen Ihnen das Lesen und Schreiben von Blobs und Tabellen. Die Beispiele in diesem Abschnitt gelten für Blobs. Codebeispiele, die zeigen, wie Sie Prozesse auslösen, wenn Blobs erstellt oder aktualisiert werden, finden Sie unter [Verwenden von Azure-Blobspeicher mit dem WebJobs-SDK](../app-service-web/websites-dotnet-webjobs-sdk-storage-blobs-how-to.md). Codebeispiele für das Lesen und Schreiben von Tabellen finden Sie unter [Verwenden von Azure-Tabellenspeicher mit dem WebJobs-SDK](../app-service-web/websites-dotnet-webjobs-sdk-storage-tables-how-to.md).
 
 ### Zeichenfolge-Warteschlangennachrichten, die Blobvorgänge auslösen
 
@@ -275,7 +275,7 @@ Im folgenden Beispiel werden **Stream**-Objekte zum Lesen und Schreiben von Blob
 		    blobInput.CopyTo(blobOutput, 4096);
 		}
 
-Der **Blob**-Attributkonstruktor verwendet den **blobPath**-Parameter, der den Container und Blobnamen angibt. Weitere Informationen zu diesem Platzhalter finden Sie unter [Verwenden von Azure-Blobspeicher mit dem WebJobs-SDK](websites-dotnet-webjobs-sdk-storage-blobs-how-to.md).
+Der **Blob**-Attributkonstruktor verwendet den **blobPath**-Parameter, der den Container und Blobnamen angibt. Weitere Informationen zu diesem Platzhalter finden Sie unter [Gewusst wie: Verwenden von Azure Blob Storage mit dem WebJobs SDK](../app-service-web/websites-dotnet-webjobs-sdk-storage-blobs-how-to.md).
 
 Wenn das Attribut ein **Stream**-Objekt anpasst, gibt ein anderer Konstruktorparameter den **FileAccess**-Modus als Lesen, Schreiben oder Lesen/Schreiben an.
 
@@ -290,7 +290,7 @@ Im folgenden Beispiel wird ein **CloudBlockBlob**-Objekt verwendet, um einen Blo
 
 ### POCO-Warteschlangennachrichten [(Plain Old CLR Object)](http://en.wikipedia.org/wiki/Plain_Old_CLR_Object)
 
-Für ein POCO-Objekt, das als JSON in der Warteschlangenmeldung gespeichert wird, können Sie Platzhalter verwenden, mit denen Eigenschaften des **blobPath**-Parameters des **Queue**-Attributs benannt werden. Sie können auch [Metadateneigenschaftennamen](#get-queue-or-queue-message-metadata) der Warteschlange als Platzhalter verwenden.
+Für ein POCO-Objekt, das als JSON in der Warteschlangenmeldung gespeichert wird, können Sie Platzhalter verwenden, mit denen Eigenschaften des **blobPath**-Parameters des **Queue**-Attributs benannt werden. Sie können auch Metadateneigenschaftennamen der Warteschlange als Platzhalter verwenden. Siehe [Abrufen der Warteschlange oder von Metadaten der Warteschlangennachricht](#get-queue-or-queue-message-metadata).
 
 Das folgende Beispiel kopiert ein Blob in ein neues Blob mit einer anderen Erweiterung. Die Warteschlangennachricht ist ein **BlobInformation**-Objekt, das die Eigenschaften **BlobName** und **BlobNameWithoutExtension** enthält. Die Eigenschaftsnamen dienen als Platzhalter im Blobpfad für die **Blob**-Attribute.
 
@@ -308,7 +308,7 @@ Das SDK verwendet das [Newtonsoft.Json NuGet-Paket](http://www.nuget.org/package
 		var queueMessage = new CloudQueueMessage(JsonConvert.SerializeObject(blobInfo));
 		logQueue.AddMessage(queueMessage);
 
-Wenn Sie an Ihrer Funktion vor dem Binden eines Blobs an ein Objekt einige Änderungen vornehmen müssen, können Sie das Attribut im Text der Funktion verwenden, [wie zuvor für das Queue-Attribut beschrieben](#use-webjobs-sdk-attributes-in-the-body-of-a-function).
+Wenn Sie vor dem Binden eines Blobs an ein Objekt Änderungen an Ihrer Funktion vornehmen müssen, können Sie das Attribut im Hauptteil der Funktion verwenden, wie unter [Verwenden von WebJobs SDK-Attributen im Hauptteil einer Funktion](#use-webjobs-sdk-attributes-in-the-body-of-a-function) beschrieben.
 
 ###Typen, mit denen das "Blob"-Attribut arbeitet
 
@@ -332,7 +332,7 @@ Nachrichten, deren Inhalt bewirkt, dass bei einer Funktion ein Fehler auftritt, 
 
 ### Automatische Behandlung von nicht verarbeitbaren Nachrichten
 
-Das SDK ruft eine Funktion bis zu fünfmal auf, um eine Warteschlangennachricht zu verarbeiten. Wenn der fünfte Versuch fehlschlägt, wird die Nachricht in eine Warteschlange für nicht verarbeitete Nachrichten verschoben. [Die maximale Anzahl von Wiederholungen ist konfigurierbar](#how-to-set-configuration-options).
+Das SDK ruft eine Funktion bis zu fünfmal auf, um eine Warteschlangennachricht zu verarbeiten. Wenn der fünfte Versuch fehlschlägt, wird die Nachricht in eine Warteschlange für nicht verarbeitete Nachrichten verschoben. Hinweise zum Konfigurieren der maximalen Anzahl von erneuten Versuchen finden Sie unter [Gewusst wie: Festlegen von Konfigurationsoptionen](#how-to-set-configuration-options).
 
 Die Warteschlange für nicht verarbeitete Nachrichten weist den Namen "*{UrsprünglicherWarteschlangenname}*-poison" auf. Sie können eine Funktion schreiben, um Nachrichten aus der Warteschlange für nicht verarbeitete Nachrichten zu verarbeiten, indem Sie diese protokollieren oder eine Benachrichtigung senden, dass ein manueller Eingriff erforderlich ist.
 
@@ -381,7 +381,7 @@ Sie erhalten die Anzahl der Male, die eine Nachricht für die Verarbeitung über
 Den Typ **JobHostConfiguration** können Sie verwenden, um die folgenden Konfigurationsoptionen festzulegen:
 
 * Festlegen der SDK-Verbindungszeichenfolgen im Code
-* Konfigurieren von **QueueTrigger**-Einstellungen, z. B. die maximale Anzahl der Entfernungen aus der Warteschlange.
+* Konfigurieren von **QueueTrigger**-Einstellungen, z. B. die maximale Anzahl der Entfernungen aus der Warteschlange.
 * Rufen Sie Warteschlangennamen aus der Konfiguration ab.
 
 ###Festlegen von SDK-Verbindungszeichenfolgen im Code
@@ -429,7 +429,7 @@ Das folgende Beispiel zeigt, wie diese Einstellungen konfiguriert werden können
 
 ### Festlegen von Werten für WebJobs SDK-Konstruktorparametern im Code
 
-Mitunter möchten Sie einen Warteschlangennamen, einen Blobnamen oder Container oder einen Tabellennamen im Code angeben, anstatt ihn hart zu codieren. Sie möchten z. B. den Warteschlangennamen für **QueueTrigger** in einer Datei oder Umgebungsvariablen angeben.
+Mitunter möchten Sie einen Warteschlangennamen, einen Blobnamen oder Container oder einen Tabellennamen im Code angeben, anstatt ihn hart zu codieren. Sie möchten z. B. den Warteschlangennamen für **QueueTrigger** in einer Datei oder Umgebungsvariablen angeben.
 
 Dies ist möglich, indem Sie ein **NameResolver**-Objekt an den **JobHostConfiguration**-Typ übergeben. Sie fügen in Konstruktorparametern von WebJobs-SDK-Attributen spezielle Platzhalter hinzu, die von Prozentzeichen (%) umgeben werden, und Ihr **NameResolver**-Code gibt die tatsächlichen Werte an, die anstelle dieser Platzhalter verwendet werden sollen.
 
@@ -497,11 +497,11 @@ Methoden für die Konsolenausgabe, die Sie in einer Funktion oder in der **Main(
 
 Die Konsolenausgabe kann nicht an einen bestimmten Methodenaufruf geknüpft werden, da die Konsole als Singlethread ausgeführt wird, während viele Aufgaben ggf. gleichzeitig ausgeführt werden. Deshalb versieht das SDK jeden Funktionsaufruf mit einem eigenen eindeutigen Protokollschreibobjekt.
 
-Verwenden Sie zum Schreiben von [Ablaufverfolgungsprotokollen für die Anwendung](web-sites-dotnet-troubleshoot-visual-studio.md#logsoverview) **Console.Out** (erstellt als INFO markierte Protokolle) und **Console.Error** (erstellt als ERROR markierte Protokolle). Eine Alternative ist die [Verwendung von Trace oder TraceSource](http://blogs.msdn.com/b/mcsuksoldev/archive/2014/09/04/adding-trace-to-azure-web-sites-and-web-jobs.aspx), um zusätzlich zu INFO und FEHLER die Stufen AUSFÜHRLICH, WARNUNG und KRITISCH bereitzustellen. Ablaufverfolgungsprotokolle von Anwendungen werden in den Web-App-Protokolldateien, Azure-Tabellen oder Azure-Blobs angezeigt, je nachdem, wie Sie Ihre Azure-Web-App konfigurieren. Wie bei sämtlichen Konsolenausgaben werden die 100 letzten Anwendungsprotokolle auch auf der Seite "Dashboard" für den Webauftrag und nicht auf der Seite für die Funktionsaufruf angezeigt.
+Verwenden Sie zum Schreiben von [Ablaufverfolgungsprotokollen für die Anwendung](web-sites-dotnet-troubleshoot-visual-studio.md#logsoverview) **Console.Out** (erstellt als INFO markierte Protokolle) und **Console.Error** (erstellt als ERROR markierte Protokolle). Eine Alternative ist die [Verwendung von Trace oder TraceSource](http://blogs.msdn.com/b/mcsuksoldev/archive/2014/09/04/adding-trace-to-azure-web-sites-and-web-jobs.aspx), um zusätzlich zu INFO und FEHLER die Stufen AUSFÜHRLICH, WARNUNG und KRITISCH bereitzustellen. Ablaufverfolgungsprotokolle von Anwendungen werden in den Web-App-Protokolldateien, Azure-Tabellen oder Azure-Blobs angezeigt, je nachdem, wie Sie Ihre Azure-Web-App konfigurieren. Wie bei sämtlichen Konsolenausgaben werden die 100 letzten Anwendungsprotokolle auch auf der Seite "Dashboard" für den Webauftrag und nicht auf der Seite für die Funktionsaufruf angezeigt.
 
 Die Konsolenausgabe wird nur im Dashboard angezeigt, wenn das Programm in einem Azure-Webauftrag ausgeführt wird, und nicht, wenn die Anwendung lokal oder in einer anderen Umgebung ausgeführt wird.
 
-Sie können die Protokollierung deaktivieren, indem Sie die [Dashboard-Verbindungszeichenfolge auf NULL festlegen](#how-to-set-configuration-options).
+Sie können die Protokollierung deaktivieren, indem Sie die Dashboard-Verbindungszeichenfolge auf null festlegen. Weitere Informationen finden Sie unter [Gewusst wie: Festlegen von Konfigurationsoptionen](#how-to-set-configuration-options).
 
 Im folgenden Beispiel sind mehrere Möglichkeiten zum Schreiben von Protokollen dargestellt:
 
@@ -541,6 +541,6 @@ Und in einer Azure-Tabelle sehen **Console.Out**- und **Console.Error**-Protokol
 
 ##Nächste Schritte
 
-In diesem Artikel wurden Codebeispiele bereitgestellt, in denen veranschaulicht wird, wie häufige Szenarien für das Arbeiten mit Azure-Warteschlangen behandelt werden. Weitere Informationen zur Verwendung von Azure WebJobs und dem WebJobs-SDK finden Sie unter [Empfohlene Ressourcen für Azure WebJobs](http://go.microsoft.com/fwlink/?linkid=390226).
+In diesem Artikel wurden Codebeispiele bereitgestellt, in denen veranschaulicht wird, wie häufige Szenarien für das Arbeiten mit Azure-Warteschlangen behandelt werden. Weitere Informationen zur Verwendung von Azure WebJobs und dem WebJobs-SDK finden Sie unter [Dokumentationsressourcen für Azure WebJobs](http://go.microsoft.com/fwlink/?linkid=390226).
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0224_2016-->

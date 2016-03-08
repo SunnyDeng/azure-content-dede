@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="PHP"
 	ms.topic="article"
-	ms.date="12/16/2015"
+	ms.date="02/17/2016"
 	ms.author="tomfitz"/>
 
 # Verwenden des Warteschlangenspeichers mit PHP
@@ -42,12 +42,13 @@ In diesem Leitfaden verwenden Sie Funktionen des Warteschlangenspeichers, die lo
 
 Um die APIs für den Azure-Warteschlangenspeicher verwenden zu können, müssen Sie:
 
-1. mithilfe der [require\_once][require_once]-Anweisung auf die Autoloaderdatei verweisen.
+1. mithilfe der [require\_once]-Anweisung auf die Autoloaderdatei verweisen.
 2. auf alle Klassen verweisen, die Sie möglicherweise verwenden.
 
 Das folgende Beispiel zeigt, wie die Autoloaderdatei eingeschlossen und die **ServicesBuilder**-Klasse referenziert wird.
 
-> [AZURE.NOTE]In diesem Beispiel (und in anderen Beispielen in diesem Artikel) wird angenommen, dass Sie die PHP-Clientbibliotheken für Azure über Composer installiert haben. Wenn Sie die Bibliotheken manuell oder als PEAR-Paket installiert haben, müssen Sie auf die Autoloaderdatei `WindowsAzure.php` verweisen.
+> [AZURE.NOTE]
+In diesem Beispiel (und in anderen Beispielen in diesem Artikel) wird angenommen, dass Sie die PHP-Clientbibliotheken für Azure über Composer installiert haben. Wenn Sie die Bibliotheken manuell oder als PEAR-Paket installiert haben, müssen Sie auf die Autoloaderdatei `WindowsAzure.php` verweisen.
 
 	require_once 'vendor\autoload.php';
 	use WindowsAzure\Common\ServicesBuilder;
@@ -115,7 +116,7 @@ Für die hier erläuterten Beispiele wird die Verbindungszeichenfolge direkt wei
 		echo $code.": ".$error_message."<br />";
 	}
 
-> [AZURE.NOTE]Metadaten-Schlüssel unterscheiden nicht immer zwischen Groß- und Kleinschreibung. Alle Schlüssel werden vom Dienst in Kleinbuchstaben gelesen.
+> [AZURE.NOTE] Metadaten-Schlüssel unterscheiden nicht immer zwischen Groß- und Kleinschreibung. Alle Schlüssel werden vom Dienst in Kleinbuchstaben gelesen.
 
 
 ## Hinzufügen von Nachrichten zu einer Warteschlange
@@ -380,7 +381,7 @@ Nachdem Sie sich nun mit den Grundlagen des Azure-Warteschlangenspeichers vertra
 Weitere Informationen finden Sie außerdem im [PHP Developer Center](/develop/php/).
 
 [download]: http://go.microsoft.com/fwlink/?LinkID=252473
-[require_once]: http://www.php.net/manual/en/function.require-once.php
-[Azure Portal]: portal.azure.com
+[require\_once]: http://www.php.net/manual/en/function.require-once.php
+[Azure Portal]: https://portal.azure.com
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0224_2016-->

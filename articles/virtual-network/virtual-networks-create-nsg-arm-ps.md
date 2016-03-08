@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Erstellen von NSGs im ARM-Modus mithilfe von PowerShell | Microsoft Azure"
-   description="Hier erhalten Sie Informationen zum Erstellen und Bereitstellen von NSGs im ARM-Modus mit PowerShell."
+   pageTitle="Gewusst wie: Erstellen von NSGs in Azure Resource Manager mit PowerShell | Microsoft Azure"
+   description="Hier erhalten Sie Informationen zum Erstellen und Bereitstellen von NSGs in Azure Resource Manager mit PowerShell."
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
@@ -14,10 +14,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/20/2015"
+   ms.date="02/23/2016"
    ms.author="telmos" />
 
-# Erstellen von NSGs in PowerShell
+# Gewusst wie: Erstellen von NSGs in Resource Manager mit PowerShell
 
 [AZURE.INCLUDE [virtual-networks-create-nsg-selectors-arm-include](../../includes/virtual-networks-create-nsg-selectors-arm-include.md)]
 
@@ -34,7 +34,7 @@ Führen Sie zum Erstellen einer NSG mit dem Namen *NSG-FrontEnd* basierend auf d
 
 [AZURE.INCLUDE [powershell-preview-include.md](../../includes/powershell-preview-include.md)]
 
-1. Wenn Sie Azure PowerShell noch nie verwendet haben, lesen Sie [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md), und befolgen Sie die komplette Anleitung, um sich bei Azure anzumelden und Ihr Abonnement auszuwählen.
+1. Wenn Sie Azure PowerShell noch nie verwendet haben, lesen Sie [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md), und befolgen Sie die komplette Anleitung, um sich bei Azure anzumelden und Ihr Abonnement auszuwählen.
 
 3. Erstellen Sie eine Sicherheitsregel, die den Zugriff über das Internet auf Port 3389 zulässt.
 
@@ -123,7 +123,7 @@ Führen Sie zum Erstellen einer NSG mit dem Namen *NSG-FrontEnd* basierend auf d
 		                        "ProvisioningState": "Succeeded"
 		                      }
 
->[AZURE.WARNING]Die Ausgabe des obigen Befehls zeigt den Inhalt des Konfigurationsobjekts des virtuellen Netzwerks an, das nur auf dem Computer vorhanden ist, auf dem PowerShell ausgeführt wird. Zum Speichern der Änderungen in Azure müssen Sie das Cmdlet **Set-AzureRmVirtualNetwork** ausführen.
+>[AZURE.WARNING] Die Ausgabe des obigen Befehls zeigt den Inhalt des Konfigurationsobjekts des virtuellen Netzwerks an, das nur auf dem Computer vorhanden ist, auf dem PowerShell ausgeführt wird. Zum Speichern der Änderungen in Azure müssen Sie das Cmdlet `Set-AzureRmVirtualNetwork` ausführen.
 
 7. Speichern Sie die neuen Einstellungen für das VNet in Azure.
 
@@ -182,4 +182,4 @@ Führen Sie zum Erstellen einer NSG mit dem Namen *NSG-BackEnd* basierend auf de
 
 		Set-AzureRmVirtualNetwork -VirtualNetwork $vnet
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0224_2016-->

@@ -13,7 +13,7 @@
     ms.workload="data-services"
     ms.tgt_pltfrm="na"
     ms.devlang="na"
-    ms.topic="article"
+    ms.topic="get-started-article"
     ms.date="02/02/2016"
     ms.author="cgronlun;tedway;olgali"/>
 
@@ -48,7 +48,7 @@ Azure Machine Learning bietet alles, was Sie zum Erstellen von Predictive Analyt
 
 ### Machine Learning Studio: Erstellen von Vorhersagemodellen
 
-Erstellen Sie Vorhersagemodelle in [Machine Learning Studio](machine-learning-what-is-ml-studio.md), einem browserbasierten Tool, indem Sie Module per Drag & Drop platzieren und miteinander verbinden.
+Erstellen Sie Vorhersagemodelle in [Machine Learning Studio](machine-learning-what-is-ml-studio.md), einem browserbasierten Tool, indem Sie Module per Drag & Drop platzieren und miteinander verbinden.
 
 ![Was ist Predictive Analytics? Beispiel eines Predictive Analytics-Experiments in Azure Machine Learning Studio](./media/machine-learning-what-is-machine-learning/azure-machine-learning-studio-predictive-score-experiment.png)
 
@@ -59,7 +59,7 @@ Erstellen Sie Vorhersagemodelle in [Machine Learning Studio](machine-learning-wh
 
 ### Operationalisieren von Predictive Analytics-Lösungen: Erwerben von Webdiensten oder Veröffentlichen eigener Dienste
 
-* Erwerben Sie im [Microsoft Azure Marketplace](https://datamarket.azure.com/browse?query=machine+learning) sofort nutzbare Webdienste z. B. für Empfehlungen, Textanalysen und Anomalieerkennung.
+* Erwerben Sie im [Microsoft Azure Marketplace](https://datamarket.azure.com/browse?query=machine+learning) sofort nutzbare Webdienste z. B. für Empfehlungen, Textanalysen und Anomalieerkennung.
 
 * Operationalisieren Sie Ihre Predictive Analytics-Modelle:
     * [Bereitstellen von Webdiensten](machine-learning-publish-a-machine-learning-web-service.md)
@@ -73,7 +73,7 @@ Erstellen Sie Vorhersagemodelle in [Machine Learning Studio](machine-learning-wh
 
 Beim **Durchsuchen von Daten** werden Informationen über ein umfangreiches und oft unstrukturiertes Dataset erfasst, um Merkmale für eine gezielte Analyse zu ermitteln. Der Begriff **Data Mining** bezieht sich auf das automatisierte Durchsuchen von Daten.
 
-Bei der **beschreibenden Analyse** wird ein Dataset analysiert, um Vorgänge zusammenzufassen. Bei den weitaus meisten Business Analytics-Prozessen – z. B. Verkaufsberichten, Webmetriken und Analysen sozialer Netzwerke – handelt es sich um beschreibende Analysen.
+Bei der **beschreibenden Analyse** wird ein Dataset analysiert, um Vorgänge zusammenzufassen. Bei den weitaus meisten Business Analytics-Prozessen – z. B. Verkaufsberichten, Webmetriken und Analysen sozialer Netzwerke – handelt es sich um beschreibende Analysen.
 
 Bei **Predictive Analytics** werden Modelle basierend auf vergangenen oder aktuellen Daten entwickelt, um zukünftige Ergebnisse vorhersagen zu können.
 
@@ -87,7 +87,7 @@ Bei **Predictive Analytics** werden Modelle basierend auf vergangenen oder aktue
 Ein Modell zum maschinellen Lernen ist eine Abstraktion der Frage, die Sie beantworten möchten, oder des Ergebnisses, das Sie vorhersagen möchten. Modelle werden anhand vorhandener Daten trainiert und ausgewertet.
 
 #### Trainieren anhand von Daten
-In Azure Machine Learning wird ein Modell aus einem Algorithmusmodul entwickelt, das Trainingsdaten und funktionale Module, wie z. B. ein Bewertungsmodul, verarbeitet.
+In Azure Machine Learning wird ein Modell aus einem Algorithmusmodul entwickelt, das Trainingsdaten und funktionale Module, wie z. B. ein Bewertungsmodul, verarbeitet.
 
 Wenn Sie ein Betrugserkennungsmodell in einem überwachten Lernprozess trainieren, verwenden Sie einen Satz Transaktionen, die entweder als betrügerisch oder als gültig bezeichnet sind. Sie teilen Ihr Dataset nach dem Zufallsprinzip und verwenden einen Teil zum Trainieren und einen Teil zum Testen oder Auswerten des Modells.
 
@@ -97,15 +97,15 @@ Nachdem Sie das Modell trainiert haben, werden Sie es mithilfe der verbleibenden
 ### Weitere gängige Begriffe des maschinellen Lernens
 
 * **Algorithmus**: Ein eigenständiger Regelsatz, der zum Lösen von Problemen mithilfe von Datenverarbeitung, Berechnungen oder automatisierter Argumentation verwendet wird.
-* **Kategorische Daten**: Daten, die nach Kategorien organisiert sind und in Gruppen unterteilt werden können. Ein kategorisches Dataset für Fahrzeuge könnte z. B. Jahr, Marke, Modell und Preis angeben.
+* **Kategorische Daten**: Daten, die nach Kategorien organisiert sind und in Gruppen unterteilt werden können. Ein kategorisches Dataset für Fahrzeuge könnte z. B. Jahr, Marke, Modell und Preis angeben.
 * **Klassifizierung**: Ein Modell für die Einordnung von Datenpunkten in Kategorien, basierend auf einem Dataset, für das die Kategoriegruppierungen bereits bekannt sind.
-* **Featureentwicklung**: Der Prozess des Extrahierens oder Auswählens von Features in Zusammenhang mit einem Dataset, um das Dataset zu erweitern und die Ergebnisse zu verbessern. Flugpreisdaten könnten z. B. durch Wochentage und Ferien erweitert werden. Siehe [Entwicklung und Auswahl von Features in Azure Machine Learning](machine-learning-feature-selection-and-engineering.md).
+* **Featureentwicklung**: Der Prozess des Extrahierens oder Auswählens von Features in Zusammenhang mit einem Dataset, um das Dataset zu erweitern und die Ergebnisse zu verbessern. Flugpreisdaten könnten z. B. durch Wochentage und Ferien erweitert werden. Siehe [Entwicklung und Auswahl von Features in Azure Machine Learning](machine-learning-feature-selection-and-engineering.md).
 * **Modul**: Ein Funktionselement in einem Machine Learning Studio-Modell, wie beispielsweise das Modul zur Dateneingabe, das die Eingabe und Bearbeitung kleiner Datasets ermöglicht. Auch bei einem Algorithmus handelt es sich um eine Art Modul in Machine Learning Studio.
-* **Modell**: Beim überwachten Lernen ist ein Modell das Produkt eines Machine Learning-Experiments, das aus einem Trainingsdataset, einem Algorithmusmodul und Funktionsmodulen – z. B. einem Bewertungsmodellmodul – besteht.
+* **Modell**: Beim überwachten Lernen ist ein Modell das Produkt eines Machine Learning-Experiments, das aus einem Trainingsdataset, einem Algorithmusmodul und Funktionsmodulen – z. B. einem Bewertungsmodellmodul – besteht.
 * **Numerische Daten**: Daten, die eine Bedeutung als Messung (kontinuierliche Daten) oder Zählung (diskrete Daten) haben. Diese Daten werden auch als *quantitative Daten* bezeichnet.
 * **Partitionieren**: Die Methode, mit der Sie Daten in Stichproben unterteilen. Weitere Informationen finden Sie unter [Partition and Sample](https://msdn.microsoft.com/library/azure/dn905960.aspx).
 * **Vorhersage**: Eine Vorhersage ist die Prognose eines oder mehrerer Werte aus einem Machine Learning-Modell. Ihnen wird möglicherweise auch der Begriff "vorhergesagte Bewertung" begegnen, hierbei handelt es sich jedoch nicht um die finalen Ergebnisse eines Modells. Der Bewertung folgt eine Auswertung des Modells.
-* **Regression**: Ein Modell zur Vorhersage eines kontinuierlichen Werts basierend auf unabhängigen Variablen, um z. B. den Preis eines Autos anhand des Baujahrs und der Marke vorherzusagen.
+* **Regression**: Ein Modell zur Vorhersage eines kontinuierlichen Werts basierend auf unabhängigen Variablen, um z. B. den Preis eines Autos anhand des Baujahrs und der Marke vorherzusagen.
 * **Bewertung**: Ein vorhergesagter Wert, der mithilfe des Moduls [Score Model](https://msdn.microsoft.com/library/azure/dn905995.aspx) in Machine Learning Studio aus einem trainierten Klassifizierungs- oder Regressionsmodell generiert wurde. Klassifizierungsmodelle geben auch eine Bewertung für die Wahrscheinlichkeit des vorhergesagten Werts zurück. Sobald Sie Bewertungen aus einem Modell generiert haben, können Sie die Genauigkeit des Modells mithilfe des Moduls [Evaluate Model](https://msdn.microsoft.com/library/azure/dn905915.aspx) auswerten.
 * **Stichprobe**: Ein Teil eines Datasets, das repräsentativ für das gesamte Dataset steht. Stichproben können nach dem Zufallsprinzip oder basierend auf bestimmten Features des Datasets ausgewählt werden.
 
@@ -118,4 +118,4 @@ Die Grundlagen der Vorhersageanalyse und des maschinellen Lernens werden anhand 
 <!-- Module References -->
 [learning-with-counts]: https://msdn.microsoft.com/library/azure/81c457af-f5c0-4b2d-922c-fdef2274413c/
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0302_2016-->

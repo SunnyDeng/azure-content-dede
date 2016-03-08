@@ -308,7 +308,7 @@ Sobald Sie über das Ergebnis der Ausführung von „\_inmem“ verfügen, führ
 EXECUTE Demo.usp_DemoReset;
 ```
 
-2. Bearbeiten Sie die „ostress.exe“-Befehlszeile so, dass alle Vorkommen von „*\_inmem*“ durch „*\_ondisk*“ ersetzt werden.
+2. Bearbeiten Sie die „ostress.exe“-Befehlszeile so, dass alle Vorkommen von „ *\_inmem* “ durch „ *\_ondisk* “ ersetzt werden.
 
 3. Führen Sie „ostress.exe“ ein zweites Mal aus, und erfassen Sie die Dauer.
 
@@ -531,4 +531,4 @@ Wenn eine Datenbank eine der folgenden Arten von In-Memory OLTP-Objekten oder -T
 
 - [Überwachen von In-Memory-Speicher](sql-database-in-memory-oltp-monitoring.md) für In-Memory OLTP
 
-<!---HONumber=AcomDC_0218_2016-->
+<!-----HONumber=AcomDC_0218_2016-->

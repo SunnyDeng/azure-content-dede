@@ -35,7 +35,7 @@ Beachten Sie die folgenden **wichtigen** Hinweise zum bedarfsgesteuerten verknü
 - Die Protokolle für Aufträge, die in einem bedarfsgesteuerten HDInsight-Cluster ausgeführt werden, werden in das mit dem HDInsight-Cluster verknüpfte Speicherkonto kopiert. Der Zugriff auf diese Protokolle erfolgt über das klassische Azure-Portal auf dem Blatt **Aktivitätsausführung – Details**. Einzelheiten finden Sie im Artikel [Überwachen und Verwalten von Pipelines](data-factory-monitor-manage-pipelines.md).
 - Ihnen wird nur die Zeit in Rechnung gestellt, in der der HDInsight-Cluster verfügbar ist und Aufträge ausführt.
 
-> [AZURE.IMPORTANT] Die bedarfsgesteuerte Bereitstellung eines Azure HDInsight-Clusters dauert üblicherweise länger als **15 Minuten**.
+> [AZURE.IMPORTANT] Die bedarfsgesteuerte Bereitstellung eines Azure HDInsight-Clusters dauert üblicherweise länger als **15 Minuten**.
 
 ### Beispiel
 Die folgende JSON definiert einen bedarfsgesteuerten mit HDInsight verknüpften Dienst. Die Data Factory erstellt bei der Verarbeitung eines Datenslices automatisch einen **Windows-basierten** HDInsight-Cluster. Beachten Sie, dass **osType** in dieser Beispiel-JSON nicht angegeben und der Standardwert für diese Eigenschaft **Windows** ist.
@@ -85,12 +85,12 @@ Eigenschaft | Beschreibung | Erforderlich
 -------- | ----------- | --------
 type | Legen Sie die Typeigenschaft auf **HDInsightOnDemand** fest. | Ja
 clusterSize | Die Größe des bedarfsgesteuerten Clusters. Geben Sie an, über wie viele Knoten dieser bedarfsgesteuerte Cluster verfügen soll. | Ja
-timetolive | <p>Die zulässige Leerlaufzeit für den bedarfsgesteuerten HDInsight-Cluster. Gibt an, wie lange der bedarfsgesteuerte HDInsight-Cluster nach Abschluss einer Aktivitätsausführung beibehalten wird, wenn der Cluster über keine weiteren aktiven Aufträge verfügt.</p><p>Wenn eine Aktivitätsausführung z. B. 6 Minuten dauert und "timetolive" auf 5 Minuten festgelegt ist, wird der Cluster nach den 6 Minuten, in denen die Aktivitätsausführung verarbeitet wird, weitere 5 Minuten beibehalten. Wenn innerhalb dieser 6 Minuten eine weitere Aktivitätsausführung verarbeitet wird, wird diese vom selben Cluster verarbeitet.</p><p>Da das Erstellen eines bedarfsgesteuerten HDInsight-Clusters ein kostenintensiver Vorgang ist, der mit einem recht hohen Zeitaufwand einhergehen kann, sollten Sie diese Einstellung gegebenenfalls nutzen, um die Data Factory-Leistung durch die Wiederverwendung eines bedarfsgesteuerten HDInsight-Clusters zu verbessern.</p><p>Wenn Sie den timetolive-Wert auf 0 festlegen, wird der Cluster gelöscht, sobald die Aktivitätsausführung verarbeitet wurde. Wenn Sie jedoch einen hohen Wert festlegen, wird der Cluster möglicherweise für einen zu langen Zeitraum im Leerlauf beibehalten, was hohe Kosten verursachen kann. Daher ist es wichtig, basierend auf Ihren individuellen Anforderungen einen geeigneten Wert festzulegen.</p><p>Wenn der Wert der Eigenschaft "timetolive" ordnungsgemäß festgelegt wird, können mehrere Pipelines dieselbe Instanz des bedarfsgesteuerten HDInsight-Clusters verwenden</p> | Ja
+timetolive | <p>Die zulässige Leerlaufzeit für den bedarfsgesteuerten HDInsight-Cluster. Gibt an, wie lange der bedarfsgesteuerte HDInsight-Cluster nach Abschluss einer Aktivitätsausführung beibehalten wird, wenn der Cluster über keine weiteren aktiven Aufträge verfügt.</p><p>Wenn eine Aktivitätsausführung z. B. 6 Minuten dauert und "timetolive" auf 5 Minuten festgelegt ist, wird der Cluster nach den 6 Minuten, in denen die Aktivitätsausführung verarbeitet wird, weitere 5 Minuten beibehalten. Wenn innerhalb dieser 6 Minuten eine weitere Aktivitätsausführung verarbeitet wird, wird diese vom selben Cluster verarbeitet.</p><p>Da das Erstellen eines bedarfsgesteuerten HDInsight-Clusters ein kostenintensiver Vorgang ist, der mit einem recht hohen Zeitaufwand einhergehen kann, sollten Sie diese Einstellung gegebenenfalls nutzen, um die Data Factory-Leistung durch die Wiederverwendung eines bedarfsgesteuerten HDInsight-Clusters zu verbessern.</p><p>Wenn Sie den timetolive-Wert auf 0 festlegen, wird der Cluster gelöscht, sobald die Aktivitätsausführung verarbeitet wurde. Wenn Sie jedoch einen hohen Wert festlegen, wird der Cluster möglicherweise für einen zu langen Zeitraum im Leerlauf beibehalten, was hohe Kosten verursachen kann. Daher ist es wichtig, basierend auf Ihren individuellen Anforderungen einen geeigneten Wert festzulegen.</p><p>Wenn der Wert der Eigenschaft "timetolive" ordnungsgemäß festgelegt wird, können mehrere Pipelines dieselbe Instanz des bedarfsgesteuerten HDInsight-Clusters verwenden</p> | Ja
 Version | Version des HDInsight-Clusters. Der Standardwert ist 3.1 für Windows-Cluster und 3.2 für Linux-Cluster. | Nein
 linkedServiceName | Der Blobspeicher, den der bedarfsgesteuerte Cluster zum Speichern und Verarbeiten von Daten nutzt. | Ja
 additionalLinkedServiceNames | Gibt zusätzliche Speicherkonten für den verknüpften HDInsight-Dienst an, damit der Data Factory-Dienst diese für Sie registrieren kann. | Nein
 osType | Typ des Betriebssystems. Zulässige Werte sind: „Windows“ (Standard) und „Linux“. | Nein
-hcatalogLinkedServiceName | Der Name des mit Azure SQL verknüpften Diensts, der auf die HCatalog-Datenbank verweist. Der bedarfsgesteuerte HDInsight-Cluster wird mit der Azure SQL-Datenbank als Metastore erstellt. | Nein
+hcatalogLinkedServiceName | Der Name des mit Azure SQL verknüpften Diensts, der auf die HCatalog-Datenbank verweist. Der bedarfsgesteuerte HDInsight-Cluster wird mit der Azure SQL-Datenbank als Metastore erstellt. | Nein
 sshUser | SSH-Benutzer für den Linux-basierten HDInsight-Cluster | Ja (nur für Linux)
 sshPassword | SSH-Kennwort für den Linux-basierten HDInsight-Cluster | Ja (nur für Linux)
 
@@ -165,7 +165,7 @@ zookeeperNodeSize | Gibt die Größe des Zoo Keeper-Knotens an. Der Standardwert
 #### Knotengrößen angeben
 Lesen Sie den Artikel [Größen von virtuellen Computern](../virtual-machines/virtual-machines-size-specs.md#size-tables), um Näheres zu Zeichenfolgenwerten zu erfahren, die Sie für die oben aufgeführten Eigenschaften angeben müssen. Die Werte müssen den **CMDLETs und APIs** entsprechen, auf die im Artikel verwiesen wird. Wie Sie in diesem Artikel sehen können, hat der Datenknoten „Large“ (Standard) 7 GB Arbeitsspeicher, was für Ihr Szenario möglicherweise nicht ausreichend ist.
 
-Wenn Sie Hauptknoten der Größe D4 und Workerknoten erstellen möchten, müssen Sie **Standard\_D4** als Wert für die Eigenschaften headNodeSize und dataNodeSize angeben.
+Wenn Sie Hauptknoten der Größe D4 und Workerknoten erstellen möchten, müssen Sie **Standard\_D4** als Wert für die Eigenschaften headNodeSize und dataNodeSize angeben.
 
 	"headNodeSize": "Standard_D4",	
 	"dataNodeSize": "Standard_D4",
@@ -212,7 +212,7 @@ Typ | Legen Sie die Typeigenschaft auf **HDInsight** fest. | Ja
 clusterUri | Der URI des HDInsight-Clusters. | Ja
 username | Geben Sie den Namen des Benutzers ein, der mit einem vorhandenen HDInsight-Cluster verbunden werden soll. | Ja
 password | Geben Sie ein Kennwort für das Benutzerkonto an. | Ja
-location | Geben Sie den Standort des HDInsight-Clusters an (z. B. "WestUS"). | Ja
+location | Geben Sie den Standort des HDInsight-Clusters an (z. B. "WestUS"). | Ja
 linkedServiceName | Der Name des verknüpften Diensts für den Blobspeicher, der von diesem HDInsight-Cluster verwendet wird. | Ja
 
 ## Verknüpfter Azure Batch-Dienst
@@ -322,13 +322,12 @@ sessionId | Sitzungs-ID aus der OAuth-Autorisierungssitzung. Jede Sitzungs-ID is
 
 Der von Ihnen mithilfe der Schaltfläche **Autorisieren** generierte Autorisierungscode läuft nach einer gewissen Zeit ab. Die Zeiten bis zum Ablaufen der Autorisierungscodes für die verschiedenen Benutzerkonten finden Sie in der folgenden Tabelle. Unter Umständen wird Ihnen nach dem **Ablauf des Tokens** folgende Fehlermeldung angezeigt: „Fehler beim Anmeldevorgang: invalid\_grant – AADSTS70002: Fehler beim Überprüfen der Anmeldeinformationen. AADSTS70008: Die angegebene Zugriffserteilung ist abgelaufen oder wurde widerrufen. Ablaufverfolgungs-ID: d18629e8-af88-43c5-88e3-d8419eb1fca1 Korrelations-ID: fac30a0c-6be6-4e02-8d69-a776d2ffefd7 Zeitstempel: 2015-12-15 21:09:31Z“
 
- 
 | Benutzertyp | Läuft ab nach |
 | :-------- | :----------- | 
-| Nicht-AAD-Benutzer(@hotmail.com, @live.com usw.) | 12 Stunden |
-| AAD-Benutzer, und die OAuth-basierte Quelle befindet sich in einem anderen [Mandanten](https://msdn.microsoft.com/library/azure/jj573650.aspx#BKMK_WhatIsAnAzureADTenant) als dem für die Data Factory. | 12 Stunden |
-| AAD-Benutzer, und die OAuth-basierte Quelle befindet sich im gleichen Mandanten wie dem für die Data Factory. | 14 Tage |
+| Benutzer, die NICHT von Azure Active Directory verwaltet werden (@hotmail.com, @live.com usw.) | 12 Stunden |
+| Benutzer, die von Azure Active Directory (AAD) verwaltet werden | | 14 Tage nach Ausführung des letzten Slice, wenn seit der letzten Sliceausführung seit 14 Tagen keine Slices basierend auf dem OAuth-basierten verknüpften Dienst ausgeführt wurden. <p>90 Tage, wenn ein Slice basierend auf dem OAuth-basierten verknüpften Dienst mindestens einmal alle 14 Tage ausgeführt wird.</p> |
 
+ 
 Um diesen Fehler zu vermeiden oder zu beheben, müssen Sie bei **Ablauf des Tokens** mithilfe der Schaltfläche **Autorisieren** eine erneute Autorisierung ausführen und den verknüpften Dienst erneut bereitstellen. Sie können auch programmgesteuert Werte für die Eigenschaften „sessionId“ und „authorization“ generieren. Verwenden Sie dazu den im folgenden Abschnitt bereitgestellten Code.
 
 ### So generieren Sie programmgesteuert Werte für „sessionId“ und „authorization“ 
@@ -364,4 +363,4 @@ Details zu den im Code verwendeten Data Factory-Klassen finden Sie in den Themen
 
 Sie erstellen einen mit Azure SQL verknüpften Dienst und verwenden ihn mit der [Aktivität "Gespeicherte Prozedur"](data-factory-stored-proc-activity.md) zum Aufrufen einer gespeicherten Prozedur in einer Data Factory-Pipeline. Im Artikel [Azure SQL-Connector](data-factory-azure-sql-connector.md#azure-sql-linked-service-properties) finden Sie weitere Informationen zu diesem verknüpften Dienst.
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0224_2016-->

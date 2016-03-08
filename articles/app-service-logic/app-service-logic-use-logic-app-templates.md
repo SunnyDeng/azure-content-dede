@@ -13,10 +13,12 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/09/2015"
+	ms.date="02/18/2016"
 	ms.author="klam"/>
 
 # Verwenden von Logik-App-Vorlagen
+
+>[AZURE.NOTE] Diese Version des Artikels gilt für die Logik-Apps-Schemaversion 2014-12-01-preview.
 
 Bei Logik-App-Vorlagen handelt es sich um eine Gruppe von geordneten, vorgefertigten Logik-Apps, mit denen Sie schnell in die Erstellung eigener Integrationsanwendungen einsteigen können.
 
@@ -36,12 +38,12 @@ Konfigurationen für BizTalk VETR-Pipelines (überprüfen, extrahieren, transfor
 Muster für die Nachrichtenweiterleitung einschließlich synchronem Request-Response, Weiterleitung von Nachrichten über verschiedene Protokolle hinweg und inhaltsbasierter Weiterleitung.
 
 ### DevOps-Vorlagen
-Automatisierte Prozesse zur Verarbeitung von allgemeinen Azure-Prozeduren, die Sie möglicherweise in der Regel manuell ausführen oder für die Sie benutzerdefinierten Code schreiben mussten. Es gibt Vorlagen, die die Verwendung von wiederkehrenden Prozessen behandeln, wie z. B. Neustart eines virtuellen Computer an jedem Wochenende oder Benachrichtigungen beim Hinzufügen neuer RBAC-Benutzer zu einer Ressource.
+Automatisierte Prozesse zur Verarbeitung von allgemeinen Azure-Prozeduren, die Sie möglicherweise in der Regel manuell ausführen oder für die Sie benutzerdefinierten Code schreiben mussten. Es gibt Vorlagen, die die Verwendung von wiederkehrenden Prozessen behandeln, wie z. B. Neustart eines virtuellen Computer an jedem Wochenende oder Benachrichtigungen beim Hinzufügen neuer RBAC-Benutzer zu einer Ressource.
 
 ### Vorlagen für die Endbenutzer-Cloud
-Einfache Vorlagen für die Integration in soziale Netzwerkdienste, wie z. B. Twitter, Yammer und E-Mail. Dies können ausgezeichnete Produktivitäts-Anwendungen sein, die fortwährend auf Aktualisierungen überwachen und Aktionen ausführen, wenn neue Elemente verfügbar sind.
+Einfache Vorlagen für die Integration in soziale Netzwerkdienste, wie z. B. Twitter, Yammer und E-Mail. Dies können ausgezeichnete Produktivitäts-Anwendungen sein, die fortwährend auf Aktualisierungen überwachen und Aktionen ausführen, wenn neue Elemente verfügbar sind.
 
 Nachdem Sie eine der Vorlagen ausgewählt haben, führen Sie die Bereitstellungsschritte wie beim Erstellen Ihrer eigenen Logik-App aus. Die einzelnen Schritte werden unter [Erstellen einer Logik-App zum Verbinden von SaaS-Diensten](app-service-logic-create-a-logic-app.md) beschrieben.
  
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0224_2016-->

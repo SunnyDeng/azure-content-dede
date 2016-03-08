@@ -4,7 +4,7 @@
    services="storsimple"
    documentationCenter=""
    authors="alkohli"
-   manager="carolz"
+   manager="carmonm"
    editor="" />
 <tags 
    ms.service="storsimple"
@@ -27,7 +27,7 @@ In diesem Tutorial wird erläutert, wie Sie ein schlecht funktionierendes oder f
 
 - Einbauen des Austauschlaufwerks
 
->[AZURE.IMPORTANT]Überprüfen Sie vor dem Ausbauen und Austauschen eines Laufwerks die Sicherheitsinformationen unter [Austauschen von StorSimple-Hardwarekomponenten](storsimple-hardware-component-replacement.md).
+>[AZURE.IMPORTANT] Überprüfen Sie vor dem Ausbauen und Austauschen eines Laufwerks die Sicherheitsinformationen unter [Austauschen von StorSimple-Hardwarekomponenten](storsimple-hardware-component-replacement.md).
 
 ## Entriegeln der Zugangssperre
 
@@ -37,7 +37,7 @@ In dieser Vorgehensweise wird erläutert, wie die Zugangssperren eines StorSimpl
 
 1. Führen Sie den Sperrschlüssel (ein "manipulationssicherer" T10-Schraubendreher, der von Microsoft mitgeliefert wurde), vorsichtig in die Öffnung im Griff und in die zugehörige Vertiefung ein. 
 
-    >[AZURE.NOTE]Ist die Zugangssperre aktiviert, ist in der Öffnung das rote Kennzeichen zu sehen.
+    >[AZURE.NOTE] Ist die Zugangssperre aktiviert, ist in der Öffnung das rote Kennzeichen zu sehen.
 
     ![Verriegeltes Laufwerk](./media/storsimple-disk-drive-replacement/IC741056.png)
 
@@ -70,7 +70,7 @@ Ein StorSimple-Gerät unterstützt eine RAID-10-ähnliche Speicherplatzkonfigura
 >
 >- Stellen Sie sicher, dass Sie eine Austausch-SSD in einem Einschubfach platzieren, das zuvor eine SSD enthalten hat. Auf ähnliche Weise setzen Sie eine Austauschfestplatte in ein Einschubfach ein, das zuvor eine HDD enthalten hat.
 >
->- Im klassischen Azure-Portal sind Einschubfächer von 0 bis 11 nummeriert. Wenn das Portal also anzeigt, dass ein Datenträger in Einschubfach 2 ausgefallen ist, finden Sie diesen Datenträger im Gerät im dritten Einschubfach von links oben.
+>- Im klassischen Azure-Portal sind Einschubfächer von 0 bis 11 nummeriert. Wenn das Portal also anzeigt, dass ein Datenträger in Einschubfach 2 ausgefallen ist, finden Sie diesen Datenträger im Gerät im dritten Einschubfach von links oben.
 
 Laufwerke können bei laufendem Betrieb des Systems ausgebaut und ausgetauscht werden.
 
@@ -118,10 +118,10 @@ Nachdem ein Laufwerk in einem Microsoft Azure StorSimple-Gerät ausgefallen ist 
 
 5. Vergewissern Sie sich, dass der Austausch erfolgreich war und das Laufwerk betriebsbereit ist. Navigieren Sie dazu im klassischen Azure-Portal zu **Wartung** > **Hardwarestatus**. Unter **Freigegebene Komponenten** oder **EBOD-Gehäuse – Freigegebene Komponenten** muss der Laufwerksstatus "Grün" angezeigt werden, was heißt, dass das Laufwerk betriebsbereit ist.
 
-    >[AZURE.NOTE]Es kann mehrere Stunden dauern, bis für ein Laufwerk nach einem Austausch der Status "Grün" angezeigt wird.
+    >[AZURE.NOTE] Es kann mehrere Stunden dauern, bis für ein Laufwerk nach einem Austausch der Status "Grün" angezeigt wird.
 
 ## Nächste Schritte
 
 Erfahren Sie mehr zum [Austauschen von StorSimple-Hardwarekomponenten](storsimple-hardware-component-replacement.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0224_2016-->

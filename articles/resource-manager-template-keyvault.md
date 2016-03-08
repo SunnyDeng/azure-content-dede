@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="01/04/2016"
+   ms.date="02/23/2016"
    ms.author="tomfitz"/>
 
 # Vorlagenschema für einen Schlüsseltresor
@@ -76,7 +76,7 @@ In den folgenden Tabellen sind die Werte beschrieben, die Sie im Schema festlege
 | enabledForTemplateDeployment | Boolescher Wert | Nein | **true** oder **false** | Gibt an, ob der Tresor zur Verwendung in Ressourcen-Manager-Vorlagenbereitstellungen aktiviert ist. Weitere Informationen finden Sie unter [Übergeben sicherer Werte während der Bereitstellung](resource-manager-keyvault-parameter.md). |
 | enabledForVolumeEncryption | Boolescher Wert | Nein | **true** oder **false** | Gibt an, ob der Tresor für die Volumeverschlüsselung aktiviert ist. |
 | tenantId | Zeichenfolge | Ja | Globally Unique Identifier (GUID) | Die Mandanten-ID für das Abonnement. Diese ID können Sie mit dem PowerShell-Cmdlet **Get-AzureRMSubscription** abrufen. |
-| accessPolicies | array | Ja | ([siehe unten](#accesspolicies)) | Ein Array von bis zu 16 Objekten, die Berechtigungen für den Benutzer oder Dienstprinzipal angeben. |
+| accessPolicies | array | Ja | ([siehe unten](#accesspolicies)) | Ein Array von bis zu 16 Objekten, die Berechtigungen für den Benutzer oder Dienstprinzipal angeben. |
 | sku | Objekt | Ja | ([siehe unten](#sku)) | Die SKU für den Schlüsseltresor. |
 
 <a id="accesspolicies" />
@@ -223,7 +223,6 @@ Im folgenden Beispiel werden ein Schlüsseltresor und ein geheimer Schlüssel be
                 "type": "secrets",
                 "name": "[parameters('secretName')]",
                 "apiVersion": "2015-06-01",
-                "tags": { "displayName": "secret" },
                 "properties": {
                     "value": "[parameters('secretValue')]"
                 },
@@ -246,4 +245,4 @@ Die folgende Schnellstartvorlage stellt einen Schlüsseltresor bereit.
 - Allgemeine Informationen zu Schlüsseltresoren finden Sie unter [Erste Schritte mit dem Azure-Schlüsseltresor](./key-vault/key-vault-get-started.md).
 - Ein Beispiel für das Verweisen auf einen geheimen Schlüssel in einem Schlüsseltresor beim Bereitstellen von Vorlagen finden Sie unter [Übergeben sicherer Werte während der Bereitstellung](resource-manager-keyvault-parameter.md).
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0224_2016-->

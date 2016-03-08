@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/23/2015"
+	ms.date="02/16/2016"
 	ms.author="cephalin"/>
 
 # Konfigurieren eines benutzerdefinierten Domänennamens in Azure App Service
@@ -35,7 +35,7 @@ Wenn Sie beim Lesen dieses Artikels feststellen, dass Sie weitere Hilfe benötig
 
 ## Übersicht
 
-Wenn Sie noch keinen externen Domänennamen registriert haben (d. h. nicht „*.azurewebsites.net“), ist die einfachste Möglichkeit zum Einrichten einer benutzerdefinierten Domäne der direkte Kauf im [Azure-Portal](https://portal.azure.com). Mit dieser Vorgehensweise können Sie den Domänennamen Ihrer Web-Apps direkt im Portal verwalten, anstatt auf einer Website von Drittanbietern wie GoDaddy. Außerdem wird das Konfigurieren des Domänennamens in Ihrer Web-App erheblich vereinfacht, und zwar unabhängig davon, ob Ihre Web-App [Azure Traffic Manager](web-sites-traffic-manager-custom-domain-name.md) verwendet oder nicht. Weitere Informationen finden Sie unter [Kaufen und Konfigurieren eines benutzerdefinierten Domänennamens in Azure App Service](custom-dns-web-site-buydomains-web-app.md).
+Wenn Sie noch keinen externen Domänennamen registriert haben (d. h. nicht „*.azurewebsites.net“), ist die einfachste Möglichkeit zum Einrichten einer benutzerdefinierten Domäne der direkte Kauf im [Azure-Portal](https://portal.azure.com). Mit dieser Vorgehensweise können Sie den Domänennamen Ihrer Web-Apps direkt im Portal verwalten, anstatt auf einer Website von Drittanbietern wie GoDaddy. Außerdem wird das Konfigurieren des Domänennamens in Ihrer Web-App erheblich vereinfacht, und zwar unabhängig davon, ob Ihre Web-App [Azure Traffic Manager](web-sites-traffic-manager-custom-domain-name.md) verwendet oder nicht. Weitere Informationen finden Sie unter [Kaufen und Konfigurieren eines benutzerdefinierten Domänennamens in Azure App Service](custom-dns-web-site-buydomains-web-app.md).
 
 Wenn Sie bereits über einen Domänennamen verfügen oder eine Domäne aus anderen Domänenregistrierungsstellen reservieren möchten, führen Sie die folgenden allgemeinen Schritte aus, um einen benutzerdefinierten Domänennamen für Web-Apps zu verwenden (weitere Informationen finden Sie in den [Anweisungen für GoDaddy.com](web-sites-godaddy-custom-domain-name.md)):
 
@@ -107,12 +107,12 @@ In vielen Registrierungsstellentools geben Sie einfach den Unterdomänenteil Ihr
   </tr>
 </table>
 
-Wenn der Name Ihrer benutzerdefinierten Domäne z. B. "contoso.com" lautet, werden die folgenden Einträge erstellt:
+Wenn der Name Ihrer benutzerdefinierten Domäne z. B. "contoso.com" lautet, werden die folgenden Einträge erstellt:
 
 - **contoso.com** mit einer Zuordnung zu 168.62.48.183.
 - **www.contoso.com** mit einer Zuordnung zu **contoso.azurewebsites.net**.
 
->[AZURE.NOTE] Die erforderlichen Domäneneinträge für Ihre Web-App können mit Azure DNS gehostet werden. Informationen zum Konfigurieren Ihrer benutzerdefinierten Domäne sowie zum Erstellen Ihrer Einträge in Azure DNS finden Sie unter [Erstellen von benutzerdefinierten DNS-Einträgen für eine Web-App](../dns-web-sites-custom-domain).
+>[AZURE.NOTE] Die erforderlichen Domäneneinträge für Ihre Web-App können mit Azure DNS gehostet werden. Informationen zum Konfigurieren Ihrer benutzerdefinierten Domäne sowie zum Erstellen Ihrer Einträge in Azure DNS finden Sie unter [Erstellen von benutzerdefinierten DNS-Einträgen für eine Web-App](../dns/dns-web-sites-custom-domain).
 
 <a name="awverify" />
 ## Erstellen eines awverify-Eintrags (nur A-Einträge)
@@ -132,11 +132,11 @@ Besucher Ihrer Web-App sehen die awverify-Unterdomäne nicht. Sie dient nur zum 
 
 ## Überprüfen der DNS-Verteilung
 
-Es kann nach Abschluss der Konfigurationsschritte einige Zeit dauern, bis die Änderungen übernommen wurden – dies hängt von Ihrem DNS-Anbieter ab. Mit [http://digwebinterface.com/](http://digwebinterface.com/) können Sie überprüfen, ob die DNS-Verteilung erwartungsgemäß funktioniert. Geben Sie nach dem Navigieren zu der Website die Hostnamen in das Textfeld ein, und klicken Sie auf **Dig**. Überprüfen Sie anhand der Ergebnisse, ob die aktuellen Änderungen übernommen wurden.
+Es kann nach Abschluss der Konfigurationsschritte einige Zeit dauern, bis die Änderungen übernommen wurden – dies hängt von Ihrem DNS-Anbieter ab. Mit [http://digwebinterface.com/](http://digwebinterface.com/) können Sie überprüfen, ob die DNS-Verteilung erwartungsgemäß funktioniert. Geben Sie nach dem Navigieren zu der Website die Hostnamen in das Textfeld ein, und klicken Sie auf **Dig**. Überprüfen Sie anhand der Ergebnisse, ob die aktuellen Änderungen übernommen wurden.
 
 ![](./media/web-sites-custom-domain-name/1-digwebinterface.png)
 
-> [AZURE.NOTE] Die Verteilung von DNS-Einträgen kann bis zu 48 Stunden (manchmal mehr) dauern. Wenn alles richtig konfiguriert wurde, müssen Sie trotzdem noch warten, bis die Verteilung durchgeführt wurde.
+> [AZURE.NOTE] Die Verteilung von DNS-Einträgen kann bis zu 48 Stunden (manchmal mehr) dauern. Wenn alles richtig konfiguriert wurde, müssen Sie trotzdem noch warten, bis die Verteilung durchgeführt wurde.
 
 ## Nächste Schritte
 
@@ -155,4 +155,4 @@ Weitere Informationen finden Sie unter [Erste Schritte mit Azure DNS](../dns/dns
 <!-- Images -->
 [subdomain]: media/web-sites-custom-domain-name/azurewebsites-subdomain.png
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0224_2016-->

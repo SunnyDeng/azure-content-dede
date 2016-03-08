@@ -206,11 +206,9 @@ Die Pipeline enthält eine Kopieraktivität, die für das Verwenden der oben gen
 	   }
 	}
 
-> [AZURE.NOTE] Im obigen Beispiel ist **sqlReaderQuery** für SqlSource angegeben. Mit der Kopieraktivität wird diese Abfrage in der SQL Server-Datenbankquelle ausgeführt, um die Daten abzurufen.
->  
-> Alternativ dazu können Sie eine gespeicherte Prozedur angeben, indem Sie **sqlReaderStoredProcedureName** und **storedProcedureParameters** angeben (sofern die gespeicherten Prozeduren Parameter verwenden).
->  
-> Wenn Sie sqlReaderQuery oder sqlReaderStoredProcedureName nicht angeben, werden die im Strukturabschnitt des Dataset-JSON-Bereichs definierten Spalten verwendet, um eine Abfrage (select column1, column2 from mytable) zur Ausführung für die SQL Server-Datenbank zu erstellen. Falls die DataSet-Definition nicht über die Struktur verfügt, werden alle Spalten der Tabelle ausgewählt.
+Im obigen Beispiel ist **sqlReaderQuery** für SqlSource angegeben. Mit der Kopieraktivität wird diese Abfrage in der SQL Server-Datenbankquelle ausgeführt, um die Daten abzurufen. Alternativ dazu können Sie eine gespeicherte Prozedur angeben, indem Sie **sqlReaderStoredProcedureName** und **storedProcedureParameters** angeben (sofern die gespeicherten Prozeduren Parameter verwenden).
+ 
+Wenn Sie sqlReaderQuery oder sqlReaderStoredProcedureName nicht angeben, werden die im Strukturabschnitt des Dataset-JSON-Bereichs definierten Spalten verwendet, um eine Abfrage (select column1, column2 from mytable) zur Ausführung für die SQL Server-Datenbank zu erstellen. Falls die DataSet-Definition nicht über die Struktur verfügt, werden alle Spalten der Tabelle ausgewählt.
 
 
 Eine Liste mit den Eigenschaften, die von SqlSource und BlobSink unterstützt werden, finden Sie im Abschnitt [Sql Source](#sqlsource) und unter [BlobSink](data-factory-azure-blob-connector.md#azure-blob-copy-activity-type-properties).
@@ -463,11 +461,13 @@ Wenn bei der Kopieraktivität „source“ den Typ **SqlSource** hat, sind im Ab
 | sqlReaderStoredProcedureName | Der Name der gespeicherten Prozedur, die Daten aus der Quelltabelle liest. | Name der gespeicherten Prozedur. | Nein |
 | storedProcedureParameters | Parameter für die gespeicherte Prozedur. | Name-Wert-Paare. Die Namen und die Groß-/Kleinschreibung von Parametern müssen denen der Parameter der gespeicherten Prozedur entsprechen. | Nein |
 
-Wenn **sqlReaderQuery** für SqlSource angegeben ist, führt die Kopieraktivität diese Abfrage in der SQL Server-Datenbankquelle aus, um die Daten abzurufen.
+Wenn **sqlReaderQuery** für SqlSource angegeben ist, führt die Kopieraktivität diese Abfrage in der SQL Server-Datenbankquelle aus, um die Daten abzurufen.
 
 Alternativ dazu können Sie eine gespeicherte Prozedur angeben, indem Sie **sqlReaderStoredProcedureName** und **storedProcedureParameters** angeben (sofern die gespeicherten Prozeduren Parameter verwenden).
 
-Wenn Sie sqlReaderQuery oder sqlReaderStoredProcedureName nicht angeben, werden die im Strukturabschnitt des Dataset-JSON-Bereichs definierten Spalten verwendet, um eine Abfrage (select column1, column2 from mytable) zur Ausführung für die SQL Server-Datenbank zu erstellen. Falls die DataSet-Definition nicht über die Struktur verfügt, werden alle Spalten der Tabelle ausgewählt.
+Wenn Sie sqlReaderQuery oder sqlReaderStoredProcedureName nicht angeben, werden die im Strukturabschnitt des Dataset-JSON-Bereichs definierten Spalten verwendet, um eine Abfrage (select column1, column2 from mytable) zur Ausführung für die SQL Server-Datenbank zu erstellen. Falls die DataSet-Definition nicht über die Struktur verfügt, werden alle Spalten der Tabelle ausgewählt.
+
+> [AZURE.NOTE] Bei Verwendung von **sqlReaderStoredProcedureName** müssen Sie trotzdem einen Wert für die **tableName**-Eigenschaft in der Dataset-JSON angeben. Dies ist zurzeit noch eine Produkteinschränkung. Es finden jedoch keine Überprüfungen dieser Tabelle statt.
 
 ### SqlSink
 
@@ -486,25 +486,95 @@ Wenn Sie sqlReaderQuery oder sqlReaderStoredProcedureName nicht angeben, werden 
 
 ## Beheben von Verbindungsproblemen
 
-1. Konfigurieren Sie Ihren SQL-Server, um Remoteverbindungen zu akzeptieren. Starten Sie **SQL Server Management Studio**, klicken Sie mit der rechten Maustaste auf **Server**, und klicken Sie dann auf **Eigenschaften**. Wählen Sie in der Liste den Eintrag **Verbindungen**, und aktivieren sie das Kontrollkästchen **Remoteverbindungen mit diesem Server zulassen**.
+1. Konfigurieren Sie Ihren SQL-Server, um Remoteverbindungen zu akzeptieren. Starten Sie **SQL Server Management Studio**, klicken Sie mit der rechten Maustaste auf **Server**, und klicken Sie dann auf **Eigenschaften**. Wählen Sie in der Liste den Eintrag **Verbindungen** aus, und aktivieren sie das Kontrollkästchen **Remoteverbindungen mit diesem Server zulassen**.
 	
 	![Aktivieren von Remoteverbindungen](.\media\data-factory-sqlserver-connector\AllowRemoteConnections.png)
 
 	Ausführliche Schritte finden Sie im Abschnitt zum [Konfigurieren der Serverkonfigurationsoption für den Remotezugriff](https://msdn.microsoft.com/library/ms191464.aspx). 
-2. Starten Sie den **SQL Server-Konfigurations-Manager**. Erweitern Sie die **SQL Server-Netzwerkkonfiguration** für die gewünschte Instanz, und wählen Sie **Protokolle für MSSQLSERVER**. Im rechten Bereich werden Protokolle angezeigt. Aktivieren Sie TCP/TP, indem Sie mit der rechten Maustaste auf **TCP/IP** und anschließend auf **Aktivieren** klicken.
+2. Starten Sie den **SQL Server-Konfigurations-Manager**. Erweitern Sie die **SQL Server-Netzwerkkonfiguration** für die gewünschte Instanz, und wählen Sie **Protokolle für MSSQLSERVER** aus. Im rechten Bereich werden Protokolle angezeigt. Aktivieren Sie TCP/TP, indem Sie mit der rechten Maustaste auf **TCP/IP** klicken und anschließend auf **Aktivieren** klicken.
 
 	![TCP/IP aktivieren](.\media\data-factory-sqlserver-connector\EnableTCPProptocol.png)
 
-	Alternative Methoden zum Aktivieren des TCP/IP-Protokolls finden Sie unter [Aktivieren oder Deaktivieren eines Servernetzwerkprotokolls](https://msdn.microsoft.com/library/ms191294.aspx). 
+	Weitere Methoden zum Aktivieren des TCP/IP-Protokolls finden Sie unter [Aktivieren oder Deaktivieren eines Servernetzwerkprotokolls](https://msdn.microsoft.com/library/ms191294.aspx). 
 3. Doppelklicken Sie in demselben Fenster auf **TCP/IP**, um das Fenster **TCP/IP-Eigenschaften** zu öffnen.
 4. Klicken Sie auf die Registerkarte **IP-Adressen**. Scrollen Sie nach unten zum Abschnitt **IPAll**. Notieren Sie den **TCP-Port** (der Standardwert ist **1433**).
 5. Erstellen Sie eine **Regel für die Windows-Firewall** auf dem Computer, um eingehenden Datenverkehr über diesen Port zuzulassen.  
-6. **Verbindung überprüfen**: Verwenden Sie SQL Server Management Studio auf einem anderen Computer, um mit einem vollqualifizierten Namen die Verbindung mit der SQL Server-Instanz herzustellen. Beispiel: <machine>.<domain>.corp.<company>.com,1433
+6. **Verbindung überprüfen:** Verwenden Sie SQL Server Management Studio auf einem anderen Computer, um mit einem vollqualifizierten Namen die Verbindung mit der SQL Server-Instanz herzustellen. Beispiel: <machine>.<domain>.corp.<company>.com,1433
 
 	> [AZURE.IMPORTANT] 
 	Ausführliche Informationen finden Sie unter [Ports und Sicherheitsaspekte](data-factory-move-data-between-onprem-and-cloud.md#port-and-security-considerations).
 	>   
 	> Unter [Problembehandlung bei Gateways](data-factory-move-data-between-onprem-and-cloud.md#gateway-troubleshooting) finden Sie Tipps zur Behandlung von Verbindungs- bzw. Gatewayproblemen.
+
+## Identitätsspalten in der Zieldatenbank
+Dieser Abschnitt enthält ein Beispiel zum Kopieren von Daten aus einer Quelltabelle ohne eine Identitätsspalte in eine Zieltabelle mit einer Identitätsspalte.
+
+**Quelltabelle:**
+
+	create table dbo.SourceTbl
+	(
+	       name varchar(100),
+	       age int
+	)
+
+**Zieltabelle:**
+
+	create table dbo.TargetTbl
+	(
+	       id int identity(1,1),
+	       name varchar(100),
+	       age int
+	)
+
+
+Beachten Sie, dass die Zieltabelle über eine Identitätsspalte verfügt.
+
+**Definition der Quell-Dataset-JSON**
+
+	{
+	    "name": "SampleSource",
+	    "properties": {
+	        "published": false,
+	        "type": " SqlServerTable",
+	        "linkedServiceName": "TestIdentitySQL",
+	        "typeProperties": {
+	            "tableName": "SourceTbl"
+	        },
+	        "availability": {
+	            "frequency": "Hour",
+	            "interval": 1
+	        },
+	        "external": true,
+	        "policy": {}
+	    }
+	}
+
+**Definition der Ziel-Dataset-JSON**
+
+	{
+	    "name": "SampleTarget",
+	    "properties": {
+	        "structure": [
+	            { "name": "name" },
+	            { "name": "age" }
+	        ],
+	        "published": false,
+	        "type": "AzureSqlTable",
+	        "linkedServiceName": "TestIdentitySQLSource",
+	        "typeProperties": {
+	            "tableName": "TargetTbl"
+	        },
+	        "availability": {
+	            "frequency": "Hour",
+	            "interval": 1
+	        },
+	        "external": false,
+	        "policy": {}
+	    }	
+	}
+
+
+Beachten Sie, dass die Quell- und die Zieltabelle unterschiedliche Schemas besitzen (das Ziel verfügt über eine zusätzliche Spalte mit der Identität). In diesem Szenario müssen Sie eine **structure**-Eigenschaft in der Definition des Zieldatasets angeben, die nicht die Identitätsspalte enthält.
 
 [AZURE.INCLUDE [data-factory-type-repeatability-for-sql-sources](../../includes/data-factory-type-repeatability-for-sql-sources.md)]
 
@@ -567,4 +637,4 @@ Die Zuordnung ist mit der SQL Server-Datentypzuordnung für ADO.NET identisch.
 
 [AZURE.INCLUDE [data-factory-column-mapping](../../includes/data-factory-column-mapping.md)]
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0224_2016-->

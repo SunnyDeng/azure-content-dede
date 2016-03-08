@@ -13,13 +13,15 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration" 
-   ms.date="11/30/2015"
+   ms.date="02/18/2016"
    ms.author="rajram"/>
 
 
 # Übersicht über das Archivieren von AS2-Connector-Nachrichten
 
-**AS2-Connector** stellt die Möglichkeit bereit, Nachrichten zu archivieren. Bei der Archivierung wird die Nachricht in dem **Azure-Blobcontainer** gespeichert, der Teil der Paketeinstellungen ist.
+>[AZURE.NOTE] Diese Version des Artikels gilt für die Logik-Apps-Schemaversion 2014-12-01-preview.
+
+Der [AS2-Connector](app-service-logic-connector-as2.md) stellt die Möglichkeit bereit, Nachrichten zu archivieren. Bei der Archivierung wird die Nachricht in dem **Azure-Blobcontainer** gespeichert, der Teil der Paketeinstellungen ist.
 
 Die Archivierung wird an zwei Punkten sowohl für Nachrichten als auch für Bestätigungen (MDNs) bereitgestellt:
 
@@ -39,4 +41,4 @@ Verwenden Sie die oben abgerufene URL, um die archivierte Nachricht aus dem Azur
 [1]: ./media/app-service-logic-archive-as2-messages/Tracking.jpg
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0224_2016-->

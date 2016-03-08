@@ -11,8 +11,8 @@
     ms.workload="compute"
     ms.tgt_pltfrm="na"
     ms.devlang="na"
-    ms.topic="article"
-    ms.date="12/04/2015"
+    ms.topic="hero-article"
+    ms.date="02/25/2016"
     ms.author="elizapo" />
 
 # Verwenden Microsoft Outlook in Azure RemoteApp
@@ -31,4 +31,4 @@ In Azure RemoteApp ist die Suche in Outlook eingeschränkt. Azure RemoteApp verw
 
 Outlook 2016 bietet hierfür eine Lösung durch die Bereitstellung einer neuen Online-Suchfunktion für Postfächer, die auf Exchange 2016 gehostet (oder in Office 365 gehostet) werden. Hierbei werden die Suchergebnisse des Servers für den lokalen Cache (OST) verwendet. Outlook greift in gewissen Fällen möglicherweise auf den Search-Indexer zurück, aber die meisten Suchvorgänge erfolgen im Onlinemodus. Wenn die Mail-Suche ein wichtiges Szenario darstellt, wird von Azure Remote-App die Verwendung von Outlook 2016 empfohlen.
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0302_2016-->

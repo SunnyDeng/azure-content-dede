@@ -13,8 +13,8 @@
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
 	ms.workload="big-compute"
-	ms.date="01/21/2016"
-	ms.author="yidingz;v-marsma"/>
+	ms.date="02/25/2016"
+	ms.author="yidingz;marsma"/>
 
 # Übersicht über Azure Batch-Features
 
@@ -47,23 +47,14 @@ In den folgenden Abschnitten erfahren Sie mehr zu den einzelnen Ressourcen, die 
 Wenn Sie den Azure Batch-Dienst verwenden, nutzen Sie die folgenden Ressourcen:
 
 - [Konto](#account)
-
 - [Computeknoten](#computenode)
-
 - [Pool](#pool)
-
 - [Job](#job)
-
 - [Aufgabe](#task)
-
 	- [Startaufgabe](#starttask)
-
 	- [Auftrags-Manager-Aufgabe](#jobmanagertask)
-
 	- [Tasks zur Auftragsvorbereitung und -freigabe](#jobpreprelease)
-
 	- [Tasks mit mehreren Instanzen](#multiinstance)
-
 - [Auftragszeitplan](#jobschedule)
 
 ### <a name="account"></a>Konto
@@ -85,7 +76,7 @@ Knoten können ausführbare Dateien und Skripts ausführen, z. B. ausführbare D
 
 Ein Pool besteht aus einer Sammlung von Knoten, auf denen Ihre Anwendung ausgeführt wird. Der Pool kann manuell von Ihnen oder automatisch vom Batch-Dienst erstellt werden, wenn Sie die zu erbringende Arbeitsleistung angeben. Sie können einen Pool erstellen und verwalten, der den Anforderungen Ihrer Anwendung entspricht. Pools können nur von dem Batch-Konto verwendet werden, in dem sie erstellt wurden. Ein Batch-Konto kann über mehrere Pools verfügen.
 
-Azure Batch-Pools basieren auf der grundlegenden Azure-Computeplattform und bieten Funktionen für umfangreiche Zuordnungen, für die Anwendungsinstallation, die Datenverteilung und die Systemüberwachung sowie für die flexible Anpassung der Computeknotenanzahl innerhalb eines Pools (Skalierung).
+Azure Batch-Pools basieren auf der grundlegenden Azure-Computeplattform und bieten Funktionen für umfangreiche Zuordnungen, für die Anwendungsinstallation, die Datenverteilung und die Systemüberwachung sowie für die flexible Anpassung der Computeknotenanzahl innerhalb eines Pools (Skalierung).
 
 Jedem Knoten, der einem Pool hinzugefügt wird, werden ein eindeutiger Name und eine IP-Adresse zugewiesen. Beim Entfernen eines Knotens aus einem Pool gehen alle Änderungen am Betriebssystem oder an den Dateien verloren, und sein Name und die IP-Adresse werden zur zukünftigen Verwendung freigegeben. Wenn ein Knoten einen Pool verlässt, endet seine Lebensdauer.
 
@@ -128,7 +119,7 @@ Ein Auftrag ist eine Sammlung von Tasks, die festlegt, wie die Berechnung auf Co
 - Eine optionale **Auftragspriorität** kann angegeben werden. Wenn ein Auftrag übermittelt wird, der eine höhere Priorität besitzt als bereits in Bearbeitung befindliche Aufträge, werden die Tasks des Auftrags mit der höheren Priorität vor den Tasks der Aufträge mit niedrigerer Priorität in die Warteschlange eingefügt. Bereits ausgeführte Tasks mit niedrigerer Priorität werden nicht nach hinten verschoben.
 - **Einschränkungen** für Aufträge geben bestimmte Grenzwerte für Ihre Aufträge an.
 	- Für die Aufträge kann eine **maximale Gesamtbetrachtungszeit** festgelegt werden. Wenn die Ausführungsdauer der Aufträge die angegebene maximale Wanduhrzeit übersteigt, werden der Auftrag und alle dazugehörigen Aufgaben beendet.
-	- Azure Batch kann nicht erfolgreich ausgeführte Aufgaben erkennen und wiederholen. Die **maximale Anzahl von Taskwiederholungen** kann als Einschränkung angegeben werden. Hierzu gehört auch, ob ein Task immer oder niemals wiederholt werden soll. Bei der Wiederholung eines Tasks wird dieser nochmals der Warteschlange hinzugefügt und erneut ausgeführt.
+	- Azure Batch kann nicht erfolgreich ausgeführte Aufgaben erkennen und wiederholen. Die **maximale Anzahl von Taskwiederholungen** kann als Einschränkung angegeben werden. Hierzu gehört auch, ob ein Task immer oder niemals wiederholt werden soll. Bei der Wiederholung eines Tasks wird dieser nochmals der Warteschlange hinzugefügt und erneut ausgeführt.
 - Tasks können dem Auftrag von Ihrer Clientanwendung hinzugefügt werden, oder es kann ein [Auftrags-Manager-Task](#jobmanagertask) angegeben werden. Ein Auftrags-Manager-Task verwendet die Batch-API und enthält die Informationen, die zum Erstellen der erforderlichen Tasks für einen Auftrag benötigt werden, wobei der Task auf einem der Computeknoten innerhalb des Pools ausgeführt wird. Der Auftrags-Manager-Task wird von Batch speziell behandelt: Er wird sofort nach der Auftragserstellung der Warteschlange hinzugefügt und erneut gestartet, falls er nicht erfolgreich ausgeführt werden konnte. Ein Auftrags-Manager-Task wird für Aufträge benötigt, die von einem Auftragszeitplan erstellt werden, da sich Tasks nur so vor der Auftragsinstanziierung definieren lassen. Weitere Informationen zu Auftrags-Manager-Tasks werden unten aufgeführt.
 
 
@@ -155,7 +146,7 @@ Zusätzlich zu Tasks, die Sie zur Berechnung auf einem Knoten definieren können
 
 Durch das Zuordnen eines **Starttasks** zu einem Pool können Sie die Betriebssystemumgebung der zugehörigen Knoten konfigurieren und Aktionen wie das Installieren von Software oder Hintergrundprozesse ausführen. Der Starttask wird jedes Mal ausgeführt, wenn ein Knoten gestartet wird. Dies gilt, solange sich der Knoten im Pool befindet, auch beim ersten Hinzufügen des Knotens zum Pool. Ein wesentlicher Vorteil von Starttasks besteht darin, dass sie alle Informationen enthalten, die zum Konfigurieren von Computeknoten und zum Installieren der für die Ausführung des Auftragstasks nötigen Anwendungen erforderlich sind. Daher kann zum Erhöhen der Anzahl von Knoten in einem Pool einfach die neue Zielknotenanzahl angegeben werden. Batch enthält bereits alle Informationen, die zum Konfigurieren der neuen Knoten und zum Vorbereiten der Knoten für die Annahme von Tasks erforderlich sind.
 
-Wie bei jedem anderen Batch-Task kann zusätzlich zu einer auszuführenden **Befehlszeile** eine Liste mit **Ressourcendateien** in [Azure Storage][azure_storage] angegeben werden. Azure Batch kopiert zunächst die Dateien aus Azure Storage und führt dann die Befehlszeile aus. Bei einem poolbezogenen Starttask enthält die Dateiliste üblicherweise das Anwendungspaket oder die Anwendungsdateien. Sie kann aber auch Referenzdaten für alle Tasks enthalten, die auf den Computeknoten ausgeführt werden. Die Befehlszeile des Starttasks könnte ein PowerShell-Skript ausführen oder einen `robocopy`-Vorgang durchführen, um beispielsweise Anwendungsdateien in den Ordner „shared“ zu kopieren, und anschließend eine MSI-Datei oder `setup.exe` ausführen.
+Wie bei jedem anderen Batch-Task kann zusätzlich zu einer auszuführenden **Befehlszeile** eine Liste mit **Ressourcendateien** in [Azure Storage][azure_storage] angegeben werden. Azure Batch kopiert zunächst die Dateien aus Azure Storage und führt dann die Befehlszeile aus. Bei einem poolbezogenen Starttask enthält die Dateiliste üblicherweise das Anwendungspaket oder die Anwendungsdateien. Sie kann aber auch Referenzdaten für alle Tasks enthalten, die auf den Computeknoten ausgeführt werden. Die Befehlszeile des Starttasks könnte ein PowerShell-Skript ausführen oder einen `robocopy`-Vorgang durchführen, um beispielsweise Anwendungsdateien in den Ordner „shared“ zu kopieren, und anschließend eine MSI-Datei oder `setup.exe` ausführen.
 
 In der Regel ist es wünschenswert, dass der Batch-Dienst auf den Abschluss des Starttasks wartet und erst dann davon ausgeht, dass der Knoten nun für die Taskzuweisung bereit ist. Dieses Verhalten ist jedoch konfigurierbar.
 
@@ -184,7 +175,7 @@ Ein Auftrags-Manager-Task wird vor allen anderen Tasks gestartet und bietet die 
 Batch stellt den Auftragsvorbereitungstask für das Setup vor der Auftragsausführung und den Auftragsfreigabetask für die Wartung oder Bereinigung nach dem Auftrag bereit.
 
 - **Auftragsvorbereitungstask**: Der Auftragsvorbereitungstask wird vor der Ausführung der anderen Tasks eines Auftrags auf allen zum Ausführen von Tasks geplanten Computeknoten ausgeführt. Verwenden Sie Jobvorbereitungstasks beispielsweise zum Kopieren von Daten, die von allen Tasks gemeinsam genutzt werden, aber für den Auftrag einzigartig sind.
-- **Jobfreigabetask**: Nach Abschluss des Auftrags wird der Auftragsfreigabetask auf jedem Knoten im Pool ausgeführt, der mindestens einen Task ausgeführt hat. Verwenden Sie den Auftragsfreigabetask z. B. zum Löschen von Daten, die vom Auftragsvorbereitungstask kopiert wurden, oder komprimieren Sie Diagnoseprotokolldaten, und laden Sie sie hoch.
+- **Jobfreigabetask**: Nach Abschluss des Auftrags wird der Auftragsfreigabetask auf jedem Knoten im Pool ausgeführt, der mindestens einen Task ausgeführt hat. Verwenden Sie den Auftragsfreigabetask z. B. zum Löschen von Daten, die vom Auftragsvorbereitungstask kopiert wurden, oder komprimieren Sie Diagnoseprotokolldaten, und laden Sie sie hoch.
 
 Sowohl Auftragsvorbereitungs- als auch Auftragsfreigabeaufgaben bieten die Möglichkeit zur Angabe einer Befehlszeile, die beim Aufrufen der Aufgabe ausgeführt wird, sowie Funktionen wie Dateidownload, Ausführung mit erhöhten Rechten, benutzerdefinierte Umgebungsvariablen, maximale Ausführungsdauer, Wiederholungsanzahl und Dateiaufbewahrungsdauer.
 
@@ -192,9 +183,9 @@ Weitere Informationen zu Auftragsvorbereitungs- und -freigabetasks finden Sie un
 
 #### <a name="multiinstance"></a>Tasks mit mehreren Instanzen
 
-Ein [Task mit mehreren Instanzen](batch-mpi.md) ist ein Task, der für die gleichzeitige Ausführung auf mehreren Computeknoten konfiguriert ist. Tasks mit mehreren Instanzen ermöglichen Szenarien, die eine hohe Leistung benötigen, wie z. B. das Message Passing Interface (MPI), und erfordern, dass Computeknoten zu einer Gruppe gebündelt werden, um einen einzelnen Workload zu bearbeiteten.
+Ein [Task mit mehreren Instanzen](batch-mpi.md) ist ein Task, der für die gleichzeitige Ausführung auf mehreren Computeknoten konfiguriert ist. Tasks mit mehreren Instanzen ermöglichen Szenarien, die eine hohe Leistung benötigen, wie z. B. das Message Passing Interface (MPI), und erfordern, dass Computeknoten zu einer Gruppe gebündelt werden, um einen einzelnen Workload zu bearbeiteten.
 
-Ausführliche Informationen zum Ausführen von MPI-Tasks in Batch mithilfe der Batch .NET-Bibliothek finden Sie unter [Use multi-instance tasks to run Message Passing Interface (MPI) applications in Azure Batch](batch-mpi.md) (Ausführen von Message Passing Interface-Anwendungen (MPI) in Azure Batch mithilfe von Tasks mit mehreren Instanzen).
+Ausführliche Informationen zum Ausführen von MPI-Tasks in Batch mithilfe der Batch .NET-Bibliothek finden Sie unter [Use multi-instance tasks to run Message Passing Interface (MPI) applications in Azure Batch](batch-mpi.md) (Ausführen von Message Passing Interface-Anwendungen (MPI) in Azure Batch mithilfe von Tasks mit mehreren Instanzen).
 
 ### <a name="jobschedule"></a>Geplante Aufträge
 
@@ -231,11 +222,11 @@ Ein kombinierter Ansatz, der in der Regel zum Behandeln einer variablen, aber ko
 
 ## <a name="scaling"></a>Skalieren von Anwendungen
 
-Mit der [automatischen Skalierung](batch-automatic-scaling.md) kann die Größe Ihrer Anwendung problemlos automatisch erhöht oder verringert werden, um der erforderlichen Berechnung zu entsprechen. Sie können die Anzahl der Knoten in einem Pool gemäß dem aktuellen Workload und den Statistiken zur Ressourcennutzung dynamisch anpassen. So können Sie die Gesamtkosten für die Ausführung Ihrer Anwendung senken, indem Sie nur die erforderlichen Ressourcen verwenden. Sie können die Skalierungseinstellungen für einen Pool bei dessen Erstellung angeben und diese Konfiguration jederzeit aktualisieren.
+Mit der [automatischen Skalierung](batch-automatic-scaling.md) kann der Batch-Dienst die Anzahl von Computeknoten in einem Pool dynamisch an den aktuellen Workload und die Ressourcennutzung Ihres Computeszenarios anpassen. So können Sie die Gesamtkosten für die Ausführung Ihrer Anwendung senken, indem Sie nur die erforderlichen Ressourcen verwenden und nicht benötigte Ressourcen freigeben. Legen Sie die Einstellungen für die automatische Skalierung für einen Pool fest, wenn dieser erstellt wird, oder ermöglichen Sie ein späteres Skalieren. Dann können Sie die Skalierungseinstellungen in einem Pool, für den die automatische Skalierung aktiviert ist, aktualisieren.
 
-Wenn Sie die Anzahl der Knoten automatisch verringern, müssen gleichzeitig ausgeführte Tasks berücksichtigt werden. Mittels einer Richtlinie für die Aufhebung der Zuordnung wird festgelegt, ob aktuell ausgeführte Tasks beendet werden sollen, um den Knoten umgehend zu entfernen, oder ob die Tasks vor dem Entfernen des Knotens abgeschlossen werden sollen. Legen Sie die vorgegebene Anzahl von Knoten am Ende eines Auftrags auf Null fest, und lassen Sie das Abschließen ausgeführter Tasks zu, um die Auslastung zu maximieren.
+Die automatische Skalierung erfolgt durch Festlegen einer **Formel für das automatische Skalieren** für einen Pool. Der Batch-Dienst verwendet diese Formel, um die vorgegebene Anzahl von Knoten im Pool für das nächste Skalierungsintervall (welches Sie festlegen können) zu bestimmen.
 
-Die automatische Skalierung einer Anwendung erfolgt durch die Angabe einer Reihe von Skalierungsformeln. Anhand dieser wird die Zielanzahl von Knoten ermittelt, die sich für das nächste Skalierungsintervall im Pool befinden. Beispielsweise ist es für einen Auftrag erforderlich, eine große Anzahl von Tasks zu übermitteln, die zur Ausführung geplant werden sollen. Sie können dem Pool eine Skalierungsformel zuweisen, die die Größe des Pools (die Anzahl der Knoten) auf Basis der aktuellen Anzahl der ausstehenden Tasks und der Abschlussrate dieser Tasks anpasst. Der Batch-Dienst wertet die Formel in regelmäßigen Abständen aus und ändert dabei die Größe des Pools je nach Workload.
+Beispielsweise ist es für einen Auftrag erforderlich, eine große Anzahl von Tasks zu übermitteln, die zur Ausführung geplant werden sollen. Sie können dem Pool eine Skalierungsformel zuweisen, die die Anzahl der Knoten im Pool auf Grundlage der aktuellen Anzahl von ausstehenden Tasks sowie der Abschlussrate dieser Tasks anpasst. Der Batch-Dienst wertet die Formel in regelmäßigen Abständen aus und ändert die Größe des Pools auf Grundlage von Workload und Formeleinstellungen.
 
 Eine Skalierungsformel kann auf den folgenden Metriken basieren:
 
@@ -245,10 +236,11 @@ Eine Skalierungsformel kann auf den folgenden Metriken basieren:
 
 - **Aufgabenmetriken**: Basieren auf dem Aufgabenstatus (wie etwa „Aktiv“, „Ausstehend“ oder „Abgeschlossen“).
 
-Weitere Informationen zur automatischen Skalierung einer Anwendung finden Sie unter [Automatisches Skalieren von Computeknoten in einem Azure Batch-Pool](batch-automatic-scaling.md).
+Wenn die automatische Skalierung die Anzahl der Compute-Knoten in einem Pool verringert, müssen aktuell ausgeführte Tasks berücksichtigt werden. Hierfür kann Ihre Formel eine Richtlinieneinstellung für die Aufhebung der Knotenzuordnung beinhalten, die festlegt, ob ausgeführte Tasks sofort beendet werden oder ob sie noch abgeschlossen werden sollen, bevor der Knoten aus dem Pool entfernt wird.
 
-> [AZURE.TIP]
- Einzelne Knoten können aus einem Pool entfernt werden, dies ist jedoch nur sehr selten erforderlich. Wenn beispielsweise ein Knoten weniger zuverlässig erscheint, kann er aus dem Pool entfernt werden, damit keine weiteren Tasks zugewiesen werden.
+> [AZURE.TIP] Legen Sie die vorgegebene Anzahl von Knoten am Ende eines Auftrags auf Null fest, und lassen Sie das Abschließen ausgeführter Tasks zu, um die Auslastung von Computeressourcen zu maximieren.
+
+Weitere Informationen zur automatischen Skalierung einer Anwendung finden Sie unter [Automatisches Skalieren von Computeknoten in einem Azure Batch-Pool](batch-automatic-scaling.md).
 
 ## <a name="cert"></a>Sicherheit mit Zertifikaten
 
@@ -322,9 +314,27 @@ Tasks werden gelegentlich nicht erfolgreich durchgeführt oder unterbrochen. Es 
 
 Außerdem können zeitweilig Probleme auftreten, die dazu führen, dass eine Aufgabe nicht mehr reagiert oder zu lange dauert. Hierzu kann für den Task eine maximal zulässige Ausführungszeit festgelegt werden. Wird dieser Wert überschritten, unterbricht Batch die Taskanwendung.
 
-### Erläuterung zu fehlerhaften Knoten
+### Problembehandlung bei fehlerhaften Computeknoten
 
-Jeder Knoten in einem Pool erhält eine eindeutige ID, und der Knoten, auf dem ein Task ausgeführt wird, ist in den Metadaten des Tasks angegeben. In Situationen, in denen Tasks auf einem bestimmten Knoten nicht erfolgreich durchgeführt werden, kann dieser von Ihrer Batch-Clientanwendung ermittelt und der fehlerverdächtige Knoten aus dem Pool entfernt werden. Wenn Tasks auf einem Knoten ausgeführt werden, der gelöscht wird, werden die Tasks automatisch wieder in die Warteschlange zur Ausführung auf anderen Knoten eingereiht.
+Wenn bei einigen Ihrer Tasks Fehler auftreten, kann Ihre Batch-Clientanwendung oder der Dienst die Metadaten der fehlgeschlagenen Tasks prüfen, um einen fehlerhaften Knoten zu finden. Jeder Knoten in einem Pool erhält eine eindeutige ID, und der Knoten, auf dem ein Task ausgeführt wird, ist in den Metadaten des Tasks angegeben. Danach können Sie verschiedene Maßnahmen ergreifen:
+
+- **Starten Sie den Knoten neu** ([REST][rest_reboot] | [.NET][net_reboot]).
+
+	Durch einen Neustart des Knotens können latente Probleme wie etwa hängende oder abgestürzte Prozesse behoben werden. Wenn Ihr Pool ein Starttask nutzt, oder wenn der Auftrag ein Auftragsvorbereitungstask nutzt, werden diese Tasks beim Neustart des Knotens ausgeführt.
+
+- **Führen Sie ein Reimaging des Knotens durch** ([REST][rest_reimage] | [.NET][net_reimage]).
+
+	Dadurch wird das Betriebssystem auf dem Knoten neu installiert. Wie beim Neustart eines Knotens werden Start- und Auftragsvorbereitungstasks nach dem Reimaging des Knotens erneut ausgeführt.
+
+- **Entfernen Sie den Knoten aus dem Pool ** ([REST][rest_remove] | [.NET][net_remove]).
+
+	Manchmal ist es erforderlich, den Knoten aus dem Pool vollständig zu entfernen.
+
+- **Deaktivieren Sie die Taskplanung auf dem Knoten** ([REST][rest_offline] | [.NET][net_offline]).
+
+	Dadurch geht der Knoten „offline“, damit ihm keine weiteren Tasks mehr zugewiesen werden. Er wird jedoch weiterhin ausgeführt und verbleibt im Pool. So können Sie die Fehlerursache weiter untersuchen, ohne dass die Daten der fehlgeschlagenen Tasks verloren gehen und durch den Knoten weitere Fehler auftreten. Aktivieren Sie z. B. die Taskplanung auf dem Knoten, melden Sie sich remote an, um die Ereignisprotokolle des Knotens zu prüfen, oder führen Sie andere Schritte zur Fehlerbehebung aus. Schalten Sie den Knoten nach Abschluss der Prüfung wieder online, indem Sie die Taskplanung ([REST][rest_online], [.NET][net_online]) aktivieren oder eine andere der o. g. Aktionen ausführen.
+
+> [AZURE.IMPORTANT] Mit jeder dieser Aktionen (Neustart, Reimaging,Deaktivieren der Taskplanung) können Sie festlegen, wie mit auf dem Knoten ausgeführten Tasks verfahren wird, wenn Sie die Aktion ausführen. Wenn Sie z. B. auf einem Knoten mit der Batch .NET-Clientbibliothek die Taskplanung deaktivieren, können Sie den Enumerationswert [DisableComputeNodeSchedulingOption][net_offline_option] festlegen, um zu bestimmen, ob ausgeführte Tasks **beendet**, für die Planung auf anderen Knoten in eine **Warteschlange eingefügt** oder vor dem Ausführen der Aktion abgeschlossen werden (**TaskCompletion**).
 
 ## Nächste Schritte
 
@@ -353,6 +363,12 @@ Jeder Knoten in einem Pool erhält eine eindeutige ID, und der Knoten, auf dem e
 [net_getfile_task]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudtask.getnodefile.aspx
 [net_multiinstancesettings]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.multiinstancesettings.aspx
 [net_rdp]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.computenode.getrdpfile.aspx
+[net_reboot]: https://msdn.microsoft.com/library/azure/mt631495.aspx
+[net_reimage]: https://msdn.microsoft.com/library/azure/mt631496.aspx
+[net_remove]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.removefrompoolasync.aspx
+[net_offline]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.computenode.disableschedulingasync.aspx
+[net_online]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.computenode.enableschedulingasync.aspx
+[net_offline_option]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.common.disablecomputenodeschedulingoption.aspx
 
 [batch_rest_api]: https://msdn.microsoft.com/library/azure/Dn820158.aspx
 [rest_add_job]: https://msdn.microsoft.com/library/azure/mt282178.aspx
@@ -365,5 +381,10 @@ Jeder Knoten in einem Pool erhält eine eindeutige ID, und der Knoten, auf dem e
 [rest_multiinstancesettings]: https://msdn.microsoft.com/library/azure/dn820105.aspx#multiInstanceSettings
 [rest_update_job]: https://msdn.microsoft.com/library/azure/dn820162.aspx
 [rest_rdp]: https://msdn.microsoft.com/library/azure/dn820120.aspx
+[rest_reboot]: https://msdn.microsoft.com/library/azure/dn820171.aspx
+[rest_reimage]: https://msdn.microsoft.com/library/azure/dn820157.aspx
+[rest_remove]: https://msdn.microsoft.com/library/azure/dn820194.aspx
+[rest_offline]: https://msdn.microsoft.com/library/azure/mt637904.aspx
+[rest_online]: https://msdn.microsoft.com/library/azure/mt637907.aspx
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

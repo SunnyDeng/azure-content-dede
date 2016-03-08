@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="01/25/2016"
+   ms.date="02/12/2016"
    ms.author="hascipio" />
 
 # Veröffentlichen eines Angebots im Azure Marketplace
@@ -47,6 +47,7 @@ Einige Schritte müssen für alle Lösungstypen ausgeführt werden. In diesem Ar
 - [Zugriff auf die Publisher-Unterstützung][suppt-general]
 - [Grundlegendes zu den Verkäufer-Insights-Berichten][suppt-rpt-insights]
 - [Grundlegendes zu den Auszahlungsberichten][suppt-rpt-payouts]
+- [Gewusst wie: Ändern Ihres „Reseller Incentive“ für Cloud-Lösungsanbieter](marketplace-publishing-csp-incentive.md)
 - [Beheben häufiger Probleme bei der Veröffentlichung im Marketplace][suppt-common]
 
 ## Zusätzliche Ressourcen
@@ -81,4 +82,4 @@ Einige Schritte müssen für alle Lösungstypen ausgeführt werden. In diesem Ar
 [link-pushstaging]: marketplace-publishing-push-to-staging.md
 [link-pushprod]: marketplace-publishing-push-to-production.md
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0224_2016-->

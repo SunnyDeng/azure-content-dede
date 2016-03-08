@@ -20,6 +20,8 @@ Vielen Dank für Ihr Interesse an der Azure-Dokumentation.
 
 Sie können auf verschiedene Weise zur [Azure-Dokumentation](http://azure.microsoft.com/documentation/) beitragen:
 
+* Beteiligen Sie sich an einer [Forumsdiskussion](http://social.msdn.microsoft.com/Forums/windowsazure/home).
+* Verfassen Sie unter den Artikeln Disqus-Kommentare.
 * Tragen Sie zu technischen Artikeln über die GitHub-Benutzeroberfläche bei. Das ist einfach. Entweder finden Sie den Artikel in diesem Repository, oder Sie besuchen die Seite mit dem Artikel unter [http://azure.microsoft.com/documentation](http://azure.microsoft.com/documentation) und klicken dort auf den Link, der zur GitHub-Quelle für den Artikel führt.
 * Wenn Sie wesentliche Änderungen an einem vorhandenen Artikel vornehmen, Bilder hinzufügen oder austauschen oder einen neuen Artikel verfassen möchten, müssen Sie eine Verzweigung von diesem Repository erstellen, Git Bash und Markdown Pad installieren und einige Git-Befehle erlernen.
 
@@ -45,27 +47,28 @@ Ausführliche Informationen finden Sie unter [http://azure.github.io/guidelines.
 
 Der Inhalt im Repository „azure-content“ folgt in seiner Struktur der Dokumentation unter [Azure.Microsoft.com](http://azure.microsoft.com). Das Repository enthält zwei Stammordner:
 
-### \\articles
+### \articles
 
-Der Ordner *\\articles* enthält die Dokumentationsartikel, formatiert als Markdown-Dateien mit der Erweiterung *.md*.
+Der Ordner *\articles* enthält die Dokumentationsartikel, formatiert als Markdown-Dateien mit der Erweiterung *.md*.
 
-Artikel im Stammverzeichnis werden auf „Azure.Microsoft.com“ unter dem Pfad **http://azure.microsoft.com/documentation/articles/{article-name-without-md}/* veröffentlicht.
+Artikel im Stammverzeichnis werden auf „Azure.Microsoft.com“ unter dem Pfad *http://azure.microsoft.com/documentation/articles/{article-name-without-md}/* veröffentlicht.
 
 * **Dateinamen für Artikel:** Lesen Sie unsere [Anleitung zur Benennung von Dateien](./contributor-guide/file-names-and-locations.md).
 
-Artikel in einem eigenen dienstspezifischen Ordner („Dienstordner“) werden auf „Azure.Microsoft.com“ unter dem Pfad **http://azure.microsoft.com/documentation/articles/service-folder/{article-name-without-md}/* veröffentlicht.
+Artikel in einem eigenen dienstspezifischen Ordner („Dienstordner“) werden auf „Azure.Microsoft.com“ unter dem Pfad 
+*http://azure.microsoft.com/documentation/articles/service-folder/{article-name-without-md}/* veröffentlicht.
 
-* **Unterordner für Medien:** Der Ordner *\\articles* enthält den Ordner *\\media* für Mediendateien zu den Stammverzeichnisartikeln. Dieser enthält Unterordner mit den Bildern für den jeweiligen Artikel. Die Dienstordner enthalten einen separaten Medienordner für die Artikel im jeweiligen Dienstordner. Die Medienordner für Bilder zu einem Artikel heißen genauso wie die Artikeldatei, aber ohne die Dateierweiterung *.md*.
+* **Unterordner für Medien:** Der Ordner *\articles* enthält den Ordner *\media* für Mediendateien zu den Stammverzeichnisartikeln. Dieser enthält Unterordner mit den Bildern für den jeweiligen Artikel. Die Dienstordner enthalten einen separaten Medienordner für die Artikel im jeweiligen Dienstordner. Die Medienordner für Bilder zu einem Artikel heißen genauso wie die Artikeldatei, aber ohne die Dateierweiterung *.md*.
 
-### \\includes
+### \includes
 
 Sie können Abschnitte mit wiederverwendbaren Inhalten erstellen, die in einen oder mehrere Artikel eingefügt werden sollen. Weitere Informationen finden Sie unter [Benutzerdefinierte Erweiterungen für unsere technischen Inhalte](./contributor-guide/custom-markdown-extensions.md).
 
-### \\markdown templates
+### \markdown templates
 
 Dieser Ordner enthält unsere Markdown-Standardvorlage mit der grundlegenden Markdown-Formatierung, die Sie für einen Artikel benötigen.
 
-### \\contributor-guide
+### \contributor-guide
 
 Dieser Ordner enthält die Artikel unseres Leitfadens für Mitwirkende.
 
@@ -101,4 +104,4 @@ Metadaten zu Artikeln sind die Voraussetzung für bestimmte Funktionen auf der W
 
 Alle Anleitungsthemen finden Sie im [Index zum Leitfaden für Mitwirkende](./contributor-guide/contributor-guide-index.md).
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0307_2016-->

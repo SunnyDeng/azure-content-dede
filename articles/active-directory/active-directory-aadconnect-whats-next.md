@@ -16,7 +16,7 @@
 	ms.date="02/16/2016"
 	ms.author="billmath"/>
 
-# Nächste Schritte und Verwalten von Azure AD Connect
+# Nächste Schritte und Verwalten von Azure AD Connect
 Anhand der Anweisungen in den folgenden weiterführenden Themen können Sie Azure Active Directory Connect entsprechend den Bedürfnissen und Anforderungen Ihrer Organisation anpassen.
 
 ## Optionale Konfiguration für den AD FS-Dienst
@@ -24,13 +24,13 @@ Sie können die Abbildung und das Logo für Ihre AD FS-Anmeldeseiten anpassen, i
 
 	Set-AdfsWebTheme -TargetName default -Logo @{path="c:\Contoso\logo.png"} –Illustration @{path=”c:\Contoso\illustration.png”}
 
-Eine vollständige Beschreibung der Optionen zur Konfiguration finden Sie unter [Anpassen der AD FS-Anmeldeseiten](https://technet.microsoft.com/library/dn280950.aspx).
+Eine vollständige Beschreibung der Optionen zur Konfiguration finden Sie unter [Anpassen der AD FS-Anmeldeseiten](https://technet.microsoft.com/library/dn280950.aspx).
 
-## Zuweisen von Lizenzen für Benutzer von Azure AD Premium und Enterprise Mobility
+## Zuweisen von Lizenzen für Benutzer von Azure AD Premium und Enterprise Mobility
 
-Nachdem Ihre Benutzer in der Cloud synchronisiert wurden, müssen Sie ihnen nun eine Lizenz zuweisen, sodass sie Cloudanwendungen wie z. B. Office 365 verwenden können.
+Nachdem Ihre Benutzer in der Cloud synchronisiert wurden, müssen Sie ihnen nun eine Lizenz zuweisen, sodass sie Cloudanwendungen wie z. B. Office 365 verwenden können.
 
-### So weisen Sie eine Azure AD Premium- oder Enterprise Mobility Suite-Lizenz zu
+### So weisen Sie eine Azure AD Premium- oder Enterprise Mobility Suite-Lizenz zu
 --------------------------------------------------------------------------------
 1. Melden Sie sich beim Azure-Portal als Administrator an.
 2. Wählen Sie im linken Bereich **Active Directory** aus.
@@ -58,9 +58,11 @@ Wenn Sie eine Synchronisierungsaufgabe ausführen möchten, können Sie dazu wie
 
 <center>![Cloud](./media/active-directory-aadconnect-whats-next/startsynch.png)</center>
 
+Weitere Informationen zum Azure AD Connect-Synchronisierungsplaner finden Sie unter [Azure AD Connect-Synchronisierungsplaner](active-directory-aadconnectsync-feature-scheduler.md).
 
-## Weitere verfügbare Aufgaben in Azure AD Connect
-Nach der ersten Installation von Azure AD Connect können Sie den Assistenten über die Azure AD Connect-Startseite oder die Desktopverknüpfung jederzeit erneut starten. Sie werden feststellen, dass beim erneuten Durchlaufen des Assistenten unter "Zusätzliche Aufgaben" einige neue Optionen zur Verfügung stehen.
+
+## Weitere verfügbare Aufgaben in Azure AD Connect
+Nach der ersten Installation von Azure AD Connect können Sie den Assistenten über die Azure AD Connect-Startseite oder die Desktopverknüpfung jederzeit erneut starten. Sie werden feststellen, dass beim erneuten Durchlaufen des Assistenten unter "Zusätzliche Aufgaben" einige neue Optionen zur Verfügung stehen.
 
 Die folgende Tabelle enthält eine Zusammenfassung und jeweils eine kurze Beschreibung dieser Aufgaben.
 
@@ -69,11 +71,11 @@ Die folgende Tabelle enthält eine Zusammenfassung und jeweils eine kurze Beschr
 
 Weitere Aufgabe | Beschreibung
 ------------- | ------------- |
-Ausgewähltes Szenario anzeigen |Hiermit können Sie Ihre aktuelle Azure AD Connect-Lösung anzeigen. Dazu gehören allgemeine Einstellungen, synchronisierte Verzeichnisse, Synchronisierungseinstellungen usw.
-Synchronisierungsoptionen anpassen | Hiermit können Sie die aktuelle Konfiguration ändern, z. B. Hinzufügen weiterer Aktive Directory-Gesamtstrukturen zur Konfiguration oder Aktivieren von Synchronisierungsoptionen wie beispielsweise "Benutzer", "Gruppe", "Gerät" oder "Kennwort zurückschreiben".
-Stagingmodus aktivieren | Hiermit können Sie Informationen bereitstellen, die später synchronisiert, jedoch nicht in Azure AD oder Active Directory exportiert werden. Auf diese Weise können Sie die Synchronisierungen in der Vorschau anzeigen, bevor sie ausgeführt werden.
+Ausgewähltes Szenario anzeigen |Hiermit können Sie Ihre aktuelle Azure AD Connect-Lösung anzeigen. Dazu gehören allgemeine Einstellungen, synchronisierte Verzeichnisse, Synchronisierungseinstellungen usw.
+Synchronisierungsoptionen anpassen | Hiermit können Sie die aktuelle Konfiguration ändern, z. B. Hinzufügen weiterer Aktive Directory-Gesamtstrukturen zur Konfiguration oder Aktivieren von Synchronisierungsoptionen wie beispielsweise "Benutzer", "Gruppe", "Gerät" oder "Kennwort zurückschreiben".
+Stagingmodus aktivieren | Hiermit können Sie Informationen bereitstellen, die später synchronisiert, jedoch nicht in Azure AD oder Active Directory exportiert werden. Auf diese Weise können Sie die Synchronisierungen in der Vorschau anzeigen, bevor sie ausgeführt werden.
 
 ## Nächste Schritte
 Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0224_2016-->

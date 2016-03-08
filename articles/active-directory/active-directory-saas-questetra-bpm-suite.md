@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/18/2015"
+	ms.date="02/22/2016"
 	ms.author="jeedes"/>
 
 
@@ -23,9 +23,9 @@ In diesem Lernprogramm erfahren Sie, wie Sie die Questetra BPM Suite in Azure Ac
 
 - Sie können in Azure AD steuern, wer auf die Questetra BPM Suite Zugriff hat. 
 - Sie können es Benutzern ermöglichen, sich mit ihren Azure AD-Konten automatisch für die Questetra BPM Suite anzumelden (einmaliges Anmelden).
-- Sie können Ihre Konten an einem zentralen Ort verwalten – dem Azure Active Directory-Portal.
+- Sie können Ihre Konten an einem zentralen Ort verwalten – im klassischen Azure-Portal.
 
-Weitere Informationen zur Integration von SaaS-Apps in Azure AD finden Sie unter [Was bedeuten Anwendungszugriff und einmaliges Anmelden mit Azure Active Directory?](active-directory-appssoaccess-whatis.md).
+Weitere Informationen zur Integration von SaaS-Apps in Azure AD finden Sie unter [Was bedeuten Anwendungszugriff und einmaliges Anmelden mit Azure Active Directory?](active-directory-appssoaccess-whatis.md).
 
 ## Voraussetzungen 
 
@@ -35,7 +35,7 @@ Um die Azure AD-Integration in die Questetra BPM Suite konfigurieren zu können,
 - Ein [Questetra BPM Suite](https://senbon-imadegawa-988.questetra.net/)-Abonnement mit aktiviertem einmaligen Anmelden
 
 
-> [AZURE.NOTE]Um die Schritte in diesem Tutorial zu testen, wird empfohlen, keine Produktionsumgebung zu verwenden.
+> [AZURE.NOTE] Um die Schritte in diesem Tutorial zu testen, wird empfohlen, keine Produktionsumgebung zu verwenden.
 
 
 Um die Schritte in diesem Tutorial zu testen, sollten Sie folgende Empfehlungen beachten:
@@ -56,7 +56,7 @@ Zum Konfigurieren der Integration der Questetra BPM Suite in Azure AD müssen Si
 
 **Führen Sie die folgenden Schritte aus, um die Questetra BPM Suite aus dem Katalog hinzuzufügen:**
 
-1. Klicken Sie im linken Navigationsbereich des **Azure-Verwaltungsportals** auf **Active Directory**. <br><br> ![Active Directory][1]
+1. Klicken Sie im **klassischen Azure-Portal** im linken Navigationsbereich auf **Active Directory**. <br><br> ![Active Directory][1]
 
 2. Wählen Sie in der Liste **Verzeichnis** das Verzeichnis aus, für das Sie die Verzeichnisintegration aktivieren möchten.
 
@@ -81,13 +81,13 @@ Zum Konfigurieren und Testen des einmaligen Anmeldens in Azure AD bei der Queste
 5. **[Zuweisen des Azure AD-Testbenutzers](#assigning-the-azure-ad-test-user)** – um Britta Simon für das einmalige Anmelden von Azure AD zu aktivieren.
 5. **[Testen der einmaligen Anmeldung](#testing-single-sign-on)**, um zu überprüfen, ob die Konfiguration funktioniert.
 
-### Konfigurieren der einmaligen Anmeldung in Azure AD
+### Konfigurieren des einmaligen Anmeldens von Azure AD
 
-Das Ziel dieses Abschnitts ist es, das einmalige Anmelden von Azure AD im Azure AD-Portal zu aktivieren und das einmalige Anmelden in Azure in Ihrer Anwendung der Questetra BPM Suite zu konfigurieren.<br>
+Das Ziel dieses Abschnitts besteht darin, das einmalige Anmelden von Azure AD im klassischen Azure-Portal zu aktivieren und das einmalige Anmelden in der Questetra BPM Suite-Anwendung zu konfigurieren.<br>
 
 **Führen Sie zum Konfigurieren des einmaligen Anmeldens von Azure AD in der Questetra BPM Suite die folgenden Schritte aus:**
 
-1. Klicken Sie im Azure AD-Portal auf der Anwendungsintegrationsseite **Questetra BPM Suite** auf **Einmaliges Anmelden konfigurieren**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu öffnen.<br><br> ![Einmaliges Anmelden konfigurieren][8]
+1. Klicken Sie im klassischen Azure-Portal auf der Anwendungsintegrationsseite für **Questetra BPM Suite** auf **Einmaliges Anmelden konfigurieren**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu öffnen.<br><br> ![Einmaliges Anmelden konfigurieren][8]
 
 2. Wählen Sie auf der Seite **Wie sollen sich Benutzer bei Questetra BPM Suite anmelden** die Option **Azure AD einmaliges Anmelden** aus, und klicken Sie dann auf **Weiter**.<br><br> ![Azure AD – einmaliges Anmelden][9]
 
@@ -99,7 +99,7 @@ Das Ziel dieses Abschnitts ist es, das einmalige Anmelden von Azure AD im Azure 
 5. Klicken Sie zum Öffnen der Seite **SingleSignOnSAML** auf **SSO (SAML)**. <br><br> ![Azure AD – einmaliges Anmelden][11]
 
 
-6. Führen Sie im Azure-Portal auf der Dialogseite **App-Einstellungen konfigurieren** die folgenden Schritte aus: <br><br>![Konfigurieren von App-Einstellungen][13]
+6. Führen Sie im klassischen Azure-Portal auf der Dialogseite **App-Einstellungen konfigurieren** die folgenden Schritte aus: <br><br>![Konfigurieren von App-Einstellungen][13]
  
     a. Kopieren Sie auf der **Questetra BPM Suite**-Unternehmenswebsite im Abschnitt mit den SP-Informationen die **ACS-URL**, und fügen Sie sie in das Textfeld **Anmelde-URL** ein.
 
@@ -117,38 +117,38 @@ Das Ziel dieses Abschnitts ist es, das einmalige Anmelden von Azure AD im Azure 
 
     a. Wählen Sie **Einmaliges Anmelden aktivieren** aus.
      
-    b. Kopieren Sie im Azure-Portal den Wert von **Aussteller-URL**, und fügen Sie ihn in das Textfeld **Entity ID** ein.
+    b. Kopieren Sie im klassischen Azure-Portal den Wert für **Aussteller-URL**, und fügen Sie ihn dann in das Textfeld **Entitäts-ID** ein.
 
-    c. Kopieren Sie im Azure-Portal den Wert **Dienst-URL für einmalige Anmeldung**, und fügen Sie ihn in das Textfeld **Sign-in page URL** ein.
+    c. Kopieren Sie im klassischen Azure-Portal den Wert für **Dienst-URL für einmalige Anmeldung**, und fügen Sie ihn dann in das Textfeld **URL der Anmeldeseite** ein.
 
-    d. Kopieren Sie im Azure-Portal den Wert **Dienst-URL für einmalige Abmeldung**, und fügen Sie ihn in das Textfeld **Sign-out page URL** ein.
+    d. Kopieren Sie im klassischen Azure-Portal den Wert für **Dienst-URL für einmalige Abmeldung**, und fügen Sie ihn dann in das Textfeld **URL der Abmeldeseite** ein.
 
     e. Geben Sie in das Textfeld **NameID format** als Format **urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress** ein.
 
 
     f. Erstellen Sie eine Base64-codierte Datei aus dem heruntergeladenen Zertifikat.
 
-    >[AZURE.TIP]Weitere Informationen finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache).
+    >[AZURE.TIP] Weitere Informationen finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache).
 
     g. Öffnen Sie das Base64-codierte Zertifikat in Editor, kopieren Sie den Inhalt des Zertifikats in die Zwischenablage, und fügen Sie ihn anschließend in das Textfeld **Überprüfungszertifikat** ein.
 
     h. Klicken Sie auf **Speichern**.
 
 
-9. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration der einmaligen Anmeldung aus, und klicken Sie dann auf **Weiter**. <br><br>![Was ist Azure AD Connect?][17]
+9. Wählen Sie im klassischen Azure-Portal die Bestätigung für die Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Weiter**. <br><br>![Was ist Azure AD Connect?][17]
 
 
-10. Klicken Sie auf der Seite **Bestätigung zur einmaligen Anmeldung** auf **Fertig stellen**.<br><br>![Was ist Azure AD Connect?][18]
+10. Klicken Sie auf der Seite **Bestätigung zur einmaligen Anmeldung** auf **Fertig stellen**. <br><br>![Was ist Azure AD Connect?][18]
 
 
 
 
 ### Erstellen einen Azure AD-Testbenutzers
-Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta Simon im Azure-Portal.
+In diesem Abschnitt wird im klassischen Azure-Portal eine Testbenutzerin namens Britta Simon erstellt.
 
 **Um einen Testbenutzer in Azure AD zu erstellen, führen Sie die folgenden Schritte aus:**
 
-1. Klicken Sie im linken Navigationsbereich des **Azure-Verwaltungsportals** auf **Active Directory**. <br><br>![Azure AD-Testbenutzer erstellen][100] 
+1. Klicken Sie im **klassischen Azure-Portal** im linken Navigationsbereich auf **Active Directory**. <br><br>![Azure AD-Testbenutzer erstellen][100] 
 
 2. Wählen Sie in der Liste **Verzeichnis** das Verzeichnis aus, für das Sie die Verzeichnisintegration aktivieren möchten.
 
@@ -204,15 +204,15 @@ Das Ziel dieses Abschnitts ist das Erstellen einer Benutzerin namens Britta Simo
 
 ### Zuweisen des Azure AD-Testbenutzers
 
-Das Ziel dieses Abschnitts ist es, Britta Simon für das einmalige Anmelden bei Azure zu aktivieren, indem sie Zugriff auf die Questetra BPM Suite erhält. <br><br>![Was ist Azure AD Connect?][200]
+Das Ziel dieses Abschnitts ist es, Britta Simon für das einmalige Anmelden bei Azure zu aktivieren, indem sie Zugriff auf die Questetra BPM Suite erhält. <br><br>![Was ist Azure AD Connect?][200]
 
 **Führen Sie die folgenden Schritte aus, um Britta Simon der Questetra BPM Suite zuzuweisen:**
 
-1. Klicken Sie zum Öffnen der Anwendungsansicht im Azure-Portal in der Verzeichnisansicht im Menü oben auf **Anwendungen**.<br> <br>![Was ist Azure AD Connect?][201]
-2. Wählen Sie in der Anwendungsliste **Questetra BPM Suite** aus. <br><br>![Was ist Azure AD Connect?][205]
-1. Klicken Sie im Menü oben auf **Benutzer**.<br> <br>![Was ist Azure AD Connect?][202]
-1. Wählen Sie in der Benutzerliste **Britta Simon** aus. <br><br>![Was ist Azure AD Connect?][203]
-2. Klicken Sie in der Symbolleiste unten auf **Zuweisen**. <br><br>![Was ist Azure AD Connect?][204]
+1. Klicken Sie zum Öffnen der Anwendungsansicht im klassischen Azure-Portal im oberen Menü der Verzeichnisansicht auf **Anwendungen**. <br><br>![Was ist Azure AD Connect?][201]
+2. Wählen Sie in der Anwendungsliste **Questetra BPM Suite** aus. <br><br>![Was ist Azure AD Connect?][205]
+1. Klicken Sie im Menü oben auf **Benutzer**.<br> <br>![Was ist Azure AD Connect?][202]
+1. Wählen Sie in der Benutzerliste **Britta Simon** aus. <br><br>![Was ist Azure AD Connect?][203]
+2. Klicken Sie in der Symbolleiste unten auf **Zuweisen**. <br><br>![Was ist Azure AD Connect?][204]
 
 
 
@@ -265,4 +265,4 @@ Das Ziel dieses Abschnitts ist das Testen Ihrer Azure AD-Konfiguration für einm
 
 [300]: ./media/active-directory-saas-questetra-bpm-suite/questera_bpm_suite_11.png
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0224_2016-->

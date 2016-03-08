@@ -1,9 +1,9 @@
 <properties
-   pageTitle="Erste Schritte mit Cmdlets in SQL Data Warehouse"
+   pageTitle="Verwenden von PowerShell-Cmdlets und REST-APIs mit SQL Data Warehouse"
    description="Anhalten und Fortsetzen von SQL Data Warehouse mithilfe von PowerShell-Cmdlets"
    services="sql-data-warehouse"
    documentationCenter="NA"
-   authors="sidneyh"
+   authors="barbkess"
    manager="barbkess"
    editor=""/>
 
@@ -13,10 +13,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/11/2016"
-   ms.author="mausher;sidneyh;barbkess;sonyama"/>
+   ms.date="02/22/2016"
+   ms.author="barbkess;mausher;sonyama"/>
 
-# Erste Schritte mit Azure Data Warehouse-Cmdlets und REST-APIs
+# Verwenden von PowerShell-Cmdlets und REST-APIs mit SQL Data Warehouse
 
 Für die Verwaltung von SQL Data Warehouse können entweder Azure PowerShell-Cmdlets oder REST-APIs verwendet werden.
 
@@ -44,7 +44,7 @@ Analog dazu können die REST-APIs für **SQL Azure-Datenbank** auch für Instanz
 
 Die Befehlsreferenz finden Sie unter [Suspend-AzureRmSQLDatabase](https://msdn.microsoft.com/library/mt619337.aspx).
 
-### Beispiel 1: Anhalten einer Datenbank auf einem Server anhand des Namens
+### Beispiel 1: Anhalten einer Datenbank auf einem Server anhand des Namens
 
 In diesem Beispiel wird die auf dem Server „Server01“ gehostete Datenbank mit der Bezeichnung „Database02“ angehalten. Der Server befindet sich in einer Azure-Ressourcengruppe namens „ResourceGroup1“.
 
@@ -52,7 +52,7 @@ In diesem Beispiel wird die auf dem Server „Server01“ gehostete Datenbank mi
 Suspend-AzureRmSqlDatabase –ResourceGroupName "ResourceGroup11" –ServerName "Server01" –DatabaseName "Database02"
 ```
 
-### Beispiel 2: Anhalten eines Datenbankobjekts
+### Beispiel 2: Anhalten eines Datenbankobjekts
 
 In diesem Beispiel wird eine Datenbank namens „Database02“ von einem Server mit der Bezeichnung „Server01“ abgerufen, der sich in einer Ressourcengruppe namens „ResourceGroup1“ befindet. Das abgerufene Objekt wird an **Suspend-AzureRmSqlDatabase** weitergeleitet. Dadurch wird die Datenbank angehalten. Der letzte Befehl zeigt die Ergebnisse an.
 
@@ -66,7 +66,7 @@ $resultDatabase
 
 Die Befehlsreferenz finden Sie unter [Resume-AzureRmSQLDatabase](https://msdn.microsoft.com/library/mt619347.aspx).
 
-### Beispiel 1: Fortsetzen einer Datenbank auf einem Server anhand des Namens
+### Beispiel 1: Fortsetzen einer Datenbank auf einem Server anhand des Namens
 
 In diesem Beispiel wird der Betrieb der auf dem Server „Server01“ gehosteten Datenbank mit der Bezeichnung „Database02“ fortgesetzt. Der Server befindet sich in einer Ressourcengruppe namens „ResourceGroup1“.
 
@@ -74,7 +74,7 @@ In diesem Beispiel wird der Betrieb der auf dem Server „Server01“ gehosteten
 Resume-AzureRmSqlDatabase –ResourceGroupName "ResourceGroup11" –ServerName "Server01" -DatabaseName "Database02"
 ```
 
-### Beispiel 2: Fortsetzen eines Datenbankobjekts
+### Beispiel 2: Fortsetzen eines Datenbankobjekts
 
 In diesem Beispiel wird eine Datenbank namens „Database02“ von einem Server mit der Bezeichnung „Server01“ abgerufen, der sich in einer Ressourcengruppe namens „ResourceGroup1“ befindet. Das Objekt wird an **Resume-AzureRmSqlDatabase** übergeben.
 
@@ -93,7 +93,7 @@ RestorePointType|DISCRETE/CONTINUOUS. Diskrete Wiederherstellungspunkte beschrei
 EarliestRestoreDate|Früheste Wiederherstellungszeit (wird aufgefüllt, wenn "restorePointType" = CONTINUOUS ist)
 RestorePointCreationDate |Uhrzeit der Sicherungsmomentaufnahme (aufgefüllt, wenn "restorePointType = DISCRETE")
 
-### Beispiel 1: Abrufen der Wiederherstellungspunkte einer Datenbank auf einem Server anhand des Namens
+### Beispiel 1: Abrufen der Wiederherstellungspunkte einer Datenbank auf einem Server anhand des Namens
 In diesem Beispiel werden die Wiederherstellungspunkte für eine Datenbank namens „Database02“ von einem Server mit der Bezeichnung „Server01“ abgerufen, der sich in einer Ressourcengruppe namens „ResourceGroup1“ befindet.
 
 ```	
@@ -102,7 +102,7 @@ $restorePoints
 ```
 
 
-### Beispiel 2: Fortsetzen eines Datenbankobjekts
+### Beispiel 2: Fortsetzen eines Datenbankobjekts
 
 In diesem Beispiel wird eine Datenbank namens „Database02“ von einem Server mit der Bezeichnung „Server01“ abgerufen, der sich in einer Ressourcengruppe namens „ResourceGroup1“ befindet. Das Datenbankobjekt wird an **Get-AzureRmSqlDatabase** übergeben, was in den Wiederherstellungspunkten der Datenbank resultiert. Der letzte Befehl druckt die Ergebnisse
 
@@ -133,4 +133,4 @@ Weitere Referenzinformationen finden Sie unter [SQL Data Warehouse-Referenz – 
 [yah]: http://search.yahoo.com/
 [msn]: http://search.msn.com/
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0224_2016-->

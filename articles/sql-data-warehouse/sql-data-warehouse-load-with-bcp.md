@@ -10,10 +10,10 @@
 <tags
    ms.service="sql-data-warehouse"
    ms.devlang="NA"
-   ms.topic="article"
+   ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/07/2016"
+   ms.date="02/25/2016"
    ms.author="mausher;barbkess;sonyama"/>
 
 
@@ -49,7 +49,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 - Eine Installation des bcp-Befehlszeilenprogramms
 - Eine Installation des SQLCMD-Befehlszeilenprogramms
 
->[AZURE.NOTE]Sie können die Dienstprogramme bcp und sqlcmd im [Microsoft Download Center][] herunterladen.
+>[AZURE.NOTE] Sie können die Dienstprogramme bcp und sqlcmd im [Microsoft Download Center][] herunterladen.
 
 ## Importieren von Daten in SQL Data Warehouse
 
@@ -78,7 +78,7 @@ WITH
 );
 GO
 ```
->[AZURE.NOTE]Weitere Informationen zu den verfügbaren Optionen für die WITH-Klausel finden Sie unter dem Thema [Tabellenentwurf][] in der Entwicklungsgruppe der Themen.
+>[AZURE.NOTE] Weitere Informationen zu den verfügbaren Optionen für die WITH-Klausel finden Sie unter dem Thema [Tabellenentwurf][] in der Entwicklungsgruppe der Themen.
 
 ### Schritt 2: Erstellen einer Quelldatendatei
 
@@ -101,7 +101,7 @@ GO
 
 Speichern Sie diese im lokalen temporären Verzeichnis unter "C:\\Temp\\DimDate2.txt".
 
-> [AZURE.NOTE]Es ist wichtig, daran zu denken, dass bcp.exe die UTF-8-Codierung nicht unterstützt. Verwenden Sie ASCII-codierte Dateien oder die UTF-16-Codierung für Ihre Dateien, wenn Sie bcp.exe verwenden.
+> [AZURE.NOTE] Es ist wichtig, daran zu denken, dass bcp.exe die UTF-8-Codierung nicht unterstützt. Verwenden Sie ASCII-codierte Dateien oder die UTF-16-Codierung für Ihre Dateien, wenn Sie bcp.exe verwenden.
 
 ### Schritt 3: Herstellen einer Verbindung und Importieren von Daten
 Sie können mit bcp eine Verbindung herstellen und die Daten mit dem folgenden Befehl importieren (ersetzen Sie die Werte nach Bedarf):
@@ -174,7 +174,7 @@ Sie können überprüfen, ob die Daten ordnungsgemäß exportiert wurden, indem 
 20150101,1,3
 ```
 
->[AZURE.NOTE]Aufgrund der Struktur verteilter Systeme unterscheidet sich die Reihenfolge der Daten in den SQL Data Warehouse-Datenbanken möglicherweise. Sie können optional den queryout-Parameter verwenden, um anzugeben, welche Transact-SQL-Abfrage ausgeführt werden soll.
+>[AZURE.NOTE] Aufgrund der Struktur verteilter Systeme unterscheidet sich die Reihenfolge der Daten in den SQL Data Warehouse-Datenbanken möglicherweise. Sie können optional den queryout-Parameter verwenden, um anzugeben, welche Transact-SQL-Abfrage ausgeführt werden soll.
 
 ## Nächste Schritte
 Eine Übersicht über das Laden finden Sie unter [Laden von Daten in SQL Data Warehouse][]. Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht für SQL Data Warehouse][].
@@ -196,4 +196,4 @@ Eine Übersicht über das Laden finden Sie unter [Laden von Daten in SQL Data Wa
 <!--Other Web references-->
 [Microsoft Download Center]: http://www.microsoft.com/download/details.aspx?id=36433
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0302_2016-->

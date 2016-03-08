@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="11/05/2015"
-   ms.author="kunalds"/>
+   ms.date="02/12/2016"
+   ms.author="toddabel"/>
 
 
 # Melden und Überprüfen der Dienstintegrität
@@ -47,7 +47,7 @@ Führen Sie die folgenden Schritte aus, um eine Anwendung bereitzustellen und ih
 6. Sie können die Integrität auch mithilfe der PowerShell überprüfen. Die Integrität einer Anwendung kann mithilfe von ```Get-ServiceFabricApplicationHealth``` und die Integrität eines Diensts mithilfe von ```Get-ServiceFabricServiceHealth``` überprüft werden. Der Integritätsbericht für die gleiche Anwendung in PowerShell sieht wie folgt aus: ![Fehlerfreie Anwendung in PowerShell](./media/service-fabric-diagnostics-how-to-report-and-check-service-health/ps-healthy-app-report.png)
 
 ## So fügen Sie dem Dienstcode benutzerdefinierte Integritätsereignisse hinzu
-Die Service Fabric-Visual Studio-Projektvorlagen enthalten Beispielcode. Die folgenden Schritte zeigen, wie Sie Integritätsereignisse aus dem Dienstcode melden können. Diese Berichte werden automatisch in den Standardtools für die Überwachung der Integrität angezeigt, die Service Fabric bietet, z. B. Service Fabric-Explorer, Integritätsanzeige im Azure-Portal und PowerShell.
+Die Service Fabric-Visual Studio-Projektvorlagen enthalten Beispielcode. Die folgenden Schritte zeigen, wie Sie Integritätsereignisse aus dem Dienstcode melden können. Diese Berichte werden automatisch in den Standardtools für die Überwachung der Integrität angezeigt, die Service Fabric bietet, z. B. Service Fabric-Explorer, Integritätsanzeige im Azure-Portal und PowerShell.
 
 1. Öffnen Sie erneut die Anwendung, die Sie zuvor in Visual Studio erstellt haben, oder erstellen Sie eine neue Anwendung, indem Sie in den Visual Studio-Vorlagen einen zustandsbehafteten Dienst verwenden.
 2. Öffnen Sie die Datei **Stateful1.cs**. Suchen Sie die Deklaration für `var myDictionary`, und fügen Sie den Code rechts unten hinter der Deklaration von `var myDictionary` hinzu. Das hier erstellte `fabricClient`-Objekt wird später zum Melden der Integrität verwendet.
@@ -107,4 +107,4 @@ Dieser Bericht verbleibt im Integritäts-Manager, bis er von einem anderen Beric
 ## Nächste Schritte
 [Ausführlichere Informationen zur Service Fabric-Integrität](service-fabric-health-introduction.md)
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0224_2016-->

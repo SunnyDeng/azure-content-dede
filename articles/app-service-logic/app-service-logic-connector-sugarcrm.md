@@ -4,7 +4,7 @@
    services="app-service\logic"
    documentationCenter=".net,nodejs,java"
    authors="anuragdalmia"
-   manager="dwrede"
+   manager="erikre"
    editor=""/>
 
 <tags
@@ -13,14 +13,16 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="11/30/2015"
+   ms.date="02/10/2016"
    ms.author="sameerch"/>
 
 
 # Erste Schritte mit dem SugarCRM-Connector und das Hinzufügen zur Logik-App
-Mit dem SugarCRM-Connector können Sie unterschiedliche Entitäten erstellen und ändern, z. B. Konten, Leads, Kontakte usw. Im Folgenden sind die typischen Integrationsszenarios aufgeführt, bei denen SugarCRM verwendet wird:
+>[AZURE.NOTE] Diese Version des Artikels gilt für die Logik-Apps-Schemaversion 2014-12-01-preview.
 
-- Kontosynchronisierung zwischen SugarCRM und ERP-Systemen, z. B. SAP
+Mit dem SugarCRM-Connector können Sie unterschiedliche Entitäten erstellen und ändern, z. B. Konten, Leads, Kontakte usw. Im Folgenden sind die typischen Integrationsszenarios aufgeführt, bei denen SugarCRM verwendet wird:
+
+- Kontosynchronisierung zwischen SugarCRM und ERP-Systemen, z. B. SAP
 - Konten-, Kontakt- und Leads-Synchronisierung zwischen Marketo und SugarCRM
 - Datenfluss von der Bestellung bis zur Bezahlung von SugarCRM bis zu ERP-Systemen
 
@@ -33,7 +35,7 @@ Logik-Apps können basierend auf einer Vielzahl von Datenquellen ausgelöst werd
 ## SugarCRM-Connector-Aktionen
 Im Folgenden werden die verschiedenen im SugarCRM-Connector verfügbaren Aktionen aufgeführt:
 
-- Modul erstellen – Verwenden Sie diese Aktion, um einen neuen Datensatz für das SugarCRM-Modul zu erstellen, z. B. Konten, Leads, Kontakte.
+- Modul erstellen – Verwenden Sie diese Aktion, um einen neuen Datensatz für das SugarCRM-Modul zu erstellen, z. B. Konten, Leads, Kontakte.
 
 - Modul aktualisieren – Verwenden Sie diese Aktion, um einen vorhandenen Datensatz für das SugarCRM-Modul zu aktualisieren.
 
@@ -57,12 +59,12 @@ Im Folgenden werden die verschiedenen im SugarCRM-Connector verfügbaren Aktione
 
 	Name | Erforderlich | Beschreibung
 --- | --- | ---
-Website-URL | Ja | Geben Sie die URL der SugarCRM-Instanz ein. Geben Sie z. B. Folgendes ein: https://abcde1234.sugarcrm.com.
-Client-ID | Ja | Geben Sie den Verbraucherschlüssel des OAuth 2.0-Schlüssels in SugarCRM ein. 
+Website-URL | Ja | Geben Sie die URL der SugarCRM-Instanz ein. Geben Sie z. B. Folgendes ein: https://abcde1234.sugarcrm.com.
+Client-ID | Ja | Geben Sie den Verbraucherschlüssel des OAuth 2.0-Schlüssels in SugarCRM ein. 
 Geheimer Clientschlüssel | Ja | Geben Sie den geheimen Verbraucherschlüssel von OAuth ein.
 Benutzername | Ja | Geben Sie den Benutzernamen des SugarCRM-Benutzers ein.
 Kennwort | Ja | Geben Sie das Kennwort des SugarCRM-Benutzers ein.
-Modulnamen | Ja | Geben Sie die SugarCRM-Module ein (z. B. Konten, Kontakte und Produkte), für die der Vorgang ausgeführt werden soll<br><br>Beispiel: Konten, Leads, Kontakte  
+Modulnamen | Ja | Geben Sie die SugarCRM-Module ein (z. B. Konten, Kontakte und Produkte), für die der Vorgang ausgeführt werden soll<br><br>Beispiel: Konten, Leads, Kontakte  
   
 ![][9]
 
@@ -100,7 +102,7 @@ Wir erstellen eine einfache Logik-App, die einen Kunden in SugarCRM erstellt und
 ## Mehr mit Ihrem Connector machen
 Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
->[AZURE.NOTE]Wenn Sie Azure Logik-Apps ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [Logik-App testen](https://tryappservice.azure.com/?appservice=logic) sofort kostenlos eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure Logik-Apps ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [Logik-App testen](https://tryappservice.azure.com/?appservice=logic) sofort kostenlos eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
 
@@ -117,4 +119,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [8]: ./media/app-service-logic-connector-sugarcrm/8_Update_Account_Address.png
 [9]: ./media/app-service-logic-connector-sugarcrm/9_Create_new_SugarCRM_connector.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0224_2016-->

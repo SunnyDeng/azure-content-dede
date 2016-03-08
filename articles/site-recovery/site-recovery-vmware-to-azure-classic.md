@@ -236,11 +236,11 @@ Wenn Sie virtuelle VMware-Computer replizieren möchten, installieren Sie die fo
 ## Schritt 5: Installieren des Verwaltungsservers
 > [AZURE.TIP] Stellen Sie sicher, dass die folgenden URLs vom Verwaltungsserver aus zugänglich sind:
 >
-- **.hypervrecoverymanager.windowsazure.com
-- **.accesscontrol.windows.net
-- **.backup.windowsazure.com
-- **.blob.core.windows.net
-- **.store.core.windows.net
+- *.hypervrecoverymanager.windowsazure.com
+- *.accesscontrol.windows.net
+- *.backup.windowsazure.com
+- *.blob.core.windows.net
+- *.store.core.windows.net
 - http://dev.mysql.com/archives/mysql-5.5/mysql-5.5.37-win32.msi
 - http://www.msftncsi.com/ncsi.txt
 
@@ -299,9 +299,14 @@ Wenn Sie virtuelle VMware-Computer replizieren möchten, installieren Sie die fo
 13.  Überprüfen Sie unter **Zusammenfassung** die angezeigten Informationen.
 
 	![Zusammenfassung](./media/site-recovery-vmware-to-azure-classic/combined-wiz10.png)
->[AZURE.WARNING] Der Proxy des Agents der Microsoft Azure Recovery Services muss eingerichtet werden. Starten Sie nach Abschluss der Installation über das Windows-Startmenü die Anwendung „Microsoft Azure Recovery Services Shell“. Führen Sie im daraufhin geöffneten Befehlsfenster den folgenden Befehlssatz aus, um die Proxyservereinstellungen einzurichten.
+	
+>[AZURE.WARNING] Der Proxy des Agents der Microsoft Azure Recovery Services muss eingerichtet werden.
+>Starten Sie nach Abschluss der Installation über das Windows-Startmenü die Anwendung „Microsoft Azure Recovery Services Shell“. Führen Sie im daraufhin geöffneten Befehlsfenster den folgenden Befehlssatz aus, um die Proxyservereinstellungen einzurichten.
 >
-	$pwd = ConvertTo-SecureString -String ProxyUserPassword Set-OBMachineSetting -ProxyServer http://myproxyserver.domain.com -ProxyPort PortNumb – ProxyUserName domain\\username -ProxyPassword $pwd net stop obengine net start obengine
+	$pwd = ConvertTo-SecureString -String ProxyUserPassword
+	Set-OBMachineSetting -ProxyServer http://myproxyserver.domain.com -ProxyPort PortNumb – ProxyUserName domain\\username -ProxyPassword $pwd
+	net stop obengine
+	net start obengine
 	 
 
 
@@ -750,4 +755,4 @@ The complete file may be found on the [Microsoft Download Center](http://go.micr
 
 [Informieren Sie sich über das Failback](site-recovery-failback-azure-to-vmware-classic.md) von unter Azure ausgeführten Computern zur lokalen Umgebung.
 
-<!---HONumber=AcomDC_0218_2016-->
+<!------HONumber=AcomDC_0218_2016-->

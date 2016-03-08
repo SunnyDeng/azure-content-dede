@@ -13,29 +13,29 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/18/2015"
+	ms.date="02/22/2016"
 	ms.author="jeedes"/>
 
 
 # Lernprogramm: Azure Active Directory-Integration mit Workrite
 
-In diesem Lernprogramm erfahren Sie, wie Sie Workrite in Azure Active Directory (Azure AD) integrieren können.<br>Die Integration von Workrite in Azure AD bietet Ihnen folgende Vorteile:
+In diesem Lernprogramm erfahren Sie, wie Sie Workrite in Azure Active Directory (Azure AD) integrieren können.<br>Die Integration von Workrite in Azure AD bietet Ihnen folgende Vorteile:
 
-- Sie können in Azure AD steuern, wer auf Workrite Zugriff hat. 
-- Sie können es Benutzern ermöglichen, sich mit ihren Azure AD-Konten automatisch bei Workrite anzumelden (einmaliges Anmelden).
-- Sie können Ihre Konten an einem zentralen Ort verwalten – dem Azure Active Directory-Portal.
+- Sie können in Azure AD steuern, wer auf Workrite Zugriff hat. 
+- Sie können es Benutzern ermöglichen, sich mit ihren Azure AD-Konten automatisch bei Workrite anzumelden (einmaliges Anmelden).
+- Sie können Ihre Konten an einem zentralen Ort verwalten – im klassischen Azure-Portal.
 
-Weitere Informationen zur Integration von SaaS-Apps in Azure AD finden Sie unter [Was bedeuten Anwendungszugriff und einmaliges Anmelden mit Azure Active Directory?](active-directory-appssoaccess-whatis.md).
+Weitere Informationen zur Integration von SaaS-Apps in Azure AD finden Sie unter [Was bedeuten Anwendungszugriff und einmaliges Anmelden mit Azure Active Directory?](active-directory-appssoaccess-whatis.md).
 
 ## Voraussetzungen 
 
-Um die Azure AD-Integration mit Workrite konfigurieren zu können, benötigen Sie Folgendes:
+Um die Azure AD-Integration mit Workrite konfigurieren zu können, benötigen Sie Folgendes:
 
 - Ein Azure AD-Abonnement.
 - Ein Workrite-Abonnement, für das einmaliges Anmelden aktiviert ist
 
 
-> [AZURE.NOTE]Um die Schritte in diesem Tutorial zu testen, wird empfohlen, keine Produktionsumgebung zu verwenden.
+> [AZURE.NOTE] Um die Schritte in diesem Tutorial zu testen, wird empfohlen, keine Produktionsumgebung zu verwenden.
 
 
 Um die Schritte in diesem Tutorial zu testen, sollten Sie folgende Empfehlungen beachten:
@@ -52,11 +52,11 @@ Ziel dieses Tutorials ist es, das einmalige Anmelden von Azure AD in einer Testu
 
 
 ## Hinzufügen von Workrite aus dem Katalog
-Zum Konfigurieren der Integration von Workrite in Azure AD müssen Sie Workrite aus dem Katalog der Liste der verwalteten SaaS-Apps hinzufügen.
+Zum Konfigurieren der Integration von Workrite in Azure AD müssen Sie Workrite aus dem Katalog der Liste der verwalteten SaaS-Apps hinzufügen.
 
 **Um Workrite aus dem Katalog hinzuzufügen, führen Sie die folgenden Schritte aus:**
 
-1. Klicken Sie im linken Navigationsbereich des **Azure-Verwaltungsportals** auf **Active Directory**. <br><br> ![Active Directory][1]<br>
+1. Klicken Sie im **klassischen Azure-Portal** im linken Navigationsbereich auf **Active Directory**. <br><br> ![Active Directory][1]<br>
 
 2. Wählen Sie in der Liste **Verzeichnis** das Verzeichnis aus, für das Sie die Verzeichnisintegration aktivieren möchten.
 
@@ -68,33 +68,33 @@ Zum Konfigurieren der Integration von Workrite in Azure AD müssen Sie Workrite
 
 
 ##  Konfigurieren und Testen der einmaligen Anmeldung von Azure AD
-In diesem Abschnitt soll anhand eines Testbenutzers namens "Britta Simon" veranschaulicht werden, wie das einmalige Anmelden von Azure AD in Workrite konfiguriert und getestet werden kann.
+In diesem Abschnitt soll anhand eines Testbenutzers namens "Britta Simon" veranschaulicht werden, wie das einmalige Anmelden von Azure AD in Workrite konfiguriert und getestet werden kann.
 
-Damit einmaliges Anmelden funktioniert, muss Azure AD wissen, wer der entsprechende Gegenbenutzer in Workrite zu einem Benutzer in Azure AD ist. Anders ausgedrückt: Zwischen einem Azure AD-Benutzer und dem entsprechenden Benutzer in Workrite muss eine Linkbeziehung eingerichtet werden.<br> Diese Linkbeziehung wird hergestellt, indem Sie den **Benutzernamen** in Azure AD als Wert dem **Benutzernamen** in Workrite zuweisen.
+Damit einmaliges Anmelden funktioniert, muss Azure AD wissen, wer der entsprechende Gegenbenutzer in Workrite zu einem Benutzer in Azure AD ist. Anders ausgedrückt: Zwischen einem Azure AD-Benutzer und dem entsprechenden Benutzer in Workrite muss eine Linkbeziehung eingerichtet werden.<br> Diese Linkbeziehung wird hergestellt, indem Sie den **Benutzernamen** in Azure AD als Wert dem **Benutzernamen** in Workrite zuweisen.
  
-Zum Konfigurieren und Testen des einmaligen Anmeldens in Azure AD bei Workrite müssen Sie die folgenden Bausteine ausführen:
+Zum Konfigurieren und Testen des einmaligen Anmeldens in Azure AD bei Workrite müssen Sie die folgenden Bausteine ausführen:
 
 1. **[Konfigurieren von Azure AD – einmaliges Anmelden](#configuring-azure-ad-single-single-sign-on)**, um Ihren Benutzern das Verwenden dieser Funktion zu ermöglichen.
 2. **[Erstellen eines Azure AD-Testbenutzers](#creating-an-azure-ad-test-user)**, um das einmalige Anmelden mit Azure AD mit dem Testbenutzer Britta Simon zu testen.
-4. **[Erstellen eines Workrite-Testbenutzers](#creating-a-halogen-software-test-user)**, um eine Entsprechung von Britta Simon in Workrite zu erhalten, die mit ihrer Darstellung in Azure AD verknüpft ist.
+4. **[Erstellen eines Workrite-Testbenutzers](#creating-a-halogen-software-test-user)**, um eine Entsprechung von Britta Simon in Workrite zu erhalten, die mit ihrer Darstellung in Azure AD verknüpft ist.
 5. **[Zuweisen des Azure AD-Testbenutzers](#assigning-the-azure-ad-test-user)**, um Britta Simon für das einmalige Anmelden von Azure AD zu aktivieren.
 5. **[Testen der einmaligen Anmeldung](#testing-single-sign-on)**, um zu überprüfen, ob die Konfiguration funktioniert.
 
-### Konfigurieren der einmaligen Anmeldung in Azure AD
+### Konfigurieren des einmaligen Anmeldens von Azure AD
 
-Das Ziel dieses Abschnitts ist, das einmalige Anmelden von Azure AD im Azure AD-Portal zu aktivieren und das einmalige Anmelden in der Workrite-Anwendung zu konfigurieren.<br>
+Das Ziel dieses Abschnitts besteht darin, das einmalige Anmelden von Azure AD im klassischen Azure-Portal zu aktivieren und das einmalige Anmelden in der Workrite-Anwendung zu konfigurieren.<br>
 
-**Führen Sie zum Konfigurieren des einmaligen Anmeldens von Azure AD in Workrite die folgenden Schritte aus:**
+**Führen Sie zum Konfigurieren des einmaligen Anmeldens von Azure AD in Workrite die folgenden Schritte aus:**
 
-1. Klicken Sie im Azure AD-Portal auf der Anwendungsintegrationsseite für **Workrite** auf **Einmaliges Anmelden konfigurieren**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu öffnen. <br><br> ![Einmaliges Anmelden konfigurieren][6] <br>
+1. Klicken Sie im klassischen Azure-Portal auf der Anwendungsintegrationsseite für **Workrite** auf **Einmaliges Anmelden konfigurieren**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu öffnen. <br><br> ![Einmaliges Anmelden konfigurieren][6] <br>
 
-2. Wählen Sie auf der Seite **Wie sollen sich Benutzer bei Workrite anmelden?** die Option **Azure AD – einmaliges Anmelden** aus, und klicken Sie dann auf **Weiter**. <br><br> ![Azure AD – einmaliges Anmelden][7] <br>
+2. Wählen Sie auf der Seite **Wie sollen sich Benutzer bei Workrite anmelden?** die Option **Azure AD – einmaliges Anmelden** aus, und klicken Sie dann auf **Weiter**. <br><br> ![Azure AD – einmaliges Anmelden][7] <br>
 
 3. Führen Sie auf der Dialogseite **App-Einstellungen konfigurieren** die folgenden Schritte aus: <br><br>![Azure AD – einmaliges Anmelden][8] <br>
  
-     a. Geben Sie im Textfeld **Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei der Workrite-Website verwenden (z. B. **https://app.workrite.co.uk/securelogin/samlgateway.aspx?id=1a82b5aa-4dd6-4472-9721-7d0193f59e22*).
+     a. Geben Sie im Textfeld **Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei der Workrite-Website verwenden (z. B. **https://app.workrite.co.uk/securelogin/samlgateway.aspx?id=1a82b5aa-4dd6-4472-9721-7d0193f59e22*).
 
-     >[AZURE.NOTE]Wenden Sie sich an das Workrite-Supportteam [support@workrite.co.uk](mailto:support@workrite.co.uk), wenn Sie die Anmelde-URL nicht kennen.
+     > [AZURE.NOTE] Wenden Sie sich an das Workrite-Supportteam [support@workrite.co.uk](mailto:support@workrite.co.uk), wenn Sie die Anmelde-URL nicht kennen.
 
      b. Klicken Sie auf **Weiter**.
  
@@ -107,19 +107,19 @@ Das Ziel dieses Abschnitts ist, das einmalige Anmelden von Azure AD im Azure A
     c. Klicken Sie auf **Weiter**.
 
 
-6. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration der einmaligen Anmeldung aus, und klicken Sie dann auf **Weiter**. <br><br>![Azure AD – einmaliges Anmelden][10]<br>
+6. Wählen Sie im klassischen Azure-Portal die Bestätigung zur Konfiguration der einmaligen Anmeldung aus, und klicken Sie dann auf **Weiter**. <br><br>![Azure AD – einmaliges Anmelden][10]<br>
 
 7. Klicken Sie auf der Seite **Bestätigung zur einmaligen Anmeldung** auf **Fertig stellen**. <br><br>![Azure AD – einmaliges Anmelden][11]
 
 
 
 
-### Erstellen einen Azure AD-Testbenutzers
-Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta Simon im Azure-Portal.<br> Wählen Sie in der Benutzerliste **Britta Simon** aus.<br><br>![Azure AD-Benutzer erstellen][20]<br>
+### Erstellen eines Azure AD-Testbenutzers
+Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta Simon im klassischen Azure-Portal.<br> Wählen Sie in der Benutzerliste **Britta Simon** aus.<br><br>![Azure AD-Benutzer erstellen][20]<br>
 
 **Um einen Testbenutzer in Azure AD zu erstellen, führen Sie die folgenden Schritte aus:**
 
-1. Klicken Sie im linken Navigationsbereich des **Azure-Verwaltungsportals** auf **Active Directory**. <br><br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-workrite-tutorial/create_aaduser_09.png) <br> 
+1. Klicken Sie im **klassischen Azure-Portal** im linken Navigationsbereich auf **Active Directory**. <br><br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-workrite-tutorial/create_aaduser_09.png)<br> 
 
 2. Wählen Sie in der Liste **Verzeichnis** das Verzeichnis aus, für das Sie die Verzeichnisintegration aktivieren möchten.
 
@@ -169,7 +169,7 @@ Das Ziel dieses Abschnitts ist das Erstellen eines Benutzers namens Britta Simon
 
 4. Führen Sie im Dialogfeld **Benutzer erstellen** die folgenden Schritte aus: <br><br>![Benutzer zuweisen][402]<br>
 
-    a. Geben Sie die **E-Mail Adresse**, den **Vornamen** und den **Nachnamen** eines gültigen Azure AD-Kontos ein, das Sie bereitstellen möchten.
+    a. Geben Sie die **E-Mail Adresse**, den **Vornamen** und den **Nachnamen** eines gültigen Azure AD-Kontos ein, das Sie bereitstellen möchten.
 
     b. Wählen Sie unter **Rolle auswählen** die Option **Clientadministrator** aus.
 
@@ -182,7 +182,7 @@ Das Ziel dieses Abschnitts ist, für Britta Simon das einmalige Anmelden bei Azu
 
 **Um Britta Simon Workrite zuzuweisen, führen Sie die folgenden Schritte aus:**
 
-1. Klicken Sie zum Öffnen der Anwendungsansicht im Azure-Portal in der oberen Menüleiste der Verzeichnisansicht auf **Anwendungen**. <br><br>![Benutzer zuweisen][201] <br>
+1. Klicken Sie zum Öffnen der Anwendungsansicht im klassischen Azure-Portal in der oberen Menüleiste der Verzeichnisansicht auf **Anwendungen**. <br><br>![Benutzer zuweisen][201] <br>
 2. Wählen Sie in der Anwendungsliste **Workrite** aus. <br><br>![Benutzer zuweisen][202] <br>
 1. Klicken Sie im oberen Menü auf **Benutzer**. <br><br>![Benutzer zuweisen][203] <br>
 1. Wählen Sie in der Benutzerliste **Britta Simon** aus.
@@ -193,7 +193,7 @@ Das Ziel dieses Abschnitts ist, für Britta Simon das einmalige Anmelden bei Azu
 
 ### Testen der einmaligen Anmeldung
 
-Das Ziel dieses Abschnitts ist das Testen Ihrer Azure AD-Konfiguration für einmaliges Anmelden mithilfe des Zugriffsbereichs.<br> Wenn Sie im Zugriffsbereich auf die Kachel "Workrite" klicken, sollten Sie automatisch in Ihrer Workrite-Anwendung angemeldet werden.
+Das Ziel dieses Abschnitts ist das Testen Ihrer Azure AD-Konfiguration für einmaliges Anmelden mithilfe des Zugriffsbereichs.<br> Wenn Sie im Zugriffsbereich auf die Kachel "Workrite" klicken, sollten Sie automatisch in Ihrer Workrite-Anwendung angemeldet werden.
 
 
 ## Zusätzliche Ressourcen
@@ -231,4 +231,4 @@ Das Ziel dieses Abschnitts ist das Testen Ihrer Azure AD-Konfiguration für ein
 [401]: ./media/active-directory-saas-workrite-tutorial/tutorial_workrite_401.png
 [402]: ./media/active-directory-saas-workrite-tutorial/tutorial_workrite_402.png
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0224_2016-->

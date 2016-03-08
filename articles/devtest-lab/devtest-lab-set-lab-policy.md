@@ -13,10 +13,12 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/03/2016"
+	ms.date="02/18/2016"
 	ms.author="tarcher"/>
 
 # Definieren von Labrichtlinien.
+
+> [AZURE.NOTE] Klicken Sie auf den folgenden Link, um das Video zu diesem Artikel anzuzeigen: [Gewusst wie: Erstellen benutzerdefinierter Artefakte](/documentation/videos/how-to-set-vm-policies-in-a-devtest-lab)
 
 ## Übersicht
 
@@ -100,4 +102,4 @@ Die Auto-Shutdown-Richtlinie hilft dabei, unnötigen Aufwand im Lab zu minimiere
 
 1. Tippen Sie auf **Speichern**.
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0224_2016-->

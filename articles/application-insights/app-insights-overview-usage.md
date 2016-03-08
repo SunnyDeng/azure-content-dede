@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza"
 	ms.devlang="multiple"
 	ms.topic="article" 
-	ms.date="11/24/2015"
+	ms.date="02/19/2016"
 	ms.author="awills"/>
 
 # Verwendungsanalyse mit Application Insights
@@ -25,7 +25,7 @@ Application Insights funktioniert sowohl für eigenständige Apps (unter iOS, An
 
 ## Hinzufügen von Application Insights zu Ihrem Projekt
 
-Zum Einstieg benötigen Sie ein [Microsoft Azure-Abonnement](https://azure.com). (Es gibt eine kostenlose Testversion. Nach Ablauf des Testzeitraums können Sie den Tarif "Free" des Diensts weiter nutzen.)
+Melden Sie sich zunächst für ein kostenloses Konto bei [Microsoft Azure](https://azure.com) an. (Nach Ablauf des Testzeitraums können Sie den Tarif „Free“ des Diensts weiter nutzen.)
 
 Erstellen Sie im [Azure-Portal](https://portal.azure.com) eine Application Insights-Ressource. Dort werden Leistungs- und Nutzungsdaten zu Ihrer App angezeigt.
 
@@ -55,11 +55,11 @@ Klicken Sie auf die Kachel "Seitenaufrufe", um Verwendungsdetails einzublenden.
 
 ![Rufen Sie in Azure "Durchsuchen" > Application Insights > Ihr Projekt" auf, und führen Sie einen Bildlauf nach unten zur Kachel "Seitenaufrufe" durch.](./media/app-insights-overview-usage/01-overview.png)
 
-Bewegen Sie den Mauszeiger im dem leeren Bereich über einem Diagramm, um die Anzahlen an einem bestimmten Punkt anzuzeigen. Andernfalls weisen die Zahlen den Wert aus, der über den Zeitraum aggregiert wurde, z. B. einen Mittelwert, eine Summe oder Anzahl eindeutiger Benutzer im jeweiligen Zeitraum.
+Bewegen Sie den Mauszeiger im dem leeren Bereich über einem Diagramm, um die Anzahlen an einem bestimmten Punkt anzuzeigen. Andernfalls weisen die Zahlen den Wert aus, der über den Zeitraum aggregiert wurde, z. B. einen Mittelwert, eine Summe oder Anzahl eindeutiger Benutzer im jeweiligen Zeitraum.
 
 In Webanwendungen werden Benutzer mithilfe von Cookies gezählt. Eine Person, die mehrere Browser nutzt, Cookies löscht oder die Datenschutzfunktion nutzt, wird mehrere Male gezählt.
 
-Eine Web-Sitzung wird nach 30 Minuten Inaktivität gezählt. Eine Sitzung auf einem Telefon oder anderem Gerät wird gezählt, wenn die App mehr als ein paar Sekunden lang angehalten wird.
+Eine Web-Sitzung wird nach 30 Minuten Inaktivität gezählt. Eine Sitzung auf einem Telefon oder anderem Gerät wird gezählt, wenn die App mehr als ein paar Sekunden lang angehalten wird.
 
 Klicken Sie sich durch ein beliebiges Diagramm, um weitere Details anzuzeigen. Zum Beispiel:
 
@@ -256,7 +256,7 @@ Sie können einen universellen Initialisierer einrichten, damit alle neuen "Tele
         }
     }
 
-Gehen Sie im App-Initialisierer wie z. B. "Global.asax.cs" so vor:
+Gehen Sie im App-Initialisierer wie z. B. "Global.asax.cs" so vor:
 
     protected void Application_Start()
     {
@@ -288,4 +288,4 @@ Wenn Sie mit Analysen arbeiten, werden diese zu einem integrierten Bestandteil I
 
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0224_2016-->

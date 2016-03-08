@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="01/22/2016"
+   ms.date="02/22/2016"
    ms.author="larryfr"/>
 
 #Bereitstellen und Verwalten von Apache Storm-Topologien in HDInsight unter Windows
@@ -35,13 +35,13 @@ Sowohl das Storm-Dashboard als auch die Storm-Features der HDInsight-Tools sind 
 
 	Eine der folgenden Versionen von Visual Studio:
 
-	* Visual Studio 2012 mit <a href="http://www.microsoft.com/download/details.aspx?id=39305" target="_blank">Update 4</a>
+	* Visual Studio 2012 mit <a href="http://www.microsoft.com/download/details.aspx?id=39305" target="_blank">Update 4</a>
 
-	* Visual Studio 2013 mit <a href="http://www.microsoft.com/download/details.aspx?id=44921" target="_blank">Update 4</a> oder <a href="http://go.microsoft.com/fwlink/?LinkId=517284" target="_blank">Visual Studio 2013 Community</a>
+	* Visual Studio 2013 mit <a href="http://www.microsoft.com/download/details.aspx?id=44921" target="_blank">Update 4</a> oder <a href="http://go.microsoft.com/fwlink/?LinkId=517284" target="_blank">Visual Studio 2013 Community</a>
 
-	* <a href="http://visualstudio.com/downloads/visual-studio-2015-ctp-vs" target="_blank">Visual Studio 2015 CTP6</a>
+	* <a href="http://visualstudio.com/downloads/visual-studio-2015-ctp-vs" target="_blank">Visual Studio 2015 CTP6</a>
 
-	> [AZURE.NOTE] Die HDInsight-Tools für Visual Studio unterstützen derzeit nur Storm auf der HDInsight-Clusterversion 3.2.
+	> [AZURE.NOTE] Die HDInsight-Tools für Visual Studio unterstützen derzeit nur Storm auf der HDInsight-Clusterversion 3.2.
 
 ##Storm-Dashboard
 
@@ -151,7 +151,7 @@ Gehen Sie wie folgt vor, um ein Beispiel für den Storm-Cluster in HDInsight ber
 
 Die Storm-Benutzeroberfläche baut auf der REST-API auf, sodass Sie mithilfe der REST-API ähnliche Verwaltungs- und Überwachungsfunktionen ausführen können. Mithilfe der REST-API können Sie benutzerdefinierte Tools zum Verwalten und Überwachen von Storm-Topologien erstellen.
 
-Weitere Informationen finden Sie unter [Storm UI REST API](https://github.com/apache/storm/blob/master/docs/documentation/ui-rest-api.md) (in englischer Sprache). Die folgenden Informationen gelten für die Verwendung der REST-API mit Apache Storm in HDInsight.
+Weitere Informationen finden Sie unter [Storm UI REST API](https://github.com/apache/storm/blob/0.9.3-branch/STORM-UI-REST-API.md) (in englischer Sprache). Die folgenden Informationen gelten für die Verwendung der REST-API mit Apache Storm in HDInsight.
 
 ###Basis-URI
 
@@ -165,7 +165,7 @@ Anforderungen an die REST-API müssen die **Standardauthentifizierung** und somi
 
 ###Rückgabewerte
 
-Von der REST-API zurückgegebene Informationen sind möglicherweise nur innerhalb des Clusters oder auf den virtuellen Computern in demselben Azure Virtual Network wie der Cluster verwendbar. Auf den für Zookeeper-Server zurückgegebenen vollqualifizierten Domänennamen (FQDN) kann z. B. nicht über das Internet zugegriffen werden.
+Von der REST-API zurückgegebene Informationen sind möglicherweise nur innerhalb des Clusters oder auf den virtuellen Computern in demselben Azure Virtual Network wie der Cluster verwendbar. Auf den für Zookeeper-Server zurückgegebenen vollqualifizierten Domänennamen (FQDN) kann z. B. nicht über das Internet zugegriffen werden.
 
 ##Nächste Schritte
 
@@ -181,4 +181,4 @@ Eine Liste weiterer Beispieltopologien finden Sie unter [Beispieltopologien für
 [storm-dashboard-submit]: ./media/hdinsight-storm-deploy-monitor-topology/submit.png
 [storm-dashboard-ui]: ./media/hdinsight-storm-deploy-monitor-topology/storm-ui-summary.png
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0224_2016-->

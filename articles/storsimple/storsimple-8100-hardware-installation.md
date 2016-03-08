@@ -4,7 +4,7 @@
    services="storsimple"
    documentationCenter="NA"
    authors="alkohli"
-   manager="carolz"
+   manager="carmonm"
    editor="" />
 <tags 
    ms.service="storsimple"
@@ -15,15 +15,15 @@
    ms.date="01/15/2016"
    ms.author="alkohli" />
 
-# Auspacken, Einbauen und Verkabeln des StorSimple 8100-Geräts
+# Auspacken, Einbauen und Verkabeln des StorSimple 8100-Geräts
 
 ## Übersicht
 
-Microsoft Azure StorSimple 8100 ist ein Gerät mit einem Gehäuse, das in ein Rack eingebaut wird. In diesem Tutorial wird erläutert, wie die StorSimple 8100-Gerätehardware vor dem Konfigurieren und Bereitstellen des StorSimple-Geräts ausgepackt, in ein Rack eingebaut und verkabelt wird.
+Microsoft Azure StorSimple 8100 ist ein Gerät mit einem Gehäuse, das in ein Rack eingebaut wird. In diesem Tutorial wird erläutert, wie die StorSimple 8100-Gerätehardware vor dem Konfigurieren und Bereitstellen des StorSimple-Geräts ausgepackt, in ein Rack eingebaut und verkabelt wird.
 
-## Auspacken des StorSimple 8100-Geräts
+## Auspacken des StorSimple 8100-Geräts
 
-Die folgenden Schritte bieten klare und ausführliche Anweisungen zum Auspacken des StorSimple 8100-Speichergeräts. Dieses Gerät wird in einem einzelnen Karton ausgeliefert.
+Die folgenden Schritte bieten klare und ausführliche Anweisungen zum Auspacken des StorSimple 8100-Speichergeräts. Dieses Gerät wird in einem einzelnen Karton ausgeliefert.
 
 ### Vorbereitungen zum Auspacken des Geräts
 
@@ -31,7 +31,7 @@ Lesen Sie die folgenden Informationen, bevor Sie das Gerät auspacken.
 
 ![Symbol "Warnung"](./media/storsimple-safety/IC740879.png)![Symbol für hohes Gewicht](./media/storsimple-8100-hardware-installation/HCS_HeavyWeight_Icon.png) **WARNUNG!**
 
-1. Stellen Sie aufgrund des Gewichts des Gehäuses sicher, dass zwei Personen verfügbar sind, wenn Sie den Vorgang manuell durchführen. Ein vollständig konfiguriertes Gehäuse kann bis zu 32 kg wiegen.
+1. Stellen Sie aufgrund des Gewichts des Gehäuses sicher, dass zwei Personen verfügbar sind, wenn Sie den Vorgang manuell durchführen. Ein vollständig konfiguriertes Gehäuse kann bis zu 32 kg wiegen.
 1. Legen Sie den Karton auf einen flachen, ebenen Untergrund.
  
 Führen Sie dann die folgenden Schritte aus, um das Gerät auszupacken.
@@ -71,9 +71,9 @@ Führen Sie dann die folgenden Schritte aus, um das Gerät auszupacken.
 
 Im nächsten Schritt bauen Sie das Gerät in ein Rack ein.
 
-## Einbauen des StorSimple 8100-Geräts in ein Rack
+## Einbauen des StorSimple 8100-Geräts in ein Rack
 
-Führen Sie die folgenden Schritte aus, um das StorSimple 8100-Speichergerät in ein 19-Zoll-Standardrack mit Pfosten auf Vorder- und Rückseite einzubauen. Das StorSimple 8100-Gerät verfügt über ein einziges, primäres Gehäuse.
+Führen Sie die folgenden Schritte aus, um das StorSimple 8100-Speichergerät in ein 19-Zoll-Standardrack mit Pfosten auf Vorder- und Rückseite einzubauen. Das StorSimple 8100-Gerät verfügt über ein einziges, primäres Gehäuse.
 
 Die Installation umfasst mehrere Schritte, die im Folgenden detailliert erläutert werden.
 
@@ -87,19 +87,19 @@ Das Gerät wird in ein 19-Zoll-Standardrack mit Pfosten an Vorder- und Rückseit
 
 2. Stellen Sie sicher, dass am vorgesehenen Standort eine Standardstromversorgung von einer unabhängigen Quelle oder eine Rack-PDU (Power Distribution Unit) mit unterbrechungsfreier Stromversorgung (USV) vorhanden ist.
 
-3. Vergewissern Sie sich, dass das Rack, in das Sie das Gerät einbauen möchten, Platz für einen Einschub mit 2 HE bietet.
+3. Vergewissern Sie sich, dass das Rack, in das Sie das Gerät einbauen möchten, Platz für einen Einschub mit 2 HE bietet.
 
 ![Symbol "Warnung"](./media/storsimple-safety/IC740879.png)![Symbol für hohes Gewicht](./media/storsimple-8100-hardware-installation/HCS_HeavyWeight_Icon.png) **WARNUNG!**
  
-Stellen Sie aufgrund des Gewichts des Geräts sicher, dass zwei Personen verfügbar sind, wenn Sie die Einrichtung des Geräts manuell durchführen. Ein vollständig konfiguriertes Gehäuse kann bis zu 32 kg wiegen.
+Stellen Sie aufgrund des Gewichts des Geräts sicher, dass zwei Personen verfügbar sind, wenn Sie die Einrichtung des Geräts manuell durchführen. Ein vollständig konfiguriertes Gehäuse kann bis zu 32 kg wiegen.
 
 ### Voraussetzungen
 
 Das Gehäuse des 8100-Geräts ist für den Einbau in einen 19-Zoll-Standardrackschrank vorgesehen, wobei Folgendes gilt:
 
-- Mindesttiefe des Racks von 707,14 mm (27,84 Zoll) von Pfosten zu Pfosten
-- Maximales Gewicht des Geräts von 32 kg
-- Maximaler Gegendruck von 5 Pascal (0,5 mm Wassersäule)
+- Mindesttiefe des Racks von 707,14 mm (27,84 Zoll) von Pfosten zu Pfosten
+- Maximales Gewicht des Geräts von 32 kg
+- Maximaler Gegendruck von 5 Pascal (0,5 mm Wassersäule)
 
 ### Schienenkit für die Rackmontage
 
@@ -172,9 +172,9 @@ Führen Sie die folgenden Schritte aus, um das Gerät unter Verwendung der soebe
 
 Im nächsten Schritt verkabeln Sie das Gerät für die Stromversorgung, die Netzwerkverbindung und den seriellen Zugriff.
 
-## Verkabeln des StorSimple 8100-Geräts
+## Verkabeln des StorSimple 8100-Geräts
 
-Im Folgenden wird erläutert, wie Sie das StorSimple 8100-Gerät für die Stromversorgung, die Netzwerkverbindung und serielle Verbindungen verkabeln.
+Im Folgenden wird erläutert, wie Sie das StorSimple 8100-Gerät für die Stromversorgung, die Netzwerkverbindung und serielle Verbindungen verkabeln.
 
 ### Voraussetzungen
 
@@ -213,7 +213,7 @@ Verkabeln Sie Ihr Gerätenetzwerk wie in den folgenden Schritten beschrieben, um
 
 #### So verkabeln Sie das Gerät für die Netzwerkverbindung
 
-1. Das Gerät verfügt über sechs Netzwerkschnittstellen an jedem Controller: vier Ethernet-Anschlüsse mit 1 GBit/s und zwei Ethernet-Anschlüsse mit 10 GBit/s. Identifizieren Sie die verschiedenen Datenanschlüsse an der Rückwand des Geräts.
+1. Das Gerät verfügt über sechs Netzwerkschnittstellen an jedem Controller: vier Ethernet-Anschlüsse mit 1 GBit/s und zwei Ethernet-Anschlüsse mit 10 GBit/s. Identifizieren Sie die verschiedenen Datenanschlüsse an der Rückwand des Geräts.
 
     ![Rückwand des 8100-Geräts](./media/storsimple-8100-hardware-installation/HCSBackplaneof2UDevicewithPortsLabeled.jpg)
 
@@ -228,7 +228,7 @@ Verkabeln Sie Ihr Gerätenetzwerk wie in den folgenden Schritten beschrieben, um
 2. Die Netzwerkverkabelung ist im folgenden Diagramm dargestellt. (Die Mindestkonfiguration des Netzwerks ist durch durchgängige blaue Linien gekennzeichnet. Die für hohe Verfügbarkeit und Leistung zusätzlich erforderliche Konfiguration wird durch die gepunkteten Linien dargestellt.)
 
 		
-    ![Netzwerkverkabelung des 2 HE-Geräts](./media/storsimple-8100-hardware-installation/HCSCableYour2UDeviceforNetwork.png)
+    ![Netzwerkverkabelung des 2 HE-Geräts](./media/storsimple-8100-hardware-installation/HCSCableYour2UDeviceforNetwork.png)
 
     **Netzwerkverkabelung des Geräts**
 
@@ -236,10 +236,10 @@ Verkabeln Sie Ihr Gerätenetzwerk wie in den folgenden Schritten beschrieben, um
 	|Bezeichnung | Beschreibung |
     |----- | ----------- |
     | Eine Datei | LAN mit Internetzugriff |
-    | B | Controller 0 |
-    | C | PCM 0 |
-    | D | Controller 1 |
-    | E | PCM 1 |
+    | B | Controller 0 |
+    | C | PCM 0 |
+    | D | Controller 1 |
+    | E | PCM 1 |
     | F, G | Host |
     | 0-5 | Netzwerkschnittstellen |
 
@@ -248,20 +248,20 @@ Verkabeln Sie Ihr Gerätenetzwerk wie in den folgenden Schritten beschrieben, um
 Beim Verkabeln des Geräts ist die folgende Mindestkonfiguration erforderlich:
 
 
-- Mindestens zwei Netzwerkschnittstellen pro Controller – eine für den Cloudzugriff und eine für iSCSI. Der DATA 0-Anschluss wird automatisch über die serielle Konsole des Geräts aktiviert und konfiguriert. Zusätzlich zu DATA 0 muss ein weiterer Datenanschluss über das klassische Azure-Portal konfiguriert werden. Verbinden Sie den DATA 0-Anschluss in diesem Fall mit dem primären LAN (Netzwerk mit Internetzugriff). Die anderen Datenanschlüsse können in Abhängigkeit von der vorgesehenen Rolle mit dem SAN/iSCSI-LAN (VLAN)-Segment des Netzwerks verbunden werden.
+- Mindestens zwei Netzwerkschnittstellen pro Controller – eine für den Cloudzugriff und eine für iSCSI. Der DATA 0-Anschluss wird automatisch über die serielle Konsole des Geräts aktiviert und konfiguriert. Zusätzlich zu DATA 0 muss ein weiterer Datenanschluss über das klassische Azure-Portal konfiguriert werden. Verbinden Sie den DATA 0-Anschluss in diesem Fall mit dem primären LAN (Netzwerk mit Internetzugriff). Die anderen Datenanschlüsse können in Abhängigkeit von der vorgesehenen Rolle mit dem SAN/iSCSI-LAN (VLAN)-Segment des Netzwerks verbunden werden.
 
-- Verbinden Sie identische Schnittstellen an jedem Controller mit demselben Netzwerk, um die Verfügbarkeit bei einem Controllerfailover sicherzustellen. Wenn Sie z. B. DATA 0 und DATA 3 bei einem der Controller verbinden, müssen Sie DATA 0 und DATA 3 auch am anderen Controller verbinden.
+- Verbinden Sie identische Schnittstellen an jedem Controller mit demselben Netzwerk, um die Verfügbarkeit bei einem Controllerfailover sicherzustellen. Wenn Sie z. B. DATA 0 und DATA 3 bei einem der Controller verbinden, müssen Sie DATA 0 und DATA 3 auch am anderen Controller verbinden.
 	
 Beachten Sie zur Sicherstellung der hohen Verfügbarkeit und Leistung Folgendes:
 
 
-- Konfigurieren Sie auf jedem Controller nach Möglichkeit ein Netzwerkschnittstellenpaar für den Cloudzugriff (1 GbE) und ein weiteres Paar für iSCSI (10 GbE empfohlen). 
+- Konfigurieren Sie auf jedem Controller nach Möglichkeit ein Netzwerkschnittstellenpaar für den Cloudzugriff (1 GbE) und ein weiteres Paar für iSCSI (10 GbE empfohlen). 
 
-- Verbinden Sie die Netzwerkschnittstellen jedes Controllers nach Möglichkeit mit zwei unterschiedlichen Switches, um sicherzustellen, dass die Verfügbarkeit auch bei einem Switchausfall gewährleistet ist. Die Abbildung zeigt die beiden 10 GbE-Netzwerkschnittstellen, DATA 2 und DATA 3, jedes Controllers, die mit zwei unterschiedlichen Switches verbunden sind.
+- Verbinden Sie die Netzwerkschnittstellen jedes Controllers nach Möglichkeit mit zwei unterschiedlichen Switches, um sicherzustellen, dass die Verfügbarkeit auch bei einem Switchausfall gewährleistet ist. Die Abbildung zeigt die beiden 10 GbE-Netzwerkschnittstellen, DATA 2 und DATA 3, jedes Controllers, die mit zwei unterschiedlichen Switches verbunden sind.
 
 Weitere Informationen finden Sie im Abschnitt **Netzwerkschnittstellen** unter [Anforderungen an die hohe Verfügbarkeit für Ihr StorSimple-Gerät](storsimple-system-requirements.md#high-availability-requirements-for-storsimple).
 
->[AZURE.NOTE]Verwenden Sie die beigefügten QSFP-SFP+-Adapter, wenn Sie SFP+-Transceiver mit Ihren 10-GbE-Netzwerkschnittstellen nutzen. Weitere Informationen finden Sie unter [Unterstützte Hardware für 10-GbE-Netzwerkschnittstellen auf Ihrem StorSimple-Gerät](storsimple-supported-hardware-for-10-gbe-network-interfaces.md).
+>[AZURE.NOTE] Verwenden Sie die beigefügten QSFP-SFP+-Adapter, wenn Sie SFP+-Transceiver mit Ihren 10-GbE-Netzwerkschnittstellen nutzen. Weitere Informationen finden Sie unter [Unterstützte Hardware für 10-GbE-Netzwerkschnittstellen auf Ihrem StorSimple-Gerät](storsimple-supported-hardware-for-10-gbe-network-interfaces.md).
     
 
    
@@ -279,11 +279,11 @@ Führen Sie die folgenden Schritte aus, um den seriellen Anschluss zu verkabeln.
 
 4. Installieren Sie die Seriell-USB-Treiber (im Lieferumfang des Geräts enthalten) auf Ihrem Computer.
 
-5. Richten Sie die serielle Verbindung wie folgt ein: 115.200 Baud, 8 Datenbits, 1 Stoppbit, keine Parität und keine Flusssteuerung.
+5. Richten Sie die serielle Verbindung wie folgt ein: 115.200 Baud, 8 Datenbits, 1 Stoppbit, keine Parität und keine Flusssteuerung.
 
 6. Stellen Sie sicher, dass die Verbindung funktioniert, indem Sie auf der Konsole die EINGABETASTE drücken. Ein Menü der seriellen Konsole sollte angezeigt werden.
 
->[AZURE.NOTE]**Lights-Out-Management:** Wenn das Gerät in einem Remoterechenzentrum oder in einem Computerraum mit beschränktem Zugriff installiert ist, stellen Sie sicher, dass die seriellen Verbindungen zu beiden Controllern immer mit einem Switch einer seriellen Konsole oder einem ähnlichen Gerät verbunden sind. Dies ermöglicht bei Netzwerkunterbrechungen oder unerwarteten Fehlern Out-of-Band-Remotesteuerungs- und -Supportvorgänge.
+>[AZURE.NOTE] **Lights-Out-Management:** Wenn das Gerät in einem Remoterechenzentrum oder in einem Computerraum mit beschränktem Zugriff installiert ist, stellen Sie sicher, dass die seriellen Verbindungen zu beiden Controllern immer mit einem Switch einer seriellen Konsole oder einem ähnlichen Gerät verbunden sind. Dies ermöglicht bei Netzwerkunterbrechungen oder unerwarteten Fehlern Out-of-Band-Remotesteuerungs- und -Supportvorgänge.
 
 Das Gerät ist jetzt für Stromversorgung, Netzwerkzugriff und serielle Konnektivität verkabelt. Im nächsten Schritt konfigurieren Sie die Software und stellen das Gerät bereit.
 
@@ -291,4 +291,4 @@ Das Gerät ist jetzt für Stromversorgung, Netzwerkzugriff und serielle Konnekti
 
 Erfahren Sie, wie Sie Ihr [lokales StorSimple-Gerät bereitstellen und konfigurieren](storsimple-deployment-walkthrough.md).
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0224_2016-->

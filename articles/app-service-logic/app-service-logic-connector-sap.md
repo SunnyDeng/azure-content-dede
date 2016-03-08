@@ -4,7 +4,7 @@
    services="app-service\logic"
    documentationCenter=".net,nodejs,java"
    authors="harishkragarwal"
-   manager="dwrede"
+   manager="erikre"
    editor=""/>
 
 <tags
@@ -13,11 +13,13 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="11/30/2015"
+   ms.date="02/18/2016"
    ms.author="sameerch"/>
 
 
 # Erste Schritte mit dem SAP-Connector und das Hinzufügen zur Logik-App
+>[AZURE.NOTE] Diese Version des Artikels gilt für die Logik-Apps-Schemaversion 2014-12-01-preview.
+
 Stellen Sie eine Verbindung mit dem lokalen SAP-System her, um RFC aufzurufen oder Metadaten abzurufen. In verschiedenen Szenarios müssen Sie möglicherweise mit einem SAP-System arbeiten, das lokal und hinter der Firewall installiert ist. Mithilfe des SAP-Connectors im Workflow können Sie eine Vielzahl von Szenarios realisieren. Einige Beispiele:
 
 1.	Machen Sie einen Teil der Daten in Ihrem SAP-System über ein Front-End für Web- oder mobile Benutzer verfügbar.
@@ -60,6 +62,8 @@ Der SAP-Connector erfordert eine Hybridkonnektivität zum Herstellen einer Verbi
 3. Führen Sie den gestarteten Installationsvorgang durch, und geben Sie nach Aufforderung die primäre Verbindungszeichenfolge an.
 4. Sobald der Installationsvorgang abgeschlossen ist, wird ein Dialogfeld wie das Folgende angezeigt: ![][3]
 
+Weitere Informationen zur [Integration in einen lokalen SAP-Server](app-service-logic-integrate-with-an-on-premise-sap-server.md).
+
 Wenn Sie jetzt erneut zur erstellten API-App wechseln, stellen Sie fest, dass der Hybridverbindungsstatus "Verbunden" lautet: ![][4]
 
 Hinweis: Für den Fall, dass Sie zur sekundären Verbindungszeichenfolge wechseln möchten, führen Sie die Hybrideinrichtung einfach erneut durch, und geben Sie anstelle der primären Verbindungszeichenfolge die sekundäre Verbindungszeichenfolge an.
@@ -79,7 +83,7 @@ Vervollständigen Sie die Logik-App, um den Geschäftsprozess zu definieren, und
 ## Mehr mit Ihrem Connector machen
 Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
->[AZURE.NOTE]Wenn Sie Azure Logik-Apps ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [Logik-App testen](https://tryappservice.azure.com/?appservice=logic) sofort kostenlos eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure Logik-Apps ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [Logik-App testen](https://tryappservice.azure.com/?appservice=logic) sofort kostenlos eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
 
@@ -94,4 +98,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [6]: ./media/app-service-logic-connector-sap/LogicApp2.jpg
 [7]: ./media/app-service-logic-connector-sap/LogicApp3.jpg
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0224_2016-->

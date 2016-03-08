@@ -45,7 +45,7 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
 Zum Ausführen von Aufträgen ist ein Data Lake Analytics-Konto erforderlich. Zum Erstellen eines Data Lake Analytics-Kontos müssen Sie Folgendes angeben:
 
-- **Azure-Ressourcengruppe**: Es muss ein Data Lake Analytics-Konto in einer Azure-Ressourcengruppe erstellt werden. Mit dem [Azure-Ressourcen-Manager](resource-group-overview.md) können Sie mit den Ressourcen in Ihrer Anwendung als Gruppe arbeiten. Sie können alle Ressourcen für Ihre Anwendung in einem einzigen, koordinierten Vorgang bereitstellen, aktualisieren oder löschen.  
+- **Azure-Ressourcengruppe**: Es muss ein Data Lake Analytics-Konto in einer Azure-Ressourcengruppe erstellt werden. Mit dem [Azure-Ressourcen-Manager](../resource-group-overview.md) können Sie mit den Ressourcen in Ihrer Anwendung als Gruppe arbeiten. Sie können alle Ressourcen für Ihre Anwendung in einem einzigen, koordinierten Vorgang bereitstellen, aktualisieren oder löschen.  
 
 	So listen Sie die Ressourcengruppen in Ihrem Abonnement auf:
     
@@ -68,7 +68,7 @@ Zum Ausführen von Aufträgen ist ein Data Lake Analytics-Konto erforderlich. Zu
 	        -Name "<Your Data Lake account name>" `
 	        -Location "<Azure Data Center>"  # For example, "East US 2"
 
-	> [AZURE.NOTE]Der Data Lake-Kontoname darf nur Kleinbuchstaben und Zahlen enthalten.
+	> [AZURE.NOTE] Der Data Lake-Kontoname darf nur Kleinbuchstaben und Zahlen enthalten.
 
 
 
@@ -135,9 +135,9 @@ Das folgende PowerShell-Skript veranschaulicht das Abrufen des Data Lake-Standar
 	$dataLakeAnalyticsName = "<DataLakeAnalyticsAccountName>"
 	$dataLakeStoreName = (Get-AzureRmDataLakeAnalyticsAccount -ResourceGroupName $resourceGroupName -Name $dataLakeAnalyticName).Properties.DefaultDataLakeAccount
 
->[AZURE.NOTE]Das Azure-Portal bietet eine Benutzeroberfläche zum Kopieren der Beispieldatendateien in das Data Lake-Standardspeicherkonto. Anweisungen finden Sie unter [Erste Schritte mit Azure Data Lake Analytics mithilfe des Azure-Portals](data-lake-analytics-get-started-portal.md#upload-data-to-the-default-data-lake-store-account).
+>[AZURE.NOTE] Das Azure-Portal bietet eine Benutzeroberfläche zum Kopieren der Beispieldatendateien in das Data Lake-Standardspeicherkonto. Anweisungen finden Sie unter [Erste Schritte mit Azure Data Lake Analytics mithilfe des Azure-Portals](data-lake-analytics-get-started-portal.md#upload-data-to-the-default-data-lake-store-account).
 
-Data Lake Analytics hat auch Zugriff auf den Azure-Blob-Speicher. Informationen zum Hochladen von Daten in den Azure-BLOB-Speicher finden Sie unter [Verwenden von Azure PowerShell mit Azure Storage](storage-powershell-guide-full.md).
+Data Lake Analytics hat auch Zugriff auf den Azure-Blob-Speicher. Informationen zum Hochladen von Daten in den Azure-BLOB-Speicher finden Sie unter [Verwenden von Azure PowerShell mit Azure Storage](../storage/storage-powershell-guide-full.md).
 
 ##Übermitteln von Data Lake Analytics-Aufträgen
 
@@ -174,7 +174,7 @@ Die Data Lake Analytics-Aufträge werden in der Sprache U-SQL geschrieben. Weite
     
         wasb://<BlobContainerName>@<StorageAccountName>.blob.core.windows.net/Samples/Data/SearchLog.tsv
 
-    >[AZURE.NOTE]Azure-BLOB-Container mit öffentlichen Blobs oder Zugriffsberechtigungen für öffentliche Container werden derzeit nicht unterstützt.
+    >[AZURE.NOTE] Azure-BLOB-Container mit öffentlichen Blobs oder Zugriffsberechtigungen für öffentliche Container werden derzeit nicht unterstützt.
     
 	
 **So übermitteln Sie den Auftrag**
@@ -217,4 +217,4 @@ Nachdem der Auftrag abgeschlossen wurde, können Sie die folgenden Cmdlets verwe
 - Informationen zu Verwaltungsaufgaben finden Sie unter [Verwalten von Azure Data Lake Analytics mithilfe des Azure-Portals](data-lake-analytics-manage-use-portal.md).
 - Eine Übersicht über Data Lake Analytics finden Sie unter [Azure Data Lake Analytics – Übersicht](data-lake-analytics-overview.md).
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0302_2016-->

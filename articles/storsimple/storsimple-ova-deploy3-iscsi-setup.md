@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="02/08/2016"
+   ms.date="02/18/2016"
    ms.author="alkohli" />
 
 
@@ -22,9 +22,9 @@
 
 ## Übersicht
 
-Dieses Tutorial zur Bereitstellung bezieht sich nur auf Microsoft Azure StorSimple Virtual Arrays (auch als „lokale virtuelle StorSimple-Geräte“ oder „virtuelle StorSimple-Geräte“ bezeichnet) mit der öffentlichen Vorschauversion 1.1.1.0. In diesem Tutorial wird beschrieben, wie Sie die anfängliche Einrichtung durchführen, den StorSimple-iSCSI-Server registrieren, die Geräteinstallation durchführen und dann Volumes auf dem virtuellen StorSimple-iSCSI-Server erstellen, bereitstellen, initialisieren und formatieren. Die StorSimple-Setupinformationen in diesem Artikel gelten nur für StorSimple Virtual Arrays.
+Dieses Tutorial zur Bereitstellung bezieht sich nur auf Microsoft Azure StorSimple Virtual Arrays (auch als „lokale virtuelle StorSimple-Geräte“ oder „virtuelle StorSimple-Geräte“ bezeichnet) mit der öffentlichen Vorschauversion 1.1.1.0. In diesem Tutorial wird beschrieben, wie Sie die anfängliche Einrichtung durchführen, den StorSimple-iSCSI-Server registrieren, die Geräteinstallation durchführen und dann Volumes auf dem virtuellen StorSimple-iSCSI-Server erstellen, bereitstellen, initialisieren und formatieren. Die StorSimple-Setupinformationen in diesem Artikel gelten nur für StorSimple Virtual Arrays.
 
-Die hier beschriebenen Verfahren dauern zwischen 30 Minuten und einer Stunde. Die in diesem Artikel veröffentlichten Informationen gelten nur für StorSimple Virtual Arrays.
+Die hier beschriebenen Verfahren dauern zwischen 30 Minuten und einer Stunde. Die in diesem Artikel veröffentlichten Informationen gelten nur für StorSimple Virtual Arrays.
 
 >[AZURE.IMPORTANT] 
 >
@@ -37,7 +37,7 @@ Die hier beschriebenen Verfahren dauern zwischen 30 Minuten und einer Stunde. D
 
 - Sie haben ein virtuelles Gerät bereitgestellt und die Verbindung dafür hergestellt, wie unter [Bereitstellen des StorSimple Virtual Array – Bereitstellen eines virtuellen Arrays in Hyper-V](storsimple-ova-deploy2-provision-hyperv.md) oder [Bereitstellen des StorSimple Virtual Array – Bereitstellen eines virtuellen Arrays in VMware](storsimple-ova-deploy2-provision-vmware.md) beschrieben.
 
-- Sie verfügen über den Dienstregistrierungsschlüssel aus dem StorSimple Manager-Dienst, den Sie zum Verwalten von virtuellen StorSimple-Geräten erstellt haben. Weitere Informationen finden Sie unter **Schritt 2: Abrufen des Dienstregistrierungsschlüssels** in [Bereitstellen des StorSimple Virtual Array – Vorbereiten des Portals](storsimple-ova-deploy1-portal-prep.md#step-2-get-the-service-registration-key).
+- Sie verfügen über den Dienstregistrierungsschlüssel aus dem StorSimple Manager-Dienst, den Sie zum Verwalten von virtuellen StorSimple-Geräten erstellt haben. Weitere Informationen finden Sie unter **Schritt 2: Abrufen des Dienstregistrierungsschlüssels** in [Bereitstellen des StorSimple Virtual Array – Vorbereiten des Portals](storsimple-ova-deploy1-portal-prep.md#step-2-get-the-service-registration-key).
 
 - Falls dies das zweite oder ein nachfolgendes virtuelles Gerät ist, das Sie für einen vorhandenen StorSimple Manager-Dienst registrieren, sollten Sie den Dienstdaten-Verschlüsselungsschlüssel bereithalten. Dieser Schlüssel wurde generiert, als das erste Gerät erfolgreich für den Dienst registriert wurde. Wenn Sie diesen Schlüssel verloren haben, helfen Ihnen die Informationen unter **Abrufen des Dienstdaten-Verschlüsselungsschlüssels** in [Verwenden der Webbenutzeroberfläche zum Verwalten des StorSimple Virtual Array](storsimple-ova-web-ui-admin.md#get-the-service-data-encryption-key) weiter.
 
@@ -45,12 +45,12 @@ Die hier beschriebenen Verfahren dauern zwischen 30 Minuten und einer Stunde. D
 
 Verwenden Sie die folgende Schritt-für-Schritt-Anleitung, um Ihr virtuelles StorSimple-Gerät einzurichten und zu konfigurieren:
 
--  [Schritt 1: Durchführen der Einrichtung für die lokale Webbenutzeroberfläche und Registrieren Ihres Geräts](#step-1-complete-the-local-web-ui-setup-and-register-your-device)
--  [Schritt 2: Durchführen der erforderlichen Geräteinstallation](#step-2-complete-the-required-device-setup)
--  [Schritt 3: Hinzufügen eines Volumes](#step-3-add-a-volume)
--  [Schritt 4: Bereitstellen, Initialisieren und Formatieren eines Volumes](#step-4-mount-initialize-and-format-a-volume)  
+-  [Schritt 1: Durchführen der Einrichtung für die lokale Webbenutzeroberfläche und Registrieren Ihres Geräts](#step-1-complete-the-local-web-ui-setup-and-register-your-device)
+-  [Schritt 2: Durchführen der erforderlichen Geräteinstallation](#step-2-complete-the-required-device-setup)
+-  [Schritt 3: Hinzufügen eines Volumes](#step-3-add-a-volume)
+-  [Schritt 4: Bereitstellen, Initialisieren und Formatieren eines Volumes](#step-4-mount-initialize-and-format-a-volume)  
 
-## Schritt 1: Durchführen der Einrichtung für die lokale Webbenutzeroberfläche und Registrieren Ihres Geräts 
+## Schritt 1: Durchführen der Einrichtung für die lokale Webbenutzeroberfläche und Registrieren Ihres Geräts 
 
 #### So führen Sie das Setup durch und registrieren das Gerät
 
@@ -62,7 +62,7 @@ Verwenden Sie die folgende Schritt-für-Schritt-Anleitung, um Ihr virtuelles Sto
 
     ![Sicherheitszertifikatfehler](./media/storsimple-ova-deploy3-iscsi-setup/image3.png)
 
-2. Melden Sie sich an der Webbenutzeroberfläche des virtuellen Geräts als **StorSimpleAdmin** an. Geben Sie das Geräteadministratorkennwort ein, das Sie unter „Schritt 3: Starten des virtuellen Geräts“ im Abschnitt [Bereitstellen des StorSimple Virtual Array – Bereitstellen eines virtuellen Geräts in Hyper-V](storsimple-ova-deploy2-provision-hyperv.md) bzw. [Bereitstellen des StorSimple Virtual Array – Bereitstellen eines virtuellen Geräts in VMware](storsimple-ova-deploy2-provision-vmware.md) geändert haben.
+2. Melden Sie sich an der Webbenutzeroberfläche des virtuellen Geräts als **StorSimpleAdmin** an. Geben Sie das Geräteadministratorkennwort ein, das Sie unter „Schritt 3: Starten des virtuellen Geräts“ im Abschnitt [Bereitstellen des StorSimple Virtual Array – Bereitstellen eines virtuellen Geräts in Hyper-V](storsimple-ova-deploy2-provision-hyperv.md) bzw. [Bereitstellen des StorSimple Virtual Array – Bereitstellen eines virtuellen Geräts in VMware](storsimple-ova-deploy2-provision-vmware.md) geändert haben.
 
     ![Anmeldeseite](./media/storsimple-ova-deploy3-iscsi-setup/image4.png)
 
@@ -70,13 +70,13 @@ Verwenden Sie die folgende Schritt-für-Schritt-Anleitung, um Ihr virtuelles Sto
 
     ![Startseite](./media/storsimple-ova-deploy3-iscsi-setup/image5.png)
 
-4. Auf der Seite **Netzwerkeinstellungen** unter **Netzwerkschnittstellen** wird DATA 0 automatisch für Sie konfiguriert. Jede Netzwerkschnittstelle ist standardmäßig so eingestellt, dass die IP-Adresse automatisch abgerufen wird (DHCP). Daher werden IP-Adresse, Subnetz und Gateway automatisch zugewiesen (sowohl für IPv4 als auch für IPv6).
+4. Auf der Seite **Netzwerkeinstellungen** unter **Netzwerkschnittstellen** wird DATA 0 automatisch für Sie konfiguriert. Jede Netzwerkschnittstelle ist standardmäßig so eingestellt, dass die IP-Adresse automatisch abgerufen wird (DHCP). Daher werden IP-Adresse, Subnetz und Gateway automatisch zugewiesen (sowohl für IPv4 als auch für IPv6).
 
     Da Sie planen, Ihr Gerät als iSCSI-Server bereitzustellen (zur Bereitstellung eines Blockspeichers), empfehlen wir Folgendes: Deaktivieren Sie die Option **IP-Adresse automatisch beziehen**, und konfigurieren Sie statische IP-Adressen.
 
     ![Seite „Netzwerkeinstellungen“](./media/storsimple-ova-deploy3-iscsi-setup/image6.png)
 
-    Wenn Sie während der Bereitstellung des Geräts mehr als eine Netzwerkschnittstelle hinzugefügt haben, können Sie diese hier konfigurieren.
+    Wenn Sie während der Bereitstellung des Geräts mehr als eine Netzwerkschnittstelle hinzugefügt haben, können Sie diese hier konfigurieren. Beachten Sie, dass Sie die Netzwerkschnittstelle als nur IPv4 oder als IPv4 und IPv6 konfigurieren können. Konfigurationen für nur IPv6 werden nicht unterstützt.
 
 5. DNS-Server sind erforderlich, da sie verwendet werden, wenn Ihr Gerät versucht, mit Ihren Cloudspeicher-Dienstanbietern zu kommunizieren. Sie werden auch genutzt, um Ihr Gerät nach dem Namen aufzulösen, wenn es als Dateiserver konfiguriert ist. Auf der Seite **Netzwerkeinstellungen** unter **DNS-Server**:
 
@@ -86,7 +86,7 @@ Verwenden Sie die folgende Schritt-für-Schritt-Anleitung, um Ihr virtuelles Sto
 
 6. Auf der Seite **Geräteeinstellungen**:
 
-    1. Weisen Sie Ihrem Gerät einen eindeutigen **Namen** zu. Dieser Name kann 1 bis 15 Zeichen lang sein und Buchstaben, Zahlen und Bindestriche enthalten.
+    1. Weisen Sie Ihrem Gerät einen eindeutigen **Namen** zu. Dieser Name kann 1 bis 15 Zeichen lang sein und Buchstaben, Zahlen und Bindestriche enthalten.
 
     2. Klicken Sie auf das Symbol **iSCSI-Server** ![Symbol „iSCSI-Server“](./media/storsimple-ova-deploy3-iscsi-setup/image7.png) für den **Typ** von Gerät, den Sie erstellen. Ein iSCSI-Server ermöglicht Ihnen die Bereitstellung von Blockspeicher.
 
@@ -113,7 +113,7 @@ Verwenden Sie die folgende Schritt-für-Schritt-Anleitung, um Ihr virtuelles Sto
 
     Auf der Seite **Webproxy**:
 
-    1. Geben Sie die **Webproxy-URL** in diesem Format an: *http://host-IP-Adresse * oder *FQDN:Portnummer*. Beachten Sie, dass HTTPS-URLs nicht unterstützt werden.
+    1. Geben Sie die **Webproxy-URL** in diesem Format an: *http://host-IP-Adresse* oder *FQDN:Portnummer*. Beachten Sie, dass HTTPS-URLs nicht unterstützt werden.
 
     2. Geben Sie unter **Authentifizierung** die Option **Einfach**, **NTLM**, oder **Keine** an.
 
@@ -121,7 +121,7 @@ Verwenden Sie die folgende Schritt-für-Schritt-Anleitung, um Ihr virtuelles Sto
 
     4. Klicken Sie auf **Übernehmen**. Die konfigurierten Webproxyeinstellungen werden überprüft und angewendet.
  
-8. Optional: Konfigurieren Sie die Zeiteinstellungen für Ihr Gerät, z. B. die Zeitzone und die primären und sekundären NTP-Server. NTP-Server sind für die Zeitsynchronisierung erforderlich, damit Ihr Gerät bei den Clouddienstanbietern authentifiziert werden kann.
+8. Optional: Konfigurieren Sie die Zeiteinstellungen für Ihr Gerät, z. B. die Zeitzone und die primären und sekundären NTP-Server. NTP-Server sind für die Zeitsynchronisierung erforderlich, damit Ihr Gerät bei den Clouddienstanbietern authentifiziert werden kann.
 
     ![Uhrzeiteinstellungen](./media/storsimple-ova-deploy3-iscsi-setup/image10.png)
 
@@ -137,7 +137,7 @@ Verwenden Sie die folgende Schritt-für-Schritt-Anleitung, um Ihr virtuelles Sto
 
 9. Konfigurieren Sie die Cloudeinstellungen für Ihr Gerät. In diesem Schritt führen Sie die lokale Gerätekonfiguration durch und registrieren das Gerät dann beim StorSimple Manager-Dienst.
 
-    1. Geben Sie den **Dienstregistrierungsschlüssel** ein, den Sie in **Schritt 2: Abrufen des Dienstregistrierungsschlüssels** unter [Bereitstellen des StorSimple Virtual Array – Vorbereiten des Portals](storsimple-ova-deploy1-portal-prep.md#step-2-get-the-service-registration-key) beschafft haben.
+    1. Geben Sie den **Dienstregistrierungsschlüssel** ein, den Sie in **Schritt 2: Abrufen des Dienstregistrierungsschlüssels** unter [Bereitstellen des StorSimple Virtual Array – Vorbereiten des Portals](storsimple-ova-deploy1-portal-prep.md#step-2-get-the-service-registration-key) beschafft haben.
 
     2. Falls dies nicht das erste Gerät ist, das Sie bei diesem Dienst registrieren, müssen Sie den **Dienstdaten-Verschlüsselungsschlüssel** angeben. Dieser Schlüssel ist zusammen mit dem Dienstregistrierungsschlüssel zum Registrieren weiterer Geräte beim StorSimple Manager-Dienst erforderlich. Sehen Sie sich die weiteren Informationen zum [Abrufen des Verschlüsselungsschlüssels für Dienstdaten](storsimple-ova-web-ui-admin.md#get-the-service-data-encryption-key) für Ihre lokale Webbenutzeroberfläche an.
 
@@ -149,7 +149,7 @@ Verwenden Sie die folgende Schritt-für-Schritt-Anleitung, um Ihr virtuelles Sto
 
     ![Seite "Geräte"](./media/storsimple-ova-deploy3-iscsi-setup/image12.png)
 
-## Schritt 2: Durchführen der erforderlichen Geräteinstallation
+## Schritt 2: Durchführen der erforderlichen Geräteinstallation
 
 Für die Konfiguration Ihres StorSimple-Geräts benötigen Sie Folgendes:
 
@@ -173,7 +173,7 @@ Führen Sie die folgenden Schritte im klassischen Azure-Portal aus, um die erfor
 
    1. Geben Sie ein Speicherkonto für das Gerät an. In diesem Abonnement können Sie in der Dropdownliste ein vorhandenes Speicherkonto auswählen oder **Weitere hinzufügen** angeben, um ein Konto eines anderen Abonnements auszuwählen.
 
-   2. Definieren Sie die Verschlüsselungseinstellungen für alle ruhenden Daten, die in die Cloud gesendet werden. (Für StorSimple wird die AES-256-Verschlüsselung verwendet.) Aktivieren Sie zum Verschlüsseln der Daten das Kontrollkästchen **Cloudspeicherverschlüsselung aktivieren**. Geben Sie eine Cloudspeicherverschlüsselung ein, die 32 Zeichen lang ist. Geben Sie den Schlüssel erneut ein, um ihn zu bestätigen.
+   2. Definieren Sie die Verschlüsselungseinstellungen für alle ruhenden Daten, die in die Cloud gesendet werden. (Für StorSimple wird die AES-256-Verschlüsselung verwendet.) Aktivieren Sie zum Verschlüsseln der Daten das Kontrollkästchen **Cloudspeicherverschlüsselung aktivieren**. Geben Sie eine Cloudspeicherverschlüsselung ein, die 32 Zeichen lang ist. Geben Sie den Schlüssel erneut ein, um ihn zu bestätigen.
 
    3. Klicken Sie auf das Häkchensymbol ![Häkchensymbol](./media/storsimple-ova-deploy3-iscsi-setup/image15.png).
 
@@ -183,7 +183,7 @@ Führen Sie die folgenden Schritte im klassischen Azure-Portal aus, um die erfor
 
 >[AZURE.NOTE]Alle anderen Geräteeinstellungen können über die Seite **Konfigurieren** geändert werden.
 
-## Schritt 3: Hinzufügen eines Volumes
+## Schritt 3: Hinzufügen eines Volumes
 
 Führen Sie die folgenden Schritte im klassischen Azure-Portal aus, um ein Volume zu erstellen.
 
@@ -193,7 +193,7 @@ Führen Sie die folgenden Schritte im klassischen Azure-Portal aus, um ein Volum
 
 2. Gehen Sie im Assistenten "Volume hinzufügen" unter **Grundlegende Einstellungen** folgendermaßen vor:
 
-    1. Geben Sie einen eindeutigen Namen für Ihr Volume an. Der Name muss eine Zeichenfolge mit einer Länge von 3 bis 127 Zeichen sein.
+    1. Geben Sie einen eindeutigen Namen für Ihr Volume an. Der Name muss eine Zeichenfolge mit einer Länge von 3 bis 127 Zeichen sein.
 
     2. Geben Sie eine Beschreibung für das Volume an. Die Beschreibung ist für die Identifizierung der Volumebesitzer hilfreich.
 
@@ -201,9 +201,9 @@ Führen Sie die folgenden Schritte im klassischen Azure-Portal aus, um ein Volum
 
         Ein lokales Volume wird mit vollständiger Speicherzuweisung (Thick Provisioning) bereitgestellt und stellt sicher, dass die primären Daten auf dem Volume auf dem Gerät verbleiben und nicht in die Cloud übergehen. Wenn Sie ein lokales Volume erstellen, überprüft das Gerät den verfügbaren Speicherplatz auf den lokalen Ebenen, um ein Volume in der angeforderten Größe bereitzustellen. Bei der Erstellung eines lokalen Volumes müssen vorhandene Daten unter Umständen vom Gerät in die Cloud übertragen werden, und das Erstellen des Volumes kann längere Zeit in Anspruch nehmen. Die gesamte Zeit hängt von der Größe des bereitgestellten Volumes, von der verfügbaren Netzwerkbandbreite und von den Daten auf Ihrem Gerät ab.
 
-        Ein mehrstufiges Volume wird mit schlanker Speicherzuweisung bereitgestellt und kann sehr schnell erstellt werden. Wenn Sie ein mehrstufiges Volume erstellen, werden ca. 10 % des Speicherplatzes auf der lokalen Ebene und 90 % des Speicherplatzes in der Cloud bereitgestellt. Wenn Sie beispielsweise ein Volume mit 1 TB bereitstellen, befinden sich 100 GB lokal, und 900 GB werden in der Cloud zum Anordnen der Daten genutzt. Dies bedeutet wiederum Folgendes: Wenn der gesamte lokale Speicherplatz auf dem Gerät aufgebraucht ist, können Sie keine mehrstufige Freigabe bereitstellen (da die 10 % nicht verfügbar sind).
+        Ein mehrstufiges Volume wird mit schlanker Speicherzuweisung bereitgestellt und kann sehr schnell erstellt werden. Wenn Sie ein mehrstufiges Volume erstellen, werden ca. 10 % des Speicherplatzes auf der lokalen Ebene und 90 % des Speicherplatzes in der Cloud bereitgestellt. Wenn Sie beispielsweise ein Volume mit 1 TB bereitstellen, befinden sich 100 GB lokal, und 900 GB werden in der Cloud zum Anordnen der Daten genutzt. Dies bedeutet wiederum Folgendes: Wenn der gesamte lokale Speicherplatz auf dem Gerät aufgebraucht ist, können Sie keine mehrstufige Freigabe bereitstellen (da die 10 % nicht verfügbar sind).
 
-    4. Geben Sie die bereitgestellte Kapazität für das Volume an. Beachten Sie, dass die angegebene Kapazität kleiner als die verfügbare Kapazität sein sollte. Wenn Sie ein mehrstufiges Volume erstellen, sollte diese Größe zwischen 500 GB und 20 TB liegen. Geben Sie für ein lokales Volume eine Volumegröße zwischen 50 GB und 2 TB an. Verwenden Sie die verfügbare Kapazität als Richtschnur für die Bereitstellung eines Volumes. Wenn die verfügbare lokale Kapazität 0 GB beträgt, können Sie keine lokalen oder mehrstufigen Volumes bereitstellen.
+    4. Geben Sie die bereitgestellte Kapazität für das Volume an. Beachten Sie, dass die angegebene Kapazität kleiner als die verfügbare Kapazität sein sollte. Wenn Sie ein mehrstufiges Volume erstellen, sollte diese Größe zwischen 500 GB und 20 TB liegen. Geben Sie für ein lokales Volume eine Volumegröße zwischen 50 GB und 2 TB an. Verwenden Sie die verfügbare Kapazität als Richtschnur für die Bereitstellung eines Volumes. Wenn die verfügbare lokale Kapazität 0 GB beträgt, können Sie keine lokalen oder mehrstufigen Volumes bereitstellen.
 
         ![Grundlegende Einstellungen](./media/storsimple-ova-deploy3-iscsi-setup/image17.png)
 
@@ -213,9 +213,9 @@ Führen Sie die folgenden Schritte im klassischen Azure-Portal aus, um ein Volum
 
     1. Geben Sie einen **Namen** für den ACR ein.
 
-    2. Geben Sie unter **iSCSI-Initiatorname** den qualifizierten iSCSI-Namen (IQN) des Windows-Hosts an. Wenn Sie den IQN nicht kennen, fahren Sie mit [Anhang A: Abrufen des IQNs eines Windows Server-Hosts](#appendix-a-get-the-iqn-of-a-windows-server-host) fort.
+    2. Geben Sie unter **iSCSI-Initiatorname** den qualifizierten iSCSI-Namen (IQN) des Windows-Hosts an. Wenn Sie den IQN nicht kennen, fahren Sie mit [Anhang A: Abrufen des IQNs eines Windows Server-Hosts](#appendix-a-get-the-iqn-of-a-windows-server-host) fort.
 
-    3. Es wird empfohlen, eine Standardsicherung zu aktivieren, indem Sie das Kontrollkästchen **Standardsicherung für dieses Volume aktivieren** aktivieren. Die Standardsicherung erstellt eine Richtlinie, die jeden Tag um 22:30 Uhr ausgeführt wird (Uhrzeit des Geräts) und eine Cloud-Momentaufnahme dieses Volumes erstellt.
+    3. Es wird empfohlen, eine Standardsicherung zu aktivieren, indem Sie das Kontrollkästchen **Standardsicherung für dieses Volume aktivieren** aktivieren. Die Standardsicherung erstellt eine Richtlinie, die jeden Tag um 22:30 Uhr ausgeführt wird (Uhrzeit des Geräts) und eine Cloud-Momentaufnahme dieses Volumes erstellt.
 
         ![Zusätzliche Einstellungen](./media/storsimple-ova-deploy3-iscsi-setup/image19.png)
 
@@ -229,9 +229,9 @@ Führen Sie die folgenden Schritte im klassischen Azure-Portal aus, um ein Volum
 
         ![](./media/storsimple-ova-deploy3-iscsi-setup/image21.png)
 
-## Schritt 4: Bereitstellen, Initialisieren und Formatieren eines Volumes
+## Schritt 4: Bereitstellen, Initialisieren und Formatieren eines Volumes
 
-Führen Sie die folgenden Schritte aus, um Ihre StorSimple-Volumes auf einem Windows Server-Host bereitzustellen, zu initialisieren und zu formatieren.
+Führen Sie die folgenden Schritte aus, um Ihre StorSimple-Volumes auf einem Windows Server-Host bereitzustellen, zu initialisieren und zu formatieren.
 
 #### So stellen Sie ein Volume bereit und initialisieren und formatieren dieses
 
@@ -263,27 +263,27 @@ Führen Sie die folgenden Schritte aus, um Ihre StorSimple-Volumes auf einem Win
 
 9. Klicken Sie mit der rechten Maustaste, und wählen Sie **Datenträgerinitialisierung**.
 
-    ![Datenträger 1 initialisieren](./media/storsimple-ova-deploy3-iscsi-setup/image27.png)
+    ![Datenträger 1 initialisieren](./media/storsimple-ova-deploy3-iscsi-setup/image27.png)
 
 10. Wählen Sie im Dialogfeld die zu initialisierenden Datenträger aus, und klicken Sie auf **OK**.
 
-    ![Datenträger 2 initialisieren](./media/storsimple-ova-deploy3-iscsi-setup/image28.png)
+    ![Datenträger 2 initialisieren](./media/storsimple-ova-deploy3-iscsi-setup/image28.png)
 
 11. Der Assistent zum Erstellen neuer einfacher Volumes wird gestartet. Wählen Sie eine Datenträgergröße aus, und klicken Sie dann auf **Weiter**.
 
-    ![Assistent für neue Volumes 1](./media/storsimple-ova-deploy3-iscsi-setup/image29.png)
+    ![Assistent für neue Volumes 1](./media/storsimple-ova-deploy3-iscsi-setup/image29.png)
 
 12. Weisen Sie dem Volume einen Laufwerkbuchstaben zu, und klicken Sie auf **Weiter**.
 
-    ![Assistent für neue Volumes 2](./media/storsimple-ova-deploy3-iscsi-setup/image30.png)
+    ![Assistent für neue Volumes 2](./media/storsimple-ova-deploy3-iscsi-setup/image30.png)
 
-13. Geben Sie die Parameter zum Formatieren des Volumes ein. **Unter Windows Server wird nur NTFS unterstützt.** Legen Sie den AUS-Wert (Größe der Zuordnungseinheit) auf 64 K fest. Geben Sie eine Bezeichnung für das Volume an. Die empfohlene bewährte Methode besteht darin, dass dieser Name mit dem Volumenamen identisch ist, den Sie auf Ihrem virtuellen StorSimple-Gerät angegeben haben. Klicken Sie auf **Weiter**.
+13. Geben Sie die Parameter zum Formatieren des Volumes ein. **Unter Windows Server wird nur NTFS unterstützt.** Legen Sie den AUS-Wert (Größe der Zuordnungseinheit) auf 64 K fest. Geben Sie eine Bezeichnung für das Volume an. Die empfohlene bewährte Methode besteht darin, dass dieser Name mit dem Volumenamen identisch ist, den Sie auf Ihrem virtuellen StorSimple-Gerät angegeben haben. Klicken Sie auf **Weiter**.
 
-    ![Assistent für neue Volumes 3](./media/storsimple-ova-deploy3-iscsi-setup/image31.png)
+    ![Assistent für neue Volumes 3](./media/storsimple-ova-deploy3-iscsi-setup/image31.png)
 
 14. Überprüfen Sie die Werte für Ihr Volume, und klicken Sie dann auf **Fertig stellen**.
 
-    ![Assistent für neue Volumes 4](./media/storsimple-ova-deploy3-iscsi-setup/image32.png)
+    ![Assistent für neue Volumes 4](./media/storsimple-ova-deploy3-iscsi-setup/image32.png)
 
     Die Volumes werden auf der Seite **Datenträgerverwaltung** als **Online** angezeigt.
 
@@ -293,9 +293,9 @@ Führen Sie die folgenden Schritte aus, um Ihre StorSimple-Volumes auf einem Win
 
 Erfahren Sie, wie Sie die lokale Webbenutzeroberfläche verwenden, um [Ihr StorSimple Virtual Array zu verwalten](storsimple-ova-web-ui-admin.md).
 
-## Anhang A: Abrufen des IQN eines Windows Server-Hosts
+## Anhang A: Abrufen des IQN eines Windows Server-Hosts
 
-Führen Sie die folgenden Schritte aus, um den IQN (iSCSI Qualified Name) eines Windows-Hosts abzurufen, auf dem Windows Server 2012 ausgeführt wird.
+Führen Sie die folgenden Schritte aus, um den IQN (iSCSI Qualified Name) eines Windows-Hosts abzurufen, auf dem Windows Server 2012 ausgeführt wird.
 
 #### So rufen Sie den IQN eines Windows Server-Hosts ab
 
@@ -310,4 +310,4 @@ Führen Sie die folgenden Schritte aus, um den IQN (iSCSI Qualified Name) eines 
 <!--Reference link-->
 [1]: https://technet.microsoft.com/library/ee338480(WS.10).aspx
 
-<!---HONumber=AcomDC_0218_2016-->
+<!----HONumber=AcomDC_0224_2016-->

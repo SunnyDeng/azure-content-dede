@@ -13,7 +13,7 @@
 	ms.workload="data-services"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="article"
+	ms.topic="get-started-article"
 	ms.date="02/03/2016"
 	ms.author="haining;garye" />
 
@@ -47,4 +47,4 @@ Laden Sie das Diagramm **Übersicht der Microsoft Azure Machine Learning Studio-
 
 [AZURE.INCLUDE [machine-learning-kostenlose-Testversion](../../includes/machine-learning-free-trial.md)]
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0302_2016-->

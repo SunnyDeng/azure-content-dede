@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Verwendung des BizTalk XML Validators in Logik-Apps in Azure App Service | Microsoft Azure"
+   pageTitle="Verwendung des BizTalk XML Validators in Logik-Apps in Azure App Service | Microsoft Azure"
    description="Validieren von Schemas mithilfe des BizTalk XML Validators in Ihrer Logik-App"
    services="app-service\logic"
    documentationCenter=".net,nodejs,java"
@@ -13,10 +13,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="12/07/2015"
+   ms.date="02/18/2016"
    ms.author="rajram"/>
 
 # BizTalk XML Validator
+
+>[AZURE.NOTE] Diese Version des Artikels gilt für die Logik-Apps-Schemaversion 2014-12-01-preview.
 
 Verwenden Sie den BizTalk XML Validator-Connector in Ihrer App zum Validieren von XML-Daten anhand vordefinierter XML-Schemas. Benutzer können vorhandene Schemas verwenden oder Schemas auf Grundlage einer Flatfile-Instanz, JSON-Instanz oder vorhandenen Connectors generieren.
 
@@ -62,4 +64,4 @@ Die Aktion gibt die Ausgabe als Objekt zurück. Die Ausgabe enthält das Modell,
 [4]: ./media/app-service-logic-xml-validator/XmlValidator.ListOfActions.PNG
 [5]: ./media/app-service-logic-xml-validator/XmlValidator.ValidateXml.PNG
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0224_2016-->

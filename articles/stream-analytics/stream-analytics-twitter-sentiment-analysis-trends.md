@@ -14,7 +14,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="big-data"
-	ms.date="02/04/2016"
+	ms.date="02/18/2016"
 	ms.author="jeffstok"/>
 
 
@@ -29,8 +29,9 @@ Analysetools für soziale Medien können Unternehmen helfen, Thementrends zu ver
 Eine Nachrichtenwebsite ist daran interessiert, der Konkurrenz durch Seiteninhalte mit direkter Relevanz für die Leser voraus zu sein. Sie verwendet soziale Medienanalyse für Themen mit Relevanz für ihre Leser und führt dazu Stimmungsanalysen von Twitter-Daten in Echtzeit durch. Insbesondere werden Echtzeitanalysen des Tweet-Umfangs und der Stimmung im Hinblick auf wichtige Themen benötigt, um zu erkennen, welche Themen sich auf Twitter in Echtzeit zu Trendthemen entwickeln. Im Wesentlichen benötigen sie also ein Analysemodul für Stimmungsanalysen basierend auf diesem Feed in sozialen Medien.
 
 ## Voraussetzungen
-1.	Ein Twitter-Konto ist für dieses Lernprogramm erforderlich.  
-2.	In diesem Lernprogramm wird eine Twitter-Clientanwendung verwendet, die sich auf GitHub befindet. Laden Sie ihn [hier](https://github.com/Azure/azure-stream-analytics/tree/master/DataGenerators/TwitterClient) herunter und befolgen Sie die folgenden Schritte, um Ihre Lösung einzurichten.
+1.	Twitter-Konto und [OAuth-Zugriffstoken](https://dev.twitter.com/oauth/overview/application-owner-access-tokens) 
+2.	[TwitterClient.zip](http://download.microsoft.com/download/1/7/4/1744EE47-63D0-4B9D-9ECF-E379D15F4586/TwitterClient.zip) aus dem Microsoft Download Center
+3.	Optional: Quellcode für Twitter-Client von [GitHub](https://github.com/Azure/azure-stream-analytics/tree/master/DataGenerators/TwitterClient) 
 
 ## Erstellen einer Event Hub-Eingabe und einer Verbrauchergruppe
 
@@ -55,16 +56,15 @@ Wir haben eine Clientanwendung bereitgestellt, die über die [Streaming-APIs von
 
 Gehen Sie folgendermaßen vor, um die Anwendung einzurichten:
 
-1.	[Laden Sie die TwitterClient-Lösung herunter.](https://github.com/Azure/azure-stream-analytics/tree/master/DataGenerators/TwitterClient)
-2.	Öffnen Sie App.config und ersetzen Sie oauth\_consumer\_key, oauth\_consumer\_secret, oauth\_token und oauth\_token\_secret mit den Twitter-Token mit Ihren Werten.  
+1.	[Laden Sie die TwitterClient-Lösung herunter.](http://download.microsoft.com/download/1/7/4/1744EE47-63D0-4B9D-9ECF-E379D15F4586/TwitterClient.zip)
+2.	Öffnen Sie „App.config“, und ersetzen Sie oauth\_consumer\_key, oauth\_consumer\_secret, oauth\_token und oauth\_token\_secret durch Twitter-Token mit Ihren Werten.  
 
 	[Schritte zum Generieren eines OAuth-Zugriffstokens](https://dev.twitter.com/oauth/overview/application-owner-access-tokens)
 
 	Beachten Sie, dass Sie zum Generieren eines Tokens eine leere Anwendung erstellen müssen.  
-3.	Ersetzen Sie die Werte EventHubConnectionString und EventHubName in App.config mit der Verbindungszeichenfolge und dem Namen Ihres Event Hubs.
-4.	*Optional:* Passen Sie die Schlüsselwörter für die Suche an. Standardmäßig sucht diese Anwendung nach „Azure,Skype,XBox,Microsoft,Seattle“. Falls gewünscht, können Sie die Werte für twitter\_keywords in App.config anpassen.
-5.	Erstellen Sie die Lösung.
-6.	Starten Sie die Anwendung. Sie sehen nun, wie Ereignisse mit den Werten CreatedAt, Topic und SentimentScore an Ihren Event Hub gesendet werden:
+3.	Ersetzen Sie die Werte EventHubConnectionString und EventHubName in „TwitterClient.exe.config“ durch die Verbindungszeichenfolge und den Namen Ihres Event Hubs.
+4.	*Optional:* Passen Sie die Schlüsselwörter für die Suche an. Standardmäßig sucht diese Anwendung nach „Azure,Skype,XBox,Microsoft,Seattle“. Falls gewünscht, können Sie die Werte für twitter\_keywords in „TwitterClient.exe.config“ anpassen.
+5.	Führen Sie **TwitterClient.exe** aus, um Ihre Anwendung zu starten. Sie sehen nun, wie Ereignisse mit den Werten CreatedAt, Topic und SentimentScore an Ihren Event Hub gesendet werden:
 
 	![Stimmungsanalyse: SentimentScore-Werte, die an einen Event Hub gesendet werden.](./media/stream-analytics-twitter-sentiment-analysis-trends/stream-analytics-twitter-sentiment-output-to-event-hub.png)
 
@@ -92,7 +92,7 @@ Nun, da wir einen Datenstrom von Tweet-Ereignissen haben, können wir einen Stre
 3.	Wählen Sie **EVENT HUB**, und klicken Sie dann auf die rechte Taste.
 4.	Geben Sie die folgenden Werte auf der dritten Seite ein, oder wählen Sie sie aus:
 
-	* **INPUT ALIAS**: Geben Sie einen Anzeigenamen für diese Auftragseingabe ein, wie z. B. TwitterStream. Beachten Sie, dass Sie diesen Namen später in der Abfrage verwenden werden. **EVENT HUB**: Wenn der Event Hub, den Sie erstellt haben, sich in demselben Abonnement wie der Stream Analytics-Auftrag befindet, wählen Sie den Namespace aus, in dem sich der Event Hub befindet.
+	* **INPUT ALIAS**: Geben Sie einen Anzeigenamen für diese Auftragseingabe ein, wie z. B. TwitterStream. Beachten Sie, dass Sie diesen Namen später in der Abfrage verwenden werden. **EVENT HUB**: Wenn der Event Hub, den Sie erstellt haben, sich in demselben Abonnement wie der Stream Analytics-Auftrag befindet, wählen Sie den Namespace aus, in dem sich der Event Hub befindet.
 
 		Wenn sich Ihr Event Hub in einem anderen Abonnement befindet, wählen Sie **Event Hub aus einem anderen Abonnement verwenden** aus, und geben Sie manuell folgende Informationen ein: **SERVICE BUS-NAMESPACE**, **EVENT HUB-NAME**, **NAME DER EVENT HUB-RICHTLINIE**, **SCHLÜSSEL DER EVENT HUB-RICHTLINIE** und **EVENT HUB-PARTITIONSANZAHL**.
 
@@ -153,7 +153,7 @@ Um die Anzahl der Erwähnungen verschiedener Themen zu vergleichen, nutzen wir e
 
 #### Identifizieren von Trendthemen: Schiebefenster
 
-Zum Identifizieren von Trendthemen suchen wir nach Themen, die einen Schwellenwert für Erwähnungen in einem bestimmten Zeitraum überschreiten. Für die Zwecke dieses Lernprogramms suchen wir mithilfe eines [SlidingWindow](https://msdn.microsoft.com/library/azure/dn835051.aspx) nach Themen, die in den letzten 5 Sekunden mehr als 20-mal erwähnt werden.
+Zum Identifizieren von Trendthemen suchen wir nach Themen, die einen Schwellenwert für Erwähnungen in einem bestimmten Zeitraum überschreiten. Für die Zwecke dieses Lernprogramms suchen wir mithilfe eines [SlidingWindow](https://msdn.microsoft.com/library/azure/dn835051.aspx) nach Themen, die in den letzten 5 Sekunden mehr als 20-mal erwähnt werden.
 
 1.	Ändern Sie die Abfrage im Code-Editor in:
 
@@ -236,4 +236,4 @@ Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://so
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
  
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0224_2016-->

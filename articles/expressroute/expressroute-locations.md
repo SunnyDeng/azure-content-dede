@@ -60,7 +60,7 @@ Konnektivität zwischen geopolitischen Regionen wird bei der ExpressRoute-Standa
 | **[AT&T NetBond](https://www.synaptic.att.com/clouduser/html/productdetail/ATT_NetBond.htm)** | Unterstützt | Unterstützt | Amsterdam, Dallas, London, Silicon Valley, Singapur, Washington, D.C. |
 | **[British Telecom](http://www.globalservices.bt.com/uk/en/news/bt_to_provide_connectivity_to_microsoft_azure)** | Unterstützt | Unterstützt | Amsterdam, Hongkong, London, Silicon Valley, Singapur, Tokio, Washington, D.C. |
 |**China Telecom Global** | Unterstützt | Nicht unterstützt | Hongkong |
-|**Cologix** | In Kürze verfügbar | Nicht unterstützt | Montreal+, Toronto+ |
+|**Cologix** | In Kürze verfügbar | In Kürze verfügbar | Montreal+, Toronto+ |
 | **[Colt](http://www.colt.net/uk/en/news/colt-announces-dedicated-cloud-access-for-microsoft-azure-services-en.htm)** | Unterstützt | Unterstützt | Amsterdam, Dublin, London |
 | **Comcast** | Unterstützt | Nicht unterstützt | Silicon Valley, Washington, D.C. |
 | **CoreSite** | Unterstützt | Unterstützt | Los Angeles | 
@@ -73,11 +73,11 @@ Konnektivität zwischen geopolitischen Regionen wird bei der ExpressRoute-Standa
 | **Megaport** | Unterstützt | Unterstützt | Dallas, Los Angeles, Melbourne, New York, Seattle, Sydney, Washington DC |
 | **MTN** | Unterstützt | Unterstützt | London |
 | **NEXTDC** | Unterstützt | Unterstützt | Melbourne, Sydney |
-| **NTT Communications** | Unterstützt | In Kürze verfügbar | London, Tokyo |
+| **NTT Communications** | Unterstützt | Unterstützt | London, Tokyo |
 | **[Orange](http://www.orange-business.com/)** | Unterstützt | Unterstützt | Amsterdam, Hongkong, London, Silicon Valley, Singapur, Washington, D.C. |
 | **PCCW Global Limited** | Unterstützt | Unterstützt | Hongkong |
 | **[SingTel](http://info.singtel.com/about-us/news-releases/singtel-provide-secure-private-access-microsoft-azure-public-cloud)** | Unterstützt | Nicht unterstützt | Singapur |
-| **SoftBank** | In Kürze verfügbar | Nicht unterstützt | Osaka, Tokio | 
+| **SoftBank** | In Kürze verfügbar | In Kürze verfügbar | Osaka, Tokio | 
 | **[Tata Communications](http://www.tatacommunications.com/lp/izo/azure/azure_index.html)** | Unterstützt | Unterstützt | Amsterdam, Chennai, Hongkong, London, Mumbai, Singapur, Washington, D.C. |
 | **[TeleCity Group](http://www.telecitygroup.com/investor-centre/news_details.htm?locid=03100500400b00d&xml)** | Unterstützt | Unterstützt | Amsterdam, London |
 | **[Telstra Corporation](http://www.telstra.com.au/business-enterprise/network-services/networks/cloud-direct-connect/)** | Unterstützt | Nicht unterstützt | Melbourne, Sydney |
@@ -141,4 +141,4 @@ Je nach Ihrer Netzwerkgröße kann das Aktivieren privater Verbindungen für Ihr
 - Weitere Informationen über ExpressRoute finden Sie unter [ExpressRoute – FAQ](expressroute-faqs.md).
 - Stellen Sie sicher, dass alle Voraussetzungen erfüllt sind. Informationen finden Sie unter [ExpressRoute-Voraussetzungen](expressroute-prerequisites.md).
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

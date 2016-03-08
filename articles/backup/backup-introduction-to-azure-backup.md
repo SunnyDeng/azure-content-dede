@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="02/05/2016"
+	ms.date="03/02/2016"
 	ms.author="trinadhk;jimpark"/>
 
 # Was ist Azure Backup?
@@ -31,7 +31,7 @@ Herkömmliche Sicherungslösungen haben sich dahingehend entwickelt, dass die Cl
 | Unbegrenzte Skalierung | Hohe Verfügbarkeit wird ohne Aufwand für Wartung und Überwachung gewährleistet. Azure Backup nutzt die zugrunde liegende Leistung und Skalierbarkeit der Azure-Cloud und automatische Skalierungsmöglichkeiten ohne Benutzereingriffe. |
 | Mehrere Speicheroptionen | Wählen Sie Sicherungsspeicher je nach Bedarf: <li>Ein lokal redundanter Speicherblockblob ist ideal für preisbewusste Kunden und bietet Schutz der Daten vor lokalen Hardwareausfällen. <li>Ein Speicherblockblob mit Georeplikation bietet drei zusätzliche Kopien in einem gekoppelten Datencenter. Dadurch wird sichergestellt, dass Ihre Sicherungsdaten auch bei einem Ausfall eines Azure-Datencenters hoch verfügbar sind. |
 | Unbegrenzte Dateiübertragungen | Es werden keine Kosten für die Übertragung ausgehender Daten während eines Wiederherstellungsvorgangs mithilfe des Azure Backup-Tresors berechnet. In Azure eingehende Datenübertragungen sind ebenfalls kostenlos. |
-| Zentrale Verwaltung | Das Azure-Portal bietet Einfachheit und Vertrautheit. Mit der Weiterentwicklung des Diensts können Sie mit Funktionen wie z. B. der zentralen Verwaltung Ihre Sicherungsinfrastruktur von einem Standort aus verwalten. |
+| Zentrale Verwaltung | Das Azure-Portal bietet Einfachheit und Vertrautheit. Mit der Weiterentwicklung des Diensts können Sie mit Funktionen wie z. B. der zentralen Verwaltung Ihre Sicherungsinfrastruktur von einem Standort aus verwalten. |
 | Datenverschlüsselung | Dies ermöglicht eine sichere Übertragung und Speicherung von Kundendaten in der öffentlichen Cloud. Die Passphrase für die Verschlüsselung wird in der Quelle gespeichert und niemals in Azure übertragen oder gespeichert. Der Verschlüsselungsschlüssel ist zum Wiederherstellen der Daten erforderlich, und nur der Kunde hat vollen Zugriff auf die Daten im Dienst. |  
 | Anwendungskonsistente Sicherungen | Anwendungskonsistente Sicherungen unter Windows helfen sicherzustellen, dass zum Zeitpunkt der Wiederherstellung keine Korrekturen erforderlich sind. Dadurch wird die angestrebte Wiederherstellungszeit verkürzt und Kunden ermöglicht, schneller zu einem Ausführungsstatus zurückzukehren. |
 | Langfristige Aufbewahrung | Anstatt für standortexterne Sicherungslösungen zu zahlen, können Kunden Daten in Azure sichern. Dies ermöglicht eine überzeugende Lösung mit ähnlichen Abläufen wie bei der Bandsicherung zu sehr niedrigen Kosten. |
@@ -78,7 +78,9 @@ In diesen fünf Tabellen wird zusammengefasst, wie Azure Backup-Funktionen in je
 | Inkrementelle Sicherung | ![Ja][green] | ![Ja][green] | ![Ja][green] | ![Ja][green] |
 | Datenträgerdeduplizierung | | ![Teilweise][yellow] | ![Teilweise][yellow]| | |
 
-**Legende** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![Ja][green]= Unterstützt &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![Teilweise][yellow]= Teilweise unterstützt &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *&lt;blank&gt;* = Nicht unterstützt
+**Legende** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+![Ja][green]= Unterstützt &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+![Teilweise][yellow]= Teilweise unterstützt &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *&lt;blank&gt;* = Nicht unterstützt
 
 Der Azure Backup-Tresor ist das bevorzugte Speicherziel aller Komponenten. System Center DPM und Azure Backup Server bieten auch die Möglichkeit, eine Kopie des lokalen Datenträgers zu erstellen, aber nur System Center DPM ermöglicht das Schreiben von Daten auf ein Bandspeichergerät.
 
@@ -99,7 +101,9 @@ Die Deduplizierung wird für System Center DPM und Backup Server unterstützt, w
 | Netzwerksicherheit (Azure) | ![Ja][green] |![Ja][green] | ![Ja][green] | ![Teilweise][yellow]|
 | Datensicherheit (in Azure) | ![Ja][green] |![Ja][green] | ![Ja][green] | ![Teilweise][yellow]|
 
-**Legende** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![Ja][green]= Unterstützt &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![Teilweise][yellow]= Teilweise unterstützt &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *&lt;blank&gt;* = Nicht unterstützt
+**Legende** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+![Ja][green]= Unterstützt &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+![Teilweise][yellow]= Teilweise unterstützt &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *&lt;blank&gt;* = Nicht unterstützt
 
 Sämtlicher Sicherungsdatenverkehr von Ihren Servern in den Azure Backup-Tresor wird mit AES 256 (Advanced Encryption Standard) verschlüsselt. Die Daten werden über eine sichere HTTPS-Verbindung übertragen. Die Sicherungsdaten werden auch im Sicherungstresor in verschlüsselter Form gespeichert. Nur der Kunde kennt die Passphrase, um diese Daten zu entsperren. Die Sicherungsdaten können zu keinem Zeitpunkt von Microsoft entschlüsselt werden.
 
@@ -132,7 +136,8 @@ Für eine Sicherung von Azure-VMs müssen Sie die Verschlüsselung *in* der virt
 | Netzwerkprotokoll (zu Sicherungsserver) | | TCP | TCP | |
 | Netzwerkprotokoll (zu Sicherungstresor) | HTTPS | HTTPS | HTTPS | HTTPS |
 
-**Legende** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![Ja][green]= Unterstützt &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *&lt;blank&gt;* = Nicht unterstützt
+**Legende** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+![Ja][green]= Unterstützt &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *&lt;blank&gt;* = Nicht unterstützt
 
 Da die VM-Erweiterung die Daten aus dem Azure-Speicherkonto direkt über das Speichernetzwerk liest, ist das Optimieren dieses Datenverkehrs nicht erforderlich. Der Datenverkehr erfolgt über das lokale Speichernetzwerk im Azure-Datencenter, sodass kaum Bedarf an einer Komprimierung aufgrund von Bandbreitenaspekten besteht.
 
@@ -154,7 +159,7 @@ Für Kunden, die die Übertragung ihrer Daten an einen Sicherungsserver (System 
 
 Die Datei mit Tresoranmeldeinformationen ist ein Zertifikat, das vom Portal für jeden Sicherungstresor generiert wird. Das Portal lädt anschließend den öffentlichen Schlüssel in den Access Control Service (ACS) hoch. Der private Schlüssel des Zertifikats wird dem Benutzer während des Workflows zur Verfügung gestellt und dient als Eingabe für den Workflow zur Computerregistrierung. Dadurch wird der Computer zum Senden von Sicherungsdaten an einen identifizierten Tresor im Azure Backup-Dienst authentifiziert.
 
-Die Tresoranmeldeinformationen werden nur während des Registrierungsworkflows verwendet. Es ist Aufgabe des Benutzers sicherzustellen, dass die Datei mit den Tresoranmeldeinformationen sicher aufbewahrt wird. Fällt sie in die Hände eines böswilligen Benutzers, kann dieser die Datei mit den Tresoranmeldeinformationen zur Registrierung weiterer Computer beim selben Tresor verwenden. Da die Sicherungsdaten jedoch durch eine Passphrase verschlüsselt sind, die dem Kunden gehört, sind vorhandene Sicherungsdaten nicht gefährdet. Um dieses Risiko auf ein Mindestmaß zu verringern, laufen die Tresoranmeldeinformationen nach 48 Stunden ab. Sie können die Tresoranmeldeinformationen beliebig oft von einem Sicherungstresor herunterladen – jedoch nur die neueste Datei mit Tresoranmeldeinformationen ist für den Registrierungsworkflow gültig.
+Die Tresoranmeldeinformationen werden nur während des Registrierungsworkflows verwendet. Es ist Aufgabe des Benutzers sicherzustellen, dass die Datei mit den Tresoranmeldeinformationen sicher aufbewahrt wird. Fällt sie in die Hände eines böswilligen Benutzers, kann dieser die Datei mit den Tresoranmeldeinformationen zur Registrierung weiterer Computer beim selben Tresor verwenden. Da die Sicherungsdaten jedoch durch eine Passphrase verschlüsselt sind, die dem Kunden gehört, sind vorhandene Sicherungsdaten nicht gefährdet. Um dieses Risiko auf ein Mindestmaß zu verringern, laufen die Tresoranmeldeinformationen nach 48 Stunden ab. Sie können die Tresoranmeldeinformationen beliebig oft von einem Sicherungstresor herunterladen – jedoch nur die neueste Datei mit Tresoranmeldeinformationen ist für den Registrierungsworkflow gültig.
 
 ## Wie unterscheidet sich Azure Backup von Azure Site Recovery?
 Viele Kunden verwechseln Sicherungswiederherstellung und Notfallwiederherstellung. Für beide Zwecke werden Daten erfasst und Wiederherstellungsmechanismen bereitgestellt, doch das Hauptanliegen ist in beiden Fällen unterschiedlich.
@@ -165,9 +170,9 @@ Um Entscheidungen hinsichtlich der Sicherung und Notfallwiederherstellung zu tre
 
 | Konzept | Details | Sicherung | Notfallwiederherstellung |
 | ------- | ------- | ------ | ----------------- |
-| Recovery Point Objective (RPO) | Der Umfang des Datenverlusts, der im Fall einer erforderlichen Wiederherstellung akzeptabel ist. | Sicherungslösungen weisen eine große Varianz beim akzeptablen RPO auf. Sicherungen virtueller Computer haben zumeist ein RPO von einem Tag, während Datenbanksicherungskopien RPOs von bis zu 15 Minuten aufweisen. | Lösungen für die Notfallwiederherstellung haben überaus niedrige RPOs. Die Kopie für die Notfallwiederherstellung kann einige Sekunden bzw. einige Minuten hinterherhinken. |
+| Recovery Point Objective (RPO) | Der Umfang des Datenverlusts, der im Fall einer erforderlichen Wiederherstellung akzeptabel ist. | Sicherungslösungen weisen eine große Varianz beim akzeptablen RPO auf. Sicherungen virtueller Computer haben zumeist ein RPO von einem Tag, während Datenbanksicherungskopien RPOs von bis zu 15 Minuten aufweisen. | Lösungen für die Notfallwiederherstellung haben überaus niedrige RPOs. Die Kopie für die Notfallwiederherstellung kann einige Sekunden bzw. einige Minuten hinterherhinken. |
 | Recovery Time Objective (RTO) | Der Zeitraum, der für eine Wiederherstellung erforderlich ist. | Aufgrund des größeren RPO ist die Datenmenge, die eine Sicherungslösung verarbeiten muss, meist wesentlich größer. Dies führt zu längeren RTOs. Beispielsweise kann das Wiederherstellen von Daten von Bändern Tage dauern, was davon abhängt, wie lange der Transport des Bands von einem standortexternen Aufbewahrungsort dauert. | Lösungen für die Notfallwiederherstellung weisen kleinere RTOs auf, da sie synchroner mit der Quelle sind. Weniger Änderungen müssen verarbeitet werden. |
-| Aufbewahrung | Die Dauer der Datenspeicherung. | <p>Bei Szenarios, in denen die Wiederherstellung des Geschäftsbetriebs (nach Datenbeschädigung, versehentlichem Löschen von Dateien oder Betriebssystemausfällen) erforderlich ist, werden Sicherungsdaten in der Regel maximal 30 Tage lang aufbewahrt.</p> <p>Vom Standpunkt der Compliance aus müssen Daten möglicherweise Monate oder sogar Jahre gespeichert werden. In solchen Fällen sind Sicherungsdaten ideal für die Archivierung geeignet.</p> | Für die Notfallwiederherstellung werden nur Betriebsdaten für die Wiederherstellung benötigt. Diese dauert in der Regel von einigen Stunden bis zu einem Tag. Aufgrund der differenzierten Datensammlung in Lösungen für die Notfallwiederherstellung empfehlen sich Notfallwiederherstellungsdaten nicht für eine langfristige Aufbewahrung. |
+| Aufbewahrung | Die Dauer der Datenspeicherung. | <p>Bei Szenarios, in denen die Wiederherstellung des Geschäftsbetriebs (nach Datenbeschädigung, versehentlichem Löschen von Dateien oder Betriebssystemausfällen) erforderlich ist, werden Sicherungsdaten in der Regel maximal 30 Tage lang aufbewahrt.</p> <p>Vom Standpunkt der Compliance aus müssen Daten möglicherweise Monate oder sogar Jahre gespeichert werden. In solchen Fällen sind Sicherungsdaten ideal für die Archivierung geeignet.</p> | Für die Notfallwiederherstellung werden nur Betriebsdaten für die Wiederherstellung benötigt. Diese dauert in der Regel von einigen Stunden bis zu einem Tag. Aufgrund der differenzierten Datensammlung in Lösungen für die Notfallwiederherstellung empfehlen sich Notfallwiederherstellungsdaten nicht für eine langfristige Aufbewahrung. |
 
 
 ## Nächste Schritte
@@ -181,4 +186,4 @@ Um Entscheidungen hinsichtlich der Sicherung und Notfallwiederherstellung zu tre
 [yellow]: ./media/backup-introduction-to-azure-backup/yellow.png
 [red]: ./media/backup-introduction-to-azure-backup/red.png
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0302_2016-->

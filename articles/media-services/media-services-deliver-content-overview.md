@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Bereitstellen von Inhalten für Kunden – Übersicht" 
+	pageTitle="Bereitstellen von Inhalten für Kunden – Übersicht" 
 	description="Dieses Thema bietet eine Übersicht darüber, was zur Bereitstellung von Inhalten mit Azure Media Services erforderlich ist." 
 	services="media-services" 
 	documentationCenter="" 
@@ -13,11 +13,11 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-  ms.date="02/03/2016"
+	ms.date="02/22/2016"
 	ms.author="juliako"/>
 
 
-#Bereitstellen von Inhalten für Kunden – Übersicht
+#Bereitstellen von Inhalten für Kunden – Übersicht
 
 ##Übersicht
 
@@ -33,13 +33,23 @@ Dieses Thema bietet eine Übersicht über wichtige Content Delivery-Konzepte.
 
 ##Dynamische Paketerstellung
 
-Es wird empfohlen, eine dynamische Paketerstellung zu verwenden, um die Inhalte bereitzustellen. Weitere Informationen finden Sie unter [Dynamische Paketerstellung](media-services-dynamic-packaging-overview.md).
 
-Um dynamische Paketerstellung nutzen zu können, ist mindestens eine bedarfsgesteuerte Streamingeinheit für den Streamingendpunkt erforderlich, aus dem die Inhalte bereitgestellt werden sollen. Weitere Informationen finden Sie unter [How to Scale Media Services](media-services-manage-origins.md#scale_streaming_endpoints) (Skalieren von Media Services).
+Media Services bietet dynamische Paketerstellung zum Übermitteln Ihrer MP4-Dateien mit adaptiver Bitrate oder Smooth Streaming-codierten Inhalte in Streamingformaten, die von Media Services unterstützt werden (MPEG DASH, HLS, Smooth Streaming, HDS), ohne dass Sie diese Streamingformate erneut verpacken müssen. Es wird empfohlen, eine dynamische Paketerstellung zu verwenden, um die Inhalte bereitzustellen.
+
+Um die dynamische Paketerstellung nutzen zu können, müssen Sie folgende Schritte ausführen:
+
+- Codieren Ihrer Zwischendatei (Quelldatei) in einen Satz von MP4-Dateien oder Smooth Streaming-Dateien mit adaptiver Bitrate
+- Abrufen von mindestens einer On-Demand-Streamingeinheit für den Streamingendpunkt, von dem aus Sie die Bereitstellung Ihrer Inhalte planen. Weitere Informationen finden Sie unter [Skalieren von reservierten Einheiten für bedarfsgesteuertes Streaming](media-services-manage-origins.md#scale_streaming_endpoints). 
+
+Mit der dynamischen Paketerstellung müssen Sie die Dateien nur in einem Speicherformat speichern und bezahlen. Media Services erstellt und verarbeitet die entsprechende Antwort basierend auf Anforderungen von einem Client.
+
+Beachten Sie, dass die reservierten Einheiten für On-Demand-Streaming Ihnen zusätzlich zur dynamischen Paketerstellung auch eine dedizierte Ausgangskapazität bereitstellen, die in Schritten von 200 Mbit/s erworben werden kann. Standardmäßig wird das bedarfsgesteuerte Streaming in einem Modell mit einer gemeinsam genutzten Instanz konfiguriert, für das Serverressourcen (z. B. Rechen- und Ausgangskapazität usw.) mit allen anderen Benutzern gemeinsam genutzt werden. Um den Durchsatz des bedarfsgesteuerten Streamings zu erhöhen, sollten Sie reservierte Einheiten für On-Demand Streaming kaufen.
+
+Weitere Informationen finden Sie unter [Dynamische Paketerstellung](media-services-dynamic-packaging-overview.md).
 
 ##Filter und dynamische Manifeste
 
-Mit Media Services können Sie Filter für Ihre Medienobjekte definieren. Diese Filter sind serverseitige Regeln, mit denen Ihre Kunden verschiedene Aktionen ausführen können, z. B. Wiedergabe bestimmter Videoabschnitte (anstelle des gesamten Videos). Sie können zudem nur eine Teilmenge von Audio- und Videowiedergaben (anstelle von allen mit dem Medienobjekt verknüpften Wiedergaben) angeben, die für das Gerät eines Kunden geeignet sind. Diese Filterung der Medienobjekte erfolgt über **dynamische Manifeste**, die auf Anfrage des Kunden zum Streamen von Videos basierend auf bestimmten Filtern erstellt werden.
+Mit Media Services können Sie Filter für Ihre Medienobjekte definieren. Diese Filter sind serverseitige Regeln, mit denen Ihre Kunden verschiedene Aktionen ausführen können, z. B. Wiedergabe bestimmter Videoabschnitte (anstelle des gesamten Videos). Sie können zudem nur eine Teilmenge von Audio- und Videowiedergaben (anstelle von allen mit dem Medienobjekt verknüpften Wiedergaben) angeben, die für das Gerät eines Kunden geeignet sind. Diese Filterung der Medienobjekte erfolgt über **dynamische Manifeste**, die auf Anfrage des Kunden zum Streamen von Videos basierend auf bestimmten Filtern erstellt werden.
 
 Weitere Informationen finden Sie unter [Filter und dynamische Manifeste](media-services-dynamic-manifest-overview.md).
 
@@ -47,12 +57,12 @@ Weitere Informationen finden Sie unter [Filter und dynamische Manifeste](media-s
 
 Um Ihren Benutzern eine URL für das Streaming bzw. Herunterladen des Inhalts angeben zu können, müssen Sie zunächst das Medienobjekt "veröffentlichen", indem Sie einen Locator erstellen. Locator bieten einen Einstiegspunkt für den Zugriff auf die in einem Medienobjekt enthaltenen Dateien. Media Services unterstützt zwei Arten von Locatorobjekten:
 
-- **OnDemandOrigin**-Locators, die zum Streamen von Medien (z. B. MPEG DASH, HLS oder Smooth Streaming) und zum Herunterladen von Dateien verwendet werden.
+- **OnDemandOrigin**-Locators, die zum Streamen von Medien (z. B. MPEG DASH, HLS oder Smooth Streaming) und zum Herunterladen von Dateien verwendet werden.
 -  **SAS**-URL-Locators (Zugriffssignatur), die zum Herunterladen von Mediendateien auf den lokalen Computer verwendet werden. 
 
-Anhand einer **Zugriffsrichtlinie** werden die Berechtigungen eines Clients (z. B. Lesen, Schreiben und Anzeigen) und die Dauer definiert, für die der Client auf eine bestimmte Ressource zugreifen kann. Beachten Sie, dass die Berechtigung zum Auflisten (AccessPermissions.List) beim Erstellen eines OrDemandOrigin-Locators nicht verwendet werden sollte.
+Anhand einer **Zugriffsrichtlinie** werden die Berechtigungen eines Clients (z. B. Lesen, Schreiben und Anzeigen) und die Dauer definiert, für die der Client auf eine bestimmte Ressource zugreifen kann. Beachten Sie, dass die Berechtigung zum Auflisten (AccessPermissions.List) beim Erstellen eines OrDemandOrigin-Locators nicht verwendet werden sollte.
 
-Locator haben ein Ablaufdatum. Wenn Sie Medienobjekte über das Portal veröffentlichen, werden Locator mit einem Ablaufdatum von 100 Jahren erstellt.
+Locator haben ein Ablaufdatum. Wenn Sie Medienobjekte über das Portal veröffentlichen, werden Locator mit einem Ablaufdatum von 100 Jahren erstellt.
 
 >[AZURE.NOTE] Wenn Sie das Portal vor März 2015 zum Erstellen von Locators verwendet haben, wurden diese mit einem Ablaufdatum von zwei Jahren erstellt.
 
@@ -60,7 +70,7 @@ Verwenden Sie zum Aktualisieren des Ablaufdatums für einen Locator die [REST](h
  
 Locator sind nicht für die Verwaltung der Zugriffssteuerung pro Benutzer konzipiert. Um einzelnen Benutzern verschiedene Zugriffsrechte zu erteilen, verwenden Sie Lösungen zur Verwaltung digitaler Rechte (Digital Rights Management, DRM). Weitere Informationen finden Sie unter [Sichern von Medien](http://msdn.microsoft.com/library/azure/dn282272.aspx).
 
-Beachten Sie, dass beim Erstellen eines Locators möglicherweise eine Verzögerung von 30 Sekunden auftritt, die durch die erforderlichen Speicher- und Weitergabeprozesse in Azure Storage verursacht wird.
+Beachten Sie, dass beim Erstellen eines Locators möglicherweise eine Verzögerung von 30 Sekunden auftritt, die durch die erforderlichen Speicher- und Weitergabeprozesse in Azure Storage verursacht wird.
 
 
 ##Adaptives Streaming 
@@ -115,7 +125,7 @@ Beispiel:
 
 	http://testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest
 
-**Smooth Streaming 2.0-Manifest (Legacymanifest)**
+**Smooth Streaming 2.0-Manifest (Legacymanifest)**
 
 Das Smooth Streaming-Manifestformat enthält standardmäßig das repeat-Tag (r-tag). Einige Player unterstützen das r-Tag jedoch nicht. Für diese Clients kann ein Format verwendet werden, mit dem das r-Tag deaktiviert wird:
 
@@ -129,19 +139,6 @@ Das Smooth Streaming-Manifestformat enthält standardmäßig das repeat-Tag (r-t
 
 	http://testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=f4m-f4f)
 
-
-##Dynamische Paketerstellung
-
-Media Services bietet dynamische Paketerstellung zum Übermitteln Ihrer MP4-Dateien mit adaptiver Bitrate oder Smooth Streaming-codierten Inhalte in Streamingformaten, die von Media Services unterstützt werden (MPEG DASH, HLS, Smooth Streaming, HDS), ohne dass Sie diese Streamingformate erneut verpacken müssen.
-
-Um die dynamische Paketerstellung nutzen zu können, müssen Sie folgende Schritte ausführen:
-
-- Codieren Ihrer Zwischendatei (Quelldatei) in einen Satz von MP4-Dateien oder Smooth Streaming-Dateien mit adaptiver Bitrate
-- Abrufen von mindestens einer On-Demand-Streamingeinheit für den Streamingendpunkt, von dem aus Sie die Bereitstellung Ihrer Inhalte planen. Weitere Informationen finden Sie unter [Skalieren von reservierten Einheiten für bedarfsgesteuertes Streaming](media-services-manage-origins.md#scale_streaming_endpoints). 
-
-Mit der dynamischen Paketerstellung müssen Sie die Dateien nur in einem Speicherformat speichern und bezahlen. Media Services erstellt und verarbeitet die entsprechende Antwort basierend auf Anforderungen von einem Client.
-
-Beachten Sie, dass die reservierten Einheiten für On-Demand-Streaming Ihnen zusätzlich zur dynamischen Paketerstellung auch eine dedizierte Ausgangskapazität bereitstellen, die in Schritten von 200 Mbit/s erworben werden kann. Standardmäßig wird das bedarfsgesteuerte Streaming in einem Modell mit einer gemeinsam genutzten Instanz konfiguriert, für das Serverressourcen (z. B. Rechen- und Ausgangskapazität usw.) mit allen anderen Benutzern gemeinsam genutzt werden. Um den Durchsatz des bedarfsgesteuerten Streamings zu erhöhen, sollten Sie reservierte Einheiten für On-Demand Streaming kaufen.
 
 ##Progressiver Download 
 
@@ -190,4 +187,4 @@ Ein **Streamingendpunkt** stellt einen Streamingdienst dar, der Inhalte zur weit
 [Aktualisieren von Media Services nach dem Austausch der Speicherschlüssel](media-services-roll-storage-access-keys.md)
  
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0224_2016-->

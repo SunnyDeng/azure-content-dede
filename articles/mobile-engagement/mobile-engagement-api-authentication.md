@@ -20,18 +20,17 @@
 
 ## Übersicht
 
-Dieses Dokument dient als begleitender Leitfaden für Kunden, die von Capptain zu Azure Mobile Engagements migrieren und die entsprechenden APIs verwendet haben. In diesem Dokument wird detailliert erläutert, wie der Authentifizierungsmechanismus für die neuen APIs eingerichtet wird.
+In diesem Dokument wird ausführlich erläutert, wie der Authentifizierungsmechanismus für die neuen APIs eingerichtet wird.
 
 Es wird vorausgesetzt, dass Sie über ein gültiges Azure-Abonnement verfügen und mithilfe eines unserer [Entwickler-Tutorials](mobile-engagement-windows-store-dotnet-get-started.md) eine Mobile Engagement-App erstellt haben.
 
 ## Authentifizierung
 
-Bei der Migration von Capptain-APIs zu den neuen Azure Mobile Engagement-APIs liegen die Unterschiede hauptsächlich in der Authentifizierung. Bisher unterstützten die APIs die Standardauthentifizierung, Jetzt muss zur Authentifizierung ein Microsoft Azure Active Directory-basiertes OAuth-Token verwendet werden.
+Zur Authentifizierung muss ein Microsoft Azure Active Directory-basiertes OAuth-Token verwendet werden.
 
 Um eine API-Anforderung zu authentifizieren, muss jeder Anforderung ein Authentifizierungsheader hinzugefügt werden. Folgendes Format ist erforderlich:
 
 	Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGmJlNmV2ZWJPamg2TTNXR1E...
-
 
 >[AZURE.NOTE] Azure Active Directory-Token sind eine Stunde lang gültig.
 
@@ -48,8 +47,8 @@ Beachten Sie bitte folgende Informationen, die Sie später benötigen werden:
 	- Auf den von Ihnen gewählten Anwendungsnamen wird in diesem Dokument durch `{AD_APP_NAME}` verwiesen.
 	- Auf die im Konfigurationsmenü angezeigte Client-ID wird in diesem Dokument durch `{CLIENT_ID}` verwiesen.
 	- Auf den nach dem Speichern nur einmal angezeigten Schlüssel wird in diesem Dokument durch `{CLIENT_SECRET}` verwiesen.
-	- Klicken Sie in der unteren Leiste auf **ENDPUNKTE ANZEIGEN**, und kopieren Sie die **OAUTH 2.0-TOKENENDPUNKT-URL**, auf die in diesem Dokument durch `https://login.microsoftonline.com/{TENANT_ID}/oauth2/token` verwiesen wird. <br/>                                    
-2. Weisen Sie über die [Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md) dem Dienstprinzipal eine Rolle wie z. B. „Leser“ oder „Besitzer“ zu.
+	- Klicken Sie in der unteren Leiste auf **ENDPUNKTE ANZEIGEN**, und kopieren Sie die **OAUTH 2.0-TOKENENDPUNKT-URL**, auf die in diesem Dokument durch `https://login.microsoftonline.com/{TENANT_ID}/oauth2/token` verwiesen wird. <br/>                                    
+2. Weisen Sie über die [Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md) dem Dienstprinzipal eine Rolle wie z. B. „Leser“ oder „Besitzer“ zu.
 
 	Wenn Sie unter Windows arbeiten, schließen Sie `C:\Program Files (x86)\Microsoft SDKs\Azure\CLI\bin` in die `PATH`-Umgebungsvariable ein, um die Azure-Befehle verwenden zu können.
 
@@ -95,7 +94,7 @@ Dies ist eine alternative Möglichkeit, die oben beschriebenen Schritte mithilfe
 
 1. Rufen Sie die neueste Version von Azure PowerShell ab.
 
-	Aktuell steht Version 1.2.1 [hier](https://github.com/Azure/azure-powershell/releases/tag/v1.2.1-February2016) zum Download bereit.
+	Aktuell steht Version 1.2.1 [hier](https://github.com/Azure/azure-powershell/releases/tag/v1.2.1-February2016) zum Download bereit.
 
 2. Öffnen Sie Windows PowerShell im Administratormodus, und stellen Sie sicher, dass die [Azure-Ressourcen-Manager-Cmdlets](https://msdn.microsoft.com/library/mt125356.aspx) installiert sind.
 
@@ -130,9 +129,7 @@ Dies ist eine alternative Möglichkeit, die oben beschriebenen Schritte mithilfe
 
 	Kopieren Sie diese Werte zur Referenz. Um jetzt ein Zugriffstoken abzurufen, verwenden Sie „TenantId“ als `{TENANT_ID}`, „ApplicationId“ als `{CLIENT_ID}` und „Secret“ als `{CLIENT_SECRET}`.
 
-
 8. Überprüfen Sie im Azure-Verwaltungsportal, ob unter **Anwendungen im Besitz meines Unternehmens anzeigen** eine neue AD-Anwendung angezeigt wird.
-
 
 #### Schritte zum Abrufen eines gültigen Tokens
 
@@ -166,9 +163,7 @@ Schließen Sie in jeden API-Aufruf den Autorisierungsanforderungsheader ein:
 
 Wenn ein 401-Statuscode zurückgegeben wird, überprüfen Sie den Antworttext, dieser könnte darauf hinweisen, dass das Token abgelaufen ist. In diesem Fall rufen Sie ein neues Token ab.
 
-
 ##Verwenden der APIs
-
 
 Da Sie jetzt über ein gültiges Token verfügen, sind Sie bereit für die API-Aufrufe.
 
@@ -179,7 +174,7 @@ Da Sie jetzt über ein gültiges Token verfügen, sind Sie bereit für die API-A
 		https://management.azure.com/subscriptions/{subscription-id}/resourcegroups/MobileEngagement/
 		providers/Microsoft.MobileEngagement/appcollections/{app-collection}/apps/{app-resource-name}/
 
-	Um die Parameter abzurufen, klicken Sie auf den Namen Ihrer Anwendung, und klicken Sie auf das Dashboard, um eine Seite wie die folgende mit allen 3 Parametern anzuzeigen.
+	Um die Parameter abzurufen, klicken Sie auf den Namen Ihrer Anwendung, und klicken Sie auf das Dashboard, um eine Seite wie die folgende mit allen 3 Parametern anzuzeigen.
 
 	- **1** `{subscription-id}`
 	- **2** `{app-collection}`
@@ -187,7 +182,6 @@ Da Sie jetzt über ein gültiges Token verfügen, sind Sie bereit für die API-A
 
 	![](./media/mobile-engagement-api-authentication/mobile-engagement-api-uri-params.png)
 
+>[AZURE.NOTE] <br/> 1. Ignorieren Sie die API-Stammadresse, diese galt für die vorherigen APIs.<br/> 2. Sie müssen den Namen der Anwendungsressource verwenden, der sich vom Namen der Anwendung selbst unterscheidet.
 
->[AZURE.NOTE] <br/> 1. Ignorieren Sie die API-Stammadresse, diese galt für die vorherigen APIs.<br/> 2. Sie müssen den Namen der Anwendungsressource verwenden, der sich vom Namen der Anwendung selbst unterscheidet.
-
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0224_2016-->

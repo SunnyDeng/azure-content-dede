@@ -13,14 +13,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="01/15/2016"
+   ms.date="02/22/2016"
    ms.author="tomfitz"/>
 
 # Vorlagenfunktionen im Azure-Ressourcen-Manager
 
 Dieses Thema beschreibt alle Funktionen, die Sie in einer Azure Resource Manager-Vorlage verwenden können.
 
-Bei Vorlagenfunktionen und ihren Parametern wird Groß-und Kleinschreibung nicht unterschieden. Der Ressourcen-Manager löst beispielsweise **variables('var1')** und **VARIABLES('VAR1')** identisch auf. Bei der Auswertung wird die Groß-/Kleinschreibung beibehalten, sofern diese nicht ausdrücklich durch die Funktion geändert wird (z. B. mit „toUpper“ oder „toLower“). Für spezielle Ressourcentypen gelten möglicherweise Vorgaben zur Schreibweise ungeachtet der Auswertungsweise von Funktionen.
+Bei Vorlagenfunktionen und ihren Parametern wird Groß-und Kleinschreibung nicht unterschieden. Der Ressourcen-Manager löst beispielsweise **variables('var1')** und **VARIABLES('VAR1')** identisch auf. Bei der Auswertung wird die Groß-/Kleinschreibung beibehalten, sofern diese nicht ausdrücklich durch die Funktion geändert wird (z. B. mit „toUpper“ oder „toLower“). Für spezielle Ressourcentypen gelten möglicherweise Vorgaben zur Schreibweise ungeachtet der Auswertungsweise von Funktionen.
 
 ## Numerische Funktionen
 
@@ -472,7 +472,7 @@ Informationen zum Abrufen von Werten aus Ressourcen, Ressourcengruppen oder Abon
 
 Gibt Informationen zum aktuellen Bereitstellungsvorgang zurück.
 
-Diese Funktion gibt das Objekt zurück, das während der Bereitstellung übergeben wird. Die Eigenschaften im zurückgegebenen Objekt hängen davon ab, ob das Bereitstellungsobjekt als Link oder als Inline-Objekt übergeben wird. Wenn das Bereitstellungsobjekt als Inlineobjekt übergeben wird, z. B. bei Verwendung des **-TemplateFile**-Parameters in Azure PowerShell zum Verweisen auf eine lokale Datei, hat das zurückgegebene Objekt folgendes Format:
+Diese Funktion gibt das Objekt zurück, das während der Bereitstellung übergeben wird. Die Eigenschaften im zurückgegebenen Objekt hängen davon ab, ob das Bereitstellungsobjekt als Link oder als Inline-Objekt übergeben wird. Wenn das Bereitstellungsobjekt als Inlineobjekt übergeben wird, z. B. bei Verwendung des **-TemplateFile**-Parameters in Azure PowerShell zum Verweisen auf eine lokale Datei, hat das zurückgegebene Objekt folgendes Format:
 
     {
         "name": "",
@@ -490,7 +490,7 @@ Diese Funktion gibt das Objekt zurück, das während der Bereitstellung übergeb
         }
     }
 
-Wenn das Objekt als Link übergeben wird, z. B. bei Verwendung des **-TemplateUri**-Parameters zum Verweisen auf ein Remoteobjekt, hat das zurückgegebene Objekt folgendes Format:
+Wenn das Objekt als Link übergeben wird, z. B. bei Verwendung des **-TemplateUri**-Parameters zum Verweisen auf ein Remoteobjekt, hat das zurückgegebene Objekt folgendes Format:
 
     {
         "name": "",
@@ -556,6 +556,7 @@ Gibt den Wert der Variablen zurück. Der angegebene Variablenname muss im Variab
 Der Ressourcen-Manager stellt die folgenden Funktionen zum Abrufen von Ressourcenwerten bereit:
 
 - [listkeys](#listkeys)
+- [list*](#list)
 - [providers](#providers)
 - [Referenz](#reference)
 - [Ressourcengruppe](#resourcegroup)
@@ -569,12 +570,12 @@ Informationen zum Abrufen von Werten aus Parametern, Variablen oder der aktuelle
 
 **listKeys (resourceName oder resourceIdentifier, [apiVersion])**
 
-Gibt die Schlüssel eines Speicherkontos zurück. Die Ressourcen-ID kann mithilfe der [Ressourcen-ID-Funktion](./#resourceid) oder mithilfe des Formats **providerNamespaces/resourceType/resourceName** angegeben werden. Sie können die Funktion nutzen um den Primär- und Sekundärschlüssel abzurufen.
+Gibt den Schlüssel für einen beliebigen Ressourcentyp zurück, der den listKeys-Vorgang unterstützt. Die Ressourcen-ID kann mithilfe der [Ressourcen-ID-Funktion](./#resourceid) oder mithilfe des Formats **providerNamespaces/resourceType/resourceName** angegeben werden. Sie können die Funktion nutzen um den Primär- und Sekundärschlüssel abzurufen.
   
 | Parameter | Erforderlich | Beschreibung
 | :--------------------------------: | :------: | :----------
-| resourceName oder resourceIdentifier | Ja | Eindeutiger Bezeichner eines Speicherkontos.
-| "apiVersion": | Ja | API-Version eines Ressourcen-Laufzeitstatus.
+| resourceName oder resourceIdentifier | Ja | Eindeutiger Bezeichner für die Ressource.
+| apiVersion | Ja | API-Version eines Ressourcen-Laufzeitstatus.
 
 Das folgende Beispiel zeigt, wie die Schlüssel von einem Speicherkonto in die Ausgabeabschnitte zurückgegeben werden können.
 
@@ -584,6 +585,19 @@ Das folgende Beispiel zeigt, wie die Schlüssel von einem Speicherkonto in die A
         "type" : "object" 
       } 
     } 
+
+<a id="list" />
+### list*
+
+**list* (resourceName oder resourceIdentifier, apiVersion)**
+
+Jeder Vorgang, der mit **list** beginnt, kann als Funktion in der Vorlage verwendet werden. Dies schließt **listKeys** ein, wie oben gezeigt, aber auch Vorgänge wie **list**, **listAdminKeys** oder **listStatus**. Verwenden Sie zum Aufrufen der Funktion ihren tatsächlichen Namen, nicht „list*“. Um zu bestimmen, welche Ressourcentypen einen list-Vorgang aufweisen, verwenden Sie den folgenden PowerShell-Befehl.
+
+    PS C:\> Get-AzureRmProviderOperation -OperationSearchString *  | where {$_.Operation -like "*list*"} | FT Operation
+
+Stattdessen können Sie die Liste auch über die Azure-Befehlszeilenschnittstelle abrufen. Das folgende Beispiel ruft alle Vorgänge für **apiapps** ab und verwendet das JSON-Dienstprogramm [jq](http://stedolan.github.io/jq/download/), um nur die list-Vorgänge zu filtern.
+
+    azure provider operations show --operationSearchString */apiapps/* --json | jq ".[] | select (.operation | contains("list"))"
 
 <a id="providers" />
 ### providers
@@ -792,4 +806,4 @@ Das folgende Beispiel zeigt ein Abrufen der Abonnement-Funktion im Ausgabeabschn
 - Informationen dazu, wie Sie beim Erstellen eines Ressourcentyps eine bestimmte Anzahl von Durchläufen ausführen, finden Sie unter [Erstellen mehrerer Instanzen von Ressourcen im Azure-Ressourcen-Manager](resource-group-create-multiple.md).
 - Informationen zum Bereitstellen der erstellten Vorlage finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](resource-group-template-deploy.md).
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0224_2016-->

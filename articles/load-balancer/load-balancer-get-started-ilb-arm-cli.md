@@ -19,9 +19,11 @@
 
 # Erste Schritte zum Erstellen eines internen Load Balancers mithilfe der Azure-Befehlszeilenschnittstelle
 
-[AZURE.INCLUDE [load-balancer-get-started-ilb-arm-selectors-include.md](../../includes/load-balancer-get-started-ilb-arm-selectors-include.md)]<BR>[AZURE.INCLUDE [load-balancer-get-started-ilb-intro-include.md](../../includes/load-balancer-get-started-ilb-intro-include.md)]
+[AZURE.INCLUDE [load-balancer-get-started-ilb-arm-selectors-include.md](../../includes/load-balancer-get-started-ilb-arm-selectors-include.md)]
+<BR>
+[AZURE.INCLUDE [load-balancer-get-started-ilb-intro-include.md](../../includes/load-balancer-get-started-ilb-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](load-balancer-get-started-ilb-classic-cli.md).
+[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/learn-about-deployment-models-rm-include.md)] [klassisches Bereitstellungsmodell](load-balancer-get-started-ilb-classic-cli.md).
 
 [AZURE.INCLUDE [load-balancer-get-started-ilb-scenario-include.md](../../includes/load-balancer-get-started-ilb-scenario-include.md)]
 
@@ -103,7 +105,12 @@ Erstellen Sie eine Front-End-IP-Adresse für den internen Load Balancer. Die ver
 
 Verwendete Parameter:
 
-**-g:** Ressourcengruppe **-l**: Name der internen Load Balancer-Gruppe **-n:** Name der Front-End-IP-Adresse **-a:** private IP-Adresse innerhalb des Subnetzbereichs **-e:** Subnetzname **-m:** Name des virtuellen Netzwerks
+**-g:** Ressourcengruppe 
+**-l**: Name der internen Load Balancer-Gruppe 
+**-n:** Name der Front-End-IP-Adresse 
+**-a:** private IP-Adresse innerhalb des Subnetzbereichs 
+**-e:** Subnetzname 
+**-m:** Name des virtuellen Netzwerks
 
 ### Schritt 3 
 
@@ -113,7 +120,9 @@ Erstellen Sie den Back-End-Adresspool.
 
 Verwendete Parameter:
 
-**-g:** Ressourcengruppe **-l:** Name der internen Load Balancer-Gruppe **-n:** Name des Back-End-Adresspools
+**-g:** Ressourcengruppe 
+**-l:** Name der internen Load Balancer-Gruppe 
+**-n:** Name des Back-End-Adresspools
 
 Nach der Definition einer Front-End-IP-Adresse und eines Back-End-Adresspools können Sie Load Balancer-Regeln und NAT-Eingangsregeln erstellen und Integritätstests anpassen.
 
@@ -126,7 +135,12 @@ Erstellen Sie eine Load Balancer-Regel für den internen Load Balancer. Im oben 
 
 Verwendete Parameter:
 
-**-g:** Ressourcengruppe **-l:** Name der internen Load Balancer-Gruppe **-n:** Name der Load Balancer-Regel **-p:** Protokoll für die Regel **-f:** Port, an dem auf eingehenden Netzwerkdatenverkehr im Load Balancer-Front-End gelauscht wird **-b:** Port, an dem Netzwerkdatenverkehr im Back-End-Adresspool empfangen wird
+**-g:** Ressourcengruppe 
+**-l:** Name der internen Load Balancer-Gruppe 
+**-n:** Name der Load Balancer-Regel 
+**-p:** Protokoll für die Regel 
+**-f:** Port, an dem auf eingehenden Netzwerkdatenverkehr im Load Balancer-Front-End gelauscht wird 
+**-b:** Port, an dem Netzwerkdatenverkehr im Back-End-Adresspool empfangen wird
 
 ### Schritt 5
 
@@ -138,7 +152,12 @@ Erstellen Sie eingehende NAT-Regeln. Mit eingehenden NAT-Regeln werden Endpunkte
 
 Verwendete Parameter:
 
-**-g:** Ressourcengruppe **-l:** Name der internen Load Balancer-Gruppe **-n:** Name der eingehenden NAT-Regel **-p**: Protokoll für die Regel **-f:** Port, an dem auf eingehenden Netzwerkdatenverkehr im Load Balancer-Front-End gelauscht wird **-b:** Port, an dem Netzwerkdatenverkehr im Back-End-Adresspool empfangen wird
+**-g:** Ressourcengruppe 
+**-l:** Name der internen Load Balancer-Gruppe 
+**-n:** Name der eingehenden NAT-Regel 
+**-p**: Protokoll für die Regel 
+**-f:** Port, an dem auf eingehenden Netzwerkdatenverkehr im Load Balancer-Front-End gelauscht wird 
+**-b:** Port, an dem Netzwerkdatenverkehr im Back-End-Adresspool empfangen wird
 
 ### Schritt 5 
 
@@ -146,7 +165,12 @@ Erstellen Sie Integritätstests für den Load Balancer. Eine Integritätstest ü
 
 	azure network lb probe create -g nrprg -l ilbset -n ilbprobe -p tcp -i 300 -c 4
 
-**-g:** Ressourcengruppe **-l:** Name der internen Load Balancer-Gruppe **-n:** Name des Integritätstests **-p:** Protokoll für den Integritätstest **-i:** Testintervall in Sekunden **-c:** Anzahl der Prüfungen
+**-g:** Ressourcengruppe 
+**-l:** Name der internen Load Balancer-Gruppe 
+**-n:** Name des Integritätstests 
+**-p:** Protokoll für den Integritätstest 
+**-i:** Testintervall in Sekunden 
+**-c:** Anzahl der Prüfungen
 
 >[AZURE.NOTE] Die Microsoft Azure-Plattform nutzt eine statische, öffenlich routingfähige IPv4-Adresse für eine Vielzahl von administrativen Szenarien. Die IP-Adresse lautet 168.63.129.16. Diese IP-Adresse sollte nicht durch Firewalls blockiert werden, da dies zu unerwartetem Verhalten führen kann. In Bezug auf den internen Lastenausgleich in Azure wird diese IP-Adresse von Überwachungstests aus dem Lastenausgleich verwendet, um den Integritätsstatus von virtuellen Computern in einer Lastenausgleichsgruppe zu bestimmen. Wenn eine Netzwerksicherheitsgruppe verwendet wird, um den Datenverkehr auf virtuellen Azure-Computern in einer internen Lastenausgleichsgruppe einzuschränken, oder wenn eine Netzwerksicherheitsgruppe einem Subnetz eines virtuellen Netzwerks zugewiesen ist, stellen Sie sicher, dass eine Netzwerksicherheitsregel hinzugefügt wird, um Datenverkehr von 168.63.129.16 zuzulassen.
 

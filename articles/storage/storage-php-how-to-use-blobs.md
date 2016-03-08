@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="PHP"
 	ms.topic="article"
-	ms.date="02/08/2016"
+	ms.date="02/17/2016"
 	ms.author="tomfitz"/>
 
 # Verwenden des Blob-Speichers mit PHP
@@ -42,7 +42,7 @@ In diesem Leitfaden verwenden Sie Dienstfunktionen, die lokal innerhalb einer PH
 
 Zum Verwenden der Azure-Blob-Dienst-APIs müssen Sie Folgendes durchführen:
 
-1. Verweisen Sie mithilfe der [require\_once][require_once]-Anweisung auf die Autoloaderdatei und
+1. Verweisen Sie mithilfe der [require\_once]-Anweisung auf die Autoloaderdatei und
 2. Verweisen Sie auf alle Klassen, die Sie möglicherweise verwenden.
 
 Das folgende Beispiel zeigt, wie die Autoloaderdatei eingeschlossen und die **ServicesBuilder**-Klasse referenziert wird.
@@ -291,9 +291,9 @@ Um schließlich einen Blob-Container zu löschen, geben Sie den Containernamen a
 Nachdem Sie sich nun mit den Grundlagen des Azure-Blob-Diensts vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
 
 - Besuchen Sie den [Blog des Azure-Speicherteams](http://blogs.msdn.com/b/windowsazurestorage/)
-- Ein PHP-Block-Blob-Beispiel finden Sie unter <https://github.com/WindowsAzure/azure-sdk-for-php-samples/blob/master/storage/BlockBlobExample.php>.
-- Ein PHP-Seiten-Blob-Beispiel finden Sie unter <https://github.com/WindowsAzure/azure-sdk-for-php-samples/blob/master/storage/PageBlobExample.php>
-- [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy)
+- Sehen Sie sich das [PHP-Blockblob-Beispiel](https://github.com/WindowsAzure/azure-sdk-for-php-samples/blob/master/storage/BlockBlobExample.php) an.
+- Sehen Sie sich das [PHP-Seitenblob-Beispiel](https://github.com/WindowsAzure/azure-sdk-for-php-samples/blob/master/storage/PageBlobExample.php) an.
+- [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy.md)
  
 Weitere Informationen finden Sie außerdem im [PHP Developer Center](/develop/php/).
 
@@ -302,8 +302,8 @@ Weitere Informationen finden Sie außerdem im [PHP Developer Center](/develop/ph
 [container-acl]: http://msdn.microsoft.com/library/azure/dd179391.aspx
 [error-codes]: http://msdn.microsoft.com/library/azure/dd179439.aspx
 [file_get_contents]: http://php.net/file_get_contents
-[require_once]: http://php.net/require_once
+[require\_once]: http://php.net/require_once
 [fopen]: http://www.php.net/fopen
 [stream-get-contents]: http://www.php.net/stream_get_contents
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0224_2016-->

@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="02/11/2016"
+	ms.date="03/01/2016"
 	ms.author="awills"/>
 
 # Überwachen der Verfügbarkeit und Reaktionsfähigkeit von Websites
@@ -28,6 +28,7 @@ Es gibt zwei Arten von Webtests:
 * [URL-Pingtest](#set-up-a-url-ping-test): Dies ist ein einfacher Test, den Sie im Azure-Portal erstellen können.
 * [Mehrstufiger Webtest](#multi-step-web-tests): Diesen Test erstellen Sie in Visual Studio Ultimate oder Visual Studio Enterprise und laden ihn in das Portal hoch.
 
+Sie können bis zu zehn Webtests pro Anwendungsressource erstellen.
 
 
 ## Einrichten eines URL-Pingtests
@@ -48,7 +49,7 @@ Suchen Sie in der Application Insights-Ressource nach der Kachel "Verfügbarkeit
 
 ![Mindestens die URL der Website eintragen](./media/app-insights-monitor-web-app-availability/13-availability.png)
 
-- **Die URL** muss vom öffentlichen Internet aus sichtbar sein. Sie kann auch eine Abfragezeichenfolge enthalten, sodass Sie beispielsweise Ihre Datenbank abfragen können. Wenn die URL in eine Umleitung aufgelöst wird, folgen wir ihr bis zu 10 Umleitungen.
+- **Die URL** muss vom öffentlichen Internet aus sichtbar sein. Sie kann auch eine Abfragezeichenfolge enthalten, sodass Sie beispielsweise Ihre Datenbank abfragen können. Wenn die URL in eine Umleitung aufgelöst wird, folgen wir ihr bis zu 10 Umleitungen.
 - **Abhängige Anforderungen analysieren**: Bilder, Skripts, Styledateien und andere Ressourcen der Seite werden als Teil des Tests angefordert. Der Test schlägt fehl, wenn alle diese Ressourcen innerhalb des Zeitlimits für den gesamten Test nicht erfolgreich heruntergeladen werden können.
 - **Wiederholungen aktivieren**: Wenn der Test fehlschlägt, wird er nach kurzer Zeit wiederholt. Nur wenn drei aufeinander folgende Versuche scheitern, wird ein Fehler gemeldet. Nachfolgende Tests werden dann in der üblichen Häufigkeit ausgeführt. Die Wiederholung wird bis zum nächsten Erfolg vorübergehend eingestellt. Diese Regel wird an jedem Teststandort unabhängig angewendet. (Diese Einstellung wird empfohlen. Im Durchschnitt verschwinden ca. 80 % der Fehler bei einer Wiederholung.)
 - **Testhäufigkeit**: Legt fest, wie oft der Test von jedem Teststandort aus ausgeführt wird. Mit einer Frequenz von 5 Minuten und fünf Teststandorten wird Ihre Website im Durchschnitt jede Minute getestet.
@@ -94,7 +95,7 @@ Klicken Sie auf einen roten Punkt.
 
 ![Auf einen roten Punkt klicken](./media/app-insights-monitor-web-app-availability/14-availRedDot.png)
 
-Oder führen Sie einen Bildlauf nach unten durch, und klicken Sie auf einen Test, bei dem der Erfolg kleiner als 100 % ist.
+Oder führen Sie einen Bildlauf nach unten durch, und klicken Sie auf einen Test, bei dem der Erfolg kleiner als 100 % ist.
 
 ![Auf bestimmten Webtest klicken](./media/app-insights-monitor-web-app-availability/15-webTestList.png)
 
@@ -102,7 +103,7 @@ Die Ergebnisse für diesen Test werden angezeigt.
 
 ![Auf bestimmten Webtest klicken](./media/app-insights-monitor-web-app-availability/16-1test.png)
 
-Der Test wird von verschiedenen Standorten aus ausgeführt. Wählen Sie einen davon aus, bei dem die Ergebnisse bei unter 100 % liegen.
+Der Test wird von verschiedenen Standorten aus ausgeführt. Wählen Sie einen davon aus, bei dem die Ergebnisse bei unter 100 % liegen.
 
 ![Auf bestimmten Webtest klicken](./media/app-insights-monitor-web-app-availability/17-availViewDetails.png)
 
@@ -246,6 +247,10 @@ Sie können Webtests beispielsweise deaktivieren, während Sie Wartungsarbeiten 
 
     Wir verwenden die beiden Begriffe synonym.
 
+* *Ich möchte Verfügbarkeitstests auf unserem internen Server verwenden, der hinter einer Firewall ausgeführt wird.*
+
+    Konfigurieren Sie die Firewall, um Anfragen von den IP-Adressen in der Liste am Ende dieses Artikels zuzulassen.
+
 ## <a name="video"></a>Video
 
 > [AZURE.VIDEO monitoring-availability-with-application-insights]
@@ -257,6 +262,124 @@ Sie können Webtests beispielsweise deaktivieren, während Sie Wartungsarbeiten 
 [Problembehandlung][qna]
 
 
+## IP-Adressen von Webtests
+
+Wenn Sie eine Firewall zum Zulassen von Webtests öffnen müssen, sehen Sie sich die aktuelle Liste der IP-Adressen an. Sie kann sich von Zeit zu Zeit ändern.
+
+Öffnen Sie Port 80 (http) und 443 (https).
+
+```
+
+213.199.178.54
+213.199.178.55
+213.199.178.56
+213.199.178.61
+213.199.178.57
+213.199.178.58
+213.199.178.59
+213.199.178.60
+213.199.178.63
+213.199.178.64
+207.46.98.158
+207.46.98.159
+207.46.98.160
+207.46.98.157
+207.46.98.152
+207.46.98.153
+207.46.98.156
+207.46.98.162
+207.46.98.171
+207.46.98.172
+65.55.244.40
+65.55.244.17
+65.55.244.42
+65.55.244.37
+65.55.244.15
+65.55.244.16
+65.55.244.44
+65.55.244.18
+65.55.244.46
+65.55.244.47
+207.46.14.60
+207.46.14.61
+207.46.14.62
+207.46.14.55
+207.46.14.63
+207.46.14.64
+207.46.14.51
+207.46.14.52
+207.46.14.56
+207.46.14.65
+157.55.14.60
+157.55.14.61
+157.55.14.62
+157.55.14.47
+157.55.14.64
+157.55.14.65
+157.55.14.43
+157.55.14.44
+157.55.14.49
+157.55.14.50
+65.54.66.56
+65.54.66.57
+65.54.66.58
+65.54.66.61
+207.46.71.54
+207.46.71.52
+207.46.71.55
+207.46.71.38
+207.46.71.51
+207.46.71.57
+207.46.71.58
+207.46.71.37
+202.89.228.67
+202.89.228.68
+202.89.228.69
+202.89.228.57
+65.54.78.49
+65.54.78.50
+65.54.78.51
+65.54.78.54
+94.245.82.32
+94.245.82.33
+94.245.82.37
+94.245.82.38
+94.245.72.44
+94.245.72.45
+94.245.72.46
+94.245.72.49
+207.46.56.57
+207.46.56.58
+207.46.56.59
+207.46.56.67
+207.46.56.61
+207.46.56.62
+207.46.56.63
+207.46.56.64
+65.55.82.84
+65.55.82.85
+65.55.82.86
+65.55.82.81
+65.55.82.87
+65.55.82.88
+65.55.82.89
+65.55.82.90
+65.55.82.91
+65.55.82.92
+94.245.78.40
+94.245.78.41
+94.245.78.42
+94.245.78.45
+70.37.147.43
+70.37.147.44
+70.37.147.45
+70.37.147.48
+94.245.66.43
+94.245.66.44
+94.245.66.45
+94.245.66.48
+
+```
 
 
 <!--Link references-->
@@ -266,4 +389,4 @@ Sie können Webtests beispielsweise deaktivieren, während Sie Wartungsarbeiten 
 [qna]: app-insights-troubleshoot-faq.md
 [start]: app-insights-overview.md
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -1,10 +1,10 @@
 <properties
-   pageTitle="Verwendung des Office 365-Connectors in Logik-Apps | Microsoft Azure App Service"
-   description="Erstellen und Konfigurieren des Office 365-Connectors oder einer API-App und Verwenden in einer Logik-App in Azure App Service"
+   pageTitle="Verwendung des Office 365-Connectors in Logik-Apps | Microsoft Azure App Service"
+   description="Erstellen und Konfigurieren des Office 365-Connectors oder einer API-App und Verwenden in einer Logik-App in Azure App Service"
    services="app-service\logic"
    documentationCenter=".net,nodejs,java"
    authors="anuragdalmia"
-   manager="dwrede"
+   manager="erikre"
    editor=""/>
 
 <tags
@@ -13,14 +13,16 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="11/30/2015"
+   ms.date="02/10/2016"
    ms.author="sameerch"/>
 
 
-# Erste Schritte mit dem Office 365-Connector und das Hinzufügen zur Logik-App
-Stellen Sie eine Verbindung mit Ihrem Office 365-Konto her, um E-Mails zu senden und zu empfangen und um Kalender und Kontakt zu verwalten. Sie können verschiedene Aktionen wie z. B. das Senden und Empfangen von E-Mails, das Erstellen und Löschen von Ereignissen in Ihrem Kalender sowie das Erstellen, Aktualisieren und Löschen von Kontakten durchführen.
+# Erste Schritte mit dem Office 365-Connector und das Hinzufügen zur Logik-App
+>[AZURE.NOTE] Diese Version des Artikels gilt für die Logik-Apps-Schemaversion 2014-12-01-preview.
 
-Logik-Apps können basierend auf einer Vielzahl von Datenquellen ausgelöst werden und Connectors anbieten, um Daten als Teil des Datenflusses abzurufen und zu verarbeiten. Sie können den Office 365-Connector dem geschäftlichen Workflow hinzufügen und Daten im Rahmen dieses Workflows in einer Logik-App verarbeiten.
+Stellen Sie eine Verbindung mit Ihrem Office 365-Konto her, um E-Mails zu senden und zu empfangen und um Kalender und Kontakt zu verwalten. Sie können verschiedene Aktionen wie z. B. das Senden und Empfangen von E-Mails, das Erstellen und Löschen von Ereignissen in Ihrem Kalender sowie das Erstellen, Aktualisieren und Löschen von Kontakten durchführen.
+
+Logik-Apps können basierend auf einer Vielzahl von Datenquellen ausgelöst werden und Connectors anbieten, um Daten als Teil des Datenflusses abzurufen und zu verarbeiten. Sie können den Office 365-Connector dem geschäftlichen Workflow hinzufügen und Daten im Rahmen dieses Workflows in einer Logik-App verarbeiten.
 
 **Grundlegende Aktionen**
 
@@ -34,8 +36,8 @@ Logik-Apps können basierend auf einer Vielzahl von Datenquellen ausgelöst werd
 Ein Connector kann innerhalb einer Logik-App erstellt werden oder direkt aus dem Azure Marketplace. So erstellen Sie einen Connector aus dem Marketplace:
 
 1. Wählen Sie im Azure-Startmenü **Marketplace** aus.
-2. Suchen Sie nach dem "Office 365-Connector", wählen Sie ihn aus, und klicken Sie dann auf **Erstellen**.
-3.	Konfigurieren Sie den Office 365-Connector, indem Sie die Informationen für den Hostingplan und die Ressourcengruppe angeben und einen Namen für die API-App auswählen: ![][21]
+2. Suchen Sie nach dem "Office 365-Connector", wählen Sie ihn aus, und klicken Sie dann auf **Erstellen**.
+3.	Konfigurieren Sie den Office 365-Connector, indem Sie die Informationen für den Hostingplan und die Ressourcengruppe angeben und einen Namen für die API-App auswählen: ![][21]
 
 
 ## Erstellen einer Logik-App
@@ -47,20 +49,20 @@ Wir erstellen eine einfache Logik-App, die ausgelöst wird, sobald eine E-Mail (
 
 3.	Klicken Sie auf "Trigger und Aktionen", um den Logik-App-Editor zu öffnen: ![][3]
 
-4.	Wählen Sie den Office 365-Trigger aus dem Abschnitt "API-Apps in dieser Ressourcengruppe" im Katalog, um ihn dem Datenfluss hinzufügen: ![][4]
+4.	Wählen Sie den Office 365-Trigger aus dem Abschnitt "API-Apps in dieser Ressourcengruppe" im Katalog, um ihn dem Datenfluss hinzufügen: ![][4]
 
-6.	Zum Herstellen einer Verbindung mit Office 365 müssen Sie die Logik-App für den Zugriff auf Ihr Konto autorisieren. Klicken Sie auf "Autorisieren", um Office 365-Anmeldeinformationen bereitzustellen: ![][5]
+6.	Zum Herstellen einer Verbindung mit Office 365 müssen Sie die Logik-App für den Zugriff auf Ihr Konto autorisieren. Klicken Sie auf "Autorisieren", um Office 365-Anmeldeinformationen bereitzustellen: ![][5]
 
-7.	Sie werden zur Office 365-Anmeldeseite umgeleitet und können sich mit den Anmeldeinformationen für Ihr Office 365-Konto authentifizieren: ![][6] ![][7]
+7.	Sie werden zur Office 365-Anmeldeseite umgeleitet und können sich mit den Anmeldeinformationen für Ihr Office 365-Konto authentifizieren: ![][6] ![][7]
 
-8.	Sobald die Autorisierung abgeschlossen ist, werden die Office 365-Trigger angezeigt: ![][8]
+8.	Sobald die Autorisierung abgeschlossen ist, werden die Office 365-Trigger angezeigt: ![][8]
 
 9.	Wählen Sie den Trigger "Neue E-Mail", und die Eingabeparameter werden angezeigt.
 
 
 10.	Ändern Sie die Häufigkeit des Triggers in "Minuten", und klicken Sie auf ✓: ![][9]
 
-11. Der Office 365-Trigger "Neue E-Mail" wird konfiguriert, und die Ausgabeparameter werden angezeigt: ![][10]
+11. Der Office 365-Trigger "Neue E-Mail" wird konfiguriert, und die Ausgabeparameter werden angezeigt: ![][10]
 
 12.	Wählen Sie im Katalog im Abschnitt "Zuletzt verwendet" den Eintrag "Office 365-Connector". Eine neue "Office 365"-Aktion wird hinzugefügt.
 
@@ -100,7 +102,7 @@ Wir erstellen eine einfache Logik-App, die ausgelöst wird, sobald eine E-Mail (
 ## Mehr mit Ihrem Connector machen
 Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
-> [AZURE.NOTE]Wenn Sie Azure Logik-Apps ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [Logik-App testen](https://tryappservice.azure.com/?appservice=logic) sofort kostenlos eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+> [AZURE.NOTE] Wenn Sie Azure Logik-Apps ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [Logik-App testen](https://tryappservice.azure.com/?appservice=logic) sofort kostenlos eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
 
@@ -129,4 +131,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [20]: ./media/app-service-logic-connector-office365/20_Office365_Send_Configured.png
 [21]: ./media/app-service-logic-connector-office365/21-create-new-o365-api-app.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0224_2016-->

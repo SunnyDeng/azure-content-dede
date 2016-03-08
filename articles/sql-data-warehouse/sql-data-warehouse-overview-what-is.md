@@ -10,10 +10,10 @@
 <tags
    ms.service="sql-data-warehouse"
    ms.devlang="NA"
-   ms.topic="article"
+   ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="02/09/2016"
+   ms.date="02/25/2016"
    ms.author="lodipalm;barbkess;mausher;jrj;sonyama;"/>
 
 
@@ -87,21 +87,21 @@ Generell möchten wir DWUs einfach halten. Falls Sie schnellere Ergebnisse benö
 
 - Damit Sie verstehen, wie Ihr idealer DWU-Wert lautet, sollten Sie versuchsweise hoch- und herunterskalieren und nach dem Laden der Daten einige Abfragen ausführen. Da die Skalierung schnell geht, können Sie es mit mehreren unterschiedlichen Leistungsebenen probieren, ohne dass dies länger als eine Stunde dauert.
 
-> [AZURE.NOTE] Beachten Sie Folgendes: Aufgrund der Architektur bzw. von SQL Data Warehouse erzielen Sie bei kleineren Datenvolumen unter Umständen nicht die erwartete Leistungsskalierung. Wir empfehlen Ihnen, mit Datenvolumen von 1 TB oder höher zu beginnen, um bei Leistungstests genaue Ergebnisse zu erzielen.
+> [AZURE.NOTE] Beachten Sie Folgendes: Aufgrund der Architektur bzw. von SQL Data Warehouse erzielen Sie bei kleineren Datenvolumen unter Umständen nicht die erwartete Leistungsskalierung. Wir empfehlen Ihnen, mit Datenvolumen von 1 TB oder höher zu beginnen, um bei Leistungstests genaue Ergebnisse zu erzielen.
 
 ## Integriert
 
 SQL Data Warehouse basiert auf dem bewährten relationalen Datenbankmodul von SQL Server und enthält viele Features, die Sie von einem Data Warehouse für Unternehmen erwarten. Wenn Sie Transact-SQL bereits kennen, ist es einfach, Ihr Wissen zu SQL Data Warehouse zu übertragen. Die Beispiele in der gesamten Dokumentation stellen für Fortgeschrittene und Anfänger gleichermaßen eine gute Starthilfe dar. Sie können sich den Aufbau der Sprachelemente von SQL Data Warehouse generell wie folgt vorstellen:
 
-- Für SQL Data Warehouse wird die Transact-SQL-Syntax (T-SQL) von SQL Server für viele Vorgänge verwendet. Außerdem werden viele herkömmliche SQL-Konstrukte unterstützt, z. B. gespeicherte Prozeduren, benutzerdefinierte Funktionen, Tabellenpartitionierung, Indizes und Sortierungen.
+- Für SQL Data Warehouse wird die Transact-SQL-Syntax (T-SQL) von SQL Server für viele Vorgänge verwendet. Außerdem werden viele herkömmliche SQL-Konstrukte unterstützt, z. B. gespeicherte Prozeduren, benutzerdefinierte Funktionen, Tabellenpartitionierung, Indizes und Sortierungen.
 
-- SQL Data Warehouse enthält auch eine Reihe von hochmodernen SQL Server-Features, z. B. in Clustern gruppierte Columnstore-Indizes, PolyBase-Integration und Datenüberwachung (mit Bedrohungsbewertung).
+- SQL Data Warehouse enthält auch eine Reihe von hochmodernen SQL Server-Features, z. B. in Clustern gruppierte Columnstore-Indizes, PolyBase-Integration und Datenüberwachung (mit Bedrohungsbewertung).
 
 - Da sich SQL Data Warehouse noch in der Entwicklung befindet, sind bestimmte T-SQL-Sprachelemente, die für Data Warehousing-Workloads weniger üblich oder für SQL Server neu sind, unter Umständen derzeit nicht verfügbar. Weitere Informationen hierzu finden Sie in der Dokumentation zur Migration.
 
 Mit Transact-SQL und der Funktionskompatibilität zwischen SQL Server, SQL Data Warehouse, SQL-Datenbank und Analytic Platform System können Sie eine Lösung entwickeln, die Ihren Bedürfnissen entspricht. Sie können entscheiden, wo Ihre Daten basierend auf der Leistung, der Sicherheit und den Skalierungsanforderungen gespeichert werden sollen, und dann Daten bei Bedarf zwischen verschiedenen Systemen übertragen.
 
-Zusätzlich zur Übernahme des T-SQL-Oberflächenbereichs von SQL Server kann SQL Data Warehouse auch in viele Tools integriert werden, mit denen SQL Server-Benutzer ggf. vertraut sind. Wir haben den Schwerpunkt auf die Integration einiger Tools in SQL Data Warehouse gelegt, z. B.:
+Zusätzlich zur Übernahme des T-SQL-Oberflächenbereichs von SQL Server kann SQL Data Warehouse auch in viele Tools integriert werden, mit denen SQL Server-Benutzer ggf. vertraut sind. Wir haben den Schwerpunkt auf die Integration einiger Tools in SQL Data Warehouse gelegt, z. B.:
 
 **Herkömmliche SQL Server-Tools**: Eine vollständige Integration in SQL Server Analysis Services, Integration Services und Reporting Services ist für SQL Data Warehouse verfügbar.
 
@@ -140,4 +140,4 @@ Nachdem Sie jetzt einige Informationen zu SQL Data Warehouse erhalten haben, kö
 
 <!--Other Web references-->
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0302_2016-->

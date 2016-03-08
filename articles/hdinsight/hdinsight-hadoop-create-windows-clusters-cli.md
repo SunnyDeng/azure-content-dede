@@ -19,7 +19,7 @@
 
 # Erstellen Windows-basierter Hadoop-Cluster in HDInsight mit der Azure-Befehlszeilenschnittstelle
 
-[AZURE.INCLUDE [Auswahl](../../includes/hdinsight-create-windows-cluster-selector.md)]
+[AZURE.INCLUDE [Auswahl](../../includes/hdinsight-selector-create-clusters.md)]
 
 Erfahren Sie, wie Sie HDInsight-Cluster mit der Azure-Befehlszeilenschnittstelle erstellen. Andere Tools und Features zur Clustererstellung finden Sie, indem Sie oben auf dieser Seite auf die Registerkartenauswahl klicken, oder unter [Methoden zur Clustererstellung](hdinsight-provision-clusters.md#cluster-creation-methods).
 
@@ -50,7 +50,7 @@ Um Hilfe zu erhalten, verwenden Sie die Option **-h**. Beispiel:
 
 Sie benötigen zum Erstellen eines HDInsight-Clusters ein ARM- (Azure-Ressourcen-Manager) und ein Azure-Blobspeicherkonto. Zum Erstellen eines HDInsight-Clusters müssen Sie Folgendes angeben:
 
-- **Azure-Ressourcengruppe**: Ein Data Lake Analytics-Konto muss in einer Azure-Ressourcengruppe erstellt werden. Mit dem Azure-Ressourcen-Manager können Sie mit den Ressourcen in Ihrer Anwendung als Gruppe arbeiten. Sie können alle Ressourcen für Ihre Anwendung in einem einzigen, koordinierten Vorgang bereitstellen, aktualisieren oder löschen. 
+- **Azure-Ressourcengruppe**: Ein Data Lake Analytics-Konto muss in einer Azure-Ressourcengruppe erstellt werden. Mit dem Azure-Ressourcen-Manager können Sie mit den Ressourcen in Ihrer Anwendung als Gruppe arbeiten. Sie können alle Ressourcen für Ihre Anwendung in einem einzigen, koordinierten Vorgang bereitstellen, aktualisieren oder löschen. 
 
 	So führen Sie die Ressourcengruppen in Ihrem Abonnement auf:
 	
@@ -134,4 +134,4 @@ Sie können die Befehlszeilenschnittstelle zum Erstellen von Clustern verwenden,
 - [Verwalten von Hadoop-Clustern in HDInsight mit der Azure-Befehlszeilenschnittstelle](hdinsight-administer-use-command-line.md)
 - [Verwenden der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit der Azure-Dienstverwaltung](../virtual-machines/virtual-machines-command-line-tools.md)
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0224_2016-->

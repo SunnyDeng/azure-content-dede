@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery"
-	ms.date="12/01/2015"
+	ms.date="02/22/2016"
 	ms.author="raynew"/>
 
 
@@ -23,7 +23,7 @@ Azure Site Recovery unterstützt Ihre Strategie für Geschäftskontinuität und 
 
 In diesem Artikel wird die Netzwerkzuordnung beschrieben, die zum optimalen Konfigurieren von Netzwerkeinstellungen dient, und zwar bei Verwenden von Site Recovery zum Replizieren virtueller Hyper-V-Computer in VMM-Clouds zwischen zwei lokalen Datencentern oder zwischen einem lokalen Datencenter und Azure. Dieser Artikel ist nicht relevant, wenn Sie virtuelle Hyper-V-Computer ohne VMM-Cloud bzw. VMware-VMs oder physische Server replizieren.
 
-Sollten Sie nach der Lektüre dieses Artikels Fragen haben, können Sie diese im [Azure Recovery Services-Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr) stellen.
+Kommentare oder Fragen können Sie am Ende dieses Artikels oder im [Forum zu Azure Recovery Services](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr) veröffentlichen.
 
 
 ## Übersicht
@@ -70,8 +70,8 @@ Im Anschluss finden Sie Informationen zur Einrichtung der VMM-Clouds für unser 
 ---|---|---
 GoldCloud1 | GoldCloud2 |
 SilverCloud1| SilverCloud2 |
-GoldCloud2 | <p>k. A.</p><p></p> | <p>LogicalNetwork1-NewYork</p><p>LogicalNetwork1-Chicago</p>
-SilverCloud2 | <p>k. A.</p><p></p> | <p>LogicalNetwork1-NewYork</p><p>LogicalNetwork1-Chicago</p>
+GoldCloud2 | <p>k. A.</p><p></p> | <p>LogicalNetwork1-NewYork</p><p>LogicalNetwork1-Chicago</p>
+SilverCloud2 | <p>k. A.</p><p></p> | <p>LogicalNetwork1-NewYork</p><p>LogicalNetwork1-Chicago</p>
 
 ### Einstellungen für das logische und das VM-basierte Netzwerk
 
@@ -123,4 +123,4 @@ Keine Änderung der Netzwerkeigenschaften von VM-2 nach dem Failover | VM-1 blei
 
 Nachdem Sie sich mit Netzwerkzuordnung vertraut gemacht haben, können Sie sich mit der [Site Recovery-Bereitstellung beginnen](site-recovery-best-practices.md).
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0224_2016-->

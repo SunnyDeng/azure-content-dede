@@ -4,7 +4,7 @@
    services="app-service\logic"
    documentationCenter=".net,nodejs,java"
    authors="anuragdalmia"
-   manager="dwrede"
+   manager="erikre"
    editor=""/>
 
 <tags
@@ -13,12 +13,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="11/30/2015"
+   ms.date="02/11/2016"
    ms.author="sameerch"/>
 
 
 # Erste Schritte mit dem Microsoft SQL-Connector und das Hinzufügen zur Logik-App
-Stellen Sie eine Verbindung mit einem lokalen SQL Server oder einer Azure SQL-Datenbank her, um Informationen oder Daten zu erstellen oder zu ändern. Connectors können in Logik-Apps als Teil eines "Workflows" verwendet werden, um Daten abzurufen, zu verarbeiten oder per Pushvorgang zu übermitteln. Wenn Sie den SQL-Connector im Workflow verwenden, können Sie eine Vielzahl von Szenarios umsetzen. Dazu zählen z. B.:
+>[AZURE.NOTE] Diese Version des Artikels gilt für die Logik-Apps-Schemaversion 2014-12-01-preview. Um die Schemaversion 2015-08-01-preview aufzurufen, klicken Sie auf [SQL Azure-API](../connectors/create-api-sqlazure.md).
+
+Stellen Sie eine Verbindung mit einem lokalen SQL Server oder einer Azure SQL-Datenbank her, um Informationen oder Daten zu erstellen oder zu ändern. Connectors können in Logik-Apps als Teil eines "Workflows" verwendet werden, um Daten abzurufen, zu verarbeiten oder per Pushvorgang zu übermitteln. Wenn Sie den SQL-Connector im Workflow verwenden, können Sie eine Vielzahl von Szenarios umsetzen. Dazu zählen z. B.:
 
 - Machen Sie einen Teil der Daten in der SQL-Datenbank mithilfe einer Web- oder mobilen Anwendung verfügbar.
 - Einfügen von Daten in eine SQL-Datenbanktabelle zum Speichern. Sie können z. B. Mitarbeiterdatensätze eingeben, Aufträge aktualisieren, usw..
@@ -59,7 +61,7 @@ Name des Partnerservers | Nein | Wenn der primäre Server nicht verfügbar ist, 
 Tabellen | Nein | Listen Sie die Datenbanktabellen auf, die vom Connector aktualisiert werden können. Geben Sie z. B. *OrdersTable* oder *EmployeeTable* ein. Wenn keine Tabellen eingegeben werden, können alle Tabellen verwendet werden. Gültige Tabellen und/oder gespeicherte Prozeduren sind erforderlich, um diesen Connector als Aktion zu verwenden.
 Gespeicherte Prozeduren | Nein | Geben Sie eine vorhandene gespeicherte Prozedur ein, die vom Connector aufgerufen werden kann. Geben Sie z. B. *sp\_IsEmployeeEligible* oder *sp\_CalculateOrderDiscount* ein. Gültige Tabellen und/oder gespeicherte Prozeduren sind erforderlich, um diesen Connector als Aktion zu verwenden.
 Abfrage zu verfügbaren Daten | Für Trigger-Support | Die SQL-Anweisung, mit der bestimmt wird, ob Daten zum Abrufen einer SQL Server-Datenbanktabelle verfügbar sind. Dies sollte einen numerischen Wert für die Anzahl der Zeilen der verfügbaren Daten zurückgeben. Beispiel: SELECT COUNT(*) from table\_name.
- Abrufen der Datenabfrage | Unterstützung für Trigger | Die SQL-Anweisung zum Abrufen der SQL Server-Datenbanktabelle. Sie können eine beliebige Anzahl von SQL-Anweisungen durch ein Semikolon getrennt eingeben. Diese Anweisung wird im Hinblick auf Transaktionen ausgeführt und nur übernommen, wenn die Daten in Ihrer Logik-App sicher gespeichert sind. Beispiel: SELECT * FROM table\_name; DELETE FROM table\_name. <br/><br/>**Hinweis**<br/>Sie müssen eine Umfrageanweisung bereitstellen, die eine Endlosschleife durch Löschen, Verschieben oder Aktualisieren der ausgewählten Daten vermeidet, um sicherzustellen, dass die gleichen Daten nicht erneut abgefragt werden.
+Abrufen der Datenabfrage | Unterstützung für Trigger | Die SQL-Anweisung zum Abrufen der SQL Server-Datenbanktabelle. Sie können eine beliebige Anzahl von SQL-Anweisungen durch ein Semikolon getrennt eingeben. Diese Anweisung wird im Hinblick auf Transaktionen ausgeführt und nur übernommen, wenn die Daten in Ihrer Logik-App sicher gespeichert sind. Beispiel: SELECT * FROM table\_name; DELETE FROM table\_name. <br/><br/>**Hinweis**<br/>Sie müssen eine Umfrageanweisung bereitstellen, die eine Endlosschleife durch Löschen, Verschieben oder Aktualisieren der ausgewählten Daten vermeidet, um sicherzustellen, dass die gleichen Daten nicht erneut abgefragt werden.
 
 5. Nach Abschluss des Vorgangs sehen die Paketeinstellungen etwa wie folgt aus: ![][1]
 
@@ -102,13 +104,13 @@ Mithilfe unseres einfachen Logik-App-Szenarios, das Daten aus einer SQL-Tabelle 
 
 Für die Verwendung des SQL-Connectors als Aktion geben Sie den Namen der Tabellen und/oder gespeicherte Prozeduren ein, die Sie schon bei der Erstellung des SQL-Connectors eingegeben haben:
 
-1. Fügen Sie nach dem Trigger (oder wählen Sie "Diese Logik manuell ausführen") den aus dem Katalog erstellten SQL-Connector hinzu. Wählen Sie eine der Einfügeaktionen aus, z. B. *Insert Into TempEmployeeDetails (JSON)*:
+1. Fügen Sie nach dem Trigger (oder wählen Sie "Diese Logik manuell ausführen") den aus dem Katalog erstellten SQL-Connector hinzu. Wählen Sie eine der Einfügeaktionen aus, z. B. *Insert Into TempEmployeeDetails (JSON)*:
  ![][8]
 
 2. Geben Sie die einzufügenden Eingabewerte des Datensatzes ein, und klicken Sie auf ✓:
  ![][9]
 
-3. Wählen Sie aus dem Katalog denselben SQL-Connector aus, den Sie erstellt haben. Wählen Sie als Aktion die Updateaktion für die gleiche Tabelle aus, z. B. *Update EmployeeDetails*:
+3. Wählen Sie aus dem Katalog denselben SQL-Connector aus, den Sie erstellt haben. Wählen Sie als Aktion die Updateaktion für die gleiche Tabelle aus, z. B. *Update EmployeeDetails*:
  ![][11]
 
 4. Geben Sie die Eingabewerte für die Updateaktion ein, und klicken Sie auf ✓:
@@ -120,8 +122,8 @@ Sie können die Logik-App testen, indem Sie in der abgefragten Tabelle einen neu
 
 SQL-Abfrage | Unterstützt | Nicht unterstützt
 --- | --- | ---
-WHERE-Klausel | <ul><li>Operatoren: AND, OR, =, <>, <, <=, >, >= und LIKE</li><li>Mehrere Unterbedingungen können mithilfe von "(" und ")" kombiniert werden.</li><li>Zeichenfolgenliterale, Datetime (in einfache Anführungszeichen eingeschlossen), Zahlen (dürfen nur numerische Zeichen enthalten)</li><li>Muss unbedingt ein Binärausdruckformat haben wie ((Operand Operator Operand) UND/ODER (Operand Operator Operand))**</li></ul> | <ul><li>Operatoren: Between, IN</li><li>Alle integrierten Funktionen wie ADD(), MAX() NOW(), POWER() usw.</li><li>Mathematische Operatoren wie *, -, + usw.</li><li>Zeichenfolgenverkettungen unter Verwendung von +.</li><li>Alle Joins</li><li>IS NULL und IS NOT NULL</li><li>Zahlen mit nicht numerischen Zeichen, z. B. Hexadezimalzahlen</li></ul>
-Felder (in der SELECT-Abfrage) |<ul><li>Gültige Spaltennamen (durch Kommas getrennt). Präfixe sind für Tabellennamen unzulässig (der Connector wird stets nur auf eine Tabelle angewendet).</li><li>Namen können mit den Escapezeichen "[" und "]" versehen werden.</li></ul>|<ul><li>Schlüsselwörter wie TOP, DISTINCT usw.</li><li>Aliase wie Straße + Ort + PLZ AS Adresse</li><li>Alle integrierten Funktionen, z. B. ADD(), MAX() NOW(), POWER() usw.</li><li>Mathematische Operatoren wie *, -, + usw.</li><li>Zeichenfolgenverkettungen unter Verwendung von +</li></ul>
+WHERE-Klausel | <ul><li>Operatoren: AND, OR, =, <>, <, <=, >, >= und LIKE</li><li>Mehrere Unterbedingungen können mithilfe von "(" und ")" kombiniert werden.</li><li>Zeichenfolgenliterale, Datetime (in einfache Anführungszeichen eingeschlossen), Zahlen (dürfen nur numerische Zeichen enthalten)</li><li>Muss unbedingt ein Binärausdruckformat haben wie ((Operand Operator Operand) UND/ODER (Operand Operator Operand))**</li></ul> | <ul><li>Operatoren: Between, IN</li><li>Alle integrierten Funktionen wie ADD(), MAX() NOW(), POWER() usw.</li><li>Mathematische Operatoren wie *, -, + usw.</li><li>Zeichenfolgenverkettungen unter Verwendung von +.</li><li>Alle Joins</li><li>IS NULL und IS NOT NULL</li><li>Zahlen mit nicht numerischen Zeichen, z. B. Hexadezimalzahlen</li></ul>
+Felder (in der SELECT-Abfrage) |<ul><li>Gültige Spaltennamen (durch Kommas getrennt). Präfixe sind für Tabellennamen unzulässig (der Connector wird stets nur auf eine Tabelle angewendet).</li><li>Namen können mit den Escapezeichen "[" und "]" versehen werden.</li></ul>|<ul><li>Schlüsselwörter wie TOP, DISTINCT usw.</li><li>Aliase wie Straße + Ort + PLZ AS Adresse</li><li>Alle integrierten Funktionen, z. B. ADD(), MAX() NOW(), POWER() usw.</li><li>Mathematische Operatoren wie *, -, + usw.</li><li>Zeichenfolgenverkettungen unter Verwendung von +</li></ul>
 
 #### Tipps
 
@@ -159,4 +161,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [11]: ./media/app-service-logic-connector-sql/LogicApp7.png
 [12]: ./media/app-service-logic-connector-sql/LogicApp8.png
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0224_2016-->

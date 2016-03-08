@@ -13,7 +13,7 @@
 	ms.workload="data-services" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
-	ms.topic="article" 
+	ms.topic="get-started-article" 
 	ms.date="02/16/2016" 
 	ms.author="mimig"/>
 
@@ -102,7 +102,7 @@ Wenn Sie bereits ein Azure-Konto haben, können Sie die ersten Schritte mit Docu
 
 Wenn Sie nicht über ein Konto verfügen, können Sie:
 
-- Sich für eine [kostenlose Testversion von Azure](https://azure.microsoft.com/pricing/free-trial/) registrieren. Sie erhalten ein Guthaben von 200 US-Dollar für 30 Tage, in denen Sie alle Azure-Dienste ausprobieren können. 
+- Sich für eine [kostenlose Testversion von Azure](https://azure.microsoft.com/pricing/free-trial/) registrieren. Sie erhalten ein Guthaben von 200 US-Dollar für 30 Tage, in denen Sie alle Azure-Dienste ausprobieren können. 
 - Wenn Sie ein MSDN-Abonnement haben, sind Sie für ein [kostenloses Azure-Guthaben von 150 US-Dollar pro Monat](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) berechtigt, das Sie für beliebige Azure-Dienste nutzen können. 
 
 Wenn Sie mehr erfahren möchten, besuchen Sie unseren [Lernpfad](https://azure.microsoft.com/documentation/learning-paths/documentdb/), um alle Lernressourcen kennenzulernen, die Ihnen zur Verfügung stehen.
@@ -111,4 +111,4 @@ Wenn Sie mehr erfahren möchten, besuchen Sie unseren [Lernpfad](https://azure.m
 [1]: ./media/documentdb-introduction/json-database-resources1.png
  
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Erstellen einer geografischen Suchanwendung mit Azure Search | Microsoft Azure | Gehosteter Cloudsuchdienst" 
-	description="Erstellen Sie eine geografische Suchanwendung mit Bing und Azure Search, einem in Microsoft Azure gehosteten Cloudsuchdienst." 
+	pageTitle="Erstellen einer Geosuchanwendung mit Azure Search | Microsoft Azure | Gehosteter Cloudsuchdienst" 
+	description="Erstellen Sie eine Geosuchanwendung mit Bing und Azure Search, einem gehosteten Cloudsuchdienst bei Microsoft Azure." 
 	services="search" 
 	documentationCenter="" 
 	authors="HeidiSteen" 
@@ -13,26 +13,26 @@
 	ms.workload="search" 
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
-	ms.date="11/04/2015" 
+	ms.date="02/18/2016" 
 	ms.author="heidist"/>
 
 # Erstellen einer geografischen Suchanwendung mit Azure Search
 
-In diesem Lernprogramm erfahren Sie, wie Sie Webanwendungen mithilfe von Azure Search und Bing Maps um eine geografische Suche erweitern können. Mithilfe der geografischen Suche können Sie nach Zielen suchen, die sich innerhalb eines bestimmten Umkreises eines gegebenen Punktes befinden (z. B. alle Restaurants im Umkreis von 5 km meines Standortes). Die Geofunktion in Azure Search unterstützt häufig verwendete Kartierungstechniken. Wenn Sie beispielsweise in einer Immobilienanwendung polygone Formen verwenden möchten, um zum Verkauf stehende Häuser innerhalb eines bestimmten Wabenbereichs anzuzeigen, können Sie dazu das OData-Protokoll oder unsere einfache Suchsyntax verwenden.
+In diesem Lernprogramm erfahren Sie, wie Sie Webanwendungen mithilfe von Azure Search und Bing Maps um eine geografische Suche erweitern können. Mithilfe der geografischen Suche können Sie nach Zielen suchen, die sich innerhalb eines bestimmten Umkreises eines gegebenen Punktes befinden (z. B. alle Restaurants im Umkreis von 5 km meines Standortes). Die Geofunktion in Azure Search unterstützt häufig verwendete Kartierungstechniken. Wenn Sie beispielsweise in einer Immobilienanwendung polygone Formen verwenden möchten, um zum Verkauf stehende Häuser innerhalb eines bestimmten Wabenbereichs anzuzeigen, können Sie dazu das OData-Protokoll oder unsere einfache Suchsyntax verwenden.
 
-In diesem Channel 9-Video zu [Azure Search und Geodaten](http://channel9.msdn.com/Shows/Data-Exposed/Azure-Search-and-Geospatial-Data) erhalten Sie einen weiteren Überblick über das Thema.
+In diesem Channel 9-Video zu [Azure Search und Geodaten](http://channel9.msdn.com/Shows/Data-Exposed/Azure-Search-and-Geospatial-Data) erhalten Sie einen weiteren Überblick über das Thema.
 
 ![][7]
 
 Zum Erstellen der Anwendung nutzen wir den Bing-Kartendienst, um aus einer CSV-Datei geladene Adressen zu geokodieren und die Ergebnisse in einem Suchindex zu speichern.
 
-Dieses Lernprogramm baut auf der [Azure Search – Adventure Works Demo](http://azuresearchadventureworksdemo.codeplex.com) auf. Gehen Sie die Demonstration Schritt für Schritt durch, falls Sie dies noch nicht getan haben, um sich mit dem Erstellen eines Index sowie dem Aufrufen der Azure Search-API aus einer Webanwendung vertraut zu machen.
+Dieses Lernprogramm baut auf der [Azure Search – Adventure Works Demo](http://azuresearchadventureworksdemo.codeplex.com) auf. Gehen Sie die Demonstration Schritt für Schritt durch, falls Sie dies noch nicht getan haben, um sich mit dem Erstellen eines Index sowie dem Aufrufen der Azure Search-API aus einer Webanwendung vertraut zu machen.
 
 <a id="sub-1"></a>
 ## Voraussetzungen
 
-+	Visual Studio 2012 oder höher mit installiertem ASP.NET MVC 4 und SQL Server. Falls diese Software noch nicht installiert ist, können Sie jeweils die kostenlose Express-Edition herunterladen: [Visual Studio 2013 Express](http://www.visualstudio.com/products/visual-studio-express-vs.aspx) und [Microsoft SQL Server 2014 Express](http://msdn.microsoft.com/evalcenter/dn434042.aspx).
-+	Ein Azure Search-Dienst. Sie benötigen den Search-Dienstnamen sowie den Administratorschlüssel. Ausführliche Informationen finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](search-create-service-portal.md).
++	Visual Studio 2012 oder höher mit installiertem ASP.NET MVC 4 und SQL Server. Falls diese Software noch nicht installiert ist, können Sie jeweils die kostenlose Express-Edition herunterladen: [Visual Studio 2013 Express](http://www.visualstudio.com/products/visual-studio-express-vs.aspx) und [Microsoft SQL Server 2014 Express](http://msdn.microsoft.com/evalcenter/dn434042.aspx).
++	Ein Azure Search-Dienst. Sie benötigen den Search-Dienstnamen sowie den Administratorschlüssel. Ausführliche Informationen finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](search-create-service-portal.md).
 +	Einen Bing-Kartendienst sowie einen zugehörigen Zugriffsschlüssel. Anweisungen dazu finden Sie im nächsten Abschnitt.
 +	[Azure Search GeoSearch-Beispiel auf CodePlex](https://azuresearchgeospatial.codeplex.com/). Klicken Sie auf der Registerkarte "Source" (Quelle) auf **Download**, um eine ZIP-Datei der Lösung herunterzuladen. 
 
@@ -50,7 +50,7 @@ Die Lösung umfasst zwei Projekte:
 
 Wir werden die Bing Maps-API für zwei Dinge verwenden:
 
-+ **Geokodieren von Adressen:** Die Daten umfassen zwar Adressen (Stadt, Bundesstaat, Postleitzahl), wir benötigen aber auch die Längen- und Breitenkoordinaten einer Adresse, um eine geografische Suche durchführen zu können. Zum Abrufen der Koordinaten wird die Bing Maps DataFlow-API verwendet, um ein Adress-Batch zum Geokodieren zu verarbeiten. Mit dem Testkonto von Bing können wir gleichzeitig bis zu 50 Adressen verarbeiten. Diese Beschränkung sollte für dieses Lernprogramm ausreichen.
++ **Geokodieren von Adressen:** Die Daten umfassen zwar Adressen (Stadt, Bundesstaat, Postleitzahl), wir benötigen aber auch die Längen- und Breitenkoordinaten einer Adresse, um eine geografische Suche durchführen zu können. Zum Abrufen der Koordinaten wird die Bing Maps DataFlow-API verwendet, um ein Adress-Batch zum Geokodieren zu verarbeiten. Mit dem Testkonto von Bing können wir gleichzeitig bis zu 50 Adressen verarbeiten. Diese Beschränkung sollte für dieses Lernprogramm ausreichen.
 
 + **Bing Maps:** Beim Ausführen der Anwendung werden in Bing Maps Geschäftsstandorte als Überlagerung auf einer Bing-Karte angezeigt.
 
@@ -71,7 +71,7 @@ Die Daten stammen aus der Datei "store\_locations.csv", die sich in den herunter
 
 Lassen Sie uns gemeinsam den Code durchgehen, um seine Funktionsweise zu verstehen.
 
-1. Öffnen Sie das Projekt "AdventureWorksGeo" in Visual Studio, erweitern Sie im Projektmappen-Explorer das Projekt **StoreIndexer**, und öffnen Sie die Datei "Program.cs". Da wir die Indexerstellung bereits im Artikel [Azure Search – Adventure Works Demo](http://azuresearchadventureworksdemo.codeplex.com/) behandelt haben, gehen wir an dieser Stelle nicht darauf ein, wie dies in "Program.cs" funktioniert.
+1. Öffnen Sie das Projekt "AdventureWorksGeo" in Visual Studio, erweitern Sie im Projektmappen-Explorer das Projekt **StoreIndexer**, und öffnen Sie die Datei "Program.cs". Da wir die Indexerstellung bereits im Artikel [Azure Search – Adventure Works Demo](http://azuresearchadventureworksdemo.codeplex.com/) behandelt haben, gehen wir an dieser Stelle nicht darauf ein, wie dies in "Program.cs" funktioniert.
 
 2. Suchen Sie die Funktion **Main**. Wie Sie sehen, ruft sie die Funktion **ApplyStoreData** auf. Suchen Sie diese Funktion, und gehen Sie den Code Zeile für Zeile durch.
 
@@ -83,7 +83,7 @@ Lassen Sie uns gemeinsam den Code durchgehen, um seine Funktionsweise zu versteh
 
 5. Suchen Sie nach der Funktion **ExtractAddressInfoToXML()**. Mit dieser Funktion werden die Adressinformationen aus der Datei "store\_locations.csv" extrahiert und in eine XML-Datei geladen, die für die Geokodierung in Bing Maps formatiert ist. Nachdem die Datei erstellt ist, wird sie zur Verarbeitung an Bing Maps DataFlow gesendet. Dieser Vorgang erfolgt durch Aufrufen der Funktion **GeoCoding.CreateJob**.
 
-6. Da die Geokodierung einige Zeit in Anspruch nehmen kann, wird mithilfe einer Programmschleife alle 10 Sekunden die Funktion **GeoCoding.CheckStatus** aufgerufen, um zu prüfen, ob der Vorgang abgeschlossen ist. Nachdem der Vorgang abgeschlossen ist, werden die Ergebnisse durch Aufrufen der Funktion **GeoCoding.DownloadResults** in eine Adressenklasse heruntergeladen.
+6. Da die Geokodierung einige Zeit in Anspruch nehmen kann, wird mithilfe einer Programmschleife alle 10 Sekunden die Funktion **GeoCoding.CheckStatus** aufgerufen, um zu prüfen, ob der Vorgang abgeschlossen ist. Nachdem der Vorgang abgeschlossen ist, werden die Ergebnisse durch Aufrufen der Funktion **GeoCoding.DownloadResults** in eine Adressenklasse heruntergeladen.
 
 7. Im letzten Schritt werden die geokodierten Adressen an Azure Search gesendet. Sehen wir uns diesen Vorgang, der von der Funktion **UpdateStoreData** durchgeführt wird, genauer an.
 
@@ -113,7 +113,7 @@ Die Geschäfte werden als Punkte dargestellt und sind der Karte überlagert. Kli
 <a id="sub-5"></a>
 ## Beschreibung von AdventureWorksWebGeo
 
-Das Projekt **AdventureWorksWebGeo** beschreibt, wie ASP.NET MVC 4 zusammen mit Azure Search zum Erstellen einer Kartenanwendung mithilfe der Geosuche verwendet wird. In diesem Abschnitt sehen wir uns noch einmal einzelne Stellen des Programmcodes genauer an.
+Das Projekt **AdventureWorksWebGeo** beschreibt, wie ASP.NET MVC 4 zusammen mit Azure Search zum Erstellen einer Kartenanwendung mithilfe der Geosuche verwendet wird. In diesem Abschnitt sehen wir uns noch einmal einzelne Stellen des Programmcodes genauer an.
 
 1.	Erweitern Sie im Projektmappen-Explorer **AdventureWorksWebGeo** | **Controller**, und öffnen Sie die Datei "HomeController.cs". Beim Starten der Anwendung wird die Funktion **Index()** aufgerufen und die Indexseite geladen. In dieser Funktion wird die Bing Maps-API aus der Datei "Web.config" geladen und als "ViewBag.BingAPI" an die Indexansicht übergeben.
 
@@ -127,7 +127,7 @@ Das Projekt **AdventureWorksWebGeo** beschreibt, wie ASP.NET MVC 4 zusammen mit
 
 +	Die Funktion **Search** ruft die Geschäftsstandorte ab, die nach Empfang als PushPins zur Bing-Karte hinzugefügt werden.
 
-4.	Öffnen Sie unter **Controllers** die Datei "HomeController.cs“, und sehen Sie sich die Funktion **Search** an. Diese Funktion ruft die Funktion "\_storeSearch.Search(lat, lon, 10000)" auf. Dadurch wird eine Abfrage ausgeführt, um nach allen Geschäften in einem Umkreis von 10.000 km des mit dem Längengrad (lon) und Breitengrad (lat) angegebenen Standorts zu suchen. Die Abfrageergebnisse werden verarbeitet und anschließend an die Indexansicht zurückgesendet, um als PushPins verarbeitet und als Überlagerung auf der Bing-Karte angezeigt zu werden.
+4.	Öffnen Sie unter **Controllers** die Datei "HomeController.cs“, und sehen Sie sich die Funktion **Search** an. Diese Funktion ruft die Funktion "\_storeSearch.Search(lat, lon, 10000)" auf. Dadurch wird eine Abfrage ausgeführt, um nach allen Geschäften in einem Umkreis von 10.000 km des mit dem Längengrad (lon) und Breitengrad (lat) angegebenen Standorts zu suchen. Die Abfrageergebnisse werden verarbeitet und anschließend an die Indexansicht zurückgesendet, um als PushPins verarbeitet und als Überlagerung auf der Bing-Karte angezeigt zu werden.
 
 Die Demonstration ist hiermit abgeschlossen. Sie haben sich nun mit den wichtigsten Operationen vertraut gemacht, die Sie zum Erstellen einer kartenbasierten ASP.NET MVC4-Anwendung mit Azure Search benötigen.
 
@@ -137,7 +137,7 @@ Die Demonstration ist hiermit abgeschlossen. Sie haben sich nun mit den wichtigs
 
 Wenn beim Buildvorgang von AdventureWorksWeb die Fehlermeldung "Datei oder Assemblydatei 'System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' oder eine ihrer Abhängigkeiten konnte nicht geladen werden" angezeigt wird, gehen Sie wie folgt vor, um den Fehler zu beheben.
 
-1. Wählen Sie **Extras** | **NuGet-Paket-Manager** | **Paket-Manager-Konsole **, um die Paket-Manager-Konsole zu öffnen.
+1. Wählen Sie **Extras** > **NuGet-Paket-Manager** > **Paket-Manager-Konsole **, um die Paket-Manager-Konsole zu öffnen.
 2. Geben Sie an der Paket-Manager-Eingabeaufforderung folgenden Befehl ein: "Update-package -reinstall Microsoft.AspNet.Mvc".
 3. Wählen Sie bei Aufforderung zum Neuladen der Datei die Option **Ja, alle** aus.
 4. Erstellen Sie die Lösung neu, und drücken Sie **F5**.
@@ -167,4 +167,4 @@ Um Ihr Selbststudium zu vertiefen, fügen Sie beispielsweise weitere Funktionen 
 [7]: ./media/search-create-geospatial/AzureSearch-geo1-App.PNG
 [12]: ./media/search-create-geospatial/AzureSearch_Create2_CodeplexDownload.PNG
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0224_2016-->

@@ -49,9 +49,9 @@ Wenn Sie ein Failover für einen virtuellen VMware-Computer durchgeführt haben,
 
 - Wenn Sie ein Failover für physische Server durchgeführt haben, erfolgt das Failback immer zu einem neuen virtuellen VMware-Computer.
 - Wenn Sie ein Failback zum ursprünglichen virtuellen Computer durchführen, ist Folgendes erforderlich:
-	- Wenn der virtuelle Computer von einen vCenter-Server verwaltet wird, muss der virtuelle Computer am lokalen Standort den gleichen Datenspeicher verwenden wie der virtuelle Computer, der den lokalen Masterzielserver ausführt. Wenn dies nicht der Fall ist, müssen Sie ihn migrieren, damit ein Failback zum gleichen virtuellen Computer möglich wird.
-	- Wenn sich der virtuelle Computer auf einem ESX-Host befindet, aber nicht von vCenter verwaltet wird, müssen sich die Festplatten dieses virtuellen Computers im gleichen Datenspeicher befinden wie die Masterziel-VM.
-	- Wenn sich Ihr virtueller Computer auf einem ESX-Host befindet und er vCenter nicht verwendet, müssen Sie für den ESX-Host eine Ermittlung ausführen, bevor Sie den erneuten Schutz ausführen. Dasselbe gilt auch bei einem Failback für physische Server.
+	- Wenn der virtuelle Computer von einem vCenter-Server verwaltet wird, muss der ESX-Host des Masterziels Zugriff auf den Datenspeicher des virtuellen Computers haben.
+	- Wenn sich der virtuelle Computer auf einem ESX-Host befindet, aber nicht von vCenter verwaltet wird, muss sich die Festplatte des virtuellen Computers in einem Datenspeicher befinden, auf den der Host des Masterziels Zugriff hat.
+	- Wenn sich Ihr virtueller Computer auf einem ESX-Host befindet und nicht vCenter verwendet, müssen Sie für den ESX-Host des Masterziels eine Ermittlung ausführen, bevor Sie den erneuten Schutz ausführen. Dasselbe gilt auch bei einem Failback für physische Server.
 	- Als weitere Option können Sie den lokalen virtuellen Computer (sofern er noch vorhanden ist) vor dem Ausführen des Failbacks löschen. Beim Failback wird dann ein neuer virtueller Computer auf dem gleichen Host erstellt, der als Masterziel-ESX-Host fungiert.
 	
 - Wenn Sie das Failback zu einem anderen Speicherort durchführen, werden die Daten in dem gleichen Datenspeicher und in dem gleichen ESX-Host wiederhergestellt, der vom lokalen Masterzielserver verwendet wird.
@@ -65,7 +65,7 @@ Wenn Sie ein Failover für einen virtuellen VMware-Computer durchgeführt haben,
 - Wenn auf einem virtuellen Computer Momentaufnahmen vorhanden sind, tritt beim Ausführen des erneuten Schutzes ein Fehler auf. Sie können die Momentaufnahmen oder die Datenträger löschen. 
 - Vor dem Ausführen des Failbacks müssen Sie einige Komponenten erstellen.
 	- **Erstellen Sie einen Prozessserver in Azure**. Dies ist ein virtueller Azure-Computer, den Sie erstellen und während des Failbacks fortlaufend ausführen müssen. Sie können diesen virtuellen Computer nach Abschluss des Failbacks löschen.
-	- **Erstellen Sie einen Masterzielserver**: Der Masterzielserver sendet und empfängt die Failbackdaten. Auf dem von Ihnen lokal erstellten Verwaltungsserver ist standardmäßig ein Masterzielserver installiert. Je nach Datenverkehrsvolumen beim Failback müssen Sie jedoch u. U. einen separaten Masterzielserver für das Failback erstellen.
+	- **Erstellen Sie einen Masterzielserver**: Der Masterzielserver sendet und empfängt die Failbackdaten. Auf dem von Ihnen lokal erstellten Verwaltungsserver ist standardmäßig ein Masterzielserver installiert. Je nach Datenverkehrsvolumen beim Failback müssen Sie jedoch u. U. einen separaten Masterzielserver für das Failback erstellen.
 	- Wenn Sie einen zusätzlichen Masterzielserver erstellen möchten, der unter Linux ausgeführt wird, müssen Sie vor dem Installieren des Masterzielservers die Linux-VM einrichten. Eine Beschreibung hierzu finden Sie weiter unten.
 
 ## Einrichten des Prozessservers in Azure
@@ -86,25 +86,25 @@ Sie müssen einen Prozessserver in Azure installieren, damit die virtuellen Azur
 
 	Nachdem der Prozessserver in Azure bereitgestellt wurde, können Sie sich mit den angegebenen Anmeldeinformationen dort anmelden. Bei der ersten Anmeldung wird ein Prozessserver-Dialogfeld angezeigt. Geben Sie die IP-Adresse des lokalen Verwaltungsservers und die zugehörige Passphrase ein. Belassen Sie die Standardeinstellung für den Port bei „443“. Sie können auch den Standardport 9443 für die Datenreplikation beibehalten, sofern Sie diese Einstellung beim Einrichten des lokalen Verwaltungsservers nicht bewusst geändert haben.
 
-	>[AZURE.NOTE]Der Server wird nicht unter **VM-Eigenschaften** angezeigt. Er wird nur auf der Registerkarte **Server** des Verwaltungsservers angezeigt, bei dem er registriert wurde. Es kann etwa 10–15 Minuten dauern, bis der Prozessserver angezeigt wird.
+	>[AZURE.NOTE] Der Server wird nicht unter **VM-Eigenschaften** angezeigt. Er wird nur auf der Registerkarte **Server** des Verwaltungsservers angezeigt, bei dem er registriert wurde. Es kann etwa 10–15 Minuten dauern, bis der Prozessserver angezeigt wird.
 
 
 ## Einrichten des lokalen Masterzielservers
 
 Der Masterzielserver empfängt die Failbackdaten. Auf dem lokalen Verwaltungsserver wird automatisch ein Masterzielserver installiert. Wenn Sie jedoch große Datenmengen per Failback zurückführen, müssen Sie möglicherweise einen zusätzlichen Masterzielserver einrichten. Gehen Sie hierzu wie folgt vor:
 
->[AZURE.NOTE]Wenn Sie einen Masterzielserver unter Linux installieren möchten, befolgen Sie die Anweisungen im nächsten Abschnitt.
+>[AZURE.NOTE] Wenn Sie einen Masterzielserver unter Linux installieren möchten, befolgen Sie die Anweisungen im nächsten Abschnitt.
 
 1. Wenn Sie den Masterzielserver unter Windows installieren, öffnen Sie auf dem virtuellen Computer, auf dem Sie den Masterzielserver installieren, die Seite „Schnellstart“. Laden Sie anschließend die Installationsdatei für den Azure Site Recovery-Assistenten für einheitliches Setup herunter.
 2. Führen Sie das Setup aus, und wählen Sie in **Vorbereitung** die Option **Weitere Prozessserver zum horizontalen Skalieren der Bereitstellung hinzufügen** aus.
 3. Beenden Sie den Assistenten genauso wie beim [Einrichten des Verwaltungsservers](site-recovery-vmware-to-azure-classic.md#step-5-install-the-management-server). Geben Sie auf der Seite **Konfigurationsserverdetails** die IP-Adresse dieses Masterzielservers sowie eine Passphrase zum Zugreifen auf den virtuellen Computer an.
 
 ### Einrichten eines virtuellen Linux-Computers als Masterzielserver
-Um den Verwaltungsserver einzurichten, auf dem der Masterzielserver als virtueller Linux-Computer ausgeführt wird, müssen Sie das Minimalbetriebssystem CentOS 6.6 installieren, die SCSI-IDs für jede SCSI-Festplatte abrufen, einige zusätzliche Pakete installieren und einige benutzerdefinierte Änderungen vornehmen.
+Um den Verwaltungsserver einzurichten, auf dem der Masterzielserver als virtueller Linux-Computer ausgeführt wird, müssen Sie das Minimalbetriebssystem CentOS 6.6 installieren, die SCSI-IDs für jede SCSI-Festplatte abrufen, einige zusätzliche Pakete installieren und einige benutzerdefinierte Änderungen vornehmen.
 
-#### Installieren von CentOS 6.6
+#### Installieren von CentOS 6.6
 
-1.	Installieren Sie das Minimalbetriebssystem CentOS 6.6 auf der Verwaltungsserver-VM. Behalten Sie das ISO-Image im DVD-Laufwerk, und starten Sie das System. Überspringen Sie den Medientest, wählen Sie als Sprache US-Englisch aus, wählen Sie **Basic Storage Devices** aus, vergewissern Sie sich, dass auf der Festplatte keine wichtigen Daten vorhanden sind, und klicken Sie auf **Yes**, wodurch alle Daten gelöscht werden. Geben Sie den Hostnamen des Verwaltungsservers ein, und wählen Sie die Netzwerkkarte des Servers aus. Wählen Sie im Dialog **Editing System** die Option **Connect automatically** aus, und fügen Sie eine statische IP-Adresse, ein Netzwerk und DNS-Einstellungen hinzu. Geben Sie eine Zeitzone und ein Stammkennwort zum Zugriff auf den Verwaltungsserver ein. 
+1.	Installieren Sie das Minimalbetriebssystem CentOS 6.6 auf der Verwaltungsserver-VM. Behalten Sie das ISO-Image im DVD-Laufwerk, und starten Sie das System. Überspringen Sie den Medientest, wählen Sie als Sprache US-Englisch aus, wählen Sie **Basic Storage Devices** aus, vergewissern Sie sich, dass auf der Festplatte keine wichtigen Daten vorhanden sind, und klicken Sie auf **Yes**, wodurch alle Daten gelöscht werden. Geben Sie den Hostnamen des Verwaltungsservers ein, und wählen Sie die Netzwerkkarte des Servers aus. Wählen Sie im Dialog **Editing System** die Option **Connect automatically** aus, und fügen Sie eine statische IP-Adresse, ein Netzwerk und DNS-Einstellungen hinzu. Geben Sie eine Zeitzone und ein Stammkennwort zum Zugriff auf den Verwaltungsserver ein. 
 2.	Wenn Sie nach dem gewünschten Installationstyp gefragt werden, wählen Sie für die Partition **Create Custom Layout** aus. Klicken Sie anschließend auf **Next**, wählen Sie **Free** aus, und klicken Sie auf „Create“. Erstellen Sie die Partitionen **/**, **/var/crash** und **/home** mit **FS Type:** **ext4**. Erstellen Sie die Swappartition als **FS Type: swap**.
 3.	Wenn bereits vorhandene Geräte gefunden werden, wird eine Warnung angezeigt. Klicken Sie auf **Format**, um das Laufwerk mit den Partitionseinstellungen zu formatieren. Klicken Sie auf **Write change to disk**, um die Partitionsänderungen zu übernehmen.
 4.	Wählen Sie **Install boot loader** > **Next**, um das Startladeprogramm in der Stammpartition zu installieren.
@@ -181,4 +181,4 @@ Ein Failback kann über eine VPN-Verbindung oder über Azure ExpressRoute ausgef
 - ExpressRoute muss in dem virtuellen Azure-Netzwerk eingerichtet werden, zu dem das Failover der Quellcomputer durchgeführt wird und in dem sich die virtuellen Azure-Computer nach dem Failover befinden.
 - Die Daten werden zu einem Azure-Speicherkonto auf einem öffentlichen Endpunkt repliziert. Sie müssen ein öffentliches Peering in ExpressRoute einrichten, bei dem das Zieldatencenter für die Site Recovery-Replikation ExpressRoute verwendet.
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0224_2016-->

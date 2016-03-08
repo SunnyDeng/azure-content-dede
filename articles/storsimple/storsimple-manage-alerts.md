@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="02/09/2016"
+   ms.date="02/18/2016"
    ms.author="v-sharos" />
 
 # Anzeigen und Verwalten von StorSimple-Warnungen mithilfe des StorSimple Manager-Diensts
@@ -33,7 +33,7 @@ Ihr StorSimple-Gerät generiert Warnungen als Reaktion auf viele verschiedene Be
 
 - **Konnektivitätsprobleme**: Diese Warnungen werden angezeigt, wenn es beim Übertragen von Daten zu Schwierigkeiten kommt. Kommunikationsprobleme können während der Übertragung von Daten auf das bzw. aus dem Azure-Speicherkonto oder aufgrund einer fehlenden Verbindung zwischen den Geräten und dem StorSimple Manager-Dienst auftreten. Die Behebung von Kommunikationsproblemen ist besonders schwierig, da die Anzahl der möglichen Fehlerquellen hoch ist. Sie sollten sich immer zuerst vergewissern, dass die Netzwerkverbindung und der Internetzugriff verfügbar sind, bevor Sie sich mit der eingehenderen Problembehandlung beschäftigen. Weitere Informationen zur Problembehandlung finden Sie unter [Problembehandlung mit dem Cmdlet „Test-Connection“](storsimple-troubleshoot-deployment.md).
 
-- **Leistungsprobleme** – Diese Warnungen werden verursacht, wenn Ihr System keine optimale Leistung aufweist, z. B. bei einer hohen Auslastung.
+- **Leistungsprobleme** – Diese Warnungen werden verursacht, wenn Ihr System keine optimale Leistung aufweist, z. B. bei einer hohen Auslastung.
 
 Außerdem werden unter Umständen Warnungen zur Sicherheit, zu Updates oder zu Fehlern bei Aufträgen angezeigt.
 
@@ -51,9 +51,9 @@ Warnungen haben unterschiedliche Schweregrade. Diese richten sich nach den Auswi
 
 Sie können auswählen, ob Sie per E-Mail über die Warnungsbedingungen für die einzelnen StorSimple-Geräte informiert werden möchten. Sie können auch andere Empfänger von Warnungsbenachrichtigungen angeben, indem Sie deren E-Mail-Adressen im Feld **Andere E-Mail-Empfänger** durch Semikolons getrennt eingeben.
 
->[AZURE.NOTE] Sie können maximal 20 E-Mail-Adressen pro Gerät eingeben.
+>[AZURE.NOTE] Sie können maximal 20 E-Mail-Adressen pro Gerät eingeben.
 
-Nachdem Sie die E-Mail-Benachrichtigung für ein Gerät aktiviert haben, erhalten die Mitglieder der Benachrichtigungsliste jedes Mal eine E-Mail-Nachricht, wenn eine kritische Warnung vorliegt. Die Nachrichten werden von der Adresse **storsimple-alerts-noreply@mail.windowsazure.com* gesendet und enthalten eine Beschreibung der Warnungsbedingung. Empfänger können auf **Abonnement kündigen** klicken, um das Entfernen aus der E-Mail-Benachrichtigungsliste durchzuführen.
+Nachdem Sie die E-Mail-Benachrichtigung für ein Gerät aktiviert haben, erhalten die Mitglieder der Benachrichtigungsliste jedes Mal eine E-Mail-Nachricht, wenn eine kritische Warnung vorliegt. Die Nachrichten werden von der Adresse *storsimple-alerts-noreply@mail.windowsazure.com* gesendet und enthalten eine Beschreibung der Warnungsbedingung. Empfänger können auf **Abonnement kündigen** klicken, um das Entfernen aus der E-Mail-Benachrichtigungsliste durchzuführen.
 
 #### So aktivieren Sie die E-Mail-Benachrichtigungen über Warnungen für ein Gerät
 
@@ -65,7 +65,7 @@ Nachdem Sie die E-Mail-Benachrichtigung für ein Gerät aktiviert haben, erhalte
 
     2. Klicken Sie im Feld **E-Mail an Dienstadministratoren** auf **JA**, wenn der Dienstadministrator und alle Co-Administratoren die Warnungsbenachrichtigungen erhalten sollen.
 
-    3. Geben Sie im Feld **Andere E-Mail-Empfänger** die E-Mail-Adressen aller weiteren Empfänger ein, die die Warnungsbenachrichtigungen erhalten sollen. Geben Sie Namen im folgenden Format ein: **someone@somewhere.com*. Verwenden Sie Semikolons, um mehrere E-Mail-Adressen zu trennen. Sie können maximal 20 E-Mail-Adressen pro Gerät konfigurieren.
+    3. Geben Sie im Feld **Andere E-Mail-Empfänger** die E-Mail-Adressen aller weiteren Empfänger ein, die die Warnungsbenachrichtigungen erhalten sollen. Geben Sie Namen im folgenden Format ein: *someone@somewhere.com*. Verwenden Sie Semikolons, um mehrere E-Mail-Adressen zu trennen. Sie können maximal 20 E-Mail-Adressen pro Gerät konfigurieren.
 
         ![Konfiguration von Warnungsbenachrichtigungen](./media/storsimple-manage-alerts/AlertNotify.png)
 
@@ -87,7 +87,7 @@ Wenn Sie auf den Schweregrad klicken, wird die Registerkarte **Warnungen** geöf
 
 ![Warnungsbericht nach Warnungstyp](./media/storsimple-manage-alerts/admin_alerts_scoped.png)
 
-Wenn Sie in der Liste auf eine Warnung klicken, werden weitere Details zur Warnung angezeigt, z. B. die letzte Meldung der Warnung, die Häufigkeit der Warnung auf dem Gerät und die empfohlene Maßnahme zum Beheben der Warnung. Wenn es sich um eine Hardwarewarnung handelt, wird auch die Hardwarekomponente angegeben.
+Wenn Sie in der Liste auf eine Warnung klicken, werden weitere Details zur Warnung angezeigt, z. B. die letzte Meldung der Warnung, die Häufigkeit der Warnung auf dem Gerät und die empfohlene Maßnahme zum Beheben der Warnung. Wenn es sich um eine Hardwarewarnung handelt, wird auch die Hardwarekomponente angegeben.
 
 ![Beispiel für Hardwarewarnung](./media/storsimple-manage-alerts/admin_alerts_hardware.png)
 
@@ -99,11 +99,11 @@ Wenn Sie auf **Löschen** klicken, können Sie Kommentare zur Warnung und die Sc
 
 ## Sortieren und Überprüfen von Warnungen
 
-Unter Umständen finden Sie es effizienter, Berichte für Warnungen auszuführen, damit Sie sie in Gruppen überprüfen und löschen können. Außerdem können auf der Registerkarte **Warnungen** bis zu 250 Warnungen angezeigt werden. Wenn Sie diese Anzahl von Warnungen überschritten haben, werden nicht alle Warnungen in der Standardansicht angezeigt. Sie können die folgenden Felder kombinieren, um anzupassen, welche Warnungen angezeigt werden:
+Unter Umständen finden Sie es effizienter, Berichte für Warnungen auszuführen, damit Sie sie in Gruppen überprüfen und löschen können. Außerdem können auf der Registerkarte **Warnungen** bis zu 250 Warnungen angezeigt werden. Wenn Sie diese Anzahl von Warnungen überschritten haben, werden nicht alle Warnungen in der Standardansicht angezeigt. Sie können die folgenden Felder kombinieren, um anzupassen, welche Warnungen angezeigt werden:
 
 - **Status** – Sie können Warnungen der Kategorien **Aktiv** oder **Gelöscht** anzeigen. Aktive Warnungen werden weiterhin ausgelöst, während gelöschte Warnungen entweder manuell von einem Administrator oder programmgesteuert gelöscht wurden, weil die Warnungsbedingung mit neuen Informationen aktualisiert wurde.
 
-- **Schweregrad** – Sie können Warnungen aller Schweregrade (Kritisch, Warnung, Information) oder nur einen bestimmten Schweregrad anzeigen, z. B. nur kritische Warnungen.
+- **Schweregrad** – Sie können Warnungen aller Schweregrade (Kritisch, Warnung, Information) oder nur einen bestimmten Schweregrad anzeigen, z. B. nur kritische Warnungen.
 
 - **Quelle** – Sie können Warnungen für alle Quellen anzeigen oder die Anzeige auf die Warnungen beschränken, die entweder vom Dienst oder von einem oder allen Geräten stammen.
 
@@ -139,7 +139,7 @@ In den folgenden Tabellen sind einige Microsoft Azure StorSimple-Warnungen aufge
 
 |Warnungstext|Ereignis|Weitere Informationen/Empfohlene Maßnahmen|
 |:---|:---|:---|
-|Es kann keine Verbindung zu <*Anmeldeinformationsname für Cloud*> hergestellt werden.|Die Verbindung mit dem Speicherkonto kann nicht hergestellt werden.|Anscheinend liegt ein Konnektivitätsproblem mit Ihrem Gerät vor. Führen Sie das Cmdlet `Test-HcsmConnection` in der Windows PowerShell-Schnittstelle für StorSimple auf Ihrem Gerät aus, um das Problem zu identifizieren und zu beheben. Wenn die Einstellungen korrekt sind, liegt möglicherweise ein Problem mit den Anmeldeinformationen des Speicherkontos vor, für das die Warnung ausgelöst wurde. Ermitteln Sie in diesem Fall mithilfe des Cmdlets `Test-HcsStorageAccountCredential`, ob Probleme vorliegen, die Sie lösen können.<ul><li>Überprüfen Sie die Netzwerkeinstellungen.</li><li>Überprüfen Sie die Speicherkonto-Anmeldedaten.</li></ul>|
+|Es kann keine Verbindung zu <*Anmeldeinformationsname für Cloud*> hergestellt werden.|Die Verbindung mit dem Speicherkonto kann nicht hergestellt werden.|Anscheinend liegt ein Konnektivitätsproblem mit Ihrem Gerät vor. Führen Sie das Cmdlet `Test-HcsmConnection` in der Windows PowerShell-Schnittstelle für StorSimple auf Ihrem Gerät aus, um das Problem zu identifizieren und zu beheben. Wenn die Einstellungen korrekt sind, liegt möglicherweise ein Problem mit den Anmeldeinformationen des Speicherkontos vor, für das die Warnung ausgelöst wurde. Ermitteln Sie in diesem Fall mithilfe des Cmdlets `Test-HcsStorageAccountCredential`, ob Probleme vorliegen, die Sie lösen können.<ul><li>Überprüfen Sie die Netzwerkeinstellungen.</li><li>Überprüfen Sie die Speicherkonto-Anmeldedaten.</li></ul>|
 |Wir haben seit <*Anzahl*> Minuten kein Signal mehr von Ihrem Gerät erhalten.|Es kann keine Verbindung mit dem Gerät hergestellt werden.|Anscheinend liegt ein Konnektivitätsproblem mit Ihrem Gerät vor. Führen Sie das Cmdlet `Test-HcsmConnection` in der Windows PowerShell-Schnittstelle für StorSimple auf Ihrem Gerät aus, um das Problem zu identifizieren und zu beheben, oder wenden Sie sich an Ihren Netzwerkadministrator.|
 
 ### Verhalten von StorSimple beim Ausfall der Cloudverbindung
@@ -254,4 +254,4 @@ Wenn die Cloudverbindung für das StorSimple-Gerät in der Produktion ausfällt,
 
 Erfahren Sie mehr über [Problembehandlung bei einem betriebsbereiten StorSimple-Gerät](storsimple-troubleshoot-operational-device.md).
 
-<!---HONumber=AcomDC_0218_2016-->
+<!----HONumber=AcomDC_0224_2016-->

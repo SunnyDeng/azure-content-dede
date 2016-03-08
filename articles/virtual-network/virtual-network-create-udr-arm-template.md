@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Steuern des Routings und Verwenden virtueller Geräte im Ressourcen-Manager mit einer Vorlage | Microsoft Azure"
-   description="Erfahren Sie, wie Sie das Routing steuern und virtuelle Geräte in Azure mit Vorlagen verwenden."
+   pageTitle="Steuern des Routings und Verwenden virtueller Geräte in Resource Manager mit einer Vorlage | Microsoft Azure"
+   description="Erfahren Sie, wie Sie in Azure Resource Manager mithilfe einer Vorlage das Routing steuern und virtuelle Geräte verwenden."
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
@@ -14,10 +14,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/20/2015"
+   ms.date="02/23/2016"
    ms.author="telmos" />
 
-#Erstellen von benutzerdefinierten Routen (UDR) mit einer Vorlage
+#Erstellen von benutzerdefinierten Routen (UDR) in Resource Manager mit einer Vorlage
 
 [AZURE.INCLUDE [virtual-network-create-udr-arm-selectors-include.md](../../includes/virtual-network-create-udr-arm-selectors-include.md)]
 
@@ -31,7 +31,7 @@
 
 Sie können die [Beispielvorlage](https://github.com/telmosampaio/azure-templates/tree/master/IaaS-NSG-UDR) anzeigen und herunterladen.
 
-Im Abschnitt unten wird die Definition für die benutzerdefinierte Route (UDR) des Front-Ends in der Datei „azuredeploy-vnet-nsg-udr.json“ basierend auf dem obigen Szenario gezeigt.
+Im Abschnitt unten wird die Definition für die benutzerdefinierte Route (UDR) des Front-Ends in der Datei **azuredeploy-vnet-nsg-udr.json** basierend auf dem obigen Szenario gezeigt.
 
 	"apiVersion": "2015-06-15",
 	"type": "Microsoft.Network/routeTables",
@@ -116,13 +116,17 @@ Führen Sie zum Bereitstellen der mithilfe von PowerShell heruntergeladenen ARM-
 
 [AZURE.INCLUDE [powershell-preview-include.md](../../includes/powershell-preview-include.md)]
 
-1. Wenn Sie Azure PowerShell noch nie verwendet haben, lesen Sie [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md), und befolgen Sie die komplette Anleitung, um sich bei Azure anzumelden und Ihr Abonnement auszuwählen.
+1. Wenn Sie Azure PowerShell zuvor noch nicht verwendet haben, lesen Sie [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md), und befolgen Sie die komplette Anleitung, um sich bei Azure anzumelden und Ihr Abonnement auszuwählen.
 
-3. Führen Sie das Cmdlet **New-AzureRmResourceGroup** aus, um eine Ressourcengruppe mit der Vorlage zu erstellen.
+2. Führen Sie das Cmdlet `New-AzureRmResourceGroup` aus, um eine Ressourcengruppe zu erstellen.
 
-		New-AzureRmResourceGroup -Name TestRG -Location westus `
-		    -TemplateFile 'https://raw.githubusercontent.com/telmosampaio/azure-templates/master/IaaS-NSG-UDR/azuredeploy.json' `
-		    -TemplateParameterFile 'https://raw.githubusercontent.com/telmosampaio/azure-templates/master/IaaS-NSG-UDR/azuredeploy.parameters.json'	
+		New-AzureRmResourceGroup -Name TestRG -Location westus
+
+3. Führen Sie das Cmdlet `New-AzureRmResourceGroupDeployment` aus, um die Vorlage bereitzustellen.
+
+		New-AzureRmResourceGroupDeployment -Name DeployUDR -ResourceGroupName TestRG `
+		    -TemplateUri https://raw.githubusercontent.com/telmosampaio/azure-templates/master/IaaS-NSG-UDR/azuredeploy.json `
+		    -TemplateParameterUri https://raw.githubusercontent.com/telmosampaio/azure-templates/master/IaaS-NSG-UDR/azuredeploy.parameters.json	    	
 
 	Erwartete Ausgabe:
 
@@ -164,14 +168,14 @@ Führen Sie zum Bereitstellen der mithilfe von PowerShell heruntergeladenen ARM-
 		                    testvnetstorageprm  Microsoft.Storage/storageAccounts        westus  
 		                    testvnetstoragestd  Microsoft.Storage/storageAccounts        westus  
 		                    
-		ResourceId        : /subscriptions/628dad04-b5d1-4f10-b3a4-dc61d88cf97c/resourceGroups/TestRG
+		ResourceId        : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG
 
 ## Bereitstellen der ARM-Vorlage mithilfe der Azure-Befehlszeilenschnittstelle
 
 Führen Sie zum Bereitstellen der ARM-Vorlage mithilfe der Azure-Befehlszeilenschnittstelle die unten beschriebenen Schritte aus.
 
-1. Wenn Sie die Azure-Befehlszeilenschnittstelle noch nie verwendet haben, ziehen Sie [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](xplat-cli.md) zurate, und folgen Sie den Anweisungen bis zu dem Punkt, an dem Sie Ihr Azure-Konto und Ihr Abonnement auswählen.
-2. Führen Sie den Befehl **azure config mode** aus, um in den Ressourcen-Manager-Modus zu wechseln, wie unten dargestellt.
+1. Wenn Sie die Azure-Befehlszeilenschnittstelle noch nie verwendet haben, ziehen Sie [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md) zurate, und folgen Sie den Anweisungen bis zu dem Punkt, an dem Sie Ihr Azure-Konto und Ihr Abonnement auswählen.
+2. Führen Sie den Befehl `azure config mode` aus, um in den Resource Manager-Modus zu wechseln, wie unten dargestellt.
 
 		azure config mode arm
 
@@ -390,6 +394,6 @@ Führen Sie zum Bereitstellen der ARM-Vorlage mithilfe der Azure-Befehlszeilensc
 		data:    
 		info:    group show command OK
 
->[AZURE.TIP]Falls Sie nicht alle Ressourcen sehen, führen Sie den Befehl **azure group deployment show** aus, um sicherzustellen, dass der Bereitstellungsstatus der Bereitstellung *Erfolgreich* lautet.
+>[AZURE.TIP] Falls Sie nicht alle Ressourcen sehen, führen Sie den Befehl `azure group deployment show` aus, um sicherzustellen, dass der Bereitstellungsstatus der Bereitstellung *Erfolgreich* lautet.
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0224_2016-->

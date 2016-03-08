@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/06/2015" 
+	ms.date="02/16/2016" 
 	ms.author="awills"/>
 
 # Erstellen einer neuen Application Insights-Ressource
@@ -31,7 +31,7 @@ Wenn Sie noch kein [Microsoft-Konto besitzen, erstellen Sie jetzt eins](http://l
 
 Außerdem benötigen Sie ein [Microsoft Azure](http://azure.com)-Abonnement. Wenn Ihr Team oder Ihre Organisation über ein Azure-Abonnement verfügt, kann der Besitzer Sie anhand Ihrer Windows Live-ID hinzufügen.
 
-Sie können jedoch auch ein neues Abonnement erstellen. Mit der kostenlosen Testversion können Sie alle Funktionen von Azure testen. Nachdem der Testzeitraum abgelaufen ist, finden Sie möglicherweise das Abonnement mit nutzungsbasierter Bezahlung geeignet, da Ihnen kostenlose Dienste nicht in Rechnung gestellt werden.
+Sie können jedoch auch ein neues Abonnement erstellen. Mit dem kostenlosen Konto können Sie alle Funktionen von Azure testen. Nachdem der Testzeitraum abgelaufen ist, finden Sie möglicherweise das Abonnement mit nutzungsbasierter Bezahlung geeignet, da Ihnen kostenlose Dienste nicht in Rechnung gestellt werden.
 
 Wenn Sie Zugang zu einem Abonnement besitzen, melden Sie sich über Ihre Live-ID unter [http://portal.azure.com](https://portal.azure.com) bei Application Insights an.
 
@@ -94,4 +94,4 @@ Sie können ein [PowerShell-Skript](app-insights-powershell-script-create-resour
 
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0224_2016-->

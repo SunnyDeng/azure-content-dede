@@ -130,7 +130,7 @@ Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache
 | Toyota | 2015-01-01T00:00:02.0000000Z |
 | Toyota | 2015-01-01T00:00:03.0000000Z |
 
-**Ausgabe 1**:
+**Ausgabe 1**:
 
 | Make | Time |
 | --- | --- |
@@ -140,7 +140,7 @@ Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache
 | Toyota | 2015-01-01T00:00:02.0000000Z |
 | Toyota | 2015-01-01T00:00:03.0000000Z |
 
-**Ausgabe 2**:
+**Ausgabe 2**:
 
 | Make | Time | Count |
 | --- | --- | --- |
@@ -169,7 +169,7 @@ Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache
 	HAVING
 		[Count] >= 3
 
-**Erläuterung**: Mit der INTO-Klausel wird Stream Analytics mitgeteilt, in welche Ausgabe die Daten aus dieser Anweisung geschrieben werden sollen. Bei der ersten Abfrage werden die eingegangenen Daten an eine Ausgabe namens „ArchiveOutput“ weitergereicht. Bei der zweiten Abfrage werden die Daten nach einer einfachen Aggregierung und Filterung an ein nachgelagertes Warnsystem gesendet. *Hinweis*: Sie können auch die Ergebnisse von CTEs (WITH-Anweisungen) in mehreren Ausgabeanweisungen wiederverwenden. Dies hat zudem den Vorteil, dass weniger Leser für die Eingabequelle geöffnet werden. Beispiel:
+**Erläuterung**: Mit der INTO-Klausel wird Stream Analytics mitgeteilt, in welche Ausgabe die Daten aus dieser Anweisung geschrieben werden sollen. Bei der ersten Abfrage werden die eingegangenen Daten an eine Ausgabe namens „ArchiveOutput“ weitergereicht. Bei der zweiten Abfrage werden die Daten nach einer einfachen Aggregierung und Filterung an ein nachgelagertes Warnsystem gesendet. *Hinweis:* Sie können auch die Ergebnisse von CTEs (WITH-Anweisungen) in mehreren Ausgabeanweisungen wiederverwenden. Dies hat zudem den Vorteil, dass weniger Leser für die Eingabequelle geöffnet werden. Beispiel:
 
 	WITH AllRedCars AS (
 		SELECT
@@ -353,7 +353,7 @@ Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache
 **Erläuterung**: Die Abfrage umfasst zwei Schritte: Im ersten Schritt wird der neueste Zeitstempel des jeweiligen Zehn-Minuten-Intervalls gesucht. Im zweiten Schritt werden die Ergebnisse der ersten Abfrage mit dem ursprünglichen Datenstrom zusammengeführt, um nach Ereignissen zu suchen, die dem letzten Zeitstempel des jeweiligen Intervalls entsprechen.
 
 ## Abfragebeispiel: Erkennen der Abwesenheit von Ereignissen
-**Beschreibung**: Überprüfen, ob der Datenstrom einen Wert enthält, der einem bestimmten Kriterium entspricht. Beispiel: Wurde die mautpflichtige Straße in einem Zeitraum von 90 Sekunden von zwei aufeinanderfolgenden Fahrzeugen der gleichen Marke befahren?
+**Beschreibung**: Überprüfen, ob der Datenstrom einen Wert enthält, der einem bestimmten Kriterium entspricht. Beispiel: Wurde die mautpflichtige Straße in einem Zeitraum von 90 Sekunden von zwei aufeinanderfolgenden Fahrzeugen der gleichen Marke befahren?
 
 **Eingabe**:
 
@@ -415,7 +415,7 @@ Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache
 **Erläuterung**: Verwenden Sie die „LAST“-Funktion, um den letzten Zeitpunkt (Time value) mit dem Ereignistyp „Start“ zu ermittelt. Beachten Sie, dass die LAST-Funktion PARTITION BY [user] verwendet, um anzuzeigen, dass das Ergebnis einzeln pro Benutzer berechnet wird. Die Abfrage hat einen maximalen Schwellenwert von einer Stunde für die Zeitdifferenz zwischen Start- und Stoppereignissen, ist aber nach Bedarf konfigurierbar (LIMIT DURATION(hour, 1).
 
 ## Abfragebeispiel: Ermitteln der Dauer einer Bedingung
-**Beschreibung**: Ermitteln, wie lange eine Bedingung angedauert hat. Beispiel: Aufgrund eines Fehlers wurde für alle Fahrzeuge ein Gewicht von über 20.000 Pfund erfasst, und wir möchten nun ermitteln, wie lange dieser Fehler aufgetreten ist.
+**Beschreibung:** Ermitteln, wie lange eine Bedingung angedauert hat. Beispiel: Aufgrund eines Fehlers wurde für alle Fahrzeuge ein Gewicht von über 20.000 Pfund erfasst, und wir möchten nun ermitteln, wie lange dieser Fehler aufgetreten ist.
 
 **Eingabe**:
 
@@ -456,7 +456,7 @@ WHERE
 **Erläuterung**: Verwenden Sie LAG, um den Eingabedatenstrom für 24 Stunden anzusehen und suchen Sie nach Instanzen, bei denen „StartFault“ und „StopFault“ von Gewichten unter 20.000 umgeben sind.
 
 ## Beispiel für eine Abfrage: Ausfüllen der fehlenden Werte
-**Beschreibung**: Für den Ereignisdatenstrom mit fehlenden Werten erzeugen Sie einen Ereignisdatenstrom mit regelmäßigen Intervallen. Generieren Sie z. B. alle 5 Sekunden ein Ereignis, das den zuletzt angezeigten Datenpunkt meldet.
+**Beschreibung**: Für den Ereignisdatenstrom mit fehlenden Werten erzeugen Sie einen Ereignisdatenstrom mit regelmäßigen Intervallen. Generieren Sie z. B. alle 5 Sekunden ein Ereignis, das den zuletzt angezeigten Datenpunkt meldet.
 
 **Eingabe**:
 
@@ -469,7 +469,7 @@ WHERE
 | "2014-01-01T06:01:30" | 5 |
 | "2014-01-01T06:01:35" | 6 |
 
-**Ausgabe (erste 10 Zeilen)**:
+**Ausgabe (erste 10 Zeilen)**:
 
 | windowend | lastevent.t | lastevent.value |
 |--------------------------|--------------------------|--------|
@@ -495,7 +495,7 @@ WHERE
     GROUP BY HOPPINGWINDOW(second, 300, 5)
 
 
-**Erklärung**: Diese Abfrage generiert Ereignisse alle 5 Sekunden und gibt das letzte Ereignis aus, das zuvor empfangen wurde. Die Dauer des [springenden Fensters](https://msdn.microsoft.com/library/dn835041.aspx "Springendes Fenster – Azure Stream Analytics") legt fest, wie weit die Abfrage zurückreicht, um das letzte Ereignis zu suchen (in diesem Beispiel 300 Sekunden).
+**Erklärung**: Diese Abfrage generiert Ereignisse alle 5 Sekunden und gibt das letzte Ereignis aus, das zuvor empfangen wurde. Die Dauer des [springenden Fensters](https://msdn.microsoft.com/library/dn835041.aspx "Springendes Fenster – Azure Stream Analytics") legt fest, wie weit die Abfrage zurückreicht, um das letzte Ereignis zu suchen (in diesem Beispiel 300 Sekunden).
 
 
 ## Hier erhalten Sie Hilfe
@@ -510,4 +510,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
  
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0224_2016-->

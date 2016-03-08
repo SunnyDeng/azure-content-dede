@@ -14,7 +14,7 @@
 	ms.workload="search"
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
-	ms.date="11/19/2015"
+	ms.date="02/15/2016"
 	ms.author="heidist"/>
 
 # Grenzwerte für den Azure Search-Dienst
@@ -88,7 +88,7 @@ Allgemeine Empfehlungen für hohe Verfügbarkeit sind:
 
 Derzeit steht kein integrierter Mechanismus für die Notfallwiederherstellung bereit. Das Hinzufügen von Partitionen oder Replikaten wäre die falsche Strategie, um die Zielsetzungen für eine Notfallwiederherstellung zu erfüllen. Stattdessen sollten Sie das Hinzufügen von Redundanz auf Dienstebene in Betracht ziehen. Eine eingehendere Besprechung der Methoden finden Sie in [diesem Forumsbeitrag](https://social.msdn.microsoft.com/Forums/ee108a26-00c5-49f6-b1ff-64c66c8b828a/dr-and-high-availability-for-azure-search?forum=azuresearch).
 
-> [AZURE.NOTE] Denken Sie daran, dass Vereinbarungen zum Servicelevel und Skalierbarkeit Features des Standarddiensts sind. Der kostenlose Dienst wird auf fester Ressourcenebene angeboten, wobei Replikate und Partitionen von mehreren Abonnenten gemeinsam genutzt werden. Wenn Sie mit dem kostenlosen Dienst begonnen haben und jetzt ein Upgrade durchführen möchten, müssen Sie einen neuen Azure Search-Dienst auf Standardebene erstellen und dann Indizes und Daten erneut in den neuen Dienst laden. Anweisungen zur Dienstbereitstellung finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](search-create-service-portal.md).
+> [AZURE.NOTE] Denken Sie daran, dass Vereinbarungen zum Servicelevel und Skalierbarkeit Features des Standarddiensts sind. Der kostenlose Dienst wird auf fester Ressourcenebene angeboten, wobei Replikate und Partitionen von mehreren Abonnenten gemeinsam genutzt werden. Wenn Sie mit dem kostenlosen Dienst begonnen haben und jetzt ein Upgrade durchführen möchten, müssen Sie einen neuen Azure Search-Dienst auf Standardebene erstellen und dann Indizes und Daten erneut in den neuen Dienst laden. Anweisungen zur Dienstbereitstellung finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](search-create-service-portal.md).
 
 ## Grenzwerte für API-Schlüssel
 
@@ -99,7 +99,7 @@ API-Schlüssel werden für die Dienstauthentifizierung verwendet. Es gibt zwei A
 
 ## Grenzwerte für Anforderungen
 
-- Maximal 16 MB pro Anforderung <sup>1</sup>
+- Maximal 16 MB pro Anforderung <sup>1</sup>
 - Maximale URL-Länge von 8 KB
 - Maximal 1000 Dokumente pro Batch von Hochlade-, Zusammenführungs- oder Löschvorgängen für Indizes
 - Maximal 32 Felder in $orderby-Klausel
@@ -110,6 +110,6 @@ API-Schlüssel werden für die Dienstauthentifizierung verwendet. Es gibt zwei A
 - Maximale Rückgabe von 1000 Dokumenten pro Seite mit Suchergebnissen
 - Maximale Rückgabe von 100 Vorschlägen pro Anforderung der Vorschlags-API
 
-<sup>1</sup> In Azure Search darf der Inhalt einer Anforderung nicht größer als 16 MB sein. Dies beschränkt möglicherweise den Inhalt einzelner Felder oder Sammlungen, für die ansonsten keine theoretischen Beschränkungen gelten. (Weitere Informationen zur Feldzusammensetzung und den Beschränkungen finden Sie unter [Unterstützte Datentypen (Azure Search)](https://msdn.microsoft.com/library/azure/dn798938.aspx)).
+<sup>1</sup> In Azure Search darf der Inhalt einer Anforderung nicht größer als 16 MB sein. Dies beschränkt möglicherweise den Inhalt einzelner Felder oder Sammlungen, für die ansonsten keine theoretischen Beschränkungen gelten. (Weitere Informationen zur Feldzusammensetzung und den Beschränkungen finden Sie unter [Unterstützte Datentypen (Azure Search)](https://msdn.microsoft.com/library/azure/dn798938.aspx)).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0224_2016-->

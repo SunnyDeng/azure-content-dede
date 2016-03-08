@@ -227,7 +227,7 @@ Fügen Sie einer Schutzgruppe virtuelle Computer hinzu, um sie zu schützen.
 		- **Größe**: Die Zielgröße des virtuellen Computers, für den ein Failover durchgeführt wird.
 
 		![Konfigurieren der Eigenschaften virtueller Computer](./media/site-recovery-hyper-v-site-to-azure/VMProperties.png)
-	- Konfigurieren weiterer Einstellungen für den virtuellen Computer unter *Geschützte Elemente** > **Schutzgruppen** > *<Name der Schutzgruppe>* > **Virtuelle Computer** > *<Name des virtuellen Computers>* > **Konfigurieren**. Hierzu zählen:
+	- Konfigurieren weiterer Einstellungen für den virtuellen Computer unter **Geschützte Elemente** > **Schutzgruppen** > *<Name der Schutzgruppe>* > **Virtuelle Computer** > *<Name des virtuellen Computers>* > **Konfigurieren**. Hierzu zählen:
 
 		- **Netzwerkadapter**: Die Anzahl der Netzwerkadapter hängt von der Größe ab, die Sie für den virtuellen Zielcomputer angeben. Überprüfen Sie in den [Spezifikationen für virtuelle Computer](../virtual-machines/virtual-machines-size-specs.md#size-tables), wie viele Netzwerkschnittstellenkarten von virtuellen Maschinen einer bestimmten Größe unterstützt werden.
 
@@ -295,4 +295,4 @@ Führen Sie das Testfailover wie folgt aus:
 
 Wenn die Bereitstellung eingerichtet ist und ausgeführt wird, informieren Sie sich über [Failover](site-recovery-failover.md).
 
-<!---HONumber=AcomDC_0218_2016-->
+<!-----HONumber=AcomDC_0218_2016-->

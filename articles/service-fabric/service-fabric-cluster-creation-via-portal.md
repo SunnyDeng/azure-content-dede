@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="01/29/2016"
+   ms.date="02/12/2016"
    ms.author="chackdan"/>
 
 
@@ -42,7 +42,7 @@ Auf dieser Seite erhalten Sie Informationen zum Einrichten eines Service Fabric-
 
  	![Screenshot der Erstellung einer neuen Ressourcengruppe.][CreateRG]
 
-6. Stellen Sie sicher, dass Sie das gewünschte **Abonnement** auswählen, dem Ihr Cluster bereitgestellt werden soll – vor allem dann, wenn Sie über mehrere Abonnements verfügen.
+6. Stellen Sie sicher, dass Sie das gewünschte **Abonnement** auswählen, dem Ihr Cluster bereitgestellt werden soll – vor allem dann, wenn Sie über mehrere Abonnements verfügen.
 
 7. Wählen Sie einen **Standort** aus der Dropdownliste aus. Der Standardwert ist **USA, Westen**.
 
@@ -52,11 +52,11 @@ Auf dieser Seite erhalten Sie Informationen zum Einrichten eines Service Fabric-
 
 	b. Wählen Sie die Anzahl der virtuellen Computer. Sie können die Anzahl der virtuellen Computer in einen Knotentyp später zentral hoch- oder herunterskalieren, aber der erste Knotentyp muss mindestens fünf VMs umfassen.
 
-	c. Wählen Sie einen Namen für Ihren Knotentyp aus (ein bis zwölf Zeichen, nur Buchstaben und Zahlen).
+	c. Wählen Sie einen Namen für Ihren Knotentyp aus (ein bis zwölf Zeichen, nur Buchstaben und Zahlen).
 
 	d. Wählen Sie den **Benutzernamen** und das **Kennwort** für den VM-Remotedesktop.
 
-	e. Wenn Sie im Cluster mehrere Knotentypen benötigen, sollten Sie die folgenden Aspekte beachten. (Wenn Sie einen Cluster mit einem einzigen Knotentyp bereitstellen möchten, fahren Sie mit Schritt 9 fort.)
+	e. Wenn Sie im Cluster mehrere Knotentypen benötigen, sollten Sie die folgenden Aspekte beachten. (Wenn Sie einen Cluster mit einem einzigen Knotentyp bereitstellen möchten, fahren Sie mit Schritt 9 fort.)
 
 	* Angenommen, Sie möchten eine Anwendung bereitstellen, die einen Front-End-Dienst und einen Back-End-Dienst enthält. Sie möchten den Front-End-Dienst auf kleinere virtuelle Computer (VM-Größen wie A2, D2 usw.) platzieren, die über geöffnete Ports für das Internet verfügen. Den rechenintensiven Back-End-Dienst möchten Sie hingegen auf größere virtuelle Computer (mit VM-Größen wie D4, D6, D12 usw.) platzieren, die nicht vom Internet aus zugänglich sind.
 
@@ -70,9 +70,9 @@ Auf dieser Seite erhalten Sie Informationen zum Einrichten eines Service Fabric-
 
 	a. Sie finden die Anwendungsports in Ihren Dienstmanifesten, die im Anwendungspaket enthalten sind. Rufen Sie Ihre Anwendungen auf, öffnen Sie die Dienstmanifeste, und notieren Sie alle Eingabeendpunkte, die Ihre Anwendung zum Kommunizieren mit der Außenwelt benötigt.
 
-	b. Fügen Sie dem Feld **Anwendungseingabe-Endpunkte** alle Ports (durch Kommas getrennt) hinzu. Der Endpunkt der TCP-Client-Verbindung ist standardmäßig 19000, sodass Sie keinen angegeben müssen. Für die Beispielanwendung „WordCount“ muss beispielsweise Port 83 geöffnet sein. Sie finden dies im Anwendungspaket in der Datei „servicemanifest.xml“. (Es gibt möglicherweise mehrere Dateien des Namens „servicemanifest.xml“.)
+	b. Fügen Sie dem Feld **Anwendungseingabe-Endpunkte** alle Ports (durch Kommas getrennt) hinzu. Der Endpunkt der TCP-Client-Verbindung ist standardmäßig 19000, sodass Sie keinen angegeben müssen. Für die Beispielanwendung „WordCount“ muss beispielsweise Port 83 geöffnet sein. Sie finden dies im Anwendungspaket in der Datei „servicemanifest.xml“. (Es gibt möglicherweise mehrere Dateien des Namens „servicemanifest.xml“.)
 
-    c. Die meisten Beispielanwendungen verwenden Port 80 und 8081. Fügen Sie diese also später hinzu, wenn Sie Beispiele in diesem Cluster bereitstellen möchten. ![Ports][Ports]
+    c. Die meisten Beispielanwendungen verwenden Port 80 und 8081. Fügen Sie diese also später hinzu, wenn Sie Beispiele in diesem Cluster bereitstellen möchten. ![Ports][Ports]
 
 10. Sie müssen keine **Platzierungseigenschaften** hinzufügen, da vom System eine Standard-Platzierungseigenschaft „NodeTypeName“ hinzugefügt wird. Wenn die Anwendung dies erfordert, können Sie weitere hinzufügen.
 
@@ -189,11 +189,16 @@ Nachdem Sie die Verbindung hergestellt haben, führen Sie die folgenden Befehle 
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 
+## Herstellen einer Verbindung mit einer Instanz der VM-Skalierungsgruppe (VMSS) oder einem Clusterknoten per RDP 
+
+Für jeden Knotentyp, den Sie in Ihrem Cluster angeben, wird jeweils eine VM-Skalierungsgruppe eingerichtet. Ausführliche Informationen finden Sie unter [How to RDP into your VMSS instance](service-fabric-cluster-nodetypes.md) (Herstellen einer Verbindung mit Ihrer VMSS-Instanz per RDP).
+
 ## Nächste Schritte
 
 - [Verwalten von Service Fabric-Anwendungen in Visual Studio](service-fabric-manage-application-in-visual-studio.md)
 - [Service Fabric-Clustersicherheit](service-fabric-cluster-security.md)
 - [Einführung in das Service Fabric-Integritätsmodell](service-fabric-health-introduction.md)
+- [How to RDP into your VMSS instance](service-fabric-cluster-nodetypes.md) (Herstellen einer Verbindung mit Ihrer VMSS-Instanz per RDP)
 
 <!--Image references-->
 [SearchforServiceFabricClusterTemplate]: ./media/service-fabric-cluster-creation-via-portal/SearchforServiceFabricClusterTemplate.png
@@ -207,4 +212,4 @@ Nachdem Sie die Verbindung hergestellt haben, führen Sie die folgenden Befehle 
 [ClusterDashboard]: ./media/service-fabric-cluster-creation-via-portal/ClusterDashboard.png
 [SecureConnection]: ./media/service-fabric-cluster-creation-via-portal/SecureConnection.png
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0224_2016-->

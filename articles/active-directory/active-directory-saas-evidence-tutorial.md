@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/10/2015"
+	ms.date="02/23/2016"
 	ms.author="asmalser"/>
 
 
@@ -67,7 +67,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
  
 8.	Kopieren Sie die Werte für **Aussteller-URL**, **Einmaliges Anmelden** und **Einmaliges Abmelden**, die im klassischen Azure-Portal angezeigt werden, in die entsprechenden Felder von Evidence.com.
 
-9.	Öffnen Sie das Zertifikat, das Sie in Schritt 4 heruntergeladen haben, mit einem Text-Editor wie „Notepad.exe“, kopieren Sie den Inhalt, und fügen Sie ihn in das Feld **Sicherheitszertifikat** ein.
+9.	Öffnen Sie das Zertifikat, das Sie in Schritt 4 heruntergeladen haben, mit einem Text-Editor wie „Notepad.exe“, kopieren Sie den Inhalt, und fügen Sie ihn in das Feld **Sicherheitszertifikat** ein.
 
 10. Speichern Sie die Konfiguration in Evidence.com.
  
@@ -107,4 +107,4 @@ Damit bereitgestellten AAD-Benutzern Evidence.com im Zugriffsbereich angezeigt w
  
 4.	Klicken Sie in der Fußzeile auf die Schaltfläche **Zuweisen**.
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0224_2016-->

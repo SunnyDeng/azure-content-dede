@@ -13,7 +13,7 @@
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
 	ms.workload="na" 
-	ms.date="12/24/2015"
+	ms.date="02/26/2016"
 	ms.author="cfowler"/>
 
 # Verbinden einer Web-App mit einer API-App in Azure App Service
@@ -47,7 +47,7 @@ Dieses Tutorial baut auf der Reihe der API-App-Tutorials auf:
 
 	![Auswählen einer vorhandenen API-App](./media/app-service-web-connect-web-app-to-saas-api/4-Add-Azure-API-App-SDK-Dialog.png)
 
-	>[AZURE.NOTE]Der Clientcode für die Verbindung mit der API-Anwendung wird von einem Swagger-API-Endpunkt automatisch generiert.
+	>[AZURE.NOTE] Der Clientcode für die Verbindung mit der API-Anwendung wird von einem Swagger-API-Endpunkt automatisch generiert.
 
 1. Um den generierten API-Code zu nutzen, öffnen Sie die Datei "HomeController.cs" und ersetzen die `Contact`-Aktion durch Folgendes:
 
@@ -68,13 +68,13 @@ Dieses Tutorial baut auf der Reihe der API-App-Tutorials auf:
 	@model IList&lt;MyContactsList.Web.Models.Contact>
 	
 	// Replace the default email addresses with the following
-    &lt;h3>Public Contacts&lt;/h3>
-    &lt;ul>
-        @foreach (var contact in Model)
-    {
-        &lt;li>&lt;a href="mailto:@contact.EmailAddress">@contact.Name &amp;lt;@contact.EmailAddress&amp;gt;&lt;/a>&lt;/li>
-        }
-    &lt;/ul> 
+	&lt;h3>Public Contacts&lt;/h3>
+	&lt;ul>
+	    @foreach (var contact in Model)
+	    {
+	        &lt;li>&lt;a href="mailto:@contact.EmailAddress">@contact.Name &amp;lt;@contact.EmailAddress&amp;gt;&lt;/a>&lt;/li>
+	    }
+	&lt;/ul> 
 	</pre>
 
 	![Codeaktualisierung in "Contact.cshtml"](./media/app-service-web-connect-web-app-to-saas-api/6-Update-View-To-Reflect-Changes.png)
@@ -83,10 +83,10 @@ Dieses Tutorial baut auf der Reihe der API-App-Tutorials auf:
 
 Befolgen Sie die Anweisungen unter [Bereitstellen einer Azure Web-App](web-sites-deploy.md).
 
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Änderungen
 * Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
  
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="get-started-article" 
-	ms.date="02/02/2016" 
+	ms.date="02/25/2016" 
 	ms.author="elizapo"/>
 
 # Azure RemoteApp – Häufig gestellte Fragen
@@ -23,15 +23,15 @@ Folgende Fragen wurden zu Azure RemoteApp an uns gestellt. Haben Sie weitere Fra
 
 
 - **Was ist Azure RemoteApp?** RemoteApp ist ein Azure-Dienst, mit dessen Hilfe Sie für einen sicheren Remotezugriff auf Anwendungen von vielen unterschiedlichen Benutzergeräten aus sorgen können. Erfahren Sie mehr über [Azure RemoteApp](remoteapp-whatis.md).
-- **Welche Bereitstellungsoptionen gibt es?** Es gibt zwei Arten von RemoteApp-Sammlungen: Cloud und Hybrid. Welche der beiden Sie benötigen, hängt von einer Reihe von Faktoren ab, z. B. davon, ob Sie einen Domänenbeitritt benötigen. Wir diskutieren diese Entscheidungen [hier](remoteapp-collections.md).
+- **Welche Bereitstellungsoptionen gibt es?** Es gibt zwei Arten von RemoteApp-Sammlungen: Cloud und Hybrid. Welche der beiden Sie benötigen, hängt von einer Reihe von Faktoren ab, z. B. davon, ob Sie einen Domänenbeitritt benötigen. Wir diskutieren diese Entscheidungen [hier](remoteapp-collections.md).
 
 ## Tipps zum Verwenden von Azure RemoteApp ##
 - **Wie lange kann ich inaktiv sein, bis ich getrennt werde? Wie viel Zeit habe ich bis zur automatischen Abmeldung?** 4 Stunden. Wenn Sie oder einer Ihrer Benutzer 4 Stunden lang inaktiv ist, werden Sie automatisch von Azure RemoteApp abgemeldet. Alle weiteren Standardeinstellungen werden unter [Einschränkungen für Azure-Abonnements und Dienste, Kontingente und Einschränkungen](../azure-subscription-service-limits.md) näher besprochen.
-- **Kann ich diesen Dienst kostenlos testen?** Ja. Es ist eine kostenlose Testversion für 30 Tage verfügbar. Nach Ablauf des Testzeitraums können Sie auf ein gebührenpflichtiges Konto (für die Produktionsumgebung) umstellen oder den Dienst beenden. Starten Sie die kostenlose Testversion unter [portal.azure.com](http://portal.azure.com), und erstellen Sie eine neue Instanz von RemoteApp. Mit der kostenlosen Testversion können Sie zwei Instanzen von RemoteApp mit 10 Benutzern pro Instanz erstellen. Beachten Sie, dass diese Testversion nur für 30 Tage gilt.
+- **Kann ich diesen Dienst kostenlos testen?** Ja. Es ist eine kostenlose Testversion für 30 Tage verfügbar. Nach Ablauf des Testzeitraums können Sie auf ein gebührenpflichtiges Konto (für die Produktionsumgebung) umstellen oder den Dienst beenden. Starten Sie die kostenlose Testversion unter [portal.azure.com](http://portal.azure.com), und erstellen Sie eine neue Instanz von RemoteApp. Mit der kostenlosen Testversion können Sie zwei Instanzen von RemoteApp mit 10 Benutzern pro Instanz erstellen. Beachten Sie, dass diese Testversion nur für 30 Tage gilt.
 ## Informationen zu Azure RemoteApp-Abonnements ##
 
-- **Was sind die Dienstgrenzwerte?** Informationen zu den Standardeinstellungen und Dienstbeschränkungen für Azure RemoteApp finden Sie unter [Einschränkungen für Azure-Abonnements und Dienste, Kontingente und Einschränkungen](azure-subscription-service-limits.md). Sie können sich gern an uns wenden, wenn Sie weitere Fragen haben.
-- **Wie viele Benutzer benötige ich?** Es sind mindestens 20 Benutzer erforderlich. Ich wiederhole dies noch einmal, damit es klar verständlich ist: das MINIMUM beträgt 20. Ihnen werden 20 Benutzer berechnet. 
+- **Was sind die Dienstgrenzwerte?** Informationen zu den Standardeinstellungen und Dienstbeschränkungen für Azure RemoteApp finden Sie unter [Einschränkungen für Azure-Abonnements und Dienste, Kontingente und Einschränkungen](../azure-subscription-service-limits.md). Sie können sich gern an uns wenden, wenn Sie weitere Fragen haben.
+- **Wie viele Benutzer benötige ich?** Es sind mindestens 20 Benutzer erforderlich. Ich wiederhole dies noch einmal, damit es klar verständlich ist: das MINIMUM beträgt 20. Ihnen werden 20 Benutzer berechnet. 
 - **Wie hoch sind die Kosten für RemoteApp?** Beachten Sie die [Preisdetails für Azure RemoteApp](../../../pricing/details/remoteapp/).
 - **Sind bestimmte Sammlungstypen teurer als andere?** Ja, dies kann abhängig von Ihren Anforderungen an Sammlungen der Fall sein. Für eine Hybridsammlung ist eine Verbindung von Azure RemoteApp zu Ihrem lokalen Netzwerk erforderlich. Wenn Sie ein vorhandenes VNET/ExpressRoute verwenden, fallen keine zusätzlichen Kosten an. Wenn Sie jedoch ein neues Azure-VNET und ein Gateway oder ExpressRoute verwenden, fallen für das [VPN-Gateway](../../../pricing/details/vpn-gateway) oder [ExpressRoute](../../../pricing/details/expressroute/) Kosten an. Diese Kosten (siehe Links) werden zusätzlich zu Ihren monatlichen Kosten für Azure RemoteApp berechnet.
 
@@ -48,14 +48,14 @@ Folgende Fragen wurden zu Azure RemoteApp an uns gestellt. Haben Sie weitere Fra
 
 
 ## Netzwerkoptionen
-- **Für die Hybrid-Sammlung ist ein virtuelles Netzwerk (VNET) erforderlich. Können wir unser vorhandenes VNET verwenden?** Das ist möglich, wenn das vorhandene VNET ein Azure VNET ist. Weitere Informationen finden Sie unter "Schritt 1: Einrichten des virtuellen Netzwerks" in den [Anweisungen zu Hybridsammlungen](remoteapp-create-hybrid-deployment.md).
-- **Kann ich ein VNET mit einer Cloudsammlung verwenden?** Dies ist möglich. Unter [Erstellen einer Cloudsammlung](remoteapp-create-cloud-deployment.md), besonders Schritt 1, finden Sie weitere Informationen.
+- **Für die Hybrid-Sammlung ist ein virtuelles Netzwerk (VNET) erforderlich. Können wir unser vorhandenes VNET verwenden?** Das ist möglich, wenn das vorhandene VNET ein Azure VNET ist. Weitere Informationen finden Sie unter "Schritt 1: Einrichten des virtuellen Netzwerks" in den [Anweisungen zu Hybridsammlungen](remoteapp-create-hybrid-deployment.md).
+- **Kann ich ein VNET mit einer Cloudsammlung verwenden?** Dies ist möglich. Unter [Erstellen einer Cloudsammlung](remoteapp-create-cloud-deployment.md), besonders Schritt 1, finden Sie weitere Informationen.
 
 ## Authentifizierungsoptionen
 
 
 
-- **Wie sieht es mit der Authentifizierung aus? Welche Methoden werden unterstützt?** Die Cloudsammlung unterstützt Microsoft-Konten und Azure Active Directory-Konten, die gleichzeitig auch Office 365-Konten sind. Die Hybrid-Sammlung unterstützt nur Azure Active Directory-Konten, die von einer Windows Server Active Directory-Bereitstellung synchronisiert wurden (mithilfe eines Tools wie z. B. [Azure Active Directory Sync](http://blogs.technet.com/b/ad/archive/2014/09/16/azure-active-directory-sync-is-now-ga.aspx)). Dies gilt insbesondere für Konten, die entweder mit der Option "Kennwortsynchronisierung" oder mit Active Directory Federation Services (AD FS) in einer Verbundkonfiguration synchronisiert wurden. Sie können auch die [Multi-Factor Authentication (MFA)](../../services/multi-factor-authentication/) konfigurieren.
+- **Wie sieht es mit der Authentifizierung aus? Welche Methoden werden unterstützt?** Die Cloudsammlung unterstützt Microsoft-Konten und Azure Active Directory-Konten, die gleichzeitig auch Office 365-Konten sind. Die Hybrid-Sammlung unterstützt nur Azure Active Directory-Konten, die von einer Windows Server Active Directory-Bereitstellung synchronisiert wurden (mithilfe eines Tools wie z. B. [Azure Active Directory Sync](http://blogs.technet.com/b/ad/archive/2014/09/16/azure-active-directory-sync-is-now-ga.aspx)). Dies gilt insbesondere für Konten, die entweder mit der Option "Kennwortsynchronisierung" oder mit Active Directory Federation Services (AD FS) in einer Verbundkonfiguration synchronisiert wurden. Sie können auch die [Multi-Factor Authentication (MFA)](../../services/multi-factor-authentication/) konfigurieren.
 
 >[AZURE.NOTE]Azure Active Directory-Benutzer müssen dem Ihrem Abonnement zugeordneten Mandanten angehören. (Sie können Ihr Abonnement im Portal auf der Registerkarte **Einstellungen** anzeigen und bearbeiten. Weitere Informationen finden Sie unter [Ändern des von RemoteApp verwendeten Azure Active Directory-Mandanten](remoteapp-changetenant.md).)
 
@@ -67,7 +67,7 @@ Unter [Zugreifen auf Anwendungen in Azure RemoteApp](remoteapp-clients.md) finde
 - **Welche Geräte und Betriebssysteme werden von den Clientanwendungen unterstützt?** Zunächst Computer und Tablets: 
 	- Windows 10 (Clientvorschau)
 	- Windows 8.1 und Windows 8
-	- Windows 7 Service Pack 1
+	- Windows 7 Service Pack 1
 	- Mac OS X
 	- Windows RT
 	- Android-Tablets
@@ -83,7 +83,7 @@ Unter [Zugreifen auf Anwendungen in Azure RemoteApp](remoteapp-clients.md) finde
 	- Windows Embedded 8.1 Industry Pro
 	- Windows 10 IoT Enterprise
 
-- **Welche Version von Windows Server wird für den Remotedesktop-Sitzungshost (RDSH) unterstützt?** Windows Server 2012 R2
+- **Welche Version von Windows Server wird für den Remotedesktop-Sitzungshost (RDSH) unterstützt?** Windows Server 2012 R2
 
 ##Support und Feedback
 
@@ -114,4 +114,4 @@ Unter [Zugreifen auf Anwendungen in Azure RemoteApp](remoteapp-clients.md) finde
 ### Helfen Sie uns, Ihnen zu helfen 
 Wussten Sie schon, dass Sie diesen Artikel im Bereich unten nicht nur bewerten und kommentieren, sondern ihn auch selbst ändern können? Fehlt etwas? Ist etwas nicht ganz richtig? Habe ich etwas geschrieben, das eher verwirrend ist? Scrollen Sie nach oben, und klicken Sie auf **Edit on GitHub**, um die gewünschten Änderungen vorzunehmen. Ihr Vorschlag wird uns vorgelegt, und wenn wir ihn bestätigt haben, werden Ihre Änderungen und Verbesserungen hier angezeigt.
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -1,6 +1,6 @@
 <properties
    pageTitle="Arbeiten mit Big Data-Datenquellen"
-   description="Gewusst-wie-Artikel, der die Muster zur Verwendung von Azure Data Catalog mit Big Data-Datenquellen hervorhebt, einschließlich Azure Blob Storage, Azure Data Lake und Hadoop HDFS."
+   description="Anleitungsartikel, der die Muster zur Verwendung von Azure Data Catalog mit Big Data-Datenquellen hervorhebt, einschließlich Azure Blob Storage, Azure Data Lake und Hadoop HDFS."
    services="data-catalog"
    documentationCenter=""
    authors="steelanddata"
@@ -68,4 +68,4 @@ Die oben beschriebenen Muster sind nur zwei Möglichkeiten, wie ein großer Date
 ## Zusammenfassung
 Das Registrieren von Datenquellen bei **Azure Data Catalog** erleichtert deren Ermittlung und Verständnis. Durch das Registrieren und Kommentieren der Big Data-Dateien und -Verzeichnisse, die logische Datensätze darstellen, können Ihre Benutzer leichter von ihnen benötigte große Datenquellen suchen und verwenden.
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

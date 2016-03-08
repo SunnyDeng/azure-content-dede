@@ -13,7 +13,7 @@
 	ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="identity" 
-	ms.date="02/09/2016"
+	ms.date="02/23/2016"
 	ms.author="billmath"/>
 
 
@@ -36,7 +36,7 @@ Die drei wichtigsten Integrationsszenarien von Microsoft sind Cloudidentitäten,
 In der obigen Abbildung sind folgende Szenarien definiert:
 
 - **Cloudidentitäten**: Hierbei handelt es sich um Identitäten, die ausschließlich in der Cloud vorhanden sind. Im Fall von Azure AD würden sie sich speziell in Ihrem Azure AD-Verzeichnis befinden.
-- **Synchronisiert**: Hierbei handelt es sich um Identitäten, die lokal vorhanden sind und in der Cloud. Mithilfe von Azure AD Connect werden diese Benutzer entweder erstellt oder mit vorhandenen Azure AD-Konten verknüpft. Das Kennworthash des Benutzers in der lokalen Umgebung wird mit der Cloud synchronisiert. Beim Synchronisieren ist allerdings Folgendes zu beachten: Wenn ein Benutzer in der lokalen Umgebung deaktiviert ist, kann es bis zu 3 Stunden dauern, bis der Kontostatus in Azure AD angezeigt wird. Dies liegt am Zeitintervall für die Synchronisierung.
+- **Synchronisiert**: Hierbei handelt es sich um Identitäten, die lokal vorhanden sind und in der Cloud. Mithilfe von Azure AD Connect werden diese Benutzer entweder erstellt oder mit vorhandenen Azure AD-Konten verknüpft. Das Kennworthash des Benutzers in der lokalen Umgebung wird mit der Cloud synchronisiert. Beim Synchronisieren ist allerdings Folgendes zu beachten: Wenn ein Benutzer in der lokalen Umgebung deaktiviert ist, kann es bis zu 3 Stunden dauern, bis der Kontostatus in Azure AD angezeigt wird. Dies liegt am Zeitintervall für die Synchronisierung.
 - **Im Verbund**: Diese Identitäten sind sowohl lokal als auch in der Cloud vorhanden. Mithilfe von Azure AD Connect werden diese Benutzer entweder erstellt oder mit vorhandenen Azure AD-Konten verknüpft.  
  
 >[AZURE.NOTE]
@@ -73,31 +73,31 @@ Von der Strategie, die Sie verwenden, hängt die Benutzeranmeldung ab. Die folge
 | Exchange ActiveSync | Aufforderung zur Eingabe von Anmeldeinformationen | Einmaliges Anmelden für Lync, Aufforderung zur Eingabe von Anmeldeinformationen für Exchange |
 | Mobile Apps | Aufforderung zur Eingabe von Anmeldeinformationen | Aufforderung zur Eingabe von Anmeldeinformationen |
 
-Wenn Sie in Aufgabe 1 ermittelt haben, dass Sie einen Drittanbieter-IdP haben oder verwenden werden, um einen Verbund mit Azure AD bereitzustellen, müssen Sie die folgenden unterstützten Funktionen kennen: - Jeder SAML 2.0-Anbieter, der mit dem SP-Lite-Profil kompatibel ist, kann die Authentifizierung bei Azure AD und zugehörigen Anwendungen unterstützen - Passive Authentifizierung wird unterstützt, was die Authentifizierung bei OWA, SPO usw. erleichtert – Exchange Online-Clients können über das SAML 2.0 Enhanced Client Profile (ECP) unterstützt werden
+Wenn Sie in Aufgabe 1 ermittelt haben, dass Sie einen Drittanbieter-IdP haben oder verwenden werden, um einen Verbund mit Azure AD bereitzustellen, müssen Sie die folgenden unterstützten Funktionen kennen: - Jeder SAML 2.0-Anbieter, der mit dem SP-Lite-Profil kompatibel ist, kann die Authentifizierung bei Azure AD und zugehörigen Anwendungen unterstützen - Passive Authentifizierung wird unterstützt, was die Authentifizierung bei OWA, SPO usw. erleichtert – Exchange Online-Clients können über das SAML 2.0 Enhanced Client Profile (ECP) unterstützt werden
 
 Sie müssen auch wissen, welche Funktionen nicht zur Verfügung stehen:
 
 - Ohne Unterstützung von WS-Trust/-Federation fallen alle anderen aktiven Clients weg
- - Das bedeutet, kein Lync-Client, OneDrive-Client, Office-Abonnement, Office Mobile vor Office 2016
-- Der Übergang von Office zur passiven Authentifizierung erlaubt die Unterstützung reiner SAML 2.0-IdPs, aber die Unterstützung erfolgt immer noch auf „Client-by-Client“-Basis
+ - Das bedeutet, kein Lync-Client, OneDrive-Client, Office-Abonnement, Office Mobile vor Office 2016
+- Der Übergang von Office zur passiven Authentifizierung erlaubt die Unterstützung reiner SAML 2.0-IdPs, aber die Unterstützung erfolgt immer noch auf „Client-by-Client“-Basis
 
 
 >[AZURE.NOTE]
 Die aktuellste Liste finden Sie im Artikel http://aka.ms/ssoproviders.
 
 ## Definieren der Strategie für die Synchronisierung
-In dieser Aufgabe definieren Sie, welche Tools verwendet werden, um die lokalen Daten der Organisation mit der Cloud zu synchronisieren, und welche Topologie Sie verwenden sollten. Da die meisten Organisationen Active Directory verwenden, werden Informationen zur Verwendung von Azure AD Connect zur Behandlung der obigen Fragen detailliert dargestellt. Für Umgebungen, die nicht über Active Directory verfügen, stehen Informationen zur Verwendung von FIM 2010 R2 oder MIM 2016 zur Verfügung, um die Planung dieser Strategie zu unterstützen. Zukünftige Versionen von Azure AD Connect werden jedoch LDAP-Verzeichnisse unterstützen – je nachdem, wie Ihr Zeitplan aussieht, können diese Informationen möglicherweise hilfreich sein.
+In dieser Aufgabe definieren Sie, welche Tools verwendet werden, um die lokalen Daten der Organisation mit der Cloud zu synchronisieren, und welche Topologie Sie verwenden sollten. Da die meisten Organisationen Active Directory verwenden, werden Informationen zur Verwendung von Azure AD Connect zur Behandlung der obigen Fragen detailliert dargestellt. Für Umgebungen, die nicht über Active Directory verfügen, stehen Informationen zur Verwendung von FIM 2010 R2 oder MIM 2016 zur Verfügung, um die Planung dieser Strategie zu unterstützen. Zukünftige Versionen von Azure AD Connect werden jedoch LDAP-Verzeichnisse unterstützen – je nachdem, wie Ihr Zeitplan aussieht, können diese Informationen möglicherweise hilfreich sein.
 
 ###Synchronisierungstools
 Im Laufe der Jahre wurden mehrere Synchronisierungstools für verschiedene Szenarien verwendet. Derzeit ist Azure AD Connect das Tool der Wahl für alle unterstützten Szenarien. AAD Sync und DirSync werden auch noch eingesetzt und könnten sogar jetzt in Ihrer Umgebung vorhanden sein.
 
 >[AZURE.NOTE]
-Aktuelle Informationen zu den unterstützten Funktionen der einzelnen Tools finden Sie im Artikel [Vergleich von Tools für die Verzeichnisintegration](active-directory-aadconnect-get-started-tools-comparison.md).
+Aktuelle Informationen zu den unterstützten Funktionen der einzelnen Tools finden Sie im Artikel [Vergleich von Tools für die Verzeichnisintegration](active-directory-hybrid-identity-design-considerations-tools-comparison.md).
 
 ### Unterstützte Topologien
-Bei der Definition einer Strategie für die Synchronisierung muss die verwendete Topologie bestimmt werden. Je nach den Informationen, die in Schritt 2 ermittelt wurden, können Sie bestimmen, welche Topologie die richtige ist. Die einzelne Gesamtstruktur, einzelne Azure AD-Topologie wird am häufigsten verwendet und besteht aus einer einzelnen Active Directory-Gesamtstruktur und einer einzelnen Instanz von Azure AD. Sie wird in der Mehrzahl der Szenarien verwendet und ist die erwartete Topologie beim Einsatz der Expressinstallation von Azure AD Connect, wie in der folgenden Abbildung dargestellt.
+Bei der Definition einer Strategie für die Synchronisierung muss die verwendete Topologie bestimmt werden. Je nach den Informationen, die in Schritt 2 ermittelt wurden, können Sie bestimmen, welche Topologie die richtige ist. Die einzelne Gesamtstruktur, einzelne Azure AD-Topologie wird am häufigsten verwendet und besteht aus einer einzelnen Active Directory-Gesamtstruktur und einer einzelnen Instanz von Azure AD. Sie wird in der Mehrzahl der Szenarien verwendet und ist die erwartete Topologie beim Einsatz der Expressinstallation von Azure AD Connect, wie in der folgenden Abbildung dargestellt.
  
-![](./media/hybrid-id-design-considerations/single-forest.png) Das Szenario der einzelnen Gesamtstruktur wird sehr häufig für große und auch kleine Organisationen gewählt, um mehrere Gesamtstrukturen zu haben, wie in Abbildung 5 dargestellt.
+![](./media/hybrid-id-design-considerations/single-forest.png) Das Szenario der einzelnen Gesamtstruktur wird sehr häufig für große und auch kleine Organisationen gewählt, um mehrere Gesamtstrukturen zu haben, wie in Abbildung 5 dargestellt.
 
 >[AZURE.NOTE]
 Weitere Informationen zu den verschiedenen lokalen und Azure AD-Topologien mit Azure AD Connect-Synchronisierung finden Sie im Artikel [Topologien für Azure AD Connect](active-directory-aadconnect-topologies.md).
@@ -149,7 +149,7 @@ Hierfür gelten folgende Voraussetzungen:
 
 Achten Sie darauf, dass Folgendes nicht unterstützt wird und nicht als Implementierung ausgewählt werden sollte:
 
-- Die Verbindung mehrerer Azure AD Connect-Synchronisierungsserver mit dem gleichen Azure AD-Verzeichnis wird auch dann nicht unterstützt, wenn sie dazu konfiguriert sind, jeweils exklusive Gruppen von Objekten zu synchronisieren.
+- Die Verbindung mehrerer Azure AD Connect-Synchronisierungsserver mit dem gleichen Azure AD-Verzeichnis wird auch dann nicht unterstützt, wenn sie dazu konfiguriert sind, jeweils exklusive Gruppen von Objekten zu synchronisieren.
 - Die Synchronisierung des gleichen Benutzers mit mehreren Azure AD-Verzeichnissen wird nicht unterstützt. 
 - Es wird auch nicht unterstützt, die Konfiguration so zu ändern, dass Benutzer in einem Azure AD in einem anderen Azure AD-Verzeichnis als Kontakte angezeigt werden. 
 - Es wird auch nicht unterstützt, die Azure AD Connect-Synchronisierung so zu ändern, dass Verbindungen zu mehreren Azure AD-Verzeichnissen möglich sind.
@@ -157,7 +157,7 @@ Achten Sie darauf, dass Folgendes nicht unterstützt wird und nicht als Implemen
 
 
 >[AZURE.NOTE]
-Für den Fall, dass Ihre Organisation die Verbindung von Computern Ihres Netzwerks mit dem Internet einschränkt, werden in diesem Artikel die Endpunkte aufgeführt (FQDNs, IPv4- und IPv6-Adressbereiche), die Sie in Ihre Ausgangszulassungslisten und Zone vertrauenswürdiger Sites von Clientcomputern im Internet Explorer einbeziehen sollten, um sicherzustellen, dass Ihre Computer Office 365 erfolgreich verwenden können. Weitere Informationen finden Sie unter [URLs und IP-Adressbereiche von Office 365](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2?ui=de-DE&rs=de-DE&ad=US).
+Für den Fall, dass Ihre Organisation die Verbindung von Computern Ihres Netzwerks mit dem Internet einschränkt, werden in diesem Artikel die Endpunkte aufgeführt (FQDNs, IPv4- und IPv6-Adressbereiche), die Sie in Ihre Ausgangszulassungslisten und Zone vertrauenswürdiger Sites von Clientcomputern im Internet Explorer einbeziehen sollten, um sicherzustellen, dass Ihre Computer Office 365 erfolgreich verwenden können. Weitere Informationen finden Sie unter [URLs und IP-Adressbereiche von Office 365](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2?ui=de-DE&rs=de-DE&ad=US).
 
 ## Definieren der Multi-Factor Authentication-Strategie
 In dieser Aufgabe definieren Sie die Strategie der zu verwendenden mehrstufigen Authentifizierung. Azure Multi-Factor Authentication ist in zwei verschiedenen Versionen verfügbar. Eine ist cloudbasiert und die andere lokal basiert mit Einsatz des Azure MFA-Servers. Basierend auf der Auswertung, die Sie oben ausgeführt haben, können Sie die richtige Lösung für Ihre Strategie ermitteln. Bestimmen Sie mithilfe der folgenden Tabelle, welche Entwurfsoption für die Sicherheitsanforderungen Ihres Unternehmens optimal ist:
@@ -197,4 +197,4 @@ Sie sollten außerdem sicherstellen, dass die ausgewählte Entwurfsoption für d
 ## Weitere Informationen
 [Überlegungen zum Entwurf – Übersicht](active-directory-hybrid-identity-design-considerations-overview.md)
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0224_2016-->

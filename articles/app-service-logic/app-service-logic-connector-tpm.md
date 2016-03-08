@@ -4,7 +4,7 @@
    services="app-service\logic" 
    documentationCenter=".net,nodejs,java" 
    authors="rajeshramabathiran" 
-   manager="dwrede" 
+   manager="erikre" 
    editor=""/>
 
 <tags
@@ -13,11 +13,13 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration" 
-   ms.date="12/17/2015"
+   ms.date="02/10/2016"
    ms.author="rajram"/>
 
 # Erste Schritte mit der BizTalk-Handelspartnerverwaltung und das Hinzufügen zur Logik-App
-Mit dem BizTalk-Dienst für die Handelspartnerverwaltung (Trading Partner Management, TPM) können Sie Business-to-Business-Beziehungen, z. B. Partner und Vereinbarungen, zusammen mit zugeordneten Artefakten, z. B. Schemas und Zertifikaten, definieren und dauerhaft einrichten. Diese Beziehungen können dann von verwandten API-Diensten, z. B. AS2, EDIFACT und X12, durchgesetzt werden.
+>[AZURE.NOTE] Diese Version des Artikels gilt für die Logik-Apps-Schemaversion 2014-12-01-preview.
+
+Mit dem BizTalk-Dienst für die Handelspartnerverwaltung (Trading Partner Management, TPM) können Sie Business-to-Business-Beziehungen, z. B. Partner und Vereinbarungen, zusammen mit zugeordneten Artefakten, z. B. Schemas und Zertifikaten, definieren und dauerhaft einrichten. Diese Beziehungen können dann von verwandten API-Diensten, z. B. AS2, EDIFACT und X12, durchgesetzt werden.
 
 Die TPM-API-App ist die Basisanforderung des AS2-Connectors und der X12- oder EDIFACT-API-Apps. Sie können die BizTalk-Handelspartnerverwaltung dem geschäftlichen Workflow hinzufügen und Daten im Rahmen dieses Business-to-Business-Workflows in einer Logik-App verarbeiten.
 
@@ -30,7 +32,7 @@ Erfahren Sie mehr über das [Erstellen einer Handelspartnervereinbarung][1].
 ## Mehr mit Ihrem Connector machen
 Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
->[AZURE.NOTE]Wenn Sie Azure Logik-Apps ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [Logik-App testen](https://tryappservice.azure.com/?appservice=logic) sofort kostenlos eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure Logik-Apps ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [Logik-App testen](https://tryappservice.azure.com/?appservice=logic) sofort kostenlos eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
 
@@ -39,4 +41,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 <!--References-->
 [1]: app-service-logic-create-a-trading-partner-agreement.md
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0224_2016-->

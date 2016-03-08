@@ -16,13 +16,13 @@
    ms.date="02/17/2016"
    ms.author="tomfitz"/>
 
-# Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage
+# Bereitstellen einer Ressourcengruppe mit einer Azure Resource Manager-Vorlage
 
-In diesem Thema wird erläutert, wie Azure-Ressourcen-Manager-Vorlagen verwendet werden, um Ihre Anwendung in Azure bereitzustellen. Es wird gezeigt, wie Sie Ihre Anwendung mithilfe von Azure PowerShell, der Azure-Befehlszeilenschnittstelle, der REST-API oder des Azure-Portals bereitstellen können.
+In diesem Thema wird erläutert, wie Ihre Anwendung mit Azure Resource Manager-Vorlagen in Azure bereitgestellt wird. Es wird gezeigt, wie Sie Ihre Ressourcen mithilfe von Azure PowerShell, der Azure-Befehlszeilenschnittstelle, der REST-API oder des Azure-Portals bereitstellen können.
 
 Eine Einführung in den Ressourcen-Manager finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](./resource-group-overview.md). Informationen zum Erstellen von Vorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](resource-group-authoring-templates.md).
 
-Wenn Sie eine Anwendung mit einer Vorlage bereitstellen, können Sie Parameterwerte angeben, um anzupassen, wie die Ressourcen erstellt werden. Sie geben Werte für diese Parameter entweder inline oder in einer Parameterdatei an.
+Wenn Sie eine Anwendungsdefinition mit einer Vorlage bereitstellen, können Sie Parameterwerte angeben, um anzupassen, wie die Ressourcen erstellt werden. Sie geben Werte für diese Parameter entweder inline oder in einer Parameterdatei an.
 
 ## Inkrementelle und vollständige Bereitstellungen
 
@@ -47,7 +47,7 @@ Sie gebenden Bereitstellungstyp über die **Mode**-Eigenschaft an, wie in den Be
 
 1. Melden Sie sich bei Ihrem Azure-Konto an. Nach der Eingabe Ihrer Anmeldeinformationen gibt der Befehl die Informationen zu Ihrem Konto zurück.
 
-    Azure PowerShell 1.0:
+    Azure PowerShell 1.0:
 
          PS C:\> Login-AzureRmAccount
 
@@ -108,7 +108,7 @@ Sie gebenden Bereitstellungstyp über die **Mode**-Eigenschaft an, wie in den Be
           included in the template will be deleted.
           [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
 
-     Wenn die Vorlage einen Parameter mit einem Namen enthält, der einem Parameter im Befehl zum Bereitstellen der Vorlage entspricht (z. B. der Parameter **ResourceGroupName** in Ihrer Vorlage, der dem Parameter **ResourceGroupName** im Cmdlet [New-AzureRmResourceGroupDeployment](https://msdn.microsoft.com/library/azure/mt679003.aspx) entspricht), werden Sie aufgefordert, einen Wert für einen Parameter mit dem Postfix **FromTemplate** anzugeben (z. B. **ResourceGroupNameFromTemplate**). Im Allgemeinen sollten Sie diese Verwirrung vermeiden, indem Sie Parametern nicht dieselben Namen wie Parametern für Bereitstellungsvorgänge geben.
+     Wenn die Vorlage einen Parameter mit einem Namen enthält, der einem Parameter im Befehl zum Bereitstellen der Vorlage entspricht (z. B. der Parameter **ResourceGroupName** in Ihrer Vorlage, der dem Parameter **ResourceGroupName** im Cmdlet [New-AzureRmResourceGroupDeployment](https://msdn.microsoft.com/library/azure/mt679003.aspx) entspricht), werden Sie aufgefordert, einen Wert für einen Parameter mit dem Postfix **FromTemplate** anzugeben (z. B. **ResourceGroupNameFromTemplate**). Im Allgemeinen sollten Sie diese Verwirrung vermeiden, indem Sie Parametern nicht dieselben Namen wie Parametern für Bereitstellungsvorgänge geben.
 
 6. Abrufen von Informationen über Fehler bei der Bereitstellung.
 
@@ -271,7 +271,7 @@ Bei der Verwendung einer Parameterdatei zum Übergeben von Parameterwerten an Ih
        }
     }
 
-Die Parameterdatei darf nicht größer als 64 KB sein.
+Die Parameterdatei darf nicht größer als 64 KB sein.
 
 Informationen zum Definieren von Parametern in der Vorlage finden Sie unter [Erstellen von Vorlagen](../resource-group-authoring-templates/#parameters). Ausführliche Informationen zum KeyVault-Verweis zum Übergeben sicherer Werte finden Sie unter [Übergeben sicherer Werte während der Bereitstellung](resource-manager-keyvault-parameter.md).
 
@@ -284,4 +284,4 @@ Informationen zum Definieren von Parametern in der Vorlage finden Sie unter [Ers
 
  
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0224_2016-->

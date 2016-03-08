@@ -203,11 +203,9 @@ Die Pipeline enthält eine Kopieraktivität, die für das Verwenden der oben gen
 	   }
 	}
 
-> [AZURE.NOTE] Im obigen Beispiel ist **sqlReaderQuery** für SqlSource angegeben. Mit der Kopieraktivität wird diese Abfrage für die Azure SQL-Datenbankquelle ausgeführt, um die Daten abzurufen.
->  
-> Alternativ dazu können Sie eine gespeicherte Prozedur angeben, indem Sie **sqlReaderStoredProcedureName** und **storedProcedureParameters** angeben (falls die gespeicherten Prozeduren Parameter verwenden).
->  
-> Wenn Sie sqlReaderQuery oder sqlReaderStoredProcedureName nicht angeben, werden die im Strukturabschnitt des Dataset-JSON-Bereichs definierten Spalten verwendet, um eine Abfrage (select column1, column2 from mytable) zur Ausführung für die Azure SQL-Datenbank zu erstellen. Falls die Datasetdefinition nicht über die Struktur verfügt, werden alle Spalten der Tabelle ausgewählt.
+Im obigen Beispiel ist **sqlReaderQuery** für SqlSource angegeben. Mit der Kopieraktivität wird diese Abfrage für die Azure SQL-Datenbankquelle ausgeführt, um die Daten abzurufen. Alternativ dazu können Sie eine gespeicherte Prozedur angeben, indem Sie **sqlReaderStoredProcedureName** und **storedProcedureParameters** angeben (falls die gespeicherten Prozeduren Parameter verwenden).
+
+Wenn Sie sqlReaderQuery oder sqlReaderStoredProcedureName nicht angeben, werden die im Strukturabschnitt des Dataset-JSON-Bereichs definierten Spalten verwendet, um eine Abfrage (select column1, column2 from mytable) zur Ausführung für die Azure SQL-Datenbank zu erstellen. Falls die Datasetdefinition nicht über die Struktur verfügt, werden alle Spalten der Tabelle ausgewählt.
 
 
 Eine Liste mit den Eigenschaften, die von SqlSource und BlobSink unterstützt werden, finden Sie im Abschnitt [Sql Source](#sqlsource) und unter [BlobSink](data-factory-azure-blob-connector.md#azure-blob-copy-activity-type-properties).
@@ -435,11 +433,11 @@ Wenn bei der Kopieraktivität „source“ den Typ **SqlSource** hat, sind im Ab
 | sqlReaderStoredProcedureName | Der Name der gespeicherten Prozedur, die Daten aus der Quelltabelle liest. | Name der gespeicherten Prozedur. | Nein |
 | storedProcedureParameters | Parameter für die gespeicherte Prozedur. | Name-Wert-Paare. Die Namen und die Groß-/Kleinschreibung von Parametern müssen denen der Parameter der gespeicherten Prozedur entsprechen. | Nein |
 
-Wenn **sqlReaderQuery** für SqlSource angegeben ist, führt die Kopieraktivität diese Abfrage für die Azure SQL-Datenbankquelle aus, um die Daten abzurufen.
-
-Alternativ dazu können Sie eine gespeicherte Prozedur angeben, indem Sie **sqlReaderStoredProcedureName** und **storedProcedureParameters** angeben (falls die gespeicherten Prozeduren Parameter verwenden).
+Wenn **sqlReaderQuery** für SqlSource angegeben ist, führt die Kopieraktivität diese Abfrage für die Azure SQL-Datenbankquelle aus, um die Daten abzurufen. Alternativ dazu können Sie eine gespeicherte Prozedur angeben, indem Sie **sqlReaderStoredProcedureName** und **storedProcedureParameters** angeben (falls die gespeicherten Prozeduren Parameter verwenden).
 
 Wenn Sie sqlReaderQuery oder sqlReaderStoredProcedureName nicht angeben, werden die im Strukturabschnitt des Dataset-JSON-Bereichs definierten Spalten verwendet, um eine Abfrage (select column1, column2 from mytable) zur Ausführung für die Azure SQL-Datenbank zu erstellen. Falls die DataSet-Definition nicht über die Struktur verfügt, werden alle Spalten der Tabelle ausgewählt.
+
+> [AZURE.NOTE] Bei Verwendung von **sqlReaderStoredProcedureName** müssen Sie trotzdem einen Wert für die **tableName**-Eigenschaft in der Dataset-JSON angeben. Dies ist zurzeit noch eine Produkteinschränkung. Es finden jedoch keine Überprüfungen dieser Tabelle statt.
 
 ### Beispiel für SqlSource
 
@@ -499,6 +497,75 @@ Wenn Sie sqlReaderQuery oder sqlReaderStoredProcedureName nicht angeben, werden 
         }
     }
 
+## Identitätsspalten in der Zieldatenbank
+Dieser Abschnitt enthält ein Beispiel zum Kopieren von Daten aus einer Quelltabelle ohne eine Identitätsspalte in eine Zieltabelle mit einer Identitätsspalte.
+
+**Quelltabelle:**
+
+	create table dbo.SourceTbl
+	(
+	       name varchar(100),
+	       age int
+	)
+
+**Zieltabelle:**
+
+	create table dbo.TargetTbl
+	(
+	       id int identity(1,1),
+	       name varchar(100),
+	       age int
+	)
+
+
+Beachten Sie, dass die Zieltabelle über eine Identitätsspalte verfügt.
+
+**Definition der Quell-Dataset-JSON**
+
+	{
+	    "name": "SampleSource",
+	    "properties": {
+	        "published": false,
+	        "type": " SqlServerTable",
+	        "linkedServiceName": "TestIdentitySQL",
+	        "typeProperties": {
+	            "tableName": "SourceTbl"
+	        },
+	        "availability": {
+	            "frequency": "Hour",
+	            "interval": 1
+	        },
+	        "external": true,
+	        "policy": {}
+	    }
+	}
+
+**Definition der Ziel-Dataset-JSON**
+
+	{
+	    "name": "SampleTarget",
+	    "properties": {
+	        "structure": [
+	            { "name": "name" },
+	            { "name": "age" }
+	        ],
+	        "published": false,
+	        "type": "AzureSqlTable",
+	        "linkedServiceName": "TestIdentitySQLSource",
+	        "typeProperties": {
+	            "tableName": "TargetTbl"
+	        },
+	        "availability": {
+	            "frequency": "Hour",
+	            "interval": 1
+	        },
+	        "external": false,
+	        "policy": {}
+	    }	
+	}
+
+
+Beachten Sie, dass die Quell- und die Zieltabelle unterschiedliche Schemas besitzen (das Ziel verfügt über eine zusätzliche Spalte mit der Identität). In diesem Szenario müssen Sie eine **structure**-Eigenschaft in der Definition des Zieldatasets angeben, die nicht die Identitätsspalte enthält.
 
 [AZURE.INCLUDE [data-factory-type-repeatability-for-sql-sources](../../includes/data-factory-type-repeatability-for-sql-sources.md)]
 
@@ -563,4 +630,4 @@ Die Zuordnung ist mit der SQL Server-Datentypzuordnung für ADO.NET identisch.
 
 	 
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0224_2016-->

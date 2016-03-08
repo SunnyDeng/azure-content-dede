@@ -11,7 +11,7 @@
 <tags
    ms.service="hdinsight"
    ms.devlang="na"
-   ms.topic="article"
+   ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
    ms.date="01/27/2016"
@@ -37,7 +37,7 @@ Um neue Erkenntnisse und Einblicke aus großen Datenmengen (Big Data) zu gewinne
 
 ## <a name="overview"></a>Übersicht über das Hadoop-Ökosystem in HDInsight
 
-HDInsight ist eine Cloudimplementierung in Microsoft Azure des schnell wachsenden Apache Hadoop-Technikstapels, der die bevorzugte Lösung für die Analyse von Big Data darstellt. HDInsight enthält Implementierungen von Apache Spark, HBase, Storm, Pig, Hive, Sqoop, Oozie, Ambari usw. HDInsight kann außerdem mit Business Intelligence-Tools (BI) wie z. B. Power BI, Excel, SQL Server Analysis Services oder SQL Server Reporting Services integriert werden.
+HDInsight ist eine Cloudimplementierung in Microsoft Azure des schnell wachsenden Apache Hadoop-Technikstapels, der die bevorzugte Lösung für die Analyse von Big Data darstellt. HDInsight enthält Implementierungen von Apache Spark, HBase, Storm, Pig, Hive, Sqoop, Oozie, Ambari usw. HDInsight kann außerdem mit Business Intelligence-Tools (BI) wie z. B. Power BI, Excel, SQL Server Analysis Services oder SQL Server Reporting Services integriert werden.
 
 ### Cluster unter Linux
 
@@ -139,7 +139,7 @@ Hadoop Distributed File System (HDFS) ist ein verteiltes Dateisystem, das zusamm
 ### <a name="mapreduce"></a>MapReduce
 MapReduce ist das Legacy-Softwareframework für Hadoop zum Schreiben von Anwendungen für die parallele Stapelverarbeitung großer Datasets. Ein MapReduce-Auftrag unterteilt große Datasets und verwaltet die Daten in Schlüssel-Wert-Paaren für die Verarbeitung.
 
-[YARN](#yarn) ist das Hadoop-Ressourcen-Manager- und Anwendungsframework der nächsten Generation und wird als MapReduce 2.0 bezeichnet. MapReduce-Aufträge können mit YARN ausgeführt werden.
+[YARN](#yarn) ist das Hadoop-Ressourcen-Manager- und Anwendungsframework der nächsten Generation und wird als MapReduce 2.0 bezeichnet. MapReduce-Aufträge können mit YARN ausgeführt werden.
 
 Weitere Informationen zu MapReduce finden Sie unter <a target="_blank" href="http://wiki.apache.org/hadoop/MapReduce">MapReduce</a> im Hadoop-Wiki.
 
@@ -160,7 +160,7 @@ Weitere Informationen zu MapReduce finden Sie unter <a target="_blank" href="htt
 <a  target="_blank" href="http://tez.apache.org/">Apache Tez</a> ist ein auf Hadoop YARN aufsetzendes Anwendungsframework für die Erstellung komplexer, azyklischer Diagramme der allgemeinen Datenverarbeitung. Es handelt sich hier um einen flexibleren und leistungsfähigeren Nachfolger des MapReduce-Frameworks, der auch bei datenintensiven Prozessen wie Hive eine effiziente Ausführung zulässt. Siehe ["Verwenden von Apache Tez zur Verbesserung der Leistung" unter "Verwenden von Hive und HiveQL"](hdinsight-use-hive.md#usetez).
 
 ### <a name="yarn"></a>YARN
-Apache YARN ist die nächste Generation von MapReduce (MapReduce 2.0 bzw. MRv2) und unterstützt Datenverarbeitungsszenarien, die über die Stapelverarbeitung von MapReduce hinausgehen. YARN bietet mehr Skalierbarkeit und bessere Echtzeitverarbeitung. YARN bietet Ressourcenmanagement und ein verteiltes Anwendungsframework. MapReduce-Aufträge können mit YARN ausgeführt werden.
+Apache YARN ist die nächste Generation von MapReduce (MapReduce 2.0 bzw. MRv2) und unterstützt Datenverarbeitungsszenarien, die über die Stapelverarbeitung von MapReduce hinausgehen. YARN bietet mehr Skalierbarkeit und bessere Echtzeitverarbeitung. YARN bietet Ressourcenmanagement und ein verteiltes Anwendungsframework. MapReduce-Aufträge können mit YARN ausgeführt werden.
 
 Weitere Informationen zu YARN finden Sie unter <a target="_blank" href="http://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html">Apache Hadoop NextGen MapReduce (YARN)</a>.
 
@@ -292,4 +292,4 @@ Wenden Sie Big Data-Analysen auf Daten Ihres Unternehmens an, um sich Einblicke 
 [component-versioning]: hdinsight-component-versioning.md
 [zookeeper]: http://zookeeper.apache.org/
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0302_2016-->

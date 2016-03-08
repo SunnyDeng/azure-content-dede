@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/01/2015" 
+	ms.date="02/23/2016" 
 	ms.author="ddove; sidneyh"/>
 
 #Deinstallieren von Komponenten der Aufträge für die elastische Datenbank
@@ -29,7 +29,7 @@ Komponenten der **Aufträge für die elastische Datenbank** können wahlweise mi
 
 ##Deinstallieren von Komponenten der Aufträge für die elastische Datenbank mithilfe von PowerShell
 
-1.	Öffnen Sie ein Microsoft Azure PowerShell-Befehlsfenster, und navigieren Sie zum Unterverzeichnis „tools“ unter dem Ordner „Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x“: Geben „cd tools“ ein.
+1.	Öffnen Sie ein Microsoft Azure PowerShell-Befehlsfenster, und navigieren Sie zum Unterverzeichnis „tools“ im Ordner „Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x“: Geben Sie **cd tools** ein.
 
 		PS C:*Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x*>cd tools
 
@@ -61,7 +61,5 @@ Informationen zur erneuten Installation von Aufträgen für die elastische Daten
 Weitere Informationen zu Aufträgen für die elastische Datenbank finden Sie unter [Übersicht über Aufträge für die elastische Datenbank](sql-database-elastic-jobs-overview.md).
 
 <!--Image references-->
-[1]: ./media/sql-database-elastic-job-uninstall/
- 
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0224_2016-->

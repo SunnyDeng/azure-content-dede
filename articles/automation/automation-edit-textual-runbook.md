@@ -12,8 +12,8 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="infrastructure-services"
-	ms.date="01/19/2016"
-	ms.author="bwren" />
+	ms.date="02/18/2016"
+	ms.author="magoedte;bwren" />
 
 # Bearbeiten von Textrunbooks in Azure Automation
 
@@ -25,7 +25,7 @@ Jedes Runbook in Azure Automation umfasst zwei Versionen: eine Entwurfsversion u
 
 Informationen zum Arbeiten mit [grafischen Runbooks](automation-runbook-types.md#graphical-runbooks) finden Sie unter [Grafische Erstellung in Azure Automation](automation-graphical-authoring-intro.md).
 
-## So bearbeiten Sie ein Runbook mit dem Azure-Vorschauportal
+## So bearbeiten Sie ein Runbook mit dem Azure-Portal
 
 Gehen Sie wie folgt vor, um ein Runbook zur Bearbeitung im Text-Editor zu öffnen.
 
@@ -105,7 +105,7 @@ Gehen Sie wie folgt vor, um ein Runbook zur Bearbeitung im Text-Editor zu öffne
 
 
 
-## So bearbeiten Sie ein Azure Automation-Runbook mit Windows PowerShell
+## So bearbeiten Sie ein Azure Automation-Runbook mit Windows PowerShell
 
 Zum Bearbeiten eines Runbooks mit Windows PowerShell verwenden Sie einen Editor Ihrer Wahl und speichern es in einer PS1-Datei. Mit dem Cmdlet [Get-AzureAutomationRunbookDefinition](http://aka.ms/runbookauthor/cmdlet/getazurerunbookdefinition) können Sie den Inhalt des Runbooks abrufen, und mit dem Cmdlet [Set-AzureAutomationRunbookDefinition](http://aka.ms/runbookauthor/cmdlet/setazurerunbookdefinition) können Sie das vorhandene Entwurfsrunbook durch das geänderte Runbook ersetzen.
 
@@ -144,4 +144,4 @@ Die folgenden Beispielbefehle zeigen, wie der vorhandene Inhalt eines Runbooks d
 - [Zeitpläne](automation-schedules.md)
 - [Variablen](automation-variables.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0224_2016-->

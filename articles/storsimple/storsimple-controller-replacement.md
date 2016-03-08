@@ -4,7 +4,7 @@
    services="storsimple"
    documentationCenter=""
    authors="alkohli"
-   manager="carolz"
+   manager="carmonm"
    editor="" />
 <tags 
    ms.service="storsimple"
@@ -21,12 +21,12 @@
 
 In diesem Tutorial wird erläutert, wie Sie ein oder beide Controllermodule in einem StorSimple-Gerät austauschen oder entfernen. Darüber hinaus wird die zugrunde liegende Logik für die Austauschszenarios bei Einzel- oder Dualcontrollern erläutert.
 
->[AZURE.NOTE]Vor der Durchführung des Controlleraustauschs empfehlen wir, die Controllerfirmware auf die neueste Version zu aktualisieren.
+>[AZURE.NOTE] Vor der Durchführung des Controlleraustauschs empfehlen wir, die Controllerfirmware auf die neueste Version zu aktualisieren.
 >
 >Um Schäden an Ihrem StorSimple-Gerät zu verhindern, werfen Sie den Controller nicht aus, bis die LEDs einen der folgenden Status anzeigen:
 >
 >- Alle Leuchten sind AUS.
->- LED 3, ![Grünes Häkchen (Symbol)](./media/storsimple-controller-replacement/HCS_GreenCheckIcon.png) und ![Rotes Kreuz (Symbol)](./media/storsimple-controller-replacement/HCS_RedCrossIcon.png) blinken, und LED 0 sowie LED 7 sind **EIN**.
+>- LED 3, ![Grünes Häkchen (Symbol)](./media/storsimple-controller-replacement/HCS_GreenCheckIcon.png) und ![Rotes Kreuz (Symbol)](./media/storsimple-controller-replacement/HCS_RedCrossIcon.png) blinken, und LED 0 sowie LED 7 sind **EIN**.
 
 In der folgenden Tabelle werden die unterstützten Controlleraustauschszenarios dargestellt.
 
@@ -47,7 +47,7 @@ Sie müssen ein Controllermodul entfernen, wenn es einen Fehler verursacht hat. 
 - [Einsetzen eines Controllers](#insert-a-controller)
 - [Identifizieren des aktiven Controllers im Gerät](#identify-the-active-controller-on-your-device)
 
->[AZURE.IMPORTANT]Überprüfen Sie vor dem Entfernen und Austauschen eines Controllers die Sicherheitsinformationen unter [Austauschen von StorSimple-Hardwarekomponenten](storsimple-hardware-component-replacement.md).
+>[AZURE.IMPORTANT] Überprüfen Sie vor dem Entfernen und Austauschen eines Controllers die Sicherheitsinformationen unter [Austauschen von StorSimple-Hardwarekomponenten](storsimple-hardware-component-replacement.md).
 
 ## Austauschen eines einzelnen Controllers
 
@@ -71,28 +71,28 @@ Beim Austausch eines einzelnen Controllers sollten Sie zuerst den fehlgeschlagen
 
 Führen Sie folgende Schritte aus, wenn einer der Controller in Ihrem Microsoft Azure StorSimple-Gerät einen Fehler verursacht. (Der andere Controller muss aktiv sein und ausgeführt werden. Wenn beide Controller ausfallen oder Fehlfunktionen aufweisen, führen Sie die [Schritte zum Austauschen zweier Controller](#dual-controller-replacement-steps) aus.)
 
->[AZURE.NOTE]Der Neustart des Controllers bis zum vollständigen Abschluss des Austauschverfahrens kann 30 bis 45 Minuten dauern. Die Zeit für die gesamte Prozedur beträgt einschließlich der Installation der Kabel ungefähr 2 Stunden.
+>[AZURE.NOTE] Der Neustart des Controllers bis zum vollständigen Abschluss des Austauschverfahrens kann 30 bis 45 Minuten dauern. Die Zeit für die gesamte Prozedur beträgt einschließlich der Installation der Kabel ungefähr 2 Stunden.
 
 #### So entfernen Sie ein einzelnes fehlerhaftes Controllermodul
 
 1. Wechseln Sie im klassischen Azure-Portal zum StorSimple Manager-Dienst, und klicken Sie auf die Registerkarte **Geräte** und dann auf den Namen des Geräts, das Sie überwachen möchten.
 
-2. Klicken Sie auf die Registerkarte **Wartung**, und navigieren Sie zu **Hardwarestatus**. Der Status von Controller 0 oder von Controller 1 wird rot dargestellt. Dies zeigt einen Fehler an.
+2. Klicken Sie auf die Registerkarte **Wartung**, und navigieren Sie zu **Hardwarestatus**. Der Status von Controller 0 oder von Controller 1 wird rot dargestellt. Dies zeigt einen Fehler an.
 
-    >[AZURE.NOTE]Der fehlerhafte Controller beim Austausch eines einzelnen Controllers ist immer der Standbycontroller.
+    >[AZURE.NOTE] Der fehlerhafte Controller beim Austausch eines einzelnen Controllers ist immer der Standbycontroller.
 
-3. Verwenden Sie Abbildung 1 und die folgende Tabelle zum Feststellen des fehlerhaften Controllermoduls.
+3. Verwenden Sie Abbildung 1 und die folgende Tabelle zum Feststellen des fehlerhaften Controllermoduls.
 
     ![Rückwand des Geräts – Module für primäre Gehäuse](./media/storsimple-controller-replacement/IC740994.png)
 
-    **Abbildung 1:** Rückseite des StorSimple-Geräts
+    **Abbildung 1:** Rückseite des StorSimple-Geräts
 
     |Bezeichnung|Beschreibung|
     |:----|:----------|
-    |1|PCM 0|
-    |2|PCM 1|
-    |3|Controller 0|
-    |4|Controller 1|
+    |1|PCM 0|
+    |2|PCM 1|
+    |3|Controller 0|
+    |4|Controller 1|
 
 4. Entfernen Sie alle verbundenen Netzwerkkabel von den Datenanschlüssen am fehlerhaften Controller. Wenn Sie ein 8600-Modell verwenden, entfernen Sie auch die SAS-Kabel, die den Controller mit dem EBOD-Controller verbinden.
 
@@ -104,7 +104,7 @@ Führen Sie folgende Schritte aus, wenn einer der Controller in Ihrem Microsoft 
 
 8. Überprüfen Sie nach dem Neustart des Controllers den **Controllerstatus** und den **Clusterstatus** im klassischen Azure-Portal. Stellen Sie sicher, dass sich der Controller wieder in einwandfreiem Zustand und im Standbymodus befindet.
 
->[AZURE.NOTE]Wenn Sie das Gerät über die serielle Konsole überwachen, können mehrere Neustarts durchgeführt werden, während der Controller aus dem Austauschverfahren wiederhergestellt wird. Wenn das Menü der seriellen Konsole angezeigt wird, wissen Sie, dass der Austausch abgeschlossen ist. Wenn das Menü nicht innerhalb von zwei Stunden nach Beginn des Controlleraustauschs angezeigt wird, [wenden Sie sich an den Microsoft Support Service](storsimple-contact-microsoft-support.md).
+>[AZURE.NOTE] Wenn Sie das Gerät über die serielle Konsole überwachen, können mehrere Neustarts durchgeführt werden, während der Controller aus dem Austauschverfahren wiederhergestellt wird. Wenn das Menü der seriellen Konsole angezeigt wird, wissen Sie, dass der Austausch abgeschlossen ist. Wenn das Menü nicht innerhalb von zwei Stunden nach Beginn des Controlleraustauschs angezeigt wird, [wenden Sie sich an den Microsoft Support Service](storsimple-contact-microsoft-support.md).
 
 ## Austauschen beider Controller
 
@@ -114,7 +114,7 @@ Wenn beide Controller auf dem Microsoft Azure StorSimple-Gerät fehlerhaft sind,
 
 Beim Austausch zweier Controller entfernen Sie zuerst beide fehlerhaften Controller und ersetzen diese dann. Wenn die zwei Ersatzcontroller eingesetzt wurden, werden die folgenden Aktionen ausgeführt:
 
-1. Der Ersatzcontroller in Steckplatz 0 überprüft Folgendes:
+1. Der Ersatzcontroller in Steckplatz 0 überprüft Folgendes:
  
    1. Wird die aktuelle Version von Firmware und Software verwendet?
 
@@ -124,21 +124,21 @@ Beim Austausch zweier Controller entfernen Sie zuerst beide fehlerhaften Control
 							
     Wenn keine dieser Bedingungen erfüllt ist, sucht der Controller nach der letzten täglichen Sicherung (auf Laufwerk S: unter **nonDOMstorage**). Der Controller kopiert die aktuellste Momentaufnahme der virtuellen Festplatte aus der Sicherung.
 
-2. Der Controller in Steckplatz 0 verwendet die Momentaufnahme für ein eigenes Image.
+2. Der Controller in Steckplatz 0 verwendet die Momentaufnahme für ein eigenes Image.
 
-3. In der Zwischenzeit wartet der Controller in Steckplatz 1 darauf, dass Controller 0 die Imageerstellung abschließt und startet.
+3. In der Zwischenzeit wartet der Controller in Steckplatz 1 darauf, dass Controller 0 die Imageerstellung abschließt und startet.
 
-4. Nach dem Start von Controller 0 erkennt Controller 1 den von Controller 0 erstellten Cluster, wodurch die Logik zum Austausch eines einzelnen Controllers ausgelöst wird. Weitere Informationen finden Sie unter [Logik beim Austauschen eines einzelnen Controllers](#single-controller-replacement-logic).
+4. Nach dem Start von Controller 0 erkennt Controller 1 den von Controller 0 erstellten Cluster, wodurch die Logik zum Austausch eines einzelnen Controllers ausgelöst wird. Weitere Informationen finden Sie unter [Logik beim Austauschen eines einzelnen Controllers](#single-controller-replacement-logic).
 
 5. Anschließend werden beide Controller ausgeführt, und der Cluster wird online geschaltet.
 
->[AZURE.IMPORTANT]Nach dem Austausch von zwei Controllern ist es sehr wichtig, dass Sie eine manuelle Sicherung des Geräts erstellen, sobald das StorSimple-Gerät konfiguriert wurde. Tägliche Gerätekonfigurationssicherungen werden erst nach 24 Stunden ausgelöst. Wenden Sie sich an den [Microsoft Support](storsimple-contact-microsoft-support.md), um eine manuelle Sicherung Ihres Geräts vorzunehmen.
+>[AZURE.IMPORTANT] Nach dem Austausch von zwei Controllern ist es sehr wichtig, dass Sie eine manuelle Sicherung des Geräts erstellen, sobald das StorSimple-Gerät konfiguriert wurde. Tägliche Gerätekonfigurationssicherungen werden erst nach 24 Stunden ausgelöst. Wenden Sie sich an den [Microsoft Support](storsimple-contact-microsoft-support.md), um eine manuelle Sicherung Ihres Geräts vorzunehmen.
 
 ### Schritte beim Austauschen zweier Controller
 
 Dieser Workflow ist erforderlich, wenn beide Controller in Ihrem Microsoft Azure StorSimple-Gerät fehlerhaft sind. Dies könnte in einem Rechenzentrum passieren, in dem das Kühlsystem nicht mehr funktioniert, sodass innerhalb kurzer Zeit beide Controller fehlschlagen. Je nachdem, ob das StorSimple-Gerät ein- oder ausgeschaltet ist und ob Modell 8600 oder Modell 8100 verwendet wird, sind unterschiedliche Schritte erforderlich.
 
->[AZURE.IMPORTANT]Der Neustart des Controllers bis zum vollständigen Abschluss des Austauschverfahrens für zwei Controller kann 45 Minuten bis 1 Stunde dauern. Die Zeit für die gesamte Prozedur beträgt einschließlich der Installation der Kabel ungefähr 2,5 Stunden.
+>[AZURE.IMPORTANT] Der Neustart des Controllers bis zum vollständigen Abschluss des Austauschverfahrens für zwei Controller kann 45 Minuten bis 1 Stunde dauern. Die Zeit für die gesamte Prozedur beträgt einschließlich der Installation der Kabel ungefähr 2,5 Stunden.
 
 #### So tauschen Sie beide Controllermodule aus
 
@@ -152,7 +152,7 @@ Dieser Workflow ist erforderlich, wenn beide Controller in Ihrem Microsoft Azure
 
 3. Entfernen Sie beide Controller aus dem StorSimple-Gerät. Weitere Informationen finden Sie unter [Entfernen eines Controllers](#remove-a-controller).
 
-4. Tauschen Sie zuerst Controller 0 aus, und setzen Sie dann Controller 1 ein. Weitere Informationen finden Sie unter [Einsetzen eines Controllers](#insert-a-controller). Dadurch wird die Logik zum Austauschen zweier Controller ausgelöst. Weitere Informationen finden Sie unter [Logik beim Austauschen zweier Controller](#dual-controller-replacement-logic).
+4. Tauschen Sie zuerst Controller 0 aus, und setzen Sie dann Controller 1 ein. Weitere Informationen finden Sie unter [Einsetzen eines Controllers](#insert-a-controller). Dadurch wird die Logik zum Austauschen zweier Controller ausgelöst. Weitere Informationen finden Sie unter [Logik beim Austauschen zweier Controller](#dual-controller-replacement-logic).
 
 5. Während die Logik zum Austauschen im Hintergrund ausgeführt wird, schließen Sie die Kabel wieder an. Achten Sie darauf, alle Kabel genau auf die gleiche Weise zu verbinden wie vor dem Austausch. Ausführliche Anleitungen für Ihr Modell finden Sie im Abschnitt zur Geräteverkabelung unter [Installieren des StorSimple 8100-Geräts](storsimple-8100-hardware-installation.md) oder [Installieren des StorSimple 8600-Geräts](storsimple-8600-hardware-installation.md).
 
@@ -166,13 +166,13 @@ Dieser Workflow ist erforderlich, wenn beide Controller in Ihrem Microsoft Azure
 
     4. Nachdem der erste Controller neu gestartet wurde und sich in einem ordnungsgemäßen Zustand befindet, wird das System ausgeführt.
 
-    >[AZURE.NOTE]Wenn Sie das Gerät über die serielle Konsole überwachen, können mehrere Neustarts durchgeführt werden, während der Controller aus dem Austauschverfahren wiederhergestellt wird. Wenn das Menü der seriellen Konsole angezeigt wird, wissen Sie, dass der Austausch abgeschlossen ist. Wenn das Menü nicht innerhalb von 2,5 Stunden nach Beginn des Controlleraustauschs angezeigt wird, [wenden Sie sich an den Microsoft Support Service](storsimple-contact-microsoft-support.md).
+    >[AZURE.NOTE] Wenn Sie das Gerät über die serielle Konsole überwachen, können mehrere Neustarts durchgeführt werden, während der Controller aus dem Austauschverfahren wiederhergestellt wird. Wenn das Menü der seriellen Konsole angezeigt wird, wissen Sie, dass der Austausch abgeschlossen ist. Wenn das Menü nicht innerhalb von 2,5 Stunden nach Beginn des Controlleraustauschs angezeigt wird, [wenden Sie sich an den Microsoft Support Service](storsimple-contact-microsoft-support.md).
 
 ## Entfernen eines Controllers
 
 Verwenden Sie das folgende Verfahren, um ein fehlerhaftes Controllermodul aus Ihrem StorSimple-Gerät zu entfernen.
 
->[AZURE.NOTE]Die folgenden Abbildungen gelten für Controller 0. Für Controller 1 werden diese Schritte in umgekehrter Reihenfolge ausgeführt.
+>[AZURE.NOTE] Die folgenden Abbildungen gelten für Controller 0. Für Controller 1 werden diese Schritte in umgekehrter Reihenfolge ausgeführt.
 
 #### So entfernen Sie ein Controllermodul
 
@@ -212,9 +212,9 @@ Gehen Sie folgendermaßen vor, um ein neues Controllermodul zu installieren, nac
 
 4. Wenn der Riegel einrastet, ist der Vorgang abgeschlossen. Die LED **OK** sollte jetzt leuchten.
 
-    >[AZURE.NOTE]Es kann bis zu 5 Minuten dauern, bis Controller und LED aktiviert werden.
+    >[AZURE.NOTE] Es kann bis zu 5 Minuten dauern, bis Controller und LED aktiviert werden.
 
-5. Um sicherzustellen, dass der Austausch erfolgreich war, navigieren Sie im klassischen Azure-Portal zu **Geräte** > **Wartung** > **Hardwarestatus**, und stellen Sie sicher, dass Controller 0 und Controller 1 fehlerfrei sind (Status wird grün angezeigt).
+5. Um sicherzustellen, dass der Austausch erfolgreich war, navigieren Sie im klassischen Azure-Portal zu **Geräte** > **Wartung** > **Hardwarestatus**, und stellen Sie sicher, dass Controller 0 und Controller 1 fehlerfrei sind (Status wird grün angezeigt).
 
 ## Identifizieren des aktiven Controllers im Gerät
 
@@ -238,17 +238,17 @@ Navigieren Sie im klassischen Azure-Portal zu **Geräte** > **Wartung**, und scr
 
 ### Verwenden von Windows PowerShell für StorSimple zum Identifizieren des aktiven Controllers
 
-Wenn Sie auf Ihr Gerät über die serielle Konsole zugreifen, wird ein Meldungsbanner angezeigt. Das Meldungsbanner enthält die grundlegenden Informationen, wie z. B. Modell, Name, installierte Softwareversion und Status des Controllers, auf den Sie zugreifen. Die folgende Abbildung zeigt ein Beispiel für ein Meldungsbanner:
+Wenn Sie auf Ihr Gerät über die serielle Konsole zugreifen, wird ein Meldungsbanner angezeigt. Das Meldungsbanner enthält die grundlegenden Informationen, wie z. B. Modell, Name, installierte Softwareversion und Status des Controllers, auf den Sie zugreifen. Die folgende Abbildung zeigt ein Beispiel für ein Meldungsbanner:
 
 ![Meldungsbanner in der seriellen Konsole](./media/storsimple-controller-replacement/IC741098.png)
 
-**Abbildung 7:** Meldungsbanner mit aktivem Controller 0
+**Abbildung 7:** Meldungsbanner mit aktivem Controller 0
 
 Über das Meldungsbanner können Sie feststellen, ob der verbundene Controller aktiv oder passiv ist.
 
 ### Überprüfen des physischen Geräts zum Identifizieren des aktiven Controllers
 
-Suchen Sie zum Identifizieren des aktiven Controllers in Ihrem Gerät die blaue LED oberhalb des DATA 5-Anschlusses auf der Rückseite des primären Gehäuses.
+Suchen Sie zum Identifizieren des aktiven Controllers in Ihrem Gerät die blaue LED oberhalb des DATA 5-Anschlusses auf der Rückseite des primären Gehäuses.
 
 Wenn diese LED blinkt, ist der Controller aktiv, und der andere Controller befindet sich im Standbymodus. Verwenden Sie das folgende Diagramm und die Tabelle als Hilfsmittel.
 
@@ -266,4 +266,4 @@ Wenn diese LED blinkt, ist der Controller aktiv, und der andere Controller befin
 
 Weitere Informationen zum [Austauschen von StorSimple-Hardwarekomponenten](storsimple-hardware-component-replacement.md).
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0224_2016-->

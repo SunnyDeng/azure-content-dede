@@ -1,4 +1,4 @@
-<!--author=alkohli last changed: 9/23/15-->
+<!--author=alkohli last changed:02/22/16-->
 
 #### So schließen Sie die SAS-Kabel an
 
@@ -13,7 +13,7 @@
     |1|Primäres Gehäuse|
     |2|EBOD-Gehäuse|
 
-2. Suchen Sie am primären und am EBOD-Gehäuse nach der jeweiligen Seriennummer. Der Aufkleber mit der Seriennummer befindet sich jeweils an der hinteren Lasche des Gehäuses. Die Seriennummern beider Gehäuse müssen identisch sein. Wenn die Seriennummern nicht übereinstimmen, [nehmen Sie sofort Kontakt mit dem Microsoft-Support auf](storsimple-contact-microsoft-support.md). Die folgende Abbildung zeigt die Position der Seriennummern.
+2. Suchen Sie am primären und am EBOD-Gehäuse nach der jeweiligen Seriennummer. Der Aufkleber mit der Seriennummer befindet sich jeweils an der hinteren Lasche des Gehäuses. Die Seriennummern beider Gehäuse müssen identisch sein. Wenn die Seriennummern nicht übereinstimmen, [nehmen Sie sofort Kontakt mit dem Microsoft-Support auf](../articles/storsimple/storsimple-contact-microsoft-support.md). Die folgende Abbildung zeigt die Position der Seriennummern.
 
     ![Rückansicht des Gehäuses mit Seriennummer](./media/storsimple-sas-cable-8600/HCSRearviewofenclosureindicatinglocationofserialnumbersticker.png)
 
@@ -29,7 +29,7 @@
 
     2. Verwenden Sie die mitgelieferten SAS-Kabel, um den EBOD-Anschluss mit dem Anschluss A zu verbinden.
 
-    3. Der EBOD-Anschluss am Controller 0 sollte mit dem Anschluss A am EBOD-Controller 0 verbunden sein. Der EBOD-Anschluss am Controller 1 sollte mit dem Anschluss A am EBOD-Controller 1 verbunden sein. Der Vorgang wird in der folgenden Abbildung veranschaulicht.
+    3. Der EBOD-Anschluss am Controller 0 sollte mit dem Anschluss A am EBOD-Controller 0 verbunden sein. Der EBOD-Anschluss am Controller 1 sollte mit dem Anschluss A am EBOD-Controller 1 verbunden sein. Der Vorgang wird in der folgenden Abbildung veranschaulicht.
 																	
      ![SAS-Verkabelung des Geräts](./media/storsimple-sas-cable-8600/HCSSAScablingforyourdevice.png)
 
@@ -39,11 +39,11 @@
     |:----|:----------|
     |Eine Datei|Primäres Gehäuse|
     |B|EBOD-Gehäuse|
-    |1|Controller 0|
-    |2|Controller 1|
-    |3|EBOD-Controller 0|
-    |4|EBOD-Controller 1|
+    |1|Controller 0|
+    |2|Controller 1|
+    |3|EBOD-Controller 0|
+    |4|EBOD-Controller 1|
     |5, 6|SAS-Anschlüsse am primären Gehäuse (mit der Beschriftung "EBOD")|
     |7, 8|SAS-Anschlüsse am EBOD-Gehäuse (Anschluss A)|
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0224_2016-->

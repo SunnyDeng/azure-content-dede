@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="ruby" 
 	ms.topic="article" 
-	ms.date="12/16/2015" 
+	ms.date="02/23/2016" 
 	ms.author="tomfitz"/>
 
 
@@ -31,7 +31,7 @@ In diesem Leitfaden wird die Durchführung häufiger Szenarios mit dem Microsoft
 
 ## Erstellen einer Ruby-Anwendung
 
-Erstellen Sie eine Ruby-Anwendung. Anweisungen finden Sie unter [Erstellen einer Ruby-Anwendung in Azure](/develop/ruby/tutorials/web-app-with-linux-vm/).
+Erstellen Sie eine Ruby-Anwendung. Anweisungen finden Sie unter [Ruby on Rails-Webanwendung auf einer Azure-VM](../virtual-machines/virtual-machines-ruby-rails-web-app-linux.md)
 
 ## Konfigurieren der Anwendung für den Speicherzugriff
 
@@ -56,12 +56,22 @@ Das Azure-Modul liest die Umgebungsvariablen **AZURE\_STORAGE\_ACCOUNT** und **A
 	Azure.config.storage_account_name = "<your azure storage account>"
 	Azure.config.storage_access_key = "<your Azure storage access key>"
 
-So rufen Sie diese Werte ab:
+ 
+So rufen Sie diese Werte aus einem klassischen oder ARM-Speicherkonto im Azure-Portal ab
 
 1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
 2. Navigieren Sie zum Speicherkonto, das Sie verwenden möchten.
-3. Klicken Sie unten im Navigationsbereich auf **MANAGE KEYS**.
-4. Im eingeblendeten Dialog wird der Name des Speicherkontos, der primäre Zugriffsschlüssel und der sekundäre Zugriffsschlüssel angezeigt. Wählen Sie den primären oder sekundären Zugriffsschlüssel aus.
+3. Klicken Sie auf dem Blatt „Einstellungen“ auf der rechten Seite auf **Zugriffsschlüssel**.
+4. Auf dem angezeigten Blatt „Zugriffsschlüssel“ sehen Sie Zugriffsschlüssel 1 und Zugriffsschlüssel 2. Sie können beide verwenden. 
+5. Klicken Sie auf das Symbol „Kopieren“, um den Schlüssel in die Zwischenablage zu kopieren. 
+
+So rufen Sie diese Werte aus einem klassischen Speicherkonto im klassischen Portal ab
+
+1. Melden Sie sich beim [klassischen Portal](https://manage.windowsazure.com) an.
+2. Navigieren Sie zum Speicherkonto, das Sie verwenden möchten.
+3. Klicken Sie unten im Navigationsbereich auf **ZUGRIFFSSCHLÜSSEL VERWALTEN**.
+4. Im eingeblendeten Dialog wird der Name des Speicherkontos, der primäre Zugriffsschlüssel und der sekundäre Zugriffsschlüssel angezeigt. Verwenden Sie den primären oder sekundären Zugriffsschlüssel. 
+5. Klicken Sie auf das Symbol „Kopieren“, um den Schlüssel in die Zwischenablage zu kopieren.
 
 ## Erstellen einer Warteschlange
 
@@ -149,7 +159,7 @@ Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gem
 - Besuchen Sie den [Blog des Azure-Speicherteams](http://blogs.msdn.com/b/windowsazurestorage/)
 - Besuchen Sie das [Azure SDK for Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby)-Repository auf GitHub
 
-Einen Vergleich zwischen dem in diesem Artikel besprochenen Azure-Warteschlangendienst und den unter [Verwenden von Servicebus-Warteschlangen](/develop/ruby/how-to-guides/service-bus-queues/) besprochenen Azure Servicebus-Warteschlangen finden sie unter [Azure-Warteschlangen und Azure Servicevus-Warteschlangen - Vergleich und Gegenüberstellung](http://msdn.microsoft.com/library/azure/hh767287.aspx)
+Einen Vergleich zwischen dem in diesem Artikel besprochenen Azure-Warteschlangendienst und den unter [Gewusst wie: Verwenden von Service Bus-Warteschlangen](/develop/ruby/how-to-guides/service-bus-queues/) besprochenen Azure Service Bus-Warteschlangen finden sie unter [Azure-Warteschlangen und Service Bus-Warteschlangen – Vergleich und Gegenüberstellung](../service-bus/service-bus-azure-and-service-bus-queues-compared-contrasted.md)
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0224_2016-->

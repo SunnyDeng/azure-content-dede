@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="data-management" 
-   ms.date="02/08/2015"
+   ms.date="02/08/2016"
    ms.author="sstein"/>
 
 # Tarifempfehlungen für SQL-Datenbank
@@ -26,7 +26,7 @@
 Sie erhalten Tarifempfehlungen während der folgenden Aufgaben:
 
 - [Ändern der Dienstebene und Leistungsstufe (Tarif) einer SQL-Datenbank](sql-database-scale-up.md)
-- [Upgraden von Azure SQL-Server auf V12](sql-database-v12-upgrade.md)
+- [Upgraden von Azure SQL-Server auf V12](sql-database-upgrade-server-portal.md)
 - Navigieren Sie zum V12-Server. Wenn Ihre Datenbanken [von einem Pool für elastische Datenbanken profitieren](sql-database-elastic-pool-portal.md#recommended-elastic-database-pools), wird auf dem Serverblatt eine Meldung mit einem empfohlenen Pool angezeigt. Klicken Sie auf die Meldung, um den empfohlenen Pool zu erstellen:
 - [Erstellen eines elastischen Datenbankpools](sql-database-elastic-pool.md#elastic-database-pool-pricing-tier-recommendations)
 
@@ -56,7 +56,7 @@ Basierend auf Ihrer Datenbanknutzung können derzeit 2 Kategorien von Empfehlung
 
 ## Abrufen von Tarifempfehlungen
 
-Zum Abrufen von Tarifempfehlungen wählen Sie eine vorhandene Web- oder Business-Datenbank aus, klicken Sie auf **Alle Einstellungen** und dann auf **Tarif (DTUs skalieren)**. (Tarifempfehlungen sind auch verfügbar, wenn Sie die [Schritte für das Upgrade auf Azure SQL-Datenbank V12](sql-database-v12-upgrade.md) ausführen.)
+Zum Abrufen von Tarifempfehlungen wählen Sie eine vorhandene Web- oder Business-Datenbank aus, klicken Sie auf **Alle Einstellungen** und dann auf **Tarif (DTUs skalieren)**. (Tarifempfehlungen sind auch verfügbar, wenn Sie die [Schritte für das Upgrade auf Azure SQL-Datenbank V12](sql-database-upgrade-server-portal.md) ausführen.)
 
 1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/) an.
 2. Klicken auf **DURCHSUCHEN** > **SQL-Datenbanken**.
@@ -96,4 +96,4 @@ Abhängig von den Details Ihrer speziellen Datenbank erfolgt die Durchführung e
 
  
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0224_2016-->
