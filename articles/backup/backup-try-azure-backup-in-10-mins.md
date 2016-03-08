@@ -62,9 +62,9 @@ Sie müssen einen Sicherungstresor in Ihrer geografischen Region erstellen, in d
 
     Der beste Zeitpunkt zum Auswählen der Speicherredundanzoption ist direkt nach dem Erstellen eines Tresors und vor dem Registrieren von Computern für den Tresor. Sobald ein Element beim Tresor registriert wurde, wird die Speicherredundanzoption gesperrt und kann nicht mehr geändert werden.
 
-    Wenn Sie Azure als primären Speicherendpunkt für die Sicherung verwenden (wenn Sie beispielsweise von einem Windows Server in Azure sichern), sollten Sie die Option "Georedundanter Speicher" in Betracht ziehen (Standardeinstellung).
+    Wenn Sie Azure als primären Speicherendpunkt für die Sicherung verwenden (wenn Sie beispielsweise von einem Windows Server in Azure sichern), sollten Sie die Option [Georedundanter Speicher](../storage/storage-redundancy.md#geo-redundant-storage) in Betracht ziehen (Standardeinstellung).
 
-    Bei Verwendung von Azure als tertiären Speicherendpunkt (Sie verwenden beispielsweise SCDPM, um eine lokale Sicherungskopie vor Ort zu haben, und Azure für Ihre langfristigen Aufbewahrungsanforderungen) sollten Sie einen lokal redundanten Speicher auswählen. Dadurch werden die Kosten zum Speichern von Daten in Azure gesenkt, und es wird eine geringere Dauerhaftigkeit für Ihre Daten bereitgestellt, die möglicherweise für tertiäre Kopien ausreicht.
+    Bei Verwendung von Azure als tertiärem Speicherendpunkt (Sie verwenden beispielsweise SCDPM, um eine lokale Sicherungskopie vor Ort zu haben, und Azure für Ihre langfristigen Aufbewahrungsanforderungen) sollten Sie einen [lokal redundanten Speicher](../storage/storage-redundancy.md#locally-redundant-storage) auswählen. Dadurch werden die Kosten zum Speichern von Daten in Azure gesenkt, und es wird eine geringere Dauerhaftigkeit für Ihre Daten bereitgestellt, die möglicherweise für tertiäre Kopien ausreicht.
 
     a. Klicken Sie auf den Tresor, den Sie gerade erstellt haben.
 
@@ -77,8 +77,6 @@ Sie müssen einen Sicherungstresor in Ihrer geografischen Region erstellen, in d
     Sie müssen auf **Speichern** klicken, wenn Sie **Lokal redundant** auswählen, da die Standardeinstellung **Georedundant** lautet.
 
     ![GRS](./media/backup-try-azure-backup-in-10-mins/geo-redundant.png)
-
-    >[AZURE.NOTE] Weitere Informationen zu Speicherredundanzoptionen finden Sie in dieser [Übersicht](../storage/storage-redundancy.md).
 
     d. Klicken Sie im linken Navigationsbereich auf **Recovery Services**, um zur Liste mit den Ressourcen für **Recovery Services** zurückzukehren.
 
@@ -248,4 +246,4 @@ Glückwunsch! Sie haben Ihre Dateien und Ordner erfolgreich mit Azure Backup ges
 - Lesen Sie die weiteren Informationen zum [Sichern eines Windows-Servers](backup-azure-backup-windows-server.md).
 - Besuchen Sie das [Azure Backup-Forum](http://go.microsoft.com/fwlink/p/?LinkId=290933).
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

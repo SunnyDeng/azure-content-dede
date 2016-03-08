@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="08/10/2015"
+	ms.date="03/01/2016"
 	ms.author="piyushjo" />
 
 # Definieren der Mobile Engagement-Strategie
@@ -60,7 +60,7 @@ Wie Sie an diesem Punkt möglicherweise erkennen, ist die reine Übertragung ein
 
 Damit Sie bei der Kontaktaufnahme zu Ihrer Zielgruppe möglichst kontextbezogen agieren, ist es ausschlaggebend, dass Sie das Verhalten der Endbenutzer kennen, d. h. deren Status in Echtzeit. Mithilfe der Datensammlung können sich die Vermarkter auf die wichtigen Faktoren beim Überprüfen von Anwendungsfällen konzentrieren und somit ihre Ziele für Ihre Mobile Engagement-Strategie erreichen. Das Erreichen der zuvor festgelegten Ziele ist auch der Grund dafür, dass die bewährte Methode nicht die Erfassung beliebiger Daten für die Analyse darstellt, sondern es werden nur die Daten gesammelt, die es Ihnen gestatten, sich auf die entscheidenden Informationen und Anwendungsfälle zu konzentrieren. Dies ist eine geeignete Methode, die Lösung zu starten, zu überprüfen, zu testen und zu verwenden sowie intelligente Pushbenachrichtigungen zu adressieren und die Beibehaltung einer Anwendung zu erhöhen, damit sie zu einem erfolgreichen Abschluss kommt.
 
->[AZURE.NOTE]Denken Sie an Folgendes: Zu viele Daten sind der Daten Tod!
+>[AZURE.NOTE] Denken Sie an Folgendes: Zu viele Daten sind der Daten Tod!
 
 ### Anwendungsfälle und bewährte Methoden
 
@@ -113,12 +113,14 @@ Zu sämtlichen Datentypen können Parameter hinzugefügt werden (*extra-informat
 
 	![][1]
 
-*Anwendungsfall: Deklarative Daten* 1. Alarmmeldungen segmentieren: Erfassen Sie deklarative Daten, um die Zielgruppe auf Basis ihrer Präferenzen zu segmentieren. Es können Pushbenachrichtigungen zu einem bestimmten Thema gesendet werden, das für eine bestimmte Zielgruppe von großem Interesse ist. 2. Segmentieren Sie die Zielgruppe auf Basis des Anmeldestatus. Erfassen Sie entsprechende Daten, um zu erfahren, ob ein Benutzer verbunden ist oder er ein Konto erstellt hat. Dies hilft bei der Ausrichtung auf Endbenutzer, die sich noch nicht angemeldet haben, und sendet eine Pushbenachrichtigung, um den Benutzer zur Konvertierung zu motivieren. ![][2]
+*Anwendungsfall: Deklarative Daten*
+1.	Alarmmeldungen segmentieren: Erfassen Sie deklarative Daten, um die Zielgruppe auf Basis ihrer Präferenzen zu segmentieren. Es können Pushbenachrichtigungen zu einem bestimmten Thema gesendet werden, das für eine bestimmte Zielgruppe von großem Interesse ist.
+2.	Segmentieren Sie die Zielgruppe auf Basis des Anmeldestatus. Erfassen Sie entsprechende Daten, um zu erfahren, ob ein Benutzer verbunden ist oder er ein Konto erstellt hat. Dies hilft bei der Ausrichtung auf Endbenutzer, die sich noch nicht angemeldet haben, und sendet eine Pushbenachrichtigung, um den Benutzer zur Konvertierung zu motivieren. ![][2]
 
 ### Nächste Schritte
 
 - Weitere Informationen zu den grundlegenden Konzepten von Mobile Engagement finden Sie unter [Mobile Engagement-Konzepte].
-- [Erstellen Sie ein Azure Mobile Engagement-Konto.](mobile-engagement-create-account.md)
+- Besuchen Sie [Eine Mobile Engagement-App erstellen](mobile-engagement-create.md), um eine neue Mobile Engagement-App-Sammlung in Azure zu erstellen, und beginnen Sie mit der Verwaltung Ihrer Apps im Mobile Engagement-Portal.
 - Detaillierte Informationen finden Sie unter [Bewährte Methoden](mobile-engagement-getting-started-best-practices.md).
 - Ein Anwendungsbeispiel zum Implementieren von Mobile Engagement bei einer Spiele-App finden Sie unter [Szenario für eine Spiele-App](mobile-engagement-gaming-scenario.md). 
 - Ein Anwendungsbeispiel zum Implementieren von Mobile Engagement bei einer Medien-App finden Sie unter [Szenario für eine Medien-App](mobile-engagement-media-scenario.md). 
@@ -132,4 +134,4 @@ Zu sämtlichen Datentypen können Parameter hinzugefügt werden (*extra-informat
 [Mobile Engagement-Konzepte]: http://azure.microsoft.com/documentation/articles/mobile-engagement-concepts/
 [Lernprogramme]: http://azure.microsoft.com/documentation/articles/mobile-engagement-ios-get-started/
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0302_2016-->

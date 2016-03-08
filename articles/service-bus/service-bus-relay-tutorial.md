@@ -475,7 +475,7 @@ Der nächste Schritt besteht darin, eine Service Bus-Basisclientanwendung zu ers
 	using System.ServiceModel;
 	```
 
-1. Wiederholen Sie die vorherigen Schritte, um Ihrem Projekt einen Verweis auf "Microsoft.ServiceBus.dll" und den Namespace [Microsoft.ServiceBus](https://msdn.microsoft.com/library/microsoft.servicebus.aspx) hinzuzufügen.
+1. Installieren Sie das [NuGet-Paket für Service Bus](https://www.nuget.org/packages/WindowsAzure.ServiceBus).
 
 1. Fügen Sie dem Namespace die Dienstvertragsdefinition hinzu, wie im folgenden Beispiel gezeigt. Beachten Sie, dass diese Definition mit der im Projekt **Service** verwendeten Definition identisch ist. Sie sollten diesen Code am Anfang des Namespace `Microsoft.ServiceBus.Samples` hinzufügen.
 
@@ -823,4 +823,4 @@ Weitere Informationen zu Service Bus finden Sie in den folgenden Themen.
 
 [klassische Azure-Portal]: http://manage.windowsazure.com
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0302_2016-->

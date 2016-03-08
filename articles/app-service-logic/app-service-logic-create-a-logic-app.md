@@ -12,8 +12,8 @@
 	ms.workload="na"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="get-started-article"
-	ms.date="02/17/2016"
+	ms.topic="hero-article"
+	ms.date="03/01/2016"
 	ms.author="stepsic"/>
 
 # Erstellen einer Logik-App zum Verbinden von SaaS-Diensten
@@ -24,7 +24,7 @@
 | [Logik-Apps – Connector-Dokumentation](https://azure.microsoft.com/documentation/articles/app-service-logic-connectors-list/) |
 | [Logik-Apps – Forum](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=azurelogicapps) |
 
-In diesem Thema wird veranschaulicht, wie Sie in nur wenigen Minuten in [App Services-Logik-Apps](app-service-logic-what-are-logic-apps.md) einsteigen können. Wir durchlaufen einen Workflow, mit dessen Hilfe Sie eine Gruppe von Tweets, an denen Sie interessiert sind, an einen Dropbox-Ordner übermitteln können.
+In diesem Thema wird veranschaulicht, wie Sie in nur wenigen Minuten in [App Services-Logik-Apps](app-service-logic-what-are-logic-apps.md) einsteigen können. Wir durchlaufen einen Workflow, mit dessen Hilfe Sie eine Gruppe von Tweets, an denen Sie interessiert sind, an ein Postfach übermitteln können.
 
 Für dieses Szenario benötigen Sie Folgendes:
 
@@ -38,13 +38,7 @@ Für dieses Szenario benötigen Sie Folgendes:
 2. Suchen Sie unter „Alles“ nach „Logik-Apps“, und wählen Sie dann **Logik-App (Vorschau)** aus. Sie können auch **Neu**, **Web- und mobile Anwendungen** und dann **Logik-App (Vorschau)** auswählen. 
 3. Geben Sie einen Namen für Ihre Logik-App ein, wählen Sie den App Service-Plan aus, und wählen Sie **Erstellen**. In diesem Schritt wird davon ausgegangen, dass Sie über einen App Service-Plan verfügen und mit den erforderlichen Eigenschaften vertraut sind. Ist dies nicht der Fall, keine Sorge: Sie können bei [Azure App Service-Pläne – Detaillierte Übersicht](azure-web-sites-web-hosting-plans-in-depth-overview.md) beginnen. 
 
-4. Beim ersten Öffnen der Logik-App benötigen Sie einen Trigger. Sie können z. B. **Wiederholung** verwenden: ![Serie](./media/app-service-logic-create-a-logic-app/recurrence.png).
-
-	Bei „Wiederholung“ wird Ihre Logik-App bis zu einer festgelegten Uhrzeit ununterbrochen ausgeführt. Beispielsweise können Sie Ihre Logik-App alle 30 Sekunden, alle 5 Stunden, täglich um 20.00 Uhr PST, jede Nacht um 2.00 Uhr EST usw. ausführen. Sie können den Trigger „Wiederholung“ auch aus Ihrer Logik-App löschen. Wenn Sie die Wiederholung löschen, starten Sie Ihre Logik-App manuell.
-
-5. Für dieses Tutorial führen wir jedoch den Trigger jedes Mal aus, wenn ein Tweet eine Bedingung erfüllt. Klicken Sie auf das `...`-Menü, um den Wiederholungstrigger zu löschen.
-
-6. Suchen Sie im Triggersuchfeld nach **twitter**, und wählen Sie das Ergebnis aus.
+4. Beim ersten Öffnen der Logik-App benötigen Sie einen Trigger. Suchen Sie im Triggersuchfeld nach **twitter**, und wählen Sie das Ergebnis aus.
 
 7. Jetzt geben Sie das Schlüsselwort ein, nach dem Twitter durchsucht werden soll. ![Twitter-Suche](./media/app-service-logic-create-a-logic-app/twittersearch.png)
 
@@ -73,4 +67,4 @@ In weniger als 5 Minuten haben Sie eine einfache Logik-App eingerichtet, die in 
 [Azure portal]: https://portal.azure.com
 [Verwenden von Logik-App-Features]: app-service-logic-create-a-logic-app.md
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

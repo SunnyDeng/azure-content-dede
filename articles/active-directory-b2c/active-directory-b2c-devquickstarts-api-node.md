@@ -12,7 +12,7 @@
 	ms.workload="identity"
   	ms.tgt_pltfrm="na"
 	ms.devlang="javascript"
-	ms.topic="article"
+	ms.topic="hero-article"
 	ms.date="02/17/2016"
 	ms.author="brandwe"/>
 
@@ -20,9 +20,8 @@
 
 [AZURE.INCLUDE [active-directory-b2c-preview-note](../../includes/active-directory-b2c-preview-note.md)]
 
-> [AZURE.NOTE]
-	Dieser Artikel behandelt nicht das Implementieren der Anmeldung, Registrierung und Profilverwaltung mit Azure AD B2C. Der Schwerpunkt liegt auf dem Aufrufen von Web-APIs, nachdem der Benutzer authentifiziert wurde. 
-Wenn nicht bereits erfolgt, sollten Sie mit dem [Tutorial „Erste Schritte mit .NET-Web-App“](active-directory-b2c-devquickstarts-web-dotnet.md) beginnen, um Informationen zu den Grundlagen von Azure Active Directory B2C zu erhalten.
+
+> [AZURE.NOTE] Dieser Artikel behandelt nicht das Implementieren der Anmeldung, Registrierung und Profilverwaltung mit Azure AD B2C. Der Schwerpunkt liegt auf dem Aufrufen von Web-APIs, nachdem der Benutzer authentifiziert wurde. Wenn nicht bereits erfolgt, sollten Sie mit dem [Tutorial „Erste Schritte mit .NET-Web-App“](active-directory-b2c-devquickstarts-web-dotnet.md) beginnen, um Informationen zu den Grundlagen von Azure Active Directory B2C zu erhalten.
 
 
 > [AZURE.NOTE]	Dieses Beispiel wurde geschrieben, um es mit unserer [iOS B2C-Beispielanwendung](active-directory-b2c-devquickstarts-ios.md) zu verbinden. Führen Sie zunächst diese exemplarische Vorgehensweise durch, und machen Sie dann mit dem Beispiel weiter.
@@ -71,7 +70,7 @@ In Azure AD B2C wird jede Benutzeroberfläche durch eine [Richtlinie](active-dir
 
 Nachdem Sie die drei Richtlinien erstellt haben, können Sie Ihre App erstellen.
 
-Beachten Sie, dass in diesem Artikel nicht behandelt wird, wie die gerade erstellten Richtlinien verwendet werden. Grundlegende Informationen zur Funktionsweise von Richtlinien in Azure AD B2C finden Sie im [Tutorial „Erste Schritte mit .NET-Web-Apps“](active-directory-b2c-devquickstarts-web-dotnet.md).
+Beachten Sie, dass in diesem Artikel nicht behandelt wird, wie die gerade erstellten Richtlinien verwendet werden. Grundlegende Informationen zur Funktionsweise von Richtlinien in Azure AD B2C finden Sie im [Tutorial „Erste Schritte mit .NET-Web-Apps“](active-directory-b2c-devquickstarts-web-dotnet.md).
 
 ## Herunterladen der Datei „node.js“ für Ihre Plattform
 
@@ -295,7 +294,7 @@ policyName:'b2c_1_<sign in policy name>',
 
 `audience`: der URI (Uniform Resource Identifier) aus dem Portal, der Ihren Dienst identifiziert In unserem Beispiel wird `http://localhost/TodoListService` verwendet.
 
-`tenantName`: der Name Ihres Mandanten (z. B. **contoso.onmicrosoft.com**)
+`tenantName`: der Name Ihres Mandanten (z. B. **contoso.onmicrosoft.com**)
 
 `policyName`: die Richtlinie, anhand der die auf Ihrem Server eingehenden Token überprüft werden sollen Dies sollte dieselbe Richtlinie sein, die Sie in der Clientanwendung zum Anmelden verwenden.
 
@@ -878,8 +877,8 @@ Als Referenz stellen wir das vollständige Beispiel (ohne Ihre Konfigurationswer
 
 ## Nächste Schritte
 
-Sie können nun mit den Themen für fortgeschrittenere Benutzer fortfahren, z. B.:
+Sie können nun mit den Themen für fortgeschrittenere Benutzer fortfahren, z. B.:
 
 [Herstellen einer Verbindung mit einer Web-API mithilfe von iOS mit B2C](active-directory-b2c-devquickstarts-ios.md)
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

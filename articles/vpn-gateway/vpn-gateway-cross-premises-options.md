@@ -4,12 +4,12 @@
    services="vpn-gateway"
    documentationCenter="na"
    authors="cherylmc"
-   manager="carolz"
+   manager="carmonm"
    editor="" />
 <tags 
    ms.service="vpn-gateway"
    ms.devlang="na"
-   ms.topic="article"
+   ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="12/01/2015"
@@ -32,18 +32,18 @@ Die von Ihnen gewählte Option kann von einer Vielzahl von Faktoren abhängen:
 Die folgende Tabelle kann Ihnen dabei helfen, die beste Verbindungsoption für Ihre Lösung zu finden.
 
 
-| - | **Punkt-zu-Standort** | **Standort-zu-Standort** | **ExpressRoute** | 
-|------------------------------|---------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| **Von Azure unterstützte Dienste** | Cloud ServicesVirtual Machines                                                  | Cloud Services Virtual Machines                                                                           | [Dienstliste](../expressroute/expressroute-faqs.md#supported-azure-services)                                                                                                                |
-| **Typische Bandbreiten**       | In der Regel < 100-Mbit/s-Aggregat                                                  | In der Regel < 100-Mbit/s-Aggregat                                                                            |  50 MBit/s, 100 MBit/s, 200 MBit/s und 500 MBit/s, 1 GBit/s, 2 GBit/s, 5 GBit/s, 10 GBit/s                                                                                            |
-| **Unterstützte Protokolle**      | Secure Sockets Tunneling-Protokoll (SSTP)                                        | IPsec                                                                       |  Direkte Verbindung über VLANs, VPN-Technologien von NSP (MPLS, VPLS, ...)                                                                                                  |
-| **Routing**                  | Statisch                                                                          | Statisch – Wir unterstützen Richtlinien-basiert (statisches Routing) und Routen-basiert (VPN mit dynamischem Routing)                    | BGP                                                                                                                                     |
-| **Verbindungsstabilität**    | Aktiv-Passiv                                                                  | Aktiv-Passiv                                                                                            | Aktiv-Aktiv                                                                                                                           |
-| **Typischer Anwendungsfall**         | Erstellen von Prototype / test / Szenarien für Entwicklung abs für Cloud-Dienste und virtuelle Computer | Szenarien für Entwicklung / test / lLabs und kleine Produktionsarbeitslasten für Cloud-Dienste und virtuelle Computer | Zugriff auf alle Azure-Dienste (überprüfte Liste), Enterprise-Klasse und unternehmenskritische Arbeitsauslastungen, Backup, Big Data, Azure als DR-Standort |
-| **SLA**                      | [SLA](https://azure.microsoft.com/support/legal/sla/)                           | [SLA](https://azure.microsoft.com/support/legal/sla/)                                                     | [SLA](https://azure.microsoft.com/support/legal/sla/)                                                                                   |
-| **Preise**                  | [Preise](http://azure.microsoft.com/pricing/details/vpn-gateway/)              | [Preise](http://azure.microsoft.com/pricing/details/vpn-gateway/)                                             | [Preise](http://azure.microsoft.com/pricing/details/expressroute/)                                                                           |
-| **Technische Dokumentation**  | [Dokumentation zum VPN-Gateway](https://azure.microsoft.com/documentation/services/vpn-gateway/)                                               | [Dokumentation zum VPN-Gateway](https://azure.microsoft.com/documentation/services/vpn-gateway/)                                                                         | [ExpressRoute-Dokumentation](https://azure.microsoft.com/documentation/services/expressroute/)                                                                                                      |
-| **FAQ**                      | [FAQs zu VPN-Gateway](vpn-gateway-vpn-faq.md)                                                         | [FAQs zu VPN-Gateway](vpn-gateway-vpn-faq.md)                                                                                   | [FAQs zu ExpressRoute](../expressroute/expressroute-faqs.md)                                                                                                                |
+| - | **Punkt-zu-Standort** | **Standort-zu-Standort** | **ExpressRoute** |
+|------------------------------|----------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
+| **Von Azure unterstützte Dienste** | Cloud Services und Virtual Machines | Cloud Services und Virtual Machines | [Dienstliste](../expressroute/expressroute-faqs.md#supported-services) |
+| **Typische Bandbreiten** | In der Regel insgesamt < 100 MBit/s | In der Regel insgesamt < 100 MBit/s | 50 MBit/s, 100 MBit/s, 200 MBit/s, 500 MBit/s, 1 GBit/s, 2 GBit/s, 5 GBit/s, 10 GBit/s |
+| **Unterstützte Protokolle** | Secure Sockets Tunneling Protocol (SSTP) | IPsec | Direkte Verbindung über VLANs, VPN-Technologien des NSP (MPLS, VPLS ...) |
+| **Routing** | Routenbasiert (dynamisch) | Wir unterstützen richtlinienbasierte (statisches Routing) und routenbasierte (dynamisches Routing) VPNs | BGP |
+| **Verbindungsstabilität** | Aktiv-passiv | Aktiv-passiv | Aktiv-aktiv |
+| **Typisches Anwendungsbeispiel** | Erstellen von Prototypen, Entwicklungs-/Test-/Laborszenarios für Cloud Services und Virtual Machines | Entwicklungs-/Test-/Laborszenarios und kleine Produktionsworkloads für Cloud Services und Virtual Machines | Zugriff auf alle Azure-Dienste (überprüfte Liste), unternehmensbezogene und wichtige Workloads, Sicherung, Big Data, Azure als DR-Standort |
+| **SLA** | [SLA](https://azure.microsoft.com/support/legal/sla/) | [SLA](https://azure.microsoft.com/support/legal/sla/) | [SLA](https://azure.microsoft.com/support/legal/sla/) |
+| **Preise** | [Preise](https://azure.microsoft.com/pricing/details/vpn-gateway/) | [Preise](https://azure.microsoft.com/pricing/details/vpn-gateway/) | [Preise](https://azure.microsoft.com/pricing/details/expressroute/) |
+| **Technische Dokumentation** | [VPN Gateway-Dokumentation](https://azure.microsoft.com/documentation/services/vpn-gateway/) | [VPN Gateway-Dokumentation](https://azure.microsoft.com/documentation/services/vpn-gateway/) | [ExpressRoute-Dokumentation](https://azure.microsoft.com/documentation/services/expressroute/) |
+| ****Häufig gestellte Fragen ** | [Häufig gestellte Fragen zum VPN Gateway](vpn-gateway-vpn-faq.md) | [Häufig gestellte Fragen zum VPN Gateway](vpn-gateway-vpn-faq.md) | [ExpressRoute – FAQ](../expressroute/expressroute-faqs.md) |
 
 
 ## Standort-zu-Standort-Verbindungen
@@ -99,4 +99,4 @@ Weitere Informationen über ExpressRoute finden Sie unter [ExpressRoute – Tech
 
 Weitere Informationen finden Sie unter [FAQs zu ExpressRoute](../expressroute/expressroute-faqs.md) und [FAQs zu VPN-Gateway](vpn-gateway-vpn-faq.md).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0302_2016-->

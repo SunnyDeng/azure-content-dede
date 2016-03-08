@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="11/20/2015"
+   ms.date="02/26/2016"
    ms.author="seanmck"/>
 
 # Erste Schritte beim Bereitstellen und Aktualisieren von Anwendungen im lokalen Cluster
@@ -117,6 +117,10 @@ Nach dem Bereitstellen der Anwendung sehen wir uns nun die App-Details in PowerS
 
 3. Sehen Sie sich schließlich die Liste der Partitionen für WordCountService an:
 
+    ```powershell
+    Get-ServiceFabricPartition 'fabric:/WordCount/WordCountService'
+    ```
+
     ![Anzeigen der Dienstpartitionen in PowerShell][ps-getsfpartitions]
 
     Die Befehle, die Sie gerade verwendet haben, sind wie alle Service Fabric-PowerShell-Befehle für alle Cluster verfügbar, mit denen Sie eine Verbindung herstellen – lokal oder remote.
@@ -186,4 +190,4 @@ Die neue Version der Anwendung zählt nur die Wörter, die mit einem Vokal begin
 [sfx-upgradeprogress]: ./media/service-fabric-get-started-with-a-local-cluster/SfxUpgradeOverview.png
 [sfx-service-overview]: ./media/service-fabric-get-started-with-a-local-cluster/sfx-service-overview.png
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0302_2016-->

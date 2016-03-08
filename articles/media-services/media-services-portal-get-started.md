@@ -4,7 +4,7 @@
 	services="media-services"
 	documentationCenter=""
 	authors="Juliako"
-	manager="dwrede"
+	manager="erikre"
 	editor=""/>
 
 <tags
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="02/03/2016"
+	ms.date="02/25/2016"
 	ms.author="juliako"/>
 
 
@@ -139,7 +139,7 @@ Beachten Sie, dass die reservierten Einheiten für On-Demand-Streaming Ihnen zus
 
 ### Codieren
 
-Dieser Abschnitt beschreibt die Schritte, die Sie ausführen können, um Ihre Inhalte mit Azure Media Encoder im klassischen Azure-Portal zu codieren.
+Dieser Abschnitt beschreibt die Schritte, die Sie ausführen können, um Ihre Inhalte mit Media Encoder Standard im klassischen Azure-Portal zu codieren.
 
 1.  Wählen Sie die Datei aus, die Sie codieren möchten. Wenn die Codierung für diesen Dateityp unterstützt wird, wird die Schaltfläche **PROZESS** unten auf der Seite „INHALT“ aktiviert.
 4. Wählen Sie im Dialogfeld **Prozess** den **Media Encoder Standard**-Prozessor aus.
@@ -253,4 +253,4 @@ Wenn dieses Thema nicht die erwarteten Informationen enthält, Informationen feh
 [encrypt]: ./media/media-services-manage-content/media-services-encrypt-content.png
 [AMSPlayer]: ./media/media-services-portal-get-started/media-services-portal-player.png
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0302_2016-->

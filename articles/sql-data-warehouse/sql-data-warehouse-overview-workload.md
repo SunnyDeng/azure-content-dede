@@ -10,10 +10,10 @@
 <tags
    ms.service="sql-data-warehouse"
    ms.devlang="NA"
-   ms.topic="article"
+   ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/07/2016"
+   ms.date="02/25/2016"
    ms.author="barbkess;mausher;jrj;sonyama"/>
 
 
@@ -28,7 +28,7 @@ Data Warehouses werden durch Abfragen charakterisiert, die eine größere Anzahl
 
 - Die Leistung eines Data Warehouse ist am besten, wenn die Daten auf eine Weise gespeichert werden, die Abfragen optimiert, die eine große Anzahl von Zeilen oder große Datenbereiche scannen müssen. Diese Art des Scannens funktioniert am besten, wenn die Daten nach Spalten anstelle von Zeilen durchsucht und gespeichert werden. 
 
->[AZURE.NOTE]Der speicherinterne ColumnStore-Index, der Spaltenspeicher verwendet, bietet eine bis zu zehnmal so hohe Komprimierung und eine hundertfache Abfrageleistungssteigerung gegenüber herkömmlichen binären Strukturen für Berichterstattung und Analyse von Abfragen. Wir betrachten ColumnStore-Indizes als Standard für das Speichern und Scannen großer Datenmengen in einem Data Warehouse.
+>[AZURE.NOTE] Der speicherinterne ColumnStore-Index, der Spaltenspeicher verwendet, bietet eine bis zu zehnmal so hohe Komprimierung und eine hundertfache Abfrageleistungssteigerung gegenüber herkömmlichen binären Strukturen für Berichterstattung und Analyse von Abfragen. Wir betrachten ColumnStore-Indizes als Standard für das Speichern und Scannen großer Datenmengen in einem Data Warehouse.
 
 - Ein Data Warehouse hat andere Anforderungen als ein System, das für die Onlinetransaktionsverarbeitung (OLTP) optimiert ist. Im OLTP-System gibt es viele Einfüge-, Aktualisierungs- und Löschvorgänge. Diese Suchvorgänge durchsuchen bestimmte Zeilen in der Tabelle. Tabellensuchen funktionieren am besten, wenn die Daten zeilenweise gespeichert sind. Die Daten können sortiert und schnell mit einem so genannten "Divide & Conquer"-Ansatz, der auch als Binärstruktur- oder btree-Suche bezeichnet wird, durchsucht werden.
 
@@ -38,7 +38,7 @@ Das Laden von Daten ist ein großer Teil des Data Warehouse-Workloads. Unternehm
 
 - Normalerweise wird er Prozess des Ladens als ETL bezeichnet: Extrahieren, Transformieren und Laden. Daten müssen in der Regel umgewandelt (transformiert) werden, damit sie mit anderen Daten im Data Warehouse konsistent sind. Früher haben Unternehmen dedizierte ETL-Server für Transformationen verwendet. Jetzt – mit der schnellen umfangreichen parallelen Verarbeitung – können Sie Daten zuerst in SQL Data Warehouse laden und dann die Transformationen ausführen. Dieser Prozess wird als Extrahieren, Laden und Transformieren (ELT) bezeichnet und wird ein neuer Standard für die Data Warehouse-Workloads.
 
-> [AZURE.NOTE]Mit SQL Server CTP2 können Sie jetzt Analysen in Echtzeit für eine OLTP-Tabelle ausführen. Dies ist kein Ersatz für ein Data Warehouse zum Speichern und Analysieren von Daten, stellt aber eine Möglichkeit für die Analyse in Echtzeit bereit.
+> [AZURE.NOTE] Mit SQL Server CTP2 können Sie jetzt Analysen in Echtzeit für eine OLTP-Tabelle ausführen. Dies ist kein Ersatz für ein Data Warehouse zum Speichern und Analysieren von Daten, stellt aber eine Möglichkeit für die Analyse in Echtzeit bereit.
  
 ### Berichterstellung und Analyseabfragen
 Berichterstellung und Analyseabfragen werden häufig in die Kategorien klein, mittel und groß unterteilt – basierend auf einer Reihe von Kriterien, aber in der Regel zeitbasiert. In den meisten Data Warehouse gibt es gemischte Workloads mit kurzen und lang andauernden Abfragen. In jedem Fall ist es wichtig, bestimmen diese Mischung und ihre Häufigkeit (stündlich, täglich, am Monatsende, am Quartalsende usw.) zu bestimmen. Es ist wichtig zu verstehen, dass gemischte Abfrageworkloads in Verbindung mit der Parallelität zu einer ordnungsgemäßen Kapazitätsplanung für ein Data Warehouse führt.
@@ -73,4 +73,4 @@ Informationen zu den ersten Schritten zum Entwickeln Ihres Data Warehouse finden
 
 <!--Other web references-->
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0302_2016-->

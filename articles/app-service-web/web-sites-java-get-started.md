@@ -21,15 +21,15 @@
 - [.Net](web-sites-dotnet-get-started.md)
 - [Node.js](web-sites-nodejs-develop-deploy-mac.md)
 - [Java](web-sites-java-get-started.md)
-- [PHP - Git](web-sites-php-mysql-deploy-use-git.md)
-- [PHP - FTP](web-sites-php-mysql-deploy-use-ftp.md)
+- [PHP – Git](web-sites-php-mysql-deploy-use-git.md)
+- [PHP – FTP](web-sites-php-mysql-deploy-use-ftp.md)
 - [Python](web-sites-python-ptvs-django-mysql.md)
 
 Dieses Tutorial zeigt die Erstellung einer [Java-Web-App in Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714) über das [Azure-Portal](https://portal.azure.com/). Das Azure-Portal ist eine Weboberfläche, über die Sie Azure-Ressourcen verwalten können.
 
-> [AZURE.NOTE] Sie benötigen ein Microsoft Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie kein Konto haben, können Sie [Ihre Visual Studio-Abonnentenvorteile aktivieren][] oder sich [für eine kostenlose Testversion registrieren][].
+> [AZURE.NOTE] Sie benötigen ein Microsoft Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie kein Konto haben, können Sie [Ihre Visual Studio-Abonnentenvorteile aktivieren] oder sich [für eine kostenlose Testversion registrieren].
 >
-> Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, besuchen Sie [Azure App Service-App erstellen][]. Dort können Sie direkt eine kurzzeitige Start-Web-App in App Service erstellen – keine Kreditkarte erforderlich, keine weiteren Verpflichtungen.
+> Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, besuchen Sie [Azure App Service-App erstellen]. Dort können Sie direkt eine kurzzeitige Start-Web-App in App Service erstellen – keine Kreditkarte erforderlich, keine weiteren Verpflichtungen.
 
 ## Optionen für Java-Anwendungen
 
@@ -53,7 +53,7 @@ Es gibt verschiedene Möglichkeiten, wie Sie eine Java-Anwendung in einer App Se
 	* Sie möchten den Webcontainer von Grund auf selbst konfigurieren. 
 	* Sie möchten eine Version von Java verwenden, die nicht von App Service unterstützt wird, und Sie möchten sie selbst hochladen.
 
-	Für Fälle wie diese können Sie im Azure-Portal eine App erstellen und anschließend die geeigneten Laufzeitdateien manuell bereitstellen. Dabei werden die Dateien auf die Speicherplatzkontingente für Ihren App Service-Plan angerechnet. Weitere Informationen erhalten Sie unter [Hochladen einer benutzerdefinierten Java-Web-App in Azure](https://acom-sandbox.azurewebsites.net/de-DE/documentation/articles/web-sites-java-custom-upload/).
+	Für Fälle wie diese können Sie im Azure-Portal eine App erstellen und anschließend die geeigneten Laufzeitdateien manuell bereitstellen. Dabei werden die Dateien auf die Speicherplatzkontingente für Ihren App Service-Plan angerechnet. Weitere Informationen erhalten Sie unter [Hochladen einer benutzerdefinierten Java-Web-App in Azure](web-sites-java-custom-upload.md).
 
 ## <a name="portal"></a> Erstellen und Konfigurieren einer Java-Web-App
 
@@ -176,7 +176,6 @@ Weitere Informationen zum Entwickeln von Java-Anwendungen in Azure finden Sie im
 <!-- External Links -->
 [Ihre Visual Studio-Abonnentenvorteile aktivieren]: http://go.microsoft.com/fwlink/?LinkId=623901
 [für eine kostenlose Testversion registrieren]: http://go.microsoft.com/fwlink/?LinkId=623901
-
 [Azure App Service-App erstellen]: http://go.microsoft.com/fwlink/?LinkId=523751
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0302_2016-->

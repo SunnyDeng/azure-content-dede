@@ -3,7 +3,7 @@
     description="Tutorial, in dem Sie sich mit dem Erstellen, Testen und Veröffentlichen eines einfachen grafischen Runbooks vertraut machen können."
     services="automation"
     documentationCenter=""
-    authors="bwren"
+    authors="mgoedtel"
     manager="stevenka"
     editor=""/>
 
@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="02/18/2016"
+    ms.date="02/23/2016"
     ms.author="magoedte;bwren"/>
 
 # Mein erstes grafisches Runbook
@@ -161,4 +161,4 @@ In diesem Schritt ändern wir das Runbook, sodass es nur gestartet wird, wenn es
 -	[Mein erstes PowerShell-Workflow-Runbook](automation-first-runbook-textual.md)
 -	[Mein erstes PowerShell-Runbook](automation-first-runbook-textual-PowerShell.md)
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

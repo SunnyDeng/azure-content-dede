@@ -163,7 +163,9 @@ An dieser Stelle geben Sie die spezifischen Server ein, auf denen Sie AD FS inst
 An dieser Stelle geben Sie die spezifischen Server ein, die Sie als Webanwendungsproxy-Server verwenden möchten. Der Webanwendungsproxy-Server wird in Ihrer DMZ bereitgestellt (Extranetzugriff) und unterstützt Authentifizierungsanforderungen aus dem Extranet. Sie können je nach Ihren Kapazitätsplanungsanforderungen einen oder mehrere Server hinzufügen. Es empfiehlt sich, einen einzelnen Webanwendungsproxy-Server für Test- und Pilotumgebungen zu installieren und zusätzliche Server bereitzustellen, indem Sie Azure AD Connect nach der ersten Installation öffnen und den Webanwendungsproxy auf zusätzlichen Servern bereitstellen. Erfahrungsgemäß sollte eine entsprechende Anzahl an Proxyservern bereitgestellt werden, um die Authentifizierung für den Internetzugriff zu bewältigen.
 
 > [AZURE.NOTE]
-<li> Wenn das Konto, das Sie für die Installation von Azure AD Connect verwenden, kein lokaler Administrator auf dem AD FS-Server ist, werden Sie zur Eingabe der Anmeldeinformationen eines Kontos mit ausreichend Berechtigungen aufgefordert.</li> <li> Stellen Sie sicher, dass eine HTTP/HTTPS-Verbindung zwischen dem AD Connect-Server und dem Webanwendungsproxy-Server besteht, bevor Sie diesen Schritt durchführen.</li> <li> Stellen Sie darüber hinaus sicher, dass eine HTTP/HTTPS-Verbindung zwischen dem Webanwendungsserver und dem AD FS-Server besteht, um Authentifizierungsanforderungen zu unterstützen.</li>
+<li> Wenn das Konto, das Sie für die Installation von Azure AD Connect verwenden, kein lokaler Administrator auf dem AD FS-Server ist, werden Sie zur Eingabe der Anmeldeinformationen eines Kontos mit ausreichend Berechtigungen aufgefordert.</li>
+<li> Stellen Sie sicher, dass eine HTTP/HTTPS-Verbindung zwischen dem Azure AD Connect-Server und dem Webanwendungsproxy-Server besteht, bevor Sie diesen Schritt durchführen.</li>
+<li> Stellen Sie darüber hinaus sicher, dass eine HTTP/HTTPS-Verbindung zwischen dem Webanwendungsserver und dem AD FS-Server besteht, um Authentifizierungsanforderungen zu unterstützen.</li>
 
 ![Web App](./media/active-directory-aadconnect-get-started-custom/adfs3.png)
 
@@ -191,11 +193,19 @@ Diese Konfiguration wird verwendet, um die Verbundbeziehung zwischen AD FS und A
 ![Azure AD-Domäne](./media/active-directory-aadconnect-get-started-custom/adfs6.png)
 
 
+### Überprüfen der für den Verbund ausgewählten Azure AD-Domäne
+
+Wenn Sie die Domäne für den Verbund mit Ihrem lokalen Verzeichnis auswählen, stellt Azure AD Connect die notwendigen Informationen für die Überprüfung der Domäne bereit, sofern sie noch nicht überprüft wurde. Auf dieser Seite werden die DNS-Einträge angezeigt, die Sie bei der Domänennamen-Registrierungsstelle bzw. beim Host Ihres DNS erstellen müssen, um die Überprüfung der Domäne abzuschließen.</br>
+
+![Azure AD-Domäne](./media/active-directory-aadconnect-get-started-custom/verifyfeddomain.png)
+
+> [AZURE.NOTE] AD Connect versucht in der Konfigurationsphase, die Domäne zu überprüfen. Wenn Sie die Konfiguration fortsetzen, ohne die erforderlichen DNS-Einträge zum Host Ihres Domänen-DNS hinzuzufügen, kann der Assistent die Konfiguration nicht abschließen.</br>
+
 ## Konfigurieren und Überprüfen von Seiten
 Auf dieser Seite wird die tatsächliche Konfiguration durchgeführt.
 
 > [AZURE.NOTE]
-Bevor Sie mit der Installation fortfahren und wenn Sie einen Verbund konfiguriert haben, stellen Sie sicher, dass Sie die [Namensauflösung für Verbundserver (Name resolution for federation servers)](active-directory-aadconnect-prerequisites.md#name-resolution-for-federation-servers) konfiguriert haben.
+Wenn Sie einen Verbund konfiguriert haben, stellen Sie vor dem Fortsetzen der Installation sicher, dass Sie die [Namensauflösung für Verbundserver](active-directory-aadconnect-prerequisites.md#name-resolution-for-federation-servers) konfiguriert haben.
 
 ![Synchronisierungsfilterung](./media/active-directory-aadconnect-get-started-custom/readytoconfigure2.png)
 
@@ -217,8 +227,8 @@ Azure AD Connect prüft die DNS-Einstellungen, wenn Sie auf die Schaltfläche "�
 
 Führen Sie darüber hinaus die folgenden Überprüfungsschritte aus:
 
-- Überprüfen Sie die Browser-Anmeldung von einem mit der Domäne verknüpften Computer über Internet Explorer aus dem Intranet: Stellen Sie eine Verbindung mit https://myapps.microsoft.com her, und überprüfen Sie die Anmeldung, während Sie mit Ihrem Konto angemeldet sind. **Hinweis:** Das integrierte AD DS-Administratorkonto wird nicht synchronisiert und kann für die Überprüfung nicht genutzt werden.
-- Überprüfen Sie die Browser-Anmeldung von einem beliebigen Gerät aus dem Extranet: Stellen Sie mit Ihrem Computer zu Hause oder mit einem mobilen Gerät eine Verbindung mit https://myapps.microsoft.com her, und geben Sie Ihre Anmelde-ID und Ihr Kennwort ein.
+- Überprüfen Sie die Browseranmeldung von einem mit der Domäne verknüpften Computer über Internet Explorer aus dem Intranet: Stellen Sie eine Verbindung mit https://myapps.microsoft.com her, und überprüfen Sie die Anmeldung, während Sie mit Ihrem Konto angemeldet sind. **Hinweis:** Das integrierte AD DS-Administratorkonto wird nicht synchronisiert und kann für die Überprüfung nicht genutzt werden.
+- Überprüfen Sie die Browseranmeldung von einem beliebigen Gerät aus dem Extranet: Stellen Sie mit Ihrem Computer zu Hause oder mit einem mobilen Gerät eine Verbindung mit https://myapps.microsoft.com her, und geben Sie Ihre Anmelde-ID und Ihr Kennwort ein.
 - Überprüfen Sie die Rich-Client-Anmeldung: Stellen Sie eine Verbindung mit https://testconnectivity.microsoft.com her, wechseln Sie zur Registerkarte **Office 365**, und wählen Sie **Office 365-Test für einmaliges Anmelden**.
 
 ## Nächste Schritte
@@ -228,4 +238,4 @@ Nachdem Sie Azure AD Connect installiert haben, können Sie [die Installation �
 
 Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

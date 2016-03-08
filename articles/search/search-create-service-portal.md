@@ -21,7 +21,7 @@
 
 Microsoft Azure Search ist ein gehosteter Cloudsuchdienst, mit dem Sie Suchfunktionen in benutzerdefinierte Anwendungen einbetten können. Er stellt eine Suchmaschine und Speicherplatz für Ihre Suchdaten zur Verfügung. Zugriff und Verwaltung können über das Azure-Portal, über ein .NET-SDK oder über eine REST-API erfolgen. Zu den zentralen Features zählen Abfragen mit automatischer Vervollständigung, Fuzzyübereinstimmung, Trefferhervorhebung, Facettennavigation, Bewertungsprofile und Unterstützung mehrerer Sprachen. Weitere Informationen zu den Funktionen von Azure Search finden unter [Was ist Azure Search?](search-what-is-azure-search.md).
 
-Die Preise für Azure Search reichen von kostenlos (Shared) bis zu Standard, wobei die Kosten basierend der registrierten Kapazität berechnet werden.
+Die Preise für Azure Search reichen von „Free“ (Shared) über „Basic“ bis zu „Standard“, wobei die Kosten basierend der registrierten Kapazität berechnet werden.
 
 ## Kostenloses Hinzufügen von Azure Search zu Ihrem Abonnement
 
@@ -42,7 +42,8 @@ Bei Verwendung der Option „Shared“ können Administratoren Azure Search eine
 	- Der **Tarif** bestimmt Kapazität und Abrechnung. Beide Tarife bieten die gleichen Features, aber mit unterschiedlichen Ressourcen.
 
 		- **Free** wird auf Clustern ausgeführt, die gemeinsam mit anderen Abonnenten genutzt werden. Diese Version bietet genügend Kapazität für Tutorials sowie zum Schreiben von Code für Machbarkeitsstudien, eignet sich jedoch nicht für den Einsatz in Produktionsumgebungen. Die Bereitstellung eines kostenlosen Diensts dauert in der Regel nur wenige Minuten.
-		- **Standard** wird auf fest zugeordneten Ressourcen ausgeführt und ist flexibel skalierbar. Ein Standarddienst wird zunächst mit einem Replikat und einer Partition bereitgestellt, die Kapazität kann nach der Diensterstellung jedoch angepasst werden. Die Bereitstellung eines Standarddiensts dauert länger (üblicherweise etwa 15 Minuten).
+		- **Basic (Preview)** wird auf dedizierten Ressourcen, aber mit niedrigeren Grenzwerten und Preisen für kleinere Produktionsworkloads ausgeführt. Sie können zentral auf drei Replikate und eine Partition hochskalieren. Dies ist ausreichend für eine hohe Verfügbarkeit bei der Abfrageausführung.
+		- **Standard** wird auf fest zugeordneten Ressourcen ausgeführt und ist flexibel skalierbar. Ein Standarddienst wird zunächst mit einem Replikat und einer Partition bereitgestellt, die Kapazität kann nach der Diensterstellung jedoch auf ein Maximum von 36 Sucheinheiten erhöht werden. Die Bereitstellung eines Standarddiensts dauert länger (üblicherweise etwa 15 Minuten).
 
 	- **Ressourcengruppen** sind Container für Dienste und Ressourcen, die einem gemeinsamen Zweck dienen. Wenn Sie eine auf Azure Search, der Web-Apps-Funktion in Azure App Service und Azure-Blob-Speicher basierte Suchanwendung erstellen möchten, können Sie z. B. eine Ressourcengruppe erstellen, die diese Dienste in den Verwaltungsseiten im Portal gruppiert.
 
@@ -126,4 +127,4 @@ Nachdem der Dienst erstellt wurde, können Sie die nächsten Schritte ausführen
 [2]: ./media/search-create-service-portal/create-search-portal-2.PNG
 [3]: ./media/search-create-service-portal/create-search-portal-3.PNG
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

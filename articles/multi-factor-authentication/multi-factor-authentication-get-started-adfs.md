@@ -11,9 +11,8 @@
 	ms.service="multi-factor-authentication" 
 	ms.workload="identity" 
 	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="get-started-article" 
-	ms.date="02/16/2016" 
+	ms.devlang="na" ms.topic="get-started-article" 
+	ms.date="02/25/2016" 
 	ms.author="billmath"/>
 
 # Erste Schritte mit Azure Multi-Factor Authentication und Active Directory-Verbunddiensten
@@ -55,4 +54,4 @@ Informationen zum Einrichten von Azure Multi-Factor Authentication oder Azure Mu
 
  
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -44,7 +44,7 @@ Bevor Sie mit diesem Tutorial beginnen, müssen Sie über die folgenden Ressourc
 
    + **SQL Data Warehouse**: In diesem Tutorial werden die Daten aus dem Azure Storage-Blob in SQL Data Warehouse verschoben. Daher muss ein Data Warehouse online sein, in das die AdventureWorksDW-Beispieldaten geladen wurden. Wenn Sie noch kein Data Warehouse haben, erfahren Sie hier, wie [eines bereitstellt wird](sql-data-warehouse-get-started-provision.md). Wenn Sie ein Data Warehouse haben, jedoch die Beispieldaten nicht darin bereitgestellt haben, können Sie es [manuell laden](sql-data-warehouse-get-started-manually-load-samples.md).
 
-   + **Azure Data Factory**: Azure Data Factory schließt die tatsächliche Last ab, daher müssen Sie über eine verfügen, die Sie zum Erstellen der Datenverschiebungspipeline verwenden können. Wenn Sie noch keine haben, erfahren Sie Schritt 1 von [Erste Schritte mit Azure Data Factory (Data Factory Edition)](../data-factory/data-factory-build-your-first-pipeline-using-editor.md), wie Sie eine erstellen.
+   + **Azure Data Factory**: Azure Data Factory schließt die tatsächliche Last ab, daher müssen Sie über eine verfügen, die Sie zum Erstellen der Datenverschiebungspipeline verwenden können. Wenn Sie noch keine haben, erfahren Sie In Schritt 1 von [Erste Schritte mit Azure Data Factory (Data Factory Edition)](../data-factory/data-factory-build-your-first-pipeline-using-editor.md), wie Sie eine erstellen.
 
    + **AZCopy**: Sie benötigen AZCopy, um die Beispieldaten von Ihrem lokalen Client in Ihr Azure Storage-Blob zu kopieren. Anweisungen zur Installation finden Sie in der [AZCopy-Dokumentation](../storage/storage-use-azcopy.md).
 
@@ -132,21 +132,6 @@ Nach dem Erstellen der verknüpften Dienste müssen Sie die Datasets definieren.
 
     ````
     {
-        "name": "<dataset name>",
-        "properties": {
-		    "type": "AzureSqlDWTable",
-		    "linkedServiceName": "<linked data warehouse name>",
-		    "typeProperties": {
-		      "tableName": "FactInternetSales"
-		    },
-		    "availability": {
-		      "frequency": "Hour",
-		      "interval": 1
-		    }
-        }
-    }
-
-    {
 	    "name": "DWDataset",
 		"properties": {
 		    "type": "AzureSqlDWTable",
@@ -230,4 +215,4 @@ Diese Themen enthalten ausführliche Informationen zu Azure Data Factory. Darin 
 - [Tutorial: Kopieren von Daten aus einem Azure Storage-Blob in die Azure SQL-Datenbank](../data-factory/data-factory-get-started.md) In diesem Tutorial erstellen Sie in Azure Data Factory eine Pipeline, um Daten aus einem Azure Storage-Blob in Azure SQL-Datenbank zu kopieren.
 - [Tutorial zu realistischen Szenarien](../data-factory/data-factory-tutorial.md) Dies ist ein detailliertes Tutorial zur Verwendung von Azure Data Factory.
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0302_2016-->

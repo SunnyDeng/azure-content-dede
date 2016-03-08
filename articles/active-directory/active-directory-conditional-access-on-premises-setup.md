@@ -12,8 +12,8 @@
 	ms.workload="identity"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="article"
-	ms.date="02/09/2016"
+	ms.topic="get-started-article"
+	ms.date="02/26/2016"
 	ms.author="femila"/>
 
 
@@ -39,26 +39,26 @@ Unterstützte Geräte
 Voraussetzungen für die einzelnen Szenarien
 ------------------------------------------------------------------------
 * Abonnement für Office 365 oder Azure Active Directory Premium
-* Azure Active Directory Tenant
+* Azure Active Directory-Mandant
 * Windows Server Active Directory (Windows Server 2008 oder höher)
 * Aktualisiertes Schema in Windows Server 2012 R2
-* Azure Active Directory Premium-Abonnement
+* Lizenz für Azure Active Directory Premium
 * Windows Server 2012 R2-Verbunddienste, konfiguriert für SSO in Azure AD
 * Windows Server 2012 R2-Webanwendungsproxy Microsoft Azure Active Directory Connect (Azure AD Connect). [Sie können Azure AD Connect hier herunterladen](http://www.microsoft.com/de-DE/download/details.aspx?id=47594).
-* Überprüfte Domäne. 
+* Überprüfte Domäne.
 
 Bekannte Probleme in dieser Version
 -------------------------------------------------------------------------------
 * Gerätebasierte bedingte Zugriffsrichtlinien erfordern das Zurückschreiben von Geräteobjekten aus Azure Active Directory nach Active Directory. Es kann bis zu drei Stunden dauern, bis Geräteobjekte nach Active Directory zurückgeschrieben werden.
-* iOS 7-Geräte fordern den Benutzer immer auf, während der Zertifikatauthentifizierung ein Zertifikat auszuwählen. 
-* Einige Versionen von iOS 8 vor iOS 8.3 funktionieren nicht. 
+* iOS 7-Geräte fordern den Benutzer immer auf, während der Zertifikatauthentifizierung ein Zertifikat auszuwählen.
+* Einige Versionen von iOS 8 vor iOS 8.3 funktionieren nicht.
 
 ## Annahmen für das Szenario
-Bei diesem Szenario wird davon ausgegangen, dass Sie über eine Hybrid-Umgebung verfügen, die aus einem Azure AD-Mandanten und einer lokalen aktiven Active Directory-Komponente besteht. Diese Mandanten sollten mit Azure AD Connect sowie mit einer überprüften Domäne und AD FS für SSO verbunden sein. Die unten angegebene Checkliste hilft Ihnen bei der Konfiguration Ihrer Umgebung für die oben beschriebene Stufe.
+Bei diesem Szenario wird davon ausgegangen, dass Sie über eine Hybrid-Umgebung verfügen, die aus einem Azure AD-Mandanten und einer lokalen Active Directory-Instanz besteht. Diese Mandanten sollten mit Azure AD Connect sowie mit einer überprüften Domäne und AD FS für SSO verbunden sein. Die unten angegebene Checkliste hilft Ihnen bei der Konfiguration Ihrer Umgebung für die oben beschriebene Stufe.
 
 Checkliste: Erforderliche Komponenten für Szenario mit bedingtem Zugriff
 --------------------------------------------------------------
-Verbinden Sie Ihren Azure AD Tenant mit dem lokalen Active Directory-Element.
+Verbinden Sie Ihren Azure AD-Mandanten mit der lokalen Active Directory-Instanz.
 
 ## Konfigurieren des Azure Active Directory-Geräteregistrierungsdiensts
 Verwenden Sie diese Anleitung, um den Azure Active Directory-Geräteregistrierungsdienst für Ihre Organisation bereitzustellen und zu konfigurieren.
@@ -89,11 +89,11 @@ Führen Sie die Aufgaben in der Prüfliste unten aus, um den Azure Active Direct
 | Aufgabe | Referenz |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------|
 | Führen Sie Teil 2 von „Aktivieren des Geräterückschreibens in Azure AD Connect“ aus. Kehren Sie nach Abschluss des Vorgangs zu dieser Anleitung zurück. | [Aktivieren von „Geräterückschreiben“ in Azure AD Connect](#Ausführen eines Upgrades des Schemas der Active Directory-Domänendienste) |
-	 
+
 
 ##[Optional] Teil 4: Aktivieren der Multi-Factor Authentication
 
-Es wird dringend empfohlen, eine der verschiedenen Optionen für die Multi-Factor Authentication zu konfigurieren. Wenn Sie die MFA obligatorisch machen möchten, helfen Ihnen die Informationen unter [Auswählen der richtigen mehrstufigen Sicherheitslösung](multi-factor-authentication-get-started.md) weiter. Darin ist eine Beschreibung der einzelnen Lösungen enthalten, und außerdem Links mit hilfreichen Informationen zum Konfigurieren der Lösung Ihrer Wahl.
+Es wird dringend empfohlen, eine der verschiedenen Optionen für die Multi-Factor Authentication zu konfigurieren. Wenn Sie die MFA obligatorisch machen möchten, helfen Ihnen die Informationen unter [Auswählen der richtigen mehrstufigen Sicherheitslösung](../multi-factor-authentication/multi-factor-authentication-get-started.md) weiter. Darin ist eine Beschreibung der einzelnen Lösungen enthalten, und außerdem Links mit hilfreichen Informationen zum Konfigurieren der Lösung Ihrer Wahl.
 
 ## Teil 5: Überprüfung
 
@@ -109,10 +109,10 @@ Die Bereitstellung ist jetzt abgeschlossen. Sie können nun einige Szenarien aus
 
 
 
-## Integrieren von Azure Active Directory in lokales Active Directory
-Diese Anleitung hilft Ihnen bei der Integration Ihres Azure AD-Mandanten in das lokale Active Directory mithilfe von Azure AD Connect. Auch wenn die Schritte im Azure-Portal verfügbar sind, sollten Sie die speziellen Anweisungen in diesem Abschnitt beachten.
+## Integrieren von Azure Active Directory in die lokale Active Directory-Instanz
+Diese Anleitung hilft Ihnen bei der Integration Ihres Azure AD-Mandanten in die lokale Active Directory-Instanz mithilfe von Azure AD Connect. Auch wenn die Schritte im klassischen Azure-Portal verfügbar sind, sollten Sie die speziellen Anweisungen in diesem Abschnitt beachten.
 
-1.	Melden Sie sich als Administrator beim Azure-Portal an.
+1.	Melden Sie sich beim klassischen Azure-Portal mit einem Konto an, das ein globaler Administrator in Azure AD ist.
 2.	Wählen Sie im linken Bereich **Active Directory** aus.
 3.	Wählen Sie auf der Registerkarte **Verzeichnis** Ihr Verzeichnis aus.
 4.	Wechseln Sie zur Registerkarte **Verzeichnisintegration**.
@@ -121,8 +121,8 @@ Diese Anleitung hilft Ihnen bei der Integration Ihres Azure AD-Mandanten in das 
   2.	Installieren und Ausführen von Azure AD Connect: Installieren Sie Azure AD Connect, indem Sie die Anleitung unter [Benutzerdefinierte Installation von Azure AD Connect](active-directory-aadconnect-get-started-custom.md) verwenden.
   3. Überprüfen und verwalten Sie die Verzeichnissynchronisierung. In diesem Schritt sind Anweisungen zum einmaligen Anmelden enthalten.
   >[AZURE.NOTE] Konfigurieren Sie die Partnerbeziehung mit AD FS, wie im oben verlinkten Dokument beschrieben.[AZURE.NOTE] Sie müssen keine Preview-Funktionen konfigurieren.
-  
-   
+
+
 
 
 ## Ausführen eines Upgrades des Schemas der Active Directory-Domänendienste
@@ -130,7 +130,7 @@ Diese Anleitung hilft Ihnen bei der Integration Ihres Azure AD-Mandanten in das 
 Das Upgrade des Active Directory-Schemas kann nicht rückgängig gemacht werden. Es wird empfohlen, dieses Upgrade zuerst in einer Testumgebung auszuführen.
 
 1. Melden Sie sich an Ihrem Domänencontroller mit einem Konto an, das über die Rechte "Unternehmensadministrator" und "Schemaadministrator" verfügt.
-2. Kopieren Sie das Verzeichnis **[medien]\\support\\adprep** und die Unterverzeichnisse auf einen Ihrer Active Directory-Domänencontroller. 
+2. Kopieren Sie das Verzeichnis **[medien]\\support\\adprep** und die Unterverzeichnisse auf einen Ihrer Active Directory-Domänencontroller.
 3. Hierbei steht "[medien]" für den Pfad zum Windows Server 2012 R2-Installationsmedium.
 4. Navigieren Sie an einer Eingabeaufforderung zum Verzeichnis „adprep“, und führen Sie dann den folgenden Befehl aus: **adprep.exe /forestprep**. Folgen Sie den Anweisungen auf dem Bildschirm, um das Upgrade des Schemas abzuschließen.
 
@@ -163,7 +163,7 @@ Dies ist ein einmaliger Vorgang, den Sie ausführen müssen, um Ihre Active Dire
 
 ### Vorbereiten von Azure AD Connect für das Geräterückschreiben
 
-1.	Teil 1 durchführen: Vorbereiten von AAD Connect. 
+1.	Schließen Sie „Teil 1: Vorbereiten von Azure AD Connect“ ab.
 
 
 ## Arbeitsbereichverknüpfung für Geräte mithilfe der Azure Active Directory-Geräteregistrierung
@@ -249,4 +249,4 @@ Wenn Benutzer auf Ihre Anwendung jetzt über ein Gerät zugreifen, das nicht unt
 
 - [Artikelindex für die Anwendungsverwaltung in Azure Active Directory](active-directory-apps-index.md)
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0302_2016-->

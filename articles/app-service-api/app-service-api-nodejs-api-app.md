@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="node"
 	ms.topic="get-started-article"
-	ms.date="11/27/2015"
+	ms.date="02/25/2015"
 	ms.author="bradygaster"/>
 
 # Erstellen und Bereitstellen einer Node.js-API-App in Azure App Service
@@ -21,7 +21,7 @@
 [AZURE.INCLUDE [app-service-api-get-started-selector](../../includes/app-service-api-get-started-selector.md)]
 
 ## Voraussetzungen
-1. Ausführung von [Node.js](nodejs.org) auf einem Entwicklungscomputer (in diesem Beispiel wird die Installation von Node.js Version 4.2.2 vorausgesetzt)
+1. Ausführung von [Node.js](http://nodejs.org) auf einem Entwicklungscomputer (in diesem Beispiel wird die Installation von Node.js Version 4.2.2 vorausgesetzt)
 1. [GitHub](https://github.com/)-Konto
 1. Microsoft Azure-Konto ([kostenlose Testversion](https://azure.microsoft.com/pricing/free-trial/))
 1. Installation von Git auf Ihrer lokalen Entwicklungsarbeitsstation
@@ -202,7 +202,7 @@ Indem Sie die integrierten Azure App Service-Funktionen für die dauerhafte Bere
 
         git remote add azure YOUR_GIT_CLONE_URL_HERE
 
-    **Hinweis**: Es ist ratsam, die obige Zeichenfolge „YOUR_GIT_CLONE_URL_HERE“ durch Ihre eigene Git-Klon-URL zu ersetzen, die Sie vorhin kopiert haben.
+    **Hinweis**: Es ist ratsam, die obige Zeichenfolge „YOUR\_GIT\_CLONE\_URL\_HERE“ durch Ihre eigene Git-Klon-URL zu ersetzen, die Sie vorhin kopiert haben.
 
 1. Führen Sie als Nächstes die beiden unten angegebenen Befehle über die Node.js-Befehlszeilenoberfläche aus.
 
@@ -243,4 +243,4 @@ Sie haben mit Node.js erfolgreich Ihre erste API-App erstellt und bereitgestellt
 
 Aufbauend auf diesem Beispiel haben Sie die Möglichkeit, den Handlern Code zum Speichern Ihrer Daten in einer Datenbank oder auf der Festplatte Ihrer API-App-Instanz hinzuzufügen. Nachdem Sie die fortlaufende Bereitstellung eingerichtet haben, ist das Ändern und Erweitern der API-App-Funktionalität so einfach wie das Ändern und Befördern des Codes in Ihr Git-Repository.
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0302_2016-->
