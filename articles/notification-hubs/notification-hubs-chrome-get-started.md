@@ -373,7 +373,7 @@ Die Chrome-App wird mit JavaScript erstellt, und Sie können dazu einen beliebig
 	- Die Funktion *updateLog* definiert eine einfache Protokollierungsfunktion.
 	- *registerWithGCM* ist der Klick-Handler für die erste Schaltfläche, der den **chrome.gcm.register**-Aufruf zum Registrieren dieser Chrome-App-Instanz an GCM sendet.
 	- *registerCallback* ist die Rückruffunktion, die bei der Rückgabe des oben stehenden GCM-Registrierungsaufrufs aufgerufen wird.
-	- *registerWithNH* ist der Klick-Handler für die zweite Schaltfläche, der die Registrierung bei Notification Hubs durchführt. Er ruft die vom Benutzer angegebenen Werte für **hubName** und **connectionString** ab und erstellt den REST-API-Aufruf für die Notification Hubs-Registrierung.
+	- *registerWithNH* ist der Klick-Handler für die zweite Schaltfläche, der die Registrierung bei Notification Hubs durchführt. Er ruft die vom Benutzer angegebenen Werte für **hubName** und **connectionString** ab und erstellt den REST-API-Aufruf für die Notification Hubs-Registrierung.
 	- *splitConnectionString* und *generateSaSToken* sind eine JavaScript-Implementierung der Erstellung eines SaS-Tokens, das in allen REST-API-Aufrufen gesendet werden muss. Weitere Informationen finden Sie unter [Allgemeine Konzepte](http://msdn.microsoft.com/library/dn495627.aspx).
 	- *sendNHRegistrationRequest* ist die Funktion, die einen HTTP-REST-Aufruf sendet.
 	- *registrationPayload* definiert die Nutzlast der XML-Datei der Registrierung. Weitere Informationen finden Sie unter [Erstellen der Registrierungs-NH-REST-API]. Die darin enthaltene Registrierungs-ID wird mit den von GCM empfangenen Daten aktualisiert.

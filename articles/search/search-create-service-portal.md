@@ -17,7 +17,7 @@
 	ms.date="02/18/2016"
 	ms.author="heidist"/>
 
-# Erstellen eines Azure Search-Diensts im Azure-Portal
+# Erstellen eines Azure Search-Diensts im Azure-Portal
 
 Microsoft Azure Search ist ein gehosteter Cloudsuchdienst, mit dem Sie Suchfunktionen in benutzerdefinierte Anwendungen einbetten können. Er stellt eine Suchmaschine und Speicherplatz für Ihre Suchdaten zur Verfügung. Zugriff und Verwaltung können über das Azure-Portal, über ein .NET-SDK oder über eine REST-API erfolgen. Zu den zentralen Features zählen Abfragen mit automatischer Vervollständigung, Fuzzyübereinstimmung, Trefferhervorhebung, Facettennavigation, Bewertungsprofile und Unterstützung mehrerer Sprachen. Weitere Informationen zu den Funktionen von Azure Search finden unter [Was ist Azure Search?](search-what-is-azure-search.md).
 
@@ -43,7 +43,7 @@ Bei Verwendung der Option „Shared“ können Administratoren Azure Search eine
 
 		- **Free** wird auf Clustern ausgeführt, die gemeinsam mit anderen Abonnenten genutzt werden. Diese Version bietet genügend Kapazität für Tutorials sowie zum Schreiben von Code für Machbarkeitsstudien, eignet sich jedoch nicht für den Einsatz in Produktionsumgebungen. Die Bereitstellung eines kostenlosen Diensts dauert in der Regel nur wenige Minuten.
 		- **Basic (Preview)** wird auf dedizierten Ressourcen, aber mit niedrigeren Grenzwerten und Preisen für kleinere Produktionsworkloads ausgeführt. Sie können zentral auf drei Replikate und eine Partition hochskalieren. Dies ist ausreichend für eine hohe Verfügbarkeit bei der Abfrageausführung.
-		- **Standard** wird auf fest zugeordneten Ressourcen ausgeführt und ist flexibel skalierbar. Ein Standarddienst wird zunächst mit einem Replikat und einer Partition bereitgestellt, die Kapazität kann nach der Diensterstellung jedoch auf ein Maximum von 36 Sucheinheiten erhöht werden. Die Bereitstellung eines Standarddiensts dauert länger (üblicherweise etwa 15 Minuten).
+		- **Standard** wird auf fest zugeordneten Ressourcen ausgeführt und ist flexibel skalierbar. Ein Standarddienst wird zunächst mit einem Replikat und einer Partition bereitgestellt, die Kapazität kann nach der Diensterstellung jedoch auf ein Maximum von 36 Sucheinheiten erhöht werden. Die Bereitstellung eines Standarddiensts dauert länger (üblicherweise etwa 15 Minuten).
 
 	- **Ressourcengruppen** sind Container für Dienste und Ressourcen, die einem gemeinsamen Zweck dienen. Wenn Sie eine auf Azure Search, der Web-Apps-Funktion in Azure App Service und Azure-Blob-Speicher basierte Suchanwendung erstellen möchten, können Sie z. B. eine Ressourcengruppe erstellen, die diese Dienste in den Verwaltungsseiten im Portal gruppiert.
 
@@ -62,7 +62,7 @@ Viele Kunden beginnen mit dem kostenlosen Dienst und wechseln dann zum Tarif „
 
 Für Azure Search-Vorgänge benötigen Sie sowohl Speicher als auch Dienstreplikate. Im Gegensatz zum kostenlosen Dienst, der über keine Option zum Hinzufügen von Ressourcen verfügt, können Sie mit dem Tarif „Standard“ eine Skalierung durchführen, um mehr Speicher- oder Abfrageunterstützung hinzufügen, sodass Sie die für Ihre Workloads wichtigere Ressource stärken können.
 
-Um den Tarif „Standard“ zu verwenden, müssen Sie einen neuen Suchdienst auf der entsprechenden Preisebene erstellen. Sie können die vorherigen Schritte in diesem Artikel wiederholen, um einen neuen Azure Search-Dienst zu erstellen. Die Einrichtung fest zugeordneter Ressourcen kann einige Zeit in Anspruch nehmen (etwa 15 Minuten oder mehr).
+Um den Tarif „Standard“ zu verwenden, müssen Sie einen neuen Suchdienst auf der entsprechenden Preisebene erstellen. Sie können die vorherigen Schritte in diesem Artikel wiederholen, um einen neuen Azure Search-Dienst zu erstellen. Die Einrichtung fest zugeordneter Ressourcen kann einige Zeit in Anspruch nehmen (etwa 15 Minuten oder mehr).
 
 Für die kostenlose Version steht kein direktes Upgrade zur Verfügung. Beim Wechsel zu Standard und dessen Skalierungspotenzial müssen Sie einen neuen Dienst erstellen. Sie müssen die von Ihrer Suchanwendung verwendeten Indizes und Dokumente erneut laden.
 
@@ -79,7 +79,7 @@ Zusätzliche Replikate und Partitionen werden in Sucheinheiten abgerechnet. Die 
 Unter [Preisdetails](http://go.microsoft.com/fwlink/p/?LinkID=509792) finden Sie Abrechnungsinformationen pro Einheit. Eine Entscheidungshilfe für die Konfiguration von Partitions- und Replikatkombinationen finden Sie unter [Dienstgrenzen und -einschränkungen](search-limits-quotas-capacity.md).
 
 <a id="sub-2"></a>
-## Ermitteln des Dienstnamens und der API-Schlüssel Ihres Azure Search-Diensts
+## Ermitteln des Dienstnamens und der API-Schlüssel Ihres Azure Search-Diensts
 
 Nach der Diensterstellung können Sie zum Azure-Portal zurückkehren, um die URL oder `api-key` zu ermitteln. Für Verbindungen mit Ihrem Azure Search-Dienst benötigen Sie sowohl die URL als auch einen API-Schlüssel (`api-key`), um den Aufruf zu authentifizieren.
 
@@ -103,7 +103,7 @@ Als letzter Schritt bei der Konfiguration von Azure Search überprüfen Sie, ob 
 
 Nachdem der Dienst erstellt wurde, können Sie die nächsten Schritte ausführen: Erstellen eines [Index](search-what-is-an-index.md), [Abfragen eines Index](search-query-overview.md), Erstellen und Verwalten von Suchanwendungen mit Azure Search.
 
-- [Erstellen eines Azure Search-Index im Azure-Portal](search-create-index-portal.md)
+- [Erstellen eines Azure Search-Index im Azure-Portal](search-create-index-portal.md)
 
 - [Abfragen eines Azure Search-Index per Suchexplorer im Azure-Portal](search-explorer.md)
 

@@ -30,7 +30,7 @@ Für dieses Szenario benötigen Sie Folgendes:
 
 - Ein Azure-Abonnement
 - Ein Twitter-Konto
-- Ein Office 365-Konto
+- Ein Office 365-Konto
 
 ## Erstellen einer neuen Logik-App zum Empfangen von Tweets per E-Mail
 
@@ -43,7 +43,7 @@ Für dieses Szenario benötigen Sie Folgendes:
 7. Jetzt geben Sie das Schlüsselwort ein, nach dem Twitter durchsucht werden soll. ![Twitter-Suche](./media/app-service-logic-create-a-logic-app/twittersearch.png)
 
 5. Wählen Sie das Pluszeichen (+) aus, und wählen Sie dann die Option **Aktion hinzufügen** oder **Bedingung hinzufügen**: ![Plus](./media/app-service-logic-create-a-logic-app/plus.png)
-6. Wenn Sie **Aktion hinzufügen** wählen, werden alle Connectors mit den jeweiligen verfügbaren Aktionen aufgeführt. Sie können dann auswählen, welcher Connector und welche Aktion Ihrer Logik-App hinzugefügt wird. Sie können z. B. **Office 365 – E-Mail senden** und weitere Office 365-Aktionen auswählen: ![Actions](./media/app-service-logic-create-a-logic-app/actions.png)
+6. Wenn Sie **Aktion hinzufügen** wählen, werden alle Connectors mit den jeweiligen verfügbaren Aktionen aufgeführt. Sie können dann auswählen, welcher Connector und welche Aktion Ihrer Logik-App hinzugefügt wird. Sie können z. B. **Office 365 – E-Mail senden** und weitere Office 365-Aktionen auswählen: ![Actions](./media/app-service-logic-create-a-logic-app/actions.png)
 
 7. Nun müssen Sie die Parameter für die gewünschten E-Mails ausfüllen: ![Parameter](./media/app-service-logic-create-a-logic-app/parameters.png)
 

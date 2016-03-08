@@ -44,7 +44,7 @@ Bevor Sie mit diesem Tutorial beginnen, müssen Sie über die folgenden Ressourc
 
    + **SQL Data Warehouse**: In diesem Tutorial werden die Daten aus dem Azure Storage-Blob in SQL Data Warehouse verschoben. Daher muss ein Data Warehouse online sein, in das die AdventureWorksDW-Beispieldaten geladen wurden. Wenn Sie noch kein Data Warehouse haben, erfahren Sie hier, wie [eines bereitstellt wird](sql-data-warehouse-get-started-provision.md). Wenn Sie ein Data Warehouse haben, jedoch die Beispieldaten nicht darin bereitgestellt haben, können Sie es [manuell laden](sql-data-warehouse-get-started-manually-load-samples.md).
 
-   + **Azure Data Factory**: Azure Data Factory schließt die tatsächliche Last ab, daher müssen Sie über eine verfügen, die Sie zum Erstellen der Datenverschiebungspipeline verwenden können. Wenn Sie noch keine haben, erfahren Sie In Schritt 1 von [Erste Schritte mit Azure Data Factory (Data Factory Edition)](../data-factory/data-factory-build-your-first-pipeline-using-editor.md), wie Sie eine erstellen.
+   + **Azure Data Factory**: Azure Data Factory schließt die tatsächliche Last ab, daher müssen Sie über eine verfügen, die Sie zum Erstellen der Datenverschiebungspipeline verwenden können. Wenn Sie noch keine haben, erfahren Sie In Schritt 1 von [Erste Schritte mit Azure Data Factory (Data Factory Edition)](../data-factory/data-factory-build-your-first-pipeline-using-editor.md), wie Sie eine erstellen.
 
    + **AZCopy**: Sie benötigen AZCopy, um die Beispieldaten von Ihrem lokalen Client in Ihr Azure Storage-Blob zu kopieren. Anweisungen zur Installation finden Sie in der [AZCopy-Dokumentation](../storage/storage-use-azcopy.md).
 
@@ -88,7 +88,7 @@ Verknüpfen Sie Ihr Azure-Speicherkonto und SQL Data Warehouse mit Ihrer Data Fa
     }
     ````
 
-### Schritt 2.2: Definieren des Datasets
+### Schritt 2.2: Definieren des Datasets
 
 Nach dem Erstellen der verknüpften Dienste müssen Sie die Datasets definieren. Dies bedeutet in diesem Fall, dass die Struktur der Daten definiert wird, die aus dem Speicher in das Data Warehouse verschoben werden. Informationen zur Erstellung
 

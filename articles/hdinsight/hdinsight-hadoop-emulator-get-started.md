@@ -38,7 +38,7 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 - Der HDInsight Emulator benötigt eine 64-Bit-Version von Windows. Eine der folgenden Anforderungen muss erfüllt sein:
 
 	- Windows 10
-	- Windows 8
+	- Windows 8
 	- Windows Server 2012
 
 - **Azure PowerShell**. Siehe [Installieren und Verwenden von Azure PowerShell](https://azure.microsoft.com/documentation/videos/install-and-use-azure-powershell/).
@@ -200,7 +200,7 @@ Die Beispieldaten zentrieren um die Verarbeitung der vom IIS World Wide Web Cons
 
 ###<a name="scenarios"></a>Die IIS W3C-Protokolldatenszenarien
 
-Das W3C-Szenario generiert und importiert IIS W3C-Protokolldaten in drei Größen in HDFS oder Azure-Blobspeicher: 1 MB (klein), 500 MB (mittel) und 2 GB (groß). Es stellt drei Jobtypen zur Verfügung und implementiert jeden davon in C#, Java, Pig und Hive.
+Das W3C-Szenario generiert und importiert IIS W3C-Protokolldaten in drei Größen in HDFS oder Azure-Blobspeicher: 1 MB (klein), 500 MB (mittel) und 2 GB (groß). Es stellt drei Jobtypen zur Verfügung und implementiert jeden davon in C#, Java, Pig und Hive.
 
 - **totalhits** – Berechnet die Gesamtzahl der Anforderungen für eine bestimmte Seite.
 - **avgtime** – Berechnet die durchschnittliche Zeit (in Sekunden), die für eine Anforderung pro Seite benötigt wird.

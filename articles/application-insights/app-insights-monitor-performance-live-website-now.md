@@ -35,7 +35,7 @@ Bei der Anwendung von Application Insights auf die IIS-Webanwendungen können Si
 * **Laufzeit:** Verwenden Sie den Statusmonitor zum Instrumentieren Ihrer Web-App auf dem Server.
  * Überwachen von Web-Apps, die bereits ausgeführt werden. Es ist nicht erforderlich, sie neu zu erstellen oder erneut zu veröffentlichen.
  * Eine Reihe von Standardtelemetriedaten zur Diagnose und Nutzung.
- * Abhängigkeitsdiagnose – Ermitteln Sie Fehler oder eine schlechte Leistung, wenn Ihre Anwendung andere Komponenten wie z. B. Datenbanken, REST-APIs oder andere Dienste verwendet.
+ * Abhängigkeitsdiagnose – Ermitteln Sie Fehler oder eine schlechte Leistung, wenn Ihre Anwendung andere Komponenten wie z. B. Datenbanken, REST-APIs oder andere Dienste verwendet.
  * Beheben von Problemen mit der Telemetrie.
 * **Beides:** Kompilieren Sie das SDK in Ihrem Web-App-Code, und führen Sie den Statusmonitor auf Ihrem Webserver aus. Die Vorteile beider Ansätze:
  * Standardtelemetriedaten zur Diagnose und Nutzung.
@@ -46,7 +46,7 @@ Bei der Anwendung von Application Insights auf die IIS-Webanwendungen können Si
 
 ## Installieren des Application Insights-Statusmonitors
 
-Sie benötigen ein [Microsoft Azure](http://azure.com)-Abonnement.
+Sie benötigen ein [Microsoft Azure](http://azure.com)-Abonnement.
 
 ### Wenn Ihre App auf Ihrem IIS-Server ausgeführt wird
 
@@ -87,7 +87,7 @@ Nach Abschluss des Assistenten können Sie die Konfiguration des Agenten später
 
 ### Wenn Ihre App als Azure-Web-App ausgeführt wird
 
-Fügen Sie in der Systemsteuerung Ihrer Azure-Web-App die Application Insights-Erweiterung hinzu.
+Fügen Sie in der Systemsteuerung Ihrer Azure-Web-App die Application Insights-Erweiterung hinzu.
 
 ![In der Web-App: "Einstellungen" > "Erweiterungen" > "Hinzufügen" > "Application Insights"](./media/app-insights-monitor-performance-live-website-now/05-extend.png)
 

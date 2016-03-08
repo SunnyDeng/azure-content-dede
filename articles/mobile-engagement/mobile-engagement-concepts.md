@@ -39,21 +39,21 @@ Eine Aktivität wird über einen Namen identifiziert (begrenzt auf 64 Zeichen) u
 Sitzungen werden automatisch aus der Folge der Aktivitäten berechnet, die vom Benutzer ausgeführt werden. Eine Sitzung beginnt, wenn der Benutzer seine erste Aktivität startet, und endet, wenn die letzte Aktivität abgeschlossen ist. Das bedeutet, dass eine Sitzung nicht explizit gestartet und beendet werden müssen. Aktivitäten dagegen werden explizit gestartet oder beendet. Wenn keine Aktivität gemeldet wird, wird auch keine Sitzung gemeldet.
 
 ## Ereignisse
-Ereignisse werden dazu verwendet, um sofortige Aktionen (z. B. gedrückte Schaltflächen oder vom Benutzer gelesene Artikel) zu melden.
+Ereignisse werden dazu verwendet, um sofortige Aktionen (z. B. gedrückte Schaltflächen oder vom Benutzer gelesene Artikel) zu melden.
 
 Ein Ereignis kann sich auf die aktuelle Sitzung oder einen aktiven Auftrag beziehen oder ein eigenständiges Ereignis darstellen.
 
 Ein Ereignis wird über einen Namen identifiziert (begrenzt auf 64 Zeichen) und kann optional zusätzliche Daten einbetten (begrenzt auf 1024 Bytes).
 
 ## Fehler
-Fehler werden dazu verwendet, um von der Anwendung erkannte Probleme ordnungsgemäß zu melden (z. B. falsche Benutzeraktionen oder Fehler beim API-Aufruf).
+Fehler werden dazu verwendet, um von der Anwendung erkannte Probleme ordnungsgemäß zu melden (z. B. falsche Benutzeraktionen oder Fehler beim API-Aufruf).
 
 Ein Fehler kann sich auf die aktuelle Sitzung oder einen aktiven Auftrag beziehen oder einen eigenständigen Fehler darstellen.
 
 Ein Fehler wird über einen Namen identifiziert (begrenzt auf 64 Zeichen) und kann optional zusätzliche Daten einbetten (begrenzt auf 1024 Bytes).
 
 ## Auftrag
-Aufträge werden dazu verwendet, um Aktionen zu melden, die eine Dauer aufweisen (z. B. die Dauer von API-Aufrufen, die Anzeigedauer von Anzeigen, die Dauer von Hintergrundaufgaben oder Benutzeraktionen).
+Aufträge werden dazu verwendet, um Aktionen zu melden, die eine Dauer aufweisen (z. B. die Dauer von API-Aufrufen, die Anzeigedauer von Anzeigen, die Dauer von Hintergrundaufgaben oder Benutzeraktionen).
 
 Ein Auftrag bezieht sich nicht auf eine Sitzung, da eine Aufgabe ohne Benutzerinteraktion im Hintergrund ausgeführt werden kann.
 
@@ -63,7 +63,7 @@ Ein Auftrag wird über einen Namen identifiziert (begrenzt auf 64 Zeichen) und k
 Abstürze werden vom Mobile Engagement-SDK automatisch ausgelöst, um Anwendungsfehler zu melden, bei denen von der Anwendung nicht erkannte Probleme zum Absturz führen.
 
 ## Anwendungsinformationen
-Mithilfe von Anwendungsinformationen (oder App-Informationen) werden Benutzer gekennzeichnet, d. h. den Benutzern einer Anwendung werden einige Daten zugeordnet (dies ist vergleichbar mit Webcookies, mit der Ausnahme, dass App-Informationen serverseitig auf der Azure Mobile Engagement-Plattform gespeichert werden).
+Mithilfe von Anwendungsinformationen (oder App-Informationen) werden Benutzer gekennzeichnet, d. h. den Benutzern einer Anwendung werden einige Daten zugeordnet (dies ist vergleichbar mit Webcookies, mit der Ausnahme, dass App-Informationen serverseitig auf der Azure Mobile Engagement-Plattform gespeichert werden).
 
 App-Informationen können mithilfe der API des Mobile Engagement SDKs oder der Geräte-API der Mobile Engagement-Plattform registriert werden.
 
@@ -76,7 +76,7 @@ Zusätzliche Daten (oder Extras) sind beliebige Daten, die Ereignissen, Fehlern,
 
 Zusätzliche Daten sind ähnlich wie JSON-Objekte strukturiert: sie bestehen aus einer Struktur von Schlüssel-Wert-Paaren. Schlüssel sind auf 64 ASCII-Buchstaben [a-z, A-Z], Zahlen [0-9] und Unterstriche [\_] begrenzt, und die Gesamtgröße der Extras ist auf 1024 Zeichen begrenzt (nach der JSON-Codierung durch das Mobile Engagement SDK).
 
-Die gesamte Struktur aus Schlüssel-Wert-Paaren wird als JSON-Objekt gespeichert. Trotzdem wird nur die erste Ebene der Schlüssel-Wert-Paare zerlegt, damit einige erweiterte Funktionen wie Segmente direkt darauf zugreifen können (Sie können z. B. problemlos ein Segment namens „SciFi-Fans“ definieren, das aus allen Benutzern besteht, denen im letzten Monat mindestens 10 Mal das Ereignis „content\_viewed“ mit dem zusätzlichen Schlüssel „content\_type“ und dem Wert „scifi“ gesendet wurde). Es wird daher dringend empfohlen, nur zusätzliche Daten zu senden, die aus einfachen Listen von Schlüssel-Wert-Paaren bestehen, die skalare Werte verwenden (z. B. Zeichenfolgen, Datumsangaben, ganze Zahlen oder boolesche Werte).
+Die gesamte Struktur aus Schlüssel-Wert-Paaren wird als JSON-Objekt gespeichert. Trotzdem wird nur die erste Ebene der Schlüssel-Wert-Paare zerlegt, damit einige erweiterte Funktionen wie Segmente direkt darauf zugreifen können (Sie können z. B. problemlos ein Segment namens „SciFi-Fans“ definieren, das aus allen Benutzern besteht, denen im letzten Monat mindestens 10 Mal das Ereignis „content\_viewed“ mit dem zusätzlichen Schlüssel „content\_type“ und dem Wert „scifi“ gesendet wurde). Es wird daher dringend empfohlen, nur zusätzliche Daten zu senden, die aus einfachen Listen von Schlüssel-Wert-Paaren bestehen, die skalare Werte verwenden (z. B. Zeichenfolgen, Datumsangaben, ganze Zahlen oder boolesche Werte).
 
 ## Nächste Schritte
 

@@ -53,13 +53,13 @@ In diesem Tutorial verwenden wir eine vorhandene Beispielanwendung (mit dem Name
 
 1. Starten Sie als Administrator ein neues PowerShell-Fenster.
 
-2. Importieren Sie das Service Fabric-SDK für das PowerShell-Modul.
+2. Importieren Sie das Service Fabric-SDK für das PowerShell-Modul.
 
     ```powershell
     Import-Module "$ENV:ProgramFiles\Microsoft SDKs\Service Fabric\Tools\PSModule\ServiceFabricSDK\ServiceFabricSDK.psm1"
     ```
 
-3. Erstellen Sie ein Verzeichnis zum Speichern der Anwendung, die Sie herunterladen und bereitstellen möchten, z. B. „C:\\ServiceFabric“.
+3. Erstellen Sie ein Verzeichnis zum Speichern der Anwendung, die Sie herunterladen und bereitstellen möchten, z. B. „C:\\ServiceFabric“.
 
     ```powershell
     mkdir c:\ServiceFabric\
@@ -123,7 +123,7 @@ Nach dem Bereitstellen der Anwendung sehen wir uns nun die App-Details in PowerS
 
     ![Anzeigen der Dienstpartitionen in PowerShell][ps-getsfpartitions]
 
-    Die Befehle, die Sie gerade verwendet haben, sind wie alle Service Fabric-PowerShell-Befehle für alle Cluster verfügbar, mit denen Sie eine Verbindung herstellen – lokal oder remote.
+    Die Befehle, die Sie gerade verwendet haben, sind wie alle Service Fabric-PowerShell-Befehle für alle Cluster verfügbar, mit denen Sie eine Verbindung herstellen – lokal oder remote.
 
     Für eine eher visuelle Möglichkeit der Interaktion mit dem Cluster können Sie das webbasierte Tool Service Fabric-Explorer verwenden, indem Sie im Browser zu [http://localhost:19080/Explorer](http://localhost:19080/Explorer) navigieren.
 
@@ -136,7 +136,7 @@ Service Fabric ermöglicht Upgrades ohne Ausfallzeit, indem die Integrität der 
 
 Die neue Version der Anwendung zählt nur die Wörter, die mit einem Vokal beginnen. Während das Upgrade bereitgestellt wird, sehen wir zwei Änderungen im Verhalten der Anwendung. Erstens sollte sich die Rate verlangsamen, mit der die Anzahl zunimmt, da weniger Wörter gezählt werden. Da die erste Partition zwei Vokale enthält („A“ und „E“) und alle anderen Partitionen nur einen enthalten, sollte zweitens die Anzahl dieser Partition letztlich größer als die der anderen sein.
 
-1. [Laden Sie das Paket für WordCount Version 2](http://aka.ms/servicefabric-wordcountappv2) an denselben Speicherort herunter, an den Sie das Paket für Version 1 heruntergeladen haben.
+1. [Laden Sie das Paket für WordCount Version 2](http://aka.ms/servicefabric-wordcountappv2) an denselben Speicherort herunter, an den Sie das Paket für Version 1 heruntergeladen haben.
 
 2. Kehren Sie zum PowerShell-Fenster zurück, und verwenden Sie den Upgradebefehl des SDK, um die neue Version des Clusters zu registrieren. Beginnen Sie dann mit dem Upgrade der Anwendung „fabric:/WordCount“.
 

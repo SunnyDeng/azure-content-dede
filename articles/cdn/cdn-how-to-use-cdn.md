@@ -24,7 +24,7 @@ Azure Content Delivery Network (CDN) ist der grundlegende Baustein für die Skal
 Die Verwendung von CDN zum Zwischenspeichern von Azure-Daten bietet folgende Vorteile:
 
 - Bessere Leistung und Benutzerfreundlichkeit für Endbenutzer, die von einer Inhaltsquelle weit entfernt sind und Anwendungen verwenden, bei denen viele HTTP-Anforderungen zum Laden der Inhalte benötigt werden.
-- Starke verteilte Skalierung, um kurzfristige hohe Lasten verarbeiten zu können, z. B. zu Beginn eines Ereignisses wie einer Produkteinführung.
+- Starke verteilte Skalierung, um kurzfristige hohe Lasten verarbeiten zu können, z. B. zu Beginn eines Ereignisses wie einer Produkteinführung.
 - Durch das Verteilen der Benutzeranforderungen und die Bereitstellung von Inhalten über globale Edge-POPs entfällt weniger Datenverkehr auf den Ursprung der Inhalte.
 
 >[AZURE.TIP] Mit Azure CDN können Inhalte aus einer ganzen Reihe von Ursprüngen verteilt werden. In Azure integriert sind bereits Ursprünge wie App Service, Cloud Services, Blob Storage und Media Service. Außerdem können Sie jede öffentlich zugängliche Webadresse verwenden, um einen benutzerdefinierten Ursprung zu definieren.
@@ -43,7 +43,7 @@ Die Verwendung von CDN zum Zwischenspeichern von Azure-Daten bietet folgende Vor
 
 2. Einrichten der CDN-Konfiguration
 
-	Sie können verschiedene Features für Ihren CDN-Endpunkt aktivieren, z. B. eine [Richtlinie für die Zwischenspeicherung](cdn-caching-policy.md), das [Zwischenspeichern von Abfragezeichenfolgen](cdn-query-string.md), ein [Regelmodul](cdn-rules-engine.md) und anderes. Weitere Informationen erhalten Sie, wenn Sie links auf den Menüeintrag **Verwalten** klicken.
+	Sie können verschiedene Features für Ihren CDN-Endpunkt aktivieren, z. B. eine [Richtlinie für die Zwischenspeicherung](cdn-caching-policy.md), das [Zwischenspeichern von Abfragezeichenfolgen](cdn-query-string.md), ein [Regelmodul](cdn-rules-engine.md) und anderes. Weitere Informationen erhalten Sie, wenn Sie links auf den Menüeintrag **Verwalten** klicken.
 
 3. Zugreifen auf CDN-Inhalte
 
@@ -53,7 +53,7 @@ Die Verwendung von CDN zum Zwischenspeichern von Azure-Daten bietet folgende Vor
 
 Sobald das CDN für ein Azure-Speicherkonto aktiviert wurde, werden alle Blobs in öffentlichen Containern, die für den anonymen Zugriff zur Verfügung stehen, über das CDN zwischengespeichert. Nur Blobs, die öffentlich verfügbar sind, können mit dem Azure CDN zwischengespeichert werden. Um ein Blob öffentlich für den anonymen Zugriff verfügbar zu machen, müssen Sie den Container als öffentlich kennzeichnen. Nachdem dies erfolgt ist, sind alle Blobs in diesem Container für anonymen Lesezugriff verfügbar. Sie können auch Containerdaten öffentlich verfügbar machen oder den Zugriff auf die enthaltenen Blobs beschränken. Unter [Verwalten des Zugriffs auf Azure-Speicherressourcen](../storage/storage-manage-access-to-resources.md) finden Sie weitere Informationen zum Verwalten der Zugriffssteuerung für Container und Blobs.
 
-Für eine optimale Leistung verwenden Sie die CDN-Edge-Zwischenspeicherung für die Übermittlung von Blobs kleiner als 10 GB.
+Für eine optimale Leistung verwenden Sie die CDN-Edge-Zwischenspeicherung für die Übermittlung von Blobs kleiner als 10 GB.
 
 Wenn Sie den CDN-Zugriff für ein Speicherkonto aktivieren, stellt Ihnen das Verwaltungsportal einen CDN-Domänennamen im folgenden Format zur Verfügung: `http://<identifier>.azureedge.net/`. Dieser Domänenname kann verwendet werden, um auf Blobs in einem öffentlichen Container zuzugreifen. Beispielsweise können Benutzer bei einem öffentlichen Container über eine der beiden folgenden URLs auf die Blobs in diesem Container zugreifen:
 
@@ -82,7 +82,7 @@ Das Zwischenspeichern für Clouddienste unterliegt folgenden Einschränkungen:
 
 	>[AZURE.WARNING] Das Zwischenspeichern von überaus veränderlichen oder wirklich dynamischen Inhalten kann sich negativ auf die Leistung auswirken oder zu Problemen mit Inhalten führen, was alles höhere Kosten verursacht.
 - Ihr Clouddienst muss in einer Produktionsumgebung bereitgestellt werden.
-- Ihr Clouddienst muss das Objekt an Port 80 über HTTP bereitstellen.
+- Ihr Clouddienst muss das Objekt an Port 80 über HTTP bereitstellen.
 - Der Clouddienst muss den Inhalt, der zwischengespeichert oder übermittelt werden soll, im Ordner "/cdn" für den Clouddienst platzieren.
 
 Wenn Sie den CDN-Zugriff für einen Clouddienst aktivieren, stellt Ihnen das Verwaltungsportal einen CDN-Domänennamen im folgenden Format zur Verfügung: `http://<identifier>.azureedge.net/`. Dieser Domänenname kann verwendet werden, um Objekte aus einem Clouddienst abzurufen. Beispielsweise können Benutzer bei einem Clouddienst namens "myHostedService" und einer ASP.NET-Webseite namens "music.aspx", die Inhalte übermittelt, auf das Objekt über eine der beiden folgenden URLs zugreifen:
@@ -110,11 +110,11 @@ Wenn Sie den CDN-Zugriff für einen benutzerdefinierten Ursprung aktivieren, ste
 
 ## Zwischenspeichern bestimmter Inhalte mit Abfragezeichenfolgen
 
-Sie können Abfragezeichenfolgen verwenden, um die aus einem Ursprung abgerufenen Objekte zu unterscheiden. Wenn der Ursprung z. B. ein Diagramm anzeigt, das variieren kann, können Sie eine Abfragezeichenfolge übergeben, um das jeweils erforderliche Diagramm abzurufen. Beispiel:
+Sie können Abfragezeichenfolgen verwenden, um die aus einem Ursprung abgerufenen Objekte zu unterscheiden. Wenn der Ursprung z. B. ein Diagramm anzeigt, das variieren kann, können Sie eine Abfragezeichenfolge übergeben, um das jeweils erforderliche Diagramm abzurufen. Beispiel:
 
 `http://<identifier>.azureedge.net/chart.aspx?item=1`
 
-Abfragezeichenfolgen werden als Zeichenfolgenliterale übergeben. Wenn Sie über einen Dienst verfügen, der zwei Parameter wie z. B. `?area=2&item=1` verwendet und nachfolgend den Ursprung mithilfe von `?item=1&area=2` aufruft, werden zwei Kopien desselben Objekts zwischengespeichert.
+Abfragezeichenfolgen werden als Zeichenfolgenliterale übergeben. Wenn Sie über einen Dienst verfügen, der zwei Parameter wie z. B. `?area=2&item=1` verwendet und nachfolgend den Ursprung mithilfe von `?item=1&area=2` aufruft, werden zwei Kopien desselben Objekts zwischengespeichert.
 
 Weitere Informationen zum Zwischenspeichern mit Abfragezeichenfolgen finden Sie unter [Steuern des Zwischenspeicherverhaltens von CDN-Anforderungen mit Abfragezeichenfolgen](cdn-query-string.md).
 

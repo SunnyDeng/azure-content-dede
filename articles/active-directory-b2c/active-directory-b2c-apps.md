@@ -29,7 +29,7 @@ Jede App, die Azure AD B2C verwendet, muss über das [Azure-Portal](https://port
 - Einen **Umleitungs-URI**, der zum Umleiten von Antworten zurück an die App verwendet werden kann.
 - Andere szenariospezifische Werte. Weitere Informationen finden Sie im Artikel zum [Registrieren von Apps](active-directory-b2c-app-registration.md).
 
-Sobald die App registriert ist, kommuniziert sie mit Azure AD, indem sie Anforderungen an den v2.0-Endpunkt von Azure AD sendet:
+Sobald die App registriert ist, kommuniziert sie mit Azure AD, indem sie Anforderungen an den v2.0-Endpunkt von Azure AD sendet:
 
 ```
 https://login.microsoftonline.com/common/oauth2/v2.0/authorize
@@ -51,7 +51,7 @@ Die Interaktion der einzelnen Apps mit einem v2.0-Endpunkt folgt einem ähnliche
 Diese Schritte können sich je nach erstelltem App-Typ geringfügig unterscheiden. Mit Open Source-Bibliotheken können Sie die Details festlegen.
 
 ## Web-Apps
-Für Web-Apps (einschließlich .NET, PHP, Java, Ruby, Python und Node), die auf einem Server gehostet werden und über einen Browser zugänglich sind, unterstützt Azure AD B2C [OpenID Connect](active-directory-b2c-reference-protocols.md) für alle Benutzeroberflächen. Hierzu gehören die Anmeldung, Registrierung und Profilverwaltung. In der Azure AD B2C-Implementierung von OpenID Connect initiiert Ihre Web-App diese Benutzeroberflächen, indem Authentifizierungsanforderungen für Azure AD ausgegeben werden. Das Ergebnis der Anforderung ist ein `id_token`. Dieses Sicherheitstoken stellt die Identität des Benutzers dar. Darüber hinaus werden Informationen über den Benutzer in Form von Ansprüchen bereitgestellt:
+Für Web-Apps (einschließlich .NET, PHP, Java, Ruby, Python und Node), die auf einem Server gehostet werden und über einen Browser zugänglich sind, unterstützt Azure AD B2C [OpenID Connect](active-directory-b2c-reference-protocols.md) für alle Benutzeroberflächen. Hierzu gehören die Anmeldung, Registrierung und Profilverwaltung. In der Azure AD B2C-Implementierung von OpenID Connect initiiert Ihre Web-App diese Benutzeroberflächen, indem Authentifizierungsanforderungen für Azure AD ausgegeben werden. Das Ergebnis der Anforderung ist ein `id_token`. Dieses Sicherheitstoken stellt die Identität des Benutzers dar. Darüber hinaus werden Informationen über den Benutzer in Form von Ansprüchen bereitgestellt:
 
 ```
 // Partial raw id_token
@@ -81,7 +81,7 @@ Neben der Bereitstellung der einfachen Anmeldung benötigt eine Webserver-App un
 <!--, and in our [WebApp-WebAPI Getting started topic](active-directory-b2c-devquickstarts-web-api-dotnet.md).-->
 
 ## Web-APIs
-Sie können Azure AD B2C zum Schützen von Webdiensten wie z. B. der RESTful-Web-API Ihrer App verwenden. Web-APIs können OAuth 2.0 zum Sichern ihrer Daten einsetzen. Sie können auch eingehende HTTP-Anforderungen anhand von Token authentifizieren. Der Aufrufer einer Web-API fügt ein Token im Autorisierungsheader einer HTTP-Anforderung an:
+Sie können Azure AD B2C zum Schützen von Webdiensten wie z. B. der RESTful-Web-API Ihrer App verwenden. Web-APIs können OAuth 2.0 zum Sichern ihrer Daten einsetzen. Sie können auch eingehende HTTP-Anforderungen anhand von Token authentifizieren. Der Aufrufer einer Web-API fügt ein Token im Autorisierungsheader einer HTTP-Anforderung an:
 
 ```
 GET /api/items HTTP/1.1
@@ -94,23 +94,23 @@ Accept: application/json
 Die Web-API kann dann mit dem Token die Identität des API-Aufrufers überprüfen und Informationen über den Aufrufer aus Ansprüchen extrahieren, die im Token codiert sind. Informationen zu allen Arten von Token und zu den für eine App verfügbaren Ansprüchen finden Sie in der [Azure AD B2C-Tokenreferenz](active-directory-b2c-reference-tokens.md).
 
 > [AZURE.NOTE]
-	Die Vorschauversion von Azure AD B2C unterstützt derzeit nur Web-APIs, auf die von ihren eigenen bekannten Clients zugegriffen wird. Ihre vollständige App kann beispielsweise eine iOS-App, eine Android-App und eine Back-End-Web-API umfassen. Diese Architektur wird vollständig unterstützt. Das Erteilen des Zugriffs auf dieselbe Web-API an einen Partnerclient, beispielsweise eine andere iOS-App, wird derzeit nicht unterstützt. Alle Komponenten Ihrer vollständigen App müssen eine einzige Anwendungs-ID gemeinsam verwenden.
+	Die Vorschauversion von Azure AD B2C unterstützt derzeit nur Web-APIs, auf die von ihren eigenen bekannten Clients zugegriffen wird. Ihre vollständige App kann beispielsweise eine iOS-App, eine Android-App und eine Back-End-Web-API umfassen. Diese Architektur wird vollständig unterstützt. Das Erteilen des Zugriffs auf dieselbe Web-API an einen Partnerclient, beispielsweise eine andere iOS-App, wird derzeit nicht unterstützt. Alle Komponenten Ihrer vollständigen App müssen eine einzige Anwendungs-ID gemeinsam verwenden.
 
 Eine Web-API kann Token von vielen Clienttypen empfangen, einschließlich Web-Apps, Desktop- und mobilen Apps, Single-Page-Apps, serverseitigen Daemons und anderen Web-APIs. Hier sehen Sie ein Beispiel für den vollständigen Ablauf für eine Web-App, die eine Web-API aufruft.
 
 ![Abbildung der Web-App-Web-API-Verantwortlichkeitsbereiche](./media/active-directory-b2c-apps/webapi.png)
 
-Weitere Informationen zu Autorisierungscodes, Aktualisierungstoken und den Schritten zum Abrufen von Token finden Sie im [OAuth 2.0-Protokoll](active-directory-b2c-reference-oauth-code.md).
+Weitere Informationen zu Autorisierungscodes, Aktualisierungstoken und den Schritten zum Abrufen von Token finden Sie im [OAuth 2.0-Protokoll](active-directory-b2c-reference-oauth-code.md).
 
-Weitere Informationen zum Schützen einer Web-API mit Azure AD B2C finden Sie in den Tutorials zur Web-API im [Abschnitt mit den ersten Schritten](active-directory-b2c-overview.md#getting-started).
+Weitere Informationen zum Schützen einer Web-API mit Azure AD B2C finden Sie in den Tutorials zur Web-API im [Abschnitt mit den ersten Schritten](active-directory-b2c-overview.md#getting-started).
 
 ## Mobile und native Apps
-Auf Geräten installierte Apps, z. B. mobile Apps und Desktop-Apps, benötigen häufig Zugriff auf Back-End-Dienste oder Web-APIs im Auftrag von Benutzern. Sie können Ihren nativen Apps angepasste Oberflächen für die Identitätsverwaltung hinzufügen und Back-End-Dienste sicher aufrufen, indem Sie Azure AD B2C und den [Autorisierungscodeablauf von OAuth 2.0](active-directory-b2c-reference-oauth-code.md) verwenden.
+Auf Geräten installierte Apps, z. B. mobile Apps und Desktop-Apps, benötigen häufig Zugriff auf Back-End-Dienste oder Web-APIs im Auftrag von Benutzern. Sie können Ihren nativen Apps angepasste Oberflächen für die Identitätsverwaltung hinzufügen und Back-End-Dienste sicher aufrufen, indem Sie Azure AD B2C und den [Autorisierungscodeablauf von OAuth 2.0](active-directory-b2c-reference-oauth-code.md) verwenden.
 
 Bei diesem Ablauf führt die App [Richtlinien](active-directory-b2c-reference-policies.md) aus und empfängt einen `authorization_code` von Azure AD, nachdem der Benutzer die Richtlinie abgeschlossen hat. Der `authorization_code` stellt die Berechtigung der App dar, Back-End-Dienste im Namen des derzeit angemeldeten Benutzers aufzurufen. Die App kann dann den `authorization_code` im Hintergrund für ein `id_token` und ein `refresh_token` austauschen. Mit dem `id_token` kann die App sich in HTTP-Anforderungen bei einer Back-End-Web-API authentifizieren. Sie kann auch das `refresh_token` zum Abrufen eines neuen `id_token` verwenden, wenn ein älteres abläuft.
 
 > [AZURE.NOTE]
-	Die Vorschau von Azure AD B2C unterstützt derzeit nur ID-Token, die für den Zugriff auf den eigenen Back-End-Webdienst einer App verwendet werden. Ihre vollständige App kann beispielsweise eine iOS-App, eine Android-App und eine Back-End-Web-API umfassen. Diese Architektur wird vollständig unterstützt. Das Gewähren des Zugriffs auf eine Partner-Web-API über OAuth 2.0-Zugriffstoken wird für Ihre iOS-App derzeit nicht unterstützt. Alle Komponenten Ihrer vollständigen App müssen eine einzige Anwendungs-ID gemeinsam verwenden.
+	Die Vorschau von Azure AD B2C unterstützt derzeit nur ID-Token, die für den Zugriff auf den eigenen Back-End-Webdienst einer App verwendet werden. Ihre vollständige App kann beispielsweise eine iOS-App, eine Android-App und eine Back-End-Web-API umfassen. Diese Architektur wird vollständig unterstützt. Das Gewähren des Zugriffs auf eine Partner-Web-API über OAuth 2.0-Zugriffstoken wird für Ihre iOS-App derzeit nicht unterstützt. Alle Komponenten Ihrer vollständigen App müssen eine einzige Anwendungs-ID gemeinsam verwenden.
 
 ![Abbildung der Verantwortlichkeitsbereiche systemeigener Apps](./media/active-directory-b2c-apps/native.png)
 
@@ -121,13 +121,13 @@ Die folgenden Typen von Apps werden derzeit von der Vorschau von Azure AD B2C ni
 Viele moderne Apps besitzen ein Single-Page-App-Front-End, das in erster Linie in JavaScript geschrieben ist. Sie verwenden häufig ein Framework wie AngularJS, Ember.js oder Durandal. Der allgemein verfügbare Azure AD-Dienst unterstützt diese Apps über den impliziten OAuth 2.0-Fluss. Dieser Ablauf ist in Azure AD B2C noch nicht verfügbar. Dies sollte jedoch in Kürze der Fall sein.
 
 ### Daemons/serverseitige Apps
-Apps, die lang andauernde Prozesse enthalten oder ohne Benutzereingriff arbeiten, benötigen auch die Möglichkeit, auf sichere Ressourcen wie Web-APIs zuzugreifen. Diese Apps können mithilfe der App-Identität (anstelle der delegierten Benutzeridentität) sowie über den OAuth 2.0-Ablauf für Clientanmeldeinformationen die Authentifizierung durchführen und Token abrufen.
+Apps, die lang andauernde Prozesse enthalten oder ohne Benutzereingriff arbeiten, benötigen auch die Möglichkeit, auf sichere Ressourcen wie Web-APIs zuzugreifen. Diese Apps können mithilfe der App-Identität (anstelle der delegierten Benutzeridentität) sowie über den OAuth 2.0-Ablauf für Clientanmeldeinformationen die Authentifizierung durchführen und Token abrufen.
 
 Der Ablauf wird derzeit von Azure AD B2C nicht unterstützt. Diese Apps können Token erst abrufen, nachdem ein interaktiver Benutzerablauf stattgefunden hat. Der Ablauf für Clientanmeldeinformationen wird in naher Zukunft hinzugefügt.
 
 ### Web-API-Ketten („Im Auftrag von“-Ablauf)
 Viele Architekturen umfassen eine Web-API, von der eine andere Downstream-Web-API aufgerufen werden muss, wobei beide durch Azure AD B2C gesichert sind. Dieses Szenario wird häufig bei nativen Clients mit einem Web-API-Back-End eingesetzt. Dieses ruft dann einen Microsoft-Onlinedienst wie z. B. die Azure AD Graph-API auf.
 
-Dieses Szenario der verketteten Web-API kann mithilfe der Berechtigung für Anmeldeinformationen über den OAuth 2.0-JWT-Bearer unterstützt werden, auch bekannt als „Im Auftrag von“-Ablauf. Der „Im Auftrag von“-Ablauf ist in der Vorschau von Azure AD B2C derzeit noch nicht implementiert.
+Dieses Szenario der verketteten Web-API kann mithilfe der Berechtigung für Anmeldeinformationen über den OAuth 2.0-JWT-Bearer unterstützt werden, auch bekannt als „Im Auftrag von“-Ablauf. Der „Im Auftrag von“-Ablauf ist in der Vorschau von Azure AD B2C derzeit noch nicht implementiert.
 
 <!---HONumber=AcomDC_0302_2016-->

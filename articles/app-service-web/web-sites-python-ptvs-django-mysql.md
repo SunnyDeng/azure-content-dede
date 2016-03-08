@@ -34,9 +34,9 @@ Weitere Artikel finden Sie im [Python Developer Center], wo die Entwicklung von 
 
 ## Voraussetzungen
 
- - Visual Studio 2013 oder 2015
+ - Visual Studio 2013 oder 2015
  - [Python Tools 2.2 für Visual Studio]
- - [Python Tools 2.2 für Visual Studio, Beispiel-VSIX]
+ - [Python Tools 2.2 für Visual Studio, Beispiel-VSIX]
  - [Azure SDK-Tools für VS 2013] oder [Azure SDK-Tools für VS 2015]
  - [Python 2.7 (32 Bit)]
  - Django 1.6 oder früher
@@ -59,7 +59,7 @@ In diesem Abschnitt erstellen wir ein Visual Studio-Projekt mithilfe einer Beisp
 
   	![Dialogfeld für externe Pakete](./media/web-sites-python-ptvs-django-mysql/PollsDjangoExternalPackages.png)
 
-1.  Wählen Sie **Python 2.7** als Basisinterpreter aus.
+1.  Wählen Sie **Python 2.7** als Basisinterpreter aus.
 
   	![Dialogfeld für das Hinzufügen der virtuellen Umgebung](./media/web-sites-python-ptvs-django-mysql/PollsCommonAddVirtualEnv.png)
 
@@ -205,7 +205,7 @@ Weitere Informationen finden Sie im [Python Developer Center](/develop/python/).
 [Azure Portal]: https://portal.azure.com
 [Python-Tools für Visual Studio]: http://aka.ms/ptvs
 [Python Tools 2.2 für Visual Studio]: http://go.microsoft.com/fwlink/?LinkID=624025
-[Python Tools 2.2 für Visual Studio, Beispiel-VSIX]: http://go.microsoft.com/fwlink/?LinkID=624025
+[Python Tools 2.2 für Visual Studio, Beispiel-VSIX]: http://go.microsoft.com/fwlink/?LinkID=624025
 [Azure SDK-Tools für VS 2013]: http://go.microsoft.com/fwlink/?LinkId=323510
 [Azure SDK-Tools für VS 2015]: http://go.microsoft.com/fwlink/?LinkId=518003
 [Python 2.7 (32 Bit)]: http://go.microsoft.com/fwlink/?LinkId=517190

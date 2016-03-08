@@ -117,7 +117,7 @@ In diesem Fall verwenden wir `upload`, `mergeOrUpload` und `delete` als Suchakti
 
 Wir gehen davon aus, dass der Index in diesem Beispiel („hotels“) bereits mit einigen Dokumenten gefüllt ist. Beachten Sie, dass alle möglichen Dokumentfelder bei `merge` nicht festgelegt werden mussten, und bei `delete` musste nur der Dokumentschlüssel (`hotelId`) definiert werden.
 
-Beachten Sie außerdem, dass nur bis zu 1000 Dokumente (oder 16 MB) in einer einzigen Indizierungsanforderung enthalten sein können.
+Beachten Sie außerdem, dass nur bis zu 1000 Dokumente (oder 16 MB) in einer einzigen Indizierungsanforderung enthalten sein können.
 
 ## IV. Erläuterungen zum HTTP-Antwortcode
 #### 200

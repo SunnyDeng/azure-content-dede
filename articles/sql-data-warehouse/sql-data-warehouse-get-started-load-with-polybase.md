@@ -43,7 +43,7 @@ Für dieses Tutorial ist Folgendes erforderlich:
     ![Azure-Speichertools](./media/sql-data-warehouse-get-started-load-with-polybase/install-azcopy.png)
 
 
-## Schritt 1: Hinzufügen von Beispieldaten zum Azure-Blobspeicher
+## Schritt 1: Hinzufügen von Beispieldaten zum Azure-Blobspeicher
 
 Um Daten laden zu können, müssen wir einige Beispieldaten in einen Azure-Blobspeicher einfügen. In diesem Schritt füllen wir einen Azure-Blobspeicher mit Beispieldaten. Wir werden diese Beispieldaten später mit PolyBase in die SQL Data Warehouse-Datenbank laden.
 
@@ -208,7 +208,7 @@ SELECT count(*) FROM dbo.DimDate2External;
 
 ```
 
-## Schritt 4: Laden von Daten in SQL Data Warehouse
+## Schritt 4: Laden von Daten in SQL Data Warehouse
 
 Sobald die externe Tabelle erstellt wurde, können Sie die Daten in eine neue Tabelle laden oder in eine vorhandene Tabelle einfügen.
 

@@ -27,7 +27,7 @@ In den folgenden Abschnitten erhalten Sie Informationen, die Ihnen helfen, die A
 
 ## Was möchte ich sichern?
 
-Um die richtige Multi-Factor Authentication-Lösung zu ermitteln, müssen Sie zunächst die Frage beantworten, was Sie über die zweite Methode zur Authentifizierung sichern möchten. Handelt es sich um eine Anwendung in Azure? Oder ist Sie es z. B. ein RAS-System? Die Antwort auf die Frage, wo Multi-Factor Authentication aktiviert werden muss, richtet sich danach, was Sie sichern möchten.
+Um die richtige Multi-Factor Authentication-Lösung zu ermitteln, müssen Sie zunächst die Frage beantworten, was Sie über die zweite Methode zur Authentifizierung sichern möchten. Handelt es sich um eine Anwendung in Azure? Oder ist Sie es z. B. ein RAS-System? Die Antwort auf die Frage, wo Multi-Factor Authentication aktiviert werden muss, richtet sich danach, was Sie sichern möchten.
 
 
 Was möchte ich sichern?| Multi-Factor Authentication in der Cloud|Multi-Factor Authentication-Server 
@@ -36,7 +36,7 @@ Erstanbieter-Microsoft-Apps|* |* |
 SaaS-Apps im Anwendungskatalog|* |* |
 Über den Azure AD-App-Proxy veröffentlichte IIS-Anwendungen|* |* |
 Nicht über den Azure AD-App-Proxy veröffentlichte IIS-Anwendungen | |* |
-Remotezugriff, z. B. VPN, RDG| |* |
+Remotezugriff, z. B. VPN, RDG| |* |
 
 
 

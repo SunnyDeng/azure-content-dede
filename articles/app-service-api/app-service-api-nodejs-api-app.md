@@ -21,7 +21,7 @@
 [AZURE.INCLUDE [app-service-api-get-started-selector](../../includes/app-service-api-get-started-selector.md)]
 
 ## Voraussetzungen
-1. Ausführung von [Node.js](http://nodejs.org) auf einem Entwicklungscomputer (in diesem Beispiel wird die Installation von Node.js Version 4.2.2 vorausgesetzt)
+1. Ausführung von [Node.js](http://nodejs.org) auf einem Entwicklungscomputer (in diesem Beispiel wird die Installation von Node.js Version 4.2.2 vorausgesetzt)
 1. [GitHub](https://github.com/)-Konto
 1. Microsoft Azure-Konto ([kostenlose Testversion](https://azure.microsoft.com/pricing/free-trial/))
 1. Installation von Git auf Ihrer lokalen Entwicklungsarbeitsstation
@@ -44,7 +44,7 @@ Die folgenden Befehle sollten über die Node.js-Befehlszeile ausgeführt werden.
         
     **Hinweis:** „API.json“ ist nicht das Gleiche wie die Datei *apiapp.json* aus dem API-Apps-Vorschauzeitrahmen.
 
-1. Mit Swaggerize wird das Gerüst für die Handler und Config für die Swagger-Metadaten erstellt, die in **api.json** enthalten sind. Während der Gerüsterstellung werden Ihnen einige Fragen gestellt, z. B. zu Ihrem GitHub-Benutzernamen und Ihrer E-Mail-Adresse. Diese Informationen werden zum Generieren der Datei **package.json** im Ordner der Anwendung verwendet. Bei den Fragen während der Gerüsterstellung ist es am wichtigsten, dass Sie bei der entsprechenden Frage die Option **express** wählen. In diesem Beispiel wird nämlich das express-Ansichtsmodul verwendet, um später die Swagger-Hilfeseite zu generieren, wenn Ihre API-App in Azure (oder lokal) ausgeführt wird.
+1. Mit Swaggerize wird das Gerüst für die Handler und Config für die Swagger-Metadaten erstellt, die in **api.json** enthalten sind. Während der Gerüsterstellung werden Ihnen einige Fragen gestellt, z. B. zu Ihrem GitHub-Benutzernamen und Ihrer E-Mail-Adresse. Diese Informationen werden zum Generieren der Datei **package.json** im Ordner der Anwendung verwendet. Bei den Fragen während der Gerüsterstellung ist es am wichtigsten, dass Sie bei der entsprechenden Frage die Option **express** wählen. In diesem Beispiel wird nämlich das express-Ansichtsmodul verwendet, um später die Swagger-Hilfeseite zu generieren, wenn Ihre API-App in Azure (oder lokal) ausgeführt wird.
 
 	![Swaggerize-Befehlszeile](media/app-service-api-nodejs-api-app/swaggerize-command-line.png)
     
@@ -229,7 +229,7 @@ Indem Sie die integrierten Azure App Service-Funktionen für die dauerhafte Bere
 
     ![Bereitstellung abgeschlossen](media/app-service-api-nodejs-api-app/deployment-completed.png)
 
-1. Geben Sie die URL Ihres Contacts-API-Aufrufs mit einem REST-API-Client an, z. B. Postman oder Fiddler (oder Ihrem Webbrowser). Dies sollte der Endpunkt **/contacts** Ihrer API-App sein.
+1. Geben Sie die URL Ihres Contacts-API-Aufrufs mit einem REST-API-Client an, z. B. Postman oder Fiddler (oder Ihrem Webbrowser). Dies sollte der Endpunkt **/contacts** Ihrer API-App sein.
 
     **Hinweis:** Die URL ähnelt http://myapiapp.azurewebsites.net/contacts.
 

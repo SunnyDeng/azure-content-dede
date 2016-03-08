@@ -225,7 +225,7 @@ Der BizTalk-Adapterdienst wird von einem Azure BizTalk Service genutzt. Der BizT
 
 #### Was bedeutet "Datenübertragung von Hybridverbindungen (GB) pro Einheit"? Gilt dies pro Minute/Stunde/Tag/Woche/Monat? Was passiert, wenn der Grenzwert erreicht ist?
 
-Die Kosten pro Einheit für Hybridverbindungen richten sich nach der jeweiligen BizTalk Services-Edition. Einfach gesagt: Die Kosten hängen davon ab, wie viele Daten Sie übertragen. Die Übertragung von 10 GB pro Tag kostet z. B. weniger als die Übertragung von 100 GB pro Tag. Nutzen Sie den [Preisrechner](https://azure.microsoft.com/pricing/calculator/?scenario=full) für BizTalk Services, um die genauen Kosten zu ermitteln. Diese Grenzwerte werden üblicherweise täglich festgesetzt. Jegliche Überschreitung der Grenzwerte wird mit $1 pro GB berechnet.
+Die Kosten pro Einheit für Hybridverbindungen richten sich nach der jeweiligen BizTalk Services-Edition. Einfach gesagt: Die Kosten hängen davon ab, wie viele Daten Sie übertragen. Die Übertragung von 10 GB pro Tag kostet z. B. weniger als die Übertragung von 100 GB pro Tag. Nutzen Sie den [Preisrechner](https://azure.microsoft.com/pricing/calculator/?scenario=full) für BizTalk Services, um die genauen Kosten zu ermitteln. Diese Grenzwerte werden üblicherweise täglich festgesetzt. Jegliche Überschreitung der Grenzwerte wird mit $1 pro GB berechnet.
 
 #### Warum wird die Anzahl der Brücken um zwei statt um eins erhöht, wenn ich in BizTalk Services eine Vereinbarung erstelle?
 

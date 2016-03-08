@@ -37,27 +37,27 @@ Nachdem Sie die skalierbare WordPress-Website und eine Redis-Cache-Instanz berei
 
 ## Aktivieren des Web-Apps-Memcache-Shims
 
-Zum Konfigurieren des Memcache-Shims müssen Sie drei Anwendungseinstellungen erstellen. Dies kann auf unterschiedliche Weise erfolgen: im [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715), im [klassischen Portal][3], mithilfe von [Azure PowerShell-Cmdlets][5] oder über die [Azure-Befehlszeilenschnittstelle][5]. In diesem Artikel verwende ich das [Azure-Portal][4] zum Festlegen der Anwendungseinstellungen. Die folgenden Werte können vom Blatt **Einstellungen** Ihrer Redis Cache-Instanz abgerufen werden.
+Zum Konfigurieren des Memcache-Shims müssen Sie drei Anwendungseinstellungen erstellen. Dies kann auf unterschiedliche Weise erfolgen: im [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715), im [klassischen Portal][3], mithilfe von [Azure PowerShell-Cmdlets][5] oder über die [Azure-Befehlszeilenschnittstelle][5]. In diesem Artikel verwende ich das [Azure-Portal][4] zum Festlegen der Anwendungseinstellungen. Die folgenden Werte können vom Blatt **Einstellungen** Ihrer Redis Cache-Instanz abgerufen werden.
 
 ![Azure Redis Cache – Blatt "Einstellungen"](./media/web-sites-connect-to-redis-using-memcache-protocol/1-azure-redis-cache-settings.png)
 
 ### Hinzufügen der Anwendungseinstellung REDIS\_HOST
 
-Die erste Anwendungseinstellung, die Sie erstellen müssen, ist die Anwendungseinstellung **REDIS\_HOST**. Diese Einstellung legt das Ziel fest, an das der Shim Cacheinformationen weiterleitet. Der erforderliche Wert für die Anwendungseinstellung REDIS\_HOST kann auf dem Blatt **Eigenschaften** Ihrer Redis Cache-Instanz abgerufen werden.
+Die erste Anwendungseinstellung, die Sie erstellen müssen, ist die Anwendungseinstellung **REDIS\_HOST**. Diese Einstellung legt das Ziel fest, an das der Shim Cacheinformationen weiterleitet. Der erforderliche Wert für die Anwendungseinstellung REDIS\_HOST kann auf dem Blatt **Eigenschaften** Ihrer Redis Cache-Instanz abgerufen werden.
 
 ![Azure Redis Cache – Hostname](./media/web-sites-connect-to-redis-using-memcache-protocol/2-azure-redis-cache-hostname.png)
 
-Legen Sie den Schlüssel der Anwendungseinstellung auf **REDIS\_HOST** und den Wert der Einstellung auf den Hostnamen der Redis Cache-Instanz fest.
+Legen Sie den Schlüssel der Anwendungseinstellung auf **REDIS\_HOST** und den Wert der Einstellung auf den Hostnamen der Redis Cache-Instanz fest.
 
 ![Web-App – Anwendungseinstellung "REDIS\_HOST"](./media/web-sites-connect-to-redis-using-memcache-protocol/3-azure-website-appsettings-redis-host.png)
 
 ### Hinzufügen der Anwendungseinstellung REDIS\_KEY
 
-Die zweite Anwendungseinstellung, die Sie erstellen müssen, ist die Anwendungseinstellung **REDIS\_KEY**. Diese Einstellung stellt das Authentifizierungstoken für den sicheren Zugriff auf die Redis-Cache-Instanz bereit. Der erforderliche Wert für die App-Einstellung REDIS\_KEY kann auf dem Blatt **Zugriffsschlüssel** Ihrer Redis Cache-Instanz abgerufen werden.
+Die zweite Anwendungseinstellung, die Sie erstellen müssen, ist die Anwendungseinstellung **REDIS\_KEY**. Diese Einstellung stellt das Authentifizierungstoken für den sicheren Zugriff auf die Redis-Cache-Instanz bereit. Der erforderliche Wert für die App-Einstellung REDIS\_KEY kann auf dem Blatt **Zugriffsschlüssel** Ihrer Redis Cache-Instanz abgerufen werden.
 
 ![Azure Redis Cache – Primärschlüssel](./media/web-sites-connect-to-redis-using-memcache-protocol/4-azure-redis-cache-primarykey.png)
 
-Legen Sie den Schlüssel der Anwendungseinstellung auf **REDIS\_KEY** und den Wert der Einstellung auf den Primärschlüssel der Redis Cache-Instanz fest.
+Legen Sie den Schlüssel der Anwendungseinstellung auf **REDIS\_KEY** und den Wert der Einstellung auf den Primärschlüssel der Redis Cache-Instanz fest.
 
 ![Azure-Website – Anwendungseinstellung "REDIS\_KEY"](./media/web-sites-connect-to-redis-using-memcache-protocol/5-azure-website-appsettings-redis-primarykey.png)
 
@@ -79,7 +79,7 @@ Navigieren Sie zu [PECL][6]. Klicken Sie unter der Kategorie für das Zwischensp
 
 ![PHP-PECL-Website](./media/web-sites-connect-to-redis-using-memcache-protocol/7-php-pecl-website.png)
 
-Laden Sie das Ziel des x86-Links zum Non-Thread Safe (NTS) für Ihre in Web-Apps aktivierte Version von PHP herunter. (Die Standardeinstellung ist PHP 5.4)
+Laden Sie das Ziel des x86-Links zum Non-Thread Safe (NTS) für Ihre in Web-Apps aktivierte Version von PHP herunter. (Die Standardeinstellung ist PHP 5.4)
 
 ![PHP-PECL-Website – Memcache-Paket](./media/web-sites-connect-to-redis-using-memcache-protocol/8-php-pecl-memcache-package.png)
 
@@ -124,7 +124,7 @@ $memcached_servers = array(
 
 Wenn dieser Code eingefügt wurde, speichert Monaco das Dokument automatisch.
 
-Im nächsten Schritt wird das Object-Cache-Plug-In aktiviert. Dazu wird die Datei **object-cache.php** per Drag & Drop aus dem Ordner **wp-content/plugins/memcached** in den Ordner **wp-content** kopiert, um die Funktionen des Memcached Object Cache zu aktivieren.
+Im nächsten Schritt wird das Object-Cache-Plug-In aktiviert. Dazu wird die Datei **object-cache.php** per Drag & Drop aus dem Ordner **wp-content/plugins/memcached** in den Ordner **wp-content** kopiert, um die Funktionen des Memcached Object Cache zu aktivieren.
 
 ![Memcache-Plug-In "object-cache.php" suchen](./media/web-sites-connect-to-redis-using-memcache-protocol/13-locate-memcache-object-cache-plugin.png)
 

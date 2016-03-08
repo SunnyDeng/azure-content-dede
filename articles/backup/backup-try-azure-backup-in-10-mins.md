@@ -32,7 +32,7 @@ Falls Sie noch nicht über ein Azure-Abonnement verfügen, können Sie ein [kost
 
 >[AZURE.NOTE] Sie können diesen Schritt überspringen, wenn Sie bereits über ein Azure-Abonnement verfügen.
 
-## Schritt 2: Erstellen eines Sicherungstresors
+## Schritt 2: Erstellen eines Sicherungstresors
 
 Sie müssen einen Sicherungstresor in Ihrer geografischen Region erstellen, in dem die Daten gespeichert werden sollen, um Dateien und Daten von einem Windows-Computer in Azure zu sichern.
 
@@ -42,7 +42,7 @@ Sie müssen einen Sicherungstresor in Ihrer geografischen Region erstellen, in d
 
     ![Tresor erstellen](./media/backup-try-azure-backup-in-10-mins/second-blade-backup.png)
 
-    a. Geben Sie auf dem angezeigten Bildschirm unter **Name** einen Anzeigenamen ein, um den Sicherungstresor zu identifizieren. Geben Sie einen Namen ein, der zwischen 2 und 50 Zeichen enthält. Er muss mit einem Buchstaben beginnen und darf nur Buchstaben, Zahlen und Bindestriche enthalten.
+    a. Geben Sie auf dem angezeigten Bildschirm unter **Name** einen Anzeigenamen ein, um den Sicherungstresor zu identifizieren. Geben Sie einen Namen ein, der zwischen 2 und 50 Zeichen enthält. Er muss mit einem Buchstaben beginnen und darf nur Buchstaben, Zahlen und Bindestriche enthalten.
 
     b. Wählen Sie unter **Region** die geografische Region für den Sicherungstresor aus. Wenn Sie eine geografische Region in der Nähe Ihres eigenen Standorts auswählen, können Sie dadurch die Netzwerklatenz beim Sichern in Azure reduzieren.
 
@@ -94,7 +94,7 @@ Sie müssen einen Sicherungstresor in Ihrer geografischen Region erstellen, in d
 
     Das Portal generiert Tresoranmeldeinformationen mit einer Kombination aus dem Tresornamen und dem aktuellen Datum.
 
-    >[AZURE.NOTE] Die Datei mit den Tresoranmeldeinformationen wird nur während des Registrierungsworkflows verwendet und läuft nach 48 Stunden ab.
+    >[AZURE.NOTE] Die Datei mit den Tresoranmeldeinformationen wird nur während des Registrierungsworkflows verwendet und läuft nach 48 Stunden ab.
 
 6. Klicken Sie auf **Speichern**, um die Tresoranmeldeinformationen in den Ordner **Downloads** des lokalen Kontos herunterzuladen. Sie können auch im Menü **Speichern** die Option **Speichern unter** auswählen, um einen anderen Speicherort anzugeben.
 
@@ -116,13 +116,13 @@ Sie müssen einen Sicherungstresor in Ihrer geografischen Region erstellen, in d
 
 An diesem Punkt haben Sie die Erstellung eines Sicherungstresors abgeschlossen und die erforderlichen Komponenten heruntergeladen. Nun installieren Sie den Backup-Agent.
 
-## Schritt 3: Installieren des Azure Backup-Agents auf Ihrem Windows-Server oder -Client
+## Schritt 3: Installieren des Azure Backup-Agents auf Ihrem Windows-Server oder -Client
 
 1. Doppelklicken Sie nach Abschluss des Downloads am Speicherort auf die Datei **MARSagentinstaller.exe** (Sie können auch auf **Ausführen** klicken, anstatt die Datei im vorherigen Schritt zu speichern).
 
 2. Wählen Sie den **Installationsordner** und den **Cacheordner** aus, der für den Agent erforderlich ist.
 
-    Der von Ihnen angegebene Cachespeicherort muss freien Speicherplatz in einer Größenordnung enthalten, die mindestens 5 % der Sicherungsdaten entspricht.
+    Der von Ihnen angegebene Cachespeicherort muss freien Speicherplatz in einer Größenordnung enthalten, die mindestens 5 % der Sicherungsdaten entspricht.
 
     Klicken Sie auf **Weiter**.
 
@@ -140,7 +140,7 @@ An diesem Punkt haben Sie die Erstellung eines Sicherungstresors abgeschlossen u
 
     ![Proxykonfiguration](./media/backup-try-azure-backup-in-10-mins/agent-installation.png)
 
-    Der Azure Backup-Agent installiert .NET Framework 4.5 und Windows PowerShell (falls noch nicht geschehen), um die Installation abzuschließen.
+    Der Azure Backup-Agent installiert .NET Framework 4.5 und Windows PowerShell (falls noch nicht geschehen), um die Installation abzuschließen.
 
 5. Wenn der Agent installiert ist, klicken Sie auf **Mit Registrierung fortfahren**, um den Workflow fortzusetzen.
 
@@ -152,7 +152,7 @@ An diesem Punkt haben Sie die Erstellung eines Sicherungstresors abgeschlossen u
 
     ![Tresoranmeldeinformationen](./media/backup-try-azure-backup-in-10-mins/vault-identification-with-creds.png)
 
-7. Im Bildschirm **Verschlüsselungseinstellung** können Sie entweder eine Passphrase generieren oder eine Passphrase angeben (mindestens 16 Zeichen). Vergessen Sie nicht, die Passphrase an einem sicheren Speicherort zu speichern.
+7. Im Bildschirm **Verschlüsselungseinstellung** können Sie entweder eine Passphrase generieren oder eine Passphrase angeben (mindestens 16 Zeichen). Vergessen Sie nicht, die Passphrase an einem sicheren Speicherort zu speichern.
 
     > [AZURE.WARNING] Wenn die Passphrase verloren geht oder vergessen wird, kann Microsoft Ihnen bei der Wiederherstellung der Sicherungsdaten nicht behilflich sein. Der Endbenutzer besitzt die Verschlüsselungspassphrase, und Microsoft kann nicht auf die vom Endbenutzer verwendete Passphrase zugreifen. Speichern Sie die Datei an einem sicheren Speicherort, da sie bei einem Wiederherstellungsvorgang benötigt wird.
 
@@ -170,7 +170,7 @@ An diesem Punkt haben Sie die Erstellung eines Sicherungstresors abgeschlossen u
 
     Der Computer wurde jetzt erfolgreich im Tresor registriert, und Sie können Ihre Sicherungsoptionen konfigurieren und planen.
 
-## Schritt 4: Sichern von Dateien und Ordnern
+## Schritt 4: Sichern von Dateien und Ordnern
 
 1. Klicken Sie im MMC-Snap-In (wird automatisch geöffnet, wenn Sie das Kontrollkästchen **Microsoft Azure Recovery Services-Agent starten** aktiviert gelassen haben) auf **Sicherung planen**.
 
@@ -241,7 +241,7 @@ An diesem Punkt haben Sie die Erstellung eines Sicherungstresors abgeschlossen u
 Glückwunsch! Sie haben Ihre Dateien und Ordner erfolgreich mit Azure Backup gesichert.
 
 ## Nächste Schritte
-- Weitere Informationen zu Azure Backup finden Sie unter [Azure Backup – Übersicht](backup-introduction-to-azure-backup.md).
+- Weitere Informationen zu Azure Backup finden Sie unter [Azure Backup – Übersicht](backup-introduction-to-azure-backup.md).
 - Lesen Sie die weiteren Informationen zum [Vorbereiten Ihrer Umgebung für die Sicherung von Windows-Computern](backup-configure-vault.md).
 - Lesen Sie die weiteren Informationen zum [Sichern eines Windows-Servers](backup-azure-backup-windows-server.md).
 - Besuchen Sie das [Azure Backup-Forum](http://go.microsoft.com/fwlink/p/?LinkId=290933).

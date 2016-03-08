@@ -36,9 +36,9 @@ Das folgende Diagramm veranschaulicht die wichtigsten Eigenschaften der App Serv
 
 ## Sprachunabhängig
 
-Die App Service-Authentifizierungsverarbeitung erfolgt, bevor Anforderungen Ihre API-App erreichen, d. h. die Authentifizierungsfunktionen sind mit API-Apps einsetzbar, die in beliebiger Sprache bzw. beliebigem Framework geschrieben sind. Ihre API kann auf ASP.NET, Java, Node.js oder einem beliebigen Framework basieren, dass App Service unterstützt.
+Die App Service-Authentifizierungsverarbeitung erfolgt, bevor Anforderungen Ihre API-App erreichen, d. h. die Authentifizierungsfunktionen sind mit API-Apps einsetzbar, die in beliebiger Sprache bzw. beliebigem Framework geschrieben sind. Ihre API kann auf ASP.NET, Java, Node.js oder einem beliebigen Framework basieren, dass App Service unterstützt.
 
-App Service übergibt das JSOn-Webtoken (JWT) im Autorisierungsheader einer HTTP-Anforderung, und in jeder Sprache und jedem Framework geschriebener Code kann die erforderlichen Informationen aus dem Token abrufen. Darüber hinaus bietet App Service durch Einstellung einiger spezieller Header leichteren Zugriff auf die am häufigsten verwendeten Ansprüche, z. B. folgende:
+App Service übergibt das JSOn-Webtoken (JWT) im Autorisierungsheader einer HTTP-Anforderung, und in jeder Sprache und jedem Framework geschriebener Code kann die erforderlichen Informationen aus dem Token abrufen. Darüber hinaus bietet App Service durch Einstellung einiger spezieller Header leichteren Zugriff auf die am häufigsten verwendeten Ansprüche, z. B. folgende:
 
 * X-MS-CLIENT-PRINCIPAL-NAME
 * X-MS-CLIENT-PRINCIPAL-ID
@@ -69,7 +69,7 @@ Im [Azure-Portal](https://portal.azure.com/) wählen Sie die gewünschte Option 
 
 ![](./media/app-service-api-authentication/authblade.png)
 
-Aktivieren Sie für Option 1 und 2 **App Service-Authentifizierung**, und wählen Sie in der Dropdownliste **Auszuführende Aktion, wenn Anforderung nicht authentifiziert wird** die Option **Anmelden** oder **Anforderung zulassen (keine Aktion)**. Wenn Sie **Anmelden** wählen, müssen Sie einen Authentifizierungsanbieter auswählen und konfigurieren.
+Aktivieren Sie für Option 1 und 2 **App Service-Authentifizierung**, und wählen Sie in der Dropdownliste **Auszuführende Aktion, wenn Anforderung nicht authentifiziert wird** die Option **Anmelden** oder **Anforderung zulassen (keine Aktion)**. Wenn Sie **Anmelden** wählen, müssen Sie einen Authentifizierungsanbieter auswählen und konfigurieren.
 
 ![](./media/app-service-api-authentication/actiontotake.png)
 
@@ -77,11 +77,11 @@ Ausführliche Informationen zum Konfigurieren der Authentifizierung finden Sie u
  
 ## <a id="internal"></a> Dienstkontoauthentifizierung
 
-Die App Service-Authentifizierung eignet sich für interne Szenarien, z. B. für den Aufruf aus einer API-App, der sich an eine andere API-App richtet. In diesem Szenario können Sie ein Token abrufen, indem Sie Anmeldeinformationen für ein Dienstkonto anstelle der Endbenutzer-Anmeldeinformationen verwenden. Ein Dienstkonto wird in Azure Active Directory auch als *Dienstprinzipal* bezeichnet. Die Authentifizierung mithilfe eines solchen Kontos ist auch als Dienst-zu-Dienst-Szenario bekannt.
+Die App Service-Authentifizierung eignet sich für interne Szenarien, z. B. für den Aufruf aus einer API-App, der sich an eine andere API-App richtet. In diesem Szenario können Sie ein Token abrufen, indem Sie Anmeldeinformationen für ein Dienstkonto anstelle der Endbenutzer-Anmeldeinformationen verwenden. Ein Dienstkonto wird in Azure Active Directory auch als *Dienstprinzipal* bezeichnet. Die Authentifizierung mithilfe eines solchen Kontos ist auch als Dienst-zu-Dienst-Szenario bekannt.
 
 Schützen Sie in Dienst-zu-Dienst-Szenarien die aufgerufene API-App mithilfe von Azure Active Directory, und stellen Sie ein AAD-Dienstprinzipal-Autorisierungstoken bereit, wenn Sie die API-App aufrufen. Sie können ein Token anfordern, indem Sie die Client-ID und den geheimen Clientschlüssel aus der AAD-Anwendung bereitstellen. Es ist kein spezieller Azure-Code erforderlich, wie er beispielsweise für das Behandeln des Mobile Services-Zumo-Tokens benötigt wurde. Ein Beispiel für dieses Szenario mithilfe von ASP.NET-API-Apps finden Sie in dem Tutorial [Dienstprinzipalauthentifizierung für API-Apps in Azure App Service](app-service-api-dotnet-service-principal-auth.md).
 
-Wenn Sie ein Dienst-zu-Dienst-Szenario ohne App Service-Authentifizierung behandeln möchten, können Sie Clientzertifikate oder Standardauthentifizierung verwenden. Informationen zu Clientzertifikaten in Azure finden Sie unter [Konfigurieren von gegenseitiger TLS-Authentifizierung für Web-Apps](../app-service-web/app-service-web-configure-tls-mutual-auth.md). Informationen zur grundlegenden Authentifizierung in ASP.NET finden Sie unter [Authentication Filters in ASP.NET Web API 2](http://www.asp.net/web-api/overview/security/authentication-filters) (Authentifizierungsfilter in ASP.NET-Web-API 2).
+Wenn Sie ein Dienst-zu-Dienst-Szenario ohne App Service-Authentifizierung behandeln möchten, können Sie Clientzertifikate oder Standardauthentifizierung verwenden. Informationen zu Clientzertifikaten in Azure finden Sie unter [Konfigurieren von gegenseitiger TLS-Authentifizierung für Web-Apps](../app-service-web/app-service-web-configure-tls-mutual-auth.md). Informationen zur grundlegenden Authentifizierung in ASP.NET finden Sie unter [Authentication Filters in ASP.NET Web API 2](http://www.asp.net/web-api/overview/security/authentication-filters) (Authentifizierungsfilter in ASP.NET-Web-API 2).
 
 Dienstkontoauthentifizierung von einer App Service-Logik-App zu einer API-App ist ein Sonderfall, der in [Verwenden der in App Service gehosteten benutzerdefinierten API mit Logik-Apps](../app-service-logic/app-service-logic-custom-hosted-api.md) erklärt wird.
 

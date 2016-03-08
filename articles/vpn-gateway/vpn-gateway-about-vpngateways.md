@@ -40,7 +40,7 @@ Es gibt zwei VPN-Typen:
  
 - **Routenbasiert:** Routenbasierte Gateways werden im klassischen Bereitstellungsmodell als *dynamische Gateways* bezeichnet. Die Funktionalität eines dynamischen Gateways wurde nicht geändert, auch wenn sich der Name geändert hat. Routenbasierte Gateways implementieren routenbasierte VPNs. Bei routenbasierten VPNs werden die „Routen“ der IP-Weiterleitungs- oder -Routingtabelle verwendet, um Pakete an die entsprechenden VPN-Tunnelschnittstellen zu leiten. Über die Tunnelschnittstellen werden die Pakete für die Tunnel dann ver- oder entschlüsselt (ein- und ausgehend). Die Richtlinie bzw. der Datenverkehrselektor für routenbasierte VPNs werden im Any-to-Any-Format (bzw. als Platzhalter) konfiguriert.
 
-Einige Verbindungen (z. B. Punkt-zu-Standort- und VNET-zu-VNET-Verbindungen) funktionieren nur mit einem bestimmten VPN-Typ. Die Gatewayanforderungen sind in dem Artikel aufgeführt, der dem gewünschten Verbindungsszenario entspricht.
+Einige Verbindungen (z. B. Punkt-zu-Standort- und VNET-zu-VNET-Verbindungen) funktionieren nur mit einem bestimmten VPN-Typ. Die Gatewayanforderungen sind in dem Artikel aufgeführt, der dem gewünschten Verbindungsszenario entspricht.
 
 VPN-Geräte weisen auch Konfigurationseinschränkungen auf. Beim Erstellen eines VPN Gateways wählen Sie den VPN-Typ aus, der für Ihre Verbindung erforderlich ist. Dabei stellen Sie sicher, dass das gewünschte VPN-Gerät diesen Routingtyp auch unterstützt. Weitere Informationen finden Sie unter [Informationen zu VPN-Geräten](vpn-gateway-about-vpn-devices.md).
 

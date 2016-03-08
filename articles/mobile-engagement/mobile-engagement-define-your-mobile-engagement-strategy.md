@@ -36,9 +36,9 @@ Starten Sie mit der Definition dieser Ziele und Leistungskennzahlen, die Ihnen d
 
 Ihre Anwendungsfälle stellen eine einfache Liste von Kampagnen dar, die Sie durchführen möchten, um mit Ihren Benutzern zu kommunizieren. Diese Kampagnen reichen von einer einfachen Begrüßung bis hin zur sehr fortschrittlichen Hilfsprogrammbenachrichtigung, die von Ihrem IT-System ausgelöst wird. Ein durchdachter Anwendungsfall muss mindestens die drei Fragen *Was-Wer-Wann* umfassen:
 
-1. Eine sehr kurze Ansprache (z. B. eine „Begrüßungskampagne“).
-2. **Was**: Ein Nachrichtenbeispiel (z. B. „Wir freuen uns über Ihre Teilnahme! Denken Sie an die Registrierung, damit Sie den ersten Monat kostenlos nutzen können!“). Diese Nachricht ist keineswegs endgültig. Sie können sie jederzeit ändern, aber sie hilft Ihnen bei der Überlegung, was zu sagen ist.
-3. **Wer**: Das Segment, das diese Nachricht erhält (z. B. „Alle Benutzer, die die App zum ersten Mal vor drei Tagen gestartet und die Anmeldeseite besucht, sich aber noch nicht angemeldet haben“).
+1. Eine sehr kurze Ansprache (z. B. eine „Begrüßungskampagne“).
+2. **Was**: Ein Nachrichtenbeispiel (z. B. „Wir freuen uns über Ihre Teilnahme! Denken Sie an die Registrierung, damit Sie den ersten Monat kostenlos nutzen können!“). Diese Nachricht ist keineswegs endgültig. Sie können sie jederzeit ändern, aber sie hilft Ihnen bei der Überlegung, was zu sagen ist.
+3. **Wer**: Das Segment, das diese Nachricht erhält (z. B. „Alle Benutzer, die die App zum ersten Mal vor drei Tagen gestartet und die Anmeldeseite besucht, sich aber noch nicht angemeldet haben“).
 	- Ja, das ist mit Azure Mobile Engagement sehr einfach umzusetzen :)
 	- Diese Aussage muss wiederum nicht endgültig sein, da Sie Ihre Segmente jederzeit festlegen können. Es ist jedoch wichtig, dass die Segmentierungskriterien frühzeitig definiert werden, damit die Erfassung der richtigen Daten gewährleistet ist.
 4. **Wann**: Der Zeitablauf Ihrer Kampagne. Hierbei kann sich um ein angegebenes Datum oder eine bestimmte Aktion handeln, die auf Grundlage eines Auslösers erfolgt. Mobile Engagement bietet eine bedeutende Anzahl von Möglichkeiten zur passenden Terminierung Ihrer Kommunikation.
@@ -50,7 +50,7 @@ Nach der Veröffentlichung von Anwendungen können Sie Ihre Analysen als Vermark
 ### Erste Anwendungsfälle
 1. Begrüßungsstrategie: Erstellen Sie verschiedene Pushbenachrichtigungskampagnen, die auf dem Verhalten der Endbenutzer beim Anwendungsstart basieren, um nach der ersten Sitzung am „D+2/5/10/15“ erneut Kontakt aufzunehmen und die Beibehaltung für die erste Ausführung zu erhöhen.
 2. Preisen Sie neue Inhalte an (Feature, Artikel/Video oder Produkt), die auf dem Verhalten der Endbenutzer basieren, damit die Informationen nur an Benutzer gesendet werden, bei denen die Wahrscheinlichkeit der Inanspruchnahme höher ist.
-3. Bewerten Sie die Anwendung: Richten Sie diesen Vorgang auf weniger als 1 % der Benutzerbasis aus, die Ihre App im Store wahrscheinlich mit fünf Sternen bewerten wird.
+3. Bewerten Sie die Anwendung: Richten Sie diesen Vorgang auf weniger als 1 % der Benutzerbasis aus, die Ihre App im Store wahrscheinlich mit fünf Sternen bewerten wird.
 4. Ankurbeln der Abonnements: Bewerben Sie nützliche Inhalte bei Endbenutzern, denen diese bisher noch nicht bekannt sind, um die Anzahl der Abonnements zu steigern.
 5. Tutorial: Vermeiden Sie obligatorische Tutorials. Erstellen Sie doch einfach großartige In-App-Tutorials, und lösen Sie diese durch In-App-Nachrichten aus, wenn ein Benutzer die App nicht zu nutzen scheint oder Probleme bei der Verwendung eines Features hat.
 
@@ -58,7 +58,7 @@ Nach der Veröffentlichung von Anwendungen können Sie Ihre Analysen als Vermark
 
 Wie Sie an diesem Punkt möglicherweise erkennen, ist die reine Übertragung einer Pushbenachrichtigung nicht ausreichend. Das Hauptkonzept von Mobile Engagement besteht darin, Vermarkter und Entwickler dabei zu unterstützen, mit den richtigen Endbenutzern zum richtigen Zeitpunkt und am richtigen Ort Kontakt aufzunehmen. Mit Kenntnis dieser drei Hauptkonzepte ist es entscheidend, die Analysen von Ihrer Anwendung zu erfassen und sie dann zum Segmentieren Ihrer Zielgruppe zu verwenden. Diese Vorgehensweise ist noch wirksamer, wenn Verhaltenssegmente die Daten aus Ihrer anderen Datenbank, Ihrem CRM oder aus einer kanalübergreifenden Maßnahme ergänzen. Mobile Engagement ermöglicht das Abrufen von Daten aus beliebigen Quellen und verwendet dann diese Daten, um sie auf die richtige Zielgruppe auszurichten.
 
-Damit Sie bei der Kontaktaufnahme zu Ihrer Zielgruppe möglichst kontextbezogen agieren, ist es ausschlaggebend, dass Sie das Verhalten der Endbenutzer kennen, d. h. deren Status in Echtzeit. Mithilfe der Datensammlung können sich die Vermarkter auf die wichtigen Faktoren beim Überprüfen von Anwendungsfällen konzentrieren und somit ihre Ziele für Ihre Mobile Engagement-Strategie erreichen. Das Erreichen der zuvor festgelegten Ziele ist auch der Grund dafür, dass die bewährte Methode nicht die Erfassung beliebiger Daten für die Analyse darstellt, sondern es werden nur die Daten gesammelt, die es Ihnen gestatten, sich auf die entscheidenden Informationen und Anwendungsfälle zu konzentrieren. Dies ist eine geeignete Methode, die Lösung zu starten, zu überprüfen, zu testen und zu verwenden sowie intelligente Pushbenachrichtigungen zu adressieren und die Beibehaltung einer Anwendung zu erhöhen, damit sie zu einem erfolgreichen Abschluss kommt.
+Damit Sie bei der Kontaktaufnahme zu Ihrer Zielgruppe möglichst kontextbezogen agieren, ist es ausschlaggebend, dass Sie das Verhalten der Endbenutzer kennen, d. h. deren Status in Echtzeit. Mithilfe der Datensammlung können sich die Vermarkter auf die wichtigen Faktoren beim Überprüfen von Anwendungsfällen konzentrieren und somit ihre Ziele für Ihre Mobile Engagement-Strategie erreichen. Das Erreichen der zuvor festgelegten Ziele ist auch der Grund dafür, dass die bewährte Methode nicht die Erfassung beliebiger Daten für die Analyse darstellt, sondern es werden nur die Daten gesammelt, die es Ihnen gestatten, sich auf die entscheidenden Informationen und Anwendungsfälle zu konzentrieren. Dies ist eine geeignete Methode, die Lösung zu starten, zu überprüfen, zu testen und zu verwenden sowie intelligente Pushbenachrichtigungen zu adressieren und die Beibehaltung einer Anwendung zu erhöhen, damit sie zu einem erfolgreichen Abschluss kommt.
 
 >[AZURE.NOTE] Denken Sie an Folgendes: Zu viele Daten sind der Daten Tod!
 
@@ -94,7 +94,7 @@ Ein Markierungsplan muss wie eine Beschreibung des Benutzerpfades oder eine Art 
 
 Zumindest sollten alle Bildschirme (in Mobile Engagement auch als *Aktivitäten* bezeichnet) einer Anwendung gekennzeichnet werden. Dadurch kann der Benutzerpfad bestimmt werden.
 
-Eine Aktivität kann *Ereignisse* einbetten, die Aktionsinformationen sammeln (z. B. das Klicken auf eine Schaltfläche). Dies ermöglicht die Erfassung von Interaktionen innerhalb der Anwendung. Daher wissen die Vermarkter, welche Bildschirme die Benutzer besuchen und was sie dabei tun.
+Eine Aktivität kann *Ereignisse* einbetten, die Aktionsinformationen sammeln (z. B. das Klicken auf eine Schaltfläche). Dies ermöglicht die Erfassung von Interaktionen innerhalb der Anwendung. Daher wissen die Vermarkter, welche Bildschirme die Benutzer besuchen und was sie dabei tun.
 
 `Jobs` sind Aktionen mit einer Dauer. Es ist für Vermarkter sehr hilfreich zu verstehen, wie lange es für einen Benutzer dauert, ein Konto zu erstellen oder sich anzumelden. Dies könnte auch für Entwickler zur Überwachung nützlich sein, wie lange der Aufruf eines Webdiensts dauert.
 
@@ -102,7 +102,7 @@ Eine Aktivität kann *Ereignisse* einbetten, die Aktionsinformationen sammeln (z
 
 Zu sämtlichen Datentypen können Parameter hinzugefügt werden (*extra-information* in Mobile Engagement), damit Sie dynamische Daten von der Anwendung erfassen können. Das ist wichtig, um eine differenzierte Segmentierung zu ermöglichen. Z. B. können Vermarkter die Benutzer auf Basis des Inhaltstyps segmentieren, den sie konsumiert haben. Der Inhaltstyp entspricht dieser dynamischen Information einer Aktivität oder eines Ereignisses.
 
-*App-Informationen* sind Daten, mit denen Sie in Echtzeit den Status der Anwendung oder des Benutzers bestätigen können. Diese sind auch für die Kategorisierung einer Zielgruppenbasis und die schnelle Ausrichtung auf diese Basis nützlich. Es kann sich dabei z. B. um den Status „true“ oder „false“ für die Frage handeln, ob sich der Benutzer anmeldet bzw. um das Ablaufdatum seines Abonnements.
+*App-Informationen* sind Daten, mit denen Sie in Echtzeit den Status der Anwendung oder des Benutzers bestätigen können. Diese sind auch für die Kategorisierung einer Zielgruppenbasis und die schnelle Ausrichtung auf diese Basis nützlich. Es kann sich dabei z. B. um den Status „true“ oder „false“ für die Frage handeln, ob sich der Benutzer anmeldet bzw. um das Ablaufdatum seines Abonnements.
 
 #### Beispiele für Kennzeichen
 
@@ -120,7 +120,7 @@ Zu sämtlichen Datentypen können Parameter hinzugefügt werden (*extra-informat
 ### Nächste Schritte
 
 - Weitere Informationen zu den grundlegenden Konzepten von Mobile Engagement finden Sie unter [Mobile Engagement-Konzepte].
-- Besuchen Sie [Eine Mobile Engagement-App erstellen](mobile-engagement-create.md), um eine neue Mobile Engagement-App-Sammlung in Azure zu erstellen, und beginnen Sie mit der Verwaltung Ihrer Apps im Mobile Engagement-Portal.
+- Besuchen Sie [Eine Mobile Engagement-App erstellen](mobile-engagement-create.md), um eine neue Mobile Engagement-App-Sammlung in Azure zu erstellen, und beginnen Sie mit der Verwaltung Ihrer Apps im Mobile Engagement-Portal.
 - Detaillierte Informationen finden Sie unter [Bewährte Methoden](mobile-engagement-getting-started-best-practices.md).
 - Ein Anwendungsbeispiel zum Implementieren von Mobile Engagement bei einer Spiele-App finden Sie unter [Szenario für eine Spiele-App](mobile-engagement-gaming-scenario.md). 
 - Ein Anwendungsbeispiel zum Implementieren von Mobile Engagement bei einer Medien-App finden Sie unter [Szenario für eine Medien-App](mobile-engagement-media-scenario.md). 

@@ -313,7 +313,7 @@ Dieser Schritt beschreibt die Ausführung eines Service Bus-Basisdiensts.
 	ServiceBusEnvironment.SystemConnectivity.Mode = ConnectivityMode.AutoDetect;
 	```
 
-	Der Verbindungsmodus beschreibt das Protokoll, das der Dienst für die Kommunikation mit Service Bus verwendet: HTTP oder TCP. Mithilfe der Standardeinstellung `AutoDetect` versucht der Dienst, eine Verbindung mit Service Bus über TCP herzustellen, wenn verfügbar. Wenn TCP nicht verfügbar ist, wird HTTP verwendet. Beachten Sie, dass sich diese Vorgehensweise von dem Protokoll unterscheidet, das der Dienst für die Clientkommunikation angibt. Dieses Protokoll wird durch die verwendete Bindung festgelegt. Ein Dienst kann z. B. die Bindung [BasicHttpRelayBinding](https://msdn.microsoft.com/library/microsoft.servicebus.basichttprelaybinding.aspx) verwenden, die angibt, dass ihr Endpunkt (für Service Bus bereitgestellt) über HTTP mit Clients kommuniziert. Der gleiche Dienst kann **ConnectivityMode.AutoDetect** angeben, sodass der Dienst über TCP mit Service Bus kommuniziert.
+	Der Verbindungsmodus beschreibt das Protokoll, das der Dienst für die Kommunikation mit Service Bus verwendet: HTTP oder TCP. Mithilfe der Standardeinstellung `AutoDetect` versucht der Dienst, eine Verbindung mit Service Bus über TCP herzustellen, wenn verfügbar. Wenn TCP nicht verfügbar ist, wird HTTP verwendet. Beachten Sie, dass sich diese Vorgehensweise von dem Protokoll unterscheidet, das der Dienst für die Clientkommunikation angibt. Dieses Protokoll wird durch die verwendete Bindung festgelegt. Ein Dienst kann z. B. die Bindung [BasicHttpRelayBinding](https://msdn.microsoft.com/library/microsoft.servicebus.basichttprelaybinding.aspx) verwenden, die angibt, dass ihr Endpunkt (für Service Bus bereitgestellt) über HTTP mit Clients kommuniziert. Der gleiche Dienst kann **ConnectivityMode.AutoDetect** angeben, sodass der Dienst über TCP mit Service Bus kommuniziert.
 
 1. Erstellen Sie den Diensthost unter Verwendung des URIs, den Sie zuvor in diesem Abschnitt erstellt haben.
 
@@ -817,9 +817,9 @@ Dieses Tutorial zeigte das Erstellen einer Service Bus-Clientanwendung und eines
 
 Weitere Informationen zu Service Bus finden Sie in den folgenden Themen.
 
-- [Übersicht über Service Bus-Messaging](service-bus-messaging-overview.md)
+- [Übersicht über Service Bus-Messaging](service-bus-messaging-overview.md)
 - [Service Bus – Grundlagen](service-bus-fundamentals-hybrid-solutions.md)
-- [Service Bus-Architektur](service-bus-architecture.md)
+- [Service Bus-Architektur](service-bus-architecture.md)
 
 [klassische Azure-Portal]: http://manage.windowsazure.com
 

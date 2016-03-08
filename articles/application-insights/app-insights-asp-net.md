@@ -32,11 +32,11 @@ Ebenso werden Sie bestimmte Anforderungen, Ausnahmen und Protokollereignisse unt
 Erforderlich:
 
 * Ein Abonnement für [Microsoft Azure](http://azure.com) Wenn Ihr Team oder Ihre Organisation über ein Azure-Abonnement verfügt, kann der Besitzer Sie mit Ihrem [Microsoft-Konto](http://live.com) hinzufügen.
-* Visual Studio 2013, Update 3 oder höher.
+* Visual Studio 2013, Update 3 oder höher.
 
 ## <a name="ide"></a> Hinzufügen von Application Insights zu Ihrem Projekt in Visual Studio
 
-#### Falls es sich um ein neues Projekt handelt …
+#### Falls es sich um ein neues Projekt handelt …
 
 Wenn Sie in Visual Studio ein neues Projekt erstellen, achten Sie darauf, dass Application Insights ausgewählt ist.
 
@@ -46,7 +46,7 @@ Wenn Sie in Visual Studio ein neues Projekt erstellen, achten Sie darauf, dass A
 Wählen Sie ein Konto mit einer Azure-Anmeldung aus. Sie werden möglicherweise aufgefordert, Ihre Anmeldeinformationen erneut einzugeben. (Oder, wenn Sie sich nicht anmelden, wird der Code des SDK hinzugefügt, den Sie später konfigurieren können.)
 
 
-#### … oder falls es sich um ein vorhandenes Projekt handelt
+#### … oder falls es sich um ein vorhandenes Projekt handelt
 
 Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, und klicken Sie auf **Application Insights hinzufügen** oder **Application Insights konfigurieren**.
 

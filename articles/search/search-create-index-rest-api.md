@@ -79,7 +79,7 @@ Diese Indexdefinition verwendet für das Feld `description_fr` eine benutzerdefi
 
 ## III. Stellen der HTTP-Anforderung
 1. Stellen Sie eine HTTP POST-Anforderung an die Endpunkt-URL des Azure Search-Diensts, indem Sie Ihre Indexdefinition als Anforderungstext verwenden. Verwenden Sie in der URL Ihren Dienstnamen als Hostnamen, und geben Sie die richtige `api-version` als Abfrageparameter ein (zum Zeitpunkt der Veröffentlichung dieses Dokuments ist `2015-02-28` die aktuelle API-Version).
-2. Legen Sie im Anforderungsheader `application/json` für `Content-Type` fest. Sie müssen außerdem den Admin-Schlüssel des Diensts angeben, den Sie in Schritt I im Header `api-key` identifiziert haben.
+2. Legen Sie im Anforderungsheader `application/json` für `Content-Type` fest. Sie müssen außerdem den Admin-Schlüssel des Diensts angeben, den Sie in Schritt I im Header `api-key` identifiziert haben.
 
 
     POST https://[service name].search.windows.net/indexes?api-version=2015-02-28 Content-Type: application/json api-key: [api-key]

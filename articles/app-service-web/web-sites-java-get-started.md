@@ -37,7 +37,7 @@ Es gibt verschiedene Möglichkeiten, wie Sie eine Java-Anwendung in einer App Se
 
 1. Erstellen einer App und anschließendes Konfigurieren der **Anwendungseinstellungen**
 
-	App Service bietet verschiedene Tomcat- und Jetty-Versionen mit Standardkonfigurationen. Wenn die zu hostende Anwendung für eine der integrierten Versionen geeignet ist, ist diese Methode zur Einrichtung eines Webcontainers die einfachste Möglichkeit und auch die richtige Wahl, wenn Sie lediglich eine WAR-Datei in einen Webcontainer hochladen möchten. Bei dieser Methode erstellen Sie eine App im Azure-Portal und öffnen dann das Blatt **Anwendungseinstellungen** der App, um Ihre Version von Java und den gewünschten Java-Webcontainer auszuwählen. Bei Verwendung dieser Methode werden sowohl der Java-Code als auch Ihr Webcontainer über Programmdateien ausgeführt. Bei anderen Methoden werden der Webcontainer und ggf. auch die JVM in Ihren Festplattenspeicher eingefügt. Beim Einsatz dieses Modells fehlt Ihnen der Zugriff, um Dateien in diesem Teil des Dateisystems zu bearbeiten. Das heißt, Sie können z. B. nicht die Datei *server.xml* konfigurieren oder Bibliotheksdateien im Ordner */lib* ablegen. Weitere Informationen finden Sie weiter unten in diesem Tutorial unter [Erstellen und Konfigurieren einer Java-Web-App](#appsettings).
+	App Service bietet verschiedene Tomcat- und Jetty-Versionen mit Standardkonfigurationen. Wenn die zu hostende Anwendung für eine der integrierten Versionen geeignet ist, ist diese Methode zur Einrichtung eines Webcontainers die einfachste Möglichkeit und auch die richtige Wahl, wenn Sie lediglich eine WAR-Datei in einen Webcontainer hochladen möchten. Bei dieser Methode erstellen Sie eine App im Azure-Portal und öffnen dann das Blatt **Anwendungseinstellungen** der App, um Ihre Version von Java und den gewünschten Java-Webcontainer auszuwählen. Bei Verwendung dieser Methode werden sowohl der Java-Code als auch Ihr Webcontainer über Programmdateien ausgeführt. Bei anderen Methoden werden der Webcontainer und ggf. auch die JVM in Ihren Festplattenspeicher eingefügt. Beim Einsatz dieses Modells fehlt Ihnen der Zugriff, um Dateien in diesem Teil des Dateisystems zu bearbeiten. Das heißt, Sie können z. B. nicht die Datei *server.xml* konfigurieren oder Bibliotheksdateien im Ordner */lib* ablegen. Weitere Informationen finden Sie weiter unten in diesem Tutorial unter [Erstellen und Konfigurieren einer Java-Web-App](#appsettings).
 	
 2. Verwenden einer Vorlage aus dem Azure Marketplace
 
@@ -46,7 +46,7 @@ Es gibt verschiedene Möglichkeiten, wie Sie eine Java-Anwendung in einer App Se
   
 3. Erstellen einer App und manuelles Kopieren und Bearbeiten der Konfigurationsdateien
 
-	Unter Umständen möchten Sie eine benutzerdefinierte Java-Anwendung hosten, die sich in keinem der von App Service angebotenen Webcontainern bereitstellen lässt. Dies kann z. B. aus folgenden Gründen der Fall sein:
+	Unter Umständen möchten Sie eine benutzerdefinierte Java-Anwendung hosten, die sich in keinem der von App Service angebotenen Webcontainern bereitstellen lässt. Dies kann z. B. aus folgenden Gründen der Fall sein:
 	
 	* Ihre Java-Anwendung erfordert eine Version von Tomcat oder Jetty, die nicht direkt von App Service unterstützt oder nicht im Katalog angeboten wird.
 	* Ihre Java-Anwendung nimmt HTTP-Anforderungen an und lässt sich nicht als WAR (Web Application Archive) in einem bereits vorhandenen Webcontainer bereitstellen.
@@ -61,7 +61,7 @@ In diesem Abschnitt wird gezeigt, wie Sie eine Web-App erstellen und mit dem Bla
 
 1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/) an.
 
-2. Klicken Sie auf **Neu > Web und mobil > Web-App**.
+2. Klicken Sie auf **Neu > Web und mobil > Web-App**.
 
 	![](./media/web-sites-java-get-started/newwebapp.png)
 
