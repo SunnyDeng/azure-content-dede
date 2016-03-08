@@ -11,7 +11,7 @@
 <tags
    ms.service="hdinsight"
    ms.devlang="na"
-   ms.topic="article"
+   ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
    ms.date="01/08/2016"
@@ -35,7 +35,7 @@ Apache Storm in HDInsight wird als verwalteter Cluster angeboten, der in die Azu
 
 	* Unterstützung für gemischte Programmiersprachen: Daten werden mit Java gelesen und dann mit C# verarbeitet.
 	
-		> [AZURE.NOTE]C#-Topologien werden nur auf Windows-basierten HDInsight-Clustern unterstützt.
+		> [AZURE.NOTE] C#-Topologien werden nur auf Windows-basierten HDInsight-Clustern unterstützt.
 
 	* Verwendung der **Trident**-Java-Schnittstelle zum Erstellen von Storm-Topologien, die eine "exakt einmalige" Verarbeitung von Nachrichten, "transaktionale" Datenspeicherpersistenz sowie eine Reihe allgemeiner Datenstrom-Analysevorgänge unterstützen.
 
@@ -53,7 +53,7 @@ Eine Einführung in Storm finden Sie unter [Erste Schritte mit Storm in HDInsigh
 
 Sie können einen neuen Storm in HDInsight-Cluster in wenigen Minuten bereitstellen. Geben Sie den Clusternamen, die Größe, das Administratorkonto und das Speicherkonto an. Azure erstellt den Cluster, einschließlich Beispieltopologien und Dashboard zur Webverwaltung.
 
-> [AZURE.NOTE]Sie können Storm-Cluster auch über die [Azure-Befehlszeilenschnittstelle](../powershell-install-configure.md) oder [Azure PowerShell](../xplat-cli-install.md) bereitstellen.
+> [AZURE.NOTE] Sie können Storm-Cluster auch über die [Azure-Befehlszeilenschnittstelle](../powershell-install-configure.md) oder [Azure PowerShell](../xplat-cli-install.md) bereitstellen.
 
 Innerhalb von 15 Minuten nach Übermittlung der Anforderung verfügen Sie über einen neuen Storm-Cluster, der bereit ist für die erste Echtzeitanalysepipeline.
 
@@ -101,7 +101,7 @@ In der Standardkonfiguration verfügt Apache Storm über einen einzelnen Nimbus-
 
 Obwohl Sie die Anzahl der Knoten im Cluster bei der Erstellung angeben können, sollten Sie den Cluster je nach Workload vergrößern oder verkleinern. Alle HDInsight-Cluster bieten die Möglichkeit, die Anzahl der Knoten im Cluster sogar während der Verarbeitung von Daten zu ändern.
 
-> [AZURE.NOTE]Um neue Knoten zu nutzen, die über eine Skalierung hinzugefügt wurden, müssen Sie Topologien neu ausrichten, die vor dem Vergrößern des Clusters gestartet wurden.
+> [AZURE.NOTE] Um neue Knoten zu nutzen, die über eine Skalierung hinzugefügt wurden, müssen Sie Topologien neu ausrichten, die vor dem Vergrößern des Clusters gestartet wurden.
 
 ###Support
 
@@ -137,7 +137,7 @@ Apache Storm verarbeitet **Topologien** anstelle der MapReduce-Aufträge, die Si
 
 * **Spout**: Konsumiert Daten aus einer Datenquelle und gibt einen oder mehrere **Datenströme** aus.
 
-	> [AZURE.NOTE]Oft werden die Daten aus einer Warteschlange wie z. B. Kafka, Azure Service Bus-Warteschlangen oder Event Hubs gelesen. Die Warteschlange sorgt dafür, dass die Daten bei einem Ausfall in persistenter Form vorliegen.
+	> [AZURE.NOTE] Oft werden die Daten aus einer Warteschlange wie z. B. Kafka, Azure Service Bus-Warteschlangen oder Event Hubs gelesen. Die Warteschlange sorgt dafür, dass die Daten bei einem Ausfall in persistenter Form vorliegen.
 
 * **Bolt**: Konsumiert **Datenströme**, verarbeitet **Tupel** und kann **Datenströme** ausgeben. Bolts sind außerdem dafür verantwortlich, Daten in externe Speicher zu schreiben, z. B. eine Warteschlange, HDInsight, HBase, Blobs oder andere Datenspeicher.
 
@@ -219,4 +219,4 @@ Weitere Informationen zu Lösungen für Echtzeitanalysen mit Apache Storm in HDI
 [apachetutorial]: https://storm.incubator.apache.org/documentation/Tutorial.html
 [gettingstarted]: hdinsight-apache-storm-tutorial-get-started-linux.md
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0302_2016-->

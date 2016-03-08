@@ -12,8 +12,8 @@
 	ms.workload="identity"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="article"
-	ms.date="12/22/2015"
+	ms.topic="hero-article"
+	ms.date="02/25/2016"
 	ms.author="dastrock"/>
 
 # Azure Active Directory B2C-Vorschau: Anwendungstypen
@@ -130,4 +130,4 @@ Viele Architekturen umfassen eine Web-API, von der eine andere Downstream-Web-AP
 
 Dieses Szenario der verketteten Web-API kann mithilfe der Berechtigung für Anmeldeinformationen über den OAuth 2.0-JWT-Bearer unterstützt werden, auch bekannt als „Im Auftrag von“-Ablauf. Der „Im Auftrag von“-Ablauf ist in der Vorschau von Azure AD B2C derzeit noch nicht implementiert.
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

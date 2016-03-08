@@ -1,11 +1,11 @@
 <properties
 	pageTitle="Übersicht über Hybridverbindungen | Microsoft Azure"
-	description="Erfahren Sie mehr zu Hybridverbindungen, unter anderem zu den Aspekten Sicherheit, TCP-Ports und unterstützte Konfigurationen. MABS, WABS."
+	description="Erfahren Sie mehr zu Hybridverbindungen, Sicherheit, TCP-Ports und unterstützten Konfigurationen. MABS, WABS."
 	services="biztalk-services"
 	documentationCenter=""
 	authors="MandiOhlinger"
-	manager="dwrede"
-	editor="cgronlun"/>
+	manager="erikre"
+	editor=""/>
 
 <tags
 	ms.service="biztalk-services"
@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="12/01/2015"
+	ms.date="02/29/2016"
 	ms.author="mandia"/>
 
 
 # Überblick über Hybridverbindungen
-In diesem Artikel werden Hybridverbindungen vorgestellt und die unterstützten Konfigurationen sowie die erforderlichen TCP-Ports aufgeführt.
+Hier werden Hybridverbindungen vorgestellt und die unterstützten Konfigurationen sowie die erforderlichen TCP-Ports aufgeführt.
 
 
 ## Was ist eine Hybridverbindung
@@ -35,7 +35,7 @@ Zu den Vorteilen von Hybridverbindungen zählen:
 - Anwendungen, die Hybridverbindungen verwenden, greifen nur auf die spezifische lokale Ressource zu, die über die Hybridverbindung veröffentlicht wurde.
 - Es sind Verbindungen zu allen lokalen Ressourcen möglich, die einen statischen TCP-Port verwenden, inklusive SQL Server, MySQL, HTTP Web-APIs und die meisten benutzerdefinierten Webdienste.
 
-	> [AZURE.NOTE]TCP-basierte Dienste, die dynamische Ports verwenden (wie passiver oder erweiterter passiver FTP-Modus) werden derzeit nicht unterstützt.
+	> [AZURE.NOTE] TCP-basierte Dienste, die dynamische Ports verwenden (wie passiver oder erweiterter passiver FTP-Modus) werden derzeit nicht unterstützt.
 
 - Sie können zusammen mit allen Frameworks verwendet werden, die von Web-Apps (.NET, PHP, Java, Python, Node.js) und Mobile Apps (Node.js, .NET) unterstützt werden.
 - Web-Apps und Mobile Apps können auf lokale Ressourcen genauso zugreifen, als ob sich die Web-App oder die mobile Apps im lokalen Netzwerk befände. So kann z. B. die lokal verwendete Verbindungszeichenfolge auch in Azure verwendet werden.
@@ -84,14 +84,14 @@ Die folgenden TCP-Ports werden von Hybridverbindungen verwendet:
 Port | Grund
 --- | ---
 9350 - 9354 | Diese Ports werden für die Datenübertragung verwendet. Der Service Bus Relay-Manager prüft Port 9350, um festzustellen, ob die TCP-Konnektivität verfügbar ist. Wenn sie verfügbar ist, wird davon ausgegangen, dass Port 9352 ebenfalls verfügbar ist. Der Datenverkehr geht über Port 9352. <br/><br/>Ausgehende Verbindungen auf diese Ports zulassen.
-5671 | Wenn Port 9352 für den Datenverkehr verwendet wird, wird Port 5671 als Steuerungskanal verwendet. <br/><br/>Ausgehende Verbindungen auf diesen Port zulassen.
+5671 | Wenn Port 9352 für den Datenverkehr verwendet wird, wird Port 5671 als Steuerungskanal verwendet. <br/><br/>Ausgehende Verbindungen auf diesen Port zulassen.
 80, 443 | Diese Ports werden für einige Datenanfragen in Azure verwendet. Wenn die Ports 9352 und 5671 nicht brauchbar sind, *dann* sind die Ports 80 und 443 die Alternative für die Datenübertragung und den Steuerungskanal.<br/><br/>Lassen Sie ausgehende Verbindungen auf diesen Ports zu.<br/><br/>** Hinweis ** Sie sollten diese alternativen Ports nicht anstelle der anderen TCP-Ports verwenden. HTTP/WebSocket wird als Protokoll anstelle des systemeigenen TCP für Datenkanäle verwendet. Dies könnte zu einer niedrigeren Leistung führen.
 
 
 
 ## Nächste Schritte
 
-[Erstellen und Verwalten von Hybridverbindungen](integration-hybrid-connection-create-manage.md)<br/> [Verbinden einer Azure-Website mit einer lokalen Ressource](../web-sites-hybrid-connection-get-started.md)<br/> [Verbinden mit einem lokalen SQL Server über Azure-Web-Apps](../web-sites-hybrid-connection-connect-on-premises-sql-server.md)<br/> [Azure Mobile Services und Hybridverbindungen](../mobile-services-dotnet-backend-hybrid-connections-get-started.md)
+[Erstellen und Verwalten von Hybridverbindungen](integration-hybrid-connection-create-manage.md)<br/> [Verbinden einer Azure-Website mit einer lokalen Ressource](../app-service-web/web-sites-hybrid-connection-get-started.md)<br/> [Verbinden mit einem lokalen SQL Server über Azure-Web-Apps](../app-service-web/web-sites-hybrid-connection-connect-on-premises-sql-server.md)<br/> [Azure Mobile Services und Hybridverbindungen](../mobile-services/mobile-services-dotnet-backend-hybrid-connections-get-started.md)
 
 
 ## Weitere Informationen
@@ -103,4 +103,4 @@ Port | Grund
 [HCOnPremSetup]: ./media/integration-hybrid-connection-overview/WABS_HybridConnectionOnPremSetup.png
 [HCManageConnection]: ./media/integration-hybrid-connection-overview/WABS_HybridConnectionManageConn.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0302_2016-->

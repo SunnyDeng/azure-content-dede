@@ -12,8 +12,8 @@
 	ms.workload="identity"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="article"
-	ms.date="01/28/2016"
+	ms.topic="get-started-article"
+	ms.date="02/25/2016"
 	ms.author="swkrish"/>
 
 # Azure Active Directory B2C-Vorschau: Erstellen eines Azure AD B2C-Mandanten
@@ -74,4 +74,4 @@ Führen Sie die folgenden Schritte aus, um einen neuen Azure AD B2C-Mandanten zu
 
 Informationen zum Registrieren einer Anwendung in Azure AD B2C und Erstellen einer Schnellstartanwendung finden Sie unter [Azure Active Directory B2C-Vorschau: Registrieren der Anwendung](active-directory-b2c-app-registration.md).
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

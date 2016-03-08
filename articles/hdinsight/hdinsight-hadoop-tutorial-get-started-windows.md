@@ -15,7 +15,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="11/13/2015"
+   ms.date="02/25/2016"
    ms.author="nitinme"/>
 
 
@@ -44,11 +44,11 @@ Im Rahmen der generellen Verfügbarkeit von Azure HDInsight hat Microsoft zudem 
 Bevor Sie mit diesem Lernprogramm für Hadoop unter Windows beginnen, benötigten Sie Folgendes:
 
 - **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
-- **Einen Computer** mit Office 2013 Professional Plus, Office 365 Pro Plus, Excel 2013 Standalone oder Office 2010 Professional Plus.
+- **Einen Computer** mit Office 2013 Professional Plus, Office 365 Pro Plus, Excel 2013 Standalone oder Office 2010 Professional Plus.
 
 ##Erstellen von Hadoop-Clusters
 
-Beim Erstellen eines Clusters werden Azure-Computeressourcen erstellt, die Hadoop und verwandte Anwendungen enthalten. In diesem Abschnitt erstellen Sie einen HDInsight-Cluster der Version 3.2. Sie können auch Hadoop-Cluster für andere Versionen erstellen. Anweisungen finden Sie unter [Erstellen von HDInsight-Clustern mithilfe benutzerdefinierter Optionen][hdinsight-provision]. Informationen zu den verschiedenen HDInsight-Versionen und ihren SLAs finden Sie unter [HDInsight-Komponentenversionen](hdinsight-component-versioning.md).
+Beim Erstellen eines Clusters werden Azure-Computeressourcen erstellt, die Hadoop und verwandte Anwendungen enthalten. In diesem Abschnitt erstellen Sie einen HDInsight-Cluster der Version 3.2. Sie können auch Hadoop-Cluster für andere Versionen erstellen. Anweisungen finden Sie unter [Erstellen von HDInsight-Clustern mithilfe benutzerdefinierter Optionen][hdinsight-provision]. Informationen zu den verschiedenen HDInsight-Versionen und ihren SLAs finden Sie unter [HDInsight-Komponentenversionen](hdinsight-component-versioning.md).
 
 
 **So erstellen Sie einen Hadoop-Cluster**
@@ -81,7 +81,7 @@ Beim Erstellen eines Clusters werden Azure-Computeressourcen erstellt, die Hadoo
 	| ------------------ | --------------------- |
 	| ![Erstellungsanzeige im Startmenü](./media/hdinsight-hadoop-tutorial-get-started-windows/provisioning.png) | ![Kachel für einen erstellten Cluster](./media/hdinsight-hadoop-tutorial-get-started-windows/provisioned.png) |
 
-	> [AZURE.NOTE] Die Erstellung des Clusters dauert in der Regel ca. 15 Minuten. Sie können den Status des Erstellungsprozesses auf der Kachel im Startmenü oder im linken Bereich der Seite unter **Benachrichtigungen** überprüfen.
+	> [AZURE.NOTE] Die Erstellung des Clusters dauert in der Regel ca. 15 Minuten. Sie können den Status des Erstellungsprozesses auf der Kachel im Startmenü oder im linken Bereich der Seite unter **Benachrichtigungen** überprüfen.
 
 10. Klicken Sie nach Abschluss der Erstellung im Startmenü auf die Kachel für den Cluster, um das Clusterblatt zu öffnen.
 
@@ -109,7 +109,7 @@ Nachdem Sie nun einen HDInsight-Cluster erstellt haben, ist der nächste Schritt
 
 	![Im Abfragebereich des Hive-Editors eingegebene Hive-Abfrage.][img-hdi-dashboard-query-select]
 
-4. Klicken Sie auf **Senden**. Die Ausgabe der Ergebnisse dauert einen Moment. Der Bildschirm wird alle 30 Sekunden aktualisiert. Sie können auch auf **Aktualisieren** klicken.
+4. Klicken Sie auf **Senden**. Die Ausgabe der Ergebnisse dauert einen Moment. Der Bildschirm wird alle 30 Sekunden aktualisiert. Sie können auch auf **Aktualisieren** klicken.
 
     ![Ergebnisse einer Hive-Abfrage werden am unteren Rand des Clusterdashboards aufgeführt.][img-hdi-dashboard-query-select-result]
 
@@ -251,4 +251,4 @@ In diesem Hadoop-Tutorial haben Sie erfahren, wie ein Hadoop-Cluster unter Windo
 [image-hdi-gettingstarted-powerquery-importdata2]: ./media/hdinsight-hadoop-tutorial-get-started-windows/HDI.GettingStarted.PowerQuery.ImportData2.png
  
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0302_2016-->

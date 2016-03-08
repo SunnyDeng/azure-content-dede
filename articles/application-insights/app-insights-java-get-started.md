@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Erste Schritte mit Application Insights in einem Java-Webprojekt | Microsoft Azure"
+	pageTitle="Java-Web-App-Analyse mit Application Insights | Microsoft Azure"
 	description="Überwachen der Leistung und Nutzung Ihrer Java-Website mit Application Insights"
 	services="application-insights"
     documentationCenter="java"
@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="01/24/2016"
+	ms.date="03/02/2016"
 	ms.author="awills"/>
 
 # Erste Schritte mit Application Insights in einem Java-Webprojekt
@@ -35,7 +35,7 @@ Sie benötigen Folgendes:
 *Wenn Sie eine Web-App haben, die bereits aktiv ist, könnten Sie das alternative Verfahren nutzen, [um das SDK zur Laufzeit auf dem Webserver hinzuzufügen](app-insights-java-live.md). Diese Alternative vermeidet das Neuerstellen des Codes, jedoch erhalten Sie nicht die Möglichkeit, Code schreiben, um die Benutzeraktivität nachzuverfolgen.*
 
 
-## 1. Abrufen eines Application Insights-Instrumentationsschlüssels
+## 1\. Abrufen eines Application Insights-Instrumentationsschlüssels
 
 1. Melden Sie sich beim [Microsoft Azure-Portal](https://portal.azure.com) an.
 2. Erstellen Sie eine neue Application Insights-Ressource.
@@ -48,11 +48,11 @@ Sie benötigen Folgendes:
 
     ![Klicken Sie in der Übersicht über neue Ressourcen auf "Eigenschaften", und kopieren Sie den Instrumentationsschlüssel](./media/app-insights-java-get-started/03-key.png)
 
-## 2. Hinzufügen des Application Insights SDK für Java zu Ihrem Projekt
+## 2\. Hinzufügen des Application Insights SDK für Java zu Ihrem Projekt
 
 *Wählen Sie die geeignete Methode für Ihr Projekt.*
 
-#### Wenn Sie ein dynamisches Webprojekt in Eclipse erstellen...
+#### Wenn Sie Eclipse zum Erstellen eines Maven-Projekts oder eines dynamischen Webprojekts verwenden,...
 
 Verwenden Sie das [Application Insights SDK für Java-Plug-In][eclipse].
 
@@ -80,7 +80,7 @@ Aktualisieren Sie dann die Projektabhängigkeiten, damit die Binärdateien herun
     </dependencies>
 
 
-* *Build- oder Prüfsummenvalidierungsfehler?* Versuchen Sie es mit einer bestimmten Version, z. B.: `<version>1.0.n</version>`. Sie finden die neueste Version in den [SDK-Versionshinweisen](app-insights-release-notes-java.md) oder in unseren [Maven-Artefakten](http://search.maven.org/#search%7Cga%7C1%7Capplicationinsights).
+* *Build- oder Prüfsummenvalidierungsfehler?* Versuchen Sie es mit einer bestimmten Version, z. B.: `<version>1.0.n</version>`. Sie finden die neueste Version in den [SDK-Versionshinweisen](https://github.com/Microsoft/ApplicationInsights-Java#release-notes) oder in unseren [Maven-Artefakten](http://search.maven.org/#search%7Cga%7C1%7Capplicationinsights).
 * *Sie müssen auf ein neues SDK aktualisieren?* Aktualisieren Sie die Abhängigkeiten des Projekts.
 
 #### Wenn Sie Gradle verwenden...
@@ -98,7 +98,7 @@ Aktualisieren Sie dann die Projektabhängigkeiten, damit die Binärdateien herun
       // or applicationinsights-core for bare API
     }
 
-* *Build- oder Prüfsummenvalidierungsfehler? Versuchen Sie es mit einer bestimmten Version, z. B.:* `version:'1.0.n'`. *Sie finden die neueste Version in den [SDK-Versionshinweisen](app-insights-release-notes-java.md).*
+* *Build- oder Prüfsummenvalidierungsfehler? Versuchen Sie es mit einer bestimmten Version, z. B.: * `version:'1.0.n'`. *Sie finden die neueste Version in den [SDK-Versionshinweisen](https://github.com/Microsoft/ApplicationInsights-Java#release-notes).*
 * *So aktualisieren Sie auf ein neues SDK*
  * Aktualisieren Sie die Abhängigkeiten des Projekts.
 
@@ -118,11 +118,11 @@ Fügen Sie das SDK manuell hinzu:
 
 * *So aktualisieren Sie das SDK, wenn wir Änderungen veröffentlichen*
  * Laden Sie das aktuelle [Application Insights-SDK für Java](https://azuredownloads.blob.core.windows.net/applicationinsights/sdk.zip) herunter, und ersetzen Sie die alte Version.
- * Änderungen werden in den [SDK-Versionshinweisen](app-insights-release-notes-java.md) beschrieben.
+ * Änderungen werden in den [SDK-Versionshinweisen](https://github.com/Microsoft/ApplicationInsights-Java#release-notes) beschrieben.
 
 
 
-## 3. Hinzufügen der Datei „ApplicationInsights.xml“
+## 3\. Hinzufügen der Datei „ApplicationInsights.xml“
 
 Fügen Sie dem Ressourcenordner in Ihrem Projekt die Datei „ApplicationInsights.xml“ hinzu, oder stellen Sie sicher, dass sie dem Bereitstellungsklassenpfad Ihres Projekts hinzugefügt wird. Kopieren Sie den folgenden XML-Code in die Datei.
 
@@ -163,7 +163,7 @@ Fügen Sie den Instrumentationsschlüssel ein, den Sie aus dem Azure-Portal abge
 * Die Komponente "HTTP-Anforderung" ist optional. Sie sendet automatisch Telemetriedaten zu Anforderungen und Antwortzeiten zum Portal.
 * Die Korrelation von Ereignissen ist eine Ergänzung der HTTP-Anforderungskomponente. Sie weist den einzelnen Anforderungen, die vom Server empfangen wurden, einen Bezeichner zu und fügt diesen als Eigenschaft 'Operation.Id' jedem Telemetrieelement hinzu. Diese Eigenschaft ermöglicht das Korrelieren der jeder Anforderung zugeordneten Telemetriedaten, indem in [Diagnosesuche][diagnostic] ein Filter festgelegt wird.
 
-## 4. Hinzufügen eines HTTP-Filters
+## 4\. Hinzufügen eines HTTP-Filters
 
 Der letzte Konfigurationsschritt ermöglicht der HTTP-Anforderungskomponente das Protokollieren jeder Webanforderung. (Nicht erforderlich, wenn nur die bloße API wünschen.)
 
@@ -208,11 +208,11 @@ Fügen Sie dieses Element der Struts-Konfigurationsdatei (die in der Regel "stru
 
 
 
-## 5. Ausführen der Anwendung
+## 5\. Ausführen der Anwendung
 
 Führen Sie sie entweder im Debugmodus auf dem Entwicklungscomputer aus, oder veröffentlichen Sie sie auf Ihrem Server.
 
-## 6. Anzeigen Ihrer Telemetriedaten in Application Insights
+## 6\. Anzeigen Ihrer Telemetriedaten in Application Insights
 
 Kehren Sie zur Application Insights-Ressource im [Microsoft Azure-Portal](https://portal.azure.com) zurück.
 
@@ -245,7 +245,7 @@ Application Insights setzt voraus, dass das Format von HTTP-Anforderungen für M
 Dadurch werden aussagekräftige Aggregationen von Anforderungen ermöglicht, z. B. die Anzahl der Anforderungen und die durchschnittliche Ausführungszeit von Anforderungen.
 
 
-## 5. Installieren der App auf dem Server
+## 5\. Installieren der App auf dem Server
 
 Jetzt veröffentlichen Sie Ihre App auf dem Server, erlauben deren Benutzung und sehen sich an, wie die Telemetrie im Portal angezeigt wird.
 
@@ -398,4 +398,4 @@ Weitere Informationen finden Sie im [Java Developer Center](/develop/java/).
 [metrics]: app-insights-metrics-explorer.md
 [usage]: app-insights-web-track-usage.md
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0302_2016-->

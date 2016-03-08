@@ -12,8 +12,8 @@
     ms.workload="compute"
     ms.tgt_pltfrm="na"
     ms.devlang="na"
-    ms.topic="article"
-    ms.date="12/05/2015"
+    ms.topic="hero-article"
+    ms.date="02/25/2016"
     ms.author="mbaldwin" />
 
 
@@ -33,6 +33,6 @@ Sie können nun in Echtzeit auf die Anwendungen in Azure RemoteApp zugreifen.
 
 Ihre Meinung zählt. Am Ende jeder Sitzung wird ein Dialogfeld angezeigt, in dem Sie Feedback geben können. Wenn Sie eine Minute Zeit haben, teilen Sie uns bitte Ihre Gedanken mit, und sagen Sie uns, ob Microsoft sich wegen weiterer Informationen an Sie wenden darf.
 
->[AZURE.NOTE]Da es sich um eine kontrollierte Umgebung zu Demonstrationszwecken handelt, ist der externe Internetzugriff von den veröffentlichten Demonstrationsanwendungen nicht aktiviert. Deshalb stehen Dienste wie OneDrive nicht zur Verfügung. Außerdem sind die gemeinsame Nutzung der Zwischenablage (Kopieren und Einfügen) sowie die USB- und Druckerumleitung deaktiviert.
+>[AZURE.NOTE] Da es sich um eine kontrollierte Umgebung zu Demonstrationszwecken handelt, ist der externe Internetzugriff von den veröffentlichten Demonstrationsanwendungen nicht aktiviert. Deshalb stehen Dienste wie OneDrive nicht zur Verfügung. Außerdem sind die gemeinsame Nutzung der Zwischenablage (Kopieren und Einfügen) sowie die USB- und Druckerumleitung deaktiviert.
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows-store"
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
-	ms.date="09/22/2015"
+	ms.date="02/29/2016"
 	ms.author="piyushjo" />
 
 # Erste Schritte mit Azure Mobile Engagement für Windows Universal-Apps
@@ -33,7 +33,7 @@ Für dieses Tutorial ist Folgendes erforderlich:
 + Visual Studio 2013
 + NuGet-Paket [MicrosoftAzure.MobileEngagement]
 
-> [AZURE.IMPORTANT]Das Abschließen dieses Tutorial ist eine Voraussetzung für alle anderen Mobile Engagement-Tutorial für Windows Universal-Apps. Sie benötigen ein aktives Azure-Konto, um es abzuschließen. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-DE%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F" target="_blank">Kostenlose Azure-Testversion</a>.
+> [AZURE.IMPORTANT] Das Abschließen dieses Tutorial ist eine Voraussetzung für alle anderen Mobile Engagement-Tutorial für Windows Universal-Apps. Sie benötigen ein aktives Azure-Konto, um es abzuschließen. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-DE%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F" target="_blank">Kostenlose Azure-Testversion</a>.
 
 ##<a id="setup-azme"></a>Einrichten von Mobile Engagement für Ihre Windows Universal-App
 
@@ -71,7 +71,7 @@ Sie haben nun ein neues Projekt für eine Windows Universal-App erstellt, in die
 
 	![][3]
 
-	>[AZURE.TIP]Wenn Ihre App sowohl Windows und als auch Windows Phone als Plattform vorsieht, sollten Sie dennoch zwei Mobile Engagement-Anwendungen erstellen – eine für jede unterstützte Plattform. Dadurch wird sichergestellt, dass Sie eine korrekte Aufteilung der Zielgruppe erstellen und entsprechend gezielte Benachrichtigungen für jede Plattform senden können.
+	>[AZURE.TIP] Wenn Ihre App sowohl Windows und als auch Windows Phone als Plattform vorsieht, sollten Sie dennoch zwei Mobile Engagement-Anwendungen erstellen – eine für jede unterstützte Plattform. Dadurch wird sichergestellt, dass Sie eine korrekte Aufteilung der Zielgruppe erstellen und entsprechend gezielte Benachrichtigungen für jede Plattform senden können.
 
 4. In der Datei `App.xaml.cs`:
 
@@ -126,7 +126,7 @@ Um mit dem Senden von Daten zu beginnen und sicherzustellen, dass die Benutzer a
 
 	b. Ersetzen Sie **Page** im XML-Tagnamen durch **engagement:EngagementPageOverlay**.
 	
-> [AZURE.IMPORTANT]Wenn Ihre Seite die `OnNavigatedTo`-Methode überschreibt, rufen Sie unbedingt `base.OnNavigatedTo(e)` auf. Andernfalls wird die Aktivität nicht erfasst (`EngagementPage` ruft `StartActivity` innerhalb der `OnNavigatedTo`-Methode auf). Dies ist besonders wichtig in einem Windows Phone-Projekt, in dem die Standardvorlage eine `OnNavigatedTo`-Methode besitzt.
+> [AZURE.IMPORTANT] Wenn Ihre Seite die `OnNavigatedTo`-Methode überschreibt, rufen Sie unbedingt `base.OnNavigatedTo(e)` auf. Andernfalls wird die Aktivität nicht erfasst (`EngagementPage` ruft `StartActivity` innerhalb der `OnNavigatedTo`-Methode auf). Dies ist besonders wichtig in einem Windows Phone-Projekt, in dem die Standardvorlage eine `OnNavigatedTo`-Methode besitzt.
 
 ##<a id="monitor"></a>Verbinden der App mit Überwachung in Echtzeit
 
@@ -213,4 +213,4 @@ Wenn die App ausgeführt wurde, wird eine Benachrichtigung in der App angezeigt.
 [12]: ./media/mobile-engagement-windows-store-dotnet-get-started/dashboard_services_push_1.png
 [13]: ./media/mobile-engagement-windows-store-dotnet-get-started/dashboard_services_push_creds.png
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -12,7 +12,7 @@
 	ms.workload="na"
 	ms.tgt_pltfrm="dotnet"
 	ms.devlang="na"
-	ms.topic="hero-article"
+	ms.topic="get-started-article"
 	ms.date="01/26/2016"
 	ms.author="tdykstra"/>
 
@@ -30,7 +30,7 @@ In diesem Artikel lernen Sie Folgendes:
 
 Der Artikel enthält zwei Abschnitte:
 
-* Der Abschnitt [Konfigurieren der Benutzerauthentifizierung in Azure App Service](#authconfig) enthält eine allgemeine Beschreibung, wie Sie die Benutzerauthentifizierung für eine API-App konfigurieren. Sie gilt für alle Frameworks, die von App Service unterstützt werden, z. B. .NET, Node.js und Java.
+* Der Abschnitt [Konfigurieren der Benutzerauthentifizierung in Azure App Service](#authconfig) enthält eine allgemeine Beschreibung, wie Sie die Benutzerauthentifizierung für eine API-App konfigurieren. Sie gilt für alle Frameworks, die von App Service unterstützt werden, z. B. .NET, Node.js und Java.
 
 * Im [weiteren Verlauf des Artikels](#tutorialstart) werden Sie durch die Konfiguration einer .NET-Beispielanwendung geführt, die in App Service ausgeführt wird und bei der Azure Active Directory für die Benutzerauthentifizierung verwendet wird.
 
@@ -68,9 +68,9 @@ Dieser Abschnitt enthält allgemeine Anweisungen, die für alle API-Apps gelten.
 
 7. Klicken Sie auf dem Blatt **Authentifizierung/Autorisierung** auf **Speichern**.
 
-Wenn dies abgeschlossen ist, authentifiziert App Service alle API-Aufrufe, bevor sie die API-App erreichen. Die Authentifizierungsdienste funktionieren für alle Sprachen gleich, die von App Service unterstützt werden, z. B. .NET, Node.js und Java.
+Wenn dies abgeschlossen ist, authentifiziert App Service alle API-Aufrufe, bevor sie die API-App erreichen. Die Authentifizierungsdienste funktionieren für alle Sprachen gleich, die von App Service unterstützt werden, z. B. .NET, Node.js und Java.
 
-Zum Durchführen authentifizierter API-Aufrufe fügt der Aufrufer das OAuth 2.0-Bearertoken des Authentifizierungsanbieters in den Autorisierungsheader von HTTP-Anforderungen ein. Das Token kann mit dem SDK des Authentifizierungsanbieters abgerufen werden.
+Zum Durchführen authentifizierter API-Aufrufe fügt der Aufrufer das OAuth 2.0-Bearertoken des Authentifizierungsanbieters in den Autorisierungsheader von HTTP-Anforderungen ein. Das Token kann mit dem SDK des Authentifizierungsanbieters abgerufen werden.
 
 ## <a id="tutorialstart"></a> Fortsetzen der Erste-Schritte-Tutorials für .NET
 
@@ -315,10 +315,10 @@ Nehmen Sie am Projekt ToDoListAPI die folgenden Änderungen vor.
 
 Die beiden Web-API-Projekte wurden erstellt, indem die Projektvorlage **Azure-API-App** verwendet und der standardmäßige Values-Controller durch einen ToDoList-Controller ersetzt wurde.
 
-Weitere Informationen zum Erstellen einer AngularJS-Single-Page-Anwendung mit einem Web-API 2-Back-End finden Sie unter [Hands On Lab: Build a Single Page Application (SPA) with ASP.NET Web API and Angular.js](http://www.asp.net/web-api/overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs) (Hands On Lab: Erstellen einer Single-Page-Anwendung (SPA) mit ASP.NET-Web-API und „Angular.js“). Informationen zum Hinzufügen von Azure AD-Authentifizierungscode finden Sie unter den folgenden Ressourcen:
+Weitere Informationen zum Erstellen einer AngularJS-Single-Page-Anwendung mit einem Web-API 2-Back-End finden Sie unter [Hands On Lab: Build a Single Page Application (SPA) with ASP.NET Web API and Angular.js](http://www.asp.net/web-api/overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs) (Hands On Lab: Erstellen einer Single-Page-Anwendung (SPA) mit ASP.NET-Web-API und „Angular.js“). Informationen zum Hinzufügen von Azure AD-Authentifizierungscode finden Sie unter den folgenden Ressourcen:
 
 * [Schützen von einseitigen AngularJS-Apps mit Azure AD](../active-directory/active-directory-devquickstarts-angular.md).
-* [Introducing ADAL JS v1 (Einführung in ADAL JS v1)](http://www.cloudidentity.com/blog/2015/02/19/introducing-adal-js-v1/)
+* [Introducing ADAL JS v1 (Einführung in ADAL JS v1)](http://www.cloudidentity.com/blog/2015/02/19/introducing-adal-js-v1/)
 
 ## Problembehandlung
 
@@ -337,4 +337,4 @@ Wenn Sie die Anwendung ohne Authentifizierung erfolgreich ausgeführt haben und 
 
 In diesem Tutorial haben Sie gelernt, wie Sie die App Service-Authentifizierung für eine API-App verwenden und die API-App mit der ADAL-JS-Bibliothek aufrufen. Im nächsten Tutorial geht es um das [Schützen des Zugriffs auf Ihre API-App für Dienst-zu-Dienst-Szenarien](app-service-api-dotnet-service-principal-auth.md).
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0302_2016-->

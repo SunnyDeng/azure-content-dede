@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Application Insights für ASP.NET" 
-	description="Analysieren Sie die Leistung, Verfügbarkeit und Nutzungsmuster Ihrer lokalen oder Microsoft Azure-Webanwendung durch die Verwendung von Application Insights." 
+	pageTitle="Web-App-Analyse für ASP.NET mit Application Insights" 
+	description="Leistung, Verfügbarkeit und Nutzungsanalyse für Ihre lokal oder in Azure gehosteten ASP.NET-Website." 
 	services="application-insights" 
     documentationCenter=".net"
 	authors="alancameronwills" 
@@ -11,8 +11,8 @@
 	ms.workload="tbd" 
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="01/26/2016" 
+	ms.topic="get-started-article" 
+	ms.date="02/28/2016" 
 	ms.author="awills"/>
 
 
@@ -21,7 +21,7 @@
 
 [AZURE.INCLUDE [app-insights-selector-get-started-dotnet](../../includes/app-insights-selector-get-started-dotnet.md)]
 
-Das Application Insights SDK sendet Telemetriedaten über Ihre live-Web-Anwendung zum Azure-Portal, wo Sie sich anmelden und Diagramme zur Leistung und Nutzung Ihrer App sehen können.
+Das Application Insights SDK sendet Analysetelemetriedaten über Ihre Live-Webanwendung an das Azure-Portal, wo Sie sich anmelden und Diagramme zur Leistung und Nutzung Ihrer App anzeigen können.
 
 ![Beispiel für Leistungsüberwachungsdiagramm](./media/app-insights-asp-net/10-perf.png)
 
@@ -32,11 +32,11 @@ Ebenso werden Sie bestimmte Anforderungen, Ausnahmen und Protokollereignisse unt
 Erforderlich:
 
 * Ein Abonnement für [Microsoft Azure](http://azure.com) Wenn Ihr Team oder Ihre Organisation über ein Azure-Abonnement verfügt, kann der Besitzer Sie mit Ihrem [Microsoft-Konto](http://live.com) hinzufügen.
-* Visual Studio 2013, Update 3 oder höher.
+* Visual Studio 2013, Update 3 oder höher.
 
 ## <a name="ide"></a> Hinzufügen von Application Insights zu Ihrem Projekt in Visual Studio
 
-#### Falls es sich um ein neues Projekt handelt …
+#### Falls es sich um ein neues Projekt handelt …
 
 Wenn Sie in Visual Studio ein neues Projekt erstellen, achten Sie darauf, dass Application Insights ausgewählt ist.
 
@@ -46,7 +46,7 @@ Wenn Sie in Visual Studio ein neues Projekt erstellen, achten Sie darauf, dass A
 Wählen Sie ein Konto mit einer Azure-Anmeldung aus. Sie werden möglicherweise aufgefordert, Ihre Anmeldeinformationen erneut einzugeben. (Oder, wenn Sie sich nicht anmelden, wird der Code des SDK hinzugefügt, den Sie später konfigurieren können.)
 
 
-#### … oder falls es sich um ein vorhandenes Projekt handelt
+#### … oder falls es sich um ein vorhandenes Projekt handelt
 
 Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, und klicken Sie auf **Application Insights hinzufügen** oder **Application Insights konfigurieren**.
 
@@ -68,13 +68,13 @@ Mit dem Befehl wurden die folgenden Schritte ausgeführt (die Sie stattdessen au
 2. Er erstellt eine Application Insights-Ressource im [Azure-Portal][portal]. Hier werden Ihre Daten angezeigt. Er ruft den *Instrumentationsschlüssel* ab, der die Ressource identifiziert.
 3. Fügt den Instrumentationsschlüssel in `ApplicationInsights.config` ein, damit das SDK Telemetriedaten an das Portal senden kann.
 
-Wenn Sie sich anfänglich nicht bei Azure anmelden, wird das SDK installiert, ohne dass es eine Verbindung mit einer Ressource herstellt. Sie können, während Sie debuggen, die Application Insights-Telemetriedaten im Diagnosehub von Visual Studio anzeigen und durchsuchen. Die anderen Schritte können Sie später abschließen.
+Wenn Sie sich anfänglich nicht bei Azure anmelden, wird das SDK installiert, ohne dass es eine Verbindung mit einer Ressource herstellt. Sie können während des Debuggens die Application Insights-Telemetriedaten im Suchfenster von Visual Studio anzeigen und durchsuchen. Die anderen Schritte können Sie später abschließen.
 
 ## <a name="run"></a> Ausführen des Projekts
 
 Starten Sie Ihre Anwendung mit F5, und probieren Sie es aus: Öffnen Sie verschiedene Seiten, um einige Telemetriedaten zu generieren.
 
-In Visual Studio sehen Sie eine Anzahl der gesendeten Ereignisse.
+In Visual Studio sehen Sie eine Anzahl der protokollierten Ereignisse.
 
 ![In Visual Studio wird die Schaltfläche „Application Insights“ während des Debuggens angezeigt.](./media/app-insights-asp-net/appinsights-09eventcount.png)
 
@@ -83,7 +83,7 @@ Klicken Sie auf diese Schaltfläche, um die Diagnosesuche zu öffnen.
 
 ### Diagnosesuche
 
-Das Suchfenster zeigt Ereignisse an, die an das Application Insights-Portal gesendet wurden. (Im Portal gibt es eine entsprechende Suchfunktion.)
+Im Suchfenster werden die protokollierten Ereignisse angezeigt. (Wenn Sie sich bei der Einrichtung von Application Insights bei Azure angemeldet haben, können Sie die gleichen Ereignisse im Portal durchsuchen.)
 
 ![Klicken Sie mit der rechten Maustaste auf das Projekt, und wählen Sie „Application Insights > Durchsuchen“ aus.](./media/app-insights-asp-net/34.png)
 
@@ -105,6 +105,8 @@ Klicken Sie auf eine Ausnahme, um eine Stapelüberwachung zu erhalten. Wenn der 
 Öffnen Sie die Application Insights-Ressource im [Azure-Portal][portal].
 
 ![Klicken Sie mit der rechten Maustaste auf Ihr Projekt, und öffnen Sie das Azure-Portal.](./media/app-insights-asp-net/appinsights-04-openPortal.png)
+
+Wenn Sie sich beim Hinzufügen von Application Insights zu dieser App nicht bei Azure angemeldet haben, tun Sie dies jetzt. Wählen Sie **Application Insights konfigurieren**. Dadurch können Sie nach der Bereitstellung Ihrer Live-App weiterhin Telemetriedaten aus dieser App anzeigen. Die Telemetriedaten werden im Application Insights-Portal angezeigt.
 
 ### Metriken: Aggregierte Daten
 
@@ -163,7 +165,7 @@ Dies ist besonders hilfreich, wenn Sie über [benutzerdefinierte Telemetriedaten
 
 * *Zunächst habe ich Application Insights vollständig für das Senden von Telemetriedaten an das Portal konfiguriert. Aber nun möchte ich die Telemetriedaten nur in Visual Studio anzeigen.*
 
-    Kommentieren Sie die Zeile `<instrumentationkey>...` aus „applicationinsights.config“ aus. Wenn Sie bereit sind, Telemetriedaten erneut an das Portal zu senden, heben Sie die Auskommentierung auf.
+    Kommentieren Sie die Zeile `<instrumentationkey>...` aus „ApplicationInsights.config“ aus. Wenn Sie bereit sind, Telemetriedaten erneut an das Portal zu senden, heben Sie die Auskommentierung auf.
 
 
 
@@ -212,4 +214,4 @@ Wenn Sie Anpassungen an der Datei "ApplicationInsights.config" vorgenommen haben
 
  
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0302_2016-->
