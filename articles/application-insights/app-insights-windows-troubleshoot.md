@@ -109,7 +109,7 @@ Informationen hierzu finden Sie unter [Datenaufbewahrung und Datenschutz][data].
 
 ## Abrufen von Hilfe
 
-* [Stapelüberlauf](http://stackoverflow.com/questions/tagged/ms-application-insights)
+* [Stack Overflow](http://stackoverflow.com/questions/tagged/ms-application-insights)
 
 <!--Link references-->
 
