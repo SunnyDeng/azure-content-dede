@@ -392,4 +392,4 @@ Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gem
 [REST-API für Azure-Speicherdienste]: https://msdn.microsoft.com/library/azure/dd179355.aspx
 [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
 
-<!---HONumber=AcomDC_0218_2016-->
+<!----HONumber=AcomDC_0218_2016-->

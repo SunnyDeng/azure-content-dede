@@ -331,4 +331,4 @@ Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gem
   [Blog des Azure-Speicherteams]: http://blogs.msdn.com/b/windowsazurestorage/
   [Erstellen und Bereitstellen einer Node.js-Anwendung in Azure mit WebMatrix]: ../app-service-web/web-sites-nodejs-use-webmatrix.md
 
-<!---HONumber=AcomDC_0218_2016-->
+<!----HONumber=AcomDC_0218_2016-->

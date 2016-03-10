@@ -216,4 +216,4 @@ Folgen Sie diesen Links, wenn Sie mehr über andere Azure-Speicher-APIs erfahren
 - [Azure Storage-Teamblog](http://blogs.msdn.com/b/windowsazurestorage/)
 - [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy.md)
 
-<!---HONumber=AcomDC_0224_2016-->
+<!----HONumber=AcomDC_0224_2016-->

@@ -414,4 +414,4 @@ Nachdem Sie sich nun mit den Grundlagen von Tabellenspeichern vertraut gemacht h
 -	[Referenz zur Speicherclientbibliothek für C++](http://azure.github.io/azure-storage-cpp)
 -	[Azure Storage-Dokumentation](https://azure.microsoft.com/documentation/services/storage/)
 
-<!---HONumber=AcomDC_0224_2016-->
+<!----HONumber=AcomDC_0224_2016-->

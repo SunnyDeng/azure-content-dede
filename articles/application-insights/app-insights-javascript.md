@@ -238,4 +238,4 @@ Möchten Sie herausfinden, wofür die Benutzer Ihre App verwenden?
 * [Benutzerdefinierte Ereignisse und Metriken](app-insights-api-custom-events-metrics.md)
 * [Erstellen-Messen-Lernen](app-insights-overview-usage.md)
 
-<!---HONumber=AcomDC_0224_2016-->
+<!----HONumber=AcomDC_0224_2016-->
