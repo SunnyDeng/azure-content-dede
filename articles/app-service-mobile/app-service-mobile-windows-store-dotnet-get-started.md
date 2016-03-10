@@ -83,4 +83,4 @@ Sobald Sie Ihr Back-End für mobile Apps konfiguriert haben, können Sie eine ne
 [Azure portal]: https://portal.azure.com/
 [Visual Studio Community 2013]: https://go.microsoft.com/fwLink/p/?LinkID=534203
 
-<!---HONumber=AcomDC_0211_2016-->
+<!----HONumber=AcomDC_0211_2016-->

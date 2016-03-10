@@ -236,4 +236,4 @@ Nachdem Sie sich nun mit den Grundlagen von Warteschlangenspeichern vertraut gem
 -	[Referenz zur Speicherclientbibliothek für C++](http://azure.github.io/azure-storage-cpp)
 -	[Azure-Speicherdokumentation](https://azure.microsoft.com/documentation/services/storage/)
 
-<!---HONumber=AcomDC_0224_2016-->
+<!----HONumber=AcomDC_0224_2016-->
