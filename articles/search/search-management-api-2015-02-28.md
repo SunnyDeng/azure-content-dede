@@ -18,7 +18,7 @@
 
 # Management-API: Version 2015-02-28
 
-Azure Search ist ein in Microsoft Azure gehosteter Cloudsuchdienst. Das vorliegende Dokument beschreibt die Version *2015-02-28** der Azure Search-Verwaltungs-REST-API. Sie wurde seitdem durch neuere Versionen ersetzt. Die neuesten Versionen finden Sie unter [Azure Search-Verwaltungs-REST-API 2015-08-19](https://msdn.microsoft.com/library/dn832684.aspx) auf MSDN.
+Azure Search ist ein in Microsoft Azure gehosteter Cloudsuchdienst. Das vorliegende Dokument beschreibt die Version *2015-02-28* der Azure Search-Verwaltungs-REST-API. Sie wurde seitdem durch neuere Versionen ersetzt. Die neuesten Versionen finden Sie unter [Azure Search-Verwaltungs-REST-API 2015-08-19](https://msdn.microsoft.com/library/dn832684.aspx) auf MSDN.
 
 ##Dienstverwaltungsvorgänge
 

@@ -81,7 +81,8 @@ Nun, da wir einen Datenstrom von Tweet-Ereignissen haben, können wir einen Stre
 	* **REGION**: Wählen Sie die Region aus, in der der Auftrag ausgeführt werden soll. Ziehen Sie es in Betracht, den Auftrag und das Event Hub in derselben Region zu platzieren, um für eine bessere Leistung zu sorgen und sicherzustellen, dass Sie nicht für die Übertragung von Daten zwischen Regionen bezahlen.
 	* **SPEICHERKONTO** – Wählen Sie das Speicherkonto, das Sie zum Speichern von Überwachungsdaten für alle Stream Analytics-Aufträge verwenden möchten, die innerhalb dieser Region ausgeführt werden. Sie haben die Möglichkeit, ein vorhandenes Speicherkonto auszuwählen oder ein neues zu erstellen.
 
-3.	Klicken Sie im linken Bereich auf **STREAM ANALYTICS**, um die Stream Analytics-Aufträge aufzulisten.![Symbol des Stream Analytics-Diensts](./media/stream-analytics-twitter-sentiment-analysis-trends/stream-analytics-service-icon.png)
+3.	Klicken Sie im linken Bereich auf **STREAM ANALYTICS**, um die Stream Analytics-Aufträge aufzulisten.
+	![Symbol des Stream Analytics-Diensts](./media/stream-analytics-twitter-sentiment-analysis-trends/stream-analytics-service-icon.png)
 
 4.	Der neue Auftrag wird mit dem Status **ERSTELLT** aufgeführt. Beachten Sie, dass die Schaltfläche **START** am unteren Seitenrand deaktiviert ist. Sie müssen die Auftragseingabe, -ausgabe und -abfrage konfigurieren, bevor Sie den Auftrag starten können.
 
