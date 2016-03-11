@@ -23,7 +23,7 @@
 Die JavaScript-API-App bietet Ihnen eine gute Möglichkeit, einfache JavaScript-Ausdrücke auszuführen, *während Ihre Logik-App ausgeführt wird*.
 
 ##Wann sollten Sie diese API-App verwenden?
-Das Hauptszenario für diese API-App ist, wenn der Lebenszyklus des Codes, den Sie schreiben, mit der Logik-App identisch sein soll und der Code in *keinem*anderen Szenario aufgerufen werden soll.
+Das Hauptszenario für diese API-App ist, wenn der Lebenszyklus des Codes, den Sie schreiben, mit der Logik-App identisch sein soll und der Code in *keinem* anderen Szenario aufgerufen werden soll.
 
 Wenn Sie jedoch einen wiederverwendbaren Codeausschnitt erstellen möchten, der einen von der Logik-App unabhängigen Lebenszyklus aufweist, sollten Sie die WebJobs-API-App verwenden, um einfache Codeausdrücke zu schreiben und über Ihre Logik-App aufzurufen.
 

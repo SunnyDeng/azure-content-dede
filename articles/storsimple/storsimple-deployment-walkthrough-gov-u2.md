@@ -243,4 +243,4 @@ Installations- und Konfigurationsanweisungen für MPIO auf einem StorSimple-Ger�
 - Verwenden des [StorSimple-Manager-Diensts](https://msdn.microsoft.com/library/azure/dn772396.aspx) für das Verwalten Ihres StorSimple-Geräts
  
 
-<!-----HONumber=AcomDC_0224_2016-->
+<!----HONumber=AcomDC_0224_2016-->

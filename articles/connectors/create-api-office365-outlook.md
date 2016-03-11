@@ -727,8 +727,7 @@ Subject, Body, To
 |Body|string|
 |Priorität|string|
 |IsHtml|Boolescher Wert|
-|To  
-|string|
+|To|string|
 
 
 
@@ -772,8 +771,7 @@ Subject, Body, To
 |Body|string|
 |Priorität|string|
 |IsHtml|Boolescher Wert|
-|To  
-|string|
+|To|string|
 
 
 
@@ -946,8 +944,7 @@ Subject, Options, To
 |Body|string|
 |Priorität|string|
 |Anlagen|array|
-|To  
-|string|
+|To|string|
 
 
 
@@ -1005,8 +1002,7 @@ Subject, Options, To
 |Body|string|
 |Priorität|string|
 |Anlagen|array|
-|To  
-|string|
+|To|string|
 
 
 
