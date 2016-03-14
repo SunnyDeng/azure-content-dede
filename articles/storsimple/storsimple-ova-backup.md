@@ -19,7 +19,7 @@
 
 ## Übersicht 
 
-Dieses Tutorial bezieht sich auf Microsoft Azure StorSimple Virtual Array (auch als „lokales virtuelles StorSimple-Gerät“ oder „virtuelles StorSimple-Gerät“ bezeichnet) mit der Version vom März 2016 (allgemeine Verfügbarkeit).
+Dieses Tutorial bezieht sich auf Microsoft Azure StorSimple Virtual Array (auch als „lokales virtuelles StorSimple-Gerät“ oder „virtuelles StorSimple-Gerät“ bezeichnet) mit der Version vom März 2016 (allgemeine Verfügbarkeit).
 
 Das StorSimple Virtual Array ist ein lokales virtuelles Cloudspeichergerät, das als Dateiserver oder iSCSI-Server konfiguriert werden kann. Es dient zum Erstellen von Sicherungen, zum Wiederherstellen aus Sicherungen und zum Durchführen eines Gerätefailovers, wenn eine Notfallwiederherstellung erforderlich ist. Wenn als Dateiserver konfiguriert ist, ermöglicht es auch die Wiederherstellung auf Elementebene. Dieses Lernprogramm beschreibt das Erstellen geplanter und manueller Sicherungen Ihres StorSimple Virtual Array mit dem klassischen Azure-Portal oder der StorSimple-Web-UI.
 

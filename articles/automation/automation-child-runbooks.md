@@ -38,7 +38,7 @@ Wenn Sie ein untergeordnetes grafisches oder PowerShell-Workflow-Runbook mit Inl
 
 ### Beispiel
 
-Im folgenden Beispiel wird ein untergeordnetes Testrunbook aufgerufen, das drei Parameter akzeptiert – ein komplexes Objekt, eine ganze Zahl und einen booleschen Wert. Die Ausgabe des untergeordneten Runbooks wird einer Variablen zugewiesen. In diesem Fall ist das untergeordnete Runbook ein PowerShell-Workflow-Runbook.
+Im folgenden Beispiel wird ein untergeordnetes Testrunbook aufgerufen, das drei Parameter akzeptiert – ein komplexes Objekt, eine ganze Zahl und einen booleschen Wert. Die Ausgabe des untergeordneten Runbooks wird einer Variablen zugewiesen. In diesem Fall ist das untergeordnete Runbook ein PowerShell-Workflow-Runbook.
 
 	$vm = Get-AzureVM –ServiceName "MyVM" –Name "MyVM"
 	$output = Test-ChildRunbook –VM $vm –RepeatCount 2 –Restart $true

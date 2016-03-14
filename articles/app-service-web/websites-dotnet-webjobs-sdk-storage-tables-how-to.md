@@ -20,7 +20,7 @@
 
 ## Übersicht
 
-Diese Anleitung enthält C#-Codebeispiele, die zeigen, wie Azure-Speichertabellen mithilfe des [WebJobs-SDK](websites-dotnet-webjobs-sdk.md) (Version 1.x) gelesen und geschrieben werden.
+Diese Anleitung enthält C#-Codebeispiele, die zeigen, wie Azure-Speichertabellen mithilfe des [WebJobs-SDK](websites-dotnet-webjobs-sdk.md) (Version 1.x) gelesen und geschrieben werden.
 
 In der Anleitung wird davon ausgegangen, dass Sie wissen, [wie ein WebJobs-Projekt in Visual Studio mit Verbindungszeichenfolgen erstellt wird, die auf Ihr Speicherkonto](websites-dotnet-webjobs-sdk-get-started.md) oder auf [mehrere Speicherkonten](https://github.com/Azure/azure-webjobs-sdk/blob/master/test/Microsoft.Azure.WebJobs.Host.EndToEndTests/MultipleStorageAccountsEndToEndTests.cs) verweisen.
 		
@@ -147,7 +147,7 @@ Weitere Informationen zur Verwendung des `CloudTable`-Objekts finden Sie unter [
 
 Informationen zur Handhabung der durch eine Warteschlangennachricht ausgelösten Tabellenverarbeitung oder zu Szenarien für das WebJobs-SDK, die nicht spezifisch für die Blobverarbeitung sind, finden Sie unter [Verwenden von Azure-Warteschlangenspeicher mit dem WebJobs-SDK](websites-dotnet-webjobs-sdk-storage-queues-how-to.md).
 
-In diesem Artikel werden u. a. die folgenden Themen behandelt:
+In diesem Artikel werden u. a. die folgenden Themen behandelt:
 
 * Asynchrone Funktionen
 * Mehrere Instanzen

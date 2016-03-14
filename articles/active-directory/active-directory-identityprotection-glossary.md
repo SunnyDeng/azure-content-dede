@@ -42,7 +42,7 @@ Ein Datensatz einer Aktivität in Azure Active Directory.
 Ein Risikoereignisstatus, der von einem Identity Protection-Benutzer manuell festgelegt wird. Er gibt an, dass das Risikoereignis untersucht und dabei ermittelt wurde, dass es fälschlicherweise als Risikoereignis eingestuft wurde.
 
 ### Identität	
-Eine Person oder Identität, die per Authentifizierung anhand von Kriterien, z. B. einem Kennwort oder Zertifikat, überprüft werden muss.
+Eine Person oder Identität, die per Authentifizierung anhand von Kriterien, z. B. einem Kennwort oder Zertifikat, überprüft werden muss.
 
 ### Identitätsrisikoereignis 	
 AAD-Ereignis, das von Identity Protection als anomal gekennzeichnet wurde und mit dem angegeben werden kann, dass eine Identität kompromittiert wurde.
@@ -64,10 +64,10 @@ Dieses Risikoereignis wird ausgelöst, wenn unsere Ermittler herausfinden, dass 
 Eine Aktion, mit der für einen Angreifer die Möglichkeit eingeschränkt oder beseitigt wird, eine kompromittierte Identität oder ein Gerät auszunutzen, ohne für die Identität oder das Gerät wieder einen sicheren Zustand herzustellen. Bei einer Lösung werden keine vorherigen Risikoereignisse behoben, die der Identität oder dem Gerät zugeordnet sind.
 
 ### Multi-Factor Authentication 
-Ein Authentifizierungsverfahren, für das mindestens zwei Authentifizierungsmethoden erforderlich sind: etwas, was sich im Besitz des Benutzers befindet, z. B. ein Zertifikat, etwas, was der Benutzer weiß, z. B. Benutzernamen, Kennwörter oder Passphrases, physische Attribute, z. B. einen Fingerabdruck, und persönliche Attribute, z. B. eine persönliche Signatur.
+Ein Authentifizierungsverfahren, für das mindestens zwei Authentifizierungsmethoden erforderlich sind: etwas, was sich im Besitz des Benutzers befindet, z. B. ein Zertifikat, etwas, was der Benutzer weiß, z. B. Benutzernamen, Kennwörter oder Passphrases, physische Attribute, z. B. einen Fingerabdruck, und persönliche Attribute, z. B. eine persönliche Signatur.
 
 ### Offlineerkennung 	
-Die Erkennung von Anomalien und Bewertung des Risikos eines Ereignisses, z. B. ein verspäteter Anmeldeversuch für eine Veranstaltung, nachdem diese bereits vorüber ist.
+Die Erkennung von Anomalien und Bewertung des Risikos eines Ereignisses, z. B. ein verspäteter Anmeldeversuch für eine Veranstaltung, nachdem diese bereits vorüber ist.
 
 ### Richtlinienbedingung 	
 Ein Teil einer Sicherheitsrichtlinie, mit der die Entitäten (Gruppen, Benutzer, Apps, Geräteplattformen, Gerätezustände, IP-Bereiche, Clienttypen) definiert werden, die in die Richtlinie eingeschlossen oder davon ausgeschlossen werden.
@@ -79,13 +79,13 @@ Der Teil einer Sicherheitsrichtlinie, mit der die Umstände beschrieben werden, 
 Eine Aktion, mit der Schaden für die Organisation verhindert werden soll, der durch den Missbrauch einer vermutlich oder mit Sicherheit kompromittierten Identität oder eines Geräts entsteht. Mit einer Präventionsaktion wird das Gerät bzw. die Identität nicht geschützt, und vorherige Risikoereignisse werden nicht gelöst.
 
 ### Privilegiert (Benutzer)
-Ein Benutzer, der zum Zeitpunkt eines Risikoereignisses über dauerhafte oder vorübergehende Administratorberechtigungen für eine oder mehrere Ressourcen in Azure Active Directory verfügte, z. B. ein globaler Administrator, Abrechnungsadministrator, Dienstadministrator, Benutzeradministrator und Kennwortadministrator.
+Ein Benutzer, der zum Zeitpunkt eines Risikoereignisses über dauerhafte oder vorübergehende Administratorberechtigungen für eine oder mehrere Ressourcen in Azure Active Directory verfügte, z. B. ein globaler Administrator, Abrechnungsadministrator, Dienstadministrator, Benutzeradministrator und Kennwortadministrator.
 
 ###Echtzeit 	
 Siehe „Echtzeiterkennung“.
 
 ###Echtzeiterkennung 	
-Die Erkennung von Anomalien und Bewertung des Risikos eines Ereignisses, z. B. ein Anmeldeversuch vor der Freigabe bzw. dem Start einer Veranstaltung.
+Die Erkennung von Anomalien und Bewertung des Risikos eines Ereignisses, z. B. ein Anmeldeversuch vor der Freigabe bzw. dem Start einer Veranstaltung.
 
 ### Bereinigt (Risikoereignis) 	
 Ein Risikoereignis, das von Identity Protection automatisch festgelegt wird und angibt, dass das Risikoereignis mit der standardmäßigen Korrekturaktion für diese Art von Risikoereignis bereinigt wurde. Beim Zurücksetzen des Benutzerkennworts werden beispielsweise viele Risikoereignisse, die auf eine Kompromittierung des vorherigen Kennworts hinweisen, automatisch bereinigt.
@@ -115,10 +115,10 @@ Eine Einstufung (Hoch, Mittel oder Niedrig) der Wahrscheinlichkeit, mit der eine
 Eine Einstufung (Hoch, Mittel oder Niedrig) des Sicherheitsrisikos. Hiermit können Identity Protection-Benutzer die Aktionen priorisieren, die sie durchführen, um das Risiko für ihre Organisation zu mindern.
 
 ### Schützen (Identität)	
-Das Durchführen einer Korrekturaktion, z. B. das Ändern eines Kennworts oder das Verwenden eines neuen Image für einen Computer, um für eine potenziell kompromittierte Identität wieder einen fehlerlosen Zustand herzustellen.
+Das Durchführen einer Korrekturaktion, z. B. das Ändern eines Kennworts oder das Verwenden eines neuen Image für einen Computer, um für eine potenziell kompromittierte Identität wieder einen fehlerlosen Zustand herzustellen.
 
 ### Sicherheitsrichtlinie
-Eine Auflistung von Regeln und Bedingungen einer Richtlinie. Eine Richtlinie kann auf Entitäten angewendet werden, z. B. Benutzer, Gruppen, Apps, Geräte, Geräteplattformen, Gerätestatus, IP-Bereiche und Auth2.0-Clienttypen. Wenn eine Richtlinie aktiviert ist, wird sie immer dann ausgewertet, wenn für eine in der Richtlinie enthaltene Entität ein Token für eine Ressource ausgegeben wird.
+Eine Auflistung von Regeln und Bedingungen einer Richtlinie. Eine Richtlinie kann auf Entitäten angewendet werden, z. B. Benutzer, Gruppen, Apps, Geräte, Geräteplattformen, Gerätestatus, IP-Bereiche und Auth2.0-Clienttypen. Wenn eine Richtlinie aktiviert ist, wird sie immer dann ausgewertet, wenn für eine in der Richtlinie enthaltene Entität ein Token für eine Ressource ausgegeben wird.
 
 ### Anmelden 
 Das Authentifizieren mit einer Identität in Azure Active Directory.

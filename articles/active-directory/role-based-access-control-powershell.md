@@ -27,7 +27,7 @@ Mit der rollenbasierten Access Control (RBAC) im Azure-Portal und in der Azure R
 
 In diesem Lernprogramm erfahren Sie, wie Sie mit Windows PowerShell die rollenbasierte Zugriffssteuerung verwalten. Das Lernprogramm beschreibt die Erstellung und Überprüfung von Rollenzuweisungen.
 
-**Geschätzter Zeitaufwand**: 15 Minuten.
+**Geschätzter Zeitaufwand**: 15 Minuten.
 
 ## Voraussetzungen
 
@@ -35,7 +35,7 @@ Bevor Sie die RBAC mithilfe der Windows PowerShell verwalten können, benötigen
 
 - Windows PowerShell, Version 3.0 oder 4.0. Um die Version von Windows PowerShell zu ermitteln, geben Sie `$PSVersionTable` ein. Vergewissern Sie sich, dass der Wert von `PSVersion` 3.0 oder 4.0 ist. Informationen zum Installieren einer kompatiblen Version finden Sie unter [Windows Management Framework 3.0 ](http://www.microsoft.com/download/details.aspx?id=34595) oder [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855).
 
-- Azure PowerShell, Version 0.8.8 oder höher. Um die neueste Version zu installieren und sie Ihrem Azure-Abonnement zuzuordnen, lesen Sie [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
+- Azure PowerShell, Version 0.8.8 oder höher. Um die neueste Version zu installieren und sie Ihrem Azure-Abonnement zuzuordnen, lesen Sie [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
 
 >[AZURE.IMPORTANT] Bevor Sie die Cmdlets in diesem Artikel verwenden können, müssen Sie [die Azure Resource Manager-Cmdlets in PowerShell installieren](https://msdn.microsoft.com/library/mt125356.aspx).
 

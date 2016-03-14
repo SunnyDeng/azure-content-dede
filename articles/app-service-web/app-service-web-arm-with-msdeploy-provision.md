@@ -25,7 +25,7 @@ Weitere Informationen zum Erstellen von Vorlagen finden Sie unter [Erstellen von
 
 Sie stellen eine ASP.NET-Webanwendung bereit. Der erste Schritt ist die Erstellung einer einfachen Webanwendung. (Sie können auch eine vorhandene nutzen und diesen Schritt überspringen.)
 
-Öffnen Sie Visual Studio 2015, und wählen Sie „Datei“ > „Neues Projekt“. Wählen Sie im angezeigten Dialogfeld die Option „Web“ > „ASP.NET-Webanwendung“. Wählen Sie unter „Vorlagen“ die Option „Web“ und dann die MVC-Vorlage. Legen Sie _Authentifizierungsart ändern_ auf _Keine Authentifizierung_ fest. Das Ziel hierbei ist, die Beispielanwendung so einfach wie möglich zu gestalten.
+Öffnen Sie Visual Studio 2015, und wählen Sie „Datei“ > „Neues Projekt“. Wählen Sie im angezeigten Dialogfeld die Option „Web“ > „ASP.NET-Webanwendung“. Wählen Sie unter „Vorlagen“ die Option „Web“ und dann die MVC-Vorlage. Legen Sie _Authentifizierungsart ändern_ auf _Keine Authentifizierung_ fest. Das Ziel hierbei ist, die Beispielanwendung so einfach wie möglich zu gestalten.
 
 An diesem Punkt verfügen Sie über eine grundlegende ASP.Net-Web-App, die für die Verwendung im Rahmen Ihres Bereitstellungsprozesses bereit ist.
 

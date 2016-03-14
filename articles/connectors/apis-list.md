@@ -60,14 +60,14 @@ APIs können innerhalb Ihrer Apps auch als Aktionen verwendet werden. Aktionen s
 [dropboxdoc]: ./create-api-dropbox.md "Stellt eine Verbindung mit Dropbox her und kann zum Abrufen, Löschen, Auflisten und weitere Dateiaufgaben verwendet werden."
 [exceldoc]: ./create-api-excel.md "Verbindung mit Excel."
 [facebookdoc]: ./create-api-facebook.md "Verbindung mit Facebook zum Veröffentlichen einer Zeitachse, zum Abrufen eines Seitenfeeds und vielem mehr."
-[ftpdoc]: ./create-api-ftp.md "Stellt eine Verbindung mit einem FTP-/FTPS-Server her und ermöglicht u. a. die Ausführung verschiedener FTP-Tasks, einschließlich Hochladen, Abrufen und Löschen von Dateien."
+[ftpdoc]: ./create-api-ftp.md "Stellt eine Verbindung mit einem FTP-/FTPS-Server her und ermöglicht u. a. die Ausführung verschiedener FTP-Tasks, einschließlich Hochladen, Abrufen und Löschen von Dateien."
 [googledrivedoc]: ./create-api-googledrive.md "Verbindung mit GoogleDrive und Interaktion mit Ihren Daten."
 [microsofttranslatordoc]: ./create-api-microsofttranslator.md
-[office365outlookdoc]: ./create-api-office365-outlook.md "Der Office 365-Connector kann über Ihr Office 365-Konto E-Mails senden und empfangen sowie Ihren Kalender und Ihre Kontakte verwalten."
+[office365outlookdoc]: ./create-api-office365-outlook.md "Der Office 365-Connector kann über Ihr Office 365-Konto E-Mails senden und empfangen sowie Ihren Kalender und Ihre Kontakte verwalten."
 [officeunifieddoc]: ./create-api-bingsearch.md
 [office365usersdoc]: ./create-api-office365-users.md
 [office365videodoc]: ./create-api-office365-video.md
-[onedrivedoc]: ./create-api-onedrive.md "Stellt eine Verbindung mit Ihrem persönlichen Microsoft OneDrive-Ordner her und ermöglicht u. a. das Hochladen, Löschen und Auflisten von Dateien."
+[onedrivedoc]: ./create-api-onedrive.md "Stellt eine Verbindung mit Ihrem persönlichen Microsoft OneDrive-Ordner her und ermöglicht u. a. das Hochladen, Löschen und Auflisten von Dateien."
 [salesforcedoc]: ./create-api-salesforce.md "Stellt eine Verbindung mit Ihrem Salesforce-Konto her und dient zum Verwalten von Konten, Leads, Verkaufschancen und mehr."
 [servicebusdoc]: ./create-api-servicebus.md "Kann Nachrichten aus Service Bus-Warteschlangen und -Themen senden sowie Nachrichten aus Service Bus-Warteschlangen und -Abonnements empfangen."
 [sharepointdoc]: ./create-api-sharepointonline.md "Stellt eine Verbindung mit SharePoint Online her, um Dokumente und Listenelemente zu verwalten."
@@ -76,7 +76,7 @@ APIs können innerhalb Ihrer Apps auch als Aktionen verwendet werden. Aktionen s
 [smtpdoc]: ./create-api-smtp.md "Stellt eine Verbindung mit einem SMTP-Server her und kann E-Mails mit Anlagen senden."
 [sqldoc]: ./create-api-sqlazure.md "Stellt eine Verbindung mit einer SQL Azure-Datenbank her. Sie können Einträge in einer SQL-Datenbanktabelle erstellen, aktualisieren, abrufen und löschen."
 [twiliodoc]: ./create-api-twilio.md "Stellt eine Verbindung mit Twilio her und kann Nachrichten und verfügbare Nummern abrufen, eingehende Telefonnummern verwalten usw."
-[twitterdoc]: ./create-api-twitter.md "Stellt eine Verbindung mit Twitter her und dient u. a. zum Abrufen von Zeitachsen und Posten von Tweets."
+[twitterdoc]: ./create-api-twitter.md "Stellt eine Verbindung mit Twitter her und dient u. a. zum Abrufen von Zeitachsen und Posten von Tweets."
 [yammerdoc]: ./create-api-yammer.md "Stellt eine Verbindung mit Yammer her, um Nachrichten zu posten und neue Nachrichten abzurufen."
 
 <!--Icon references-->

@@ -572,9 +572,9 @@ Einzelne Telemetrieaufrufe können die Standardwerte in ihren Eigenschaftenwört
 
 ## Stichprobenerstellung, Filterung und Verarbeitung von Telemetriedaten 
 
-Sie können Code zum Verarbeiten Ihrer Telemetriedaten schreiben, bevor sie vom SDK gesendet werden. Die Verarbeitung umfasst Daten, die von den standardmäßigen Telemetriemodulen gesendet werden, z. B. die HTTP-Anforderungsauflistung und Abhängigkeitsauflistung.
+Sie können Code zum Verarbeiten Ihrer Telemetriedaten schreiben, bevor sie vom SDK gesendet werden. Die Verarbeitung umfasst Daten, die von den standardmäßigen Telemetriemodulen gesendet werden, z. B. die HTTP-Anforderungsauflistung und Abhängigkeitsauflistung.
 
-* Sie können Telemetriedaten [Eigenschaften hinzufügen](app-insights-api-filtering-sampling.md#add-properties), z. B. Versionsnummern oder aus anderen Eigenschaften berechnete Werte.
+* Sie können Telemetriedaten [Eigenschaften hinzufügen](app-insights-api-filtering-sampling.md#add-properties), z. B. Versionsnummern oder aus anderen Eigenschaften berechnete Werte.
 * Mithilfe der [Stichprobenerstellung](app-insights-api-filtering-sampling.md#sampling) wird das von Ihrer App an das Portal gesendete Datenvolumen reduziert. Das hat keinerlei Auswirkungen auf die angezeigten Metriken oder die Fähigkeit, Probleme durch Navigieren zwischen verwandten Elementen wie Ausnahmen, Anforderungen und Seitenansichten zu diagnostizieren.
 * Das Datenvolumen kann auch per [Filterung](app-insights-api-filtering-sampling.md#filtering) reduziert werden. Sie steuern, was gesendet oder verworfen wird, aber Sie müssen die Auswirkung auf Ihre Metriken im Auge behalten. Je nach Vorgehensweise beim Verwerfen der Elemente kann es sein, dass Sie nicht mehr zwischen verwandten Elementen navigieren können.
 
@@ -594,7 +594,7 @@ So können Sie die Sammlung und Übermittlung von Telemetriedaten **dynamisch be
     TelemetryConfiguration.Active.DisableTelemetry = true;
 ```
 
-Um **ausgewählte Standardsammlungsmodule zu deaktivieren** – z. B. Leistungsindikatoren, HTTP-Anforderungen oder Abhängigkeiten –, löschen Sie die entsprechenden Zeilen in [ApplicationInsights.config][config], oder kommentieren Sie sie aus. Diese Vorgehensweise bietet sich z. B. an, wenn Sie Ihre eigenen TrackRequest-Daten senden möchten.
+Um **ausgewählte Standardsammlungsmodule zu deaktivieren** – z. B. Leistungsindikatoren, HTTP-Anforderungen oder Abhängigkeiten –, löschen Sie die entsprechenden Zeilen in [ApplicationInsights.config][config], oder kommentieren Sie sie aus. Diese Vorgehensweise bietet sich z. B. an, wenn Sie Ihre eigenen TrackRequest-Daten senden möchten.
 
 ## <a name="debug"></a>Entwicklermodus
 

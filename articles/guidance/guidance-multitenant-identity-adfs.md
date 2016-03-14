@@ -93,7 +93,7 @@ Das Einrichten einer ähnlichen Topologie in Azure erfordert die Verwendung von 
 
 Der SaaS-Anbieter muss OpenID Connect zwischen der Anwendung und den AD FS aktivieren. Fügen Sie hierzu eine Anwendungsgruppe in den AD FS hinzu. Ausführliche Informationen finden Sie in diesem [Blogeintrag] unter „Setting up a Web App for OpenId Connect sign in AD FS.“ (Konfigurieren einer Web-App für AD FS-Anmeldung via OpenID Connect) Konfigurieren Sie dann die OpenID Connect-Middleware. Der Metadatenendpunkt ist `https://domain/adfs/.well-known/openid-configuration`, wobei die Domäne der AD FS-Domäne des SaaS-Anbieters entspricht.
 
-Sie können dies in der Regel mit anderen OpenID Connect-Endpunkten (z. B. AAD) kombinieren. Sie benötigen zwei verschiedene Anmeldeschaltflächen oder eine andere Möglichkeit, diese zu unterscheiden, damit der Benutzer an den richtigen Authentifizierungsendpunkt weitergeleitet wird.
+Sie können dies in der Regel mit anderen OpenID Connect-Endpunkten (z. B. AAD) kombinieren. Sie benötigen zwei verschiedene Anmeldeschaltflächen oder eine andere Möglichkeit, diese zu unterscheiden, damit der Benutzer an den richtigen Authentifizierungsendpunkt weitergeleitet wird.
 
 ## Konfigurieren des AD FS-Ressourcenpartners
 
@@ -132,7 +132,7 @@ Führen Sie das folgende PowerShell-Skript aus:
 Set-ADFSClaimsProviderTrust -TargetName "name" -OrganizationalAccountSuffix @("suffix")
 ```
 
-Wobei „name“ der Anzeigename der Anspruchsanbieter-Vertrauensstellung ist, und „suffix“ das UPN-Suffix für das AD des Kunden (z. B. „corp.fabrikam.com“).
+Wobei „name“ der Anzeigename der Anspruchsanbieter-Vertrauensstellung ist, und „suffix“ das UPN-Suffix für das AD des Kunden (z. B. „corp.fabrikam.com“).
 
 Mit dieser Konfiguration können Endbenutzer ihr Organisationskonto eingeben, und AD FS wählen automatisch den entsprechenden Anspruchsanbieter aus. Siehe unter [Anpassen der AD FS-Sign-in-Webseiten] den Abschnitt „Konfigurieren von Identitätsanbietern, um bestimmte E-Mail-Suffixe zu verwenden“.
 
@@ -158,7 +158,7 @@ Kunden müssen wie folgt vorgehen:
 1.	Klicken Sie mit der rechten Maustaste auf die neu hinzugefügte Vertrauensstellung der vertrauenden Seite, und wählen Sie **Anspruchsausstellungsrichtlinie bearbeiten**.
 2.	Klicken Sie auf **Regel hinzufügen**.
 3.	Wählen Sie „Senden von LDAP-Attributen als Ansprüche“, und klicken Sie auf **Weiter**. ![Assistenten zum Hinzufügen von Transformationsanspruchsregeln hinzufügen](media/guidance-multitenant-identity/add-claims-rules.png)
-4.	Geben Sie einen Namen für die Regel ein, z. B. „UPN“.
+4.	Geben Sie einen Namen für die Regel ein, z. B. „UPN“.
 5.	Wählen Sie unter **Attributspeicher**, die Option **Active Directory**.
 6.	Im Abschnitt **Zuordnung der LDAP-Attribute**:
   -	Wählen Sie unter **LDAP-Attribut**, die Option **Benutzerprinzipalname**.
@@ -166,7 +166,7 @@ Kunden müssen wie folgt vorgehen:
 7.	Klicken Sie auf **Fertigstellen**.
 8.	Klicken Sie erneut auf **Regel hinzufügen**.
 9.	Wählen Sie „Ansprüche per benutzerdefinierter Regel senden“, und klicken Sie auf **Weiter**.
-10.	Geben Sie einen Namen für die Regel ein, z. B. „Ankeranspruch“.
+10.	Geben Sie einen Namen für die Regel ein, z. B. „Ankeranspruch“.
 11.	Geben Sie Folgendes unter **Benutzerdefinierte Regel** ein:
 
 	```

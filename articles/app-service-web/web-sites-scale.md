@@ -80,9 +80,9 @@ Weitere Informationen zu App Service-Plänen finden Sie unter [Was ist ein App S
 	
 	Sie können Regeln für die automatische Skalierung konfigurieren, die für verschiedene Leistungsmetriken gelten, wie z. B. CPU, Arbeitsspeicher, Datenträgerwarteschlange,HTTP-Warteschlange und Datenfluss. In diesem Beispiel konfigurieren Sie die automatische Skalierung für den CPU-Prozentsatz, der Folgendes bewirkt:
 	
-	- Zentral hochskalieren um 1 Instanz, wenn der CPU-Prozentsatz in den letzten 10 Minuten über 80 % liegt
-	- Skalierung nach oben um 3 Instanzen, wenn der CPU-Prozentsatz in den letzten 5 Minuten über 90 % liegt
-	- Skalierung nach unten um 1 Instanz, wenn der CPU-Prozentsatz in den letzten 30 Minuten unter 50 % liegt 
+	- Zentral hochskalieren um 1 Instanz, wenn der CPU-Prozentsatz in den letzten 10 Minuten über 80 % liegt
+	- Skalierung nach oben um 3 Instanzen, wenn der CPU-Prozentsatz in den letzten 5 Minuten über 90 % liegt
+	- Skalierung nach unten um 1 Instanz, wenn der CPU-Prozentsatz in den letzten 30 Minuten unter 50 % liegt 
 	
 	
 4. Behalten Sie im Dropdownfeld **Metrikname** die Einstellung **CPU-Prozentsatz** bei.
@@ -115,7 +115,7 @@ Wenn Sie eine oder mehrere SQL Server-Datenbanken mit Ihrer Web-App verknüpft h
 
 	![Verknüpfte Datenbank][ResourceGroup]
 	
-2. Klicken Sie im Blatt für Ihre verknüpfte SQL-Datenbank auf den Bereich **Einstellungen** > **Tarif**, wählen Sie basierend auf Ihren Leistungsanforderungen einen Tarif aus, und klicken Sie auf **Auswählen**.
+2. Klicken Sie im Blatt für Ihre verknüpfte SQL-Datenbank auf den Bereich **Einstellungen** > **Tarif**, wählen Sie basierend auf Ihren Leistungsanforderungen einen Tarif aus, und klicken Sie auf **Auswählen**.
 	
 	![Skalieren Ihrer SQL-Datenbank][ScaleDatabase]
 	

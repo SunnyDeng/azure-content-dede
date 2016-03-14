@@ -92,7 +92,7 @@ Beachten Sie Folgendes:
 
 ## Hinweise zur Datenquelle
 ### Allgemein
-Stellen Sie sicher, dass der zugrundeliegende Datenspeicher nicht von anderen darauf oder dafür ausgeführten Workloads überlastet ist, u. a. die Kopieraktivität.
+Stellen Sie sicher, dass der zugrundeliegende Datenspeicher nicht von anderen darauf oder dafür ausgeführten Workloads überlastet ist, u. a. die Kopieraktivität.
 
 Informationen zu Microsoft-Datenspeichern finden Sie in datenspeicherspezifischen [Themen zur Überwachung und Optimierung](#appendix-data-store-performance-tuning-reference). Diese helfen Ihnen dabei, Leistungsmerkmale, die Minimierung von Antwortzeiten und die Maximierung des Durchsatzes zu verstehen.
 
@@ -113,7 +113,7 @@ Informationen zu Microsoft-Datenspeichern finden Sie in datenspeicherspezifische
 ## Hinweise zur Senke
 
 ### Allgemein
-Stellen Sie sicher, dass der zugrundeliegende Datenspeicher nicht von anderen darauf oder dafür ausgeführten Workloads überlastet ist, u. a. die Kopieraktivität.
+Stellen Sie sicher, dass der zugrundeliegende Datenspeicher nicht von anderen darauf oder dafür ausgeführten Workloads überlastet ist, u. a. die Kopieraktivität.
 
 Informationen zu Microsoft-Datenspeichern finden Sie in datenspeicherspezifischen [Themen zur Überwachung und Optimierung](#appendix-data-store-performance-tuning-reference). Diese helfen Ihnen dabei, Leistungsmerkmale, die Minimierung von Antwortzeiten und die Maximierung des Durchsatzes zu verstehen.
 
@@ -144,10 +144,10 @@ Informationen zu Microsoft-Datenspeichern finden Sie in datenspeicherspezifische
 - Für **Azure-Tabelle**:
 	- **Partition**: Das Schreiben von Daten in überlappende Partitionen beeinträchtigt die Leistung erheblich . Sie können Ihre Daten nach Partitionsschlüssel sortieren, damit Daten effizient in aufeinanderfolgende Partitionen eingefügt werden, oder Sie können die Logik so anpassen, dass die Daten in eine einzige Partition geschrieben werden.
 - Für **Azure DocumentDB**:
-	- **Batchgröße**: Die Eigenschaft „writeBatchSize“ gibt die Anzahl der parallelen Anforderungen an den DocumentDB-Dienst zum Erstellen von Dokumenten an. Sie können eine bessere Leistung erwarten, wenn Sie „writeBatchSize“ heraufsetzen, da mehr parallele Anforderungen an DocumentDB gesendet werden. Beachten Sie jedoch die Einschränkung beim Schreiben in DocumentDB (Fehlermeldung „Anforderungsrate ist groß“). Eine Einschränkung kann aufgrund einer Reihe von Faktoren erfolgen, einschließlich der Größe bzw. Anzahl der Dokumente und der Indizierungsrichtlinie der Zielsammlung. Erwägen Sie eine bessere Sammlung (z. B. S3), um einen höheren Durchsatz zu erzielen.
+	- **Batchgröße**: Die Eigenschaft „writeBatchSize“ gibt die Anzahl der parallelen Anforderungen an den DocumentDB-Dienst zum Erstellen von Dokumenten an. Sie können eine bessere Leistung erwarten, wenn Sie „writeBatchSize“ heraufsetzen, da mehr parallele Anforderungen an DocumentDB gesendet werden. Beachten Sie jedoch die Einschränkung beim Schreiben in DocumentDB (Fehlermeldung „Anforderungsrate ist groß“). Eine Einschränkung kann aufgrund einer Reihe von Faktoren erfolgen, einschließlich der Größe bzw. Anzahl der Dokumente und der Indizierungsrichtlinie der Zielsammlung. Erwägen Sie eine bessere Sammlung (z. B. S3), um einen höheren Durchsatz zu erzielen.
 
 ## Hinweise zur Serialisierung/Deserialisierung
-Serialisierung und Deserialisierung können auftreten, wenn Ihr Eingabe- oder Ausgabedataset eine Datei ist. Derzeit unterstützt die Kopieraktivität Avro- und Textdatenformate (z. B. CSV und TSV).
+Serialisierung und Deserialisierung können auftreten, wenn Ihr Eingabe- oder Ausgabedataset eine Datei ist. Derzeit unterstützt die Kopieraktivität Avro- und Textdatenformate (z. B. CSV und TSV).
 
 **Kopierverhalten:**
 
@@ -155,14 +155,14 @@ Serialisierung und Deserialisierung können auftreten, wenn Ihr Eingabe- oder Au
 	- Wenn sowohl das Eingabe- als auch das Ausgabedataset dieselben oder keine Dateiformateinstellungen aufweisen, führt der Datenverschiebungsdienst eine binäre Kopie ohne Serialisierung/Deserialisierung durch. Daher erzielen Sie wahrscheinlich einen besseren Durchsatz verglichen mit dem Szenario, bei dem sich die Dateiformateinstellungen für Quelle und Senke unterscheiden.
 	- Wenn sowohl das Eingabe- als auch das Ausgabedataset im Textformat vorliegen und sich nur im Codierungstyp unterscheiden, führt der Datenverschiebungsdienst nur eine Konvertierung der Codierung ohne Serialisierung/Deserialisierung durch. Dies führt im Vergleich zur binären Kopie zu einigem Leistungsaufwand.
 	- Wenn das Eingabe- und Ausgabedataset unterschiedliche Dateiformate oder unterschiedliche Konfigurationen wie Trennzeichen aufweisen, deserialisiert und transformiert der Datenverschiebungsdienst die zu streamenden Quelldaten und serialisiert sie anschließend in das gewünschte Ausgabeformat. Dies führt im Vergleich zu den vorherigen Szenarien zu wesentlich höherem Leistungsaufwand.
-- Beim Kopieren von Dateien in einen bzw. aus einem nicht dateibasierten Datenspeicher (z. B. aus einem dateibasierten Speicher in einen relationalen Speicher) ist eine Serialisierung oder Deserialisierung erforderlich und führt zu einem hohen Leistungsaufwand.
+- Beim Kopieren von Dateien in einen bzw. aus einem nicht dateibasierten Datenspeicher (z. B. aus einem dateibasierten Speicher in einen relationalen Speicher) ist eine Serialisierung oder Deserialisierung erforderlich und führt zu einem hohen Leistungsaufwand.
 
-**Dateiformat:** Die Wahl des Dateiformats kann die Leistung beeinträchtigen. Avro ist z. B. ein kompaktes binäres Format, das Metadaten mit Daten speichert und über umfassende Unterstützung im Hadoop-System für die Verarbeitung und Abfragen verfügt. Avro ist jedoch teurer für die Serialisierung/Deserialisierung, was im Vergleich mit dem Textformat zu einem niedrigeren Durchsatz führt. Die Auswahl des mit dem Verarbeitungsablauf zu verwendenden Dateiformats sollte ganzheitlich getroffen werden. Beginnen Sie dabei mit dem Format, in dem die Daten in Quellendatenspeichern gespeichert oder aus externen Systemen extrahiert werden, dem besten Format für die Speicherung, analytische Verarbeitung und Abfragen, und in welchem Format die Daten in Data Marts für die Berichterstellungs- und Visualisierungstools exportiert werden sollen. Manchmal stellt sich heraus, dass ein für die Lese- und Schreibleistung suboptimales Dateiformat sich unter Berücksichtigung des gesamten analytischen Prozesses gut eignet.
+**Dateiformat:** Die Wahl des Dateiformats kann die Leistung beeinträchtigen. Avro ist z. B. ein kompaktes binäres Format, das Metadaten mit Daten speichert und über umfassende Unterstützung im Hadoop-System für die Verarbeitung und Abfragen verfügt. Avro ist jedoch teurer für die Serialisierung/Deserialisierung, was im Vergleich mit dem Textformat zu einem niedrigeren Durchsatz führt. Die Auswahl des mit dem Verarbeitungsablauf zu verwendenden Dateiformats sollte ganzheitlich getroffen werden. Beginnen Sie dabei mit dem Format, in dem die Daten in Quellendatenspeichern gespeichert oder aus externen Systemen extrahiert werden, dem besten Format für die Speicherung, analytische Verarbeitung und Abfragen, und in welchem Format die Daten in Data Marts für die Berichterstellungs- und Visualisierungstools exportiert werden sollen. Manchmal stellt sich heraus, dass ein für die Lese- und Schreibleistung suboptimales Dateiformat sich unter Berücksichtigung des gesamten analytischen Prozesses gut eignet.
 
 ## Hinweise zur Komprimierung
 Wenn Ihr Eingabe- oder Ausgabedataset eine Datei ist, können Sie die Kopieraktivität so konfigurieren, dass beim Schreiben von Daten in das Ziel eine Komprimierung oder Dekomprimierung ausgeführt wird. Durch Aktivieren der Komprimierung, stellen Sie einen Kompromiss zwischen E/A und CPU her: Das Komprimieren der Daten kostet zusätzliche Computeressourcen, sorgt jedoch im Gegenzug für eine Reduzierung des Netzwerk-E/A und des Speichers; abhängig von Ihren Daten kann dies zu einer Verbesserung des Gesamtdurchsatzes von Kopien führen.
 
-**Codec:** GZIP-, BZIP2- und Deflate-Komprimierung werden unterstützt. Alle drei Typen können von Azure HDInsight für die Verarbeitung verwendet werden. Jeder Komprimierungscodec ist eindeutig. BZIP2 erzielt z. B. hat den niedrigsten Durchsatz, Sie erhalten jedoch die beste Hive-Abfrageleistung, da für die Verarbeitung eine Aufteilung möglich ist; GZIP bietet die ausgewogenste Option und wird am häufigsten verwendet. Sie sollten den Codec auswählen, der für das End-to-End-Szenario am besten geeignet ist.
+**Codec:** GZIP-, BZIP2- und Deflate-Komprimierung werden unterstützt. Alle drei Typen können von Azure HDInsight für die Verarbeitung verwendet werden. Jeder Komprimierungscodec ist eindeutig. BZIP2 erzielt z. B. hat den niedrigsten Durchsatz, Sie erhalten jedoch die beste Hive-Abfrageleistung, da für die Verarbeitung eine Aufteilung möglich ist; GZIP bietet die ausgewogenste Option und wird am häufigsten verwendet. Sie sollten den Codec auswählen, der für das End-to-End-Szenario am besten geeignet ist.
 
 **Ebene:** Für jeden Komprimierungscodec Ihnen stehen zwei Optionen zur Verfügung – die schnellste Komprimierung und die optimale Komprimierung. Bei der schnellsten Komprimierung werden die Daten schnellstmöglich komprimiert, auch wenn die resultierende Datei nicht optimal komprimiert ist. Die optimale Komprimierung dauert länger, und die minimale Datenmenge wird zurückgegeben. Sie können beide Optionen testen, um die in Ihrem Fall beste Gesamtleistung zu ermitteln.
 
@@ -171,14 +171,14 @@ Wenn Ihr Eingabe- oder Ausgabedataset eine Datei ist, können Sie die Kopierakti
 ## Hinweise für die Zuordnung von Spalten
 Mit der Eigenschaft „columnMappings“ in der Kopieraktivität können alle oder ein Teil der Eingabespalten den Ausgabespalten zugeordnet werden. Nach dem Lesen der Daten aus der Quelle muss der Datenverschiebungsdienst eine Spaltenzuordnung für die Daten ausführen, bevor sie in die Senke geschrieben werden. Dieser zusätzliche Verarbeitungsaufwand reduziert den Kopierdurchsatz.
 
-Wenn Ihr Quelldatenspeicher abfragbar ist, z. B. ein relationaler Datenspeicher wie Azure SQL/SQL Server oder ein NoSQL-Datenspeicher wie Azure-Tabelle/Azure DocumentDB, können Sie in Betracht ziehen, einen Pushdownvorgang für die Logik zur Filterung/erneuten Anordnung von Spalten an die Abfrageeigenschaft durchzuführen, anstatt die Spaltenzuordnung zu verwenden. Dabei erfolgt die Projektion beim Lesen von Daten aus dem Datenquellenspeicher und ist wesentlich effizienter.
+Wenn Ihr Quelldatenspeicher abfragbar ist, z. B. ein relationaler Datenspeicher wie Azure SQL/SQL Server oder ein NoSQL-Datenspeicher wie Azure-Tabelle/Azure DocumentDB, können Sie in Betracht ziehen, einen Pushdownvorgang für die Logik zur Filterung/erneuten Anordnung von Spalten an die Abfrageeigenschaft durchzuführen, anstatt die Spaltenzuordnung zu verwenden. Dabei erfolgt die Projektion beim Lesen von Daten aus dem Datenquellenspeicher und ist wesentlich effizienter.
 
 ## Überlegungen zum Datenverwaltungsgateway
 Empfehlungen für die Gatewayeinrichtung finden Sie unter [Überlegungen zur Verwendung des Datenverwaltungsgateways](data-factory-move-data-between-onprem-and-cloud.md#Considerations-for-using-Data-Management-Gateway).
 
 **Gatewaycomputerumgebung:** Es wird empfohlen, einen dedizierten Computer zum Hosten des Datenverwaltungsgateways zu verwenden. Verwenden Sie Tools wie Systemmonitor, um die Auslastung von CPU, Arbeitsspeicher und Bandbreite während eines Kopiervorgangs auf Ihrem Gatewaycomputer zu überprüfen. Wechseln Sie zu einem leistungsfähigeren Computer, wenn CPU, Arbeitsspeicher oder Netzwerkbandbreite zu einem Engpass werden.
 
-**Gleichzeitige Ausführungen der Kopieraktivität:** In einer einzelnen Instanz des Datenverwaltungsgateways können mehrere Kopieraktivitäten gleichzeitig ausgeführt werden, d. h. ein Gateway kann eine bestimmte Anzahl gleichzeitig (die Anzahl von gleichzeitigen Aufträgen wird basierend auf der Hardwarekonfiguration des Gatewaycomputers berechnet) von Kopieraufträgen ausführen. Zusätzliche Aufträge werden in der Warteschlange platziert, bis sie vom Gateway abgerufen werden oder die Zeitüberschreitung für den Auftrag erreicht ist – je nachdem, was zuerst eintritt. Zum Vermeiden von Ressourcenkonflikten auf dem Gateway können Sie den Zeitplan Ihrer Aktivitäten bereitstellen, um die Menge von gleichzeitigen Kopieraufträgen in der Warteschlange zu reduzieren, oder teilen Sie die Last auf mehrere Gateways auf.
+**Gleichzeitige Ausführungen der Kopieraktivität:** In einer einzelnen Instanz des Datenverwaltungsgateways können mehrere Kopieraktivitäten gleichzeitig ausgeführt werden, d. h. ein Gateway kann eine bestimmte Anzahl gleichzeitig (die Anzahl von gleichzeitigen Aufträgen wird basierend auf der Hardwarekonfiguration des Gatewaycomputers berechnet) von Kopieraufträgen ausführen. Zusätzliche Aufträge werden in der Warteschlange platziert, bis sie vom Gateway abgerufen werden oder die Zeitüberschreitung für den Auftrag erreicht ist – je nachdem, was zuerst eintritt. Zum Vermeiden von Ressourcenkonflikten auf dem Gateway können Sie den Zeitplan Ihrer Aktivitäten bereitstellen, um die Menge von gleichzeitigen Kopieraufträgen in der Warteschlange zu reduzieren, oder teilen Sie die Last auf mehrere Gateways auf.
 
 
 ## Weitere Überlegungen
@@ -189,13 +189,13 @@ Seien Sie vorsichtig bei der Anzahl von Datasets und Kopieraktivitäten, die gle
 ## Fallstudie – Kopieren von einem lokalen SQL Server in Azure Blob
 **Szenario:** Eine Pipeline wird erstellt, um Daten von einem lokalen SQL Server im CSV-Format in Azure Blob zu kopieren. Zum Beschleunigen der Kopie ist angegeben, dass die CSV-Dateien im BZIP2-Format komprimiert werden sollen.
 
-**Test und Analyse:** Für die Kopieraktivität wird ein Durchsatz von weniger als 2 MB beobachtet, d. h. viel langsamer als die Leistungsbenchmark.
+**Test und Analyse:** Für die Kopieraktivität wird ein Durchsatz von weniger als 2 MB beobachtet, d. h. viel langsamer als die Leistungsbenchmark.
 
 **Leistungsanalyse und -optimierung:** Zum Beheben des Leistungsproblems sehen wir uns zunächst im Detail an, wie die Daten verarbeitet und verschoben werden:
 
 1.	**Lesen von Daten:** Gateway öffnet Verbindung mit SQL Server und sendet die Abfrage. SQL Server reagiert mit dem Senden des Datenstroms über das Intranet an das Gateway.
 2.	Das Gateway **serialisiert** den Datenstrom im CSV-Format und **komprimiert** die Daten in einem BZIP2-Strom.
-3.	**Schreiben von Daten:** Das Gateway lädt BZIP2-Streams über das Internet zu Azure Blob.
+3.	**Schreiben von Daten:** Das Gateway lädt BZIP2-Streams über das Internet zu Azure Blob.
 
 Wie Sie sehen, werden die Daten sequenziell durch Streaming verarbeitet und verschoben: SQL Server -> LAN-> Gateway > WAN -> Azure-Blob. **Die Gesamtleistung wird durch den minimalen Durchsatz der gesamten Pipeline abgegrenzt**.
 
@@ -208,9 +208,9 @@ Bei einem oder mehreren der folgenden Faktoren kann es sich um den Leistungsengp
 	1.	**LAN:** Das Gateway befindet sich bei einer Verbindung mit geringer Bandbreite weit vom SQL Server entfernt.
 	2.	Die **Belastung des Gatewaycomputers** hat ihre Grenzen für das Ausführen der folgenden Aufgaben erreicht:
 		1.	**Serialisierung:** Der Serialisierungsdatenstrom in eine CSV-Datei weist einen langsamen Durchsatz auf.
-		2.	**Komprimierung:** Ein langsamer Komprimierungscodec wurde gewählt (z. B. BZIP2 mit 2 8 MBit/s und Core i7).
-	3.	**WAN:** Niedrige Bandbreite zwischen dem Unternehmensnetzwerk und Azure (z. B. T1 = 1544 Kbit/s, T2 = 6312 Kbit/s)
-4.	**Senke:** Azure-Blob hat geringen Durchsatz (jedoch unwahrscheinlich, da die SLA mindestens 60 MBit/s garantiert).
+		2.	**Komprimierung:** Ein langsamer Komprimierungscodec wurde gewählt (z. B. BZIP2 mit 2 8 MBit/s und Core i7).
+	3.	**WAN:** Niedrige Bandbreite zwischen dem Unternehmensnetzwerk und Azure (z. B. T1 = 1544 Kbit/s, T2 = 6312 Kbit/s)
+4.	**Senke:** Azure-Blob hat geringen Durchsatz (jedoch unwahrscheinlich, da die SLA mindestens 60 MBit/s garantiert).
 
 In diesem Fall könnte die BZIP2-Datenkomprimierung die gesamte Pipeline verlangsamen. Ein Wechsel zum GZIP-Komprimierungscodec kann diesen Engpass beheben.
 

@@ -21,7 +21,7 @@ In diesem Tutorial wird die Integration von Azure und Zscaler One erläutert. Da
 -   Ein gültiges Azure-Abonnement
 -   Ein Zscaler One-Abonnement, für das einmaliges Anmelden aktiviert ist  
 
-Nach Abschluss dieses Tutorials können sich die Zscaler One zugewiesenen Azure AD-Benutzer mittels einmaliger Anmeldung auf Ihrer Zscaler One-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können Sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
+Nach Abschluss dieses Tutorials können sich die Zscaler One zugewiesenen Azure AD-Benutzer mittels einmaliger Anmeldung auf Ihrer Zscaler One-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können Sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
 
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 

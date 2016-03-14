@@ -189,7 +189,7 @@ Die Tarife bestimmen die Kapazität und die Beschränkungen des Suchdiensts. Fol
 
 [AZURE.INCLUDE [azure-search-limits-all](../includes/azure-search-limits-all.md)]
 
-Weitere Informationen zu anderen Einschränkungen, z. B. Dokumentgröße, Schlüssel, Anforderungen und Antworten, finden Sie unter [Grenzwerte für den Azure Search-Dienst](search/search-limits-quotas-capacity.md).
+Weitere Informationen zu anderen Einschränkungen, z. B. Dokumentgröße, Schlüssel, Anforderungen und Antworten, finden Sie unter [Grenzwerte für den Azure Search-Dienst](search/search-limits-quotas-capacity.md).
 
 ### Media Services-Grenzwerte
 

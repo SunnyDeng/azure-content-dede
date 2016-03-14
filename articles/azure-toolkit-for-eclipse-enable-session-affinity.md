@@ -29,7 +29,7 @@ Im Azure-Toolkit für Eclipse können Sie HTTP-Sitzungsaffinität bzw. „persis
 1. Klicken Sie im Projekt-Explorer-Bereich von Eclipse auf **Azure**, und klicken Sie anschließend auf **Load Balancing**.
 1. Gehen Sie im Dialogfeld **Properties for WorkerRole1 Load Balancing** wie folgt vor:
     1. Aktivieren Sie **Enable HTTP session affinity (sticky sessions) for this role.**
-    1. Wählen Sie für **Input endpoint to use** den gewünschten Eingabeendpunkt aus, z. B. **http (public:80, private:8080)**. Die Anwendung muss diesen Endpunkt als HTTP-Endpunkt verwenden. Sie können mehrere Endpunkte für Ihre Rolle aktivieren, aber nur eine davon für persistente Sitzungen einrichten.
+    1. Wählen Sie für **Input endpoint to use** den gewünschten Eingabeendpunkt aus, z. B. **http (public:80, private:8080)**. Die Anwendung muss diesen Endpunkt als HTTP-Endpunkt verwenden. Sie können mehrere Endpunkte für Ihre Rolle aktivieren, aber nur eine davon für persistente Sitzungen einrichten.
     1. Erstellen Sie Ihre Anwendung neu.
 
 Nach der Aktivierung und bei Vorhandensein mehrerer Rolleninstanzen werden von einem bestimmten Client stammende HTTP-Anforderungen weiterhin von derselben Rolleninstanz behandelt.

@@ -40,7 +40,7 @@ Das Erstellen neuer Web-Apps ist immer noch kinderleicht. Die folgende Abbildung
 
 ![](./media/app-service-web-app-azure-portal/CreateWebApp.png)
 
-Im Portal können Sie aus den gängigsten Typen von Web-Apps wählen, darunter z. B. auch beliebte Kataloganwendungen wie WordPress. Eine vollständige Liste der verfügbaren Anwendungen finden Sie im [Azure Marketplace].
+Im Portal können Sie aus den gängigsten Typen von Web-Apps wählen, darunter z. B. auch beliebte Kataloganwendungen wie WordPress. Eine vollständige Liste der verfügbaren Anwendungen finden Sie im [Azure Marketplace].
 
 Wenn Sie eine Web-App erstellen, geben Sie im Portal die URL, den App Service-Plan und Speicherort genauso wie im klassischen Portal an.
 

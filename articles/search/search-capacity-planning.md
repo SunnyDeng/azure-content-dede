@@ -25,16 +25,16 @@ Skalierbarkeit wird verfügbar, wenn Sie einen Dienst zum [Basic-Tarif](http://a
 
 Bei beiden Tarifen wird die Kapazität in *Sucheinheit* (SU)-Schritten gekauft, wobei jede Partition und jedes Replikat als jeweils eine „SU“ zählen.
 
-- Basic bietet bis zu 3 SU pro Dienst.
-- Standard bietet bis zu 36 SU pro Dienst.
+- Basic bietet bis zu 3 SU pro Dienst.
+- Standard bietet bis zu 36 SU pro Dienst.
 
-Sie müssen eine Kombination aus Partitionen und Replikaten auswählen, die unterhalb des Grenzwerts für den Tarif bleibt. Sie können beispielsweise den Standard-Dienst nicht auf 12 Partitionen und 6 Replikate hochskalieren, da dafür 72 Sucheinheiten (12 x 6) erforderlich wären und dies den Grenzwert von 36 Sucheinheiten pro Dienst übersteigt.
+Sie müssen eine Kombination aus Partitionen und Replikaten auswählen, die unterhalb des Grenzwerts für den Tarif bleibt. Sie können beispielsweise den Standard-Dienst nicht auf 12 Partitionen und 6 Replikate hochskalieren, da dafür 72 Sucheinheiten (12 x 6) erforderlich wären und dies den Grenzwert von 36 Sucheinheiten pro Dienst übersteigt.
 
 Im Allgemeinen gilt, dass die Suchanwendungen tendenziell mehr Replikate als Partitionen benötigen. Weitere Details finden Sie im Abschnitt zu [hoher Verfügbarkeit](#HA).
 
 **Berechnen von Sucheinheiten für bestimmte Ressourcenkombinationen: R X P = SU**
 
-Die Formel zum Berechnen der Anzahl der benötigten SUs lautet: Replikate multipliziert mit Partitionen. 3 Replikate multipliziert mit 3 Partitionen werden z. B. als 9 Sucheinheiten abgerechnet.
+Die Formel zum Berechnen der Anzahl der benötigten SUs lautet: Replikate multipliziert mit Partitionen. 3 Replikate multipliziert mit 3 Partitionen werden z. B. als 9 Sucheinheiten abgerechnet.
 
 Beide Tarife beginnen mit einem Replikat und einer Partition, die als eine Sucheinheit (SU) gezählt werden. Dies ist die einzige Instanz, in der ein Replikat und eine Partition als eine einzelne Sucheinheit gerechnet werden. Jede zusätzliche Ressource, sei es ein Replikat oder eine Partition, wird als eigene SU gezählt.
 
@@ -42,7 +42,7 @@ Die Kosten pro SU werden vom Tarif bestimmt. Die Kosten pro SU für den Basic-Ta
 
 ## Basic-Tarif: Partitions- und Replikatskombinationen
 
-Ein Basic-Dienst kann aus 1 Partition und bis zu 3 Replikaten bestehen, für einen maximalen Grenzwert von 3 SUs.
+Ein Basic-Dienst kann aus 1 Partition und bis zu 3 Replikaten bestehen, für einen maximalen Grenzwert von 3 SUs.
 
 <table cellspacing="0" border="1">
 <tr><td><b>3 Replikate</b></td><td>3 SU</td></tr>
@@ -54,7 +54,7 @@ Ein Basic-Dienst kann aus 1 Partition und bis zu 3 Replikaten bestehen, für e
 <a id="chart"></a>
 ## Standard-Tarif: Partitions- und Replikatskombinationen
 
-Diese Tabelle enthält die Sucheinheiten, die für eine Unterstützung der Kombinationen aus Replikaten und Partitionen erforderlich sind. Dabei gilt ein Grenzwert von 36 Sucheinheiten (SU).
+Diese Tabelle enthält die Sucheinheiten, die für eine Unterstützung der Kombinationen aus Replikaten und Partitionen erforderlich sind. Dabei gilt ein Grenzwert von 36 Sucheinheiten (SU).
 
 <table cellspacing="0" border="1">
 <tr><td><b>12 Replikate</b></td><td>12 SU</td><td>24 SU</td><td>36 SU</td><td>N/V</td><td>–</td><td>N/V</td></tr>
@@ -85,7 +85,7 @@ Allgemeine Empfehlungen für hohe Verfügbarkeit sind:
 
 Derzeit steht kein integrierter Mechanismus für die Notfallwiederherstellung bereit. Das Hinzufügen von Partitionen oder Replikaten wäre die falsche Strategie, um die Zielsetzungen für eine Notfallwiederherstellung zu erfüllen. Stattdessen sollten Sie das Hinzufügen von Redundanz auf Dienstebene in Betracht ziehen. Eine eingehendere Besprechung der Methoden finden Sie in [diesem Forumsbeitrag](https://social.msdn.microsoft.com/Forums/ee108a26-00c5-49f6-b1ff-64c66c8b828a/dr-and-high-availability-for-azure-search?forum=azuresearch).
 
-> [AZURE.NOTE] Denken Sie daran, dass Vereinbarungen zum Servicelevel und Skalierbarkeit Features des Standarddiensts sind. Der kostenlose Dienst wird auf fester Ressourcenebene angeboten, wobei Replikate und Partitionen von mehreren Abonnenten gemeinsam genutzt werden. Wenn Sie mit dem kostenlosen Dienst begonnen haben und jetzt ein Upgrade durchführen möchten, müssen Sie einen neuen Azure Search-Dienst auf Standardebene erstellen und dann Indizes und Daten erneut in den neuen Dienst laden. Anweisungen zur Dienstbereitstellung finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](search-create-service-portal.md).
+> [AZURE.NOTE] Denken Sie daran, dass Vereinbarungen zum Servicelevel und Skalierbarkeit Features des Standarddiensts sind. Der kostenlose Dienst wird auf fester Ressourcenebene angeboten, wobei Replikate und Partitionen von mehreren Abonnenten gemeinsam genutzt werden. Wenn Sie mit dem kostenlosen Dienst begonnen haben und jetzt ein Upgrade durchführen möchten, müssen Sie einen neuen Azure Search-Dienst auf Standardebene erstellen und dann Indizes und Daten erneut in den neuen Dienst laden. Anweisungen zur Dienstbereitstellung finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](search-create-service-portal.md).
 
 ## Informationen zu Partitionen und Replikaten
 

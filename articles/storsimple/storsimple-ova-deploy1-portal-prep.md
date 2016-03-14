@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Bereitstellen von StorSimple Virtual Array 1 – Vorbereiten des Portals"
+   pageTitle="Bereitstellen von StorSimple Virtual Array 1 – Vorbereiten des Portals"
    description="Erstes Tutorial zum Bereitstellen von virtuellen StorSimple-Arrays mit Vorbereitung des Portals"
    services="storsimple"
    documentationCenter="NA"
@@ -22,9 +22,9 @@
 
 ## Übersicht 
 
-Dieser Artikel bezieht sich auf Microsoft Azure StorSimple Virtual Array (auch als „lokales virtuelles StorSimple-Gerät“ oder „virtuelles StorSimple-Gerät“ bezeichnet) mit der Version vom März 2016 (allgemeine Verfügbarkeit). Dies ist der erste Artikel einer Reihe von Tutorials, in denen die vollständige Bereitstellung Ihres virtuellen Arrays als Dateiserver oder iSCSI-Server erläutert wird. In diesem Artikel wird die Vorbereitung beschrieben, die für die Erstellung und Konfiguration Ihres StorSimple Manager-Diensts vor dem Bereitstellen eines virtuellen Arrays erforderlich ist. Außerdem enthält dieser Artikel Links zu einer Prüfliste für die Bereitstellungskonfiguration und Konfigurationsvoraussetzungen.
+Dieser Artikel bezieht sich auf Microsoft Azure StorSimple Virtual Array (auch als „lokales virtuelles StorSimple-Gerät“ oder „virtuelles StorSimple-Gerät“ bezeichnet) mit der Version vom März 2016 (allgemeine Verfügbarkeit). Dies ist der erste Artikel einer Reihe von Tutorials, in denen die vollständige Bereitstellung Ihres virtuellen Arrays als Dateiserver oder iSCSI-Server erläutert wird. In diesem Artikel wird die Vorbereitung beschrieben, die für die Erstellung und Konfiguration Ihres StorSimple Manager-Diensts vor dem Bereitstellen eines virtuellen Arrays erforderlich ist. Außerdem enthält dieser Artikel Links zu einer Prüfliste für die Bereitstellungskonfiguration und Konfigurationsvoraussetzungen.
 
-Sie benötigen Administratorrechte, um die Einrichtung und Konfiguration abzuschließen. Es wird empfohlen, die Prüfliste für die Bereitstellungskonfiguration durchzugehen, bevor Sie beginnen. Die Vorbereitung des Portals dauert weniger als 10 Minuten.
+Sie benötigen Administratorrechte, um die Einrichtung und Konfiguration abzuschließen. Es wird empfohlen, die Prüfliste für die Bereitstellungskonfiguration durchzugehen, bevor Sie beginnen. Die Vorbereitung des Portals dauert weniger als 10 Minuten.
 
 Die in diesem Artikel veröffentlichten Informationen zur StorSimple-Bereitstellung gelten nur für StorSimple Virtual Arrays.
 
@@ -39,7 +39,7 @@ Sehen Sie sich die folgenden Artikel in der angegebenen Reihenfolge an, um Ihr S
 | **#** | **Schritt** | **Aktion** | **Verwendete Dokumente**|
 |------|-------------------------------------------|--------------------------------------------------------------------------------|------------------------|
 |1\. | **Einrichten des klassischen Azure-Portals** | Erstellen und konfigurieren Sie Ihren StorSimple Manager-Dienst, bevor Sie ein virtuelles StorSimple-Gerät bereitstellen. |[Vorbereiten des Portals](storsimple-ova-deploy1-portal-prep.md)| 
-|2\. | **Bereitstellen des Virtual Array** | Stellen Sie für Hyper-V ein virtuelles StorSimple-Gerät auf einem Hostsystem mit Hyper-V 2008 R2, Hyper-V 2012 oder Hyper-V 2012 R2 bereit, und stellen Sie die Verbindung her. <br></br> <br></br> Stellen Sie für VMware ein lokales virtuelles StorSimple-Gerät auf einem Hostsystem mit VMware ESXi 5.5 und höher bereit, und stellen Sie die Verbindung her.<br></br>| [Bereitstellen eines virtuellen Arrays in Hyper-V](storsimple-ova-deploy2-provision-hyperv.md) <br></br> <br></br> [Bereitstellen eines virtuellen Arrays in VMware](storsimple-ova-deploy2-provision-vmware.md)|
+|2\. | **Bereitstellen des Virtual Array** | Stellen Sie für Hyper-V ein virtuelles StorSimple-Gerät auf einem Hostsystem mit Hyper-V 2008 R2, Hyper-V 2012 oder Hyper-V 2012 R2 bereit, und stellen Sie die Verbindung her. <br></br> <br></br> Stellen Sie für VMware ein lokales virtuelles StorSimple-Gerät auf einem Hostsystem mit VMware ESXi 5.5 und höher bereit, und stellen Sie die Verbindung her.<br></br>| [Bereitstellen eines virtuellen Arrays in Hyper-V](storsimple-ova-deploy2-provision-hyperv.md) <br></br> <br></br> [Bereitstellen eines virtuellen Arrays in VMware](storsimple-ova-deploy2-provision-vmware.md)|
 |3\. | **Einrichten des Virtual Array** | Führen Sie für Ihren Dateiserver das anfängliche Setup durch, registrieren Sie Ihren StorSimple-Dateiserver, und führen Sie die Geräteinstallation durch. Anschließend können Sie die SMB-Freigaben bereitstellen. <br></br><br></br> Führen Sie für Ihren iSCSI-Server das anfängliche Setup durch, registrieren Sie Ihren StorSimple-iSCSI-Server, und führen Sie die Geräteinstallation durch. Anschließend können Sie die iSCSI-Volumes bereitstellen.| [Einrichten des virtuellen Arrays als Dateiserver](storsimple-ova-deploy3-fs-setup.md)<br></br> <br></br>[Einrichten des virtuellen Arrays als iSCSI-Server](storsimple-ova-deploy3-iscsi-setup.md)|
 
 #### Videos zur Bereitstellung
@@ -80,17 +80,17 @@ Stellen Sie Folgendes sicher, bevor Sie beginnen:
 
 Stellen Sie Folgendes sicher, bevor Sie ein virtuelles Gerät bereitstellen:
 
--   Sie haben Zugriff auf ein Hostsystem mit Hyper-V (2008 R2 oder höher) oder VMware (ESXi 5.5 oder höher), das zum Bereitstellen eines Geräts verwendet werden kann.
+-   Sie haben Zugriff auf ein Hostsystem mit Hyper-V (2008 R2 oder höher) oder VMware (ESXi 5.5 oder höher), das zum Bereitstellen eines Geräts verwendet werden kann.
 
 -   Das Hostsystem verfügt für die Bereitstellung des virtuellen Geräts über die folgenden Ressourcen:
 	
-	-   Mindestens 4 Kerne
+	-   Mindestens 4 Kerne
 	
-	-   Mindestens 8 GB RAM
+	-   Mindestens 8 GB RAM
 	
 	-   Eine Netzwerkschnittstelle
 	
-	-   Einen virtuellen Datenträger mit 500 GB für Systemdaten
+	-   Einen virtuellen Datenträger mit 500 GB für Systemdaten
 
 ### Für das Netzwerk des Rechenzentrums 
 
@@ -98,15 +98,15 @@ Stellen Sie Folgendes sicher, bevor Sie beginnen:
 
 -   Das Netzwerk in Ihrem Rechenzentrum ist gemäß den Netzwerkanforderungen für das StorSimple-Gerät konfiguriert. Weitere Informationen finden Sie unter [Systemanforderungen für das StorSimple Virtual Array](storsimple-ova-system-requirements.md).
 
--   Für das virtuelle StorSimple-Gerät steht jederzeit eine Internetbandbreite von 5 MBit/s (oder mehr) zur Verfügung. Diese Bandbreite sollte nicht gemeinsam mit anderen Anwendungen genutzt werden.
+-   Für das virtuelle StorSimple-Gerät steht jederzeit eine Internetbandbreite von 5 MBit/s (oder mehr) zur Verfügung. Diese Bandbreite sollte nicht gemeinsam mit anderen Anwendungen genutzt werden.
 
 ## Schritt-für-Schritt-Vorbereitung
 
 Verwenden Sie die folgende Schritt-für-Schritt-Anleitung, um Ihr Portal für den StorSimple Manager-Dienst vorzubereiten.
 
-## Schritt 1: Erstellen eines neuen Diensts
+## Schritt 1: Erstellen eines neuen Diensts
 
-Mit einer einzelnen Instanz des StorSimple Manager-Diensts können mehrere StorSimple 1200-Geräte verwaltet werden. Führen Sie die folgenden Schritte aus, um einen neuen StorSimple Manager-Dienst zu erstellen. Falls Sie einen vorhandenen StorSimple Manager-Dienst zum Verwalten Ihrer 1200-Geräte verwenden, können Sie diesen Schritt überspringen und mit [Schritt 2: Abrufen des Dienstregistrierungsschlüssels](#step-2-get-the-service-registration-key) fortfahren.
+Mit einer einzelnen Instanz des StorSimple Manager-Diensts können mehrere StorSimple 1200-Geräte verwaltet werden. Führen Sie die folgenden Schritte aus, um einen neuen StorSimple Manager-Dienst zu erstellen. Falls Sie einen vorhandenen StorSimple Manager-Dienst zum Verwalten Ihrer 1200-Geräte verwenden, können Sie diesen Schritt überspringen und mit [Schritt 2: Abrufen des Dienstregistrierungsschlüssels](#step-2-get-the-service-registration-key) fortfahren.
 
 [AZURE.INCLUDE [storsimple-ova-create-new-service](../../includes/storsimple-ova-create-new-service.md)]
 
@@ -121,7 +121,7 @@ Mit einer einzelnen Instanz des StorSimple Manager-Diensts können mehrere StorS
 > - Wenn Sie die automatische Erstellung eines Speicherkontos aktiviert haben, fahren Sie mit [Schritt 2: Abrufen des Dienstregistrierungsschlüssels](#step-2-get-the-service-registration-key) fort.
 
 
-## Schritt 2: Abrufen des Dienstregistrierungsschlüssels
+## Schritt 2: Abrufen des Dienstregistrierungsschlüssels
 
 
 Nachdem der StorSimple Manager-Dienst eingerichtet wurde und ausgeführt wird, müssen Sie den Dienstregistrierungsschlüssel abrufen. Dieser Schlüssel wird zum Registrieren Ihres StorSimple-Geräts sowie zum Herstellen einer Verbindung mit dem Dienst verwendet.
@@ -135,7 +135,7 @@ Führen Sie die folgenden Schritte im [klassischen Azure-Portal](https://manage.
 > 
 > Der Dienstregistrierungsschlüssel wird zur Registrierung aller StorSimple Manager-Geräte verwendet, die für den StorSimple-Manager-Dienst registriert werden müssen.
 
-## Schritt 3: Herunterladen des Image mit dem virtuellen Gerät
+## Schritt 3: Herunterladen des Image mit dem virtuellen Gerät
 
 Nach dem Beschaffen des Dienstregistrierungsschlüssels müssen Sie nun das passende Image mit dem virtuellen Gerät herunterladen, um auf Ihrem Hostsystem ein virtuelles Gerät bereitzustellen. Die Images virtueller Geräte sind betriebssystemspezifisch und können im klassischen Azure-Portal von der Seite „Schnellstart“ heruntergeladen werden.
 
@@ -153,16 +153,16 @@ Führen Sie die folgenden Schritte im [klassischen Azure-Portal](https://manage.
 
 	-   Hyper-V 2012 und höher
 	
-	-   Hyper-V 2008 R2 und höher
+	-   Hyper-V 2008 R2 und höher
 
-	-   VMWare ESXi 5.5 und höher
+	-   VMWare ESXi 5.5 und höher
 
 	> [AZURE.IMPORTANT] Die Software auf dem StorSimple Virtual Array kann nur in Verbindung mit dem StorSimple Manager-Dienst verwendet werden.
 
 
 1.  Klicken Sie auf das Bild für Ihr Hostbetriebssystem, das Sie zum Bereitstellen des virtuellen Geräts verwenden möchten. So gelangen Sie zum Microsoft Download Center.
 
-1.  Laden Sie bei Verwendung von Hyper-V die VHDX für Hyper-V 2012 oder die VHD für Hyper-V 2008 R2 und höher herunter. Laden Sie das VMDK herunter, wenn Sie VMware verwenden. Die VHDX ist eine ZIP-Datei mit einer Größe von 4,77 GB, die VHD hat eine Größe von 4,77 GB, und das VMDK hat eine Größe von 4,75 GB. Die für das Herunterladen der Datei erforderliche Zeit richtet sich nach Ihrer Internetverbindung.
+1.  Laden Sie bei Verwendung von Hyper-V die VHDX für Hyper-V 2012 oder die VHD für Hyper-V 2008 R2 und höher herunter. Laden Sie das VMDK herunter, wenn Sie VMware verwenden. Die VHDX ist eine ZIP-Datei mit einer Größe von 4,77 GB, die VHD hat eine Größe von 4,77 GB, und das VMDK hat eine Größe von 4,75 GB. Die für das Herunterladen der Datei erforderliche Zeit richtet sich nach Ihrer Internetverbindung.
 
 2.  Entzippen Sie die Datei, und notieren Sie sich den entsprechenden Speicherort auf Ihrem lokalen Datenträger.
 

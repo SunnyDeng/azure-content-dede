@@ -18,7 +18,7 @@
 
 # Erstellen einer .NET MVC-Web-App in Azure App Service mit Azure Active Directory-Authentifizierung
 
-In diesem Artikel erfahren Sie, wie Sie eine ASP.NET MVC-Branchenanwendung in [Azure App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714) mit einem lokalen [Active Directory-Verbunddienst (AD FS)](http://technet.microsoft.com/library/hh831502.aspx) als Identitätsanbieter erstellen. Dieses Szenario kann funktionieren, wenn Sie Branchenanwendungen in Azure App Service-Web-Apps erstellen möchten, Ihre Organisation jedoch verlangt, alle Daten vor Ort zu speichern.
+In diesem Artikel erfahren Sie, wie Sie eine ASP.NET MVC-Branchenanwendung in [Azure App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714) mit einem lokalen [Active Directory-Verbunddienst (AD FS)](http://technet.microsoft.com/library/hh831502.aspx) als Identitätsanbieter erstellen. Dieses Szenario kann funktionieren, wenn Sie Branchenanwendungen in Azure App Service-Web-Apps erstellen möchten, Ihre Organisation jedoch verlangt, alle Daten vor Ort zu speichern.
 
 >[AZURE.NOTE] Eine Übersicht über die verschiedenen Authentifizierungs- und Autorisierungsoptionen für Unternehmen für Azure App Service-Web-Apps finden Sie unter [Verwenden von Active Directory für die Authentifizierung in Azure App Service](web-sites-authentication-authorization.md).
 
@@ -40,17 +40,17 @@ Sie erstellen eine grundlegende ASP.NET-Anwendung in Azure App Service-Web-Apps 
 
 Sie benötigen Folgendes zum Bearbeiten dieses Lernprogramms:
 
-- Lokale AD FS-Bereitstellung (Eine umfassende exemplarische Vorgehensweise des von mir genutzten Testlabors finden Sie unter [Testlabor: Eigenständiger STS mit AD FS in Azure VM (nur für Testzwecke)](TODO).)
+- Lokale AD FS-Bereitstellung (Eine umfassende exemplarische Vorgehensweise des von mir genutzten Testlabors finden Sie unter [Testlabor: Eigenständiger STS mit AD FS in Azure VM (nur für Testzwecke)](TODO).)
 - Berechtigungen zum Erstellen von Vertrauensstellungen der vertrauenden Seite in AD FS-Verwaltung
 - Visual Studio 2013
-- [Azure SDK 2.5.1](http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409) oder höher
+- [Azure SDK 2.5.1](http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409) oder höher
 
 <a name="bkmk_sample"></a>
 ## Verwenden der Beispielanwendung für die Vorlage der Branchenanwendung ##
 
-Die Beispielanwendung in diesem Lernprogramm ([WebApp-WSFederation-DotNet](https://github.com/AzureADSamples/WebApp-WSFederation-DotNet)) wurde vom Azure Active Directory-Team erstellt. Da AD FS WS-Federation unterstützt, können Sie es ohne Weiteres als Vorlage zum Erstellen neuer Branchenanwendungen verwenden. Es bietet die folgenden Features:
+Die Beispielanwendung in diesem Lernprogramm ([WebApp-WSFederation-DotNet](https://github.com/AzureADSamples/WebApp-WSFederation-DotNet)) wurde vom Azure Active Directory-Team erstellt. Da AD FS WS-Federation unterstützt, können Sie es ohne Weiteres als Vorlage zum Erstellen neuer Branchenanwendungen verwenden. Es bietet die folgenden Features:
 
-- Verwendet [WS-Federation](http://msdn.microsoft.com/library/bb498017.aspx) zur Authentifizierung bei einer lokalen AD FS-Bereitstellung
+- Verwendet [WS-Federation](http://msdn.microsoft.com/library/bb498017.aspx) zur Authentifizierung bei einer lokalen AD FS-Bereitstellung
 - Funktionen zum An- und Abmelden
 - Verwenden von [Microsoft.Owin](http://www.asp.net/aspnet/overview/owin-and-katana/an-overview-of-project-katana) (anstelle von Windows Identity Foundation, WIF). Dies ist das künftige ASP.NET und lässt sich wesentlich einfacher als WIF für die Authentifizierung und Autorisierung einrichten.
 
@@ -59,7 +59,7 @@ Die Beispielanwendung in diesem Lernprogramm ([WebApp-WSFederation-DotNet](https
 
 2.	Klonen Sie die Beispielprojektmappe unter [WebApp-WSFederation-DotNet](https://github.com/AzureADSamples/WebApp-WSFederation-DotNet), oder laden Sie sie in Ihr lokales Verzeichnis herunter.
 
-	> [AZURE.NOTE] Die Anweisungen unter [README.md](https://github.com/AzureADSamples/WebApp-WSFederation-DotNet/blob/master/README.md) zeigen, wie Sie die Anwendung in Azure Active Directory einrichten. Da Sie sie in diesem Lernprogramm aber mit AD FS einrichten, führen Sie stattdessen die hier genannten Schritte aus.
+	> [AZURE.NOTE] Die Anweisungen unter [README.md](https://github.com/AzureADSamples/WebApp-WSFederation-DotNet/blob/master/README.md) zeigen, wie Sie die Anwendung in Azure Active Directory einrichten. Da Sie sie in diesem Lernprogramm aber mit AD FS einrichten, führen Sie stattdessen die hier genannten Schritte aus.
 
 3.	Öffnen Sie die Projektmappe, und öffnen Sie "Controllers\\AccountController.cs" im **Projektmappen-Explorer**.
 
@@ -139,19 +139,19 @@ Sie veröffentlichen hier eine Anwendung in einer Web-App in App Service-Web-App
 	   &lt;add key="ida:RPIdentifier" value="<mark>[z.&#160;B. https://mylobapp.azurewebsites.net/]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" />
 	&lt;/appSettings></pre>
 
-Danach sind in Ihrem Projekt zwei RP-IDs konfiguriert, eine für Ihre Debugumgebung in Visual Studio und eine für die veröffentlichte Web-App in Azure. Für beide Umgebungen wird in AD FS eine RP-Vertrauensstellung eingerichtet. Während des Debuggens werden die App-Einstellungen in der Datei "Web.config" verwendet, damit die **Debug**-Konfiguration in AD FS funktioniert. Bei der Veröffentlichung (standardmäßig wird die **Release**-Konfiguration veröffentlicht) wird eine transformierte Datei "Web.config" hochgeladen, welche die geänderten App-Einstellungen der Datei "Web.Release.config" enthält.
+Danach sind in Ihrem Projekt zwei RP-IDs konfiguriert, eine für Ihre Debugumgebung in Visual Studio und eine für die veröffentlichte Web-App in Azure. Für beide Umgebungen wird in AD FS eine RP-Vertrauensstellung eingerichtet. Während des Debuggens werden die App-Einstellungen in der Datei "Web.config" verwendet, damit die **Debug**-Konfiguration in AD FS funktioniert. Bei der Veröffentlichung (standardmäßig wird die **Release**-Konfiguration veröffentlicht) wird eine transformierte Datei "Web.config" hochgeladen, welche die geänderten App-Einstellungen der Datei "Web.Release.config" enthält.
 
-Wenn Sie die in Azure veröffentlichte Web-App dem Debugger anfügen möchten (d. h., Sie müssen Debugsymbole Ihres Codes in der veröffentlichten Web-App hochladen), können Sie einen Klon der Debug-Konfiguration für das Debuggen von Azure erstellen, jedoch mit einer eigenen benutzerdefinierten "Web.config"-Transformation (z. B. "Web.AzureDebug.config"), die die Anwendungseinstellungen der Datei "Web.Release.config" verwendet. Auf diese Weise können Sie eine statische Konfiguration in verschiedenen Umgebungen beibehalten.
+Wenn Sie die in Azure veröffentlichte Web-App dem Debugger anfügen möchten (d. h., Sie müssen Debugsymbole Ihres Codes in der veröffentlichten Web-App hochladen), können Sie einen Klon der Debug-Konfiguration für das Debuggen von Azure erstellen, jedoch mit einer eigenen benutzerdefinierten "Web.config"-Transformation (z. B. "Web.AzureDebug.config"), die die Anwendungseinstellungen der Datei "Web.Release.config" verwendet. Auf diese Weise können Sie eine statische Konfiguration in verschiedenen Umgebungen beibehalten.
 
 <a name="bkmk_rptrusts"></a>
 ## Konfigurieren von Vertrauensstellungen der vertrauenden Seite in der AD FS-Verwaltung ##
 
-Jetzt müssen Sie eine RP-Vertrauensstellung in der AD FS-Verwaltung konfigurieren, bevor Sie Ihre Beispielanwendung verwenden und tatsächlich mit AD FS authentifizieren können. Sie müssen zwei separate RP-Vertrauensstellungen einrichten, eine für Ihre Debugumgebung und eine für die veröffentlichte Web-App.
+Jetzt müssen Sie eine RP-Vertrauensstellung in der AD FS-Verwaltung konfigurieren, bevor Sie Ihre Beispielanwendung verwenden und tatsächlich mit AD FS authentifizieren können. Sie müssen zwei separate RP-Vertrauensstellungen einrichten, eine für Ihre Debugumgebung und eine für die veröffentlichte Web-App.
 
 > [AZURE.NOTE] Wiederholen Sie die folgenden Schritte für beide Umgebungen.
 
 4.	Melden Sie sich mit Anmeldeinformationen, die Berechtigungen zur Verwaltung von AD FS umfassen, auf dem AD FS-Server an.
-5.	Öffnen Sie die AD FS-Verwaltung. Klicken Sie mit der rechten Maustaste auf **AD FS\\Trusted Relationships\\Relying Party Trusts**, und wählen Sie **Vertrauensstellung der vertrauenden Seite hinzufügen**.
+5.	Öffnen Sie die AD FS-Verwaltung. Klicken Sie mit der rechten Maustaste auf **AD FS\\Trusted Relationships\\Relying Party Trusts**, und wählen Sie **Vertrauensstellung der vertrauenden Seite hinzufügen**.
 
 	![](./media/web-sites-dotnet-lob-application-adfs/1-add-rptrust.png)
 
@@ -169,7 +169,7 @@ Jetzt müssen Sie eine RP-Vertrauensstellung in der AD FS-Verwaltung konfigurie
 
 	![](./media/web-sites-dotnet-lob-application-adfs/3-ssl-url.png)
 
-6.	Kehren Sie zur AD FS-Verwaltung zurück, und wählen Sie auf der Seite **URL konfigurieren** des **Assistenten zum Hinzufügen einer Vertrauensstellung für die vertrauende Seite** die Option **Unterstützung für das WS-Verbund-Protokoll (Passiv)** aus, und geben Sie die SSL-URL Ihres Visual Studio-Projekts ein, die Sie im vorherigen Schritt notiert haben. Klicken Sie auf **Weiter**.
+6.	Kehren Sie zur AD FS-Verwaltung zurück, und wählen Sie auf der Seite **URL konfigurieren** des **Assistenten zum Hinzufügen einer Vertrauensstellung für die vertrauende Seite** die Option **Unterstützung für das WS-Verbund-Protokoll (Passiv)** aus, und geben Sie die SSL-URL Ihres Visual Studio-Projekts ein, die Sie im vorherigen Schritt notiert haben. Klicken Sie auf **Weiter**.
 
 	![](./media/web-sites-dotnet-lob-application-adfs/4-configure-url.png)
 
@@ -186,7 +186,7 @@ Jetzt müssen Sie eine RP-Vertrauensstellung in der AD FS-Verwaltung konfigurie
 	-	Gruppenmitgliedschaften als Rollen (http://schemas.microsoft.com/ws/2008/06/identity/claims/role) – Kann mit der Dekoration `[Authorize(Roles="role1, role2,...")]` zum Autorisieren von Controllern/Aktionen verwendet werden. Tatsächlich ist dies nicht unbedingt die leistungsfähigste Methode für die Rollenautorisierung, insbesondere dann nicht, wenn die Active Directory-Benutzer normalerweise Hunderten von Sicherheitsgruppen angehören, denn dies entspricht Hunderten von Rollenansprüche im SAML-Token. Eine alternative Methode ist das bedingte Senden eines einzelnen Rollenanspruchs je nach Mitgliedschaft des Benutzers in einer bestimmten Gruppe. Allerdings werden wir die Methode im Rahmen dieses Lernprogramms einfach halten.
 	-	Namens-ID (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier) – Kann zur Validierung des Fälschungsschutzes verwendet werden. Weitere Informationen zur Anpassung für die Validierung des Fälschungsschutzes finden Sie im Abschnitt **Hinzufügen von Branchenfunktionen zur Beispielanwendung** unter [Erstellen einer .NET MVC-Web-App in Azure App Service mit Azure Active Directory-Authentifizierung](web-sites-dotnet-lob-application-azure-ad.md#bkmk_crud).
 
-	> [AZURE.NOTE] Die Anspruchstypen, die Sie für Ihre Anwendung konfigurieren müssen, richten sich nach den Anforderungen Ihrer Anwendung. Die Liste der Ansprüche, die von Azure Active Directory-Anwendungen (d. h. RP-Vertrauensstellungen) unterstützt werden, finden Sie z. B. unter [Unterstützte Token- und Anspruchstypen](http://msdn.microsoft.com/library/azure/dn195587.aspx).
+	> [AZURE.NOTE] Die Anspruchstypen, die Sie für Ihre Anwendung konfigurieren müssen, richten sich nach den Anforderungen Ihrer Anwendung. Die Liste der Ansprüche, die von Azure Active Directory-Anwendungen (d. h. RP-Vertrauensstellungen) unterstützt werden, finden Sie z. B. unter [Unterstützte Token- und Anspruchstypen](http://msdn.microsoft.com/library/azure/dn195587.aspx).
 
 8.	Klicken Sie im Dialogfeld "Anspruchsregeln bearbeiten" auf **Regel hinzufügen**.
 9.	Konfigurieren Sie die Namens-, UPN- und Rollenansprüche wie unten gezeigt, und klicken Sie auf **Fertig stellen**.
@@ -243,7 +243,7 @@ Klicken Sie nach dem Laden der Webanwendung auf **Anmelden**. Je nach der von AD
 
 ![](./media/web-sites-dotnet-lob-application-adfs/9-test-debugging.png)
 
-Nachdem Sie sich mit einem Benutzer in der AD-Domäne der AD FS-Bereitstellung angemeldet haben, sollte nun erneut die Homepage mit der Begrüßung **Hallo <User Name>!** angezeigt werden. So sieht das bei mir aus.
+Nachdem Sie sich mit einem Benutzer in der AD-Domäne der AD FS-Bereitstellung angemeldet haben, sollte nun erneut die Homepage mit der Begrüßung **Hallo <User Name>!** angezeigt werden. So sieht das bei mir aus.
 
 ![](./media/web-sites-dotnet-lob-application-adfs/11-test-debugging-success.png)
 
@@ -251,7 +251,7 @@ Bisher haben Sie Folgendes erreicht:
 
 - Die Anwendung hat AD FS erreicht, und eine entsprechende RP-ID wird in der AD FS-Datenbank gefunden.
 - AD FS hat einen Active Directory-Benutzer authentifiziert und leitet Sie zur Startseite der Anwendung zurück.
-- AD FS hat den Namensanspruch (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name) an Ihre Anwendung gesendet. Dies geht daraus hervor, dass der Benutzername in der Ecke angezeigt wird. 
+- AD FS hat den Namensanspruch (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name) an Ihre Anwendung gesendet. Dies geht daraus hervor, dass der Benutzername in der Ecke angezeigt wird. 
 
 Wenn der Namensanspruch fehlt, würde **Hallo !** angezeigt werden. Wenn Sie die Datei "Views\\Shared\\_LoginPartial.cshtml" betrachten, werden Sie feststellen, dass `User.Identity.Name` verwendet wird, um den Benutzernamen anzuzeigen. Wie bereits erwähnt, füllt ASP.NET diese Eigenschaft mit den Namensanspruch des authentifizierten Benutzers, wenn dieser im SAML-Token verfügbar ist. Um alle Ansprüche zu sehen, die von AD FS gesendet werden, setzen Sie in der Datei "Controllers\\HomeController.cs" einen Haltepunkt in der Index-Aktionsmethode. Nachdem der Benutzer authentifiziert wurde, überprüfen Sie die `System.Security.Claims.Current.Claims`-Auflistung.
 
@@ -282,7 +282,7 @@ Da Sie Gruppenmitgliedschaften als Rollenansprüche in die RP-Vertrauensstellung
 	}
 	</pre>
 
-	Da ich in meiner AD FS-Testumgebung dem Element **Testgruppe** den Eintrag **Testbenutzer** hinzugefügt habe, verwende ich die Testgruppe zum Testen der Autorisierung in `About`. Für `Contact` teste ich den negativen Fall für **Domänenadministratoren**. Dies ist eine Gruppe, der der **Testbenutzer** nicht angehört.
+	Da ich in meiner AD FS-Testumgebung dem Element **Testgruppe** den Eintrag **Testbenutzer** hinzugefügt habe, verwende ich die Testgruppe zum Testen der Autorisierung in `About`. Für `Contact` teste ich den negativen Fall für **Domänenadministratoren**. Dies ist eine Gruppe, der der **Testbenutzer** nicht angehört.
 
 3. Starten Sie den Debugger durch Drücken von `F5`, melden Sie sich an, und klicken Sie auf **Info**. Sie sollten jetzt die Seite `~/About/Index` sehen können, wenn der authentifizierte Benutzer für diese Aktion berechtigt ist.
 4. Klicken Sie nun auf **Kontakt**. In meinem Fall sollte keine Autorisierung von **Testbenutzer** für die Aktion erfolgen. Allerdings wird der Browser zu AD FS umgeleitet, und schließlich wird diese Meldung angezeigt:
@@ -346,11 +346,11 @@ Azure App Service-Web-Apps unterstützen zwei Methoden für den Zugriff auf loka
 - [Schützen der Anwendung durch SSL und das Authorize-Attribut](web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database.md#protect-the-application-with-ssl-and-the-authorize-attribute)
 - [Verwenden von Active Directory für die Authentifizierung in Azure App Service](web-sites-authentication-authorization.md)
 - [Erstellen einer .NET MVC-Web-App in Azure App Service mit Azure Active Directory-Authentifizierung](web-sites-dotnet-lob-application-azure-ad.md)
-- [Use the On-Premises Organizational Authentication Option (ADFS) With ASP.NET in Visual Studio 2013 (Verwenden der lokalen Organisationsauthentifizierungsoption (ADFS) mit ASP.NET in Visual Studio 2013, in englischer Sprache)](http://www.cloudidentity.com/blog/2014/02/12/use-the-on-premises-organizational-authentication-option-adfs-with-asp-net-in-visual-studio-2013/)
+- [Use the On-Premises Organizational Authentication Option (ADFS) With ASP.NET in Visual Studio 2013 (Verwenden der lokalen Organisationsauthentifizierungsoption (ADFS) mit ASP.NET in Visual Studio 2013, in englischer Sprache)](http://www.cloudidentity.com/blog/2014/02/12/use-the-on-premises-organizational-authentication-option-adfs-with-asp-net-in-visual-studio-2013/)
 - [Blog von Vittorio Bertocci](http://blogs.msdn.com/b/vbertocci/)
 - [Migrate a VS2013 Web Project From WIF to Katana (Migrieren eines VS2013-Webprojekts von WIF nach Katana, in englischer Sprache)](http://www.cloudidentity.com/blog/2014/09/15/MIGRATE-A-VS2013-WEB-PROJECT-FROM-WIF-TO-KATANA/)
 - [Active Directory-Verbunddienste: Übersicht](http://technet.microsoft.com/library/hh831502.aspx)
-- [WS-Federation 1.1 specification (WS-Verbund 1.1 – Spezifikationen, in englischer Sprache)](http://download.boulder.ibm.com/ibmdl/pub/software/dw/specs/ws-fed/WS-Federation-V1-1B.pdf?S_TACT=105AGX04&S_CMP=LP)
+- [WS-Federation 1.1 specification (WS-Verbund 1.1 – Spezifikationen, in englischer Sprache)](http://download.boulder.ibm.com/ibmdl/pub/software/dw/specs/ws-fed/WS-Federation-V1-1B.pdf?S_TACT=105AGX04&S_CMP=LP)
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../../includes/app-service-web-whats-changed.md)]
  

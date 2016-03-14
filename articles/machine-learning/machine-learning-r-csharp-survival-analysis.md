@@ -24,7 +24,7 @@ In vielen Szenarien ist das wichtigste bewertete Ergebnis die Zeit, bis ein defi
 
 [AZURE.INCLUDE [machine-learning-free-trial](../../includes/machine-learning-free-trial.md)]
 
-Dieser [Webdienst](https://datamarket.azure.com/dataset/aml_labs/survivalanalysis) gibt eine Antwort auf die Frage "Wie hoch ist die Wahrscheinlichkeit, dass ein definiertes Ereignis zum Zeitpunkt n für Objekt x stattfindet?" Durch Bereitstellen eines Lebensdaueranalysemodells ermöglicht dieser Webdienst den Benutzern, Daten zum Trainieren und Testen des Modells bereitzustellen. Am wichtigsten ist für dieses Modell, die Länge der verstrichenen Zeit zu modellieren, bis das definierte Ereignis eintritt.
+Dieser [Webdienst](https://datamarket.azure.com/dataset/aml_labs/survivalanalysis) gibt eine Antwort auf die Frage "Wie hoch ist die Wahrscheinlichkeit, dass ein definiertes Ereignis zum Zeitpunkt n für Objekt x stattfindet?" Durch Bereitstellen eines Lebensdaueranalysemodells ermöglicht dieser Webdienst den Benutzern, Daten zum Trainieren und Testen des Modells bereitzustellen. Am wichtigsten ist für dieses Modell, die Länge der verstrichenen Zeit zu modellieren, bis das definierte Ereignis eintritt.
 
 >Dieser Webdienst kann von Benutzern verwendet werden – beispielsweise über eine mobile App, eine Website oder sogar über einen lokalen Computer. Dieser Webdienst ist jedoch auch ein gutes Beispiel dafür, wie Azure Machine Learning zum Erstellen von Webdiensten basierend auf R-Code verwendet werden kann. Mit nur wenigen Codezeilen R-Code und einigen Klicks in Azure Machine Learning Studio können Sie ein Experiment mit R-Code erstellen und als Webdienst veröffentlichen. Der Webdienst kann dann im Azure Marketplace veröffentlicht und von Benutzern und Geräten auf der ganzen Welt genutzt werden – ohne Einrichtung einer Infrastruktur durch den Autor des Webdiensts.
 
@@ -35,7 +35,7 @@ Das Eingabedatenschema des Webdienstes wird in der folgenden Tabelle dargestellt
 - trainingdata – Eine Zeichenfolge. Zeilen werden durch Kommas und Spalten durch Semikolons getrennt. Jede Zeile enthält die Dimension "time", die Dimension "event" und Prädiktorvariablen.
 - testingdata – Eine Zeile mit Daten, die Prädiktorvariablen für ein bestimmtes Objekt enthält.
 - time\_of\_interest – Der verstrichene zu beobachtende Zeitraum n.
-- index\_time – Der Spaltenindex der Dimension "time" (beginnend mit 1).
+- index\_time – Der Spaltenindex der Dimension "time" (beginnend mit 1).
 - index\_event – Der Spaltenindex der Dimension "event" (beginnend mit 1).
 - variable\_types – Eine Zeichenfolge mit Semikolon als Trennzeichen. 0 stellt kontinuierliche und 1 Faktorvariablen dar.
 
@@ -81,7 +81,7 @@ Es gibt mehrere Möglichkeiten, den Dienst auf automatisierte Weise zu nutzen ([
 
 
 
-Die Interpretation dieses Tests lautet wie folgt. Angenommen, das Ziel der Daten ist die Modellierung des Zeitraums, der verstreicht, bis die Patienten, die eines der beiden Behandlungsprogramme durchlaufen haben, wieder Drogen nehmen. Die Ausgabe des Webdiensts ergibt: Patienten, die 35 Jahre alt werden, zuvor 2 Entzüge durchlaufen haben, das lange Entzugsprogramm vor Ort wählen und sowohl Heroin als auch Kokain konsumiert haben, werden an Tag 500 zu 95,64 % wieder rückfällig.
+Die Interpretation dieses Tests lautet wie folgt. Angenommen, das Ziel der Daten ist die Modellierung des Zeitraums, der verstreicht, bis die Patienten, die eines der beiden Behandlungsprogramme durchlaufen haben, wieder Drogen nehmen. Die Ausgabe des Webdiensts ergibt: Patienten, die 35 Jahre alt werden, zuvor 2 Entzüge durchlaufen haben, das lange Entzugsprogramm vor Ort wählen und sowohl Heroin als auch Kokain konsumiert haben, werden an Tag 500 zu 95,64 % wieder rückfällig.
 
 ##Erstellen des Webdiensts
 

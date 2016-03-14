@@ -18,7 +18,7 @@
    ms.author="mandia"/>
 
 # Erste Schritte mit der Azure-Blobspeicher-API
-Stellen Sie eine Verbindung mit einem Azure-Blob her, um Dateien in einem Blobcontainer zu verwalten, d. h,. Dateien zu erstellen, zu löschen usw. Die Azure Blob Storage-API kann in Folgendem verwendet werden:
+Stellen Sie eine Verbindung mit einem Azure-Blob her, um Dateien in einem Blobcontainer zu verwalten, d. h,. Dateien zu erstellen, zu löschen usw. Die Azure Blob Storage-API kann in Folgendem verwendet werden:
 
 - Logik-Apps 
 
@@ -27,7 +27,7 @@ Stellen Sie eine Verbindung mit einem Azure-Blob her, um Dateien in einem Blobco
 Azure-Blobspeicher ermöglicht Folgendes:
 
 - Erstellen eines Geschäftsworkflows basierend auf den Daten, die aus dem Blob abgerufen werden. 
-- Ausführen von Aktionen, über die Sie u. a. eine Datei erstellen und Dateiinhalte abrufen können. Diese Aktionen erhalten eine Antwort und stellen anschließend die Ausgabe anderen Aktionen zur Verfügung. Sie können z. B. in einer Datei in Ihrem Blob den Begriff „Dringend“ suchen und dann alle Dateien mit diesem Begriff mithilfe von Office 365 in einer E-Mail senden. 
+- Ausführen von Aktionen, über die Sie u. a. eine Datei erstellen und Dateiinhalte abrufen können. Diese Aktionen erhalten eine Antwort und stellen anschließend die Ausgabe anderen Aktionen zur Verfügung. Sie können z. B. in einer Datei in Ihrem Blob den Begriff „Dringend“ suchen und dann alle Dateien mit diesem Begriff mithilfe von Office 365 in einer E-Mail senden. 
 
 Informationen zum Hinzufügen eines Vorgangs in Logik-Apps finden Sie unter [Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md).
 

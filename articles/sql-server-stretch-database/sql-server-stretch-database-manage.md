@@ -34,7 +34,7 @@ Wählen Sie **Aufgaben | Stretch | Überwachung** für eine Datenbank in SQL Ser
 
 Öffnen Sie die dynamische Verwaltungssicht **sys.dm\_db\_rda\_migration\_status**, um zu ermitteln, wie viele Batches und Zeilen mit Daten migriert wurden.
 
-## Steigern der Azure-Leistung für ressourcenintensive Vorgänge wie z. B. die Indizierung
+## Steigern der Azure-Leistung für ressourcenintensive Vorgänge wie z. B. die Indizierung
 Beim Erstellen, erneuten Erstellen oder Neuorganisieren eines Indexes für eine große Tabelle, die für Stretch-Datenbank konfiguriert ist, sollten Sie die Steigerung der Leistung der entsprechenden Remotedatenbank für die Dauer des Vorgangs in Betracht ziehen.
 
 ## Schema der Remotetabelle nicht ändern
@@ -46,7 +46,7 @@ Empfehlungen zur Problembehandlung finden Sie unter [Überwachen und Behandeln v
 ## Beheben von Problemen mit der Abfrageleistung
 **Abfragen mit Stretch-fähigen Tabellen sind langsam.** Abfragen mit Stretch-fähigen Tabellen werden erwartungsgemäß langsamer, nachdem die Tabellen für Stretch aktiviert wurden. Wenn die Abfrageleistung maßgeblich sinkt, überprüfen Sie die folgenden möglichen Problemursachen.
 
--   Befindet sich der Azure-Server in einer anderen geografischen Region als Ihr SQL Server? Konfigurieren Sie Ihren Azure-Server so, dass er sich in der gleichen geografischen Region wie Ihr SQL Server befindet, um die Netzwerklatenz zu reduzieren.
+-   Befindet sich der Azure-Server in einer anderen geografischen Region als Ihr SQL Server? Konfigurieren Sie Ihren Azure-Server so, dass er sich in der gleichen geografischen Region wie Ihr SQL Server befindet, um die Netzwerklatenz zu reduzieren.
 
 -   Möglicherweise haben sich die Netzwerkbedingungen verschlechtert. Wenden Sie sich an Ihren Netzwerkadministrator, um Informationen über aktuelle Probleme oder Ausfälle zu erhalten.
 

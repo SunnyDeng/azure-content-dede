@@ -105,7 +105,7 @@ Gehen Sie wie folgt vor, um ein Runbook zur Bearbeitung im Text-Editor zu öffne
 
 
 
-## So bearbeiten Sie ein Azure Automation-Runbook mit Windows PowerShell
+## So bearbeiten Sie ein Azure Automation-Runbook mit Windows PowerShell
 
 Zum Bearbeiten eines Runbooks mit Windows PowerShell verwenden Sie einen Editor Ihrer Wahl und speichern es in einer PS1-Datei. Mit dem Cmdlet [Get-AzureAutomationRunbookDefinition](http://aka.ms/runbookauthor/cmdlet/getazurerunbookdefinition) können Sie den Inhalt des Runbooks abrufen, und mit dem Cmdlet [Set-AzureAutomationRunbookDefinition](http://aka.ms/runbookauthor/cmdlet/setazurerunbookdefinition) können Sie das vorhandene Entwurfsrunbook durch das geänderte Runbook ersetzen.
 

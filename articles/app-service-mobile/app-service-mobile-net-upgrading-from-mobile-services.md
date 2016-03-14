@@ -36,7 +36,7 @@ Die Aktualisierung auf das neue [Mobile Apps-SDK](https://www.nuget.org/packages
 
 - Mehr Flexibilität bei den NuGet-Abhängigkeiten. Die Hostumgebung stellt keine eigenen Versionen von NuGet-Paketen mehr bereit, sodass Sie alternative kompatible Versionen verwenden können. Falls aber neue kritische Bugfixes oder Sicherheitsupdates für das Mobile Services SDK oder die Abhängigkeiten vorhanden sind, müssen Sie Ihren Dienst manuell aktualisieren.
 
-- Mehr Flexibilität im mobilen SDK. Sie können explizit steuern, welche Features und Routen eingerichtet werden, z. B. Authentifizierung, Tabellen-APIs und der Endpunkt für die Pushregistrierung. Weitere Informationen finden Sie unter [Verwenden des .NET-Server-SDK für Azure Mobile Apps](app-service-mobile-net-upgrading-from-mobile-services.md#server-project-setup).
+- Mehr Flexibilität im mobilen SDK. Sie können explizit steuern, welche Features und Routen eingerichtet werden, z. B. Authentifizierung, Tabellen-APIs und der Endpunkt für die Pushregistrierung. Weitere Informationen finden Sie unter [Verwenden des .NET-Server-SDK für Azure Mobile Apps](app-service-mobile-net-upgrading-from-mobile-services.md#server-project-setup).
 
 - Unterstützung für andere ASP.NET-Projekttypen und -Routen. Sie können jetzt MVC- und Web-API-Controller in demselben Projekt wie Ihr mobiles Back-End-Projekt hosten.
 
@@ -70,7 +70,7 @@ Erstellen Sie eine Kopie des ASP.NET-Projekts für Ihre Anwendung, und veröffen
 
 ## Aktualisieren des Serverprojekts
 
-Mobile Apps bietet ein neues [Mobile App Server SDK], das einen Großteil der Funktionalität der Mobile Services-Laufzeit bereitstellt. Entfernen Sie zunächst alle Verweise auf die Mobile Services-Pakete. Suchen Sie im NuGet-Paket-Manager nach `WindowsAzure.MobileServices.Backend`. Für die meisten Apps werden hier mehrere Pakete angezeigt, einschließlich `WindowsAzure.MobileServices.Backend.Tables` und `WindowsAzure.MobileServices.Backend.Entity`. Beginnen Sie in einem solchen Fall mit dem niedrigsten Paket in der Abhängigkeitsstruktur, z. B. `Entity`, und entfernen Sie dieses. Wenn Sie gefragt werden, ob alle abhängigen Pakete entfernt werden sollen, verneinen Sie dies. Wiederholen Sie diesen Vorgang, bis Sie `WindowsAzure.MobileServices.Backend` selbst entfernt haben.
+Mobile Apps bietet ein neues [Mobile App Server SDK], das einen Großteil der Funktionalität der Mobile Services-Laufzeit bereitstellt. Entfernen Sie zunächst alle Verweise auf die Mobile Services-Pakete. Suchen Sie im NuGet-Paket-Manager nach `WindowsAzure.MobileServices.Backend`. Für die meisten Apps werden hier mehrere Pakete angezeigt, einschließlich `WindowsAzure.MobileServices.Backend.Tables` und `WindowsAzure.MobileServices.Backend.Entity`. Beginnen Sie in einem solchen Fall mit dem niedrigsten Paket in der Abhängigkeitsstruktur, z. B. `Entity`, und entfernen Sie dieses. Wenn Sie gefragt werden, ob alle abhängigen Pakete entfernt werden sollen, verneinen Sie dies. Wiederholen Sie diesen Vorgang, bis Sie `WindowsAzure.MobileServices.Backend` selbst entfernt haben.
 
 An diesem Punkt verfügen Sie über ein Projekt ohne Verweise auf Mobile Services-SDKs.
 
@@ -161,7 +161,7 @@ In iOS sollten Sie das Core-Datenschema für Ihre Datenentitäten folgendermaße
 
 In Azure Mobile Services werden Systemeigenschaften nicht standardmäßig gesendet, sondern nur auf Anforderung unter Verwendung der Abfragezeichenfolge `__systemProperties`. Im Gegensatz dazu werden Systemeigenschaften in Azure Mobile Apps **immer ausgewählt**, da sie Teil des Objektmodells des Server-SDK sind.
 
-Diese Änderung wirkt sich hauptsächlich auf benutzerdefinierte Implementierungen von Domänen-Managern aus, z. B. Erweiterungen von `MappedEntityDomainManager`. Wenn Systemeigenschaften in Mobile Services nie von einem Client angefordert werden, ist es möglich, einen `MappedEntityDomainManager` zu verwenden, der nicht alle Eigenschaften zuordnet. In Azure Mobile Apps verursachen solche nicht zugeordneten Eigenschaften allerdings einen Fehler in GET-Abfragen.
+Diese Änderung wirkt sich hauptsächlich auf benutzerdefinierte Implementierungen von Domänen-Managern aus, z. B. Erweiterungen von `MappedEntityDomainManager`. Wenn Systemeigenschaften in Mobile Services nie von einem Client angefordert werden, ist es möglich, einen `MappedEntityDomainManager` zu verwenden, der nicht alle Eigenschaften zuordnet. In Azure Mobile Apps verursachen solche nicht zugeordneten Eigenschaften allerdings einen Fehler in GET-Abfragen.
 
 Am einfachsten können Sie dieses Problem beheben, indem Sie die DTOs so ändern, dass sie nicht von `EntityData`, sondern von `ITableData` erben. Fügen Sie dann das `[NotMapped]`-Attribut zu den Feldern hinzu, die ausgelassen werden sollen.
 
@@ -227,7 +227,7 @@ Alle Instanzen des `[AuthorizeLevel(AuthorizationLevel.User)]`-Attributs müssen
 
 ### Abrufen weiterer Benutzerinformationen
 
-Weitere Benutzerinformationen, z. B. Zugriffstoken, können Sie über die `GetAppServiceIdentityAsync()`-Methode abrufen:
+Weitere Benutzerinformationen, z. B. Zugriffstoken, können Sie über die `GetAppServiceIdentityAsync()`-Methode abrufen:
 
         FacebookCredentials creds = await this.User.GetAppServiceIdentityAsync<FacebookCredentials>();
         
@@ -244,7 +244,7 @@ Wenn Ihre Anwendung eine benutzerdefinierte Lösung für die Authentifizierung v
 ##<a name="updating-clients"></a>Aktualisieren von Clients
 Sobald Sie über ein betriebsbereites Mobile App-Back-End verfügen, können Sie an einer neuen Version Ihrer Clientanwendung arbeiten, die dieses nutzt. Mobile Apps enthält außerdem eine neue Version der Client-SDKs. Wie bei dem oben beschriebenen Serverupgrade müssen Sie vor der Installation der Mobile Apps-Versionen alle Verweise auf die Mobile Services-SDKs entfernen.
 
-Einer der wichtigsten Unterschiede zwischen den Versionen ist, dass die Konstruktoren keinen Anwendungsschlüssel mehr benötigen. Sie brauchen jetzt nur noch die URL der mobilen App zu übergeben. Bei den .NET-Clients lautet der `MobileServiceClient`-Konstruktor z. B. nun:
+Einer der wichtigsten Unterschiede zwischen den Versionen ist, dass die Konstruktoren keinen Anwendungsschlüssel mehr benötigen. Sie brauchen jetzt nur noch die URL der mobilen App zu übergeben. Bei den .NET-Clients lautet der `MobileServiceClient`-Konstruktor z. B. nun:
 
         public static MobileServiceClient MobileService = new MobileServiceClient(
             "https://contoso.azurewebsites.net", // URL of the Mobile App

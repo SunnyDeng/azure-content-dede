@@ -16,7 +16,7 @@ So erstellen Sie einen Sicherungstresor
 
     ![Erstellen des Sicherungstresors](./media/backup-create-vault-for-vms/backup_vaultcreate.png)
 
-3. Geben Sie unter **Name** einen Anzeigenamen für den Tresor ein. Der Name muss für das Azure-Abonnement eindeutig sein. Geben Sie einen Namen ein, der zwischen 2 und 50 Zeichen enthält. Er muss mit einem Buchstaben beginnen und darf nur Buchstaben, Zahlen und Bindestriche enthalten.
+3. Geben Sie unter **Name** einen Anzeigenamen für den Tresor ein. Der Name muss für das Azure-Abonnement eindeutig sein. Geben Sie einen Namen ein, der zwischen 2 und 50 Zeichen enthält. Er muss mit einem Buchstaben beginnen und darf nur Buchstaben, Zahlen und Bindestriche enthalten.
 
 4. Wählen Sie unter **Region** die geografische Region für den Tresor aus. Der Tresor muss sich in der gleichen Region wie die zu schützenden virtuellen Computer befinden. Wenn Sie über virtuelle Computer in verschiedenen Regionen verfügen, müssen Sie einen Sicherungstresor in jeder dieser Regionen erstellen. Es müssen keine Speicherkonten zum Speichern der Sicherungsdaten angegeben werden. Dies erfolgt automatisch über den Sicherungstresor und den Azure Backup-Dienst.
 

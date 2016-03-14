@@ -26,13 +26,13 @@
 ##3\.3.0 (22.01.2016)
 
 -   Absturz bei Formatierung auf UWP-Apps, die im Releasemodus ausgeführt wird, behoben.
--   1px-Rand auf Benachrichtigungen für Universal 8.1-Apps behoben.
+-   1px-Rand auf Benachrichtigungen für Universal 8.1-Apps behoben.
 -   ms-appx- und ms-appdata-Schemas in Aktions-URLs verfügbar.
 -   Verbesserungen der Stabilität.
 
 ##3\.2.0 (20.11.2015)
 
--   Unterstützung für universelle Windows 10-Plattform-Anwendungen hinzugefügt.
+-   Unterstützung für universelle Windows 10-Plattform-Anwendungen hinzugefügt.
 -   Freigabefunktion für Pushkanal hinzugefügt, um Kanalkonflikte zu beheben (jetzt kompatibel mit Azure Notification Hubs).
 -   Absturz beim Anfordern der Geräte-ID direkt nach der Initialisierung behoben.
 -   Verbesserungen bei Konsolenprotokollen.

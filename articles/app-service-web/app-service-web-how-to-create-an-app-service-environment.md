@@ -62,7 +62,7 @@ Der Name, der für die ASE angegeben wird, wird für die in der ASE erstellten A
 Die Standardwerte sind für eine Reihe von Fällen sehr nützlich, aber häufig müssen Sie sie anpassen. Die nächsten Abschnitten führen Sie durch die einzelnen Konfigurationsabschnitte, die für die ASE relevant sind.
 
 ### Virtuelles Netzwerk ###
-Auch wenn es eine schnelle Funktion zum automatischen Erstellen eines neuen VNET gibt, unterstützt die Funktion auch die Auswahl eines vorhandenen VNET und die manuelle Erstellung eines VNET. Sie können ein vorhandenes VNET auswählen (nur klassische virtuelle „v1“-Netzwerke werden derzeit unterstützt), wenn es für die Unterstützung der Bereitstellung einer App Service-Umgebung groß genug ist. Das VNET muss mindestens acht Adressen aufweisen.
+Auch wenn es eine schnelle Funktion zum automatischen Erstellen eines neuen VNET gibt, unterstützt die Funktion auch die Auswahl eines vorhandenen VNET und die manuelle Erstellung eines VNET. Sie können ein vorhandenes VNET auswählen (nur klassische virtuelle „v1“-Netzwerke werden derzeit unterstützt), wenn es für die Unterstützung der Bereitstellung einer App Service-Umgebung groß genug ist. Das VNET muss mindestens acht Adressen aufweisen.
 
 Wenn Sie ein bereits vorhandenes VNET auswählen, müssen Sie auch ein Subnetz angeben oder ein neues erstellen. Das Subnetz muss mindestens acht Adressen aufweisen, und es dürfen keine anderen Ressourcen bereits darin enthalten sein. Die ASE-Erstellung funktioniert nicht, wenn Sie ein Subnetz verwenden, dem bereits virtuelle Computer zugewiesen sind.
 
@@ -78,7 +78,7 @@ Nachdem Sie Ihr VNET angegeben oder ausgewählt haben, müssen Sie nach Bedarf e
 - Subnetzname
 - Subnetzbereich in CIDR-Schreibweise
 
-Falls Sie keine Erfahrung mit CIDR (Classless Inter-Domain Routing) besitzen: Es erfordert das Format einer IP-Adresse, die durch einen Schrägstrich vom CIDR-Wert getrennt wird. Ein Beispiel hierfür ist *10.0.0.0/22*. Der CIDR-Wert gibt die Anzahl der führenden Bits an, die für die angezeigte IP-Adresse maskiert dargestellt werden. Einfacher ausgedrückt, stellt der CIDR-Wert einen IP-Adressbereich bereit. In diesem Beispiel kennzeichnet 10.0.0.0/22 einen Bereich von 1024 Adressen oder von 10.0.0.0 bis 10.0.3.255. /23 bedeutet 512 Adressen und so weiter.
+Falls Sie keine Erfahrung mit CIDR (Classless Inter-Domain Routing) besitzen: Es erfordert das Format einer IP-Adresse, die durch einen Schrägstrich vom CIDR-Wert getrennt wird. Ein Beispiel hierfür ist *10.0.0.0/22*. Der CIDR-Wert gibt die Anzahl der führenden Bits an, die für die angezeigte IP-Adresse maskiert dargestellt werden. Einfacher ausgedrückt, stellt der CIDR-Wert einen IP-Adressbereich bereit. In diesem Beispiel kennzeichnet 10.0.0.0/22 einen Bereich von 1024 Adressen oder von 10.0.0.0 bis 10.0.3.255. /23 bedeutet 512 Adressen und so weiter.
 
 Zur Erinnerung: Wenn Sie ein Subnetz in einem vorhandenen VNET erstellen möchten, befindet sich die ASE in derselben Ressourcengruppe wie das VNET. Damit Ihre ASE sich in einer vom VNET separaten Ressourcengruppe befindet, erstellen Sie einfach das VNET und das Subnetz getrennt von und vor der Erstellung der ASE.
 

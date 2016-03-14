@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Verwenden des API Management-Diensts zum Generieren von HTTP-Anforderungen"
-	description="Erfahren Sie mehr über die Verwendung von Anforderungs- und Antwortrichtlinien in API Management, um externe Dienste aus Ihrer API abzurufen."
+	pageTitle="Verwenden des API Management-Diensts zum Generieren von HTTP-Anforderungen"
+	description="Erfahren Sie mehr über die Verwendung von Anforderungs- und Antwortrichtlinien in API Management, um externe Dienste aus Ihrer API abzurufen."
 	services="api-management"
 	documentationCenter=""
 	authors="darrelmiller"
@@ -17,9 +17,9 @@
 	ms.author="v-darmi"/>
 
 
-# Verwenden externer Dienste über den Azure API Management-Dienst
+# Verwenden externer Dienste über den Azure API Management-Dienst
 
-Mit den im Azure API Management-Dienst verfügbaren Richtlinien können Sie eine breite Palette sinnvoller Aufgaben durchführen, ausschließlich basierend auf der eingehenden Anforderung, der ausgehenden Antwort und den grundlegenden Konfigurationsinformationen. Die Interaktionsfähigkeit mit externen Diensten mithilfe von API Management-Richtlinien eröffnet jedoch viele weitere Möglichkeiten.
+Mit den im Azure API Management-Dienst verfügbaren Richtlinien können Sie eine breite Palette sinnvoller Aufgaben durchführen, ausschließlich basierend auf der eingehenden Anforderung, der ausgehenden Antwort und den grundlegenden Konfigurationsinformationen. Die Interaktionsfähigkeit mit externen Diensten mithilfe von API Management-Richtlinien eröffnet jedoch viele weitere Möglichkeiten.
 
 Wir haben bereits gesehen, wie wir mit dem [Azure Event Hub-Dienst für die Protokollierung, Überwachung und Analyse](api-management-log-to-eventhub-sample.md) interagieren können. In diesem Artikel werden Richtlinien gezeigt, die die Interaktion mit externen HTTP-basierten Diensten ermöglichen. Diese Richtlinien können zum Auslösen von Remoteereignissen oder zum Abrufen von Informationen verwendet werden, die wiederum zum Verändern der ursprünglichen Anforderung und Antwort verwendet werden.
 
@@ -60,13 +60,13 @@ Bei Slack kommen eingehende Webhooks zum Einsatz. Beim Konfigurieren eines einge
 Es gibt einige Nachteile bei einer Anforderung im Fire-and-Forget-Stil. Wenn die Anforderung aus irgendeinem Grund fehlschlägt, wird der Fehler nicht gemeldet. In einer solchen Situation sind die Komplexität eines sekundären Fehlermeldesystems und die zusätzlichen Leistungseinbußen aufgrund der Antwortwartezeiten nicht gerechtfertigt. Bei Szenarien, in denen Sie die Antwort unbedingt überprüfen müssen, ist die [send-request](https://msdn.microsoft.com/library/azure/dn894085.aspx#SendRequest)-Richtlinie die bessere Option.
 
 ## Send-Request
-Die `send-request`-Richtlinie ermöglicht die Nutzung eines externen Diensts zum Durchführen komplexer Verarbeitungsfunktionen und zum Zurückgeben von Daten an den API Management-Dienst, der für die weitere Richtlinienverarbeitung verwendet werden kann.
+Die `send-request`-Richtlinie ermöglicht die Nutzung eines externen Diensts zum Durchführen komplexer Verarbeitungsfunktionen und zum Zurückgeben von Daten an den API Management-Dienst, der für die weitere Richtlinienverarbeitung verwendet werden kann.
 
 ### Autorisieren von Verweistoken
-Eine wichtige Funktion von API Management ist der Schutz der Back-End-Ressourcen. Wenn der von Ihrer API verwendete Autorisierungsserver ein [JWT-Token](http://jwt.io/) als Teil des OAuth2-Ablaufs erstellt, wie dies bei [Azure Active Directory](../active-directory/active-directory-aadconnect.md) der Fall ist, dann können Sie mithilfe der `validate-jwt`-Richtlinie die Gültigkeit des Tokens überprüfen. Einige Autorisierungsserver erstellen jedoch sogenannte [Verweistoken](http://leastprivilege.com/2015/11/25/reference-tokens-and-introspection/), die nicht ohne Rückruf des Autorisierungsservers überprüft werden können.
+Eine wichtige Funktion von API Management ist der Schutz der Back-End-Ressourcen. Wenn der von Ihrer API verwendete Autorisierungsserver ein [JWT-Token](http://jwt.io/) als Teil des OAuth2-Ablaufs erstellt, wie dies bei [Azure Active Directory](../active-directory/active-directory-aadconnect.md) der Fall ist, dann können Sie mithilfe der `validate-jwt`-Richtlinie die Gültigkeit des Tokens überprüfen. Einige Autorisierungsserver erstellen jedoch sogenannte [Verweistoken](http://leastprivilege.com/2015/11/25/reference-tokens-and-introspection/), die nicht ohne Rückruf des Autorisierungsservers überprüft werden können.
 
 ### Standardisierte Introspection
-In der Vergangenheit gab es keine standardisierte Methode zur Überprüfung eines Verweistokens mit einem Autorisierungsserver. Die IETF hat jedoch den vor kurzem vorgeschlagenen Standard [RFC 7662](https://tools.ietf.org/html/rfc7662) veröffentlicht, der definiert, wie ein Ressourcenserver die Gültigkeit eines Tokens überprüfen kann.
+In der Vergangenheit gab es keine standardisierte Methode zur Überprüfung eines Verweistokens mit einem Autorisierungsserver. Die IETF hat jedoch den vor kurzem vorgeschlagenen Standard [RFC 7662](https://tools.ietf.org/html/rfc7662) veröffentlicht, der definiert, wie ein Ressourcenserver die Gültigkeit eines Tokens überprüfen kann.
 
 ### Extrahieren des Tokens
 Der erste Schritt besteht im Extrahieren des Tokens aus dem Autorisierungsheader. Der Headerwert sollte mit dem `Bearer`-Autorisierungsschema, einem einzelnen Leerzeichen, gefolgt vom Autorisierungstoken gemäß [RFC 6750](http://tools.ietf.org/html/rfc6750#section-2.1) formatiert werden. Es gibt leider Fälle, in denen das Autorisierungsschema weggelassen wird. Um diesem Umstand bei der Analyse Rechnung zu tragen, wird der Headerwert mit einem Leerzeichen geteilt und die letzte Zeichenfolge aus dem zurückgegebenen Array von Zeichenfolgen ausgewählt. Dies ist eine mögliche Lösung für falsch formatierte Autorisierungsheader.
@@ -74,7 +74,7 @@ Der erste Schritt besteht im Extrahieren des Tokens aus dem Autorisierungsheader
     <set-variable name="token" value="@(context.Request.Headers.GetValueOrDefault("Authorization","scheme param").Split(' ').Last())" />
 
 ### Ausführen der Überprüfungsanforderung
-Nach Erhalt des Autorisierungstokens können wir die Anforderung ausführen, um das Token zu überprüfen. In RFC 7662 wird dieser Prozess „Introspection“ genannt. Dazu müssen Sie mittels `POST` ein HTML-Formular in der Introspection-Ressource veröffentlichen. Das HTML-Formular muss mindestens ein Schlüssel/Wert-Paar mit dem Schlüssel `token` enthalten. Diese Anforderung an den Autorisierungsserver muss ebenfalls authentifiziert werden, um sicherzustellen, dass bösartige Clients nicht nach gültigen Token fischen können.
+Nach Erhalt des Autorisierungstokens können wir die Anforderung ausführen, um das Token zu überprüfen. In RFC 7662 wird dieser Prozess „Introspection“ genannt. Dazu müssen Sie mittels `POST` ein HTML-Formular in der Introspection-Ressource veröffentlichen. Das HTML-Formular muss mindestens ein Schlüssel/Wert-Paar mit dem Schlüssel `token` enthalten. Diese Anforderung an den Autorisierungsserver muss ebenfalls authentifiziert werden, um sicherzustellen, dass bösartige Clients nicht nach gültigen Token fischen können.
 
     <send-request mode="new" response-variable-name="tokenstate" timeout="20" ignore-error="true">
       <set-url>https://microsoft-apiappec990ad4c76641c6aea22f566efc5a4e.azurewebsites.net/introspection</set-url>
@@ -91,7 +91,7 @@ Nach Erhalt des Autorisierungstokens können wir die Anforderung ausführen, um 
 ### Überprüfen der Antwort
 Das `response-variable-name`-Attribut wird verwendet, um auf die zurückgegebene Antwort zuzugreifen. Der in dieser Eigenschaft definierte Name kann als Schlüssel für das `context.Variables`-Wörterbuch verwendet werden, um auf das `IResponse`-Objekt zuzugreifen.
 
-Aus dem Antwortobjekt können wir den Text abrufen. RFC 7622 legt fest, dass die Antwort ein JSON-Objekt sein muss und mindestens eine Eigenschaft namens `active` enthalten muss, bei der es sich um einen booleschen Wert handelt. Wenn `active` true ist, dann wird das Token als gültig erachtet.
+Aus dem Antwortobjekt können wir den Text abrufen. RFC 7622 legt fest, dass die Antwort ein JSON-Objekt sein muss und mindestens eine Eigenschaft namens `active` enthalten muss, bei der es sich um einen booleschen Wert handelt. Wenn `active` true ist, dann wird das Token als gültig erachtet.
 
 ### Melden eines Fehlers
 Wir verwenden eine `<choose>`-Richtlinie, um zu ermitteln, ob das Token ungültig ist. Wenn dies der Fall ist, wird eine 401-Antwort zurückgegeben.
@@ -107,7 +107,7 @@ Wir verwenden eine `<choose>`-Richtlinie, um zu ermitteln, ob das Token ungülti
       </when>
     </choose>
 
-Gemäß [RFC 6750](https://tools.ietf.org/html/rfc6750#section-3), in dem beschrieben wird, wie `bearer`-Token verwendet werden, wird auch ein `WWW-Authenticate`-Header mit der 401-Antwort zurückgegeben. WWW-Authenticate soll einen Client anweisen, wie eine ordnungsgemäß autorisierte Anforderung erstellt wird. Aufgrund der vielfältigen Ansätze, die beim OAuth2-Framework möglich sind, ist es schwierig, alle erforderlichen Informationen mitzuteilen. Glücklicherweise gibt es derzeit Bemühungen, die [Clients dabei helfen sollen, herauszufinden, wie Anforderungen an einen Ressourcenserver ordnungsgemäß autorisiert werden](http://tools.ietf.org/html/draft-jones-oauth-discovery-00).
+Gemäß [RFC 6750](https://tools.ietf.org/html/rfc6750#section-3), in dem beschrieben wird, wie `bearer`-Token verwendet werden, wird auch ein `WWW-Authenticate`-Header mit der 401-Antwort zurückgegeben. WWW-Authenticate soll einen Client anweisen, wie eine ordnungsgemäß autorisierte Anforderung erstellt wird. Aufgrund der vielfältigen Ansätze, die beim OAuth2-Framework möglich sind, ist es schwierig, alle erforderlichen Informationen mitzuteilen. Glücklicherweise gibt es derzeit Bemühungen, die [Clients dabei helfen sollen, herauszufinden, wie Anforderungen an einen Ressourcenserver ordnungsgemäß autorisiert werden](http://tools.ietf.org/html/draft-jones-oauth-discovery-00).
 
 ### Endgültige Lösung
 Nach Berücksichtigung all dieser Aspekte erhalten wir die folgende Richtlinie:
@@ -144,7 +144,7 @@ Nach Berücksichtigung all dieser Aspekte erhalten wir die folgende Richtlinie:
       <base />
     </inbound>
 
-Dies ist nur eines von vielen Beispielen, wie die `send-request`-Richtlinie verwendet werden kann, um nützliche externe Dienste in den Anforderungs- und Antwortprozess zu integrieren, der den API Management-Dienst durchläuft.
+Dies ist nur eines von vielen Beispielen, wie die `send-request`-Richtlinie verwendet werden kann, um nützliche externe Dienste in den Anforderungs- und Antwortprozess zu integrieren, der den API Management-Dienst durchläuft.
 
 ## Antwortkomposition
 Mit der `send-request`-Richtlinie können Sie eine primäre Anforderung an ein Back-End-System verbessern, wie im vorherigen Beispiel gezeigt. Sie kann auch als vollständiger Ersatz für den Back-End-Aufruf verwendet werden. Mithilfe dieser Technik können wir mühelos zusammengesetzte Ressourcen erstellen, die aus verschiedenen Systemen zusammengestellt werden.
@@ -153,7 +153,7 @@ Mit der `send-request`-Richtlinie können Sie eine primäre Anforderung an ein B
 Gelegentlich möchten Sie in der Lage sein, Informationen aus mehreren Back-End-Systemen verfügbar zu machen, um beispielsweise ein Dashboard zu steuern. Die KPIs stammen von komplett unterschiedlichen Back-Ends, aber Sie ziehen es vor, keinen direkten Zugriff auf diese bereitzustellen. Es wäre schön, wenn alle Informationen in einer einzelnen Anforderung abgerufen werden könnten. Einige der Back-End-Informationen müssen womöglich aufgegliedert und zunächst etwas bereinigt werden! Eine Zwischenspeicherung dieser zusammengesetzten Ressource wäre hilfreich für die Reduzierung der Back-End-Last, da Benutzer die Gewohnheit haben, mehrfach die F5-Taste zu drücken, um festzustellen, ob sich die schwachen Metriken ändern.
 
 ### Falsche Ressource
-Der erste Schritt beim Erstellen der Dashboardressource ist die Konfiguration eines neuen Vorgangs im API Management-Herausgeberportal. Dabei handelt es sich um einen Platzhaltervorgang, der zum Konfigurieren der Kompositionsrichtlinie verwendet wird, um die dynamische Ressource zu erstellen.
+Der erste Schritt beim Erstellen der Dashboardressource ist die Konfiguration eines neuen Vorgangs im API Management-Herausgeberportal. Dabei handelt es sich um einen Platzhaltervorgang, der zum Konfigurieren der Kompositionsrichtlinie verwendet wird, um die dynamische Ressource zu erstellen.
 
 ![Dashboardvorgang](./media/api-management-sample-send-request/api-management-dashboard-operation.png)
 
@@ -262,7 +262,7 @@ Die vollständige Richtlinie sieht folgendermaßen aus:
 Bei der Konfiguration des Platzhaltervorgangs kann die Dashboardressource so konfiguriert werden, dass sie mindestens eine Stunde lang zwischengespeichert wird. Da wir das Wesen der Daten kennen und verstehen, sind sie auch dann weiterhin hinreichend aussagekräftig, um wertvolle Informationen für die Benutzer zu übermitteln, wenn sie schon eine Stunde veraltet sind.
 
 ## Zusammenfassung
-Der Azure API Management-Dienst bietet flexible Richtlinien, die selektiv auf den HTTP-Verkehr angewendet werden können und die Zusammensetzung der Back-End-Dienste ermöglichen. Unabhängig davon, ob Sie das API-Gateway mit Alarmfunktionen, Überprüfungs- und Validierungsfunktionen verbessern möchten oder ob Sie neue zusammengesetzte Ressourcen basierend auf mehreren Back-End-Diensten erstellen möchten, bieten die `send-request`-Richtlinie und verwandte Richtlinien vollkommen neue Möglichkeiten.
+Der Azure API Management-Dienst bietet flexible Richtlinien, die selektiv auf den HTTP-Verkehr angewendet werden können und die Zusammensetzung der Back-End-Dienste ermöglichen. Unabhängig davon, ob Sie das API-Gateway mit Alarmfunktionen, Überprüfungs- und Validierungsfunktionen verbessern möchten oder ob Sie neue zusammengesetzte Ressourcen basierend auf mehreren Back-End-Diensten erstellen möchten, bieten die `send-request`-Richtlinie und verwandte Richtlinien vollkommen neue Möglichkeiten.
 
 ## Überblicksvideo zu diesen Richtlinien
 Informieren Sie im folgenden Video ausführlicher über die diesem Artikel behandelten Richtlinien [send-one-way-request](https://msdn.microsoft.com/library/azure/dn894085.aspx#SendOneWayRequest), [send-request](https://msdn.microsoft.com/library/azure/dn894085.aspx#SendRequest) und [return-response](https://msdn.microsoft.com/library/azure/dn894085.aspx#ReturnResponse).

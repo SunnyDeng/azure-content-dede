@@ -28,17 +28,17 @@ Wenn Sie virtuelle Computer hinter einem Load Balancer verwenden, muss ein benut
 
 Das Testverhalten hängt vom Verhältnis erfolgreicher und nicht erfolgreicher Tests ab, das erforderlich ist, um eine Instanz als in/außer Betrieb zu markieren. Die Formel für die Berechnung lautet SuccessFailCount = Timeout/Häufigkeit. Für das Portal wird das Timeout auf das Doppelte des Werts der Häufigkeit festgelegt (Timeout = Häufigkeit * 2).
 
-Die Konfiguration von Tests aller Instanzen mit Lastenausgleich für einen Endpunkt (Satz mit Lastenausgleich) muss identisch sein. Das heißt, dass Sie nicht für jede Rolleninstanz oder VM im selben gehosteten Dienst für eine bestimmte Endpunktkombination eine unterschiedliche Testkonfiguration (z. B. lokaler Port, Timeout usw.) wählen können.
+Die Konfiguration von Tests aller Instanzen mit Lastenausgleich für einen Endpunkt (Satz mit Lastenausgleich) muss identisch sein. Das heißt, dass Sie nicht für jede Rolleninstanz oder VM im selben gehosteten Dienst für eine bestimmte Endpunktkombination eine unterschiedliche Testkonfiguration (z. B. lokaler Port, Timeout usw.) wählen können.
 
 
->[AZURE.IMPORTANT] Ein Load Balancer-Test verwendet die IP-Adresse 168.63.129.16. Diese öffentliche IP-Adresse dient zum Ermöglichen eines Kommunikationskanals zu internen Plattformressourcen für das Szenario mit einem virtuellen Netzwerk mit Ihrer eigenen IP-Adresse. Die virtuelle öffentliche IP-Adresse 168.63.129.16 wird in allen Regionen verwendet und nicht geändert. Die IP-Adresse sollte in allen lokalen Firewallrichtlinien zulässig sein. Dies dürfte kein Sicherheitsrisiko darstellen, da nur die interne Azure-Plattform eine Nachricht von dieser Adresse senden kann. Andernfalls ist in einer Vielzahl von Szenarien ein unerwartetes Verhalten die Folge, wie z. B. beim Konfigurieren desselben IP-Adressbereichs von 168.63.129.16 mit duplizierter IP-Adresse.
+>[AZURE.IMPORTANT] Ein Load Balancer-Test verwendet die IP-Adresse 168.63.129.16. Diese öffentliche IP-Adresse dient zum Ermöglichen eines Kommunikationskanals zu internen Plattformressourcen für das Szenario mit einem virtuellen Netzwerk mit Ihrer eigenen IP-Adresse. Die virtuelle öffentliche IP-Adresse 168.63.129.16 wird in allen Regionen verwendet und nicht geändert. Die IP-Adresse sollte in allen lokalen Firewallrichtlinien zulässig sein. Dies dürfte kein Sicherheitsrisiko darstellen, da nur die interne Azure-Plattform eine Nachricht von dieser Adresse senden kann. Andernfalls ist in einer Vielzahl von Szenarien ein unerwartetes Verhalten die Folge, wie z. B. beim Konfigurieren desselben IP-Adressbereichs von 168.63.129.16 mit duplizierter IP-Adresse.
 
 
 ## Arten von Tests
 
 ### Gast-Agent-Test
 
-Nur für Clouddienste. Azure Load Balancer nutzt den Gast-Agent auf dem virtuellen Computer und überwacht und antwortet nur mit einer HTTP-OK-Antwort 200, wenn die Instanz bereit ist (d. h. die Instanz nicht ausgelastet ist bzw. recycelt oder angehalten wird usw.).
+Nur für Clouddienste. Azure Load Balancer nutzt den Gast-Agent auf dem virtuellen Computer und überwacht und antwortet nur mit einer HTTP-OK-Antwort 200, wenn die Instanz bereit ist (d. h. die Instanz nicht ausgelastet ist bzw. recycelt oder angehalten wird usw.).
 
 Weitere Informationen finden Sie unter [Konfigurieren der Dienstdefinitionsdatei (.csdef) für Integritätstests](https://msdn.microsoft.com/library/azure/jj151530.asp) und [Erste Schritte zum Erstellen eines Load Balancers mit Internetzugriff für Clouddienste](load-balancer-get-started-internet-classic-cloud.md#check-load-balancer-health-status-for-cloud-services).
  
@@ -46,12 +46,12 @@ Weitere Informationen finden Sie unter [Konfigurieren der Dienstdefinitionsdatei
 
 Wenn der Gast-Agent nicht mit dem HTTP-OK-Code 200 antwortet, kennzeichnet der Azure-Lastenausgleich die Instanz als nicht reagierend und sendet keinen Datenverkehr mehr an diese Instanz. Der Azure-Lastenausgleich sendet weiterhin ein Ping an die Instanz, und falls der Gast-Agent mit HTTP-Code 200 antwortet, sendet der Azure-Lastenausgleich wieder Datenverkehr an diese Instanz.
 
-Bei Verwendung einer Webrolle wird der Websitecode in der Regel in der ausführbaren Datei „w3wp.exe“ ausgeführt, die von der Azure-Struktur oder dem Gast-Agent nicht überwacht wird. Fehler in „w3wp.exe“ (z. B. HTTP 500-Antworten) werden dem Gast-Agent nicht gemeldet, und der Load Balancer weiß nicht, dass er diese Instanz aus der Rotation entfernen sollte.
+Bei Verwendung einer Webrolle wird der Websitecode in der Regel in der ausführbaren Datei „w3wp.exe“ ausgeführt, die von der Azure-Struktur oder dem Gast-Agent nicht überwacht wird. Fehler in „w3wp.exe“ (z. B. HTTP 500-Antworten) werden dem Gast-Agent nicht gemeldet, und der Load Balancer weiß nicht, dass er diese Instanz aus der Rotation entfernen sollte.
 
 
 ### Benutzerdefinierter HTTP-Test
 
-Der benutzerdefinierte HTTP-Load Balancer-Test überschreibt den Standard-Gast-Agent-Test und ermöglicht Ihnen, Ihre eigene Logik zum Bestimmen der Integrität der Rolleninstanz zu erstellen. Der Load Balancer testet den Endpunkt (standardmäßig alle 15 Sekunden), und die Instanz wird in der Load Balancer-Rotation berücksichtigt, wenn sie innerhalb des Zeitlimits (standardmäßig 31 Sekunden) mit einem HTTP 200-Status reagiert. Dies kann hilfreich sein, um eigene Logik zum Entfernen von Instanzen aus der Load Balancer-Rotation zu implementieren, wie z. B. durch Rückgabe eines Nicht-200-Status, wenn die Instanz über 90 % CPU-Auslastung aufweist. Für Webrollen mit „w3wp.exe“ bedeutet dies auch eine automatische Überwachung der Website, da Fehler im Websitecode einen Nicht-200-Status an den Load Balancer-Test zurückgeben.
+Der benutzerdefinierte HTTP-Load Balancer-Test überschreibt den Standard-Gast-Agent-Test und ermöglicht Ihnen, Ihre eigene Logik zum Bestimmen der Integrität der Rolleninstanz zu erstellen. Der Load Balancer testet den Endpunkt (standardmäßig alle 15 Sekunden), und die Instanz wird in der Load Balancer-Rotation berücksichtigt, wenn sie innerhalb des Zeitlimits (standardmäßig 31 Sekunden) mit einem HTTP 200-Status reagiert. Dies kann hilfreich sein, um eigene Logik zum Entfernen von Instanzen aus der Load Balancer-Rotation zu implementieren, wie z. B. durch Rückgabe eines Nicht-200-Status, wenn die Instanz über 90 % CPU-Auslastung aufweist. Für Webrollen mit „w3wp.exe“ bedeutet dies auch eine automatische Überwachung der Website, da Fehler im Websitecode einen Nicht-200-Status an den Load Balancer-Test zurückgeben.
 
 >[AZURE.NOTE] Der benutzerdefinierter HTTP-Test unterstützt nur relative Pfade und das HTTP-Protokoll. HTTPS wird nicht unterstützt.
 
@@ -60,7 +60,7 @@ Der benutzerdefinierte HTTP-Load Balancer-Test überschreibt den Standard-Gast-A
 
 - Die HTTP-Anwendung gibt einen anderen HTTP-Antwortcode als 200 zurück (d. h. 403, 404, 500 usw.). Hierbei handelt es sich um eine positive Bestätigung, dass die Anwendungsinstanz sofort außer Betrieb genommen werden sollte.
 
--  Wenn der HTTP-Server nach dem Timeoutzeitraum nicht mehr reagiert. Beachten Sie, dass dies je nach festgelegtem Timeoutwert bedeuten kann, dass mehrere Testanforderungen unbeantwortet bleiben, bevor der Test mit „Ausgefallen“ gekennzeichnet wird (d. h. „SuccessFailCount“-Tests werden gesendet).
+-  Wenn der HTTP-Server nach dem Timeoutzeitraum nicht mehr reagiert. Beachten Sie, dass dies je nach festgelegtem Timeoutwert bedeuten kann, dass mehrere Testanforderungen unbeantwortet bleiben, bevor der Test mit „Ausgefallen“ gekennzeichnet wird (d. h. „SuccessFailCount“-Tests werden gesendet).
 - 	Wenn der Server die Verbindung über TCP Reset schließt.
 
 ### Benutzerdefinierter TCP-Test

@@ -22,7 +22,7 @@
 Ein Clouddienst kann in Azure CDN integriert werden, um beliebige Inhalte vom Speicherort des Clouddiensts zur Verfügung zu stellen. Dieser Ansatz bietet die folgenden Vorteile:
 
 - Einfaches Bereitstellen und Aktualisieren von Bildern, Skripts und Stylesheets in den Projektverzeichnissen des Clouddiensts
-- Einfaches Durchführen von Upgrades für die NuGet-Pakete im Clouddienst, wie z. B. jQuery- oder Bootstrap-Versionen
+- Einfaches Durchführen von Upgrades für die NuGet-Pakete im Clouddienst, wie z. B. jQuery- oder Bootstrap-Versionen
 - Verwalten der Webanwendung und des vom CDN verarbeiteten Inhalts über dieselbe Visual Studio-Oberfläche
 - Einheitlicher Bereitstellungsworkflow für die Webanwendung und den vom CDN verarbeiteten Inhalt
 - Integrieren von ASP.NET-Bündelung und -Minimierung in Azure CDN
@@ -39,14 +39,14 @@ In diesem Lernprogramm lernen Sie Folgendes:
 
 ## Was Sie erstellen ##
 
-Sie stellen eine Clouddienst-Webrolle unter Verwendung der ASP.NET-MVC-Standardvorlage bereit, fügen Code hinzu, um Inhalt aus einem integrierten Azure CDN zu verarbeiten, z. B. ein Bild, Ergebnisse von Controlleraktionen und die JavaScript- und CSS-Standarddateien; außerdem schreiben Sie Code zum Konfigurieren des Fallbackmechanismus für verarbeitete Bundles für den Fall, dass das CDN offline ist.
+Sie stellen eine Clouddienst-Webrolle unter Verwendung der ASP.NET-MVC-Standardvorlage bereit, fügen Code hinzu, um Inhalt aus einem integrierten Azure CDN zu verarbeiten, z. B. ein Bild, Ergebnisse von Controlleraktionen und die JavaScript- und CSS-Standarddateien; außerdem schreiben Sie Code zum Konfigurieren des Fallbackmechanismus für verarbeitete Bundles für den Fall, dass das CDN offline ist.
 
 ## Sie benötigen Folgendes ##
 
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
 -	Ein aktives [Microsoft Azure-Konto](/account/)
--	Visual Studio 2015 mit [Azure SDK](http://go.microsoft.com/fwlink/?linkid=518003&clcid=0x409)
+-	Visual Studio 2015 mit [Azure SDK](http://go.microsoft.com/fwlink/?linkid=518003&clcid=0x409)
 
 > [AZURE.NOTE] Sie benötigen ein Microsoft Azure-Konto, um dieses Tutorial durchführen zu können:
 > + Sie können [ein Azure-Konto kostenlos erstellen](/pricing/free-trial/): Sie erhalten ein Guthaben, das Sie zum Ausprobieren der zahlungspflichtigen Azure-Dienste nutzen können, und Sie können das Konto selbst dann behalten und die kostenlose Azure-Dienste nutzen, wenn das Guthaben aufgebraucht ist.
@@ -55,9 +55,9 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 <a name="deploy"></a>
 ## Bereitstellen eines Cloud-Diensts ##
 
-In diesem Abschnitt stellen Sie die standardmäßige ASP.NET-MVC-Anwendungsvorlage in Visual Studio 2015 für eine Clouddienst-Webrolle bereit und integrieren sie anschließend in einen neuen CDN-Endpunkt. Befolgen Sie die nachstehenden Anweisungen:
+In diesem Abschnitt stellen Sie die standardmäßige ASP.NET-MVC-Anwendungsvorlage in Visual Studio 2015 für eine Clouddienst-Webrolle bereit und integrieren sie anschließend in einen neuen CDN-Endpunkt. Befolgen Sie die nachstehenden Anweisungen:
 
-1. Erstellen Sie in Visual Studio 2015 einen neuen Azure-Clouddienst über die Menüleiste, indem Sie **Datei > Neu > Projekt > Cloud > Azure-Clouddienst** wählen. Geben Sie einen Namen ein, und klicken Sie auf **OK**.
+1. Erstellen Sie in Visual Studio 2015 einen neuen Azure-Clouddienst über die Menüleiste, indem Sie **Datei > Neu > Projekt > Cloud > Azure-Clouddienst** wählen. Geben Sie einen Namen ein, und klicken Sie auf **OK**.
 
 	![](media/cdn-cloud-service-with-cdn/cdn-cs-1-new-project.PNG)
 
@@ -82,7 +82,7 @@ In diesem Abschnitt stellen Sie die standardmäßige ASP.NET-MVC-Anwendungsvorla
 
 	![](media/cdn-cloud-service-with-cdn/cdn-cs-6-publish-signedin.png)
 
-8. Davon ausgehend, dass Sie noch keinen Clouddienst und kein Speicherkonto erstellt haben, unterstützt Visual Studio Sie bei der Erstellung dieser beiden Komponenten. Geben Sie im Dialogfeld **Create Cloud Service and Account** den gewünschten Dienstnamen ein, und wählen Sie die Region aus. Klicken Sie dann auf **Erstellen**.
+8. Davon ausgehend, dass Sie noch keinen Clouddienst und kein Speicherkonto erstellt haben, unterstützt Visual Studio Sie bei der Erstellung dieser beiden Komponenten. Geben Sie im Dialogfeld **Clouddienst und Konto erstellen** den gewünschten Dienstnamen ein, und wählen Sie die Region aus. Klicken Sie dann auf **Erstellen**.
 
 	![](media/cdn-cloud-service-with-cdn/cdn-cs-7-publish-createserviceandstorage.png)
 
@@ -94,7 +94,7 @@ In diesem Abschnitt stellen Sie die standardmäßige ASP.NET-MVC-Anwendungsvorla
 
 	Wenn im **Microsoft Azure-Aktivitätsprotokoll** als Veröffentlichungsstatus **Abgeschlossen** angezeigt wird, erstellen Sie einen CDN-Endpunkt, der in diesen Clouddienst integriert ist.
 
-	>[AZURE.WARNING] Falls der bereitgestellte Clouddienst nach der Veröffentlichung eine Fehlermeldung anzeigt, verwendet der bereitgestellte Clouddienst wahrscheinlich ein [Gastbetriebssystem ohne .NET 4.5.2](../cloud-services/cloud-services-guestos-update-matrix.md#news-updates). Sie können dieses Problem durch das [Bereitstellen von .NET 4.5.2 als Startaufgabe](../cloud-services/cloud-services-dotnet-install-dotnet.md) umgehen.
+	>[AZURE.WARNING] Falls der bereitgestellte Clouddienst nach der Veröffentlichung eine Fehlermeldung anzeigt, verwendet der bereitgestellte Clouddienst wahrscheinlich ein [Gastbetriebssystem ohne .NET 4.5.2](../cloud-services/cloud-services-guestos-update-matrix.md#news-updates). Sie können dieses Problem durch das [Bereitstellen von .NET 4.5.2 als Startaufgabe](../cloud-services/cloud-services-dotnet-install-dotnet.md) umgehen.
 
 ## Erstellen eines neuen CDN-Profils
 
@@ -154,7 +154,7 @@ Ein CDN-Profil ist eine Sammlung von CDN-Endpunkten. Jedes Profil enthält minde
 
     ![CDN-Endpunkt][cdn-endpoint-success]
 
-    > [AZURE.NOTE] Der Endpunkt kann nicht sofort verwendet werden. Es dauert bis zu 90 Minuten, bis die Registrierung über das CDN-Netzwerk weitergegeben wurde. Benutzer, die den CDN-Domänennamen sofort zu verwenden versuchen, sehen u. U. den Statuscode 404, bis die Inhalte über das CDN verfügbar sind.
+    > [AZURE.NOTE] Der Endpunkt kann nicht sofort verwendet werden. Es dauert bis zu 90 Minuten, bis die Registrierung über das CDN-Netzwerk weitergegeben wurde. Benutzer, die den CDN-Domänennamen sofort zu verwenden versuchen, sehen u. U. den Statuscode 404, bis die Inhalte über das CDN verfügbar sind.
 
 ## Testen des CDN-Endpunkts
 
@@ -192,7 +192,7 @@ Alternativ kann der von Azure CDN zu verarbeitende Inhalt von Fall zu Fall im Cl
 <a name="caching"></a>
 ## Konfigurieren von Cacheoptionen für statische Dateien im Clouddienst ##
 
-Bei Integration von Azure CDN in Ihren Clouddienst können Sie angeben, wie statischer Inhalt im CDN-Endpunkt zwischengespeichert werden soll. Öffnen Sie hierzu die Datei *Web.config* aus Ihrem Webrollenprojekt (z. B. "WebRole1"), und fügen Sie ein `<staticContent>`-Element zu `<system.webServer>` hinzu. Mit dem folgenden XML-Code wird festgelegt, dass der Cache in drei Tagen abläuft.
+Bei Integration von Azure CDN in Ihren Clouddienst können Sie angeben, wie statischer Inhalt im CDN-Endpunkt zwischengespeichert werden soll. Öffnen Sie hierzu die Datei *Web.config* aus Ihrem Webrollenprojekt (z. B. "WebRole1"), und fügen Sie ein `<staticContent>`-Element zu `<system.webServer>` hinzu. Mit dem folgenden XML-Code wird festgelegt, dass der Cache in drei Tagen abläuft.
 
 	<system.webServer>
 	  <staticContent>
@@ -201,7 +201,7 @@ Bei Integration von Azure CDN in Ihren Clouddienst können Sie angeben, wie stat
 	  ...
 	</system.webServer>
 
-Nachdem Sie dies konfiguriert haben, wenden alle statischen Dateien im Clouddienst die gleiche Regel im CDN-Cache an. Wenn Sie die Cacheeinstellungen genauer steuern möchten, fügen Sie eine *Web.config*-Datei in einen Ordner ein, und fügen Sie dieser Datei Ihre Einstellungen hinzu. Fügen Sie z. B. eine *Web.config*-Datei zum Ordner *\\Content* hinzu, und ersetzen Sie den Inhalt durch den folgenden XML-Code:
+Nachdem Sie dies konfiguriert haben, wenden alle statischen Dateien im Clouddienst die gleiche Regel im CDN-Cache an. Wenn Sie die Cacheeinstellungen genauer steuern möchten, fügen Sie eine *Web.config*-Datei in einen Ordner ein, und fügen Sie dieser Datei Ihre Einstellungen hinzu. Fügen Sie z. B. eine *Web.config*-Datei zum Ordner *\\Content* hinzu, und ersetzen Sie den Inhalt durch den folgenden XML-Code:
 
 	<?xml version="1.0"?>
 	<configuration>
@@ -392,7 +392,7 @@ Im nächsten Abschnitt erfahren Sie, wie Sie die gebündelten und minimierten Sk
 <a name="bundling"></a>
 ## Integrieren von ASP.NET-Bündelung und -Minimierung in Azure CDN ##
 
-Skripts und CSS-Stylesheets ändern sich häufig und sind daher die idealen Kandidaten für den Azure CDN-Cache. Die Verarbeitung der gesamten Webrolle über Azure CDN ist die einfachste Möglichkeit, Bündelung und Minimierung in Azure CDN zu integrieren. Da Sie diese Methode jedoch möglicherweise nicht verwenden möchten, zeige ich Ihnen, wie Sie die Integration unter Wahrung der gewünschten Entwicklerumgebung von ASP.NET-Bündelung und -Minimierung durchführen können, die Ihnen z. B. Folgendes bietet:
+Skripts und CSS-Stylesheets ändern sich häufig und sind daher die idealen Kandidaten für den Azure CDN-Cache. Die Verarbeitung der gesamten Webrolle über Azure CDN ist die einfachste Möglichkeit, Bündelung und Minimierung in Azure CDN zu integrieren. Da Sie diese Methode jedoch möglicherweise nicht verwenden möchten, zeige ich Ihnen, wie Sie die Integration unter Wahrung der gewünschten Entwicklerumgebung von ASP.NET-Bündelung und -Minimierung durchführen können, die Ihnen z. B. Folgendes bietet:
 
 -	Hervorragende Benutzerfreundlichkeit des Debugmodus
 -	Vereinfachte Bereitstellung
@@ -566,7 +566,7 @@ Die [Bundle](http://msdn.microsoft.com/library/system.web.optimization.bundle.as
 
 2. Um die Problemumgehung für CSS zu verwenden, erstellen Sie im Ordner *App\_Start* Ihres Webrollenprojekts eine neue CS-Datei namens *StyleBundleExtensions.cs*, und ersetzen Sie deren Inhalt durch den [Code von GitHub](https://github.com/EmberConsultingGroup/StyleBundleFallback/blob/master/Website/App_Start/StyleBundleExtensions.cs).
 
-4. Benennen Sie in der Datei *App\_Start\\StyleFundleExtensions.cs* den Namespace entsprechend dem Namen Ihrer Webrolle um (z. B. **WebRole1**).
+4. Benennen Sie in der Datei *App\_Start\\StyleFundleExtensions.cs* den Namespace entsprechend dem Namen Ihrer Webrolle um (z. B. **WebRole1**).
 
 3. Wechseln Sie zurück zu `App_Start\BundleConfig.cs`, und ändern Sie die letzte `bundles.Add`-Anweisung mit dem folgenden hervorgehobenen Code:
 

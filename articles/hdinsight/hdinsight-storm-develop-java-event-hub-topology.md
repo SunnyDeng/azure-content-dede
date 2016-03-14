@@ -26,7 +26,7 @@ In diesem Lernprogramm erfahren Sie, wie Sie den Event-Hub-Spout und Bolt zum Le
 
 * Ein Apache Storm-Cluster in HDInsight. Verwenden Sie einen der folgenden Artikel zu ersten Schritten, um einen Cluster zu erstellen:
 
-    - Ein [Linux-basierter Cluster](hdinsight-apache-storm-tutorial-get-started-linux.md): Wählen Sie diese Option, wenn Sie SSH zum Arbeiten mit dem Cluster auf Linux, Unix, OS X oder Windows-Clients verwenden möchten.
+    - Ein [Linux-basierter Cluster](hdinsight-apache-storm-tutorial-get-started-linux.md): Wählen Sie diese Option, wenn Sie SSH zum Arbeiten mit dem Cluster auf Linux, Unix, OS X oder Windows-Clients verwenden möchten.
 
     - Ein [Windows-basierter Cluster](hdinsight-apache-storm-tutorial-get-started.md): Wählen Sie diese Option, wenn Sie PowerShell zum Arbeiten mit dem Cluster auf einem Windows-Client verwenden möchten.
 
@@ -34,7 +34,7 @@ In diesem Lernprogramm erfahren Sie, wie Sie den Event-Hub-Spout und Bolt zum Le
 
 * Ein [Azure Event Hub](../event-hubs/event-hubs-csharp-ephcs-getstarted.md)
 
-* [Oracle Java Developer Kit (JDK) Version 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) oder Äquivalent, z. B. [OpenJDK](http://openjdk.java.net/)
+* [Oracle Java Developer Kit (JDK) Version 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) oder Äquivalent, z. B. [OpenJDK](http://openjdk.java.net/)
 
 * [Maven](https://maven.apache.org/download.cgi) ist ein Projekterstellungssystem für Java-Projekte
 
@@ -48,7 +48,7 @@ In diesem Lernprogramm erfahren Sie, wie Sie den Event-Hub-Spout und Bolt zum Le
 
     - [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Windows](hdinsight-hadoop-linux-use-ssh-windows.md)
 
-* Ein SCP-Client. Dieser wird auf allen Linux-, Unix- und OS X-Systemen bereitgestellt. Bei Windows-Clients empfehlen wir PSCP, der auf der [PuTTY-Downloadseite](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) verfügbar ist.
+* Ein SCP-Client. Dieser wird auf allen Linux-, Unix- und OS X-Systemen bereitgestellt. Bei Windows-Clients empfehlen wir PSCP, der auf der [PuTTY-Downloadseite](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) verfügbar ist.
 
 ##Grundlegendes zum Beispiel
 
@@ -155,7 +155,7 @@ Der HdfsBolt wird in der Regel zum Speichern von Daten im Hadoop Distributed Fil
       </configuration>
     </plugin>
 
-Dadurch erfährt Maven, dass das Projekt mit Kompatibilität für Java 7 kompiliert werden soll, da diese Version von HDInsight-Clustern verwendet wird.
+Dadurch erfährt Maven, dass das Projekt mit Kompatibilität für Java 7 kompiliert werden soll, da diese Version von HDInsight-Clustern verwendet wird.
 
 ####Das maven-shade-plugin
 
@@ -249,7 +249,7 @@ Sie müssen für beide Informationen zu Ihrem Event Hub und HDInsight-Cluster ei
 
 Bei der Installation von Java und dem JDK auf Ihrer Entwicklungsworkstation können die folgenden Umgebungsvariablen festgelegt werden. Sie sollten dennoch prüfen, ob die Variablen vorhanden sind und korrekte Werte für Ihr System enthalten.
 
-* **JAVA\_HOME** – sollte auf das Verzeichnis verweisen, in dem die Java-Laufzeitumgebung (Java Runtime Environment, JRE) installiert ist. Für eine Unix- oder Linux-Distribution sollte z. B. ein Wert wie `/usr/lib/jvm/java-7-oracle` verwendet werden. Unter Windows sollte der Wert so ähnlich sein wie `c:\Program Files (x86)\Java\jre1.7`
+* **JAVA\_HOME** – sollte auf das Verzeichnis verweisen, in dem die Java-Laufzeitumgebung (Java Runtime Environment, JRE) installiert ist. Für eine Unix- oder Linux-Distribution sollte z. B. ein Wert wie `/usr/lib/jvm/java-7-oracle` verwendet werden. Unter Windows sollte der Wert so ähnlich sein wie `c:\Program Files (x86)\Java\jre1.7`
 
 * **PATH** – sollte die folgenden Pfade enthalten:
 
@@ -422,7 +422,7 @@ Die von diesem Projekt erstellte JAR-Datei enthält zwei Topologien: __com.micro
         create external table devicedata (deviceid string, devicevalue int) row format delimited fields terminated by ',' stored as textfile location 'wasb:///devicedata/';
         select * from devicedata limit 10;
 
-    Klicken Sie auf __Auswählen__, um die Abfrage auszuführen. Dadurch werden 10 Zeilen der Daten ausgegeben, die vom EventHubReader im Azure-Speicher (WASB) geschrieben wurden. Nach Abschluss der Abfrage sollten Sie eine Ausgabe ähnlich der folgenden erhalten:
+    Klicken Sie auf __Auswählen__, um die Abfrage auszuführen. Dadurch werden 10 Zeilen der Daten ausgegeben, die vom EventHubReader im Azure-Speicher (WASB) geschrieben wurden. Nach Abschluss der Abfrage sollten Sie eine Ausgabe ähnlich der folgenden erhalten:
 
         3409e622-c85d-4d64-8622-af45e30bf774,848981614
         c3305f7e-6948-4cce-89b0-d9fbc2330c36,-1638780537

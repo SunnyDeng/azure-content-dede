@@ -29,7 +29,7 @@ Das Edge Performance Analytics-Modul liefert differenzierte Informationen zu Dat
 
 CDN-Aktivitätsdaten müssen vom Edge Performance Analytics-Modul erst gesammelt werden, bevor Berichte dazu erstellt werden können. Diese Sammlung erfolgt einmal täglich und deckt die Aktivität am vorhergehenden Tag ab. Dies bedeutet, dass die Statistiken eines Berichts eine Stichprobe der Statistiken dieses Tags zum Zeitpunkt ihrer Verarbeitung sind und nicht unbedingt die komplette Datenmenge für den aktuellen Tag enthalten. Die primäre Aufgabe dieser Berichte ist das Bewerten der Leistung. Sie sind nicht für Abrechnungszwecke oder exakte numerische Statistiken gedacht.
 
-> [AZURE.NOTE] Die Rohdaten, anhand derer Edge Performance Analytics-Berichte generiert werden, stehen mindestens 90 Tage zur Verfügung.
+> [AZURE.NOTE] Die Rohdaten, anhand derer Edge Performance Analytics-Berichte generiert werden, stehen mindestens 90 Tage zur Verfügung.
 
 ## Dashboard
 
@@ -59,7 +59,7 @@ Das Dashboard enthält ein Diagramm, das eine Metrik über den Zeitraum nachverf
 
 #### Verwenden des Diagramms
 
-* Standardmäßig wird der Effizienzgrad des Caches in den letzten 30 Tagen im Diagramm gezeigt.
+* Standardmäßig wird der Effizienzgrad des Caches in den letzten 30 Tagen im Diagramm gezeigt.
 * Dieses Diagramm basiert auf Daten, die täglich gesammelt werden.
 * Wenn Sie auf einen Tag auf dem Liniendiagramm zeigen, werden ein Datum und der Wert der Metrik an diesem Datum angezeigt.
 * Klicken Sie auf „Wochenenden markieren“, um eine Überlagerung aus hellgrauen vertikalen Balken einzublenden, die in diesem Diagramm Wochenenden darstellen. Diese Art von Überlagerung ist nützlich zum Ausmachen von Datenverkehrsmustern an Wochenenden.
@@ -103,7 +103,7 @@ Zweck dieser Metriken ist das Ermöglichen von Einblicken in die folgenden koste
 Feld | Beschreibung
 ------|------------
 Ave Bytes Out | Gibt die durchschnittliche Anzahl von Bytes an, die für jede Anforderung dem Anfordernden (z. B. Webbrowser) aus dem CDN (von Edgeservern) bereitgestellt wurde.
-No Cache Config Byte Rate | Gibt den Prozentsatz des Datenverkehrs vom CDN (Edgeserver) zum Anfordernden (z. B. Webbrowser) an, der als Folge des Features „Bypass Cache“ nicht zwischengespeichert wird.
+No Cache Config Byte Rate | Gibt den Prozentsatz des Datenverkehrs vom CDN (Edgeserver) zum Anfordernden (z. B. Webbrowser) an, der als Folge des Features „Bypass Cache“ nicht zwischengespeichert wird.
 Compressed Byte Rate | Gibt den Prozentsatz des Datenverkehrs vom CDN (Edgeserver) zum Anfordernden (z. B. Webbrowser) in einem komprimierten Format an.
 Bytes Out | Gibt die Datenmenge in Bytes an, die aus dem CDN (vom Edgeserver) an den Anfordernden (z. B. Webbrowser) übermittelt wurde.  
 Bytes In | Gibt die Datenmenge in Bytes an, die vom Anfordernden (z. B. Webbrowser) an das CDN (Edgeserver) gesendet wurde.
@@ -116,8 +116,8 @@ Diese Metriken dient zum Nachverfolgen der CDN-Gesamtleistung für den Datenverk
 Feld | Beschreibung
 ------|------------
 Transfer Rate | Gibt die durchschnittliche Rate an, mit der Inhalte aus dem CDN an den Anfordernden übertragen wurden.
-Duration | Gibt die durchschnittliche Zeit in Millisekunden an, die das Übermitteln eines Assets an einen Anfordernden (z. B. Webbrowser) gedauert hat.
-Compressed Request Rate | Gibt den Prozentsatz der Treffer an, die vom CDN (von Edgeservern) an den Anfordernden (z. B. Webbrowser) in einem komprimierten Format übermittelt wurde.
+Duration | Gibt die durchschnittliche Zeit in Millisekunden an, die das Übermitteln eines Assets an einen Anfordernden (z. B. Webbrowser) gedauert hat.
+Compressed Request Rate | Gibt den Prozentsatz der Treffer an, die vom CDN (von Edgeservern) an den Anfordernden (z. B. Webbrowser) in einem komprimierten Format übermittelt wurde.
 4xx Error Rate | Gibt den Prozentsatz der Treffer an, die einen Statuscode vom Typ „4xx“ generiert haben.
 5xx Error Rate | Gibt den Prozentsatz der Treffer an, die einen Statuscode vom Typ „5xx“ generiert haben.
 Hits | Gibt die Anzahl der Anforderungen von CDN-Inhalten an.
@@ -130,13 +130,13 @@ Feld | Beschreibung
 ------|------------
 Secure Cache Efficiency | Gibt den Prozentsatz von für HTTPS-Anforderungen übertragenen Daten an, die mithilfe des Caches erfüllt wurden. Diese Metrik misst, ob eine im Cache zwischengespeicherte Version des angeforderten Inhalts direkt vom CDN (von Edgeservern) dem Anfordernden (bzw. Webbrowser) über HTTPS bereitgestellt wurde.
 Secure Transfer Rate | Gibt die durchschnittliche Rate an, mit der Inhalte vom CDN (von Edgeservern) an den Anfordernden (z. B. Webserver) über HTTPS übertragen wurden.
-Average Secure Duration | Gibt die durchschnittliche Zeit in Millisekunden an, die das Übermitteln eines Assets an einen Anfordernden (z. B. Webbrowser) über HTTPS gedauert hat.
+Average Secure Duration | Gibt die durchschnittliche Zeit in Millisekunden an, die das Übermitteln eines Assets an einen Anfordernden (z. B. Webbrowser) über HTTPS gedauert hat.
 Secure Hits | Gibt die Anzahl der HTTPS-Anforderungen von CDN-Inhalten an.
 Secure Bytes Out | Gibt den Umfang des HTTPS-Datenverkehrs an, der vom CDN (von Edgeservern) an den Anfordernden (z. B. Webbrowser) übermittelt wurde.
 
 ## Berichte
 
-Jeder Bericht in diesem Modul enthält ein Diagramm und Statistiken zu Bandbreitenbreitenauslastung und Datenverkehr für verschiedene Arten von Metriken (z. B. HTTP-Statuscodes, Cachestatuscodes, Anforderungs-URL usw.). Anhand dieser Informationen kann detailliert bestimmt werden, wie Inhalte Ihren Clients zur Verfügung gestellt werden, und das CDN-Verhalten zum Verbessern der Datenübermittlungsleistung optimiert werden.
+Jeder Bericht in diesem Modul enthält ein Diagramm und Statistiken zu Bandbreitenbreitenauslastung und Datenverkehr für verschiedene Arten von Metriken (z. B. HTTP-Statuscodes, Cachestatuscodes, Anforderungs-URL usw.). Anhand dieser Informationen kann detailliert bestimmt werden, wie Inhalte Ihren Clients zur Verfügung gestellt werden, und das CDN-Verhalten zum Verbessern der Datenübermittlungsleistung optimiert werden.
 
 ### Zugreifen auf Edge Performance Analytics-Berichte
 
@@ -156,11 +156,11 @@ Tägliche Zusammenfassung | Ermöglicht das Prüfen täglicher Datenverkehrstren
 Stündliche Zusammenfassung | Ermöglicht das Prüfen stündlicher Datenverkehrstrends über einen bestimmten Zeitraum. Jeder Balken in diesem Diagramm stellt eine bestimmte Stunde an einem bestimmten Datum dar. Die Größe des Balkens gibt die Gesamtanzahl der Treffer in dieser Stunde an.
 Protokolle | Zeigt die Aufschlüsselung des Datenverkehrs zwischen den Protokollen HTTP und HTTPS. Ein Ringdiagramm gibt den Prozentsatz der Treffer für jeden Protokolltyp an.
 HTTP-Methoden | Bietet rasch einen Überblick darüber, welche HTTP-Methoden zum Anfordern Ihrer Daten genutzt werden. Die gängigsten HTTP-Anforderungsmethoden sind GET, HEAD und POST. Ein Ringdiagramm gibt den Prozentsatz der Treffer für alle Typen von HTTP-Anforderungsmethoden an.
-URLs | Enthält ein Diagramm der 10 am häufigsten angeforderten URLs. Für jede URL wird ein Balken angezeigt. Die Höhe des Balkens gibt die Anzahl der Treffer an, die diese URL im Berichtszeitraum generiert hat. Direkt unter diesem Diagramm werden Statistiken zu den 100 am häufigsten angeforderten URLs angezeigt.
-CNAMEs | Enthält ein Diagramm der 10 CNAMEs, die im Berichtszeitraum am häufigsten zum Anfordern von Assets verwendet wurden. Direkt unter diesem Diagramm werden Statistiken zu den 100 am häufigsten angeforderten CNAMEs angezeigt.
+URLs | Enthält ein Diagramm der 10 am häufigsten angeforderten URLs. Für jede URL wird ein Balken angezeigt. Die Höhe des Balkens gibt die Anzahl der Treffer an, die diese URL im Berichtszeitraum generiert hat. Direkt unter diesem Diagramm werden Statistiken zu den 100 am häufigsten angeforderten URLs angezeigt.
+CNAMEs | Enthält ein Diagramm der 10 CNAMEs, die im Berichtszeitraum am häufigsten zum Anfordern von Assets verwendet wurden. Direkt unter diesem Diagramm werden Statistiken zu den 100 am häufigsten angeforderten CNAMEs angezeigt.
 Ursprünge | Enthält ein Diagramm der 10 am häufigsten verwendeten CDN- oder Kundenursprungsserver, von denen im angegebenen Zeitraum Assets angefordert wurden. Direkt unter diesem Diagramm werden Statistiken zu den 100 am häufigsten angeforderten CDN- oder Kundenursprungsservern angezeigt. Kundenursprungsserver werden anhand des Namens bestimmt, der in der Option „Verzeichnisname“ definiert wurde.
 Geo-POPs | Zeigt an, wie viel von Datenverkehr durch einen bestimmten Point of Presence (POP) geleitet wird. Die aus drei Buchstaben bestehende Abkürzung stellt einen POP in unserem CDN-Netzwerk dar.
-Clients | Enthält ein Diagramm der 10 Clients, die Assets im angegebenen Zeitraum am häufigsten angefordert haben. Für diesen Berichts werden alle Anforderungen, die von derselben IP-Adresse stammen, demselben Client zugeordnet. Direkt unter diesem Diagramm werden Statistiken zu den 100 aktivsten Clients angezeigt. Dieser Bericht dient zum Bestimmen von Downloadaktivitätsmustern Ihrer aktivsten Clients.
+Clients | Enthält ein Diagramm der 10 Clients, die Assets im angegebenen Zeitraum am häufigsten angefordert haben. Für diesen Berichts werden alle Anforderungen, die von derselben IP-Adresse stammen, demselben Client zugeordnet. Direkt unter diesem Diagramm werden Statistiken zu den 100 aktivsten Clients angezeigt. Dieser Bericht dient zum Bestimmen von Downloadaktivitätsmustern Ihrer aktivsten Clients.
 Cachestatus | Bietet eine detaillierte Aufschlüsselung des Cacheverhaltens, woraus sich ggf. Ansätze zum Verbessern der allgemeinen Endbenutzererfahrung ergeben. Da die schnellste Leistung durch Cachetreffer erzielt wird, können Sie die Geschwindigkeit der Datenübermittlung optimieren, indem Sie Cachefehler und abgelaufene Cachetreffer auf ein Minimum reduzieren.
 NONE Details | Enthält ein Diagramm der 10 am häufigsten verwendeten URLs für Assets, für die im angegebenen Zeitraum die Aktualität des Cache-Inhalts nicht geprüft wurde. Direkt unter diesem Diagramm werden Statistiken zu den 100 am häufigsten verwendeten URLs für diese Arten von Assets angezeigt.
 CONFIG\_NOCACHE Details | Enthält ein Diagramm der 10 am häufigsten verwendeten URLs für Assets, die aufgrund der CDN-Konfiguration des Kunden nicht im Cache zwischengespeichert wurden. Diese Arten von Assets werden direkt vom Ursprungsserver bereitgestellt. Direkt unter diesem Diagramm werden Statistiken zu den 100 am häufigsten verwendeten URLs für diese Arten von Assets angezeigt.
@@ -170,7 +170,7 @@ TCP\_MISS Details | Enthält ein Diagramm der 10 am häufigsten verwendeten URLs
 TCP\_EXPIRED\_HIT Details | Enthält ein Diagramm der 10 am häufigsten verwendeten URLs für veraltete Assets, die direkt vom POP bereitgestellt wurden. Direkt unter diesem Diagramm werden Statistiken zu den 100 am häufigsten verwendeten URLs für diese Arten von Assets angezeigt.
 TCP\_EXPIRED\_MISS Details | Enthält ein Diagramm der 10 am häufigsten verwendeten URLs für veraltete Assets, für die eine neue Version vom Ursprungsserver abgerufen werden musste. Direkt unter diesem Diagramm werden Statistiken zu den 100 am häufigsten verwendeten URLs für diese Arten von Assets angezeigt.
 TCP\_CLIENT\_REFRESH\_MISS Details | Enthält ein Balkendiagramm der 10 am häufigsten verwendeten URLs für Assets, die aufgrund einer Anforderung vom Typ „no-cache“ des Clients von einem Ursprungsserver abgerufen wurden. Direkt unter diesem Diagramm werden Statistiken zu den 100 am häufigsten verwendeten URLs für diese Arten von Anforderungen angezeigt.
-Clientanforderungstypen | Gibt den Typ von Anforderungen an, die durch HTTP-Clients (z. B. Browser) erfolgt sind. Dieser Bericht enthält ein Ringdiagramm, das zeigt, wie Anforderungen verarbeitet wurden. Bandbreiten- und Datenverkehrsinformationen für jeden Anforderungstyp werden unter dem Diagramm angezeigt.
+Clientanforderungstypen | Gibt den Typ von Anforderungen an, die durch HTTP-Clients (z. B. Browser) erfolgt sind. Dieser Bericht enthält ein Ringdiagramm, das zeigt, wie Anforderungen verarbeitet wurden. Bandbreiten- und Datenverkehrsinformationen für jeden Anforderungstyp werden unter dem Diagramm angezeigt.
 Benutzer-Agent | Enthält ein Balkendiagramm der 10 am häufigsten verwendeten Benutzer-Agents zum Anfordern von Inhalten über unser CDN. Ein Benutzer-Agent ist meist ein Webbrowser, Media Player oder Browser eines Mobiltelefons. Direkt unter diesem Diagramm werden Statistiken zu den 100 aktivsten Benutzer-Agents angezeigt.
 Verweise | Enthält ein Balkendiagramm der 10 am häufigsten verwendeten Verweise auf Inhalte, auf die über unser CDN zugegriffen wird. Normalerweise ist ein Verweis die URL der Webseite oder Ressource, die mit Ihren Inhalten verknüpft ist. Unter dem Diagramm werden detaillierte Informationen zu den 100 häufigsten Verweisen angezeigt.
 Komprimierungstypen | Enthält ein Ringdiagramm mit einer Aufschlüsselung angeforderter Assets dahingehend, ob sie von unseren Edgeservern komprimiert wurden. Der Prozentsatz komprimierter Assets wird anhand des verwendeten Komprimierungstyp aufgeteilt. Unter dem Diagramm werden detaillierte Informationen zu jedem Komprimierungstyp und -status angezeigt.

@@ -18,9 +18,9 @@
 
 # Erstellen eines .NET-Webauftrags in Azure App Service
 
-Dieses Tutorial zeigt, wie Sie Code für eine einfache ASP.NET MVC 5-Anwendung mit mehreren Ebenen schreiben, die das [WebJobs SDK](websites-dotnet-webjobs-sdk.md) verwendet.
+Dieses Tutorial zeigt, wie Sie Code für eine einfache ASP.NET MVC 5-Anwendung mit mehreren Ebenen schreiben, die das [WebJobs SDK](websites-dotnet-webjobs-sdk.md) verwendet.
 
-Der Zweck von [WebJobs SDK](websites-webjobs-resources.md) besteht darin, den Code zu vereinfachen, den Sie für allgemeine Aufgaben schreiben, die ein WebJob ausführen kann, z. B. Bildverarbeitung, Warteschlangenverarbeitung, RSS-Aggregation, Dateiwartung und Senden von E-Mails. Das WebJobs SDK verfügt über integrierte Funktionen für die Arbeit mit Azure Storage und Service Bus, zum Planen von Aufgaben und Behandeln von Fehlern sowie für viele weitere allgemeine Szenarien. Darüber hinaus ist es erweiterbar, und es gibt ein [Open Source-Repository für Erweiterungen](https://github.com/Azure/azure-webjobs-sdk-extensions/wiki/Binding-Extensions-Overview).
+Der Zweck von [WebJobs SDK](websites-webjobs-resources.md) besteht darin, den Code zu vereinfachen, den Sie für allgemeine Aufgaben schreiben, die ein WebJob ausführen kann, z. B. Bildverarbeitung, Warteschlangenverarbeitung, RSS-Aggregation, Dateiwartung und Senden von E-Mails. Das WebJobs SDK verfügt über integrierte Funktionen für die Arbeit mit Azure Storage und Service Bus, zum Planen von Aufgaben und Behandeln von Fehlern sowie für viele weitere allgemeine Szenarien. Darüber hinaus ist es erweiterbar, und es gibt ein [Open Source-Repository für Erweiterungen](https://github.com/Azure/azure-webjobs-sdk-extensions/wiki/Binding-Extensions-Overview).
 
 Bei dieser Beispielanwendung handelt es sich um ein Bulletin Board für Werbung. Benutzer können Bilder für Werbeanzeigen hochladen, und ein Back-End-Prozess konvertiert die Bildern in Miniaturansichten. Auf der Seite mit der Anzeigenliste werden die Miniaturansichten angezeigt, auf der Seite mit den Anzeigendetails sind die Bilder in voller Größe zu sehen. Hier sehen Sie einen Screenshot:
 
@@ -30,11 +30,11 @@ Diese Beispielanwendung funktioniert mit [Azure-Warteschlangen](http://www.asp.n
 
 ## <a id="prerequisites"></a>Voraussetzungen
 
-In diesem Tutorial wird vorausgesetzt, dass Sie mit der Arbeit mit [ASP.NET MVC 5](http://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started)-Projekten in Visual Studio vertraut sind.
+In diesem Tutorial wird vorausgesetzt, dass Sie mit der Arbeit mit [ASP.NET MVC 5](http://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started)-Projekten in Visual Studio vertraut sind.
 
-Das Tutorial wurde für Visual Studio 2013 geschrieben. Falls Sie noch nicht über Visual Studio verfügen, wird die Anwendung zusammen mit dem Azure SDK für .NET installiert.
+Das Tutorial wurde für Visual Studio 2013 geschrieben. Falls Sie noch nicht über Visual Studio verfügen, wird die Anwendung zusammen mit dem Azure SDK für .NET installiert.
 
-Das Tutorial kann mit Visual Studio 2015 verwendet werden. Bevor Sie die Anwendung jedoch lokal ausführen, müssen Sie den `Data Source`-Teil der Verbindungszeichenfolge "SQL Server LocalDB" in den Dateien "Web.config" und "App.config" von `Data Source=(localdb)\v11.0` zu `Data Source=(LocalDb)\MSSQLLocalDB` ändern.
+Das Tutorial kann mit Visual Studio 2015 verwendet werden. Bevor Sie die Anwendung jedoch lokal ausführen, müssen Sie den `Data Source`-Teil der Verbindungszeichenfolge "SQL Server LocalDB" in den Dateien "Web.config" und "App.config" von `Data Source=(localdb)\v11.0` zu `Data Source=(LocalDb)\MSSQLLocalDB` ändern.
 
 [AZURE.INCLUDE [free-trial-note](../../includes/free-trial-note2.md)]
 
@@ -63,7 +63,7 @@ Wenn ein Benutzer ein Bild hochlädt, speichert die Web-App das Bild in einem [A
 
 [AZURE.INCLUDE [install-sdk](../../includes/install-sdk-2015-2013.md)]
 
-Die Anleitungen in diesem Tutorial gelten für das Azure SDK für .NET 2.7.1 oder höher.
+Die Anleitungen in diesem Tutorial gelten für das Azure SDK für .NET 2.7.1 oder höher.
 
 ## <a id="storage"></a>Erstellen eines Azure-Speicherkontos
 
@@ -229,11 +229,11 @@ Nachdem Sie einige Werbeeinblendungen unter Ausführung in der Cloud erstellt ha
 
 	Die vollständige URL besteht aus der hier eingegebenen Zeichenfolge und ".azurewebsites.net" (wie neben dem Textfeld **Web-App-Name** angezeigt). Beispiel: Wenn der Web-App-Name "ContosoAds" lautet, ist die URL "ContosoAds.azurewebsites.net".
 
-7. Wählen Sie in der Dropdownliste [App Service-Plan](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md) die Option **Neuen App Service-Plan erstellen** aus. Geben Sie einen Namen für den App Service-Plan ein, z. B. ContosoAdsPlan.
+7. Wählen Sie in der Dropdownliste [App Service-Plan](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md) die Option **Neuen App Service-Plan erstellen** aus. Geben Sie einen Namen für den App Service-Plan ein, z. B. ContosoAdsPlan.
 
 8. Wählen Sie in der Dropdownliste [Ressourcengruppe](../resource-group-overview.md) die Option **Neue Ressourcengruppe erstellen** aus.
 
-9. Geben Sie einen Namen für die Ressourcengruppe ein, z. B. ContosoAdsGroup.
+9. Geben Sie einen Namen für die Ressourcengruppe ein, z. B. ContosoAdsGroup.
 
 10. Wählen Sie in der Dropdownliste **Region** dieselbe Region aus, die Sie für Ihr Speicherkonto ausgewählt haben.
 
@@ -357,7 +357,7 @@ In diesem Abschnitt verwenden Sie den **Server-Explorer** zum Festlegen der Verb
 
 In diesem Abschnitt werden Sie die folgenden Aufgaben ausführen:
 
-* Erstellen Sie eine Visual Studio-Lösung mit einem Webprojekt.
+* Erstellen Sie eine Visual Studio-Lösung mit einem Webprojekt.
 * Fügen Sie ein Klassenbibliotheksprojekt für die Datenzugriffsebene hinzu, das von Front-End und Back-End gemeinsam genutzt wird.
 * Fügen Sie ein Konsolenanwendungsprojekt für das Back-End hinzu und aktivieren Sie die WebJobs-Bereitstellung.
 * NuGet-Pakete hinzufügen.
@@ -365,7 +365,7 @@ In diesem Abschnitt werden Sie die folgenden Aufgaben ausführen:
 * Kopieren Sie den Anwendungscode und die Konfigurationsdateien aus der heruntergeladenen Anwendung, mit der Sie im vorherigen Abschnitt dieses Lernprogramms gearbeitet haben.
 * Prüfen Sie die Codeabschnitte, die Azure-Blobs, Warteschlangen und das WebJobs SDK verwenden.
 
-### Erstellen einer Visual Studio-Lösung mit Webprojekt und Klassenbibliotheks-Projekt
+### Erstellen einer Visual Studio-Lösung mit Webprojekt und Klassenbibliotheks-Projekt
 
 1. Klicken Sie in Visual Studio auf **Neu** > **Projekt** im Menü **Datei**.
 
@@ -793,7 +793,7 @@ Die Anwendung wurde für dieses Lernprogramm einfach gehalten. In einer echten A
 
 ### Skalieren von Webaufträgen
 
-Webaufträge werden im Kontext einer Web-App ausgeführt und können nicht separat skaliert werden. Wenn Sie z. B. eine Standard-Web-App-Instanz haben, können Sie nur eine Instanz Ihres Hintergrundprozesses ausführen. Dieser Prozess verwendet Serverressourcen (Prozessor, Arbeitsspeicher usw.), die andernfalls für die Auslieferung von Webinhalten zur Verfügung stehen würden.
+Webaufträge werden im Kontext einer Web-App ausgeführt und können nicht separat skaliert werden. Wenn Sie z. B. eine Standard-Web-App-Instanz haben, können Sie nur eine Instanz Ihres Hintergrundprozesses ausführen. Dieser Prozess verwendet Serverressourcen (Prozessor, Arbeitsspeicher usw.), die andernfalls für die Auslieferung von Webinhalten zur Verfügung stehen würden.
 
 Wenn der Datenverkehr je nach Tageszeit oder Wochentag schwankt und Ihre Back-End-Verarbeitung nicht zeitkritisch ist, können Sie die Ausführung Ihrer WebJobs in Zeiten mit niedrigem Datenverkehr planen. Wenn die Last immer noch zu hoch ist, können Sie das Back-End als WebJob in einer separaten, speziell für diesen Zweck erstellten Web-App ausführen. Auf diese Weise können Sie Ihre Back-End-Web-App unabhängig von Ihrer Front-End-Web-App skalieren.
 

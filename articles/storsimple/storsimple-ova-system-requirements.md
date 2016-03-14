@@ -53,13 +53,13 @@ Die Softwareanforderungen umfassen Informationen zu den unterstützten Webbrowse
 |----------------------------------------------|----------------------------|
 | Mindestanzahl virtueller Prozessoren (Kerne) | 4 |
 | Minimaler Arbeitsspeicher (RAM) | 8 GB |
-| Festplattenspeicher<sup>1</sup> | Betriebssystemdatenträger: 80 GB <br></br>Datendatenträger: 500 GB bis 8 TB|
+| Festplattenspeicher<sup>1</sup> | Betriebssystemdatenträger: 80 GB <br></br>Datendatenträger: 500 GB bis 8 TB|
 | Mindestanzahl von Netzwerkschnittstellen | 1 |
-| Minimale Internetbandbreite<sup>2</sup> | 5 MBit/s |
+| Minimale Internetbandbreite<sup>2</sup> | 5 MBit/s |
 
 <sup>1</sup>: Bereitgestelltes Thin-Gerät
 
-<sup>2</sup>: Die Netzwerkanforderungen können abhängig von der täglichen Datenänderungsrate variieren. Beispiel: Wenn von einem Gerät Änderungen mit einem Umfang von mindestens 10 GB pro Tag gesichert werden müssen, kann die tägliche Sicherung bei einer Verbindung mit 5 MBit/s bis zu 4,25 Stunden dauern (falls die Daten nicht komprimiert oder dedupliziert werden konnten).
+<sup>2</sup>: Die Netzwerkanforderungen können abhängig von der täglichen Datenänderungsrate variieren. Beispiel: Wenn von einem Gerät Änderungen mit einem Umfang von mindestens 10 GB pro Tag gesichert werden müssen, kann die tägliche Sicherung bei einer Verbindung mit 5 MBit/s bis zu 4,25 Stunden dauern (falls die Daten nicht komprimiert oder dedupliziert werden konnten).
 
 ### Unterstützte Webbrowser
 
@@ -74,22 +74,22 @@ Die Softwareanforderungen umfassen Informationen zu den unterstützten Webbrowse
 | **Version** |
 |-------------|
 | SMB 2.x |
-| SMB 3.0 |
+| SMB 3.0 |
 | SMB 3.02 |
 
 ## Netzwerkanforderungen 
 
-In der folgenden Tabelle sind die Ports aufgeführt, die in der Firewall für iSCSI-, SMB-, Cloud- oder Verwaltungsdatenverkehr geöffnet werden müssen. In dieser Tabelle bezieht sich *ein* oder *eingehend* auf die Richtung, aus der eingehende Clientanforderungen auf das Gerät zugreifen. Entsprechend bezieht sich *aus* oder *ausgehend* auf die Richtung, in der das StorSimple-Gerät Daten über die Bereitstellung hinaus an externe Ziele sendet: z. B. ausgehende Verbindungen mit dem Internet.
+In der folgenden Tabelle sind die Ports aufgeführt, die in der Firewall für iSCSI-, SMB-, Cloud- oder Verwaltungsdatenverkehr geöffnet werden müssen. In dieser Tabelle bezieht sich *ein* oder *eingehend* auf die Richtung, aus der eingehende Clientanforderungen auf das Gerät zugreifen. Entsprechend bezieht sich *aus* oder *ausgehend* auf die Richtung, in der das StorSimple-Gerät Daten über die Bereitstellung hinaus an externe Ziele sendet: z. B. ausgehende Verbindungen mit dem Internet.
 
 | **Portnr.<sup>1</sup>** | **ein oder aus** | **Portbereich** | **Erforderlich** | **Hinweise** |
 |--------------------------|---------------|----------------|---------------------------|----------------------------------------------------------------------------------------------------------------------|
-| TCP 80 (HTTP) | aus | WAN | Nein | Der ausgehende Port wird für den Internetzugriff zum Abrufen von Updates verwendet. <br></br>Der ausgehende Webproxy kann vom Benutzer konfiguriert werden. |
-| TCP 443 (HTTPS) | aus | WAN | Ja | Der ausgehende Port wird für den Zugriff auf Daten in der Cloud verwendet. <br></br>Der ausgehende Webproxy kann vom Benutzer konfiguriert werden. |
-| UDP 53 (DNS) | aus | WAN | In einigen Fällen; siehe Hinweise. | Dieser Port ist nur dann erforderlich, wenn Sie einen internetbasierten DNS-Server verwenden. <br></br> **Hinweis:** Bei der Bereitstellung eines Dateiservers wird die Verwendung eines lokalen DNS-Servers empfohlen.|
-| UDP 123 (NTP) | aus | WAN | In einigen Fällen; siehe Hinweise. | Dieser Port ist nur dann erforderlich, wenn Sie einen internetbasierten NTP-Server verwenden.<br></br> **Hinweis:** Bei der Bereitstellung eines Dateiservers wird empfohlen, die Zeit mit Ihren Active Directory-Domänencontrollern zu synchronisieren. |
-|TCP 9354 | aus | WAN | Ja | Der ausgehende Port wird vom StorSimple-Gerät für die Kommunikation mit dem StorSimple Manager-Dienst verwendet.|
-| TCP 80 (HTTP) | Geben Sie in | LAN | Ja | Dies ist der eingehende Port für die lokale Benutzeroberfläche auf dem StorSimple-Gerät für die lokale Verwaltung. <br></br> **Hinweis:** Beim Zugriff auf die lokale Benutzeroberfläche über HTTP erfolgt automatisch eine Umleitung auf HTTPS.|
-| TCP 443 (HTTPS) | Geben Sie in | LAN | Ja | Dies ist der eingehende Port für die lokale Benutzeroberfläche auf dem StorSimple-Gerät für die lokale Verwaltung.|
+| TCP 80 (HTTP) | aus | WAN | Nein | Der ausgehende Port wird für den Internetzugriff zum Abrufen von Updates verwendet. <br></br>Der ausgehende Webproxy kann vom Benutzer konfiguriert werden. |
+| TCP 443 (HTTPS) | aus | WAN | Ja | Der ausgehende Port wird für den Zugriff auf Daten in der Cloud verwendet. <br></br>Der ausgehende Webproxy kann vom Benutzer konfiguriert werden. |
+| UDP 53 (DNS) | aus | WAN | In einigen Fällen; siehe Hinweise. | Dieser Port ist nur dann erforderlich, wenn Sie einen internetbasierten DNS-Server verwenden. <br></br> **Hinweis:** Bei der Bereitstellung eines Dateiservers wird die Verwendung eines lokalen DNS-Servers empfohlen.|
+| UDP 123 (NTP) | aus | WAN | In einigen Fällen; siehe Hinweise. | Dieser Port ist nur dann erforderlich, wenn Sie einen internetbasierten NTP-Server verwenden.<br></br> **Hinweis:** Bei der Bereitstellung eines Dateiservers wird empfohlen, die Zeit mit Ihren Active Directory-Domänencontrollern zu synchronisieren. |
+|TCP 9354 | aus | WAN | Ja | Der ausgehende Port wird vom StorSimple-Gerät für die Kommunikation mit dem StorSimple Manager-Dienst verwendet.|
+| TCP 80 (HTTP) | Geben Sie in | LAN | Ja | Dies ist der eingehende Port für die lokale Benutzeroberfläche auf dem StorSimple-Gerät für die lokale Verwaltung. <br></br> **Hinweis:** Beim Zugriff auf die lokale Benutzeroberfläche über HTTP erfolgt automatisch eine Umleitung auf HTTPS.|
+| TCP 443 (HTTPS) | Geben Sie in | LAN | Ja | Dies ist der eingehende Port für die lokale Benutzeroberfläche auf dem StorSimple-Gerät für die lokale Verwaltung.|
 | TCP 3260 (iSCSI) | Geben Sie in | LAN | Nein | Dieser Port wird für den Datenzugriff über iSCSI verwendet.|
 
 <sup>1</sup> Es müssen keine eingehenden Ports für das öffentliche Internet geöffnet werden.

@@ -16,12 +16,12 @@
 	ms.date="01/21/2016"
 	ms.author="dastrock"/>
 
-# Azure AD B2C-Vorschau: Erstellen von Windows-Desktop-Apps
+# Azure AD B2C-Vorschau: Erstellen von Windows-Desktop-Apps
 
 
 <!-- TODO [AZURE.INCLUDE [active-directory-b2c-devquickstarts-native-switcher](../../includes/active-directory-b2c-devquickstarts-native-switcher.md)]-->
 
-Mit Azure Active Directory (Azure AD) B2C können Sie Ihren Desktop-Apps in wenigen Schritten leistungsstarke Self-Service-Features zur Identitätsverwaltung hinzufügen. In diesem Artikel erfahren Sie, wie eine .NET Windows Presentation Foundation-App (WPF) für eine Aufgabenliste erstellt wird, die Benutzerregistrierung, -anmeldung und die Verwaltung von Profilen umfasst. Die App verfügt über Unterstützung für die Registrierung und Anmeldung mit einem Benutzernamen oder einer E-Mail-Adresse. Sie bietet auch Unterstützung für die Registrierung und Anmeldung über Konten für soziale Netzwerke wie Facebook und Google.
+Mit Azure Active Directory (Azure AD) B2C können Sie Ihren Desktop-Apps in wenigen Schritten leistungsstarke Self-Service-Features zur Identitätsverwaltung hinzufügen. In diesem Artikel erfahren Sie, wie eine .NET Windows Presentation Foundation-App (WPF) für eine Aufgabenliste erstellt wird, die Benutzerregistrierung, -anmeldung und die Verwaltung von Profilen umfasst. Die App verfügt über Unterstützung für die Registrierung und Anmeldung mit einem Benutzernamen oder einer E-Mail-Adresse. Sie bietet auch Unterstützung für die Registrierung und Anmeldung über Konten für soziale Netzwerke wie Facebook und Google.
 
 [AZURE.INCLUDE [active-directory-b2c-preview-note](../../includes/active-directory-b2c-preview-note.md)]
 
@@ -220,10 +220,10 @@ private async void EditProfile(object sender, RoutedEventArgs e)
                     new PlatformParameters(PromptBehavior.Always, null), Globals.editProfilePolicy);
 ```
 
-In all diesen Fällen gibt ADAL entweder in `AuthenticationResult` ein Token zurück oder löst eine Ausnahme aus. Jedes Mal, wenn Sie ein Token von der ADAL abrufen, können Sie mit dem `AuthenticationResult.UserInfo`-Objekt die Benutzerdaten in der App (z. B. die Benutzeroberfläche) aktualisieren. ADAL speichert das Token auch für die Verwendung in anderen Teilen der Anwendung zwischen.
+In all diesen Fällen gibt ADAL entweder in `AuthenticationResult` ein Token zurück oder löst eine Ausnahme aus. Jedes Mal, wenn Sie ein Token von der ADAL abrufen, können Sie mit dem `AuthenticationResult.UserInfo`-Objekt die Benutzerdaten in der App (z. B. die Benutzeroberfläche) aktualisieren. ADAL speichert das Token auch für die Verwendung in anderen Teilen der Anwendung zwischen.
 
 ## Aufrufen von APIs
-Sie haben jetzt ADAL zum Ausführen von Richtlinien sowie zum Abrufen von Token verwendet. In vielen Fällen möchten Sie jedoch prüfen, ob ein zwischengespeichertes Token vorhanden ist, ohne eine Richtlinie auszuführen. Ein solcher Fall tritt z. B. ein, wenn die App versucht, die Aufgabenliste des Benutzers von `TaskService` abzurufen. Sie können dazu dieselbe `authContext.AcquireTokenAsync(...)`-Methode verwenden und erneut `clientId` als Bereichsparameter einsetzen, dieses Mal aber zusätzlich mit `PromptBehavior.Never`:
+Sie haben jetzt ADAL zum Ausführen von Richtlinien sowie zum Abrufen von Token verwendet. In vielen Fällen möchten Sie jedoch prüfen, ob ein zwischengespeichertes Token vorhanden ist, ohne eine Richtlinie auszuführen. Ein solcher Fall tritt z. B. ein, wenn die App versucht, die Aufgabenliste des Benutzers von `TaskService` abzurufen. Sie können dazu dieselbe `authContext.AcquireTokenAsync(...)`-Methode verwenden und erneut `clientId` als Bereichsparameter einsetzen, dieses Mal aber zusätzlich mit `PromptBehavior.Never`:
 
 ```C#
 private async void GetTodoList()
@@ -285,7 +285,7 @@ Wenn der Aufruf von `AcquireTokenAsync(...)` erfolgreich ist und ein Token im Ca
 	...
 ```
 
-Dieses Muster können Sie jederzeit anwenden, um den Tokencache auf Token zu überprüfen, ohne dass der Benutzer sich anmelden muss. Wenn die App gestartet wird, möchten Sie z. B. möglicherweise `FileCache` auf vorhandene Token überprüfen. Auf diese Weise bleibt die Anmeldesitzung des Benutzers immer erhalten, wenn die App ausgeführt wird. Sie finden den gleichen Code im `OnInitialized`-Ereignis von `MainWindow`. `OnInitialized` verarbeitet die erste Ausführung.
+Dieses Muster können Sie jederzeit anwenden, um den Tokencache auf Token zu überprüfen, ohne dass der Benutzer sich anmelden muss. Wenn die App gestartet wird, möchten Sie z. B. möglicherweise `FileCache` auf vorhandene Token überprüfen. Auf diese Weise bleibt die Anmeldesitzung des Benutzers immer erhalten, wenn die App ausgeführt wird. Sie finden den gleichen Code im `OnInitialized`-Ereignis von `MainWindow`. `OnInitialized` verarbeitet die erste Ausführung.
 
 ## Abmelden des Benutzers
 Sie können mit ADAL die App-Sitzung des Benutzers beenden, wenn dieser **Abmelden** auswählt. Mithilfe von ADAL wird dies durch Löschen aller Token aus dem Tokencache erreicht:
@@ -315,7 +315,7 @@ Zum Schluss erstellen Sie `TaskClient` und `TaskService` und führen sie aus. Re
 
 ## Soziale Netzwerke als IDPs hinzufügen
 
-Derzeit unterstützt die App nur die Registrierung und Anmeldung von Benutzern über **lokale Konten**. Dies sind in Ihrem B2C-Verzeichnis gespeicherte Konten, die einen Benutzernamen und ein Kennwort verwenden. Mit Azure AD B2C können Sie auch Unterstützung für andere Identitätsanbieter (IDPs) hinzufügen, ohne Ihren Code ändern zu müssen.
+Derzeit unterstützt die App nur die Registrierung und Anmeldung von Benutzern über **lokale Konten**. Dies sind in Ihrem B2C-Verzeichnis gespeicherte Konten, die einen Benutzernamen und ein Kennwort verwenden. Mit Azure AD B2C können Sie auch Unterstützung für andere Identitätsanbieter (IDPs) hinzufügen, ohne Ihren Code ändern zu müssen.
 
 Um Ihrer App soziale Netzwerke als IdPs hinzuzufügen, befolgen Sie zunächst die detaillierten Anweisungen in diesen Artikeln. Sie müssen für jeden IdP, den Sie unterstützen möchten, eine Anwendung in dessen System registrieren und eine Client-ID abrufen.
 

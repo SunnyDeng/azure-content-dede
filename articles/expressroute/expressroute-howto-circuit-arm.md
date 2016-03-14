@@ -30,7 +30,7 @@ In diesem Artikel wird beschrieben, wie Sie eine Azure ExpressRoute-Verbindung m
 
 Für das Erstellen einer ExpressRoute-Verbindung gelten folgende Voraussetzungen:
 
-- Sie benötigen die neueste Version der Azure PowerShell-Module (Version 1.0 oder höher). Um eine Schritt-für-Schritt-Anleitung zum Konfigurieren des Computers für die Verwendung der Azure PowerShell-Module zu erhalten, befolgen Sie die Anweisungen auf der Seite [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
+- Sie benötigen die neueste Version der Azure PowerShell-Module (Version 1.0 oder höher). Um eine Schritt-für-Schritt-Anleitung zum Konfigurieren des Computers für die Verwendung der Azure PowerShell-Module zu erhalten, befolgen Sie die Anweisungen auf der Seite [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
 - Lesen Sie vor Beginn der Konfiguration die Seiten [Voraussetzungen](expressroute-prerequisites.md) und [Workflows](expressroute-workflows.md).
 
 ## Erstellen und Bereitstellen einer ExpressRoute-Verbindung
@@ -85,7 +85,7 @@ PS C:\> Get-AzureRmExpressRouteServiceProvider
 
 Sie können nun eine ExpressRoute-Verbindung erstellen.
 
-**Schritt 3. Erstellen Sie eine ExpressRoute-Verbindung.**
+**Schritt 3. Erstellen Sie eine ExpressRoute-Verbindung.**
 
 Wenn Sie noch keine Ressourcengruppe besitzen, müssen Sie zuerst eine erstellen, bevor Sie Ihre ExpressRoute-Verbindung erstellen. Dazu können Sie den folgenden Befehl ausführen:
 
@@ -93,7 +93,7 @@ Wenn Sie noch keine Ressourcengruppe besitzen, müssen Sie zuerst eine erstellen
 New-AzureRmResourceGroup -Name “ExpressRouteResourceGroup” -Location "West US"
 ```
 
-Das folgende Beispiel zeigt, wie Sie eine ExpressRoute-Verbindung mit 200 MBit/s über Equinix im Silicon Valley herstellen können. Wenn Sie einen anderen Anbieter und andere Einstellungen verwenden, ersetzen Sie bei Ihrer Anforderung die entsprechenden Informationen. Nachfolgend sehen Sie eine Beispielanforderung für einen neuen Dienstschlüssel:
+Das folgende Beispiel zeigt, wie Sie eine ExpressRoute-Verbindung mit 200 MBit/s über Equinix im Silicon Valley herstellen können. Wenn Sie einen anderen Anbieter und andere Einstellungen verwenden, ersetzen Sie bei Ihrer Anforderung die entsprechenden Informationen. Nachfolgend sehen Sie eine Beispielanforderung für einen neuen Dienstschlüssel:
 
 ```
 New-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup" -Location "West US" -SkuTier Standard -SkuFamily MeteredData -ServiceProviderName "Equinix" -PeeringLocation "Silicon Valley" -BandwidthInMbps 200

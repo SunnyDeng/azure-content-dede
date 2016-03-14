@@ -42,7 +42,7 @@ Und Sie können dem Pool Datenbanken hinzufügen oder Datenbanken aus dem Pool e
 
 ![SQL-Datenbanken, die eDTUs in einem Pool für elastische Datenbanken gemeinsam nutzen][1]
 
-Datenbanken, die für Pools für elastische Datenbanken besonders geeignet sind, weisen in der Regel Zeiträume der Aktivität sowie Zeiträume der Inaktivität auf. Im obigen Beispiel können Sie die Aktivität einer einzelnen Datenbank, von vier Datenbanken und schließlich eines Pools für elastische Datenbanken mit 20 Datenbanken sehen. Datenbanken mit veränderlicher Aktivität im Laufe der Zeit eignen sich besonders für elastische Pools, da sie nicht alle zur gleichen Zeit aktiv sind und eDTUs gemeinsam nutzen können. Nicht alle Datenbanken entsprechen jedoch diesem Muster. Datenbanken mit einem konstanteren Ressourcenbedarf eignen sich besser für die Basic-, Standard- und Premium-Dienstebenen, bei denen Ressourcen einzeln zugewiesen werden.
+Datenbanken, die für Pools für elastische Datenbanken besonders geeignet sind, weisen in der Regel Zeiträume der Aktivität sowie Zeiträume der Inaktivität auf. Im obigen Beispiel können Sie die Aktivität einer einzelnen Datenbank, von vier Datenbanken und schließlich eines Pools für elastische Datenbanken mit 20 Datenbanken sehen. Datenbanken mit veränderlicher Aktivität im Laufe der Zeit eignen sich besonders für elastische Pools, da sie nicht alle zur gleichen Zeit aktiv sind und eDTUs gemeinsam nutzen können. Nicht alle Datenbanken entsprechen jedoch diesem Muster. Datenbanken mit einem konstanteren Ressourcenbedarf eignen sich besser für die Basic-, Standard- und Premium-Dienstebenen, bei denen Ressourcen einzeln zugewiesen werden.
 
 [Überlegungen zum Preis und zur Leistung eines Pools für elastische Datenbanken](sql-database-elastic-pool-guidance.md)
 
@@ -64,8 +64,8 @@ Derzeit unterstützen elastische Datenbanken in der Vorschau die meisten [Funkti
 Datenbanken in einem Pool für elastische Datenbanken werden automatisch vom System gesichert, und die Aufbewahrungsrichtlinie für die Sicherung stimmt mit der entsprechenden Dienstebene für einzelne Datenbanken überein. Die Datenbanken der einzelnen Ebenen haben also jeweils einen anderen Wiederherstellungsbereich:
 
 * **Basic-Pool:** Die Wiederherstellung ist für jeden Zeitpunkt innerhalb der letzten sieben Tage möglich. 
-* **Standard-Pool:** Die Wiederherstellung ist für jeden Zeitpunkt innerhalb der letzten 14 Tage möglich.
-* **Premium-Pool:** Die Wiederherstellung ist für jeden Zeitpunkt innerhalb der letzten 35 Tage möglich. 
+* **Standard-Pool:** Die Wiederherstellung ist für jeden Zeitpunkt innerhalb der letzten 14 Tage möglich.
+* **Premium-Pool:** Die Wiederherstellung ist für jeden Zeitpunkt innerhalb der letzten 35 Tage möglich. 
 
 Während der Vorschau werden Datenbanken in einem Pool als eine neue Datenbank im gleichen Pool wiederhergestellt. Gelöschte Datenbanken werden immer als eigenständige Datenbank außerhalb des Pools in der niedrigsten Leistungsstufe für diese Dienstebene wiederhergestellt. Beispielsweise wird eine elastische Datenbank in einem Standard-Pool, die gelöscht wird, als S0-Datenbank wiederhergestellt. Sie können Datenbank-Wiederherstellungsvorgänge über das Azure-Verwaltungsportal oder programmgesteuert mithilfe der REST-API ausführen. PowerShell-Cmdlet-Unterstützung wird demnächst zur Verfügung stehen.
 

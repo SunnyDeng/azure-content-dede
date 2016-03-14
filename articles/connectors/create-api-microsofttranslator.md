@@ -54,7 +54,7 @@ Wenn Sie Microsoft Translator zu PowerApps Enterprise hinzufügen, geben Sie die
 
 	1. Geben Sie einen Wert für **Client-ID** ein.
 	2. Geben Sie den **Namen** Ihrer Anwendung ein.
-	3. Geben Sie einen Dummywert für **Umleitungs-URL** ein. Geben Sie z. B. Folgendes ein: **https://contosoredirecturl*.
+	3. Geben Sie einen Dummywert für **Umleitungs-URL** ein. Geben Sie z. B. Folgendes ein: **https://contosoredirecturl*.
 4. Geben Sie eine **Beschreibung** ein.
 	5. Klicken Sie auf **Erstellen**.  
 

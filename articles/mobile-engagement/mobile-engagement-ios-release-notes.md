@@ -40,7 +40,7 @@
 
 ##2\.2.0 (21.05.2015)
 
--   Die Mobile Engagement-Geräte-ID für Geräte mit einer früheren Version als iOS 6 basiert jetzt auf einer während der Installation generierten GUID.
+-   Die Mobile Engagement-Geräte-ID für Geräte mit einer früheren Version als iOS 6 basiert jetzt auf einer während der Installation generierten GUID.
 
 ##2\.1.0 (24.04.2015)
 

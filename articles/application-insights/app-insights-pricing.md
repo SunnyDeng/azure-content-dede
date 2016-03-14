@@ -56,7 +56,7 @@ Sie können jederzeit zur kostenlosen 30-Tage-Testversion des Premium-Tarifs wec
 * Das Kontingent wird in *Datenpunkten* gemessen. Ein einzelner Datenpunkt ist ein Aufruf einer der Nachverfolgungsmethoden, unabhängig davon, ob sie explizit in Ihrem Code oder durch eines der Standardtelemetriemodule aufgerufen wird. 
 * Datenpunkte werden generiert:
  * Über [SDK-Module](app-insights-configuration-with-applicationinsights-config.md), die automatisch Daten sammeln, beispielsweise zum Melden einer Anforderung oder eines Absturzes oder zum Messen der Leistung.
- * Über von Ihnen geschriebene [API](app-insights-api-custom-events-metrics.md)-`Track...`-Aufrufe, z. B. `TrackEvent` oder `trackPageView`.
+ * Über von Ihnen geschriebene [API](app-insights-api-custom-events-metrics.md)-`Track...`-Aufrufe, z. B. `TrackEvent` oder `trackPageView`.
  * Über [Verfügbarkeitswebtests](app-insights-monitor-web-app-availability.md), die Sie eingerichtet haben.
 * Beim Debuggen können Sie die Datenpunkte sehen, die von Ihrer App im Visual Studio-Ausgabefenster gesendet werden. Client-Ereignisse können durch Öffnen der Registerkarte „Netzwerk“ im Debuggingbereich Ihres Browsers angezeigt werden (in der Regel mit F12).
 * *Sitzungsdaten* werden im Kontingent nicht berücksichtigt. Hierzu zählen die Anzahl von Benutzern oder Sitzungen sowie Umgebungs- und Gerätedaten.
@@ -91,7 +91,7 @@ Das Diagramm zeigt die Menge an Daten, die der Application Insights-Dienst nach 
 
 ## Datenrate
 
-Zusätzlich zum monatlichen Kontingent gibt es Begrenzungen der Datenrate. Beim Tarif [Free][pricing] liegt die Grenze bei 200 Datenpunkten pro Sekunde, gemittelt über 5 Minuten. Bei kostenpflichtigen Tarifen ist der Grenzwert 500/s, gemittelt über eine Minute.
+Zusätzlich zum monatlichen Kontingent gibt es Begrenzungen der Datenrate. Beim Tarif [Free][pricing] liegt die Grenze bei 200 Datenpunkten pro Sekunde, gemittelt über 5 Minuten. Bei kostenpflichtigen Tarifen ist der Grenzwert 500/s, gemittelt über eine Minute.
 
 Es gibt drei Buckets, die getrennt gezählt werden:
 
@@ -121,7 +121,7 @@ Wenn Begrenzungsdrosselungen auftreten, können Sie verschiedene Schritte ausfü
 
 * Verwenden Sie [Stichproben](app-insights-sampling.md). Diese Technologie verringert die Datenrate, ohne die Metriken zu verzerren und ohne die Navigation zwischen verwandten Elementen bei der Suche zu stören.
 * [Begrenzen Sie die Anzahl der gemeldeten AJAX-Aufrufe](app-insights-javascript.md#detailed-configuration) für jeden Seitenaufruf, oder deaktivieren Sie AJAX-Berichte.
-* Deaktivieren Sie nicht benötigte Erfassungsmodule durch [Bearbeiten von „ApplicationInsights.config“](app-insights-configuration-with-applicationinsights-config.md). Das kann z. B. für Leistungsindikator- oder Abhängigkeitsdaten gelten.
+* Deaktivieren Sie nicht benötigte Erfassungsmodule durch [Bearbeiten von „ApplicationInsights.config“](app-insights-configuration-with-applicationinsights-config.md). Das kann z. B. für Leistungsindikator- oder Abhängigkeitsdaten gelten.
 * Aggregieren Sie Metriken vorab. Wenn Sie Ihrer App Aufrufe an TrackMetric eingefügt haben, können Sie Datenverkehr reduzieren, indem Sie die Überladung verwenden, die Ihre Berechnung des Durchschnitts und die Standardabweichung eines Batches von Messungen akzeptiert. Oder Sie können ein [vorab aggregierendes Paket](https://www.myget.org/gallery/applicationinsights-sdk-labs) verwenden. 
 
 
@@ -136,8 +136,8 @@ Wenn Begrenzungsdrosselungen auftreten, können Sie verschiedene Schritte ausfü
 Ihr Tarif bestimmt, wie lange Daten im Portal aufbewahrt werden und dadurch auch, wie weit zurück Sie die Zeiträume festlegen können.
 
 
-* Rohdatenpunkte (also Instanzen, die Sie bei der Diagnosesuche überprüfen können): 7 bis 30 Tage.
-* Aggregierte Daten (d. h. Zählungen, Mittelwerte und andere statistischen Daten, die im Metrik-Explorer angezeigt werden) werden im Maß von 1 Minute für 30 Tage und 1 Stunde oder 1 Tag (abhängig vom Typ) für mindestens 13 Monate aufbewahrt.
+* Rohdatenpunkte (also Instanzen, die Sie bei der Diagnosesuche überprüfen können): 7 bis 30 Tage.
+* Aggregierte Daten (d. h. Zählungen, Mittelwerte und andere statistischen Daten, die im Metrik-Explorer angezeigt werden) werden im Maß von 1 Minute für 30 Tage und 1 Stunde oder 1 Tag (abhängig vom Typ) für mindestens 13 Monate aufbewahrt.
 
 
 ## Stichproben

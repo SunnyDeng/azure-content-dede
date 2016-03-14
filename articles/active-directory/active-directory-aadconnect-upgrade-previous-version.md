@@ -19,7 +19,7 @@
 # Azure AD Connect: Aktualisieren von einer früheren Version auf die aktuelle Version
 In diesem Thema werden die verschiedenen Methoden beschrieben, die Sie verwenden können, um Ihre Azure AD Connect-Installation auf die aktuelle Version zu aktualisieren. Wir empfehlen, dass Sie immer die aktuelle Version von Azure AD Connect nutzen.
 
-Wenn Sie von DirSync aktualisieren möchten, lesen Sie [Aktualisieren des Windows Azure Active Directory-Synchronisierungstools (DirSync)](active-directory-aadconnect-dirsync-upgrade-get-started.md).
+Wenn Sie von DirSync aktualisieren möchten, lesen Sie [Aktualisieren des Microsoft Azure Active Directory-Synchronisierungstools (DirSync)](active-directory-aadconnect-dirsync-upgrade-get-started.md).
 
 Es gibt verschiedene Strategien für das Upgrade von Azure AD Connect.
 
@@ -49,7 +49,7 @@ Stattdessen ist die empfohlene Methode die Nutzung einer Swing-Migration. Für d
 
 Hinweis: Es wurde festgestellt, dass einige Kunden für dieses Verfahren drei oder vier Server verwenden möchten. Da der Stagingserver aktualisiert wird, verfügen Sie während dieser Zeit nicht über einen Sicherungsserver für eine etwaige [Notfallwiederherstellung](active-directory-aadconnectsync-operations.md#disaster-recovery). Mit maximal vier Servern kann ein neuer Satz aus primären/Standbyservern mit der neuen Version vorbereitet werden. Dadurch ist sichergestellt, dass immer ein Stagingserver zur Verfügung steht.
 
-Diese Schritte funktionieren auch bei einem Wechsel von Azure AD Sync oder einer Lösung mit FIM und Azure AD-Connector. Diese Schritte funktionieren nicht für DirSync, aber die entsprechende Methode einer Swing-Migration (wird auch als parallele Bereitstellung bezeichnet) mit den Schritten für DirSync finden Sie unter [Aktualisieren des Windows Azure Active Directory-Synchronisierungstools (DirSync)](active-directory-aadconnect-dirsync-upgrade-get-started.md).
+Diese Schritte funktionieren auch bei einem Wechsel von Azure AD Sync oder einer Lösung mit FIM und Azure AD-Connector. Diese Schritte funktionieren nicht für DirSync, aber die entsprechende Methode einer Swing-Migration (wird auch als parallele Bereitstellung bezeichnet) mit den Schritten für DirSync finden Sie unter [Aktualisieren des Microsoft Azure Active Directory-Synchronisierungstools (DirSync)](active-directory-aadconnect-dirsync-upgrade-get-started.md).
 
 ### Schritte bei der Swing-Migration
 

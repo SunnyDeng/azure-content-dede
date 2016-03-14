@@ -24,7 +24,7 @@
 Azure AD erleichtert die Auslagerung der Identitätsverwaltung für Webanwendungen, indem es eine einmalige An- und Abmeldung (Single Sign-on und Single Sign-out) mit nur wenigen Codezeilen ermöglicht. Für Java-Web-Apps erreichen Sie das Gleiche durch die Microsoft-Implementierung des Community-gestützten ADAL4J.
 
   Hier verwenden wir ADAL4J für Folgendes:
-- Anmelden von Benutzern an der App mit Azure AD als Identitätsanbieter
+- Anmelden von Benutzern an der App mit Azure AD als Identitätsanbieter
 - Anzeigen einiger Informationen zum Benutzer
 - Abmelden des Benutzers von der App
 
@@ -32,12 +32,12 @@ Dazu müssen Sie folgende Schritte ausführen:
 
 1. Registrieren einer Anwendung in Azure AD
 2. Legen Sie fest, dass Ihre App die Bibliothek „ADAL4J“ verwendet.
-3. Verwenden Sie die Bibliothek „ADAL4J“ zur Ausgabe von An- und Abmeldeanforderungen für Azure AD.
+3. Verwenden Sie die Bibliothek „ADAL4J“ zur Ausgabe von An- und Abmeldeanforderungen für Azure AD.
 4. Ausdrucken von Informationen zum Benutzer
 
 Beginnen Sie, indem Sie [das Anwendungsgerüst](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect/archive/skeleton.zip) oder [das vollständige Beispiel herunterladen](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect\/archive/complete.zip). Außerdem benötigen Sie einen Azure AD-Mandanten, bei dem Sie Ihre Anwendung registrieren. Wenn Sie noch keinen Mandanten haben, [erfahren Sie hier, wie Sie einen erhalten](active-directory-howto-tenant.md).
 
-## 1\. Registrieren einer Anwendung in Azure AD
+## 1\. Registrieren einer Anwendung in Azure AD
 Damit Ihre Anwendung Benutzer authentifizieren kann, müssen Sie zunächst in Ihrem Mandanten eine neue Anwendung registrieren.
 
 - Melden Sie sich beim Azure-Verwaltungsportal an.
@@ -355,13 +355,13 @@ Unser Ziel ist es, Java-Dateien zu erstellen, die:
 2. Daten über den Benutzer erfassen
 
 > [AZURE.NOTE] 
-Damit wir Daten über den Benutzer erhalten, müssen wir die Graph-API von Azure Active Directory verwenden. Die Graph-API ist ein sicherer Webdienst, den Sie zum Erfassen von Daten über Ihr Unternehmen, einschließlich einzelne Benutzer, verwenden können. Dies ist eine bessere Option als das Einfügen sensibler Daten in Token. Es stellt nämlich sicher, dass der Benutzer, der die Daten anfordert, autorisiert ist und Personen, die in Besitz des Token gelangen (z. B. von einem Jailbreak-Gerät oder über den Browsercache auf einem Desktop), keine wichtigen Daten über den Benutzer oder das Unternehmen daraus erhalten.
+Damit wir Daten über den Benutzer erhalten, müssen wir die Graph-API von Azure Active Directory verwenden. Die Graph-API ist ein sicherer Webdienst, den Sie zum Erfassen von Daten über Ihr Unternehmen, einschließlich einzelne Benutzer, verwenden können. Dies ist eine bessere Option als das Einfügen sensibler Daten in Token. Es stellt nämlich sicher, dass der Benutzer, der die Daten anfordert, autorisiert ist und Personen, die in Besitz des Token gelangen (z. B. von einem Jailbreak-Gerät oder über den Browsercache auf einem Desktop), keine wichtigen Daten über den Benutzer oder das Unternehmen daraus erhalten.
 
 Für diese Aufgabe können wir Java-Dateien erstellen:
 
 1. Erstellen Sie in Ihrem Stammverzeichnis einen Ordner namens „adal4jsample“, um alle Java-Dateien zu speichern. 
 
-Wir verwenden den Namespace `com.microsoft.aad.adal4jsample` in den Java-Dateien. Die meisten IDEs erstellen dafür eine verschachtelte Ordnerstruktur (z. B. `/com/microsoft/aad/adal4jsample`). Dies können Sie auch tun, es ist aber nicht erforderlich.
+Wir verwenden den Namespace `com.microsoft.aad.adal4jsample` in den Java-Dateien. Die meisten IDEs erstellen dafür eine verschachtelte Ordnerstruktur (z. B. `/com/microsoft/aad/adal4jsample`). Dies können Sie auch tun, es ist aber nicht erforderlich.
 
 2. Erstellen Sie in diesem Ordner eine Datei namens `JSONHelper.java`, die wir beim Analysieren von JSON-Daten von den Token verwenden. Fügen Sie mit Ausschneiden/Einfügen Folgendes ein:
 
@@ -1744,7 +1744,7 @@ Mit den aktuellen Tomcat-Servern können WAR-Dateien einfach bereitgestellt werd
 
 ##Nächste Schritte
 
-Glückwunsch! Sie haben nun eine funktionierende Java-Anwendung, die Benutzer authentifizieren, Web-APIs über OAuth 2.0 sicher aufrufen und grundlegende Benutzerinformationen abfragen kann. Sofern nicht bereits geschehen, ist es nun an der Zeit, Ihren Mandanten mit Benutzern zu füllen.
+Glückwunsch! Sie haben nun eine funktionierende Java-Anwendung, die Benutzer authentifizieren, Web-APIs über OAuth 2.0 sicher aufrufen und grundlegende Benutzerinformationen abfragen kann. Sofern nicht bereits geschehen, ist es nun an der Zeit, Ihren Mandanten mit Benutzern zu füllen.
 
 Als Referenz stellen wir das vollständige Beispiel (ohne Ihre Konfigurationswerte) [hier als ZIP-Datei bereit](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect/archive/complete.zip). Sie können es alternativ aus GitHub klonen:
 

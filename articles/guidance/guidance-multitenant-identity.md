@@ -19,7 +19,7 @@
 
 # Identitätsverwaltung für mehrmandantenfähige Anwendungen in Microsoft Azure
 
-In dieser Reihe werden bewährte Methoden für mehrere Instanzen bei Verwendung von Azure AD für Authentifizierung und Identität beschrieben.
+In dieser Reihe werden bewährte Methoden für mehrere Instanzen bei Verwendung von Azure AD für Authentifizierung und Identität beschrieben.
 
 Beim Erstellen einer mehrmandantenfähigen Anwendung besteht eine der ersten Herausforderungen in der Verwaltung der Benutzeridentitäten, da jeder Benutzer nun zu einem Mandanten gehört. Beispiel:
 
@@ -27,7 +27,7 @@ Beim Erstellen einer mehrmandantenfähigen Anwendung besteht eine der ersten Her
 - Benutzer sollten Zugriff auf Daten der eigenen Organisation haben, dürfen jedoch nicht auf Daten anderer Mandanten zugreifen.
 - Eine Organisation kann sich für eine Anwendung anmelden und Organisationsmitgliedern dann Anwendungsrollen zuweisen.
 
-Azure Active Directory (Azure AD) verfügt über einige hervorragende Funktionen, die alle diese Szenarios unterstützen.
+Azure Active Directory (Azure AD) verfügt über einige hervorragende Funktionen, die alle diese Szenarios unterstützen.
 
 Die Artikelreihe begleitet die vollständige [Ende-zu-Ende-Implementierung][tailspin] einer mehrmandantenfähigen Anwendung. Die Artikel fassen zusammen, was wir im Verlauf der Erstellung dieser Anwendung gelernt haben. Informationen zu den ersten Schritten mit der Anwendung finden Sie unter [How to run the Tailspin Surveys sample application](https://github.com/Azure-Samples/guidance-identity-management-for-multitenant-apps/blob/master/docs/running-the-app.md) (Ausführen der Tailspin-Anwendung Surveys).
 
@@ -36,7 +36,7 @@ Die Artikelreihe begleitet die vollständige [Ende-zu-Ende-Implementierung][tail
 
 - [Einführung](guidance-multitenant-identity-intro.md)
 - [Informationen über die Tailspin-Anwendung Surveys](guidance-multitenant-identity-tailspin.md)
-- [Authentifizierung mit Azure AD](guidance-multitenant-identity-authenticate.md)
+- [Authentifizierung mit Azure AD](guidance-multitenant-identity-authenticate.md)
 - [Arbeiten mit anspruchsbasierten Identitäten](guidance-multitenant-identity-claims.md)
 - [Anmeldung und Onboarding von Mandanten](guidance-multitenant-identity-signup.md)
 - [Definieren und Verwalten von Anwendungsrollen](guidance-multitenant-identity-app-roles.md)

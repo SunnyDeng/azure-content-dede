@@ -21,7 +21,7 @@
 Erfahren Sie mehr über Hindernisse, die Sie beheben müssen, bevor Sie Stretch-Datenbank aktivieren können.
 
 ## <a name="Limitations"></a>Hindernisse
-In der aktuellen Vorversion von SQL Server 2016 sind Tabellen mit den folgenden Komponenten nicht für Stretch berechtigt.
+In der aktuellen Vorversion von SQL Server 2016 sind Tabellen mit den folgenden Komponenten nicht für Stretch berechtigt.
 
 **Tabelleneigenschaften**
 -   Mehr als 1.023 Spalten

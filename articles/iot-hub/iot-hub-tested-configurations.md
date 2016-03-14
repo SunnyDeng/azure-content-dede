@@ -161,7 +161,7 @@ Die Kompatibilität jedes Geräts mit unserem SDK unter dem Betriebssystem und i
 |[MiTAC Computing Technologie Pluto E220](http://client.mitac.com/products-Embedded-Box-PC-PlutoE220.html) |Windows 10 | C#|
 |[NEXCOM NISE 50C](http://www.nexcom.com/Products/industrial-computing-solutions/industrial-fanless-computer/atom-compact/fanless-computer-nise-50c) |Windows 10 IoT Core | C#|
 |[Pacific Control Systems G2021ES](http://www.pacificcontrols.net/products/G2021ES-Gateway.html) |Ubuntu | C|
-|[PANASONIC Toughpad FZ + F1](http://www.panasonic.com/global/home.html) |Windows 10 IoT Mobile Enterprise | C#|
+|[PANASONIC Toughpad FZ + F1](http://www.panasonic.com/global/home.html) |Windows 10 IoT Mobile Enterprise | C#|
 |[Raspberry Pi 2](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/) | Raspbian | C, JavaScript, Java |
 |[Raspberry Pi 2](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/) | Windows 10 IoT Core| C, JavaScript, C#|
 |[Samsung ARTIK](http://developer.samsung.com/artik) |Fedora | C|

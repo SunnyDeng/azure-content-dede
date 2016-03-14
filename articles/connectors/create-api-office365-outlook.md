@@ -1,5 +1,5 @@
 <properties
-pageTitle="Hinzufügen der Office 365-API zu Ihren Logik-Apps | Microsoft Azure"
+pageTitle="Hinzufügen der Office 365-API zu Ihren Logik-Apps | Microsoft Azure"
 description="Übersicht über die Office 365-API und REST-API-Parameter"
 services=""	
 documentationCenter="" 	
@@ -18,16 +18,16 @@ ms.author="mandia"/>
 
 # Erste Schritte mit der Office 365 Outlook-API 
 
-Stellen Sie eine Verbindung mit Office 365 Outlook her, um E-Mail zu erhalten, auf eine E-Mail zu antworten, Ihren Kalender und Kontakte zu aktualisieren und vieles mehr. Die Office 365 Outlook-APIs kann verwendet werden von:
+Stellen Sie eine Verbindung mit Office 365 Outlook her, um E-Mail zu erhalten, auf eine E-Mail zu antworten, Ihren Kalender und Kontakte zu aktualisieren und vieles mehr. Die Office 365 Outlook-APIs kann verwendet werden von:
 
 - PowerApps 
 - Logik-Apps 
 
->[AZURE.NOTE] Diese Version des Artikels gilt für die Schemaversion 2015-08-01-preview für Logik-Apps. Um die Schemaversion „2014-12-01-preview“ aufzurufen, klicken Sie auf [Office 365-API](../app-service-logic/app-service-logic-connector-office365.md).
+>[AZURE.NOTE] Diese Version des Artikels gilt für die Schemaversion 2015-08-01-preview für Logik-Apps. Um die Schemaversion „2014-12-01-preview“ aufzurufen, klicken Sie auf [Office 365-API](../app-service-logic/app-service-logic-connector-office365.md).
 
 Mit Office 365 Outlook können Sie folgende Aktionen ausführen:
 
-- Erstellen eines Geschäftsworkflows basierend auf den Daten, die aus Office 365 Outlook abgerufen werden. 
+- Erstellen eines Geschäftsworkflows basierend auf den Daten, die aus Office 365 Outlook abgerufen werden. 
 - Verwenden eines Triggers, wenn neue E-Mails eingegangen sind, wenn Sie einen neuen Kontakt erstellen usw.
 - Verwenden von Aktionen, die auf eine E-Mail antworten, ein neues Kalenderereignis erstellen usw. Diese Aktionen erhalten eine Antwort und stellen anschließend die Ausgabe anderen Aktionen zur Verfügung. Wenn beispielsweise ein neues Objekt in Salesforce vorhanden ist, können Sie dieses Objekt abrufen und Ihre Office 365 Outlook-Kontakte aktualisieren. 
 - Hinzufügen der Office 365-Outlook-API zu PowerApps Enterprise. Die Benutzer können diese API anschließend in ihren Apps verwenden. 
@@ -50,7 +50,7 @@ Alle APIs unterstützen Daten im JSON- und XML-Format.
 ## Herstellen einer Verbindung mit Office 365
 
 ### Hinzufügen zusätzlicher Konfigurationen in PowerApps
-Wenn Sie diese API zu PowerApps Enterprise hinzufügen, geben Sie die Werte für den **App-Schlüssel** und den **geheimen App-Schlüssel** Ihrer Office 365-AAD-Anwendung (Azure Active Directory) ein. Der Wert von **Umleitungs-URL** wird auch in Ihrer Office 365-Anwendung verwendet. Wenn Sie noch keine Office 365-Anwendung haben, führen Sie die folgenden Schritte aus, um die Anwendung zu erstellen:
+Wenn Sie diese API zu PowerApps Enterprise hinzufügen, geben Sie die Werte für den **App-Schlüssel** und den **geheimen App-Schlüssel** Ihrer Office 365-AAD-Anwendung (Azure Active Directory) ein. Der Wert von **Umleitungs-URL** wird auch in Ihrer Office 365-Anwendung verwendet. Wenn Sie noch keine Office 365-Anwendung haben, führen Sie die folgenden Schritte aus, um die Anwendung zu erstellen:
 
 1. Öffnen Sie das [Azure-Portal][5], dann **Active Directory**, und wählen Sie den Namen des Mandanten Ihrer Organisation aus.
 2. Klicken Sie auf die Registerkarte **Anwendungen**, und wählen Sie **Hinzufügen** aus: ![AAD-Mandanten-Anwendungen][7]
@@ -798,7 +798,7 @@ Aktualisiert einen Kontakt teilweise. ```PATCH: /datasets/contacts/tables/{table
 
 
 ## Nächste Schritte
-Nach dem Hinzufügen der Office 365-API zu PowerApps Enterprise [erteilen Sie den Benutzern Berechtigungen](../power-apps/powerapps-manage-api-connection-user-access.md) zum Verwenden der API in ihren Apps.
+Nach dem Hinzufügen der Office 365-API zu PowerApps Enterprise [erteilen Sie den Benutzern Berechtigungen](../power-apps/powerapps-manage-api-connection-user-access.md) zum Verwenden der API in ihren Apps.
 
 [Erstellen Sie eine Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md).
 

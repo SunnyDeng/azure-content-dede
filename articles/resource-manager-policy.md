@@ -52,7 +52,7 @@ Grundsätzlich enthält eine Richtlinie Folgendes:
 
 **Bedingung/logische Operatoren**: eine Reihe von Bedingungen, die über einen Satz von logischen Operatoren beeinflusst werden.
 
-**Effekt**: beschreibt die Auswirkungen, wenn die Bedingung erfüllt ist – verweigern oder überwachen. Ein Überwachungseffekt gibt ein Warnereignis im Dienstprotokoll aus. Administratoren können z. B. eine Richtlinie erstellen, die eine Überwachung verursacht, wenn jemand einen großen virtuellen Computer erstellt, und dann später die Protokolle überprüfen.
+**Effekt**: beschreibt die Auswirkungen, wenn die Bedingung erfüllt ist – verweigern oder überwachen. Ein Überwachungseffekt gibt ein Warnereignis im Dienstprotokoll aus. Administratoren können z. B. eine Richtlinie erstellen, die eine Überwachung verursacht, wenn jemand einen großen virtuellen Computer erstellt, und dann später die Protokolle überprüfen.
 
     {
       "if" : {
@@ -98,7 +98,7 @@ Felder: **name**, **kind**, **type**, **location**, **tags**, **tags.*** und **p
 
 Quellen: **action**
 
-„property alias“ ist ein Name, der in der Richtliniendefinition für den Zugriff auf die für einen Ressourcentyp spezifischen Eigenschaften (z. B. Einstellungen oder SKUs) verwendet werden kann. Er kann in allen API-Versionen verwendet werden, in denen die Eigenschaft vorhanden ist. Aliase können mithilfe der folgenden REST-API abgerufen werden (die PowerShell-Unterstützung wird in Zukunft hinzugefügt):
+„property alias“ ist ein Name, der in der Richtliniendefinition für den Zugriff auf die für einen Ressourcentyp spezifischen Eigenschaften (z. B. Einstellungen oder SKUs) verwendet werden kann. Er kann in allen API-Versionen verwendet werden, in denen die Eigenschaft vorhanden ist. Aliase können mithilfe der folgenden REST-API abgerufen werden (die PowerShell-Unterstützung wird in Zukunft hinzugefügt):
 
     GET /subscriptions/{id}/providers?$expand=resourceTypes/aliases&api-version=2015-11-01
 	

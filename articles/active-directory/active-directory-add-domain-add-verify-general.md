@@ -103,15 +103,15 @@ Wenn seit den Änderungen an Ihrer Domäne mehr als 72 Stunden vergangen sind, m
 
 ## Überprüfen Ihrer benutzerdefinierten Domäne für den Verbund mit Ihrem lokalen Verzeichnis
 
-1.  Laden Sie Azure AD Connect herunter, und führen Sie es aus. Das Tool Azure AD Connect [fordert Sie zum Hinzufügen der von ihm bereitgestellten DNS-Einträge auf](active-directory-aadconnect-get-started-custom.md#verify-the-azure-ad-domain-selected-for-federation).
+1.  Laden Sie Azure AD Connect herunter, und führen Sie es aus. Das Tool Azure AD Connect [fordert Sie zum Hinzufügen der von ihm bereitgestellten DNS-Einträge auf](active-directory-aadconnect-get-started-custom.md#verify-the-azure-ad-domain-selected-for-federation).
 
 ## Domänennamen der dritten Ebene
 
-Sie können Domänen der dritten Ebene, z. B. „europe.contoso.com“ mit Azure AD verwenden. So fügen Sie eine Domäne der dritten Ebene hinzu und verwenden diese:
+Sie können Domänen der dritten Ebene, z. B. „europe.contoso.com“ mit Azure AD verwenden. So fügen Sie eine Domäne der dritten Ebene hinzu und verwenden diese:
 
 1.  Fügen Sie die Domäne der zweiten Ebene, „contoso.com“, hinzu, und überprüfen Sie sie.
 
-2.  Fügen Sie Azure AD Unterdomänen wie z. B. „europe.contoso.com“ hinzu. Wenn Sie eine Unterdomäne einer überprüften Domäne der zweiten Ebene hinzufügen, wird die Domäne der dritten Ebene automatisch von Azure AD überprüft. Sie müssen keine weiteren DNS-Einträge hinzufügen.
+2.  Fügen Sie Azure AD Unterdomänen wie z. B. „europe.contoso.com“ hinzu. Wenn Sie eine Unterdomäne einer überprüften Domäne der zweiten Ebene hinzufügen, wird die Domäne der dritten Ebene automatisch von Azure AD überprüft. Sie müssen keine weiteren DNS-Einträge hinzufügen.
 
 Diese Schritte können auch mithilfe von PowerShell und Graph ausgeführt werden.
 

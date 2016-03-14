@@ -24,8 +24,8 @@ Wenn Sie [Ihre Java-Web-App mit Application Insights instrumentiert haben][java]
 
 * **Abhängigkeiten**: Daten über Aufrufe der Anwendung an andere Komponenten, einschließlich:
  * **REST-Aufrufe** über "HttpClient", "OkHttp" und "RestTemplate" (Spring).
- * **Redis**-Aufrufe über den Jedis-Client. Wenn der Aufruf länger als 10 s dauert, wird der Agent auch die Argumente des Aufrufs abrufen.
- * **[JDBC-Aufrufe](http://docs.oracle.com/javase/7/docs/technotes/guides/jdbc/)**: MySQL, SQL Server, PostgreSQL, SQLite, Oracle DB oder Apache Derby DB. Aufrufe von "executeBatch" werden unterstützt. Wenn bei MySQL und PostgreSQL der Aufruf länger als 10 s dauert, meldet der Agent dem Abfrageplan. 
+ * **Redis**-Aufrufe über den Jedis-Client. Wenn der Aufruf länger als 10 s dauert, wird der Agent auch die Argumente des Aufrufs abrufen.
+ * **[JDBC-Aufrufe](http://docs.oracle.com/javase/7/docs/technotes/guides/jdbc/)**: MySQL, SQL Server, PostgreSQL, SQLite, Oracle DB oder Apache Derby DB. Aufrufe von "executeBatch" werden unterstützt. Wenn bei MySQL und PostgreSQL der Aufruf länger als 10 s dauert, meldet der Agent dem Abfrageplan. 
 * **Abgefangene Ausnahmen**: Daten zu Ausnahmen, die vom Code verarbeitet werden.
 * **Methodenausführungszeit**: Daten über die Zeit, die zum Ausführen bestimmter Methoden benötigt wird.
 

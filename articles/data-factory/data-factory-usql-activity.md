@@ -63,7 +63,7 @@ Der von Ihnen mithilfe der Schaltfläche **Autorisieren** generierte Autorisieru
 | Benutzertyp | Läuft ab nach |
 | :-------- | :----------- | 
 | Benutzerkonten, die NICHT von Azure Active Directory verwaltet werden (@hotmail.com, @live.com usw.) | 12 Stunden |
-| Benutzerkonten, die von Azure Active Directory (AAD) verwaltet werden | | 14 Tage nach der letzten Sliceausführung. <p>90 Tage, wenn ein Slice basierend auf dem OAuth-basierten verknüpften Dienst mindestens einmal alle 14 Tage ausgeführt wird.</p> |
+| Benutzerkonten, die von Azure Active Directory (AAD) verwaltet werden | | 14 Tage nach der letzten Sliceausführung. <p>90 Tage, wenn ein Slice basierend auf dem OAuth-basierten verknüpften Dienst mindestens einmal alle 14 Tage ausgeführt wird.</p> |
 
 Um diesen Fehler zu vermeiden oder zu beheben, müssen Sie bei **Ablauf des Tokens** mithilfe der Schaltfläche **Autorisieren** eine erneute Autorisierung ausführen und den verknüpften Dienst erneut bereitstellen. Sie können auch programmgesteuert Werte für die Eigenschaften **sessionId** und **authorization** generieren. Verwenden Sie dazu den im folgenden Abschnitt bereitgestellten Code.
 

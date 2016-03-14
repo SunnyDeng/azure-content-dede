@@ -21,7 +21,7 @@
 
 Dieser Artikel ist [Teil einer Reihe]. Es gibt auch eine vollständige [Beispielanwendung], die diese Reihe begleitet.
 
-Anwendungsrollen werden verwendet, um Benutzern Berechtigungen zuzuweisen. In der [Tailspin-Anwendung „Surveys“][Tailspin] gibt es z. B. die folgenden Rollen:
+Anwendungsrollen werden verwendet, um Benutzern Berechtigungen zuzuweisen. In der [Tailspin-Anwendung „Surveys“][Tailspin] gibt es z. B. die folgenden Rollen:
 
 - Administrator. Kann alle Erstellungs-, Lese-, Aktualisierungs- und Löschaktionen auf alle Umfragen anwenden, die zu diesem Mandanten gehören.
 - Creator (Ersteller). Kann neue Umfragen erstellen.
@@ -153,7 +153,7 @@ Nachteile:
 - AD-Sicherheitsgruppen können nicht zum Verwalten von Rollenzuweisungen verwendet werden.
 - Benutzerinformationen werden in der Anwendungsdatenbank gespeichert und können die Synchronität mit dem AD-Verzeichnis des Mandanten verlieren, wenn Benutzer hinzugefügt oder entfernt werden.   
 
-Es gibt viele vorhandene Beispiele für diesen Ansatz. Siehe z. B. [Erstellen einer ASP.NET MVC-App mit Authentifizierung, SQL-Datenbank und Bereitstellung in Azure App Service].
+Es gibt viele vorhandene Beispiele für diesen Ansatz. Siehe z. B. [Erstellen einer ASP.NET MVC-App mit Authentifizierung, SQL-Datenbank und Bereitstellung in Azure App Service].
 
 
 ## Zusätzliche Ressourcen

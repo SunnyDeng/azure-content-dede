@@ -380,7 +380,7 @@ Beispiel:
 	}
 
 ### Schema per Data Factory
-Bei schemafreien Datenspeichern, z. B. DocumentDB, leitet der Data Factory-Dienst das Schema auf eine der folgenden Weisen ab:
+Bei schemafreien Datenspeichern, z. B. DocumentDB, leitet der Data Factory-Dienst das Schema auf eine der folgenden Weisen ab:
 
 1.	Wenn Sie die Struktur der Daten mithilfe der **structure**-Eigenschaft in der Datasetdefinition angeben, berücksichtigt der Data Factory-Dienst diese Struktur als das Schema. Wenn in diesem Fall eine Zeile keinen Wert für eine Spalte enthält, wird ein NULL-Wert für sie angegeben.
 2.	Wenn Sie die Struktur der Daten nicht mithilfe der **structure**-Eigenschaft in der Datasetdefinition angeben, leitet der Data Factory-Dienst das Schema unter Verwendung der ersten Zeile in den Daten ab. Wenn in diesem Fall die erste Zeile nicht das vollständige Schema enthält, fehlen im Ergebnis des Kopiervorgangs einige Spalten.
@@ -407,7 +407,7 @@ Wenn bei der Kopieraktivität "source" den Typ **DocumentDbCollectionSource** ha
 | **Eigenschaft** | **Beschreibung** | **Zulässige Werte** | **Erforderlich** |
 | -------- | ----------- | -------------- | -------- |
 | nestingSeparator | Ein Sonderzeichen im Quellspaltennamen, um anzuzeigen, dass das geschachtelte Dokument erforderlich ist. <p>Zum Beispiel oben: "Name.First" in der Ausgabetabelle erzeugt die folgende JSON-Struktur im DocumentDB-Dokument:</p><p>"Name": {<br/> "First": "John"<br/>},</p> | Zeichen, das zur Trennung der Schachtelungsebenen verwendet wird.<p>Standardwert ist "." (Punkt).</p> | Zeichen, das zur Trennung der Schachtelungsebenen verwendet wird. <p>Standardwert ist "." (Punkt).</p> | Nein | 
-| writeBatchSize | Anzahl der parallelen Anforderungen an den DocumentDB-Dienst zum Erstellen von Dokumenten.<p>Sie können die Leistung beim Kopieren von Daten in/aus DocumentDB mithilfe dieser Eigenschaft optimieren. Sie können eine bessere Leistung erwarten, wenn Sie "writeBatchSize" heraufsetzen, da mehr parallele Anforderungen an DocumentDB gesendet werden. Sie müssen jedoch eine Drosselung vermeiden, die zur Ausgabe einer Fehlermeldung führen kann: "Anforderungsrate ist hoch".</p><p>Die Drosselung hängt von einer Reihe von Faktoren ab, einschließlich Größe der Dokumente, Anzahl von Begriffen in Dokumenten, Indizierung der Richtlinie der Zielsammlung usw. Für Kopiervorgänge können Sie eine bessere Sammlung (z. B. S3) verwenden, um den höchsten verfügbaren Durchsatz zu erhalten (2.500 Anforderungseinheiten/Sekunde).</p> | Ganzzahlwert | Nein |
+| writeBatchSize | Anzahl der parallelen Anforderungen an den DocumentDB-Dienst zum Erstellen von Dokumenten.<p>Sie können die Leistung beim Kopieren von Daten in/aus DocumentDB mithilfe dieser Eigenschaft optimieren. Sie können eine bessere Leistung erwarten, wenn Sie "writeBatchSize" heraufsetzen, da mehr parallele Anforderungen an DocumentDB gesendet werden. Sie müssen jedoch eine Drosselung vermeiden, die zur Ausgabe einer Fehlermeldung führen kann: "Anforderungsrate ist hoch".</p><p>Die Drosselung hängt von einer Reihe von Faktoren ab, einschließlich Größe der Dokumente, Anzahl von Begriffen in Dokumenten, Indizierung der Richtlinie der Zielsammlung usw. Für Kopiervorgänge können Sie eine bessere Sammlung (z. B. S3) verwenden, um den höchsten verfügbaren Durchsatz zu erhalten (2.500 Anforderungseinheiten/Sekunde).</p> | Ganzzahlwert | Nein |
 | writeBatchTimeout | Die Wartezeit für den Abschluss des Vorgangs. | (Einheit = Zeitspanne) Beispiel: "00:30:00" (30 Minuten). | Nein |
  
 ## Anhang
@@ -419,7 +419,7 @@ Wenn bei der Kopieraktivität "source" den Typ **DocumentDbCollectionSource** ha
 
 	**Antwort:** Wenn Datensätze über ein ID-Feld verfügen und beim Kopiervorgang versucht wird, einen Datensatz mit der gleichen ID einzufügen, löst der Kopiervorgang einen Fehler aus.
  
-3. **Frage:** Unterstützt Data Factory die [bereichs- oder hashbasierte Datenpartitionierung](https://azure.microsoft.com/documentation/articles/documentdb-partition-data/)?
+3. **Frage:** Unterstützt Data Factory die [bereichs- oder hashbasierte Datenpartitionierung]( https://azure.microsoft.com/documentation/articles/documentdb-partition-data/)?
 
 	**Antwort:** Nein. 
 4. **Frage**: Können mehrere DocumentDB-Auflistungen für eine Tabelle angegeben werden?
@@ -427,4 +427,4 @@ Wenn bei der Kopieraktivität "source" den Typ **DocumentDbCollectionSource** ha
 	**Antwort:** Nein. Zurzeit kann nur eine Auflistung angegeben werden.
      
 
-<!---HONumber=AcomDC_0302_2016-->
+<!----HONumber=AcomDC_0302_2016-->

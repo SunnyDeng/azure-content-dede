@@ -66,7 +66,7 @@ Nachdem Sie das Image ausgewählt haben, können Sie für den Großteil der Konf
 
 	> [AZURE.NOTE] Außerdem können Sie hier die Authentifizierung mit Benutzername und Kennwort auswählen und die betreffenden Daten eingeben, falls Sie Ihre **SSH**-Sitzung nicht mit dem Austausch eines öffentlichen und privaten Schlüssels schützen möchten.
 
-2. Klicken Sie auf **Größe**, und wählen Sie eine für Ihre Anforderungen geeignete Größe für den virtuellen Computer aus. Für jede Größe sind die Anzahl von Prozessorkernen, der Arbeitsspeicher und andere Features angegeben, wie z. B. Unterstützung für Storage Premium, die sich auf den Preis auswirken. Azure empfiehlt anhand des gewählten Abbilds automatisch bestimmte Größen. Klicken Sie anschließend auf ![Schaltfläche auswählen](media/virtual-machines-linux-tutorial-portal-rm/selectbutton-size.png).
+2. Klicken Sie auf **Größe**, und wählen Sie eine für Ihre Anforderungen geeignete Größe für den virtuellen Computer aus. Für jede Größe sind die Anzahl von Prozessorkernen, der Arbeitsspeicher und andere Features angegeben, wie z. B. Unterstützung für Storage Premium, die sich auf den Preis auswirken. Azure empfiehlt anhand des gewählten Abbilds automatisch bestimmte Größen. Klicken Sie anschließend auf ![Schaltfläche auswählen](media/virtual-machines-linux-tutorial-portal-rm/selectbutton-size.png).
 
 	>[AZURE.NOTE] Storage Premium steht für virtuelle Computer der DS-Reihe in bestimmten Regionen zur Verfügung. Storage Premium ist die beste Speicheroption für datenintensive Workloads wie Datenbanken. Nähere Informationen finden Sie unter [Premium-Speicher: Hochleistungsspeicher für Arbeitslasten auf virtuellen Azure-Computern](../storage/storage-premium-storage.md).
 

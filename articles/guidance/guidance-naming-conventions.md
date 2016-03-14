@@ -59,7 +59,7 @@ Ein empfohlenes Muster für das Benennen von Abonnements:
 
 Beim Benennen von Ressourcen in Azure wird empfohlen, gängige Präfixe oder Suffixe zu verwenden, um den Typ und Kontext der Ressource zu identifizieren. Während alle Informationen zum Typ, zu Metadaten und Kontext programmgesteuert verfügbar sind, vereinfacht die Nutzung gemeinsamer Affixe die visuelle Identifizierung. Wenn Sie Affixe in Ihre Benennungskonvention integrieren, ist es wichtig, klar zu bestimmen, ob das Affix am Anfang (Präfix) oder am Ende (Suffix) des Namens steht.
 
-Hier sind z. B. zwei mögliche Namen für einen Dienst, der ein Berechnungsmodul hostet:
+Hier sind z. B. zwei mögliche Namen für einen Dienst, der ein Berechnungsmodul hostet:
 
 - SvcCalculationEngine (Präfix)
 - CalculationEngineSvc (Suffix)
@@ -78,7 +78,7 @@ Bei der Entwicklung einer bestimmten Benennungskonvention für Ihr Unternehmen o
 
 ## Benennungsregeln und -einschränkungen
 
-Jeder Ressourcen- oder Diensttyp in Azure erzwingt Benennungseinschränkungen und einen Benennungsumfang. Jede Benennungskonvention oder jedes Benennungsmuster muss den erforderlichen Benennungsregeln und dem Benennungsumfang entsprechen. Während z. B. der Name einer VM einem DNS-Namen zugeordnet ist (und daher im gesamten Azure-Dienst einmalig sein muss), ist der Name eines VNET der Ressourcengruppe zugeordnet, in der es erstellt wurde.
+Jeder Ressourcen- oder Diensttyp in Azure erzwingt Benennungseinschränkungen und einen Benennungsumfang. Jede Benennungskonvention oder jedes Benennungsmuster muss den erforderlichen Benennungsregeln und dem Benennungsumfang entsprechen. Während z. B. der Name einer VM einem DNS-Namen zugeordnet ist (und daher im gesamten Azure-Dienst einmalig sein muss), ist der Name eines VNET der Ressourcengruppe zugeordnet, in der es erstellt wurde.
 
 Im Allgemeinen sollten Sie vermeiden, dass Sonderzeichen (`-` oder `_`) als erstes oder letztes Zeichen eines Namens verwendet werden, da dies den meisten Validierungsregeln widerspricht.
 
@@ -112,7 +112,7 @@ Im Allgemeinen sollten Sie vermeiden, dass Sonderzeichen (`-` oder `_`) als erst
 
 ## Organisieren von Ressourcen mit Tags
 
-Der Azure Resource Manager unterstützt das Markieren von Entitäten mit beliebigen Textzeichenfolgen zur Identifizierung von Kontext und Optimierung der Automation. Ein Tag wie `"sqlVersion: "sql2014ee"` könnte z. B. jede VM in einer Bereitstellung, die SQL Server 2014 Enterprise Edition ausführt, zur Ausführung eines automatisierten Skripts identifizieren. Neben den ausgewählten Benennungskonventionen sollten Tags zur Erweiterung und Verbesserung des Kontexts verwendet werden.
+Der Azure Resource Manager unterstützt das Markieren von Entitäten mit beliebigen Textzeichenfolgen zur Identifizierung von Kontext und Optimierung der Automation. Ein Tag wie `"sqlVersion: "sql2014ee"` könnte z. B. jede VM in einer Bereitstellung, die SQL Server 2014 Enterprise Edition ausführt, zur Ausführung eines automatisierten Skripts identifizieren. Neben den ausgewählten Benennungskonventionen sollten Tags zur Erweiterung und Verbesserung des Kontexts verwendet werden.
 
 > [AZURE.TIP] Ein weiterer Vorteil von Tags ist, dass sie sich über Ressourcengruppen erstrecken, wodurch Sie die Möglichkeit haben, Entitäten über verschiedene Bereitstellungen hinweg zu verknüpfen und zu korrelieren.
 
@@ -148,7 +148,7 @@ Je nach Art der Anwendung erfordern bestimmte Ressourcentypen möglicherweise zu
 
 Vor allem in größeren Topologien optimieren sorgfältig benannte virtuelle Computer die Identifizierung der Rolle und des Zwecks jedes Computers deutlich und aktivieren besser vorhersagbare Skripterstellung.
 
-> [AZURE.WARNING] Beachten Sie, dass jeder virtuelle Computer in Azure sowohl einen Azure-Ressourcennamen als auch einen Betriebssystem-Hostnamen hat. Wenn der Ressourcenname und der Hostname unterschiedlich sind, kann das Verwalten dieser VMs eine Herausforderung darstellen (wenn der virtuelle Computer z. B. von einer .vhd-Datei erstellt wird, die bereits ein konfiguriertes Betriebssystem mit einem Hostnamen enthält), und sollte daher vermieden werden.
+> [AZURE.WARNING] Beachten Sie, dass jeder virtuelle Computer in Azure sowohl einen Azure-Ressourcennamen als auch einen Betriebssystem-Hostnamen hat. Wenn der Ressourcenname und der Hostname unterschiedlich sind, kann das Verwalten dieser VMs eine Herausforderung darstellen (wenn der virtuelle Computer z. B. von einer .vhd-Datei erstellt wird, die bereits ein konfiguriertes Betriebssystem mit einem Hostnamen enthält), und sollte daher vermieden werden.
 
 - [Naming conventions for Windows Server VMs](https://support.microsoft.com/de-DE/kb/188997) (Benennungskonventionen für Windows Server-VMs)
 
@@ -158,11 +158,11 @@ Vor allem in größeren Topologien optimieren sorgfältig benannte virtuelle Com
 
 Es gibt zwei primäre Anwendungsfälle für Speicherkonten – das Sichern von Datenträgern für VMs und das Speichern von Daten in Blobs, Warteschlangen und Tabellen. Speicherkonten, die für VM-Datenträger verwendet werden, sollten die Benennungskonvention befolgen, die sie dem übergeordneten VM-Namen zuordnet. (Außerdem sollten sie, aufgrund des potenziellen Bedarfs an mehreren Speicherkonten für leistungsfähige VM-SKUs, ein numerisches Suffix verwenden.)
 
-> [AZURE.TIP] Speicherkonten – ob für Daten oder Datenträger – sollten eine Benennungskonvention befolgen, die es mehreren Speicherkonten erlaubt, verwendet zu werden (indem z. B. immer ein numerisches Suffix verwendet wird).
+> [AZURE.TIP] Speicherkonten – ob für Daten oder Datenträger – sollten eine Benennungskonvention befolgen, die es mehreren Speicherkonten erlaubt, verwendet zu werden (indem z. B. immer ein numerisches Suffix verwendet wird).
 
 Es ist möglich, einen benutzerdefinierten Domänennamen zu konfigurieren, mit dem Sie auf Blobdaten in Ihrem Azure Storage-Konto zugreifen können. Der Standardendpunkt für den Blobdienst ist `https://mystorage.blob.core.windows.net`
 
-Wenn Sie dem Blobendpunkt für Ihr Speicherkonto eine benutzerdefinierte Domäne (wie z. B. www.contoso.com) zuordnen, können Sie unter Verwendung dieser Domäne auch auf Blobdaten in Ihrem Speicherkonto zugreifen. Mit einem benutzerdefinierten Domänennamen könnten Sie z. B. mit `http://www.contoso.com/mycontainer/myblob` auf `http://mystorage.blob.core.windows.net/mycontainer/myblob` zugreifen.
+Wenn Sie dem Blobendpunkt für Ihr Speicherkonto eine benutzerdefinierte Domäne (wie z. B. www.contoso.com) zuordnen, können Sie unter Verwendung dieser Domäne auch auf Blobdaten in Ihrem Speicherkonto zugreifen. Mit einem benutzerdefinierten Domänennamen könnten Sie z. B. mit `http://www.contoso.com/mycontainer/myblob` auf `http://mystorage.blob.core.windows.net/mycontainer/myblob` zugreifen.
 
 Weitere Informationen zum Konfigurieren dieser Funktion finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für Ihren Blob Storage-Endpunkt](../storage/storage-custom-domain-name.md).
 

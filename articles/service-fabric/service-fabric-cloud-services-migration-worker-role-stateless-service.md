@@ -30,20 +30,20 @@ Der Unterschied besteht darin, dass die Anwendungsbereitstellung beim Cloud Serv
  
 ## Von der Workerrolle zum zustandslosen Dienst 
 
-In Bezug auf das Konzept stellt eine Workerrolle eine zustandslose Workload dar. Dies bedeutet, dass jede Instanz der Workload identisch ist und Anforderungen jederzeit an alle Instanzen geleitet werden können. Für die einzelnen Instanzen wird nicht erwartet, dass sie sich der vorherigen Anforderung jeweils bewusst sind. Der Zustand, unter dem die Workload verarbeitet wird, wird von einem externen Statusspeicher verwaltet, z. B. Azure Table Storage oder Azure Document DB. Unter Service Fabric wird diese Art von Workload durch einen zustandslosen Dienst dargestellt. Der einfachste Ansatz zum Migrieren einer Workerrolle zu Service Fabric ist das Konvertieren von Workerrollencode in einen zustandslosen Dienst.
+In Bezug auf das Konzept stellt eine Workerrolle eine zustandslose Workload dar. Dies bedeutet, dass jede Instanz der Workload identisch ist und Anforderungen jederzeit an alle Instanzen geleitet werden können. Für die einzelnen Instanzen wird nicht erwartet, dass sie sich der vorherigen Anforderung jeweils bewusst sind. Der Zustand, unter dem die Workload verarbeitet wird, wird von einem externen Statusspeicher verwaltet, z. B. Azure Table Storage oder Azure Document DB. Unter Service Fabric wird diese Art von Workload durch einen zustandslosen Dienst dargestellt. Der einfachste Ansatz zum Migrieren einer Workerrolle zu Service Fabric ist das Konvertieren von Workerrollencode in einen zustandslosen Dienst.
 
 ![Von der Workerrolle zum zustandslosen Dienst][4]
 
 ## Von der Webrolle zum zustandslosen Dienst
 
-Ähnlich wie bei der Workerrolle stellt auch eine Webrolle eine zustandslose Workload dar, sodass sie vom Konzept her auch einem zustandslosen Service Fabric-Dienst zugeordnet werden kann. Im Gegensatz zu Webrollen weist Service Fabric aber keine IIS-Unterstützung auf. Zum Migrieren einer Webanwendung aus einer Webrolle in einen zustandslosen Dienst ist es zuerst erforderlich, zu einem Web-Framework zu wechseln, das sich selbst hosten kann und nicht von IIS oder System.Web abhängig ist, z. B. ASP.NET Core 1.
+Ähnlich wie bei der Workerrolle stellt auch eine Webrolle eine zustandslose Workload dar, sodass sie vom Konzept her auch einem zustandslosen Service Fabric-Dienst zugeordnet werden kann. Im Gegensatz zu Webrollen weist Service Fabric aber keine IIS-Unterstützung auf. Zum Migrieren einer Webanwendung aus einer Webrolle in einen zustandslosen Dienst ist es zuerst erforderlich, zu einem Web-Framework zu wechseln, das sich selbst hosten kann und nicht von IIS oder System.Web abhängig ist, z. B. ASP.NET Core 1.
 
 ****Anwendung ** | **Unterstützt** | **Migrationspfad**
 --- | --- | ---
-ASP.NET Web Forms | Nein | In ASP.NET Core 1 MVC konvertieren
-ASP.NET MVC | Per Migration | Upgrade auf ASP.NET Core 1
-ASP.NET-Web-API | Per Migration | Selbst gehosteten Server oder ASP.NET Core 1 verwenden
-ASP.NET Core 1 | Ja | N/V
+ASP.NET Web Forms | Nein | In ASP.NET Core 1 MVC konvertieren
+ASP.NET MVC | Per Migration | Upgrade auf ASP.NET Core 1
+ASP.NET-Web-API | Per Migration | Selbst gehosteten Server oder ASP.NET Core 1 verwenden
+ASP.NET Core 1 | Ja | N/V
 
 ## Einstiegspunkt-API und Lebenszyklus
 
@@ -138,7 +138,7 @@ Konfigurationseinstellungen in Cloud Services werden für eine VM-Rolle festgele
  - **Config:** Alle Konfigurationsdateien und Einstellungen für einen Dienst.
  - **Data:** Statische Datendateien, die einem Dienst zugeordnet sind.
 
-Diese Pakete können unabhängig voneinander mit einer Versionsangabe versehen und aktualisiert werden. Ähnlich wie bei Cloud Services kann auf ein Config-Paket programmgesteuert über eine API zugegriffen werden, und es sind Ereignisse verfügbar, um den Dienst über eine Änderung im Config-Paket zu benachrichtigen. Die Datei „Settings.xml“ kann für die Schlüssel-Wert-Konfiguration und den programmgesteuerten Zugriff verwendet werden. Im Gegensatz zu Cloud Services kann ein Service Fabric-Config-Paket aber Konfigurationsdateien mit einem beliebigen Format enthalten, z. B. XML, JSON, YAML oder ein benutzerdefiniertes Binärformat.
+Diese Pakete können unabhängig voneinander mit einer Versionsangabe versehen und aktualisiert werden. Ähnlich wie bei Cloud Services kann auf ein Config-Paket programmgesteuert über eine API zugegriffen werden, und es sind Ereignisse verfügbar, um den Dienst über eine Änderung im Config-Paket zu benachrichtigen. Die Datei „Settings.xml“ kann für die Schlüssel-Wert-Konfiguration und den programmgesteuerten Zugriff verwendet werden. Im Gegensatz zu Cloud Services kann ein Service Fabric-Config-Paket aber Konfigurationsdateien mit einem beliebigen Format enthalten, z. B. XML, JSON, YAML oder ein benutzerdefiniertes Binärformat.
 
 
 ### Zugreifen auf die Konfiguration
@@ -178,7 +178,7 @@ using (StreamReader reader = new StreamReader(Path.Combine(configPackage.Path, "
 ### Ereignisse für die Aktualisierung der Konfiguration
 #### Cloud Services
 
-Das `RoleEnvironment.Changed`-Ereignis wird für die Benachrichtigung aller Rolleninstanzen verwendet, wenn in der Umgebung eine Änderung vorgenommen wird, z. B. eine Konfigurationsänderung. Es wird zum Nutzen von Konfigurationsupdates eingesetzt, ohne dass Rolleninstanzen wiederverwendet werden oder ein Workerprozess neu gestartet wird.
+Das `RoleEnvironment.Changed`-Ereignis wird für die Benachrichtigung aller Rolleninstanzen verwendet, wenn in der Umgebung eine Änderung vorgenommen wird, z. B. eine Konfigurationsänderung. Es wird zum Nutzen von Konfigurationsupdates eingesetzt, ohne dass Rolleninstanzen wiederverwendet werden oder ein Workerprozess neu gestartet wird.
 
 ```C#
 

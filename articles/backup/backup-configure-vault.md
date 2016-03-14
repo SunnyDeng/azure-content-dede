@@ -102,7 +102,7 @@ Erfahren Sie mehr über die [Verwendung von Tresoranmeldeinformationen zum Authe
 
     ![Herunterladen](./media/backup-configure-vault/downloadvc.png)
 
-    Das Portal generiert Tresoranmeldeinformationen mit einer Kombination aus dem Tresornamen und dem aktuellen Datum. Die Datei mit den Tresoranmeldeinformationen wird nur während des Registrierungsworkflows verwendet und läuft nach 48 Stunden ab.
+    Das Portal generiert Tresoranmeldeinformationen mit einer Kombination aus dem Tresornamen und dem aktuellen Datum. Die Datei mit den Tresoranmeldeinformationen wird nur während des Registrierungsworkflows verwendet und läuft nach 48 Stunden ab.
 
     Sie können die Datei mit den Tresoranmeldeinformationen aus dem Portal herunterladen.
 
@@ -127,13 +127,13 @@ Nach dem Erstellen des Azure Backup-Tresors sollte auf jedem Windows-Computer (W
 
 4. Klicken Sie nach Abschluss des Downloads von *MARSAgentInstaller.exe* auf **Ausführen** (oder doppelklicken Sie am Speicherort auf **MARSAgentInstaller.exe**). Wählen Sie den *Installationsordner* und den *Cacheordner* aus, die für den Agent erforderlich sind, und klicken Sie auf **Weiter**.
 
-    Der von Ihnen angegebene Cachespeicherort muss freien Speicherplatz in einer Größenordnung enthalten, die mindestens 5 % der Sicherungsdaten entspricht.
+    Der von Ihnen angegebene Cachespeicherort muss freien Speicherplatz in einer Größenordnung enthalten, die mindestens 5 % der Sicherungsdaten entspricht.
 
     ![Neuerstellung und Zwischenspeicherung](./media/backup-configure-vault/recovery-services-agent-setup-wizard-1.png)
 
 5. Wenn Sie einen Proxyserver für die Verbindung mit dem Internet verwenden, geben Sie im Bildschirm **Proxykonfiguration** die Details des Proxyservers ein. Wenn Sie einen authentifizierten Proxy verwenden, geben Sie auf diesem Bildschirm die Informationen zum Benutzernamen und Kennwort ein und klicken auf **Weiter**.
 
-    Der Azure Backup-Agent installiert .NET Framework 4.5 und Windows PowerShell (falls noch nicht geschehen), um die Installation abzuschließen.
+    Der Azure Backup-Agent installiert .NET Framework 4.5 und Windows PowerShell (falls noch nicht geschehen), um die Installation abzuschließen.
 
 6. Wenn der Agent installiert ist, klicken Sie auf **Mit Registrierung fortfahren**, um den Workflow fortzusetzen.
 
@@ -143,13 +143,13 @@ Nach dem Erstellen des Azure Backup-Tresors sollte auf jedem Windows-Computer (W
 
     ![Tresoranmeldeinformationen](./media/backup-configure-vault/vc.png)
 
-    Die Datei mit den Tresoranmeldeinformationen ist nur 48 Stunden lang gültig (nachdem sie aus dem Portal heruntergeladen wurde). Gehen Sie wie folgt vor, wenn Sie auf diesem Bildschirm einen Fehler erkennen (z. B. „Die angegebene Vault-Anmeldedatei ist abgelaufen.“): Melden Sie sich beim Azure-Portal an, und laden Sie die Datei mit den Tresoranmeldeinformationen erneut herunter.
+    Die Datei mit den Tresoranmeldeinformationen ist nur 48 Stunden lang gültig (nachdem sie aus dem Portal heruntergeladen wurde). Gehen Sie wie folgt vor, wenn Sie auf diesem Bildschirm einen Fehler erkennen (z. B. „Die angegebene Vault-Anmeldedatei ist abgelaufen.“): Melden Sie sich beim Azure-Portal an, und laden Sie die Datei mit den Tresoranmeldeinformationen erneut herunter.
 
     Stellen Sie sicher, dass die Datei mit den Tresoranmeldeinformationen an einem Speicherort verfügbar ist, der für die Setupanwendung zugänglich ist. Wenn Zugriffsfehler auftreten, kopieren Sie die Datei mit den Tresoranmeldeinformationen in einen temporären Speicherort auf diesem Computer, und wiederholen Sie den Vorgang.
 
-    Bei Anzeige eines Fehlers aufgrund von ungültigen Tresoranmeldeinformationen (z. B. „Ungültiger Pfad für Anmeldedatei.“): Die Datei ist entweder beschädigt oder verfügt nicht über die neuesten Anmeldedaten für den Wiederherstellungsdienst. Wiederholen Sie den Vorgang, nachdem Sie eine neue Datei mit Tresoranmeldeinformationen vom Portal heruntergeladen haben. Dieser Fehler tritt in der Regel auf, wenn der Benutzer in schneller Folge auf die Option *Tresoranmeldedaten herunterladen* klickt. In diesem Fall ist nur die zuletzt heruntergeladene Datei mit Tresoranmeldeinformationen gültig.
+    Bei Anzeige eines Fehlers aufgrund von ungültigen Tresoranmeldeinformationen (z. B. „Ungültiger Pfad für Anmeldedatei.“): Die Datei ist entweder beschädigt oder verfügt nicht über die neuesten Anmeldedaten für den Wiederherstellungsdienst. Wiederholen Sie den Vorgang, nachdem Sie eine neue Datei mit Tresoranmeldeinformationen vom Portal heruntergeladen haben. Dieser Fehler tritt in der Regel auf, wenn der Benutzer in schneller Folge auf die Option *Tresoranmeldedaten herunterladen* klickt. In diesem Fall ist nur die zuletzt heruntergeladene Datei mit Tresoranmeldeinformationen gültig.
 
-8. Auf dem Bildschirm **Verschlüsselungseinstellung** können Sie eine Passphrase *generieren* oder *angeben* (mindestens 16 Zeichen). Vergessen Sie nicht, die Passphrase an einem sicheren Speicherort zu speichern.
+8. Auf dem Bildschirm **Verschlüsselungseinstellung** können Sie eine Passphrase *generieren* oder *angeben* (mindestens 16 Zeichen). Vergessen Sie nicht, die Passphrase an einem sicheren Speicherort zu speichern.
 
     ![Verschlüsselung](./media/backup-configure-vault/encryption.png)
 

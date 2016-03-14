@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Hinzufügen der Office 365-Benutzer-API zu Ihren Logik-Apps | Microsoft Azure"
-	description="Übersicht über die Office 365-Benutzer-API und REST-API-Parameter"
+	pageTitle="Hinzufügen der Office 365-Benutzer-API zu Ihren Logik-Apps | Microsoft Azure"
+	description="Übersicht über die Office 365-Benutzer-API und REST-API-Parameter"
 	services=""	
 	documentationCenter="" 	
 	authors="msftman"	
@@ -17,19 +17,19 @@ ms.workload="integration"
 ms.date="02/25/2016"
 ms.author="deonhe"/>
 
-# Erste Schritte mit der Office 365-Benutzer-API
+# Erste Schritte mit der Office 365-Benutzer-API
 
 Stellen Sie eine Verbindung mit der Office 365-Benutzer-API her, um Profile abzurufen, Benutzer zu suchen und vieles mehr. Die Office 365-Benutzer-API kann verwendet werden von:
 
 - PowerApps 
 - Logik-Apps 
 
->[AZURE.NOTE] Diese Version des Artikels gilt für die Schemaversion 2015-08-01-preview für Logik-Apps. Um die Schemaversion „2014-12-01-preview“ aufzurufen, klicken Sie auf [Office 365-API](../app-service-logic/app-service-logic-connector-office365.md).
+>[AZURE.NOTE] Diese Version des Artikels gilt für die Schemaversion 2015-08-01-preview für Logik-Apps. Um die Schemaversion „2014-12-01-preview“ aufzurufen, klicken Sie auf [Office 365-API](../app-service-logic/app-service-logic-connector-office365.md).
 
 
-Mit der Office 365-Benutzer-API können Sie folgende Aktionen ausführen:
+Mit der Office 365-Benutzer-API können Sie folgende Aktionen ausführen:
 
-- Erstellen eines Geschäftsworkflows basierend auf den Daten, die aus der Office 365-Benutzer-API abgerufen werden. 
+- Erstellen eines Geschäftsworkflows basierend auf den Daten, die aus der Office 365-Benutzer-API abgerufen werden. 
 - Verwenden von Aktionen zum Abrufen von direkt unterstellten Mitarbeitern oder Benutzerprofilen von Vorgesetzten und vieles mehr. Diese Aktionen erhalten eine Antwort und stellen anschließend die Ausgabe anderen Aktionen zur Verfügung. Rufen Sie beispielsweise die direkt unterstellten Mitarbeiter einer Person ab, und aktualisieren Sie mit diesen Informationen eine Azure SQL-Datenbank. 
 - Fügen Sie die Office 365-Benutzer-API in PowerApps Enterprise hinzu. Die Benutzer können diese API anschließend in ihren Apps verwenden. 
 
@@ -39,7 +39,7 @@ Informationen zum Hinzufügen eines Vorgangs in Logik-Apps finden Sie unter [Ers
 
 ## Trigger und Aktionen
 
-Die Office 365-Benutzer-API verfügt über die folgenden Aktionen. Es gibt keine Trigger.
+Die Office 365-Benutzer-API verfügt über die folgenden Aktionen. Es gibt keine Trigger.
 
 | Trigger | Aktionen|
 | --- | --- |
@@ -48,10 +48,10 @@ Die Office 365-Benutzer-API verfügt über die folgenden Aktionen. Es gibt kein
 Alle APIs unterstützen Daten im JSON- und XML-Format.
 
 
-## Herstellen einer Verbindung mit Office 365-Benutzern
+## Herstellen einer Verbindung mit Office 365-Benutzern
 
 ### Hinzufügen zusätzlicher Konfigurationen in PowerApps
-Wenn Sie diese API in PowerApps Enterprise hinzufügen, geben Sie die Werte für die **Client-ID** und den **geheimen Clientschlüssel** Ihrer Office 365-AAD-Anwendung (Azure Active Directory) ein. Der Wert von **Umleitungs-URL** wird auch in Ihrer Office 365-Anwendung verwendet. Wenn Sie noch keine Office 365-Anwendung haben, führen Sie die folgenden Schritte aus, um die Anwendung zu erstellen:
+Wenn Sie diese API in PowerApps Enterprise hinzufügen, geben Sie die Werte für die **Client-ID** und den **geheimen Clientschlüssel** Ihrer Office 365-AAD-Anwendung (Azure Active Directory) ein. Der Wert von **Umleitungs-URL** wird auch in Ihrer Office 365-Anwendung verwendet. Wenn Sie noch keine Office 365-Anwendung haben, führen Sie die folgenden Schritte aus, um die Anwendung zu erstellen:
 
 1. Öffnen Sie das [Azure-Portal][5], dann **Active Directory**, und wählen Sie den Namen des Mandanten Ihrer Organisation aus.
 2. Klicken Sie auf die Registerkarte **Anwendungen**, und wählen Sie **Hinzufügen** aus: ![AAD-Mandanten-Anwendungen][7]
@@ -93,12 +93,12 @@ Wenn Sie Ihren Logik-Apps diese API hinzufügen, müssen Sie sich bei Ihrem Kont
 1. Melden Sie sich bei Ihrem Konto für die Office 365-Benutzer-API an.
 2. Erlauben Sie Ihren Logik-Apps, sich mit Ihrem Office 365-Konto zu verbinden und es zu nutzen. 
 
-Nachdem Sie eine Verbindung hergestellt haben, geben Sie die Eigenschaften für die Office 365-Benutzer-API ein, z. B. die Benutzer-ID. In der **REST-API-Referenz** in diesem Thema werden diese Eigenschaften beschrieben.
+Nachdem Sie eine Verbindung hergestellt haben, geben Sie die Eigenschaften für die Office 365-Benutzer-API ein, z. B. die Benutzer-ID. In der **REST-API-Referenz** in diesem Thema werden diese Eigenschaften beschrieben.
 
 >[AZURE.TIP] Sie können dieselbe Verbindung der Office 365-Benutzer-API in anderen Logik-Apps verwenden.
 
 
-## Office 365-Benutzer-REST-API – Referenz
+## Office 365-Benutzer-REST-API – Referenz
 Gilt für Version: 1.0.
 
 ### Mein Profil abrufen 
@@ -223,7 +223,7 @@ Ruft die Suchergebnisse für Benutzerprofile ab. ```GET: /users```
 
 
 ## Nächste Schritte
-Nach dem Hinzufügen der Office 365-API zu PowerApps Enterprise [erteilen Sie den Benutzern Berechtigungen](../power-apps/powerapps-manage-api-connection-user-access.md) zum Verwenden der API in ihren Apps.
+Nach dem Hinzufügen der Office 365-API zu PowerApps Enterprise [erteilen Sie den Benutzern Berechtigungen](../power-apps/powerapps-manage-api-connection-user-access.md) zum Verwenden der API in ihren Apps.
 
 [Erstellen Sie eine Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md).
 

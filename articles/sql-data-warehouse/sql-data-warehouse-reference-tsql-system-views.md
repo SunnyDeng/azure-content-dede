@@ -180,7 +180,7 @@ Daher verfügen diese DMVs jeweils über eine spezielle Spalte mit dem Namen pdw
 | sys.dm\_pdw\_nodes\_tran\_session\_transactions | [sys.dm\_tran\_session\_transactions (Transact-SQL)](http://msdn.microsoft.com/library/ms188739.aspx) |
 | sys.dm\_pdw\_nodes\_tran\_top\_version\_generators | [sys.dm\_tran\_top\_version\_generators (Transact-SQL)](http://msdn.microsoft.com/library/ms188778.aspx) |
 
-## Liste der verfügbaren SQL Server 2016 PolyBase-DMVs in SQL Data Warehouse
+## Liste der verfügbaren SQL Server 2016 PolyBase-DMVs in SQL Data Warehouse
 
 - [sys.dm\_exec\_compute\_node\_errors (Transact-SQL)](http://msdn.microsoft.com/library/mt146380.aspx)
 - [sys.dm\_exec\_compute\_node\_status (Transact-SQL)](http://msdn.microsoft.com/library/mt146382.aspx)

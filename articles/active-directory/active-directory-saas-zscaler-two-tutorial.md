@@ -21,7 +21,7 @@ In diesem Tutorial wird die Integration von Azure und Zscaler Two erläutert. Da
 -   Ein gültiges Azure-Abonnement
 -   Ein Zscaler Two-Abonnement, für das einmaliges Anmelden aktiviert ist
   
-Nach Abschluss dieses Tutorials können sich die Zscaler Two zugewiesenen Azure AD-Benutzer mittels einmaliger Anmeldung auf Ihrer Zscaler Two-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können Sie die [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md) nutzen.
+Nach Abschluss dieses Tutorials können sich die Zscaler Two zugewiesenen Azure AD-Benutzer mittels einmaliger Anmeldung auf Ihrer Zscaler Two-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können Sie die [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md) nutzen.
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 

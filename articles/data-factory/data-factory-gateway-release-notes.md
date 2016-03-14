@@ -113,7 +113,7 @@ Weitere Informationen finden Sie unter [Verschieben von Daten zwischen lokalen Q
 
 ### 1\.4.5492.1
 
-- Einheitliche Binärdatei, die sowohl Microsoft Azure Data Factory als auch Office 365 Power BI-Dienste unterstützt
+- Einheitliche Binärdatei, die sowohl Microsoft Azure Data Factory als auch Office 365 Power BI-Dienste unterstützt
 - Optimierung von Konfigurationsbenutzeroberfläche und Registrierungsprozess
 - Azure Data Factory – Azure Ingress- und Egress-Unterstützung für SQL Server-Datenquelle
 
@@ -123,7 +123,7 @@ Weitere Informationen finden Sie unter [Verschieben von Daten zwischen lokalen Q
  	
 ### 1\.1.5526.8
 
-- Erfordert .NET Framework 4.5.1 als Voraussetzung während des Setups.
+- Erfordert .NET Framework 4.5.1 als Voraussetzung während des Setups.
 
 ### 1\.0.5144.2
 

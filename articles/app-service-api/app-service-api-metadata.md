@@ -22,7 +22,7 @@ In App Service-API-Apps ist eine Unterstützung für [Swagger 2.0](http://swagge
 
 ## Swagger-Endpunkt
 
-Sie können einen Endpunkt angeben, der Swagger 2.0-JSON-Metadaten für eine API-App in einer Eigenschaft der API-App bereitstellt. Der Endpunkt kann sich auf den Basis-URL der API-App oder auf eine absolute URL beziehen. Absolute URLs können nach außerhalb der API-App verweisen.
+Sie können einen Endpunkt angeben, der Swagger 2.0-JSON-Metadaten für eine API-App in einer Eigenschaft der API-App bereitstellt. Der Endpunkt kann sich auf den Basis-URL der API-App oder auf eine absolute URL beziehen. Absolute URLs können nach außerhalb der API-App verweisen.
 
 Für viele nachgelagerte Clients (z. B. Visual Studio-Codegenerierung und PowerApps-Schritt „API hinzufügen“) muss die URL öffentlich zugänglich sein (ohne Schutz durch Benutzer- oder Dienstauthentifizierung). Dies bedeutet, dass wenn Sie die App Service-Authentifizierung verwenden und die API-Definition innerhalb der App selbst verfügbar machen möchten, Sie eine Authentifizierungsmethode wählen müssen, die anonymen Datenverkehr zu lässt, um Ihre API zu erreichen. Weitere Informationen finden Sie unter [Authentifizierung und Autorisierung für App Service-API-Apps](app-service-api-authentication.md).
 

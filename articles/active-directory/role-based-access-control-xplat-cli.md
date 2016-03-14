@@ -26,7 +26,7 @@ Mit der rollenbasierten Zugriffssteuerung (Role-Based Access Control, RBAC) im A
 
 In diesem Tutorial erfahren Sie, wie Sie die Azure-Befehlszeilenschnittstelle zum Verwalten der rollenbasierten Zugriffssteuerung verwenden. Das Lernprogramm beschreibt die Erstellung und Überprüfung von Rollenzuweisungen.
 
-**Geschätzter Zeitaufwand**: 15 Minuten.
+**Geschätzter Zeitaufwand**: 15 Minuten.
 
 ## Voraussetzungen ##
 
@@ -81,7 +81,7 @@ Sie können bestehende Rollenzuweisungen auch für eine bestimmte Rollendefiniti
 
     azure role assignment list -g group1 --upn <user email> -o Owner
 
-Mit diesem Befehl erhalten sie alle Rollenzuweisungen für einen bestimmten Benutzer in ihrem Azure AD-Verzeichnis mit der Rollenzuweisung "Besitzer" für die Ressourcengruppe "Gruppe1". Die Rollenzuweisung kann auf zwei Wegen erfolgen:
+Mit diesem Befehl erhalten sie alle Rollenzuweisungen für einen bestimmten Benutzer in ihrem Azure AD-Verzeichnis mit der Rollenzuweisung "Besitzer" für die Ressourcengruppe "Gruppe1". Die Rollenzuweisung kann auf zwei Wegen erfolgen:
 
 1. Als Rollenzuweisung "Besitzer" für den Benutzer der Ressourcengruppe.
 2. Als Rollenzuweisung "Besitzer" für den Benutzer der Ressource, die der Ressourcengruppe übergeordnet ist (in diesem Fall das Abonnement), da eine Berechtigung für eine übergeordnete Ressource auch für alle untergeordneten Ressourcen gilt.

@@ -100,9 +100,9 @@ Für das Aktivieren von Stretch-Datenbank für eine Datenbank oder eine Tabelle 
 
 5.  Um eine Datenbank für Stretch-Datenbank zu konfigurieren, führen Sie den Befehl ALTER DATABASE aus.
 
-    1.  Geben Sie für das SERVER-Argument den Namen eines vorhandenen Azure-Servers ein, einschließlich des `.database.windows.net`-Teils des Namens, z. B. `MyStretchDatabaseServer.database.windows.net`.
+    1.  Geben Sie für das SERVER-Argument den Namen eines vorhandenen Azure-Servers ein, einschließlich des `.database.windows.net`-Teils des Namens, z. B. `MyStretchDatabaseServer.database.windows.net`.
 
-    2.  Stellen Sie vorhandene Administratoranmeldeinformationen mit dem CREDENTIAL-Argument bereit, oder geben Sie FEDERATED\_SERVICE\_ACCOUNT \\= ON an. Das folgenden Beispiel enthält vorhandene Anmeldeinformationen:
+    2.  Stellen Sie vorhandene Administratoranmeldeinformationen mit dem CREDENTIAL-Argument bereit, oder geben Sie FEDERATED\_SERVICE\_ACCOUNT \\= ON an. Das folgenden Beispiel enthält vorhandene Anmeldeinformationen:
 
     ```tsql
     ALTER DATABASE <database name>

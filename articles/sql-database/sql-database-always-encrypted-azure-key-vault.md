@@ -48,10 +48,10 @@ Führen Sie die Schritte in diesem Artikel aus, um zu lernen, wie Sie Always Enc
 Für dieses Tutorial benötigen Sie Folgendes:
 
 - Ein Azure-Konto und ein Azure-Abonnement, bevor Sie beginnen. Falls Sie diese benötigen, können Sie sich für eine [kostenlose Testversion](https://azure.microsoft.com/pricing/free-trial/) registrieren.
-- [SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/library/mt238290.aspx) Version 13.0.700.242 oder höher
-- [.NET Framework 4.6](https://msdn.microsoft.com/library/w0x726c2.aspx) oder höher (auf dem Clientcomputer)
+- [SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/library/mt238290.aspx) Version 13.0.700.242 oder höher
+- [.NET Framework 4.6](https://msdn.microsoft.com/library/w0x726c2.aspx) oder höher (auf dem Clientcomputer)
 - [Visual Studio](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx)
-- [Azure PowerShell](../powershell-install-configure.md), mindestens Version 1.0.
+- [Azure PowerShell](../powershell-install-configure.md), mindestens Version 1.0.
     - Geben Sie **(Get-Module Azure -ListAvailable).Version** ein, um herauszufinden, welche Version von PowerShell ausgeführt wird.
 
 
@@ -63,8 +63,8 @@ Sie müssen zuerst Ihre Clientanwendung aktivieren, um auf den SQL-Datenbank-Die
 1. Öffnen Sie das [klassische Portal](http://manage.windowsazure.com).
 2. Wählen Sie im linken Menü **Active Directory**, und klicken Sie auf das Active Directory, das in Ihrer Anwendung verwendet wird.
 3. Klicken Sie auf **Anwendungen** und dann auf **ADD** (unten).
-4. Geben Sie einen Namen für die Anwendung ein (z. B. *MyClientApp*), wählen Sie **WEBANWENDUNG**, und klicken Sie auf den Pfeil, um den Vorgang fortzusetzen.
-5. Unter „URL für Anmeldung“ und „APP-ID-URI“ können Sie einfach eine gültige URL eingeben (z. B. **http://myClientApp*) und dann fortfahren.
+4. Geben Sie einen Namen für die Anwendung ein (z. B. *MyClientApp*), wählen Sie **WEBANWENDUNG**, und klicken Sie auf den Pfeil, um den Vorgang fortzusetzen.
+5. Unter „URL für Anmeldung“ und „APP-ID-URI“ können Sie einfach eine gültige URL eingeben (z. B. **http://myClientApp*) und dann fortfahren.
 6. Klicken Sie auf **KONFIGURIEREN**.
 7. Kopieren Sie die **CLIENT-ID** (Sie benötigen diesen Wert später für Ihren Code).
 8. Legen Sie im Schlüsselabschnitt die Dropdownliste **Dauer auswählen** auf **1 Jahr** fest .(Den Schlüssel kopieren Sie nach dem Speichern.)
@@ -135,7 +135,7 @@ Sie benötigen die Verbindungszeichenfolge später im Tutorial. Navigieren Sie n
 
 ## Erstellen einer Tabelle
 
-Zunächst erstellen Sie eine Tabelle für Patientendaten (die anfangs nicht verschlüsselt ist – die Verschlüsselung wird im nächsten Abschnitt konfiguriert).
+Zunächst erstellen Sie eine Tabelle für Patientendaten (die anfangs nicht verschlüsselt ist – die Verschlüsselung wird im nächsten Abschnitt konfiguriert).
 
 1. Erweitern Sie **Datenbanken**.
 1. Klicken Sie mit der rechten Maustaste auf die Datenbank **Clinic**, und klicken Sie dann auf **Neue Abfrage**.
@@ -219,7 +219,7 @@ Nach dem Einrichten von Always Encrypted erstellen wir jetzt eine Anwendung, mit
 > [AZURE.IMPORTANT] Für Ihre Anwendung müssen [SqlParameter](https://msdn.microsoft.com/library/system.data.sqlclient.sqlparameter.aspx)-Objekte verwendet werden, wenn Klartextdaten an den Server mit Always Encrypted-Spalten übergeben werden. Das Übergeben von Literalwerten ohne SqlParameter-Objekte führt zu einer Ausnahme.
 
 
-1. Öffnen Sie Visual Studio, und erstellen Sie eine neue C#-Konsolenanwendung. Stellen Sie sicher, dass Ihr Projekt auf **.NET Framework 4.6** oder höher festgelegt ist.
+1. Öffnen Sie Visual Studio, und erstellen Sie eine neue C#-Konsolenanwendung. Stellen Sie sicher, dass Ihr Projekt auf **.NET Framework 4.6** oder höher festgelegt ist.
 2. Geben Sie dem Projekt den Namen **AlwaysEncryptedConsoleAKVApp**, und klicken Sie auf **OK**.
 
 

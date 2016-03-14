@@ -25,13 +25,13 @@
 - [Verwenden der Azure-Befehlszeilenschnittstelle](data-lake-store-get-started-cli.md)
 - [Verwenden von Node.js](data-lake-store-manage-use-nodejs.md)
 
-Erfahren Sie, wie Sie mithilfe des .NET SDK für Azure Data Lake-Speicher ein Azure Data Lake-Konto erstellen und grundlegende Vorgänge ausführen, z. B. Ordner erstellen, Datendateien hoch- und herunterladen, Ihr Konto löschen usw. Weitere Informationen über Data Lake finden Sie unter [Übersicht über Azure Data Lake-Speicher](data-lake-store-overview.md).
+Erfahren Sie, wie Sie mithilfe des .NET SDK für Azure Data Lake-Speicher ein Azure Data Lake-Konto erstellen und grundlegende Vorgänge ausführen, z. B. Ordner erstellen, Datendateien hoch- und herunterladen, Ihr Konto löschen usw. Weitere Informationen über Data Lake finden Sie unter [Übersicht über Azure Data Lake-Speicher](data-lake-store-overview.md).
 
 ## Voraussetzungen
 
 * Visual Studio 2013 oder 2015 Die folgenden Anweisungen verwenden Visual Studio 2015.
 * **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/).
-* **Aktiviertes Azure-Abonnement** für die öffentliche Vorschauversion des Data Lake-Speichers. Weitere Informationen finden Sie in den [Anweisungen](data-lake-store-get-started-portal.md#signup).
+* **Aktiviertes Azure-Abonnement** für die öffentliche Vorschauversion des Data Lake-Speichers. Weitere Informationen finden Sie in den [Anweisungen](data-lake-store-get-started-portal.md#signup).
 * Erstellen Sie eine AAD-Anwendung (Azure Active Directory), und rufen Sie deren **Client-ID** und den **Antwort-URI** ab. Weitere Informationen über AAD-Anwendungen und Anweisungen zum Abrufen einer Client-ID finden Sie unter [Erstellen einer Active Directory-Anwendung und eines Dienstprinzipals mithilfe des Portals](../resource-group-create-service-principal-portal.md). Der Antwort-URI steht auch über das Portal zur Verfügung, sobald Sie die Anwendung erstellt haben.
 
 ## Wie authentifiziere ich mich mithilfe von Azure Active Directory?
@@ -82,7 +82,7 @@ Auch wenn der folgende Codeausschnitt Methoden für beide Ansätze zur Verfügun
 
 	5. Schließen Sie den **NuGet-Paket-Manager**.
 
-7. Öffnen Sie die Datei **Program.cs**, und ersetzen Sie den vorhandenen Codeblock durch folgenden Code. Geben Sie zudem die im Codeausschnitt genannten Werte für Parameter an, z. B. **\_adlsAccountName** und **\_resourceGroupName**, und ersetzen Sie die Platzhalter für **APPLICATION-CLIENT-ID**, **APPLICATION-REPLY-URI** und **SUBSCRIPTION-ID**.
+7. Öffnen Sie die Datei **Program.cs**, und ersetzen Sie den vorhandenen Codeblock durch folgenden Code. Geben Sie zudem die im Codeausschnitt genannten Werte für Parameter an, z. B. **\_adlsAccountName** und **\_resourceGroupName**, und ersetzen Sie die Platzhalter für **APPLICATION-CLIENT-ID**, **APPLICATION-REPLY-URI** und **SUBSCRIPTION-ID**.
 
 	Dieser Code erstellt zunächst ein Konto im Data Lake-Speicher, erstellt dort Ordner, lädt Dateien hoch und dann wieder herunter und löscht schließlich das Konto. Wenn Sie Beispieldaten zum Hochladen verwenden möchten, können Sie den Ordner **Ambulance Data** aus dem [Azure Data Lake-Git-Repository](https://github.com/MicrosoftBigData/usql/tree/master/Examples/Samples/Data/AmbulanceData) herunterladen.
 	

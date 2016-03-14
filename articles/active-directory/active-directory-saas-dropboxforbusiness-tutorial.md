@@ -21,7 +21,7 @@ In diesem Tutorial wird die Integration von Azure und Dropbox für Unternehmen e
 -   Ein gültiges Azure-Abonnement
 -   Einen Testmandanten in Dropbox für Unternehmen
   
-Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie Dropbox für Unternehmen zugewiesen haben, mittels einmaliger Anmeldung auf der Unternehmenswebsite für Dropbox für Unternehmen bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie auch die [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md) nutzen.
+Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie Dropbox für Unternehmen zugewiesen haben, mittels einmaliger Anmeldung auf der Unternehmenswebsite für Dropbox für Unternehmen bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie auch die [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md) nutzen.
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -148,11 +148,11 @@ In diesem Abschnitt wird erläutert, wie Sie die Bereitstellung von Active Direc
 
 ##Zuweisen von Benutzern
   
-Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie die Verwendung Ihrer Anwendung ermöglichen möchten, Zugriff auf die Anwendung gewähren. Weisen Sie dazu der Anwendung Benutzer zu.
+Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie die Verwendung Ihrer Anwendung ermöglichen möchten, Zugriff auf die Anwendung gewähren. Weisen Sie dazu der Anwendung Benutzer zu.
 
 ###So weisen Sie Dropbox für Unternehmen Benutzer zu
 
-1.  Erstellen Sie im Azure AD-Portal ein Testkonto.
+1.  Erstellen Sie im Azure AD-Portal ein Testkonto.
 
 2.  Klicken Sie auf der Anwendungsintegrationsseite für **Dropbox für Unternehmen** auf **Benutzer zuweisen**.
 
@@ -164,7 +164,7 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
   
 
 
-Nach 10 Minuten können Sie überprüfen, ob das Konto mit Citrix GoToMeeting synchronisiert wurde.
+Nach 10 Minuten können Sie überprüfen, ob das Konto mit Citrix GoToMeeting synchronisiert wurde.
 
 Als ersten Überprüfungsschritt können Sie den Bereitstellungsstatus überprüfen, indem Sie im Azure-Verwaltungsportal auf der Anwendungsintegrationsseite für **Dropbox für Unternehmen** auf **Dashboard** klicken.
 

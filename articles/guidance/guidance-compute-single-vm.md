@@ -23,7 +23,7 @@ In diesem Artikel werden verschiedene bewährte Methoden zur Ausführung einer e
 
 > [AZURE.WARNING] Für einzelne VMs unter Azure gibt es kein SLA zur Betriebszeit. Verwenden Sie diese Konfiguration für Entwicklungs- und Testzwecke, aber nicht für eine Bereitstellung in der Produktion.
 
-Azure verfügt über zwei verschiedene Bereitstellungsmodelle: [Resource Manager][resource-manager-overview] und klassisch. In diesem Artikel wird Resource Manager verwendet, der von Microsoft für neue Bereitstellungen empfohlen wird. Es gibt mehrere Möglichkeiten zur Verwendung von Resource Manager, z. B. das [Azure-Portal][azure-portal], [Azure PowerShell][azure-powershell], [Azure-CLI][azure-cli]-Befehle oder [Resource Manager-Vorlagen][arm-templates]. Dieser Artikel enthält ein Beispiel, für das die Azure-CLI (Azure-Befehlszeilenschnittstelle) verwendet wird.
+Azure verfügt über zwei verschiedene Bereitstellungsmodelle: [Resource Manager][resource-manager-overview] und klassisch. In diesem Artikel wird Resource Manager verwendet, der von Microsoft für neue Bereitstellungen empfohlen wird. Es gibt mehrere Möglichkeiten zur Verwendung von Resource Manager, z. B. das [Azure-Portal][azure-portal], [Azure PowerShell][azure-powershell], [Azure-CLI][azure-cli]-Befehle oder [Resource Manager-Vorlagen][arm-templates]. Dieser Artikel enthält ein Beispiel, für das die Azure-CLI (Azure-Befehlszeilenschnittstelle) verwendet wird.
 
 ![IaaS: einzelne VM](media/guidance-compute-single-vm.png)
 
@@ -35,13 +35,13 @@ Die Bereitstellung einer einzelnen VM unter Azure umfasst mehr „bewegliche Tei
 
 - **Betriebssystem-Datenträger:** Der Betriebssystem-Datenträger ist eine virtuelle Festplatte (VHD), die in [Azure-Speicher][azure-storage] gespeichert ist. Dies bedeutet, dass er auch dann noch vorhanden ist, wenn der Hostcomputer ausfällt.
 
-- **Temporärer Datenträger:** Die VM wird mit einem temporären Datenträger erstellt (Laufwerk `D:` unter Windows). Dieser Datenträger wird auf dem Hostcomputer auf einem physischen Laufwerk gespeichert. Er wird _nicht_ im Azure-Speicher gespeichert und kann bei Neustarts und anderen Ereignissen während des VM-Lebenszyklus verloren gehen. Verwenden Sie diesen Datenträger nur für temporäre Daten, z. B. Auslagerungsdateien.
+- **Temporärer Datenträger:** Die VM wird mit einem temporären Datenträger erstellt (Laufwerk `D:` unter Windows). Dieser Datenträger wird auf dem Hostcomputer auf einem physischen Laufwerk gespeichert. Er wird _nicht_ im Azure-Speicher gespeichert und kann bei Neustarts und anderen Ereignissen während des VM-Lebenszyklus verloren gehen. Verwenden Sie diesen Datenträger nur für temporäre Daten, z. B. Auslagerungsdateien.
 
-- **Datenträger:** Bei einem [Datenträger][data-disk] für Daten handelt es sich um eine permanente VHD, die für Anwendungsdaten verwendet wird. Datenträger werden im Azure-Speicher gespeichert, z. B. auf dem Betriebssystem-Datenträger.
+- **Datenträger:** Bei einem [Datenträger][data-disk] für Daten handelt es sich um eine permanente VHD, die für Anwendungsdaten verwendet wird. Datenträger werden im Azure-Speicher gespeichert, z. B. auf dem Betriebssystem-Datenträger.
 
 - **Virtuelles Netzwerk (VNet) und Subnetz\_** Jede VM in Azure wird in einem virtuellen Netzwerk (VNet) bereitgestellt, das weiter in Subnetze unterteilt wird.
 
-- **Öffentliche IP-Adresse:** Eine öffentliche IP-Adresse wird für die Kommunikation mit der VM benötigt, z. B. per Remotedesktop (RDP).
+- **Öffentliche IP-Adresse:** Eine öffentliche IP-Adresse wird für die Kommunikation mit der VM benötigt, z. B. per Remotedesktop (RDP).
 
 - **Netzwerksicherheitsgruppe (NSG):** Die [NSG][nsg] wird verwendet, um den Netzwerk-Datenverkehr zur VM zuzulassen oder zu verweigern. Mit den standardmäßigen NSG-Regeln wird der gesamte eingehende Datenverkehr aus dem Internet unterbunden.
 
@@ -53,7 +53,7 @@ Die Bereitstellung einer einzelnen VM unter Azure umfasst mehr „bewegliche Tei
 
 - Wählen Sie beim Verschieben einer vorhandenen Workload nach Azure die [VM-Größe][virtual-machine-sizes], die Ihren lokalen Servern am ehesten entspricht. Wir empfehlen Ihnen die DS- und GS-Serie, bei denen Storage Premium für Workloads mit hoher E/A-Intensität verwendet werden kann.
 
-    - Wenn für Ihre Workload kein Datenträgerzugriff mit hoher Leistung und niedriger Latenz erforderlich ist, können Sie die Verwendung der anderen VM-Größen des Standard-Tarifs in Erwägung ziehen, z. B. die A-Serie oder D-Serie.
+    - Wenn für Ihre Workload kein Datenträgerzugriff mit hoher Leistung und niedriger Latenz erforderlich ist, können Sie die Verwendung der anderen VM-Größen des Standard-Tarifs in Erwägung ziehen, z. B. die A-Serie oder D-Serie.
 
 - Wenn Sie die VM und anderen Ressourcen bereitstellen, müssen Sie einen Standort angeben. Es ist im Allgemeinen ratsam, einen Standort zu wählen, der sich in der Nähe Ihrer internen Benutzer oder Ihrer Kunden befindet. Nicht alle VM-SKUs sind unter Umständen aber an allen Standorten verfügbar. Weitere Informationen finden Sie unter [Dienste nach Region][services-by-region].
 
@@ -65,7 +65,7 @@ Wir empfehlen die Verwendung von [Storage Premium][premium-storage], um die best
 
 - Für Storage Premium basieren die Kosten auf der Größe des bereitgestellten Datenträgers. IOPS und Durchsatz (also die Datenübertragungsrate) richten sich ebenfalls nach der Datenträgergröße. Berücksichtigen Sie beim Bereitstellen eines Datenträgers also alle drei Faktoren (Kapazität, IOPS und Durchsatz).
 
-- Für Standardspeicher basieren die Kosten auf der Menge der Daten, die auf Datenträger geschrieben werden. Daher ist es eine bewährte Vorgehensweise, die maximale Größe (1.023 GB) bereitzustellen. Achten Sie aber darauf, beim Formatieren der Datenträger die Schnellformatierung zu verwenden. Bei einer vollständigen Datenträgerformatierung werden Nullen auf den Datenträger geschrieben, sodass wirklich Speicherplatz belegt wird. Weitere Informationen finden Sie unter [Preise für Azure Storage][storage-price].
+- Für Standardspeicher basieren die Kosten auf der Menge der Daten, die auf Datenträger geschrieben werden. Daher ist es eine bewährte Vorgehensweise, die maximale Größe (1.023 GB) bereitzustellen. Achten Sie aber darauf, beim Formatieren der Datenträger die Schnellformatierung zu verwenden. Bei einer vollständigen Datenträgerformatierung werden Nullen auf den Datenträger geschrieben, sodass wirklich Speicherplatz belegt wird. Weitere Informationen finden Sie unter [Preise für Azure Storage][storage-price].
 
 - Wenn Sie den Standardspeicher wählen, empfehlen wir Ihnen den georedundanten Speicher (GRS). Diese Art von Speicher ist auch dann weiter verfügbar, wenn es zu einem vollständigen regionalen Ausfall kommt oder ein Katastrophenfall auftritt, bei dem der Standort in der primären Region nicht mehr wiederherstellbar ist.
 
@@ -87,7 +87,7 @@ Wir empfehlen die Verwendung von [Storage Premium][premium-storage], um die best
 
 - Ordnen Sie eine NIC zu, und weisen Sie sie der IP-Adresse, dem Subnetz und der NSG zu.
 
-- Die NSG-Standardregeln lassen RDP nicht zu. Fügen Sie zum Aktivieren von RDP der NSG eine Regel hinzu, die den eingehenden Datenverkehr zu TCP-Port 3389 zulässt.
+- Die NSG-Standardregeln lassen RDP nicht zu. Fügen Sie zum Aktivieren von RDP der NSG eine Regel hinzu, die den eingehenden Datenverkehr zu TCP-Port 3389 zulässt.
 
 ## Skalierbarkeit
 
@@ -100,7 +100,7 @@ azure vm set -g <<resource-group>> --vm-size <<new-vm-size>
 
 Durch das Ändern der VM-Größe wird ein Neustart des Systems ausgelöst, und nach dem Neustart werden Ihr vorhandenes Betriebssystem und Ihre Datenträger neu zugeordnet. Alle Daten auf dem temporären Datenträger gehen verloren. Mit der Option `--boot-diagnostics-storage-uri` kann die [Startdiagnose][boot-diagnostics] alle Fehler protokollieren, die mit dem Startvorgang verbunden sind.
 
-Es ist unter Umständen nicht möglich, die Skalierung von einer SKU-Familie zu einer anderen durchzuführen (z. B. von der A-Serie zur G-Serie). Verwenden Sie den folgenden CLI-Befehl, um eine Liste mit den verfügbaren Größen für eine vorhandene VM zu erhalten:
+Es ist unter Umständen nicht möglich, die Skalierung von einer SKU-Familie zu einer anderen durchzuführen (z. B. von der A-Serie zur G-Serie). Verwenden Sie den folgenden CLI-Befehl, um eine Liste mit den verfügbaren Größen für eine vorhandene VM zu erhalten:
 
 ```text
 azure vm sizes -g <<resource-group>> --vm-name <<vm-name>>
@@ -118,7 +118,7 @@ Zum Skalieren auf eine Größe, die nicht aufgeführt ist, müssen Sie die VM-In
 
 - VHDs werden per [Azure Storage][azure-storage] gesichert, der repliziert wird, um die Dauerhaftigkeit und Verfügbarkeit sicherzustellen.
 
-- Als Schutz vor versehentlichen Datenverlusten während des normalen Betriebs (z. B. aufgrund eines Benutzerfehlers) sollten Sie auch Point-in-Time-Sicherungen implementieren, indem Sie [Blob-Momentaufnahmen][blob-snapshot] oder ein anderes Tool verwenden.
+- Als Schutz vor versehentlichen Datenverlusten während des normalen Betriebs (z. B. aufgrund eines Benutzerfehlers) sollten Sie auch Point-in-Time-Sicherungen implementieren, indem Sie [Blob-Momentaufnahmen][blob-snapshot] oder ein anderes Tool verwenden.
 
 ## Verwaltbarkeit
 
@@ -149,7 +149,7 @@ Zum Skalieren auf eine Größe, die nicht aufgeführt ist, müssen Sie die VM-In
 
 ## Sicherheit
 
-- Verwenden Sie [Azure Security Center][security-center], um sich eine zentrale Übersicht über den Sicherheitszustand Ihrer Azure-Ressourcen zu verschaffen. Mit Security Center werden potenzielle Sicherheitsprobleme überwacht, z. B. Systemupdates, Antischadsoftware und Endpunkt-ACLs, und Sie erhalten eine umfassende Darstellung des Sicherheitszustands Ihrer Bereitstellung. **Hinweis:** Zum Zeitpunkt der Erstellung dieses Texts befindet sich Security Center noch in der Vorschauphase.
+- Verwenden Sie [Azure Security Center][security-center], um sich eine zentrale Übersicht über den Sicherheitszustand Ihrer Azure-Ressourcen zu verschaffen. Mit Security Center werden potenzielle Sicherheitsprobleme überwacht, z. B. Systemupdates, Antischadsoftware und Endpunkt-ACLs, und Sie erhalten eine umfassende Darstellung des Sicherheitszustands Ihrer Bereitstellung. **Hinweis:** Zum Zeitpunkt der Erstellung dieses Texts befindet sich Security Center noch in der Vorschauphase.
 
 - Verwenden Sie die [rollenbasierte Access Control][rbac] (RBAC), um zu definieren, welche Mitglieder Ihres DevOps-Teams die von Ihnen bereitgestellten Azure-Ressourcen (VM, Netzwerk usw.) verwalten können.
 

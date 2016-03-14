@@ -100,7 +100,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
 
 
-8. Führen Sie im Abschnitt **SAML 2.0-Konfiguration** die folgenden Schritte aus: <br><br>![Konfigurieren der einmaligen Anmeldung][13]<br>
+8. Führen Sie im Abschnitt **SAML 2.0-Konfiguration** die folgenden Schritte aus: <br><br>![Konfigurieren der einmaligen Anmeldung][13]<br>
 
 
     a. Kopieren Sie im klassischen Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für DocuSign** den Wert für „Aussteller-URL“, und fügen Sie ihn in das Textfeld **Endpunkt-URL für Identitätsanbieter-Aussteller** ein.
@@ -157,7 +157,7 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
 <br><br>![Zuweisen von Benutzern][41]<br>
 
 
-Nach 10 Minuten können Sie überprüfen, ob das Konto mit DocuSign synchronisiert wurde.
+Nach 10 Minuten können Sie überprüfen, ob das Konto mit DocuSign synchronisiert wurde.
 
 Als ersten Überprüfungsschritt können Sie den Bereitstellungsstatus überprüfen, indem Sie im klassischen Azure-Portal auf der Anwendungsintegrationsseite für DocuSign auf „Dashboard“ klicken. <br><br>![Zuweisen von Benutzern][42]<br>
 

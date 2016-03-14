@@ -120,7 +120,7 @@ In diesem Beispiel verfügt das virtuelle Netzwerk „MultiTier-VNet“ über dr
 
 1. Fügen Sie der Routingtabelle eine Standardroute hinzu.
 
-	Das folgende Beispiel-Cmdlet fügt der in Schritt 1 erstellten Routingtabelle eine Standardroute hinzu. Beachten Sie, dass die einzige unterstützte Route das Zielpräfix von "0.0.0.0/0" zum nächsten Hop "VPNGateway" ist.
+	Das folgende Beispiel-Cmdlet fügt der in Schritt 1 erstellten Routingtabelle eine Standardroute hinzu. Beachten Sie, dass die einzige unterstützte Route das Zielpräfix von "0.0.0.0/0" zum nächsten Hop "VPNGateway" ist.
  
 		Set-AzureRoute –RouteTableName "MyRouteTable" –RouteName "DefaultRoute" –AddressPrefix "0.0.0.0/0" –NextHopType VPNGateway
 

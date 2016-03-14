@@ -36,12 +36,12 @@ Dieser Dienst akzeptiert vier Argumente und testet eine Hypothese zu den Anteile
 
 Die Eingabeargumente sind:
 
-* Successes1 – Anzahl von Erfolgsereignissen in Stichprobe 1
-* Successes2 – Anzahl von Erfolgsereignissen in Stichprobe 2
-* Total1 – Größe von Stichprobe 1
-* Total2 – Größe von Stichprobe 2
+* Successes1 – Anzahl von Erfolgsereignissen in Stichprobe 1
+* Successes2 – Anzahl von Erfolgsereignissen in Stichprobe 2
+* Total1 – Größe von Stichprobe 1
+* Total2 – Größe von Stichprobe 2
 
-Die Ausgabe des Diensts ist das Ergebnis des Hypothesentests, gemeinsam mit Chi-Quadrat-Statistik, df, p-Wert und Anteil in Stichprobe 1/2 und Vertrauensbereichsgrenzen.
+Die Ausgabe des Diensts ist das Ergebnis des Hypothesentests, gemeinsam mit Chi-Quadrat-Statistik, df, p-Wert und Anteil in Stichprobe 1/2 und Vertrauensbereichsgrenzen.
 
 >Dieser Dienst, der im Azure Marketplace gehostet wird, ist ein OData-Dienst. Diese Dienste können durch POST- oder GET-Methoden aufgerufen werden.
 
@@ -83,7 +83,7 @@ Es gibt mehrere Möglichkeiten, den Dienst auf automatisierte Weise zu nutzen ([
 
 >Dieser Webdienst wurde mithilfe von Azure Machine Learning erstellt. Eine kostenlose Testversion sowie Einführungsvideos zum Erstellen von Experimenten und [Veröffentlichen von Webdiensten](machine-learning-publish-a-machine-learning-web-service.md) finden Sie unter [azure.com/ml](http://azure.com/ml). Im Folgenden finden Sie einen Screenshot des Experiments, mit dem der Webdienst erstellt wurde und Beispielcode für die einzelnen Module im Experiment.
 
-In Azure Machine Learning wurde ein neues leeres Experiment mit zwei [Execute R Script][execute-r-script]-Modulen erstellt. Im ersten Modul wird das Schema definiert, während das zweite Modul den prop.test-Befehl in R verwendet, um die Hypothese für zwei Anteile zu testen.
+In Azure Machine Learning wurde ein neues leeres Experiment mit zwei [Execute R Script][execute-r-script]-Modulen erstellt. Im ersten Modul wird das Schema definiert, während das zweite Modul den prop.test-Befehl in R verwendet, um die Hypothese für zwei Anteile zu testen.
 
 
 ###Experimentablauf:

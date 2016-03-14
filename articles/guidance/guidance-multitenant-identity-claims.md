@@ -94,7 +94,7 @@ Eine ausführlichere Beschreibung finden Sie unter [Registrierung und Onboarding
 
 ## Verwenden von Ansprüchen für die Autorisierung
 
-Mit Ansprüchen ist die Identität eines Benutzers nicht länger eine monolithische Entität. Für einen Benutzer können beispielsweise E-Mail-Adresse, Telefonnummer, Geburtsdatum, Geschlecht usw. hinterlegt sein. Der Identitätsanbieter des Benutzers speichert u. U. alle diese Informationen. Doch wenn Sie den Benutzer authentifizieren, erhalten Sie in der Regel eine Teilmenge davon als Ansprüche. In diesem Modell ist die Identität des Benutzers schlicht ein Bündel von Ansprüchen. Wenn Sie Autorisierungsentscheidungen für einen Benutzer treffen, suchen Sie nach bestimmten Sätzen von Ansprüchen. Die Frage „Darf Benutzer X die Aktion Y ausführen?“ wird schlussendlich zu „Verfügt Benutzer X über Anspruch Z?“.
+Mit Ansprüchen ist die Identität eines Benutzers nicht länger eine monolithische Entität. Für einen Benutzer können beispielsweise E-Mail-Adresse, Telefonnummer, Geburtsdatum, Geschlecht usw. hinterlegt sein. Der Identitätsanbieter des Benutzers speichert u. U. alle diese Informationen. Doch wenn Sie den Benutzer authentifizieren, erhalten Sie in der Regel eine Teilmenge davon als Ansprüche. In diesem Modell ist die Identität des Benutzers schlicht ein Bündel von Ansprüchen. Wenn Sie Autorisierungsentscheidungen für einen Benutzer treffen, suchen Sie nach bestimmten Sätzen von Ansprüchen. Die Frage „Darf Benutzer X die Aktion Y ausführen?“ wird schlussendlich zu „Verfügt Benutzer X über Anspruch Z?“.
 
 Es folgen einige grundlegende Muster für die Überprüfung von Ansprüchen.
 

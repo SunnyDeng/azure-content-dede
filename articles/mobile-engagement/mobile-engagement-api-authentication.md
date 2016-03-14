@@ -47,8 +47,8 @@ Beachten Sie bitte folgende Informationen, die Sie später benötigen werden:
 	- Auf den von Ihnen gewählten Anwendungsnamen wird in diesem Dokument durch `{AD_APP_NAME}` verwiesen.
 	- Auf die im Konfigurationsmenü angezeigte Client-ID wird in diesem Dokument durch `{CLIENT_ID}` verwiesen.
 	- Auf den nach dem Speichern nur einmal angezeigten Schlüssel wird in diesem Dokument durch `{CLIENT_SECRET}` verwiesen.
-	- Klicken Sie in der unteren Leiste auf **ENDPUNKTE ANZEIGEN**, und kopieren Sie die **OAUTH 2.0-TOKENENDPUNKT-URL**, auf die in diesem Dokument durch `https://login.microsoftonline.com/{TENANT_ID}/oauth2/token` verwiesen wird. <br/>                                    
-2. Weisen Sie über die [Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md) dem Dienstprinzipal eine Rolle wie z. B. „Leser“ oder „Besitzer“ zu.
+	- Klicken Sie in der unteren Leiste auf **ENDPUNKTE ANZEIGEN**, und kopieren Sie die **OAUTH 2.0-TOKENENDPUNKT-URL**, auf die in diesem Dokument durch `https://login.microsoftonline.com/{TENANT_ID}/oauth2/token` verwiesen wird. <br/>                                    
+2. Weisen Sie über die [Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md) dem Dienstprinzipal eine Rolle wie z. B. „Leser“ oder „Besitzer“ zu.
 
 	Wenn Sie unter Windows arbeiten, schließen Sie `C:\Program Files (x86)\Microsoft SDKs\Azure\CLI\bin` in die Umgebungsvariable `PATH` ein, um die Azure-Befehle verwenden zu können.
 
@@ -172,7 +172,7 @@ Da Sie jetzt über ein gültiges Token verfügen, sind Sie bereit für die API-A
 		https://management.azure.com/subscriptions/{subscription-id}/resourcegroups/MobileEngagement/
 		providers/Microsoft.MobileEngagement/appcollections/{app-collection}/apps/{app-resource-name}/
 
-	Um die Parameter abzurufen, klicken Sie auf den Namen Ihrer Anwendung, und klicken Sie auf das Dashboard, um eine Seite wie die folgende mit allen 3 Parametern anzuzeigen.
+	Um die Parameter abzurufen, klicken Sie auf den Namen Ihrer Anwendung, und klicken Sie auf das Dashboard, um eine Seite wie die folgende mit allen 3 Parametern anzuzeigen.
 
 	- **1** `{subscription-id}`
 	- **2** `{app-collection}`
@@ -181,6 +181,6 @@ Da Sie jetzt über ein gültiges Token verfügen, sind Sie bereit für die API-A
 	![](./media/mobile-engagement-api-authentication/mobile-engagement-api-uri-params.png)
 
 >[AZURE.NOTE] <br/>
->1. Ignorieren Sie die API-Stammadresse, da diese für die vorherigen APIs galt.<br/> 2. Sie müssen den Namen der Anwendungsressource verwenden, der sich vom Namen der Anwendung selbst unterscheidet. 
+>1. Ignorieren Sie die API-Stammadresse, da diese für die vorherigen APIs galt.<br/> 2. Sie müssen den Namen der Anwendungsressource verwenden, der sich vom Namen der Anwendung selbst unterscheidet. 
 
 <!---HONumber=AcomDC_0302_2016-->

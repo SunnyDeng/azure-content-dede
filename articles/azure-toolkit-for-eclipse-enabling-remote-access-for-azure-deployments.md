@@ -68,9 +68,11 @@ Es wird eine Meldung angezeigt, die besagt, dass Ihre Konfigurationsänderung ve
 * Geben Sie im Dialogfeld **New Certificate** das Kennwort ein, das Sie für Ihre PFX-Datei verwenden, und bestätigen Sie es.
 * Übernehmen Sie den für **Name (CN)** bereitgestellten Wert, oder geben Sie einen benutzerdefinierten Wert ein.
 * Geben Sie den Pfad und den Dateinamen ein, unter dem das neue Zertifikat in CER-Form gespeichert werden soll. Für diesen und den nächsten Schritt können Sie den Ordner **cert** des Azure-Projekts verwenden, Sie können aber auch einen anderen Speicherort auswählen. Zum Zwecke dieses Lernprogramms verwenden wir **c:\\mycert\\mycert.cer**. (Erstellen Sie den Ordner **c:\\mycert**, bevor Sie fortfahren, oder verwenden Sie auf Wunsch einen vorhandenen Ordner.)
-* Geben Sie den Pfad und den Dateinamen ein, unter dem das neue Zertifikat und der zugehörige private Schlüssel in PFX-Form gespeichert werden soll. Zum Zwecke dieses Lernprogramms verwenden wir c:**\\mycert\\mycert.pfx**. Das Dialogfeld **New Certificate** sollte nun ähnlich dem folgenden aussehen (aktualisieren Sie die Ordnerpfade, wenn Sie nicht **c:\\mycert** verwendet haben): ![][ic712275]
+* Geben Sie den Pfad und den Dateinamen ein, unter dem das neue Zertifikat und der zugehörige private Schlüssel in PFX-Form gespeichert werden soll. Zum Zwecke dieses Lernprogramms verwenden wir c:**\\mycert\\mycert.pfx**. Das Dialogfeld **New Certificate** sollte nun ähnlich dem folgenden aussehen (aktualisieren Sie die Ordnerpfade, wenn Sie nicht **c:\\mycert** verwendet haben): 
+    ![][ic712275]
 * Klicken Sie auf **OK**, um das Dialogfeld **New Certificate** zu schließen.
-* Das Dialogfeld **Remote Access** sollte nun etwa wie folgt aussehen: </p> ![][ic719495]
+* Das Dialogfeld **Remote Access** sollte nun etwa wie folgt aussehen: </p> 
+    ![][ic719495]
 * Klicken Sie auf **OK**, um das Dialogfeld **Remote Access** zu schließen.
 	
 Erstellen Sie Ihre Anwendung mit dem Buildset für die Bereitstellung in der Cloud neu.
@@ -81,7 +83,8 @@ Nachdem Ihre Rolleninstanz bereit ist, können Sie sich remote bei dem virtuelle
 
 * Wenn Sie Eclipse unter Windows verwenden und bei der Bereitstellung in Azure die Option **Start remote desktop on deploy** ausgewählt haben, wird ein Anmeldebildschirm für die Remotedesktopverbindung angezeigt, wenn die Bereitstellung beginnt. Wenn Sie aufgefordert werden, Benutzernamen und Kennwort einzugeben, geben Sie die Werte ein, die Sie für den Remotebenutzer eingegeben haben, damit Sie sich anmelden können.
 * Eine weitere Möglichkeit zur Remoteanmeldung besteht über das <a href="http://go.microsoft.com/fwlink/?LinkID=512959">Azure-Verwaltungsportal</a>:
-    * Klicken Sie in der Ansicht **Cloud Services** des Azure-Verwaltungsportals auf Ihren Clouddienst, klicken Sie auf **Instances**, klicken Sie auf eine bestimmte Instanz, und klicken Sie dann auf die Schaltfläche **Connect**. Die Schaltfläche **Connect** wird wie folgt in der Befehlsleiste angezeigt: ![][ic659273]
+    * Klicken Sie in der Ansicht **Cloud Services** des Azure-Verwaltungsportals auf Ihren Clouddienst, klicken Sie auf **Instances**, klicken Sie auf eine bestimmte Instanz, und klicken Sie dann auf die Schaltfläche **Connect**. Die Schaltfläche **Connect** wird wie folgt in der Befehlsleiste angezeigt: 
+    ![][ic659273]  
     >[AZURE.NOTE] Wenn Sie sich in einem anderen Betriebssystem als Windows befinden, müssen Sie einen Remotedesktopclient verwenden, der mit Ihre Betriebssystem kompatibel ist, und den Schritten zum Konfigurieren dieses Clients mit dem Einstellungen in der von Ihnen heruntergeladenen RDP-Datei folgen.
     * Nachdem Sie auf die Schaltfläche **Connect** geklickt haben, werden Sie aufgefordert, eine RDP-Datei zu öffnen. Öffnen Sie die Datei, und folgen Sie den Anweisungen. (Sie können diese Datei auch auf dem lokalen Computer speichern und ausführen, indem Sie bei der Remoteanmeldung bei ihrem virtuellen Computer darauf doppelklicken, ohne dass Sie zuvor zum Verwaltungsportal wechseln.)
     * Wenn Sie aufgefordert werden, Benutzernamen und Kennwort einzugeben, geben Sie die Werte ein, die Sie für den Remotebenutzer eingegeben haben, damit Sie sich anmelden können.
@@ -90,7 +93,7 @@ Nachdem Ihre Rolleninstanz bereit ist, können Sie sich remote bei dem virtuelle
 
 [Azure-Toolkit für Eclipse][]
 
-[Creating a Hello World Application for Azure in Eclipse (in englischer Sprache)][]
+[Erstellen einer Hello World-Anwendung für Azure in Eclipse][]
 
 [Installieren des Azure-Toolkits für Eclipse][]
 
@@ -101,7 +104,7 @@ Weitere Informationen zum Verwenden von Azure mit Java finden Sie im [Azure Java
 [Azure Java Developer Center]: http://go.microsoft.com/fwlink/?LinkID=699547
 [Azure Management Portal]: http://go.microsoft.com/fwlink/?LinkID=512959
 [Azure-Toolkit für Eclipse]: http://go.microsoft.com/fwlink/?LinkID=699529
-[Creating a Hello World Application for Azure in Eclipse (in englischer Sprache)]: http://go.microsoft.com/fwlink/?LinkID=699533
+[Erstellen einer Hello World-Anwendung für Azure in Eclipse]: http://go.microsoft.com/fwlink/?LinkID=699533
 [Installieren des Azure-Toolkits für Eclipse]: http://go.microsoft.com/fwlink/?LinkId=699546
 
 <!-- IMG List -->

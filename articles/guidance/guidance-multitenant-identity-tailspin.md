@@ -55,7 +55,7 @@ Beachten Sie, dass sich Alice bei ihrem eigenen Mandanten und nicht als Gast des
 
 Die Anwendung „Surveys“ besteht aus einem Web-Front-End und einem Web-API-Back-End. Beide werden mithilfe von [ASP.NET Core 1.0] implementiert.
 
-Die Webanwendung verwendet Azure Active Directory (Azure AD) zur Authentifizierung von Benutzern. Die Webanwendung ruft auch Azure AD auf, um OAuth 2-Zugriffstoken für die Web-API zu erhalten. Zugriffstoken werden in Azure Redis Cache zwischengespeichert. Der Cache ermöglicht, dass sich mehrere Instanzen (z. B. in einer Serverfarm) denselben Tokencache teilen.
+Die Webanwendung verwendet Azure Active Directory (Azure AD) zur Authentifizierung von Benutzern. Die Webanwendung ruft auch Azure AD auf, um OAuth 2-Zugriffstoken für die Web-API zu erhalten. Zugriffstoken werden in Azure Redis Cache zwischengespeichert. Der Cache ermöglicht, dass sich mehrere Instanzen (z. B. in einer Serverfarm) denselben Tokencache teilen.
 
 ![Architektur](media/guidance-multitenant-identity/architecture.png)
 

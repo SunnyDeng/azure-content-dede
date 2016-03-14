@@ -74,7 +74,7 @@ Vor Beginn der Notfallwiederherstellung werden auf dem Gerät Vorüberprüfungen
 
 - Überprüfen des verfügbaren Speicherplatzes auf dem Zielgerät
 
-- Überprüfen, ob ein iSCSI-Server-Quellgerät über gültige ACR-Namen, IQN (nicht länger als 220 Zeichen) und ein CHAP-Kennwort (12 bis 16 Zeichen) für die Volumes verfügt
+- Überprüfen, ob ein iSCSI-Server-Quellgerät über gültige ACR-Namen, IQN (nicht länger als 220 Zeichen) und ein CHAP-Kennwort (12 bis 16 Zeichen) für die Volumes verfügt
 
 Falls eine der obigen Vorüberprüfungen fehlschlägt, kann die Notfallwiederherstellung nicht durchgeführt werden. Sie müssen diese Fehler beheben und den Vorgang dann wiederholen.
 
@@ -115,7 +115,7 @@ Führen Sie die folgenden Schritte aus, um Ihr Gerät auf einem virtuellen StorS
 
     1. Wählen Sie in der Dropdownliste mit den verfügbaren Geräten ein **Zielgerät** aus. Nur die Geräte, die über ausreichende Kapazität verfügen, werden in der Dropdownliste angezeigt.
 
-    2. Überprüfen Sie die Details des Quellgeräts, z. B. Gerätename, Gesamtkapazität und die Namen der Freigaben, die am Failover beteiligt sind.
+    2. Überprüfen Sie die Details des Quellgeräts, z. B. Gerätename, Gesamtkapazität und die Namen der Freigaben, die am Failover beteiligt sind.
 
 		![](./media/storsimple-ova-failover-dr/image21.png)
 

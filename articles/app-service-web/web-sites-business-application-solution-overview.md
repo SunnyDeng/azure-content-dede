@@ -39,7 +39,7 @@ In diesem Leitfaden werden einige der häufigsten Themenbereichen und Aufgaben i
 
 Nutzen Sie vorhandene Webressourcen in App Service-Web-Apps in den unterschiedlichsten Sprachen und Frameworks.
 
-Ihre vorhandenen Webressourcen können in App Service-Web-Apps ausgeführt werden, unabhängig davon, ob es sich um .NET, PHP, Java, Node.js oder Python handelt. Sie können die Ressourcen mithilfe Ihrer bevorzugten [FTP]-Tools oder über Ihr System zur Quellcodeverwaltung in Web-Apps verschieben. Web-Apps unterstützen eine direkte Veröffentlichung aus gängigen Quellcodeverwaltungen, wie z. B. [Visual Studio], [Visual Studio Team Services] und [Git] – lokal, GitHub, BitBucket, Dropbox, Mercurial usw.
+Ihre vorhandenen Webressourcen können in App Service-Web-Apps ausgeführt werden, unabhängig davon, ob es sich um .NET, PHP, Java, Node.js oder Python handelt. Sie können die Ressourcen mithilfe Ihrer bevorzugten [FTP]-Tools oder über Ihr System zur Quellcodeverwaltung in Web-Apps verschieben. Web-Apps unterstützen eine direkte Veröffentlichung aus gängigen Quellcodeverwaltungen, wie z. B. [Visual Studio], [Visual Studio Team Services] und [Git] – lokal, GitHub, BitBucket, Dropbox, Mercurial usw.
 
 ## Schützen Sie Ihre Ressourcen
 
@@ -47,7 +47,7 @@ Schützen Sie Ihre Ressourcen durch Verschlüsselung, Authentifizierung von Unte
 
 Schützen Sie interne Ressourcen mit [HTTPS] vor Lauschangriffen. Der Domänenname ***.azurewebsites.net** schließt bereits ein SSL-Zertifikat ein, und wenn Sie eine benutzerdefinierte Domäne einsetzen, können Sie Ihr SSL-Zertifikat in App Service-Web-Apps weiterhin verwenden. Für jedes SSL-Zertifikat fällt eine monatliche Gebühr an (abgerechnet nach Stunden). Weitere Informationen finden Sie unter [App Service-Preisdetails].
 
-[Authentifizieren von Benutzern] mit dem Unternehmensverzeichnis. App Service-Web-Apps können Benutzer mithilfe von lokalen Identitätsanbietern authentifizieren, beispielsweise mit den Active Directory-Verbunddiensten (AD FS), oder über einen Azure Active Directory-Mandanten, der mit Ihrer Active Directory-Unternehmensbereitstellung synchronisiert wurde. Benutzer können über eine einmalige Anmeldung auf Ihre Webpräsenzen in Web-Apps zugreifen – unabhängig davon, ob sie lokal arbeiten oder sich von unterwegs anmelden. Vorhandene Dienste, wie z. B. Office 365 oder Microsoft Intune, verwenden bereits Azure Active Directory. Über [Easy Auth] ist es sehr einfach, für Ihre Web-App eine Authentifizierung mit demselben Azure Active Directory-Mandanten zu aktivieren.
+[Authentifizieren von Benutzern] mit dem Unternehmensverzeichnis. App Service-Web-Apps können Benutzer mithilfe von lokalen Identitätsanbietern authentifizieren, beispielsweise mit den Active Directory-Verbunddiensten (AD FS), oder über einen Azure Active Directory-Mandanten, der mit Ihrer Active Directory-Unternehmensbereitstellung synchronisiert wurde. Benutzer können über eine einmalige Anmeldung auf Ihre Webpräsenzen in Web-Apps zugreifen – unabhängig davon, ob sie lokal arbeiten oder sich von unterwegs anmelden. Vorhandene Dienste, wie z. B. Office 365 oder Microsoft Intune, verwenden bereits Azure Active Directory. Über [Easy Auth] ist es sehr einfach, für Ihre Web-App eine Authentifizierung mit demselben Azure Active Directory-Mandanten zu aktivieren.
 
 [Autorisieren Sie Benutzer] zur Verwendung von Webeigenschaften. Mit minimalem zusätzlichen Code, beispielsweise mit der `[Authorize]`-Dekoration, können Sie dieselben lokalen ASP.NET-Codierungsmuster in App Service-Web-Apps einbringen. Sie behalten dieselbe Flexibilität zur Optimierung der Zugriffssteuerung wie für Anwendungen, die Sie lokal verwalten.
 
@@ -55,9 +55,9 @@ Schützen Sie interne Ressourcen mit [HTTPS] vor Lauschangriffen. Der Domänenna
 
 Verbinden Sie Ihre Web-App mit Daten oder Ressourcen – unabhängig davon, ob diese aus Leistungsgründen in der Cloud oder aus Compliance-Gründen lokal gespeichert werden. Weitere Informationen zum Speichern von Daten in Azure finden Sie im [Azure Trust Center].
 
-Sie können in Azure zwischen verschiedenen Datenbank-Back-Ends auswählen, um die Anforderungen Ihrer Web-App zu erfüllen, z. B. [Azure SQL-Datenbank] und [MySQL]. Die sichere Speicherung Ihrer Daten in Azure sorgt für geografische Nähe zu Ihrer Web-App und optimiert deren Leistung.
+Sie können in Azure zwischen verschiedenen Datenbank-Back-Ends auswählen, um die Anforderungen Ihrer Web-App zu erfüllen, z. B. [Azure SQL-Datenbank] und [MySQL]. Die sichere Speicherung Ihrer Daten in Azure sorgt für geografische Nähe zu Ihrer Web-App und optimiert deren Leistung.
 
-Möglicherweise ist es für Ihr Unternehmen jedoch erforderlich, die zugehörigen Daten lokal zu speichern. Mit App Service-Web-Apps können Sie auf einfache Weise eine [Hybridverbindung] mit Ihren lokalen Ressourcen herstellen, z. B. mit einem Datenbank-Back-End. Wenn Sie Ihre lokalen Verbindungen einheitlich verwalten möchten, können Sie viele Web-Apps in ein [Azure Virtual Network] integrieren, das ein Standort-zu-Standort-VPN bietet. Der Zugriff auf lokale Ressourcen erfolgt anschließend so, als ob Ihre Web-Apps lokal gespeichert wären.
+Möglicherweise ist es für Ihr Unternehmen jedoch erforderlich, die zugehörigen Daten lokal zu speichern. Mit App Service-Web-Apps können Sie auf einfache Weise eine [Hybridverbindung] mit Ihren lokalen Ressourcen herstellen, z. B. mit einem Datenbank-Back-End. Wenn Sie Ihre lokalen Verbindungen einheitlich verwalten möchten, können Sie viele Web-Apps in ein [Azure Virtual Network] integrieren, das ein Standort-zu-Standort-VPN bietet. Der Zugriff auf lokale Ressourcen erfolgt anschließend so, als ob Ihre Web-Apps lokal gespeichert wären.
 
 ## Optimierung
 

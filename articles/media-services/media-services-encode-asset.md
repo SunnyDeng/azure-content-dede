@@ -38,7 +38,7 @@ Media Services unterstützt die folgenden On-Demand-Encoder, die in diesem Artik
 
 Dieser Artikel enthält eine kurze Übersicht über On-Demand-Media Encoder und stellt Links zu Artikeln bereit, die detailliertere Informationen bieten. Das Thema enthält auch einen Encodervergleich.
 
-Beachten Sie, dass jedes Media Services-Konto standardmäßig je eine aktive Codierungsaufgabe gleichzeitig aufweisen kann. Sie können Einheiten für die Codierung reservieren, mit denen Sie mehrere Codierungsaufgaben gleichzeitig ausführen kennen – jeweils eine für jede reservierte Einheit für die Codierung, die Sie erwerben. Weitere Informationen finden Sie unter [Skalieren der Codierung](media-services-portal-encoding-units.md).
+Beachten Sie, dass jedes Media Services-Konto standardmäßig je eine aktive Codierungsaufgabe gleichzeitig aufweisen kann. Sie können Einheiten für die Codierung reservieren, mit denen Sie mehrere Codierungsaufgaben gleichzeitig ausführen kennen – jeweils eine für jede reservierte Einheit für die Codierung, die Sie erwerben. Weitere Informationen finden Sie unter [Skalieren der Codierung](media-services-portal-encoding-units.md).
 
 ##Media Encoder Standard
 
@@ -136,7 +136,7 @@ MPEG-2 (bis zu 422 Profile und High Level; Varianten wie XDCAM, XDCAM HD, XDCAM 
 MPEG-1 |Ja|Ja
 Windows Media Video/VC-1 |Ja|Ja
 Canopus HQ/HQX |Nein|Nein
-MPEG-4 Teil 2 |Ja|Nein
+MPEG-4 Teil 2 |Ja|Nein
 [Theora](https://en.wikipedia.org/wiki/Theora) |Ja|Nein
 Apple ProRes 422 |Ja|Nein
 Apple ProRes 422 LT |Ja|Nein
@@ -209,15 +209,15 @@ Die folgende Tabelle enthält die Fehlercodes, die zurückgegeben werden können
 ErrorDetail.Code|Mögliche Ursachen des Fehlers
 -----|-----------------------
 Unknown| Unbekannter Fehler beim Ausführen der Aufgabe
-ErrorDownloadingInputAssetMalformedContent|Kategorie von Fehlern, die Fehler beim Herunterladen von Eingabe-Assets abdeckt, z. B. fehlerhafte Dateinamen, Dateien mit Nulllänge, falsche Formate usw.
-ErrorDownloadingInputAssetServiceFailure|Kategorie von Fehlern, die Probleme auf der Dienstseite abdeckt, z. B. Netzwerk- oder Speicherfehler beim Herunterladen.
-ErrorParsingConfiguration|Kategorie von Fehlern, bei denen die Aufgabe <see cref="MediaTask.PrivateData"/> (Konfiguration) nicht gültig ist, z. B. wenn die Konfiguration keine gültige Systemvoreinstellung ist oder ungültige XML-Daten enthält.
+ErrorDownloadingInputAssetMalformedContent|Kategorie von Fehlern, die Fehler beim Herunterladen von Eingabe-Assets abdeckt, z. B. fehlerhafte Dateinamen, Dateien mit Nulllänge, falsche Formate usw.
+ErrorDownloadingInputAssetServiceFailure|Kategorie von Fehlern, die Probleme auf der Dienstseite abdeckt, z. B. Netzwerk- oder Speicherfehler beim Herunterladen.
+ErrorParsingConfiguration|Kategorie von Fehlern, bei denen die Aufgabe <see cref="MediaTask.PrivateData"/> (Konfiguration) nicht gültig ist, z. B. wenn die Konfiguration keine gültige Systemvoreinstellung ist oder ungültige XML-Daten enthält.
 ErrorExecutingTaskMalformedContent|Kategorie von Fehlern während der Ausführung der Aufgabe, wenn Probleme in den Eingabemediendateien zu Fehlern führen.
 ErrorExecutingTaskUnsupportedFormat|Kategorie von Fehlern, bei denen die bereitgestellten Dateien mit dem Medienprozessor nicht verarbeitet werden können: keine Unterstützung des Medienformats oder fehlende Übereinstimmung mit der Konfiguration. Beispiel: Der Versuch, eine Audioausgabe für ein Asset zu erstellen, die nur Video ermöglicht.
 ErrorProcessingTask|Kategorie anderer Fehler, die für den Medienprozessor beim Verarbeiten der Aufgabe auftreten und sich nicht auf den Inhalt beziehen.
 ErrorUploadingOutputAsset|Kategorie von Fehlern beim Hochladen des Ausgabe-Assets.
 ErrorCancelingTask|Kategorie von Fehlern, die auftreten, wenn versucht wird, die Aufgabe abzubrechen.
-TransientError|Kategorie von Fehlern, mit der vorübergehende Probleme abgedeckt werden (z. B. temporäre Netzwerkprobleme mit Azure Storage).
+TransientError|Kategorie von Fehlern, mit der vorübergehende Probleme abgedeckt werden (z. B. temporäre Netzwerkprobleme mit Azure Storage).
 
 
 Öffnen Sie ein [Supportticket](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade), um Hilfe vom **Media Services**-Team zu erhalten.

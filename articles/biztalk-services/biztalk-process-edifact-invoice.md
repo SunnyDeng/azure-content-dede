@@ -20,7 +20,7 @@
 Sie können X12- und EDIFACT-Vereinbarungen im BizTalk Services-Portal konfigurieren und bereitstellen. In diesem Tutorial untersuchen wir das Erstellen einer EDIFACT-Vereinbarung für das Austauschen von Rechnungen zwischen Handelspartnern. Dieses Tutorial basiert auf einer umfassenden Geschäftslösung zwischen den beiden Handelspartnern Northwind und Contoso, die EDIFACT-Nachrichten austauschen.
 
 ## Auf diesem Tutorial basierendes Beispiel
-Dieses Tutorial basiert auf dem Beispiel **Process EDIFACT Invoices Using Azure BizTalk Services**, das aus dem [MSDN-Codekatalog](http://go.microsoft.com/fwlink/?LinkId=401005) herunterladen werden kann. Sie können dieses Tutorial anhand des Beispiels durchlaufen, um zu verstehen, wie das Beispiel erstellt wurde. Sie können dieses Tutorial aber auch nutzen, um Ihre eigene Lösung von Grund auf zu erstellen. Dieses Tutorial ist auf den zweiten Ansatz ausgelegt, damit Sie nachvollziehen können, wie diese Lösung entwickelt wurde. Darüber hinaus ist dieses Tutorial so weit wie möglich in Einklang mit dem Beispiel, sodass dieselben Namen für Artefakte (z. B. Schemas und Transformationen) wie im Beispiel verwendet werden.
+Dieses Tutorial basiert auf dem Beispiel **Process EDIFACT Invoices Using Azure BizTalk Services**, das aus dem [MSDN-Codekatalog](http://go.microsoft.com/fwlink/?LinkId=401005) herunterladen werden kann. Sie können dieses Tutorial anhand des Beispiels durchlaufen, um zu verstehen, wie das Beispiel erstellt wurde. Sie können dieses Tutorial aber auch nutzen, um Ihre eigene Lösung von Grund auf zu erstellen. Dieses Tutorial ist auf den zweiten Ansatz ausgelegt, damit Sie nachvollziehen können, wie diese Lösung entwickelt wurde. Darüber hinaus ist dieses Tutorial so weit wie möglich in Einklang mit dem Beispiel, sodass dieselben Namen für Artefakte (z. B. Schemas und Transformationen) wie im Beispiel verwendet werden.
 
 >[AZURE.NOTE] Da diese Lösung das Senden einer Nachricht von einer EAI-Brücke an eine EDI-Brücke umfasst, wird das Beispiel [BizTalk Services Bridge chaining sample – EAI to EDI](http://code.msdn.microsoft.com/BizTalk-Bridge-chaining-2246b104) wiederverwendet.
 
@@ -56,7 +56,7 @@ Zum Vervollständigen dieses Szenarios verwenden wir Service Bus-Warteschlangen 
 
 *   Das BizTalk Services SDK muss installiert sein. Sie können das SDK von [http://go.microsoft.com/fwlink/?LinkId=235057](http://go.microsoft.com/fwlink/?LinkId=235057) herunterladen.
 
-## Schritt 1: Erstellen der Service Bus-Warteschlangen  
+## Schritt 1: Erstellen der Service Bus-Warteschlangen  
 Diese Lösung verwendet zum Austauschen von Nachrichten zwischen Handelspartnern Service Bus-Warteschlangen. Contoso und Northwind senden Nachrichten an die Warteschlangen, die von den EAI- und/oder EDI-Brücken genutzt werden. Für diese Lösung benötigen Sie drei Service Bus-Warteschlangen:
 
 *   **northwindreceive:** Northwind empfängt die Rechnung von Contoso über diese Warteschlange.
@@ -79,7 +79,7 @@ Sie können diese Service Bus-Warteschlangen mithilfe einer im Beispielpaket ent
 5.  Führen Sie den Tutorialclient weiter aus. Öffnen Sie das Portal, klicken Sie auf **Service Bus** > **_Ihr Service Bus-Namespace_** > **Warteschlangen**, und überprüfen Sie, ob die drei Warteschlangen erstellt wurden.
 
 ## Schritt 2: Erstellen und Bereitstellen der Handelspartnervereinbarung
-Erstellen Sie eine Handelspartnervereinbarung zwischen Contoso und Northwind. In einer Handelspartnervereinbarung legen Geschäftspartner z. B. fest, welches Nachrichtenschema und welches Protokoll verwendet werden soll usw. Eine Handelspartnervereinbarung sieht zwei EDI-Brücken vor, eine zum Senden von Nachrichten an Handelspartner (als **EDI-Sendebrücke** bezeichnet) und eine zum Empfangen von Nachrichten von Handelspartnern (als **EDI-Empfangsbrücke** bezeichnet).
+Erstellen Sie eine Handelspartnervereinbarung zwischen Contoso und Northwind. In einer Handelspartnervereinbarung legen Geschäftspartner z. B. fest, welches Nachrichtenschema und welches Protokoll verwendet werden soll usw. Eine Handelspartnervereinbarung sieht zwei EDI-Brücken vor, eine zum Senden von Nachrichten an Handelspartner (als **EDI-Sendebrücke** bezeichnet) und eine zum Empfangen von Nachrichten von Handelspartnern (als **EDI-Empfangsbrücke** bezeichnet).
 
 Im Zusammenhang mit dieser Lösung entspricht die EDI-Sendebrücke der Sendeseite der Vereinbarung und wird zum Senden der EDIFACT-Rechnung von Contoso an Northwind verwendet. Analog dazu entspricht die EDI-Empfangsbrücke der Empfangsseite der Vereinbarung und wird zum Empfangen von Bestätigungen von Northwind verwendet.
 

@@ -35,10 +35,10 @@ Ein grundlegender Unterschied zwischen Cloud Services und Service Fabric ist die
  
 Service Fabric ist eine Anwendungsplattformschicht, die unter Windows oder Linux ausgeführt wird, während Cloud Services ein System für die Bereitstellung von virtuellen Computern mit angefügten Workloads ist, die durch Azure verwaltet werden. Das Service Fabric-Anwendungsmodell bietet viele Vorteile:
 
- - Kurze Bereitstellungszeit –  Die Erstellung von VM-Instanzen kann zeitaufwendig sein. In Service Fabric werden VMs nur einmal bereitgestellt, um einen Cluster zu bilden, der die Service Fabric-Anwendungsplattform hostet. Ab diesem Zeitpunkt können Anwendungspakte sehr schnell zum Cluster bereitgestellt werden.
- - Hohe Hostingdichte –  In Cloud Services hostet eine Workerrollen-VM eine Workload. In Service Fabric sind die Anwendungen von den VMs, die sie ausführen, getrennt. Das bedeutet, dass Sie eine hohe Anzahl an Anwendungen in einer geringen Anzahl VMs bereitstellen können, was die Gesamtkosten für große Bereitstellungen verringern kann.
+ - Kurze Bereitstellungszeit –  Die Erstellung von VM-Instanzen kann zeitaufwendig sein. In Service Fabric werden VMs nur einmal bereitgestellt, um einen Cluster zu bilden, der die Service Fabric-Anwendungsplattform hostet. Ab diesem Zeitpunkt können Anwendungspakte sehr schnell zum Cluster bereitgestellt werden.
+ - Hohe Hostingdichte –  In Cloud Services hostet eine Workerrollen-VM eine Workload. In Service Fabric sind die Anwendungen von den VMs, die sie ausführen, getrennt. Das bedeutet, dass Sie eine hohe Anzahl an Anwendungen in einer geringen Anzahl VMs bereitstellen können, was die Gesamtkosten für große Bereitstellungen verringern kann.
  - Die Service Fabric-Plattform kann an jedem Ort ausgeführt werden, an dem es Windows Server oder Linux Computer gibt, sowohl in Azure als auch lokal. Die Plattform bietet eine Abstraktionsschicht über der zugrunde liegenden Infrastruktur; daher kann Ihre Anwendung in verschiedenen Umgebungen laufen. 
- - Verwaltung von verteilten Anwendungen –  Service Fabric ist eine Plattform, die nicht nur verteilte Anwendungen hostet, sondern auch hilft, deren Lebenszyklus unabhängig von dem Lebenszyklus der hostenden VM oder des Computers zu verwalten.
+ - Verwaltung von verteilten Anwendungen –  Service Fabric ist eine Plattform, die nicht nur verteilte Anwendungen hostet, sondern auch hilft, deren Lebenszyklus unabhängig von dem Lebenszyklus der hostenden VM oder des Computers zu verwalten.
 
 ## Anwendungsarchitektur
 

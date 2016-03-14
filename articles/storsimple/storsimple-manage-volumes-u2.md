@@ -21,7 +21,7 @@
 
 ## Übersicht
 
-In diesem Tutorial wird erläutert, wie Sie den StorSimple-Manager-Dienst zum Erstellen und Verwalten von Volumes auf dem StorSimple-Gerät und dem virtuellen StorSimple-Gerät mit installiertem Update 2 verwenden können.
+In diesem Tutorial wird erläutert, wie Sie den StorSimple-Manager-Dienst zum Erstellen und Verwalten von Volumes auf dem StorSimple-Gerät und dem virtuellen StorSimple-Gerät mit installiertem Update 2 verwenden können.
 
 Der StorSimple-Manager-Dienst ist eine Erweiterung des klassischen Azure-Portals, mit der Sie Ihre StorSimple-Lösung über eine einzelne Weboberfläche verwalten können. Zusätzlich zum Verwalten von Datenträgern können Sie mit dem StorSimple-Manager-Dienst StorSimple-Dienste erstellen und verwalten, Geräte anzeigen und verwalten, Warnungen anzeigen sowie Sicherungsrichtlinien und den Sicherungskatalog verwalten.
 
@@ -40,7 +40,7 @@ Nach Bedarf können Sie den Volumetyp von lokal in mehrstufig ändern oder umgek
 
 Lokale Volumes werden vollständig bereitgestellt und lagern keine Daten in die Cloud aus. So gewährleisten sie lokale Garantien für primäre Daten, unabhängig von der Cloudkonnektivität. Daten auf lokalen Volumes werden nicht dedupliziert und komprimiert. Allerdings werden Momentaufnahmen von lokal angehefteten Volumes dedupliziert.
 
-Lokale Volumes werden vollständig bereitgestellt. Aus diesem Grund müssen Sie bei deren Erstellung über genügend Speicherplatz auf dem Gerät verfügen. Sie können lokale Volumes mit einer Größe von maximal 9 TB auf dem StorSimple 8100-Gerät und 24 TB auf dem 8600-Gerät bereitstellen. StorSimple reserviert den verbleibenden lokalen Speicherplatz auf dem Gerät für Momentaufnahmen, Metadaten und die Datenverarbeitung. Sie können die Größe eines lokalen Volumes auf den maximal verfügbaren Speicherplatz erhöhen, jedoch können Sie die Größe eines Volumes nach der Erstellung nicht mehr verringern.
+Lokale Volumes werden vollständig bereitgestellt. Aus diesem Grund müssen Sie bei deren Erstellung über genügend Speicherplatz auf dem Gerät verfügen. Sie können lokale Volumes mit einer Größe von maximal 9 TB auf dem StorSimple 8100-Gerät und 24 TB auf dem 8600-Gerät bereitstellen. StorSimple reserviert den verbleibenden lokalen Speicherplatz auf dem Gerät für Momentaufnahmen, Metadaten und die Datenverarbeitung. Sie können die Größe eines lokalen Volumes auf den maximal verfügbaren Speicherplatz erhöhen, jedoch können Sie die Größe eines Volumes nach der Erstellung nicht mehr verringern.
 
 Wenn Sie ein lokales Volume erstellen, verringert sich dadurch der verfügbare Speicherplatz für die Erstellung mehrstufiger Volumes. Das Gegenteil trifft ebenfalls zu: Wenn Sie mehrstufige Volumes verwenden, ist der Speicherplatz für die Erstellung lokaler Volumes geringer als die oben genannten Obergrenzen.
 
@@ -48,9 +48,9 @@ Wenn Sie ein lokales Volume erstellen, verringert sich dadurch der verfügbare S
 
 Mehrstufige Volumes sind Volumes mit schlanker Speicherzuweisung, in denen häufig verwendete Daten lokal auf dem Gerät bleiben und weniger häufig verwendete Daten automatisch in die Cloud ausgelagert werden. Schlanke Speicherzuweisung ist eine Virtualisierungstechnologie, bei der der verfügbare Speicher die physischen Ressourcen zu überschreiten scheint. Anstatt ausreichend Speicher im Voraus zu reservieren, verwendet StorSimple die schlanke Bereitstellung, um nur eben genug Speicher zum Erfüllen der aktuellen Anforderungen zuzuweisen. Die Elastizität von Cloudspeicher ermöglicht diesen Ansatz, weil StorSimple den Cloudspeicher vergrößern oder verkleinern kann, um sich ändernde Anforderungen zu erfüllen.
 
-Bei Verwendung des mehrstufigen Volumes für archivierte Daten wird durch Aktivieren des Kontrollkästchens **Verwenden Sie dieses Volume für Archivdaten, auf die Sie seltener zugreifen** die Deduplizierungblockgröße für das Volume in 512 KB geändert. Wenn dieses Feld nicht aktiviert ist, verwendet das entsprechende mehrstufige Volume eine Blockgröße von 64 KB. Bei Verwendung größerer Deduplizierungsblöcke kann das Gerät die Übertragung umfangreicher Archivdaten in die Cloud beschleunigen.
+Bei Verwendung des mehrstufigen Volumes für archivierte Daten wird durch Aktivieren des Kontrollkästchens **Verwenden Sie dieses Volume für Archivdaten, auf die Sie seltener zugreifen** die Deduplizierungblockgröße für das Volume in 512 KB geändert. Wenn dieses Feld nicht aktiviert ist, verwendet das entsprechende mehrstufige Volume eine Blockgröße von 64 KB. Bei Verwendung größerer Deduplizierungsblöcke kann das Gerät die Übertragung umfangreicher Archivdaten in die Cloud beschleunigen.
 
->[AZURE.NOTE] Archivierungsvolumes, die mit einer StorSimple-Version vor Update 2 erstellt werden, werden als mehrstufig mit aktiviertem Archivierungskontrollkästchen importiert.
+>[AZURE.NOTE] Archivierungsvolumes, die mit einer StorSimple-Version vor Update 2 erstellt werden, werden als mehrstufig mit aktiviertem Archivierungskontrollkästchen importiert.
 
 ### Bereitgestellte Kapazität
 
@@ -59,10 +59,10 @@ In der folgenden Tabelle finden Sie die bereitgestellte Maximalkapazität für d
 | | Maximale Größe mehrstufiger Volumes | Maximale Größe lokaler Volumes |
 |-------------|----------------------------|------------------------------------|
 | **Physische Geräte** | | |
-| 8100 | 64 TB | 9 TB |
-| 8600 | 64 TB | 24 TB |
+| 8100 | 64 TB | 9 TB |
+| 8600 | 64 TB | 24 TB |
 | **Virtuelle Geräte** | | |
-| 8010 | 30 TB | – |
+| 8010 | 30 TB | – |
 | 8020 | 64 TB | – | 
 
 ## Die Seite "Volumes"
@@ -75,7 +75,7 @@ Ein Volume umfasst eine Reihe von Attributen:
 
 - **Volumename**: Ein beschreibender Name, der eindeutig sein muss und das Volume identifiziert. Dieser Name wird auch in Überwachungsberichten zum Filtern nach einem bestimmten Volume verwendet.
 
-- **Status** – online oder offline. Offline-Volumes sind für die Initiatoren (Server), die über Zugriff für die Verwendung des Volumes verfügen, nicht sichtbar.
+- **Status** – online oder offline. Offline-Volumes sind für die Initiatoren (Server), die über Zugriff für die Verwendung des Volumes verfügen, nicht sichtbar.
 
 - **Kapazität**: Gibt die Gesamtmenge der Daten an, die vom Initiator (Server) gespeichert werden kann. Lokale Volumes werden vollständig bereitgestellt und befinden sich auf dem StorSimple-Gerät. Mehrstufige Volumes werden mit schlanker Speicherzuweisung bereitgestellt, und die Daten werden dedupliziert. Bei Volumes mit schlanker Speicherzuweisung weist Ihr Gerät die physische Speicherkapazität weder intern noch in der Cloud anhand der konfigurierten Volumekapazität vorab zu. Die Volumekapazität wird nach Bedarf zugewiesen und genutzt.
 
@@ -83,9 +83,9 @@ Ein Volume umfasst eine Reihe von Attributen:
 
 - **Sicherung**: Gibt an, ob eine Standardsicherungsrichtlinie für das Volume vorhanden ist.
 
-- **Zugriff** – gibt die Initiatoren (Server) an, die Zugriff auf dieses Volume haben. Initiatoren, die nicht Mitglieder des dem Volume zugeordneten Zugriffssteuerungsdatensatzes (ACR) sind, wird das Volume nicht angezeigt.
+- **Zugriff** – gibt die Initiatoren (Server) an, die Zugriff auf dieses Volume haben. Initiatoren, die nicht Mitglieder des dem Volume zugeordneten Zugriffssteuerungsdatensatzes (ACR) sind, wird das Volume nicht angezeigt.
 
-- **Überwachung** – gibt an, ob ein Volume überwacht wird. Beim Erstellen von Volumes wird die Überwachung standardmäßig aktiviert. Für einen Volumeklon wird die Überwachung jedoch deaktiviert. Befolgen Sie zum Überwachen eines Volumes die Anweisungen unter [Überwachen von Volumes](#monitor-a-volume).
+- **Überwachung** – gibt an, ob ein Volume überwacht wird. Beim Erstellen von Volumes wird die Überwachung standardmäßig aktiviert. Für einen Volumeklon wird die Überwachung jedoch deaktiviert. Befolgen Sie zum Überwachen eines Volumes die Anweisungen unter [Überwachen von Volumes](#monitor-a-volume).
 
 Verwenden Sie die Anweisungen in diesem Tutorial, um die folgenden Aufgaben auszuführen:
 
@@ -114,7 +114,7 @@ Sie haben beim Bereitstellen der StorSimple-Lösung [ein Volume erstellt](storsi
 
   1. Geben Sie den **Namen** für das Volume ein.
   2. Wählen Sie einen **Verwendungstyp** aus der Dropdownliste aus. Wählen Sie für Workloads, für die eine ständige Verfügbarkeit der Daten auf dem lokalen Gerät erforderlich ist, **Lokal** aus. Wählen Sie für alle anderen Datentypen **Mehrstufig** aus. (**Mehrstufig** ist die Standardeinstellung.)
-  3. Wenn Sie in Schritt 2 **Mehrstufig** ausgewählt haben, können Sie das Kontrollkästchen **Verwenden Sie dieses Volume für Archivdaten, auf die Sie seltener zugreifen** aktivieren, um ein Archivierungsvolume zu konfigurieren.
+  3. Wenn Sie in Schritt 2 **Mehrstufig** ausgewählt haben, können Sie das Kontrollkästchen **Verwenden Sie dieses Volume für Archivdaten, auf die Sie seltener zugreifen** aktivieren, um ein Archivierungsvolume zu konfigurieren.
   4. Geben Sie die **Bereitgestellte Kapazität** für das Volume in GB oder TB an. Unter [Bereitgestellte Kapazität](#provisioned-capacity) finden Sie die maximalen Größen der einzelnen Geräte und Volumetypen. Sehen Sie sich die **Verfügbare Kapazität** an, um zu ermitteln, wie viel Speicher tatsächlich auf dem Gerät verfügbar ist.
 
 5. Klicken Sie auf das Pfeilsymbol ![Pfeilsymbol](./media/storsimple-manage-volumes-u2/HCS_ArrowIcon.png). Wenn Sie ein lokales Volume konfigurieren, wird die folgende Meldung angezeigt.
@@ -145,7 +145,7 @@ Zum Ändern eines Volumes müssen Sie dieses erweitern oder die Hosts ändern, d
 > [AZURE.IMPORTANT] 
 >
 > - Wenn Sie die Größe des Volumes auf dem Gerät ändern, muss auch die Größe des Volumes auf dem Host geändert werden. 
-> - Die hier beschriebenen hostseitigen Schritte gelten für Windows Server 2012 (2012R2). Vorgehensweisen für Linux oder andere Hostbetriebssysteme können davon abweichen. Beachten Sie beim Ändern des Volumes auf einem Host mit einem anderen Betriebssystem die Anweisungen zu Ihrem Hostbetriebssystem. 
+> - Die hier beschriebenen hostseitigen Schritte gelten für Windows Server 2012 (2012R2). Vorgehensweisen für Linux oder andere Hostbetriebssysteme können davon abweichen. Beachten Sie beim Ändern des Volumes auf einem Host mit einem anderen Betriebssystem die Anweisungen zu Ihrem Hostbetriebssystem. 
 
 #### So ändern Sie ein Volume
 
@@ -203,7 +203,7 @@ Die Konvertierung von einem mehrstufigen in ein lokales Volume kann sich negativ
 
 So können Sie die möglichen Auswirkungen dieser Faktoren minimieren
 
-- Überprüfen Sie die Richtlinien für die Bandbreitendrosselung, und stellen Sie sicher, dass eine dedizierte Bandbreite von 40 MBit/s verfügbar ist.
+- Überprüfen Sie die Richtlinien für die Bandbreitendrosselung, und stellen Sie sicher, dass eine dedizierte Bandbreite von 40 MBit/s verfügbar ist.
 - Planen Sie die Durchführung der Konvertierung außerhalb der Spitzenzeiten.
 - Erstellen Sie eine Sicherung, bevor Sie die Konvertierung starten.
 
@@ -295,7 +295,7 @@ Führen Sie die folgenden Schritte durch, um die Überwachung eines Volumes zu a
 
 - Erfahren Sie, wie Sie ein [StorSimple-Volume klonen](storsimple-clone-volume.md).
 
-- Erfahren Sie, wie Sie [Ihr StorSimple-Gerät mithilfe des StorSimple Manager-Diensts verwalten](storsimple-manager-service-administration.md).
+- Erfahren Sie, wie Sie [Ihr StorSimple-Gerät mithilfe des StorSimple Manager-Diensts verwalten](storsimple-manager-service-administration.md).
 
  
 

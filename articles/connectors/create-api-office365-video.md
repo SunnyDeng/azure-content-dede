@@ -1,6 +1,6 @@
 <properties
-pageTitle="Hinzufügen der Office 365-Video-API zu Ihren Logik-Apps | Microsoft Azure"
-description="Erste Schritte mit der Office 365-Video-API (Connector) in Ihren Microsoft Azure App Service-Logik-Apps"
+pageTitle="Hinzufügen der Office 365-Video-API zu Ihren Logik-Apps | Microsoft Azure"
+description="Erste Schritte mit der Office 365-Video-API (Connector) in Ihren Microsoft Azure App Service-Logik-Apps"
 services=""	
 documentationCenter="" 	
 authors="msftman"	
@@ -17,7 +17,7 @@ ms.workload="na"
 ms.date="02/25/2016"
 ms.author="deonhe"/>
 
-# Erste Schritte mit der Office 365-Video-API
+# Erste Schritte mit der Office 365-Video-API
 Stellen Sie eine Verbindung mit Office 365 Video her, um Informationen über ein Office 365-Video oder eine Liste von Videos abzurufen und vieles mehr. Die Office 365 Video-API kann verwendet werden von:
 
 - Logik-Apps 
@@ -26,14 +26,14 @@ Stellen Sie eine Verbindung mit Office 365 Video her, um Informationen über ein
 
 Mit Office 365 Video können Sie folgende Aktionen ausführen:
 
-- Erstellen eines Geschäftsworkflows basierend auf den Daten, die aus Office 365 Video abgerufen werden. 
+- Erstellen eines Geschäftsworkflows basierend auf den Daten, die aus Office 365 Video abgerufen werden. 
 - Verwenden Sie Aktionen zum Überprüfen des Videoportalstatus, zum Abrufen einer Liste mit allen Videos in einem Kanal und vieles mehr. Diese Aktionen erhalten eine Antwort und stellen anschließend die Ausgabe anderen Aktionen zur Verfügung. Sie können z. B. mit der Bing-Such-API nach Office 365-Videos suchen und dann mithilfe der Office 365 Video-API Informationen zu diesem Video abrufen. Wenn das Video Ihre Anforderungen erfüllt, können Sie es auf Facebook veröffentlichen. 
 
 Informationen zum Hinzufügen eines Vorgangs in Logik-Apps finden Sie unter [Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md).
 
 ## Trigger und Aktionen
 
-Die Office 365-Benutzer-API verfügt über die folgenden Aktionen. Es gibt keine Trigger.
+Die Office 365-Benutzer-API verfügt über die folgenden Aktionen. Es gibt keine Trigger.
 
 | Trigger | Aktionen|
 | --- | --- |
@@ -47,7 +47,7 @@ Wenn Sie Ihren Logik-Apps diese API hinzufügen, müssen Sie sich bei Ihrem Offi
 1. Melden Sie sich bei Ihrem Office 365 Video-Konto an.
 2. Erlauben Sie Ihren Logik-Apps, sich mit Ihrem Office 365-Konto zu verbinden und es zu nutzen. 
 
-Nachdem Sie eine Verbindung hergestellt haben, geben Sie die Office 365 Video-Eigenschaften ein, z. B. den Mandantennamen oder die Kanal-ID. In der **REST-API-Referenz** in diesem Thema werden diese Eigenschaften beschrieben.
+Nachdem Sie eine Verbindung hergestellt haben, geben Sie die Office 365 Video-Eigenschaften ein, z. B. den Mandantennamen oder die Kanal-ID. In der **REST-API-Referenz** in diesem Thema werden diese Eigenschaften beschrieben.
 
 >[AZURE.TIP] Sie können dieselbe Office 365 Video-Verbindung in anderen Logik-Apps verwenden.
 
@@ -97,8 +97,8 @@ Ruft alle Kanäle ab, auf die der Benutzer Anzeigezugriff hat. ```GET: /{tenant}
 
 
 
-### Listet alle in einem Kanal vorhandenen Office 365-Videos auf 
-Listet alle in einem Kanal vorhandenen Office 365-Videos auf. ```GET: /{tenant}/Channels/{channelId}/Videos```
+### Listet alle in einem Kanal vorhandenen Office 365-Videos auf 
+Listet alle in einem Kanal vorhandenen Office 365-Videos auf. ```GET: /{tenant}/Channels/{channelId}/Videos```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -120,8 +120,8 @@ Listet alle in einem Kanal vorhandenen Office 365-Videos auf. ```GET: /{tenant}
 
 
 
-### Ruft Informationen über ein bestimmtes Office 365-Video ab 
-Ruft Informationen über ein bestimmtes Office 365-Video ab. ```GET: /{tenant}/Channels/{channelId}/Videos/{videoId}```
+### Ruft Informationen über ein bestimmtes Office 365-Video ab 
+Ruft Informationen über ein bestimmtes Office 365-Video ab. ```GET: /{tenant}/Channels/{channelId}/Videos/{videoId}```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|

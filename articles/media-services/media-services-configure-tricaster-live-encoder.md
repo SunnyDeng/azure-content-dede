@@ -28,7 +28,7 @@ In diesem Thema wird beschrieben, wie Sie den [NewTek TriCaster](http://newtek.c
 
 In diesem Tutorial wird gezeigt, wie Sie Azure Media Services (AMS) mit dem Tool Azure Media Services Explorer (AMSE) verwalten. Dieses Tool kann nur auf Windows-PCs ausgeführt werden. Unter Mac OS oder Linux verwenden Sie das klassische Azure-Portal, um [Kanäle](media-services-portal-creating-live-encoder-enabled-channel.md#create-a-channel) und [Programme](media-services-portal-creating-live-encoder-enabled-channel#create-and-manage-a-program) zu erstellen.
 
->[AZURE.NOTE]Bei der Verwendung von TriCaster zum Senden eines Beitragsfeeds in Azure Media Services können Video- oder Audiostörungen im Liveereignis auftreten, wenn Sie bestimmte Funktionen von TriCaster nutzen, z. B. schnelle Schnitte zwischen Feeds oder Wechseln zwischen Slates. Das AMS-Team arbeitet an einer Lösung zur Behebung dieser Probleme. Derzeit wird jedoch davon abgeraten, diese Funktionen zu verwenden.
+>[AZURE.NOTE]Bei der Verwendung von TriCaster zum Senden eines Beitragsfeeds in Azure Media Services können Video- oder Audiostörungen im Liveereignis auftreten, wenn Sie bestimmte Funktionen von TriCaster nutzen, z. B. schnelle Schnitte zwischen Feeds oder Wechseln zwischen Slates. Das AMS-Team arbeitet an einer Lösung zur Behebung dieser Probleme. Derzeit wird jedoch davon abgeraten, diese Funktionen zu verwenden.
 
 
 ##Voraussetzungen
@@ -72,7 +72,7 @@ In diesem Tutorial werden die folgenden Ausgabeeinstellungen verwendet. Im restl
  
 - Codec: H.264 
 - Profil: Hoch (Level 4.0) 
-- Bitrate: 5.000 KBit/s 
+- Bitrate: 5.000 KBit/s 
 - Keyframe: 2 Sekunden (60 Sekunden) 
 - Bildfrequenz: 30
  

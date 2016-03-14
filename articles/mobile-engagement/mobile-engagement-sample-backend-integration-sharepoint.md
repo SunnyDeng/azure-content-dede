@@ -20,7 +20,7 @@
 
 In einem automatisierten Marketingsystem erfolgen das Erstellen und Aktivieren der Marketingkampagnen ebenfalls automatisch. Zu diesem Zweck ermöglicht Azure Mobile Engagement auch das Erstellen solcher automatisierten Marketingkampagnen mithilfe von APIs.
 
-Kunden verwenden in der Regel die Mobile Engagement-Front-End-Schnittstelle, um im Rahmen ihrer Marketingkampagnen Ankündigungen/Umfragen u. ä. zu erstellen. Sobald jedoch die Marketingkampagnen ausgereift sind, müssen die in den Back-End-Systemen (z. B. ein CRM-System oder ein CMS-System wie SharePoint) blockierten Daten genutzt werden. So kann eine vollständig automatische Pipeline erstellt werden, die anhand der Daten aus den Back-End-Systemen dynamisch Kampagnen in Mobile Engagement erzeugt.
+Kunden verwenden in der Regel die Mobile Engagement-Front-End-Schnittstelle, um im Rahmen ihrer Marketingkampagnen Ankündigungen/Umfragen u. ä. zu erstellen. Sobald jedoch die Marketingkampagnen ausgereift sind, müssen die in den Back-End-Systemen (z. B. ein CRM-System oder ein CMS-System wie SharePoint) blockierten Daten genutzt werden. So kann eine vollständig automatische Pipeline erstellt werden, die anhand der Daten aus den Back-End-Systemen dynamisch Kampagnen in Mobile Engagement erzeugt.
 
 ![][5]
 

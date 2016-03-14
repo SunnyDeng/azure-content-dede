@@ -17,7 +17,7 @@
       ms.author="hascipio; v-divte" />
 
 # Leitfaden zum Erstellen einer Lösungsvorlage für den Azure Marketplace
-Nach Abschluss von Schritt 1, [Erstellen und Registrieren eines Kontos][link-acct-creation], haben wir Sie unter [Technische Voraussetzungen für das Erstellen einer Lösungsvorlage](marketplace-publishing-solution-template-creation-prerequisites.md) durch die Erstellung einer mit Azure kompatiblen Lösungsvorlage geleitet. Jetzt werden wir die Schritte zum Erstellen einer Lösungsvorlage für mehrere virtuelle Computer im [Veröffentlichungsportal][link-pubportal] für den Azure Marketplace durchlaufen.
+Nach Abschluss von Schritt 1, [Erstellen und Registrieren eines Kontos][link-acct-creation], haben wir Sie unter [Technische Voraussetzungen für das Erstellen einer Lösungsvorlage](marketplace-publishing-solution-template-creation-prerequisites.md) durch die Erstellung einer mit Azure kompatiblen Lösungsvorlage geleitet. Jetzt werden wir die Schritte zum Erstellen einer Lösungsvorlage für mehrere virtuelle Computer im [Veröffentlichungsportal][link-pubportal] für den Azure Marketplace durchlaufen.
 
 ## Erstellen eines Angebots für Ihre Lösungsvorlage im Veröffentlichungsportal
 Gehen Sie zu [https://publish.windowsazure.com](http://publish.windowsazure.com). Verwenden Sie bei der erstmaligen Anmeldung beim [Veröffentlichungsportal](https://publish.windowsazure.com/) das gleiche Konto, mit dem das Verkäuferprofil für Ihr Unternehmen registriert wurde. Sie können später im Veröffentlichungsportal einen beliebigen Mitarbeiter Ihres Unternehmens als Co-Administrator hinzufügen.

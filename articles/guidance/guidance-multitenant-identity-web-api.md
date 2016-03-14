@@ -21,7 +21,7 @@
 
 Dieser Artikel ist [Teil einer Reihe]. Es gibt auch eine vollständige [Beispielanwendung], die diese Reihe begleitet.
 
-Die [Tailspin-Anwendung „Surveys“] verwendet eine Back-End-Web-API, um Erstellungs-, Lese-, Aktualisierungs- und Löschaktionen für Umfragen zu verwalten. Wenn z. B. ein Benutzer auf „My Surveys“ klickt, sendet die Webanwendung eine HTTP-Anforderung an die Web-API:
+Die [Tailspin-Anwendung „Surveys“] verwendet eine Back-End-Web-API, um Erstellungs-, Lese-, Aktualisierungs- und Löschaktionen für Umfragen zu verwalten. Wenn z. B. ein Benutzer auf „My Surveys“ klickt, sendet die Webanwendung eine HTTP-Anforderung an die Web-API:
 
 ```
 GET /users/{userId}/surveys

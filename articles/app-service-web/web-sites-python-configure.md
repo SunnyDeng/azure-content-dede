@@ -62,7 +62,7 @@ In den nächsten Abschnitten werden die folgenden Dateien erstellt. Sie müssen 
 
 ## WSGI-Handler
 
-WSGI ist ein Python-Standard, der in der Spezifikation [PEP 3333](http://www.python.org/dev/peps/pep-3333/) beschrieben wird und der eine Schnittstelle zwischen dem Webserver und Python definiert. Es bietet eine standardisierte Schnittstelle zum Schreiben verschiedener Webanwendungen und Frameworks mit Python. Beliebte Python-Webframeworks nutzen heute WSGI. Azure App Service-Web-Apps bieten Unterstützung für solche Frameworks. Darüber hinaus können fortgeschrittene Benutzer auch ihre eigenen Frameworks erstellen, sofern der benutzerdefinierte Handler die Richtlinien der WSGI-Spezifikationen erfüllt.
+WSGI ist ein Python-Standard, der in der Spezifikation [PEP 3333](http://www.python.org/dev/peps/pep-3333/) beschrieben wird und der eine Schnittstelle zwischen dem Webserver und Python definiert. Es bietet eine standardisierte Schnittstelle zum Schreiben verschiedener Webanwendungen und Frameworks mit Python. Beliebte Python-Webframeworks nutzen heute WSGI. Azure App Service-Web-Apps bieten Unterstützung für solche Frameworks. Darüber hinaus können fortgeschrittene Benutzer auch ihre eigenen Frameworks erstellen, sofern der benutzerdefinierte Handler die Richtlinien der WSGI-Spezifikationen erfüllt.
 
 Hier ist ein Beispiel für `app.py`, in dem ein benutzerdefinierter Handler definiert wird:
 

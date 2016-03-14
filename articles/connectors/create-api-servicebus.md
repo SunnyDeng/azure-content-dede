@@ -71,7 +71,7 @@ Führen Sie die folgenden Schritte zum Erstellen einer Service Bus-**Verbindung*
 >[AZURE.TIP] Sie können diese Verbindung in anderen Logik-Apps verwenden.
 
 ## Azure Service Bus-REST-API-Referenz
-#### Diese Dokumentation gilt für Version 1.0.
+#### Diese Dokumentation gilt für Version 1.0.
 
 
 ### Sendet eine Nachricht an ein Azure Service Bus-Warteschlange oder -Thema.

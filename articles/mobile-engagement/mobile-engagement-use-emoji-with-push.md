@@ -40,7 +40,9 @@ Emojis lassen sich in wenigen einfachen Schritten in Pushbenachrichtigungen einf
 
 7. Wenn Sie einen Test ausführen oder die Ankündigung aktivieren, wird eine Benachrichtigung mit dem Emoticon entsprechend Ihren Festlegungen angezeigt.
 
-	![][3] ![][4] ![][5]
+	![][3]
+	![][4]
+	![][5]
 
 <!-- Images. -->
 [1]: ./media/mobile-engagement-use-emoji-with-push/notification_input.png

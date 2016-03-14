@@ -18,11 +18,11 @@
 
 #Anpassen ausgestellter Ansprüche im SAML-Token für bereits in Azure Active Directory integrierte Apps
 
-Azure Active Directory unterstützt heute Tausende von bereits integrierten Anwendungen im Azure AD-Anwendungskatalog, darunter über 150, die einmaliges Anmelden mithilfe des SAML 2.0-Protokolls unterstützen. Wenn ein Benutzer sich über Azure AD per SAML bei einer Anwendung authentifiziert, sendet Azure AD (über eine HTTP 302-Umleitung) ein Token an die Anwendung, welches die Anwendung dann überprüft und anstelle von Benutzername und Kennwort für die Anmeldung des Benutzers verwendet. Diese SAML-Token enthalten Informationen über den Benutzer, die als „Ansprüche“ bezeichnet werden.
+Azure Active Directory unterstützt heute Tausende von bereits integrierten Anwendungen im Azure AD-Anwendungskatalog, darunter über 150, die einmaliges Anmelden mithilfe des SAML 2.0-Protokolls unterstützen. Wenn ein Benutzer sich über Azure AD per SAML bei einer Anwendung authentifiziert, sendet Azure AD (über eine HTTP 302-Umleitung) ein Token an die Anwendung, welches die Anwendung dann überprüft und anstelle von Benutzername und Kennwort für die Anmeldung des Benutzers verwendet. Diese SAML-Token enthalten Informationen über den Benutzer, die als „Ansprüche“ bezeichnet werden.
 
-Im technischen Jargon bezeichnet ein Anspruch (Claim) Informationen über den Benutzer, die ein Identitätsanbieter im Benutzertoken übergibt. Bei einem [SAML-Token](http://en.wikipedia.org/wiki/SAML_2.0) befinden sich diese Informationen i. d. R. in der SAML-Attributanweisung, und die eindeutige ID des Benutzers wird durch den SAML-Betreff dargestellt.
+Im technischen Jargon bezeichnet ein Anspruch (Claim) Informationen über den Benutzer, die ein Identitätsanbieter im Benutzertoken übergibt. Bei einem [SAML-Token](http://en.wikipedia.org/wiki/SAML_2.0) befinden sich diese Informationen i. d. R. in der SAML-Attributanweisung, und die eindeutige ID des Benutzers wird durch den SAML-Betreff dargestellt.
 
-Standardmäßig stellt Azure AD der Anwendung ein SAML-Token aus, das einen NameIdentifier-Anspruch enthält, dessen Wert dem Benutzernamen in Azure AD entspricht (über den der Benutzer eindeutig identifiziert ist). Das SAML-Token enthält auch zusätzliche Ansprüche, die E-Mail-Adresse des Benutzers, Vorname und Nachname enthält.
+Standardmäßig stellt Azure AD der Anwendung ein SAML-Token aus, das einen NameIdentifier-Anspruch enthält, dessen Wert dem Benutzernamen in Azure AD entspricht (über den der Benutzer eindeutig identifiziert ist). Das SAML-Token enthält auch zusätzliche Ansprüche, die E-Mail-Adresse des Benutzers, Vorname und Nachname enthält.
 
 Zum Anzeigen oder Bearbeiten der im SAML-Token an die Anwendung ausgestellten Ansprüche öffnen Sie den Anwendungsdatensatz im Azure-Verwaltungsportal, und wählen Sie Registerkarte **Attribute** unterhalb der Anwendung.
 
@@ -38,9 +38,9 @@ Falls die Anwendung mit einem anderen Benutzernamen bereitgestellt wurde, klicke
 
 ![][2]
 
-Wählen Sie im Menü **Attributwert** die Option **user.mail** aus, um den NameIdentifier-Anspruch auf die E-Mail-Adresse des Benutzers im Verzeichnis festzulegen, oder wählen Sie **user.onpremisessamaccountname** aus, um den SAM-Kontonamen des Benutzers zu verwenden, der aus dem lokalen Azure AD synchronisiert wurde.
+Wählen Sie im Menü **Attributwert** die Option **user.mail** aus, um den NameIdentifier-Anspruch auf die E-Mail-Adresse des Benutzers im Verzeichnis festzulegen, oder wählen Sie **user.onpremisessamaccountname** aus, um den SAM-Kontonamen des Benutzers zu verwenden, der aus dem lokalen Azure AD synchronisiert wurde.
 
-Sie können auch die spezielle ExtractMailPrefix()-Funktion verwenden, um das Domänensuffix von der E-Mail-Adresse des Benutzers bzw. vom Prinzipalnamen zu entfernen, wodurch nur der erste Bestandteil des Benutzernamens durchgeleitet wird (z. B. „joesmith“ statt joesmith@contoso.com).
+Sie können auch die spezielle ExtractMailPrefix()-Funktion verwenden, um das Domänensuffix von der E-Mail-Adresse des Benutzers bzw. vom Prinzipalnamen zu entfernen, wodurch nur der erste Bestandteil des Benutzernamens durchgeleitet wird (z. B. „joesmith“ statt joesmith@contoso.com).
 
 ![][3]
 
@@ -50,11 +50,11 @@ Beim Hinzufügen eines neuen Anspruchs kann der Attributname angegeben werden (d
 
 ![][4]
 
-Wenn beispielsweise die Abteilung des Benutzers innerhalb seiner Organisation (z. B. Vertrieb) als Anspruch gesendet werden soll, kann ein beliebiger von der Anwendung erwarteter Anspruchswert eingegeben und dann **user.department** als Wert ausgewählt werden.
+Wenn beispielsweise die Abteilung des Benutzers innerhalb seiner Organisation (z. B. Vertrieb) als Anspruch gesendet werden soll, kann ein beliebiger von der Anwendung erwarteter Anspruchswert eingegeben und dann **user.department** als Wert ausgewählt werden.
 
 Wenn für einen bestimmten Benutzer kein Wert für ein ausgewähltes Attribut gespeichert ist, dann wird dieser Anspruch nicht in dem Token ausgestellt.
 
-**Hinweis**: Die Optionen **user.onpremisesecurityidentifier** und **user.onpremisesamaccountname** werden nur beim Synchronisieren von Benutzerdaten aus dem lokalen Active Directory mithilfe des Tools [Azure AD Connect](active-directory-aadconnect.md) unterstützt.
+**Hinweis**: Die Optionen **user.onpremisesecurityidentifier** und **user.onpremisesamaccountname** werden nur beim Synchronisieren von Benutzerdaten aus dem lokalen Active Directory mithilfe des Tools [Azure AD Connect](active-directory-aadconnect.md) unterstützt.
 
 ## Verwandte Artikel
 

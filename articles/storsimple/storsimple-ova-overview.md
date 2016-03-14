@@ -35,17 +35,17 @@ In der folgenden Tabelle sind die wichtigen Features des Virtual Array zusammeng
 | ------- | ------------- |
 |Installationsanforderungen | Verwendung der Virtualisierungsinfrastruktur (Hyper-V oder VMware)|
 | Availability | Einzelner Knoten |
-| Gesamtkapazität (einschließlich Cloud) |Bis zu 64 TB nutzbare Kapazität pro virtuellem Gerät |
-| Lokale Kapazität | 390 GB bis 6,4 TB nutzbare Kapazität pro virtuellem Gerät (Bereitstellung von Datenträger-Speicherplatz im Bereich 500 GB bis 8 TB erforderlich)|
+| Gesamtkapazität (einschließlich Cloud) |Bis zu 64 TB nutzbare Kapazität pro virtuellem Gerät |
+| Lokale Kapazität | 390 GB bis 6,4 TB nutzbare Kapazität pro virtuellem Gerät (Bereitstellung von Datenträger-Speicherplatz im Bereich 500 GB bis 8 TB erforderlich)|
 | Systemeigene Protokolle | iSCSI oder SMB |
-| Recovery Time Objective (RTO) | iSCSI: weniger als 2 Minuten, unabhängig von der Größe |
+| Recovery Time Objective (RTO) | iSCSI: weniger als 2 Minuten, unabhängig von der Größe |
 | Recovery Point Objective (RPO) | Tägliche Sicherungen und bedarfsgesteuerte Sicherungen |
 | Speicherstaffelung | Verwendung von Heat Maps zum Ermitteln, welche Daten einbezogen bzw. nicht einbezogen werden sollen |
 | Support | Vom Anbieter unterstützte Virtualisierungsinfrastruktur |
 | Leistung | Variiert je nach zugrunde liegender Infrastruktur |
 | Datenmobilität | Wiederherstellung auf demselben Gerät oder Wiederherstellung auf Elementebene (Dateiserver) |
 | Speicherebenen | Lokale Hypervisor-Speicherung und Cloud |
-| Freigabe- oder Volumegröße |Mehrstufig: bis zu 20 TB; Lokal: bis zu 2 TB |
+| Freigabe- oder Volumegröße |Mehrstufig: bis zu 20 TB; Lokal: bis zu 2 TB |
 | Momentaufnahmen | Absturzkonsistenz |
 | Wiederherstellung auf Elementebene | Ja, Benutzer können von Freigaben wiederherstellen |
 
@@ -102,7 +102,7 @@ Das Virtual Array umfasst die folgenden Komponenten:
 
 Das Virtual Array ist eine Speicherlösung mit einem Knoten, die Folgendes ermöglicht: primäre Speicherung, Verwaltung der Kommunikation mit dem Cloudspeicher und Gewährleistung der Sicherheit und Vertraulichkeit aller Daten, die auf dem Gerät gespeichert sind.
 
-Das Virtual Array ist als Modell verfügbar, das heruntergeladen werden kann. Das Storage Array hat eine maximale Kapazität von 6,4 TB auf dem Gerät (mit einer zugrunde liegenden Speicheranforderung von 8 TB) und – einschließlich des Cloudspeichers – von 64 TB.
+Das Virtual Array ist als Modell verfügbar, das heruntergeladen werden kann. Das Storage Array hat eine maximale Kapazität von 6,4 TB auf dem Gerät (mit einer zugrunde liegenden Speicheranforderung von 8 TB) und – einschließlich des Cloudspeichers – von 64 TB.
 
 Das Virtual Array bietet die folgenden Features:
 
@@ -114,7 +114,7 @@ Das Virtual Array bietet die folgenden Features:
 
 >[AZURE.NOTE] Ein Virtual Array kann nicht erweitert werden. Daher ist es wichtig, ausreichend Speicherplatz bereitzustellen, wenn Sie das virtuelle Gerät erstellen.
 
-### StorSimple Manager-Dienst
+### StorSimple Manager-Dienst
 
 Microsoft Azure StorSimple stellt eine webbasierte Benutzeroberfläche (den StorSimple-Manager-Dienst) zur Verfügung, die die zentrale Verwaltung des Datencenters und Cloudspeichers ermöglicht. Mithilfe des StorSimple-Manager-Diensts können Sie die folgenden Aufgaben ausführen:
 
@@ -128,7 +128,7 @@ Microsoft Azure StorSimple stellt eine webbasierte Benutzeroberfläche (den Stor
 
 Sie verwenden den StorSimple Manager-Dienst für die tägliche Verwaltung des Virtual Array.
 
-Weitere Informationen finden Sie unter [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
+Weitere Informationen finden Sie unter [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
 
 ### Lokale Webbenutzeroberfläche
 
@@ -153,7 +153,7 @@ Zusätzlich zum Virtual Array und anderen Komponenten nutzt die StorSimple-Lösu
 
 Für das Virtual Array wird ein neuer Staffelungsmechanismus zum Verwalten gespeicherter Daten im Virtual Array und in der Cloud verwendet. Es gibt nur zwei Ebenen: das lokale Virtual Array und den Azure-Cloudspeicher. Das StorSimple Virtual Array ordnet die Daten basierend auf einer Heat Map automatisch auf den Ebenen an. Mit der Heat Map werden die aktuelle Nutzung, das Alter und die Beziehungen mit anderen Daten nachverfolgt. Daten, die am aktivsten („hot“) sind, werden lokal gespeichert, während weniger aktive und inaktive Daten automatisch in die Cloud migriert werden. (Alle Sicherungen werden in der Cloud gespeichert.) StorSimple passt Daten- und Speicherzuordnungen an und ordnet diese neu, wenn sich die Verwendungsmuster ändern. Im Lauf der Zeit können einige Informationen z. B. weniger aktiv werden. Wenn der Aktivitätsgrad immer mehr absinkt, werden sie in die Cloud verlagert. Wenn diese Daten dann wieder aktiv werden, werden sie im Storage Array angeordnet.
 
-Für Daten einer bestimmten mehrstufigen Freigabe oder eines Volumes ist eigener Speicherplatz auf der lokalen Ebene garantiert (ca. 10 % des insgesamt bereitgestellten Speicherplatzes einer Freigabe bzw. eines Volumes). Hierdurch wird zwar der verfügbare Speicher auf dem virtuellen Gerät für die Freigabe oder das Volume reduziert, aber es wird auch sichergestellt, dass die Staffelung für eine Freigabe oder ein Volume nicht durch die Staffelungsanforderungen anderer Freigaben oder Volumes beeinträchtigt wird. Daher kann es nicht passieren, dass eine Workload mit hoher Auslastung auf einer Freigabe oder einem Volume alle anderen Workloads in die Cloud verdrängt.
+Für Daten einer bestimmten mehrstufigen Freigabe oder eines Volumes ist eigener Speicherplatz auf der lokalen Ebene garantiert (ca. 10 % des insgesamt bereitgestellten Speicherplatzes einer Freigabe bzw. eines Volumes). Hierdurch wird zwar der verfügbare Speicher auf dem virtuellen Gerät für die Freigabe oder das Volume reduziert, aber es wird auch sichergestellt, dass die Staffelung für eine Freigabe oder ein Volume nicht durch die Staffelungsanforderungen anderer Freigaben oder Volumes beeinträchtigt wird. Daher kann es nicht passieren, dass eine Workload mit hoher Auslastung auf einer Freigabe oder einem Volume alle anderen Workloads in die Cloud verdrängt.
 
 ![Automatische Speicherstaffelung](./media/storsimple-ova-overview/automatic-storage-tiering.png)
 
@@ -178,7 +178,7 @@ StorSimple arbeitet mit Deduplizierung und Datenkomprimierung, um die Speicheran
 
 ### Geplante und bedarfsgesteuerte Sicherungen
 
-Mit StorSimple-Features zum Schutz der Daten können Sie bedarfsgesteuerte Sicherungen erstellen. Außerdem wird mit einem standardmäßigen Sicherungszeitplan dafür gesorgt, dass die Daten täglich gesichert werden. Sicherungen werden in Form von inkrementellen Momentaufnahmen erstellt, die in der Cloud gespeichert werden. Momentaufnahmen, bei denen nur die Änderungen seit der letzten Sicherung aufgezeichnet werden, können schnell erstellt und wiederhergestellt werden. Diese Momentaufnahmen können bei Wiederherstellungen im Notfall extrem wichtig sein, da sie sekundäre Speichersysteme (z. B. Backup auf Bandlaufwerken) ersetzen und es Ihnen ermöglichen, Daten bei Bedarf in Ihrem Rechenzentrum oder an anderen Standorten wiederherzustellen.
+Mit StorSimple-Features zum Schutz der Daten können Sie bedarfsgesteuerte Sicherungen erstellen. Außerdem wird mit einem standardmäßigen Sicherungszeitplan dafür gesorgt, dass die Daten täglich gesichert werden. Sicherungen werden in Form von inkrementellen Momentaufnahmen erstellt, die in der Cloud gespeichert werden. Momentaufnahmen, bei denen nur die Änderungen seit der letzten Sicherung aufgezeichnet werden, können schnell erstellt und wiederhergestellt werden. Diese Momentaufnahmen können bei Wiederherstellungen im Notfall extrem wichtig sein, da sie sekundäre Speichersysteme (z. B. Backup auf Bandlaufwerken) ersetzen und es Ihnen ermöglichen, Daten bei Bedarf in Ihrem Rechenzentrum oder an anderen Standorten wiederherzustellen.
 
 ## Nächste Schritte
 

@@ -23,7 +23,7 @@ Dieser Artikel ist [Teil einer Serie]. Es gibt auch eine vollständige [Beispiel
 
 ## Übersicht
 
-In der Regel sind einige Anwendungseinstellungen vertraulich und müssen geschützt werden, wie z. B.:
+In der Regel sind einige Anwendungseinstellungen vertraulich und müssen geschützt werden, wie z. B.:
 
 - Datenbankverbindungszeichenfolgen
 - Kennwörter
@@ -182,7 +182,7 @@ Fügen Sie für Ihr Azure-Abonnement den Benutzer mit Administratorrechten als C
     ```
     .\Setup-KeyVault.ps1 -Subject <<subject>>
     ```
-    Geben Sie für den Parameter `Subject` einen Namen ein, z. B. „Surveysapp“. Das Skript generiert ein selbstsigniertes Zertifikat und speichert es im Zertifikatspeicher unter „Aktueller Benutzer/Eigene Zertifikate“.
+    Geben Sie für den Parameter `Subject` einen Namen ein, z. B. „Surveysapp“. Das Skript generiert ein selbstsigniertes Zertifikat und speichert es im Zertifikatspeicher unter „Aktueller Benutzer/Eigene Zertifikate“.
 
 2. Die Ausgabe des Skripts ist ein JSON-Fragment. Fügen Sie dieses wie folgt in das Anwendungsmanifest der Web-App ein:
 

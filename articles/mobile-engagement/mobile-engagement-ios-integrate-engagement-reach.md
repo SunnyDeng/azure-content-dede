@@ -237,7 +237,7 @@ Bei Verwendung der Standardkategorie werden für das `AEReachContent`-Objekt ein
 
 Wenn Ihre Implementierung von `AENotifier` das Standardverhalten umgeht, müssen Sie diese Lebenszyklusmethoden selbst aufrufen. Das folgende Beispiel zeigt einige Fälle, in denen das Standardverhalten umgangen wird:
 
--   Es erfolgt keine Erweiterung von `AEDefaultNotifier`, d. h. Sie haben die Kategorieverarbeitung von Grund auf implementiert.
+-   Es erfolgt keine Erweiterung von `AEDefaultNotifier`, d. h. Sie haben die Kategorieverarbeitung von Grund auf implementiert.
 -   Sie haben `prepareNotificationView:forContent:` außer Kraft gesetzt. Stellen Sie sicher, dass mindestens `onNotificationActioned` oder `onNotificationExited` einem Ihrer Benutzeroberflächen-Steuerelemente zugeordnet ist.
 
 > [AZURE.WARNING] Wenn `handleNotification:` eine Ausnahme generiert, wird der Inhalt gelöscht, und es erfolgt ein Aufruf von `drop`. Dies wird in der Statistik berichtet, und es können weitere Kampagnen verarbeitet werden.
@@ -253,7 +253,7 @@ Sie können unser Benachrichtigungslayout in Ihre vorhandenen Ansichten einfüge
 1.  Fügen Sie die Benachrichtigungsansicht mit dem Interface Builder hinzu.
 
 	-   Öffnen Sie den *Interface Builder*
-	-   Platzieren Sie ein `UIView`-Element der Größe 320 x 60 (oder 768 x 60 für das iPad) an der Stelle, an der die Benachrichtigung angezeigt werden soll.
+	-   Platzieren Sie ein `UIView`-Element der Größe 320 x 60 (oder 768 x 60 für das iPad) an der Stelle, an der die Benachrichtigung angezeigt werden soll.
 	-   Legen Sie den Tagwert für diese Ansicht auf diesen Wert fest: **36822491**
 
 2.  Fügen Sie die Benachrichtigungsansicht programmatisch hinzu. Fügen Sie einfach nach dem Initialisieren Ihrer Ansicht den folgenden Code ein:
@@ -316,7 +316,7 @@ Umfragen können auf die gleiche Weise angepasst werden:
 
 Dieses Mal muss der bereitgestellte `MyCustomPollViewController` zur Erweiterung von `AEPollViewController` verwendet werden. Alternativ können Sie eine Erweiterung über den Standardcontroller durchführen: `AEDefaultPollViewController`.
 
-> [AZURE.IMPORTANT] Vergessen Sie nicht, entweder `action` (`submitAnswers:` für benutzerdefinierte Ansichtencontroller für Umfragen) oder die Methode `exit` aufzurufen, bevor der Ansichtencontroller verworfen wird. Andernfalls werden keine Statistiken gesendet (z. B. Analysen der Kampagne) und – noch wichtiger – weitere Kampagnen erhalten erst eine Benachrichtigung, wenn der Anwendungsprozess neu gestartet wurde.
+> [AZURE.IMPORTANT] Vergessen Sie nicht, entweder `action` (`submitAnswers:` für benutzerdefinierte Ansichtencontroller für Umfragen) oder die Methode `exit` aufzurufen, bevor der Ansichtencontroller verworfen wird. Andernfalls werden keine Statistiken gesendet (z. B. Analysen der Kampagne) und – noch wichtiger – weitere Kampagnen erhalten erst eine Benachrichtigung, wenn der Anwendungsprozess neu gestartet wurde.
 
 ##### Beispiel für die Implementierung
 

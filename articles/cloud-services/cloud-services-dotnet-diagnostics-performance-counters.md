@@ -56,7 +56,16 @@ Unter Azure wird eine Teilmenge der Leistungsindikatoren bereitgestellt, die fü
 |ASP.NET v4.0.30319 |Zurückgewiesene Anforderungen |Leistungsindikatoren für ASP.NET|
 |Arbeitsspeicher |Verfügbare MB |Arbeitsspeicher-Leistungsindikatoren|
 |Arbeitsspeicher |Zugesicherte Bytes |Arbeitsspeicher-Leistungsindikatoren|
-|Prozessor(\_Gesamt) | Prozessorzeit (%) |Leistungsindikatoren für ASP.NET| |TCPv4 |Verbindungsfehler |TCP-Objekt| |TCPv4 |Hergestellte Verbindungen |TCP-Objekt| |TCPv4 |Zurückgesetzte Verbindungen |TCP-Objekt| |TCPv4 |Segmente gesendet/s |TCP-Objekt| |Netzwerkschnittstelle(*) |Empfangene Bytes/s |Netzwerkschnittstellenobjekt| |Netzwerkschnittstelle(*) |Bytes gesendet/s |Netzwerkschnittstellenobjekt| |Netzwerkschnittstelle(Netzwerkkarte für Microsoft Virtual Machine-Bus\_2)|Empfangene Bytes/s|Netzwerkschnittstellenobjekt| |Netzwerkschnittstelle(Netzwerkkarte für Microsoft Virtual Machine-Bus\_2)|Bytes gesendet/s|Netzwerkschnittstellenobjekt| |Netzwerkschnittstelle(Netzwerkkarte für Microsoft Virtual Machine-Bus\_2)|Bytes/s insgesamt|Netzwerkschnittstellenobjekt|
+|Prozessor(\_Gesamt) | Prozessorzeit (%) |Leistungsindikatoren für ASP.NET|
+|TCPv4 |Verbindungsfehler |TCP-Objekt|
+|TCPv4 |Hergestellte Verbindungen |TCP-Objekt|
+|TCPv4 |Zurückgesetzte Verbindungen |TCP-Objekt|
+|TCPv4 |Segmente gesendet/s |TCP-Objekt|
+|Netzwerkschnittstelle(*) |Empfangene Bytes/s |Netzwerkschnittstellenobjekt|
+|Netzwerkschnittstelle(*) |Bytes gesendet/s |Netzwerkschnittstellenobjekt|
+|Netzwerkschnittstelle(Netzwerkkarte für Microsoft Virtual Machine-Bus\_2)|Empfangene Bytes/s|Netzwerkschnittstellenobjekt|
+|Netzwerkschnittstelle(Netzwerkkarte für Microsoft Virtual Machine-Bus\_2)|Bytes gesendet/s|Netzwerkschnittstellenobjekt|
+|Netzwerkschnittstelle(Netzwerkkarte für Microsoft Virtual Machine-Bus\_2)|Bytes/s insgesamt|Netzwerkschnittstellenobjekt|
 
 ## Erstellen und Hinzufügen benutzerdefinierter Leistungsindikatoren zur Anwendung
 
@@ -82,9 +91,9 @@ Verwenden Sie das folgende Verfahren, um die Leistungsindikatoren in der Azure-A
 
 ## Voraussetzungen
 
-In diesem Abschnitt wird vorausgesetzt, dass Sie den Diagnosemonitor in Ihre Anwendung importiert und die Diagnosekonfigurationsdatei Ihrer Visual Studio-Projektmappe („diagnostics.wadcfg“ in SDK 2.4 und früher oder „diagnostics.wadcfgx“ in SDK 2.5 und höher) hinzugefügt haben. Weitere Informationen finden Sie in Schritt 1 und 2 unter [Aktivieren der Diagnose in Azure Cloud Services und Virtual Machines](./cloud-services-dotnet-diagnostics.md).
+In diesem Abschnitt wird vorausgesetzt, dass Sie den Diagnosemonitor in Ihre Anwendung importiert und die Diagnosekonfigurationsdatei Ihrer Visual Studio-Projektmappe („diagnostics.wadcfg“ in SDK 2.4 und früher oder „diagnostics.wadcfgx“ in SDK 2.5 und höher) hinzugefügt haben. Weitere Informationen finden Sie in Schritt 1 und 2 unter [Aktivieren der Diagnose in Azure Cloud Services und Virtual Machines](./cloud-services-dotnet-diagnostics.md).
 
-## Schritt 1: Sammeln und Speichern der Daten von Leistungsindikatoren
+## Schritt 1: Sammeln und Speichern der Daten von Leistungsindikatoren
 
 Nachdem Sie der Visual Studio-Projektmappe die Diagnosedatei hinzugefügt haben, können Sie die Sammlung und Speicherung von Leistungsindikatordaten in einer Azure-Anwendung konfigurieren. Dazu werden der Diagnosedatei Leistungsindikatoren hinzugefügt. Die Diagnosedaten einschließlich der Leistungsindikatoren werden zuerst in der Instanz gesammelt. Die Daten werden dann in der Tabelle WADPerformanceCountersTable im Azure-Tabellendienst gespeichert, sodass Sie in Ihrer Anwendung auch das Speicherkonto angeben müssen. Wenn Sie Ihre Anwendung im Serveremulator lokal testen, können Sie die Diagnosedaten auch lokal im Speicheremulator speichern. Bevor Sie die Diagnosedaten speichern, müssen Sie das [klassische Azure-Portal](http://manage.windowsazure.com/) aufrufen und ein Speicherkonto erstellen. Nach Möglichkeit sollten Sie Ihr Speicherkonto am selben geografischen Standort wie Ihre Azure-Anwendung platzieren, um Kosten für externe Bandbreite zu vermeiden und die Latenz zu verringern.
 
@@ -92,7 +101,7 @@ Nachdem Sie der Visual Studio-Projektmappe die Diagnosedatei hinzugefügt haben,
 
 Es gibt zahlreiche Leistungsindikatoren, die Sie verwenden können. Im folgenden Beispiel werden mehrere Leistungsindikatoren demonstriert, die für die Web- und Workerrollenüberwachung empfohlen werden.
 
-Öffnen Sie die Diagnosedatei („diagnostics.wadcfg“ in SDK 2.4 und früher oder „diagnostics.wadcfgx“ in SDK 2.5 und höher), und fügen Sie dem DiagnosticMonitorConfiguration-Element Folgendes hinzu:
+Öffnen Sie die Diagnosedatei („diagnostics.wadcfg“ in SDK 2.4 und früher oder „diagnostics.wadcfgx“ in SDK 2.5 und höher), und fügen Sie dem DiagnosticMonitorConfiguration-Element Folgendes hinzu:
 
 ```
     <PerformanceCounters bufferQuotaInMB="0" scheduledTransferPeriod="PT30M">
@@ -123,9 +132,9 @@ Es gibt zahlreiche Leistungsindikatoren, die Sie verwenden können. Im folgenden
 
 Das Attribut bufferQuotaInMB gibt die maximale Größe des Dateisystemspeichers an, der für den Datensammlungstyp (Azure-Protokolle, IIS-Protokolle usw.) zur Verfügung steht. Der Standardwert ist 0. Wenn das Kontingent erreicht ist, werden die ältesten Daten gelöscht, sobald neue Daten hinzugefügt werden. Die Summe aller bufferQuotaInMB-Eigenschaften müssen größer sein als der Wert des Attributs OverallQuotaInMB. Ausführlichere Informationen dazu, wie Sie feststellen, wie viel Speicher für die Sammlung von Diagnosedaten erforderlich ist, finden Sie im Abschnitt "Setup WAD" im Artikel [Troubleshooting Best Practices for Developing Azure Applications](https://msdn.microsoft.com/library/windowsazure/hh771389.aspx) (Bewährte Methoden zur Problembehandlung bei der Entwicklung von Azure-Anwendungen, in englischer Sprache).
 
-Das Attribut scheduledTransferPeriod gibt das auf die nächste Minute gerundete Intervall zwischen geplanten Datenübertragungen an. In den folgenden Beispielen ist es auf PT30M (30 Minuten) festgelegt. Wenn das Übertragungsintervall auf einen kleinen Wert wie z. B. 1 Minute festgelegt wird, hat dies in der Produktion negative Auswirkungen auf die Anwendungsleistung, kann jedoch beim Testen nützlich sein, um festzustellen, ob die Diagnose schnell arbeitet. Das geplante Übertragungsintervall muss so klein sein, dass Diagnosedaten in der Instanz nicht überschrieben werden, andererseits aber auch so groß, dass die Leistung der Anwendung nicht beeinträchtigt wird.
+Das Attribut scheduledTransferPeriod gibt das auf die nächste Minute gerundete Intervall zwischen geplanten Datenübertragungen an. In den folgenden Beispielen ist es auf PT30M (30 Minuten) festgelegt. Wenn das Übertragungsintervall auf einen kleinen Wert wie z. B. 1 Minute festgelegt wird, hat dies in der Produktion negative Auswirkungen auf die Anwendungsleistung, kann jedoch beim Testen nützlich sein, um festzustellen, ob die Diagnose schnell arbeitet. Das geplante Übertragungsintervall muss so klein sein, dass Diagnosedaten in der Instanz nicht überschrieben werden, andererseits aber auch so groß, dass die Leistung der Anwendung nicht beeinträchtigt wird.
 
-Das Attribut counterSpecifier gibt den zu erfassenden Leistungsindikator an. Das Attribut sampleRate gibt die Rate an, mit der der Leistungsindikator gemessen werden soll, in diesem Fall 30 Sekunden.
+Das Attribut counterSpecifier gibt den zu erfassenden Leistungsindikator an. Das Attribut sampleRate gibt die Rate an, mit der der Leistungsindikator gemessen werden soll, in diesem Fall 30 Sekunden.
 
 Nachdem Sie die zu erfassenden Leistungsindikatoren hinzugefügt haben, speichern Sie die Änderungen in der Diagnosedatei. Anschließend müssen Sie das Speicherkonto angeben, in dem die Diagnosedaten gespeichert werden.
 
@@ -133,9 +142,9 @@ Nachdem Sie die zu erfassenden Leistungsindikatoren hinzugefügt haben, speicher
 
 Um die Diagnoseinformationen in Ihrem Azure-Speicherkonto abzulegen, müssen Sie in der Dienstkonfigurationsdatei (ServiceConfiguration.cscfg) eine Verbindungszeichenfolge angeben.
 
-Für Azure SDK 2.5 kann das Speicherkonto in der Datei „diagnostics.wadcfgx“ angegeben werden.
+Für Azure SDK 2.5 kann das Speicherkonto in der Datei „diagnostics.wadcfgx“ angegeben werden.
 
->[AZURE.NOTE] Diese Anleitung gilt nur für Azure SDK 2.4 und früher. Für Azure SDK 2.5 kann das Speicherkonto in der Datei „diagnostics.wadcfgx“ angegeben werden.
+>[AZURE.NOTE] Diese Anleitung gilt nur für Azure SDK 2.4 und früher. Für Azure SDK 2.5 kann das Speicherkonto in der Datei „diagnostics.wadcfgx“ angegeben werden.
 
 So legen Sie die Verbindungszeichenfolgen fest:
 
@@ -158,7 +167,7 @@ So legen Sie die Verbindungszeichenfolgen fest:
 Nachdem die Verbindungszeichenfolgen festgelegt sind, speichert Ihre Anwendung Diagnosedaten in Ihrem Speicherkonto, wenn die Anwendung bereitgestellt wird.
 4. Speichern und Erstellen Sie das Projekt, und stellen Sie danach Ihre Anwendung bereit.
 
-## Schritt 2: (Optional) Erstellen benutzerdefinierter Leistungsindikatoren
+## Schritt 2: (Optional) Erstellen benutzerdefinierter Leistungsindikatoren
 
 Neben den vordefinierten Leistungsindikatoren können Sie Ihre eigenen benutzerdefinierten Leistungsindikator hinzufügen, um Web- oder Workerrollen zu überwachen. Mit benutzerdefinierten Leistungsindikatoren können Sie anwendungsspezifisches Verhalten verfolgen und überwachen. Diese Indikatoren können in einer Startaufgabe, einer Webrolle oder einer Workerrolle mit erhöhten Rechten erstellt oder gelöscht werden.
 
@@ -173,7 +182,7 @@ Führen Sie die folgenden Schritte aus, um einen einfachen benutzerdefinierten L
     <runtime executioncontext="elevated"/>
     ```
 3. Speichern Sie die Datei.
-4. Öffnen Sie die Diagnosedatei („diagnostics.wadcfg“ in SDK 2.4 und früher oder „diagnostics.wadcfgx“ in SDK 2.5 und höher), und fügen Sie dem DiagnosticMonitorConfiguration-Element Folgendes hinzu: 
+4. Öffnen Sie die Diagnosedatei („diagnostics.wadcfg“ in SDK 2.4 und früher oder „diagnostics.wadcfgx“ in SDK 2.5 und höher), und fügen Sie dem DiagnosticMonitorConfiguration-Element Folgendes hinzu: 
 
     ```
     <PerformanceCounters bufferQuotaInMB="0" scheduledTransferPeriod="PT30M">
@@ -230,7 +239,7 @@ Führen Sie die folgenden Schritte aus, um einen einfachen benutzerdefinierten L
 
 Benutzerdefinierte Leistungsindikatordaten werden vom Azure-Diagnosemonitor jetzt erfasst.
 
-## Schritt 3: Abfragen von Leistungsindikatordaten
+## Schritt 3: Abfragen von Leistungsindikatordaten
 
 Wenn Ihre Anwendung bereitgestellt ist und ausgeführt wird, beginnt der Diagnosemonitor mit dem Erfassen von Leistungsindikatoren und dem Speichern dieser Daten im Azure-Speicher. Mit Tools wie Server-Explorer in Visual Studio, [Azure-Speicher-Explorer](http://azurestorageexplorer.codeplex.com/) oder [Azure-Diagnose-Manager](http://www.cerebrata.com/Products/AzureDiagnosticsManager/Default.aspx) von Cerebrata zeigen Sie die Daten der Leistungsindikatoren in der Tabelle „WADPerformanceCountersTable“ an. Sie können den Tabellenspeicherdienst mit [C#](../storage/storage-dotnet-how-to-use-tables.d), [Java](../storage/storage-java-how-to-use-table-storage.md), [Node.js](../storage/storage-nodejs-how-to-use-table-storage.md), [Python](../storage/storage-python-how-to-use-table-storage.md), [Ruby](../storage/storage-ruby-how-to-use-table-storage.md) oder [PHP](../storage/storage-php-how-to-use-table-storage.md) auch programmgesteuert abfragen.
 

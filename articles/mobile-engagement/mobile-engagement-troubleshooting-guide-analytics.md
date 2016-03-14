@@ -32,10 +32,10 @@ Im Folgenden finden Sie mögliche Probleme, die in Bezug auf die Erfassung von I
 
 - Sie können mithilfe der APIs für Analyse, Überwachung und Segmentierung prüfen, ob fehlende Daten in der Benutzeroberfläche über die APIs sichtbar sind.
 - Wenn das Azure Mobile Engagement-SDK nicht ordnungsgemäß in Ihre App integriert ist, können in Analyse, Segmentierung, Überwachung oder Dashboards keine Informationen angezeigt werden.
-- Segmente können nach der Erstellung nicht geändert, sondern nur "geklont" (kopiert) oder "zerstört" (gelöscht) werden. Segmente können nur 10 Kriterien umfassen.
+- Segmente können nach der Erstellung nicht geändert, sondern nur "geklont" (kopiert) oder "zerstört" (gelöscht) werden. Segmente können nur 10 Kriterien umfassen.
 - Die beste Möglichkeit, auf fehlende Informationen in der Überwachung zu testen, besteht darin, ein Testgerät einzurichten und die App zu deinstallieren und/oder auf dem Testgerät neu zu installieren.
-- Informationen für Analyse, Segmentierung oder Dashboards werden alle 24 Stunden aktualisiert.
-- Informationen in neuen Segmenten werden möglicherweise erst 24 Stunden nach ihrer Erstellung angezeigt, selbst dann, wenn das Segment auf vorherigen Informationen basiert.
+- Informationen für Analyse, Segmentierung oder Dashboards werden alle 24 Stunden aktualisiert.
+- Informationen in neuen Segmenten werden möglicherweise erst 24 Stunden nach ihrer Erstellung angezeigt, selbst dann, wenn das Segment auf vorherigen Informationen basiert.
 - Beim Filtern Ihre Analysedaten auf der Benutzeroberfläche werden alle Beispiele dieses Typs unabhängig von der Version Ihrer App angezeigt ( "Abstürzt" nach Name gefiltert zeigt beispielsweise Daten aus Version 1 und Version 2 der App an).
 - Der Analysezeitraum basiert auf dem Datum in den Benutzergeräteeinstellungen. Wenn ein Benutzer also das Datum für sein Gerät falsch eingestellt hat, könnte dieses im falschen Zeitraum angezeigt werden.
 - Es werden keine serverseitigen Daten protokolliert, wenn Sie die Schaltfläche zum Testen von Pushvorgängen verwenden. Daten werden nur für reale Pushkampagnen protokolliert.

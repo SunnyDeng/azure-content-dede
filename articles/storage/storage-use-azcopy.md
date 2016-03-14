@@ -125,13 +125,13 @@ Wenn der angegebene Zielcontainer nicht vorhanden ist, wird er von AzCopy erstel
 
 	AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.windows.net/mycontainer/vd /DestKey:key /Pattern:abc.txt
 
-Wenn das angegebene virtuelle Verzeichnis nicht vorhanden ist, lädt AzCopy die Datei so hoch, dass das virtuelle Verzeichnis Teil des Dateinamens wird (*z. B.*, `vd/abc.txt` im obigen Beispiel).
+Wenn das angegebene virtuelle Verzeichnis nicht vorhanden ist, lädt AzCopy die Datei so hoch, dass das virtuelle Verzeichnis Teil des Dateinamens wird (*z. B.*, `vd/abc.txt` im obigen Beispiel).
 
 ### Hochladen aller Dateien
 
 	AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.windows.net/mycontainer /DestKey:key /S
 
-Wenn Sie die Option `/S` angeben, werden die Inhalte des angegebenen Verzeichnisses rekursiv in den Blobspeicher hochgeladen. Das bedeutet, dass alle Unterordner und die darin enthaltenen Dateien ebenfalls hochgeladen werden. Nehmen Sie z. B. an, die folgenden Dateien befinden sich im Ordner `C:\myfolder`:
+Wenn Sie die Option `/S` angeben, werden die Inhalte des angegebenen Verzeichnisses rekursiv in den Blobspeicher hochgeladen. Das bedeutet, dass alle Unterordner und die darin enthaltenen Dateien ebenfalls hochgeladen werden. Nehmen Sie z. B. an, die folgenden Dateien befinden sich im Ordner `C:\myfolder`:
 
 	C:\myfolder\abc.txt
 	C:\myfolder\abc1.txt
@@ -157,7 +157,7 @@ Wenn Sie die Option `/S` nicht angeben, lädt AzCopy nicht rekursiv hoch. Nach d
 
 	AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.windows.net/mycontainer /DestKey:key /Pattern:a* /S
 
-Nehmen Sie z. B. an, die folgenden Dateien befinden sich im Ordner `C:\myfolder`:
+Nehmen Sie z. B. an, die folgenden Dateien befinden sich im Ordner `C:\myfolder`:
 
 	C:\myfolder\abc.txt
 	C:\myfolder\abc1.txt
@@ -182,7 +182,7 @@ Wenn Sie die Option `/S` nicht angeben, lädt AzCopy nur die Blobs hoch, die sic
 
 ### Angeben des MIME-Inhaltstyps für Ziel-Blobs
 
-AzCopy legt den Inhaltstyp eines Zielblobs standardmäßig als `application/octet-stream` fest. Ab Version 3.1.0 können Sie den Inhaltstyp mit der Option `/SetContentType:[content-type]` explizit angeben. Mit dieser Syntax wird der Inhaltstyp für alle Blobs in einem Hochladevorgang festgelegt.
+AzCopy legt den Inhaltstyp eines Zielblobs standardmäßig als `application/octet-stream` fest. Ab Version 3.1.0 können Sie den Inhaltstyp mit der Option `/SetContentType:[content-type]` explizit angeben. Mit dieser Syntax wird der Inhaltstyp für alle Blobs in einem Hochladevorgang festgelegt.
 
 	AzCopy /Source:C:\myfolder\ /Dest:https://myaccount.blob.core.windows.net/myContainer/ /DestKey:key /Pattern:ab /SetContentType:video/mp4
 
@@ -236,7 +236,7 @@ Anders als beim asynchronen Kopieren kann es bei der Verwendung von `/SyncCopy` 
 
 	AzCopy /Source:https://myaccount.file.core.windows.net/myfileshare/myfolder1/ /Dest:C:\myfolder /SourceKey:key /Pattern:abc.txt
 
-Wenn es sich bei der angegebenen Quelle um eine Azure-Dateifreigabe handelt, müssen Sie entweder den genauen Dateinamen angeben (*z. B.* `abc.txt`), um eine einzelne Datei herunterzuladen, oder die Option `/S`, um alle Dateien in der Freigabe rekursiv herunterzuladen. Wenn Sie sowohl ein Dateimuster als auch die Option `/S` angeben, führt dies zu einem Fehler.
+Wenn es sich bei der angegebenen Quelle um eine Azure-Dateifreigabe handelt, müssen Sie entweder den genauen Dateinamen angeben (*z. B.* `abc.txt`), um eine einzelne Datei herunterzuladen, oder die Option `/S`, um alle Dateien in der Freigabe rekursiv herunterzuladen. Wenn Sie sowohl ein Dateimuster als auch die Option `/S` angeben, führt dies zu einem Fehler.
 
 ### Herunterladen aller Dateien
 
@@ -313,7 +313,7 @@ Angenommen, AzCopy generiert zwei Datendateien, nachdem der Benutzer die Option 
 	myaccount_mytable_20140903T051850.8128447Z_0_0_C3040FE8.json
 	myaccount_mytable_20140903T051850.8128447Z_0_1_0AB9AC20.json
 
-Beachten Sie, dass der zulässige Mindestwert für die Option `/SplitSize` 32 MB lautet. Wenn es sich beim angegebenen Ziel um einen Blobspeicher handelt, teilt AzCopy die Datendatei auf, sobald die Größe die Blobgrößenbegrenzung (200 GB) erreicht, und zwar unabhängig davon, ob die Option `/SplitSize` durch den Benutzer angegeben wurde.
+Beachten Sie, dass der zulässige Mindestwert für die Option `/SplitSize` 32 MB lautet. Wenn es sich beim angegebenen Ziel um einen Blobspeicher handelt, teilt AzCopy die Datendatei auf, sobald die Größe die Blobgrößenbegrenzung (200 GB) erreicht, und zwar unabhängig davon, ob die Option `/SplitSize` durch den Benutzer angegeben wurde.
 
 ### Exportieren einer Tabelle im JSON- oder CSV-Datendateiformat
 
@@ -473,7 +473,7 @@ Ansonsten können Sie eine Protokolldatei an einem benutzerdefinierten Speichero
 
 	AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.windows.net/mycontainer /DestKey:key /V:C:\myfolder\azcopy1.log
 
-Wenn Sie nach der Option `/V` einen relativen Pfad angeben, z. B. `/V:test/azcopy1.log`, dann wird das ausführliche Protokoll im aktuellen Arbeitsverzeichnis in einem Unterordner namens `test` erstellt.
+Wenn Sie nach der Option `/V` einen relativen Pfad angeben, z. B. `/V:test/azcopy1.log`, dann wird das ausführliche Protokoll im aktuellen Arbeitsverzeichnis in einem Unterordner namens `test` erstellt.
 
 ### Angeben der Anzahl der zu startenden gleichzeitigen Vorgängen
 
@@ -517,7 +517,7 @@ Wenn es sich bei der angegebenen Quelle um ein Verzeichnis im Dateisystem handel
 
 Wenn die angegebene Quelle ein BLOB-Container oder ein virtuelles Verzeichnis ist, werden keine Platzhalter angewendet. Wenn die Option „/S“ angegeben ist, interpretiert AzCopy die angegebenen Dateimuster als Blobpräfix. Wenn die Option „/S“ nicht angegeben ist, vergleicht AzCopy die angegebenen Dateimuster mit den genauen Blobnamen.
 
-Wenn es sich bei der angegebenen Quelle um eine Azure-Dateifreigabe handelt, müssen Sie entweder den genauen Dateinamen (z. B. „abc.txt“) angeben, um eine einzelne Datei zu kopieren, oder die Option „/S“ angeben, um alle Dateien in der Freigabe rekursiv zu kopieren. Wenn Sie sowohl ein Dateimuster als auch die Option „/S“ angeben, führt dies zu einem Fehler.
+Wenn es sich bei der angegebenen Quelle um eine Azure-Dateifreigabe handelt, müssen Sie entweder den genauen Dateinamen (z. B. „abc.txt“) angeben, um eine einzelne Datei zu kopieren, oder die Option „/S“ angeben, um alle Dateien in der Freigabe rekursiv zu kopieren. Wenn Sie sowohl ein Dateimuster als auch die Option „/S“ angeben, führt dies zu einem Fehler.
 
 AzCopy beachtet für das Abgleichen die Groß-/Kleinschreibung, wenn die Quelle (/Source) ein BLOB-Container oder ein virtuelles BLOB-Verzeichnis ist. In allen anderen Fällen wird die Groß-/Kleinschreibung nicht beachtet.
 
@@ -675,16 +675,16 @@ Lädt ausschließlich Dateien hoch, für die eines der angegebenen Attribute fes
 
 Zu den verfügbaren Attributen zählen:
 
-- R = Schreibgeschützte Dateien
-- A = Dateien, die bereit sind für die Archivierung
-- S = Systemdateien
-- H = Versteckte Dateien
-- C = Komprimierte Dateien
-- N = Normale Dateien
-- E = Verschlüsselte Dateien
-- T = Temporäre Dateien
-- O = Offlinedateien
-- I = Nicht indizierte Dateien
+- R = Schreibgeschützte Dateien
+- A = Dateien, die bereit sind für die Archivierung
+- S = Systemdateien
+- H = Versteckte Dateien
+- C = Komprimierte Dateien
+- N = Normale Dateien
+- E = Verschlüsselte Dateien
+- T = Temporäre Dateien
+- O = Offlinedateien
+- I = Nicht indizierte Dateien
 
 **Gilt für:** Blobs, Dateien
 
@@ -694,16 +694,16 @@ Schließt Dateien aus, für die eines der angegebenen Attribute festgelegt ist.
 
 Zu den verfügbaren Attributen zählen:
 
-- R = Schreibgeschützte Dateien
-- A = Dateien, die bereit sind für die Archivierung
-- S = Systemdateien
-- H = Versteckte Dateien
-- C = Komprimierte Dateien
-- N = Normale Dateien
-- E = Verschlüsselte Dateien
-- T = Temporäre Dateien
-- O = Offlinedateien
-- I = Nicht indizierte Dateien
+- R = Schreibgeschützte Dateien
+- A = Dateien, die bereit sind für die Archivierung
+- S = Systemdateien
+- H = Versteckte Dateien
+- C = Komprimierte Dateien
+- N = Normale Dateien
+- E = Verschlüsselte Dateien
+- T = Temporäre Dateien
+- O = Offlinedateien
+- I = Nicht indizierte Dateien
 
 **Gilt für:** Blobs, Dateien
 
@@ -711,7 +711,7 @@ Zu den verfügbaren Attributen zählen:
 
 Zeigt das Trennzeichen an, mit dem virtuelle Verzeichnisse in einem BLOB-Namen getrennt werden.
 
-AzCopy verwendet „/“ standardmäßig als Trennzeichen. AzCopy unterstützt jedoch die Verwendung beliebiger allgemeiner Zeichen (z. B. @, # oder %) als Trennzeichen. Wenn Sie eines dieser Sonderzeichen auf der Befehlszeile einbeziehen müssen, schließen Sie den Dateinamen in doppelte Anführungszeichen ein.
+AzCopy verwendet „/“ standardmäßig als Trennzeichen. AzCopy unterstützt jedoch die Verwendung beliebiger allgemeiner Zeichen (z. B. @, # oder %) als Trennzeichen. Wenn Sie eines dieser Sonderzeichen auf der Befehlszeile einbeziehen müssen, schließen Sie den Dateinamen in doppelte Anführungszeichen ein.
 
 Diese Option kann nur zum Herunterladen von BLOBs angewendet werden.
 
@@ -819,7 +819,7 @@ Ist diese Option nicht angegeben, exportiert AzCopy eine Tabellendatendatei stan
 
 ### Einschränken gleichzeitiger Schreibvorgänge beim Kopieren von Daten
 
-Wenn Sie BLOBs oder Dateien mit AzCopy kopieren, denken Sie daran, dass eine andere Anwendung die Daten möglicherweise modifiziert, während Sie diese kopieren. Stellen Sie nach Möglichkeit sicher, dass die von Ihnen kopierten Daten während des Kopiervorgangs nicht verändert werden. Wenn Sie z. B. eine virtuelle Festplatte (Virtual Hard Disk, VHD) mit einem virtuellen Azure-Computer kopieren, stellen Sie sicher, dass derzeit keine anderen Anwendungen auf diese virtuelle Festplatte schreiben. Eine gute Möglichkeit hierfür bietet das Leasen der Ressource, die kopiert werden soll. Alternativ können Sie zunächst eine Momentaufnahme der virtuellen Festplatte (VHD) erstellen und anschließend die Momentaufnahme kopieren.
+Wenn Sie BLOBs oder Dateien mit AzCopy kopieren, denken Sie daran, dass eine andere Anwendung die Daten möglicherweise modifiziert, während Sie diese kopieren. Stellen Sie nach Möglichkeit sicher, dass die von Ihnen kopierten Daten während des Kopiervorgangs nicht verändert werden. Wenn Sie z. B. eine virtuelle Festplatte (Virtual Hard Disk, VHD) mit einem virtuellen Azure-Computer kopieren, stellen Sie sicher, dass derzeit keine anderen Anwendungen auf diese virtuelle Festplatte schreiben. Eine gute Möglichkeit hierfür bietet das Leasen der Ressource, die kopiert werden soll. Alternativ können Sie zunächst eine Momentaufnahme der virtuellen Festplatte (VHD) erstellen und anschließend die Momentaufnahme kopieren.
 
 Wenn Sie andere Anwendungen nicht daran hindern können, während des Kopiervorgangs in BLOBs oder Dateien zu schreiben, beachten Sie, dass die kopierten Ressourcen bei der Beendigung des Auftrags möglicherweise nicht mehr vollständig mit den Quellressourcen übereinstimmen.
 
@@ -857,7 +857,7 @@ Weitere Informationen zu Azure Storage und zu AzCopy finden Sie in den folgenden
 ### Azure Storage-Blogbeiträge:
 - [Einführung in die Vorschau der Microsoft Azure Storage Data Movement-Bibliothek](https://azure.microsoft.com/blog/introducing-azure-storage-data-movement-library-preview-2/)
 - [AzCopy: Einführung in das synchrone Kopieren und benutzerdefinierte Inhaltstypen](http://blogs.msdn.com/b/windowsazurestorage/archive/2015/01/13/azcopy-introducing-synchronous-copy-and-customized-content-type.aspx)
-- [AzCopy: Ab sofort allgemein verfügbar: AzCopy 3.0 sowie die Vorschau auf AzCopy 4.0 mit Tabellen- und Dateiunterstützung](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/10/29/azcopy-announcing-general-availability-of-azcopy-3-0-plus-preview-release-of-azcopy-4-0-with-table-and-file-support.aspx)
+- [AzCopy: Ab sofort allgemein verfügbar: AzCopy 3.0 sowie die Vorschau auf AzCopy 4.0 mit Tabellen- und Dateiunterstützung](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/10/29/azcopy-announcing-general-availability-of-azcopy-3-0-plus-preview-release-of-azcopy-4-0-with-table-and-file-support.aspx)
 - [AzCopy: Optimiert für große Kopierszenarien](http://go.microsoft.com/fwlink/?LinkId=507682)
 - [AzCopy: Unterstützung des Lesezugriffs auf georedundanten Speicher](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/04/07/azcopy-support-for-read-access-geo-redundant-account.aspx)
 - [AzCopy: Übertragen von Daten mit neu startbarem Modus und SAS-Token](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/09/07/azcopy-transfer-data-with-re-startable-mode-and-sas-token.aspx)

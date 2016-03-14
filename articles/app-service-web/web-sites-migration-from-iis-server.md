@@ -21,21 +21,21 @@
 
 Sie können Ihre vorhandene Websites, die auf Internet Information Service (IIS) 6 oder höher ausgeführt werden, problemlos zu [App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714) migrieren.
 
->[AZURE.IMPORTANT] Der Support für Windows Server 2003 läuft am 14. Juli 2015 aus. Wenn Sie derzeit Websites auf einem IIS-Server unter Windows Server 2003 hosten, bietet Web-Apps eine risikoarme, kostengünstige und wenig aufwendige Möglichkeit, Ihre Websites online zu halten. Der Migrations-Assistent für Web-Apps kann Sie bei der Automatisierung des Migrationsprozesses unterstützen.
+>[AZURE.IMPORTANT] Der Support für Windows Server 2003 läuft am 14. Juli 2015 aus. Wenn Sie derzeit Websites auf einem IIS-Server unter Windows Server 2003 hosten, bietet Web-Apps eine risikoarme, kostengünstige und wenig aufwendige Möglichkeit, Ihre Websites online zu halten. Der Migrations-Assistent für Web-Apps kann Sie bei der Automatisierung des Migrationsprozesses unterstützen.
 
 Der [Migrations-Assistent für Web-Apps](https://www.movemetothecloud.net/) kann die IIS-Server-Installation analysieren, identifizieren, welche Websites zu App Service migriert werden, alle Elemente markieren, die nicht migriert werden können oder auf der Plattform nicht unterstützt werden, und dann die Websites und zugeordneten Datenbanken nach Azure migrieren.
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 ## Während der Kompatibilitätsanalyse überprüfte Elemente ##
-Der Migrations-Assistent erstellt einen Bereitschaftsbericht, um alle möglichen Probleme oder Hindernisse zu identifizieren, die eine erfolgreiche Migration von lokalen IIS zu Azure App Service-Web-Apps verhindern könnten. Einige der wichtigsten zu berücksichtigenden Elemente sind u. a.:
+Der Migrations-Assistent erstellt einen Bereitschaftsbericht, um alle möglichen Probleme oder Hindernisse zu identifizieren, die eine erfolgreiche Migration von lokalen IIS zu Azure App Service-Web-Apps verhindern könnten. Einige der wichtigsten zu berücksichtigenden Elemente sind u. a.:
 
 -	Portbindungen – Web-Apps unterstützt nur Port 80 für HTTP- und Port 443 für HTTPS-Datenverkehr. Andere Portkonfigurationen werden ignoriert, und der Datenverkehr wird an 80 oder 443 weitergeleitet. 
 -	Authentifizierung – Web-Apps unterstützt standardmäßig die anonyme Authentifizierung und Formularauthentifizierung, sofern von einer Anwendung angegeben. Windows-Authentifizierung kann nur durch die Integration in Azure Active Directory und ADFS verwendet werden. Aller anderen Formen der Authentifizierung – z. B. Standardauthentifizierung – werden derzeit nicht unterstützt. 
--	Globaler Assemblycache (GAC) – Der GAC wird in Web-Apps nicht unterstützt. Wenn Ihre Anwendung Assemblys referenziert, die Sie in der Regel im globalen Assemblycache bereitstellen, müssen Sie in den Ordner "Bin" der Anwendung in Web-Apps bereitstellen. 
--	IIS5-Kompatibilitätsmodus – Wird in Web-Apps nicht unterstützt. 
--	Anwendungspools – In Web-Apps werden alle Websites und deren untergeordnete Anwendungen in demselben Anwendungspool ausgeführt. Wenn Ihre Website mehrere untergeordnete Anwendungen hat, die mehrere Anwendungspools verwenden, konsolidieren Sie diese in einem einzigen Anwendungspool mit gemeinsamen Einstellungen, oder migrieren Sie jede Anwendung in eine getrennte Web-App.
--	COM-Komponenten – Web-Apps erlauben keine Registrierung von COM-Komponenten auf der Plattform. Wenn Ihre Websites oder Anwendungen COM-Komponenten verwenden, müssen Sie sie in verwaltetem Code umschreiben und mit der Website oder Anwendung bereitstellen.
+-	Globaler Assemblycache (GAC) – Der GAC wird in Web-Apps nicht unterstützt. Wenn Ihre Anwendung Assemblys referenziert, die Sie in der Regel im globalen Assemblycache bereitstellen, müssen Sie in den Ordner "Bin" der Anwendung in Web-Apps bereitstellen. 
+-	IIS5-Kompatibilitätsmodus – Wird in Web-Apps nicht unterstützt. 
+-	Anwendungspools – In Web-Apps werden alle Websites und deren untergeordnete Anwendungen in demselben Anwendungspool ausgeführt. Wenn Ihre Website mehrere untergeordnete Anwendungen hat, die mehrere Anwendungspools verwenden, konsolidieren Sie diese in einem einzigen Anwendungspool mit gemeinsamen Einstellungen, oder migrieren Sie jede Anwendung in eine getrennte Web-App.
+-	COM-Komponenten – Web-Apps erlauben keine Registrierung von COM-Komponenten auf der Plattform. Wenn Ihre Websites oder Anwendungen COM-Komponenten verwenden, müssen Sie sie in verwaltetem Code umschreiben und mit der Website oder Anwendung bereitstellen.
 -	ISAPI Filter – Web-Apps unterstützt die Verwendung von ISAPI-Filtern. Sie müssen die folgenden Schritte ausführen:
 	-	Stellen Sie die DLLs für Ihre Web-App bereit. 
 	-	Registrieren Sie die DLLs mit [Web.config](http://www.iis.net/configreference/system.webserver/isapifilters)
@@ -125,7 +125,7 @@ In diesem Abschnitt werden Sie schrittweise durch ein Beispiel zum Migrieren ein
 
 21. Sie können jetzt die migrierten Web-Apps in Azure App Service verwalten. Melden Sie sich dazu beim[Azure-Portal](https://portal.azure.com) an.
 
-22. Öffnen Sie das Blatt von Web-Apps im Azure-Portal, um Ihre migrierten Websites (dargestellt als Web-Apps) anzuzeigen. Klicken Sie dann auf eine, um sie zu verwalten. Sie können z. B. die kontinuierliche Veröffentlichung, das Erstellen von Sicherungen, die automatische Skalierung und die Überwachung von Nutzung oder Leistung konfigurieren.
+22. Öffnen Sie das Blatt von Web-Apps im Azure-Portal, um Ihre migrierten Websites (dargestellt als Web-Apps) anzuzeigen. Klicken Sie dann auf eine, um sie zu verwalten. Sie können z. B. die kontinuierliche Veröffentlichung, das Erstellen von Sicherungen, die automatische Skalierung und die Überwachung von Nutzung oder Leistung konfigurieren.
 
 	![](./media/web-sites-migration-from-iis-server/TimeTrackerMigrated.png)
 

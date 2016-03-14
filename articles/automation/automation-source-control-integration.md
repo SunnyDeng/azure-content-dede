@@ -26,12 +26,12 @@ Mit der Quellcodeverwaltung können Sie Code aus Azure Automation in die Quellco
 
 
 Sie müssen nur zwei Schritte ausführen, um die Quellcodeverwaltung für Ihr Automation-Konto zu konfigurieren. Wenn Sie ein GitHub-Konto besitzen, ist nur ein Schritt erforderlich. Sie lauten wie folgt:
-## Schritt 1: Erstellen eines GitHub-Repositorys
+## Schritt 1: Erstellen eines GitHub-Repositorys
 
-Wenn Sie bereits ein GitHub-Konto und ein Repository besitzen, das Sie mit Azure Automation verknüpfen möchten, dann melden Sie sich bei Ihrem vorhandenen Konto an, und beginnen Sie mit Schritt 2. Navigieren Sie andernfalls zu [GitHub](https://github.com/), registrieren Sie sich für ein neues Konto, und [erstellen Sie ein neues Repository](https://help.github.com/articles/create-a-repo/).
+Wenn Sie bereits ein GitHub-Konto und ein Repository besitzen, das Sie mit Azure Automation verknüpfen möchten, dann melden Sie sich bei Ihrem vorhandenen Konto an, und beginnen Sie mit Schritt 2. Navigieren Sie andernfalls zu [GitHub](https://github.com/), registrieren Sie sich für ein neues Konto, und [erstellen Sie ein neues Repository](https://help.github.com/articles/create-a-repo/).
 
 
-## Schritt 2: Einrichten der Quellcodeverwaltung in Azure Automation
+## Schritt 2: Einrichten der Quellcodeverwaltung in Azure Automation
 
 1. Klicken Sie im Azure-Portal auf dem Blatt „Automation-Konto“ auf **Quellcodeverwaltung einrichten**. 
  
@@ -72,7 +72,7 @@ Wenn Sie bereits ein GitHub-Konto und ein Repository besitzen, das Sie mit Azure
     |:---|:---|
     | Name | Microsoft.Azure.Automation.SourceControl.Connection |
     | Typ | String |
-    | Wert | {„Verzweigung“:<*Name Ihrer Verzweigung*>, „Runbook-Ordnertyp“:<*Runbook-Ordnerpfad*>, „Anbietertyp“:<*hat einen Wert 1 für GitHub*>, „Verzeichnis“:<*Name Ihres Repositorys*>, „Benutzername“<*Ihr GitHub-Benutzername*>} | <br>
+    | Wert | {„Verzweigung“:<*Name Ihrer Verzweigung*>, „Runbook-Ordnertyp“:<*Runbook-Ordnerpfad*>, „Anbietertyp“:<*hat einen Wert 1 für GitHub*>, „Verzeichnis“:<*Name Ihres Repositorys*>, „Benutzername“<*Ihr GitHub-Benutzername*>} | <br>
 
 
     * Die Variable **Microsoft.Azure.Automation.SourceControl.OauthToken** enthält den sicher verschlüsselten Wert Ihres OAuth-Tokens.  

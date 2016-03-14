@@ -38,9 +38,9 @@ Um die aktuellen Konfigurationseinstellungen anzuzeigen, wechseln Sie zu PowerSh
 
 ![GetSyncScheduler](./media/active-directory-aadconnectsync-feature-scheduler/getsynccyclesettings.png)
 
-- **AllowedSyncCycleInterval**. Die höchste von Azure AD zugelassene Synchronisierungshäufigkeit. Eine höhere Synchronisierungsfrequenz als hier angegeben wird nicht unterstützt.
+- **AllowedSyncCycleInterval**. Die höchste von Azure AD zugelassene Synchronisierungshäufigkeit. Eine höhere Synchronisierungsfrequenz als hier angegeben wird nicht unterstützt.
 - **CurrentlyEffectiveSyncCycleInterval**. Der momentan verwendete Zeitplan. Er besitzt den gleichen Wert wie CustomizedSyncInterval (falls festgelegt), falls er keine höhere Häufigkeit als AllowedSyncInterval aufweist. Wenn Sie CustomizedSyncCycleInterval ändern, tritt diese Änderung nach dem nächsten Synchronisierungszyklus in Kraft.
-- **CustomizedSyncCycleInterval**. Wenn der Scheduler mit einer beliebigen anderen Häufigkeit als der Standardfrequenz von 30 Minuten ausgeführt werden soll, konfigurieren Sie diese Einstellung. In der oben gezeigten Abbildung wurde der Scheduler stattdessen auf einmal pro Stunde festgelegt. Wenn Sie diese Einstellung auf einen niedrigeren Wert als AllowedSyncInterval festlegen, wird stattdessen AllowedSyncInterval verwendet.
+- **CustomizedSyncCycleInterval**. Wenn der Scheduler mit einer beliebigen anderen Häufigkeit als der Standardfrequenz von 30 Minuten ausgeführt werden soll, konfigurieren Sie diese Einstellung. In der oben gezeigten Abbildung wurde der Scheduler stattdessen auf einmal pro Stunde festgelegt. Wenn Sie diese Einstellung auf einen niedrigeren Wert als AllowedSyncInterval festlegen, wird stattdessen AllowedSyncInterval verwendet.
 - **NextSyncCyclePolicyType**. Entweder „Delta“ oder „Initial“. Legt fest, ob bei der nächsten Ausführung nur Deltaänderungen verarbeitet werden sollen oder ob bei der nächsten Ausführung ein vollständiger Import mit Synchronisierung stattfinden soll. Dabei werden auch neue oder geänderte Regeln erneut verarbeitet.
 - **NextSyncCycleStartTimeInUTC**. Der nächste Zeitpunkt, zu dem der Scheduler den nächsten Synchronisierungszyklus startet.
 - **PurgeRunHistoryInterval**. Der Zeitraum, für den die Vorgangsprotokolle aufbewahrt werden sollen. Diese können im Synchronization Service Manager überprüft werden. Standardmäßig werden sie sieben Tage lang gespeichert.
@@ -50,7 +50,7 @@ Um die aktuellen Konfigurationseinstellungen anzuzeigen, wechseln Sie zu PowerSh
 
 All diese Eigenschaften können über `Set-ADSyncScheduler` geändert werden: Der Parameter IsStagingModeEnabled kann nur mit dem Installations-Assistenten festgelegt werden.
 
-Die Konfiguration des Schedulers wird in Azure AD gespeichert. Wenn Sie über einen Stagingserver verfügen, wirken sich alle Änderungen am primären Server auch auf den Stagingserver aus (mit Ausnahme von „IsStagingModeEnabled“).
+Die Konfiguration des Schedulers wird in Azure AD gespeichert. Wenn Sie über einen Stagingserver verfügen, wirken sich alle Änderungen am primären Server auch auf den Stagingserver aus (mit Ausnahme von „IsStagingModeEnabled“).
 
 ## Starten des Schedulers
 Der Scheduler wird standardmäßig alle 30 Minuten ausgeführt. In einigen Fällen möchten Sie vielleicht einen Synchronisierungszyklus zwischen den geplanten Zyklen ausführen, oder Sie müssen einen anderen Typ ausführen.

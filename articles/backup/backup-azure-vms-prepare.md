@@ -33,8 +33,8 @@ Wenn Sie wissen, dass diese Bedingungen in Ihrer Umgebung bereits erfüllt sind,
 
 >[AZURE.NOTE] Azure verfügt über zwei Bereitstellungsmodelle für das Erstellen und Verwenden von Ressourcen: [Resource Manager-Bereitstellungen und klassische Bereitstellungen](../resource-manager-deployment-model.md). Die folgende Liste enthält die Einschränkungen bei der Bereitstellung über das klassische Modell.
 
-- Das Sichern virtueller Computer, die auf dem Azure Resource Manager (ARM) basieren (d. h. IaaS V2), wird nicht unterstützt.
-- Die Sicherung von virtuellen Computern mit mehr als 16 Datenträgern wird nicht unterstützt.
+- Das Sichern virtueller Computer, die auf dem Azure Resource Manager (ARM) basieren (d. h. IaaS V2), wird nicht unterstützt.
+- Die Sicherung von virtuellen Computern mit mehr als 16 Datenträgern wird nicht unterstützt.
 - Die Sicherung von virtuellen Computern mithilfe von Storage Premium wird nicht unterstützt.
 - Die Sicherung von virtuellen Computern mit einer reservierten IP-Adresse und ohne definierten Endpunkt wird nicht unterstützt.
 - Das Ersetzen eines vorhandenen virtuellen Computers während der Wiederherstellung wird nicht unterstützt. Löschen Sie zuerst den vorhandenen virtuellen Computer und alle zugeordneten Datenträger, und stellen Sie dann die Daten aus der Sicherung wieder her.
@@ -67,7 +67,7 @@ So erstellen Sie einen Sicherungstresor
 
     ![Erstellen des Sicherungstresors](./media/backup-azure-vms-prepare/backup_vaultcreate.png)
 
-3. Geben Sie unter **Name** einen Anzeigenamen für den Tresor ein. Der Name muss für das Azure-Abonnement eindeutig sein. Geben Sie einen Namen ein, der zwischen 2 und 50 Zeichen enthält. Er muss mit einem Buchstaben beginnen und darf nur Buchstaben, Zahlen und Bindestriche enthalten.
+3. Geben Sie unter **Name** einen Anzeigenamen für den Tresor ein. Der Name muss für das Azure-Abonnement eindeutig sein. Geben Sie einen Namen ein, der zwischen 2 und 50 Zeichen enthält. Er muss mit einem Buchstaben beginnen und darf nur Buchstaben, Zahlen und Bindestriche enthalten.
 
 4. Wählen Sie unter **Region** die geografische Region für den Tresor aus. Der Tresor muss sich in der gleichen Region wie die zu schützenden virtuellen Computer befinden. Wenn Sie über virtuelle Computer in verschiedenen Regionen verfügen, müssen Sie in jeder dieser Regionen einen Sicherungstresor erstellen. Es müssen keine Speicherkonten zum Speichern der Sicherungsdaten angegeben werden. Dies erfolgt automatisch über den Sicherungstresor und den Azure Backup-Dienst.
 
@@ -92,7 +92,7 @@ Die Sicherungserweiterung benötigt eine Verbindung mit den öffentlichen Azure-
 
 ### Netzwerkeinschränkungen mit NSGs
 
-Wenn für Ihre Bereitstellung Zugriffsbeschränkungen gelten (z. B. durch eine Netzwerksicherheitsgruppe, NSG), müssen Sie weitere Schritte ausführen, um sicherzustellen, dass der Sicherungsdatenverkehr zum Sicherungstresor nicht beeinträchtigt wird.
+Wenn für Ihre Bereitstellung Zugriffsbeschränkungen gelten (z. B. durch eine Netzwerksicherheitsgruppe, NSG), müssen Sie weitere Schritte ausführen, um sicherzustellen, dass der Sicherungsdatenverkehr zum Sicherungstresor nicht beeinträchtigt wird.
 
 Es gibt zwei Möglichkeiten, einen Pfad für den Sicherungsdatenverkehr bereitzustellen:
 
@@ -103,8 +103,8 @@ Hierbei muss zwischen Verwaltbarkeit, Feinsteuerung und Kosten abgewogen werden.
 
 |Option|Vorteile|Nachteile|
 |------|----------|-------------|
-|OPTION 1: Positivliste mit IP-Bereichen| Keine zusätzlichen Kosten.<br><br>Verwenden Sie zum Öffnen des Zugriffs in einer Netzwerksicherheitsgruppe das <i>Set-AzureNetworkSecurityRule</i>-Cmdlet. | Komplexe Verwaltung, da sich die betroffenen IP-Bereiche im Laufe der Zeit ändern.<br>Ermöglicht den Zugriff auf Azure insgesamt, nicht nur auf Storage.|
-|OPTION 2: HTTP-Proxy| Feinsteuerung im Proxy über Speicher-URLs ist zulässig.<br>Zentraler Punkt für Internetzugriff auf virtuelle Computer.<br>Unterliegt keinen Azure-IP-Adressänderungen.| Zusätzliche Kosten für die Ausführung eines virtuellen Computers mit Proxysoftware.|
+|OPTION 1: Positivliste mit IP-Bereichen| Keine zusätzlichen Kosten.<br><br>Verwenden Sie zum Öffnen des Zugriffs in einer Netzwerksicherheitsgruppe das <i>Set-AzureNetworkSecurityRule</i>-Cmdlet. | Komplexe Verwaltung, da sich die betroffenen IP-Bereiche im Laufe der Zeit ändern.<br>Ermöglicht den Zugriff auf Azure insgesamt, nicht nur auf Storage.|
+|OPTION 2: HTTP-Proxy| Feinsteuerung im Proxy über Speicher-URLs ist zulässig.<br>Zentraler Punkt für Internetzugriff auf virtuelle Computer.<br>Unterliegt keinen Azure-IP-Adressänderungen.| Zusätzliche Kosten für die Ausführung eines virtuellen Computers mit Proxysoftware.|
 
 ### Verwenden eines HTTP-Proxys für die Sicherung von virtuellen Computern
 Beim Sichern eines virtuellen Computers werden die Befehle für die Snapshotverwaltung von der Sicherungserweiterung per HTTPS-API an Azure Storage gesendet. Dieser Datenverkehr muss von der Erweiterung über den Proxy geleitet werden, da nur der Proxy so konfiguriert wird, dass Zugriff auf das öffentliche Internet besteht.
@@ -169,7 +169,7 @@ Get-AzureNetworkSecurityGroup -Name "NSG-lockdown" |
 Set-AzureNetworkSecurityRule -Name "allow-proxy " -Action Allow -Protocol TCP -Type Outbound -Priority 200 -SourceAddressPrefix "10.0.0.5/32" -SourcePortRange "*" -DestinationAddressPrefix Internet -DestinationPortRange "80-443"
 ```
 
-Mit diesem Befehl wird der Netzwerksicherheitsgruppe eine Ausnahme hinzugefügt, mit der TCP-Datenverkehr von allen Ports unter 10.0.0.5 an alle Internetadressen über Port 80 (HTTP) oder 443 (HTTPS) zugelassen wird. Wenn Sie einen bestimmten Port im öffentlichen Internet benötigen, müssen Sie diesen auch zu ```-DestinationPortRange``` hinzufügen.
+Mit diesem Befehl wird der Netzwerksicherheitsgruppe eine Ausnahme hinzugefügt, mit der TCP-Datenverkehr von allen Ports unter 10.0.0.5 an alle Internetadressen über Port 80 (HTTP) oder 443 (HTTPS) zugelassen wird. Wenn Sie einen bestimmten Port im öffentlichen Internet benötigen, müssen Sie diesen auch zu ```-DestinationPortRange``` hinzufügen.
 
 *Stellen Sie sicher, dass Sie die Namen im Beispiel durch die Details Ihrer Bereitstellung ersetzen.*
 

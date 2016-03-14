@@ -49,28 +49,28 @@ Bedenken Sie bei jedem Gerätefailover Folgendes:
 
 #### Gerätefailover in allen Softwareversionen
 
-Der StorSimple Manager-Dienst verfügt in einer Bereitstellung möglicherweise über mehrere physische und virtuelle Geräte, auf denen unterschiedliche Softwareversionen ausgeführt werden. Je nach Version der Software können sich die Volumetypen auf den Geräten auch unterscheiden. So kann beispielsweise ein Gerät mit Update 2 oder höher lokal fixierte und mehrstufige Volumes haben (mit Archivierung als Teilmenge der mehrstufigen Konfiguration). Ein Gerät ohne Update 2 kann hingegen über mehrstufige und Archivierungsvolumes verfügen.
+Der StorSimple Manager-Dienst verfügt in einer Bereitstellung möglicherweise über mehrere physische und virtuelle Geräte, auf denen unterschiedliche Softwareversionen ausgeführt werden. Je nach Version der Software können sich die Volumetypen auf den Geräten auch unterscheiden. So kann beispielsweise ein Gerät mit Update 2 oder höher lokal fixierte und mehrstufige Volumes haben (mit Archivierung als Teilmenge der mehrstufigen Konfiguration). Ein Gerät ohne Update 2 kann hingegen über mehrstufige und Archivierungsvolumes verfügen.
 
 Bestimmen Sie anhand der folgenden Tabelle, ob ein Failover zu einem anderen Gerät mit anderer Softwareversion möglich ist und wie sich die Volumetypen während der Notfallwiederherstellung verhalten.
 
 | Failover von | Für physische Geräte zulässig | Für virtuelle Geräte zulässig |
 |----------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------|
-| Update 2 zu Versionen vor Update 1 (Release, 0.1, 0.2, 0.3) | Nein | Nein |
-| Update 2 zu Update 1 (1, 1.1, 1.2) | Ja. <br></br>Bei lokal fixierten oder mehrstufigen Volumes oder einer Kombination aus beiden wird immer ein Failover der Volumes als mehrstufig ausgeführt. | Ja.<br></br>Bei lokal fixierten Volumes wird ein Failover als mehrstufiges Volume ausgeführt. |
-| Update 2 zu Update 2 (spätere Version) | Ja.<br></br>Bei lokal fixierten oder mehrstufigen Volumes oder einer Kombination der beiden wird ein Failover für die Volumes immer zum ursprünglichen Volumetyp ausgeführt – mehrstufig als mehrstufig und lokal fixiert als lokal fixiert. | Ja.<br></br>Bei lokal fixierten Volumes wird ein Failover als mehrstufiges Volume ausgeführt. |
+| Update 2 zu Versionen vor Update 1 (Release, 0.1, 0.2, 0.3) | Nein | Nein |
+| Update 2 zu Update 1 (1, 1.1, 1.2) | Ja. <br></br>Bei lokal fixierten oder mehrstufigen Volumes oder einer Kombination aus beiden wird immer ein Failover der Volumes als mehrstufig ausgeführt. | Ja.<br></br>Bei lokal fixierten Volumes wird ein Failover als mehrstufiges Volume ausgeführt. |
+| Update 2 zu Update 2 (spätere Version) | Ja.<br></br>Bei lokal fixierten oder mehrstufigen Volumes oder einer Kombination der beiden wird ein Failover für die Volumes immer zum ursprünglichen Volumetyp ausgeführt – mehrstufig als mehrstufig und lokal fixiert als lokal fixiert. | Ja.<br></br>Bei lokal fixierten Volumes wird ein Failover als mehrstufiges Volume ausgeführt. |
 
 
 #### Teilfailover in allen Softwareversionen
 
-Orientieren Sie sich an den folgenden Anweisungen, wenn Sie ein Teilfailover mit einem StorSimple-Quellgerät mit einer Version vor Update 1 auf ein Ziel mit Update 1 oder einer späteren Version durchführen möchten.
+Orientieren Sie sich an den folgenden Anweisungen, wenn Sie ein Teilfailover mit einem StorSimple-Quellgerät mit einer Version vor Update 1 auf ein Ziel mit Update 1 oder einer späteren Version durchführen möchten.
 
 
 | Teilfailover von | Für physische Geräte zulässig | Für virtuelle Geräte zulässig |
 |----------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------|
-|Version vor Update 1 (Version 0.1, 0.2, 0.3) zu Update 1 oder später | Ja, siehe unten stehenden Tipp für bewährte Methode. | Ja, siehe unten stehenden Tipp für bewährte Methode. |
+|Version vor Update 1 (Version 0.1, 0.2, 0.3) zu Update 1 oder später | Ja, siehe unten stehenden Tipp für bewährte Methode. | Ja, siehe unten stehenden Tipp für bewährte Methode. |
 
 
->[AZURE.TIP] In Update 1 und späteren Versionen wurde eine Änderung an den Cloudmetadaten und am Datenformat vorgenommen. Daher wird von einem Teilfailover von einer Version vor Update 1 auf Update 1 oder spätere Versionen abgeraten. Wenn Sie ein Teilfailover durchführen möchten, empfehlen wir, dass Sie zunächst Update 1 oder eine spätere Version auf beiden Geräten (Quellgerät und Zielgerät) anwenden und anschließend das Failover durchführen.
+>[AZURE.TIP] In Update 1 und späteren Versionen wurde eine Änderung an den Cloudmetadaten und am Datenformat vorgenommen. Daher wird von einem Teilfailover von einer Version vor Update 1 auf Update 1 oder spätere Versionen abgeraten. Wenn Sie ein Teilfailover durchführen möchten, empfehlen wir, dass Sie zunächst Update 1 oder eine spätere Version auf beiden Geräten (Quellgerät und Zielgerät) anwenden und anschließend das Failover durchführen.
 
 ## Failover auf ein anderes physisches Gerät
 
@@ -126,7 +126,7 @@ Führen Sie die folgenden Schritte aus, wenn Sie nur über ein einzelnes Gerät 
 
 ## Failover auf ein virtuelles StorSimple-Gerät
 
-Sie müssen zunächst ein virtuelles StorSimple-Gerät erstellen und konfigurieren, bevor Sie dieses Verfahren ausführen können. Bei der Ausführung von Update 2 sollten Sie für die Notfallwiederherstellung ein virtuelles 8020-Gerät mit 64 TB und Storage Premium verwenden.
+Sie müssen zunächst ein virtuelles StorSimple-Gerät erstellen und konfigurieren, bevor Sie dieses Verfahren ausführen können. Bei der Ausführung von Update 2 sollten Sie für die Notfallwiederherstellung ein virtuelles 8020-Gerät mit 64 TB und Storage Premium verwenden.
  
 Führen Sie die folgenden Schritte aus, um Ihr Gerät auf einem virtuellen StorSimple-Zielgerät wiederherzustellen.
 
@@ -172,7 +172,7 @@ Wenn StorSimple-Geräte direkt vor einem Notfall registriert wurden, müssen die
 
 - Nach einem Failover müssen Sie unter Umständen Ihr [StorSimple-Gerät deaktivieren oder löschen](storsimple-deactivate-and-delete-device.md).
 
-- Weitere Informationen zum Verwenden des StorSimple Manager-Diensts finden Sie unter [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
+- Weitere Informationen zum Verwenden des StorSimple Manager-Diensts finden Sie unter [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
  
 
 <!---HONumber=AcomDC_0302_2016-->

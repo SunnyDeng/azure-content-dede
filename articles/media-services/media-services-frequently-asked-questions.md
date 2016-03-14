@@ -39,7 +39,7 @@ A: Media Services unterstützt die Integration im Azure CDN. (Weitere Informatio
 
 F: Unterstützt Azure Media Services das Speichern von Bildern?
 
-A: Wenn Sie nur JPEG- oder PNG-Bilder speichern möchten, sollten Sie diese im Azure-BLOB-Speicher belassen. Es ergeben sich keine Vorteile daraus, sie in Ihrem Media Services-Konto zu speichern, außer Sie möchten sie zusammen mit Ihren Video- oder Audio-Medienobjekten aufbewahren. Dies gilt auch, wenn Sie die Bilder als Overlays im Video-Encoder verwenden möchten. Media Services Encoder unterstützt das Überlagern von Videos mit Bildern – deshalb werden JPEG und PNG auch als unterstützte Eingabeformate angegeben. Weitere Informationen finden Sie unter [Erstellen von Überlagerungen](https://msdn.microsoft.com/library/azure/dn640496.aspx).
+A: Wenn Sie nur JPEG- oder PNG-Bilder speichern möchten, sollten Sie diese im Azure-BLOB-Speicher belassen. Es ergeben sich keine Vorteile daraus, sie in Ihrem Media Services-Konto zu speichern, außer Sie möchten sie zusammen mit Ihren Video- oder Audio-Medienobjekten aufbewahren. Dies gilt auch, wenn Sie die Bilder als Overlays im Video-Encoder verwenden möchten. Media Services Encoder unterstützt das Überlagern von Videos mit Bildern – deshalb werden JPEG und PNG auch als unterstützte Eingabeformate angegeben. Weitere Informationen finden Sie unter [Erstellen von Überlagerungen](https://msdn.microsoft.com/library/azure/dn640496.aspx).
 
 F: Wie kann ich Medienobjekte von einem Media Services-Konto in ein anderes kopieren?
 

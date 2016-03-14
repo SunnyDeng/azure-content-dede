@@ -18,7 +18,7 @@ ms.date="02/25/2016"
 ms.author="deonhe"/>
 
 # Erste Schritte mit der Salesforce-API
-Verbinden Sie sich mit Salesforce, um z. B. Objekte zu erstellen und abzurufen. Die Salesforce-API kann in Folgendem verwendet werden:
+Verbinden Sie sich mit Salesforce, um z. B. Objekte zu erstellen und abzurufen. Die Salesforce-API kann in Folgendem verwendet werden:
 
 - PowerApps 
 - Logik-Apps 
@@ -29,7 +29,7 @@ Salesforce ermöglicht Folgendes:
 
 - Erstellen eines Geschäftsworkflows basierend auf den Daten, die aus Salesforce abgerufen werden. 
 - Verwenden von Triggern, wenn ein Objekt erstellt oder aktualisiert wird.
-- Verwenden von Aktionen, um z. B. ein Objekt erstellen oder zu löschen. Diese Aktionen erhalten eine Antwort und stellen anschließend die Ausgabe anderen Aktionen zur Verfügung. Wenn z. B. ein neues Objekt in Salesforce erstellt wird, können Sie eine E-Mail über Office 365 senden.
+- Verwenden von Aktionen, um z. B. ein Objekt erstellen oder zu löschen. Diese Aktionen erhalten eine Antwort und stellen anschließend die Ausgabe anderen Aktionen zur Verfügung. Wenn z. B. ein neues Objekt in Salesforce erstellt wird, können Sie eine E-Mail über Office 365 senden.
 - Hinzufügen der Salesforce-API zu PowerApps Enterprise. Die Benutzer können diese API anschließend in ihren Apps verwenden. 
 
 Informationen zum Hinzufügen einer API in PowerApps Enterprise finden Sie unter [Registrieren einer API in PowerApps](../power-apps/powerapps-register-from-available-apis.md).
@@ -78,7 +78,7 @@ Wenn Sie diese API Ihren Logik-Apps hinzufügen, müssen Sie ihnen das Herstelle
 1. Melden Sie sich bei Ihrem Salesforce-Konto an.
 2. Erlauben Sie Ihren Logik-Apps, sich mit Ihrem Salesforce-Konto zu verbinden und es zu nutzen. 
 
-Nachdem Sie die Verbindung hergestellt haben, geben Sie die Salesforce-Eigenschaften ein, z. B. den Tabellennamen. In der **REST-API-Referenz** in diesem Thema werden diese Eigenschaften beschrieben.
+Nachdem Sie die Verbindung hergestellt haben, geben Sie die Salesforce-Eigenschaften ein, z. B. den Tabellennamen. In der **REST-API-Referenz** in diesem Thema werden diese Eigenschaften beschrieben.
 
 >[AZURE.TIP] Sie können dieselbe Verbindung in anderen Logik-Apps verwenden.
 

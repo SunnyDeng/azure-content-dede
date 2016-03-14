@@ -118,7 +118,7 @@ Wenn Sie das Problem nicht selbst beheben können, haben Sie folgende Möglichke
 	- App-ID
 	- Kampagnen-ID (für Probleme bei Pushbenachrichtigungen)
 	- Geräte-ID
-	- Mobile Engagement SDK-Version (z. B. „Android SDK v2.1.0“)
+	- Mobile Engagement SDK-Version (z. B. „Android SDK v2.1.0“)
 	- Fehlerdetails mit der genauen Fehlermeldung und dem Fehlerszenario
 
 <!---HONumber=AcomDC_0302_2016-->

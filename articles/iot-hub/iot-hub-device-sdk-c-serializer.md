@@ -22,7 +22,7 @@ Im [ersten Artikel](iot-hub-device-sdk-c-intro.md) dieser Serie wurde das **Azur
 
 Im Einführungsartikel wurde die Verwendung der Bibliothek des **Serialisierungsprogramms** zum Senden von Ereignissen an und zum Empfangen von Nachrichten von IoT Hub beschrieben. In diesem Artikel wird genauer erläutert, wie Sie Ihre Daten mit der Makrosprache des **Serialisierungsprogramms** modellieren. Im Artikel wird ebenfalls im Detail beschrieben, wie die Serialisierung von Nachrichten durch die Bibliothek funktioniert (und wie Sie das Serialisierungsverhalten in einigen Fällen steuern können). Darüber hinaus werden einige Parameter beschrieben, die Sie ändern können und die die Größe der von Ihnen erstellten Modelle bestimmen.
 
-Zum Abschluss werden einige in vorherigen Artikeln bereits erläuterte Themen erneut aufgegriffen, wie z. B. die Behandlung von Nachrichten und Eigenschaften. Sie werden feststellen, dass diese Features bei Verwendung der Bibliothek des **Serialisierungsprogramms** genauso funktionieren wie mit der **IoTHubClient**-Bibliothek.
+Zum Abschluss werden einige in vorherigen Artikeln bereits erläuterte Themen erneut aufgegriffen, wie z. B. die Behandlung von Nachrichten und Eigenschaften. Sie werden feststellen, dass diese Features bei Verwendung der Bibliothek des **Serialisierungsprogramms** genauso funktionieren wie mit der **IoTHubClient**-Bibliothek.
 
 Sämtliche in diesem Artikel beschriebenen Elemente basieren auf den Beispielen für das SDK des **Serialisierungsprogramms**. Wenn Sie die Beschreibungen in diesem Artikel nachvollziehen möchten, sehen Sie sich die Anwendungen **simplesample\_amqp** und **simplesample\_http** an, die im Azure IoT-Geräte-SDK für C enthalten sind.
 
@@ -200,11 +200,11 @@ Der vorherige Abschnitt zeigte ein Beispiel der Ausgabe, die durch die Bibliothe
 
 Um die Serialisierung besser erläutern können, arbeiten wir mit einem neuen Modell basierend auf einem Thermostat. Zunächst erhalten Sie einige Hintergrundinformationen zum gewünschten Szenario.
 
-Wir möchten ein Thermostat modellieren, das Temperatur und Luftfeuchtigkeit misst. Jedes Datenelement soll auf unterschiedliche Weise an IoT Hub gesendet werden. Standardmäßig geht alle 2 Minuten ein Temperaturereignis und alle 15 Minuten ein Luftfeuchtigkeitsereignis beim Thermostat ein. Beim Eingang jedes Ereignisses muss dieses einen Zeitstempel erhalten, der die Uhrzeit angibt, zu der die entsprechende Temperatur oder Luftfeuchtigkeit gemessen wurde.
+Wir möchten ein Thermostat modellieren, das Temperatur und Luftfeuchtigkeit misst. Jedes Datenelement soll auf unterschiedliche Weise an IoT Hub gesendet werden. Standardmäßig geht alle 2 Minuten ein Temperaturereignis und alle 15 Minuten ein Luftfeuchtigkeitsereignis beim Thermostat ein. Beim Eingang jedes Ereignisses muss dieses einen Zeitstempel erhalten, der die Uhrzeit angibt, zu der die entsprechende Temperatur oder Luftfeuchtigkeit gemessen wurde.
 
 Anhand dieses Szenarios zeigen wir Ihnen zwei verschiedene Möglichkeiten, die Daten zu modellieren. Zudem wird erläutert, wie sich die Modellierung auf die serialisierte Ausgabe auswirkt.
 
-### Modell 1
+### Modell 1
 
 Hier sehen Sie die erste Version eines Modells, das das vorherige Szenario unterstützt:
 
@@ -297,7 +297,7 @@ Bei diesem Modell können Sie sich vorstellen, dass weitere Ereignisse problemlo
 
 Nun soll das Modell so verändert werden, dass es die gleichen Daten enthält, jedoch mit einer anderen Struktur.
 
-### Modell 2
+### Modell 2
 
 Betrachten Sie das folgende Modell als Alternative zum oben gezeigten:
 
@@ -396,7 +396,7 @@ WITH_DATA(TemperatureAndHumidityEvent, TemperatureAndHumidity),
 );
 ```
 
-Hätten wir dieses Modell verwendet, wäre es leichter zu verstehen, wie **Temperature** und **Humidity** in der gleichen serialisierten Nachricht gesendet werden. Möglicherweise ist nicht klar, warum das so funktioniert, wenn Sie beide Datenereignisse mithilfe von Modell 2 an **SERIALIZE** übergeben.
+Hätten wir dieses Modell verwendet, wäre es leichter zu verstehen, wie **Temperature** und **Humidity** in der gleichen serialisierten Nachricht gesendet werden. Möglicherweise ist nicht klar, warum das so funktioniert, wenn Sie beide Datenereignisse mithilfe von Modell 2 an **SERIALIZE** übergeben.
 
 Dieses Verhalten ist einfacher zu verstehen, wenn Sie die Annahmen kennen, von denen die Bibliothek des **Serialisierungsprogramms** ausgeht. Kehren wir zunächst zum Modell zurück:
 
@@ -408,7 +408,7 @@ WITH_DATA(EDM_DATE_TIME_OFFSET, Time)
 );
 ```
 
-Betrachten Sie dieses Modell aus der objektorientierten Perspektive. In diesem Fall modellieren wir ein physisches Gerät (ein Thermostat), und dieses Gerät enthält Attribute wie z. B. **Temperature** und **Humidity**.
+Betrachten Sie dieses Modell aus der objektorientierten Perspektive. In diesem Fall modellieren wir ein physisches Gerät (ein Thermostat), und dieses Gerät enthält Attribute wie z. B. **Temperature** und **Humidity**.
 
 Wir können mit folgendem Code den gesamten Status des Modells senden:
 
@@ -431,7 +431,7 @@ Mitunter sollen jedoch nur *einige* Eigenschaften des Modells an die Cloud gesen
 {"Temperature":75, "Time":"2015-09-17T18:45:56Z"}
 ```
 
-Damit wird exakt das gleiche serialisierte Ereignis generiert, als ob ein **TemperatureEvent** mit einem **Temperature**- und einem **Time**-Element definiert worden wäre, so wie in Modell 1. In diesem Fall konnten wir mithilfe eines anderen Modells (Modell 2) exakt das gleiche serialisierte Ereignis generieren, indem wir **SERIALIZE** auf unterschiedliche Weise aufgerufen haben.
+Damit wird exakt das gleiche serialisierte Ereignis generiert, als ob ein **TemperatureEvent** mit einem **Temperature**- und einem **Time**-Element definiert worden wäre, so wie in Modell 1. In diesem Fall konnten wir mithilfe eines anderen Modells (Modell 2) exakt das gleiche serialisierte Ereignis generieren, indem wir **SERIALIZE** auf unterschiedliche Weise aufgerufen haben.
 
 Das Entscheidende hier ist: Wenn Sie mehrere Datenereignisse an **SERIALIZE** übergeben, wird angenommen, dass jedes Ereignis eine Eigenschaft in einem einzelnen JSON-Objekt ist.
 
@@ -562,7 +562,7 @@ Bei diesen Werten handelt es sich um die Standardparameter, die im SDK enthalten
 
 -   nArithmetic: Steuert die Gesamtanzahl von Elementen, die in einem Modell zulässig sind.
 
-Diese Parameter sind deshalb so wichtig, weil sie steuern, wie groß Ihr Modell sein darf. Sehen Sie sich z. B. folgende Modelldefinition an:
+Diese Parameter sind deshalb so wichtig, weil sie steuern, wie groß Ihr Modell sein darf. Sehen Sie sich z. B. folgende Modelldefinition an:
 
 ```
 DECLARE_MODEL(MyModel,
@@ -570,7 +570,7 @@ WITH_DATA(int, MyData)
 );
 ```
 
-Wie bereits erwähnt, handelt es sich bei **DECLARE\_MODEL** nur um ein C-Makro. Der Name des Modells und die **WITH\_DATA**-Anweisung (bei der es sich auch um ein Makro handelt) sind Parameter von **DECLARE\_MODEL**. **nMacroParameters** definiert, wie viele Parameter im **DECLARE\_MODEL** aufgenommen werden können. Dies definiert, wie viele Datenereignis- und Aktionsdeklarationen Sie verwenden können. Der Standardgrenzwert liegt bei 124. Sie können also ein Modell mit einer Kombination aus etwa 60 Aktionen und Datenereignissen definieren. Wenn dieser Grenzwert überschritten wird, erhalten Sie Compilerfehler, die wie folgt aussehen:
+Wie bereits erwähnt, handelt es sich bei **DECLARE\_MODEL** nur um ein C-Makro. Der Name des Modells und die **WITH\_DATA**-Anweisung (bei der es sich auch um ein Makro handelt) sind Parameter von **DECLARE\_MODEL**. **nMacroParameters** definiert, wie viele Parameter im **DECLARE\_MODEL** aufgenommen werden können. Dies definiert, wie viele Datenereignis- und Aktionsdeklarationen Sie verwenden können. Der Standardgrenzwert liegt bei 124. Sie können also ein Modell mit einer Kombination aus etwa 60 Aktionen und Datenereignissen definieren. Wenn dieser Grenzwert überschritten wird, erhalten Sie Compilerfehler, die wie folgt aussehen:
 
   ![](media/iot-hub-device-sdk-c-serializer/02-nMacroParametersCompilerErrors.PNG)
 
@@ -594,7 +594,7 @@ Wenn Sie hiermit fertig sind, sollte Ihre Projektmappe wie folgt aussehen:
 
 Wenn Sie die Projektmappe jetzt kompilieren, wird die aktualisierte Datei „macro\_utils.h“ in Ihre Binärdaten eingefügt.
 
-Beachten Sie, dass durch eine ausreichende Erhöhung dieses Werts die Grenzwerte des Compilers überschritten werden können. Hierbei ist **nMacroParameters** der wichtigste Parameter, den Sie bedenken sollten. Die Spezifikation C99 gibt an, dass in einer Makrodefinition mindestens 127 Parameter zulässig sind. Da der Microsoft-Compiler diese Spezifikation exakt einhält (und einen Grenzwert von 127 aufweist), können Sie **nMacroParameters** nicht über den Standardgrenzwert hinaus erhöhen. Bei anderen Compilern ist dies möglicherweise zulässig (der GNU-Compiler beispielsweise unterstützt einen höheren Grenzwert).
+Beachten Sie, dass durch eine ausreichende Erhöhung dieses Werts die Grenzwerte des Compilers überschritten werden können. Hierbei ist **nMacroParameters** der wichtigste Parameter, den Sie bedenken sollten. Die Spezifikation C99 gibt an, dass in einer Makrodefinition mindestens 127 Parameter zulässig sind. Da der Microsoft-Compiler diese Spezifikation exakt einhält (und einen Grenzwert von 127 aufweist), können Sie **nMacroParameters** nicht über den Standardgrenzwert hinaus erhöhen. Bei anderen Compilern ist dies möglicherweise zulässig (der GNU-Compiler beispielsweise unterstützt einen höheren Grenzwert).
 
 In diesem Artikel haben wir so ziemlich alle Informationen zusammengestellt, die Sie benötigen, um Code mit der Bibliothek des **Serialisierungsprogramms** zu schreiben. Bevor wir zum Abschluss kommen, möchten wir noch einige Themen aus vorherigen Artikeln aufgreifen, bei denen möglicherweise Fragen offen geblieben sind.
 

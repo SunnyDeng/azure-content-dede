@@ -221,7 +221,7 @@ protected override void Handle(AuthorizationContext context, OperationAuthorizat
 
 > [AZURE.NOTE] Siehe [SurveyAuthorizationHandler.cs].
 
-Bei einer mehrmandantenfähigen Anwendung müssen Sie sicherstellen, dass Berechtigungen nicht in die Daten anderer Mandanten gelangen. In der App „Surveys“ ist die Berechtigung „Teilnehmer“ mandantenübergreifend erlaubt, d. h. Sie können jemand aus einem anderen Mandanten als Teilnehmer zuweisen. Die anderen Berechtigungstypen sind auf Ressourcen beschränkt, die zum Mandanten des jeweiligen Benutzers gehören. Deshalb überprüft der Code die Mandanten-ID, bevor diese Berechtigungstypen gewährt werden. (Das Feld `TenantId` wird zugewiesen, wenn die Umfrage erstellt wird.)
+Bei einer mehrmandantenfähigen Anwendung müssen Sie sicherstellen, dass Berechtigungen nicht in die Daten anderer Mandanten gelangen. In der App „Surveys“ ist die Berechtigung „Teilnehmer“ mandantenübergreifend erlaubt, d. h. Sie können jemand aus einem anderen Mandanten als Teilnehmer zuweisen. Die anderen Berechtigungstypen sind auf Ressourcen beschränkt, die zum Mandanten des jeweiligen Benutzers gehören. Deshalb überprüft der Code die Mandanten-ID, bevor diese Berechtigungstypen gewährt werden. (Das Feld `TenantId` wird zugewiesen, wenn die Umfrage erstellt wird.)
 
 Im nächste Schritt wird der Vorgang (Lesen, Aktualisieren, Löschen usw.) mit den Berechtigungen verglichen. Die App „Surveys“ implementiert diesen Schritt mithilfe einer Nachschlagetabelle für Funktionen:
 

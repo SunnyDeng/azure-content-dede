@@ -24,7 +24,7 @@
 Die Integration von Web-Apps in Azure CDN bietet folgende Vorteile:
 
 - Integration der Inhaltsbereitstellung (Bilder, Skripts und Stylesheets) als Teil des [kontinuierlichen Bereitstellungsprozesses](web-sites-publish-source-control.md) Ihrer Web-App
-- Einfaches Durchführen von Upgrades für die NuGet-Pakete in Ihrer Web-App in Azure App Service, wie z. B. jQuery- oder Bootstrap-Versionen 
+- Einfaches Durchführen von Upgrades für die NuGet-Pakete in Ihrer Web-App in Azure App Service, wie z. B. jQuery- oder Bootstrap-Versionen 
 - Verwalten der Webanwendung und des vom CDN verarbeiteten Inhalts über dieselbe Visual Studio-Oberfläche
 - Integrieren von ASP.NET-Bündelung und -Minimierung in Azure CDN
 
@@ -32,7 +32,7 @@ Die Integration von Web-Apps in Azure CDN bietet folgende Vorteile:
 
 ## Was Sie erstellen ##
 
-Sie stellen eine Web-App in Azure App Service unter Verwendung der ASP.NET-MVC-Standardvorlage in Visual Studio bereit, fügen Code hinzu, um Inhalt aus einem integrierten Azure CDN bereitzustellen, z. B. ein Bild, Ergebnisse von Controlleraktionen und die JavaScript- und CSS-Standarddateien. Außerdem schreiben Sie Code zum Konfigurieren des Fallbackmechanismus für verarbeitete Bundles für den Fall, dass das CDN offline ist.
+Sie stellen eine Web-App in Azure App Service unter Verwendung der ASP.NET-MVC-Standardvorlage in Visual Studio bereit, fügen Code hinzu, um Inhalt aus einem integrierten Azure CDN bereitzustellen, z. B. ein Bild, Ergebnisse von Controlleraktionen und die JavaScript- und CSS-Standarddateien. Außerdem schreiben Sie Code zum Konfigurieren des Fallbackmechanismus für verarbeitete Bundles für den Fall, dass das CDN offline ist.
 
 ## Sie benötigen Folgendes ##
 
@@ -42,7 +42,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 -	Visual Studio 2015 mit dem [Azure SDK für .NET](http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409) Wenn Sie Visual Studio verwenden, können die Schritte variieren.
 
 > [AZURE.NOTE] Sie benötigen ein Microsoft Azure-Konto, um dieses Tutorial durchführen zu können:
-> + Sie können ein [Azure-Konto kostenlos erstellen](/pricing/free-trial/): Sie erhalten ein Guthaben, das Sie zum Ausprobieren der zahlungspflichtigen Azure-Dienste nutzen können, und Sie können das Konto selbst dann behalten und kostenlose Azure-Dienste wie z. B. Web-Apps nutzen, wenn das Guthaben aufgebraucht ist.
+> + Sie können ein [Azure-Konto kostenlos erstellen](/pricing/free-trial/): Sie erhalten ein Guthaben, das Sie zum Ausprobieren der zahlungspflichtigen Azure-Dienste nutzen können, und Sie können das Konto selbst dann behalten und kostenlose Azure-Dienste wie z. B. Web-Apps nutzen, wenn das Guthaben aufgebraucht ist.
 > + Sie können Ihre [Vorteile für Visual Studio-Abonnenten aktivieren](/pricing/member-offers/msdn-benefits-details/): Ihr Visual Studio-Abonnement schließt ein monatliches Guthaben ein, das Sie für zahlungspflichtige Azure-Dienste nutzen können.
 >
 > Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
@@ -51,7 +51,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
 In diesem Abschnitt stellen Sie die standardmäßige ASP.NET-MVC-Anwendungsvorlage in Visual Studio 2015 für App Service bereit und integrieren sie anschließend in einen neuen CDN-Endpunkt. Befolgen Sie die nachstehenden Anweisungen:
 
-1. Erstellen Sie in Visual Studio 2015 eine neue ASP.NET-Webanwendung über die Menüleiste, indem Sie **Datei > Neu > Projekt > Web > ASP.NET-Webanwendung** aufrufen. Geben Sie einen Namen ein, und klicken Sie auf **OK**.
+1. Erstellen Sie in Visual Studio 2015 eine neue ASP.NET-Webanwendung über die Menüleiste, indem Sie **Datei > Neu > Projekt > Web > ASP.NET-Webanwendung** aufrufen. Geben Sie einen Namen ein, und klicken Sie auf **OK**.
 
 	![](media/cdn-websites-with-cdn/1-new-project.png)
 
@@ -150,7 +150,7 @@ Bei Integration von Azure CDN in Ihre Azure-Web-App können Sie angeben, wie sta
       ...
     </system.webServer>
 
-Nachdem Sie diese Konfiguration durchgeführt haben, wenden alle statischen Dateien in der Azure-Web-App die gleiche Regel im CDN-Cache an. Wenn Sie die Cacheeinstellungen genauer steuern möchten, fügen Sie eine *Web.config*-Datei in einen Ordner ein, und fügen Sie dieser Datei Ihre Einstellungen hinzu. Fügen Sie z. B. eine *Web.config*-Datei zum Ordner *\\Content* hinzu, und ersetzen Sie den Inhalt durch den folgenden XML-Code:
+Nachdem Sie diese Konfiguration durchgeführt haben, wenden alle statischen Dateien in der Azure-Web-App die gleiche Regel im CDN-Cache an. Wenn Sie die Cacheeinstellungen genauer steuern möchten, fügen Sie eine *Web.config*-Datei in einen Ordner ein, und fügen Sie dieser Datei Ihre Einstellungen hinzu. Fügen Sie z. B. eine *Web.config*-Datei zum Ordner *\\Content* hinzu, und ersetzen Sie den Inhalt durch den folgenden XML-Code:
 
 	<?xml version="1.0"?>
 	<configuration>
@@ -342,7 +342,7 @@ Im nächsten Abschnitt erfahren Sie, wie Sie die gebündelten und minimierten Sk
 
 ## Integrieren von ASP.NET-Bündelung und -Minimierung in Azure CDN ##
 
-Skripts und CSS-Stylesheets ändern sich häufig und sind daher die idealen Kandidaten für den Azure CDN-Cache. Die Verarbeitung der gesamten Web-App über Azure CDN ist die einfachste Möglichkeit, Bündelung und Minimierung in Azure CDN zu integrieren. Da Sie sich jedoch möglicherweise aus den unter [Integrieren eines Azure CDN-Endpunkts in Ihrer Azure-Web-App und Bereitstellen von statischem Inhalt in Webseiten über Azure CDN](#deploy-a-web-app-to-azure-with-an-integrated-cdn-endpoint) beschriebenen Gründen gegen diesen Ansatz entscheiden, zeige ich Ihnen, wie Sie die Integration unter Wahrung der gewünschten Entwicklerumgebung von ASP.NET-Bündelung und -Minimierung durchführen können, die Ihnen z. B. Folgendes bietet:
+Skripts und CSS-Stylesheets ändern sich häufig und sind daher die idealen Kandidaten für den Azure CDN-Cache. Die Verarbeitung der gesamten Web-App über Azure CDN ist die einfachste Möglichkeit, Bündelung und Minimierung in Azure CDN zu integrieren. Da Sie sich jedoch möglicherweise aus den unter [Integrieren eines Azure CDN-Endpunkts in Ihrer Azure-Web-App und Bereitstellen von statischem Inhalt in Webseiten über Azure CDN](#deploy-a-web-app-to-azure-with-an-integrated-cdn-endpoint) beschriebenen Gründen gegen diesen Ansatz entscheiden, zeige ich Ihnen, wie Sie die Integration unter Wahrung der gewünschten Entwicklerumgebung von ASP.NET-Bündelung und -Minimierung durchführen können, die Ihnen z. B. Folgendes bietet:
 
 -	Hervorragende Benutzerfreundlichkeit des Debugmodus
 -	Vereinfachte Bereitstellung
@@ -504,7 +504,7 @@ Die [Bundle](http://msdn.microsoft.com/library/system.web.optimization.bundle.as
 
 2. Um die Problemumgehung für CSS zu verwenden, erstellen Sie im Ordner *App\_Start* Ihres ASP.NET-Projekts eine neue CS-Datei namens *StyleBundleExtensions.cs*, und ersetzen Sie deren Inhalt durch den [Code von GitHub](https://github.com/EmberConsultingGroup/StyleBundleFallback/blob/master/Website/App_Start/StyleBundleExtensions.cs).
 
-4. Benennen Sie in *App\_Start\\StyleFundleExtensions.cs*, den Namespace in den Namespace Ihrer ASP.NET-Anwendung um (z. B. **cdnwebapp**).
+4. Benennen Sie in *App\_Start\\StyleFundleExtensions.cs*, den Namespace in den Namespace Ihrer ASP.NET-Anwendung um (z. B. **cdnwebapp**).
 
 3. Wechseln Sie zurück zu `App_Start\BundleConfig.cs`, und ersetzen Sie die letzte `bundles.Add`-Anweisung durch den folgenden Code:
 

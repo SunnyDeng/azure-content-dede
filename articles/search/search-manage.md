@@ -47,7 +47,7 @@ Wenn Sie sich anmelden möchten, finden Sie entsprechende Informationen unter [E
 
 ##Suchanalyse
 
-Sie können während der Suchaktivitäten der Benutzer Daten sammeln, um besser zu verstehen, wie Ihr leistungsfähig Ihr Suchdienst ist, welche Begriffe gesucht werden und ob für diese Suchbegriffe Treffer zurückgegeben werden. Am besten lassen sich diese Daten mithilfe eines Power BI-Inhaltspakets analysieren und visualisieren. Der erste Schritt besteht im Aktivieren einer Analyse des Suchdatenverkehrs. Informationen zur Vorgehensweise finden Sie unter [Analyzing your Azure Search traffic](https://azure.microsoft.com/blog/analyzing-your-azure-search-traffic/) (Analysieren Ihres Azure Search-Datenverkehrs).
+Sie können während der Suchaktivitäten der Benutzer Daten sammeln, um besser zu verstehen, wie Ihr leistungsfähig Ihr Suchdienst ist, welche Begriffe gesucht werden und ob für diese Suchbegriffe Treffer zurückgegeben werden. Am besten lassen sich diese Daten mithilfe eines Power BI-Inhaltspakets analysieren und visualisieren. Der erste Schritt besteht im Aktivieren einer Analyse des Suchdatenverkehrs. Informationen zur Vorgehensweise finden Sie unter [Analyzing your Azure Search traffic](https://azure.microsoft.com/blog/analyzing-your-azure-search-traffic/) (Analysieren Ihres Azure Search-Datenverkehrs).
 
 <a id="sub-2"></a>
 ## Verwaltungsaufgaben
@@ -180,7 +180,7 @@ Bei Azure Search bestimmt die rollenbasierte Zugriffssteuerung die folgenden Ver
 Rolle|Aufgabe
 ---|---
 Besitzer|Starten, Beenden oder Löschen des Diensts.<p>Erstellen und Anzeigen von Administrator- und Abfrageschlüsseln.<p>Anzeigen des Dienststatus, einschließlich Indexanzahl, Indexnamen, Dokumentanzahl und Speichergröße.<p>Hinzufügen oder Löschen von Rollenmitgliedschaften (Nur ein Besitzer kann die Rollenmitgliedschaften verwalten).<p>Abonnement- und Dienstadministratoren sind automatisch Mitglieder der Besitzerrolle.
-Mitwirkender|Verfügt über die gleiche Zugriffsebene wie Besitzer mit Ausnahme der Rollenverwaltung. So kann z. B. ein Mitwirkender den `api-key` anzeigen und neu generieren, aber nicht die Rollenmitgliedschaften ändern.
+Mitwirkender|Verfügt über die gleiche Zugriffsebene wie Besitzer mit Ausnahme der Rollenverwaltung. So kann z. B. ein Mitwirkender den `api-key` anzeigen und neu generieren, aber nicht die Rollenmitgliedschaften ändern.
 Reader|Dienststatus und Abfrageschlüssel anzeigen. Mitglieder dieser Rolle können einen Dienst nicht starten oder beenden und auch keine Admin-Schlüssel anzeigen.
 
 Beachten Sie, dass die Rollen keine Zugriffsrechte für den Dienstendpunkt erteilen. Suchdienstoperationen, wie z. B. die Indexverwaltung, Auffüllung des Indexes und Abfragen von Suchdaten werden durch die API-Schlüssel und nicht durch Rollen gesteuert. Weitere Informationen finden Sie unter [Rollenbasierte Zugriffssteuerung über das Azure-Vorschauportal](../active-directory/role-based-access-control-configure.md) im Abschnitt "Autorisierung für Verwaltungsvorgänge vs. Datenvorgänge".

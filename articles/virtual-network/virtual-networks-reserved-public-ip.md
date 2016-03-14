@@ -33,7 +33,7 @@ Stellen Sie sicher, dass Sie die Funktionsweise von [IP-Adressen](virtual-networ
 1. Kann ich eine reservierte IP-Adresse für alle Azure-Dienste verwenden?  
   - Reservierte IPs können nur für virtuelle Computer und Clouddienst-Instanzenrollen, die über eine VIP verfügbar gemacht werden, verwendet werden.
 1. Wie viele reservierte IP-Adressen können verwendet werden?  
-  - Derzeit können mit allen Azure-Abonnements 20 reservierte IPs verwendet werden. Sie können aber auch zusätzliche reservierte IP-Adressen anfordern. Weitere Informationen finden Sie unter [Abonnement- und Diensteinschränkungen](../azure-subscription-service-limits/).
+  - Derzeit können mit allen Azure-Abonnements 20 reservierte IPs verwendet werden. Sie können aber auch zusätzliche reservierte IP-Adressen anfordern. Weitere Informationen finden Sie unter [Abonnement- und Diensteinschränkungen](../azure-subscription-service-limits/).
 1. Fällt für reservierte IPs eine Gebühr an?
   - Preisinformationen finden Sie unter [Preise für reservierte IP-Adressen](http://go.microsoft.com/fwlink/?LinkID=398482).
 1. Wie wird eine IP-Adresse reserviert?

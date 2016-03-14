@@ -23,7 +23,7 @@
 
 Azure Site Recovery unterstützt Ihre Strategie für Geschäftskontinuität und Notfallwiederherstellung, indem Replikation, Failover und Wiederherstellung virtueller Computer in einer Vielzahl von Bereitstellungsszenarien aufeinander abgestimmt werden. Eine vollständige Liste mit Bereitstellungsszenarien finden Sie unter [Übersicht über Azure Site Recovery](site-recovery-overview.md).
 
-Azure PowerShell ist ein Modul, das Cmdlets zum Verwalten von Azure durch Windows PowerShell enthält. Sie können zwei Arten von Modulen verwenden: das Azure-Profil oder den Azure-Ressourcen-Manager (ARM).
+Azure PowerShell ist ein Modul, das Cmdlets zum Verwalten von Azure durch Windows PowerShell enthält. Sie können zwei Arten von Modulen verwenden: das Azure-Profil oder den Azure-Ressourcen-Manager (ARM).
 
 Mit PowerShell-Cmdlets für Azure Site Recovery (ASR), die mit Azure PowerShell für ARM verfügbar sind, können Sie Ihre Server in Azure schützen und wiederherstellen.
 
@@ -44,18 +44,18 @@ Sie müssen kein PowerShell-Experte sein, um diesen Artikel verwenden zu können
 
 Stellen Sie sicher, dass diese Voraussetzungen erfüllt werden:
 
-- Sie benötigen ein [Microsoft Azure](https://azure.microsoft.com/)-Konto. Für den Einstieg steht eine [kostenlose Testversion](pricing/free-trial/) zur Verfügung. Darüber hinaus können Sie sich über die [Preisgestaltung für Azure Site Recovery-Manager](https://azure.microsoft.com/pricing/details/site-recovery/) informieren.
-- Sie benötigen Azure PowerShell 1.0. Informationen zu dieser Version, und wie Sie diese installieren, finden Sie unter [Azure PowerShell 1.0](https://azure.microsoft.com/).
+- Sie benötigen ein [Microsoft Azure](https://azure.microsoft.com/)-Konto. Für den Einstieg steht eine [kostenlose Testversion](pricing/free-trial/) zur Verfügung. Darüber hinaus können Sie sich über die [Preisgestaltung für Azure Site Recovery-Manager](https://azure.microsoft.com/pricing/details/site-recovery/) informieren.
+- Sie benötigen Azure PowerShell 1.0. Informationen zu dieser Version, und wie Sie diese installieren, finden Sie unter [Azure PowerShell 1.0](https://azure.microsoft.com/).
 - Sie müssen die Module [AzureRM.SiteRecovery](https://www.powershellgallery.com/packages/AzureRM.SiteRecovery/) und [AzureRM.RecoveryServices](https://www.powershellgallery.com/packages/AzureRM.RecoveryServices/) installieren. Sie erhalten die neuesten Versionen dieser Module im [PowerShell-Katalog](https://www.powershellgallery.com/).
 
 In diesem Artikel wird das Verwenden von Azure Powershell mit ARM zum Konfigurieren und Verwalten des Schutzes Ihrer Server an einem Beispiel veranschaulicht. Das Beispiel in diesem Artikel zeigt Ihnen, wie Sie einen virtuellen Computer auf einem Hyper-V-Host in Azure schützen, und die folgenden Voraussetzungen gelten für dieses Beispiel. Eine umfassendere Aufstellung von Anforderungen für die verschiedenen ASR-Szenarien finden Sie in der Dokumentation zum jeweiligen Szenario.
 
-- Sie benötigen einen Hyper-V-Host unter Windows Server 2012 R2 mit einem oder mehreren virtuellen Computern.
+- Sie benötigen einen Hyper-V-Host unter Windows Server 2012 R2 mit einem oder mehreren virtuellen Computern.
 - Hyper-V-Server müssen entweder direkt oder über einen Proxy mit dem Internet verbunden sein.
 - Die zu schützenden virtuellen Computer müssen die [Voraussetzungen für virtuelle Computer](site-recovery-best-practices.md#virtual-machines) erfüllen.
 	
 
-## Schritt 1: Melden Sie sich bei Ihrem Azure-Konto an.
+## Schritt 1: Melden Sie sich bei Ihrem Azure-Konto an.
 
 
 1. Öffnen Sie eine PowerShell-Konsole, und führen Sie den folgenden Befehl aus, um sich bei Ihrem Azure-Konto anzumelden. Das Cmdlet ruft eine Webseite auf, die Sie zur Eingabe Ihrer Kontoanmeldeinformationen auffordert.
@@ -77,7 +77,7 @@ In diesem Artikel wird das Verwenden von Azure Powershell mit ARM zum Konfigurie
 	- `Get-AzureRmResourceProvider -ProviderNamespace  Microsoft.RecoveryServices`
 	-  `Get-AzureRmResourceProvider -ProviderNamespace  Microsoft.SiteRecovery`
 
-	Wenn „RegistrationState“ in der Ausgabe der beiden obigen Befehle auf „Registered“ gesetzt ist, können Sie mit Schritt 2 fortfahren. Andernfalls müssen Sie den fehlenden Anbieter in Ihrem Abonnement registrieren.
+	Wenn „RegistrationState“ in der Ausgabe der beiden obigen Befehle auf „Registered“ gesetzt ist, können Sie mit Schritt 2 fortfahren. Andernfalls müssen Sie den fehlenden Anbieter in Ihrem Abonnement registrieren.
 
 
 	So registrieren Sie den Azure-Anbieter für Site Recovery:
@@ -104,7 +104,7 @@ In diesem Artikel wird das Verwenden von Azure Powershell mit ARM zum Konfigurie
 
 		New-AzureRmResourceGroup -Name $ResourceGroupName -Location $Geo  
 
-	Dabei enthält die $ResourceGroupName-Variable den Namen der zu erstellenden ARM-Ressourcengruppe und die $Geo-Variable die Azure-Region, in der die Ressourcengruppe erstellt wird (z. B. „Brasilien Süd“).
+	Dabei enthält die $ResourceGroupName-Variable den Namen der zu erstellenden ARM-Ressourcengruppe und die $Geo-Variable die Azure-Region, in der die Ressourcengruppe erstellt wird (z. B. „Brasilien Süd“).
 
 	Sie können eine Liste der ARM-Ressourcengruppen in Ihrem Abonnement mit dem `Get-AzureRmResourceGroup`-Cmdlet abrufen.
 
@@ -211,7 +211,7 @@ In diesem Artikel wird das Verwenden von Azure Powershell mit ARM zum Konfigurie
 		PS C:\> $DRjob | Select-Object -ExpandProperty StateDescription
 		Completed
 
-4. Aktualisieren Sie die Wiederherstellungseigenschaften, z. B. die Größe der VM-Rolle und das Azure-Netzwerk, dem die NICs der VMs bei einem Failover angefügt werden.
+4. Aktualisieren Sie die Wiederherstellungseigenschaften, z. B. die Größe der VM-Rolle und das Azure-Netzwerk, dem die NICs der VMs bei einem Failover angefügt werden.
 
 		PS C:\> $nw1 = Get-AzureRmVirtualNetwork -Name "FailoverNw" -ResourceGroupName "MyRG"
 
@@ -246,7 +246,7 @@ In diesem Artikel wird das Verwenden von Azure Powershell mit ARM zum Konfigurie
 
 
 
-## Schritt 8: Ausführen eines Testfailovers
+## Schritt 8: Ausführen eines Testfailovers
 
 1. Führen Sie einen Testfailoverauftrag aus:
 		

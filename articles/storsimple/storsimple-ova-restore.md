@@ -20,7 +20,7 @@
 
 ## Übersicht 
 
-Dieser Artikel bezieht sich auf Microsoft Azure StorSimple Virtual Array (auch als „lokales virtuelles StorSimple-Gerät“ oder „virtuelles StorSimple-Gerät“ bezeichnet) mit der Version von März 2016 (allgemeine Verfügbarkeit). In diesem Artikel wird Schritt für Schritt beschrieben, wie Sie die Wiederherstellung aus einem Sicherungssatz Ihrer Freigaben oder Volumes für das StorSimple Virtual Array durchführen. Im Artikel wird auch ausführlich beschrieben, wie die Wiederherstellung auf Elementebene auf Ihrem StorSimple Virtual Array funktioniert, wenn dies als Dateiserver konfiguriert ist.
+Dieser Artikel bezieht sich auf Microsoft Azure StorSimple Virtual Array (auch als „lokales virtuelles StorSimple-Gerät“ oder „virtuelles StorSimple-Gerät“ bezeichnet) mit der Version von März 2016 (allgemeine Verfügbarkeit). In diesem Artikel wird Schritt für Schritt beschrieben, wie Sie die Wiederherstellung aus einem Sicherungssatz Ihrer Freigaben oder Volumes für das StorSimple Virtual Array durchführen. Im Artikel wird auch ausführlich beschrieben, wie die Wiederherstellung auf Elementebene auf Ihrem StorSimple Virtual Array funktioniert, wenn dies als Dateiserver konfiguriert ist.
 
 
 ## Wiederherstellen von Freigaben aus einem Sicherungssatz
@@ -42,7 +42,7 @@ Bevor Sie versuchen, die Freigaben wiederherzustellen, sollten Sie sich vergewis
 
 	1.  Überprüfen Sie den Namen des Quellgeräts. Dies sollte das Gerät mit der wiederherzustellenden Freigabe sein. Die Geräteauswahl ist deaktiviert. Um ein anderes Quellgerät auszuwählen, müssen Sie den Assistenten beenden und den Sicherungssatz erneut auswählen.
 
-	2.  Geben Sie einen Freigabenamen an. Der Freigabename kann 3 bis 127 Zeichen lang sein.
+	2.  Geben Sie einen Freigabenamen an. Der Freigabename kann 3 bis 127 Zeichen lang sein.
 
 	3.  Überprüfen Sie Größe, Typ und Berechtigungen der Freigabe, die Sie wiederherstellen möchten. Sie können die Freigabeeigenschaften mit dem Windows-Explorer ändern, nachdem die Wiederherstellung abgeschlossen ist.
 
@@ -52,7 +52,7 @@ Bevor Sie versuchen, die Freigaben wiederherzustellen, sollten Sie sich vergewis
 
 1.  Nachdem der Wiederherstellungsauftrag abgeschlossen ist, wird die Wiederherstellung gestartet, und es wird eine weitere Benachrichtigung angezeigt. Klicken Sie auf **Auftrag anzeigen**, um den Fortschritt der Wiederherstellung zu überwachen. Sie gelangen auf die Seite **Aufträge**.
 
-2.  Hier können Sie den Fortschritt des Wiederherstellungsauftrags verfolgen. Wenn die Wiederherstellung 100 % erreicht hat, navigieren Sie zurück zur Seite **Freigaben** auf Ihrem Gerät.
+2.  Hier können Sie den Fortschritt des Wiederherstellungsauftrags verfolgen. Wenn die Wiederherstellung 100 % erreicht hat, navigieren Sie zurück zur Seite **Freigaben** auf Ihrem Gerät.
 
 3.  Sie können nun die neu wiederhergestellte Freigabe in der Liste mit den Freigaben auf Ihrem Gerät anzeigen. Beachten Sie, dass bei der Wiederherstellung derselbe Freigabentyp verwendet wird. Eine mehrstufige Freigabe wird auch mehrstufig wiederhergestellt, und eine lokale Freigabe wird als lokale Freigabe wiederhergestellt.
 
@@ -79,7 +79,7 @@ Führen Sie im klassischen Azure-Portal die folgenden Schritte aus, um die Wiede
 
 	1.  Überprüfen Sie den Namen des Quellgeräts. Dies sollte das Gerät mit dem wiederherzustellenden Volume sein. Die Geräteauswahl ist nicht verfügbar. Um ein anderes Quellgerät auszuwählen, müssen Sie den Assistenten beenden und den Sicherungssatz erneut auswählen.
 
-	2.  Geben Sie einen Namen für das Volume an. Der Volumename kann 3 bis 127 Zeichen lang sein.
+	2.  Geben Sie einen Namen für das Volume an. Der Volumename kann 3 bis 127 Zeichen lang sein.
 
 	3.  Klicken Sie auf das Pfeilsymbol.
 
@@ -93,7 +93,7 @@ Führen Sie im klassischen Azure-Portal die folgenden Schritte aus, um die Wiede
 
 2.  Nachdem der Wiederherstellungsauftrag abgeschlossen ist, wird die Wiederherstellung gestartet, und es wird eine weitere Benachrichtigung angezeigt. Klicken Sie auf **Auftrag anzeigen**, um den Fortschritt der Wiederherstellung zu überwachen. Sie gelangen auf die Seite **Aufträge**.
 
-3.  Hier können Sie den Fortschritt des Wiederherstellungsauftrags verfolgen. Wenn die Wiederherstellung 100 % erreicht hat, navigieren Sie zurück zur Seite **Volumes** auf Ihrem Gerät.
+3.  Hier können Sie den Fortschritt des Wiederherstellungsauftrags verfolgen. Wenn die Wiederherstellung 100 % erreicht hat, navigieren Sie zurück zur Seite **Volumes** auf Ihrem Gerät.
 
 4.  Sie können nun das neu wiederhergestellte Volume in der Liste mit den Volumes auf Ihrem Gerät anzeigen. Beachten Sie, dass bei der Wiederherstellung derselbe Volumetyp verwendet wird. Ein mehrstufiges Volume wird auch als mehrstufiges Volume wiederhergestellt, und ein lokales Volume bleibt ein lokales Volume.
 

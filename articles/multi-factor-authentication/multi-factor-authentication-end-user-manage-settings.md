@@ -47,7 +47,7 @@ Halten Sie die folgenden Informationen bereit, wenn Sie sich an den Support wend
  
 ![Korrelations-ID](./media/multi-factor-authentication-end-user-manage/correlation.png)
 
- - **Benutzer-ID** – Wie lautet die ID des Benutzers, der den Fehler beobachtet hat (z. B. user@contoso.com)?)?
+ - **Benutzer-ID** – Wie lautet die ID des Benutzers, der den Fehler beobachtet hat (z. B. user@contoso.com)?)?
  - **Informationen zum Benutzer** – Handelt es sich um einen Verbundbenutzer, um einen Benutzer mit Kennworthashsynchronisierung, oder um einen Benutzer, der ausschließlich über die Cloud zugreift? Verfügte der Benutzer über eine Azure AD Premium-, Enterprise Mobility- oder Azure AD Basic-Lizenz? Verwendet der Benutzer Office 365? usw.
 
 Diese Informationen helfen uns dabei, Ihr Problem so schnell wie möglich zu beheben.
@@ -75,7 +75,7 @@ Je nachdem, wie Sie Multi-Factor Authentication verwenden, gibt es mehrere Stell
 
 Verwendung von Multi-Factor Authentication|Beschreibung
 :------------- | :------------- | 
-[Ich verwende sie mit Office 365.](#changing-your-settings-with-office-365)| Dies bedeutet, dass Sie die Einstellungen über das Office 365-Portal ändern sollten.
+[Ich verwende sie mit Office 365.](#changing-your-settings-with-office-365)| Dies bedeutet, dass Sie die Einstellungen über das Office 365-Portal ändern sollten.
 [Nicht bekannt](#changing-your-settings-with-the-myapps-portal)|Dies bedeutet, dass Sie sich bei [http://myapps.microsoft.com](http://myapps.microsoft.com) anmelden und dort die Einstellungen ändern sollten.
 [Ich verwende sie mit Microsoft Azure.](#changing-your-settings-with-microsoft-azure)| Dies bedeutet, dass Sie die Einstellungen über das Azure-Portal ändern sollten.
 
@@ -84,11 +84,11 @@ Verwendung von Multi-Factor Authentication|Beschreibung
 ### Ändern der Einstellungen mit Office 365
 
 
-Wenn Sie Multi-Factor Authentication mit Office 365 verwenden, sollten Sie die Einstellungen für die zusätzliche Sicherheitsüberprüfung über das Office 365-Portal verwalten.
+Wenn Sie Multi-Factor Authentication mit Office 365 verwenden, sollten Sie die Einstellungen für die zusätzliche Sicherheitsüberprüfung über das Office 365-Portal verwalten.
 
-#### So ändern Sie Ihre Einstellungen im Office 365-Portal
+#### So ändern Sie Ihre Einstellungen im Office 365-Portal
 
-1. Melden Sie sich beim [Office 365-Portal](https://login.microsoftonline.com/) an.
+1. Melden Sie sich beim [Office 365-Portal](https://login.microsoftonline.com/) an.
 2. Klicken Sie in der oberen rechten Ecke auf das Widget, und wählen Sie die Office 365-Einstellungen.
 3. Klicken Sie auf "Zusätzliche Sicherheitsüberprüfung".
 4. Wählen Sie auf der rechten Seite **Aktualisieren meiner Telefonnummern für die Kontosicherheit** aus. ![O365](./media/multi-factor-authentication-end-user-manage/o365a.png)

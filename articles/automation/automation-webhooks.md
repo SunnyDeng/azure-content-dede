@@ -46,7 +46,7 @@ Das Objekt **$WebhookData** verfügt über folgende Eigenschaften:
 |:--- |:---|
 | WebhookName | Der Name des Webhooks. |
 | RequestHeader | Die Hashtabelle mit den Headern der eingehenden POST-Anforderung |
-| RequestBody | Der Header der eingehenden POST-Anforderung. Hiermit werden sämtliche Formatierungen beibehalten, z. B. Zeichenfolgenformat, JSON, XML oder formularcodierte Daten. Das Runbook muss so verfasst werden, dass es mit dem erwarteten Datenformat funktioniert.|
+| RequestBody | Der Header der eingehenden POST-Anforderung. Hiermit werden sämtliche Formatierungen beibehalten, z. B. Zeichenfolgenformat, JSON, XML oder formularcodierte Daten. Das Runbook muss so verfasst werden, dass es mit dem erwarteten Datenformat funktioniert.|
 
 
 Zur Unterstützung des Parameters **$WebhookData** ist keine Konfiguration des Webhooks erforderlich, und das Runbook muss ihn nicht akzeptieren. Wenn das Runbook den Parameter nicht definiert, werden alle vom Client gesendeten Details der Anforderung ignoriert.
@@ -112,7 +112,7 @@ Wenn die Anforderung erfolgreich ist, enthält die Antwort des Webhooks wie im F
 
 	{"JobIds":["<JobId>"]}  
 
-Der Client kann weder die Bestätigung, dass ein Runbookauftrag abgeschlossen wurde, noch den Abschlussstatus aus einem Webhook abrufen. Diese Informationen können mithilfe der Auftrags-ID unter Verwendung einer anderen Methode ermittelt werden, z. B. mit [Windows PowerShell](http://msdn.microsoft.com/library/azure/dn690263.aspx) oder der [Azure Automation-API](https://msdn.microsoft.com/library/azure/mt163826.aspx).
+Der Client kann weder die Bestätigung, dass ein Runbookauftrag abgeschlossen wurde, noch den Abschlussstatus aus einem Webhook abrufen. Diese Informationen können mithilfe der Auftrags-ID unter Verwendung einer anderen Methode ermittelt werden, z. B. mit [Windows PowerShell](http://msdn.microsoft.com/library/azure/dn690263.aspx) oder der [Azure Automation-API](https://msdn.microsoft.com/library/azure/mt163826.aspx).
 
 ### Beispiel
 

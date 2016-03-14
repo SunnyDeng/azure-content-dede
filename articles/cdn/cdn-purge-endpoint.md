@@ -22,7 +22,7 @@
 
 Azure CDN-Edgeknoten speichern Assets zwischen, bis die Gültigkeitsdauer (Time-to-live, TTL) des Assets abläuft. Wenn ein Client nach Ablauf der TTL des Assets das Asset aus dem Edgeknoten anfordert, ruft der Edgeknoten eine neue aktualisierte Kopie des Assets ab, um die Clientanforderung zu erfüllen und den Cache zu aktualisieren.
 
-Manchmal möchten Sie möglicherweise zwischengespeicherten Inhalt aus allen Edgeknoten löschen und sie zwingen, neue aktualisierte Assets abzurufen. Als Gründe hierfür kommen z. B. Updates Ihrer Webanwendung oder schnelle Aktualisierung von Assets, die falsche Informationen enthalten, infrage.
+Manchmal möchten Sie möglicherweise zwischengespeicherten Inhalt aus allen Edgeknoten löschen und sie zwingen, neue aktualisierte Assets abzurufen. Als Gründe hierfür kommen z. B. Updates Ihrer Webanwendung oder schnelle Aktualisierung von Assets, die falsche Informationen enthalten, infrage.
 
 Dieses Lernprogramm führt Sie durch das Löschen von Assets aus allen Edgeknoten eines Endpunkts.
 
@@ -44,7 +44,7 @@ Dieses Lernprogramm führt Sie durch das Löschen von Assets aus allen Edgeknote
 
 	> [AZURE.NOTE] Um das Blatt „Löschen“ aufzurufen, können Sie auch auf dem Blatt des CDN-Endpunkts auf die Schaltfläche **Löschen** klicken. In diesem Fall ist im **URL**-Feld die Adresse des Diensts dieses Endpunkts vorgegeben.
 
-4. Wählen Sie, welche Assets Sie aus dem Edgeknoten löschen möchten. Wenn Sie alle Assets löschen möchten, klicken Sie auf das Kontrollkästchen **Alles löschen**. Geben Sie andernfalls den vollständigen Pfad jedes Assets, das Sie löschen möchten (z. B. */pictures/kitten.png*), in das Textfeld **Pfad** ein.
+4. Wählen Sie, welche Assets Sie aus dem Edgeknoten löschen möchten. Wenn Sie alle Assets löschen möchten, klicken Sie auf das Kontrollkästchen **Alles löschen**. Geben Sie andernfalls den vollständigen Pfad jedes Assets, das Sie löschen möchten (z. B. */pictures/kitten.png*), in das Textfeld **Pfad** ein.
 
 	> [AZURE.TIP] Nachdem Sie Text eingegeben haben, werden weitere **Pfad**-Textfelder angezeigt, damit Sie eine Liste mit mehreren Assets erstellen können. Sie können Assets aus der Liste löschen, indem Sie auf die Schaltfläche mit den Auslassungspunkten (...) klicken.
 	>

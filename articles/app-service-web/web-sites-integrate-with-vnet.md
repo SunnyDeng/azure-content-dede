@@ -33,9 +33,9 @@ Für die Funktion für die VNET-Integration gilt Folgendes:
 - Eine App kann nur jeweils mit einem VNET eine Verbindung herstellen
 - Bis zu fünf VNETs können in einen App Service-Plan integriert werden 
 - Ein VNET kann im Rahmen eines App Service-Plans von mehreren Apps verwendet werden
-- Unterstützt dank der Nutzung des VNET-Gateways ein SLA mit einer Verfügbarkeit von 99,9 %
+- Unterstützt dank der Nutzung des VNET-Gateways ein SLA mit einer Verfügbarkeit von 99,9 %
 
-Einige Dinge werden von der VNET-Integration nicht unterstützt, z. B.:
+Einige Dinge werden von der VNET-Integration nicht unterstützt, z. B.:
 
 - Bereitstellung eines Laufwerks
 - AD-Integration 
@@ -66,19 +66,19 @@ Wenn Ihre App nicht den richtigen Tarif aufweist, können Sie die Benutzeroberfl
 ![][1]
  
 ###Aktivieren der VNET-Integration mit einem bereits vorhandenen VNET###
-Die Benutzeroberfläche der VNET-Integration ermöglicht Ihnen die Auswahl aus einer Liste mit V1 VNETs. In der Abbildung unten sehen Sie, dass nur ein VNET ausgewählt werden kann. Es gibt mehrere Gründe dafür, warum ein VNET abgeblendet sein kann, z. B.:
+Die Benutzeroberfläche der VNET-Integration ermöglicht Ihnen die Auswahl aus einer Liste mit V1 VNETs. In der Abbildung unten sehen Sie, dass nur ein VNET ausgewählt werden kann. Es gibt mehrere Gründe dafür, warum ein VNET abgeblendet sein kann, z. B.:
 
 - Das VNET befindet sich in einem anderen Abonnement, auf das Ihr Konto Zugriff hat.
 - Für das VNET ist „Punkt-zu-Standort“ nicht aktiviert.
 - Das VNET hat kein Gateway für dynamisches Routing.
 
-Beachten Sie auch Folgendes: Da die Integration in V2 VNETs noch nicht unterstützt wird, werden sie nicht aufgeführt.
+Beachten Sie auch Folgendes: Da die Integration in V2 VNETs noch nicht unterstützt wird, werden sie nicht aufgeführt.
 
 ![][2]
 
 Klicken Sie zum Aktivieren der Integration einfach auf das VNET, das Sie für die Integration verwenden möchten. Nach dem Auswählen des VNET wird Ihre App automatisch neu gestartet, damit die Änderungen wirksam werden.
 
-Wenn Ihr VNET kein Gateway aufweist und auch nicht über „Punkt-zu-Standort“ verfügt, müssen Sie dies zuerst einrichten. Rufen Sie hierfür im Azure-Portal die Liste mit den Virtual Networks (klassisch) auf. Klicken Sie darin auf das Netzwerk, das Sie für die Integration verwenden möchten, und klicken Sie unter „Essentials“ in das große Feld mit der Bezeichnung „VPN-Verbindungen“. Hier können Sie Ihr Punkt-zu-Standort-VPN erstellen und dafür sogar ein Gateway erstellen lassen. Nachdem Sie die Schritte für die Erstellung des Punkt-zu-Standort-VPN mit Gateway ausgeführt haben, dauert es ca. 30 Minuten, bevor es betriebsbereit ist.
+Wenn Ihr VNET kein Gateway aufweist und auch nicht über „Punkt-zu-Standort“ verfügt, müssen Sie dies zuerst einrichten. Rufen Sie hierfür im Azure-Portal die Liste mit den Virtual Networks (klassisch) auf. Klicken Sie darin auf das Netzwerk, das Sie für die Integration verwenden möchten, und klicken Sie unter „Essentials“ in das große Feld mit der Bezeichnung „VPN-Verbindungen“. Hier können Sie Ihr Punkt-zu-Standort-VPN erstellen und dafür sogar ein Gateway erstellen lassen. Nachdem Sie die Schritte für die Erstellung des Punkt-zu-Standort-VPN mit Gateway ausgeführt haben, dauert es ca. 30 Minuten, bevor es betriebsbereit ist.
 
 ![][8]
 
@@ -87,7 +87,7 @@ Wenn Sie ein neues VNET erstellen möchten, sollten Sie daran danken, dass Sie d
 
 Beachten Sie folgende Warnung: Wenn Sie für dieses VNET eine Verbindung mit einem Ihrer anderen Netzwerke herstellen möchten, sollten Sie die Auswahl eines IP-Adressbereichs vermeiden, der sich mit diesen Netzwerken überlappt.
 
->[AZURE.NOTE] Es kann bis zu 30 Minuten dauern, bis ein neues VNET mit funktionierenden Gateways bereitgestellt wird. Wenn der Vorgang abgeschlossen ist, wird die Benutzeroberfläche aktualisiert.
+>[AZURE.NOTE] Es kann bis zu 30 Minuten dauern, bis ein neues VNET mit funktionierenden Gateways bereitgestellt wird. Wenn der Vorgang abgeschlossen ist, wird die Benutzeroberfläche aktualisiert.
 
 ![][3]
 
@@ -97,7 +97,7 @@ Azure-VNETs werden normalerweise innerhalb der Adressbereiche privater Netzwerke
 - 172\.16.0.0/12: entspricht 172.16.0.0 - 172.31.255.255 
 - 192\.168.0.0/16: entspricht 192.168.0.0 - 192.168.255.255
  
-Der VNET-Adressraum muss per CIDR-Notation angegeben werden. Falls Sie mit der CIDR-Notation nicht vertraut sind, hilft Ihnen vielleicht diese Beschreibung weiter: Es handelt sich dabei um ein Verfahren zum Angeben von Adressblöcken mit einer IP-Adresse und einer Ganzzahl, die für die Netzwerkmaske steht. Hinweis: 10.1.0.0/24 ergibt 256 Adressen, und 10.1.0.0/25 ergibt 128 Adressen. Eine IPv4-Adresse mit „/32“ ergibt nur eine Adresse.
+Der VNET-Adressraum muss per CIDR-Notation angegeben werden. Falls Sie mit der CIDR-Notation nicht vertraut sind, hilft Ihnen vielleicht diese Beschreibung weiter: Es handelt sich dabei um ein Verfahren zum Angeben von Adressblöcken mit einer IP-Adresse und einer Ganzzahl, die für die Netzwerkmaske steht. Hinweis: 10.1.0.0/24 ergibt 256 Adressen, und 10.1.0.0/25 ergibt 128 Adressen. Eine IPv4-Adresse mit „/32“ ergibt nur eine Adresse.
 
 Wenn Sie die DNS-Serverinformationen hier angeben, werden diese für Ihr VNET festgelegt. Nach der Erstellung des VNET können Sie diese Informationen über die VNET-Benutzeroberflächen bearbeiten.
 
@@ -132,7 +132,7 @@ Die Informationen, die für Sie jetzt auf der Benutzeroberfläche für die VNET-
 - DNS-Server: Wenn Sie für Ihr VNET DNS-Server konfiguriert haben, werden diese hier aufgeführt.
 - IPs mit Routing zum VNET: Es ist eine Liste mit IP-Adressen vorhanden, für die im VNET das Routing definiert ist. Diese Adressen werden hier angezeigt.  
 
-Der einzige Vorgang, den Sie in der App-Ansicht Ihrer VNET-Integration durchführen können, ist das Trennen Ihrer App von dem VNET, mit dem derzeit eine Verbindung besteht. Klicken Sie hierzu oben einfach auf „Trennen“. Durch diese Aktion wird Ihr VNET nicht beeinträchtigt. Das VNET und dessen Konfiguration, einschließlich der Gateways, bleibt unverändert. Wenn Sie Ihr VNET dann löschen möchten, müssen Sie zuerst die darin enthaltenen Ressourcen löschen, z. B. auch die Gateways.
+Der einzige Vorgang, den Sie in der App-Ansicht Ihrer VNET-Integration durchführen können, ist das Trennen Ihrer App von dem VNET, mit dem derzeit eine Verbindung besteht. Klicken Sie hierzu oben einfach auf „Trennen“. Durch diese Aktion wird Ihr VNET nicht beeinträchtigt. Das VNET und dessen Konfiguration, einschließlich der Gateways, bleibt unverändert. Wenn Sie Ihr VNET dann löschen möchten, müssen Sie zuerst die darin enthaltenen Ressourcen löschen, z. B. auch die Gateways.
 
 Die Ansicht „App Service-Plan“ enthält einige zusätzliche Vorgänge. Außerdem erfolgt der Zugriff anders als über die App. Öffnen Sie einfach die Benutzeroberfläche des App Service-Plans, und scrollen Sie nach unten, um zur ASP-Netzwerk-Benutzeroberfläche zu gelangen. Darin ist das Benutzeroberflächenelement „Netzwerkfunktionsstatus“ enthalten. Hier sind einige Details Ihrer VNET-Integration angegeben. Wenn Sie auf dieses Benutzeroberflächenelement klicken, wird der Bereich „Netzwerkfunktionsstatus“ geöffnet. Wenn Sie dann auf „Zum Verwalten hier klicken“ klicken, wird die Benutzeroberfläche angezeigt, auf der die VNET-Integrationen dieses ASP angezeigt werden.
 
@@ -154,7 +154,7 @@ In Bezug auf Aktionen gibt es zwei Hauptaktionen. Erstens die Möglichkeit, Rout
 
 ##Zugriff auf Betriebsressourcen##
 
-Einer der Vorteile der Funktion für die VNET-Integration ist, dass für Ihre Apps Zugriff auf Ihre lokalen Ressourcen bestehen kann, sofern das VNET per Standort-zu-Standort-VPN mit Ihrem lokalen Netzwerk verbunden ist. Damit dies funktioniert, müssen Sie unter Umständen das lokale VPN Gateway mit den Routen für den Punkt-zu-Standort-IP-Bereich aktualisieren. Nach dem ersten Einrichten des Standort-zu-Standort-VPN sollten mit den Skripts, die für die Konfiguration verwendet werden, Routen eingerichtet werden, z. B. das Punkt-zu-Standort-VPN. Wenn Sie das Punkt-zu-Standort-VPN nach dem Erstellen des Standort-zu-Standort-VPN erstellen, müssen Sie die Routen manuell aktualisieren. Die Details zur Vorgehensweise variieren je nach Gateway und sind hier nicht beschrieben.
+Einer der Vorteile der Funktion für die VNET-Integration ist, dass für Ihre Apps Zugriff auf Ihre lokalen Ressourcen bestehen kann, sofern das VNET per Standort-zu-Standort-VPN mit Ihrem lokalen Netzwerk verbunden ist. Damit dies funktioniert, müssen Sie unter Umständen das lokale VPN Gateway mit den Routen für den Punkt-zu-Standort-IP-Bereich aktualisieren. Nach dem ersten Einrichten des Standort-zu-Standort-VPN sollten mit den Skripts, die für die Konfiguration verwendet werden, Routen eingerichtet werden, z. B. das Punkt-zu-Standort-VPN. Wenn Sie das Punkt-zu-Standort-VPN nach dem Erstellen des Standort-zu-Standort-VPN erstellen, müssen Sie die Routen manuell aktualisieren. Die Details zur Vorgehensweise variieren je nach Gateway und sind hier nicht beschrieben.
 
 >[AZURE.NOTE] Die Funktion für die VNET-Integration funktioniert mit einem Standort-zu-Standort-VPN, was den Zugriff auf lokale Ressourcen betrifft, aber mit einem ExpressRoute-VPN ist dies derzeit nicht möglich.
 
@@ -169,7 +169,7 @@ Damit Ihre Apps diese Funktion verwenden können, müssen sie im Rahmen des App 
 
 Aufgrund der Art und Weise, wie Punkt-zu-Standort-VPNs behandelt werden, fällt für Sie immer eine Gebühr für ausgehende Daten über die Verbindung der VNET-Integration an. Dies gilt auch, wenn sich das VNET in demselben Rechenzentrum befindet. Sie können sich hier über diese Gebühren informieren: [Datenübertragungen – Preisdetails][DataPricing].
 
-Das letzte Element sind die Kosten für die VNET-Gateways. Wenn Sie die Gateways nicht für etwas anderes benötigen, z. B. Standort-zu-Standort-VPNs, bezahlen Sie für Gateways als Unterstützung der Funktion für die VNET-Integration. Details zu diesen Kosten finden Sie hier: [VPN Gateway – Preise][VNETPricing].
+Das letzte Element sind die Kosten für die VNET-Gateways. Wenn Sie die Gateways nicht für etwas anderes benötigen, z. B. Standort-zu-Standort-VPNs, bezahlen Sie für Gateways als Unterstützung der Funktion für die VNET-Integration. Details zu diesen Kosten finden Sie hier: [VPN Gateway – Preise][VNETPricing].
 
 ##Problembehandlung##
 
@@ -193,7 +193,7 @@ Mit diesem Tool können Sie ermitteln, ob Sie einen bestimmten Host und Port err
 
 ####Debuggen des Zugriffs auf im VNET gehostete Ressourcen####
 
-Es kann verschiedene Ursachen haben, warum Ihre App einen bestimmten Host und Port nicht erreichen kann. Beginnen Sie mit den einfachen Punkten, um das Problem aufzuschlüsseln, z. B.:
+Es kann verschiedene Ursachen haben, warum Ihre App einen bestimmten Host und Port nicht erreichen kann. Beginnen Sie mit den einfachen Punkten, um das Problem aufzuschlüsseln, z. B.:
 
 - Wird im Portal angezeigt, dass das Gateway ausgeführt wird?
 - Wird angezeigt, dass die Zertifikate synchron sind?
@@ -238,9 +238,9 @@ Es gibt drei Funktionen, die den Zugriff auf im VNET gehostete Ressourcen ermög
 - Hybridverbindungen
 - App Service-Umgebungen
 
-Für Hybridverbindungen müssen Sie in Ihrem Netzwerk einen Relay-Agent installieren, und zwar den Hybrid Connection Manager (HCM). Für den HCM muss eine Verbindung mit Azure und auch mit Ihrer Anwendung hergestellt werden können. Diese Lösung eignet sich besonders gut für ein Remotenetzwerk, z. B. Ihr lokales Netzwerk, oder auch ein anderes in der Cloud gehostetes Netzwerk, weil dafür kein über das Internet zugänglicher Endpunkt erforderlich ist. Der HCM kann nur unter Windows ausgeführt werden, und Sie können bis zu fünf Instanzen verwenden, um für eine hohe Verfügbarkeit zu sorgen. Für Hybridverbindungen wird aber nur TCP unterstützt, und für jeden Endpunkt einer Hybridverbindung muss eine bestimmte host:port-Kombination verwendet werden.
+Für Hybridverbindungen müssen Sie in Ihrem Netzwerk einen Relay-Agent installieren, und zwar den Hybrid Connection Manager (HCM). Für den HCM muss eine Verbindung mit Azure und auch mit Ihrer Anwendung hergestellt werden können. Diese Lösung eignet sich besonders gut für ein Remotenetzwerk, z. B. Ihr lokales Netzwerk, oder auch ein anderes in der Cloud gehostetes Netzwerk, weil dafür kein über das Internet zugänglicher Endpunkt erforderlich ist. Der HCM kann nur unter Windows ausgeführt werden, und Sie können bis zu fünf Instanzen verwenden, um für eine hohe Verfügbarkeit zu sorgen. Für Hybridverbindungen wird aber nur TCP unterstützt, und für jeden Endpunkt einer Hybridverbindung muss eine bestimmte host:port-Kombination verwendet werden.
 
-Mit der Funktion für die App Service-Umgebung können Sie eine Instanz von Azure App Service in Ihrem VNET ausführen. Hiermit können Ihre Apps ohne weitere Schritte auf Ressourcen in Ihrem VNET zugreifen. Ein Beispiel für einen weiteren Vorteil einer App Service-Umgebung ist, dass Sie acht dedizierte Kernspeicher-Worker mit 14 GB RAM verwenden können. Ein weiterer Vorteil ist, dass Sie das System je nach Ihren Anforderungen skalieren können. Im Gegensatz zu den mehrinstanzenfähigen Umgebungen, in denen für Ihren ASP eine Größenbeschränkung gilt, können Sie in einer App Service-Umgebung steuern, wie viele Ressourcen Sie für das System zuteilen möchten. Da der Schwerpunkt in diesem Dokument auf dem Netzwerk liegt, sollten Sie folgenden Hinweis beachten: Eine App Service-Umgebung können Sie mit einem ExpressRoute VPN verwenden, was für die VNET-Integration nicht möglich ist.
+Mit der Funktion für die App Service-Umgebung können Sie eine Instanz von Azure App Service in Ihrem VNET ausführen. Hiermit können Ihre Apps ohne weitere Schritte auf Ressourcen in Ihrem VNET zugreifen. Ein Beispiel für einen weiteren Vorteil einer App Service-Umgebung ist, dass Sie acht dedizierte Kernspeicher-Worker mit 14 GB RAM verwenden können. Ein weiterer Vorteil ist, dass Sie das System je nach Ihren Anforderungen skalieren können. Im Gegensatz zu den mehrinstanzenfähigen Umgebungen, in denen für Ihren ASP eine Größenbeschränkung gilt, können Sie in einer App Service-Umgebung steuern, wie viele Ressourcen Sie für das System zuteilen möchten. Da der Schwerpunkt in diesem Dokument auf dem Netzwerk liegt, sollten Sie folgenden Hinweis beachten: Eine App Service-Umgebung können Sie mit einem ExpressRoute VPN verwenden, was für die VNET-Integration nicht möglich ist.
 
 Bei den Anwendungsfällen gibt es zwar einige Überschneidungen, aber diese Funktionen können sich nicht gegenseitig ersetzen. Das Wissen, welche Funktion verwendet werden sollte, richtet sich nach Ihren Anforderungen und der gewünschten Nutzung. Beispiel:
 
@@ -250,7 +250,7 @@ Bei den Anwendungsfällen gibt es zwar einige Überschneidungen, aber diese Funk
 
 Über die Anwendungsfälle hinaus sind noch einige Aspekte in Bezug auf die Einfachheit zu beachten. Wenn Ihr VNET bereits mit dem lokalen Netzwerk verbunden ist, stellen die VNET-Integration oder eine App Service-Umgebung eine einfache Möglichkeit zur Nutzung der lokalen Ressourcen dar. Wenn Ihr VNET dagegen nicht mit dem lokalen Netzwerk verbunden ist, bedeutet es gegenüber der Installation des HCM deutlich mehr Aufwand, ein Standort-zu-Standort-VPN mit Ihrem VNET einzurichten.
 
-Über die Unterschiede bei den Funktionen hinaus gibt es auch Unterschiede bei den Preisen. Die Funktion „App Service-Umgebung“ ist ein Premium-Dienstangebot, umfasst zusätzlich zu anderen hervorragenden Features aber auch die meisten Möglichkeiten zur Netzwerkkonfiguration. Die VNET-Integration kann mit den App Service-Plänen „Standard“ oder „Premium“ verwendet werden und eignet sich ideal zum sicheren Nutzen von Ressourcen in Ihrem VNET per App Service mit Mehrinstanzenfähigkeit. Hybridverbindungen sind derzeit von einem BizTalk-Konto abhängig. Die Preise reichen von der anfänglichen kostenlosen Nutzung bis zu den unterschiedlichen höheren Preisstufen, die sich nach der benötigten Menge richten. Was die Nutzung über viele Netzwerke hinweg betrifft, stehen aber Hybridverbindungen an erster Stelle. Hiermit können Sie auf Ressourcen in deutlich mehr als 100 separaten Netzwerken zugreifen.
+Über die Unterschiede bei den Funktionen hinaus gibt es auch Unterschiede bei den Preisen. Die Funktion „App Service-Umgebung“ ist ein Premium-Dienstangebot, umfasst zusätzlich zu anderen hervorragenden Features aber auch die meisten Möglichkeiten zur Netzwerkkonfiguration. Die VNET-Integration kann mit den App Service-Plänen „Standard“ oder „Premium“ verwendet werden und eignet sich ideal zum sicheren Nutzen von Ressourcen in Ihrem VNET per App Service mit Mehrinstanzenfähigkeit. Hybridverbindungen sind derzeit von einem BizTalk-Konto abhängig. Die Preise reichen von der anfänglichen kostenlosen Nutzung bis zu den unterschiedlichen höheren Preisstufen, die sich nach der benötigten Menge richten. Was die Nutzung über viele Netzwerke hinweg betrifft, stehen aber Hybridverbindungen an erster Stelle. Hiermit können Sie auf Ressourcen in deutlich mehr als 100 separaten Netzwerken zugreifen.
 
 
 <!--Image references-->

@@ -28,10 +28,10 @@ Das CDN bietet Entwicklern eine globale Lösung für die Übermittlung von Inhal
 Die Verwendung des CDN zum Zwischenspeichern von Azure-Daten bietet folgende Vorteile:
 
 - Bessere Leistung und Benutzerfreundlichkeit für Endbenutzer, die von einer Inhaltsquelle weit entfernt sind und Anwendungen verwenden, die viele Verbindungen mit dem Internet benötigen, um Inhalte zu laden.
-- Große verteilte Skalierung, um hohe Lasten etwa zu Beginn eines Ereignisses, z. B. bei einer Produkteinführung, besser verarbeiten zu können
+- Große verteilte Skalierung, um hohe Lasten etwa zu Beginn eines Ereignisses, z. B. bei einer Produkteinführung, besser verarbeiten zu können
 
 
->[AZURE.IMPORTANT] Wenn Sie einen CDN-Endpunkt erstellen oder aktivieren, dauert es bis zu 90 Minuten, bis dieser weltweit verfügbar ist.
+>[AZURE.IMPORTANT] Wenn Sie einen CDN-Endpunkt erstellen oder aktivieren, dauert es bis zu 90 Minuten, bis dieser weltweit verfügbar ist.
 
 Wenn eine Anforderung für ein Objekt zuerst an das CDN gerichtet wird, wird das Objekt direkt aus seinem ursprünglichen Speicherort abgerufen. Dieser Ursprung kann ein Azure-Speicherkonto, eine Web-App, ein Cloud-Dienst oder ein beliebiger benutzerdefinierter Ursprung, der öffentlichen Webanforderungen akzeptiert, sein. Bei einer Anforderung mit der CDN-Syntax wird die Anforderung zum CDN-Endpunkt umgeleitet, der dem Standort am nächsten ist, von dem die Anforderung gestellt wurde, um auf das Objekt zuzugreifen. Wenn das Objekt an diesem Endpunkt nicht gefunden wird, wird es aus dem Dienst abgerufen und am Endpunkt zwischengespeichert, wobei eine Einstellung für Gültigkeitsdauer für das zwischengespeicherte Objekt verwaltet wird.
 
@@ -39,7 +39,7 @@ Wenn eine Anforderung für ein Objekt zuerst an das CDN gerichtet wird, wird das
 
 Der CDN-Tarif „Standard“ enthält die folgenden Features:
 
-- Einfache Integration mittels der Azure-Dienste wie z. B. [Speicher](cdn-create-a-storage-account-with-cdn.md), Web-Apps und Media Services
+- Einfache Integration mittels der Azure-Dienste wie z. B. [Speicher](cdn-create-a-storage-account-with-cdn.md), Web-Apps und Media Services
 - [Zwischenspeicherung von Abfragezeichenfolgen](cdn-query-string.md)
 - [Unterstützung benutzerdefinierter Domänennamen](cdn-map-content-to-custom-domain.md)
 - [Länderfilter](cdn-restrict-access-by-country.md)

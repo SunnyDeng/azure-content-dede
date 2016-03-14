@@ -24,7 +24,7 @@ Dieses Thema bietet eine Übersicht über die wichtigsten Konzepte von Media Ser
 
 ###Objekte
 
-Ein [Medienobjekt](https://msdn.microsoft.com/library/azure/hh974277.aspx) enthält digitale Dateien (z. B. Video, Audio, Bilder, Sammlungen von Miniaturansichten, Textspuren und Untertiteldateien) sowie die Metadaten zu diesen Dateien. Nachdem die digitalen Dateien in ein Medienobjekt geladen wurden, können Sie in den Codierungs- und Streaming-Workflows der Media Services verwendet werden.
+Ein [Medienobjekt](https://msdn.microsoft.com/library/azure/hh974277.aspx) enthält digitale Dateien (z. B. Video, Audio, Bilder, Sammlungen von Miniaturansichten, Textspuren und Untertiteldateien) sowie die Metadaten zu diesen Dateien. Nachdem die digitalen Dateien in ein Medienobjekt geladen wurden, können Sie in den Codierungs- und Streaming-Workflows der Media Services verwendet werden.
 
 Ein Medienobjekt wird einem BLOB-Container im Azure Storage-Konto zugeordnet, und die im Medienobjekt enthaltenen Dateien werden als BLOBs in diesem Container gespeichert.
 
@@ -52,7 +52,7 @@ Wenn Sie planen, eine MP4-Datei über progressives Herunterladen zu übermitteln
 
 Um ein speicherverschlüsseltes Medienobjekt zu übermitteln, müssen Sie die Übermittlungsrichtlinie des Medienobjekts konfigurieren und Media Services so mitteilen, wie die Inhalte bereitgestellt werden sollen. Bevor das Medienobjekt gestreamt werden kann, wird die Speicherverschlüsselung vom Streamingserver entfernt und der Inhalt mithilfe der angegebenen Übermittlungsrichtlinie (AES, PlayReady oder unverschlüsselt) gestreamt.
 
-**CommonEncryptionProtected** - Verwenden Sie diese Option, wenn Sie Inhalte mit Common Encryption oder PlayReady-DRM (z. B. mit PlayReady-DRM geschütztes Smooth Streaming) verschlüsseln (oder bereits verschlüsselte Inhalte hochladen) möchten.
+**CommonEncryptionProtected** - Verwenden Sie diese Option, wenn Sie Inhalte mit Common Encryption oder PlayReady-DRM (z. B. mit PlayReady-DRM geschütztes Smooth Streaming) verschlüsseln (oder bereits verschlüsselte Inhalte hochladen) möchten.
 
 **EnvelopeEncryptionProtected** – Verwenden Sie diese Option, wenn Sie HTTP Live Streaming (HLS) schützen (oder bereits geschütztes HLS hochladen) möchten, das mit dem Advanced Encryption Standard (AES) verschlüsselt ist. Beachten Sie, dass beim Hochladen von bereits mit AES verschlüsseltem HLS die Verschlüsselung mithilfe von Transform Manager erfolgt sein muss.
 
@@ -71,13 +71,13 @@ Ein BLOB-Container dient zur Gruppierung eines Satzes von BLOBs. BLOB-Container 
 
 [Locator](https://msdn.microsoft.com/library/azure/hh974308.aspx) bieten einen Einstiegspunkt für den Zugriff auf die in einem Medienobjekt enthaltenen Dateien. Anhand einer Zugriffsrichtlinie werden die Berechtigungen eines Clients und die Dauer definiert, für die der Client auf eine bestimmte Ressource zugreifen kann. Locator können eine n:1-Beziehung mit einer Zugriffsrichtlinie aufweisen, wobei verschiedene Locator verschiedenen Clients verschiedene Startzeiten und Verbindungstypen bereitstellen können, wobei alle dieselben Berechtigungen und Einstellungen für die Dauer verwenden; aufgrund einer Einschränkung der Richtlinie für den gemeinsamen Zugriff, die von Azure Storage Services festgelegt wird, können jedoch nicht mehr als fünf eindeutige Locator mit einem bestimmten Medienobjekt gleichzeitig verknüpft sein.
 
-Media Services unterstützt zwei Locator-Typen: OnDemandOrigin-Locator, die zum Streamen von Medien (z. B. MPEG DASH, HLS oder Smooth Streaming) oder für den progressiven Download von Medien verwendet werden, und SAS-URL-Locator, die zum Hochladen oder Herunterladen von Mediendateien auf/von Azure Storage verwendet werden.
+Media Services unterstützt zwei Locator-Typen: OnDemandOrigin-Locator, die zum Streamen von Medien (z. B. MPEG DASH, HLS oder Smooth Streaming) oder für den progressiven Download von Medien verwendet werden, und SAS-URL-Locator, die zum Hochladen oder Herunterladen von Mediendateien auf/von Azure Storage verwendet werden.
 
 Beachten Sie, dass die Berechtigung zum Auflisten (AccessPermissions.List) beim Erstellen eines OrDemandOrigin-Locators nicht verwendet werden sollte.
 
 ###Speicherkonto
 
-Alle Zugriffe auf den Azure-Speicher erfolgen über ein Speicherkonto. Ein Media Service-Konto kann mit einem oder mehreren Speicherkonten verknüpft werden. Ein Konto kann eine unbegrenzte Anzahl von Containern enthalten, solange die Gesamtgröße unter 500 TB pro Speicherkonto bleibt. Media Services enthält Tools auf SDK-Ebene, mit denen Sie mehrere Speicherkonten verwalten und bei der Verteilung Ihrer Medienobjekte einen Lastenausgleich durchführen können. Beim Hochladen der Objekte in diese Konten kann dieser Ausgleich basierend auf Kennzahlen oder anhand einer zufälligen Verteilung erfolgen. Weitere Informationen finden Sie unter [Arbeiten mit Azure Storage](https://msdn.microsoft.com/library/azure/dn767951.aspx).
+Alle Zugriffe auf den Azure-Speicher erfolgen über ein Speicherkonto. Ein Media Service-Konto kann mit einem oder mehreren Speicherkonten verknüpft werden. Ein Konto kann eine unbegrenzte Anzahl von Containern enthalten, solange die Gesamtgröße unter 500 TB pro Speicherkonto bleibt. Media Services enthält Tools auf SDK-Ebene, mit denen Sie mehrere Speicherkonten verwalten und bei der Verteilung Ihrer Medienobjekte einen Lastenausgleich durchführen können. Beim Hochladen der Objekte in diese Konten kann dieser Ausgleich basierend auf Kennzahlen oder anhand einer zufälligen Verteilung erfolgen. Weitere Informationen finden Sie unter [Arbeiten mit Azure Storage](https://msdn.microsoft.com/library/azure/dn767951.aspx).
 
 ##Aufträge und Aufgaben
 
@@ -184,7 +184,7 @@ Eine Abrechnung erfolgt nur für ausgeführte StreamingEndpoints.
 
 ###Übermittlungsrichtlinie für Medienobjekte
 
-Einer der Schritte im Workflow zur Inhaltsübermittlung in Media Services ist das Konfigurieren von [Übermittlungsrichtlinien für Medienobjekte](https://msdn.microsoft.com/library/azure/dn799055.aspx), die gestreamt werden sollen. Anhand der Übermittlungsrichtlinie für Medienobjekte kann Media Services ermitteln, wie das Medienobjekt übermittelt werden soll, also mit welchem Streamingprotokoll das Medienobjekt dynamisch verpackt werden soll (z. B. MPEG-DASH, HLS, Smooth Streaming oder alle) und ob und wie das Medienobjekt ggf. dynamisch verschlüsselt werden soll (Umschlag- oder allgemeine Verschlüsselung).
+Einer der Schritte im Workflow zur Inhaltsübermittlung in Media Services ist das Konfigurieren von [Übermittlungsrichtlinien für Medienobjekte](https://msdn.microsoft.com/library/azure/dn799055.aspx), die gestreamt werden sollen. Anhand der Übermittlungsrichtlinie für Medienobjekte kann Media Services ermitteln, wie das Medienobjekt übermittelt werden soll, also mit welchem Streamingprotokoll das Medienobjekt dynamisch verpackt werden soll (z. B. MPEG-DASH, HLS, Smooth Streaming oder alle) und ob und wie das Medienobjekt ggf. dynamisch verschlüsselt werden soll (Umschlag- oder allgemeine Verschlüsselung).
 
 Damit ein speicherverschlüsseltes Medienobjekt gestreamt werden kann, entfernt der Streamingserver die Speicherverschlüsselung und streamt den Inhalt anhand der angegebenen Übermittlungsrichtlinie. Wenn Sie ein Medienobjekt für die Übermittlung beispielsweise mit einem Schlüssel für die AES-Verschlüsselung (Advanced Encryption Standard) verschlüsseln möchten, legen Sie den Richtlinientyp auf DynamicEnvelopeEncryption fest. Um die Speicherverschlüsselung zu entfernen und das Medienobjekt unverschlüsselt zu streamen, legen Sie den Richtlinientyp auf NoDynamicEncryption fest.
 

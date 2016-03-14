@@ -44,7 +44,7 @@ resource=https://tailspin.onmicrosoft.com/surveys.webapi
 
 Der Schlüssel ist lediglich eine Zeichenfolge. Daher müssen Sie sicherstellen, dass diese nicht preisgegeben wird. Die bewährte Methode ist, den geheimen Clientschlüssel von der Quellcodeverwaltung getrennt zu speichern. Wenn die Bereitstellung in Azure erfolgt, speichern Sie den geheimen Schlüssel in einer [App-Einstellung][configure-web-app].
 
-Alle Benutzer mit Zugriff auf das Azure-Abonnement können jedoch die App-Einstellungen anzeigen. Darüber hinaus besteht immer die Versuchung, geheime Schlüssel in der Quellcodeverwaltung (z. B. in Bereitstellungsskripts) einzuchecken, sie per E-Mail zu verteilen usw.
+Alle Benutzer mit Zugriff auf das Azure-Abonnement können jedoch die App-Einstellungen anzeigen. Darüber hinaus besteht immer die Versuchung, geheime Schlüssel in der Quellcodeverwaltung (z. B. in Bereitstellungsskripts) einzuchecken, sie per E-Mail zu verteilen usw.
 
 Zur Erhöhung der Sicherheit können Sie die _Clientassertion_ anstelle eines geheimen Clientschlüssels verwenden. Bei der Clientassertion verwendet der Client ein X.509-Zertifikat zum Nachweis, dass die Anforderung des Tokens vom Client stammt. Das Clientzertifikat ist auf dem Webserver installiert. Im Allgemeinen ist es einfacher, den Zugriff auf das Zertifikat zu beschränken, anstatt sicherzustellen, dass niemand versehentlich einen geheimen Clientschlüssel preisgibt.
 
@@ -76,7 +76,7 @@ In diesem Abschnitt wird gezeigt, wie die Tailspin-Anwendung „Surveys“ für 
     .\Setup-KeyVault.ps -Subject [subject]
     ```
 
-    Geben Sie für den `Subject`-Parameter einen Namen ein, z. B. „surveysapp“. Das Skript generiert ein selbstsigniertes Zertifikat und speichert es im Zertifikatspeicher des aktuellen Benutzers bzw. im persönlichen Zertifikatspeicher.
+    Geben Sie für den `Subject`-Parameter einen Namen ein, z. B. „surveysapp“. Das Skript generiert ein selbstsigniertes Zertifikat und speichert es im Zertifikatspeicher des aktuellen Benutzers bzw. im persönlichen Zertifikatspeicher.
 
 2. Die Ausgabe des Skripts ist ein JSON-Fragment. Fügen Sie dieses wie folgt in das Anwendungsmanifest der Web-App ein:
 

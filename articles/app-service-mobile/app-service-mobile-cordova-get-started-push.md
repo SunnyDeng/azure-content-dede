@@ -26,15 +26,15 @@ In diesem Tutorial fügen Sie Pushbenachrichtigungen zum [Apache Cordova-Schnell
 
 ##<a name="prerequisites"></a>Voraussetzungen
 
-Dieses Tutorial behandelt eine Apache Cordova-Anwendung, die in Visual Studio 2015 entwickelt und auf dem Google Android Emulator ausgeführt wird. Sie können dieses Tutorial darüber hinaus auch mit anderen Emulatoren oder Geräten sowie auf anderen Plattformen durchführen.
+Dieses Tutorial behandelt eine Apache Cordova-Anwendung, die in Visual Studio 2015 entwickelt und auf dem Google Android Emulator ausgeführt wird. Sie können dieses Tutorial darüber hinaus auch mit anderen Emulatoren oder Geräten sowie auf anderen Plattformen durchführen.
 
 Für dieses Lernprogramm benötigen Sie Folgendes:
 
 * Ein [Google-Konto] mit einer verifizierten E-Mail-Adresse.
-* Einen PC mit [Visual Studio Community 2015] oder höher.
+* Einen PC mit [Visual Studio Community 2015] oder höher.
 * [Visual Studio-Tools für Apache Cordova].
 * Ein [aktives Azure-Konto](https://azure.microsoft.com/pricing/free-trial/)
-* Ein abgeschlossenes [Apache Cordova Schnellstartprojekt]. Sie können vorher andere Tutorials (z. B. zur [Authentifizierung]) abschließen, dies ist jedoch nicht erforderlich.
+* Ein abgeschlossenes [Apache Cordova Schnellstartprojekt]. Sie können vorher andere Tutorials (z. B. zur [Authentifizierung]) abschließen, dies ist jedoch nicht erforderlich.
 * Ein Android-Gerät.
 
 Pushbenachrichtigungen werden auf Android-Emulatoren zwar unterstützt, dies ist jedoch nicht zuverlässig, daher empfehlen wir das Testen von Pushbenachrichtigungen auf Emulatoren nicht.
@@ -68,7 +68,7 @@ Bevor Sie Ihre Anwendung auf Ihrem Android-Gerät bereitstellen können, müssen
 5. Aktivieren Sie **USB-Debugging**.
 6. Verbinden Sie Ihr Android-Telefon über ein USB-Kabel mit Ihrem Entwicklungs-PC.
 
-In diesem Tutorial wurde zum Testen ein Google Nexus 5X unter Android-Version 6.0 (Marshmallow) verwendet. Das Verfahren ist jedoch für alle modernen Android-Versionen gleich.
+In diesem Tutorial wurde zum Testen ein Google Nexus 5X unter Android-Version 6.0 (Marshmallow) verwendet. Das Verfahren ist jedoch für alle modernen Android-Versionen gleich.
 
 ##<a name="add-push-to-app"></a>Hinzufügen von Pushbenachrichtigungen zur App
 
@@ -102,10 +102,10 @@ Das PhoneGap-Push-Plug-In nutzt Google Play-Dienste für Pushbenachrichtigungen.
 1.  Öffnen Sie **Visual Studio**.
 2.  Klicken Sie auf **Tools** > **Android** > **Android SDK Manager**.
 3.  Aktivieren Sie im Ordner „Extras“ das Kontrollkästchen neben jedem SDK, das erforderlich, aber nicht installiert ist. Folgende Pakete sind erforderlich:
-    * Android Support Library, Version 23 oder höher
-    * Android Support Repository, Version 20 oder höher
-    * Google Play-Dienste, Version 27 oder höher
-    * Google Repository, Version 22 oder höher
+    * Android Support Library, Version 23 oder höher
+    * Android Support Repository, Version 20 oder höher
+    * Google Play-Dienste, Version 27 oder höher
+    * Google Repository, Version 22 oder höher
 4.  Klicken Sie auf **Pakete installieren**.
 5.  Warten Sie, bis die Installation abgeschlossen ist.
 
@@ -193,7 +193,7 @@ Sie können die Android-App auch auf dem Android-Emulator testen. Denken Sie dar
 [Google-Entwicklerkonsole]: https://console.developers.google.com/home/dashboard
 [phonegap-plugin-push installation documentation]: https://github.com/phonegap/phonegap-plugin-push/blob/master/docs/INSTALLATION.md
 [Mobizen]: https://www.mobizen.com/
-[Visual Studio Community 2015]: http://www.visualstudio.com/
+[Visual Studio Community 2015]: http://www.visualstudio.com/
 [Visual Studio-Tools für Apache Cordova]: https://www.visualstudio.com/de-DE/features/cordova-vs.aspx
 [Notification Hubs]: ../notification-hubs/notification-hubs-overview.md
 

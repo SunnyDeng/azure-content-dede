@@ -78,7 +78,7 @@ In dieser Anleitung untersuchen wir insbesondere den Einsatz von Azure AD für d
 - Wir setzen voraus, dass der Kunde Benutzerprofile (einschließlich Office 365- und Dynamics CRM-Mandanten) in Azure AD speichert.
 - Kunden mit lokalem Active Directory (AD) können [Azure AD Connect][ADConnect] verwenden, um ihr lokales AD mit Azure AD zu synchronisieren.
 
-Wenn AD Connect von einem Kunden mit lokalem AD Azure (aufgrund von IT-Unternehmensrichtlinien oder aus anderen Gründen) nicht verwendet werden darf, kann der SaaS-Anbieter über Active Directory-Verbunddienste (AD FS) einen Verbund mit dem AD des Kunden einrichten. Diese Option wird unter [Federating with a customer's AD FS] (Herstellen eines Verbunds mit den AD FS eines Kunden) beschrieben.
+Wenn AD Connect von einem Kunden mit lokalem AD Azure (aufgrund von IT-Unternehmensrichtlinien oder aus anderen Gründen) nicht verwendet werden darf, kann der SaaS-Anbieter über Active Directory-Verbunddienste (AD FS) einen Verbund mit dem AD des Kunden einrichten. Diese Option wird unter [Federating with a customer's AD FS] (Herstellen eines Verbunds mit den AD FS eines Kunden) beschrieben.
 
 In dieser Anleitung werden andere Aspekte der Mehrmandantenfähigkeit wie Datenpartitionierung, mandantenbezogene Konfiguration usw. nicht berücksichtigt.
 

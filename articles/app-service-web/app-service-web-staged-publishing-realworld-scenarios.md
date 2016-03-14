@@ -18,7 +18,7 @@
 
 # Effektive Verwendung der DevOps-Umgebungen für Ihre Web-Apps
 
-In diesem Artikel werden die Einrichtung und Verwaltung von Webanwendungsbereitstellungen für mehrere Versionen Ihrer Anwendung (z. B. Entwicklung, Staging, Qualitätssicherung und Produktion) erläutert. Jede Version der Anwendung kann als Entwicklungsumgebung für bestimmte Anforderungen innerhalb Ihres Bereitstellungsprozesses betrachtet werden. Die Qualitätssicherungsumgebung (QA) kann z. B. vom Entwicklerteam zum Testen der Qualität der Anwendung verwendet werden, bevor Sie die Änderungen mithilfe von Push in die Produktionsumgebung übertragen. Das Einrichten mehrerer Entwicklungsumgebungen kann eine Herausforderung darstellen, da Sie die Ressourcen (Compute, Web-App, Datenbank, Cache usw.) in diesem Umgebungen nachverfolgen und verwalten und Inhalte umgebungsübergreifend bereitstellen müssen.
+In diesem Artikel werden die Einrichtung und Verwaltung von Webanwendungsbereitstellungen für mehrere Versionen Ihrer Anwendung (z. B. Entwicklung, Staging, Qualitätssicherung und Produktion) erläutert. Jede Version der Anwendung kann als Entwicklungsumgebung für bestimmte Anforderungen innerhalb Ihres Bereitstellungsprozesses betrachtet werden. Die Qualitätssicherungsumgebung (QA) kann z. B. vom Entwicklerteam zum Testen der Qualität der Anwendung verwendet werden, bevor Sie die Änderungen mithilfe von Push in die Produktionsumgebung übertragen. Das Einrichten mehrerer Entwicklungsumgebungen kann eine Herausforderung darstellen, da Sie die Ressourcen (Compute, Web-App, Datenbank, Cache usw.) in diesem Umgebungen nachverfolgen und verwalten und Inhalte umgebungsübergreifend bereitstellen müssen.
 
 ## Einrichten einer Nichtproduktionsumgebung (Staging, Entwicklung, QA)
 Nachdem Sie eine Produktions-Web-App erstellt und in Betrieb genommen haben, besteht der nächste Schritt darin, eine Nichtproduktionsumgebung zu erstellen. Zur Verwendung von Bereitstellungsslots müssen Sie die App im App Service-Planmodus **Standard** oder **Premium** ausführen. Bereitstellungsslots sind Live-Web-Apps mit eigenen Hostnamen. Elemente für Web-App-Inhalte und -Konfigurationen können zwischen zwei Bereitstellungsslots, einschließlich des Produktionsslots, ausgetauscht werden. Die Bereitstellung von Anwendungen in einem Bereitstellungsslot hat die folgenden Vorteile:
@@ -27,11 +27,11 @@ Nachdem Sie eine Produktions-Web-App erstellt und in Betrieb genommen haben, bes
 2. Indem Sie eine Web-App zuerst in einem Slot bereitstellen und sie dann in den Produktionsslot überführen, stellen Sie sicher, dass alle Instanzen erst nach einer Anlaufzeit in den Produktionsslot übernommen werden. Dadurch vermeiden Sie Ausfallzeit bei der Bereitstellung der Web-App. Die Datenverkehrsweiterleitung ist nahtlos, und es werden keine Anfragen aufgrund von Austauschvorgängen gelöscht. Dieser gesamte Wortflow kann durch Konfigurieren von [Auto Swap](web-sites-staged-publishing.md#configure-auto-swap-for-your-web-app) automatisiert werden, wenn keine Überprüfung vor dem Austauschen erforderlich ist.
 3. Nach einem Austausch befindet sich im Slot mit der zuvor bereitgestellten Web-App jetzt die vorherige Produktions-Web-App. Wenn die in den Produktionsslot überführten Änderungen nicht Ihren Erwartungen entsprechen, können Sie denselben Austausch sofort noch einmal vornehmen, um die „letzte als gut befundene Web-App“ wiederherzustellen.
 
-Informationen zum Einrichten eines Stagingbereitstellungsslots finden Sie unter [Einrichten von Stagingumgebungen für Web-Apps in Azure App Service](web-sites-staged-publishing.md) . Jede Umgebung sollte über einen eigenen Satz von Ressourcen verfügen. Wenn Ihre Web-App z. B. eine Datenbank verwendet, sollten für die Produktions-Web-App und die Staging-Web-App verschiedene Datenbanken verwendet werden. Fügen Sie zum Einrichten Ihrer Staging- und Entwicklungsumgebung Staging- und Entwicklungsumgebungsressourcen wie z. B. Datenbank, Speicher oder Cache hinzu.
+Informationen zum Einrichten eines Stagingbereitstellungsslots finden Sie unter [Einrichten von Stagingumgebungen für Web-Apps in Azure App Service](web-sites-staged-publishing.md) . Jede Umgebung sollte über einen eigenen Satz von Ressourcen verfügen. Wenn Ihre Web-App z. B. eine Datenbank verwendet, sollten für die Produktions-Web-App und die Staging-Web-App verschiedene Datenbanken verwendet werden. Fügen Sie zum Einrichten Ihrer Staging- und Entwicklungsumgebung Staging- und Entwicklungsumgebungsressourcen wie z. B. Datenbank, Speicher oder Cache hinzu.
 
 ## Beispiele für die Verwendung mehrerer Entwicklungsumgebungen
 
-Für jedes Projekt ist eine Quellcodeverwaltung mit mindestens zwei Umgebungen erforderlich – eine Entwicklungs- und eine Produktionsumgebung. Bei der Verwendung von Content Management-Systemen (CMS), Anwendungsframeworks usw. können jedoch Probleme auftreten, wenn die Anwendung dieses Szenario nicht standardmäßig unterstützt. Dies gilt für einige der beliebten Frameworks, die im Folgenden erläutert werden. Wenn Sie mit einem CMS oder mit Frameworks arbeiten, sind viele Fragen zu klären, z. B.:
+Für jedes Projekt ist eine Quellcodeverwaltung mit mindestens zwei Umgebungen erforderlich – eine Entwicklungs- und eine Produktionsumgebung. Bei der Verwendung von Content Management-Systemen (CMS), Anwendungsframeworks usw. können jedoch Probleme auftreten, wenn die Anwendung dieses Szenario nicht standardmäßig unterstützt. Dies gilt für einige der beliebten Frameworks, die im Folgenden erläutert werden. Wenn Sie mit einem CMS oder mit Frameworks arbeiten, sind viele Fragen zu klären, z. B.:
 
 1. Wie nehme ich die Unterteilung in unterschiedliche Umgebungen vor?
 2. Welche Dateien kann ich ändern, ohne dass sich dies auf Framework-Versionsaktualisierungen auswirkt?
@@ -249,7 +249,7 @@ Wenn Sie bereits über eine auf Azure Web ausgeführte WordPress-Web-App verfüg
 
 ![Erstellen des Bereitstellungslots „stage“](./media/app-service-web-staged-publishing-realworld-scenarios/1setupstage.png)
 
-Fügen Sie der Ressourcengruppe `wordpressapp-group` eine weitere MySQL-Datenbank hinzu, z. B. `wordpress-stage-db`.
+Fügen Sie der Ressourcengruppe `wordpressapp-group` eine weitere MySQL-Datenbank hinzu, z. B. `wordpress-stage-db`.
 
  ![Hinzufügen einer MySQL-Datenbank zur Ressourcengruppe](./media/app-service-web-staged-publishing-realworld-scenarios/2addmysql.png)
 
@@ -274,7 +274,7 @@ Konfigurieren Sie App-Einstellungen für Folgendes:
 
 Stellen Sie sicher, dass Sie die folgenden App-Einstellungen für die Produktions-Web-App und den Slot „stage“ hinzugefügt haben. Beachten Sie, dass die Produktions-Web-App und die Staging-Web-App unterschiedliche Datenbanken verwenden. Deaktivieren Sie das Kontrollkästchen **Sloteinstellung** für alle Einstellungsparameter außer WP\_ENV. Dadurch wird die Konfiguration für Ihre Web-App zusammen mit Dateiinhalten und der Datenbank ausgetauscht. Wenn **Sloteinstellung** **aktiviert** ist, werden die App-Einstellungen und die Verbindungszeichenfolgen-Konfiguration der Web-App bei einem Austausch NICHT umgebungsübergreifend verschoben. Falls Datenbankänderungen vorliegen, wird die Produktions-Web-App dadurch also nicht unterbrochen.
 
-Stellen Sie die Web-App in der lokalen Entwicklungsumgebung mithilfe von WebMatrix oder Tools Ihrer Wahl (z. B. FTP, Git oder PhpMyAdmin) für die Staging-Web-App und -Datenbank bereit.
+Stellen Sie die Web-App in der lokalen Entwicklungsumgebung mithilfe von WebMatrix oder Tools Ihrer Wahl (z. B. FTP, Git oder PhpMyAdmin) für die Staging-Web-App und -Datenbank bereit.
 
 ![WebMatrix-Veröffentlichungsdialogfeld für die WordPress-Web-App](./media/app-service-web-staged-publishing-realworld-scenarios/4wmpublish.png)
 
@@ -343,11 +343,11 @@ Klicken Sie für den Bereitstellungsslot **stage** auf **Veröffentlichungseinst
 - Nachdem Sie die lokale Umbraco-Web-App erfolgreich in der Staging-Web-App veröffentlicht haben, wechseln Sie zu Ihrer Staging-Web-App, und führen Sie einige Tests aus, um Probleme auszuschließen.
 
 #### Einrichten des Bereitstellungsmoduls „Courier2“
-Mit dem Modul [Courier2](http://umbraco.com/products/more-add-ons/courier-2) können Inhalte, Stylesheets, Entwicklungsmodule usw. einfach per Rechtsklick mithilfe von Push von einer Staging-Web-App in eine Produktions-Web-App übertragen werden. Dies ermöglicht problemlose Bereitstellungen und verringert das Risiko, dass Ihre Produktions-Web-App beim Bereitstellen eines Updates unterbrochen wird. Erwerben Sie eine Lizenz für „Courier2“ für die Domäne `*.azurewebsites.net` und Ihre benutzerdefinierte Domäne (z. B. http://abc.com). Speichern Sie nach dem Kauf der Lizenz die heruntergeladene Lizenz (LIC-Datei) im Ordner `bin`.
+Mit dem Modul [Courier2](http://umbraco.com/products/more-add-ons/courier-2) können Inhalte, Stylesheets, Entwicklungsmodule usw. einfach per Rechtsklick mithilfe von Push von einer Staging-Web-App in eine Produktions-Web-App übertragen werden. Dies ermöglicht problemlose Bereitstellungen und verringert das Risiko, dass Ihre Produktions-Web-App beim Bereitstellen eines Updates unterbrochen wird. Erwerben Sie eine Lizenz für „Courier2“ für die Domäne `*.azurewebsites.net` und Ihre benutzerdefinierte Domäne (z. B. http://abc.com). Speichern Sie nach dem Kauf der Lizenz die heruntergeladene Lizenz (LIC-Datei) im Ordner `bin`.
 
 ![Speichern der Lizenzdatei im Ordner „bin“](./media/app-service-web-staged-publishing-realworld-scenarios/13droplic.png)
 
-Laden Sie das Courier2-Paket [hier](https://our.umbraco.org/projects/umbraco-pro/umbraco-courier-2/) herunter. Melden Sie sich bei Ihrer Staging-Web-App an (z. B. http://umbracocms-site-stage.azurewebsites.net/umbraco), klicken Sie auf das Menü **Entwickler**, und wählen Sie **Pakete** aus. Klicken Sie auf **Lokales Paket installieren**.
+Laden Sie das Courier2-Paket [hier](https://our.umbraco.org/projects/umbraco-pro/umbraco-courier-2/) herunter. Melden Sie sich bei Ihrer Staging-Web-App an (z. B. http://umbracocms-site-stage.azurewebsites.net/umbraco), klicken Sie auf das Menü **Entwickler**, und wählen Sie **Pakete** aus. Klicken Sie auf **Lokales Paket installieren**.
 
 ![Umbraco-Paketinstaller](./media/app-service-web-staged-publishing-realworld-scenarios/14umbpkg.png)
 

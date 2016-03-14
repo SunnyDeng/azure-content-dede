@@ -16,7 +16,7 @@
 	ms.date="02/28/2016"
 	ms.author="mahender"/>
 
-# Konfigurieren Ihrer App Service-Anwendung zur Verwendung der Facebook-Anmeldung
+# Konfigurieren Ihrer App Service-Anwendung zur Verwendung der Facebook-Anmeldung
 
 [AZURE.INCLUDE [app-service-mobile-selector-authentication](../../includes/app-service-mobile-selector-authentication.md)]
 

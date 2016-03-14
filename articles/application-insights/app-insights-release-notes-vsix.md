@@ -16,7 +16,7 @@
  
 # Versionshinweise zu Application Insights-Tools für Visual Studio
 
-## Version 4.3
+## Version 4.3
 ### Suchen von Telemetriedaten aus lokalen Debugsitzungen
 In dieser Version führen wir eine Möglichkeit zum Suchen nach Application Insights-Telemetriedaten ein, die in der Visual Studio-Debugsitzung generiert wurden. Die Suche war bisher nur möglich, wenn Sie Ihre App bei Application Insights registriert hatten. Ab dieser Version muss für die App nur das Application Insights-SDK installiert werden, um lokale Telemetriedaten zu suchen.
 
@@ -36,7 +36,7 @@ In dieser Version führen wir eine Möglichkeit zum Suchen nach Application Insi
 
 ##Version 4.2
 In dieser Version haben wir Features zum Suchen von Daten im Ereigniskontext sowie das Senden von Protokolldaten an Application Insights vereinfacht und die Möglichkeit geschaffen, aus mehr Datenereignissen in den Code zu springen. Diese Erweiterung wird monatlich aktualisiert. Wenn Sie Feedback oder Funktionsanforderungen haben, senden Sie diese an aidevtools@microsoft.com.
-###- Protokollierung mit 0 Klicks
+###- Protokollierung mit 0 Klicks
 Wenn Sie NLog, Log4Net oder System.Diagnostics für die Ablaufverfolgung verwenden, dann müssen Sie nicht alle Ihre Ablaufverfolgungen nach Application Insights verschieben. Die Application Insights-Protokollierungsadapter sind nun direkt in die normale Konfigurationsoberfläche integriert. Falls Sie bereits eines dieser Protokollierungsframeworks konfiguriert haben, können Sie dies folgendermaßen erreichen:
 ####Wenn Sie bereits Application Insights hinzugefügt haben
 - Klicken Sie mit der rechten Maustaste auf den Projektknoten, wählen Sie „Application Insights“ und dann „Application Insights konfigurieren“ aus. Vergewissern Sie sich, dass der richtige Adapter im Konfigurationsfenster hinzugefügt werden kann. 
@@ -79,7 +79,7 @@ Ein Popupfenster wird angezeigt, nachdem das Projekt online veröffentlicht wurd
 
 ![Popup](./media/app-insights-release-notes-vsix/publishtoast.png)
 
-## Version 4.0
+## Version 4.0
 
 ###Application Insights-Daten in Visual Studio suchen
 Genau wie bei der Suchenfunktion im Application Insights-Portal können Sie filtern und nach Ereignistypen, Eigenschaftswerten und Text suchen sowie einzelne Ereignisse überprüfen.

@@ -87,9 +87,9 @@ In diesem Artikel werden einige häufige Fehler beschrieben, die bei der Arbeit 
 
 **Fehler:** Ihr Runbookauftrag schlägt mit dem Fehler „Das Kontingent für die monatliche Gesamtausführungsdauer des Auftrags wurde für dieses Abonnement erreicht“ fehl.
 
-**Ursache des Fehlers:** Dieser Fehler tritt auf, wenn die Auftragsausführung das kostenlose Kontingent von 500 Minuten für Ihr Konto überschreitet. Dieses Kontingent gilt für alle Arten von Auftragsausführungsaufgaben, z. B. Testen eines Auftrags, Starten eines Auftrags im Portal, Ausführen eines Auftrags per Webhook und Planen der Ausführung eines Auftrags per Azure-Portal oder in Ihrem Rechenzentrum. Weitere Informationen zu den Preisen für Automation finden Sie unter [Automation – Preise](https://azure.microsoft.com/pricing/details/automation/).
+**Ursache des Fehlers:** Dieser Fehler tritt auf, wenn die Auftragsausführung das kostenlose Kontingent von 500 Minuten für Ihr Konto überschreitet. Dieses Kontingent gilt für alle Arten von Auftragsausführungsaufgaben, z. B. Testen eines Auftrags, Starten eines Auftrags im Portal, Ausführen eines Auftrags per Webhook und Planen der Ausführung eines Auftrags per Azure-Portal oder in Ihrem Rechenzentrum. Weitere Informationen zu den Preisen für Automation finden Sie unter [Automation – Preise](https://azure.microsoft.com/pricing/details/automation/).
 
-**Tipps zur Problembehandlung:** Wenn Sie mehr als 500 Minuten an Verarbeitungszeit pro Monat nutzen möchten, müssen Sie Ihr Abonnement vom Tarif „Free“ auf den Tarif „Basic“ umstellen. Sie können das Upgrade auf den Tarif „Basic“ mit den folgenden Schritten durchführen:
+**Tipps zur Problembehandlung:** Wenn Sie mehr als 500 Minuten an Verarbeitungszeit pro Monat nutzen möchten, müssen Sie Ihr Abonnement vom Tarif „Free“ auf den Tarif „Basic“ umstellen. Sie können das Upgrade auf den Tarif „Basic“ mit den folgenden Schritten durchführen:
 
 1. Melden Sie sich bei Ihrem Azure-Abonnement an.  
 2. Wählen Sie das Automation-Konto aus, das Sie aktualisieren möchten.  
@@ -111,12 +111,12 @@ In diesem Artikel werden einige häufige Fehler beschrieben, die bei der Arbeit 
 
 - Falls ein Namenskonflikt vorliegt und das Cmdlet in zwei unterschiedlichen Modulen verfügbar ist, können Sie dies beheben, indem Sie den vollqualifizierten Namen für das Cmdlet verwenden. Sie können beispielsweise **ModuleName\\CmdletName** verwenden.
 
-- Wenn Sie das Runbook lokal in einer Hybrid Worker-Gruppe ausführen, stellen Sie sicher, dass das Modul/Cmdlet auf dem Computer installiert ist, auf dem der Hybrid Worker gehostet wird.
+- Wenn Sie das Runbook lokal in einer Hybrid Worker-Gruppe ausführen, stellen Sie sicher, dass das Modul/Cmdlet auf dem Computer installiert ist, auf dem der Hybrid Worker gehostet wird.
 
 
 ### Szenario: Ein lange ausgeführtes Runbook schlägt regelmäßig mit der Ausnahme „Der Auftrag kann nicht fortgesetzt werden, da er wiederholt am gleichen Prüfpunkt entfernt wurde“ fehl.
 
-**Ursache des Fehlers:** Dies ist das vorgesehene Verhalten aufgrund der Überwachung der gleichmäßigen Auslastung der Prozesse in Azure Automation, die ein Runbook automatisch beendet, wenn es länger als 3 Stunden ausgeführt wird. Die zurückgegebene Fehlermeldung bietet jedoch keine Optionen für weitere Schritte an. Ein Runbook kann aus verschiedenen Gründen ausgesetzt werden. Meistens wird das Beenden durch Fehler verursacht. Beispielsweise führen eine nicht abgefangene Ausnahme in einem Runbook, ein Netzwerkfehler oder der Absturz des Runbook Workers, der das Runbook ausführt, dazu, dass das Runbook angehalten und dann vom letzten Prüfpunkt an fortgesetzt wird.
+**Ursache des Fehlers:** Dies ist das vorgesehene Verhalten aufgrund der Überwachung der gleichmäßigen Auslastung der Prozesse in Azure Automation, die ein Runbook automatisch beendet, wenn es länger als 3 Stunden ausgeführt wird. Die zurückgegebene Fehlermeldung bietet jedoch keine Optionen für weitere Schritte an. Ein Runbook kann aus verschiedenen Gründen ausgesetzt werden. Meistens wird das Beenden durch Fehler verursacht. Beispielsweise führen eine nicht abgefangene Ausnahme in einem Runbook, ein Netzwerkfehler oder der Absturz des Runbook Workers, der das Runbook ausführt, dazu, dass das Runbook angehalten und dann vom letzten Prüfpunkt an fortgesetzt wird.
 
 **Tipps zur Problembehandlung:** Zur Vermeidung dieses Problems wird empfohlen, Prüfpunkte in einem Workflow zu verwenden. Weitere Informationen finden Sie unter [Grundlagen des Windows PowerShell-Workflows](automation-powershell-workflow.md#Checkpoints). Eine ausführlichere Erläuterung der gleichmäßigen Auslastung und von Prüfpunkten finden Sie in diesem Blogbeitrag zum [Verwenden von Prüfpunkten in Runbooks](https://azure.microsoft.com/de-DE/blog/azure-automation-reliable-fault-tolerant-runbook-execution-using-checkpoints/).
 
@@ -152,7 +152,7 @@ In diesem Artikel werden einige häufige Fehler beschrieben, die bei der Arbeit 
 
 **Fehler:** Für den Knoten wurde ein Bericht ausgegeben mit einem **Fehlerstatus** und der Fehlermeldung „Fehler beim Versuch, die Aktion vom Server https://``<url>``//accounts/``<account-id>``/Nodes(AgentId=``<agent-id>``)/GetDscAction failed because a valid configuration ``<guid>``-Konfiguration gefunden wurde“.
 
-**Ursache des Fehlers:** Dieser Fehler tritt normalerweise auf, wenn der Knoten einem Konfigurationsnamen (z. B. ABC) anstatt eines Knotenkonfigurationsnamens (z. B. ABC.WebServer) zugewiesen ist.
+**Ursache des Fehlers:** Dieser Fehler tritt normalerweise auf, wenn der Knoten einem Konfigurationsnamen (z. B. ABC) anstatt eines Knotenkonfigurationsnamens (z. B. ABC.WebServer) zugewiesen ist.
 
 **Tipps zur Problembehandlung:**
 

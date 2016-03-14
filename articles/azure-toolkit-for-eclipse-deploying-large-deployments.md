@@ -25,7 +25,7 @@ Falls die Bereitstellung zu groß für den Standardordner „approot“ ist, kan
 ## So verwenden Sie eine lokale Speicherressource als Stammordner für große Bereitstellungen ##
 
 1. Erstellen Sie zunächst eine lokale Speicherressource. Der Name dieser Ressource ist unwichtig. Speicherressourcen werden auf Rollenebene definiert. Die schnellste Möglichkeit zum Aufrufen des Dialogfelds für das Konfigurieren von lokalem Speicher, in dem eine neue lokale Speicherressource erstellt werden kann, besteht aus folgenden Schritten: Klicken Sie in der Ansicht **Projekt-Explorer** mit der rechten Maustaste auf die Rolle (erweitern Sie den Azure-Projektknoten, wenn die Rolle nicht angezeigt wird), klicken Sie auf **Azure**, und klicken Sie dann auf **Lokaler Speicher**. Klicken Sie im Dialogfeld **Lokaler Speicher** auf **Hinzufügen**, um eine neue lokale Speicherressource zu erstellen.
-1. Legen Sie die gewünschte Größe auf mindestens 2.048 MB fest (eine geringere Größe kann zu denselben Dateigrößenproblemen wie im Ordner „approot“ führen.)
+1. Legen Sie die gewünschte Größe auf mindestens 2.048 MB fest (eine geringere Größe kann zu denselben Dateigrößenproblemen wie im Ordner „approot“ führen.)
 1. Achten Sie darauf, dass das Kontrollkästchen **Clean the contents when the role instance is recycled** aktiviert ist. Dadurch wird verhindert, dass die Startlogik für die Bereitstellung in Konflikt mit vorhandenen Dateien in der Ressource ausgeführt wird, wenn die Rolleninstanz wiederverwendet wird.
 1. Achten Sie darauf, dass der Wert von **Environment variable storing the resource's directory path after deployment** auf die Zeichenfolge **DEPLOYROOT** festgelegt ist. Das Dialogfeld Ihrer lokalen Speicherressource sieht ungefähr folgendermaßen aus. ![][ic667943]
 

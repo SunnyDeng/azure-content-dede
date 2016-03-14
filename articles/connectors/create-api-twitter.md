@@ -30,7 +30,7 @@ Twitter ermöglicht Folgendes:
 
 - Einen Geschäftsworkflow basierend auf den Daten erstellen, die aus Twitter abgerufen werden. 
 - Verwenden von Triggern, wenn ein neuer Tweet vorhanden ist.
-- Verwenden von Aktionen, um z. B. einen Tweet zu posten oder Tweets zu suchen. Diese Aktionen erhalten eine Antwort und stellen anschließend die Ausgabe anderen Aktionen zur Verfügung. Wenn ein neuer Tweet angezeigt wird, können Sie z. B. diesen Tweet auf Facebook posten.
+- Verwenden von Aktionen, um z. B. einen Tweet zu posten oder Tweets zu suchen. Diese Aktionen erhalten eine Antwort und stellen anschließend die Ausgabe anderen Aktionen zur Verfügung. Wenn ein neuer Tweet angezeigt wird, können Sie z. B. diesen Tweet auf Facebook posten.
 - Hinzufügen der Twitter-API zu PowerApps Enterprise. Die Benutzer können diese API anschließend in ihren Apps verwenden. 
 
 Informationen zum Hinzufügen einer API in PowerApps Enterprise finden Sie unter [Registrieren einer API in PowerApps](../power-apps/powerapps-register-from-available-apis.md).
@@ -74,7 +74,7 @@ Wenn Sie diese API Ihren Logik-Apps hinzufügen, müssen Sie ihnen das Herstelle
 1. Melden Sie sich bei Ihrem Twitter-Konto an.
 2. Wählen Sie **Autorisieren** aus, um zu erlauben, dass Ihre Logik-Apps sich mit Ihrem Twitter-Konto verbinden und es nutzen. 
 
-Nachdem Sie eine Verbindung hergestellt haben, geben Sie die Twitter-Eigenschaften ein, z. B. Tweettext. In der **REST-API-Referenz** in diesem Thema werden diese Eigenschaften beschrieben.
+Nachdem Sie eine Verbindung hergestellt haben, geben Sie die Twitter-Eigenschaften ein, z. B. Tweettext. In der **REST-API-Referenz** in diesem Thema werden diese Eigenschaften beschrieben.
 
 >[AZURE.TIP] Sie können dieselbe Twitter-Verbindung in anderen Logik-Apps verwenden.
 

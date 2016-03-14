@@ -85,7 +85,7 @@ Legen Sie folgende Middleware-Optionen fest:
 - **ClientId**. Dies ist die Client-ID der Anwendung, die Sie erhalten haben, als Sie die Anwendung in Azure AD registriert haben.
 - **Authority**. Für eine mehrinstanzenfähige Anwendung legen Sie diesen Eintrag auf `https://login.microsoftonline.com/common/` fest. Dies ist die URL für den allgemeinen Endpunkt von Azure AD. Sie erlaubt Benutzern aller Azure AD-Mandanten, sich anzumelden. Weitere Informationen zum allgemeinen Endpunkt finden Sie in [diesem Blogbeitrag](http://www.cloudidentity.com/blog/2014/08/26/the-common-endpoint-walks-like-a-tenant-talks-like-a-tenant-but-is-not-a-tenant/).
 - Legen Sie in **TokenValidationParameters** **ValidateIssuer** auf „false“ fest. Das bedeutet, dass die App für die Überprüfung des Ausstellerwerts im ID-Token zuständig ist. (Die Middleware überprüft weiterhin das Token.) Weitere Informationen zum Überprüfen des Ausstellers finden Sie unter [Überprüfung des Ausstellers](guidance-multitenant-identity-claims.md#issuer-validation).
-- **CallbackPath**. Setzen Sie diesen mit dem Pfad in der Antwort-URL gleich, die Sie in Azure AD registriert haben. Wenn die Antwort-URL z. B. `http://contoso.com/aadsignin` ist, sollte **CallbackPath** `aadsignin` sein. Wenn Sie diese Option nicht festlegen, ist der Standardwert `signin-oidc`.
+- **CallbackPath**. Setzen Sie diesen mit dem Pfad in der Antwort-URL gleich, die Sie in Azure AD registriert haben. Wenn die Antwort-URL z. B. `http://contoso.com/aadsignin` ist, sollte **CallbackPath** `aadsignin` sein. Wenn Sie diese Option nicht festlegen, ist der Standardwert `signin-oidc`.
 - **PostLogoutRedirectUri**. Geben Sie eine URL an, um Benutzer nach dem Abmelden umzuleiten. Dies sollte eine Seite sein, die anonyme Anfragen ermöglicht. In der Regel ist dies die Startseite.
 - **SignInScheme**. Legen Sie diesen Eintrag auf `CookieAuthenticationDefaults.AuthenticationScheme` fest. Diese Einstellung bedeutet, dass die Benutzeransprüche nach der Authentifizierung des Benutzers lokal in einem Cookie gespeichert werden. Dieses Cookie legt fest, wie der Benutzer während der Browsersitzung angemeldet bleibt.
 - **Ereignisse.** Ereignisrückrufe: siehe [Authentifizierungsereignisse](#authentication-events).
@@ -125,7 +125,7 @@ Dies bewirkt, dass die Middleware eine 302 (Found)-Antwort zurückgibt, mit der 
 
 Wie bereits erwähnt, schreibt die Middleware für die Cookie-Authentifizierung die Benutzeransprüche in ein Cookie, wenn sich der Benutzer zum ersten Mal anmeldet. Danach werden HTTP-Anforderungen authentifiziert, indem das Cookie gelesen wird.
 
-Standardmäßig schreibt die Cookie-Middleware ein [Sitzungscookie][session-cookie], das gelöscht wird, sobald der Browser geschlossen wird. Wenn der Benutzer das nächste Mal die Seite besucht, ist eine erneute Anmeldung erforderlich. Wenn Sie jedoch **IsPersistent** auf „true“ im **ChallengeResult** festlegen, schreibt die Middleware ein permanentes Cookie, sodass der Benutzer nach dem Schließen des Browsers angemeldet bleibt. Unter [Cookieoptionen festlegen][cookie-options] können Sie den Ablauf der Cookies konfigurieren. Beständige Cookies sind angenehmer für den Benutzer, aber möglicherweise ungeeignet für einige Anwendungen (z. B. Onlinebanking-Anwendung), bei denen sich der Benutzer jedes Mal erneut anmelden soll.
+Standardmäßig schreibt die Cookie-Middleware ein [Sitzungscookie][session-cookie], das gelöscht wird, sobald der Browser geschlossen wird. Wenn der Benutzer das nächste Mal die Seite besucht, ist eine erneute Anmeldung erforderlich. Wenn Sie jedoch **IsPersistent** auf „true“ im **ChallengeResult** festlegen, schreibt die Middleware ein permanentes Cookie, sodass der Benutzer nach dem Schließen des Browsers angemeldet bleibt. Unter [Cookieoptionen festlegen][cookie-options] können Sie den Ablauf der Cookies konfigurieren. Beständige Cookies sind angenehmer für den Benutzer, aber möglicherweise ungeeignet für einige Anwendungen (z. B. Onlinebanking-Anwendung), bei denen sich der Benutzer jedes Mal erneut anmelden soll.
 
 ## Informationen über die OpenID Connect-Middleware
 
@@ -160,7 +160,7 @@ Wenn die Authentifizierung erfolgreich war, erstellt die OIDC-Middleware ein Aut
 
 Während des Authentifizierungsvorgangs löst die OpenID Connect-Middleware eine Reihe von Ereignissen aus:
 
-- **RedirectToAuthenticationEndpoint**. Wird aufgerufen, unmittelbar bevor die Middleware an den Authentifizierungsendpunkt umleitet. Sie können dieses Ereignis verwenden, um die Umleitungs-URL zu ändern, z. B. um Anforderungsparameter hinzuzufügen. Ein Beispiel finden Sie unter [Aufforderung zur Administratorzustimmung hinzufügen](guidance-multitenant-identity-signup.md#adding-the-admin-consent-prompt).
+- **RedirectToAuthenticationEndpoint**. Wird aufgerufen, unmittelbar bevor die Middleware an den Authentifizierungsendpunkt umleitet. Sie können dieses Ereignis verwenden, um die Umleitungs-URL zu ändern, z. B. um Anforderungsparameter hinzuzufügen. Ein Beispiel finden Sie unter [Aufforderung zur Administratorzustimmung hinzufügen](guidance-multitenant-identity-signup.md#adding-the-admin-consent-prompt).
 
 - **AuthorizationResponseReceived** Wird aufgerufen, nachdem die Middleware die Authentifizierungsantwort vom Identitätsanbieter (IDP) empfangen hat, jedoch noch vor der Überprüfung der Antwort durch die Middleware.
 
@@ -174,7 +174,7 @@ Während des Authentifizierungsvorgangs löst die OpenID Connect-Middleware eine
 
 - **TicketReceived**. Wird aufgerufen, wenn die Authentifizierung abgeschlossen ist. Dies ist das letzte Ereignis, vorausgesetzt, die Authentifizierung wurde erfolgreich ausgeführt. Nachdem dieses Ereignis ausgeführt wurde, wird der Benutzer in der App angemeldet.
 
-- **AuthenticationFailed** Wird aufgerufen, wenn die Authentifizierung fehlschlägt. Verwenden Sie dieses Ereignis, um Authentifizierungsfehler zu behandeln, z. B. durch Umleiten auf eine Fehlerseite.
+- **AuthenticationFailed** Wird aufgerufen, wenn die Authentifizierung fehlschlägt. Verwenden Sie dieses Ereignis, um Authentifizierungsfehler zu behandeln, z. B. durch Umleiten auf eine Fehlerseite.
 
 Um Rückrufe für diese Ereignisse zu erhalten, richten Sie die Option **Ereignisse** auf der Middleware ein. Es gibt zwei Möglichkeiten, die Ereignishandler zu bestimmen: Inline mit Lambda-Ausdrücken oder in einer Klasse, die von **OpenIdConnectEvents** abgeleitet ist.
 
@@ -223,7 +223,7 @@ Der zweite Ansatz empfiehlt sich, wenn Ihre Ereignisrückrufe wesentliche Logik 
 
 ### OpenID Connect-Endpunkte
 
-Azure AD unterstützt [OpenID Connect Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html), wo der Identitätsanbieter (IDP) ein JSON-Metadatendokument aus einem [bekannten Endpunkt](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderConfig) zurückgibt. Das Metadatendokument enthält Informationen wie z. B.:
+Azure AD unterstützt [OpenID Connect Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html), wo der Identitätsanbieter (IDP) ein JSON-Metadatendokument aus einem [bekannten Endpunkt](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderConfig) zurückgibt. Das Metadatendokument enthält Informationen wie z. B.:
 
 -	Die Authentifizierungsendpunkt-URL An diesem Punkt leitet die App um, damit der Benutzer authentifiziert werden kann.
 -	Die URL des Endpunkts „Sitzung beenden“, an dem die App den Benutzers abmeldet.
@@ -241,7 +241,7 @@ Standardmäßig verwendet die OIDC-Middleware Hybrid flow mit POST-Formular-Antw
 Wenn die OIDC-Middleware an den Autorisierungsendpunkt umleitet, enthält die Umleitungs-URL alle Abfragezeichenfolgen-Parameter, die OIDC benötigt. Für den Hybriddatenfluss:
 
 -	client\_id Dieser Wert wird in der Option **ClientId** festgelegt
--	scope = „Openid-Profil“, d. h., es handelt sich um eine OIDC-Anforderung, und gewünscht ist das Profil des Benutzers
+-	scope = „Openid-Profil“, d. h., es handelt sich um eine OIDC-Anforderung, und gewünscht ist das Profil des Benutzers
 -	response\_type = „code id\_token“, spezifiziert einen Hybriddatenfluss
 -	response\_mode = „form\_post“, spezifiziert die POST-Formular-Antwort
 

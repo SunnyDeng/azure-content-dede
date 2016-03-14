@@ -88,12 +88,12 @@ Wenn die Summe der DTUs für Leistungsstufen für einzelne Datenbanken mehr als 
 
 ### Maximale Anzahl von gleichzeitig unter Spitzenlast laufenden Datenbanken
 
-Bei der gemeinsamen Nutzung von eDTUs können nicht alle Datenbanken in einem Pool gleichzeitig eDTUs bis zum verfügbaren Grenzwert verwenden, wenn Leistungsstufen für einzelne Datenbanken verwendet werden. Je weniger Datenbanken gleichzeitig auf Spitzenlast genutzt werden, desto niedriger kann der Pool-eDTU festgelegt werden und desto mehr Kosten können eingespart werden. Im Allgemeinen sollten nicht mehr als zwei Drittel der Datenbanken (67 %) im Pool gleichzeitig den eDTU-Grenzwert erreichen.
+Bei der gemeinsamen Nutzung von eDTUs können nicht alle Datenbanken in einem Pool gleichzeitig eDTUs bis zum verfügbaren Grenzwert verwenden, wenn Leistungsstufen für einzelne Datenbanken verwendet werden. Je weniger Datenbanken gleichzeitig auf Spitzenlast genutzt werden, desto niedriger kann der Pool-eDTU festgelegt werden und desto mehr Kosten können eingespart werden. Im Allgemeinen sollten nicht mehr als zwei Drittel der Datenbanken (67 %) im Pool gleichzeitig den eDTU-Grenzwert erreichen.
 
 ***Beispiel***<br> Um die Kosten für drei S3-Datenbanken in einem Pool mit 200 eDTUs zu senken, können höchstens zwei dieser Datenbanken gleichzeitig mit Spitzenauslastung ausgeführt werden. Andernfalls gilt, dass der Pool auf mehr als 200 eDTUs ausgelegt werden muss, wenn zwei dieser vier S3-Datenbanken gleichzeitig mit Spitzenlast ausgeführt werden. Wenn die Größe des Pools auf mehr als 200 eDTUs geändert wird, müssten weitere S3-Datenbanken zum Pool hinzugefügt werden, damit die Kosten unterhalb der Leistungsstufe für einzelne Datenbanken bleiben.
 
 
-Beachten Sie, dass in diesem Beispiel die Auslastung anderer Datenbanken im Pool nicht berücksichtigt wird. Wenn alle Datenbanken zu einem gegebenen Zeitpunkt eine Spitzenauslastung aufweisen, können weniger als zwei Drittel (67 %) der Datenbanken gleichzeitig eine Spitzenauslastung aufweisen.
+Beachten Sie, dass in diesem Beispiel die Auslastung anderer Datenbanken im Pool nicht berücksichtigt wird. Wenn alle Datenbanken zu einem gegebenen Zeitpunkt eine Spitzenauslastung aufweisen, können weniger als zwei Drittel (67 %) der Datenbanken gleichzeitig eine Spitzenauslastung aufweisen.
 
 
 ### DTU-Auslastung pro Datenbank
@@ -168,7 +168,7 @@ Weitere Informationen finden Sie unter [Tarifempfehlungen für den elastischen D
 
 Mit den von [sys.dm\_db\_resource\_stats](https://msdn.microsoft.com/library/dn800981.aspx) generierten Messwerten kann die Ressourcenverwendung einer einzelnen Datenbank gemessen werden. Diese DMV enthält Informationen zur CPU, zur E/A, zur Protokollierung und zur Protokollauslastung einer Datenbank als Prozentsatz der Leistungsbegrenzung der Datenbank. Diese Daten können zum Berechnen der DTU-Auslastung einer Datenbank in beliebigen Intervallen von jeweils 15 Sekunden verwendet werden.
 
-Die zusammengefasste eDTU-Auslastung eines elastischen Datenbankpools in einem 15 Sekunden-Intervall kann geschätzt werden, indem die eDTU-Auslastung aller Datenbankkandidaten während dieser Zeit aggregiert wird. Abhängig von den jeweiligen Leistungszielen ist es sinnvoll, einen geringen Prozentsatz der Beispieldaten zu verwerfen. So kann der 99-zigste Perzentilwert der zusammengefassten eDTUs über alle Zeitintervalle beispielsweise angewendet werden, um Ausreißer auszuschließen und einen eDTU für den elastischen Datenbankpool bereitzustellen, der für 99 % der geprüften Zeitintervalle zutrifft.
+Die zusammengefasste eDTU-Auslastung eines elastischen Datenbankpools in einem 15 Sekunden-Intervall kann geschätzt werden, indem die eDTU-Auslastung aller Datenbankkandidaten während dieser Zeit aggregiert wird. Abhängig von den jeweiligen Leistungszielen ist es sinnvoll, einen geringen Prozentsatz der Beispieldaten zu verwerfen. So kann der 99-zigste Perzentilwert der zusammengefassten eDTUs über alle Zeitintervalle beispielsweise angewendet werden, um Ausreißer auszuschließen und einen eDTU für den elastischen Datenbankpool bereitzustellen, der für 99 % der geprüften Zeitintervalle zutrifft.
 
 ## PowerShell-Skript zum Schätzen der zusammengefassten eDTU-Auslastung Ihrer Datenbanken
 

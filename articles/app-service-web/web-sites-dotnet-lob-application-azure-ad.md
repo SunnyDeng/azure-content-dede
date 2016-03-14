@@ -46,8 +46,8 @@ Sie benötigen Folgendes zum Bearbeiten dieses Lernprogramms:
 
 - Einen Azure Active Directory-Mandanten mit Benutzern in verschiedenen Gruppen
 - Berechtigungen zum Erstellen von Anwendungen auf dem Azure Active Directory-Mandanten
-- Visual Studio 2013 oder höher
-- [Azure SDK 2.8.1](http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409) oder höher
+- Visual Studio 2013 oder höher
+- [Azure SDK 2.8.1](http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409) oder höher
 
 <a name="bkmk_sample"></a>
 ## Verwenden der Beispielanwendung für die Vorlage der Branchenanwendung ##
@@ -126,7 +126,7 @@ Sie veröffentlichen nun die Anwendung in einer Web-App in Azure App Service. Di
 
 4. Benennen Sie die Anwendung, und klicken Sie auf **Weiter**.
 
-5. Legen Sie unter "App-Eigenschaften" die Option **URL für Anmeldung** auf die Web-App-URL fest, die Sie zuvor gespeichert haben (z. B. `https://<site-name>.azurewebsites.net/`), und legen Sie **APP-ID-URI** auf `https://<aad-tenanet-name>/<app-name>` fest. Klicken Sie danach auf **Abschließen**.
+5. Legen Sie unter "App-Eigenschaften" die Option **URL für Anmeldung** auf die Web-App-URL fest, die Sie zuvor gespeichert haben (z. B. `https://<site-name>.azurewebsites.net/`), und legen Sie **APP-ID-URI** auf `https://<aad-tenanet-name>/<app-name>` fest. Klicken Sie danach auf **Abschließen**.
 
 	![](./media/web-sites-dotnet-lob-application-azure-ad/7-app-properties.png)
 
@@ -136,7 +136,7 @@ Sie veröffentlichen nun die Anwendung in einer Web-App in Azure App Service. Di
 
 6. Klicken Sie auf die Registerkarte **KONFIGURIEREN**.
 
-7. Erstellen Sie unter **Schlüssel** einen neuen Schlüssel, indem Sie in der Dropdownliste die Option **1 Jahr** auswählen.
+7. Erstellen Sie unter **Schlüssel** einen neuen Schlüssel, indem Sie in der Dropdownliste die Option **1 Jahr** auswählen.
 
 8. Wählen Sie unter **Berechtigungen für andere Anwendungen** für den Eintrag **Azure Active Directory** in der Dropdownliste **Delegierte Berechtigungen** die Optionen **Anmelden und Benutzerprofil lesen** und **Verzeichnisdaten lesen** aus.
 
@@ -165,7 +165,7 @@ Sie veröffentlichen nun die Anwendung in einer Web-App in Azure App Service. Di
 
 Wenn Sie fertig sind, sind zwei Azure Active Directory-Anwendungen im klassischen Azure-Portal konfiguriert, eine für Ihre Debugumgebung in Visual Studio und eine für die veröffentlichte Web-App in Azure. Während des Debuggens werden die App-Einstellungen in der Datei "Web.config" verwendet, damit die **Debug**-Konfiguration in Azure Active Directory funktioniert. Bei der Veröffentlichung (standardmäßig wird die **Release**-Konfiguration veröffentlicht) wird eine transformierte Datei "Web.config" hochgeladen, welche die geänderten App-Einstellungen der Datei "Web.Release.config" enthält.
 
-Wenn Sie die veröffentlichte Web-App dem Debugger anfügen möchten (Sie müssen Debugsymbole Ihres Codes in der veröffentlichten Web-App hochladen), können Sie einen Klon der Debugkonfiguration für das Debuggen von Azure erstellen, jedoch mit einer eigenen benutzerdefinierten "Web.config"-Transformation (z. B. "Web.AzureDebug.config"), welche die Azure Active Directory-Einstellungen der Datei "Web.Release.config" verwendet. Auf diese Weise können Sie eine statische Konfiguration in verschiedenen Umgebungen beibehalten.
+Wenn Sie die veröffentlichte Web-App dem Debugger anfügen möchten (Sie müssen Debugsymbole Ihres Codes in der veröffentlichten Web-App hochladen), können Sie einen Klon der Debugkonfiguration für das Debuggen von Azure erstellen, jedoch mit einer eigenen benutzerdefinierten "Web.config"-Transformation (z. B. "Web.AzureDebug.config"), welche die Azure Active Directory-Einstellungen der Datei "Web.Release.config" verwendet. Auf diese Weise können Sie eine statische Konfiguration in verschiedenen Umgebungen beibehalten.
 
 <a name="bkmk_crud"></a>
 ## Hinzufügen von Branchenfunktionen zur Beispielanwendung
@@ -212,7 +212,7 @@ In diesem Teil des Lernprogramms erfahren Sie, wie Sie die gewünschte Branchenf
 
 8.	Fügen Sie dem Ordner "Controllers" das neue Gerüstelement `WorkItemsController` hinzu. Klicken Sie dazu mit der rechten Maustaste auf **Controllers**, zeigen Sie auf **Hinzufügen**, und wählen Sie **Neues Gerüstelement**.
 
-9.	Wählen Sie **MVC 5-Controller mit Ansichten per Entity Framework**, und klicken Sie auf **Hinzufügen**.
+9.	Wählen Sie **MVC 5-Controller mit Ansichten per Entity Framework**, und klicken Sie auf **Hinzufügen**.
 
 10.	Wählen Sie das soeben erstellte Modell aus, und klicken Sie auf **Hinzufügen**.
 
@@ -256,9 +256,9 @@ In diesem Teil des Lernprogramms erfahren Sie, wie Sie die gewünschte Branchenf
 
 	Da Sie die Rollenzuordnungen auf der Benutzeroberfläche des klassischen Azure-Portals vornehmen, müssen Sie lediglich sicherstellen, dass jede Aktion die richtigen Rollen autorisiert.
 
-	> [AZURE.NOTE] Bei einigen Aktionen haben Sie vielleicht die Dekoration <code>[ValidateAntiForgeryToken]</code> bemerkt. Aufgrund des Verhaltens, das von [Brock Allen](https://twitter.com/BrockLAllen) unter [MVC 4, AntiForgeryToken and Claims](http://brockallen.com/2012/07/08/mvc-4-antiforgerytoken-and-claims/) (MVC 4, AntiForgeryToken und Ansprüche) beschrieben wurde, ist aus folgenden Gründen eventuell keine Fälschungsschutz-Überprüfung für Ihren HTTP POST möglich:
+	> [AZURE.NOTE] Bei einigen Aktionen haben Sie vielleicht die Dekoration <code>[ValidateAntiForgeryToken]</code> bemerkt. Aufgrund des Verhaltens, das von [Brock Allen](https://twitter.com/BrockLAllen) unter [MVC 4, AntiForgeryToken and Claims](http://brockallen.com/2012/07/08/mvc-4-antiforgerytoken-and-claims/) (MVC 4, AntiForgeryToken und Ansprüche) beschrieben wurde, ist aus folgenden Gründen eventuell keine Fälschungsschutz-Überprüfung für Ihren HTTP POST möglich:
 	> + Azure Active Directory sendet kein vom Fälschungsschutztoken standardmäßig erforderliches http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider.
-	> + Wenn Azure Active Directory mit AD FS synchronisiert ist, sendet die AD FS-Vertrauensstellung standardmäßig ebenfalls nicht den http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider-Anspruch, Sie können AD FS jedoch manuell zum Senden dieses Anspruchs konfigurieren. Mit diesen Dingen können Sie sich im nächsten Schritt befassen.
+	> + Wenn Azure Active Directory mit AD FS synchronisiert ist, sendet die AD FS-Vertrauensstellung standardmäßig ebenfalls nicht den http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider-Anspruch, Sie können AD FS jedoch manuell zum Senden dieses Anspruchs konfigurieren. Mit diesen Dingen können Sie sich im nächsten Schritt befassen.
 
 12.  Fügen Sie in der Datei „App\_Start\\Startup.Auth.cs“ der `ConfigureAuth`-Methode die folgende Codezeile hinzu. Klicken Sie mit der rechten Maustaste jeweils auf einen Fehler zur Namensauflösung, um ihn zu beheben.
 
@@ -374,7 +374,7 @@ Nachdem Sie die Autorisierungen und die Branchenfunktionalität für die verschi
 
 - [Schützen der Anwendung durch SSL und das Authorize-Attribut](web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database.md#protect-the-application-with-ssl-and-the-authorize-attribute)
 - [Verwenden von Active Directory für die Authentifizierung in Azure App Service](web-sites-authentication-authorization.md)
-- [Erstellen einer .NET MVC-Web-App in Azure App Service mit AD FS-Authentifizierung](web-sites-dotnet-lob-application-adfs.md)
+- [Erstellen einer .NET MVC-Web-App in Azure App Service mit AD FS-Authentifizierung](web-sites-dotnet-lob-application-adfs.md)
 - [Microsoft Azure Active Directory – Beispiele und Dokumentation](https://github.com/AzureADSamples)
 - [Blog von Vittorio Bertocci](http://blogs.msdn.com/b/vbertocci/)
 - [Migrate a VS2013 Web Project From WIF to Katana (Migrieren eines VS2013-Webprojekts von WIF nach Katana, in englischer Sprache)](http://www.cloudidentity.com/blog/2014/09/15/MIGRATE-A-VS2013-WEB-PROJECT-FROM-WIF-TO-KATANA/)

@@ -32,9 +32,9 @@ Die folgenden drei Modi sind verfügbar:
 
 - **Abfragezeichenfolgen ignorieren**: Dies ist der Standardmodus. Der CDN-Edgeknoten übergibt die Abfragezeichenfolge bei der ersten Anforderung vom Anforderer an den Ursprung und speichert das Objekt im Cache. Alle nachfolgenden Anforderungen dieses Objekts, die vom Edgeknoten verarbeitet werden, ignorieren die Abfragezeichenfolge bis zum Ablauf des zwischengespeicherten Objekts.
 - **Cachingumgehung für URLs mit Abfragezeichenfolgen**: In diesem Modus werden Anforderungen mit Abfragezeichenfolgen nicht auf dem CDN-Edgeknoten zwischengespeichert. Der Edgeknoten ruft das Objekt direkt vom Ursprung ab und übergibt es bei jeder Anforderung an den Anforderer.
-- **Cache für eindeutige URL**: In diesem Modus wird jede Anforderung mit einer Abfragezeichenfolge als eindeutiges Objekt mit eigenem Cache behandelt. So wird z. B. die Antwort vom Ursprung für eine Anforderung für *foo.ashx?q=bar* auf dem Edgeknoten zwischengespeichert und für nachfolgende Caches mit der gleichen Abfragezeichenfolge zurückgegeben. Eine Anforderung für *foo.ashx?q=etwasanderes* wird als separates Asset mit eigener Lebensdauer zwischengespeichert.
+- **Cache für eindeutige URL**: In diesem Modus wird jede Anforderung mit einer Abfragezeichenfolge als eindeutiges Objekt mit eigenem Cache behandelt. So wird z. B. die Antwort vom Ursprung für eine Anforderung für *foo.ashx?q=bar* auf dem Edgeknoten zwischengespeichert und für nachfolgende Caches mit der gleichen Abfragezeichenfolge zurückgegeben. Eine Anforderung für *foo.ashx?q=etwasanderes* wird als separates Asset mit eigener Lebensdauer zwischengespeichert.
 
-	>[AZURE.WARNING] Dieser Modus sollte nicht verwendet werden, wenn die Abfragezeichenfolge Parameter enthält, die mit jeder Anforderung geändert werden, wie z. B. eine Sitzungs-ID oder einen Benutzernamen, da dies zu einer sehr niedrigen Cache-Trefferquote führt.
+	>[AZURE.WARNING] Dieser Modus sollte nicht verwendet werden, wenn die Abfragezeichenfolge Parameter enthält, die mit jeder Anforderung geändert werden, wie z. B. eine Sitzungs-ID oder einen Benutzernamen, da dies zu einer sehr niedrigen Cache-Trefferquote führt.
 
 ##Ändern der Einstellungen für die Zwischenspeicherung von Abfragezeichenfolgen
 

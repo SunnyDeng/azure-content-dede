@@ -61,7 +61,7 @@ Die Funktion **Länderfilter** verwendet Landeskennzahlen, um die Länder zu def
 ##<a id="considerations"></a>Überlegungen
 
 - Es kann bis zu einer Stunde dauern, bis die Änderungen an Ihrem Länderfilter wirksam werden.
-- Diese Funktion unterstützt keine Platzhalterzeichen (z. B. "*").
+- Diese Funktion unterstützt keine Platzhalterzeichen (z. B. "*").
 - Das dem relativen Pfad zugeordnete Länderfilterkonfiguration wird rekursiv auf diesen Pfad angewendet.
 - Pro relativen Pfad kann nur eine Regel angewendet werden (Sie können nicht mehrere Länderfilter erstellen, die auf den gleichen relativen Pfad verweisen). Jedoch können mehrere Länderfilter auf einen Ordner angewendet werden. Das liegt an der rekursiven Natur der Länderfilter. Anders ausgedrückt: Ein Unterordner eines zuvor konfigurierten Ordners kann einem anderen Länderfilter zugewiesen werden.
 

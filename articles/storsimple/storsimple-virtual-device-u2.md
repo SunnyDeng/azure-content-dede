@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Virtuelles StorSimple-Gerät – Update 2 | Microsoft Azure"
-   description="Erfahren Sie, wie Sie ein virtuelles StorSimple-Gerät in einem virtuellen Microsoft Azure-Netzwerk erstellen, bereitstellen und verwalten. (Gilt für StorSimple Update 2)."
+   pageTitle="Virtuelles StorSimple-Gerät – Update 2 | Microsoft Azure"
+   description="Erfahren Sie, wie Sie ein virtuelles StorSimple-Gerät in einem virtuellen Microsoft Azure-Netzwerk erstellen, bereitstellen und verwalten. (Gilt für StorSimple Update 2)."
    services="storsimple"
    documentationCenter=""
    authors="alkohli"
@@ -15,11 +15,11 @@
    ms.date="02/12/2016"
    ms.author="alkohli" />
 
-# Bereitstellen und Verwalten eines virtuellen StorSimple-Geräts in Azure (Update 2)
+# Bereitstellen und Verwalten eines virtuellen StorSimple-Geräts in Azure (Update 2)
 
 > [AZURE.SELECTOR]
-- [Update 2](../articles/storsimple/storsimple-virtual-device-u2.md)
-- [Update 1](../articles/storsimple/storsimple-virtual-device-u1.md)
+- [Update 2](../articles/storsimple/storsimple-virtual-device-u2.md)
+- [Update 1](../articles/storsimple/storsimple-virtual-device-u1.md)
 - [GA-Version](../articles/storsimple/storsimple-virtual-device.md)
 
 ##Übersicht
@@ -28,12 +28,12 @@ Das virtuelle StorSimple-Gerät ist eine zusätzliche, in der Microsoft Azure St
 
 #### Vergleich virtueller Gerätemodelle
 
-Das virtuelle StorSimple-Gerät steht in zwei Modellen zur Verfügung, dem Standardmodell 8010 (ehemals 1100) und dem in Update 2 eingeführten Premium-Modell 8020. Ein Vergleich der beiden Modelle ist unten in Tabellenform aufgeführt.
+Das virtuelle StorSimple-Gerät steht in zwei Modellen zur Verfügung, dem Standardmodell 8010 (ehemals 1100) und dem in Update 2 eingeführten Premium-Modell 8020. Ein Vergleich der beiden Modelle ist unten in Tabellenform aufgeführt.
 
 
 | Gerätemodell | 8010<sup>1</sup> | 8020 |
 |-----------------------|---------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
-| **Maximale Kapazität** | 30 TB | 64 TB |
+| **Maximale Kapazität** | 30 TB | 64 TB |
 | **Azure-VM** | Standard\_A3 (4 Kerne, 7 GB Arbeitsspeicher) | Standard\_DS3 (4 Kerne, 14 GB Arbeitsspeicher) |
 | **Versionskompatibilität** | Versionen unter Vorgängerversionen von Update 2 oder höher | Versionen unter Update 2 oder höher |
 | **Regionale Verfügbarkeit** | Alle Azure-Regionen | Azure-Regionen, die Storage Premium unterstützen<br></br>Eine Liste dieser Regionen finden Sie unter [Unterstützte Regionen für 8020](#supported-regions-for-8020). |
@@ -74,7 +74,7 @@ In diesem Artikel werden die einzelnen Schritte beim Bereitstellen eines virtuel
 
 - Arbeiten mit dem virtuellen Gerät
 
-Dieses Tutorial gilt für alle virtuellen StorSimple-Geräte mit Update 2 und höher.
+Dieses Tutorial gilt für alle virtuellen StorSimple-Geräte mit Update 2 und höher.
 
 ## Unterschiede zwischen virtuellem und physischem Gerät
 
@@ -87,7 +87,7 @@ In der folgenden Tabelle werden einige wichtige Unterschiede zwischen virtuellen
 | | Physisches Gerät | Virtuelles Gerät |
 |-----------------------------|----------------------------------------------------------|-------------------------------------------------------------------------------------------|
 | **Standort** | Befindet sich im Datencenter. | Wird in Azure ausgeführt. |
-| **Netzwerkschnittstellen** | Verfügt über sechs Netzwerkschnittstellen: DATA 0 bis DATA 5. | Besitzt nur eine Netzwerkschnittstelle: DATA 0. |
+| **Netzwerkschnittstellen** | Verfügt über sechs Netzwerkschnittstellen: DATA 0 bis DATA 5. | Besitzt nur eine Netzwerkschnittstelle: DATA 0. |
 | **Registrierung** | Wird während der Konfiguration registriert. | Die Registrierung ist eine separate Aufgabe. |
 | **Verschlüsselungsschlüssel für Dienstdaten** | Generieren Sie den Schlüssel auf dem physischen Gerät erneut, und aktualisieren Sie dann das virtuelle Gerät mit dem neuen Schlüssel. | Der Schlüssel kann auf dem virtuellen Gerät nicht neu generiert werden. |
 
@@ -211,8 +211,8 @@ In den folgenden Abschnitten werden einige der Unterschiede bei der Arbeit mit v
 
 Da es sich um ein reines Softwaregerät handelt, ist der Verwaltungsaufwand im Vergleich zu einem physischen Gerät minimal. Folgende Optionen stehen zur Auswahl:
 
-- **Softwareupdates** – Sie können das Datum des letzten Softwareupdates sowie alle Updatestatusmeldungen anzeigen. Mit der Schaltfläche **Updates scannen** unten auf der Seite können Sie manuell nach Updates suchen. Wenn Updates verfügbar sind, klicken Sie zu deren Installation auf **Updates installieren**. Da nur eine einzige Schnittstelle zum virtuellen Gerät vorhanden ist, tritt beim Übernehmen der Updates eine kurze Dienstunterbrechung auf. Das virtuelle Gerät wird heruntergefahren und (ggf.) neu gestartet, um alle veröffentlichten Updates zu übernehmen. Eine Schrittanleitung finden Sie unter [Aktualisieren Ihres Geräts](storsimple-update-device.md#install-regular-updates-via-the-azure-classic-portal).
-- **Supportpaket** – Sie können ein Supportpaket erstellen und hochladen, um den Microsoft-Support beim Beheben von Problemen mit Ihrem virtuellen Gerät zu unterstützen. Eine Schrittanleitung finden Sie unter [Erstellen und Verwalten eines Unterstützungspakets](storsimple-create-manage-support-package.md).
+- **Softwareupdates** – Sie können das Datum des letzten Softwareupdates sowie alle Updatestatusmeldungen anzeigen. Mit der Schaltfläche **Updates scannen** unten auf der Seite können Sie manuell nach Updates suchen. Wenn Updates verfügbar sind, klicken Sie zu deren Installation auf **Updates installieren**. Da nur eine einzige Schnittstelle zum virtuellen Gerät vorhanden ist, tritt beim Übernehmen der Updates eine kurze Dienstunterbrechung auf. Das virtuelle Gerät wird heruntergefahren und (ggf.) neu gestartet, um alle veröffentlichten Updates zu übernehmen. Eine Schrittanleitung finden Sie unter [Aktualisieren Ihres Geräts](storsimple-update-device.md#install-regular-updates-via-the-azure-classic-portal).
+- **Supportpaket** – Sie können ein Supportpaket erstellen und hochladen, um den Microsoft-Support beim Beheben von Problemen mit Ihrem virtuellen Gerät zu unterstützen. Eine Schrittanleitung finden Sie unter [Erstellen und Verwalten eines Unterstützungspakets](storsimple-create-manage-support-package.md).
 
 ### Speicherkonten für ein virtuelles Gerät
 
@@ -258,7 +258,7 @@ Die Notfallwiederherstellung ist eines der wichtigsten Szenarios, für die das v
 >[AZURE.NOTE] 
 >
 > - Wenn Sie ein virtuelles Gerät als sekundäres Gerät für die Notfallwiederherstellung einsetzen, bedenken Sie, dass 8010 über 30 TB Standardspeicher und 8020 über 64 TB Premium-Speicher verfügt. Das virtuelle Gerät mit der höheren Kapazität, 8020, ist möglicherweise für ein DR-Szenario besser geeignet.
-> - Ein Failover oder das Klonen eines Geräts mit Update 2 auf ein Gerät mit Software vor Update 1 ist nicht möglich. Sie können jedoch ein Failover für ein Gerät mit Update 2 auf ein Gerät mit Update 1 (1.1 oder 1.2) durchführen.
+> - Ein Failover oder das Klonen eines Geräts mit Update 2 auf ein Gerät mit Software vor Update 1 ist nicht möglich. Sie können jedoch ein Failover für ein Gerät mit Update 2 auf ein Gerät mit Update 1 (1.1 oder 1.2) durchführen.
 
 Eine Schrittanleitung finden Sie unter [Failover auf ein virtuelles Gerät](storsimple-device-failover-disaster-recovery.md#fail-over-to-a-storsimple-virtual-device).
  

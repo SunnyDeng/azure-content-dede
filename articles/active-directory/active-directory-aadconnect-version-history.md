@@ -24,7 +24,7 @@ Dieser Artikel soll Ihnen helfen, die Versionen zu verfolgen, die veröffentlich
 
 Verwandte Links:
 
-- Verschiedene Methoden zum [Aktualisieren von einer früheren Version auf die aktuelle Version](active-directory-aadconnect-upgrade-previous-version.md) von Azure AD Connect.
+- Verschiedene Methoden zum [Aktualisieren von einer früheren Version auf die aktuelle Version](active-directory-aadconnect-upgrade-previous-version.md) von Azure AD Connect.
 - Die zum Anwenden eines Updates erforderlichen Berechtigungen sind unter [Konten und Berechtigungen](active-directory-aadconnect-accounts-permissions.md#upgrade) aufgeführt.
 - [Azure AD Connect herunterladen](http://go.microsoft.com/fwlink/?LinkId=615771)
 
@@ -34,9 +34,9 @@ Veröffentlicht im Februar 2016
 **Behobene Probleme:**
 
 - Das Upgrade von früheren Versionen kann nicht ausgeführt werden, wenn die Installation nicht im Standardordner **C:\\Programme** durchgeführt wird.
-- Wenn Sie bei der Installation am Ende des Installations-Assistenten die Option **Starten Sie den Synchronisierungsvorgang ...** deaktivieren, wird der Planer durch erneutes Ausführen des Installations-Assistenten nicht aktiviert.
+- Wenn Sie bei der Installation am Ende des Installations-Assistenten die Option **Starten Sie den Synchronisierungsvorgang ...** deaktivieren, wird der Planer durch erneutes Ausführen des Installations-Assistenten nicht aktiviert.
 - Auf Servern, auf denen das Datums-/Uhrzeitformat nicht dem US-englischen Format entspricht, wird der Planer nicht wie erwartet ausgeführt. Außerdem wird verhindert, dass `Get-ADSyncScheduler` korrekte Zeitangaben zurückgibt.
-- Wenn Sie eine frühere Version von Azure AD Connect mit AD FS als Anmeldeoption und Upgrade installiert haben, können Sie den Installations-Assistenten nicht erneut ausführen.
+- Wenn Sie eine frühere Version von Azure AD Connect mit AD FS als Anmeldeoption und Upgrade installiert haben, können Sie den Installations-Assistenten nicht erneut ausführen.
 
 ## 1\.1.105.0
 Veröffentlicht im Februar 2016
@@ -58,12 +58,12 @@ Veröffentlicht im Februar 2016
 
 **Neue Vorschaufeatures:**
 
-- Das neue Standardintervall für den Synchronisierungszyklus beträgt 30 Minuten. In allen früheren Versionen wurde ein Intervall von 3 Stunden verwendet. Unterstützung zum Ändern des [Planer](active-directory-aadconnectsync-feature-scheduler.md)-Verhaltens wurde hinzugefügt.
+- Das neue Standardintervall für den Synchronisierungszyklus beträgt 30 Minuten. In allen früheren Versionen wurde ein Intervall von 3 Stunden verwendet. Unterstützung zum Ändern des [Planer](active-directory-aadconnectsync-feature-scheduler.md)-Verhaltens wurde hinzugefügt.
 
 **Behobene Probleme:**
 
 - Von der Seite zum Überprüfen von DNS-Domänen wurden die Domänen nicht immer erkannt.
-- Domänen-Admin-Anmeldeinformationen werden beim Konfigurieren von AD FS abgefragt.
+- Domänen-Admin-Anmeldeinformationen werden beim Konfigurieren von AD FS abgefragt.
 - Die lokalen AD-Konten werden vom Installations-Assistenten nicht erkannt, wenn sie sich in einer Domäne befinden, die eine andere DNS-Struktur als die Stammdomäne aufweist.
 
 ## 1\.0.9131.0

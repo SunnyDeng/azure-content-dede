@@ -34,10 +34,10 @@ Es werden auch weiterhin neue Funktionen zu V12 hinzugefügt. Daher empfehlen wi
 Die neueste Informationen zu Ressourceneinschränkungen für SQL-Datenbank finden Sie unter:<br/>[Ressourceneinschränkungen für Azure SQL-Datenbanken](sql-database-resource-limits.md).
 
 
-## Höhere Anwendungskompatibilität mit SQL Server
+## Höhere Anwendungskompatibilität mit SQL Server
 
 
-Ein wichtiges Ziel für SQL-Datenbank V12 war die Verbesserung der Kompatibilität mit Microsoft SQL Server 2014. Unter anderem ist V12 jetzt mit SQL Server im wichtigen Bereich der Programmierung gleichauf. Beispiel:
+Ein wichtiges Ziel für SQL-Datenbank V12 war die Verbesserung der Kompatibilität mit Microsoft SQL Server 2014. Unter anderem ist V12 jetzt mit SQL Server im wichtigen Bereich der Programmierung gleichauf. Beispiel:
 
 
 - [Fensterfunktionen](http://msdn.microsoft.com/library/bb934097.aspx), mit [OVER](http://msdn.microsoft.com/library/ms189461.aspx) 
@@ -53,7 +53,7 @@ Informationen zu den wenigen noch nicht unterstützten SQL-Datenbankfunktionen f
 ## Mehr Premium-Performance, neue Leistungsstufen
 
 
-In V12 haben wir die Datenbanktransaktionseinheiten (DTUs) aller Premium-Leistungsstufen ohne zusätzliche Kosten um 25 % erhöht. Durch neue Features, wie die im Folgenden aufgeführten, können noch größere Leistungsvorteile erzielt werden:
+In V12 haben wir die Datenbanktransaktionseinheiten (DTUs) aller Premium-Leistungsstufen ohne zusätzliche Kosten um 25 % erhöht. Durch neue Features, wie die im Folgenden aufgeführten, können noch größere Leistungsvorteile erzielt werden:
 
 
 - Unterstützung für speicherinterne [Columnstore-Indizes](http://msdn.microsoft.com/library/gg492153.aspx).
@@ -107,9 +107,9 @@ V12 bietet wesentlich bessere Recovery Point Objectives (RPO) und geschätzte Wi
 
 | Funktionen der Geschäftskontinuität | Frühere Version | V12 |
 | :-- | :-- | :-- |
-| Geografische Wiederherstellung | • RPO < 24 Stunden.<br/>• ERT < 12 Stunden. | • RPO < 1 Stunde.<br/>• ERT < 12 Stunden. |
-| Standardgeoreplikation | • RPO < 30 Minuten.<br/>• ERT < 2 Stunden. | • RPO < 5 Sekunden.<br/>• ERT < 30 Sekunden. |
-| Aktive Georeplikation | • RPO < 5 Minuten.<br/>• ERT < 1 Stunde. | • RPO < 5 Sekunden.<br/>• ERT < 30 Sekunden. |
+| Geografische Wiederherstellung | • RPO < 24 Stunden.<br/>• ERT < 12 Stunden. | • RPO < 1 Stunde.<br/>• ERT < 12 Stunden. |
+| Standardgeoreplikation | • RPO < 30 Minuten.<br/>• ERT < 2 Stunden. | • RPO < 5 Sekunden.<br/>• ERT < 30 Sekunden. |
+| Aktive Georeplikation | • RPO < 5 Minuten.<br/>• ERT < 1 Stunde. | • RPO < 5 Sekunden.<br/>• ERT < 30 Sekunden. |
 
 
 Weitere Informationen finden Sie unter [Azure SQL-Datenbank – Geschäftskontinuität](sql-database-business-continuity.md).
@@ -123,7 +123,7 @@ Es gibt viele gute Gründe, warum Kunden jetzt ein Upgrade von V11 auf Azure SQL
 
 - SQL-Datenbank V12 bietet eine lange Liste von Features, die über Version V11 hinausgehen.
 - Wir fügen weiterhin neue Features zu V12 hinzu, aber es werden keine neuen Features mehr zu V11 hinzugefügt.
-- Die meisten neuen Features werden in SQL-Datenbank V12 veröffentlicht, bevor sie für Microsoft SQL Server veröffentlicht werden.
+- Die meisten neuen Features werden in SQL-Datenbank V12 veröffentlicht, bevor sie für Microsoft SQL Server veröffentlicht werden.
 
 
 ## Verwenden Sie bereits V12?

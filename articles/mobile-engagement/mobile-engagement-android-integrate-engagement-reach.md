@@ -165,7 +165,7 @@ Hier folgen einige Richtlinien zur ordnungsgemäßen Behandlung von Rückgabepar
 
 -   Ein Übertragungsempfänger sollte in der Rückruffunktion `null` zurückgeben, wenn ihm nicht bekannt ist, wie ein Datenpush behandelt wird. Sie können die Kategorie zur Ermittlung verwenden, ob der Übertragungsempfänger den Datenpush bearbeiten soll.
 -   Einer der Übertragungsempfänger sollte in der Rückruffunktion `true` zurückgeben, wenn der Datenpush akzeptiert wird.
--   Einer der Übertragungsempfänger sollte in der Rückruffunktion `false` zurückgeben, wenn er den Datenpush erkennt, ihn aber aus einem beliebigen Grund verwirft. Geben Sie z. B. `false` zurück, wenn die empfangenen Daten ungültig sind.
+-   Einer der Übertragungsempfänger sollte in der Rückruffunktion `false` zurückgeben, wenn er den Datenpush erkennt, ihn aber aus einem beliebigen Grund verwirft. Geben Sie z. B. `false` zurück, wenn die empfangenen Daten ungültig sind.
 -   Wenn ein Übertragungsempfänger `true` zurückgibt, während ein anderer für denselben Datenpush `false` zurückgibt, dann ist das Verhalten undefiniert. Daher sollten Sie niemals entsprechend vorgehen.
 
 Der Rückgabetyp wird nur für Reach-Statistiken verwendet:
@@ -193,7 +193,7 @@ Eine In-App-Benachrichtigung ist standardmäßig eine Ansicht, die dank der Andr
 
 Sie können einfach die Datei `engagement_notification_area.xml` nach Belieben ändern, um das Aussehen der Benachrichtigungsüberlagerungen zu modifizieren.
 
-> [AZURE.NOTE] Die Datei `engagement_notification_overlay.xml` ist die Datei, die zum Erstellen einer Benachrichtigungsüberlagerung verwendet wird. Sie enthält die Datei `engagement_notification_area.xml`. Sie können die Datei auch anpassen, um sie gemäß Ihren Anforderungen zu ändern (z. B. zur Positionierung des Benachrichtigungsbereichs innerhalb der Überlagerung).
+> [AZURE.NOTE] Die Datei `engagement_notification_overlay.xml` ist die Datei, die zum Erstellen einer Benachrichtigungsüberlagerung verwendet wird. Sie enthält die Datei `engagement_notification_area.xml`. Sie können die Datei auch anpassen, um sie gemäß Ihren Anforderungen zu ändern (z. B. zur Positionierung des Benachrichtigungsbereichs innerhalb der Überlagerung).
 
 ##### Einbeziehen des Benachrichtigungslayouts im Rahmen einer Aktivitätsüberlagerung
 
@@ -320,7 +320,7 @@ Wenn Sie für eine bestimmte Kategorie alternative Layouts verwenden möchten, k
 			  }
 			}
 
-**Beispiel für `my_notification_overlay.xml`: **
+**Beispiel für `my_notification_overlay.xml`:**
 
 			<?xml version="1.0" encoding="utf-8"?>
 			<RelativeLayout
@@ -335,7 +335,7 @@ Wenn Sie für eine bestimmte Kategorie alternative Layouts verwenden möchten, k
 
 Wie Sie sehen können, unterscheidet sich der Bezeichner für die Überlagerungsansicht vom Standardbezeichner. Es ist wichtig, dass jedes Layout einen eindeutigen Bezeichner für Überlagerungen verwendet.
 
-**Beispiel für `my_notification_area.xml`: **
+**Beispiel für `my_notification_area.xml`:**
 
 			<?xml version="1.0" encoding="utf-8"?>
 			<merge
@@ -471,7 +471,7 @@ Hier folgt ein entsprechendes Beispiel für eine derartige Implementierung:
 
 Die Verwaltung der Ankündigung zum Klicken auf eine Benachrichtigung kann durch Außerkraftsetzung von `EngagementDefaultNotifier.onNotifAnnouncementIntentPrepared` angepasst werden, indem das vorbereitete `Intent` geändert wird. Durch die Verwendung dieser Methode können Sie die Flags ganz einfach anpassen.
 
-Gehen Sie wie folgt vor, um z. B. das Flag `SINGLE_TOP` hinzuzufügen:
+Gehen Sie wie folgt vor, um z. B. das Flag `SINGLE_TOP` hinzuzufügen:
 			
 			@Override
 			protected Intent onNotifAnnouncementIntentPrepared(EngagementNotifAnnouncement notifAnnouncement,
@@ -495,7 +495,7 @@ Bei Verwendung der Standardkategorie werden für das `EngagementReachInteractive
 
 Wenn Ihre Implementierung von `EngagementNotifier` das Standardverhalten umgeht, müssen Sie diese Lebenszyklusmethoden selbst aufrufen. Das folgende Beispiel zeigt einige Fälle, in denen das Standardverhalten umgangen wird:
 
--   Es erfolgt keine Erweiterung von `EngagementDefaultNotifier`, d. h. Sie haben die Kategorieverarbeitung von Grund auf implementiert.
+-   Es erfolgt keine Erweiterung von `EngagementDefaultNotifier`, d. h. Sie haben die Kategorieverarbeitung von Grund auf implementiert.
 -   Für die Systembenachrichtigungen haben Sie `onNotificationPrepared` außer Kraft gesetzt und `contentIntent` oder `deleteIntent` im `Notification`-Objekt geändert.
 -   Für In-App-Benachrichtigungen haben Sie `prepareInAppArea` außer Kraft gesetzt. Stellen Sie sicher, dass Sie mindestens `actionNotification` zu einem Ihrer Steuerelemente der Benutzeroberfläche zuordnen.
 
@@ -517,7 +517,7 @@ In einer Umfrage werden das Fragenlayout und ihre Optionen dynamisch durch mehrf
 
 Wie Benachrichtigungen können die Kampagnenkategorien dazu verwendet werden, alternative Layouts für Ankündigungen und Umfragen bereitzustellen.
 
-Zum Erstellen einer Kategorie für eine Textankündigung können Sie z. B. `EngagementTextAnnouncementActivity` erweitern und darauf in der Datei `AndroidManifest.xml` verweisen:
+Zum Erstellen einer Kategorie für eine Textankündigung können Sie z. B. `EngagementTextAnnouncementActivity` erweitern und darauf in der Datei `AndroidManifest.xml` verweisen:
 
 			<activity android:name="com.your_company.MyCustomTextAnnouncementActivity">
 			  <intent-filter>
@@ -612,7 +612,7 @@ Für die Statistiken sollten Sie melden, dass der Inhalt im `onResume`-Ereignis 
 
 Vergessen Sie anschließend nicht, entweder `actionContent(this)` oder `exitContent(this)` für das Inhaltsobjekt aufzurufen, bevor die Aktivität in den Hintergrund wechselt.
 
-Wenn Sie weder `actionContent` noch m`exitContent` Aufrufen, werden keine Statistiken gesendet (d. h. keine Analysen zur Kampagne) und noch wichtiger ist, dass die nächsten Kampagnen nicht benachrichtigt werden, bis der Anwendungsprozess neu gestartet wurde.
+Wenn Sie weder `actionContent` noch m`exitContent` Aufrufen, werden keine Statistiken gesendet (d. h. keine Analysen zur Kampagne) und noch wichtiger ist, dass die nächsten Kampagnen nicht benachrichtigt werden, bis der Anwendungsprozess neu gestartet wurde.
 
 Die Ausrichtung oder andere Konfigurationsänderungen können die Ermittlung erschweren, ob die Aktivität in den Hintergrund wechselt. Die Standardimplementierung stellt sicher, dass der Inhalt beim Beenden gemeldet wird, wenn der Benutzer die Aktivität verlässt (durch Drücken von `HOME` oder `BACK`), jedoch nicht, wenn sich die Ausrichtung ändert.
 

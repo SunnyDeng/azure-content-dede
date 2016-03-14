@@ -32,7 +32,7 @@ Die folgenden Schritte sind ausreichend, um den Bericht von Protokollen zu aktiv
 
 Das Mobile Engagement-SDK für Windows Silverlight kann nur in Anwendungen für folgende Betriebssysteme eingebettet werden:
 
--   Windows Phone 8.0
+-   Windows Phone 8.0
 -   Windows Phone 8.1 Silverlight
 
 > [AZURE.NOTE] Informationen zu Windows Phone 8.1 (nicht Silverlight) finden Sie im [Windows Universal-Integrationsverfahren](mobile-engagement-windows-store-integrate-engagement.md).

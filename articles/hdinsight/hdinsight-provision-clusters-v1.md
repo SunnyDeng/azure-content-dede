@@ -75,30 +75,30 @@ Bevor Sie die Anweisungen in diesem Artikel ausführen können, benötigen Sie F
 
 	Hadoop-Cluster für HDInsight werden mit zwei Rollen bereitgestellt:
 
-	- Hauptknoten (2 Knoten)
-	- Datenknoten (mindestens 1 Knoten)
+	- Hauptknoten (2 Knoten)
+	- Datenknoten (mindestens 1 Knoten)
 
 	![HDInsight Hadoop-Clusterrollen](./media/hdinsight-provision-clusters-v1/HDInsight.HBase.roles.png)
 
 	HBase-Cluster für HDInsight werden mit drei Rollen bereitgestellt:
-	- Hauptserver (2 Knoten)
-	- Regionsserver (mindestens 1 Knoten)
-	- Master/Zookeeper-Knoten (3 Knoten)
+	- Hauptserver (2 Knoten)
+	- Regionsserver (mindestens 1 Knoten)
+	- Master/Zookeeper-Knoten (3 Knoten)
 	
 	![HDInsight Hadoop-Clusterrollen](./media/hdinsight-provision-clusters-v1/HDInsight.Storm.roles.png)
 
 	Storm-Cluster für HDInsight werden mit drei Rollen bereitgestellt:
-	- Nimbus-Knoten (2 Knoten)
-	- Supervisor-Server (mindestens 1 Knoten)
-	- Zookeeper-Knoten (3 Knoten)
+	- Nimbus-Knoten (2 Knoten)
+	- Supervisor-Server (mindestens 1 Knoten)
+	- Zookeeper-Knoten (3 Knoten)
 	
 
 	![HDInsight Hadoop-Clusterrollen](./media/hdinsight-provision-clusters-v1/HDInsight.Spark.roles.png)
 
 	Spark-Cluster für HDInsight werden mit drei Rollen bereitgestellt:
-	- Hauptknoten (2 Knoten)
+	- Hauptknoten (2 Knoten)
 	- Worker-Knoten (mindestens ein Knoten)
-	- Zookeeper-Knoten (3 Knoten) (für A1-Zookeeper kostenlos)
+	- Zookeeper-Knoten (3 Knoten) (für A1-Zookeeper kostenlos)
 
 	Kunden wird die Nutzung dieser Knoten für die Laufzeit des Clusters in Rechnung gestellt. Die Abrechnung beginnt, sobald ein Cluster erstellt wurde, und endet, wenn der Cluster gelöscht wird (bei Clustern ist kein Aufheben der Zuweisung oder Anhalten möglich). Die Clustergröße wirkt sich auf die Clusterkosten aus. Zu Lernzwecken wird empfohlen, einen Datenknoten zu verwenden. Weitere Informationen zu den Preisen von HDInsight finden Sie unter [HDInsight – Preise](https://go.microsoft.com/fwLink/?LinkID=282635&clcid=0x409).
 
@@ -125,7 +125,7 @@ Bevor Sie die Anweisungen in diesem Artikel ausführen können, benötigen Sie F
 	Die HDInsight-Cluster ermöglichen Ihnen, während der Bereitstellung zwei Benutzerkonten zu konfigurieren:
 
 	- HTTP-Benutzer. Der Standardbenutzername bei der Basiskonfiguration im klassischen Azure-Portal ist „admin“.
-	- RDP-Benutzer (Windows-Cluster): Dient zum Herstellen einer Verbindung mit dem Cluster über RDP. Wenn Sie das Konto erstellen, müssen Sie ein Ablaufdatum festlegen, das maximal 90 Tage hinter dem aktuellen Datum liegt. 
+	- RDP-Benutzer (Windows-Cluster): Dient zum Herstellen einer Verbindung mit dem Cluster über RDP. Wenn Sie das Konto erstellen, müssen Sie ein Ablaufdatum festlegen, das maximal 90 Tage hinter dem aktuellen Datum liegt. 
 	- SSH-Benutzer (Linux-Cluster): Dient zum Herstellen einer Verbindung mit dem Cluster über SSH. Sie können zusätzliche SSH-Benutzerkonten erstellen, nachdem der Cluster erstellt wurde, indem Sie die Schritte unter [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Linux, Unix oder OS X](hdinsight-hadoop-linux-use-ssh-unix.md) ausführen.
   
  

@@ -37,7 +37,7 @@ Es gibt viele Aspekte dieser Lösung, die konfiguriert und verwaltet werden müs
 | Funktion | Verwendete Software | Zusätzliche Hinweise |
 | -------- | ------------- | ------- |
 | Verschlüsselung | BitLocker oder dmcrypt | Da die Verschlüsselung in einer *anderen* Schicht als bei Azure Backup erfolgt, ist es egal, welche Verschlüsselungssoftware verwendet wird. Der Vorgang wurde jedoch nur mit Bitlocker und dmcrypt überprüft.<br><br> Um die Daten zu verschlüsseln, ist ein Schlüssel erforderlich. Außerdem muss der Schlüssel sicher aufbewahrt werden, damit nur autorisierter Zugriff auf die Daten möglich ist. |
-| Schlüsselverwaltung | CloudLink SecureVM<br>oder Azure-Schlüsseltresor | Der Schlüssel ist wichtig zum Verschlüsseln und Entschlüsseln der Daten. Ohne den richtigen Schlüssel können die Daten nicht abgerufen werden. Dies wird *sehr* wichtig durch:<br><li>Schlüsselrollover<li>Langfristig Aufbewahrung<br><br>Es ist z. B. möglich, dass der Schlüssel, der zum Sichern der Daten vor sieben Jahren verwendet wurde, nicht derselbe Schlüssel ist, der heute verwendet wird. Ohne den Schlüssel von vor sieben Jahren ist es jedoch unmöglich, wiederhergestellte Daten aus dieser Zeit zu verwenden.|
+| Schlüsselverwaltung | CloudLink SecureVM<br>oder Azure-Schlüsseltresor | Der Schlüssel ist wichtig zum Verschlüsseln und Entschlüsseln der Daten. Ohne den richtigen Schlüssel können die Daten nicht abgerufen werden. Dies wird *sehr* wichtig durch:<br><li>Schlüsselrollover<li>Langfristig Aufbewahrung<br><br>Es ist z. B. möglich, dass der Schlüssel, der zum Sichern der Daten vor sieben Jahren verwendet wurde, nicht derselbe Schlüssel ist, der heute verwendet wird. Ohne den Schlüssel von vor sieben Jahren ist es jedoch unmöglich, wiederhergestellte Daten aus dieser Zeit zu verwenden.|
 | Datensicherung | Azure Backup | Verwenden von Azure Backup zum Sichern der Azure IaaS-VMs mit dem [Azure-Verwaltungsportal](http://manage.windowsazure.com) oder mithilfe von PowerShell |
 | Datenwiederherstellung | Azure Backup | Verwenden Sie Azure Backup zum Wiederherstellen von Datenträgern oder vollständigen virtuellen Computern von einem Wiederherstellungspunkt. Die Daten werden von Azure Backup nicht während des Wiederherstellungsvorgangs entschlüsselt.|
 | Entschlüsselung | BitLocker oder dmcrypt | Um Daten von einem wiederhergestellten Datenträger oder einem wiederhergestellten virtuellen Computer zu lesen, benötigt die Software den Schlüssel aus der Schlüsselverwaltungssoftware. Ohne den richtigen Schlüssel können die Daten nicht entschlüsselt werden. |
@@ -50,12 +50,12 @@ Es gibt viele Aspekte dieser Lösung, die konfiguriert und verwaltet werden müs
 
 ### Supportinformationen
 
-- CloudLink SecureVM, Version 4.0 (Build 21536.121 oder höher)
-- Azure PowerShell, Version 0.9.8 oder höher
+- CloudLink SecureVM, Version 4.0 (Build 21536.121 oder höher)
+- Azure PowerShell, Version 0.9.8 oder höher
 
 ### Schlüsselverwaltung
 
-Wenn Sie für virtuelle Computer mit Sicherungen einen Rollover der Schlüssel durchführen oder diese ändern möchten,benötigen Sie unbedingt die zum Zeitpunkt der Sicherung verwendeten Schlüssel. Deshalb wird es z. B. empfohlen, eine Sicherung des Schlüsselspeichers oder des kompletten SecureVM-Systems zu erstellen.
+Wenn Sie für virtuelle Computer mit Sicherungen einen Rollover der Schlüssel durchführen oder diese ändern möchten,benötigen Sie unbedingt die zum Zeitpunkt der Sicherung verwendeten Schlüssel. Deshalb wird es z. B. empfohlen, eine Sicherung des Schlüsselspeichers oder des kompletten SecureVM-Systems zu erstellen.
 
 ### Dokumentation und Ressourcen
 

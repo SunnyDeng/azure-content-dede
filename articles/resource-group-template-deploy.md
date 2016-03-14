@@ -47,7 +47,7 @@ Sie gebenden Bereitstellungstyp über die **Mode**-Eigenschaft an, wie in den Be
 
 1. Melden Sie sich bei Ihrem Azure-Konto an. Nach der Eingabe Ihrer Anmeldeinformationen gibt der Befehl die Informationen zu Ihrem Konto zurück.
 
-    Azure PowerShell 1.0:
+    Azure PowerShell 1.0:
 
          PS C:\> Login-AzureRmAccount
 
@@ -108,7 +108,7 @@ Sie gebenden Bereitstellungstyp über die **Mode**-Eigenschaft an, wie in den Be
           included in the template will be deleted.
           [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
 
-     Wenn die Vorlage einen Parameter mit einem Namen enthält, der einem Parameter im Befehl zum Bereitstellen der Vorlage entspricht (z. B. der Parameter **ResourceGroupName** in Ihrer Vorlage, der dem Parameter **ResourceGroupName** im Cmdlet [New-AzureRmResourceGroupDeployment](https://msdn.microsoft.com/library/azure/mt679003.aspx) entspricht), werden Sie aufgefordert, einen Wert für einen Parameter mit dem Postfix **FromTemplate** anzugeben (z. B. **ResourceGroupNameFromTemplate**). Im Allgemeinen sollten Sie diese Verwirrung vermeiden, indem Sie Parametern nicht dieselben Namen wie Parametern für Bereitstellungsvorgänge geben.
+     Wenn die Vorlage einen Parameter mit einem Namen enthält, der einem Parameter im Befehl zum Bereitstellen der Vorlage entspricht (z. B. der Parameter **ResourceGroupName** in Ihrer Vorlage, der dem Parameter **ResourceGroupName** im Cmdlet [New-AzureRmResourceGroupDeployment](https://msdn.microsoft.com/library/azure/mt679003.aspx) entspricht), werden Sie aufgefordert, einen Wert für einen Parameter mit dem Postfix **FromTemplate** anzugeben (z. B. **ResourceGroupNameFromTemplate**). Im Allgemeinen sollten Sie diese Verwirrung vermeiden, indem Sie Parametern nicht dieselben Namen wie Parametern für Bereitstellungsvorgänge geben.
 
 6. Abrufen von Informationen über Fehler bei der Bereitstellung.
 
@@ -271,7 +271,7 @@ Bei der Verwendung einer Parameterdatei zum Übergeben von Parameterwerten an Ih
        }
     }
 
-Die Parameterdatei darf nicht größer als 64 KB sein.
+Die Parameterdatei darf nicht größer als 64 KB sein.
 
 Informationen zum Definieren von Parametern in der Vorlage finden Sie unter [Erstellen von Vorlagen](../resource-group-authoring-templates/#parameters). Ausführliche Informationen zum KeyVault-Verweis zum Übergeben sicherer Werte finden Sie unter [Übergeben sicherer Werte während der Bereitstellung](resource-manager-keyvault-parameter.md).
 

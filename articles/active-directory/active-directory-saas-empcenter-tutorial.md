@@ -21,7 +21,7 @@ In diesem Tutorial wird die Integration von Azure und EmpCenter erläutert. Das 
 -   Ein gültiges Azure-Abonnement
 -   Ein EmpCenter-Abonnement, für das einmaliges Anmelden aktiviert ist
   
-Nach Abschluss dieses Tutorials können sich die Azure AD-Benutzer, die Sie EmpCenter zugewiesen haben, mittels einmaliger Anmeldung auf der EmpCenter-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
+Nach Abschluss dieses Tutorials können sich die Azure AD-Benutzer, die Sie EmpCenter zugewiesen haben, mittels einmaliger Anmeldung auf der EmpCenter-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 

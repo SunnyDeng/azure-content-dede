@@ -52,7 +52,7 @@ Azure Active Directory Identity Protection ist aber viel mehr als ein Tool für 
 
 - Bereitstellen grundlegender Workflows zum Nachverfolgen von Untersuchungen
 
-- Bereitstellen des einfachen Zugriffs auf Korrekturaktionen, z. B. Kennwortzurücksetzung
+- Bereitstellen des einfachen Zugriffs auf Korrekturaktionen, z. B. Kennwortzurücksetzung
 
 <br>
 
@@ -120,7 +120,7 @@ Risikoereignisse vom Typ „Kompromittierte Anmeldeinformationen“ werden als R
 
 Mit dieser Art von Risikoereignis werden zwei Anmeldungen identifiziert, die von weit entfernten Orten durchgeführt wurden und bei denen mindestens einer der Orte aufgrund des bisherigen Verhaltens atypisch für den Benutzer ist. Außerdem ist der Zeitraum zwischen den beiden Anmeldungen kürzer als der Zeitraum, der für die Reise des Benutzers vom ersten zum zweiten Ort erforderlich wäre. Dies deutet darauf hin, dass ein anderer Benutzer die gleichen Anmeldeinformationen verwendet.
 
-Bei diesem Machine Learning-Algorithmus werden offensichtliche „*falsch positive Ergebnisse*“ ignoriert, die zum Zustand des unmöglichen Ortswechsels beitragen, z. B. VPNs und regelmäßig von anderen Benutzern der Organisation verwendete Orte. Das System verfügt über einen anfänglichen Lernzeitraum von 14 Tagen, in dem das Anmeldeverhalten des neuen Benutzers erlernt wird.
+Bei diesem Machine Learning-Algorithmus werden offensichtliche „*falsch positive Ergebnisse*“ ignoriert, die zum Zustand des unmöglichen Ortswechsels beitragen, z. B. VPNs und regelmäßig von anderen Benutzern der Organisation verwendete Orte. Das System verfügt über einen anfänglichen Lernzeitraum von 14 Tagen, in dem das Anmeldeverhalten des neuen Benutzers erlernt wird.
 
 Der unmögliche Ortswechsel ist normalerweise ein zuverlässiger Hinweis darauf, dass sich ein Hacker erfolgreich anmelden konnte. Es kann aber zu falsch positiven Ergebnissen kommen, wenn ein Benutzer mit einem neuen Gerät unterwegs ist oder eine VPN-Verbindung nutzt, die von anderen Personen der Organisation normalerweise nicht verwendet wird. Eine weitere Quelle für falsch positive Ergebnisse sind Anwendungen, von denen Server-IPs fälschlicherweise als Client-IPs übergeben werden. Hierbei kann der Eindruck entstehen, dass Anmeldungen über das Rechenzentrum durchgeführt werden, in dem das Back-End der Anwendung gehostet wird (häufig sind dies Microsoft-Rechenzentren, die den Eindruck entstehen lassen, dass Anmeldungen über im Besitz von Microsoft befindliche IP-Adressen abgewickelt werden). Aufgrund dieser falsch positiven Ergebnisse ergibt sich als Risikostufe für das Risikoereignis „Mittel“.
 
@@ -143,14 +143,14 @@ Es wird empfohlen, dass Sie sich sofort an den Benutzer wenden, um zu überprüf
 
 #### Anmeldungen von IP-Adressen mit verdächtigen Aktivitäten
 
-Bei dieser Art von Risikoereignis werden IP-Adressen identifiziert, für die eine hohe Zahl fehlgeschlagener Anmeldeversuche beobachtet wurde, und zwar mit mehreren Benutzerkonten innerhalb eines kurzen Zeitraums. Dies entspricht Datenverkehrsmustern von IP-Adressen, die von Angreifern verwendet werden, und es ist ein starker Hinweis darauf, dass Konten entweder bereits kompromittiert sind oder dass dies kurz bevorsteht. Dies ist ein Machine Learning-Algorithmus, bei dem offensichtliche „*falsch positive Ergebnisse*“ ignoriert werden, z. B. IP-Adressen, die regelmäßig von anderen Benutzern in der Organisation verwendet werden. Das System benötigt einen anfänglichen Lernzeitraum von 14 Tagen, in dem es das Anmeldeverhalten eines neuen Benutzers und neuen Mandanten erlernt.
+Bei dieser Art von Risikoereignis werden IP-Adressen identifiziert, für die eine hohe Zahl fehlgeschlagener Anmeldeversuche beobachtet wurde, und zwar mit mehreren Benutzerkonten innerhalb eines kurzen Zeitraums. Dies entspricht Datenverkehrsmustern von IP-Adressen, die von Angreifern verwendet werden, und es ist ein starker Hinweis darauf, dass Konten entweder bereits kompromittiert sind oder dass dies kurz bevorsteht. Dies ist ein Machine Learning-Algorithmus, bei dem offensichtliche „*falsch positive Ergebnisse*“ ignoriert werden, z. B. IP-Adressen, die regelmäßig von anderen Benutzern in der Organisation verwendet werden. Das System benötigt einen anfänglichen Lernzeitraum von 14 Tagen, in dem es das Anmeldeverhalten eines neuen Benutzers und neuen Mandanten erlernt.
 
 Es wird empfohlen, sich an den Benutzer zu wenden und zu überprüfen, ob dieser sich tatsächlich mit einer IP-Adresse angemeldet hat, die als verdächtig gekennzeichnet war. Die Risikostufe für diesen Ereignistyp lautet „Mittel“, da sich hinter einer IP-Adresse mehrere Geräte verbergen können, von denen nur einige Geräte für die verdächtige Aktivität verantwortlich sind.
 
 
 #### Anmeldungen von unbekannten Standorten
 
-Bei dieser Art von Risikoereignis handelt es sich um ein Verfahren zur Echtzeitauswertung von Anmeldungen, bei dem die letzten Standorte (IP, Breiten-/Längengrad und ASN) berücksichtigt werden, um neue oder unbekannte Orte zu ermitteln. Im System werden Informationen zu den vorherigen Standorten gespeichert, die von einem Benutzer genutzt wurden, und diese werden als „vertraute“ Standorte angesehen. Das Risikoereignis wird ausgelöst, wenn die Anmeldung von einem Standort aus erfolgt, der in der Liste der vertrauten Standorte noch nicht enthalten ist. Das System benötigt einen anfänglichen Lernzeitraum von 14 Tagen, in dem neue Standorte nicht als unbekannte Orte gekennzeichnet werden. Außerdem ignoriert das System Anmeldungen von vertrauten Geräten und von Standorten aus, die geografisch nahe an einem bekannten Speicherort liegen. <br> Unbekannte Standorte können ein starker Hinweis darauf sein, dass ein Angreifer versucht, eine gestohlene Identität zu verwenden. Zu falsch positiven Ergebnissen kann es kommen, wenn ein Benutzer auf Reisen ist, ein neues Gerät ausprobiert oder eine neue VPN-Verbindung verwendet. Aufgrund dieser falsch positiven Ergebnisse ergibt sich als Risikostufe für diese Art von Ereignis „Mittel“.
+Bei dieser Art von Risikoereignis handelt es sich um ein Verfahren zur Echtzeitauswertung von Anmeldungen, bei dem die letzten Standorte (IP, Breiten-/Längengrad und ASN) berücksichtigt werden, um neue oder unbekannte Orte zu ermitteln. Im System werden Informationen zu den vorherigen Standorten gespeichert, die von einem Benutzer genutzt wurden, und diese werden als „vertraute“ Standorte angesehen. Das Risikoereignis wird ausgelöst, wenn die Anmeldung von einem Standort aus erfolgt, der in der Liste der vertrauten Standorte noch nicht enthalten ist. Das System benötigt einen anfänglichen Lernzeitraum von 14 Tagen, in dem neue Standorte nicht als unbekannte Orte gekennzeichnet werden. Außerdem ignoriert das System Anmeldungen von vertrauten Geräten und von Standorten aus, die geografisch nahe an einem bekannten Speicherort liegen. <br> Unbekannte Standorte können ein starker Hinweis darauf sein, dass ein Angreifer versucht, eine gestohlene Identität zu verwenden. Zu falsch positiven Ergebnissen kann es kommen, wenn ein Benutzer auf Reisen ist, ein neues Gerät ausprobiert oder eine neue VPN-Verbindung verwendet. Aufgrund dieser falsch positiven Ergebnisse ergibt sich als Risikostufe für diese Art von Ereignis „Mittel“.
 
 ### Sicherheitsrisiken
 
@@ -183,9 +183,9 @@ Ausführliche Informationen finden Sie unter [Suchen nach nicht verwalteten Clou
 
 Dieses Sicherheitsrisiko hilft Ihnen beim Ermitteln und Bereinigen von Warnungen zu privilegierten Identitäten in Ihrer Organisation.
 
-Damit Benutzer privilegierte Vorgänge ausführen können, müssen Organisationen ihren Benutzern einen vorübergehenden oder dauerhaften privilegierten Zugriff auf Azure AD, Azure- oder Office 365-Ressourcen oder andere SaaS-Apps gewähren. Mit jedem dieser privilegierten Benutzer vergrößert sich die Angriffsfläche Ihrer Organisation. Dieses Sicherheitsrisiko dient Ihnen als Unterstützung beim Identifizieren von Benutzern mit nicht erforderlichem privilegiertem Zugriff und beim Treffen geeigneter Maßnahmen, um das damit verbundene Risiko zu mindern oder zu beseitigen.
+Damit Benutzer privilegierte Vorgänge ausführen können, müssen Organisationen ihren Benutzern einen vorübergehenden oder dauerhaften privilegierten Zugriff auf Azure AD, Azure- oder Office 365-Ressourcen oder andere SaaS-Apps gewähren. Mit jedem dieser privilegierten Benutzer vergrößert sich die Angriffsfläche Ihrer Organisation. Dieses Sicherheitsrisiko dient Ihnen als Unterstützung beim Identifizieren von Benutzern mit nicht erforderlichem privilegiertem Zugriff und beim Treffen geeigneter Maßnahmen, um das damit verbundene Risiko zu mindern oder zu beseitigen.
 
-Wir empfehlen Ihrer Organisation die Verwendung von Azure AD Privileged Identity Management, um privilegierte Identitäten und deren Zugriff auf Ressourcen in Azure AD und anderen Microsoft-Onlinediensten wie Office 365 oder Microsoft Intune verwalten, steuern und überwachen zu können.
+Wir empfehlen Ihrer Organisation die Verwendung von Azure AD Privileged Identity Management, um privilegierte Identitäten und deren Zugriff auf Ressourcen in Azure AD und anderen Microsoft-Onlinediensten wie Office 365 oder Microsoft Intune verwalten, steuern und überwachen zu können.
 
 Ausführliche Informationen finden Sie unter [Azure AD Privileged Identity Management](active-directory-privileged-identity-management-configure.md).
 
@@ -196,8 +196,8 @@ Ihre Navigation durch Identity Protection beginnt normalerweise mit dem Identity
 
 Über das Dashboard haben Sie Zugriff auf folgende Komponenten:
  
-- Berichte, z. B. **Benutzer mit Risikokennzeichnung**, **Risikoereignisse** und **Sicherheitsrisiken**
-- Einstellungen, z. B. die Konfiguration von **Sicherheitsrichtlinien**, **Benachrichtigungen** und **Multi-Factor Authentication-Registrierung**
+- Berichte, z. B. **Benutzer mit Risikokennzeichnung**, **Risikoereignisse** und **Sicherheitsrisiken**
+- Einstellungen, z. B. die Konfiguration von **Sicherheitsrichtlinien**, **Benachrichtigungen** und **Multi-Factor Authentication-Registrierung**
  
 
 Hier beginnen Sie in der Regel mit dem Untersuchungsprozess. Dies ist der Prozess der Überprüfung von Aktivitäten, Protokollen und anderen relevanten Informationen zu einem Risikoereignis, um zu entscheiden, ob Schritte zur Fehlerbeseitigung oder Lösung erforderlich sind. Außerdem wird ermittelt, ob und wie die Identität kompromittiert und wie die kompromittierte Identität verwendet wurde.
@@ -259,7 +259,7 @@ Sie können die Benutzerrisikostufen verwenden, um Richtlinien für den bedingte
 
 ## Manuelles Schließen von Risikoereignissen
 
-In den meisten Fällen führen Sie Korrekturaktionen durch, z. B. das sichere Zurücksetzen des Kennworts, um Risikoereignisse automatisch zu schließen. Allerdings ist dies unter Umständen nicht immer möglich. <br> Da Risikoereignisse, die den Status **Aktiv** haben, in die Berechnung des Benutzerrisikos einfließen, müssen Sie eine Risikostufe ggf. manuell herabsetzen, indem Sie Risikoereignisse manuell schließen. <br> Während der Untersuchung können Sie die folgenden Aktionen durchführen, um den Status eines Risikoereignisses zu ändern:
+In den meisten Fällen führen Sie Korrekturaktionen durch, z. B. das sichere Zurücksetzen des Kennworts, um Risikoereignisse automatisch zu schließen. Allerdings ist dies unter Umständen nicht immer möglich. <br> Da Risikoereignisse, die den Status **Aktiv** haben, in die Berechnung des Benutzerrisikos einfließen, müssen Sie eine Risikostufe ggf. manuell herabsetzen, indem Sie Risikoereignisse manuell schließen. <br> Während der Untersuchung können Sie die folgenden Aktionen durchführen, um den Status eines Risikoereignisses zu ändern:
 
 <br> ![Aktionen](./media/active-directory-identityprotection/34.png "Aktionen") <br>
 
@@ -269,7 +269,7 @@ In den meisten Fällen führen Sie Korrekturaktionen durch, z. B. das sichere Z
 
 - **Ignorieren:** Falls Sie keine Korrekturaktion durchgeführt haben und das Risikoereignis trotzdem aus der Liste „Aktiv“ entfernen möchten, können Sie ein Risikoereignis mit „Ignorieren“ kennzeichnen. Der Ereignisstatus wird dann in „Geschlossen“ geändert. Ignorierte Ereignisse gehen nicht in das Benutzerrisiko ein. Diese Option sollte nur unter ungewöhnlichen Umständen verwendet werden.
 
-- **Reaktivieren:** Risikoereignisse, die manuell geschlossen wurden (durch Auswahl von **Lösen**, **Falsch positiv** oder **Ignorieren**) können reaktiviert werden. Hierfür wird der Ereignisstatus zurück auf **Aktiv** gesetzt. Reaktivierte Risikoereignisse fließen in die Berechnung des Benutzerrisikos ein. Risikoereignisse, die per Korrekturmaßnahme (z. B. das sichere Zurücksetzen des Kennworts) geschlossen werden, können nicht reaktiviert werden.
+- **Reaktivieren:** Risikoereignisse, die manuell geschlossen wurden (durch Auswahl von **Lösen**, **Falsch positiv** oder **Ignorieren**) können reaktiviert werden. Hierfür wird der Ereignisstatus zurück auf **Aktiv** gesetzt. Reaktivierte Risikoereignisse fließen in die Berechnung des Benutzerrisikos ein. Risikoereignisse, die per Korrekturmaßnahme (z. B. das sichere Zurücksetzen des Kennworts) geschlossen werden, können nicht reaktiviert werden.
 
 
 
@@ -321,7 +321,7 @@ Gehen Sie beim Festlegen der Richtlinie wie folgt vor:
 
 - Schließen Sie Benutzer aus, für die voraussichtlich viele falsch positive Ergebnisse generiert werden (Entwickler, Sicherheitsanalysten).
 
-- Schließen Sie Benutzer mit Gebietsschemas aus, für die die Aktivierung der Richtlinie keinen praktischen Nutzen hat (z. B. kein Zugriff auf den Helpdesk).
+- Schließen Sie Benutzer mit Gebietsschemas aus, für die die Aktivierung der Richtlinie keinen praktischen Nutzen hat (z. B. kein Zugriff auf den Helpdesk).
 
 - Verwenden Sie während des anfänglichen Rollouts der Richtlinie den Schwellenwert **Hoch**, oder wenn Sie die Auswirkungen für Endbenutzer verringern möchten.
 
@@ -416,7 +416,7 @@ Gehen Sie beim Festlegen der Richtlinie wie folgt vor:
 
 - Schließen Sie Benutzer aus, die nicht über Multi-Factor Authentication verfügen bzw. für die dies nicht möglich ist.
 
-- Schließen Sie Benutzer mit Gebietsschemas aus, für die die Aktivierung der Richtlinie keinen praktischen Nutzen hat (z. B. kein Zugriff auf den Helpdesk).
+- Schließen Sie Benutzer mit Gebietsschemas aus, für die die Aktivierung der Richtlinie keinen praktischen Nutzen hat (z. B. kein Zugriff auf den Helpdesk).
 
 - Schließen Sie Benutzer aus, für die voraussichtlich viele falsch positive Ergebnisse generiert werden (Entwickler, Sicherheitsanalysten).
 
@@ -430,7 +430,7 @@ Die empfohlene Standardvorgehensweise für die meisten Organisationen ist die Ko
 Für die Richtlinie zum Anmelderisiko gilt Folgendes:
 
 - Sie wird auf den gesamten Browserdatenverkehr und alle Anmeldungen angewendet, für den bzw. die eine moderne Authentifizierung genutzt wird.
-- Sie wird nicht auf Anwendungen angewendet, für die ältere Sicherheitsprotokolle verwendet werden, indem der WS-Trust-Endpunkt beim Verbund-IDP, z. B. ADFS, deaktiviert wird.
+- Sie wird nicht auf Anwendungen angewendet, für die ältere Sicherheitsprotokolle verwendet werden, indem der WS-Trust-Endpunkt beim Verbund-IDP, z. B. ADFS, deaktiviert wird.
 
 Auf der Seite **Risikoereignisse** in der Identity Protection-Konsole werden alle Ereignisse aufgeführt:
 
@@ -461,7 +461,7 @@ Wenn ein Administrator eine Richtlinie für Anmelderisiken konfiguriert hat, wer
 
 Der Ablauf für risikobehaftete Anmeldungen besteht aus zwei Schritten:
 
-1. Der Benutzer wird informiert, dass im Zusammenhang mit seiner Anmeldung eine Unregelmäßigkeit erkannt wurde, z. B. das Anmelden von einem neuen Standort, mit einem neuen Gerät oder mit einer neuen App. <br> ![Korrektur](./media/active-directory-identityprotection/120.png "Korrektur") <br>
+1. Der Benutzer wird informiert, dass im Zusammenhang mit seiner Anmeldung eine Unregelmäßigkeit erkannt wurde, z. B. das Anmelden von einem neuen Standort, mit einem neuen Gerät oder mit einer neuen App. <br> ![Korrektur](./media/active-directory-identityprotection/120.png "Korrektur") <br>
 
 2. Der Benutzer muss seine Identität nachweisen, indem er eine Sicherheitsabfrage richtig beantwortet. Wenn der Benutzer für die Multi-Factor Authentication registriert ist, muss er mit einem Sicherheitscode einen Roundtripvorgang für seine Telefonnummer durchführen. Da es sich nur um eine risikobehaftete Anmeldung und nicht um ein kompromittiertes Konto handelt, muss der Benutzer sein Kennwort bei diesem Ablauf nicht ändern. <br> ![Korrektur](./media/active-directory-identityprotection/121.png "Korrektur") <br>
  
@@ -477,7 +477,7 @@ Die Benutzerfreundlichkeit ist für den Wiederherstellungsablauf für kompromitt
 Administratoren haben folgende Möglichkeiten:
 
 - Festlegen einer Richtlinie, die es für Benutzer erforderlich macht, ihre Konten für die zusätzliche Sicherheitsüberprüfung einzurichten 
-- Zulassen des Überspringens der Multi-Factor Authentication-Registrierung für bis zu 30 Tage, falls Benutzern vor dem Registrieren eine Schonfrist eingeräumt werden soll
+- Zulassen des Überspringens der Multi-Factor Authentication-Registrierung für bis zu 30 Tage, falls Benutzern vor dem Registrieren eine Schonfrist eingeräumt werden soll
 
  
  <br> ![Korrektur](./media/active-directory-identityprotection/140.png "Korrektur") <br> <br> ![Korrektur](./media/active-directory-identityprotection/141.png "Korrektur") <br> <br> ![Korrektur](./media/active-directory-identityprotection/142.png "Korrektur") <br>
@@ -525,11 +525,11 @@ Fertig! Die Anmeldung sollte innerhalb von fünf Minuten in Identity Protection 
 
 
 ####Anmeldungen von unbekannten Standorten
-Beim Risiko vom Typ „Unbekannter Standort“ handelt es sich um ein Verfahren zur Echtzeitauswertung von Anmeldungen, bei dem die letzten Standorte (IP, Breiten-/Längengrad und ASN) berücksichtigt werden, um neue oder unbekannte Orte zu ermitteln. Das System speichert vorherige IPs, Breiten-/Längengrad und ASNs eines Benutzers und stuft diese als „vertraute“ Orte ein. Ein Anmeldestandort wird als nicht vertraut angesehen, wenn er nicht mit einem der vertrauten Standorte identisch ist. Das System benötigt einen anfänglichen Lernzeitraum von 14 Tagen, in dem neue Standorte nicht als unbekannte Orte gekennzeichnet werden. Außerdem ignoriert das System Anmeldungen von vertrauten Geräten und von Standorten aus, die geografisch nahe an einem vorhandenen bekannten Speicherort liegen.
+Beim Risiko vom Typ „Unbekannter Standort“ handelt es sich um ein Verfahren zur Echtzeitauswertung von Anmeldungen, bei dem die letzten Standorte (IP, Breiten-/Längengrad und ASN) berücksichtigt werden, um neue oder unbekannte Orte zu ermitteln. Das System speichert vorherige IPs, Breiten-/Längengrad und ASNs eines Benutzers und stuft diese als „vertraute“ Orte ein. Ein Anmeldestandort wird als nicht vertraut angesehen, wenn er nicht mit einem der vertrauten Standorte identisch ist. Das System benötigt einen anfänglichen Lernzeitraum von 14 Tagen, in dem neue Standorte nicht als unbekannte Orte gekennzeichnet werden. Außerdem ignoriert das System Anmeldungen von vertrauten Geräten und von Standorten aus, die geografisch nahe an einem vorhandenen bekannten Speicherort liegen.
 
 Um unbekannte Speicherorte zu simulieren, müssen Sie sich von einem Ort und mit einem Gerät anmelden, der bzw. das für das Konto noch nicht verwendet wurde. Schritt für Schritt:
 
-1.	Wählen Sie ein Konto aus, das bereits über einen Anmeldeverlauf von 14 Tagen verfügt. 
+1.	Wählen Sie ein Konto aus, das bereits über einen Anmeldeverlauf von 14 Tagen verfügt. 
 
 2.	Entscheiden Sie sich für eine der folgenden Optionen:
 	
@@ -540,7 +540,7 @@ Um unbekannte Speicherorte zu simulieren, müssen Sie sich von einem Ort und mit
 Fertig! Die Anmeldung sollte innerhalb von fünf Minuten in Identity Protection angezeigt werden.
  
 #### Unmöglicher Ortswechsel zu atypischen Orten
-Das Simulieren des unmöglichen Ortswechsels ist schwierig, da der Algorithmus einen Machine Learning-Ansatz nutzt, um falsch positive Ergebnisse auszusieben, z. B. der unmögliche Ortswechsel vertrauter Geräte oder Anmeldungen über VPNs, die von anderen Benutzern im Verzeichnis verwendet werden. Außerdem ist für den Algorithmus ein Anmeldeverlauf von 3 bis 14 Tagen des Benutzers erforderlich, bevor mit dem Generieren von Risikoereignissen begonnen wird.
+Das Simulieren des unmöglichen Ortswechsels ist schwierig, da der Algorithmus einen Machine Learning-Ansatz nutzt, um falsch positive Ergebnisse auszusieben, z. B. der unmögliche Ortswechsel vertrauter Geräte oder Anmeldungen über VPNs, die von anderen Benutzern im Verzeichnis verwendet werden. Außerdem ist für den Algorithmus ein Anmeldeverlauf von 3 bis 14 Tagen des Benutzers erforderlich, bevor mit dem Generieren von Risikoereignissen begonnen wird.
 
 1.	Navigieren Sie mit Ihrem Standardbrowser zu [https://myapps.microsoft.com](https://myapps.microsoft.com).  
 

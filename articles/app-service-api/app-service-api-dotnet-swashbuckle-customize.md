@@ -36,7 +36,7 @@ Bei dem folgenden Controllercode generiert Swashbuckle beispielsweise drei "Cont
 
 ![](./media/app-service-api-dotnet-swashbuckle-customize/multiplegetsinjson.png)
 
-Sie können das Problem manuell beheben, indem Sie den Methoden eindeutige Namen geben, wie z. B. in dem die folgenden Beispiel:
+Sie können das Problem manuell beheben, indem Sie den Methoden eindeutige Namen geben, wie z. B. in dem die folgenden Beispiel:
 
 * Get
 * GetById
@@ -109,7 +109,7 @@ Standardmäßig wird in Swashbuckle davon ausgegangen, dass die Antwort "HTTP 20
         }
     }
 
-In diesem Szenario gibt der Swagger, den Swashbuckle standardmäßig generiert, nur einen legitimen HTTP-Statuscode, d. h. HTTP 200, an.
+In diesem Szenario gibt der Swagger, den Swashbuckle standardmäßig generiert, nur einen legitimen HTTP-Statuscode, d. h. HTTP 200, an.
 
 ![](./media/app-service-api-dotnet-swashbuckle-customize/http-200-output-only.png)
 

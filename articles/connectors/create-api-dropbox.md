@@ -19,7 +19,7 @@
    ms.author="mandia"/>
 
 # Erste Schritte mit der Dropbox-API 
-Verbinden Sie sich mit Dropbox, um Dateien zu verwalten, d. h. erstellen, abrufen usw. Die Dropbox-API kann in Folgendem verwendet werden:
+Verbinden Sie sich mit Dropbox, um Dateien zu verwalten, d. h. erstellen, abrufen usw. Die Dropbox-API kann in Folgendem verwendet werden:
 
 - Logik-Apps 
 - PowerApps
@@ -32,7 +32,7 @@ Dropbox ermöglicht Folgendes:
 
 - Erstellen eines Geschäftsworkflows basierend auf den Daten, die aus Dropbox abgerufen werden. 
 - Verwenden von Triggern, wenn eine Datei erstellt oder aktualisiert wird.
-- Verwenden von Aktionen, um z. B. eine Datei zu kopieren oder zu löschen. Diese Aktionen erhalten eine Antwort und stellen anschließend die Ausgabe anderen Aktionen zur Verfügung. Wenn eine neue Datei in Dropbox erstellt wird, können Sie die Datei mit Office 365 per E-Mail senden.
+- Verwenden von Aktionen, um z. B. eine Datei zu kopieren oder zu löschen. Diese Aktionen erhalten eine Antwort und stellen anschließend die Ausgabe anderen Aktionen zur Verfügung. Wenn eine neue Datei in Dropbox erstellt wird, können Sie die Datei mit Office 365 per E-Mail senden.
 - Hinzufügen der Dropbox-API zu PowerApps Enterprise. Die Benutzer können diese API anschließend in ihren Apps verwenden. 
 
 Informationen zum Hinzufügen einer API in PowerApps Enterprise finden Sie unter [Registrieren einer API in PowerApps](../power-apps/powerapps-register-from-available-apis.md).

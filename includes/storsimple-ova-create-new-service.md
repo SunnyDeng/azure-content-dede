@@ -6,7 +6,7 @@
 
 3.  Gehen Sie im angezeigten Formular folgendermaßen vor:
 
-	1.  Geben Sie einen eindeutigen **Namen** für Ihren Dienst an. Dies ist ein Anzeigename, der zum Identifizieren des Diensts verwendet werden kann. Der Name kann zwischen 2 und 50 Zeichen lang sein und darf nur Buchstaben, Zahlen und Bindestriche enthalten. Der Name muss mit einem Buchstaben oder einer Zahl beginnen und enden.
+	1.  Geben Sie einen eindeutigen **Namen** für Ihren Dienst an. Dies ist ein Anzeigename, der zum Identifizieren des Diensts verwendet werden kann. Der Name kann zwischen 2 und 50 Zeichen lang sein und darf nur Buchstaben, Zahlen und Bindestriche enthalten. Der Name muss mit einem Buchstaben oder einer Zahl beginnen und enden.
 
 	2.  Wählen Sie in der Dropdownliste unter **Verwalteter Gerätetyp** die Option **Serie virtueller Geräte**, um einen Dienst zum Verwalten eines virtuellen StorSimple-Geräts auszuwählen.
 
@@ -19,7 +19,7 @@
    	 	
 	1.  Wählen Sie ein **Abonnement** aus der Dropdownliste aus. Das Abonnement ist mit Ihrem Abrechnungskonto verknüpft. Dieses Feld wird nicht angezeigt, wenn Sie nur ein Abonnement besitzen.
 
-	1.  Aktivieren Sie **Neues Azure-Speicherkonto erstellen**, um automatisch ein Speicherkonto mit dem Dienst zu erstellen. Dieses Speicherkonto erhält einen speziellen Namen, z. B. „storsimplebwv8c6dcnf“. Deaktivieren Sie dieses Kontrollkästchen, wenn Sie Ihre Daten an einem anderen Speicherort benötigen.
+	1.  Aktivieren Sie **Neues Azure-Speicherkonto erstellen**, um automatisch ein Speicherkonto mit dem Dienst zu erstellen. Dieses Speicherkonto erhält einen speziellen Namen, z. B. „storsimplebwv8c6dcnf“. Deaktivieren Sie dieses Kontrollkästchen, wenn Sie Ihre Daten an einem anderen Speicherort benötigen.
 
 	1.  Klicken Sie auf **StorSimple-Manager erstellen**, um den Dienst zu erstellen.
 

@@ -26,17 +26,17 @@ In diesem Thema wird demonstriert, wie Sie Azure App Services zur Verwendung ein
 
 Universelle Windows-Apps und Windows Store-Apps müssen über das Windows Dev Center registriert werden. So können Sie künftig auf einfachere Weise Pushbenachrichtigungen für Ihre App konfigurieren.
 
->[AZURE.NOTE]Für Windows Phone 8-, Windows Phone 8.1 Silverlight- und alle nicht auf Windows-basierenden Apps können Sie diesen Abschnitt überspringen. Wenn Sie bereits Pushbenachrichtigungen für Ihre Windows-App konfiguriert haben, können Sie diesen Abschnitt ebenfalls überspringen.
+>[AZURE.NOTE]Für Windows Phone 8-, Windows Phone 8.1 Silverlight- und alle nicht auf Windows-basierenden Apps können Sie diesen Abschnitt überspringen. Wenn Sie bereits Pushbenachrichtigungen für Ihre Windows-App konfiguriert haben, können Sie diesen Abschnitt ebenfalls überspringen.
 
 1. Melden Sie sich beim [Azure-Portal] an, und navigieren Sie zu Ihrer Anwendung. Kopieren Sie die **URL**. Sie verwenden diese URL, um Ihre App mit einem Microsoft-Konto zu konfigurieren.
 
 2. Falls Sie Ihre Anwendung noch nicht registriert haben, navigieren Sie zum [Windows Dev Center](https://dev.windows.com/dashboard/Application/New), und melden Sie sich mit Ihrem Microsoft-Konto an. Geben Sie einen Namen für Ihre App ein, überprüfen Sie dessen Verfügbarkeit, und klicken Sie anschließend auf **App-Name reservieren**.
 
-3. Öffnen Sie Ihr Windows-App-Projekt in Visual Studio. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Windows Store-App-Projekt, und klicken Sie anschließend auf **Store** > **App mit Store verknüpfen...**.
+3. Öffnen Sie Ihr Windows-App-Projekt in Visual Studio. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Windows Store-App-Projekt, und klicken Sie anschließend auf **Store** > **App mit Store verknüpfen...**.
 
   	![](./media/app-service-mobile-how-to-configure-microsoft-authentication/mobile-app-windows-store-association.png)
 
-4. Klicken Sie im Assistenten auf **Anmelden**, melden Sie sich mit Ihrem Microsoft-Konto an, wählen Sie den reservierten App-Namen aus, und klicken Sie auf **Weiter** > **Zuordnen**. Für eine universelle Windows 8.1-App müssen Sie die Schritte 4 und 5 für das Windows Phone Store-Projekt wiederholen.
+4. Klicken Sie im Assistenten auf **Anmelden**, melden Sie sich mit Ihrem Microsoft-Konto an, wählen Sie den reservierten App-Namen aus, und klicken Sie auf **Weiter** > **Zuordnen**. Für eine universelle Windows 8.1-App müssen Sie die Schritte 4 und 5 für das Windows Phone Store-Projekt wiederholen.
 
 6. Klicken Sie auf der Windows Dev Center-Seite für Ihre neue App auf **Dienste** > **Pushbenachrichtigungen**.
 
@@ -47,7 +47,7 @@ Als Nächstes konfigurieren Sie die Microsoft-Kontoauthentifizierung für Ihre W
 
 ## <a name="register-microsoft-account"> </a>Registrieren Ihrer App mit einem Microsoft-Konto
 
-Wenn Sie Ihre Windows-App bereits im vorherigen Abschnitt registriert haben, können Sie zu Schritt 4 wechseln.
+Wenn Sie Ihre Windows-App bereits im vorherigen Abschnitt registriert haben, können Sie zu Schritt 4 wechseln.
 
 1. Melden Sie sich beim [Azure-Portal] an, und navigieren Sie zu Ihrer Anwendung. Kopieren Sie die **URL**. Sie verwenden diese URL, um Ihre App mit einem Microsoft-Konto zu konfigurieren.
 

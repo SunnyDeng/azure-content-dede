@@ -21,7 +21,7 @@ Objekte, die am meisten vom CDN-Caching von Azure profitieren, sind solche, auf 
 
 Wenn Sie keine Cachewerte festlegen, beträgt der Gültigkeitszeitraum eines Objekts 7 Tage.
 
-Bei statischen Inhalten wie Bildern und Stylesheets können Sie die Häufigkeit von Updates steuern, indem Sie eine web.config-Datei im Ordner "CDN" für den Inhalt einschließen. Durch Bearbeiten der **clientCache**-Einstellungen können Sie den Cache-Control-Header steuern. Die web.config-Einstellungen wirken sich auf alle Inhalte des Ordners sowie der Unterordner aus, solange die Inhalte nicht in einem weiteren untergeordneten Ordner überschrieben werden. Beispielsweise können Sie auf der Stammebene eine standardmäßige Gültigkeitsdauer festlegen, damit alle statischen Inhalte 3 Tage zwischengespeichert werden, während in einem Unterordner mit stärker veränderlichem Inhalt eine Cacheeinstellung von 6 Stunden verwendet wird.
+Bei statischen Inhalten wie Bildern und Stylesheets können Sie die Häufigkeit von Updates steuern, indem Sie eine web.config-Datei im Ordner "CDN" für den Inhalt einschließen. Durch Bearbeiten der **clientCache**-Einstellungen können Sie den Cache-Control-Header steuern. Die web.config-Einstellungen wirken sich auf alle Inhalte des Ordners sowie der Unterordner aus, solange die Inhalte nicht in einem weiteren untergeordneten Ordner überschrieben werden. Beispielsweise können Sie auf der Stammebene eine standardmäßige Gültigkeitsdauer festlegen, damit alle statischen Inhalte 3 Tage zwischengespeichert werden, während in einem Unterordner mit stärker veränderlichem Inhalt eine Cacheeinstellung von 6 Stunden verwendet wird.
 
 Die folgende XML zeigt ein Beispiel zum Festlegen von **clientCache** auf ein maximales Alter von 3 Tagen:
 

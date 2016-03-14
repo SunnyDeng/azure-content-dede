@@ -52,7 +52,7 @@ Jede Einheit von Daten, die durch eine Aktivitätsausführung genutzt und erstel
 
 ![Scheduler für "availability"](./media/data-factory-scheduling-and-execution/availability-scheduler.png)
 
-Die stündlichen Datenslices für das Ein- und Ausgabedataset werden im Diagramm gezeigt. Das Diagramm zeigt drei Eingabeslices, die für die Verarbeitung bereit sind, und die laufende Aktivitätsausführung "10-11AM", die den Ausgabeslice "10-11AM" erzeugt.
+Die stündlichen Datenslices für das Ein- und Ausgabedataset werden im Diagramm gezeigt. Das Diagramm zeigt drei Eingabeslices, die für die Verarbeitung bereit sind, und die laufende Aktivitätsausführung "10-11AM", die den Ausgabeslice "10-11AM" erzeugt.
 
 Auf das Zeitintervall des aktuell erzeugten Slices kann in der JSON des Datasets über die Variablen **SliceStart** und **SliceEnd** zugegriffen werden.
 
@@ -381,7 +381,7 @@ Hier sehen Sie die Datenabhängigkeit.
 
 ![Datenabhängigkeit](./media/data-factory-scheduling-and-execution/data-dependency.png)
 
-Der Ausgabeslice für jeden Tag hängt von 24 stündlichen Slices aus dem Eingabedataset ab. Data Factory berechnet diese Abhängigkeiten automatisch, indem die Eingabedatenslices ermittelt werden, die im selben Zeitraum wie der zu erzeugende Ausgabeslice liegen. Wenn beliebige der 24 Eingabeslices nicht verfügbar sind (z. B. aufgrund einer Verarbeitung in einer vorgelagerten Aktivität, die diesen Slice erzeugt), wartet Data Factory ab, bis der Eingabeslice bereit ist, ehe die tägliche Aktivitätsausführung ausgelöst wird.
+Der Ausgabeslice für jeden Tag hängt von 24 stündlichen Slices aus dem Eingabedataset ab. Data Factory berechnet diese Abhängigkeiten automatisch, indem die Eingabedatenslices ermittelt werden, die im selben Zeitraum wie der zu erzeugende Ausgabeslice liegen. Wenn beliebige der 24 Eingabeslices nicht verfügbar sind (z. B. aufgrund einer Verarbeitung in einer vorgelagerten Aktivität, die diesen Slice erzeugt), wartet Data Factory ab, bis der Eingabeslice bereit ist, ehe die tägliche Aktivitätsausführung ausgelöst wird.
 
 
 ### Beispiel 2: Angeben von Abhängigkeiten mit Ausdrücken und Data Factory-Funktionen
@@ -551,7 +551,7 @@ Zum Generieren des Datasetslices ["start", "end"] ist eine Funktion erforderlich
 
 Wie in den zuvor gezeigten Beispielen entspricht der Abhängigkeitszeitraum meist dem Zeitraum des zu erstellenden Datenslices. In diesen Fällen berechnet Daten Factory automatisch die Eingabeslices, die in den Abhängigkeitszeitraum fallen.
 
-Beispiel: Beim obigen Aggregationsbeispiel, bei dem die Ausgabe täglich erzeugt wird und Eingabedaten stündlich verfügbar sind, ist der Zeitraum des Datenslices 24 Stunden. Data Factory sucht die relevanten stündlichen Eingabeslices für diesen Zeitraum und macht den Ausgabeslice vom Eingabeslice abhängig.
+Beispiel: Beim obigen Aggregationsbeispiel, bei dem die Ausgabe täglich erzeugt wird und Eingabedaten stündlich verfügbar sind, ist der Zeitraum des Datenslices 24 Stunden. Data Factory sucht die relevanten stündlichen Eingabeslices für diesen Zeitraum und macht den Ausgabeslice vom Eingabeslice abhängig.
 
 Sie können auch Ihre eigene Zuordnung für den Abhängigkeitszeitraum angeben (wie im obigen Beispiel gezeigt), bei dem eine der Eingabe wöchentlich erfolgte und der Ausgabeslice täglich erzeugt wurde.
    

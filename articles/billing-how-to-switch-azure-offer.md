@@ -22,7 +22,7 @@
 Sie können Ihr vorhandenes Abonnement ohne Dienstausfall auf ein günstigeres Angebot umstellen. Für das Wechseln des Angebots gibt es folgende Gründe:
 
 -	Wenn Sie feststellen, dass Azure hohe Ausgaben verursacht, besitzen Sie möglicherweise Anspruch auf Rabatt, indem Sie zum Angebot mit Zahlungsverpflichtung wechseln. Klicken Sie [hier](billing-usage-rate-card-overview.md), um weitere Informationen zum Gewinnen von Einblicken in den Ressourcenverbrauch unter Microsoft Azure zu erhalten.
--	Wenn Sie z. B. Mitgliedervorteile wie MSDN oder BizSpark in Anspruch nehmen möchten, nachdem Sie sich bereits für ein Abonnement mit nutzungsbasierter Zahlung registriert haben.
+-	Wenn Sie z. B. Mitgliedervorteile wie MSDN oder BizSpark in Anspruch nehmen möchten, nachdem Sie sich bereits für ein Abonnement mit nutzungsbasierter Zahlung registriert haben.
 
 ## Umstellen Ihres Abonnements auf ein anderes Angebot
 
