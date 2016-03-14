@@ -13,7 +13,7 @@
   ms.tgt_pltfrm="na"
 	ms.devlang="java"
 	ms.topic="article"
-	ms.date="11/14/2015"
+	ms.date="02/19/2016"
 	ms.author="brandwe"/>
 
 
@@ -23,7 +23,10 @@
 
 Azure AD erleichtert die Auslagerung der Identitätsverwaltung für Webanwendungen, indem es eine einmalige An- und Abmeldung (Single Sign-on und Single Sign-out) mit nur wenigen Codezeilen ermöglicht. Für Java-Web-Apps erreichen Sie das Gleiche durch die Microsoft-Implementierung des Community-gestützten ADAL4J.
 
-  Hier verwenden wir ADAL4J für Folgendes: - Anmelden eines Benutzers bei der Anwendung mit Azure AD als Identitätsanbieter - Anzeigen von Informationen zum Benutzer - Abmelden des Benutzers von der Anwendung
+  Hier verwenden wir ADAL4J für Folgendes:
+- Anmelden von Benutzern an der App mit Azure AD als Identitätsanbieter
+- Anzeigen einiger Informationen zum Benutzer
+- Abmelden des Benutzers von der App
 
 Dazu müssen Sie folgende Schritte ausführen:
 
@@ -265,4 +268,4 @@ Als Referenz stellen wir das vollständige Beispiel (ohne Ihre Konfigurationswer
 
 ```git clone --branch complete https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect.git```
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0302_2016-->

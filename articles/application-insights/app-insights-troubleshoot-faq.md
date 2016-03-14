@@ -12,12 +12,12 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/26/2016" 
+	ms.date="02/26/2016" 
 	ms.author="awills"/>
  
 # Fragen – Application Insights für ASP.NET
 
-## Problembehandlung
+## Konfigurationsprobleme
 
 *Ich benötige Hilfe beim Einrichten von Folgendem:*
 
@@ -153,4 +153,4 @@ Sie können [PowerShell-Skripts schreiben](app-insights-powershell.md), um Appli
 
  
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0302_2016-->

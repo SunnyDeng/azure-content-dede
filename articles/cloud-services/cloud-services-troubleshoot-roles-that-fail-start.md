@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="tbd"
-   ms.date="01/20/2016"
+   ms.date="02/25/2016"
    ms.author="daleche" />
 
 # Problembehandlung bei Clouddienstrollen, die nicht gestartet werden
@@ -71,7 +71,7 @@ Sie können Remotedesktop verwenden, um remote auf die Rolle zuzugreifen und vol
 
 1. Stellen Sie sicher, dass Azure SDK 1.3 oder höher installiert ist.
 
-2. Wählen Sie während der Bereitstellung der Projektmappe per Visual Studio die Option „Remotedesktopverbindungen konfigurieren…“. Weitere Informationen zum Konfigurieren der Remotedesktopverbindung finden Sie unter [Using Remote Desktop with Azure Roles](https://msdn.microsoft.com/library/gg443832.aspx) (Verwenden von Remotedesktop mit Azure-Rollen).
+2. Wählen Sie während der Bereitstellung der Projektmappe per Visual Studio die Option „Remotedesktopverbindungen konfigurieren…“. Weitere Informationen zum Konfigurieren der Remotedesktopverbindung finden Sie unter [Verwenden von Remotedesktop mit Azure-Rollen](../vs-azure-tools-remote-desktop-roles.md).
 
 3. Wenn die Instanz im klassischen Microsoft Azure-Portal den Status **Bereit** zeigt, klicken Sie auf eine der Rolleninstanzen.
 
@@ -167,4 +167,4 @@ Sehen Sie sich weitere [Artikel zur Problembehandlung](..\?tag=top-support-issue
 
 Erfahren Sie in der [Blogreihe von Kevin Williamson](http://blogs.msdn.com/b/kwill/archive/2013/08/09/windows-azure-paas-compute-diagnostics-data.aspx), wie Sie Probleme bei Clouddienstrollen mit den Compute-Diagnosedaten von Azure-PaaS beheben.
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -3,7 +3,7 @@
    description="Die grafische Erstellung ermöglicht Ihnen das Erstellen von Runbooks für Azure Automation, ohne mit Code zu arbeiten. Dieser Artikel bietet eine Einführung in die grafische Erstellung und alle Informationen, die Sie für die Erstellung eines grafischen Runbooks benötigen."
    services="automation"   
    documentationCenter=""
-   authors="bwren"
+   authors="mgoedtel"
    manager="stevenka"
    editor="tysonn" />
 <tags 
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="02/18/2016"
+   ms.date="02/23/2016"
    ms.author="magoedte;bwren" />
 
 # Grafische Erstellung in Azure Automation
@@ -108,7 +108,7 @@ Sie haben außerdem die Möglichkeit, ein Runbook auf die veröffentlichte Versi
 
 ## Aktivitäten
 
-Aktivitäten sind die Bausteine eines Runbooks. Bei einer Aktivität kann es sich um ein PowerShell-Cmdlet, um ein untergeordnetes Runbook oder um eine Workflowaktivität handeln. Sie fügen dem Runbook eine Aktivität hinzu, indem Sie mit der rechten Maustaste im Steuerelement "Bibliothek" auf das Runbook klicken und die Option **Zu Zeichenbereich hinzufügen** auswählen. Anschließend können Sie die Aktivität per Drag & Drop an einer beliebigen Stelle im Zeichenbereich platzieren. Die Position der Aktivität im Zeichenbereich hat keinerlei Einfluss auf den Vorgang im Runbook. Sie können das Layout Ihres Runbooks so wählen, wie es Ihnen zur visuellen Darstellung der Vorgänge am geeignetsten erscheint.
+Aktivitäten sind die Bausteine eines Runbooks. Bei einer Aktivität kann es sich um ein PowerShell-Cmdlet, um ein untergeordnetes Runbook oder um eine Workflowaktivität handeln. Sie fügen dem Runbook eine Aktivität hinzu, indem Sie mit der rechten Maustaste im Steuerelement "Bibliothek" auf das Runbook klicken und die Option **Zu Zeichenbereich hinzufügen** auswählen. Anschließend können Sie die Aktivität per Drag & Drop an einer beliebigen Stelle im Zeichenbereich platzieren. Die Position der Aktivität im Zeichenbereich hat keinerlei Einfluss auf den Vorgang im Runbook. Sie können das Layout Ihres Runbooks so wählen, wie es Ihnen zur visuellen Darstellung der Vorgänge am geeignetsten erscheint.
 
 ![Zum Zeichenbereich hinzufügen](media/automation-graphical-authoring-intro/add-to-canvas.png)
 
@@ -366,7 +366,7 @@ Falls für die Eigenschaft anstelle einer einfachen Eigenschaft das Objekt des v
 
 	$ActivityOutput['Get-AzureVm']
 
-Sie können die Ausgabe einer Aktivität auch in einem komplexeren Ausdruck verwenden, z. B. wie im folgenden Beispiel, in dem Text mit dem Namen des virtuellen Computers verkettet wird.
+Sie können die Ausgabe einer Aktivität auch in einem komplexeren Ausdruck verwenden, z. B. wie im folgenden Beispiel, in dem Text mit dem Namen des virtuellen Computers verkettet wird.
 
 	"The computer name is " + $ActivityOutput['Get-AzureVm'].Name
 
@@ -419,4 +419,4 @@ Im folgenden Beispiel wird die Ausgabe eine Aktivität mit dem Namen *Get Twitte
 - [Operatoren](https://technet.microsoft.com/library/hh847732.aspx)
  
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

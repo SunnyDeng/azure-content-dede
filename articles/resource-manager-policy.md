@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="na"
-	ms.date="12/18/2015"
+	ms.date="02/26/2016"
 	ms.author="gauravbh;tomfitz"/>
 
 # Verwenden von Richtlinien für Ressourcenverwaltung und Zugriffssteuerung
@@ -46,7 +46,7 @@ Mithilfe von Richtlinien können diese Szenarios so einfach wie unten beschriebe
 
 ## Struktur von Richtliniendefinitionen
 
-Richtliniendefinitionen werden mit JSON erstellt. Sie enthalten eine oder mehrere Bedingungen/logische Operatoren, die Aktionen und deren Auswirkungen definieren und damit festlegen, was geschieht, wenn die Bedingungen erfüllt sind.
+Richtliniendefinitionen werden mit JSON erstellt. Sie enthalten eine oder mehrere Bedingungen/logische Operatoren, die Aktionen und deren Auswirkungen definieren und damit festlegen, was geschieht, wenn die Bedingungen erfüllt sind. Das Schema ist unter [http://schema.management.azure.com/schemas/2015-10-01-preview/policyDefinition.json](http://schema.management.azure.com/schemas/2015-10-01-preview/policyDefinition.json) veröffentlicht.
 
 Grundsätzlich enthält eine Richtlinie Folgendes:
 
@@ -90,15 +90,45 @@ Eine Bedingung prüft, ob ein **Feld** oder eine **Quelle** bestimmte Kriterien 
 
 ## Felder und Quellen
 
-Bedingungen werden mithilfe von Feldern und Quellen gebildet. Ein Feld stellt Eigenschaften in der Anforderungsnutzlast der Ressource dar. Eine Quelle stellt Merkmale der Anforderung selbst dar.
+Bedingungen werden mithilfe von Feldern und Quellen gebildet. Ein Feld stellt Eigenschaften in der Anforderungsnutzlast einer Ressource dar, mit der der Zustand der Ressource beschrieben wird. Eine Quelle stellt Merkmale der Anforderung selbst dar.
 
 Die folgenden Felder und Quellen werden unterstützt:
 
-Felder: **name**, **kind**, **type**, **location**, **tags**, **tags.***.
+Felder: **name**, **kind**, **type**, **location**, **tags**, **tags.*** und **property alias**.
 
 Quellen: **action**
 
+„property alias“ ist ein Name, der in der Richtliniendefinition für den Zugriff auf die für einen Ressourcentyp spezifischen Eigenschaften (z. B. Einstellungen oder SKUs) verwendet werden kann. Er kann in allen API-Versionen verwendet werden, in denen die Eigenschaft vorhanden ist. Aliase können mithilfe der folgenden REST-API abgerufen werden (die PowerShell-Unterstützung wird in Zukunft hinzugefügt):
+
+    GET /subscriptions/{id}/providers?$expand=resourceTypes/aliases&api-version=2015-11-01
+	
+Die Definition eines Alias sieht wie folgt aus. Wie Sie sehen können, definiert ein Alias Pfade in verschiedenen API-Versionen, auch wenn sich der Name einer Eigenschaft ändert.
+
+    "aliases": [
+      {
+        "name": "Microsoft.Storage/storageAccounts/sku.name",
+        "paths": [
+          {
+            "path": "Properties.AccountType",
+            "apiVersions": [ "2015-06-15", "2015-05-01-preview" ]
+          }
+        ]
+      }
+    ]
+
+Derzeit werden die folgenden Aliase unterstützt:
+
+| Aliasname | Beschreibung |
+| ---------- | ----------- |
+| {resourceType}/sku.name | Unterstützte Ressourcentypen: Microsoft.Storage/storageAccounts,<br />Microsoft.Scheduler/jobcollections,<br />Microsoft.DocumentDB/databaseAccounts,<br />Microsoft.Cache/Redis,<br />Microsoft.CDN/profiles |
+| {resourceType}/sku.family | Unterstützter Ressourcentyp: Microsoft.Cache/Redis |
+| {resourceType}/sku.capacity | Unterstützter Ressourcentyp: Microsoft.Cache/Redis |
+| Microsoft.Cache/Redis/enableNonSslPort | |
+| Microsoft.Cache/Redis/shardCount | |
+
+
 Weitere Informationen zu Aktionen finden Sie unter [RBAC – Integrierte Rollen](active-directory/role-based-access-built-in-roles.md). Derzeit gilt die Richtlinie nur bei PUT-Anforderungen.
+
 
 ## Beispiele für Richtliniendefinitionen
 
@@ -168,6 +198,35 @@ Das folgende Beispiel veranschaulicht die Verwendung der Quelle. Es zeigt, dass 
         "effect" : "deny"
       }
     }
+
+### Verwenden von genehmigten SKUs
+
+Im folgenden Beispiel wird die Verwendung von „property alias“ zum Einschränken von SKUs veranschaulicht. In diesem Beispiel sind nur „Standard\_LRS“ und „Standard\_GRS“ zur Verwendung für Speicherkonten genehmigt.
+
+    {
+      "if": {
+        "allOf": [
+          {
+            "source": "action",
+            "like": "Microsoft.Storage/storageAccounts/*"
+          },
+          {
+            "not": {
+              "allof": [
+                {
+                  "field": "Microsoft.Storage/storageAccounts/accountType",
+                  "in": ["Standard_LRS", "Standard_GRS"]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "then": {
+        "effect": "deny"
+      }
+    }
+    
 
 ### Benennungskonvention
 
@@ -327,4 +386,4 @@ Zum Anzeigen aller Ereignisse, die mit dem Überwachungseffekt in Verbindung ste
     Get-AzureRmLog | where {$_.OperationName -eq "Microsoft.Authorization/policies/audit/action"} 
     
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0302_2016-->

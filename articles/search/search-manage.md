@@ -18,6 +18,10 @@
 	ms.author="heidist"/>
 
 # Verwalten Ihres Suchdiensts in Microsoft Azure
+> [AZURE.SELECTOR]
+- [Portal](search-manage.md)
+- [PowerShell](search-manage-powershell.md)
+- [REST-API](search-get-started-management-api.md)
 
 Azure Search ist ein cloudbasierter Dienst mit einer HTTP-basierten API, die Sie in eigenen Suchanwendungen verwenden können. Unser Suchdienst bietet ein Modul für Volltextsuche, Textanalyse, erweiterte Suchfunktionen, Speicherung von Suchdaten und eine Befehlssyntax für Abfragen.
 
@@ -32,7 +36,7 @@ Als Administrator beim Einrichten des Search-Diensts ist eine der ersten Entsche
 
 Bestehenden Abonnenten steht kostenlos ein gemeinsam genutzter Dienst zur Auswahl, den Sie zu Lernzwecken, zum Testen von Machbarkeitsstudien oder zur Entwicklung kleiner Suchprojekte nutzen können. Der gemeinsam genutzte Dienst ist beschränkt auf 50 MB Speicherplatz, drei Indizes und maximal 10.000 Dokumente, selbst wenn dabei die erlaubten 50 MB noch nicht erreicht sind. Für den Shared-Dienst gelten keine Leistungsgarantien. Für Suchanwendungen in Produktionsumgebungen sollten Sie daher die Standardsuche verwenden.
 
-Die Standardsuche ist kostenpflichtig, da Sie sich für fest zugeordnete Ressourcen und Infrastruktur registrieren, die Ihrem Abonnement exklusiv zur Verfügung steht. Die Standardsuche wird in benutzerdefinierten Paketen aus Partitionen (Speicher) und Replikaten (Dienstworkloads) zugewiesen und pro Sucheinheit abgerechnet. Sie können Partitionen und Replikate unabhängig voneinander heraufskalieren und mehr von der jeweils benötigten Ressource hinzufügen.
+Basis- und Standardsuche sind kostenpflichtig, da Sie sich für fest zugeordnete Ressourcen und Infrastruktur registrieren, die Ihrem Abonnement exklusiv zur Verfügung stehen. Basis- und Standardsuche werden in benutzerdefinierten Paketen aus Partitionen (Speicher) und Replikaten (Dienstworkloads) zugewiesen und pro Sucheinheit abgerechnet. Sie können Partitionen und Replikate unabhängig voneinander heraufskalieren und mehr von der jeweils benötigten Ressource hinzufügen.
 
 Wir empfehlen die folgenden Links für die Kapazitätsplanung und zum Verständnis der entstehenden Kosten:
 
@@ -43,7 +47,7 @@ Wenn Sie sich anmelden möchten, finden Sie entsprechende Informationen unter [E
 
 ##Suchanalyse
 
-Sie können während der Suchaktivitäten der Benutzer Daten sammeln, um besser zu verstehen, wie Ihr leistungsfähig Ihr Suchdienst ist, welche Begriffe gesucht werden und ob für diese Suchbegriffe Treffer zurückgegeben werden. Am besten lassen sich diese Daten mithilfe eines Power BI-Inhaltspakets analysieren und visualisieren. Der erste Schritt besteht im Aktivieren einer Analyse des Suchdatenverkehrs. Informationen zur Vorgehensweise finden Sie unter [Analyzing your Azure Search traffic](https://azure.microsoft.com/blog/analyzing-your-azure-search-traffic/) (Analysieren Ihres Azure Search-Datenverkehrs).
+Sie können während der Suchaktivitäten der Benutzer Daten sammeln, um besser zu verstehen, wie Ihr leistungsfähig Ihr Suchdienst ist, welche Begriffe gesucht werden und ob für diese Suchbegriffe Treffer zurückgegeben werden. Am besten lassen sich diese Daten mithilfe eines Power BI-Inhaltspakets analysieren und visualisieren. Der erste Schritt besteht im Aktivieren einer Analyse des Suchdatenverkehrs. Informationen zur Vorgehensweise finden Sie unter [Analyzing your Azure Search traffic](https://azure.microsoft.com/blog/analyzing-your-azure-search-traffic/) (Analysieren Ihres Azure Search-Datenverkehrs).
 
 <a id="sub-2"></a>
 ## Verwaltungsaufgaben
@@ -104,7 +108,7 @@ Die Ressourcenüberwachung in der öffentlichen Vorschau ist beschränkt auf die
 
 Im Bereich Nutzung im Dienst-Dashboard können Sie direkt ablesen, ob die Partitionsressourcen für Ihre Anwendung angemessen sind.
 
-Mit der Suchdienst-API können Sie Gesamtzahlen für Dokumente und Indizes abrufen. Für diese Werte gelten feste Obergrenzen basierend auf dem Tarif. Weitere Details finden Sie im Abschnitt [Limits und Einschränkungen](search-limits-quotas-capacity.md).
+Mit der Suchdienst-API können Sie Gesamtzahlen für Dokumente und Indizes abrufen. Für diese Werte gelten feste Obergrenzen basierend auf dem Tarif. In den [Einschränkungen für Suchdienste](search-limits-quotas-capacity.md) finden Sie weitere Informationen.
 
 +	[Abrufen von Indexstatistiken](http://msdn.microsoft.com/library/dn798942.aspx)
 +	[Dokumentenanzahl](http://msdn.microsoft.com/library/dn798924.aspx)
@@ -115,15 +119,15 @@ Mit der Suchdienst-API können Sie Gesamtzahlen für Dokumente und Indizes abruf
 <a id="sub-6"></a>
 ## Herauf- oder Herunterskalieren
 
-Jeder Suchdienst enthält zunächst ein Minimum von einem Replikat und einer Partition. Wenn Sie sich mit dem Tarif "Standard" für fest zugeordnete Ressourcen angemeldet haben, können Sie die Kachel **SKALIEREN** im Dienst-Dashboard anklicken, um die Anzahl der Replikate und Partitionen für Ihren Dienst anzupassen.
+Jeder Suchdienst enthält zunächst ein Minimum von einem Replikat und einer Partition. Wenn Sie sich mit den Tarifen [Basic oder Standard](search-limits-quotas-capacity.md) für fest zugeordnete Ressourcen angemeldet haben, können Sie im Dienstdashboard auf die Kachel **SKALIEREN** klicken, um die Anzahl der Replikate und Partitionen für Ihren Dienst anzupassen.
 
-Wenn Sie zusätzliche Ressourcen hinzufügen, werden diese vom Dienst automatisch verwendet. Sie müssen nichts weiter tun. Allerdings kann eine kleine Verzögerung auftreten, bevor die Auswirkungen der neuen Ressource spürbar sind. Die Bereitstellung zusätzlicher Ressourcen kann 15 Minuten oder mehr in Anspruch nehmen.
+Wenn Sie zusätzliche Kapazität über eine dieser Ressourcen hinzufügen, wird diese vom Dienst automatisch verwendet. Sie müssen nichts weiter tun. Allerdings kann eine kleine Verzögerung auftreten, bevor die Auswirkungen der neuen Ressource spürbar sind. Die Bereitstellung zusätzlicher Ressourcen kann 15 Minuten oder mehr in Anspruch nehmen.
 
  ![][10]
 
 ### Hinzufügen von Replikaten
 
-Fügen Sie Replikate hinzu, um die Anzahl der Abfragen pro Sekunde (Queries per Second QPS) zu steigern oder hohe Verfügbarkeit einzurichten. Jedes Replikat enthält eine Kopie eines Index. Jedes zusätzliche Replikat bedeutet also einen zusätzlichen Index, der zur Beantwortung von Abfragen verwendet werden kann. Momentan gilt die Faustregel, dass Sie für hohe Verfügbarkeit mindestens 3 Replikate benötigen.
+Fügen Sie Replikate hinzu, um die Anzahl der Abfragen pro Sekunde (Queries per Second QPS) zu steigern oder hohe Verfügbarkeit einzurichten. Jedes Replikat enthält eine Kopie eines Index. Jedes zusätzliche Replikat bedeutet also einen zusätzlichen Index, der zur Beantwortung von Abfragen verwendet werden kann. Derzeit gilt die Faustregel, dass Sie für hohe Verfügbarkeit mindestens drei Replikate benötigen (weitere Informationen finden Sie unter [Kapazitätsplanung](search-capacity-planning.md)).
 
 Suchdienste mit mehr Replikaten können Abfragen per Lastenausgleich auf eine größere Anzahl von Indizes verteilen. Für ein gegebenes Abfragevolumen ist ein höherer Durchsatz an Abfragen möglich, wenn mehr Kopien des Index zur Beantwortung bereitstehen. Wenn Sie eine hohe Latenz in Ihren Abfragen bemerken, können Sie eine positive Auswirkung auf die Leistung erwarten, sobald die zusätzlichen Replikate online sind.
 
@@ -133,7 +137,9 @@ Auch wenn der Abfragedurchsatz beim Hinzufügen von Replikaten ansteigt, wird di
 
 Die meisten Dienstanwendungen benötigen eher zusätzliche Replikate als zusätzliche Partitionen, da die meisten Suchanwendungen leicht in eine einzige Partition passen, die bis zu 15 Millionen Dokumente unterstützt.
 
-Falls Sie mehr Dokumente benötigen, können Sie Partitionen hinzufügen. Die Partitionen werden jeweils in Teilern von 12 hinzugefügt (genauer gesagt 1, 2, 3, 4, 6 oder 12). Dies ist ein Artefakt der horizontalen Partitionierung. Indizes werden in 12 Shards erstellt, die entweder in 1 Partition gespeichert oder in gleichen Teilen auf 2, 3, 4, 6 oder 12 Partitionen (1 Shard pro Partition) verteilt werden können.
+In Fällen, in denen Sie eine zusätzliche Anzahl von Dokumenten benötigen, können Sie Partitionen hinzufügen, falls Sie für den Standarddienst registriert sind. In der Preisstufe Basic stehen keine zusätzlichen Partitionen zur Verfügung.
+
+In der Preisstufe Standard werden Partitionen jeweils in Teilern von 12 hinzugefügt (1, 2, 3, 4, 6 oder 12). Dies ist ein Artefakt der horizontalen Partitionierung. Indizes werden in 12 Shards erstellt, die entweder in 1 Partition gespeichert oder in gleichen Teilen auf 2, 3, 4, 6 oder 12 Partitionen (1 Shard pro Partition) verteilt werden können.
 
 ### Entfernen von Replikaten
 
@@ -174,7 +180,7 @@ Bei Azure Search bestimmt die rollenbasierte Zugriffssteuerung die folgenden Ver
 Rolle|Aufgabe
 ---|---
 Besitzer|Starten, Beenden oder Löschen des Diensts.<p>Erstellen und Anzeigen von Administrator- und Abfrageschlüsseln.<p>Anzeigen des Dienststatus, einschließlich Indexanzahl, Indexnamen, Dokumentanzahl und Speichergröße.<p>Hinzufügen oder Löschen von Rollenmitgliedschaften (Nur ein Besitzer kann die Rollenmitgliedschaften verwalten).<p>Abonnement- und Dienstadministratoren sind automatisch Mitglieder der Besitzerrolle.
-Mitwirkender|Verfügt über die gleiche Zugriffsebene wie Besitzer mit Ausnahme der Rollenverwaltung. So kann z. B. ein Mitwirkender den `api-key` anzeigen und neu generieren, aber nicht die Rollenmitgliedschaften ändern.
+Mitwirkender|Verfügt über die gleiche Zugriffsebene wie Besitzer mit Ausnahme der Rollenverwaltung. So kann z. B. ein Mitwirkender den `api-key` anzeigen und neu generieren, aber nicht die Rollenmitgliedschaften ändern.
 Reader|Dienststatus und Abfrageschlüssel anzeigen. Mitglieder dieser Rolle können einen Dienst nicht starten oder beenden und auch keine Admin-Schlüssel anzeigen.
 
 Beachten Sie, dass die Rollen keine Zugriffsrechte für den Dienstendpunkt erteilen. Suchdienstoperationen, wie z. B. die Indexverwaltung, Auffüllung des Indexes und Abfragen von Suchdaten werden durch die API-Schlüssel und nicht durch Rollen gesteuert. Weitere Informationen finden Sie unter [Rollenbasierte Zugriffssteuerung über das Azure-Vorschauportal](../active-directory/role-based-access-control-configure.md) im Abschnitt "Autorisierung für Verwaltungsvorgänge vs. Datenvorgänge".
@@ -200,4 +206,4 @@ Rollen bieten Zugriffssteuerung, nachdem der Dienst erstellt wurde. Nur Abonneme
 
  
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

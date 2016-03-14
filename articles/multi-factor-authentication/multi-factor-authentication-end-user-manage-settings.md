@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/16/2016" 
+	ms.date="02/25/2016" 
 	ms.author="billmath"/>
 
 # Beheben von Problemen mit Azure Multi-Factor Authentication
@@ -124,6 +124,9 @@ Wenn Sie Multi-Factor Authentication mit Azure verwenden, können Sie Ihre Einst
 
 Sie haben ein anderes Telefon haben und müssen die primäre Telefonnummer ändern, die MFA verwendet? Hierzu stehen zwei Möglichkeiten zur Verfügung.
 
+>[AZURE.IMPORTANT]
+Konfigurieren Sie unbedingt eine sekundäre Authentifizierungstelefonnummer. Da sich Ihre primäre Telefonnummer und ihre mobile App wahrscheinlich auf demselben Telefon befinden, ist die sekundäre Telefonnummer die einzige Möglichkeit, sich wieder bei Ihrem Konto anzumelden, sollte Ihr Telefon verloren gehen oder gestohlen werden.
+
 Die erste Möglichkeit ist eine sekundäre Authentifizierungsmethode. Wenn Sie eine sekundäre Authentifizierungstelefonnummer angegeben haben, können Sie sich damit anmelden. ![Einrichtung](./media/multi-factor-authentication-end-user-manage/altphone.png) Auf dem Bildschirmfoto oben sehen Sie, dass zwei Telefonnummern eingerichtet wurden. Eine endet mit 67 und die zweite mit 30.
   
 Um sich mit der alternativen Telefonnummer anzumelden, gehen Sie wie üblich vor, und wählen Sie **Andere Überprüfungsoption verwenden** aus. ![Andere Überprüfung](./media/multi-factor-authentication-end-user-manage/differentverification.png)
@@ -131,9 +134,6 @@ Um sich mit der alternativen Telefonnummer anzumelden, gehen Sie wie üblich vor
 Wählen Sie dann Ihre andere Telefonnummer aus. Wählen Sie in diesem Fall **Rufen Sie mich unter der Rufnummer +XXXXXXXXX30 an** aus.
 
 ![Alternatives Telefon](./media/multi-factor-authentication-end-user-manage/altphone2.png)
-
->[AZURE.IMPORTANT]
-Konfigurieren Sie unbedingt eine sekundäre Authentifizierungstelefonnummer. Da sich Ihre primäre Telefonnummer und ihre mobile App wahrscheinlich auf demselben Telefon befinden, ist die sekundäre Telefonnummer die einzige Möglichkeit, sich wieder bei Ihrem Konto anzumelden, sollte Ihr Telefon verloren gehen oder gestohlen werden.
 
 Die zweite Möglichkeit ist, sich an Ihren Administrator oder die Person zu wenden, die MFA für Sie eingerichtet hat. So müssen Sie nur vorgehen, wenn Sie keine sekundäre Authentifizierungstelefonnummer konfiguriert haben. In diesem Fall müssen Sie den Administrator oder die Person, die MFA eingerichtet hat, bitten, Ihre Einstellungen zu löschen. Sie werden dann bei der nächsten Anmeldung zum erneuten [Einrichten von Multi-Factor Authentication](multi-factor-authentication-manage-users-and-devices.md#require-selected-users-to-provide-contact-methods-again) aufgefordert.
 
@@ -172,4 +172,4 @@ Außerdem können Sie Ihren Administrator oder die Person, die Multi-Factor Auth
 
 Geben Sie abschließend bitte detailliertes Feedback auf dieser Seite ab, damit wir diese Seite aktualisieren und durch weitere Informationen verbessern können.
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0302_2016-->

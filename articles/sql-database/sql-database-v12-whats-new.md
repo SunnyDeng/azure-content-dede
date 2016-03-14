@@ -53,7 +53,7 @@ Informationen zu den wenigen noch nicht unterstützten SQL-Datenbankfunktionen f
 ## Mehr Premium-Performance, neue Leistungsstufen
 
 
-In V12 haben wir die Datenbankdurchsatzeinheiten (DTUs) aller Premium-Leistungsstufen ohne zusätzliche Kosten um 25 % erhöht. Durch neue Features, wie die im Folgenden aufgeführten, können noch größere Leistungsvorteile erzielt werden:
+In V12 haben wir die Datenbanktransaktionseinheiten (DTUs) aller Premium-Leistungsstufen ohne zusätzliche Kosten um 25 % erhöht. Durch neue Features, wie die im Folgenden aufgeführten, können noch größere Leistungsvorteile erzielt werden:
 
 
 - Unterstützung für speicherinterne [Columnstore-Indizes](http://msdn.microsoft.com/library/gg492153.aspx).
@@ -161,4 +161,4 @@ Wenn Sie noch nicht V12 ausführen, können Sie ein Upgrade des logischen Server
 
 [Ergänzende Nutzungsbedingungen für Microsoft Azure-Vorschauversionen](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0302_2016-->

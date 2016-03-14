@@ -13,7 +13,7 @@
      ms.topic="article"
      ms.tgt_pltfrm="na"
      ms.workload="na"
-     ms.date="11/10/2015"
+     ms.date="02/23/2016"
      ms.author="obloch"/>
 
 # Microsoft Azure IoT-Geräte-SDK für C – weitere Informationen zum Serialisierungsprogramm
@@ -528,17 +528,25 @@ In diesem Abschnitt wurde alles beschrieben, was Sie über das Senden von Ereign
 
 ## Konfiguration von Makros
 
-Wenn Sie die Bibliothek des **Serialisierungsprogramms** verwenden, finden Sie hier einen wichtigen Teil des SDK, den Sie kennen sollten:
+Wenn Sie die Bibliothek des **Serialisierungsprogramms** verwenden, finden Sie einen wichtigen Teil des SDK, den Sie kennen sollten, in der „azure-c-shared-utility“-Bibliothek. Wenn Sie das Repository „Azure-iot-sdks“ auf GitHub unter Verwendung der Option „--recursive“ geklont haben, finden Sie diese freigegebene Hilfsprogrammbibliothek hier:
 
 ```
-.\\c\\common\\tools\\macro\_utils\_h\_generator.
+.\\c\\azure-c-shared-utility
+```
+
+Wenn Sie die Bibliothek nicht geklont haben, finden Sie sie [hier](https://github.com/Azure/azure-c-shared-utility).
+
+In der freigegebenen Hilfsprogrammbibliothek finden Sie den folgenden Ordner:
+
+```
+azure-c-shared-utility\\macro\_utils\_h\_generator.
 ```
 
 Dieser Ordner enthält eine Visual Studio-Projektmappe mit der Bezeichnung **macro\_utils\_h\_generator.sln**:
 
   ![](media/iot-hub-device-sdk-c-serializer/01-macro_utils_h_generator.PNG)
 
-Das Programm in dieser Projektmappe generiert die Datei **macro\_utils.h**, die sich im Verzeichnis ".\\c\\common\\inc" befindet. Das SDK umfasst eine standardmäßige "macro\_utils.h"-Datei. In dieser Projektmappe können Sie einige Parameter bearbeiten und dann die Headerdatei basierend auf diesen Parametern erneut erstellen.
+Das Programm in dieser Projektmappe generiert die Datei **macro\_utils.h**. Das SDK umfasst eine standardmäßige "macro\_utils.h"-Datei. In dieser Projektmappe können Sie einige Parameter bearbeiten und dann die Headerdatei basierend auf diesen Parametern erneut erstellen.
 
 Die beiden wichtigsten Parameter, mit denen Sie sich beschäftigen müssen, sind **nArithmetic** und **nMacroParameters**, die in den folgenden beiden Zeilen in „macro\_utils.tt“ definiert werden:
 
@@ -566,7 +574,7 @@ Wie bereits erwähnt, handelt es sich bei **DECLARE\_MODEL** nur um ein C-Makro.
 
   ![](media/iot-hub-device-sdk-c-serializer/02-nMacroParametersCompilerErrors.PNG)
 
-Der **nArithmetic**-Parameter bezieht sich mehr auf die interne Funktionsweise der Makrosprache als auf Ihre Anwendung. Er steuert die Gesamtanzahl von Elementen, die in Ihrem Modell vorhanden sein können, einschließlich der **DECLARE\_STRUCT**-Makros. Wenn Sie Compilerfehler wie diese erhalten, sollten Sie versuchen, **nArithmetic** zu erhöhen:
+Der **nArithmetic**-Parameter bezieht sich mehr auf die interne Funktionsweise der Makrosprache als auf Ihre Anwendung. Er steuert die Gesamtanzahl von Elementen, die in Ihrem Modell vorhanden sein können, einschließlich **DECLARE\_STRUCT**-Makros. Wenn Sie Compilerfehler wie diese erhalten, sollten Sie versuchen, **nArithmetic** zu erhöhen:
 
    ![](media/iot-hub-device-sdk-c-serializer/03-nArithmeticCompilerErrors.PNG)
 
@@ -594,7 +602,7 @@ In diesem Artikel haben wir so ziemlich alle Informationen zusammengestellt, die
 
 In diesem Artikel ging es um die Beispielanwendung **simplesample\_amqp**. In diesem Beispiel werden High-Level-APIs (ohne „LL“) verwendet, um Ereignisse zu senden und Nachrichten zu empfangen. Wenn Sie diese APIs verwenden, wird ein Hintergrundthread ausgeführt, der sowohl Ereignisse sendet als auch Nachrichten empfängt. Bei Bedarf können die Low-Level-APIs (LL) verwendet werden, um das Senden von Ereignissen an die Cloud und das Empfangen von Nachrichten aus der Cloud explizit und ohne diesen Hintergrundthread zu steuern.
 
-Wie bereits in einem [vorherigen Artikel](iot-hub-device-sdk-c-iothubclient.md) beschrieben, gibt es eine Gruppe von Funktionen, die aus den High-Level-APIs bestehen:
+Wie bereits in einem [vorherigen Artikel](iot-hub-device-sdk-c-iothubclient.md) beschrieben, gibt es eine Gruppe von Funktionen, die aus den APIs auf höherer Ebene bestehen:
 
 -   IoTHubClient\_CreateFromConnectionString
 
@@ -618,7 +626,7 @@ Es gibt auch eine analoge Gruppe von Low-Level-APIs:
 
 Beachten Sie, dass die Low-Level-APIs genauso funktionieren, wie in den vorherigen Artikeln beschrieben. Sie können die erste Gruppe von APIs verwenden, wenn Sie einen Hintergrundthread zum Senden von Ereignissen und Empfangen von Nachrichten einrichten möchten. Wenn Sie genau steuern möchten, wie Daten an IoT Hub gesendet und von IoT Hub empfangen werden, verwenden Sie die zweite API-Gruppe. Beide API-Gruppen funktionieren mit der Bibliothek des **Serialisierungsprogramms** gleichermaßen gut.
 
-Ein Beispiel der Verwendung der Low-Level-APIs mit der Bibliothek des **Serialisierungsprogramms** finden Sie in der **simplesample\_http**-Anwendung.
+Ein Beispiel der Verwendung der APIs auf niedrigerer Ebene mit der Bibliothek des **Serialisierungsprogramms** finden Sie in der **simplesample\_http**-Anwendung.
 
 ## Weitere Themen
 
@@ -654,8 +662,8 @@ Abgesehen davon funktionieren alle oben aufgeführten Features in der Bibliothek
 
 ## Nächste Schritte
 
-Dieser Artikel beschreibt detailliert die einzigartigen Aspekte der Bibliothek des **Serialisierungsprogramms**, die im **Azure IoT-Geräte-SDK für C** enthalten ist. Der Artikel stellt alle Informationen bereit, die Sie benötigen, um mithilfe von Modellen Ereignisse an IoT Hub senden und Nachrichten an IoT Hub empfangen zu können.
+Dieser Artikel beschreibt detailliert die besonderen Aspekte der Bibliothek des **Serialisierungsprogramms**, die im **Azure IoT-Geräte-SDK für C** enthalten ist. Der Artikel stellt alle Informationen bereit, die Sie benötigen, um mithilfe von Modellen Ereignisse an IoT Hub senden und Nachrichten an IoT Hub empfangen zu können.
 
-Dies ist auch der Abschluss der dreiteiligen Artikelserie zur Entwicklung von Anwendungen mit dem **Azure IoT-Geräte-SDK für C**. Diese Informationen sollten nicht nur für den Einstieg genügen, sondern vermitteln auch tiefgreifende Kenntnisse zur Funktionsweise der APIs. Für weitere Informationen stehen einige Beispiele im SDK zur Verfügung, die hier nicht behandelt werden. Darüber hinaus ist die [SDK-Dokumentation](https://github.com/Azure/azure-iot-sdks) eine gute Informationsquelle.
+Dies ist auch der Abschluss der dreiteiligen Artikelreihe zur Entwicklung von Anwendungen mit dem **Azure IoT-Geräte-SDK für C**. Diese Informationen sollten nicht nur für den Einstieg genügen, sondern vermitteln auch tiefgreifende Kenntnisse zur Funktionsweise der APIs. Für weitere Informationen stehen einige Beispiele im SDK zur Verfügung, die hier nicht behandelt werden. Darüber hinaus bietet sich die [SDK-Dokumentation](https://github.com/Azure/azure-iot-sdks) als weitere Informationsquelle an.
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="CDN – Erweiterte HTTP-Berichte" 
-	description="Erweiterte HTTP-Berichte in Microsoft Azure CDN. Diese Berichte enthalten detaillierte Informationen zur CDN-Aktivität." 
-	services="cdn" 
-	documentationCenter=".NET" 
-	authors="camsoper" 
-	manager="dwrede" 
+<properties
+	pageTitle="CDN – Erweiterte HTTP-Berichte"
+	description="Erweiterte HTTP-Berichte in Microsoft Azure CDN. Diese Berichte enthalten detaillierte Informationen zur CDN-Aktivität."
+	services="cdn"
+	documentationCenter=".NET"
+	authors="camsoper"
+	manager="erikre"
 	editor=""/>
 
-<tags 
-	ms.service="cdn" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="12/02/2015" 
+<tags
+	ms.service="cdn"
+	ms.workload="tbd"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="02/25/2016"
 	ms.author="casoper"/>
 
 # Erweiterte HTTP-Berichte in Microsoft Azure CDN
@@ -22,18 +22,18 @@
 
 In diesem Dokument werden die erweiterten HTTP-Berichte in Microsoft Azure CDN erläutert. Diese Berichte enthalten detaillierte Informationen zur CDN-Aktivität.
 
-> [AZURE.NOTE]Die erweiterten HTTP-Berichte sind ein Feature im CDN-Tarif „Premium“. Einen Vergleich der Features der CDN-Tarife „Standard“ und „Premium“ finden Sie in der [Übersicht über das Azure CDN](cdn-overview.md).
+> [AZURE.NOTE] Die erweiterten HTTP-Berichte sind ein Feature im CDN-Tarif „Premium“. Einen Vergleich der Features der CDN-Tarife „Standard“ und „Premium“ finden Sie in der [Übersicht über das Azure CDN](cdn-overview.md).
 
 ## Aufrufen erweiterter HTTP-Berichte
 
 1. Klicken Sie auf dem Blatt „CDN-Profil“ auf die Schaltfläche **Verwalten**.
 
 	![Schaltfläche „Verwalten“ auf dem Blatt „CDN-Profil“](./media/cdn-advanced-http-reports/cdn-manage-btn.png)
-	
+
 	Das CDN-Verwaltungsportal wird geöffnet.
-	
+
 2. Zeigen Sie auf die Registerkarte **Analysen** und dann auf das Flyout **Erweiterte HTTP-Berichte**. Klicken Sie auf **Große HTTP-Plattform**.
-	
+
 	Berichtsoptionen werden angezeigt.
 
 ## Geografische Berichte (kartenbasiert)
@@ -52,7 +52,7 @@ Weltkarte | Mit diesem Bericht können Sie die weltweite Nachfrage nach Ihren CD
 Karte der USA | Mit diesem Bericht können Sie die Nachfrage nach Ihren CDN-Inhalten in den USA anzeigen. Auf dieser Karte ist jeder Bundesstaat farbkodiert, um den Prozentsatz der Treffer aus der jeweiligen Region anzugeben.
 Karte von Kanada | Mit diesem Bericht können Sie die Nachfrage nach Ihren CDN-Inhalten in Kanada anzeigen. Auf dieser Karte ist jede Provinz farbkodiert, um den Prozentsatz der Treffer aus der jeweiligen Region anzugeben.
 Europakarte | Mit diesem Bericht können Sie die Nachfrage nach Ihren CDN-Inhalten in Europa anzeigen. Auf dieser Karte ist jedes Land farbkodiert, um den Prozentsatz der Treffer aus der jeweiligen Region anzugeben.
-Asien-Pazifik-Karte | Mit diesem Bericht können Sie die Nachfrage nach Ihren CDN-Inhalten in Asien anzeigen. Auf dieser Karte ist jedes Land farbkodiert, um den Prozentsatz der Treffer aus der jeweiligen Region anzugeben. 
+Asien-Pazifik-Karte | Mit diesem Bericht können Sie die Nachfrage nach Ihren CDN-Inhalten in Asien anzeigen. Auf dieser Karte ist jedes Land farbkodiert, um den Prozentsatz der Treffer aus der jeweiligen Region anzugeben.
 
 ## Geografische Berichte (Balkendiagramme)
 
@@ -64,7 +64,7 @@ Die linke Seite des Graphen (y-Achse) gibt an, wie viele Treffer in der angegebe
 
 * Wenn Sie auf einen Balken zeigen, werden der Name und die Gesamtanzahl von Treffern in dieser Region als QuickInfo angezeigt.
 * Die QuickInfo für den Bericht „Führende Städte“ bestimmt eine Stadt nach Name, Bundesland/Provinz und Landesabkürzung.
-* Falls die Stadt oder die Region (d. h. das Bundesland/die Provinz), aus der eine Anforderung stammt, nicht ermittelt werden konnte, wird sie als unbekannt angegeben. Wenn das Land unbekannt ist, werden zwei Fragezeichen (??) angezeigt.
+* Falls die Stadt oder die Region (d. h. das Bundesland/die Provinz), aus der eine Anforderung stammt, nicht ermittelt werden konnte, wird sie als unbekannt angegeben. Wenn das Land unbekannt ist, werden zwei Fragezeichen („??“) angezeigt.
 * Ein Bericht kann Metriken für Europa oder die Asien-Pazifik-Region beinhalten. Mit diesen Elementen sollen keine statistischen Informationen zu allen IP-Adressen in diesen Regionen angegeben werden. Vielmehr gelten sie nur für Anforderungen, die von IP-Adressen in Europa oder der Asien-Pazifik-Region und nicht von IP-Adressen in einem bestimmten Ort oder Land stammen.
 
 Die dem Balkendiagramm zugrunde liegenden Daten werden unterhalb des Diagramms angezeigt. Dort sehen Sie die Gesamtanzahl von Treffern, den Prozentsatz der Treffer, die übertragene Datenmenge (in GB) sowie den Prozentsatz der übertragenen Daten für die 250 führenden Regionen. Zeigen Sie eine Beschreibung für die einzelnen Metriken an.
@@ -84,7 +84,7 @@ Bei diesem Berichtstyp wird anhand eines Balkendiagramms der tägliche Umfang de
 
 Die linke Seite des Graphen (y-Achse) gibt an, wie viele Treffer am angegebenen Datum auftraten. Direkt unterhalb des Graphen (x-Achse) befindet sich eine Bezeichnung, die das Datum (Format: JJJJ-MM-TT) für jeden im Bericht enthaltenen Tag angibt.
 
-> [AZURE.TIP]Wenn Sie auf einen Balken zeigen, wird die Gesamtanzahl von Treffern an diesem Datum als QuickInfo angezeigt.
+> [AZURE.TIP] Wenn Sie auf einen Balken zeigen, wird die Gesamtanzahl von Treffern an diesem Datum als QuickInfo angezeigt.
 
 Die dem Balkendiagramm zugrunde liegenden Daten werden unterhalb des Diagramms angezeigt. Dort finden Sie die Gesamtanzahl von Treffern und die Menge der übertragenen Daten (in GB) für alle vom Bericht abgedeckten Tage.
 
@@ -96,7 +96,7 @@ Bei diesem Berichtstyp wird anhand eines Balkendiagramms der Umfang der plattfor
 
 Die linke Seite des Graphen (y-Achse) gibt an, wie viele Treffer in der angegebenen Stunde auftraten. Direkt unterhalb des Graphen (x-Achse) befindet sich eine Bezeichnung, die das Datum und die Uhrzeit (Format: JJJJ-MM-TT hh:mm) für jede im Bericht enthaltene Stunde angibt. Die Zeit wird im 24-Stunden-Format (Zeitzone: UTC/GMT) angegeben.
 
-> [AZURE.TIP]Wenn Sie auf einen Balken zeigen, wird die Gesamtanzahl von Treffern in dieser Stunde als QuickInfo angezeigt.
+> [AZURE.TIP] Wenn Sie auf einen Balken zeigen, wird die Gesamtanzahl von Treffern in dieser Stunde als QuickInfo angezeigt.
 
 Die dem Balkendiagramm zugrunde liegenden Daten werden unterhalb des Diagramms angezeigt. Dort finden Sie die Gesamtanzahl von Treffern und die Menge der übertragenen Daten (in GB) für alle vom Bericht abgedeckten Stunden.
 
@@ -104,7 +104,7 @@ Die dem Balkendiagramm zugrunde liegenden Daten werden unterhalb des Diagramms a
 
 Mit dem Bericht „Nach Datei“ können Sie den Umfang der Nachfrage und den über eine bestimmte Plattform übertragenen Datenverkehr für die am häufigsten angeforderten Assets anzeigen. Bei diesem Berichtstyp wird ein Balkendiagramm für die zehn Assets erstellt, die im angegebenen Zeitraum am häufigsten angefordert wurden.
 
-> [AZURE.NOTE]Für diesen Bericht werden Edge-CNAME-URLs in ihre entsprechenden CDN-URLs konvertiert. Dadurch wird unabhängig von der für die Anforderung verwendeten CDN- oder Edge-CNAME-URL ein präziser Wert für die Gesamtanzahl von Treffern für ein Asset ermittelt.
+> [AZURE.NOTE] Für diesen Bericht werden Edge-CNAME-URLs in ihre entsprechenden CDN-URLs konvertiert. Dadurch wird unabhängig von der für die Anforderung verwendeten CDN- oder Edge-CNAME-URL ein präziser Wert für die Gesamtanzahl von Treffern für ein Asset ermittelt.
 
 Die linke Seite des Graphen (y-Achse) gibt die Anzahl von Anforderungen für jedes Asset im angegebenen Zeitraum an. Direkt unterhalb des Graphen (x-Achse) befindet sich eine Bezeichnung mit dem Dateinamen für die zehn Assets, die am häufigsten angefordert wurden.
 
@@ -122,7 +122,7 @@ Die dem Balkendiagramm zugrunde liegenden Daten werden unterhalb des Diagramms a
 
 Im Bericht „Nach Dateityp“ können Sie den Umfang der Nachfrage und den Datenverkehr nach Dateityp anzeigen. Bei diesem Berichtstyp wird anhand eines Ringdiagramms der Prozentsatz der Treffer angegeben, die von den zehn führenden Dateitypen generiert wurden.
 
-> [AZURE.TIP]Wenn Sie auf ein Segment im Ringdiagramm zeigen, wird der Internetmedientyp des Dateityps als QuickInfo angezeigt.
+> [AZURE.TIP] Wenn Sie auf ein Segment im Ringdiagramm zeigen, wird der Internetmedientyp des Dateityps als QuickInfo angezeigt.
 
 Die dem Ringdiagramm zugrunde liegenden Daten werden unterhalb des Diagramms angezeigt. Dort sehen Sie die Dateinamenerweiterung/den Internetmedientyp, die Gesamtanzahl von Treffern, den Prozentsatz der Treffer, die übertragene Datenmenge (in GB) sowie den Prozentsatz der übertragenen Daten für jeden der 250 führenden Dateitypen.
 
@@ -164,13 +164,13 @@ Die dem Balkendiagramm zugrunde liegenden Daten werden unterhalb des Diagramms a
 
 Mit dem Bericht „Nach Download“ können Sie Downloadmuster für die am häufigsten angeforderten Inhalte analysieren. Ein Balkendiagramm oben im Bericht vergleicht für die zehn am häufigsten abgerufenen Assets die versuchten Downloads mit den abgeschlossenen Downloads. Jeder Balken ist farbkodiert: Versuchte Downloads sind blau und abgeschlossene Downloads sind grün gekennzeichnet.
 
-> [AZURE.NOTE]Für diesen Bericht werden Edge-CNAME-URLs in ihre entsprechenden CDN-URLs konvertiert. Dadurch wird unabhängig von der für die Anforderung verwendeten CDN- oder Edge-CNAME-URL ein präziser Wert für alle Statistiken für ein Asset ermittelt.
+> [AZURE.NOTE] Für diesen Bericht werden Edge-CNAME-URLs in ihre entsprechenden CDN-URLs konvertiert. Dadurch wird unabhängig von der für die Anforderung verwendeten CDN- oder Edge-CNAME-URL ein präziser Wert für alle Statistiken für ein Asset ermittelt.
 
 Die linke Seite des Graphen (y-Achse) gibt den Dateinamen für jedes der zehn am häufigsten abgerufenen Assets an. Direkt unterhalb des Graphen (x-Achse) befinden sich Bezeichnungen mit der Gesamtanzahl von versuchten/abgeschlossenen Downloads.
 
 Direkt unterhalb des Balkendiagramms werden die folgenden Informationen für die 250 Assets aufgeführt, die am häufigsten angefordert wurden: relativer Pfad (einschließlich Dateiname), Anzahl von abgeschlossenen Downloads, Anzahl von Anforderungen und Prozentsatz der Anforderungen, die zu abgeschlossenen Downloads führten.
 
-> [AZURE.TIP]Unser CDN wird nicht von einem HTTP-Client (d. h. Browser) informiert, wenn ein Asset vollständig heruntergeladen wurde. Daher muss anhand von Statuscodes und Bytebereichsanfragen ermittelt werden, ob ein Asset vollständig heruntergeladen wurde. Dabei wird zunächst überprüft, ob die Anforderung den Statuscode „200 OK“ aufweist. Wenn dies der Fall ist, wird mithilfe von Bytebereichsanfragen sichergestellt, dass das gesamte Asset abgedeckt ist. Abschließend wird die übertragene Datenmenge mit der Größe des angeforderten Assets verglichen. Wenn die übertragene Datenmenge größer oder gleich der Dateigröße ist und die Bytebereichsanfragen dem Asset entsprechen, wird der Treffer als vollständiger Download gezählt.
+> [AZURE.TIP] Unser CDN wird nicht von einem HTTP-Client (d. h. Browser) informiert, wenn ein Asset vollständig heruntergeladen wurde. Daher muss anhand von Statuscodes und Bytebereichsanfragen ermittelt werden, ob ein Asset vollständig heruntergeladen wurde. Dabei wird zunächst überprüft, ob die Anforderung den Statuscode „200 OK“ aufweist. Wenn dies der Fall ist, wird mithilfe von Bytebereichsanfragen sichergestellt, dass das gesamte Asset abgedeckt ist. Abschließend wird die übertragene Datenmenge mit der Größe des angeforderten Assets verglichen. Wenn die übertragene Datenmenge größer oder gleich der Dateigröße ist und die Bytebereichsanfragen dem Asset entsprechen, wird der Treffer als vollständiger Download gezählt.
 >
 >Berücksichtigen Sie aufgrund des Interpretationsspielraums bei diesem Bericht die folgenden Punkte, die sich auf Konsistenz und Genauigkeit des Berichts auswirken können:
 >
@@ -181,7 +181,7 @@ Direkt unterhalb des Balkendiagramms werden die folgenden Informationen für die
 
 Im Bericht „Nach 404-Fehlern“ können Sie den Inhaltstyp anzeigen, der am häufigsten den Statuscode „404 Nicht gefunden“ generiert. Oben im Bericht ist ein Balkendiagramm für die zehn führenden Assets enthalten, für die der Statuscode „404 Nicht gefunden“ zurückgegeben wurde. In diesem Balkendiagramm wird die Gesamtanzahl von Anforderungen mit den Anforderungen verglichen, die zum Statuscode „404 Nicht gefunden“ für diese Assets führten. Jeder Balken ist farbkodiert. Mit einem gelben Balken wird angegeben, dass für eine Anforderung der Statuscode „404 Nicht gefunden“ zurückgegeben wurde. Ein roter Balken gibt die Gesamtanzahl von Anforderungen für das Asset an.
 
-> [AZURE.NOTE]Beachten Sie bei diesem Bericht Folgendes:
+> [AZURE.NOTE] Beachten Sie bei diesem Bericht Folgendes:
 >
 >* Ein Treffer stellt alle Anforderungen eines Assets unabhängig vom Statuscode dar.
 >* Edge-CNAME-URLs werden in ihre entsprechenden CDN-URLs konvertiert. Dadurch wird unabhängig von der für die Anforderung verwendeten CDN- oder Edge-CNAME-URL ein präziser Wert für alle Statistiken für ein Asset ermittelt.
@@ -196,4 +196,4 @@ Direkt unterhalb des Balkendiagramms werden die folgenden Informationen für die
 * [Überschreiben des HTTP-Standardverhaltens mithilfe des Regelmoduls](cdn-rules-engine.md)
 * [Analysieren der Edgeleistung](cdn-edge-performance.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0302_2016-->

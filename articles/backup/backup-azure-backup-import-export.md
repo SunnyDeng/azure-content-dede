@@ -30,7 +30,7 @@ Mit Azure Backup und Azure Import/Export können die Daten einfach und unkompliz
 2. Stellen Sie vor dem Initiieren des Workflows sicher, dass ein Azure-Sicherungstresor erstellt wurde, dass Tresoranmeldedaten heruntergeladen wurden, dass der Azure Backup-Agent entweder auf dem Windows Server/Windows-Client oder dem SCDPM-Server (System Center Data Protection Manager) installiert wurde und dass der Computer beim Azure Backup-Tresor registriert ist.
 3. Laden Sie [hier](https://manage.windowsazure.com/publishsettings) die Azure-Einstellungen zum Veröffentlichen von Dateien auf den Computer herunter, von dem die Daten gesichert werden sollen.
 4. Bereiten Sie einen *Stagingspeicherort* vor. Dabei kann es sich um eine Netzwerkfreigabe oder ein zusätzliches Laufwerk auf dem Computer handeln. Stellen Sie sicher, dass der Stagingspeicherort genügend Speicherplatz für Ihre erste Kopie bietet. Wenn Sie beispielsweise versuchen, einen 500-GB-Dateiserver zu sichern, sorgen Sie dafür, dass der Stagingbereich mindestens 500 GB umfasst (auch wenn eine geringere Menge in Anspruch genommen wird). Der Stagingbereich ist ein Übergangsspeicher, der während dieses Workflows temporär verwendet wird.
-5. Externer SATA-Laufwerkswriter und ein externes 3,5-Zoll-SATA-Laufwerk. Der Import-/Exportdienst unterstützt nur SATA II/III-Laufwerke im 3,5-Zoll-Format. Festplatten größer als 6 TB werden nicht unterstützt. Sie können SATA II/III-Laufwerke über einen SATA II/III-USB-Adapter extern an die meisten Computer anschließen. Schlagen Sie in der Dokumentation zu Azure Import/Export die aktuellen Laufwerke nach, die vom Dienst unterstützt werden.
+5. Externer SATA-Laufwerkswriter und ein externes 3,5-Zoll-SATA-Laufwerk. Der Import-/Exportdienst unterstützt nur SATA II/III-Laufwerke im 3,5-Zoll-Format. Festplatten über 8 TB werden nicht unterstützt. Sie können SATA II/III-Laufwerke über einen SATA II/III-USB-Adapter extern an die meisten Computer anschließen. Schlagen Sie in der Dokumentation zu Azure Import/Export die aktuellen Laufwerke nach, die vom Dienst unterstützt werden.
 6. Aktivieren Sie BitLocker auf dem Computer, an den der SATA-Laufwerkswriter angeschlossen ist.
 7. Laden Sie das Azure Import/Export-Tool von [hier](http://go.microsoft.com/fwlink/?LinkID=301900&clcid=0x409) auf den Computer herunter, mit dem der SATA-Laufwerkswriter verbunden ist.
 
@@ -119,4 +119,4 @@ Sobald die ersten Sicherungsdaten im Speicherkonto verfügbar sind, kopiert der 
 - Wenn Sie Fragen zum Azure Import/Export-Workflow haben, finden Sie weitere Informationen in diesem [Artikel](../storage/storage-import-export-service.md).
 - Bei Fragen zum Workflow finden Sie weitere Informationen im Abschnitt zur Offlinesicherung in den [häufig gestellten Fragen](backup-azure-backup-faq.md) zu Azure Backup.
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0302_2016-->

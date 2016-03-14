@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="mobile" 
-   ms.date="06/18/2015"
+   ms.date="02/29/2016"
    ms.author="piyushjo"/>
 
 # Handbuch zur Problembehandlung bei Push und Reach
@@ -110,4 +110,4 @@ Im Folgenden finden Sie mögliche Probleme, die beim Senden von Informationen du
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0302_2016-->

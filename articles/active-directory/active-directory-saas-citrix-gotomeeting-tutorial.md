@@ -8,10 +8,11 @@
 
 <tags 
     ms.service="active-directory" 
-    ms.devlang="na" ms.topic="article" 
+    ms.devlang="na" 
+    ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="12/18/2015" 
+    ms.date="02/29/2016" 
     ms.author="jeedes" />
 
 #Lernprogramm: Azure Active Directory-Integration mit Citrix GoToMeeting  
@@ -38,7 +39,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Cit
 
 ###So aktivieren Sie die Anwendungsintegration für Citrix GoToMeeting
 
-1.  Klicken Sie im linken Navigationsbereich des Azure-Verwaltungsportals auf **Active Directory**.
+1.  Klicken Sie im klassischen Azure-Portal im linken Navigationsbereich auf **Active Directory**.
 
     ![Active Directory](./media/active-directory-saas-citrix-gotomeeting-tutorial/IC700993.png "Active Directory")
 
@@ -90,17 +91,17 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
      6\.1. Wählen Sie **Manuell** aus.
 
-     6\.2. Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren um Citrix GoToMeeting** den Wert für **URL der Anmeldeseite**, und fügen Sie ihn in das Textfeld **Sign-in page URL** ein.
+     6\.2. Kopieren Sie im klassischen Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Citrix GoToMeeting** den Wert für **URL der Anmeldeseite**, und fügen Sie ihn in das Textfeld **URL der Anmeldeseite** ein.
 
-     6\.3. Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren um Citrix GoToMeeting** den Wert für **URL der Abmeldeseite**, und fügen Sie ihn in das Textfeld **Sign-out page URL** ein.
+     6\.3. Kopieren Sie im klassischen Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Citrix GoToMeeting** den Wert für **URL der Abmeldeseite**, und fügen Sie ihn in das Textfeld **URL der Abmeldeseite** ein.
 
-     6\.4. Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren um Citrix GoToMeeting** den Wert der **Entitäts-ID**, und fügen Sie ihn in das Textfeld **Identity Provider Entity ID** ein.
+     6\.4. Kopieren Sie im klassischen Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Citrix GoToMeeting** den Wert der **Entitäts-ID**, und fügen Sie ihn in das Textfeld **Entitäts-ID des Identitätsanbieters** ein.
 
      6\.5. Klicken Sie auf **Zertifikat hochladen**, um das heruntergeladene Zertifikat hochzuladen.
 
      6\.6. Klicken Sie auf **Speichern**.
 
-6.  Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration der einmaligen Anmeldung aus, und klicken Sie dann auf **Weiter**.
+6.  Wählen Sie im klassischen Azure-Portal die Bestätigung zur Konfiguration der einmaligen Anmeldung aus, und klicken Sie dann auf **Weiter**.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-citrix-gotomeeting-tutorial/IC769000.png "Einmaliges Anmelden konfigurieren")
 
@@ -117,7 +118,7 @@ In diesem Abschnitt wird erläutert, wie Sie die Bereitstellung von Active Direc
 
 ###So konfigurieren Sie die Benutzerbereitstellung
 
-1.  Klicken Sie im Azure-Verwaltungsportal auf die Anwendungsintegrationsseite **Citrix GoToMeeting**, und klicken Sie auf **Benutzerbereitstellung konfigurieren**, um das Dialogfeld **Benutzerbereitstellung konfigurieren** zu öffnen.
+1.  Klicken Sie im klassischen Azure-Portal auf die Anwendungsintegrationsseite **Citrix GoToMeeting**, und klicken Sie auf **Benutzerbereitstellung konfigurieren**, um das Dialogfeld **Benutzerbereitstellung konfigurieren** zu öffnen.
 
     ![Konfigurieren der Benutzerbereitstellung](./media/active-directory-saas-citrix-gotomeeting-tutorial/IC769001.png "Konfigurieren der Benutzerbereitstellung")
 
@@ -140,7 +141,7 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
 ###So weisen Sie Citrix GoToMeeting Benutzer zu
 
-1.  Erstellen Sie im Azure AD-Portal ein Testkonto.
+1.  Erstellen Sie im klassischen Azure-Portal ein Testkonto.
 
 2.  Klicken Sie auf der Anwendungsintegrationsseite für **Citrix GoToMeeting** auf **Benutzer zuweisen**.
 
@@ -152,7 +153,7 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
 Nach 10 Minuten können Sie überprüfen, ob das Konto mit Citrix GoToMeeting synchronisiert wurde.
 
-Als ersten Überprüfungsschritt können Sie den Bereitstellungsstatus überprüfen, indem Sie im Azure-Verwaltungsportal auf der Anwendungsintegrationsseite **Citrix GoToMeeting** auf "Dashboard" klicken.
+Als ersten Überprüfungsschritt können Sie den Bereitstellungsstatus überprüfen, indem Sie im klassischen Azure-Portal auf der Anwendungsintegrationsseite **Citrix GoToMeeting** auf „Dashboard“ klicken.
 
 ![Dashboard](./media/active-directory-saas-citrix-gotomeeting-tutorial/IC769004.png "Dashboard")
 
@@ -164,4 +165,4 @@ Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich.
 
 Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0302_2016-->

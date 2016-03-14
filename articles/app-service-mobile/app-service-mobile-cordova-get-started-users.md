@@ -40,7 +40,7 @@ Als Nächstes werden Sie die App aktualisieren, um Benutzer zu authentifizieren,
 
 ##<a name="add-authentication"></a>Hinzufügen von Authentifizierung zur App
 
-1. Öffnen Sie Ihr Projekt in **Visual Studio**, und öffnen Sie dann die Datei <tt>www/index.html</tt> zur Bearbeitung.
+1. Öffnen Sie Ihr Projekt in **Visual Studio**, und öffnen Sie dann die Datei `www/index.html` zur Bearbeitung.
 
 2. Suchen Sie das `Content-Security-Policy`-Metatag im Kopfzeilenbereich. Sie müssen den OAuth-Host der Liste der zulässigen Quellen hinzufügen.
 
@@ -54,16 +54,17 @@ Als Nächstes werden Sie die App aktualisieren, um Benutzer zu authentifizieren,
 
     Hier ein Beispiel für Content-Security-Policy (implementiert für Azure Active Directory):
 
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://login.windows.net https://yourapp.azurewebsites.net; style-src 'self'">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' 
+			data: gap: https://login.windows.net https://yourapp.azurewebsites.net; style-src 'self'">
 
-    Ersetzen Sie <tt>https://login.windows.net</tt> durch den OAuth-Host aus der oben stehenden Tabelle. Weitere Informationen zu diesem Metatag finden Sie in der Dokumentation zu [Content-Security-Policy].
+    Ersetzen Sie `https://login.windows.net` durch den OAuth-Host aus der oben stehenden Tabelle. Weitere Informationen zu diesem Metatag finden Sie in der Dokumentation [Whitelist Guide] (Whitelist-Ratgeber).
 
     Beachten Sie, dass einige Authentifizierungsanbieter bei der Verwendung auf geeigneten Mobilgeräten keine Änderungen an Content-Security-Policy erfordern. Beispielsweise sind bei Verwendung der Google-Authentifizierung auf einem Android-Gerät keine Änderungen an Content-Security-Policy notwendig.
 
-3. Öffnen Sie die Datei <tt>www/js/index.js</tt> zur Bearbeitung. Das Projekt lässt sich zwar mit den bereits vorgenommenen Änderungen erstellen und ausführen, es gilt jedoch als bewährte Methode, explizit eine login()-Methode aufzurufen, um eine Anmeldeaktion zu initiieren. Suchen Sie die `onDeviceReady()`-Methode. Fügen Sie unterhalb des Codes zur Clienterstellung Folgendes hinzu:
+3. Öffnen Sie die Datei `www/js/index.js` zur Bearbeitung, suchen Sie die `onDeviceReady()`-Methode, und fügen Sie unterhalb des Codes zur Clienterstellung Folgendes ein:
 
         // Login to the service
-        client.login('SDK Provider_Name')
+        client.login('SDK_Provider_Name')
             .then(function () {
 
                 // BEGINNING OF ORIGINAL CODE
@@ -82,11 +83,11 @@ Als Nächstes werden Sie die App aktualisieren, um Benutzer zu authentifizieren,
 
             }, handleError);
 
-    Für Azure Active Directory verwenden Sie z. B. Folgendes:
+    Beachten Sie, dass dieser Code den vorhandenen Code ersetzt, der die Tabellenreferenz erstellt und die Benutzeroberfläche aktualisiert.
 
-        client.login('aad')
+    Die Login()-Methode startet die Authentifizierung mit dem Anbieter. Die login()-Methode ist eine asynchrone Funktion, die eine JavaScript-Zusage zurückgibt. Der Rest der Initialisierung wird in der Zusagenantwort platziert, sodass sie erst ausgeführt wird, wenn die login()-Methode abgeschlossen ist.
 
-    Die login()-Methode ist eine asynchrone Funktion, die eine JavaScript-Zusage zurückgibt. Der Rest der Initialisierung wird in der Zusagenantwort platziert, sodass sie erst ausgeführt wird, wenn die login()-Methode abgeschlossen ist.
+4. Ersetzen Sie in dem gerade hinzugefügten Code `SDK_Provider_Name` durch den Namen des Login-Anbieters. Verwenden Sie für Azure Active Directory beispielsweise `client.login('aad')`.
 
 4. Führen Sie das Projekt aus. Wenn die Initialisierung des Projekts abgeschlossen ist, zeigt Ihre Anwendung die OAuth-Anmeldeseite für den ausgewählten Authentifizierungsanbieter an.
 
@@ -97,8 +98,8 @@ Als Nächstes werden Sie die App aktualisieren, um Benutzer zu authentifizieren,
 
 <!-- URLs. -->
 [Erste Schritte mit Mobile Apps]: app-service-mobile-cordova-get-started.md
-[Content-Security-Policy]: https://cordova.apache.org/docs/en/latest/guide/appdev/whitelist/index.html
+[Whitelist Guide]: https://cordova.apache.org/docs/en/latest/guide/appdev/whitelist/index.html
 [Pushbenachrichtigungen]: app-service-mobile-cordova-get-started-push.md
 [Authentifizierung]: app-service-mobile-auth.md
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0302_2016-->

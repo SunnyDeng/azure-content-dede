@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="mobile" 
-   ms.date="10/22/2015"
+   ms.date="02/26/2016"
    ms.author="piyushjo"/>
 
 # Azure Mobile Engagement – Handbuch zur Problembehandlung
@@ -28,7 +28,7 @@ Im Allgemeinen sollten Sie immer Folgendes sicherstellen:
 1. Stellen Sie sicher, dass Sie alle in den [Erste-Schritte-Lernprogrammen](mobile-engagement-windows-store-dotnet-get-started.md) beschriebenen Schritte ausgeführt haben, die für die Integration erforderlich sind.
 2. Sie verwenden die neueste Version der Plattform-SDKs. 
 3. Führen Sie Tests auf einem Originalgerät und einem Emulator durch, da bestimmte Probleme nur beim Emulator auftreten. 
-4. Es treten keine der Beschränkungen/Drosselungen für Mobile Engagement auf, die [hier](azure-subscription-service-limits.md) dokumentiert sind.
+4. Es treten keine der Beschränkungen/Drosselungen für Mobile Engagement auf, die [hier](../azure-subscription-service-limits.md) dokumentiert sind.
 5. Wenn Sie keine Verbindung mit dem Engagement Mobile Service Back-End herstellen können oder festzustellen, dass Daten nicht kontinuierlich geladen werden, vergewissern Sie sich [hier](https://azure.microsoft.com/status/), dass keine aktiven Servicevorfälle vorliegen.
 
 ## Probleme beim „Überwachen“
@@ -89,6 +89,7 @@ Im Folgenden finden Sie weitere plattformspezifische Anweisungen zur Problembeha
 	    	<meta-data android:name="engagement:gcm:sender" android:value="************\n" />
 	    
 	- Stellen Sie sicher, dass in der Android-Manifestdatei keine Berechtigungen fehlen oder falsch konfiguriert sind.
+	- Stellen Sie sicher, dass die Projektnummer, die Sie der Client-App hinzufügen, aus dem Konto stammt, in dem Sie auch den GCM-Serverschlüssel erhalten haben. Jede Abweichung zwischen den beiden verhindert, dass Ihre Pushes gesendet werden. 
 	- Wenn Sie Systembenachrichtigungen empfangen, aber keine In-App-Benachrichtigungen, überprüfen Sie den Abschnitt [Angeben eines Symbol für Benachrichtigungen](mobile-engagement-android-get-started.md), da in der Android-Manifestdatei wahrscheinlich nicht das richtige Symbol angegeben ist. 
 	- Wenn Sie eine BigPicture-Benachrichtigung senden und über externe Bildserver verfügen, müssen diese "GET" und "HEAD" für HTTP unterstützen.
 
@@ -120,4 +121,4 @@ Wenn Sie das Problem nicht selbst beheben können, haben Sie folgende Möglichke
 	- Mobile Engagement SDK-Version (z. B. „Android SDK v2.1.0“)
 	- Fehlerdetails mit der genauen Fehlermeldung und dem Fehlerszenario
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0302_2016-->

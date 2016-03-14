@@ -14,11 +14,11 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/08/2015" 
+	ms.date="02/26/2016" 
 	ms.author="sunbuild"/>
 
 # Entwickeln von WordPress in Azure App Service
 
 [AZURE.INCLUDE [App-Service-Blueprint-Guide-for-WordPress](../../includes/app-service-blueprint-guide-for-wordpress.md)]
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0302_2016-->

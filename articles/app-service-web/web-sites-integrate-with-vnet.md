@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/18/2015" 
+	ms.date="02/22/2016" 
 	ms.author="ccompy"/>
 
 # Integrieren Ihrer App in ein Azure Virtual Network #
@@ -56,7 +56,7 @@ Beachten Sie Folgendes, bevor Sie Ihre Web-App mit einem virtuellen Netzwerk ver
 
 Sie haben die Möglichkeit, sich mit einem neuen oder bereits vorhandenen virtuellen Netzwerk zu verbinden. Wenn Sie ein neues Netzwerk erstellen, wird zusätzlich zur alleinigen Erstellung des VNET ein Gateway mit dynamischem Routing für Sie vorkonfiguriert, und das Punkt-zu-Standort-VPN wird aktiviert.
 
->[AZURE.NOTE]Das Konfigurieren einer neuen Integration eines Virtual Network kann mehrere Minuten dauern.
+>[AZURE.NOTE] Das Konfigurieren einer neuen Integration eines Virtual Network kann mehrere Minuten dauern.
 
 Öffnen Sie zum Aktivieren der VNET-Integration die App-Einstellungen, und wählen Sie „Netzwerk“. Auf der Benutzeroberfläche, die geöffnet wird, werden drei Netzwerkoptionen zur Auswahl angeboten. In diesem Leitfaden geht es hauptsächlich um die VNET-Integration, aber auf Hybridverbindungen und App Service-Umgebungen wird später in diesem Dokument eingegangen.
 
@@ -87,7 +87,7 @@ Wenn Sie ein neues VNET erstellen möchten, sollten Sie daran danken, dass Sie d
 
 Beachten Sie folgende Warnung: Wenn Sie für dieses VNET eine Verbindung mit einem Ihrer anderen Netzwerke herstellen möchten, sollten Sie die Auswahl eines IP-Adressbereichs vermeiden, der sich mit diesen Netzwerken überlappt.
 
->[AZURE.NOTE]Es kann bis zu 30 Minuten dauern, bis ein neues VNET mit funktionierenden Gateways bereitgestellt wird. Wenn der Vorgang abgeschlossen ist, wird die Benutzeroberfläche aktualisiert.
+>[AZURE.NOTE] Es kann bis zu 30 Minuten dauern, bis ein neues VNET mit funktionierenden Gateways bereitgestellt wird. Wenn der Vorgang abgeschlossen ist, wird die Benutzeroberfläche aktualisiert.
 
 ![][3]
 
@@ -156,7 +156,7 @@ In Bezug auf Aktionen gibt es zwei Hauptaktionen. Erstens die Möglichkeit, Rout
 
 Einer der Vorteile der Funktion für die VNET-Integration ist, dass für Ihre Apps Zugriff auf Ihre lokalen Ressourcen bestehen kann, sofern das VNET per Standort-zu-Standort-VPN mit Ihrem lokalen Netzwerk verbunden ist. Damit dies funktioniert, müssen Sie unter Umständen das lokale VPN Gateway mit den Routen für den Punkt-zu-Standort-IP-Bereich aktualisieren. Nach dem ersten Einrichten des Standort-zu-Standort-VPN sollten mit den Skripts, die für die Konfiguration verwendet werden, Routen eingerichtet werden, z. B. das Punkt-zu-Standort-VPN. Wenn Sie das Punkt-zu-Standort-VPN nach dem Erstellen des Standort-zu-Standort-VPN erstellen, müssen Sie die Routen manuell aktualisieren. Die Details zur Vorgehensweise variieren je nach Gateway und sind hier nicht beschrieben.
 
->[AZURE.NOTE]Die Funktion für die VNET-Integration funktioniert mit einem Standort-zu-Standort-VPN, was den Zugriff auf lokale Ressourcen betrifft, aber mit einem ExpressRoute-VPN ist dies derzeit nicht möglich.
+>[AZURE.NOTE] Die Funktion für die VNET-Integration funktioniert mit einem Standort-zu-Standort-VPN, was den Zugriff auf lokale Ressourcen betrifft, aber mit einem ExpressRoute-VPN ist dies derzeit nicht möglich.
 
 ##Preisübersicht##
 Bei der Verwendung der Funktion für die VNET-Integration sollten Sie einige Details in Bezug auf die Preise beachten. Die Nutzung der Funktion ist mit drei Gebühren verbunden:
@@ -167,13 +167,13 @@ Bei der Verwendung der Funktion für die VNET-Integration sollten Sie einige Det
 
 Damit Ihre Apps diese Funktion verwenden können, müssen sie im Rahmen des App Service-Plans „Standard“ oder „Premium“ genutzt werden. Weitere Informationen zu diesen Kosten finden Sie hier: [App Service-Preisdetails][ASPricing].
 
-Aufgrund der Art und Weise, wie Punkt-zu-Standort-VPNs behandelt werden, fällt für Sie immer eine Gebühr für ausgehende Daten über die Verbindung der VNET-Integration an. Dies gilt auch, wenn sich das VNET in demselben Rechenzentrum befindet. Sie können sich hier über diese Gebühren informieren: [Preisübersicht zur Datenübertragung][DataPricing].
+Aufgrund der Art und Weise, wie Punkt-zu-Standort-VPNs behandelt werden, fällt für Sie immer eine Gebühr für ausgehende Daten über die Verbindung der VNET-Integration an. Dies gilt auch, wenn sich das VNET in demselben Rechenzentrum befindet. Sie können sich hier über diese Gebühren informieren: [Datenübertragungen – Preisdetails][DataPricing].
 
 Das letzte Element sind die Kosten für die VNET-Gateways. Wenn Sie die Gateways nicht für etwas anderes benötigen, z. B. Standort-zu-Standort-VPNs, bezahlen Sie für Gateways als Unterstützung der Funktion für die VNET-Integration. Details zu diesen Kosten finden Sie hier: [VPN Gateway – Preise][VNETPricing].
 
 ##Problembehandlung##
 
-Die Funktion ist zwar einfach einzurichten, aber dies bedeutet nicht, dass für Ihre Benutzeroberfläche keinerlei Probleme auftreten. Falls beim Zugreifen auf den gewünschten Endpunkt Probleme auftreten, können Sie einige Hilfsprogramme verwenden, um die Verbindung über die App-Konsole zu testen. Sie können zwei Konsolenbenutzeroberflächen verwenden. Eine Möglichkeit ist die Kudu-Konsole, und auf die andere Konsole können Sie über das Azure-Portal zugreifen. Greifen Sie in der App auf „Tools“ -> „Kudu“ zu, um zur Kudu-Konsole zu gelangen. Dies entspricht dem Zugreifen auf „[Websitename].scm.azurewebsites.net“. Wechseln Sie nach dem Öffnen einfach zur Registerkarte „Debuggen“ der Konsole. Um auf die über das Azure-Portal gehostete Konsole zuzugreifen, greifen Sie in der App auf „Tools“ -> „Konsole“ zu.
+Die Funktion ist zwar einfach einzurichten, aber dies bedeutet nicht, dass für Ihre Benutzeroberfläche keinerlei Probleme auftreten. Falls beim Zugreifen auf den gewünschten Endpunkt Probleme auftreten, können Sie einige Hilfsprogramme verwenden, um die Verbindung über die App-Konsole zu testen. Sie können zwei Konsolenbenutzeroberflächen verwenden. Eine Möglichkeit ist die Kudu-Konsole, und auf die andere Konsole können Sie über das Azure-Portal zugreifen. Greifen Sie in der App auf „Tools -> Kudu“ zu, um zur Kudu-Konsole zu gelangen. Dies entspricht dem Zugreifen auf „[Websitename].scm.azurewebsites.net“. Wechseln Sie nach dem Öffnen einfach zur Registerkarte „Debuggen“ der Konsole. Um auf die über das Azure-Portal gehostete Konsole zuzugreifen, greifen Sie in der App auf „Tools“ -> „Konsole“ zu.
 
 
 ####Tools####
@@ -225,7 +225,11 @@ Weitere Debugschritte:
 ####Lokale Ressourcen####
 Wenn Sie keine lokalen Ressourcen erreichen können, sollten Sie als Erstes überprüfen, ob Sie eine Ressource in Ihrem VNET erreichen können. Falls dies funktioniert, sind die weiteren Schritte recht einfach. Versuchen Sie, die lokale Anwendung von einer VM in Ihrem VNET zu erreichen. Sie können hierfür „telnet“ oder ein TCP-ping-Hilfsprogramm verwenden. Wenn Sie die lokale Ressource mit der VM erreichen können, sollten Sie zuerst sicherstellen, dass Ihre Standort-zu-Standort-VPN-Verbindung funktioniert. Wenn dies der Fall ist, sollten Sie die oben angegebenen Punkte sowie die Konfiguration und den Status des lokalen Gateways überprüfen.
 
-Wenn Sie das lokale System jetzt mit der im VNET gehosteten VM erreichen können, aber nicht mit Ihrer App, hat dies wahrscheinlich einen der folgenden Gründe: - Ihre Routen sind nicht für die Punkt-zu-Standort-IP-Bereiche auf dem lokalen Gateway konfiguriert. - Ihre Netzwerksicherheitsgruppen blockieren den Zugriff für Ihren Punkt-zu-Standort-IP-Bereich. - Ihre lokalen Firewalls blockieren den Datenverkehr für Ihren Punkt-zu-Standort-IP-Bereich. - Sie verwenden in Ihrem VNET eine benutzerdefinierte Route, die verhindert, dass der Punkt-zu-Standort-Datenverkehr Ihr lokales Netzwerk erreicht.
+Wenn die mit VNET gehostete VM auf ein lokales System zugreifen kann, die App jedoch nicht, liegt wahrscheinlich einer der folgenden Gründe vor:
+- Die Routen des lokalen Gateways enthalten keine Punkt-zu-Standort-IP-Bereiche.
+- Die Netzwerksicherheitsgruppen blockieren den Zugriff auf den Punkt-zu-Standort-IP-Bereich.
+- Ihre lokalen Firewalls blockieren den Datenverkehr des Punkt-zu-Standort-IP-Bereichs.
+- Es liegt eine benutzerdefinierte Route (UDR) im VNET vor, die den Punkt-zu-Standort-basierten Datenverkehr nicht auf das lokale Netzwerk lässt.
 
 ## Hybridverbindungen und App Service-Umgebungen##
 Es gibt drei Funktionen, die den Zugriff auf im VNET gehostete Ressourcen ermöglichen. Sie lauten wie folgt:
@@ -265,4 +269,4 @@ Bei den Anwendungsfällen gibt es zwar einige Überschneidungen, aber diese Funk
 [VNETPricing]: http://azure.microsoft.com/pricing/details/vpn-gateway/
 [DataPricing]: http://azure.microsoft.com/pricing/details/data-transfers/
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0302_2016-->

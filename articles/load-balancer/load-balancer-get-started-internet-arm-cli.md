@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="02/12/2015"
+   ms.date="02/24/2016"
    ms.author="joaoma" />
 
 # Erste Schritte zum Erstellen eines Load Balancers mit Internetzugriff mithilfe der Azure-Befehlszeilenschnittstelle
@@ -61,7 +61,7 @@ Unter [Unterstützung des Azure-Ressourcen-Managers für den Load Balancer](load
 
 ## Erstellen eines virtuellen Netzwerks und einer öffentlichen IP-Adresse für den Front-End-IP-Adresspool
 
-### Schritt 1
+### Schritt 1
 
 Erstellen Sie ein virtuelles Netzwerk (VNET) mit dem Namen *NRPVnet* in der Region „USA, Osten“ mithilfe einer Ressourcengruppe mit dem Namen *NRPRG*.
 
@@ -71,9 +71,9 @@ Erstellen Sie ein Subnetz mit dem Namen *NRPVnetSubnet* mit dem CIDR-Block 10.0.
 
 	azure network vnet subnet create NRPRG NRPVnet NRPVnetSubnet -a 10.0.0.0/24
 
-### Schritt 2
+### Schritt 2
 
-Erstellen Sie eine öffentliche IP-Adresse mit dem Namen *NRPPublicIP*, die von einem Front-End-IP-Adresspool verwendet werden soll, mit dem DNS-Namen *loadbalancernrp.eastus.cloudapp.azure.com*. Der folgende Befehl verwendet den statische Zuordnungstyp und ein Leerlaufzeitlimit von 4 Minuten.
+Erstellen Sie eine öffentliche IP-Adresse mit dem Namen *NRPPublicIP*, die von einem Front-End-IP-Adresspool verwendet werden soll, mit dem DNS-Namen *loadbalancernrp.eastus.cloudapp.azure.com*. Der folgende Befehl verwendet den statische Zuordnungstyp und ein Leerlaufzeitlimit von 4 Minuten.
 
 	azure network public-ip create -g NRPRG -n NRPPublicIP -l eastus -d loadbalancernrp -a static -i 4
 
@@ -90,13 +90,13 @@ Im folgenden Beispiel wird mit dem nachstehenden Befehl der Load Balancer *NRPlb
 
 Im folgenden Beispiel wird der Front-End-IP-Adresspool erstellt, der den eingehenden Netzwerkdatenverkehr für den Load Balancer empfängt. Außerdem wird der Back-End-IP-Pool erstellt, an den der Front-End-Adresspool den einem Lastenausgleich unterzogenen Netzwerkdatenverkehr sendet.
 
-### Schritt 1 
+### Schritt 1 
 
 Erstellen Sie einen Front-End-IP-Adresspool, der die im vorherigen Schritt erstellte öffentliche IP-Adresse dem Load Balancer zuordnet.
 
 	azure network lb frontend-ip create nrpRG NRPlb NRPfrontendpool -i nrppublicip
 
-### Schritt 2 
+### Schritt 2 
 
 Richten Sie einen Back-End-Adresspool für den Empfang des eingehenden Datenverkehrs vom Front-End-IP-Adresspool ein.
 
@@ -106,14 +106,14 @@ Richten Sie einen Back-End-Adresspool für den Empfang des eingehenden Datenverk
 
 Im folgenden Beispiel werden die folgenden Elemente erstellt:
 
-- eine NAT-Regel, um sämtlichen an Port 21 eingehenden Datenverkehr für Port 22<sup>1</sup> zu übersetzen.
-- eine NAT-Regel, um sämtlichen, bei Port 23 eingehenden Datenverkehr für Port 22 zu übersetzen.
-- eine Load Balancer-Regel für die gleichmäßige Verteilung des gesamten an Pool 80 eingehenden Datenverkehrs an Port 80 an die Adressen im Back-End-Pool.
+- eine NAT-Regel, um sämtlichen an Port 21 eingehenden Datenverkehr für Port 22<sup>1</sup> zu übersetzen.
+- eine NAT-Regel, um sämtlichen, bei Port 23 eingehenden Datenverkehr für Port 22 zu übersetzen.
+- eine Load Balancer-Regel für die gleichmäßige Verteilung des gesamten an Pool 80 eingehenden Datenverkehrs an Port 80 an die Adressen im Back-End-Pool.
 - eine Testregel, die den Integritätsstatus der Seite *HealthProbe.aspx* überprüft
 
-<sup>1</sup> NAT-Regeln sind einer bestimmten Instanz eines virtuellen Computers hinter dem Load Balancer zugeordnet. Im folgenden Beispiel wird der an Port 21 eingehende Netzwerkdatenverkehr an einen speziellen virtuellen Computer an Port 22 gesendet, der mit einer NAT-Regel verknüpft ist. Sie müssen für die NAT-Regel als Protokoll UDP oder TCP auswählen. Einem Port kann jeweils nur eines der beiden Protokolle zugewiesen werden.
+<sup>1</sup> NAT-Regeln sind einer bestimmten Instanz eines virtuellen Computers hinter dem Load Balancer zugeordnet. Im folgenden Beispiel wird der an Port 21 eingehende Netzwerkdatenverkehr an einen speziellen virtuellen Computer an Port 22 gesendet, der mit einer NAT-Regel verknüpft ist. Sie müssen für die NAT-Regel als Protokoll UDP oder TCP auswählen. Einem Port kann jeweils nur eines der beiden Protokolle zugewiesen werden.
 
-### Schritt 1
+### Schritt 1
 
 Erstellen Sie die NAT-Regeln.
 
@@ -129,12 +129,12 @@ Parameter:
 - **-f**: Zu verwendender Front-End-Port (der „probe“-Befehl verwendet „-f“ zum Definieren des Testpfads)
 - **-b**: Zu verwendender Back-End-Port
 
-### Schritt 2
+### Schritt 2
 
-Erstellen Sie eine Load Balancer-Regel.
+Erstellen Sie eine Load Balancer-Regel.
 
 	azure network lb rule create nrprg nrplb lbrule -p tcp -f 80 -b 80 -t NRPfrontendpool -o NRPbackendpool
-### Schritt 3
+### Schritt 3
 
 Erstellen Sie einen Integritätstest.
 
@@ -145,7 +145,7 @@ Erstellen Sie einen Integritätstest.
 
 **-g**: Ressourcengruppe **-l**: Name des Load Balancer-Satzes **-n**: Name der Integritätsprüfung **-p**: Protokoll für die Integritätsprüfung **-i**: Testintervall in Sekunden **-c**: Anzahl der Prüfungen
 
-### Schritt 4
+### Schritt 4
 
 Überprüfen Sie Ihre Einstellungen.
 
@@ -216,7 +216,7 @@ Erwartete Ausgabe:
 
 Sie müssen NICs erstellen (oder vorhandene ändern) und diese NAT-Regeln, Load Balancer-Regeln und Tests zuordnen.
 
-### Schritt 1 
+### Schritt 1 
 
 Erstellen Sie eine NIC mit dem Namen *lb-nic1-be*, und ordnen Sie sie der NAT-Regel *rdp1* und dem Back-End-Adresspool *NRPbackendpool* zu.
 	
@@ -258,13 +258,13 @@ Erwartete Ausgabe:
 	data:
 	info:    network nic create command OK
 
-### Schritt 2
+### Schritt 2
 
 Erstellen Sie eine NIC mit dem Namen *lb-nic2-be*, und ordnen Sie sie der NAT-Regel *rdp2* und dem Back-End-Adresspool *NRPbackendpool* zu.
 
  	azure network nic create -g nrprg -n lb-nic2-be --subnet-name nrpvnetsubnet --subnet-vnet-name nrpvnet -d "/subscriptions/####################################/resourceGroups/nrprg/providers/Microsoft.Network/loadBalancers/nrplb/backendAddressPools/NRPbackendpool" -e "/subscriptions/####################################/resourceGroups/nrprg/providers/Microsoft.Network/loadBalancers/nrplb/inboundNatRules/rdp2" eastus
 
-### Schritt 3 
+### Schritt 3 
 
 Erstellen Sie einen virtuellen Computer (VM) mit dem Namen *web1*, und ordnen Sie ihn der NIC mit dem Namen *lb-nic1-be* zu. Ein Speicherkonto namens *web1nrp* wurde erstellt, bevor der folgende Befehl ausgeführt wurde:
 
@@ -293,9 +293,9 @@ Die Ausgabe sieht dann wie folgt aus:
 
 >[AZURE.NOTE] Die Informationsmeldung **Dies ist eine NIC ohne konfigurierte öffentliche IP-Adresse** wird erwartet, da sich die für den Load Balancer erstellte NIC über die öffentliche IP-Adresse des Load Balancers mit dem Internet verbindet.
 
-Da die NIC *lb-nic1-be* der NAT-Regel *rdp1* zugeordnet ist, können Sie über RDP an Port 3441 auf dem Load Balancer eine Verbindung mit *web1* herstellen.
+Da die NIC *lb-nic1-be* der NAT-Regel *rdp1* zugeordnet ist, können Sie über RDP an Port 3441 auf dem Load Balancer eine Verbindung mit *web1* herstellen.
 
-### Schritt 4
+### Schritt 4
 
 Erstellen Sie einen virtuellen Computer (VM) mit dem Namen *web2*, und ordnen Sie ihn der NIC mit dem Namen *lb-nic2-be* zu. Ein Speicherkonto namens *web1nrp* wurde erstellt, bevor der folgende Befehl ausgeführt wurde:
 
@@ -328,4 +328,4 @@ Verwenden Sie zum Entfernen eines Load Balancers den folgenden Befehl:
 
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

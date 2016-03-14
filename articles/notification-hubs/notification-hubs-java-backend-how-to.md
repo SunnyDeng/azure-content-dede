@@ -3,7 +3,7 @@
 	description="Erfahren Sie mehr über die Verwendung von Azure Notification Hubs von einem Java-Back-End." 
 	services="notification-hubs" 
 	documentationCenter="" 
-	authors="ysxu" 
+	authors="wesmc7777" 
 	manager="dwrede" 
 	editor=""/>
 
@@ -14,7 +14,7 @@
 	ms.devlang="java" 
 	ms.topic="article" 
 	ms.date="11/01/2015" 
-	ms.author="yuaxu"/>
+	ms.author="wesmc"/>
 
 # Verwenden von Notification Hubs von Java aus
 [AZURE.INCLUDE [notification-hubs-backend-how-to-selector](../../includes/notification-hubs-backend-how-to-selector.md)]
@@ -303,4 +303,4 @@ In diesem Thema haben wir gezeigt, wie Sie einen einfachen Java REST-Client für
 [Maven]: http://maven.apache.org/
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0302_2016-->

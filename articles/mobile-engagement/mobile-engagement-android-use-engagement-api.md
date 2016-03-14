@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-android" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/10/2015" 
+	ms.date="02/29/2016" 
 	ms.author="piyushjo" />
 
 #Verwenden der Engagement-API unter Android
@@ -40,7 +40,7 @@ Aber *Aktivitäten* können auch manuell mithilfe der Engagement-API gesteuert w
 
 ##Berichterstellung für Aktivitäten
 
-> [AZURE.IMPORTANT]Wenn Sie die `EngagementActivity`-Klasse und ihre Varianten, wie unter „Integrieren von Engagement unter Android“ beschrieben, verwenden, müssen Sie die Aktivitäten nicht gemäß der Beschreibung in diesem Abschnitt melden.
+> [AZURE.IMPORTANT] Wenn Sie die `EngagementActivity`-Klasse und ihre Varianten, wie unter „Integrieren von Engagement unter Android“ beschrieben, verwenden, müssen Sie die Aktivitäten nicht gemäß der Beschreibung in diesem Abschnitt melden.
 
 ### Benutzer startet eine neue Aktivität
 
@@ -233,9 +233,9 @@ Ereignissen, Fehlern, Aktivitäten und Aufträgen können beliebige Daten zugeor
 
 Diese Daten können strukturiert werden. Sie verwenden die „Bundle“-Klasse von Android (sie funktionieren in Android-Vorhaben eigentlich wie zusätzliche Parameter). Beachten Sie, dass ein Bündel Arrays oder andere Bündelinstanzen enthalten kann.
 
-> [AZURE.IMPORTANT]Wenn Sie verpackbare oder serialisierbare Parameter einfügen, stellen Sie sicher, dass ihre `toString()`-Methode implementiert ist, damit eine lesbare Zeichenfolge zurückgegeben wird. Serialisierbare Klassen, die nicht flüchtige Felder enthalten, die nicht serialisiert werden können, führen zu einem Absturz von Android, wenn Sie `bundle.putSerializable("key",value);` aufrufen.
+> [AZURE.IMPORTANT] Wenn Sie verpackbare oder serialisierbare Parameter einfügen, stellen Sie sicher, dass ihre `toString()`-Methode implementiert ist, damit eine lesbare Zeichenfolge zurückgegeben wird. Serialisierbare Klassen, die nicht flüchtige Felder enthalten, die nicht serialisiert werden können, führen zu einem Absturz von Android, wenn Sie `bundle.putSerializable("key",value);` aufrufen.
 
-> [AZURE.WARNING]Spärliche Arrays in zusätzlichen Parametern werden nicht unterstützt, d. h. sie werden nicht als Array serialisiert. Sie sollten sie in Standardarrays konvertieren, bevor sie in zusätzlichen Parametern verwendet werden.
+> [AZURE.WARNING] Spärliche Arrays in zusätzlichen Parametern werden nicht unterstützt, d. h. sie werden nicht als Array serialisiert. Sie sollten sie in Standardarrays konvertieren, bevor sie in zusätzlichen Parametern verwendet werden.
 
 ### Beispiel
 
@@ -298,4 +298,4 @@ Im vorherigen Beispiel enthält die an den Server gesendete JSON 44 Zeichen:
 			{"expiration":"2016-12-07","status":"premium"}
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0302_2016-->

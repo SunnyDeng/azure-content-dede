@@ -103,7 +103,7 @@ Wenn seit den Änderungen an Ihrer Domäne mehr als 72 Stunden vergangen sind, m
 
 ## Überprüfen Ihrer benutzerdefinierten Domäne für den Verbund mit Ihrem lokalen Verzeichnis
 
-1.  Laden Sie Azure AD Connect herunter, und führen Sie es aus. Das Azure AD Connect-Tool [fordert Sie zum Hinzufügen der DNS-Einträge auf, die von ihm bereitgestellt werden](active-directory-aadconnect-get-started-custom.md#select-the-azure-ad-domain-that-you-wish-to-federate).
+1.  Laden Sie Azure AD Connect herunter, und führen Sie es aus. Das Tool Azure AD Connect [fordert Sie zum Hinzufügen der von ihm bereitgestellten DNS-Einträge auf](active-directory-aadconnect-get-started-custom.md#verify-the-azure-ad-domain-selected-for-federation).
 
 ## Domänennamen der dritten Ebene
 
@@ -125,4 +125,4 @@ Nachdem Sie Ihre Domäne überprüft haben, können Sie sie so konfigurieren, da
 - [Ändern der DNS-Registrierungsstelle für Ihren benutzerdefinierten Domänennamen](active-directory-add-domain-change-registrar.md)
 - [Löschen einer benutzerdefinierten Domäne in Azure Active Directory](active-directory-add-domain-delete-domain.md)
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0302_2016-->

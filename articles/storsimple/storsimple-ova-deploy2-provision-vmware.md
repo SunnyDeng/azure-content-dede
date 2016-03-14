@@ -13,22 +13,19 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="01/20/2016"
+   ms.date="03/01/2016"
    ms.author="alkohli"/>
 
 
-# Bereitstellen des StorSimple Virtual Array – Bereitstellen eines Virtual Array in VMware (Vorschau)
+# Bereitstellen des StorSimple Virtual Array – Bereitstellen eines Virtual Array in VMware
 
 ![](./media/storsimple-ova-deploy2-provision-vmware/vmware4.png)
 
 ## Übersicht 
-Dieses Tutorial zur Bereitstellung bezieht sich nur auf StorSimple Virtual Arrays (auch als „lokale virtuelle StorSimple-Geräte“ oder „virtuelle StorSimple-Geräte“ bezeichnet) mit Version 1.1.1.0 (öffentliche Vorschau). In diesem Tutorial wird beschrieben, wie Sie ein StorSimple Virtual Array auf einem Hostsystem mit VMware ESXi 5.5 und höher bereitstellen und die Verbindung dafür herstellen.
+Dieses Tutorial zur Bereitstellung bezieht sich auf StorSimple Virtual Arrays (auch als „lokale virtuelle StorSimple-Geräte“ oder „virtuelle StorSimple-Geräte“ bezeichnet) mit der Version vom März 2016 (allgemeine Verfügbarkeit). In diesem Tutorial wird beschrieben, wie Sie ein StorSimple Virtual Array auf einem Hostsystem mit VMware ESXi 5.5 und höher bereitstellen und die Verbindung dafür herstellen.
 
 Sie benötigen Administratorrechte, um ein virtuelles Gerät bereitzustellen und zu verbinden. Die Bereitstellung und die anfängliche Einrichtung dauern ca. 10 Minuten.
 
-> [AZURE.IMPORTANT]
-> 
-> Diese öffentliche Vorschauversion ist nur für Testzwecke bestimmt. Die Installation dieser Vorschau in einer Produktionsumgebung wird nicht unterstützt.
 
 ## Voraussetzungen für die Bereitstellung
 
@@ -104,7 +101,7 @@ Führen Sie die folgenden Schritte aus, um ein virtuelles Gerät im Hypervisor b
 
 	![](./media/storsimple-ova-deploy2-provision-vmware/image2.png)
 
-1.  Zuerst laden Sie das VMDK auf den ESXi-Server hoch. Navigieren Sie im rechten Bereich zur Registerkarte **Konfiguration**. Wählen Sie unter **Hardware** die Option **Storage**.
+1.  Zuerst laden Sie das VMDK auf den ESXi-Server hoch. Navigieren Sie im rechten Bereich zur Registerkarte **Konfiguration**. Wählen Sie unter **Hardware** die Option **Speicher**.
 
 	![](./media/storsimple-ova-deploy2-provision-vmware/image3.png)
 
@@ -148,10 +145,9 @@ Führen Sie die folgenden Schritte aus, um ein virtuelles Gerät im Hypervisor b
 
 	![](./media/storsimple-ova-deploy2-provision-vmware/image15.png)
 
-1.  Das Fenster **Neuen virtuellen Computer erstellen** wird angezeigt. Wählen Sie auf der Seite **Konfiguration** die Option **Benutzerdefiniert**. Klicken Sie auf **Weiter**.
-	![](./media/storsimple-ova-deploy2-provision-vmware/image16.png)
+1.  Das Fenster **Neuen virtuellen Computer erstellen** wird angezeigt. Wählen Sie auf der Seite **Konfiguration** die Option **Benutzerdefiniert**. Klicken Sie auf **Weiter**.![](./media/storsimple-ova-deploy2-provision-vmware/image16.png)
 
-2.  Geben Sie auf der Seite **Name und Speicherort** den Namen der virtuellen Maschine an. Dieser Name sollte mit dem Ordnernamen übereinstimmen, den Sie in Schritt 8 angegeben haben (empfohlene bewährte Methode).
+2.  Geben Sie auf der Seite **Name und Speicherort** den Namen des virtuellen Computers an. Dieser Name sollte mit dem Ordnernamen übereinstimmen, den Sie in Schritt 8 angegeben haben (empfohlene bewährte Methode).
 
 	![](./media/storsimple-ova-deploy2-provision-vmware/image17.png)
 
@@ -187,7 +183,7 @@ Führen Sie die folgenden Schritte aus, um ein virtuelles Gerät im Hypervisor b
 
 	![](./media/storsimple-ova-deploy2-provision-vmware/image25.png)
 
-1.  Klicken Sie auf der Seite **Vorhandenen Datenträger auswählen** unter **Datenträger-Dateipfad** auf **Durchsuchen**. Das Dialogfeld **Datenspeicher durchsuchen** wird geöffnet. Navigieren Sie zu dem Speicherort, an den Sie das VMDK hochgeladen haben. Wählen Sie die Datei aus, und klicken Sie auf **OK**. Klicken Sie auf **Weiter**.
+1.  Klicken Sie auf der Seite **Vorhandenen Datenträger auswählen** unter **Datenträgerdateipfad** auf **Durchsuchen**. Das Dialogfeld **Datenspeicher durchsuchen** wird geöffnet. Navigieren Sie zu dem Speicherort, an den Sie das VMDK hochgeladen haben. Wählen Sie die Datei aus, und klicken Sie auf **OK**. Klicken Sie auf **Weiter**.
 
 	![](./media/storsimple-ova-deploy2-provision-vmware/image26.png)
 
@@ -195,7 +191,7 @@ Führen Sie die folgenden Schritte aus, um ein virtuelles Gerät im Hypervisor b
 
 	![](./media/storsimple-ova-deploy2-provision-vmware/image27.png)
 
-1.  Prüfen Sie auf der Seite **Für Fertigstellung bereit** alle Einstellungen, die der neuen virtuellen Maschine zugeordnet sind. Aktivieren Sie **Einstellungen der virtuellen Maschine vor der Fertigstellung bearbeiten**. Klicken Sie auf **Weiter**.
+1.  Prüfen Sie auf der Seite **Für Fertigstellung bereit** alle Einstellungen, die dem neuen virtuellen Computer zugeordnet sind. Aktivieren Sie **Einstellungen des virtuellen Computers vor der Fertigstellung bearbeiten**. Klicken Sie auf **Weiter**.
 
 	![](./media/storsimple-ova-deploy2-provision-vmware/image28.png)
 
@@ -211,7 +207,7 @@ Führen Sie die folgenden Schritte aus, um ein virtuelles Gerät im Hypervisor b
 
 	![](./media/storsimple-ova-deploy2-provision-vmware/image31.png)
 
-1.  Ändern Sie auf der Seite **Datenträger erstellen** die **Datenträgergröße** in 500 GB (oder mehr). Wählen Sie unter **Datenträgerbereitstellung** die Option **Thin-Bereitstellung**. Klicken Sie auf **Weiter**.
+1.  Ändern Sie auf der Seite **Datenträger erstellen** die **Datenträgergröße** in 500 GB (oder mehr). Wählen Sie unter **Datenträgerbereitstellung** die Option **Schlanke Speicherzuweisung**. Klicken Sie auf **Weiter**.
 
 	![](./media/storsimple-ova-deploy2-provision-vmware/image32.png)
 
@@ -227,7 +223,7 @@ Führen Sie die folgenden Schritte aus, um ein virtuelles Gerät im Hypervisor b
   
 	![](./media/storsimple-ova-deploy2-provision-vmware/image35.png)
 
-2.  Navigieren Sie zur Registerkarte **Zusammenfassung**, während Ihre virtuelle Maschine im rechten Bereich ausgewählt ist. Überprüfen Sie die Einstellungen für die virtuelle Maschine.
+2.  Navigieren Sie zur Registerkarte **Zusammenfassung**, während Ihr virtueller Computer im rechten Bereich ausgewählt ist. Überprüfen Sie die Einstellungen für die virtuelle Maschine.
 
 	![](./media/storsimple-ova-deploy2-provision-vmware/image36.png)
 
@@ -243,7 +239,7 @@ Führen Sie die folgenden Schritte aus, um Ihr virtuelles Gerät zu starten und 
 
 	![](./media/storsimple-ova-deploy2-provision-vmware/image37.png)
 
-1.  Es dauert einige Minuten, bis die Einrichtungsaufgaben abgeschlossen sind. Wenn das Gerät ausgeführt wird, navigieren Sie zur Registerkarte **Konsole**. Verwenden Sie STRG+ALT+ENTF, um sich am Gerät anzumelden. Alternativ dazu können Sie auch mit dem Cursor auf das Konsolenfenster zeigen und STRG+ALT+EINFG drücken. Der Standardbenutzer lautet *StorSimpleAdmin*, und das Standardkennwort lautet *Password1*.
+1.  Es dauert einige Minuten, bis die Einrichtungsaufgaben abgeschlossen sind. Wenn das Gerät ausgeführt wird, navigieren Sie zur Registerkarte **Konsole**. Verwenden Sie STRG+ALT+ENTF, um sich am Gerät anzumelden. Alternativ dazu können Sie auch mit dem Cursor auf das Konsolenfenster zeigen und STRG+ALT+EINFG drücken. Der Standardbenutzer ist *StorSimpleAdmin*, und das Standardkennwort ist *Password1*.
 
 	![](./media/storsimple-ova-deploy2-provision-vmware/image38.png)
 
@@ -265,7 +261,7 @@ Führen Sie die folgenden Schritte aus, um Ihr virtuelles Gerät zu starten und 
 
 	Sie müssen das Netzwerk jetzt konfigurieren.
 
-1.  Verwenden Sie den Befehl `Get-HcsIpAddress`, um die Netzwerkschnittstellen aufzulisten, die auf Ihrem virtuellen Gerät aktiviert sind. Wenn für das Gerät eine einzelne Netzwerkschnittstelle aktiviert ist, wird dieser Schnittstelle der Standardname `Ethernet` zugewiesen.
+1.  Verwenden Sie den `Get-HcsIpAddress`-Befehl, um die Netzwerkschnittstellen aufzulisten, die auf Ihrem virtuellen Gerät aktiviert sind. Wenn für das Gerät eine einzelne Netzwerkschnittstelle aktiviert ist, wird dieser Schnittstelle der Standardname `Ethernet` zugewiesen.
 
 	![](./media/storsimple-ova-deploy2-provision-vmware/image43.png)
 
@@ -296,4 +292,4 @@ Falls bei der anfänglichen Konfiguration über die lokale Web-UI andere Fehler 
 
 -   [Einrichten des StorSimple Virtual Array als iSCSI-Server](storsimple-ova-deploy3-iscsi-setup.md)
 
-<!----HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0302_2016-->

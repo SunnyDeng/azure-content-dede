@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="CDN – Analysieren der Edgeleistung" 
-	description="Analysieren der Leistung von Edgeknoten in Microsoft Azure CDN. Das Edge Performance Analytics-Modul liefert differenzierte Informationen zu Datenverkehr und Bandbreitenauslastung im CDN." 
-	services="cdn" 
-	documentationCenter=".NET" 
-	authors="camsoper" 
-	manager="dwrede" 
+<properties
+	pageTitle="CDN – Analysieren der Edgeleistung"
+	description="Analysieren der Leistung von Edgeknoten in Microsoft Azure CDN. Das Edge Performance Analytics-Modul liefert differenzierte Informationen zu Datenverkehr und Bandbreitenauslastung im CDN."
+	services="cdn"
+	documentationCenter=".NET"
+	authors="camsoper"
+	manager="erikre"
 	editor=""/>
 
-<tags 
-	ms.service="cdn" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="12/02/2015" 
+<tags
+	ms.service="cdn"
+	ms.workload="tbd"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="02/25/2016"
 	ms.author="casoper"/>
 
 # Analysieren der Leistung von Edgeknoten in Microsoft Azure CDN
@@ -21,7 +21,7 @@
 ## Übersicht
 Das Edge Performance Analytics-Modul liefert differenzierte Informationen zu Datenverkehr und Bandbreitenauslastung im CDN. Diese Informationen können verwendet werden, um Trendstatistiken zu generieren, mit denen Sie sich einen Einblick verschaffen können, wie Ihre Assets im Cache zwischengespeichert und an Ihre Clients übermittelt werden. Anschließend können Sie eine Strategie dazu entwickeln, wie die Übermittlung Ihrer Inhalte optimiert werden kann und bestimmen, welche Probleme angegangen werden sollten, um das CDN besser zu nutzen. Die Folge ist, dass Sie nicht nur die Datenübermittlungsleistung steigern, sondern auch Ihre CDN-Kosten senken können.
 
-> [AZURE.NOTE]Edge Performance Analytics ist ein Feature des CDN-Tarifs „Premium“. Einen Vergleich der Features der CDN-Tarife „Standard“ und „Premium“ finden Sie in der [Übersicht über das Azure Content Delivery Network (CDN)](cdn-overview.md).
+> [AZURE.NOTE] Edge Performance Analytics ist ein Feature des CDN-Tarifs „Premium“. Einen Vergleich der Features der CDN-Tarife „Standard“ und „Premium“ finden Sie in der [Übersicht über das Azure Content Delivery Network (CDN)](cdn-overview.md).
 >
 > Alle Berichte verwenden zur Angabe von Datum/Uhrzeit die UTC-/GMT-Notation.
 
@@ -29,7 +29,7 @@ Das Edge Performance Analytics-Modul liefert differenzierte Informationen zu Dat
 
 CDN-Aktivitätsdaten müssen vom Edge Performance Analytics-Modul erst gesammelt werden, bevor Berichte dazu erstellt werden können. Diese Sammlung erfolgt einmal täglich und deckt die Aktivität am vorhergehenden Tag ab. Dies bedeutet, dass die Statistiken eines Berichts eine Stichprobe der Statistiken dieses Tags zum Zeitpunkt ihrer Verarbeitung sind und nicht unbedingt die komplette Datenmenge für den aktuellen Tag enthalten. Die primäre Aufgabe dieser Berichte ist das Bewerten der Leistung. Sie sind nicht für Abrechnungszwecke oder exakte numerische Statistiken gedacht.
 
-> [AZURE.NOTE]Die Rohdaten, anhand derer Edge Performance Analytics-Berichte generiert werden, stehen mindestens 90 Tage zur Verfügung.
+> [AZURE.NOTE] Die Rohdaten, anhand derer Edge Performance Analytics-Berichte generiert werden, stehen mindestens 90 Tage zur Verfügung.
 
 ## Dashboard
 
@@ -46,11 +46,11 @@ Dieses Dashboard besteht aus folgenden Elementen:
 1. Klicken Sie auf dem Blatt „CDN-Profil“ auf die Schaltfläche **Verwalten**.
 
 	![Schaltfläche „Verwalten“ auf dem Blatt „CDN-Profil“](./media/cdn-edge-performance/cdn-manage-btn.png)
-	
+
 	Das CDN-Verwaltungsportal wird geöffnet.
-	
+
 2. Zeigen Sie auf die Registerkarte **Analysen** und dann auf das Flyout **Edge Perfomance Analytics**. Klicken Sie auf **Dashboard**.
-	
+
 	Das Edge Performance Analytics-Dashboard wird angezeigt.
 
 ### Diagramm
@@ -98,7 +98,7 @@ Zweck dieser Metriken ist das Ermöglichen von Einblicken in die folgenden koste
 * Minimierung der Betriebskosten durch das CDN
 * Reduzieren die CDN-Ausgaben mittels Cache-Effizienz und Komprimierung
 
-> [AZURE.NOTE]Zahlen zum Datenverkehrsvolumen stellen Datenverkehr dar, der in Berechnungen von Verhältnissen und Prozentsätzen verwendet wurde, und zeigen bei Kunden mit hohen Volumen ggf. nur einen Teil des gesamten Datenverkehrs.
+> [AZURE.NOTE] Zahlen zum Datenverkehrsvolumen stellen Datenverkehr dar, der in Berechnungen von Verhältnissen und Prozentsätzen verwendet wurde, und zeigen bei Kunden mit hohen Volumen ggf. nur einen Teil des gesamten Datenverkehrs.
 
 Feld | Beschreibung
 ------|------------
@@ -143,13 +143,13 @@ Jeder Bericht in diesem Modul enthält ein Diagramm und Statistiken zu Bandbreit
 1. Klicken Sie auf dem Blatt „CDN-Profil“ auf die Schaltfläche **Verwalten**.
 
 	![Schaltfläche „Verwalten“ auf dem Blatt „CDN-Profil“](./media/cdn-edge-performance/cdn-manage-btn.png)
-	
+
 	Das CDN-Verwaltungsportal wird geöffnet.
-	
+
 2. Zeigen Sie auf die Registerkarte **Analysen** und dann auf das Flyout **Edge Perfomance Analytics**. Klicken Sie auf **Großes HTTP-Objekt**.
-	
+
 	Der Bildschirm mit Edge Performance Analytics-Berichten wird angezeigt.
-	
+
 Bericht | Beschreibung
 -------|------------
 Tägliche Zusammenfassung | Ermöglicht das Prüfen täglicher Datenverkehrstrends über einen bestimmten Zeitraum. Jeder Balken in diesem Diagramm stellt ein bestimmtes Datum dar. Die Größe des Balkens gibt die Gesamtanzahl der Treffer an diesem Datum an.
@@ -157,7 +157,7 @@ Stündliche Zusammenfassung | Ermöglicht das Prüfen stündlicher Datenverkehrs
 Protokolle | Zeigt die Aufschlüsselung des Datenverkehrs zwischen den Protokollen HTTP und HTTPS. Ein Ringdiagramm gibt den Prozentsatz der Treffer für jeden Protokolltyp an.
 HTTP-Methoden | Bietet rasch einen Überblick darüber, welche HTTP-Methoden zum Anfordern Ihrer Daten genutzt werden. Die gängigsten HTTP-Anforderungsmethoden sind GET, HEAD und POST. Ein Ringdiagramm gibt den Prozentsatz der Treffer für alle Typen von HTTP-Anforderungsmethoden an.
 URLs | Enthält ein Diagramm der 10 am häufigsten angeforderten URLs. Für jede URL wird ein Balken angezeigt. Die Höhe des Balkens gibt die Anzahl der Treffer an, die diese URL im Berichtszeitraum generiert hat. Direkt unter diesem Diagramm werden Statistiken zu den 100 am häufigsten angeforderten URLs angezeigt.
-CNAMEs | Enthält ein Diagramm der 10 CNAMEs, die im Berichtszeitraum am häufigsten zum Anfordern von Assets verwendet wurden. Direkt unter diesem Diagramm werden Statistiken zu den 100 am häufigsten angeforderten CNAMEs angezeigt. 
+CNAMEs | Enthält ein Diagramm der 10 CNAMEs, die im Berichtszeitraum am häufigsten zum Anfordern von Assets verwendet wurden. Direkt unter diesem Diagramm werden Statistiken zu den 100 am häufigsten angeforderten CNAMEs angezeigt.
 Ursprünge | Enthält ein Diagramm der 10 am häufigsten verwendeten CDN- oder Kundenursprungsserver, von denen im angegebenen Zeitraum Assets angefordert wurden. Direkt unter diesem Diagramm werden Statistiken zu den 100 am häufigsten angeforderten CDN- oder Kundenursprungsservern angezeigt. Kundenursprungsserver werden anhand des Namens bestimmt, der in der Option „Verzeichnisname“ definiert wurde.
 Geo-POPs | Zeigt an, wie viel von Datenverkehr durch einen bestimmten Point of Presence (POP) geleitet wird. Die aus drei Buchstaben bestehende Abkürzung stellt einen POP in unserem CDN-Netzwerk dar.
 Clients | Enthält ein Diagramm der 10 Clients, die Assets im angegebenen Zeitraum am häufigsten angefordert haben. Für diesen Berichts werden alle Anforderungen, die von derselben IP-Adresse stammen, demselben Client zugeordnet. Direkt unter diesem Diagramm werden Statistiken zu den 100 aktivsten Clients angezeigt. Dieser Bericht dient zum Bestimmen von Downloadaktivitätsmustern Ihrer aktivsten Clients.
@@ -192,4 +192,4 @@ HTTP Response Codes | Bietet eine Aufschlüsselung der HTTP-Statuscodes (z. B. 2
 * [Überschreiben des HTTP-Standardverhaltens mithilfe des Regelmoduls](cdn-rules-engine.md)
 * [Erweiterte HTTP-Berichte](cdn-advanced-http-reports.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0302_2016-->

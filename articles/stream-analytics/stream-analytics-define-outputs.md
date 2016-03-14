@@ -3,7 +3,7 @@
 	description="Erfahren Sie , wie Sie Stream Analytics-Datentransformationsausgaben auf Datenspeicheroptionen ausrichten können. Verwenden Sie außerdem Power BI für die Analyseergebnisse."
 	keywords="Datentransformation, Analyseergebnisse, Datenspeicheroptionen"
 	services="stream-analytics,documentdb,sql-database,event-hubs,service-bus,storage"
-	documentationCenter=""
+	documentationCenter="" 
 	authors="jeffstokes72"
 	manager="paulettm"
 	editor="cgronlun"/>
@@ -14,7 +14,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="data-services"
-	ms.date="02/04/2016"
+	ms.date="03/02/2016"
 	ms.author="jeffstok"/>
 
 # Ausrichten von Stream Analytics-Datentransformationsausgaben auf Analysetools und Datenspeicheroptionen
@@ -39,7 +39,7 @@ Um verschiedene Anwendungsmuster zu ermöglichen, stellt Azure Stream Analytics 
 
 ## Blob-Speicher ##
 
-Blobspeicher bietet eine kostengünstige und skalierbare Lösung zum Speichern von großen Mengen unstrukturierter Daten in der Cloud. Eine Einführung in Azure-Blob-Speicher und dessen Nutzung finden Sie in der Dokumentation unter [Verwenden des Blob-Speichers mit .NET](./articles/storage-dotnet-how-to-use-blobs.md).
+Blobspeicher bietet eine kostengünstige und skalierbare Lösung zum Speichern von großen Mengen unstrukturierter Daten in der Cloud. Eine Einführung in Azure-Blob-Speicher und dessen Nutzung finden Sie in der Dokumentation unter [Verwenden des Blob-Speichers mit .NET](../storage/storage-dotnet-how-to-use-blobs.md).
 
 Die folgende Tabelle enthält die Eigenschaftennamen und die entsprechenden Beschreibungen zum Erstellen einer Blobausgabe.
 
@@ -118,7 +118,7 @@ Es gibt einige Parameter, die erforderlich sind, um Event Hub-Datenströme als A
 
 [Power BI](https://powerbi.microsoft.com/) kann als Ausgabe für einen Stream Analytics-Auftrag verwendet werden, um eine umfassende Visualisierungsumgebung für die Analyseergebnisse bereitzustellen. Diese Funktionalität kann für betriebliche Dashboards, die Erstellung von Berichten und eine metrikgesteuerte Berichterstellung verwendet werden.
 
-> [AZURE.NOTE] Zu diesem Zeitpunkt wird die Erstellung und Konfiguration von Power BI-Ausgaben im Azure-Vorschauportal nicht unterstützt.
+> [AZURE.NOTE] Zu diesem Zeitpunkt wird die Erstellung und Konfiguration von Power BI-Ausgaben nur im klassischen Azure-Portal unterstützt.
 
 ### Autorisieren eines Power BI-Kontos
 
@@ -159,7 +159,7 @@ Um dieses Problem zu beheben, halten Sie den laufenden Auftrag an, und wechseln 
 
 ## Table Storage
 
-[Azure-Tabellenspeicher](./articles/storage-introduction.md) bietet einen hoch verfügbaren, in hohem Maße skalierbaren Speicher, sodass eine Anwendung automatisch an die Bedürfnisse der Benutzer angepasst werden kann. Tabellenspeicher ist Microsofts NoSQL-Schlüssel-/Attributspeicher, der für strukturierte Daten genutzt werden kann, die weniger Einschränkungen hinsichtlich des Schemas haben. Azure-Tabellenspeicher kann zum Speichern von Daten für dauerhafte Archivierung und effizienten Abruf verwendet werden.
+[Azure-Tabellenspeicher](../storage/storage-introduction.md) bietet einen hoch verfügbaren, in hohem Maße skalierbaren Speicher, sodass eine Anwendung automatisch an die Bedürfnisse der Benutzer angepasst werden kann. Tabellenspeicher ist Microsofts NoSQL-Schlüssel-/Attributspeicher, der für strukturierte Daten genutzt werden kann, die weniger Einschränkungen hinsichtlich des Schemas haben. Azure-Tabellenspeicher kann zum Speichern von Daten für dauerhafte Archivierung und effizienten Abruf verwendet werden.
 
 Die folgende Tabelle enthält die Eigenschaftennamen und die entsprechenden Beschreibungen zum Erstellen einer Tabellenausgabe.
 
@@ -267,4 +267,4 @@ Sie haben nun Stream Analytics kennengelernt, einen verwalteten Dienst für Stre
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0302_2016-->

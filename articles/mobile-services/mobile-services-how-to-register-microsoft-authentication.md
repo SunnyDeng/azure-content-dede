@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="NA" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="11/30/2015" 
+	ms.date="02/25/2016" 
 	ms.author="glenga"/>
 
 # Registrieren Ihrer App für die Verwendung eines Microsoft-Kontos für die Authentifizierung
@@ -31,7 +31,7 @@ In diesem Thema erfahren Sie, wie Sie Ihre mobile App registrieren, um ihr Micro
 
 ##Registrieren der Windows Store-App im Windows-Entwicklungscenter
 
-Windows Store-Apps müssen zunächst im Windows-Entwicklungscenter registriert werden.
+Windows Store-Apps müssen zunächst im Windows-Entwicklungscenter registriert werden. Durch die Registrierung können Windows-Apps Verhalten für einmaliges Anmelden verwenden.
 
 >[AZURE.NOTE]Windows Phone 8, Windows Phone 8.1 Silverlight und nicht auf Windows basierte Anwendungen können diesen Abschnitt überspringen.
 
@@ -48,12 +48,16 @@ Windows Store-Apps müssen zunächst im Windows-Entwicklungscenter registriert w
 6. Klicken Sie auf der Windows Dev Center-Seite für Ihre neue App auf **Dienste** > **Pushbenachrichtigungen**.
 
 7. Klicken Sie auf der Seite **Pushbenachrichtigungen** unter **Windows-Pushbenachrichtigungsdienste (WNS) und Microsoft Azure Mobile Services** auf **Live Services-Website**.
+ 
+	Die Seite mit den App-Einstellungen des Microsoft-Kontos für Ihre App wird nun angezeigt.
 
-Die Microsoft-Kontoseite für Ihre App wird nun angezeigt. Als Nächstes erhalten Sie die Anmeldeinformationen, die Azure benötigt, um die Microsoft-Authentifizierung für Ihre App verwenden zu können.
+8. Notieren Sie sich den Wert der **Paket-SID**. Sie können diese SID im Azure-Portal speichern, um das einmalige Anmelden sowie Pushbenachrichtigungen für die Windows-App zu aktivieren.
+
+Als Nächstes konfigurieren Sie die Microsoft-Kontoauthentifizierung für Ihre Windows-App (ab Schritt 4 im nächsten Abschnitt).
 
 ## Konfigurieren Sie Ihre Microsoft-Kontoanmeldung und stellen Sie eine Verbindung zu Mobile Services her
 
-Der erste Schritt in diesem Abschnitt gilt nur für Windows Phone 8, Windows Phone 8.1 Silverlight und Apps, die nicht Windows Store-basiert sind. Für diese Anwendungen können Sie auch die Paket-Sicherheits-ID (SID) ignorieren, die nur für Windows Store-Apps verfügbar ist.
+Wenn Sie Ihre Windows-App bereits im vorherigen Abschnitt registriert haben, können Sie zu Schritt 2 wechseln.
 
 1. Für eine App, die nicht Windows Store-basiert ist, navigieren Sie zur Seite [Meine Anwendungen](http://go.microsoft.com/fwlink/p/?LinkId=262039) im Developer Center des Microsoft-Kontos, melden sich mit Ihrem Microsoft-Konto an (falls erforderlich), klicken auf **Anwendung erstellen**, geben einen Anwendungsnamen ein und klicken auf **Ich stimme zu**.
 
@@ -64,7 +68,7 @@ Der erste Schritt in diesem Abschnitt gilt nur für Windows Phone 8, Windows Pho
 	+ **.NET-Back-End**: `https://<mobile_service>.azure-mobile.net/signin-microsoft`
 	+ **JavaScript-Back-End**: `https://<mobile_service>.azure-mobile.net/login/microsoftaccount`
 
-	 >[AZURE.NOTE]Stellen Sie sicher, dass Sie das passende Umleitungs-URL-Pfadformat für Ihr Mobile Services-Back-End verwenden. Andernfalls ist die Authentifizierung nicht erfolgreich. Die **Stammdomäne** wird automatisch ausgefüllt. &nbsp;
+	 >[AZURE.NOTE]Stellen Sie sicher, dass Sie das richtige Umleitungs-URL-Pfadformat für Ihren Typ von Mobile Services-Back-End verwenden. Andernfalls ist die Authentifizierung nicht erfolgreich. Die **Stammdomäne** wird automatisch ausgefüllt. &nbsp;
 
     ![API-Einstellungen im Microsoft-Konto](./media/mobile-services-how-to-register-microsoft-authentication/mobile-services-win8-app-push-auth-2.png)
 
@@ -74,7 +78,7 @@ Der erste Schritt in diesem Abschnitt gilt nur für Windows Phone 8, Windows Pho
    	![App-Einstellungen im Microsoft-Konto](./media/mobile-services-how-to-register-microsoft-authentication/mobile-services-win8-app-push-auth.png)
 
 
-    > [AZURE.NOTE]Der geheime Clientschlüssel ist eine wichtige Anmeldeinformation. Teilen Sie den geheimen Clientschlüssel mit niemandem, und geben Sie ihn nicht über Ihre App frei. Nur für App-Registrierungen in Windows Store wird ein Paket-SID-Feld angezeigt.
+    > [AZURE.NOTE] Der geheime Clientschlüssel ist eine wichtige Anmeldeinformation. Teilen Sie den geheimen Clientschlüssel mit niemandem, und geben Sie ihn nicht über Ihre App frei. Nur für App-Registrierungen in Windows Store wird ein Paket-SID-Feld angezeigt.
 
 4. Klicken Sie im [klassischen Azure-Portal] auf die Registerkarte **Identität** für den mobilen Dienst, geben Sie die Client-ID, den geheimen Clientschlüssel und die Paket-SID von Ihrem Identitätsanbieter ein, und klicken Sie anschließend auf **Speichern**.
 
@@ -93,4 +97,4 @@ Sowohl Ihr Mobile Service als auch Ihre App sind nun konfiguriert und funktionie
 
 [klassischen Azure-Portal]: https://manage.windowsazure.com/
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0302_2016-->

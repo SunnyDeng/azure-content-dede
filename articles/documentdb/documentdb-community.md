@@ -13,7 +13,7 @@
   ms.topic="article"
   ms.tgt_pltfrm="na"
   ms.workload="data-services"
-  ms.date="01/29/2016"
+  ms.date="02/24/2016"
   ms.author="andrl"/>
 
 # Communityportal
@@ -62,6 +62,15 @@ Eine Swagger-Datei mit einer DocumentDB-REST-API, die problemlos als API-App ber
 
 Informieren Sie sich hierüber bei [Github](https://github.com/HEDIDIN/DocumentDB-REST/tree/master/DocumentDBRestApi).
 
+
+### fluent-plugin-documentdb
+
+*von Yoichi Kawasaki*
+
+fluent-plugin-documentdb ist ein Fluentd-Plug-In für die Ausgabe an Azure DocumentDB.
+
+Sie finden es auf [GitHub](https://github.com/yokawasa/fluent-plugin-documentdb) und [rubygems](https://rubygems.org/gems/fluent-plugin-documentdb).
+
 <br/><br/>
 
 *Weitere Open Source-DocumentDB-Projekte finden Sie unter [GitHub](https://github.com/search?p=4&q=documentdb&type=Repositories).*
@@ -79,6 +88,12 @@ Sie können über aktuelle DocumentDB-Nachrichten und -Features auf dem Laufende
 <br/>
 
 **Communitybeiträge:**
+
+* [**Collecting logs into Azure DocumentDB using fluent-plugin-documentdb**](http://unofficialism.info/posts/collecting-logs-into-azure-documentdb-using-fluent-plugin-documentdb/) (Protokollerfassung in Azure DocumentDB mit fluent-plugin-documentdb) – *von Yoichi Kawasaki*
+
+* [**DocumentDB revisited Part 1/2 – The theory**](https://peterintheazuresky.wordpress.com/2016/02/19/documentdb-revisited-part-12-the-theory/) (Erneute Betrachtung von DocumentDB, Teil 1/2 – Theorie) – *von Peter Mannerhult*
+
+* [**What to love and hate about Azure’s DocumentDB**](http://blog.falafel.com/4-what-to-love-and-hate-about-azures-documentdb/) (Liebens- und Hassenswertes in DocumentDB von Azure) – *von George Saadeh*
 
 * [**Azure DocumentDB Server-Side Scripting**](https://www.simple-talk.com/cloud/cloud-data/azure-documentdb-server-side-scripting/) (Serverseitiges Skripting mit Azure DocumentDB) – *von Robert Sheldon*
 
@@ -138,7 +153,7 @@ Sie können über aktuelle DocumentDB-Nachrichten und -Features auf dem Laufende
 | [Meetup: Azure Austin](http://www.meetup.com/azureaustin/events/228209275/) | Merwan Chinta | Austin, TX | 28\. Januar 2016 | – |
 | [Meetup: msdevmtl](http://www.meetup.com/msdevmtl/events/223839818/) | Vincent-Philippe Lauzon | Montreal (Quebec, Kanada) | 1\. Dezember 2015 | – |
 | [Meetup: SeattleJS](http://www.meetup.com/seattlejs/events/220102664/) | David Makogon | Seattle, WA | 12\. November 2015 | – |
-| [PASS Summit 2015](http://www.sqlpass.org/summit/2015/) | Jeff Renz, Andrew Hoh, Aravind Ramachandran, John Macintyre | Seattle, WA | 27\. bis 30. Oktober 2015 | – |
+| [PASS Summit 2015](http://www.sqlpass.org/summit/2015/) | Jeff Renz, Andrew Hoh, Aravind Ramachandran, John Macintyre | Seattle, WA | 27\. bis 30. Oktober 2015 | [Developing Modern Applications on Azure](https://www.youtube.com/watch?v=k5Z24HX-RyQ) (Moderne Anwendungsentwicklung in Azure) |
 | [CloudDevelop 2015](http://www.clouddevelop.org/) | David Makogon, Ryan Crawcour | Columbus, OH | 23\. Oktober 2015 | – |
 | [SQL Saturday #430 – Sofia 2015](http://www.sqlsaturday.com/430/eventhome.aspx) | Leonard Lobel | Sofia, Bulgarien | 10\. Oktober 2015 | – |
 | [SQL Saturday #429 – Porto 2015](http://www.sqlsaturday.com/429/eventhome.aspx) | Leonard Lobel | Porto, Portugal | 3\. Oktober 2015 | – |
@@ -165,8 +180,10 @@ Sie können über aktuelle DocumentDB-Nachrichten und -Features auf dem Laufende
 
 ### Videos und Podcasts
 
-| Sendung | Referent | Datum | Folge |
+| Sendung | Referent | Datum | Episode |
 | ------------------------------------------- | ----------------------- | ------------------ | ------- |
+| Integration User Group | Han Wong | 17\. Februar 2016 | [Analyze and visualize non-relational data with DocumentDB + Power BI](http://www.integrationusergroup.com/analyze-visualize-non-relational-data-documentdb-power-bi/) (Analysieren und Visualisieren von nicht relationalen Daten mit DocumentDB + Power BI) |
+| Kanal 9: Moderne Anwendungen | Tara Shankar Jana | 13\. Dezember 2016 | [Take a modern approach to data in your apps](https://channel9.msdn.com/Series/Modern-Applications/Take-a-modern-approach-to-data-in-your-apps) (Ein moderner Ansatz für Daten in Ihren Apps) |
 | NinjaTips | Miguel Quintero | 10\. Dezember 2015 | [DocumentDB - Un vistazo general](https://channel9.msdn.com/Series/Ninja-Tips/31-NinjaTips-Desarrollo-DocumentDB-1-Vistazo-general) |
 | Integration User Group | Howard Edidin | 9\. November 2015 | [Azure DocumentDB for Healthcare Integration – Part 2](http://www.integrationusergroup.com/azure-documentdb-for-healthcare-integration-part-2/) |
 | Integration User Group | Howard Edidin | 5\. Oktober 2015 | [Azure DocumentDB for Healthcare Integration](http://www.integrationusergroup.com/?event=azure-documentdb-and-biztalk) |
@@ -267,4 +284,4 @@ DocumentDB-Genies sind wichtige Mitglieder der Community, die sich durch ein bei
 
 Möchten Sie ein DocumentDB-Genie werden? Wenngleich es nicht unbedingt ein bestimmtes Kriterium gibt, das erfüllt sein muss, um ein DocumentDB-Genie zu werden, bewerten wir u. a. den Einfluss der Beiträge des Kandidaten zu Onlineforen wie StackOverflow und MSDN, Wikis, Online-Inhalten, Konferenzen, Benutzergruppen, Podcasts, Websites, Blogs und sozialen Medien sowie Artikeln und Büchern. [Senden uns eine E-Mail](mailto:askdocdb@microsoft.com), um sich selbst oder jemand anderen vorzuschlagen.
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0302_2016-->

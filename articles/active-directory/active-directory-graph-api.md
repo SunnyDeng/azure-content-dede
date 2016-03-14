@@ -12,12 +12,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="01/08/2016"
+   ms.date="02/25/2016"
    ms.author="mbaldwin" />
 
 # Azure Active Directory Graph-API
 
-> [AZURE.IMPORTANT]Die Azure AD Graph-API-Funktionen sind auch durch [Microsoft Graph](https://graph.microsoft.io/) verfügbar. Diese einheitliche API enthält APIs von anderen Microsoft-Diensten, z. B. Outlook, OneDrive, OneNote, Planer und Office Graph, und macht sie über einen einzelnen Endpunkt und ein einzelnes Zugriffstoken verfügbar.
+> [AZURE.IMPORTANT] Die Azure AD Graph-API-Funktionen sind auch durch [Microsoft Graph](https://graph.microsoft.io/) verfügbar. Diese einheitliche API enthält APIs von anderen Microsoft-Diensten, z. B. Outlook, OneDrive, OneNote, Planer und Office Graph, und macht sie über einen einzelnen Endpunkt und ein einzelnes Zugriffstoken verfügbar.
 
 Die Azure Active Directory Graph-API ermöglicht programmgesteuerten Zugriff auf Azure AD über REST-API-Endpunkte. Anwendungen können die Graph-API verwenden, um CRUD-Vorgänge (Erstellen, Lesen, Aktualisieren und Löschen) für Verzeichnisdaten und Objekte auszuführen. Die Graph-API unterstützt beispielsweise die folgenden allgemeinen Vorgänge für ein Benutzerobjekt:
 
@@ -66,4 +66,4 @@ Die Graph-API ermöglicht eine Vielzahl von Anwendungsszenarios. Die gängigsten
 
 [Entwicklerhandbuch zu Azure Active Directory](active-directory-developers-guide.md)
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -13,13 +13,13 @@
 	ms.tgt_pltfrm="mobile-android"
 	ms.devlang="Java"
 	ms.topic="article"
-	ms.date="08/10/2015"
+	ms.date="02/29/2016"
 	ms.author="piyushjo" />
 
 
 #So integrieren Sie ADM in Engagement
 
-> [AZURE.IMPORTANT]Bevor Sie dieser Anleitung folgen, müssen Sie das unter „Integrieren von Mobile Engagement unter Android“ beschriebene Integrationsverfahren befolgen.
+> [AZURE.IMPORTANT] Bevor Sie dieser Anleitung folgen, müssen Sie das unter „Integrieren von Mobile Engagement unter Android“ beschriebene Integrationsverfahren befolgen.
 >
 > Das vorliegende Dokument ist nur hilfreich, wenn Sie das Reach-Modul für die jederzeitige Kampagnenunterstützung integriert haben. Lesen Sie zunächst das Dokument "So integrieren Sie Engagement Reach auf Android", um Informationen zum Integrieren von Reach-Kampagnen zu erhalten.
 
@@ -29,7 +29,7 @@ Durch die Integration von ADM kann Ihre Anwendung Pushnachrichten empfangen, wen
 
 ADM-Nutzlasten, die mithilfe von Push an das SDK übertragen werden, enthalten immer den `azme`-Schlüssel im Datenobjekt. Wenn Sie ADM in Ihrer Anwendung also zu einem anderen Zweck verwenden, können Sie Push-Vorgänge basierend auf diesem Schlüssel filtern.
 
-> [AZURE.IMPORTANT]Von Amazon Device Messaging werden nur Amazon Kindle-Geräte mit Android 4.0.3 oder höher unterstützt, dieser Code kann jedoch ohne Sicherheitsbedenken auf anderen Geräten integriert werden.
+> [AZURE.IMPORTANT] Von Amazon Device Messaging werden nur Amazon Kindle-Geräte mit Android 4.0.3 oder höher unterstützt, dieser Code kann jedoch ohne Sicherheitsbedenken auf anderen Geräten integriert werden.
 
 ##Anmelden bei ADM
 
@@ -112,4 +112,4 @@ Sie können jetzt beim Erstellen von Reach-Ankündigungen und -Umfragen die Opti
 [ADM-Integration]: https://developer.amazon.com/sdk/adm/integrating-app.html
 [dieses Verfahren]: https://developer.amazon.com/sdk/adm/integrating-app.html#Asset
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0302_2016-->

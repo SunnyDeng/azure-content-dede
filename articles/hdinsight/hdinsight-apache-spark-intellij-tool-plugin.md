@@ -71,15 +71,16 @@ Falls Sie beim Installieren von IntelliJ IDEA nicht zum Aktivieren des Scala-Plu
 
 2. Geben Sie im nächsten Fenster die Projektdetails an.
 
-	![Erstellen einer Spark Scala-Anwendung](./media/hdinsight-apache-spark-intellij-tool-plugin/hdi-scala-project-details.png)
-
 	* Geben Sie einen Projektnamen und den Projektspeicherort an.
 	* Geben Sie für **Project SDK** eine Java-Version größer als 7 an.
-	* Klicken Sie für **Scala SDK** auf **Create**, dann auf **Download**, und wählen Sie die zu verwendende Version von Scala aus. **Verwenden Sie nicht die Version 2.11.x**. In diesem Beispiel wird die Version **2.10.6** verwendet.
+	* Klicken Sie für **Scala SDK** auf **Create**, dann auf **Download**, und wählen Sie die zu verwendende Version von Scala aus. **Verwenden Sie nicht die Version 2.11.x**. In diesem Beispiel wird Version **2.10.6** verwendet.
 	
 		![Erstellen einer Spark Scala-Anwendung](./media/hdinsight-apache-spark-intellij-tool-plugin/hdi-scala-version.png)
 
 	* Für **Spark SDK**: Laden Sie das zu verwendende SDK [hier](http://go.microsoft.com/fwlink/?LinkID=723585&clcid=0x409) herunter.
+
+		![Erstellen einer Spark Scala-Anwendung](./media/hdinsight-apache-spark-intellij-tool-plugin/hdi-scala-project-details.png)
+
 	* Klicken Sie auf **Fertig stellen**.
 
 3. Definieren Sie die Projektstruktur so, dass ein Artefakt (eine JAR-Paketdatei) erstellt wird, die letztlich den Code enthält, der im Cluster ausgeführt wird.
@@ -204,23 +205,23 @@ Beim lokalen Ausführen der Spark Scala-Anwendung auf einem Windows-Computer erh
 
 2. Geben Sie im nächsten Fenster die Projektdetails an.
 
-	![Erstellen einer Spark Scala-Anwendung](./media/hdinsight-apache-spark-intellij-tool-plugin/hdi-scala-local-project-details.png)
-
 	* Geben Sie einen Projektnamen und den Projektspeicherort an.
 	* Geben Sie für **Project SDK** eine Java-Version größer als 7 an.
-	* Klicken Sie für **Scala SDK** auf **Create**, dann auf **Download**, und wählen Sie die zu verwendende Version von Scala aus. **Verwenden Sie nicht die Version 2.11.x**. In diesem Beispiel wird die Version **2.10.6** verwendet.
+	* Klicken Sie für **Scala SDK** auf **Create**, dann auf **Download**, und wählen Sie die zu verwendende Version von Scala aus. **Verwenden Sie nicht die Version 2.11.x**. In diesem Beispiel wird Version **2.10.6** verwendet.
 	
 		![Erstellen einer Spark Scala-Anwendung](./media/hdinsight-apache-spark-intellij-tool-plugin/hdi-scala-version.png)
 
 	* Für **Spark SDK**: Laden Sie das zu verwendende SDK [hier](http://go.microsoft.com/fwlink/?LinkID=723585&clcid=0x409) herunter.
-	* Klicken Sie auf **Finish**.
+	* Klicken Sie auf **Fertig stellen**.
+
+		![Erstellen einer Spark Scala-Anwendung](./media/hdinsight-apache-spark-intellij-tool-plugin/hdi-scala-local-project-details.png)
 
 3. Definieren Sie die Projektstruktur so, dass ein Artefakt (eine JAR-Paketdatei) erstellt wird, die letztlich den Code enthält, der im Cluster ausgeführt wird.
 
 	1. Klicken Sie im Menü **File** auf **Project Structure**.
 	2. Klicken Sie im Dialogfeld **Project Structure** auf **Artifacts** und anschließend auf das Pluszeichen. Klicken Sie im eingeblendeten Dialogfeld auf **JAR** und anschließend auf **Empty**.
 
-		![Erstellen einer JAR-Datei](./media/hdinsight-apache-spark-intellij-tool-plugin/create-jar-1.png)
+		![JAR-Datei erstellen](./media/hdinsight-apache-spark-intellij-tool-plugin/create-jar-1.png)
 
 	3. Geben Sie einen Namen für die JAR-Datei ein (z. B. **MyLocalApp**). Klicken Sie im Bereich „Available Elements“ mit der rechten Maustaste **'MyLocalApp' compile output**, und klicken Sie dann auf **Put into Output Root**.
 
@@ -317,4 +318,4 @@ Sie können auch Ihre vorhandenen in IntelliJ IDEA erstellten Spark Scala-Anwend
 
 * [Verwalten von Ressourcen für den Apache Spark-Cluster in Azure HDInsight](hdinsight-apache-spark-resource-manager.md)
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0302_2016-->

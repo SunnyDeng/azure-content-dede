@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/07/2015" 
+	ms.date="02/29/2016" 
 	ms.author="sdanie"/>
 
 # So implementieren Sie die Notfallwiederherstellung mit Sichern und Wiederherstellen von Diensten in Azure API Management
@@ -24,11 +24,13 @@ Bei Verfügbarkeitsproblemen in der Region, in der Ihr API Management-Dienst geh
 
 In dieser Anleitung wird erläutert, wie Anforderungen des Azure-Ressourcen-Managers authentifiziert und API Management-Dienstinstanzen gesichert und wiederhergestellt werden.
 
->[AZURE.NOTE]Der Vorgang zum Sichern und Wiederherstellen einer API Management-Dienstinstanz für die Notfallwiederherstellung kann auch zum Replizieren von API Management-Dienstinstanzen für Szenarios wie z. B. das Staging verwendet werden.
+>[AZURE.NOTE] Der Vorgang zum Sichern und Wiederherstellen einer API Management-Dienstinstanz für die Notfallwiederherstellung kann auch zum Replizieren von API Management-Dienstinstanzen für Szenarios wie z. B. das Staging verwendet werden.
+>
+>Beachten Sie, dass jede Sicherung nach 7 Tagen abläuft. Wenn Sie versuchen, eine Sicherung nach dem Ablaufzeitraum von 7 Tagen wiederherzustellen, schlägt die Wiederherstellung mit der Meldung `Cannot restore: backup expired` fehl.
 
 ## Authentifizieren von Anforderungen des Azure-Ressourcen-Managers
 
->[AZURE.IMPORTANT]Die REST-API für die Sicherung und Wiederherstellung verwendet den Azure-Ressourcen-Manager und weist eine andere Authentifizierungsmethode als die REST-APIs für die Verwaltung von API Management-Entitäten auf. In den Schritten in diesem Abschnitt wird beschrieben, wie Anforderungen des Azure-Ressourcen-Managers authentifiziert werden. Weitere Informationen finden Sie unter [Authentifizieren von Anforderungen des Azure-Ressourcen-Managers](http://msdn.microsoft.com/library/azure/dn790557.aspx).
+>[AZURE.IMPORTANT] Die REST-API für die Sicherung und Wiederherstellung verwendet den Azure-Ressourcen-Manager und weist eine andere Authentifizierungsmethode als die REST-APIs für die Verwaltung von API Management-Entitäten auf. In den Schritten in diesem Abschnitt wird beschrieben, wie Anforderungen des Azure-Ressourcen-Managers authentifiziert werden. Weitere Informationen finden Sie unter [Authentifizieren von Anforderungen des Azure-Ressourcen-Managers](http://msdn.microsoft.com/library/azure/dn790557.aspx).
 
 Alle Aufgaben, die Sie mithilfe des Azure-Ressourcen-Managers für Ressourcen ausführen, müssen entsprechend den folgenden Schritten mit Azure Active Directory authentifiziert werden.
 
@@ -38,7 +40,7 @@ Alle Aufgaben, die Sie mithilfe des Azure-Ressourcen-Managers für Ressourcen au
 
 Im ersten Schritt wird eine Azure Active Directory-Anwendung erstellt. Melden Sie sich mit dem Abonnement, das Ihre API Management-Dienstinstanz enthält, beim [klassischen Azure-Portal](http://manage.windowsazure.com/) an, und navigieren Sie zu der Registerkarte **Anwendungen** für Ihr Azure Active Directory-Standardverzeichnis.
 
->[AZURE.NOTE]Wenn das Azure Active Directory-Standardverzeichnis in Ihrem Konto nicht angezeigt wird, bitten Sie den Administrator des Azure-Abonnements, die erforderlichen Berechtigungen für das Konto zu erteilen. Informationen zur Suche des Standardverzeichnisses finden Sie unter [Suchen des Standardverzeichnisses](../virtual-machines/resource-group-create-work-id-from-persona.md/#locate-your-default-directory-in-the-azure-portal).
+>[AZURE.NOTE] Wenn das Azure Active Directory-Standardverzeichnis in Ihrem Konto nicht angezeigt wird, bitten Sie den Administrator des Azure-Abonnements, die erforderlichen Berechtigungen für das Konto zu erteilen. Informationen zur Suche des Standardverzeichnisses finden Sie unter [Suchen des Standardverzeichnisses](../virtual-machines/resource-group-create-work-id-from-persona.md/#locate-your-default-directory-in-the-azure-portal).
 
 ![Erstellen der Azure Active Directory-Anwendung][api-management-add-aad-application]
 
@@ -160,7 +162,7 @@ Legen Sie für den `Content-Type`-Anforderungsheader den Wert `application/json`
 
 Die Wiederherstellung ist ein länger anhaltender Vorgang, der bis zum Abschluss bis zu 30 Minuten dauern kann. Falls die Anforderung erfolgreich war und der Wiederherstellungsvorgang eingeleitet wurde, erhalten Sie den Antwortstatuscode `202 Accepted`, zusammen mit einem `Location`-Header. Senden Sie GET-Anforderungen der URL im `Location`-Header, um den Status des Vorgangs zu ermitteln. Während der Wiederherstellung erhalten Sie weiterhin den Statuscode '202 Accepted‘. Mit dem Antwortcode `200 OK` wird der erfolgreiche Abschluss des Wiederherstellungsvorgangs angezeigt.
 
->[AZURE.IMPORTANT]**Die SKU** des wiederherzustellenden Diensts **muss übereinstimmen** mit der SKU des gesicherten Diensts.
+>[AZURE.IMPORTANT] **Die SKU** des wiederherzustellenden Diensts **muss übereinstimmen** mit der SKU des gesicherten Diensts.
 >
 >**Änderungen** an der Dienstkonfiguration (z. B. APIs, Richtlinien, Erscheinungsbild des Entwicklerportals), die während des Wiederherstellungsvorgangs vorgenommen werden, **könnten überschrieben werden**.
 
@@ -189,4 +191,4 @@ Sehen Sie sich die folgenden Microsoft-Blogs für zwei verschiedene Vorgehenswei
 [api-management-endpoint]: ./media/api-management-howto-disaster-recovery-backup-restore/api-management-endpoint.png
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0302_2016-->

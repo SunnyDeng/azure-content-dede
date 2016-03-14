@@ -3,8 +3,8 @@
    description="Erfahren Sie, wie Azure Backup Daten behandelt, die während der IaaS-VM-Sicherung mit BitLocker oder dmcrypt verschlüsselt wurden. Dieser Artikel behandelt die Unterschiede bei der Sicherung und Wiederherstellung, wenn verschlüsselte Datenträger verwendet werden."
    services="backup"
    documentationCenter=""
-   authors="aashishr"
-   manager="shreeshd"
+   authors="markgalioto"
+   manager="jwhit"
    editor=""/>
 <tags
    ms.service="backup"
@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="storage-backup-recovery"
    ms.date="11/27/2015"
-   ms.author="aashishr"/>
+   ms.author="markgal; jimpark"/>
 
 # Behandeln verschlüsselter Festplatten während der Sicherung virtueller Computer
 
@@ -42,7 +42,7 @@ Es gibt viele Aspekte dieser Lösung, die konfiguriert und verwaltet werden müs
 | Datenwiederherstellung | Azure Backup | Verwenden Sie Azure Backup zum Wiederherstellen von Datenträgern oder vollständigen virtuellen Computern von einem Wiederherstellungspunkt. Die Daten werden von Azure Backup nicht während des Wiederherstellungsvorgangs entschlüsselt.|
 | Entschlüsselung | BitLocker oder dmcrypt | Um Daten von einem wiederhergestellten Datenträger oder einem wiederhergestellten virtuellen Computer zu lesen, benötigt die Software den Schlüssel aus der Schlüsselverwaltungssoftware. Ohne den richtigen Schlüssel können die Daten nicht entschlüsselt werden. |
 
-> [AZURE.IMPORTANT]Die Schlüsselverwaltung – einschließlich von Schlüsselrollovern – ist nicht Aufgabe von Azure Backup. Dieser Aspekt ist sehr wichtig für den gesamten Sicherungs-/Wiederherstellungsvorgang, er muss jedoch separat verwaltet werden.
+> [AZURE.IMPORTANT]  Die Schlüsselverwaltung – einschließlich von Schlüsselrollovern – ist nicht Aufgabe von Azure Backup. Dieser Aspekt ist sehr wichtig für den gesamten Sicherungs-/Wiederherstellungsvorgang, er muss jedoch separat verwaltet werden.
 
 ## CloudLink SecureVM
 
@@ -59,7 +59,7 @@ Wenn Sie für virtuelle Computer mit Sicherungen einen Rollover der Schlüssel d
 
 ### Dokumentation und Ressourcen
 
-- [Deployment guide – PDF](http://www.cloudlinktech.com/Azure/CL_SecureVM_4_0_DG_EMC_Azure_R2.pdf) (in englischer Sprache)
-- [Deploying and using SecureVM – Video](https://www.youtube.com/watch?v=8AIRe92UDNg) (in englischer Sprache)
+- [Deployment guide – PDF (in englischer Sprache)](http://www.cloudlinktech.com/Azure/CL_SecureVM_4_0_DG_EMC_Azure_R2.pdf)
+- [Deploying and using SecureVM – Video (in englischer Sprache)](https://www.youtube.com/watch?v=8AIRe92UDNg)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0302_2016-->

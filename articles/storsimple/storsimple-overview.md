@@ -26,7 +26,7 @@ StorSimple verwendet zur Verwaltung von gespeicherten Daten auf verschiedenen Sp
 
 Mit StorSimple Update 2 können Sie geeignete Volumes als *lokal* kennzeichnen, um sicherzustellen, dass primäre Daten lokal auf dem Gerät verbleiben und nicht in die Cloud ausgelagert werden. Dadurch können Sie für Cloudlatenzen anfällige Workloads, z. B. SQL- und VM-Workloads, auf lokalen Volumes ausführen und die Cloud weiterhin für die Sicherung verwenden. Weitere Informationen zu lokalen Volumes finden Sie unter [Verwalten von Volumes mithilfe des StorSimple Manager-Diensts](storsimple-manage-volumes-u2.md).
 
-Mit Update 2 können Sie zudem virtuelle StorSimple-Geräte erstellen, die die niedrigen Latenzzeiten und die hohe Leistung von Azure-Premium-Speicher nutzen. Weitere Informationen zu virtuellen StorSimple Premium-Geräten finden Sie unter [Bereitstellen und Verwalten eines virtuellen StorSimple-Geräts in Azure](storsimple-virtual-device-u1.md). Informationen zu Azure-Premium-Speicher finden Sie unter [Premium-Speicher: Hochleistungsspeicher für Arbeitslasten auf virtuellen Azure-Computern](../storage/storage-premium-storage-preview-portal.md).
+Mit Update 2 können Sie zudem virtuelle StorSimple-Geräte erstellen, die die niedrigen Latenzzeiten und die hohe Leistung von Azure-Premium-Speicher nutzen. Weitere Informationen zu virtuellen StorSimple Premium-Geräten finden Sie unter [Bereitstellen und Verwalten eines virtuellen StorSimple-Geräts in Azure](storsimple-virtual-device-u1.md). Informationen zu Azure-Premium-Speicher finden Sie unter [Premium-Speicher: Hochleistungsspeicher für Arbeitslasten auf virtuellen Azure-Computern](../storage/storage-premium-storage.md).
 
 Zusätzlich zur Speicherverwaltung können Sie mithilfe der StorSimple-Funktionen zum Schutz von Daten bedarfsgesteuerte und geplante Sicherungen erstellen und anschließend lokal oder in der Cloud speichern. Sicherungen erfolgen in Form von inkrementellen Momentaufnahmen, sodass sie schnell erstellt und wiederhergestellt werden können. Cloud-Momentaufnahmen können bei Wiederherstellungen im Notfall extrem wichtig sein, da sie sekundäre Speichersystemen (z. B. Backup auf Bandlaufwerken) ersetzen und es Ihnen ermöglichen, Daten bei Bedarf in Ihrem Rechenzentrum oder an anderen Standorten wiederherzustellen.
 
@@ -99,7 +99,7 @@ Das virtuelle Gerät weist folgende Merkmale auf:
 - Sie können eine unbegrenzte Anzahl von virtuellen Geräten in der Cloud erstellen und sie nach Bedarf aktivieren und deaktivieren. 
 - Mit dem virtuellen Gerät können lokale Umgebungen bei der Notfallwiederherstellung und in Entwicklungs- oder Testszenarios simuliert sowie der Abruf aus Sicherungen auf Elementebene unterstützt werden. 
 
-Mit Update 2 und höher steht das virtuelle StorSimple-Gerät in zwei Modellen zur Verfügung: dem 8010-Gerät (früher als Modell 1100 bekannt) und dem 8020-Gerät. Das 8010-Gerät bietet eine maximale Kapazität von 30 TB. Das 8020-Gerät nutzt Azure-Premium-Speicher und umfasst eine maximale Kapazität von 64 TB. (Azure-Premium-Speicher speichert Daten auf SSDs. Beim Standardspeicher werden Daten auf HDDs gespeichert.) Beachten Sie, dass Sie zur Verwendung von Premium-Speicher ein Azure-Premium-Speicherkonto benötigen. Informationen zu Premium-Speicher finden Sie unter [Premium-Speicher: Hochleistungsspeicher für Arbeitslasten auf virtuellen Azure-Computern](../storage/storage-premium-storage-preview-portal.md).
+Mit Update 2 und höher steht das virtuelle StorSimple-Gerät in zwei Modellen zur Verfügung: dem 8010-Gerät (früher als Modell 1100 bekannt) und dem 8020-Gerät. Das 8010-Gerät bietet eine maximale Kapazität von 30 TB. Das 8020-Gerät nutzt Azure-Premium-Speicher und umfasst eine maximale Kapazität von 64 TB. (Azure-Premium-Speicher speichert Daten auf SSDs. Beim Standardspeicher werden Daten auf HDDs gespeichert.) Beachten Sie, dass Sie zur Verwendung von Premium-Speicher ein Azure-Premium-Speicherkonto benötigen. Informationen zu Premium-Speicher finden Sie unter [Premium-Speicher: Hochleistungsspeicher für Arbeitslasten auf virtuellen Azure-Computern](../storage/storage-premium-storage.md).
 
 Weitere Informationen zum virtuellen StorSimple-Gerät finden Sie unter [Bereitstellen und Verwalten eines virtuellen StorSimple-Geräts in Azure](storsimple-virtual-device-u1.md).
 
@@ -177,7 +177,7 @@ Microsoft Azure StorSimple ordnet Daten automatisch in logischen Ebenen basieren
 
 Damit ein schneller Zugriff ermöglicht wird, speichert Azure StorSimple sehr aktive Daten auf SSDs im StorSimple-Gerät. Daten, die gelegentlich verwendet werden, werden auf HDDs im Gerät oder auf Servern im Datencenter gespeichert. Inaktive Daten, Sicherungsdaten und Daten, die für Archivierungs- oder Kompatibilitätszwecke verwaltet werden, werden in der Cloud gespeichert.
 
->[AZURE.NOTE]In Update 2 oder höher können Sie ein Volume als lokal festlegen. In diesem Fall verbleiben die Daten auf dem lokalen Gerät und werden nicht in die Cloud ausgelagert.
+>[AZURE.NOTE] In Update 2 oder höher können Sie ein Volume als lokal festlegen. In diesem Fall verbleiben die Daten auf dem lokalen Gerät und werden nicht in die Cloud ausgelagert.
 
 StorSimple passt Daten- und Speicherzuordnungen an und ordnet diese neu, wenn sich die Verwendungsmuster ändern. Im Lauf der Zeit können einige Informationen z. B. weniger aktiv werden. Wenn die betreffenden Informationen kontinuierlich weniger aktiv werden, werden sie von SSDs zu HDDs und dann zur Cloud migriert. Wenn diese Daten erneut aktiv werden, werden sie zurück in das Speichergerät migriert.
 
@@ -195,7 +195,7 @@ Die Speicherstaffelung erfolgt folgendermaßen:
 
 Schlanke Speicherzuweisung ist eine Virtualisierungstechnologie, bei der der verfügbare Speicher die physischen Ressourcen zu überschreiten scheint. Anstatt ausreichend Speicher im Voraus zu reservieren, verwendet StorSimple die schlanke Bereitstellung, um nur eben genug Speicher zum Erfüllen der aktuellen Anforderungen zuzuweisen. Die Elastizität von Cloudspeicher ermöglicht diesen Ansatz, weil StorSimple den Cloudspeicher vergrößern oder verkleinern kann, um sich ändernde Anforderungen zu erfüllen.
 
->[AZURE.NOTE]Lokale Volumes werden nicht mit schlanker Speicherzuweisung bereitgestellt. Der für ein rein lokales Volume reservierte Speicher wird in seiner Gesamtheit bereitgestellt, wenn das Volume erstellt wird.
+>[AZURE.NOTE] Lokale Volumes werden nicht mit schlanker Speicherzuweisung bereitgestellt. Der für ein rein lokales Volume reservierte Speicher wird in seiner Gesamtheit bereitgestellt, wenn das Volume erstellt wird.
 
 ### Deduplizierung und Komprimierung
 
@@ -203,7 +203,7 @@ Microsoft Azure StorSimple arbeitet mit Deduplizierung und Datenkomprimierung, u
 
 Durch Deduplizierung wird die Datenmenge verringert, indem Redundanz im gespeicherten Dataset beseitigt wird. Wenn sich Informationen ändern, ignoriert Azure StorSimple die unveränderten Daten und erfasst nur die Änderungen. Außerdem verringert StorSimple die Menge der gespeicherten Daten, indem nicht erforderliche Informationen bestimmt und entfernt werden.
 
->[AZURE.NOTE]Daten auf lokalen Volumes werden nicht dedupliziert oder komprimiert. Sicherungen lokaler Volumes werden hingegen dedupliziert und komprimiert.
+>[AZURE.NOTE] Daten auf lokalen Volumes werden nicht dedupliziert oder komprimiert. Sicherungen lokaler Volumes werden hingegen dedupliziert und komprimiert.
 
 ## StorSimple-Terminologie 
 
@@ -278,4 +278,4 @@ Weitere Informationen zur [StorSimple-Sicherheit](storsimple-security.md).
 
  
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0302_2016-->

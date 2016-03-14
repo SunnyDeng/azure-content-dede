@@ -3,7 +3,7 @@
 	description="Wichtige Aspekte beim Planen der Sicherung virtueller Computer in Azure"
 	services="backup"
 	documentationCenter=""
-	authors="Jim-Parker"
+	authors="markgalioto"
 	manager="jwhit"
 	editor=""
 	keywords="Sichern virtueller Computer, Sichern von VMs"/>
@@ -121,4 +121,4 @@ Wenn Sie Fragen haben oder Anregungen zu gewünschten Funktionen mitteilen möch
 - [Wiederherstellen virtueller Computer](backup-azure-restore-vms.md)
 - [Problembehandlung bei der Sicherung virtueller Computer](backup-azure-vms-troubleshoot.md)
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="11/09/2015"
+	ms.date="02/29/2016"
 	ms.author="wesmc"/>
 
 #Azure Notification Hubs – Benachrichtigen von Benutzern über .NET-Back-End
@@ -48,7 +48,7 @@ Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie die folgenden Mobile Ser
 
 
 
-> [AZURE.NOTE]Wenn Sie Mobile Services als Back-End-Dienst verwenden, finden Sie weitere Informationen in der [Mobile Services-Version](../mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users.md) dieses Lernprogramms.
+> [AZURE.NOTE] Wenn Sie Mobile Services als Back-End-Dienst verwenden, finden Sie weitere Informationen in der [Mobile Services-Version](../mobile-services/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-push.md) dieses Lernprogramms.
 
 
 
@@ -387,4 +387,4 @@ In diesem Abschnitt aktualisieren Sie den Code in dem Projekt, das Sie für das 
 [Verwenden von Benachrichtigungshubs zum Senden von neuesten Nachrichten]: notification-hubs-windows-store-dotnet-send-breaking-news.md
 [Notification Hubs-Leitfaden]: http://msdn.microsoft.com/library/jj927170.aspx
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -63,11 +63,11 @@ Nachfolgend finden Sie die typischen Schritte, die wir zur Optimierung der Leist
 3. **Erweitern der Konfiguration auf Ihre gesamten Daten** Sobald Sie mit den Ergebnissen und der Leistung der Ausführung zufrieden sind, können Sie die Datasetdefinition und den aktiven Zeitraum der Pipeline erweitern, um die gesamten Daten in der Abbildung abzudecken.
 
 ## Leistungsreferenz
-> [AZURE.IMPORTANT]**Haftungsausschluss:** Die folgenden Daten wurden nur für Anleitungen und allgemeine Planung veröffentlicht. Es wird vorausgesetzt, dass Bandbreite, Hardware, Konfiguration usw. zu den besten in der jeweiligen Kategorie zählen. Verwenden Sie diese Daten nur als Referenz. Der beobachtete Durchsatz bei der Datenverschiebung wird von einer Reihe von Variablen beeinflusst. In den Abschnitten weiter unten erfahren Sie, wie Sie optimieren können und eine bessere Leistung für Ihre Datenverschiebungsanforderungen erzielen. Diese Daten werden aktualisiert, wenn leistungssteigernde Verbesserungen und Funktionen hinzugefügt werden.
+> [AZURE.IMPORTANT] **Haftungsausschluss:** Die folgenden Daten wurden nur für Anleitungen und allgemeine Planung veröffentlicht. Es wird vorausgesetzt, dass Bandbreite, Hardware, Konfiguration usw. zu den besten in der jeweiligen Kategorie zählen. Verwenden Sie diese Daten nur als Referenz. Der beobachtete Durchsatz bei der Datenverschiebung wird von einer Reihe von Variablen beeinflusst. In den Abschnitten weiter unten erfahren Sie, wie Sie optimieren können und eine bessere Leistung für Ihre Datenverschiebungsanforderungen erzielen. Diese Daten werden aktualisiert, wenn leistungssteigernde Verbesserungen und Funktionen hinzugefügt werden.
 
 ![Leistungsmatrix](./media/data-factory-copy-activity-performance/CopyPerfRef.png)
 
-> [AZURE.NOTE]**In Kürze verfügbar:** Wir sind dabei, die grundlegenden Leistungsmerkmale zu verbessern, und in Kürze werden Sie in der obigen Tabelle mehr und bessere Durchsatzzahlen finden.
+> [AZURE.NOTE] **In Kürze verfügbar:** Wir sind dabei, die grundlegenden Leistungsmerkmale zu verbessern, und in Kürze werden Sie in der obigen Tabelle mehr und bessere Durchsatzzahlen finden.
 
 Beachten Sie Folgendes:
 
@@ -76,19 +76,19 @@ Beachten Sie Folgendes:
 - Microsoft Azure-Datenspeichern befinden sich Quelle und Senke in derselben Azure-Region.
 - Bei der Hybriddatenverschiebung (lokale Daten in die Cloud oder umgekehrt) wurde das Datenverwaltungsgateway (Einzelinstanz) mit der folgenden Konfiguration auf einem anderen Computer gehostet, als der lokale Datenspeicher. Hinweis: Da auf dem Gateway nur eine Aktivitätsausführung erfolgte, verbrauchte der Kopiervorgang nur einen kleinen Teil der CPU-/Speicherressource und Netzwerkbandbreite dieses Computers.
 	<table>
-<tr>
-	<td>CPU</td>
-	<td>32 Prozessorkerne, 2,20&#160;GHz, Intel Xeon® E5-2660 v2</td>
-</tr>
-<tr>
-	<td>Arbeitsspeicher</td>
-	<td>128&#160;GB</td>
-</tr>
-<tr>
-	<td>Netzwerk</td>
-	<td>Internetschnittstelle: 10&#160;Gbit/s; Intranetschnittstelle: 40&#160;Gbit/s</td>
-</tr>
-</table>
+	<tr>
+		<td>CPU</td>
+		<td>32 Prozessorkerne, 2,20&#160;GHz, Intel Xeon® E5-2660 v2</td>
+	</tr>
+	<tr>
+		<td>Arbeitsspeicher</td>
+		<td>128&#160;GB</td>
+	</tr>
+	<tr>
+		<td>Netzwerk</td>
+		<td>Internetschnittstelle: 10&#160;Gbit/s; Intranetschnittstelle: 40&#160;Gbit/s</td>
+	</tr>
+	</table>
 
 ## Hinweise zur Datenquelle
 ### Allgemein
@@ -218,10 +218,10 @@ In diesem Fall könnte die BZIP2-Datenkomprimierung die gesamte Pipeline verlang
 Hier finden Sie einige Referenzen zur Leistungsüberwachung und -optimierung für einige der unterstützten Datenspeicher:
 
 - Azure-Speicher (einschließlich Azure Blob und Azure-Tabelle): [ Skalierbarkeitsziele für Azure-Speicher](../storage/storage-scalability-targets.md) und [Checkliste zu Leistung und Skalierbarkeit für Azure-Speicher](../storage//storage-performance-checklist.md)
-- Azure SQL-Datenbank: Sie können [die Leistung überwachen](../sql-database/sql-database-service-tiers.md#monitoring-performance) und den Prozentsatz der Datenbankdurchsatzeinheit (DTU = Database Throughput Unit) überprüfen .
+- Azure SQL-Datenbank: Sie können [die Leistung überwachen](../sql-database/sql-database-service-tiers.md#monitoring-performance) und den Prozentsatz der Datenbanktransaktionseinheit (DTU = Database Throughput Unit) überprüfen .
 - Azure SQL Datawarehouse: Die Funktionalität wird in Data Warehouse-Einheiten (Data Warehouse Units, DWUs) gemessen. Informationen finden Sie unter [Flexible Leistung und Skalierbarkeit mit SQL Data Warehouse](../sql-data-warehouse/sql-data-warehouse-performance-scale.md).
 - Azure DocumentDB: [Leistungsstufe in DocumentDB](../documentdb/documentdb-performance-levels.md).
 - Lokale SQL Server: [Überwachen und Optimieren der Leistung](https://msdn.microsoft.com/library/ms189081.aspx)
 - Lokaler Dateiserver: [Leistungsoptimierung für Dateiserver](https://msdn.microsoft.com/library/dn567661.aspx)
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0302_2016-->

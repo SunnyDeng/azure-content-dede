@@ -31,7 +31,8 @@ Gehen Sie zu [https://publish.windowsazure.com](http://publish.windowsazure.com)
   ![Abbildung][img-pubportal-sol-templ-new]
 
 ### 3\. Beginnen mit Topologien
-Eine Lösungsvorlage ist allen zugehörigen Topologien übergeordnet. Sie können in einem Angebot/einer Lösungsvorlage mehrere Topologien definieren. Wenn ein Angebot in die Stagingumgebung überführt wird, werden alle Topologien einbezogen. Nachfolgend werden die Schritte zum Definieren Ihres Angebots gezeigt: - Erstellen einer Topologie: Der „Topologiebezeichner“ ist in der Regel der Namen der Topologie für die Lösungsvorlage. Der Topologiebezeichner wird wie nachstehend gezeigt in der URL verwendet:
+Eine Lösungsvorlage ist allen zugehörigen Topologien übergeordnet. Sie können in einem Angebot/einer Lösungsvorlage mehrere Topologien definieren. Wenn ein Angebot in die Stagingumgebung überführt wird, werden alle Topologien einbezogen. Nachfolgend sind die Schritte zum Definieren Ihres Angebots aufgeführt:
+- Erstellen einer Topologie: Der „Topologiebezeichner“ ist in der Regel der Name der Topologie für die Lösungsvorlage. Der Topologiebezeichner wird wie nachstehend gezeigt in der URL verwendet:
 
   Azure Marketplace: http://azure.microsoft.com/marketplace/partners/{PublisherNamespace}/{OfferIdentifier}{TopologyIdentifier}
 
@@ -40,9 +41,9 @@ Eine Lösungsvorlage ist allen zugehörigen Topologien übergeordnet. Sie könne
 - Fügen Sie eine neue Version hinzu.
 
 ### 4\. Zertifizieren Ihrer Topologieversionen
-Laden Sie eine ZIP-Datei hoch, die alle erforderlichen Dateien zum Bereitstellen der jeweiligen Version der Topologie enthält. Diese ZIP-Datei muss Folgendes enthalten:  
-– Die Dateien *mainTemplate.json* und *createUiDefinition.json* im Stammverzeichnis  
-– Alle verknüpften Vorlagen und erforderlichen Skripts
+Laden Sie eine ZIP-Datei hoch, die alle erforderlichen Dateien zum Bereitstellen der jeweiligen Version der Topologie enthält. Diese ZIP-Datei muss Folgendes enthalten:
+- Die Dateien *mainTemplate.json* und *createUiDefinition.json* im Stammverzeichnis
+- Alle verknüpften Vorlagen und erforderlichen Skripts
 
 Nachdem Sie die ZIP-Datei hochgeladen haben, klicken Sie auf **Zertifizierung anfordern**. Das Microsoft-Zertifizierungsteam prüft die Dateien und zertifiziert die Topologie.
 
@@ -69,11 +70,11 @@ Folgende Artikel könnten für Sie ebenfalls von Interesse sein:
 
 - Azure-Ressourcen-Manager: [Erstellen von Azure ARM-Vorlagen](../resource-group-authoring-templates/) und [Einfache ARM-Vorlagenbeispiele](https://github.com/rjmax/ArmExamples)
 
-- Drosseln von Speicherkonten: [Überwachen der Speicherkontodrosselung](http://blogs.msdn.com/b/mast/archive/2014/08/02/how-to-monitor-for-storage-account-throttling.aspx) und [Storage Premium](../storage/storage-premium-storage-preview-portal/#scalability-and-performance-targets-whde-DEing-premium-storage)
+- Drosseln von Speicherkonten: [Überwachen der Speicherkontodrosselung](http://blogs.msdn.com/b/mast/archive/2014/08/02/how-to-monitor-for-storage-account-throttling.aspx) und [Storage Premium](../storage/storage-premium-storage.md#scalability-and-performance-targets-whde-DEing-premium-storage)
 
 [img-pubportal-menu-sol-templ]: media/marketplace-publishing-solution-template-creation/pubportal-menu-solution-templates.png
 [img-pubportal-sol-templ-new]: media/marketplace-publishing-solution-template-creation/pubportal-solution-template-new.png
 [link-acct-creation]: marketplace-publishing-microsoft-accounts-creation-registration.md
 [link-pubportal]: https://publish.windowsazure.com
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0302_2016-->

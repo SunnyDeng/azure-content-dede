@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/17/2015" 
+	ms.date="02/26/2016" 
 	ms.author="stefsch"/>
 
 # Übersicht über die Netzwerkarchitektur von App Service-Umgebungen
@@ -31,7 +31,7 @@ Das folgende Diagramm zeigt eine Übersicht der verschiedenen ein- und ausgehend
 
 Eine App Service-Umgebung kann mit einer Vielzahl privater Kundenendpunkte kommunizieren. Beispielsweise können Apps, die in der App Service-Umgebung ausgeführt werden, sich mit Datenbankservern auf virtuellen IaaS-Computern in der gleichen virtuellen Netzwerktopologie verbinden.
 
-[AZURE.IMPORTANT] Im Netzwerkdiagramm sehen Sie, dass „Weitere Computeressourcen“ in einem anderen Subnetz bereitgestellt werden als die App Service-Umgebung. Durch Bereitstellung im gleichen Subnetz wie die App Service-Umgebung würde die Verbindung der Umgebung mit diesen Ressourcen blockiert (ausgenommen spezifische Routen innerhalb der Umgebung). Stellen Sie die Ressourcen daher in einem anderen Subnetz innerhalb des gleichen VNETs bereit. Dann kann die App Service-Umgebung eine Verbindung herstellen. Es ist keine zusätzliche Konfiguration erforderlich.
+>[AZURE.IMPORTANT] Im Netzwerkdiagramm sehen Sie, dass „Weitere Computeressourcen“ in einem anderen Subnetz bereitgestellt werden als die App Service-Umgebung. Durch Bereitstellung im gleichen Subnetz wie die App Service-Umgebung würde die Verbindung der Umgebung mit diesen Ressourcen blockiert (ausgenommen spezifische Routen innerhalb der Umgebung). Stellen Sie die Ressourcen daher in einem anderen Subnetz innerhalb des gleichen VNETs bereit. Dann kann die App Service-Umgebung eine Verbindung herstellen. Es ist keine zusätzliche Konfiguration erforderlich.
 
 App Service-Umgebungen kommunizieren auch mit SQL-Datenbank- und Azure-Speicherressourcen, die für das Verwalten und Betreiben einer App Service-Umgebung erforderlich sind. Einige SQL- und Speicherressourcen, mit denen eine App Service-Umgebung kommuniziert, befinden sich in der gleichen Region wie die App Service-Umgebung, während andere sich in anderen Azure-Regionen befinden. Deshalb sind für den ordnungsgemäßen Betrieb einer App Service-Umgebung stets ausgehende Verbindungen erforderlich.
 
@@ -89,4 +89,4 @@ Details zur Verwendung von benutzerdefinierten Routen zum Gewähren des ausgehen
 [OutboundNetworkAddresses]: ./media/app-service-app-service-environment-network-architecture-overview/OutboundNetworkAddresses-1.png
 [CallsBetweenAppServiceEnvironments]: ./media/app-service-app-service-environment-network-architecture-overview/CallsBetweenEnvironments-1.png
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0302_2016-->

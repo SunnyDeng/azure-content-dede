@@ -4,7 +4,7 @@
 	services="media-services" 
 	documentationCenter="" 
 	authors="Juliako" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor=""/>
 
 <tags 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/28/2016" 
+ 	ms.date="03/01/2016" 
 	ms.author="juliako"/>
 
 #Erste Schritte zum Bereitstellen von Inhalten nach Bedarf mit der REST-API
@@ -81,12 +81,9 @@ Für den Zugriff auf Azure Media Services benötigen Sie: ein von Azure Access C
 Die folgenden Schritte beschreiben den am häufigsten verwendeten Workflow, der bei der Verbindung mit Media Services über die Media Services-REST-API zur Anwendung kommt:
 
 1. Abrufen eines Zugriffstokens 
-2. Herstellen einer Verbindung mit dem Media Services-URI 
-	
-	>[AZURE.NOTE]
-	Nach der erfolgreichen Verbindung mit https://media.windows.net erhalten Sie eine 301 Redirect-Antwort, in der ein anderer Media Services-URI angegeben ist. Nachfolgende Aufrufe müssen an den neuen URI gesendet werden.
-	> 
-	> Möglicherweise empfangen Sie auch eine HTTP/1.1 200-Antwort, die die Beschreibung der ODATA-API-Metadaten enthält.
+2. Herstellen einer Verbindung mit dem Media Services-URI  
+
+	Vergessen Sie nicht, dass Sie nach der erfolgreichen Verbindung mit https://media.windows.net eine 301 Redirect-Antwort erhalten, in der ein anderer Media Services-URI angegeben ist. Nachfolgende Aufrufe müssen an den neuen URI gesendet werden. Möglicherweise empfangen Sie auch eine HTTP/1.1 200-Antwort, die die Beschreibung der ODATA-API-Metadaten enthält.
 3. Senden nachfolgender API-Aufrufe an die neue URL. 
 	
 	Wenn nach einem Verbindungsversuch folgende Meldung angezeigt wird:
@@ -368,7 +365,7 @@ Im folgenden Beispiel wird veranschaulicht, wie eine AccessPolicy erstellt wird:
 	
 	{"Name":"NewUploadPolicy", "DurationInMinutes":"440", "Permissions":"2"} 
 
-**HTTP-Anforderung**
+**HTTP-Antwort**
 
 	If successful, the following response is returned:
 	
@@ -500,8 +497,7 @@ Nachdem Sie Ihre Datei nun hochgeladen haben, sollten Sie die FileAsset-Größe 
 
 **HTTP-Antwort**
 
-Im Erfolgsfall wird Folgendes zurückgegeben: 
-	HTTP/1.1 204 Kein Inhalt
+Im Erfolgsfall wird Folgendes zurückgegeben: HTTP/1.1 204 Kein Inhalt
 
 ## Löschen von AccessPolicy und Locator 
 
@@ -727,7 +723,7 @@ Durch den folgenden Code wird die Encoder-ID angefordert.
 
 Je nach Art der Verarbeitung, die Sie durchführen möchten, können einem Auftrag eine oder mehrere Aufgaben zugeordnet sein. Über die REST-API können Sie Aufträge und die zugehörigen Aufgaben auf folgende zwei Arten erstellen: Aufgaben können Inline über die Aufgabennavigationseigenschaft von Auftragsentitäten oder über die OData-Batchverarbeitung definiert werden. Das Media Services SDK verwendet Batchverarbeitung. Für die einfache Lesbarkeit der Codebeispiele in diesem Thema werden Aufgaben jedoch inline definiert. Weitere Informationen zur Batchverarbeitung finden Sie unter [Open Data Protocol (OData) Batch Processing](http://www.odata.org/documentation/odata-version-3-0/batch-processing/) (in englischer Sprache).
 
-Das folgende Beispiel zeigt, wie Sie einen Auftrag mit einer Aufgabe erstellen und bereitstellen, die für die Codierung eines Videos mit einer bestimmten Auflösung und Qualität konfiguriert wurde. Der folgende Abschnitt dieser Dokumentation enthält eine Liste sämtlicher [Aufgabenvoreinstellungen](https://msdn.microsoft.com/de-DE/library/mt269960), die vom Media Encoder Standard unterstützt werden.
+Das folgende Beispiel zeigt, wie Sie einen Auftrag mit einer Aufgabe erstellen und bereitstellen, die für die Codierung eines Videos mit einer bestimmten Auflösung und Qualität konfiguriert wurde. Der folgende Abschnitt dieser Dokumentation enthält eine Liste sämtlicher [Aufgabenvoreinstellungen](http://msdn.microsoft.com/library/mt269960), die vom Media Encoder Standard unterstützt werden.
 
 **HTTP-Anforderung**
 	
@@ -1202,13 +1198,9 @@ Fügen Sie zum Testen des progressiven Downloads eine URL in einen Browser ein (
 
 Wenn dieses Thema nicht die erwarteten Informationen enthält, Informationen fehlen oder auf andere Weise Ihre Erwartungen nicht erfüllt wurden, senden Sie uns bitte über den Disqus-Thread unten Ihr Feedback.
 
-##Zusätzliche Ressourcen
-- <a href="http://channel9.msdn.com/Shows/Azure-Friday/Azure-Media-Services-101-Get-your-video-online-now-">Azure Media Services 101 - Stellen Sie Ihr Video jetzt online!</a>
-- <a href="http://channel9.msdn.com/Shows/Azure-Friday/Azure-Media-Services-102-Dynamic-Packaging-and-Mobile-Devices">Azure Media Services 102 - Dynamische Pakete und mobile Geräte</a>
-
 
 
 <!-- URLs. -->
   [klassischen Azure-Portal]: http://manage.windowsazure.com/
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0302_2016-->

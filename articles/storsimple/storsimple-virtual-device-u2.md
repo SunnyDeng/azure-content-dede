@@ -18,9 +18,9 @@
 # Bereitstellen und Verwalten eines virtuellen StorSimple-Geräts in Azure (Update 2)
 
 > [AZURE.SELECTOR]
-- [Update 2](../articles/storsimple/storsimple-virtual-device-u2.md)
-- [Update 1](../articles/storsimple/storsimple-virtual-device-u1.md)
-- [GA Release](../articles/storsimple/storsimple-virtual-device.md)
+- [Update 2](../articles/storsimple/storsimple-virtual-device-u2.md)
+- [Update 1](../articles/storsimple/storsimple-virtual-device-u1.md)
+- [GA-Version](../articles/storsimple/storsimple-virtual-device.md)
 
 ##Übersicht
 Das virtuelle StorSimple-Gerät ist eine zusätzliche, in der Microsoft Azure StorSimple-Lösung enthaltene Funktion. Das virtuelle StorSimple-Gerät wird auf einem virtuellen Computer in einem virtuellen Microsoft Azure-Netzwerk ausgeführt und kann zum Sichern und Klonen von Daten von Hosts verwendet werden.
@@ -37,8 +37,8 @@ Das virtuelle StorSimple-Gerät steht in zwei Modellen zur Verfügung, dem Stand
 | **Azure-VM** | Standard\_A3 (4 Kerne, 7 GB Arbeitsspeicher) | Standard\_DS3 (4 Kerne, 14 GB Arbeitsspeicher) |
 | **Versionskompatibilität** | Versionen unter Vorgängerversionen von Update 2 oder höher | Versionen unter Update 2 oder höher |
 | **Regionale Verfügbarkeit** | Alle Azure-Regionen | Azure-Regionen, die Storage Premium unterstützen<br></br>Eine Liste dieser Regionen finden Sie unter [Unterstützte Regionen für 8020](#supported-regions-for-8020). |
-| **Speichertyp** | Verwendet Azure Storage Standard<br></br> Erfahren Sie, wie Sie ein [Storage Standard-Konto erstellen](). | Verwendet Azure Storage Premium<br></br>Erfahren Sie, wie Sie ein [Storage Premium-Konto erstellen](storage-premium-storage-preview-portal.md#create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk). |
-| **Informationen zu Workloads** | Abrufen von Dateien aus Sicherungskopien auf Elementebene | Cloudentwicklungs- und Testszenarien, niedrige Latenz und Workloads mit höherer Leistung <br></br>Sekundäres Gerät für die Notfallwiederherstellung |
+| **Speichertyp** | Verwendet Azure Storage Standard<br></br> Erfahren Sie, wie Sie ein [Storage Standard-Konto erstellen](). | Verwendet Azure Storage Premium<br></br>Erfahren Sie, wie Sie ein [Storage Premium-Konto erstellen](storage-premium-storage.md#create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk). |
+| **Informationen zu Workloads** | Abrufen von Dateien aus Sicherungskopien auf Elementebene | Cloudentwicklungs- und Testszenarios, niedrige Latenz und Workloads mit höherer Leistung <br></br>Sekundäres Gerät für die Notfallwiederherstellung |
  
 <sup>1</sup> *Ehemals 1100*.
 
@@ -100,7 +100,7 @@ In den folgenden Abschnitten werden die Konfigurationsvoraussetzungen für das v
 
 Bevor Sie das virtuelle Gerät bereitstellen, müssen Sie in Ihrer Umgebung die folgenden Vorbereitungen treffen:
 
-- [Konfigurieren Sie ein virtuelles Netzwerk in Azure](../virtual-network/virtual-networks-create-vnet-classic-portal.md) für das virtuelle Gerät. Wenn Sie Storage Premium verwenden, müssen Sie ein virtuelles Netzwerk in einer Azure-Region erstellen, die Storage Premium unterstützt. Weitere Informationen zu [Regionen, die derzeit für 8020 unterstützt werden](#supported-regions-for-8020)
+- [Konfigurieren Sie ein virtuelles Netzwerk in Azure](../virtual-network/virtual-networks-create-vnet-classic-portal.md) für das virtuelle Gerät. Wenn Sie Storage Premium verwenden, müssen Sie ein virtuelles Netzwerk in einer Azure-Region erstellen, die Storage Premium unterstützt. Weitere Informationen zu [Regionen, die derzeit für 8020 unterstützt werden](#supported-regions-for-8020).
 - Es empfiehlt sich, die von Azure bereitgestellten DNS-Standardserver zu verwenden, anstatt einen eigenen DNS-Servernamen anzugeben. Wenn Ihr DNS-Servername ungültig ist oder der DNS-Server IP-Adressen nicht ordnungsgemäß auflösen kann, ist die Erstellung des virtuellen Geräts nicht möglich.
 - Punkt-zu-Standort und Standort-zu-Standort sind optional, aber nicht erforderlich. Sie können diese Optionen gegebenenfalls für erweiterte Szenarios konfigurieren. 
 - Sie können [virtuelle Azure-Computer](../virtual-machines/virtual-machines-about.md) (Hostserver) im virtuellen Netzwerk erstellen, die die vom virtuellen Gerät verfügbar gemachten Volumes verwenden können. Diese Server müssen die folgenden Anforderungen erfüllen: 							
@@ -118,7 +118,7 @@ Nehmen Sie vor dem Erstellen eines virtuellen Geräts die folgenden Updates für
 
 - Fügen Sie den virtuellen Computern, die als Hostserver für Ihr virtuelles Gerät fungieren sollen, [Zugriffssteuerungsdatensätze](storsimple-manage-acrs.md) hinzu.
 
-- Verwenden Sie ein [Speicherkonto](storsimple-manage-storage-accounts.md#add-a-storage-account) in derselben Region wie das virtuelle Gerät. Speicherkonten in anderen Regionen können zu Leistungseinbußen führen. Sie können ein Storage Standard- oder Premium-Konto mit dem virtuellen Gerät verwenden. Weitere Informationen zum Erstellen eines [Storage Standard-Kontos]() oder eines [Storage Premium-Kontos](storage-premium-storage-preview-portal.md#create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk).
+- Verwenden Sie ein [Speicherkonto](storsimple-manage-storage-accounts.md#add-a-storage-account) in derselben Region wie das virtuelle Gerät. Speicherkonten in anderen Regionen können zu Leistungseinbußen führen. Sie können ein Storage Standard- oder Premium-Konto mit dem virtuellen Gerät verwenden. Weitere Informationen zum Erstellen eines [Storage Standard-Kontos]() oder eines [Storage Premium-Kontos](storage-premium-storage.md#create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk).
 
 - Verwenden Sie zum Erstellen des virtuellen Geräts ein anderes Speicherkonto als das, das für die Daten verwendet wird. Die Verwendung ein und desselben Speicherkontos kann zu Leistungseinbußen führen.
 
@@ -146,8 +146,7 @@ Führen Sie die folgenden Schritte aus, um das virtuelle StorSimple-Gerät zu er
 
 Stellen Sie vorab sicher, dass Sie über eine Kopie des Verschlüsselungsschlüssels für die Dienstdaten verfügen. Der Schlüssel für die Dienstdatenverschlüsselung wurde beim Konfigurieren des ersten StorSimple-Geräts erstellt, und Sie wurden aufgefordert, diesen an einem sicheren Ort zu speichern. Wenn Sie über keine Kopie des Schlüssels für die Dienstdatenverschlüsselung verfügen, wenden Sie sich an den Microsoft-Support.
 
-Führen Sie die folgenden Schritte durch, um das virtuelle StorSimple-Gerät zu konfigurieren und zu registrieren:
-[AZURE.INCLUDE [Konfigurieren und Registrieren eines virtuellen Geräts](../../includes/storsimple-configure-register-virtual-device.md)]
+Führen Sie die folgenden Schritte durch, um das virtuelle StorSimple-Gerät zu konfigurieren und zu registrieren:[AZURE.INCLUDE [Konfigurieren und Registrieren eines virtuellen Geräts](../../includes/storsimple-configure-register-virtual-device.md)]
 
 ### Schritt 3: (Optional) Ändern der Konfigurationseinstellungen des Geräts
 
@@ -278,8 +277,8 @@ Wenn Sie das virtuelle Gerät herunterfahren oder löschen, wird es auf der Seit
 
 ## Nächste Schritte
 
-- Erfahren Sie, wie Sie beim [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md) vorgehen.
+- Erfahren Sie, wie Sie beim [Verwalten Ihres virtuellen Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md) vorgehen.
  
 - Erfahren Sie, wie Sie [StorSimple-Volumes aus einem Sicherungssatz wiederherstellen](storsimple-restore-from-backup-set.md).
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0302_2016-->

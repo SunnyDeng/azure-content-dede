@@ -14,21 +14,22 @@ ms.devlang="na"
 ms.topic="article"
 ms.tgt_pltfrm="na"
 ms.workload="na"
-ms.date="02/22/2016"
+ms.date="02/25/2016"
 ms.author="deonhe"/>
 
 # Erste Schritte mit der Salesforce-API
-Verbinden Sie sich mit Salesforce, um z. B. Objekte zu erstellen und abzurufen.
+Verbinden Sie sich mit Salesforce, um z. B. Objekte zu erstellen und abzurufen. Die Salesforce-API kann in Folgendem verwendet werden:
 
-Die Salesforce-API kann von PowerApps Enterprise- und Logik-Apps verwendet werden.
+- PowerApps 
+- Logik-Apps 
 
->[AZURE.NOTE] Diese Version des Artikels gilt für Logik-Apps mit der Schemaversion „2015-08-01-preview“. Um die Schemaversion „2014-12-01-preview“ aufzurufen, klicken Sie auf [Salesforce-API](../app-service-logic/app-service-logic-connector-salesforce.md).
+>[AZURE.NOTE] Diese Version des Artikels gilt für die Schemaversion 2015-08-01-preview für Logik-Apps. Um die Schemaversion 2014-12-01-preview aufzurufen, klicken Sie auf [Salesforce-API](../app-service-logic/app-service-logic-connector-salesforce.md).
 
 Salesforce ermöglicht Folgendes:
 
 - Erstellen eines Geschäftsworkflows basierend auf den Daten, die aus Salesforce abgerufen werden. 
 - Verwenden von Triggern, wenn ein Objekt erstellt oder aktualisiert wird.
-- Verwenden von Aktionen, um z. B. ein Objekt erstellen oder zu löschen. Diese Aktionen erhalten eine Antwort und stellen anschließend die Ausgabe anderen Aktionen zur Verfügung. Wenn z. B. ein neues Objekt in Salesforce erstellt wird, können Sie eine E-Mail über Office 365 senden.
+- Verwenden von Aktionen, um z. B. ein Objekt erstellen oder zu löschen. Diese Aktionen erhalten eine Antwort und stellen anschließend die Ausgabe anderen Aktionen zur Verfügung. Wenn z. B. ein neues Objekt in Salesforce erstellt wird, können Sie eine E-Mail über Office 365 senden.
 - Hinzufügen der Salesforce-API zu PowerApps Enterprise. Die Benutzer können diese API anschließend in ihren Apps verwenden. 
 
 Informationen zum Hinzufügen einer API in PowerApps Enterprise finden Sie unter [Registrieren einer API in PowerApps](../power-apps/powerapps-register-from-available-apis.md).
@@ -77,12 +78,12 @@ Wenn Sie diese API Ihren Logik-Apps hinzufügen, müssen Sie ihnen das Herstelle
 1. Melden Sie sich bei Ihrem Salesforce-Konto an.
 2. Erlauben Sie Ihren Logik-Apps, sich mit Ihrem Salesforce-Konto zu verbinden und es zu nutzen. 
 
-Nachdem Sie die Verbindung hergestellt haben, geben Sie die Salesforce-Eigenschaften ein, z. B. den Tabellennamen. In der **REST-API-Referenz** in diesem Thema werden diese Eigenschaften beschrieben.
+Nachdem Sie die Verbindung hergestellt haben, geben Sie die Salesforce-Eigenschaften ein, z. B. den Tabellennamen. In der **REST-API-Referenz** in diesem Thema werden diese Eigenschaften beschrieben.
 
 >[AZURE.TIP] Sie können dieselbe Verbindung in anderen Logik-Apps verwenden.
 
 ## Swagger-REST-API – Referenz
-#### Diese Dokumentation gilt für Version 1.0.
+Gilt für Version: 1.0.
 
 
 ### Objekt erstellen
@@ -276,7 +277,7 @@ Löst einen Datenfluss aus, wenn ein Objekt in Salesforce geändert wird. ```GET
 ## Nächste Schritte
 Nach Hinzufügen der Salesforce-API zu PowerApps Enterprise [erteilen Sie den Benutzern Berechtigungen](../power-apps/powerapps-manage-api-connection-user-access.md) zum Verwenden der API in ihren Apps.
 
-[Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md).
+[Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md)
 
 
 [5]: https://developer.salesforce.com
@@ -284,4 +285,4 @@ Nach Hinzufügen der Salesforce-API zu PowerApps Enterprise [erteilen Sie den Be
 [7]: ./media/create-api-salesforce/salesforce-create-app.png
 [8]: ./media/create-api-salesforce/salesforce-new-app.png
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

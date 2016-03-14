@@ -31,14 +31,14 @@ Sie können Azure Data Factorys mithilfe des Data Factory .NET SDK programmgeste
 ## Exemplarische Vorgehensweise
 1. Erstellen Sie mithilfe von Visual Studio 2012 oder 2013 eine C# .NET-Konsolenanwendung.
 	<ol type="a">
-	<li>Starten Sie <b>Visual Studio 2012</b> oder <b>Visual Studio 2013</b>.</li>
-	<li>Klicken Sie auf <b>Datei</b>, zeigen Sie auf <b>Neu</b>, und klicken Sie auf <b>Projekt</b>.</li> 
-	<li>Erweitern Sie <b>Vorlagen</b>, und wählen Sie <b>Visual C#</b> aus. In dieser exemplarischen Vorgehensweise verwenden Sie C#, aber Sie können jede .NET-Sprache verwenden.</li> 
-	<li>Wählen Sie in der Liste der Projekttypen auf der rechten Seite <b>Konsolenanwendung</b> aus.</li>
-	<li>Geben Sie <b>DataFactoryAPITestApp</b> in <b>Name</b> ein.</li> 
-	<li>Wählen Sie <b>C:\ADFGetStarted</b> als <b>Speicherort</b>.</li>
-	<li>Klicken Sie auf <b>OK</b>, um das Projekt zu erstellen.</li>
-</ol>
+		<li>Starten Sie <b>Visual Studio 2012</b> oder <b>Visual Studio 2013</b>.</li>
+		<li>Klicken Sie auf <b>Datei</b>, zeigen Sie auf <b>Neu</b>, und klicken Sie auf <b>Projekt</b>.</li> 
+		<li>Erweitern Sie <b>Vorlagen</b>, und wählen Sie <b>Visual C#</b> aus. In dieser exemplarischen Vorgehensweise verwenden Sie C#, aber Sie können jede .NET-Sprache verwenden.</li> 
+		<li>Wählen Sie in der Liste der Projekttypen auf der rechten Seite <b>Konsolenanwendung</b> aus.</li>
+		<li>Geben Sie <b>DataFactoryAPITestApp</b> in <b>Name</b> ein.</li> 
+		<li>Wählen Sie <b>C:\ADFGetStarted</b> als <b>Speicherort</b>.</li>
+		<li>Klicken Sie auf <b>OK</b>, um das Projekt zu erstellen.</li>
+	</ol>
 2. Klicken Sie auf <b>Extras</b>, zeigen Sie auf <b>NuGet-Paket-Manager</b>, und klicken Sie auf <b>Paket-Manager-Konsole</b>.
 3.	Führen Sie in der <b>Paket-Manager-Konsole</b> die folgenden Befehle nacheinander aus.</b> 
 
@@ -205,6 +205,8 @@ Sie können Azure Data Factorys mithilfe des Data Factory .NET SDK programmgeste
 
 11. Fügen Sie den folgenden Code, der eine **Pipeline erstellt und aktiviert**, zur Methode **Main** hinzu. Diese Pipeline verfügt über eine **CopyActivity**, die **BlobSource** als Quelle und **BlobSink** als Senke verwendet.
 
+Die Kopieraktivität führt die Datenverschiebung in Azure Data Factory durch, und die Aktivität wird von einem global verfügbaren Dienst gestützt, mit dem Daten zwischen verschiedenen Datenspeichern auf sichere, zuverlässige und skalierbare Weise kopiert werden können. Ausführliche Informationen zur Kopieraktivität finden Sie unter [Datenverschiebungsaktivitäten](data-factory-data-movement-activities.md).
+
             // create a pipeline
         Console.WriteLine("Creating a pipeline");
         DateTime PipelineActivePeriodStartTime = new DateTime(2014, 8, 9, 0, 0, 0, 0, DateTimeKind.Utc);
@@ -261,7 +263,7 @@ Sie können Azure Data Factorys mithilfe des Data Factory .NET SDK programmgeste
 
 	
 
-12. Fügen Sie die folgende Hilfsmethode, die von der Methode **Main** verwendet wird, zur **Program**-Klasse hinzu. Diese Methode öffnet ein Dialogfeld, in dem Sie den **Benutzernamen** und das **Kennwort** bereitstellen können, mit denen Sie sich beim klassischen Azure-Portal anmelden.
+12. Fügen Sie die folgende Hilfsmethode, die von der Methode **Main** verwendet wird, zur **Program**-Klasse hinzu. Diese Methode öffnet ein Dialogfeld, in dem Sie den **Benutzernamen** und das **Kennwort** bereitstellen können, mit denen Sie sich beim klassischen Azure-Portal anmelden. 
  
 		public static string GetAuthorizationHeader()
         {
@@ -392,4 +394,4 @@ Sie können Azure Data Factorys mithilfe des Data Factory .NET SDK programmgeste
 [azure-developer-center]: http://azure.microsoft.com/downloads/
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0302_2016-->

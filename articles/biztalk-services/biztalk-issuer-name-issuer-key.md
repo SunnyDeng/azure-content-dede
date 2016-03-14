@@ -4,7 +4,7 @@
 	services="biztalk-services" 
 	documentationCenter="" 
 	authors="MandiOhlinger" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor=""/>
 
 <tags 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/02/2015" 
+	ms.date="02/29/2016" 
 	ms.author="mandia"/>
 
 
@@ -59,7 +59,7 @@ Zusammenfassung: Ausstellername = Dienstidentitätsname Ausstellerschlüssel = K
 
 Im linken Navigationsbereich können Sie außerdem **Active Directory** auswählen, um die Access Control-Werte abzurufen.
 
-> [AZURE.IMPORTANT]Wenn Sie einen Access Control-Namespace mit **Active Directory** erstellen, wird die Dienstidentität **nicht** automatisch erstellt. Wenn Sie einen BizTalk Service einrichten, werden automatisch ein Access Control-Namespace, eine Dienstidentität mit dem Namen "owner" (Ausstellername), ein Kennwort (Ausstellerschlüssel) und ein symmetrischer Schlüssel erstellt.<br /> [Verwenden des ACS-Verwaltungsdiensts zum Konfigurieren von Dienstidentitäten](http://go.microsoft.com/fwlink/p/?LinkID=303942) bietet weitere Informationen zu Access Control Service-Identitäten.
+> [AZURE.IMPORTANT] Wenn Sie einen Access Control-Namespace mit **Active Directory** erstellen, wird die Dienstidentität **nicht** automatisch erstellt. Wenn Sie einen BizTalk Service einrichten, werden automatisch ein Access Control-Namespace, eine Dienstidentität mit dem Namen "owner" (Ausstellername), ein Kennwort (Ausstellerschlüssel) und ein symmetrischer Schlüssel erstellt.<br /> [Verwenden des ACS-Verwaltungsdiensts zum Konfigurieren von Dienstidentitäten](http://go.microsoft.com/fwlink/p/?LinkID=303942) bietet weitere Informationen zu Access Control Service-Identitäten.
 
 
 ## Service Bus-Ausstellername und -schlüssel
@@ -71,9 +71,7 @@ Service Bus-Ausstellername und -schlüssel werden von BizTalk-Adapterdiensten ve
 2. Klicken Sie im linken Navigationsbereich auf **Service Bus**.
 3. Wählen Sie Ihren Namespace aus. Klicken Sie in der Taskleiste auf **Verbindungsinformationen**: Daraufhin werden **Standardaussteller** (Ausstellername) und **Standardschlüssel** (Ausstellerschlüssel) angezeigt. Diese Werte können kopiert werden.  
 
-Zusammenfassung:  
-Ausstellername = Standardaussteller  
-Ausstellerschlüssel = Standardschlüssel
+Zusammenfassung: Ausstellername = Standardaussteller Ausstellerschlüssel = Standardschlüssel
 
 ## Weiter
 Zusätzliche Azure BizTalk Services-Themen:
@@ -94,4 +92,4 @@ Zusätzliche Azure BizTalk Services-Themen:
 - [BizTalk Services: Drosselung](http://go.microsoft.com/fwlink/p/?LinkID=302282)<br/>
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0302_2016-->

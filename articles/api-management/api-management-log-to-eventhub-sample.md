@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="article"
-    ms.date="11/10/2015"
+    ms.date="02/19/2016"
     ms.author="v-darmi"/>
 
 # Überwachen von APIs mit Azure API Management, Event Hubs und Runscope
@@ -268,4 +268,4 @@ Der Azure API Management-Dienst ist ein idealer Ort zum Erfassen des HTTP-Datenv
 	-	[log-to-eventhub policy reference](https://msdn.microsoft.com/library/azure/dn894085.aspx#log-to-eventhub)
 	
 
-<!-----HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0302_2016-->

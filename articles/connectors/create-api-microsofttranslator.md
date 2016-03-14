@@ -15,13 +15,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na" 
-   ms.date="02/11/2016"
+   ms.date="02/25/2016"
    ms.author="mandia"/>
 
 # Erste Schritte mit der Microsoft Translator-API
-Stellen Sie eine Verbindung mit Microsoft Translator her, um Text zu übersetzen, eine Sprache zu erkennen und mehr.
+Stellen Sie eine Verbindung mit Microsoft Translator her, um Text zu übersetzen, eine Sprache zu erkennen und mehr. Die Microsoft Translator-API kann in Folgendem verwendet werden:
 
-Die Microsoft Translator-API kann von PowerApps Enterprise- und Logik-Apps verwendet werden.
+- PowerApps 
+- Logik-Apps 
 
 Mit Microsoft Translator können Sie folgende Aktionen ausführen:
 
@@ -45,7 +46,7 @@ Alle APIs unterstützen Daten im JSON- und XML-Format.
 ## Erstellen der Verbindung mit Microsoft Translator
 
 ### Hinzufügen zusätzlicher Konfigurationen in PowerApps
-Wenn Sie PowerApps Enterprise Microsoft Translator hinzufügen, geben Sie die Werte für **Client-ID** und **Geheimer Clientschlüssel** der Microsoft Translator-Anwendung ein. Wenn Sie keine Übersetzungsanwendung haben, können Sie eine erstellen:
+Wenn Sie Microsoft Translator zu PowerApps Enterprise hinzufügen, geben Sie die Werte für **Client-ID** und **Geheimer Clientschlüssel** der Microsoft Translator-Anwendung ein. Wenn Sie keine Übersetzungsanwendung haben, können Sie eine erstellen:
 
 1. Wechseln Sie zur [Azure Data Market-Entwicklerseite][5] und melden Sie sich mit Ihrem Microsoft-Konto an. 
 
@@ -53,7 +54,7 @@ Wenn Sie PowerApps Enterprise Microsoft Translator hinzufügen, geben Sie die We
 
 	1. Geben Sie einen Wert für **Client-ID** ein.
 	2. Geben Sie den **Namen** Ihrer Anwendung ein.
-	3. Geben Sie einen Dummywert für **Umleitungs-URL** ein. Geben Sie z. B. Folgendes ein: **https://contosoredirecturl*.
+	3. Geben Sie einen Dummywert für **Umleitungs-URL** ein. Geben Sie z. B. Folgendes ein: **https://contosoredirecturl*.
 4. Geben Sie eine **Beschreibung** ein.
 	5. Klicken Sie auf **Erstellen**.  
 
@@ -63,6 +64,7 @@ Nun können Sie die **Client-ID** und den **geheimen Clientschlüssel** kopieren
 
 
 ## Swagger-REST-API – Referenz
+Gilt für Version: 1.0.
 
 ### Sprache erkennen    
 Erkennt die Ausgangssprache des angegebenen Texts. ```GET: /Detect```
@@ -146,11 +148,11 @@ Es gibt keine Parameter für diesen Aufruf.
 ## Nächste Schritte
 Nach Hinzufügen der Microsoft Translator-API zu PowerApps Enterprise [erteilen Sie den Benutzern Berechtigungen](../power-apps/powerapps-manage-api-connection-user-access.md) zum Verwenden der API in ihren Apps.
 
-[Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md).
+[Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md)
 
 
 <!--References-->
 [5]: https://datamarket.azure.com/developer/applications/
 [6]: ./media/create-api-microsofttranslator/register-your-application.png
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

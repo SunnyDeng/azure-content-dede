@@ -13,17 +13,17 @@
    ms.topic="article"
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="mobile" 
-   ms.date="08/10/2015"
+   ms.date="02/29/2016"
    ms.author="piyushjo"/>
 
 # Erstellen und Verwalten von Segmenten von Benutzern zur Identifikation von Verwendungsmustern
 
-In diesem Artikel wird die Registerkarte **SEGMENTE** im Portal **Mobile Engagement** beschrieben. Verwenden Sie das Portal **Mobile Engagement**, um Ihre mobilen Apps zu überwachen und zu verwalten. Beachten Sie, dass Sie zur Verwendung des Portals zuerst ein **Azure Mobile Engagement**-Konto erstellen müssen. Weitere Informationen finden Sie unter [Erstellen eines Azure Mobile Engagement-Kontos](mobile-engagement-create-account.md).
+In diesem Artikel wird die Registerkarte **SEGMENTE** im Portal **Mobile Engagement** beschrieben. Verwenden Sie das Portal **Mobile Engagement**, um Ihre mobilen Apps zu überwachen und zu verwalten.
 
 Der Abschnitt "Segmente" der Benutzeroberfläche ermöglicht Ihnen das Segmentieren Ihrer Benutzer basierend auf den verschiedenen Verhalten und Analysen, die Sie von der Anwendung und auch über die Segments-API erhalten können. Segmente werden erstmals 24 Stunden nach ihrer Erstellung berechnet und dann alle 24 Stunden basierend auf den neuesten Analyseinformationen neu berechnet. Sobald ein Segment berechnet ist, zeigt es jeden Tag ein Diagramm vom Typ "Tag-zu-Tag-Verlauf" an.
 
 
->[AZURE.NOTE]Viele Abschnitte der Benutzeroberfläche des **Mobile Engagement**-Portals enthalten die Schaltfläche **HILFE ANZEIGEN**. Drücken Sie diese Schaltfläche, um weitere Kontextinformationen zu einem bestimmten Bereich zu erhalten.
+>[AZURE.NOTE] Viele Abschnitte der Benutzeroberfläche des **Mobile Engagement**-Portals enthalten die Schaltfläche **HILFE ANZEIGEN**. Drücken Sie diese Schaltfläche, um weitere Kontextinformationen zu einem bestimmten Bereich zu erhalten.
 
 ## Erstellen von Segmenten
 Sie können im Abschnitt "Analyse" ein Segment basierend auf bis zu 10 Kriterien für einen bestimmten Zeitraum von bis zu 60 Tagen in der Vergangenheit erstellen. Beispielsweise können Sie ein Segment basierend auf Personen erstellen, die innerhalb der letzten 10 Tage in Ihrer App bestimmte Seiten besucht oder nach bestimmten Inhalten gesucht haben. Diese Informationen sind im Abschnitt "Analyse" verfügbar. Sie können sie nutzen, um ein Segment zu erstellen und anschließend eine Pushbenachrichtigung an diese Teilmenge von Benutzern einrichten, um sie zum Zurückkehren zur App zu bewegen.
@@ -197,4 +197,4 @@ Wenn Sie Ihr Kriterium eingerichtet haben, wird es im Trichter "Segment" angezei
 [Link 33]: ../mobile-engagement-how-tos-web-view.md
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0302_2016-->

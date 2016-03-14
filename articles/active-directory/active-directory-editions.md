@@ -117,7 +117,8 @@ Eine Reihe von Azure Active Directory-Funktionen sind als Editionen mit nutzungs
 
 
 
-<br> <hr>
+<br>
+<hr>
 ## Gemeinsame Features
 #### Verzeichnisobjekte 
 
@@ -152,7 +153,8 @@ Das standardmäßige Nutzungskontingent liegt bei 150.000 Objekten. Bei einem O
 - [Azure Active Directory-Geräteregistrierung – Übersicht](active-directory-conditional-access-device-registration-overview.md)
 
 
-<br> <hr>
+<br>
+<hr>
 #### Einmaliges Anmelden (Single Sign-On, SSO)
 
 **Typ:** Gemeinsame Features
@@ -172,7 +174,8 @@ Das standardmäßige Nutzungskontingent liegt bei 150.000 Objekten. Bei einem O
 
 - [Verwalten von Anwendungen mit Azure Active Directory (AD)](active-directory-enable-sso-scenario.md)
 
-<br> <hr>
+<br>
+<hr>
 #### Self-Service-Kennwortänderung für Cloudbenutzer
 
 **Typ:** Gemeinsame Features
@@ -188,7 +191,8 @@ Das standardmäßige Nutzungskontingent liegt bei 150.000 Objekten. Bei einem O
 - [Aktualisieren Ihres eigenen Kennworts](active-directory-passwords-update-your-own-password.md)
 
 
-<br> <hr>
+<br>
+<hr>
 #### Connect (Synchronisierungsmodul, mit dem lokale Verzeichnisse auf Azure Active Directory ausgeweitet werden) 
 
 **Typ:** Gemeinsame Features
@@ -204,7 +208,8 @@ Das standardmäßige Nutzungskontingent liegt bei 150.000 Objekten. Bei einem O
 
 - [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<br> <hr>
+<br>
+<hr>
 #### Sicherheits-/Nutzungsberichte
 
 **Typ:** Gemeinsame Features
@@ -220,7 +225,8 @@ Das standardmäßige Nutzungskontingent liegt bei 150.000 Objekten. Bei einem O
 
 - [Anzeigen Ihrer Zugriffs- und Nutzungsberichte](active-directory-view-access-usage-reports.md)
 
-<br> <hr>
+<br>
+<hr>
 
 ## Features der Premium und Basic Edition
 #### Gruppenbasierte Zugriffsverwaltung/Bereitstellung
@@ -238,7 +244,8 @@ Das standardmäßige Nutzungskontingent liegt bei 150.000 Objekten. Bei einem O
 
 - [Verwenden einer Gruppe zum Verwalten des Zugriffs auf SaaS-Anwendungen](active-directory-accessmanagement-group-saasapps.md)
 
-<br> <hr>
+<br>
+<hr>
 #### Self-Service-Kennwortrücksetzung für Cloudbenutzer
 
 **Typ:** Basic-Features
@@ -254,7 +261,8 @@ Das standardmäßige Nutzungskontingent liegt bei 150.000 Objekten. Bei einem O
 
 - [Zurücksetzen des Azure AD-Kennworts für Benutzer und Administratoren](active-directory-passwords.md)
 
-<br> <hr>
+<br>
+<hr>
 #### Unternehmensbranding (Anpassen von Anmeldeseiten/Zugriffsbereich)
 
 **Typ:** Basic-Features
@@ -270,7 +278,8 @@ Das standardmäßige Nutzungskontingent liegt bei 150.000 Objekten. Bei einem O
 
 - [Hinzufügen Ihres Unternehmensbranding zur Anmelde- und Zugriffsbereichsseite](active-directory-add-company-branding.md)
 
-<br> <hr>
+<br>
+<hr>
 #### Anwendungsproxy
 
 **Typ:** Basic-Features
@@ -286,7 +295,8 @@ Das standardmäßige Nutzungskontingent liegt bei 150.000 Objekten. Bei einem O
 
 - [Bereitstellen von sicherem Remotezugriff auf lokale Anwendungen](active-directory-application-proxy-get-started.md)
 
-<br> <hr>
+<br>
+<hr>
 #### SLA 99,9 %
 
 **Typ:** Basic-Features
@@ -302,7 +312,8 @@ Das standardmäßige Nutzungskontingent liegt bei 150.000 Objekten. Bei einem O
 
 - [Vereinbarungen zum Servicelevel (SLAs)](https://azure.microsoft.com/support/legal/sla/)
 
-<br> <hr>
+<br>
+<hr>
 
 ## Premium-Features
 #### Self-Service-Verwaltung von Gruppen und Apps/Self-Service-Hinzufügung von Anwendungen/Dynamische Gruppen
@@ -350,7 +361,8 @@ Das standardmäßige Nutzungskontingent liegt bei 150.000 Objekten. Bei einem O
 
 - [Was ist Azure Multi-Factor Authentication?](../multi-factor-authentication/multi-factor-authentication.md)
 
-<br> <hr>
+<br>
+<hr>
 #### MIM-CAL und MIM-Server 
 
 Rechte an Microsoft Identity Manager Server-Software werden mit Windows Server-Lizenzen gewährt (beliebige Edition). Da Microsoft Identity Manager auf dem Windows Server-Betriebssystem ausgeführt wird, kann Microsoft Identity Manager installiert und auf dem Server verwendet werden, solange auf diesem Server eine gültige, lizenzierte Kopie von Windows Server vorhanden ist. Für Microsoft Identity Manager Server ist keine andere separate Lizenz erforderlich.
@@ -383,7 +395,8 @@ Rechte an Microsoft Identity Manager Server-Software werden mit Windows Server-L
 
 - [Suchen nach nicht verwalteten Cloudanwendungen per Cloud App Discovery](active-directory-cloudappdiscovery-whatis.md)
 
-<br> <hr>
+<br>
+<hr>
 #### Connect Health
 
 **Typ:** Premium-Features
@@ -399,7 +412,8 @@ Rechte an Microsoft Identity Manager Server-Software werden mit Windows Server-L
 
 - [Überwachen Ihrer lokalen Identitätsinfrastruktur und Synchronisierung von Diensten in der Cloud](active-directory-aadconnect-health.md)
 
-<br> <hr>
+<br>
+<hr>
 #### Automatisches Kennwortrollover für Gruppenkonten
 
 **Typ:** Premium-Features
@@ -412,7 +426,8 @@ Rechte an Microsoft Identity Manager Server-Software werden mit Windows Server-L
 | | | ![Prüfen][12]| |
 
 
-<br> <hr>
+<br>
+<hr>
 ## Azure Active Directory-Einbindung – nur auf Windows 10 bezogene Features
 #### Verbinden Sie ein Gerät mit Azure AD, Desktop-SSO, Microsoft Passport für Azure AD, BitLocker-Wiederherstellung (Administrator)
 
@@ -448,10 +463,11 @@ Neben den allgemein verfügbaren Funktionen der Free, Basic und Premium Editione
 **Verfügbare Vorschaufunktionen:**
 
 - [B2B-Zusammenarbeit](active-directory-b2b-collaboration-overview.md)
-- Bedingter Zugriff
 - [Verwaltungseinheiten](active-directory-administrative-units-management.md)
 - Privileged Identity Management
 - [HR-Anwendungsintegration](active-directory-saas-workday-inbound-tutorial.md)
+- [Enterprise State Roaming](active-directory-windows-enterprise-state-roaming-overview.md)
+- [Azure Active Directory Identity Protection](active-directory-identityprotection.md)
 
 
 
@@ -467,4 +483,4 @@ Neben den allgemein verfügbaren Funktionen der Free, Basic und Premium Editione
 <!--Image references-->
 [12]: ./media/active-directory-editions/ic195031.png
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0302_2016-->

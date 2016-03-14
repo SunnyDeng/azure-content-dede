@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="mobile" 
-   ms.date="05/12/2015"
+   ms.date="02/29/2016"
    ms.author="piyushjo"/>
 
 # Erste Schritte bei der Verwendung und Verwaltung von Push-Vorgängen, um Ihre Endbenutzern zu erreichen.
@@ -126,12 +126,16 @@ Sie können den Übermittlungsmodus für „Immer“ auswählen, um sicherzustel
 ### Planen des Kampagnenstarts
 ![Planen1][18]
 
-Angenommen, es ist der 21. März und Sie haben eine Ankündigung zu machen, die für den 22. März um Mitternacht geplant ist. Sie müssen für eine Pushbenachrichtigung nicht direkt vor dem Gerät sitzen! Sie können die genaue Uhrzeit vorplanen, zu der die Benachrichtigungen gesendet werden. - Deaktivieren Sie das Kontrollkästchen „Keine“. - Wählen Sie Datum und Uhrzeit für den Start der Push-Kampagne aus.
+Angenommen, es ist der 21. März und Sie haben eine Ankündigung zu machen, die für den 22. März um Mitternacht geplant ist. Sie müssen für eine Pushbenachrichtigung nicht direkt vor dem Gerät sitzen! Sie können den Sendezeitpunkt für eine Benachrichtigung auf die Minute genau planen.
+-    Deaktivieren Sie das Kontrollkästchen „Keine“, und wählen Sie eine Startzeit aus. 
+-    Wählen Sie das gewünschte Datum und die Uhrzeit zum Starten der Pushkampagne aus.
 
 ### Planen des Kampagnenendes
 ![Planen2][19]
 
-Sie möchten, dass die Kampagne am 25. März um 15 Uhr beendet wird, aber Sie wissen schon, dass Sie zu diesem Zeitpunkt nicht vor Ort sind, um diesen Vorgang auszuführen. Sie müssen für eine Pushbenachrichtigung nicht direkt vor dem Gerät sitzen! Sie können die genaue Uhrzeit vorplanen, zu der die Kampagne beendet wird. -Deaktivieren Sie das Kontrollkästchen „Keine“. Wählen Sie Datum und Uhrzeit für die Beendung der Push-Kampagne aus.
+Sie möchten, dass die Kampagne am 25. März um 15 Uhr beendet wird, aber Sie wissen schon, dass Sie zu diesem Zeitpunkt nicht vor Ort sind, um diesen Vorgang auszuführen. Sie müssen für eine Pushbenachrichtigung nicht direkt vor dem Gerät sitzen! Sie können den Zeitpunkt zum Beenden einer Kampagne auf die Minute genau planen.
+-    Aktivieren Sie das Kontrollkästchen „Keine“, oder wählen Sie eine Endzeit aus.
+-    Wählen Sie das gewünschte Datum und die Uhrzeit zum Beenden der Pushkampagne aus.
 
 ### Manuelles Beenden einer Kampagne
 ![Planen3][20]
@@ -293,4 +297,4 @@ Eine Webansicht ist ein Popupfenster mit Webinhalt. Dieses Popupfenster wird ang
 [Link 33]: ../mobile-engagement-how-tos-web-view.md
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0302_2016-->

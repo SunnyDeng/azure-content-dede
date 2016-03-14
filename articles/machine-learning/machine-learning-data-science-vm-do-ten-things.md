@@ -18,7 +18,7 @@
 
 # Zehn Dinge, die Sie mit der Data Science Virtual Machine machen können 
 
-Die Microsoft Data Science Virtual Machine (DSVM) ist eine leistungsfähige Data Science-Entwicklungsumgebung, mit der Sie unterschiedliche Aufgaben zum Durchsuchen und Modellieren von Daten ausführen können. Die Umgebung wird bereits mit mehreren gängigen Datenanalysetools geliefert, sodass Sie schnell mit Ihrer Analyse beginnen können. Die DSVM arbeitet eng mit zahlreichen Azure-Diensten zusammen und kann Daten lesen und verarbeiten, die bereits in Azure SQL Data Warehouse, Azure Data Lake, Azure Storage oder DocumentDB gespeichert sind. Sie kann auch Analysetools wie Azure Machine Learning und Azure Data Factory nutzen.
+Die Microsoft Data Science Virtual Machine (DSVM) ist eine leistungsfähige Data Science-Entwicklungsumgebung, mit der Sie unterschiedliche Aufgaben zum Durchsuchen und Modellieren von Daten ausführen können. Die Umgebung wird bereits mit mehreren gängigen Datenanalysetools geliefert, sodass Sie schnell mit Ihrer Analyse für lokale Bereitstellungen, Cloud- oder Hybridbereitstellungen beginnen können. Die DSVM arbeitet eng mit zahlreichen Azure-Diensten zusammen und kann Daten lesen und verarbeiten, die bereits in Azure SQL Data Warehouse, Azure Data Lake, Azure Storage oder in DocumentDB gespeichert sind. Sie kann auch andere Analysetools wie Azure Machine Learning und Azure Data Factory nutzen.
 
 
 In diesem Artikel erfahren Sie, wie Sie Ihre DSVM nutzen können, um verschiedene Data Science-Aufgaben auszuführen und mit anderen Azure-Diensten zu interagieren. Die folgenden Aufgaben können Sie z. B. auf der DSVM ausführen:
@@ -34,50 +34,64 @@ In diesem Artikel erfahren Sie, wie Sie Ihre DSVM nutzen können, um verschieden
 9. Dynamische Skalierung Ihrer DSVM gemäß Ihren Projektanforderungen 
 10. Installieren zusätzlicher Tools auf Ihrem virtuellen Computer
 
-**Voraussetzungen** Sie benötigen ein Azure-Abonnement. Sie können sich [hier](https://azure.microsoft.com/free/) für eine kostenlose Testversion anmelden. Anleitungen für die Bereitstellung einer Data Science Virtual Machine in Ihrem Azure-Portal finden Sie unter [Erstellen eines virtuellen Computers](https://ms.portal.azure.com/#create/microsoft-ads.standard-data-science-vmstandard-data-science-vm).
+>[AZURE.NOTE] Für viele der in diesem Artikel aufgelisteten zusätzlichen Datenspeicher- und Analysedienste fallen zusätzliche Nutzungsgebühren an. Genauere Angaben zu den Preisen finden Sie auf der Seite [Azure-Preise](https://azure.microsoft.com/pricing/).
+
+**Voraussetzungen**
+
+- Sie benötigen ein Azure-Abonnement. Sie können sich [hier](https://azure.microsoft.com/free/) für eine kostenlose Testversion registrieren. 
+
+- Anleitungen für die Bereitstellung einer Data Science Virtual Machine in Ihrem Azure-Portal finden Sie unter [Creating a virtual machine](https://ms.portal.azure.com/#create/microsoft-ads.standard-data-science-vmstandard-data-science-vm) (Erstellen eines virtuellen Computers).
 
 ## 1\. Durchsuchen von Daten und Entwickeln von Modellen mit Microsoft R Server oder Python
 
 Sie können Ihre Datenanalysen mit Sprachen wie R und Python direkt auf der DSVM ausführen.
 
-Für R können Sie eine IDE namens „Revolution R Enterprise 8.0“ verwenden, die Sie im Startmenü oder auf dem Desktop finden. Microsoft hat Bibliotheken zusätzlich zu Open Source/CRAN-R bereitgestellt, um skalierbare Analysen zu ermöglichen sowie das Analysieren von Datenmengen, deren Größe den Arbeitsspeicher überschreitet, in parallelen Datenblöcken. Hier sehen Sie einen Screenshot der Verwendung von R IDE.
-
-![R-IDE](./media/machine-learning-data-science-vm-do-ten-things/RevoIDE.png)
+Für R können Sie eine IDE namens „Revolution R Enterprise 8.0“ verwenden, die Sie im Startmenü oder auf dem Desktop finden. Microsoft hat Bibliotheken zusätzlich zu Open Source/CRAN-R bereitgestellt, um skalierbare Analysen zu ermöglichen sowie das Analysieren von Datenmengen, deren Größe den Arbeitsspeicher überschreitet, in parallelen Datenblöcken. Sie können auch eine R-IDE ihrer Wahl wie [RStudio](https://www.rstudio.com/products/rstudio-desktop/) installieren.
 
 Für Python können Sie eine IDE wie Visual Studio Community Edition verwenden, bei der die „Python Tools for Visual Studio“-Erweiterung (PTVS) vorinstalliert ist. Standardmäßig wird nur eine Basisinstallation von Python 2.7 (ohne Analysebibliothek wie SciKit, Pandas) auf PTVS konfiguriert. Um Anaconda Python 2.7 und 3.5 zu aktivieren, müssen Sie die folgenden Schritte ausführen:
 
-* Erstellen benutzerdefinierter Umgebungen für jede Version durch Navigieren zu „Tools -> Python Tools -> Python Environments“ und Klicken auf „+ Custom“ in Visual Studio 2015 Community Edition
-* Geben Sie eine Beschreibung ein, und legen Sie für die Umgebungspräfixpfade „c:\\anaconda for Anaconda Python 2.7“ ODER „c:\\anaconda\\envs\\py35 for Anaconda Python 3.5“ fest 
+* Erstellen Sie benutzerdefinierte Umgebungen für jede Version durch Navigieren zu **Tools** -> **Python Tools** -> **Python Environments**, und klicken Sie auf „**+ Custom**“ in Visual Studio 2015 Community Edition.
+* Geben Sie eine Beschreibung ein, und legen Sie für die Umgebungspräfixpfade *c:\\anaconda* for Anaconda Python 2.7 ODER *c:\\anaconda\\envs\\py35* for Anaconda Python 3.5 fest 
 * Klicken Sie auf **Auto Detect** und **Apply**, um die Umgebung zu speichern. 
 
 So sieht das benutzerdefinierte Umgebungssetup in Visual Studio aus.
 
 ![PTVS-Setup](./media/machine-learning-data-science-vm-do-ten-things/PTVSSetup.png)
 
-In der [PTVS-Dokumentation](https://github.com/Microsoft/PTVS/wiki/Selecting-and-Installing-Python-Interpreters#hey-i-already-have-an-interpreter-on-my-machine-but-ptvs-doesnt-seem-to-know-about-it) finden Sie ausführliche Informationen zum Erstellen der Python-Umgebungen.
+In der [PTVS-Dokumentation](https://github.com/Microsoft/PTVS/wiki/Selecting-and-Installing-Python-Interpreters#hey-i-already-have-an-interpreter-on-my-machine-but-ptvs-doesnt-seem-to-know-about-it) finden Sie zusätzliche Informationen zum Erstellen der Python-Umgebungen.
   
-Jetzt können Sie ein Projekt öffnen und mit der Arbeit beginnen!
+Jetzt können Sie ein neues Python-Projekt erstellen. Navigieren Sie zu **File** -> **New** -> **Project** -> **Python**, und wählen Sie die Python-Anwendung aus, die sie erstellen. Sie können die Python-Umgebung für das aktuelle Projekt auf die gewünschte Version (Anaconda 2.7 oder 3.5) festlegen: Klicken Sie mit der rechten Maustaste auf **Python environment**, wählen Sie **Add/Remove Python Environments** aus, und wählen Sie dann die gewünschte Umgebung aus, die Sie dem Projekt zuordnen möchten. Weitere Informationen zum Arbeiten mit PTVS finden Sie auf der [Dokumentationsseite](https://github.com/Microsoft/PTVS/wiki) des Produkts.
 
 ## 2\. Verwenden eines Jupyter Notebooks zum Durchsuchen und Modellieren Ihrer Daten mit Python oder R
 
-Das Jupyter Notebook ist eine leistungsfähige Umgebung, die eine browserbasierte „IDE“ für das Durchsuchen und Modellieren von Daten bereitstellt. Sie können Python 2, Python 3 oder R verwenden (sowohl Open Source als auch Microsoft R Server). Zum Starten des Jupyter Notebooks klicken Sie auf das Symbol **Jupyter Notebook** im Startmenü/auf dem Desktop. Auf der DSVM können Sie auch zu „https://localhost:9999/“ wechseln, um auf das Jupyter Notebook zuzugreifen. Wenn sie zur Eingabe eines Kennworts aufgefordert werden, verwenden Sie die Anweisungen auf der [DSVM-Dokumentationsseite](machine-learning-data-science-provision-vm.md/#how-to-create-a-strong-password-on-the-jupyter-notebook-server), um ein sicheres Kennwort für den Zugriff auf das Jupyter Notebook zu erstellen.
+Das Jupyter Notebook ist eine leistungsfähige Umgebung, die eine browserbasierte „IDE“ für das Durchsuchen und Modellieren von Daten bereitstellt. Sie können Python 2, Python 3 oder R (sowohl Microsoft R Open als auch Microsoft R Server) in einem Jupyter Notebook verwenden.
+ 
+Zum Starten des Jupyter Notebooks klicken Sie auf das Symbol **Jupyter Notebook** im Startmenü/auf dem Desktop. Auf der DSVM können Sie auch zu „https://localhost:9999/“ wechseln, um auf das Jupyter Notebook zuzugreifen. Wenn sie zur Eingabe eines Kennworts aufgefordert werden, verwenden Sie die Anweisungen auf der [DSVM-Dokumentationsseite](machine-learning-data-science-provision-vm.md/#how-to-create-a-strong-password-on-the-jupyter-notebook-server), um ein sicheres Kennwort für den Zugriff auf das Jupyter Notebook zu erstellen.
 
-TBD: SCREEN SHOT
+Sobald Sie das Notebook geöffnet haben, sehen Sie ein Verzeichnis, das einige Beispielnotebooks enthält, die in der DSVM vorkonfiguriert sind. Sie können jetzt:
 
-Sobald Sie das Notebook geöffnet haben, sehen Sie ein Verzeichnis, das einige Beispielnotebooks enthält, die in der DSVM vorkonfiguriert sind. Sie können auf das Notebook klicken, um den Code zu sehen. Sie können jede Zelle durch Drücken auf **UMSCHALT-EINGABETASTE** ausführen. Sie können das gesamte Notebook ausführen, indem Sie auf **Cell** -> **Run** klicken.
+- auf das Notebook klicken, um den Code zu sehen 
+- jede Zelle über **UMSCHALT+EINGABE-Taste** ausführen 
+- das gesamte Notebook ausführen, indem Sie auf **Cell** -> **Run** klicken
+- ein neues Notebook erstellen, indem Sie auf das Jupyter-Symbol klicken (linke obere Ecke), dann auf der rechten Seite auf die Schaltfläche **New** klicken und die Notebook-Sprache (auch Kernels genannt) wählen. 
 
-Sie können ein neues Notebook erstellen, indem Sie auf das Jupyter-Symbol klicken (linke obere Ecke), dann auf der rechten Seite auf die Schaltfläche **Neu** klicken und dann die Notebook-Sprache (auch bekannt als Kernels) wählen. Derzeit werden Python 2.7, Python 3.5 und R unterstützt. Der R-Kernel unterstützt sowohl das Programmieren in Open Source-R als auch den Enterprise-skalierbaren Microsoft R-Server. Sobald Sie das Notebook geöffnet haben, können Sie mit den Bibliotheken Ihrer Wahl Ihre Daten durchsuchen, das Modell erstellen und das Modell testen.
+>[AZURE.NOTE] Derzeit werden Python 2.7, Python 3.5 und R unterstützt. Der R-Kernel unterstützt sowohl das Programmieren in Open Source-R als auch den Enterprise-skalierbaren Microsoft R-Server.
+
+Sobald Sie das Notebook geöffnet haben, können Sie mit den Bibliotheken Ihrer Wahl Ihre Daten durchsuchen, das Modell erstellen und das Modell testen.
 
 
-## 3\. Erstellen von Modellen mit R und Python und ihre Operationalisierung in Azure Machine Learning
+## 3\. Erstellen von Modellen mit R oder Python und Operationalisieren dieser Modelle durch Verwenden von Azure Machine Learning
 
-Sobald Sie Ihr Modell erstellt und überprüft haben, ist der nächste Schritt in der Regel die Bereitstellung für die Produktion. Dies ermöglicht Ihren Clientanwendungen, die Modellvorhersagen auf Echtzeit- oder Batchbasis aufzurufen. Azure Machine Learning bietet einen Mechanismus zum Operationalisieren des in R oder Python erstellten Modells. Wenn Sie Ihr Modell in Azure Machine Learning operationalisieren, steht ein Webdienst zur Verfügung, der Clients REST-Aufrufe erlaubt, die Eingabeparameter übergeben und Vorhersagen aus dem Modell als Ausgaben empfangen. Wenn Sie sich noch nicht für AzureML registriert haben, erhalten Sie einen kostenlosen 8-Stunden-Gastzugriff oder einen freien Arbeitsbereich, wenn Sie die Startseite von [AzureML Studio](https://studio.azureml.net/) besuchen und auf „Get Started“ klicken.
+Sobald Sie Ihr Modell erstellt und überprüft haben, ist der nächste Schritt in der Regel die Bereitstellung für die Produktion. Dies ermöglicht Ihren Clientanwendungen, die Modellvorhersagen auf Echtzeit- oder Batchmodusbasis aufzurufen. Azure Machine Learning bietet einen Mechanismus zum Operationalisieren eines in R oder Python erstellten Modells.
 
-### Erstellen und Operationalisieren von mit Python erstellten Modellen  
+Wenn Sie Ihr Modell in Azure Machine Learning operationalisieren, steht ein Webdienst zur Verfügung, der Clients REST-Aufrufe erlaubt, die Eingabeparameter übergeben und Vorhersagen aus dem Modell als Ausgaben empfangen.
 
-Laden Sie das Notebook „IrisClassifierPyMLWebService“ in Jupyter hoch. Hier ist ein einfaches, in Python mithilfe von SciKit-learn erstelltes Modell, wie es im Notebook zu finden ist.
+>[AZURE.NOTE] Wenn Sie sich noch nicht für AzureML registriert haben, erhalten Sie einen freien oder einen Standardarbeitsbereich, wenn Sie die Startseite von [AzureML Studio](https://studio.azureml.net/) besuchen und auf „Get Started“ klicken.
+
+### Erstellen und Operationalisieren von Python-Modellen
+
+Hier sehen Sie den Ausschnitt eines in einem Python Jupyter Notebook entwickelten Codes, der durch Verwenden der SciKit-Learn-Bibliothek ein einfaches Modell erstellt.
   
-	python
 	#IRIS classification
 	from sklearn import datasets
 	from sklearn import svm
@@ -86,9 +100,8 @@ Laden Sie das Notebook „IrisClassifierPyMLWebService“ in Jupyter hoch. Hier 
 	X, y = iris.data, iris.target
 	clf.fit(X, y) 
  
-Die Methode, die zum Bereitstellen Ihrer Python-Modelle in AzureML verwendet wird, ist das Einhüllen der Vorhersage eines Modells in eine Funktion, und seine Ausstattung mit Attributen, die von der AzureML-Bibliothek bereitgestellt werden, die Ihre AzureML-Arbeitsbereichs-ID, den API-Schlüssel, die Eingabeparameter und die Rückgabeparameter bezeichnet.
+Die Methode, die zum Bereitstellen Ihrer Python-Modelle in Azure Machine Learning verwendet wird, umschließt die Vorhersage des Modells in eine Funktion und stattet sie mit Attributen aus, die von der vorinstallierten Azure Machine Learning-Python-Bibliothek bereitgestellt werden, die Ihre Azure Machine Learning-Arbeitsbereichs-ID, den API-Schlüssel, die Eingabe- und Rückgabeparameter bezeichnet.
 
-	python
 	from azureml import services
 	@services.publish(workspaceid, auth_token)
 	@services.types(sep_l = float, sep_w = float, pet_l=float, pet_w=float)
@@ -99,8 +112,6 @@ Die Methode, die zum Bereitstellen Ihrer Python-Modelle in AzureML verwendet wir
 
 Ein Client kann jetzt den Webdienst aufrufen. Es gibt benutzerfreundliche Wrapper, die die REST-API-Anforderungen erstellen. Hier ist ein Beispielcode zur Nutzung des Webdiensts.
 
-
- 	python
 	# Consume through web service URL and keys
 	from azureml import services
 	@services.service(url, api_key)
@@ -112,15 +123,26 @@ Ein Client kann jetzt den Webdienst aufrufen. Es gibt benutzerfreundliche Wrappe
 	IrisPredictor(3,2,3,4)
 
 
-HINWEIS: Die AzureML-Bibliothek wird derzeit nur von Python 2.7 unterstützt.
+>[AZURE.NOTE] Die Azure Machine Learning-Bibliothek wird derzeit nur von Python 2.7 unterstützt.
 
 ### Erstellen und Operationalisieren von R-Modellen
 
-Sie können R-Modelle, die auf der Data Science Virtual Machine oder anderswo erstellt wurden, auf Azure ML in einer Weise bereitstellen, die derjenigen für Python ähnelt. Erstellen Sie zuerst wie unten gezeigt eine Datei „settings.json“, um Ihre Arbeitsbereichs-ID und Ihr Authentifizierungstoken bereitzustellen. Dann schreiben Sie einen Wrapper für die Vorhersagefunktion des Modells. Rufen Sie anschließend ```publishWebService``` in der AzureML-Bibliothek auf, wobei Sie den Wrapper für die Funktion übergeben. Hier ist ein Codeausschnitt, der verwendet werden kann, um ein Modell als Webdienst in Azure ML zu veröffentlichen.
+Sie können R-Modelle, die auf der Data Science Virtual Machine oder anderswo erstellt wurden, auf Azure Machine Learning in einer Weise bereitstellen, die derjenigen für Python ähnelt. Gehen Sie wie folgt vor:
 
-#### Settings.JSON-Datei:
+- Erstellen Sie wie unten gezeigt eine Datei „settings.json“, um Ihre Arbeitsbereichs-ID und Ihr Authentifizierungstoken bereitzustellen.
+- Schreiben Sie einen Wrapper für die Vorhersagefunktion des Modells. 
+- Rufen Sie ```publishWebService``` in der Azure Machine Learning-Bibliothek auf, um den Wrapper für die Funktion zu übergeben.  
 
-	json
+Hier sehen Sie die Vorgehensweise und Codeausschnitte, die Sie verwenden können, um ein Modell als Webdienst in Azure Machine Learning einzurichten, zu erstellen, zu veröffentlichen oder zu nutzen.
+
+#### Einrichtung
+
+1.  Installieren Sie das AzureML-R-Paket, indem Sie ```install.packages("AzureML")``` in die IDE „Revolution R Enterprise 8.0“ oder in Ihre R-IDE eingeben. 
+2.  RTools können Sie [hier](https://cran.r-project.org/bin/windows/Rtools/) herunterladen. Sie benötigen das Zip-Programm im Pfad (mit der Bezeichnung zip.exe), um Ihr R-Paket in AzureML zu operationalisieren. 
+3.  Erstellen Sie eine Datei „settings.json“ in einem Verzeichnis namens ```.azureml``` in Ihrem Basisverzeichnis, und geben Sie die Parameter aus Ihrem Azure ML-Arbeitsbereich ein:
+
+Struktur der Datei „settings.json“:
+
 	{"workspace":{
 	"id"                  : "ENTER YOUR AZUREML WORKSPACE ID",
 	"authorization_token" : "ENTER YOUR AZUREML AUTH TOKEN"
@@ -129,7 +151,6 @@ Sie können R-Modelle, die auf der Data Science Virtual Machine oder anderswo er
 
 #### Erstellen eines Modells in R und seine Veröffentlichung in Azure ML
 
-	R
 	library(AzureML)
 	ws <- workspace(config="~/.azureml/settings.json")
 
@@ -148,10 +169,9 @@ Sie können R-Modelle, die auf der Data Science Virtual Machine oder anderswo er
 
 #### Nutzung des bereitgestellten Modells in Azure ML
 
-Um das Modell aus einer Clientanwendung zu nutzen, verwenden wir die AzureML-Bibliothek, um den veröffentlichten Webdienst anhand seines Namens mit dem API-Aufruf `services` zu suchen, um den Endpunkt zu bestimmen. Dann rufen Sie einfach die Funktion `consume` auf, und übergeben Sie den vorherzusagenden Datenrahmen. Der folgende Code wird verwendet, um das veröffentlichte Modell als AzureML-Webdienst zu nutzen.
+Um das Modell aus einer Clientanwendung zu nutzen, verwenden wir die Azure Machine Learning-Bibliothek, um den veröffentlichten Webdienst anhand seines Namens mit dem API-Aufruf `services` zu suchen, und um den Endpunkt zu bestimmen. Dann rufen Sie einfach die Funktion `consume` auf und übergeben den Datenrahmen, der vorhergesagt werden soll. Der folgende Code wird verwendet, um das als Azure Machine Learning-Webdienst veröffentlichte Modell zu nutzen.
 
 
-	R
 	library(AzureML)
 	library(lme4)
 	ws <- workspace(config="~/.azureml/settings.json")
@@ -164,6 +184,7 @@ Um das Modell aus einer Clientanwendung zu nutzen, verwenden wir die AzureML-Bib
 	# OK, try this out, and compare with raw data
 	ans = consume(ep, sleepstudy)$ans
 
+Weitere Informationen über die Azure Machine Learning-R-Bibliothek finden Sie [hier](https://cran.r-project.org/web/packages/AzureML/AzureML.pdf).
 
 ## 4\. Verwalten von Azure-Ressourcen über PowerShell oder Azure-Portal
 
@@ -174,7 +195,9 @@ Um Ihr Azure-Abonnement und Ihre Cloudressourcen zu verwalten, können Sie in Ih
 
 ## 5\. Erweitern Ihres Speichers mit einem Shared-Dateisystem
 
-Datenanalysten können große Datasets, Code usw. innerhalb des Teams freigeben. Die DSVM selbst hat etwa 70 GB verfügbaren Speicherplatz. Um Ihren Speicher zu erweitern, können Sie den Azure-Dateidienst auf der DSVM einbinden, oder über die REST-API darauf zugreifen. Der maximale Speicherplatz der Azure-Dateidienstfreigabe beträgt 5 TB, und die Begrenzung für eine einzelne Datei beträgt 1 TB.
+Datenanalysten können große DataSets, Code oder andere Ressourcen innerhalb des Teams freigeben. Die DSVM selbst hat etwa 70 GB verfügbaren Speicherplatz. Um Ihren Speicher zu erweitern, können Sie den Azure-Dateidienst verwenden und auf der DSVM einbinden, oder über eine REST-API darauf zugreifen.
+
+>[AZURE.NOTE] Der maximale Speicherplatz der Azure-Dateidienstfreigabe beträgt 5 TB, und die Begrenzung für eine einzelne Datei beträgt 1 TB.
 
 Azure PowerShell können Sie verwenden, um eine Azure-Dateidienstfreigabe zu erstellen. Dieses Skript können Sie unter Azure PowerShell ausführen, um eine Azure-Dateidienstfreigabe zu erstellen.
 
@@ -197,39 +220,41 @@ Azure PowerShell können Sie verwenden, um eine Azure-Dateidienstfreigabe zu ers
 	Get-AzureStorageFile -Share $s
 
 
-Die erstellte Azure-Dateidienstfreigabe können Sie nun in jeden virtuellen Computer in Azure einbinden. Die VM sollte sich in dem gleichen Azure-Rechenzentrum wie das Speicherkonto befinden, um Latenz und Datenübertragungsgebühren zu vermeiden. Mit den folgenden Befehlen binden Sie das Laufwerk in die DSVM ein, die Sie unter Azure PowerShell ausführen können.
+Die neu erstellte Azure-Dateidienstfreigabe können Sie nun in jeden virtuellen Computer in Azure einbinden. Die VM sollte sich in dem gleichen Azure-Rechenzentrum wie das Speicherkonto befinden, um Latenz und Datenübertragungsgebühren zu vermeiden. Mit den folgenden Befehlen binden Sie das Laufwerk in die DSVM ein, die Sie unter Azure PowerShell ausführen können.
 
 
-	# Get storage key of the storage account that has the Azure file share from Azurer portal. Store it securely on the VM to avoid prompted in next command.
+	# Get storage key of the storage account that has the Azure file share from Azure portal. Store it securely on the VM to avoid prompted in next command.
 	cmdkey /add:<<mydatadisk>>.file.core.windows.net /user:<<mydatadisk>> /pass:<storage key>
 	
 	# Mount the Azure file share as Z: drive on the VM. You can chose another drive letter if you wish
 	net use z:  \<mydatadisk>.file.core.windows.net<<teamsharename>>
 
 
-Jetzt können Sie auf dieses Laufwerk wie auf jedes andere normale Laufwerk auf dem virtuellen Computer zugreifen.
+Jetzt können Sie auf dieses Laufwerk wie auf jedes normale Laufwerk auf der VM zugreifen.
 
 ## 6\. Freigeben von Code für Ihr Team mithilfe von Github 
 
-Github ist ein Coderepository, wo Sie umfangreichen Beispielcode und Quellen für verschiedene Tools finden, die unterschiedliche Technologien einsetzen. Sie werden von der gesamten Entwicklercommunity verwendet. Sie nutzt Git als Technologie zum Nachverfolgen und speichern der Versionen der Codedateien. Github ist auch eine Plattform, auf der Sie Ihr eigenes Repository erstellen können, um Shared-Code und Dokumentation Ihres Teams zu speichern, die Versionskontrolle zu implementieren und auch zu steuern, wer Zugriffsrechte hat, um den Code anzuzeigen und dazu beizutragen. Besuchen Sie die [Github-Hilfeseiten](https://help.github.com/), um weitere Informationen zur Verwendung von Git zu erhalten. Sie können Github als eine der Möglichkeiten nutzen, mit Ihrem Team zusammenzuarbeiten, von der Community entwickelten Code verwenden und wiederum Code zur Community beitragen.
+Github ist ein Coderepository, wo Sie umfangreichen Beispielcode und Quellen für verschiedene Tools finden, die unterschiedliche Technologien einsetzen. Sie werden von der gesamten Entwicklercommunity verwendet. Sie nutzt Git als Technologie zum Nachverfolgen und speichern der Versionen der Codedateien. Github ist auch eine Plattform, auf der Sie Ihr eigenes Repository erstellen können, um Shared-Code und Dokumentation Ihres Teams zu speichern, die Versionskontrolle zu implementieren und auch zu steuern, wer Zugriffsrechte hat, um den Code anzuzeigen und dazu beizutragen. Auf den [Github-Hilfeseiten](https://help.github.com/) finden Sie weitere Informationen zur Verwendung von Git. Sie können Github als eine der Möglichkeiten nutzen, mit Ihrem Team zusammenzuarbeiten, von der Community entwickelten Code verwenden und wiederum Code zur Community beitragen.
 
-Die DSVM enthält bereits Clienttools, die den Zugriff auf das Github-Repository sowohl über die Befehlszeile als auch die GUI ermöglichen. Das Befehlszeilentool zum Arbeiten mit Git und Github heißt ```git-bash```. Die auf der DSVM installierte Version von Visual Studio besitzt die Git-Erweiterungen. Sie finden die Startsymbole für diese Tools auf dem Desktop und im Startmenü.
+Die DSVM enthält bereits Clienttools, die den Zugriff auf das Github-Repository sowohl über die Befehlszeile als auch die GUI ermöglichen. Das Befehlszeilentool zum Arbeiten mit Git und Github heißt Git Bash. Die auf der DSVM installierte Version von Visual Studio besitzt die Git-Erweiterungen. Sie finden die Startsymbole für diese Tools auf dem Desktop und im Startmenü.
 
 Zum Herunterladen von Code aus einem Github-Repository verwenden Sie den Befehl ```git clone```. Um z. B. das von Microsoft veröffentlichte Data Science-Repository in das aktuelle Verzeichnis herunterzuladen, können Sie den folgenden Befehl ausführen, sobald Sie sich in ```git-bash``` befinden.
 
 	git clone https://github.com/Azure/Azure-MachineLearning-DataScience.git
 
-In Visual Studio können Sie den gleichen Klonvorgang ausführen. Der folgende Screenshot zeigt Ihnen den Zugriff auf Git- und Github-Tools in Visual Studio.
+In Visual Studio können Sie den gleichen Klonvorgang ausführen. Der folgende Screenshot zeigt Ihnen, wie Sie in Visual Studio auf Git- und Github-Tools zugreifen können.
 
 ![Git in Visual Studio](./media/machine-learning-data-science-vm-do-ten-things/VSGit.PNG)
 
 
-Weitere Informationen zur Verwendung von Git zur Arbeit mit Ihrem Github-Repository finden Sie in mehreren Ressourcen, die unter github.com verfügbar sind. Möglicherweise ist der [Spickzettel](https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf) eine nützliche Referenz für Sie.
+Weitere Informationen zur Verwendung von Git zur Arbeit mit Ihrem Github-Repository finden Sie in mehreren Quellen, die unter github.com verfügbar sind. Der [Spickzettel](https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf) ist eine nützliche Referenz.
 
 
 ## 7\. Zugriff auf verschiedene Azure-Daten und Analysedienste
 
 ### Azure Blob
+
+Azure Blob ist ein zuverlässiger, wirtschaftlicher Cloudspeicher für große und kleine Datenmengen. Wir sehen uns nun an, wie Sie Daten zu Azure Blob verschieben und auf Daten zugreifen können, die in einem Azure-Blob gespeichert sind.
 
 **Voraussetzung**
 
@@ -238,10 +263,9 @@ Weitere Informationen zur Verwendung von Git zur Arbeit mit Ihrem Github-Reposit
 ![Create\_Azure\_Blob](./media/machine-learning-data-science-vm-do-ten-things/Create_Azure_Blob.PNG)
 
 
-- **** Stellen Sie sicher, dass das unter ```C:\Program Files (x86)\Microsoft SDKs\Azure\AzCopy\azcopy.exe``` befindliche vorinstallierte AzCopy-Tool Ihrer Umgebungsvariablen hinzugefügt wird. Weitere Informationen zu AzCopy finden Sie in der [AzCopy-Dokumentation](../storage/storage-use-azcopy.md).
+- Stellen Sie sicher, dass sich das vorinstallierte Befehlszeilentool AzCopy in ```C:\Program Files (x86)\Microsoft SDKs\Azure\AzCopy\azcopy.exe``` befindet. Sie können das Verzeichnis, das „azcopy.exe“ enthält, Ihrer PATH-Umgebungsvariable hinzufügen, damit Sie beim Ausführen des Tools nicht den ganzen Befehlspfad eingeben müssen. Weitere Informationen zu AzCopy finden Sie in der [AzCopy-Dokumentation](../storage/storage-use-azcopy.md).
 
-
-- **Starten Sie das Azure Storage-Explorer-Tool von [hier](https://azurestorageexplorer.codeplex.com/) aus.**
+- Starten Sie den Azure Storage-Explorer über ein Symbol auf dem Desktop der VM. Sie finden es auch im Verzeichnis ```C:\Program Files (x86)\Neudesic\Azure Storage Explorer 6```.
 
 ![AzureStorageExplorer\_v4](./media/machine-learning-data-science-vm-do-ten-things/AzureStorageExplorer_v4.png)
 
@@ -286,7 +310,7 @@ In Azure Machine Learning Studio können Sie mit einem **Readermodul** Daten aus
 
 **Lesen von Daten aus dem Azure-Blobspeicher: Python ODBC**
 
-Im IPython Notebook **NYC Data wrangling using IPython Notebook and Azure Blob Storage** können Sie mit dem Paket **pyodbc** Daten direkt aus dem Blobspeicher lesen.
+Sie können die **BlobService**-Bibliothek verwenden, um Daten direkt aus dem Blob in einem Jupyter Notebook- oder Pythonprogramm zu lesen.
 
 Importieren Sie zunächst die erforderlichen Pakete:
 
@@ -313,33 +337,40 @@ Geben Sie dann Ihre Anmeldeinformationen für den Azure-Blobspeicher an, und les
 	LOCALDIRECTORY = os.getcwd()
 	LOCALFILE =  os.path.join(LOCALDIRECTORY, localfilename)
 
-Wie Sie sehen, werden die Daten als Datenrahmen eingelesen:
+	#download from blob
+	t1 = time.time()
+	blob_service = BlobService(account_name=STORAGEACCOUNTNAME,account_key=STORAGEACCOUNTKEY)
+	blob_service.get_blob_to_path(CONTAINERNAME,BLOBNAME,LOCALFILE)
+	t2 = time.time()
+	print(("It takes %s seconds to download "+BLOBNAME) % (t2 - t1))
+
+	#unzipping downloaded files if needed
+	#with zipfile.ZipFile(ZIPPEDLOCALFILE, "r") as z:
+	#    z.extractall(LOCALDIRECTORY)
+
+	df1 = pd.read_csv(LOCALFILE, header=0)
+	df1.columns = ['medallion','hack_license','vendor_id','rate_code','store_and_fwd_flag','pickup_datetime','dropoff_datetime','passenger_count','trip_time_in_secs','trip_distance','pickup_longitude','pickup_latitude','dropoff_longitude','dropoff_latitude']
+	print 'the size of the data is: %d rows and  %d columns' % df1.shape
+	
+Die Daten werden als Datenrahmen eingelesen:
 
 ![IPNB\_data\_readin](./media/machine-learning-data-science-vm-do-ten-things/IPNB_data_readin.PNG)
 
 
 ### Azure Data Lake
 
+Azure Data Lake-Speicher ist ein Repository mit Hyperskalierung für Big Data-Analyseworkloads. Der Azure Data Lake-Speicher ist kompatibel mit Hadoop Distributed File System (HDFS) und funktioniert sowohl mit dem Hadoop-Ökosystem als auch mit Azure Data Lake Analytics. Wir zeigen Ihnen, wie Sie Daten in den Azure Data Lake-Speicher verschieben und Analysen mithilfe von Azure Data Lake Analytics ausführen.
+
 **Voraussetzung**
 
-- Erstellen Sie Ihre Azure Data Lake Analytics im [Azure-Portal](http://portal.azure.com)
+- Erstellen Sie Ihre Azure Data Lake Analytics im [Azure-Portal](http://portal.azure.com).
 
 ![Azure\_Data\_Lake\_Create\_v2](./media/machine-learning-data-science-vm-do-ten-things/Azure_Data_Lake_Create_v2.png)
 
 
-- Die **Azure Data Lake-Tools** in **Visual Studio**, die Sie unter diesem [Link](https://www.microsoft.com/download/details.aspx?id=49504) finden, sind in der Visual Studio Community Edition, die sich auf der virtuellen Maschine befindet, bereits installiert. Wenn Sie sich nach dem Start von Visual Studio bei Ihrem Azure-Abonnement angemeldet haben, werden Ihr Azure Data Analytics-Konto und Ihr Speicher im linken Bereich von Visual Studio angezeigt. 
+- Die **Azure Data Lake-Tools** in **Visual Studio**, die Sie unter diesem [Link](https://www.microsoft.com/download/details.aspx?id=49504) finden, sind bereits in der Visual Studio Community Edition installiert, die sich auf dem virtuellen Computer befindet. Wenn Sie sich nach dem Start von Visual Studio bei Ihrem Azure-Abonnement angemeldet haben, werden Ihr Azure Data Analytics-Konto und Ihr Speicher im linken Bereich von Visual Studio angezeigt. 
 
 ![Azure\_Data\_Lake\_PlugIn\_v2](./media/machine-learning-data-science-vm-do-ten-things/Azure_Data_Lake_PlugIn_v2.PNG)
-
-
-- Installieren Sie **Data Management Gateway**, wie in diesem [Dokument](../data-factory/data-factory-move-data-between-onprem-and-cloud.md) beschrieben.
-
-![Azure\_Data\_Gateway\_v2](./media/machine-learning-data-science-vm-do-ten-things/Azure_Data_Gateway_v2.PNG)
-
-
-- Geben Sie den lokalen Ordner, in dem Ihre Daten gespeichert sind, für alle Benutzer frei, sodass Azure Data Gateway darauf zugreifen kann.
-
-![Share\_Folder](./media/machine-learning-data-science-vm-do-ten-things/Share_Folder.PNG)
 
 
 **Verschieben von Daten vom virtuellen Computer in Data Lake: Azure Data Lake Explorer**
@@ -348,267 +379,11 @@ Sie können **Azure Data Lake Explorer** zum Hochladen von Daten aus den lokalen
 
 ![Azure\_Data\_Lake\_UploadData](./media/machine-learning-data-science-vm-do-ten-things/Azure_Data_Lake_UploadData.PNG)
 
-
-**Verschieben von Daten vom virtuellen Computer in Data Lake: Azure Data Factory**
-
-Azure Data Factory ist ein Dienst zum Erstellen, Planen und Verwalten von Datenpipelines. Azure Data Factory können wir zum Verschieben von Daten zwischen verschiedenen Speichern verwenden. Erstellen Sie [Azure Data Factory](https://azure.microsoft.com/services/data-factory/) im [Azure-Portal](http://portal.azure.com):
-
-![Azure\_Data\_Factory\_Create](./media/machine-learning-data-science-vm-do-ten-things/Azure_Data_Factory_Create.PNG)
-
-Nach der Erstellung können Sie Pipelines zum Verschieben von Daten zwischen verschiedenen Speichern erstellen. In **Author and deploy** können Sie Datasets zum Übertragen und Einrichten von Pipelines angeben.
-
-![Azure\_Data\_Factory\_Overview\_v4](./media/machine-learning-data-science-vm-do-ten-things/Azure_Data_Factory_Overview_v4.PNG)
-
-
-Die wichtigsten Schritte zum Verschieben von Daten vom virtuellen Computer zu Azure Data Lake sind die folgenden. Nähere Informationen zum Verschieben von Daten mithilfe von Azure Data Factory finden Sie [hier](../data-factory/data-factory-data-movement-activities.md). Die folgenden JSON-Dateien werden in Ihrer Data Science-VM enthalten sein.
-
-1. **Erstellen von verknüpften Diensten**
-	- Klicken Sie auf **New Data Store**, wählen Sie dann **Azure Data Lake Storage**, geben Sie Ihre Anmeldeinformationen und Parameter in die JSON-Datei ein.
-	- Klicken Sie auf **New Data Store**, wählen Sie dann **File System**, geben Sie Ihre Anmeldeinformationen und Parameter in die JSON-Datei ein.
-2. **Erstellen von Datasets**
-	- Klicken Sie auf **Neues Dataset**, wählen Sie dann **Azure Data Lake**, geben Sie **Linked Service**-Namen und **Ordnerpfad** in die JSON-Datei ein.
-	- Klicken Sie auf **New dataset**, wählen Sie dann **On-premises file**, geben Sie **Datasetschema**, **Linked Service**-Namen, **Dateinamen** und **Ordnerpfad** in die JSON-Datei ein.
-3. **Erstellen von Pipelines**
-	- Klicken Sie auf **New pipeline**, geben Sie die **Ein- und Ausgabedatasets**, **Aktivitätstyp** usw. in die JSON-Datei ein. 
-4. **Erstellen von Datengateways**
-	- Registrieren Sie Ihren Gatewayschlüssel, und stellen Sie sicher, dass die Registrierung **Registered** und der Status **Started** ist.
-	- Klicken Sie auf **New data gateway**, und geben Sie den „Data gateway name“ ein. Der Teil **Configure** wird automatisch eingerichtet, wenn Ihr Datengateway in den vorherigen Schritten ordnungsgemäß installiert wurde.
-
-![Azure\_Data\_Gateway\_part2\_v2](./media/machine-learning-data-science-vm-do-ten-things/Azure_Data_Gateway_part2_v2.png)
-
-![Azure\_Data\_Factory\_Template](./media/machine-learning-data-science-vm-do-ten-things/Azure_Data_Factory_Template.PNG)
-
-![Azure\_Data\_Factory\_Template\_Json\_v2](./media/machine-learning-data-science-vm-do-ten-things/Azure_Data_Factory_Template_Json_v2.PNG)
-
-Folgende JSON-Dateien werden in den oben genannten Schritte verwendet:
-
-**Verknüpfte Dienste: AzureDataLakeStoreLinkedService**
-
-	{
-	    "name": "AzureDataLakeStoreLinkedService",
-	    "properties": {
-	        "description": "",
-	        "hubName": "weigadf_hub",
-	        "type": "AzureDataLakeStore",
-	        "typeProperties": {
-	            "dataLakeStoreUri": "https://cdspkona.azuredatalakestore.net/webhdfs/v1",
-	            "authorization": "**********",
-	            "sessionId": "**********",
-	            "subscriptionId": "49bb74df-a9b8-4275-9439-198b33ae0f5f",
-	            "resourceGroupName": "weiguodsvn"
-	        }
-	    }
-	}
-
-
-**Verknüpfte Dienste: OnPremisesFileServerLinkedService**
-
-	{
-	    "name": "OnPremisesFileServerLinkedService",
-	    "properties": {
-	        "description": "dsvm",
-	        "hubName": "weigadf_hub",
-	        "type": "OnPremisesFileServer",
-	        "typeProperties": {
-	            "host": "localhost",
-	            "gatewayName": "weiggateway",
-	            "userId": "weiguo",
-	            "password": "**********"
-	        }
-	    }
-	}
-
-
-**Datasets: OnPremisesFile**
-
-	{
-	    "name": "OnPremisesFile",
-	    "properties": {
-	        "published": false,
-	        "type": "FileShare",
-	        "linkedServiceName": "OnPremisesFileServerLinkedService",
-	        "typeProperties": {
-	            "folderPath": "\\\dsvmjanc1ssd\\share"
-	        },
-	        "availability": {
-	            "frequency": "Hour",
-	            "interval": 1
-	        },
-	        "external": true,
-	        "policy": {}
-	    }
-	}
-
-
-**Datasets: weiglakenew1**
-
-	{
-	    "name": "Datalakenew",
-	    "properties": {
-	        "structure": [
-	            {
-	                "name": "medallion",
-	                "type": "String"
-	            },
-	            {
-	                "name": "hack_license",
-	                "type": "String"
-	            },
-	            {
-	                "name": "vendor_id",
-	                "type": "String"
-	            },
-	            {
-	                "name": "rate_code",
-	                "type": "String"
-	            },
-	            {
-	                "name": "store_and_fwd_flag",
-	                "type": "String"
-	            },
-	            {
-	                "name": "pickup_datetime",
-	                "type": "Datetime"
-	            },
-	            {
-	                "name": "dropoff_datetime",
-	                "type": "Datetime"
-	            },
-	            {
-	                "name": "passenger_count",
-	                "type": "Double"
-	            },
-	            {
-	                "name": "trip_time_in_secs",
-	                "type": "Decimal"
-	            },
-	            {
-	                "name": "trip_distance",
-	                "type": "Decimal"
-	            },
-	            {
-	                "name": "pickup_longitude",
-	                "type": "String"
-	            },
-	            {
-	                "name": "pickup_latitude",
-	                "type": "String"
-	            },
-	            {
-	                "name": "dropoff_longitude",
-	                "type": "String"
-	            },
-	            {
-	                "name": "dropoff_latitude",
-	                "type": "String"
-	            }
-	        ],
-	        "published": false,
-	        "type": "AzureDataLakeStore",
-	        "linkedServiceName": "AzureDataLakeStoreLinkedService",
-	        "typeProperties": {
-	            "fileName": "UploadedFromVM_success.CSV",
-	            "folderPath": "cdsp-data/nyctaxi_weig/"
-	        },
-	        "availability": {
-	            "frequency": "Hour",
-	            "interval": 1
-	        }
-	    }
-	}
-
-
-**Datasets: vmtodatalake\_tripdata**
-
-	{
-	    "name": "vmtodatalake_tripdata",
-	    "properties": {
-	        "description": "vmtodatalake",
-	        "activities": [
-	            {
-	                "type": "Copy",
-	                "typeProperties": {
-	                    "source": {
-	                        "type": "FileSystemSource"
-	                    },
-	                    "sink": {
-	                        "type": "AzureDataLakeStoreSink",
-	                        "writeBatchSize": 0,
-	                        "writeBatchTimeout": "00:00:00"
-	                    }
-	                },
-	                "inputs": [
-	                    {
-	                        "name": "OnPremisesFile"
-	                    }
-	                ],
-	                "outputs": [
-	                    {
-	                        "name": "weiglakenew1"
-	                    }
-	                ],
-	                "policy": {
-	                    "timeout": "01:00:00",
-	                    "concurrency": 1
-	                },
-	                "scheduler": {
-	                    "frequency": "Hour",
-	                    "interval": 1
-	                },
-	                "name": "AzureBlobtoDataLake",
-	                "description": "Copy Activity"
-	            }
-	        ],
-	        "start": "2016-02-01T00:00:00Z",
-	        "end": "2016-02-01T01:00:00Z",
-	        "isPaused": false,
-	        "hubName": "weigadf_hub",
-	        "pipelineMode": "Scheduled"
-	    }
-	}
-
-
-**Datengateways: weiggateway**
-
-	{
-	    "name": "VMtoLakegateway",
-	    "properties": {
-	        "description": "",
-	        "hostServiceUri": "https://dsvmjanc1ssd:8050/HostServiceRemote.svc/",
-	        "dataFactoryName": "weigadf",
-	        "status": "Online",
-	        "versionStatus": "UpToDate",
-	        "version": "1.9.5865.2",
-	        "registerTime": "2016-01-28T20:21:51.2375545Z",
-	        "lastConnectTime": "2016-02-12T00:06:55.3445063Z"
-	    }
-	}
-
-
-
-Nach Erstellen der Pipeline können Sie die Pipeline im Azure Data Factory-Dashboard im **Diagram** anzeigen.
-
-
-![](./media/machine-learning-data-science-vm-do-ten-things/Azure_Data_Factory_Find_Diagram.PNG)
-
-Klicken Sie auf das Feld **Diagram**, um die Pipeline anzuzeigen:
-
-![](./media/machine-learning-data-science-vm-do-ten-things/Azure_Data_Factory_PipeLine_Diagram.PNG)
-
-Sie können die Datenpipeline in **Contents**->**Datasets**->**Monitoring** überwachen.
-
-![](./media/machine-learning-data-science-vm-do-ten-things/Azure_Data_Factory_Monitor_v2.PNG)
-
-
-Sie können auch mit **Azure Data Lake Explorer** in **Visual Studio** überprüfen, ob die Daten in Azure Data Lake verschoben werden .
-
-
-![](./media/machine-learning-data-science-vm-do-ten-things/Azure_Data_Factory_Monitor_inVS.PNG)
-
+Sie können auch eine Datenpipeline erstellen, um Ihre Datenverschiebung zu oder von Azure Data Lake umzusetzen, indem Sie [Azure Data Factory (ADF)](https://azure.microsoft.com/services/data-factory/) verwenden. In diesem [Artikel](https://azure.microsoft.com/blog/creating-big-data-pipelines-using-azure-data-lake-and-azure-data-factory/) finden Sie eine Anleitung zum Erstellen einer Datenpipeline.
 
 **Lesen von Daten aus dem Azure-Blobspeicher in Data Lake: U-SQL**
 
-Wenn Ihre Daten sich im Azure-Blobspeicher befinden, können Sie die Daten mit einer U-SQL-Abfrage direkt aus dem Azure-Blobspeicher lesen. Stellen Sie vor dem Formulieren der U-SQL-Abfrage sicher, dass Ihr Blobspeicherkonto mit Azure Data Lake verknüpft ist. Rufen Sie das **Azure-Portal** auf, klicken Sie auf Ihrem Azure Data Lake Analytics-Dashboard auf **Add Data Source**, wählen Sie als Speichertyp **Azure Storage**, und geben Sie Ihren Azure Storage-Kontonamen und -Schlüssel an. Anschließend können Sie auf die auf dem Speicherkonto gespeicherten Daten verweisen.
+Wenn Ihre Daten sich im Azure-Blobspeicher befinden, können Sie die Daten mit einer U-SQL-Abfrage direkt aus dem Azure-Blobspeicher lesen. Stellen Sie vor dem Formulieren der U-SQL-Abfrage sicher, dass Ihr Blobspeicherkonto mit Azure Data Lake verknüpft ist. Rufen Sie das **Azure-Portal** auf, klicken Sie auf Ihrem Azure Data Lake Analytics-Dashboard auf **Add Data Source**, wählen Sie als Speichertyp **Azure Storage** aus, und geben Sie Ihren Azure Storage-Kontonamen und -Schlüssel an. Anschließend können Sie auf die auf dem Speicherkonto gespeicherten Daten verweisen.
 
 ![](./media/machine-learning-data-science-vm-do-ten-things/Link_Blob_to_ADLA_v2.PNG)
 
@@ -666,9 +441,9 @@ Nachdem Ihre Abfrage an den Server gesendet wurde, wird ein Diagramm mit dem Sta
 
 **Datenabfragen in Data Lake: U-SQL**
 
-Nachdem das Dataset in Azure Data Lake erfasst wurde, können Sie die [U-SQL-Sprache](../data-lake-analytics/data-lake-analytics-u-sql-get-started.md) zum Abfragen und Durchsuchen der Daten verwenden. Die U-SQL-Sprache ähnelt T-SQL, kombiniert aber einige Funktionen von C#, sodass Benutzer angepasste Module, benutzerdefinierte Funktionen usw. schreiben können. Sie können die Skripts aus dem vorherigen Schritt verwenden.
+Nachdem das DataSet in Azure Data Lake aufgenommen wurde, können Sie die [U-SQL-Sprache](../data-lake-analytics/data-lake-analytics-u-sql-get-started.md) zum Abfragen und Durchsuchen der Daten verwenden. Die U-SQL-Sprache ähnelt T-SQL, kombiniert aber einige Funktionen von C#, sodass Benutzer angepasste Module, benutzerdefinierte Funktionen usw. schreiben können. Sie können die Skripts aus dem vorherigen Schritt verwenden.
 
-Nachdem die Abfrage an den Server gesendet wurde, finden Sie „tripdata\_summary.CSV“ bald in **Azure Data Lake Explorer**. Zur Datenvorschau können Sie mit der rechten Maustaste auf die Datei klicken.
+Nachdem die Abfrage an den Server gesendet wurde, finden Sie bald „tripdata\_summary.CSV“ in **Azure Data Lake Explorer**. Zur Datenvorschau können Sie mit der rechten Maustaste auf die Datei klicken.
 
 ![](./media/machine-learning-data-science-vm-do-ten-things/USQL_create_summary.png)
 
@@ -679,32 +454,34 @@ So zeigen Sie die Dateiinformationen an:
 
 ### HDInsight Hadoop-Cluster
 
+Azure HDInsight ist ein verwalteter Apache Hadoop-, Spark-, HBase- und Storm-Dienst in der Cloud. Sie können problemlos mit Azure HDInsight-Clustern der Data Science Virtual Machine arbeiten.
+
 **Voraussetzung**
 
-- Erstellen Sie Ihr Azure-Blobspeicherkonto im [Azure-Portal](http://portal.azure.com). Dieses Speicherkonto wird zum Speichern von Daten für HDInsight-Cluster verwendet.
+- Erstellen Sie Ihr eigenes Azure-Blobspeicherkonto im [Azure-Portal](http://portal.azure.com). Dieses Speicherkonto wird zum Speichern von Daten für HDInsight-Cluster verwendet.
 
 ![](./media/machine-learning-data-science-vm-do-ten-things/Create_Azure_Blob.PNG)
 
 - Anpassen von Azure HDInsight Hadoop-Clustern vom [Azure-Portal](machine-learning-data-science-customize-hadoop-cluster.md) aus
 
-	- Sie müssen das mit dem HDInsight-Cluster erstellte Speicherkonto verknüpfen, sobald es erstellt ist. Mit diesem Speicherkonto wird auf Daten zugegriffen, die innerhalb des Clusters verarbeitet werden können.
+  - Sie müssen das mit dem HDInsight-Cluster erstellte Speicherkonto verknüpfen, sobald es erstellt ist. Mit diesem Speicherkonto wird auf Daten zugegriffen, die innerhalb des Clusters verarbeitet werden können.
 	
 ![](./media/machine-learning-data-science-vm-do-ten-things/Create_HDI_v4.PNG)
 
-	- You must enable **Remote Access** to the head node of the cluster after it is created. Remember the remote access credentials you specify here (different from those specified for the cluster at its creation): you will need them below.
+  - Sie müssen nach dem Erstellen den **Remotezugriff** auf den Hauptknoten des Clusters aktivieren. Merken Sie sich die hier angegebenen RAS-Anmeldeinformationen (die sich von denen beim Erstellen des Clusters unterscheiden). Sie werden diese später benötigen.
 
 ![](./media/machine-learning-data-science-vm-do-ten-things/Create_HDI_dashboard_v3.PNG)
 
-	- Create an Azure ML workspace. Your Machine Learning Experiments will be stored in this ML workspace.
+  - Erstellen eines Azure ML-Arbeitsbereichs Ihre Machine Learning-Experimente werden in diesem ML-Arbeitsbereich gespeichert. Wählen Sie die hervorgehobenen Optionen im Portal aus, wie im Screenshot unten dargestellt. 
 
 ![](./media/machine-learning-data-science-vm-do-ten-things/Create_ML_Space.PNG)
 
 
-	- Then select the Remote Desktop:
+  - Geben Sie dann die Parameter für Ihren Azure ML-Arbeitsbereich ein.
 
 ![](./media/machine-learning-data-science-vm-do-ten-things/Create_ML_Space_step2_v2.PNG)
 
-	- Upload data using IPython Notebook. First import required packages, plug in credentials, create a db in your storage account, then load data to HDI clusters. 
+  - Hochladen von Daten mit IPython Notebook. Importieren Sie zunächst die erforderlichen Pakete, geben Sie Ihre Anmeldeinformationen ein, erstellen Sie eine Datenbank in Ihrem Speicherkonto, und laden Sie dann Daten in die HDI-Cluster hoch. 
 
 
 		#Import required Packages
@@ -796,7 +573,7 @@ So zeigen Sie die Dateiinformationen an:
 		    cursor.execute(queryString)
 
 
-- Oder folgen Sie dieser [exemplarischen Vorgehensweise](machine-learning-data-science-process-hive-walkthrough.md) zum Hochladen von NYC Taxi-Daten in das HDI-Cluster. Zu den wichtigsten Schritten zählen:
+- Oder Sie folgen dieser [exemplarischen Vorgehensweise](machine-learning-data-science-process-hive-walkthrough.md) zum Hochladen von NYC-Taxi-Daten in den HDI-Cluster. Zu den wichtigsten Schritten zählen:
 
 	- AzCopy: Herunterladen gezippter CSV-Dateien aus dem öffentlichen Blobspeicher in Ihren lokalen Ordner
 	- AzCopy: Hochladen entzippter CSV-Dateien aus dem lokalen Ordner in den HDI-Cluster
@@ -809,7 +586,7 @@ Nachdem die Daten in den HDI-Cluster geladen wurden, können Sie Ihre Daten im A
 
 **Durchsuchen von Daten: Hive-Abfragen in Python**
 
-Da sich die Daten im Hadoop-Cluster befinden, können Sie das Paket „pyodbc“ verwenden, um Verbindungen mit Hadoop-Clustern herzustellen, und die Datenbank mit Hive abzufragen, um Durchsuchungen und Featureentwicklungen auszuführen. Sie können die vorhandenen Tabellen anzeigen, die wir im erforderlichen Schritt erstellt haben.
+Da sich die Daten im Hadoop-Cluster befinden, können Sie das Paket „pyodbc“ verwenden, um Verbindungen mit Hadoop-Clustern herzustellen und die Datenbank mit Hive abzufragen, um Durchsuchungsvorgänge und Funktionsverarbeitungen durchzuführen. Sie können die vorhandenen Tabellen anzeigen, die wir im erforderlichen Schritt erstellt haben.
 
 	queryString = """
 	    show tables in nyctaxidb2;
@@ -1039,33 +816,37 @@ Das bewertete Dataset kann dann angezeigt werden:
 
 ### Azure SQL Data Warehouse und Datenbanken
 
+Azure SQL Data Warehouse ist ein elastisches Data Warehouse-as-a-Service-Angebot mit SQL Server-Funktionalität auf Unternehmensniveau.
+
+Sie können Ihr Azure SQL Data Warehouse bereitstellen, indem Sie die Anweisungen in diesem [Artikel](../sql-data-warehouse/sql-data-warehouse-get-started-provision.md) befolgen. Nachdem Sie Ihr Azure SQL Data Warehouse bereitgestellt haben, können Sie diese [exemplarischen Vorgehensweise](machine-learning-data-science-process-sqldw-walkthrough.md) verwenden, um mit Daten in SQL Data Warehouse Daten hochzuladen, zu durchsuchen und zu modellieren.
+
 #### Azure DocumentDB
 
-Azure DocumentDB ist eine NoSQL-Datenbank in der Cloud. Sie ermöglicht Ihnen, mit Dokumenten wie JSON zu arbeiten, und die Dokumente zu speichern und abzufragen.
+Azure DocumentDB ist eine NoSQL-Datenbank in der Cloud. Sie ermöglicht Ihnen, mit Dokumenten wie JSON zu arbeiten und die Dokumente zu speichern und abzufragen.
 
 Sie müssen die folgenden erforderlichen Schritte ausführen, um über die DSVM auf DocumentDB zuzugreifen.
 
 1. Installieren Sie das DocumentDB Python SDK (führen Sie ```pip install pydocumentdb``` in der Befehlszeile aus).
 1. Erstellen Sie DocumentDB-Konto und DocumentDB-Datenbank im [Azure-Portal](https://portal.azure.com).
-1. Laden Sie das „DocumentDB Migration Tool“ [hier](http://www.microsoft.com/downloads/details.aspx?FamilyID=cda7703a-2774-4c07-adcc-ad02ddc1a44d) herunter, und extrahieren Sie es in einem Verzeichnis Ihrer Wahl.
-1. Importieren Sie JSON-Daten (Volcano-Daten), die in einem [öffentlichen Blobspeicher](https://cahandson.blob.core.windows.net/samples/volcano.json) gespeichert sind, mit den folgenden Befehlsparametern des Migrationstools („dtui.exe“ aus dem Verzeichnis, in dem Sie das DocumentDB-Migrationstool installiert haben) in DocumentDB. Geben Sie die unten stehenden Quell-und Zielpositionsparameter ein. 
+1. Laden Sie das DocumentDB-Migrationstool [hier](http://www.microsoft.com/downloads/details.aspx?FamilyID=cda7703a-2774-4c07-adcc-ad02ddc1a44d) herunter, und extrahieren Sie es in ein Verzeichnis Ihrer Wahl.
+1. Importieren Sie JSON-Daten (Vulkan-Daten), die in einem [öffentlichen Blobspeicher](https://cahandson.blob.core.windows.net/samples/volcano.json) gespeichert sind, mit den folgenden Befehlsparametern des Migrationstools („dtui.exe“ aus dem Verzeichnis, in dem Sie das DocumentDB-Migrationstool installiert haben) in DocumentDB. Geben Sie die unten stehenden Quell-und Zielpositionsparameter ein. 
 
 	/s:JsonFile /s.Files:https://cahandson.blob.core.windows.net/samples/volcano.json /t:DocumentDBBulk /t.ConnectionString:AccountEndpoint=https://[DocDBAccountName].documents.azure.com:443/;AccountKey=[[KEY];Database=volcano /t.Collection:volcano1
 
-Sobald Sie die Daten importiert haben, können Sie in Jupyter das Notebook ```DocumentDBSample``` öffnen, das den Python-Code für den Zugriff auf DocumentDB und zur Ausführung einiger grundlegender Abfragen enthält. Weitere Informationen zu DocumentDB finden Sie auf der [Dokumentationsseite](https://azure.microsoft.com/documentation/learning-paths/documentdb/).
+Sobald Sie die Daten importiert haben, können Sie in Jupyter das Notebook *DocumentDBSample* öffnen, das den Python-Code für den Zugriff auf DocumentDB und zur Ausführung einiger grundlegender Abfragen enthält. Weitere Informationen zu DocumentDB finden Sie auf der [Dokumentationsseite](https://azure.microsoft.com/documentation/learning-paths/documentdb/).
 
 
 ## 8\. Erstellen von Berichten und Dashboard mit Power BI Desktop 
 
-Nun visualisieren wir die Volcano JSON-Datei aus dem obigen DocumentDB-Beispiel in Power BI, um visuelle Einblicke in die Daten zu erhalten. Ausführliche Schrittbeschreibungen finden Sie im [Power BI-Artikel](../documentdb/documentdb-powerbi-visualize.md). Die allgemeinen Schritte sind:
+Nun visualisieren wir die Volcano JSON-Datei aus dem obigen DocumentDB-Beispiel in Power BI, um visuelle Einblicke in die Daten zu erhalten. Eine ausführliche Anleitung finden Sie im [Power BI-Artikel](../documentdb/documentdb-powerbi-visualize.md). Die allgemeinen Schritte sind:
 
 1. Öffnen Sie Power BI Desktop, und führen Sie „Get Data“ aus. Legen Sie folgenden URL-Namen fest: https://cahandson.blob.core.windows.net/samples/volcano.json.
-2. Sie sehen die JSON-Datensätze in einer importierten Liste.
-3. Konvertieren Sie die Liste nun in eine Tabelle, damit PowerBI mit dem Inhalt arbeiten kann.
-4. Erweitern Sie nun die Spalten durch Klicken auf das Erweiterungssymbol (das Symbol „Pfeil nach links und Pfeil nach rechts“ auf der rechten Seite der Spalte).
-5. Sie sehen, dass sich dort ein Feld „Record“ befindet. Erweitern Sie den Datensatz und wählen Sie nur „coordinates“. „coordinates“ ist eine Listenspalte.
-6. Als Nächstes fügen Sie eine neue Spalte hinzu, um die Listenspalte „coordinates“ in eine kommagetrennte separate Spalte „LatLong“ zu konvertieren, wobei die beiden Elemente im Listenfeld „coordinates“ mithilfe der Formel ```Text.From([coordinates]{1})&","&Text.From([coordinates]{0})``` verkettet werden. 
-7. Konvertieren Sie schließlich die Spalte ```Elevation``` zu „Decimal“ und klicken Sie auf „Close and Apply“.
+2. Sie sollten die JSON-Datensätze in einer importierten Liste sehen.
+3. Konvertieren Sie die Liste in eine Tabelle, damit PowerBI mit dem Inhalt arbeiten kann.
+4. Erweitern Sie die Spalten durch Klicken auf das Erweiterungssymbol (das Symbol „Pfeil nach links und Pfeil nach rechts“ auf der rechten Seite der Spalte).
+5. Beachten Sie, dass bei „Location“ das Feld „Record“ steht. Erweitern Sie den Datensatz und wählen Sie nur „coordinates“. „coordinates“ ist eine Listenspalte.
+6. Fügen Sie eine neue Spalte hinzu, um die Listenspalte „coordinates“ in eine kommagetrennte Spalte „LatLong“ zu konvertieren, wobei die beiden Elemente im Listenfeld „coordinates“ mithilfe der Formel ```Text.From([coordinates]{1})&","&Text.From([coordinates]{0})``` verkettet werden. 
+7. Konvertieren Sie schließlich die Spalte ```Elevation``` zu „Decimal“ und klicken Sie auf „**Close** and **Apply**“.
 
 Anstelle der oben beschriebenen Schritte können Sie den folgenden Code, in dem die obigen Schritte ausformuliert sind, in den Erweiterten Editor in PowerBI einfügen, der Ihnen ermöglicht, die Datentransformationen in einer Abfragesprache zu schreiben.
 
@@ -1088,16 +869,17 @@ Jetzt befinden sich die Daten in Ihrem Power BI-Datenmodell. Ihr Power BI-Deskto
 
 Sie können beginnen, Berichte und Visualisierungen mit dem Datenmodell zu erstellen. Sie können die in diesem [Power BI-Artikel](../documentdb/documentdb-powerbi-visualize.md#build-the-reports) beschriebenen Schritte zum Erstellen eines Berichts verwenden. Das Endergebnis ist ein Bericht, der wie folgt aussieht.
 
-
-TBD: Volcano Map Report image URL missing - not correct.
+![Power BI Desktop-Berichtsansicht – Power BI-Connector](./media/machine-learning-data-science-vm-do-ten-things/power_bi_connector_pbireportview2.png)
 
 ## 9\. Dynamische Skalierung Ihrer DSVM gemäß Ihren Projektanforderungen
 
-Sie können die DSVM gemäß Ihren Projektanforderungen herauf- oder herabskalieren. Wenn Sie den virtuellen Computer abends oder am Wochenende nicht benötigen, können Sie ihn einfach vom [Azure-Portal](https://portal.azure.com) aus herunterfahren. HINWEIS: Es fallen Computegebühren an, wenn Sie nur die Betriebssystemschaltfläche zum Herunterfahren auf dem virtuellen Computer verwenden.
+Sie können die DSVM gemäß Ihren Projektanforderungen herauf- oder herabskalieren. Wenn Sie die VM abends oder am Wochenende nicht benötigen, können Sie sie einfach vom [Azure-Portal](https://portal.azure.com) aus herunterfahren.
 
-Wenn Sie einige umfangreiche Analysen abwickeln müssen und mehr CPU- und/oder Arbeitsspeicher- und/oder Datenträgerkapazität benötigen, finden Sie eine große Auswahl an VM-Größen in Bezug auf CPU-Kerne, Speicherkapazität und Datenträgertypen (einschließlich Solid-State-Laufwerke), die Ihren Compute- und Budgetanforderungen entsprechen. Die vollständige Liste der virtuellen Computer zusammen mit ihren stündlichen Computepreisen finden Sie auf der Seite [Azure Virtual Machines – Preise](https://azure.microsoft.com/pricing/details/virtual-machines/).
+>[AZURE.NOTE]  Es fallen Computegebühren an, wenn Sie nur die Betriebssystemschaltfläche zum Herunterfahren auf der VM verwenden.
 
-Auch wenn Ihr Bedarf an VM-Verarbeitungskapazität sinkt (Beispiel: Sie haben eine wichtige Workload auf einen Hadoop- oder Spark-Cluster verschoben), können Sie den Cluster vom [Azure-Portal](https://portal.azure.com) aus in den Einstellungen Ihrer VM-Instanz herabskalieren. Hier sehen Sie einen Screenshot.
+Wenn Sie einige umfangreiche Analysen abwickeln müssen und mehr CPU- und/oder Arbeitsspeicher- und/oder Datenträgerkapazität benötigen, finden Sie eine große Auswahl an VM-Größen in Bezug auf CPU-Kerne, Speicherkapazität und Datenträgertypen (einschließlich Solid-State-Laufwerke), die Ihren Compute- und Budgetanforderungen entsprechen. Die vollständige Liste der VMs zusammen mit ihren stündlichen Computepreisen finden Sie auf der Seite [Azure Virtual Machines – Preise](https://azure.microsoft.com/pricing/details/virtual-machines/).
+
+Auch wenn Ihr Bedarf an VM-Verarbeitungskapazität sinkt (zum Beispiel: Sie haben erhebliche Arbeitsauslastung auf einen Hadoop- oder Spark-Cluster verschoben), können Sie den Cluster vom [Azure-Portal](https://portal.azure.com) aus in den Einstellungen Ihrer VM-Instanz herunterskalieren. Hier sehen Sie einen Screenshot.
 
 
 ![](./media/machine-learning-data-science-vm-do-ten-things/VMScaling.PNG)
@@ -1105,8 +887,11 @@ Auch wenn Ihr Bedarf an VM-Verarbeitungskapazität sinkt (Beispiel: Sie haben ei
 
 ## 10\. Installieren zusätzlicher Tools auf Ihrem virtuellen Computer
 
-Wir haben mehrere Tools zu einem Paket zusammengefasst, die unserer Ansicht nach vielen der allgemeinen Datenanalyseanforderungen gerecht werden, um Ihnen Zeit zu sparen, da mehrfaches Installieren und mehrfaches Konfigurieren Ihrer Umgebung vermieden werden – und Sie bezahlen nur das, was Sie auch wirklich verwenden. Sie können andere Azure-Datendienste und -Analysedienste, wie weiter oben in diesem Artikel gezeigt, nutzen, um Ihre Analyseumgebung zu verbessern. Wir wissen, dass in manchen Fällen für Ihre Bedürfnisse zusätzliche Tools, einschließlich geschützter Drittanbietertools, erforderlich sein können. Sie haben vollen administrativen Zugriff auf den virtuellen Computer, um neue Tools zu installieren, die Sie benötigen. Sie können auch zusätzliche Pakete in Python und R installieren, die nicht vorinstalliert sind. Für Python können Sie entweder ```conda``` oder ```pip``` verwenden. Für R können Sie die ```install.packages()``` in der R-Konsole verwenden, oder verwenden Sie die IDE, und wählen Sie „Packages -> Install Packages...“.
+Wir haben mehrere Tools zu einem Paket zusammengefasst, die unserer Ansicht nach vielen der allgemeinen Datenanalyseanforderungen gerecht werden und Ihnen Zeit sparen sollten, da sie vermeiden, dass Sie Ihre Umgebungen einzeln installieren und konfigurieren müssen. Außerdem sparen Sie Geld, da Sie nur für die Ressourcen bezahlen, die Sie auch wirklich verwenden.
 
-Dies sind nur ein paar Dinge, die mit der Microsoft Data Science Virtual Machine möglich sind. Sie können viele weitere Dinge tun, um sie als wirksame Analyseumgebung zu nutzen.
+Sie können andere in diesem Artikel dargestellte Azure-Datendienste und -Analysedienste nutzen, um Ihre Analyseumgebung zu verbessern. Wir wissen, dass in manchen Fällen für Ihre Bedürfnisse zusätzliche Tools, einschließlich geschützter Drittanbietertools, erforderlich sein können. Sie haben vollen administrativen Zugriff auf den virtuellen Computer, um neue Tools zu installieren, die Sie benötigen. Sie können auch zusätzliche Pakete in Python und R installieren, die nicht vorinstalliert sind. Für Python können Sie entweder ```conda``` oder ```pip``` verwenden. Für R können Sie die ```install.packages()``` in der R-Konsole verwenden, oder Sie verwenden die IDE und wählen „**Packages** -> **Install Packages...**“ aus.
 
-<!---HONumber=AcomDC_0218_2016-->
+## Zusammenfassung
+Dies sind nur einige Dinge, die mit der Microsoft Data Science Virtual Machine möglich sind. Sie können viele weitere Dinge tun, um sie als wirksame Analyseumgebung zu nutzen.
+
+<!---HONumber=AcomDC_0302_2016-->

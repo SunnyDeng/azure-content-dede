@@ -1,26 +1,26 @@
-<properties 
-	pageTitle="POP-Standorte von Azure Content Delivery Network (CDN)" 
-	description="In diesem Thema werden die POP-Standorte (Point of Presence) von Azure Content Delivery Network (CDN) aufgeführt." 
-	services="cdn" 
-	documentationCenter="" 
-	authors="camsoper" 
-	manager="dwrede" 
+<properties
+	pageTitle="POP-Standorte von Azure Content Delivery Network (CDN)"
+	description="In diesem Thema werden die POP-Standorte (Point of Presence) von Azure Content Delivery Network (CDN) aufgeführt."
+	services="cdn"
+	documentationCenter=""
+	authors="camsoper"
+	manager="erikre"
 	editor=""/>
 
-<tags 
-	ms.service="cdn" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="12/02/2015" 
+<tags
+	ms.service="cdn"
+	ms.workload="media"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="02/25/2016" 
 	ms.author="casoper"/>
 
 
 #POP-Standorte von Azure Content Delivery Network (CDN)
 
 In diesem Thema werden die aktuellen POP-Standorte (Point of Presence) von Microsoft Azure CDN aufgeführt.
-   
+
 
 ![CDN-POP-Standorte](./media/cdn-pop-locations/CDN_POP_locations_update.png)
 
@@ -76,6 +76,6 @@ In diesem Thema werden die aktuellen POP-Standorte (Point of Presence) von Micro
 ##Australien
 
 - Melbourne
-- Sydney 
+- Sydney
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0302_2016-->

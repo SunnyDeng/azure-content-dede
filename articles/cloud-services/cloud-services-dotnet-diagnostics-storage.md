@@ -1,5 +1,5 @@
 <properties
-  pageTitle="Speichern und Anzeigen von Diagnosedaten im Azure-Speicher | Microsoft Azure"
+  pageTitle="Speichern und Anzeigen von Diagnosedaten in Azure Storage | Microsoft Azure"
   description="Azure-Diagnosedaten in den Azure-Speicher abrufen und anzeigen"
   services="cloud-services"
   documentationCenter=".net"
@@ -12,7 +12,7 @@
   ms.topic="article"
   ms.tgt_pltfrm="na"
   ms.workload="na"
-  ms.date="10/21/2015"
+  ms.date="02/20/2016"
   ms.author="robb" />
 
 # Speichern und Anzeigen von Diagnosedaten im Azure-Speicher
@@ -52,7 +52,7 @@ Bei SDK 2.5 und höher kann die Anforderung zum Übertragen von Diagnosedaten ü
 Bei SDK 2.4 und früher kann die Anforderung zum Übertragen von Diagnosedaten sowohl über die Konfigurationsdatei als auch programmgesteuert erfolgen. Der programmgesteuerte Ansatz ermöglicht Ihnen auch bedarfsgesteuerte Übertragungen.
 
 
->[AZURE.IMPORTANT]Wenn Sie Diagnosedaten in ein Azure-Speicherkonto übertragen, fallen Kosten für die von den Diagnosedaten genutzten Speicherressourcen an.
+>[AZURE.IMPORTANT] Wenn Sie Diagnosedaten in ein Azure-Speicherkonto übertragen, fallen Kosten für die von den Diagnosedaten genutzten Speicherressourcen an.
 
 ## Speichern von Diagnosedaten
 
@@ -76,21 +76,22 @@ Protokolldaten werden im Blob- oder Tabellenspeicher mit den folgenden Namen ges
 
 - **wad-iis-failedreqlogfiles** – Enthält Informationen aus den Protokollen zu IIS-Anforderungsfehlern.
 
-- **wad-iis-logfiles** – Enthält Informationen zu IIS-Protokollen.
+- **wad-iis-logfiles:** enthält Informationen zu IIS-Protokollen.
 
 - **"custom"** – Ein benutzerdefinierter Container basierend auf Konfigurationsverzeichnissen, die vom Diagnosemonitor überwacht werden. Der Name dieses Blob-Containers wird in WADDirectoriesTable festgelegt.
 
 ## Tools zum Anzeigen von Diagnosedaten
-Mehrere Tools stehen zum Anzeigen der Daten nach der Übertragung an den Speicher zur Verfügung. Zum Beispiel:
+Mehrere Tools stehen zum Anzeigen der Daten nach der Übertragung an den Speicher zur Verfügung. Beispiel:
 
-- **Server-Explorer in Visual Studio** – Wenn Sie die Azure-Tools für Microsoft Visual Studio installiert haben, können den Azure-Speicherknoten im Server-Explorer zum Anzeigen schreibgeschützter Blob- und Tabellendaten aus Ihren Azure-Speicherkonten verwenden. Sie können Daten aus dem lokalen Speicheremulatorkonto und auch aus den für Azure erstellten Speicherkonten anzeigen. Weitere Informationen finden Sie unter [Durchsuchen von Speicherressourcen mit Server-Explorer](https://msdn.microsoft.com/library/ff683677.aspx).
+- Server-Explorer in Visual Studio – wenn Sie die Azure-Tools für Microsoft Visual Studio installiert haben, können Sie den Azure-Speicherknoten im Server-Explorer zum Anzeigen schreibgeschützter Blob- und Tabellendaten aus Ihren Azure-Speicherkonten verwenden. Sie können Daten aus dem lokalen Speicheremulatorkonto und auch aus den für Azure erstellten Speicherkonten anzeigen. Weitere Informationen finden Sie unter [Durchsuchen und Verwalten von Speicherressourcen mit dem Server-Explorer](../vs-azure-tools-storage-resources-server-explorer-browse-manage.md).
 
-- **Azure-Speicher-Explorer von Neudesic** – [Azure-Speicher-Explorer](http://azurestorageexplorer.codeplex.com/) ist ein praktisches Tool mit grafischer Benutzeroberfläche zum Überprüfen und Ändern der Daten in Azure-Speicherprojekten, einschließlich der Protokolle Ihrer Azure-Anwendungen. Informationen zum Herunterladen des Tools finden Sie unter [Azure-Speicher-Explorer](http://azurestorageexplorer.codeplex.com/).
+- [Azure Storage Explorer von Neudesic](http://azurestorageexplorer.codeplex.com/) ist ein praktisches Tool mit grafischer Benutzeroberfläche zum Überprüfen und Ändern der Daten in Azure-Speicherprojekten, einschließlich der Protokolle Ihrer Azure-Anwendungen.
 
-- Azure Diagnostics Manager von Cerebrata – [Azure Diagnostics Manager](http://www.cerebrata.com/Products/AzureDiagnosticsManager/Default.aspx) ist ein auf Windows (WPF) basierender Client zum Verwalten von Azure-Diagnosen. Hiermit können Sie von den unter Azure ausgeführten Anwendungen erfasste Diagnosedaten anzeigen, herunterladen und verwalten. Informationen zum Herunterladen des Tools finden Sie unter [Azure Diagnostics Manager](http://www.cerebrata.com/Products/AzureDiagnosticsManager/Default.aspx).
+- [Azure Management Studio](http://www.cerebrata.com/products/azure-management-studio/introduction) enthält Azure Diagnostics Manager, mit dem Sie die Diagnosedaten anzeigen, herunterladen und verwalten können, die von den auf Azure ausgeführten Anwendungen gesammelt werden.
+
 
 ## Nächste Schritte
 
 [Verfolgen des Ablaufs in einer Cloud Services-Anwendung mit der Azure-Diagnose](cloud-services-dotnet-diagnostics-trace-flow.md)
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0302_2016-->

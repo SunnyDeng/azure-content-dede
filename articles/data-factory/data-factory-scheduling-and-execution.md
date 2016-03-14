@@ -52,7 +52,7 @@ Jede Einheit von Daten, die durch eine Aktivitätsausführung genutzt und erstel
 
 ![Scheduler für "availability"](./media/data-factory-scheduling-and-execution/availability-scheduler.png)
 
-Die stündlichen Datenslices für das Ein- und Ausgabedataset werden im Diagramm gezeigt. Das Diagramm zeigt drei Eingabeslices, die für die Verarbeitung bereit sind, und die laufende Aktivitätsausführung "10-11AM", die den Ausgabeslice "10-11AM" erzeugt.
+Die stündlichen Datenslices für das Ein- und Ausgabedataset werden im Diagramm gezeigt. Das Diagramm zeigt drei Eingabeslices, die für die Verarbeitung bereit sind, und die laufende Aktivitätsausführung "10-11AM", die den Ausgabeslice "10-11AM" erzeugt.
 
 Auf das Zeitintervall des aktuell erzeugten Slices kann in der JSON des Datasets über die Variablen **SliceStart** und **SliceEnd** zugegriffen werden.
 
@@ -243,6 +243,25 @@ Nachdem Sie die Wiederholung ausgelöst haben und der Slice "9-10 AM" für "Data
 
 Ausführlichere Informationen zum Abgeben von Abhängigkeiten und deren Nachverfolgung bei einer komplexe Kette von Aktivitäten und Datasets finden Sie in den folgenden Abschnitten.
 
+## Verketten von Aktivitäten
+Sie können zwei Aktivitäten verketten, indem Sie das Ausgabedataset einer Aktivität als Eingabedataset der anderen Aktivität verwenden. Die Aktivitäten können sich in derselben Pipeline oder in verschiedenen Pipelines befinden. Die zweite Aktivität wird nur ausgeführt, wenn die erste erfolgreich abgeschlossen wurde.
+
+Betrachten Sie beispielsweise den folgenden Fall:
+ 
+1.	Die Pipeline P1 verfügt über die Aktivität A1, die das externe Eingabedataset D1 erfordert und das **Ausgabedataset** **D2** generiert.
+2.	Die Pipeline P2 verfügt über die Aktivität A2, die eine **Eingabe** aus dem Dataset **D2** erfordert und das Ausgabedataset D3 generiert.
+ 
+In diesem Szenario wird die Aktivität A1 ausgeführt, wenn die externen Daten verfügbar sind und die Häufigkeit für die geplante Verfügbarkeit erreicht ist. Die Aktivität A2 wird ausgeführt, wenn die geplanten Slices von D2 verfügbar werden und die Häufigkeit für die geplante Verfügbarkeit erreicht ist. Wenn ein Fehler in einem der Slices im Dataset D2 auftritt, wird A2 für diesen Slice nicht ausgeführt, bis er verfügbar wird.
+
+Die Diagrammansicht sieht wie folgt aus:
+
+![Verketten von Aktivitäten in zwei Pipelines](./media/data-factory-scheduling-and-execution/chaining-two-pipelines.png)
+
+Die Diagrammansicht mit beiden Aktivitäten in derselben Pipeline sieht wie folgt aus:
+
+![Verketten von Aktivitäten in derselben Pipeline](./media/data-factory-scheduling-and-execution/chaining-one-pipeline.png)
+
+
 ## Modellieren von Datasets mit unterschiedlichen Frequenzen
 
 In den obigen Beispielen waren die Frequenzen für Eingabe- und Ausgabedatasets und das Aktivitätszeitfenster identisch. Einige Szenarien erfordern die Fähigkeit, eine Ausgabe mit einer Frequenz zu erzeugen, die sich von den Frequenzen einer oder mehrerer Eingaben unterscheidet. Data Factory unterstützt diese Szenarien.
@@ -362,7 +381,7 @@ Hier sehen Sie die Datenabhängigkeit.
 
 ![Datenabhängigkeit](./media/data-factory-scheduling-and-execution/data-dependency.png)
 
-Der Ausgabeslice für jeden Tag hängt von 24 stündlichen Slices aus dem Eingabedataset ab. Data Factory berechnet diese Abhängigkeiten automatisch, indem die Eingabedatenslices ermittelt werden, die im selben Zeitraum wie der zu erzeugende Ausgabeslice liegen. Wenn beliebige der 24 Eingabeslices nicht verfügbar sind (z. B. aufgrund einer Verarbeitung in einer vorgelagerten Aktivität, die diesen Slice erzeugt), wartet Data Factory ab, bis der Eingabeslice bereit ist, ehe die tägliche Aktivitätsausführung ausgelöst wird.
+Der Ausgabeslice für jeden Tag hängt von 24 stündlichen Slices aus dem Eingabedataset ab. Data Factory berechnet diese Abhängigkeiten automatisch, indem die Eingabedatenslices ermittelt werden, die im selben Zeitraum wie der zu erzeugende Ausgabeslice liegen. Wenn beliebige der 24 Eingabeslices nicht verfügbar sind (z. B. aufgrund einer Verarbeitung in einer vorgelagerten Aktivität, die diesen Slice erzeugt), wartet Data Factory ab, bis der Eingabeslice bereit ist, ehe die tägliche Aktivitätsausführung ausgelöst wird.
 
 
 ### Beispiel 2: Angeben von Abhängigkeiten mit Ausdrücken und Data Factory-Funktionen
@@ -511,9 +530,6 @@ Die Hive-Aktivität verwendet zwei Eingaben und erzeugt täglich einen Ausgabesl
 	}
 
 
-## Verketten von Aktivitäten
-Sie können zwei Aktivitäten verketten, indem Sie das Ausgabedataset einer Aktivität als Eingabedataset der anderen Aktivität verwenden. Die Aktivitäten können sich in derselben Pipeline oder in verschiedenen Pipelines befinden. Die zweite Aktivität wird nur ausgeführt, wenn die erste erfolgreich abgeschlossen wurde. Diese Verkettung erfolgt auf Ebenen von Zeitslices (eine einzelne Einheit innerhalb eines Datasets).
-
 ## Data Factory – Funktionen und Systemvariablen   
 
 Im Artikel [Data Factory – Funktionen und Systemvariablen](data-factory-functions-variables.md) finden Sie eine Liste der Funktionen und Systemvariablen, die von Azure Data Factory unterstützt werden.
@@ -535,7 +551,7 @@ Zum Generieren des Datasetslices ["start", "end"] ist eine Funktion erforderlich
 
 Wie in den zuvor gezeigten Beispielen entspricht der Abhängigkeitszeitraum meist dem Zeitraum des zu erstellenden Datenslices. In diesen Fällen berechnet Daten Factory automatisch die Eingabeslices, die in den Abhängigkeitszeitraum fallen.
 
-Beispiel: Beim obigen Aggregationsbeispiel, bei dem die Ausgabe täglich erzeugt wird und Eingabedaten stündlich verfügbar sind, ist der Zeitraum des Datenslices 24 Stunden. Data Factory sucht die relevanten stündlichen Eingabeslices für diesen Zeitraum und macht den Ausgabeslice vom Eingabeslice abhängig.
+Beispiel: Beim obigen Aggregationsbeispiel, bei dem die Ausgabe täglich erzeugt wird und Eingabedaten stündlich verfügbar sind, ist der Zeitraum des Datenslices 24 Stunden. Data Factory sucht die relevanten stündlichen Eingabeslices für diesen Zeitraum und macht den Ausgabeslice vom Eingabeslice abhängig.
 
 Sie können auch Ihre eigene Zuordnung für den Abhängigkeitszeitraum angeben (wie im obigen Beispiel gezeigt), bei dem eine der Eingabe wöchentlich erfolgte und der Ausgabeslice täglich erzeugt wurde.
    
@@ -616,4 +632,4 @@ Ein Dataset kann als extern gekennzeichnet werden (siehe die nachstehende JSON),
 
   
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

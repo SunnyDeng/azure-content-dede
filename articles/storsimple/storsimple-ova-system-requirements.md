@@ -13,10 +13,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="01/07/2016"
+   ms.date="03/01/2016"
    ms.author="alkohli"/>
 
-# Systemanforderungen für StorSimple Virtual Array (Vorschau)
+# Systemanforderungen für StorSimple Virtual Array
 
 ## Übersicht
 
@@ -34,10 +34,6 @@ Die in diesem Artikel veröffentlichten Informationen zu den StorSimple-Systeman
  
 - Informationen zu Geräten der 7000-Serie finden Sie unter [Systemanforderungen für StorSimple-Geräte der 5000-7000-Serie](http://onlinehelp.storsimple.com/1_StorSimple_System_Requirements).
 
-> [AZURE.IMPORTANT]
-> 
-> - Diese öffentliche Vorschauversion ist nur für Testzwecke bestimmt. Die Installation dieser Vorschauversion in einer Produktionsumgebung wird nicht unterstützt.
-> - Wenn Probleme mit StorSimple Virtual Array auftreten, posten Sie sie im [StorSimple-MSDN-Forum](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=StorSimple).  
 
 ## Softwareanforderungen
 
@@ -57,7 +53,7 @@ Die Softwareanforderungen umfassen Informationen zu den unterstützten Webbrowse
 |----------------------------------------------|----------------------------|
 | Mindestanzahl virtueller Prozessoren (Kerne) | 4 |
 | Minimaler Arbeitsspeicher (RAM) | 8 GB |
-| Festplattenspeicher<sup>1</sup> | Betriebssystemdatenträger: 80 GB <br></br>Datenträger: 500 GB bis 8 TB|
+| Festplattenspeicher<sup>1</sup> | Betriebssystemdatenträger: 80 GB <br></br>Datendatenträger: 500 GB bis 8 TB|
 | Mindestanzahl von Netzwerkschnittstellen | 1 |
 | Minimale Internetbandbreite<sup>2</sup> | 5 MBit/s |
 
@@ -92,7 +88,7 @@ In der folgenden Tabelle sind die Ports aufgeführt, die in der Firewall für iS
 | UDP 53 (DNS) | aus | WAN | In einigen Fällen; siehe Hinweise. | Dieser Port ist nur dann erforderlich, wenn Sie einen internetbasierten DNS-Server verwenden. <br></br> **Hinweis:** Bei der Bereitstellung eines Dateiservers wird die Verwendung eines lokalen DNS-Servers empfohlen.|
 | UDP 123 (NTP) | aus | WAN | In einigen Fällen; siehe Hinweise. | Dieser Port ist nur dann erforderlich, wenn Sie einen internetbasierten NTP-Server verwenden.<br></br> **Hinweis:** Bei der Bereitstellung eines Dateiservers wird empfohlen, die Zeit mit Ihren Active Directory-Domänencontrollern zu synchronisieren. |
 |TCP 9354 | aus | WAN | Ja | Der ausgehende Port wird vom StorSimple-Gerät für die Kommunikation mit dem StorSimple Manager-Dienst verwendet.|
-| TCP 80 (HTTP) | Geben Sie in | LAN | Ja | Dies ist der eingehende Port für die lokale Benutzeroberfläche auf dem StorSimple-Gerät für die lokale Verwaltung. <br></br> **Hinweis:** Beim Zugriff auf die lokale Benutzeroberfläche über HTTP erfolgt automatisch eine Umleitung an HTTPS.|
+| TCP 80 (HTTP) | Geben Sie in | LAN | Ja | Dies ist der eingehende Port für die lokale Benutzeroberfläche auf dem StorSimple-Gerät für die lokale Verwaltung. <br></br> **Hinweis:** Beim Zugriff auf die lokale Benutzeroberfläche über HTTP erfolgt automatisch eine Umleitung auf HTTPS.|
 | TCP 443 (HTTPS) | Geben Sie in | LAN | Ja | Dies ist der eingehende Port für die lokale Benutzeroberfläche auf dem StorSimple-Gerät für die lokale Verwaltung.|
 | TCP 3260 (iSCSI) | Geben Sie in | LAN | Nein | Dieser Port wird für den Datenzugriff über iSCSI verwendet.|
 
@@ -102,4 +98,4 @@ In der folgenden Tabelle sind die Ports aufgeführt, die in der Firewall für iS
 
 -   [Vorbereiten des Portals zum Bereitstellen von StorSimple Virtual Array](storsimple-ova-deploy1-portal-prep.md)
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0302_2016-->

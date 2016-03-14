@@ -3,7 +3,7 @@
 	description="In diesem Tutorial erfahren Sie, wie Sie Azure Backup-Tresore und -Server verwalten."
 	services="backup"
 	documentationCenter=""
-	authors="aashishr"
+	authors="Jim-Parker"
 	manager="jwhit"
 	editor="tysonn"/>
 
@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="12/15/2015"
-	ms.author="jimpark; aashishr; giridham"/>
+	ms.author="jimpark; markgal"/>
 
 
 # Verwalten von Azure Backup-Tresoren und -Servern
@@ -54,4 +54,4 @@ Jetzt können Sie folgende Aufgaben ausführen:
 - Weitere Informationen zu Azure Backup finden Sie unter [Azure Backup – Übersicht](backup-introduction-to-azure-backup.md).
 - Besuchen Sie das [Azure Backup-Forum](http://go.microsoft.com/fwlink/p/?LinkId=290933).
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0302_2016-->

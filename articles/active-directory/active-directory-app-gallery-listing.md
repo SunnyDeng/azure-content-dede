@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="10/29/2015"
+   ms.date="02/19/2016"
    ms.author="mbaldwin"/>
 
 
@@ -33,7 +33,7 @@ Befolgen Sie zum Integrieren Ihrer Anwendung in Azure AD diese [Anweisungen für
 
 * Stellen Sie Anmeldeinformationen für einen Testmandanten oder ein Testkonto mit Ihrer Anwendung bereit, die vom Azure AD-Team zum Testen der Integration verwendet werden können.  
 
-* Geben Sie uns Anweisungen, wie sich das Azure AD-Team anmelden und eine Instanz von Azure AD unter Verwendung des [Azure AD Consent Framework]( https://azure.microsoft.com/documentation/articles/active-directory-integrating-applications/#overview-of-the-consent-framework/) mit Ihrer Anwendung verbinden kann.
+* Geben Sie uns Anweisungen, wie sich das Azure AD-Team anmelden und eine Instanz von Azure AD unter Verwendung des [Azure AD Consent Framework](active-directory-integrating-applications.md#overview-of-the-consent-framework) mit Ihrer Anwendung verbinden kann.
 
 * Stellen Sie alle weiteren notwendigen Anweisungen bereit, damit das Azure AD-Team das einmalige Anmelden mit Ihrer Anwendung testen kann.
 
@@ -97,4 +97,4 @@ Jede App, die SAML 2.0 unterstützt, kann direkt in einen Azure AD-Mandanten i
 > 
 > Logo einfügen (PNG-Datei, 150 px mal 122 px, transparente Hintergrundfarbe):
 
-<!---HONumber=AcomDC_0128_2016--->
+<!---HONumber=AcomDC_0302_2016-->

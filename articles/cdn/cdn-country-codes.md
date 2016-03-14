@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="CDN: Landeskennzahlen" 
-	description="Das Feature ";Länderfilter"; verwendet Landeskennzahlen, um die Länder zu definieren, von denen aus eine Anforderung für ein sicheres Verzeichnis zugelassen oder blockiert wird." 
-	services="cdn" 
-	documentationCenter=".NET" 
-	authors="camsoper" 
-	manager="dwrede" 
+<properties
+	pageTitle="CDN: Landeskennzahlen"
+	description="Das Feature ";Länderfilter"; verwendet Landeskennzahlen, um die Länder zu definieren, von denen aus eine Anforderung für ein sicheres Verzeichnis zugelassen oder blockiert wird."
+	services="cdn"
+	documentationCenter=".NET"
+	authors="camsoper"
+	manager="erikre"
 	editor=""/>
 
-<tags 
-	ms.service="cdn" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="12/02/2015" 
+<tags
+	ms.service="cdn"
+	ms.workload="tbd"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="02/25/2016" 
 	ms.author="casoper"/>
 
 #Landeskennzahlen
@@ -23,11 +23,11 @@ Das Feature **Länderfilter** verwendet Landeskennzahlen, um die Länder zu defi
 | Code | Land | Zusätzliche Informationen                                                                                                                                                                                                                               
 |--------------|----------------------------------------------|------------------------------------------------------|
 | A1 | Anonymer Proxy | Dieser Ländercode identifiziert eine Gruppe von IP-Adressen, die von Anonymisierern oder VPN-Diensten verwendet werden. Diese Arten von Diensten können verwendet werden, um IP-Geolocation-Einschränkungen zu umgehen. |                                                                        
-| A2 | Satellitenanbieter | Dieser Ländercode identifiziert eine Gruppe von IP-Adressen, die von Satelliten-ISPs verwendet werden, um Internetdienste für mehrere Länder bereitzustellen (z. B. Nigeria und Ghana). | 
+| A2 | Satellitenanbieter | Dieser Ländercode identifiziert eine Gruppe von IP-Adressen, die von Satelliten-ISPs verwendet werden, um Internetdienste für mehrere Länder bereitzustellen (z. B. Nigeria und Ghana). |
 | AF | Afghanistan | |
 | AL | Albanien | |
-| DZ | Algerien | | 
-| AS | Amerikanisch-Samoa | | 
+| DZ | Algerien | |
+| AS | Amerikanisch-Samoa | |
 | AD | Andorra | |
 | AO | Angola | |
 | AI | Anguilla | |
@@ -39,10 +39,10 @@ Das Feature **Länderfilter** verwendet Landeskennzahlen, um die Länder zu defi
 | AP | Region Asien-Pazifik | Dieser Ländercode identifiziert eine Gruppe von IP-Adressen, die über die Region Asien-Pazifik verteilt sind. Das Ursprungsland für diesen Satz von IP-Adressen ist unbekannt. Darüber hinaus deckt dieser Ländercode nicht alle IP-Adressen in der Region Asien-Pazifik ab. [Weitere Informationen](https://my.edgecast.com/uploads/ubers/1/docs/webhelp/w/CDNHelpCenter/Content/Knowledge_Base/Geolocation_EU_AP.htm).|     
 | AU | Australien | |
 | AT | Österreich | |
-| AZ | Aserbaidschan | | 
+| AZ | Aserbaidschan | |
 | BS | Bahamas | |
-| BH | Bahrain | | 
-| BD | Bangladesch | | 
+| BH | Bahrain | |
+| BD | Bangladesch | |
 | BB | Barbados | |
 | BY | Belarus | |
 | BE | Belgien | |
@@ -268,4 +268,4 @@ Das Feature **Länderfilter** verwendet Landeskennzahlen, um die Länder zu defi
 | ZM | Sambia | |
 | ZW | Simbabwe | |
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0302_2016-->

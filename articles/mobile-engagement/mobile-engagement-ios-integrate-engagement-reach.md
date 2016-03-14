@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="mobile-ios"
 	ms.devlang="objective-c"
 	ms.topic="article"
-	ms.date="08/05/2015"
+	ms.date="02/29/2016"
 	ms.author="MehrdadMzfr" />
 
 #So integrieren Sie Engagement Reach auf iOS
 
-> [AZURE.IMPORTANT]Bevor Sie die in diesem Leitfaden beschriebenen Schritte ausführen, müssen Sie die im Dokument "So integrieren Sie Engagement auf iOS" beschriebenen Verfahren ausführen.
+> [AZURE.IMPORTANT] Bevor Sie die in diesem Leitfaden beschriebenen Schritte ausführen, müssen Sie die im Dokument "So integrieren Sie Engagement auf iOS" beschriebenen Verfahren ausführen.
 
 
 ### Aktivieren der App für den Empfang von stillen Pushbenachrichtigungen
@@ -116,7 +116,7 @@ Anschließend muss das Engagement-SDK darüber informiert werden, wenn Ihre Anwe
 		[[EngagementAgent shared] applicationDidReceiveRemoteNotification:userInfo fetchCompletionHandler:handler];
 	}
 
-> [AZURE.NOTE]In iOS 7 wird die oben genannte Methode eingeführt. Wenn Ihr Ziel iOS < 7 ist, implementieren Sie unbedingt die Methode `application:didReceiveRemoteNotification:` in Ihrem Anwendungsdelegaten, und rufen Sie `applicationDidReceiveRemoteNotification` auf dem EngagementAgent durch Übergeben von NULL anstelle des `handler`Arguments auf:
+> [AZURE.NOTE] In iOS 7 wird die oben genannte Methode eingeführt. Wenn Ihr Ziel iOS < 7 ist, implementieren Sie unbedingt die Methode `application:didReceiveRemoteNotification:` in Ihrem Anwendungsdelegaten, und rufen Sie `applicationDidReceiveRemoteNotification` auf dem EngagementAgent durch Übergeben von NULL anstelle des `handler`Arguments auf:
 
 	- (void)application:(UIApplication*)application
 	didReceiveRemoteNotification:(NSDictionary*)userInfo
@@ -124,7 +124,7 @@ Anschließend muss das Engagement-SDK darüber informiert werden, wenn Ihre Anwe
 		[[EngagementAgent shared] applicationDidReceiveRemoteNotification:userInfo fetchCompletionHandler:nil];
 	}
 
-> [AZURE.IMPORTANT]Standardmäßig steuert Engagement Reach den completionHandler. Wenn Sie den `handler` Blcok in Ihrem Code manuell bearbeiten möchten, können Sie NULL für das `handler` Argument übergeben und den completion-Block selbst kontrollieren. Unter `UIBackgroundFetchResult`-Typ finden Sie eine Liste möglicher Werte.
+> [AZURE.IMPORTANT] Standardmäßig steuert Engagement Reach den completionHandler. Wenn Sie den `handler` Blcok in Ihrem Code manuell bearbeiten möchten, können Sie NULL für das `handler` Argument übergeben und den completion-Block selbst kontrollieren. Unter `UIBackgroundFetchResult`-Typ finden Sie eine Liste möglicher Werte.
 
 
 ### Vollständiges Beispiel
@@ -216,7 +216,7 @@ Die bereitgestellte NIB-Datei sollte den folgenden Regeln entsprechen:
 -   Unteransichten sollten dieselben Typen aufweisen wie diejenigen in der bereitgestellten NIB-Datei namens `AENotificationView.xib`
 -   Unteransichten sollten dieselben Tags aufweisen wie diejenigen in der bereitgestellten NIB-Datei namens `AENotificationView.xib`
 
-> [AZURE.TIP]Kopieren Sie einfach die bereitgestellte NIB-Datei namens `AENotificationView.xib`, und beginnen Sie Ihre Arbeit mit dieser Datei. Seien Sie jedoch vorsichtig, die Ansicht in dieser NIB-Datei ist mit der Klasse `AENotificationView` verknüpft. Diese Klasse definiert die Methode `layoutSubViews` neu, um die zugehörigen Unteransichten gemäß Kontext zu verschieben und in der Größe zu ändern. Sie können die Klasse durch `UIView` oder eine benutzerdefinierte Ansichtenklasse ersetzen.
+> [AZURE.TIP] Kopieren Sie einfach die bereitgestellte NIB-Datei namens `AENotificationView.xib`, und beginnen Sie Ihre Arbeit mit dieser Datei. Seien Sie jedoch vorsichtig, die Ansicht in dieser NIB-Datei ist mit der Klasse `AENotificationView` verknüpft. Diese Klasse definiert die Methode `layoutSubViews` neu, um die zugehörigen Unteransichten gemäß Kontext zu verschieben und in der Größe zu ändern. Sie können die Klasse durch `UIView` oder eine benutzerdefinierte Ansichtenklasse ersetzen.
 
 Wenn Sie eine umfangreichere Anpassung der Benachrichtigungen benötigen (wenn Sie beispielsweise Ihre Ansicht direkt aus dem Code laden möchten), sollten Sie einen Blick auf den bereitgestellten Quellcode und die Klassendokumentation von `Protocol ReferencesDefaultNotifier` und `AENotifier` werfen.
 
@@ -240,7 +240,7 @@ Wenn Ihre Implementierung von `AENotifier` das Standardverhalten umgeht, müssen
 -   Es erfolgt keine Erweiterung von `AEDefaultNotifier`, d. h. Sie haben die Kategorieverarbeitung von Grund auf implementiert.
 -   Sie haben `prepareNotificationView:forContent:` außer Kraft gesetzt. Stellen Sie sicher, dass mindestens `onNotificationActioned` oder `onNotificationExited` einem Ihrer Benutzeroberflächen-Steuerelemente zugeordnet ist.
 
-> [AZURE.WARNING]Wenn `handleNotification:` eine Ausnahme generiert, wird der Inhalt gelöscht, und es erfolgt ein Aufruf von `drop`. Dies wird in der Statistik berichtet, und es können weitere Kampagnen verarbeitet werden.
+> [AZURE.WARNING] Wenn `handleNotification:` eine Ausnahme generiert, wird der Inhalt gelöscht, und es erfolgt ein Aufruf von `drop`. Dies wird in der Statistik berichtet, und es können weitere Kampagnen verarbeitet werden.
 
 #### Einschließen von Benachrichtigungen als Bestandteil einer vorhandenen Ansicht
 
@@ -264,7 +264,7 @@ Sie können unser Benachrichtigungslayout in Ihre vorhandenen Ansichten einfüge
 
 Das Makro `NOTIFICATION_AREA_VIEW_TAG` befindet sich in `AEDefaultNotifier.h`.
 
-> [AZURE.NOTE]Der standardmäßige Notifier erkennt automatisch, dass das Benachrichtigungslayout in dieser Ansicht enthalten ist und fügt kein Overlay hinzu.
+> [AZURE.NOTE] Der standardmäßige Notifier erkennt automatisch, dass das Benachrichtigungslayout in dieser Ansicht enthalten ist und fügt kein Overlay hinzu.
 
 ### Ankündigungen und Umfragen
 
@@ -283,7 +283,7 @@ Um eine Kategorie für eine Ankündigung zu erstellen, müssen Sie **AEAnnouncem
 	AEReachModule* reach = [AEReachModule moduleWithNotificationIcon:[UIImage imageNamed:@"icon.png"]];
 	[reach registerAnnouncementController:[MyCustomAnnouncementViewController class] forCategory:@"my_category"];
 
-> [AZURE.NOTE]Immer dann, wenn ein Benutzer auf eine Benachrichtigung für eine Ankündigung mit der Kategorie "my\_category" klickt, wird Ihr registrierter Ansichtencontroller (in diesem Fall `MyCustomAnnouncementViewController`) durch einen Aufruf der Methode `initWithAnnouncement:` initialisiert, und die Ansicht wird dem aktuellen Anwendungsfenster hinzugefügt.
+> [AZURE.NOTE] Immer dann, wenn ein Benutzer auf eine Benachrichtigung für eine Ankündigung mit der Kategorie "my\_category" klickt, wird Ihr registrierter Ansichtencontroller (in diesem Fall `MyCustomAnnouncementViewController`) durch einen Aufruf der Methode `initWithAnnouncement:` initialisiert, und die Ansicht wird dem aktuellen Anwendungsfenster hinzugefügt.
 
 In Ihrer Implementierung der Klasse `AEAnnouncementViewController` müssen Sie die Eigenschaft `announcement` lesen, um Ihre Unteransichten zu initialisieren. Siehe hierzu das nachfolgende Beispiel, in dem mithilfe der Eigenschaften `title` und `body` der Klasse `AEReachAnnouncement` zwei Labels initialisiert werden:
 
@@ -316,7 +316,7 @@ Umfragen können auf die gleiche Weise angepasst werden:
 
 Dieses Mal muss der bereitgestellte `MyCustomPollViewController` zur Erweiterung von `AEPollViewController` verwendet werden. Alternativ können Sie eine Erweiterung über den Standardcontroller durchführen: `AEDefaultPollViewController`.
 
-> [AZURE.IMPORTANT]Vergessen Sie nicht, entweder `action` (`submitAnswers:` für benutzerdefinierte Ansichtencontroller für Umfragen) oder die Methode `exit` aufzurufen, bevor der Ansichtencontroller verworfen wird. Andernfalls werden keine Statistiken gesendet (z. B. Analysen der Kampagne) und – noch wichtiger – weitere Kampagnen erhalten erst eine Benachrichtigung, wenn der Anwendungsprozess neu gestartet wurde.
+> [AZURE.IMPORTANT] Vergessen Sie nicht, entweder `action` (`submitAnswers:` für benutzerdefinierte Ansichtencontroller für Umfragen) oder die Methode `exit` aufzurufen, bevor der Ansichtencontroller verworfen wird. Andernfalls werden keine Statistiken gesendet (z. B. Analysen der Kampagne) und – noch wichtiger – weitere Kampagnen erhalten erst eine Benachrichtigung, wenn der Anwendungsprozess neu gestartet wurde.
 
 ##### Beispiel für die Implementierung
 
@@ -416,4 +416,4 @@ Wie bei der erweiterten Benachrichtigungsanpassung wird empfohlen, sich den Quel
 
 	@end
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0302_2016-->

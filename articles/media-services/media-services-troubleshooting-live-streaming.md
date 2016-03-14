@@ -4,7 +4,7 @@
 	services="media-services" 
 	documentationCenter="" 
 	authors="juliako" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor=""/>
 
 <tags 
@@ -13,10 +13,10 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
- 	ms.date="02/03/2016"  
+ 	ms.date="03/01/2016"  
 	ms.author="juliako"/>
 
-#Anleitung zur Behandlung von Problemen bei Livestreaming
+#Anleitung zur Behandlung von Problemen bei Livestreaming 
 
 Dieses Thema bietet Empfehlungen zum Behandeln von Problemen bei Livestreaming.
 
@@ -65,6 +65,12 @@ Dieser Abschnitt enthält Empfehlungen zum Beheben von Problemen im Zusammenhang
 
 	**Problembehandlungsschritte**: Navigieren Sie im AMSE-Tool zur Registerkarte "Streamingendpunkt", und stellen Sie sicher, dass ein Streamingendpunkt mit einer Streamingeinheit ausgeführt wird.
 	
+###Problem: Anzeigen von Encoderprotokollen 
+
+- **Mögliches Problem:** Protokolle, mit denen möglicherweise Fehler behoben werden können, können nicht gefunden werden.
+
+	**Problembehandlungsschritte:** Normalerweise finden Sie Wirecast-Protokolle unter „C:\\Benutzer{Benutzername}\\AppData\\Roaming\\Wirecast\\“.
+
 >[AZURE.NOTE] Wenn Sie nach dem Ausführen der Problembehandlungsschritte immer noch nicht streamen können, senden Sie über das klassische Azure-Portal ein Supportticket.
 
 ##Media Services-Lernpfade
@@ -75,4 +81,4 @@ Dieser Abschnitt enthält Empfehlungen zum Beheben von Problemen im Zusammenhang
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0302_2016-->

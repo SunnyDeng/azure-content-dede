@@ -13,17 +13,20 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="identity"
-	ms.date="01/22/2016"
+	ms.date="02/29/2016"
 	ms.author="kgremban"/>
 
 # Verwalten der rollenbasierten Zugriffssteuerung mit der Azure-Befehlszeilenschnittstelle
 
 > [AZURE.SELECTOR]
 - [PowerShell](role-based-access-control-manage-access-powershell.md)
-- [Azure CLI](role-based-access-control-manage-access-azure-cli.md)
-- [REST API](role-based-access-control-manage-access-rest.md)
+- [Azure-Befehlszeilenschnittstelle](role-based-access-control-manage-access-azure-cli.md)
+- [REST-API](role-based-access-control-manage-access-rest.md)
 
 ## Auflisten der Rollen für die rollenbasierte Zugriffssteuerung (Role-Based Access Control, RBAC)
+
+>[AZURE.IMPORTANT] Bevor Sie die Cmdlets in diesem Artikel verwenden können, müssen Sie [die Azure-Befehlszeilenschnittstelle installieren](../xplat-cli-install.md).
+
 ###	Auflisten aller verfügbaren Rollen
 Um alle verfügbaren Rollen aufzulisten, verwenden Sie Folgendes:
 
@@ -154,4 +157,4 @@ Im folgenden Beispiel ist die benutzerdefinierte Rolle *Virtual Machine Operator
 ## RBAC-Themen
 [AZURE.INCLUDE [role-based-access-control-toc.md](../../includes/role-based-access-control-toc.md)]
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -4,7 +4,7 @@
 	services="media-services" 
 	documentationCenter="" 
 	authors="Juliako" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor=""/>
 
 <tags 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
- 	ms.date="02/11/2016"  
+ 	ms.date="03/01/2016"  
 	ms.author="juliako"/>
 
 
@@ -27,11 +27,25 @@ Microsoft Azure Media Services ist ein Dienst, der OData-basierte HTTP-Anforderu
 
 Berücksichtigen Sie Folgendes, wenn Sie REST verwenden:
 
-
-- Wenn Sie JSON verwenden, MÜSSEN Sie den Accept-Header auf das [ausführliche JSON-Format](http://www.odata.org/documentation/odata-version-3-0/json-verbose-format/) festlegen. OData versteht die \_\_metadata-Eigenschaft in der Anforderung nur, wenn Sie das ausführliche Format verwenden.
-
-	**Accept:** application/json;odata=verbose
 - Beim Abfragen von Entitäten gibt es ein Limit von 1.000 Entitäten, die gleichzeitig zurückgegeben werden können, da die öffentliche REST-Version 2 Abfrageergebnisse auf 1.000 Ergebnisse begrenzt. Sie müssen **Skip** und **Take** (.NET) bzw. **top** (REST) wie in [diesem .NET-Beispiel](media-services-dotnet-manage-entities.md#enumerating-through-large-collections-of-entities) und [diesem REST-API-Beispiel](media-services-rest-manage-entities.md#enumerating-through-large-collections-of-entities) beschrieben verwenden. 
+
+- Wenn Sie JSON verwenden und angeben, dass das Schlüsselwort **\_\_metadata** in der Anforderung verwendet werden soll (z. B. für Verweise auf ein verknüpftes Objekt), MÜSSEN Sie den **Accept**-Header auf das [ausführliche JSON-Format](http://www.odata.org/documentation/odata-version-3-0/json-verbose-format/) festlegen (siehe folgendes Beispiel). OData versteht die **\_\_metadata**-Eigenschaft in der Anforderung nur, wenn Sie das ausführliche Format verwenden.
+
+		POST https://media.windows.net/API/Jobs HTTP/1.1
+		Content-Type: application/json;odata=verbose
+		Accept: application/json;odata=verbose
+		DataServiceVersion: 3.0
+		MaxDataServiceVersion: 3.0
+		x-ms-version: 2.11
+		Authorization: Bearer <token> 
+		Host: media.windows.net
+		
+		{
+			"Name" : "NewTestJob", 
+			"InputMediaAssets" : 
+				[{"__metadata" : {"uri" : "https://media.windows.net/api/Assets('nb%3Acid%3AUUID%3Aba5356eb-30ff-4dc6-9e5a-41e4223540e7')"}}]
+		. . . 
+		
 
 ## Von Media Services unterstützte standardmäßige HTTP-Anforderungsheader
 
@@ -118,4 +132,4 @@ Sie sollten "?api-version=2.x" an das Ende des URIs anhängen, wenn Sie die Meta
 
  
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -30,7 +30,7 @@ In diesem Artikel sind die Schritte aufgeführt, die Sie zur Vorbereitung Ihrer 
 Falls Sie alle obigen allgemeinen Schritte bereits ausgeführt haben, können Sie mit dem [Sichern Ihrer Windows-Computer](backup-azure-backup-windows-server.md) beginnen. Führen Sie andernfalls die unten angegebenen ausführlichen Schritte weiter aus, um sicherzustellen, dass Ihre Umgebung richtig vorbereitet ist.
 
 ## Vorbereitung
-Sie benötigen ein Azure-Konto, um Ihre Umgebung für das Sichern von Windows-Computern vorzubereiten. Falls Sie nicht über ein Konto verfügen, können Sie in nur wenigen Minuten ein [kostenloses Testkonto](https://azure.microsoft.com/pricing/free-trial/) erstellen.
+Sie benötigen ein Azure-Konto, um Ihre Umgebung für das Sichern von Windows-Computern vorzubereiten. Falls Sie nicht über ein Konto verfügen, können Sie in nur wenigen Minuten ein [kostenloses Konto](https://azure.microsoft.com/free/) erstellen.
 
 ## Erstellen eines Sicherungstresors
 Zum Sichern von Dateien und Daten von einem Windows-Computer oder Data Protection Manager (DPM) in Azure oder beim Sichern von IaaS-VMs in Azure müssen Sie einen Sicherungstresor in der geografischen Region erstellen, in der die Daten gespeichert werden sollen.
@@ -53,11 +53,35 @@ Zum Sichern von Dateien und Daten von einem Windows-Computer oder Data Protectio
 
     ![Erstellen eines Tresors](./media/backup-configure-vault/creatingvault1.png)
 
-    Nach dem erfolgreichen Erstellen des Sicherungstresors wird dies in einer entsprechenden Meldung angezeigt. Der Tresor wird zudem in den Ressourcen für Recovery Services als **Aktiv** aufgeführt. ![Status zum Erstellen eines Tresors](./media/backup-configure-vault/backupvaultstatus1.png)
+    Nach dem erfolgreichen Erstellen des Sicherungstresors wird dies in einer entsprechenden Meldung angezeigt. Der Tresor wird zudem in den Ressourcen für Recovery Services als **Aktiv** aufgeführt.
 
-> [AZURE.IMPORTANT] Der beste Zeitpunkt zum Identifizieren von Speicherredundanzoptionen ist unmittelbar nach der Erstellung des Tresors, bevor Computer beim Tresor registriert werden. Sobald ein Element beim Tresor registriert wurde, wird die Speicherredundanzoption gesperrt und kann nicht mehr geändert werden.
->
-> **Weitere Informationen zur Auswahl von Speicherredundanzoptionen erhalten Sie in dieser [Übersicht](backup-azure-storage-redundancy-options.md).**
+    ![Status zum Erstellen eines Tresors](./media/backup-configure-vault/backupvaultstatus1.png)
+
+    >[AZURE.IMPORTANT] Der beste Zeitpunkt zum Identifizieren von Speicherredundanzoptionen ist unmittelbar nach der Erstellung des Tresors, bevor Computer beim Tresor registriert werden. Sobald ein Element beim Tresor registriert wurde, wird die Speicherredundanzoption gesperrt und kann nicht mehr geändert werden.
+
+4. Wählen Sie **Speicherredundanzoptionen** aus.
+
+    Wenn Sie Azure als primären Speicherendpunkt für die Sicherung verwenden (wenn Sie beispielsweise von einem Windows Server in Azure sichern), sollten Sie die Option für [georedundanten Speicher](../storage/storage-redundancy.md#geo-redundant-storage) in Betracht ziehen (Standardeinstellung).
+
+    Bei Verwendung von Azure als tertiärem Speicherendpunkt (Sie verwenden beispielsweise SCDPM, um eine lokale Sicherungskopie vor Ort zu haben, und Azure für Ihre langfristigen Aufbewahrungsanforderungen) sollten Sie einen [lokal redundanten Speicher](../storage/storage-redundancy.md#locally-redundant-storage) auswählen. Dadurch werden die Kosten zum Speichern von Daten in Azure gesenkt, und es wird eine geringere Dauerhaftigkeit für Ihre Daten bereitgestellt, die möglicherweise für tertiäre Kopien ausreicht.
+
+    Erfahren Sie mehr über die Optionen für [georedundanten](../storage/storage-redundancy.md#geo-redundant-storage) und [lokal redundanten](../storage/storage-redundancy.md#locally-redundant-storage) Speicher in dieser [Übersicht](../storage/storage-redundancy.md).
+
+    a. Klicken Sie auf den Tresor, den Sie gerade erstellt haben.
+
+    b. Klicken Sie auf der Seite „Schnellstart“ auf **Konfigurieren**.
+
+    ![Status zum Konfigurieren eines Tresors](./media/backup-try-azure-backup-in-10-mins/configure-vault.png)
+
+    c. Wählen Sie die entsprechende Speicherredundanzoption aus.
+
+    Sie müssen auf **Speichern** klicken, wenn Sie **Lokal redundant** auswählen, da die Standardeinstellung **Georedundant** lautet.
+
+    ![GRS](./media/backup-try-azure-backup-in-10-mins/geo-redundant.png)
+
+    d. Klicken Sie im linken Navigationsbereich auf **Recovery Services**, um zur Liste mit den Ressourcen für **Recovery Services** zurückzukehren.
+
+    ![Sicherungstresor auswählen](./media/backup-try-azure-backup-in-10-mins/rs-left-nav.png)
 
 ## Herunterladen der Datei mit Tresoranmeldeinformationen
 Der lokale Server (Windows-Client oder Windows Server oder Data Protection Manager-Server) muss bei einem Sicherungstresor authentifiziert werden, bevor Daten in Azure gesichert werden können. Die Authentifizierung erfolgt mithilfe von "Tresoranmeldeinformationen". Die Datei mit den Tresoranmeldeinformationen wird über einen sicheren Kanal aus dem Azure-Portal heruntergeladen, und der Azure Backup-Dienst verfügt nicht über den privaten Schlüssel des Zertifikats. Er wird im Portal oder Dienst nicht beibehalten.
@@ -74,11 +98,11 @@ Erfahren Sie mehr über die [Verwendung von Tresoranmeldeinformationen zum Authe
 
     ![Schnellansicht](./media/backup-configure-vault/quickview.png)
 
-4. Klicken Sie auf der Seite **Schnellstart** auf **Tresoranmeldeinformationen herunterladen**.
+4. Klicken Sie auf der Seite **Schnellstart** auf **Tresoranmeldedaten herunterladen**.
 
     ![Herunterladen](./media/backup-configure-vault/downloadvc.png)
 
-    Das Portal generiert Tresoranmeldeinformationen mit einer Kombination aus dem Tresornamen und dem aktuellen Datum. Die Datei mit den Tresoranmeldeinformationen wird nur während des Registrierungsworkflows verwendet und läuft nach 48 Stunden ab.
+    Das Portal generiert Tresoranmeldeinformationen mit einer Kombination aus dem Tresornamen und dem aktuellen Datum. Die Datei mit den Tresoranmeldeinformationen wird nur während des Registrierungsworkflows verwendet und läuft nach 48 Stunden ab.
 
     Sie können die Datei mit den Tresoranmeldeinformationen aus dem Portal herunterladen.
 
@@ -101,31 +125,31 @@ Nach dem Erstellen des Azure Backup-Tresors sollte auf jedem Windows-Computer (W
 
     ![Agent speichern](./media/backup-configure-vault/agent.png)
 
-4. Klicken Sie nach Abschluss des Downloads von *MARSAgentInstaller.exe* auf **Ausführen** (oder doppelklicken Sie am Speicherort auf **MARSAgentInstaller.exe**). Wählen Sie den *Installationsordner* und den *Cacheordner* aus, der für den Agent erforderlich ist, und klicken Sie auf **Weiter**.
+4. Klicken Sie nach Abschluss des Downloads von *MARSAgentInstaller.exe* auf **Ausführen** (oder doppelklicken Sie am Speicherort auf **MARSAgentInstaller.exe**). Wählen Sie den *Installationsordner* und den *Cacheordner* aus, die für den Agent erforderlich sind, und klicken Sie auf **Weiter**.
 
-    Der von Ihnen angegebene Cachespeicherort muss freien Speicherplatz in einer Größenordnung enthalten, die mindestens 5 % der Sicherungsdaten entspricht.
+    Der von Ihnen angegebene Cachespeicherort muss freien Speicherplatz in einer Größenordnung enthalten, die mindestens 5 % der Sicherungsdaten entspricht.
 
     ![Neuerstellung und Zwischenspeicherung](./media/backup-configure-vault/recovery-services-agent-setup-wizard-1.png)
 
-5. Wenn Sie einen Proxyserver für die Verbindung mit dem Internet verwenden, geben Sie im Bildschirm **Proxykonfiguration** die Details des Proxyservers ein. Wenn Sie einen authentifizierten Proxy verwenden, geben Sie in diesem Bildschirm die Informationen zum Benutzernamen und zum Kennwort ein und klicken auf **Weiter**.
+5. Wenn Sie einen Proxyserver für die Verbindung mit dem Internet verwenden, geben Sie im Bildschirm **Proxykonfiguration** die Details des Proxyservers ein. Wenn Sie einen authentifizierten Proxy verwenden, geben Sie auf diesem Bildschirm die Informationen zum Benutzernamen und Kennwort ein und klicken auf **Weiter**.
 
-    Der Azure Backup-Agent installiert .NET Framework 4.5 und Windows PowerShell (falls noch nicht geschehen), um die Installation abzuschließen.
+    Der Azure Backup-Agent installiert .NET Framework 4.5 und Windows PowerShell (falls noch nicht geschehen), um die Installation abzuschließen.
 
 6. Wenn der Agent installiert ist, klicken Sie auf **Mit Registrierung fortfahren**, um den Workflow fortzusetzen.
 
     ![Registrieren](./media/backup-configure-vault/register.png)
 
-7. Navigieren Sie auf dem Bildschirm **Tresor-ID** zur *Datei mit den Tresoranmeldeinformationen*, die Sie heruntergeladen haben, und wählen Sie sie aus.
+7. Navigieren Sie auf dem Bildschirm **Tresor-ID** zu der *Datei mit den Tresoranmeldeinformationen*, die Sie heruntergeladen haben, und wählen Sie sie aus.
 
     ![Tresoranmeldeinformationen](./media/backup-configure-vault/vc.png)
 
-    Die Datei mit den Tresoranmeldeinformationen ist nur 48 Stunden lang gültig (nachdem sie aus dem Portal heruntergeladen wurde). Gehen Sie wie folgt vor, wenn Sie auf diesem Bildschirm einen Fehler erkennen (z. B. „Die angegebene Vault-Anmeldedatei ist abgelaufen.“): Melden Sie sich beim Azure-Portal an, und laden Sie die Datei mit den Tresoranmeldeinformationen erneut herunter.
+    Die Datei mit den Tresoranmeldeinformationen ist nur 48 Stunden lang gültig (nachdem sie aus dem Portal heruntergeladen wurde). Gehen Sie wie folgt vor, wenn Sie auf diesem Bildschirm einen Fehler erkennen (z. B. „Die angegebene Vault-Anmeldedatei ist abgelaufen.“): Melden Sie sich beim Azure-Portal an, und laden Sie die Datei mit den Tresoranmeldeinformationen erneut herunter.
 
     Stellen Sie sicher, dass die Datei mit den Tresoranmeldeinformationen an einem Speicherort verfügbar ist, der für die Setupanwendung zugänglich ist. Wenn Zugriffsfehler auftreten, kopieren Sie die Datei mit den Tresoranmeldeinformationen in einen temporären Speicherort auf diesem Computer, und wiederholen Sie den Vorgang.
 
-    Bei Anzeige eines Fehlers aufgrund von ungültigen Tresoranmeldeinformationen (z. B. „Ungültiger Pfad für Anmeldedatei.“): Die Datei ist entweder beschädigt oder verfügt nicht über die neuesten Anmeldedaten für den Wiederherstellungsdienst. Wiederholen Sie den Vorgang, nachdem Sie eine neue Datei mit Tresoranmeldeinformationen vom Portal heruntergeladen haben. Dieser Fehler tritt i. d. R. auf, wenn der Benutzer in schneller Folge auf die Option *Tresoranmeldedaten herunterladen* klickt. In diesem Fall ist nur die zuletzt heruntergeladene Datei mit Tresoranmeldeinformationen gültig.
+    Bei Anzeige eines Fehlers aufgrund von ungültigen Tresoranmeldeinformationen (z. B. „Ungültiger Pfad für Anmeldedatei.“): Die Datei ist entweder beschädigt oder verfügt nicht über die neuesten Anmeldedaten für den Wiederherstellungsdienst. Wiederholen Sie den Vorgang, nachdem Sie eine neue Datei mit Tresoranmeldeinformationen vom Portal heruntergeladen haben. Dieser Fehler tritt in der Regel auf, wenn der Benutzer in schneller Folge auf die Option *Tresoranmeldedaten herunterladen* klickt. In diesem Fall ist nur die zuletzt heruntergeladene Datei mit Tresoranmeldeinformationen gültig.
 
-8. Im Bildschirm **Verschlüsselungseinstellung** können Sie entweder eine Passphrase *generieren* oder eine Passphrase *angeben* (mindestens 16 Zeichen). Vergessen Sie nicht, die Passphrase an einem sicheren Speicherort zu speichern.
+8. Auf dem Bildschirm **Verschlüsselungseinstellung** können Sie eine Passphrase *generieren* oder *angeben* (mindestens 16 Zeichen). Vergessen Sie nicht, die Passphrase an einem sicheren Speicherort zu speichern.
 
     ![Verschlüsselung](./media/backup-configure-vault/encryption.png)
 
@@ -136,9 +160,9 @@ Nach dem Erstellen des Azure Backup-Tresors sollte auf jedem Windows-Computer (W
     Der Computer wurde nun erfolgreich beim Tresor registriert, und Sie können mit der Sicherung unter Microsoft Azure beginnen.
 
 ## Nächste Schritte
-- Registrieren Sie sich für ein [kostenloses Azure-Testkonto](https://azure.microsoft.com/pricing/free-trial/).
+- Für ein [kostenloses Azure-Konto](https://azure.microsoft.com/free/) registrieren
 - [Sichern Sie einen Windows-Server oder Clientcomputer](backup-azure-backup-windows-server.md).
 - Falls noch einige Fragen unbeantwortet sein sollten, hilft Ihnen das Thema [Azure Backup – Häufig gestellte Fragen](backup-azure-backup-faq.md) weiter.
 - Besuchen Sie das [Azure Backup-Forum](http://go.microsoft.com/fwlink/p/?LinkId=290933).
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -4,8 +4,8 @@
 	services="biztalk-services" 
 	documentationCenter="" 
 	authors="msftman" 
-	manager="dwrede" 
-	editor="cgronlun"/>
+	manager="erikre" 
+	editor=""/>
 
 <tags 
 	ms.service="biztalk-services" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/02/2015" 
+	ms.date="02/29/2016" 
 	ms.author="deonhe"/>
 
 # Versionshinweise für Azure BizTalk Services
@@ -49,7 +49,9 @@ Die Versionshinweise für Microsoft Azure BizTalk Services enthalten die bekannt
 Installieren Sie Visual Studio 2012 Update 3 RC 1, um das Problem zu beheben.
 
 ### Verweis auf ein benutzerdefiniertes Bindungsprojekt
-Betrachten Sie die folgenden Situationen mit einem BizTalk Services-Projekt in einer Visual Studio-Projektmappe: * Eine Visual Studio-Projektmappe enthält sowohl ein BizTalk Services-Projekt als auch ein benutzerdefiniertes Bindungsprojekt. Das BizTalk Service-Projekt enthält einen Verweis auf die benutzerdefinierte Bindungsprojektdatei. * Das BizTalk Service-Projekt enthält einen Verweis auf eine DLL mit einer benutzerdefinierten Bindung/benutzerdefiniertem Verhalten.
+Betrachten Sie die folgenden Situationen mit einem BizTalk Services-Projekt in einer Visual Studio-Projektmappe:
+* Eine Visual Studio-Projektmappe enthält sowohl ein BizTalk Services-Projekt als auch ein benutzerdefiniertes Bindungsprojekt. Das BizTalk Service-Projekt enthält einen Verweis auf die benutzerdefinierte Bindungsprojektdatei. 
+* Das BizTalk Service-Projekt enthält einen Verweis auf eine DLL mit einer benutzerdefinierten Bindung und benutzerdefiniertem Verhalten.
 
 Die Projektmappe wird in Visual Studio erfolgreich erstellt. Anschließend erstellen Sie die Projektmappe neu oder bereinigen sie. Bei der erneuten Neuerstellung oder Bereinigung der Projektmappe tritt dann der folgende Fehler auf: Die Datei „<Path to DLL>“ konnte nicht nach „bin\\Debug\\FileName.dll“ kopiert werden. Der Prozess kann nicht auf die Datei „bin\\Debug\\FileName.dll“ zugreifen, da sie bereits von einem anderen Prozess verwendet wird.
 
@@ -83,9 +85,10 @@ Anlagen für AS2-Nachrichten werden beim Senden oder Empfangen nicht unterstütz
 ### Ressourcen: Speichern des Pfads  
 Beim Hinzufügen von Ressourcen wird der Pfad, der zuvor zum Hinzufügen einer Ressource verwendet wurde, unter Umständen nicht im Dialogfeld gespeichert. Fügen Sie die Website des BizTalk Services-Portals in Internet Explorer den vertrauenswürdigen Sites hinzu, damit der zuvor verwendete Pfad gespeichert wird.
 ### Wenn Sie den Entitätsnamen einer Bridge ändern und das Projekt ohne Speichern der Änderungen schließen, tritt beim erneuten Öffnen der Entität ein Fehler auf
-Szenario mit Schritten in der angegebenen Reihenfolge: * Sie fügen einem BizTalk Service-Projekt eine Bridge (beispielsweise eine unidirektionale XML-Bridge) hinzu.
+Szenario mit Schritten in der angegebenen Reihenfolge:
+* Sie fügen einem BizTalk Service-Projekt eine Bridge (beispielsweise eine unidirektionale XML-Bridge) hinzu.  
 
-* Sie benennen die Bridge um, indem Sie einen Wert für die Eigenschaft „Entitätsname“ angeben. Dadurch wird die zugeordnete BRIDGECONFIG-Datei in den von Ihnen angegebenen Namen umbenannt.  
+* Sie benennen die Bridge um, indem Sie einen Wert für die Eigenschaft „Entitätsname“ angeben. Dadurch wird die zugeordnete BRIDGECONFIG-Datei in den von Ihnen angegebenen Namen umbenannt.
 
 * Sie schließen die BCS-Datei (durch Schließen der Registerkarte in Visual Studio), ohne die Änderungen zu speichern.
 
@@ -97,7 +100,8 @@ Wenn in einem BizTalk Service-Projekt ein dem Projekt hinzugefügtes Schema ein
 ### Die Antwortnachricht für eine XML-Anforderungs-Antwort-Bridge entspricht immer dem UTF-8-Zeichensatz
 In dieser Version ist der Zeichensatz der Antwortnachricht einer XML-Anforderungs-Antwort-Bridge immer auf UTF-8 festgelegt.
 ### Benutzerdefinierte Datentypen
-Die BizTalk Adapter Pack-Adapter des BizTalk Adapter Service-Features können benutzerdefinierte Datentypen für Adaptervorgänge verwenden. Kopieren Sie bei Verwendung benutzerdefinierter Datentypen die DLL-Dateien in das Verzeichnis „<Laufwerk:>\\Programme\\Microsoft BizTalk Adapter Service\\BAServiceRuntime\\bin\\“ oder in den globalen Assemblycache (GAC) auf dem Server, auf dem der BizTalk Adapter Service gehostet wird. Andernfalls kann auf dem Client der folgende Fehler auftreten: ```<s:Fault xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+Die BizTalk Adapter Pack-Adapter des BizTalk Adapter Service-Features können benutzerdefinierte Datentypen für Adaptervorgänge verwenden. Kopieren Sie bei Verwendung benutzerdefinierter Datentypen die DLL-Dateien in das Verzeichnis „<Laufwerk:>\\Programme\\Microsoft BizTalk Adapter Service\\BAServiceRuntime\\bin\\“ oder in den globalen Assemblycache (GAC) auf dem Server, auf dem der BizTalk Adapter Service gehostet wird. Andernfalls kann auf dem Client der folgende Fehler auftreten:
+```<s:Fault xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
   <faultcode>s:Client</faultcode>
   <faultstring xml:lang="de-DE">The UDT with FullName "File, FileUDT, Version=Value, Culture=Value, PublicKeyToken=Value" could not be loaded. Try placing the assembly containing the UDT definition in the Global Assembly Cache.</faultstring>
   <detail>
@@ -105,8 +109,8 @@ Die BizTalk Adapter Pack-Adapter des BizTalk Adapter Service-Features können 
       <ExceptionCode>ERROR_IN_SENDING_MESSAGE</ExceptionCode>
     </AFConnectRuntimeFault>
   </detail>
-</s:Fault> ```
-> [AZURE.IMPORTANT]Für die Installation einer Datei im globalen Assemblycache wird die Verwendung von „GACUtil.exe“ empfohlen. Die Verwendungsmöglichkeiten des Tools und die verfügbaren Visual Studio-Befehlszeilenoptionen sind in „GACUtil.exe“ dokumentiert.
+</s:Fault> ```  
+> [AZURE.IMPORTANT] Für die Installation einer Datei im globalen Assemblycache wird die Verwendung von „GACUtil.exe“ empfohlen. Die Verwendungsmöglichkeiten des Tools und die verfügbaren Visual Studio-Befehlszeilenoptionen sind in „GACUtil.exe“ dokumentiert.
 
 ### Neustarten der BizTalk Adapter Service-Website
 Bei der Installation der BizTalk Adapter Service-Laufzeit* wird in IIS die Website **BizTalk Adapter Service** mit der Anwendung **BAService** erstellt. Die Anwendung **BAService** verwendet intern eine Relaybindung, um die Reichweite des lokalen Dienstendpunkts auf die Cloud auszudehnen. Für einen lokal gehosteten Dienst wird der entsprechende Relayendpunkt nur beim Service Bus registriert, wenn der lokale Dienst gestartet wird.
@@ -119,11 +123,18 @@ Wenn eine Transformation einen Zuordnungsvorgang vom Typ **Kontexteigenschaft ab
 ### Die Eigenschaft für „Zuordnung testen“ wird nicht angezeigt
 Die Eigenschaften für **Zuordnung testen** werden in Visual Studio nicht angezeigt. Dieser Fall kann eintreten, wenn die Fenster **Eigenschaften** und **Projektmappen-Explorer** nicht gleichzeitig angedockt sind. Docken Sie zum Beheben dieses Problems die Fenster **Eigenschaften** und **Projektmappen-Explorer** an.
 ### Das Dropdown-Steuerelement „DateTime neu formatieren“ ist abgeblendet
-Wenn ein Zuordnungsvorgang vom Typ „DateTime neu formatieren“ der Entwurfsoberfläche hinzugefügt und konfiguriert wird, ist die Dropdownliste „Format“ möglicherweise abgeblendet. Dieser Fall kann eintreten, wenn die Computeranzeige auf **Mittel – 125 %** oder **Größer – 150 %** festgelegt ist. Legen Sie zur Lösung des Problems die Anzeige wie nachstehend beschrieben auf **Kleiner – 100 % (Standard)** fest: 1. Öffnen Sie die Systemsteuerung, und klicken Sie auf **Darstellung und Anpassung**. 2. Klicken Sie auf **Anzeige**. 3. Klicken Sie auf **Kleiner – 100 % (Standard)** und anschließend auf **Übernehmen**.
+Wenn ein Zuordnungsvorgang vom Typ „DateTime neu formatieren“ der Entwurfsoberfläche hinzugefügt und konfiguriert wird, ist die Dropdownliste „Format“ möglicherweise abgeblendet. Dieser Fall kann eintreten, wenn die Computeranzeige auf **Mittel – 125 %** oder **Größer – 150 %** festgelegt ist. Legen Sie zur Lösung des Problems die Anzeige wie nachstehend beschrieben auf **Kleiner – 100 % (Standard)** fest:
+1. Öffnen Sie die Systemsteuerung, und klicken Sie auf **Darstellung und Anpassung**.
+2. Klicken Sie auf **Anzeige**.
+3. Klicken Sie auf **Kleiner – 100 % (Standard)** und anschließend auf **Übernehmen**.
 
 Die Dropdownliste **Format** sollte jetzt wie erwartet funktionieren.
 ### Doppelte Vereinbarungen im BizTalk Services-Portal
-Szenario: 1. Sie erstellen eine Vereinbarung mithilfe der TPM OM-API. 2. Sie öffnen die Vereinbarung im BizTalk Services-Portal auf zwei unterschiedlichen Registerkarten. 3. Sie stellen die Vereinbarung über beide Registerkarten bereit. 4. Dadurch werden beide Vereinbarungen bereitgestellt, was im BizTalk Services-Portal zu doppelten Einträgen führt.
+Stellen Sie sich folgendes Szenario vor:
+1. Sie erstellen eine Vereinbarung mithilfe der TPM OM-API.
+2. Sie öffnen die Vereinbarung im BizTalk Services-Portal auf zwei unterschiedlichen Registerkarten.
+3. Sie stellen die Vereinbarung über beide Registerkarten bereit.
+4. Dadurch werden beide Vereinbarungen bereitgestellt, was im BizTalk Services-Portal zu doppelten Einträgen führt.
 
 **Problemumgehung**: Öffnen Sie im BizTalk Services-Portal eine der doppelt vorhandenen Vereinbarungen, und heben Sie die Bereitstellung auf.
 
@@ -147,7 +158,8 @@ Szenario: Sie möchten eine XML-Nachricht im benutzerdefinierten Code einer Brid
 ### Beim Senden von Nachrichten an eine Bridge mit WCF erfolgt keine Skalierung
 Wenn Nachrichten mithilfe von WCF an eine Bridge gesendet werden, erfolgt keine Skalierung. Verwenden Sie „HttpWebRequest“, wenn Sie einen skalierbaren Client benötigen.
 ### UPGRADE: Tokenanbieterfehler nach dem Upgrade von BizTalk Services Preview auf die allgemein verfügbare Version
-Es gibt eine EDI- oder AS2-Vereinbarung mit aktiven Batches. Wenn der BizTalk Service von der Vorschauversion auf die allgemein verfügbare Version aktualisiert wird, kann Folgendes geschehen: * Fehler: Der Tokenanbieter konnte kein Sicherheitstoken bereitstellen. Vom Tokenanbieter zurückgegebene Meldung: Der Remotename konnte nicht aufgelöst werden.
+Es gibt eine EDI- oder AS2-Vereinbarung mit aktiven Batches. Wenn der BizTalk Service von der Vorschauversion auf die allgemein verfügbare Version aktualisiert wird, kann Folgendes geschehen:
+* Fehler: Der Tokenanbieter konnte kein Sicherheitstoken bereitstellen. Vom Tokenanbieter zurückgegebene Meldung: Der Remotename konnte nicht aufgelöst werden.
 
 * Stapelverarbeitungsaufgaben werden abgebrochen.
 
@@ -174,4 +186,4 @@ In diesem Dokument werden die Begriffe „Pipelines“ und „Bridges“ synonym
 
 [BizTalk Services](https://msdn.microsoft.com/library/azure/hh689864.aspx)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0302_2016-->

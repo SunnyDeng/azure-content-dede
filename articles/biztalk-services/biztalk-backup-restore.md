@@ -4,8 +4,8 @@
 	services="biztalk-services" 
 	documentationCenter="" 
 	authors="MandiOhlinger" 
-	manager="dwrede" 
-	editor="cgronlun"/>
+	manager="erikre" 
+	editor=""/>
 
 <tags 
 	ms.service="biztalk-services" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/08/2015" 
+	ms.date="02/29/2016" 
 	ms.author="mandia"/>
 
 
@@ -23,7 +23,7 @@ Azure BizTalk Services bieten eine Sicherungs- und Wiederherstellungsfunktion. I
 
 Sie können BizTalk Services auch mithilfe der [BizTalk Services-REST-API](http://go.microsoft.com/fwlink/p/?LinkID=325584) sichern.
 
-> [AZURE.NOTE]Hybridverbindungen werden editionsunabhängig NICHT gesichert. Sie müssen die Hybridverbindungen neu erstellen.
+> [AZURE.NOTE] Hybridverbindungen werden editionsunabhängig NICHT gesichert. Sie müssen die Hybridverbindungen neu erstellen.
 
 ## Voraussetzungen
 
@@ -70,7 +70,9 @@ Sobald die Sicherung abgeschlossen ist, wird im Speicherkonto ein Container mit 
 
 	![][AutomaticBU]
 
-	**Hinweise** – Die unter **Aufbewahrung in Tagen** angegebene Aufbewahrungszeit muss länger sein als die Sicherungshäufigkeit. – Wählen Sie **Bewahren Sie immer mindestens eine Sicherung auf**, auch wenn die Aufbewahrungszeit überschritten ist.
+	**Hinweise**
+	- Unter **Aufbewahrung in Tagen** muss die Aufbewahrungszeit länger sein als die Sicherungshäufigkeit.
+	- Wählen Sie **Bewahren Sie immer mindestens eine Sicherung auf** aus, auch wenn die Aufbewahrungszeit überschritten ist.
 	
 
 4. Wählen Sie **Speichern** aus.
@@ -233,4 +235,4 @@ Um Azure BizTalk Services im klassischen Azure-Portal zu erstellen, lesen Sie [K
 [RestoreBizTalkService]: ./media/biztalk-backup-restore/RestoreBizTalkServiceWindow.png
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0302_2016-->

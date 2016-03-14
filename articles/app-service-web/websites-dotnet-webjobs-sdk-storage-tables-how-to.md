@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="12/14/2015" 
+	ms.date="02/29/2016" 
 	ms.author="tdykstra"/>
 
 # Verwenden von Azure-Tabellenspeicher mit dem WebJobs-SDK
@@ -141,7 +141,7 @@ Im folgenden Codebeispiel wird ein `CloudTable`-Objekt verwendet, um eine einzel
 		    tableBinding.Execute(insertOperation);
 		}
 
-Weitere Informationen zur Verwendung des `CloudTable`-Objekts finden Sie unter [Verwenden von Tabellenspeicher aus .NET](../storage-dotnet-how-to-use-tables.md).
+Weitere Informationen zur Verwendung des `CloudTable`-Objekts finden Sie unter [Verwenden von Tabellenspeicher aus .NET](../storage/storage-dotnet-how-to-use-tables.md).
 
 ## <a id="queues"></a>Verwandte Themen, die im Artikel zu Warteschlangen behandelt werden
 
@@ -163,4 +163,4 @@ In diesem Artikel werden u. a. die folgenden Themen behandelt:
 In dieser Anleitung wurden Codebeispiele bereitgestellt, in denen veranschaulicht wird, wie häufige Szenarien für das Arbeiten mit Azure-Tabellen behandelt werden. Weitere Informationen zur Verwendung von Azure WebJobs und dem WebJobs-SDK finden Sie unter [Empfohlene Ressourcen für Azure WebJobs](http://go.microsoft.com/fwlink/?linkid=390226).
  
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0302_2016-->

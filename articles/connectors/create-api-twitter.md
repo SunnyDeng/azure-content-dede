@@ -14,22 +14,23 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na" 
-   ms.date="02/23/2016"
+   ms.date="02/25/2016"
    ms.author="mandia"/>
 
 
 # Erste Schritte mit der Twitter-API
-Verbinden Sie sich mit Twitter, um einen Tweet zu posten, die Timeline eines Benutzers abzurufen und mehr.
+Verbinden Sie sich mit Twitter, um einen Tweet zu posten, die Timeline eines Benutzers abzurufen und mehr. Die Twitter-API kann in Folgendem verwendet werden:
 
-Die Twitter-API kann von PowerApps Enterprise- und Logik-Apps verwendet werden.
+- PowerApps 
+- Logik-Apps 
 
->[AZURE.NOTE] Diese Version des Artikels gilt für Logik-Apps mit der Schemaversion „2015-08-01-preview“. Um die Schemaversion „2014-12-01-preview“ aufzurufen, klicken Sie auf [Twitter-Connector](../app-service-logic/app-service-logic-connector-twitter.md).
+>[AZURE.NOTE] Diese Version des Artikels gilt für die Schemaversion 2015-08-01-preview für Logik-Apps. Um die Schemaversion 2014-12-01-preview aufzurufen, klicken Sie auf [Twitter-Connector](../app-service-logic/app-service-logic-connector-twitter.md).
 
 Twitter ermöglicht Folgendes:
 
 - Einen Geschäftsworkflow basierend auf den Daten erstellen, die aus Twitter abgerufen werden. 
 - Verwenden von Triggern, wenn ein neuer Tweet vorhanden ist.
-- Verwenden von Aktionen, um z. B. einen Tweet zu posten oder Tweets zu suchen. Diese Aktionen erhalten eine Antwort und stellen anschließend die Ausgabe anderen Aktionen zur Verfügung. Wenn ein neuer Tweet angezeigt wird, können Sie z. B. diesen Tweet auf Facebook posten.
+- Verwenden von Aktionen, um z. B. einen Tweet zu posten oder Tweets zu suchen. Diese Aktionen erhalten eine Antwort und stellen anschließend die Ausgabe anderen Aktionen zur Verfügung. Wenn ein neuer Tweet angezeigt wird, können Sie z. B. diesen Tweet auf Facebook posten.
 - Hinzufügen der Twitter-API zu PowerApps Enterprise. Die Benutzer können diese API anschließend in ihren Apps verwenden. 
 
 Informationen zum Hinzufügen einer API in PowerApps Enterprise finden Sie unter [Registrieren einer API in PowerApps](../power-apps/powerapps-register-from-available-apis.md).
@@ -73,12 +74,13 @@ Wenn Sie diese API Ihren Logik-Apps hinzufügen, müssen Sie ihnen das Herstelle
 1. Melden Sie sich bei Ihrem Twitter-Konto an.
 2. Wählen Sie **Autorisieren** aus, um zu erlauben, dass Ihre Logik-Apps sich mit Ihrem Twitter-Konto verbinden und es nutzen. 
 
-Nachdem Sie eine Verbindung hergestellt haben, geben Sie die Twitter-Eigenschaften ein, z. B. Tweettext. In der **REST-API-Referenz** in diesem Thema werden diese Eigenschaften beschrieben.
+Nachdem Sie eine Verbindung hergestellt haben, geben Sie die Twitter-Eigenschaften ein, z. B. Tweettext. In der **REST-API-Referenz** in diesem Thema werden diese Eigenschaften beschrieben.
 
 >[AZURE.TIP] Sie können dieselbe Twitter-Verbindung in anderen Logik-Apps verwenden.
 
 
 ## Swagger-REST-API – Referenz
+Gilt für Version: 1.0.
 
 ### Neuen Tweet posten 
 Tweeten. ```POST: /posttweet```
@@ -318,11 +320,11 @@ Ruft Benutzer ab, denen ich folge. ```GET: /myfriends```
 ## Nächste Schritte
 Nach Hinzufügen der Dropbox-API zu PowerApps Enterprise [erteilen Sie den Benutzern Berechtigungen](../power-apps/powerapps-manage-api-connection-user-access.md) zum Verwenden der API in ihren Apps.
 
-[Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md).
+[Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md)
 
 <!--References-->
 
 [6]: ./media/create-api-twitter/twitter-apps-page.png
 [7]: ./media/create-api-twitter/twitter-app-create.png
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

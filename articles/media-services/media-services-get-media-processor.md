@@ -4,7 +4,7 @@
 	services="media-services" 
 	documentationCenter="" 
 	authors="juliako" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor=""/>
 
 <tags 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/14/2016" 
+	ms.date="03/01/2016" 
 	ms.author="juliako"/>
 
 
@@ -22,7 +22,7 @@
 > [AZURE.SELECTOR]
 - [.NET](media-services-get-media-processor.md)
 - [REST](media-services-rest-get-media-processor.md)
- 
+
 
 ##Übersicht
 
@@ -32,28 +32,28 @@ Die folgende Tabelle enthält Name und Beschreibung der verfügbaren Medienproze
 
 Medienprozessorname|Beschreibung|Weitere Informationen
 ---|---|---
-Azure Media Encoder|Zur Ausführung von Codieraufgaben mit dem Azure Media Encoder.|[Azure Media Encoder](media-services-encode-asset.md#azure_media_encoder)
-Media Encoder Standard|Zur Ausführung von Codieraufgaben mit dem Media Encoder Standard.|[Azure Media Encoder](media-services-encode-asset.md#media_encoder_standard)
-Media Encoder Premium Workflow|Zur Ausführung von Codieraufgaben mit dem Media Encoder Premium Workflow.|[Media Encoder Premium Workflow](media-services-encode-asset.md#media_encoder_premium_wokrflow)
-Azure Media Indexer| Macht Mediendateien und Inhalte durchsuchbar und generiert Untertitelspuren und Schlüsselwörter.|[Indizieren von Mediendateien mit Azure Media Indexer](media-services-index-content.md)
-Azure Media Hyperlapse (Vorschau)|Ermöglicht es Ihnen, die "Unregelmäßigkeiten" in Ihrem Video mithilfe von Videostabilisierung auszugleichen. Darüber hinaus können Sie Ihre Inhalte beschleunigen, um einen verwendbaren Clip zu erhalten.|		[Azure Media Hyperlapse](https://azure.microsoft.com/blog/?p=286281&preview=1&_ppp=61e1a0b3db)</a>
-Storage Decryption| Entschlüsselt Medienobjekte, die mit der Speicherverschlüsselung verschlüsselt wurden.|–
-Azure Media Packager|Konvertiert Medienobjekte von .mp4 in das Smooth Streaming-Format. Konvertiert außerdem Medienobjekte vom Smooth Streaming-Format in das Apple HTTP Live Streaming (HLS)-Format.|[Systemvoreinstellungen für den Azure Media Packager](http://msdn.microsoft.com/library/hh973635.aspx)
-Azure Media Encryptor|Verschlüsselt Medienobjekte mit dem PlayReady-Schutz.|[Systemvoreinstellungen für den Azure Media Packager](http://msdn.microsoft.com/library/hh973610.aspx)
+Media Encoder Standard|Umfasst Standardfunktionen für bedarfsgesteuerte Codierung. |[Azure On-Demand Media Encoder – Überblick und Vergleich](media-services-encode-asset.md)
+Media Encoder Premium Workflow|Zur Ausführung von Codieraufgaben mit dem Media Encoder Premium Workflow.|[Azure On-Demand Media Encoder – Überblick und Vergleich](media-services-encode-asset.md)
+Azure Media Indexer| Macht Mediendateien und Inhalte durchsuchbar und generiert Untertitelspuren und Schlüsselwörter.|[Azure Media Indexer](media-services-index-content.md)
+Azure Media Hyperlapse (Vorschau)|Ermöglicht es Ihnen, die "Unregelmäßigkeiten" in Ihrem Video mithilfe von Videostabilisierung auszugleichen. Darüber hinaus können Sie Ihre Inhalte beschleunigen, um einen verwendbaren Clip zu erhalten.|[Azure Media Hyperlapse](media-services-hyperlapse-content.md)
+Azure Media Encoder|Veraltet
+Storage Decryption| Veraltet|
+Azure Media Packager|Veraltet|
+Azure Media Encryptor|Veraltet|
 
 ##Abrufen von Medienprozessoren
 
-Das folgende Beispiel zeigt, wie Sie eine Medienprozessor-Instanz erstellen. Das folgende Codebeispiel setzt eine Variable auf Modulebene mit dem Namen "\_context" voraus, die Zugriff auf den Serverkontext bietet. Siehe [Vorgehensweise: Programmgesteuertes Verbinden mit Media Services].
+Das folgende Beispiel zeigt, wie Sie eine Medienprozessor-Instanz erstellen. Das folgende Codebeispiel setzt eine Variable auf Modulebene mit dem Namen "\_context" voraus, die Zugriff auf den Serverkontext bietet. Siehe [Vorgehensweise: Programmgesteuertes Verbinden mit Media Services](media-services-dotnet-connect_programmatically.md).
 
 	private static IMediaProcessor GetLatestMediaProcessorByName(string mediaProcessorName)
 	{
-	     var processor = _context.MediaProcessors.Where(p => p.Name == mediaProcessorName).
-	        ToList().OrderBy(p => new Version(p.Version)).LastOrDefault();
-	
-	    if (processor == null)
-	        throw new ArgumentException(string.Format("Unknown media processor", mediaProcessorName));
-	
-	    return processor;
+		var processor = _context.MediaProcessors.Where(p => p.Name == mediaProcessorName).
+		ToList().OrderBy(p => new Version(p.Version)).LastOrDefault();
+		
+		if (processor == null)
+		throw new ArgumentException(string.Format("Unknown media processor", mediaProcessorName));
+		
+		return processor;
 	}
 
 
@@ -66,10 +66,7 @@ Das folgende Beispiel zeigt, wie Sie eine Medienprozessor-Instanz erstellen. Das
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
 ##Nächste Schritte
-Sie sind nun in der Lage, eine Medienprozessor-Instanz zu erstellen, und können mit dem Thema [Gewusst wie: Codieren von Medienobjekten][] fortfahren. Dort lernen Sie, wie Sie Medienobjekte mit dem Azure Media Encoder codieren können.
 
-[Gewusst wie: Codieren von Medienobjekten]: media-services-encode-asset.md
-[Task Preset Strings for the Azure Media Encoder]: http://msdn.microsoft.com/library/jj129582.aspx
-[Vorgehensweise: Programmgesteuertes Verbinden mit Media Services]: ../media-services-set-up-computer/
+Sie sind nun in der Lage, eine Medienprozessorinstanz zu erstellen, und können mit dem Thema [Gewusst wie: Codieren von Assets](media-services-dotnet-encode-with-media-encoder-standard.md) fortfahren. Dort lernen Sie, wie Sie Assets mit dem Media Encoder Standard codieren können.
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0302_2016-->

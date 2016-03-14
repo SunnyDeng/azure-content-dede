@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/16/2016" 
+	ms.date="02/24/2016" 
 	ms.author="billmath"/>
 
 # Verwalten von Benutzereinstellungen mit Azure Multi-Factor Authentication (MFA) in der Cloud
@@ -38,17 +38,19 @@ Durch diese Einstellung wird der Benutzer gezwungen, die Registrierung bei der A
 
 ### Benutzer dazu bringen, Kontaktmethoden erneut bereitzustellen
 
-<ol>
-<li>Melden Sie sich am Azure-Verwaltungsportal an.</li>
-<li>Klicken Sie im linken Bereich auf "Active Directory".</li>
-<li>Klicken Sie unter "Directory" auf das Verzeichnis für den Benutzer, der seine Kontaktmethode erneut bereitstellen soll.</li>
-<li>Klicken Sie oben auf "Benutzer".</li>
-<li>Klicken Sie unten auf der Seite auf "Verwalten der Multi-Factor Authentication". Die Seite für die mehrstufige Authentifizierung wird geöffnet. <li>Suchen Sie den Benutzer, den Sie verwalten möchten, und aktivieren Sie das Kontrollkästchen neben seinem Namen. Sie müssen möglicherweise oben die Ansicht ändern.</li> <li>Hierdurch erscheint rechts der Link **Benutzereinstellungen verwalten**. Klicken Sie auf diese Schaltfläche.</li> <li>Aktivieren Sie das Kontrollkästchen in **Ausgewählte Benutzer müssen Kontaktmethoden erneut bereitstellen**.</li>
 
-![Kontaktmethoden bereitstellen](./media/multi-factor-authentication-manage-users-and-devices/reproofup.png)
 
-<li>Klicken Sie auf "Speichern".</li>
-<li>Klicken Sie auf "Schließen".</li>
+
+1. Melden Sie sich beim klassischen Azure-Portal an.
+2. Klicken Sie im linken Bereich auf "Active Directory".
+3. Klicken Sie unter "Directory" auf das Verzeichnis für den Benutzer, der seine Kontaktmethode erneut bereitstellen soll.
+4. Klicken Sie oben auf "Benutzer".
+5. Klicken Sie unten auf der Seite auf "Verwalten der Multi-Factor Authentication". Die Seite für die mehrstufige Authentifizierung wird geöffnet.
+6. Suchen Sie den Benutzer, den Sie verwalten möchten, und aktivieren Sie das Kontrollkästchen neben seinem Namen. Sie müssen möglicherweise oben die Ansicht ändern.
+7. Hierdurch wird rechts der Link **Benutzereinstellungen verwalten** angezeigt. Klicken Sie auf diese Schaltfläche.
+8. Aktivieren Sie das Kontrollkästchen ** Bereitstellen der Kontaktmethoden bei ausgewählten Benutzern erneut anfordern**. ![Kontaktmethoden bereitstellen](./media/multi-factor-authentication-manage-users-and-devices/reproofup.png)
+10. Klicken Sie auf "Speichern".
+11. Klicken Sie auf "Schließen".
 
 ## Löschen Sie die vorhandenen App-Kennwörter des Benutzers.
 
@@ -56,28 +58,32 @@ Dies löscht alle App-Kennwörter, die ein Benutzer erstellt hat. Nicht-Browser-
 
 ### Löschen vorhandener App-Kennwörter eines Benutzers
 
-<ol>
-<li>Melden Sie sich am Azure-Verwaltungsportal an.</li>
-<li>Klicken Sie im linken Bereich auf "Active Directory".</li>
-<li>Klicken Sie unter "Verzeichnis" auf das Verzeichnis für den Benutzer, dem Sie die App-Kennwörter löschen möchten.</li>
-<li>Klicken Sie oben auf "Benutzer".</li>
-<li>Klicken Sie unten auf der Seite auf "Verwalten der Multi-Factor Authentication". Die Seite für die mehrstufige Authentifizierung wird geöffnet. <li>Suchen Sie den Benutzer, den Sie verwalten möchten, und aktivieren Sie das Kontrollkästchen neben seinem Namen. Sie müssen möglicherweise oben die Ansicht ändern.</li> <li>Hierdurch erscheint rechts der Link **Benutzereinstellungen verwalten**. Klicken Sie auf diese Schaltfläche.</li> <li>Aktivieren Sie das Kontrollkästchen in **Löschen aller vorhandener App-Kennwörter, die von den ausgewählten Benutzern generiert wurden**.</li> ![App-Kennwörter löschen](./media/multi-factor-authentication-manage-users-and-devices/deleteapppasswords.png)<li>Klicken Sie auf "Speichern".</li> <li>Klicken Sie auf "Schließen".</li>
+1. Melden Sie sich beim klassischen Azure-Portal an.
+2. Klicken Sie im linken Bereich auf "Active Directory".
+3. Klicken Sie unter "Verzeichnis" auf das Verzeichnis für den Benutzer, dem Sie die App-Kennwörter löschen möchten.
+4. Klicken Sie oben auf "Benutzer".
+5. Klicken Sie unten auf der Seite auf "Verwalten der Multi-Factor Authentication". Die Seite für die mehrstufige Authentifizierung wird geöffnet.
+6. Suchen Sie den Benutzer, den Sie verwalten möchten, und aktivieren Sie das Kontrollkästchen neben seinem Namen. Sie müssen möglicherweise oben die Ansicht ändern.
+7. Hierdurch wird rechts der Link **Benutzereinstellungen verwalten** angezeigt. Klicken Sie auf diese Schaltfläche. 
+8. Aktivieren Sie das Kontrollkästchen **Alle vorhandenen App-Kennwörter löschen, die von den ausgewählten Benutzern erstellt wurden**. ![App-Kennwörter löschen](./media/multi-factor-authentication-manage-users-and-devices/deleteapppasswords.png)
+10. Klicken Sie auf "Speichern".
+10. Klicken Sie auf "Schließen".
 
+## Wiederherstellen der MFA auf allen gespeicherten Geräten für einen Benutzer
 
-
-
-
-## Wiederherstellen der MFA auf allen ausgesetzten Geräten eines Benutzers
-
-Administratoren haben die Möglichkeit, die Multi-Factor Authentication auf ihren Geräten und in den Browsern zurückzusetzen. Dies erfolgt durch die Wiederherstellung der Multi-Factor Authentication für die Geräte und Browser eines Benutzers. Dabei wird die Aussetzung von allen Geräten und Browsern des Benutzers entfernt.
+Administratoren haben die Möglichkeit, die Multi-Factor Authentication auf Geräten und in Browsern von Benutzern zurückzusetzen. Dabei wird die gespeicherte MFA auf allen Geräten und in allen Browsern der Benutzer entfernt, und die Benutzer müssen bei ihrer nächsten Anmeldung MFA verwenden.
 
 ### MFA auf allen ausgesetzten Geräten für einen Benutzer wiederherstellen
 
-<ol>
-<li>Melden Sie sich am Azure-Verwaltungsportal an.</li>
-<li>Klicken Sie im linken Bereich auf "Active Directory".</li>
-<li>Klicken Sie unter "Verzeichnis" auf das Verzeichnis für den Benutzer, für den die MFA wiederhergestellt werden soll.</li>
-<li>Klicken Sie oben auf "Benutzer".</li>
-<li>Klicken Sie unten auf der Seite auf "Verwalten der Multi-Factor Authentication". Die Seite für die mehrstufige Authentifizierung wird geöffnet. <li>Suchen Sie den Benutzer, den Sie verwalten möchten, und aktivieren Sie das Kontrollkästchen neben seinem Namen. Sie müssen möglicherweise oben die Ansicht ändern.</li> <li>Hierdurch erscheint rechts der Link **Benutzereinstellungen verwalten**. Klicken Sie auf diese Schaltfläche.</li> <li>Aktivieren Sie das Kontrollkästchen bei "Multi-Factor Authentication-Wiederherstellung auf allen ausgesetzten Geräten".</li> ![App-Kennwörter löschen](./media/multi-factor-authentication-manage-users-and-devices/rememberdevices.png) <li>Klicken Sie auf "Speichern".</li> <li>Klicken Sie auf "Schließen".</li>
+1. Melden Sie sich beim klassischen Azure-Portal an.
+2. Klicken Sie im linken Bereich auf "Active Directory".
+3. Klicken Sie unter "Verzeichnis" auf das Verzeichnis für den Benutzer, für den die MFA wiederhergestellt werden soll.
+4. Klicken Sie oben auf "Benutzer".
+5. Klicken Sie unten auf der Seite auf "Verwalten der Multi-Factor Authentication". Die Seite für die mehrstufige Authentifizierung wird geöffnet.
+6. Suchen Sie den Benutzer, den Sie verwalten möchten, und aktivieren Sie das Kontrollkästchen neben seinem Namen. Sie müssen möglicherweise oben die Ansicht ändern.
+7. Hierdurch wird rechts der Link **Benutzereinstellungen verwalten** angezeigt. Klicken Sie auf diese Schaltfläche.
+8. Aktivieren Sie das Kontrollkästchen **Mehrstufige Authentifizierung für alle gespeicherten Geräte wiederherstellen**. ![App-Kennwörter löschen](./media/multi-factor-authentication-manage-users-and-devices/rememberdevices.png)
+9. Klicken Sie auf "Speichern".
+10. Klicken Sie auf "Schließen".
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0302_2016-->

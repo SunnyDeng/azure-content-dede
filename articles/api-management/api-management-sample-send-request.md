@@ -1,20 +1,20 @@
 <properties
-   pageTitle="Verwenden des API Management-Diensts zum Generieren von HTTP-Anforderungen"
-   description="Erfahren Sie mehr über die Verwendung von Anforderungs- und Antwortrichtlinien in API Management, um externe Dienste aus Ihrer API abzurufen."
-   services="api-management"
-   documentationCenter=""
-   authors="darrelmiller"
-   manager=""
-   editor=""/>
+	pageTitle="Verwenden des API Management-Diensts zum Generieren von HTTP-Anforderungen"
+	description="Erfahren Sie mehr über die Verwendung von Anforderungs- und Antwortrichtlinien in API Management, um externe Dienste aus Ihrer API abzurufen."
+	services="api-management"
+	documentationCenter=""
+	authors="darrelmiller"
+	manager=""
+	editor=""/>
 
 <tags
-   ms.service="api-management"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="02/01/2016"
-   ms.author="v-darmi"/>
+	ms.service="api-management"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="na"
+	ms.date="02/19/2016"
+	ms.author="v-darmi"/>
 
 
 # Verwenden externer Dienste über den Azure API Management-Dienst
@@ -269,4 +269,4 @@ Informieren Sie im folgenden Video ausführlicher über die diesem Artikel behan
 
 > [AZURE.VIDEO send-request-and-return-response-policies]
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0302_2016-->

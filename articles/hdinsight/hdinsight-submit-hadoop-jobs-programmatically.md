@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/04/2016"
+	ms.date="02/29/2016"
 	ms.author="jgao"/>
 
 # Übermitteln von Hadoop-Aufträgen in HDInsight
@@ -58,7 +58,7 @@ Das HDInsight .NET SDK enthält .NET-Clientbibliotheken, die das Arbeiten mit HD
 1. Erstellen Sie eine C#-Konsolenanwendung in Visual Studio.
 2. Führen Sie in der NuGet-Paket-Manager-Konsole den folgenden Befehl aus.
 
-		Install-Package Microsoft.Azure.Common.Authentication -pre
+		Install-Package Microsoft.Azure.Common.Authentication -Pre
 		Install-Package Microsoft.Azure.Management.HDInsight -Pre
 		Install-Package Microsoft.Azure.Management.HDInsight.Job -Pre
 2. Verwenden Sie den folgenden Code:
@@ -98,7 +98,10 @@ Das HDInsight .NET SDK enthält .NET-Clientbibliotheken, die das Arbeiten mit HD
 		
 					var tokenCreds = GetTokenCloudCredentials();
 					var subCloudCredentials = GetSubscriptionCloudCredentials(tokenCreds, SubscriptionId);
-		
+
+					var resourceManagementClient = new ResourceManagementClient(subCloudCredentials);  
+ 					var rpResult = resourceManagementClient.Providers.Register("Microsoft.HDInsight");  
+
 					_hdiManagementClient = new HDInsightManagementClient(subCloudCredentials);
 		
 					var clusterCredentials = new BasicAuthenticationCloudCredentials { Username = ExistingClusterUsername, Password = ExistingClusterPassword };
@@ -266,4 +269,4 @@ In diesem Artikel haben Sie mehrere Möglichkeiten zum Erstellen von HDInsight-C
 
 [apache-hive]: http://hive.apache.org/
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0302_2016-->

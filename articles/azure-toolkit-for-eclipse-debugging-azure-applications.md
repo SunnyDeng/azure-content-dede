@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="multiple"
     ms.devlang="Java"
     ms.topic="article"
-    ms.date="11/30/2015" 
+    ms.date="02/26/2016" 
     ms.author="robmcm"/>
 
 <!-- Legacy MSDN URL = https://msdn.microsoft.com/library/azure/hh690949.aspx -->
@@ -30,12 +30,11 @@ Wir verwenden die Anwendung aus dem Tutorial [Verwenden der Azure-Dienstlaufzeit
 
 ## So debuggen Sie die in Azure ausgeführte Anwendung ##
 
->[AZURE.WARNING]Das Toolkit unterstützt das Java-Remotedebuggen in erster Linie für Bereitstellungen, die im Azure-Serveremulator ausgeführt werden. Da die Debugverbindung nicht sicher ist, sollten Sie das Remotedebuggen nicht für Produktionsbereitstellungen aktivieren. Wenn Sie eine bereits in der Azure-Cloud ausgeführte Anwendung debuggen müssen, verwenden Sie eine Stagingbereitstellung. Aber selbst bei einer Stagingbereitstellung müssen Sie wissen, dass ein unberechtigter Zugriff möglich ist, wenn jemand die IP-Adresse Ihrer Cloudbereitstellung kennt.
+>[AZURE.WARNING] Das Toolkit unterstützt das Java-Remotedebuggen in erster Linie für Bereitstellungen, die im Azure-Serveremulator ausgeführt werden. Da die Debugverbindung nicht sicher ist, sollten Sie das Remotedebuggen nicht für Produktionsbereitstellungen aktivieren. Wenn Sie eine bereits in der Azure-Cloud ausgeführte Anwendung debuggen müssen, verwenden Sie eine Stagingbereitstellung. Aber selbst bei einer Stagingbereitstellung müssen Sie wissen, dass ein unberechtigter Zugriff möglich ist, wenn jemand die IP-Adresse Ihrer Cloudbereitstellung kennt.
 
 1. Erstellen Sie Ihr Projekt für das Testen im Emulator: Klicken Sie im Projektexplorer von Eclipse mit der rechten Maustaste auf **MyAzureProject**, klicken Sie auf **Properties** und anschließend auf **Azure**, und legen Sie bei **Build for** die Einstellung **Deployment to cloud** fest.
 1. Erstellen Sie Ihr Projekt neu: Klicken Sie im Eclipse-Menü auf **Project** und dann auf **Build All**.
 1. Stellen Sie Ihre Anwendung unter *Staging* in Azure bereit.
-
     >[AZURE.IMPORTANT] Wie oben erwähnt: Es wird dringend empfohlen, dass Sie das Debuggen in den allermeisten Fällen im Serveremulator ausführen und nur dann in der Stagingumgebung debuggen, wenn ein zusätzliches Debuggen erforderlich ist. Es wird empfohlen, nicht in der Produktionsumgebung zu debuggen.
 1. Wenn die Bereitstellung in Azure abgeschlossen ist, suchen und notieren Sie den DNS-Namen im [Azure-Verwaltungsportal][]. Eine Stagingbereitstellung hat einen DNS-Namen in der Form http://*&lt;guid&gt;*.cloudapp.net, wobei *&lt;guid&gt;* ein von Azure zugeordneter GUID-Wert ist.
 1. Klicken Sie im Projektexplorer von Eclipse mit der rechten Maustaste auf **WorkerRole1**, klicken Sie auf **Azure** und dann auf **Debugging**.
@@ -43,7 +42,6 @@ Wir verwenden die Anwendung aus dem Tutorial [Verwenden der Azure-Dienstlaufzeit
     1. Aktivieren Sie das Kontrollkästchen **Enable remote debugging for this role**.
     1. Verwenden Sie für **Input endpoint to use** den Wert **Debugging (public:8090, private:8090)**.
     1. Stellen Sie sicher, dass die Option **Start JVM in suspended mode, waiting for a debugger connection** nicht aktiviert ist.
-
         >[AZURE.IMPORTANT] Die Option **Start JVM in suspended mode, waiting for a debugger connection** ist für komplexere Debugszenarien im Serveremulator vorgesehen (nicht für Cloudbereitstellungen). Beim Verwenden der Option **Start JVM in suspended mode, waiting for a debugger connection** wird der Startprozess des Servers solange angehalten, bis der Eclipse-Debugger mit seiner JVM verbunden ist. Sie können diese Option zwar für eine Debugsitzung mit dem Serveremulator nutzen, aber für eine Debugsitzung in einer Cloudbereitstellung dürfen Sie sie nicht verwenden. Im Zuge einer Startaufgabe von Azure wird ein Server initialisiert, und die Azure-Cloud macht öffentliche Endpunkte erst verfügbar, wenn die Startaufgabe abgeschlossen ist. Bei Aktivierung dieser Option in einer Cloudbereitstellung wird ein Startprozess nicht erfolgreich abgeschlossen, weil er keine Verbindung von einem externen Eclipse-Client empfangen kann.
     1. Klicken Sie auf **Create Debug Configurations**.
 1. Gehen Sie im Dialogfeld **Azure Debug Configuration** wie folgt vor:
@@ -60,7 +58,7 @@ Wir verwenden die Anwendung aus dem Tutorial [Verwenden der Azure-Dienstlaufzeit
 1. Erweitern Sie im Dialogfeld **Debug Configurations** im linken Bereich den Eintrag **Remote Java Application**, wählen Sie **Azure Cloud (WorkerRole1)** aus, und klicken Sie auf **Debug**.
 1. Öffnen Sie einen Browser, und führen Sie darin die Staginganwendung ****http://***&lt;guid&gt;***.cloudapp.net/MyHelloWorld** aus, wobei Sie *&lt;guid&gt;* durch die GUID aus Ihrem DNS-Namen ersetzen müssen. Wenn Sie im Dialogfeld **Confirm Perspective Switch** zum Bestätigen des Perspektivwechsels aufgefordert werden, klicken Sie auf **Yes**. Ihre Debugsitzung sollte nun bis zu der Codezeile ausgeführt werden, für die der Haltepunkt festgelegt wurde.
 
->[AZURE.NOTE]Wenn Sie versuchen, eine Remotedebugverbindung mit einer Bereitstellung herzustellen, von der mehrere Instanzen ausgeführt werden, können Sie derzeit nicht steuern, mit welcher Instanz der Debugger zuerst verbunden wird. Der Azure Load Balancer wählt die Instanz nach dem Zufallsprinzip aus. Wenn die Verbindung mit einer Instanz hergestellt ist, wird das Debuggen jedoch bei dieser Instanz fortgesetzt. Allerdings beendet Azure die Verbindung möglicherweise, wenn eine Inaktivität länger als 4 Minuten anhält (z. B. wenn die Unterbrechung an einem Haltepunkt zu lange dauert).
+>[AZURE.NOTE] Wenn Sie versuchen, eine Remotedebugverbindung mit einer Bereitstellung herzustellen, von der mehrere Instanzen ausgeführt werden, können Sie derzeit nicht steuern, mit welcher Instanz der Debugger zuerst verbunden wird. Der Azure Load Balancer wählt die Instanz nach dem Zufallsprinzip aus. Wenn die Verbindung mit einer Instanz hergestellt ist, wird das Debuggen jedoch bei dieser Instanz fortgesetzt. Allerdings beendet Azure die Verbindung möglicherweise, wenn eine Inaktivität länger als 4 Minuten anhält (z. B. wenn die Unterbrechung an einem Haltepunkt zu lange dauert).
 
 ## Debuggen einer bestimmten Rolleninstanz in einer Bereitstellung mit mehreren Instanzen ##
 
@@ -78,7 +76,7 @@ Wenn Sie die Nummer des öffentlichen Ports kennen, die der Instanz zugeordnet w
 
 ## Nur für Windows: So debuggen Sie die im Serveremulator ausgeführte Anwendung ##
 
->[AZURE.NOTE]Der Azure-Emulator ist nur unter Windows verfügbar. Überspringen Sie diesen Abschnitt, wenn Sie ein anderes Betriebssystem als Windows verwenden.
+>[AZURE.NOTE] Der Azure-Emulator ist nur unter Windows verfügbar. Überspringen Sie diesen Abschnitt, wenn Sie ein anderes Betriebssystem als Windows verwenden.
 
 1. Erstellen Sie Ihr Projekt für das Testen im Emulator: Klicken Sie im Projektexplorer von Eclipse mit der rechten Maustaste auf **MyAzureProject**, klicken Sie auf **Properties** und anschließend auf **Azure**, und legen Sie bei **Build for** die Einstellung **Testing in emulator** fest.
 1. Erstellen Sie Ihr Projekt neu: Klicken Sie im Eclipse-Menü auf **Project** und dann auf **Build All**.
@@ -87,7 +85,6 @@ Wenn Sie die Nummer des öffentlichen Ports kennen, die der Instanz zugeordnet w
     1. Aktivieren Sie das Kontrollkästchen **Enable remote debugging for this role**.
     1. Bei **Input endpoint to use** verwenden Sie den automatisch vom Toolkit generierten Endpunkt, der als **Debugging (public:8090, private:8090)** aufgeführt ist.
     1. Stellen Sie sicher, dass die Option **Start JVM in suspended mode, waiting for a debugger connection** nicht aktiviert ist.
-
         >[AZURE.IMPORTANT] Die Option **Start JVM in suspended mode, waiting for a debugger connection** ist für komplexere Debugszenarien im Serveremulator vorgesehen (nicht für Cloudbereitstellungen). Beim Verwenden der Option **Start JVM in suspended mode, waiting for a debugger connection** wird der Startprozess des Servers solange angehalten, bis der Eclipse-Debugger mit seiner JVM verbunden ist. Sie können diese Option zwar für eine Debugsitzung mit dem Serveremulator nutzen, aber für eine Debugsitzung in einer Cloudbereitstellung dürfen Sie sie nicht verwenden. Im Zuge einer Startaufgabe von Azure wird ein Server initialisiert, und die Azure-Cloud macht öffentliche Endpunkte erst verfügbar, wenn die Startaufgabe abgeschlossen ist. Bei Aktivierung dieser Option in einer Cloudbereitstellung wird ein Startprozess nicht erfolgreich abgeschlossen, weil er keine Verbindung von einem externen Eclipse-Client empfangen kann.
     1. Klicken Sie auf **Create Debug Configurations**.
 1. Gehen Sie im Dialogfeld **Azure Debug Configuration** wie folgt vor:
@@ -114,7 +111,7 @@ Hier wurde veranschaulicht, wie Sie beim Debuggen im Serveremulator vorgehen. De
 
 [Azure-Toolkit für Eclipse][]
 
-[Erstellen einer Hello World-Anwendung für Azure in Eclipse][]
+[Creating a Hello World Application for Azure in Eclipse (in englischer Sprache)][]
 
 [Installieren des Azure-Toolkits für Eclipse][]
 
@@ -125,7 +122,7 @@ Weitere Informationen zum Verwenden von Azure mit Java finden Sie im [Azure Java
 [Azure Java Developer Center]: http://go.microsoft.com/fwlink/?LinkID=699547
 [Azure-Verwaltungsportal]: http://go.microsoft.com/fwlink/?LinkID=512959
 [Azure-Toolkit für Eclipse]: http://go.microsoft.com/fwlink/?LinkID=699529
-[Erstellen einer Hello World-Anwendung für Azure in Eclipse]: http://go.microsoft.com/fwlink/?LinkID=699533
+[Creating a Hello World Application for Azure in Eclipse (in englischer Sprache)]: http://go.microsoft.com/fwlink/?LinkID=699533
 [Installieren des Azure-Toolkits für Eclipse]: http://go.microsoft.com/fwlink/?LinkId=699546
 [Verwenden der Azure-Dienstlaufzeitbibliothek in JSP]: http://go.microsoft.com/fwlink/?LinkID=699551
 
@@ -134,4 +131,4 @@ Weitere Informationen zum Verwenden von Azure mit Java finden Sie im [Azure Java
 [ic719504]: ./media/azure-toolkit-for-eclipse-debugging-azure-applications/ic719504.png
 [ic551537]: ./media/azure-toolkit-for-eclipse-debugging-azure-applications/ic551537.png
 
-<!----HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0302_2016-->

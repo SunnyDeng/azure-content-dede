@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="mobile" 
-   ms.date="08/10/2015"
+   ms.date="02/29/2016"
    ms.author="piyushjo"/>
 
 # Verwaltung des eindeutigen Inhalts der verschiedenen Kampagnenarten für Pushbenachrichtigungen
@@ -230,4 +230,4 @@ Die Kachelnutzlast ist der Text, der auf der Kachel Ihrer App auf Windows Phone-
 [Link 29]: mobile-engagement-user-interface-reach-content.md
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0302_2016-->

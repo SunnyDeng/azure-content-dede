@@ -3,8 +3,8 @@
 	description="Dieses Thema bietet eine Übersicht und einen Vergleich über Azure On-Demand-Media Encoder." 
 	services="media-services" 
 	documentationCenter="" 
-	authors="juliako,anilmur" 
-	manager="dwrede" 
+	authors="juliako" 
+	manager="erikre" 
 	editor=""/>
 
 <tags 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
- 	ms.date="02/03/2016"  
+ 	ms.date="02/25/2016"  
 	ms.author="juliako"/>
 
 #Azure On-Demand Media Encoder – Überblick und Vergleich
@@ -34,7 +34,6 @@ Um die [dynamische Paketerstellung](media-services-dynamic-packaging-overview.md
 Media Services unterstützt die folgenden On-Demand-Encoder, die in diesem Artikel beschrieben werden:
 
 - [Media Encoder Standard](media-services-encode-asset.md#media-encoder-standard)
-- [Azure Media Encoder](media-services-encode-asset.md#azure-media-encoder)
 - [Media Encoder Premium Workflow](media-services-encode-asset.md#media-encoder-premium-workflow)
 
 Dieser Artikel enthält eine kurze Übersicht über On-Demand-Media Encoder und stellt Links zu Artikeln bereit, die detailliertere Informationen bieten. Das Thema enthält auch einen Encodervergleich.
@@ -42,17 +41,6 @@ Dieser Artikel enthält eine kurze Übersicht über On-Demand-Media Encoder und 
 Beachten Sie, dass jedes Media Services-Konto standardmäßig je eine aktive Codierungsaufgabe gleichzeitig aufweisen kann. Sie können Einheiten für die Codierung reservieren, mit denen Sie mehrere Codierungsaufgaben gleichzeitig ausführen kennen – jeweils eine für jede reservierte Einheit für die Codierung, die Sie erwerben. Weitere Informationen finden Sie unter [Skalieren der Codierung](media-services-portal-encoding-units.md).
 
 ##Media Encoder Standard
-
-###Übersicht
-
-Es wird empfohlen, den Media Encoder Standard-Encoder zu verwenden. Allerdings ist dieser über das klassische Azure-Portal derzeit nicht verfügbar.
-
-Im Vergleich zu Azure Media Encoder unterstützt dieser Encoder weitere Eingabe- und Ausgabeformate und Codecs. Weitere Vorteile sind:
-
-- Höhere Toleranz, was die Erstellung der Eingabedatei betrifft
-- Bessere Qualität des H.264-Codecs als Azure Media Encoder
-- Basiert auf einer neueren und flexibleren Pipeline
-- Stabiler und robuster
 
 ###Gewusst wie
 
@@ -88,46 +76,6 @@ Informationen finden Sie unter [Erstellen von Überlagerungen mithilfe von Media
 
 [Media Services-Blog](https://azure.microsoft.com/blog/2015/07/16/announcing-the-general-availability-of-media-encoder-standard/)
  
-##Azure Media Encoder
-
-###Übersicht
-
-Azure Media Encoder ist einer der Encoder, die von Media Services unterstützt werden. Es wird empfohlen, ab Juli 2015 [Media Encoder Standard](media-services-encode-asset.md#media_encoder_standard) zu verwenden.
-
-###Gewusst wie
-
-[Gewusst wie: Codieren mit Azure Media Encoder](media-services-dotnet-encode-asset.md)
-
-###Formate
-
-[Formate und Codecs](media-services-azure-media-encoder-formats.md)
-
-###Voreinstellungen
-
-Azure Media Encoder wird mithilfe von Encoder-Voreinstellungen konfiguriert, die [hier](https://msdn.microsoft.com/library/azure/dn619392.aspx) beschrieben sind. Die eigentlichen Voreinstellungsdateien für Azure Media Encoder finden Sie [hier](https://github.com/Azure/azure-media-services-samples/tree/master/Encoding%20Presets/VoD/Azure%20Media%20Encoder).
-
-###Eingabe- und Ausgabemetadaten
-
-Die Eingabemetadaten für den Encoder werden [hier](http://msdn.microsoft.com/library/azure/dn783120.aspx) beschrieben.
-
-Die Ausgabemetadaten für den Encoder werden [hier](http://msdn.microsoft.com/library/azure/dn783217.aspx) beschrieben.
-
-###Miniaturansicht
-
-[Erstellen einer Miniaturansicht](https://msdn.microsoft.com/library/hh973624.aspx)
-
-###Audio- und/oder Videoüberlagerungen
-
-[Erstellen von Überlagerungen](media-services-azure-media-customize-ame-presets.md#creating-overlays).
-
-###Benennungskonvention
-
-[Vorgehensweise beim Ändern der Ausgabedateinamen](media-services-azure-media-customize-ame-presets.md#controlling-azure-media-encoder-output-file-names)
-
-###Weitere Informationen
-
-[Codieren Ihrer Medien mit Dolby Digital Plus](media-services-encode-with-dolby-digital-plus.md)
-
 ##Media Encoder Premium Workflow
 
 ###Übersicht
@@ -152,107 +100,106 @@ Wenn Ihr Eingabevideo keine Untertitel enthält, enthält das Ausgabemedienobjek
 Medienprozessorname|Geltende Preise|Hinweise
 ---|---|---
 **Media Encoder Standard** |ENCODER|Codieraufgaben werden gemäß der Summe der Größen von Ausgabemedienobjekten in GB berechnet, und zwar zur [hier][1] angegebenen Rate in der Spalte ENCODER.
-**Azure Media Encoder** |ENCODER|Codieraufgaben werden gemäß der Summe der Größen von Ausgabemedienobjekten in GB berechnet, und zwar zur [hier][1] angegebenen Rate in der Spalte ENCODER.
 **Media Encoder Premium Workflow** |PREMIUM ENCODER|Codieraufgaben werden gemäß der Summe der Größen von Ausgabemedienobjekten in GB berechnet, und zwar zur [hier][1] angegebenen Rate in der Spalte PREMIUM ENCODER.
 
 
-In diesem Abschnitt werden die Codierungsfunktionen von **Media Encoder Standard**, **Azure Media Encoder** und **Media Encoder Premium Workflow** verglichen.
+In diesem Abschnitt werden die Codierungsfunktionen von **Media Encoder Standard** und **Media Encoder Premium Workflow** verglichen.
 
 
 ###Eingabecontainer/Dateiformate
 
-Eingabecontainer/Dateiformate|Media Encoder Standard|Azure Media Encoder|Media Encoder Premium Workflow
----|---|---|---
-Adobe® Flash® F4V |Ja|Nein |Ja
-MXF/SMPTE 377M |Ja|Eingeschränkt|Ja
-GXF |Ja|Nein |Ja
-MPEG-2-Transportdatenstrom |Ja|Ja |Ja
-MPEG-2-Programmdatenstrom |Ja|Ja |Ja
-MPEG-4/MP4 |Ja|Ja |Ja
-Windows Media/ASF |Ja|Ja |Ja
-AVI (unkomprimiert, 8-Bit/10-Bit)|Ja|Ja |Ja
-3GPP/3GPP2 |Ja|Ja |Nein
-Smooth Streaming-Dateiformat (PIFF 1.3)|Ja|Ja|Nein
-[Microsoft Digital Video Recording (DVR-MS)](https://msdn.microsoft.com/library/windows/desktop/dd692984)|Ja|Nein|Nein
-Matroska/WebM |Ja|Nein|Nein
-QuickTime (.mov) |Ja|Nein|Nein
+Eingabecontainer/Dateiformate|Media Encoder Standard|Media Encoder Premium Workflow
+---|---|---
+Adobe® Flash® F4V |Ja|Ja
+MXF/SMPTE 377M |Ja|Ja
+GXF |Ja|Ja
+MPEG-2-Transportdatenstrom |Ja|Ja
+MPEG-2-Programmdatenstrom |Ja|Ja
+MPEG-4/MP4 |Ja|Ja
+Windows Media/ASF |Ja|Ja
+AVI (unkomprimiert, 8-Bit/10-Bit)|Ja|Ja
+3GPP/3GPP2 |Ja|Nein
+Smooth Streaming-Dateiformat (PIFF 1.3)|Ja|Nein
+[Microsoft Digital Video Recording (DVR-MS)](https://msdn.microsoft.com/library/windows/desktop/dd692984)|Ja|Nein
+Matroska/WebM |Ja|Nein
+QuickTime (.mov) |Ja|Nein
 
 ###Codecs für Videoeingang
 
-Codecs für Videoeingang|Media Encoder Standard|Azure Media Encoder|Media Encoder Premium Workflow
----|---|---|---
-AVC 8-Bit/10-Bit, bis zu 4:2:2, einschließlich AVCIntra |8-Bit 4:2:0 und 4:2:2|Nur 8-Bit 4:2:0|Ja
-Avid DNxHD (in MXF) |Ja|Nein|Ja
-DVCPro/DVCProHD (in MXF) |Ja|Nein|Ja
-JPEG2000 |Ja|Nein|Ja
-MPEG-2 (bis zu 422 Profile und High Level; Varianten wie XDCAM, XDCAM HD, XDCAM IMX, CableLabs® und D10 eingeschlossen)|Bis zu 422 Profile|Bis zu 422 Profile|Ja
-MPEG-1 |Ja|Ja|Ja
-Windows Media Video/VC-1 |Ja|Ja|Ja
-Canopus HQ/HQX |Nein|Ja|Nein
-MPEG-4 Teil 2 |Ja|Nein|Nein
-[Theora](https://en.wikipedia.org/wiki/Theora) |Ja|Nein|Nein
-Apple ProRes 422 |Ja|Nein|Nein
-Apple ProRes 422 LT |Ja|Nein|Nein
-Apple ProRes 422 HQ |Ja|Nein|Nein
-Apple ProRes Proxy|Ja|Nein|Nein
-Apple ProRes 4444 |Ja|Nein|Nein
-Apple ProRes 4444 XQ |Ja|Nein|Nein
+Codecs für Videoeingang|Media Encoder Standard|Media Encoder Premium Workflow
+---|---|---
+AVC 8-Bit/10-Bit, bis zu 4:2:2, einschließlich AVCIntra |8-Bit 4:2:0 und 4:2:2|Ja
+Avid DNxHD (in MXF) |Ja|Ja
+DVCPro/DVCProHD (in MXF) |Ja|Ja
+JPEG2000 |Ja|Ja
+MPEG-2 (bis zu 422 Profile und High Level; Varianten wie XDCAM, XDCAM HD, XDCAM IMX, CableLabs® und D10 eingeschlossen)|Bis zu 422 Profile|Ja
+MPEG-1 |Ja|Ja
+Windows Media Video/VC-1 |Ja|Ja
+Canopus HQ/HQX |Nein|Nein
+MPEG-4 Teil 2 |Ja|Nein
+[Theora](https://en.wikipedia.org/wiki/Theora) |Ja|Nein
+Apple ProRes 422 |Ja|Nein
+Apple ProRes 422 LT |Ja|Nein
+Apple ProRes 422 HQ |Ja|Nein
+Apple ProRes Proxy|Ja|Nein
+Apple ProRes 4444 |Ja|Nein
+Apple ProRes 4444 XQ |Ja|Nein
 
 ###Codecs für Audioeingang
 
-Codecs für Audioeingang|Media Encoder Standard|Azure Media Encoder|Media Encoder Premium Workflow
----|---|---|---
-AES (SMPTE 331M und 302M, AES3-2003) |Nein|Nein|Ja
-Dolby® E |Nein|Nein|Ja
-Dolby® Digital (AC3) |Nein|Ja|Ja
-Dolby® Digital Plus (E-AC3) |Nein|Nein|Ja
-AAC (AAC-LC, AAC-HE und AAC-HEv2; bis 5.1)|Ja|Ja|Ja
-MPEG Layer 2|Ja|Ja|Ja
-MP3 (MPEG-1 Audio Layer 3)|Ja|Ja|Ja
-Windows Media Audio|Ja|Ja|Ja
-WAV/PCM|Ja|Ja|Ja
-[FLAC](https://en.wikipedia.org/wiki/FLAC)</a>|Ja|Nein|Nein
-[Opus](https://en.wikipedia.org/wiki/Opus_(audio_format) |Ja|Nein|Nein
-[Vorbis](https://en.wikipedia.org/wiki/Vorbis)</a>|Ja|Nein|Nein
+Codecs für Audioeingang|Media Encoder Standard|Media Encoder Premium Workflow
+---|---|---
+AES (SMPTE 331M und 302M, AES3-2003) |Nein|Ja
+Dolby® E |Nein|Ja
+Dolby® Digital (AC3) |Nein|Ja
+Dolby® Digital Plus (E-AC3) |Nein|Ja
+AAC (AAC-LC, AAC-HE und AAC-HEv2; bis 5.1)|Ja|Ja
+MPEG Layer 2|Ja|Ja
+MP3 (MPEG-1 Audio Layer 3)|Ja|Ja
+Windows Media Audio|Ja|Ja
+WAV/PCM|Ja|Ja
+[FLAC](https://en.wikipedia.org/wiki/FLAC)</a>|Ja|Nein
+[Opus](https://en.wikipedia.org/wiki/Opus_(audio_format) |Ja|Nein
+[Vorbis](https://en.wikipedia.org/wiki/Vorbis)</a>|Ja|Nein
 
 
 ###Ausgabecontainer/Dateiformate
 
-Ausgabecontainer/Dateiformate|Media Encoder Standard|Azure Media Encoder|Media Encoder Premium Workflow
----|---|---|---
-Adobe® Flash® F4V|Nein|Nein|Ja
-MXF (OP1a, XDCAM und AS02)|Nein|Nein|Ja
-DPP (einschließlich AS11)|Nein|Nein|Ja
-GXF|Nein|Nein|Ja
-MPEG-4/MP4|Ja|Ja|Ja
-MPEG-TS|Ja|Nein|Ja
-Windows Media/ASF|Nein|Ja|Ja
-AVI (unkomprimiert, 8-Bit/10-Bit)|Nein|Nein|Ja
-Smooth Streaming-Dateiformat (PIFF 1.3)|Nein|Ja|Ja
+Ausgabecontainer/Dateiformate|Media Encoder Standard|Media Encoder Premium Workflow
+---|---|---
+Adobe® Flash® F4V|Nein|Ja
+MXF (OP1a, XDCAM und AS02)|Nein|Ja
+DPP (einschließlich AS11)|Nein|Ja
+GXF|Nein|Ja
+MPEG-4/MP4|Ja|Ja
+MPEG-TS|Ja|Ja
+Windows Media/ASF|Nein|Ja
+AVI (unkomprimiert, 8-Bit/10-Bit)|Nein|Ja
+Smooth Streaming-Dateiformat (PIFF 1.3)|Nein|Ja
 
 ###Codecs für Videoausgang
 
-Codecs für Videoausgang|Media Encoder Standard|Azure Media Encoder|Media Encoder Premium Workflow
----|---|---|---
-AVC (H.264; 8-Bit; bis High Profile, Level 5.2; 4K Ultra HD; AVC Intra)|Nur 8-Bit 4:2:0|Nur 8-Bit 4:2:0 bis 1080p|Ja
-Avid DNxHD (in MXF)|Nein|Nein|Ja
-DVCPro/DVCProHD (in MXF)|Nein|Nein|Ja
-MPEG-2 (bis zu 422 Profile und High Level; Varianten wie XDCAM, XDCAM HD, XDCAM IMX, CableLabs® und D10 eingeschlossen)|Nein|Nein|Ja
-MPEG-1|Nein|Nein|Ja
-Windows Media Video/VC-1|Nein|Ja|Ja
-Erstellung von JPEG-Miniaturansichten|Nein|Ja|Ja
+Codecs für Videoausgang|Media Encoder Standard|Media Encoder Premium Workflow
+---|---|---
+AVC (H.264; 8-Bit; bis High Profile, Level 5.2; 4K Ultra HD; AVC Intra)|Nur 8-Bit 4:2:0|Ja
+Avid DNxHD (in MXF)|Nein|Ja
+DVCPro/DVCProHD (in MXF)|Nein|Ja
+MPEG-2 (bis zu 422 Profile und High Level; Varianten wie XDCAM, XDCAM HD, XDCAM IMX, CableLabs® und D10 eingeschlossen)|Nein|Ja
+MPEG-1|Nein|Ja
+Windows Media Video/VC-1|Nein|Ja
+Erstellung von JPEG-Miniaturansichten|Nein|Ja
 
 ###Codecs für Audioausgabe
 
-Codecs für Audioausgabe|Media Encoder Standard|Azure Media Encoder|Media Encoder Premium Workflow
----|---|---|---
-AES (SMPTE 331M und 302M, AES3-2003)|Nein|Nein|Ja
-Dolby® Digital (AC3)|Nein|Ja|Ja
-Dolby® Digital Plus (E-AC3) bis 7.1|Nein|Bis zu 5.1|Ja
-AAC (AAC-LC, AAC-HE und AAC-HEv2; bis 5.1)|Ja|Ja|Ja
-MPEG Layer 2|Nein|Nein|Ja
-MP3 (MPEG-1 Audio Layer 3)|Nein|Nein|Ja
-Windows Media Audio|Nein|Ja|Ja
+Codecs für Audioausgabe|Media Encoder Standard|Media Encoder Premium Workflow
+---|---|---
+AES (SMPTE 331M und 302M, AES3-2003)|Nein|Ja
+Dolby® Digital (AC3)|Nein|Ja
+Dolby® Digital Plus (E-AC3) bis 7.1|Nein|Ja
+AAC (AAC-LC, AAC-HE und AAC-HEv2; bis 5.1)|Ja|Ja
+MPEG Layer 2|Nein|Ja
+MP3 (MPEG-1 Audio Layer 3)|Nein|Ja
+Windows Media Audio|Nein|Ja
 
 
 ##Fehlercodes  
@@ -295,4 +242,4 @@ TransientError|Kategorie von Fehlern, mit der vorübergehende Probleme abgedeckt
 <!--Reference links in article-->
 [1]: http://azure.microsoft.com/pricing/details/media-services/
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0302_2016-->

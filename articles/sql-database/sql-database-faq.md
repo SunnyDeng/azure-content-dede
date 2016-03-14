@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-management" 
-   ms.date="11/11/2015"
-   ms.author="jeffreyg"/>
+   ms.date="02/25/2016"
+   ms.author="sashan"/>
 
 # SQL-Datenbank – Häufig gestellte Fragen
 
@@ -74,4 +74,19 @@ Der Sicherungsspeicher ist der Speicher, der mit Ihren automatisierten Datenbank
 ## Was muss ich beim Umstieg von Web/Business auf die neuen Dienstebenen beachten?
 Azure SQL Web und Business-Datenbanken wurden eingestellt. Die Dienstebenen Basic, Standard, Premium und Elastic ersetzen die eingestellten Web- und Business-Datenbanken. Zu Ihrer Unterstützung im Übergangszeitraum haben wir die häufig gestellten Fragen ergänzt. [Häufig gestellte Fragen zur Einstellung von Web Edition und Business Edition](sql-database-web-business-sunset-faq.md)
 
-<!---HONumber=AcomDC_1125_2015-->
+## Wie groß ist die erwartete Replikationsverzögerung bei der geografischen Replikation einer Datenbank zwischen zwei Regionen innerhalb desselben Azure-Gebiets?  
+Derzeit wird ein RPO von 5 Sekunden unterstützt. Die Replikationsverzögerung ist kleiner, solange die geografisch sekundäre Datenbank in der von Azure empfohlenen zugeordneten Region gehostet wird und die gleiche Dienstebene hat.
+
+## Wie groß ist die erwartete Replikationsverzögerung, wenn die geografisch sekundäre Datenbank in der gleichen Region erstellt wird wie die primäre Datenbank?  
+Auf Grundlage von empirischen Daten besteht nicht zu viel Unterschied zwischen der Replikationsverzögerung innerhalb von und zwischen Regionen, wenn die von Azure empfohlene zugeordnete Region verwendet wird.
+
+## Wie funktioniert die Wiederholungslogik bei eingerichteter Georeplikation, wenn zwischen zwei Regionen ein Netzwerkfehler auftritt?  
+Bei einer Trennung der Verbindung, versuchen wir alle 10 Sekunden die Verbindung erneut herzustellen.
+
+## Was kann ich tun, um sicherzustellen, dass eine wichtige Änderung in der primären Datenbank repliziert wird?
+Die geografisch sekundäre Datenbank ist ein asynchrones Replikat, und wir versuchen nicht, sie vollständig mit der primären Datenbank zu synchronisieren. Wir bieten jedoch eine Methode an, um die Synchronisierung zu erzwingen. Sie dient dazu, die Replikation von wichtigen Änderungen (z. B. Kennwortaktualisierung) sicherzustellen. Dies beeinträchtigt die Leistung, da der aufrufende Thread blockiert wird, bis alle durchgeführten Transaktionen repliziert wurden. Weitere Informationen finden Sie unter [sp\_wait\_for\_database\_copy\_sync](https://msdn.microsoft.com/library/dn467644.aspx).
+
+## Welche Tools stehen zur Überwachung der Replikationsverzögerung zwischen der primären Datenbank und der geografisch sekundären Datenbank zur Verfügung?
+Die Replikationsverzögerung zwischen der primären Datenbank und der geografisch sekundären wird über eine DMV verfügbar gemacht. Weitere Informationen finden Sie unter [sys.dm\_geo\_replication\_link\_status](https://msdn.microsoft.com/library/mt575504.aspx).
+
+<!---HONumber=AcomDC_0302_2016-->

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Wiederherstellen aus einer Sicherung des StorSimple Virtual Array (Vorschau)"
+   pageTitle="Wiederherstellen aus einer Sicherung des StorSimple Virtual Array"
    description="Erfahren Sie mehr dazu, wie Sie eine Sicherung des StorSimple Virtual Array wiederherstellen."
    services="storsimple"
    documentationCenter="NA"
@@ -13,19 +13,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="02/23/2016"
+   ms.date="03/01/2016"
    ms.author="alkohli"/>
 
-# Wiederherstellen aus einer Sicherung des StorSimple Virtual Array (Vorschau)
+# Wiederherstellen aus einer Sicherung des StorSimple Virtual Array
 
 ## Übersicht 
 
-Dieser Artikel bezieht sich nur auf Microsoft Azure StorSimple Virtual Array (auch als „lokales virtuelles StorSimple-Gerät“ oder „virtuelles StorSimple-Gerät“ bezeichnet) mit Version 1.1.1.0 (öffentliche Vorschau). In diesem Artikel wird Schritt für Schritt beschrieben, wie Sie die Wiederherstellung aus einem Sicherungssatz Ihrer Freigaben oder Volumes für das StorSimple Virtual Array durchführen. Im Artikel wird auch ausführlich beschrieben, wie die Wiederherstellung auf Elementebene auf Ihrem StorSimple Virtual Array funktioniert, wenn dies als Dateiserver konfiguriert ist.
-
-> [AZURE.IMPORTANT]
-> 
-> - Diese öffentliche Vorschauversion ist nur für Evaluierungs- und Planungszwecke im Rahmen einer Bereitstellung bestimmt. Die Installation dieser Vorschau in einer Produktionsumgebung wird nicht unterstützt.
-> - Wenn Probleme mit StorSimple Virtual Array auftreten, posten Sie sie im [StorSimple-MSDN-Forum](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=StorSimple).
+Dieser Artikel bezieht sich auf Microsoft Azure StorSimple Virtual Array (auch als „lokales virtuelles StorSimple-Gerät“ oder „virtuelles StorSimple-Gerät“ bezeichnet) mit der Version von März 2016 (allgemeine Verfügbarkeit). In diesem Artikel wird Schritt für Schritt beschrieben, wie Sie die Wiederherstellung aus einem Sicherungssatz Ihrer Freigaben oder Volumes für das StorSimple Virtual Array durchführen. Im Artikel wird auch ausführlich beschrieben, wie die Wiederherstellung auf Elementebene auf Ihrem StorSimple Virtual Array funktioniert, wenn dies als Dateiserver konfiguriert ist.
 
 
 ## Wiederherstellen von Freigaben aus einem Sicherungssatz
@@ -47,7 +42,7 @@ Bevor Sie versuchen, die Freigaben wiederherzustellen, sollten Sie sich vergewis
 
 	1.  Überprüfen Sie den Namen des Quellgeräts. Dies sollte das Gerät mit der wiederherzustellenden Freigabe sein. Die Geräteauswahl ist deaktiviert. Um ein anderes Quellgerät auszuwählen, müssen Sie den Assistenten beenden und den Sicherungssatz erneut auswählen.
 
-	2.  Geben Sie einen Freigabenamen an. Der Freigabename kann 3 bis 127 Zeichen lang sein.
+	2.  Geben Sie einen Freigabenamen an. Der Freigabename kann 3 bis 127 Zeichen lang sein.
 
 	3.  Überprüfen Sie Größe, Typ und Berechtigungen der Freigabe, die Sie wiederherstellen möchten. Sie können die Freigabeeigenschaften mit dem Windows-Explorer ändern, nachdem die Wiederherstellung abgeschlossen ist.
 
@@ -57,7 +52,7 @@ Bevor Sie versuchen, die Freigaben wiederherzustellen, sollten Sie sich vergewis
 
 1.  Nachdem der Wiederherstellungsauftrag abgeschlossen ist, wird die Wiederherstellung gestartet, und es wird eine weitere Benachrichtigung angezeigt. Klicken Sie auf **Auftrag anzeigen**, um den Fortschritt der Wiederherstellung zu überwachen. Sie gelangen auf die Seite **Aufträge**.
 
-2.  Hier können Sie den Fortschritt des Wiederherstellungsauftrags verfolgen. Wenn die Wiederherstellung 100 % erreicht hat, navigieren Sie zurück zur Seite **Freigaben** auf Ihrem Gerät.
+2.  Hier können Sie den Fortschritt des Wiederherstellungsauftrags verfolgen. Wenn die Wiederherstellung 100 % erreicht hat, navigieren Sie zurück zur Seite **Freigaben** auf Ihrem Gerät.
 
 3.  Sie können nun die neu wiederhergestellte Freigabe in der Liste mit den Freigaben auf Ihrem Gerät anzeigen. Beachten Sie, dass bei der Wiederherstellung derselbe Freigabentyp verwendet wird. Eine mehrstufige Freigabe wird auch mehrstufig wiederhergestellt, und eine lokale Freigabe wird als lokale Freigabe wiederhergestellt.
 
@@ -84,7 +79,7 @@ Führen Sie im klassischen Azure-Portal die folgenden Schritte aus, um die Wiede
 
 	1.  Überprüfen Sie den Namen des Quellgeräts. Dies sollte das Gerät mit dem wiederherzustellenden Volume sein. Die Geräteauswahl ist nicht verfügbar. Um ein anderes Quellgerät auszuwählen, müssen Sie den Assistenten beenden und den Sicherungssatz erneut auswählen.
 
-	2.  Geben Sie einen Namen für das Volume an. Der Volumename kann 3 bis 127 Zeichen lang sein.
+	2.  Geben Sie einen Namen für das Volume an. Der Volumename kann 3 bis 127 Zeichen lang sein.
 
 	3.  Klicken Sie auf das Pfeilsymbol.
 
@@ -98,7 +93,7 @@ Führen Sie im klassischen Azure-Portal die folgenden Schritte aus, um die Wiede
 
 2.  Nachdem der Wiederherstellungsauftrag abgeschlossen ist, wird die Wiederherstellung gestartet, und es wird eine weitere Benachrichtigung angezeigt. Klicken Sie auf **Auftrag anzeigen**, um den Fortschritt der Wiederherstellung zu überwachen. Sie gelangen auf die Seite **Aufträge**.
 
-3.  Hier können Sie den Fortschritt des Wiederherstellungsauftrags verfolgen. Wenn die Wiederherstellung 100 % erreicht hat, navigieren Sie zurück zur Seite **Volumes** auf Ihrem Gerät.
+3.  Hier können Sie den Fortschritt des Wiederherstellungsauftrags verfolgen. Wenn die Wiederherstellung 100 % erreicht hat, navigieren Sie zurück zur Seite **Volumes** auf Ihrem Gerät.
 
 4.  Sie können nun das neu wiederhergestellte Volume in der Liste mit den Volumes auf Ihrem Gerät anzeigen. Beachten Sie, dass bei der Wiederherstellung derselbe Volumetyp verwendet wird. Ein mehrstufiges Volume wird auch als mehrstufiges Volume wiederhergestellt, und ein lokales Volume bleibt ein lokales Volume.
 
@@ -137,4 +132,4 @@ In diesem Video wird gezeigt, wie Sie Freigaben erstellen, Freigaben sichern und
 
 Erfahren Sie mehr darüber, wie Sie das [StorSimple Virtual Array mit der lokalen Webbenutzeroberfläche verwalten](storsimple-ova-web-ui-admin.md).
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

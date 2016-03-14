@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows-store" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="07/07/2015" 
+	ms.date="02/29/2016" 
 	ms.author="piyushjo" />
 
 #Verwenden der Engagement-API auf der universellen Windows-Plattform
@@ -48,7 +48,7 @@ Eine *Aktivität* ist normalerweise einer Seite der Anwendung zugeordnet, d. h. 
 
 Sie müssen jedes Mal `StartActivity()` aufrufen, wenn sich die Benutzeraktivität ändert. Der erste Aufruf dieser Funktion startet eine neue Benutzersitzung.
 
-> [AZURE.IMPORTANT]Das SDK ruft automatisch die EndActivity-Methode auf, wenn die Anwendung geschlossen wird. Daher wird DRINGEND empfohlen, die StartActivity-Methode aufzurufen, sobald sich die Aktivität des Benutzers ändert, und die EndActivity-Methode NIE aufzurufen, weil dadurch ein Beenden der aktuellen Sitzung erzwungen wird.
+> [AZURE.IMPORTANT] Das SDK ruft automatisch die EndActivity-Methode auf, wenn die Anwendung geschlossen wird. Daher wird DRINGEND empfohlen, die StartActivity-Methode aufzurufen, sobald sich die Aktivität des Benutzers ändert, und die EndActivity-Methode NIE aufzurufen, weil dadurch ein Beenden der aktuellen Sitzung erzwungen wird.
 
 #### Beispiel
 
@@ -305,7 +305,7 @@ Fügen Sie anschließend eine `Person`-Instanz zu einem Extra hinzu.
 			
 			EngagementAgent.Instance.SendEvent("Event", extras);
 
-> [AZURE.WARNING]Wenn Sie andere Objekttypen einfügen, stellen Sie sicher, dass deren ToString()-Methode implementiert wird, sodass eine visuell lesbare Zeichenfolge zurückgegeben wird.
+> [AZURE.WARNING] Wenn Sie andere Objekttypen einfügen, stellen Sie sicher, dass deren ToString()-Methode implementiert wird, sodass eine visuell lesbare Zeichenfolge zurückgegeben wird.
 
 ### Grenzen
 
@@ -360,4 +360,4 @@ Im vorherigen Beispiel enthält das an den Server gesendete JSON 44 Zeichen:
 			{"birthdate":"1983-12-07","gender":"female"}
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -475,11 +475,13 @@ Es gibt mehrere [Beispiele](app-insights-export-telemetry.md#code-samples), die 
 
     ipv4 context.location.clientip      
 * 
-    Die IPv4-Adresse des Clients im Format xxx.xxx.xxx.xxx.   
+    Die IPv4-Adresse des Clients im Format xxx.xxx.xxx.xxx.
+
+     Das letzte Oktett wird aus Datenschutzgründen immer auf 0 festgelegt.
 
     *Standard:* Falls NULL, erfolgt die Festlegung auf die HTTP-IP-Adresse, die am Endpunkt der Datenerfassung erfasst wurde.
 
-    *Beispiele*<br/> 0.123.63.143<br/>123.203.131.197
+    *Beispiele:*<br/> 186.123.63.0<br/>123.203.131.0
 
 **continent**
 
@@ -629,7 +631,7 @@ Es gibt mehrere [Beispiele](app-insights-export-telemetry.md#code-samples), die 
 
     *Ableitung*: Standardisierung zu "&lt;telemetryType.name&gt;"
 
-**remoteDependencyType**
+**type**
 
     string remotedependency.remotedependencytype      Max: 100
 * 
@@ -989,4 +991,4 @@ Es gibt mehrere [Beispiele](app-insights-export-telemetry.md#code-samples), die 
 * [Fortlaufender Export](app-insights-export-telemetry.md)
 * [Codebeispiele](app-insights-export-telemetry.md#code-samples)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -3,8 +3,8 @@
 	description="Erfahren Sie, wie Sie eine Codierung mit dem Media Encoder Premium Workflow durchführen. Die Codebeispiele sind in C# geschrieben und verwenden das Media Services SDK für .NET." 
 	services="media-services" 
 	documentationCenter="" 
-	authors="juliako,anilmur" 
-	manager="dwrede" 
+	authors="juliako" 
+	manager="erikre" 
 	editor=""/>
 
 <tags 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/03/2016" 
+	ms.date="02/25/2016" 
 	ms.author="juliako"/>
 
 #Erweiterte Codierung mit dem Media Encoder Premium Workflow
@@ -30,7 +30,7 @@ In den folgenden Themen erhalten Sie nähere Informationen zum **Media Encoder P
 
 - [Von Media Encoder Premium Workflow unterstützte Formate](media-services-premium-workflow-encoder-formats.md): Erläutert die von **Media Encoder Premium Workflow** unterstützten Formate.
 
-- Im Abschnitt [Vergleich der Encoder](media-services-encode-asset.md#compare_encoders) werden die Codierungsfunktionen von **Media Encoder Premium Workflow**, **Media Encoder Standard** und **Azure Media Encoder** verglichen.
+- Im Abschnitt [Vergleich der Encoder](media-services-encode-asset.md#compare_encoders) werden die Codierungsfunktionen von **Media Encoder Premium Workflow** und **Media Encoder Standard** verglichen.
 
 Dieses Thema demonstriert die Codierung mit **Media Encoder Premium Workflow** unter Verwendung von .NET.
 
@@ -279,4 +279,4 @@ Im folgenden finden Sie ein vollständiges Beispiel. Informationen zum Einrichte
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0302_2016-->

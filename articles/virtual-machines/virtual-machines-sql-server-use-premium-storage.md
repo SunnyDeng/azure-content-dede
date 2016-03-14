@@ -22,7 +22,7 @@
 
 ## Übersicht
 
-[Azure Premium-Speicher](../storage-premium-storage-preview-portal.md) ist die nächste Speichergeneration mit geringer Latenz und hohem E/A-Durchsatz. Er ist ideal geeignet für hohe E/A-Workloads, wie z. B. SQL Server auf [virtuellen IaaS-Computern](https://azure.microsoft.com/services/virtual-machines/).
+[Azure Premium-Speicher](../storage/storage-premium-storage.md) ist die nächste Speichergeneration mit geringer Latenz und hohem E/A-Durchsatz. Er ist ideal geeignet für hohe E/A-Workloads, wie z. B. SQL Server auf [virtuellen IaaS-Computern](https://azure.microsoft.com/services/virtual-machines/).
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
 
@@ -149,7 +149,7 @@ Wenn Sie virtuelle Festplatten physikalischen Datenträgern in Speicherpools zug
 
 Die Höhe der Speicherleistung hängt von der angegebenen Größe des virtuellen Computers der DS*-Serie und der Größe der virtuellen Festplatte ab. Die virtuellen Computer haben verschiedene Beschränkungen für die Anzahl von VHDs, die angefügt werden können, und für die maximal unterstützte Bandbreite (MB/s). Ausführliche Informationen zu den Bandbreitenbeschränkungen finden Sie unter [Größen virtueller Computer und Clouddienste für Azure](virtual-machines-size-specs.md).
 
-Höhere IOPS werden mit größeren Datenträgern erreicht. Sie sollten dies berücksichtigen, wenn Sie Ihren Migrationspfad planen. Weitere Informationen finden Sie in der [Tabelle für IOPS und Datenträgertypen](../storage-premium-storage-preview-portal.md#scalability-and-performance-targets-whde-DEing-premium-storage).
+Höhere IOPS werden mit größeren Datenträgern erreicht. Sie sollten dies berücksichtigen, wenn Sie Ihren Migrationspfad planen. Weitere Informationen finden Sie in der [Tabelle für IOPS und Datenträgertypen](../storage-premium-storage.md#scalability-and-performance-targets-whde-DEing-premium-storage).
 
 Bedenken Sie, dass virtuelle Computer unterschiedliche maximale Datenträgerbandbreiten haben, die sie für alle verbundenen Datenträger unterstützen. Unter hoher Last könnten Sie die maximale Bandbreite für diese VM-Rollengröße auslasten. Beispielsweise unterstützt eine Standard\_DS14 bis zu 512 MB/s. Daher könnten Sie mit drei P30-Datenträgern die Bandbreite des Datenträgers des virtuellen Computers auslasten. In diesem Beispiel kann jedoch der Durchsatzgrenzwert je nach E/A-Lese- und Schreibvorgängen überschritten werden.
 
@@ -402,7 +402,6 @@ Sie sollten Zeit für die Durchführung manueller Failover- und Chaostests auf d
 1. Kopieren Sie VOLLSTÄNDIGE Sicherungen, und stellen Sie sie mit **NORECOVERY** wieder her.
 1. Kopieren Sie abhängige Objekte aus der Benutzerdatenbank, wie z. B. Anmeldungen usw.
 1. Erstellen Sie einen neuen internen Lastenausgleich (ILB) oder verwenden Sie einen externen Lastenausgleich (ELB), und richten Sie Lastenausgleichs-Endpunkte auf beiden neuen Knoten ein.
-
 > [AZURE.NOTE] Prüfen Sie vor dem Fortfahren, ob alle Knoten die korrekte Endpunktkonfiguration besitzen.
 
 1. Beenden Sie den Benutzer-/Anwendungszugriff auf SQL Server (bei Verwendung von Speicherpools).
@@ -1118,7 +1117,7 @@ Informationen zum Hinzufügen einer IP-Adresse finden Sie im [Anhang](#appendix-
 	![Anhang15][25]
 
 ## Zusätzliche Ressourcen
-- [Azure Premium-Speicher](../storage-premium-storage-preview-portal.md)
+- [Azure Premium-Speicher](../storage/storage-premium-storage.md)
 - [Virtuelle Computer](https://azure.microsoft.com/services/virtual-machines/)
 - [SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-infrastructure-services.md)
 
@@ -1149,4 +1148,4 @@ Informationen zum Hinzufügen einer IP-Adresse finden Sie im [Anhang](#appendix-
 [24]: ./media/virtual-machines-sql-server-use-premium-storage/10_Appendix_14.png
 [25]: ./media/virtual-machines-sql-server-use-premium-storage/10_Appendix_15.png
 
-<!------HONumber=AcomDC_0128_2016--->
+<!---HONumber=AcomDC_0302_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/09/2016"
+	ms.date="02/26/2016"
 	ms.author="asmalser"/>
 
 #Anpassen ausgestellter Ansprüche im SAML-Token für bereits in Azure Active Directory integrierte Apps
@@ -54,9 +54,7 @@ Wenn beispielsweise die Abteilung des Benutzers innerhalb seiner Organisation (z
 
 Wenn für einen bestimmten Benutzer kein Wert für ein ausgewähltes Attribut gespeichert ist, dann wird dieser Anspruch nicht in dem Token ausgestellt.
 
-**Hinweis**: Die Optionen **user.onpremisesecurityidentifier** und **user.onpremisesamaccountname** werden nur beim Synchronisieren von Benutzerdaten aus dem lokalen Active Directory mithilfe der neuesten Vorschau des AAD Connect-Tools unterstützt. Sie können die Vorschau des Connect-Tools unter folgendem Link herunterladen:
-
-http://connect.microsoft.com/site1164/Downloads/DownloadDetails.aspx?DownloadID=53949
+**Hinweis**: Die Optionen **user.onpremisesecurityidentifier** und **user.onpremisesamaccountname** werden nur beim Synchronisieren von Benutzerdaten aus dem lokalen Active Directory mithilfe des Tools [Azure AD Connect](active-directory-aadconnect.md) unterstützt.
 
 ## Verwandte Artikel
 
@@ -70,4 +68,4 @@ http://connect.microsoft.com/site1164/Downloads/DownloadDetails.aspx?DownloadID=
 [3]: ./media/active-directory-saml-claims-customization/claimscustomization3.png
 [4]: ./media/active-directory-saml-claims-customization/claimscustomization4.png
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0302_2016-->

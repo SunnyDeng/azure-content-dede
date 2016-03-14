@@ -3,8 +3,8 @@
         description="Erstellen Sie mit diesem Schritt-für-Schritt-Tutorial eine Azure-Dateifreigabe in der Cloud. Verwalten Sie Ihre freigegebenen Inhalte und stellen Sie eine Dateifreigabe aus einem virtuellen Azure-Computer (VM) unter Linux oder einer lokalen Anwendung bereit, die SMB 3.0 unterstützt."
         services="storage"
         documentationCenter="na"
-        authors="jasontang501"
-        manager="jahogg"
+        authors="mine-msft"
+        manager="aungoo"
         editor="tysonn" />
 
 <tags ms.service="storage"
@@ -12,8 +12,8 @@
       ms.tgt_pltfrm="na"
       ms.devlang="na"
       ms.topic="article"
-      ms.date="02/15/2016"
-      ms.author="jutang" />
+      ms.date="02/29/2016"
+      ms.author="minet" />
 
 
 # Verwenden des Azure-Dateispeichers unter Linux
@@ -139,4 +139,4 @@ Weitere Informationen zum Azure-Dateispeicher erhalten Sie über diese Links.
 - [Einführung in den Microsoft Azure-Dateidienst](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
 - [Beibehalten von Verbindungen zu Microsoft Azure-Dateien](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="Java" 
 	ms.topic="article" 
-	ms.date="10/12/2015" 
+	ms.date="02/25/2016" 
 	ms.author="v-donntr"/>
 
 
@@ -541,7 +541,14 @@ Eine zweite Möglichkeit zum Veröffentlichen der Anwendung besteht in der Verwe
 1. Klicken Sie in FileZilla auf **Datei > Servermanager**.
 2. Klicken Sie im **Servermanager** auf **Neuer Server**. Unter **Eintrag auswählen** wird ein neuer, leerer FTP-Server angezeigt, für den Sie einen Namen eingeben müssen. Verwenden Sie in dieser Vorgehensweise `AzureWebDemo-FTP`.
 
-    Legen Sie auf der Registerkarte **Allgemein** die folgenden Einstellungen fest: – **Host:** Geben Sie den Wert für **FTP-Hostname** ein, den Sie aus dem Dashboard kopiert haben. – **Port:** (Lassen Sie dieses Feld leer, da es sich um eine passive Übertragung handelt und der Server den zu verwendenden Port ermittelt.) – **Protokoll:** FTP File Transfer Protocol - **Verschlüsselung:** Unverschlüsseltes FTP verwenden – **Verbindungsart:** Normal - **Benutzer:** Geben Sie den Benutzer für Bereitstellung/FTP ein, den Sie aus dem Dashboard kopiert haben. Dies ist der vollständige FTP-Benutzername in der Form *Name\_Web-App\\Benutzername*. – **Kennwort:** Geben Sie das Kennwort ein, das Sie beim Festlegen der Anmeldeinformationen für die Bereitstellung angegeben haben.
+    Legen Sie auf der Registerkarte **Allgemein** die folgenden Einstellungen fest:
+    - **Host:** Geben Sie den Wert für **FTP-Hostname** ein, den Sie aus dem Dashboard kopiert haben.
+    - **Port:** (Lassen Sie dieses Feld leer, da es sich um eine passive Übertragung handelt und der Server den zu verwendenden Port ermittelt.)
+    - **Protokoll:** FTP File Transfer Protocol
+    - **Verschlüsselung:** Unverschlüsseltes FTP verwenden
+    - **Verbindungsart:** Normal
+    - **Benutzer:** Geben Sie den Benutzer für Bereitstellung/FTP ein, den Sie aus dem Dashboard kopiert haben. Dies ist der vollständige FTP-Benutzername im Format *Web-App-Name\\Benutzername*.
+    - **Kennwort:** Geben Sie das Kennwort ein, das Sie beim Festlegen der Anmeldeinformationen für die Bereitstellung angegeben haben.
 
     Wählen Sie auf der Registerkarte **Übertragungs-Einstellungen** die Option **Passiv**.
 
@@ -595,10 +602,10 @@ In dieser Vorgehensweise wird eine App Service-Web-App erstellt. Die Ressource w
 [klassische Azure-Portal]: https://manage.windowsazure.com
 [klassischen Azure-Portal]: https://manage.windowsazure.com
 [Was ist ein Azure AD-Verzeichnis?]: http://technet.microsoft.com/library/jj573650.aspx
-[Erstellen und Hochladen eines Verwaltungszertifikats für Azure]: http://msdn.microsoft.com/library/azure/gg551722.aspx
+[Erstellen und Hochladen eines Verwaltungszertifikats für Azure]: ../cloud-services/cloud-services-certs-create.md
 [Schlüssel- und Zertifikatverwaltungstool (keytool)]: http://docs.oracle.com/javase/6/docs/technotes/tools/windows/keytool.html
-[WebSiteManagementClient]: http://dl.windowsazure.com/javadoc/com/microsoft/windowsazure/management/websites/WebSiteManagementClient.html
+[WebSiteManagementClient]: http://azure.github.io/azure-sdk-for-java/com/microsoft/azure/management/websites/WebSiteManagementClient.html
 [WebSpaceNames]: http://dl.windowsazure.com/javadoc/com/microsoft/windowsazure/management/websites/models/WebSpaceNames.html
 [Azure-Portal]: https://portal.azure.com
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0302_2016-->

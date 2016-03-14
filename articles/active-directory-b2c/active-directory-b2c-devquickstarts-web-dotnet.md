@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="09/22/2015"
+	ms.date="02/19/2016"
 	ms.author="dastrock"/>
 
 # Azure AD B2C-Vorschau: Erstellen einer .NET-Web-App
@@ -175,7 +175,7 @@ public partial class Startup
 ## Senden von Authentifizierungsanforderungen an Azure AD
 Ihre App ist nun ordnungsgemäß für die Kommunikation mit Azure AD B2C über das Authentifizierungsprotokoll OpenID Connect konfiguriert. OWIN kümmert sich um all die Details der Erstellung von Authentifizierungsnachrichten, der Überprüfung der Azure AD-Token und der Verwaltung der Benutzersitzung. Jetzt müssen nur noch die einzelnen Benutzerabläufe initiiert werden.
 
-Wenn ein Benutzer in der Web-App die Schaltflächen **Registrieren**, **Anmelden** oder **Profil bearbeiten** auswählt, wird die zugeordnete Aktion in `Controllers\AccountController.cs` aufgerufen. Mit integrierten OWIN-Methoden können Sie in jedem Fall die richtige Richtlinie auslösen:
+Wenn ein Benutzer in der Web-App eine der Schaltflächen **Registrieren**, **Anmelden** oder **Profil bearbeiten** auswählt, wird die zugeordnete Aktion in `Controllers\AccountController.cs` aufgerufen. Mit integrierten OWIN-Methoden können Sie in jedem Fall die richtige Richtlinie auslösen:
 
 ```C#
 // Controllers\AccountController.cs
@@ -264,7 +264,7 @@ public void SignOut()
 }
 ```
 
-Standardmäßig sendet OWIN die in `AuthenticationProperties` angegebenen Richtlinien nicht an Azure AD. Sie können jedoch die von OWIN in der `RedirectToIdentityProvider`-Benachrichtigung generierten Anforderungen bearbeiten. Verwenden Sie diese Benachrichtigung in `App_Start\Startup.Auth.cs`, um den richtigen Endpunkt für jede Richtlinie aus den Metadaten der Richtlinie abzurufen. Dadurch wird sichergestellt, dass für jede Richtlinie, die Ihre App ausführen möchte, die richtige Anforderung an Azure AD gesendet wird.
+Standardmäßig sendet OWIN die in `AuthenticationProperties` angegebenen Richtlinien nicht an Azure AD. Sie können jedoch die von OWIN in der `RedirectToIdentityProvider`-Benachrichtigung generierten Anforderungen bearbeiten. Verwenden Sie diese Benachrichtigung in `App_Start\Startup.Auth.cs`, um den richtigen Endpunkt für jede Richtlinie aus den Metadaten der Richtlinie abzurufen. Dadurch wird sichergestellt, dass für jede Richtlinie, die Ihre App ausführen möchte, die richtige Anforderung an Azure AD gesendet wird.
 
 ```C#
 // App_Start\Startup.Auth.cs
@@ -310,7 +310,7 @@ Zum Schluss erstellen Sie Ihre App und führen sie aus. Registrieren Sie sich f�
 
 ## Soziale Netzwerke als IDPs hinzufügen
 
-Derzeit unterstützt die App nur die Registrierung und Anmeldung von Benutzern über **lokale Konten**. Dies sind in Ihrem B2C-Verzeichnis gespeicherte Konten, die einen Benutzernamen und ein Kennwort verwenden. Mit Azure AD B2C können Sie auch Unterstützung für andere **Identitätsanbieter** (IdPs) hinzufügen, ohne Ihren Code ändern zu müssen.
+Derzeit unterstützt die App nur die Registrierung und Anmeldung von Benutzern über **lokale Konten**. Dies sind in Ihrem B2C-Verzeichnis gespeicherte Konten, die einen Benutzernamen und ein Kennwort verwenden. Mit Azure AD B2C können Sie auch Unterstützung für andere **Identitätsanbieter** (IdPs) hinzufügen, ohne Ihren Code ändern zu müssen.
 
 Um Ihrer App soziale Netzwerke als IdPs hinzuzufügen, befolgen Sie zunächst die detaillierten Anweisungen in diesen Artikeln. Sie müssen für jeden IdP, den Sie unterstützen möchten, eine Anwendung in dessen System registrieren und eine Client-ID abrufen.
 
@@ -341,4 +341,4 @@ You can now move on to more advanced B2C topics. You might try:
 
 -->
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

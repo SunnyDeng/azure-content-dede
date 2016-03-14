@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="mobile-multiple"
 	ms.workload="mobile" 
-	ms.date="02/17/2016"
+	ms.date="02/29/2016"
 	ms.author="wesmc"/>
 
 # Azure Mobile Engagement – Verwenden der APIs zur Authentifizierung
@@ -47,10 +47,10 @@ Beachten Sie bitte folgende Informationen, die Sie später benötigen werden:
 	- Auf den von Ihnen gewählten Anwendungsnamen wird in diesem Dokument durch `{AD_APP_NAME}` verwiesen.
 	- Auf die im Konfigurationsmenü angezeigte Client-ID wird in diesem Dokument durch `{CLIENT_ID}` verwiesen.
 	- Auf den nach dem Speichern nur einmal angezeigten Schlüssel wird in diesem Dokument durch `{CLIENT_SECRET}` verwiesen.
-	- Klicken Sie in der unteren Leiste auf **ENDPUNKTE ANZEIGEN**, und kopieren Sie die **OAUTH 2.0-TOKENENDPUNKT-URL**, auf die in diesem Dokument durch `https://login.microsoftonline.com/{TENANT_ID}/oauth2/token` verwiesen wird. <br/>                                    
-2. Weisen Sie über die [Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md) dem Dienstprinzipal eine Rolle wie z. B. „Leser“ oder „Besitzer“ zu.
+	- Klicken Sie in der unteren Leiste auf **ENDPUNKTE ANZEIGEN**, und kopieren Sie die **OAUTH 2.0-TOKENENDPUNKT-URL**, auf die in diesem Dokument durch `https://login.microsoftonline.com/{TENANT_ID}/oauth2/token` verwiesen wird. <br/>                                    
+2. Weisen Sie über die [Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md) dem Dienstprinzipal eine Rolle wie z. B. „Leser“ oder „Besitzer“ zu.
 
-	Wenn Sie unter Windows arbeiten, schließen Sie `C:\Program Files (x86)\Microsoft SDKs\Azure\CLI\bin` in die `PATH`-Umgebungsvariable ein, um die Azure-Befehle verwenden zu können.
+	Wenn Sie unter Windows arbeiten, schließen Sie `C:\Program Files (x86)\Microsoft SDKs\Azure\CLI\bin` in die Umgebungsvariable `PATH` ein, um die Azure-Befehle verwenden zu können.
 
 	Führen Sie folgende Befehle aus, um Ihr Konto mithilfe der Azure-Befehlszeilenschnittstelle einzurichten:
 
@@ -92,11 +92,9 @@ Beachten Sie bitte folgende Informationen, die Sie später benötigen werden:
 
 Dies ist eine alternative Möglichkeit, die oben beschriebenen Schritte mithilfe eines PowerShell-Skripts auszuführen.
 
-1. Rufen Sie die neueste Version von Azure PowerShell ab.
+1. Rufen Sie die neueste Version von Azure PowerShell ab. Downloadanweisungen finden Sie unter diesem [Link](../powershell-install-configure.md). 
 
-	Aktuell steht Version 1.2.1 [hier](https://github.com/Azure/azure-powershell/releases/tag/v1.2.1-February2016) zum Download bereit.
-
-2. Öffnen Sie Windows PowerShell im Administratormodus, und stellen Sie sicher, dass die [Azure-Ressourcen-Manager-Cmdlets](https://msdn.microsoft.com/library/mt125356.aspx) installiert sind.
+2. Öffnen Sie Windows PowerShell im Administratormodus, und stellen Sie sicher, dass die [Azure Resource Manager-Cmdlets](https://msdn.microsoft.com/library/mt125356.aspx) installiert sind.
 
 		Install-Module AzureRM
 		Install-AzureRM
@@ -117,7 +115,7 @@ Dies ist eine alternative Möglichkeit, die oben beschriebenen Schritte mithilfe
 
 		Select-AzureRmSubscription –SubscriptionId <subscriptionId>
 
-7. Kopieren Sie den Text für das [New-AzureRmServicePrincipalOwner.ps1](https://raw.githubusercontent.com/matt-gibbs/azbits/master/src/New-AzureRmServicePrincipalOwner.ps1)-Skript auf Ihren lokalen Computer, und führen Sie es aus.
+7. Kopieren Sie den Text für das Skript [New-AzureRmServicePrincipalOwner.ps1](https://raw.githubusercontent.com/matt-gibbs/azbits/master/src/New-AzureRmServicePrincipalOwner.ps1) auf Ihren lokalen Computer, und führen Sie es aus.
 
 	>[Azure.Note] Ihre Standardsicherheitsrichtlinie verhindert möglicherweise das Ausführen von PowerShell-Skripts. Konfigurieren Sie in diesem Fall Ihre Ausführungsrichtlinie temporär so, dass die Skriptausführung zugelassen wird. Verwenden Sie dafür folgenden Befehl:
 
@@ -125,7 +123,7 @@ Dies ist eine alternative Möglichkeit, die oben beschriebenen Schritte mithilfe
 
 	Das Skript fordert Sie auf, dem Dienstprinzipal einen „Namen“ zuzuweisen. Sie können hier jeden beliebigen Namen eingeben.
 
-	Nach Ausführung zeigt das Skript vier Werte, die Sie für die programmgesteuerte Authentifizierung mit AD benötigen: **TenantId**, **SubscriptionId**, **ApplicationId** und **Secret**.
+	Nach dem Ausführen zeigt das Skript vier Werte an, die Sie für die programmgesteuerte Authentifizierung mit AD benötigen: **TenantId**, **SubscriptionId**, **ApplicationId** und **Secret**.
 
 	Kopieren Sie diese Werte zur Referenz. Um jetzt ein Zugriffstoken abzurufen, verwenden Sie „TenantId“ als `{TENANT_ID}`, „ApplicationId“ als `{CLIENT_ID}` und „Secret“ als `{CLIENT_SECRET}`.
 
@@ -155,7 +153,7 @@ Hier eine Beispielantwort:
 	5391911","resource":"https://management.core.windows.net/","access_token":{ACCESS_T
 	OKEN}}
 
-Dieses Beispiel umfasst die URL-Codierung der POST-Parameter, der `resource`-Wert lautet `https://management.core.windows.net/`. Fügen Sie auch für `{CLIENT_SECRET}` eine URL-Codierung hinzu, da der Wert Sonderzeichen enthalten kann.
+Dieses Beispiel umfasst die URL-Codierung der POST-Parameter, der Wert `resource` lautet eigentlich `https://management.core.windows.net/`. Fügen Sie auch für `{CLIENT_SECRET}` eine URL-Codierung hinzu, da der Wert Sonderzeichen enthalten kann.
 
 Schließen Sie in jeden API-Aufruf den Autorisierungsanforderungsheader ein:
 
@@ -174,7 +172,7 @@ Da Sie jetzt über ein gültiges Token verfügen, sind Sie bereit für die API-A
 		https://management.azure.com/subscriptions/{subscription-id}/resourcegroups/MobileEngagement/
 		providers/Microsoft.MobileEngagement/appcollections/{app-collection}/apps/{app-resource-name}/
 
-	Um die Parameter abzurufen, klicken Sie auf den Namen Ihrer Anwendung, und klicken Sie auf das Dashboard, um eine Seite wie die folgende mit allen 3 Parametern anzuzeigen.
+	Um die Parameter abzurufen, klicken Sie auf den Namen Ihrer Anwendung, und klicken Sie auf das Dashboard, um eine Seite wie die folgende mit allen 3 Parametern anzuzeigen.
 
 	- **1** `{subscription-id}`
 	- **2** `{app-collection}`
@@ -182,6 +180,7 @@ Da Sie jetzt über ein gültiges Token verfügen, sind Sie bereit für die API-A
 
 	![](./media/mobile-engagement-api-authentication/mobile-engagement-api-uri-params.png)
 
->[AZURE.NOTE] <br/> 1. Ignorieren Sie die API-Stammadresse, diese galt für die vorherigen APIs.<br/> 2. Sie müssen den Namen der Anwendungsressource verwenden, der sich vom Namen der Anwendung selbst unterscheidet.
+>[AZURE.NOTE] <br/>
+>1. Ignorieren Sie die API-Stammadresse, da diese für die vorherigen APIs galt.<br/> 2. Sie müssen den Namen der Anwendungsressource verwenden, der sich vom Namen der Anwendung selbst unterscheidet. 
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

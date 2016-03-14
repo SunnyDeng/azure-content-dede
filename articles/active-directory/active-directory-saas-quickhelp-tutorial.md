@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/26/2016"
+	ms.date="02/29/2016"
 	ms.author="jeedes"/>
 
 
@@ -93,7 +93,7 @@ Das Ziel dieses Abschnitts ist, das einmalige Anmelden von Azure AD im Azure A
  
      a. Geben Sie im Textfeld **Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei der QuickHelp-Website verwenden (z. B. *https://quickhelp.com/bsiazure/*).
 
-     >[AZURE.NOTE] Wenden Sie sich an das QuickHelp-Supportteam, falls Ihnen die Anmelde-URL nicht bekannt ist.
+     > [AZURE.NOTE] Wenden Sie sich an das QuickHelp-Supportteam, falls Ihnen die Anmelde-URL nicht bekannt ist.
 
      b. Klicken Sie auf **Weiter**.
 
@@ -255,4 +255,4 @@ Das Ziel dieses Abschnitts ist das Testen Ihrer Azure AD-Konfiguration für ein
 [401]: ./media/active-directory-saas-QuickHelp-tutorial/tutorial_QuickHelp_401.png
 [402]: ./media/active-directory-saas-QuickHelp-tutorial/tutorial_QuickHelp_402.png
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0302_2016-->

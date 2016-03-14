@@ -27,7 +27,7 @@ Yammer ermöglicht Folgendes:
 
 - Erstellen eines Geschäftsworkflows basierend auf den Daten, die aus Yammer abgerufen werden. 
 - Verwenden von Triggern, wenn es eine neue Nachricht in einer Gruppe oder in einem Feed gibt, dem Sie folgen.
-- Verwenden Sie Aktionen, um z. : eine Nachricht senden oder alle Nachrichten abzurufen. Diese Aktionen erhalten eine Antwort und stellen anschließend die Ausgabe anderen Aktionen zur Verfügung. Wenn z. B. eine neue Nachricht vorhanden ist, können Sie über Office 365 eine E-Mail senden.
+- Verwenden Sie Aktionen, um z. : eine Nachricht senden oder alle Nachrichten abzurufen. Diese Aktionen erhalten eine Antwort und stellen anschließend die Ausgabe anderen Aktionen zur Verfügung. Wenn z. B. eine neue Nachricht vorhanden ist, können Sie über Office 365 eine E-Mail senden.
 
 Informationen zum Hinzufügen eines Vorgangs in Logik-Apps finden Sie unter [Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md).
 
@@ -45,7 +45,20 @@ Um die Yammer-API zu verwenden, stellen Sie zunächst eine **Verbindung** her un
 
 |Eigenschaft| Erforderlich|Beschreibung|
 | ---|---|---|
-|Token|Ja|Angeben der Yammer-Anmeldeinformationen|
+|Tokenverschlüsselung|Ja|Angeben der Yammer-Anmeldeinformationen|
+
+Führen Sie folgende Schritte aus, um sich bei Yammer anzumelden und die Konfiguration der Yammer-**Verbindung** in Ihrer Logik-App abzuschließen:
+
+1. Wählen Sie **Wiederholung** aus.
+2. Wählen Sie eine **Häufigkeit** aus, und geben Sie ein **Intervall** an.
+3. Wählen Sie **Aktion hinzufügen** aus. ![Yammer konfigurieren][1]
+4. Geben Sie in das Suchfeld „Yammer“ ein, und warten Sie, bis die Suche alle Einträge mit „Yammer“ im Namen zurückgibt.
+5. Wählen Sie **Yammer – Alle Nachrichten abrufen** aus.
+6. Wählen Sie **Bei Yammer anmelden** aus: ![Yammer konfigurieren][2]
+7. Geben Sie Ihre Yammer-Anmeldeinformationen ein, um die Anwendung zu autorisieren. ![Yammer konfigurieren][3]  
+8. Sie werden zur Anmeldeseite Ihrer Organisation weitergeleitet. **Autorisieren** Sie Yammer für die Interaktion mit Ihrer Logik-App: ![Yammer konfigurieren][4] 
+9. Kehren Sie nach der Anmeldung zur Logik-App zurück, um diese zu vervollständigen. Dazu konfigurieren Sie den Abschnitt **Yammer – Alle Nachrichten abrufen** und fügen bei Bedarf weitere Trigger und Aktionen hinzu. ![Yammer konfigurieren][5]  
+10. Speichern Sie Ihre Arbeit durch Auswählen von **Speichern** in der Menüleiste oben.
 
 
 >[AZURE.TIP] Sie können diese Verbindung in anderen Logik-Apps verwenden.
@@ -59,7 +72,7 @@ Entspricht „allen“ Konversationen auf der Yammer-Weboberfläche. ```GET: /me
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
-|older\_than|integer|no|query|(Keine)|Gibt Nachrichten, die älter als die Nachrichten-ID sind, als numerische Zeichenfolge zurück. Dies ist nützlich zum Aufteilen von Nachrichten auf Seiten. Wenn Sie beispielsweise gerade 20 Nachrichten anzeigen und die älteste die Nummer 2912 hat, können Sie „?older\_than=2912“ an Ihre Anforderung anfügen, um die 20 Nachrichten abzurufen, die vor den aktuell angezeigten liegen.|
+|older\_than|integer|no|query|(Keine)|Gibt Nachrichten, die älter als die Nachrichten-ID sind, als numerische Zeichenfolge zurück. Dies ist nützlich zum Aufteilen von Nachrichten auf Seiten. Wenn Sie beispielsweise gerade 20 Nachrichten anzeigen und die älteste die Nummer 2912 hat, können Sie „?older\_than=2912“ an Ihre Anforderung anfügen, um die 20 Nachrichten abzurufen, die vor den aktuell angezeigten liegen.|
 |newer\_than|integer|no|query|(Keine)|Gibt Nachrichten, die neuer als die Nachrichten-ID sind, als numerische Zeichenfolge zurück. Dies ist für Abfragen auf neue Nachrichten nützlich. Wenn Sie Nachrichten suchen und die neueste zurückgegebene Nachricht die Nummer 3516 hat, können Sie eine Anforderung mit dem Parameter „newer\_than=3516“ stellen. Dadurch stellen Sie sicher, dass Sie keine Duplikate von Nachrichten erhalten, die sich bereits auf der Seite befinden.|
 |limit|integer|no|query|(Keine)|Gibt nur die angegebene Anzahl von Nachrichten zurück.|
 |page|integer|no|query|(Keine)|Ruft die angegebene Seite ab. Wenn die zurückgegeben Daten größer als dieser Grenzwert sind, können Sie dieses Feld für den Zugriff auf nachfolgende Seiten nutzen.|
@@ -185,6 +198,12 @@ Wenn eine Gruppen-ID angegeben ist, wird die Nachricht an die angegebene Gruppe,
 
 
 ## Nächste Schritte
-[Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md).
+[Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md)
 
-<!---HONumber=AcomDC_0224_2016-->
+[1]: ./media/create-api-yammer/connectionconfig1.png
+[2]: ./media/create-api-yammer/connectionconfig2.png
+[3]: ./media/create-api-yammer/connectionconfig3.png
+[4]: ./media/create-api-yammer/connectionconfig4.png
+[5]: ./media/create-api-yammer/connectionconfig5.png
+
+<!---HONumber=AcomDC_0302_2016-->

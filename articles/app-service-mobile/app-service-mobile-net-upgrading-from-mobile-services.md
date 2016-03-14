@@ -74,7 +74,7 @@ Mobile Apps bietet ein neues [Mobile App Server SDK], das einen Großteil der Fu
 
 An diesem Punkt verfügen Sie über ein Projekt ohne Verweise auf Mobile Services-SDKs.
 
-Als Nächstes fügen Sie Verweise auf das Mobile Apps-SDK hinzu. Die meisten Entwickler sollten für dieses Upgrade das `Micrsoft.Azure.Mobile.Server.Quickstart`-Paket herunterladen und installieren, da hierbei der komplette erforderliche Satz per Pullvorgang bereitgestellt wird.
+Als Nächstes fügen Sie Verweise auf das Mobile Apps-SDK hinzu. Die meisten Entwickler sollten für dieses Upgrade das `Microsoft.Azure.Mobile.Server.Quickstart`-Paket herunterladen und installieren, da hierbei der komplette erforderliche Satz per Pullvorgang bereitgestellt wird.
 
 Aufgrund der Unterschiede zwischen den SDKs werden einige Compilerfehler auftreten, aber diese sind leicht zu beheben und werden im Rest dieses Abschnitts behandelt.
 
@@ -277,4 +277,4 @@ Wenn die neue Clientversion bereit ist, testen Sie sie mit dem aktualisierten Se
 [App Service-Preisen]: https://azure.microsoft.com/de-DE/pricing/details/app-service/
 [Übersicht über das .NET Server-SDK]: app-service-mobile-dotnet-backend-how-to-use-server-sdk.md
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -31,7 +31,8 @@ Dieser Artikel beschreibt anhand eines Beispiels, wie Sie Azure Site Recovery mi
 
 > [AZURE.NOTE] Die PowerShell-Cmdlets für Azure Site Recovery ermöglichen Ihnen derzeit, die Szenarien VMM-Standort-zu-VMM-Standort, VMM-Standort-zu-Azure und Hyper-V-Standort-zu-Azure zu konfigurieren. Unterstützung für andere ASR-Szenarien ist bald verfügbar.
 
-Sie müssen kein PowerShell-Experte sein, um diesen Artikel verwenden zu können. Es wird jedoch vorausgesetzt, dass Sie grundlegend mit Konzepten wie Modulen, Cmdlets und Sitzungen vertraut sind. Weitere Informationen zu Windows PowerShell finden Sie unter [Erste Schritte mit Windows PowerShell](http://technet.microsoft.com/library/hh857337.aspx) sowie unter [Verwenden von Azure PowerShell mit dem Azure-Ressourcen-Manager](../powershell-azure-resource-manager.md).
+Sie müssen kein PowerShell-Experte sein, um diesen Artikel verwenden zu können. Es wird jedoch vorausgesetzt, dass Sie grundlegend mit Konzepten wie Modulen, Cmdlets und Sitzungen vertraut sind. Weitere Informationen zu Windows PowerShell finden Sie unter [Erste Schritte mit Windows PowerShell](http://technet.microsoft.com/library/hh857337.aspx).
+- Weitere Informationen finden Sie unter [Verwenden von Azure PowerShell mit dem Azure Resource Manager](../powershell-azure-resource-manager.md).
 
 
 ## Wichtige Features
@@ -109,7 +110,7 @@ In diesem Artikel wird das Verwenden von Azure Powershell mit ARM zum Konfigurie
 
 2. Erstellen Sie einen neuen Azure Recovery Services-Tresor wie folgt:
 
-		$vault = New-AzureRmRecoveryServicesVault -Name <string> -ResouceGroupName <string> -Location <string>
+		$vault = New-AzureRmRecoveryServicesVault -Name <string> -ResourceGroupName <string> -Location <string>
 
 	Sie können eine Liste der vorhandenen Tresore mithilfe des `Get-AzureRmRecoveryServicesVault`-Cmdlets abrufen.
 
@@ -261,4 +262,4 @@ In diesem Artikel wird das Verwenden von Azure Powershell mit ARM zum Konfigurie
 
     	$TFjob = Resume-AzureRmSiteRecoveryJob -Job $TFjob
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0302_2016-->

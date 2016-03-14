@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/10/2016" 
+	ms.date="02/28/2016" 
 	ms.author="awills"/>
 
 # Verwalten von Preisen und Kontingenten für Application Insights
@@ -29,14 +29,14 @@ Jede Application Insights-Ressource wird als separater Dienst abgerechnet und au
 
 Sie können das Blatt zu Kontingenten und Preisen über die Ressourceneinstellungen Ihrer Anwendung öffnen.
 
-![Wählen Sie "Einstellungen", "Kontingente + Preise".](./media/app-insights-pricing/01-pricing.png)
+![Wählen Sie „Einstellungen“ > „Kontingent und Preise“.](./media/app-insights-pricing/01-pricing.png)
 
 Die Wahl des Tarifs wirkt sich auf Folgendes aus:
 
-* [Monatliches Kontingent](#monthly-quota) – Die Menge der Telemetriedaten, die Sie jeden Monat analysieren können.
-* [Datenrate](#data-rate) – Die maximale Rate, mit der Daten aus Ihrer App verarbeitet werden können.
-* [Aufbewahrung](#data-retention) – Die Dauer der Aufbewahrung Ihrer Daten zur Ansicht im Application Insights-Portal.
-* [Fortlaufender Export](#continuous-export) – Die Möglichkeit des Exports von Daten in andere Tools und Dienste.
+* [Monatliches Kontingent](#monthly-quota): Die Menge der Telemetriedaten, die Sie jeden Monat analysieren können.
+* [Datenrate](#data-rate): Die maximale Rate, mit der Daten aus Ihrer App verarbeitet werden können.
+* [Aufbewahrung](#data-retention): Die Dauer der Aufbewahrung Ihrer Daten zur Ansicht im Application Insights-Portal.
+* [Fortlaufender Export](#continuous-export): Die Möglichkeit des Exports von Daten in andere Tools und Dienste.
 
 Diese Grenzwerte werden für jede Application Insights-Ressource separat festgelegt.
 
@@ -69,7 +69,7 @@ Sie können jederzeit zur kostenlosen 30-Tage-Testversion des Premium-Tarifs wec
  * Um Clientdatenpunkte anzuzeigen, öffnen Sie den Debuggingbereich Ihres Browserfensters (in der Regel über F12) und die Registerkarte „Netzwerk“.
 * Die Datenrate wird (standardmäßig) durch [adaptive Stichprobenerstellung](app-insights-sampling) reduziert. Dies bedeutet, dass bei steigender Verwendung Ihrer App die Telemetrierate nicht in dem von Ihnen erwarteten Maß ansteigt.
 
-### Overage
+### Überschreitung
 
 Wenn die Anwendung mehr als das monatliche Kontingent sendet, haben Sie folgende Möglichkeiten:
 
@@ -111,8 +111,8 @@ Tritt eine Drosselung auf, erhalten Sie zur Warnung eine Benachrichtigung über 
 
 *Woher weiß ich, wie viele Datenpunkte meine App sendet?*
 
-* Öffnen Sie "Settings/Quota and Pricing", um das Diagramm mit dem Datenvolumen anzuzeigen.
-* Oder fügen Sie im Metrik-Explorer ein neues Diagramm hinzu, und wählen Sie **Datenpunktvolumen** als Metrik aus. Aktivieren Sie "Gruppierung", und gruppieren Sie nach **Datentyp**.
+* Öffnen Sie „Einstellungen/Kontingent und Preise“, um das Diagramm mit dem Datenvolumen anzuzeigen.
+* Oder fügen Sie im Metrik-Explorer ein neues Diagramm hinzu, und wählen Sie **Datenpunktvolumen** als Metrik aus. Aktivieren Sie „Gruppierung“, und gruppieren Sie nach **Datentyp**.
 
 
 ### Tipps zur Reduzierung der Datenrate
@@ -129,7 +129,7 @@ Wenn Begrenzungsdrosselungen auftreten, können Sie verschiedene Schritte ausfü
 
 1.	Bis zu 200 eindeutige Metriknamen und 200 eindeutige Eigenschaftennamen für Ihre Anwendung. Zu den Metriken gehören Daten, die über TrackMetric gesendet werden, sowie Messungen für andere Datentypen wie z. B. Ereignisse. [Metriken und Eigenschaftennamen][api] gelten global pro Instrumentationsschlüssel und werden nicht auf den Datentyp begrenzt.
 2.	[Eigenschaften][apiproperties] können nur zur Filterung und zur Gruppierung verwendet werden, solange sie weniger als 100 eindeutige Werte für jede Eigenschaft aufweisen. Sobald es mehr als 100 eindeutige Werte gibt, kann die Eigenschaft zwar noch zur Suche und Filterung, jedoch nicht mehr für Filter verwendet werden.
-3.	Standardeigenschaften wie z. B. RequestName und die Seiten-URL, sind auf 1000 eindeutige Werte pro Woche beschränkt. Nach 1000 eindeutigen Werten werden zusätzliche Werte als "Andere Werte" gekennzeichnet. Der ursprüngliche Wert kann nach wie vor für die Volltextsuche und die Filterung verwendet werden.
+3.	Standardeigenschaften wie z. B. RequestName und die Seiten-URL, sind auf 1000 eindeutige Werte pro Woche beschränkt. Nach 1000 eindeutigen Werten werden zusätzliche Werte als „Andere Werte“ gekennzeichnet. Der ursprüngliche Wert kann nach wie vor für die Volltextsuche und die Filterung verwendet werden.
 
 ## Beibehaltung von Daten
 
@@ -140,13 +140,24 @@ Ihr Tarif bestimmt, wie lange Daten im Portal aufbewahrt werden und dadurch auch
 * Aggregierte Daten (d. h. Zählungen, Mittelwerte und andere statistischen Daten, die im Metrik-Explorer angezeigt werden) werden im Maß von 1 Minute für 30 Tage und 1 Stunde oder 1 Tag (abhängig vom Typ) für mindestens 13 Monate aufbewahrt.
 
 
+## Stichproben
+
+Die [Stichprobenerstellung](app-insights-sampling.md) ist eine Methode, die Menge der von Ihrer App beibehaltenen Telemetriedaten zu verringern, während die Möglichkeit erhalten bleibt, bei Diagnosesuchläufen relevante Ereignisse zu ermitteln und korrekte Ereigniszahlen zu erhalten. Die Stichprobenerstellung unterstützt Sie dabei, innerhalb Ihres monatlichen Kontingents zu bleiben.
+
+Es gibt verschiedene Formen der Stichprobenerstellung. Wir empfehlen die [adaptive Stichprobenerstellung](app-insights-sampling.md), bei der die Menge der an Ihre App gesendeten Telemetriedaten automatisch angepasst wird. Die Stichprobenerstellung findet im SDK Ihrer Web-App statt, sodass der Telemetriedatenverkehr im Netzwerk verringert wird. Sie können die Stichprobenerstellung nutzen, wenn Sie .NET Framework für Ihre Web-App verwenden: Installieren Sie einfach die neueste (Beta-) Version des SDK.
+
+Alternativ können Sie auf dem Blatt „Kontingente und Preise“ die *Erfassungs-Stichprobenerstellung* festlegen. Diese Form der Stichprobenerstellung arbeitet an dem Punkt, an dem Telemetriedaten von Ihrer App den Application Insights-Dienst erreichen. Diese Art der Stichprobenerstellung wirkt sich nicht auf die Menge der Telemetriedaten aus, die von Ihrer App gesendet werden, verringert jedoch die Menge der Daten, die vom Dienst beibehalten werden.
+
+![Klicken Sie im Blatt „Kontingent und Preise“ auf die Kachel „Stichproben“, und wählen Sie eine Einheit für die Stichprobenerstellung.](./media/app-insights-sampling/04.png)
+
+Die Stichprobenerstellung ist eine effektive Möglichkeit, die Gebühren zu senken und innerhalb Ihres monatlichen Kontingents zu bleiben. Der Stichprobenalgorithmus behält Elemente in Bezug auf die Telemetrie bei, sodass Sie beispielsweise in Search die Anforderung ermitteln können, die in Beziehung zu einer bestimmten Ausnahme steht. Der Algorithmus behält außerdem korrekte Zahlenwerte bei, sodass Sie im Metrik-Explorer die richtigen Werte für Anforderungsraten, Ausnahmeraten und weitere Messwerte sehen.
 
 
 ## Anzeigen der Rechnung für Ihr Azure-Abonnement
 
-Die Gebühren für Application Insights werden Ihrer Azure-Rechnung hinzugefügt. Sie sehen die Details zu Ihrer Azure-Rechnung im Bereich "Abrechnung" des Azure-Portals oder im [Azure-Abrechnungsportal](https://account.windowsazure.com/Subscriptions).
+Die Gebühren für Application Insights werden Ihrer Azure-Rechnung hinzugefügt. Sie sehen die Details zu Ihrer Azure-Rechnung im Bereich „Abrechnung“ des Azure-Portals oder im [Azure-Abrechnungsportal](https://account.windowsazure.com/Subscriptions).
 
-![Wählen Sie im seitlichen Menü die Option "Abrechnung".](./media/app-insights-pricing/02-billing.png)
+![Wählen Sie im seitlichen Menü die Option „Abrechnung“.](./media/app-insights-pricing/02-billing.png)
 
 ## Zusammenfassung der Grenzwerte
 
@@ -162,4 +173,4 @@ Die Gebühren für Application Insights werden Ihrer Azure-Rechnung hinzugefügt
 
  
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0302_2016-->

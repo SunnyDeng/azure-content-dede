@@ -3,7 +3,7 @@
    description="Ein Webhook, der es einem Client ermöglicht, ein Runbook in Azure Automation über einen HTTP-Aufruf zu starten. In diesem Artikel wird beschrieben, wie Sie einen Webhook erstellen und aufrufen, um ein Runbook zu starten."
    services="automation"
    documentationCenter=""
-   authors="SnehaGunda"
+   authors="mgoedtel"
    manager="stevenka"
    editor="tysonn" />
 <tags 
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="02/18/2016"
+   ms.date="02/23/2016"
    ms.author="magoedte;bwren;sngun"/>
 
 # Azure Automation-Webhooks
@@ -46,7 +46,7 @@ Das Objekt **$WebhookData** verfügt über folgende Eigenschaften:
 |:--- |:---|
 | WebhookName | Der Name des Webhooks. |
 | RequestHeader | Die Hashtabelle mit den Headern der eingehenden POST-Anforderung |
-| RequestBody | Der Header der eingehenden POST-Anforderung. Hiermit werden sämtliche Formatierungen beibehalten, z. B. Zeichenfolgenformat, JSON, XML oder formularcodierte Daten. Das Runbook muss so verfasst werden, dass es mit dem erwarteten Datenformat funktioniert.|
+| RequestBody | Der Header der eingehenden POST-Anforderung. Hiermit werden sämtliche Formatierungen beibehalten, z. B. Zeichenfolgenformat, JSON, XML oder formularcodierte Daten. Das Runbook muss so verfasst werden, dass es mit dem erwarteten Datenformat funktioniert.|
 
 
 Zur Unterstützung des Parameters **$WebhookData** ist keine Konfiguration des Webhooks erforderlich, und das Runbook muss ihn nicht akzeptieren. Wenn das Runbook den Parameter nicht definiert, werden alle vom Client gesendeten Details der Anforderung ignoriert.
@@ -112,7 +112,7 @@ Wenn die Anforderung erfolgreich ist, enthält die Antwort des Webhooks wie im F
 
 	{"JobIds":["<JobId>"]}  
 
-Der Client kann weder die Bestätigung, dass ein Runbookauftrag abgeschlossen wurde, noch den Abschlussstatus aus einem Webhook abrufen. Diese Informationen können mithilfe der Auftrags-ID unter Verwendung einer anderen Methode ermittelt werden, z. B. mit [Windows PowerShell](http://msdn.microsoft.com/library/azure/dn690263.aspx) oder der [Azure Automation-API](https://msdn.microsoft.com/library/azure/mt163826.aspx).
+Der Client kann weder die Bestätigung, dass ein Runbookauftrag abgeschlossen wurde, noch den Abschlussstatus aus einem Webhook abrufen. Diese Informationen können mithilfe der Auftrags-ID unter Verwendung einer anderen Methode ermittelt werden, z. B. mit [Windows PowerShell](http://msdn.microsoft.com/library/azure/dn690263.aspx) oder der [Azure Automation-API](https://msdn.microsoft.com/library/azure/mt163826.aspx).
 
 ### Beispiel
 
@@ -272,4 +272,4 @@ Das folgende Beispiel-Runbook wird immer dann ausgelöst, wenn die Warnregel akt
 - Informationen zum Anzeigen des Status eines Runbookauftrags finden Sie unter [Ausführen von Runbooks in Azure Automation](automation-runbook-execution.md).
 - [Ausführen von Aktionen nach Azure-Warnungen mithilfe von Azure Automation](https://azure.microsoft.com/blog/using-azure-automation-to-take-actions-on-azure-alerts/)
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

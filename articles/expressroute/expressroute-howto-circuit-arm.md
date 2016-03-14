@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Erstellen und Ändern einer ExpressRoute-Verbindung mit dem Azure-Ressourcen-Manager und mit PowerShell | Microsoft Azure"
-   description="In diesem Artikel werden Sie durch die Schritte zum Erstellen und Bereitstellen einer ExpressRoute-Verbindung geführt. Außerdem wird veranschaulicht, wie Sie Status überprüfen, Updates durchführen oder die Verbindung löschen oder deren Bereitstellung aufheben."
+   pageTitle="Erstellen und Ändern einer ExpressRoute-Verbindung mit Resource Manager und PowerShell | Microsoft Azure"
+   description="Dieser Artikel beschreibt die Erstellung und Bereitstellung einer ExpressRoute-Verbindung. Außerdem wird veranschaulicht, wie Sie die Verbindung prüfen, aktualisieren, löschen oder deren Bereitstellung aufheben."
    documentationCenter="na"
    services="expressroute"
    authors="cherylmc"
@@ -10,353 +10,357 @@
 <tags
    ms.service="expressroute"
    ms.devlang="na"
-   ms.topic="article" 
+   ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="01/26/2016"
+   ms.date="12/04/2015"
    ms.author="cherylmc"/>
 
-# Erstellen und Ändern einer ExpressRoute-Verbindung mit dem Azure-Ressourcen-Manager und mit PowerShell
+# Erstellen und Ändern einer ExpressRoute-Verbindung mit Resource Manager und PowerShell
 
-> [AZURE.SELECTOR]
-[PowerShell - Classic](expressroute-howto-circuit-classic.md)
-[PowerShell - Resource Manager](expressroute-howto-circuit-arm.md)
+   > [AZURE.SELECTOR]
+   [PowerShell - Classic](expressroute-howto-circuit-classic.md)
+   [PowerShell - Resource Manager](expressroute-howto-circuit-arm.md)
 
-In diesem Artikel werden Sie durch die Schritte zum Erstellen einer ExpressRoute-Verbindung mithilfe von PowerShell-Cmdlets und des Azure-Ressourcen-Manager-Bereitstellungsmodells geführt. In den Schritten unten wird auch veranschaulicht, wie Sie den Status prüfen, ein Update durchführen oder eine ExpressRoute-Verbindung löschen oder deren Bereitstellung aufheben.
+In diesem Artikel wird beschrieben, wie Sie eine Azure ExpressRoute-Verbindung mithilfe von Windows PowerShell-Cmdlets und des Azure Resource Manager-Bereitstellungsmodells erstellen. In den folgenden Schritten wird auch veranschaulicht, wie Sie den Status der Verbindung prüfen, aktualisieren, löschen oder deren Bereitstellung aufheben.
 
-[AZURE.INCLUDE [vpn-gateway-sm-rm](../../includes/vpn-gateway-sm-rm-include.md)]
+   [AZURE.INCLUDE [vpn-gateway-sm-rm](../../includes/vpn-gateway-sm-rm-include.md)]
 
 ## Konfigurationsvoraussetzungen
 
-- Sie benötigen die neueste Version der Azure PowerShell-Module (also mindestens Version 1.0). Befolgen Sie die Anleitung auf der Seite [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md). Sie erhalten dort eine Schritt-für-Schritt-Anleitung zum Konfigurieren des Computers für die Verwendung der Azure PowerShell-Module. 
-- Stellen Sie sicher, dass Sie vor Beginn der Konfiguration die Seiten [Voraussetzungen](expressroute-prerequisites.md) und [Workflows](expressroute-workflows.md) gelesen haben.
+Für das Erstellen einer ExpressRoute-Verbindung gelten folgende Voraussetzungen:
 
-## So können Sie eine ExpressRoute-Verbindung erstellen und bereitstellen
+- Sie benötigen die neueste Version der Azure PowerShell-Module (Version 1.0 oder höher). Um eine Schritt-für-Schritt-Anleitung zum Konfigurieren des Computers für die Verwendung der Azure PowerShell-Module zu erhalten, befolgen Sie die Anweisungen auf der Seite [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
+- Lesen Sie vor Beginn der Konfiguration die Seiten [Voraussetzungen](expressroute-prerequisites.md) und [Workflows](expressroute-workflows.md).
 
-1. **Importieren Sie das PowerShell-Modul für ExpressRoute.**
+## Erstellen und Bereitstellen einer ExpressRoute-Verbindung
 
- 	Sie müssen den neuesten PowerShell-Installer aus dem [PowerShell-Katalog](http://www.powershellgallery.com/) installieren und die Azure-Ressourcen-Manager-Module in die PowerShell-Sitzung importieren, um die ExpressRoute-Cmdlets verwenden zu können. Sie müssen PowerShell als Administrator ausführen.
+**Schritt 1. Importieren Sie das PowerShell-Modul für ExpressRoute.**
 
-	    Install-Module AzureRM
+Um die ExpressRoute-Cmdlets verwenden zu können, müssen Sie den neuesten PowerShell-Installer aus dem [PowerShell-Katalog](http://www.powershellgallery.com/) installieren und die Resource Manager-Module in die PowerShell-Sitzung importieren. Sie führen PowerShell als Administrator aus.
 
-		Install-AzureRM
+```
+Install-Module AzureRM
 
-	Importieren Sie alle AzureRM.*-Module im bekannten semantischen Versionsbereich.
+Install-AzureRM
+```
 
-		Import-AzureRM
+Importieren Sie alle AzureRM-Module im bekannten semantischen Versionsbereich:
 
-	Sie können auch einfach ein ausgewähltes Modul im bekannten semantischen Versionsbereich importieren.
-		
-		Import-Module AzureRM.Network 
+```
+Import-AzureRM
+```
 
-	Melden Sie sich bei Ihrem Konto an.
+Sie können auch ein bestimmtes Modul im bekannten semantischen Versionsbereich importieren:
 
-		Login-AzureRmAccount
+```
+Import-Module AzureRM.Network
+```
 
-	Wählen Sie das Abonnement aus, mit dem die ExpressRoute-Verbindung erstellt werden soll.
-		
-		Select-AzureRmSubscription -SubscriptionId "<subscription ID>"
-			
+Melden Sie sich bei Ihrem Konto an:
 
+```
+Login-AzureRmAccount
+```
 
-2. **Rufen Sie die Liste der unterstützten Anbieter, Standorte und Bandbreiten ab.**
+Wählen Sie das Abonnement aus, mit dem eine ExpressRoute-Verbindung erstellt werden soll:
 
-	Vor dem Erstellen einer ExpressRoute-Verbindung benötigen Sie die Liste der Konnektivitätsanbieter, unterstützten Standorte und Bandbreitenoptionen. Das PowerShell-Cmdlet *Get-AzureRmExpressRouteServiceProvider* gibt diese Informationen zurück, die Sie in späteren Schritten noch verwenden werden.
+```
+Select-AzureRmSubscription -SubscriptionId "<subscription ID>"   			
+```
 
-		Get-AzureRmExpressRouteServiceProvider
+**Schritt 2. Rufen Sie die Liste der unterstützten Anbieter, Standorte und Bandbreiten ab.**
 
-	Überprüfen Sie, ob Ihr Konnektivitätsanbieter hier aufgeführt ist. Notieren Sie die folgenden Angaben, da Sie sie zum Erstellen der Verbindungen benötigen.
-	
-	- Name
-	- PeeringLocations
-	- BandwidthsOffered
+Vor dem Erstellen einer ExpressRoute-Verbindung benötigen Sie die Liste der Konnektivitätsanbieter, unterstützten Standorte und Bandbreitenoptionen. Das PowerShell-Cmdlet *Get-AzureRmExpressRouteServiceProvider* gibt diese Informationen zurück, die Sie in späteren Schritten noch verwenden werden.
 
-	Sie können nun eine ExpressRoute-Verbindung erstellen.
+```
+PS C:\> Get-AzureRmExpressRouteServiceProvider
+```
 
-		
-3. **Erstellen Sie eine ExpressRoute-Verbindung.**
+Überprüfen Sie, ob Ihr Konnektivitätsanbieter hier aufgeführt ist. Notieren Sie sich die folgenden Informationen, da Sie diese später beim Erstellen der Verbindung benötigen:
 
-	Sie müssen zuerst eine Ressourcengruppe erstellen, sofern noch keine vorhanden ist, bevor Sie Ihre ExpressRoute-Verbindung erstellen. Dazu können Sie den folgenden Befehl ausführen.
+- Name
+- PeeringLocations
+- BandwidthsOffered
 
-		New-AzureRmResourceGroup -Name “ExpressRouteResourceGroup” -Location "West US"
+Sie können nun eine ExpressRoute-Verbindung erstellen.
 
-	Das folgende Beispiel zeigt, wie Sie eine ExpressRoute-Verbindung mit 200 MBit/s über Equinix im Silicon Valley herstellen können. Wenn Sie einen anderen Anbieter und andere Einstellungen verwenden, ersetzen Sie bei Ihrer Anforderung die entsprechenden Informationen.
+**Schritt 3. Erstellen Sie eine ExpressRoute-Verbindung.**
 
-	Nachfolgend sehen Sie eine Beispielanforderung für einen neuen Dienstschlüssel:
+Wenn Sie noch keine Ressourcengruppe besitzen, müssen Sie zuerst eine erstellen, bevor Sie Ihre ExpressRoute-Verbindung erstellen. Dazu können Sie den folgenden Befehl ausführen:
 
-		New-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup" -Location "West US" -SkuTier Standard -SkuFamily MeteredData -ServiceProviderName "Equinix" -PeeringLocation "Silicon Valley" -BandwidthInMbps 200
+```
+New-AzureRmResourceGroup -Name “ExpressRouteResourceGroup” -Location "West US"
+```
 
-	Stellen Sie sicher, dass Sie die richtige SKU-Ebene und die richtige SKU-Familie angeben.
- 
-	 - Die SKU-Ebene bestimmt, ob ExpressRoute Standard oder das ExpressRoute Premium-Add-On aktiviert wird. Sie können *Standard* für das Standard-SKU oder *Premium* für das Premium-Add-On angeben.
-	 - Die SKU-Familie bestimmt den Abrechnungstyp. Sie können *MeteredData* für einen Volumentarif und „UnlimitedData“ für einen Plan mit Datenflatrate auswählen. **Hinweis:** Sie können den Abrechnungstyp nicht mehr ändern, nachdem eine Verbindung erstellt wurde.
+Das folgende Beispiel zeigt, wie Sie eine ExpressRoute-Verbindung mit 200 MBit/s über Equinix im Silicon Valley herstellen können. Wenn Sie einen anderen Anbieter und andere Einstellungen verwenden, ersetzen Sie bei Ihrer Anforderung die entsprechenden Informationen. Nachfolgend sehen Sie eine Beispielanforderung für einen neuen Dienstschlüssel:
 
-	Die Antwort enthält den Dienstschlüssel. Ausführliche Beschreibungen aller Parameter erhalten Sie, wenn Sie Folgendes ausführen:
+```
+New-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup" -Location "West US" -SkuTier Standard -SkuFamily MeteredData -ServiceProviderName "Equinix" -PeeringLocation "Silicon Valley" -BandwidthInMbps 200
+```
 
-		Get-Help New-AzureRmExpressRouteCircuit -detailed 
+Stellen Sie sicher, dass Sie die richtige SKU-Ebene und die richtige SKU-Familie angeben.
 
-4. **Listen Sie alle ExpressRoute-Verbindungen auf.**
+- Die SKU-Ebene bestimmt, ob ein ExpressRoute Standard- oder ein ExpressRoute Premium-Add-On aktiviert wird. Sie können *standard* für das Standard-SKU bzw. *premium* für das Premium-Add-On angeben.
+- Die SKU-Familie bestimmt den Abrechnungstyp. Sie können *MeteredData* für einen Volumentarif und *UnlimitedData* für einen Plan mit Datenflatrate auswählen. **Hinweis:** Sie können den Abrechnungstyp nicht mehr ändern, nachdem eine Verbindung erstellt wurde.
 
-	Sie können den Befehl *Get-AzureRmExpressRouteCircuit* ausführen, um eine Liste mit allen von Ihnen erstellten ExpressRoute-Verbindungen abzurufen.
+Die Antwort enthält den Dienstschlüssel. Ausführliche Beschreibungen aller Parameter erhalten Sie, indem Sie Folgendes ausführen:
 
-		
-		Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
+```
+get-help New-AzureRmExpressRouteCircuit -detailed
+```
 
-	Die Antwort wird in etwa wie im folgendem Beispiel gezeigt lauten:
+**Schritt 4. Listen Sie alle ExpressRoute-Verbindungen auf.**
 
-		Name                             : ExpressRouteARMCircuit
-		ResourceGroupName                : ExpressRouteResourceGroup
-		Location                         : westus
-		Id                               : /subscriptions/***************************/resourceGroups/ExpressRouteResourceGroup/providers/Microsoft.Network/expressRouteCircuits/ExpressRouteARMCircuit
-		Etag                             : W/"################################"
-		ProvisioningState                : Succeeded
-		Sku                              : {
-		                                     "Name": "Standard_MeteredData",
-		                                     "Tier": "Standard",
-		                                     "Family": "MeteredData"
-		                                   }
-		CircuitProvisioningState         : Enabled
-		ServiceProviderProvisioningState : NotProvisioned
-		ServiceProviderNotes             : 
-		ServiceProviderProperties        : {
-		                                     "ServiceProviderName": "Equinix",
-		                                     "PeeringLocation": "Silicon Valley",
-		                                     "BandwidthInMbps": 200
-		                                   }
-		ServiceKey                       : **************************************
-		Peerings                         : []
+Um eine Liste mit allen von Ihnen erstellten ExpressRoute-Verbindungen abzurufen, können Sie den Befehl *Get-AzureRmExpressRouteCircuit* ausführen.
 
+```
+#Getting service key
+Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
+```
 
-	Sie können diese Informationen jederzeit mithilfe des Cmdlets *Get-AzureRmExpressRouteCircuit* abrufen. Wenn Sie den Aufruf ohne Parameter durchführen, werden alle Verbindungen aufgelistet. Der Dienstschlüssel wird im Feld *ServiceKey* aufgeführt.
+Die Antwort entspricht etwa dem folgenden Beispiel:
 
-		Get-AzureRmExpressRouteCircuit
+```
+Name                             : ExpressRouteARMCircuit
+ResourceGroupName                : ExpressRouteResourceGroup
+Location                         : westus
+Id                               : /subscriptions/***************************/resourceGroups/ExpressRouteResourceGroup/providers/Microsoft.Network/expressRouteCircuits/ExpressRouteARMCircuit
+Etag                             : W/"################################"
+ProvisioningState                : Succeeded
+Sku                              : {
+                                     "Name": "Standard_MeteredData",
+                                     "Tier": "Standard",
+                                     "Family": "MeteredData"
+   		                           }
+CircuitProvisioningState          : Enabled
+ServiceProviderProvisioningState  : NotProvisioned
+ServiceProviderNotes              :
+ServiceProviderProperties         : {
+                                      "ServiceProviderName": "Equinix",
+                                      "PeeringLocation": "Silicon Valley",
+                                      "BandwidthInMbps": 200
+                                    }
+ServiceKey                        : **************************************
+Peerings                          : []
+```
+
+Sie können diese Informationen jederzeit mithilfe des Cmdlets *Get-AzureRmExpressRouteCircuit* abrufen. Wenn Sie den Aufruf ohne Parameter durchführen, werden alle Verbindungen aufgelistet. Der Dienstschlüssel wird im Feld *ServiceKey* aufgeführt.
+
+```
+Get-AzureRmExpressRouteCircuit
+```
+
+Die Antwort entspricht etwa dem folgenden Beispiel:
+
+```
+Name                             : ExpressRouteARMCircuit
+ResourceGroupName                : ExpressRouteResourceGroup
+Location                         : westus
+Id                               : /subscriptions/***************************/resourceGroups/ExpressRouteResourceGroup/providers/Microsoft.Network/expressRouteCircuits/ExpressRouteARMCircuit
+Etag                             : W/"################################"
+ProvisioningState                : Succeeded
+Sku                              : {
+                                     "Name": "Standard_MeteredData",
+                                     "Tier": "Standard",
+                                     "Family": "MeteredData"
+   		                           }
+CircuitProvisioningState         : Enabled
+ServiceProviderProvisioningState : NotProvisioned
+ServiceProviderNotes             :
+ServiceProviderProperties        : {
+                                     "ServiceProviderName": "Equinix",
+                                     "PeeringLocation": "Silicon Valley",
+                                     "BandwidthInMbps": 200
+   		                           }
+ServiceKey                       : **************************************
+Peerings                         : []
+```
+
+Ausführliche Beschreibungen aller Parameter erhalten Sie, indem Sie Folgendes ausführen:
+
+```
+get-help Get-AzureRmExpressRouteCircuit -detailed
+```
+
+**Schritt 5. Senden Sie den Dienstschlüssel zur Bereitstellung an Ihren Konnektivitätsanbieter.**
+
+Wenn Sie eine neue ExpressRoute-Verbindung erstellen, weist die Verbindung folgenden Zustand auf:
+
+```
+ServiceProviderProvisioningState : NotProvisioned
+
+CircuitProvisioningState         : Enabled
+```
 
-	Die Antwort wird in etwa wie im folgendem Beispiel gezeigt lauten:
+*ServiceProviderProvisioningState* enthält Informationen zum aktuellen Zustand der Bereitstellung auf Dienstanbieterseite, und mit „Status“ wird der Zustand auf Microsoft-Seite angegeben. Damit Sie eine ExpressRoute-Verbindung verwenden können, muss sie sich im folgenden Zustand befinden:
 
-		Name                             : ExpressRouteARMCircuit
-		ResourceGroupName                : ExpressRouteResourceGroup
-		Location                         : westus
-		Id                               : /subscriptions/***************************/resourceGroups/ExpressRouteResourceGroup/providers/Microsoft.Network/expressRouteCircuits/ExpressRouteARMCircuit
-		Etag                             : W/"################################"
-		ProvisioningState                : Succeeded
-		Sku                              : {
-		                                     "Name": "Standard_MeteredData",
-		                                     "Tier": "Standard",
-		                                     "Family": "MeteredData"
-		                                   }
-		CircuitProvisioningState         : Enabled
-		ServiceProviderProvisioningState : NotProvisioned
-		ServiceProviderNotes             : 
-		ServiceProviderProperties        : {
-		                                     "ServiceProviderName": "Equinix",
-		                                     "PeeringLocation": "Silicon Valley",
-		                                     "BandwidthInMbps": 200
-		                                   }
-		ServiceKey                       : **************************************
-		Peerings                         : []
-
-
+```
+ServiceProviderProvisioningState : Provisioned
 
-	Ausführliche Beschreibungen aller Parameter erhalten Sie, wenn Sie Folgendes ausführen:
-
-		Get-Help Get-AzureRmExpressRouteCircuit -detailed 
-
-5. **Senden Sie den Dienstschlüssel zur Bereitstellung an Ihren Konnektivitätsanbieter.**
-
-	Wenn Sie eine neue ExpressRoute-Verbindung erstellen, hat die Verbindung folgenden Zustand:
-	
-		ServiceProviderProvisioningState : NotProvisioned
-		
-		CircuitProvisioningState         : Enabled
-
-	*ServiceProviderProvisioningState* enthält Informationen zum aktuellen Status der Bereitstellung auf Dienstanbieterseite, und mit „Status“ wird der Status auf Microsoft-Seite angegeben. Eine ExpressRoute-Verbindung muss sich im folgenden Zustand befinden, damit Sie sie verwenden können.
-
-		ServiceProviderProvisioningState : Provisioned
-		
-		CircuitProvisioningState         : Enabled
-
-	Die Verbindung wird in den folgenden Zustand versetzt, wenn sie vom Konnektivitätsanbieter für Sie aktiviert wird.
-
-		ServiceProviderProvisioningState : Provisioned
-		
-		Status                           : Enabled
-
-
-
-6. **Überprüfen Sie regelmäßig den Status und Zustand des Verbindungsschlüssels.**
-
-	So sind Sie informiert, wenn Ihr Anbieter die Verbindung aktiviert hat. Sobald die Verbindung konfiguriert wurde, zeigt *ServiceProviderProvisioningState* wie im folgenden Beispiel den Status *Provisioned* an.
-
-		Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
-
-	Die Antwort wird in etwa wie im folgendem Beispiel gezeigt lauten:
-
-		Name                             : ExpressRouteARMCircuit
-		ResourceGroupName                : ExpressRouteResourceGroup
-		Location                         : westus
-		Id                               : /subscriptions/***************************/resourceGroups/ExpressRouteResourceGroup/providers/Microsoft.Network/expressRouteCircuits/ExpressRouteARMCircuit
-		Etag                             : W/"################################"
-		ProvisioningState                : Succeeded
-		Sku                              : {
-		                                     "Name": "Standard_MeteredData",
-		                                     "Tier": "Standard",
-		                                     "Family": "MeteredData"
-		                                   }
-		CircuitProvisioningState         : Enabled
-		ServiceProviderProvisioningState : Provisioned
-		ServiceProviderNotes             : 
-		ServiceProviderProperties        : {
-		                                     "ServiceProviderName": "Equinix",
-		                                     "PeeringLocation": "Silicon Valley",
-		                                     "BandwidthInMbps": 200
-		                                   }
-		ServiceKey                       : **************************************
-		Peerings                         : []
+CircuitProvisioningState         : Enabled
+```
 
-7. **Konfigurieren des Routings und Verknüpfen eines VNets**
+Die Verbindung wechselt in den folgenden Zustand, wenn sie vom Konnektivitätsanbieter für Sie aktiviert wird:
 
-	a. **Erstellen Sie die Routingkonfiguration.** Lesen Sie die Schrittanleitungen unter [Erstellen und Ändern des Routings für eine ExpressRoute-Verbindung](expressroute-howto-routing-arm.md). Beachten Sie, dass die Anweisungen für Routing nur für Verbindungen gelten, die über Dienstanbieter erstellt wurden, von denen Layer 2-Konnektivitätsdienste angeboten werden. Wenn Sie einen Service Provider nutzen, der verwaltete Layer 3-Dienste anbietet (meist ein IPVPN, z. B. MPLS), übernimmt Ihr Konnektivitätsanbieter die Konfiguration und Verwaltung des Routings für Sie. In diesem Fall können Sie keine Peerings erstellen oder verwalten.
-	
-	b. **Verknüpfen Sie Ihr VNet mit einer ExpressRoute-Verbindung.** Nachdem Sie sichergestellt haben, dass das Routing konfiguriert wurde, müssen Sie Ihr VNet mit Ihrer ExpressRoute-Verbindung verknüpfen. Lesen Sie die Schritt-für-Schritt-Anweisungen unter [Verknüpfen von virtuellen Netzwerken mit ExpressRoute-Verbindungen](expressroute-howto-linkvnet-arm.md).
+```
+ServiceProviderProvisioningState : Provisioned
 
-##  So rufen Sie den Status einer ExpressRoute-Verbindung ab
+Status                           : Enabled
+```
 
-Sie können diese Informationen jederzeit mithilfe des Cmdlets *Get-AzureRmExpressRouteCircuit* abrufen. Wenn Sie den Aufruf ohne Parameter durchführen, werden alle Verbindungen aufgelistet.
+**Schritt 6. Überprüfen Sie regelmäßig den Status und Zustand des Verbindungsschlüssels.**
 
-		Get-AzureRmExpressRouteCircuit
+Durch das Überprüfen des Status und des Zustands des Verbindungsschlüssels werden Sie informiert, wenn Ihr Anbieter Ihre Verbindung aktiviert hat. Sobald die Verbindung konfiguriert wurde, wird *ServiceProviderProvisioningState* wie im folgenden Beispiel als *Provisioned* angezeigt:
 
-Die Antwort lautet etwa wie im folgendem Beispiel:
+```
+Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
+```
 
-		Name                             : ExpressRouteARMCircuit
-		ResourceGroupName                : ExpressRouteResourceGroup
-		Location                         : westus
-		Id                               : /subscriptions/***************************/resourceGroups/ExpressRouteResourceGroup/providers/Microsoft.Network/expressRouteCircuits/ExpressRouteARMCircuit
-		Etag                             : W/"################################"
-		ProvisioningState                : Succeeded
-		Sku                              : {
-		                                     "Name": "Standard_MeteredData",
-		                                     "Tier": "Standard",
-		                                     "Family": "MeteredData"
-		                                   }
-		CircuitProvisioningState         : Enabled
-		ServiceProviderProvisioningState : Provisioned
-		ServiceProviderNotes             : 
-		ServiceProviderProperties        : {
-		                                     "ServiceProviderName": "Equinix",
-		                                     "PeeringLocation": "Silicon Valley",
-		                                     "BandwidthInMbps": 200
-		                                   }
-		ServiceKey                       : **************************************
-		Peerings                         : []
+Die Antwort entspricht etwa dem folgenden Beispiel:
 
-Sie können Informationen zu einer bestimmten ExpressRoute-Verbindung erhalten, indem Sie den Ressourcengruppennamen und den Verbindungsnamen als Parameter an den Aufruf übergeben.
+```
+Name                             : ExpressRouteARMCircuit
+ResourceGroupName                : ExpressRouteResourceGroup
+Location                         : westus
+Id                               : /subscriptions/***************************/resourceGroups/ExpressRouteResourceGroup/providers/Microsoft.Network/expressRouteCircuits/ExpressRouteARMCircuit
+Etag                             : W/"################################"
+ProvisioningState                : Succeeded
+Sku                              : {
+                                     "Name": "Standard_MeteredData",
+                                     "Tier": "Standard",
+                                     "Family": "MeteredData"
+                                   }
+CircuitProvisioningState         : Enabled
+ServiceProviderProvisioningState : Provisioned
+ServiceProviderNotes             :
+ServiceProviderProperties        : {
+                                     "ServiceProviderName": "Equinix",
+                                     "PeeringLocation": "Silicon Valley",
+                                     "BandwidthInMbps": 200
+   	                            }
+ServiceKey                       : **************************************
+Peerings                         : []
 
-		Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
+**Step 7.  Create your routing configuration.**
 
+For step-by-step instructions, refer to the [ExpressRoute circuit routing configuration (create and modify circuit peerings)](expressroute-howto-routing-arm.md).
 
-Die Antwort wird in etwa wie im folgendem Beispiel gezeigt lauten:
+**Step 8.  Link a virtual network to an ExpressRoute circuit.**
 
-		Name                             : ExpressRouteARMCircuit
-		ResourceGroupName                : ExpressRouteResourceGroup
-		Location                         : westus
-		Id                               : /subscriptions/***************************/resourceGroups/ExpressRouteResourceGroup/providers/Microsoft.Network/expressRouteCircuits/ExpressRouteARMCircuit
-		Etag                             : W/"################################"
-		ProvisioningState                : Succeeded
-		Sku                              : {
-		                                     "Name": "Standard_MeteredData",
-		                                     "Tier": "Standard",
-		                                     "Family": "MeteredData"
-		                                   }
-		CircuitProvisioningState         : Enabled
-		ServiceProviderProvisioningState : Provisioned
-		ServiceProviderNotes             : 
-		ServiceProviderProperties        : {
-		                                     "ServiceProviderName": "Equinix",
-		                                     "PeeringLocation": "Silicon Valley",
-		                                     "BandwidthInMbps": 200
-		                                   }
-		ServiceKey                       : **************************************
-		Peerings                         : []
+Next, link a virtual network to your ExpressRoute circuit. You can use [this template](https://github.com/Azure/azure-quickstart-templates/tree/ecad62c231848ace2fbdc36cbe3dc04a96edd58c/301-expressroute-circuit-vnet-connection) when you work with the Resource Manager deployment mode. We're currently working on steps to accomplish this by using PowerShell.
 
-Ausführliche Beschreibungen aller Parameter erhalten Sie, wenn Sie Folgendes ausführen:
+## Get the status of an ExpressRoute circuit
 
-		Get-Help Get-azurededicatedcircuit -detailed 
+You can retrieve this information at any time by using the *Get-AzureRmExpressRouteCircuit* cmdlet. Making the call with no parameters will list all circuits.
 
-## So ändern Sie eine ExpressRoute-Verbindung
+```
+Get-AzureRmExpressRouteCircuit
+```
 
-Sie können bestimmte Eigenschaften einer ExpressRoute-Verbindung ändern, ohne die Konnektivität zu beeinträchtigen. Weitere Informationen zu Beschränkungen und Grenzwerten finden Sie auf der Seite [ExpressRoute – Häufig gestellte Fragen](expressroute-faqs.md).
+The response will be similar to the following example:
 
-Folgende Einstellungen können Sie ändern, ohne Ausfallzeiten zu verursachen:
+```
+Name : ExpressRouteARMCircuit ResourceGroupName : ExpressRouteResourceGroup Location : westus Id : /subscriptions/***************************/resourceGroups/ExpressRouteResourceGroup/providers/Microsoft.Network/expressRouteCircuits/ExpressRouteARMCircuit Etag : W/"################################" ProvisioningState : Succeeded Sku : { "Name": "Standard\_MeteredData", "Tier": "Standard", "Family": "MeteredData" } CircuitProvisioningState : Enabled ServiceProviderProvisioningState : Provisioned ServiceProviderNotes : ServiceProviderProperties : { "ServiceProviderName": "Equinix", "PeeringLocation": "Silicon Valley", "BandwidthInMbps": 200 } ServiceKey : ************************************** Peerings :
+```
 
-- Aktivieren/Deaktivieren des ExpressRoute Premium-Add-Ons für Ihre ExpressRoute-Verbindung ohne Ausfallzeit.
-- Erhöhen der Bandbreite Ihrer ExpressRoute-Verbindung ohne Ausfallzeit
+You can get information on a specific ExpressRoute circuit by passing the resource group name and circuit name as a parameter to the call:
 
+```
+Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
+```
 
+The response will look similar to the following example:
 
-### Aktivieren des ExpressRoute Premium-Add-Ons
+```
+Name : ExpressRouteARMCircuit ResourceGroupName : ExpressRouteResourceGroup Location : westus Id : /subscriptions/***************************/resourceGroups/ExpressRouteResourceGroup/providers/Microsoft.Network/expressRouteCircuits/ExpressRouteARMCircuit Etag : W/"################################" ProvisioningState : Succeeded Sku : { "Name": "Standard\_MeteredData", "Tier": "Standard", "Family": "MeteredData" } CircuitProvisioningState : Enabled ServiceProviderProvisioningState : Provisioned ServiceProviderNotes : ServiceProviderProperties : { "ServiceProviderName": "Equinix", "PeeringLocation": "Silicon Valley", "BandwidthInMbps": 200 } ServiceKey : ************************************** Peerings :
+```
 
-Für Ihre bereits vorhandene Verbindung können Sie das ExpressRoute Premium-Add-On mit dem folgenden PowerShell-Codeausschnitt aktivieren:
+You can get detailed descriptions of all parameters by running the following:
 
-		$ckt = Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
+```
+get-help get-azurededicatedcircuit -detailed
+```
 
-		$ckt.Sku.Tier = "Premium"
-		$ckt.sku.Name = "Premium_MeteredData"
+## Modify an ExpressRoute circuit
 
-		Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit $ckt
-	
-		
-Für Ihre Verbindung sind nun die Features des ExpressRoute Premium-Add-Ons aktiviert. Beachten Sie, dass die Gebühren für das Premium-Add-On ab der erfolgreichen Ausführung des Befehls erhoben werden.
+You can modify certain properties of an ExpressRoute circuit without impacting connectivity.
 
-### Deaktivieren des ExpressRoute Premium-Add-Ons
+You can do the following, with no downtime:
 
-Sie können das ExpressRoute Premium-Add-On für Ihre vorhandene Verbindung deaktivieren. Beachten Sie beim Deaktivieren des ExpressRoute Premium-Add-Ons Folgendes:
+- Enable or disable an ExpressRoute premium add-on for your ExpressRoute circuit.
+- Increase the bandwidth of your ExpressRoute circuit.
 
-- Sie müssen sicherstellen, dass die Anzahl von virtuellen Netzwerken, die mit der Verbindung verknüpft sind, kleiner als zehn ist, bevor Sie ein Downgrade von Premium auf Standard durchführen. Wenn Sie dies nicht beachten, tritt für die Updateanforderung ein Fehler auf, und Ihnen werden die Premium-Gebühren berechnet.
-- Sie müssen die Verknüpfung für alle virtuellen Netzwerke in anderen geopolitischen Regionen aufheben. Wenn Sie dies nicht beachten, tritt für die Updateanforderung ein Fehler auf, und Ihnen werden die Premium-Gebühren berechnet.
-- Ihre Routentabelle muss für das private Peering weniger als 4.000 Routen aufweisen. Wenn Ihre Routentabelle mehr als 4.000 Routen umfasst, wird die BGP-Sitzung verworfen. Eine erneute Aktivierung ist dann erst wieder möglich, wenn die Anzahl der angekündigten Präfixe unter 4.000 fällt.
+For more information on limits and limitations, refer to the [ExpressRoute FAQ](expressroute-faqs.md) page.
 
-Verwenden Sie zum Deaktivieren des Premium-Add-Ons das unten stehende PowerShell-Cmdletbeispiel. Dieser Vorgang kann fehlschlagen, wenn Sie Ressourcen verwenden, die die zulässige Menge für die Standardverbindung überschreiten.
-	
-		$ckt = Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
-		
-		$ckt.Sku.Tier = "Standard"
-		$ckt.sku.Name = "Standard_MeteredData"
-		
-		Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit $ckt
+### Enable the ExpressRoute premium add-on
 
-### Aktualisieren der Bandbreite für die ExpressRoute-Verbindung
+You can enable the ExpressRoute premium add-on for your existing circuit by using the following PowerShell snippet:
 
-Informationen zu unterstützten Bandbreitenoptionen für Ihren Anbieter finden Sie auf der Seite [ExpressRoute – Häufig gestellte Fragen](expressroute-faqs.md). Sie können jede Größe auswählen, die **größer** ist als die vorhandene Verbindung, ohne Ausfallzeiten zu verursachen.
+```
+$ckt = Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
 
->[AZURE.IMPORTANT] Es ist nicht möglich, die Bandbreite einer ExpressRoute-Verbindung ohne Störungen zu reduzieren. Ein Downgrade der Bandbreite erfordert, dass Sie die Bereitstellung der ExpressRoute-Verbindung aufheben und dann eine neue ExpressRoute-Verbindung bereitstellen.
+$ckt.Sku.Name = "Premium" $ckt.sku.Name = "Premium\_MeteredData"
 
-Sobald Sie sich für die benötigte Größe entschieden haben, können Sie das folgende Beispiel verwenden, um die Größe der Verbindung anzupassen. Nachdem Sie die Cmdlets ausgeführt haben, wird die Größe Ihrer Verbindung auf der Microsoft-Seite sofort angepasst. Sie müssen sich an Ihren Konnektivitätsanbieter wenden, um die entsprechende Aktualisierung der Konfigurationen auf Anbieterseite vornehmen zu lassen. Beachten Sie, dass wir Ihnen ab diesem Zeitpunkt die aktualisierte Bandbreitenoption in Rechnung stellen.
+Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit $ckt
+```
 
-		$ckt = Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
+The circuit will now have the ExpressRoute premium add-on features enabled. Note that Microsoft will begin billing you for the premium add-on capability as soon as the command has successfully run.
 
-		$ckt.ServiceProviderProperties.BandwidthInMbps = 1000
+### Disable the ExpressRoute premium add-on
 
-		Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit $ckt
+You can disable the ExpressRoute premium add-on for the existing circuit by using the following PowerShell cmdlet:
 
-## So löschen Sie eine ExpressRoute-Verbindung und heben die Bereitstellung auf
+```
+$ckt = Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
 
-Sie können Ihre ExpressRoute-Verbindung löschen. Wenn Sie eine ExpressRoute-Verbindung löschen, beachten Sie Folgendes:
+$ckt.Sku.Tier = "Standard" $ckt.sku.Name = "Standard\_MeteredData"
 
-- Sie müssen die Verknüpfung aller virtuellen Netzwerke mit der ExpressRoute-Verbindung aufheben, damit dieser Vorgang erfolgreich durchgeführt werden kann. Überprüfen Sie, ob noch virtuelle Netzwerke mit der Verbindung verknüpft sind, falls dieser Vorgang nicht erfolgreich ist.
+Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit $ckt
+```
 
-- Wenn der Bereitstellungsstatus des Dienstanbieters für die ExpressRoute-Verbindung aktiviert ist, wechselt der Status von „enabled“ in *disabling*. Arbeiten Sie mit Ihrem Service Provider zusammen, um die Bereitstellung der Verbindung auf Anbieterseite aufzuheben. Wir reservieren weiterhin Ressourcen für Sie und stellen Ihnen dies in Rechnung, bis der Service Provider die Aufhebung der Verbindungsbereitstellung abgeschlossen hat und uns eine Benachrichtigung sendet.
+The premium add-on is now disabled for the circuit.
 
-- Wenn der Dienstanbieter die Bereitstellung der Verbindung aufgehoben hat (Bereitstellungsstatus des Dienstanbieters lautet *not provisioned*), bevor Sie das Cmdlet ausführen, heben wir die Verbindungsbereitstellung auf und stellen Ihnen keine Gebühren mehr in Rechnung.
+Note that this operation can fail if you are using resources greater than what is permitted for the standard circuit.
 
-Führen Sie zum Löschen Ihrer ExpressRoute-Verbindung das unten stehende PowerShell-Cmdlet aus.
+- Before you downgrade from premium to standard, you must ensure that the number of virtual networks linked to the circuit is less than 10. If you don't do so, your update request fails and Microsoft will bill you at premium rates.
+- You must unlink all virtual networks in other geopolitical regions. If you don't do so, your update request will fail and Microsoft will bill you at premium rates.
+- Your route table must be less than 4,000 routes for private peering. If your route table size is greater than 4,000 routes, the BGP session drops and won't be reenabled until the number of advertised prefixes goes below 4,000.
 
-		Remove-AzureRmExpressRouteCircuit -ResourceGroupName "ExpressRouteResourceGroup" -Name "ExpressRouteARMCircuit"
+### Update the ExpressRoute circuit bandwidth
+
+For supported bandwidth options for your provider, check the [ExpressRoute FAQ](expressroute-faqs.md) page. You can pick any size greater than the size of your existing circuit. After you decide what size you need, use the following command to resize your circuit:
+
+```
+$ckt = Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
+
+$ckt.ServiceProviderProperties.BandwidthInMbps = 1000
+
+Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit $ckt
+```
+
+Your circuit will be sized up on the Microsoft side. Then you must contact your connectivity provider to update configurations on their side to match this change. After you make this notification, Microsoft will begin billing you for the updated bandwidth option.
+
+**Important**: You cannot reduce the bandwidth of an ExpressRoute circuit without disruption. Downgrading bandwidth requires you to deprovision the ExpressRoute circuit and then reprovision a new ExpressRoute circuit.
+
+## Delete and deprovision an ExpressRoute circuit
+
+You can delete your ExpressRoute circuit by running the following command:
+
+```
+Remove-AzureRmExpressRouteCircuit -ResourceGroupName "ExpressRouteResourceGroup" -Name "ExpressRouteARMCircuit" ```
+
+Beachten Sie, dass Sie die Verknüpfung aller virtuellen Netzwerke für die ExpressRoute-Verbindung aufheben müssen, damit dieser Vorgang erfolgreich ist. Falls dieser Vorgang nicht erfolgreich ist, überprüfen Sie, ob noch virtuelle Netzwerke mit der Verbindung verknüpft sind.
+
+Wenn der Bereitstellungszustand des Dienstanbieters für die ExpressRoute-Verbindung „enabled“ lautet, wechselt der Status vom aktivierten Zustand in *disabling*. Arbeiten Sie mit Ihrem Service Provider zusammen, um die Bereitstellung der Verbindung auf Anbieterseite aufzuheben. Microsoft reserviert weiterhin Ressourcen für Sie und stellt Ihnen dies in Rechnung, bis der Dienstanbieter die Aufhebung der Verbindungsbereitstellung abgeschlossen hat und uns benachrichtigt.
+
+Wenn der Dienstanbieter die Bereitstellung der Verbindung aufgehoben hat (Bereitstellungszustand des Dienstanbieters lautet *not provisioned*), bevor Sie das obige Cmdlet ausführen, hebt Microsoft die Verbindungsbereitstellung auf und stellt Ihnen keine Gebühren mehr in Rechnung.
 
 ## Nächste Schritte
 
 Führen Sie nach dem Erstellen Ihrer Verbindung folgende Vorgänge aus:
 
-1.  [Erstellen und Ändern des Routings für Ihre ExpressRoute-Verbindung](expressroute-howto-routing-arm.md)
-2.  [Verknüpfen Ihres virtuelles Netzwerks mit Ihrer ExpressRoute-Verbindung](expressroute-howto-linkvnet-arm.md)
+- [Erstellen und Ändern des Routings für Ihre ExpressRoute-Verbindung](expressroute-howto-routing-arm.md)
+- [Verknüpfen Ihres virtuelles Netzwerks mit Ihrer ExpressRoute-Verbindung](expressroute-howto-linkvnet-arm.md)
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0302_2016-->

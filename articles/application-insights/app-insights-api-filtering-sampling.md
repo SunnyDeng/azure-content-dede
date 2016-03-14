@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="11/04/2015" 
+	ms.date="02/25/2016" 
 	ms.author="awills"/>
 
 # Stichprobenerstellung, Filterung und Vorverarbeitung von Telemetriedaten im Application Insights-SDK
@@ -24,8 +24,6 @@ Sie können Plug-Ins für das Application Insights SDK schreiben und konfigurier
 Derzeit sind diese Features für das ASP.NET-SDK verfügbar.
 
 * Durch das [Erstellen von Stichproben](#sampling) verringert sich der Umfang der Telemetriedaten, ohne Statistiken zu verfälschen. Zusammengehörige Datenpunkte werden dabei zusammengehalten, sodass Sie bei der Diagnose von Problemen zwischen diesen navigieren können. Im Portal wird die Gesamtanzahl multipliziert, um eine Kompensation der Stichproben zu erreichen.
- * Bei der Stichprobenerstellung mit festem Prozentsatz können Sie den Prozentsatz der übertragenen Ereignisse selbst bestimmen.
- * Bei der adaptiven Stichprobenerstellung (der Standardeinstellung für ASP.NET SDK ab Version 2.0.0-beta3) wird der Stichproben-Prozentsatz automatisch entsprechend dem Volumen an Telemetriedaten angepasst. Sie können ein Zielvolumen festlegen.
 * Durch das [Filtern](#filtering) können Sie Telemetriedaten im SDK auswählen oder ändern, bevor sie an den Server gesendet werden. Sie können beispielsweise den Umfang der Telemetriedaten verringern, indem Sie Anforderungen von Robots ausschließen. Dies stellt ein grundlegenderes Verfahren zur Senkung des Datenverkehrs dar als das Erstellen von Stichproben. Sie können so besser steuern, was übertragen wird. Jedoch müssen Sie beachten, dass dies Auswirkungen auf die Statistik hat – wenn Sie z. B. alle erfolgreichen Anforderungen herausfiltern.
 * Auch das [Hinzufügen von Eigenschaften](#add-properties) zu beliebigen von der App gesendeten Telemetriedaten, einschließlich Telemetriedaten von Standardmodulen, ist möglich. Sie könnten z. B. berechnete Werte hinzufügen oder Versionsnummern, nach denen Sie die Daten im Portal filtern.
 * Die [SDK-API](app-insights-api-custom-events-metrics.md) wird zum Senden benutzerdefinierter Ereignisse und Metriken verwendet.
@@ -42,10 +40,15 @@ Vorbereitung:
 
 Bei der [Erstellung von Stichproben](app-insights-sampling.md) handelt es sich um die empfohlene Methode zum Reduzieren des Datenverkehrs bei gleichzeitig präzisen Statistiken. Der Filter wählt verwandte Elemente, damit Sie zwischen den Elementen in der Diagnose navigieren können. Ereigniszähler werden im metrischen Explorer angepasst, um die gefilterten Elemente zu kompensieren.
 
-* Es wird die adaptive Stichprobenerstellung empfohlen. Bei dieser Methode wird der Stichproben-Prozentsatz automatisch angepasst, um ein bestimmtes Volumen an Anforderungen zu erreichen. Derzeit nur für serverseitige Telemetrie bei ASP.NET verfügbar.  
+* Es wird die adaptive Stichprobenerstellung empfohlen. Bei dieser Methode wird der Stichproben-Prozentsatz automatisch angepasst, um ein bestimmtes Volumen an Anforderungen zu erreichen. Derzeit nur für serverseitige Telemetrie bei ASP.NET verfügbar. 
 * Die [Stichprobenerstellung mit festem Prozentsatz](app-insights-sampling.md) steht ebenfalls zur Verfügung. Dabei geben Sie den Stichproben-Prozentsatz an. Verfügbar für ASP.NET-Web-App-Code und JavaScript-Webseiten. Client und Server synchronisieren ihre Stichprobenerstellung, sodass Sie in der Suche zwischen den verwandten Seitenaufrufen und Anforderungen navigieren können.
+* Die Erfassungs-Stichprobenerstellung wird ausgeführt, wenn die Telemetriedaten beim Application Insights-Portal empfangen werden, sodass sie unabhängig vom verwendeten SDK verwendet werden können. Damit wird zwar nicht der Telemetriedatenverkehr im Netzwerk reduziert, aber der Verarbeitungs- und der Speicheraufwand in Application Insights. Nur die beibehaltenen Telemetriedaten werden auf Ihr monatliches Kontingent angerechnet. 
 
-### So aktivieren Sie die Stichprobenerstellung
+### So aktivieren Sie die Erfassungs-Stichprobenerstellung
+
+Öffnen Sie auf der Leiste „Einstellungen“ das Blatt „Kontingente und Preise“. Klicken Sie auf „Sampling“, und wählen Sie ein Stichprobenverhältnis aus.
+
+### So aktivieren Sie die adaptive Stichprobenerstellung
 
 **Aktualisieren Sie die NuGet-Pakete Ihres Projekts** auf die neueste *Vorabversion* von Application Insights: Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, wählen Sie "NuGet-Pakete verwalten" aus, aktivieren Sie **Vorabversion einschließen**, und suchen Sie nach "Microsoft.ApplicationInsights.Web".
 
@@ -404,4 +407,4 @@ Sie können beliebig viele Initialisierer hinzufügen.
 
  
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0302_2016-->

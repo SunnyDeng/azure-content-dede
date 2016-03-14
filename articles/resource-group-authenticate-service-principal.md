@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Authentifizieren eines Dienstprinzipals mit dem Azure-Ressourcen-Manager"
-   description="Hierin wird beschrieben, wie einem Dienstprinzipal über rollenbasierte Zugriffskontrolle Zugriffsberechtigungen gewährt werden und wie der Dienstprinzipal authentifiziert wird. Hierin wird gezeigt, wie diese Aufgaben mit PowerShell und der Azure-Befehlszeilenschnittstelle ausgeführt werden."
+   pageTitle="Authentifizieren eines Dienstprinzipals mit Azure Resource Manager | Microsoft Azure"
+   description="Hierin wird beschrieben, wie einem Dienstprinzipal Zugriffsberechtigungen über die rollenbasierte Zugriffssteuerung gewährt werden und wie der Dienstprinzipal authentifiziert wird. Hierin wird gezeigt, wie diese Aufgaben mit PowerShell und der Azure-Befehlszeilenschnittstelle ausgeführt werden."
    services="azure-resource-manager"
    documentationCenter="na"
    authors="tfitzmac"
@@ -13,68 +13,55 @@
    ms.topic="article"
    ms.tgt_pltfrm="multiple"
    ms.workload="na"
-   ms.date="02/21/2016"
+   ms.date="02/29/2016"
    ms.author="tomfitz"/>
 
 # Authentifizieren eines Dienstprinzipals mit dem Azure-Ressourcen-Manager
 
-In diesem Thema erfahren Sie, wie Sie einem Dienstprinzipal (z. B. einem automatisierten Prozess, einer Anwendung oder einem Dienst) den Zugriff auf andere Ressourcen in Ihrem Abonnement gestatten. Mithilfe des Azure-Ressourcen-Managers können Sie die rollenbasierte Zugriffssteuerung verwenden, um einem Dienstprinzipal zulässige Aktionen zu gewähren und den Dienstprinzipal zu authentifizieren. In diesem Thema wird gezeigt, wie dem Dienstprinzipal mithilfe von PowerShell und der Azure-Befehlszeilenschnittstelle eine Rolle zugewiesen und wie der Dienstprinzipal authentifiziert wird.
+In diesem Thema erfahren Sie, wie Sie einem Dienstprinzipal (z. B. einem automatisierten Prozess, einer Anwendung oder einem Dienst) den Zugriff auf andere Ressourcen in Ihrem Abonnement gestatten. Mithilfe des Azure-Ressourcen-Managers können Sie die rollenbasierte Zugriffssteuerung verwenden, um einem Dienstprinzipal zulässige Aktionen zu gewähren und den Dienstprinzipal zu authentifizieren.
 
-Es wird ebenfalls erläutert, wie die Authentifizierung entweder mithilfe eines Benutzernamens und Kennworts oder mit einem Zertifikat erfolgt.
-
-Sie können entweder Azure PowerShell oder die Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows verwenden. Wenn Azure PowerShell noch nicht installiert ist, lesen Sie [Installieren und Konfigurieren von Azure PowerShell](./powershell-install-configure.md). Wenn noch keine Azure-Befehlszeilenschnittstelle installiert ist, lesen [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](xplat-cli-install.md). Informationen über die Verwendung des Portals zum Ausführen dieser Schritte finden Sie unter [Erstellen einer Active Directory-Anwendung und eines Dienstprinzipals mithilfe des Portals](resource-group-create-service-principal-portal.md)
+In diesem Thema erfahren Sie, wie Sie Azure PowerShell oder die Azure-Befehlszeilenschnittstelle (CLI) für Mac, Linux und Windows zum Erstellen einer Anwendung und eines Dienstprinzipals einsetzen. Außerdem erfahren Sie, wie Sie dem Dienstprinzipal eine Rolle zuweisen und sich als Dienstprinzipal authentifizieren. Wenn Azure PowerShell noch nicht installiert ist, lesen Sie [Installieren und Konfigurieren von Azure PowerShell](./powershell-install-configure.md). Wenn noch keine Azure-Befehlszeilenschnittstelle installiert ist, lesen [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](xplat-cli-install.md). Informationen über die Verwendung des Portals zum Ausführen dieser Schritte finden Sie unter [Erstellen einer Active Directory-Anwendung und eines Dienstprinzipals mithilfe des Portals](resource-group-create-service-principal-portal.md)
 
 ## Konzepte
-1. Azure Active Directory (AAD): Dies ist ein Clouddienst zur Identitäts- und Zugriffsverwaltung. Weitere Informationen finden Sie unter [Was ist Azure Active Directory?](active-directory/active-directory-whatis.md).
+1. Azure Active Directory: Ein Clouddienst zur Identitäts- und Zugriffsverwaltung. Weitere Informationen finden Sie unter [Was ist Azure Active Directory?](active-directory/active-directory-whatis.md).
 2. Dienstprinzipal: Eine Instanz einer Anwendung in einem Verzeichnis, für die auf andere Ressourcen zugegriffen werden muss.
-3. AD-Anwendung: Dies ist ein Verzeichnisdatensatz, von dem eine Anwendung bei AAD identifiziert wird.
+3. Active Directory-Anwendung: Verzeichnisdatensatz, mit dem eine Anwendung bei AAD identifiziert wird.
 
 Eine ausführlichere Erläuterung zu Anwendungen und Dienstprinzipalen finden Sie unter [Anwendungsobjekte und Dienstprinzipalobjekte](active-directory/active-directory-application-objects.md). Weitere Informationen zur Active Directory-Authentifizierung finden Sie unter [Authentifizierungsszenarien für Azure AD](active-directory/active-directory-authentication-scenarios.md).
 
-## Authentifizieren des Dienstprinzipals mit einem Kennwort – PowerShell
+In diesem Thema werden vier Pfade zum Erstellen einer Active Directory-Anwendung und Authentifizieren dieser Anwendung vorgestellt. Die Pfade basieren darauf, ob Sie ein Kennwort oder Zertifikat für die Authentifizierung nutzen möchten und ob Sie PowerShell oder die Azure-CLI bevorzugen. Dies sind die Pfade:
+
+- [Authentifizierung mit Kennwort – PowerShell](#authenticate-with-password---powershell)
+- [Authentifizierung mit Zertifikat – PowerShell](#authenticate-with-certificate---powershell)
+- [Authentifizierung mit Kennwort – Azure-CLI](#authenticate-with-password---azure-cli)
+- [Authentifizierung mit Zertifikat – Azure-CLI](#authenticate-with-certificate---azure-cli)
+
+## Authentifizierung mit Kennwort – PowerShell
 
 In diesem Abschnitt führen Sie folgende Schritte aus: Erstellen eines Dienstprinzipals für eine Azure Active Directory-Anwendung, Zuweisen einer Rolle zum Dienstprinzipal und Authentifizieren als Dienstprinzipal durch Bereitstellen des Anwendungsbezeichners und -kennworts.
-
-[AZURE.INCLUDE [powershell-preview-inline-include](../includes/powershell-preview-inline-include.md)]
 
 1. Melden Sie sich bei Ihrem Konto an.
 
         PS C:\> Login-AzureRmAccount
 
-1. Erstellen Sie eine neue AAD-Anwendung, indem Sie den Befehl **New-AzureRmADApplication** ausführen. Geben Sie einen Anzeigenamen für die Anwendung an, außerdem die URI zu einer Seite mit einer Beschreibung der Anwendung (der Link wird nicht geprüft), die URIs, von denen die Anwendung identifiziert wird, und das Kennwort für Ihre Anwendungsidentität.
+1. Erstellen Sie eine neue Active Directory-Anwendung, indem Sie den Befehl **New-AzureRmADApplication** ausführen. Geben Sie einen Anzeigenamen für die Anwendung an, außerdem die URI zu einer Seite mit einer Beschreibung der Anwendung (der Link wird nicht geprüft), die URIs, von denen die Anwendung identifiziert wird, und das Kennwort für Ihre Anwendungsidentität.
 
-        PS C:\> $azureAdApplication = New-AzureRmADApplication -DisplayName "<Your Application Display Name>" -HomePage "<https://YourApplicationHomePage>" -IdentifierUris "<https://YouApplicationUri>" -Password "<Your_Password>"
+        PS C:\> $azureAdApplication = New-AzureRmADApplication -DisplayName "exampleapp" -HomePage "https://www.contoso.org" -IdentifierUris "https://www.contoso.org/example" -Password "<Your_Password>"
 
-     Untersuchen Sie das neue Anwendungsobjekt. Die Eigenschaft **ApplicationId** wird benötigt, um Dienstprinzipale zu erstellen, Rollenzuweisungen vorzunehmen und JWT-Token abzurufen.
+     Untersuchen Sie das neue Anwendungsobjekt. Die **ApplicationId**-Eigenschaft wird benötigt, um Dienstprinzipale und Rollenzuweisungen zu erstellen und das Zugriffstoken abzurufen.
 
         PS C:\> $azureAdApplication
 
+        DisplayName             : exampleapp
         Type                    : Application
-        ApplicationId           : a41acfda-d588-47c9-8166-d659a335a865
-        ApplicationObjectId     : a26aaa48-bd52-4a7f-b29f-1bebf74c91e3
+        ApplicationId           : 8bc80782-a916-47c8-a47e-4d76ed755275
+        ApplicationObjectId     : c95e67a3-403c-40ac-9377-115fa48f8f39
         AvailableToOtherTenants : False
-        AppPermissions          : {{
-                            "claimValue": "user_impersonation",
-                            "description": "Allow the application to access <Your Application Display Name> on behalf of the signed-in user.",
-                            "directAccessGrantTypes": [],
-                            "displayName": "Access <Your Application Display Name>",
-                            "impersonationAccessGrantTypes": [
-                              {
-                                "impersonated": "User",
-                                "impersonator": "Application"
-                              }
-                            ],
-                            "isDisabled": false,
-                            "origin": "Application",
-                            "permissionId": "b866ef28-9abb-4698-8c8f-eb4328533831",
-                            "resourceScopeType": "Personal",
-                            "userConsentDescription": "Allow the application to access <Your Application Display Name> on your behalf.",
-                            "userConsentDisplayName": "Access <Your Application Display Name>",
-                            "lang": null
-                          }}
+        AppPermissions          : {}
+        IdentifierUris          : {https://www.contoso.org/example}
+        ReplyUrls               : {}
 
-
-2. Erstellen Sie einen Dienstprinzipal für Ihre Anwendung.
+2. Erstellen Sie einen Dienstprinzipal für Ihre Anwendung, indem Sie die Anwendungs-ID der Active Directory-Anwendung übergeben.
 
         PS C:\> New-AzureRmADServicePrincipal -ApplicationId $azureAdApplication.ApplicationId
 
@@ -84,23 +71,32 @@ In diesem Abschnitt führen Sie folgende Schritte aus: Erstellen eines Dienstpri
 
         PS C:\> New-AzureRmRoleAssignment -RoleDefinitionName Reader -ServicePrincipalName $azureAdApplication.ApplicationId
 
-4. Rufen Sie das Abonnement ab, in dem die Rollenzuweisung erstellt wurde. Dieses Abonnement wird später verwendet, um die **TenantId** des Mandanten abzurufen, in dem sich die Rollenzuweisung des Dienstprinzipals befindet.
+Sie haben eine Active Directory-Anwendung und einen Dienstprinzipal für diese Anwendung erstellt. Sie haben den Dienstprinzipal einer Rolle zugewiesen. Nun müssen Sie sich als Dienstprinzipal anmelden, um Aufgaben als Dienstprinzipal zu erledigen. In diesem Thema werden drei Optionen gezeigt:
 
-        PS C:\> $subscription = Get-AzureRmSubscription
+- [Manuelles Bereitstellen von Anmeldeinformationen über PowerShell](#manually-provide-credentials-through-powershell)
+- [Bereitstellen von Anmeldeinformationen über automatisiertes PowerShell-Skript](#provide-credentials-through-automated-powershell-script)
+- [Bereitstellen von Anmeldeinformationen über Code in einer Anwendung](#provide-credentials-through-code-in-an-application)
 
-     Wenn die Rollenzuweisung in einem anderen Abonnement als dem aktuell ausgewählten erstellt wurde, können Sie einen der Parameter **SubscriptoinId** oder **SubscriptionName** angeben, um ein anderes Abonnement abzurufen.
+<a id="manually-provide-credentials-through-powershell" />
+### Manuelles Bereitstellen von Anmeldeinformationen über PowerShell
 
-5. Um sich als Dienstprinzipal über PowerShell anzumelden, erstellen Sie ein neues **PSCredential**-Objekt, das Ihre Anmeldeinformationen enthält, indem Sie den Befehl **Get-Credential** ausführen.
+Sie können die Anmeldeinformationen für den Dienstprinzipal beim Ausführen bedarfsgesteuerter Skripts oder Befehle manuell bereitstellen.
+
+1. Erstellen Sie ein neues **PSCredential**-Objekt, das Ihre Anmeldeinformationen enthält, indem Sie den Befehl **Get-Credential** ausführen.
 
         PS C:\> $creds = Get-Credential
 
-     Sie werden zum Eingeben Ihrer Anmeldeinformationen aufgefordert.
+2. Sie werden zum Eingeben Ihrer Anmeldeinformationen aufgefordert. Verwenden Sie als Benutzernamen die **ApplicationId** oder die **IdentifierUris**, die Sie beim Erstellen der Anwendung verwendet haben. Verwenden Sie das Kennwort, das Sie beim Erstellen des Kontos angegeben haben.
 
-     ![][1]
+     ![Anmeldeinformationen eingeben][1]
 
-     Verwenden Sie als Benutzernamen die **ApplicationId** oder die **IdentifierUris**, die Sie beim Erstellen der Anwendung verwendet haben. Verwenden Sie das Kennwort, das Sie beim Erstellen des Kontos angegeben haben.
+3. Rufen Sie das Abonnement ab, in dem die Rollenzuweisung erstellt wurde. Dieses Abonnement wird verwendet, um die **TenantId** des Mandanten abzurufen, in dem sich die Rollenzuweisung des Dienstprinzipals befindet.
 
-     Verwenden Sie die Anmeldeinformationen, die Sie als Eingabe für das Cmdlet **Login-AzureRmAccount** verwendet haben, von welchem der Dienstprinzipal angemeldet wird:
+        PS C:\> $subscription = Get-AzureRmSubscription
+
+     Wenn die Rollenzuweisung in einem anderen Abonnement als dem aktuell ausgewählten erstellt wurde, können Sie den Parameter **SubscriptoinId** oder **SubscriptionName** angeben, um ein anderes Abonnement abzurufen.
+
+4. Melden Sie sich mithilfe des Cmdlets **Login-AzureRmAccount** als Dienstprinzipal ab. Stellen Sie jedoch das „credentials“-Objekt bereit, und geben Sie an, dass dieses Konto ein Dienstprinzipal ist.
 
         PS C:\> Login-AzureRmAccount -Credential $creds -ServicePrincipal -Tenant $subscription.TenantId
         Environment           : AzureCloud
@@ -109,28 +105,63 @@ In diesem Abschnitt führen Sie folgende Schritte aus: Erstellen eines Dienstpri
         Subscription          : {guid}
         CurrentStorageAccount :
 
-     Die Authentifizierung des Dienstprinzipals für die ADD-Anwendung, die Sie erstellt haben, ist hiermit abgeschlossen.
+Sie sind nun als Dienstprinzipal für die Active Directory-Anwendung authentifiziert, die Sie erstellt haben.
 
-6. Zur Authentifizierung aus einer Anwendung heraus fügen Sie folgenden .NET-Code ein. Nach dem Abrufen des Tokens können Sie auf Ressourcen im Abonnement zugreifen.
+<a id="provide-credentials-through-automated-powershell-script" />
+### Bereitstellen von Anmeldeinformationen über automatisiertes PowerShell-Skript
 
-        public static string GetAccessToken()
-        {
-          var authenticationContext = new AuthenticationContext("https://login.windows.net/{tenantId or tenant name}");  
-          var credential = new ClientCredential(clientId: "{application id}", clientSecret: "{application password}");
-          var result = authenticationContext.AcquireToken(resource: "https://management.core.windows.net/", clientCredential:credential);
+Dieser Abschnitt zeigt, wie Sie sich als Dienstprinzipal anmelden, ohne die Anmeldeinformationen manuell eingeben zu müssen. Sie müssen das Kennwort nicht manuell bereitstellen, da es aus einem Schlüsseltresor abgerufen wird.
 
-          if (result == null) {
-            throw new InvalidOperationException("Failed to obtain the JWT token");
-          }
+> [AZURE.NOTE] Das direkte Hinzufügen eines Kennworts zu Ihrem PowerShell-Skript ist nicht sicher, da das Kennwort als Text verfügbar gemacht wird. Verwenden Sie stattdessen einen Dienst wie Azure Key Vault zum Speichern des Kennworts, und rufen Sie es beim Ausführen des Skripts ab.
 
-          string token = result.AccessToken;
+Diese Schritte setzen voraus, dass Sie einen Schlüsseltresor mit einem geheimen Schlüssel eingerichtet haben, in dem das Kennwort gespeichert wird. Informationen zum Bereitstellen eines Schlüsseltresors und geheimen Schlüssels finden Sie unter [Key Vault-Vorlagenformat](). Allgemeine Informationen zu Key Vault finden Sie unter [Erste Schritte mit dem Azure-Schlüsseltresor](./key-vault/key-vault-get-started.md).
 
-          return token;
-        }
+1. Rufen Sie Ihr Kennwort (das im nachstehenden Beispiel als geheimer Schlüssel mit dem Namen **appPassword** gespeichert wurde) aus dem Schlüsseltresor ab.
+
+        PS C:\> $secret = Get-AzureKeyVaultSecret -VaultName examplevault -Name appPassword
+        
+2. Rufen Sie Ihre Active Directory-Anwendung ab. Beim Anmelden verwenden Sie die Anwendungs-ID.
+
+        PS C:\> $azureAdApplication = Get-AzureRmADApplication -IdentifierUri "https://www.contoso.org/example"
+
+3. Erstellen Sie ein neues **PSCredential**-Objekt, indem Sie die Anwendungs-ID und das Kennwort als Anmeldeinformationen bereitstellen.
+
+        PS C:\> $creds = New-Object System.Management.Automation.PSCredential ($azureAdApplication.ApplicationId, $secret.SecretValue)
+    
+4. Rufen Sie das Abonnement ab, in dem die Rollenzuweisung erstellt wurde. Dieses Abonnement wird später verwendet, um die **TenantId** des Mandanten abzurufen, in dem sich die Rollenzuweisung des Dienstprinzipals befindet.
+
+        PS C:\> $subscription = Get-AzureRmSubscription
+
+     Wenn die Rollenzuweisung in einem anderen Abonnement als dem aktuell ausgewählten erstellt wurde, können Sie den Parameter **SubscriptoinId** oder **SubscriptionName** angeben, um ein anderes Abonnement abzurufen.
+
+5. Melden Sie sich mithilfe des Cmdlets **Login-AzureRmAccount** als Dienstprinzipal ab. Stellen Sie jedoch das „credentials“-Objekt bereit, und geben Sie an, dass dieses Konto ein Dienstprinzipal ist.
+    
+        PS C:\> Login-AzureRmAccount -Credential $creds -ServicePrincipal -TenantId $subscription.TenantId
+
+Sie sind nun als Dienstprinzipal für die Active Directory-Anwendung authentifiziert, die Sie erstellt haben.
+
+<a id="provide-credentials-through-code-in-an-application" />
+### Bereitstellen von Anmeldeinformationen über Code in einer Anwendung
+
+Zur Authentifizierung aus einer .NET-Anwendung heraus fügen Sie folgenden Code ein. Sie benötigen die Anwendungs-ID für die Active Directory-Anwendung, das Kennwort und die Mandanten-ID des Abonnements. Nach Abruf des Zugriffstokens können Sie mit Ressourcen im Abonnement arbeiten.
+
+    public static string GetAccessToken()
+    {
+      var authenticationContext = new AuthenticationContext("https://login.windows.net/{tenantId or tenant name}");  
+      var credential = new ClientCredential(clientId: "{application id}", clientSecret: "{application password}");
+      var result = authenticationContext.AcquireToken(resource: "https://management.core.windows.net/", clientCredential:credential);
+
+      if (result == null) {
+        throw new InvalidOperationException("Failed to obtain the JWT token");
+      }
+
+      string token = result.AccessToken;
+
+      return token;
+    }
 
 
-
-## Authentifizieren des Dienstprinzipals mit einem Zertifikat – PowerShell
+## Authentifizierung mit Zertifikat – PowerShell
 
 In diesem Abschnitt führen Sie folgende Schritte aus: Erstellen eines Dienstprinzipals für eine Azure Active Directory-Anwendung, Zuweisen einer Rolle zum Dienstprinzipal und Authentifizieren als Dienstprinzipal durch Bereitstellen eines Zertifikats. In diesem Thema wird davon ausgegangen, dass ein Zertifikat für Sie ausgestellt wurde.
 
@@ -142,13 +173,14 @@ Zunächst müssen Sie einige Werte in PowerShell festlegen, die Sie später beim
 
         PS C:\> Login-AzureRmAccount
 
-1. Unabhängig davon, welches Verfahren Sie verwenden möchten, erstellen Sie ein X509Certificate-Objekt aus Ihrem Zertifikat, und rufen Sie den Schlüsselwert ab. Verwenden Sie den Pfad zu Ihrem Zertifikat und das Kennwort für das Zertifikat.
+1. Unabhängig davon, welches Verfahren Sie verwenden möchten, erstellen Sie ein „X509Certificate2“-Objekt anhand Ihres Zertifikats, und rufen Sie den Schlüsselwert ab. Verwenden Sie den Pfad zu Ihrem Zertifikat und das Kennwort für das Zertifikat.
 
-        $cert = New-Object -TypeName System.Security.Cryptography.X509Certificates.X509Certificate -ArgumentList @("C:\certificates\examplecert.pfx", "yourpassword")
+        $cert = New-Object -TypeName System.Security.Cryptography.X509Certificates.X509Certificate2 -ArgumentList @("C:\certificates\examplecert.pfx", "yourpassword")
         $keyValue = [System.Convert]::ToBase64String($cert.GetRawCertData())
 
-2. Wenn Sie Schlüsselanmeldeinformationen verwenden, erstellen Sie das Objekt für diese Informationen, und legen Sie den Wert für dieses Objekt auf den `$keyValue`-Wert aus dem vorherigen Schritt fest.
+2. Wenn Sie Schlüsselanmeldeinformationen verwenden, erstellen Sie das Objekt für diese Informationen, und legen Sie den Wert für dieses Objekt auf den `$keyValue`-Wert aus dem vorherigen Schritt fest. Das folgende Beispiel enthält einen Aufruf von `Add-Type` zum Hinzufügen eines Typs aus einer Assembly. Der in dem Beispiel gezeigte Pfad muss Ihrem Pfad ähnlich sein, darf sich aber geringfügig unterscheiden.
 
+        Add-Type -Path 'C:\Program Files (x86)\Microsoft SDKs\Azure\PowerShell\ResourceManager\AzureResourceManager\AzureRM.Resources\Microsoft.Azure.Commands.Resources.dll'
         $currentDate = Get-Date
         $endDate = $currentDate.AddYears(1)
         $keyId = [guid]::NewGuid()
@@ -162,42 +194,26 @@ Zunächst müssen Sie einige Werte in PowerShell festlegen, die Sie später beim
 
 3. Erstellen Sie eine Anwendung im Verzeichnis. Der erste Befehl zeigt die Verwendung der Schlüsselwerte.
 
-        $azureAdApplication = New-AzureRmADApplication -DisplayName "<Your Application Display Name>" -HomePage "<https://YourApplicationHomePage>" -IdentifierUris "<https://YouApplicationUri>" -KeyValue $keyValue -KeyType AsymmetricX509Cert       
+        $azureAdApplication = New-AzureRmADApplication -DisplayName "exampleapp" -HomePage "https://www.contoso.org" -IdentifierUris "https://www.contoso.org/example" -KeyValue $keyValue -KeyType AsymmetricX509Cert       
         
     Mit dem zweiten Beispiel können Sie Schlüsselanmeldeinformationen zuweisen.
 
-         $azureAdApplication = New-AzureRmADApplication -DisplayName "<Your Application Display Name>" -HomePage "<https://YourApplicationHomePage>" -IdentifierUris "<https://YouApplicationUri>" -KeyCredentials $keyCredential
+         $azureAdApplication = New-AzureRmADApplication -DisplayName "example" -HomePage "https://www.contoso.org" -IdentifierUris "https://www.contoso.org/example" -KeyCredentials $keyCredential
 
-    Untersuchen Sie das neue Anwendungsobjekt. Die Eigenschaft **ApplicationId** wird benötigt, um Dienstprinzipale zu erstellen, Rollenzuweisungen vorzunehmen und JWT-Token abzurufen.
+    Untersuchen Sie das neue Anwendungsobjekt. Die **ApplicationId**-Eigenschaft wird benötigt, um Dienstprinzipale und Rollenzuweisungen zu erstellen und Zugriffstoken abzurufen.
 
         PS C:\> $azureAdApplication
 
+        DisplayName             : exampleapp
         Type                    : Application
-        ApplicationId           : 76fa8d97-f07e-4b9a-b871-a57a7acd777a
-        ApplicationObjectId     : c36b7b57-a949-4401-b381-18a5210aff10
+        ApplicationId           : 1975a4fd-1528-4086-a992-787dbd23c46b
+        ApplicationObjectId     : 9665e5f3-84b7-4344-92e2-8cc20ad16a8b
         AvailableToOtherTenants : False
-        AppPermissions          : {{
-                            "claimValue": "user_impersonation",
-                            "description": "Allow the application to access <Your Application Display Name> on behalf of the signed-in
-                          user.",
-                            "directAccessGrantTypes": [],
-                            "displayName": "Access <Your Application Display Name>",
-                            "impersonationAccessGrantTypes": [
-                              {
-                                "impersonated": "User",
-                                "impersonator": "Application"
-                              }
-                            ],
-                            "isDisabled": false,
-                            "origin": "Application",
-                            "permissionId": "9f13c6c6-35ba-43d6-b8b3-6a87aa641388",
-                            "resourceScopeType": "Personal",
-                            "userConsentDescription": "Allow the application to access <Your Application Display Name> on your behalf.",
-                            "userConsentDisplayName": "Access <Your Application Display Name>",
-                            "lang": null
-                          }}
+        AppPermissions          : {}
+        IdentifierUris          : {https://www.contoso.org/example}
+        ReplyUrls               : {}       
 
-4. Erstellen Sie einen Dienstprinzipal für Ihre Anwendung.
+4. Erstellen Sie einen Dienstprinzipal für Ihre Anwendung, indem Sie die Anwendungs-ID der Active Directory-Anwendung übergeben.
 
         PS C:\> New-AzureRmADServicePrincipal -ApplicationId $azureAdApplication.ApplicationId
 
@@ -207,36 +223,68 @@ Zunächst müssen Sie einige Werte in PowerShell festlegen, die Sie später beim
 
         PS C:\> New-AzureRmRoleAssignment -RoleDefinitionName Reader -ServicePrincipalName $azureAdApplication.ApplicationId
 
-6. Zur Authentifizierung aus einer Anwendung heraus fügen Sie folgenden .NET-Code ein. Nach dem Abrufen des Clients können Sie auf Ressourcen im Abonnement zugreifen.
+Sie haben eine Active Directory-Anwendung und einen Dienstprinzipal für diese Anwendung erstellt. Sie haben den Dienstprinzipal einer Rolle zugewiesen. Nun müssen Sie sich als Dienstprinzipal anmelden, um Aufgaben als Dienstprinzipal zu erledigen. In diesem Thema werden zwei Optionen gezeigt:
 
-        string clientId = "<Application ID for your AAD app>"; 
-        var subscriptionId = "<Your Azure SubscriptionId>"; 
-        string tenant = "<Tenant id or tenant name>"; 
+- [Bereitstellen eines Zertifikats über automatisiertes PowerShell-Skript](#provide-certificate-through-automated-powershell-script)
+- [Bereitstellen eines Zertifikats über Code in einer Anwendung](#provide-certificate-through-code-in-an-application)
 
-        var authContext = new AuthenticationContext(string.Format("https://login.windows.net/{0}", tenant)); 
+<a id="provide-certificate-through-automated-powershell-script" />
+### Bereitstellen eines Zertifikats über automatisiertes PowerShell-Skript
 
-        X509Certificate2 cert = null; 
-        X509Store store = new X509Store(StoreName.My, StoreLocation.CurrentUser); 
-        string certName = "examplecert"; 
-        try 
-        { 
-            store.Open(OpenFlags.ReadOnly); 
-            var certCollection = store.Certificates; 
-            var certs = certCollection.Find(X509FindType.FindBySubjectName, certName, false); 
-            cert = certs[0]; 
-        } 
-        finally 
-        { 
-            store.Close(); 
-        }        
+1. Rufen Sie Ihre Active Directory-Anwendung ab. Beim Anmelden verwenden Sie die Anwendungs-ID.
 
-        var certCred = new ClientAssertionCertificate(clientId, cert); 
-        var token = authContext.AcquireToken("https://management.core.windows.net/", certCred); 
-        var creds = new TokenCloudCredentials(subscriptionId, token.AccessToken); 
-        var client = new ResourceManagementClient(creds); 
+        PS C:\> $azureAdApplication = Get-AzureRmADApplication -IdentifierUri "https://www.contoso.org/example"
+        
+2. Rufen Sie das Abonnement ab, in dem die Rollenzuweisung erstellt wurde. Dieses Abonnement wird später verwendet, um die **TenantId** des Mandanten abzurufen, in dem sich die Rollenzuweisung des Dienstprinzipals befindet.
+
+        PS C:\> $subscription = Get-AzureRmSubscription
+
+     Wenn die Rollenzuweisung in einem anderen Abonnement als dem aktuell ausgewählten erstellt wurde, können Sie den Parameter **SubscriptoinId** oder **SubscriptionName** angeben, um ein anderes Abonnement abzurufen.
+
+3. Rufen Sie das Zertifikat ab, das Sie für die Authentifizierung verwenden möchten.
+
+        PS C:\> $cert = New-Object -TypeName System.Security.Cryptography.X509Certificates.X509Certificate2 -ArgumentList @("C:\certificates\examplecert.pfx", "yourpassword")
+
+4. Geben Sie für die Authentifizierung in PowerShell den Zertifikatfingerabdruck, die Anwendungs-ID und die Mandanten-ID an.
+
+        PS C:\> Login-AzureRmAccount -CertificateThumbprint $cert.Thumbprint -ApplicationId $azureAdApplication.ApplicationId -ServicePrincipal -TenantId $subscription.TenantId
+
+Sie sind nun als Dienstprinzipal für die Active Directory-Anwendung authentifiziert, die Sie erstellt haben.
+
+<a id="provide-certificate-through-code-in-an-application" />
+### Bereitstellen eines Zertifikats über Code in einer Anwendung
+
+Zur Authentifizierung aus einer .NET-Anwendung heraus fügen Sie folgenden Code ein. Nach dem Abrufen des Clients können Sie auf Ressourcen im Abonnement zugreifen.
+
+    var clientId = "<Application ID for your AAD app>"; 
+    var subscriptionId = "<Your Azure SubscriptionId>"; 
+    var tenant = "<Tenant id or tenant name>"; 
+    var certName = "examplecert"; 
+
+    var authContext = new AuthenticationContext(string.Format("https://login.windows.net/{0}", tenant)); 
+
+    X509Certificate2 cert = null; 
+    X509Store store = new X509Store(StoreName.My, StoreLocation.CurrentUser); 
+    
+    try 
+    { 
+      store.Open(OpenFlags.ReadOnly); 
+      var certCollection = store.Certificates; 
+      var certs = certCollection.Find(X509FindType.FindBySubjectName, certName, false); 
+      cert = certs[0]; 
+    } 
+    finally 
+    { 
+      store.Close(); 
+    }        
+
+    var certCred = new ClientAssertionCertificate(clientId, cert); 
+    var token = authContext.AcquireToken("https://management.core.windows.net/", certCred); 
+    var creds = new TokenCloudCredentials(subscriptionId, token.AccessToken); 
+    var client = new ResourceManagementClient(creds); 
         
 
-## Authentifizieren des Dienstprinzipals mit einem Kennwort – Azure-Befehlszeilenschnittstelle
+## Authentifizierung mit Kennwort – Azure-CLI
 
 Zunächst wird ein Dienstprinzipal erstellt. Dazu muss im Verzeichnis eine Anwendung erstellt werden. Das Erstellen einer neuen Anwendung im Verzeichnis wird in diesem Abschnitt erläutert.
 
@@ -245,68 +293,223 @@ Zunächst wird ein Dienstprinzipal erstellt. Dazu muss im Verzeichnis eine Anwen
         azure config mode arm
         azure login
 
-2. Erstellen Sie eine neue AAD-Anwendung, indem Sie den Befehl **azure ad app create** ausführen. Geben Sie einen Anzeigenamen für die Anwendung an, außerdem die URI zu einer Seite mit einer Beschreibung der Anwendung (der Link wird nicht geprüft), die URIs, von denen die Anwendung identifiziert wird, und das Kennwort für Ihre Anwendungsidentität.
+2. Erstellen Sie eine neue Active Directory-Anwendung, indem Sie den Befehl **azure ad app create** ausführen. Geben Sie einen Anzeigenamen für die Anwendung an, außerdem die URI zu einer Seite mit einer Beschreibung der Anwendung (der Link wird nicht geprüft), die URIs, von denen die Anwendung identifiziert wird, und das Kennwort für Ihre Anwendungsidentität.
 
-        azure ad app create --name "<Your Application Display Name>" --home-page "<https://YourApplicationHomePage>" --identifier-uris "<https://YouApplicationUri>" --password <Your_Password>
+        azure ad app create --name "exampleapp" --home-page "https://www.contoso.org" --identifier-uris "https://www.contoso.org/example" --password <Your_Password>
         
-    Die Azure AD-Anwendung wird zurückgegeben. Die ApplicationId-Eigenschaft wird benötigt, um Dienstprinzipale und Rollenzuweisungen zu erstellen und JWT-Token abzurufen.
+    Die Active Directory-Anwendung wird zurückgegeben. Die „AppId“-Eigenschaft wird benötigt, um Dienstprinzipale und Rollenzuweisungen zu erstellen und Zugriffstoken abzurufen.
 
-        info:    Executing command ad app create
-        + Creating application exampleapp                                                
-        data:    Application Id:          b57dd71d-036c-4840-865e-23b71d8098ec
-        data:    Application Object Id:   d5c519e2-6149-447e-b323-88d2c4ea27de
-        data:    Application Permissions:  
-        data:                             claimValue:  user_impersonation
-        data:                             description:  Allow the application to access exampleapp on behalf of the signed-in user.
+        data:    AppId:          4fd39843-c338-417d-b549-a545f584a745
+        data:    ObjectId:       4f8ee977-216a-45c1-9fa3-d023089b2962
+        data:    DisplayName:    exampleapp
         ...
         info:    ad app create command OK
 
 3. Erstellen Sie einen Dienstprinzipal für Ihre Anwendung. Stellen Sie die Anwendungs-ID bereit, die im vorherigen Schritt zurückgegeben wurde.
 
-        azure ad sp create b57dd71d-036c-4840-865e-23b71d8098ec
+        azure ad sp create 4fd39843-c338-417d-b549-a545f584a745
         
     Der neue Dienstprinzipal wird zurückgegeben. Die Objekt-ID wird beim Gewähren von Berechtigungen benötigt.
     
         info:    Executing command ad sp create
-        + Creating service principal for application b57dd71d-036c-4840-865e-23b71d8098ec
-        data:    Object Id:               47193a0a-63e4-46bd-9bee-6a9f6f9c03cb
-        data:    Display Name:            exampleapp
-        ...
+        - Creating service principal for application 4fd39843-c338-417d-b549-a545f584a74+
+        data:    Object Id:        7dbc8265-51ed-4038-8e13-31948c7f4ce7
+        data:    Display Name:     exampleapp
+        data:    Service Principal Names:
+        data:                      4fd39843-c338-417d-b549-a545f584a745
+        data:                      https://www.contoso.org/example
         info:    ad sp create command OK
 
     Sie haben nun einen Dienstprinzipal im Verzeichnis erstellt. Dieser Dienstprinzipal verfügt jedoch noch nicht über Berechtigungen, und ihm wurde auch noch kein Bereich zugewiesen. Sie müssen dem Dienstprinzipal ausdrücklich die Berechtigungen zum Ausführen von Aktionen in einem bestimmten Bereich gewähren.
 
-4. Gewähren Sie dem Dienstprinzipal Berechtigungen für Ihr Abonnement. In diesem Beispiel wird dem Dienstprinzipal die Berechtigung zum Lesen aller Ressourcen im Abonnement gewährt. Geben Sie beim **ServicePrincipalName**-Parameter entweder die **ApplicationId** oder die **IdentifierUris** an, die Sie beim Erstellen der Anwendung verwendet haben. Weitere Informationen zur rollenbasierten Zugriffssteuerung finden Sie unter [Rollenbasierte Access Control in Azure](./active-directory/role-based-access-control-configure.md).
+4. Gewähren Sie dem Dienstprinzipal Berechtigungen für Ihr Abonnement. In diesem Beispiel wird dem Dienstprinzipal die Berechtigung zum Lesen aller Ressourcen im Abonnement gewährt. Weitere Informationen zur rollenbasierten Zugriffssteuerung finden Sie unter [Rollenbasierte Access Control in Azure](./active-directory/role-based-access-control-configure.md).
 
-        azure role assignment create --objectId 47193a0a-63e4-46bd-9bee-6a9f6f9c03cb -o Reader -c /subscriptions/{subscriptionId}/
+        azure role assignment create --objectId 7dbc8265-51ed-4038-8e13-31948c7f4ce7 -o Reader -c /subscriptions/{subscriptionId}/
 
-5. Ermitteln Sie die **TenantId** des Mandanten, der die Rollenzuweisung des Dienstprinzipals enthält, indem Sie die Konten auflisten und in der Ausgabe nach der Eigenschaft **TenantId** suchen.
+Sie haben eine Active Directory-Anwendung und einen Dienstprinzipal für diese Anwendung erstellt. Sie haben den Dienstprinzipal einer Rolle zugewiesen. Nun müssen Sie sich als Dienstprinzipal anmelden, um Aufgaben als Dienstprinzipal zu erledigen. In diesem Thema werden drei Optionen gezeigt:
 
-        azure account list --json
+- [Manuelles Bereitstellen von Anmeldeinformationen über Azure-CLI](#manually-provide-credentials-through-azure-cli)
+- [Bereitstellen von Anmeldeinformationen über automatisiertes Azure-CLI-Skript](#provide-credentials-through-automated-azure-cli-script)
+- [Bereitstellen von Anmeldeinformationen über Code in einer Anwendung](#provide-credentials-through-code-in-an-application-cli)
 
-6. Melden Sie sich an, und verwenden Sie dabei den Dienstprinzipal als Identität. Verwenden Sie als Benutzernamen die **ApplicationId**, die Sie beim Erstellen der Anwendung verwendet haben. Verwenden Sie das Kennwort, das Sie beim Erstellen des Kontos angegeben haben.
+<a id="manually-provide-credentials-through-Azure-cli" />
+### Manuelles Bereitstellen von Anmeldeinformationen über Azure-CLI
 
-        azure login -u "<ApplicationId>" -p "<password>" --service-principal --tenant "<TenantId>"
+Wenn Sie sich als Dienstprinzipal manuell anmelden möchten, können Sie den Befehl **azure login** ausführen. Sie müssen die Mandanten-ID, Anwendungs-ID und das Kennwort angeben. Das direkte Hinzufügen eines Kennworts zu einem Skript ist nicht sicher, da das Kennwort in der Datei gespeichert wird. Im nächsten Abschnitt wird eine bessere Möglichkeit für die Ausführung eines automatisierten Skripts vorgestellt.
 
-    Die Authentifizierung des Dienstprinzipals für die ADD-Anwendung, die Sie erstellt haben, ist hiermit abgeschlossen.
+1. Bestimmen Sie die **TenantId** des Abonnements, das den Dienstprinzipal enthält. Sie müssen die öffnenden und schließenden doppelten Anführungszeichen, die von der JSON-Ausgabe zurückgegeben werden, entfernen, ehe das Übergeben als Parameter erfolgt.
 
-## Authentifizieren des Dienstprinzipals mit einem Zertifikat – Azure CLI
+        tenantId=$(azure account show -s <subscriptionId> --json | jq '.[0].tenantId' | sed -e 's/^"//' -e 's/"$//')
+
+2. Verwenden Sie als Benutzernamen die **AppId**, die Sie beim Erstellen des Dienstprinzipals verwendet haben. Wenn Sie die Anwendungs-ID abrufen müssen, führen Sie den folgenden Befehl aus. Geben Sie den Namen der Active Directory-Anwendung im **search**-Parameter an.
+
+        appId=$(azure ad app show --search exampleapp --json | jq '.[0].appId' | sed -e 's/^"//' -e 's/"$//')
+
+3. Melden Sie sich als Dienstprinzipal an.
+
+        azure login -u "$appId" --service-principal --tenant "$tenantId"
+
+Geben Sie bei Aufforderung das Kennwort ein, das Sie beim Erstellen des Kontos angegeben haben.
+
+    info:    Executing command login
+    Password: ********
+
+Sie sind nun als Dienstprinzipal für die Active Directory-Anwendung authentifiziert, die Sie erstellt haben.
+
+<a id="provide-credentials-through-automated-azure-cli-script" />
+### Bereitstellen von Anmeldeinformationen über automatisiertes Azure-CLI-Skript
+
+Dieser Abschnitt zeigt, wie Sie sich als Dienstprinzipal anmelden, ohne die Anmeldeinformationen manuell eingeben zu müssen.
+
+> [AZURE.NOTE] Das direkte Hinzufügen eines Kennworts zu Ihrer Azure-CLI ist nicht sicher, da das Kennwort als Text verfügbar gemacht wird. Verwenden Sie stattdessen einen Dienst wie Azure Key Vault zum Speichern des Kennworts, und rufen Sie es beim Ausführen des Skripts ab.
+
+Diese Schritte setzen voraus, dass Sie einen Schlüsseltresor mit einem geheimen Schlüssel eingerichtet haben, in dem das Kennwort gespeichert wird. Informationen zum Bereitstellen eines Schlüsseltresors und geheimen Schlüssels finden Sie unter [Key Vault-Vorlagenformat](). Allgemeine Informationen zu Key Vault finden Sie unter [Erste Schritte mit dem Azure-Schlüsseltresor](./key-vault/key-vault-get-started.md).
+
+1. Rufen Sie Ihr Kennwort (das im nachstehenden Beispiel als geheimer Schlüssel mit dem Namen **appPassword** gespeichert wurde) aus dem Schlüsseltresor ab. Sie müssen die öffnenden und schließenden doppelten Anführungszeichen, die von der JSON-Ausgabe zurückgegeben werden, entfernen, ehe das Übergeben als Kennwortparameter erfolgt.
+
+        secret=$(azure keyvault secret show --vault-name examplevault --secret-name appPassword --json | jq '.value' | sed -e 's/^"//' -e 's/"$//')
+    
+2. Bestimmen Sie die **TenantId** des Abonnements, das den Dienstprinzipal enthält.
+
+        tenantId=$(azure account show -s <subscriptionId> --json | jq '.[0].tenantId' | sed -e 's/^"//' -e 's/"$//')
+
+3. Verwenden Sie als Benutzernamen die **AppId**, die Sie beim Erstellen des Dienstprinzipals verwendet haben. Wenn Sie die Anwendungs-ID abrufen müssen, führen Sie den folgenden Befehl aus. Geben Sie den Namen der Active Directory-Anwendung im **search**-Parameter an.
+
+        appId=$(azure ad app show --search exampleapp --json | jq '.[0].appId' | sed -e 's/^"//' -e 's/"$//')
+
+4. Melden Sie sich als Dienstprinzipal an, indem Sie die Anwendungs-ID, das Kennwort aus dem Schlüsseltresor und die Mandanten-ID angeben.
+
+        azure login -u "$appId" -p "$secret" --service-principal --tenant "$tenantId"
+    
+Sie sind nun als Dienstprinzipal für die Active Directory-Anwendung authentifiziert, die Sie erstellt haben.
+
+<a id="provide-credentials-through-code-in-an-application-cli" />
+### Bereitstellen von Anmeldeinformationen über Code in einer Anwendung
+
+Zur Authentifizierung aus einer .NET-Anwendung heraus fügen Sie folgenden Code ein. Sie benötigen die Anwendungs-ID für die Active Directory-Anwendung, das Kennwort und die Mandanten-ID des Abonnements. Nach Abruf des Zugriffstokens können Sie mit Ressourcen im Abonnement arbeiten.
+
+    public static string GetAccessToken()
+    {
+      var authenticationContext = new AuthenticationContext("https://login.windows.net/{tenantId or tenant name}");  
+      var credential = new ClientCredential(clientId: "{application id}", clientSecret: "{application password}");
+      var result = authenticationContext.AcquireToken(resource: "https://management.core.windows.net/", clientCredential:credential);
+
+      if (result == null) {
+        throw new InvalidOperationException("Failed to obtain the JWT token");
+      }
+
+      string token = result.AccessToken;
+
+      return token;
+    }
+
+## Authentifizierung mit Zertifikat – Azure-CLI
 
 In diesem Abschnitt führen Sie die Schritte zum Erstellen eines Dienstprinzipals für eine Azure Active Directory-Anwendung aus, die ein Zertifikat zur Authentifizierung verwendet. In diesem Thema wird davon ausgegangen, dass ein Zertifikat für Sie ausgestellt wurde und dass Sie [OpenSSL](http://www.openssl.org/) installiert haben.
 
 1. Erstellen Sie eine **PEM**-Datei mit:
 
-        openssl.exe pkcs12 -in examplecert.pfx -out examplecert.pem -nodes
+        openssl pkcs12 -in C:\certificates\examplecert.pfx -out C:\certificates\examplecert.pem -nodes
 
-2. Öffnen Sie die **PEM** Datei, und kopieren Sie die Zertifikatdaten.
+2. Öffnen Sie die **PEM** Datei, und kopieren Sie die Zertifikatdaten. Suchen Sie die lange Zeichenfolge zwischen **-----BEGIN CERTIFICATE-----** und **-----END CERTIFICATE-----**.
 
-3. Erstellen Sie eine neue AAD-Anwendung durch Ausführen des Befehls **azure ad app create**, und geben Sie die Zertifikatdaten, die Sie im vorherigen Schritt kopiert haben, als Schlüsselwert an.
+3. Erstellen Sie eine neue Active Directory-Anwendung durch Ausführen des Befehls **azure ad app create**, und geben Sie die Zertifikatdaten, die Sie im vorherigen Schritt kopiert haben, als Schlüsselwert an.
 
-        azure ad app create -n "<your application name>" --home-page "<https://YourApplicationHomePage>" -i "<https://YouApplicationUri>" --key-value <certificate data>
+        azure ad app create -n "exampleapp" --home-page "https://www.contoso.org" -i "https://www.contoso.org/example" --key-value <certificate data>
+
+    Die Active Directory-Anwendung wird zurückgegeben. Die „AppId“-Eigenschaft wird benötigt, um Dienstprinzipale und Rollenzuweisungen zu erstellen und Zugriffstoken abzurufen.
+
+        data:    AppId:          4fd39843-c338-417d-b549-a545f584a745
+        data:    ObjectId:       4f8ee977-216a-45c1-9fa3-d023089b2962
+        data:    DisplayName:    exampleapp
+        ...
+        info:    ad app create command OK
+
+4. Erstellen Sie einen Dienstprinzipal für Ihre Anwendung. Stellen Sie die Anwendungs-ID bereit, die im vorherigen Schritt zurückgegeben wurde.
+
+        azure ad sp create 4fd39843-c338-417d-b549-a545f584a745
+        
+    Der neue Dienstprinzipal wird zurückgegeben. Die Objekt-ID wird beim Gewähren von Berechtigungen benötigt.
+    
+        info:    Executing command ad sp create
+        - Creating service principal for application 4fd39843-c338-417d-b549-a545f584a74+
+        data:    Object Id:        7dbc8265-51ed-4038-8e13-31948c7f4ce7
+        data:    Display Name:     exampleapp
+        data:    Service Principal Names:
+        data:                      4fd39843-c338-417d-b549-a545f584a745
+        data:                      https://www.contoso.org/example
+        info:    ad sp create command OK
+        
+5. Gewähren Sie dem Dienstprinzipal Berechtigungen für Ihr Abonnement. In diesem Beispiel wird dem Dienstprinzipal die Berechtigung zum Lesen aller Ressourcen im Abonnement gewährt. Weitere Informationen zur rollenbasierten Zugriffssteuerung finden Sie unter [Rollenbasierte Access Control in Azure](./active-directory/role-based-access-control-configure.md).
+
+        azure role assignment create --objectId 7dbc8265-51ed-4038-8e13-31948c7f4ce7 -o Reader -c /subscriptions/{subscriptionId}/
+
+Sie haben eine Active Directory-Anwendung und einen Dienstprinzipal für diese Anwendung erstellt. Sie haben den Dienstprinzipal einer Rolle zugewiesen. Nun müssen Sie sich als Dienstprinzipal anmelden, um Aufgaben als Dienstprinzipal zu erledigen. In diesem Thema werden zwei Optionen gezeigt:
+
+- [Bereitstellen eines Zertifikats über automatisiertes Azure-CLI-Skript](#provide-certificate-through-automated-azure-cli-script)
+- [Bereitstellen eines Zertifikats über Code in einer Anwendung](#provide-certificate-through-code-in-an-application-cli)
+
+<a id="provide-certificate-through-automated-azure-cli-script" />
+### Bereitstellen eines Zertifikats über automatisiertes Azure-CLI-Skript
+
+1. Sie müssen den Zertifikatfingerabdruck abrufen und nicht benötigte Zeichen entfernen.
+
+        cert=$(openssl x509 -in "C:\certificates\examplecert.pem" -fingerprint -noout | sed 's/SHA1 Fingerprint=//g'  | sed 's/://g')
+    
+     Ein Fingerabdruck wie der folgende wird zurückgegeben:
+
+        30996D9CE48A0B6E0CD49DBB9A48059BF9355851
+
+2. Bestimmen Sie die **TenantId** des Abonnements, das den Dienstprinzipal enthält.
+
+        tenantId=$(azure account show -s <subscriptionId> --json | jq '.[0].tenantId' | sed -e 's/^"//' -e 's/"$//')
+
+3. Verwenden Sie als Benutzernamen die **AppId**, die Sie beim Erstellen des Dienstprinzipals verwendet haben. Wenn Sie die Anwendungs-ID abrufen müssen, führen Sie den folgenden Befehl aus. Geben Sie den Namen der Active Directory-Anwendung im **search**-Parameter an.
+
+        appId=$(azure ad app show --search exampleapp --json | jq '.[0].appId' | sed -e 's/^"//' -e 's/"$//')
+
+4. Geben Sie für die Authentifizierung mit Azure-CLI den Zertifikatfingerabdruck, die Zertifikatdatei, Anwendungs-ID und Mandanten-ID an.
+
+        azure login --service-principal --tenant "$tenantId" -u "$appId" --certificate-file C:\certificates\examplecert.pem --thumbprint "$cert"
+
+Sie sind nun als Dienstprinzipal für die Active Directory-Anwendung authentifiziert, die Sie erstellt haben.
+
+<a id="provide-certificate-through-code-in-an-application-cli" />
+### Bereitstellen eines Zertifikats über Code in einer Anwendung
+
+Zur Authentifizierung aus einer .NET-Anwendung heraus fügen Sie folgenden Code ein. Nach dem Abrufen des Clients können Sie auf Ressourcen im Abonnement zugreifen.
+
+    var clientId = "<Application ID for your AAD app>"; 
+    var subscriptionId = "<Your Azure SubscriptionId>"; 
+    var tenant = "<Tenant id or tenant name>"; 
+    var certName = "examplecert"; 
+
+    var authContext = new AuthenticationContext(string.Format("https://login.windows.net/{0}", tenant)); 
+
+    X509Certificate2 cert = null; 
+    X509Store store = new X509Store(StoreName.My, StoreLocation.CurrentUser); 
+    
+    try 
+    { 
+      store.Open(OpenFlags.ReadOnly); 
+      var certCollection = store.Certificates; 
+      var certs = certCollection.Find(X509FindType.FindBySubjectName, certName, false); 
+      cert = certs[0]; 
+    } 
+    finally 
+    { 
+      store.Close(); 
+    }        
+
+    var certCred = new ClientAssertionCertificate(clientId, cert); 
+    var token = authContext.AcquireToken("https://management.core.windows.net/", certCred); 
+    var creds = new TokenCloudCredentials(subscriptionId, token.AccessToken); 
+    var client = new ResourceManagementClient(creds); 
+       
+Weitere Informationen zur Verwendung von Zertifikaten und Azure-CLI finden Sie unter [Certificate-based auth with Azure Service Principals from Linux command line](http://blogs.msdn.com/b/arsen/archive/2015/09/18/certificate-based-auth-with-azure-service-principals-from-linux-command-line.aspx) (Zertifikatbasierte Authentifizierung mit Azure-Dienstprinzipalen über Linux-Befehlszeile).
 
 ## Nächste Schritte
   
-- Einen Überblick über die rollenbasierte Zugriffssteuerung finden Sie unter [Rollenbasierte Access Control in Azure](./active-directory/role-based-access-control-configure.md).  
 - Informationen zum Verwenden des Portals mit Dienstprinzipalen finden Sie unter [Erstellen eines neuen Azure-Dienstprinzipals mit dem Azure-Portal](./resource-group-create-service-principal-portal.md).  
 - Anleitungen für die Implementierung von Sicherheitseinstellungen mit dem Azure-Ressourcen-Manager finden Sie unter [Sicherheitsaspekte für Azure-Ressourcen-Manager](best-practices-resource-manager-security.md).
 
@@ -314,4 +517,4 @@ In diesem Abschnitt führen Sie die Schritte zum Erstellen eines Dienstprinzipal
 <!-- Images. -->
 [1]: ./media/resource-group-authenticate-service-principal/arm-get-credential.png
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

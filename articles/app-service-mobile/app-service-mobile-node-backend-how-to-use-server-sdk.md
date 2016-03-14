@@ -29,7 +29,7 @@ Mobile Azure App Service-Apps verfügen über eine Funktion zum Hinzufügen eine
 - Tabellenvorgänge (Lesen, Einfügen, Aktualisieren, Löschen) für den Datenzugriff
 - Vorgänge der benutzerdefinierten API
 
-Beide Vorgänge ermöglichen die Authentifizierung über alle Identitätsanbieter hinweg, die vom Azure App Service zugelassen werden, z. B. Identitätsanbieter per sozialem Netzwerk, wie Facebook, Twitter, Google und Microsoft, oder Azure Active Directory für die Unternehmensidentität.
+Beide Vorgänge ermöglichen die Authentifizierung über alle Identitätsanbieter hinweg, die vom Azure App Service zugelassen werden, z. B. Identitätsanbieter per sozialem Netzwerk, wie Facebook, Twitter, Google und Microsoft, oder Azure Active Directory für die Unternehmensidentität.
 
 Beispiele für die einzelnen Anwendungsfälle finden Sie im [Verzeichnis mit den Beispielen auf GitHub].
 
@@ -74,6 +74,7 @@ Jedes Node.js-Back-End von Azure Mobile App Service-Apps verhält sich am Anfang
 Mit dieser Anwendung wird eine einfache, für Mobilgeräte optimierte WebAPI mit einem einzelnen Endpunkt (`/tables/TodoItem`) erstellt. Hiermit ist der authentifizierungsfreie Zugriff auf einen zugrunde liegenden SQL-Datenspeicher mit einem dynamischen Schema möglich. Mit der Anwendung können Sie die Schnellstarts der Clientbibliothek verfolgen:
 
 - [Android-Client-Schnellstart]
+- [Apache Cordova-Client-Schnellstart]
 - [iOS-Client-Schnellstart]
 - [Windows Store-Client-Schnellstart]
 - [Xamarin.iOS-Client-Schnellstart]
@@ -83,25 +84,25 @@ Mit dieser Anwendung wird eine einfache, für Mobilgeräte optimierte WebAPI mit
 
 Den Code für diese einfache Anwendung finden Sie im [basicapp-Beispiel auf GitHub].
 
-### <a name="howto-vs2015-basicapp"></a>Vorgehensweise: Erstellen eines Node.js-Back-Ends mit Visual Studio 2015
+### <a name="howto-vs2015-basicapp"></a>Vorgehensweise: Erstellen eines Node.js-Back-Ends mit Visual Studio 2015
 
-Für Visual Studio 2015 ist eine Erweiterung zum Entwickeln der Node.js-Anwendung in der IDE erforderlich. Laden Sie die [Node.js-Tools 1.1 für Visual Studio] herunter, und installieren Sie sie, um zu beginnen. Erstellen Sie eine Express 4.x-Anwendung, nachdem die Installation der Node.js-Tools für Visual Studio abgeschlossen ist:
+Für Visual Studio 2015 ist eine Erweiterung zum Entwickeln der Node.js-Anwendung in der IDE erforderlich. Laden Sie die [Node.js-Tools 1.1 für Visual Studio] herunter, und installieren Sie sie, um zu beginnen. Erstellen Sie eine Express 4.x-Anwendung, nachdem die Installation der Node.js-Tools für Visual Studio abgeschlossen ist:
 
 1. Öffnen Sie das Dialogfeld **Neues Projekt** (über **Datei** > **Neu** > **Projekt...**).
 
 2. Erweitern Sie **Vorlagen** > **JavaScript** > **Node.js**.
 
-3. Wählen Sie die **einfache Azure Node.js Express 4-Anwendung aus**.
+3. Wählen Sie die **einfache Azure Node.js Express 4-Anwendung aus**.
 
 4. Geben Sie den Projektnamen ein. Klicken Sie auf *OK*.
 
-	![Visual Studio 2015 – Neues Projekt][1]
+	![Visual Studio 2015 – Neues Projekt][1]
 
 5. Klicken Sie mit der rechten Maustaste auf den Knoten **npm**, und wählen Sie **Neue NPM-Pakete installieren...** aus.
 
 6. Bei der Erstellung der ersten Node.js-Anwendung müssen Sie den NPM-Katalog möglicherweise aktualisieren. Falls dies erforderlich ist, werden Sie dazu aufgefordert. Klicken Sie auf **Aktualisieren**.
 
-7. Geben Sie in das Suchfeld _azure-mobile-apps_ ein. Klicken Sie auf das Paket **azure-mobile-apps 2.0.0** und dann auf **Paket installieren**.
+7. Geben Sie in das Suchfeld _azure-mobile-apps_ ein. Klicken Sie auf das Paket **azure-mobile-apps 2.0.0** und dann auf **Paket installieren**.
 
 	![Neue NPM-Pakete installieren][2]
 
@@ -252,9 +253,9 @@ Das Node.js SDK für Azure Mobile Apps verwendet das [mssql-Node.js-Paket], um e
 
 > [AZURE.TIP] Beim memory-Treiber wird keine vollständige Gruppe von Elementen für Testzwecke bereitgestellt. Wenn Sie Ihr Back-End lokal testen möchten, empfehlen wir die Verwendung eines SQL Express-Datenspeichers und des mssql-Treibers.
 
-1. Laden Sie [Microsoft SQL Server 2014 Express] herunter, und installieren Sie die Anwendung. Stellen Sie sicher, dass Sie die Edition „SQL Server 2014 Express with Tools“ installieren. Falls Sie nicht unbedingt 64-Bit-Unterstützung benötigen, können Sie die 32-Bit-Version verwenden, für die bei der Ausführung weniger Arbeitsspeicher verbraucht wird.
+1. Laden Sie [Microsoft SQL Server 2014 Express] herunter, und installieren Sie die Anwendung. Stellen Sie sicher, dass Sie die Edition „SQL Server 2014 Express with Tools“ installieren. Falls Sie nicht unbedingt 64-Bit-Unterstützung benötigen, können Sie die 32-Bit-Version verwenden, für die bei der Ausführung weniger Arbeitsspeicher verbraucht wird.
 
-2. Führen Sie den SQL Server 2014-Konfigurations-Manager aus.
+2. Führen Sie den SQL Server 2014-Konfigurations-Manager aus.
 
   1. Erweitern Sie links im Strukturmenü den Knoten **SQL Server-Netzwerkkonfiguration**.
   2. Klicken Sie auf **Protokolle für SQLEXPRESS**.
@@ -267,9 +268,9 @@ Das Node.js SDK für Azure Mobile Apps verwendet das [mssql-Node.js-Paket], um e
   7. Klicken Sie auf **OK**. Klicken Sie im Popupdialogfenster auf **OK**.
   8. Klicken Sie im linken Strukturmenü auf **SQL Server-Dienste**.
   9. Klicken Sie mit der rechten Maustaste auf **SQL Server (SQLEXPRESS)**, und wählen Sie **Neu starten** aus.
-  10. Schließen Sie den SQL Server 2014-Konfigurations-Manager.
+  10. Schließen Sie den SQL Server 2014-Konfigurations-Manager.
 
-3. Ausführen von SQL Server 2014 Management Studio und Herstellen einer Verbindung mit Ihrer lokalen SQL Express-Instanz
+3. Ausführen von SQL Server 2014 Management Studio und Herstellen einer Verbindung mit Ihrer lokalen SQL Express-Instanz
 
   1. Klicken Sie mit der rechten Maustaste im Objekt-Explorer auf Ihre Instanz, und wählen Sie **Eigenschaften** aus.
   2. Wählen Sie die Seite **Sicherheit** aus.
@@ -289,7 +290,7 @@ Das Node.js SDK für Azure Mobile Apps verwendet das [mssql-Node.js-Paket], um e
   10. Wählen Sie die Seite **Serverrollen** aus.
   11. Aktivieren Sie das Kontrollkästchen neben der Serverrolle **dbcreator**.
   12. Klicken Sie auf **OK**.
-  13. Schließen Sie SQL Server 2015 Management Studio.
+  13. Schließen Sie SQL Server 2015 Management Studio.
 
 Notieren Sie sich den gewählten Benutzernamen und das gewählte Kennwort. Unter Umständen müssen Sie je nach Ihren speziellen Datenbankanforderungen weitere Serverrollen oder Berechtigungen zuweisen.
 
@@ -366,7 +367,7 @@ Das Verwenden von Azure SQL-Datenbank als Datenspeicher ist über alle Azure App
 
 3. Geben Sie im Feld **Ressourcengruppe** den gleichen Namen wie für Ihre App ein.
 
-4. Es wird der App Service-Tarif "Standard" ausgewählt. Wenn Sie Ihren App Service-Tarif ändern möchten, klicken Sie dazu auf App Services-Plan > **+ Neu erstellen**. Geben Sie einen Namen für den neuen App Service-Tarif ein, und wählen Sie einen geeigneten Speicherort. Klicken Sie auf den Tarif, und wählen Sie einen geeigneten Tarif für den Dienst. Wählen Sie **Alle anzeigen** aus, um mehr Tarifoptionen anzuzeigen, z. B. **Free** und **Shared**. Nachdem Sie den Tarif ausgewählt haben, klicken Sie auf die Schaltfläche **Auswählen**. Klicken Sie wieder auf dem Blatt **App Service-Plan** auf **OK**.
+4. Es wird der App Service-Tarif "Standard" ausgewählt. Wenn Sie Ihren App Service-Tarif ändern möchten, klicken Sie dazu auf App Services-Plan > **+ Neu erstellen**. Geben Sie einen Namen für den neuen App Service-Tarif ein, und wählen Sie einen geeigneten Speicherort. Klicken Sie auf den Tarif, und wählen Sie einen geeigneten Tarif für den Dienst. Wählen Sie **Alle anzeigen** aus, um mehr Tarifoptionen anzuzeigen, z. B. **Free** und **Shared**. Nachdem Sie den Tarif ausgewählt haben, klicken Sie auf die Schaltfläche **Auswählen**. Klicken Sie wieder auf dem Blatt **App Service-Plan** auf **OK**.
 
 5. Klicken Sie auf **Erstellen**. Damit erstellen Sie ein mobiles App-Back-End, auf dem Sie später das Serverprojekt bereitstellen. Das Bereitstellen eines mobilen App-Back-Ends kann einige Minuten in Anspruch nehmen. Nachdem das mobile App-Back-End bereitgestellt wurde, wird im Portal das Blatt **Einstellungen** für das mobile App-Back-End geöffnet.
 
@@ -429,6 +430,67 @@ Die „access“-Eigenschaft kann einen von drei Werten haben:
   - *disabled* gibt an, dass die Tabelle derzeit deaktiviert ist.
 
 Wenn die access-Eigenschaft nicht definiert ist, ist der Zugriff ohne Authentifizierung zulässig.
+
+### <a name="howto-tables-getidentity"></a>Gewusst wie: Verwenden von Authentifizierungsansprüchen für Tabellen
+
+Sie können eine Reihe von Ansprüchen einrichten, die beim Einrichten der Authentifizierung angefordert werden. Diese Ansprüche stehen normalerweise nicht über das `context.user`-Objekt zur Verfügung. Mit der `context.user.getIdentity()`-Methode können sie jedoch abgerufen werden. Die `getIdentity()`-Methode gibt eine Zusage zurück, die auf ein Objekt aufgelöst wird. Das Objekt wird durch die Authentifizierungsmethode („facebook“, „google“, „twitter“, „microsoftaccount“ oder „aad“) ermittelt.
+
+Wenn beispielsweise die Microsoft Account-Authentifizierung eingerichtet wird und der Anspruch „E-Mail-Adressen“ angefordert wird, lässt sich die E-Mail-Adresse wie folgt dem Datensatz hinzufügen:
+
+    var azureMobileApps = require('azure-mobile-apps');
+
+    // Create a new table definition
+    var table = azureMobileApps.table();
+
+    table.columns = {
+        "emailAddress": "string",
+        "text": "string",
+        "complete": "boolean"
+    };
+    table.dynamicSchema = false;
+    table.access = 'authenticated';
+
+    /**
+    * Limit the context query to those records with the authenticated user email address
+    * @param {Context} context the operation context
+    * @returns {Promise} context execution Promise
+    */
+    function queryContextForEmail(context) {
+        return context.user.getIdentity().then((data) => {
+            context.query.where({ emailAddress: data.microsoftaccount.claims.emailaddress });
+            return context.execute();
+        });
+    }
+
+    /**
+    * Adds the email address from the claims to the context item - used for
+    * insert operations
+    * @param {Context} context the operation context
+    * @returns {Promise} context execution Promise
+    */
+    function addEmailToContext(context) {
+        return context.user.getIdentity().then((data) => {
+            context.item.emailAddress = data.microsoftaccount.claims.emailaddress;
+            return context.execute();
+        });
+    }
+
+    // Configure specific code when the client does a request
+    // READ - only return records belonging to the authenticated user
+    table.read(queryContextForEmail);
+
+    // CREATE - add or overwrite the userId based on the authenticated user
+    table.insert(addEmailToContext);
+
+    // UPDATE - only allow updating of record belong to the authenticated user
+    table.update(queryContextForEmail);
+
+    // DELETE - only allow deletion of records belong to the authenticated uer
+    table.delete(queryContextForEmail);
+
+    module.exports = table;
+
+Um zu sehen, welche Ansprüche verfügbar sind, verwenden Sie einen Webbrowser zum Anzeigen des `/.auth/me`-Endpunkts der Website.
 
 ### <a name="howto-tables-disabled"></a>Vorgehensweise: Deaktivieren des Zugriffs auf bestimmte Tabellenvorgänge
 
@@ -549,7 +611,7 @@ Wir empfehlen, die initialize()-Methode explizit aufzurufen, um die Tabelle zu e
 
 ### <a name="Swagger"></a>Aktivieren der Swagger-Unterstützung
 
-[Swagger]-Unterstützung ist in Mobile App Service-Apps von Azure bereits integriert. Um die Swagger-Unterstützung zu aktivieren, installieren Sie zuerst die Swagger-Benutzeroberfläche als Abhängigkeit:
+[Swagger]-Unterstützung ist in Azure Mobile App Service-Apps bereits integriert. Um die Swagger-Unterstützung zu aktivieren, installieren Sie zuerst die Swagger-Benutzeroberfläche als Abhängigkeit:
 
     npm install --save swagger-ui
 
@@ -561,7 +623,7 @@ Die Swagger-Unterstützung soll wahrscheinlich nur in Entwicklungseditionen akti
 
     var mobile = azureMobileApps({ swagger: process.env.NODE_ENV !== 'production' });
 
-Der Swagger-Endpunkt befindet sich bei http://_yoursite_.azurewebsites.net/swagger. Sie können auf die Swagger-Benutzeroberfläche über den Endpunkt `/swagger/ui` zugreifen. Beachten Sie, dass Swagger für den Endpunkt einen Fehler ausgibt, wenn Sie die Authentifizierung in Ihrer gesamten Anwendung als erforderlich festlegen. Um optimale Ergebnisse zu erzielen, lassen Sie in den Einstellungen für die Azure App Service-Authentifizierung/-Autorisierung nicht authentifizierte Anforderungen zu, und steuern Sie dann die Authentifizierung mithilfe der `table.access`-Eigenschaft.
+Der Swagger-Endpunkt befindet sich dann bei http://_yoursite_.azurewebsites.net/swagger. Sie können auf die Swagger-Benutzeroberfläche über den Endpunkt `/swagger/ui` zugreifen. Beachten Sie, dass Swagger für den Endpunkt einen Fehler ausgibt, wenn Sie die Authentifizierung in Ihrer gesamten Anwendung als erforderlich festlegen. Um optimale Ergebnisse zu erzielen, lassen Sie in den Einstellungen für die Azure App Service-Authentifizierung/-Autorisierung nicht authentifizierte Anforderungen zu, und steuern Sie dann die Authentifizierung mithilfe der `table.access`-Eigenschaft.
 
 Sie können die Swagger-Option auch der Datei `azureMobile.js` hinzufügen, wenn die Swagger-Unterstützung nur bei der lokalen Entwicklung verfügbar sein soll.
 
@@ -647,7 +709,7 @@ Dasselbe Token, das für den tables-Endpunkt verwendet wird, muss für benutzerd
 
 ### <a name="howto-customapi-auth"></a>Gewusst wie: Behandeln von großen Dateiuploads
 
-Das Azure Mobile Apps-SDK verwendet die [Body-Parser-Middleware](https://github.com/expressjs/body-parser), um Textinhalt in Ihrer Übermittlung zu akzeptieren und zu verschlüsseln. Sie können den Body-Parser im Voraus so konfigurieren, dass größere Dateiuploads akzeptiert werden:
+Das Azure Mobile Apps-SDK verwendet die [body-parser-Middleware](https://github.com/expressjs/body-parser), um Textinhalt in Ihrer Übermittlung zu akzeptieren und zu verschlüsseln. Sie können den Body-Parser im Voraus so konfigurieren, dass größere Dateiuploads akzeptiert werden:
 
 	var express = require('express'),
         bodyParser = require('body-parser'),
@@ -669,7 +731,7 @@ Das Azure Mobile Apps-SDK verwendet die [Body-Parser-Middleware](https://github.
 	// Start listening on HTTP
 	app.listen(process.env.PORT || 3000);
 
-Sie können den oben aufgeführten Grenzwert von 50 MB anpassen. Beachten Sie, dass die Datei vor der Übertragung per Base64 verschlüsselt wird, wodurch die Größe des tatsächlichen Uploads erhöht wird.
+Sie können den oben aufgeführten Grenzwert von 50 MB anpassen. Beachten Sie, dass die Datei vor der Übertragung per Base64 verschlüsselt wird, wodurch die Größe des tatsächlichen Uploads erhöht wird.
 
 ### <a name="howto-customapi-sql"></a>Gewusst wie: Ausführen von benutzerdefinierten SQL-Anweisungen
 
@@ -766,6 +828,7 @@ Im Azure-Portal können Sie Ihre Node.js-Back-End-Skriptdateien in Visual Studio
 
 <!-- URLs -->
 [Android-Client-Schnellstart]: app-service-mobile-android-get-started.md
+[Apache Cordova-Client-Schnellstart]: app-service-mobile-cordova-get-started.md
 [iOS-Client-Schnellstart]: app-service-mobile-ios-get-started.md
 [Xamarin.iOS-Client-Schnellstart]: app-service-mobile-xamarin-ios-get-started.md
 [Xamarin.Android-Client-Schnellstart]: app-service-mobile-xamarin-android-get-started.md
@@ -797,10 +860,10 @@ Im Azure-Portal können Sie Ihre Node.js-Back-End-Skriptdateien in Visual Studio
 [Verzeichnis mit den Beispielen auf GitHub]: https://github.com/azure/azure-mobile-apps-node/tree/master/samples
 [static-schema sample on GitHub]: https://github.com/azure/azure-mobile-apps-node/tree/master/samples/static-schema
 [QueryJS]: https://github.com/Azure/queryjs
-[Node.js-Tools 1.1 für Visual Studio]: https://github.com/Microsoft/nodejstools/releases/tag/v1.1-RC.2.1
+[Node.js-Tools 1.1 für Visual Studio]: https://github.com/Microsoft/nodejstools/releases/tag/v1.1-RC.2.1
 [mssql-Node.js-Paket]: https://www.npmjs.com/package/mssql
-[Microsoft SQL Server 2014 Express]: http://www.microsoft.com/de-DE/server-cloud/Products/sql-server-editions/sql-server-express.aspx
+[Microsoft SQL Server 2014 Express]: http://www.microsoft.com/de-DE/server-cloud/Products/sql-server-editions/sql-server-express.aspx
 [ExpressJS Middleware]: http://expressjs.com/guide/using-middleware.html
 [Winston]: https://github.com/winstonjs/winston
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

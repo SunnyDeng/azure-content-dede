@@ -47,7 +47,7 @@ Sie können jederzeit Datenträger zum virtuellen Computer hinzufügen, indem Si
 
 ## Informationen zu VHDs
 
-Die in Azure verwendeten VHDs sind VHD-Dateien, die als Seiten-Blobs in einem Standard- oder Premium-Speicherkonto in Azure gespeichert sind. (Premium-Speicher ist in bestimmten Regionen verfügbar.) Informationen zu Seitenblobs finden Sie unter [Grundlegendes zu Blockblobs und Seitenblobs](https://msdn.microsoft.com/library/ee691964.aspx). Informationen zu Premium-Speicher finden Sie unter [Premium-Speicher: Hochleistungsspeicher für Workloads virtueller Azure-Computer](storage-premium-storage-preview-portal.md).
+Die in Azure verwendeten VHDs sind VHD-Dateien, die als Seiten-Blobs in einem Standard- oder Premium-Speicherkonto in Azure gespeichert sind. (Premium-Speicher ist in bestimmten Regionen verfügbar.) Informationen zu Seitenblobs finden Sie unter [Grundlegendes zu Blockblobs und Seitenblobs](https://msdn.microsoft.com/library/ee691964.aspx). Informationen zu Premium-Speicher finden Sie unter [Premium-Speicher: Hochleistungsspeicher für Workloads virtueller Azure-Computer](../storage/storage-premium-storage.md).
 
 Außerhalb von Azure können virtuelle Festplatten entweder das VHD- oder ein VHDX-Format verwenden. Sie können auch fest, dynamisch erweiterbar oder differenzierend sein. Azure unterstützt das VHD-Format; feste Datenträger. Das feste Format legt den logischen Datenträger in der Datei linear aus, daher wird Datenträger-Offset X bei Blob-Offset X gespeichert. Eine kleinere Fußzeile am Ende des Blobs beschreibt die Eigenschaften der VHD. Oftmals verschwendet das feste Format Speicherplatz, da die meisten Datenträger über große ungenutzte Bereiche davon verfügen. Azure speichert VHD-Dateien jedoch in einem platzsparenden Format. Daher profitieren Sie gleichzeitig von den Vorteilen fester und dynamischer Datenträger. Nähere Informationen finden Sie unter [Erste Schritte mit virtuellen Festplatten](https://technet.microsoft.com/library/dd979539.aspx).
 
@@ -74,4 +74,4 @@ Virtuelle Windows-Computer:
 -  [Erfassen eines virtuellen Windows-Computers](virtual-machines-capture-image-windows-server.md)
 -  [Trennen eines Datenträgers](storage-windows-detach-disk.md)
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0302_2016-->

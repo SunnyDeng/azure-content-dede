@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/18/2015" 
+	ms.date="02/26/2016" 
 	ms.author="hawong"/>
 
 # Power BI-Tutorial für DocumentDB: Visualisieren von Daten mithilfe des Power BI-Connectors
@@ -194,4 +194,4 @@ Zum Freigeben des Berichts müssen Sie über ein Konto in PowerBI.com verfügen.
 - Weitere Informationen zu Power BI erhalten Sie [hier](https://support.powerbi.com/knowledgebase).
 - Um weitere Informationen zu DocumentDB zu erhalten, klicken Sie [hier](https://azure.microsoft.com/documentation/services/documentdb/).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0302_2016-->

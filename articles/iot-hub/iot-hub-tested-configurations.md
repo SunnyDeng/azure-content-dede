@@ -13,7 +13,7 @@
      ms.topic="article"
      ms.tgt_pltfrm="na"
      ms.workload="na"
-     ms.date="02/16/2016"
+     ms.date="02/28/2016"
      ms.author="hegate"/>
 
 # Betriebssystemplattformen und Hardwarekompatibilität mit Geräte-SDKs
@@ -58,7 +58,7 @@ Das [Microsoft Azure IoT-Geräte-SDK für C](https://github.com/Azure/azure-iot-
 |mbed OS| 2,0 | HTTPS, AMQP |
 |TI-RTOS| 2\.x | HTTPS |
 |Ubuntu Linux| 14\.04 | HTTPS, AMQP, MQTT |
-|Windows Desktop| 7, 8, 10 | HTTPS, AMPQ, MQTT |
+|Windows Desktop| 7, 8, 10 | HTTPS, AMQP, MQTT |
 |Yocto Linux|2\.1 | HTTPS, AMQP|
 
 
@@ -96,7 +96,7 @@ Das [Microsoft Azure IoT-Geräte-SDK für .NET](https://github.com/Azure/azure-i
 
 |Betriebssystemplattform| Version|Protokolle|
 |:---------|:----------:|:----------:|
-|Windows Desktop| 7, 8, 10 | HTTPS, AMPQ|
+|Windows Desktop| 7, 8, 10 | HTTPS, AMQP|
 |Windows IoT Core|10 | HTTPS|
 
 Verwalteter Agent-Code erfordert Microsoft .NET Framework 4.5
@@ -120,11 +120,11 @@ Die Kompatibilität jedes Geräts mit unserem SDK unter dem Betriebssystem und i
 |[AAEON BOXER-6614](http://www.aaeon.com/en/p/fanless-embedded-computers-boxer-6614/) |Windows 10 | C#|
 |[AAEON GENE-BT05](http://www.aaeon.com/en/p/3-and-half-inches-subcompact-boards-gene-bt05/) |Windows 10 | C#|
 |[AAEON PICO-BT01](http://www.aaeon.com/en/p/pico-itx-boards-pico-bt01) |Windows 10 | C#|
-|[AAEON UP-CHT](http://www.up-board.org/) |ubilinux | C|
+|[AAEON UP](http://www.up-board.org/) |ubilinux | C|
 |[AAEON UP](http://www.up-board.org/) |Windows 10 | C#|
 |[Acme Systems Arietta G25](http://www.acmesystems.it/arietta) |Debian | C|
-|[Avalue RIPAC-10P1](http://www.avalue.com.tw/) |Windows 10 | C#|
-|[Avalue RITAB-10T1](http://www.avalue.com.tw/product/Intelligent-Systems/Mobile-Solution/Mobile-Solution/RiTab-10T1_2384) |Windows 10 | C#|
+|[ADLINK IMB-M43](http://www.adlinktech.com/PD/web/PD_detail.php?cKind=&pid=1600&seq=&id=&sid=&category=Industrial-Motherboards-&-SBC_ ATX&utm\_source=#) |Windows 10 | C#|
+|[ADLINK MXE-200](http://www.adlinktech.com/PD/web/PD_detail.php?cKind=&pid=1505&seq=&id=&sid=&category=Fanless-Embedded-Computer_Integrated-Embedded-Computer&utm_source=) |Windows 10 | C#|
 |[ADLINK MXE-202i](http://www.adlinktech.com/PD/web/PD_detail.php?pid=1589) |Wind River | JavaScript|
 |[ADLINK MXE-5400](http://www.adlinktech.com/PD/web/PD_detail.php?pid=1318) |Windows 10 | C#|
 |[Advantech Co., ARK-2121L](http://www.advantech.com/products/ark-2000_series_embedded_box_pcs/ark-2121l/mod_dd092808-0832-44bc-b38a-945eb7e016bd) |Windows 10 | C#|
@@ -135,11 +135,14 @@ Die Kompatibilität jedes Geräts mit unserem SDK unter dem Betriebssystem und i
 |[Arduino MKR1000](https://www.arduino.cc/en/Main/ArduinoMKR1000) |Arduino-IDE | C|
 |[Arduino Zero](https://www.arduino.cc/en/Guide/ArduinoZero) |Arduino-IDE | C|
 |[Arrow DragonBoard 410c](http://partners.arrow.com/campaigns-na/qualcomm/dragonboard-410c/) |Windows 10 IoT Core | C#|
+|[Avalue RIPAC-10P1](http://www.avalue.com.tw/) |Windows 10 | C#|
+|[Avalue RITAB-10T1](http://www.avalue.com.tw/product/Intelligent-Systems/Mobile-Solution/Mobile-Solution/RiTab-10T1_2384) |Windows 10 | C#|
 |[Axiomtek ICO300](http://www.axiomtek.com/Default.aspx?MenuId=Products&FunctionId=ProductView&ItemId=1151) |Windows 10 | C#|
 |[BeagleBone Black](http://beagleboard.org/black) | Debian | C, JavaScript, Java|
 |[BeagleBone Green](http://beagleboard.org/green) |Debian | C, JavaScript, Java|
 |[ComponentSoft RFID Tunnel](http://www.componentsoft.com/) |Windows 10 | C#|
 |[Dell Edge Gateway 5000-Serie](http://www.dell.com/IoTgateway) |Ubuntu | Java|
+|[DFI EC700-BT](http://www.dfi.com.tw/Upload/Product/Documents/BT700.pdf) |Windows 10 | C|
 |[e-con Systems Almach](http://www.e-consystems.com/DM3730-development-board.asp) |Linux Yocto | C|
 |[e-con Systems Ankaa](http://www.e-consystems.com/iMX6-development-board.asp) |Ubuntu | C|
 |[Embedded Systems LogicMachine-Serie](http://openrb.com/products/) |Benutzerdefiniertes Linux | C|
@@ -151,12 +154,14 @@ Die Kompatibilität jedes Geräts mit unserem SDK unter dem Betriebssystem und i
 |[IEI IVS-100-BT](http://tw.ieiworld.com/product_groups/industrial/content.aspx?gid=09049552811981014603&cid=0F202412454715193114&id=0F202496627608256517#.VqH1hvl97Dc) |Windows 10 | C#|
 |[Ilevia Eve Raspberry](http://www.ilevia.com/overview/) |Debian | C|
 |[Intel Edison](http://www.intel.com/content/www/us/en/do-it-yourself/edison.html) |Yocto | C, JavaScript|
+|[Inventec Corp-Avatar](http://www.inventec.com/indexEN.htm) |Windows 10 IoT Core | C#|
 |[Libelium Meshlium Xtreme](http://www.libelium.com/products/meshlium/) |Debian | Java|
 |[MechaTracks 3GPI](http://www.mechatrax.com/products/3gpi) |Debian | C|
 |[Minnowboard Max](http://www.minnowboard.org/meet-minnowboard-max/) |Windows 7, 8, 10 | C#|
 |[MiTAC Computing Technologie Pluto E220](http://client.mitac.com/products-Embedded-Box-PC-PlutoE220.html) |Windows 10 | C#|
 |[NEXCOM NISE 50C](http://www.nexcom.com/Products/industrial-computing-solutions/industrial-fanless-computer/atom-compact/fanless-computer-nise-50c) |Windows 10 IoT Core | C#|
 |[Pacific Control Systems G2021ES](http://www.pacificcontrols.net/products/G2021ES-Gateway.html) |Ubuntu | C|
+|[PANASONIC Toughpad FZ + F1](http://www.panasonic.com/global/home.html) |Windows 10 IoT Mobile Enterprise | C#|
 |[Raspberry Pi 2](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/) | Raspbian | C, JavaScript, Java |
 |[Raspberry Pi 2](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/) | Windows 10 IoT Core| C, JavaScript, C#|
 |[Samsung ARTIK](http://developer.samsung.com/artik) |Fedora | C|
@@ -181,4 +186,4 @@ Erfahren Sie mehr zum Entwickeln von Lösungen mit [für IoT zertifizierten Ger�
 
 [lnk-iot-suite]: https://azure.microsoft.com/documentation/suites/iot-suite/
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/05/2016" 
+	ms.date="03/01/2016" 
 	ms.author="byvinyal"
 />
 	
@@ -56,7 +56,11 @@ Die automatische Skalierung einer **App Service-Umgebung** kann am besten anhand
 ###Einführung in das Szenario
 Frank ist Systemadministrator für ein Unternehmen. Er hat einen Teil der Workloads, die er verwaltet, in eine **App Service-Umgebung** migriert.
 
-Die **App Service-Umgebung** ist für die folgende manuelle Skalierung konfiguriert: * Front-Ends: 3 * Workerpool 1: 10 * Workerpool 2: 5 * Workerpool 3: 5
+Die **App Service-Umgebung** ist wie folgt für die manuelle Skalierung konfiguriert:
+* Front-Ends: 3
+* Workerpool 1: 10
+* Workerpool 2: 5
+* Workerpool 3: 5
 
 **Workerpool 1** wird für Produktionsworkloads verwendet, **Workerpool 2** und **Workerpool 3** werden für Workloads der Qualitätskontrolle und der Entwicklung verwendet.
 
@@ -155,22 +159,22 @@ Mit diesen Informationen kann Frank die folgenden Profile und Regeln für die au
 |	**Dauer:** 20 Minuten |	**Dauer:** 30 Minuten |
 |	**Zeitaggregation:** Durchschnitt |	**Zeitaggregation:** Durchschnitt |
 |	**Aktion:** Anzahl um 8 erhöhen |	**Aktion:** Anzahl um 3 erhöhen |
-|	**Abkühlen (Minuten):** 90 |	**Abkühlen (Minuten):** 90 |
+|	**Abkühlen (Minuten):** 180 |	**Abkühlen (Minuten):** 180 |
 | | |
 |	**Regel für die automatische Skalierung (Herunterskalieren)** |	**Regel für die automatische Skalierung (Herunterskalieren)** |
 |	**Ressource:** Workerpool 1 |	**Ressource:** Workerpool 1 |
 |	**Metrik:** Verfügbare Worker |	**Metrik:** Verfügbare Worker |
-|	**Operation:** Größer als 8 |	**Operation:** Weniger als 3 |
+|	**Operation:** Größer als 8 |	**Operation:** größer als 3 |
 |	**Dauer:** 20 Minuten |	**Dauer:** 15 Minuten |
 |	**Zeitaggregation:** Durchschnitt |	**Zeitaggregation:** Durchschnitt |
 |	**Aktion:** Anzahl um 2 verringern |	**Aktion:** Anzahl um 3 verringern |
-|	**Abkühlen (Minuten):** 90 |	**Abkühlen (Minuten):** 90 |
+|	**Abkühlen (Minuten):** 120 |	**Abkühlen (Minuten):** 120 |
 
 Der im Profil definierte Zielbereich wird anhand der minimalen Instanzen, die im Profil für den **App Service-Plan** definiert sind, plus dem Puffer berechnet.
 
 Der maximale Bereich wäre die Summe aller maximalen Bereiche für alle **App Service-Pläne**, die im **Workerpool** gehostet werden.
 
-Bei den Regeln für das zentrale Hochskalieren sollte die Anzahl, um die erhöht wird, auf mindestens 1 X die **Inflationsrate für den App Service-Plan** für das zentrale Hochskalieren festgelegt werden.
+Bei den Regeln für das zentrale Hochskalieren sollte die Anzahl, um die erhöht wird, auf mindestens 1x die **Inflationsrate für den App Service-Plan** für das zentrale Hochskalieren festgelegt werden.
 
 Die Anzahl, um die verringert wird, kann zwischen 1/2 X und 1 X die **Inflationsrate für den App Service-Plan** für die Herunterskalierung liegen.
 
@@ -199,7 +203,7 @@ In diesem Szenario weiß Frank, dass sich die Fehlerrate erhöht, sobald Front-E
 |	**Dauer:** 20 Minuten |
 |	**Zeitaggregation:** Durchschnitt |
 |	**Aktion:** Anzahl um 3 erhöhen |
-|	**Abkühlen (Minuten):** 90 |
+|	**Abkühlen (Minuten):** 120 |
 | |
 |	**Regel für die automatische Skalierung (Herunterskalieren)** |
 |	**Ressource:** Workerpool 1 |
@@ -208,7 +212,7 @@ In diesem Szenario weiß Frank, dass sich die Fehlerrate erhöht, sobald Front-E
 |	**Dauer:** 20 Minuten |
 |	**Zeitaggregation:** Durchschnitt |
 |	**Aktion:** Anzahl um 3 verringern |
-|	**Abkühlen (Minuten):** 90 |
+|	**Abkühlen (Minuten):** 120 |
 
 <!-- IMAGES -->
 [intro]: ./media/app-service-environment-auto-scale/introduction.png
@@ -227,4 +231,4 @@ In diesem Szenario weiß Frank, dass sich die Fehlerrate erhöht, sobald Front-E
 [Worker-Pool-Scale]: ./media/app-service-environment-auto-scale/wp-scale.png
 [Front-End-Scale]: ./media/app-service-environment-auto-scale/fe-scale.png
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0302_2016-->

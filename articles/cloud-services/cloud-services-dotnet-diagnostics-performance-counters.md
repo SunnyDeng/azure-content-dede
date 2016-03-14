@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="09/25/2015"
+   ms.date="02/29/2016"
    ms.author="robb" />
 
 # Erstellen und Verwenden von Leistungsindikatoren in einer Azure-Anwendung
@@ -23,8 +23,8 @@ Für Windows Server, IIS und ASP.NET verfügbare Leistungsindikatoren können au
 
 Sie können Leistungsindikatordaten wie folgt untersuchen:
 1. Direkt auf dem Anwendungshost mit dem Systemmonitor-Tool per Remotedesktop.
-2. Mit System Center Operations Manager und Azure Management Pack.
-3. Mit anderen Überwachungstools, mit denen auf die Diagnosedaten zugegriffen wird, die an den Azure-Speicher übertragen werden. Weitere Informationen finden Sie unter[Speichern und Anzeigen von Diagnosedaten im Azure-Speicher](https://msdn.microsoft.com/library/azure/hh411534.aspx).
+2. Mit System Center Operations Manager und dem Azure Management Pack.
+3. Mit anderen Überwachungstools, mit denen auf die Diagnosedaten zugegriffen wird, die an den Azure-Speicher übertragen werden. Weitere Informationen finden Sie unter[Speichern und Anzeigen von Diagnosedaten im Azure-Speicher](https://msdn.microsoft.com/library/azure/hh411534.aspx).  
 
 Weitere Informationen zum Überwachen der Leistung Ihrer Anwendung im [klassischen Azure-Portal](http://manage.azure.com/) finden Sie unter [Überwachen von Clouddiensten](https://www.azure.com/manage/services/cloud-services/how-to-monitor-a-cloud-service/).
 
@@ -56,22 +56,13 @@ Unter Azure wird eine Teilmenge der Leistungsindikatoren bereitgestellt, die fü
 |ASP.NET v4.0.30319 |Zurückgewiesene Anforderungen |Leistungsindikatoren für ASP.NET|
 |Arbeitsspeicher |Verfügbare MB |Arbeitsspeicher-Leistungsindikatoren|
 |Arbeitsspeicher |Zugesicherte Bytes |Arbeitsspeicher-Leistungsindikatoren|
-|Prozessor(\_Gesamt) | Prozessorzeit (%) |Leistungsindikatoren für ASP.NET|
-|TCPv4 |Verbindungsfehler |TCP-Objekt|
-|TCPv4 |Hergestellte Verbindungen |TCP-Objekt|
-|TCPv4 |Zurückgesetzte Verbindungen |TCP-Objekt|
-|TCPv4 |Segmente gesendet/s |TCP-Objekt|
-|Netzwerkschnittstelle(*) |Empfangene Bytes/s |Netzwerkschnittstellenobjekt|
-|Netzwerkschnittstelle(*) |Bytes gesendet/s |Netzwerkschnittstellenobjekt|
-|Netzwerkschnittstelle(Netzwerkkarte für Microsoft Virtual Machine-Bus\_2)|Empfangene Bytes/s|Netzwerkschnittstellenobjekt|
-|Netzwerkschnittstelle(Netzwerkkarte für Microsoft Virtual Machine-Bus\_2)|Bytes gesendet/s|Netzwerkschnittstellenobjekt|
-|Netzwerkschnittstelle(Netzwerkkarte für Microsoft Virtual Machine-Bus\_2)|Bytes/s insgesamt|Netzwerkschnittstellenobjekt|
+|Prozessor(\_Gesamt) | Prozessorzeit (%) |Leistungsindikatoren für ASP.NET| |TCPv4 |Verbindungsfehler |TCP-Objekt| |TCPv4 |Hergestellte Verbindungen |TCP-Objekt| |TCPv4 |Zurückgesetzte Verbindungen |TCP-Objekt| |TCPv4 |Segmente gesendet/s |TCP-Objekt| |Netzwerkschnittstelle(*) |Empfangene Bytes/s |Netzwerkschnittstellenobjekt| |Netzwerkschnittstelle(*) |Bytes gesendet/s |Netzwerkschnittstellenobjekt| |Netzwerkschnittstelle(Netzwerkkarte für Microsoft Virtual Machine-Bus\_2)|Empfangene Bytes/s|Netzwerkschnittstellenobjekt| |Netzwerkschnittstelle(Netzwerkkarte für Microsoft Virtual Machine-Bus\_2)|Bytes gesendet/s|Netzwerkschnittstellenobjekt| |Netzwerkschnittstelle(Netzwerkkarte für Microsoft Virtual Machine-Bus\_2)|Bytes/s insgesamt|Netzwerkschnittstellenobjekt|
 
 ## Erstellen und Hinzufügen benutzerdefinierter Leistungsindikatoren zur Anwendung
 
 Azure verfügt über Unterstützung zum Erstellen und Ändern benutzerdefinierter Leistungsindikatoren für Webrollen und Workerrollen. Die Leistungsindikatoren können zum Nachverfolgen und Überwachen von anwendungsspezifischem Verhalten verwendet werden. Sie können benutzerdefinierte Leistungsindikatorkategorien und -bezeichner erstellen und aus einer Startaufgabe, Webrolle oder Workerrolle mit erhöhten Rechten löschen.
 
->[AZURE.NOTE]Code, mit dem Änderungen an benutzerdefinierten Leistungsindikatoren vorgenommen werden, muss für die Ausführung über erhöhte Rechte verfügen. Wenn der Code in einer Webrolle oder Workerrolle enthalten ist, muss die Rolle das Tag <Runtime executionContext="elevated" /> in der Datei „ServiceDefinition.csdef“ enthalten, damit die Rolle richtig initialisiert wird.
+>[AZURE.NOTE] Code, mit dem Änderungen an benutzerdefinierten Leistungsindikatoren vorgenommen werden, muss für die Ausführung über erhöhte Rechte verfügen. Wenn der Code in einer Webrolle oder Workerrolle enthalten ist, muss die Rolle das Tag <Runtime executionContext="elevated" /> in der Datei „ServiceDefinition.csdef“ enthalten, damit die Rolle richtig initialisiert wird.
 
 Sie können benutzerdefinierte Leistungsindikatordaten mit dem Diagnose-Agent an den Azure-Speicher senden.
 
@@ -83,7 +74,7 @@ Azure speichert Leistungsindikatordaten mit anderen Diagnoseinformationen zwisch
 
 Jede konfigurierte Leistungsindikatorinstanz wird mit einer angegebenen Samplingrate aufgezeichnet. Die erfassten Daten werden an das Speicherkonto übertragen, indem entweder eine geplante Übertragungsanforderung oder eine bedarfsgesteuerte Übertragungsanforderung verwendet wird. Automatische Übertragungen können bis zu einmal pro Minute eingeplant werden. Die vom Diagnose-Agent übertragenen Leistungsindikatordaten werden in einer Tabelle (WADPerformanceCountersTable) im Speicherkonto gespeichert. Auf diese Tabelle kann mit standardmäßigen Azure-Speicher-API-Methoden zugegriffen werden, und es können Abfragen durchgeführt werden. Ein Beispiel zum Abfragen und Anzeigen von Leistungsindikatordaten aus der WADPerformanceCountersTable-Tabelle finden Sie unter [Microsoft Azure-PerformanceCounters-Beispiel](http://code.msdn.microsoft.com/Windows-Azure-PerformanceCo-7d80ebf9).
 
->[AZURE.NOTE]Je nach Übertragungshäufigkeit und Warteschlangenlatenz des Diagnose-Agents können die letzten Leistungsindikatordaten im Speicherkonto um mehrere Minuten veraltet sein.
+>[AZURE.NOTE] Je nach Übertragungshäufigkeit und Warteschlangenlatenz des Diagnose-Agents können die letzten Leistungsindikatordaten im Speicherkonto um mehrere Minuten veraltet sein.
 
 ## Aktivieren von Leistungsindikatoren mit der Diagnosekonfigurationsdatei
 
@@ -144,7 +135,7 @@ Um die Diagnoseinformationen in Ihrem Azure-Speicherkonto abzulegen, müssen Sie
 
 Für Azure SDK 2.5 kann das Speicherkonto in der Datei „diagnostics.wadcfgx“ angegeben werden.
 
->[AZURE.NOTE]Diese Anleitung gilt nur für Azure SDK 2.4 und früher. Für Azure SDK 2.5 kann das Speicherkonto in der Datei „diagnostics.wadcfgx“ angegeben werden.
+>[AZURE.NOTE] Diese Anleitung gilt nur für Azure SDK 2.4 und früher. Für Azure SDK 2.5 kann das Speicherkonto in der Datei „diagnostics.wadcfgx“ angegeben werden.
 
 So legen Sie die Verbindungszeichenfolgen fest:
 
@@ -179,7 +170,7 @@ Führen Sie die folgenden Schritte aus, um einen einfachen benutzerdefinierten L
 2. Fügen Sie das Element Runtime dem Element WebRole oder WorkerRole hinzu, um eine Ausführung mit erhöhten Rechten zuzulassen:
 
     ```
-    <RuntimeexecutionContext="elevated"/>
+    <runtime executioncontext="elevated"/>
     ```
 3. Speichern Sie die Datei.
 4. Öffnen Sie die Diagnosedatei („diagnostics.wadcfg“ in SDK 2.4 und früher oder „diagnostics.wadcfgx“ in SDK 2.5 und höher), und fügen Sie dem DiagnosticMonitorConfiguration-Element Folgendes hinzu: 
@@ -318,11 +309,6 @@ Entitäten werden mithilfe einer aus **TableEntity** abgeleiteten benutzerdefini
 
 
 ## Nächste Schritte
+[Weitere Artikel zu Azure-Diagnose](../azure-diagnostics.md)
 
-Nachdem Sie sich mit den Grundlagen der Erfassung von Leistungsindikatoren vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Problembehandlungsszenarien implementiert werden.
-
-[Bewährte Methoden für die Problembehandlung bei der Entwicklung von Azure-Anwendungen](https://msdn.microsoft.com/library/azure/hh771389.aspx)
-
-[Überwachung von Clouddiensten](./how-to-monitor-a-cloud-service.md)
-
-<!----HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0302_2016-->

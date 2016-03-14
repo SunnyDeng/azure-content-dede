@@ -14,13 +14,13 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na" 
-   ms.date="02/11/2016"
+   ms.date="02/25/2016"
    ms.author="mandia"/>
 
 # Erste Schritte mit der SFTP-API
-Sie stellen eine Verbindung mit einem SFTP-Server her, um Dateien zu verwalten. Sie können auf dem SFTP-Server verschiedene Aufgaben ausführen, z. B. Dateien hochladen, Dateien löschen und mehr.
+Sie stellen eine Verbindung mit einem SFTP-Server her, um Dateien zu verwalten. Sie können auf dem SFTP-Server verschiedene Aufgaben ausführen, z. B. Dateien hochladen, Dateien löschen und mehr. Die SFTP-API kann in Folgendem verwendet werden:
 
-Die SFTP-API kann in Logik-Apps verwendet werden.
+- Logik-Apps
 
 >[AZURE.NOTE] Diese Version des Artikels gilt für die Schemaversion 2015-08-01-preview für Logik-Apps. Um die Schemaversion 2014-12-01-preview aufzurufen, klicken Sie auf [SFTP-Connector](../app-service-logic/app-service-logic-connector-sftp.md).
 
@@ -28,7 +28,7 @@ Mit SFTP können Sie folgende Aktionen ausführen:
 
 - Erstellen eines Geschäftsworkflows basierend auf den Daten, die über SFTP abgerufen werden. 
 - Implementieren eines Triggers, wenn eine Datei aktualisiert wird.
-- Ausführen von Aktionen, um Dateien zu erstellen, zu löschen usw. Diese Aktionen erhalten eine Antwort und stellen anschließend die Ausgabe anderen Aktionen zur Verfügung. Sie können z. B. den Inhalt einer Datei abrufen und dann eine SQL-Datenbank aktualisieren. 
+- Ausführen von Aktionen, um Dateien zu erstellen, zu löschen usw. Diese Aktionen erhalten eine Antwort und stellen anschließend die Ausgabe anderen Aktionen zur Verfügung. Sie können z. B. den Inhalt einer Datei abrufen und dann eine SQL-Datenbank aktualisieren. 
 
 Informationen zum Hinzufügen eines Vorgangs in Logik-Apps finden Sie unter [Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md).
 
@@ -53,12 +53,13 @@ Wenn Sie diese API Ihren Logik-Apps hinzufügen, geben Sie die folgenden Werte e
 |Kennwort | Ja | Geben Sie das Kennwort für den Benutzernamen ein.|
 |SSH Server Host Key Finger Print | Ja | Geben Sie den Fingerabdruck des öffentlichen Hostschlüssels für den SSH-Server ein. <br/><br/>In der Regel erhalten Sie diesen Schlüssel vom Serveradministrator. Sie können auch die Tools ```WinSCP``` oder ```ssh-keygen-g3 -F``` verwenden, um den Hostschlüssel-Fingerabdruck abzurufen. | 
 
-Nachdem Sie eine Verbindung hergestellt haben, geben Sie die SFTP-Eigenschaften ein, z. B. Ordnerpfad oder Datei. In der **REST-API-Referenz** in diesem Thema werden diese Eigenschaften beschrieben.
+Nachdem Sie eine Verbindung hergestellt haben, geben Sie die SFTP-Eigenschaften ein, z. B. Ordnerpfad oder Datei. In der **REST-API-Referenz** in diesem Thema werden diese Eigenschaften beschrieben.
 
 >[AZURE.TIP] Sie können dieselbe SFTP-Verbindung in anderen Logik-Apps verwenden.
 
 
 ## Swagger-REST-API – Referenz
+Gilt für Version: 1.0.
 
 ### Datei erstellen
 Lädt eine Datei per SFTP hoch. ```POST: /datasets/default/files```
@@ -82,7 +83,7 @@ Kopiert eine Datei auf den SFTP-Server. ```POST: /datasets/default/copyFile```
 | ---|---|---|---|---|---|
 |Quelle|string|Ja|query| (Keine)|Pfad zur Quelldatei|
 |Ziel|string|Ja|query|(Keine) |Pfad zur Zieldatei, einschließlich des Dateinamens|
-|overwrite|Boolescher Wert|no|query|(Keine)|Überschreibt die Zieldatei, wenn auf „True“ festgelegt|
+|overwrite|Boolescher Wert|no|query|(Keine)|Überschreibt die Zieldatei, falls auf „True“ festgelegt|
 
 #### Antwort
 |Name|Beschreibung|
@@ -110,7 +111,7 @@ Extrahiert eine Archivdatei in einen Ordner auf dem SFTP-Server (Beispiel: ZIP).
 | ---|---|---|---|---|---|
 |Quelle|string|Ja|query|(Keine) |Pfad zur Archivdatei|
 |Ziel|string|Ja|query|(Keine) |Pfad zum Zielordner|
-|overwrite|Boolescher Wert|no|query|(Keine)|Überschreibt die Zieldateien, wenn auf „True“ festgelegt|
+|overwrite|Boolescher Wert|no|query|(Keine)|Überschreibt die Zieldateien, falls auf „True“ festgelegt|
 
 #### Antwort
 |Name|Beschreibung|
@@ -247,6 +248,6 @@ Löst einen Workflow aus, wenn eine Datei auf dem SFTP-Server geändert wird. ``
 
 
 ## Nächste Schritte
-[Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md).
+[Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md)
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

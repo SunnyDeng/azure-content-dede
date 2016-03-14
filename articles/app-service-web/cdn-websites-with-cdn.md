@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="12/08/2015" 
+	ms.date="02/29/2016" 
 	ms.author="cephalin"/>
 
 
@@ -41,13 +41,15 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 -	Ein aktives [Microsoft Azure-Konto](/account/)
 -	Visual Studio 2015 mit dem [Azure SDK für .NET](http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409) Wenn Sie Visual Studio verwenden, können die Schritte variieren.
 
-> [AZURE.NOTE] Sie benötigen ein Azure-Konto, um dieses Lernprogramm abzuschließen: Sie können [kostenlos ein Azure-Konto erstellen](/pricing/free-trial/). Sie erhalten ein Guthaben, das Sie zum Ausprobieren der kostenpflichtigen Azure-Dienste nutzen können. Sie können das Konto behalten und weiterhin kostenlose Azure-Dienste wie z. B. Web-Apps nutzen, wenn das Guthaben aufgebraucht ist. Sie können von [Vorteilen für Visual Studio-Abonnenten](/pricing/member-offers/msdn-benefits-details/) profitieren. Über Ihr Visual Studio-Abonnement erhalten Sie jeden Monat Gutschriften, die Sie für kostenpflichtige Azure-Dienste einsetzen können.
+> [AZURE.NOTE] Sie benötigen ein Microsoft Azure-Konto, um dieses Tutorial durchführen zu können:
+> + Sie können ein [Azure-Konto kostenlos erstellen](/pricing/free-trial/): Sie erhalten ein Guthaben, das Sie zum Ausprobieren der zahlungspflichtigen Azure-Dienste nutzen können, und Sie können das Konto selbst dann behalten und kostenlose Azure-Dienste wie z. B. Web-Apps nutzen, wenn das Guthaben aufgebraucht ist.
+> + Sie können Ihre [Vorteile für Visual Studio-Abonnenten aktivieren](/pricing/member-offers/msdn-benefits-details/): Ihr Visual Studio-Abonnement schließt ein monatliches Guthaben ein, das Sie für zahlungspflichtige Azure-Dienste nutzen können.
 >
 > Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Bereitstellen einer Web-App in Azure mit einem integrierten CDN-Endpunkt ##
 
-In diesem Abschnitt stellen Sie die standardmäßige ASP.NET-MVC-Anwendungsvorlage in Visual Studio 2013 für App Service bereit und integrieren sie anschließend in einen neuen CDN-Endpunkt. Befolgen Sie die nachstehenden Anweisungen:
+In diesem Abschnitt stellen Sie die standardmäßige ASP.NET-MVC-Anwendungsvorlage in Visual Studio 2015 für App Service bereit und integrieren sie anschließend in einen neuen CDN-Endpunkt. Befolgen Sie die nachstehenden Anweisungen:
 
 1. Erstellen Sie in Visual Studio 2015 eine neue ASP.NET-Webanwendung über die Menüleiste, indem Sie **Datei > Neu > Projekt > Web > ASP.NET-Webanwendung** aufrufen. Geben Sie einen Namen ein, und klicken Sie auf **OK**.
 
@@ -75,36 +77,49 @@ In diesem Abschnitt stellen Sie die standardmäßige ASP.NET-MVC-Anwendungsvorla
 
 	Wenn die Veröffentlichung abgeschlossen ist, wird Ihre veröffentlichte Web-App im Browser angezeigt.
 
-1. Zum Erstellen eines CDN-Endpunkts melden Sie sich beim [klassischen Azure-Portal](https://manage.windowsazure.com) an.
-2. Klicken Sie auf **Neu** > **App-Dienste** > **CDN** > **Schnellerfassung**. Wählen Sie **http://*&lt;sitename>*.azurewebsites.net/**, und klicken Sie auf **Erstellen**.
+1. Zum Erstellen eines CDN-Endpunkts melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
+2. Klicken Sie auf **+ Neu** > **Medien und CDN** > **CDN**.
+
+	![](media/cdn-websites-with-cdn/create-cdn-profile.png)
+
+3. Geben Sie **CDN**, **Standort**, **Ressourcengruppe** und **Tarif** an, und klicken Sie dann auf **Erstellen**
 
 	![](media/cdn-websites-with-cdn/7-create-cdn.png)
 
-	> [AZURE.NOTE] Nachdem der CDN-Endpunkt erstellt wurde, werden im klassischen Portal dessen URL und die Ursprungsdomäne, in der er integriert ist, angezeigt. Es kann jedoch eine Weile dauern, bis die Konfiguration des neuen CDN-Endpunkts vollständig an alle CDN-Knotenstandorte weitergegeben wurde.
+4. Klicken Sie auf dem Blatt **CDN-Profil** auf die Schaltfläche **+ Endpunkt**. Geben Sie einen Namen an, wählen Sie in der Dropdownliste **Ursprungstyp** den Eintrag **Web-App** und in der Dropdownliste **Hostname des Ursprungs** Ihre Web-App aus, und klicken Sie dann auf **Hinzufügen**.
 
-3. Klicken Sie im klassischen Portal auf der Registerkarte **CDN** auf den Namen des soeben erstellten CDN-Endpunkts.
+	![](media/cdn-websites-with-cdn/cdn-profile-blade.png)
+
+
+
+	> [AZURE.NOTE] Nachdem der CDN-Endpunkt erstellt wurde, werden auf dem Blatt **Endpunkt** dessen CDN-URL und die Ursprungsdomäne angezeigt, in der er integriert ist. Es kann jedoch eine Weile dauern, bis die Konfiguration des neuen CDN-Endpunkts vollständig an alle CDN-Knotenstandorte weitergegeben wurde.
+
+3. Klicken Sie auf dem Blatt **Endpunkt** auf den Namen des gerade erstellten CDN-Endpunkts.
 
 	![](media/cdn-websites-with-cdn/8-select-cdn.png)
 
-3. Klicken Sie auf **Suchabfragezeichenfolge aktivieren**, um Abfragezeichenfolgen im CDN-Cache zu aktivieren. Sobald Sie diese Funktion aktivieren, wird derselbe Link, auf den Sie mit unterschiedlichen Abfragezeichenfolgen zugreifen, als separate Einträge zwischengespeichert.
+3. Klicken Sie auf die Schaltfläche **Konfigurieren**. Wählen Sie auf dem Blatt **Konfigurieren** in der Dropdownliste **Verhalten für das Zwischenspeichern von Abfragezeichenfolgen** die Option **Jede eindeutige URL zwischenspeichern**, und klicken Sie dann auf die Schaltfläche **Speichern**.
+
 
 	![](media/cdn-websites-with-cdn/9-enable-query-string.png)
 
-	>[AZURE.NOTE] Auch wenn die Aktivierung der Abfragezeichenfolge für diesen Teil des Lernprogramms nicht erforderlich ist, sollten Sie diesen Schritt so früh wie möglich durchführen, da die Verteilung einer hier vorgenommenen Änderung an alle CDN-Knoten einige Zeit dauert und Sie verhindern möchten, dass Inhalte, für die Abfragezeichenfolgen nicht aktiviert wurden, den CDN-Cache verstopfen (die Aktualisierung von CDN-Inhalten wird später erläutert).
+Sobald Sie diese Funktion aktivieren, wird derselbe Link, auf den Sie mit unterschiedlichen Abfragezeichenfolgen zugreifen, als separate Einträge zwischengespeichert.
 
-2. Klicken Sie nun auf die CDN-Endpunktadresse. Wenn der Endpunkt bereit ist, sollte Ihre Web-App angezeigt werden. Wenn Sie einen **HTTP 404**-Fehler erhalten, ist der CDN-Endpunkt nicht bereit. Möglicherweise müssen Sie bis zu einer Stunde warten, bis die CDN-Konfiguration an alle Edgeknoten verteilt ist.
+>[AZURE.NOTE] Auch wenn die Aktivierung der Abfragezeichenfolge für diesen Teil des Lernprogramms nicht erforderlich ist, sollten Sie diesen Schritt so früh wie möglich durchführen, da die Verteilung einer hier vorgenommenen Änderung an alle CDN-Knoten einige Zeit dauert und Sie verhindern möchten, dass Inhalte, für die Abfragezeichenfolgen nicht aktiviert wurden, den CDN-Cache verstopfen (die Aktualisierung von CDN-Inhalten wird später erläutert).
+
+2. Navigieren Sie jetzt zur CDN-Endpunktadresse. Wenn der Endpunkt bereit ist, sollte Ihre Web-App angezeigt werden. Wenn Sie einen **HTTP 404**-Fehler erhalten, ist der CDN-Endpunkt nicht bereit. Möglicherweise müssen Sie bis zu einer Stunde warten, bis die CDN-Konfiguration an alle Edgeknoten verteilt ist. 
 
 	![](media/cdn-websites-with-cdn/11-access-success.png)
 
-1. Versuchen Sie dann, auf die Datei **~/Content/bootstrap.css** in Ihrem ASP.NET-Projekt zuzugreifen. Wechseln Sie im Browser, zu **http://*&lt;cdnName>*.vo.msecnd.net/Content/bootstrap.css**. In meinem Setup lautet diese URL:
+1. Versuchen Sie dann, auf die Datei **~/Content/bootstrap.css** in Ihrem ASP.NET-Projekt zuzugreifen. Wechseln Sie im Browserfenster zu **http://*&lt;cdnName>*.azureedge.net/Content/bootstrap.css**. In meinem Setup lautet diese URL:
 
-		http://az673227.vo.msecnd.net/Content/bootstrap.css
+		http://az673227.azureedge.net/Content/bootstrap.css
 
 	Dies entspricht der folgenden Ursprungs-URL am CDN-Endpunkt:
 
 		http://cdnwebapp.azurewebsites.net/Content/bootstrap.css
 
-	Wenn Sie zu **http://*&lt;cdnName>*.vo.msecnd.net/Content/bootstrap.css** navigieren, werden Sie zum Herunterladen der Datei "bootstrap.css" aufgefordert, die von der Web-App in Azure bereitgestellt wurde.
+	Wenn Sie zu **http://*&lt;cdnName>*.azureedge.net/Content/bootstrap.css** navigieren, werden Sie zum Herunterladen der Datei „bootstrap.css“ aufgefordert, die von der Web-App in Azure bereitgestellt wurde.
 
 	![](media/cdn-websites-with-cdn/12-file-access.png)
 
@@ -215,7 +230,7 @@ Führen Sie die vorstehenden Schritte aus, um diese Controlleraktion einzurichte
               }
               else // Get content from Azure CDN
               {
-                return Redirect(string.Format("http://<yourCDNName>.vo.msecnd.net/MemeGenerator/Generate?top={0}&bottom={1}", data.Item1, data.Item2));
+                return Redirect(string.Format("http://<yourCDNName>.azureedge.net/MemeGenerator/Generate?top={0}&bottom={1}", data.Item1, data.Item2));
               }
             }
 
@@ -301,13 +316,13 @@ Wenn Sie die Formularwerte an `/MemeGenerator/Index` übermitteln, gibt die `Ind
       }
       else // Get content from Azure CDN
       {
-        return Redirect(string.Format("http://<yourCDNName>.vo.msecnd.net/MemeGenerator/Generate?top={0}&bottom={1}", data.Item1, data.Item2));
+        return Redirect(string.Format("http://<yourCDNName>.azureedge.net/MemeGenerator/Generate?top={0}&bottom={1}", data.Item1, data.Item2));
       }
     }
 
 Wenn Ihr lokaler Debugger angefügt ist, erhalten Sie den standardmäßigen Debugvorgang mit einer lokalen Umleitung. Bei Ausführung in der Azure-Web-App erfolgt eine Umleitung zu folgendem Ziel:
 
-	http://<yourCDNName>.vo.msecnd.net/MemeGenerator/Generate?top=<formInput>&bottom=<formInput>
+	http://<yourCDNName>.azureedge.net/MemeGenerator/Generate?top=<formInput>&bottom=<formInput>
 
 Dies entspricht der folgenden Ursprungs-URL am CDN-Endpunkt:
 
@@ -367,7 +382,7 @@ Führen Sie die folgenden Schritte aus, um ASP.NET-Bündelung und -Minimierung i
           bundles.UseCdn = true;
           var version = System.Reflection.Assembly.GetAssembly(typeof(Controllers.HomeController))
             .GetName().Version.ToString();
-          var cdnUrl = "http://<yourCDNName>.vo.msecnd.net/{0}?v=" + version;
+          var cdnUrl = "http://<yourCDNName>.azureedge.net/{0}?v=" + version;
 
           bundles.Add(new ScriptBundle("~/bundles/jquery", string.Format(cdnUrl, "bundles/jquery")).Include(
                 "~/Scripts/jquery-{version}.js"));
@@ -398,7 +413,7 @@ Führen Sie die folgenden Schritte aus, um ASP.NET-Bündelung und -Minimierung i
 
 	der gleiche wie:
 
-		new ScriptBundle("~/bundles/jquery", string.Format(cdnUrl, "http://<yourCDNName>.vo.msecnd.net/bundles/jquery?v=<W.X.Y.Z>"))
+		new ScriptBundle("~/bundles/jquery", string.Format(cdnUrl, "http://<yourCDNName>.azureedge.net/bundles/jquery?v=<W.X.Y.Z>"))
 
 	Dieser Konstruktor weist die ASP.NET-Bündelung und -Minimierung an, beim lokalen Debuggen einzelne Skriptdateien zu rendern, aber mit der angegebenen CDN-Adresse auf das betreffende Skript zuzugreifen. Beachten Sie bei dieser sorgfältig gebildeten CDN-URL jedoch zwei wichtige Merkmale:
 	
@@ -415,11 +430,11 @@ Führen Sie die folgenden Schritte aus, um ASP.NET-Bündelung und -Minimierung i
 4. Zeigen Sie den HTML-Code für die Seite an. Die CDN-URL sollte bei jeder erneuten Veröffentlichung von Änderungen an Ihrer Azure-Web-App mit einer eindeutigen Versionszeichenfolge gerendert angezeigt werden. Beispiel:
 	
         ...
-        <link href="http://az673227.vo.msecnd.net/Content/css?v=1.0.0.25449" rel="stylesheet"/>
-        <script src="http://az673227.vo.msecnd.net/bundles/modernizer?v=1.0.0.25449"></script>
+        <link href="http://az673227.azureedge.net/Content/css?v=1.0.0.25449" rel="stylesheet"/>
+        <script src="http://az673227.azureedge.net/bundles/modernizer?v=1.0.0.25449"></script>
         ...
-        <script src="http://az673227.vo.msecnd.net/bundles/jquery?v=1.0.0.25449"></script>
-        <script src="http://az673227.vo.msecnd.net/bundles/bootstrap?v=1.0.0.25449"></script>
+        <script src="http://az673227.azureedge.net/bundles/jquery?v=1.0.0.25449"></script>
+        <script src="http://az673227.azureedge.net/bundles/bootstrap?v=1.0.0.25449"></script>
         ...
 
 5. Debuggen Sie die ASP.NET-Anwendung in Visual Studio durch Drücken von `F5`.
@@ -448,7 +463,7 @@ Die [Bundle](http://msdn.microsoft.com/library/system.web.optimization.bundle.as
         {
           var version = System.Reflection.Assembly.GetAssembly(typeof(BundleConfig))
             .GetName().Version.ToString();
-          var cdnUrl = "http://cdnurl.vo.msecnd.net/.../{0}?" + version;
+          var cdnUrl = "http://cdnurl.azureedge.net/.../{0}?" + version;
           bundles.UseCdn = true;
 
           bundles.Add(new ScriptBundle("~/bundles/jquery", string.Format(cdnUrl, "bundles/jquery")) 
@@ -504,46 +519,27 @@ Die [Bundle](http://msdn.microsoft.com/library/system.web.optimization.bundle.as
 4. Veröffentlichen Sie Ihre Azure-Web-App erneut, und greifen Sie auf die Startseite zu.
 5. Zeigen Sie den HTML-Code für die Seite an. Es sollten eingefügte Skripts ähnlich den folgenden zu sehen sein:    
 	
-	```
-	...
-	<link href="http://az673227.vo.msecnd.net/Content/css?v=1.0.0.25474" rel="stylesheet"/>
-<script>(function() {
-                var loadFallback,
-                    len = document.styleSheets.length;
-                for (var i = 0; i < len; i++) {
-                    var sheet = document.styleSheets[i];
-                    if (sheet.href.indexOf('http://az673227.vo.msecnd.net/Content/css?v=1.0.0.25474') !== -1) {
-                        var meta = document.createElement('meta');
-                        meta.className = 'sr-only';
-                        document.head.appendChild(meta);
-                        var value = window.getComputedStyle(meta).getPropertyValue('width');
-                        document.head.removeChild(meta);
-                        if (value !== '1px') {
-                            document.write('<link href="/Content/css" rel="stylesheet" type="text/css" />');
-                        }
-                    }
-                }
-                return true;
-            }())||document.write('<script src="/Content/css"><\/script>');</script>
+	``` ... <link href="http://az673227.azureedge.net/Content/css?v=1.0.0.25474" rel="stylesheet"/>
+<script>(function() { var loadFallback, len = document.styleSheets.length; for (var i = 0; i < len; i++) { var sheet = document.styleSheets[i]; if (sheet.href.indexOf('http://az673227.azureedge.net/Content/css?v=1.0.0.25474') !== -1) { var meta = document.createElement('meta'); meta.className = 'sr-only'; document.head.appendChild(meta); var value = window.getComputedStyle(meta).getPropertyValue('width'); document.head.removeChild(meta); if (value !== '1px') { document.write('<link href="/Content/css" rel="stylesheet" type="text/css" />'); } } } return true; }())||document.write('<script src="/Content/css"><\\/script>');</script>
 
-	<script src="http://az673227.vo.msecnd.net/bundles/modernizer?v=1.0.0.25474"></script>
+	<script src="http://az673227.azureedge.net/bundles/modernizer?v=1.0.0.25474"></script>
  	<script>(window.Modernizr)||document.write('<script src="/bundles/modernizr"><\/script>');</script>
 	... 
-	<script src="http://az673227.vo.msecnd.net/bundles/jquery?v=1.0.0.25474"></script>
+	<script src="http://az673227.azureedge.net/bundles/jquery?v=1.0.0.25474"></script>
 	<script>(window.jquery)||document.write('<script src="/bundles/jquery"><\/script>');</script>
 
- 	<script src="http://az673227.vo.msecnd.net/bundles/bootstrap?v=1.0.0.25474"></script>
+ 	<script src="http://az673227.azureedge.net/bundles/bootstrap?v=1.0.0.25474"></script>
  	<script>($.fn.modal)||document.write('<script src="/bundles/bootstrap"><\/script>');</script>
 	...
 	```
 
-	Beachten Sie, dass das eingefügte Skript für das CSS-Bündel immer noch den fehlgeleiteten Rest aus der "CdnFallbackExpression"-Eigenschaft in der folgenden Zeile enthält:
+	Note that injected script for the CSS bundle still contains the errant remnant from the `CdnFallbackExpression` property in the line:
 
 		}())||document.write('<script src="/Content/css"><\/script>');</script>
 
-	Da jedoch der erste Teil des ||-Ausdrucks immer "true" zurückgibt (in der Zeile unmittelbar darüber), wird die document.write()-Funktion niemals ausgeführt.
+	But since the first part of the || expression will always return true (in the line directly above that), the document.write() function will never run.
 
-6. Um zu testen, ob das Fallback-Skript funktioniert, gehen Sie zurück zum Dashboard Ihres CDN-Endpunkts, und klicken Sie auf **Endpunkt deaktivieren**.
+6. Um zu testen, ob das Fallbackskript funktioniert, gehen Sie zurück zum Blatt Ihres CDN-Endpunkts, und klicken Sie auf **Beenden**.
 
 	![](media/cdn-websites-with-cdn/13-test-fallback.png)
 
@@ -561,4 +557,4 @@ Die [Bundle](http://msdn.microsoft.com/library/system.web.optimization.bundle.as
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0302_2016-->

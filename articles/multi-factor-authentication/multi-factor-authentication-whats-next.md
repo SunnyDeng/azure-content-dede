@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/16/2016" 
+	ms.date="02/26/2016" 
 	ms.author="billmath"/>
 
 # Konfigurieren von Azure Multi-Factor Authentication
@@ -35,7 +35,7 @@ Funktion| Beschreibung| Inhalt
 [Zwischenspeichern](#caching)|Durch Zwischenspeichern können Sie einen bestimmten Zeitraum festlegen, sodass nachfolgende Authentifizierungsversuche automatisch erfolgreich sind. |Einrichten und Konfigurieren des Zwischenspeicherns zur Authentifizierung
 [Vertrauenswürdige IPs](#trusted-ips)|Vertrauenswürdige IP-Adressen ist ein Feature der mehrstufigen Authentifizierung, mit der Administratoren eines verwalteten oder verbundenen Mandanten die mehrstufige Authentifizierung für Benutzer umgehen können, die sich vom lokalen Intranet des Unternehmens aus anmelden.|Konfigurieren und Einrichten von IP-Adressen, die von der mehrstufigen Authentifizierung ausgenommen sind	
 [App-Kennwörter](#app-passwords)|Mit App-Kennwörtern kann eine Anwendung, die die mehrstufige Authentifizierung nicht erkennt, diese umgehen und weiter ausgeführt werden.|Informationen zu App-Kennwörter.
-[Multi-Factor Authentication für gespeicherte Geräte und Browser (Öffentliche Vorschau) aussetzen](#suspend-multi-factor-authentication-for-remembered-devices-and-browsers-public-preview)|Dadurch können Sie die Multi-Factor Authentication für eine festgelegte Anzahl von Tagen aussetzen, nachdem ein Benutzer erfolgreich angemeldet wurde.|Informationen zum Aktivieren dieser Funktion und zum Einrichten der Anzahl von Tagen.
+[Speichern der Multi-Factor Authentication für gespeicherte Geräte und Browser](#remember-multi-factor-authentication-for-devices-users-trust)|Mit dieser Funktion können Sie Geräte für eine festgelegte Anzahl von Tagen speichern, nachdem ein Benutzer erfolgreich mit MFA angemeldet wurde.|Informationen zum Aktivieren dieser Funktion und zum Einrichten der Anzahl von Tagen.
 [Auswählbare Verifizierungsmethoden (öffentliche Vorschau)](#selectable-verification-methods-public-preview)|Ermöglicht Ihnen die Auswahl der Authentifizierungsmethoden, die Sie den Benutzern zur Verfügung stellen möchten.|Informationen zum Aktivieren oder Deaktivieren bestimmter Authentifizierungsmethoden, beispielweise per Anruf oder SMS.
 
 
@@ -152,7 +152,7 @@ Bevor Sie beginnen, sollten Sie Folgendes beachten:
 
 ## Zwischenspeichern in Azure Multi-Factor Authentication
 
-Durch Zwischenspeichern können Sie einen bestimmten Zeitraum festlegen, sodass nachfolgende Authentifizierungsversuche automatisch erfolgreich sind. Dies wird hauptsächlich verwendet, wenn lokale Systeme, wie z. B. VPNs, mehrere Verifizierungsanfragen senden, während die erste Anfrage noch bearbeitet wird. Dadurch werden die nachfolgenden Anforderungen automatisch erfolgreich ausgeführt, nachdem die laufende Verifizierungsanfrage für den Benutzer erfolgreich ausgeführt wurde. Beachten Sie, dass das Zwischenspeichern nicht für Anmeldungen bei Azure AD gedacht ist.
+Durch Zwischenspeichern können Sie einen bestimmten Zeitraum festlegen, sodass nachfolgende Authentifizierungsversuche automatisch erfolgreich sind. Dies wird hauptsächlich verwendet, wenn lokale Systeme, wie z. B. VPNs, mehrere Verifizierungsanfragen senden, während die erste Anfrage noch bearbeitet wird. Dadurch werden die nachfolgenden Anforderungen automatisch erfolgreich ausgeführt, nachdem die laufende Verifizierungsanfrage für den Benutzer erfolgreich ausgeführt wurde. Beachten Sie, dass das Zwischenspeichern nicht für Anmeldungen bei Azure AD gedacht ist.
 
 
 ### Einrichten der Zwischenspeicherung in Azure Multi-Factor Authentication
@@ -195,7 +195,7 @@ Außerhalb des Unternehmensnetzwerks|Für Browserflüsse, für die eine mehrstuf
 6. Wählen Sie auf der Seite „Diensteinstellungen“ unter „Vertrauenswürdige IPs“ entweder:
 
 	- Für Anforderungen von verbundene Benutzern, die aus meinem Intranet stammen – Alle Verbundbenutzer, die sich vom Unternehmensnetzwerk aus anmelden, umgehen die mehrstufige Authentifizierung mithilfe eines von AD FS ausgestellten Anspruchs. 
-	- Für Anforderungen aus einem bestimmten Bereich öffentlicher IPs – Geben Sie mithilfe der CIDR-Notation die IP-Adressen in die Textfelder ein. Beispiel: xxx.xxx.xxx.0/24 für IP-Adressen im Bereich xxx.xxx.xxx. 1 – xxx.xxx.xxx. 254 oder xxx.xxx.xxx.xxx/32 für eine einzelne IP-Adresse. Sie können bis zu 50 IP-Adressbereiche eingeben.
+	- Für Anforderungen aus einem bestimmten Bereich öffentlicher IPs – Geben Sie mithilfe der CIDR-Notation die IP-Adressen in die Textfelder ein. Beispiel: xxx.xxx.xxx.0/24 für IP-Adressen im Bereich xxx.xxx.xxx. 1 – xxx.xxx.xxx. 254 oder xxx.xxx.xxx.xxx/32 für eine einzelne IP-Adresse. Sie können bis zu 50 IP-Adressbereiche eingeben.
 
 7. Klicken Sie auf "Speichern".
 8. Sobald die Updates angewendet wurden, klicken Sie auf "Schließen".
@@ -213,7 +213,7 @@ In einigen Anwendungen wie Office 2010 oder älter und Apple Mail können Sie ke
 
 >[AZURE.NOTE] Moderne Authentifizierung für Office 2013-Clients
 >
-> Office 2013-Clients (einschließlich Outlook) unterstützen jetzt neue Authentifizierungsprotokolle und bieten die Möglichkeit zum Aktivieren von Multi-Factor Authentication. Damit sind nach der Aktivierung keine App-Kennwörter mehr für Office 2013-Clients erforderlich. Weitere Informationen finden Sie unter [Office 2013 modern authentication public preview announced](https://blogs.office.com/2015/03/23/office-2013-modern-authentication-public-preview-announced/) ("Öffentliche Preview für moderne Authentifizierung in Office 2013", in englischer Sprache).
+> Office 2013-Clients (einschließlich Outlook) unterstützen jetzt neue Authentifizierungsprotokolle und bieten die Möglichkeit zum Aktivieren von Multi-Factor Authentication. Damit sind nach der Aktivierung keine App-Kennwörter mehr für Office 2013-Clients erforderlich. Weitere Informationen finden Sie unter [Office 2013 modern authentication public preview announced](https://blogs.office.com/2015/03/23/office-2013-modern-authentication-public-preview-announced/) ("Öffentliche Preview für moderne Authentifizierung in Office 2013", in englischer Sprache).
 
 
 
@@ -295,7 +295,7 @@ Darüber hinaus können Benutzer App-Kennwörter auch später erstellen, durch �
 --------------------------------------------------------------------------------
 
 
-1. Melden Sie sich beim Office 365-Portal an.
+1. Melden Sie sich beim Office 365-Portal an.
 2. Wählen Sie in der oberen rechten Ecke das Einstellungs-Widget aus.
 3. Wählen Sie links "Zusätzliche Sicherheitsüberprüfung".
 4. Wählen Sie auf der rechten Seite **Aktualisieren meiner Telefonnummern für die Kontosicherheit**.
@@ -331,26 +331,26 @@ Darüber hinaus können Benutzer App-Kennwörter auch später erstellen, durch �
 
 ![App-Kennwörter](./media/multi-factor-authentication-whats-next/myapp.png)
 
-## Multi-Factor Authentication für gespeicherte Geräte und Browser (Öffentliche Vorschau) aussetzen
+## Speichern der Multi-Factor Authentication für Geräte, denen Benutzer vertrauen
 
-Das Aussetzen der mehrstufigen Authentifizierung für gespeicherte Geräte und Browser ist ein Feature, mit dem Sie Benutzern die Möglichkeit zum Aussetzen der Authentifizierung für eine festgelegte Anzahl von Tagen nach der Durchführung einer erfolgreichen Multi-Factor Authentication geben können. Dies ist ein kostenloses Feature für alle Benutzer der Multi-Factor Authentication, das die Benutzerfreundlichkeit für alle Benutzer verbessert. Da Benutzer damit die mehrstufige Authentifizierung aussetzen können, kann dieses Feature möglicherweise die Kontosicherheit verringern.
+Die Speicherung der Multi-Factor Authentication für Geräte und Browser, denen Benutzer vertrauen, ist eine kostenlose Funktion für alle MFA-Benutzer. Damit können Sie Benutzern die Möglichkeit geben, MFA für eine festgelegte Anzahl von Tagen zu umgehen, nachdem sie sich erfolgreich mithilfe von MFA angemeldet haben. Dies kann die Benutzerfreundlichkeit für die Benutzer verbessern.
 
-Um sicherzustellen, dass die Benutzerkonten geschützt sind, sollten Sie die Multi-Factor Authentication für deren Geräte in folgenden Fällen wiederherstellen:
+Da Benutzer jedoch MFA für vertrauenswürdige Geräte speichern können, wird durch diese Funktion möglicherweise die Kontosicherheit verringert. Um die Sicherheit der Konten zu gewährleisten, sollten Sie die Multi-Factor Authentication für deren Geräte in folgenden Fällen wiederherstellen:
 
 - Wenn das Unternehmenskonto gefährdet ist.
 - Wenn ein gespeichertes Gerät verloren ist oder gestohlen wurde.
 
 > [AZURE.NOTE] Dieses Feature wird als ein Cookie Browsercache implementiert. Es funktioniert nicht, wenn Browsercookies nicht aktiviert sind.
 
-### Vorgehensweise beim Aktivieren/Aussetzen der Multi-Factor Authentication für gespeicherte Geräte und Festlegen
+### Aktivieren/Deaktivieren der Speicherung der Multi-Factor Authentication
 
 1. Melden Sie sich beim klassischen Azure-Portal an.
 2. Klicken Sie im linken Bereich auf "Active Directory".
-3. Klicken Sie unter Active Directory auf das Verzeichnis, in dem Sie das Aussetzen von Multi-Factor Authentication für gespeicherte Geräte einrichten möchten.
+3. Klicken Sie unter „Active Directory“ auf das Verzeichnis, in dem Sie das Speichern der Multi-Factor Authentication für Geräte einrichten möchten.
 4. Klicken Sie im ausgewählten Verzeichnis auf "Konfigurieren".
 5. Klicken Sie im Abschnitt "Multi-Factor Authentication" auf "Diensteinstellungen verwalten".
-6. Aktivieren/deaktivieren Sie auf der Seite „Diensteinstellungen“ unter „Geräteeinstellungen von Benutzern verwalten“ die Option **Benutzern die Aussetzung der mehrstufigen Authentifizierung ermöglichen, indem ihre Geräte gespeichert werden**. ![Aussetzen von Geräten](./media/multi-factor-authentication-manage-users-and-devices/suspend.png)
-8. Legen Sie die Anzahl von Tagen fest, an denen Sie die Aussetzung zulassen möchten. Der Standardwert ist 14 Tage.
+6. Aktivieren oder deaktivieren Sie auf der Seite „Diensteinstellungen“ unter „Geräteeinstellungen von Benutzern verwalten“ die Option **Benutzern erlauben, Multi-Factor Authentication auf Geräten zu speichern, denen sie vertrauen**. ![Speichern von Geräten](./media/multi-factor-authentication-whats-next/remember.png)
+8. Legen Sie die Anzahl von Tagen fest, an denen Sie die Aussetzung zulassen möchten. Der Standardwert ist 14 Tage.
 9. Klicken Sie auf "Speichern".
 10. Klicken Sie auf "Schließen".
 
@@ -372,8 +372,8 @@ Methode|Beschreibung
 3. Klicken Sie unter „Active Directory“ auf das Verzeichnis, für das Sie Authentifizierungsmethoden aktivieren oder deaktivieren möchten.
 4. Klicken Sie im ausgewählten Verzeichnis auf "Konfigurieren".
 5. Klicken Sie im Abschnitt "Multi-Factor Authentication" auf "Diensteinstellungen verwalten".
-6. Aktivieren/deaktivieren Sie auf der Seite „Diensteinstellungen“ unter „Überprüfungsoptionen“ die Optionen, die Sie verwenden bzw. nicht verwenden möchten.</br></br> ![Aussetzen von Geräten](./media/multi-factor-authentication-whats-next/authmethods.png)
+6. Aktivieren oder deaktivieren Sie auf der Seite „Diensteinstellungen“ unter „Überprüfungsoptionen“ die Optionen, die Sie verwenden bzw. nicht verwenden möchten.</br></br> ![Überprüfungsoptionen](./media/multi-factor-authentication-whats-next/authmethods.png)
 9. Klicken Sie auf "Speichern".
 10. Klicken Sie auf "Schließen".
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

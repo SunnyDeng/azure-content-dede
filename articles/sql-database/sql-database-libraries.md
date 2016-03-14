@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/01/2015"
+	ms.date="02/23/2016"
 	ms.author="pehteh"/>
 
 # Verbindungsbibliotheken für SQL-Datenbank und SQL Server
@@ -28,10 +28,10 @@ Die folgende Tabelle enthält die Bibliotheken, die von Microsoft veröffentlich
 | :--- | :--- | :--- | :--- | :--- | :-- |
 | .NET | Plattformübergreifend (.NET) | [ADO.NET, System.Data .SqlClient](http://www.microsoft.com/download/details.aspx?id=30653) | 4\.5+ | SQL Server-Anbieter für .NET Framework | . |
 | PHP | Windows | [PHP für SQL Server](http://www.microsoft.com/download/details.aspx?id=20098) | 2\.0+ | PHP-Treiber für SQL Server | [Link](http://msdn.microsoft.com/library/dn865013.aspx) |
-| Java | Windows | [JDBC für SQL Server](https://www.microsoft.com/download/details.aspx?id=11774) | 2\.0+ | 4 JDBC-Treibertyp, der Datenbankverbindungen über die Standard-JDBC-API bereitstellt | [Link](http://msdn.microsoft.com/library/dn425070.aspx) |
+| Java | Windows | [JDBC für SQL Server](https://www.microsoft.com/download/details.aspx?id=11774) | 2\.0+ | 4 JDBC-Treibertyp, der Datenbankverbindungen über die Standard-JDBC-API bereitstellt | [Link](https://msdn.microsoft.com/library/mt654048.aspx) |
 | ODBC | Windows | [ODBC für SQL Server](http://www.microsoft.com/download/details.aspx?id=36434) | 11\.0+ | Microsoft ODBC-Treiber für SQL Server | [Link](http://msdn.microsoft.com/library/jj730308.aspx) |
-| ODBC | Suse Linux | [ODBC für SQL Server](http://www.microsoft.com/download/details.aspx?id=34687) | 11\.0+ | Microsoft ODBC-Treiber für SQL Server | . |
-| ODBC | Redhat Linux | [ODBC für SQL Server](http://www.microsoft.com/download/details.aspx?id=34687) | 11\.0+ | Microsoft ODBC-Treiber für SQL Server | . |
+| ODBC | Suse Linux | [ODBC für SQL Server](http://www.microsoft.com/download/details.aspx?id=34687) | 11\.0+ | Microsoft ODBC-Treiber für SQL Server | [Link](https://msdn.microsoft.com/de-DE/library/hh568451.aspx) |
+| ODBC | Redhat Linux | [ODBC für SQL Server](http://www.microsoft.com/download/details.aspx?id=34687) | 11\.0+ | Microsoft ODBC-Treiber für SQL Server | [Link](https://msdn.microsoft.com/de-DE/library/hh568451.aspx) |
 
 ### ODBC-Unterstützung
 
@@ -52,20 +52,22 @@ Weitere Informationen finden Sie unter:
 
 ## Bibliotheken von Drittanbietern
 
-> [AZURE.IMPORTANT]Die folgende Tabelle enthält die Bibliotheken, die von Drittanbietern zu deren Lizenzbedingungen veröffentlicht werden. Sie sind selbst verantwortlich für die Überprüfung und die Einhaltung der entsprechenden Drittanbieter-Lizenzen zur Verwendung dieser Bibliotheken. Sie tragen das Risiko der Verwendung dieser Bibliotheken. Microsoft übernimmt keine Garantien, weder ausdrücklich noch konkludent, in Bezug auf die hier bereitgestellten Informationen und stellt diese Informationen lediglich aus Gründen der Vereinfachung für die Benutzer zur Verfügung. Kein Teil dieses Dokuments wird auf irgendeine Art durch Microsoft unterstützt. <br/><br/>Es ist Aufgabe der öffentlichen Entwicklercommunity, die Informationen in diesem Abschnitt "Bibliotheken von Drittanbietern" mithilfe des [azure-content](http://github.com/Azure/azure-content/)-Repositorys, das sich im Besitz von **Azure** auf GitHub.com befindet, zu aktualisieren und zu verwalten. Microsoft empfiehlt Entwicklern, diesen Abschnitt zu aktualisieren. Microsoft-Mitarbeiter beabsichtigen *nicht*, die Informationen in diesem Abschnitt zu aktualisieren, da andere Personen mehr Expertise bei den einzelnen Drittanbieterbibliotheken aufweisen. Vielen Dank.
+> [AZURE.IMPORTANT] Die folgende Tabelle enthält die Bibliotheken, die von Drittanbietern zu deren Lizenzbedingungen veröffentlicht werden. Sie sind selbst verantwortlich für die Überprüfung und die Einhaltung der entsprechenden Drittanbieter-Lizenzen zur Verwendung dieser Bibliotheken. Sie tragen das Risiko der Verwendung dieser Bibliotheken. Microsoft übernimmt keine Garantien, weder ausdrücklich noch konkludent, in Bezug auf die hier bereitgestellten Informationen und stellt diese Informationen lediglich aus Gründen der Vereinfachung für die Benutzer zur Verfügung. Kein Teil dieses Dokuments wird auf irgendeine Art durch Microsoft unterstützt. <br/><br/>Es ist Aufgabe der öffentlichen Entwicklercommunity, die Informationen in diesem Abschnitt "Bibliotheken von Drittanbietern" mithilfe des [azure-content](http://github.com/Azure/azure-content/)-Repositorys, das sich im Besitz von **Azure** auf GitHub.com befindet, zu aktualisieren und zu verwalten. Microsoft empfiehlt Entwicklern, diesen Abschnitt zu aktualisieren. Microsoft-Mitarbeiter beabsichtigen *nicht*, die Informationen in diesem Abschnitt zu aktualisieren, da andere Personen mehr Expertise bei den einzelnen Drittanbieterbibliotheken aufweisen. Vielen Dank.
 
 Die folgende Tabelle enthält die Bibliotheken, die von Drittanbietern, wie anderen Unternehmen oder der Community, veröffentlicht werden. Bibliotheken, die von Microsoft veröffentlichten wurden, sind auf den Abschnitt weiter oben in diesem Thema beschränkt.
 
 | Plattform | Bibliotheken |
 | :-- | :-- |
-| Python | [pymssql *(org, stable)*](http://pymssql.org/en/stable/)<br/><br/>[pymssql *(org)*](http://pymssql.org/) |
-| Node.js | [Tedious *(npmjs)*](http://www.npmjs.com/package/tedious) |
-| Node.js | [Node-MSSQL *(github, patriksimek)*](https://github.com/patriksimek/node-mssql)<br/><br/>[Node-MSSQL *(npmjs)*](https://www.npmjs.com/package/node-mssql)<br/><br/>[Node-MSSQL-Connector *(npmjs)*](https://www.npmjs.com/package/node-mssql-connector) |
-| Node.js | [Edge.js *(github com, tjanczuk)*](https://github.com/tjanczuk/edge)<br/><br/>[Edge.js *(tjanczuk, github io)*](http://tjanczuk.github.io/edge/) |
-| . | [FreeTDS *(org)*](http://www.freetds.org/) |
+| Ruby | [tinytds *(org, stable)*](https://rubygems.org/gems/tiny_tds/versions/0.7.0) |
+| GO | [go-mssqldb *(org, stable)*](https://github.com/denisenkom/go-mssqldb) |
+| Python | [pymssql *(org, stable)*](http://pymssql.org/en/stable/) |
+| Node.js | [Node-MSSQL *(npmjs)*](https://www.npmjs.com/package/node-mssql)<br/><br/>[Node-MSSQL-Connector *(npmjs)*](https://www.npmjs.com/package/node-mssql-connector) |
+| C++ | [FreeTDS *(org)*](http://www.freetds.org/) |
+
+
 
 <!--
 https://en.wikipedia.org/wiki/Draft:Microsoft_SQL_Server_Libraries/Drivers
 -->
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0302_2016-->

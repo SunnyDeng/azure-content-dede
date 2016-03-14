@@ -13,8 +13,8 @@
 	ms.workload="identity"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="hero-article" 
-	ms.date="02/16/2016"
+	ms.topic="article" 
+	ms.date="02/29/2016"
 	ms.author="billmath"/>
 
 # Was ist Azure Multi-Factor Authentication?
@@ -117,9 +117,10 @@ Benutzerdefinierte Begrüßungen für Telefonanrufe| | | *
 Benutzerdefinierte Anrufer-ID für Telefonanrufe| | | *
 Bestätigung von Ereignissen| | | *
 Vertrauenswürdige IP-Adressen| | | *
-Aussetzen der Multi-Factor Authentication für gespeicherte Geräte (öffentliche Vorschau)| | | *
+Speichern der MFA für vertrauenswürdige Geräte |* | * | *
 MFA-SDK| | | *
 MFA für lokale Anwendungen mit MFA-Server| | | *
+Auswählbare Überprüfungsoptionen (öffentliche Vorschau)|* | * | *
 
 
 ## Beziehen von Azure Multi-Factor Authentication
@@ -135,6 +136,8 @@ Wenn Sie einen Azure Multi-Factor Authentication-Anbieter verwenden, sind zwei N
 
 - **Pro Benutzer**. Diese Option ist für Unternehmen geeignet, die Multi-Factor Authentication für eine feste Anzahl von Mitarbeitern aktivieren möchten, die regelmäßig eine Authentifizierung benötigen.
 - **Pro Authentifizierung**. Diese Option ist für Unternehmen geeignet, die Multi-Factor Authentication für eine große Gruppe externer Benutzer aktivieren möchten, die seltener oder unregelmäßig eine Authentifizierung benötigen.
+
+Azure Multi-Factor Authentication umfasst auswählbare Überprüfungsmethoden für die Cloud und für Server. Dies bedeutet, dass Sie auswählen können, welche Methoden für Ihre Benutzer zur Verwendung mit Multi-Factor Authentication verfügbar sind. Diese Funktion befindet sich derzeit in der öffentlichen Vorschau für die Cloudversion von Multi-Factor Authentication. Weitere Informationen finden Sie unter [Auswählbare Überprüfungsmethoden](multi-factor-authentication-whats-next.md#selectable-verification-methods-public-preview).
 
 Ausführliche Preisinformationen finden Sie unter [Preise für Azure MFA](https://azure.microsoft.com/pricing/details/multi-factor-authentication/).
 
@@ -198,7 +201,7 @@ Einmalumgehung | ● | ●
 Benutzerdefinierte Begrüßungen für Telefonanrufe | ● | ●
 Benutzerdefinierte Anrufer-ID für Telefonanrufe | ● | ●
 Vertrauenswürdige IP-Adressen | ● | ●
-Aussetzen der Multi-Factor Authentication für gespeicherte Geräte (öffentliche Vorschau) | ● |  
+Speichern der MFA für vertrauenswürdige Geräte (öffentliche Vorschau) | ● |  
 Bedingter Zugriff | ● | ●
 Cache | ● | ●
 
@@ -206,4 +209,4 @@ Sie haben nun ermittelt, ob Sie Multi-Factor Authentication in der Cloud oder de
 
 <center> [![Cloud](./media/multi-factor-authentication-get-started/cloud2.png)](multi-factor-authentication-get-started-cloud.md) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[![Proofup](./media/multi-factor-authentication-get-started/server2.png)](multi-factor-authentication-get-started-server.md) &#160;&#160;&#160;&#160;&#160; </center>
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0302_2016-->

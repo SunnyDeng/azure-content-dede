@@ -1,12 +1,4 @@
-<properties
-	pageTitle="Virtuelle Computer und physische Server in Azure mit Azure Site Recovery (Legacy) replizieren | Microsoft Azure"
-	description="Beschreibt eine Legacy-Bereitstellung zum Einrichten von Azure Site Recovery, um eine Replikation, Failover und Wiederherstellung von lokalen VMware virtuellen Computern und physischen Windows-/Linux-Servern zu Azure zu orchestrieren." 
-	services="site-recovery"
-	documentationCenter=""
-	authors="rayne-wiselman"
-	manager="jwhit"
-	editor=""/>
-
+<properties pageTitle="Virtuelle Computer und physische Server in Azure mit Azure Site Recovery (Legacy) replizieren | Microsoft Azure" description ="Beschreibt eine Legacy-Bereitstellung zum Einrichten von Azure Site Recovery, um eine Replikation, Failover und Wiederherstellung von lokalen VMware virtuellen Computern und physischen Windows-/Linux-Servern zu Azure zu orchestrieren." " services ="site-recovery" documentationCenter =" "authors="rayne wiselman" manager ="jwhit"editor=" "/ >
 
 <tags
 	ms.service="site-recovery"
@@ -20,18 +12,18 @@
 # Replizieren von virtuellen VMware-Computern und physischen Servern zu Azure mithilfe von Azure Site Recovery (Legacy)
 
 > [AZURE.SELECTOR]
-- [Enhanced](site-recovery-vmware-to-azure-classic.md)
-- [Legacy](site-recovery-vmware-to-azure-classic-legacy.md)
+- [Verbessert](site-recovery-vmware-to-azure-classic.md)
+- [Vorgängerversion](site-recovery-vmware-to-azure-classic-legacy.md)
 
 
-Azure Site Recovery unterstützt Ihre Strategie für Geschäftskontinuität und Notfallwiederherstellung, indem Replikation, Failover und Wiederherstellung virtueller Computer und physischer Server aufeinander abgestimmt werden. Computer können in Azure oder in einem sekundären lokalen Datencenter repliziert werden. Eine kurze Übersicht über das Gesamtthema finden Sie unter [Was ist Azure Site Recovery?](site-recovery-overview.md).
+Der Dienst Azure Site Recovery unterstützt Ihre Strategie für Geschäftskontinuität und Notfallwiederherstellung, indem Replikation, Failover und Wiederherstellung virtueller Computer und physischer Server aufeinander abgestimmt werden. Computer können in Azure oder in einem sekundären lokalen Datencenter repliziert werden. Eine kurze Übersicht finden Sie unter [Was ist Azure Site Recovery?](site-recovery-overview.md)
 
 ## Übersicht
 
 Dieser Artikel beschreibt die Vorgehensweise zum
 
-- **Replizieren virtueller VMware-Computer in Azure**– Stellen Sie Site Recovery (Seitenwiederherstellung) bereit, um die Replikation, das Failover und die Wiederherstellung von lokalen VMware virtuellen Computern im Azure Speicher zu koordinieren.
-- **Replizieren physischer Server** – Stellen Sie Site Recovery bereit um die Replikation, das Failover und die Wiederherstellung von lokalen physischen Windows- und Linux-Servern im Azure Speicher zu koordinieren.
+- **Replizieren virtueller VMware-Computer in Azure:** Sie stellen Site Recovery bereit, um die Replikation, das Failover und die Wiederherstellung von lokalen virtuellen VMware-Computern in Azure Storage zu koordinieren.
+- **Replizieren physischer Server in Azure:** Sie stellen Azure Site Recovery bereit, um die Replikation, das Failover und die Wiederherstellung von lokalen physischen Windows- und Linux-Servern in Azure zu koordinieren.
 
 >[AZURE.NOTE] Das in diesem Artikel beschriebene Szenario enthält Anweisungen für **ältere (legacy) Versionen**. Verwenden Sie diesen Artikel nicht für neue Bereitstellungen. Verwenden Sie stattdessen die Anweisungen der [erweiterten Bereitstellung](site-recovery-vmware-to-azure-classic.md) für das klassische Portal. Wenn Sie Site Recovery bereits nach der in diesem Artikel beschriebenen Methode bereitgestellt haben, empfehlen wir Ihnen , wie unten beschrieben zur neuen Version zu migrieren.
 
@@ -56,12 +48,12 @@ Bevor Sie beginnen, beachten Sie bitte Folgendes:
 
 Migrieren Sie wie folgt:
 
-1. Erfahren Sie mehr über die [erweiterten Funktionen](site-recovery-vmware-to-azure-classic.md#enhanced-deployment), gehen Sie sicher das Sie die neue [Architektur](site-recovery-vmware-to-azure-classic.md#scenario-architecture) verstehen und überprüfen Sie die [Voraussetzungen](site-recovery-vmware-to-azure-classic.md#before-you-start-deployment) für die erweiterte Bereitstellung.
+1. Lesen Sie die Dokumentation zu [erweiterten Funktionen](site-recovery-vmware-to-azure-classic.md#enhanced-deployment), achten Sie darauf, die neue [Architektur](site-recovery-vmware-to-azure-classic.md#scenario-architecture) zu verstehen, und überprüfen Sie die [Voraussetzungen](site-recovery-vmware-to-azure-classic.md#before-you-start-deployment) für die erweiterte Bereitstellung.
 2. Deinstallieren Sie den Mobilitätsdienst auf Computern, die Sie derzeit schützen. Eine neue Version des Mobilitätsdiensts wird auf den Computern installiert, wenn Sie sie der neuen Schutzgruppe hinzufügen.
 3. Beziehen Sie einen [Tresorregistrierungsschlüssel](site-recovery-vmware-to-azure-classic.md#step-4-download-a-vault-registration-key), und führen Sie den [Assistenten für ein einheitliches Setup](site-recovery-vmware-to-azure-classic.md#step-5-install-the-management-server) aus, um den Konfigurationsserver, den Prozessserver und die Komponenten des Masterzielservers auf dem Verwaltungsserver zu installieren. Erfahren Sie mehr über die [Kapazitätsplanung](site-recovery-vmware-to-azure-classic.md#capacity-planning).
 4. Falls Sie einen VMware vCenter-Server haben, [richten Sie die Anmeldeinformationen](site-recovery-vmware-to-azure-classic.md#step-6-set-up-credentials-for-the-vcenter-server) so ein, dass Site Recovery darauf zugreifen und automatisch die von ihm verwalteten virtuellen Computer ermitteln kann. Erfahren Sie mehr über die [erforderlichen Berechtigungen](site-recovery-vmware-to-azure-classic.md#vmware-permissions-for-vcenter-access).
 5. Fügen Sie [vCenter-Server oder ESXi-Hosts](site-recovery-vmware-to-azure-classic.md#step-7-add-vcenter-servers-and-esxi-hosts) hinzu. Es dauert bis zu 15 Minuten, bis das Portal aktualisiert ist und die Anmeldeinformationen angezeigt werden.
-6. Erstellen Sie eine [neue Schutzgruppe](site-recovery-vmware-to-azure-classic.md#step-8-create-a-protection-group). Es dauert bis zu 15 Minuten, bis das Portal aktualisiert ist und die virtuellen Computer ermittelt und angezeigt werden. Wenn Sie nicht warten möchten, können Sie den Namen des Verwaltungsservers markieren (bitte klicken Sie nicht darauf) > und auf **Aktualisieren** klicken.
+6. Erstellen Sie eine [neue Schutzgruppe](site-recovery-vmware-to-azure-classic.md#step-8-create-a-protection-group). Es dauert bis zu 15 Minuten, bis das Portal aktualisiert ist und die virtuellen Computer ermittelt und angezeigt werden. Wenn Sie nicht warten möchten, können Sie den Namen des Verwaltungsservers markieren (nicht darauf klicken) und auf **Aktualisieren** klicken.
 7. Klicken Sie in der neuen Schutzgruppe auf **Computer migrieren**.
 
 	![Konto hinzufügen](./media/site-recovery-vmware-to-azure-classic-legacy/legacy-migration1.png)
@@ -85,7 +77,7 @@ Migrieren Sie wie folgt:
 
 	![Konto hinzufügen](./media/site-recovery-vmware-to-azure-classic-legacy/legacy-migration5.png)
 
->[AZURE.NOTE] Wenn Sie die Migrationsschritte abgeschlossen haben, sollten Sie mit dem [aktualisierten Artikel](site-recovery-vmware-to-azure-classic.md) fortfahren. Nach der Migration ist der Rest dieses älteren Artikels nicht mehr relevant, und Sie müssen keinen der darin beschriebenen Schritte mehr befolgen**.
+>[AZURE.NOTE] Wenn Sie die Migrationsschritte abgeschlossen haben, sollten Sie mit dem [erweiterten Artikel](site-recovery-vmware-to-azure-classic.md) fortfahren. Nach der Migration ist der Rest dieses älteren Artikels nicht mehr relevant, und Sie müssen keinen der darin beschriebenen Schritte mehr befolgen**.
 
 
 
@@ -106,7 +98,7 @@ Sie benötigen Folgendes:
 **Lokale Computer** | Lokale virtuelle Computer auf einem VMware-Hypervisor oder physische Server, auf denen Windows oder Linux ausgeführt wird. | Sie richten Replikationseinstellungen für virtuelle Computer und Server ein. Failover können für einzelne Computer durchgeführt werden, häufiger erfolgen sie jedoch im Rahmen eines Wiederherstellungsplans mit gemeinsamem Failover mehrerer virtueller Computer.
 **Mobilitätsdienst** | <p>Wird auf jedem virtuellen Computer oder physischen Server installiert, den Sie schützen möchten.</p><p>Kann manuell installiert oder vom Prozessserver automatisch per Pushfunktion installiert werden, wenn der Schutz für den Server aktiviert ist. | Beim Mobilitätsdienst werden Daten im Rahmen der anfänglichen Replikation (Resync) an den Prozessserver gesendet. Nachdem der Server einen geschützten Zustand erreicht hat (nach Abschluss der erneuten Synchronisierung), führt der Mobilitätsdienst eine In-Memory-Erfassung von Schreibvorgängen auf den Datenträger durch und sendet die Daten an den Prozessserver. Anwendungskonsistenz für Windows-Server wird mit dem VSS-Framework erzielt.
 **Azure Site Recovery-Tresor** | Führen Sie die Einrichtung durch, nachdem Sie den Site Recovery-Dienst abonniert haben. | Sie registrieren Server in einem Site Recovery-Tresor. Der Tresor koordiniert und orchestriert Datenreplikation, Failover und Wiederherstellung zwischen dem lokalen Standort und Azure.
-**Replikationsmechanismus** | <p>**Über das Internet** – Kommuniziert und repliziert Daten von lokalen geschützten Servern und Azure mithilfe eines sicheren SSL/TLS-Kommunikationskanals über eine öffentliche Internetverbindung. Dies ist die Standardoption.</p><p>**VPN/ExpressRoute** – Kommuniziert und repliziert Daten zwischen lokalen Servern und Azure über eine VPN-Verbindung. Sie müssen eine Site-to-Site-VPN-Verbindung oder eine ExpressRoute-Verbindung zwischen dem lokalen Standort und Ihrem Azure-Netzwerk einrichten.</p><p>Sie wählen aus, wie die Replikation während der Site Recovery-Bereitstellung erfolgen soll. Nachdem der Mechanismus konfiguriert wurde, können Sie ihn nicht ändern, ohne den Schutz bereits geschützter Server zu beeinträchtigen.| <p>Für keine der Optionen müssen Sie eingehende Netzwerkports auf geschützten Computern öffnen. Die gesamte Netzwerkkommunikation wird vom lokalen Standort aus initiiert.</p> 
+**Replikationsmechanismus** | <p>**Über das Internet** – Kommuniziert und repliziert Daten von lokalen geschützten Servern und Azure mithilfe eines sicheren SSL/TLS-Kommunikationskanals über eine öffentliche Internetverbindung. Dies ist die Standardoption.</p><p>**VPN/ExpressRoute** – Kommuniziert und repliziert Daten zwischen lokalen Servern und Azure über eine VPN-Verbindung. Sie müssen eine Standort-zu-Standort-VPN-Verbindung oder eine ExpressRoute-Verbindung zwischen dem lokalen Standort und Ihrem Azure-Netzwerk einrichten.</p><p>Sie wählen aus, wie die Replikation während der Site Recovery-Bereitstellung erfolgen soll. Nachdem der Mechanismus konfiguriert wurde, können Sie ihn nicht ändern, ohne den Schutz bereits geschützter Server zu beeinträchtigen.| <p>Für keine der Optionen müssen Sie eingehende Netzwerkports auf geschützten Computern öffnen. Die gesamte Netzwerkkommunikation wird vom lokalen Standort aus initiiert.</p> 
 
 ## Kapazitätsplanung
 
@@ -122,8 +114,8 @@ Wichtige zu berücksichtigende Punkte:
 - **Anzahl von Quellen pro Masterzielserver** – Mit einem einzelnen Masterzielserver können mehrere Quellcomputer geschützt werden. Ein einzelner Quellcomputer kann jedoch nicht über mehrere Masterzielserver geschützt werden, da bei der Datenträgerreplikation eine virtuelle Festplatte, die die Größe des Datenträgers widerspiegelt, in Azure-BLOB-Speicher erstellt und als Datenträger mit dem Masterzielserver verbunden wird.  
 - **Maximale tägliche Änderungsrate pro Quellcomputer** – Bei der empfohlenen Änderungsrate pro Quellcomputer müssen drei Faktoren berücksichtigt werden. Im Hinblick auf den Zieldatenträger sind für jeden Vorgang auf dem Quellcomputer zwei IOPS auf dem Zieldatenträger erforderlich. Der Grund dafür ist, dass auf dem Zieldatenträger ein Lesevorgang für alte Daten und ein Schreibvorgang für neue Daten erfolgen. 
 	- **Vom Prozessserver unterstützte tägliche Änderungsrate** – Ein Quellcomputer kann nicht mehrere Prozessserver umfassen. Ein einzelner Prozessserver unterstützt eine tägliche Änderungsrate von bis zu 1 TB. Daher beträgt die maximale Datenänderungsrate pro Tag, die für einen Quellcomputer unterstützt wird, 1 TB. 
-	- **Maximaler vom Zieldatenträger unterstützter Durchsatz ** – Die maximale Codeänderung pro Quelldatenträger darf nicht mehr als 144 GB/Tag (mit einer Schreibgröße von 8 K) betragen. Informationen zum Durchsatz und den IOPS des Ziels für verschiedene Schreibgrößen finden Sie in der Tabelle im Abschnitt zum Masterzielserver. Diese Zahl muss durch zwei dividiert werden, da jede Quell-IOPS 2 IOPS auf dem Zieldatenträger generiert. Informieren Sie sich über [Azure-Skalierbarkeit und -Leistungsziele](../storage/storage-scalability-targets.md#scalability-targets-for-premium-storage-accounts) beim Konfigurieren des Ziels für Storage Premium-Konten.
-	- **Maximaler vom Speicherkonto unterstützter Durchsatz** – Ein Quellcomputer kann nicht mehrere Speicherkonten umfassen. Da ein Speicherkonto bis zu 20.000 Anforderungen pro Sekunde annimmt und jede Quell-IOPS 2 IOPS auf dem Masterzielserver generiert, wird empfohlen, die Anzahl der IOPS für den Quellcomputer auf 10.000 zu beschränken. Informieren Sie sich über [Azure-Skalierbarkeit und -Leistungsziele](../storage/storage-scalability-targets.md#scalability-targets-for-premium-storage-accounts) beim Konfigurieren der Quelle für Storage Premium-Konten.
+	- **Maximaler vom Zieldatenträger unterstützter Durchsatz ** – Die maximale Codeänderung pro Quelldatenträger darf nicht mehr als 144 GB/Tag (mit einer Schreibgröße von 8 K) betragen. Informationen zum Durchsatz und den IOPS des Ziels für verschiedene Schreibgrößen finden Sie in der Tabelle im Abschnitt zum Masterzielserver. Diese Zahl muss durch zwei dividiert werden, da jede Quell-IOPS 2 IOPS auf dem Zieldatenträger generiert. Informieren Sie sich über [Skalierbarkeit und Leistungsziele von Azure](../storage/storage-scalability-targets.md#scalability-targets-for-premium-storage-accounts) beim Konfigurieren des Ziels für Storage Premium-Konten.
+	- **Maximaler vom Speicherkonto unterstützter Durchsatz** – Ein Quellcomputer kann nicht mehrere Speicherkonten umfassen. Da ein Speicherkonto bis zu 20.000 Anforderungen pro Sekunde annimmt und jede Quell-IOPS 2 IOPS auf dem Masterzielserver generiert, wird empfohlen, die Anzahl der IOPS für den Quellcomputer auf 10.000 zu beschränken. Informieren Sie sich über [Skalierbarkeit und Leistungsziele von Azure](../storage/storage-scalability-targets.md#scalability-targets-for-premium-storage-accounts) beim Konfigurieren der Quelle für Storage Premium-Konten.
 
 ### Überlegungen zu Komponentenservern
 
@@ -205,11 +197,11 @@ Beachten Sie Folgendes:
 **Komponente** | **Anforderungen** | **Details**
 --- | --- | --- 
 **Azure-Konto** | Sie benötigen ein [Microsoft Azure](https://azure.microsoft.com/)-Konto. Für den Einstieg steht ein [kostenloses Testkonto](pricing/free-trial/) zur Verfügung.
-**Azure-Speicher** | <p>Sie benötigen ein Azure-Speicherkonto, um replizierte Daten zu speichern.</p><p>Das Konto sollte entweder ein [georedundantes Standardspeicherkonto](../storage/storage-redundancy.md#geo-redundant-storage) oder [Premium-Speicherkonto](../storage/storage-premium-storage-preview-portal.md) sein.</p><p>Es muss sich in der gleichen Region wie der Azure Site Recovery-Dienst befinden und dem gleichen Abonnement zugeordnet sein.</p><p>Weitere Informationen finden Sie unter [Einführung in Microsoft Azure Storage](../storage/storage-introduction.md)</p>
+**Azure-Speicher** | <p>Sie benötigen ein Azure-Speicherkonto, um replizierte Daten zu speichern.</p><p>Das Konto sollte entweder ein [georedundantes Standardspeicherkonto](../storage/storage-redundancy.md#geo-redundant-storage) oder [Premium-Speicherkonto](../storage/storage-premium-storage.md) sein.</p><p>Es muss sich in der gleichen Region wie der Azure Site Recovery-Dienst befinden und dem gleichen Abonnement zugeordnet sein.</p><p>Weitere Informationen finden Sie unter [Einführung in Microsoft Azure Storage](../storage/storage-introduction.md)</p>
 **Azure Virtual Network** | Sie benötigen ein virtuelles Azure-Netzwerk, in dem der Konfigurationsserver und der Masterzielserver bereitgestellt werden. Es muss in demselben Abonnement und in derselben Region enthalten sein wie der Azure Site Recovery-Tresor. Wenn Sie Daten über eine ExpressRoute- oder VPN-Verbindung replizieren möchten, muss das virtuelle Azure-Netzwerk mit Ihrem lokalen Netzwerk per ExpressRoute-Verbindung oder Standort-zu-Standort-VPN verbunden sein.
 **Azure-Ressourcen** | Stellen Sie sicher, dass Sie genügend Azure-Ressourcen für die Bereitstellung aller Komponenten besitzen. Weitere Informationen finden Sie unter [Beschränkungen des Azure-Abonnements](../azure-subscription-service-limits.md).
 **Azure Virtual Machines** | <p>Virtuelle Computer, die Sie schützen möchten, sollten die [Voraussetzungen für Azure](site-recovery-best-practices.md) erfüllen.</p><p>**Anzahl der Datenträger** – Auf einem einzelnen geschützten Server werden maximal 31 Datenträger unterstützt.</p><p>**Datenträgergrößen** – Die Kapazität eines einzelnen Datenträgers sollte nicht größer als 1023 GB sein.</p><p>**Clustering** – Gruppierte Server werden nicht unterstützt.</p><p>**Starten** – Das Starten im UEFI-Modus (Unified Extensible Firmware Interface)/EFI-Modus (Extensible Firmware Interface) wird nicht unterstützt.</p><p>**Volumes** – Mit Bitlocker verschlüsselte Volumes werden nicht unterstützt.</p><p> **Servernamen** – Die Namen müssen zwischen 1 und 63 Zeichen (Buchstaben, Zahlen und Bindestriche) enthalten. Der Name muss mit einem Buchstaben oder einer Zahl beginnen und mit einem Buchstaben oder einer Zahl enden. Nachdem ein Computer geschützt wurde, können Sie den Azure-Namen ändern.</p>
-**Konfigurationsserver** | <p>Ein virtueller Standard-A3-Computer wird basierend auf einem Azure Site Recovery Windows Server 2012 R2-Galerie-Image in Ihrem Abonnement für den Konfigurationsserver erstellt. Er wird als erste Instanz in einem neuen Clouddienst erstellt. Wenn Sie „Öffentliches Internet“ als Verbindungstyp für den Konfigurationsserver wählen, wird der Clouddienst mit einer reservierten öffentlichen IP-Adresse erstellt.</p><p>Der Installationspfad sollte nur Zeichen der englischen Sprache enthalten.</p>
+**Konfigurationsserver** | <p>Ein virtueller Standard-A3-Computer wird basierend auf einem Azure Site Recovery Windows Server 2012 R2-Galerie-Image in Ihrem Abonnement für den Konfigurationsserver erstellt. Er wird als erste Instanz in einem neuen Clouddienst erstellt. Wenn Sie „Öffentliches Internet“ als Verbindungstyp für den Konfigurationsserver auswählen, wird der Clouddienst mit einer reservierten öffentlichen IP-Adresse erstellt.</p><p>Der Installationspfad sollte nur Zeichen der englischen Sprache enthalten.</p>
 **Masterzielserver** | <p>Virtueller Azure-Computer, Standard A4, D14 oder DS4.</p><p>Der Installationspfad darf nur englische Zeichen enthalten. Für einen Masterzielserver unter Linux sollte der Pfad z. B. **/usr/local/ASR** lauten.</p></p>
 **Prozessserver** | <p>Sie können den Prozessserver auf einem physischen oder virtuellen Computer mit Windows Server 2012 R2 mit den neuesten Updates bereitstellen. Installieren Sie auf Laufwerk C:/.</p><p>Es wird empfohlen, dass Sie den Server im gleichen Netzwerk und Subnetz wie die Computer platzieren, die Sie schützen möchten.</p><p>Installieren Sie VMware vSphere CLI 5.5.0 auf dem Prozessserver. Die Komponente VMware vSphere CLI ist auf dem Prozessserver erforderlich, um virtuelle Computer, die von einem vCenter-Server verwaltet oder auf einem ESXi-Host ausgeführt werden, zu ermitteln.</p><p>Der Installationspfad darf nur englische Zeichen enthalten.</p><p>Das ReFS-Dateisystem wird nicht unterstützt.</p>
 **VMware** | <p>Ein VMware vCenter-Server zur Verwaltung Ihrer VMware vSphere-Hypervisoren. Auf ihm sollte vCenter, Version 5.1 oder 5.5, mit den neuesten Updates ausgeführt werden.</p><p>Einer oder mehrere vSphere-Hypervisoren mit virtuellen VMware-Computern, die Sie schützen möchten. Auf dem Hypervisor sollte ESX/ESXi, Version 5.1 oder 5.5, mit den neuesten Updates ausgeführt werden.</p><p>Auf den virtuellen VMware-Computern müssen die VMware-Tools installiert sein und ausgeführt werden.</p>  
@@ -390,7 +382,7 @@ Beachten Sie Folgendes:
 
 Beachten Sie, dass in jedem Subnetz die ersten vier IP-Adressen für die interne Verwendung durch Azure reserviert sind. Geben Sie eine beliebige andere verfügbare IP-Adresse an.
 
->[AZURE.NOTE] Wählen Sie bei der Konfiguration des Schutzes für Workloads, die konsistent hohe E/A-Leistung und niedrige Latenz erfordern, "Standard DS4" mit [Premium-Speicherkonto](../storage/storage-premium-storage-preview-portal.md) aus, um E/A-intensive Workloads zu hosten.
+>[AZURE.NOTE] Wählen Sie bei der Konfiguration des Schutzes für Workloads, die konsistent hohe E/A-Leistung und niedrige Latenz erfordern, "Standard DS4" mit [Premium-Speicherkonto](../storage/storage-premium-storage.md) aus, um E/A-intensive Workloads zu hosten.
 
 
 3. Ein virtueller Computer des Windows-Masterzielservers mit den folgenden Endpunkten wird erstellt (öffentliche Endpunkte werden nur erstellt, wenn der Bereitstellungstyp „Öffentliches Internet“ lautet):
@@ -703,7 +695,7 @@ Fügen Sie Computer wie folgt hinzu:
 3. Wenn Sie virtuelle VMware-Computer schützen, wählen Sie unter **Virtuelle Computer auswählen** einen vCenter-Server aus, der die virtuellen Computer verwaltet (oder den EXSi-Host, auf dem sie ausgeführt werden), und wählen Sie dann die Computer aus.
 
 	![vCenter-Server hinzufügen](./media/site-recovery-vmware-to-azure-classic-legacy/select-vms.png)	
-4. Wählen Sie unter **Zielressourcen angeben** die Masterzielserver und den Speicher aus, die für die Replikation verwendet werden sollen, und wählen Sie aus, ob die Einstellungen für alle Workloads verwendet werden sollen. Wählen Sie bei der Konfiguration des Schutzes für Workloads, die konsistent hohe E/A-Leistung und niedrige Latenz erfordern, [Premium-Speicherkonto](../storage/storage-premium-storage-preview-portal.md) aus, um E/A-intensive Workloads zu hosten. Wenn Sie ein Premium-Speicherkonto für Ihre Workloaddatenträger verwenden möchten, müssen Sie das Masterziel der DS-Serie verwenden. Sie können keine Datenträger des Premium-Speichers mit einem Masterziel verwenden, das nicht zur DS-Serie gehört.
+4. Wählen Sie unter **Zielressourcen angeben** die Masterzielserver und den Speicher aus, die für die Replikation verwendet werden sollen, und wählen Sie aus, ob die Einstellungen für alle Workloads verwendet werden sollen. Wählen Sie bei der Konfiguration des Schutzes für Workloads, die konsistent hohe E/A-Leistung und niedrige Latenz erfordern, [Premium-Speicherkonto](../storage/storage-premium-storage.md) aus, um E/A-intensive Workloads zu hosten. Wenn Sie ein Premium-Speicherkonto für Ihre Workloaddatenträger verwenden möchten, müssen Sie das Masterziel der DS-Serie verwenden. Sie können keine Datenträger des Premium-Speichers mit einem Masterziel verwenden, das nicht zur DS-Serie gehört.
 
 	![vCenter-Server](./media/site-recovery-vmware-to-azure-classic-legacy/machine-resources.png)
 
@@ -812,4 +804,4 @@ The information in Section B is regarding Third Party Code components that are b
 
 The complete file may be found on the [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=529428). Microsoft reserves all rights not expressly granted herein, whether by implication, estoppel or otherwise.
 
-<!----HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0302_2016-->

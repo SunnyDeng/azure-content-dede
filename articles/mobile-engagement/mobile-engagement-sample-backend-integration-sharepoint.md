@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-multiple" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="05/12/2015" 
+	ms.date="02/29/2016" 
 	ms.author="piyushjo" />
 
 # Azure Mobile Engagement – API-Integration
@@ -26,7 +26,7 @@ Kunden verwenden in der Regel die Mobile Engagement-Front-End-Schnittstelle, um 
 
 Dieses Lernprogramm behandelt ein Szenario, in dem ein geschäftlicher SharePoint-Benutzer eine SharePoint-Liste mit Marketingdaten füllt. Durch einen automatisierten Prozess werden Elemente aus der Liste ausgewählt und mithilfe der verfügbaren REST-APIS mit dem Mobile Engagement-System verbunden, um aus den SharePoint-Daten eine Marketingkampagne zu erstellen.
  
-> [AZURE.IMPORTANT]Dieses Beispiel veranschaulicht das allgemeine Verfahren zum Aufrufen jeder Mobile Engagement-REST-API, da es die beiden Hauptaspekte des Aufrufs der APIs zeigt – Authentifizierung und Übergeben von Parametern.
+> [AZURE.IMPORTANT] Dieses Beispiel veranschaulicht das allgemeine Verfahren zum Aufrufen jeder Mobile Engagement-REST-API, da es die beiden Hauptaspekte des Aufrufs der APIs zeigt – Authentifizierung und Übergeben von Parametern.
 
 ## SharePoint-Integration
 1. Die SharePoint-Beispielliste sieht wie folgt aus. Zum Erstellen der Ankündigung werden **Title**, **Category**, **NotificationTitle**, **Message** und **URL** verwendet. Die Spalte **IsProcessed** wird von dem Automatisierungsprozess im Beispiel in Form eines Konsolenprogramms verwendet. Sie können das Konsolenprogramm als Azure WebJob ausführen, um es nach Zeitplan auszuführen. Alternativ können Sie direkt mithilfe des SharePoint-Workflows ein Programm erstellen, mit dem die Ankündigung erstellt und aktiviert wird, wenn ein Element in die SharePoint-Liste eingefügt wird. In diesem Beispiel verwenden wir das Konsolenprogramm. Dieses durchläuft die Elemente in der SharePoint-Liste, erstellt in Azure Mobile Engagement die Ankündigung für jedes Element und markiert schließlich bei erfolgreicher Erstellung der Ankündigung das **IsProcessed**-Flag als true.
@@ -105,7 +105,7 @@ Dieses Lernprogramm behandelt ein Szenario, in dem ein geschäftlicher SharePoin
             return returnValue;
         }  
 
-3. Informationen zum Erstellen der Kampagne vom Typ Ankündigung finden Sie in der [Dokumentation](https://msdn.microsoft.com/library/dn913754.aspx). Sie müssen als `kind` der Kampagne *Ankündigung* angeben sowie die [Nutzlast](https://msdn.microsoft.com/library/dn913749.aspx) angeben und diese als FormUrlEncodedContent übergeben.
+3. Informationen zum Erstellen der Kampagne vom Typ Ankündigung finden Sie in der [Dokumentation](https://msdn.microsoft.com/library/azure/mt683750.aspx). Sie müssen als `kind` der Kampagne *Ankündigung* angeben sowie die [Nutzlast](https://msdn.microsoft.com/library/azure/mt683751.aspx) angeben und diese als FormUrlEncodedContent übergeben.
 
 		static async Task<int> CreateAzMECampaign(string campaignName, string notificationTitle, 
             string notificationMessage, string notificationCategory, string actionURL)
@@ -195,7 +195,7 @@ Dieses Lernprogramm behandelt ein Szenario, in dem ein geschäftlicher SharePoin
 
 8. Sie werden außerdem feststellen, dass das mit IsProcessed = false markierte Listenelement nach dem Erstellen der Ankündigungskampagne auf true festgelegt wurde.
 
-In diesem Beispiel wurde eine einfache Ankündigungskampagne erstellt, und es wurden im Wesentlichen die erforderlichen Eigenschaften angegeben. Mithilfe der Informationen [hier](https://msdn.microsoft.com/library/dn913749.aspx) können Sie dieses Beispiel im Portal nach Bedarf anpassen.
+In diesem Beispiel wurde eine einfache Ankündigungskampagne erstellt, und es wurden im Wesentlichen die erforderlichen Eigenschaften angegeben. Mithilfe der Informationen [hier](https://msdn.microsoft.com/library/azure/mt683751.aspx) können Sie dieses Beispiel im Portal nach Bedarf anpassen.
 
 <!-- Images. -->
 [1]: ./media/mobile-engagement-sample-backend-integration-sharepoint/sharepointlist.png
@@ -207,4 +207,4 @@ In diesem Beispiel wurde eine einfache Ankündigungskampagne erstellt, und es wu
 
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0302_2016-->

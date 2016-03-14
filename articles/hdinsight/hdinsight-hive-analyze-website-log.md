@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/29/2015" 
+	ms.date="02/25/2016" 
 	ms.author="nitinme"/>
 
 # Verwenden von Hive in HDInsight zum Analysieren von Website-Protokollen
@@ -47,7 +47,7 @@ In diesem Beispiel analysieren Sie Websiteprotokolle in einem HDInsight-Cluster,
 	
 	Geben Sie den Benutzernamen und das Kennwort des Administrators ein, den Sie bei der Clusterbereitstellung verwendet haben, wenn Sie dazu aufgefordert werden.
   
-2. Klicken Sie in der Webseite, die sich daraufhin öffnet, auf die Registerkarte **Erste Schritte** und anschließend in der Kategorie **Beispiele** auf das Beispiel **Analyse von Website-Protokollen**.
+2. Klicken Sie auf der Webseite, die sich daraufhin öffnet, auf die Registerkarte **Erste Schritte mit dem Katalog ** und anschließend in der Kategorie **Lösungen mit Beispieldaten** auf das Beispiel für die **Website-Protokollanalyse**.
 
 3. Folgen Sie den Anweisungen auf der Webseite, um das Beispiel abzuschließen.
 
@@ -61,4 +61,4 @@ Versuchen Sie es mit dem folgenden Beispiel: [Analysieren von Sensordaten mit Hi
 [img-hdi-weblogs-sample]: ./media/hdinsight-hive-analyze-website-log/hdinsight-weblogs-sample.png
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0302_2016-->

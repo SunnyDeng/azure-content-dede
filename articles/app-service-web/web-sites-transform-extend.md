@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/09/2015"
+	ms.date="02/25/2016"
 	ms.author="cephalin"/>
 
 # Erweiterte Konfiguration und Erweiterungen von Azure App Service-Web-Apps
@@ -171,7 +171,7 @@ Sie sehen, dass die URL der URL für Ihre Web-App entspricht, bis auf die Tatsac
 
 Es ist möglich, alle privaten (nicht vorinstallierten) Erweiterungen für Ihre Web-App bei Entwicklungs- und Untersuchungsvorgängen zu deaktivieren, indem Sie eine App-Einstellung mit dem Schlüssel `WEBSITE_PRIVATE_EXTENSIONS` und dem Wert `0` hinzufügen
 
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Änderungen
 * Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
@@ -181,4 +181,4 @@ Es ist möglich, alle privaten (nicht vorinstallierten) Erweiterungen für Ihre 
 [TransformSiteSolEx]: ./media/web-sites-transform-extend/TransformSiteSolEx.png
  
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0302_2016-->

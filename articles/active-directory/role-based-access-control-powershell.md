@@ -13,16 +13,17 @@
 	ms.tgt_pltfrm="powershell"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/25/2016"
+	ms.date="02/29/2016"
 	ms.author="kgremban"/>
 
-# Verwalten der rollenbasierten Zugriffssteuerung mit Windows PowerShell #
+# Verwalten der rollenbasierten Zugriffssteuerung mit Windows PowerShell
 
 > [AZURE.SELECTOR]
 - [Windows PowerShell](role-based-access-control-powershell.md)
-- [Azure CLI](role-based-access-control-xplat-cli.md)
+- [Azure-Befehlszeilenschnittstelle](role-based-access-control-xplat-cli.md)
 
-Mit der rollenbasierten Zugriffssteuerung (RBAC) im Azure-Portal und in der Azure Resource Management-API können Sie den Zugriff auf Ihr Abonnement differenziert steuern. Mithilfe dieser Funktion lassen sich Zugriffsberechtigungen für Active Directory-Benutzer, -Gruppen oder -Dienstprinzipale festlegen, indem ihnen bestimmte Rollen für einen bestimmten Bereich zugewiesen werden.
+
+Mit der rollenbasierten Access Control (RBAC) im Azure-Portal und in der Azure Resource Management-API können Sie den Zugriff auf Ihr Abonnement differenziert steuern. Mithilfe dieser Funktion lassen sich Zugriffsberechtigungen für Active Directory-Benutzer, -Gruppen oder -Dienstprinzipale festlegen, indem ihnen bestimmte Rollen für einen bestimmten Bereich zugewiesen werden.
 
 In diesem Lernprogramm erfahren Sie, wie Sie mit Windows PowerShell die rollenbasierte Zugriffssteuerung verwalten. Das Lernprogramm beschreibt die Erstellung und Überprüfung von Rollenzuweisungen.
 
@@ -34,11 +35,13 @@ Bevor Sie die RBAC mithilfe der Windows PowerShell verwalten können, benötigen
 
 - Windows PowerShell, Version 3.0 oder 4.0. Um die Version von Windows PowerShell zu ermitteln, geben Sie `$PSVersionTable` ein. Vergewissern Sie sich, dass der Wert von `PSVersion` 3.0 oder 4.0 ist. Informationen zum Installieren einer kompatiblen Version finden Sie unter [Windows Management Framework 3.0 ](http://www.microsoft.com/download/details.aspx?id=34595) oder [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855).
 
-- Azure PowerShell, Version 0.8.8 oder höher. Um die neueste Version zu installieren und sie Ihrem Azure-Abonnement zuzuordnen, lesen Sie [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md).
+- Azure PowerShell, Version 0.8.8 oder höher. Um die neueste Version zu installieren und sie Ihrem Azure-Abonnement zuzuordnen, lesen Sie [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
+
+>[AZURE.IMPORTANT] Bevor Sie die Cmdlets in diesem Artikel verwenden können, müssen Sie [die Azure Resource Manager-Cmdlets in PowerShell installieren](https://msdn.microsoft.com/library/mt125356.aspx).
 
 Dieses Lernprogramm richtet sich an Windows PowerShell-Anfänger. Es wird aber vorausgesetzt, dass Sie die grundlegenden Konzepte, wie zum Beispiel Module, Cmdlets und Sitzungen, verstehen. Weitere Informationen zu Windows PowerShell finden Sie unter [Erste Schritte mit Windows PowerShell](http://technet.microsoft.com/library/hh857337.aspx).
 
-Um detaillierte Hilfe zu einem Cmdlet aus dem Tutorial zu erhalten, verwenden Sie das `Get-Help`-Cmdlet.
+Um ausführliche Hilfe zu einem Cmdlet aus diesem Tutorial zu erhalten, verwenden Sie das Cmdlet `Get-Help`.
 
 	Get-Help <cmdlet-name> -Detailed
 
@@ -48,7 +51,7 @@ Geben Sie beispielsweise Folgendes ein, um Hilfe zum `Add-AzureAccount`-Cmdlet z
 
 Lesen Sie bitte auch die folgenden Tutorials, um sich mit der Einrichtung und Verwendung des Azure-Ressourcen-Managers in Windows PowerShell vertraut zu machen:
 
-- [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md)
+- [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md)
 - [Verwenden von Windows PowerShell mit dem Ressourcen-Manager](../powershell-azure-resource-manager.md)
 
 
@@ -73,7 +76,7 @@ Wenn Sie über mehrere Abonnements verfügen und zu einem anderen Abonnement wec
     # Use the subscription name to select the one you want to work on.
     PS C:\> Select-AzureSubscription -SubscriptionName <subscription name>
 
-Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md).
+Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
 
 ## Überprüfen bestehender Rollenzuweisungen
 
@@ -112,7 +115,10 @@ Welche Rolle soll zugewiesen werden: Verwenden Sie das folgende Cmdlet, um die u
 
     PS C:\> Get-AzureRoleDefinition
 
-Welcher Bereich soll zugewiesen werden: Sie können aus den folgenden drei Bereichsebenen auswählen: Aktuelles Abonnement - Ressourcengruppe. Zum Abrufen einer Liste mit Ressourcengruppen, geben Sie `PS C:\> Get-AzureResourceGroup` ein. - Ressource. Zum Abrufen einer Liste mit Ressourcen geben Sie `PS C:\> Get-AzureResource` ein.
+Welcher Bereich soll zugewiesen werden: Sie können aus den folgenden drei Bereichsebenen auswählen:
+  - Das aktuelle Abonnement
+  - Eine Ressourcengruppe. Um eine Liste der Ressourcengruppen zu erhalten, geben Sie `PS C:\> Get-AzureResourceGroup` ein.
+  - Eine Ressource. Um eine Liste der Ressourcen zu erhalten, geben Sie `PS C:\> Get-AzureResource` ein.
 
 Verwenden Sie anschließend den Befehl `New-AzureRoleAssignment`, um eine Rollenzuweisung zu erstellen. Beispiel:
 
@@ -145,13 +151,13 @@ Wenn Sie versuchen, andere Cmdlets wie `New-AzureResourceGroup` auszuführen, wi
 
 In den folgenden Themen und Ressourcen erhalten Sie weitere Informationen zur Verwaltung der rollenbasierten Zugriffssteuerung mit Windows PowerShell:
 
-- [Rollenbasierte Zugriffssteuerung in Azure](../role-based-access-control-configure.md)
+- [Rollenbasierte Zugriffssteuerung in Azure](role-based-access-control-configure.md)
 - [Azure Resource Manager Cmdlets](http://go.microsoft.com/fwlink/?LinkID=394765&clcid=0x409) (in englischer Sprache): Verwenden der Cmdlets im AzureResourceManager-Modul.
-- [Using Resource groups to manage your Azure resources](../azure-preview-portal-using-resource-groups.md) (in englischer Sprache): Erstellen und Verwalten von Ressourcengruppe im Azure-Verwaltungsportal.
+- [Verwenden des Azure-Portals zum Verwalten Ihrer Azure-Ressourcen:](../azure-portal/resource-group-portal.md) Informationen zu Azure Resource Manager.
 - [Azure-Blog](http://blogs.msdn.com/windowsazure): Informationen zu neuen Funktionen in Azure.
 - [Windows PowerShell-Blog](http://blogs.msdn.com/powershell): Informationen zu neuen Funktionen in Windows PowerShell.
 - ["Hey, Scripting Guy!"- Blog](http://blogs.technet.com/b/heyscriptingguy/): Praktische Tipps und Tricks aus der Windows PowerShell-Community.
-- [Konfigurieren der rollenbasierten Zugriffssteuerung mit der Azure-Befehlszeilenschnittstelle](role-based-access-control-xplat-cli-install.md)
+- [Konfigurieren der rollenbasierten Zugriffssteuerung mit der Azure-Befehlszeilenschnittstelle](role-based-access-control-xplat-cli.md)
 - [Behandlung von Problemen bei der rollenbasierten Zugriffssteuerung](role-based-access-control-troubleshooting.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows-store" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="08/10/2015" 
+	ms.date="02/29/2016" 
 	ms.author="piyushjo" />
 
 #Windows Universal Apps SDK-Versionshinweise
@@ -26,13 +26,13 @@
 ##3\.3.0 (22.01.2016)
 
 -   Absturz bei Formatierung auf UWP-Apps, die im Releasemodus ausgeführt wird, behoben.
--   1px-Rand auf Benachrichtigungen für Universal 8.1-Apps behoben.
+-   1px-Rand auf Benachrichtigungen für Universal 8.1-Apps behoben.
 -   ms-appx- und ms-appdata-Schemas in Aktions-URLs verfügbar.
 -   Verbesserungen der Stabilität.
 
 ##3\.2.0 (20.11.2015)
 
--   Unterstützung für universelle Windows 10-Plattform-Anwendungen hinzugefügt.
+-   Unterstützung für universelle Windows 10-Plattform-Anwendungen hinzugefügt.
 -   Freigabefunktion für Pushkanal hinzugefügt, um Kanalkonflikte zu beheben (jetzt kompatibel mit Azure Notification Hubs).
 -   Absturz beim Anfordern der Geräte-ID direkt nach der Initialisierung behoben.
 -   Verbesserungen bei Konsolenprotokollen.
@@ -61,4 +61,4 @@
 
  
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

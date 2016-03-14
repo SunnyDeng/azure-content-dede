@@ -14,13 +14,13 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na" 
-   ms.date="02/11/2016"
+   ms.date="02/25/2016"
    ms.author="mandia"/>
 
 # Erste Schritte mit der FTP-API
-Sie stellen eine Verbindung mit einem FTP-Server her, um Dateien zu verwalten. Sie können auf dem FTP-Server verschiedene Aufgaben ausführen, z. B. Dateien hochladen, Dateien löschen und mehr.
+Stellen Sie eine Verbindung mit einem FTP-Server her, um Ihre Dateien zu verwalten, d. h. diese hochzuladen, zu löschen usw. Die FTP-API kann in Folgendem verwendet werden:
 
-Die FTP-API kann in Logik-Apps verwendet werden.
+- Logik-Apps
 
 >[AZURE.NOTE] Diese Version des Artikels gilt für die Schemaversion 2015-08-01-preview für Logik-Apps. Um die Schemaversion 2014-12-01-preview aufzurufen, klicken Sie auf [FTP-Connector](../app-service-logic/app-service-logic-connector-ftp.md).
 
@@ -28,7 +28,7 @@ Mit FTP können Sie folgende Aktionen ausführen:
 
 - Erstellen eines Geschäftsworkflows basierend auf den Daten, die über FTP abgerufen werden. 
 - Implementieren eines Triggers, wenn eine Datei aktualisiert wird.
-- Ausführen von Aktionen, mit denen Sie u. a. eine Datei erstellen und Dateiinhalte abrufen können. Diese Aktionen erhalten eine Antwort und stellen anschließend die Ausgabe anderen Aktionen zur Verfügung. Sie können z. B. den Inhalt einer Datei abrufen und dann eine SQL-Datenbank aktualisieren. 
+- Ausführen von Aktionen, mit denen Sie u. a. eine Datei erstellen und Dateiinhalte abrufen können. Diese Aktionen erhalten eine Antwort und stellen anschließend die Ausgabe anderen Aktionen zur Verfügung. Sie können z. B. den Inhalt einer Datei abrufen und dann eine SQL-Datenbank aktualisieren. 
 
 Informationen zum Hinzufügen eines Vorgangs in Logik-Apps finden Sie unter [Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md).
 
@@ -38,7 +38,7 @@ FTP verfügt über folgende Trigger und Aktionen:
 
 Trigger | Actions
 --- | ---
-<ul><li>Ruft eine aktualisierte Datei ab</li></ul> | <ul><li>Datei erstellen</li><li>Datei kopieren</li><li>Datei löschen</li><li>Archiv in Ordner extrahieren</li><li>Dateiinhalt abrufen</li><li>Dateiinhalt anhand des Pfads abrufen</li><li>Dateimetadaten abrufen</li><li>Dateimetadaten anhand des Pfads abrufen</li><li>Aktualisierte Datei abrufen</li><li>Datei aktualisieren</li></ul>
+<ul><li>Ruft eine aktualisierte Datei ab. </li></ul> | <ul><li>Datei erstellen</li><li>Datei kopieren</li><li>Datei löschen</li><li>Archiv in Ordner extrahieren</li><li>Dateiinhalt abrufen</li><li>Dateiinhalt anhand des Pfads abrufen</li><li>Dateimetadaten abrufen</li><li>Dateimetadaten anhand des Pfads abrufen</li><li>Aktualisierte Datei abrufen</li><li>Datei aktualisieren</li></ul>
 
 Alle APIs unterstützen Daten im JSON- und XML-Format.
 
@@ -51,14 +51,15 @@ Wenn Sie diese API Ihren Logik-Apps hinzufügen, geben Sie die folgenden Werte e
 |Benutzername| Ja | Geben Sie den Benutzernamen für die Verbindung mit dem FTP-Server ein.|
 |Kennwort | Ja | Geben Sie das Kennwort für den Benutzernamen ein.|
 
-Nachdem Sie eine Verbindung hergestellt haben, geben Sie die FTP-Eigenschaften ein, z. B. Quelldatei oder Zielordner. In der **REST-API-Referenz** in diesem Thema werden diese Eigenschaften beschrieben.
+Nachdem Sie eine Verbindung hergestellt haben, geben Sie die FTP-Eigenschaften ein, z. B. Quelldatei oder Zielordner. In der **REST-API-Referenz** in diesem Thema werden diese Eigenschaften beschrieben.
 
 >[AZURE.TIP] Sie können dieselbe FTP-Verbindung in anderen Logik-Apps verwenden.
 
 ## Swagger-REST-API – Referenz
+Gilt für Version: 1.0.
 
 ### Datei erstellen
-Lädt eine Datei auf einen FTP-Server. ```POST: /datasets/default/files```
+Lädt eine Datei auf einen FTP-Server hoch. ```POST: /datasets/default/files```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -79,7 +80,7 @@ Kopiert eine Datei auf einen FTP-Server. ```POST: /datasets/default/copyFile```
 | ---|---|---|---|---|---|
 |Quelle|string|Ja|query|(Keine) |URL zur Quelldatei|
 |Ziel|string|Ja|query|(Keine) |Zieldateipfad auf dem FTP-Server, einschließlich Zieldateiname|
-|overwrite|Boolescher Wert|no|query|(Keine) |Überschreibt die Zieldatei, wenn auf „True“ festgelegt|
+|overwrite|Boolescher Wert|no|query|(Keine) |Überschreibt die Zieldatei, falls auf „True“ festgelegt|
 
 #### Antwort
 |Name|Beschreibung|
@@ -107,7 +108,7 @@ Extrahiert eine Archivdatei in einen Ordner auf dem FTP-Server (Beispiel: ZIP). 
 | ---|---|---|---|---|---|
 |Quelle|string|Ja|query| (Keine)|Pfad zur Archivdatei|
 |Ziel|string|Ja|query| (Keine)|Pfad zum Zielordner|
-|overwrite|Boolescher Wert|no|query|(Keine)|Überschreibt die Zieldateien, wenn auf „True“ festgelegt|
+|overwrite|Boolescher Wert|no|query|(Keine)|Überschreibt die Zieldateien, falls auf „True“ festgelegt|
 
 #### Antwort
 |Name|Beschreibung|
@@ -244,6 +245,6 @@ Aktualisiert eine Datei auf dem FTP-Server. ```PUT: /datasets/default/files/{id}
 
 ## Nächste Schritte
 
-[Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md).
+[Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md)
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

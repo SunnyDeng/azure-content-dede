@@ -21,7 +21,7 @@
 Mit den Features für **elastische Datenbanken** können Sie nahezu unbegrenzt viele Datenbankressourcen der **Azure SQL-Datenbank** zur Erstellung von Lösungen für transaktionale Workloads und insbesondere Software-as-a-Service (SaaS)-Anwendungen verwenden. Die Features für elastische Datenbanken umfassen Folgendes:
 
 * Tools für elastische Datenbanken: Diese beiden Tools vereinfachen die Entwicklung und Verwaltung von Sharded-Datenbanklösungen. Zur Verfügung stehen die [Clientbibliothek für elastische Datenbanken](sql-database-elastic-database-client-library.md) und das [Split-Merge-Tool für elastische Datenbanken](sql-database-elastic-scale-overview-split-and-merge.md). 
-* [Pools für elastische Datenbanken](sql-database-elastic-pool-guidance.md) (Vorschauversion): Bei einem Pool handelt es sich um eine Sammlung von Datenbanken, der Sie jederzeit Datenbanken hinzufügen bzw. aus der Sie jederzeit Datenbanken entfernen können. Die Datenbanken im Pool teilen sich eine feste Menge an Ressourcen – so genannte DTUs (Database Throughput Units). Sie zahlen einen festen Preis für die Ressourcen. Dadurch können Sie problemlos Ihre Kosten kalkulieren und die Leistung verwalten. 
+* [Pools für elastische Datenbanken](sql-database-elastic-pool-guidance.md) (Vorschauversion): Bei einem Pool handelt es sich um eine Sammlung von Datenbanken, der Sie jederzeit Datenbanken hinzufügen bzw. aus der Sie jederzeit Datenbanken entfernen können. Die Datenbanken im Pool teilen sich eine feste Menge an Ressourcen – sogenannten DTUs (Database Transaction Units). Sie zahlen einen festen Preis für die Ressourcen. Dadurch können Sie problemlos Ihre Kosten kalkulieren und die Leistung verwalten. 
 * [Aufträge für elastische Datenbanken](sql-database-elastic-jobs-overview.md) (Vorschauversion): Verwalten Sie eine große Anzahl von Azure SQL-Datenbanken mithilfe von Aufträgen. Führen Sie mithilfe von Aufträgen ganz einfach administrative Vorgänge aus, z. B. Schemaänderungen, die Verwaltung von Anmeldeinformationen, Verweisdatenupdates, die Leistungsdatensammlung oder die Mandanten- (Kunden-) Telemetrieerfassung.
 * [Abfrage für elastische Datenbanken](sql-database-elastic-query-overview.md) (Vorschauversion): Mit der Abfrage können Sie eine Transact-SQL-Abfrage für mehrere Datenbanken ausführen. Dies ermöglicht eine Verknüpfung mit Berichtstools wie Excel, PowerBI, Tableau usw.
 
@@ -108,4 +108,4 @@ Was können wir besser tun? Wird das Feature in diesem Thema deutlich erklärt? 
 [3]: ./media/sql-database-elastic-scale-introduction/overview.png
 [4]: ./media/sql-database-elastic-scale-introduction/single_v_multi_tenant.png
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0302_2016-->

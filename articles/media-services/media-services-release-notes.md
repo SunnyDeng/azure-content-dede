@@ -4,7 +4,7 @@
 	services="media-services" 
 	documentationCenter="" 
 	authors="Juliako" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor=""/>
 
 <tags 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="media" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="02/11/2016"
+ 	ms.date="03/01/2016"
 	ms.author="juliako"/>
 
 
@@ -25,6 +25,7 @@ In diesen Versionshinweisen werden Änderungen im Vergleich zu früheren Version
 
 - [Aktuell bekannte Probleme](#issues)
 - [REST-API-Versionsverlauf](#rest_version_history)
+- [Version Februar 2016](#feb_changes16)
 - [Version Januar 2016](#jan_changes_16)
 - [Version vom Dezember 2015](#dec_changes_15)
 - [Version vom November 2015](#nov_changes_15)
@@ -79,6 +80,16 @@ Media Services-Medienobjekte im SDK können nicht serialisiert werden und funkti
 
 Informationen zum Versionsverlauf der Media Services-REST-API finden Sie unter [Azure Media Services – REST-API-Referenz].
 
+##<a id="feb_changes16"></a>Version Februar 2016
+
+Die neueste Version von Azure Media Services SDK für .NET (3.5.3) enthält eine Fehlerbehebung für Widevine. Es bestand folgendes Problem: AssetDeliveryPolicy konnte nicht für mehrere mit Widevine verschlüsselte Medienobjekte wiederverwendet werden. Die folgende Eigenschaft wurde als Teil dieser Fehlerbehebung im SDK hinzugefügt: **WidevineBaseLicenseAcquisitionUrl**.
+	
+	Dictionary<AssetDeliveryPolicyConfigurationKey, string> assetDeliveryPolicyConfiguration =
+	    new Dictionary<AssetDeliveryPolicyConfigurationKey, string>
+	{
+	    {AssetDeliveryPolicyConfigurationKey.WidevineBaseLicenseAcquisitionUrl,"http://testurl"},
+	    
+	};
 
 ##<a id="jan_changes_16"></a>Version Januar 2016
 
@@ -644,4 +655,4 @@ Die folgende Funktion war neu in der November-Version des SDK.
 [Verarbeiten von Media Services-Auftragsbenachrichtigungen]: http://msdn.microsoft.com/library/azure/dn261241.aspx
  
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0302_2016-->

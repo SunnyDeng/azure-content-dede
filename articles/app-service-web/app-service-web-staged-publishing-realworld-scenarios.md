@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="web"
-   ms.date="12/24/2015"
+   ms.date="02/26/2016"
    ms.author="sumuth"/>
 
 # Effektive Verwendung der DevOps-Umgebungen für Ihre Web-Apps
@@ -287,8 +287,8 @@ Durchsuchen und testen Sie Ihre Staging-Web-App. Das folgende Beispiel zeigt die
 
 ![Vorschau der Änderungen beim Austauschen für WordPress](./media/app-service-web-staged-publishing-realworld-scenarios/6swaps1.png)
 
- >[AZURE.NOTE]
- >Im Fall eines Szenarios, in dem Sie nur Dateien (keine Datenbankaktualisierungen) mithilfe von Push übertragen müssen, **aktivieren** Sie vor dem Austausch im Azure-Portal auf dem Blatt mit den Web-App-Einstellungen das Kontrollkästchen **Sloteinstellung** für alle datenbankbezogenen *App-Einstellungen* und *Verbindungszeichenfolgen-Einstellungen*. In diesem Fall sollten DB\_NAME, DB\_HOST, DB\_PASSWORD, DB\_USER und die standardmäßige Verbindungszeichenfolgen-Einstellung bei einem **Austausch** nicht in der Vorschau der Änderungen angezeigt werden. Nach Abschluss des **Austauschvorgangs** enthält die WordPress-Web-App **NUR** die aktualisierten Dateien.
+ > [AZURE.NOTE]
+ Im Fall eines Szenarios, in dem Sie nur Dateien (keine Datenbankupdates) mithilfe von Push übertragen müssen, **aktivieren** Sie vor dem Austausch im Azure-Portal auf dem Blatt mit den Web-App-Einstellungen das Kontrollkästchen **Sloteinstellung** für alle datenbankbezogenen *App-Einstellungen* und *Verbindungszeichenfolgen-Einstellungen*. In diesem Fall sollten DB\_NAME, DB\_HOST, DB\_PASSWORD, DB\_USER und die standardmäßige Verbindungszeichenfolgen-Einstellung bei einem **Austausch** nicht in der Vorschau der Änderungen angezeigt werden. Nach Abschluss des Vorgangs **Austauschen** enthält die WordPress-Web-App **NUR** die aktualisierten Dateien.
 
 Hier sehen Sie die WordPress-Produktions-Web-App vor dem Austauschvorgang. ![Produktions-Web-App vor dem Austauschen von Slots](./media/app-service-web-staged-publishing-realworld-scenarios/7bfswap.png)
 
@@ -296,7 +296,7 @@ Nach dem Austauschvorgang ist das Design Ihrer Produktions-Web-App aktualisiert.
 
 ![Produktions-Web-App nach dem Austauschen von Slots](./media/app-service-web-staged-publishing-realworld-scenarios/8afswap.png)
 
-Falls Sie ein **Rollback** ausführen müssen, können Sie zu den Einstellungen der Produktions-Web-App wechseln und auf die Schaltfläche **Austauschen** klicken, um für die Web-App und die Datenbank den Produktions- gegen den Stagingslot auszutauschen. Beachten Sie, dass Sie im Fall eines **Austauschvorgangs**, der Datenbankänderungen beinhaltet, bei der nächsten erneuten Bereitstellung in der Staging-Web-App die Datenbankänderungen in der aktuellen Datenbank für Ihre Staging-Web-App bereitstellen müssen. Dabei kann es sich um die vorherige Produktions- oder die Stagingdatenbank handeln.
+Falls Sie ein **Rollback** ausführen müssen, können Sie zu den Einstellungen der Produktions-Web-App wechseln und auf die Schaltfläche **Austauschen** klicken, um für die Web-App und die Datenbank den Produktions- gegen den Stagingslot auszutauschen. Beachten Sie, dass wenn der Vorgang **Austauschen** Datenbankänderungen beinhaltet, Sie bei der nächsten erneuten Bereitstellung in der Staging-Web-App die Datenbankänderungen in der aktuellen Datenbank für Ihre Staging-Web-App bereitstellen müssen. Dabei kann es sich um die vorherige Produktionsdatenbank oder die Stagingdatenbank handeln.
 
 #### Zusammenfassung
 Die allgemeinen Schritte des Prozesses für Anwendungen mit einer Datenbank lauten wie folgt:
@@ -372,9 +372,9 @@ Zum Konfigurieren müssen Sie die Datei „courier.config“ im Ordner **Config*
   </repositories>
  ```
 
-Geben Sie unter `<repositories>` die URL der Produktionssite sowie die Benutzerinformationen ein. Wenn Sie den standardmäßigen Umbraco-Mitgliedschaftsanbieter verwenden, fügen Sie die ID für den Administrator im Abschnitt <user> hinzu. Wenn Sie einen benutzerdefinierten Umbraco-Mitgliedschaftsanbieter verwenden, verwenden Sie `<login>`,`<password>`, damit das Courier2-Modul weiß, wie eine Verbindung mit der Produktionssite hergestellt wird. Weitere Einzelheiten finden Sie in der [Dokumentation](http://umbraco.com/help-and-support/customer-area/courier-2-support-and-download/developer-documentation) zum Courier-Modul.
+Geben Sie unter `<repositories>` die URL der Produktionswebsite und die Benutzerinformationen ein. Geben Sie bei Verwendung des Standardmitgliedschaftsanbieters für Umbraco die ID des Administratorbenutzers im Abschnitt <user> ein. Wenn Sie einen benutzerdefinierten Mitgliedschaftsanbieter für Umbraco verwenden, verwenden Sie `<login>`,`<password>`, um dem Courier2-Modul mitzuteilen, wie die Verbindung zur Produktionswebsite hergestellt wird. Weitere Informationen finden Sie in der [Siteübersicht](http://umbraco.com/help-and-support/customer-area/courier-2-support-and-download/developer-documentation) für das Courier-Modul.
 
-Installieren Sie das Courier-Modul für Ihre Produktionssite, und konfigurieren Sie es so, dass es auf die Staging-Web-App in der jeweiligen courier.config-Datei verweist (wie in diesem Abschnitt gezeigt)
+Installieren Sie auf ähnliche Weise das Courier-Modul auf der Produktionswebsite, und konfigurieren Sie es in der betreffenden Datei „courier.config“ so, dass es auf die Stage-Web-App zeigt.
 
 ```xml
   <!-- Repository connection settings -->
@@ -428,7 +428,10 @@ Nach dem Aktualisieren Ihrer lokalen Entwicklungswebsite veröffentlichen Sie di
 
 ![Austauschvorschau für die Bereitstellung von Umbraco CMS](./media/app-service-web-staged-publishing-realworld-scenarios/22umbswap.png)
 
-Das Austauschen der Web-App und der Datenbank bietet folgende Vorteile: 1. Sie können mit einem weiteren **Austauschvorgang** ein Rollback auf die vorherige Version der Web-App ausführen, wenn in der Anwendung Probleme auftreten. 2. Bei einer Aktualisierung müssen Sie Dateien und die Datenbank von der Staging-Web-App in der Produktions-Web-App und der Datenbank bereitstellen. Bei der Bereitstellung von Dateien und Datenbanken kann vieles schief gehen. Durch das **Austauschen** von Slots wird das Risiko von Ausfallzeiten während einer Aktualisierung und von Fehlern bei der Bereitstellung von Änderungen reduziert. 3. Sie können **A/B-Tests** mithilfe der Funktion zum [Testen in der Produktionsumgebung](https://azure.microsoft.com/documentation/videos/introduction-to-azure-websites-testing-in-production-with-galin-iliev/) durchführen.
+Das Austauschen der Web-App und der Datenbank bietet folgende Vorteile:
+1. Sie können mit einem weiteren **Austauschvorgang** ein Rollback auf die vorherige Version der Web-App ausführen, wenn in der Anwendung Probleme auftreten.
+2. Bei einer Aktualisierung müssen Sie Dateien und die Datenbank von der Staging-Web-App in der Produktions-Web-App und der Datenbank bereitstellen. Bei der Bereitstellung von Dateien und Datenbanken kann vieles schief gehen. Durch das **Austauschen** von Slots wird das Risiko von Ausfallzeiten während einer Aktualisierung und von Fehlern bei der Bereitstellung von Änderungen reduziert.
+3. Sie können **A/B-Tests** mithilfe der Funktion zum [Testen in der Produktionsumgebung](https://azure.microsoft.com/documentation/videos/introduction-to-azure-websites-testing-in-production-with-galin-iliev/) durchführen.
 
 Dieses Beispiel veranschaulicht die Flexibilität der Plattform. Sie ermöglicht es Ihnen, benutzerdefinierte Module wie das Umbraco Courier-Modul zur umgebungsübergreifenden Verwaltung der Bereitstellung zu erstellen.
 
@@ -439,4 +442,4 @@ Dieses Beispiel veranschaulicht die Flexibilität der Plattform. Sie ermöglicht
 
 [Blockieren des Webzugriffs auf Nicht-Produktionsslots](http://ruslany.net/2014/04/azure-web-sites-block-web-access-to-non-production-deployment-slots/)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0302_2016-->

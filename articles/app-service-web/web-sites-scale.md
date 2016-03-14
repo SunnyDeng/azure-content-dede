@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/10/2015" 
+	ms.date="02/25/2016" 
 	ms.author="cephalin"/>
 
 # Skalieren einer Web-App in Azure App Service #
 
-Zur Steigerung von Leistung und Durchsatz für Ihre Web-Apps unter Microsoft Azure können Sie mithilfe des [Azure-Portals](http://go.microsoft.com/fwlink/?LinkId=529715) Ihren [App Service](http://go.microsoft.com/fwlink/?LinkId=529714)-Plan vom Modus **Kostenlos** zum Modus **Freigegeben**,**Basic**, **Standard** oder **Premium** hochstufen.
+Zur Steigerung von Leistung und Durchsatz für Ihre Web-Apps unter Microsoft Azure können Sie mithilfe des [Azure-Portals](http://portal.azure.com) Ihren[App Service](http://go.microsoft.com/fwlink/?LinkId=529714)-Plan vom Modus **Kostenlos** zum Modus **Freigegeben**,**Basic**, **Standard** oder **Premium** hochstufen.
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
@@ -26,18 +26,18 @@ Das Skalieren von Azure-Web-Apps umfasst zwei zusammenhängende Vorgänge: Ände
 
 Diese Skalierungseinstellungen werden innerhalb von Sekunden angewendet und wirken sich auf alle Web-Apps im App Service-Plan aus. Dafür muss weder der Code geändert noch Anwendungen erneut bereitgestellt werden.
 
-Weitere Informationen zu App Service-Plänen finden Sie unter [Was ist ein App Service-Plan?](../app-service/web-sites-web-hosting-plan-overview.md) und [Azure App Service-Pläne – Detaillierte Übersicht](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md). Informationen zur Preisgestaltung und zu den Funktionen der einzelnen App Service-Pläne finden Sie unter [App Service-Preisdetails](/pricing/details/web-sites/).
+Weitere Informationen zu App Service-Plänen finden Sie unter [Was ist ein App Service-Plan?](../app-service/app-service-how-works-readme.md) und [Azure App Service-Pläne – Detaillierte Übersicht](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md). Informationen zur Preisgestaltung und zu den Funktionen der einzelnen App Service-Pläne finden Sie unter [App Service-Preisdetails](/pricing/details/web-sites/).
 
 > [AZURE.NOTE] Bevor Sie Web-Apps vom Modus **Kostenlos** in den Modus **Basic**, **Standard** oder **Premium** ändern, müssen Sie zuerst das für Ihr Microsoft Azure App Service-Abonnement geltende Ausgabenlimit entfernen. Informationen zum Anzeigen oder Ändern von Optionen für Ihr Microsoft Azure App Service-Abonnement finden Sie unter [Microsoft Azure-Abonnements][azuresubscriptions].
 
-<a name="scalingsharedorbasic"></a> 
+<a name="scalingsharedorbasic"></a>
 <!-- ===================================== -->
 ## Skalierung auf Modus "Freigegeben" oder "Basic"
 <!-- ===================================== -->
 
 1. Öffnen Sie in Ihrem Browser das [Azure-Portal][portal].
 	
-2. Klicken Sie im Blatt Ihrer Web-App auf **Alle Einstellungen**, klicken Sie dann auf **Skalieren** und anschließend auf **Upgrade von einem kostenlosen Plan, um Instanzen hinzuzufügen und die Leistung zu steigern**.
+2. Klicken Sie auf dem Blatt Ihrer Web-App auf **Alle Einstellungen** und anschließend auf **Zentral hochskalieren**.
 	
 	![Auswählen eines Plans][ChooseWHP]
 	
@@ -45,13 +45,13 @@ Weitere Informationen zu App Service-Plänen finden Sie unter [Was ist ein App S
 	
 	Auf der Registerkarte **Benachrichtigungen** wird in grüner Schrift der Text **ERFOLGREICH** angezeigt, sobald der Vorgang abgeschlossen wurde.
 	
-5. Schieben Sie den Schieberegler **Instanz** von links nach rechts, um die Anzahl von Instanzen zu erhöhen, und klicken Sie in der Befehlsleiste auf **Speichern**. Die Instanzgrößenoption ist im Modus **Freigegeben** nicht verfügbar. Weitere Informationen zu den Instanzgrößen finden Sie unter [Größen virtueller Computer und Clouddienste für Microsoft Azure][vmsizes].
+5. Klicken Sie in den Einstellungen auf **Horizontal hochskalieren**, wählen Sie in der Dropdownliste *Manuell ausgewählte Anzahl der Instanzen* aus, und schieben Sie den Balken **Instanz** von links nach rechts, um die Anzahl der Instanzen zu erhöhen. Klicken Sie dann in der Befehlsleiste auf **Speichern**. Die Instanzgrößenoption ist im Modus **Freigegeben** nicht verfügbar. Weitere Informationen zu den Instanzgrößen finden Sie unter [Größen virtueller Computer und Clouddienste für Microsoft Azure][vmsizes].
 	
 	![Instanzgröße für Basic-Modus][ChooseBasicInstances]
 	
 	Auf der Registerkarte **Benachrichtigungen** wird in grüner Schrift der Text **ERFOLGREICH** angezeigt, sobald der Vorgang abgeschlossen wurde.
 	
-<a name="scalingstandard"></a> 
+<a name="scalingstandard"></a>
 <!-- ================================= -->
 ## Skalieren auf Standard- oder Premium-Modus
 <!-- ================================= -->
@@ -60,48 +60,50 @@ Weitere Informationen zu App Service-Plänen finden Sie unter [Was ist ein App S
 
 1. Gehen Sie für die Skalierung zum Modus **Standard** oder **Premium** zunächst vor wie bei der Skalierung auf **Freigegeben** oder **Basic**. Wählen Sie dann unter **Wählen Sie Ihre Preisstufe** den Modus **Standard** oder **Premium**, und klicken Sie anschließend auf **Auswählen**. 
 	
-	Auf der Registerkarte **Benachrichtigungen** wird in grüner Schrift der Text **ERFOLGREICH** angezeigt, sobald der Vorgang abgeschlossen wurde, und der **Autoskalierungsmodus** wird aktiviert.
+	Auf der Registerkarte **Benachrichtigungen** wird in grüner Schrift der Text **ERFOLGREICH** angezeigt, sobald der Vorgang abgeschlossen wurde, und die **Autoskalierung** wird aktiviert.
 	
 	![Skalieren im Standard- oder Premium-Modus][ScaleStandard]
 	
-	Sie können wie im Modus **Basic** (siehe oben) weiterhin den Schieberegler **Instanz** bewegen, um manuell die Anzahl von Instanzen zu erhöhen. In diesem Abschnitt wird jedoch die Verwendung des **Autoskalierungsmodus** erläutert.
+	Sie können wie im Modus **Basic** (siehe oben) weiterhin den Schieberegler **Instanz** bewegen, um manuell die Anzahl von Instanzen zu erhöhen. In diesem Abschnitt erfahren Sie jedoch, wie Sie Ihre App automatisch skalieren können.
 	
-2. Wählen Sie im **Autoskalierungsmodus** die Einstellung **Leistung** aus, um eine automatische Skalierung basierend auf Leistungsmetriken durchzuführen.
+2. Wählen Sie unter **Skalieren nach** die Option ** Zeitplan und Leistungsregeln**, um Ihre App automatisch zu skalieren.
 	
 	![Festlegen des Modus für automatische Skalierung nach Leistung][Autoscale]
 	
-3. Bewegen Sie unter **Instanzbereich** die beiden Schieberegler, um die minimale und maximale Anzahl von Instanzen bei der automatischen Skalierung für den App Service-Plan zu definieren. In diesem Lernprogramm wird der Schieberegler für die maximale Instanzenanzahl auf **6** festgelegt.
+3. Klicken Sie in den **Einstellungen** auf **Standard, Skalierung 1-1**, und verschieben Sie die beiden Schieberegler, um die minimale und maximale Anzahl von Instanzen bei der automatischen Skalierung für den App Service-Plan zu definieren. In diesem Lernprogramm wird der Schieberegler für die maximale Instanzenanzahl auf **6** festgelegt.
 	
-4. Klicken Sie in der Befehlsleiste auf **Speichern**.
+4. Klicken Sie auf **OK**.
 	
-4. Klicken Sie unter **Zielmetriken** auf **>**, um Regeln für die automatische Skalierung der Standardmetrik zu konfigurieren.
+4. Klicken Sie unter **Einstellungen** auf **CPU-Prozentsatz > 80 (Anzahl erhöhen um 1)**, um die Regeln für die automatische Skalierung für die Standardmetrik zu konfigurieren.
 	
 	![Festlegen von Zielmetriken][SetTargetMetrics]
 	
 	Sie können Regeln für die automatische Skalierung konfigurieren, die für verschiedene Leistungsmetriken gelten, wie z. B. CPU, Arbeitsspeicher, Datenträgerwarteschlange,HTTP-Warteschlange und Datenfluss. In diesem Beispiel konfigurieren Sie die automatische Skalierung für den CPU-Prozentsatz, der Folgendes bewirkt:
 	
-	- Skalierung nach oben um 1 Instanz, wenn der CPU-Prozentsatz in den letzten 10 Minuten über 70 % liegt
+	- Zentral hochskalieren um 1 Instanz, wenn der CPU-Prozentsatz in den letzten 10 Minuten über 80 % liegt
 	- Skalierung nach oben um 3 Instanzen, wenn der CPU-Prozentsatz in den letzten 5 Minuten über 90 % liegt
 	- Skalierung nach unten um 1 Instanz, wenn der CPU-Prozentsatz in den letzten 30 Minuten unter 50 % liegt 
 	
 	
-4. Behalten Sie im Dropdownfeld **Metrik** die Einstellung **CPU-Prozentsatz** bei.
+4. Behalten Sie im Dropdownfeld **Metrikname** die Einstellung **CPU-Prozentsatz** bei.
 	
-5. Konfigurieren Sie in **Hochskalierungsregeln** die erste Regel durch Festlegen der Einstellung **Bedingung** auf **Größer**, **Schwellenwert** auf **70** (%), **In den letzten** auf **10** (Minuten), **Nach oben skalieren um** auf **1** (Instanz) und **Cooldown** auf **10** (Minuten).
+5. Konfigurieren Sie unter **Regeln zum Hochskalieren** die erste Regel, indem Sie **Operator** auf **Größer als**, **Schwellenwert** auf **70** (%), **Dauer** auf **10** (Minuten), **Zeitaggregation** auf „Durchschnitt“, **Aktion** auf **Anzahl erhöhen um**, „Wert“ auf **1** (Instanz) und **Abklingen** auf **10** (Minuten) festlegen.
 	
 	![Festlegen der ersten Regel für automatische Skalierung][SetFirstRule]
 	
 	>[AZURE.NOTE] Die Einstellung **Cooldown** gibt an, wie lange diese Regel nach einer Skalierungsaktion bis zur nächsten Skalierung warten soll.
 	
-6. Klicken Sie auf **Hochskalierungsregel hinzufügen**, und konfigurieren Sie dann die zweite Regel durch Festlegen der Einstellung **Bedingung** auf **Größer**, **Schwellenwert** auf **90** (%), **In den letzten** auf **1** (Minuten), **Nach oben skalieren um** auf **3** (Instanz) und **Cooldown** auf **1** (Minuten).
+6. Klicken Sie auf **Regel hinzufügen**, und konfigurieren Sie die zweite Regel, indem Sie **Operator** auf **Größer als**, **Schwellenwert** auf **90** (%), **Dauer** auf **1** (Minute), **Zeitaggregation** auf „Durchschnitt“, **Aktion** auf **Anzahl erhöhen um**, **Wert** auf **3** (Instanz) und **Abklingen** auf **1** (Minute) festlegen.
+
+7. Klicken Sie auf **OK**.
 	
 	![Festlegen der zweiten Regel für automatische Skalierung][SetSecondRule]
 	
-5. Konfigurieren Sie in **Herunterskalierungsregeln** die dritte Regel durch Festlegen der Einstellung **Bedingung** auf **Weniger**, **Schwellenwert** auf **50** (%), **In den letzten** auf **30** (Minuten), **Nach unten skalieren um** auf **1** (Instanz) und **Cooldown** auf **60** (Minuten).
+5. Klicken Sie in den **Einstellungen** auf **Regel hinzufügen**, um die dritte Regel zu konfigurieren, indem Sie **Operator** auf **Kleiner als**, **Schwellenwert** auf **50** (%), **Dauer** auf **30** (Minuten), **Zeitaggregation** auf **Durchschnitt**, **Aktion** auf **Anzahl verringern um**, **Wert** auf **1** (Instanz) und **Abklingen** auf **60** (Minuten) festlegen.
 	
 	![Festlegen der dritten Regel für automatische Skalierung][SetThirdRule]
 	
-7. Klicken Sie in der Befehlsleiste auf **Speichern**. Ihre Regel für die automatische Skalierung sollte jetzt im Blatt **Skalierung** angezeigt werden.
+7. Klicken Sie auf **OK**. Ihre Regel für die automatische Skalierung sollte jetzt im Blatt **Skalierungseinstellung** angezeigt werden.
 	
 	![Festlegen der Ergebnisse der Regeln für automatisches Skalieren][SetRulesFinal]
 
@@ -113,7 +115,7 @@ Wenn Sie eine oder mehrere SQL Server-Datenbanken mit Ihrer Web-App verknüpft h
 
 	![Verknüpfte Datenbank][ResourceGroup]
 	
-2. Klicken Sie im Blatt für Ihre verknüpfte SQL-Datenbank auf den Bereich **Preisstufe**, wählen Sie basierend auf Ihren Leistungsanforderungen eine Preisstufe aus, und klicken Sie auf **Auswählen**.
+2. Klicken Sie im Blatt für Ihre verknüpfte SQL-Datenbank auf den Bereich **Einstellungen** > **Tarif**, wählen Sie basierend auf Ihren Leistungsanforderungen einen Tarif aus, und klicken Sie auf **Auswählen**.
 	
 	![Skalieren Ihrer SQL-Datenbank][ScaleDatabase]
 	
@@ -200,4 +202,4 @@ Je nach Modus der Web-App stehen die folgenden entwicklungsbezogenen Funktionen 
 [GeoReplication]: ./media/web-sites-scale/scale12SQLGeoReplication.png
  
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0302_2016-->

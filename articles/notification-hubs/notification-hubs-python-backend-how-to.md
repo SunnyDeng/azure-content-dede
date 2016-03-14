@@ -13,17 +13,17 @@
 	ms.tgt_pltfrm="python" 
 	ms.devlang="php" 
 	ms.topic="article" 
-	ms.date="11/01/2015" 
-	ms.author="yuaxu"/>
+	ms.date="02/29/2016" 
+	ms.author="wesmc"/>
 
 # Verwenden von Notofication Hubs mit Python
 [AZURE.INCLUDE [notification-hubs-backend-how-to-selector](../../includes/notification-hubs-backend-how-to-selector.md)]
 		
 Sie können von einem Java-/PHP-/Python-/Ruby-Back-End aus über die REST-Schnittstelle für Notification Hubs, die im MSDN-Thema [REST-APIs für Benachrichtigungshubs](http://msdn.microsoft.com/library/dn223264.aspx) beschrieben ist, auf alle Notification Hubs-Funktionen zugreifen.
 
-> [AZURE.NOTE]Dies ist eine beispielhafte Referenzimplementierung für die Implementierung der Benachrichtigungsübermittlung in Python und nicht der offiziell unterstützte Notification Hub Python SDK.
+> [AZURE.NOTE] Dies ist eine beispielhafte Referenzimplementierung für die Implementierung der Benachrichtigungsübermittlung in Python und nicht der offiziell unterstützte Notification Hub Python SDK.
 
-> [AZURE.NOTE]Dieses Beispiel wurde mit Python 3.4 geschrieben.
+> [AZURE.NOTE] Dieses Beispiel wurde mit Python 3.4 geschrieben.
 
 In diesem Thema wird Folgendes erläutert:
 
@@ -33,7 +33,7 @@ In diesem Thema wird Folgendes erläutert:
 
 Führen Sie die Schritte im Lernprogramm [Erste Schritte mit Notification Hubs](notification-hubs-windows-store-dotnet-get-started.md) aus, und implementieren Sie den Back-End-Teil in Python.
 
-> [AZURE.NOTE]Das Beispiel ist auf das Senden von Benachrichtigungen begrenzt und enthält keine Registrierungsverwaltung.
+> [AZURE.NOTE] Das Beispiel ist auf das Senden von Benachrichtigungen begrenzt und enthält keine Registrierungsverwaltung.
 
 ## Clientschnittstelle
 Über die Hauptclientschnittstelle können dieselben Methoden bereitgestellt werden, die im [.NET Notification Hubs SDK](http://msdn.microsoft.com/library/jj933431.aspx) verfügbar sind. Dadurch können Sie alle Lernprogramme und Beispiele, die derzeit auf dieser Website verfügbar sind und die von der Community im Internet beigesteuert werden, direkt übersetzen.
@@ -393,4 +393,4 @@ In diesem Thema haben wir gezeigt, wie Sie einen einfachen Python-REST-Client f�
 [5]: ./media/notification-hubs-python-backend-how-to/TemplatedNotification.png
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0302_2016-->

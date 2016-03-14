@@ -4,8 +4,8 @@
 	services="biztalk-services" 
 	documentationCenter="" 
 	authors="MandiOhlinger" 
-	manager="dwrede" 
-	editor="cgronlun"/>
+	manager="erikre" 
+	editor=""/>
 
 <tags 
 	ms.service="biztalk-services" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/03/2015" 
+	ms.date="02/29/2016" 
 	ms.author="mandia"/>
 
 
@@ -33,7 +33,7 @@ In diesem Thema werden diese Schritte aufgeführt.
 
 Eine Hybridverbindung kann im Azure-Portal anhand von Web-Apps **oder** BizTalk Services erstellt werden.
 
-**Informationen zum Erstellen von Hybridverbindungen mit Web-Apps** finden Sie unter [Verbinden von Azure-Web-Apps mit einer lokalen Ressource](../web-sites-hybrid-connection-get-started.md).
+**Informationen zum Erstellen von Hybridverbindungen mit Web-Apps** finden Sie unter [Verbinden von Azure-Web-Apps mit einer lokalen Ressource](../app-service-web/web-sites-hybrid-connection-get-started.md).
 
 **So erstellen Sie Hybridverbindungen in BizTalk Services**:
 
@@ -61,9 +61,9 @@ Port | Geben Sie die Portnummer der lokalen Ressource ein. Wenn Sie Web-Apps ver
 
 ## <a name="LinkWebSite"></a>Verknüpfen von Azure-Web-Apps oder mobilen Azure-Apps
 
-Um die Azure-Web-Apps mit einer vorhandenen Hybridverbindung zu verknüpfen, wählen Sie auf dem Blatt "Hybridverbindungen" die Option **Vorhandene Hybridverbindung verwenden** aus. Weitere Informationen finden Sie unter [Verbinden von Azure-Web-Apps mit einer lokalen Ressource](../web-sites-hybrid-connection-get-started.md).
+Um die Azure-Web-Apps mit einer vorhandenen Hybridverbindung zu verknüpfen, wählen Sie auf dem Blatt "Hybridverbindungen" die Option **Vorhandene Hybridverbindung verwenden** aus. Weitere Informationen finden Sie unter [Verbinden von Azure-Web-Apps mit einer lokalen Ressource](../app-service-web/web-sites-hybrid-connection-get-started.md).
 
-Um die mobilen Azure-Apps mit einer vorhandenen Hybridverbindung zu verknüpfen, wählen Sie die Option **Hybridverbindung hinzufügen** aus, wenn Sie einen mobilen Dienst ändern oder erstellen. Weitere Informationen finden Sie unter [Azure Mobile Services und Hybridverbindungen](../mobile-services-dotnet-backend-hybrid-connections-get-started.md).
+Um die mobilen Azure-Apps mit einer vorhandenen Hybridverbindung zu verknüpfen, wählen Sie die Option **Hybridverbindung hinzufügen** aus, wenn Sie einen mobilen Dienst ändern oder erstellen. Weitere Informationen finden Sie unter [Azure Mobile Services und Hybridverbindungen](../mobile-services/mobile-services-dotnet-backend-hybrid-connections-get-started.md).
 
 
 ## <a name="InstallHCM"></a>Lokale Installation des Hybrid Connection Manager
@@ -85,7 +85,7 @@ You can also download the Hybrid Connection Manager MSI file and copy the file t
 3. On the on-premises resource, install the Hybrid Connection Manager from the MSI file. 
 4. Using Windows PowerShell, type: 
 > Add-HybridConnection -ConnectionString “*Your On-Premises Connection String that you copied*” 
--->
+--> 
 
 #### Zusätzlich
 - Hybridverbindungen unterstützen lokale Ressourcen, die unter den folgenden Betriebssystemen installiert sind:
@@ -119,7 +119,9 @@ Zum Verwalten der Hybridverbindungen haben Sie folgende Möglichkeiten:
 
 	**Verbindungen verwalten** führt die Anwendung und die Vor-Ort-Verbindungszeichenfolgen auf. Sie können die Verbindungszeichenfolgen kopieren oder den Zugriffsschlüssel in der Verbindungszeichenfolge regenerieren.
 
-	**Wenn Sie "Regenerieren" auswählen**, verändert sich der freigegebene Zugriffsschlüssel innerhalb der Verbindungszeichenfolge. Gehen Sie folgendermaßen vor: - Wählen Sie im klassischen Azure-Portal in der Azure-Anwendung die Option **Synchronisierungsschlüssel** aus. - Führen Sie das **lokale Setup** erneut aus. Wenn Sie das lokale Setup erneut ausführen, wird die lokale Ressource automatisch für die Verwendung der aktualisierten primären Verbindungszeichenfolge konfiguriert.
+	**Wenn Sie "Regenerieren" auswählen**, verändert sich der freigegebene Zugriffsschlüssel innerhalb der Verbindungszeichenfolge. Gehen Sie wie folgt vor:
+	- Wählen Sie im klassischen Azure-Portal in der Azure-Anwendung die Option **Synchronisierungsschlüssel** aus.
+	- Führen Sie das **lokale Setup** erneut aus. Wenn Sie das lokale Setup erneut ausführen, wird die lokale Ressource automatisch für die Verwendung der aktualisierten primären Verbindungszeichenfolge konfiguriert.
 
 
 #### Verwenden Sie Gruppenrichtlinien, um die von einer Hybridverbindung verwendeten lokalen Ressourcen zu steuern.
@@ -138,7 +140,7 @@ Nach dem Kopieren können Sie den Gruppenrichtlinien-Editor verwenden, um die Ri
 
 ## Weiter
 
-[Verbinden von Azure-Web-Apps mit einer lokalen Ressource](../web-sites-hybrid-connection-get-started.md) [Verbinden mit einem lokalen SQL-Server über Azure-Web-Apps](../web-sites-hybrid-connection-connect-on-premises-sql-server.md) [Azure Mobile Services und Hybridverbindungen](../mobile-services-dotnet-backend-hybrid-connections-get-started.md) [Übersicht über Hybridverbindungen](integration-hybrid-connection-overview.md)
+[Verbinden von Azure-Web-Apps mit einer lokalen Ressource](../app-service-web/web-sites-hybrid-connection-get-started.md) [Verbinden mit einem lokalen SQL-Server über Azure-Web-Apps](../app-service-web/web-sites-hybrid-connection-connect-on-premises-sql-server.md) [Azure Mobile Services und Hybridverbindungen](../mobile-services/mobile-services-dotnet-backend-hybrid-connections-get-started.md) [Übersicht über Hybridverbindungen](integration-hybrid-connection-overview.md)
 
 
 ## Weitere Informationen
@@ -150,4 +152,4 @@ Nach dem Kopieren können Sie den Gruppenrichtlinien-Editor verwenden, um die Ri
 [HCOnPremSetup]: ./media/integration-hybrid-connection-create-manage/WABS_HybridConnectionOnPremSetup.png
 [HCManageConnection]: ./media/integration-hybrid-connection-create-manage/WABS_HybridConnectionManageConn.png
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -1,22 +1,22 @@
-<properties 
-	pageTitle="Analysieren von CDN-Verwendungsmustern" 
-	description="Mithilfe der folgenden Berichte können Sie Verwendungsmuster für Ihr CDN anzeigen: Bandbreite, Übertragene Daten, Treffer, Cachestatus, Cachetrefferquote, Übertragene IPV4/IPV6-Daten." 
-	services="cdn" 
-	documentationCenter=".NET" 
-	authors="camsoper" 
-	manager="dwrede" 
+<properties
+	pageTitle="Analysieren von CDN-Verwendungsmustern"
+	description="Mithilfe der folgenden Berichte können Sie Verwendungsmuster für Ihr CDN anzeigen: Bandbreite, Übertragene Daten, Treffer, Cachestatus, Cachetrefferquote, Übertragene IPV4/IPV6-Daten."
+	services="cdn"
+	documentationCenter=".NET"
+	authors="camsoper"
+	manager="erikre"
 	editor=""/>
 
-<tags 
-	ms.service="cdn" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="12/02/2015" 
+<tags
+	ms.service="cdn"
+	ms.workload="tbd"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="02/25/2016" 
 	ms.author="casoper"/>
 
-# Analysieren von CDN-Verwendungsmustern 
+# Analysieren von CDN-Verwendungsmustern
 
 Mithilfe der folgenden Berichte können Sie Verwendungsmuster für Ihr CDN anzeigen:
 
@@ -25,7 +25,7 @@ Mithilfe der folgenden Berichte können Sie Verwendungsmuster für Ihr CDN anzei
 - Treffer
 - Cachestatus
 - Cachetrefferquote
-- Übertragene IPV4-/IPV6-Daten 
+- Übertragene IPV4-/IPV6-Daten
 
 ## Bandbreite
 
@@ -33,8 +33,8 @@ Der Bandbreitenbericht besteht aus einem Diagramm und einer Datentabelle, die di
 
 - Wählen Sie "Alle Edgeknoten", um Datenverkehr von allen Knoten anzuzeigen, oder wählen Sie einen bestimmten Bereich/Knoten aus der Dropdownliste aus.
 - Wählen Sie "Datumsbereich", um Daten für heute/diese Woche/diesen Monat usw. anzuzeigen, oder geben Sie selbst Datumsangaben ein, und klicken Sie auf "Los", um sicherzustellen, dass Ihre Auswahl aktualisiert wird.
-- Sie können die Daten exportieren und herunterladen, indem Sie neben "Los" auf das Excel-Arbeitsblattsymbol klicken. 
- 
+- Sie können die Daten exportieren und herunterladen, indem Sie neben "Los" auf das Excel-Arbeitsblattsymbol klicken.
+
 Der Bericht wird alle fünf Minuten aktualisiert.
 
 ![Bericht zur Bandbreite](./media/cdn-reports/cdn-bandwidth.png)
@@ -46,7 +46,7 @@ Dieser Bericht besteht aus einem Diagramm und einer Datentabelle, die den Datenv
 - Wählen Sie "Alle Edgeknoten", um Datenverkehr von allen Knoten anzuzeigen, oder wählen Sie einen bestimmten Bereich/Knoten aus der Dropdownliste aus.
 - Wählen Sie "Datumsbereich", um Daten für heute/diese Woche/diesen Monat usw. anzuzeigen, oder geben Sie selbst Datumsangaben ein, und klicken Sie auf "Los", um sicherzustellen, dass Ihre Auswahl aktualisiert wird.
 - Sie können die Daten exportieren und herunterladen, indem Sie neben "Los" auf das Excel-Arbeitsblattsymbol klicken.
- 
+
 Der Bericht wird alle fünf Minuten aktualisiert.
 
 ![Bericht zu übertragenen Daten](./media/cdn-reports/cdn-data-transferred.png)
@@ -54,7 +54,7 @@ Der Bericht wird alle fünf Minuten aktualisiert.
 ## Treffer (Statuscodes)
 
 Dieser Bericht zeigt die Verteilung von Anforderungsstatuscodes für Ihre Inhalte. Jede Inhaltsanforderung generiert einen HTTP-Statuscode. Der Statuscode beschreibt, wie die Anforderung von Edge-POPs behandelt wurde. Beispielsweise weisen 2xx-Statuscodes darauf hin, dass die Anforderung erfolgreich für einen Client verarbeitet wurde, während ein 4xx-Statuscode auf einen Fehler hinweist. Weitere Informationen zum HTTP-Statuscode finden Sie unter [Statuscodes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).
- 
+
 - Wählen Sie "Datumsbereich", um Daten für heute/diese Woche/diesen Monat usw. anzuzeigen, oder geben Sie selbst Datumsangaben ein, und klicken Sie auf "Los", um sicherzustellen, dass Ihre Auswahl aktualisiert wird.
 - Sie können die Daten exportieren und herunterladen, indem Sie neben "Los" auf das Excel-Arbeitsblattsymbol klicken.
 
@@ -66,10 +66,10 @@ Dieser Bericht zeigt die Verteilung der Cachetreffer und Cachefehler für eine C
 
 ![Bericht zum Cachestatus](./media/cdn-reports/cdn-cache-statuses.png)
 
-### Im Folgenden sind die wichtigsten Cachestatusangaben aufgeführt: 
+### Im Folgenden sind die wichtigsten Cachestatusangaben aufgeführt:
 
 - TCP\_HIT: Von Edge bereitgestellt. Das Objekt befand sich im Cache und hatte den Wert "max-age" nicht überschritten.
-- TCP\_MISS: Vom Ursprung bereitgestellt. Das Objekt befand sich nicht im Cache, und die Antwort ging zurück an den Ursprung. 
+- TCP\_MISS: Vom Ursprung bereitgestellt. Das Objekt befand sich nicht im Cache, und die Antwort ging zurück an den Ursprung.
 - TCP\_EXPIRED \_MISS: Vom Ursprung bereitgestellt nach erneuter Überprüfung beim Ursprung. Das Objekt befand sich im Cache, hatte jedoch den Wert "max-age" überschritten. Eine erneute Überprüfung beim Ursprung führte zum Ersetzen des Cacheobjekts durch eine neue Antwort vom Ursprung.
 - TCP\_EXPIRED \_HIT: Von Edge bereitgestellt nach erneuter Überprüfung beim Ursprung. Das Objekt befand sich im Cache, hatte jedoch den Wert "max-age" überschritten. Eine erneute Überprüfung beim ursprünglichen Server führte dazu, dass das Cacheobjekt nicht geändert wurde.
 
@@ -112,12 +112,12 @@ Die Details finden Sie im folgenden Bericht:
 
 - Der angeforderte Inhalt wurde auf dem POP zwischengespeichert, der der anfordernden Person am nächsten war.
 - Die Anforderung wurde direkt vom Edgeserver am Rand unseres Netzwerks aus verarbeitet.
-- Für die Anforderung war keine erneute Überprüfung beim ursprünglichen Server erforderlich. 
+- Für die Anforderung war keine erneute Überprüfung beim ursprünglichen Server erforderlich.
 
 Folgende Elemente sind im Bericht nicht enthalten:
 
 - Anforderungen, die aufgrund von Länderfilteroptionen verweigert werden.
-- Anforderungen für Medienobjekte, deren Header darauf hinweisen, dass sie nicht zwischengespeichert werden sollen. Beispielsweise verhindern die Header "Cache-Control: private", "Cache-Control: no-cache" oder "Pragma: no-cache", dass ein Medienobjekt zwischengespeichert wird. 
+- Anforderungen für Medienobjekte, deren Header darauf hinweisen, dass sie nicht zwischengespeichert werden sollen. Beispielsweise verhindern die Header "Cache-Control: private", "Cache-Control: no-cache" oder "Pragma: no-cache", dass ein Medienobjekt zwischengespeichert wird.
 - Bytebereichsanforderungen für teilweise zwischengespeicherte Inhalte.
 
 Die Formel lautet: (TCP\_ HIT/(TCP\_ HIT+TCP\_MISS))*100
@@ -128,7 +128,7 @@ Die Formel lautet: (TCP\_ HIT/(TCP\_ HIT+TCP\_MISS))*100
 
 ![Bericht zur Cachetrefferquote](./media/cdn-reports/cdn-cache-hit-ratio.png)
 
-## Übertragene IPV4-/IPV6-Daten 
+## Übertragene IPV4-/IPV6-Daten
 
 Dieser Bericht zeigt die Verteilung des Datenverkehrs in IPV4 und IPV6.
 
@@ -142,4 +142,4 @@ Dieser Bericht zeigt die Verteilung des Datenverkehrs in IPV4 und IPV6.
 
 Berichte können nur über die letzten 18 Monate generiert werden.
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0302_2016-->

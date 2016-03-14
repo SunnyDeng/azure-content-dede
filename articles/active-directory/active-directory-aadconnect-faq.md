@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/16/2016"
+	ms.date="02/29/2016"
 	ms.author="billmath"/>
 
 # Häufig gestellte Fragen zu Azure AD Connect
@@ -28,11 +28,14 @@
 ## Netzwerk
 **F: Die maximale Länge für offene Verbindungen in meinem Netzwerk wird durch eine Firewall, ein Netzwerkgerät o. ä. eingeschränkt. Wie hoch sollte der clientseitige Schwellenwert für die Zeitüberschreitung bei der Verwendung von Azure AD Connect sein?** Für Netzwerksoftware, physische Geräte und alle anderen Komponenten, durch die die maximale Länge von offenen Verbindungen eingeschränkt wird, sollte ein Schwellenwert von mindestens 5 Minuten (300 Sekunden) für die Konnektivität zwischen dem Server, auf dem der Azure AD Connect-Client installiert ist, und Azure Active Directory verwendet werden. Dies gilt auch für alle zuvor veröffentlichten Microsoft Identity-Synchronisierungswerkzeuge.
 
-**F: Was muss ich tun, wenn ich eine E-Mail erhalte, die mich auffordert, mein Office 365-Zertifikat zu erneuern?** Verwenden Sie die Anweisungen, die im Thema [Erneuern von Zertifikaten](active-directory-aadconnect-o365-certs.md) zum Erneuern des Zertifikats beschrieben werden.
-
 **F: Werden SLDs (einteilige Domänen) unterstützt?** Nein. Azure AD Connect unterstützt keine lokalen Gesamtstrukturen/Domänen mit SLDs.
 
 **F: Werden NetBios mit punktierten Namen unterstützt?** Nein. Azure AD Connect unterstützt keine lokalen Gesamtstrukturen/Domänen, deren NetBios-Name einen Punkt enthält.
+
+## Verbund
+**F: Was muss ich tun, wenn ich eine E-Mail erhalte, in der ich aufgefordert werde, mein Office 365-Zertifikat zu erneuern?** Befolgen Sie die Anweisungen, die im Thema [Erneuern von Zertifikaten](active-directory-aadconnect-o365-certs.md) zum Erneuern des Zertifikats beschrieben sind.
+
+**F: Für die vertrauende Seite für Office 365 habe ich „Vertrauende Seite automatisch aktualisieren“ festgelegt. Muss ich bestimmte Maßnahmen ergreifen, wenn mein Tokensignaturzertifikat automatisch verlängert wird?** Befolgen Sie die Anweisungen, die im Artikel [Erneuern von Zertifikaten](active-directory-aadconnect-o365-certs.md) beschrieben sind.
 
 ## Environment
 **F: Kann der Server nach der Installation von Azure AD umbenannt werden?** Nein. Wenn Sie den Namen des Servers ändern, kann das Synchronisierungsmodul keine Verbindung zur SQL-Datenbank herstellen, und der Dienst kann nicht gestartet werden.
@@ -46,7 +49,7 @@
 ## Benutzerdefinierte Konfiguration
 **F: Wo sind die PowerShell-Cmdlets für Azure AD Connect dokumentiert?** Mit Ausnahme der auf dieser Website dokumentierten Cmdlets werden keine PowerShell-Cmdlets in Azure AD Connect zur Verwendung für Kunden unterstützt.
 
-**F: Kann ich mithilfe von „Serverexport/Serverimport“ in *Synchronization Service Manager* die Konfiguration zwischen Servern verschieben?** Nein. Da bei dieser Option nicht alle Einstellungen abgerufen werden, sollte sie nicht verwendet werden. Verwenden Sie stattdessen den Assistenten zum Erstellen der Basiskonfiguration auf dem zweiten Server und verwenden Sie den Synchronisierungsregel-Editor, um PowerShell-Skripts zum Verschieben benutzerdefinierter Regeln zwischen Servern zu erstellen.
+**F: Kann ich mithilfe von „Serverexport/Serverimport“ in *Synchronization Service Manager* die Konfiguration zwischen Servern verschieben?** Nein. Da bei dieser Option nicht alle Einstellungen abgerufen werden, sollte sie nicht verwendet werden. Verwenden Sie stattdessen den Assistenten zum Erstellen der Basiskonfiguration auf dem zweiten Server und verwenden Sie den Synchronisierungsregel-Editor, um PowerShell-Skripts zum Verschieben benutzerdefinierter Regeln zwischen Servern zu erstellen. Siehe dazu [Verschieben der benutzerdefinierten Konfiguration vom aktiven Server auf den Stagingserver](active-directory-aadconnect-upgrade-previous-version.md#move-custom-configuration-from-active-to-staging-server).
 
 ## Problembehandlung
 **F: Wie erhalte ich Hilfe zu Azure AD Connect?**
@@ -63,4 +66,4 @@
 
 - Verwenden Sie diesen Link, um Support über das Azure-Portal zu erhalten.
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0302_2016-->

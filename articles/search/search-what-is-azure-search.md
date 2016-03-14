@@ -11,10 +11,11 @@
 	ms.workload="search"
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
-	ms.date="02/09/2016"
+	ms.date="03/02/2016"
 	ms.author="ashmaka"/>
 
 # Was ist Azure Search?
+
 Azure Search ist eine cloudbasierte SaaS-Lösung, deren Server- und Infrastrukturtechnologien von Microsoft verwaltet werden. Dadurch erhalten Sie einen sofort einsatzbereiten Dienst, den Sie mit Ihren Daten füllen und anschließend verwenden können, um Ihrer Webanwendung oder mobilen Anwendung eine Suchfunktion hinzuzufügen. Mit Azure Search können Sie Ihre Anwendungen unter Verwendung einer einfachen [REST-API](https://msdn.microsoft.com/library/azure/dn798935.aspx) oder eines [.NET-SDK](search-howto-dotnet-sdk.md) problemlos mit einer zuverlässigen Suchfunktion ausstatten, ohne sich mit der Suchinfrastruktur auseinanderzusetzen oder sich umfassende Kenntnisse zu Suchvorgängen aneignen zu müssen.
 
 ## Leistungsfähige Suchfunktion für Benutzer
@@ -58,9 +59,9 @@ Mit dem **Such-Explorer** können Sie Abfragen für alle Ihre Indizes direkt üb
 ### 1\. Bereitstellen des Diensts
 Ein Azure Search-Dienst kann entweder über das [Azure-Portal](https://portal.azure.com/) oder über die [Azure-Ressourcenverwaltungs-API](https://msdn.microsoft.com/library/azure/dn832684.aspx) bereitgestellt werden.
 
-Verwenden Sie je nach Dienstkonfiguration entweder den kostenlosen, gemeinsam mit anderen Azure Search-Abonnenten verwendeten Dienst oder den [Tarif](https://azure.microsoft.com/pricing/details/search/) „Standard“ mit speziell für Ihren Dienst reservierten Ressourcen. Beim Bereitstellen des Diensts wird auch die Region des Datencenters ausgewählt, das den Dienst hostet.
+Verwenden Sie je nach Konfiguration des Suchdiensts entweder den gemeinsam mit anderen Azure Search-Abonnenten verwendeten Dienst im Free-Tarif oder einen [kostenpflichtigen Tarif](https://azure.microsoft.com/pricing/details/search/) mit speziell für Ihren Dienst reservierten Ressourcen. Beim Bereitstellen des Diensts wird auch die Region des Datencenters ausgewählt, das den Dienst hostet.
 
-Wenn Sie Azure Search mit dem Standardtarif verwenden, können Sie Ihren Dienst in zwei Dimensionen skalieren: 1) Sie können Replikate hinzufügen, um die Kapazität für ein hohes Abfrageaufkommen zu erhöhen, und (2) Sie können Partitionen hinzufügen, um den Speicherplatz für mehr Dokumente zu erhöhen. Durch die getrennte Behandlung von Dokumentspeicher und Durchsatz können Sie Ihren Suchdienst exakt an Ihre Anforderungen anpassen.
+Je nach Wahl Ihres Tarifs können Sie Ihren Dienst in zwei Dimensionen skalieren: 1) Sie können Replikate hinzufügen, um die Kapazität für ein hohes Abfrageaufkommen zu erhöhen, und 2) Sie können Partitionen hinzufügen, um den Speicherplatz für weitere Dokumente zu erhöhen. Durch die getrennte Behandlung von Dokumentspeicher und Durchsatz können Sie Ihren Suchdienst exakt an Ihre Anforderungen anpassen.
 
 ### 2\. Erstellen des Index
 Bevor Sie Ihre Inhalte an den Azure Search-Dienst hochladen können, müssen Sie einen Azure Search-Index definieren. Einen Index können Sie sich wie eine Datenbanktabelle vorstellen, die Ihre Daten enthält und Suchabfragen entgegennimmt. Sie definieren das Indexschema für die Zuordnung zur Struktur der Dokumente, die Sie durchsuchen möchten (ähnlich wie bei Feldern in einer Datenbank).
@@ -82,4 +83,4 @@ Testen Sie Azure Search noch heute! Wenn Sie bereits über ein Azure-Konto verf�
 
 Falls Sie noch kein Azure-Konto besitzen, können Sie ganz ohne Registrierung eine kostenlose, 60-minütige Sitzung ausprobieren. Wählen Sie unter [Azure App Service testen](http://go.microsoft.com/fwlink/p/?LinkId=618214) die Option „Web-App“ aus. Wählen Sie anschließend die Vorlage „ASP.NET + Azure Search Site“ aus.
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0302_2016-->

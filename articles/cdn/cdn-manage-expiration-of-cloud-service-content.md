@@ -1,18 +1,18 @@
-<properties 
- pageTitle="Verwalten des Ablaufs von Clouddienstinhalten in Azure CDN (Content Delivery Network)" 
- description="" 
- services="cdn" 
- documentationCenter=".NET" 
- authors="camsoper" 
- manager="dwrede" 
+<properties
+ pageTitle="Verwalten des Ablaufs von Clouddienstinhalten in Azure CDN (Content Delivery Network)"
+ description=""
+ services="cdn"
+ documentationCenter=".NET"
+ authors="camsoper"
+ manager="erikre"
  editor=""/>
-<tags 
- ms.service="cdn" 
- ms.workload="media" 
- ms.tgt_pltfrm="na" 
- ms.devlang="dotnet" 
- ms.topic="article" 
- ms.date="12/02/2015" 
+<tags
+ ms.service="cdn"
+ ms.workload="media"
+ ms.tgt_pltfrm="na"
+ ms.devlang="dotnet"
+ ms.topic="article"
+ ms.date="02/25/2016" 
  ms.author="casoper"/>
 
 #Verwalten des Ablaufs von Clouddienstinhalten in Azure CDN (Content Delivery Network)
@@ -25,12 +25,12 @@ Bei statischen Inhalten wie Bildern und Stylesheets können Sie die Häufigkeit 
 
 Die folgende XML zeigt ein Beispiel zum Festlegen von **clientCache** auf ein maximales Alter von 3 Tagen:
 
-	<configuration> 
-	  <system.webServer> 
-	        <staticContent> 
-	            <clientCache cacheControlMode="UseMaxAge" cacheControlMaxAge="3.00:00:00" /> 
-	        </staticContent> 
-	  </system.webServer> 
+	<configuration>
+	  <system.webServer>
+	        <staticContent>
+	            <clientCache cacheControlMode="UseMaxAge" cacheControlMaxAge="3.00:00:00" />
+	        </staticContent>
+	  </system.webServer>
 	</configuration>
 
 Durch Angeben von **UseMaxAge** wird der Header "Cache-Control: max-age=<nnn>" anhand des im **CacheControlMaxAge**-Attribut angegebenen Werts der Antwort hinzugefügt. Das Format des Zeitraums für das **cacheControlMaxAge**-Attribut lautet <days>.<hours>:<min>:<sec>. Weitere Informationen zum **clientCache**-Knoten finden Sie unter [Clientcache<clientCache>](http://www.iis.net/ConfigReference/system.webServer/staticContent/clientCache).
@@ -50,4 +50,4 @@ Fügen Sie beispielsweise folgenden Code hinzu, um Inhalt eine Stunde lang zwisc
 
 [Verwalten des Ablaufs von Blobinhalten in Azure CDN (Content Delivery Network)](./cdn-manage-expiration-of-blob-content.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0302_2016-->

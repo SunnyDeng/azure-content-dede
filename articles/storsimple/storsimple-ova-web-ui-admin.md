@@ -12,21 +12,16 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="02/17/2016"
+   ms.date="03/01/2016"
    ms.author="alkohli" />
 
-# Verwaltung des StorSimple Virtual Array (Vorschau) mithilfe der Web-UI
+# Verwaltung des StorSimple Virtual Array mithilfe der Web-UI
 
 ![Setup-Prozessablauf](./media/storsimple-ova-web-ui-admin/manage4.png)
 
 ## Übersicht
 
-Die Lernprogramme in diesem Artikel beziehen sich auf Microsoft Azure StorSimple Virtual Array (auch als „lokales virtuelles StorSimple-Gerät“ bezeichnet) mit Version 1.1.1.0 (Vorschau). Dieser Artikel beschreibt einige der komplexen Workflows und Verwaltungsaufgaben, die auf dem StorSimple Virtual Array durchgeführt werden können. Zur Verwaltung des StorSimple Virtual Array können zwei Benutzeroberflächen verwendet werden: die Benutzeroberfläche des StorSimple Manager-Dienstes (als „Portal-UI“ bezeichnet) und die lokale Web-UI für das Gerät. Der Schwerpunkt dieses Artikels liegt auf den Aufgaben, die mithilfe der Web-UI ausgeführt werden können.
-
->[AZURE.IMPORTANT] 
->
->- StorSimple Virtual Array befindet sich in der Vorschauphase und ist für die Evaluierung und Bereitstellungsplanung vorgesehen. Die Installation dieser Vorschauversion in einer Produktionsumgebung wird nicht unterstützt. 
->- Wenn Probleme mit StorSimple Virtual Array auftreten, posten Sie sie im [StorSimple-MSDN-Forum](https://social.msdn.microsoft.com/Forums/home?forum=StorSimple).
+Die Tutorials in diesem Artikel beziehen sich auf Microsoft Azure StorSimple Virtual Array (auch als „lokales virtuelles StorSimple-Gerät“ bezeichnet) mit der Version vom März 2016 (allgemeine Verfügbarkeit). Dieser Artikel beschreibt einige der komplexen Workflows und Verwaltungsaufgaben, die auf dem StorSimple Virtual Array durchgeführt werden können. Sie können das StorSimple Virtual Array über die Benutzeroberfläche des StorSimple Manager-Diensts (als „Portal-UI“ bezeichnet) und über die lokale Web-UI für das Gerät verwalten. Der Schwerpunkt dieses Artikels liegt auf den Aufgaben, die mithilfe der Web-UI ausgeführt werden können.
 
 Dieser Artikel enthält folgende Lernprogramme:
 
@@ -136,4 +131,4 @@ Sie können Ihr virtuelles Gerät über die lokale Web-UI herunterfahren oder ne
 
 Erfahren Sie, wie Sie den [StorSimple Manager-Dienst zum Verwalten Ihres Geräts verwenden](storsimple-manager-service-administration.md).
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0302_2016-->
