@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="12/14/2015" 
+	ms.date="02/29/2016" 
 	ms.author="tdykstra"/>
 
 # Verwenden von Azure Service Bus mit dem WebJobs-SDK
@@ -170,7 +170,7 @@ In Version 1.1 wurden die folgenden Features hinzugefügt:
 
 Informationen zu WebJobs-SDK-Szenarien, die nicht spezifisch für Service Bus sind, finden Sie unter [Verwenden des Azure-Warteschlangenspeichers mit dem WebJobs-SDK](websites-dotnet-webjobs-sdk-storage-queues-how-to.md).
 
-In diesem Artikel werden u. a. die folgenden Themen behandelt:
+In diesem Artikel werden u. a. die folgenden Themen behandelt:
 
 * Asynchrone Funktionen
 * Mehrere Instanzen
@@ -186,4 +186,4 @@ In diesem Artikel werden u. a. die folgenden Themen behandelt:
 In dieser Anleitung wurde anhand von Codebeispielen veranschaulicht, wie häufige Szenarien für das Arbeiten mit Azure Service Bus behandelt werden. Weitere Informationen zur Verwendung von Azure WebJobs und dem WebJobs-SDK finden Sie unter [Empfohlene Ressourcen für Azure WebJobs](http://go.microsoft.com/fwlink/?linkid=390226).
  
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/19/2016" 
+	ms.date="03/01/2016" 
 	ms.author="awills"/>
  
 # Exportieren von Telemetriedaten aus Application Insights
@@ -21,9 +21,12 @@ Möchten Sie Ihre Telemetriedaten einer angepassten Analyse unterziehen? Oder m�
 
 Der fortlaufende Export ist im kostenlosen Testzeitraum und in den [Standard- und Premium-Preisplänen](https://azure.microsoft.com/pricing/details/application-insights/) verfügbar.
 
-(Wenn Sie die Daten in einem Ihrer Blätter "Metriken" oder "Suchen" nur [einmal exportieren](app-insights-metrics-explorer.md#export-to-excel) möchten, klicken Sie oben im Blatt auf "Export". Und wenn Sie sich Daten in Power BI anzeigen lassen möchten, greifen Sie auf [den Adapter](http://blogs.msdn.com/b/powerbi/archive/2015/11/04/explore-your-application-insights-data-with-power-bi.aspx) zurück – der *keinen* fortlaufenden Export verwendet.)
+>[AZURE.NOTE] Wenn Sie [Ihre Daten in Power BI untersuchen](http://blogs.msdn.com/b/powerbi/archive/2015/11/04/explore-your-application-insights-data-with-power-bi.aspx) möchten, benötigen Sie dazu keinen fortlaufenden Export.
+>
+>Wenn Sie die Daten in einem der Blätter „Metriken“ oder „Suchen“ nur [einmal exportieren](app-insights-metrics-explorer.md#export-to-excel) möchten, klicken Sie oben auf dem Blatt auf „Export“.
 
-## Erstellen Sie ein Speicherkonto.
+
+## Speicherkonto erstellen
 
 Wenn Sie noch nicht über ein "klassisches" Speicherkonto verfügen, erstellen Sie jetzt eins.
 
@@ -209,4 +212,4 @@ Bei größeren Dimensionen sollten Sie [HDInsight](https://azure.microsoft.com/s
 
  
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

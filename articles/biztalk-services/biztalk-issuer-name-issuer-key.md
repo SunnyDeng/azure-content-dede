@@ -4,7 +4,7 @@
 	services="biztalk-services" 
 	documentationCenter="" 
 	authors="MandiOhlinger" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor=""/>
 
 <tags 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/02/2015" 
+	ms.date="02/29/2016" 
 	ms.author="mandia"/>
 
 
@@ -53,13 +53,13 @@ Alternativ können Sie auf **ACS-Verwaltungsportal öffnen** klicken, um die Acc
 2. Klicken Sie im linken Navigationsbereich auf **BizTalk Services**.
 3. Wählen Sie Ihren BizTalk Service aus.
 4. Klicken Sie auf die Schaltfläche "Verbindungsinformationen", und wählen Sie **ACS-Verwaltungsportal öffnen** aus.
-5. Klicken Sie im Portal unter **Diensteinstellungen** auf **Dienstidentitäten**. Hier wird Ihre Dienstidentität angezeigt, die gleichzeitig Ihr Access Control-Ausstellername ist. Klicken Sie auf den Link Ihrer Dienstidentität, um das Kennwort anzuzeigen, das gleichzeitig Ihr Ausstellerschlüssel ist. Diese Werte können kopiert werden.<br/><br/> Unter **Dienstidentitäten** sehen Sie z. B. "owner". Bei "owner" handelt es sich um Ihren Access Control-Ausstellernamen. Wenn Sie auf den "owner"-Link klicken, wird **Kennwort** angezeigt. Wenn Sie auf den Link "Kennwort" klicken, wird der Wert angezeigt. Dieser Kennwortwert ist Ihr Access Controller-Ausstellerschlüssel.  
+5. Klicken Sie im Portal unter **Diensteinstellungen** auf **Dienstidentitäten**. Hier wird Ihre Dienstidentität angezeigt, die gleichzeitig Ihr Access Control-Ausstellername ist. Klicken Sie auf den Link Ihrer Dienstidentität, um das Kennwort anzuzeigen, das gleichzeitig Ihr Ausstellerschlüssel ist. Diese Werte können kopiert werden.<br/><br/> Unter **Dienstidentitäten** sehen Sie z. B. "owner". Bei "owner" handelt es sich um Ihren Access Control-Ausstellernamen. Wenn Sie auf den "owner"-Link klicken, wird **Kennwort** angezeigt. Wenn Sie auf den Link "Kennwort" klicken, wird der Wert angezeigt. Dieser Kennwortwert ist Ihr Access Controller-Ausstellerschlüssel.  
 
 Zusammenfassung: Ausstellername = Dienstidentitätsname Ausstellerschlüssel = Kennwortwert
 
 Im linken Navigationsbereich können Sie außerdem **Active Directory** auswählen, um die Access Control-Werte abzurufen.
 
-> [AZURE.IMPORTANT]Wenn Sie einen Access Control-Namespace mit **Active Directory** erstellen, wird die Dienstidentität **nicht** automatisch erstellt. Wenn Sie einen BizTalk Service einrichten, werden automatisch ein Access Control-Namespace, eine Dienstidentität mit dem Namen "owner" (Ausstellername), ein Kennwort (Ausstellerschlüssel) und ein symmetrischer Schlüssel erstellt.<br /> [Verwenden des ACS-Verwaltungsdiensts zum Konfigurieren von Dienstidentitäten](http://go.microsoft.com/fwlink/p/?LinkID=303942) bietet weitere Informationen zu Access Control Service-Identitäten.
+> [AZURE.IMPORTANT] Wenn Sie einen Access Control-Namespace mit **Active Directory** erstellen, wird die Dienstidentität **nicht** automatisch erstellt. Wenn Sie einen BizTalk Service einrichten, werden automatisch ein Access Control-Namespace, eine Dienstidentität mit dem Namen "owner" (Ausstellername), ein Kennwort (Ausstellerschlüssel) und ein symmetrischer Schlüssel erstellt.<br /> [Verwenden des ACS-Verwaltungsdiensts zum Konfigurieren von Dienstidentitäten](http://go.microsoft.com/fwlink/p/?LinkID=303942) bietet weitere Informationen zu Access Control Service-Identitäten.
 
 
 ## Service Bus-Ausstellername und -schlüssel
@@ -94,4 +94,4 @@ Zusätzliche Azure BizTalk Services-Themen:
 - [BizTalk Services: Drosselung](http://go.microsoft.com/fwlink/p/?LinkID=302282)<br/>
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0302_2016-->

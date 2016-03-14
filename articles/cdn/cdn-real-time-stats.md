@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="CDN – Echtzeitstatistiken" 
-	description="Echtzeitstatistiken in Microsoft Azure CDN. Echtzeitstatistiken bieten Echtzeitdaten über die Leistung unseres CDN bei der Übermittlung von Inhalten an Ihre Clients." 
-	services="cdn" 
-	documentationCenter=".NET" 
-	authors="camsoper" 
-	manager="dwrede" 
+<properties
+	pageTitle="CDN – Echtzeitstatistiken"
+	description="Echtzeitstatistiken in Microsoft Azure CDN. Echtzeitstatistiken bieten Echtzeitdaten über die Leistung unseres CDN bei der Übermittlung von Inhalten an Ihre Clients."
+	services="cdn"
+	documentationCenter=".NET"
+	authors="camsoper"
+	manager="erikre"
 	editor=""/>
 
-<tags 
-	ms.service="cdn" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="12/02/2015" 
+<tags
+	ms.service="cdn"
+	ms.workload="tbd"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="02/25/2016" 
 	ms.author="casoper"/>
 
 # Echtzeitstatistiken in Microsoft Azure CDN
@@ -22,7 +22,7 @@
 
 Dieses Dokument erläutert Echtzeitstatistiken in Microsoft Azure CDN. Diese Funktionalität bietet Echtzeitdaten über die Leistung unseres CDN bei der Übermittlung von Inhalten an Ihre Clients.
 
-> [AZURE.NOTE]Echtzeitstatistiken sind ein Feature des CDN-Tarifs „Premium“. Einen Vergleich der Features der CDN-Tarife „Standard“ und „Premium“ finden Sie in der [Übersicht über das Azure CDN](cdn-overview.md).
+> [AZURE.NOTE] Echtzeitstatistiken sind ein Feature des CDN-Tarifs „Premium“. Einen Vergleich der Features der CDN-Tarife „Standard“ und „Premium“ finden Sie in der [Übersicht über das Azure CDN](cdn-overview.md).
 
 Die folgenden Diagramme sind bei der Anzeige von Echtzeitstatistiken für die HTTP-basierten Plattformen verfügbar:
 
@@ -31,25 +31,25 @@ Die folgenden Diagramme sind bei der Anzeige von Echtzeitstatistiken für die HT
 * [Cachestatus](#cache-statuses)
 * [Verbindungen](#connections)
 
-> [AZURE.NOTE]Jedes der oben genannten Diagramme zeigt Echtzeitstatistiken für einen bestimmten Zeitraum an. Sobald der angegebene Zeitraum verstrichen ist, wird ein gleitendes Fenster der Daten angezeigt. Dies bedeutet, dass alte Daten aus dem Diagramm entfernt werden, um Platz für neue Daten zu schaffen. Die zeitliche Dauer dieses gleitenden Fensters kann über die Option „Zeitraum der Diagramme“ festgelegt werden.
- 
+> [AZURE.NOTE] Jedes der oben genannten Diagramme zeigt Echtzeitstatistiken für einen bestimmten Zeitraum an. Sobald der angegebene Zeitraum verstrichen ist, wird ein gleitendes Fenster der Daten angezeigt. Dies bedeutet, dass alte Daten aus dem Diagramm entfernt werden, um Platz für neue Daten zu schaffen. Die zeitliche Dauer dieses gleitenden Fensters kann über die Option „Zeitraum der Diagramme“ festgelegt werden.
+
 ## Zugreifen auf Echtzeitstatistiken
 
 1. Klicken Sie auf dem Blatt „CDN-Profil“ auf die Schaltfläche **Verwalten**.
 
 	![Schaltfläche „Verwalten“ auf dem Blatt „CDN-Profil“](./media/cdn-real-time-stats/cdn-manage-btn.png)
-	
+
 	Das CDN-Verwaltungsportal wird geöffnet.
-	
+
 2. Zeigen Sie auf die Registerkarte **Analysen** und dann auf das Flyout **Echtzeitstatistiken**. Klicken Sie auf **Große HTTP-Plattform**.
-	
+
 	Berichtsoptionen werden angezeigt.
 
 ## Bandbreite
 
 Das Diagramm „Bandbreite“ zeigt die Menge der für die aktuelle Plattform verwendeten Bandbreite während eines angegebenen Zeitraums an. Der schattierte Teil des Diagramms zeigt die Bandbreitennutzung an. Die genaue Menge der Bandbreite, die gerade verwendet wird, wird direkt unter dem Liniendiagramm angezeigt.
 
-> [AZURE.NOTE]Die Einheiten, in denen die Bandbreitennutzung gemeldet wird, sind die folgenden: Bit pro Sekunde (Bit/s), Kilobit pro Sekunde (Kbit/s), Megabit pro Sekunde (Mbit/s) oder Gigabit pro Sekunde (Gbit/s).
+> [AZURE.NOTE] Die Einheiten, in denen die Bandbreitennutzung gemeldet wird, sind die folgenden: Bit pro Sekunde (Bit/s), Kilobit pro Sekunde (Kbit/s), Megabit pro Sekunde (Mbit/s) oder Gigabit pro Sekunde (Gbit/s).
 
 ## Statuscodes
 
@@ -57,7 +57,7 @@ Das Diagramm „Statuscodes „ besteht aus farbcodierten Linien, die anzeigen, 
 
 Eine Liste der Statuscodes wird direkt über dem Diagramm angezeigt. Diese Liste gibt jeden Statuscode an, der im Liniendiagramm enthalten sein kann, sowie die aktuelle Anzahl der Vorkommen pro Sekunde für den jeweiligen Statuscode. Standardmäßig wird für jeden Statuscode in dem Diagramm eine Linie angezeigt. Sie können jedoch auch nur die Statuscodes überwachen, die besonderen Bedeutung für Ihre CDN-Konfiguration haben. Dies erreichen Sie, indem Sie nur die gewünschten Statuscodeoptionen aktivieren und alle anderen Optionen deaktivieren. Nachdem Sie mit den Statuscodes zufrieden sind, die im Diagramm angezeigt werden, klicken Sie am besten auf „Diagramm aktualisieren“. Dies verhindert, dass die deaktivierten Statuscodes in das Diagramm übernommen werden.
 
-> [AZURE.NOTE]Die Option **Diagramm aktualisieren** löscht das Diagramm. Danach werden nur die ausgewählten Statuscodes angezeigt.
+> [AZURE.NOTE] Die Option **Diagramm aktualisieren** löscht das Diagramm. Danach werden nur die ausgewählten Statuscodes angezeigt.
 
 Jede Statuscodeoption wird unten beschrieben.
 
@@ -75,7 +75,7 @@ Sonstige pro Sekunde | Bestimmt, ob die Gesamtzahl der Vorkommen aller anderen S
 
 Sie können auch vorübergehend protokollierte Daten für einen bestimmten Statuscode ausblenden. Dies können Sie im Bereich direkt unterhalb des Diagramms, indem Sie die gewünschten Statuscodeoption deaktivieren. Der ausgewählte Statuscode wird sofort im Diagramm ausgeblendet. Durch das Aktivieren dieser Statuscodeoption wird die Option erneut angezeigt.
 
-> [AZURE.NOTE]Die farbcodierten Optionen direkt unterhalb des Diagramms betreffen nur, was im Diagramm angezeigt wird. Sie wirken sich nicht darauf aus, ob das Diagramm diesen Statuscode verfolgt.
+> [AZURE.NOTE] Die farbcodierten Optionen direkt unterhalb des Diagramms betreffen nur, was im Diagramm angezeigt wird. Sie wirken sich nicht darauf aus, ob das Diagramm diesen Statuscode verfolgt.
 
 ## Cachestatus
 
@@ -83,11 +83,11 @@ Das Diagramm „Cachestatus“ besteht aus farbcodierten Linien, die anzeigen, w
 
 Eine Liste der Cachestatus wird direkt über dem Diagramm angezeigt. Diese Liste gibt jeden Cachestatus an, der im Liniendiagramm enthalten sein kann, sowie die aktuelle Anzahl der Vorkommen pro Sekunde für den jeweiligen Cachestatus. Standardmäßig wird für jeden Cachestatus in dem Diagramm eine Linie angezeigt. Sie können jedoch auch nur die Cachestatus überwachen, die besonderen Bedeutung für Ihre CDN-Konfiguration haben. Dies erreichen Sie, indem Sie nur die gewünschten Cachestatusoptionen aktivieren und alle anderen Optionen deaktivieren. Nachdem Sie mit den Cachestatus zufrieden sind, die im Diagramm angezeigt werden, klicken Sie am besten auf „Diagramm aktualisieren“. Dies verhindert, dass die deaktivierten Statuscodes in das Diagramm übernommen werden.
 
-> [AZURE.NOTE]Die Option **Diagramm aktualisieren** löscht das Diagramm. Danach werden nur die ausgewählten Cachestatus angezeigt.
+> [AZURE.NOTE] Die Option **Diagramm aktualisieren** löscht das Diagramm. Danach werden nur die ausgewählten Cachestatus angezeigt.
 
 Sie können auch vorübergehend protokollierte Daten für einen bestimmten Cachestatus ausblenden. Dies können Sie im Bereich direkt unterhalb des Diagramms, indem Sie die gewünschten Antwortcodeoption deaktivieren. Der ausgewählte Antwortcode wird sofort im Diagramm ausgeblendet. Durch das Aktivieren dieser Antwortcodeoption wird die Option erneut angezeigt.
 
-> [AZURE.NOTE]Die farbcodierten Optionen direkt unterhalb des Diagramms betreffen nur, was im Diagramm angezeigt wird. Sie wirken sich nicht darauf aus, ob das Diagramm diesen Statuscode verfolgt.
+> [AZURE.NOTE] Die farbcodierten Optionen direkt unterhalb des Diagramms betreffen nur, was im Diagramm angezeigt wird. Sie wirken sich nicht darauf aus, ob das Diagramm diesen Statuscode verfolgt.
 
 ## Verbindungen
 
@@ -99,4 +99,4 @@ Diese grafische Darstellung der durchschnittlichen Anzahl von Verbindungen pro M
 * [Erweiterte HTTP-Berichte](cdn-advanced-http-reports.md)
 * [Analysieren der Edgeleistung](cdn-edge-performance.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0302_2016-->

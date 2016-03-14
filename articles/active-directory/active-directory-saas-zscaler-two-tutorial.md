@@ -2,7 +2,7 @@
     pageTitle="Tutorial: Azure Active Directory-Integration mit ZScaler Two | Microsoft Azure" 
     description="Hier erfahren Sie, wie Sie ZScaler Two mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags 
@@ -11,8 +11,8 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="01/12/2016" 
-    ms.author="markvi" />
+    ms.date="02/29/2016" 
+    ms.author="jeedes" />
 
 #Tutorial: Azure Active Directory-Integration mit Zscaler Two
 
@@ -21,7 +21,7 @@ In diesem Tutorial wird die Integration von Azure und Zscaler Two erläutert. Da
 -   Ein gültiges Azure-Abonnement
 -   Ein Zscaler Two-Abonnement, für das einmaliges Anmelden aktiviert ist
   
-Nach Abschluss dieses Tutorials können sich die Zscaler Two zugewiesenen Azure AD-Benutzer mittels einmaliger Anmeldung auf Ihrer Zscaler Two-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können Sie die [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md) nutzen.
+Nach Abschluss dieses Tutorials können sich die Zscaler Two zugewiesenen Azure AD-Benutzer mittels einmaliger Anmeldung auf Ihrer Zscaler Two-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können Sie die [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md) nutzen.
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -39,7 +39,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Zsc
 
 ###So aktivieren Sie die Anwendungsintegration für Zscaler Two:
 
-1.  Klicken Sie im linken Navigationsbereich des Azure-Verwaltungsportals auf **Active Directory**.
+1.  Klicken Sie im klassischen Azure-Portal im linken Navigationsbereich auf **Active Directory**.
 
     ![Active Directory](./media/active-directory-saas-zscaler-two-tutorial/IC700993.png "Active Directory")
 
@@ -71,7 +71,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
 ###So konfigurieren Sie einmaliges Anmelden
 
-1.  Klicken Sie im Azure AD-Portal auf der Anwendungsintegrationsseite für **Zscaler Two** auf **Einmaliges Anmelden konfigurieren**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu öffnen.
+1.  Klicken Sie im klassischen Azure-Portal auf der Anwendungsintegrationsseite für **ZScaler Two** auf **Einmaliges Anmelden konfigurieren**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu öffnen.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-zscaler-two-tutorial/IC800202.png "Einmaliges Anmelden konfigurieren")
 
@@ -83,7 +83,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![App-URL konfigurieren](./media/active-directory-saas-zscaler-two-tutorial/IC800204.png "App-URL konfigurieren")
 
-    >[AZURE.NOTE]Sie erhalten bei Bedarf den tatsächlichen Wert für Ihre Umgebung von Ihrem Zscaler Two-Supportteam.
+    >[AZURE.NOTE] Sie erhalten bei Bedarf den tatsächlichen Wert für Ihre Umgebung von Ihrem Zscaler Two-Supportteam.
 
 4.  Klicken Sie zum Herunterladen des Zertifikats auf der Seite **Einmaliges Anmelden konfigurieren für Zscaler Two** auf **Zertifikat herunterladen**, und speichern Sie das Zertifikat auf Ihrem Computer.
 
@@ -110,7 +110,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden](./media/active-directory-saas-zscaler-two-tutorial/IC800209.png "Einmaliges Anmelden")
 
-    1.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für ZScaler Two** den Wert der **Authentifizierungsanforderungs-URL**, und fügen Sie ihn in das Textfeld **URL des SAML-Portals, an das Benutzer zur Authentifizierung weitergeleitet werden** ein.
+    1.  Kopieren Sie im klassischen Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für ZScaler Two** den Wert der **Authentifizierungsanforderungs-URL**, und fügen Sie ihn in das Textfeld **URL des SAML-Portals, an das Benutzer zur Authentifizierung weitergeleitet werden** ein.
     2.  Geben Sie im Textfeld **Attribut mit Anmeldenamen** die **NameID** ein.
     3.  Klicken Sie auf **Zscaler pem**, um das heruntergeladene Zertifikat hochzuladen.
     4.  Wählen Sie **Automatische SAML-Bereitstellung aktivieren**.
@@ -122,7 +122,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
     1.  Klicken Sie auf **Speichern**.
     2.  Klicken Sie auf **Jetzt aktivieren**.
 
-11. Wählen Sie im Azure-Portal auf der Dialogseite **Einmaliges Anmelden konfigurieren für Zscaler Two** die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**.
+11. Wählen Sie im klassischen Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für ZScaler Two** die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-zscaler-two-tutorial/IC800211.png "Einmaliges Anmelden konfigurieren")
 
@@ -181,7 +181,7 @@ Damit sich Azure AD-Benutzer bei ZScaler Two anmelden können, müssen sie in ZS
     1.  Geben Sie die **Benutzer-ID**, den **Benutzeranzeigenamen**, das **Kennwort** und **Kennwort bestätigen** ein, und wählen Sie dann **Gruppen** und die **Abteilung** eines gültigen AAD-Kontos, das Sie bereitstellen möchten.
     2.  Klicken Sie auf **Speichern**.
 
->[AZURE.NOTE]Sie können AAD-Benutzerkonten auch mithilfe anderer Tools zum Erstellen von ZScaler Two-Benutzerkonten oder mithilfe der von ZScaler Two bereitgestellten APIs erstellen.
+>[AZURE.NOTE] Sie können AAD-Benutzerkonten auch mithilfe anderer Tools zum Erstellen von ZScaler Two-Benutzerkonten oder mithilfe der von ZScaler Two bereitgestellten APIs erstellen.
 
 ##Zuweisen von Benutzern
   
@@ -189,7 +189,7 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
 
 ###So weisen Sie ZScaler Two Benutzer zu:
 
-1.  Erstellen Sie im Azure AD-Portal ein Testkonto.
+1.  Erstellen Sie im klassischen Azure-Portal ein Testkonto.
 
 2.  Klicken Sie auf der Anwendungsintegrationsseite für **ZScaler Two** auf **Benutzer zuweisen**.
 
@@ -201,4 +201,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0302_2016-->

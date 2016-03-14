@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-phonegap"
 	ms.devlang="js"
 	ms.topic="article" 
-	ms.date="09/22/2015"
+	ms.date="02/29/2016"
 	ms.author="piyushjo" />
 
 # Erste Schritte mit Azure Mobile Engagement für Cordova/Phonegap
@@ -86,9 +86,9 @@ Wir erstellen eine einfache App mit Cordova, um die Integration zu veranschaulic
 	        --variable AZME_REDIRECT_URL=... (URL scheme which triggers the app for deep linking)
 	        --variable AZME_ENABLE_LOG=true|false
 
-*Android Reach Icon* : muss der Name der Ressource ohne Erweiterung oder ziehbares Präfix sein (z. B. "mynotificationicon"), und die Symboldatei muss in Ihr Android-Projekt ("platforms/android/res/drawable") kopiert werden
+*Android Reach Icon* : muss der Name der Ressource ohne Erweiterung oder ziehbares Präfix sein (z. B. "mynotificationicon"), und die Symboldatei muss in Ihr Android-Projekt ("platforms/android/res/drawable") kopiert werden
 
-*iOS Reach Icon* : muss der Name der Ressource mit Erweiterung sein (z. B. "mynotificationicon.png"), und die Symboldatei muss mit XCode (mithilfe des Menüs "Dateien hinzufügen") dem iOS-Projekt hinzugefügt werden
+*iOS Reach Icon* : muss der Name der Ressource mit Erweiterung sein (z. B. "mynotificationicon.png"), und die Symboldatei muss mit XCode (mithilfe des Menüs "Dateien hinzufügen") dem iOS-Projekt hinzugefügt werden
 
 ##<a id="monitor"></a>Aktivieren der Überwachung in Echtzeit
 
@@ -216,7 +216,7 @@ Wir erstellen jetzt eine einfache Pushbenachrichtigungskampagne, die eine Pushbe
 
 	![][8]
 
-6. [Optional] Sie können auch eine Aktions-URL angeben. Stellen Sie sicher, dass dabei ein URL-Schema verwendet wird, das beim Konfigurieren der Variablen **AZME REDIRECT URL** bereitgestellt wurde, z. B. **myapp://test*.
+6. [Optional] Sie können auch eine Aktions-URL angeben. Stellen Sie sicher, dass dabei ein URL-Schema verwendet wird, das beim Konfigurieren der Variablen **AZME REDIRECT URL** bereitgestellt wurde, z. B. **myapp://test*.
 
 7. Sie haben das Festlegen der Basiskampagne abgeschlossen. Scrollen Sie nun wieder nach unten, und klicken Sie auf die Schaltfläche **Erstellen**, um Ihre Kampagne zu speichern.
 
@@ -245,4 +245,4 @@ Wir erstellen jetzt eine einfache Pushbenachrichtigungskampagne, die eine Pushbe
 [11]: ./media/mobile-engagement-cordova-get-started/campaign-first-params-android.png
 [12]: ./media/mobile-engagement-cordova-get-started/campaign-first-params-ios.png
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0302_2016-->

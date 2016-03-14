@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="dotnet" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/24/2015" 
+	ms.date="02/22/2016" 
 	ms.author="bradyg"/>
 
 # Anpassen von mit Swashbuckle generierten API-Definitionen 
@@ -36,7 +36,7 @@ Bei dem folgenden Controllercode generiert Swashbuckle beispielsweise drei "Cont
 
 ![](./media/app-service-api-dotnet-swashbuckle-customize/multiplegetsinjson.png)
 
-Sie können das Problem manuell beheben, indem Sie den Methoden eindeutige Namen geben, wie z. B. in dem die folgenden Beispiel:
+Sie können das Problem manuell beheben, indem Sie den Methoden eindeutige Namen geben, wie z. B. in dem die folgenden Beispiel:
 
 * Get
 * GetById
@@ -109,7 +109,7 @@ Standardmäßig wird in Swashbuckle davon ausgegangen, dass die Antwort "HTTP 20
         }
     }
 
-In diesem Szenario gibt der Swagger, den Swashbuckle standardmäßig generiert, nur einen legitimen HTTP-Statuscode, d. h. HTTP 200, an.
+In diesem Szenario gibt der Swagger, den Swashbuckle standardmäßig generiert, nur einen legitimen HTTP-Statuscode, d. h. HTTP 200, an.
 
 ![](./media/app-service-api-dotnet-swashbuckle-customize/http-200-output-only.png)
 
@@ -201,7 +201,7 @@ Wenn Sie mithilfe von Visual Studio den Clientcode für die REST-API neu generie
         	    throw ex;
 		}
 
-Den entsprechenden Code finden Sie in [diesem GitHub-Repository](https://github.com/Azure-Samples/API-Apps-DotNet-Swashbuckle-Customization-MultipleResponseCodes). Zusammen mit dem Web-API-Projekt mit XML-Dokumentationskommentaren umfasst er ein Konsolenanwendungsprojekt, das einen generierten Client für diese API enthält.
+Den entsprechenden Code finden Sie in [diesem GitHub-Repository](https://github.com/Azure-Samples/app-service-api-dotnet-swashbuckle-swaggerresponse). Zusammen mit dem Web-API-Projekt mit XML-Dokumentationskommentaren umfasst er ein Konsolenanwendungsprojekt, das einen generierten Client für diese API enthält.
 
 ### Anpassen der erwarteten Antwortcodes mit dem SwaggerResponse-Attribut
 
@@ -250,4 +250,4 @@ Den entsprechenden Code finden Sie in [diesem GitHub-Repository](https://github.
 In diesem Artikel wurde erläutert, wie die Generierung von Vorgangs-IDs und von gültigen Antwortcodes in Swashbuckle angepasst werden kann. Weitere Informationen finden Sie unter [Swashbuckle auf GitHub](https://github.com/domaindrivendev/Swashbuckle).
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0302_2016-->

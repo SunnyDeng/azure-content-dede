@@ -13,13 +13,18 @@ ms.devlang="na"
 ms.topic="article"
 ms.tgt_pltfrm="na"
 ms.workload="integration"
-ms.date="02/23/2016"
+ms.date="03/02/2016"
 ms.author="deonhe"/>
 
 # Erste Schritte mit der CRM-API
-Verbinden Sie sich mit Dynamics CRM Online, um z. B. einen neuen Datensatz zu erstellen oder ein Element zu aktualisieren.
+Verbinden Sie sich mit Dynamics CRM Online, um z. B. einen neuen Datensatz zu erstellen oder ein Element zu aktualisieren. Die CRM Online-API kann verwendet werden von:
 
-Die CRM Online-API kann von PowerApps Enterprise- und Logik-Apps verwendet werden.
+- Logik-Apps
+- PowerApps
+
+> [AZURE.SELECTOR]
+- [Logik-Apps](../articles/connectors/create-api-crmonline.md)
+- [PowerApps Enterprise](../articles/power-apps/powerapps-create-api-crmonline.md)
 
 CRM Online ermöglicht Folgendes:
 
@@ -36,17 +41,18 @@ Die CRM-API bietet die folgenden Aktionen. Es gibt keine Trigger.
 
 | Trigger | Aktionen|
 | --- | --- |
-|Keine.| <ul><li>Neuen Datensatz erstellen</li><li>Datensätze abrufen</li><li>Datensatz löschen</li><li>Datensatz abrufen</li><li>Entitäten abrufen</li><li>Element aktualisieren</li></ul>
+|Keine| <ul><li>Neuen Datensatz erstellen</li><li>Datensätze abrufen</li><li>Datensatz löschen</li><li>Datensatz abrufen</li><li>Entitäten abrufen</li><li>Element aktualisieren</li></ul>
 
 Alle APIs unterstützen Daten im JSON- und XML-Format.
 
 ## Herstellen einer Verbindung mit CRM Online
 
+
 ### Hinzufügen zusätzlicher Konfiguration in PowerApps
 Wenn Sie CRM Online zu PowerApps Enterprise hinzufügen, geben Sie die **Client-ID** und den **App-Schlüssel** Ihrer Azure Active Directory-Anwendung (AAD) für Dynamics CRM Online ein. Der Wert von **Umleitungs-URL** wird auch in Ihrer CRM Online-Anwendung verwendet. Wenn Sie noch keine Anwendung haben, führen Sie die folgenden Schritte aus, um die Anwendung zu erstellen:
 
 1. Öffnen Sie das [Azure-Portal](https://portal.azure.com), dann **Active Directory**, und wählen Sie den Namen des Mandanten Ihrer Organisation aus.
-2. Klicken Sie auf der Registerkarte **Anwendungen**auf „Hinzufügen“. Auf der Seite **Anwendung hinzufügen**:  
+2. Klicken Sie auf der Registerkarte **Anwendungen** auf „Hinzufügen“. Auf der Seite **Anwendung hinzufügen**:  
 
 	1. Geben Sie einen **Namen** für Ihre Anwendung ein.  
 	2. Lassen Sie als Anwendungstyp **Web** ausgewählt.  
@@ -63,26 +69,39 @@ Wenn Sie CRM Online zu PowerApps Enterprise hinzufügen, geben Sie die **Client-
 	![AAD-Anwendung hinzufügen – App-Eigenschaften][10]
 
 4. Wählen Sie in der neuen Anwendung **Konfigurieren** aus.
-5. Legen Sie unter _OAuth 2_ die **Umleitungs-URL** auf den Wert der Umleitungs-URL fest, die angezeigt wird, wenn Sie die CRM Online-API im Azure-Portal hinzufügen: ![Contoso-AAD-App konfigurieren][12]
+5. Legen Sie unter _OAuth 2_ die **Antwort-URL** auf den Wert der Umleitungs-URL fest, die angezeigt wird, wenn Sie die CRM Online-API im Azure-Portal hinzufügen: ![Contoso-AAD-App konfigurieren][12]
 
 Nun können Sie die **Client-ID** und den **App-Schlüssel** kopieren und in Ihre CRM Online-Konfiguration im Azure-Portal einfügen.
 
 ### Hinzufügen zusätzlicher Konfiguration in Logik-Apps
 Wenn Sie die API Ihren Logik-Apps hinzufügen, müssen Sie sich bei Dynamic CRM Online anmelden.
 
+Führen Sie folgende Schritte aus, um sich bei CRM Online anzumelden und die Konfiguration der **Verbindung** in Ihrer Logik-App abzuschließen:
+
+1. Wählen Sie **Wiederholung** aus.
+2. Wählen Sie eine **Häufigkeit** aus, und geben Sie ein **Intervall** an.
+3. Wählen Sie **Aktion hinzufügen** aus. ![Konfigurieren von CRM Online][13]
+4. Geben Sie in das Suchfeld „CRM“ ein, und warten Sie, bis die Suche alle Einträge mit CRM im Namen zurückgibt.
+5. Wählen Sie **Dynamics CRM Online – Neuen Datensatz erstellen** aus.
+6. Wählen Sie **Bei Dynamics CRM Online anmelden**: ![Konfigurieren von CRM Online][14]
+7. Geben Sie Ihre CRM Online-Anmeldeinformationen ein, um die Anwendung zu autorisieren. ![Konfigurieren von CRM Online][15]  
+8. Kehren Sie nach der Anmeldung zur Logik-App zurück, um diese zu vervollständigen. Dazu fügen Sie weitere benötigte Trigger und Aktionen hinzu.
+9. Speichern Sie Ihre Arbeit durch Auswählen von **Speichern** in der Menüleiste oben.
+
+
 Nachdem Sie die Verbindung hergestellt haben, geben Sie die CRM Online-Eigenschaften ein, z. B. Tabelle oder Dataset. In der **REST-API-Referenz** in diesem Thema werden diese Eigenschaften beschrieben.
 
 >[AZURE.TIP] Sie können diese Verbindung in anderen Logik-Apps verwenden.
 
 ## Swagger-REST-API – Referenz
-#### Diese Dokumentation gilt für Version 1.0.
+Gilt für Version: 1.0.
 
 ### Neuen Datensatz erstellen 
 Erstellt einen neuen Datensatz in einer Entität. ```POST: /datasets/{dataset}/tables/{table}/items```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
-|Dataset|string|Ja|path|(Keine)|Eindeutiger Name der CRM-Organisation contoso.crm|
+|dataset|string|Ja|path|(Keine)|Eindeutiger Name der CRM-Organisation contoso.crm|
 |Tabelle|string|Ja|path|(Keine)|Name der Entität|
 |item| |Ja|body|(Keine)|Zu erstellender Datensatz|
 
@@ -98,7 +117,7 @@ Erstellt einen neuen Datensatz in einer Entität. ```POST: /datasets/{dataset}/t
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
-|Dataset|string|Ja|path|(Keine)|Eindeutiger Name der CRM-Organisation contoso.crm|
+|dataset|string|Ja|path|(Keine)|Eindeutiger Name der CRM-Organisation contoso.crm|
 |Tabelle|string|Ja|path|(Keine)|Name der Entität|
 |$skip|integer|no|query|(Keine)|Anzahl der zu überspringenden Einträge. Der Standardwert ist 0.|
 |$top|integer|no|query|(Keine)|Maximale Anzahl abzurufender Einträge. Der Standardwert ist 100.|
@@ -132,7 +151,7 @@ Dient zum Abrufen eines bestimmten Datensatzes, der für eine CRM-Entität vorha
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
-|Dataset|string|Ja|path|(Keine)|Eindeutiger Name der CRM-Organisation contoso.crm|
+|dataset|string|Ja|path|(Keine)|Eindeutiger Name der CRM-Organisation contoso.crm|
 |Tabelle|string|Ja|path|(Keine)|Name der Entität|
 |id|string|Ja|path|(Keine)|Bezeichner des Datensatzes|
 
@@ -147,7 +166,7 @@ Löscht ein Element aus einer Liste. ```DELETE: /datasets/{dataset}/tables/{tabl
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
-|Dataset|string|Ja|path|(Keine)|Eindeutiger Name der CRM-Organisation contoso.crm|
+|dataset|string|Ja|path|(Keine)|Eindeutiger Name der CRM-Organisation contoso.crm|
 |Tabelle|string|Ja|path|(Keine)|Name der Entität|
 |id|string|Ja|path|(Keine)|Bezeichner des Datensatzes|
 
@@ -164,7 +183,7 @@ Dient zum teilweisen Aktualisieren eines für eine CRM-Entität vorhandenen Date
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
-|Dataset|string|Ja|path|(Keine)|Eindeutiger Name der CRM-Organisation contoso.crm|
+|dataset|string|Ja|path|(Keine)|Eindeutiger Name der CRM-Organisation contoso.crm|
 |Tabelle|string|Ja|path|(Keine)|Name der Entität|
 |id|string|Ja|path|(Keine)|Bezeichner des Datensatzes|
 |item| |Ja|body|(Keine)|Zu aktualisierender Datensatz|
@@ -180,7 +199,7 @@ Dient zum Abrufen der Liste der Entitäten, die in einer CRM-Instanz vorhanden s
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
-|Dataset|string|Ja|path|(Keine)|Eindeutiger Name der CRM-Organisation contoso.crm|
+|dataset|string|Ja|path|(Keine)|Eindeutiger Name der CRM-Organisation contoso.crm|
 
 #### Antwort
 |Name|Beschreibung|
@@ -268,7 +287,7 @@ Dient zum Abrufen der Liste der Entitäten, die in einer CRM-Instanz vorhanden s
 
 
 ## Nächste Schritte
-Nach Hinzufügen der CRM Online-API zu PowerApps Enterprise [erteilen Sie den Benutzern Berechtigungen](../power-apps/powerapps-manage-api-connection-user-access.md) zum Verwenden der API in ihren Apps.
+Nach dem Hinzufügen der CRM Online-API zu PowerApps Enterprise [erteilen Sie den Benutzern Berechtigungen](../power-apps/powerapps-manage-api-connection-user-access.md) zum Verwenden der API in ihren Apps.
 
 [Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md)
 
@@ -276,5 +295,8 @@ Nach Hinzufügen der CRM Online-API zu PowerApps Enterprise [erteilen Sie den Be
 [9]: ./media/create-api-crmonline/aad-tenant-applications-add-appinfo.png
 [10]: ./media/create-api-crmonline/aad-tenant-applications-add-app-properties.png
 [12]: ./media/create-api-crmonline/contoso-aad-app-configure.png
+[13]: ./media/create-api-crmonline/crmconfig1.png
+[14]: ./media/create-api-crmonline/crmconfig2.png
+[15]: ./media/create-api-crmonline/crmconfig3.png
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

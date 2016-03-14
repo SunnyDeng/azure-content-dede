@@ -17,6 +17,10 @@
 	ms.author="heidist"/>
 
 # Erste Schritte mit der Azure Search Management-REST-API
+> [AZURE.SELECTOR]
+- [Portal](search-manage.md)
+- [PowerShell](search-manage-powershell.md)
+- [REST-API](search-get-started-management-api.md)
 
 Die Azure Search Management-REST-API ist eine programmatische Alternative zum Ausführen von Verwaltungsaufgaben im Verwaltungsportal. Dienstverwaltungsvorgänge umfassen Erstellen oder Löschen des Dienstes, Skalieren des Dienstes und Verwalten von Schlüsseln. Dieses Lernprogramm enthält eine Beispielclientanwendung, die die Dienstverwaltungs-API veranschaulicht. Darüber hinaus sind die erforderlichen Konfigurationsschritte zum Ausführen des Beispiels in der lokalen Entwicklungsumgebung enthalten.
 
@@ -119,7 +123,7 @@ In diesem Abschnitt bearbeiten Sie die Projektmappe in Visual Studio und setzen 
         private const string SubscriptionId = "<your subscription id>";
         private static readonly Uri RedirectUrl = new Uri("<your redirect url>");
 
-Wenn Sie die Beispielanwendung noch nicht [von Github heruntergeladen](https://github.com/Azure-Samples/search-dotnet-management-api/) haben, ist dies für diesen Schritt jetzt erforderlich.
+Wenn Sie die Beispielanwendung noch nicht [von GitHub heruntergeladen](https://github.com/Azure-Samples/search-dotnet-management-api/) haben, ist dies für diesen Schritt jetzt erforderlich.
 
 1. Öffnen Sie die Datei **ManagementAPI.sln** in Visual Studio.
 
@@ -204,4 +208,4 @@ Nach Abschluss dieses Lernprogramms empfiehlt es sich, mehr über die Dienstverw
 
  
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

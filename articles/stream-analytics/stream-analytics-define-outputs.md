@@ -1,9 +1,9 @@
 <properties
 	pageTitle="Datentransformationsausgaben: Optionen für Speicher und Analysen | Microsoft Azure"
-	description="Erfahren Sie , wie Sie Stream Analytics-Datentransformationsausgaben auf Datenspeicheroptionen ausrichten können. Verwenden Sie außerdem Power BI für die Analyseergebnisse."
+	description="Erfahren Sie , wie Sie Stream Analytics-Datentransformationsausgaben auf Datenspeicheroptionen ausrichten können. Verwenden Sie außerdem Power BI für die Analyseergebnisse."
 	keywords="Datentransformation, Analyseergebnisse, Datenspeicheroptionen"
 	services="stream-analytics,documentdb,sql-database,event-hubs,service-bus,storage"
-	documentationCenter=""
+	documentationCenter="" 
 	authors="jeffstokes72"
 	manager="paulettm"
 	editor="cgronlun"/>
@@ -14,7 +14,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="data-services"
-	ms.date="02/04/2016"
+	ms.date="03/02/2016"
 	ms.author="jeffstok"/>
 
 # Ausrichten von Stream Analytics-Datentransformationsausgaben auf Analysetools und Datenspeicheroptionen
@@ -39,7 +39,7 @@ Um verschiedene Anwendungsmuster zu ermöglichen, stellt Azure Stream Analytics 
 
 ## Blob-Speicher ##
 
-Blobspeicher bietet eine kostengünstige und skalierbare Lösung zum Speichern von großen Mengen unstrukturierter Daten in der Cloud. Eine Einführung in Azure-Blob-Speicher und dessen Nutzung finden Sie in der Dokumentation unter [Verwenden des Blob-Speichers mit .NET](./articles/storage-dotnet-how-to-use-blobs.md).
+Blobspeicher bietet eine kostengünstige und skalierbare Lösung zum Speichern von großen Mengen unstrukturierter Daten in der Cloud. Eine Einführung in Azure-Blob-Speicher und dessen Nutzung finden Sie in der Dokumentation unter [Verwenden des Blob-Speichers mit .NET](../storage/storage-dotnet-how-to-use-blobs.md).
 
 Die folgende Tabelle enthält die Eigenschaftennamen und die entsprechenden Beschreibungen zum Erstellen einer Blobausgabe.
 
@@ -118,48 +118,48 @@ Es gibt einige Parameter, die erforderlich sind, um Event Hub-Datenströme als A
 
 [Power BI](https://powerbi.microsoft.com/) kann als Ausgabe für einen Stream Analytics-Auftrag verwendet werden, um eine umfassende Visualisierungsumgebung für die Analyseergebnisse bereitzustellen. Diese Funktionalität kann für betriebliche Dashboards, die Erstellung von Berichten und eine metrikgesteuerte Berichterstellung verwendet werden.
 
-> [AZURE.NOTE] Zu diesem Zeitpunkt wird die Erstellung und Konfiguration von Power BI-Ausgaben im Azure-Vorschauportal nicht unterstützt.
+> [AZURE.NOTE] Zu diesem Zeitpunkt wird die Erstellung und Konfiguration von Power BI-Ausgaben nur im klassischen Azure-Portal unterstützt.
 
 ### Autorisieren eines Power BI-Kontos
 
-1.	Wenn Power BI im Azure-Verwaltungsportal als Ausgabe ausgewählt ist, werden Sie aufgefordert, einen vorhandenen Power BI-Benutzer zu autorisieren oder ein neues Power BI-Konto zu erstellen.  
+1.	Wenn Power BI im Azure-Verwaltungsportal als Ausgabe ausgewählt ist, werden Sie aufgefordert, einen vorhandenen Power BI-Benutzer zu autorisieren oder ein neues Power BI-Konto zu erstellen.  
 
-    ![Autorisieren von Power BI-Benutzern](./media/stream-analytics-define-outputs/01-stream-analytics-define-outputs.png)
+    ![Autorisieren von Power BI-Benutzern](./media/stream-analytics-define-outputs/01-stream-analytics-define-outputs.png)
 
 2.	Erstellen Sie ein neues Konto, wenn Sie noch keines haben, und klicken Sie dann auf "Jetzt autorisieren". Es wird ein Bildschirm ähnlich dem folgenden angezeigt.
 
     ![Azure-Konto Power BI](./media/stream-analytics-define-outputs/02-stream-analytics-define-outputs.png)
 
-3.	In diesem Schritt geben Sie das Geschäfts- oder Schulkonto für die Autorisierung der Power BI-Ausgabe an. Wenn Sie noch nicht für Power  BI angemeldet sind, wählen Sie "Jetzt anmelden" aus. Das für Power BI verwendete Geschäfts- oder Schulkonto kann sich vom Azure-Abonnementkonto unterscheiden, bei dem Sie derzeit angemeldet sind.
+3.	In diesem Schritt geben Sie das Geschäfts- oder Schulkonto für die Autorisierung der Power BI-Ausgabe an. Wenn Sie noch nicht für Power  BI angemeldet sind, wählen Sie "Jetzt anmelden" aus. Das für Power BI verwendete Geschäfts- oder Schulkonto kann sich vom Azure-Abonnementkonto unterscheiden, bei dem Sie derzeit angemeldet sind.
 
-### Konfigurieren der Eigenschaften der Power BI-Ausgabe
+### Konfigurieren der Eigenschaften der Power BI-Ausgabe
 
-Sobald Sie das Power BI-Konto authentifiziert haben, können Sie die Eigenschaften für die Power BI-Ausgabe konfigurieren. Die folgende Tabelle enthält eine Liste von Eigenschaftennamen und der entsprechenden Beschreibung zum Konfigurieren der Power BI-Ausgabe.
+Sobald Sie das Power BI-Konto authentifiziert haben, können Sie die Eigenschaften für die Power BI-Ausgabe konfigurieren. Die folgende Tabelle enthält eine Liste von Eigenschaftennamen und der entsprechenden Beschreibung zum Konfigurieren der Power BI-Ausgabe.
 
 | Eigenschaftenname | Beschreibung |
 |---------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Ausgabealias | Dies ist ein Anzeigename, der in Abfragen verwendet wird, um die Abfrageausgabe an diese Power BI-Ausgabe weiterzuleiten. |
+| Ausgabealias | Dies ist ein Anzeigename, der in Abfragen verwendet wird, um die Abfrageausgabe an diese Power BI-Ausgabe weiterzuleiten. |
 | Datasetname | Geben Sie einen Datasetnamen an, der für die Power BI-Ausgabe verwendet werden soll. |
-| Tabellenname | Geben Sie einen Tabellennamen unter dem Dataset der Power BI-Ausgabe ein. Derzeit darf die Power BI-Ausgabe von Stream Analytics-Aufträgen nur eine Tabelle pro Dataset aufweisen. |
-| Gruppenname | Um die gemeinsame Nutzung von Daten mit anderen Power BI-Benutzern zu ermöglichen, müssen Sie Daten in Gruppen schreiben. Sie können Gruppen in Ihrem Power BI-Konto auswählen. Wählen Sie alternativ "Arbeitsbereich", wenn Sie nicht in eine Gruppe schreiben möchten. Zum Aktualisieren einer vorhandenen Gruppe muss die Power BI-Authentifizierung erneuert werden. |
+| Tabellenname | Geben Sie einen Tabellennamen unter dem Dataset der Power BI-Ausgabe ein. Derzeit darf die Power BI-Ausgabe von Stream Analytics-Aufträgen nur eine Tabelle pro Dataset aufweisen. |
+| Gruppenname | Um die gemeinsame Nutzung von Daten mit anderen Power BI-Benutzern zu ermöglichen, müssen Sie Daten in Gruppen schreiben. Sie können Gruppen in Ihrem Power BI-Konto auswählen. Wählen Sie alternativ "Arbeitsbereich", wenn Sie nicht in eine Gruppe schreiben möchten. Zum Aktualisieren einer vorhandenen Gruppe muss die Power BI-Authentifizierung erneuert werden. |
 
-Eine schrittweise Anleitung zum Konfigurieren eine Power BI-Ausgabe und eines Power BI-Dashboards erhalten Sie im Artikel [Azure Stream Analytics & Power BI](stream-analytics-power-bi-dashboard.md).
+Eine schrittweise Anleitung zum Konfigurieren eine Power BI-Ausgabe und eines Power BI-Dashboards erhalten Sie im Artikel [Azure Stream Analytics & Power BI](stream-analytics-power-bi-dashboard.md).
 
-> [AZURE.NOTE] Erstellen Sie das Dataset und die Tabelle nicht explizit im Power BI-Dashboard. Das Dataset und die Tabelle werden automatisch ausgefüllt, wenn der Auftrag gestartet wird und wenn der Auftrag damit beginnt, Ausgaben in Power BI zu speisen. Wenn die Auftragsabfrage keine Ergebnisse generiert, werden die Datasets und die Tabelle nicht erstellt. Wenn Power BI bereits über ein Dataset und eine Tabelle mit demselben Namen verfügt, der in diesem Stream Analytics-Auftrag angegeben wurde, beachten Sie bitte, dass die vorhandenen Daten überschrieben werden.
+> [AZURE.NOTE] Erstellen Sie das Dataset und die Tabelle nicht explizit im Power BI-Dashboard. Das Dataset und die Tabelle werden automatisch ausgefüllt, wenn der Auftrag gestartet wird und wenn der Auftrag damit beginnt, Ausgaben in Power BI zu speisen. Wenn die Auftragsabfrage keine Ergebnisse generiert, werden die Datasets und die Tabelle nicht erstellt. Wenn Power BI bereits über ein Dataset und eine Tabelle mit demselben Namen verfügt, der in diesem Stream Analytics-Auftrag angegeben wurde, beachten Sie bitte, dass die vorhandenen Daten überschrieben werden.
 
-### Erneuern der Power BI-Autorisierung
+### Erneuern der Power BI-Autorisierung
 
-Aufgrund einer vorübergehenden Einschränkung muss das Authentifizierungstoken alle 90 Tage manuell für sämtliche Aufträge mit Power BI-Ausgabe aktualisiert werden. Darüber hinaus muss Ihr Power BI-Konto erneut authentifiziert werden, wenn das Kennwort seit der Erstellung oder letzten Authentifizierung Ihres Auftrags geändert wurde. Dieses Problem zeigt sich daran, dass keine Auftragsausgabe erfolgt und in den Vorgangsprotokollen ein Benutzerauthentifizierungsfehler angezeigt wird:
+Aufgrund einer vorübergehenden Einschränkung muss das Authentifizierungstoken alle 90 Tage manuell für sämtliche Aufträge mit Power BI-Ausgabe aktualisiert werden. Darüber hinaus muss Ihr Power BI-Konto erneut authentifiziert werden, wenn das Kennwort seit der Erstellung oder letzten Authentifizierung Ihres Auftrags geändert wurde. Dieses Problem zeigt sich daran, dass keine Auftragsausgabe erfolgt und in den Vorgangsprotokollen ein Benutzerauthentifizierungsfehler angezeigt wird:
 
-  ![Power BI-Aktualisierungstoken-Fehler](./media/stream-analytics-define-outputs/03-stream-analytics-define-outputs.png)
+  ![Power BI-Aktualisierungstoken-Fehler](./media/stream-analytics-define-outputs/03-stream-analytics-define-outputs.png)
 
-Um dieses Problem zu beheben, halten Sie den laufenden Auftrag an, und wechseln Sie zur Power BI-Ausgabe. Klicken Sie auf den Link "Autorisierung erneuern", und starten Sie den Auftrag ab dem letzten Anhaltepunkt neu, um Datenverlust zu vermeiden.
+Um dieses Problem zu beheben, halten Sie den laufenden Auftrag an, und wechseln Sie zur Power BI-Ausgabe. Klicken Sie auf den Link "Autorisierung erneuern", und starten Sie den Auftrag ab dem letzten Anhaltepunkt neu, um Datenverlust zu vermeiden.
 
-  ![Power BI-Erneuerungsautorisierung](./media/stream-analytics-define-outputs/04-stream-analytics-define-outputs.png)
+  ![Power BI-Erneuerungsautorisierung](./media/stream-analytics-define-outputs/04-stream-analytics-define-outputs.png)
 
 ## Table Storage
 
-[Azure-Tabellenspeicher](./articles/storage-introduction.md) bietet einen hoch verfügbaren, in hohem Maße skalierbaren Speicher, sodass eine Anwendung automatisch an die Bedürfnisse der Benutzer angepasst werden kann. Tabellenspeicher ist Microsofts NoSQL-Schlüssel-/Attributspeicher, der für strukturierte Daten genutzt werden kann, die weniger Einschränkungen hinsichtlich des Schemas haben. Azure-Tabellenspeicher kann zum Speichern von Daten für dauerhafte Archivierung und effizienten Abruf verwendet werden.
+[Azure-Tabellenspeicher](../storage/storage-introduction.md) bietet einen hoch verfügbaren, in hohem Maße skalierbaren Speicher, sodass eine Anwendung automatisch an die Bedürfnisse der Benutzer angepasst werden kann. Tabellenspeicher ist Microsofts NoSQL-Schlüssel-/Attributspeicher, der für strukturierte Daten genutzt werden kann, die weniger Einschränkungen hinsichtlich des Schemas haben. Azure-Tabellenspeicher kann zum Speichern von Daten für dauerhafte Archivierung und effizienten Abruf verwendet werden.
 
 Die folgende Tabelle enthält die Eigenschaftennamen und die entsprechenden Beschreibungen zum Erstellen einer Tabellenausgabe.
 
@@ -267,4 +267,4 @@ Sie haben nun Stream Analytics kennengelernt, einen verwalteten Dienst für Stre
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -13,22 +13,19 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="02/18/2016"
+   ms.date="03/01/2016"
    ms.author="alkohli"/>
 
-# Bereitstellen von StorSimple Virtual Array – Einrichten als Dateiserver (Vorschau)
+# Bereitstellen von StorSimple Virtual Array – Einrichten als Dateiserver
 
 ![](./media/storsimple-ova-deploy3-fs-setup/fileserver4.png)
 
 ## Einführung 
 
-Dieser Artikel bezieht sich nur auf Microsoft Azure StorSimple Virtual Array (auch als „lokales virtuelles StorSimple-Gerät“ oder „virtuelles StorSimple-Gerät“ bezeichnet) mit Version 1.1.1.0 (Vorschau). In diesem Artikel wird beschrieben, wie Sie die anfängliche Einrichtung durchführen, Ihren StorSimple-Dateiserver registrieren, die Geräteinstallation durchführen und SMB-Freigaben erstellen und die Verbindung dafür herstellen. Dies ist der letzte Artikel einer Reihe von Tutorials, in denen die vollständige Bereitstellung Ihres virtuellen Arrays als Dateiserver oder iSCSI-Server erläutert wird.
+Dieser Artikel bezieht sich auf Microsoft Azure StorSimple Virtual Array (auch als „lokales virtuelles StorSimple-Gerät“ oder „virtuelles StorSimple-Gerät“ bezeichnet) mit der Version vom März 2016 (allgemeine Verfügbarkeit). In diesem Artikel wird beschrieben, wie Sie die anfängliche Einrichtung durchführen, Ihren StorSimple-Dateiserver registrieren, die Geräteinstallation durchführen und SMB-Freigaben erstellen und die Verbindung dafür herstellen. Dies ist der letzte Artikel einer Reihe von Tutorials, in denen die vollständige Bereitstellung Ihres virtuellen Arrays als Dateiserver oder iSCSI-Server erläutert wird.
 
 Der Einrichtungs- und Konfigurationsvorgang kann ca. zehn Minuten dauern.
 
-> [AZURE.IMPORTANT]
-> 
-> Diese öffentliche Vorschauversion ist nur für Testzwecke bestimmt. Die Installation dieser Vorschau in einer Produktionsumgebung wird nicht unterstützt.
 
 ## Voraussetzungen für das Setup
 
@@ -57,7 +54,7 @@ Verwenden Sie die folgende Schritt-für-Schritt-Anleitung, um Ihr virtuelles Sto
 
 	![](./media/storsimple-ova-deploy3-fs-setup/image2.png)
 
-1.  Melden Sie sich an der Webbenutzeroberfläche des virtuellen Geräts als **StorSimpleAdmin** an. Geben Sie das Kennwort des Geräteadministrators ein, das Sie in „Schritt 3: Starten des virtuellen Geräts“ (unter [Bereitstellen von StorSimple Virtual Array in Hyper-V](storsimple-ova-deploy2-provision-hyperv.md) bzw. [Bereitstellen von StorSimple Virtual Array in VMware](storsimple-ova-deploy2-provision-vmware.md)) geändert haben.
+1.  Melden Sie sich bei der Webbenutzeroberfläche des virtuellen Geräts als **StorSimpleAdmin** an. Geben Sie das Kennwort des Geräteadministrators ein, das Sie in „Schritt 3: Starten des virtuellen Geräts“ (unter [Bereitstellen von StorSimple Virtual Array in Hyper-V](storsimple-ova-deploy2-provision-hyperv.md) bzw. [Bereitstellen von StorSimple Virtual Array in VMware](storsimple-ova-deploy2-provision-vmware.md)) geändert haben.
 
 	![](./media/storsimple-ova-deploy3-fs-setup/image3.png)
 
@@ -235,4 +232,4 @@ Im Video wird gezeigt, wie Sie ein StorSimple Virtual Array als Dateiserver konf
 
 Erfahren Sie, wie Sie die lokale Webbenutzeroberfläche verwenden, um [Ihr StorSimple Virtual Array zu verwalten](storsimple-ova-web-ui-admin.md).
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

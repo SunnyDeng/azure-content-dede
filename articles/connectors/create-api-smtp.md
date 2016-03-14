@@ -14,13 +14,13 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na" 
-   ms.date="02/11/2016"
+   ms.date="02/25/2016"
    ms.author="mandia"/>
 
 # Erste Schritte mit der SMTP-API
-Stellen Sie eine Verbindung mit einem SMTP-Server zum Senden von E-Mail her.
+Stellen Sie eine Verbindung mit einem SMTP-Server zum Senden von E-Mail her. Die SMTP-API kann in Folgendem verwendet werden:
 
-Die SMTP-API kann in Logik-Apps verwendet werden.
+- Logik-Apps
 
 >[AZURE.NOTE] Diese Version des Artikels gilt für die Schemaversion 2015-08-01-preview für Logik-Apps. Um die Schemaversion 2014-12-01-preview aufzurufen, klicken Sie auf [SMTP-Connector](../app-service-logic/app-service-logic-connector-smtp.md).
 
@@ -54,10 +54,10 @@ Nachdem Sie eine Verbindung hergestellt haben, geben Sie die SMTP-Eigenschaften,
 >[AZURE.TIP] Sie können dieselbe SMTP-Verbindung in anderen Logik-Apps verwenden.
 
 ## Swagger-REST-API – Referenz
+Gilt für Version: 1.0.
 
 ### E-Mail senden
-Sendet eine E-Mail an einen oder mehrere Empfänger.  
-```POST: /SendEmail```
+Sendet eine E-Mail an einen oder mehrere Empfänger. ```POST: /SendEmail```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -69,7 +69,8 @@ Sendet eine E-Mail an einen oder mehrere Empfänger.
 
 | Name | Datentyp | Erforderlich|
 |---|---|---|
-|To|string|no|
+|To  
+|string|no|
 |CC|string|no|
 |Betreff|string|no|
 |Body|string|no|
@@ -92,6 +93,6 @@ Sendet eine E-Mail an einen oder mehrere Empfänger.
 
 
 ## Nächste Schritte
-[Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md).
+[Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md)
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

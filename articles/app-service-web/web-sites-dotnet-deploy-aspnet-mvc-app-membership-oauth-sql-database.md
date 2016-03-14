@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Erstellen einer ASP.NET MVC-App mit Authentifizierung, SQL-Datenbank und Bereitstellung in Azure App Service" 
-	description="Erfahren Sie, wie Sie eine ASP.NET-MVC 5-App mit einem SQL-Datenbank-Back-End und Authentifizierung sowie Autorisierung entwickeln und in Azure bereitstellen." 
+	description="Erfahren Sie, wie Sie eine ASP.NET-MVC 5-App mit einem SQL-Datenbank-Back-End und Authentifizierung sowie Autorisierung entwickeln und in Azure bereitstellen." 
 	services="app-service\web" 
 	documentationCenter=".net" 
 	authors="Rick-Anderson" 
@@ -13,13 +13,13 @@
 	ms.workload="web" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
-	ms.topic="get-started-article" 
+	ms.topic="article" 
 	ms.date="12/07/2015" 
 	ms.author="riande"/>
 
 # Erstellen einer ASP.NET MVC-App mit Authentifizierung, SQL-Datenbank und Bereitstellung in Azure App Service
 
-In diesem Lernprogramm wird die Erstellung einer sicheren ASP.NET MVC 5-Web-App erläutert, mit der Benutzer sich mithilfe der Anmeldeinformationen von Facebook oder Google anmelden können. Die App ist eine einfache Kontaktliste, die das ADO.NET Entity Framework für den Datenbankzugriff verwendet. Sie stellen die App für den [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714) bereit.
+In diesem Lernprogramm wird die Erstellung einer sicheren ASP.NET MVC 5-Web-App erläutert, mit der Benutzer sich mithilfe der Anmeldeinformationen von Facebook oder Google anmelden können. Die App ist eine einfache Kontaktliste, die das ADO.NET Entity Framework für den Datenbankzugriff verwendet. Sie stellen die App für den [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714) bereit.
 
 Nach Abschluss dieses Lernprogramms verfügen Sie über eine sichere datengesteuerte Webanwendung, die unter Rückgriff auf eine Clouddatenbank in der Cloud ausgeführt wird. In der folgenden Abbildung wird die Anmeldeseite der fertiggestellten Anwendung dargestellt:
 
@@ -35,7 +35,7 @@ Sie lernen Folgendes:
 * Speichern relationaler Daten in der Cloud mithilfe der Azure SQL-Datenbank.
 * Bereitstellen eines Webprojekts, das eine Datenbank für eine [Web-App](http://go.microsoft.com/fwlink/?LinkId=529714) in Azure App Service verwendet.
 
->[AZURE.NOTE]Dies ist ein langes Lernprogramm. Wenn Sie eine schnelle Einführung in Azure App Service und Visual Studio-Webprojekte wünschen, informieren Sie sich unter [Erstellen von ASP.NET-Web-Apps in Azure App Service](web-sites-dotnet-get-started.md). Weitere Informationen zur Problembehandlung finden Sie im Abschnitt [Problembehandlung](#troubleshooting).
+>[AZURE.NOTE] Dies ist ein langes Lernprogramm. Wenn Sie eine schnelle Einführung in Azure App Service und Visual Studio-Webprojekte wünschen, informieren Sie sich unter [Erstellen von ASP.NET-Web-Apps in Azure App Service](web-sites-dotnet-get-started.md). Weitere Informationen zur Problembehandlung finden Sie im Abschnitt [Problembehandlung](#troubleshooting).
 >
 >Wenn Sie Azure App Service ausprobieren möchten, bevor Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
@@ -43,9 +43,9 @@ Sie lernen Folgendes:
 
 Sie benötigen ein Microsoft Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie kein Konto haben, können Sie [Ihre Visual Studio-Abonnentenvorteile aktivieren](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) oder [sich für eine kostenlose Testversion registrieren](/pricing/free-trial/?WT.mc_id=A261C142F).
 
-Zur Einrichtung Ihrer Entwicklungsumgebung müssen Sie [Visual Studio 2013 Update 5](http://go.microsoft.com/fwlink/?LinkId=390521) oder höher und die neueste Version von [Azure SDK für .NET](http://go.microsoft.com/fwlink/?linkid=324322&clcid=0x409) installieren. Dieser Artikel wurde für Visual Studio Update 4 und SDK 2.8.1 geschrieben. Die gleichen Anweisungen funktionieren mit Visual Studio 2015 mit dem neuesten installierten [Azure SDK für .NET](http://go.microsoft.com/fwlink/?linkid=518003&clcid=0x409), doch einige Bildschirme unterscheiden sich von den Abbildungen.
+Zur Einrichtung Ihrer Entwicklungsumgebung müssen Sie [Visual Studio 2013 Update 5](http://go.microsoft.com/fwlink/?LinkId=390521) oder höher und die neueste Version von [Azure SDK für .NET](http://go.microsoft.com/fwlink/?linkid=324322&clcid=0x409) installieren. Dieser Artikel wurde für Visual Studio Update 4 und SDK 2.8.1 geschrieben. Die gleichen Anweisungen funktionieren mit Visual Studio 2015 mit dem neuesten installierten [Azure SDK für .NET](http://go.microsoft.com/fwlink/?linkid=518003&clcid=0x409), doch einige Bildschirme unterscheiden sich von den Abbildungen.
 
-## Erstellen einer ASP.NET MVC 5-Anwendung
+## Erstellen einer ASP.NET MVC 5-Anwendung
 
 ### Erstellen des Projekts
 
@@ -75,11 +75,11 @@ Zur Einrichtung Ihrer Entwicklungsumgebung müssen Sie [Visual Studio 2013 Updat
 
 	Der Name muss innerhalb der Domäne "azurewebsites.net" eindeutig sein, da die URL der Web-App "{name}.azurewebsites.net" lauten wird. Der Konfigurations-Assistent schlägt einen eindeutigen Namen vor, für den eine Nummer an Projektnamen "ContactManager" angefügt wird, was für dieses Tutorial in Ordnung ist.
 
-5. Wählen Sie in der Dropdownliste **App Service-Plan** die Option **Neuen App Service-Plan erstellen** aus, und geben Sie einen Namen ein, z. B. "StandardWeb" wie in der Abbildung.
+5. Wählen Sie in der Dropdownliste **App Service-Plan** die Option **Neuen App Service-Plan erstellen** aus, und geben Sie einen Namen ein, z. B. "StandardWeb" wie in der Abbildung.
 
 	Falls gewünscht, können Sie einen App Service-Plan auswählen, über den Sie bereits verfügen. Informationen zu App Service-Plänen finden Sie unter [Azure App Service-Pläne – Detaillierte Übersicht](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md).
 
-5. Wählen Sie in der Dropdownliste **Ressourcengruppe** die Option **Neue Ressourcengruppe erstellen** aus, und geben Sie einen Namen ein, z. B. "ExampleMVC" wie in der Abbildung.
+5. Wählen Sie in der Dropdownliste **Ressourcengruppe** die Option **Neue Ressourcengruppe erstellen** aus, und geben Sie einen Namen ein, z. B. "ExampleMVC" wie in der Abbildung.
 
 	Falls gewünscht, können Sie eine Ressourcengruppe auswählen, über die Sie bereits verfügen. Doch wenn Sie eine neue Ressourcengruppe erstellen, die Sie nur für dieses Tutorial verwenden, können Sie einfach alle Azure-Ressourcen für das Tutorial löschen, wenn Sie sie nicht mehr benötigen. Informationen zu Ressourcengruppen finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md).
 
@@ -104,7 +104,6 @@ Zur Einrichtung Ihrer Entwicklungsumgebung müssen Sie [Visual Studio 2013 Updat
 	Visual Studio erstellt das Webprojekt "ContactManager", die Ressourcengruppe und den App Service-Plan, den Sie angegeben haben, und eine Web-App in Azure App Service mit dem angegebenen Namen.
 
 ### Einrichten der Seitenkopf- und -fußzeile
-
 
 1. Öffnen Sie im **Projektmappen-Explorer** die Datei *Layout.cshtml* im Ordner *Views\\Shared*.
 
@@ -282,7 +281,8 @@ Mit dem ASP.NET MVC-Gerüstfeature kann automatisch Code generiert werden, der E
 1. Wählen Sie im Dropdownfeld **Modellklasse** die Option **Contact (ContactManager.Models)** aus. (Siehe Abbildung unten.)
 
 1. Wählen Sie unter **Datenkontextklasse** die Option **ApplicationDbContext (ContactManager.Models)** aus. **ApplicationDbContext** wird für die Mitgliedschaftsdatenbank und die Kontaktdaten verwendet.
-1. Geben Sie im Texteingabefeld **Controllername** die Zeichenfolge CmController als Controllernamen ein. 
+
+1. Geben Sie im Texteingabefeld **Controllername** die Zeichenfolge CmController als Controllernamen ein.
 
 	![Kontextdialogfeld "Neue Daten"](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/ss5.PNG)
 
@@ -313,13 +313,11 @@ Die nächste Aufgabe besteht darin, das Feature [Code First-Migrationen](http://
 
 	In der **Initial**-Klasse wird mit der **Up**-Methode die Tabelle **Contacts** erstellt und mit der Down-Methode (wird verwendet, wenn Sie zum vorherigen Status zurückkehren möchten) wieder verworfen.
 
-3. Öffnen Sie die Datei *Migrations\\Configuration.cs*. 
+3. Öffnen Sie die Datei *Migrations\\Configuration.cs*.
 
 4. Fügen Sie die folgende `using`-Anweisung hinzu.
 
     	 using ContactManager.Models;
-
-
 
 5. Ersetzen Sie die *Seed*-Methode durch den folgenden Code:
 
@@ -376,7 +374,6 @@ Die nächste Aufgabe besteht darin, das Feature [Code First-Migrationen](http://
 
 	Mit diesem Code wird die Datenbank mit den Kontaktinformationen initialisiert (es wird ein Seeding dafür ausgeführt). Weitere Informationen zum Ausführen eines Seedings für die Datenbank finden Sie unter [Seeding and Debugging Entity Framework (EF) DBs](http://blogs.msdn.com/b/rickandy/archive/2013/02/12/seeding-and-debugging-entity-framework-ef-dbs.aspx) (in englischer Sprache).
 
-
 6. Geben Sie im Fenster **Paket-Manager-Konsole** den folgenden Befehl ein:
 
 		update-database
@@ -391,15 +388,13 @@ Die nächste Aufgabe besteht darin, das Feature [Code First-Migrationen](http://
 
 	![MVC-Datenansicht][rx2]
 
-
-
 ## Hinzufügen eines OAuth2-Anbieters
 
->[AZURE.NOTE]Für detaillierte Anweisungen zur Verwendung der Portalwebsites für Google- und Facebook-Entwickler bietet dieses Tutorial Links zu Tutorials auf der ASP.NET-Website. Google und Facebook ändern jedoch ihre Websites öfter, als diese Tutorials aktualisiert werden, sodass sie nun veraltet sind. Wenn Sie Probleme beim Befolgen der Anweisungen haben, finden Sie im Disqus-Kommentar am Ende dieses Tutorials eine Liste der Änderungen.
+>[AZURE.NOTE] Für detaillierte Anweisungen zur Verwendung der Portalwebsites für Google- und Facebook-Entwickler bietet dieses Tutorial Links zu Tutorials auf der ASP.NET-Website. Google und Facebook ändern jedoch ihre Websites öfter, als diese Tutorials aktualisiert werden, sodass sie nun veraltet sind. Wenn Sie Probleme beim Befolgen der Anweisungen haben, finden Sie im Disqus-Kommentar am Ende dieses Tutorials eine Liste der Änderungen.
 
 [OAuth](http://oauth.net/ "http://oauth.net/") ist ein offenes Protokoll, das die sichere Autorisierung in einer einfachen und Standardmethode von Web-, Mobil- und Desktopanwendungen ermöglicht. OAuth wird von der ASP.NET MVC-Internetvorlage verwendet, um Facebook, Twitter, Google und Microsoft als Authentifizierungsanbieter verfügbar zu machen. Auch wenn in diesem Lernprogramm nur Google als Authentifizierungsanbieter eingesetzt wird, können Sie den Code problemlos für die Verwendung einer der anderen Anbieter anpassen. Die Schritte zur Implementierung anderer Anbieter unterscheiden sich kaum von den Schritten in diesem Tutorial. Informationen zum Verwenden von Facebook als Authentifizierungsanbieter finden Sie im Tutorial [MVC 5 App with Facebook, Twitter, LinkedIn and Google OAuth2 Sign-on](http://www.asp.net/mvc/tutorials/mvc-5/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on) (in englischer Sprache).
 
-Abgesehen von der Authentifizierung werden in diesem Tutorial auch Rollen verwendet, um die Autorisierung zu implementieren. Nur Benutzer, die Sie der Rolle *canEdit* hinzufügen, können Daten ändern (d. h. Kontakte erstellen, bearbeiten oder löschen).
+Abgesehen von der Authentifizierung werden in diesem Tutorial auch Rollen verwendet, um die Autorisierung zu implementieren. Nur Benutzer, die Sie der Rolle *canEdit* hinzufügen, können Daten ändern (d. h. Kontakte erstellen, bearbeiten oder löschen).
 
 1. Folgen Sie den Anweisungen in [MVC 5 App with Facebook, Twitter, LinkedIn and Google OAuth2 Sign-on](http://www.asp.net/mvc/tutorials/mvc-5/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on#goog) unter **Creating a Google app for OAuth 2 to set up a Google app for OAuth2** (in englischer Sprache).
 
@@ -418,8 +413,8 @@ In diesem Abschnitt fügen Sie der Mitgliedschaftsdatenbank einen lokalen Benutz
 
 1. Fügen Sie der Klasse die folgende **AddUserAndRole**-Methode hinzu:
 
-		 bool AddUserAndRole(ContactManager.Models.ApplicationDbContext context)
-		 {
+		bool AddUserAndRole(ContactManager.Models.ApplicationDbContext context)
+		{
 		    IdentityResult ir;
 		    var rm = new RoleManager<IdentityRole>
 		        (new RoleStore<IdentityRole>(context));
@@ -428,14 +423,14 @@ In diesem Abschnitt fügen Sie der Mitgliedschaftsdatenbank einen lokalen Benutz
 		        new UserStore<ApplicationUser>(context));
 		    var user = new ApplicationUser()
 		    {
-		       UserName = "user1@contoso.com",
+		        UserName = "user1@contoso.com",
 		    };
 		    ir = um.Create(user, "P_assw0rd1");
 		    if (ir.Succeeded == false)
-		       return ir.Succeeded;
+		        return ir.Succeeded;
 		    ir = um.AddToRole(user.Id, "canEdit");
 		    return ir.Succeeded;
-		 }
+		}
 
 1. Rufen Sie die neue Methode über die **Seed**-Methode auf:
 
@@ -514,8 +509,7 @@ In diesem Abschnitt wenden Sie das [Authorize](http://msdn.microsoft.com/library
 
 1. Öffnen Sie die Datei *App\_Start\\FilterConfig.cs*, und ersetzen Sie die *RegisterGlobalFilters*-Methode durch den folgenden Code (damit werden die zwei Filter hinzugefügt):
 
-		public static void
-		RegisterGlobalFilters(GlobalFilterCollection filters)
+		public static void RegisterGlobalFilters(GlobalFilterCollection filters)
 		{
 		    filters.Add(new HandleErrorAttribute());
 		    filters.Add(new System.Web.Mvc.AuthorizeAttribute());
@@ -536,8 +530,9 @@ In diesem Abschnitt wenden Sie das [Authorize](http://msdn.microsoft.com/library
 		     return View();
 		  }
 
-2. Führen Sie eine globale Suche nach *AllowAnonymous* durch. Sie werden feststellen, dass es in den Anmelde- und Registrierungsmethoden des Kontocontrollers verwendet wird.
-1. Fügen Sie in der Datei *CmController.cs* den Code `[Authorize(Roles = "canEdit")]` zu den HttpGet- und HttpPost-Methoden hinzu, mit denen Daten im Controller *Cm* geändert werden (Erstellen, Bearbeiten, Löschen sowie jede Aktionsmethode abgesehen von Index und Details). Im Folgenden wird ein Teil des fertigen Codes angezeigt: 
+	Führen Sie eine globale Suche nach *AllowAnonymous* durch. Sie werden feststellen, dass es in den Anmelde- und Registrierungsmethoden des Kontocontrollers verwendet wird.
+
+1. Fügen Sie in der Datei *CmController.cs* den Code `[Authorize(Roles = "canEdit")]` zu den HttpGet- und HttpPost-Methoden hinzu, mit denen Daten im Controller *Cm* geändert werden (Erstellen, Bearbeiten, Löschen sowie jede Aktionsmethode abgesehen von Index und Details). Im Folgenden wird ein Teil des fertigen Codes angezeigt:
 
 		// GET: Cm/Create
 		[Authorize(Roles = "canEdit")]
@@ -582,7 +577,9 @@ In diesem Abschnitt wenden Sie das [Authorize](http://msdn.microsoft.com/library
 1. Drücken Sie STRG+F5, um die Anwendung auszuführen.
 
 1. Wenn Sie immer noch von einer vorherigen Sitzung angemeldet sind, klicken Sie auf den Link **Abmelden**.
-1. Klicken Sie auf den Link **About** oder **Contact**. Sie werden zur Anmeldeseite weitergeleitet, da anonyme Benutzer diese Seiten nicht anzeigen können. 
+
+1. Klicken Sie auf den Link **About** oder **Contact**. Sie werden zur Anmeldeseite weitergeleitet, da anonyme Benutzer diese Seiten nicht anzeigen können.
+
 1. Klicken Sie auf den Link **Register as a new user**, und fügen Sie einen lokalen Benutzer mit der E-Mail-Adresse *joe@contoso.com* hinzu. Stellen Sie sicher, dass *Joe* die Seiten Home, About und Contact anzeigen kann.
 
 	![Anmeldung](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/ss14.PNG)
@@ -608,7 +605,6 @@ In diesem Abschnitt wenden Sie das [Authorize](http://msdn.microsoft.com/library
 1. Klicken Sie im Dialogfeld **Web veröffentlichen** auf der linken Seite auf **Einstellungen**.
 
 2. Klicken Sie auf das Symbol **v**, um die **Remoteverbindungszeichenfolge** für **ApplicationDbContext** auszuwählen, und wählen Sie die Datenbank aus, die Sie beim Anlegen des Projekts erstellt haben.
-
    
 	![Einstellungen](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/rrc2.png)
 
@@ -655,7 +651,9 @@ In diesem Abschnitt wenden Sie das [Authorize](http://msdn.microsoft.com/library
 	![Web-App starten](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/ss15.png)
 
 5. Kehren Sie zu Visual Studio zurück, und klicken Sie auf **Veröffentlichen**.
-3. Die Azure-Anwendung wird im Standardbrowser geöffnet. Wenn Sie angemeldet sind, melden Sie sich ab, sodass Sie die Startseite als anonymer Benutzer anzeigen können.  
+
+3. Die Azure-Anwendung wird im Standardbrowser geöffnet. Wenn Sie angemeldet sind, melden Sie sich ab, sodass Sie die Startseite als anonymer Benutzer anzeigen können.
+
 4. Klicken Sie auf den Link **About**. Sie werden zur Anmeldeseite weitergeleitet.
 
 5. Klicken Sie auf den Link **Registrieren** auf der Anmeldeseite, und erstellen Sie ein lokales Konto. Dieses lokale Konto wird verwendet, um zu überprüfen, ob Sie auf die schreibgeschützten Seiten zugreifen können, jedoch nicht auf die Seiten mit Datenänderungen (die durch die Rolle *canEdit* geschützt sind). An späterer Stelle in diesem Tutorial entfernen Sie den lokalen Kontozugriff.
@@ -680,7 +678,7 @@ In diesem Abschnitt wenden Sie das [Authorize](http://msdn.microsoft.com/library
 
 	**Hinweis:** Sie können sich von dieser App aus nicht von Google abmelden und mit demselben Browser bei einem anderen Google-Konto anmelden. Wenn Sie einen einzigen Browser verwenden, müssen Sie zu Google navigieren und sich abmelden. Sie können sich über den Drittanbieterauthentifikator (wie Google) mithilfe eines anderen Browsers anmelden.
 
-Falls Sie Ihren Vornamen und Nachnamen im Google-Konto nicht ausgefüllt haben, tritt ein NullReferenceException-Ausnahmefehler auf.
+	Falls Sie Ihren Vornamen und Nachnamen im Google-Konto nicht ausgefüllt haben, tritt ein NullReferenceException-Ausnahmefehler auf.
 
 ## Überprüfen der SQL Azure-DB ##
 
@@ -717,7 +715,7 @@ Falls Probleme auftreten, finden Sie hier einige Vorschläge für Lösungsansät
 * Fehler bei der Bereitstellung der SQL-Datenbank – Stellen Sie sicher, dass das aktuelle SDK installiert ist. Versionen vor 2.8.1 haben einen Programmierfehler, der in einigen Szenarien Fehler verursacht, wenn Visual Studio versucht, den Datenbankserver oder die Datenbank zu erstellen.
 * Fehlermeldung „Der Vorgang wird für Ihren Abonnementangebotstyp nicht unterstützt“ beim Erstellen von Azure-Ressourcen – Siehe oben.
 * Fehler bei der Bereitstellung – Erwägen Sie, den Artikel [Erstellen von ASP.NET-Web-Apps in Azure App Service](web-sites-dotnet-get-started.md) durchzugehen. Dieses Bereitstellungsszenario ist einfacher. Wenn Sie dort das gleiche Problem haben, ist es möglicherweise einfacher zu isolieren. Beispielsweise kann in bestimmten Unternehmensumgebungen eine Unternehmensfirewall Web Deploy am Herstellen erforderlicher Verbindungen mit Azure hindern.
-* Keine Option zum Auswählen der Verbindungszeichenfolge im Assistenten „Web veröffentlichen“ bei der Bereitstellung – Wenn Sie eine andere Methode zum Erstellen Ihrer Azure-Ressourcen verwendet haben (z. B. versuchen, eine im Portal erstellte Web-App und SQL-Datenbank bereitzustellen), ist die SQL-Datenbank ggf. nicht der Web-App zugeordnet. Die einfachste Lösung ist das Erstellen einer neuen Web-App und Datenbank mit Visual Studio, wie in diesem Tutorial gezeigt. Sie müssen das Tutorial nicht von vorn durchlaufen. Im Assistenten „Web veröffentlichen“ finden Sie die Option zum Erstellen einer neuen Web-App, über die Ihnen dasselbe Dialogfeld zum Erstellen von Azure-Ressourcen wie beim Erstellen des Projekts angezeigt wird.
+* Keine Option zum Auswählen der Verbindungszeichenfolge im Assistenten „Web veröffentlichen“ bei der Bereitstellung – Wenn Sie eine andere Methode zum Erstellen Ihrer Azure-Ressourcen verwendet haben (z. B. versuchen, eine im Portal erstellte Web-App und SQL-Datenbank bereitzustellen), ist die SQL-Datenbank ggf. nicht der Web-App zugeordnet. Die einfachste Lösung ist das Erstellen einer neuen Web-App und Datenbank mit Visual Studio, wie in diesem Tutorial gezeigt. Sie müssen das Tutorial nicht von vorn durchlaufen. Im Assistenten „Web veröffentlichen“ finden Sie die Option zum Erstellen einer neuen Web-App, über die Ihnen dasselbe Dialogfeld zum Erstellen von Azure-Ressourcen wie beim Erstellen des Projekts angezeigt wird.
 * Anweisungen für das Google- und Facebook-Entwicklerportal sind veraltet. Weitere Informationen finden Sie im Disqus-Kommentar am Ende dieses Tutorials.
 
 ## Nächste Schritte
@@ -799,4 +797,4 @@ Dieses Tutorial wurden von [Rick Anderson](http://blogs.msdn.com/b/rickandy/) (T
 [ImportPublishSettings]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2013/ImportPublishSettings.png
  
 
-<!----HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0302_2016-->

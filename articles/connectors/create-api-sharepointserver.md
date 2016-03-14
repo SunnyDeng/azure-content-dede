@@ -1,6 +1,6 @@
 <properties
-pageTitle="Verwenden der SharePoint Server-API in Ihren Logik-Apps | Microsoft Azure"
-description="Erste Schritte mit der SharePoint Server-API für Azure App Service in Ihren Logik-Apps und Power-Apps."
+pageTitle="Verwenden der SharePoint Online-API in Ihren Logik-Apps oder PowerApps | Microsoft Azure"
+description="Erste Schritte mit der SharePoint Online-API für Azure App Service in Ihren Logik-Apps und PowerApps."
 services=""	
 documentationCenter="" 	
 authors="msftman"	
@@ -14,10 +14,10 @@ ms.devlang="na"
 ms.topic="article"
 ms.tgt_pltfrm="na"
 ms.workload="na"
-ms.date="02/18/2016"
+ms.date="02/26/2016"
 ms.author="deonhe"/>
 
-# Erste Schritte mit der SharePoint-API
+# Erste Schritte mit der SharePoint Online-API
 
 Der SharePoint-Verbindungsanbieter stellt eine API zum Arbeiten mit Listen in SharePoint zur Verfügung.
 
@@ -26,7 +26,7 @@ Der SharePoint-Verbindungsanbieter stellt eine API zum Arbeiten mit Listen in Sh
 SharePoint ermöglicht Folgendes:
 
 * Erstellen von Logik-Apps
-* Erstellen von Power-Apps  
+* Erstellen von PowerApps  
 
 Informationen zum Hinzufügen eines Vorgangs in Logik-Apps finden Sie unter [Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md).
 
@@ -70,9 +70,21 @@ Um die SharePoint-API zu verwenden, stellen Sie zunächst eine **Verbindung** he
 
 |Eigenschaft| Erforderlich|Beschreibung|
 | ---|---|---|
-|Tokenverschlüsselung|Ja|Bereitstellen von SharePoint-Anmeldeinformationen|  
+|Tokenverschlüsselung|Ja|Bereitstellen von SharePoint-Anmeldeinformationen|
 
->[AZURE.TIP] Sie können diese Verbindung in anderen Logik- oder Power-Apps verwenden.
+Um eine Verbindung mit **SharePoint Online** herzustellen, müssen Sie Ihre Identität (Benutzername und Kennwort, Smartcard-Anmeldeinformationen usw.) für SharePoint Online bereitstellen. Nachdem Sie authentifiziert wurden, können Sie die SharePoint Online-API in Ihrer Logik-App verwenden.
+
+Führen Sie im Designer der Logik-App die folgenden Schritte durch, um sich bei SharePoint anzumelden und die **Verbindung** zu erstellen, die Sie in Ihrer Logik-App verwenden können:
+
+1. Geben Sie in das Suchfeld „SharePoint“ ein, und warten Sie, bis die Suche alle Einträge mit „SharePoint“ im Namen zurückgibt. ![SharePoint konfigurieren][1]  
+2. Wählen Sie **SharePoint Online – Wenn eine Datei erstellt wird** aus.   
+3. Wählen Sie **Bei SharePoint Online anmelden** aus: ![SharePoint konfigurieren][2]    
+4. Geben Sie Ihre SharePoint-Anmeldeinformationen ein, um sich bei SharePoint zu authentifizieren. ![SharePoint konfigurieren][3]     
+5. Nach Abschluss der Authentifizierung werden Sie zu Ihrer Logik-App umgeleitet, damit Sie diese vervollständigen können. Dazu konfigurieren Sie das SharePoint-Dialogfeld **Wenn eine Datei erstellt wird**. ![SharePoint konfigurieren][4]  
+6. Sie können dann weitere Trigger und Aktionen hinzufügen, die Sie benötigen, um Ihre Logik-App abzuschließen.   
+7. Speichern Sie Ihre Arbeit durch Auswählen von **Speichern** in der Menüleiste oben.  
+
+>[AZURE.TIP] Sie können diese Verbindung in anderen Logik- oder PowerApps verwenden.
 
 ## REST-API-Referenz für SharePoint
 #### Diese Dokumentation gilt für Version 1.0.
@@ -323,7 +335,7 @@ Um die SharePoint-API zu verwenden, stellen Sie zunächst eine **Verbindung** he
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
-|dataset|string|Ja|path|(Keine)|SharePoint-Website-URL (Beispiel: http://contoso.sharepoint.com/sites/mysite)|)
+|dataset|string|Ja|path|(Keine)|SharePoint-Website-URL (Beispiel: http://contoso.sharepoint.com/sites/mysite)|
 |Tabelle|string|Ja|path|(Keine)|Name der SharePoint-Liste|
 |$skip|integer|no|query|(Keine)|Anzahl der zu überspringenden Einträge (Standardeinstellung = 0)|
 |$top|integer|no|query|(Keine)|Maximale Anzahl abzurufender Einträge (Standardeinstellung = 256)|
@@ -348,7 +360,7 @@ Um die SharePoint-API zu verwenden, stellen Sie zunächst eine **Verbindung** he
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
-|dataset|string|Ja|path|(Keine)|SharePoint-Website-URL (Beispiel: http://contoso.sharepoint.com/sites/mysite)|)
+|dataset|string|Ja|path|(Keine)|SharePoint-Website-URL (Beispiel: http://contoso.sharepoint.com/sites/mysite)|
 |Tabelle|string|Ja|path|(Keine)|Name der SharePoint-Liste|
 |$skip|integer|no|query|(Keine)|Anzahl der zu überspringenden Einträge (Standardeinstellung = 0)|
 |$top|integer|no|query|(Keine)|Maximale Anzahl abzurufender Einträge (Standardeinstellung = 256)|
@@ -373,7 +385,7 @@ Um die SharePoint-API zu verwenden, stellen Sie zunächst eine **Verbindung** he
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
-|dataset|string|Ja|path|(Keine)|SharePoint-Website-URL (Beispiel: http://contoso.sharepoint.com/sites/mysite)|)
+|dataset|string|Ja|path|(Keine)|SharePoint-Website-URL (Beispiel: http://contoso.sharepoint.com/sites/mysite)|
 |Tabelle|string|Ja|path|(Keine)|Name der SharePoint-Liste|
 |item| |Ja|body|(Keine)|Zu erstellendes Element|
 
@@ -395,7 +407,7 @@ Um die SharePoint-API zu verwenden, stellen Sie zunächst eine **Verbindung** he
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
-|dataset|string|Ja|path|(Keine)|SharePoint-Website-URL (Beispiel: http://contoso.sharepoint.com/sites/mysite)|)
+|dataset|string|Ja|path|(Keine)|SharePoint-Website-URL (Beispiel: http://contoso.sharepoint.com/sites/mysite)|
 |Tabelle|string|Ja|path|(Keine)|Name der SharePoint-Liste|
 |id|integer|Ja|path|(Keine)|Eindeutiger Bezeichner des abzurufenden Elements|
 
@@ -417,7 +429,7 @@ Um die SharePoint-API zu verwenden, stellen Sie zunächst eine **Verbindung** he
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
-|dataset|string|Ja|path|(Keine)|SharePoint-Website-URL (Beispiel: http://contoso.sharepoint.com/sites/mysite)|)
+|dataset|string|Ja|path|(Keine)|SharePoint-Website-URL (Beispiel: http://contoso.sharepoint.com/sites/mysite)|
 |Tabelle|string|Ja|path|(Keine)|Name der SharePoint-Liste|
 |id|integer|Ja|path|(Keine)|Eindeutiger Bezeichner des zu löschenden Elements|
 
@@ -439,7 +451,7 @@ Um die SharePoint-API zu verwenden, stellen Sie zunächst eine **Verbindung** he
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
-|dataset|string|Ja|path|(Keine)|SharePoint-Website-URL (Beispiel: http://contoso.sharepoint.com/sites/mysite)|)
+|dataset|string|Ja|path|(Keine)|SharePoint-Website-URL (Beispiel: http://contoso.sharepoint.com/sites/mysite)|
 |Tabelle|string|Ja|path|(Keine)|Name der SharePoint-Liste|
 |id|integer|Ja|path|(Keine)|Eindeutiger Bezeichner des zu aktualisierenden Elements|
 |item| |Ja|body|(Keine)|Element mit geänderten Eigenschaften|
@@ -457,7 +469,7 @@ Um die SharePoint-API zu verwenden, stellen Sie zunächst eine **Verbindung** he
 
 ## Objektdefinitionen: 
 
- **DataSetsMetadata**:
+ **DataSetsMetadata:**
 
 Erforderliche Eigenschaften für DataSetsMetadata:
 
@@ -465,7 +477,7 @@ Erforderliche Eigenschaften für DataSetsMetadata:
 Keine der Eigenschaften ist erforderlich.
 
 
-**Alle Eigenschaften**:
+**Alle Eigenschaften:**
 
 
 | Name | Datentyp |
@@ -475,7 +487,7 @@ Keine der Eigenschaften ist erforderlich.
 
 
 
- **TabularDataSetsMetadata**:
+ **TabularDataSetsMetadata:**
 
 Erforderliche Eigenschaften für TabularDataSetsMetadata:
 
@@ -483,7 +495,7 @@ Erforderliche Eigenschaften für TabularDataSetsMetadata:
 Keine der Eigenschaften ist erforderlich.
 
 
-**Alle Eigenschaften**:
+**Alle Eigenschaften:**
 
 
 | Name | Datentyp |
@@ -496,7 +508,7 @@ Keine der Eigenschaften ist erforderlich.
 
 
 
- **BlobDataSetsMetadata**:
+ **BlobDataSetsMetadata:**
 
 Erforderliche Eigenschaften für BlobDataSetsMetadata:
 
@@ -504,7 +516,7 @@ Erforderliche Eigenschaften für BlobDataSetsMetadata:
 Keine der Eigenschaften ist erforderlich.
 
 
-**Alle Eigenschaften**:
+**Alle Eigenschaften:**
 
 
 | Name | Datentyp |
@@ -515,7 +527,7 @@ Keine der Eigenschaften ist erforderlich.
 
 
 
- **BlobMetadata**:
+ **BlobMetadata:**
 
 Erforderliche Eigenschaften für BlobMetadata:
 
@@ -523,7 +535,7 @@ Erforderliche Eigenschaften für BlobMetadata:
 Keine der Eigenschaften ist erforderlich.
 
 
-**Alle Eigenschaften**:
+**Alle Eigenschaften:**
 
 
 | Name | Datentyp |
@@ -541,7 +553,7 @@ Keine der Eigenschaften ist erforderlich.
 
 
 
- **Object**:
+ **Object:**
 
 Erforderliche Eigenschaften für „Object“:
 
@@ -557,7 +569,7 @@ Keine der Eigenschaften ist erforderlich.
 
 
 
- **TableMetadata**:
+ **TableMetadata:**
 
 Erforderliche Eigenschaften für TableMetadata:
 
@@ -565,7 +577,7 @@ Erforderliche Eigenschaften für TableMetadata:
 Keine der Eigenschaften ist erforderlich.
 
 
-**Alle Eigenschaften**:
+**Alle Eigenschaften:**
 
 
 | Name | Datentyp |
@@ -577,7 +589,7 @@ Keine der Eigenschaften ist erforderlich.
 
 
 
- **DataSetsList**:
+ **DataSetsList:**
 
 Erforderliche Eigenschaften für DataSetsList:
 
@@ -585,7 +597,7 @@ Erforderliche Eigenschaften für DataSetsList:
 Keine der Eigenschaften ist erforderlich.
 
 
-**Alle Eigenschaften**:
+**Alle Eigenschaften:**
 
 
 | Name | Datentyp |
@@ -594,7 +606,7 @@ Keine der Eigenschaften ist erforderlich.
 
 
 
- **DataSet**:
+ **DataSet:**
 
 Erforderliche Eigenschaften für DataSet:
 
@@ -602,7 +614,7 @@ Erforderliche Eigenschaften für DataSet:
 Keine der Eigenschaften ist erforderlich.
 
 
-**Alle Eigenschaften**:
+**Alle Eigenschaften:**
 
 
 | Name | Datentyp |
@@ -612,7 +624,7 @@ Keine der Eigenschaften ist erforderlich.
 
 
 
- **Table**:
+ **Tabelle**:
 
 Erforderliche Eigenschaften für „Table“:
 
@@ -620,7 +632,7 @@ Erforderliche Eigenschaften für „Table“:
 Keine der Eigenschaften ist erforderlich.
 
 
-**Alle Eigenschaften**:
+**Alle Eigenschaften:**
 
 
 | Name | Datentyp |
@@ -630,7 +642,7 @@ Keine der Eigenschaften ist erforderlich.
 
 
 
- **Item**:
+ **Item:**
 
 Erforderliche Eigenschaften für „Item“:
 
@@ -638,7 +650,7 @@ Erforderliche Eigenschaften für „Item“:
 Keine der Eigenschaften ist erforderlich.
 
 
-**Alle Eigenschaften**:
+**Alle Eigenschaften:**
 
 
 | Name | Datentyp |
@@ -647,7 +659,7 @@ Keine der Eigenschaften ist erforderlich.
 
 
 
- **ItemsList**:
+ **ItemsList:**
 
 Erforderliche Eigenschaften für ItemsList:
 
@@ -655,7 +667,7 @@ Erforderliche Eigenschaften für ItemsList:
 Keine der Eigenschaften ist erforderlich.
 
 
-**Alle Eigenschaften**:
+**Alle Eigenschaften:**
 
 
 | Name | Datentyp |
@@ -664,7 +676,7 @@ Keine der Eigenschaften ist erforderlich.
 
 
 
- **TablesList**:
+ **TablesList:**
 
 Erforderliche Eigenschaften für TablesList:
 
@@ -672,7 +684,7 @@ Erforderliche Eigenschaften für TablesList:
 Keine der Eigenschaften ist erforderlich.
 
 
-**Alle Eigenschaften**:
+**Alle Eigenschaften:**
 
 
 | Name | Datentyp |
@@ -681,6 +693,12 @@ Keine der Eigenschaften ist erforderlich.
 
 
 ## Nächste Schritte
-[Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md) [Erstellen einer Power-App](../power-apps/powerapps-get-started-azure-portal.md)
+[Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md) [Erstellen einer PowerApp](../power-apps/powerapps-get-started-azure-portal.md)
 
-<!---HONumber=AcomDC_0224_2016-->
+[1]: ./media/create-api-sharepointonline/connectionconfig1.png
+[2]: ./media/create-api-sharepointonline/connectionconfig2.png
+[3]: ./media/create-api-sharepointonline/connectionconfig3.png
+[4]: ./media/create-api-sharepointonline/connectionconfig4.png
+[5]: ./media/create-api-sharepointonline/connectionconfig5.png
+
+<!---HONumber=AcomDC_0302_2016-->

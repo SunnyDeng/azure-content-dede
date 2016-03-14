@@ -14,18 +14,20 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na" 
-   ms.date="02/11/2016"
+   ms.date="02/25/2016"
    ms.author="mandia"/>
 
 
 # Erste Schritte mit der SQL Azure-API
 Stellen Sie eine Verbindung mit SQL Azure her, um Tabellen und Zeilen zu verwalten, z. B. Einfügen von Zeilen, Abrufen von Tabellen usw.
 
-Die SQL Azure-API kann in Logik-Apps verwendet werden.
+Die SQL Azure-API kann in Folgendem verwendet werden:
+
+- Logik-Apps 
 
 >[AZURE.NOTE] Diese Version des Artikels gilt für die Schemaversion 2015-08-01-preview für Logik-Apps. Um die Schemaversion 2014-12-01-preview aufzurufen, klicken Sie auf [SQL-Connector](../app-service-logic/app-service-logic-connector-sql.md).
 
-Mit SQL können Sie folgende Aktionen ausführen:
+Mit SQL Azure können Sie folgende Aktionen ausführen:
 
 - Erstellen eines Geschäftsworkflows basierend auf den Daten, die über SQL Azure abgerufen werden. 
 - Verwenden Sie Aktionen zum Abrufen einer Zeile, Einfügen einer Zeile usw. Diese Aktionen erhalten eine Antwort und stellen anschließend die Ausgabe anderen Aktionen zur Verfügung. Sie können z. B. eine Datenzeile aus SQL Azure abrufen und dann die Daten in Excel hinzufügen. 
@@ -53,7 +55,8 @@ Nachdem Sie die Verbindung hergestellt haben, geben Sie die SQL-Eigenschaften ei
 
 >[AZURE.TIP] Sie können diese Verbindung in anderen Logik-Apps verwenden.
 
-## REST-API-Referenz
+## Swagger-REST-API – Referenz
+Gilt für Version: 1.0.
 
 ### Zeile abrufen 
 Ruft eine einzelne Zeile aus einer SQL-Tabelle ab. ```GET: /datasets/default/tables/{table}/items/{id}```
@@ -89,12 +92,12 @@ Ruft Zeilen aus einer SQL-Tabelle ab. ```GET: /datasets/default/tables/{table}/i
 
 
 ### Zeile einfügen 
-Fügt eine neue Zeile in einer SQL-Tabelle ein. ```POST: /datasets/default/tables/{table}/items```
+Fügt eine neue Zeile in eine SQL-Tabelle ein. ```POST: /datasets/default/tables/{table}/items```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
 |Tabelle|string|Ja|path|(Keine)|Name der SQL-Tabelle|
-|item|ItemInternalId: Zeichenfolge|Ja|body|(Keine)|In der angegebenen SQL-Tabelle einzufügende Zeile|
+|item|ItemInternalId: string|Ja|body|(Keine)|In der angegebenen SQL-Tabelle einzufügende Zeile|
 
 #### Antwort
 |Name|Beschreibung|
@@ -137,7 +140,7 @@ Aktualisiert eine vorhandene Zeile in einer SQL-Tabelle. ```PATCH: /datasets/def
 | ---|---|---|---|---|---|
 |Tabelle|string|Ja|path|(Keine)|Name der SQL-Tabelle|
 |id|string|Ja|path|(Keine)|Eindeutiger Bezeichner der zu aktualisierenden Zeile|
-|item|ItemInternalId: Zeichenfolge|Ja|body|(Keine)|Zeile mit aktualisierten Werten|
+|item|ItemInternalId: string|Ja|body|(Keine)|Zeile mit aktualisierten Werten|
 
 #### Antwort
 |Name|Beschreibung|
@@ -222,6 +225,6 @@ Aktualisiert eine vorhandene Zeile in einer SQL-Tabelle. ```PATCH: /datasets/def
 
 ## Nächste Schritte
 
-[Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md).
+[Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md)
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

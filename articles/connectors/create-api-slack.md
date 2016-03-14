@@ -48,6 +48,19 @@ Um die Slack-API zu verwenden, stellen Sie zunächst eine **Verbindung** her und
 | ---|---|---|
 |Tokenverschlüsselung|Ja|Angeben von Slack-Anmeldeinformationen|
 
+Führen Sie folgende Schritte aus, um sich bei Slack anzumelden und die Konfiguration der Slack-**Verbindung** in Ihrer Logik-App abzuschließen:
+
+1. Wählen Sie **Wiederholung** aus.
+2. Wählen Sie eine **Häufigkeit** aus, und geben Sie ein **Intervall** an.
+3. Wählen Sie **Aktion hinzufügen** aus. ![Slack konfigurieren][1]  
+4. Geben Sie in das Suchfeld „Slack“ ein, und warten Sie, bis die Suche alle Einträge mit Slack im Namen zurückgibt.
+5. Wählen Sie **Slack – Nachricht veröffentlichen** aus.
+6. Wählen Sie **Bei Slack anmelden** aus: ![Slack konfigurieren][2]
+7. Geben Sie Ihre Slack-Anmeldeinformationen ein, um die Anwendung zu autorisieren. ![Slack konfigurieren][3]  
+8. Sie werden zur Anmeldeseite Ihrer Organisation weitergeleitet. **Autorisieren** Sie Slack für die Interaktion mit Ihrer Logik-App: ![Slack konfigurieren][5] 
+9. Nach Abschluss der Autorisierung werden Sie zu Ihrer Logik-App umgeleitet, damit Sie diese vervollständigen können. Dazu konfigurieren Sie den Abschnitt **Slack – Alle Nachrichten abrufen**. Fügen Sie bei Bedarf weitere Trigger und Aktionen hinzu. ![Slack konfigurieren][6]
+10. Speichern Sie Ihre Arbeit durch Auswählen von **Speichern** in der Menüleiste oben.
+
 
 >[AZURE.TIP] Sie können diese Verbindung in anderen Logik-Apps verwenden.
 
@@ -92,7 +105,7 @@ Um die Slack-API zu verwenden, stellen Sie zunächst eine **Verbindung** her und
 
 ## Objektdefinitionen: 
 
- **Message**: Yammer-Nachricht
+ **Message:** Yammer-Nachricht
 
 Erforderliche Eigenschaften für „Message“:
 
@@ -100,7 +113,7 @@ Erforderliche Eigenschaften für „Message“:
 Keine der Eigenschaften ist erforderlich.
 
 
-**Alle Eigenschaften**:
+**Alle Eigenschaften:**
 
 
 | Name | Datentyp |
@@ -129,13 +142,13 @@ Keine der Eigenschaften ist erforderlich.
 
 
 
- **PostOperationRequest**: Stellt eine Sendeanforderung für den Yammer-Connector dar, die an Yammer gesendet werden soll.
+ **PostOperationRequest:** stellt eine Sendeanforderung für den Yammer-Connector dar, die an Yammer gesendet werden soll.
 
 Erforderliche Eigenschaften für PostOperationRequest:
 
 body
 
-**Alle Eigenschaften**:
+**Alle Eigenschaften:**
 
 
 | Name | Datentyp |
@@ -168,7 +181,7 @@ body
 
 
 
- **MessageList**: Liste der Nachrichten
+ **MessageList:** Liste der Nachrichten
 
 Erforderliche Eigenschaften für MessageList:
 
@@ -176,7 +189,7 @@ Erforderliche Eigenschaften für MessageList:
 Keine der Eigenschaften ist erforderlich.
 
 
-**Alle Eigenschaften**:
+**Alle Eigenschaften:**
 
 
 | Name | Datentyp |
@@ -185,7 +198,7 @@ Keine der Eigenschaften ist erforderlich.
 
 
 
- **MessageBody**: Nachrichtentext
+ **MessageBody:** Nachrichtentext
 
 Erforderliche Eigenschaften für MessageBody:
 
@@ -193,7 +206,7 @@ Erforderliche Eigenschaften für MessageBody:
 Keine der Eigenschaften ist erforderlich.
 
 
-**Alle Eigenschaften**:
+**Alle Eigenschaften:**
 
 
 | Name | Datentyp |
@@ -204,7 +217,7 @@ Keine der Eigenschaften ist erforderlich.
 
 
 
- **LikedBy**: Gefällt
+ **LikedBy:** Gefällt
 
 Erforderliche Eigenschaften für LikedBy:
 
@@ -212,7 +225,7 @@ Erforderliche Eigenschaften für LikedBy:
 Keine der Eigenschaften ist erforderlich.
 
 
-**Alle Eigenschaften**:
+**Alle Eigenschaften:**
 
 
 | Name | Datentyp |
@@ -222,7 +235,7 @@ Keine der Eigenschaften ist erforderlich.
 
 
 
- **YammmerEntity**: Gefällt
+ **YammmerEntity:** Gefällt
 
 Erforderliche Eigenschaften für YammmerEntity:
 
@@ -230,7 +243,7 @@ Erforderliche Eigenschaften für YammmerEntity:
 Keine der Eigenschaften ist erforderlich.
 
 
-**Alle Eigenschaften**:
+**Alle Eigenschaften:**
 
 
 | Name | Datentyp |
@@ -244,7 +257,7 @@ Keine der Eigenschaften ist erforderlich.
 [Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md)
 ## Objektdefinitionen: 
 
- **WebResultModel**: Bing-Ergebnisse für Websuche
+ **WebResultModel:** Bing-Ergebnisse für Websuche
 
 Erforderliche Eigenschaften für WebResultModel:
 
@@ -252,7 +265,7 @@ Erforderliche Eigenschaften für WebResultModel:
 Keine der Eigenschaften ist erforderlich.
 
 
-**Alle Eigenschaften**:
+**Alle Eigenschaften:**
 
 
 | Name | Datentyp |
@@ -265,7 +278,7 @@ Keine der Eigenschaften ist erforderlich.
 
 
 
- **VideoResultModel**: Bing-Suchergebnisse für Videos
+ **VideoResultModel:** Bing-Suchergebnisse für Videos
 
 Erforderliche Eigenschaften für VideoResultModel:
 
@@ -273,7 +286,7 @@ Erforderliche Eigenschaften für VideoResultModel:
 Keine der Eigenschaften ist erforderlich.
 
 
-**Alle Eigenschaften**:
+**Alle Eigenschaften:**
 
 
 | Name | Datentyp |
@@ -287,7 +300,7 @@ Keine der Eigenschaften ist erforderlich.
 
 
 
- **ThumbnailModel**: Miniaturansichteigenschaften des Multimediaelements
+ **ThumbnailModel:** Miniaturansichteigenschaften des Multimediaelements
 
 Erforderliche Eigenschaften für ThumbnailModel:
 
@@ -295,7 +308,7 @@ Erforderliche Eigenschaften für ThumbnailModel:
 Keine der Eigenschaften ist erforderlich.
 
 
-**Alle Eigenschaften**:
+**Alle Eigenschaften:**
 
 
 | Name | Datentyp |
@@ -308,7 +321,7 @@ Keine der Eigenschaften ist erforderlich.
 
 
 
- **ImageResultModel**: Bing-Suchergebnisse für Bilder
+ **ImageResultModel:** Bing-Suchergebnisse für Bilder
 
 Erforderliche Eigenschaften für ImageResultModel:
 
@@ -316,7 +329,7 @@ Erforderliche Eigenschaften für ImageResultModel:
 Keine der Eigenschaften ist erforderlich.
 
 
-**Alle Eigenschaften**:
+**Alle Eigenschaften:**
 
 
 | Name | Datentyp |
@@ -330,7 +343,7 @@ Keine der Eigenschaften ist erforderlich.
 
 
 
- **NewsResultModel**: Bing-Suchergebnisse für Nachrichten
+ **NewsResultModel:** Bing-Suchergebnisse für Nachrichten
 
 Erforderliche Eigenschaften für NewsResultModel:
 
@@ -338,7 +351,7 @@ Erforderliche Eigenschaften für NewsResultModel:
 Keine der Eigenschaften ist erforderlich.
 
 
-**Alle Eigenschaften**:
+**Alle Eigenschaften:**
 
 
 | Name | Datentyp |
@@ -352,7 +365,7 @@ Keine der Eigenschaften ist erforderlich.
 
 
 
- **SpellResultModel**: Bing-Suchergebnisse für Schreibweisen
+ **SpellResultModel:** Bing-Suchergebnisse für Schreibweisen
 
 Erforderliche Eigenschaften für SpellResultModel:
 
@@ -360,7 +373,7 @@ Erforderliche Eigenschaften für SpellResultModel:
 Keine der Eigenschaften ist erforderlich.
 
 
-**Alle Eigenschaften**:
+**Alle Eigenschaften:**
 
 
 | Name | Datentyp |
@@ -370,7 +383,7 @@ Keine der Eigenschaften ist erforderlich.
 
 
 
- **RelatedSearchResultModel**: Bing-Suchergebnisse für verwandte Informationen
+ **RelatedSearchResultModel:** Bing-Suchergebnisse für verwandte Informationen
 
 Erforderliche Eigenschaften für RelatedSearchResultModel:
 
@@ -378,7 +391,7 @@ Erforderliche Eigenschaften für RelatedSearchResultModel:
 Keine der Eigenschaften ist erforderlich.
 
 
-**Alle Eigenschaften**:
+**Alle Eigenschaften:**
 
 
 | Name | Datentyp |
@@ -389,7 +402,7 @@ Keine der Eigenschaften ist erforderlich.
 
 
 
- **CompositeSearchResultModel**: Zusammengesetzte Bing-Suchergebnisse
+ **CompositeSearchResultModel:** Zusammengesetzte Bing-Suchergebnisse
 
 Erforderliche Eigenschaften für CompositeSearchResultModel:
 
@@ -397,7 +410,7 @@ Erforderliche Eigenschaften für CompositeSearchResultModel:
 Keine der Eigenschaften ist erforderlich.
 
 
-**Alle Eigenschaften**:
+**Alle Eigenschaften:**
 
 
 | Name | Datentyp |
@@ -417,7 +430,7 @@ Keine der Eigenschaften ist erforderlich.
 
 ## Objektdefinitionen: 
 
- **PostOperationResponse**: Stellt die Antwort des Sendevorgangs des Slack-Connectors für das Senden an Slack dar
+ **PostOperationResponse:** Stellt die Antwort des Sendevorgangs des Slack-Connectors für das Senden an Slack dar
 
 Erforderliche Eigenschaften für PostOperationResponse:
 
@@ -425,7 +438,7 @@ Erforderliche Eigenschaften für PostOperationResponse:
 Keine der Eigenschaften ist erforderlich.
 
 
-**Alle Eigenschaften**:
+**Alle Eigenschaften:**
 
 
 | Name | Datentyp |
@@ -438,7 +451,7 @@ Keine der Eigenschaften ist erforderlich.
 
 
 
- **MessageItem**: Eine Kanalnachricht.
+ **MessageItem:** eine Kanalnachricht.
 
 Erforderliche Eigenschaften für MessageItem:
 
@@ -446,7 +459,7 @@ Erforderliche Eigenschaften für MessageItem:
 Keine der Eigenschaften ist erforderlich.
 
 
-**Alle Eigenschaften**:
+**Alle Eigenschaften:**
 
 
 | Name | Datentyp |
@@ -461,4 +474,11 @@ Keine der Eigenschaften ist erforderlich.
 ## Nächste Schritte
 [Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md)
 
-<!---HONumber=AcomDC_0224_2016-->
+[1]: ./media/create-api-slack/connectionconfig1.png
+[2]: ./media/create-api-slack/connectionconfig2.png
+[3]: ./media/create-api-slack/connectionconfig3.png
+[4]: ./media/create-api-slack/connectionconfig4.png
+[5]: ./media/create-api-slack/connectionconfig5.png
+[6]: ./media/create-api-slack/connectionconfig6.png
+
+<!---HONumber=AcomDC_0302_2016-->

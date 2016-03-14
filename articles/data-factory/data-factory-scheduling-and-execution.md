@@ -243,6 +243,25 @@ Nachdem Sie die Wiederholung ausgelöst haben und der Slice "9-10 AM" für "Data
 
 Ausführlichere Informationen zum Abgeben von Abhängigkeiten und deren Nachverfolgung bei einer komplexe Kette von Aktivitäten und Datasets finden Sie in den folgenden Abschnitten.
 
+## Verketten von Aktivitäten
+Sie können zwei Aktivitäten verketten, indem Sie das Ausgabedataset einer Aktivität als Eingabedataset der anderen Aktivität verwenden. Die Aktivitäten können sich in derselben Pipeline oder in verschiedenen Pipelines befinden. Die zweite Aktivität wird nur ausgeführt, wenn die erste erfolgreich abgeschlossen wurde.
+
+Betrachten Sie beispielsweise den folgenden Fall:
+ 
+1.	Die Pipeline P1 verfügt über die Aktivität A1, die das externe Eingabedataset D1 erfordert und das **Ausgabedataset** **D2** generiert.
+2.	Die Pipeline P2 verfügt über die Aktivität A2, die eine **Eingabe** aus dem Dataset **D2** erfordert und das Ausgabedataset D3 generiert.
+ 
+In diesem Szenario wird die Aktivität A1 ausgeführt, wenn die externen Daten verfügbar sind und die Häufigkeit für die geplante Verfügbarkeit erreicht ist. Die Aktivität A2 wird ausgeführt, wenn die geplanten Slices von D2 verfügbar werden und die Häufigkeit für die geplante Verfügbarkeit erreicht ist. Wenn ein Fehler in einem der Slices im Dataset D2 auftritt, wird A2 für diesen Slice nicht ausgeführt, bis er verfügbar wird.
+
+Die Diagrammansicht sieht wie folgt aus:
+
+![Verketten von Aktivitäten in zwei Pipelines](./media/data-factory-scheduling-and-execution/chaining-two-pipelines.png)
+
+Die Diagrammansicht mit beiden Aktivitäten in derselben Pipeline sieht wie folgt aus:
+
+![Verketten von Aktivitäten in derselben Pipeline](./media/data-factory-scheduling-and-execution/chaining-one-pipeline.png)
+
+
 ## Modellieren von Datasets mit unterschiedlichen Frequenzen
 
 In den obigen Beispielen waren die Frequenzen für Eingabe- und Ausgabedatasets und das Aktivitätszeitfenster identisch. Einige Szenarien erfordern die Fähigkeit, eine Ausgabe mit einer Frequenz zu erzeugen, die sich von den Frequenzen einer oder mehrerer Eingaben unterscheidet. Data Factory unterstützt diese Szenarien.
@@ -511,9 +530,6 @@ Die Hive-Aktivität verwendet zwei Eingaben und erzeugt täglich einen Ausgabesl
 	}
 
 
-## Verketten von Aktivitäten
-Sie können zwei Aktivitäten verketten, indem Sie das Ausgabedataset einer Aktivität als Eingabedataset der anderen Aktivität verwenden. Die Aktivitäten können sich in derselben Pipeline oder in verschiedenen Pipelines befinden. Die zweite Aktivität wird nur ausgeführt, wenn die erste erfolgreich abgeschlossen wurde. Diese Verkettung erfolgt auf Ebenen von Zeitslices (eine einzelne Einheit innerhalb eines Datasets).
-
 ## Data Factory – Funktionen und Systemvariablen   
 
 Im Artikel [Data Factory – Funktionen und Systemvariablen](data-factory-functions-variables.md) finden Sie eine Liste der Funktionen und Systemvariablen, die von Azure Data Factory unterstützt werden.
@@ -616,4 +632,4 @@ Ein Dataset kann als extern gekennzeichnet werden (siehe die nachstehende JSON),
 
   
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

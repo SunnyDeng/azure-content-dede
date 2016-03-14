@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="01/05/2016" 
+	ms.date="03/02/2016" 
 	ms.author="awills"/>
 
 # Application Insights-API für benutzerdefinierte Ereignisse und Metriken 
@@ -196,7 +196,29 @@ Wenn Sie mehrere Registerkarten in anderen HTML-Seiten haben, können Sie ebenfa
 
     appInsights.trackPageView("tab1", "http://fabrikam.com/page1.htm");
 
+#### Zeitliches Einteilen von Seitenaufrufen
 
+In der Standardeinstellung werden die gemeldeten Zeiten für „Ladezeit der Seitenansicht“ von dem Zeitpunkt, zu dem der Browser die Anforderung sendet, bis zum Aufruf des Seitenladeereignisses im Browser gemessen.
+
+Sie haben stattdessen noch folgende Möglichkeiten:
+
+* Legen Sie im [trackPageView](https://github.com/Microsoft/ApplicationInsights-JS/blob/master/API-reference.md#trackpageview)-Aufruf eine explizite Dauer fest.
+ * `appInsights.trackPageView("tab1", null, null, null, durationInMilliseconds);`
+* Verwenden Sie die Zeitsteuerungsaufrufe `startTrackPage` und `stopTrackPage` für die Seitenansicht.
+
+*JavaScript*
+
+    // To start timing a page:
+    appInsights.startTrackPage("Page1");
+
+...
+
+    // To stop timing and log the page:
+    appInsights.stopTrackPage("Page1", url, properties, measurements);
+
+Der Name, den Sie für den ersten Parameter verwenden, ordnet die Start- und Stoppaufrufe zu. Der Standardwert ist der Name der aktuellen Seite.
+
+Die resultierenden Zeiten für das Laden der Seite, die im Metrik-Explorer angezeigt werden, leiten sich vom Intervall zwischen den Start- und Stoppaufrufen ab. Sie können entscheiden, welches Intervall Sie tatsächlich verwenden.
 
 ## TrackRequest
 
@@ -436,7 +458,7 @@ Es gibt einige [Beschränkungen hinsichtlich der Anzahl von Eigenschaften, Eigen
     telemetry.trackEvent("WinGame", properties, metrics);
 
 
-> [AZURE.NOTE]Achten Sie darauf, keine persönlich identifizierbaren Informationen in den Eigenschaften zu protokollieren.
+> [AZURE.NOTE] Achten Sie darauf, keine persönlich identifizierbaren Informationen in den Eigenschaften zu protokollieren.
 
 **Wenn Sie Metriken verwenden**, öffnen Sie den Metrik-Explorer, und wählen Sie die Metrik aus der benutzerdefinierten Gruppe aus:
 
@@ -479,7 +501,7 @@ Wenn es für Sie praktischer ist, können Sie die Parameter eines Ereignisses in
 
     telemetry.TrackEvent(event);
 
-> [AZURE.WARNING]Verwenden Sie nicht die selbe Telemetrieelementinstanz (in diesem Beispiel `event`), um Track*() mehrfach aufzurufen. Dies kann dazu führen, dass Telemetriedaten mit einer falschen Konfiguration gesendet werden.
+> [AZURE.WARNING] Verwenden Sie nicht dieselbe Telemetrieelementinstanz (in diesem Beispiel `event`), um Track*() mehrfach aufzurufen. Dies kann dazu führen, dass Telemetriedaten mit einer falschen Konfiguration gesendet werden.
 
 #### <a name="timed"></a> Zeitmessung bei Ereignissen
 
@@ -550,9 +572,9 @@ Einzelne Telemetrieaufrufe können die Standardwerte in ihren Eigenschaftenwört
 
 ## Stichprobenerstellung, Filterung und Verarbeitung von Telemetriedaten 
 
-Sie können Code zum Verarbeiten Ihrer Telemetriedaten schreiben, bevor sie vom SDK gesendet werden. Die Verarbeitung umfasst Daten, die von den standardmäßigen Telemetriemodulen gesendet werden, z. B. die HTTP-Anforderungsauflistung und Abhängigkeitsauflistung.
+Sie können Code zum Verarbeiten Ihrer Telemetriedaten schreiben, bevor sie vom SDK gesendet werden. Die Verarbeitung umfasst Daten, die von den standardmäßigen Telemetriemodulen gesendet werden, z. B. die HTTP-Anforderungsauflistung und Abhängigkeitsauflistung.
 
-* Sie können Telemetriedaten [Eigenschaften hinzufügen](app-insights-api-filtering-sampling.md#add-properties), z. B. Versionsnummern oder aus anderen Eigenschaften berechnete Werte.
+* Sie können Telemetriedaten [Eigenschaften hinzufügen](app-insights-api-filtering-sampling.md#add-properties), z. B. Versionsnummern oder aus anderen Eigenschaften berechnete Werte.
 * Mithilfe der [Stichprobenerstellung](app-insights-api-filtering-sampling.md#sampling) wird das von Ihrer App an das Portal gesendete Datenvolumen reduziert. Das hat keinerlei Auswirkungen auf die angezeigten Metriken oder die Fähigkeit, Probleme durch Navigieren zwischen verwandten Elementen wie Ausnahmen, Anforderungen und Seitenansichten zu diagnostizieren.
 * Das Datenvolumen kann auch per [Filterung](app-insights-api-filtering-sampling.md#filtering) reduziert werden. Sie steuern, was gesendet oder verworfen wird, aber Sie müssen die Auswirkung auf Ihre Metriken im Auge behalten. Je nach Vorgehensweise beim Verwerfen der Elemente kann es sein, dass Sie nicht mehr zwischen verwandten Elementen navigieren können.
 
@@ -572,7 +594,7 @@ So können Sie die Sammlung und Übermittlung von Telemetriedaten **dynamisch be
     TelemetryConfiguration.Active.DisableTelemetry = true;
 ```
 
-Um **ausgewählte Standardsammlungsmodule zu deaktivieren** – z. B. Leistungsindikatoren, HTTP-Anforderungen oder Abhängigkeiten –, löschen Sie die entsprechenden Zeilen in [ApplicationInsights.config][config], oder kommentieren Sie sie aus. Diese Vorgehensweise bietet sich z. B. an, wenn Sie Ihre eigenen TrackRequest-Daten senden möchten.
+Um **ausgewählte Standardsammlungsmodule zu deaktivieren** – z. B. Leistungsindikatoren, HTTP-Anforderungen oder Abhängigkeiten –, löschen Sie die entsprechenden Zeilen in [ApplicationInsights.config][config], oder kommentieren Sie sie aus. Diese Vorgehensweise bietet sich z. B. an, wenn Sie Ihre eigenen TrackRequest-Daten senden möchten.
 
 ## <a name="debug"></a>Entwicklermodus
 
@@ -736,4 +758,4 @@ Es gibt einige Beschränkungen hinsichtlich der Anzahl von Metriken und Ereignis
 
  
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0302_2016-->

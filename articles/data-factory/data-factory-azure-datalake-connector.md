@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/19/2016"
+	ms.date="02/25/2016"
 	ms.author="spelluru"/>
 
 # Verschieben von Daten in und aus Azure Data Lake-Speicher mithilfe von Azure Data Factory
@@ -417,9 +417,8 @@ Der von Ihnen mithilfe der Schaltfläche **Autorisieren** generierte Autorisieru
 
 | Benutzertyp | Läuft ab nach |
 | :-------- | :----------- | 
-| Nicht-AAD-Benutzer(@hotmail.com, @live.com usw.) | 12 Stunden |
-| AAD-Benutzer, und die OAuth-basierte Quelle befindet sich in einem anderen [Mandanten](https://msdn.microsoft.com/library/azure/jj573650.aspx#BKMK_WhatIsAnAzureADTenant) als dem für die Data Factory | 12 Stunden |
-| AAD-Benutzer, und die OAuth-basierte Quelle befindet sich im gleichen Mandanten wie dem für die Data Factory. | 14 Tage |
+| Benutzerkonten, die NICHT von Azure Active Directory verwaltet werden (@hotmail.com, @live.com usw.) | 12 Stunden |
+| Benutzerkonten, die von Azure Active Directory (AAD) verwaltet werden | | 14 Tage nach der letzten Sliceausführung. <p>90 Tage, wenn ein Slice basierend auf dem OAuth-basierten verknüpften Dienst mindestens einmal alle 14 Tage ausgeführt wird.</p> |
 
 Um diesen Fehler zu vermeiden oder zu beheben, müssen Sie bei **Ablauf des Tokens** mithilfe der Schaltfläche **Autorisieren** eine erneute Autorisierung ausführen und den verknüpften Dienst erneut bereitstellen. Sie können auch programmgesteuert Werte für die Eigenschaften **sessionId** und **authorization** generieren. Verwenden Sie dazu den im folgenden Abschnitt bereitgestellten Code.
 
@@ -460,7 +459,7 @@ Der Abschnitt **typeProperties** unterscheidet sich bei jedem Typ von Dataset un
 | Eigenschaft | Beschreibung | Erforderlich |
 | :-------- | :----------- | :-------- |
 | folderPath | Der Pfad zum Container und Ordner im Azure Data Lake-Speicher. | Ja |
-| fileName | <p>Der Name der Datei im Azure Data Lake-Speicher. „fileName“ ist optional. </p><p>Wenn Sie einen Dateinamen angeben, funktioniert die Aktivität (einschließlich Kopieren) für die jeweilige Datei.</p><p>Wenn „fileName„ nicht angegeben ist, umfasst das Kopieren alle Dateien in „folderPath“ für das Eingabedataset.</p><p>Wenn „fileName“ für ein Ausgabedataset nicht angegeben ist, hat der Name der generierten Datei folgendes Format: Data.<Guid>.txt (z. B.: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt</p> | Nein |
+| fileName | <p>Der Name der Datei im Azure Data Lake-Speicher. fileName ist optional, und die Groß- und Kleinschreibung muss beachtet werden. </p><p>Wenn Sie einen Dateinamen angeben, funktioniert die Aktivität (einschließlich Kopieren) für die jeweilige Datei.</p><p>Wenn fileName nicht angegeben ist, umfasst das Kopieren alle Dateien in folderPath für das Eingabedataset.</p><p>Wenn fileName für ein Ausgabedataset nicht angegeben ist, hat der Name der generierten Datei folgendes Format: Data.<Guid>.txt (z. B.: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt</p> | Nein |
 | partitionedBy | "partitionedBy" ist eine optionale Eigenschaft. "partitionedBy" kann genutzt werden, um einen dynamischen Wert für "folderPath" oder "fileName" für Zeitreihendaten anzugeben. Beispiel: "folderPath" kann für jedes stündliche Datenaufkommen parametrisiert werden. Im Abschnitt „Nutzen der partitionedBy-Eigenschaft“ unten finden Sie Details und Beispiele. | Nein |
 | Format | Zwei Typen von Formaten werden unterstützt: **TextFormat** und **AvroFormat**. Sie müssen die type-Eigenschaft unter "format" auf einen dieser Werte festlegen. Wenn das Format auf "TextFormat" festgelegt ist, können Sie zusätzliche optionale Eigenschaften für das Format angeben. Im Abschnitt [Angeben von "TextFormat"](#specifying-textformat) unten finden Sie weitere Details. | Nein |
 | Komprimierung | Geben Sie den Typ und den Grad der Komprimierung für die Daten an. Folgende Typen werden unterstützt: **GZip**, **Deflate** und **BZip2**. Folgende Komprimierungsgrade werden unterstützt: **Optimal** und **Schnellste**. Beachten Sie, dass für Daten im **AvroFormat** zurzeit keine Komprimierungseinstellungen unterstützt werden. Weitere Einzelheiten finden Sie im Abschnitt [Komprimierungsunterstützung](#compression-support). | Nein |
@@ -608,4 +607,4 @@ Im Abschnitt "typeProperties" der Aktivität verfügbare Eigenschaften variieren
 
 [AZURE.INCLUDE [data-factory-column-mapping](../../includes/data-factory-column-mapping.md)]
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

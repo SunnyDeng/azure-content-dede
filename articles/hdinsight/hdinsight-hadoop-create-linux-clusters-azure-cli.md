@@ -14,7 +14,7 @@
    	ms.topic="article"
    	ms.tgt_pltfrm="na"
    	ms.workload="big-data"
-   	ms.date="01/22/2016"
+   	ms.date="02/29/2016"
    	ms.author="larryfr"/>
 
 #Erstellen von Linux-basierten Clustern in HDInsight mithilfe der Azure-Befehlszeilenschnittstelle
@@ -57,8 +57,8 @@ Die folgenden Schritte müssen in einer Befehlszeilen-, Shell- oder Terminalsitz
 
 4. Erstellen Sie eine Vorlage für Ihren HDInsight-Cluster. Unten sind einige einfache Beispielvorlagen angegeben:
 
-    * [Linux-basierter Cluster mit öffentlichem SSH-Schlüssel](https://github.com/Azure/azure-quickstart-templates/tree/master/hdinsight-linux-ssh-publickey)
-    * [Linux-basierter Cluster mit Kennwort für das SSH-Konto](https://github.com/Azure/azure-quickstart-templates/tree/master/hdinsight-linux-ssh-password)
+    * [Linux-basierter Cluster mit öffentlichem SSH-Schlüssel](https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-linux-ssh-publickey)
+    * [Linux-basierter Cluster mit Kennwort für das SSH-Konto](https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-linux-ssh-password)
 
     Mit beiden Vorlagen wird auch das von HDInsight verwendete Azure-Speicherkonto erstellt.
 
@@ -83,7 +83,7 @@ Die folgenden Schritte müssen in einer Befehlszeilen-, Shell- oder Terminalsitz
 5. Gehen Sie wie folgt vor, um eine leere Ressourcengruppe zu erstellen. Ersetzen Sie __RESOURCEGROUPNAME__ durch den Namen, den Sie für diese Gruppe verwenden möchten. Ersetzen Sie __LOCATION__ durch das Datencenter, in dem Sie Ihren HDInsight-Cluster erstellen möchten:
 
         azure group create RESOURCEGROUPNAME LOCATION
-    
+
     > [AZURE.NOTE] Wenn der Name des Standorts Leerzeichen enthält, setzen Sie ihn in doppelte Anführungszeichen. Beispiel: „USA, Mitte/Süden“.
 
 6. Verwenden Sie den folgenden Befehl, um die erste Bereitstellung für diese Ressourcengruppe zu erstellen. Ersetzen Sie __PATHTOTEMPLATE__ durch den Pfad zur Vorlagendatei __azuredeploy.json__. Ersetzen Sie __PATHTOPARAMETERSFILE__ durch den Pfad zur Datei __azuredeploy.parameters.json__. Ersetzen Sie __RESOURCEGROUPNAME__ durch den Namen der Gruppe, die Sie im vorherigen Schritt erstellt haben:
@@ -95,7 +95,7 @@ Die folgenden Schritte müssen in einer Befehlszeilen-, Shell- oder Terminalsitz
 7. Es kann einige Zeit dauern, bis die Bereitstellung abgeschlossen ist (ca. 15 Minuten). Sie können Informationen zur Bereitstellung mit dem folgenden Befehl anzeigen. Ersetzen Sie __RESOURCEGROUPNAME__ durch den Namen der Ressourcengruppe aus dem vorherigen Schritt:
 
         azure group log show -l RESOURCEGROUPNAME
-    
+
     Nach Abschluss die Bereitstellung enthält das Feld __Status__ den Wert __Succeeded__. Wenn während der Bereitstellung ein Fehler auftritt, erhalten Sie mit dem folgenden Befehl weitere Informationen zum Fehler:
 
         azure group log show -l -v RESOURCEGROUPNAME
@@ -121,4 +121,4 @@ Nachdem Sie einen HDInsight-Cluster erfolgreich erstellt haben, nutzen Sie die f
 * [Verwenden von Python-Komponenten in Storm in HDInsight](hdinsight-storm-develop-python-topology.md)
 * [Bereitstellen und Überwachen von Topologien mit Storm in HDInsight](hdinsight-storm-deploy-monitor-topology-linux.md)
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

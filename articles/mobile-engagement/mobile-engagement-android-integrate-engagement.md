@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-android"
 	ms.devlang="Java"
 	ms.topic="article"
-	ms.date="08/10/2015"
+	ms.date="02/29/2016"
 	ms.author="piyushjo" />
 
 #Integrieren von Mobile Engagement unter Android
@@ -26,7 +26,7 @@
 
 In diesem Verfahren wird die einfachste Art der Aktivierung der Analyse- und Überwachungsfunktionen von Mobile Engagement in Ihrer Android-Anwendung beschrieben.
 
-> [AZURE.IMPORTANT]Die minimale API-Ebene des Android-SDKs muss „Level 10“ oder höher sein (Android 2.3.3 oder höher).
+> [AZURE.IMPORTANT] Die minimale API-Ebene des Android-SDKs muss „Level 10“ oder höher sein (Android 2.3.3 oder höher).
 
 Mithilfe der folgenden Schritte kann der Protokollbericht aktiviert werden, der zum Berechnen aller Statistiken zu Benutzern, Sitzungen, Aktivitäten, Abstürzen und technischen Informationen erforderlich ist. Der Bericht von Protokollen, die zur Berechnung anderer Statistiken wie Ereignisse, Fehler und Aufträge erforderlich ist, muss manuell mithilfe der Engagement-API erfolgen (siehe [So verwenden Sie die erweiterte Mobile Engagement API für Tags in Ihrer Android-App](mobile-engagement-android-use-engagement-api.md)), da diese Statistiken von der Anwendung abhängig sind.
 
@@ -34,7 +34,8 @@ Mithilfe der folgenden Schritte kann der Protokollbericht aktiviert werden, der 
 
 Laden Sie das Android-SDK [hier](https://aka.ms/vq9mfn) herunter. Rufen Sie `mobile-engagement-VERSION.jar` ab, und fügen Sie dies zum `libs`-Ordner des Android-Projekts hinzu (erstellen Sie den Ordner "libs", sofern dieser noch nicht vorhanden ist).
 
-> [AZURE.IMPORTANT]Wenn Sie das Anwendungspaket mithilfe von ProGuard erstellen, müssen Sie einige Klassen behalten. Sie können den folgenden Codeausschnitt der Konfiguration verwenden:
+> [AZURE.IMPORTANT]
+Wenn Sie das Anwendungspaket mithilfe von ProGuard erstellen, müssen Sie einige Klassen behalten. Sie können den folgenden Codeausschnitt der Konfiguration verwenden:
 >
 >
 			-keep public class * extends android.os.IInterface
@@ -65,11 +66,11 @@ Die Verbindungszeichenfolge für die Anwendung wird im Azure-Portal angezeigt.
 
 -   Ersetzen Sie `<Your application name>` durch den Namen Ihrer Anwendung.
 
-> [AZURE.TIP]Das`android:label`-Attribut möglichst es Ihnen, den Namen des Engagement-Diensts so auszuwählen, wie er den Endbenutzern auf dem Bildschirm für aktive Dienste ihres Mobiltelefons angezeigt wird. Es wird empfohlen, für dieses Attribut den Wert `"<Your application name>Service"` festzulegen (z. B. `"AcmeFunGameService"`).
+> [AZURE.TIP] Das`android:label`-Attribut möglichst es Ihnen, den Namen des Engagement-Diensts so auszuwählen, wie er den Endbenutzern auf dem Bildschirm für aktive Dienste ihres Mobiltelefons angezeigt wird. Es wird empfohlen, für dieses Attribut den Wert `"<Your application name>Service"` festzulegen (z. B. `"AcmeFunGameService"`).
 
 Durch die Angabe des Attributs `android:process` wird sichergestellt, dass der Engagement-Dienst im eigenen Prozess ausgeführt wird (durch Ausführen von Engagement in demselben Prozess wie die Anwendung wird der Thread „main/UI“ potenziell weniger reaktionsfähig).
 
-> [AZURE.NOTE]Sämtlicher in `Application.onCreate()` hinzugefügter Code und andere Anwendungsrückruffunktionen werden für alle Prozesse der Anwendung ausgeführt, einschließlich des Engagement-Diensts. Dies kann unerwünschte Nebeneffekte haben (z. B. nicht erforderliche Speicherbelegungen und Threads im Engagement-Prozess, doppelte Übertragungsempfänger oder -dienste).
+> [AZURE.NOTE] Sämtlicher in `Application.onCreate()` hinzugefügter Code und andere Anwendungsrückruffunktionen werden für alle Prozesse der Anwendung ausgeführt, einschließlich des Engagement-Diensts. Dies kann unerwünschte Nebeneffekte haben (z. B. nicht erforderliche Speicherbelegungen und Threads im Engagement-Prozess, doppelte Übertragungsempfänger oder -dienste).
 
 Wenn Sie `Application.onCreate()` außer Kraft setzen, wird empfohlen, den folgenden Codeausschnitt am Anfang der `Application.onCreate()`-Funktion hinzuzufügen:
 
@@ -89,7 +90,7 @@ Sie können auch `EngagementApplication` anstelle von `Application` erweitern: D
 
 ### Empfohlene Methode: Überladen der `Activity`-Klassen
 
-Um den Bericht für alle Protokolle zu aktivieren, die von Engagement zum Berechnen von Benutzern, Sitzungen, Aktivitäten, Abstürzen und technischen Statistiken erforderlich sind, müssen Sie einfach dafür sorgen, dass all Ihre `*Activity`-Unterklassen von den entsprechenden `Engagement*Activity`-Klassen abgeleitet werden (wenn z. B. Ihre Legacy-Aktivität `ListActivity` erweitert, sorgen Sie dafür, dass sie `EngagementListActivity` erweitert).
+Um den Bericht für alle Protokolle zu aktivieren, die von Engagement zum Berechnen von Benutzern, Sitzungen, Aktivitäten, Abstürzen und technischen Statistiken erforderlich sind, müssen Sie einfach dafür sorgen, dass all Ihre `*Activity`-Unterklassen von den entsprechenden `Engagement*Activity`-Klassen abgeleitet werden (wenn z. B. Ihre Legacy-Aktivität `ListActivity` erweitert, sorgen Sie dafür, dass sie `EngagementListActivity` erweitert).
 
 **Ohne Engagement:**
 
@@ -125,7 +126,7 @@ Um den Bericht für alle Protokolle zu aktivieren, die von Engagement zum Berech
 			  }
 			}
 
-> [AZURE.IMPORTANT]Stellen Sie bei der Verwendung von `EngagementListActivity` oder `EngagementExpandableListActivity` sicher, dass jeder Aufruf von `requestWindowFeature(...);` vor dem Aufruf von `super.onCreate(...);` erfolgt, da es andernfalls zu einem Absturz kommt.
+> [AZURE.IMPORTANT] Stellen Sie bei der Verwendung von `EngagementListActivity` oder `EngagementExpandableListActivity` sicher, dass jeder Aufruf von `requestWindowFeature(...);` vor dem Aufruf von `super.onCreate(...);` erfolgt, da es andernfalls zu einem Absturz kommt.
 
 Wir stellen Unterklassen von `FragmentActivity` und `MapActivity` bereit, aber zur Vermeidung von Problemen mit Anwendungen, die **ProGuard** verwenden, wurden sie nicht in `engagement.jar` einbezogen.
 
@@ -135,7 +136,7 @@ Sie finden diese Klassen im Ordner `src`, und Sie können sie in Ihr Projekt kop
 
 Wenn Sie die `Activity`-Klassen nicht überladen können oder möchten, können Sie die Aktivitäten stattdessen durch direktes Aufrufen der Methoden von `EngagementAgent` starten und beenden.
 
-> [AZURE.IMPORTANT]Das Android-SDK ruft die `endActivity()`-Methode niemals auf, auch nicht beim Schließen der Anwendung (unter Android werden Anwendungen eigentlich niemals geschlossen). Daher wird *DRINGEND* empfohlen, die `startActivity()`-Methode in der `onResume`-Rückruffunktion *ALLER* Aktivitäten und die `endActivity()`-Methode in der `onPause()`-Rückruffunktion *ALLER* Aktivitäten aufzurufen. Dies ist die einzige Möglichkeit, um sicherzustellen, dass die Sitzungen nicht verloren gehen. Wenn eine Sitzung verloren geht, wird die Verbindung vom Engagement-Dienst zum Engagement-Back-End niemals getrennt (da der Dienst verbunden bleibt, so lange eine Sitzung aussteht).
+> [AZURE.IMPORTANT] Das Android-SDK ruft die `endActivity()`-Methode niemals auf, auch nicht beim Schließen der Anwendung (unter Android werden Anwendungen eigentlich niemals geschlossen). Daher wird *DRINGEND* empfohlen, die `startActivity()`-Methode in der `onResume`-Rückruffunktion *ALLER* Aktivitäten und die `endActivity()`-Methode in der `onPause()`-Rückruffunktion *ALLER* Aktivitäten aufzurufen. Dies ist die einzige Möglichkeit, um sicherzustellen, dass die Sitzungen nicht verloren gehen. Wenn eine Sitzung verloren geht, wird die Verbindung vom Engagement-Dienst zum Engagement-Back-End niemals getrennt (da der Dienst verbunden bleibt, so lange eine Sitzung aussteht).
 
 Beispiel:
 
@@ -190,7 +191,7 @@ Sie können auch weiterhin ``ACCESS_FINE_LOCATION`` verwenden, wenn dies bereits
 
 ### Echtzeit-Berichterstellung für Speicherorte
 
-Mithilfe der Echtzeit-Berichterstellung für Speicherorte können der Längen- und Breitengrad gemeldet werden, die Geräten zugeordnet sind. Diese Art der Berichterstellung für Speicherorte verwendet ausschließlich Netzwerkspeicherorte (auf Basis von Zell-ID oder WLAN), und die Berichterstellung ist nur aktiv, wenn die Anwendung im Vordergrund ausgeführt wird (d. h. während einer Sitzung).
+Mithilfe der Echtzeit-Berichterstellung für Speicherorte können der Längen- und Breitengrad gemeldet werden, die Geräten zugeordnet sind. Diese Art der Berichterstellung für Speicherorte verwendet ausschließlich Netzwerkspeicherorte (auf Basis von Zell-ID oder WLAN), und die Berichterstellung ist nur aktiv, wenn die Anwendung im Vordergrund ausgeführt wird (d. h. während einer Sitzung).
 
 Echtzeit-Speicherorte werden *NICHT* zum Berechnen von Statistiken verwendet. Ihr einziger Zweck ist es, die Verwendung des Echtzeit-Geofencing <Reach-Audience-geofencing >Kriteriums in Reach-Kampagnen zu ermöglichen.
 
@@ -223,7 +224,7 @@ Sie müssen auch die folgende Berechtigung hinzufügen, sofern diese noch nicht 
 
 #### Berichterstellung im Hintergrund
 
-Die Echtzeit-Berichterstellung für Speicherorte ist standardmäßig nur aktiv, wenn die Anwendung im Vordergrund ausgeführt wird (d. h. während einer Sitzung). Verwenden Sie das Konfigurationsobjekt, um die Berichterstellung auch im Hintergrund zu aktivieren:
+Die Echtzeit-Berichterstellung für Speicherorte ist standardmäßig nur aktiv, wenn die Anwendung im Vordergrund ausgeführt wird (d. h. während einer Sitzung). Verwenden Sie das Konfigurationsobjekt, um die Berichterstellung auch im Hintergrund zu aktivieren:
 
     EngagementConfiguration engagementConfiguration = new EngagementConfiguration();
     engagementConfiguration.setConnectionString("Endpoint={appCollection}.{domain};AppId={appId};SdkKey={sdkKey}");
@@ -231,7 +232,7 @@ Die Echtzeit-Berichterstellung für Speicherorte ist standardmäßig nur aktiv, 
     engagementConfiguration.setBackgroundRealtimeLocationReport(true);
     EngagementAgent.getInstance(this).init(engagementConfiguration);
 
-> [AZURE.NOTE]Wenn die Anwendung im Hintergrund ausgeführt wird, werden nur netzwerkbasierte Speicherorte gemeldet, auch wenn Sie das GPS aktiviert haben.
+> [AZURE.NOTE] Wenn die Anwendung im Hintergrund ausgeführt wird, werden nur netzwerkbasierte Speicherorte gemeldet, auch wenn Sie das GPS aktiviert haben.
 
 Der Hintergrundbericht für Speicherorte wird beendet, wenn der Benutzer sein Gerät neu startet. Sie können dies hinzufügen, damit zur Startzeit automatisch ein Neustart erfolgt:
 
@@ -381,4 +382,4 @@ Dann können Sie `CheckBoxPreference` wie folgt im Einstellungslayout hinzufüge
 <!-- URLs. -->
 [Device API]: http://go.microsoft.com/?linkid=9876094
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0302_2016-->

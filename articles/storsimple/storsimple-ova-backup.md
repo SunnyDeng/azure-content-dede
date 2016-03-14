@@ -12,21 +12,17 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="01/22/2016"
+   ms.date="03/01/2016"
    ms.author="alkohli" />
 
-# Sichern des StorSimple Virtual Array (Vorschau)
+# Sichern des StorSimple Virtual Array
 
 ## Übersicht 
 
-Dieses Lernprogramm bezieht sich nur auf Microsoft Azure StorSimple Virtual Array (auch als „lokales virtuelles StorSimple-Gerät“ oder „virtuelles StorSimple-Gerät“ bezeichnet) mit Version 1.1.1.0 (Vorschau).
+Dieses Tutorial bezieht sich auf Microsoft Azure StorSimple Virtual Array (auch als „lokales virtuelles StorSimple-Gerät“ oder „virtuelles StorSimple-Gerät“ bezeichnet) mit der Version vom März 2016 (allgemeine Verfügbarkeit).
 
 Das StorSimple Virtual Array ist ein lokales virtuelles Cloudspeichergerät, das als Dateiserver oder iSCSI-Server konfiguriert werden kann. Es dient zum Erstellen von Sicherungen, zum Wiederherstellen aus Sicherungen und zum Durchführen eines Gerätefailovers, wenn eine Notfallwiederherstellung erforderlich ist. Wenn als Dateiserver konfiguriert ist, ermöglicht es auch die Wiederherstellung auf Elementebene. Dieses Lernprogramm beschreibt das Erstellen geplanter und manueller Sicherungen Ihres StorSimple Virtual Array mit dem klassischen Azure-Portal oder der StorSimple-Web-UI.
 
->[AZURE.IMPORTANT] 
->
->- StorSimple Virtual Array befindet sich in der Vorschauphase und ist für die Evaluierung und Bereitstellungsplanung vorgesehen. Die Installation dieser Vorschauversion in einer Produktionsumgebung wird nicht unterstützt. 
->- Wenn Probleme mit StorSimple Virtual Array auftreten, posten Sie sie im [StorSimple-MSDN-Forum](https://social.msdn.microsoft.com/Forums/home?forum=StorSimple).
 
 ## Sichern von Freigaben und Volumes
 
@@ -54,7 +50,7 @@ Neben geplanten Sicherungen können Sie jederzeit eine manuelle bedarfsgesteuert
 
 #### So erstellen Sie eine manuelle (bedarfsgesteuerte) Sicherung
 
-1. Navigieren Sie zur Registerkarte **Freigaben** oder **Volumes**.
+1. Navigieren Sie zu einer der Registerkarten **Freigaben** oder **Volumes**.
 
 2. Klicken Sie unten auf der Seite auf **Alle sichern**. Sie werden aufgefordert, zu bestätigen, dass Sie die Sicherung jetzt ausführen möchten. Klicken Sie auf das Häkchensymbol ![Häkchensymbol](./media/storsimple-ova-backup/image3.png), um mit der Sicherung fortzufahren.
 
@@ -108,4 +104,4 @@ In diesem Video wird gezeigt, wie Sie Freigaben erstellen, Freigaben sichern und
 
 Erfahren Sie, wie Sie [StorSimple Virtual Array verwalten](storsimple-ova-web-ui-admin.md).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0302_2016-->

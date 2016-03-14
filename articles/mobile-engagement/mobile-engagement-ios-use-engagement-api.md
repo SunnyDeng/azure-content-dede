@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-ios"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/10/2015"
+	ms.date="02/29/2016"
 	ms.author="piyushjo" />
 
 
@@ -35,7 +35,7 @@ In den folgenden Abschnitten werden die [Mobile Engagement-Konzepte](mobile-enga
 
 ### `Session` und `Activity`
 
-Eine *Aktivität* ist üblicherweise mit einem Bildschirm einer Anwendung verknüpft, d. h. die *Aktivität* startet, wenn der Bildschirm angezeigt wird und endet, wenn der Bildschirm geschlossen wird. Dies ist der Fall, wenn das Engagement-SDK über die `EngagementViewController`-Klassen integriert wird.
+Eine *Aktivität* ist üblicherweise mit einem Bildschirm einer Anwendung verknüpft, d. h. die *Aktivität* startet, wenn der Bildschirm angezeigt wird und endet, wenn der Bildschirm geschlossen wird. Dies ist der Fall, wenn das Engagement-SDK über die `EngagementViewController`-Klassen integriert wird.
 
 Aber *Aktivitäten* können auch manuell mithilfe der Engagement-API gesteuert werden. Auf diese Weise kann ein vorhandener Bildschirm in mehrere Unterabschnitte geteilt werden, um mehr Details über die Verwendung des Bildschirms zu erhalten (um beispielsweise zu erfahren, wie häufig und wie lange Dialoge in diesem Bildschirm verwendet werden).
 
@@ -51,7 +51,7 @@ Sie müssen jedes Mal `startActivity()` aufrufen, wenn sich die Benutzeraktivit�
 
 			[[EngagementAgent shared] endActivity];
 
-> [AZURE.WARNING]Sie sollten diese Funktion **NIE** selbst aufrufen – es sei denn, Sie möchten eine Verwendung Ihrer Anwendung in mehrere Sitzungen unterteilen. Durch einen Aufruf dieser Funktion wird die Sitzung sofort beendet, sodass ein nachfolgender Aufruf von `startActivity()` eine neue Sitzung startet. Diese Funktion wird durch das SDK automatisch aufgerufen, wenn Ihre Anwendung geschlossen wird.
+> [AZURE.WARNING] Sie sollten diese Funktion **NIE** selbst aufrufen – es sei denn, Sie möchten eine Verwendung Ihrer Anwendung in mehrere Sitzungen unterteilen. Durch einen Aufruf dieser Funktion wird die Sitzung sofort beendet, sodass ein nachfolgender Aufruf von `startActivity()` eine neue Sitzung startet. Diese Funktion wird durch das SDK automatisch aufgerufen, wenn Ihre Anwendung geschlossen wird.
 
 ##Berichterstellung für Ereignisse
 
@@ -219,7 +219,7 @@ Diese Daten können strukturiert werden und die iOS-Klasse "NSDictionary" nutzen
 
 Zusätzliche Daten können `arrays(NSArray, NSMutableArray)`, `numbers(NSNumber class)`, `strings(NSString, NSMutableString)`, `urls(NSURL)`, `data(NSData, NSMutableData)` oder weitere `NSDictionary` Instanzen enthalten.
 
-> [AZURE.NOTE]Der zusätzliche Parameter wird im JSON-Format serialisiert. Wenn Sie andere Objekte als die oben beschriebene übergeben möchten, müssen Sie die folgende Methode in Ihrer Klasse implementieren:
+> [AZURE.NOTE] Der zusätzliche Parameter wird im JSON-Format serialisiert. Wenn Sie andere Objekte als die oben beschriebene übergeben möchten, müssen Sie die folgende Methode in Ihrer Klasse implementieren:
 >
 			 -(NSString*)JSONRepresentation;
 >
@@ -283,4 +283,4 @@ Im vorherigen Beispiel enthält das an den Server gesendete JSON 44 Zeichen:
 
 	{"birthdate":"1983-12-07","gender":"female"}
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0302_2016-->

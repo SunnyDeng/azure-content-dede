@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="NA" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="10/27/2015" 
+	ms.date="02/29/2016" 
 	ms.author="wesmc"/>
 
 #Azure Notification Hubs - Diagnoserichtlinien
@@ -24,7 +24,7 @@ Eine der häufigsten Fragen, die wir von Azure Notification Hubs-Kunden hören, 
 
 Zunächst einmal ist es wichtig, zu verstehen, wie Azure Notification Hubs Benachrichtigungen mithilfe von Push an die Geräte überträgt. ![][0]
 
-In einem typischen Benachrichtigung senden-Fluss wird die Nachricht vom **Anwendungs-Back-End** zum **Azure Notification Hub (NH)** (Benachrichtigungshub) gesendet, der wiederum einige Verarbeitung für alle Registrierungen ausführt, wobei die konfigurierten Tags und Tagausdrücke berücksichtigt werden, um „Ziele“ (targets) zu ermitteln, d. h. alle Registrierungen, die die Pushbenachrichtigung empfangen müssen. Diese Registrierungen können sich über einige oder sämtliche unserer unterstützten Plattformen erstrecken - iOS, Google, Windows, Windows Phone, Kindle und Baidu für China Android. Nachdem die Ziele eingerichtet sind, überträgt NH dann mithilfe von Push auf mehrere Registrierungsbatches aufgeteilte Benachrichtigungen an den geräteplattformspezifischen **Pushbenachrichtigungsdienst (Push Notification Service, PNS)** – z. B. APNS für Apple, GCM für Google usw. NH authentifiziert sich bei dem entsprechenden PNS anhand der Anmeldeinformationen, die Sie im klassischen Azure-Portal auf der Seite „Notification Hub konfigurieren“ festgelegt haben. Danach leitet der PNS die Benachrichtigungen an die entsprechenden **Clientgeräte** weiter. Dies ist die für Plattformen empfohlene Methode zum Übermitteln von Pushbenachrichtigungen, und Sie sollten beachten, dass der letzte Abschnitt einer Benachrichtigungsübermittlung zwischen dem Plattform-PNS und dem Gerät erfolgt. Daher gibt es vier Hauptkomponenten – *Client*, *Anwendungs-Back-End*, *Azure Notification Hubs (NH)* und *Push Notification Services (PNS)*. Jede dieser Komponenten kann dafür verantwortlich sein, dass Benachrichtigungen verworfen werden. Weitere Informationen zu dieser Architektur finden Sie unter [Übersicht über Benachrichtigungshubs].
+In einem typischen Benachrichtigung senden-Fluss wird die Nachricht vom **Anwendungs-Back-End** zum **Azure Notification Hub (NH)** (Benachrichtigungshub) gesendet, der wiederum einige Verarbeitung für alle Registrierungen ausführt, wobei die konfigurierten Tags und Tagausdrücke berücksichtigt werden, um „Ziele“ (targets) zu ermitteln, d. h. alle Registrierungen, die die Pushbenachrichtigung empfangen müssen. Diese Registrierungen können sich über einige oder sämtliche unserer unterstützten Plattformen erstrecken - iOS, Google, Windows, Windows Phone, Kindle und Baidu für China Android. Nachdem die Ziele eingerichtet sind, überträgt NH dann mithilfe von Push auf mehrere Registrierungsbatches aufgeteilte Benachrichtigungen an den geräteplattformspezifischen **Pushbenachrichtigungsdienst (Push Notification Service, PNS)** – z. B. APNS für Apple, GCM für Google usw. NH authentifiziert sich bei dem entsprechenden PNS anhand der Anmeldeinformationen, die Sie im klassischen Azure-Portal auf der Seite „Notification Hub konfigurieren“ festgelegt haben. Danach leitet der PNS die Benachrichtigungen an die entsprechenden **Clientgeräte** weiter. Dies ist die für Plattformen empfohlene Methode zum Übermitteln von Pushbenachrichtigungen, und Sie sollten beachten, dass der letzte Abschnitt einer Benachrichtigungsübermittlung zwischen dem Plattform-PNS und dem Gerät erfolgt. Daher gibt es vier Hauptkomponenten – *Client*, *Anwendungs-Back-End*, *Azure Notification Hubs (NH)* und *Push Notification Services (PNS)*. Jede dieser Komponenten kann dafür verantwortlich sein, dass Benachrichtigungen verworfen werden. Weitere Informationen zu dieser Architektur finden Sie unter [Übersicht über Benachrichtigungshubs].
 
 Fehler beim Übermitteln von Benachrichtigungen können während der ersten Test-/Stagingphase vorkommen, wodurch ein mögliches Konfigurationsproblem angezeigt wird, oder können während der Produktion vorkommen, wenn eventuell alle oder einige der Benachrichtigungen gelöscht werden, was ein Hinweis auf ein umfassenderes Anwendungs- oder Messagingmusterproblem sein kann. Im folgenden Abschnitt werden verschiedene Szenarien für gelöschte Benachrichtigungen betrachtet. Dies reicht von üblichen bis selteneren Szenarien, von denen Sie einige möglicherweise als offensichtlich und einige andere als nicht so offensichtlich ansehen.
 
@@ -75,7 +75,7 @@ Wenn Sie Vorlagen verwenden, müssen Sie den Richtlinien folgen, die in der [Anl
 
 Unter der Voraussetzung, dass der Benachrichtigungshub richtig konfiguriert ist und alle Tags oder Tagausdrücke richtig verwendet wurden, sodass gültige Ziele gefunden werden, an die die Benachrichtigungen gesendet werden müssen, führt der Hub (NH) mehrere Batches parallel aus - in jedem Batch werden Benachrichtigungen an eine Gruppe von Registrierungen gesendet.
 
-> [AZURE.NOTE]Da die Verarbeitung parallel erfolgt, gibt es keine Garantie hinsichtlich der Reihenfolge, in der die Benachrichtigungen übermittelt werden.
+> [AZURE.NOTE] Da die Verarbeitung parallel erfolgt, gibt es keine Garantie hinsichtlich der Reihenfolge, in der die Benachrichtigungen übermittelt werden.
 
 Azure Notifications Hub ist mittlerweile für ein „maximal einmal“-Nachrichtenübermittlungsmodell optimiert. Dies bedeutet, dass eine Deduplizierung versucht wird, sodass keine Benachrichtigung häufiger als einmal an ein Gerät übermittelt wird. Damit dies sichergestellt ist, werden die Registrierungen durchsucht und wird darauf geachtet, dass nur eine Nachricht pro Geräte-ID gesendet wird, bevor die Nachricht tatsächlich an den PNS gesendet wird. Da jeder Batch an den PNS gesendet wird, der wiederum die Registrierungen annimmt und überprüft, ist es möglich, dass der PNS einen Fehler für eine oder mehrere Registrierungen in einem Batch erkennt, einen Fehler an Azure NH zurückgibt und die Verarbeitung beendet, wodurch dieser Batch vollständig verworfen wird. Dies gilt insbesondere für APNS, für den ein TCP-Streamprotokoll verwendet wird. Da es eine Optimierung hinsichtlich maximal einer Übermittlung gibt, ist zu beachten, dass kein Wiederholungsversuch für einen fehlgeschlagenen Batch unternommen wird, weil nicht sicher bekannt ist, ob der PNS den Batch vollständig oder teilweise verworfen hat. Der PNS teilt Azure NH jedoch mit, welche Registrierung den Fehler verursacht hat, und anhand dieses Feedbacks wird diese Registrierung aus der Datenbank entfernt. Dies bedeutet, dass es möglich ist, dass ein Registrierungsbatch oder eine Teilmenge dieses Batches möglicherweise keine Benachrichtigung erhält. Da die fehlerhafte Registrierung aber bereinigt wurde, gibt es, wenn das nächste Mal ein Sendeversuch unternommen wird, eine größere Chance für ein erfolgreiches Senden. Wenn die Menge der Zielgeräte wächst (einige unserer Kunden senden Benachrichtigungen an Millionen Geräte), bedeutet ein gelegentliches Verwerfen eines fehlerhaften Batches keinen großen Unterschied im Gesamtprozentsatz der Geräte, die Benachrichtigungen empfangen. Wenn Sie aber wenige Benachrichtigungen senden, und es gibt einige PNS-Fehler, werden möglicherweise alle oder die meisten Benachrichtigungen nicht empfangen. Tritt dieses Verhalten wiederholt auf, müssen Sie die fehlerhaften Registrierungen ermitteln und löschen. Auf jeden Fall müssen Sie alle manuell konfigurierten Registrierungen löschen, weil diese die häufigste Ursache für verworfene Benachrichtigungen sind. Ist dies eine Testumgebung, sollten Sie auch sofort alle Registrierungen löschen, weil die Apps, wenn sie auf den Geräten geöffnet werden, versuchen, sich erneut bei den Benachrichtigungshubs zu registrieren. So lässt sich erreichen, dass alle dadurch erstellten Registrierungen gültig sind.
 
@@ -85,7 +85,7 @@ Sobald eine Benachrichtigung vom entsprechenden PNS empfangen wurde, ist dieser 
 
 Wenn ein PNS versucht, eine Benachrichtigung zu übermitteln, das Gerät aber offline ist, wird die Benachrichtigung vom PNS für einen begrenzten Zeitraum gespeichert und an das Gerät gesendet, wenn es wieder verfügbar ist. Nur eine letzte Benachrichtigung für eine bestimmte App wird gespeichert. Werden mehrere Benachrichtigungen gesendet, während das Gerät offline ist, bewirkt jede neue Benachrichtigung, dass die vorherige Benachrichtigung verworfen wird. Dieses Verhalten, bei dem nur die neueste Benachrichtigung beibehalten wird, wird in APNS als „coalescing notifications“ (zusammenwachsende Benachrichtigungen) und in GCM (in dem ein reduzierbarer Schlüssel verwendet wird) als „collapsing“ (reduzierend) bezeichnet. Wenn das Gerät über einen längeren Zeitraum offline bleibt, werden alle für das Gerät gespeicherten Benachrichtigungen verworfen. Quellen: [APNS-Richtlinien] und [GCM-Richtlinien]
 
-Mit Azure Notification Hubs können Sie einen zusammengeführten Schlüssel über einen HTTP-Header mit der generischen `SendNotification`-API (z. B. für .NET SDK – `SendNotificationAsync`) übergeben, die auch HTTP-Header akzeptiert, die unverändert an den entsprechenden PNS übergeben werden.
+Mit Azure Notification Hubs können Sie einen zusammengeführten Schlüssel über einen HTTP-Header mit der generischen `SendNotification`-API (z. B. für .NET SDK – `SendNotificationAsync`) übergeben, die auch HTTP-Header akzeptiert, die unverändert an den entsprechenden PNS übergeben werden.
 
 ##Tipps für eigene Diagnosen
 
@@ -115,7 +115,7 @@ Im Folgenden werden die verschiedenen Möglichkeiten vorgestellt, wie Benachrich
 
 	![][8]
  
-	> [AZURE.NOTE]Die Visual Studio-Funktionen zum Bearbeiten von Registrierungen sollten nur beim Entwickeln/Testen mit begrenzter Anzahl von Registrierungen verwendet werden. Wenn es erforderlich wird, Ihre Registrierungen in einem Sammelvorgang zu korrigieren, bietet es sich an, die Export/Import-Registrierungsfunktionalität zu verwenden, die unter [Exportieren und Ändern von Registrierungen](https://msdn.microsoft.com/library/dn790624.aspx) beschrieben ist.
+	> [AZURE.NOTE] Die Visual Studio-Funktionen zum Bearbeiten von Registrierungen sollten nur beim Entwickeln/Testen mit begrenzter Anzahl von Registrierungen verwendet werden. Wenn es erforderlich wird, Ihre Registrierungen in einem Sammelvorgang zu korrigieren, bietet es sich an, die Export/Import-Registrierungsfunktionalität zu verwenden, die unter [Exportieren und Ändern von Registrierungen](https://msdn.microsoft.com/library/dn790624.aspx) beschrieben ist.
 
 2. **Service Bus-Explorer**
 
@@ -179,7 +179,7 @@ Angenommen, Sie verwenden .NET SDK, um eine systemeigene Popupbenachrichtigung z
  
 Diese Meldung gibt entweder an, dass im Benachrichtigungshub ungültige Anmeldeinformationen konfiguriert sind, oder, dass es ein Problem mit den Registrierungen im Hub gibt. Die empfohlene Vorgehensweise besteht darin, diese Registrierungen zu löschen und vom Client erneut erstellen zu lassen, bevor die Nachricht gesendet wird.
  
-> [AZURE.NOTE]Beachten Sie, dass die Verwendung dieser Eigenschaft stark eingeschränkt ist und Sie diese daher nur in einer Test-/Entwicklungsumgebung mit begrenzter Anzahl von Registrierungen verwenden sollten. Debugbenachrichtigungen werden nur an 10 Geräte gesendet. Außerdem ist die Verarbeitung von Debugsendevorgängen auf 10 pro Minute beschränkt.
+> [AZURE.NOTE] Beachten Sie, dass die Verwendung dieser Eigenschaft stark eingeschränkt ist und Sie diese daher nur in einer Test-/Entwicklungsumgebung mit begrenzter Anzahl von Registrierungen verwenden sollten. Debugbenachrichtigungen werden nur an 10 Geräte gesendet. Außerdem ist die Verarbeitung von Debugsendevorgängen auf 10 pro Minute beschränkt.
 
 ###Überprüfen der Telemetrie 
 
@@ -206,7 +206,7 @@ Ausführlichere Informationen finden Sie hier:
 - [Programmgesteuerter Telemetriezugriff]
 - [Telemetriezugriff über APIs – Beispiel] 
 
-> [AZURE.NOTE]Mehrere telemetriebezogene Funktionen wie **Registrierungen exportieren/importieren**, **Telemetriezugriff über APIs** usw. sind nur auf der Stufe „Standard“ verfügbar. Wenn Sie versuchen, diese Funktionen zu verwenden, wenn Sie sich auf der Stufe „Free“ oder „Basic“ befinden, erhalten Sie hierzu eine Ausnahmemeldung, sofern Sie das SDK verwenden, und einen HTTP-Fehler 403 (Verboten), sofern Sie die Funktionen direkt über die REST-APIs verwenden. Vergewissern Sie sich, dass Sie über das klassische Azure-Portal in den Tarif „Standard“ gewechselt sind.
+> [AZURE.NOTE] Mehrere telemetriebezogene Funktionen wie **Registrierungen exportieren/importieren**, **Telemetriezugriff über APIs** usw. sind nur auf der Stufe „Standard“ verfügbar. Wenn Sie versuchen, diese Funktionen zu verwenden, wenn Sie sich auf der Stufe „Free“ oder „Basic“ befinden, erhalten Sie hierzu eine Ausnahmemeldung, sofern Sie das SDK verwenden, und einen HTTP-Fehler 403 (Verboten), sofern Sie die Funktionen direkt über die REST-APIs verwenden. Vergewissern Sie sich, dass Sie über das klassische Azure-Portal in den Tarif „Standard“ gewechselt sind.
 
 <!-- IMAGES -->
 [0]: ./media/notification-hubs-diagnosing/Architecture.png
@@ -240,4 +240,4 @@ Ausführlichere Informationen finden Sie hier:
 
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0302_2016-->

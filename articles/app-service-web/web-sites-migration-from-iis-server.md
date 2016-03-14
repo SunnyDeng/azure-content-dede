@@ -14,28 +14,28 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/10/2015" 
+	ms.date="02/26/2016" 
 	ms.author="cephalin"/>
 
 # Migrieren von Unternehmens-Web-Apps in Azure App Service
 
 Sie können Ihre vorhandene Websites, die auf Internet Information Service (IIS) 6 oder höher ausgeführt werden, problemlos zu [App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714) migrieren.
 
->[AZURE.IMPORTANT]Der Support für Windows Server 2003 läuft am 14. Juli 2015 aus. Wenn Sie derzeit Websites auf einem IIS-Server unter Windows Server 2003 hosten, bietet Web-Apps eine risikoarme, kostengünstige und wenig aufwendige Möglichkeit, Ihre Websites online zu halten. Der Migrations-Assistent für Web-Apps kann Sie bei der Automatisierung des Migrationsprozesses unterstützen.
+>[AZURE.IMPORTANT] Der Support für Windows Server 2003 läuft am 14. Juli 2015 aus. Wenn Sie derzeit Websites auf einem IIS-Server unter Windows Server 2003 hosten, bietet Web-Apps eine risikoarme, kostengünstige und wenig aufwendige Möglichkeit, Ihre Websites online zu halten. Der Migrations-Assistent für Web-Apps kann Sie bei der Automatisierung des Migrationsprozesses unterstützen.
 
 Der [Migrations-Assistent für Web-Apps](https://www.movemetothecloud.net/) kann die IIS-Server-Installation analysieren, identifizieren, welche Websites zu App Service migriert werden, alle Elemente markieren, die nicht migriert werden können oder auf der Plattform nicht unterstützt werden, und dann die Websites und zugeordneten Datenbanken nach Azure migrieren.
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 ## Während der Kompatibilitätsanalyse überprüfte Elemente ##
-Der Migrations-Assistent erstellt einen Bereitschaftsbericht, um alle möglichen Probleme oder Hindernisse zu identifizieren, die eine erfolgreiche Migration von lokalen IIS zu Azure App Service-Web-Apps verhindern könnten. Einige der wichtigsten zu berücksichtigenden Elemente sind u. a.:
+Der Migrations-Assistent erstellt einen Bereitschaftsbericht, um alle möglichen Probleme oder Hindernisse zu identifizieren, die eine erfolgreiche Migration von lokalen IIS zu Azure App Service-Web-Apps verhindern könnten. Einige der wichtigsten zu berücksichtigenden Elemente sind u. a.:
 
 -	Portbindungen – Web-Apps unterstützt nur Port 80 für HTTP- und Port 443 für HTTPS-Datenverkehr. Andere Portkonfigurationen werden ignoriert, und der Datenverkehr wird an 80 oder 443 weitergeleitet. 
 -	Authentifizierung – Web-Apps unterstützt standardmäßig die anonyme Authentifizierung und Formularauthentifizierung, sofern von einer Anwendung angegeben. Windows-Authentifizierung kann nur durch die Integration in Azure Active Directory und ADFS verwendet werden. Aller anderen Formen der Authentifizierung – z. B. Standardauthentifizierung – werden derzeit nicht unterstützt. 
--	Globaler Assemblycache (GAC) – Der GAC wird in Web-Apps nicht unterstützt. Wenn Ihre Anwendung Assemblys referenziert, die Sie in der Regel im globalen Assemblycache bereitstellen, müssen Sie in den Ordner "Bin" der Anwendung in Web-Apps bereitstellen. 
--	IIS5-Kompatibilitätsmodus – Wird in Web-Apps nicht unterstützt. 
--	Anwendungspools – In Web-Apps werden alle Websites und deren untergeordnete Anwendungen in demselben Anwendungspool ausgeführt. Wenn Ihre Website mehrere untergeordnete Anwendungen hat, die mehrere Anwendungspools verwenden, konsolidieren Sie diese in einem einzigen Anwendungspool mit gemeinsamen Einstellungen, oder migrieren Sie jede Anwendung in eine getrennte Web-App.
--	COM-Komponenten – Web-Apps erlauben keine Registrierung von COM-Komponenten auf der Plattform. Wenn Ihre Websites oder Anwendungen COM-Komponenten verwenden, müssen Sie sie in verwaltetem Code umschreiben und mit der Website oder Anwendung bereitstellen.
+-	Globaler Assemblycache (GAC) – Der GAC wird in Web-Apps nicht unterstützt. Wenn Ihre Anwendung Assemblys referenziert, die Sie in der Regel im globalen Assemblycache bereitstellen, müssen Sie in den Ordner "Bin" der Anwendung in Web-Apps bereitstellen. 
+-	IIS5-Kompatibilitätsmodus – Wird in Web-Apps nicht unterstützt. 
+-	Anwendungspools – In Web-Apps werden alle Websites und deren untergeordnete Anwendungen in demselben Anwendungspool ausgeführt. Wenn Ihre Website mehrere untergeordnete Anwendungen hat, die mehrere Anwendungspools verwenden, konsolidieren Sie diese in einem einzigen Anwendungspool mit gemeinsamen Einstellungen, oder migrieren Sie jede Anwendung in eine getrennte Web-App.
+-	COM-Komponenten – Web-Apps erlauben keine Registrierung von COM-Komponenten auf der Plattform. Wenn Ihre Websites oder Anwendungen COM-Komponenten verwenden, müssen Sie sie in verwaltetem Code umschreiben und mit der Website oder Anwendung bereitstellen.
 -	ISAPI Filter – Web-Apps unterstützt die Verwendung von ISAPI-Filtern. Sie müssen die folgenden Schritte ausführen:
 	-	Stellen Sie die DLLs für Ihre Web-App bereit. 
 	-	Registrieren Sie die DLLs mit [Web.config](http://www.iis.net/configreference/system.webserver/isapifilters)
@@ -66,7 +66,7 @@ In diesem Abschnitt werden Sie schrittweise durch ein Beispiel zum Migrieren ein
 
 	![](./media/web-sites-migration-from-iis-server/install-page.png)
 
-	>[AZURE.NOTE]Sie können auch auf **Für Offline-Installation herunterladen** klicken, um eine ZIP-Datei herunterzuladen und auf Servern ohne Internetverbindung zu installieren. Oder klicken Sie auf **Vorhandenen Bericht zur Migrationsbereitschaft hochladen**, eine erweiterte Option, die zusammen mit einem vorhandenen Migrationsbereitschaftsbericht ausgeführt wird, den Sie zuvor erstellt haben (wird weiter unten erläutert).
+	>[AZURE.NOTE] Sie können auch auf **Für Offline-Installation herunterladen** klicken, um eine ZIP-Datei herunterzuladen und auf Servern ohne Internetverbindung zu installieren. Oder klicken Sie auf **Vorhandenen Bericht zur Migrationsbereitschaft hochladen**, eine erweiterte Option, die zusammen mit einem vorhandenen Migrationsbereitschaftsbericht ausgeführt wird, den Sie zuvor erstellt haben (wird weiter unten erläutert).
 
 5.	Klicken Sie im Bildschirm **Anwendungsinstallation** auf **Installieren**, um die Installation auf Ihrem Computer vorzunehmen. Bei Bedarf werden auch die entsprechenden Abhängigkeiten wie Web Deploy, DacFX und IIS installiert.
 
@@ -94,7 +94,7 @@ In diesem Abschnitt werden Sie schrittweise durch ein Beispiel zum Migrieren ein
  
 	![](./media/web-sites-migration-from-iis-server/readiness-assessment.png)
 
-12.	Klicken Sie auf **Migration starten** , um die Migration zu starten. Sie werden zu Azure umgeleitet, um sich bei Ihrem Konto anzumelden. Es ist wichtig, dass Sie sich mit einem Konto anmelden, das über ein aktives Azure-Abonnement verfügt. Wenn Sie nicht über ein Azure-Konto verfügen, können Sie sich hier für eine kostenlose Testversion anmelden.
+12.	Klicken Sie auf **Migration starten** , um die Migration zu starten. Sie werden zu Azure umgeleitet, um sich bei Ihrem Konto anzumelden. Es ist wichtig, dass Sie sich mit einem Konto anmelden, das über ein aktives Azure-Abonnement verfügt. Wenn Sie nicht über ein Azure-Konto verfügen, können Sie sich [hier](https://azure.microsoft.com/pricing/free-trial/?WT.srch=1&WT.mc_ID=SEM_) für eine kostenlose Testversion anmelden.
 
 13.	Wählen Sie das Mandantenkonto, das Azure-Abonnement und die Region aus, die für die migrierten Azure Web-Apps und Datenbanken verwendet werden sollen, und klicken Sie dann auf **Migration starten**. Sie können die zu migrierenden Websites später auswählen.
 
@@ -111,7 +111,7 @@ In diesem Abschnitt werden Sie schrittweise durch ein Beispiel zum Migrieren ein
 
 	![](./media/web-sites-migration-from-iis-server/migration-settings.png)
 
-	>[AZURE.NOTE]Über das Kontrollkästchen **Azure Active Directory aktivieren** der benutzerdefinierten Einstellungen wird die Azure-Web-App in [Azure Active Directory](active-directory-whatis.md) (das **Standardverzeichnis**) integriert. Weitere Informationen zur Synchronisierung von Azure Active Directory mit Ihrem lokalen Active Directory finden Sie unter [Verzeichnisintegration](http://msdn.microsoft.com/library/jj573653).
+	>[AZURE.NOTE] Über das Kontrollkästchen **Azure Active Directory aktivieren** der benutzerdefinierten Einstellungen wird die Azure-Web-App in [Azure Active Directory](active-directory-whatis.md) (das **Standardverzeichnis**) integriert. Weitere Informationen zur Synchronisierung von Azure Active Directory mit Ihrem lokalen Active Directory finden Sie unter [Verzeichnisintegration](http://msdn.microsoft.com/library/jj573653).
 
 16.	 Nachdem Sie alle gewünschten Änderungen vorgenommen haben, klicken Sie auf **Erstellen**, um den Migrationsvorgang zu starten. Das Migrationstool erstellt die Azure SQL-Datenbank und Azure-Web-App und veröffentlicht dann die Inhalte der Websites und Datenbanken. Der Migrationsstatus wird im Migrationstools klar angezeigt, und am Ende sehen Sie eine Zusammenfassung mit Einzelheiten zu den migrierten Websites, dem Erfolg sowie Links zu den neu erstellten Azure-Web-Apps.
 
@@ -125,14 +125,14 @@ In diesem Abschnitt werden Sie schrittweise durch ein Beispiel zum Migrieren ein
 
 21. Sie können jetzt die migrierten Web-Apps in Azure App Service verwalten. Melden Sie sich dazu beim[Azure-Portal](https://portal.azure.com) an.
 
-22. Öffnen Sie das Blatt von Web-Apps im Azure-Portal, um Ihre migrierten Websites (dargestellt als Web-Apps) anzuzeigen. Klicken Sie dann auf eine, um sie zu verwalten. Sie können z. B. die kontinuierliche Veröffentlichung, das Erstellen von Sicherungen, die automatische Skalierung und die Überwachung von Nutzung oder Leistung konfigurieren.
+22. Öffnen Sie das Blatt von Web-Apps im Azure-Portal, um Ihre migrierten Websites (dargestellt als Web-Apps) anzuzeigen. Klicken Sie dann auf eine, um sie zu verwalten. Sie können z. B. die kontinuierliche Veröffentlichung, das Erstellen von Sicherungen, die automatische Skalierung und die Überwachung von Nutzung oder Leistung konfigurieren.
 
 	![](./media/web-sites-migration-from-iis-server/TimeTrackerMigrated.png)
 
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Änderungen
 * Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
  
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0302_2016-->

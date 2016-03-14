@@ -12,24 +12,19 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="02/18/2016"
+   ms.date="03/01/2016"
    ms.author="alkohli" />
 
 
-# Bereitstellen von StorSimple Virtual Array – Einrichten des virtuellen Geräts als iSCSI-Server (Vorschau)
+# Bereitstellen von StorSimple Virtual Array – Einrichten des virtuellen Geräts als iSCSI-Server
 
 ![Prozessablauf für iSCSI-Setup](./media/storsimple-ova-deploy3-iscsi-setup/iscsi4.png)
 
 ## Übersicht
 
-Dieses Tutorial zur Bereitstellung bezieht sich nur auf Microsoft Azure StorSimple Virtual Arrays (auch als „lokale virtuelle StorSimple-Geräte“ oder „virtuelle StorSimple-Geräte“ bezeichnet) mit der öffentlichen Vorschauversion 1.1.1.0. In diesem Tutorial wird beschrieben, wie Sie die anfängliche Einrichtung durchführen, den StorSimple-iSCSI-Server registrieren, die Geräteinstallation durchführen und dann Volumes auf dem virtuellen StorSimple-iSCSI-Server erstellen, bereitstellen, initialisieren und formatieren. Die StorSimple-Setupinformationen in diesem Artikel gelten nur für StorSimple Virtual Arrays.
+Dieses Tutorial zur Bereitstellung bezieht sich auf Microsoft Azure StorSimple Virtual Array (auch als „lokales virtuelles StorSimple-Gerät“ oder „virtuelles StorSimple-Gerät“ bezeichnet) mit der Version vom März 2016 (allgemeine Verfügbarkeit). In diesem Tutorial wird beschrieben, wie Sie die anfängliche Einrichtung durchführen, den StorSimple-iSCSI-Server registrieren, die Geräteinstallation durchführen und dann Volumes auf dem virtuellen StorSimple-iSCSI-Server erstellen, bereitstellen, initialisieren und formatieren. Die StorSimple-Setupinformationen in diesem Artikel gelten nur für StorSimple Virtual Arrays.
 
 Die hier beschriebenen Verfahren dauern zwischen 30 Minuten und einer Stunde. Die in diesem Artikel veröffentlichten Informationen gelten nur für StorSimple Virtual Arrays.
-
->[AZURE.IMPORTANT] 
->
->- StorSimple Virtual Array befindet sich in der Vorschauphase und ist für die Evaluierung und Bereitstellungsplanung vorgesehen. Die Installation dieser Vorschauversion in einer Produktionsumgebung wird nicht unterstützt. 
->- Wenn Probleme mit StorSimple Virtual Array auftreten, posten Sie sie im [StorSimple-MSDN-Forum](https://social.msdn.microsoft.com/Forums/home?forum=StorSimple).
 
 ## Voraussetzungen für das Setup
 
@@ -39,7 +34,7 @@ Die hier beschriebenen Verfahren dauern zwischen 30 Minuten und einer Stunde. Di
 
 - Sie verfügen über den Dienstregistrierungsschlüssel aus dem StorSimple Manager-Dienst, den Sie zum Verwalten von virtuellen StorSimple-Geräten erstellt haben. Weitere Informationen finden Sie unter **Schritt 2: Abrufen des Dienstregistrierungsschlüssels** in [Bereitstellen des StorSimple Virtual Array – Vorbereiten des Portals](storsimple-ova-deploy1-portal-prep.md#step-2-get-the-service-registration-key).
 
-- Falls dies das zweite oder ein nachfolgendes virtuelles Gerät ist, das Sie für einen vorhandenen StorSimple Manager-Dienst registrieren, sollten Sie den Dienstdaten-Verschlüsselungsschlüssel bereithalten. Dieser Schlüssel wurde generiert, als das erste Gerät erfolgreich für den Dienst registriert wurde. Wenn Sie diesen Schlüssel verloren haben, helfen Ihnen die Informationen unter **Abrufen des Dienstdaten-Verschlüsselungsschlüssels** in [Verwenden der Webbenutzeroberfläche zum Verwalten des StorSimple Virtual Array](storsimple-ova-web-ui-admin.md#get-the-service-data-encryption-key) weiter.
+- Falls dies das zweite oder ein nachfolgendes virtuelles Gerät ist, das Sie für einen vorhandenen StorSimple Manager-Dienst registrieren, sollten Sie den Dienstdaten-Verschlüsselungsschlüssel bereithalten. Dieser Schlüssel wurde generiert, als das erste Gerät erfolgreich für den Dienst registriert wurde. Wenn Sie diesen Schlüssel verloren haben, helfen Ihnen die Informationen unter **Abrufen des Verschlüsselungsschlüssels für Dienstdaten** in [Verwaltung des StorSimple Virtual Array (Vorschau) mithilfe der Web-UI](storsimple-ova-web-ui-admin.md#get-the-service-data-encryption-key) weiter.
 
 ## Schritt-für-Schritt-Einrichtung 
 
@@ -62,7 +57,7 @@ Verwenden Sie die folgende Schritt-für-Schritt-Anleitung, um Ihr virtuelles Sto
 
     ![Sicherheitszertifikatfehler](./media/storsimple-ova-deploy3-iscsi-setup/image3.png)
 
-2. Melden Sie sich an der Webbenutzeroberfläche des virtuellen Geräts als **StorSimpleAdmin** an. Geben Sie das Geräteadministratorkennwort ein, das Sie unter „Schritt 3: Starten des virtuellen Geräts“ im Abschnitt [Bereitstellen des StorSimple Virtual Array – Bereitstellen eines virtuellen Geräts in Hyper-V](storsimple-ova-deploy2-provision-hyperv.md) bzw. [Bereitstellen des StorSimple Virtual Array – Bereitstellen eines virtuellen Geräts in VMware](storsimple-ova-deploy2-provision-vmware.md) geändert haben.
+2. Melden Sie sich bei der Webbenutzeroberfläche des virtuellen Geräts als **StorSimpleAdmin** an. Geben Sie das Geräteadministratorkennwort ein, das Sie unter „Schritt 3: Starten des virtuellen Geräts“ im Abschnitt [Bereitstellen des StorSimple Virtual Array – Bereitstellen eines virtuellen Geräts in Hyper-V](storsimple-ova-deploy2-provision-hyperv.md) bzw. [Bereitstellen des StorSimple Virtual Array – Bereitstellen eines virtuellen Geräts in VMware](storsimple-ova-deploy2-provision-vmware.md) geändert haben.
 
     ![Anmeldeseite](./media/storsimple-ova-deploy3-iscsi-setup/image4.png)
 
@@ -90,7 +85,7 @@ Verwenden Sie die folgende Schritt-für-Schritt-Anleitung, um Ihr virtuelles Sto
 
     2. Klicken Sie auf das Symbol **iSCSI-Server** ![Symbol „iSCSI-Server“](./media/storsimple-ova-deploy3-iscsi-setup/image7.png) für den **Typ** von Gerät, den Sie erstellen. Ein iSCSI-Server ermöglicht Ihnen die Bereitstellung von Blockspeicher.
 
-    3. Geben Sie an, ob für das Gerät der Beitritt zu einer Domäne durchgeführt werden soll. Wenn es sich bei Ihrem Gerät um einen iSCSI-Server handelt, ist der Domänenbeitritt optional. Wenn Sie sich gegen den Beitritt des iSCSI-Servers zu einer Domäne entscheiden, klicken Sie auf **Übernehmen**, warten das Anwenden der Einstellungen ab und springen dann zum nächsten Schritt.
+    3. Geben Sie an, ob für das Gerät der Beitritt zu einer Domäne durchgeführt werden soll. Wenn es sich bei Ihrem Gerät um einen iSCSI-Server handelt, ist der Domänenbeitritt optional. Wenn Sie sich gegen den Beitritt des iSCSI-Servers zu einer Domäne entscheiden, klicken Sie auf **Übernehmen**, warten Sie das Anwenden der Einstellungen ab, und wechseln Sie dann zum nächsten Schritt.
 
         Gehen Sie wie folgt vor, wenn Sie für das Gerät den Domänenbeitritt durchführen möchten: Geben Sie einen **Domänennamen** ein (unten dargestellt).
 
@@ -115,7 +110,7 @@ Verwenden Sie die folgende Schritt-für-Schritt-Anleitung, um Ihr virtuelles Sto
 
     1. Geben Sie die **Webproxy-URL** in diesem Format an: *http://host-IP-Adresse* oder *FQDN:Portnummer*. Beachten Sie, dass HTTPS-URLs nicht unterstützt werden.
 
-    2. Geben Sie unter **Authentifizierung** die Option **Einfach**, **NTLM**, oder **Keine** an.
+    2. Geben Sie unter **Authentifizierung** die Option **Einfach**, **NTLM** oder **Keine** an.
 
     3. Wenn Sie die Authentifizierung verwenden, müssen Sie auch einen **Benutzernamen** und ein **Kennwort** angeben.
 
@@ -137,9 +132,9 @@ Verwenden Sie die folgende Schritt-für-Schritt-Anleitung, um Ihr virtuelles Sto
 
 9. Konfigurieren Sie die Cloudeinstellungen für Ihr Gerät. In diesem Schritt führen Sie die lokale Gerätekonfiguration durch und registrieren das Gerät dann beim StorSimple Manager-Dienst.
 
-    1. Geben Sie den **Dienstregistrierungsschlüssel** ein, den Sie in **Schritt 2: Abrufen des Dienstregistrierungsschlüssels** unter [Bereitstellen des StorSimple Virtual Array – Vorbereiten des Portals](storsimple-ova-deploy1-portal-prep.md#step-2-get-the-service-registration-key) beschafft haben.
+    1. Geben Sie den **Dienstregistrierungsschlüssel** ein, den Sie in **Schritt 2: Abrufen des Dienstregistrierungsschlüssels** in [Bereitstellen des StorSimple Virtual Array – Vorbereiten des Portals](storsimple-ova-deploy1-portal-prep.md#step-2-get-the-service-registration-key) erhalten haben.
 
-    2. Falls dies nicht das erste Gerät ist, das Sie bei diesem Dienst registrieren, müssen Sie den **Dienstdaten-Verschlüsselungsschlüssel** angeben. Dieser Schlüssel ist zusammen mit dem Dienstregistrierungsschlüssel zum Registrieren weiterer Geräte beim StorSimple Manager-Dienst erforderlich. Sehen Sie sich die weiteren Informationen zum [Abrufen des Verschlüsselungsschlüssels für Dienstdaten](storsimple-ova-web-ui-admin.md#get-the-service-data-encryption-key) für Ihre lokale Webbenutzeroberfläche an.
+    2. Falls dies nicht das erste Gerät ist, das Sie bei diesem Dienst registrieren, müssen Sie den **Dienstdaten-Verschlüsselungsschlüssel** angeben. Dieser Schlüssel ist zusammen mit dem Dienstregistrierungsschlüssel zum Registrieren weiterer Geräte beim StorSimple Manager-Dienst erforderlich. Weitere Informationen finden Sie unter [Abrufen des Verschlüsselungsschlüssels für Dienstdaten](storsimple-ova-web-ui-admin.md#get-the-service-data-encryption-key) für Ihre lokale Webbenutzeroberfläche an.
 
     3. Klicken Sie auf **Registrieren**. Das Gerät wird neu gestartet. Sie müssen ggf. zwei bis drei Minuten warten, bis das Gerät erfolgreich registriert wurde. Nachdem das Gerät neu gestartet wurde, wird die Anmeldeseite angezeigt.
 
@@ -197,7 +192,7 @@ Führen Sie die folgenden Schritte im klassischen Azure-Portal aus, um ein Volum
 
     2. Geben Sie eine Beschreibung für das Volume an. Die Beschreibung ist für die Identifizierung der Volumebesitzer hilfreich.
 
-    3. Wählen Sie einen Verwendungstyp für das Volume aus. Der Verwendungstyp kann **Mehrstufiges Volume** oder **Lokales Volume** lauten. (**Mehrstufiges Volume** ist die Standardeinstellung.) Für Workloads, die lokale Garantien, niedrige Latenzzeiten und höhere Leistung benötigen, wählen Sie ein **lokales** **Volume** aus. Wählen Sie für alle anderen Daten ein **mehrstufiges** **Volume** aus.
+    3. Wählen Sie einen Verwendungstyp für das Volume aus. Der Verwendungstyp kann **Mehrstufiges Volume** oder **Lokales Volume** lauten. (**Mehrstufiges Volume** ist die Standardeinstellung.) Für Workloads, die lokale Garantien, niedrige Latenzzeiten und höhere Leistung benötigen, wählen Sie **Lokales** **Volume** aus. Wählen Sie für alle anderen Daten **Mehrstufiges** **Volume** aus.
 
         Ein lokales Volume wird mit vollständiger Speicherzuweisung (Thick Provisioning) bereitgestellt und stellt sicher, dass die primären Daten auf dem Volume auf dem Gerät verbleiben und nicht in die Cloud übergehen. Wenn Sie ein lokales Volume erstellen, überprüft das Gerät den verfügbaren Speicherplatz auf den lokalen Ebenen, um ein Volume in der angeforderten Größe bereitzustellen. Bei der Erstellung eines lokalen Volumes müssen vorhandene Daten unter Umständen vom Gerät in die Cloud übertragen werden, und das Erstellen des Volumes kann längere Zeit in Anspruch nehmen. Die gesamte Zeit hängt von der Größe des bereitgestellten Volumes, von der verfügbaren Netzwerkbandbreite und von den Daten auf Ihrem Gerät ab.
 
@@ -265,7 +260,7 @@ Führen Sie die folgenden Schritte aus, um Ihre StorSimple-Volumes auf einem Win
 
     ![Datenträger 1 initialisieren](./media/storsimple-ova-deploy3-iscsi-setup/image27.png)
 
-10. Wählen Sie im Dialogfeld die zu initialisierenden Datenträger aus, und klicken Sie auf **OK**.
+10. Wählen Sie im Dialogfeld die zu initialisierenden Datenträger aus, und klicken Sie dann auf **OK**.
 
     ![Datenträger 2 initialisieren](./media/storsimple-ova-deploy3-iscsi-setup/image28.png)
 
@@ -273,7 +268,7 @@ Führen Sie die folgenden Schritte aus, um Ihre StorSimple-Volumes auf einem Win
 
     ![Assistent für neue Volumes 1](./media/storsimple-ova-deploy3-iscsi-setup/image29.png)
 
-12. Weisen Sie dem Volume einen Laufwerkbuchstaben zu, und klicken Sie auf **Weiter**.
+12. Weisen Sie dem Volume einen Laufwerkbuchstaben zu, und klicken Sie dann auf **Weiter**.
 
     ![Assistent für neue Volumes 2](./media/storsimple-ova-deploy3-iscsi-setup/image30.png)
 
@@ -310,4 +305,4 @@ Führen Sie die folgenden Schritte aus, um den IQN (iSCSI Qualified Name) eines 
 <!--Reference link-->
 [1]: https://technet.microsoft.com/library/ee338480(WS.10).aspx
 
-<!----HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

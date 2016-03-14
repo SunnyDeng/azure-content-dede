@@ -3,7 +3,7 @@
 	description="Die neuesten Updates für Visual Studio-Tools für Application Insights" 
 	services="application-insights" 
     documentationCenter=""
-	authors="dimazaid" 
+	authors="aruna" 
 	manager="douge"/>
 <tags 
 	ms.service="application-insights" 
@@ -11,16 +11,35 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/19/2016" 
-	ms.author="dimazaid"/>
+	ms.date="02/26/2016" 
+	ms.author="acearun"/>
  
-# Versionshinweise zu Application Insights-Tools für Visual Studio, Version 4.2
+# Versionshinweise zu Application Insights-Tools für Visual Studio
+
+## Version 4.3
+### Suchen von Telemetriedaten aus lokalen Debugsitzungen
+In dieser Version führen wir eine Möglichkeit zum Suchen nach Application Insights-Telemetriedaten ein, die in der Visual Studio-Debugsitzung generiert wurden. Die Suche war bisher nur möglich, wenn Sie Ihre App bei Application Insights registriert hatten. Ab dieser Version muss für die App nur das Application Insights-SDK installiert werden, um lokale Telemetriedaten zu suchen.
+
+#### Bei einer ASP.NET-Anwendung mit Application Insights-SDK
+
+- Debuggen Sie die Anwendung.
+- Öffnen Sie die Suche in Application Insights mithilfe einer der folgenden Vorgehensweisen
+	- Ansicht-> Weitere Fenster -> Application Insights-Suche.
+	- Klicken Sie auf die Symbolleisten-Schaltfläche „Application Insights“.
+	- Erweitern Sie im Projektmappen-Explorer „ApplicationInsights.config“ -> Debugsitzungstelemetrie suchen.
+- Wenn Sie nicht bei Application Insights angemeldet sind, wird das Fenster „Suchen“ im Modus „Debugsitzungstelemetrie“ geöffnet.
+- Klicken Sie auf das Suchsymbol, um Ihre lokale Telemetrie anzuzeigen.
+
+![Upload abgeschlossen](./media/app-insights-release-notes-vsix/LocalSearch.png)
+
+
+
 ##Version 4.2
-In dieser Version haben wir Features zum Suchen von Daten im Ereigniskontext sowie das Senden von Protokolldaten an Application Insights vereinfacht und die Möglichkeit geschaffen, aus mehr Datenereignissen in den Code zu springen. Diese Erweiterung wird monatlich aktualisiert. Wenn Sie Feedback haben oder Funktionsanforderungen haben, senden Sie diese an aidevtools@microsoft.com.
-###- Protokollierung mit 0 Klicks
+In dieser Version haben wir Features zum Suchen von Daten im Ereigniskontext sowie das Senden von Protokolldaten an Application Insights vereinfacht und die Möglichkeit geschaffen, aus mehr Datenereignissen in den Code zu springen. Diese Erweiterung wird monatlich aktualisiert. Wenn Sie Feedback oder Funktionsanforderungen haben, senden Sie diese an aidevtools@microsoft.com.
+###- Protokollierung mit 0 Klicks
 Wenn Sie NLog, Log4Net oder System.Diagnostics für die Ablaufverfolgung verwenden, dann müssen Sie nicht alle Ihre Ablaufverfolgungen nach Application Insights verschieben. Die Application Insights-Protokollierungsadapter sind nun direkt in die normale Konfigurationsoberfläche integriert. Falls Sie bereits eines dieser Protokollierungsframeworks konfiguriert haben, können Sie dies folgendermaßen erreichen:
 ####Wenn Sie bereits Application Insights hinzugefügt haben
-- Klicken Sie mit der rechten Maustaste auf den Projektknoten, und wählen Sie dann „Application Insights konfigurieren“ aus. Vergewissern Sie sich, dass der richtige Adapter im Konfigurationsfenster hinzugefügt werden kann. 
+- Klicken Sie mit der rechten Maustaste auf den Projektknoten, wählen Sie „Application Insights“ und dann „Application Insights konfigurieren“ aus. Vergewissern Sie sich, dass der richtige Adapter im Konfigurationsfenster hinzugefügt werden kann. 
 - Wenn Sie die Projektmappe erstellen, können Sie auch im Popupfenster, das oben rechts angezeigt wird, auf „Konfigurieren“ klicken. ![Anmeldungspopup](./media/app-insights-release-notes-vsix/LoggingToast.png)
 
 Nachdem Sie den Protokollierungsadapter installiert haben, können Sie die Anwendung ausführen und überprüfen, ob die Daten wie folgt auf der Registerkarte der Diagnosetools angezeigt werden: ![Ablaufverfolgungen](./media/app-insights-release-notes-vsix/Traces.png)
@@ -30,7 +49,7 @@ In der neuen Version können Benutzer dann auf einen beliebigen Wert in den Erei
 Wir haben das Aussehen des Suchfensters verbessert, um Benutzer beim Suchen ihrer Daten in der Produktion zu unterstützen. ![Fenster „Suchen“](./media/app-insights-release-notes-vsix/SearchWindow.png)
 ###- Benutzer können alle Telemetrieereignisse anzeigen, die dem Ereignis zugeordnet sind.
 Es wurde eine neue Registerkarte neben den Ereignisdetails hinzugefügt, die vordefinierte Abfragen zum Anzeigen aller Daten zu dem Telemetrieereignis, das der Benutzer anzeigt, enthält. Beispiel: Wenn die Anforderung ein Feld für die Vorgangs-ID enthält, dann hat jedes Ereignis zu dieser Anforderung die gleiche Vorgangs-ID. Wenn also während der Verarbeitung der Anforderung eine Ausnahme auftritt, erhält sie die gleiche Vorgangs-ID wie die Anforderung, sodass sie einfacher aufzufinden ist, usw. Damit können Benutzer, die eine Anforderung anzeigen, jetzt einfach auf „Alle Telemetriedaten für diesen Vorgang“ klicken, um eine neue Registerkarte mit den neuen Suchergebnissen zu öffnen. ![Verwandte Elemente](./media/app-insights-release-notes-vsix/RelatedItems.png)
-### - Möglichkeit zum Durchlaufen des Suchverlaufs vorwärts und rückwärts hinzugefügt
+### - Vorwärts/Rückwärts-Feature im Suchverlauf hinzugefügt.
 Benutzer können nun zwischen Suchergebnissen vor- und zurückwechseln. ![Zurück navigieren](./media/app-insights-release-notes-vsix/GoBAck.png)
 
 ##Version 4.1
@@ -60,7 +79,7 @@ Ein Popupfenster wird angezeigt, nachdem das Projekt online veröffentlicht wurd
 
 ![Popup](./media/app-insights-release-notes-vsix/publishtoast.png)
 
-## Version 4.0
+## Version 4.0
 
 ###Application Insights-Daten in Visual Studio suchen
 Genau wie bei der Suchenfunktion im Application Insights-Portal können Sie filtern und nach Ereignistypen, Eigenschaftswerten und Text suchen sowie einzelne Ereignisse überprüfen.
@@ -87,4 +106,4 @@ In zukünftigen Versionen der Application Insights-Erweiterung werden wir neue F
 
  
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0302_2016-->

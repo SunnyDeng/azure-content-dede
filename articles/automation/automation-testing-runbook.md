@@ -3,7 +3,7 @@
 	description="Bevor Sie ein Runbook in Azure Automation veröffentlichen, können Sie es testen, um sicherzustellen, dass es wie erwartet funktioniert. In diesem Artikel wird beschrieben, wie Sie ein Runbook testen und die Ausgabe anzeigen."
 	services="automation"
 	documentationCenter=""
-	authors="bwren"
+	authors="mgoedtel"
 	manager="stevenka"
 	editor="tysonn" />
 <tags 
@@ -12,7 +12,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="infrastructure-services"
-	ms.date="02/18/2016"
+	ms.date="02/23/2016"
 	ms.author="magoedte;bwren" />
 
 # Testen eines Runbooks in Azure Automation
@@ -55,4 +55,4 @@ Sie können im Azure-Portal nur [PowerShell-Workflow-Runbooks](automation-runboo
 - [Bearbeiten von Textrunbooks in Azure Automation](automation-edit-textual-runbook.md)
 - [Runbookausgabe und -meldungen in Azure Automation](automation-runbook-output-and-messages.md)
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

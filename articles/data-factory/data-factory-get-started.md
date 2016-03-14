@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Tutorial: Verwenden der Kopieraktivität in einer Azure Data Factory-Pipeline"
+	pageTitle="Tutorial: Kopieren von Daten aus Azure Blob Storage in Azure SQL-Datenbank"
 	description="Dieses Tutorial veranschaulicht das Verwenden der Kopieraktivität in einer Azure Data Factory-Pipeline, um Daten aus einem Azure-Blob in eine Azure SQL-Datenbank zu kopieren."
 	services="data-factory"
 	documentationCenter=""
@@ -16,14 +16,16 @@
 	ms.date="02/01/2016"
 	ms.author="spelluru"/>
 
-# Tutorial: Kopieren von Daten aus einem Azure-Blob in Azure SQL
+# Tutorial: Kopieren von Daten aus Azure Blob Storage in Azure SQL-Datenbank
 > [AZURE.SELECTOR]
-- [Tutorial Overview](data-factory-get-started.md)
-- [Using Data Factory Editor](data-factory-get-started-using-editor.md)
-- [Using PowerShell](data-factory-monitor-manage-using-powershell.md)
-- [Using Visual Studio](data-factory-get-started-using-vs.md)
+- [Übersicht über das Tutorial](data-factory-get-started.md)
+- [Verwenden des Data Factory-Editors](data-factory-get-started-using-editor.md)
+- [Mithilfe von PowerShell](data-factory-monitor-manage-using-powershell.md)
+- [Verwenden von Visual Studio](data-factory-get-started-using-vs.md)
 
-Dieser Artikel hilft Ihnen beim raschen Einstieg in die Verwendung des Azure Data Factory-Diensts. Das Lernprogramm zeigt, wie Sie erst eine Azure Data Factory und dann eine Pipeline in der Data Factory erstellen, um Daten aus einem Azure-Blobspeicher in eine Azure SQL-Datenbank zu kopieren.
+In diesem Tutorial erstellen Sie zunächst eine Azure Data Factory und dann mit einer Kopieraktivität eine Pipeline, um Daten von einem Azure Blob Storage in eine Azure SQL-Datenbank zu kopieren.
+
+Die Kopieraktivität führt die Datenverschiebung in Azure Data Factory durch, und die Aktivität wird von einem global verfügbaren Dienst gestützt, mit dem Daten zwischen verschiedenen Datenspeichern auf sichere, zuverlässige und skalierbare Weise kopiert werden können. Ausführliche Informationen zur Kopieraktivität finden Sie unter [Datenverschiebungsaktivitäten](data-factory-data-movement-activities.md).
 
 > [AZURE.NOTE] Eine ausführliche Übersicht über den Data Factory-Dienst finden Sie im Artikel [Einführung in Azure Data Factory][data-factory-introduction].
 
@@ -42,7 +44,7 @@ Sie benötigen in diesem Lernprogramm den Kontonamen und -schlüssel Ihres Azure
 2. Klicken Sie auf der linken Seite auf den Hub **Durchsuchen**, und wählen Sie **Speicherkonten** aus.
 3. Wählen Sie auf dem Blatt **Speicherkonten** das **Azure-Speicherkonto** aus, das Sie in diesem Lernprogramm verwenden möchten.
 4. Klicken Sie auf dem Blatt **SPEICHER** auf die Kachel **SCHLÜSSEL**.
-5. Klicken Sie auf dem Blatt **Schlüssel verwalten** auf die (Bild-) Schaltfläche **Kopieren** neben dem Textfeld **SPEICHERKONTONAME**, und speichern Sie den Eintrag z. B. in einer Textdatei.  
+5. Klicken Sie auf dem Blatt **Schlüssel verwalten** auf die (Bild-) Schaltfläche **Kopieren** neben dem Textfeld **SPEICHERKONTONAME**, und speichern Sie den Eintrag z. B. in einer Textdatei.  
 6. Wiederholen Sie den vorherigen Schritt zum Kopieren oder Notieren des **PRIMÄREN ZUGRIFFSSCHLÜSSELS**.
 7. Schließen Sie alle Blätter, indem Sie auf **X** klicken.
 
@@ -97,8 +99,10 @@ Gehen Sie wie folgt vor:
 
 - Klicken Sie oben auf den Link [Data Factory-Editor verwenden](data-factory-get-started-using-editor.md), um das Tutorial mithilfe des Data Factory-Editors auszuführen, der Teil des klassischen Azure-Portals ist.
 - Klicken Sie oben auf den Link [PowerShell verwenden](data-factory-monitor-manage-using-powershell.md), um das Lernprogramm mit Azure PowerShell auszuführen.
-- Klicken Sie oben auf den Link [Mit Visual Studio](data-factory-get-started-using-vs.md), um das Lernprogramm mit Visual Studio 2013 auszuführen.
- 
+- Klicken Sie oben auf den Link [Mit Visual Studio](data-factory-get-started-using-vs.md), um das Lernprogramm mit Visual Studio 2013 auszuführen.
+
+## Kopieraktivität
+Ausführliche Informationen zur Kopieraktivität in Azure Data Factory finden Sie im Artikel [Datenverschiebungsaktivitäten](data-factory-data-movement-activities.md).
 
 
 <!--Link references-->
@@ -111,4 +115,4 @@ Gehen Sie wie folgt vor:
 [data-factory-create-storage]: http://azure.microsoft.com/documentation/articles/storage-create-storage-account/#create-a-storage-account
 [data-factory-create-sql-database]: ../sql-database/sql-database-get-started.md
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0302_2016-->

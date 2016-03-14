@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-ios"
 	ms.devlang="objective-c"
 	ms.topic="article"
-	ms.date="08/05/2015"
+	ms.date="02/29/2016"
 	ms.author="MehrdadMzfr" />
 
 #Integrieren von Mobile Engagement unter iOS
@@ -26,7 +26,7 @@
 
 In diesem Verfahren wird die einfachste Art der Aktivierung der Analyse- und Überwachungsfunktionen von Mobile Engagement in Ihrer iOS-Anwendung beschrieben.
 
-> [AZURE.IMPORTANT]Das Engagement SDK erfordert iOS6+: Das Bereitstellungsziel Ihre Anwendung muss mindestens über iOS 6 verfügen.
+> [AZURE.IMPORTANT] Das Engagement SDK erfordert iOS6+: Das Bereitstellungsziel Ihre Anwendung muss mindestens über iOS 6 verfügen.
 
 Die folgenden Schritte sind ausreichend, um den Bericht von Protokollen zu aktivieren, die zur Berechnung aller Statistiken zu Benutzern, Sitzungen, Aktivitäten, Abstürzen und technischen Informationen notwendig sind. Der Bericht von Protokollen, die zur Berechnung anderer Statistiken wie Ereignisse, Fehler und Aufträge erforderlich ist, muss manuell mithilfe der Engagement-API erfolgen (siehe [So verwenden Sie die erweiterte Mobile Engagement API für Tags in Ihrer iOS-App](mobile-engagement-ios-use-engagement-api.md)), da diese Statistiken von der Anwendung abhängig sind.
 
@@ -37,14 +37,14 @@ Fügen Sie das Engagement-SDK zum iOS-Projekt hinzu. Klicken Sie in Xcode mit de
 
 Engagement erfordert, dass zusätzliche Frameworks funktionieren: Öffnen Sie im Projektexplorer Ihren Projektbereich, und wählen Sie das richtige Ziel aus. Öffnen Sie dann die Registerkarte **„Build phases“**. Fügen Sie anschließend im Menü **„Link Binary With Libraries“** die folgenden Frameworks hinzu:
 
- -   `AdSupport.framework` – Legen Sie den Link als `Optional` fest.
- -   `SystemConfiguration.framework`
- -   `CoreTelephony.framework`
- -   `CFNetwork.framework`
- -   `CoreLocation.framework`
- -   `libxml2.dylib`
-       
-> [AZURE.NOTE] Das AdSupport-Framework kann entfernt werden. Dieses Framework ist für Engagement zum Erfassen der IDFA erforderlich. Die IDFA-Erfassung kann jedoch mit \<ios-sdk-engagement-idfa\> deaktiviert werden, um der neuen Apple-Richtlinie zu dieser ID zu entsprechen.
+> -   `AdSupport.framework` – Legen Sie den Link als `Optional` fest.
+> -   `SystemConfiguration.framework`
+> -   `CoreTelephony.framework`
+> -   `CFNetwork.framework`
+> -   `CoreLocation.framework`
+> -   `libxml2.dylib`
+
+> [AZURE.NOTE] Das AdSupport-Framework kann entfernt werden. Dieses Framework ist für Engagement zum Erfassen der IDFA erforderlich. Die IDFA-Erfassung kann jedoch mit <ios-sdk-engagement-idfa> deaktiviert werden, um der neuen Apple-Richtlinie zu dieser ID zu entsprechen.
 
 ##Initialisieren des Engagement-SDK
 
@@ -68,7 +68,7 @@ Sie müssen Ihre Anwendungsstellvertretung ändern:
 
 ### Empfohlene Methode: Überladen der `UIViewController`-Klassen
 
-Um den Bericht für alle Protokolle zu aktivieren, die von Engagement zum Berechnen von Benutzern, Sitzungen, Aktivitäten, Abstürzen und technischen Statistiken erforderlich sind, müssen Sie einfach dafür sorgen, dass all Ihre `UIViewController`-Unterklassen von den entsprechenden `EngagementViewController`-Klassen abgeleitet werden (gleiche Regel für `UITableViewController` -\> `EngagementTableViewController`).
+Um den Bericht für alle Protokolle zu aktivieren, die von Engagement zum Berechnen von Benutzern, Sitzungen, Aktivitäten, Abstürzen und technischen Statistiken erforderlich sind, müssen Sie einfach dafür sorgen, dass all Ihre `UIViewController`-Unterklassen von den entsprechenden `EngagementViewController`-Klassen abgeleitet werden (gleiche Regel für `UITableViewController` -\\> `EngagementTableViewController`).
 
 **Ohne Engagement:**
 
@@ -99,7 +99,7 @@ Um den Bericht für alle Protokolle zu aktivieren, die von Engagement zum Berech
 
 Wenn Sie die `UIViewController`-Klassen nicht überladen können oder möchten, können Sie die Aktivitäten stattdessen durch direktes Aufrufen der Methoden von `EngagementAgent` starten.
 
-> [AZURE.IMPORTANT]Das iOS SDK ruft die `endActivity()`-Methode automatisch auf, wenn die Anwendung geschlossen wird. Daher wird *dringend* empfohlen, bei jeder Änderung der Benutzeraktivität die Methode `startActivity` und *niemals* die Methode `endActivity` aufzurufen, da hierdurch die Beendigung der aktuellen Sitzung erzwungen wird.
+> [AZURE.IMPORTANT] Das iOS SDK ruft die `endActivity()`-Methode automatisch auf, wenn die Anwendung geschlossen wird. Daher wird *dringend* empfohlen, bei jeder Änderung der Benutzeraktivität die Methode `startActivity` und *niemals* die Methode `endActivity` aufzurufen, da hierdurch die Beendigung der aktuellen Sitzung erzwungen wird.
 
 ##Speicherortberichte
 
@@ -124,7 +124,7 @@ Fügen Sie die folgende Zeile hinter der Initialisierung des Engagement-Agent hi
 
 ### Echtzeit-Berichterstellung für Speicherorte
 
-Mithilfe der Echtzeit-Berichterstellung für Speicherorte können der Längen- und Breitengrad gemeldet werden, die Geräten zugeordnet sind. Diese Art der Berichterstellung für Speicherorte verwendet ausschließlich Netzwerkspeicherorte (auf Basis von Zell-ID oder WLAN), und die Berichterstellung ist nur aktiv, wenn die Anwendung im Vordergrund ausgeführt wird (d. h. während einer Sitzung).
+Mithilfe der Echtzeit-Berichterstellung für Speicherorte können der Längen- und Breitengrad gemeldet werden, die Geräten zugeordnet sind. Diese Art der Berichterstellung für Speicherorte verwendet ausschließlich Netzwerkspeicherorte (auf Basis von Zell-ID oder WLAN), und die Berichterstellung ist nur aktiv, wenn die Anwendung im Vordergrund ausgeführt wird (d. h. während einer Sitzung).
 
 Echtzeit-Speicherorte werden *NICHT* zum Berechnen von Statistiken verwendet. Ihr einziger Zweck ist es, die Verwendung des Echtzeit-Geofencing <Reach-Audience-geofencing >Kriteriums in Reach-Kampagnen zu ermöglichen.
 
@@ -140,11 +140,11 @@ Die Echtzeit-Berichterstellung für Speicherorte verwendet standardmäßig nur n
 
 #### Berichterstellung im Hintergrund
 
-Die Echtzeit-Berichterstellung für Speicherorte ist standardmäßig nur aktiv, wenn die Anwendung im Vordergrund ausgeführt wird (d. h. während einer Sitzung). Fügen Sie Folgendes hinzu, um die Berichterstellung auch im Hintergrund zu aktivieren:
+Die Echtzeit-Berichterstellung für Speicherorte ist standardmäßig nur aktiv, wenn die Anwendung im Vordergrund ausgeführt wird (d. h. während einer Sitzung). Fügen Sie Folgendes hinzu, um die Berichterstellung auch im Hintergrund zu aktivieren:
 
 	[[EngagementAgent shared] setBackgroundRealtimeLocationReport:YES withLaunchOptions:launchOptions];
 
-> [AZURE.NOTE]Wenn die Anwendung im Hintergrund ausgeführt wird, werden nur netzwerkbasierte Speicherorte gemeldet, auch wenn Sie das GPS aktiviert haben.
+> [AZURE.NOTE] Wenn die Anwendung im Hintergrund ausgeführt wird, werden nur netzwerkbasierte Speicherorte gemeldet, auch wenn Sie das GPS aktiviert haben.
 
 Durch die Implementierung dieser Funktion wird [startMonitoringSignificantLocationChanges] aufgerufen, wenn die Anwendung in den Hintergrund wechselt. Beachten Sie, dass Ihre Anwendung im Hintergrund automatisch neu gestartet wird, wenn ein neues Standortereignis eintrifft.
 
@@ -208,4 +208,4 @@ Das folgende Beispiel von `Settings.bundle` veranschaulicht die Implementierung:
 [startMonitoringSignificantLocationChanges]: http://developer.apple.com/library/IOs/#documentation/CoreLocation/Reference/CLLocationManager_Class/CLLocationManager/CLLocationManager.html#//apple_ref/occ/instm/CLLocationManager/startMonitoringSignificantLocationChanges
 [IDFA]: https://developer.apple.com/library/ios/documentation/AdSupport/Reference/ASIdentifierManager_Ref/ASIdentifierManager.html#//apple_ref/occ/instp/ASIdentifierManager/advertisingIdentifier
 
-<!----HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0302_2016-->

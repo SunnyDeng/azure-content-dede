@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/19/2015"
+	ms.date="02/26/2016"
 	ms.author="femila"/>
 
 # Einrichten eines Windows 10-Geräts mit Azure AD in den Einstellungen
@@ -42,4 +42,4 @@ Wenn Sie bereits Windows 7 oder Windows 8 verwenden und Ihr Computer oder Gerät
 * [Einrichten von Azure AD Join](active-directory-azureadjoin-setup.md)
 * [Authentifizieren von Identitäten ohne Kennwörter über Microsoft Passport](active-directory-azureadjoin-passport.md)
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

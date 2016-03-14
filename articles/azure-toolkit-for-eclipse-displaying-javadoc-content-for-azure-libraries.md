@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="multiple"
     ms.devlang="Java"
     ms.topic="article"
-    ms.date="11/30/2015" 
+    ms.date="02/26/2016" 
     ms.author="robmcm"/>
 
 <!-- Legacy MSDN URL = https://msdn.microsoft.com/library/azure/hh698319.aspx -->
@@ -43,7 +43,7 @@ Sobald die Zuordnung mit der Bibliothek erfolgt ist, sollten die Javadoc-Inhalte
 
 [Azure-Toolkit für Eclipse][]
 
-[Erstellen einer Hello World-Anwendung für Azure in Eclipse][]
+[Creating a Hello World Application for Azure in Eclipse (in englischer Sprache)][]
 
 [Installieren des Azure-Toolkits für Eclipse][]
 
@@ -53,7 +53,7 @@ Weitere Informationen zum Verwenden von Azure mit Java finden Sie im [Azure Java
 
 [Azure Java Developer Center]: http://go.microsoft.com/fwlink/?LinkID=699547
 [Azure-Toolkit für Eclipse]: http://go.microsoft.com/fwlink/?LinkID=699529
-[Erstellen einer Hello World-Anwendung für Azure in Eclipse]: http://go.microsoft.com/fwlink/?LinkID=699533
+[Creating a Hello World Application for Azure in Eclipse (in englischer Sprache)]: http://go.microsoft.com/fwlink/?LinkID=699533
 [Installieren des Azure-Toolkits für Eclipse]: http://go.microsoft.com/fwlink/?LinkId=699546
 
 <!-- IMG List -->
@@ -61,4 +61,4 @@ Weitere Informationen zum Verwenden von Azure mit Java finden Sie im [Azure Java
 [ic553487]: ./media/azure-toolkit-for-eclipse-displaying-javadoc-content-for-azure-libraries/ic553487.png
 [ic553488]: ./media/azure-toolkit-for-eclipse-displaying-javadoc-content-for-azure-libraries/ic553488.png
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0302_2016-->

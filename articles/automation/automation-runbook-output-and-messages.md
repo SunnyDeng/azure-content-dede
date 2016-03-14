@@ -1,23 +1,23 @@
-<properties 
+<properties
    pageTitle="Runbookausgabe und -meldungen in Azure Automation | Microsoft Azure"
    description="Beschreibt, wie Ausgaben und Fehlermeldungen von Runbooks in Azure Automation erstellt und abgerufen werden."
    services="automation"
    documentationCenter=""
-   authors="bwren"
+   authors="mgoedtel"
    manager="stevenka"
    editor="tysonn" />
-<tags 
+<tags
    ms.service="automation"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="01/27/2016"
-   ms.author="bwren" />
+   ms.date="03/02/2016"
+   ms.author="magoedte;bwren" />
 
 # Runbookausgabe und -meldungen in Azure Automation
 
-Die meisten Azure Automation-Runbooks haben eine Ausgabe, z. B. eine Fehlermeldung für den Benutzer oder ein komplexes Objekt, das von einem anderen Workflow genutzt werden soll. Windows PowerShell bietet [mehrere Datenströme](http://blogs.technet.com/heyscriptingguy/archive/2014/03/30/understanding-streams-redirection-and-write-host-in-powershell.aspx) zum Senden der Ausgabe eines Skripts oder Workflows. Da jeder dieser Datenströme in Azure Automation unterschiedlich verwendet wird, sollten Sie beim Erstellen eines Runbooks die bewährten Methoden befolgen.
+Die meisten Azure Automation-Runbooks haben eine Ausgabe, z. B. eine Fehlermeldung für den Benutzer oder ein komplexes Objekt, das von einem anderen Workflow genutzt werden soll. Windows PowerShell bietet [mehrere Datenströme](http://blogs.technet.com/heyscriptingguy/archive/2014/03/30/understanding-streams-redirection-and-write-host-in-powershell.aspx) zum Senden der Ausgabe eines Skripts oder Workflows. Da jeder dieser Datenströme in Azure Automation unterschiedlich verwendet wird, sollten Sie beim Erstellen eines Runbooks die bewährten Methoden befolgen.
 
 Die folgende Tabelle enthält eine kurze Beschreibung der einzelnen Datenströme und erläutert ihr Verhalten im Azure-Verwaltungsportal beim Ausführen veröffentlichter Runbooks und [Testen von Runbooks](http://msdn.microsoft.com/library/azure/dn879147.aspx). Ausführlichere Informationen zu den verschiedenen Datenströmen finden Sie in den nachfolgenden Abschnitten.
 
@@ -51,7 +51,7 @@ Sehen Sie sich folgendes Beispielrunbook an:
 	   Write-Verbose "Verbose outside of function"
 	   Write-Output "Output outside of function"
 	   $functionOutput = Test-Function
-	
+
 	   Function Test-Function
 	   {
 	      Write-Verbose "Verbose inside of function"
@@ -77,7 +77,7 @@ Das folgende Beispielrunbook gibt ein Zeichenfolgenobjekt aus und enthält eine 
 	Workflow Test-Runbook
 	{
 	   [OutputType([string])]
-	
+
 	   $output = "This is some string output."
 	   Write-Output $output
 	}
@@ -88,12 +88,12 @@ Im Gegensatz zum Ausgabedatenstrom dienen Nachrichtendatenströme zum Übermitte
 
 ### Warnungs- und Fehlerdatenströme
 
-Die Warnungs- und Fehlerdatenströme dienen zum Protokollieren von Problemen, die in einem Runbook auftreten. Sie werden in den Auftragsverlauf geschrieben, wenn ein Runbook ausgeführt wird, und im Testausgabebereich im Azure-Verwaltungsportal angezeigt, wenn ein Runbook getestet wird. Standardmäßig wird das Runbook nach einer Warnung oder einem Fehler fortgesetzt. Sie können angeben, dass das Runbook bei einer Warnung oder einem Fehler angehalten werden soll, indem Sie vor dem Erstellen der Meldung eine [Einstellungsvariable](#PreferenceVariables) im Runbook festlegen. Soll ein Runbook beim Auftreten eines Fehlers wie bei einer Ausnahme angehalten werden, legen Sie z. B. **$ErrorActionPreference** auf „Stop“ fest.
+Die Warnungs- und Fehlerdatenströme dienen zum Protokollieren von Problemen, die in einem Runbook auftreten. Sie werden in den Auftragsverlauf geschrieben, wenn ein Runbook ausgeführt wird, und im Testausgabebereich im Azure-Verwaltungsportal angezeigt, wenn ein Runbook getestet wird. Standardmäßig wird das Runbook nach einer Warnung oder einem Fehler fortgesetzt. Sie können angeben, dass das Runbook bei einer Warnung oder einem Fehler angehalten werden soll, indem Sie vor dem Erstellen der Meldung eine [Einstellungsvariable](#PreferenceVariables) im Runbook festlegen. Soll ein Runbook beim Auftreten eines Fehlers wie bei einer Ausnahme angehalten werden, legen Sie z. B. **$ErrorActionPreference** auf „Stop“ fest.
 
 Erstellen Sie mit dem Cmdlet [Write-Warning](https://technet.microsoft.com/library/hh849931.aspx) bzw. [Write-Error](http://technet.microsoft.com/library/hh849962.aspx) eine Warn- oder Fehlermeldung. Aktivitäten können ebenfalls in diese Datenströme schreiben.
 
 	#The following lines create a warning message and then an error message that will suspend the runbook.
-	
+
 	$ErrorActionPreference = "Stop"
 	Write-Warning –Message "This is a warning message."
 	Write-Error –Message "This is an error message that will stop the runbook because of the preference variable."
@@ -107,7 +107,7 @@ Beim [Testen eines Runbooks](http://msdn.microsoft.com/library/azure/dn879147.as
 Erstellen Sie eine ausführliche Meldung mit dem Cmdlet [Write-Verbose](http://technet.microsoft.com/library/hh849951.aspx).
 
 	#The following line creates a verbose message.
-	
+
 	Write-Verbose –Message "This is a verbose message."
 
 ### Debugdatenstrom
@@ -152,20 +152,42 @@ In Windows PowerShell können Sie Ausgaben und Meldungen mithilfe des Cmdlets [G
 
 Im folgenden Beispiel wird ein Beispielrunbook gestartet und anschließend auf seinen Abschluss gewartet. Danach wird der Ausgabedatenstrom aus dem Auftrag abgerufen.
 
-	$job = Start-AzureAutomationRunbook –AutomationAccountName "MyAutomationAccount" –Name "Test-Runbook" 
-	
+	$job = Start-AzureAutomationRunbook –AutomationAccountName "MyAutomationAccount" –Name "Test-Runbook"
+
 	$doLoop = $true
 	While ($doLoop) {
 	   $job = Get-AzureAutomationJob –AutomationAccountName "MyAutomationAccount" -Id $job.Id
 	   $status = $job.Status
-	   $doLoop = (($status -ne "Completed") -and ($status -ne "Failed") -and ($status -ne "Suspended") -and ($status -ne "Stopped") 
+	   $doLoop = (($status -ne "Completed") -and ($status -ne "Failed") -and ($status -ne "Suspended") -and ($status -ne "Stopped")
 	}
-	
+
 	Get-AzureAutomationJobOutput –AutomationAccountName "MyAutomationAccount" -Id $job.Id –Stream Output
+
+### Grafische Inhaltserstellung
+
+Für grafische Runbooks steht eine zusätzliche Protokollierung in Form einer Ablaufverfolgung auf Aktivitätsebene zur Verfügung. Es gibt zwei Stufen der Ablaufverfolgung: „Standard“ und „Ausführlich“. Bei einer Ablaufverfolgung der Stufe „Standard“ können sie die Start- und Endzeit jeder Aktivität im Runbook sowie Informationen zu Aktivitätswiederholungen sehen, beispielsweise die Anzahl von Versuchen sowie die Startzeit der Aktivität. Bei einer Ablaufverfolgung der Stufe „Ausführlich“ erhalten Sie alle Informationen der Stufe „Standard“ plus Ein- und Ausgabedaten für jede Aktivität. Beachten Sie, dass die Ablaufverfolgungsdatensätze aktuell mithilfe des ausführlichen Datenstroms geschrieben werden, deshalb müssen Sie die ausführliche Protokollierung aktivieren, wenn Sie die Ablaufverfolgung aktivieren. Für grafische Runbooks mit aktivierter Ablaufverfolgung ist es nicht mehr erforderlich, Statusdatensätze zu protokollieren, da die Ablaufverfolgung der Stufe „Standard“ denselben Zweck erfüllt und mehr Informationen liefert.
+
+![Ansicht der Auftragsdatenströme bei der grafischen Inhaltserstellung](media/automation-runbook-output-and-messages/job_streams_view_blade.png)
+
+Sie können im oben angezeigten Screenshot sehen, dass bei aktivierter ausführlicher Protokollierung und Ablaufverfolgung für grafische Runbooks in der Ansicht der Datenströme für die Produktionsaufträge deutlich mehr Informationen zur Verfügung stehen. Diese zusätzlichen Informationen können für die Behandlung von Produktionsproblemen mit einem Runbook von wesentlicher Bedeutung sein. Deshalb sollten sie nur zu diesem Zweck und nicht als allgemeine Maßnahme aktiviert werden. Die Anzahl von Ablaufverfolgungsdatensätzen kann erheblich sein. Bei der Ablaufverfolgung für grafische Runbooks können Sie zwei bis vier Datensätze pro Aktivität erhalten – abhängig davon, ob Sie die Ablaufverfolgung der Stufe „Standard“ oder „Ausführlich“ konfiguriert haben. Sofern Sie diese Informationen nicht zur Nachverfolgung des Fortschritts eines Runbooks im Rahmen der Problembehandlung benötigen, sollten Sie die Ablaufverfolgung deaktiviert lassen.
+
+**Führen Sie die folgenden Schritte aus, um die Ablaufverfolgung auf Aktivitätsebene zu aktivieren.**
+
+ 1. Öffnen Sie im Azure-Portal Ihr Automation-Konto.
+
+ 2. Klicken Sie auf die Kachel **Runbooks**, um die Liste mit den Runbooks zu öffnen.
+
+ 3. Klicken Sie auf dem Blatt „Runbooks“ auf ein grafisches Runbook in der Liste, um dieses auszuwählen.
+
+ 4. Klicken Sie auf dem Blatt „Einstellungen“ für das ausgewählte Runbook auf **Protokollierung und Ablaufverfolgung**.
+
+ 5. Klicken Sie auf dem Blatt „Protokollierung und Ablaufverfolgung“ unter „Ausführliche Datensätze protokollieren“ auf **Ein**, um die ausführliche Protokollierung zu aktivieren. Ändern Sie unterhalb von „Ablaufverfolgung auf Aktivitätsebene“ die Stufe der Ablaufverfolgung basierend auf Ihren Anforderungen in **Standard** oder **Ausführlich**.<br>
+
+    ![Blatt „Protokollierung und Ablaufverfolgung“ bei der grafischen Inhaltserstellung](media/automation-runbook-output-and-messages/logging_and_tracing_settings_blade.png)
 
 ## Verwandte Artikel
 
 - [Nachverfolgen eines Runbookauftrags](automation-runbook-execution.md)
 - [Untergeordnete Runbooks](http://msdn.microsoft.com/library/azure/dn857355.aspx)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0302_2016-->

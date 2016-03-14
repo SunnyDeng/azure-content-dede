@@ -18,11 +18,11 @@
 
 # Übersicht über Features für elastische Datenbanken
 
-Mit den Features für **elastische Datenbanken** können Sie nahezu unbegrenzt viele Datenbankressourcen der **Azure SQL-Datenbank** zur Erstellung von Lösungen für transaktionale Workloads und insbesondere Software-as-a-Service (SaaS)-Anwendungen verwenden. Die Features für elastische Datenbanken umfassen Folgendes:
+Mit den Features für **elastische Datenbanken** können Sie nahezu unbegrenzt viele Datenbankressourcen der **Azure SQL-Datenbank** zur Erstellung von Lösungen für transaktionale Workloads und insbesondere Software-as-a-Service (SaaS)-Anwendungen verwenden. Die Features für elastische Datenbanken umfassen Folgendes:
 
 * Tools für elastische Datenbanken: Diese beiden Tools vereinfachen die Entwicklung und Verwaltung von Sharded-Datenbanklösungen. Zur Verfügung stehen die [Clientbibliothek für elastische Datenbanken](sql-database-elastic-database-client-library.md) und das [Split-Merge-Tool für elastische Datenbanken](sql-database-elastic-scale-overview-split-and-merge.md). 
-* [Pools für elastische Datenbanken](sql-database-elastic-pool-guidance.md) (Vorschauversion): Bei einem Pool handelt es sich um eine Sammlung von Datenbanken, der Sie jederzeit Datenbanken hinzufügen bzw. aus der Sie jederzeit Datenbanken entfernen können. Die Datenbanken im Pool teilen sich eine feste Menge an Ressourcen – so genannte DTUs (Database Throughput Units). Sie zahlen einen festen Preis für die Ressourcen. Dadurch können Sie problemlos Ihre Kosten kalkulieren und die Leistung verwalten. 
-* [Aufträge für elastische Datenbanken](sql-database-elastic-jobs-overview.md) (Vorschauversion): Verwalten Sie eine große Anzahl von Azure SQL-Datenbanken mithilfe von Aufträgen. Führen Sie mithilfe von Aufträgen ganz einfach administrative Vorgänge aus, z. B. Schemaänderungen, die Verwaltung von Anmeldeinformationen, Verweisdatenupdates, die Leistungsdatensammlung oder die Mandanten- (Kunden-) Telemetrieerfassung.
+* [Pools für elastische Datenbanken](sql-database-elastic-pool-guidance.md) (Vorschauversion): Bei einem Pool handelt es sich um eine Sammlung von Datenbanken, der Sie jederzeit Datenbanken hinzufügen bzw. aus der Sie jederzeit Datenbanken entfernen können. Die Datenbanken im Pool teilen sich eine feste Menge an Ressourcen – sogenannten DTUs (Database Transaction Units). Sie zahlen einen festen Preis für die Ressourcen. Dadurch können Sie problemlos Ihre Kosten kalkulieren und die Leistung verwalten. 
+* [Aufträge für elastische Datenbanken](sql-database-elastic-jobs-overview.md) (Vorschauversion): Verwalten Sie eine große Anzahl von Azure SQL-Datenbanken mithilfe von Aufträgen. Führen Sie mithilfe von Aufträgen ganz einfach administrative Vorgänge aus, z. B. Schemaänderungen, die Verwaltung von Anmeldeinformationen, Verweisdatenupdates, die Leistungsdatensammlung oder die Mandanten- (Kunden-) Telemetrieerfassung.
 * [Abfrage für elastische Datenbanken](sql-database-elastic-query-overview.md) (Vorschauversion): Mit der Abfrage können Sie eine Transact-SQL-Abfrage für mehrere Datenbanken ausführen. Dies ermöglicht eine Verknüpfung mit Berichtstools wie Excel, PowerBI, Tableau usw.
 
 Die folgende Grafik zeigt eine Architektur mit den **Features für elastische Datenbanken** im Kontext einer Sammlung von Datenbanken.
@@ -33,7 +33,7 @@ Eine Druckversion dieser Grafik finden Sie in der [Übersicht zu elastischen Dat
 
 Die Datenbankfarbe symbolisiert Schemas. Datenbanken mit der gleichen Farbe verwenden die gleichen Schemas.
 
-1. Eine Reihe von **Azure SQL-Datenbanken** werden von Azure unter Verwendung einer Shardingarchitektur gehostet. 
+1. Eine Reihe von **Azure SQL-Datenbanken** werden von Azure unter Verwendung einer Shardingarchitektur gehostet. 
 2. Die **Clientbibliothek für elastische Datenbanken** dient zum Verwalten einer Shardgruppe.
 3. Eine Teilmenge der Datenbanken wird einem **Pool für elastische Datenbanken** zugewiesen. (Siehe [Verwalten des explosionsartigen Wachstums elastischer Datenbanken](sql-database-elastic-pool.md).) 
 4. Ein **Auftrag für die elastische Datenbank** führt T-SQL-Skripts für alle Datenbanken aus.
@@ -45,7 +45,7 @@ Die Datenbankfarbe symbolisiert Schemas. Datenbanken mit der gleichen Farbe verw
 Flexibilität und Skalierbarkeit für Cloudanwendungen lassen sich bei Compute und Blob-Speicher durch einfaches Hinzufügen oder Entfernen von Einheiten erreichen. Bei der zustandsbehafteten Datenverarbeitung in relationalen Datenbanken ist es jedoch eine Herausforderung geblieben. Diese Herausforderungen treten vor allem in den beiden folgenden Szenarien auf:
 
 * Vergrößern und Verkleinern der Kapazität für den relationalen Datenbankteil der Workload.
-* Verwalten von Hotspots, die Auswirkungen auf eine bestimmte Teilmenge von Daten haben können – z. B. auf besonders aktive Endkunden (Mandant).
+* Verwalten von Hotspots, die Auswirkungen auf eine bestimmte Teilmenge von Daten haben können – z. B. auf besonders aktive Endkunden (Mandant).
 
 In der Vergangenheit wurden Szenarios wie diese durch eine Investition in größere Datenbankserver zur Unterstützung der Anwendung gelöst. Diese Option ist in der Cloud jedoch beschränkt, wo für die gesamte Verarbeitung vordefinierte Standardhardware verwendet wird. Stattdessen stellt die Verteilung von Daten und Verarbeitung auf mehrere identisch strukturierte Datenbanken (die als „Sharding“ bezeichnete horizontale Skalierung) eine Alternative zur herkömmlichen Hochskalierung im Hinblick auf Kosten und Elastizität dar.
 
@@ -59,11 +59,11 @@ Horizontales Skalieren meint das Hinzufügen oder Entfernen von Datenbanken zur 
 
 Vertikales Skalieren bezeichnet das Erhöhen oder Verringern der Leistungsstufe einer einzelnen Datenbank. Dies wird auch als "zentrales Hochskalieren" bezeichnet.
 
-Die meisten Datenbankanwendungen für Clouds verwenden eine Kombination aus diesen beiden Ansätzen. Eine SaaS (Software as a Service)-Anwendung kann z. B. das horizontale Skalieren für Bereitstellungen an neue Endkunden nutzen und das vertikale Skalieren, damit die Ressourcen für die Datenbanken der einzelnen Endkunden bei entsprechendem Workload vergrößert oder verkleinert werden können.
+Die meisten Datenbankanwendungen für Clouds verwenden eine Kombination aus diesen beiden Ansätzen. Eine SaaS (Software as a Service)-Anwendung kann z. B. das horizontale Skalieren für Bereitstellungen an neue Endkunden nutzen und das vertikale Skalieren, damit die Ressourcen für die Datenbanken der einzelnen Endkunden bei entsprechendem Workload vergrößert oder verkleinert werden können.
 
 * Die horizontale Skalierung wird mithilfe der [Clientbibliothek für elastische Datenbanken](sql-database-elastic-database-client-library.md) verwaltet.
 
-* Bei der vertikalen Skalierung wird mithilfe von Azure PowerShell-Cmdlets die Dienstebene geändert, oder es werden Datenbanken einem Pool für elastische Datenbanken zugewiesen.
+* Bei der vertikalen Skalierung wird mithilfe von Azure PowerShell-Cmdlets die Dienstebene geändert, oder es werden Datenbanken einem Pool für elastische Datenbanken zugewiesen.
 
 ## Muster für einzelne oder mehrere Mandanten
 
@@ -71,14 +71,14 @@ Beim *Sharding* werden große Mengen identisch strukturierter Daten auf mehrere 
 
 * Die Gesamtdatenmenge ist so groß, dass sie aufgrund einschlägiger Beschränkungen nicht in einer einzelnen Datenbank gespeichert werden kann.
 * Der Transaktionsdurchsatz der Workload überschreitet die Fähigkeiten einer einzelnen Datenbank.
-* Mandanten erfordern u. U. eine physische Trennung von anderen Mandaten, sodass für jeden Mandanten eine eigene Datenbank erforderlich ist.
+* Mandanten erfordern u. U. eine physische Trennung von anderen Mandaten, sodass für jeden Mandanten eine eigene Datenbank erforderlich ist.
 * Verschiedene Abschnitte einer Datenbank müssen sich aufgrund von Compliance- oder Leistungsanforderungen oder aus geopolitischen Gründen an verschiedenen geografischen Standorten befinden.
 
-In anderen Szenarien, z. B. beim Erfassen von Daten von verteilten Geräten, kann das Sharding eingesetzt werden, um eine Gruppe von Datenbanken über einen Zeitraum verteilt zu füllen. Beispielsweise kann jedem Wochentag oder jeder Woche eine eigene Datenbank zugeordnet werden. In diesem Fall kann der Sharding-Schlüssel eine Ganzzahl sein, die das Datum darstellt (und in allen Zeilen der partitionierten Tabellen vorhanden ist). Abfragen zum Abruf von Informationen für einen Datumsbereich müssen von der Anwendung an die Teilmenge von Datenbanken, welche den fraglichen Bereich abdecken, weitergeleitet werden.
+In anderen Szenarien, z. B. beim Erfassen von Daten von verteilten Geräten, kann das Sharding eingesetzt werden, um eine Gruppe von Datenbanken über einen Zeitraum verteilt zu füllen. Beispielsweise kann jedem Wochentag oder jeder Woche eine eigene Datenbank zugeordnet werden. In diesem Fall kann der Sharding-Schlüssel eine Ganzzahl sein, die das Datum darstellt (und in allen Zeilen der partitionierten Tabellen vorhanden ist). Abfragen zum Abruf von Informationen für einen Datumsbereich müssen von der Anwendung an die Teilmenge von Datenbanken, welche den fraglichen Bereich abdecken, weitergeleitet werden.
 
 Das Sharding funktioniert am besten, wenn jede Transaktion in einer Anwendung auf einen einzelnen Wert eines Sharding-Schlüssels begrenzt werden kann. Damit wird sichergestellt, dass alle Transaktionen einer bestimmten Datenbank eigen sind.
 
-Einige Anwendungen verwenden den einfachsten Ansatz und erstellen für jeden Mandanten eine eigene Datenbank. Dies ist das **Shardingmuster mit einzelnen Mandanten**, das Isolation, Sicherungs-/Wiederherstellungsfunktion und Ressourcenskalierung auf der Ebene einzelner Mandanten bietet. Beim Sharding mit einzelnen Mandanten ist jede Datenbank mit einem bestimmten Mandanten-ID-Wert (oder Kundenschlüsselwert) verknüpft, wobei der Schlüssel jedoch nicht immer in den Daten vorhanden sein muss. Es ist Aufgabe der Anwendung, die einzelnen Anforderungen an die entsprechende Datenbank weiterzuleiten – dies wird durch die Clientbibliothek vereinfacht.
+Einige Anwendungen verwenden den einfachsten Ansatz und erstellen für jeden Mandanten eine eigene Datenbank. Dies ist das **Shardingmuster mit einzelnen Mandanten**, das Isolation, Sicherungs-/Wiederherstellungsfunktion und Ressourcenskalierung auf der Ebene einzelner Mandanten bietet. Beim Sharding mit einzelnen Mandanten ist jede Datenbank mit einem bestimmten Mandanten-ID-Wert (oder Kundenschlüsselwert) verknüpft, wobei der Schlüssel jedoch nicht immer in den Daten vorhanden sein muss. Es ist Aufgabe der Anwendung, die einzelnen Anforderungen an die entsprechende Datenbank weiterzuleiten – dies wird durch die Clientbibliothek vereinfacht.
 
 ![Einzelinstanzen und Mehrinstanzen][4]
 
@@ -108,4 +108,4 @@ Was können wir besser tun? Wird das Feature in diesem Thema deutlich erklärt? 
 [3]: ./media/sql-database-elastic-scale-introduction/overview.png
 [4]: ./media/sql-database-elastic-scale-introduction/single_v_multi_tenant.png
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0302_2016-->

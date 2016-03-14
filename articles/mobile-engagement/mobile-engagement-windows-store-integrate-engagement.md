@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows-store" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="07/07/2015" 
+	ms.date="02/29/2016" 
 	ms.author="piyushjo" />
 
 # Windows Universal-Apps Engagement SDK-Integration
@@ -32,7 +32,7 @@ Die folgenden Schritte sind ausreichend, um den Bericht von Protokollen zu aktiv
 
 Das Mobile Engagement-SDK für Windows Universal-Apps kann nur in Windows-Runtime- und Universal Windows-Plattformanwendungen für folgende Betriebssysteme integriert werden:
 
--   Windows 8
+-   Windows 8
 -   Windows 8.1
 -   Windows Phone 8.1
 -   Windows 10 (Desktop- und Mobile-Familien)
@@ -49,7 +49,7 @@ Das Mobile Engagement-SDK für Windows Universal-App steht als NuGet-Paket unter
 
 NuGet stellt automatisch die SDK-Ressourcen im `Resources`-Ordner im Stammverzeichnis Ihres Anwendungsprojekts bereit.
 
-### Unterstützung für Windows 10 Universal Windows-Plattform-Anwendungen
+### Unterstützung für Windows 10 Universal Windows-Plattform-Anwendungen
 
 NuGet stellt die SDK-Ressourcen in Ihrer UWP-Anwendung noch nicht automatisch bereit. Sie müssen dies manuell durchführen, bis die Bereitstellung von Ressourcen in NuGet wieder eingeführt wird:
 
@@ -283,4 +283,4 @@ Der Burst-Modus verlängert leicht die Akkulaufzeit, wirkt sich jedoch auf den E
 [NuGet website]: http://docs.nuget.org/docs/start-here/overview
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows-store" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="07/07/2015" 
+	ms.date="02/29/2016" 
 	ms.author="piyushjo" />
 
 # Windows Universal-Apps Reach SDK-Integration
@@ -24,7 +24,7 @@ Bevor Sie dieser Anleitung folgen, müssen Sie das unter [Integration des Window
 
 Sie müssen nichts hinzufügen. `EngagementReach`-Referenzen und -Ressourcen sind bereits in Ihrem Projekt enthalten.
 
-> [AZURE.TIP]Sie können die Bilder anpassen, die sich im Ordner `Resources` Ihres Projekts befinden, insbesondere das Markensymbol (standardmäßig das Engagement-Symbol). In Universal-Apps können Sie auch den Ordner `Resources` in ihr freigegebenes Projekt bewegen, um den Inhalt zwischen den Anwendungen zu teilen. Sie müssen allerdings die Datei `Resources\EngagementConfiguration.xml` im Standardverzeichnis liegen lassen, da sie plattformabhängig ist.
+> [AZURE.TIP] Sie können die Bilder anpassen, die sich im Ordner `Resources` Ihres Projekts befinden, insbesondere das Markensymbol (standardmäßig das Engagement-Symbol). In Universal-Apps können Sie auch den Ordner `Resources` in ihr freigegebenes Projekt bewegen, um den Inhalt zwischen den Anwendungen zu teilen. Sie müssen allerdings die Datei `Resources\EngagementConfiguration.xml` im Standardverzeichnis liegen lassen, da sie plattformabhängig ist.
 
 ## Aktivieren des Windows-Benachrichtigungsdienstes
 
@@ -50,7 +50,7 @@ Sie müssen Ihre App mit Ihrem Microsoft-Konto und der Engagement-Plattform sync
 
 	Die `EngagementReach.Instance.Init` wird in einem dedizierten Thread ausgeführt. Sie müssen es nicht selbst ausführen.
 
-> [AZURE.NOTE]Wenn Sie Pushbenachrichtigungen an anderer Stelle in Ihrer Anwendung verwenden, dann Sie müssen [Ihren Pushkanal freigeben](#push-channel-sharing) mit Engagement Reach.
+> [AZURE.NOTE] Wenn Sie Pushbenachrichtigungen an anderer Stelle in Ihrer Anwendung verwenden, dann Sie müssen [Ihren Pushkanal freigeben](#push-channel-sharing) mit Engagement Reach.
 
 ## Integration
 
@@ -60,7 +60,7 @@ Die Overlay-Integration erfordert nicht viel Code für Ihre Anwendung. Sie müss
 
 Die Webansicht-Integration ist komplizierter zu implementieren. Aber wenn Ihre App-Seiten von einem anderen Objekt als „Seite“ geerbt werden, müssen Sie die Webansicht und ihr Verhalten integrieren.
 
-> [AZURE.TIP]Sie sollten zunächst ein `<Grid></Grid>`-Element auf Stammebene hinzufügen, um allen Seiteninhalt zu umgeben. Fügen Sie zur Webansicht-Integration einfach Webansicht als untergeordnetes Element dieses Rasters. Wenn die Engagement-Komponente an anderer Stelle eingerichtet werden muss, denken Sie daran, dass Sie die Anzeigengröße selbst einstellen müssen.
+> [AZURE.TIP] Sie sollten zunächst ein `<Grid></Grid>`-Element auf Stammebene hinzufügen, um allen Seiteninhalt zu umgeben. Fügen Sie zur Webansicht-Integration einfach Webansicht als untergeordnetes Element dieses Rasters. Wenn die Engagement-Komponente an anderer Stelle eingerichtet werden muss, denken Sie daran, dass Sie die Anzeigengröße selbst einstellen müssen.
 
 ### Überlagerungsintegration
 
@@ -297,7 +297,7 @@ Fügen Sie in "App.xaml.cs" in "Public App(){}" Folgendes hinzu:
 
 Sie sehen, dass der Rückruf jeder Methode einen booleschen Wert zurückgibt. Engagement sendet ein Feedback an sein Back-End nach der Verteilung der Daten per Push. Wenn der Rückruf "false" zurückgibt, wird das Feedback `exit` gesendet. Andernfalls lautet es `action`. Wird für die Ereignisse kein Rückruf festgelegt, wird das Feedback `drop` an Engagement zurückgegeben.
 
-> [AZURE.WARNING]Engagement kann nicht mehrere Feedbacks für einen Daten-Push-Vorgang empfangen. Wenn Sie beabsichtigen, mehrere Handler für ein Ereignis festzulegen, beachten Sie, dass das Feedback dem letzten gesendeten Handler entspricht. In diesem Fall empfehlen wir, immer denselben Wert zurückzugeben, um verwirrendes Feedback vom Front-End zu vermeiden.
+> [AZURE.WARNING] Engagement kann nicht mehrere Feedbacks für einen Daten-Push-Vorgang empfangen. Wenn Sie beabsichtigen, mehrere Handler für ein Ereignis festzulegen, beachten Sie, dass das Feedback dem letzten gesendeten Handler entspricht. In diesem Fall empfehlen wir, immer denselben Wert zurückzugeben, um verwirrendes Feedback vom Front-End zu vermeiden.
 
 ## Anpassen der Benutzeroberfläche (optional)
 
@@ -330,7 +330,7 @@ Legen Sie dann den Inhalt des `EngagementReach.Instance.Handler`-Feldes mit Ihre
 			  // Engagement Agent and Reach initialization
 			}
 
-> [AZURE.NOTE]Engagement verwendet standardmäßig seine eigene Implementierung von `EngagementReachHandler`. Sie müssen keine eigene erstellen, und wenn Sie dies tun, müssen Sie nicht jede Methode außer Kraft setzen. Das Standardverhalten ist die Auswahl des Engagement-Basisobjekts.
+> [AZURE.NOTE] Engagement verwendet standardmäßig seine eigene Implementierung von `EngagementReachHandler`. Sie müssen keine eigene erstellen, und wenn Sie dies tun, müssen Sie nicht jede Methode außer Kraft setzen. Das Standardverhalten ist die Auswahl des Engagement-Basisobjekts.
 
 ### Webansicht
 
@@ -405,7 +405,7 @@ Fügen Sie zum Implementieren des Rückrufs in „App.Xaml.cs“ in „Public Ap
 
 Sie können den Rückruf in Ihrer „Public App(){}“-Methode der `App.xaml.cs`-Datei einstellen, vorzugsweise vor dem `EngagementReach.Instance.Init()`-Aufruf.
 
-> [AZURE.TIP]Jeder Handler wird vom UI-Thread aufgerufen. Sie müssen sich keine Sorgen machen, wenn Sie eine MessageBox oder ein Benutzeroberflächenelement verwenden.
+> [AZURE.TIP] Jeder Handler wird vom UI-Thread aufgerufen. Sie müssen sich keine Sorgen machen, wenn Sie eine MessageBox oder ein Benutzeroberflächenelement verwenden.
 
 ##<a id="push-channel-sharing"></a> Freigeben von Pushkanälen
 
@@ -469,4 +469,4 @@ Um dieses Protokoll nun zu verwenden, bearbeiten Sie `App.xaml.cs` mit der `OnAc
 			  #endregion
  
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0302_2016-->

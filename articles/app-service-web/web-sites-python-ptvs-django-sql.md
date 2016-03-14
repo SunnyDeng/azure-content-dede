@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="python" 
 	ms.topic="article" 
-	ms.date="11/13/2015"
+	ms.date="02/25/2016"
 	ms.author="huguesv"/>
 
 
@@ -30,15 +30,16 @@ Weitere Artikel finden Sie im [Python Developer Center], wo die Entwicklung von 
 
 ## Voraussetzungen
 
- - Visual Studio 2013 oder 2015
+ - Visual Studio 2013 oder 2015
  - [Python Tools 2.2 für Visual Studio]
- - [Python Tools 2.2 für Visual Studio, Beispiel-VSIX]
+ - [Python Tools 2.2 für Visual Studio, Beispiel-VSIX]
  - [Azure SDK-Tools für VS 2013] oder [Azure SDK-Tools für VS 2015]
  - [Python 2.7 (32 Bit)]
+ - Django 1.6 oder früher
 
 [AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Erstellen des Projekts
 
@@ -54,7 +55,7 @@ In diesem Abschnitt erstellen wir ein Visual Studio-Projekt mithilfe einer Beisp
 
   	![Dialogfeld für externe Pakete](./media/web-sites-python-ptvs-django-sql/PollsDjangoExternalPackages.png)
 
-1.  Wählen Sie **Python 2.7** als Basisinterpreter aus.
+1.  Wählen Sie **Python 2.7** als Basisinterpreter aus.
 
   	![Dialogfeld für das Hinzufügen der virtuellen Umgebung](./media/web-sites-python-ptvs-django-sql/PollsCommonAddVirtualEnv.png)
 
@@ -197,7 +198,7 @@ Folgen Sie diesen Links, wenn Sie mehr über Python Tools für Visual Studio, Dj
 - [SQL-Datenbank]
 
 ## Änderungen
-* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
+* Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 
 
 <!--Link references-->
@@ -208,7 +209,7 @@ Folgen Sie diesen Links, wenn Sie mehr über Python Tools für Visual Studio, Dj
 [Azure-Portal]: https://portal.azure.com
 [Python-Tools für Visual Studio]: http://aka.ms/ptvs
 [Python Tools 2.2 für Visual Studio]: http://go.microsoft.com/fwlink/?LinkID=624025
-[Python Tools 2.2 für Visual Studio, Beispiel-VSIX]: http://go.microsoft.com/fwlink/?LinkID=624025
+[Python Tools 2.2 für Visual Studio, Beispiel-VSIX]: http://go.microsoft.com/fwlink/?LinkID=624025
 [Azure SDK-Tools für VS 2013]: http://go.microsoft.com/fwlink/?LinkId=323510
 [Azure SDK-Tools für VS 2015]: http://go.microsoft.com/fwlink/?LinkId=518003
 [Python 2.7 (32 Bit)]: http://go.microsoft.com/fwlink/?LinkId=517190
@@ -219,4 +220,4 @@ Folgen Sie diesen Links, wenn Sie mehr über Python Tools für Visual Studio, Dj
 [Dokumentation zu Django]: https://www.djangoproject.com/
 [SQL-Datenbank]: /documentation/services/sql-database/
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0302_2016-->

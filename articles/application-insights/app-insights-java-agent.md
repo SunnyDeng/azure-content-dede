@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/03/2015" 
+	ms.date="03/02/2016" 
 	ms.author="awills"/>
  
 # Überwachen von Abhängigkeiten, Ausnahmen und Ausführungszeiten in Java-Web-Apps
@@ -24,8 +24,8 @@ Wenn Sie [Ihre Java-Web-App mit Application Insights instrumentiert haben][java]
 
 * **Abhängigkeiten**: Daten über Aufrufe der Anwendung an andere Komponenten, einschließlich:
  * **REST-Aufrufe** über "HttpClient", "OkHttp" und "RestTemplate" (Spring).
- * **Redis**-Aufrufe über den Jedis-Client. Wenn der Aufruf länger als 10 s dauert, wird der Agent auch die Argumente des Aufrufs abrufen.
- * **[JDBC-Aufrufe](http://docs.oracle.com/javase/7/docs/technotes/guides/jdbc/)**: MySQL, SQL Server, PostgreSQL, SQLite, Oracle DB oder Apache Derby DB. Aufrufe von "executeBatch" werden unterstützt. Wenn bei MySQL und PostgreSQL der Aufruf länger als 10 s dauert, meldet der Agent dem Abfrageplan. 
+ * **Redis**-Aufrufe über den Jedis-Client. Wenn der Aufruf länger als 10 s dauert, wird der Agent auch die Argumente des Aufrufs abrufen.
+ * **[JDBC-Aufrufe](http://docs.oracle.com/javase/7/docs/technotes/guides/jdbc/)**: MySQL, SQL Server, PostgreSQL, SQLite, Oracle DB oder Apache Derby DB. Aufrufe von "executeBatch" werden unterstützt. Wenn bei MySQL und PostgreSQL der Aufruf länger als 10 s dauert, meldet der Agent dem Abfrageplan. 
 * **Abgefangene Ausnahmen**: Daten zu Ausnahmen, die vom Code verarbeitet werden.
 * **Methodenausführungszeit**: Daten über die Zeit, die zum Ausführen bestimmter Methoden benötigt wird.
 
@@ -80,7 +80,7 @@ Legen Sie den Inhalt der XML-Datei fest. Bearbeiten Sie das folgende Beispiel, u
                 void methodTwo(String, int) -->
            <Method name="methodTwo"
               reportExecutionTime="true"
-              signature="(Ljava/lang/String:I)V" />
+              signature="(Ljava/lang/String;I)V" />
         </Class>
         
       </Instrumentation>
@@ -122,4 +122,4 @@ Um nach den einzelnen Instanzen der Abhängigkeits-, Ausnahmen- und Methodenberi
 
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0302_2016-->

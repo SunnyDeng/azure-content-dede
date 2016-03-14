@@ -15,7 +15,7 @@
       ms.topic="article"
       ms.tgt_pltfrm="na"
       ms.workload="identity"
-      ms.date="02/22/2016"
+      ms.date="02/25/2016"
       ms.author="v-jibran@microsoft.com"/>
 
 # Schnellstart für die Azure AD Graph-API
@@ -70,7 +70,8 @@ Im Folgenden wird die Ausgabe angezeigt, die Sie sehen würden, wenn Sie zum Gra
 
 **Ausführen einer Abfrage**: Um eine Abfrage auszuführen, geben Sie Ihre Abfrage in das Textfeld für die Anforderung ein, und klicken Sie auf **GET**, oder drücken Sie die **EINGABETASTE**. Die Ergebnisse werden im Antwortfeld angezeigt. Beispielsweise listet `https://graph.windows.net/graphdir1.onmicrosoft.com /groups?api-version=1.5` alle Gruppenobjekte im Demo-Verzeichnis auf.
 
-Beachten Sie die folgenden Funktionen und Einschränkungen von Graph-Explorer: – Funktion zum automatischen Vervollständigen für Ressourcensätze. Um dies zu sehen, klicken Sie auf **Demo-Unternehmen verwenden**, und klicken Sie dann auf das Textfeld für die Anforderung (in dem die Unternehmens-URL angezeigt wird). Sie können einen Ressourcensatz aus der Dropdownliste auswählen.
+Beachten Sie die folgenden Funktionen und Einschränkungen von Graph-Explorer:
+- Funktion zum automatischen Vervollständigen für Ressourcensätze. Um dies zu sehen, klicken Sie auf **Demo-Unternehmen verwenden**, und klicken Sie dann auf das Textfeld für die Anforderung (in dem die Unternehmens-URL angezeigt wird). Sie können einen Ressourcensatz aus der Dropdownliste auswählen.
 
 - Unterstützt die Adressierungsaliase "me" und "myorganization". Beispielsweise können Sie `https://graph.windows.net/me?api-version=1.5` verwenden, um das Benutzerobjekt des angemeldeten Benutzers zurückzugeben, oder `https://graph.windows.net/myorganization/users?api-version=1.5`, um alle Benutzer im aktuellen Verzeichnis zurückzugeben. Beachten Sie, dass bei Verwendung des Alias "me" für das Demo-Unternehmen ein Fehler zurückgegeben wird, da kein angemeldeter Benutzer die Anforderung ausführt.
 
@@ -125,4 +126,4 @@ Weitere Informationen zu Azure AD-Entitäten und -Typen, die von Graph bereitges
 
 Erfahren Sie mehr über die [Azure AD Graph-API](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog)
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

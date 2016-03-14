@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows-phone"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/10/2015" 
+	ms.date="02/29/2016" 
 	ms.author="piyushjo" />
 	
 #Windows Phone Silverlight SDK-Inhalt
@@ -37,4 +37,4 @@ Dieser Ordner enthält alle von Mobile Engagement benötigten Ressourcen. Sie k�
 - `EngagementConfiguration.xml` : Die Konfigurationsdatei von Mobile Engagement, hier können Sie Engagement-Einstellungen (Engagement-Verbindungszeichenfolge, Absturzberichte...) anpassen.
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0302_2016-->

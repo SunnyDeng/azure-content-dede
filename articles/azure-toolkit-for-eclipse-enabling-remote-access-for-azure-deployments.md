@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="multiple"
     ms.devlang="Java"
     ms.topic="article"
-    ms.date="11/30/2015" 
+    ms.date="02/26/2016" 
     ms.author="robmcm"/>
 
 <!-- Legacy MSDN URL = https://msdn.microsoft.com/library/azure/hh690951.aspx -->
@@ -24,7 +24,7 @@ Zur Problembehandlung bei Bereitstellungen können Sie den Remotezugriff aktivie
 
 ## Aktivieren des Remotezugriffs vor der Bereitstellung in Azure ##
 
->[AZURE.NOTE]Zum Aktivieren des Remotezugriffs vor der Bereitstellung der Anwendung in Azure müssen Sie Eclipse unter Windows ausführen.
+>[AZURE.NOTE] Zum Aktivieren des Remotezugriffs vor der Bereitstellung der Anwendung in Azure müssen Sie Eclipse unter Windows ausführen.
 
 Die folgende Abbildung zeigt das Eigenschaftendialogfeld **Remote Access**, in dem der Remotezugriff aktiviert wird:
 
@@ -85,7 +85,7 @@ Nachdem Ihre Rolleninstanz bereit ist, können Sie sich remote bei dem virtuelle
 * Eine weitere Möglichkeit zur Remoteanmeldung besteht über das <a href="http://go.microsoft.com/fwlink/?LinkID=512959">Azure-Verwaltungsportal</a>:
     * Klicken Sie in der Ansicht **Cloud Services** des Azure-Verwaltungsportals auf Ihren Clouddienst, klicken Sie auf **Instances**, klicken Sie auf eine bestimmte Instanz, und klicken Sie dann auf die Schaltfläche **Connect**. Die Schaltfläche **Connect** wird wie folgt in der Befehlsleiste angezeigt: 
     ![][ic659273]  
-    >[AZURE.NOTE]Wenn Sie sich in einem anderen Betriebssystem als Windows befinden, müssen Sie einen Remotedesktopclient verwenden, der mit Ihre Betriebssystem kompatibel ist, und den Schritten zum Konfigurieren dieses Clients mit dem Einstellungen in der von Ihnen heruntergeladenen RDP-Datei folgen.
+    >[AZURE.NOTE] Wenn Sie sich in einem anderen Betriebssystem als Windows befinden, müssen Sie einen Remotedesktopclient verwenden, der mit Ihre Betriebssystem kompatibel ist, und den Schritten zum Konfigurieren dieses Clients mit dem Einstellungen in der von Ihnen heruntergeladenen RDP-Datei folgen.
     * Nachdem Sie auf die Schaltfläche **Connect** geklickt haben, werden Sie aufgefordert, eine RDP-Datei zu öffnen. Öffnen Sie die Datei, und folgen Sie den Anweisungen. (Sie können diese Datei auch auf dem lokalen Computer speichern und ausführen, indem Sie bei der Remoteanmeldung bei ihrem virtuellen Computer darauf doppelklicken, ohne dass Sie zuvor zum Verwaltungsportal wechseln.)
     * Wenn Sie aufgefordert werden, Benutzernamen und Kennwort einzugeben, geben Sie die Werte ein, die Sie für den Remotebenutzer eingegeben haben, damit Sie sich anmelden können.
 
@@ -114,4 +114,4 @@ Weitere Informationen zum Verwenden von Azure mit Java finden Sie im [Azure Java
 [ic719494]: ./media/azure-toolkit-for-eclipse-enabling-remote-access-for-azure-deployments/ic719494.png
 [ic659273]: ./media/azure-toolkit-for-eclipse-enabling-remote-access-for-azure-deployments/ic659273.png
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/16/2016" 
+	ms.date="02/25/2016" 
 	ms.author="billmath"/>
 
 # Beheben von Problemen mit Azure Multi-Factor Authentication
@@ -47,7 +47,7 @@ Halten Sie die folgenden Informationen bereit, wenn Sie sich an den Support wend
  
 ![Korrelations-ID](./media/multi-factor-authentication-end-user-manage/correlation.png)
 
- - **Benutzer-ID** – Wie lautet die ID des Benutzers, der den Fehler beobachtet hat (z. B. user@contoso.com)?)?
+ - **Benutzer-ID** – Wie lautet die ID des Benutzers, der den Fehler beobachtet hat (z. B. user@contoso.com)?)?
  - **Informationen zum Benutzer** – Handelt es sich um einen Verbundbenutzer, um einen Benutzer mit Kennworthashsynchronisierung, oder um einen Benutzer, der ausschließlich über die Cloud zugreift? Verfügte der Benutzer über eine Azure AD Premium-, Enterprise Mobility- oder Azure AD Basic-Lizenz? Verwendet der Benutzer Office 365? usw.
 
 Diese Informationen helfen uns dabei, Ihr Problem so schnell wie möglich zu beheben.
@@ -75,7 +75,7 @@ Je nachdem, wie Sie Multi-Factor Authentication verwenden, gibt es mehrere Stell
 
 Verwendung von Multi-Factor Authentication|Beschreibung
 :------------- | :------------- | 
-[Ich verwende sie mit Office 365.](#changing-your-settings-with-office-365)| Dies bedeutet, dass Sie die Einstellungen über das Office 365-Portal ändern sollten.
+[Ich verwende sie mit Office 365.](#changing-your-settings-with-office-365)| Dies bedeutet, dass Sie die Einstellungen über das Office 365-Portal ändern sollten.
 [Nicht bekannt](#changing-your-settings-with-the-myapps-portal)|Dies bedeutet, dass Sie sich bei [http://myapps.microsoft.com](http://myapps.microsoft.com) anmelden und dort die Einstellungen ändern sollten.
 [Ich verwende sie mit Microsoft Azure.](#changing-your-settings-with-microsoft-azure)| Dies bedeutet, dass Sie die Einstellungen über das Azure-Portal ändern sollten.
 
@@ -84,11 +84,11 @@ Verwendung von Multi-Factor Authentication|Beschreibung
 ### Ändern der Einstellungen mit Office 365
 
 
-Wenn Sie Multi-Factor Authentication mit Office 365 verwenden, sollten Sie die Einstellungen für die zusätzliche Sicherheitsüberprüfung über das Office 365-Portal verwalten.
+Wenn Sie Multi-Factor Authentication mit Office 365 verwenden, sollten Sie die Einstellungen für die zusätzliche Sicherheitsüberprüfung über das Office 365-Portal verwalten.
 
-#### So ändern Sie Ihre Einstellungen im Office 365-Portal
+#### So ändern Sie Ihre Einstellungen im Office 365-Portal
 
-1. Melden Sie sich beim [Office 365-Portal](https://login.microsoftonline.com/) an.
+1. Melden Sie sich beim [Office 365-Portal](https://login.microsoftonline.com/) an.
 2. Klicken Sie in der oberen rechten Ecke auf das Widget, und wählen Sie die Office 365-Einstellungen.
 3. Klicken Sie auf "Zusätzliche Sicherheitsüberprüfung".
 4. Wählen Sie auf der rechten Seite **Aktualisieren meiner Telefonnummern für die Kontosicherheit** aus. ![O365](./media/multi-factor-authentication-end-user-manage/o365a.png)
@@ -124,6 +124,9 @@ Wenn Sie Multi-Factor Authentication mit Azure verwenden, können Sie Ihre Einst
 
 Sie haben ein anderes Telefon haben und müssen die primäre Telefonnummer ändern, die MFA verwendet? Hierzu stehen zwei Möglichkeiten zur Verfügung.
 
+>[AZURE.IMPORTANT]
+Konfigurieren Sie unbedingt eine sekundäre Authentifizierungstelefonnummer. Da sich Ihre primäre Telefonnummer und ihre mobile App wahrscheinlich auf demselben Telefon befinden, ist die sekundäre Telefonnummer die einzige Möglichkeit, sich wieder bei Ihrem Konto anzumelden, sollte Ihr Telefon verloren gehen oder gestohlen werden.
+
 Die erste Möglichkeit ist eine sekundäre Authentifizierungsmethode. Wenn Sie eine sekundäre Authentifizierungstelefonnummer angegeben haben, können Sie sich damit anmelden. ![Einrichtung](./media/multi-factor-authentication-end-user-manage/altphone.png) Auf dem Bildschirmfoto oben sehen Sie, dass zwei Telefonnummern eingerichtet wurden. Eine endet mit 67 und die zweite mit 30.
   
 Um sich mit der alternativen Telefonnummer anzumelden, gehen Sie wie üblich vor, und wählen Sie **Andere Überprüfungsoption verwenden** aus. ![Andere Überprüfung](./media/multi-factor-authentication-end-user-manage/differentverification.png)
@@ -131,9 +134,6 @@ Um sich mit der alternativen Telefonnummer anzumelden, gehen Sie wie üblich vor
 Wählen Sie dann Ihre andere Telefonnummer aus. Wählen Sie in diesem Fall **Rufen Sie mich unter der Rufnummer +XXXXXXXXX30 an** aus.
 
 ![Alternatives Telefon](./media/multi-factor-authentication-end-user-manage/altphone2.png)
-
->[AZURE.IMPORTANT]
-Konfigurieren Sie unbedingt eine sekundäre Authentifizierungstelefonnummer. Da sich Ihre primäre Telefonnummer und ihre mobile App wahrscheinlich auf demselben Telefon befinden, ist die sekundäre Telefonnummer die einzige Möglichkeit, sich wieder bei Ihrem Konto anzumelden, sollte Ihr Telefon verloren gehen oder gestohlen werden.
 
 Die zweite Möglichkeit ist, sich an Ihren Administrator oder die Person zu wenden, die MFA für Sie eingerichtet hat. So müssen Sie nur vorgehen, wenn Sie keine sekundäre Authentifizierungstelefonnummer konfiguriert haben. In diesem Fall müssen Sie den Administrator oder die Person, die MFA eingerichtet hat, bitten, Ihre Einstellungen zu löschen. Sie werden dann bei der nächsten Anmeldung zum erneuten [Einrichten von Multi-Factor Authentication](multi-factor-authentication-manage-users-and-devices.md#require-selected-users-to-provide-contact-methods-again) aufgefordert.
 
@@ -172,4 +172,4 @@ Außerdem können Sie Ihren Administrator oder die Person, die Multi-Factor Auth
 
 Geben Sie abschließend bitte detailliertes Feedback auf dieser Seite ab, damit wir diese Seite aktualisieren und durch weitere Informationen verbessern können.
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -13,21 +13,17 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="multiple"
 	ms.topic="article"
-	ms.date="11/15/2015"
+	ms.date="02/28/2016"
 	ms.author="glenga"/>
 
 # Registrieren Ihrer App für die Facebook-Authentifizierung mit Mobile Services
 
+[AZURE.INCLUDE [mobile-services-selector-register-identity-provider](../../includes/mobile-services-selector-register-identity-provider.md)]&nbsp;
+
+
 [AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
 
-&nbsp;
-
-
-[AZURE.INCLUDE [mobile-services-selector-register-identity-provider](../../includes/mobile-services-selector-register-identity-provider.md)]
-
-In diesem Thema erfahren Sie, wie Sie Ihre Apps registrieren, um Facebook zur Authentifizierung mit Azure Mobile Services zu verwenden.
-
->[AZURE.NOTE]Thema dieses Lernprogramms sind [Azure Mobile Services], eine Lösung, die Sie beim Erstellen skalierbarer mobiler Anwendungen für beliebige Plattformen unterstützt. Mit Mobile Services ist es einfach, Daten zu synchronisieren, Benutzer zu authentifizieren und Pushbenachrichtigungen zu senden. Diese Seite unterstützt das Lernprogramm [Erste Schritte mit der Authentifizierung](mobile-services-ios-get-started-users.md), das zeigt, wie sich Benutzer bei Ihrer App anmelden. Falls Sie noch keine Erfahrung mit Mobile Services haben, sollten Sie zunächst das Lernprogramm [Erste Schritte mit Mobile Services](mobile-services-ios-get-started.md) abschließen.
+In diesem Thema erfahren Sie, wie Sie Ihre Apps registrieren, um Facebook zur Authentifizierung mit Azure Mobile Services zu verwenden. Diese Seite unterstützt das Lernprogramm [Erste Schritte mit der Authentifizierung](mobile-services-ios-get-started-users.md), das zeigt, wie sich Benutzer bei Ihrer App anmelden. Falls Sie noch keine Erfahrung mit Mobile Services haben, sollten Sie zunächst das Lernprogramm [Erste Schritte mit Mobile Services](mobile-services-ios-get-started.md) abschließen.
 
 Sie benötigen ein Facebook-Konto mit verifizierter E-Mail-Adresse und einer Mobiltelefonnummer, um den in diesem Thema beschriebenen Vorgang abzuschließen. Rufen Sie die Seite [facebook.com](http://go.microsoft.com/fwlink/p/?LinkId=268285) auf, um ein neues Facebook-Konto zu erstellen.
 
@@ -35,13 +31,15 @@ Sie benötigen ein Facebook-Konto mit verifizierter E-Mail-Adresse und einer Mob
 
 2. (Optional) Wenn Sie sich noch nicht registriert haben, klicken Sie auf **My Apps**, klicken Sie auf **Register as a Developer**, akzeptieren Sie die Richtlinien, und folgen Sie dann den Anweisungen für die Registrierung.
 
-3. Klicken Sie auf **My Apps** > **Add a New App** > **Advanced setup**.
+3. Klicken Sie auf **My Apps** > **Add a New App** > **Website** > **Skip and Create App ID**.
 
-4. Geben Sie in **Display name** einen eindeutigen Anzeigenamen für Ihre App ein, wählen Sie unter **Category** die Option **Apps for Pages** aus, klicken Sie auf **Create App ID**, und schließen Sie die Schritte für die Sicherheitsüberprüfung ab.
+4. Geben Sie in **Display Name** einen eindeutigen Anzeigenamen für Ihre App ein, wählen Sie unter **Category** eine Kategorie für die App aus, klicken Sie dann auf **Create App ID**, und schließen Sie die Schritte für die Sicherheitsüberprüfung ab. Dadurch gelangen Sie zum Entwickler-Dashboard für Ihre neue Facebook-App.
 
-	Damit wird eine neue Facebook App ID erstellt.
+5. Klicken Sie im Feld **App Secret** auf **Show**, geben Sie bei Aufforderung Ihr Kennwort ein, und notieren Sie die Werte für **App ID** und **App Secret**. Ihre Anwendung wird später in Azure mit diesen Angaben konfiguriert.
 
-5. Klicken Sie auf **Settings**, geben Sie unter **App Domains** die Domäne Ihres mobilen Dienstes ein , geben Sie optional unter **Contact Email** einen E-Mail-Kontakt ein, klicken Sie auf **Add Platform**, und wählen Sie dann **Website** aus.
+	> [AZURE.NOTE] **Sicherheitshinweis** Der geheime Clientschlüssel ist eine wichtige Anmeldeinformation. Teilen Sie diesen Schlüssel mit niemandem, und geben Sie ihn nicht über Ihre Anwendung weiter.
+
+5. Klicken Sie in der linken Navigationsleiste auf **Settings**, geben Sie unter **App Domains** die Domäne Ihres mobilen Diensts ein, geben Sie optional unter **Contact Email** einen E-Mail-Kontakt ein, klicken Sie auf **Add Platform**, und wählen Sie dann **Website** aus.
 
    	![][3]
 
@@ -51,20 +49,17 @@ Sie benötigen ein Facebook-Konto mit verifizierter E-Mail-Adresse und einer Mob
 
    	![][5]&nbsp;
 
-    >[AZURE.IMPORTANT]Der App-Schlüssel ist eine wichtige Anmeldeinformation. Teilen Sie diesen Schlüssel mit niemandem, und geben Sie ihn nicht über Ihre App frei.&nbsp;
+    >[AZURE.IMPORTANT] Der App-Schlüssel ist eine wichtige Anmeldeinformation. Teilen Sie diesen Schlüssel mit niemandem, und geben Sie ihn nicht über Ihre App frei.&nbsp;
 
 8. Klicken Sie auf die Registerkarte **Erweitert**, geben Sie eines der folgenden URL-Formate in **Valid OAuth redirect URIs** ein, klicken Sie dann auf **Änderungen speichern**:
 
 	+ **.NET-Back-End**: `https://<mobile_service>.azure-mobile.net/signin-facebook`
 	+ **JavaScript-Back-End**: `https://<mobile_service>.azure-mobile.net/login/facebook`
 
-	 >[AZURE.NOTE]Stellen Sie sicher, dass Sie das passende Umleitungs-URL-Pfadformat für Ihr Mobile Services-Back-End verwenden. Wenn die Angabe falsch ist, wird die Authentifizierung nicht erfolgreich ausgeführt.
+	 >[AZURE.NOTE]Stellen Sie sicher, dass Sie das richtige Umleitungs-URL-Pfadformat für Ihren Typ von Mobile Services-Back-End verwenden. Verwenden Sie dazu das *HTTPS*-Schema. Wenn die Angabe falsch ist, wird die Authentifizierung nicht erfolgreich ausgeführt.
 
 
-9. Klicken Sie auf **Status & Review** > **Yes**, um den allgemeinen öffentlichen Zugriff auf Ihre App zu aktivieren.
-
-	Das Facebook-Konto, mit dem die neue App registriert wurde, verfügt über Administratorrechte und über Administratorzugriff auf die App. Mit diesem Schritt wird der allgemeine öffentliche Zugriff gewährt, sodass die App andere Facebook-Konten für die Authentifizierung verwenden kann.
-
+12. Das zum Registrieren der Anwendung verwendete Facebook-Konto fungiert als Administrator der App. Zu diesem Zeitpunkt können sich nur Administratoren bei der Anwendung anmelden. Um andere Facebook-Konten zu authentifizieren, klicken Sie auf **App Review**, und aktivieren Sie **Make todolist-complete-nodejs public**, um den allgemeinen öffentlichen Zugriff mithilfe der Facebook-Authentifizierung zu aktivieren.
 
 Sie können nun ein Facebook-Login für die Authentifizierung in Ihrer App verwenden, indem Sie die App-ID und den App-Schlüssel für Mobile Services bereitstellen.
 
@@ -79,4 +74,4 @@ Sie können nun ein Facebook-Login für die Authentifizierung in Ihrer App verwe
 [Get started with authentication]: /develop/mobile/tutorials/get-started-with-users-dotnet/
 [Azure Mobile Services]: http://azure.microsoft.com/services/mobile-services/
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0302_2016-->

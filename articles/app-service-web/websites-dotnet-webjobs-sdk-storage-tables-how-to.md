@@ -13,14 +13,14 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="12/14/2015" 
+	ms.date="02/29/2016" 
 	ms.author="tdykstra"/>
 
 # Verwenden von Azure-Tabellenspeicher mit dem WebJobs-SDK
 
 ## Übersicht
 
-Diese Anleitung enthält C#-Codebeispiele, die zeigen, wie Azure-Speichertabellen mithilfe des [WebJobs-SDK](websites-dotnet-webjobs-sdk.md) (Version 1.x) gelesen und geschrieben werden.
+Diese Anleitung enthält C#-Codebeispiele, die zeigen, wie Azure-Speichertabellen mithilfe des [WebJobs-SDK](websites-dotnet-webjobs-sdk.md) (Version 1.x) gelesen und geschrieben werden.
 
 In der Anleitung wird davon ausgegangen, dass Sie wissen, [wie ein WebJobs-Projekt in Visual Studio mit Verbindungszeichenfolgen erstellt wird, die auf Ihr Speicherkonto](websites-dotnet-webjobs-sdk-get-started.md) oder auf [mehrere Speicherkonten](https://github.com/Azure/azure-webjobs-sdk/blob/master/test/Microsoft.Azure.WebJobs.Host.EndToEndTests/MultipleStorageAccountsEndToEndTests.cs) verweisen.
 		
@@ -141,13 +141,13 @@ Im folgenden Codebeispiel wird ein `CloudTable`-Objekt verwendet, um eine einzel
 		    tableBinding.Execute(insertOperation);
 		}
 
-Weitere Informationen zur Verwendung des `CloudTable`-Objekts finden Sie unter [Verwenden von Tabellenspeicher aus .NET](../storage-dotnet-how-to-use-tables.md).
+Weitere Informationen zur Verwendung des `CloudTable`-Objekts finden Sie unter [Verwenden von Tabellenspeicher aus .NET](../storage/storage-dotnet-how-to-use-tables.md).
 
 ## <a id="queues"></a>Verwandte Themen, die im Artikel zu Warteschlangen behandelt werden
 
 Informationen zur Handhabung der durch eine Warteschlangennachricht ausgelösten Tabellenverarbeitung oder zu Szenarien für das WebJobs-SDK, die nicht spezifisch für die Blobverarbeitung sind, finden Sie unter [Verwenden von Azure-Warteschlangenspeicher mit dem WebJobs-SDK](websites-dotnet-webjobs-sdk-storage-queues-how-to.md).
 
-In diesem Artikel werden u. a. die folgenden Themen behandelt:
+In diesem Artikel werden u. a. die folgenden Themen behandelt:
 
 * Asynchrone Funktionen
 * Mehrere Instanzen
@@ -163,4 +163,4 @@ In diesem Artikel werden u. a. die folgenden Themen behandelt:
 In dieser Anleitung wurden Codebeispiele bereitgestellt, in denen veranschaulicht wird, wie häufige Szenarien für das Arbeiten mit Azure-Tabellen behandelt werden. Weitere Informationen zur Verwendung von Azure WebJobs und dem WebJobs-SDK finden Sie unter [Empfohlene Ressourcen für Azure WebJobs](http://go.microsoft.com/fwlink/?linkid=390226).
  
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0302_2016-->

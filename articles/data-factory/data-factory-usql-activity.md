@@ -62,8 +62,8 @@ Der von Ihnen mithilfe der Schaltfläche **Autorisieren** generierte Autorisieru
  
 | Benutzertyp | Läuft ab nach |
 | :-------- | :----------- | 
-| Benutzer, die NICHT von Azure Active Directory verwaltet werden (@hotmail.com, @live.com usw.) | 12 Stunden |
-| Benutzer, die von Azure Active Directory (AAD) verwaltet werden | | 14 Tage nach Ausführung des letzten Slice, wenn seit der letzten Sliceausführung seit 14 Tagen keine Slices basierend auf dem OAuth-basierten verknüpften Dienst ausgeführt wurden. <p>90 Tage, wenn ein Slice basierend auf dem OAuth-basierten verknüpften Dienst mindestens einmal alle 14 Tage ausgeführt wird.</p> |
+| Benutzerkonten, die NICHT von Azure Active Directory verwaltet werden (@hotmail.com, @live.com usw.) | 12 Stunden |
+| Benutzerkonten, die von Azure Active Directory (AAD) verwaltet werden | | 14 Tage nach der letzten Sliceausführung. <p>90 Tage, wenn ein Slice basierend auf dem OAuth-basierten verknüpften Dienst mindestens einmal alle 14 Tage ausgeführt wird.</p> |
 
 Um diesen Fehler zu vermeiden oder zu beheben, müssen Sie bei **Ablauf des Tokens** mithilfe der Schaltfläche **Autorisieren** eine erneute Autorisierung ausführen und den verknüpften Dienst erneut bereitstellen. Sie können auch programmgesteuert Werte für die Eigenschaften **sessionId** und **authorization** generieren. Verwenden Sie dazu den im folgenden Abschnitt bereitgestellten Code.
 
@@ -156,7 +156,7 @@ Die folgende Tabelle beschreibt die Namen und Eigenschaften, die für diese Akti
 Eigenschaft | Beschreibung | Erforderlich
 :-------- | :----------- | :--------
 type | Die type-Eigenschaft muss auf **DataLakeAnalyticsU-SQL** festgelegt sein. | Ja
-scriptPath | Der Pfad zum Ordner, der das U-SQL-Skript enthält. | Nein (wenn script verwendet wird)
+scriptPath | Der Pfad zum Ordner, der das U-SQL-Skript enthält. Beachten Sie, dass beim Dateinamen Groß-/Kleinschreibung beachtet werden muss. | Nein (wenn script verwendet wird)
 scriptLinkedService | Verknüpfter Dienst, der den Speicher, der das Skript enthält, mit der Data Factory verknüpft. | Nein (wenn script verwendet wird)
 script | Geben Sie ein Inlineskript anstelle von scriptPath und scriptLinkedService an. Beispiel: „script“ : „CREATE DATABASE test“. | Nein (wenn scriptPath and scriptLinkedService verwendet werden)
 degreeOfParallelism | Die maximale Anzahl von Knoten, die zum Ausführen des Auftrags gleichzeitig verwendet werden. | Nein
@@ -257,4 +257,4 @@ Die Werte für die Parameter **@in** und **@out** im oben dargestellten U-SQL-Sk
 
 Sie können in Ihrer Pipelinedefinition auch andere Eigenschaften wie etwa „degreeOfParallelism“ oder „priority“ für die Aufträge angeben, die im Azure Data Lake Analytics-Dienst ausgeführt werden.
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

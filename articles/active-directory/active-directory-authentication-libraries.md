@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="11/17/2015"
+   ms.date="02/25/2016"
    ms.author="mbaldwin" />
 
 # Azure Active Directory-Authentifizierungsbibliotheken
@@ -30,8 +30,8 @@ ADAL steht auf einer Vielzahl von Plattformen zur Verfügung.
 |Node.js|Active Directory-Authentifizierungsbibliothek (ADAL) für Node.js|Client|[ADAL für Node.js (npm)](https://www.npmjs.com/package/adal-node)|[ADAL für Node.js (Github)](https://github.com/AzureAD/azure-activedirectory-library-for-nodejs)|Beispiel: [WebAPI-Nodejs (Github)](https://github.com/AzureADSamples/WebAPI-Nodejs)|
 |Node.js|Windows Azure Active Directory Passport-Middleware zur Authentifizierung für Node|Client|[Azure Active Directory Passport für Node.js (npm)](https://www.npmjs.com/package/passport-azure-ad)|[Azure Active Directory für Node.js (Github)](https://github.com/AzureAD/passport-azure-ad)||
 |Java|Active Directory-Authentifizierungsbibliothek (ADAL) für Java|Client|[ADAL für Java (Github)](https://github.com/AzureAD/azure-activedirectory-library-for-java)|[ADAL für Java (Github)](https://github.com/AzureAD/azure-activedirectory-library-for-java)||
-|.NET|Identitätsmodellerweiterungen für Microsoft .NET Framework 4.5|Server|[Microsoft.IdentityModel.Protocol.Extensions (NuGet)](https://www.nuget.org/packages/Microsoft.IdentityModel.Protocol.Extensions)|[Azure AD-Identitätsmodellerweiterungen für .NET (Github)](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet)||
-|.NET|JSON-Webtokenhandler für Microsoft .Net Framework 4.5|Server|[System.IdentityModel.Tokens.Jwt (NuGet)](https://www.nuget.org/packages/System.IdentityModel.Tokens.Jwt)|[Azure AD-Identitätsmodellerweiterungen für .NET (Github)](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet)||
+|.NET|Identitätsmodellerweiterungen für Microsoft .NET Framework 4.5|Server|[Microsoft.IdentityModel.Protocol.Extensions (NuGet)](https://www.nuget.org/packages/Microsoft.IdentityModel.Protocol.Extensions)|[Azure AD-Identitätsmodellerweiterungen für .NET (Github)](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet)||
+|.NET|JSON-Webtokenhandler für Microsoft .Net Framework 4.5|Server|[System.IdentityModel.Tokens.Jwt (NuGet)](https://www.nuget.org/packages/System.IdentityModel.Tokens.Jwt)|[Azure AD-Identitätsmodellerweiterungen für .NET (Github)](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet)||
 |.NET|OWIN-Middleware, die einer Anwendung das Verwenden von Microsoft-Technologie für die Authentifizierung ermöglicht.|Server|[Microsoft.Owin.Security.ActiveDirectory (NuGet)](https://www.nuget.org/packages/Microsoft.Owin.Security.ActiveDirectory/)|[OWIN (CodePlex)](http://katanaproject.codeplex.com)||
 |.NET|OWIN-Middleware, die einer Anwendung das Verwenden von OpenIDConnect für die Authentifizierung ermöglicht.|Server|[Microsoft.Owin.Security.OpenIdConnect (NuGet)](https://www.nuget.org/packages/Microsoft.Owin.Security.OpenIdConnect)|[OWIN (CodePlex)](http://katanaproject.codeplex.com)|Beispiel: [WebApp-OpenIDConnecty-DotNet (Github)](https://github.com/AzureADSamples/WebApp-OpenIDConnect-DotNet)|
 |.NET|OWIN-Middleware, die einer Anwendung das Verwenden von WS-Federation für die Authentifizierung ermöglicht.|Server|[Microsoft.Owin.Security.WsFederation (NuGet)](https://www.nuget.org/packages/Microsoft.Owin.Security.WsFederation)|[OWIN (CodePlex)](http://katanaproject.codeplex.com)|Beispiel: [WebApp-WSFederation-DotNet (Github)](https://github.com/AzureADSamples/WebApp-WSFederation-DotNet)|
@@ -63,4 +63,4 @@ In diesem Szenario verwendet ein Entwickler eine Anwendung, die auf einem Server
 
 [Azure Active Directory-Codebeispiele](active-directory-code-samples.md)
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0302_2016-->

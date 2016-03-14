@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="CDN – Einschränken des Zugriffs auf Inhalte nach Ländern" 
-	description="Wenn ein Benutzer Ihren Inhalt anfordert, wird unabhängig davon, wo der Benutzer diese Anforderung vorgenommen hat, der Inhalt angezeigt. In einigen Fällen empfiehlt es sich, den Zugriff auf Ihre Inhalte nach Ländern einzuschränken. In diesem Thema wird erläutert, wie Sie das Feature **Länderfilter** einsetzen, um den Zugriff je nach Land zu genehmigen oder verweigern." 
-	services="cdn" 
-	documentationCenter=".NET" 
-	authors="camsoper" 
-	manager="dwrede" 
+<properties
+	pageTitle="CDN – Einschränken des Zugriffs auf Inhalte nach Ländern"
+	description="Wenn ein Benutzer Ihren Inhalt anfordert, wird unabhängig davon, wo der Benutzer diese Anforderung vorgenommen hat, der Inhalt angezeigt. In einigen Fällen empfiehlt es sich, den Zugriff auf Ihre Inhalte nach Ländern einzuschränken. In diesem Thema wird erläutert, wie Sie das Feature **Länderfilter** einsetzen, um den Zugriff je nach Land zu genehmigen oder verweigern."
+	services="cdn"
+	documentationCenter=".NET"
+	authors="camsoper"
+	manager="erikre"
 	editor=""/>
 
-<tags 
-	ms.service="cdn" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="12/02/2015" 
+<tags
+	ms.service="cdn"
+	ms.workload="tbd"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="02/25/2016" 
 	ms.author="casoper"/>
 
 #Einschränken des Zugriffs auf Inhalte nach Ländern
@@ -61,8 +61,8 @@ Die Funktion **Länderfilter** verwendet Landeskennzahlen, um die Länder zu def
 ##<a id="considerations"></a>Überlegungen
 
 - Es kann bis zu einer Stunde dauern, bis die Änderungen an Ihrem Länderfilter wirksam werden.
-- Diese Funktion unterstützt keine Platzhalterzeichen (z. B. "*").
+- Diese Funktion unterstützt keine Platzhalterzeichen (z. B. "*").
 - Das dem relativen Pfad zugeordnete Länderfilterkonfiguration wird rekursiv auf diesen Pfad angewendet.
 - Pro relativen Pfad kann nur eine Regel angewendet werden (Sie können nicht mehrere Länderfilter erstellen, die auf den gleichen relativen Pfad verweisen). Jedoch können mehrere Länderfilter auf einen Ordner angewendet werden. Das liegt an der rekursiven Natur der Länderfilter. Anders ausgedrückt: Ein Unterordner eines zuvor konfigurierten Ordners kann einem anderen Länderfilter zugewiesen werden.
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0302_2016-->

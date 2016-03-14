@@ -3,7 +3,7 @@
 	description="Erfahren Sie mehr über die Verwendung von Azure Notification Hubs von einem PHP-Back-End." 
 	services="notification-hubs" 
 	documentationCenter="" 
-	authors="ysxu" 
+	authors="wesmc7777" 
 	manager="dwrede" 
 	editor=""/>
 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="php" 
 	ms.devlang="php" 
 	ms.topic="article" 
-	ms.date="11/01/2015" 
-	ms.author="yuaxu"/>
+	ms.date="02/29/2016" 
+	ms.author="wesmc"/>
 
 # Verwenden von Notification Hubs von PHP aus
 [AZURE.INCLUDE [notification-hubs-backend-how-to-selector](../../includes/notification-hubs-backend-how-to-selector.md)]
@@ -106,7 +106,7 @@ Einzelheiten zum Erstellen des Sicherheitstokens finden Sie [hier](http://msdn.m
 	}
 
 ### Senden einer Benachrichtigung
-Lassen Sie uns zuerst eine Klasse definieren, die eine Benachrichtigung darstellt.
+Zuerst definieren wir eine Klasse, die eine Benachrichtigung darstellt.
 
 	class Notification {
 		public $format;
@@ -256,4 +256,4 @@ Weitere Informationen finden Sie außerdem im [PHP Developer Center](/develop/ph
 [Erste-Schritte-Lernprogramm]: http://azure.microsoft.com/documentation/articles/notification-hubs-ios-get-started/
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -18,7 +18,7 @@
 
 # Azure Active Directory-Editionen
 
-Alle Microsoft Online-Unternehmensdienste nutzen für Anmelde- und andere Identitätsanforderungen Azure Active Directory. Wenn Sie einen der Microsoft Online-Unternehmensdienste (z. B. Office 365 oder Microsoft Azure) abonnieren, erhalten Sie Azure Active Directory (Azure AD) mit Zugriff auf alle unten beschriebenen Free-Features.
+Alle Microsoft Online-Unternehmensdienste nutzen für Anmelde- und andere Identitätsanforderungen Azure Active Directory. Wenn Sie einen der Microsoft Online-Unternehmensdienste (z. B. Office 365 oder Microsoft Azure) abonnieren, erhalten Sie Azure Active Directory (Azure AD) mit Zugriff auf alle unten beschriebenen Free-Features.
 
 
 Azure Active Directory ist ein Dienst, der Ihren Mitarbeitern, Partnern und Kunden umfassende Funktionen zur Identitäts- und Zugriffsverwaltung in der Cloud bietet. Er kombiniert Verzeichnisdienste, eine erweiterte Identitätskontrolle, eine standardbasierte Plattform für Entwickler mit umfangreichen Funktionen und Zugriffsverwaltung für eigene oder tausende vorab integrierte Anwendungen. Mit der Free-Edition von Azure Active Directory können Sie Benutzer und Gruppen verwalten, eine Synchronisierung mit lokalen Verzeichnissen ausführen, sich mittels einmaligem Anmelden (SSO) bei Azure, Office 365 und tausenden gängigen SaaS-Anwendungen wie Salesforce, Workday, Concur, DocuSign, Google Apps, Box, ServiceNow, Dropbox und mehr anmelden. Weitere Informationen zu Azure Active Directory finden Sie unter [Was ist Azure AD?](active-directory-whatis.md).
@@ -27,13 +27,13 @@ Azure Active Directory ist ein Dienst, der Ihren Mitarbeitern, Partnern und Kund
 
 Sie können Ihre Azure Active Directory-Anwendung erweitern, indem Sie mit Azure Active Directory Basic und Premium kostenpflichtige Funktionen hinzufügen. Die kostenpflichtigen Editionen von Azure Active Directory ergänzen Ihr kostenloses Verzeichnis. Sie bieten leistungsstarke Funktionen wie etwa Self-Service, optimierte Überwachung, Sicherheitsberichterstellung, Multi-Factor Authentication (MFA) und sicheren Zugriff für Ihre mobilen Mitarbeiter.
 
-Office 365-Abonnements enthalten zusätzliche Azure Active Directory-Features. Diese werde in der nachfolgenden Vergleichstabelle beschrieben.
+Office 365-Abonnements enthalten zusätzliche Azure Active Directory-Features. Diese werde in der nachfolgenden Vergleichstabelle beschrieben.
 
 
 > [AZURE.NOTE] Informationen zu den Preisoptionen für diese Editionen finden Sie unter [Azure Active Directory – Preise](https://azure.microsoft.com/pricing/details/active-directory/). <br>Azure Active Directory Premium und Azure Active Directory Basic werden derzeit in China nicht unterstützt. Wenn Sie weitere Informationen benötigen, kontaktieren Sie uns im Azure Active Directory-Forum.
 
 
-- **Azure Active Directory Basic** – Diese Edition bietet Sachbearbeitern mit wichtigen Cloudanforderungen auf die Cloud ausgerichtete Lösungen für den Anwendungszugriff und die Self-Service-Identitätsverwaltung. Mit der Basic Edition von Azure Active Directory erhalten Sie Funktionen zur Produktivitätssteigerung und Kostensenkung wie gruppenbasierte Zugriffsverwaltung, Self-Service-Kennwortzurücksetzung für Cloud-Anwendungen und den Azure Active Directory-Anwendungsproxy (zur Veröffentlichung lokaler Webanwendungen mit Azure Active Directory). Diese Features basieren auf einer SLA auf Unternehmensebene mit einer Verfügbarkeitsgarantie von 99,9 Prozent.
+- **Azure Active Directory Basic** – Diese Edition bietet Sachbearbeitern mit wichtigen Cloudanforderungen auf die Cloud ausgerichtete Lösungen für den Anwendungszugriff und die Self-Service-Identitätsverwaltung. Mit der Basic Edition von Azure Active Directory erhalten Sie Funktionen zur Produktivitätssteigerung und Kostensenkung wie gruppenbasierte Zugriffsverwaltung, Self-Service-Kennwortzurücksetzung für Cloud-Anwendungen und den Azure Active Directory-Anwendungsproxy (zur Veröffentlichung lokaler Webanwendungen mit Azure Active Directory). Diese Features basieren auf einer SLA auf Unternehmensebene mit einer Verfügbarkeitsgarantie von 99,9 Prozent.
  
 - **Azure Active Directory Premium** – Azure Active Directory Premium Edition stellt Organisationen mit anspruchsvollen Identitäts- und Zugriffsverwaltungsanforderungen umfangreiche Identitätsverwaltungsfunktionen auf Unternehmensebene zur Verfügung. Darüber hinaus ermöglicht sie Hybridbenutzern den nahtlosen Zugriff auf lokale Funktionen und Cloudfunktionen. Diese Edition enthält alles, was Sie für Information-Worker und Identitätsadministratoren in Hybridumgebungen für Anwendungszugriff, Self-Service-Identitäts- und Zugriffsverwaltung (Identity and Access Management, IAM), Identitätsschutz und Sicherheit in der Cloud benötigen. Sie unterstützt erweiterte Verwaltungs- und Delegierungsressourcen wie dynamische Gruppen und Self-Service-Gruppenverwaltung. Die Edition enthält Microsoft Identity Manager (eine lokale Identitäts- und Zugriffsverwaltungs-Suite) und bietet Cloudfunktionen für das Zurückschreiben. Dadurch werden Lösungen wie die Self-Service-Kennwortzurücksetzung für Ihre lokalen Benutzer ermöglicht.
 
@@ -88,7 +88,7 @@ Eine Reihe von Azure Active Directory-Funktionen sind als Editionen mit nutzungs
 
 - [Anwendungsproxy](#application-proxy)
 
-- [SLA 99,9 %](#sla-999)
+- [SLA 99,9 %](#sla-999)
 
 
 **Premium-Features**
@@ -108,22 +108,23 @@ Eine Reihe von Azure Active Directory-Funktionen sind als Editionen mit nutzungs
 - [Automatisches Kennwortrollover für Gruppenkonten](#automatic-password-rollover-for-group-accounts)
 
 
-**Azure Active Directory-Einbindung – nur auf Windows 10 bezogene Features**
+**Azure Active Directory-Einbindung – nur auf Windows 10 bezogene Features**
 
 - [Verbinden Sie ein Gerät mit Azure AD, Desktop-SSO, Microsoft Passport für Azure AD, BitLocker-Wiederherstellung (Administrator)](#join-a-device-to-azure-ad-desktop-sso-microsoft-passport-for-azure-ad-administrator-bitlocker-recovery)
 
-- [Automatische Registrierung für MDM, BitLocker-Wiederherstellung (Self-Service), zusätzliche lokale Administratoren für Windows 10-Geräte über die Einbindung in Azure AD](#mdm-auto-enrolment-self-service-bitlocker-recovery-additional-local-administrators-to-windows-10-devices-via-azure-ad-join)
+- [Automatische Registrierung für MDM, BitLocker-Wiederherstellung (Self-Service), zusätzliche lokale Administratoren für Windows 10-Geräte über die Einbindung in Azure AD](#mdm-auto-enrolment-self-service-bitlocker-recovery-additional-local-administrators-to-windows-10-devices-via-azure-ad-join)
 
 
 
 
-<br> <hr>
+<br>
+<hr>
 ## Gemeinsame Features
 #### Verzeichnisobjekte 
 
 **Typ:** Gemeinsame Features
 
-Das standardmäßige Nutzungskontingent liegt bei 150.000 Objekten. Bei einem Objekt handelt es sich um einen Eintrag im Verzeichnisdienst, der durch seinen eindeutigen Distinguished Name dargestellt wird. Ein Beispiel eines Objekts ist ein Benutzereintrag, der für Authentifizierungszwecke verwendet wird. Falls Sie dieses Standardkontingent überschreiten müssen, wenden Sie sich bitte an den Support. Die Kontingentgrenze von 500.000 Objekten gilt nicht für Office 365, Microsoft Intune oder einen anderen zahlungspflichtigen Microsoft-Onlinedienst, der Azure Active Directory als Verzeichnisdienst nutzt.
+Das standardmäßige Nutzungskontingent liegt bei 150.000 Objekten. Bei einem Objekt handelt es sich um einen Eintrag im Verzeichnisdienst, der durch seinen eindeutigen Distinguished Name dargestellt wird. Ein Beispiel eines Objekts ist ein Benutzereintrag, der für Authentifizierungszwecke verwendet wird. Falls Sie dieses Standardkontingent überschreiten müssen, wenden Sie sich bitte an den Support. Die Kontingentgrenze von 500.000 Objekten gilt nicht für Office 365, Microsoft Intune oder einen anderen zahlungspflichtigen Microsoft-Onlinedienst, der Azure Active Directory als Verzeichnisdienst nutzt.
 
 
 **Verfügbarkeit:**
@@ -152,7 +153,8 @@ Das standardmäßige Nutzungskontingent liegt bei 150.000 Objekten. Bei einem O
 - [Azure Active Directory-Geräteregistrierung – Übersicht](active-directory-conditional-access-device-registration-overview.md)
 
 
-<br> <hr>
+<br>
+<hr>
 #### Einmaliges Anmelden (Single Sign-On, SSO)
 
 **Typ:** Gemeinsame Features
@@ -172,7 +174,8 @@ Das standardmäßige Nutzungskontingent liegt bei 150.000 Objekten. Bei einem O
 
 - [Verwalten von Anwendungen mit Azure Active Directory (AD)](active-directory-enable-sso-scenario.md)
 
-<br> <hr>
+<br>
+<hr>
 #### Self-Service-Kennwortänderung für Cloudbenutzer
 
 **Typ:** Gemeinsame Features
@@ -188,7 +191,8 @@ Das standardmäßige Nutzungskontingent liegt bei 150.000 Objekten. Bei einem O
 - [Aktualisieren Ihres eigenen Kennworts](active-directory-passwords-update-your-own-password.md)
 
 
-<br> <hr>
+<br>
+<hr>
 #### Connect (Synchronisierungsmodul, mit dem lokale Verzeichnisse auf Azure Active Directory ausgeweitet werden) 
 
 **Typ:** Gemeinsame Features
@@ -204,7 +208,8 @@ Das standardmäßige Nutzungskontingent liegt bei 150.000 Objekten. Bei einem O
 
 - [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<br> <hr>
+<br>
+<hr>
 #### Sicherheits-/Nutzungsberichte
 
 **Typ:** Gemeinsame Features
@@ -220,7 +225,8 @@ Das standardmäßige Nutzungskontingent liegt bei 150.000 Objekten. Bei einem O
 
 - [Anzeigen Ihrer Zugriffs- und Nutzungsberichte](active-directory-view-access-usage-reports.md)
 
-<br> <hr>
+<br>
+<hr>
 
 ## Features der Premium und Basic Edition
 #### Gruppenbasierte Zugriffsverwaltung/Bereitstellung
@@ -238,7 +244,8 @@ Das standardmäßige Nutzungskontingent liegt bei 150.000 Objekten. Bei einem O
 
 - [Verwenden einer Gruppe zum Verwalten des Zugriffs auf SaaS-Anwendungen](active-directory-accessmanagement-group-saasapps.md)
 
-<br> <hr>
+<br>
+<hr>
 #### Self-Service-Kennwortrücksetzung für Cloudbenutzer
 
 **Typ:** Basic-Features
@@ -252,9 +259,10 @@ Das standardmäßige Nutzungskontingent liegt bei 150.000 Objekten. Bei einem O
 
 **Weitere Informationen:**
 
-- [Zurücksetzen des Azure AD-Kennworts für Benutzer und Administratoren](active-directory-passwords.md)
+- [Zurücksetzen des Azure AD-Kennworts für Benutzer und Administratoren](active-directory-passwords.md)
 
-<br> <hr>
+<br>
+<hr>
 #### Unternehmensbranding (Anpassen von Anmeldeseiten/Zugriffsbereich)
 
 **Typ:** Basic-Features
@@ -270,7 +278,8 @@ Das standardmäßige Nutzungskontingent liegt bei 150.000 Objekten. Bei einem O
 
 - [Hinzufügen Ihres Unternehmensbranding zur Anmelde- und Zugriffsbereichsseite](active-directory-add-company-branding.md)
 
-<br> <hr>
+<br>
+<hr>
 #### Anwendungsproxy
 
 **Typ:** Basic-Features
@@ -286,8 +295,9 @@ Das standardmäßige Nutzungskontingent liegt bei 150.000 Objekten. Bei einem O
 
 - [Bereitstellen von sicherem Remotezugriff auf lokale Anwendungen](active-directory-application-proxy-get-started.md)
 
-<br> <hr>
-#### SLA 99,9 %
+<br>
+<hr>
+#### SLA 99,9 %
 
 **Typ:** Basic-Features
 
@@ -302,7 +312,8 @@ Das standardmäßige Nutzungskontingent liegt bei 150.000 Objekten. Bei einem O
 
 - [Vereinbarungen zum Servicelevel (SLAs)](https://azure.microsoft.com/support/legal/sla/)
 
-<br> <hr>
+<br>
+<hr>
 
 ## Premium-Features
 #### Self-Service-Verwaltung von Gruppen und Apps/Self-Service-Hinzufügung von Anwendungen/Dynamische Gruppen
@@ -350,7 +361,8 @@ Das standardmäßige Nutzungskontingent liegt bei 150.000 Objekten. Bei einem O
 
 - [Was ist Azure Multi-Factor Authentication?](../multi-factor-authentication/multi-factor-authentication.md)
 
-<br> <hr>
+<br>
+<hr>
 #### MIM-CAL und MIM-Server 
 
 Rechte an Microsoft Identity Manager Server-Software werden mit Windows Server-Lizenzen gewährt (beliebige Edition). Da Microsoft Identity Manager auf dem Windows Server-Betriebssystem ausgeführt wird, kann Microsoft Identity Manager installiert und auf dem Server verwendet werden, solange auf diesem Server eine gültige, lizenzierte Kopie von Windows Server vorhanden ist. Für Microsoft Identity Manager Server ist keine andere separate Lizenz erforderlich.
@@ -383,7 +395,8 @@ Rechte an Microsoft Identity Manager Server-Software werden mit Windows Server-L
 
 - [Suchen nach nicht verwalteten Cloudanwendungen per Cloud App Discovery](active-directory-cloudappdiscovery-whatis.md)
 
-<br> <hr>
+<br>
+<hr>
 #### Connect Health
 
 **Typ:** Premium-Features
@@ -399,7 +412,8 @@ Rechte an Microsoft Identity Manager Server-Software werden mit Windows Server-L
 
 - [Überwachen Ihrer lokalen Identitätsinfrastruktur und Synchronisierung von Diensten in der Cloud](active-directory-aadconnect-health.md)
 
-<br> <hr>
+<br>
+<hr>
 #### Automatisches Kennwortrollover für Gruppenkonten
 
 **Typ:** Premium-Features
@@ -412,11 +426,12 @@ Rechte an Microsoft Identity Manager Server-Software werden mit Windows Server-L
 | | | ![Prüfen][12]| |
 
 
-<br> <hr>
-## Azure Active Directory-Einbindung – nur auf Windows 10 bezogene Features
+<br>
+<hr>
+## Azure Active Directory-Einbindung – nur auf Windows 10 bezogene Features
 #### Verbinden Sie ein Gerät mit Azure AD, Desktop-SSO, Microsoft Passport für Azure AD, BitLocker-Wiederherstellung (Administrator)
 
-**Typ:** Azure Active Directory-Einbindung – nur auf Windows 10 bezogene Features
+**Typ:** Azure Active Directory-Einbindung – nur auf Windows 10 bezogene Features
 
 
 **Verfügbarkeit:**
@@ -428,9 +443,9 @@ Rechte an Microsoft Identity Manager Server-Software werden mit Windows Server-L
 
 <br>
 
-#### Automatische Registrierung für MDM, BitLocker-Wiederherstellung (Self-Service), zusätzliche lokale Administratoren für Windows 10-Geräte über die Einbindung in Azure AD
+#### Automatische Registrierung für MDM, BitLocker-Wiederherstellung (Self-Service), zusätzliche lokale Administratoren für Windows 10-Geräte über die Einbindung in Azure AD
 
-**Typ:** Azure Active Directory-Einbindung – nur auf Windows 10 bezogene Features
+**Typ:** Azure Active Directory-Einbindung – nur auf Windows 10 bezogene Features
 
 
 **Verfügbarkeit:**
@@ -448,10 +463,11 @@ Neben den allgemein verfügbaren Funktionen der Free, Basic und Premium Editione
 **Verfügbare Vorschaufunktionen:**
 
 - [B2B-Zusammenarbeit](active-directory-b2b-collaboration-overview.md)
-- Bedingter Zugriff
 - [Verwaltungseinheiten](active-directory-administrative-units-management.md)
 - Privileged Identity Management
 - [HR-Anwendungsintegration](active-directory-saas-workday-inbound-tutorial.md)
+- [Enterprise State Roaming](active-directory-windows-enterprise-state-roaming-overview.md)
+- [Azure Active Directory Identity Protection](active-directory-identityprotection.md)
 
 
 
@@ -467,4 +483,4 @@ Neben den allgemein verfügbaren Funktionen der Free, Basic und Premium Editione
 <!--Image references-->
 [12]: ./media/active-directory-editions/ic195031.png
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0302_2016-->

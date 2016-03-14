@@ -13,7 +13,7 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="identity"
-    ms.date="02/23/2016"
+    ms.date="03/02/2016"
     ms.author="markvi"/>
 
 #Liste der Tutorials zur Integration von SaaS-Apps in Azure Active Directory
@@ -23,7 +23,6 @@ Um Sie bei der Integration Ihrer gesamten Cloudanwendungen (SaaS) in Azure Activ
 Die umfassende Liste bereits in Azure AD integrierter SaaS-Apps finden Sie im [Active Directory-Marketplace](https://azure.microsoft.com/marketplace/active-directory/).
 
 ##Liste der Tutorials
-
 
 | Logo| App-Name |
 | --- | --- |
@@ -65,6 +64,7 @@ Die umfassende Liste bereits in Azure AD integrierter SaaS-Apps finden Sie im [A
 | ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_Clarizen.jpg)| [Clarizen](https://go.microsoft.com/fwLink/?LinkID=403229&clcid=0x409)|
 | ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_Clever.jpg)| [Clever](https://go.microsoft.com/fwLink/?LinkID=530228&clcid=0x409)|
 | ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_ClickTime.jpg)| [ClickTime](https://go.microsoft.com/fwLink/?LinkID=403236&clcid=0x409)|
+| ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_NewSignature.jpg)| [Tutorial: Azure Active Directory integration with Cloud Management Portal for Microsoft Azure](https://go.microsoft.com/fwLink/?LinkID=708680&clcid=0x409) (Tutorial: Azure Active Directory-Integration in das Cloud-Verwaltungsportal für Microsoft Azure)|
 | ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_CloudPassage.jpg)| [CloudPassage](https://go.microsoft.com/fwLink/?LinkID=512732&clcid=0x409)|
 | ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_Concur.jpg)| [Concur](https://go.microsoft.com/fwLink/?LinkID=309575&clcid=0x409)|
 | ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_Condeco.jpg)| [Condeco](https://go.microsoft.com/fwLink/?LinkID=708660&clcid=0x409)|
@@ -73,6 +73,7 @@ Die umfassende Liste bereits in Azure AD integrierter SaaS-Apps finden Sie im [A
 | ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_CSStars.jpg)| [CS Stars](https://go.microsoft.com/fwLink/?LinkID=530245&clcid=0x409)|
 | ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_Directions.jpg)| [Directions on Microsoft](https://go.microsoft.com/fwLink/?LinkID=522557&clcid=0x409)|
 | ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_DocuSign.jpg)| [DocuSign](https://go.microsoft.com/fwLink/?LinkID=403254&clcid=0x409)|
+| ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_Domo.jpg)| [Domo](https://go.microsoft.com/fwLink/?LinkID=708692&clcid=0x409)|
 | ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_Dropbox.jpg)| [Dropbox für Unternehmen](https://go.microsoft.com/fwLink/?LinkID=309581&clcid=0x409)|
 | ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_Druva.jpg)| [Druva](https://go.microsoft.com/fwLink/?LinkID=530221&clcid=0x409)|
 | ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_eBuilder.jpg)| [e-Builder](https://go.microsoft.com/fwLink/?LinkID=510261&clcid=0x409)|
@@ -195,6 +196,7 @@ Die umfassende Liste bereits in Azure AD integrierter SaaS-Apps finden Sie im [A
 | ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_Workday.jpg)| [Workday](https://go.microsoft.com/fwLink/?LinkID=286020&clcid=0x409)|
 | ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_Workrite.jpg)| [Workrite](https://go.microsoft.com/fwLink/?LinkID=530242&clcid=0x409)|
 | ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_xMattersOnDemand.jpg)| [xMatters OnDemand](https://go.microsoft.com/fwLink/?LinkID=403231&clcid=0x409)|
+| ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_Yardi.jpg)| [Yardi eLearning](https://go.microsoft.com/fwLink/?LinkID=733444&clcid=0x409)|
 | ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_Zendesk.jpg)| [Zendesk](https://go.microsoft.com/fwLink/?LinkID=403255&clcid=0x409)|
 | ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_ZohoMail.jpg)| [Zoho Mail](https://go.microsoft.com/fwLink/?LinkID=403220&clcid=0x409)|
 | ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_Zoom.jpg)| [Zoom](https://go.microsoft.com/fwLink/?LinkID=403225&clcid=0x409)|
@@ -206,9 +208,10 @@ Die umfassende Liste bereits in Azure AD integrierter SaaS-Apps finden Sie im [A
 
 
 
+
 ##Verwandte Artikel
 
 - [Artikelindex für die Anwendungsverwaltung in Azure Active Directory](active-directory-apps-index.md)
 - [Liste der Tutorials zur Integration von SaaS-Apps](active-directory-saas-tutorial-list.md)
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

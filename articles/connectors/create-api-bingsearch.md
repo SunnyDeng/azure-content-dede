@@ -15,13 +15,19 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na" 
-   ms.date="02/11/2016"
+   ms.date="03/02/2016"
    ms.author="mandia"/>
 
 # Erste Schritte mit der Bing-Such-API 
-Verbinden Sie sich mit der Bing-Suche, um Nachrichten, Videos und mehr zu suchen.
+Verbinden Sie sich mit der Bing-Suche, um Nachrichten, Videos und mehr zu suchen. Die Bing-Such-API kann in Folgendem verwendet werden:
 
-Die Bing-Such-API kann von PowerApps und Logik-Apps verwendet werden.
+- Logik-Apps 
+- PowerApps
+
+> [AZURE.SELECTOR]
+- [Logik-Apps](../articles/connectors/create-api-bingsearch.md)
+- [PowerApps Enterprise](../articles/power-apps/powerapps-create-api-bingsearch.md)
+
 
 Die Bing-Suche ermöglicht Folgendes:
 
@@ -82,7 +88,7 @@ Ruft Videos aus einer Bing-Suche ab. ```GET: /Video```
 |market|string|no|query|(Keine) |Markt oder Region zum Eingrenzen der Suche (Beispiel: de-DE)|
 |longitude|number|no|query|(Keine) |Längengrad (Ost-West-Koordinate) zum Eingrenzen der Suche (Beispiel: 47,603450)|
 |latitude|number|no|query|(Keine) |Breitengrad (Nord-Süd-Koordinate) zum Eingrenzen der Suche (Beispiel: -122,329696)|
-|videoFilters|string|no|query|(Keine) |Filtern Sie die Suche basierend auf Größe, Aspekt, Farbe, Format, Gesicht und einer beliebigen Kombination dieser Angaben. Gültige Werte: <ul><li>Duration:Short</li><li>Duration:Medium</li><li>Duration:Long</li><li>Aspect:Standard</li><li>Aspect:Widescreen</li><li>Resolution:Low</li><li>Resolution:Medium</li><li>Resolution:High</li></ul> <p>Beispiel: Duration:Short+Resolution:High</p>|
+|videoFilters|string|no|query|(Keine) |Filtern Sie die Suche basierend auf Größe, Aspekt, Farbe, Format, Gesicht und einer beliebigen Kombination dieser Angaben. Gültige Werte: <ul><li>Duration:Short</li><li>Duration:Medium</li><li>Duration:Long</li><li>Aspect:Standard</li><li>Aspect:Widescreen</li><li>Resolution:Low</li><li>Resolution:Medium</li><li>Resolution:High</li></ul> <br/><br/>Beispiel: „Duration:Short+Resolution:High“|
 |videoSortBy|string|no|query|(Keine) |Sortierreihenfolge für Ergebnisse. Gültige Werte: <ul><li>Date</li><li>Relevance</li></ul> <p>Die Sortierung nach Datum erfolgt absteigend.</p>|
 
 #### Antwort
@@ -104,7 +110,7 @@ Ruft Bilder aus einer Bing-Suche ab. ```GET: /Image```
 |market|string|no|query|(Keine) |Markt oder Region zum Eingrenzen der Suche (Beispiel: de-DE)|
 |longitude|number|no|query| (Keine)|Längengrad (Ost-West-Koordinate) zum Eingrenzen der Suche (Beispiel: 47,603450)|
 |latitude|number|no|query|(Keine) |Breitengrad (Nord-Süd-Koordinate) zum Eingrenzen der Suche (Beispiel: -122,329696)|
-|imageFilters|string|no|query|(Keine) |Filtern Sie die Suche basierend auf Größe, Aspekt, Farbe, Format, Gesicht und einer beliebigen Kombination dieser Angaben. Gültige Werte: <ul><li>Size:Small</li><li>Size:Medium</li><li>Size:Large</li><li>Size:Width:[Width]</li><li>Size:Height:[Height]</li><li>Aspect:Square</li><li>Aspect:Wide</li><li>Aspect:Tall</li><li>Color:Color</li><li>Color:Monochrome</li><li>Style:Photo</li><li>Style:Graphics</li><li>Face:Face</li><li>Face:Portrait</li><li>Face:Other</li></ul><p>Beispiel: Size:Small+Aspect:Square</p>|
+|imageFilters|string|no|query|(Keine) |Filtern Sie die Suche basierend auf Größe, Aspekt, Farbe, Format, Gesicht und einer beliebigen Kombination dieser Angaben. Gültige Werte: <ul><li>Size:Small</li><li>Size:Medium</li><li>Size:Large</li><li>Size:Width:[Width]</li><li>Size:Height:[Height]</li><li>Aspect:Square</li><li>Aspect:Wide</li><li>Aspect:Tall</li><li>Color:Color</li><li>Color:Monochrome</li><li>Style:Photo</li><li>Style:Graphics</li><li>Face:Face</li><li>Face:Portrait</li><li>Face:Other</li></ul><br/><br/>Beispiel: „Size:Small+Aspect:Square“|
 
 #### Antwort
 |Name|Beschreibung|
@@ -127,7 +133,7 @@ Ruft Ergebnisse zu Nachrichten aus einer Bing-Suche ab. ```GET: /News```
 |latitude|number|no|query|(Keine) |Breitengrad (Nord-Süd-Koordinate) zum Eingrenzen der Suche (Beispiel: -122,329696)|
 |newsSortBy|string|no|query| (Keine)|Sortierreihenfolge für Ergebnisse. Gültige Werte: <ul><li>Date</li><li>Relevance</li></ul> <p>Die Sortierung nach Datum erfolgt absteigend.</p>|
 |newsCategory|string|no|query| |Kategorie von Nachrichten zum Eingrenzen der Suche (Beispiel: rt\_Business)|
-|newsLocationOverride|string|no|query|(Keine) |Erkennung des Standorts durch Bing außer Kraft setzen. Dieser Parameter gilt nur für den Markt „de-DE“. Das Format für die Eingabe ist: US./<state /> (Beispiel: US. WA)|
+|newsLocationOverride|string|no|query|(Keine) |Erkennung des Standorts durch Bing außer Kraft setzen. Dieser Parameter gilt nur für den Markt „de-DE“. Das Format für die Eingabe ist: US./<state /> (Beispiel: „US.WA“)|
 
 #### Antwort
 |Name|Beschreibung|
@@ -189,12 +195,12 @@ Ruft alle Websites, Videos, Bilder usw. aus einer Bing-Suche ab. ```GET: /Compos
 |longitude|number|no|query|(Keine) |Längengrad (Ost-West-Koordinate) zum Eingrenzen der Suche (Beispiel: 47,603450)|
 |latitude|number|no|query|(Keine) |Breitengrad (Nord-Süd-Koordinate) zum Eingrenzen der Suche (Beispiel: -122,329696)|
 |webFileType|string|no|query|(Keine) |Dateityp zum Eingrenzen der Suche (Beispiel: DOC)|
-|videoFilters|string|no|query|(Keine) |Filtern Sie die Suche basierend auf Größe, Aspekt, Farbe, Format, Gesicht und einer beliebigen Kombination dieser Angaben. Gültige Werte: <ul><li>Duration:Short</li><li>Duration:Medium</li><li>Duration:Long</li><li>Aspect:Standard</li><li>Aspect:Widescreen</li><li>Resolution:Low</li><li>Resolution:Medium</li><li>Resolution:High</li></ul> <p>Beispiel: Duration:Short+Resolution:High</p>|
+|videoFilters|string|no|query|(Keine) |Filtern Sie die Suche basierend auf Größe, Aspekt, Farbe, Format, Gesicht und einer beliebigen Kombination dieser Angaben. Gültige Werte: <ul><li>Duration:Short</li><li>Duration:Medium</li><li>Duration:Long</li><li>Aspect:Standard</li><li>Aspect:Widescreen</li><li>Resolution:Low</li><li>Resolution:Medium</li><li>Resolution:High</li></ul> <br/><br/>Beispiel: „Duration:Short+Resolution:High“|
 |videoSortBy|string|no|query|(Keine) |Sortierreihenfolge für Ergebnisse. Gültige Werte: <ul><li>Date</li><li>Relevance</li></ul> <p>Die Sortierung nach Datum erfolgt absteigend.</p>|
-|imageFilters|string|no|query|(Keine) |Filtern Sie die Suche basierend auf Größe, Aspekt, Farbe, Format, Gesicht und einer beliebigen Kombination dieser Angaben. Gültige Werte: <ul><li>Size:Small</li><li>Size:Medium</li><li>Size:Large</li><li>Size:Width:[Width]</li><li>Size:Height:[Height]</li><li>Aspect:Square</li><li>Aspect:Wide</li><li>Aspect:Tall</li><li>Color:Color</li><li>Color:Monochrome</li><li>Style:Photo</li><li>Style:Graphics</li><li>Face:Face</li><li>Face:Portrait</li><li>Face:Other</li></ul><p>Beispiel: Size:Small+Aspect:Square</p>|
+|imageFilters|string|no|query|(Keine) |Filtern Sie die Suche basierend auf Größe, Aspekt, Farbe, Format, Gesicht und einer beliebigen Kombination dieser Angaben. Gültige Werte: <ul><li>Size:Small</li><li>Size:Medium</li><li>Size:Large</li><li>Size:Width:[Width]</li><li>Size:Height:[Height]</li><li>Aspect:Square</li><li>Aspect:Wide</li><li>Aspect:Tall</li><li>Color:Color</li><li>Color:Monochrome</li><li>Style:Photo</li><li>Style:Graphics</li><li>Face:Face</li><li>Face:Portrait</li><li>Face:Other</li></ul><br/><br/>Beispiel: „Size:Small+Aspect:Square“|
 |newsSortBy|string|no|query|(Keine) |Sortierreihenfolge für Ergebnisse. Gültige Werte: <ul><li>Date</li><li>Relevance</li></ul> <p>Die Sortierung nach Datum erfolgt absteigend.</p>|
 |newsCategory|string|no|query|(Keine) |Kategorie von Nachrichten zum Eingrenzen der Suche (Beispiel: rt\_Business)|
-|newsLocationOverride|string|no|query|(Keine) |Erkennung des Standorts durch Bing außer Kraft setzen. Dieser Parameter gilt nur für den Markt „de-DE“. Das Format für die Eingabe ist: US./<state /> (Beispiel: US. WA)|
+|newsLocationOverride|string|no|query|(Keine) |Erkennung des Standorts durch Bing außer Kraft setzen. Dieser Parameter gilt nur für den Markt „de-DE“. Das Format für die Eingabe ist: US./<state /> (Beispiel: „US.WA“)|
 
 #### Antwort
 |Name|Beschreibung|
@@ -280,7 +286,7 @@ Ruft alle Websites, Videos, Bilder usw. aus einer Bing-Suche ab. ```GET: /Compos
 |WebResultsTotal|integer|no|
 |ImageResultsTotal|integer|no|
 |VideoResultsTotal|integer|no|
-|NewsResultsTotal|integer|
+|NewsResultsTotal|integer|no|
 |SpellSuggestionsTotal|integer|no|
 |WebResults|array|no|
 |ImageResults|array|no|
@@ -291,8 +297,8 @@ Ruft alle Websites, Videos, Bilder usw. aus einer Bing-Suche ab. ```GET: /Compos
 
 ## Nächste Schritte
 
-Nach Hinzufügen der Bing-Such-API zu PowerApps Enterprise [erteilen Sie den Benutzern Berechtigungen](../power-apps/powerapps-manage-api-connection-user-access.md) zum Verwenden der API in ihren Apps.
+Nach Hinzufügen der Bing-Such-API zu PowerApps Enterprise [erteilen Sie den Benutzern die Berechtigungen](../power-apps/powerapps-manage-api-connection-user-access.md) zum Verwenden der API in ihren Apps.
 
-[Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md).
+[Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md)
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

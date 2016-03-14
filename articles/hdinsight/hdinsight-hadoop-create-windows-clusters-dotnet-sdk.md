@@ -42,8 +42,9 @@ Die Anwendung erfordert eine Azure-Ressourcengruppe und das Standardspeicherkont
 1. Erstellen Sie eine neue C#-Konsolenanwendung in Visual Studio.
 2. Führen Sie den folgenden Nuget-Befehl in der Verwaltungskonsole des Nuget-Pakets aus.
 
-		Install-Package Microsoft.Azure.Common.Authentication -pre
+		Install-Package Microsoft.Azure.Common.Authentication -Pre
 		Install-Package Microsoft.Azure.Management.HDInsight -Pre
+		Install-Package Microsoft.Azure.Management.Resources -Pre
 
 6. Doppelklicken Sie im Projektmappen-Explorer auf die Datei **Program.cs**, um sie zu öffnen, fügen Sie den folgenden Code ein, und geben Sie Werte für die Variablen an:
 
@@ -55,6 +56,7 @@ Die Anwendung erfordert eine Azure-Ressourcengruppe und das Standardspeicherkont
 		using Microsoft.Azure.Common.Authentication.Models;
 		using Microsoft.Azure.Management.HDInsight;
 		using Microsoft.Azure.Management.HDInsight.Models;
+		using Microsoft.Azure.Management.Resources;
 		
 		namespace CreateHDInsightCluster
 		{
@@ -82,7 +84,10 @@ Die Anwendung erfordert eine Azure-Ressourcengruppe und das Standardspeicherkont
 		
 					var tokenCreds = GetTokenCloudCredentials();
 					var subCloudCredentials = GetSubscriptionCloudCredentials(tokenCreds, SubscriptionId);
-		
+					
+					var resourceManagementClient = new ResourceManagementClient(subCloudCredentials);
+					resourceManagementClient.Providers.Register("Microsoft.HDInsight");
+					
 					_hdiManagementClient = new HDInsightManagementClient(subCloudCredentials);
 				
 					var parameters = new ClusterCreateParameters
@@ -220,4 +225,4 @@ Das folgende Azure PowerShell-Skript kann zum Erstellen der abhängigen Komponen
     Write-host "Default Storage Account Key: $defaultStorageAccountKey"
     Write-host "Default Blob Container Name: $defaultBlobContainerName"
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

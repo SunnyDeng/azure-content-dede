@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="mobile" 
-   ms.date="06/18/2015"
+   ms.date="02/29/2016"
    ms.author="piyushjo"/>
 
 # Handbuch zur Problembehandlung bei Dienstproblemen
@@ -86,7 +86,7 @@ Im Folgenden finden Sie mögliche Probleme, die bei der Ausführung von Azure Mo
 	- Verwenden Sie ausschließlich den UTF8-Zeichensatz (der ANSI-Zeichensatz wird nicht unterstützt).
     - Verwenden Sie als Trennzeichen ein Komma "," (Sie können über eine Dienstanfrage die Änderung des CSV-Trennzeichens von einem Komma "," in ein anderes Zeichen anfordern, beispielsweise ein Semikolon ";").
     - Verwenden Sie ausschließlich Kleinbuchstaben für die booleschen Werte "true" und "false".
-    - Verwenden Sie eine Datei, die kleiner ist als die maximale Größe von 35 MB.
+    - Verwenden Sie eine Datei, die kleiner ist als die maximale Größe von 35 MB.
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0302_2016-->

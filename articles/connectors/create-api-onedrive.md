@@ -14,16 +14,17 @@ ms.devlang="na"
 ms.topic="article"
 ms.tgt_pltfrm="na"
 ms.workload="na"
-ms.date="02/22/2016"
-ms.author="deonhe"/>
+ms.date="02/25/2016"
+ms.author="mandia"/>
 
 # Erste Schritte mit der OneDrive-API
 
-Verbinden Sie sich mit OneDrive, um Ihre Dateien zu verwalten. Sie können auf Dateien in OneDrive verschiedene Aktionen anwenden, wie z. B. Hochladen, Aktualisieren, Abrufen und Löschen.
+Stellen Sie eine Verbindung mit OneDrive her, um Ihre Dateien zu verwalten, d. h. diese hochzuladen, abzurufen, zu löschen usw. Die OneDrive-API kann in Folgendem verwendet werden:
 
-Die OneDrive-API kann von PowerApps Enterprise- und Logik-Apps verwendet werden.
+- PowerApps 
+- Logik-Apps 
 
->[AZURE.NOTE] Diese Version des Artikels gilt für Logik-Apps mit der Schemaversion „2015-08-01-preview“. Um die Schemaversion „2014-12-01-preview“ aufzurufen, klicken Sie auf [OneDrive-API](../app-service-logic/app-service-logic-connector-onedrive.md).
+>[AZURE.NOTE] Diese Version des Artikels gilt für die Schemaversion 2015-08-01-preview für Logik-Apps. Um die Schemaversion 2014-12-01-preview aufzurufen, klicken Sie auf [OneDrive-API](../app-service-logic/app-service-logic-connector-onedrive.md).
 
 OneDrive ermöglicht Folgendes:
 
@@ -75,7 +76,7 @@ Nachdem Sie eine Verbindung hergestellt haben, geben Sie die OneDrive-Eigenschaf
 >[AZURE.TIP] Sie können dieselbe Verbindung in anderen Logik-Apps verwenden.
 
 ## Swagger-REST-API – Referenz
-#### Diese Dokumentation gilt für Version 1.0.
+Gilt für Version: 1.0.
 
 
 ### Dateimetadaten anhand der ID abrufen
@@ -316,11 +317,11 @@ Extrahiert einen Ordner in OneDrive. ```POST: /datasets/default/extractFolderV2`
 ## Nächste Schritte
 Nach Hinzufügen der OneDrive-API zu PowerApps Enterprise [erteilen Sie den Benutzern Berechtigungen](../power-apps/powerapps-manage-api-connection-user-access.md) zum Verwenden der API in ihren Apps.
 
-[Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md).
+[Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md)
 
 
 [5]: https://account.live.com/developers/applications/create
 [6]: ./media/create-api-onedrive/onedrive-new-app.png
 [7]: ./media/create-api-onedrive/onedrive-app-api-settings.png
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

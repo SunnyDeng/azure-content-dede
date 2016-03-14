@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/17/2015" 
+	ms.date="02/26/2016" 
 	ms.author="stefsch"/>
 
 # Übersicht über die Netzwerkarchitektur von App Service-Umgebungen
@@ -31,7 +31,7 @@ Das folgende Diagramm zeigt eine Übersicht der verschiedenen ein- und ausgehend
 
 Eine App Service-Umgebung kann mit einer Vielzahl privater Kundenendpunkte kommunizieren. Beispielsweise können Apps, die in der App Service-Umgebung ausgeführt werden, sich mit Datenbankservern auf virtuellen IaaS-Computern in der gleichen virtuellen Netzwerktopologie verbinden.
 
-[AZURE.IMPORTANT] Im Netzwerkdiagramm sehen Sie, dass „Weitere Computeressourcen“ in einem anderen Subnetz bereitgestellt werden als die App Service-Umgebung. Durch Bereitstellung im gleichen Subnetz wie die App Service-Umgebung würde die Verbindung der Umgebung mit diesen Ressourcen blockiert (ausgenommen spezifische Routen innerhalb der Umgebung). Stellen Sie die Ressourcen daher in einem anderen Subnetz innerhalb des gleichen VNETs bereit. Dann kann die App Service-Umgebung eine Verbindung herstellen. Es ist keine zusätzliche Konfiguration erforderlich.
+>[AZURE.IMPORTANT] Im Netzwerkdiagramm sehen Sie, dass „Weitere Computeressourcen“ in einem anderen Subnetz bereitgestellt werden als die App Service-Umgebung. Durch Bereitstellung im gleichen Subnetz wie die App Service-Umgebung würde die Verbindung der Umgebung mit diesen Ressourcen blockiert (ausgenommen spezifische Routen innerhalb der Umgebung). Stellen Sie die Ressourcen daher in einem anderen Subnetz innerhalb des gleichen VNETs bereit. Dann kann die App Service-Umgebung eine Verbindung herstellen. Es ist keine zusätzliche Konfiguration erforderlich.
 
 App Service-Umgebungen kommunizieren auch mit SQL-Datenbank- und Azure-Speicherressourcen, die für das Verwalten und Betreiben einer App Service-Umgebung erforderlich sind. Einige SQL- und Speicherressourcen, mit denen eine App Service-Umgebung kommuniziert, befinden sich in der gleichen Region wie die App Service-Umgebung, während andere sich in anderen Azure-Regionen befinden. Deshalb sind für den ordnungsgemäßen Betrieb einer App Service-Umgebung stets ausgehende Verbindungen erforderlich.
 
@@ -64,11 +64,11 @@ Für dieses Diagramm gilt:
 ## Aufrufe zwischen App Service-Umgebungen ##
 Ein komplexeres Szenario kann auftreten, wenn Sie mehrere App Service-Umgebungen im gleichen virtuellen Netzwerk bereitstellen und ausgehende Aufrufe von einer App Service-Umgebung in eine andere App Service-Umgebung ausführen. Diese Art von Aufrufen zwischen App Service-Umgebungen wird auch wie "Internetaufrufe" behandelt.
 
-Das folgende Diagramm zeigt ein Beispiel einer mehrschichtigen Architektur mit Apps in einer App Service-Umgebung (z. B. "Eingangstür"-Web-Apps), die Apps in einer zweiten App Service-Umgebung aufrufen (z. B. interne Back-End-API-Apps, die nicht aus dem Internet zugänglich sein sollen).
+Das folgende Diagramm zeigt ein Beispiel einer mehrschichtigen Architektur mit Apps in einer App Service-Umgebung (z. B. "Eingangstür"-Web-Apps), die Apps in einer zweiten App Service-Umgebung aufrufen (z. B. interne Back-End-API-Apps, die nicht aus dem Internet zugänglich sein sollen).
 
 ![Aufrufe zwischen App Service-Umgebungen][CallsBetweenAppServiceEnvironments]
 
-Im obigen Beispiel hat die App Service-Umgebung "ASE One" die ausgehende IP-Adresse 192.23.1.2. Wenn eine App, die in dieser App Service-Umgebung ausgeführt wird, einen ausgehenden Aufruf einer App durchführt, die in einer zweiten App Service-Umgebung ("ASE Two") im gleichen virtuellen Netzwerk ausgeführt wird, wird der ausgehende Aufruf als "Internetaufruf" behandelt. Als Ergebnis wird für den in der zweiten App Service-Umgebung eingehenden Netzwerkverkehr die Ursprungs-IP-Adresse 192.23.1.2 angezeigt (d. h. nicht der Subnetzadressbereich der ersten App Service-Umgebung).
+Im obigen Beispiel hat die App Service-Umgebung "ASE One" die ausgehende IP-Adresse 192.23.1.2. Wenn eine App, die in dieser App Service-Umgebung ausgeführt wird, einen ausgehenden Aufruf einer App durchführt, die in einer zweiten App Service-Umgebung ("ASE Two") im gleichen virtuellen Netzwerk ausgeführt wird, wird der ausgehende Aufruf als "Internetaufruf" behandelt. Als Ergebnis wird für den in der zweiten App Service-Umgebung eingehenden Netzwerkverkehr die Ursprungs-IP-Adresse 192.23.1.2 angezeigt (d. h. nicht der Subnetzadressbereich der ersten App Service-Umgebung).
 
 Zwar werden Aufrufe zwischen verschiedenen App Service-Umgebungen als "Internetaufrufe" behandelt, dennoch bleibt der Netzwerkverkehr im regionalen Azure-Netzwerk und fließt nicht physisch über das öffentliche Internet, wenn sich beide App Service-Umgebungen in derselben Azure-Region befinden. Als Ergebnis können Sie eine Netzwerksicherheitsgruppe im Subnetz der zweiten App Service-Umgebung verwenden, um nur eingehende Aufrufe von der ersten App Service-Umgebung (mit der ausgehenden IP-Adresse 192.23.1.2) zuzulassen, und somit die sichere Kommunikation zwischen den App Service-Umgebungen ermöglichen.
 
@@ -89,4 +89,4 @@ Details zur Verwendung von benutzerdefinierten Routen zum Gewähren des ausgehen
 [OutboundNetworkAddresses]: ./media/app-service-app-service-environment-network-architecture-overview/OutboundNetworkAddresses-1.png
 [CallsBetweenAppServiceEnvironments]: ./media/app-service-app-service-environment-network-architecture-overview/CallsBetweenEnvironments-1.png
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0302_2016-->

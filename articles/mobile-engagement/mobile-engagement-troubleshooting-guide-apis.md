@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="mobile" 
-   ms.date="06/18/2015"
+   ms.date="02/29/2016"
    ms.author="piyushjo"/>
 
 # Handbuch zur Problembehandlung bei APIs
@@ -31,7 +31,7 @@ Im Folgenden finden Sie mögliche Probleme, die auftreten können, wenn Administ
     - Stellen Sie durch Prüfen der Syntax der jeweiligen API sicher, dass die Option zur Verfügung steht.
     - Ein häufiger Fehler bei der API-Verwendung besteht darin, dass Reach-API und Push-API verwechselt werden (die meisten Aufgaben sollten nicht mit der Push-API, sondern mit der Reach-API ausgeführt werden). 
     - Ein weiterer häufiger Fehler bei der SDK-Integration und der API-Verwendung ist der, dass SDK- und API-Schlüssel verwechselt werden.
-    - Skripts, die eine Verbindung zu den APIs herstellen, müssen mindestens alle 10 Minuten Daten senden, ansonsten kommt es zu einer Zeitüberschreitung (besonders häufig in API-Überwachungsskripts, die auf Daten prüfen). Um Zeitüberschreitungen zu verhindern, sollte Ihr Skript alle 10 Minuten ein XMPP-Pingsignal senden, um die Verbindung mit dem Server aufrechtzuerhalten.
+    - Skripts, die eine Verbindung zu den APIs herstellen, müssen mindestens alle 10 Minuten Daten senden, ansonsten kommt es zu einer Zeitüberschreitung (besonders häufig in API-Überwachungsskripts, die auf Daten prüfen). Um Zeitüberschreitungen zu verhindern, sollte Ihr Skript alle 10 Minuten ein XMPP-Pingsignal senden, um die Verbindung mit dem Server aufrechtzuerhalten.
 
 ### Weitere Informationen
  
@@ -130,4 +130,4 @@ Im Folgenden finden Sie mögliche Probleme, die auftreten können, wenn Administ
 [Link 29]: mobile-engagement-user-interface-reach-content.md
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0302_2016-->

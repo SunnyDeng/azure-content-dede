@@ -2,7 +2,7 @@
 	pageTitle="Überwachen Ihrer Logik-Apps in Azure App Service | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie die Ergebnisse Ihrer Logik-Apps überprüfen können." 
 	authors="stepsic-microsoft-com" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor="" 
 	services="app-service\logic" 
 	documentationCenter=""/>
@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/07/2015"
+	ms.date="02/29/2016"
 	ms.author="stepsic"/>
 
 # Überwachen von Logik-Apps
 
-Nachdem Sie eine Logik-App erstellt haben (mit den unter [Erstellen einer Logik-App zum Verbinden von SaaS-Diensten](app-service-logic-create-a-logic-app.md) beschriebenen Schritten) wird der vollständige Verlauf ihrer Ausführung im Azure-Portal aufgeführt. Wählen Sie zum Anzeigen des Verlaufs **Durchsuchen**, **Web + Mobile** und **Logik-Apps**. Eine Liste der Logik-Apps in Ihrem Abonnement wird angezeigt. Eine Logik-App kann **aktiviert** oder **deaktiviert** sein. **Aktivierte** Logik-Apps bedeutet, dass Trigger Ihre Logik-App in Reaktion auf auslösende Ereignisse ausführen. **Deaktivierte** Logik-Apps werden nicht als Reaktion auf Ereignisse ausgeführt.
+Nach dem [Erstellen einer Logik-App](app-service-logic-create-a-logic-app.md) können Sie den vollständigen Verlauf ihrer Ausführung im Azure-Portal einsehen. Um den Verlauf anzuzeigen, wählen Sie **Durchsuchen** und dann **Logik-Apps** aus. Eine Liste der Logik-Apps in Ihrem Abonnement wird angezeigt. Jede Logik-App lässt sich auswählen, **aktivieren** und **deaktivieren**. **Aktivierte** Logik-Apps bedeutet, dass Trigger Ihre Logik-App in Reaktion auf auslösende Ereignisse ausführen. **Deaktivierte** Logik-Apps werden nicht als Reaktion auf Ereignisse ausgeführt.
 
 ![Übersicht](./media/app-service-logic-monitor-your-logic-apps/overview.png)
 
@@ -33,7 +33,7 @@ Wenn das Blatt Ihrer Logik-App angezeigt wird, gibt es zwei nützliche Abschnitt
 
 Diese Liste der Ausführungen zeigt die **Startzeit**, den **Ausführungsbezeichner** (dient zum Aufrufen der REST-API) und die **Dauer** der jeweiligen Ausführung. Wählen Sie eine beliebige Zeile aus, um Details zur jeweiligen Ausführung anzuzeigen.
 
-Das Blatt "Details" zeigt ein Diagramm mit der Ausführungszeit und Sequenz aller Aktionen in der Ausführung. Darunter finden Sie die vollständige Liste aller Aktionen, die ausgeführt wurden:
+Das Blatt "Details" zeigt ein Diagramm mit der Ausführungszeit und Sequenz aller Aktionen in der Ausführung. Im Folgenden finden Sie die vollständige Liste aller Aktionen, die ausgeführt wurden:
 
 ![Ausführung und Aktionen](./media/app-service-logic-monitor-your-logic-apps/runandaction.png)
 
@@ -53,7 +53,7 @@ Beachten Sie, dass für *Pushtrigger* *nicht* angezeigt wird, wie oft hier eine 
 
 ## Aktivieren der Versionsverwaltung
 
-Es gibt eine weitere Funktion, die zurzeit noch nicht, jedoch bald auf der Benutzeroberfläche verfügbar ist, aber über [die REST-API](http://go.microsoft.com/fwlink/p/?LinkID=525617&clcid=0x409) zur Verfügung steht. Wenn Sie die Definition einer Logik-App aktualisieren, wird die vorherige Version der Definition gespeichert. Dies liegt daran, dass wenn eine Ausführung bereits läuft, diese Ausführung auf die Version der Logik-App verweist, die zum Zeitpunkt des Ausführungsbeginns vorhanden war. Definitionen laufender Ausführungen können nicht geändert werden. Die REST-API für den Versionsverlauf ermöglicht Ihnen den Zugriff auf diese Informationen.
+Es gibt eine Funktion, die auf der Benutzeroberfläche derzeit nicht verfügbar ist (in Planung), aber über die [REST-API](https://msdn.microsoft.com/library/azure/mt643788.aspx) zur Verfügung steht. Wenn Sie die Definition einer Logik-App aktualisieren, wird die vorherige Version der Definition gespeichert. Dies liegt daran, dass wenn eine Ausführung bereits läuft, diese Ausführung auf die Version der Logik-App verweist, die zum Zeitpunkt des Ausführungsbeginns vorhanden war. Definitionen laufender Ausführungen können nicht geändert werden. Die REST-API für den Versionsverlauf ermöglicht Ihnen den Zugriff auf diese Informationen.
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -74,6 +74,7 @@ Jedes Node.js-Back-End von Azure Mobile App Service-Apps verhält sich am Anfang
 Mit dieser Anwendung wird eine einfache, für Mobilgeräte optimierte WebAPI mit einem einzelnen Endpunkt (`/tables/TodoItem`) erstellt. Hiermit ist der authentifizierungsfreie Zugriff auf einen zugrunde liegenden SQL-Datenspeicher mit einem dynamischen Schema möglich. Mit der Anwendung können Sie die Schnellstarts der Clientbibliothek verfolgen:
 
 - [Android-Client-Schnellstart]
+- [Apache Cordova-Client-Schnellstart]
 - [iOS-Client-Schnellstart]
 - [Windows Store-Client-Schnellstart]
 - [Xamarin.iOS-Client-Schnellstart]
@@ -430,6 +431,67 @@ Die „access“-Eigenschaft kann einen von drei Werten haben:
 
 Wenn die access-Eigenschaft nicht definiert ist, ist der Zugriff ohne Authentifizierung zulässig.
 
+### <a name="howto-tables-getidentity"></a>Gewusst wie: Verwenden von Authentifizierungsansprüchen für Tabellen
+
+Sie können eine Reihe von Ansprüchen einrichten, die beim Einrichten der Authentifizierung angefordert werden. Diese Ansprüche stehen normalerweise nicht über das `context.user`-Objekt zur Verfügung. Mit der `context.user.getIdentity()`-Methode können sie jedoch abgerufen werden. Die `getIdentity()`-Methode gibt eine Zusage zurück, die auf ein Objekt aufgelöst wird. Das Objekt wird durch die Authentifizierungsmethode („facebook“, „google“, „twitter“, „microsoftaccount“ oder „aad“) ermittelt.
+
+Wenn beispielsweise die Microsoft Account-Authentifizierung eingerichtet wird und der Anspruch „E-Mail-Adressen“ angefordert wird, lässt sich die E-Mail-Adresse wie folgt dem Datensatz hinzufügen:
+
+    var azureMobileApps = require('azure-mobile-apps');
+
+    // Create a new table definition
+    var table = azureMobileApps.table();
+
+    table.columns = {
+        "emailAddress": "string",
+        "text": "string",
+        "complete": "boolean"
+    };
+    table.dynamicSchema = false;
+    table.access = 'authenticated';
+
+    /**
+    * Limit the context query to those records with the authenticated user email address
+    * @param {Context} context the operation context
+    * @returns {Promise} context execution Promise
+    */
+    function queryContextForEmail(context) {
+        return context.user.getIdentity().then((data) => {
+            context.query.where({ emailAddress: data.microsoftaccount.claims.emailaddress });
+            return context.execute();
+        });
+    }
+
+    /**
+    * Adds the email address from the claims to the context item - used for
+    * insert operations
+    * @param {Context} context the operation context
+    * @returns {Promise} context execution Promise
+    */
+    function addEmailToContext(context) {
+        return context.user.getIdentity().then((data) => {
+            context.item.emailAddress = data.microsoftaccount.claims.emailaddress;
+            return context.execute();
+        });
+    }
+
+    // Configure specific code when the client does a request
+    // READ - only return records belonging to the authenticated user
+    table.read(queryContextForEmail);
+
+    // CREATE - add or overwrite the userId based on the authenticated user
+    table.insert(addEmailToContext);
+
+    // UPDATE - only allow updating of record belong to the authenticated user
+    table.update(queryContextForEmail);
+
+    // DELETE - only allow deletion of records belong to the authenticated uer
+    table.delete(queryContextForEmail);
+
+    module.exports = table;
+
+Um zu sehen, welche Ansprüche verfügbar sind, verwenden Sie einen Webbrowser zum Anzeigen des `/.auth/me`-Endpunkts der Website.
+
 ### <a name="howto-tables-disabled"></a>Vorgehensweise: Deaktivieren des Zugriffs auf bestimmte Tabellenvorgänge
 
 Die access-Eigenschaft kann nicht nur in der Tabelle angezeigt werden, sondern sie kann auch verwendet werden, um einzelne Vorgänge zu steuern. Es gibt vier Vorgänge:
@@ -549,7 +611,7 @@ Wir empfehlen, die initialize()-Methode explizit aufzurufen, um die Tabelle zu e
 
 ### <a name="Swagger"></a>Aktivieren der Swagger-Unterstützung
 
-[Swagger]-Unterstützung ist in Mobile App Service-Apps von Azure bereits integriert. Um die Swagger-Unterstützung zu aktivieren, installieren Sie zuerst die Swagger-Benutzeroberfläche als Abhängigkeit:
+[Swagger]-Unterstützung ist in Azure Mobile App Service-Apps bereits integriert. Um die Swagger-Unterstützung zu aktivieren, installieren Sie zuerst die Swagger-Benutzeroberfläche als Abhängigkeit:
 
     npm install --save swagger-ui
 
@@ -561,7 +623,7 @@ Die Swagger-Unterstützung soll wahrscheinlich nur in Entwicklungseditionen akti
 
     var mobile = azureMobileApps({ swagger: process.env.NODE_ENV !== 'production' });
 
-Der Swagger-Endpunkt befindet sich bei http://_yoursite_.azurewebsites.net/swagger. Sie können auf die Swagger-Benutzeroberfläche über den Endpunkt `/swagger/ui` zugreifen. Beachten Sie, dass Swagger für den Endpunkt einen Fehler ausgibt, wenn Sie die Authentifizierung in Ihrer gesamten Anwendung als erforderlich festlegen. Um optimale Ergebnisse zu erzielen, lassen Sie in den Einstellungen für die Azure App Service-Authentifizierung/-Autorisierung nicht authentifizierte Anforderungen zu, und steuern Sie dann die Authentifizierung mithilfe der `table.access`-Eigenschaft.
+Der Swagger-Endpunkt befindet sich dann bei http://_yoursite_.azurewebsites.net/swagger. Sie können auf die Swagger-Benutzeroberfläche über den Endpunkt `/swagger/ui` zugreifen. Beachten Sie, dass Swagger für den Endpunkt einen Fehler ausgibt, wenn Sie die Authentifizierung in Ihrer gesamten Anwendung als erforderlich festlegen. Um optimale Ergebnisse zu erzielen, lassen Sie in den Einstellungen für die Azure App Service-Authentifizierung/-Autorisierung nicht authentifizierte Anforderungen zu, und steuern Sie dann die Authentifizierung mithilfe der `table.access`-Eigenschaft.
 
 Sie können die Swagger-Option auch der Datei `azureMobile.js` hinzufügen, wenn die Swagger-Unterstützung nur bei der lokalen Entwicklung verfügbar sein soll.
 
@@ -647,7 +709,7 @@ Dasselbe Token, das für den tables-Endpunkt verwendet wird, muss für benutzerd
 
 ### <a name="howto-customapi-auth"></a>Gewusst wie: Behandeln von großen Dateiuploads
 
-Das Azure Mobile Apps-SDK verwendet die [Body-Parser-Middleware](https://github.com/expressjs/body-parser), um Textinhalt in Ihrer Übermittlung zu akzeptieren und zu verschlüsseln. Sie können den Body-Parser im Voraus so konfigurieren, dass größere Dateiuploads akzeptiert werden:
+Das Azure Mobile Apps-SDK verwendet die [body-parser-Middleware](https://github.com/expressjs/body-parser), um Textinhalt in Ihrer Übermittlung zu akzeptieren und zu verschlüsseln. Sie können den Body-Parser im Voraus so konfigurieren, dass größere Dateiuploads akzeptiert werden:
 
 	var express = require('express'),
         bodyParser = require('body-parser'),
@@ -766,6 +828,7 @@ Im Azure-Portal können Sie Ihre Node.js-Back-End-Skriptdateien in Visual Studio
 
 <!-- URLs -->
 [Android-Client-Schnellstart]: app-service-mobile-android-get-started.md
+[Apache Cordova-Client-Schnellstart]: app-service-mobile-cordova-get-started.md
 [iOS-Client-Schnellstart]: app-service-mobile-ios-get-started.md
 [Xamarin.iOS-Client-Schnellstart]: app-service-mobile-xamarin-ios-get-started.md
 [Xamarin.Android-Client-Schnellstart]: app-service-mobile-xamarin-android-get-started.md
@@ -803,4 +866,4 @@ Im Azure-Portal können Sie Ihre Node.js-Back-End-Skriptdateien in Visual Studio
 [ExpressJS Middleware]: http://expressjs.com/guide/using-middleware.html
 [Winston]: https://github.com/winstonjs/winston
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

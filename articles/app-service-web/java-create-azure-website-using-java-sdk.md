@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="Java" 
 	ms.topic="article" 
-	ms.date="10/12/2015" 
+	ms.date="02/25/2016" 
 	ms.author="v-donntr"/>
 
 
@@ -64,7 +64,7 @@ Weitere Informationen zu Active Directory (AD) finden Sie unter [Was ist ein Azu
 
 ### Erstellen eines Verwaltungszertifikats für Azure
 
-Das Azure SDK für Java verwendet Verwaltungszertifikate für die Authentifizierung von Azure-Abonnements. Es handelt sich hierbei um X.509 v3-Zertifikate, die Sie zum Authentifizieren einer Clientanwendung nutzen, die die Dienstverwaltungs-API zur Verwaltung von Abonnementressourcen im Namen des Abonnementbesitzers verwendet.
+Das Azure SDK für Java verwendet Verwaltungszertifikate für die Authentifizierung von Azure-Abonnements. Es handelt sich hierbei um X.509 v3-Zertifikate, die Sie zum Authentifizieren einer Clientanwendung nutzen, die die Dienstverwaltungs-API zur Verwaltung von Abonnementressourcen im Namen des Abonnementbesitzers verwendet.
 
 Der Code in dieser Vorgehensweise verwendet ein selbstsigniertes Zertifikat zur Authentifizierung bei Azure. Für diese Vorgehensweise müssen Sie ein Zertifikat erstellen und dieses vorab in das [klassische Azure-Portal][] hochladen. Dieser Vorgang umfasst die folgenden Schritte:
 
@@ -99,10 +99,10 @@ Erstellen der CER-Datei:
 Hierbei gilt:
 
 - `<java-install-dir>` ist der Pfad zu dem Verzeichnis, in dem Sie Java installiert haben.
-- `<keystore-id>` ist der Eintragsbezeichner im Schlüsselspeicher (z. B. `AzureRemoteAccess`).
-- `<cert-store-dir>` ist der Pfad zu dem Verzeichnis, in dem Sie die Zertifikate speichern möchten (z. B. `C:/Certificates`).
-- `<cert-file-name>` ist der Name der Zertifikatdatei (z. B. `AzureWebDemoCert`).
-- `<password>` ist das Kennwort zum Schutz des Zertifikats. Das gewählte Kennwort muss mindestens 6 Zeichen umfassen. Sie können auch kein Kennwort verwenden, dies wird jedoch nicht empfohlen.
+- `<keystore-id>` ist der Eintragsbezeichner im Schlüsselspeicher (z. B. `AzureRemoteAccess`).
+- `<cert-store-dir>` ist der Pfad zu dem Verzeichnis, in dem Sie die Zertifikate speichern möchten (z. B. `C:/Certificates`).
+- `<cert-file-name>` ist der Name der Zertifikatdatei (z. B. `AzureWebDemoCert`).
+- `<password>` ist das Kennwort zum Schutz des Zertifikats. Das gewählte Kennwort muss mindestens 6 Zeichen umfassen. Sie können auch kein Kennwort verwenden, dies wird jedoch nicht empfohlen.
 - `<dname>` ist der X.500 Distinguished Name, der mit Aliasen verwendet wird. Dieser wird in die Felder für Aussteller und Antragsteller im selbstsignierten Zertifikat eingetragen.
 
 Weitere Informationen finden Sie unter [Erstellen und Hochladen eines Verwaltungszertifikats für Azure][].
@@ -432,7 +432,7 @@ Weitere Informationen zum Bereitstellen von WAR-Dateien finden Sie unter [Hinzuf
 
 Wählen Sie einen Drittanbieter-FTP-Client zum Veröffentlichen der Anwendung aus. In dieser Vorgehensweise werden zwei Optionen beschrieben: die in Azure integrierte Kudu-Konsole und FileZilla, ein beliebtes Tool mit einer benutzerfreundlichen grafischen Oberfläche.
 
-> **Hinweis:** Das Azure-Toolkit für Eclipse unterstützt die Bereitstellung in Speicherkonten und Clouddiensten, eine Bereitstellung in Web-Apps wird derzeit jedoch nicht unterstützt. Sie können mithilfe eines Azure-Bereitstellungsprojekts, wie in [Erstellen einer Hello World-Anwendung für Azure in Eclipse](http://msdn.microsoft.com/library/azure/hh690944.aspx) beschrieben, eine Bereitstellung in Speicherkonten und Clouddiensten durchführen. Eine Bereitstellung in Web-Apps ist jedoch nicht möglich. Verwenden Sie andere Methoden, z. B. FTP oder GitHub, um Ihre Dateien in die Web-App zu übertragen.
+> **Hinweis:** Das Azure-Toolkit für Eclipse unterstützt die Bereitstellung in Speicherkonten und Clouddiensten, eine Bereitstellung in Web-Apps wird derzeit jedoch nicht unterstützt. Sie können mithilfe eines Azure-Bereitstellungsprojekts, wie in [Erstellen einer Hello World-Anwendung für Azure in Eclipse](http://msdn.microsoft.com/library/azure/hh690944.aspx) beschrieben, eine Bereitstellung in Speicherkonten und Clouddiensten durchführen. Eine Bereitstellung in Web-Apps ist jedoch nicht möglich. Verwenden Sie andere Methoden, z. B. FTP oder GitHub, um Ihre Dateien in die Web-App zu übertragen.
 
 > **Hinweis:** Es wird nicht empfohlen, FTP über die Windows-Eingabeaufforderung zu verwenden (das Befehlszeilenprogramm FTP.EXE, das im Lieferumfang von Windows enthalten ist). FTP-Clients, die aktive FTP-Verbindungen nutzen, wie beispielsweise FTP.EXE, funktionieren häufig nicht, wenn Firewalls vorhanden sind. Beim aktiven FTP wird eine interne LAN-basierte Adresse angegeben, mit der ein FTP-Server wahrscheinlich keine Verbindung herstellen kann.
 
@@ -529,7 +529,7 @@ Zunächst wird nur die Datei "JSPHello.war" im Verzeichnisbereich angezeigt:
 
   ![][9]
 
-Nach kurzer Zeit (üblicherweise weniger als 5 Minuten) entzippt Tomcat Server die WAR-Datei in ein JSPHello-Verzeichnis. Klicken Sie auf das ROOT-Verzeichnis um anzuzeigen, ob die Datei "index.jsp" entzippt und in das Verzeichnis kopiert wurde. Wenn dies der Fall ist, wechseln Sie zurück zum webapps-Verzeichnis, und prüfen Sie, ob das entpackte JSPHello-Verzeichnis erstellt wurde. Falls diese Elemente nicht angezeigt werden, warten Sie, und wiederholen Sie den Vorgang.
+Nach kurzer Zeit (üblicherweise weniger als 5 Minuten) entzippt Tomcat Server die WAR-Datei in ein JSPHello-Verzeichnis. Klicken Sie auf das ROOT-Verzeichnis um anzuzeigen, ob die Datei "index.jsp" entzippt und in das Verzeichnis kopiert wurde. Wenn dies der Fall ist, wechseln Sie zurück zum webapps-Verzeichnis, und prüfen Sie, ob das entpackte JSPHello-Verzeichnis erstellt wurde. Falls diese Elemente nicht angezeigt werden, warten Sie, und wiederholen Sie den Vorgang.
 
   ![][10]
 
@@ -541,7 +541,14 @@ Eine zweite Möglichkeit zum Veröffentlichen der Anwendung besteht in der Verwe
 1. Klicken Sie in FileZilla auf **Datei > Servermanager**.
 2. Klicken Sie im **Servermanager** auf **Neuer Server**. Unter **Eintrag auswählen** wird ein neuer, leerer FTP-Server angezeigt, für den Sie einen Namen eingeben müssen. Verwenden Sie in dieser Vorgehensweise `AzureWebDemo-FTP`.
 
-    Legen Sie auf der Registerkarte **Allgemein** die folgenden Einstellungen fest: – **Host:** Geben Sie den Wert für **FTP-Hostname** ein, den Sie aus dem Dashboard kopiert haben. – **Port:** (Lassen Sie dieses Feld leer, da es sich um eine passive Übertragung handelt und der Server den zu verwendenden Port ermittelt.) – **Protokoll:** FTP File Transfer Protocol - **Verschlüsselung:** Unverschlüsseltes FTP verwenden – **Verbindungsart:** Normal - **Benutzer:** Geben Sie den Benutzer für Bereitstellung/FTP ein, den Sie aus dem Dashboard kopiert haben. Dies ist der vollständige FTP-Benutzername in der Form *Name\_Web-App\\Benutzername*. – **Kennwort:** Geben Sie das Kennwort ein, das Sie beim Festlegen der Anmeldeinformationen für die Bereitstellung angegeben haben.
+    Legen Sie auf der Registerkarte **Allgemein** die folgenden Einstellungen fest:
+    - **Host:** Geben Sie den Wert für **FTP-Hostname** ein, den Sie aus dem Dashboard kopiert haben.
+    - **Port:** (Lassen Sie dieses Feld leer, da es sich um eine passive Übertragung handelt und der Server den zu verwendenden Port ermittelt.)
+    - **Protokoll:** FTP File Transfer Protocol
+    - **Verschlüsselung:** Unverschlüsseltes FTP verwenden
+    - **Verbindungsart:** Normal
+    - **Benutzer:** Geben Sie den Benutzer für Bereitstellung/FTP ein, den Sie aus dem Dashboard kopiert haben. Dies ist der vollständige FTP-Benutzername im Format *Web-App-Name\\Benutzername*.
+    - **Kennwort:** Geben Sie das Kennwort ein, das Sie beim Festlegen der Anmeldeinformationen für die Bereitstellung angegeben haben.
 
     Wählen Sie auf der Registerkarte **Übertragungs-Einstellungen** die Option **Passiv**.
 
@@ -595,10 +602,10 @@ In dieser Vorgehensweise wird eine App Service-Web-App erstellt. Die Ressource w
 [klassische Azure-Portal]: https://manage.windowsazure.com
 [klassischen Azure-Portal]: https://manage.windowsazure.com
 [Was ist ein Azure AD-Verzeichnis?]: http://technet.microsoft.com/library/jj573650.aspx
-[Erstellen und Hochladen eines Verwaltungszertifikats für Azure]: http://msdn.microsoft.com/library/azure/gg551722.aspx
+[Erstellen und Hochladen eines Verwaltungszertifikats für Azure]: ../cloud-services/cloud-services-certs-create.md
 [Schlüssel- und Zertifikatverwaltungstool (keytool)]: http://docs.oracle.com/javase/6/docs/technotes/tools/windows/keytool.html
-[WebSiteManagementClient]: http://dl.windowsazure.com/javadoc/com/microsoft/windowsazure/management/websites/WebSiteManagementClient.html
+[WebSiteManagementClient]: http://azure.github.io/azure-sdk-for-java/com/microsoft/azure/management/websites/WebSiteManagementClient.html
 [WebSpaceNames]: http://dl.windowsazure.com/javadoc/com/microsoft/windowsazure/management/websites/models/WebSpaceNames.html
 [Azure-Portal]: https://portal.azure.com
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0302_2016-->

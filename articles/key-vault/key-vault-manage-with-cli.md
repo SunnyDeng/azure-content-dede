@@ -24,7 +24,7 @@ Verwenden Sie dieses Lernprogramm für den Einstieg in Azure-Schlüsseltresor, u
 
 **Geschätzter Zeitaufwand:** 20 Minuten
 
->[AZURE.NOTE]Dieses Lernprogramm enthält keine Anweisungen zum Schreiben der Azure-Anwendung, die in einen der Schritte enthält, der zeigt, wie Sie eine Anwendung zum Verwenden eines Schlüssels oder geheimen Schlüssels im Schlüsseltresor autorisieren.
+>[AZURE.NOTE]  Dieses Lernprogramm enthält keine Anweisungen zum Schreiben der Azure-Anwendung, die in einen der Schritte enthält, der zeigt, wie Sie eine Anwendung zum Verwenden eines Schlüssels oder geheimen Schlüssels im Schlüsseltresor autorisieren.
 >
 >Derzeit können Sie den Azure-Schlüsseltresor nicht im Azure-Portal konfigurieren. Verwenden Sie stattdessen die Anleitungen für die plattformübergreifende Befehlszeilenschnittstelle. Alternativ finden Sie Azure PowerShell-Anweisungen unter [Äquivalentes Lernprogramm ](key-vault-get-started.md).
 
@@ -68,7 +68,7 @@ oder wenn Sie sich durch interaktive Eingabe anmelden möchten.
 
     azure login
 
->[AZURE.NOTE]Die Login-Methode funktioniert nur mit Organisationskonto. Ein Organisations-Konto ist ein Benutzer, der von Ihrer Organisation verwaltet wird und im Azure Active Directory-Mandant Ihrer Organisation definiert ist.
+>[AZURE.NOTE]  Die Login-Methode funktioniert nur mit Organisationskonto. Ein Organisations-Konto ist ein Benutzer, der von Ihrer Organisation verwaltet wird und im Azure Active Directory-Mandant Ihrer Organisation definiert ist.
 
 
 Wenn Sie derzeit kein Organisations-Konto besitzen und sich mit einem Microsoft-Konto bei Ihrem Azure-Abonnement anmelden, können Sei wie folgt mühelos ein Organisations-Konto erstellen:
@@ -153,7 +153,7 @@ Zeigen wir den Schlüssel oder geheimen Schlüssel an, den Sie soeben erstellt h
 Dieser Schritt wird üblicherweise durch einen Entwickler auf einem separaten Computer durchgeführt. Dieser Schritt ist nicht spezifisch für den Azure-Schlüsseltresor, wird der Vollständigkeit halber jedoch hier aufgeführt.
 
 
->[AZURE.IMPORTANT]Zum Abschließen dieses Lernprogramms müssen sich Ihr Konto, der Schlüsseltresor und die in diesem Schritt registrierte Anwendung im selben Azure-Verzeichnis befinden.
+>[AZURE.IMPORTANT] Zum Abschließen dieses Lernprogramms müssen sich Ihr Konto, der Schlüsseltresor und die in diesem Schritt registrierte Anwendung im selben Azure-Verzeichnis befinden.
 
 Anwendungen, die einen Schlüsseltresor verwenden, müssen sich mithilfe eines Azure Active Directory-Tokens authentifizieren. Hierzu muss der Besitzer der Anwendung die Anwendung zunächst in Azure Active Directory registrieren. Zum Abschluss der Registrierung erhält der Anwendungsbesitzer die folgenden Werte:
 
@@ -185,11 +185,11 @@ Verwenden Sie den Befehl `azure keyvault set-policy`, um die Anwendung zum Zugre
 
 Wenn Ihr Tresorname beispielsweise "ContosoKeyVault" lautet, die Anwendung, die Sie autorisieren möchten, über die Client-ID 8f8c4bbd-485b-45fd-98f7-ec6300b7b4ed verfügt, und Sie die Anwendung zum Entschlüsseln und Anmelden mit Schlüsseln in Ihrem Tresor autorisieren möchten, führen Sie Folgendes aus:
 
-    azure keyvault set-policy --vault-name 'ContosoKeyVault' --spn 8f8c4bbd-485b-45fd-98f7-ec6300b7b4ed --perm-to-keys '["decrypt","sign"]'
+    azure keyvault set-policy --vault-name 'ContosoKeyVault' --spn 8f8c4bbd-485b-45fd-98f7-ec6300b7b4ed --perms-to-keys '["decrypt","sign"]'
 
 Wenn Sie dieselbe Anwendung so autorisieren möchten, dass sie geheime Schlüssel im Tresor liest, führen Sie Folgendes aus:
 
-	azure keyvault set-policy --vault-name 'ContosoKeyVault' --spn 8f8c4bbd-485b-45fd-98f7-ec6300b7b4ed --perm-to-secrets '["get"]'
+	azure keyvault set-policy --vault-name 'ContosoKeyVault' --spn 8f8c4bbd-485b-45fd-98f7-ec6300b7b4ed --perms-to-secrets '["get"]'
 
 ## Verwenden eins Hardwaresicherheitsmodul (HSM) ##
 
@@ -256,4 +256,4 @@ Hier ist ein Beispiel, wie ein bestimmten geheimer Schlüssel entfernt werden ka
 
 Eine Referenz zur Programmierung finden Sie im [Entwicklerhandbuch für den Azure-Schlüsseltresor](key-vault-developers-guide.md).
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0302_2016-->

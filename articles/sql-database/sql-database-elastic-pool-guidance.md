@@ -10,7 +10,7 @@
 <tags 
 	ms.service="sql-database"
 	ms.devlang="NA"
-	ms.date="02/23/2016" 
+	ms.date="02/26/2016" 
 	ms.author="sstein" 
 	ms.workload="data-management" 
 	ms.topic="article" 
@@ -32,7 +32,7 @@ Schätzen Sie ein, ob ein Pool für elastische Datenbanken für eine Datenbankgr
 
 SaaS-ISVs (Internet-Service Provider, die „Software as a Service“ anbieten) entwickeln Anwendungen, die auf der obersten von umfangreichen Datenebenen aufsetzen, die wiederum aus zahlreichen Datenbanken bestehen können. Ein allgemeines Anwendungsmuster dient dazu, jedem Kunden eine eigene Datenbank bereitzustellen. Verschiedene Kunden weisen jedoch unterschiedliche und unvorhersehbare Verwendungsmuster auf, und es ist schwierig, den Ressourcenbedarf der einzelnen Datenbankbenutzer vorherzusagen. Daher kann es vorkommen, dass der ISV zu viele Ressourcen bereitstellt, um den bestmöglichen Datendurchsatz und die optimale Antwortzeit für alle Datenbanken zu gewährleisten, was jedoch mit erheblichen Kosten verbunden ist. Auf der anderen Seite riskiert der ISV eine schlechtere Leistung bei geringeren Kosten für seine Kunden.
 
-Mit elastischen Datenbankpools in Azure SQL-Datenbanken sind SaaS-ISVs in der Lage, das Preis-/Leistungs-Verhältnis für eine Gruppen von Datenbanken im Rahmen eines vorgegebenen Budgets zu optimieren und können dennoch eine flexible Leistung für jede Datenbank sicherstellen. Mit elastischen Datenbankpools kann der ISV elastische Datenbankdurchsatzeinheiten (Elastic Database Throughput Units, eDTUs) für einen Pool erwerben, der von mehreren Datenbanken gemeinsam genutzt wird, um unvorhersehbare Nutzungszeiten von einzelnen Datenbanken abzufedern. Die eDTU-Anforderungen eines Pools werden anhand der zusammengefassten Auslastung der hierin befindlichen Datenbanken ermittelt. Die Anzahl der für den Pool verfügbaren eDTUs wird vom Budget des ISVs gesteuert. Elastische Datenbankpools machen es dem ISV leicht, Argumente für die Auswirkungen des Budgets auf die Leistung und umgekehrt auf den Pool zu finden. Der ISV fügt dem Pool einfach Datenbanken hinzu, legt alle erforderlichen eDTU-Garantien oder -Beschränkungen für die Datenbanken fest und berechnet dann die eDTUs des Pools basierend auf dem vorhandenen Budget. Mithilfe von elastischen Datenbankpools können ISVs ihre Dienste nahtlos von einem schlanken Einstieg für Startups bis zu einem Angebot für gut eingeführte Unternehmen mit ständig wachsenden Anforderungen skalieren.
+Mit elastischen Datenbankpools in Azure SQL-Datenbanken sind SaaS-ISVs in der Lage, das Preis-/Leistungs-Verhältnis für eine Gruppen von Datenbanken im Rahmen eines vorgegebenen Budgets zu optimieren und können dennoch eine flexible Leistung für jede Datenbank sicherstellen. Mit elastischen Datenbankpools kann der ISV elastische Datenbanktransaktionseinheiten (Elastic Database Transaction Units, eDTUs) für einen Pool erwerben, der von mehreren Datenbanken gemeinsam genutzt wird, um unvorhersehbare Nutzungszeiten von einzelnen Datenbanken abzufedern. Die eDTU-Anforderungen eines Pools werden anhand der zusammengefassten Auslastung der hierin befindlichen Datenbanken ermittelt. Die Anzahl der für den Pool verfügbaren eDTUs wird vom Budget des ISVs gesteuert. Elastische Datenbankpools machen es dem ISV leicht, Argumente für die Auswirkungen des Budgets auf die Leistung und umgekehrt auf den Pool zu finden. Der ISV fügt dem Pool einfach Datenbanken hinzu, legt alle erforderlichen eDTU-Garantien oder -Beschränkungen für die Datenbanken fest und berechnet dann die eDTUs des Pools basierend auf dem vorhandenen Budget. Mithilfe von elastischen Datenbankpools können ISVs ihre Dienste nahtlos von einem schlanken Einstieg für Startups bis zu einem Angebot für gut eingeführte Unternehmen mit ständig wachsenden Anforderungen skalieren.
   
 
 
@@ -435,4 +435,4 @@ Nicht alle eigenständigen Datenbanken sind gute Kandidaten für elastische Date
 [2]: ./media/sql-database-elastic-pool-guidance/four-databases.png
 [3]: ./media/sql-database-elastic-pool-guidance/twenty-databases.png
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="11/04/2015" 
+	ms.date="02/25/2016" 
 	ms.author="awills"/>
 
 # Stichprobenerstellung, Filterung und Vorverarbeitung von Telemetriedaten im Application Insights-SDK
@@ -24,10 +24,8 @@ Sie können Plug-Ins für das Application Insights SDK schreiben und konfigurier
 Derzeit sind diese Features für das ASP.NET-SDK verfügbar.
 
 * Durch das [Erstellen von Stichproben](#sampling) verringert sich der Umfang der Telemetriedaten, ohne Statistiken zu verfälschen. Zusammengehörige Datenpunkte werden dabei zusammengehalten, sodass Sie bei der Diagnose von Problemen zwischen diesen navigieren können. Im Portal wird die Gesamtanzahl multipliziert, um eine Kompensation der Stichproben zu erreichen.
- * Bei der Stichprobenerstellung mit festem Prozentsatz können Sie den Prozentsatz der übertragenen Ereignisse selbst bestimmen.
- * Bei der adaptiven Stichprobenerstellung (der Standardeinstellung für ASP.NET SDK ab Version 2.0.0-beta3) wird der Stichproben-Prozentsatz automatisch entsprechend dem Volumen an Telemetriedaten angepasst. Sie können ein Zielvolumen festlegen.
-* Durch das [Filtern](#filtering) können Sie Telemetriedaten im SDK auswählen oder ändern, bevor sie an den Server gesendet werden. Sie können beispielsweise den Umfang der Telemetriedaten verringern, indem Sie Anforderungen von Robots ausschließen. Dies stellt ein grundlegenderes Verfahren zur Senkung des Datenverkehrs dar als das Erstellen von Stichproben. Sie können so besser steuern, was übertragen wird. Jedoch müssen Sie beachten, dass dies Auswirkungen auf die Statistik hat – wenn Sie z. B. alle erfolgreichen Anforderungen herausfiltern.
-* Auch das [Hinzufügen von Eigenschaften](#add-properties) zu beliebigen von der App gesendeten Telemetriedaten, einschließlich Telemetriedaten von Standardmodulen, ist möglich. Sie könnten z. B. berechnete Werte hinzufügen oder Versionsnummern, nach denen Sie die Daten im Portal filtern.
+* Durch das [Filtern](#filtering) können Sie Telemetriedaten im SDK auswählen oder ändern, bevor sie an den Server gesendet werden. Sie können beispielsweise den Umfang der Telemetriedaten verringern, indem Sie Anforderungen von Robots ausschließen. Dies stellt ein grundlegenderes Verfahren zur Senkung des Datenverkehrs dar als das Erstellen von Stichproben. Sie können so besser steuern, was übertragen wird. Jedoch müssen Sie beachten, dass dies Auswirkungen auf die Statistik hat – wenn Sie z. B. alle erfolgreichen Anforderungen herausfiltern.
+* Auch das [Hinzufügen von Eigenschaften](#add-properties) zu beliebigen von der App gesendeten Telemetriedaten, einschließlich Telemetriedaten von Standardmodulen, ist möglich. Sie könnten z. B. berechnete Werte hinzufügen oder Versionsnummern, nach denen Sie die Daten im Portal filtern.
 * Die [SDK-API](app-insights-api-custom-events-metrics.md) wird zum Senden benutzerdefinierter Ereignisse und Metriken verwendet.
 
 Vorbereitung:
@@ -42,10 +40,15 @@ Vorbereitung:
 
 Bei der [Erstellung von Stichproben](app-insights-sampling.md) handelt es sich um die empfohlene Methode zum Reduzieren des Datenverkehrs bei gleichzeitig präzisen Statistiken. Der Filter wählt verwandte Elemente, damit Sie zwischen den Elementen in der Diagnose navigieren können. Ereigniszähler werden im metrischen Explorer angepasst, um die gefilterten Elemente zu kompensieren.
 
-* Es wird die adaptive Stichprobenerstellung empfohlen. Bei dieser Methode wird der Stichproben-Prozentsatz automatisch angepasst, um ein bestimmtes Volumen an Anforderungen zu erreichen. Derzeit nur für serverseitige Telemetrie bei ASP.NET verfügbar.  
+* Es wird die adaptive Stichprobenerstellung empfohlen. Bei dieser Methode wird der Stichproben-Prozentsatz automatisch angepasst, um ein bestimmtes Volumen an Anforderungen zu erreichen. Derzeit nur für serverseitige Telemetrie bei ASP.NET verfügbar. 
 * Die [Stichprobenerstellung mit festem Prozentsatz](app-insights-sampling.md) steht ebenfalls zur Verfügung. Dabei geben Sie den Stichproben-Prozentsatz an. Verfügbar für ASP.NET-Web-App-Code und JavaScript-Webseiten. Client und Server synchronisieren ihre Stichprobenerstellung, sodass Sie in der Suche zwischen den verwandten Seitenaufrufen und Anforderungen navigieren können.
+* Die Erfassungs-Stichprobenerstellung wird ausgeführt, wenn die Telemetriedaten beim Application Insights-Portal empfangen werden, sodass sie unabhängig vom verwendeten SDK verwendet werden können. Damit wird zwar nicht der Telemetriedatenverkehr im Netzwerk reduziert, aber der Verarbeitungs- und der Speicheraufwand in Application Insights. Nur die beibehaltenen Telemetriedaten werden auf Ihr monatliches Kontingent angerechnet. 
 
-### So aktivieren Sie die Stichprobenerstellung
+### So aktivieren Sie die Erfassungs-Stichprobenerstellung
+
+Öffnen Sie auf der Leiste „Einstellungen“ das Blatt „Kontingente und Preise“. Klicken Sie auf „Sampling“, und wählen Sie ein Stichprobenverhältnis aus.
+
+### So aktivieren Sie die adaptive Stichprobenerstellung
 
 **Aktualisieren Sie die NuGet-Pakete Ihres Projekts** auf die neueste *Vorabversion* von Application Insights: Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, wählen Sie "NuGet-Pakete verwalten" aus, aktivieren Sie **Vorabversion einschließen**, und suchen Sie nach "Microsoft.ApplicationInsights.Web".
 
@@ -55,7 +58,7 @@ In [ApplicationInsights.config](app-insights-configuration-with-applicationinsig
 
 ### Stichprobenerstellung auf Clientseite
 
-Um eine Stichprobenerstellung mit festem Prozentsatz für die Daten von Webseiten zu erreichen, fügen Sie in den eingefügten [Application Insights-Codeausschnitt](app-insights-javascript.md) (üblicherweise auf einer Masterseite wie etwa „\_Layout.cshtml“) eine zusätzliche Zeile ein:
+Um eine Stichprobenerstellung mit festem Prozentsatz für die Daten von Webseiten zu erreichen, fügen Sie in den eingefügten [Application Insights-Codeausschnitt](app-insights-javascript.md) (üblicherweise auf einer Masterseite wie etwa „\_Layout.cshtml“) eine zusätzliche Zeile ein:
 
 *JavaScript*
 
@@ -78,7 +81,7 @@ Um eine Stichprobenerstellung mit festem Prozentsatz für die Daten von Webseite
 
 Diese Technik bietet Ihnen eine bessere Kontrolle über die Daten aus dem Telemetriedatenstrom, die ein- oder ausgeschlossen werden. Sie können sie zusammen mit der Stichprobenerstellung oder einzeln verwenden.
 
-Zum Filtern von Telemetriedaten schreiben Sie einen Telemetrie-Prozessor und registrieren ihn beim SDK. Alle Telemetriedaten durchlaufen den Prozessor. Sie können dann auswählen, diese aus dem Datenstrom zu verwerfen, oder Eigenschaften hinzufügen. Dies schließt Telemetriedaten aus Standardmodulen wie etwa dem HTTP-Anforderungssammler und der Abhängigkeitserfassung sowie von Ihnen erstellte Telemetriedaten ein. Sie können z. B. Telemetriedaten zu Anforderungen von Robots oder erfolgreiche Abhängigkeitsaufrufe herausfiltern.
+Zum Filtern von Telemetriedaten schreiben Sie einen Telemetrie-Prozessor und registrieren ihn beim SDK. Alle Telemetriedaten durchlaufen den Prozessor. Sie können dann auswählen, diese aus dem Datenstrom zu verwerfen, oder Eigenschaften hinzufügen. Dies schließt Telemetriedaten aus Standardmodulen wie etwa dem HTTP-Anforderungssammler und der Abhängigkeitserfassung sowie von Ihnen erstellte Telemetriedaten ein. Sie können z. B. Telemetriedaten zu Anforderungen von Robots oder erfolgreiche Abhängigkeitsaufrufe herausfiltern.
 
 > [AZURE.WARNING] Die Filterung der vom SDK gesendeten Telemetriedaten mithilfe von Prozessoren kann die im Portal angezeigten Statistiken verfälschen und die Nachverfolgung verwandter Elemente erschweren.
 > 
@@ -86,7 +89,7 @@ Zum Filtern von Telemetriedaten schreiben Sie einen Telemetrie-Prozessor und reg
 
 ### Erstellen eines Telemetrieprozessors
 
-1. Aktualisieren Sie das Application Insights-SDK auf die neueste Version (2.0.0-beta2 oder höher). Klicken Sie im Visual Studio-Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, und wählen Sie „NuGet-Pakete verwalten“ aus. Wählen Sie im NuGet-Paket-Manager **Vorabversion einschließen** aus, und suchen Sie nach "Microsoft.ApplicationInsights.Web".
+1. Aktualisieren Sie das Application Insights-SDK auf die neueste Version (2.0.0-beta2 oder höher). Klicken Sie im Visual Studio-Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, und wählen Sie „NuGet-Pakete verwalten“ aus. Wählen Sie im NuGet-Paket-Manager **Vorabversion einschließen** aus, und suchen Sie nach "Microsoft.ApplicationInsights.Web".
 
 1. Implementieren Sie zum Erstellen eines Filters „ITelemetryProcessor“. Hierbei handelt es sich um einen weiteren Erweiterungspunkt wie Telemetriemodul, Telemetrieinitiliasierer und Telemetriekanal.
 
@@ -157,7 +160,7 @@ Sie können durch die Bereitstellung von öffentlich benannten Eigenschaften in 
 > [AZURE.WARNING] Achten Sie darauf, dass die Typnamen und sonstige Eigenschaftennamen in der .config-Datei mit den Klassen- und Eigenschaftennamen im Code übereinstimmen. Wenn die .config-Datei auf einen nicht vorhandenen Typ oder eine nicht vorhandene Eigenschaft verweist, könnte das SDK möglicherweise automatisch keine Telemetriedaten mehr senden.
 
  
-**Alternativ** können Sie den Filter im Code initialisieren. Fügen Sie in einer geeigneten Initialisierungsklasse, z. B. AppStart in „Global.asax.cs“ Ihren Prozessor in die Kette ein:
+**Alternativ** können Sie den Filter im Code initialisieren. Fügen Sie in einer geeigneten Initialisierungsklasse, z. B. AppStart in „Global.asax.cs“ Ihren Prozessor in die Kette ein:
 
 ```C#
 
@@ -239,7 +242,7 @@ public void Process(ITelemetry item)
 
 Mithilfe von Telemetrieinitialisierern definieren Sie globale Eigenschaften, die mit allen Telemetriedaten gesendet werden, und setzen das ausgewählte Verhalten der Standardtelemetriemodule außer Kraft.
 
-Das Application Insights for Web-Paket erfasst beispielsweise Telemetriedaten über HTTP-Anforderungen. Standardmäßig kennzeichnet es jede Anforderung mit einem Antwortcode >= 400 als fehlerhaft. Wenn 400 jedoch als erfolgreich behandelt werden soll, können Sie einen Telemetrieinitialisierer angeben, der die Success-Eigenschaft festlegt.
+Das Application Insights for Web-Paket erfasst beispielsweise Telemetriedaten über HTTP-Anforderungen. Standardmäßig kennzeichnet es jede Anforderung mit einem Antwortcode >= 400 als fehlerhaft. Wenn 400 jedoch als erfolgreich behandelt werden soll, können Sie einen Telemetrieinitialisierer angeben, der die Success-Eigenschaft festlegt.
 
 Wenn Sie einen Telemetrieinitialisierer angeben, wird dieser immer aufgerufen, wenn eine der Track*()-Methoden aufgerufen wird. Dies umfasst auch Methoden, die von den Standardtelemetriemodulen aufgerufen werden. Nach Abmachung legen diese Module keine Eigenschaft fest, die bereits durch einen Initialisierer festgelegt wurde.
 
@@ -296,7 +299,7 @@ In "ApplicationInsights.config":
       </TelemetryInitializers>
     </ApplicationInsights>
 
-*Alternativ* können Sie den Initialisierer im Code instanziieren, z. B. in "Global.aspx.cs":
+*Alternativ* können Sie den Initialisierer im Code instanziieren, z. B. in "Global.aspx.cs":
 
 
 ```C#
@@ -404,4 +407,4 @@ Sie können beliebig viele Initialisierer hinzufügen.
 
  
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0302_2016-->

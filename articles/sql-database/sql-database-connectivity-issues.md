@@ -13,7 +13,7 @@
 	ms.workload="sql-database"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="get-started-article"
+	ms.topic="article"
 	ms.date="02/17/2016"
 	ms.author="daleche"/>
 
@@ -159,7 +159,7 @@ Die für die Verbindung mit Azure SQL-Datenbank erforderliche Verbindungszeichen
 ### SqlConnection-Parameter von .NET für wiederholte Verbindungsversuche
 
 
-Wenn Ihr Clientprogramm mithilfe der .NET Framework-Klasse **System.Data.SqlClient.SqlConnection** eine Verbindung mit Azure SQL-Datenbank herstellt, sollten Sie .NET 4.6.1 oder höher verwenden, damit Sie die Funktion für wiederholte Verbindungsversuche nutzen können. Details der Funktion finden Sie [hier](http://go.microsoft.com/fwlink/?linkid=393996).
+Wenn Ihr Clientprogramm mithilfe der .NET Framework-Klasse **System.Data.SqlClient.SqlConnection** eine Verbindung mit Azure SQL-Datenbank herstellt, sollten Sie .NET 4.6.1 oder höher verwenden, damit Sie die Funktion für wiederholte Verbindungsversuche nutzen können. Details der Funktion finden Sie [hier](http://go.microsoft.com/fwlink/?linkid=393996).
 
 
 <!--
@@ -170,8 +170,8 @@ Wenn Ihr Clientprogramm mithilfe der .NET Framework-Klasse **System.Data.SqlClie
 Beim Erstellen der [Verbindungszeichenfolge](http://msdn.microsoft.com/library/System.Data.SqlClient.SqlConnection.connectionstring.aspx) für Ihr **SqlConnection**-Objekt sollten Sie die Werte der folgenden Parameter abstimmen:
 
 - ConnectRetryCount &nbsp;&nbsp;*(Der Standardwert ist 0. Der Bereich reicht von 0 bis 255.)*
-- ConnectRetryInterval &nbsp;&nbsp;*(Der Standardwert ist 1 Sekunde. Der Bereich reicht von 1 bis 60.)*
-- Verbindungstimeout &nbsp;&nbsp;*(Der Standardwert ist 15 Sekunden. Der Bereich reicht von 0 bis 2147483647.)*
+- ConnectRetryInterval &nbsp;&nbsp;*(Der Standardwert ist 1 Sekunde. Der Bereich reicht von 1 bis 60.)*
+- Verbindungstimeout &nbsp;&nbsp;*(Der Standardwert ist 15 Sekunden. Der Bereich reicht von 0 bis 2147483647.)*
 
 
 Insbesondere sollte für Ihre ausgewählten Werte die folgende Gleichung gelten:
@@ -220,10 +220,10 @@ Weitere Informationen finden Sie unter [Vorgehensweise: Konfigurieren von Firewa
 ## Verbindung: Ports
 
 
-Üblicherweise muss lediglich auf dem Computer, auf dem Ihr Clientprogramm gehostet wird, sichergestellt werden, dass Port 1433 für die ausgehende Kommunikation geöffnet ist.
+Üblicherweise muss lediglich auf dem Computer, auf dem Ihr Clientprogramm gehostet wird, sichergestellt werden, dass Port 1433 für die ausgehende Kommunikation geöffnet ist.
 
 
-Wenn Ihr Clientprogramm z. B. auf einem Windows-Computer gehostet wird, kann Port 1433 über die Windows-Firewall auf dem Host geöffnet werden:
+Wenn Ihr Clientprogramm z. B. auf einem Windows-Computer gehostet wird, kann Port 1433 über die Windows-Firewall auf dem Host geöffnet werden:
 
 
 1. Öffnen Sie die Systemsteuerung.
@@ -246,7 +246,7 @@ Hintergrundinformationen zur Konfiguration von Ports und IP-Adressen finden Sie 
 ## Verbindung: ADO.NET 4.6.1
 
 
-Wenn Ihr Programm ADO.NET-Klassen wie **System.Data.SqlClient.SqlConnection** für die Verbindung mit Azure SQL-Datenbank verwendet, sollten Sie .NET Framework 4.6.1 oder höher verwenden.
+Wenn Ihr Programm ADO.NET-Klassen wie **System.Data.SqlClient.SqlConnection** für die Verbindung mit Azure SQL-Datenbank verwendet, sollten Sie .NET Framework 4.6.1 oder höher verwenden.
 
 
 ADO.NET 4.6.1:
@@ -259,7 +259,7 @@ ADO.NET 4.6.1:
 Bei Verwendung eines Verbindungsobjekts aus einem Verbindungspool sollte Ihr Programm die Verbindung vorübergehend schließen, wenn diese nicht umgehend verwendet wird. Das erneute Öffnen einer Verbindung ist weniger kostenintensiv als das Erstellen einer neuen Verbindung.
 
 
-Wenn Sie ADO.NET 4.0 oder früher verwenden, sollten Sie ein Upgrade auf die aktuelle ADO.NET-Version durchführen.
+Wenn Sie ADO.NET 4.0 oder früher verwenden, sollten Sie ein Upgrade auf die aktuelle ADO.NET-Version durchführen.
 
 - Ab November 2015 können Sie [ADO.NET 4.6.1 herunterladen ](http://blogs.msdn.com/b/dotnet/archive/2015/11/30/net-framework-4-6-1-is-now-available.aspx).
 
@@ -397,7 +397,7 @@ database_xml_deadlock_report  2015-10-16 20:28:01.0090000  NULL   NULL   NULL   
 ## Enterprise Library 6
 
 
-Bei Enterprise Library 6 (EntLib60) handelt es sich um ein Framework aus .NET-Klassen, mit denen Sie stabile Clouddienstclients implementieren können (u. a. den Azure SQL-Datenbankdienst). Auf der folgenden Seite finden Sie Themen zu den verschiedenen Bereichen, in denen EntLib60 nützlich ist:
+Bei Enterprise Library 6 (EntLib60) handelt es sich um ein Framework aus .NET-Klassen, mit denen Sie stabile Clouddienstclients implementieren können (u. a. den Azure SQL-Datenbankdienst). Auf der folgenden Seite finden Sie Themen zu den verschiedenen Bereichen, in denen EntLib60 nützlich ist:
 
 - [Enterprise Library 6 – April 2013](http://msdn.microsoft.com/library/dn169621%28v=pandp.60%29.aspx)
 
@@ -409,7 +409,7 @@ EntLib60 kann beispielsweise für Wiederholungslogik zur Behandlung von vorüber
 
 Ein kurzes C#-Codebeispiel unter Verwendung von EntLib60 in der Wiederholungslogik finden Sie unter:
 
-- [Codebeispiel: Wiederholungslogik aus Enterprise Library 6 in C# für das Herstellen einer Verbindung mit SQL-Datenbank](sql-database-develop-entlib-csharp-retry-windows.md)
+- [Codebeispiel: Wiederholungslogik aus Enterprise Library 6 in C# für das Herstellen einer Verbindung mit SQL-Datenbank](sql-database-develop-entlib-csharp-retry-windows.md)
 
 
 > [AZURE.NOTE] Der Quellcode für EntLib60 steht zum öffentlichen [Download](http://go.microsoft.com/fwlink/p/?LinkID=290898) bereit. Microsoft plant keine weiteren Funktions- oder Wartungsupdates für EntLib.
@@ -449,7 +449,7 @@ Unter folgenden Links finden Sie weitere Informationen zu EntLib60:
 
 - Bewährte Methoden: [Allgemeiner Leitfaden zum Wiederholen von Vorgängen](../best-practices-retry-general.md) bietet eine detaillierte Erläuterung wichtiger Aspekte im Zusammenhang mit Wiederholungslogik.
 
-- NuGet-Download: [Enterprise Library – Transient Fault Handling Application Block 6.0](http://www.nuget.org/packages/EnterpriseLibrary.TransientFaultHandling/)
+- NuGet-Download: [Enterprise Library – Transient Fault Handling Application Block 6.0](http://www.nuget.org/packages/EnterpriseLibrary.TransientFaultHandling/)
 
 
 ### EntLib60: der Protokollierungsblock
@@ -470,7 +470,7 @@ Einzelheiten finden Sie hier: [5 – Protokollierung leicht gemacht: mit dem Pro
 ### Quellcode der IsTransient-Methode von EntLib60
 
 
-Nachfolgend wird der C#-Quellcode für die Methode **IsTransient** der Klasse **SqlDatabaseTransientErrorDetectionStrategy** gezeigt. Anhand dieses Quellcodes wird ermittelt, welche Fehler als vorübergehend eingestuft werden und einen Wiederholungsversuch rechtfertigen (April 2013).
+Nachfolgend wird der C#-Quellcode für die Methode **IsTransient** der Klasse **SqlDatabaseTransientErrorDetectionStrategy** gezeigt. Anhand dieses Quellcodes wird ermittelt, welche Fehler als vorübergehend eingestuft werden und einen Wiederholungsversuch rechtfertigen (April 2013).
 
 Zur Verbesserung der Lesbarkeit wurden eine Reihe von **//comment**-Zeilen aus diesem Code entfernt.
 
@@ -548,6 +548,6 @@ public bool IsTransient(Exception ex)
 - [SQL Server-Verbindungspooling (ADO.NET)](http://msdn.microsoft.com/library/8xx3tyca.aspx)
 
 
-- [*Retrying* ist eine Apache 2.0-lizenzierte Allzweckwiederholungsbibliothek, die in **Python** geschrieben wurde und das Hinzufügen von Wiederholungsverhalten zu praktisch jeglichen Elementen vereinfacht.](https://pypi.python.org/pypi/retrying)
+- [*Retrying* ist eine Apache 2.0-lizenzierte Allzweckwiederholungsbibliothek, die in **Python** geschrieben wurde und das Hinzufügen von Wiederholungsverhalten zu praktisch jeglichen Elementen vereinfacht.](https://pypi.python.org/pypi/retrying)
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="09/22/2015"
+	ms.date="02/19/2016"
 	ms.author="dastrock"/>
 
 # Azure AD B2C-Vorschau: Erstellen einer .NET-Web-App
@@ -175,7 +175,7 @@ public partial class Startup
 ## Senden von Authentifizierungsanforderungen an Azure AD
 Ihre App ist nun ordnungsgemäß für die Kommunikation mit Azure AD B2C über das Authentifizierungsprotokoll OpenID Connect konfiguriert. OWIN kümmert sich um all die Details der Erstellung von Authentifizierungsnachrichten, der Überprüfung der Azure AD-Token und der Verwaltung der Benutzersitzung. Jetzt müssen nur noch die einzelnen Benutzerabläufe initiiert werden.
 
-Wenn ein Benutzer in der Web-App die Schaltflächen **Registrieren**, **Anmelden** oder **Profil bearbeiten** auswählt, wird die zugeordnete Aktion in `Controllers\AccountController.cs` aufgerufen. Mit integrierten OWIN-Methoden können Sie in jedem Fall die richtige Richtlinie auslösen:
+Wenn ein Benutzer in der Web-App eine der Schaltflächen **Registrieren**, **Anmelden** oder **Profil bearbeiten** auswählt, wird die zugeordnete Aktion in `Controllers\AccountController.cs` aufgerufen. Mit integrierten OWIN-Methoden können Sie in jedem Fall die richtige Richtlinie auslösen:
 
 ```C#
 // Controllers\AccountController.cs
@@ -341,4 +341,4 @@ You can now move on to more advanced B2C topics. You might try:
 
 -->
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

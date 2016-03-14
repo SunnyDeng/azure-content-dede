@@ -3,7 +3,7 @@
    description="Erfahren Sie, wie Sie Ihr lokales StorSimple Virtual Array mithilfe des StorSimple Manager-Diensts im klassischen Azure-Portal verwalten."
    services="storsimple"
    documentationCenter=""
-   authors="SharS"
+   authors="alkohli"
    manager="carmonm"
    editor="" />
 <tags 
@@ -12,10 +12,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="02/18/2016"
-   ms.author="v-sharos" />
+   ms.date="03/01/2016"
+   ms.author="alkohli" />
 
-# Verwalten des StorSimple Virtual Array mithilfe des StorSimple Manager-Diensts (Vorschau)
+# Verwalten des StorSimple Virtual Array mithilfe des StorSimple Manager-Diensts
 
 ![Setup-Prozessablauf](./media/storsimple-ova-manager-service-administration/manage4.png)
 
@@ -58,11 +58,11 @@ Die folgende Tabelle gibt Aufschluss über die Navigationshierarchie der Benutze
 |Zielseite|Seiten auf Dienstebene|Seiten auf Geräteebene|
 |---|---|---|
 |StorSimple Manager-Dienst|Dashboard (Dienst)|Dashboard (Gerät)|
-|Geräte →|Überwachen|
-|Sicherungskatalog|Freigaben (Dateiserver) oder </br>Volumes (iSCSI-Server)|
-|Konfigurieren (Dienst)|Konfigurieren (Gerät)|
-|Aufträge|Wartung|
-|Warnungen|
+||Geräte →|Überwachen|
+||Sicherungskatalog|Freigaben (Dateiserver) oder </br>Volumes (iSCSI-Server)|
+||Konfigurieren (Dienst)|Konfigurieren (Gerät)|
+||Aufträge|Wartung|
+||Warnungen|
 
 ## Verwenden des StorSimple Manager-Diensts zum Durchführen von Verwaltungsaufgaben
 
@@ -96,4 +96,4 @@ Klicken Sie auf die Verfahren in der Tabelle, um weitere Informationen zu den ei
 ##Nächste Schritte
 Informationen zur Webbenutzeroberfläche und ihrer Verwendung finden Sie unter [Verwalten des StorSimple Virtual Arrays über die StorSimple-Webbenutzeroberfläche](storsimple-ova-web-ui-admin.md).
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

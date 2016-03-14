@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="02/17/2016"
+   ms.date="02/26/2016"
    ms.author="barbkess;sonyama"/>
 
 # Systemsichten
@@ -27,8 +27,6 @@
 - [sys.pdw\_diag\_sessions](http://msdn.microsoft.com/library/mt203890.aspx)
 - [sys.pdw\_distributions](http://msdn.microsoft.com/library/mt203892.aspx)
 - [sys.pdw\_index\_mappings](http://msdn.microsoft.com/library/mt203912.aspx)
-- [sys.pdw\_loader\_backup\_run\_details](http://msdn.microsoft.com/library/mt203877.aspx)
-- [sys.pdw\_loader\_backup\_runs](http://msdn.microsoft.com/library/mt203884.aspx)
 - [sys.pdw\_nodes\_column\_store\_dictionaries](http://msdn.microsoft.com/library/mt203902.aspx)
 - [sys.pdw\_nodes\_column\_store\_row\_groups](http://msdn.microsoft.com/library/mt203880.aspx)
 - [sys.pdw\_nodes\_column\_store\_segments](http://msdn.microsoft.com/library/mt203916.aspx)
@@ -182,7 +180,7 @@ Daher verfügen diese DMVs jeweils über eine spezielle Spalte mit dem Namen pdw
 | sys.dm\_pdw\_nodes\_tran\_session\_transactions | [sys.dm\_tran\_session\_transactions (Transact-SQL)](http://msdn.microsoft.com/library/ms188739.aspx) |
 | sys.dm\_pdw\_nodes\_tran\_top\_version\_generators | [sys.dm\_tran\_top\_version\_generators (Transact-SQL)](http://msdn.microsoft.com/library/ms188778.aspx) |
 
-## Liste der verfügbaren SQL Server 2016 PolyBase-DMVs in SQL Data Warehouse
+## Liste der verfügbaren SQL Server 2016 PolyBase-DMVs in SQL Data Warehouse
 
 - [sys.dm\_exec\_compute\_node\_errors (Transact-SQL)](http://msdn.microsoft.com/library/mt146380.aspx)
 - [sys.dm\_exec\_compute\_node\_status (Transact-SQL)](http://msdn.microsoft.com/library/mt146382.aspx)
@@ -232,4 +230,4 @@ Weitere Referenzinformationen finden Sie unter [SQL Data Warehouse-Referenz – 
 
 <!--Other Web references-->
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0302_2016-->

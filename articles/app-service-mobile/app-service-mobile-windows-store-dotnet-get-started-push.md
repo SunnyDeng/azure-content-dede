@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="02/04/2016"
+	ms.date="03/02/2016"
 	ms.author="glenga"/>
 
 # Hinzufügen von Pushbenachrichtigungen zu Ihrer universellen Windows Runtime 8.1-App
@@ -24,7 +24,7 @@
 
 In diesem Thema erfahren Sie, wie Sie mithilfe von Azure Mobile App Service-Apps und Azure Notification Hubs Pushbenachrichtigungen an eine universelle Windows-Runtime 8.1-App senden. In diesem Szenario sendet das Mobile App-Back-End eine Pushbenachrichtigung an alle Windows-Apps, die beim Windows-Benachrichtigungsdienst (Windows Notification Service, WNS) registriert sind, wenn ein neues Element hinzugefügt wird.
 
-Dieses Lernprogramm baut auf dem App Service-Schnellstart für mobile Apps auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst das Lernprogramm [Erstellen einer Windows-App](../app-service-mobile-windows-store-dotnet-get-started.md) abschließen. Wenn Sie das heruntergeladene Schnellstart-Serverprojekt nicht verwenden, müssen Sie Ihrem Projekt das Pushbenachrichtigungs-Erweiterungspaket hinzufügen. Weitere Informationen zu Servererweiterungspaketen finden Sie unter [Work with the .NET backend server SDK for Azure Mobile Apps](app-service-mobile-dotnet-backend-how-to-use-server-sdk.md) (in englischer Sprache).
+Dieses Lernprogramm baut auf dem App Service-Schnellstart für mobile Apps auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst das Lernprogramm [Erstellen einer Windows-App](app-service-mobile-windows-store-dotnet-get-started.md) abschließen. Wenn Sie das heruntergeladene Schnellstart-Serverprojekt nicht verwenden, müssen Sie Ihrem Projekt das Pushbenachrichtigungs-Erweiterungspaket hinzufügen. Weitere Informationen zu Servererweiterungspaketen finden Sie unter [Work with the .NET backend server SDK for Azure Mobile Apps](app-service-mobile-dotnet-backend-how-to-use-server-sdk.md) (in englischer Sprache).
 
 ##Voraussetzungen
 
@@ -32,7 +32,7 @@ Für dieses Lernprogramm benötigen Sie Folgendes:
 
 * Ein aktives [Microsoft Store-Konto](http://go.microsoft.com/fwlink/p/?LinkId=280045)
 * [Visual Studio Community 2013.](https://go.microsoft.com/fwLink/p/?LinkID=391934)
-* Schließen Sie das [Schnellstart-Lernprogramm](../app-service-mobile-windows-store-dotnet-get-started.md) ab.
+* Schließen Sie das [Schnellstart-Lernprogramm](app-service-mobile-windows-store-dotnet-get-started.md) ab.
 
 
 ##<a name="create-hub"></a>Erstellen eines Notification Hubs
@@ -153,7 +153,7 @@ Nachdem die Pushbenachrichtigungen in der App aktiviert wurden, müssen Sie ihr 
 
 2. Beim Bearbeiten der Datei auf Ihrem lokalen Computer veröffentlichen Sie das Serverprojekt erneut.
 
-##<a id="update-service"></a>Hinzufügen von Pushbenachrichtigungen zur App
+##<a id="update-app"></a>Hinzufügen von Pushbenachrichtigungen zur App
 
 1. Öffnen Sie die freigegebene Projektdatei **App.xaml.cs**, und fügen Sie folgenden `using`-Anweisungen hinzu:
 
@@ -185,6 +185,8 @@ Nachdem die Pushbenachrichtigungen in der App aktiviert wurden, müssen Sie ihr 
 
     Dadurch wird sichergestellt, dass der kurzlebige ChannelURI-Wert bei jedem Anwendungsstart registriert wird.
 
+    >[AZURE.NOTE] Wenn Sie auch Authentifizierung aktiviert haben, achten Sie darauf, dass der Benutzer sich vor dem Versuch der Registrierung von Pushbenachrichtigungen anmeldet. Weitere Informationen finden Sie unter [Authenticate first](https://github.com/Azure-Samples/app-service-mobile-windows-quickstart/blob/master/README.md#authenticate-first) (Zuerst Authentifizieren) im vollständigen Schnellstartbeispiel.
+
 4. Doppelklicken Sie im Projektmappen-Explorer auf die Datei **Package.appxmanifest** der Windows Store-App, und legen Sie unter **Benachrichtigungen** die Option **Toastfähig** auf **Ja** fest.
 
     Klicken Sie im Menü **Datei** auf **Alle speichern**.
@@ -209,5 +211,6 @@ Ihre App kann jetzt Popupbenachrichtigungen empfangen.
 [Azure Portal]: https://portal.azure.com/
 
 <!-- Images. -->
+))) )
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0302_2016-->

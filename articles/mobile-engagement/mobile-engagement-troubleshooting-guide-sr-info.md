@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="mobile" 
-   ms.date="06/18/2015"
+   ms.date="02/29/2016"
    ms.author="piyushjo"/>
 
 # Informationen bei Serviceanfragen
@@ -34,10 +34,10 @@ Stellen Sie die folgenden Informationen bereit, wenn Sie eine Serviceanfrage fü
 - Ergebnisse aller durchgeführten Tests aus den [Handbüchern zur Problembehandlung](http://go.microsoft.com/fwlink/?LinkId=524382)
 
 ## Code: relevante Codierungsinformationen 
-- SDK-Version und Plattform Ihrer App (z. B. Android-SDK 2.4.1, iOS 1.16.2)
+- SDK-Version und Plattform Ihrer App (z. B. Android-SDK 2.4.1, iOS 1.16.2)
 - Downloadpfad Ihrer Produktions-App (oder die APK-/TGZ-Dateien Ihrer Entwicklungs-App)
 - „AndroidManifest.xml“ und/oder alle Codeausschnitte aus Ihrer App, die im Zusammenhang mit Azure Mobile Engagement stehen (zur erweiterten Problembehandlung)
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0302_2016-->

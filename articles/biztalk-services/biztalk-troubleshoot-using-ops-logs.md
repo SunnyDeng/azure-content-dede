@@ -4,8 +4,8 @@
 	services="biztalk-services" 
 	documentationCenter="" 
 	authors="MandiOhlinger" 
-	manager="dwrede" 
-	editor="cgronlun"/>
+	manager="erikre" 
+	editor=""/>
 
 <tags 
 	ms.service="biztalk-services" 
@@ -13,16 +13,16 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/02/2015" 
+	ms.date="02/29/2016" 
 	ms.author="mandia"/>
 
 
 # BizTalk Services: Fehlerbehebung mit Vorgangsprotokollen
 
 ## Was sind Vorgangsprotokolle?
-Vorgangsprotokolle sind eine Verwaltungsdienstfunktion im klassischen Azure-Portal, mit denen Sie Verlaufsprotokolle zu Vorgängen anzeigen können, die in Ihren Azure-Diensten ausgeführt wurden, einschließlich BizTalk Services. So können Sie die Verlaufsdaten zu Verwaltungsvorgängen für Ihr BizTalk Services-Abonnement bis zu 180 Tage lang anzeigen.
+Vorgangsprotokolle sind eine Verwaltungsdienstfunktion im klassischen Azure-Portal, mit denen Sie Verlaufsprotokolle zu Vorgängen anzeigen können, die in Ihren Azure-Diensten ausgeführt wurden, einschließlich BizTalk Services. So können Sie die Verlaufsdaten zu Verwaltungsvorgängen für Ihr BizTalk Services-Abonnement bis zu 180 Tage lang anzeigen.
 
-> [AZURE.NOTE]Diese Funktion erfasst nur Protokolle für Verwaltungsvorgänge in BizTalk Services, beispielsweise wann ein Dienst gestartet oder gesichert wurde usw. Solche Vorgänge werden unabhängig von der Tatsache nachverfolgt, ob sie über das klassische Azure-Portal oder unter Verwendung der [BizTalk Service-REST-APIs](http://msdn.microsoft.com/library/azure/dn232347.aspx) ausgeführt wurden. Eine vollständige Liste der Vorgänge, die mithilfe der Verwaltungsdienste nachverfolgt werden, finden Sie unter [Vorgänge, die mit Azure-Verwaltungsdiensten nachverfolgt werden](#bizops).<br/><br/> Dies umfasst nicht die Protokolle für Aktivitäten bezüglich der BizTalk Services-Laufzeit (beispielsweise Nachrichten, die von Brücken verarbeitet werden usw.). Verwenden Sie im BizTalk Services-Portal die Ansicht "Nachverfolgung", um diese Protokolle anzuzeigen. Weitere Informationen finden Sie unter [Nachverfolgen von Nachrichten](http://msdn.microsoft.com/library/azure/hh949805.aspx).
+> [AZURE.NOTE] Diese Funktion erfasst nur Protokolle für Verwaltungsvorgänge in BizTalk Services, beispielsweise wann ein Dienst gestartet oder gesichert wurde usw. Solche Vorgänge werden unabhängig von der Tatsache nachverfolgt, ob sie über das klassische Azure-Portal oder unter Verwendung der [BizTalk Service-REST-APIs](http://msdn.microsoft.com/library/azure/dn232347.aspx) ausgeführt wurden. Eine vollständige Liste der Vorgänge, die mithilfe der Verwaltungsdienste nachverfolgt werden, finden Sie unter [Vorgänge, die mit Azure-Verwaltungsdiensten nachverfolgt werden](#bizops).<br/><br/> Dies umfasst nicht die Protokolle für Aktivitäten bezüglich der BizTalk Services-Laufzeit (beispielsweise Nachrichten, die von Brücken verarbeitet werden usw.). Verwenden Sie im BizTalk Services-Portal die Ansicht "Nachverfolgung", um diese Protokolle anzuzeigen. Weitere Informationen finden Sie unter [Nachverfolgen von Nachrichten](http://msdn.microsoft.com/library/azure/hh949805.aspx).
 
 ## Anzeigen von BizTalk Services-Vorgangsprotokollen
 1. Wählen Sie im klassischen Azure-Portal die Option **Verwaltungsdienste** und anschließend die Registerkarte **Vorgangsprotokolle**.
@@ -67,4 +67,4 @@ PurgeBackupBizTalkService | Vorgang zum Bereinigen von Sicherungskopien eines Bi
 [ViewLogs]: ./media/biztalk-troubleshoot-using-ops-logs/Operation-Logs.png
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/24/2015" 
+	ms.date="03/02/2016" 
 	ms.author="awills"/>
  
 # Application Insights für Java-Web-Apps, die bereits live sind
@@ -23,7 +23,7 @@ Wenn Sie eine Webanwendung haben, die bereits auf dem J2EE-Server ausgeführt wi
 
 Sie benötigen ein [Microsoft Azure](https://azure.com)-Abonnement.
 
-> [AZURE.NOTE]Mit dem Verfahren auf dieser Seite wird Ihrer Web-App zur Laufzeit das SDK hinzugefügt. Dies ist nützlich, wenn Sie den Quellcode nicht aktualisieren oder neu erstellen möchten. Sofern möglich, empfehlen wir jedoch, dass Sie stattdessen [das SDK zum Quellcode hinzufügen](app-insights-java-get-started.md). Dadurch erhalten Sie weitere Optionen, Sie können z. B. Code zum Nachverfolgen der Benutzeraktivität schreiben.
+> [AZURE.NOTE] Mit dem Verfahren auf dieser Seite wird Ihrer Web-App zur Laufzeit das SDK hinzugefügt. Dies ist nützlich, wenn Sie den Quellcode nicht aktualisieren oder neu erstellen möchten. Sofern möglich, empfehlen wir jedoch, dass Sie stattdessen [das SDK zum Quellcode hinzufügen](app-insights-java-get-started.md). Dadurch erhalten Sie weitere Optionen, Sie können z. B. Code zum Nachverfolgen der Benutzeraktivität schreiben.
 
 ## 1\. Abrufen eines Application Insights-Instrumentationsschlüssels
 
@@ -139,4 +139,4 @@ Beim Anzeigen der Eigenschaften einer Anforderung können Sie die damit verbunde
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0302_2016-->
