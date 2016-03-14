@@ -60,7 +60,7 @@ Sie erstellen eine einfache Kontaktlisten-Webanwendung, die auf ASP.NET MVC 5 be
 
 1. Stellen Sie im Dialogfeld **Neues ASP.NET-Projekt** sicher, dass das Kontrollkästchen **Host in the Cloud** aktiviert ist, und klicken Sie auf **OK**.
 
-	![Dialogfeld "Neues ASP.NET-Projekt"](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rt3.png)
+	![Dialogfeld "Neues ASP.NET-Projekt"](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rt3.PNG)
 
 Wenn Sie sich noch nicht in Azure angemeldet haben, werden Sie dazu aufgefordert.
 
