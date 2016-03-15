@@ -53,7 +53,9 @@ Wenn Sie OneDrive zu PowerApps Enterprise hinzufügen, geben Sie die Werte für 
 
 1. Wechseln Sie zu der [App-Erstellungsseite][5] im _Developer Center des Microsoft-Kontos_ und melden Sie sich mit Ihrem _Microsoft-Konto_ an.
 
-2. Geben Sie den **Anwendungsnamen** ein, und stimmen Sie der Vereinbarung zu: ![Neue OneDrive-App][6]
+2. Geben Sie den **Anwendungsnamen** ein, und stimmen Sie der Vereinbarung zu:
+
+	![Neue OneDrive-App][6]
 
 3. Unter „Einstellungen“:
 
@@ -324,4 +326,4 @@ Nach Hinzufügen der OneDrive-API zu PowerApps Enterprise [erteilen Sie den Benu
 [6]: ./media/create-api-onedrive/onedrive-new-app.png
 [7]: ./media/create-api-onedrive/onedrive-app-api-settings.png
 
-<!---HONumber=AcomDC_0302_2016-->
+<!----HONumber=AcomDC_0302_2016-->

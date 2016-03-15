@@ -57,7 +57,8 @@ Nachdem Sie eine Verbindung hergestellt haben, geben Sie die SMTP-Eigenschaften,
 Gilt für Version: 1.0.
 
 ### E-Mail senden
-Sendet eine E-Mail an einen oder mehrere Empfänger. ```POST: /SendEmail```
+Sendet eine E-Mail an einen oder mehrere Empfänger.  
+```POST: /SendEmail```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -69,8 +70,7 @@ Sendet eine E-Mail an einen oder mehrere Empfänger. ```POST: /SendEmail```
 
 | Name | Datentyp | Erforderlich|
 |---|---|---|
-|To  
-|string|no|
+|To|string|no|
 |CC|string|no|
 |Betreff|string|no|
 |Body|string|no|
