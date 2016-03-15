@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="get-started-article" 
-	ms.date="02/28/2016" 
+	ms.date="03/06/2016" 
 	ms.author="awills"/>
 
 
@@ -94,7 +94,7 @@ Die Freitextsuche funktioniert in allen Feldern in den Ereignissen. Suchen Sie z
 
 ### Ausnahmen
 
-Wenn Sie [die Ausnahmeüberwachung eingerichtet haben](app-insights-asp-net-exception-mvc.md), werden im Suchfenster Ausnahmeberichte angezeigt.
+Wenn Sie [Ausnahmeüberwachung eingerichtet haben](app-insights-asp-net-exceptions.md), werden im Suchfenster Ausnahmeberichte angezeigt.
 
 Klicken Sie auf eine Ausnahme, um eine Stapelüberwachung zu erhalten. Wenn der Code der App in Visual Studio geöffnet ist, können Sie sich durch die Stapelüberwachung bis zur entsprechenden Zeile im Code klicken.
 
@@ -126,7 +126,7 @@ Klicken Sie sich durch ein beliebiges Diagramm, um ausführlichere Metriken anzu
 
 [Weitere Informationen zur Suche](app-insights-diagnostic-search.md)
 
-* *Keine zugeordneten Ereignisse?* Richten Sie [Serverausnahmen](app-insights-asp-net-exception-mvc.md) und [Abhängigkeiten](app-insights-asp-net-dependencies.md) ein.
+* *Keine zugeordneten Ereignisse?* Richten Sie [Serverausnahmen](app-insights-asp-net-exceptions.md) und [Abhängigkeiten](app-insights-asp-net-dependencies.md) ein.
 
 
 ## Sie sehen keine Daten?
@@ -172,7 +172,7 @@ Dies ist besonders hilfreich, wenn Sie über [benutzerdefinierte Telemetriedaten
 ## Nächste Schritte
 
 - [Daten zu Seiten und Benutzern](../article/application-insights/app-insights-javascript.md#selector1)
-- [Ausnahmen](../article/application-insights/app-insights-asp-net-exception-mvc.md#selector1)
+- [Ausnahmen](../article/application-insights/app-insights-asp-net-exceptions.md#selector1)
 - [Abhängigkeiten](../article/application-insights/app-insights-asp-net-dependencies.md#selector1)
 - [Verfügbarkeit](../article/application-insights/app-insights-monitor-web-app-availability.md#selector1)
 
@@ -214,4 +214,4 @@ Wenn Sie Anpassungen an der Datei "ApplicationInsights.config" vorgenommen haben
 
  
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

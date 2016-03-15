@@ -14,7 +14,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="01/12/2016"
+   ms.date="03/07/2016"
    ms.author="larryfr"/>
 
 
@@ -26,6 +26,8 @@ Apache Storm ist ein skalierbares, fehlertolerantes, verteiltes Echtzeit-Berechn
 
 ## Voraussetzungen
 
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
+
 Zur Ausführung dieses Lernprogramms zu Apache Storm benötigen Sie Folgendes:
 
 - **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
@@ -36,7 +38,7 @@ Zur Ausführung dieses Lernprogramms zu Apache Storm benötigen Sie Folgendes:
 
 	- **Windows-Clients**: Siehe [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Windows](hdinsight-hadoop-linux-use-ssh-windows.md)
 
-##  Erstellen eines Storm-Clusters
+##  Erstellen eines Storm-Clusters
 
 Storm in HDInsight verwendet Azure-Blobspeicher zum Speichern der an den Cluster übergebenen Protokolldateien und Topologien. Führen Sie zur Erstellung eines Azure-Speicherkontos für Ihren Cluster die folgenden Schritte aus:
 
@@ -78,7 +80,7 @@ Storm in HDInsight verwendet Azure-Blobspeicher zum Speichern der an den Cluster
 	
 	- __Auswahlmethode__: Wählen Sie __Aus allen Abonnements__ aus, damit die Speicherkonten in Ihren Abonnements durchsucht werden können. Wählen Sie __Zugriffsschlüssel__ aus, wenn Sie den __Speichernamen__ und __Zugriffsschlüssel__ eines vorhandenen Speicherkontos eingeben möchten.
     
-    - __Speicherkonto auswählen__: Wenn für Ihr Abonnement bereits ein Speicherkonto vorhanden ist, wählen Sie dieses als das für den Cluster zu verwendende Konto aus.
+    - __Speicherkonto auswählen:__ Wenn für Ihr Abonnement bereits ein Speicherkonto vorhanden ist, wählen Sie dieses als das für den Cluster zu verwendende Konto aus.
 	
 	- __Neu erstellen__: Hiermit können Sie ein neues Speicherkonto erstellen. Geben Sie den Namen des Speicherkontos in das angezeigte Feld ein. Wenn der Name verfügbar ist, wird ein grünes Häkchen angezeigt.
 	
@@ -88,9 +90,9 @@ Storm in HDInsight verwendet Azure-Blobspeicher zum Speichern der an den Cluster
 	
 		> [AZURE.IMPORTANT] Durch die Auswahl des Standorts für die Standarddatenquelle wird auch der Standort des HDInsight-Clusters festgelegt. Der Cluster und die Standarddatenquelle müssen sich in der gleichen Region befinden.
     
-    - __Azure Active Directory-Identität für den Cluster__: Mit dieser Option können Sie eine Azure Active Directory-Identität auswählen, mit der der Cluster auf den Azure Data Lake-Speicher zugreift.
+    - __Azure Active Directory-Identität für den Cluster:__ Mit dieser Option können Sie eine Azure Active Directory-Identität auswählen, mit der der Cluster auf den Azure Data Lake-Speicher zugreift.
     
-        > [AZURE.NOTE] Diese Option wird in diesem Dokument nicht verwendet, Sie können daher den Standardwert beibehalten. Weitere Informationen zu dieser Option und zum Verwenden des Azure Data Lake-Speichers in Kombination mit HDInsight finden Sie unter [Erstellen eines HDInsight-Clusters, der den Azure Data Lake-Speicher verwendet](data-lake-store-hdinsight-hadoop-use-portal.md).
+        > [AZURE.NOTE] Diese Option wird in diesem Dokument nicht verwendet, Sie können daher den Standardwert beibehalten. Weitere Informationen zum Verwenden dieses Eintrags und des Azure Data Lake-Speichers in Kombination mit HDInsight finden Sie unter [Erstellen eines HDInsight-Clusters, der den Azure Data Lake-Speicher verwendet](data-lake-store-hdinsight-hadoop-use-portal.md).
 		
 	- __Auswählen__: Hiermit speichern Sie die Datenquellenkonfiguration.
 	
@@ -102,7 +104,7 @@ Storm in HDInsight verwendet Azure-Blobspeicher zum Speichern der an den Cluster
     
 	Klicken Sie auf die Schaltfläche __Auswählen__, um die Informationen zu den __Knotenpreistarifen__ zu speichern.
 
-8. Wählen Sie __Optionale Konfiguration__ aus. Auf diesem Blatt können Sie den Cluster zu einem __virtuellen Netzwerk__ hinzufügen, den Cluster mit __Skriptaktionen__ anpassen oder einen __benutzerdefinierten Metastore__ als Datenspeicher für Hive und Oozie verwenden.
+8. Wählen Sie __Optionale Konfiguration__ aus. Auf diesem Blatt können Sie den Cluster einem __virtuellen Netzwerk__ hinzufügen, den Cluster mit __Skriptaktionen__ anpassen oder einen __benutzerdefinierten Metastore__ als Datenspeicher für Hive und Oozie verwenden.
 
 	![Blatt „Optionale Konfiguration“](./media/hdinsight-apache-storm-tutorial-get-started-linux/optionalconfiguration.png)
     
@@ -114,7 +116,7 @@ Storm in HDInsight verwendet Azure-Blobspeicher zum Speichern der an den Cluster
 	| ------------------ | --------------------- |
 	| ![Bereitstellungsanzeige im Startmenü](./media/hdinsight-apache-storm-tutorial-get-started-linux/provisioning.png) | ![Kachel für einen bereitgestellten Cluster](./media/hdinsight-apache-storm-tutorial-get-started-linux/provisioned.png) |
 
-	> [AZURE.NOTE] Die Erstellung des Clusters dauert in der Regel ca. 15 Minuten. Sie können den Status des Bereitstellungsprozesses auf der Kachel im Startmenü oder im linken Bereich der Seite unter __Benachrichtigungen__ überprüfen.
+	> [AZURE.NOTE] Die Erstellung des Clusters dauert in der Regel ca. 15 Minuten. Sie können den Status des Bereitstellungsprozesses auf der Kachel im Startmenü oder im linken Bereich der Seite unter __Benachrichtigungen__ überprüfen.
 
 ##Ausführen eines Storm Starter-Beispiels in HDInsight
 
@@ -215,6 +217,10 @@ Führen Sie die folgenden Schritte aus, um die Topologie mithilfe der Storm-Benu
 
 Kehren Sie zur **Topologiezusammenfassung** der WordCount-Topologie zurück, und klicken Sie im Abschnitt mit den **Topologieaktionen** auf die Schaltfläche **Beenden**. Geben Sie auf Aufforderung für die Verzögerung vor dem Beenden der Topologie 10 (Sekunden) ein. Nach dieser Wartezeit wird die Topologie im Abschnitt **Storm-UI** des Dashboards nicht mehr angezeigt.
 
+##Löschen des Clusters
+
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
+
 ##Zusammenfassung
 
 In diesem Lernprogramm zu Apache Storm lernen Sie anhand der Storm-Starter-Beispiele, wie ein Storm-Cluster in HDInsight erstellt wird und wie Storm-Topologien im Storm-Dashboard bereitgestellt, überwacht und verwaltet werden.
@@ -233,4 +239,4 @@ In diesem Lernprogramm zu Apache Storm lernen Sie anhand der Storm-Starter-Beisp
 [hdinsight-provision]: hdinsight-provision-clusters.md
 [preview-portal]: https://portal.azure.com/
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0309_2016-->

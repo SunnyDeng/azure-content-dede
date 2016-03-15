@@ -14,7 +14,7 @@
     ms.workload="search"
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
-    ms.date="02/29/2016"
+    ms.date="03/09/2016"
     ms.author="ashmaka"/>
 
 # Erstellen eines Azure Search-Indexes mit der REST-API
@@ -37,13 +37,15 @@ Nachdem Sie einen Azure Search-Dienst bereitgestellt haben, können Sie HTTP-Anf
 3. Klicken Sie auf das Schlüsselsymbol.
 
 Der Dienst enthält *Admin-Schlüssel* und *Abfrageschlüssel*.
-  * Die primären und sekundären *Admin-Schlüssel* gewähren Ihnen Vollzugriff auf alle Vorgänge. Dazu zählen die Dienstverwaltung und das Erstellen und Löschen von Indizes, Indexern und Datenquellen. Ihnen stehen zwei Schlüssel zur Verfügung, damit Sie den sekundären Schlüssel weiterhin nutzen können, wenn Sie den primären Schlüssel neu generieren möchten, und umgekehrt.
-  * Die *Abfrageschlüssel* gewähren Ihnen Lesezugriff auf Indizes und Dokumente. Diese werden in der Regel auf Clientanwendungen verteilt, die Suchanfragen ausgeben.
+
+ - Die primären und sekundären *Admin-Schlüssel* gewähren Ihnen Vollzugriff auf alle Vorgänge. Dazu zählen die Dienstverwaltung und das Erstellen und Löschen von Indizes, Indexern und Datenquellen. Ihnen stehen zwei Schlüssel zur Verfügung, damit Sie den sekundären Schlüssel weiterhin nutzen können, wenn Sie den primären Schlüssel neu generieren möchten, und umgekehrt.
+ - Die *Abfrageschlüssel* gewähren Ihnen Lesezugriff auf Indizes und Dokumente. Diese werden in der Regel auf Clientanwendungen verteilt, die Suchanfragen ausgeben.
 
 Verwenden Sie zum Erstellen eines Indexes entweder den primären oder den sekundären Admin-Schlüssel.
 
 ## II. Definieren des Azure Search-Indexes mithilfe richtig formatierter JSON
 Eine einzelne HTTP POST-Anforderung an Ihren Dienst erstellt den Index. Der Hauptteil der HTTP POST-Anforderung enthält ein einzelnes JSON-Objekt, das den Azure Search-Index definiert.
+
 1. Die erste Eigenschaft des JSON-Objekts ist der Name des Indexes.
 2. Die zweite Eigenschaft des JSON-Objekts ist ein JSON-Array mit dem Namen `fields`, das ein separates JSON-Objekt für jedes Feld im Index enthält. Diese JSON-Objekte enthalten mehrere Name-Wert-Paare für jedes Feldattribut, einschließlich Name, Typ usw.
 
@@ -84,7 +86,7 @@ Diese Indexdefinition verwendet für das Feld `description_fr` eine benutzerdefi
 
     POST https://[service name].search.windows.net/indexes?api-version=2015-02-28 Content-Type: application/json api-key: [api-key]
 
-Bei einer erfolgreichen Anforderung erscheint der Statuscode 201 (erstellt). Weitere Informationen zum Erstellen eines Indexes über die REST-API finden Sie in der API-Referenz auf [MSDN](https://msdn.microsoft.com/library/azure/dn798941.aspx). Weitere Informationen zu anderen HTTP-Statuscodes, die bei Fehlern ausgegeben werden, finden Sie in [diesem Artikel](https://msdn.microsoft.com/library/azure/dn798925.aspx).
+Bei einer erfolgreichen Anforderung erscheint der Statuscode 201 (erstellt). Weitere Informationen zum Erstellen eines Indexes über die REST-API finden Sie in der API-Referenz auf [MSDN](https://msdn.microsoft.com/library/azure/dn798941.aspx). Weitere Informationen zu anderen HTTP-Statuscodes, die bei Fehlern ausgegeben werden, finden Sie unter [HTTP status codes (Azure Search)](https://msdn.microsoft.com/library/azure/dn798925.aspx) (HTTP-Statuscodes (Azure Search)).
 
 Wenn Sie einen Index nicht mehr benötigen und ihn löschen möchten, stellen Sie einfach eine HTTP DELETE-Anforderung. Der Index „hotels“ wird beispielsweise wie folgt gelöscht:
 
@@ -92,6 +94,6 @@ Wenn Sie einen Index nicht mehr benötigen und ihn löschen möchten, stellen Si
     api-key: [api-key]
 
 ## Weiter
-Nach dem Erstellen eines Azure Search-Indexes können Sie Ihre Inhalte in den Index hochladen und mit dem Durchsuchen der Daten beginnen.
+Nach dem Erstellen eines Azure Search-Indexes können Sie Ihre Inhalte in den Index hochladen und mit dem Durchsuchen der Daten beginnen. Ausführliche Informationen finden Sie unter [Datenimport in Azure Search mit der REST-API](search-import-data-rest-api.md).
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

@@ -82,7 +82,9 @@ Wählen Sie `SSH` und `Authentication`, und fügen Sie Ihre private Schlüsselda
 
 ![PuTTY-Verbindung](media/putty2.png)
 
-Wählen Sie `Tunnels`, und `configure` Sie die folgenden weitergeleiteten Ports: – **Quellport:** Ihre Voreinstellung (80 für Mesos und 2375 für Swarm) – **Ziel:** localhost:80 (für Mesos) oder Localhost:2375 (für Swarm)
+Wählen Sie `Tunnels` und `configure` für die folgenden weitergeleiteten Ports aus:
+- **Quellport:** Ihr Wert (80 für Mesos und 2375 für Swarm)
+- **Ziel:** localhost:80 (für Mesos) oder localhost:2375 (für Swarm)
 
 Das folgende Beispiel wird für Mesos konfiguriert, für Docker Swarm ist es jedoch ähnlich.
 
@@ -96,11 +98,11 @@ Speichern Sie nach Abschluss des Vorgangs die Verbindungskonfiguration, und verb
 
 Wenn der Tunnel für Mesos konfiguriert wurde, kann hier auf den entsprechenden Endpunkt zugegriffen werden:
 
-- Mesos – `http://localhost/mesos`
-- Marathon – `http://localhost/marathon`
-- Chronos – `http://localhost/chronos` 
+- Mesos: `http://localhost/mesos`
+- Marathon: `http://localhost/marathon`
+- Chronos: `http://localhost/chronos` 
 
-Wenn der Tunnel für Docker Swarm konfiguriert wurde, kann über die Docker-Befehlszeilenschnittstelle auf den Swarm-Cluster zugegriffen werden. Sie müssen zunächst eine Windows-Umgebungsvariable mit dem Namen `DOCKER_HOST` und einem Wert von ` :2375` konfigurieren.
+Wenn der Tunnel für Docker Swarm konfiguriert wurde, kann über die Docker-Befehlszeilenschnittstelle auf den Swarm-Cluster zugegriffen werden. Sie müssen zunächst eine Windows-Umgebungsvariable mit dem Namen `DOCKER_HOST` und dem Wert ` :2375` konfigurieren.
 
 ## Nächste Schritte
  
@@ -108,4 +110,4 @@ Bereitstellen und Verwalten von Containern mit Mesos oder Swarm
  
 - [Arbeiten mit ACS und Mesos](./container-service-mesos-marathon-rest.md)
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0309_2016-->

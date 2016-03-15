@@ -233,6 +233,10 @@ In allen Fällen sollten Sie ein Konto erstellen, das nur Testzwecken dient. Sch
 
 Sie können Webtests beispielsweise deaktivieren, während Sie Wartungsarbeiten für den Dienst durchführen.
 
+## Automation
+
+Sie können automatisch [PowerShell-Skripts zum Einrichten eines Webtests verwenden](https://azure.microsoft.com/blog/creating-a-web-test-alert-programmatically-with-application-insights/).
+
 ## Fragen? Probleme?
 
 * *Kann ich Code aus meinem Webtest aufrufen?*
@@ -389,4 +393,4 @@ Wenn Sie eine Firewall zum Zulassen von Webtests öffnen müssen, sehen Sie sich
 [qna]: app-insights-troubleshoot-faq.md
 [start]: app-insights-overview.md
 
-<!----HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

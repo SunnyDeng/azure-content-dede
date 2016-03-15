@@ -12,12 +12,12 @@
 	ms.tgt_pltfrm="ibiza"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="02/22/2016"
+	ms.date="03/02/2016"
 	ms.author="awills"/>
 
 # Application Insights: Sprachen, Plattformen und Integrationsmöglichkeiten
 
-Hierbei handelt es sich um Implementierungen, von denen wir gehört haben, u. a. auch von Drittanbietern.
+Hierbei handelt es sich um Implementierungen, von denen wir gehört haben, u. a. auch von Drittanbietern.
 
 ## Sprachen
 
@@ -40,7 +40,7 @@ Hierbei handelt es sich um Implementierungen, von denen wir gehört haben, u. a
 + [ASP.NET 5](app-insights-asp-net-five.md)
 + [Android](https://github.com/Microsoft/ApplicationInsights-Android)
 + [Azure-Web-Apps und VMs](../azure-portal/insights-perf-analytics.md)
-+ [Azure Cloud Services](app-insights-cloudservices.md) &#150; einschließlich Web- und Workerrollen
++ [Azure Cloud Services](app-insights-cloudservices.md) &#150; einschließlich Web- und Workerrollen
 + [Microsoft Dynamics CRM Online](app-insights-sample-mscrm.md)
 + [Docker](app-insights-docker.md)
 + [Glimpse](https://azure.microsoft.com/blog/glimpse-application-insights/)
@@ -50,6 +50,7 @@ Hierbei handelt es sich um Implementierungen, von denen wir gehört haben, u. a
 + [Node.JS](https://www.npmjs.com/package/applicationinsights)
 + [OSX](https://github.com/Microsoft/ApplicationInsights-OSX)
 + [Spring](http://joe.blog.freemansoft.com/2015/12/enabling-microsoft-application-insight.html)
++ [WCF](https://github.com/Microsoft/ApplicationInsights-SDK-Labs/blob/master/WCF/readme.md)
 + [Windows Store C#|VB](app-insights-windows-get-started.md)
 + [Windows Store C++](app-insights-windows-cpp.md)
 + [Windows-Desktopanwendungen, -Dienste und -Workerrollen](app-insights-windows-desktop.md)
@@ -61,7 +62,7 @@ Hierbei handelt es sich um Implementierungen, von denen wir gehört haben, u. a
 
 +	[Log4Net, NLog oder System.Diagnostics.Trace](app-insights-diagnostic-search.md)
 +	[Java, Log4J oder Logback](app-insights-java-trace-logs.md)
-+   [Semantic Logging (SLAB)](https://github.com/fidmor89/SLAB_AppInsights) – In [Semantic Logging Application Block](https://msdn.microsoft.com/library/dn440729.aspx) integriert
++   [Semantic Logging (SLAB)](https://github.com/fidmor89/SLAB_AppInsights) – In [Semantic Logging Application Block](https://msdn.microsoft.com/library/dn440729.aspx) integriert
 +   [Cloudbasierte Auslastungstests](http://blogs.msdn.com/b/visualstudioalm/archive/2015/07/30/getting-application-insights-counters-with-cloud-based-load-testing.aspx)
 
 
@@ -84,4 +85,4 @@ Hierbei handelt es sich um Implementierungen, von denen wir gehört haben, u. a
 
 Wenn für Ihre Sprache oder Plattform noch kein SDK vorhanden ist, können Sie eins erstellen. Sehen Sie sich den Code der vorhandenen SDKs an, die im [Application Insights-SDK-Projekt auf GitHub](https://github.com/Microsoft/AppInsights-Home) aufgeführt sind.
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0309_2016-->

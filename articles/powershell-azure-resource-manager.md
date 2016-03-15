@@ -20,7 +20,7 @@
 
 > [AZURE.SELECTOR]
 - [Azure PowerShell](powershell-azure-resource-manager.md)
-- [Azure CLI](xplat-cli-azure-resource-manager.md)
+- [Azure-Befehlszeilenschnittstelle](xplat-cli-azure-resource-manager.md)
 
 Mit dem Azure-Ressourcen-Manager wird ein völlig neuer Denkansatz für Azure-Ressourcen eingeführt. Anstatt einzelne Ressourcen zu erstellen und zu verwalten, können Sie sich eine Komplettlösung vorstellen, zum Beispiel einen Blog, eine Fotogalerie, ein SharePoint-Portal oder ein Wiki. Mithilfe eine Vorlage (einer deklarative Darstellung der Lösung) können Sie eine Ressourcengruppe erstellen, die alle Ressourcen enthält, die Sie zum Unterstützen der Lösung brauchen. Anschließend wird diese Ressourcengruppe als logische Einheit verwaltet und bereitgestellt.
 
@@ -34,9 +34,9 @@ Für dieses Tutorial benötigen Sie Folgendes:
   + Sie können [ein Azure-Konto kostenlos erstellen](/pricing/free-trial/?WT.mc_id=A261C142F): Sie erhalten ein Guthaben, das Sie zum Ausprobieren zahlungspflichtiger Azure-Dienste nutzen können, und Sie können das Konto selbst dann behalten und die kostenlosen Azure-Dienste wie Websites nutzen, wenn das Guthaben aufgebraucht ist. Ihre Kreditkarte wird nur dann belastet, wenn Sie Ihre Einstellungen explizit ändern und mit einer Zahlung einverstanden sind.
   
   + Sie können Ihre [Vorteile für MSDN-Abonnenten aktivieren](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F): Ihr MSDN-Abonnement beinhaltet ein monatliches Guthaben, das Sie für zahlungspflichtige Azure-Dienste nutzen können.
-- Azure PowerShell 1.0. Informationen zu dieser Version und wie Sie diese installieren finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md).
+- Azure PowerShell 1.0. Informationen zu dieser Version und deren Installation finden Sie unter [Gewusst wie: Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md).
 
-Dieses Lernprogramm richtet sich an PowerShell-Anfänger. Es wird aber vorausgesetzt, dass Sie die grundlegenden Konzepte verstehen, z. B. Module, Cmdlets und Sitzungen.
+Dieses Lernprogramm richtet sich an PowerShell-Anfänger. Es wird aber vorausgesetzt, dass Sie die grundlegenden Konzepte verstehen, z. B. Module, Cmdlets und Sitzungen.
 
 ## Was Sie bereitstellen
 
@@ -358,7 +358,7 @@ Wenn Sie den Befehl eingeben, werden Sie zur Angabe des fehlenden obligatorische
     (Type !? for Help.)
     administratorLoginPassword: ********
 
-Enthält die Vorlage einen Parameter mit einem Namen, der einem der Parameter im Befehl zum Bereitstellen der Vorlage entspricht (z. B. einen Parameter namens **ResourceGroupName** in der Vorlage, der mit dem Parameter **ResourceGroupName** im Cmdlet [New-AzureRmResourceGroupDeployment](https://msdn.microsoft.com/library/azure/mt679003.aspx) identisch ist), werden Sie aufgefordert, einen Wert für einen Parameter mit dem Postfix **FromTemplate** anzugeben (z. B. **ResourceGroupNameFromTemplate**). Im Allgemeinen sollten Sie diese Verwirrung vermeiden, indem Sie Parametern nicht dieselben Namen wie Parametern für Bereitstellungsvorgänge geben.
+Enthält die Vorlage einen Parameter mit einem Namen, der einem der Parameter im Befehl zum Bereitstellen der Vorlage entspricht (z. B. einen Parameter namens **ResourceGroupName** in der Vorlage, der mit dem **ResourceGroupName**-Parameter im Cmdlet [New-AzureRmResourceGroupDeployment](https://msdn.microsoft.com/library/azure/mt679003.aspx) identisch ist), werden Sie aufgefordert, einen Wert für einen Parameter mit dem Postfix **FromTemplate** anzugeben (z. B. **ResourceGroupNameFromTemplate**). Im Allgemeinen sollten Sie diese Verwirrung vermeiden, indem Sie Parametern nicht dieselben Namen wie Parametern für Bereitstellungsvorgänge geben.
 
 Der Befehl wird ausgeführt und gibt Meldungen zurück, während die Ressourcen erstellt werden. Schließlich wird das Ergebnis der Bereitstellung angezeigt.
 
@@ -442,7 +442,7 @@ Sie können vorhandene Ressourcen in eine neue Ressourcengruppe verschieben. Bei
 
 - Um eine Ressource aus der Ressourcengruppe zu löschen, verwenden Sie das Cmdlet **Remove-AzureRmResource**. Dieses Cmdlet löscht die Ressource, aber nicht die Ressourcengruppe.
 
-	Dieser Befehl entfernt die Website „TestSite“ aus der Ressourcengruppe „TestRG“.
+	Dieser Befehl entfernt die Website „TestSite“ aus der Ressourcengruppe „TestRG1“.
 
 		Remove-AzureRmResource -Name TestSite -ResourceGroupName TestRG1 -ResourceType "Microsoft.Web/sites" -ApiVersion 2015-08-01
 
@@ -463,4 +463,4 @@ Sie können vorhandene Ressourcen in eine neue Ressourcengruppe verschieben. Bei
 - Ein ausführliches Beispiel für das Bereitstellen eines Projekts finden Sie unter [Vorhersagbares Bereitstellen von Microservices in Azure](app-service-web/app-service-deploy-complex-application-predictably.md).
 - Weitere Informationen zur Problembehandlung bei einer nicht erfolgreichen Bereitstellung finden Sie unter [Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure](./virtual-machines/resource-group-deploy-debug.md).
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0309_2016-->

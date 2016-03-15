@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="02/25/2016"
+   ms.date="03/03/2016"
    ms.author="barbkess;mausher;jrj;sonyama"/>
 
 
@@ -26,7 +26,7 @@ Ein Data Warehouse ist eine Sammlung von Daten, die aus einer oder mehreren Date
 
 Data Warehouses werden durch Abfragen charakterisiert, die eine größere Anzahl von Zeilen und große Datenbereiche scannen und relativ große Ergebnisse für Analyse und Berichterstellung zurückgeben können. Data Warehouses werden auch durch relativ große Datenmengen im Vergleich zu kleinen Einfügungen/Aktualisierungen/Löschungen auf Transaktionsebene charakterisiert.
 
-- Die Leistung eines Data Warehouse ist am besten, wenn die Daten auf eine Weise gespeichert werden, die Abfragen optimiert, die eine große Anzahl von Zeilen oder große Datenbereiche scannen müssen. Diese Art des Scannens funktioniert am besten, wenn die Daten nach Spalten anstelle von Zeilen durchsucht und gespeichert werden. 
+- Die Leistung eines Data Warehouse ist am besten, wenn die Daten auf eine Weise gespeichert werden, die Abfragen optimiert, die eine große Anzahl von Zeilen oder große Datenbereiche scannen müssen. Diese Art des Scannens funktioniert am besten, wenn die Daten nach Spalten anstelle von Zeilen durchsucht und gespeichert werden.
 
 >[AZURE.NOTE] Der speicherinterne ColumnStore-Index, der Spaltenspeicher verwendet, bietet eine bis zu zehnmal so hohe Komprimierung und eine hundertfache Abfrageleistungssteigerung gegenüber herkömmlichen binären Strukturen für Berichterstattung und Analyse von Abfragen. Wir betrachten ColumnStore-Indizes als Standard für das Speichern und Scannen großer Datenmengen in einem Data Warehouse.
 
@@ -39,7 +39,7 @@ Das Laden von Daten ist ein großer Teil des Data Warehouse-Workloads. Unternehm
 - Normalerweise wird er Prozess des Ladens als ETL bezeichnet: Extrahieren, Transformieren und Laden. Daten müssen in der Regel umgewandelt (transformiert) werden, damit sie mit anderen Daten im Data Warehouse konsistent sind. Früher haben Unternehmen dedizierte ETL-Server für Transformationen verwendet. Jetzt – mit der schnellen umfangreichen parallelen Verarbeitung – können Sie Daten zuerst in SQL Data Warehouse laden und dann die Transformationen ausführen. Dieser Prozess wird als Extrahieren, Laden und Transformieren (ELT) bezeichnet und wird ein neuer Standard für die Data Warehouse-Workloads.
 
 > [AZURE.NOTE] Mit SQL Server CTP2 können Sie jetzt Analysen in Echtzeit für eine OLTP-Tabelle ausführen. Dies ist kein Ersatz für ein Data Warehouse zum Speichern und Analysieren von Daten, stellt aber eine Möglichkeit für die Analyse in Echtzeit bereit.
- 
+
 ### Berichterstellung und Analyseabfragen
 Berichterstellung und Analyseabfragen werden häufig in die Kategorien klein, mittel und groß unterteilt – basierend auf einer Reihe von Kriterien, aber in der Regel zeitbasiert. In den meisten Data Warehouse gibt es gemischte Workloads mit kurzen und lang andauernden Abfragen. In jedem Fall ist es wichtig, bestimmen diese Mischung und ihre Häufigkeit (stündlich, täglich, am Monatsende, am Quartalsende usw.) zu bestimmen. Es ist wichtig zu verstehen, dass gemischte Abfrageworkloads in Verbindung mit der Parallelität zu einer ordnungsgemäßen Kapazitätsplanung für ein Data Warehouse führt.
 
@@ -49,14 +49,14 @@ Berichterstellung und Analyseabfragen werden häufig in die Kategorien klein, mi
 Das Verwalten von Daten ist wichtig, besonders wenn Sie wissen, dass zukünftig möglicherweise nicht genügend Speicherplatz zur Verfügung steht. Data Warehouses unterteilen die Daten in der Regel in sinnvolle Bereiche, die als Partitionen in einer Tabelle gespeichert werden. Alle SQL Server-basierten Produkte ermöglichen Ihnen das Verschieben von Partitionen in die und aus der Tabelle. Durch diesen Partitionswechsel können Sie ältere Daten auf kostengünstigeren Speicher verschieben und die neuesten Daten auf dem Onlinespeicher verfügbar halten.
 
 - ColumnStore-Indizes unterstützen partitionierte Tabellen. Für ColumnStore-Indizes werden partitionierte Tabellen für die Datenverwaltung und -archivierung verwendet. Bei zeilenweise gespeicherten Tabellen spielen Partitionen eine größere Rolle bei der Abfrageleistung.  
- 
+
 - PolyBase spielt eine wichtige Rolle bei der Verwaltung von Daten. Mit PolyBase können Sie ältere Daten im Hadoop- oder Azure-Blob-Speicher archivieren. Dies bietet viele Möglichkeiten, da die Daten noch immer online sind. Es dauert u. U. länger, Daten aus Hadoop abzurufen, aber der Nachteil der Abrufzeit gleicht möglicherweise die Speicherkosten aus.
- 
+
 ### Exportieren von Daten
 Eine Möglichkeit, Daten für Berichte und Analysen verfügbar zu machen, ist das Senden von Daten aus dem Data Warehouse an Server, die speziell zum Ausführen von Berichten und Analysen verwendet werden. Diese Server werden als Data Marts bezeichnet. Beispielsweise könnten Sie Berichtsdaten vorab verarbeiten und dann aus dem Data Warehouse auf viele Server auf der ganzen Welt exportieren, um sie für Kunden und Analysten allgemein verfügbar zu machen.
 
 - Zum Generieren von Berichten könnten Sie jede Nacht schreibgeschützte Berichtsserver mit einer Momentaufnahme der täglichen Daten füllen. Dies ermöglicht höhere Bandbreiten für Kunden bei gleichzeitiger Senkung der erforderlichen Compute-Ressourcen für das Data Warehouse. Vom Sicherheitsaspekt aus betrachtet ermöglichen Ihnen Data Marts das Reduzieren der Anzahl von Benutzern mit Zugriff auf das Data Warehouse.
-- Für Analysten können Sie einen Analysecube im Data Warehouse erstellen und Analysen für das Data Warehouse ausführen oder Daten vorab verarbeiten und zur weiteren Analyse auf den Analyseserver exportieren. 
+- Für Analysten können Sie einen Analysecube im Data Warehouse erstellen und Analysen für das Data Warehouse ausführen oder Daten vorab verarbeiten und zur weiteren Analyse auf den Analyseserver exportieren.
 
 ## Nächste Schritte
 Informationen zu den ersten Schritten zum Entwickeln Ihres Data Warehouse finden Sie unter [Entwicklungsübersicht][].
@@ -73,4 +73,4 @@ Informationen zu den ersten Schritten zum Entwickeln Ihres Data Warehouse finden
 
 <!--Other web references-->
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

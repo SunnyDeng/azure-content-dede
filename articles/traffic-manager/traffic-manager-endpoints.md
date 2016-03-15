@@ -12,18 +12,18 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="12/07/2015"
+   ms.date="03/03/2016"
    ms.author="joaoma" />
 
 # Hinzufügen, Deaktivieren, Aktivieren oder Löschen von Endpunkten
 
 Das Web-Apps-Feature in Azure App Service stellt bereits unabhängig vom Websitemodus Failover- und Roundrobin-Funktionen für das Routing von Datenverkehr für Websites in einem Datencenter zur Verfügung. Azure Traffic Manager ermöglicht das Angeben des Failover- und Roundrobin-Routings von Datenverkehr für Websites und Clouddienste in verschiedenen Datencentern. Der erste erforderliche Schritt zum Bereitstellen dieser Funktionalität ist das Hinzufügen die Funktionen des Cloud-Dienst- oder Website-Endpunkts zu Traffic Manager.
 
->[AZURE.NOTE]Sie können im klassischen Azure-Portal keine externen Speicherorte oder Traffic Manager-Profile als Endpunkte hinzufügen. Sie müssen die REST-API [Definition erstellen](http://go.microsoft.com/fwlink/p/?LinkId=400772) oder das Windows PowerShell-Cmdlet [Add-AzureTrafficManagerEndpoint](http://go.microsoft.com/fwlink/p/?LinkId=400774) verwenden.
+>[AZURE.NOTE] Sie können im klassischen Azure-Portal keine externen Speicherorte oder Traffic Manager-Profile als Endpunkte hinzufügen. Sie müssen die REST-API [Definition erstellen](http://go.microsoft.com/fwlink/p/?LinkId=400772) oder das Windows PowerShell-Cmdlet [Add-AzureTrafficManagerEndpoint](http://go.microsoft.com/fwlink/p/?LinkId=400774) verwenden.
 
 Sie können auch einzelne Endpunkte deaktivieren, die Teil eines Traffic Manager-Profils sind. Endpunkte umfassen Cloud-Dienste und Websites. Bei Deaktivieren eines Endpunkts bleibt er Teil des Profils, doch das Profil verhält sich so, als wäre der Endpunkt nicht vorhanden. Diese Aktion ist äußerst nützlich zum zeitweiligen Entfernen eines Endpunkts, der sich im Wartungsmodus befindet oder erneut bereitgestellt werden soll. Sobald der Endpunkt wieder betriebsbereit ist, kann er aktiviert werden.
 
->[AZURE.NOTE]Das Deaktivieren eines gehosteten Diensts hat nichts mit dessen Bereitstellungsstatus in Azure zu tun. Ein fehlerfrei funktionierender Endpunkt bleibt in Betrieb und kann Datenverkehr empfangen, selbst wenn er in Traffic Manager deaktiviert ist. Das Deaktivieren eines Endpunkts in einem Profil wirkt sich darüber hinaus nicht auf seinen Status in einem anderen Profil aus.
+>[AZURE.NOTE] Das Deaktivieren eines gehosteten Diensts hat nichts mit dessen Bereitstellungsstatus in Azure zu tun. Ein fehlerfrei funktionierender Endpunkt bleibt in Betrieb und kann Datenverkehr empfangen, selbst wenn er in Traffic Manager deaktiviert ist. Das Deaktivieren eines Endpunkts in einem Profil wirkt sich darüber hinaus nicht auf seinen Status in einem anderen Profil aus.
 
 ## So fügen Sie einen Cloud-Dienst oder Website-Endpunkt hinzu
 
@@ -36,7 +36,7 @@ Sie können auch einzelne Endpunkte deaktivieren, die Teil eines Traffic Manager
 6. Wählen Sie die Websites in der Liste aus, um sie als Endpunkte für dieses Profil hinzuzufügen. Durch Löschen des Namen der Website wird diese aus der Liste der Endpunkte entfernt. Beachten Sie, dass Sie pro Azure-Datencenter (auch "Region" genannt) nur eine einzelne Website auswählen können. Wenn Sie eine Website in einem Datencenter auswählen, das mehrere Websites hostet, stehen nach Wahl der ersten Website die anderen im selben Datencenter nicht mehr zur Auswahl. Beachten Sie außerdem, dass nur Standardwebsites aufgelistet werden.
 7. Nachdem Sie die Endpunkte für dieses Profil ausgewählt haben, klicken Sie auf das Häkchen in der unteren rechten Ecke, um die Änderungen zu speichern.
 
->[AZURE.NOTE]Stellen Sie bei Verwendung der Methode *Failover* für das Routing von Datenverkehr nach dem Hinzufügen oder Entfernen eines Endpunkts sicher, dass Sie die Failoverprioritätsliste auf der Seite "Konfiguration" entsprechend der für Ihre Konfiguration gewünschten Failoverreihenfolge anpassen. Weitere Informationen finden Sie unter [Konfigurieren des Routings für Failoverdatenverkehr](traffic-manager-configure-failover-load-balancing.md).
+>[AZURE.NOTE] Stellen Sie bei Verwendung der Methode *Failover* für das Routing von Datenverkehr nach dem Hinzufügen oder Entfernen eines Endpunkts sicher, dass Sie die Failoverprioritätsliste auf der Seite "Konfiguration" entsprechend der für Ihre Konfiguration gewünschten Failoverreihenfolge anpassen. Weitere Informationen finden Sie unter [Konfigurieren des Routings für Failoverdatenverkehr](traffic-manager-configure-failover-routing-method.md).
 
 ## So deaktivieren Sie einen Endpunkt
 
@@ -60,7 +60,7 @@ Sie können auch einzelne Endpunkte deaktivieren, die Teil eines Traffic Manager
 3. Klicken Sie auf der Seite "Endpunkte" auf den Namen des Endpunkts, den Sie aus dem Profil löschen möchten.
 4. Klicken Sie unten auf der Seite auf **Löschen**.
 
->[AZURE.NOTE]Sie können im klassischen Azure-Portal keine externen Speicherorte oder Traffic Manager-Profile als Endpunkte löschen. Sie müssen Windows PowerShell verwenden. Weitere Informationen finden Sie unter [Remove-AzureTrafficManagerEndpoint](https://msdn.microsoft.com/library/dn690251.aspx).
+>[AZURE.NOTE] Sie können im klassischen Azure-Portal keine externen Speicherorte oder Traffic Manager-Profile als Endpunkte löschen. Sie müssen Windows PowerShell verwenden. Weitere Informationen finden Sie unter [Remove-AzureTrafficManagerEndpoint](https://msdn.microsoft.com/library/dn690251.aspx).
 
 ## Nächste Schritte
 
@@ -75,4 +75,4 @@ Sie können auch einzelne Endpunkte deaktivieren, die Teil eines Traffic Manager
 
 [Vorgänge für Traffic Manager (REST-API-Referenz)](http://go.microsoft.com/fwlink/p/?LinkID=313584)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0309_2016-->

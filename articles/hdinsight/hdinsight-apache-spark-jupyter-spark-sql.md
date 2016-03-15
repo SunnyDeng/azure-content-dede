@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="02/17/2016"
+	ms.date="03/07/2016"
 	ms.author="nitinme"/>
 
 
@@ -23,6 +23,8 @@
 Hier erfahren Sie, wie Sie einen Apache Spark-Cluster in HDInsight erstellen und dann ein [Jupyter](https://jupyter.org)-Notebook verwenden, um interaktive Spark-SQL-Abfragen für den Spark-Cluster auszuführen.
 
    ![Erste Schritte mit Apache Spark in HDInsight](./media/hdinsight-apache-spark-jupyter-spark-sql/hdispark.getstartedflow.png "Lernprogramm zu den ersten Schritten mit Apache Spark in HDInsight Dargestellte Schritte: Erstellen eines Speicherkontos, Erstellen eines Clusters, Ausführen von Spark-SQL-Anweisungen")
+
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 **Voraussetzungen:**
 
@@ -52,7 +54,7 @@ In diesem Abschnitt erstellen Sie einen HDInsight-Cluster der Version 3.3, der a
 
     ![Erstellen eines neuen Clusters im Azure-Vorschauportal](./media/hdinsight-apache-spark-jupyter-spark-sql/hdispark.createcluster.1.png "Erstellen eines neuen Clusters im Azure-Vorschauportal")
 
-3. Geben Sie einen **Clusternamen** ein, wählen Sie **Hadoop** als **Clustertyp** aus, und wählen Sie im Dropdownmenü **Clusterbetriebssystem** den Eintrag **Ubuntu** aus. Geben Sie dann die Spark-Version an. Wenn der Clustername verfügbar ist, wird neben dem Namen ein grünes Häkchen angezeigt.
+3. Geben Sie einen **Clusternamen** ein, wählen Sie **Spark** als **Clustertyp** aus, und wählen Sie im Dropdownmenü **Clusterbetriebssystem** die Option **Linux** aus. Wählen Sie dann die Spark-Version aus. Wenn der Clustername verfügbar ist, wird neben dem Namen ein grünes Häkchen angezeigt.
 
 	![Clusternamen und -typ eingeben](./media/hdinsight-apache-spark-jupyter-spark-sql/hdispark.createcluster.2.png "Clusternamen und -typ eingeben")
 
@@ -145,7 +147,7 @@ In diesem Artikel verwenden Sie den PySpark-Kernel. Im Artikel [In Jupyter-Noteb
 
 		from pyspark.sql.types import *
 		
-	Bei jedem Ausführen eines Auftrags in Jupyter wird in der Titelleiste Ihres Webbrowserfensters neben dem Notebooktitel der Status **(Beschäftigt)** angezeigt. Außerdem sehen Sie in der oberen rechten Ecke einen ausgefüllten Kreis neben dem Text **PySpark**. Wenn der Auftrag abgeschlossen ist, wird ein Kreis ohne Füllung angezeigt.
+	Bei jedem Ausführen eines Auftrags in Jupyter wird in der Titelleiste Ihres Webbrowserfensters neben dem Notebooktitel der Status **(Beschäftigt)** angezeigt. Außerdem sehen Sie in der rechten oberen Ecke einen ausgefüllten Kreis neben dem Text **PySpark**. Wenn der Auftrag abgeschlossen ist, wird ein Kreis ohne Füllung angezeigt.
 
 	 ![Status eines Jupyter Notebook-Auftrags](./media/hdinsight-apache-spark-jupyter-spark-sql/hdispark.jupyter.job.status.png "Status eines Jupyter Notebook-Auftrags")
 
@@ -168,7 +170,7 @@ In diesem Artikel verwenden Sie den PySpark-Kernel. Im Artikel [In Jupyter-Noteb
 		# Register the data fram as a table to run queries against
 		hvacdf.registerTempTable("hvac")
 
-5. Da Sie einen PySpark-Kernel verwenden, können Sie eine SQL-Abfrage für die temporäre Tabelle **hvac**, die Sie gerade mit der `%%sql`-Magic erstellt haben, jetzt direkt ausführen. Weitere Informationen zur `%%sql`-Magic sowie anderen Magics in Verbindung mit dem PySpark-Kernel finden Sie unter [In Jupyter-Notebooks verfügbare Kernel mit Spark-HDInsight-Clustern](hdinsight-apache-spark-jupyter-notebook-kernels.md#why-should-i-use-the-new-kernels).
+5. Da Sie einen PySpark-Kernel verwenden, können Sie jetzt direkt eine SQL-Abfrage für die temporäre Tabelle **hvac**, die Sie gerade mit der `%%sql`-Magic erstellt haben, ausführen. Weitere Informationen zur `%%sql`-Magic sowie anderen Magics in Verbindung mit dem PySpark-Kernel finden Sie unter [In Jupyter-Notebooks verfügbare Kernel mit Spark-HDInsight-Clustern](hdinsight-apache-spark-jupyter-notebook-kernels.md#why-should-i-use-the-new-kernels).
 		
 		%%sql
 		SELECT buildingID, (targettemp - actualtemp) AS temp_diff, date FROM hvac WHERE date = "6/1/13"")
@@ -183,6 +185,10 @@ In diesem Artikel verwenden Sie den PySpark-Kernel. Im Artikel [In Jupyter-Noteb
 
 
 6. Nach Ausführung der Anwendung empfiehlt es sich, das Notebook herunterzufahren, um die Ressourcen freizugeben. Klicken Sie hierzu im Menü **Datei** des Notebooks auf die Option zum Schließen und Anhalten. Dadurch wird das Notebook heruntergefahren und geschlossen.
+
+##Löschen des Clusters
+
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 
 ## <a name="seealso"></a>Weitere Informationen
@@ -235,4 +241,4 @@ In diesem Artikel verwenden Sie den PySpark-Kernel. Im Artikel [In Jupyter-Noteb
 [azure-management-portal]: https://manage.windowsazure.com/
 [azure-create-storageaccount]: storage-create-storage-account.md
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

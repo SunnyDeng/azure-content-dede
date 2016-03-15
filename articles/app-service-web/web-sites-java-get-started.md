@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="Java"
 	ms.topic="hero-article"
-	ms.date="01/09/2016"
+	ms.date="03/04/2016"
 	ms.author="robmcm"/>
 
 # Erstellen einer Java Web-App in Azure App Service
@@ -178,4 +178,4 @@ Weitere Informationen zum Entwickeln von Java-Anwendungen in Azure finden Sie im
 [für eine kostenlose Testversion registrieren]: http://go.microsoft.com/fwlink/?LinkId=623901
 [Azure App Service-App erstellen]: http://go.microsoft.com/fwlink/?LinkId=523751
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

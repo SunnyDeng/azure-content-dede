@@ -12,8 +12,8 @@
 	ms.workload="storage"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="article"
-	ms.date="02/16/2016"
+	ms.topic="get-started-article"
+	ms.date="02/24/2016"
 	ms.author="tamram"/>
 
 # Einführung in Microsoft Azure Storage
@@ -28,7 +28,7 @@ Azure Storage ist eine Cloudspeicherlösung für moderne Anwendungen, die eine K
 - Wie Ihre Azure Storage-Daten durch Redundanz und Replikation gesichert werden
 - Welche Schritte erforderlich ist, um Ihre erste Azure Storage-Anwendung zu erstellen
 
-Informationen zu den ersten Schritten mit Azure Storage finden Sie unter [Erste Schritte mit Azure Storage in 5 Minuten](storage-getting-started-guide.md).
+Informationen zum Einrichten und Starten von Azure Storage finden Sie unter [Erste Schritte mit Azure Storage – Einstieg in fünf Minuten](storage-getting-started-guide.md).
 
 Informationen zu Tools, Bibliotheken und weiteren Ressourcen für die Arbeit mit Azure Storage finden Sie unter [Nächste Schritte](#next-steps) weiter unten.
 
@@ -44,9 +44,9 @@ Azure Storage verwendet ein automatisches Partitionierungssystem, das einen auto
 
 Der Azure-Speicher ist weltweit und von jeder Art von Anwendung erreichbar, egal ob diese in der Cloud, auf dem Desktop, auf einem lokalen Server oder einem mobilen oder Tabletgerät läuft. Sie können Azure Storage in mobilen Szenarios verwenden, in denen eine Anwendung eine Datenteilmenge auf einem Gerät speichert und sie mit der vollständigen Datenmenge in der Cloud synchronisiert.
 
-Azure Storage unterstützt Kunden mit verschiedenen Betriebssystemen (z. B. Windows und Linux) und einer Vielzahl von Programmiersprachen (darunter .NET, Java und C++) für eine problemlose Entwicklung. Azure Storage macht auch Datenressourcen über einfache REST-APIs verfügbar, die auf jedem Client ausgeführt werden können, der Daten über HTTP/HTTPS senden und empfangen kann.
+Azure Storage unterstützt Kunden mit verschiedenen Betriebssystemen (z. B. Windows und Linux) und einer Vielzahl von Programmiersprachen (darunter .NET, Java und C++) für eine problemlose Entwicklung. Azure Storage macht auch Datenressourcen über einfache REST-APIs verfügbar, die auf jedem Client ausgeführt werden können, der Daten über HTTP/HTTPS senden und empfangen kann.
 
-Azure Premium Storage bietet eine leistungsstarke Datenträgerunterstützung mit niedriger Latenz für E/A-intensive Workloads, die auf virtuellen Azure-Computern ausgeführt werden. Mit Azure Premium Storage können Sie mehrere persistente Datenträger an einen virtuellen Computer anfügen und diese gemäß Ihren Leistungsanforderungen konfigurieren. Jeder Datenträger wird für maximale E/A-Leistung von einer SSD-Festplatte in Azure Premium Storage unterstützt. Weitere Informationen finden Sie unter [Premium-Speicher: Hochleistungsspeicher für Workloads auf virtuellen Azure-Computern](../storage-premium-storage-preview-portal).
+Azure Premium Storage bietet eine leistungsstarke Datenträgerunterstützung mit niedriger Latenz für E/A-intensive Workloads, die auf virtuellen Azure-Computern ausgeführt werden. Mit Azure Premium Storage können Sie mehrere persistente Datenträger an einen virtuellen Computer anfügen und diese gemäß Ihren Leistungsanforderungen konfigurieren. Jeder Datenträger wird für maximale E/A-Leistung von einer SSD-Festplatte in Azure Premium Storage unterstützt. Weitere Informationen finden Sie unter Premium-Speicher: Hochleistungsspeicher für Workloads auf virtuellen Azure-Computern.
 
 ## Anwenden der Azure Storage-Dienste
 
@@ -55,15 +55,15 @@ Ein Azure-Speicherkonto ist ein sicheres Konto, mit dem Sie Zugriff auf Dienste 
 - Ein Standardspeicherkonto umfasst Blob-, Tabellen- und Warteschlangenspeicher.
 - Ein Premium-Speicherkonto unterstützt aktuell ausschließlich Festplatten virtueller Azure-Computer.
 
-Um ein Speicherkonto erstellen zu können, müssen Sie über ein Azure-Abonnement verfügen. Dies ist ein Plan, der Ihnen Zugriff auf eine Vielzahl von Azure-Diensten verschafft. [Sie können bis zu 100 eindeutig benannte Speicherkonten unter einem einzigen Abonnement erstellen.](../azure-subscription-service-limits.md) Informationen zu Volumenpreisen finden Sie unter [Preise für Azure Storage](https://azure.microsoft.com/pricing/details/storage/).
+Um ein Speicherkonto erstellen zu können, müssen Sie über ein Azure-Abonnement verfügen. Dies ist ein Plan, der Ihnen Zugriff auf eine Vielzahl von Azure-Diensten verschafft. Sie können bis zu 100 eindeutig benannte Speicherkonten unter einem einzigen Abonnement erstellen. Weitere Informationen zu den Begrenzungen von Speicherkonten finden Sie unter [Skalierbarkeits- und Leistungsziele für Azure Storage](storage-scalability-targets.md). Informationen zu Volumenpreisen finden Sie unter [Preise für Azure Storage](https://azure.microsoft.com/pricing/details/storage/).
 
-Sie können die Verwendung von Azure mit einem [kostenlosen Testkonto](https://azure.microsoft.com/pricing/free-trial/) starten. Wenn Sie sich entscheiden, einen Plan zu kaufen, können Sie aus einer Vielzahl von [Kaufoptionen](https://azure.microsoft.com/pricing/purchase-options/) auswählen. [MSDN-Abonnenten](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) erhalten ein monatliches Gratis-Guthaben für Azure-Dienste, inklusive Azure-Speicher.
+Sie können die Verwendung von Azure mit einem [kostenlosen Konto](https://azure.microsoft.com/pricing/free-trial/) beginnen. Wenn Sie sich entscheiden, einen Abonnementplan zu kaufen, können Sie zwischen einer Vielzahl von [Kaufoptionen](https://azure.microsoft.com/pricing/purchase-options/) auswählen. [MSDN-Abonnenten](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) erhalten ein monatliches Gratis-Guthaben für Azure-Dienste, inklusive Azure-Speicher.
 
 ### Standardspeicherkonten
 
-Mit einem Standardspeicherkonto erhalten Sie Zugriff auf Blob-, Tabellen-, Warteschlangen- und Dateispeicher:
+Mit einem Standardspeicherkonto erhalten Sie Zugriff auf die verschiedenen Azure Storage-Datendienste, d. h. Blob Storage, Table Storage, Queue Storage und File Storage:
 
-- Im **Blob Storage** werden Dateidaten gespeichert. Ein Blob kann jede Art von Text- oder binären Daten sein, z. B. ein Dokument, eine Mediendatei oder ein Anwendungs-Installer. Der BLOB-Speicher wird mitunter als Objektspeicher bezeichnet.
+- Im **Blob Storage** werden Dateidaten gespeichert. Ein Blob kann jede Art von Text- oder binären Daten sein, z. B. ein Dokument, eine Mediendatei oder ein Anwendungs-Installer. Der Blobspeicher wird auch als Objektspeicher bezeichnet.
 - Im **Tabellenspeicher** werden strukturierte Datensätze gespeichert. Der Tabellenspeicher ist ein NoSQL-Schlüssel-/Attribut-Datenspeicher, der eine rasche Entwicklung und schnellen Zugriff auf große Datenmengen erlaubt.
 - **Queue Storage** bietet eine zuverlässige Nachrichtenfunktion zur Workflowverarbeitung und zur Kommunikation zwischen Komponenten von Clouddiensten.
 - **File Storage** bietet einen gemeinsam genutzten Speicher für Legacyanwendungen unter Verwendung des standardmäßige SMB-Protokolls. Virtuelle Azure-Computer und Clouddienste können Dateidaten in verschiedenen Anwendungskomponenten über eingebundene Freigaben teilen, und lokale Anwendungen können über die REST-API des Dateidiensts auf freigegebene Dateien zugreifen.
@@ -78,7 +78,7 @@ Informationen zum Erstellen eines Standardspeicherkontos finden Sie unter [Erste
 
 ### Premium-Speicherkonten
 
-Azure Premium Storage unterstützt derzeit nur Datenträger in virtuellen Azure-Computern. Eine ausführliche Übersicht über Azure Premium-Speicher finden Sie unter [Premium-Speicher: Hochleistungsspeicher für Workloads auf virtuellen Azure-Computern](http://go.microsoft.com/fwlink/?LinkId=521898).
+Azure Premium Storage unterstützt derzeit nur Datenträger in virtuellen Azure-Computern. Eine ausführliche Übersicht über Azure Premium-Speicher finden Sie unter [Premium-Speicher: Hochleistungsspeicher für Workloads auf virtuellen Azure-Computern](storage-premium-storage.md).
 
 [AZURE.INCLUDE [storage-versions-include](../../includes/storage-versions-include.md)]
 
@@ -93,13 +93,13 @@ Für Benutzer mit großen Mengen unstrukturierter Daten, die in einer Cloud gesp
 - Konfigurationsdaten für Cloudanwendungen
 - Große Datenmengen wie Protokolle und andere große Datensätze
 
-Jedes Blob ist in einem Container organisiert. Container bieten auch eine praktische Methode, um Gruppen von Objekten Sicherheitsrichtlinien zuzuordnen. Ein Speicherkonto kann eine beliebige Anzahl von Containern enthalten, und ein Container kann eine beliebige Anzahl von Blobs enthalten. Die Speicherkapazität eines Speicherkontos beträgt 500 TB.
+Jedes Blob ist in einem Container organisiert. Container bieten auch eine praktische Methode, um Gruppen von Objekten Sicherheitsrichtlinien zuzuordnen. Ein Speicherkonto kann eine beliebige Anzahl von Containern enthalten, und ein Container kann eine beliebige Anzahl von Blobs enthalten. Die Speicherkapazität eines Speicherkontos beträgt 500 TB.
 
 Der Blob-Speicher bietet drei Arten von Blobs: Block-Blobs, Anfüge-Blobs und Seiten-Blobs (Festplatten). Block-Blobs sind für das Streaming und die Speicherung von Cloudobjekten optimiert und stellen eine gute Wahl zur Speicherung von Dokumenten, Mediendateien, Sicherungskopien usw. dar. Anfüge-Blobs sind mit Block-Blobs vergleichbar, sind allerdings für Anfügevorgänge optimiert. Ein Anfüge-Blob kann nur durch Hinzufügen eines neuen Blocks an dessen Ende aktualisiert werden. Anfüge-Blobs sind eine gute Wahl für Szenarios wie die Protokollierung, bei denen neue Daten nur ans Ende des Blobs geschrieben werden müssen.
 
-Seiten-Blobs sind für die Darstellung von IaaS-Festplatten und für die Unterstützung von Schreibzugriffen optimiert und können bis zu 1 TB groß sein. Eine an ein Netzwerk angehängte IaaS-Festplatte auf einem virtuellen Azure-Computer ist eine als Seiten-Blob gespeicherte virtuelle Festplatte.
+Seiten-Blobs sind für die Darstellung von IaaS-Festplatten und für die Unterstützung von Schreibzugriffen optimiert und können bis zu 1 TB groß sein. Eine an ein Netzwerk angehängte IaaS-Festplatte auf einem virtuellen Azure-Computer ist eine als Seiten-Blob gespeicherte virtuelle Festplatte.
 
-Für sehr große Datensätze, bei denen Netzwerkbeschränkungen das Hochladen oder Herunterladen von Daten in Blob Storage über eine Kabelverbindung erschweren, können Sie wie folgt vorgehen: Schicken Sie eine Festplatte an Microsoft, um Ihre Daten direkt aus dem oder in das Rechenzentrum importieren bzw. exportieren zu lassen. Siehe [Verwenden des Microsoft Azure Import/Export-Diensts zum Übertragen von Daten in den Blob-Speicher](storage-import-export-service.md). Sie können auch Blob-Daten innerhalb Ihres Speicherkontos oder zwischen Speicherkonten kopieren.
+Für sehr große Datensätze, bei denen Netzwerkbeschränkungen das Hochladen oder Herunterladen von Daten in Blob Storage über eine Kabelverbindung erschweren, können Sie wie folgt vorgehen: Schicken Sie eine Festplatte an Microsoft, um Ihre Daten direkt aus dem oder in das Rechenzentrum importieren bzw. exportieren zu lassen. Siehe [Verwenden des Microsoft Azure Import/Export-Diensts zum Übertragen von Daten in den Blob-Speicher](storage-import-export-service.md).
 
 ## Tabellenspeicher
 
@@ -109,7 +109,7 @@ Der Tabellenspeicher verwendet ein Schlüssel-/Attributformat, d. h. jeder Wert 
 
 Sie können den Tabellenspeicher zur Speicherung von flexiblen Datensätzen wie Benutzerdaten für Webanwendungen, Adressbüchern, Geräteinformationen und jeder Art von Metadaten verwenden, die Ihr Dienst erfordert. Sie können eine beliebige Anzahl von Entitäten in einer Tabelle speichern, und ein Speicherkonto kann eine beliebige Anzahl von Tabellen enthalten, bis zur Speicherkapazitätsgrenze eines Speicherkontos.
 
-Wie bei Blobs und Warteschlangen können Entwickler den Tabellenspeicher mit Standard-REST-Protokollen aufrufen und verwalten. Der Tabellenspeicher unterstützt allerdings auch eine Untergruppe des OData-Protokolls. Dies vereinfacht erweiterte Abfragefunktionen und ermöglicht die Arbeit mit den Formaten JSON und AtomPub (XML-basiert).
+Wie bei Blobs und Warteschlangen können Entwickler Table Storage mit Standard-REST-Protokollen aufrufen und verwalten. Table Storage unterstützt allerdings auch eine Untergruppe des OData-Protokolls. Dies vereinfacht erweiterte Abfragefunktionen und ermöglicht die Verwendung der Formate JSON und AtomPub (XML-basiert).
 
 NoSQL-Datenbanken wie der Tabellenspeicher bieten für heutige internetbasierte Anwendungen eine beliebte Alternative zu herkömmlichen relationalen Datenbanken.
 
@@ -117,7 +117,7 @@ NoSQL-Datenbanken wie der Tabellenspeicher bieten für heutige internetbasierte 
 
 Bei der Entwicklung von Anwendungen für Skalierungszwecke werden einzelne Anwendungskomponenten oft entkoppelt, damit sie unabhängig skaliert werden können. Der Warteschlangenspeicher bietet eine zuverlässige Messaginglösung für die asynchrone Kommunikation zwischen Anwendungskomponenten, egal ob diese in der Cloud, auf dem Desktop, auf einem lokalen Server oder einem mobilen Gerät ausgeführt werden. Der Warteschlangenspeicher unterstützt auch die Verwaltung asynchroner Aufgaben und den Aufbau von Prozessworkflows.
 
-Ein Speicherkonto kann eine beliebige Anzahl von Warteschlangen enthalten. Eine Warteschlange kann eine beliebige Anzahl von Nachrichten enthalten, bis zur Kapazitätsgrenze des Speicherkontos. Einzelne Nachrichten können bis zu 64 KB groß sein.
+Ein Speicherkonto kann eine beliebige Anzahl von Warteschlangen enthalten. Eine Warteschlange kann eine beliebige Anzahl von Nachrichten enthalten, bis zur Kapazitätsgrenze des Speicherkontos. Einzelne Nachrichten können bis zu 64 KB groß sein.
 
 ## Dateispeicher
 
@@ -135,7 +135,7 @@ Standardmäßig kann nur der Besitzer eines Speicherkontos auf Ressourcen in die
 
 Ihr Speicherkonto wird bei der Erstellung zwei privaten Zugangsschlüsseln zugeordnet, die zur Authentifizierung verwendet werden. Die Verwendung von zwei Schlüsseln stellt sicher, dass Ihre Anwendung auch dann verfügbar bleibt, wenn Sie die Schlüssel im Rahmen der regelmäßigen Sicherheitsverwaltung regelmäßig erneuern.
 
-Wenn Sie anderen Benutzern kontrollierten Zugriff zu Ihren Speicherressourcen gewähren müssen, können Sie eine [Shared Access Signature](storage-dotnet-shared-access-signature-part-1.md) erstellen. Eine Shared Access Signature (SAS) ist ein Token, das an eine URL angehängt werden kann und delegierten Zugriff auf eine Speicherressource erlaubt. Jeder Benutzer, der dieses Token besitzt, kann mit festgelegten Berechtigungen und während der Gültigkeitsdauer auf die Ressource zugreifen, auf die das Token verweist. Ab Version 05.04.2015 unterstützt Azure Storage zwei Arten von SAS: Dienst-SAS und Konto-SAS.
+Wenn Sie anderen Benutzern kontrollierten Zugriff zu Ihren Speicherressourcen gewähren müssen, können Sie eine Shared Access Signature erstellen. Eine Shared Access Signature (SAS) ist ein Token, das an eine URL angehängt werden kann und delegierten Zugriff auf eine Speicherressource erlaubt. Jeder Benutzer, der dieses Token besitzt, kann mit festgelegten Berechtigungen und während der Gültigkeitsdauer auf die Ressource zugreifen, auf die das Token verweist. Ab Version 05.04.2015 unterstützt Azure Storage zwei Arten von SAS: Dienst-SAS und Konto-SAS.
 
 Die Dienst-SAS delegiert den Zugriff auf eine Ressource in nur einem der Speicherdienste: Blob-, Warteschlangen-, Tabellen- oder Dateidienst.
 
@@ -143,11 +143,19 @@ Eine Konto-SAS delegiert den Zugriff auf Ressourcen in einem oder mehreren der S
 
 Abschließend können Sie noch einen Container und seine Blobs – oder ein spezielles Blob – öffentlich verfügbar machen. Wenn Sie einen Container oder ein Blob zu einer öffentlichen Ressource erklären, kann jeder Benutzer anonym drauf zugreifen, ohne eine Authentifizierung zu benötigen. Öffentliche Container und Blobs sind hilfreich zur Verfügbarmachung von Ressourcen wie Medien und Dokumenten, die auf Websites gehostet werden. Um die Netzwerklatenz für ein globales Publikum zu reduzieren, können Sie Blob-Daten, die von Websites verwendet werden, in einem Cache zwischenspeichern.
 
-Weitere Informationen zum sicheren Zugriff auf Ihr Speicherkonto finden Sie unter [Verwalten des anonymen Lesezugriffs auf Container und Blobs](storage-manage-access-to-resources.md) und [Authentifizierung für die Azure-Speicherdienste](https://msdn.microsoft.com/library/azure/dd179428.aspx).
+Weitere Informationen zu Shared Access Signatures finden Sie unter [Shared Access Signatures: Grundlagen zum SAS-Modell](storage-dotnet-shared-access-signature-part-1.md). Weitere Informationen zum sicheren Zugriff auf Ihr Speicherkonto finden Sie unter [Verwalten des anonymen Lesezugriffs auf Container und Blobs](storage-manage-access-to-resources.md) und [Authentifizierung für die Azure-Speicherdienste](https://msdn.microsoft.com/library/azure/dd179428.aspx).
 
 ## Replikation für Dauerhaftigkeit und hohe Verfügbarkeit
 
 [AZURE.INCLUDE [storage-replication-options-include](../../includes/storage-replication-options-include.md)]
+
+## Übertragen von Daten in und aus Azure Storage
+
+Über das Befehlszeilenprogramm AzCopy können Sie Blob-, Datei- und Tabellendaten innerhalb Ihres Speicherkontos oder zwischen mehreren Speicherkonten kopieren. Weitere Informationen finden Sie unter [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy.md).
+
+AzCopy baut auf der [Azure Storage Data Movement Library](https://www.nuget.org/packages/Microsoft.Azure.Storage.DataMovement/) auf, die derzeit in der Vorschau verfügbar ist.
+
+Der Azure Import/Export-Dienst bietet eine Möglichkeit zum Importieren von Blobdaten in Ihr Speicherkonto oder zum Exportieren von Blobdaten aus Ihrem Speicherkonto über eine an das Azure-Rechenzentrum gesendete Festplatte. Weitere Informationen zu diesem Dienst finden Sie unter [Verwenden des Microsoft Azure Import/Export-Diensts zum Übertragen von Daten in Blob Storage](storage-import-export-service.md).
 
 ## Preise
 
@@ -157,48 +165,55 @@ Speicherkapazität bezieht sich darauf, wie viel von Ihrer Speicherkontozuweisun
 
 Die Seite [Preise für Azure Storage](https://azure.microsoft.com/pricing/details/storage/) enthält detaillierte Preisinformationen zu Speicherkapazität, Replikation und Transaktionen. In der [Datenübertragungs-Preisübersicht](https://azure.microsoft.com/pricing/details/data-transfers/) finden Sie detaillierte Preisinformationen für den Datenausgang. Sie können den [Azure Storage-Preisrechner](https://azure.microsoft.com/pricing/calculator/?scenario=data-management) verwenden, um Ihre Kosten zu bestimmen.
 
-## Entwicklung bei der Speicherung
+## APIs, Bibliotheken und Tools in Azure Storage
 
-Azure Storage stellt Speicherressourcen über eine [REST-API](http://msdn.microsoft.com/library/azure/dd179355.aspx) zur Verfügung, die in jeder Sprache aufgerufen werden kann, mit der sich HTTP/HTTPS-Anfragen durchführen lassen. Zusätzlich bietet Azure Storage Programmierbibliotheken für einige beliebte Sprachen. Diese Bibliotheken vereinfachen viele Aspekte der Arbeit mit Azure Storage durch Verarbeitung von Details wie synchronen und asynchronen Aufrufen, der Zusammenfassung von Vorgängen, Ausnahmeverwaltung, automatischen Neuversuchen, Betriebsverhalten usw. Bibliotheken sind aktuell für die folgenden Sprachen und Plattformen erhältlich. Weitere sind in Planung.
+Auf Azure Storage-Ressourcen kann über jede Sprache zugegriffen werden, die HTTP/HTTPS-Anforderungen ausgeben kann. Zusätzlich bietet Azure Storage Programmierbibliotheken für einige beliebte Sprachen. Diese Bibliotheken vereinfachen viele Aspekte der Arbeit mit Azure Storage durch Verarbeitung von Details wie synchronen und asynchronen Aufrufen, der Zusammenfassung von Vorgängen, Ausnahmeverwaltung, automatischen Neuversuchen, Betriebsverhalten usw. Bibliotheken sind aktuell für die folgenden Sprachen und Plattformen erhältlich. Weitere sind in Planung.
 
-- [.NET](http://go.microsoft.com/fwlink/?LinkID=390731)
-- [Microsoft Azure Storage-Clientbibliothek für C++](https://github.com/Azure/azure-storage-cpp)
-- [Java/Android](/develop/java/)
-- [Node.js](/develop/nodejs/)
-- [PHP](/develop/php/)
-- [Ruby](/develop/ruby/)
-- [Python](/develop/python/)
-- [PowerShell](https://msdn.microsoft.com/library/azure/jj156055.aspx)
+### Azure Storage Data Services
+
+- [REST-API für Speicherdienste](http://msdn.microsoft.com/library/azure/dd179355.aspx)
+- [Speicherclientbibliothek für .NET, Windows Phone und Windows-Runtime ](https://www.nuget.org/packages/WindowsAzure.Storage/)
+- [Speicherclientbibliothek für C++](https://github.com/Azure/azure-storage-cpp)
+- [Speicherclientbibliothek für Java/Android](/develop/java/)
+- [Speicherclientbibliothek für Node.js](http://dl.windowsazure.com/nodestoragedocs/index.html)
+- [Speicherclientbibliothek für PHP](/develop/php/)
+- [Speicherclientbibliothek für Ruby](/develop/ruby/)
+- [Speicherclientbibliothek für Python](/develop/python/)
+- [Azure Storage-Cmdlets für PowerShell 1.0](https://msdn.microsoft.com/library/azure/mt269418.aspx)
+
+### Azure Storage-Verwaltungsdienste
+
+- [Referenz für REST-API „Azure Storage Resource Provider“](https://msdn.microsoft.com/library/azure/mt163683.aspx)
+- [Storage Resource Provider-Clientbibliothek für .NET](https://msdn.microsoft.com/library/azure/mt131037.aspx)
+- [Storage Resource Provider-Cmdlets für PowerShell 1.0](https://msdn.microsoft.com/library/azure/mt607151.aspx)
+- [Storage-Dienstverwaltungs-REST-API (klassisch)](https://msdn.microsoft.com/library/azure/ee460790.aspx)
+
+### Azure Storage-Datenverschiebungsdienste 
+
+- [REST-API für Import/Export-Dienst](https://msdn.microsoft.com/library/azure/dn529096.aspx)
+- [Storage Data Movement-Clientbibliothek für .NET](https://www.nuget.org/packages/Microsoft.Azure.Storage.DataMovement/)
+
+### Tools und Dienstprogramme
+
+- [Azure-SDKs und -Tools](https://azure.microsoft.com/downloads/)
+- [Azure-Speicheremulator](http://www.microsoft.com/download/details.aspx?id=43709)
+- [Azure PowerShell](../powershell-install-configure.md)
+- [Befehlszeilenprogramm AzCopy](http://aka.ms/downloadazcopy)
 
 ## Nächste Schritte
 
-Informationen zu den ersten Schritten mit Azure Storage finden Sie in folgenden Ressourcen:
-
-### Downloads
-
-- [Azure-Speicher NuGet-Paket – Clientbibliotheken für .NET, Windows Phone und Windows-Runtime ](https://www.nuget.org/packages/WindowsAzure.Storage/)
-- [Azure-SDKs und -Tools](https://azure.microsoft.com/downloads/)
-- [Azure-Speicheremulator](http://www.microsoft.com/en-in/download/details.aspx?id=43709)
-- [Azure PowerShell](http://go.microsoft.com/?linkid=9811175&clcid=0x409)
-
-### Quellcode
-
-- [Microsoft Azure Storage-Bibliotheken für .NET](https://github.com/Azure/azure-storage-net)
+Weitere Informationen zu Azure Storage finden Sie in den folgenden Ressourcen:
 
 ### Dokumentation
 
 - [Azure-Speicherdokumentation](https://azure.microsoft.com/documentation/services/storage/)
-- [REST-API-Referenz für Azure-Speicherdienste](http://msdn.microsoft.com/library/azure/dd179355.aspx)
-- [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy.md)
 
 ### Für PowerShell-Benutzer
+
 - [Verwenden von Azure PowerShell mit Azure Storage](storage-powershell-guide-full.md)
-- [Azure Storage-Cmdlets für die Dienstverwaltung](http://msdn.microsoft.com/library/azure/dn806401.aspx)
-- [Azure Storage-Cmdlets für den Azure-Ressourcen-Manager](https://msdn.microsoft.com/library/azure/mt269418.aspx)
 
 ### Für .NET-Entwickler
 
-- [Referenz zur .NET-Clientbibliothek](http://msdn.microsoft.com/library/azure/wa_storage_30_reference_home.aspx)
 - [Erste Schritte mit Azure Blob Storage mit .NET](storage-dotnet-how-to-use-blobs.md)
 - [Erste Schritte mit Azure Table Storage mit .NET](storage-dotnet-how-to-use-tables.md)
 - [Erste Schritte mit Azure Queue Storage mit .NET](storage-dotnet-how-to-use-queues.md)
@@ -206,11 +221,10 @@ Informationen zu den ersten Schritten mit Azure Storage finden Sie in folgenden 
 
 ### Für Java-/Android-Entwickler
 
-- [Referenz zur Java-Clientbibliothek](http://azure.github.io/azure-storage-java/)
-- [Verwenden des Blob-Speichers mit Java/Android](storage-java-how-to-use-blob-storage.md)
-- [Verwenden des Tabellenspeichers mit Java/Android](storage-java-how-to-use-table-storage.md)
-- [Verwenden des Warteschlangenspeichers mit Java/Android](storage-java-how-to-use-queue-storage.md)
-- [Verwenden des Dateispeichers mit Java](storage-java-how-to-use-file-storage.md) 
+- [Verwenden des Blob-Speichers mit Java](storage-java-how-to-use-blob-storage.md)
+- [Verwenden des Tabellenspeichers mit Java](storage-java-how-to-use-table-storage.md)
+- [Verwenden des Warteschlangenspeichers mit Java](storage-java-how-to-use-queue-storage.md)
+- [Gewusst wie: Verwenden von File Storage mit Java](storage-java-how-to-use-file-storage.md) 
 
 ### Für Node.js-Entwickler
 
@@ -235,5 +249,6 @@ Informationen zu den ersten Schritten mit Azure Storage finden Sie in folgenden 
 - [Verwenden des Blob-Speichers mit Python](storage-python-how-to-use-blob-storage.md)
 - [Verwenden des Tabellenspeichers mit Python](storage-python-how-to-use-table-storage.md)
 - [Verwenden des Warteschlangenspeichers mit Python](storage-python-how-to-use-queue-storage.md)
+- [Gewusst wie: Verwenden von Azure File Storage mit Python](storage-python-how-to-use-file-storage.md)
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0309_2016-->

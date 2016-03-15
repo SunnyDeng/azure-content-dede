@@ -1,6 +1,6 @@
 
 
-1. Melden Sie sich beim [Azure-Portal](https://portal.windowsazure.com/) an, und klicken Sie im unteren Teil des Bildschirms auf **+NEW**.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an, und klicken Sie im unteren Teil des Bildschirms auf **+NEU**.
 
 2. Klicken Sie auf **Neu**, **Web- und mobile Anwendungen**, **Notification Hub** und dann auf **Schnellerfassung**.
 
@@ -22,4 +22,4 @@
 
    	![Azure-Portal – Verbindungszeichenfolgen für den Notification Hub](./media/notification-hubs-portal-create-new-hub/notification-hubs-connection-strings-portal.png)
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0309_2016-->

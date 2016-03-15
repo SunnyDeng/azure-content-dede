@@ -4,7 +4,7 @@
    documentationCenter="na"
    services="application-gateway"
    authors="joaoma"
-   manager="jdial"
+   manager="carmonm"
    editor="tysonn"/>
 <tags
    ms.service="application-gateway"
@@ -12,7 +12,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/24/2015"
+   ms.date="03/03/2016"
    ms.author="joaoma"/>
 
 # Konfigurieren eines Application Gateways für die SSL-Auslagerung mit Azure-Ressourcen-Manager
@@ -63,15 +63,15 @@ Hier sind die erforderlichen Schritte zum Erstellen eines Application Gateways a
 
 ## Erstellen einer Ressourcengruppe für den Ressourcen-Manager
 
-Stellen Sie sicher, dass Sie in den PowerShell-Modus wechseln, um die Azure-Ressourcen-Manager-Cmdlets zu verwenden. Weitere Informationen finden Sie unter [Verwenden von Windows PowerShell mit dem Ressourcen-Manager](powershell-azure-resource-manager.md).
+Stellen Sie sicher, dass Sie in den PowerShell-Modus wechseln, um die Azure-Ressourcen-Manager-Cmdlets zu verwenden. Weitere Informationen finden Sie unter [Verwenden von Windows PowerShell mit Resource Manager](../powershell-azure-resource-manager.md).
 
-### Schritt 1
+### Schritt 1
 
 		PS C:\> Login-AzureRmAccount
 
 
 
-### Schritt 2
+### Schritt 2
 
 Überprüfen Sie die Abonnements für das Konto.
 
@@ -79,7 +79,7 @@ Stellen Sie sicher, dass Sie in den PowerShell-Modus wechseln, um die Azure-Ress
 
 Sie werden zur Authentifizierung mit Ihren Anmeldeinformationen aufgefordert.<BR>
 
-### Schritt 3
+### Schritt 3
 
 Wählen Sie aus, welches Azure-Abonnement Sie verwenden möchten.<BR>
 
@@ -87,7 +87,7 @@ Wählen Sie aus, welches Azure-Abonnement Sie verwenden möchten.<BR>
 		PS C:\> Select-AzureRmSubscription -Subscriptionid "GUID of subscription"
 
 
-### Schritt 4
+### Schritt 4
 
 Erstellen Sie eine neue Ressourcengruppe (Überspringen Sie diesen Schritt, wenn Sie eine vorhandene Ressourcengruppe verwenden.)
 
@@ -101,18 +101,18 @@ Im obigen Beispiel haben wir eine Ressourcengruppe mit dem Namen „appgw-RG“ 
 
 Das folgende Beispiel zeigt, wie Sie mit dem Ressourcen-Manager ein virtuelles Netzwerk erstellen:
 
-### Schritt 1
+### Schritt 1
 
 	$subnet = New-AzureRmVirtualNetworkSubnetConfig -Name subnet01 -AddressPrefix 10.0.0.0/24
 
 Dieser Befehl weist den Adressbereich 10.0.0.0/24 einer Subnetzvariablen zu, die zum Erstellen eines virtuellen Netzwerks verwendet wird.
 
-### Schritt 2
+### Schritt 2
 	$vnet = New-AzureRmVirtualNetwork -Name appgwvnet -ResourceGroupName appgw-rg -Location "West US" -AddressPrefix 10.0.0.0/16 -Subnet $subnet
 
 Ein virtuelles Netzwerk mit dem Namen „appgwvnet“ wird in der Ressourcengruppe „appgw-rg“ für die Region „USA, Westen“ mit dem Präfix 10.0.0.0/16 und dem Subnetz 10.0.0.0/24 erstellt.
 
-### Schritt 3
+### Schritt 3
 
 	$subnet=$vnet.Subnets[0]
 
@@ -127,25 +127,25 @@ Es wird die öffentliche IP-Ressource „publicIP01“ in der Ressourcengruppe �
 
 ## Erstellen eines Konfigurationsobjekts für das Application Gateway
 
-### Schritt 1
+### Schritt 1
 
 	$gipconfig = New-AzureRmApplicationGatewayIPConfiguration -Name gatewayIP01 -Subnet $subnet
 
 Eine IP-Konfiguration für das Application Gateway mit dem Namen „gatewayIP01“ wird erstellt. Beim Starten des Application Gateways wird eine IP-Adresse aus dem konfigurierten Subnetz ausgewählt, und der Netzwerkdatenverkehr wird an die IP-Adressen im Back-End-IP-Pool weitergeleitet. Beachten Sie, dass jede Instanz eine eigene IP-Adresse benötigt.
 
-### Schritt 2
+### Schritt 2
 
 	$pool = New-AzureRmApplicationGatewayBackendAddressPool -Name pool01 -BackendIPAddresses 134.170.185.46, 134.170.188.221,134.170.185.50
 
 Es wird der Back-End-IP-Adresspool „pool01“ mit den IP-Adressen 134.170.185.46, 134.170.188.221 und 134.170.185.50 erstellt. Dies sind die IP-Adressen, die den Netzwerkdatenverkehr vom Front-End-IP-Adressendpunkt empfangen. Ersetzen Sie die IP-Adressen aus dem oben genannten Beispiel durch die IP-Adressen der Endpunkte Ihrer Webanwendung.
 
-### Schritt 3
+### Schritt 3
 
 	$poolSetting = New-AzureRmApplicationGatewayBackendHttpSettings -Name poolsetting01 -Port 80 -Protocol Http -CookieBasedAffinity Enabled
 
 Die Application Gateway-Einstellung „poolsetting01“ für den Lastenausgleich des Netzwerkdatenverkehrs im Back-End-Pool wird konfiguriert.
 
-### Schritt 4
+### Schritt 4
 
 	$fp = New-AzureRmApplicationGatewayFrontendPort -Name frontendport01  -Port 443
 
@@ -155,9 +155,9 @@ Der Front-End-IP-Port mit dem Namen „frontendport01“ für den öffentlichen 
 
 	$cert = New-AzureRmApplicationGatewaySslCertificate -Name cert01 -CertificateFile <full path for certificate file> -Password ‘<password>’
 
-Das Zertifikat für SSL-Verbindungen wird konfiguriert. Das Zertifikat muss im PFX-Format vorliegen, und das Kennwort muss zwischen 4 und 12 Zeichen umfassen.
+Das Zertifikat für SSL-Verbindungen wird konfiguriert. Das Zertifikat muss im PFX-Format vorliegen, und das Kennwort muss zwischen 4 und 12 Zeichen umfassen.
 
-### Schritt 6
+### Schritt 6
 
 	$fipconfig = New-AzureRmApplicationGatewayFrontendIPConfig -Name fipconfig01 -PublicIPAddress $publicip
 
@@ -182,7 +182,7 @@ Erstellt die Load Balancer-Routingregel mit dem Namen „rule01“, mit der das 
 
 Konfiguriert die Instanzgröße des Application Gateways.
 
->[AZURE.NOTE]  Der Standardwert für *InstanceCount* ist 2, der Maximalwert ist 10. Der Standardwert für *GatewaySize* ist "Medium". Sie können zwischen „Standard_Small“, „Standard_Medium“ und „Standard_Large“ wählen.
+>[AZURE.NOTE]  Der Standardwert für *InstanceCount* ist 2, der Maximalwert ist 10. Der Standardwert für *GatewaySize* ist "Medium". Sie können zwischen „Standard\_Small“, „Standard\_Medium“ und „Standard\_Large“ wählen.
 
 ## Erstellen eines Application Gateways mit dem New-AzureApplicationGateway-Cmdlet
 
@@ -199,4 +199,4 @@ Weitere Informationen zu Lastenausgleichsoptionen im Allgemeinen finden Sie unte
 - [Azure-Lastenausgleich](https://azure.microsoft.com/documentation/services/load-balancer/)
 - [Azure Traffic Manager](https://azure.microsoft.com/documentation/services/traffic-manager/)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0309_2016-->
