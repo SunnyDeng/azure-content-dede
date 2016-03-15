@@ -577,8 +577,7 @@ Aktualisiert einen Kontakt teilweise. ```PATCH: /datasets/contacts/tables/{table
 |Body|string|Ja|
 |Priorität|string|no|
 |IsHtml|Boolescher Wert|no|
-|To  
-|string|Ja|
+|To|string|Ja|
 
 #### SendAttachment: Anlage
 
@@ -605,8 +604,7 @@ Aktualisiert einen Kontakt teilweise. ```PATCH: /datasets/contacts/tables/{table
 |Body|string|Ja|
 |Priorität|string|no|
 |IsHtml|Boolescher Wert|no|
-|To  
-|string|Ja|
+|To|string|Ja|
 
 
 #### ReceiveAttachment: Anlage empfangen
@@ -629,8 +627,7 @@ Aktualisiert einen Kontakt teilweise. ```PATCH: /datasets/contacts/tables/{table
 |Priorität|string|no|
 |Digest|array|Ja|
 |Anlagen|array|no|
-|To  
-|string|Ja|
+|To|string|Ja|
 
 #### TriggerBatchResponse[ReceiveMessage]
 
@@ -693,8 +690,7 @@ Aktualisiert einen Kontakt teilweise. ```PATCH: /datasets/contacts/tables/{table
 |Body|string|no|
 |Priorität|string|no|
 |Anlagen|array|no|
-|To  
-|string|Ja|
+|To|string|Ja|
 
 #### SubscriptionResponse: Modell für das Genehmigungs-E-Mail-Abonnement
 
@@ -723,8 +719,7 @@ Aktualisiert einen Kontakt teilweise. ```PATCH: /datasets/contacts/tables/{table
 |Body|string|no|
 |Priorität|string|no|
 |Anlagen|array|no|
-|To  
-|string|Ja|
+|To|string|Ja|
 
 #### ApprovalEmailResponse: Genehmigungs-E-Mail-Antwort
 
@@ -812,4 +807,4 @@ Nach dem Hinzufügen der Office 365-API zu PowerApps Enterprise [erteilen Sie de
 [12]: ./media/create-api-office365-outlook/contoso-aad-app-delegate-office365-outlook.png
 [13]: ./media/create-api-office365-outlook/contoso-aad-app-delegate-office365-outlook-permissions.png
 
-<!---HONumber=AcomDC_0302_2016-->
+<!----HONumber=AcomDC_0302_2016-->
