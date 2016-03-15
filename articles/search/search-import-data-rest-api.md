@@ -168,4 +168,4 @@ Weitere Informationen zu Dokumentaktionen und Antworten bei Erfolg/Fehler finden
 ## Weiter
 Nach dem Auffüllen des Azure Search-Indexes können Sie mit Abfragen für die Suche nach Dokumenten beginnen.
 
-<!----HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0302_2016-->
