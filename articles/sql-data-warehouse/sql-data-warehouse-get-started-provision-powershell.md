@@ -71,7 +71,7 @@ Die erforderlichen Parameter für dieses Cmdlet lauten wie folgt:
  + **DatabaseName**: der Name des SQL Data Warehouse, das Sie erstellen.
  + **ServerName**: der Name des Servers, den Sie für die Erstellung verwenden (muss V12 sein).
  + **ResourceGroupName**: die Ressourcengruppe, die Sie verwenden. Verwenden Sie zum Abrufen der in Ihrem Abonnement verfügbaren Ressourcengruppen das Cmdlet "Get-AzureResourceGroup":
- + **Edition**: Sie müssen die Edition auf "Data Warehouse" festlegen, um ein SQL Data Warehouse zu erstellen.
+ + **Edition**: Sie müssen die Edition auf "Data Warehouse" festlegen, um ein SQL Data Warehouse zu erstellen. 
 
 Die Befehlsreferenz finden Sie unter [New-AzureRmSqlDatabase](https://msdn.microsoft.com/library/mt619339.aspx).
 

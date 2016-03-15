@@ -182,8 +182,8 @@ Sie können Daten in HBase-Tabellen mit Hive abfragen. In diesem Abschnitt erste
 
   Folgende Parameter werden in diesem Befehl verwendet:
 
-    * **-u** - The user name and password used to authenticate the request.
-    * **-G** - Indicates that this is a GET request.
+    * **-u** - Der Benutzername und das Kennwort für die Authentifizierung der Anforderung
+    * **-G** - Gibt an, dass dies eine GET-Anforderung ist
 
 2. Verwenden Sie den folgenden Befehl, um die vorhandenen HBase-Tabellen aufzulisten:
 

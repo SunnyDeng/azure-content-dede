@@ -219,9 +219,10 @@ Sobald ein Vorhersagemodell in die Produktionsumgebung übernommen wurde, könne
 
 Für RRS wird das Ergebnis normalerweise in der Antwort des Webdiensts ausgegeben. Sie können es aber auch in ein Blob schreiben. Bei BES wird die Ausgabe standardmäßig in ein Blob geschrieben. Sie können die Ausgabe aber auch mithilfe des Schreibmoduls in eine Datenbank oder Tabelle schreiben.
 
- ****Können Webdienste nur aus Modellen erstellt werden, die im Studio erstellt wurden? Nein. Webdienste können auch direkt aus Jupyter Notebooks und RStudio erstellt werden.
-
- **** Wo finde ich Informationen zu Fehlercodes? Fehlercodes werden [hier](https://msdn.microsoft.com/library/azure/dn905910.aspx) beschrieben.
+ **Können Webdienste nur aus Modellen erstellt werden, die im Studio erstellt wurden?
+ Nein. Webdienste können auch direkt aus Jupyter Notebooks und RStudio erstellt werden.
+ 
+ ** Wo finde ich Informationen zu Fehlercodes? Fehlercodes werden [hier](https://msdn.microsoft.com/library/azure/dn905910.aspx) beschrieben.
 
 ## Skalierbarkeit
 
