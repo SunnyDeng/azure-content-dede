@@ -14,7 +14,7 @@
      ms.topic="hero-article"
      ms.tgt_pltfrm="na"
      ms.workload="na"
-     ms.date="12/03/2015"
+     ms.date="03/02/2016"
      ms.author="dobett"/>
 
 # Tutorial: Erste Schritte mit den vorkonfigurierten IoT-Lösungen
@@ -33,6 +33,8 @@ Sie benötigen ein aktives Azure-Abonnement, um dieses Lernprogramm auszuführen
 
 1.  Melden Sie sich mit den Anmeldeinformationen für Ihr Azure-Konto bei [azureiotsuite.com][lnk-azureiotsuite] an, und klicken Sie auf **+**, um eine neue Lösung zu erstellen.
 
+    > [AZURE.NOTE] Wenn Sie Probleme mit den Berechtigungen für die Bereitstellung einer Lösung haben, finden Sie unter [Berechtigungen für die Website „azureiotsuite.com“](iot-suite-permissions.md) weitere Informationen.
+
 2.  Klicken Sie auf der Kachel **Remoteüberwachung** auf **Auswählen**.
 
 3.  Geben Sie einen **Lösungsnamen** für Ihre vorkonfigurierte Remoteüberwachungslösung ein.
@@ -41,7 +43,21 @@ Sie benötigen ein aktives Azure-Abonnement, um dieses Lernprogramm auszuführen
 
 5.  Klicken Sie auf **Lösung erstellen**, um den Bereitstellungsprozess zu beginnen. Dies dauert normalerweise einige Minuten.
 
+## Warten auf den Abschluss des Bereitstellungsvorgangs
+
+1. Klicken Sie auf die Kachel für Ihre Lösung mit dem Status **Bereitstellung**.
+ 
+2. Beachten Sie die **Bereitstellungsstatus** während der Bereitstellung von Azure-Dienste im Azure-Abonnement.
+
+3. Nach Abschluss der Bereitstellung ändert sich der Status **Bereit**.
+
+4. Klicken Sie auf die Kachel, um im rechten Bereich Details zur Lösung anzuzeigen.
+
+Erwarten Sie Informationen zu Ihrer Lösung, die nicht aufgeführt werden? Senden Sie uns Vorschläge für neue Funktionen im [Feedbackbereich](https://feedback.azure.com/forums/321918-azure-iot) zu.
+
 ## Anzeigen des Dashboards der Remoteüberwachungslösung
+
+Im Lösungsdashboard können Sie die bereitgestellte Lösung verwalten. Sie können z. B. Telemetriedaten anzeigen, Geräte hinzufügen und Regeln konfigurieren.
 
 1.  Wenn die Bereitstellung abgeschlossen ist und auf der Kachel für die vorkonfigurierte Lösung **Bereit** angezeigt wird, klicken Sie auf **Starten**, um das Portal der Remoteüberwachungslösung auf einer neuen Registerkarte zu öffnen.
 
@@ -52,6 +68,8 @@ Sie benötigen ein aktives Azure-Abonnement, um dieses Lernprogramm auszuführen
     ![][img-dashboard]
 
 ## Anzeigen der Lösungsgeräteliste
+
+Die Geräteliste enthält alle registrierten Geräte in der Lösung. Sie können Gerätemetadaten anzeigen und bearbeiten, Geräte hinzufügen oder entfernen und Befehle an Geräte übermitteln.
 
 1.  Klicken Sie im linken Menü auf **Geräte**, um die *Geräteliste* für diese Lösung anzuzeigen.
 
@@ -64,6 +82,8 @@ Sie benötigen ein aktives Azure-Abonnement, um dieses Lernprogramm auszuführen
     ![][img-devicedetails]
 
 ## Senden eines Befehls an ein Gerät
+
+Im Detailbereich zu einem Gerät werden alle Befehle angezeigt, die das Gerät unterstützt. Außerdem können Sie hier Befehle an bestimmte Geräte senden.
 
 1.  Klicken Sie im Bereich mit den Gerätedetails für das ausgewählte Gerät auf **Befehle**.
 
@@ -101,7 +121,13 @@ Sie benötigen ein aktives Azure-Abonnement, um dieses Lernprogramm auszuführen
 
     ![][img-runningnew]
 
+## Hinzufügen physischer Geräte
+
+Informationen zum Hinzufügen eines physischen Geräts zu einer Lösung finden Sie unter [Verbinden Ihres Geräts mit der vorkonfigurierten Remoteüberwachungslösung von IoT Suite][lnk-connecting-devices]
+
 ## Anzeigen und Bearbeiten von Lösungsregeln
+
+Die vorkonfigurierte Lösung stellt zwei Regeln für SampleDevice001 bereit. Die Regeln benachrichtigen Sie auf der Kachel **Alarmverlauf** im Dashboard, wenn die Werte für Temperatur oder Feuchtigkeit einen Schwellenwert überschreiten.
 
 1.  Kehren Sie zum Lösungsdashboard zurück, und zeigen Sie die Kachel **Alarmverlauf** an.
 
@@ -113,11 +139,9 @@ Sie benötigen ein aktives Azure-Abonnement, um dieses Lernprogramm auszuführen
 
     ![][img-rules]
 
-4.  Die vorkonfigurierte Lösung stellt zwei Regeln bereit.
-
 5.  Klicken Sie in der Liste der Regeln auf **Temperatur**, um die Regeleigenschaften anzuzeigen.
 
-6.  Klicken Sie im Eigenschaftenbereich der Regel auf **Bearbeiten**.
+6.  Klicken Sie im Eigenschaftenbereich der Regel auf **Bearbeiten**, um eine Regel zu bearbeiten.
 
     ![][img-displayrule]
 
@@ -135,7 +159,7 @@ Wenn Sie fertig sind, können Sie die vorkonfigurierte Lösung auf der Website [
 
 ## Nächste Schritte
 
-Nachdem Sie jetzt eine funktionsfähige vorkonfigurierte Lösung erstellt haben, können Sie mit den folgenden Szenarios fortfahren:
+Nachdem Sie jetzt eine funktionsfähige vorkonfigurierte Lösung erstellt haben, können Sie mit den folgenden exemplarischen Vorgehensweisen fortfahren:
 
 -   [Anleitung zum Anpassen vorkonfigurierter Lösungen][lnk-customize]
 -   [Übersicht über die vorkonfigurierte Lösung für vorhersagbaren Wartungsbedarf][lnk-predictive]
@@ -161,5 +185,6 @@ Nachdem Sie jetzt eine funktionsfähige vorkonfigurierte Lösung erstellt haben,
 [lnk-azureiotsuite]: https://www.azureiotsuite.com
 [lnk-customize]: iot-suite-guidance-on-customizing-preconfigured-solutions.md
 [lnk-predictive]: iot-suite-predictive-overview.md
+[lnk-connecting-devices]: iot-suite-connecting-devices.md
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0309_2016-->

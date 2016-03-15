@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Übersicht über Microsoft Azure IoT Suite | Microsoft Azure"
-	description="Hier finden Sie eine Übersicht über Azure IoT Suite, u. a. Informationen zum Packen und vorkonfigurierten Lösungen."
+	description="Hier finden Sie eine Übersicht über Azure IoT Suite, u. a. Informationen zum Packen und vorkonfigurierten Lösungen."
 	services=""
     suite="iot-suite"
 	documentationCenter=""
@@ -74,4 +74,4 @@ Sie haben nun einen Überblick über die Möglichkeiten der IoT-Suite erlangt un
 [lnk-preconfig-start]: iot-suite-getstarted-preconfigured-solutions.md
 [lnk-iot-hub]: https://azure.microsoft.com/documentation/services/iot-hub/
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0309_2016-->

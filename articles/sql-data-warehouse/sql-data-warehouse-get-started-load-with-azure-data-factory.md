@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="02/16/2016"
+   ms.date="03/03/2016"
    ms.author="lodipalm;barbkess;sonyama"/>
 
 # Laden von Daten mit Azure Data Factory
@@ -40,7 +40,7 @@ Machen Sie sich unter [Einführung in Azure Data Factory](../data-factory/data-f
 
 Bevor Sie mit diesem Tutorial beginnen, müssen Sie über die folgenden Ressourcen verfügen.
 
-   + **Azure Storage-Blob**: In diesem Tutorial wird Azure Storage-Blob als Datenquelle für die Azure Data Factory-Pipeline verwendet, daher benötigen Sie eines zum Speichern der Beispieldaten. Wenn Sie noch keines haben, finden Sie unter [Erstellen eines Speicherkontos](../storage/storage-create-storage-account/#create-a-storage-accoun/) weitere Informationen. 
+   + **Azure Storage-Blob**: In diesem Tutorial wird Azure Storage-Blob als Datenquelle für die Azure Data Factory-Pipeline verwendet, daher benötigen Sie eines zum Speichern der Beispieldaten. Wenn Sie noch keines haben, finden Sie unter [Erstellen eines Speicherkontos](../storage/storage-create-storage-account/#create-a-storage-accoun/) weitere Informationen.
 
    + **SQL Data Warehouse**: In diesem Tutorial werden die Daten aus dem Azure Storage-Blob in SQL Data Warehouse verschoben. Daher muss ein Data Warehouse online sein, in das die AdventureWorksDW-Beispieldaten geladen wurden. Wenn Sie noch kein Data Warehouse haben, erfahren Sie hier, wie [eines bereitstellt wird](sql-data-warehouse-get-started-provision.md). Wenn Sie ein Data Warehouse haben, jedoch die Beispieldaten nicht darin bereitgestellt haben, können Sie es [manuell laden](sql-data-warehouse-get-started-manually-load-samples.md).
 
@@ -158,7 +158,7 @@ Klicken Sie im Abschnitt „Erstellen und Bereitstellen“ nun auf „Weitere Be
     "name": "<Pipeline Name>",
     "properties": {
         "description": "<Description>",
-        "activities": [ 
+        "activities": [
           {
             "type": "Copy",
     		"typeProperties": {
@@ -215,4 +215,4 @@ Diese Themen enthalten ausführliche Informationen zu Azure Data Factory. Darin 
 - [Tutorial: Kopieren von Daten aus einem Azure Storage-Blob in die Azure SQL-Datenbank](../data-factory/data-factory-get-started.md) In diesem Tutorial erstellen Sie in Azure Data Factory eine Pipeline, um Daten aus einem Azure Storage-Blob in Azure SQL-Datenbank zu kopieren.
 - [Tutorial zu realistischen Szenarien](../data-factory/data-factory-tutorial.md) Dies ist ein detailliertes Tutorial zur Verwendung von Azure Data Factory.
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

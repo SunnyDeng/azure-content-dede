@@ -4,7 +4,7 @@
 	services="api-management"
 	documentationCenter=""
 	authors="steved0x"
-	manager="dwrede"
+	manager="erikre"
 	editor=""/>
 
 <tags
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="12/16/2015"
+	ms.date="03/04/2016"
 	ms.author="sdanie"/>
 
 # Hinzufügen der Zwischenspeicherung zum Verbessern der Leistung in Azure API Management
@@ -22,7 +22,7 @@ Operationen in API Management können für das Zwischenspeichern von Antworten k
 
 In diesem Leitfaden wird gezeigt, wie Sie die Zwischenspeicherung von Antworten für Ihre API hinzufügen und Richtlinien für Operationen in der Echo-Beispiel-API konfigurieren. Um die Zwischenspeicherung in Aktion zu sehen, können Sie die Operation im Entwicklerportal aufrufen.
 
->[AZURE.NOTE]Informationen zum Zwischenspeichern von Elementen nach Schlüssel mithilfe von Richtlinienausdrücken finden Sie unter [Benutzerdefiniertes Zwischenspeichern in Azure API Management](api-management-sample-cache-by-key.md).
+>[AZURE.NOTE] Informationen zum Zwischenspeichern von Elementen nach Schlüssel mithilfe von Richtlinienausdrücken finden Sie unter [Benutzerdefiniertes Zwischenspeichern in Azure API Management](api-management-sample-cache-by-key.md).
 
 ## Voraussetzungen
 
@@ -32,7 +32,7 @@ Um die Schritte in diesem Leitfaden ausführen zu können, müssen Sie über ein
 
 In diesem Schritt prüfen Sie die Einstellungen der Zwischenspeicherung für die **GET Resource (cached)**-Operation der Echo-Beispiel-API.
 
->[AZURE.NOTE]Jede API Management-Dienstinstanz enthält eine vorkonfigurierte Echo-API, die Sie für Tests und erste Schritte mit API Management nutzen können. Weitere Informationen finden Sie unter [Erste Schritte mit Azure API Management][].
+>[AZURE.NOTE] Jede API Management-Dienstinstanz enthält eine vorkonfigurierte Echo-API, die Sie für Tests und erste Schritte mit API Management nutzen können. Weitere Informationen finden Sie unter [Erste Schritte mit Azure API Management][].
 
 Klicken Sie zunächst im klassischen Azure-Portal für Ihren API Management-Dienst auf **Verwalten**. Daraufhin gelangen Sie zum API Management-Herausgeberportal.
 
@@ -89,7 +89,7 @@ Die Richtliniendefinition für diese Operation enthält auch die Richtlinien fü
 		</outbound>
 	</policies>
 
->[AZURE.NOTE]Änderungen, die Sie im Richtlinien-Editor vornehmen, werden auf der Registerkarte **Zwischenspeichern** der Operation übernommen, und umgekehrt.
+>[AZURE.NOTE] Änderungen, die Sie im Richtlinien-Editor vornehmen, werden auf der Registerkarte **Zwischenspeichern** der Operation übernommen, und umgekehrt.
 
 ## <a name="test-operation"> </a>Aufrufen einer Operation und Testen der Zwischenspeicherung
 
@@ -163,4 +163,4 @@ Geben Sie **25** in das Feld **param2** ein, und klicken Sie dann auf **HTTP Get
 [Call an operation and test the caching]: #test-operation
 [Next steps]: #next-steps
 
-<!-----HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0309_2016-->

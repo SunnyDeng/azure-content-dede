@@ -12,7 +12,7 @@
 	ms.workload="media" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
-	ms.topic="article" 
+	ms.topic="hero-article" 
 	ms.date="02/02/2016"
 	ms.author="juliako"/>
 
@@ -33,7 +33,7 @@ Zum Entwickeln von Media Services-Lösungen können Sie folgende Komponenten ver
 	- [Azure Media Services SDK für .NET](https://github.com/Azure/azure-sdk-for-media-services), 
 	- [Azure SDK für Java](https://github.com/Azure/azure-sdk-for-java), 
 	- [Azure PHP SDK](https://github.com/Azure/azure-sdk-for-php), 
-	- [Azure Media Services für Node.js](https://github.com/michelle-becker/node-ams-sdk/blob/master/lib/request.js) (dies ist eine nicht von Microsoft stammende Version des Node.js SDK. Sie wird von einer Community verwaltet und bietet derzeit keine 100 %-ige Abdeckung der AMS-APIs). 
+	- [Azure Media Services für Node.js](https://github.com/michelle-becker/node-ams-sdk/blob/master/lib/request.js) (dies ist eine nicht von Microsoft stammende Version des Node.js SDK. Sie wird von einer Community verwaltet und bietet derzeit keine 100 %-ige Abdeckung der AMS-APIs). 
 - Vorhandene Tools: 
 	- [Klassisches Azure-Portal](http://manage.windowsazure.com/) 
 	- [Azure-Media-Services-Explorer](https://github.com/Azure/Azure-Media-Services-Explorer) (Azure Media Services Explorer [AMSE] ist eine Winforms-/ C#-Anwendung für Windows)
@@ -147,11 +147,11 @@ Beim Arbeiten mit Livestreaming werden normalerweise die folgenden Komponenten v
   
 	Optional mehrere Live-Encoder. Für bestimmte kritische Liveereignisse, die eine sehr hohe Verfügbarkeit und Quality of Experience erfordern, wird der Einsatz redundanter Aktiv-Aktiv-Encoder empfohlen, um ein nahtloses Failover ohne Datenverlust zu erreichen.
 - Ein Livestreaming-Dienst, der Ihnen Folgendes ermöglicht: 
-	- Erfassen von Liveinhalten über verschiedene Livestreaming-Protokolle (z. B. RTMP oder Smooth Streaming) 
+	- Erfassen von Liveinhalten über verschiedene Livestreaming-Protokolle (z. B. RTMP oder Smooth Streaming) 
 	- Codieren des Datenstroms in einen Datenstrom mit adaptiver Bitrate
 	- Vorschau des Livestreams
 	- Speichern des erfassten Inhalts für ein späteres Streaming (Video-on-Demand)
-	- Übermitteln der Inhalte über häufig verwendete Streaming-Protokolle (z. B. MPEG DASH, Smooth, HLS, HDS) direkt an die Kunden oder an ein Content Delivery Network (CDN) zur weiteren Verteilung 
+	- Übermitteln der Inhalte über häufig verwendete Streaming-Protokolle (z. B. MPEG DASH, Smooth, HLS, HDS) direkt an die Kunden oder an ein Content Delivery Network (CDN) zur weiteren Verteilung 
 	
 		
 Mit **Microsoft Azure Media Services** (AMS) können Sie Livestreaminginhalte erfassen, codieren, in der Vorschau anzeigen, speichern und bereitstellen.
@@ -202,7 +202,7 @@ Von Media Services wird die Integration mit Azure CDN unterstützt. Informatione
 
 Sie können **Media Services** skalieren, indem Sie die Anzahl **reservierter Einheiten für das Streaming** und die Anzahl **reservierter Einheiten für die Codierung** angeben, die für Ihr Konto bereitgestellt werden soll.
 
-Außerdem können Sie Ihr Media Services-Konto skalieren, indem Sie Speicherkonten hinzufügen. Jedes Speicherkonto ist auf 500 TB beschränkt. Um den Speicher über die Standardbeschränkungen hinaus zu erweitern, können Sie mehrere Speicherkonten mit einem einzelnen Media Services-Konto verknüpfen.
+Außerdem können Sie Ihr Media Services-Konto skalieren, indem Sie Speicherkonten hinzufügen. Jedes Speicherkonto ist auf 500 TB beschränkt. Um den Speicher über die Standardbeschränkungen hinaus zu erweitern, können Sie mehrere Speicherkonten mit einem einzelnen Media Services-Konto verknüpfen.
 
 [Dieses](media-services-how-to-scale.md) Thema enthält Links zu relevanten Themen.
 
@@ -224,8 +224,8 @@ Der [Azure-Support](https://azure.microsoft.com/support/options/) bietet Support
 - Media Services gewährleistet eine Verfügbarkeit von 99,9 % für die REST-API-Transaktionen zur Media Services-Codierung.
 - Das Streaming sorgt für eine erfolgreiche Verarbeitung von Dienstanforderungen mit 99,9 % Verfügbarkeitsgarantie für vorhandene Medieninhalte, wenn mindestens eine Streamingeinheit erworben wird.
 - Für Livekanäle wird garantiert, dass ausgeführte Kanäle mindestens 99,9 % der Zeit über externe Konnektivität verfügen.
-- Für den Schutz von Inhalten garantieren wir, dass Schlüsselanforderungen mindestens 99,9 % der Zeit erfolgreich bearbeitet werden.
-- Für Indexer werden Indexer-Aufgabenanforderungen, die mit einer reservierten Einheit für die Codierung verarbeitet werden, 99,9 % der Zeit erfolgreich bearbeitet.
+- Für den Schutz von Inhalten garantieren wir, dass Schlüsselanforderungen mindestens 99,9 % der Zeit erfolgreich bearbeitet werden.
+- Für Indexer werden Indexer-Aufgabenanforderungen, die mit einer reservierten Einheit für die Codierung verarbeitet werden, 99,9 % der Zeit erfolgreich bearbeitet.
 
 	Weitere Informationen finden Sie im [Microsoft Azure-SLA](https://azure.microsoft.com/support/legal/sla/).
 
@@ -236,4 +236,4 @@ Der [Azure-Support](https://azure.microsoft.com/support/options/) bietet Support
 [live-overview2]: ./media/media-services-live-streaming-workflow/media-services-live-streaming-current.png
  
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0309_2016-->

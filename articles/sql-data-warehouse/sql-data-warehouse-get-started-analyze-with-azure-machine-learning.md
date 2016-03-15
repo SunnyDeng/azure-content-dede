@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="02/25/2016"
+   ms.date="03/03/2016"
    ms.author="sahajs;barbkess;sonyama"/>
 
 # Analysieren von Daten mit Azure Machine Learning
@@ -29,16 +29,16 @@ Für dieses Tutorial ist Folgendes erforderlich:
 Unter [Erstellen eines SQL Data Warehouse][] wird erläutert, wie Sie eine Datenbank mit Beispieldaten bereitstellen. Wenn Sie bereits über eine SQL Data Warehouse-Datenbank verfügen, aber noch keine Beispieldaten besitzen, können Sie [Beispieldaten manuell laden][].
 
 
-## Schritt 1: Bereitstellen von Daten 
+## Schritt 1: Bereitstellen von Daten
 Wir lesen die Daten aus der Ansicht „dbo.vTargetMail“ in der AdventureWorksDW-Datenbank.
 
 1. Melden Sie sich bei [Azure Machine Learning Studio][] an, und klicken Sie auf „Meine Experimente“.
 2. Klicken Sie auf **+ NEU**, und wählen Sie **Leeres Experiment**.
 3. Geben Sie einen Namen für das Experiment ein: Zielgerichtetes Marketing.
 4. Ziehen Sie das **Reader**-Modul aus dem Modulbereich in den Zeichenbereich.
-5. Geben Sie im Eigenschaftenbereich ausführliche Informationen zu Ihrer SQL Data Warehouse-Datenbank ein. 
+5. Geben Sie im Eigenschaftenbereich ausführliche Informationen zu Ihrer SQL Data Warehouse-Datenbank ein.
 6. Geben Sie die **Datenbankabfrage** zum Lesen der für Sie interessanten Daten an.
-   
+
    ```
    SELECT [CustomerKey]
       ,[GeographyKey]
@@ -140,4 +140,4 @@ Weitere Informationen zum Erstellen von vorhersehbaren Machine Learning-Vorhersa
 [Beispieldaten manuell laden]: sql-data-warehouse-get-started-manually-load-samples.md
 [Erstellen eines SQL Data Warehouse]: sql-data-warehouse-get-started-provision.md
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->
