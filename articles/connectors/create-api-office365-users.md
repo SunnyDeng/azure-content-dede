@@ -54,9 +54,10 @@ Alle APIs unterstützen Daten im JSON- und XML-Format.
 Wenn Sie diese API in PowerApps Enterprise hinzufügen, geben Sie die Werte für die **Client-ID** und den **geheimen Clientschlüssel** Ihrer Office 365-AAD-Anwendung (Azure Active Directory) ein. Der Wert von **Umleitungs-URL** wird auch in Ihrer Office 365-Anwendung verwendet. Wenn Sie noch keine Office 365-Anwendung haben, führen Sie die folgenden Schritte aus, um die Anwendung zu erstellen:
 
 1. Öffnen Sie das [Azure-Portal][5], dann **Active Directory**, und wählen Sie den Namen des Mandanten Ihrer Organisation aus.
-2. Klicken Sie auf die Registerkarte **Anwendungen**, und wählen Sie **Hinzufügen** aus: ![AAD-Mandanten-Anwendungen][7]
+2. Klicken Sie auf die Registerkarte **Anwendungen**, und wählen Sie **Hinzufügen** aus:  
+![AAD-Mandanten-Anwendungen][7]
 
-3. Auf der Seite **Anwendung hinzufügen**:
+3. Auf der Seite **Anwendung hinzufügen**:  
 
 	1. Geben Sie einen **Namen** für Ihre Anwendung ein.  
 	2. Lassen Sie als Anwendungstyp **Web** ausgewählt.  
@@ -64,17 +65,19 @@ Wenn Sie diese API in PowerApps Enterprise hinzufügen, geben Sie die Werte für
 
 	![AAD-Anwendung hinzufügen – App-Info][8]
 
-4. Unter **App-Eigenschaften**:
+4. Unter **App-Eigenschaften**:  
 
-	1. Geben Sie unter **ANMELDE-URL** die Anmelde-URL Ihrer Anwendung ein. Da Sie die Authentifizierung mit AAD für PowerApps durchführen, legen Sie die Anmelde-URL auf \__https://login.windows.net_ fest.
-2. Geben Sie einen gültigen **APP-ID-URI** für Ihre App ein.  
+	1. Geben Sie unter **ANMELDE-URL** die Anmelde-URL Ihrer Anwendung ein. Da Sie die Authentifizierung mit AAD für PowerApps durchführen, legen Sie die Anmelde-URL auf \__https://login.windows.net_ fest.  
+	2. Geben Sie einen gültigen **APP-ID-URI** für Ihre App ein.  
 	3. Klicken Sie auf **OK**.  
 
 	![AAD-Anwendung hinzufügen – App-Eigenschaften][9]
 
-5. Wenn Sie fertig sind, wird die neue AAD-App geöffnet. Wählen Sie **Konfigurieren** aus: ![Contoso-AAD-App][10]
+5. Wenn Sie fertig sind, wird die neue AAD-App geöffnet. Wählen Sie **Konfigurieren** aus:  
+![Contoso-AAD-App][10]
 
-6. Legen Sie die **Antwort-URL** im Abschnitt **OAuth 2** auf den Wert der Umleitungs-URL fest, der beim Hinzufügen der Office 365-Benutzer-API im Azure-Portal angezeigt wurde. Wählen Sie **Anwendung hinzufügen** aus: ![Contoso-AAD-App konfigurieren][11]
+6. Legen Sie die **Antwort-URL** im Abschnitt **OAuth 2** auf den Wert der Umleitungs-URL fest, der beim Hinzufügen der Office 365-Benutzer-API im Azure-Portal angezeigt wurde. Wählen Sie **Anwendung hinzufügen** aus:  
+![Contoso-AAD-App konfigurieren][11]
 
 7. Wählen Sie unter **Berechtigungen für andere Anwendungen** die Option **Office 365 Unified API (Vorschau)** und dann **OK**.
 
@@ -102,7 +105,8 @@ Nachdem Sie eine Verbindung hergestellt haben, geben Sie die Eigenschaften für 
 Gilt für Version: 1.0.
 
 ### Mein Profil abrufen 
-Ruft das Benutzerprofil für den aktuellen Benutzer ab. ```GET: /users/me```
+Ruft das Benutzerprofil für den aktuellen Benutzer ab.  
+```GET: /users/me```
 
 Es gibt keine Parameter für diesen Aufruf.
 
@@ -120,7 +124,8 @@ Es gibt keine Parameter für diesen Aufruf.
 
 
 ### Benutzerprofil abrufen 
-Ruft ein bestimmtes Benutzerprofil ab. ```GET: /users/{userId}```
+Ruft ein bestimmtes Benutzerprofil ab.  
+```GET: /users/{userId}```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -140,7 +145,8 @@ Ruft ein bestimmtes Benutzerprofil ab. ```GET: /users/{userId}```
 
 
 ### Vorgesetzten abrufen 
-Ruft das Benutzerprofil des Vorgesetzten des angegebenen Benutzers ab. ```GET: /users/{userId}/manager```
+Ruft das Benutzerprofil des Vorgesetzten des angegebenen Benutzers ab.  
+```GET: /users/{userId}/manager```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -161,7 +167,8 @@ Ruft das Benutzerprofil des Vorgesetzten des angegebenen Benutzers ab. ```GET: /
 
 
 ### Direkt unterstellte Mitarbeiter abrufen 
-Ruft direkt unterstellte Mitarbeiter ab. ```GET: /users/{userId}/directReports```
+Ruft direkt unterstellte Mitarbeiter ab.  
+```GET: /users/{userId}/directReports```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -182,7 +189,8 @@ Ruft direkt unterstellte Mitarbeiter ab. ```GET: /users/{userId}/directReports``
 
 
 ### Nach Benutzern suchen 
-Ruft die Suchergebnisse für Benutzerprofile ab. ```GET: /users```
+Ruft die Suchergebnisse für Benutzerprofile ab.  
+```GET: /users```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -236,3 +244,5 @@ Nach dem Hinzufügen der Office 365-API zu PowerApps Enterprise [erteilen Sie de
 [11]: ./media/create-api-office365-users/contoso-aad-app-configure.PNG
 
 <!---HONumber=AcomDC_0302_2016-->
+
+

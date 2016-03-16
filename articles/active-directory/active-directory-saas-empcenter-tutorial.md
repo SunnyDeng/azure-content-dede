@@ -80,8 +80,8 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Konfigurieren von App-Einstellungen](./media/active-directory-saas-empcenter-tutorial/IC802921.png "Konfigurieren von App-Einstellungen")
 
-    1.  Geben Sie im Textfeld **Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei der EmpCenter-Anwendung verwenden (z. B. **https://partner-authenticati.empcenter.com/workforce/SSO.do*).
-2.  Klicken Sie auf **Weiter**.
+    1.  Geben Sie im Textfeld **Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei der EmpCenter-Anwendung verwenden (z. B. *https://partner-authenticati.empcenter.com/workforce/SSO.do*).
+    2.  Klicken Sie auf **Weiter**.
 
 4.  Klicken Sie auf der Seite **Einmaliges Anmelden konfigurieren für EmpCenter** auf **Metadaten herunterladen**, und speichern Sie die Metadatendatei auf Ihrem Computer.
 
@@ -96,7 +96,8 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-empcenter-tutorial/IC802923.png "Einmaliges Anmelden konfigurieren")
 ##Konfigurieren der Benutzerbereitstellung
   
-Damit sich Azure AD-Benutzer bei EmpCenter anmelden können, müssen sie in EmpCenter bereitgestellt werden. Im Fall von EmpCenter müssen die Benutzerkonten vom Supportteam von EmpCenter erstellt werden.
+Damit sich Azure AD-Benutzer bei EmpCenter anmelden können, müssen sie in EmpCenter bereitgestellt werden.  
+Im Fall von EmpCenter müssen die Benutzerkonten vom Supportteam von EmpCenter erstellt werden.
 
 >[AZURE.NOTE] Sie können AAD-Benutzerkonten auch mithilfe anderer Tools zum Erstellen von EmpCenter-Benutzerkonten oder mithilfe der von EmpCenter bereitgestellten APIs erstellen.
 
