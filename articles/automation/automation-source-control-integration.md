@@ -3,7 +3,7 @@
     description="In diesem Artikel wird die Integration der Quellcodeverwaltung mit GitHub in Azure Automation erläutert."
     services="automation"
     documentationCenter=""
-    authors="SnehaGunda"
+    authors="mgoedtel"
     manager="stevenka"
     editor="tysonn" />    
 <tags 
@@ -12,7 +12,7 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
-    ms.date="02/18/2016"
+    ms.date="02/23/2016"
     ms.author="magoedte;sngun" />
 
 # Integration der Quellcodeverwaltung in Azure Automation
@@ -156,6 +156,9 @@ Klicken Sie zum Trennen der Verbindung zu Ihrem GitHub-Konto auf dem Blatt „Re
 
 ## Nächste Schritte
 
-Weitere Informationen zur Integration der Quellcodeverwaltung finden Sie in den folgenden Ressourcen: - [Source Control Integration in Azure Automation](https://azure.microsoft.com/blog/azure-automation-source-control-13/) - [Vote for your favorite source control system](https://www.surveymonkey.com/r/?sm=2dVjdcrCPFdT0dFFI8nUdQ%3d%3d) - [Azure Automation: Integrating Runbook Source Control using Visual Studio Online](https://azure.microsoft.com/blog/azure-automation-integrating-runbook-source-control-using-visual-studio-online/) (alle in englischer Sprache)
+Weitere Informationen zur Integration einer Quellcodeverwaltung finden Sie unter den folgenden Ressourcen:
+- [Azure Automation: Source Control Integration in Azure Automation](https://azure.microsoft.com/blog/azure-automation-source-control-13/) (Azure Automation: Integrieren einer Quellcodeverwaltung in Azure Automation)  
+- [Stimmen Sie für Ihr bevorzugtes Quellcodeverwaltungssystem ab.](https://www.surveymonkey.com/r/?sm=2dVjdcrCPFdT0dFFI8nUdQ%3d%3d)  
+- [Azure Automation: Integrating Runbook Source Control using Visual Studio Team Services](https://azure.microsoft.com/blog/azure-automation-integrating-runbook-source-control-using-visual-studio-online/) (Azure Automation: Integrieren einer Quellcodeverwaltung für Runbooks mit Visual Studio Team Services)  
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/24/2015" 
+	ms.date="02/26/2016" 
 	ms.author="naziml"/>
 
 # Konfigurieren einer Web Application Firewall (WAF) für eine App Service-Umgebung
@@ -42,7 +42,7 @@ Sobald Ihr Cloud Service zwei oder mehr WAF VM-Instanzen aufweist, können Sie i
 Wenn Ihre Anwendungen andere Endpunkte verwenden, sollten Sie diese auch unbedingt dieser Liste hinzufügen.
 
 ### Konfigurieren von Barracuda WAF über das dazugehörige Verwaltungsportal ###
-Barracuda WAF verwendet für die Konfiguration über sein Verwaltungsportal den TCP-Port 8000. Da wir mehrere Instanzen von WAF-VMs haben, müssen Sie die Schritte hier für jede VM-Instanz wiederholen.
+Barracuda WAF verwendet für die Konfiguration über sein Verwaltungsportal den TCP-Port 8000. Da wir mehrere Instanzen von WAF-VMs haben, müssen Sie die Schritte hier für jede VM-Instanz wiederholen.
 
 
 > Hinweis: Sobald Sie die WAF-Konfiguration abgeschlossen haben, entfernen Sie den TCP/8000-Endpunkt aus allen WAF-VMs, um Ihre WAF zu schützen.
@@ -79,7 +79,7 @@ Zum Weiterleiten der Traffic Manager-Pingsignale von Ihrer WAF zu Ihrer Anwendun
 ![Websiteübersetzungen][WebsiteTranslations]
 
 ## Schützen des Datenverkehrs zu einer App Service-Umgebung mithilfe von Netzwerkressourcengruppen##
-In der [Dokumentation zum Steuern des eingehenden Datenverkehrs](app-service-app-service-environment-control-inbound-traffic.md) finden Sie ausführliche Informationen zum Einschränken des Datenverkehrs zu Ihrer App Service-Umgebung von der WAF nur durch Verwenden der VIP-Adresse Ihres Clouddiensts. Hier ist ein PowerShell-Beispielbefehl zur Durchführung dieser Aufgabe für TCP-Port 80.
+In der [Dokumentation zum Steuern des eingehenden Datenverkehrs](app-service-app-service-environment-control-inbound-traffic.md) finden Sie ausführliche Informationen zum Einschränken des Datenverkehrs zu Ihrer App Service-Umgebung von der WAF nur durch Verwenden der VIP-Adresse Ihres Clouddiensts. Hier ist ein PowerShell-Beispielbefehl zur Durchführung dieser Aufgabe für TCP-Port 80.
 
 
     Get-AzureNetworkSecurityGroup -Name "RestrictWestUSAppAccess" | Set-AzureNetworkSecurityRule -Name "ALLOW HTTP Barracuda" -Type Inbound -Priority 201 -Action Allow -SourceAddressPrefix '191.0.0.1'  -SourcePortRange '*' -DestinationAddressPrefix '*' -DestinationPortRange '80' -Protocol TCP
@@ -99,4 +99,4 @@ Ersetzen Sie "SourceAddressPrefix" durch die virtuelle IP-Adresse (VIP) des Clou
 [ConfigureTrafficManager]: ./media/app-service-app-service-environment-web-application-firewall/ConfigureTrafficManager.png
 [WebsiteTranslations]: ./media/app-service-app-service-environment-web-application-firewall/WebsiteTranslations.png
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0302_2016-->

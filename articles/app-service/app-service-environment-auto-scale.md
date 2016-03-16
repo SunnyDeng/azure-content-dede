@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/05/2016" 
+	ms.date="03/01/2016" 
 	ms.author="byvinyal"
 />
 	
@@ -56,13 +56,17 @@ Die automatische Skalierung einer **App Service-Umgebung** kann am besten anhand
 ###Einführung in das Szenario
 Frank ist Systemadministrator für ein Unternehmen. Er hat einen Teil der Workloads, die er verwaltet, in eine **App Service-Umgebung** migriert.
 
-Die **App Service-Umgebung** ist für die folgende manuelle Skalierung konfiguriert: * Front-Ends: 3 * Workerpool 1: 10 * Workerpool 2: 5 * Workerpool 3: 5
+Die **App Service-Umgebung** ist wie folgt für die manuelle Skalierung konfiguriert:
+* Front-Ends: 3
+* Workerpool 1: 10
+* Workerpool 2: 5
+* Workerpool 3: 5
 
 **Workerpool 1** wird für Produktionsworkloads verwendet, **Workerpool 2** und **Workerpool 3** werden für Workloads der Qualitätskontrolle und der Entwicklung verwendet.
 
 Die **App Service-Pläne** für die Qualitätskontrolle und die Entwicklung sind für **manuelles Skalieren** konfiguriert, der **App Service-Plan** für die Produktion ist jedoch auf **automatisches Skalieren** festgelegt, um Schwankungen bei Last und Datenverkehr zu bewältigen.
 
-Frank ist mit der Anwendung gut vertraut, und er weiß, dass die Spitzenzeiten für die Last zwischen 9:00 Uhr und 18:00 Uhr liegen, da dies eine **Branchenanwendung** ist, die von Mitarbeitern verwendet wird, während sie sich im Büro befinden. Die Nutzung fällt ab, sobald die Benutzer Feierabend machen. Es gibt jedoch noch eine gewisse Last, da Benutzer über eine Remoteverbindung mit ihren mobilen Geräten oder Heimcomputern zugreifen können. Der **App Service-Plan** für die Produktion ist bereits konfiguriert, um eine **automatische Skalierung** basierend auf der CPU-Auslastung mit den folgenden Regeln vorzunehmen:
+Frank ist mit der Anwendung gut vertraut, und er weiß, dass die Spitzenzeiten für die Last zwischen 9:00 Uhr und 18:00 Uhr liegen, da dies eine **Branchenanwendung** ist, die von Mitarbeitern verwendet wird, während sie sich im Büro befinden. Die Nutzung fällt ab, sobald die Benutzer Feierabend machen. Es gibt jedoch noch eine gewisse Last, da Benutzer über eine Remoteverbindung mit ihren mobilen Geräten oder Heimcomputern zugreifen können. Der **App Service-Plan** für die Produktion ist bereits konfiguriert, um eine **automatische Skalierung** basierend auf der CPU-Auslastung mit den folgenden Regeln vorzunehmen:
 
 ![][asp-scale]
 
@@ -80,8 +84,8 @@ Frank ist mit der Anwendung gut vertraut, und er weiß, dass die Spitzenzeiten f
 |	**Regel für die automatische Skalierung (Hochskalieren)** |	**Regel für die automatische Skalierung (Hochskalieren)** |
 |	**Ressource:** Produktion (App Service-Umgebung) |	**Ressource:** Produktion (App Service-Umgebung) |
 |	**Metrik:** CPU in % |	**Metrik:** CPU in % |
-|	**Operation:** Größer als 60 % |	**Operation:** Größer als 80 % |
-|	**Dauer:** 5 Minuten |	**Dauer:** 10 Minuten |
+|	**Operation:** Größer als 60 % |	**Operation:** Größer als 80 % |
+|	**Dauer:** 5 Minuten |	**Dauer:** 10 Minuten |
 |	**Zeitaggregation:** Durchschnitt |	**Zeitaggregation:** Durchschnitt |
 |	**Aktion:** Anzahl um 2 erhöhen |	**Aktion:** Anzahl um 1 erhöhen |
 |	**Abkühlen (Minuten):** 15 |	**Abkühlen (Minuten):** 20 |
@@ -89,8 +93,8 @@ Frank ist mit der Anwendung gut vertraut, und er weiß, dass die Spitzenzeiten f
 |	**Regel für die automatische Skalierung (Herunterskalieren)** |	**Regel für die automatische Skalierung (Herunterskalieren)** |
 |	**Ressource:** Produktion (App Service-Umgebung) |	**Ressource:** Produktion (App Service-Umgebung) |
 |	**Metrik:** CPU in % |	**Metrik:** CPU in % |
-|	**Operation:** Weniger als 30 % |	**Operation:** Weniger als 20 % |
-|	**Dauer:** 10 Minuten |	**Dauer:** 15 Minuten |
+|	**Operation:** Weniger als 30 % |	**Operation:** Weniger als 20 % |
+|	**Dauer:** 10 Minuten |	**Dauer:** 15 Minuten |
 |	**Zeitaggregation:** Durchschnitt |	**Zeitaggregation:** Durchschnitt |
 |	**Aktion:** Anzahl um 1 verringern |	**Aktion:** Anzahl um 1 verringern |
 |	**Abkühlen (Minuten):** 20 |	**Abkühlen (Minuten):** 10 |
@@ -152,32 +156,32 @@ Mit diesen Informationen kann Frank die folgenden Profile und Regeln für die au
 |	**Ressource:** Workerpool 1 |	**Ressource:** Workerpool 1 |
 |	**Metrik:** Verfügbare Worker |	**Metrik:** Verfügbare Worker |
 |	**Operation:** Weniger als 8 |	**Operation:** Weniger als 3 |
-|	**Dauer:** 20 Minuten |	**Dauer:** 30 Minuten |
+|	**Dauer:** 20 Minuten |	**Dauer:** 30 Minuten |
 |	**Zeitaggregation:** Durchschnitt |	**Zeitaggregation:** Durchschnitt |
 |	**Aktion:** Anzahl um 8 erhöhen |	**Aktion:** Anzahl um 3 erhöhen |
-|	**Abkühlen (Minuten):** 90 |	**Abkühlen (Minuten):** 90 |
+|	**Abkühlen (Minuten):** 180 |	**Abkühlen (Minuten):** 180 |
 | | |
 |	**Regel für die automatische Skalierung (Herunterskalieren)** |	**Regel für die automatische Skalierung (Herunterskalieren)** |
 |	**Ressource:** Workerpool 1 |	**Ressource:** Workerpool 1 |
 |	**Metrik:** Verfügbare Worker |	**Metrik:** Verfügbare Worker |
-|	**Operation:** Größer als 8 |	**Operation:** Weniger als 3 |
-|	**Dauer:** 20 Minuten |	**Dauer:** 15 Minuten |
+|	**Operation:** Größer als 8 |	**Operation:** größer als 3 |
+|	**Dauer:** 20 Minuten |	**Dauer:** 15 Minuten |
 |	**Zeitaggregation:** Durchschnitt |	**Zeitaggregation:** Durchschnitt |
 |	**Aktion:** Anzahl um 2 verringern |	**Aktion:** Anzahl um 3 verringern |
-|	**Abkühlen (Minuten):** 90 |	**Abkühlen (Minuten):** 90 |
+|	**Abkühlen (Minuten):** 120 |	**Abkühlen (Minuten):** 120 |
 
 Der im Profil definierte Zielbereich wird anhand der minimalen Instanzen, die im Profil für den **App Service-Plan** definiert sind, plus dem Puffer berechnet.
 
 Der maximale Bereich wäre die Summe aller maximalen Bereiche für alle **App Service-Pläne**, die im **Workerpool** gehostet werden.
 
-Bei den Regeln für das zentrale Hochskalieren sollte die Anzahl, um die erhöht wird, auf mindestens 1 X die **Inflationsrate für den App Service-Plan** für das zentrale Hochskalieren festgelegt werden.
+Bei den Regeln für das zentrale Hochskalieren sollte die Anzahl, um die erhöht wird, auf mindestens 1x die **Inflationsrate für den App Service-Plan** für das zentrale Hochskalieren festgelegt werden.
 
 Die Anzahl, um die verringert wird, kann zwischen 1/2 X und 1 X die **Inflationsrate für den App Service-Plan** für die Herunterskalierung liegen.
 
 ###Automatische Skalierung für Front-End-Pools
 Regeln für die automatische Skalierung für **Front-Ends** sind einfacher als die für **Workerpools**. Dabei muss vor allem darauf geachtet werden, dass bei der Dauer der Messung und der Abkühldauer die Tatsache berücksichtigt wird, dass das Skalieren in einem **App Service-Plan** nicht sofort ausgeführt wird.
 
-In diesem Szenario weiß Frank, dass sich die Fehlerrate erhöht, sobald Front-Ends eine CPU-Auslastung von 80 % erreichen. Um dies zu verhindern, legt er die Regel für die automatische Skalierung zum Erhöhen von Instanzen wie folgt fest:
+In diesem Szenario weiß Frank, dass sich die Fehlerrate erhöht, sobald Front-Ends eine CPU-Auslastung von 80 % erreichen. Um dies zu verhindern, legt er die Regel für die automatische Skalierung zum Erhöhen von Instanzen wie folgt fest:
  
 ![][Front-End-Scale]
   
@@ -195,20 +199,20 @@ In diesem Szenario weiß Frank, dass sich die Fehlerrate erhöht, sobald Front-E
 |	**Regel für die automatische Skalierung (Hochskalieren)** |
 |	**Ressource:** Front-End-Pool |
 |	**Metrik:** CPU in % |
-|	**Operation:** Größer als 60 % |
-|	**Dauer:** 20 Minuten |
+|	**Operation:** Größer als 60 % |
+|	**Dauer:** 20 Minuten |
 |	**Zeitaggregation:** Durchschnitt |
 |	**Aktion:** Anzahl um 3 erhöhen |
-|	**Abkühlen (Minuten):** 90 |
+|	**Abkühlen (Minuten):** 120 |
 | |
 |	**Regel für die automatische Skalierung (Herunterskalieren)** |
 |	**Ressource:** Workerpool 1 |
 |	**Metrik:** CPU in % |
-|	**Operation:** Weniger als 30 % |
-|	**Dauer:** 20 Minuten |
+|	**Operation:** Weniger als 30 % |
+|	**Dauer:** 20 Minuten |
 |	**Zeitaggregation:** Durchschnitt |
 |	**Aktion:** Anzahl um 3 verringern |
-|	**Abkühlen (Minuten):** 90 |
+|	**Abkühlen (Minuten):** 120 |
 
 <!-- IMAGES -->
 [intro]: ./media/app-service-environment-auto-scale/introduction.png
@@ -227,4 +231,4 @@ In diesem Szenario weiß Frank, dass sich die Fehlerrate erhöht, sobald Front-E
 [Worker-Pool-Scale]: ./media/app-service-environment-auto-scale/wp-scale.png
 [Front-End-Scale]: ./media/app-service-environment-auto-scale/fe-scale.png
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0302_2016-->

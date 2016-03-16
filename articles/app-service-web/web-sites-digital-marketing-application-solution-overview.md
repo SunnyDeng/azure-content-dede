@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/10/2015" 
+	ms.date="02/26/2016" 
 	ms.author="cephalin"/>
 
 # Erstellen digitaler Marketingkampagnen in Azure App Service-Web-Apps
@@ -30,9 +30,9 @@ In diesem Leitfaden werden einige der häufigsten Themenbereiche und Aufgaben im
 
 ## Neuerstellung oder Nutzen von vorhandenen Ressourcen
 
-Sie können entweder mithilfe eines gängigen CMS aus dem Katalog neue Web-Apps erstellen, oder Sie verschieben Ihre vorhandenen Webressourcen in App Service-Web-Apps – in verschiedenen Sprachen und mit verschiedenen Frameworks.
+Sie können entweder mithilfe eines gängigen CMS aus dem Katalog neue Web-Apps erstellen, oder Sie verschieben Ihre vorhandenen Webressourcen in App Service-Web-Apps – in verschiedenen Sprachen und mit verschiedenen Frameworks.
 
-Der Azure Marketplace bietet Vorlagen für gängige Website-CMS (Content Management System), z. B. Orchard, Umbraco, Drupal und [WordPress]. Sie können eine Web-App mit Ihrem bevorzugten CMS erstellen. Sie können aus verschiedenen Datenbank-Back-Ends auswählen, um Ihre Anforderungen zu erfüllen, darunter [Azure SQL-Datenbank] und [MySQL].
+Der Azure Marketplace bietet Vorlagen für gängige Website-CMS (Content Management System), z. B. Orchard, Umbraco, Drupal und [WordPress]. Sie können eine Web-App mit Ihrem bevorzugten CMS erstellen. Sie können aus verschiedenen Datenbank-Back-Ends auswählen, um Ihre Anforderungen zu erfüllen, darunter [Azure SQL-Datenbank] und [MySQL].
 
 Ihre vorhandenen Webressourcen können in Web-Apps ausgeführt werden, unabhängig davon, ob es sich um .NET, PHP, Java, Node.js oder Python handelt. Sie können die Ressourcen mithilfe Ihrer bevorzugten [FTP]-Tools in Web-Apps verschieben. Wenn Sie häufig digitale Marketingkampagnen erstellen, verfügen Sie möglicherweise bereits über Webressourcen in einem Quellcodeverwaltungssystem. Web-Apps unterstützen eine direkte Bereitstellung aus gängigen Quellcodeverwaltungssystemen wie [Visual Studio], [Visual Studio Online] oder [Git] – lokal, GitHub, BitBucket, Dropbox, Mercurial usw.
 
@@ -40,7 +40,7 @@ Ihre vorhandenen Webressourcen können in Web-Apps ausgeführt werden, unabhäng
 
 Bleiben Sie flexibel, indem Sie eine kontinuierliche Veröffentlichung aus Ihrem vorhandenen Quellcodeverwaltungssystem und A/B-Tests in App Service-Web-Apps durchführen.
 
-Während der Planung, beim Erstellen eines Prototyps und in der frühen Entwicklungsphase einer Web-App können Sie und Ihr Kunde sich voll funktionsfähige Versionen der Kampagnen-App ansehen, bevor diese durch [Bereitstellung in einem Stagingslot] Ihrer Web-App veröffentlicht wird. Dank der Integration der Quellcodeverwaltung in App Service-Web-Apps können Sie eine [kontinuierliche Veröffentlichung] in einem Stagingslot vornehmen und die Web-App von dort ohne Ausfallzeit in die Produktion übernehmen, sobald sie fertig ist.
+Während der Planung, beim Erstellen eines Prototyps und in der frühen Entwicklungsphase einer Web-App können Sie und Ihr Kunde sich voll funktionsfähige Versionen der Kampagnen-App ansehen, bevor diese durch [Bereitstellung in einem Stagingslot] Ihrer Web-App veröffentlicht wird. Dank der Integration der Quellcodeverwaltung in App Service-Web-Apps können Sie eine [kontinuierliche Veröffentlichung] in einem Stagingslot vornehmen und die Web-App von dort ohne Ausfallzeit in die Produktion übernehmen, sobald sie fertig ist.
 
 Wenn Sie Änderungen an einer bereits veröffentlichten Web-App vornehmen möchten, können Sie mithilfe der Funktion zum Test in der Produktion durch das [Ausführen von A/B-Tests] geplante Aktualisierungen prüfen und das tatsächliche Benutzerverhalten analysieren. So können Sie fundierte Entscheidungen zum Anwendungsdesign treffen.
 
@@ -99,7 +99,7 @@ Im Modus **Standard** erhalten die für die Web-App-Überwachung verantwortliche
 [WordPress]: web-sites-php-web-site-gallery.md
   
 [MySQL]: web-sites-php-mysql-deploy-use-git.md
-[Azure SQL-Datenbank]: web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database.md
+[Azure SQL-Datenbank]: web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database.md
 [FTP]: web-sites-deploy.md#ftp
 [Visual Studio]: web-sites-dotnet-get-started.md
 [Visual Studio Online]: ../cloud-services-continuous-delivery-use-vso.md
@@ -139,4 +139,4 @@ Im Modus **Standard** erhalten die für die Web-App-Überwachung verantwortliche
   [gitstaging]: http://www.bradygaster.com/post/multiple-environments-with-windows-azure-web-sites
  
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0302_2016-->

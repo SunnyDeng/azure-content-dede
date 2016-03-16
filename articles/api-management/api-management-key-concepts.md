@@ -4,7 +4,7 @@
 	services="api-management" 
 	documentationCenter="" 
 	authors="steved0x" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor=""/>
 
 <tags 
@@ -12,8 +12,8 @@
 	ms.workload="mobile" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="12/07/2015" 
+	ms.topic="hero-article" 
+	ms.date="03/04/2016" 
 	ms.author="sdanie"/>
 
 #Was ist API Management?
@@ -26,7 +26,7 @@ Administratoren erstellen APIs, um API Management zu nutzen. Jede API besteht au
 
 Dieses Thema behandelt einige Schlüsselkonzepte von API Management.
 
->[AZURE.NOTE]Weitere Informationen finden Sie im Whitepaper [Cloud-based API Management: Harnessing the Power of APIs](http://j.mp/ms-apim-whitepaper) (PDF, in englischer Sprache). In diesem Whitepaper zu API Management von CITO Research werden folgende Themen behandelt:
+>[AZURE.NOTE] Weitere Informationen finden Sie im Whitepaper [Cloud-based API Management: Harnessing the Power of APIs](http://j.mp/ms-apim-whitepaper) (PDF, in englischer Sprache). In diesem Whitepaper zu API Management von CITO Research werden folgende Themen behandelt:
 >
 > - Allgemeine API-Anforderungen und -Herausforderungen
 >     - Entkoppeln von APIs und Präsentieren von Fassaden
@@ -114,4 +114,4 @@ Sie können das Erscheinungsbild Ihres Entwicklerportals konfigurieren, indem Si
 
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0309_2016-->

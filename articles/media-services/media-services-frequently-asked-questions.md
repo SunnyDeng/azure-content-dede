@@ -4,7 +4,7 @@
 	services="media-services" 
 	documentationCenter="" 
 	authors="Juliako" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor=""/>
 
 <tags 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
- 	ms.date="02/03/2016"  
+ 	ms.date="03/01/2016"  
 	ms.author="juliako"/>
 
 
@@ -39,7 +39,7 @@ A: Media Services unterstützt die Integration im Azure CDN. (Weitere Informatio
 
 F: Unterstützt Azure Media Services das Speichern von Bildern?
 
-A: Wenn Sie nur JPEG- oder PNG-Bilder speichern möchten, sollten Sie diese im Azure-BLOB-Speicher belassen. Es ergeben sich keine Vorteile daraus, sie in Ihrem Media Services-Konto zu speichern, außer Sie möchten sie zusammen mit Ihren Video- oder Audio-Medienobjekten aufbewahren. Dies gilt auch, wenn Sie die Bilder als Overlays im Video-Encoder verwenden möchten. Media Services Encoder unterstützt das Überlagern von Videos mit Bildern – deshalb werden JPEG und PNG auch als unterstützte Eingabeformate angegeben. Weitere Informationen finden Sie unter [Erstellen von Überlagerungen](https://msdn.microsoft.com/library/azure/dn640496.aspx).
+A: Wenn Sie nur JPEG- oder PNG-Bilder speichern möchten, sollten Sie diese im Azure-BLOB-Speicher belassen. Es ergeben sich keine Vorteile daraus, sie in Ihrem Media Services-Konto zu speichern, außer Sie möchten sie zusammen mit Ihren Video- oder Audio-Medienobjekten aufbewahren. Dies gilt auch, wenn Sie die Bilder als Overlays im Video-Encoder verwenden möchten. Media Services Encoder unterstützt das Überlagern von Videos mit Bildern – deshalb werden JPEG und PNG auch als unterstützte Eingabeformate angegeben. Weitere Informationen finden Sie unter [Erstellen von Überlagerungen](https://msdn.microsoft.com/library/azure/dn640496.aspx).
 
 F: Wie kann ich Medienobjekte von einem Media Services-Konto in ein anderes kopieren?
 
@@ -70,4 +70,4 @@ A: [Media Encoder Standard](media-services-dotnet-encode-with-media-encoder-stan
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0302_2016-->

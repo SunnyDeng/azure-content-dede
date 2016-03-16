@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/10/2015" 
+	ms.date="02/26/2016" 
 	ms.author="cephalin"/>
 
 
@@ -32,17 +32,17 @@ In diesem Leitfaden werden einige der häufigsten Themenbereiche und Aufgaben im
 
 ## Neuerstellung oder Nutzen von vorhandenen Ressourcen
 
-Sie können entweder mithilfe eines gängigen CMS aus dem Katalog neue Websites erstellen, oder Sie verschieben Ihre vorhandenen Webressourcen in App Service-Web-Apps – in verschiedenen Sprachen und mit verschiedenen Frameworks.
+Sie können entweder mithilfe eines gängigen CMS aus dem Katalog neue Websites erstellen, oder Sie verschieben Ihre vorhandenen Webressourcen in App Service-Web-Apps – in verschiedenen Sprachen und mit verschiedenen Frameworks.
 
-Der Azure Marketplace bietet Vorlagen für gängige Website-CMS (Content Management System), z. B. Orchard, Umbraco, Drupal und [WordPress]. Sie können eine Web-App mit Ihrem bevorzugten CMS erstellen. Sie können aus verschiedenen Datenbank-Back-Ends auswählen, um Ihre Anforderungen zu erfüllen, darunter [Azure SQL-Datenbank] und [MySQL].
+Der Azure Marketplace bietet Vorlagen für gängige Website-CMS (Content Management System), z. B. Orchard, Umbraco, Drupal und [WordPress]. Sie können eine Web-App mit Ihrem bevorzugten CMS erstellen. Sie können aus verschiedenen Datenbank-Back-Ends auswählen, um Ihre Anforderungen zu erfüllen, darunter [Azure SQL-Datenbank] und [MySQL].
 
-Ihre vorhandenen Webressourcen können in App Service-Web-Apps ausgeführt werden, unabhängig davon, ob es sich um .NET, PHP, Java, Node.js oder Python handelt. Sie können die Ressourcen mithilfe Ihrer bevorzugten [FTP]-Tools oder über Ihr System zur Quellcodeverwaltung in Web-Apps verschieben. Web-Apps unterstützen eine direkte Veröffentlichung aus gängigen Quellcodeverwaltungen, wie z. B. [Visual Studio], [Visual Studio Team Services] und [Git] – lokal, GitHub, BitBucket, Dropbox, Mercurial usw.
+Ihre vorhandenen Webressourcen können in App Service-Web-Apps ausgeführt werden, unabhängig davon, ob es sich um .NET, PHP, Java, Node.js oder Python handelt. Sie können die Ressourcen mithilfe Ihrer bevorzugten [FTP]-Tools oder über Ihr System zur Quellcodeverwaltung in Web-Apps verschieben. Web-Apps unterstützen eine direkte Veröffentlichung aus gängigen Quellcodeverwaltungen, wie z. B. [Visual Studio], [Visual Studio Team Services] und [Git] – lokal, GitHub, BitBucket, Dropbox, Mercurial usw.
 
 ## Zuverlässig veröffentlichen
 
 Veröffentlichen Sie Ihre Website zuverlässig, indem Sie Ihre Inhalte direkt aus Ihrem vorhandenen Quellcodeverwaltungssystem veröffentlichen und live testen.
 
-Während der Planung, beim Erstellen eines Prototyps und in der frühen Entwicklungsphase einer Website können Sie sich voll funktionsfähige Versionen der Website ansehen, bevor diese durch [Bereitstellung in einem Stagingslot] Ihrer Website in App Service-Web-Apps veröffentlicht wird. Dank der Integration einer Quellcodeverwaltung in Web-Apps können Sie eine [kontinuierliche Veröffentlichung] in einem Stagingslot vornehmen und von dort ohne Ausfallzeit in die Produktion übernehmen, wenn die Website fertig ist. Falls auf der Produktionswebsite etwas schief geht, können Sie die aktuelle Version sofort durch eine frühere Version der Website austauschen.
+Während der Planung, beim Erstellen eines Prototyps und in der frühen Entwicklungsphase einer Website können Sie sich voll funktionsfähige Versionen der Website ansehen, bevor diese durch [Bereitstellung in einem Stagingslot] Ihrer Website in App Service-Web-Apps veröffentlicht wird. Dank der Integration einer Quellcodeverwaltung in Web-Apps können Sie eine [kontinuierliche Veröffentlichung] in einem Stagingslot vornehmen und von dort ohne Ausfallzeit in die Produktion übernehmen, wenn die Website fertig ist. Falls auf der Produktionswebsite etwas schief geht, können Sie die aktuelle Version sofort durch eine frühere Version der Website austauschen.
 
 Wenn Sie Änderungen an einer bereits veröffentlichten Website vornehmen möchten, können Sie mithilfe der Funktion zum Test in der Produktion durch das [Ausführen von A/B-Tests] geplante Aktualisierungen prüfen und das tatsächliche Benutzerverhalten analysieren. So können Sie fundierte Entscheidungen zum Websitedesign treffen.
 
@@ -50,7 +50,7 @@ Wenn Sie Änderungen an einer bereits veröffentlichten Website vornehmen möcht
 
 Verwenden Sie die kostenlose App Service-Web-App-Domäne, oder nehmen Sie zu eine Zuordnung zu Ihrem registrierten Domänennamen vor, und sorgen Sie anschließend für Sicherheit mit einem von einer Zertifizierungsstelle signierten SSL-Zertifikat.
 
-Die Domäne ***.azurewebsites.net** ist kostenlos, wenn Sie Ihre Website in Web-Apps ausführen. Alternativ können Sie Ihre Website einer [benutzerdefinierten Domäne] (z. B. "contoso.com") zuordnen, die Sie von einer DNS-Registrierungsstelle (z. B. GoDaddy) bezogen haben.
+Die Domäne ***.azurewebsites.net** ist kostenlos, wenn Sie Ihre Website in Web-Apps ausführen. Alternativ können Sie Ihre Website einer [benutzerdefinierten Domäne] (z. B. "contoso.com") zuordnen, die Sie von einer DNS-Registrierungsstelle (z. B. GoDaddy) bezogen haben.
 
 Wenn Sie Benutzerinformationen erfassen, E-Commerce betreiben oder andere sensible Daten verwalten, können Sie den Ruf Ihres Unternehmens und Ihre Kunden mit [HTTPS] schützen. Der Domänenname ***.azurewebsites.net** umfasst bereits ein SSL-Zertifikat, und wenn Sie eine benutzerdefinierte Domäne nutzen, können Sie Ihr SSL-Zertifikat in Web-Apps weiterhin verwenden. Für jedes SSL-Zertifikat fällt eine monatliche Gebühr an (abgerechnet nach Stunden). Weitere Informationen finden Sie unter [App Service-Preisdetails].
 
@@ -66,7 +66,7 @@ Stellen Sie durch das [Integrieren Ihrer Web-App in Azure CDN] statische Inhalte
 
 Optimieren Sie Ihre Organisationswebsite über eine automatische Skalierung mit "Autoskalierung", eine Zwischenspeicherung mit Azure Redis Cache, die Ausführung von Hintergrundaufgaben mithilfe von WebJobs, und sorgen Sie mit Azure Traffic Manager für eine gleichbleibend hohe Verfügbarkeit.
 
-Die [flexible Skalierbarkeit] von App Service-Web-Apps ist ideal für Ihre Organisationswebsite – unabhängig von Ihrem Workload. Skalieren Sie Ihre Website manuell über das [Azure-Portal](https://portal.azure.com), programmgesteuert über die [Dienstverwaltungs-API] oder [PowerShell-Skripts] oder automatisch über die Funktion „Autoskalierung“. Im Hostingplan **Standard** kann eine Website mithilfe der Autoskalierung abhängig von der CPU-Auslastung automatisch skaliert werden. Bewährte Methoden finden Sie auf der Website von [Troy Hunt]\: [10 things I learned about rapidly scaling websites with Azure] (10 Dinge, die ich über eine schnelle Skalierung von Websites mit Azure gelernt habe, in englischer Sprache).
+Die [flexible Skalierbarkeit] von App Service-Web-Apps ist ideal für Ihre Organisationswebsite – unabhängig von Ihrem Workload. Skalieren Sie Ihre Website manuell über das [Azure-Portal](https://portal.azure.com), programmgesteuert über die [Dienstverwaltungs-API] oder [PowerShell-Skripts] oder automatisch über die Funktion „Autoskalierung“. Im Hostingplan **Standard** kann eine Website mithilfe der Autoskalierung abhängig von der CPU-Auslastung automatisch skaliert werden. Bewährte Methoden finden Sie auf der Website von [Troy Hunt]\: [10 things I learned about rapidly scaling websites with Azure] (10 Dinge, die ich über eine schnelle Skalierung von Websites mit Azure gelernt habe, in englischer Sprache).
 
 Erhöhen Sie die Reaktionsfähigkeit Ihrer Website mit [Azure Redis Cache]. Nutzen Sie diese Funktion zum Zwischenspeichern von Daten aus Back-End-Datenbanken und anderen Daten, beispielsweise [ASP.NET-Sitzungszustand] und [Ausgabecache].
 
@@ -100,7 +100,7 @@ Erhöhen Sie den Anreiz Ihrer Website mit Rich Media:
 
 [WordPress]: web-sites-php-web-site-gallery.md
 [MySQL]: web-sites-php-mysql-deploy-use-git.md
-[Azure SQL-Datenbank]: web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database.md
+[Azure SQL-Datenbank]: web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database.md
 [FTP]: web-sites-deploy.md#ftp
 [Visual Studio]: web-sites-dotnet-get-started.md
 [Visual Studio Team Services]: ../cloud-services-continuous-delivery-use-vso.md
@@ -138,4 +138,4 @@ Erhöhen Sie den Anreiz Ihrer Website mit Rich Media:
 
  
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -4,7 +4,7 @@
 	services="media-services" 
 	documentationCenter="" 
 	authors="Juliako" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor=""/>
 
 <tags 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/28/2016" 
+ 	ms.date="03/01/2016" 
 	ms.author="juliako"/>
 
 #Erste Schritte zum Bereitstellen von Inhalten nach Bedarf mit der REST-API
@@ -52,7 +52,7 @@ Die folgenden Aufgaben werden in diesem Schnellstart beschrieben.
    
 	![Media Services-Schnellerfassung](./media/media-services-rest-get-started/wams-QuickCreate.png)
 
-2. Geben Sie in das Feld **NAME** den Namen des neuen Kontos ein. Der Name eines Media Services-Kontos darf nur Kleinbuchstaben oder Ziffern ohne Leerzeichen enthalten und muss aus 3 bis 24 Zeichen bestehen.
+2. Geben Sie in das Feld **NAME** den Namen des neuen Kontos ein. Der Name eines Media Services-Kontos darf nur Kleinbuchstaben oder Ziffern ohne Leerzeichen enthalten und muss aus 3 bis 24 Zeichen bestehen.
 
 3. Wählen Sie unter **REGION** die geografische Region aus, in der die Metadaten-Datensätze für Ihr Media Services-Konto gespeichert werden sollen. In der Dropdownliste werden nur die verfügbaren Media Services-Regionen angezeigt.
 
@@ -81,12 +81,9 @@ Für den Zugriff auf Azure Media Services benötigen Sie: ein von Azure Access C
 Die folgenden Schritte beschreiben den am häufigsten verwendeten Workflow, der bei der Verbindung mit Media Services über die Media Services-REST-API zur Anwendung kommt:
 
 1. Abrufen eines Zugriffstokens 
-2. Herstellen einer Verbindung mit dem Media Services-URI 
-	
-	>[AZURE.NOTE]
-	Nach der erfolgreichen Verbindung mit https://media.windows.net erhalten Sie eine 301 Redirect-Antwort, in der ein anderer Media Services-URI angegeben ist. Nachfolgende Aufrufe müssen an den neuen URI gesendet werden.
-	> 
-	> Möglicherweise empfangen Sie auch eine HTTP/1.1 200-Antwort, die die Beschreibung der ODATA-API-Metadaten enthält.
+2. Herstellen einer Verbindung mit dem Media Services-URI  
+
+	Vergessen Sie nicht, dass Sie nach der erfolgreichen Verbindung mit https://media.windows.net eine 301 Redirect-Antwort erhalten, in der ein anderer Media Services-URI angegeben ist. Nachfolgende Aufrufe müssen an den neuen URI gesendet werden. Möglicherweise empfangen Sie auch eine HTTP/1.1 200-Antwort, die die Beschreibung der ODATA-API-Metadaten enthält.
 3. Senden nachfolgender API-Aufrufe an die neue URL. 
 	
 	Wenn nach einem Verbindungsversuch folgende Meldung angezeigt wird:
@@ -226,7 +223,7 @@ Zu den Werten, die Sie festlegen müssen, gehören Optionen für die Erstellung 
  
 - **None** = **0**: Es wird keine Verschlüsselung verwendet. Beachten Sie, dass bei Verwendung dieser Option Ihre Inhalte während der Übertragung oder des Verbleibs im Speicher nicht geschützt sind. Wenn Sie planen, eine MP4-Datei über progressives Herunterladen zu übermitteln, verwenden Sie diese Option. 
 - **StorageEncrypted** = **1**: Verschlüsselt Ihren lesbaren Inhalt lokal mit der AES-256-Bit-Verschlüsselung und lädt ihn anschließend in Azure Storage hoch, wo er im Ruhezustand verschlüsselt gespeichert wird. Medienobjekte, die durch Storage Encryption geschützt sind, werden automatisch entschlüsselt, vor der Codierung in einem verschlüsselten Dateisystem platziert und optional vor dem Hochladen als neues Ausgabemedienobjekt erneut verschlüsselt. Der primäre Anwendungsfall für Storage Encryption ist, wenn Sie Ihre qualitativ hochwertigen Eingabemediendateien mit starker Verschlüsselung beim Speichern im Ruhezustand auf dem Datenträger sichern möchten.
-- **CommonEncryptionProtected** = **2**: Verwenden Sie diese Option, wenn Sie Inhalte hochladen, die bereits verschlüsselt wurden und durch allgemeine Verschlüsselung oder PlayReady-DRM geschützt sind (z. B. mit PlayReady-DRM geschütztes Smooth Streaming).
+- **CommonEncryptionProtected** = **2**: Verwenden Sie diese Option, wenn Sie Inhalte hochladen, die bereits verschlüsselt wurden und durch allgemeine Verschlüsselung oder PlayReady-DRM geschützt sind (z. B. mit PlayReady-DRM geschütztes Smooth Streaming).
 - **EnvelopeEncryptionProtected** = **4**: Verwenden Sie diese Option, wenn Sie mit AES verschlüsseltes HLS hochladen. Beachten Sie, dass die Dateien durch Transform Manager codiert und verschlüsselt sein müssen.
 
 ### Erstellen eines Medienobjekts
@@ -368,7 +365,7 @@ Im folgenden Beispiel wird veranschaulicht, wie eine AccessPolicy erstellt wird:
 	
 	{"Name":"NewUploadPolicy", "DurationInMinutes":"440", "Permissions":"2"} 
 
-**HTTP-Anforderung**
+**HTTP-Antwort**
 
 	If successful, the following response is returned:
 	
@@ -500,8 +497,8 @@ Nachdem Sie Ihre Datei nun hochgeladen haben, sollten Sie die FileAsset-Größe 
 
 **HTTP-Antwort**
 
-Im Erfolgsfall wird Folgendes zurückgegeben: 
-	HTTP/1.1 204 Kein Inhalt
+Im Erfolgsfall wird Folgendes zurückgegeben:
+	 HTTP/1.1 204 Kein Inhalt
 
 ## Löschen von AccessPolicy und Locator 
 
@@ -618,7 +615,7 @@ Im Erfolgsfall wird Folgendes zurückgegeben:
 	
 ### <a id="long_running_op_status"></a> Überprüfen des Status eines Vorgangs mit langer Ausführungsdauer
 
-Die Zuordnung neuer Einheiten dauert ca. 20 Minuten. Sie überprüfen den Vorgangsstatus mithilfe der **Operations**-Methode, indem Sie die ID des Vorgangs angeben. Die Vorgangs-ID wurde in der Antwort auf die **Scale**-Anforderung zurückgegeben.
+Die Zuordnung neuer Einheiten dauert ca. 20 Minuten. Sie überprüfen den Vorgangsstatus mithilfe der **Operations**-Methode, indem Sie die ID des Vorgangs angeben. Die Vorgangs-ID wurde in der Antwort auf die **Scale**-Anforderung zurückgegeben.
 
 	operation-id: nb:opid:UUID:1853bcbf-b71f-4ed5-a4c7-a581d4f45ae7
  
@@ -665,7 +662,7 @@ Die Zuordnung neuer Einheiten dauert ca. 20 Minuten. Sie überprüfen den Vorga
 
 ## <a id="encode"></a>Codieren der Quelldatei in einen Satz von MP4-Dateien mit adaptiver Bitrate
 
-Nach dem Erfassen der Medienobjekte in Media Services können die Medien u. a. codiert, transcodiert/multiplexiert und mit einem Wasserzeichen versehen werden, bevor sie an die Clients übermittelt werden. Diese Aktivitäten werden geplant und für mehrere Hintergrundrolleninstanzen ausgeführt, um hohe Leistung und Verfügbarkeit zu gewährleisten. Diese Aktivitäten werden als Aufträge bezeichnet, und jeder [Auftrag](http://msdn.microsoft.com/library/azure/hh974289.aspx) besteht aus atomaren Aufgaben, die die eigentliche Arbeit für die Medienobjektdatei leisten.
+Nach dem Erfassen der Medienobjekte in Media Services können die Medien u. a. codiert, transcodiert/multiplexiert und mit einem Wasserzeichen versehen werden, bevor sie an die Clients übermittelt werden. Diese Aktivitäten werden geplant und für mehrere Hintergrundrolleninstanzen ausgeführt, um hohe Leistung und Verfügbarkeit zu gewährleisten. Diese Aktivitäten werden als Aufträge bezeichnet, und jeder [Auftrag](http://msdn.microsoft.com/library/azure/hh974289.aspx) besteht aus atomaren Aufgaben, die die eigentliche Arbeit für die Medienobjektdatei leisten.
 
 Wie bereits erwähnt, besteht beim Arbeiten mit Azure Media Services eines der häufigsten Szenarios darin, Streaming mit adaptiver Bitrate an Ihre Clients zu übermitteln. Media Services können eine Reihe von MP4-Dateien mit adaptiver Bitrate dynamisch in eines der folgenden Formate verpacken: HTTP Live Streaming (HLS), Smooth Streaming, MPEG DASH und HDS (nur mit Adobe PrimeTime/Access-Lizenz).
 
@@ -678,7 +675,7 @@ Der folgende Abschnitt veranschaulicht die Erstellung eines Auftrags, der eine C
 
 ### Abrufen eines Medienprozessors
 
-Der Medienprozessor in Media Services ist für bestimmte Verarbeitungsaufgaben wie z. B. Codierung, Formatumwandlungen, Verschlüsselung oder Entschlüsselung von Medieninhalten zuständig. Sie verwenden Media Encoder Standard, um die in diesem Tutorial beschriebene Codierungsaufgabe durchzuführen.
+Der Medienprozessor in Media Services ist für bestimmte Verarbeitungsaufgaben wie z. B. Codierung, Formatumwandlungen, Verschlüsselung oder Entschlüsselung von Medieninhalten zuständig. Sie verwenden Media Encoder Standard, um die in diesem Tutorial beschriebene Codierungsaufgabe durchzuführen.
 
 Durch den folgenden Code wird die Encoder-ID angefordert.
 
@@ -727,7 +724,7 @@ Durch den folgenden Code wird die Encoder-ID angefordert.
 
 Je nach Art der Verarbeitung, die Sie durchführen möchten, können einem Auftrag eine oder mehrere Aufgaben zugeordnet sein. Über die REST-API können Sie Aufträge und die zugehörigen Aufgaben auf folgende zwei Arten erstellen: Aufgaben können Inline über die Aufgabennavigationseigenschaft von Auftragsentitäten oder über die OData-Batchverarbeitung definiert werden. Das Media Services SDK verwendet Batchverarbeitung. Für die einfache Lesbarkeit der Codebeispiele in diesem Thema werden Aufgaben jedoch inline definiert. Weitere Informationen zur Batchverarbeitung finden Sie unter [Open Data Protocol (OData) Batch Processing](http://www.odata.org/documentation/odata-version-3-0/batch-processing/) (in englischer Sprache).
 
-Das folgende Beispiel zeigt, wie Sie einen Auftrag mit einer Aufgabe erstellen und bereitstellen, die für die Codierung eines Videos mit einer bestimmten Auflösung und Qualität konfiguriert wurde. Der folgende Abschnitt dieser Dokumentation enthält eine Liste sämtlicher [Aufgabenvoreinstellungen](https://msdn.microsoft.com/de-DE/library/mt269960), die vom Media Encoder Standard unterstützt werden.
+Das folgende Beispiel zeigt, wie Sie einen Auftrag mit einer Aufgabe erstellen und bereitstellen, die für die Codierung eines Videos mit einer bestimmten Auflösung und Qualität konfiguriert wurde. Der folgende Abschnitt dieser Dokumentation enthält eine Liste sämtlicher [Aufgabenvoreinstellungen](http://msdn.microsoft.com/library/mt269960), die vom Media Encoder Standard unterstützt werden.
 
 **HTTP-Anforderung**
 	
@@ -964,7 +961,7 @@ Der folgende Code zeigt, wie Sie die ID des Ausgabemedienobjekts anfordern.
 
 ## <a id="publish_get_urls"></a>Veröffentlichen des Medienobjekts und Abrufen von URLs für Streaming und progressiven Download mit der REST-API
 
-Um ein Medienobjekt zu streamen oder herunterzuladen, müssen Sie es zunächst durch Erstellen eines Locators „veröffentlichen“. Locator ermöglichen den Zugriff auf Dateien im Medienobjekt. Media Services unterstützt zwei Locator-Typen: OnDemandOrigin-Locator zum Streamen von Medien (z. B. MPEG DASH, HLS oder Smooth Streaming) und Access Signature (SAS)-Locator zum Herunterladen von Mediendateien.
+Um ein Medienobjekt zu streamen oder herunterzuladen, müssen Sie es zunächst durch Erstellen eines Locators „veröffentlichen“. Locator ermöglichen den Zugriff auf Dateien im Medienobjekt. Media Services unterstützt zwei Locator-Typen: OnDemandOrigin-Locator zum Streamen von Medien (z. B. MPEG DASH, HLS oder Smooth Streaming) und Access Signature (SAS)-Locator zum Herunterladen von Mediendateien.
 
 Nachdem Sie die Locator erstellt haben, können Sie die URLs erstellen, mit denen Sie die Dateien streamen oder herunterladen möchten.
 
@@ -1011,7 +1008,7 @@ Das folgende Beispiel zeigt, wie die AccessPolicy für Leseberechtigungen eines 
 	
 	{"Name": "DownloadPolicy", "DurationInMinutes" : "300", "Permissions" : 1}
 
-Im Erfolgsfall wird ein 201 Erfolgscode zurückgegeben, der die erstellte AccessPolicy-Entität beschreibt. Anschließend verwenden Sie die AccessPolicy-ID zusammen mit der ID des Medienobjekts, das die zu übermittelnde Datei (z. B. ein Ausgabemedienobjekt) enthält, um die Locator-Entität zu erstellen.
+Im Erfolgsfall wird ein 201 Erfolgscode zurückgegeben, der die erstellte AccessPolicy-Entität beschreibt. Anschließend verwenden Sie die AccessPolicy-ID zusammen mit der ID des Medienobjekts, das die zu übermittelnde Datei (z. B. ein Ausgabemedienobjekt) enthält, um die Locator-Entität zu erstellen.
 
 >[AZURE.NOTE]
 Dieser grundlegende Workflow entspricht dem Hochladen einer Datei bei der Sammelerfassung eines Medienobjekts (wie oben in diesem Thema beschrieben). Wie beim Hochladen von Dateien gilt Folgendes: Wenn Sie (oder die Clients) sofortigen Zugriff auf Ihre Dateien benötigen, legen Sie den StartTime-Wert auf fünf Minuten vor der aktuellen Zeit fest. Dies ist erforderlich, weil ggf. eine Uhrzeitabweichung zwischen dem Clientcomputer und Media Services vorliegen kann. Zudem muss der StartTime-Wert das folgende DateTime-Format haben: JJJJ-MM-TTTHH:mm:ssZ (z. B. "2014-05-23T17:53:50Z").
@@ -1187,7 +1184,7 @@ Zum Streamen von MPEG DASH fügen Sie (format=mpd-time-csf) nach „/manifest“
 
 Verwenden Sie zum Streamen von Videos [Azure Media Services Player](http://amsplayer.azurewebsites.net/azuremediaplayer.html).
 
-Fügen Sie zum Testen des progressiven Downloads eine URL in einen Browser ein (z. B. Internet Explorer, Chrome, Safari).
+Fügen Sie zum Testen des progressiven Downloads eine URL in einen Browser ein (z. B. Internet Explorer, Chrome, Safari).
 
 
 ##Nächste Schritte: Media Services-Lernpfade
@@ -1202,13 +1199,9 @@ Fügen Sie zum Testen des progressiven Downloads eine URL in einen Browser ein (
 
 Wenn dieses Thema nicht die erwarteten Informationen enthält, Informationen fehlen oder auf andere Weise Ihre Erwartungen nicht erfüllt wurden, senden Sie uns bitte über den Disqus-Thread unten Ihr Feedback.
 
-##Zusätzliche Ressourcen
-- <a href="http://channel9.msdn.com/Shows/Azure-Friday/Azure-Media-Services-101-Get-your-video-online-now-">Azure Media Services 101 - Stellen Sie Ihr Video jetzt online!</a>
-- <a href="http://channel9.msdn.com/Shows/Azure-Friday/Azure-Media-Services-102-Dynamic-Packaging-and-Mobile-Devices">Azure Media Services 102 - Dynamische Pakete und mobile Geräte</a>
-
 
 
 <!-- URLs. -->
   [klassischen Azure-Portal]: http://manage.windowsazure.com/
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0302_2016-->

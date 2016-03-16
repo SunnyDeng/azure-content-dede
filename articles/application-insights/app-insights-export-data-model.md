@@ -40,7 +40,7 @@ Es gibt mehrere [Beispiele](app-insights-export-telemetry.md#code-samples), die 
 
     KVPs <string, string> <telemetryType>.properties      Max: 100
 * 
-    Ein Eigenschaftenbehälter für Schlüssel-Wert-Paare, der AppInsights-Telemetrieelementen das Hinzufügen benutzerdefinierter Eigenschaften ermöglicht. Der Entwickler kann eine Schlüssel-Wert-Paarliste bereitstellen, die einem Telemetrieelement zugeordnet ist. Jeder Schlüssel wird nachverfolgt. Maximal 200 eindeutige Schlüssel können pro AppInsights Ikey (App) bereitgestellt werden. Ein Schlüssel kann maximal 100 Zeichen lang sein. Alle Werte werden als "string" behandelt, und eine maximale Größe von 1000 Zeichen kann angegeben werden. Jede Eigenschaft wird anfänglich als Dimension klassifiziert, wodurch Segmentierungsfeatures basierend auf dem festgelegten Wert jeder Eigenschaft ermöglicht werden. Jeder festgelegte Wert wird pro Eigenschaftsschlüssel auf seine Kardinalität nachverfolgt. Wenn die Kardinalität eines Schlüssels 100 eindeutige Werte überschreitet, wird die Eigenschaft als Attribut klassifiziert. Ein Attribut kann durchsucht werden, jedoch nicht das Ziel der Segmentierung sein (Aggregation oder "Group by"). 
+    Ein Eigenschaftenbehälter für Schlüssel-Wert-Paare, der AppInsights-Telemetrieelementen das Hinzufügen benutzerdefinierter Eigenschaften ermöglicht. Der Entwickler kann eine Schlüssel-Wert-Paarliste bereitstellen, die einem Telemetrieelement zugeordnet ist. Jeder Schlüssel wird nachverfolgt. Maximal 200 eindeutige Schlüssel können pro AppInsights Ikey (App) bereitgestellt werden. Ein Schlüssel kann maximal 100 Zeichen lang sein. Alle Werte werden als "string" behandelt, und eine maximale Größe von 1000 Zeichen kann angegeben werden. Jede Eigenschaft wird anfänglich als Dimension klassifiziert, wodurch Segmentierungsfeatures basierend auf dem festgelegten Wert jeder Eigenschaft ermöglicht werden. Jeder festgelegte Wert wird pro Eigenschaftsschlüssel auf seine Kardinalität nachverfolgt. Wenn die Kardinalität eines Schlüssels 100 eindeutige Werte überschreitet, wird die Eigenschaft als Attribut klassifiziert. Ein Attribut kann durchsucht werden, jedoch nicht das Ziel der Segmentierung sein (Aggregation oder "Group by"). 
 
     *Ableitung:* Eigenschaftsnamen haben die maximale Größe 100, Eigenschaftswerte die maximale Größe 1024.
 
@@ -444,7 +444,7 @@ Es gibt mehrere [Beispiele](app-insights-export-telemetry.md#code-samples), die 
 * 
     Die Auflösung des Bildschirms zum Zeitpunkt, an dem das Telemetrieelement von der App aufgezeichnet wurde. Diese kann im Verlauf einer Sitzung zwischen Hochformat und Querformat wechseln. Wenn dieses Attribut auf Sitzungsebene genutzt wird, ist dies die erste Bildschirmauflösung, die erfasst wurde, um die vollständige Sitzung darzustellen. 
 
-    *Beispiele*<br/> Bildschirmauflösung Höhe Breite<br/>360 x 640<br/>1280 x 800<br/>1920 x 1080
+    *Beispiele*<br/> Bildschirmauflösung Höhe Breite<br/>360 x 640<br/>1280 x 800<br/>1920 x 1080
 
 **screenWidth**
 
@@ -475,11 +475,13 @@ Es gibt mehrere [Beispiele](app-insights-export-telemetry.md#code-samples), die 
 
     ipv4 context.location.clientip      
 * 
-    Die IPv4-Adresse des Clients im Format xxx.xxx.xxx.xxx.   
+    Die IPv4-Adresse des Clients im Format xxx.xxx.xxx.xxx.
+
+     Das letzte Oktett wird aus Datenschutzgründen immer auf 0 festgelegt.
 
     *Standard:* Falls NULL, erfolgt die Festlegung auf die HTTP-IP-Adresse, die am Endpunkt der Datenerfassung erfasst wurde.
 
-    *Beispiele*<br/> 0.123.63.143<br/>123.203.131.197
+    *Beispiele:*<br/> 186.123.63.0<br/>123.203.131.0
 
 **continent**
 
@@ -516,7 +518,7 @@ Es gibt mehrere [Beispiele](app-insights-export-telemetry.md#code-samples), die 
 
     string context.operation.name      Max: 100
 * 
-    Ein für Menschen lesbarer Vorgangsname. Siehe "operation.Id". Dies ermöglicht eine Gruppierung ähnlicher Vorgangs-IDs wie z. B. "Einkauf abgeschlossen".   
+    Ein für Menschen lesbarer Vorgangsname. Siehe "operation.Id". Dies ermöglicht eine Gruppierung ähnlicher Vorgangs-IDs wie z. B. "Einkauf abgeschlossen".   
 
 **operationParentId**
 
@@ -629,7 +631,7 @@ Es gibt mehrere [Beispiele](app-insights-export-telemetry.md#code-samples), die 
 
     *Ableitung*: Standardisierung zu "&lt;telemetryType.name&gt;"
 
-**remoteDependencyType**
+**type**
 
     string remotedependency.remotedependencytype      Max: 100
 * 
@@ -689,7 +691,7 @@ Es gibt mehrere [Beispiele](app-insights-export-telemetry.md#code-samples), die 
 
     Long sessionmetric.anonymoususersessioncount      
 * 
-    Die Anzahl der Besuche des anonymen Benutzers. Dies ist ein zunehmender Zähler für den gesamten Verlauf von Sitzungen für diesen eindeutigen Bezeichner für anonyme Benutzer. Jede Sitzung mit diesem Bezeichner erhöht den Zähler. Dieser Zähler wird gelöscht, wenn die Benutzer-ID innerhalb von 30 Tagen nicht vorkommt. Der Zähler wird zurückgesetzt, und beim nächsten Besuch des Benutzerbezeichners wird dieser als neuer Benutzer eingestuft. 
+    Die Anzahl der Besuche des anonymen Benutzers. Dies ist ein zunehmender Zähler für den gesamten Verlauf von Sitzungen für diesen eindeutigen Bezeichner für anonyme Benutzer. Jede Sitzung mit diesem Bezeichner erhöht den Zähler. Dieser Zähler wird gelöscht, wenn die Benutzer-ID innerhalb von 30 Tagen nicht vorkommt. Der Zähler wird zurückgesetzt, und beim nächsten Besuch des Benutzerbezeichners wird dieser als neuer Benutzer eingestuft. 
 
 **authenticatedAccountDurationSinceLastVisit**
 
@@ -701,7 +703,7 @@ Es gibt mehrere [Beispiele](app-insights-export-telemetry.md#code-samples), die 
 
     Long sessionmetric.authenticatedaccountsessioncount      
 * 
-    Die Anzahl der Besuch des authentifizierten Kontobezeichners. Dies ist ein zunehmender Zähler für den gesamten Verlauf von Sitzungen für diesen eindeutigen Kontobezeichner. Jede Sitzung mit diesem Bezeichner erhöht den Zähler. Dieser Zähler wird gelöscht, wenn die Benutzer-ID innerhalb von 30 Tagen nicht vorkommt. Der Zähler wird zurückgesetzt, und beim nächsten Besuch des Benutzerbezeichners wird dieser als neuer Benutzer eingestuft. 
+    Die Anzahl der Besuch des authentifizierten Kontobezeichners. Dies ist ein zunehmender Zähler für den gesamten Verlauf von Sitzungen für diesen eindeutigen Kontobezeichner. Jede Sitzung mit diesem Bezeichner erhöht den Zähler. Dieser Zähler wird gelöscht, wenn die Benutzer-ID innerhalb von 30 Tagen nicht vorkommt. Der Zähler wird zurückgesetzt, und beim nächsten Besuch des Benutzerbezeichners wird dieser als neuer Benutzer eingestuft. 
 
 **authenticatedUserDurationSinceLastVisit**
 
@@ -713,7 +715,7 @@ Es gibt mehrere [Beispiele](app-insights-export-telemetry.md#code-samples), die 
 
     Long sessionmetric.authenticatedusersessioncount      
 * 
-    Die Anzahl der Besuch des authentifizierten Benutzerbezeichners. Dies ist ein zunehmender Zähler für den gesamten Verlauf von Sitzungen für diesen eindeutigen Bezeichner für authentifizierte Benutzer. Jede Sitzung mit diesem Bezeichner erhöht den Zähler. Dieser Zähler wird gelöscht, wenn die Benutzer-ID innerhalb von 30 Tagen nicht vorkommt. Der Zähler wird zurückgesetzt, und beim nächsten Besuch des Benutzerbezeichners wird dieser als neuer Benutzer eingestuft. 
+    Die Anzahl der Besuch des authentifizierten Benutzerbezeichners. Dies ist ein zunehmender Zähler für den gesamten Verlauf von Sitzungen für diesen eindeutigen Bezeichner für authentifizierte Benutzer. Jede Sitzung mit diesem Bezeichner erhöht den Zähler. Dieser Zähler wird gelöscht, wenn die Benutzer-ID innerhalb von 30 Tagen nicht vorkommt. Der Zähler wird zurückgesetzt, und beim nächsten Besuch des Benutzerbezeichners wird dieser als neuer Benutzer eingestuft. 
 
 **crashCount**
 
@@ -989,4 +991,4 @@ Es gibt mehrere [Beispiele](app-insights-export-telemetry.md#code-samples), die 
 * [Fortlaufender Export](app-insights-export-telemetry.md)
 * [Codebeispiele](app-insights-export-telemetry.md#code-samples)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0302_2016-->

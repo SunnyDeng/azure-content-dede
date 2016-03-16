@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="na"
-	ms.date="12/16/2015"
+	ms.date="02/19/2016"
 	ms.author="v-darmi"/>
 
 # Benutzerdefiniertes Caching in Azure API Management
@@ -245,4 +245,4 @@ Die Freiheit, den Azure API Management-Cache zum Speichern aller Art von Daten z
 ## Nächste Schritte
 Bitte geben Sie uns im Disqus-Thread Feedback zu diesem Thema, wenn es weitere Szenarien gibt, die Sie mit diesen Richtlinien erzeugt haben, oder wenn es Szenarien gibt, die Sie erzielen möchten, wobei Sie nicht wissen, wie dies momentan möglich ist.
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0302_2016-->

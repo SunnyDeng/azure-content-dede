@@ -13,12 +13,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="mobile" 
-   ms.date="11/22/2015"
+   ms.date="02/29/2016"
    ms.author="piyushjo"/>
 
 # Verwalten Ihres Konto-Profils und Testen der Geräte
  
-In diesem Artikel wird die **Startseite** im Portal **Mobile Engagement** beschrieben. Verwenden Sie das Portal **Mobile Engagement**, um Ihre mobilen Apps zu überwachen und zu verwalten. Beachten Sie, dass Sie zur Verwendung des Portals zuerst ein **Azure Mobile Engagement**-Konto erstellen müssen. Weitere Informationen finden Sie unter [Erstellen eines Azure Mobile Engagement-Kontos](mobile-engagement-create-account.md).
+In diesem Artikel wird die **Startseite** im Portal **Mobile Engagement** beschrieben. Verwenden Sie das Portal **Mobile Engagement**, um Ihre mobilen Apps zu überwachen und zu verwalten.
  
 Klicken Sie oben auf der Seite auf Ihr Konto, um zur Seite „Mein Konto“ zu gelangen.
 
@@ -27,7 +27,7 @@ Im Abschnitt "Mein Konto" der Benutzeroberfläche können Sie die Einstellungen 
 ![MyAccount1][7]
 
 ## Profil:
-Sie können die unten angezeigten Einstellungen für das Konto anzeigen oder ändern. Sie können auf der [Startseite](mobile-engagement-interface-home.md) auch anderen Benutzern die Berechtigung zur Nutzung Ihrer Anwendung zuweisen, basierend auf ihrer E-Mail-Adresse.
+Sie können die unten angezeigten Einstellungen für das Konto anzeigen oder ändern. Sie können auf der [Startseite](mobile-engagement-user-interface-home.md) auch anderen Benutzern die Berechtigung zur Nutzung Ihrer Anwendung zuweisen, basierend auf ihrer E-Mail-Adresse.
 
 ![MyAccount2][8]
 
@@ -151,4 +151,4 @@ Zum Verwenden der Push-API oder Device-API müssen Sie die eindeutige Geräteken
  
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0302_2016-->

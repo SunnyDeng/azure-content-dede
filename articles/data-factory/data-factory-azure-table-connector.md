@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/26/2016" 
+	ms.date="02/24/2016" 
 	ms.author="spelluru"/>
 
 # Verschieben von Daten in eine und aus einer Azure-Tabelle mithilfe von Azure Data Factory
@@ -362,6 +362,14 @@ Der Abschnitt "typeProperties" unterscheidet sich bei jedem Typ von Dataset und 
 | -------- | ----------- | -------- |
 | tableName | Name der Tabelle in der Azure-Tabellendatenbankinstanz, auf die der verknüpfte Dienst verweist. | Ja
 
+### Schema per Data Factory
+Bei schemafreien Datenspeichern, z. B. Azure-Tabellen, leitet der Data Factory-Dienst das Schema auf eine der folgenden Weisen ab:
+
+1.	Wenn Sie die Struktur der Daten mithilfe der **structure**-Eigenschaft in der Datasetdefinition angeben, berücksichtigt der Data Factory-Dienst diese Struktur als das Schema. Wenn in diesem Fall eine Zeile keinen Wert für eine Spalte enthält, wird ein NULL-Wert für sie angegeben.
+2.	Wenn Sie die Struktur der Daten nicht mithilfe der **structure**-Eigenschaft in der Datasetdefinition angeben, leitet der Data Factory-Dienst das Schema unter Verwendung der ersten Zeile in den Daten ab. Wenn in diesem Fall die erste Zeile nicht das vollständige Schema enthält, fehlen im Ergebnis des Kopiervorgangs einige Spalten.
+
+Daher empfiehlt es sich bei schemafreien Datenquellen, die Struktur der Daten mithilfe der **structure**-Eigenschaft anzugeben.
+
 ## Eigenschaften von Azure-Tabellen-Kopieraktivitätstypen
 
 Eine vollständige Liste der Abschnitte und Eigenschaften zum Definieren von Aktivitäten finden Sie im Artikel [Erstellen von Pipelines](data-factory-create-pipelines.md). Eigenschaften wie Name, Beschreibung, Eingabe- und Ausgabetabellen, verschiedene Richtlinien usw. sind für alle Arten von Aktivitäten verfügbar.
@@ -433,7 +441,7 @@ Beim Verschieben von Daten in die und aus der Azure-Tabelle werden die folgenden
 | --------------- | --------- | ------- |
 | Edm.Binary | Byte | Ein Array von Bytes mit einer Größe bis zu 64 KB. |
 | Edm.Boolean | bool | Ein boolescher Wert. |
-| Edm.DateTime | DateTime | Ein 64-Bit-Wert, ausgedrückt als koordinierte Weltzeit (UTC). Der unterstützte DateTime-Bereich beginnt um 00:00 Uhr, Mitternacht, 1. Januar, 1601 n. Chr. (unsere Zeitrechnung), UTC Der Bereich endet am 31. Dezember 9999. |
+| Edm.DateTime | DateTime | Ein 64-Bit-Wert, ausgedrückt als koordinierte Weltzeit (UTC). Der unterstützte DateTime-Bereich beginnt um 00:00 Uhr, Mitternacht, 1. Januar, 1601 n. Chr. (unsere Zeitrechnung), UTC Der Bereich endet am 31. Dezember 9999. |
 | Edm.Double | double | Ein 64-Bit-Gleitkommawert. |
 | Edm.Guid | GUID | Ein 128-Bit-GUID. |
 | Edm.Int32 | Int32 oder int | Eine 32-Bit-Ganzzahl. |
@@ -518,4 +526,4 @@ In diesem Fall führt Data Factory die Typkonvertierungen automatisch einschlie�
 
 [AZURE.INCLUDE [data-factory-column-mapping](../../includes/data-factory-column-mapping.md)]
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0302_2016-->

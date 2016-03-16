@@ -73,7 +73,7 @@ Es folgt eine Beschreibung der Aufgaben ausgewählter Abschnitte des Azure Power
 
 1.	Konvertieren Sie alle Variablen mit relativen Pfade in absolute Pfade. Ändern Sie z. B. einen Pfad wie `..\Tools\AzCopy.exe` zu `C:\YourFolder\Tools\AzCopy.exe`. Initialisieren Sie außerdem die Variablen *ArtifactsLocationName* und *ArtifactsLocationSasTokenName* auf NULL. *ArtifactsLocation* und *SaSToken* können als Parameter für die Vorlage verwendet werden. Wenn nach dem Lesen in der Parameterdatei ihre Werte NULL sind, generiert das Skript die Werte für sie.
 
-    Die Azure-Tools verwenden die Parameterwerte „*\_artifactsLocation*“ und „*\_artifactsLocationSasToken*“ in der Vorlage zur Verwaltung von Artefakten. Wenn das PowerShell-Skript Parameter mit diesen Namen findet, die Parameterwerte jedoch nicht bereitgestellt sind, lädt das Skript die Artefakte hoch und gibt die entsprechenden Werte für diese Parameter zurück. Anschließend übergibt es die Werte über `@OptionsParameters` an das Cmdlet.
+    Die Azure-Tools verwenden die Parameterwerte „*\_artifactsLocation* “ und „ *\_artifactsLocationSasToken* “ in der Vorlage zur Verwaltung von Artefakten. Wenn das PowerShell-Skript Parameter mit diesen Namen findet, die Parameterwerte jedoch nicht bereitgestellt sind, lädt das Skript die Artefakte hoch und gibt die entsprechenden Werte für diese Parameter zurück. Anschließend übergibt es die Werte über `@OptionsParameters` an das Cmdlet.
 
 	|Variable|Beschreibung|
     |---|---|
@@ -264,4 +264,4 @@ Weitere Informationen zum Azure-Ressourcen-Manager finden Sie unter [Übersicht 
 [4]: ./media/vs-azure-tools-resource-groups-how-script-works/deploy5c.png
 [5]: ./media/vs-azure-tools-resource-groups-how-script-works/deploy6c.png
 
-<!----HONumber=AcomDC_0211_2016-->
+<!-----HONumber=AcomDC_0211_2016-->

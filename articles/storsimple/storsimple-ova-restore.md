@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Wiederherstellen aus einer Sicherung des StorSimple Virtual Array (Vorschau)"
+   pageTitle="Wiederherstellen aus einer Sicherung des StorSimple Virtual Array"
    description="Erfahren Sie mehr dazu, wie Sie eine Sicherung des StorSimple Virtual Array wiederherstellen."
    services="storsimple"
    documentationCenter="NA"
@@ -13,19 +13,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="02/23/2016"
+   ms.date="03/01/2016"
    ms.author="alkohli"/>
 
-# Wiederherstellen aus einer Sicherung des StorSimple Virtual Array (Vorschau)
+# Wiederherstellen aus einer Sicherung des StorSimple Virtual Array
 
 ## Übersicht 
 
-Dieser Artikel bezieht sich nur auf Microsoft Azure StorSimple Virtual Array (auch als „lokales virtuelles StorSimple-Gerät“ oder „virtuelles StorSimple-Gerät“ bezeichnet) mit Version 1.1.1.0 (öffentliche Vorschau). In diesem Artikel wird Schritt für Schritt beschrieben, wie Sie die Wiederherstellung aus einem Sicherungssatz Ihrer Freigaben oder Volumes für das StorSimple Virtual Array durchführen. Im Artikel wird auch ausführlich beschrieben, wie die Wiederherstellung auf Elementebene auf Ihrem StorSimple Virtual Array funktioniert, wenn dies als Dateiserver konfiguriert ist.
-
-> [AZURE.IMPORTANT]
-> 
-> - Diese öffentliche Vorschauversion ist nur für Evaluierungs- und Planungszwecke im Rahmen einer Bereitstellung bestimmt. Die Installation dieser Vorschau in einer Produktionsumgebung wird nicht unterstützt.
-> - Wenn Probleme mit StorSimple Virtual Array auftreten, posten Sie sie im [StorSimple-MSDN-Forum](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=StorSimple).
+Dieser Artikel bezieht sich auf Microsoft Azure StorSimple Virtual Array (auch als „lokales virtuelles StorSimple-Gerät“ oder „virtuelles StorSimple-Gerät“ bezeichnet) mit der Version von März 2016 (allgemeine Verfügbarkeit). In diesem Artikel wird Schritt für Schritt beschrieben, wie Sie die Wiederherstellung aus einem Sicherungssatz Ihrer Freigaben oder Volumes für das StorSimple Virtual Array durchführen. Im Artikel wird auch ausführlich beschrieben, wie die Wiederherstellung auf Elementebene auf Ihrem StorSimple Virtual Array funktioniert, wenn dies als Dateiserver konfiguriert ist.
 
 
 ## Wiederherstellen von Freigaben aus einem Sicherungssatz
@@ -137,4 +132,4 @@ In diesem Video wird gezeigt, wie Sie Freigaben erstellen, Freigaben sichern und
 
 Erfahren Sie mehr darüber, wie Sie das [StorSimple Virtual Array mit der lokalen Webbenutzeroberfläche verwalten](storsimple-ova-web-ui-admin.md).
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

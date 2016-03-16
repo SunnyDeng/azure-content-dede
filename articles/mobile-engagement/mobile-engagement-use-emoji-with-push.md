@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="mobile-windows-phone" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/22/2015" 
+	ms.date="02/29/2016" 
 	ms.author="piyushjo" />
 
 #Verwenden von Emoticons in Pushbenachrichtigungen
 
-Emojis lassen sich in ein paar einfachen Schritten in Pushbenachrichtigungen einfügen.
+Emojis lassen sich in wenigen einfachen Schritten in Pushbenachrichtigungen einfügen.
 
 1. Suchen Sie zunächst das Emoji heraus, das Sie in der Nachricht senden möchten. Überprüfen Sie, dass das ausgewählte Emoji vom Zielgerät unterstützt wird, da es herstellerseitig teilweise zu Verzögerungen bei der Ergänzung neu genehmigter Emojis zu den Geräteplattformen kommt. 
 
@@ -40,8 +40,8 @@ Emojis lassen sich in ein paar einfachen Schritten in Pushbenachrichtigungen ein
 
 7. Wenn Sie einen Test ausführen oder die Ankündigung aktivieren, wird eine Benachrichtigung mit dem Emoticon entsprechend Ihren Festlegungen angezeigt.
 
-	![][3] 
-	![][4] 
+	![][3]
+	![][4]
 	![][5]
 
 <!-- Images. -->
@@ -52,4 +52,4 @@ Emojis lassen sich in ein paar einfachen Schritten in Pushbenachrichtigungen ein
 [6]: ./media/mobile-engagement-use-emoji-with-push/Mac_SelectEmoji.png
 [7]: ./media/mobile-engagement-use-emoji-with-push/Windows_SelectEmoji.png
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0302_2016-->

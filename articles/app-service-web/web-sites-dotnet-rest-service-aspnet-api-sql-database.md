@@ -14,14 +14,14 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="12/04/2015" 
+	ms.date="02/29/2016" 
 	ms.author="riande"/>
 
 # Erstellen eines REST-Diensts mithilfe der ASP.NET Web API und einer SQL-Datenbank in Azure App Service
 
-In diesem Tutorial wird die Bereitstellung einer ASP.NET-Web-App für einen [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714) mit dem Assistenten „Web veröffentlichen“ in Visual Studio 2013 oder Visual Studio 2013 Community Edition erläutert.
+In diesem Tutorial wird die Bereitstellung einer ASP.NET-Web-App für einen [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714) mit dem Assistenten „Web veröffentlichen“ in Visual Studio 2013 oder Visual Studio 2013 Community Edition erläutert.
 
-Sie können ein kostenloses Azure-Konto erstellen. Wenn Sie noch nicht über Visual Studio 2013 verfügen, wird Visual Studio 2013 for Web Express automatisch durch das SDK installiert. Auf diese Weise können Sie völlig kostenlos mit der Entwicklung für Azure beginnen.
+Sie können ein kostenloses Azure-Konto erstellen. Wenn Sie noch nicht über Visual Studio 2013 verfügen, wird Visual Studio 2013 for Web Express automatisch durch das SDK installiert. Auf diese Weise können Sie völlig kostenlos mit der Entwicklung für Azure beginnen.
 
 Bei diesem Tutorial wird davon ausgegangen, dass Sie noch keine Erfahrung mit der Verwendung von Azure haben. Nach Abschluss dieses Tutorials verfügen Sie über eine einfache Web-App, die in der Cloud ausgeführt wird.
  
@@ -33,7 +33,7 @@ Sie lernen Folgendes:
 * Verwenden einer SQL-Datenbank zum Speichern von Daten in Azure
 * Veröffentlichen von Anwendungsaktualisierungen in Azure
 
-Sie erstellen eine einfache Kontaktlisten-Webanwendung, die auf ASP.NET MVC 5 beruht und für den Datenbankzugriff ADO.NET Entity Framework verwendet. In der folgenden Abbildung wird die fertige Anwendung dargestellt:
+Sie erstellen eine einfache Kontaktlisten-Webanwendung, die auf ASP.NET MVC 5 beruht und für den Datenbankzugriff ADO.NET Entity Framework verwendet. In der folgenden Abbildung wird die fertige Anwendung dargestellt:
 
 ![Screenshot von Website][intro001]
 
@@ -123,8 +123,7 @@ Das Markup oben ändert den App-Namen von "My ASP.NET App" auf "Contact Manager"
 
 ### Lokales Ausführen der Anwendung
 
-1. Drücken Sie STRG+F5, um die Anwendung auszuführen. Die Startseite der Anwendung wird im Standardbrowser angezeigt.
-  ![Homepage To-Do-Liste](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rr5.PNG)
+1. Drücken Sie STRG+F5, um die Anwendung auszuführen. Die Startseite der Anwendung wird im Standardbrowser angezeigt. ![Homepage To-Do-Liste](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rr5.PNG)
 
 Darüber hinaus müssen Sie keine weiteren Aktionen ausführen, um die Anwendung zu erstellen, die Sie für Azure bereitstellen. Zu einem späteren Zeitpunkt fügen Sie Datenbankfunktionalität hinzu.
 
@@ -725,7 +724,7 @@ Wenn der Eintrag auf der Contact Manager Seite gespeichert und angezeigt wird, w
 
 Die Anwendung wird nun in der Cloud ausgeführt und verwendet die SQL-Datenbank zum Speichern von Daten. Löschen Sie die Anwendung, sobald Sie die Tests in Azure abgeschlossen haben. Die Anwendung ist öffentlich und der Zugriff auf sie kann nicht beschränkt werden.
 
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Nächste Schritte
 
@@ -815,4 +814,4 @@ Bitte teilen Sie uns mit, was Ihrer Meinung nach beim Tutorial wie auch den dari
 [prevent-csrf-attacks]: http://www.asp.net/web-api/overview/security/preventing-cross-site-request-forgery-(csrf)-attacks
  
 
-<!------HONumber=AcomDC_1217_2015--->
+<!---HONumber=AcomDC_0302_2016-->

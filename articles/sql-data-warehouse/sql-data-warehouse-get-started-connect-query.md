@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/07/2016"
+   ms.date="03/03/2016"
    ms.author="mausher;barbkess;sonyama"/>
 
 # Verbinden und Abfragen mit Visual Studio
@@ -46,7 +46,7 @@ Um eine Verbindung mit Ihrer Datenbank herzustellen, benötigen Sie den vollstä
 
 1. Öffnen Sie Visual Studio.
 2. Öffnen Sie im Menü "Ansicht" den **SQL Server-Objekt-Explorer**.
- 
+
 ![][2]
 
 3. Klicken Sie auf die Schaltfläche **SQL Server hinzufügen**
@@ -79,9 +79,9 @@ Da wir jetzt unseren Server registriert haben, fahren wir mit dem Schreiben eine
 
 ## Nächste Schritte
 
-Nachdem Sie eine Verbindung hergestellt haben und Abfragen senden können, versuchen Sie, [eine Verbindung mit Power BI herzustellen][].
+Nachdem Sie eine Verbindung hergestellt haben und Abfragen senden können, versuchen Sie, [eine Verbindung mit Power BI herzustellen][].
 
-[eine Verbindung mit Power BI herzustellen]: ./sql-data-warehouse-integrate-power-bi.md
+[eine Verbindung mit Power BI herzustellen]: ./sql-data-warehouse-integrate-power-bi.md
 
 
 <!--Image references-->
@@ -91,4 +91,4 @@ Nachdem Sie eine Verbindung hergestellt haben und Abfragen senden können, versu
 [3]: ./media/sql-data-warehouse-get-started-connect-query/connection-dialog.png
 [4]: ./media/sql-data-warehouse-get-started-connect-query/new-query.png
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0309_2016-->

@@ -121,7 +121,11 @@ Bearbeiten Sie die Datei `config.js`, und legen Sie die folgenden Konfigurations
 | `verbose` | Gibt an, ob das Skript eine ausführliche Ausgabe bietet oder nicht. | `true` |
 | `remote` | Gibt an, ob die JMeter-Tests lokal oder auf den Remoteservern ausgeführt werden. | `true` |
 | `cluster.clusterName` | Der Name des Elasticsearch-Clusters. | `elasticsearch` |
-| `cluster.jumpboxIp` | Die IP-Adresse des Jumpbox-Computers. |-| | `cluster.username` | Der Administratorbenutzer, den Sie beim Bereitstellen des Clusters erstellt haben. |-| | `cluster.password` | Das Kennwort für den Administratorbenutzer. |-| | `cluster.loadBalancer.ip` | Die IP-Adresse des Elasticsearch-Lastenausgleichs. |-| | `cluster.loadBalancer.url` | Basis-URL des Lastenausgleichs. |-|
+| `cluster.jumpboxIp` | Die IP-Adresse des Jumpbox-Computers. |-| 
+| `cluster.username` | Der Administratorbenutzer, den Sie beim Bereitstellen des Clusters erstellt haben. |-| 
+| `cluster.password` | Das Kennwort für den Administratorbenutzer. |-| 
+| `cluster.loadBalancer.ip` | Die IP-Adresse des Elasticsearch-Lastenausgleichs. |-| 
+| `cluster.loadBalancer.url` | Basis-URL des Lastenausgleichs. |-|
 
 ## Ausführen der Tests
 

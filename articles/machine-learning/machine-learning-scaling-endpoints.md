@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="tbd" 
-	ms.date="06/29/2015"
+	ms.date="02/25/2016"
 	ms.author="himad"/>
 
 
@@ -24,7 +24,7 @@ Webdienst-Endpunkte in Azure Machine Learning verfügen über auswählbare Dross
 Um die Drosselung des Endpunkts zu steuern, legen Sie mithilfe des Schiebereglers im klassischen Azure-Portal die maximale Anzahl gleichzeitiger Aufrufe auf einen Wert zwischen 20 und 200 fest.
 
 
-Die synchronen APIs werden in der Regel in Situationen verwendet, in denen eine niedrige Latenz erwünscht ist. Mit Latenz ist hier der Zeitraum gemeint, der von der API benötigt wird, um eine Anforderung abzuschließen, wobei keinerlei Netzwerkverzögerungen berücksichtigt werden. Angenommen, Sie haben eine API mit einer Latenz von 50 ms (Millisekunden). Um die verfügbare Kapazität mit der Drosselungsstufe High (Hoch) und einer Höchstzahl gleichzeitiger Anrufe = 20 voll nutzen zu können, müssen Sie diese API 20 * 1000 / 50 = 400 Mal pro Sekunde aufrufen. Wenn man dieses Beispiel weiter fortspinnt, dann ermöglicht eine Höchstzahl von 200 gleichzeitigen Aufrufen 4000 Aufrufe der API pro Sekunde, sofern die Latenz 50 ms beträgt.
+Die synchronen APIs werden in der Regel in Situationen verwendet, in denen eine niedrige Latenz erwünscht ist. Mit Latenz ist hier der Zeitraum gemeint, der von der API benötigt wird, um eine Anforderung abzuschließen, wobei keinerlei Netzwerkverzögerungen berücksichtigt werden. Angenommen, Sie haben eine API mit einer Latenz von 50 ms (Millisekunden). Um die verfügbare Kapazität mit der Drosselungsstufe High (Hoch) und einer Höchstzahl gleichzeitiger Anrufe = 20 voll nutzen zu können, müssen Sie diese API 20 * 1000 / 50 = 400 Mal pro Sekunde aufrufen. Wenn man dieses Beispiel weiter fortspinnt, dann ermöglicht eine Höchstzahl von 200 gleichzeitigen Aufrufen 4000 Aufrufe der API pro Sekunde, sofern die Latenz 50 ms beträgt.
 
 Wenn Sie API stärker auslasten möchten, als sich durch 200 gleichzeitige Aufrufe unterstützen lässt, sollten Sie mehrere Endpunkte im gleichen Webdienst erstellen und die Last beliebig über alle Endpunkte verteilen.
 
@@ -47,4 +47,4 @@ Sie können in der Verwaltungsoberfläche eine benutzerdefinierte Zahl für die 
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0302_2016-->

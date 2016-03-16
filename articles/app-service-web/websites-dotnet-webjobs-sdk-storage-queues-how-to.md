@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="12/14/2015" 
+	ms.date="02/29/2016" 
 	ms.author="tdykstra"/>
 
 # Verwenden von Azure-Warteschlangenspeicher mit dem WebJobs-SDK
@@ -140,7 +140,7 @@ Wenn mehrere Funktionen unterschiedliche Warteschlangen überwachen, ruft das SD
 
 Das Gleiche gilt auch, wenn mehrere Nachrichten für eine einzige Warteschlange empfangen werden. Das SDK ruft standardmäßig jeweils einen Batch von 16 Warteschlangennachrichten auf und führt die Funktion, die diese verarbeitet, parallel aus. [Die Batchgröße ist konfigurierbar](#config). Wenn die zu verarbeitende Anzahl die Hälfte der Batchgröße erreicht, ruft das SDK einen weiteren Batch ab und beginnt mit der Verarbeitung dieser Nachrichten. Aus diesem Grund beträgt die maximale Anzahl der pro Funktion verarbeiteten Nachrichten die 1,5-fache Batchgröße. Dieser Grenzwert gilt separat für jede Funktion, die ein `QueueTrigger`-Attribut aufweist.
 
-Wenn keine parallele Ausführung für in einer Warteschlange empfangene Nachrichten erfolgen soll, können Sie die Batchgröße auf „1“ festlegen. Siehe dazu auch **More control over Queue processing** (in englischer Sprache) im Blog zum [Azure WebJobs SDK 1.1.0 RTM](/blog/azure-webjobs-sdk-1-1-0-rtm/).
+Wenn keine parallele Ausführung für in einer Warteschlange empfangene Nachrichten erfolgen soll, können Sie die Batchgröße auf „1“ festlegen. Siehe dazu auch **More control over Queue processing** (in englischer Sprache) im Blog zum [Azure WebJobs SDK 1.1.0 RTM](/blog/azure-webjobs-sdk-1-1-0-rtm/).
 
 ### <a id="queuemetadata"></a>Abrufen von Warteschlangen oder Metadaten zu Warteschlangennachrichten
 
@@ -537,7 +537,7 @@ Methoden für die Konsolenausgabe, die Sie in einer Funktion oder in der `Main()
 
 Die Konsolenausgabe kann nicht an einen bestimmten Methodenaufruf geknüpft werden, da die Konsole als Singlethread ausgeführt wird, während viele Aufgaben ggf. gleichzeitig ausgeführt werden. Deshalb versieht das SDK jeden Funktionsaufruf mit einem eigenen eindeutigen Protokollschreibobjekt.
 
-Zum [Schreiben von Ablaufverfolgungsprotokollen](web-sites-dotnet-troubleshoot-visual-studio.md#logsoverview) verwenden Sie `Console.Out` (erstellt als INFO markierte Protokolle) und `Console.Error` (erstellt als FEHLER markierte Protokolle). Eine Alternative ist die [Verwendung von Trace oder TraceSource](http://blogs.msdn.com/b/mcsuksoldev/archive/2014/09/04/adding-trace-to-azure-web-sites-and-web-jobs.aspx), um zusätzlich zu INFO und FEHLER die Stufen AUSFÜHRLICH, WARNUNG und KRITISCH bereitzustellen. Ablaufverfolgungsprotokolle von Anwendungen werden in den Web-App-Protokolldateien, Azure-Tabellen oder Azure-Blobs angezeigt, je nachdem, wie Sie Ihre Azure-Web-App konfigurieren. Wie bei sämtlichen Konsolenausgaben werden die 100 letzten Anwendungsprotokolle auch auf der Seite "Dashboard" für den Webauftrag und nicht auf der Seite für die Funktionsaufruf angezeigt.
+Zum [Schreiben von Ablaufverfolgungsprotokollen](web-sites-dotnet-troubleshoot-visual-studio.md#logsoverview) verwenden Sie `Console.Out` (erstellt als INFO markierte Protokolle) und `Console.Error` (erstellt als FEHLER markierte Protokolle). Eine Alternative ist die [Verwendung von Trace oder TraceSource](http://blogs.msdn.com/b/mcsuksoldev/archive/2014/09/04/adding-trace-to-azure-web-sites-and-web-jobs.aspx), um zusätzlich zu INFO und FEHLER die Stufen AUSFÜHRLICH, WARNUNG und KRITISCH bereitzustellen. Ablaufverfolgungsprotokolle von Anwendungen werden in den Web-App-Protokolldateien, Azure-Tabellen oder Azure-Blobs angezeigt, je nachdem, wie Sie Ihre Azure-Web-App konfigurieren. Wie bei sämtlichen Konsolenausgaben werden die 100 letzten Anwendungsprotokolle auch auf der Seite "Dashboard" für den Webauftrag und nicht auf der Seite für die Funktionsaufruf angezeigt.
 
 Die Konsolenausgabe wird nur im Dashboard angezeigt, wenn das Programm in einem Azure-Webauftrag ausgeführt wird, und nicht, wenn die Anwendung lokal oder in einer anderen Umgebung ausgeführt wird.
 
@@ -611,4 +611,4 @@ Sie können zudem Funktionen dynamisch deaktivieren und aktivieren, um festzuleg
 In dieser Anleitung wurden Codebeispiele bereitgestellt, in denen veranschaulicht wird, wie häufige Szenarien für das Arbeiten mit Azure-Warteschlangen behandelt werden. Weitere Informationen zur Verwendung von Azure WebJobs und dem WebJobs-SDK finden Sie unter [Empfohlene Ressourcen für Azure WebJobs](http://go.microsoft.com/fwlink/?linkid=390226).
  
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -1,4 +1,4 @@
-<properties 
+<properties
    pageTitle="Reservierte IP | Microsoft Azure"
    description="Grundlegendes zu reservierten IPs und deren Verwaltung"
    services="virtual-network"
@@ -6,7 +6,7 @@
    authors="telmosampaio"
    manager="carmonm"
    editor="tysonn" />
-<tags 
+<tags
    ms.service="virtual-network"
    ms.devlang="na"
    ms.topic="article"
@@ -33,13 +33,13 @@ Stellen Sie sicher, dass Sie die Funktionsweise von [IP-Adressen](virtual-networ
 1. Kann ich eine reservierte IP-Adresse für alle Azure-Dienste verwenden?  
   - Reservierte IPs können nur für virtuelle Computer und Clouddienst-Instanzenrollen, die über eine VIP verfügbar gemacht werden, verwendet werden.
 1. Wie viele reservierte IP-Adressen können verwendet werden?  
-  - Derzeit können mit allen Azure-Abonnements 20 reservierte IPs verwendet werden. Sie können aber auch zusätzliche reservierte IP-Adressen anfordern. Weitere Informationen finden Sie unter [Abonnement- und Diensteinschränkungen](../azure-subscription-service-limits/).
-1. Fällt für reservierte IPs eine Gebühr an? 
+  - Derzeit können mit allen Azure-Abonnements 20 reservierte IPs verwendet werden. Sie können aber auch zusätzliche reservierte IP-Adressen anfordern. Weitere Informationen finden Sie unter [Abonnement- und Diensteinschränkungen](../azure-subscription-service-limits/).
+1. Fällt für reservierte IPs eine Gebühr an?
   - Preisinformationen finden Sie unter [Preise für reservierte IP-Adressen](http://go.microsoft.com/fwlink/?LinkID=398482).
-1. Wie wird eine IP-Adresse reserviert? 
-  - Sie können PowerShell oder die [Azure-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn722420.aspx) nutzen, um eine reservierte IP für eine bestimmte Region anzufordern. Azure reserviert eine IP-Adresse aus dieser Region und ordnet sie Ihrem Abonnement zu. Sie können die reservierte IP-Adresse dann in dieser Region verwenden. Das Reservieren einer IP-Adresse ist nicht möglich, indem Sie das Verwaltungsportal verwenden.
-1. Ist die Verwendung mit auf Affinitätsgruppen basierenden VNets möglich? 
-  - Reservierte IP-Adressen werden nur in regionalen VNets unterstützt. Für VNets, die Affinitätsgruppen zugeordnet sind, besteht keine Unterstützung. Weitere Informationen zum Zuordnen eines VNets zu einer Region oder Affinitätsgruppe finden Sie unter [Informationen zu regionalen VNets und Affinitätsgruppen](virtual-networks-migrate-to-regional-vnet.md). 
+1. Wie wird eine IP-Adresse reserviert?
+  - Sie können PowerShell oder die [Azure-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn722420.aspx) nutzen, um eine reservierte IP-Adresse für eine bestimmte Region anzufordern. Diese reservierte IP-Adresse wird Ihrem Abonnement zugeordnet. Das Reservieren einer IP-Adresse ist nicht möglich, indem Sie das Verwaltungsportal verwenden.
+1. Ist die Verwendung mit auf Affinitätsgruppen basierenden VNets möglich?
+  - Reservierte IP-Adressen werden nur in regionalen VNets unterstützt. Für VNets, die Affinitätsgruppen zugeordnet sind, besteht keine Unterstützung. Weitere Informationen zum Zuordnen eines VNets zu einer Region oder Affinitätsgruppe finden Sie unter [Informationen zu regionalen VNets und Affinitätsgruppen](virtual-networks-migrate-to-regional-vnet.md).
 
 ## Verwalten von reservierten VIPs
 
@@ -54,12 +54,12 @@ Beachten Sie dabei, dass Sie nicht angeben können, welche IP-Adresse reserviert
 	ReservedIPName       : MyReservedIP
 	Address              : 23.101.114.211
 	Id                   : d73be9dd-db12-4b5e-98c8-bc62e7c42041
-	Label                : 
+	Label                :
 	Location             : Central US
 	State                : Created
 	InUse                : False
-	ServiceName          : 
-	DeploymentName       : 
+	ServiceName          :
+	DeploymentName       :
 	OperationDescription : Get-AzureReservedIP
 	OperationId          : 55e4f245-82e4-9c66-9bd8-273e815ce30a
 	OperationStatus      : Succeeded
@@ -67,6 +67,13 @@ Beachten Sie dabei, dass Sie nicht angeben können, welche IP-Adresse reserviert
 Nachdem eine IP-Adresse reserviert wurde, bleibt sie Ihrem Abonnement so lange zugeordnet, bis Sie sie löschen. Führen Sie den folgenden PowerShell-Befehl aus, um die obige reservierte IP zu löschen:
 
 	Remove-AzureReservedIP -ReservedIPName "MyReservedIP"
+
+## So reservieren Sie die IP-Adresse eines vorhandenen Clouddiensts
+
+Sie können die IP-Adresse eines vorhandenen Clouddiensts durch Hinzufügen des *ServiceName*-Parameters reservieren. Um beispielsweise die IP-Adresse des Clouddiensts *TestService* am Standort *USA, Mitte* zu reservieren, führen Sie den folgenden PowerShell-Befehl aus:
+
+	New-AzureReservedIP –ReservedIPName MyReservedIP –Location "Central US" -ServiceName TestService
+
 
 ## Zuordnen einer reservierter IP zu einem neuen Clouddienst
 Mit dem unten angegebenen Skript wird eine neue reservierte IP erstellt, die dann einem neuen Clouddienst mit dem Namen *TestService* zugeordnet wird.
@@ -97,7 +104,7 @@ Mit dem unten angegebenen Skript wird ein neuer Clouddienst mit dem Namen *TestS
 
 ## Zuordnen einer reservierten IP zu einem Clouddienst mit einer Dienstkonfigurationsdatei
 Sie können eine reservierte IP einem Clouddienst auch zuordnen, indem Sie eine Dienstkonfigurationsdatei (CSCFG) verwenden. Im folgenden XML-Beispielcode wird veranschaulicht, wie Sie einen Clouddienst für die Verwendung einer reservierten VIP mit dem Namen *MyReservedIP* konfigurieren:
-	
+
 	<?xml version="1.0" encoding="utf-8"?>
 	<ServiceConfiguration serviceName="ReservedIPSample" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="4" osVersion="*" schemaVersion="2014-01.2.3">
 	  <Role name="WebRole1">
@@ -123,4 +130,4 @@ Sie können eine reservierte IP einem Clouddienst auch zuordnen, indem Sie eine 
 
 - Erfahren Sie mehr zu [öffentlichen IP-Adressen auf Instanzebene (ILPIP)](../virtual-networks-instance-level-public-ip).
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0302_2016-->

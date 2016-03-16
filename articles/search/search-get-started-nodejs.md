@@ -3,8 +3,8 @@
 	description="Exemplarische Vorgehensweise zur Erstellung einer Suchanwendung in einem gehosteten Cloudsuchdienst mit der Programmiersprache NodeJS."
 	services="search"
 	documentationCenter=""
-	authors="HeidiSteen"
-	manager="mblythe"
+	authors="EvanBoyle"
+	manager="pablocas"
 	editor="v-lincan"/>
 
 <tags
@@ -13,19 +13,19 @@
 	ms.workload="search"
 	ms.topic="hero-article"
 	ms.tgt_pltfrm="na"
-	ms.date="01/11/2016"
-	ms.author="heidist"/>
+	ms.date="03/08/2016"
+	ms.author="evboyle"/>
 
 # Erste Schritte mit Azure Search in NodeJS
 > [AZURE.SELECTOR]
 - [Portal](search-get-started-portal.md)
-- [.NET](search-get-started-dotnet.md)
+- [.NET](search-howto-dotnet-sdk.md)
 
 Erfahren Sie, wie Sie eine benutzerdefinierte NodeJS-Suchanwendung erstellen, die Azure Search zum Suchen verwendet. Dieses Lernprogramm verwendet die [REST-API für den Azure Search-Dienst](https://msdn.microsoft.com/library/dn798935.aspx) zum Erstellen der Objekte und Vorgänge, die in dieser Übung verwendet werden.
 
 Zum Entwickeln und Testen dieses Codes wurden [NodeJS](https://nodejs.org) und NPM, [Sublime Text 3](http://www.sublimetext.com/3) und Windows PowerShell unter Windows 8.1 verwendet.
 
-Um dieses Beispiel auszuführen, benötigen Sie einen Azure Search-Dienst, für den Sie sich im [Azure-Portal](https://portal.azure.com) anmelden können. Schrittweise Anweisungen finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](search-create-service-portal.md).
+Um dieses Beispiel auszuführen, benötigen Sie einen Azure Search-Dienst, für den Sie sich beim [Azure-Portal](https://portal.azure.com) anmelden können. Schrittweise Anweisungen finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](search-create-service-portal.md).
 
 ## Informationen zu den Daten
 
@@ -33,16 +33,16 @@ In dieser Beispielanwendung werden Daten von [United States Geological Services 
 
 In dieser Anwendung erstellt das Programm **DataIndexer** den Index und lädt ihn unter Verwendung eines [Indexer](https://msdn.microsoft.com/library/azure/dn798918.aspx)-Konstrukts, wobei das gefilterte USGS-DataSet aus einer öffentlichen Azure SQL-Datenbank abgerufen wird. Anmeldeinformationen und Verbindungsinformationen zur Onlinedatenquelle werden im Programmcode bereitgestellt. Es ist keine weitere Konfiguration erforderlich.
 
-> [AZURE.NOTE] Wir haben einen Filter auf dieses Dataset angewendet, um unter dem Limit des kostenlosen Tarifs von maximal 10.000 Dokumenten zu bleiben. Wenn Sie den Standardtarif verwenden, gilt dieses Limit nicht. Ausführliche Informationen zur Kapazität der einzelnen Tarife finden Sie unter [Limits und Einschränkungen](search-limits-quotas-capacity.md).
+> [AZURE.NOTE] Wir haben einen Filter auf dieses Dataset angewendet, um unter dem Limit des kostenlosen Tarifs von maximal 10.000 Dokumenten zu bleiben. Wenn Sie den Standardtarif verwenden, gilt dieses Limit nicht. Ausführliche Informationen zur Kapazität der einzelnen Tarife finden Sie unter [Einschränkungen für Suchdienste](search-limits-quotas-capacity.md).
 
 
 <a id="sub-2"></a>
-## Ermitteln des Dienstnamens und des API-Schlüssels des Azure Search-Diensts
+## Ermitteln des Dienstnamens und des API-Schlüssels des Azure Search-Diensts
 
 Nachdem Sie den Dienst erstellt haben, kehren Sie zum Portal zurück, um die URL oder den `api-key` zu ermitteln. Für Verbindungen mit Ihrem Search-Dienst benötigen Sie sowohl die URL als auch einen `api-key`, um den Aufruf zu authentifizieren.
 
 1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
-2. Klicken Sie in der Navigationsleiste auf **Search-Dienst**, um alle für Ihr Abonnement bereitgestellten Azure Search-Dienste aufzuführen.
+2. Klicken Sie auf der Navigationsleiste auf **Suchdienst**, um alle für Ihr Abonnement bereitgestellten Azure Search-Dienste aufzuführen.
 3. Wählen Sie den Dienst aus, den Sie verwenden möchten.
 4. Auf dem Service-Dashboard werden Kacheln für wichtige Informationen sowie das Schlüsselsymbol für den Zugriff auf die Administratorschlüssel angezeigt.
 
@@ -121,4 +121,4 @@ Neu bei Azure Search? Es wird empfohlen, auch andere Lernprogramme zu bearbeiten
 [5]: ./media/search-get-started-nodejs/AzSearch-NodeJS-configjs.png
 [9]: ./media/search-get-started-nodejs/rogerwilliamsschool.png
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0309_2016-->

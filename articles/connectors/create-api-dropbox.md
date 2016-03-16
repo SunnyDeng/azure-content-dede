@@ -15,13 +15,18 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na" 
-   ms.date="02/11/2016"
+   ms.date="03/02/2016"
    ms.author="mandia"/>
 
 # Erste Schritte mit der Dropbox-API 
-Verbinden Sie sich mit Dropbox, um Dateien zu verwalten, d. h. erstellen, abrufen usw.
+Verbinden Sie sich mit Dropbox, um Dateien zu verwalten, d. h. erstellen, abrufen usw. Die Dropbox-API kann in Folgendem verwendet werden:
 
-Die Dropbox-API kann von PowerApps Enterprise- und Logik-Apps verwendet werden.
+- Logik-Apps 
+- PowerApps
+
+> [AZURE.SELECTOR]
+- [Logik-Apps](../articles/connectors/create-api-dropbox.md)
+- [PowerApps Enterprise](../articles/power-apps/powerapps-create-api-dropbox.md)
 
 Dropbox ermöglicht Folgendes:
 
@@ -79,6 +84,7 @@ Nachdem Sie eine Verbindung hergestellt haben, geben Sie die Dropbox-Eigenschaft
 >[AZURE.TIP] Sie können dieselbe Dropbox-Verbindung in anderen Logik-Apps verwenden.
 
 ## Swagger-REST-API – Referenz
+Gilt für Version: 1.0.
 
 ### Datei erstellen    
 Lädt eine Datei in Dropbox hoch. ```POST: /datasets/default/files```
@@ -286,7 +292,7 @@ Löst einen Datenfluss aus, wenn in einem Dropbox-Ordner eine Datei geändert wi
 ## Nächste Schritte
 Nach Hinzufügen der Dropbox-API zu PowerApps Enterprise [erteilen Sie den Benutzern Berechtigungen](../power-apps/powerapps-manage-api-connection-user-access.md) zum Verwenden der API in ihren Apps.
 
-[Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md).
+[Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md)
 
 
 <!--References-->
@@ -298,4 +304,4 @@ Nach Hinzufügen der Dropbox-API zu PowerApps Enterprise [erteilen Sie den Benut
 [10]: ./media/create-api-dropbox/dropbox-create-app-page1.png
 [11]: ./media/create-api-dropbox/dropbox-create-app-page2.png
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -10,7 +10,7 @@
 
 <tags ms.service="active-directory" ms.workload="identity" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article"
 
-	ms.date="11/19/2015"
+	ms.date="02/26/2016"
 
 	ms.author="femila"/>
 
@@ -144,4 +144,4 @@ Die Gruppenrichtlinienvorlage wurde in Windows 10 umbenannt. Wenn Sie das Gruppe
 * [Benutzererfahrungen beim Verknüpfen von in die Domäne eingebundenen Windows 10-Geräten mit Azure AD](active-directory-azureadjoin-devices-group-policy.md)
 * [Einrichten von Azure AD Join](active-directory-azureadjoin-setup.md)
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

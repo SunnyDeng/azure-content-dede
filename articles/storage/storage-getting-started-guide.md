@@ -12,7 +12,7 @@
 	ms.workload="storage" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
-	ms.topic="article" 
+	ms.topic="get-started-article" 
 	ms.date="02/14/2016" 
 	ms.author="tamram"/>
 
@@ -47,7 +47,7 @@ Sobald das Konto eingerichtet ist, können Sie mithilfe eines der Azure-Schnells
 
 1. Starten Sie Visual Studio.
 2. Klicken Sie im Menü **Datei** auf **Neues Projekt**.
-3. Klicken Sie im Dialogfeld **Neues Projekt** auf **Installiert** > **Vorlagen** > **Visual C#** > **Cloud** > **Schnellstarts** > **Data Services**. a. Wählen Sie eine der folgenden Vorlagen aus: **Azure Storage: Blobs**, **Azure Storage: Dateien**, **Azure Storage: Warteschlangen** oder **Azure Storage: Tabellen**. b. Stellen Sie sicher, dass als Zielframework **.NET Framework 4.5** ausgewählt ist.
+3. Klicken Sie im Dialogfeld **Neues Projekt** auf **Installiert** > **Vorlagen** > **Visual C#** > **Cloud** > **Schnellstarts** > **Data Services**. a. Wählen Sie eine der folgenden Vorlagen aus: **Azure Storage: Blobs**, **Azure Storage: Dateien**, **Azure Storage: Warteschlangen** oder **Azure Storage: Tabellen**. b. Stellen Sie sicher, dass als Zielframework **.NET Framework 4.5** ausgewählt ist.
 	- 3\.c. Geben Sie einen Namen für das Projekt an, und erstellen Sie die neue Visual Studio-Projektmappe, wie hier zu sehen:
 	
 	![Azure-Schnellstarts][Image1]
@@ -77,7 +77,7 @@ Um dies auszuprobieren, erstellen wir nun eine einfache Azure Storage-Anwendung 
 
 1. Starten Sie Visual Studio.
 2. Klicken Sie im Menü **Datei** auf **Neues Projekt**.
-3. Klicken Sie im Dialogfeld **Neues Projekt** auf **Installiert** > **Vorlagen** > **Visual C#** > **Cloud** > **Schnellstarts** > **Data Services**. a. Wählen Sie eine der folgenden Vorlagen aus: **Azure Storage: Blobs**, **Azure Storage: Dateien**, **Azure Storage: Warteschlangen** oder **Azure Storage: Tabellen**. b. Stellen Sie sicher, dass als Zielframework **.NET Framework 4.5** ausgewählt ist. c. Geben Sie einen Namen für das Projekt an, und erstellen Sie die neue Visual Studio-Projektmappe, wie hier zu sehen:
+3. Klicken Sie im Dialogfeld **Neues Projekt** auf **Installiert** > **Vorlagen** > **Visual C#** > **Cloud** > **Schnellstarts** > **Data Services**. a. Wählen Sie eine der folgenden Vorlagen aus: **Azure Storage: Blobs**, **Azure Storage: Dateien**, **Azure Storage: Warteschlangen** oder **Azure Storage: Tabellen**. b. Stellen Sie sicher, dass als Zielframework **.NET Framework 4.5** ausgewählt ist. c. Geben Sie einen Namen für das Projekt an, und erstellen Sie die neue Visual Studio-Projektmappe, wie hier zu sehen:
 	
 	![Azure-Schnellstarts][Image1]
 
@@ -110,4 +110,4 @@ Weitere Informationen zu Azure Storage finden Sie in den folgenden Ressourcen:
 [Image1]: ./media/storage-getting-started-guide/QuickStart.png
  
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0309_2016-->

@@ -71,4 +71,4 @@ Eine ausführliche Anleitung zu Anforderungen und Konfigurationen finden Sie unt
 	- [Konfigurieren des Routings](expressroute-howto-routing-classic.md)
 	- [Verknüpfen eines VNet mit einer ExpressRoute-Verbindung](expressroute-howto-linkvnet-classic.md)
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0309_2016-->

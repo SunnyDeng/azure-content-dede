@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-ios"
 	ms.devlang="objective-c"
 	ms.topic="article"
-	ms.date="08/05/2015"
+	ms.date="02/29/2016"
 	ms.author="MehrdadMzfr" />
 
 #Versionshinweise
@@ -40,7 +40,7 @@
 
 ##2\.2.0 (21.05.2015)
 
--   Die Mobile Engagement-Geräte-ID für Geräte mit einer früheren Version als iOS 6 basiert jetzt auf einer während der Installation generierten GUID.
+-   Die Mobile Engagement-Geräte-ID für Geräte mit einer früheren Version als iOS 6 basiert jetzt auf einer während der Installation generierten GUID.
 
 ##2\.1.0 (24.04.2015)
 
@@ -58,4 +58,4 @@
 -   Verbesserungen der Sicherheit.
 -   SmartAd-Verfolgung entfernt.
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0302_2016-->

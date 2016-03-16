@@ -39,7 +39,7 @@ Elastic Scale unterstützt die folgenden .net Framework-Typen als Sharding-Schl�
 Shard-Zuordnungen können mit **Listen von Schlüsselwerten für einzelne Sharding-Schlüsselwerte** oder mit **Bereichen von Sharding-Schlüsselwerten** erstellt werden.
 
 ###Liste der Shard-Zuordnungen
-**Shards** enthalten **Shardlets**, und die Zuordnung von Shardlets zu Shards wird von einer "Shard-Karte" verwaltet. Eine **Listen-Shard-Karte** ist eine Zuordnung zwischen den Schlüsselwerten, mit der die Shardlets und die Datenbanken identifiziert werden, die als Shards dienen. **Listenzuordnungen** sind explizit. Es können andere Schlüsselwerte derselben Datenbank zugeordnet werden. Schlüssel 1 kann z. B. Datenbank A zugeordnet sein, während die Schlüsselwerte 3 und 6 auf Datenbank B verweisen.
+**Shards** enthalten **Shardlets**, und die Zuordnung von Shardlets zu Shards wird von einer "Shard-Karte" verwaltet. Eine **Listen-Shard-Karte** ist eine Zuordnung zwischen den Schlüsselwerten, mit der die Shardlets und die Datenbanken identifiziert werden, die als Shards dienen. **Listenzuordnungen** sind explizit. Es können andere Schlüsselwerte derselben Datenbank zugeordnet werden. Schlüssel 1 kann z. B. Datenbank A zugeordnet sein, während die Schlüsselwerte 3 und 6 auf Datenbank B verweisen.
 
 | Schlüssel | Shard-Speicherort |
 |-----|----------------|
@@ -53,7 +53,7 @@ Shard-Zuordnungen können mit **Listen von Schlüsselwerten für einzelne Shardi
 ### Bereichs-Shard-Zuordnungen 
 In einer **Bereichs-Shard-Zuordnung** wird der Schlüsselbereich durch ein Paar **[niedriger Wert, hoher Wert)** beschrieben, wobei der *niedrige Wert* den minimalen Schlüssel in dem Bereich und der *hohe Wert* den ersten Wert darstellt, der höher ist als die Werte in jenem Bereich.
 
-**[0, 100)** enthält z. B. alle ganzen Zahlen größer oder gleich 0 und kleiner 100. Mehrere Bereiche können auf dieselbe Datenbank verweisen, und unzusammenhängende Bereiche werden unterstützt (z. B. [100,200) und [400,600), die im folgenden Beispiel beide auf Database\_C verweisen).
+**[0, 100)** enthält z. B. alle ganzen Zahlen größer oder gleich 0 und kleiner 100. Mehrere Bereiche können auf dieselbe Datenbank verweisen, und unzusammenhängende Bereiche werden unterstützt (z. B. [100,200) und [400,600), die im folgenden Beispiel beide auf Database\_C verweisen).
 
 | Schlüssel | Shard-Speicherort |
 |-----------|----------------|
@@ -79,7 +79,7 @@ In der Clientbibliothek stellt der Shardzuordnungs-Manager eine Auflistung von S
 
 Ein **ShardMapManager**-Objekt wird mit einem [Factorymuster](https://msdn.microsoft.com/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanagerfactory.aspx) erstellt. Die **[ShardMapManagerFactory.GetSqlShardMapManager](https://msdn.microsoft.com/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanagerfactory.getsqlshardmapmanager.aspx)**-Methode übernimmt die Anmeldeinformationen (einschließlich Server- und Datenbankname mit der GSM) in Form eines **ConnectionString** und gibt die Instanz eines **ShardMapManager** zurück.
 
-Das **ShardMapManager**-Element sollte nur einmal pro App-Domäne innerhalb des Initialisierungscodes für eine Anwendung instanziiert werden. Ein **ShardMapManager**-Element kann eine beliebige Anzahl von Shard-Zuordnungen enthalten. Während eine einzelne Shardzuordnung für viele Anwendungen ausreichend sein kann, werden in einigen Fällen unterschiedliche Sätze von Datenbanken für ein anderes Schema oder einen eindeutigen Zweck verwendet. In diesen Fällen sind möglicherweise mehrfache Shardzuordnungen vorzuziehen.
+**Hinweis:** Das **ShardMapManager**-Element sollte nur einmal pro Anwendungsdomäne innerhalb des Initialisierungscodes für eine Anwendung instanziiert werden. Das Erstellen zusätzlicher Instanzen von ShardMapManager in derselben Anwendungsdomäne führt zu mehr Arbeitsspeicher- und CPU-Auslastung der Anwendung. Ein **ShardMapManager**-Element kann eine beliebige Anzahl von Shard-Zuordnungen enthalten. Während eine einzelne Shardzuordnung für viele Anwendungen ausreichend sein kann, werden in einigen Fällen unterschiedliche Sätze von Datenbanken für ein anderes Schema oder einen eindeutigen Zweck verwendet. In diesen Fällen sind möglicherweise mehrfache Shardzuordnungen vorzuziehen.
 
 In diesem Code versucht eine Anwendung, ein bestehendes **ShardMapManager**-Element mit der [TryGetSqlShardMapManager](https://msdn.microsoft.com/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanagerfactory.trygetsqlshardmapmanager.aspx)-Methode zu öffnen. Wenn Objekte, die einen globalen **ShardMapManager** (GSM) darstellen, in der Datenbank noch nicht vorhanden sind, erstellt die Clientbibliothek sie dort mithilfe der [CreateSqlShardMapManager](https://msdn.microsoft.com/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanagerfactory.createsqlshardmapmanager.aspx)-Methode.
 
@@ -251,7 +251,7 @@ Diese Methoden arbeiten zusammen als Bausteine für die Änderung der Gesamtvert
     
     Der Server und die Datenbank, die das Ziel-Shard repräsentieren, müssen bereits für diese auszuführenden Vorgänge vorhanden sein. Diese Methoden haben keine Auswirkungen auf die Datenbanken selbst, lediglich auf die Metadaten in der Shard Map.
 
-* Verwenden Sie zum Erstellen oder Entfernen von Punkten oder Bereichen, die den Shards zugeordnet sind, **[CreateRangeMapping](https://msdn.microsoft.com/library/azure/dn841993.aspx)**, **[DeleteMapping](https://msdn.microsoft.com/library/azure/dn824200.aspx)** aus der [RangeShardMapping](https://msdn.microsoft.com/library/azure/dn807318.aspx)-Klasse und **[CreatePointMapping](https://msdn.microsoft.com/library/azure/dn807218.aspx)** aus [ListShardMap](https://msdn.microsoft.com/library/azure/dn842123.aspx).
+* Verwenden Sie zum Erstellen oder Entfernen von Punkten oder Bereichen, die den Shards zugeordnet sind, **[CreateRangeMapping](https://msdn.microsoft.com/library/azure/dn841993.aspx)** und **[DeleteMapping](https://msdn.microsoft.com/library/azure/dn824200.aspx)** aus der [RangeShardMapping](https://msdn.microsoft.com/library/azure/dn807318.aspx)-Klasse und **[CreatePointMapping](https://msdn.microsoft.com/library/azure/dn807218.aspx)** aus [ListShardMap](https://msdn.microsoft.com/library/azure/dn842123.aspx).
     
     Demselben Shard können viele verschiedene Punkte oder Bereiche zugeordnet werden. Diese Methoden wirken sich nur auf Metadaten aus – sie haben keine Auswirkungen auf Daten, die bereits in Shards vorhanden sein können. Wenn Daten aus der Datenbank entfernt werden müssen, damit diese mit **DeleteMapping**-Vorgängen konsistent ist, müssen Sie diese Vorgänge separat (aber im Kontext dieser Methoden) ausführen.
 
@@ -259,7 +259,7 @@ Diese Methoden arbeiten zusammen als Bausteine für die Änderung der Gesamtvert
 
     Beachten Sie, dass Aufteilungs- und Zusammenführungsvorgänge **nicht den Shard ändern, dem Schlüsselwerte zugeordnet sind**. Eine Aufteilung teilt einen vorhandenen Bereich in zwei Teile, wobei beide jedoch demselben Shard zugeordnet bleiben. Bei einer Zusammenführung werden zwei benachbarte Bereiche, die bereits demselben Shard zugeordnet sind, zu einem einzigen Bereich zusammengefügt. Das Verschieben von Punkten oder Bereichen zwischen den Shards selbst muss mit **UpdateMapping** in Verbindung mit der eigentlichen Datenverschiebung koordiniert werden. Sie können den **Split-Merge**-Dienst verwenden, der Teil der Tools für elastische Datenbanken ist, um Änderungen an Shard-Zuordnungen bei Datenverschiebungen zu koordinieren, sofern eine Verschiebung erforderlich ist.
 
-* Verwenden Sie zu erneuten Zuordnen einzelner Punkte oder Bereiche zu unterschiedlichen Shards (oder zum Verschieben) **[UpdateMapping](https://msdn.microsoft.com/library/azure/dn824207.aspx)**.
+* Um einzelne Punkte oder Bereiche erneut unterschiedlichen Shards zuzuordnen (oder sie zu verschieben), verwenden Sie **[UpdateMapping](https://msdn.microsoft.com/library/azure/dn824207.aspx)**.
 
     Da Daten unter Umständen aus einem Shard in einen anderen verschoben werden, damit sie mit **UpdateMapping**-Vorgängen konsistent sind, müssen Sie diese Verschiebung separat (aber im Kontext dieser Methoden) ausführen.
 
@@ -267,7 +267,7 @@ Diese Methoden arbeiten zusammen als Bausteine für die Änderung der Gesamtvert
 
     Bestimmte Vorgänge sind bei Shard-Zuordnungen nur dann zulässig, wenn für eine Zuordnung der Zustand „offline“ gilt, einschließlich **UpdateMapping** und **DeleteMapping**. Wenn eine Zuordnung offline ist, gibt eine datenabhängige Anforderung auf Grundlage eines Schlüssels, der in dieser Zuordnung enthalten ist, einen Fehler zurück. Wenn darüber hinaus ein Bereich zuerst offline geschaltet wird, werden alle Verbindungen mit dem betroffenen Shard automatisch abgebrochen. So soll verhindert werden, dass inkonsistente oder unvollständige Ergebnisse bei Abfragen gegen jene Bereiche auftreten, die geändert werden.
 
-Zuordnungen sind in .NET unveränderliche Objekte. Alle oben genannten Methoden zum Ändern von Zuordnungen machen auch alle Verweise auf diese in Ihrem Code ungültig. Zur einfacheren Durchführung von Vorgangsabfolgen, die den Zustand einer Zuordnung ändern, geben alle Methoden, die eine Zuordnung ändern, einen neuen Zuordnungsverweis zurück, sodass die Vorgänge verkettet werden können. Um z. B. eine vorhandene Zuordnung in "shardmap sm" mit dem Schlüssel 25 zu löschen, können Sie Folgendes ausführen:
+Zuordnungen sind in .NET unveränderliche Objekte. Alle oben genannten Methoden zum Ändern von Zuordnungen machen auch alle Verweise auf diese in Ihrem Code ungültig. Zur einfacheren Durchführung von Vorgangsabfolgen, die den Zustand einer Zuordnung ändern, geben alle Methoden, die eine Zuordnung ändern, einen neuen Zuordnungsverweis zurück, sodass die Vorgänge verkettet werden können. Um z. B. eine vorhandene Zuordnung in "shardmap sm" mit dem Schlüssel 25 zu löschen, können Sie Folgendes ausführen:
 
         sm.DeleteMapping(sm.MarkMappingOffline(sm.GetMappingForKey(25)));
 
@@ -282,4 +282,4 @@ Bei Szenarios, die eine Datenverschiebung erforderlich machen, wird jedoch das S
 [AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
  
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -4,7 +4,7 @@
 	services="media-services" 
 	documentationCenter="" 
 	authors="Juliako" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor=""/>
 
 <tags 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/02/2016" 
+	ms.date="02/25/2016" 
 	ms.author="juliako"/>
 
 #Azure Media Services-Konzepte 
@@ -24,7 +24,7 @@ Dieses Thema bietet eine Übersicht über die wichtigsten Konzepte von Media Ser
 
 ###Objekte
 
-Ein [Medienobjekt](https://msdn.microsoft.com/library/azure/hh974277.aspx) enthält digitale Dateien (z. B. Video, Audio, Bilder, Sammlungen von Miniaturansichten, Textspuren und Untertiteldateien) sowie die Metadaten zu diesen Dateien. Nachdem die digitalen Dateien in ein Medienobjekt geladen wurden, können Sie in den Codierungs- und Streaming-Workflows der Media Services verwendet werden.
+Ein [Medienobjekt](https://msdn.microsoft.com/library/azure/hh974277.aspx) enthält digitale Dateien (z. B. Video, Audio, Bilder, Sammlungen von Miniaturansichten, Textspuren und Untertiteldateien) sowie die Metadaten zu diesen Dateien. Nachdem die digitalen Dateien in ein Medienobjekt geladen wurden, können Sie in den Codierungs- und Streaming-Workflows der Media Services verwendet werden.
 
 Ein Medienobjekt wird einem BLOB-Container im Azure Storage-Konto zugeordnet, und die im Medienobjekt enthaltenen Dateien werden als BLOBs in diesem Container gespeichert.
 
@@ -52,7 +52,7 @@ Wenn Sie planen, eine MP4-Datei über progressives Herunterladen zu übermitteln
 
 Um ein speicherverschlüsseltes Medienobjekt zu übermitteln, müssen Sie die Übermittlungsrichtlinie des Medienobjekts konfigurieren und Media Services so mitteilen, wie die Inhalte bereitgestellt werden sollen. Bevor das Medienobjekt gestreamt werden kann, wird die Speicherverschlüsselung vom Streamingserver entfernt und der Inhalt mithilfe der angegebenen Übermittlungsrichtlinie (AES, PlayReady oder unverschlüsselt) gestreamt.
 
-**CommonEncryptionProtected** - Verwenden Sie diese Option, wenn Sie Inhalte mit Common Encryption oder PlayReady-DRM (z. B. mit PlayReady-DRM geschütztes Smooth Streaming) verschlüsseln (oder bereits verschlüsselte Inhalte hochladen) möchten.
+**CommonEncryptionProtected** - Verwenden Sie diese Option, wenn Sie Inhalte mit Common Encryption oder PlayReady-DRM (z. B. mit PlayReady-DRM geschütztes Smooth Streaming) verschlüsseln (oder bereits verschlüsselte Inhalte hochladen) möchten.
 
 **EnvelopeEncryptionProtected** – Verwenden Sie diese Option, wenn Sie HTTP Live Streaming (HLS) schützen (oder bereits geschütztes HLS hochladen) möchten, das mit dem Advanced Encryption Standard (AES) verschlüsselt ist. Beachten Sie, dass beim Hochladen von bereits mit AES verschlüsseltem HLS die Verschlüsselung mithilfe von Transform Manager erfolgt sein muss.
 
@@ -71,13 +71,13 @@ Ein BLOB-Container dient zur Gruppierung eines Satzes von BLOBs. BLOB-Container 
 
 [Locator](https://msdn.microsoft.com/library/azure/hh974308.aspx) bieten einen Einstiegspunkt für den Zugriff auf die in einem Medienobjekt enthaltenen Dateien. Anhand einer Zugriffsrichtlinie werden die Berechtigungen eines Clients und die Dauer definiert, für die der Client auf eine bestimmte Ressource zugreifen kann. Locator können eine n:1-Beziehung mit einer Zugriffsrichtlinie aufweisen, wobei verschiedene Locator verschiedenen Clients verschiedene Startzeiten und Verbindungstypen bereitstellen können, wobei alle dieselben Berechtigungen und Einstellungen für die Dauer verwenden; aufgrund einer Einschränkung der Richtlinie für den gemeinsamen Zugriff, die von Azure Storage Services festgelegt wird, können jedoch nicht mehr als fünf eindeutige Locator mit einem bestimmten Medienobjekt gleichzeitig verknüpft sein.
 
-Media Services unterstützt zwei Locator-Typen: OnDemandOrigin-Locator, die zum Streamen von Medien (z. B. MPEG DASH, HLS oder Smooth Streaming) oder für den progressiven Download von Medien verwendet werden, und SAS-URL-Locator, die zum Hochladen oder Herunterladen von Mediendateien auf/von Azure Storage verwendet werden.
+Media Services unterstützt zwei Locator-Typen: OnDemandOrigin-Locator, die zum Streamen von Medien (z. B. MPEG DASH, HLS oder Smooth Streaming) oder für den progressiven Download von Medien verwendet werden, und SAS-URL-Locator, die zum Hochladen oder Herunterladen von Mediendateien auf/von Azure Storage verwendet werden.
 
 Beachten Sie, dass die Berechtigung zum Auflisten (AccessPermissions.List) beim Erstellen eines OrDemandOrigin-Locators nicht verwendet werden sollte.
 
 ###Speicherkonto
 
-Alle Zugriffe auf den Azure-Speicher erfolgen über ein Speicherkonto. Ein Media Service-Konto kann mit einem oder mehreren Speicherkonten verknüpft werden. Ein Konto kann eine unbegrenzte Anzahl von Containern enthalten, solange die Gesamtgröße unter 500 TB pro Speicherkonto bleibt. Media Services enthält Tools auf SDK-Ebene, mit denen Sie mehrere Speicherkonten verwalten und bei der Verteilung Ihrer Medienobjekte einen Lastenausgleich durchführen können. Beim Hochladen der Objekte in diese Konten kann dieser Ausgleich basierend auf Kennzahlen oder anhand einer zufälligen Verteilung erfolgen. Weitere Informationen finden Sie unter [Arbeiten mit Azure Storage](https://msdn.microsoft.com/library/azure/dn767951.aspx).
+Alle Zugriffe auf den Azure-Speicher erfolgen über ein Speicherkonto. Ein Media Service-Konto kann mit einem oder mehreren Speicherkonten verknüpft werden. Ein Konto kann eine unbegrenzte Anzahl von Containern enthalten, solange die Gesamtgröße unter 500 TB pro Speicherkonto bleibt. Media Services enthält Tools auf SDK-Ebene, mit denen Sie mehrere Speicherkonten verwalten und bei der Verteilung Ihrer Medienobjekte einen Lastenausgleich durchführen können. Beim Hochladen der Objekte in diese Konten kann dieser Ausgleich basierend auf Kennzahlen oder anhand einer zufälligen Verteilung erfolgen. Weitere Informationen finden Sie unter [Arbeiten mit Azure Storage](https://msdn.microsoft.com/library/azure/dn767951.aspx).
 
 ##Aufträge und Aufgaben
 
@@ -85,19 +85,23 @@ Ein [Auftrag ](https://msdn.microsoft.com/library/azure/hh974289.aspx) wird norm
 
 Ein Auftrag enthält Metadaten zur auszuführenden Verarbeitung. Jeder Auftrag enthält eine oder mehrere [Aufgaben](https://msdn.microsoft.com/library/azure/hh974286.aspx). Diese geben eine unteilbare Verarbeitungsaufgabe, die zugehörigen Eingabe- und Ausgabemedienobjekte, einen Medienprozessor und die zugehörigen Einstellungen an. Aufgaben innerhalb eines Auftrags können verkettet werden, wobei das Ausgabemedienobjekt als Eingabemedienobjekt für die nächste Aufgabe dient. Auf diese Weise kann ein Auftrag die gesamten Verarbeitungsschritte für eine Medienpräsentation umfassen.
 
-##<a id="encoding"></a>Codierung\\Paketerstellung
+##<a id="encoding"></a>Codieren 
 
-###Codieren
+Azure Media Services bietet verschiedene Optionen für die Codierung von Medien in der Cloud.
 
-Um digitale Videos über das Internet zu übermitteln, müssen Sie die Medien komprimieren. Digitale Videodateien sind sehr umfangreich und möglicherweise zu groß, um sie über das Internet zu übermitteln oder auf den Geräten Ihrer Kunden ordnungsgemäß wiederzugeben. Benutzer sehen Sie sich Videos auf einer Vielzahl von Geräten an, beispielsweise auf Fernsehern mit Set-Top-Boxen, Desktop-PCs, Tablet und Smartphones. Jedes dieser Geräte besitzt unterschiedliche Anforderungen an Bandbreite und Komprimierung. Codierung ist das Verfahren zur Komprimierung von Video- und Audiodaten mithilfe von Komprimierungs- und Dekomprimierungsprogrammen oder Codecs.
+Bei Verwendung von Media Services ist es wichtig, den Unterschied zwischen Codecs und Dateiformaten zu kennen. Bei Codecs handelt es sich um die Software, die die Algorithmen für die Komprimierung/Dekomprimierung implementiert. Dateiformate dagegen sind die Container, die das komprimierte Video enthalten.
 
-Bei der Transcodierung wird ein bereits codiertes Video erneut in einem anderen Codierungsformat codiert. Da Videos auf den meisten Kameras in gewissem Maß codiert werden, handelt es sich bei der Codierungsarbeit in Azure Media Services streng genommen um eine Transcodierung.
+Media Services bietet dynamische Paketerstellung zum Übermitteln Ihrer MP4-Dateien mit adaptiver Bitrate oder Smooth Streaming-codierten Inhalte in Streamingformaten, die von Media Services unterstützt werden (MPEG DASH, HLS, Smooth Streaming, HDS), ohne dass Sie diese Streamingformate erneut verpacken müssen.
 
-###Codecs und Dateiformate 
+Um die [dynamische Paketerstellung](media-services-dynamic-packaging-overview.md) nutzen zu können, müssen Sie folgende Schritte ausführen:
 
-Codecs verfügen über zwei Komponenten: eine zum Komprimieren digitaler Mediendateien für die Übertragung und die andere zum Dekomprimieren digitaler Mediendateien für die Wiedergabe. Für die Komprimierung und Dekomprimierung von Audiodaten existieren Audiocodecs, und für Videodaten entsprechend Videocodecs. Codecs können entweder verlustfreie oder verlustbehaftete Komprimierung verwenden. Verlustfreie Codecs erhalten bei der Komprimierung alle Informationen. Das Ergebnis der Dekomprimierung ist eine Datei, die identisch mit dem Eingabemedium ist. Verlustfreie Codecs eignen sich daher gut für Archivierung und Speicherung. Verlustbehaftete Codecs verlieren beim Komprimieren einen Teil der Informationen, produzieren kleinere Dateien (im Vergleich zum Original) auf Kosten der Videoqualität und eignen sich gut zum Streaming über das Internet. Die zwei Hauptcodecs, die vom Azure Media Encoder zum Codieren verwendet werden, sind H.264 und VC-1. Andere Codecs sind möglicherweise über unser Partner-Ökosystem von Encodern verfügbar
+- Codieren Ihrer Zwischendatei (Quelle) in einen Satz von MP4-Dateien oder Smooth Streaming-Dateien mit adaptiver Bitrate (die Codierungsschritte werden weiter unten in diesem Lernprogramm beschrieben)
+- Abrufen von mindestens einer On-Demand-Streamingeinheit für den Streamingendpunkt, von dem aus Sie die Bereitstellung Ihrer Inhalte planen. Weitere Informationen finden Sie unter [Skalieren von reservierten Einheiten für bedarfsgesteuertes Streaming](media-services-manage-origins.md#scale_streaming_endpoints/).
 
-###Media Services-Encoder
+Media Services unterstützt die folgenden On-Demand-Encoder, die in diesem Artikel beschrieben werden:
+
+- [Media Encoder Standard](media-services-encode-asset.md#media-encoder-standard)
+- [Media Encoder Premium Workflow](media-services-encode-asset.md#media-encoder-premium-workflow)
 
 Informationen zu unterstützten Encodern finden Sie unter [Encoder](media-services-encode-asset.md).
 
@@ -180,7 +184,7 @@ Eine Abrechnung erfolgt nur für ausgeführte StreamingEndpoints.
 
 ###Übermittlungsrichtlinie für Medienobjekte
 
-Einer der Schritte im Workflow zur Inhaltsübermittlung in Media Services ist das Konfigurieren von [Übermittlungsrichtlinien für Medienobjekte](https://msdn.microsoft.com/library/azure/dn799055.aspx), die gestreamt werden sollen. Anhand der Übermittlungsrichtlinie für Medienobjekte kann Media Services ermitteln, wie das Medienobjekt übermittelt werden soll, also mit welchem Streamingprotokoll das Medienobjekt dynamisch verpackt werden soll (z. B. MPEG-DASH, HLS, Smooth Streaming oder alle) und ob und wie das Medienobjekt ggf. dynamisch verschlüsselt werden soll (Umschlag- oder allgemeine Verschlüsselung).
+Einer der Schritte im Workflow zur Inhaltsübermittlung in Media Services ist das Konfigurieren von [Übermittlungsrichtlinien für Medienobjekte](https://msdn.microsoft.com/library/azure/dn799055.aspx), die gestreamt werden sollen. Anhand der Übermittlungsrichtlinie für Medienobjekte kann Media Services ermitteln, wie das Medienobjekt übermittelt werden soll, also mit welchem Streamingprotokoll das Medienobjekt dynamisch verpackt werden soll (z. B. MPEG-DASH, HLS, Smooth Streaming oder alle) und ob und wie das Medienobjekt ggf. dynamisch verschlüsselt werden soll (Umschlag- oder allgemeine Verschlüsselung).
 
 Damit ein speicherverschlüsseltes Medienobjekt gestreamt werden kann, entfernt der Streamingserver die Speicherverschlüsselung und streamt den Inhalt anhand der angegebenen Übermittlungsrichtlinie. Wenn Sie ein Medienobjekt für die Übermittlung beispielsweise mit einem Schlüssel für die AES-Verschlüsselung (Advanced Encryption Standard) verschlüsseln möchten, legen Sie den Richtlinientyp auf DynamicEnvelopeEncryption fest. Um die Speicherverschlüsselung zu entfernen und das Medienobjekt unverschlüsselt zu streamen, legen Sie den Richtlinientyp auf NoDynamicEncryption fest.
 
@@ -248,4 +252,4 @@ In der folgenden Liste werden verschiedene Streamingformate beschrieben und Beis
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0302_2016-->

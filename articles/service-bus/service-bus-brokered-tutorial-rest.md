@@ -19,7 +19,7 @@
 
 In diesem Lernprogramm wird gezeigt, wie Sie eine einfache REST-basierte Azure Service Bus-Warteschlange und ein dazugehöriges Thema bzw. einen Abonnementdienst erstellen.
 
-## Schritt 1: Erstellen eines Namespace
+## Schritt 1: Erstellen eines Namespace
 
 Der erste Schritt umfasst die Einrichtung des Dienstnamespace und das Abrufen eines SAS-Schlüssels ([Shared Access Signature](service-bus-sas-overview.md)). Ein Dienstnamespace stellt eine Anwendungsgrenze für jede Anwendung, die über Service Bus zur Verfügung steht. Das System generiert automatisch einen SAS-Schlüssel, wenn ein Dienstnamespace erstellt wird. Dienstnamespace und SAS-Schlüssel bilden gemeinsam die Anmeldeinformationen, mit denen sich der Servicebus gegenüber der Anwendung authentifiziert.
 
@@ -45,7 +45,7 @@ Der Code in diesem Lernprogramm erfüllt die folgenden Aufgaben:
 
 - Erstellen eines Themas und eines Abonnements für das Thema und Senden und Lesen der Nachricht aus dem Abonnement
 
-- Abrufen aller Warteschlangen-, Themen- und Abonnementinformationen, z. B. Abonnementregeln, aus dem Service Bus
+- Abrufen aller Warteschlangen-, Themen- und Abonnementinformationen, z. B. Abonnementregeln, aus dem Service Bus
 
 - Löschen der Warteschlangen-, Themen- und Abonnementressourcen
 
@@ -223,7 +223,7 @@ In diesem Schritt fügen Sie eine Methode hinzu, in der der HTTP POST-Befehl im 
 	}
 	```
 
-1. Standardmäßige Eigenschaften von Brokernachrichten werden in einem `BrokerProperties`-HTTP-Header angeordnet. Die Brokereigenschaften müssen im JSON-Format serialisiert werden. Fügen Sie den folgenden Code wie im vorherigen Beispiel direkt vor dem `webClient.UploadData()`-Aufruf hinzu, um einen **TimeToLive**-Wert von 30 Sekunden anzugeben und der Nachricht die Nachrichtenbezeichnung „M1“ hinzuzufügen:
+1. Standardmäßige Eigenschaften von Brokernachrichten werden in einem `BrokerProperties`-HTTP-Header angeordnet. Die Brokereigenschaften müssen im JSON-Format serialisiert werden. Fügen Sie den folgenden Code wie im vorherigen Beispiel direkt vor dem `webClient.UploadData()`-Aufruf hinzu, um einen **TimeToLive**-Wert von 30 Sekunden anzugeben und der Nachricht die Nachrichtenbezeichnung „M1“ hinzuzufügen:
 
 	```
 	// Add brokered message properties "TimeToLive" and "Label"
@@ -256,7 +256,7 @@ private static string ReceiveAndDeleteMessage(string resourceName)
     WebClient webClient = new WebClient();
     webClient.Headers[HttpRequestHeader.Authorization] = token;
 
-    byte[] response = webClient.UploadData(fullAddress, "DELETE", newbyte[0]);
+    byte[] response = webClient.UploadData(fullAddress, "DELETE", new byte[0]);
     string responseStr = Encoding.UTF8.GetString(response);
 
     Console.WriteLine(responseStr);
@@ -627,11 +627,11 @@ namespace Microsoft.ServiceBus.Samples
 
 Weitere Informationen finden Sie in den folgenden Artikeln:
 
-- [Übersicht über Service Bus-Messaging](service-bus-messaging-overview.md)
+- [Übersicht über Service Bus-Messaging](service-bus-messaging-overview.md)
 - [Azure Service Bus – Grundlagen](service-bus-fundamentals-hybrid-solutions.md)
 - [REST-Lernprogramm zu Service Bus Relay](service-bus-relay-rest-tutorial.md)
 
 [klassische Azure-Portal]: http://manage.windowsazure.com
 [klassischen Azure-Portals]: http://manage.windowsazure.com
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0309_2016-->

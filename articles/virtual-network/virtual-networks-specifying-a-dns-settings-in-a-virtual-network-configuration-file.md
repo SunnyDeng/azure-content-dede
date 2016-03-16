@@ -7,7 +7,7 @@
    manager="carmonm"
    editor="tysonn" 
    tags="azure-service-management" />
-<tags 
+<tags  
    ms.service="virtual-network"
    ms.devlang="na"
    ms.topic="article"
@@ -15,6 +15,7 @@
    ms.workload="infrastructure-services"
    ms.date="02/23/2016"
    ms.author="telmos" />
+
 
 # Angeben von DNS-Einstellungen in der Konfigurationsdatei eines virtuellen Netzwerks
 
@@ -50,8 +51,8 @@ Die Netzwerkkonfigurationsdatei kann die folgenden Elemente enthalten. Der Titel
 
 ## Nächste Schritte
 
-- Informationen zu [Konfigurationsschema für Azure Virtual Network](http://go.microsoft.com/fwlink/?LinkId=248093)
+- Informationen zum [Konfigurationsschema für Azure Virtual Network](http://go.microsoft.com/fwlink/?LinkId=248093)
 - Informationen zu [Azure-Dienstkonfigurationsschemas](https://msdn.microsoft.com/library/windowsazure/ee758710)
-- Informationen zum [Konfigurieren eines virtuellen Netzwerks mithilfe einer Netzwerkkonfigurationsdatei](virtual-networks-using-network-configuration-file.md)
+- [Konfigurieren eines virtuellen Netzwerks mithilfe einer Netzwerkkonfigurationsdatei](virtual-networks-using-network-configuration-file.md)
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

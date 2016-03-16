@@ -33,18 +33,18 @@ Zur Verwendung des POP3-Connectors müssen Sie zunächst eine Instanz der POP3-C
 3.	Konfigurieren Sie den POP3-Connector wie folgt:
 
 	![][1]
-	– **Standort** – Wählen Sie den geografischen Standort, an dem der Connector bereitgestellt werden soll
-	– **Abonnement** – Wählen Sie ein Abonnement, in dem dieser Connector erstellt werden soll
-	– **Ressourcengruppe** – Wählen oder erstellen Sie eine Ressourcengruppe, in der sich der Connector befinden soll
-	– **Webhostingplan** – Wählen Sie einen Webhostingplan aus oder erstellen Sie einen
-	– **Tarif** – Wählen Sie einen Tarif für den Connector aus
-	– **Name** – Geben Sie Ihrem POP3-Connector einen Namen
-	– **Paketeinstellungen**
-		– **Benutzername** Geben Sie den Benutzernamen zur Verbindung mit dem POP3-Server an
-		– **Kennwort** Geben Sie das Kennwort zur Verbindung mit dem POP3-Server an
-		– **Serveradresse** Geben Sie den POP3-Severnamen oder die IP-Adresse an
-		– **Serverport** Geben Sie die POP3-Serverportnummer an
-		– **SSL aktivieren** Geben Sie "true" ein, um POP3 über einen sicheren SSL-/TLS-Kanal zu verwenden
+	- **Standort** – Wählen Sie den geografischen Standort, an dem der Connector bereitgestellt werden soll
+	- **Abonnement** – Wählen Sie ein Abonnement, in dem dieser Connector erstellt werden soll
+	- **Ressourcengruppe** – Wählen oder erstellen Sie eine Ressourcengruppe, in der sich der Connector befinden soll
+	- **Webhostingplan** – Wählen Sie einen Webhostingplan aus oder erstellen Sie einen
+	- **Tarif** – Wählen Sie einen Tarif für den Connector aus
+	- **Name** – Geben Sie Ihrem POP3-Connector einen Namen
+	- **Paketeinstellungen**
+		- **Benutzername** Geben Sie den Benutzernamen zur Verbindung mit dem POP3-Server an
+		- **Kennwort** Geben Sie das Kennwort zur Verbindung mit dem POP3-Server an
+		- **Serveradresse** Geben Sie den POP3-Severnamen oder die IP-Adresse an
+		- **Serverport** Geben Sie die POP3-Serverportnummer an
+		- **SSL aktivieren** Geben Sie "true" ein, um POP3 über einen sicheren SSL-/TLS-Kanal zu verwenden
 4.	Klicken Sie auf "Erstellen". Ein neuer POP3-Connector wird erstellt.
 5.	Sobald die API-App-Instanz erstellt wurde, können Sie in derselben Ressourcengruppe eine Logik-App zur Verwendung des POP3-Connectors erstellen.
 

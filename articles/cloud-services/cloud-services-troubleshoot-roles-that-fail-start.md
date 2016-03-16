@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="tbd"
-   ms.date="01/20/2016"
+   ms.date="02/25/2016"
    ms.author="daleche" />
 
 # Problembehandlung bei Clouddienstrollen, die nicht gestartet werden
@@ -69,9 +69,9 @@ Nachdem der Dienst neu bereitgestellt wurde, sehen Sie eine Fehlermeldung mit de
 
 Sie können Remotedesktop verwenden, um remote auf die Rolle zuzugreifen und vollständige Fehlerinformationen anzuzeigen. Gehen Sie wie folgt vor, um Fehler mithilfe von Remotedesktop anzuzeigen:
 
-1. Stellen Sie sicher, dass Azure SDK 1.3 oder höher installiert ist.
+1. Stellen Sie sicher, dass Azure SDK 1.3 oder höher installiert ist.
 
-2. Wählen Sie während der Bereitstellung der Projektmappe per Visual Studio die Option „Remotedesktopverbindungen konfigurieren…“. Weitere Informationen zum Konfigurieren der Remotedesktopverbindung finden Sie unter [Using Remote Desktop with Azure Roles](https://msdn.microsoft.com/library/gg443832.aspx) (Verwenden von Remotedesktop mit Azure-Rollen).
+2. Wählen Sie während der Bereitstellung der Projektmappe per Visual Studio die Option „Remotedesktopverbindungen konfigurieren…“. Weitere Informationen zum Konfigurieren der Remotedesktopverbindung finden Sie unter [Verwenden von Remotedesktop mit Azure-Rollen](../vs-azure-tools-remote-desktop-roles.md).
 
 3. Wenn die Instanz im klassischen Microsoft Azure-Portal den Status **Bereit** zeigt, klicken Sie auf eine der Rolleninstanzen.
 
@@ -105,7 +105,7 @@ Beispiel:
 
 Sie können den Microsoft Azure-Serveremulator verwenden, um Probleme mit fehlenden Abhängigkeiten sowie web.config-Fehler zu diagnostizieren und zu beheben.
 
-Bei dieser Diagnosemethode erzielen Sie die besten Ergebnisse, wenn Sie einen physischen oder virtuellen Computer mit einer neuen Windows-Installation verwenden. Verwenden Sie Windows Server 2008 R2 x64, um die Azure-Umgebung möglichst optimal zu simulieren.
+Bei dieser Diagnosemethode erzielen Sie die besten Ergebnisse, wenn Sie einen physischen oder virtuellen Computer mit einer neuen Windows-Installation verwenden. Verwenden Sie Windows Server 2008 R2 x64, um die Azure-Umgebung möglichst optimal zu simulieren.
 
 1. Installieren Sie die eigenständige Version des [Azure SDK](https://azure.microsoft.com/downloads/).
 
@@ -123,11 +123,11 @@ Bei dieser Diagnosemethode erzielen Sie die besten Ergebnisse, wenn Sie einen ph
 
 ## Diagnostizieren von Problemen mit IntelliTrace
 
-Für Worker- und Webrollen, die .NET Framework 4 verwenden, können Sie [IntelliTrace](https://msdn.microsoft.com/library/dd264915.aspx) nutzen. Diese Funktion steht in [Microsoft Visual Studio Ultimate](https://www.visualstudio.com/products/visual-studio-ultimate-with-MSDN-vs) zur Verfügung.
+Für Worker- und Webrollen, die .NET Framework 4 verwenden, können Sie [IntelliTrace](https://msdn.microsoft.com/library/dd264915.aspx) nutzen. Diese Funktion steht in [Microsoft Visual Studio Ultimate](https://www.visualstudio.com/products/visual-studio-ultimate-with-MSDN-vs) zur Verfügung.
 
 Gehen Sie folgendermaßen vor, um den Dienst mit aktiviertem IntelliTrace bereitzustellen:
 
-1. Vergewissern Sie sich, dass Azure SDK 1.3 oder höher installiert ist.
+1. Vergewissern Sie sich, dass Azure SDK 1.3 oder höher installiert ist.
 
 2. Stellen Sie die Projektmappe mit Visual Studio bereit. Aktivieren Sie bei der Bereitstellung das Kontrollkästchen **IntelliTrace für .NET 4-Rollen aktivieren**.
 
@@ -159,7 +159,7 @@ Um Fehler mit fehlenden DLLs und Assemblys zu beheben, gehen Sie folgendermaßen
 
 5. Stellen Sie den Clouddienst erneut bereit.
 
-Nachdem Sie bestätigt haben, dass alle Fehler korrigiert wurden, können Sie den Dienst bereitstellen, ohne das Kontrollkästchen **IntelliTrace für .NET 4-Rollen aktivieren** zu aktivieren.
+Nachdem Sie bestätigt haben, dass alle Fehler korrigiert wurden, können Sie den Dienst bereitstellen, ohne das Kontrollkästchen **IntelliTrace für .NET 4-Rollen aktivieren** zu aktivieren.
 
 ## Nächste Schritte
 
@@ -167,4 +167,4 @@ Sehen Sie sich weitere [Artikel zur Problembehandlung](..\?tag=top-support-issue
 
 Erfahren Sie in der [Blogreihe von Kevin Williamson](http://blogs.msdn.com/b/kwill/archive/2013/08/09/windows-azure-paas-compute-diagnostics-data.aspx), wie Sie Probleme bei Clouddienstrollen mit den Compute-Diagnosedaten von Azure-PaaS beheben.
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0302_2016-->

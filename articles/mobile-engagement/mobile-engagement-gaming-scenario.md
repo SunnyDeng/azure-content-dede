@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="mobile-multiple"
 	ms.workload="mobile" 
-	ms.date="11/23/2015"
+	ms.date="02/29/2016"
 	ms.author="piyushjo"/>
 
 #Implementieren von Mobile Engagement mit Spiele-App
@@ -26,13 +26,13 @@ Auf der Grundlage des [Azure Mobile Engagement – Leitfaden mit ersten Schritte
 
 ##Ziele und KPIs
 
-Die wichtigsten Beteiligten für das Spiel treffen sich. Alle vereinbaren ein Hauptziel: die Steigerung der Umsatzzahlen für Premium-Pakete um 15 %. Sie erstellen Business Key Performance Indicators (KPIs), um dieses Ziel zu messen und voranzutreiben.
+Die wichtigsten Beteiligten für das Spiel treffen sich. Alle vereinbaren ein Hauptziel: die Steigerung der Umsatzzahlen für Premium-Pakete um 15 %. Sie erstellen Business Key Performance Indicators (KPIs), um dieses Ziel zu messen und voranzutreiben.
 
 * Auf welchem Level des Spiels werden diese Pakete gekauft?
 * Wie hoch ist der Umsatz pro Benutzer, pro Sitzung, pro Woche und pro Monat?
 * Was sind die bevorzugten Kauftypen?
 
-In Teil 1 des [Leitfadens mit ersten Schritten](mobile-engagement-getting-started-best-practices.md) wird erläutert, wie Sie Ziele und KPIs definieren.
+In Teil 1 des [Leitfadens mit ersten Schritten](mobile-engagement-getting-started-best-practices.md) wird erläutert, wie Sie Ziele und KPIs definieren.
 
 Nachdem die Business-KPIs definiert wurden, kann der Mobile-Produktmanager Engagement-KPIs aufstellen, um neue Benutzertrends und die Beibehaltung zu bestimmen.
 
@@ -56,10 +56,10 @@ Vor dem Erstellen eines erweiterten Engagementprogramms, sollte der verantwortli
 
 Nach drei Monaten hat der Mobile-Projektleiter genügend Daten zur Verbesserung der App-internen Pushbenachrichtigungsumsätze erfasst. Die folgenden Daten wurden erfasst:
 
-* Der erste Kauf erfolgt in der Regel auf Level 14. In 90 % der Fälle werden neue legendäre Waffen für 3 US-Dollar gekauft.
-* In 80 % der Fälle verwenden Benutzer, die einen Kauf getätigt haben, das Produkt weiterhin und tätigen auch weitere Einkäufe.
-* Benutzer, die Level 20 abgeschlossen haben, beginnen mehr als 10 US-Dollar pro Woche auszugeben.
-* Benutzer neigen dazu Premium-Pakete auf Level 16, 24 und 32 zu kaufen.
+* Der erste Kauf erfolgt in der Regel auf Level 14. In 90 % der Fälle werden neue legendäre Waffen für 3 US-Dollar gekauft.
+* In 80 % der Fälle verwenden Benutzer, die einen Kauf getätigt haben, das Produkt weiterhin und tätigen auch weitere Einkäufe.
+* Benutzer, die Level 20 abgeschlossen haben, beginnen mehr als 10 US-Dollar pro Woche auszugeben.
+* Benutzer neigen dazu Premium-Pakete auf Level 16, 24 und 32 zu kaufen.
 
 Dank dieser Analyse beschließt der Mobile-Projektleiter, bestimmte Pushbenachrichtigungssequenzen zu erstellen, um App-interne Käufe zu erhöhen. Er erstellt drei Pushsequenzen, die er folgendermaßen nennt: Welcome Program, Sales Program und Inactive Program. Weitere Informationen finden Sie in den [Playbooks](https://github.com/Azure/azure-mobile-engagement-samples/tree/master/Playbooks) ![][1].
 
@@ -69,4 +69,4 @@ Dank dieser Analyse beschließt der Mobile-Projektleiter, bestimmte Pushbenachri
 
 <!--Link references-->
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0302_2016-->

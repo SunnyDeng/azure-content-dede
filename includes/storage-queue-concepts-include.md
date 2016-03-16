@@ -26,4 +26,4 @@ Der Warteschlangendienst umfasst die folgenden Komponenten:
 
 - **Nachricht:** Eine Nachricht in einem beliebigen Format und mit einer Größe von bis zu 64 KB.
 
-<!---HONumber=AcomDC_0218_2016-->
+<!----HONumber=AcomDC_0218_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/23/2015" 
+	ms.date="02/28/2016" 
 	ms.author="pengxia"/>
 
 
@@ -153,4 +153,4 @@ Häufig gestellte Fragen zur Nutzung des Webdiensts und zum Veröffentlichen im 
 
  
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

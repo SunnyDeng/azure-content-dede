@@ -3,7 +3,7 @@
    description="Die grafische Erstellung ermöglicht Ihnen das Erstellen von Runbooks für Azure Automation, ohne mit Code zu arbeiten. Dieser Artikel bietet eine Einführung in die grafische Erstellung und alle Informationen, die Sie für die Erstellung eines grafischen Runbooks benötigen."
    services="automation"   
    documentationCenter=""
-   authors="bwren"
+   authors="mgoedtel"
    manager="stevenka"
    editor="tysonn" />
 <tags 
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="02/18/2016"
+   ms.date="02/23/2016"
    ms.author="magoedte;bwren" />
 
 # Grafische Erstellung in Azure Automation
@@ -419,4 +419,4 @@ Im folgenden Beispiel wird die Ausgabe eine Aktivität mit dem Namen *Get Twitte
 - [Operatoren](https://technet.microsoft.com/library/hh847732.aspx)
  
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

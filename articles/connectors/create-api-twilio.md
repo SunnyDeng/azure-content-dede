@@ -234,7 +234,6 @@ Sendet eine neue Nachricht an eine Mobiltelefonnummer. ```POST: /Messages.json``
 |Eigenschaftenname | Datentyp |Erforderlich|
 |---|---|---|
 |category|string|no|
-|Nutzung|string|no|
 |usage\_unit|string|no|
 |description|string|no|
 |price|number|no|

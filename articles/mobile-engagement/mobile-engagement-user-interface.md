@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="mobile" 
-   ms.date="08/10/2015"
+   ms.date="02/29/2016"
    ms.author="piyushjo"/>
 
 # Verwenden der Benutzeroberfläche (UI) von Azure Mobile Engagement
@@ -133,4 +133,4 @@ Sobald Sie den Azure Mobile Service-[SDK][Link 5] in Ihre Anwendung integriert u
 [Link 33]: ../mobile-engagement-how-tos-web-view.md
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Erste Schritte mit Azure Blob Storage mit .NET | Microsoft Azure"
-	description="Speichern Sie Dateidaten in der Cloud, indem Sie Azure Blob Storage (Objektspeicher) verwenden. Informieren Sie sich über einfache Blob Storage-Vorgänge, z. B. das Erstellen eines Containers und das Hochladen, Auflisten und Löschen von Blob-Inhalten."
+	description="Speichern Sie Dateidaten in der Cloud mit Azure Blob Storage (Objektspeicher). Informieren Sie sich über einfache Blob Storage-Vorgänge, z. B. das Erstellen eines Containers und das Hochladen, Auflisten und Löschen von Blob-Inhalten."
 	services="storage"
 	documentationCenter=".net"
 	authors="tamram"
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
-	ms.date="02/14/2016"
+	ms.date="02/25/2016"
 	ms.author="tamram"/>
 
 
@@ -23,7 +23,7 @@
 
 ## Übersicht
 
-Azure Blob Storage ist ein Dienst, bei dem Dateidaten in der Cloud gespeichert werden. In Blob Storage können alle Arten von Text- oder Binärdaten gespeichert werden, z. B. ein Dokument, eine Mediendatei oder ein Installer einer Anwendung. Blob Storage wird auch als Objektspeicher bezeichnet.
+Azure Blob Storage ist ein Dienst, bei dem Dateidaten in der Cloud gespeichert werden. In Blob Storage können alle Arten von Text- oder Binärdaten gespeichert werden, z. B. ein Dokument, eine Mediendatei oder ein Installer einer Anwendung. Der Blobspeicher wird auch als Objektspeicher bezeichnet.
 
 ### Informationen zu diesem Lernprogramm
 
@@ -32,6 +32,12 @@ In diesem Tutorial wird gezeigt, wie Sie .NET-Code für einige häufig verwendet
 **Geschätzter Zeitaufwand:** 45 Minuten
 
 **Voraussetzungen:**
+
+- [Microsoft Visual Studio](https://www.visualstudio.com/de-DE/visual-studio-homepage-vs.aspx)
+- [Azure Storage-Clientbibliothek für .NET](https://www.nuget.org/packages/WindowsAzure.Storage/)
+- [Azure Configuration Manager für .NET](https://www.nuget.org/packages/Microsoft.WindowsAzure.ConfigurationManager/)
+- Ein [Azure-Speicherkonto](storage-create-storage-account.md#create-a-storage-account).
+
 
 [AZURE.INCLUDE [storage-dotnet-client-library-version-include](../../includes/storage-dotnet-client-library-version-include.md)]
 
@@ -332,7 +338,7 @@ Das folgende Beispiel erstellt ein neues Anfügeblob und fügt einige Daten hinz
     Random rnd = new Random();
     byte[] bytes = new byte[numBlocks];
     rnd.NextBytes(bytes);
-        
+
     //Simulate a logging operation by writing text data and byte data to the end of the append blob.
     for (int i = 0; i < numBlocks; i++)
     {
@@ -374,4 +380,4 @@ Nachdem Sie sich nun mit den Grundlagen von Blobspeichern vertraut gemacht haben
   [.NET client library reference]: http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409
   [REST API reference]: http://msdn.microsoft.com/library/azure/dd179355
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0309_2016-->

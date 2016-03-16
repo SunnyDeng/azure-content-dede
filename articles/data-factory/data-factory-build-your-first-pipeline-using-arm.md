@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Erste Schritte mit Azure Data Factory (Azure-Ressourcen-Manager-Vorlage)"
+	pageTitle="Erstellen der ersten Data Factory (ARM-Vorlage) | Microsoft Azure"
 	description="In diesem Tutorial erstellen Sie eine Azure Data Factory-Beispielpipeline mithilfe einer Azure-Ressourcen-Manager-Vorlage."
 	services="data-factory"
 	documentationCenter=""
@@ -13,16 +13,16 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="hero-article"
-	ms.date="01/05/2016"
+	ms.date="03/03/2016"
 	ms.author="spelluru"/>
 
-# Erstellen der ersten Azure Data Factory-Pipeline mit einer Azure-Ressourcen-Manager-Vorlage
+# Tutorial: Erstellen der ersten Azure Data Factory mit einer Azure Resource Manager-Vorlage
 > [AZURE.SELECTOR]
-- [Tutorial Overview](data-factory-build-your-first-pipeline.md)
-- [Using Data Factory Editor](data-factory-build-your-first-pipeline-using-editor.md)
-- [Using PowerShell](data-factory-build-your-first-pipeline-using-powershell.md)
-- [Using Visual Studio](data-factory-build-your-first-pipeline-using-vs.md)
-- [Using Resource Manager Template](data-factory-build-your-first-pipeline-using-arm.md)
+- [Übersicht über das Tutorial](data-factory-build-your-first-pipeline.md)
+- [Verwenden des Data Factory-Editors](data-factory-build-your-first-pipeline-using-editor.md)
+- [Mithilfe von PowerShell](data-factory-build-your-first-pipeline-using-powershell.md)
+- [Verwenden von Visual Studio](data-factory-build-your-first-pipeline-using-vs.md)
+- [Verwenden der Resource Manager-Vorlage](data-factory-build-your-first-pipeline-using-arm.md)
 
 
 In diesem Artikel erfahren Sie, wie Sie mithilfe einer Azure-Ressourcen-Manager-Vorlage (ARM) Ihre erste Azure Data Factory erstellen.
@@ -37,7 +37,7 @@ Neben den im Thema „Tutorial – Übersicht“ aufgeführten vorausgesetzten K
 - Informationen zu Azure-Ressourcen-Manager-Vorlagen (ARM-Vorlagen) finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](../resource-group-authoring-templates.md). 
 
 
-## Schritt 1: Erstellen der ARM-Vorlage
+## Schritt 1: Erstellen der ARM-Vorlage
 
 Erstellen Sie eine JSON-Datei mit dem Namen **ADFTutorialARM.json** im Ordner **C:\\ADFGetStarted** mit dem folgenden Inhalt:
 
@@ -217,13 +217,13 @@ Beachten Sie Folgendes:
 
 - Die Data Factory erstellt mit dem obigen JSON-Code einen **Windows-basierten** HDInsight-Cluster für Sie. Sie können sich auch für die Erstellung eines **Linux-basierten** HDInsight-Clusters entscheiden. Ausführliche Informationen finden Sie unter [Bedarfsgesteuerter verknüpfter HDInsight-Dienst](data-factory-compute-linked-services.md#azure-hdinsight-on-demand-linked-service). 
 - Anstelle eines bedarfsgesteuerten HDInsight-Clusters können Sie auch **Ihren eigenen HDInsight-Cluster** verwenden. Ausführliche Informationen finden Sie unter [Verknüpfter HDInsight-Dienst](data-factory-compute-linked-services.md#azure-hdinsight-linked-service).
-- Der HDInsight-Cluster erstellt einen **Standardcontainer** in der Blob Storage-Einheit, die Sie im JSON-Code angegeben haben (**linkedServiceName**). HDInsight löscht diesen Container nicht, wenn der Cluster gelöscht wird. Dies ist beabsichtigt. Beim bedarfsgesteuerten verknüpften HDInsight-Dienst wird jedes Mal ein HDInsight-Cluster erstellt, wenn ein Slice verarbeitet werden muss – es sei denn, ein aktiver Cluster (**timeToLive**) ist vorhanden und wird gelöscht, nachdem die Verarbeitung abgeschlossen ist.
+- Der HDInsight-Cluster erstellt einen **Standardcontainer** im Blobspeicher, den Sie im JSON-Code angegeben haben (**linkedServiceName**). HDInsight löscht diesen Container nicht, wenn der Cluster gelöscht wird. Dies ist beabsichtigt. Beim bedarfsgesteuerten verknüpften HDInsight-Dienst wird jedes Mal ein HDInsight-Cluster erstellt, wenn ein Slice verarbeitet werden muss – es sei denn, ein aktiver Cluster (**timeToLive**) ist vorhanden und wird gelöscht, nachdem die Verarbeitung abgeschlossen ist.
 
-	Wenn immer mehr Slices verarbeitet werden, enthält Azure Blob Storage viele Container. Falls Sie diese für die Problembehandlung der Aufträge nicht benötigen, sollten Sie sie ggf. löschen, um die Speicherkosten zu verringern. Der Name dieser Container basiert auf dem folgenden Muster: „adf**ihrdatafactoryname**-**nameverknüpfterdienst**-datumuhrzeitstempel“. Verwenden Sie Tools wie [Microsoft Storage-Explorer](http://storageexplorer.com/), um Container in Ihrer Azure Blob Storage-Einheit zu löschen.
+	Wenn immer mehr Slices verarbeitet werden, enthält Azure Blob Storage viele Container. Falls Sie diese für die Problembehandlung der Aufträge nicht benötigen, sollten Sie sie ggf. löschen, um die Speicherkosten zu verringern. Der Name dieser Container basiert auf dem folgenden Muster: adf**ihrdatafactoryname**-**nameverknüpfterdienst**-datumuhrzeitstempel. Verwenden Sie Tools wie [Microsoft Storage-Explorer](http://storageexplorer.com/), um Container in Ihrer Azure Blob Storage-Instanz zu löschen.
 
 Ausführliche Informationen finden Sie unter [Bedarfsgesteuerter verknüpfter HDInsight-Dienst](data-factory-compute-linked-services.md#azure-hdinsight-on-demand-linked-service).
 
-> [AZURE.NOTE] Ein weiteres Beispiel einer ARM-Vorlage zum Erstellen eines Azure Data Factory-Diensts finden Sie auf [Github](https://github.com/Azure/azure-quickstart-templates/blob/master/101-data-factory-blob-to-sql/azuredeploy.json).
+> [AZURE.NOTE] Ein weiteres Beispiel einer ARM-Vorlage zum Erstellen einer Azure Data Factory finden Sie auf [GitHub](https://github.com/Azure/azure-quickstart-templates/blob/master/101-data-factory-blob-to-sql/azuredeploy.json).
 
 ## Schritt 2: Bereitstellen von Data Factory-Entitäten mit der ARM-Vorlage
 
@@ -231,7 +231,7 @@ Ausführliche Informationen finden Sie unter [Bedarfsgesteuerter verknüpfter HD
 	- Führen Sie **Login-AzureRmAccount** aus, und geben Sie den Benutzernamen und das Kennwort ein, den bzw. das Sie bei der Anmeldung beim Azure-Portal verwendet haben.  
 	- Führen Sie **Get-AzureSubscription** aus, um alle Abonnements für dieses Konto anzuzeigen.
 	- Führen Sie **Select-AzureSubscription SubscriptionName** aus, um das Abonnement auszuwählen, mit dem Sie arbeiten möchten. Dieses Abonnement sollte dasselbe sein, das Sie im Azure-Portal verwendet haben.
-1. Führen Sie den folgenden Befehl aus, um die Data Factory-Entitäten bereitzustellen, die Sie in Schritt 1 mit der ARM-Vorlage erstellt haben. 
+1. Führen Sie den folgenden Befehl aus, um die Data Factory-Entitäten bereitzustellen, die Sie in Schritt 1 mit der ARM-Vorlage erstellt haben. 
 
 		New-AzureRmResourceGroupDeployment -Name MyARMDeployment -ResourceGroupName ADFTutorialResourceGroup -TemplateFile C:\ADFGetStarted\ADFTutorialARM.json
 
@@ -246,10 +246,10 @@ Ausführliche Informationen finden Sie unter [Bedarfsgesteuerter verknüpfter HD
 8. Doppelklicken Sie in der Diagrammansicht auf das Dataset **AzureBlobOutput**. Sie sehen den Slice, der gerade verarbeitet wird.
 
 	![Datensatz](./media/data-factory-build-your-first-pipeline-using-arm/AzureBlobOutput.png)
-9. Wenn die Verarbeitung abgeschlossen ist, wird der Slice mit dem Zustand **Bereit** angezeigt. Beachten Sie, dass die bedarfsgesteuerte Erstellung eines HDInsight-Clusters in der Regel einige Zeit dauert (etwa 20 Minuten). 
+9. Wenn die Verarbeitung abgeschlossen ist, wird der Slice mit dem Zustand **Bereit** angezeigt. Beachten Sie, dass die bedarfsgesteuerte Erstellung eines HDInsight-Clusters in der Regel einige Zeit dauert (etwa 20 Minuten). 
 
 	![Datensatz](./media/data-factory-build-your-first-pipeline-using-arm/SliceReady.png)	
 10. Sobald der Slice den Status **Bereit** hat, überprüfen Sie, ob die Ausgabedaten sich in Ihrem Blobspeicher im Ordner **partitioneddata** im Container **adfgetstarted** befinden.  
  
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0309_2016-->

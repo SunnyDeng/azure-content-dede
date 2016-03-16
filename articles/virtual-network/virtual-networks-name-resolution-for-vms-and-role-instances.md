@@ -12,8 +12,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="02/20/2016"
-   ms.author="joaoma" />
+   ms.date="02/24/2016"
+   ms.author="telmos" />
 
 # Namensauflösung für virtuelle Computer und Rolleninstanzen
 
@@ -181,4 +181,4 @@ Die Dienstkonfigurationsdatei wird für jeden Clouddienst erstellt, den Sie in A
 
 [Konfigurieren eines virtuellen Netzwerks mithilfe einer Netzwerkkonfigurationsdatei](virtual-networks-using-network-configuration-file.md)
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

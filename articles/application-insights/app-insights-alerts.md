@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/19/2016" 
+	ms.date="03/01/2016" 
 	ms.author="awills"/>
  
 # Einrichten von Warnungen in Application Insights
@@ -38,11 +38,13 @@ Um eine E-Mail zu erhalten, wenn eine Metrik einen Schwellenwert überschreitet,
 
 ![Klicken Sie auf dem Blatt "Warnungsregeln" auf "Warnung hinzufügen". Legen Sie Ihre App als die zu messende Ressource fest, geben Sie einen Namen für die Warnung ein, und wählen Sie eine Metrik.](./media/app-insights-alerts/01-set-metric.png)
 
-Legen Sie die Ressource vor den anderen Eigenschaften fest. **Wählen Sie die Ressource "(Komponenten)" aus**, wenn Sie Benachrichtigungen für Leistungs- oder Nutzungsmetriken festlegen möchten.
-
-Achten Sie auf die Einheiten, die beim Eingeben des Schwellenwerts gefordert sind.
-
-Der Name, den Sie der Warnung zuweisen, muss innerhalb der Ressourcengruppe (nicht nur in Ihrer Anwendung) eindeutig sein.
+* Legen Sie die Ressource vor den anderen Eigenschaften fest. **Wählen Sie die Ressource "(Komponenten)" aus**, wenn Sie Benachrichtigungen für Leistungs- oder Nutzungsmetriken festlegen möchten.
+* Achten Sie auf die Einheiten, die beim Eingeben des Schwellenwerts gefordert sind.
+* Der Name, den Sie der Warnung zuweisen, muss innerhalb der Ressourcengruppe (nicht nur in Ihrer Anwendung) eindeutig sein.
+* Wenn Sie das Feld „E-Mail an Besitzer...“ aktivieren, werden Warnungen per E-Mail an alle Benutzer gesendet, die Zugriff auf diese Ressource haben.
+* Wenn Sie „Weitere E-Mail-Adressen“ angeben, werden Warnungen an diese Einzelpersonen oder Gruppen gesendet (unabhängig davon, ob Sie das Kontrollkästchen „E-Mail an Besitzer“ aktiviert haben). 
+* Legen Sie eine [Webhookadresse](../azure-portal/insights-webhooks-alerts.md) fest, wenn Sie eine Web-App eingerichtet haben, die auf Warnungen reagiert. Der Aufruf erfolgt, wenn die Warnung aktiviert (ausgelöst) und wenn sie gelöst wird.
+* Sie können die Warnung deaktivieren oder aktivieren: Die zugehörigen Schaltflächen finden Sie oben auf dem Blatt.
 
 *Die Schaltfläche "Warnung hinzufügen" wird nicht angezeigt.* – Verwenden Sie ein Organisationskonto? Sie können Warnungen festlegen, wenn Sie für diese Anwendungsressource über Zugriffsberechtigungen für Besitzer oder Mitwirkende verfügen. Sehen Sie unter "Einstellungen" -> "Benutzer" nach. [Erfahren Sie mehr über die Zugriffssteuerung][roles].
 
@@ -67,9 +69,11 @@ Der Verlauf von Statusänderungen befindet sich im Ereignisprotokoll "Vorgänge"
 
 ## Funktionsweise von Warnungen
 
-* Eine Warnung verfügt über zwei Zustände: "Warnung" und "Fehlerfrei". 
+* Eine Warnung kann drei Zustände annehmen: „Nie aktiviert“, „Aktiviert“ und „Gelöst“. „Aktiviert“ bedeutet, dass die angegebene Bedingung bei der letzten Auswertung erfüllt wurde.
 
-* Wenn sich der Zustand einer Warnung ändert, wird eine E-Mail gesendet.
+* Wenn sich der Status einer Warnung ändert, wird eine Benachrichtigung generiert. (Wenn die Bedingung für die Warnung bereits erfüllt war, als Sie die Warnung erstellt haben, erhalten Sie möglicherweise erst dann eine Benachrichtigung, wenn die Bedingung nicht mehr erfüllt wird.)
+
+* Jede Benachrichtigung generiert eine E-Mail-Nachricht, wenn Sie das E-Mail-Feld aktiviert oder E-Mail-Adressen angegeben haben. Sie können auch die Dropdownliste „Benachrichtigungen“ überprüfen.
 
 * Eine Warnung wird jedes Mal ausgewertet, wenn eine Metrik empfangen wird, sonst aber aus keinem anderen Grund.
 
@@ -123,4 +127,4 @@ Zu den gängigen Warnungen zählen Folgende:
 
  
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

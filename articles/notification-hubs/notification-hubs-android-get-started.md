@@ -550,4 +550,4 @@ Weitere allgemeine Informationen zu Notification Hubs finden Sie im [Notificatio
 [Verwenden von Notification Hubs für Pushbenachrichtigungen an Benutzer]: notification-hubs-aspnet-backend-android-notify-users.md
 [Verwenden von Benachrichtigungshubs zum Senden von neuesten Nachrichten]: notification-hubs-aspnet-backend-android-breaking-news.md
 
-<!---HONumber=AcomDC_0128_2016-->
+<!----HONumber=AcomDC_0128_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows-phone" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="07/07/2015" 
+	ms.date="02/29/2016" 
 	ms.author="piyushjo" />
 
 #Integration von Windows Phone Silverlight Engagement-SDK
@@ -32,10 +32,10 @@ Die folgenden Schritte sind ausreichend, um den Bericht von Protokollen zu aktiv
 
 Das Mobile Engagement-SDK für Windows Silverlight kann nur in Anwendungen für folgende Betriebssysteme eingebettet werden:
 
--   Windows Phone 8.0
+-   Windows Phone 8.0
 -   Windows Phone 8.1 Silverlight
 
-> [AZURE.NOTE]Informationen zu Windows Phone 8.1 (nicht Silverlight) finden Sie im [Windows Universal-Integrationsverfahren](mobile-engagement-windows-store-integrate-engagement.md).
+> [AZURE.NOTE] Informationen zu Windows Phone 8.1 (nicht Silverlight) finden Sie im [Windows Universal-Integrationsverfahren](mobile-engagement-windows-store-integrate-engagement.md).
 
 ##Installieren Sie das Mobile Engagement Silverlight-SDK
 
@@ -95,7 +95,7 @@ Wenn Sie ein neues Projekt erstellen, wird eine Datei `App.xaml.cs` generiert. D
 		   EngagementAgent.Instance.OnActivated(e);
 		}
 
-> [AZURE.WARNING]Wir raten dringend davon ab, die Engagement-Initialisierung an einer anderen Stelle der Anwendung hinzuzufügen. Bedenken Sie jedoch, dass die Methode `EngagementAgent.Instance.Init` in einem dedizierten Thread und nicht im UI-Thread ausgeführt wird.
+> [AZURE.WARNING] Wir raten dringend davon ab, die Engagement-Initialisierung an einer anderen Stelle der Anwendung hinzuzufügen. Bedenken Sie jedoch, dass die Methode `EngagementAgent.Instance.Init` in einem dedizierten Thread und nicht im UI-Thread ausgeführt wird.
 
 ##Grundlegende Berichterstellung
 
@@ -137,7 +137,7 @@ Hier ist ein Beispiel für eine Seite Ihrer Anwendung. Das Gleiche gilt für all
 		  }
 		}
 
-> [AZURE.WARNING]Wenn Ihre Seite von der Methode `OnNavigatedTo` erbt, stellen Sie den Aufruf von `base.OnNavigatedTo(e)` sicher. Andernfalls wird die Aktivität nicht berichtet. Tatsächlich ruft `EngagementPage` `StartActivity` von innerhalb der Methode `OnNavigatedTo` ab.
+> [AZURE.WARNING] Wenn Ihre Seite von der Methode `OnNavigatedTo` erbt, stellen Sie den Aufruf von `base.OnNavigatedTo(e)` sicher. Andernfalls wird die Aktivität nicht berichtet. Tatsächlich ruft `EngagementPage` `StartActivity` von innerhalb der Methode `OnNavigatedTo` ab.
 
 #### XAML-Datei
 
@@ -199,7 +199,7 @@ Es empfiehlt sich, `StartActivity` innerhalb Ihrer Methode `OnNavigatedTo` von P
 		   EngagementAgent.Instance.StartActivity("MyPage");
 		}
 
-> [AZURE.IMPORTANT]Stellen Sie sicher, dass Ihre Sitzung ordnungsgemäß beendet wird.
+> [AZURE.IMPORTANT] Stellen Sie sicher, dass Ihre Sitzung ordnungsgemäß beendet wird.
 >
 > Das SDK ruft die Methode `EndActivity` automatisch auf, wenn die Anwendung geschlossen wird. Daher wird **dringend** empfohlen, bei jeder Änderung der Benutzeraktivität die Methode `StartActivity` und **niemals** die Methode `EndActivity` aufzurufen. Diese Methode sendet die Nachricht an den Engagement-Server, dass der aktuelle Benutzer die Anwendung verlassen hat, und dies wirkt sich auf alle Anwendungsprotokolle aus.
 
@@ -215,7 +215,7 @@ Weitere Informationen finden Sie unter [Verwenden der erweiterten Mobile Engagem
 
 Sie können die automatische Absturzberichtsfunktion von Engagement deaktivieren. Wenn dann eine unbehandelte Ausnahme auftritt, handelt Engagement nicht.
 
-> [AZURE.WARNING]Wenn Sie diese Funktion deaktivieren möchten, bedenken Sie, dass Engagement Ihnen bei Auftreten eines nicht behandelten Absturzes der App weder eine Meldung zum Absturz sendet **NOCH** die Sitzung und Aufträge schließt.
+> [AZURE.WARNING] Wenn Sie diese Funktion deaktivieren möchten, bedenken Sie, dass Engagement Ihnen bei Auftreten eines nicht behandelten Absturzes der App weder eine Meldung zum Absturz sendet **NOCH** die Sitzung und Aufträge schließt.
 
 Zum Deaktivieren der automatischen Berichterstellung bei Abstürzen passen Sie Ihre Konfiguration abhängig davon an, wie Sie sie deklariert haben:
 
@@ -244,7 +244,7 @@ Das Argument ist ein Wert in **Millisekunden**. Immer wenn Sie die Protokollieru
 
 Der Burst-Modus verlängert leicht die Akkulaufzeit, wirkt sich jedoch auf den Engagement-Monitor aus: Die Dauer von allen Sitzungen und Aufträgen wird auf den Burst-Schwellenwert gerundet (folglich sind eventuell Sitzungen und Aufträge, die kürzer als der Burst-Schwellenwert sind, möglicherweise nicht sichtbar). Es wird empfohlen, einen Burst-Schwellenwert von höchstens 30000 (30 s) zu verwenden. Sie müssen beachten, dass gespeicherte Protokolle auf 300 Elemente beschränkt sind. Wenn der Sendevorgang zu lange dauert, können einige Protokolle verloren gehen.
 
-> [AZURE.WARNING]Der Burstschwellenwert kann nicht auf einen Zeitraum von weniger als einer Sekunde konfiguriert werden. Wenn Sie dies versuchen, zeigt das SDK eine Ablaufverfolgung mit einem Fehler an und setzt den Wert automatisch auf den Standardwert von 0 Sekunden zurück. Dadurch wird ausgelöst, dass das SDK die Protokolle in Echtzeit meldet.
+> [AZURE.WARNING] Der Burstschwellenwert kann nicht auf einen Zeitraum von weniger als einer Sekunde konfiguriert werden. Wenn Sie dies versuchen, zeigt das SDK eine Ablaufverfolgung mit einem Fehler an und setzt den Wert automatisch auf den Standardwert von 0 Sekunden zurück. Dadurch wird ausgelöst, dass das SDK die Protokolle in Echtzeit meldet.
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0302_2016-->

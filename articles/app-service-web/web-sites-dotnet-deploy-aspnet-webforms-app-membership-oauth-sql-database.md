@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="12/10/2015" 
+	ms.date="02/29/2016" 
 	ms.author="tdykstra"/>
 
 
@@ -25,7 +25,7 @@ In diesem Lernprogramm wird gezeigt, wie Sie eine sichere ASP.NET 4.5 Web Forms-
 >[AZURE.NOTE] 
 Eine MVC-Version dieses Lernprogramms finden Sie unter [Erstellen einer ASP.NET MVC-App mit Authentifizierung und SQL-Datenbank sowie Bereitstellung in Azure App Service](web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database.md).
 
-Sie können ein kostenloses Azure-Konto erstellen. Wenn Sie noch nicht über Visual Studio 2013 verfügen, wird Visual Studio 2013 for Web Express automatisch durch das SDK installiert. Sie können kostenlos mit der Entwicklung für Azure beginnen.
+Sie können ein kostenloses Azure-Konto erstellen. Wenn Sie noch nicht über Visual Studio 2013 verfügen, wird Visual Studio 2013 for Web Express automatisch durch das SDK installiert. Sie können kostenlos mit der Entwicklung für Azure beginnen.
 
 Bei diesem Lernprogramm wird davon ausgegangen, dass Sie noch keine Erfahrung mit der Verwendung von Microsoft Azure haben. Nach Abschluss dieses Lernprogramms verfügen Sie über eine Webanwendung, die unter Rückgriff auf eine Clouddatenbank in der Cloud ausgeführt wird.
 
@@ -575,9 +575,9 @@ Sie erstellen einen Ordner namens *Admin*, auf den nur Benutzer, die der Rolle "
 
 1. Fügen Sie im **Projektmappen-Explorer** einen Unterordner zum Ordner *Contacts* hinzu, und nennen Sie den neuen Unterordner *Admin*.
 2. Verschieben Sie die folgenden Dateien aus dem Ordner *Contacts* in den Ordner *Contacts/Admin*:  
-	- *Delete.aspx* und *Delete.aspx.cs*
-	- *Edit.aspx* und *Edit.aspx.cs*
-	- *Insert.aspx* und *Insert.aspx.cs*
+	- *Delete.aspx *und* Delete.aspx.cs*
+	- *Edit.aspx *und* Edit.aspx.cs*
+	- *Insert.aspx *und* Insert.aspx.cs*
 3. Aktualisieren Sie die Linkverweise unter *Contacts/Default.aspx*, indem Sie "Admin/" vor den Seitenverweisen hinzufügen, die wie unten gezeigt auf *Insert.aspx*, *Edit.aspx* und *Delete.aspx* verweisen:  
 
 		<%@ Page Title="ContactsList" Language="C#" MasterPageFile="~/Site.Master" CodeBehind="Default.aspx.cs" Inherits="ContactManager.Contacts.Default" ViewStateMode="Disabled" %>
@@ -757,4 +757,4 @@ Bitte teilen Sie uns mit, was Ihrer Meinung nach gelungen ist, bzw. verbessert w
 
  
 
-<!----HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="nodejs"
 	ms.topic="article"
-	ms.date="12/17/2015"
+	ms.date="02/29/2016"
 	ms.author="meetb"/>
 
 
@@ -53,11 +53,11 @@ Die folgenden Softwarekomponenten müssen auf dem Cliententwicklungscomputer vor
 Auf der [Seite für erste Schritte](sql-database-get-started.md) erhalten Sie Informationen zum Erstellen einer Beispieldatenbank. Sie sollten unbedingt die Anleitung zum Erstellen einer **AdventureWorks-Datenbankvorlage** befolgen. Die unten gezeigten Beispiele funktionieren nur mit dem **AdventureWorks-Schema**.
 
 
-## Schritt 1: Abrufen der Verbindungsdetails
+## Schritt 1: Abrufen der Verbindungsdetails
 
 [AZURE.INCLUDE [sql-database-include-connection-string-details-20-portalshots](../../includes/sql-database-include-connection-string-details-20-portalshots.md)]
 
-## Schritt 2: Verbinden
+## Schritt 2: Verbinden
 
 Die [new Connection](http://pekim.github.io/tedious/api-connection.html)-Funktion dient zum Herstellen einer Verbindung mit der SQL-Datenbank.
 
@@ -79,7 +79,7 @@ Die [new Connection](http://pekim.github.io/tedious/api-connection.html)-Funktio
 ## Schritt 3: Ausführen einer Abfrage
 
 
-Alle SQL-Anweisungen werden mithilfe der [new Request()](http://pekim.github.io/tedious/api-request.html)-Funktion ausgeführt. Wenn die Anweisung Zeilen zurückgibt, z. B. eine select-Anweisung, können Sie diese mithilfe der [request.on()](http://pekim.github.io/tedious/api-request.html)-Funktion abrufen. Wenn keine Zeilen vorhanden sind, gibt die [request.on()](http://pekim.github.io/tedious/api-request.html)-Funktion leere Listen zurück.
+Alle SQL-Anweisungen werden mithilfe der [new Request()](http://pekim.github.io/tedious/api-request.html)-Funktion ausgeführt. Wenn die Anweisung Zeilen zurückgibt, z. B. eine select-Anweisung, können Sie diese mithilfe der [request.on()](http://pekim.github.io/tedious/api-request.html)-Funktion abrufen. Wenn keine Zeilen vorhanden sind, gibt die [request.on()](http://pekim.github.io/tedious/api-request.html)-Funktion leere Listen zurück.
 
 
 	var Connection = require('tedious').Connection;
@@ -125,7 +125,7 @@ Alle SQL-Anweisungen werden mithilfe der [new Request()](http://pekim.github.io/
 	}
 
 
-## Schritt 4: Einfügen einer Zeile
+## Schritt 4: Einfügen einer Zeile
 
 In diesem Beispiel erfahren Sie, wie Sie eine [INSERT](https://msdn.microsoft.com/library/ms174335.aspx)-Anweisung sicher ausführen, Parameter zum Schutz Ihrer Anwendung vor einer [Einschleusung von SQL-Befehlen](https://technet.microsoft.com/library/ms161953(v=sql.105).aspx) übergeben und den automatisch generierten [Primärschlüsselwert](https://msdn.microsoft.com/library/ms179610.aspx) abrufen.
 
@@ -169,4 +169,4 @@ In diesem Beispiel erfahren Sie, wie Sie eine [INSERT](https://msdn.microsoft.co
 		connection.execSql(request);
 	}
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0302_2016-->

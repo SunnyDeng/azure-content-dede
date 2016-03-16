@@ -4,7 +4,7 @@
 	services="mobile-services"
 	documentationCenter="windows"
 	authors="ggailey777"
-	manager="dwrede"
+	manager="erikre"
 	editor=""/>
 
 <tags
@@ -13,20 +13,18 @@
 	ms.tgt_pltfrm="mobile-windows"
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
-	ms.date="02/10/2016"
+	ms.date="03/05/2016"
 	ms.author="glenga"/>
 
 
 # <a name="getting-started"></a>Erste Schritte mit Mobile Services
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]
 
 &nbsp;
 
-
-[AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]&nbsp;
-
->[AZURE.TIP] Wenn Sie gerade in die mobile Entwicklung mit Microsoft Azure einsteigen, [beginnen Sie mit Azure Mobile Apps](app-service-mobile-dotnet-backend-windows-store-dotnet-get-started-preview.md) anstatt mit Azure Mobile Services. Mit Mobile Apps erhalten Sie [zusätzliche Vorteile](app-service-mobile-value-prop-migration-from-mobile-services-preview.md).
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+> Informationen für die entsprechende Mobile Apps-Version dieses Themas finden Sie unter [Erstellen einer Windows-App mit Mobile Apps](../app-service-mobile/app-service-mobile-windows-store-dotnet-get-started.md).
 
 In diesem Lernprogramm wird gezeigt, wie Sie einer universellen Windows-App einen cloudbasierten Back-End-Dienst unter Verwendung von Azure Mobile Services hinzufügen. Universelle Windows-App-Lösungen beinhalten Projekte für Windows Store 8.1, Windows Phone Store 8.1-Apps und ein gemeinsames, geteiltes Projekt. Weitere Informationen finden Sie unter [Erstellen universeller Windows-Apps, die Windows und Windows Phone als Ziel verwenden](http://msdn.microsoft.com/library/windows/apps/xaml/dn609832.aspx).
 
@@ -34,7 +32,7 @@ In diesem Lernprogramm erstellen Sie einen neuen mobilen Dienst und eine einfach
 
 >[AZURE.NOTE]In diesem Thema wird das Erstellen eines neuen mobilen Dienstprojekts und einer universellen Windows-App mithilfe des klassischen Azure-Portals erläutert. Unter Verwendung von Visual Studio 2013 Update 3 können Sie außerdem neue mobile Dienstprojekte zu einer vorhandenen Visual Studio-Lösung hinzufügen. Weitere Informationen finden Sie unter [Hinzufügen von Mobile Services zu einer vorhandenen App](mobile-services-dotnet-backend-windows-universal-dotnet-get-started-data.md).
 
->Informationen zum Hinzufügen eines mobilen Diensts zu einem Windows Phone 8.0- oder Windows Phone Silverlight 8.1-App-Projekt finden Sie unter [Hinzufügen von Mobile Services zu einer vorhandenen Windows Phone-App](mobile-services-dotnet-backend-windows-phone-get-started-data.md).
+>Informationen zum Hinzufügen eines mobilen Diensts zu einem Windows Phone 8.0- oder Windows Phone Silverlight 8.1-App-Projekt finden Sie unter [Hinzufügen von Mobile Services zu einer vorhandenen Windows Phone-App](mobile-services-windows-phone-get-started-data.md).
 
 [AZURE.INCLUDE [mobile-services-windows-universal-get-started](../../includes/mobile-services-windows-universal-get-started.md)]
 
@@ -132,4 +130,4 @@ Weitere Informationen zu universellen Windows-Apps finden Sie unter [Unterstütz
 [klassischen Azure-Portal]: https://manage.windowsazure.com/
 [Beheben von Problemen bei einem Mobile Services .NET-Back-End]: mobile-services-dotnet-backend-how-to-troubleshoot.md
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0309_2016-->

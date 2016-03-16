@@ -108,13 +108,17 @@ In der folgenden Tabelle sind die Funktionen von Microsoft-verwalteten und IT-ve
 ## Registrieren einer Microsoft-verwalteten oder IT-verwalteten API
 
 1. Melden Sie sich mit Ihrem Geschäftskonto (*IhrBenutzername*@*IhrUnternehmen*.com) beim [Azure-Portal](https://portal.azure.com/) an. Sie werden automatisch mit Ihrem Unternehmensabonnement angemeldet.
-2. Wählen Sie **Durchsuchen**, **PowerApps** und dann **APIs verwalten** aus: ![][17].
-3. Wählen Sie in „Manage APIs“ die Option **Add** aus: ![][18]  
+2. Wählen Sie **Durchsuchen**, **PowerApps** und dann **APIs verwalten** aus:  
+![][17].
+3. Wählen Sie in „Manage APIs“ die Option **Add** aus:  
+![][18].
 4. Geben Sie in **Add API** die API-Eigenschaften ein:  
 
 	- Geben Sie unter **Name** einen Namen für die API ein. Beachten Sie, dass der eingegebene Name in die Laufzeit-URL der API eingefügt wird. Geben Sie einen aussagekräftigen und innerhalb Ihrer Organisation eindeutigen Namen ein.
-	- Wählen Sie in **Source** die Option **From available APIs** aus: ![][19]
-5. Wählen Sie **API** aus, und wählen Sie dann die API aus, die Sie registrieren möchten: ![][20]
+	- Wählen Sie in **Source** die Option **From available APIs** aus:
+	![][19]
+5. Wählen Sie **API** aus, und wählen Sie dann die API aus, die Sie registrieren möchten:
+![][20]
 6. Wählen Sie Ihre spezielle API aus, und fügen Sie alle konfigurierbaren Eigenschaften hinzu.
 7. Wählen Sie **ADD** aus, um diese Schritte abzuschließen.
 

@@ -284,4 +284,4 @@ Zum Starten der virtuellen Computer in der angegebenen Reihenfolge mit Azure Pow
 	Start-AzureVM -ServiceName $serviceName -Name "APP1"
 	Start-AzureVM -ServiceName $serviceName -Name "CLIENT1"
 
-<!---HONumber=AcomDC_0128_2016-->
+<!-----HONumber=AcomDC_0128_2016-->

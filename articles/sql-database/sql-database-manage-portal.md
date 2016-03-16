@@ -21,7 +21,7 @@
 
 
 > [AZURE.SELECTOR]
-- [Azure Portal](sql-database-manage-portal.md)
+- [Azure-Portal](sql-database-manage-portal.md)
 - [SSMS](sql-database-manage-azure-ssms.md)
 - [PowerShell](sql-database-command-line-tools.md)
 
@@ -34,14 +34,14 @@ Das [Azure-Portal](https://portal.azure.com/) ermöglicht das Erstellen, Überwa
 
 Das Azure-Portal bietet eine Reihe von allgemeinen Datenbankaktionen, auf die oben auf dem Blatt „Datenbank“ zugegriffen werden kann. Sie können eine Datenbank zu einem früheren Zeitpunkt wiederherstellen, eine Datenbank in Visual Studio öffnen, eine Datenbank auf einen neuen Server kopieren und die Datenbank in ein Azure-Speicherkonto exportieren.
 
-- [Wiederherstellen einer SQL-­Datenbank](sql-database-point-in-time-restore-tutorial-management-portal.md)
+- [Wiederherstellen einer SQL-­Datenbank](sql-database-user-error-recovery.md)
 - [Öffnen einer SQL-Datenbank in Visual Studio](sql-database-connect-query.md)
 - [Exportieren einer SQL-­Datenbank](sql-database-export.md)
 
 ## 2\. Datenbanküberwachung
 ![Datenbanküberwachung](./media/sql-database-manage-portal/sqldatabase_monitoring.png)
 
-Azure SQL-Datenbanken verfügen standardmäßig über Überwachungsdiagramme für die Datenbankdurchsatzeinheit (DTU), die Größe der Datenbank und die Verbindungsintegrität. Diese Überwachungsdiagramme können angepasst und erweitert werden, um außerdem die CPU-Nutzung, den Daten-E/A-Prozentsatz, Deadlocks, den Protokoll-E/A-Prozentsatz oder sogar den Prozentsatz der Anforderungen anzuzeigen, die von der Firewall blockiert werden. Weitere Informationen zum Anpassen der Überwachungsdiagrammen finden Sie [hier][Azure part monitoring].
+Azure SQL-Datenbanken verfügen standardmäßig über Überwachungsdiagramme für die Datenbanktransaktionseinheit (DTU), die Größe der Datenbank und die Verbindungsintegrität. Diese Überwachungsdiagramme können angepasst und erweitert werden, um außerdem die CPU-Nutzung, den Daten-E/A-Prozentsatz, Deadlocks, den Protokoll-E/A-Prozentsatz oder sogar den Prozentsatz der Anforderungen anzuzeigen, die von der Firewall blockiert werden. Weitere Informationen zum Anpassen der Überwachungsdiagrammen finden Sie [hier][Azure part monitoring].
 
 Darüber hinaus können Regeln für Warnhinweise eingerichtet werden, um eine angegebene Metrik zu überwachen und einen bestimmten Administrator und Co-Administrator zu warnen, wenn vordefinierte Grenzwerte erreicht werden. Weitere Informationen zum Einrichten von Regeln für Warnhinweise im klassischen Azure-Portal finden Sie [hier][Azure part monitoring].
 
@@ -85,4 +85,4 @@ Azure SQL-Datenbanken können konfiguriert werden, um bereits übergebene Transa
   [AzureDb Auditing]: http://azure.microsoft.com/documentation/articles/sql-database-auditing-get-started/
   [AzureDb datamasking]: http://azure.microsoft.com/documentation/articles/sql-database-dynamic-data-masking-get-started/
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -30,9 +30,9 @@ Es ist jetzt möglich, mehrere Azure-Ressourcen in einer einzigen Azure-Ressourc
 
 In den folgenden Grenzwerten wurde eine neue Tabelle hinzugefügt, um alle abweichenden Grenzwerte bei Verwendung des Azure-Ressourcen-Managers aufzuzeigen. Es gibt beispielsweise eine Tabelle **Einschränkungen für Abonnements** und eine Tabelle **Abonnementgrenzwerte - Azure-Ressourcen-Manager**. Wenn ein Grenzwert für beide Szenarien gilt, wird er nur in der ersten Tabelle angezeigt. Sofern nicht anders angegeben, gelten Grenzwerte global für alle Regionen.
 
-> [AZURE.NOTE] Wichtig ist, dass Kontingente für Ressourcen in Azure-Ressourcengruppen pro Region über Ihr Abonnement zugänglich sind, und nicht wie die Dienstverwaltungskontingente pro Abonnement. Verwenden wir Kernspeicherkontingente als Beispiel. Wenn Sie eine Erhöhung des Kontingents mit Unterstützung für Kernspeicher anfordern müssen, müssen Sie entscheiden, wie viel Kernspeicher Sie in den einzelnen Regionen verwenden möchten, und anschließend eine spezifische Anforderung für Azure-Ressourcengruppen-Kernspeicherkontingente für die gewünschten Beträge und Regionen vornehmen. Wenn Sie für die Ausführung Ihrer Anwendung 30 Kerne in Westeuropa benötigen, sollten Sie daher 30 Kerne in Westeuropa anfordern. In anderen Regionen erfolgt jedoch keine Erhöhung des Kernspeicherkontingents. Das Kontingent von 30 Kernen gilt nur für Westeuropa. 
+> [AZURE.NOTE] Wichtig ist, dass Kontingente für Ressourcen in Azure-Ressourcengruppen pro Region über Ihr Abonnement zugänglich sind, und nicht wie die Dienstverwaltungskontingente pro Abonnement. Verwenden wir Kernspeicherkontingente als Beispiel. Wenn Sie eine Erhöhung des Kontingents mit Unterstützung für Kernspeicher anfordern müssen, müssen Sie entscheiden, wie viel Kernspeicher Sie in den einzelnen Regionen verwenden möchten, und anschließend eine spezifische Anforderung für Azure-Ressourcengruppen-Kernspeicherkontingente für die gewünschten Beträge und Regionen vornehmen. Wenn Sie für die Ausführung Ihrer Anwendung 30 Kerne in Westeuropa benötigen, sollten Sie daher 30 Kerne in Westeuropa anfordern. In anderen Regionen erfolgt jedoch keine Erhöhung des Kernspeicherkontingents. Das Kontingent von 30 Kernen gilt nur für Westeuropa.
 <!-- -->
-Daher sollten Sie ggf. überlegen, wie hoch Ihre Azure-Ressourcengruppenkontingente für Ihre Workload in jeder Region sein müssen, und diesen Betrag in jeder Region anfordern, in der Sie eine Bereitstellung in Betracht ziehen. Weitere Informationen zum Ermitteln Ihrer aktuellen Kontingente für bestimmte Regionen finden Sie unter [Problembehandlung bei der Bereitstellung](resource-group-deploy-debug.md##authentication-subscription-role-and-quota-issues).
+Daher sollten Sie gegebenenfalls überlegen, wie hoch Ihre Azure-Ressourcengruppenkontingente für Ihre Workload in jeder Region sein müssen, und diesen Betrag in jeder Region anfordern, in der Sie eine Bereitstellung in Betracht ziehen. Weitere Informationen zum Ermitteln Ihrer aktuellen Kontingente für bestimmte Regionen finden Sie unter [Problembehandlung bei der Bereitstellung](resource-group-deploy-debug.md##authentication-subscription-role-and-quota-issues).
 
 
 ## Dienstspezifische Grenzwerte
@@ -49,6 +49,7 @@ Daher sollten Sie ggf. überlegen, wie hoch Ihre Azure-Ressourcengruppenkontinge
 - [CDN](#cdn-limits)
 - [Cloud Services](#cloud-services-limits)
 - [Data Factory](#data-factory-limits)
+- [Data Lake Analytics](#data-lake-analytics-limits)
 - [DNS](#dns-limits)
 - [DocumentDB](#documentdb-limits)
 - [IoT Hub](#iot-hub-limits)
@@ -180,17 +181,15 @@ In der folgende Tabelle werden die Grenzwerte für Azure Biztalk Services aufgef
 
 ### Search-Grenzwerte
 
-Der Tarif bestimmt die Kapazität und die Beschränkungen des Suchdiensts.
+Die Tarife bestimmen die Kapazität und die Beschränkungen des Suchdiensts. Folgende Tarife sind verfügbar:
 
-####Standard-Ebene
+- **Free:** Mehrmandantendienst, der mit anderen Azure-Abonnenten gemeinsam genutzt wird und für Bewertung und kleine Entwicklungsprojekte vorgesehen ist.
+- **Basic (Vorschau)** bietet spezifische Computerressourcen für Produktions-Workloads mit geringerem Umfang. Dieser Tarif wird derzeit in der Vorschau und zu einem reduzierten Preis angeboten.
+- **Standard (S1 und S2)** ist für Produktions-Workloads vorgesehen. Eine Version mit höherer Kapazität (**S2**) ist auf Anfrage verfügbar (senden Sie eine E-Mail an azuresearch_contact@microsoft.com).
 
-[AZURE.INCLUDE [azure-search-limits-standard](../includes/azure-search-limits-standard.md)]
+[AZURE.INCLUDE [azure-search-limits-all](../includes/azure-search-limits-all.md)]
 
-####Stufe „Shared“ (Teil eines Mehrmandantendiensts, für Azure-Abonnenten kostenlos)
-
-[AZURE.INCLUDE [azure-search-limits-free](../includes/azure-search-limits-free.md)]
-
-Weitere Informationen zu Beschränkungen für Schlüssel, Replikat-Partitions-Kombinationen, Anforderungen und Antworten sowie zur Vorgehensweise für das Erzielen einer hohen Verfügbarkeit für unterschiedliche Workloads finden Sie unter [Grenzwerte für den Azure Search-Dienst](search/search-limits-quotas-capacity.md).
+Weitere Informationen zu anderen Einschränkungen, z. B. Dokumentgröße, Schlüssel, Anforderungen und Antworten, finden Sie unter [Grenzwerte für den Azure Search-Dienst](search/search-limits-quotas-capacity.md).
 
 ### Media Services-Grenzwerte
 
@@ -221,6 +220,8 @@ Weitere Informationen zu Beschränkungen für Schlüssel, Replikat-Partitions-Ko
 
 [AZURE.INCLUDE [azure-data-factory-limits](../includes/azure-data-factory-limits.md)]
 
+### Grenzwerte für Data Lake Analytics
+[AZURE.INCLUDE [azure-data-lake-analytics-limits](../includes/azure-data-lake-analytics-limits.md)]
 
 ### Stream Analytics-Grenzwerte
 
@@ -283,4 +284,4 @@ Einschränkungen für SQL-Datenbanken finden Sie unter [Ressourceneinschränkung
 
 [Größen für Cloud Services](cloud-services/cloud-services-sizes-specs.md)
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0302_2016-->

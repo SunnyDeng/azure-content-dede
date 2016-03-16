@@ -12,7 +12,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="02/12/2016"
+   ms.date="03/03/2016"
    ms.author="cherylmc"/>
 
 
@@ -22,7 +22,7 @@ Zum Herstellen einer Verbindung mit Microsoft-Clouddiensten per ExpressRoute mü
 
 Der Artikel [ExpressRoute-Verbindungen und Routingdomänen](expressroute-circuit-peerings.md) enthält eine Beschreibung der Routingsitzungen, die zum Herstellen der Konnektivität eingerichtet werden müssen.
 
-**Hinweis**: Microsoft unterstützt keine Routerredundanzprotokolle (z. B. HSRP, VRRP) für Konfigurationen mit hoher Verfügbarkeit. Wir nutzen ein redundantes Paar mit BGP-Sitzungen pro Peering, um die hohe Verfügbarkeit sicherzustellen.
+**Hinweis**: Microsoft unterstützt keine Routerredundanzprotokolle (z. B. HSRP, VRRP) für Konfigurationen mit hoher Verfügbarkeit. Wir nutzen ein redundantes Paar mit BGP-Sitzungen pro Peering, um die hohe Verfügbarkeit sicherzustellen.
 
 ## IP-Adressen für Peerings
 
@@ -78,15 +78,15 @@ Der Routingaustausch verläuft über das eBGP-Protokoll. EBGP-Sitzungen werden z
 
 ## Autonome Systemnummern
 
-Microsoft verwendet AS 12076 für das öffentliche und private Azure-Peering und das Microsoft-Peering. Wir haben AS 65515 für die interne Verwendung reserviert. Sowohl AS-Nummern mit 16 als auch mit 32 Bit werden unterstützt. Sie können private AS-Nummern für das private Azure-Peering verwenden. Für das öffentliche Azure-Peering und das Microsoft-Peering müssen Sie öffentliche AS-Nummern verwenden, die für Sie registriert sind.
+Microsoft verwendet AS 12076 für das öffentliche und private Azure-Peering und das Microsoft-Peering. Wir haben AS 65515 für die interne Verwendung reserviert. Sowohl AS-Nummern mit 16 als auch mit 32 Bit werden unterstützt. Sie können private AS-Nummern für das private Azure-Peering verwenden. Für das öffentliche Azure-Peering und das Microsoft-Peering müssen Sie öffentliche AS-Nummern verwenden, die für Sie registriert sind.
 
 Es gibt keine Anforderungen in Bezug auf die Symmetrie der Datenübertragung. Die Weiterleitungs- und Rückgabepfade können unterschiedliche Routerpaare durchlaufen. Identische Routen müssen von beiden Seiten über mehrere Verbindungspaare angekündigt werden, die in Ihrem Besitz sind. Routenmetriken müssen nicht identisch sein.
 
 ## Routenaggregation- und Präfixgrenzen
 
-Wir unterstützen bis zu 4.000 Präfixe, die uns per privatem Azure-Peering angekündigt werden. Dies kann auf bis zu 10.000 Präfixe erhöht werden, wenn das ExpressRoute Premium-Add-On aktiviert wird. Wir akzeptieren bis zu 200 Präfixe pro BGP-Sitzung für das öffentliche Azure-Peering und das Microsoft-Peering.
+Wir unterstützen bis zu 4.000 Präfixe, die uns per privatem Azure-Peering angekündigt werden. Dies kann auf bis zu 10.000 Präfixe erhöht werden, wenn das ExpressRoute Premium-Add-On aktiviert wird. Wir akzeptieren bis zu 200 Präfixe pro BGP-Sitzung für das öffentliche Azure-Peering und das Microsoft-Peering.
 
-Die BGP-Sitzung wird verworfen, wenn die Anzahl der Präfixe den Grenzwert überschreitet. Wir akzeptieren Standardrouten nur über den Link für privates Peering. Der Anbieter muss die Standardroute und private IP-Adressen (RFC 1918) aus den Pfaden für das öffentliche Azure-Peering und das Microsoft-Peering herausfiltern.
+Die BGP-Sitzung wird verworfen, wenn die Anzahl der Präfixe den Grenzwert überschreitet. Wir akzeptieren Standardrouten nur über den Link für privates Peering. Der Anbieter muss die Standardroute und private IP-Adressen (RFC 1918) aus den Pfaden für das öffentliche Azure-Peering und das Microsoft-Peering herausfiltern.
 
 ## Transitrouting und regionsübergreifendes Routing
 
@@ -127,11 +127,15 @@ Microsoft kennzeichnet Präfixe, die über das öffentliche Peering und Microsof
 | | USA (Mitte/Norden) | 12076:51007 |
 | | USA (Mitte/Süden) | 12076:51008 |
 | | USA (Mitte) | 12076:51009 |
+| | Kanada, Mitte | 12076:51020 |
+| | Kanada, Osten | 12076:51021 |
 | **Südamerika** | | |
 | | Brasilien Süd | 12076:51014 |
 | **Europa** | | |
 | | Nordeuropa | 12076:51003 |
 | | Westeuropa | 12076:51002 |
+| | Großbritannien, Norden | 12076:51022 |
+| | Großbritannien, Süden 2 | 12076:51023 |
 | **Asien-Pazifik** | | |
 | | Ostasien | 12076:51010 |
 | | Südostasien | 12076:51011 |
@@ -159,7 +163,7 @@ Zusätzlich zu den obigen Kennzeichnungen versieht Microsoft Präfixe auch basie
 | **SharePoint** | 12076:5020 |
 | **Skype for Business** | 12076:5030 |
 | **CRM Online** | 12076:5040 |
-| **Andere Office 365-Dienste** | 12076:5100 |
+| **Andere Office 365-Dienste** | 12076:5100 |
 
 
 ### Ändern von Routingvoreinstellungen
@@ -170,8 +174,8 @@ Microsoft berücksichtigt keine BGP-Communitywerte, die von Ihnen festgelegt wer
 
 - Konfigurieren Sie Ihre ExpressRoute-Verbindung.
 
-	- [Erstellen einer ExpressRoute-Verbindung für das klassische Bereitstellungsmodell](expressroute-howto-circuit-classic.md) oder [Erstellen und Ändern einer ExpressRoute-Verbindung mit dem Azure-Ressourcen-Manager](expressroute-howto-circuit-arm.md)
-	- [Konfigurieren des Routings für das klassische Bereitstellungsmodell](expressroute-howto-routing-classic.md) oder [Konfigurieren des Routings für das Ressourcen-Manager-Bereitstellungsmodell](expressroute-howto-routing-arm.md)
-	- [Verknüpfen eines klassischen VNet mit einer ExpressRoute-Verbindung](expressroute-howto-linkvnet-classic.md) oder [Verknüpfen eines Ressourcen-Manager-VNet mit einer ExpressRoute-Verbindung](expressroute-howto-linkvnet-arm.md)
+	- [Erstellen einer ExpressRoute-Verbindung für das klassische Bereitstellungsmodell](expressroute-howto-circuit-classic.md) oder [Erstellen und Ändern einer ExpressRoute-Verbindung mit Azure Resource Manager](expressroute-howto-circuit-arm.md)
+	- [Konfigurieren des Routings für das klassische Bereitstellungsmodell](expressroute-howto-routing-classic.md) oder [Konfigurieren des Routings für das Resource Manager-Bereitstellungsmodell](expressroute-howto-routing-arm.md)
+	- [Verknüpfen eines klassischen VNET mit einer ExpressRoute-Verbindung](expressroute-howto-linkvnet-classic.md) oder [Verknüpfen eines Resource Manager-VNET mit einer ExpressRoute-Verbindung](expressroute-howto-linkvnet-arm.md)
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0309_2016-->

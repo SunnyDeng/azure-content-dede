@@ -13,19 +13,19 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/25/2016"
+   ms.date="03/03/2016"
    ms.author="lodipalm;barbkess;sonyama"/>
 
 # Erstellen von SQL Data Warehouse mithilfe von Powershell
 
 > [AZURE.SELECTOR]
-- [Azure Portal](sql-data-warehouse-get-started-provision.md)
+- [Azure-Portal](sql-data-warehouse-get-started-provision.md)
 - [TSQL](sql-data-warehouse-get-started-create-database-tsql.md)
 - [PowerShell](sql-data-warehouse-get-started-provision-powershell.md)
 
 ## Abrufen und Ausführen der Azure PowerShell-Cmdlets
 
-> [AZURE.NOTE]  Zum Verwenden von Microsoft Azure PowerShell mit SQL Data Warehouse sollten Sie die aktuelle Version von Azure PowerShell mit ARM-Cmdlets herunterladen und installieren. Sie können Ihre Version überprüfen, indem Sie `Get-Module -ListAvailable -Name Azure` ausführen. Dieser Artikel basiert auf Microsoft Azure PowerShell Version 1.0.3.
+> [AZURE.NOTE]  Zum Verwenden von Microsoft Azure PowerShell mit SQL Data Warehouse sollten Sie die aktuelle Version von Azure PowerShell mit ARM-Cmdlets herunterladen und installieren. Sie können Ihre Version überprüfen, indem Sie `Get-Module -ListAvailable -Name Azure` ausführen. Dieser Artikel basiert auf Microsoft Azure PowerShell Version 1.0.3.
 
 Wenn Sie PowerShell noch nicht eingerichtet haben, müssen Sie PowerShell herunterladen und konfigurieren.
 
@@ -42,13 +42,13 @@ Wenn Sie PowerShell noch nicht eingerichtet haben, müssen Sie PowerShell herunt
 	```
 	Get-AzureRmSubscription	-SubscriptionName "MySubscription" | Select-AzureRmSubscription
 	```
-   
+
 ## Erstellen einer SQL Data Warehouse-Datenbank
 Verwenden Sie das New-AzureRmSQLDatabase-Cmdlet, um eine SQL Data Warehouse-Einheit bereitzustellen. Stellen Sie vor dem Ausführen des Befehls sicher, dass die unten angegebenen Voraussetzungen erfüllt sind.
 
 ### Voraussetzungen
 
-- V12 Azure SQL Server zum Hosten der Datenbank
+- V12 Azure SQL Server zum Hosten der Datenbank
 - Ressourcengruppenname für SQL Server liegt vor
 
 ### Bereitstellungsbefehl
@@ -78,7 +78,7 @@ Die Befehlsreferenz finden Sie unter [New-AzureRmSqlDatabase](https://msdn.micro
 Die Parameteroptionen finden Sie unter [CREATE DATABASE (Azure SQL Data Warehouse)](https://msdn.microsoft.com/library/mt204021.aspx).
 
 ## Nächste Schritte
-Nach der Bereitstellung von SQL Data Warehouse können Sie [Beispieldaten laden][] oder sich mit dem [Entwickeln][], [Laden][] oder [Migrieren][] befassen.
+Nach der SQL Data Warehouse-Bereitstellung können Sie [Beispieldaten laden][] oder die Schritte zum [Entwickeln][], [Laden][] oder [Migrieren][] erlernen.
 
 Weitere Informationen zur programmgesteuerten Verwaltung von SQL Data Warehouse finden Sie in der Dokumentation zu [PowerShell][] und der [REST-API][].
 
@@ -96,4 +96,4 @@ Weitere Informationen zur programmgesteuerten Verwaltung von SQL Data Warehouse 
 [firewall rules]: ../sql-database/sql-database-configure-firewall-settings.md
 [Installieren und Konfigurieren von Azure PowerShell]: ./powershell-install-configure.md
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0309_2016-->

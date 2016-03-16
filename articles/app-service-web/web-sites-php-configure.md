@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="PHP"
 	ms.topic="article"
-	ms.date="12/16/2015"
+	ms.date="02/26/2016"
 	ms.author="tomfitz"/>
 
 #Konfigurieren von PHP in Azure App Service-Web-Apps
@@ -164,7 +164,7 @@ Anstelle der PHP-Standardlaufzeit können App Service-Web-Apps auch eine PHP-Lau
 
 Weitere Informationen finden Sie im [PHP Developer Center](/develop/php/).
 
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Änderungen
 * Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
@@ -188,4 +188,4 @@ Weitere Informationen finden Sie im [PHP Developer Center](/develop/php/).
 [GETPHPVERPS]: ./media/web-sites-php-configure/ShowPHPVersion-PS.png
  
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0302_2016-->

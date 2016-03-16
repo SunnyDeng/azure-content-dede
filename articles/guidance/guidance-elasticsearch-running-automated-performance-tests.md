@@ -89,9 +89,16 @@ Kopieren Sie die folgenden Testskriptparameterdateien auf den JMeter-Servercompu
 
 * [query-config-win.ini](https://github.com/mspnp/azure-guidance/blob/master/ingestion-and-query-tests/query-config-win.ini) und [query-config-nix.ini](https://github.com/mspnp/azure-guidance/blob/master/ingestion-and-query-tests/query-config-nix.ini). Diese beiden Dateien enthalten die gleichen Informationen. Die *win*-Datei ist für Windows-Dateinamen und -Pfade formatiert, und die *nix*-Datei ist für Linux-Dateinamen und Pfade formatiert:
 
-  ```ini [DEFAULT] debug=true #Falls „true“, werden Konsolenprotokolle angezeigt.
+  ```ini
+  [DEFAULT]
+  debug=true #Falls „true“, werden Konsolenprotokolle angezeigt.
 
-  [RUN] pathreports=C:\\Users\\administrator1\\jmeter\\test-results\\ #Pfad, in dem Testergebnisse gespeichert werden. jmx=C:\\Users\\administrator1\\testplan.jmx #Pfad zum JMeter-Testplan. machines=10.0.0.1,10.0.02,10.0.0.3 #IPs der Elasticsearch-Datenknoten, getrennt durch Kommas. reports=aggr,err,tps,waitio,cpu,network,disk,response,view #Name der Berichte, getrennt durch Kommas. tests=idx1 #Name des zu testenden Elasticsearch-Indexes. properties=run.properties #Name der Eigenschaftendatei. ```
+  [RUN]
+  pathreports=C:\\Users\\administrator1\\jmeter\\test-results\\ #Pfad, in dem Testergebnisse gespeichert werden.
+  jmx=C:\\Users\\administrator1\\testplan.jmx #Pfad zum JMeter-Testplan.
+  machines=10.0.0.1,10.0.02,10.0.0.3 #IPs der Elasticsearch-Datenknoten, getrennt durch Kommas.
+  reports=aggr,err,tps,waitio,cpu,network,disk,response,view #Name der Berichte, getrennt durch Kommas. tests=idx1 #Name des zu testenden Elasticsearch-Indexes. properties=run.properties #Name der Eigenschaftendatei.
+  ```
 
   Bearbeiten Sie diese Datei, um die Speicherorte der Testergebnisse, den Namen des JMeter-Testplans, die IP-Adressen der Elasticsearch-Datenknoten, die unformatierte Leistungsdaten enthaltenden Berichte, die generiert werden, und den Namen (bzw. die Namen) des getesteten Indexes anzugeben. Wenn die Datei *run.properties* sich in einem anderen Ordner oder Verzeichnis befindet, geben Sie den vollständigen Pfad zu dieser Datei an.
 

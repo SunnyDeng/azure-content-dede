@@ -1,8 +1,8 @@
 <properties
 	pageTitle="Verwenden von Import/Export zum Übertragen von Daten in den Blob-Speicher | Microsoft Azure"
 	description="Erfahren Sie, wie Sie Import- und Exportaufträge im klassischen Portal erstellen, um Daten in den Blob-Speicher zu übertragen."
-	authors="robinsh"
-	manager="carmonm"
+	authors="renashahmsft"
+	manager="aungoo"
 	editor="tysonn"
 	services="storage"
 	documentationCenter=""/>
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/19/2016"
+	ms.date="02/29/2016"
 	ms.author="renash"/>
 
 
@@ -51,7 +51,7 @@ Für die Erstellung eines Import- oder Exportauftrags benötigen Sie außerdem d
 
 1.	**Abonnement und Speicherkonten:** Sie müssen über ein Azure-Abonnement und ein oder mehrere Speicherkonten verfügen, um den Import/Export-Dienst nutzen zu können. Bei jedem Auftrag können lediglich Daten auf ein oder von einem klassischen Speicherkonto übertragen werden. In anderen Worten: Ein Auftrag kann nicht mehrere Speicherkonten umfassen. Weitere Informationen zum Erstellen eines neuen Speicherkontos finden Sie unter [Erstellen eines Speicherkontos](storage-create-storage-account.md#create-a-storage-account). 
 
-  > [AZURE.NOTE] Wenn Sie ein ARM-Speicherkonto haben, wenden Sie sich an den Azure-Support.
+  > [AZURE.NOTE] Speicherkonten, die das ARM-Modell nutzen, werden noch nicht unterstützt.
 
 2.	**Festplatten:** Für den Import/Export-Dienst werden lediglich interne 3,5-Zoll-SATA II/III-Festplatten unterstützt. Es werden Festplatten mit bis zu 8 TB unterstützt. Bei Importaufträgen wird nur das erste Datenvolume auf dem Laufwerk verarbeitet. Das Datenvolume muss mit NTFS formatiert sein. Sie können SATA II/III-Laufwerke über einen externen SATA II/III-USB-Adapter extern an die meisten Computer anschließen.
 3.	**BitLocker-Verschlüsselung:** Alle auf den Festplatten gespeicherten Daten müssen mit BitLocker verschlüsselt sein. Dabei müssen die Verschlüsselungsschlüssel durch numerische Kennwörter geschützt sein.
@@ -230,7 +230,8 @@ Bei Exportaufträgen können Sie die BitLocker-Schlüssel, die vom Dienst für I
 
 - Nein, alle Laufwerke müssen mit BitLocker vorbereitet sein.
 
-**Muss ich den Datenträger beim Erstellen eines Exportauftragsvorbereiten?** – Nein, aber es empfiehlt sich, einige Vorabüberprüfungen durchzuführen. Überprüfen Sie die Anzahl der erforderlichen Datenträger mithilfe des PreviewExport-Befehls aus dem Import-/Exporttool für Azure. Weitere Informationen finden Sie unter [Vorschau der Laufwerknutzung für einen Exportauftrag](https://msdn.microsoft.com/library/azure/dn722414.aspx). Sie können damit eine Vorschau der Festplattenverwendung für Blobs anzeigen, die Sie ausgewählt haben, basierend auf der Größe der Laufwerke, die Sie verwenden möchten. Überprüfen Sie außerdem, ob Sie Lese-/Schreibzugriff auf die Festplatte haben, die für den Exportauftrag versendet werden soll.
+**Muss ich den Datenträger beim Erstellen eines Exportauftrags vorbereiten?**
+- Nein, aber es empfiehlt sich, einige Vorabüberprüfungen durchzuführen. Überprüfen Sie die Anzahl der erforderlichen Datenträger mithilfe des PreviewExport-Befehls aus dem Import-/Exporttool für Azure. Weitere Informationen finden Sie unter [Vorschau der Laufwerknutzung für einen Exportauftrag](https://msdn.microsoft.com/library/azure/dn722414.aspx). Sie können damit eine Vorschau der Festplattenverwendung für Blobs anzeigen, die Sie ausgewählt haben, basierend auf der Größe der Laufwerke, die Sie verwenden möchten. Überprüfen Sie außerdem, ob Sie Lese-/Schreibzugriff auf die Festplatte haben, die für den Exportauftrag versendet werden soll.
 
 ### Versand
 
@@ -274,7 +275,7 @@ Bei Exportaufträgen können Sie die BitLocker-Schlüssel, die vom Dienst für I
 
 - Bitte verschicken Sie nur Ihre Laufwerke. Legen Sie keine Gegenstände wie z. B. Strom- oder USB-Kabel bei.
 
-**Warum wird als Auftragsstatus im klassischen Portal*Versand* angezeigt, während auf der Website des Transportunternehmens angezeigt wird, dass mein Paket zugestellt wird?**
+**Warum wird als Auftragsstatus im klassischen Portal *Versand* angezeigt, während auf der Website des Transportunternehmens angezeigt wird, dass mein Paket zugestellt wird?**
 
 - Der Portalstatus ändert sich von *Versand* in *Übertragung*, wenn die Laufwerksverarbeitung beginnt. Wenn das Laufwerk den Standort erreicht hat, aber die Verarbeitung noch nicht gestartet wurde, wird als Auftragsstatus *Versand* angezeigt.
 
@@ -287,4 +288,4 @@ Bei Exportaufträgen können Sie die BitLocker-Schlüssel, die vom Dienst für I
 [export-job-03]: ./media/storage-import-export-service-classic-portal/export-job-03.png
 [export-job-bitlocker-keys]: ./media/storage-import-export-service-classic-portal/export-job-bitlocker-keys.png
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -25,7 +25,7 @@ Dieser Artikel beschreibt, wie Sie Azure Search zum Indizieren von Dokumenten (z
 
 Zum Einrichten und Konfigurieren des Indexers für Azure Blob Storage können Sie die Azure Search-REST-API nutzen, um **Indexer** und **Datenquellen** wie in [diesem Artikel](https://msdn.microsoft.com/library/azure/dn946891.aspx) beschrieben zu erstellen und zu verwalten. In Zukunft wird die Unterstützung für die Blobindizierung dem Azure Search-.NET-SDK und dem Azure-Portal hinzugefügt.
 
-Eine Datenquelle gibt an, welche Daten indiziert werden müssen. Sie legt außerdem die Anmeldeinformationen für den Zugriff auf die Daten sowie die Richtlinien zur Aktivierung von Azure Search fest, um Änderungen an den Daten effizient identifizieren zu können (z. B. neue, geänderte oder gelöschte Zeilen). Eine Datenquelle wird als unabhängige Ressource definiert, sodass sie von mehreren Indexern verwendet werden kann.
+Eine Datenquelle gibt an, welche Daten indiziert werden müssen. Sie legt außerdem die Anmeldeinformationen für den Zugriff auf die Daten sowie die Richtlinien zur Aktivierung von Azure Search fest, um Änderungen an den Daten effizient identifizieren zu können (z. B. neue, geänderte oder gelöschte Zeilen). Eine Datenquelle wird als unabhängige Ressource definiert, sodass sie von mehreren Indexern verwendet werden kann.
 
 Ein Indexer ist die Ressource, die Datenquellen mit Zielsuchindizes verbindet.
 
@@ -57,7 +57,7 @@ Als Nächstes erstellen Sie einen Indexer, der auf die Datenquelle und einen Zie
 
 	{
 	  "name" : "blob-indexer",
-	  "dataSourceName" : " blob-datasource ",
+	  "dataSourceName" : "blob-datasource",
 	  "targetIndexName" : "my-target-index",
 	  "schedule" : { "interval" : "PT2H" }
 	}
@@ -81,7 +81,7 @@ Azure Search indiziert jedes Dokument (Blob) wie folgt:
 
 - Der gesamte Inhalt des Dokuments wird in ein Zeichenfolgenfeld mit dem Namen `content` extrahiert. Beachten Sie, dass derzeit keine Unterstützung zum Extrahieren mehrerer Dokumente aus einem einzelnen Blob vorhanden ist:
 	- Beispielsweise wird eine CSV-Datei als einzelnes Dokument indiziert.
-	- Ein Verbunddokument oder eingebettetes Dokument (z. B. ein ZIP-Archiv oder ein Word-Dokument mit eingebetteter Outlook-E-Mail mit PDF-Anhang) wird ebenfalls als einzelnes Dokument indiziert.
+	- Ein Verbunddokument oder eingebettetes Dokument (z. B. ein ZIP-Archiv oder ein Word-Dokument mit eingebetteter Outlook-E-Mail mit PDF-Anhang) wird ebenfalls als einzelnes Dokument indiziert.
 
 - Falls für das Blob vom Benutzer angegebene Metadateneigenschaften vorhanden sind, werden diese „Wort für Wort“ extrahiert. Die Metadateneigenschaften können auch verwendet werden, um bestimmte Aspekte des Prozesses der Dokumentextrahierung zu steuern. Weitere Informationen finden Sie unter [Verwenden von benutzerdefinierten Metadaten zum Steuern der Dokumentextrahierung](#CustomMetadataControl).
 
@@ -111,7 +111,7 @@ In Azure Search wird ein Dokument mit dem Dokumentschlüssel eindeutig identifiz
    
 Sie sollten sorgfältig abwägen, welches extrahierte Feld Sie dem Schlüsselfeld für Ihren Index zuordnen. Die Kandidaten lauten:
 
-- **metadata\_storage\_name**: Dies ist ggf. ein passender Kandidat. Beachten Sie aber, dass 1) die Namen unter Umständen nicht eindeutig sind, falls Blobs mit dem gleichen Namen in unterschiedlichen Ordnern enthalten sind, und 2) der Name Zeichen enthalten kann, die in Dokumentschlüsseln ungültig sind, z. B. Bindestriche. Als Lösung für ungültige Zeichen können Sie die Option `base64EncodeKeys` in den Indexereigenschaften aktivieren. Denken Sie in diesem Fall daran, die Dokumentschlüssel zu codieren, wenn Sie sie in API-Aufrufen übergeben, z. B. bei einem Lookup. (Unter .NET können Sie hierfür beispielsweise die [UrlTokenEncode-Methode](https://msdn.microsoft.com/library/system.web.httpserverutility.urltokenencode.aspx) verwenden.)
+- **metadata\_storage\_name**: Dies ist ggf. ein passender Kandidat. Beachten Sie aber, dass 1) die Namen unter Umständen nicht eindeutig sind, falls Blobs mit dem gleichen Namen in unterschiedlichen Ordnern enthalten sind, und 2) der Name Zeichen enthalten kann, die in Dokumentschlüsseln ungültig sind, z. B. Bindestriche. Als Lösung für ungültige Zeichen können Sie die Option `base64EncodeKeys` in den Indexereigenschaften aktivieren. Denken Sie in diesem Fall daran, die Dokumentschlüssel zu codieren, wenn Sie sie in API-Aufrufen übergeben, z. B. bei einem Lookup. (Unter .NET können Sie hierfür beispielsweise die [UrlTokenEncode-Methode](https://msdn.microsoft.com/library/system.web.httpserverutility.urltokenencode.aspx) verwenden.)
 
 - **metadata\_storage\_path**: Die Verwendung des vollständigen Pfads sorgt für Eindeutigkeit, aber der Pfad enthält auf jeden Fall `/`-Zeichen, die [in einem Dokumentschlüssel ungültig sind](https://msdn.microsoft.com/library/azure/dn857353.aspx). Wie oben auch, haben Sie hierbei die Möglichkeit, die Schlüssel mit der Option `base64EncodeKeys` zu codieren.
 
@@ -181,13 +181,13 @@ In der folgenden Tabelle sind die Verarbeitungsschritte für jedes Dokumentforma
 Dokumentformat/Inhaltstyp | Inhaltstypspezifische Metadateneigenschaften | Verarbeitungsdetails
 -------------------------------|-------------------------------------------|-------------------
 HTML (`text/html`) | `metadata_content_encoding`<br/>`metadata_content_type`<br/>`metadata_language`<br/>`metadata_description`<br/>`metadata_keywords`<br/>`metadata_title` | Entfernen von HTML-Markup und Extrahieren von Text
-PDF (`application/pdf`) | `metadata_content_type`<br/>`metadata_language`<br/>`metadata_author`<br/>`metadata_title`| Extrahieren von Text, z. B. eingebettete Dokumente (mit Ausnahme von Bildern)
-DOCX (application/vnd.openxmlformats-officedocument.wordprocessingml.document) | `metadata_content_type`<br/>`metadata_author`<br/>`metadata_character_count`<br/>`metadata_creation_date`<br/>`metadata_last_modified`<br/>`metadata_page_count`<br/>`metadata_word_count` | Extrahieren von Text, z. B. eingebettete Dokumente
-DOC (application/msword) | `metadata_content_type`<br/>`metadata_author`<br/>`metadata_character_count`<br/>`metadata_creation_date`<br/>`metadata_last_modified`<br/>`metadata_page_count`<br/>`metadata_word_count` | Extrahieren von Text, z. B. eingebettete Dokumente
-XLSX (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet) | `metadata_content_type`<br/>`metadata_author`<br/>`metadata_creation_date`<br/>`metadata_last_modified` | Extrahieren von Text, z. B. eingebettete Dokumente
-XLS (application/vnd.ms-excel) | `metadata_content_type`<br/>`metadata_author`<br/>`metadata_creation_date`<br/>`metadata_last_modified` | Extrahieren von Text, z. B. eingebettete Dokumente
-PPTX (application/vnd.openxmlformats-officedocument.presentationml.presentation) | `metadata_content_type`<br/>`metadata_author`<br/>`metadata_creation_date`<br/>`metadata_last_modified`<br/>`metadata_slide_count`<br/>`metadata_title` | Extrahieren von Text, z. B. eingebettete Dokumente
-PPT (application/vnd.ms-powerpoint) | `metadata_content_type`<br/>`metadata_author`<br/>`metadata_creation_date`<br/>`metadata_last_modified`<br/>`metadata_slide_count`<br/>`metadata_title` | Extrahieren von Text, z. B. eingebettete Dokumente
+PDF (`application/pdf`) | `metadata_content_type`<br/>`metadata_language`<br/>`metadata_author`<br/>`metadata_title`| Extrahieren von Text, z. B. eingebettete Dokumente (mit Ausnahme von Bildern)
+DOCX (application/vnd.openxmlformats-officedocument.wordprocessingml.document) | `metadata_content_type`<br/>`metadata_author`<br/>`metadata_character_count`<br/>`metadata_creation_date`<br/>`metadata_last_modified`<br/>`metadata_page_count`<br/>`metadata_word_count` | Extrahieren von Text, z. B. eingebettete Dokumente
+DOC (application/msword) | `metadata_content_type`<br/>`metadata_author`<br/>`metadata_character_count`<br/>`metadata_creation_date`<br/>`metadata_last_modified`<br/>`metadata_page_count`<br/>`metadata_word_count` | Extrahieren von Text, z. B. eingebettete Dokumente
+XLSX (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet) | `metadata_content_type`<br/>`metadata_author`<br/>`metadata_creation_date`<br/>`metadata_last_modified` | Extrahieren von Text, z. B. eingebettete Dokumente
+XLS (application/vnd.ms-excel) | `metadata_content_type`<br/>`metadata_author`<br/>`metadata_creation_date`<br/>`metadata_last_modified` | Extrahieren von Text, z. B. eingebettete Dokumente
+PPTX (application/vnd.openxmlformats-officedocument.presentationml.presentation) | `metadata_content_type`<br/>`metadata_author`<br/>`metadata_creation_date`<br/>`metadata_last_modified`<br/>`metadata_slide_count`<br/>`metadata_title` | Extrahieren von Text, z. B. eingebettete Dokumente
+PPT (application/vnd.ms-powerpoint) | `metadata_content_type`<br/>`metadata_author`<br/>`metadata_creation_date`<br/>`metadata_last_modified`<br/>`metadata_slide_count`<br/>`metadata_title` | Extrahieren von Text, z. B. eingebettete Dokumente
 MSG (application/vnd.ms-outlook) | `metadata_content_type`<br/>`metadata_message_from`<br/>`metadata_message_to`<br/>`metadata_message_cc`<br/>`metadata_message_bcc`<br/>`metadata_creation_date`<br/>`metadata_last_modified`<br/>`metadata_subject` | Extrahieren von Text, einschließlich Anlagen
 ZIP (application/zip) | `metadata_content_type` | Extrahieren von Text aus allen Dokumenten im Archiv
 XML (application/xml) | `metadata_content_type`</br>`metadata_content_encoding`</br> | Entfernen von XML-Markup und Extrahieren von Text
@@ -209,4 +209,4 @@ AzureSearch\_SkipContent | „true“ | Weist den Blobindexer an, nur die Metada
 
 Teilen Sie uns auf unserer [UserVoice-Website](https://feedback.azure.com/forums/263029-azure-search/) mit, wenn Sie sich Features wünschen oder Verbesserungsvorschläge haben.
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0302_2016-->

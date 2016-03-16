@@ -49,8 +49,7 @@ Nachdem der Slack-Connector erstellt wurde, können Sie ihn als Aktion Ihrer Log
 
 1.	Öffnen Sie in der Logik-App **Trigger und Aktionen**. [Erstellen einer neuen Logik-App](app-service-logic-create-a-logic-app.md)
 
-2.	Der Slack-Connector wird im Katalog auf der rechten Seite aufgeführt:
-
+2.	Der Slack-Connector wird im Katalog auf der rechten Seite aufgeführt:  
 ![][2]
 
 3.	Wählen Sie den Slack-Connector aus, den Sie erstellt haben, um ihn automatisch Ihrer Logik-App hinzuzufügen.

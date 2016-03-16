@@ -1,33 +1,33 @@
-<properties 
+<properties
    pageTitle="Erste Schritte mit Data Lake-Speicher mithilfe der plattformübergreifenden Befehlszeilenschnittstelle | Microsoft Azure"
-   description="Verwenden Sie die plattformübergreifende Befehlszeile zum Erstellen eines Data Lake-Speicherkontos und Durchführen grundlegender Vorgänge." 
-   services="data-lake-store" 
-   documentationCenter="" 
-   authors="nitinme" 
-   manager="paulettm" 
+   description="Verwenden Sie die plattformübergreifende Befehlszeile zum Erstellen eines Data Lake-Speicherkontos und Durchführen grundlegender Vorgänge."
+   services="data-lake-store"
+   documentationCenter=""
+   authors="nitinme"
+   manager="paulettm"
    editor="cgronlun"/>
- 
+
 <tags
    ms.service="data-lake-store"
    ms.devlang="na"
-   ms.topic="get-started-article"
+   ms.topic="hero-article"
    ms.tgt_pltfrm="na"
-   ms.workload="big-data" 
+   ms.workload="big-data"
    ms.date="01/04/2016"
    ms.author="nitinme"/>
 
-# Erste Schritte mit Azure Data Lake-Speicher unter Verwendung der Azure-Befehlszeile
+# Erste Schritte mit Azure Data Lake-Speicher unter Verwendung der Azure-Befehlszeile
 
 > [AZURE.SELECTOR]
-- [Using Portal](data-lake-store-get-started-portal.md)
-- [Using PowerShell](data-lake-store-get-started-powershell.md)
-- [Using .NET SDK](data-lake-store-get-started-net-sdk.md)
-- [Using Azure CLI](data-lake-store-get-started-cli.md)
-- [Using Node.js](data-lake-store-manage-use-nodejs.md)
+- [Verwenden des Portals](data-lake-store-get-started-portal.md)
+- [Mithilfe von PowerShell](data-lake-store-get-started-powershell.md)
+- [Verwenden des .NET SDK](data-lake-store-get-started-net-sdk.md)
+- [Verwenden der Azure-Befehlszeilenschnittstelle](data-lake-store-get-started-cli.md)
+- [Verwenden von Node.js](data-lake-store-manage-use-nodejs.md)
 
-Hier erfahren Sie, wie Sie mit der Azure-Befehlszeilenschnittstelle (Azure-CLI) ein Azure Data Lake-Speicherkonto erstellen und grundlegende Vorgänge ausführen (also etwa Ordner erstellen, Datendateien hoch- und herunterladen, Ihr Konto löschen und Ähnliches). Weitere Informationen zum Data Lake-Speicher finden Sie unter [Übersicht über Data Lake-Speicher](data-lake-store-overview.md).
+Hier erfahren Sie, wie Sie mit der Azure-Befehlszeilenschnittstelle (Azure-CLI) ein Azure Data Lake-Speicherkonto erstellen und grundlegende Vorgänge ausführen (also etwa Ordner erstellen, Datendateien hoch- und herunterladen, Ihr Konto löschen und Ähnliches). Weitere Informationen zum Data Lake-Speicher finden Sie unter [Übersicht über Data Lake-Speicher](data-lake-store-overview.md).
 
-Die Azure-CLI ist in Node.js implementiert. Sie kann auf allen Plattformen verwendet werden, die Node.js unterstützen, inklusive Windows, Mac und Linux. Die Azure-Befehlszeilenschnittstelle ist Open Source. Der Quellcode wird auf GitHub unter <a href= "https://github.com/azure/azure-xplat-cli">https://github.com/azure/azure-xplat-cli</a> verwaltet. In diesem Artikel wird lediglich die Verwendung der Azure-CLI mit dem Data Lake-Speicher behandelt. Eine allgemeine Anleitung zur Verwendung der Azure-CLI finden Sie unter [Verwenden der Azure-CLI][azure-command-line-tools].
+Die Azure-CLI ist in Node.js implementiert. Sie kann auf allen Plattformen verwendet werden, die Node.js unterstützen, inklusive Windows, Mac und Linux. Die Azure-Befehlszeilenschnittstelle ist Open Source. Der Quellcode wird auf GitHub unter <a href= "https://github.com/azure/azure-xplat-cli">https://github.com/azure/azure-xplat-cli</a> verwaltet. In diesem Artikel wird lediglich die Verwendung der Azure-CLI mit dem Data Lake-Speicher behandelt. Eine allgemeine Anleitung zur Verwendung der Azure-CLI finden Sie unter [Verwenden der Azure-CLI][azure-command-line-tools].
 
 
 ##Voraussetzungen
@@ -35,12 +35,12 @@ Die Azure-CLI ist in Node.js implementiert. Sie kann auf allen Plattformen verwe
 Bevor Sie mit diesem Artikel beginnen können, benötigen Sie Folgendes:
 
 - **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/).
-- **Aktiviertes Azure-Abonnement** für die öffentliche Vorschauversion des Data Lake-Speichers. Weitere Informationen finden Sie in den [Anweisungen](data-lake-store-get-started-portal.md#signup). 
+- **Aktiviertes Azure-Abonnement** für die öffentliche Vorschauversion des Data Lake-Speichers. Weitere Informationen finden Sie in den [Anweisungen](data-lake-store-get-started-portal.md#signup).
 - **Azure-CLI** – Informationen zur Installation und Konfiguration finden Sie unter [Installieren und Konfigurieren der Azure-CLI](../xplat-cli-install.md). Achten Sie darauf, Ihren Computer nach der Installation der Befehlszeilenschnittstelle neu zu starten.
 
 ##Anmelden bei Ihrem Azure-Abonnement
 
-Führen Sie die Schritte aus, die unter [Herstellen einer Verbindung mit einem Azure-Abonnement von der Azure Befehlszeilenschnittstelle (Azure-CLI)](xplat-cli-connect.md) dokumentiert sind, und stellen Sie über die __login__-Methode eine Verbindung mit Ihrem Abonnement her.
+Führen Sie die Schritte aus, die unter [Herstellen einer Verbindung mit einem Azure-Abonnement von der Azure Befehlszeilenschnittstelle (Azure-CLI)](../xplat-cli-connect.md) dokumentiert sind, und stellen Sie über die __login__-Methode eine Verbindung mit Ihrem Abonnement her.
 
 
 ## Erstellen eines Azure Data Lake-Speicherkontos
@@ -73,13 +73,13 @@ Führen Sie die Schritte aus, die unter [Herstellen einer Verbindung mit einem A
 
 	Wenn der Name des Standorts Leerzeichen enthält, setzen Sie ihn in doppelte Anführungszeichen. Beispiel: „USA (Ost) 2“.
 
-5. Erstellen Sie das Data Lake-Speicherkonto.
+5. Erstellen Sie das Data Lake-Speicherkonto.
 
 		azure datalake store account create <dataLakeStoreAccountName> <location> <resourceGroup>
 
-## Erstellen von Ordnern im Data Lake-Speicher
+## Erstellen von Ordnern im Data Lake-Speicher
 
-Sie können in Ihrem Azure Data Lake-Speicherkonto Ordner zum Verwalten und Speichern von Daten erstellen. Verwenden Sie den folgenden Befehl, um im Stammverzeichnis des Data Lake-Speichers den Ordner „mynewfolder“ zu erstellen.
+Sie können in Ihrem Azure Data Lake-Speicherkonto Ordner zum Verwalten und Speichern von Daten erstellen. Verwenden Sie den folgenden Befehl, um im Stammverzeichnis des Data Lake-Speichers den Ordner „mynewfolder“ zu erstellen.
 
 	azure datalake store filesystem create <dataLakeStoreAccountName> <path> --folder
 
@@ -87,11 +87,11 @@ Beispiel:
 
 	azure datalake store filesystem create mynewdatalakestore /mynewfolder --folder
 
-## Hochladen von Daten in den Data Lake-Speicher
+## Hochladen von Daten in den Data Lake-Speicher
 
-Sie können Ihre Daten direkt auf die Stammebene eines Data Lake-Speichers oder in einen im Konto erstellten Ordner hochladen. Die folgenden Codeausschnitte veranschaulichen das Hochladen von Beispieldaten in den im vorigen Abschnitt erstellten Ordner (**mynewfolder**).
+Sie können Ihre Daten direkt auf die Stammebene eines Data Lake-Speichers oder in einen im Konto erstellten Ordner hochladen. Die folgenden Codeausschnitte veranschaulichen das Hochladen von Beispieldaten in den im vorigen Abschnitt erstellten Ordner (**mynewfolder**).
 
-Wenn Sie Beispieldaten hochladen möchten, können Sie den Ordner **Ambulance Data** aus dem [Azure Data Lake-Git-Repository](https://github.com/MicrosoftBigData/usql/tree/master/Examples/Samples/Data/AmbulanceData) herunterladen. Laden Sie die Datei herunter, und speichern Sie sie in ein lokales Verzeichnis auf dem Computer, z. B. „C:\\sampledata“.
+Wenn Sie Beispieldaten hochladen möchten, können Sie den Ordner **Ambulance Data** aus dem [Azure Data Lake-Git-Repository](https://github.com/MicrosoftBigData/usql/tree/master/Examples/Samples/Data/AmbulanceData) herunterladen. Laden Sie die Datei herunter, und speichern Sie sie in ein lokales Verzeichnis auf dem Computer, z. B. „C:\\sampledata“.
 
 	azure datalake store filesystem import <dataLakeStoreAccountName> "<source path>" "<destination path>"
 
@@ -146,12 +146,12 @@ Die Ausgabe sollte in etwa wie folgt aussehen:
 
 * Verwenden Sie zum **Löschen einer Datei** den folgenden Befehl:
 
-		azure datalake store filesystem delete <dataLakeStoreAccountName> <path> 
+		azure datalake store filesystem delete <dataLakeStoreAccountName> <path>
 
 	Beispiel:
 
 		azure datalake store filesystem delete mynewdatalakestore /mynewfolder/vehicle1_09142014_copy.csv
-	
+
 	Geben Sie nach entsprechender Aufforderung **Y** ein, um das Element zu löschen.
 
 ## Anzeigen der Zugriffssteuerungsliste für einen Ordner im Data Lake-Speicher
@@ -165,9 +165,9 @@ Beispiel:
 	azure datalake store permissions show mynewdatalakestore /
 
 
-## Löschen Ihres Data Lake-Speicherkontos
+## Löschen Ihres Data Lake-Speicherkontos
 
-Verwenden Sie zum Löschen eines Data Lake-Speicherkontos den folgenden Befehl.
+Verwenden Sie zum Löschen eines Data Lake-Speicherkontos den folgenden Befehl.
 
 	azure datalake store account delete <dataLakeStoreAccountName>
 
@@ -180,17 +180,17 @@ Geben Sie nach entsprechender Aufforderung **Y** ein, um das Konto zu löschen.
 ## Weitere Methoden zum Erstellen eines Data Lake-Speicherkontos
 
 - [Erste Schritte mit Data Lake-Speicher mithilfe des Portals](data-lake-store-get-started-portal.md)
-- [Erste Schritte mit dem Data Lake-Speicher unter Verwendung des .NET-SDK](data-lake-store-get-started-net-sdk.md)
-- [Erste Schritte mit dem Data Lake-Speicher unter Verwendung von PowerShell](data-lake-store-get-started-powershell.md)
+- [Erste Schritte mit dem Data Lake-Speicher unter Verwendung des .NET-SDK](data-lake-store-get-started-net-sdk.md)
+- [Erste Schritte mit dem Data Lake-Speicher unter Verwendung von PowerShell](data-lake-store-get-started-powershell.md)
 
 
 ## Nächste Schritte
 
 - [Sichern von Daten in Data Lake-Speicher](data-lake-store-secure-data.md)
-- [Verwenden von Azure Data Lake Analytics mit Data Lake-Speicher](data-lake-analytics-get-started-portal.md)
+- [Verwenden von Azure Data Lake Analytics mit Data Lake-Speicher](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
 - [Verwenden von Azure HDInsight mit Data Lake-Speicher](data-lake-store-hdinsight-hadoop-use-portal.md)
 
 
 [azure-command-line-tools]: ../xplat-cli-install.md
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0309_2016-->

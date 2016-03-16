@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Erste Schritte mit Azure Data Factory (Visual Studio)"
+	pageTitle="Erstellen der ersten Data Factory (Visual Studio) | Microsoft Azure"
 	description="In diesem Tutorial erstellen Sie eine Azure Data Factory-Beispielpipeline mithilfe von Visual Studio."
 	services="data-factory"
 	documentationCenter=""
@@ -16,7 +16,7 @@
 	ms.date="02/16/2016"
 	ms.author="spelluru"/>
 
-# Erste Schritte mit Azure Data Factory (Visual Studio)
+# Erstellen der ersten Azure Data Factory mit Microsoft Visual Studio
 > [AZURE.SELECTOR]
 - [Übersicht über das Tutorial](data-factory-build-your-first-pipeline.md)
 - [Verwenden des Data Factory-Editors](data-factory-build-your-first-pipeline-using-editor.md)
@@ -257,6 +257,7 @@ In diesem Schritt erstellen Sie Ihre erste Pipeline mit einer **HDInsightHive**-
 
 	Im JSON-Code der Aktivität geben Sie an, dass das Hive-Skript auf der Computeinstanz ausgeführt wird, die vom **linkedServiceName** – **HDInsightOnDemandLinkedService** angegeben wurde.
 
+	> [ACOM.NOTE] Einzelheiten zu JSON-Eigenschaften, die im Beispiel oben verwendet wurden, finden Sie unter [Anatomie einer Pipeline](data-factory-create-pipelines.md#anatomy-of-a-pipeline). 
 3. Speichern Sie die Datei **HiveActivity1.json**.
 
 ### Hinzufügen von „partitionweblogs.hql“ und „input.log“ als Abhängigkeit 
@@ -316,7 +317,6 @@ Beim Veröffentlichen der Lösung im nächsten Schritt wird die Datei **partitio
 
 	![Datensatz](./media/data-factory-build-your-first-pipeline-using-vs/dataset-blade.png)
 9. Wenn die Verarbeitung abgeschlossen ist, wird der Slice mit dem Zustand **Bereit** angezeigt.
-
 	>[AZURE.IMPORTANT] Die Erstellung eines bedarfsgesteuerten HDInsight-Clusters dauert in der Regel einige Zeit (etwa 20 Minuten).  
 
 	![Datensatz](./media/data-factory-build-your-first-pipeline-using-vs/dataset-slice-ready.png)
@@ -365,7 +365,7 @@ Sehen Sie sich die folgende JSON-Definition für einen verknüpften Azure Storag
 Führen Sie die folgenden Schritte aus, um eine Konfigurationsdatei für jede Umgebung hinzuzufügen:
 
 1. Klicken Sie mit der rechten Maustaste auf das Data Factory-Projekt in Ihrer Visual Studio-Projektmappe, zeigen Sie auf **Hinzufügen**, und klicken Sie auf **Neuer Eintrag**.
-2. Wählen Sie links in der Liste mit den installierten Vorlagen die Option **Config**, klicken Sie auf **Konfigurationsdatei**, geben Sie einen **Namen** für die Konfigurationsdatei ein, und klicken Sie auf **Hinzufügen**.
+2. Wählen Sie links in der Liste mit den installierten Vorlagen die Option **Config** aus, klicken Sie auf **Konfigurationsdatei**, geben Sie einen **Namen** für die Konfigurationsdatei ein, und klicken Sie auf **Hinzufügen**.
 
 	![Konfigurationsdatei hinzufügen](./media/data-factory-build-your-first-pipeline-using-vs/add-config-file.png)
 3. Fügen Sie Konfigurationsparameter und deren Werte im unten angegebenen Format hinzu:
@@ -450,4 +450,4 @@ Bei der Bereitstellung werden die Werte aus der Konfigurationsdatei zum Festlege
 In diesem Artikel haben Sie eine Pipeline mit einer Transformationsaktivität (HDInsight-Aktivität) erstellt, die ein Hive-Skript in einem bedarfsgesteuerten HDInsight-Cluster ausführt. Informationen zum Verwenden einer Kopieraktivität zum Kopieren von Daten aus einem Azure-Blob in Azure SQL finden Sie unter [Lernprogramm: Kopieren von Daten aus einem Azure-Blob in Azure SQL](data-factory-get-started.md).
   
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

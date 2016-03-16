@@ -18,15 +18,12 @@
 
 # <a name="getting-started"></a>Erste Schritte mit Mobile Services
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]
 
 &nbsp;
 
-
-[AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]
-
-[AZURE.INCLUDE [mobile-services-hero-slug](../../includes/mobile-services-hero-slug.md)]
-
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+> Informationen für die entsprechende Mobile Apps-Version dieses Themas finden Sie unter [Erstellen einer iOS-App in Azure Mobile Apps](../app-service-mobile/app-service-mobile-android-get-started.md).
 
 In diesem Lernprogramm erfahren Sie, wie Sie mit den Azure Mobile Services einen cloudbasierten Back-End-Dienst zu einer iOS-App hinzufügen können.
 
@@ -95,4 +92,4 @@ Erfahren Sie, wie Sie weitere wichtige Aufgaben in Mobile Services durchführen:
 [XCode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [.NET-Back-End-Version]: mobile-services-dotnet-backend-ios-get-started.md
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0309_2016-->

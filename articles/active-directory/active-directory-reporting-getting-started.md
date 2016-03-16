@@ -3,7 +3,7 @@
    description="Listet die verschiedenen verfügbaren Berichte in Azure Active Directory Reporting auf"
    services="active-directory"
    documentationCenter=""
-   authors="curtand"
+   authors="dhanyahk"
    manager="stevenpo"
    editor=""/>
 
@@ -13,8 +13,8 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="02/10/2016"
-   ms.author="curtand;kenhoff"/>
+   ms.date="03/07/2016"
+   ms.author="dhanyahk"/>
 
 # Erste Schritte mit Azure Active Directory-Berichten
 
@@ -24,7 +24,7 @@ Azure Active Directory (Azure AD) umfasst Sicherheits-, Aktivitäts- und Prüfbe
 
 ### Sicherheitsberichte
 
-- Anmeldungen aus unbekannten Quellen
+- Anmeldungen von unbekannten Quellen
 - Anmeldungen nach mehreren Fehlern
 - Anmeldungen aus mehreren geografischen Regionen
 - Anmeldungen von IP-Adressen mit verdächtigen Aktivitäten
@@ -65,7 +65,7 @@ Die Berichterstellungspipeline umfasst drei wesentliche Schritte. Jedes Mal, wen
 
 ### Berichterstellungszeiten
 
-Aufgrund der großen Anzahl von Authentifizierungen und Anmeldungen, die von der Azure AD-Plattform verarbeitet werden, sind die aktuellsten verarbeiteten Anmeldungen im Durchschnitt eine Stunde alt. In seltenen Fällen sind die aktuellsten verarbeiteten Anmeldungen bis zu 8 Stunden alt.
+Aufgrund der großen Anzahl von Authentifizierungen und Anmeldungen, die von der Azure AD-Plattform verarbeitet werden, sind die aktuellsten verarbeiteten Anmeldungen im Durchschnitt eine Stunde alt. In seltenen Fällen kann es bis zu 8 Stunden dauern, die letzten Anmeldungen zu verarbeiten.
 
 Sie finden die aktuellste verarbeitete Anmeldung im Hilfetext am oberen Rand jedes Berichts.
 
@@ -92,7 +92,7 @@ Wenn Sie zum ersten Mal Berichte anzeigen, müssen Sie ein Dialogfeld bestätige
 
 ### Untersuchen der einzelnen Berichte
 
-Navigieren Sie zu jedem Bericht, um die gesammelten Daten und die verarbeiteten Anmeldungen zu sehen. Sie finden [hier eine Liste aller Berichte](active-directory-reporting-guide.md).
+Navigieren Sie zu jedem Bericht, um die erfassten Daten und die verarbeiteten Anmeldungen zu sehen. Sie finden [hier eine Liste aller Berichte](active-directory-reporting-guide.md).
 
 ![Alle Berichte](./media/active-directory-reporting-getting-started/reportsMain.png)
 
@@ -118,7 +118,7 @@ Wechseln Sie zur Registerkarte "Konfigurieren" Ihres Verzeichnisses.
 
 Führen Sie einen Bildlauf zum Abschnitt "Benachrichtigungen" aus.
 
-Aktivieren oder deaktivieren Sie den Abschnitt "E-Mail-Benachrichtigungen über anomale Anmeldungen".
+Aktivieren oder deaktivieren Sie den Bereich „E-Mail-Benachrichtigungen über anomale Anmeldungen“.
 
 ![Abschnitt "Benachrichtigungen"](./media/active-directory-reporting-getting-started/notificationsSection.png)
 
@@ -152,8 +152,8 @@ Informationen hierzu finden Sie unter [Erste Schritte mit der Azure AD Reporting
 
 ### Setzen Sie sich mit uns in Verbindung
 
-Unter der E-Mail-Adresse [aadreportinghelp@microsoft.com](mailto:aadreportinghelp@microsoft.com) erhalten Sie Feedback, Hilfe und Antworten auf Ihre Fragen!
+Unter der E-Mail-Adresse [aadreportinghelp@microsoft.com](mailto:aadreportinghelp@microsoft.com) erhalten Sie Feedback, Hilfe und Antworten auf Ihre Fragen.
 
 > [AZURE.TIP] Weitere Dokumentationen zu Azure AD Reporting finden Sie unter [Anzeigen von Zugriffs- und Nutzungsberichten](active-directory-view-access-usage-reports.md).
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0309_2016-->

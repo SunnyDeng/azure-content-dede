@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/16/2015" 
+	ms.date="02/26/2016" 
 	ms.author="tomfitz"/>
 
 # Bereitstellen einer Web-App mit einer SQL-Datenbank
@@ -457,4 +457,4 @@ Erstellt einen neuen SQL-Server und eine Datenbank. Der Name des Servers wird im
 
  
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0302_2016-->

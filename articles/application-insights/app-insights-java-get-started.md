@@ -98,7 +98,7 @@ Aktualisieren Sie dann die Projektabhängigkeiten, damit die Binärdateien herun
       // or applicationinsights-core for bare API
     }
 
-* *Build- oder Prüfsummenvalidierungsfehler? Versuchen Sie es mit einer bestimmten Version, z. B.: * `version:'1.0.n'`. *Sie finden die neueste Version in den [SDK-Versionshinweisen](https://github.com/Microsoft/ApplicationInsights-Java#release-notes).*
+* *Build- oder Prüfsummenvalidierungsfehler? Versuchen Sie es mit einer bestimmten Version, z. B.:* `version:'1.0.n'`. *Sie finden die neueste Version in den [SDK-Versionshinweisen](https://github.com/Microsoft/ApplicationInsights-Java#release-notes).*
 * *So aktualisieren Sie auf ein neues SDK*
  * Aktualisieren Sie die Abhängigkeiten des Projekts.
 

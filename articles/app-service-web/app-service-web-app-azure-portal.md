@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/16/2015"
+	ms.date="02/26/2016"
 	ms.author="jaime-espinosa"/>
 
 # Referenz zur Navigation im Azure-Portal
@@ -40,7 +40,7 @@ Das Erstellen neuer Web-Apps ist immer noch kinderleicht. Die folgende Abbildung
 
 ![](./media/app-service-web-app-azure-portal/CreateWebApp.png)
 
-Im Portal können Sie aus den gängigsten Typen von Web-Apps wählen, darunter z. B. auch beliebte Kataloganwendungen wie WordPress. Eine vollständige Liste der verfügbaren Anwendungen finden Sie im [Azure Marketplace].
+Im Portal können Sie aus den gängigsten Typen von Web-Apps wählen, darunter z. B. auch beliebte Kataloganwendungen wie WordPress. Eine vollständige Liste der verfügbaren Anwendungen finden Sie im [Azure Marketplace].
 
 Wenn Sie eine Web-App erstellen, geben Sie im Portal die URL, den App Service-Plan und Speicherort genauso wie im klassischen Portal an.
 
@@ -85,4 +85,4 @@ Neben dem Markennamen wurden einige Elemente im Portal umbenannt oder anders gru
 * Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
  
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0302_2016-->

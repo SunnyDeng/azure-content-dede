@@ -517,4 +517,4 @@ Weitere Informationen finden Sie im [Python Developer Center](/develop/python/).
 [Python Tools für Visual Studio – Dokumentation]: http://aka.ms/ptvsdocs
 [Dokumentation zu Django]: https://www.djangoproject.com/
 
-<!---HONumber=AcomDC_0224_2016-->
+<!----HONumber=AcomDC_0224_2016-->

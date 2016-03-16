@@ -13,15 +13,15 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/07/2016"
+   ms.date="03/03/2016"
    ms.author="lodipalm;barbkess;sonyama"/>
 
 # Visualisieren von Daten mit Power BI
 
 In diesem Lernprogramm erfahren Sie, wie Sie Power BI zum Herstellen einer Verbindung mit SQL Data Warehouse verwenden und einige einfache Visualisierungen erstellen.
 
-> [AZURE.NOTE]Zum Durchführen dieses Lernprogramms benötigen Sie eine SQL Data Warehouse-Datenbank, die mit der AdventureWorksDW-Beispieldatenbank vorab geladen wird. Unter [Erstellen eines SQL Data Warehouse](sql-data-warehouse-get-started-provision.md) finden Sie Informationen zur Erstellung.
-> 
+> [AZURE.NOTE] Zum Durchführen dieses Lernprogramms benötigen Sie eine SQL Data Warehouse-Datenbank, die mit der AdventureWorksDW-Beispieldatenbank vorab geladen wird. Unter [Erstellen eines SQL Data Warehouse](sql-data-warehouse-get-started-provision.md) finden Sie Informationen zur Erstellung.
+>
 > Wenn Sie bereits über eine SQL Data Warehouse-Datenbank verfügen, aber noch keine Beispieldaten besitzen, können Sie [Beispieldaten manuell laden][].
 
 > [AZURE.VIDEO azure-sql-data-warehouse-sample-data-and-powerbi]
@@ -31,7 +31,7 @@ In diesem Lernprogramm erfahren Sie, wie Sie Power BI zum Herstellen einer Verbi
 Gehen Sie wie folgt vor, um Power BI zu öffnen und eine Verbindung mit der AdventureWorksDW-Datenbank herzustellen:
 
 1. Melden Sie sich beim [Azure-Portal][] an.
-2. Klicken Sie auf **SQL-Datenbanken**, und wählen Sie Ihre AdventureWorks SQL Data Warehouse-Datenbank aus. 
+2. Klicken Sie auf **SQL-Datenbanken**, und wählen Sie Ihre AdventureWorks SQL Data Warehouse-Datenbank aus.
 
     ![Datenbank suchen][1]
 
@@ -57,7 +57,7 @@ Gehen Sie wie folgt vor, um Power BI zu öffnen und eine Verbindung mit der Adve
 
 Sie können Power BI jetzt zum Analysieren Ihrer AdventureWorksDW-Beispieldaten verwenden. Zum Durchführen der Analyse verfügt AdventureWorksDW über die Ansicht „AggregateSales“. Diese Ansicht enthält einige wichtige Metriken zum Analysieren des Umsatzes des Unternehmens.
 
-1. Klicken Sie zum Erstellen einer Karte mit den Umsatzbeträgen nach Postleitzahl im rechten Bereich mit den Feldern auf die Ansicht „AggregateSales“, um sie zu erweitern. Klicken Sie dann auf die Spalten „PostalCode“ und „SalesAmount“, um sie auszuwählen. 
+1. Klicken Sie zum Erstellen einer Karte mit den Umsatzbeträgen nach Postleitzahl im rechten Bereich mit den Feldern auf die Ansicht „AggregateSales“, um sie zu erweitern. Klicken Sie dann auf die Spalten „PostalCode“ und „SalesAmount“, um sie auszuwählen.
 
     ![Power BI – Auswählen von „AggregateSales“][6]
 
@@ -66,7 +66,7 @@ Sie können Power BI jetzt zum Analysieren Ihrer AdventureWorksDW-Beispieldaten 
     ![Power BI-Karte][7]
 
 2. Durch diesen Schritt wird ein Balkendiagramm erstellt, in der Umsatz pro Kundeneinkommen angezeigt wird. Wechseln Sie zur Erstellung dieses Diagramms zur erweiterten Ansicht „AggregateSales“. Klicken Sie auf das Feld „SalesAmount“. Ziehen Sie das Feld „Customer Income“ auf die linke Seite, und legen Sie es auf „Axis“ ab.
-    
+
     ![Power BI – Auswählen von „Axis“][8]
 
     Wir haben das Balkendiagramm nach links verschoben.
@@ -110,4 +110,4 @@ Nachdem Sie sich schon etwas mit den Beispieldaten vertraut gemacht haben, könn
 [connecting to SQL Data Warehouse]: ./sql-data-warehouse-integrate-power-bi.md
 [Create a SQL Data Warehouse]: ./sql-data-warehouse-get-started-provision.md
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0309_2016-->

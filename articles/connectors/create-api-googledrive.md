@@ -15,13 +15,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na" 
-   ms.date="02/11/2016"
+   ms.date="02/25/2016"
    ms.author="mandia"/>
 
 # Erste Schritte mit der Google Drive-API
-Verbinden Sie sich mit Google Drive, um Dateien zu erstellen, Zeilen abzurufen usw.
+Verbinden Sie sich mit Google Drive, um Dateien zu erstellen, Zeilen abzurufen usw. Die Google Drive-API kann in Folgendem verwendet werden:
 
-Die Google Drive-API kann von PowerApps und Logik-Apps verwendet werden.
+- PowerApps 
+- Logik-Apps 
 
 Google Drive ermöglicht Folgendes:
 
@@ -53,7 +54,7 @@ Wenn Sie Google Drive zu PowerApps Enterprise hinzufügen, geben Sie die Werte f
 
 2. Geben Sie die Anwendungseigenschaften ein, und wählen Sie **Erstellen** aus.
 3. Wählen Sie **Google-APIs verwenden** aus: ![Verwenden von Google-APIs][8]  
-4. Wählen Sie in der Übersicht **Drive API** aus: ![Übersicht über Google Drive-API][9]  
+4. Wählen Sie in der Übersicht **Drive-API** aus: ![Übersicht über Google Drive-API][9]  
 5. Wählen Sie **Enable API** aus: ![Aktivieren der Google Drive-API][10]  
 6. Wählen Sie nach dem Aktivieren der Drive API die Registerkarte **Credentials** und dann **OAuth 2.0 Client ID** aus: ![Hinzufügen von Anmeldeinformationen][12]  
 7. Wählen Sie **Configure consent screen** aus.
@@ -76,7 +77,7 @@ Nun können Sie die Werte für den **App-Schlüssel** und den **geheimen App-Sch
 Wenn Sie diese API Ihren Logik-Apps hinzufügen, müssen Sie ihnen das Herstellen einer Verbindung mit Google Drive erlauben.
 
 1. Melden Sie sich bei Ihrem Google Drive-Konto an.
-2. Wählen Sie **Autorisieren** aus, um zu erlauben, dass Ihre Logik-Apps sich mit Ihrem Google Drive-Konto verbinden und es nutzen. 
+2. Erlauben Sie, dass Ihre Logik-Apps sich mit Ihrem Google Drive verbinden und es nutzen. 
 
 Nachdem Sie eine Verbindung hergestellt haben, geben Sie die Google Drive-Eigenschaften ein, z. B. Ordnerpfad oder Dateiname. In der **REST-API-Referenz** in diesem Thema werden diese Eigenschaften beschrieben.
 
@@ -84,9 +85,10 @@ Nachdem Sie eine Verbindung hergestellt haben, geben Sie die Google Drive-Eigens
 
 
 ## Swagger-REST-API – Referenz
+Gilt für Version: 1.0.
 
 ### Datei erstellen    
-Lädt eine in Google Drive hoch. ```POST: /datasets/default/files```
+Lädt eine Datei in Google Drive hoch. ```POST: /datasets/default/files```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -363,7 +365,7 @@ Aktualisiert eine Zeile in einer Google-Tabelle. ```PATCH: /datasets/{dataset}/t
 ## Nächste Schritte
 Nach Hinzufügen der Google Drive-API zu PowerApps Enterprise [erteilen Sie den Benutzern Berechtigungen](../power-apps/powerapps-manage-api-connection-user-access.md) zum Verwenden der API in ihren Apps.
 
-[Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md).
+[Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md)
 
 
 <!--References-->
@@ -376,4 +378,4 @@ Nach Hinzufügen der Google Drive-API zu PowerApps Enterprise [erteilen Sie den 
 [13]: ./media/create-api-googledrive/configure-consent-screen.png
 [14]: ./media/create-api-googledrive/create-client-id.png
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

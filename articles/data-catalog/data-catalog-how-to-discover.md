@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
-   ms.date="02/08/2016"
+   ms.date="03/03/2016"
    ms.author="maroche"/>
 
 
@@ -47,11 +47,11 @@ Obwohl die standardmäßige Freitextsuche einfach und intuitiv ist, können Benu
 Weitere Informationen zur Suche in **Azure Data Catalog** finden Sie unter [https://msdn.microsoft.com/library/azure/mt267594.aspx](https://msdn.microsoft.com/library/azure/mt267594.aspx).
 
 ## Treffermarkierung
-Beim Anzeigen von Suchergebnissen werden alle angezeigten Eigenschaften, die mit den angegebenen Suchbegriffen übereinstimmen (z. B. Name der Datenressource, Beschreibung und Tags), hervorgehoben, damit leichter zu erkennen ist, weshalb eine bestimmte Datenressource zurückgegeben wurde.
+Beim Anzeigen von Suchergebnissen werden alle angezeigten Eigenschaften, die mit den angegebenen Suchbegriffen übereinstimmen (z. B. Name der Datenressource, Beschreibung und Tags), hervorgehoben, damit leichter zu erkennen ist, weshalb eine bestimmte Datenressource zurückgegeben wurde.
 
 > [AZURE.NOTE] Benutzer können die Treffermarkierung bei Bedarf mit der Option „Hervorheben“ im **Azure Data Catalog**-Portal deaktivieren.
 
-Beim Anzeigen von Suchergebnissen ist es selbst bei aktivierter Treffermarkierung u. U. nicht immer offensichtlich, warum eine Datenressource in den Ergebnissen enthalten ist. Da standardmäßig alle Eigenschaften durchsucht werden, kann eine Datenressource aufgrund einer Übereinstimmung mit einer Eigenschaft auf Spaltenebene zurückgegeben werden. Und da mehrere Benutzer registrierten Datenressourcen eigene Anmerkungen (Tags, Beschreibungen usw.) hinzufügen können, werden möglicherweise nicht alle Metadaten in der Liste der Suchergebnisse angezeigt.
+Beim Anzeigen von Suchergebnissen ist es selbst bei aktivierter Treffermarkierung u. U. nicht immer offensichtlich, warum eine Datenressource in den Ergebnissen enthalten ist. Da standardmäßig alle Eigenschaften durchsucht werden, kann eine Datenressource aufgrund einer Übereinstimmung mit einer Eigenschaft auf Spaltenebene zurückgegeben werden. Und da mehrere Benutzer registrierten Datenressourcen eigene Anmerkungen (Tags, Beschreibungen usw.) hinzufügen können, werden möglicherweise nicht alle Metadaten in der Liste der Suchergebnisse angezeigt.
 
 In der standardmäßigen Kachelansicht enthält jede in den Suchergebnissen angezeigte Kachel ein Symbol „Übereinstimmungen mit dem Suchbegriff anzeigen“, mit dem der Benutzer schnell die Anzahl von Treffern und ihre Position anzeigen und ggf. zu den Treffern springen kann.
 
@@ -60,4 +60,7 @@ In der standardmäßigen Kachelansicht enthält jede in den Suchergebnissen ange
 ## Zusammenfassung
 Durch die Registrierung einer Datenquelle in **Azure Data Catalog** werden strukturelle und beschreibende Metadaten aus der Datenquelle in den Katalogdienst kopiert, sodass die Datenquelle leichter zu ermitteln und zu verstehen ist. Nachdem eine Datenquelle registriert wurde, kann sie mithilfe der Filter- und Suchfunktionen im **Azure Data Catalog**-Portal von Benutzern ermittelt werden.
 
-<!---HONumber=AcomDC_0224_2016-->
+## Weitere Informationen
+- Eine schrittweise Anleitung zum Ermitteln von Datenquellen finden Sie im Tutorial [Erste Schritte mit Azure Data Catalog](data-catalog-get-started.md).
+
+<!---HONumber=AcomDC_0309_2016-->

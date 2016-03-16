@@ -14,103 +14,91 @@ ms.devlang="na"
 ms.topic="article"
 ms.tgt_pltfrm="na"
 ms.workload="na"
-ms.date="02/18/2016"
+ms.date="02/25/2016"
 ms.author="deonhe"/>
 
 # Erste Schritte mit der Office 365-Video-API
+Stellen Sie eine Verbindung mit Office 365 Video her, um Informationen über ein Office 365-Video oder eine Liste von Videos abzurufen und vieles mehr. Die Office 365 Video-API kann verwendet werden von:
 
-Die Office 365-Video-API stellt eine API zur Arbeit mit Office 365-Kanälen und -Videos bereit.
+- Logik-Apps 
 
->[AZURE.NOTE] Diese Version des Artikels gilt für die Schemaversion 2015-08-01-preview für Logik-Apps. Für die Schemaversion 2014-12-01-preview klicken Sie auf [Office 365-Videoconnector](../app-service-logic/app-service-logic-connector-Office365 Video Connector.md).
+>[AZURE.NOTE] Diese Version des Artikels gilt für die Schemaversion 2015-08-01-preview für Logik-Apps. Diese API wird in den vorherigen Schemaversionen nicht unterstützt.
 
-Mit der Office 365-Video-API können Sie folgende Aktionen ausführen:
+Mit Office 365 Video können Sie folgende Aktionen ausführen:
 
-* Erstellen von Logik-Apps
+- Erstellen eines Geschäftsworkflows basierend auf den Daten, die aus Office 365 Video abgerufen werden. 
+- Verwenden Sie Aktionen zum Überprüfen des Videoportalstatus, zum Abrufen einer Liste mit allen Videos in einem Kanal und vieles mehr. Diese Aktionen erhalten eine Antwort und stellen anschließend die Ausgabe anderen Aktionen zur Verfügung. Sie können z. B. mit der Bing-Such-API nach Office 365-Videos suchen und dann mithilfe der Office 365 Video-API Informationen zu diesem Video abrufen. Wenn das Video Ihre Anforderungen erfüllt, können Sie es auf Facebook veröffentlichen. 
 
 Informationen zum Hinzufügen eines Vorgangs in Logik-Apps finden Sie unter [Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md).
 
 ## Trigger und Aktionen
 
-Die Office 365-Video-API kann als Aktion verwendet werden. Es gibt keine Trigger. Alle APIs unterstützen Daten im JSON- und XML-Format.
+Die Office 365-Benutzer-API verfügt über die folgenden Aktionen. Es gibt keine Trigger.
 
- Die Office 365-Video-API verfügt über die folgenden Aktionen und/oder Trigger:
+| Trigger | Aktionen|
+| --- | --- |
+| Keine | <ul><li>Videoportalstatus überprüfen</li><li>Alle anzeigbaren Kanäle abrufen</li><li>Wiedergabe-URL des Azure Media Services-Manifests für ein Video abrufen</li><li>Bearertoken für den Zugriff auf die Videoentschlüsselung abrufen</li><li>Informationen über ein bestimmtes Office 365-Video abrufen</li><li>Alle in einem Kanal vorhandenen Office 365-Videos auflisten</li></ul>
 
-### Office 365-Video-API-Aktionen
-Sie können die folgenden Aktionen ausführen:
+Alle APIs unterstützen Daten im JSON- und XML-Format.
 
-|Aktion|Beschreibung|
-|--- | ---|
-|IsVideoPortalEnabled|Überprüft den Status des Videoportals, um festzustellen, ob Videodienste aktiviert sind|
-|ListViewableChannels|Ruft alle Kanäle ab, auf die der Benutzer Zugriff hat|
-|ListVideos|Listet alle in einem Kanal vorhanden Office 365-Videos auf|
-|GetVideo|Ruft Informationen über ein bestimmtes Office 365-Video ab|
-|GetPlaybackUrl|Ruft die Videowiedergabe-URL des Azure Media Services-Manifests für ein Video ab|
-|GetStreamingKeyAccessToken|Ruft das Bearertoken für den Zugriff auf die Videoentschlüsselung ab|
-ActionsTableReplaceMeLater## stellt eine Verbindung mit der Office 365-Video-API her. Zur Verwendung der Office 365-Video-API erstellen Sie zuerst eine **Verbindung** und geben dann die Details für die folgenden Eigenschaften an:
+## Herstellen einer Verbindung mit der Office 365 Video-API
+Wenn Sie Ihren Logik-Apps diese API hinzufügen, müssen Sie sich bei Ihrem Office 365 Video-Konto anmelden und den Logik-Apps das Herstellen einer Verbindung mit Ihrem Konto gestatten.
 
-|Eigenschaft| Erforderlich|Beschreibung|
-| ---|---|---|
-|Tokenverschlüsselung|Ja|Bereitstellen von SharePoint Online-Anmeldeinformationen|
+1. Melden Sie sich bei Ihrem Office 365 Video-Konto an.
+2. Erlauben Sie Ihren Logik-Apps, sich mit Ihrem Office 365-Konto zu verbinden und es zu nutzen. 
 
+Nachdem Sie eine Verbindung hergestellt haben, geben Sie die Office 365 Video-Eigenschaften ein, z. B. den Mandantennamen oder die Kanal-ID. In der **REST-API-Referenz** in diesem Thema werden diese Eigenschaften beschrieben.
 
->[AZURE.TIP] Sie können diese Verbindung in anderen Logik-Apps verwenden.
+>[AZURE.TIP] Sie können dieselbe Office 365 Video-Verbindung in anderen Logik-Apps verwenden.
 
-## Office 365-Video-REST-API – Referenz
-#### Diese Dokumentation gilt für Version 1.0.
+## Swagger-REST-API – Referenz
+Gilt für Version: 1.0.
 
-
-### Überprüft den Status des Videoportals, um festzustellen, ob Videodienste aktiviert sind
-**```GET: /{tenant}/IsEnabled```**
-
-
+### Videoportalstatus überprüfen 
+Überprüft den Status des Videoportals, um festzustellen, ob Videodienste aktiviert sind. ```GET: /{tenant}/IsEnabled```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
 |tenant|string|Ja|path|(Keine)|Der Name des Mandanten für das Verzeichnis, in dem sich der Benutzer befindet|
 
 
-### Im Folgenden sind die möglichen Antworten aufgeführt:
+#### Antwort
 
 |Name|Beschreibung|
 |---|---|
-|200|Vorgang war erfolgreich|
+|200|Vorgang erfolgreich|
 |400|BadRequest|
 |401|Nicht autorisiert|
 |404|Nicht gefunden|
 |500|Interner Serverfehler|
 |die Standardeinstellung|Fehler beim Vorgang.|
-------
 
 
 
-### Ruft alle Kanäle ab, auf die der Benutzer Zugriff hat
-**```GET: /{tenant}/Channels```**
-
-
+### Alle anzeigbaren Kanäle abrufen 
+Ruft alle Kanäle ab, auf die der Benutzer Anzeigezugriff hat. ```GET: /{tenant}/Channels```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
 |tenant|string|Ja|path|(Keine)|Der Name des Mandanten für das Verzeichnis, in dem sich der Benutzer befindet|
 
 
-### Im Folgenden sind die möglichen Antworten aufgeführt:
+#### Antwort
 
 |Name|Beschreibung|
 |---|---|
-|200|Vorgang war erfolgreich|
+|200|Vorgang erfolgreich|
 |400|BadRequest|
 |401|Nicht autorisiert|
 |404|Nicht gefunden|
 |500|Interner Serverfehler|
 |die Standardeinstellung|Fehler beim Vorgang.|
-------
 
 
 
-### Listet alle in einem Kanal vorhanden Office 365-Videos auf
-**```GET: /{tenant}/Channels/{channelId}/Videos```**
 
-
+### Listet alle in einem Kanal vorhandenen Office 365-Videos auf 
+Listet alle in einem Kanal vorhandenen Office 365-Videos auf. ```GET: /{tenant}/Channels/{channelId}/Videos```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -118,24 +106,22 @@ ActionsTableReplaceMeLater## stellt eine Verbindung mit der Office 365-Video-API
 |channelId|string|Ja|path|(Keine)|Die Kanal-ID, mit der die Videos abgerufen werden müssen|
 
 
-### Im Folgenden sind die möglichen Antworten aufgeführt:
+#### Antwort
 
 |Name|Beschreibung|
 |---|---|
-|200|Vorgang war erfolgreich|
+|200|Vorgang erfolgreich|
 |400|BadRequest|
 |401|Nicht autorisiert|
 |404|Nicht gefunden|
 |500|Interner Serverfehler|
 |die Standardeinstellung|Fehler beim Vorgang.|
-------
 
 
 
-### Ruft Informationen über ein bestimmtes Office 365-Video ab
-**```GET: /{tenant}/Channels/{channelId}/Videos/{videoId}```**
 
-
+### Ruft Informationen über ein bestimmtes Office 365-Video ab 
+Ruft Informationen über ein bestimmtes Office 365-Video ab. ```GET: /{tenant}/Channels/{channelId}/Videos/{videoId}```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -144,24 +130,22 @@ ActionsTableReplaceMeLater## stellt eine Verbindung mit der Office 365-Video-API
 |videoId|string|Ja|path|(Keine)|Die Video-ID|
 
 
-### Im Folgenden sind die möglichen Antworten aufgeführt:
+#### Antwort
 
 |Name|Beschreibung|
 |---|---|
-|200|Vorgang war erfolgreich|
+|200|Vorgang erfolgreich|
 |400|BadRequest|
 |401|Nicht autorisiert|
 |404|Nicht gefunden|
 |500|Interner Serverfehler|
 |die Standardeinstellung|Fehler beim Vorgang.|
-------
 
 
 
-### Ruft die Videowiedergabe-URL des Azure Media Services-Manifests für ein Video ab
-**```GET: /{tenant}/Channels/{channelId}/Videos/{videoId}/playbackurl```**
 
-
+### Ruft die Videowiedergabe-URL des Azure Media Services-Manifests für ein Video ab 
+Ruft die Wiedergabe-URL des Azure Media Services-Manifests für ein Video ab. ```GET: /{tenant}/Channels/{channelId}/Videos/{videoId}/playbackurl```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -171,24 +155,22 @@ ActionsTableReplaceMeLater## stellt eine Verbindung mit der Office 365-Video-API
 |streamingFormatType|string|Ja|query|(Keine)|Der Streaming-Formattyp. 1 – Smooth Streaming oder MPEG-DASH. 0 – HLS-Streaming|
 
 
-### Im Folgenden sind die möglichen Antworten aufgeführt:
+#### Antwort
 
 |Name|Beschreibung|
 |---|---|
-|200|Vorgang war erfolgreich|
+|200|Vorgang erfolgreich|
 |400|BadRequest|
 |401|Nicht autorisiert|
 |404|Nicht gefunden|
 |500|Interner Serverfehler|
 |die Standardeinstellung|Fehler beim Vorgang.|
-------
 
 
 
-### Ruft das Bearertoken für den Zugriff auf die Videoentschlüsselung ab
-**```GET: /{tenant}/Channels/{channelId}/Videos/{videoId}/token```**
 
-
+### Ruft das Bearertoken für den Zugriff auf die Videoentschlüsselung ab 
+Ruft das Bearertoken für den Zugriff auf die Videoentschlüsselung ab. ```GET: /{tenant}/Channels/{channelId}/Videos/{videoId}/token```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -197,67 +179,46 @@ ActionsTableReplaceMeLater## stellt eine Verbindung mit der Office 365-Video-API
 |videoId|string|Ja|path|(Keine)|Die Video-ID|
 
 
-### Im Folgenden sind die möglichen Antworten aufgeführt:
+#### Antwort
 
 |Name|Beschreibung|
 |---|---|
-|200|Vorgang war erfolgreich|
+|200|Vorgang erfolgreich|
 |400|BadRequest|
 |401|Nicht autorisiert|
 |404|Nicht gefunden|
 |500|Interner Serverfehler|
 |die Standardeinstellung|Fehler beim Vorgang.|
-------
 
 
+## Objektdefinitionen
 
-## Objektdefinitionen: 
+#### Kanal: Klasse „Channel“
 
- **Channel:** Channel-Klasse
-
-Erforderliche Eigenschaften für Channel:
-
-
-Keine der Eigenschaften ist erforderlich.
-
-
-**Alle Eigenschaften:**
+| Name | Datentyp | Erforderlich|
+|---|---|---|
+|ID|string|no|
+|Titel|string|no|
+|Beschreibung|string|no|
 
 
-| Name | Datentyp |
-|---|---|
-|ID|string|
-|Titel|string|
-|Beschreibung|string|
+#### Video 
 
-
-
- **Video:** Video-Klasse
-
-Erforderliche Eigenschaften für Video:
-
-
-Keine der Eigenschaften ist erforderlich.
-
-
-**Alle Eigenschaften:**
-
-
-| Name | Datentyp |
-|---|---|
-|ID|string|
-|Titel|string|
-|Beschreibung|string|
-|CreationDate|string|
-|Besitzer|string|
-|ThumbnailUrl|string|
-|VideoUrl|string|
-|VideoDuration|integer|
-|VideoProcessingStatus|integer|
-|ViewCount|integer|
+| Name | Datentyp |Erforderlich|
+|---|---|---|
+|ID|string|no|
+|Titel|string|no|
+|Beschreibung|string|no|
+|CreationDate|string|no|
+|Besitzer|string|no|
+|ThumbnailUrl|string|no|
+|VideoUrl|string|no|
+|VideoDuration|integer|no|
+|VideoProcessingStatus|integer|no|
+|ViewCount|integer|no|
 
 
 ## Nächste Schritte
-[Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md).
+[Erstellen Sie eine Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md).
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

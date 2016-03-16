@@ -4,7 +4,7 @@
    services="app-service\logic"
    documentationCenter=".net,nodejs,java"
    authors="msftman"
-   manager="dwrede"
+   manager="erikre"
    editor=""/>
 
 <tags
@@ -13,14 +13,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="12/02/2015"
-   ms.author="Deonhe"/>
+   ms.date="02/29/2016"
+   ms.author="deonhe"/>
 
 # Tutorial: Verarbeiten von EDIFACT-Rechnungen mit Azure BizTalk Services
 Sie können X12- und EDIFACT-Vereinbarungen im BizTalk Services-Portal konfigurieren und bereitstellen. In diesem Tutorial untersuchen wir das Erstellen einer EDIFACT-Vereinbarung für das Austauschen von Rechnungen zwischen Handelspartnern. Dieses Tutorial basiert auf einer umfassenden Geschäftslösung zwischen den beiden Handelspartnern Northwind und Contoso, die EDIFACT-Nachrichten austauschen.
 
 ## Auf diesem Tutorial basierendes Beispiel
-Dieses Tutorial basiert auf dem Beispiel **Process EDIFACT Invoices Using Azure BizTalk Services**, das aus dem [MSDN-Codekatalog](http://go.microsoft.com/fwlink/?LinkId=401005) herunterladen werden kann. Sie können dieses Tutorial anhand des Beispiels durchlaufen, um zu verstehen, wie das Beispiel erstellt wurde. Sie können dieses Tutorial aber auch nutzen, um Ihre eigene Lösung von Grund auf zu erstellen. Dieses Tutorial ist auf den zweiten Ansatz ausgelegt, damit Sie nachvollziehen können, wie diese Lösung entwickelt wurde. Darüber hinaus ist dieses Tutorial so weit wie möglich in Einklang mit dem Beispiel, sodass dieselben Namen für Artefakte (z. B. Schemas und Transformationen) wie im Beispiel verwendet werden.
+Dieses Tutorial basiert auf dem Beispiel **Process EDIFACT Invoices Using Azure BizTalk Services**, das aus dem [MSDN-Codekatalog](http://go.microsoft.com/fwlink/?LinkId=401005) herunterladen werden kann. Sie können dieses Tutorial anhand des Beispiels durchlaufen, um zu verstehen, wie das Beispiel erstellt wurde. Sie können dieses Tutorial aber auch nutzen, um Ihre eigene Lösung von Grund auf zu erstellen. Dieses Tutorial ist auf den zweiten Ansatz ausgelegt, damit Sie nachvollziehen können, wie diese Lösung entwickelt wurde. Darüber hinaus ist dieses Tutorial so weit wie möglich in Einklang mit dem Beispiel, sodass dieselben Namen für Artefakte (z. B. Schemas und Transformationen) wie im Beispiel verwendet werden.
 
 >[AZURE.NOTE] Da diese Lösung das Senden einer Nachricht von einer EAI-Brücke an eine EDI-Brücke umfasst, wird das Beispiel [BizTalk Services Bridge chaining sample – EAI to EDI](http://code.msdn.microsoft.com/BizTalk-Bridge-chaining-2246b104) wiederverwendet.
 
@@ -46,7 +46,7 @@ Zum Vervollständigen dieses Szenarios verwenden wir Service Bus-Warteschlangen 
 
 ## Voraussetzungen
 
-*   Sie benötigen einen Service Bus-Namespace. Anweisungen zum Erstellen eines Namespace finden Sie unter [Vorgehensweise: Erstellen oder Ändern eines Service Bus-Dienstnamespace](https://msdn.microsoft.com/library/hh690931.aspx). Angenommen, Sie haben bereits einen Service Bus-Namespace mit dem Namen **edifactbts** bereitgestellt.
+*   Sie benötigen einen Service Bus-Namespace. Anweisungen zum Erstellen eines Namespace finden Sie unter [Vorgehensweise: Erstellen oder Ändern eines Service Bus-Dienstnamespace](https://msdn.microsoft.com/library/azure/hh674478.aspx). Angenommen, Sie haben bereits einen Service Bus-Namespace mit dem Namen **edifactbts** bereitgestellt.
 
 *   Sie benötigen ein BizTalk Services-Abonnement. Anweisungen finden Sie unter [Erstellen eines BizTalk Service im klassischen Azure-Portal](http://go.microsoft.com/fwlink/?LinkID=302280). Lassen Sie uns für dieses Tutorial annehmen, dass Sie ein BizTalk Services-Abonnement mit dem Namen **contosowabs** haben.
 
@@ -56,12 +56,12 @@ Zum Vervollständigen dieses Szenarios verwenden wir Service Bus-Warteschlangen 
 
 *   Das BizTalk Services SDK muss installiert sein. Sie können das SDK von [http://go.microsoft.com/fwlink/?LinkId=235057](http://go.microsoft.com/fwlink/?LinkId=235057) herunterladen.
 
-## Schritt 1: Erstellen der Service Bus-Warteschlangen  
+## Schritt 1: Erstellen der Service Bus-Warteschlangen  
 Diese Lösung verwendet zum Austauschen von Nachrichten zwischen Handelspartnern Service Bus-Warteschlangen. Contoso und Northwind senden Nachrichten an die Warteschlangen, die von den EAI- und/oder EDI-Brücken genutzt werden. Für diese Lösung benötigen Sie drei Service Bus-Warteschlangen:
 
-*   **northwindreceive**: Northwind empfängt die Rechnung von Contoso über diese Warteschlange.
+*   **northwindreceive:** Northwind empfängt die Rechnung von Contoso über diese Warteschlange.
 
-*   **contosoreceive**: Contoso empfängt die Bestätigung von Northwind über diese Warteschlange.
+*   **contosoreceive:** Contoso empfängt die Bestätigung von Northwind über diese Warteschlange.
 
 *   **suspended**: Alle angehaltenen Nachrichten werden an diese Warteschlange weitergeleitet. Nachrichten werden angehalten, wenn während der Verarbeitung ein Fehler auftritt.
 
@@ -79,7 +79,7 @@ Sie können diese Service Bus-Warteschlangen mithilfe einer im Beispielpaket ent
 5.  Führen Sie den Tutorialclient weiter aus. Öffnen Sie das Portal, klicken Sie auf **Service Bus** > **_Ihr Service Bus-Namespace_** > **Warteschlangen**, und überprüfen Sie, ob die drei Warteschlangen erstellt wurden.
 
 ## Schritt 2: Erstellen und Bereitstellen der Handelspartnervereinbarung
-Erstellen Sie eine Handelspartnervereinbarung zwischen Contoso und Northwind. In einer Handelspartnervereinbarung legen Geschäftspartner z. B. fest, welches Nachrichtenschema und welches Protokoll verwendet werden soll usw. Eine Handelspartnervereinbarung sieht zwei EDI-Brücken vor, eine zum Senden von Nachrichten an Handelspartner (als **EDI-Sendebrücke** bezeichnet) und eine zum Empfangen von Nachrichten von Handelspartnern (als **EDI-Empfangsbrücke** bezeichnet).
+Erstellen Sie eine Handelspartnervereinbarung zwischen Contoso und Northwind. In einer Handelspartnervereinbarung legen Geschäftspartner z. B. fest, welches Nachrichtenschema und welches Protokoll verwendet werden soll usw. Eine Handelspartnervereinbarung sieht zwei EDI-Brücken vor, eine zum Senden von Nachrichten an Handelspartner (als **EDI-Sendebrücke** bezeichnet) und eine zum Empfangen von Nachrichten von Handelspartnern (als **EDI-Empfangsbrücke** bezeichnet).
 
 Im Zusammenhang mit dieser Lösung entspricht die EDI-Sendebrücke der Sendeseite der Vereinbarung und wird zum Senden der EDIFACT-Rechnung von Contoso an Northwind verwendet. Analog dazu entspricht die EDI-Empfangsbrücke der Empfangsseite der Vereinbarung und wird zum Empfangen von Bestätigungen von Northwind verwendet.
 
@@ -113,7 +113,7 @@ Handelspartnervereinbarungen werden zwischen Geschäftsprofilen von Handelspartn
     3.  Laden Sie auf der Registerkarte **Protokoll** im Abschnitt **Schemas** das Schema **EFACT\_D93A\_INVOIC.xsd** hoch. Dieses Schema steht im Beispielpaket zur Verfügung.
 
         ![][4]  
-    4.  Geben Sie auf der Registerkarte **Transport** die Details für die Service Bus-Warteschlangen an. Für den sendeseitigen Vertrag verwenden wir die Warteschlange **northwindreceive**, um die EDIFACT-Rechnung an Northwind zu senden, und die Warteschlange **suspended**, an die alle Nachrichten weitergeleitet werden, bei deren Verarbeitung ein Fehler auftritt und die deswegen angehalten werden. Sie haben diese Warteschlangen in [Schritt 1: Erstellen der Azure Service Bus-Warteschlangen](#BKMK_Queue) erstellt.
+    4.  Geben Sie auf der Registerkarte **Transport** die Details für die Service Bus-Warteschlangen an. Für den sendeseitigen Vertrag verwenden wir die Warteschlange **northwindreceive**, um die EDIFACT-Rechnung an Northwind zu senden, und die Warteschlange **suspended**, an die alle Nachrichten weitergeleitet werden, bei deren Verarbeitung ein Fehler auftritt und die deswegen angehalten werden. Sie haben diese Warteschlangen in **Schritt 1: Erstellen der Azure Service Bus-Warteschlangen** (in diesem Thema) erstellt.
 
         ![][5]
 
@@ -129,7 +129,8 @@ Handelspartnervereinbarungen werden zwischen Geschäftsprofilen von Handelspartn
 
     4.  Erstellen Sie auf der Registerkarte **Weiterleitung** einen Filter, um sicherzustellen, dass nur Bestätigungen von Northwind an Contoso weitergeleitet werden. Klicken Sie unter **Weiterleitungseinstellungen** auf **Hinzufügen**, um den Weiterleitungsfilter zu erstellen.
 
-        ![][6] 1. Geben Sie, wie in der Abbildung dargestellt, Werte für **Regelname**, **Weiterleitungsregel** und **Weiterleitungsziel** an.
+        ![][6]
+        1.  Geben Sie, wie in der Abbildung dargestellt, Werte für **Regelname**, **Weiterleitungsregel** und **Weiterleitungsziel** an.
 
         2.  Klicken Sie auf **Speichern**.
 
@@ -173,7 +174,7 @@ Das BizTalk Services-Projekt **InvoiceProcessingBridge**, das die Umformung der 
 
 7.  Erweitern Sie im Projektmappen-Explorer **MessageFlowItinerary.bcs**, und doppelklicken Sie auf die Datei **EDIBridge.config**. Ersetzen Sie den Inhalt von **EDIBridge.config** durch Folgendes.
 
-    > [AZURE.NOTE] Warum muss ich die CONFIG-Datei bearbeiten? Der externe Dienstendpunkt, den wir dem Zeichenbereich im Brücken-Designer hinzugefügt haben, stellt die EDI-Brücken dar, die wir zuvor bereitgestellt hatten. EDI-Brücken sind bidirektionale Brücken mit einer Sende- und einer Empfangsseite. Die EAI-Brücke, die wir dem Brücken-Designer hinzugefügt haben, ist jedoch eine unidirektionale Brücke. Zum Verarbeiten der verschiedenen Nachrichtenaustauschmuster der beiden Brücken verwenden wir ein benutzerdefiniertes Brückenverhalten, indem wir ihre Konfiguration in die CONFIG-Datei aufnehmen. Darüber hinaus übernimmt das benutzerdefinierte Verhalten auch die Authentifizierung beim Endpunkt der EDI-Sendebrücke. Dieses benutzerdefinierte Verhalten steht als eigenes Beispiel unter [BizTalk Services Bridge chaining sample – EAI to EDI](http://code.msdn.microsoft.com/BizTalk-Bridge-chaining-2246b104) (BizTalk Services Bridge-Verkettungsbeispiel – EAI zu EDI) zur Verfügung. Das Beispiel wird in dieser Projektmappe wiederverwendet.
+    > [AZURE.NOTE] Warum muss ich die CONFIG-Datei bearbeiten? Der externe Dienstendpunkt, den wir dem Zeichenbereich im Brücken-Designer hinzugefügt haben, stellt die EDI-Brücken dar, die wir zuvor bereitgestellt hatten. EDI-Brücken sind bidirektionale Brücken mit einer Sende- und einer Empfangsseite. Die EAI-Brücke, die wir dem Brücken-Designer hinzugefügt haben, ist jedoch eine unidirektionale Brücke. Zum Verarbeiten der verschiedenen Nachrichtenaustauschmuster der beiden Brücken verwenden wir ein benutzerdefiniertes Brückenverhalten, indem wir ihre Konfiguration in die CONFIG-Datei aufnehmen. Darüber hinaus verarbeitet das benutzerdefinierte Verhalten auch die Authentifizierung beim Endpunkt der EDI-Sendebrücke. Dieses benutzerdefinierte Verhalten steht als eigenes Beispiel unter [BizTalk Services Bridge chaining sample – EAI to EDI](http://code.msdn.microsoft.com/BizTalk-Bridge-chaining-2246b104) (BizTalk Services Bridge-Verkettungsbeispiel – EAI zu EDI) zur Verfügung. Das Beispiel wird in dieser Projektmappe wiederverwendet.
     
     ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -312,4 +313,4 @@ Der wichtigste Aspekt beim Arbeiten mit Batches besteht in der eigentlichen Frei
 [17]: ./media/biztalk-process-edifact-invoice/process-edifact-invoices-with-auzure-bts-17.PNG
 [18]: ./media/biztalk-process-edifact-invoice/process-edifact-invoices-with-auzure-bts-18.PNG
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0302_2016-->

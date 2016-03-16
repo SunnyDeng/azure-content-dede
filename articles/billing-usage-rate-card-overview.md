@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="billing"
-   ms.date="11/02/2015"
+   ms.date="02/19/2016"
    ms.author="mobandyo;bryanla"/>
 
 # Gewinnen von Einblicken in den Ressourcenverbrauch unter Microsoft Azure 
@@ -33,11 +33,11 @@ Kunden und Partner können mit der Azure-API zur Ressourcennutzung ihre geschät
 
 - **Stündliche oder tägliche Aggregationen** – Aufrufer können angeben, ob sie ihre Azure-Nutzungsdaten in stündlichen Buckets oder täglichen Buckets erhalten möchten. Die Standardeinstellung ist „Täglich“.
 
-- **Bereitstellung von Instanzmetadaten (inkl. Ressourcentags)** – Details der Instanzebene, z. B. der vollqualifizierte Ressourcen-URI (/subscriptions/{subscription-id}/..) sowie Ressourcengruppeninformationen und Ressourcentags werden in der Antwort angegeben. Damit können Kunden die Nutzung auf deterministische und programmgesteuerte Weise anhand der Tags zuordnen, z. B. bei der internen Verrechnung.
+- **Bereitstellung von Instanzmetadaten (inkl. Ressourcentags)** – Details der Instanzebene, z. B. der vollqualifizierte Ressourcen-URI (/subscriptions/{subscription-id}/..) sowie Ressourcengruppeninformationen und Ressourcentags werden in der Antwort angegeben. Damit können Kunden die Nutzung auf deterministische und programmgesteuerte Weise anhand der Tags zuordnen, z. B. bei der internen Verrechnung.
 
-- **Bereitstellung von Ressourcenmetadaten** – Ressourcendetails (z. B. Meter Name, Meter Category, Meter Sub-Category, Unit und Region) werden in der Antwort ebenfalls übergeben, damit Aufrufer besser verstehen, was genutzt wurde. Außerdem arbeiten wir an einer Vereinheitlichung der Terminologie für Ressourcenmetadaten im Azure-Portal, in der CSV-Datei zur Azure-Nutzung, in der CSV-Datei zur EA-Abrechnung und in anderen öffentlich zugänglichen Benutzeroberflächen, um Kunden die Korrelation von Daten über verschiedene Umgebungen hinweg zu ermöglichen.
+- **Bereitstellung von Ressourcenmetadaten** – Ressourcendetails (z. B. Meter Name, Meter Category, Meter Sub-Category, Unit und Region) werden in der Antwort ebenfalls übergeben, damit Aufrufer besser verstehen, was genutzt wurde. Außerdem arbeiten wir an einer Vereinheitlichung der Terminologie für Ressourcenmetadaten im Azure-Portal, in der CSV-Datei zur Azure-Nutzung, in der CSV-Datei zur EA-Abrechnung und in anderen öffentlich zugänglichen Benutzeroberflächen, um Kunden die Korrelation von Daten über verschiedene Umgebungen hinweg zu ermöglichen.
 
-- **Nutzung für alle Angebotstypen** – Nutzungsdaten werden für alle Angebotstypen verfügbar sein, z. B. Nutzungsbasierte Bezahlung, MSDN, Verbindliche Zusage, Guthaben und EA.
+- **Nutzung für alle Angebotstypen** – Nutzungsdaten werden für alle Angebotstypen verfügbar sein, z. B. Nutzungsbasierte Bezahlung, MSDN, Verbindliche Zusage, Guthaben und EA.
 
 ### Azure-API für Ressourcengebührenkarte (Preview)
 Kunden und Partner können mit der Azure-Ressourcengebührenkarten-API (Resource RateCard) die Liste der verfügbaren Azure-Ressourcen sowie jeweils die geschätzten Preise abrufen. Sie enthält folgende Features:
@@ -56,7 +56,7 @@ Hier sind einige Szenarios angegeben, die aufgrund der Kombination aus Nutzungs-
 
 - **Vorhersagen des Rechnungsbetrags** – Kunden und Partner können ihren geschätzten Verbrauch und die Coudausgaben abrufen und Machine Learning-Algorithmen anwenden, um vorherzusagen, welcher Betrag sich am Ende des Abrechnungszeitraums ergibt.
 
-- **Kostenanalyse vor der Nutzung** – Kunden können mit der Gebührenkarten-API auch vorhersagen, wie hoch ihre Rechnung wäre, wenn sie ihre Workloads auf Azure verlagern. Hierzu können sie die Werte zur gewünschten Nutzung angeben. Wenn Kunden über vorhandene Workloads in anderen Clouds bzw. Private Clouds verfügen, können sie die Nutzung ebenfalls den Azure-Preisen zuordnen, um eine bessere Schätzung der Azure-Ausgaben zu erhalten. Dies verdeutlicht, was mit dem [Azure-Preisrechner](https://azure.microsoft.com/pricing/calculator/) möglich ist. Beispiel: Unsere Abrechnungspartner bieten die Pivot-Funktion für ein Angebot und das Vergleichen und Gegenüberstellen von Angebotstypen über die nutzungsbasierte Bezahlung hinaus an, z. B. verbindliche Zusage und Guthaben. Außerdem sind mit den APIs Kostenschätzungsänderungen nach Region möglich. Dies ermöglicht die Art von Was-wäre-wenn-Analysen, die zum Treffen von Bereitstellungsentscheidungen erforderlich sind, da sich die Bereitstellung von Ressourcen in verschiedenen DCs weltweit direkt auf die Gesamtkosten auswirken kann.
+- **Kostenanalyse vor der Nutzung** – Kunden können mit der Gebührenkarten-API auch vorhersagen, wie hoch ihre Rechnung wäre, wenn sie ihre Workloads auf Azure verlagern. Hierzu können sie die Werte zur gewünschten Nutzung angeben. Wenn Kunden über vorhandene Workloads in anderen Clouds bzw. Private Clouds verfügen, können sie die Nutzung ebenfalls den Azure-Preisen zuordnen, um eine bessere Schätzung der Azure-Ausgaben zu erhalten. Dies verdeutlicht, was mit dem [Azure-Preisrechner](https://azure.microsoft.com/pricing/calculator/) möglich ist. Beispiel: Unsere Abrechnungspartner bieten die Pivot-Funktion für ein Angebot und das Vergleichen und Gegenüberstellen von Angebotstypen über die nutzungsbasierte Bezahlung hinaus an, z. B. verbindliche Zusage und Guthaben. Außerdem sind mit den APIs Kostenschätzungsänderungen nach Region möglich. Dies ermöglicht die Art von Was-wäre-wenn-Analysen, die zum Treffen von Bereitstellungsentscheidungen erforderlich sind, da sich die Bereitstellung von Ressourcen in verschiedenen DCs weltweit direkt auf die Gesamtkosten auswirken kann.
 
 - **Was-wäre-wenn-Analyse** –
 
@@ -78,4 +78,4 @@ Unter [Integration von Cloud Cruiser und Microsoft Azure-Abrechnungs-API](billin
 + Weitere Informationen zum Azure-Ressourcen-Manager finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](resource-group-overview.md).
 + Weitere Informationen zu den Tools, die zum Entwickeln eines Verständnisses der Cloudausgaben erforderlich sind, finden Sie im Gartner-Artikel [Market Guide for IT Financial Management (ITFM) Tools](http://www.gartner.com/technology/reprints.do?id=1-212F7AL&ct=140909&st=sb) (Marktleitfaden für IT Financial Management (ITFM)-Tools).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -12,21 +12,16 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="02/17/2016"
+   ms.date="03/01/2016"
    ms.author="alkohli" />
 
-# Verwaltung des StorSimple Virtual Array (Vorschau) mithilfe der Web-UI
+# Verwaltung des StorSimple Virtual Array mithilfe der Web-UI
 
 ![Setup-Prozessablauf](./media/storsimple-ova-web-ui-admin/manage4.png)
 
 ## Übersicht
 
-Die Lernprogramme in diesem Artikel beziehen sich auf Microsoft Azure StorSimple Virtual Array (auch als „lokales virtuelles StorSimple-Gerät“ bezeichnet) mit Version 1.1.1.0 (Vorschau). Dieser Artikel beschreibt einige der komplexen Workflows und Verwaltungsaufgaben, die auf dem StorSimple Virtual Array durchgeführt werden können. Zur Verwaltung des StorSimple Virtual Array können zwei Benutzeroberflächen verwendet werden: die Benutzeroberfläche des StorSimple Manager-Dienstes (als „Portal-UI“ bezeichnet) und die lokale Web-UI für das Gerät. Der Schwerpunkt dieses Artikels liegt auf den Aufgaben, die mithilfe der Web-UI ausgeführt werden können.
-
->[AZURE.IMPORTANT] 
->
->- StorSimple Virtual Array befindet sich in der Vorschauphase und ist für die Evaluierung und Bereitstellungsplanung vorgesehen. Die Installation dieser Vorschauversion in einer Produktionsumgebung wird nicht unterstützt. 
->- Wenn Probleme mit StorSimple Virtual Array auftreten, posten Sie sie im [StorSimple-MSDN-Forum](https://social.msdn.microsoft.com/Forums/home?forum=StorSimple).
+Die Tutorials in diesem Artikel beziehen sich auf Microsoft Azure StorSimple Virtual Array (auch als „lokales virtuelles StorSimple-Gerät“ bezeichnet) mit der Version vom März 2016 (allgemeine Verfügbarkeit). Dieser Artikel beschreibt einige der komplexen Workflows und Verwaltungsaufgaben, die auf dem StorSimple Virtual Array durchgeführt werden können. Sie können das StorSimple Virtual Array über die Benutzeroberfläche des StorSimple Manager-Diensts (als „Portal-UI“ bezeichnet) und über die lokale Web-UI für das Gerät verwalten. Der Schwerpunkt dieses Artikels liegt auf den Aufgaben, die mithilfe der Web-UI ausgeführt werden können.
 
 Dieser Artikel enthält folgende Lernprogramme:
 
@@ -45,11 +40,11 @@ Wenn Sie Ihren Verschlüsselungsschlüssel für Dienstdaten verlegt haben und ih
 
 1. Stellen Sie eine Verbindung mit der lokalen Web-UI. Wechseln Sie zu **Konfiguration** > **Cloudeinstellungen**.
 
-    ![Verschlüsselungsschlüssel 1 für Dienstdaten abrufen](./media/storsimple-ova-web-ui-admin/image27.png)
+    ![Verschlüsselungsschlüssel 1 für Dienstdaten abrufen](./media/storsimple-ova-web-ui-admin/image27.png)
 
 2. Klicken Sie unten auf der Seite auf **Dienstdaten-Verschlüsselungsschlüssel abrufen**. Ein Schlüssel wird angezeigt. Kopieren und speichern Sie diesen Schlüssel.
 
-    ![Verschlüsselungsschlüssel 2 für Dienstdaten abrufen](./media/storsimple-ova-web-ui-admin/image28.png)
+    ![Verschlüsselungsschlüssel 2 für Dienstdaten abrufen](./media/storsimple-ova-web-ui-admin/image28.png)
 
 
 ## Beheben von Setup-Fehlern für die Web-UI
@@ -60,13 +55,13 @@ In einigen Fällen können bei der Konfiguration des Geräts über die lokale We
 
 1. Wechseln Sie auf der lokalen Web-UI zu **Problembehandlung** > **Diagnosetests**.
 
-    ![Diagnose 1 ausführen](./media/storsimple-ova-web-ui-admin/image29.png)
+    ![Diagnose 1 ausführen](./media/storsimple-ova-web-ui-admin/image29.png)
 
 2. Klicken Sie unten auf der Seite auf **Diagnosetests ausführen**. Dadurch werden Tests initiiert, um mögliche Probleme mit Ihren Netzwerk-, Geräte-, Webproxy-, Zeit- oder Cloudeinstellungen zu diagnostizieren. Sie werden benachrichtigt, dass auf dem Gerät Tests ausgeführt werden.
 
 3. Nach Abschluss der Tests werden die Ergebnisse angezeigt. Das folgende Beispiel zeigt die Ergebnisse von Diagnosetests. Beachten Sie, dass die Webproxyeinstellungen auf diesem Gerät nicht konfiguriert wurden und daher der Webproxytest nicht ausgeführt wurde. Alle anderen Tests für Netzwerkeinstellungen, DNS-Server und Uhrzeiteinstellungen wurden erfolgreich ausgeführt.
 
-    ![Diagnose 2 ausführen](./media/storsimple-ova-web-ui-admin/image30.png)
+    ![Diagnose 2 ausführen](./media/storsimple-ova-web-ui-admin/image30.png)
 
 ## Generieren eines Protokollpakets
 
@@ -76,19 +71,19 @@ Ein Protokollpaket enthält alle relevanten Protokolle, die das Microsoft Suppor
 
 1. Wechseln Sie auf der lokalen Web-UI zu **Problembehandlung** > **Systemprotokolle**.
 
-    ![Protokollpaket 1 generieren](./media/storsimple-ova-web-ui-admin/image31.png)
+    ![Protokollpaket 1 generieren](./media/storsimple-ova-web-ui-admin/image31.png)
 
 2. Klicken Sie unten auf der Seite auf **Protokollpaket erstellen**. Ein Paket mit dem Systemprotokollen wird erstellt. Dies dauert einige Minuten.
 
-    ![Protokollpaket 2 generieren](./media/storsimple-ova-web-ui-admin/image32.png)
+    ![Protokollpaket 2 generieren](./media/storsimple-ova-web-ui-admin/image32.png)
 
     Sie werden benachrichtigt, nachdem das Paket erfolgreich erstellt wurde. Die Seite wird aktualisiert und gibt dann die Uhrzeit und das Datum der Paketerstellung an.
 
-    ![Protokollpaket 3 generieren](./media/storsimple-ova-web-ui-admin/image33.png)
+    ![Protokollpaket 3 generieren](./media/storsimple-ova-web-ui-admin/image33.png)
 
 3. Klicken Sie auf **Protokollpaket herunterladen**. Ein ZIP-Paket wird auf Ihr System heruntergeladen.
 
-    ![Protokollpaket 4 generieren](./media/storsimple-ova-web-ui-admin/image34.png)
+    ![Protokollpaket 4 generieren](./media/storsimple-ova-web-ui-admin/image34.png)
 
 4. Entpacken Sie das heruntergeladene Protokollpaket, um die Systemprotokolldateien anzuzeigen.
 
@@ -102,7 +97,7 @@ Sie können Ihr virtuelles Gerät über die lokale Web-UI herunterfahren oder ne
 
 2. Klicken Sie unten auf der Seite auf **Herunterfahren**.
 
-    ![Herunterfahren des Geräts 1](./media/storsimple-ova-web-ui-admin/image36.png)
+    ![Herunterfahren des Geräts 1](./media/storsimple-ova-web-ui-admin/image36.png)
 
 3. Eine Warnung wird angezeigt, die besagt, dass durch ein Herunterfahren des Geräts alle ausgeführten IOs unterbrochen werden und ein Ausfall verursacht wird. Klicken Sie auf das Häkchensymbol ![Häkchensymbol](./media/storsimple-ova-web-ui-admin/image3.png).
 
@@ -136,4 +131,4 @@ Sie können Ihr virtuelles Gerät über die lokale Web-UI herunterfahren oder ne
 
 Erfahren Sie, wie Sie den [StorSimple Manager-Dienst zum Verwalten Ihres Geräts verwenden](storsimple-manager-service-administration.md).
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0302_2016-->

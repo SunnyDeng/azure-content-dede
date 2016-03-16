@@ -14,7 +14,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="data-management"
-   ms.date="12/22/2015"
+   ms.date="03/08/2016"
    ms.author="shkurhek"/>
 
 # Was ist SQL Database? Einführung in SQL-Datenbank, technische Details und Erläuterung von DTUs
@@ -61,4 +61,6 @@ Nachdem Sie eine Einführung in SQL-Datenbank gelesen und die Frage „Was ist S
 
 - Beginnen Sie mit dem [Erstellen einer ersten Azure SQL-Datenbank](sql-database-get-started.md). Erstellen Sie dann Ihre erste App in [C#](sql-database-connect-query.md), [Java](sql-database-develop-java-simple-windows.md), [Node.js](sql-database-develop-nodejs-simple-windows.md), [PHP](sql-database-develop-php-retry-windows.md), [Python](sql-database-develop-python-simple-windows.md) oder [Ruby](sql-database-develop-ruby-simple-linux).
 
-<!---HONumber=AcomDC_0302_2016-->
+- Einen Index der Titel und Beschreibungen finden Sie in den [Themen zum Azure SQL-Datenbank-Dienst](sql-database-index-all-articles.md).
+
+<!---HONumber=AcomDC_0309_2016-->

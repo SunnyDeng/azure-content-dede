@@ -328,4 +328,4 @@ In diesem einfachen Beispiel haben Sie Pushbenachrichtigungen an alle Ihre iOS-G
 [WindowsAzure.Messaging]: https://github.com/infosupport/WindowsAzure.Messaging.iOS
 [Azure-Portal]: https://portal.azure.com
 
-<!---HONumber=AcomDC_0218_2016-->
+<!----HONumber=AcomDC_0218_2016-->

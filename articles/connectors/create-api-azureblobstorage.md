@@ -14,15 +14,15 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na" 
-   ms.date="02/23/2016"
+   ms.date="02/25/2016"
    ms.author="mandia"/>
 
 # Erste Schritte mit der Azure-Blobspeicher-API
-Stellen Sie eine Verbindung mit einem Azure-Blob her, um Dateien in einem Blobcontainer zu verwalten, d. h,. Dateien zu erstellen, zu löschen usw.
+Stellen Sie eine Verbindung mit einem Azure-Blob her, um Dateien in einem Blobcontainer zu verwalten, d. h,. Dateien zu erstellen, zu löschen usw. Die Azure Blob Storage-API kann in Folgendem verwendet werden:
 
-Die Azure-Blobspeicher-API kann in Logik-Apps verwendet werden.
+- Logik-Apps 
 
->[AZURE.NOTE] Diese Version des Artikels gilt für Logik-Apps mit der Schemaversion „2015-08-01-preview“. Um die Schemaversion „2014-12-01-preview“ aufzurufen, klicken Sie auf [Azure Storage-Blobconnector](../app-service-logic/app-service-logic-connector-azurestorageblob.md).
+>[AZURE.NOTE] Diese Version des Artikels gilt für die Schemaversion 2015-08-01-preview für Logik-Apps. Um die Schemaversion 2014-12-01-preview aufzurufen, klicken Sie auf [Azure Storage-Blobconnector](../app-service-logic/app-service-logic-connector-azurestorageblob.md).
 
 Azure-Blobspeicher ermöglicht Folgendes:
 
@@ -57,7 +57,7 @@ Nachdem Sie die Verbindung hergestellt haben, geben Sie die Blobeigenschaften ei
 Gilt für Version: 1.0.
 
 ### Datei erstellen
-Lädt eine lokale Datei in Azure Blob Storage hoch. ```POST: /datasets/default/files```
+Lädt eine Datei in Azure Blob Storage hoch. ```POST: /datasets/default/files```
 
 | Name|Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -72,7 +72,7 @@ Lädt eine lokale Datei in Azure Blob Storage hoch. ```POST: /datasets/default/f
 |die Standardeinstellung|Fehler beim Vorgang.|
 
 ### Datei kopieren
-Kopiert eine Datei in Azure Blob Storage. ```POST: /datasets/default/copyFile```
+Kopiert eine Datei nach Azure Blob Storage. ```POST: /datasets/default/copyFile```
 
 | Name|Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -232,6 +232,6 @@ Aktualisiert eine Datei in Azure Blob Storage. ```PUT: /datasets/default/files/{
 
 ## Nächste Schritte
 
-[Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md).
+[Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md)
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

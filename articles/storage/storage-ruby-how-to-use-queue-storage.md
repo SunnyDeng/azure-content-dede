@@ -162,4 +162,4 @@ Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gem
 Einen Vergleich zwischen dem in diesem Artikel besprochenen Azure-Warteschlangendienst und den unter [Gewusst wie: Verwenden von Service Bus-Warteschlangen](/develop/ruby/how-to-guides/service-bus-queues/) besprochenen Azure Service Bus-Warteschlangen finden sie unter [Azure-Warteschlangen und Service Bus-Warteschlangen – Vergleich und Gegenüberstellung](../service-bus/service-bus-azure-and-service-bus-queues-compared-contrasted.md)
  
 
-<!---HONumber=AcomDC_0224_2016-->
+<!----HONumber=AcomDC_0224_2016-->

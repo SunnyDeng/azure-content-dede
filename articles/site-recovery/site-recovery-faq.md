@@ -1,17 +1,17 @@
-<properties
-	pageTitle="Häufig gestellte Fragen (FAQ) zu Site Recovery | Microsoft Azure"
+<properties 
+	pageTitle="Häufig gestellte Fragen (FAQ) zu Site Recovery | Microsoft Azure" 
 	description="Dieser Artikel enthält Antworten auf häufig gestellte Fragen zu Azure Site Recovery."
-	services="site-recovery"
+	services="site-recovery" 
 	documentationCenter=""
 	authors="rayne-wiselman"
 	manager="jwhit"
 	editor=""/>
 
-<tags
+<tags 
 	ms.service="site-recovery"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.tgt_pltfrm="na"
+	ms.tgt_pltfrm="na" 
 	ms.workload="storage-backup-recovery"
 	ms.date="02/14/2016"
 	ms.author="raynew"/>
@@ -32,7 +32,7 @@ Site Recovery unterstützt Ihre Strategie für Geschäftskontinuität und Notfal
 
 ### Was kann mit Site Recovery geschützt werden?
 
-- **Virtuelle Hyper-V-Computer**: Mit Site Recovery kann jede Workload, die auf einer Hyper-V-VM ausgeführt wird, geschützt werden.
+- **Virtuelle Hyper-V-Computer**: Mit Site Recovery kann jede Workload, die auf einer Hyper-V-VM ausgeführt wird, geschützt werden. 
 - **Physische Server**: Mit Site Recovery können physische Server unter Windows oder Linux geschützt werden.
 - **Virtuelle VMware-Computer**: Mit Site Recovery kann jede Workload, die auf einer VMware-VM ausgeführt wird, geschützt werden.
 
@@ -64,11 +64,11 @@ Nein, dies wird nicht unterstützt. Um dieses Problem zu umgehen, müssen Sie de
 Mit Site Recovery können die meisten Workloads geschützt werden, die auf einem virtuellen Computer oder physischen Server ausgeführt werden. Mit Site Recovery können Sie anwendungsorientierte Notfallwiederherstellung bereitstellen. Eine Integration in Microsoft-Anwendungen wie SharePoint, Exchange, Dynamics, SQL Server und Active Directory ist möglich. Zudem kann Site Recovery eng in die Produkte führender Anbieter, einschließlich Oracle, SAP, IBM und Red Hat, eingebunden werden. Sie können Ihre Lösung für die Notfallwiederherstellung für jede einzelne Anwendung anpassen. [Erfahren Sie mehr](site-recovery-workload.md) über den Schutz von Workloads.
 
 
-### Benötige ich immer einen System Center VMM-Server, um virtuelle Hyper-V-Computer zu schützen?
+### Benötige ich immer einen System Center VMM-Server, um virtuelle Hyper-V-Computer zu schützen? 
 
 Nein. Neben virtuellen Hyper-V-VMs in VMM-Clouds können Sie auch Hyper-V-VMs in einer Umgebung replizieren, in der VMM nicht bereitgestellt wird. [Weitere Informationen](site-recovery-hyper-v-site-to-azure.md). Hinweis: Wenn Sie in ein sekundäres Datencenter replizieren möchten, müssen Hyper-V-Hostserver in VMM-Clouds verwaltet werden.
 
-### Kann ich Site Recovery mit VMM bereitstellen, wenn ich nur über einen VMM-Server verfüge?
+### Kann ich Site Recovery mit VMM bereitstellen, wenn ich nur über einen VMM-Server verfüge? 
 
 Ja. Sie können Hyper-V-VMs in der Cloud auf dem VMM-Server in Azure replizieren, oder Sie können zwischen VMM-Clouds auf dem gleichen Server replizieren. Beachten Sie, dass wir empfehlen, dass Sie für die Replikation lokaler Ressourcen in lokalen Ressourcen über einen VMM-Server an den primären und sekundären Standorten verfügen. [Weitere Informationen](site-recovery-single-vmm.md)
 
@@ -86,11 +86,11 @@ Für dieses Szenario benötigen Sie einen VMware vCenter-Server, einen vSphere-H
 
 Virtuelle Computer, die Sie in Azure replizieren möchten, sollten den [Azure-Anforderungen](site-recovery-best-practices.md#azure-virtual-machine-requirements) entsprechen.
 
-### Kann ich virtuelle Hyper-V-Computer der 2. Generation in Azure replizieren?
+### Kann ich virtuelle Hyper-V-Computer der 2. Generation in Azure replizieren?
 
-Ja. Während des Failovers konvertiert Site Recovery Computer der 2. Generation in die 1. Generation. Beim Failback werden die Computer wieder in die 2. Generation zurückkonvertiert. [Weitere Informationen](https://azure.microsoft.com/blog/2015/04/28/disaster-recovery-to-azure-enhanced-and-were-listening/)
+Ja. Während des Failovers konvertiert Site Recovery Computer der 2. Generation in die 1. Generation. Beim Failback werden die Computer wieder in die 2. Generation zurückkonvertiert. [Weitere Informationen](https://azure.microsoft.com/blog/2015/04/28/disaster-recovery-to-azure-enhanced-and-were-listening/)
 
-### Wenn ich in Azure repliziere, wie bezahle ich für Azure-VMs?
+### Wenn ich in Azure repliziere, wie bezahle ich für Azure-VMs? 
 
 Während der regulären Replikation werden Daten in den georedundanten Azure-Speicher repliziert. Dabei fallen keinerlei Gebühren für virtuelle Azure-IaaS-Computer an. Dies ist ein großer Vorteil. Bei einem Failover zu Azure erstellt Site Recovery automatisch virtuelle Azure-IaaS-Computer, und Ihnen werden die in Azure genutzten Computeressourcen in Rechnung gestellt.
 
@@ -111,7 +111,7 @@ Nein, Site Recovery fängt Ihre Anwendungsdaten nicht ab und hat keine Informati
 
 Replikationsdaten werden zwischen Hyper-V-Hosts, VMware-Hypervisoren oder physischen Servern in Ihren primären und sekundären Datencentern oder zwischen Ihrem Datencenter und Ihrem Azure-Speicher ausgetauscht. Site Recovery hat keine Möglichkeit, diese Daten abzufangen. Nur die Metadaten, die zum Orchestrieren von Replikation und Failover erforderlich sind, werden an den Site Recovery-Dienst gesendet.
 
-Site Recovery ist nach ISO 27001:2005 zertifiziert und durchläuft gerade die Prüfungen für HIPAA, DPA und FedRAMP JAB.
+Site Recovery ist nach ISO 27001:2005 zertifiziert und durchläuft gerade die Prüfungen für HIPAA, DPA und FedRAMP JAB.
 
 ### Aus Gründen der Compliance müssen sogar die Metadaten aus unseren lokalen Umgebungen innerhalb der geografischen Region bleiben. Kann Site Recovery uns helfen?
 
@@ -130,14 +130,14 @@ Beim Replizieren von virtuellen Computern und physischen Servern zwischen lokale
 Sie benötigen ein Speicherkonto mit [georedundantem Standardspeicher](../storage/storage-introduction.md#replication-for-durability-and-high-availability). Storage Premium wird derzeit nicht unterstützt.
 
 ### Wie oft kann ich Daten replizieren?
-- **Hyper-V:** Hyper-V-VMs, die unter Windows Server 2012 R2 ausgeführt werden, können alle 30 Sekunden, 5 Minuten oder 15 Minuten repliziert werden. Wenn Sie SAN-Replikation eingerichtet haben, erfolgt die Replikation synchron.
-- **VMware- und physische Server:** Hier ist eine Replikationshäufigkeit irrelevant. Die Replikation erfolgt fortlaufend.
+- **Hyper-V:** Hyper-V-VMs, die unter Windows Server 2012 R2 ausgeführt werden, können alle 30 Sekunden, 5 Minuten oder 15 Minuten repliziert werden. Wenn Sie SAN-Replikation eingerichtet haben, erfolgt die Replikation synchron.
+- **VMware- und physische Server:** Hier ist eine Replikationshäufigkeit irrelevant. Die Replikation erfolgt fortlaufend. 
 
 ### Kann die Replikation von vorhandenen Wiederherstellungsstandorten auf einen weiteren tertiären Standort erweitert werden?
 Eine erweiterte oder verkettete Replikation wird nicht unterstützt. Senden Sie Feedback zu dieser Funktion über das [Feedbackforum](https://feedback.azure.com/forums/256299-site-recovery/suggestions/6097959-support-for-exisiting-extended-replication/).
 
 
-### Kann ich eine Offlinereplikation durchführen, wenn ich zum ersten Mal in Azure repliziere?
+### Kann ich eine Offlinereplikation durchführen, wenn ich zum ersten Mal in Azure repliziere? 
 
 Dies wird nicht unterstützt. Senden Sie uns Feedback zu dieser Funktion über das [Feedbackforum](https://feedback.azure.com/forums/256299-site-recovery/suggestions/6227386-support-for-offline-replication-data-transfer-from/).
 
@@ -150,7 +150,7 @@ Dies wird nicht unterstützt. Senden Sie uns Feedback zu dieser Funktion über d
 
 Dynamische Datenträger werden unterstützt, wenn virtuelle Hyper-V-Computer repliziert werden. Sie werden nicht unterstützt, wenn virtuelle VMware-Computer oder physische Server repliziert. Senden Sie uns Feedback zu dieser Funktion über das [Feedbackforum](https://feedback.azure.com/forums/256299-site-recovery/).
 
-### Wie greife ich nach einem Failover auf Azure auf die virtuellen Azure-Computer zu?
+### Wie greife ich nach einem Failover auf Azure auf die virtuellen Azure-Computer zu? 
 
 Sie können auf die Azure-VMs über eine sichere Internetverbindung oder über ein Standort-zu-Standort-VPN (oder Azure ExpressRoute) zugreifen, falls vorhanden. Die Kommunikation über eine VPN-Verbindung erfolgt über interne Ports in dem Azure-Netzwerk, in dem sich die VM befindet. Die Kommunikation über das Internet wird den öffentlichen Endpunkten im Azure-Clouddienst für VMs zugeordnet.
 
@@ -168,7 +168,7 @@ Sie können ein ungeplantes Failover vom sekundären Standort auslösen. Site Re
 Ein Failover erfolgt nicht automatisch. Sie initiieren Failover mit einem Mausklick im Portal, oder Sie können die [Site Recovery-PowerShell-Cmdlets](https://msdn.microsoft.com/library/dn850420.aspx) verwenden, um ein Failover auslösen. Ein Failback ist auch eine einfache Aktion im Site Recovery-Portal. Zum Automatisieren könnten Sie den lokalen Orchestrator oder Operations Manager verwenden, um einen Fehler bei virtuellen Computern zu erkennen und dann das Failover mithilfe des SDK auszulösen.
 
 ### Kann ich die für den Replikationsdatenverkehr zugewiesene Bandbreite drosseln, wenn ich Hyper-V-VMs repliziere?
-- Bei der Replikation zwischen Hyper-V-VMs an zwei lokalen Standorten können Sie Windows-QoS dafür verwenden. Hier sehen Sie ein Beispielskript:
+- Bei der Replikation zwischen Hyper-V-VMs an zwei lokalen Standorten können Sie Windows-QoS dafür verwenden. Hier sehen Sie ein Beispielskript: 
 
     	New-NetQosPolicy -Name ASRReplication -IPDstPortMatchCondition 8084 -ThrottleRate (2048*1024)
     	gpupdate.exe /force
@@ -219,4 +219,4 @@ Ja, Sie können virtuelle Hyper-V-Computer in Azure oder zwischen Dienstanbieter
 - Lesen Sie die [Site Recovery-Übersicht](site-recovery-overview.md).
 - Erfahren Sie mehr über die [Site Recovery-Architektur](site-recovery-components.md).  
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0309_2016-->

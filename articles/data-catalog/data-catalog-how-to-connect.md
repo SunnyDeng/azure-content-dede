@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
-   ms.date="02/08/2016"
+   ms.date="03/03/2016"
    ms.author="maroche"/>
 
 
@@ -23,7 +23,7 @@
 **Microsoft Azure Data Catalog** ist ein vollständig verwalteter Clouddienst, der als Registrierungs- und Ermittlungssystem für Datenquellen von Unternehmen dient. Mit anderen Worten ist es die Aufgabe von **Azure Data Catalog**, den Benutzern zu helfen, Datenquellen zu ermitteln, zu verstehen und zu nutzen, und Unternehmen zu helfen, mehr Nutzen aus ihren vorhandenen Daten zu ziehen. Ein wichtiger Aspekt dieses Szenarios ist die Verwendung der Daten. Nachdem ein Benutzer eine Datenquelle gefunden und ihren Zweck verstanden hat, besteht der nächste Schritt darin, eine Verbindung mit der Datenquelle herzustellen, um die darin enthaltenen Daten nutzen zu können.
 
 ##Speicherorte von Datenquellen
-Während der Registrierung einer Datenquelle empfängt **Azure Data Catalog** Metadaten über die Datenquelle. Zu diesen Metadaten zählen die Details zum Speicherort der Datenquelle. Die Details zum Speicherort variieren von Datenquelle zu Datenquelle, enthalten jedoch immer die zum Herstellen einer Verbindung erforderlichen Informationen. Der Speicherort für eine SQL Server-Tabelle enthält z. B. den Servernamen, Datenbanknamen, Schemanamen und Tabellennamen, während der Speicherort für einen SQL Server Reporting Services-Bericht den Namen des Servers und den Pfad zum Bericht enthält. Bei anderen Datenquellentypen gibt der Speicherort die Struktur und die Funktionen des Quellsystems wieder.
+Während der Registrierung einer Datenquelle empfängt **Azure Data Catalog** Metadaten über die Datenquelle. Zu diesen Metadaten zählen die Details zum Speicherort der Datenquelle. Die Details zum Speicherort variieren von Datenquelle zu Datenquelle, enthalten jedoch immer die zum Herstellen einer Verbindung erforderlichen Informationen. Der Speicherort für eine SQL Server-Tabelle enthält z. B. den Servernamen, Datenbanknamen, Schemanamen und Tabellennamen, während der Speicherort für einen SQL Server Reporting Services-Bericht den Namen des Servers und den Pfad zum Bericht enthält. Bei anderen Datenquellentypen gibt der Speicherort die Struktur und die Funktionen des Quellsystems wieder.
 
 ##Integrierte Clienttools
 Die einfachste Methode zum Herstellen einer Verbindung mit einer Datenquelle ist das Menü „Öffnen in“ im **Azure Data Catalog**-Portal. Dieses Menü enthält eine Liste mit Optionen, die zum Herstellen einer Verbindung mit der ausgewählten Datenressource verwendet werden können. In der standardmäßigen Kachelansicht ist dieses Menü auf jeder Kachel verfügbar.
@@ -51,4 +51,7 @@ Um es einfacher zu machen für Benutzer, die eine Datenquelle finden, aber keine
 ##Zusammenfassung
 Durch die Registrierung einer Datenquelle in **Azure Data Catalog** werden strukturelle und beschreibende Metadaten aus der Datenquelle in den Katalogdienst kopiert, sodass die darin enthaltenen Daten leichter auffindbar sind. Nachdem eine Datenquelle registriert und gefunden wurde, können Benutzer über das Menü „Öffnen in“ im **Azure Data Catalog**-Portal oder mit ihren bevorzugten Tools eine Verbindung mit der Datenquelle herstellen.
 
-<!---HONumber=AcomDC_0224_2016-->
+## Weitere Informationen
+- Eine schrittweise Anleitung zum Verbinden mit Datenquellen finden Sie im Tutorial [Erste Schritte mit Azure Data Catalog](data-catalog-get-started.md).
+
+<!---HONumber=AcomDC_0309_2016-->

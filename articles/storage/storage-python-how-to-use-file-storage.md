@@ -100,4 +100,4 @@ Nachdem Sie sich nun mit den Grundlagen von File Storage vertraut gemacht haben,
 [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
 [Microsoft Azure Storage-SDK für Python]: https://github.com/Azure/azure-storage-python
 
-<!---HONumber=AcomDC_0224_2016-->
+<!----HONumber=AcomDC_0224_2016-->

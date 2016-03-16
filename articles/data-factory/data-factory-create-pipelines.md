@@ -235,7 +235,7 @@ policy | Richtlinien, die das Laufzeitverhalten der Aktivität beeinflussen. Fal
 start | Startdatum/-uhrzeit für die Pipeline. Muss im [ISO-Format](http://en.wikipedia.org/wiki/ISO_8601) angegeben werden. Beispiel: 2014-10-14T16:32:41Z. <p>Die Eigenschaften "start" und "end" geben zusammen den aktiven Zeitraum der Pipeline an. Ausgabeslices werden nur in diesem aktiven Zeitraum erstellt.</p> | Nein<p>Wenn Sie einen Wert für die end-Eigenschaft angeben, müssen Sie auch einen Wert für die start-Eigenschaft angeben.</p><p>Sowohl die Start- als auch die Endzeiten zum Erstellen einer Pipeline können leer sein, aber beide müssen Werte enthalten, um für die Pipeline einen aktiven Zeitraum für die Ausführung festzulegen. Wenn Sie beim Erstellen einer Pipeline keine Start- und Endzeiten angeben, können Sie später zum Festlegen der Werte das Cmdlet „Set-AzureRmDataFactoryPipelineActivePeriod“ verwenden.</p>
 end | Datum und Uhrzeit für das Ende der Pipeline. Muss, falls gewünscht, im ISO-Format angegeben werden. Beispiel: 2014-10-14T17:32:41Z <p>Zum Ausführen der Pipeline auf unbestimmte Zeit geben Sie 9999-09-09 als Wert für die end-Eigenschaft an.</p>| Nein <p>Wenn Sie einen Wert für die start-Eigenschaft angeben, müssen Sie auch einen Wert für die end-Eigenschaft angeben.</p><p>Lesen Sie auch die Hinweise zur **start**-Eigenschaft.</p>
 isPaused | Wenn als Wert „true“ festgelegt wird, wird die Pipeline nicht ausgeführt. Standardwert = false. Sie können diese Eigenschaft zum Aktivieren oder Deaktivieren verwenden. | Nein
-scheduler | Die Eigenschaft "scheduler" wird verwendet, um die gewünschte Planung für die Aktivität zu definieren. Die untergeordneten Eigenschaften sind identisch mit denen der [availability-Eigenschaft in einem Dataset](data-factory-create-datasets.md#Availability). | Nein | 
+ scheduler | Die Eigenschaft "scheduler" wird verwendet, um die gewünschte Planung für die Aktivität zu definieren. Die untergeordneten Eigenschaften sind identisch mit denen der [availability-Eigenschaft in einem Dataset](data-factory-create-datasets.md#Availability). | Nein | 
 
 ### Aktivitätstypen
 Azure Data Factory bietet eine Vielzahl von Aktivitäten zur [Datenverschiebung](data-factory-data-movement-activities.md) und [Datentransformation](data-factory-data-transformation-activities.md).
@@ -252,6 +252,37 @@ timeout | TimeSpan | 00:00:00 | Timeout für die Aktivität. Beispiel: 00:10:00 
 delay | TimeSpan | 00:00:00 | Geben Sie die Verzögerung an, mit der die Datenverarbeitung des Slice beginnt.<p>Die Ausführung der Aktivität für einen Datenslice wird gestartet, nachdem die Verzögerung die erwartete Ausführungszeit überschreitet.</p><p>Beispiel: 00:10:00 (Verzögerung von 10 Minuten)</p>
 longRetry | Ganze Zahl<p>Maximalwert: 10</p> | 1 | Die Anzahl langer Wiederholungsversuche, bevor die Sliceausführung einen Fehler verursacht.<p>longRetry-Versuche werden durch "longRetryInterval" über einen Zeitraum verteilt. Wenn Sie eine Zeit zwischen den Wiederholungsversuchen angeben müssen, verwenden Sie "longRetry". Wenn sowohl retry als auch longRetry angegeben werden, umfasst jeder longRetry-Versuch retry-Versuche, und die maximale Anzahl der Versuche errechnet sich aus „retry * longRetry“.</p><p>Die Richtlinie für die Aktivität enthält z. B. Folgendes:<br/>retry: 3<br/>longRetry: 2<br/>longRetryInterval: 01:00:00<br/></p><p>Nehmen Sie an, dass nur ein Slice auszuführen ist (Status lautet „Waiting“) und dass die Ausführung der Aktivität jedes Mal einen Fehler verursacht. Zunächst würden drei aufeinander folgende Ausführungsversuche durchgeführt. Nach jedem Versuch wäre der Slicestatus "Retry". Nachdem die ersten drei Versuche durchgeführt sind, lautet der Slicestatus "LongRetry".</p><p>Nach einer Stunde (Wert von "longRetryInterval") würden drei weitere aufeinander folgende Ausführungsversuche unternommen. Danach würde der Slicestatus "Failed" lauten, und es fänden keine weiteren Versuche statt. Somit wurden insgesamt sechs Versuche unternommen.</p><p>Hinweis: Bei einer erfolgreichen Ausführung lautet der Slicestatus "Ready", und es werden keine weiteren Versuche durchgeführt.</p><p>"longRetry" kann in Situationen verwendet werden, bei denen abhängige Daten zu nicht festgelegten Zeiten eingehen oder die gesamte Umgebung, in der die Datenverarbeitung erfolgt, relativ unzuverlässig ist. In solchen Fällen ist die Durchführung von aufeinander folgenden Wiederholungen möglicherweise nicht hilfreich, und die Wiederholung nach einem bestimmten Zeitraum führt vielleicht zur gewünschten Ausgabe.</p><p>Vorsicht: Legen Sie für "longRetry" und "longRetryInterval" keine hohen Werte fest. In der Regel weisen höhere Werte auf andere Systemprobleme hin.</p> 
 longRetryInterval | TimeSpan | 00:00:00 | Die Verzögerung zwischen langen Wiederholungsversuchen 
+
+## Kettenaktivitäten
+Wenn in einer Pipeline mehrere Aktivitäten vorliegen, die nicht voneinander abhängig sind (Ausgabe einer Aktivität ist keine Eingabe für eine andere Aktivität), können die Aktivitäten parallel ausgeführt werden, sofern Eingabedatenslices für die Aktivitäten bereitstehen.
+
+Sie können zwei Aktivitäten verketten, indem Sie das Ausgabedataset einer Aktivität als Eingabedataset der anderen Aktivität verwenden. Die Aktivitäten können sich in derselben Pipeline oder in verschiedenen Pipelines befinden. Die zweite Aktivität wird nur ausgeführt, wenn die erste erfolgreich abgeschlossen wurde.
+
+Betrachten Sie beispielsweise den folgenden Fall:
+ 
+1.	Die Pipeline P1 verfügt über die Aktivität A1, die das externe Eingabedataset D1 erfordert und das **Ausgabedataset** **D2** generiert.
+2.	Die Pipeline P2 verfügt über die Aktivität A2, die eine **Eingabe** aus dem Dataset **D2** erfordert und das Ausgabedataset D3 generiert.
+ 
+In diesem Szenario wird die Aktivität A1 ausgeführt, wenn die externen Daten verfügbar sind und die Häufigkeit für die geplante Verfügbarkeit erreicht ist. Die Aktivität A2 wird ausgeführt, wenn die geplanten Slices von D2 verfügbar werden und die Häufigkeit für die geplante Verfügbarkeit erreicht ist. Wenn ein Fehler in einem der Slices im Dataset D2 auftritt, wird A2 für diesen Slice nicht ausgeführt, bis er verfügbar wird.
+
+Die Diagrammansicht sieht wie folgt aus:
+
+![Verketten von Aktivitäten in zwei Pipelines](./media/data-factory-create-pipelines/chaining-two-pipelines.png)
+
+Die Diagrammansicht mit beiden Aktivitäten in derselben Pipeline sieht wie folgt aus:
+
+![Verketten von Aktivitäten in derselben Pipeline](./media/data-factory-create-pipelines/chaining-one-pipeline.png)
+
+## Planung und Ausführung
+Sie wissen jetzt, was Pipelines und Aktivitäten sind. Sie haben sich auch angesehen, wie sie definiert werden, und besitzen einen allgemeinen Überblick über die Aktivitäten in Azure Data Factory. Sehen wir uns jetzt an, wie sie ausgeführt werden.
+
+Eine Pipeline ist nur zwischen ihrer Start- und ihrer Endzeit aktiv. Sie wird weder vor der Startzeit noch nach der Endzeit ausgeführt. Wenn die Pipeline angehalten wird, wird sie unabhängig von Start- und Endzeit nicht ausgeführt. Wenn eine Pipeline ausgeführt werden soll, darf sie nicht angehalten werden. Eigentlich ist es nicht die Pipeline, die ausgeführt wird. Es sind vielmehr die Aktivitäten in der Pipeline, die ausgeführt werden. Dies geschieht jedoch im Gesamtkontext der Pipeline.
+
+Informationen zur Planung und Ausführung in Azure Data Factory finden Sie unter [Planung und Ausführung](data-factory-scheduling-and-execution.md).
+
+### Parallele Verarbeitung von Slices
+Legen Sie den Wert der **Parallelität** in der JSON-Definition der Aktivität auf einen höheren Wert als 1 fest, sodass zur Laufzeit mehrere Slices parallel von mehreren Instanzen der Aktivität verarbeitet werden. Dies ist sehr nützlich bei der Verarbeitung abgeglichener Slices aus der Vergangenheit.
+
 
 ## Erstellen und Verwalten einer Pipeline
 Azure Data Factory bietet verschiedene Mechanismen zum Erstellen und Bereitstellen von Pipelines (die wiederum eine oder mehrere Aktivitäten enthalten).
@@ -276,15 +307,19 @@ Azure Data Factory bietet verschiedene Mechanismen zum Erstellen und Bereitstell
 
 	**Hinweis:** Während der Bereitstellung führt der Azure Data Factory-Dienst einige Überprüfungen durch, um einige häufig auftretende Probleme zu beheben. Für den Fall, dass ein Fehler vorliegt, werden die entsprechenden Informationen angezeigt. Korrigieren Sie den Fehler, und stellen Sie die erstellte Pipeline erneut bereit. Mithilfe des Editor können Sie eine Pipeline aktualisieren und löschen.
 
+Unter [Erste Schritte mit Azure Data Factory (Data Factory Edition)](data-factory-build-your-first-pipeline-using-editor.md) finden Sie eine umfassende exemplarische Vorgehensweise zum Erstellen einer Data Factory mit einer Pipeline.
+
 ### Verwenden des Visual Studio-Plug-Ins
-Sie können Visual Studio verwenden, um Pipelines zu erstellen und in Azure Data Factory bereitzustellen. Weitere Informationen hierzu finden Sie unter [Tutorial: Kopieren von Daten aus Azure Storage in Azure SQL (Visual Studio)](data-factory-get-started-using-vs.md).
+Sie können Visual Studio verwenden, um Pipelines zu erstellen und in Azure Data Factory bereitzustellen. Unter [Erste Schritte mit Azure Data Factory (Visual Studio)](data-factory-build-your-first-pipeline-using-vs.md) finden Sie eine umfassende exemplarische Vorgehensweise zum Erstellen einer Data Factory mit einer Pipeline.
+
 
 ### Verwenden von Azure PowerShell
 Mit der Azure PowerShell können Sie Pipelines in Azure Data Factory erstellen. Angenommen, Sie haben die Pipeline "JSON" in einer Datei unter "c:\\DPWikisample.json" definiert. Sie können sie in Ihre Azure Data Factory-Instanz, wie im folgenden Beispiel gezeigt, hochladen.
 
 	New-AzureRmDataFactoryPipeline -ResourceGroupName ADF -Name DPWikisample -DataFactoryName wikiADF -File c:\DPWikisample.json
 
-Weitere Informationen zu diesem Cmdlet finden Sie unter [New-AzureRmDataFactoryPipeline](https://msdn.microsoft.com/library/mt619358.aspx).
+Unter [Erste Schritte mit Azure Data Factory (Azure PowerShell)](data-factory-build-your-first-pipeline-using-powershell.md) finden Sie eine umfassende exemplarische Vorgehensweise zum Erstellen einer Data Factory mit einer Pipeline.
+
 
 ### Verwenden der REST-API
 Sie können die Pipeline auch mit REST-APIs erstellen und bereitstellen. Dieser Mechanismus kann zum programmgesteuerten Erstellen von Pipelines genutzt werden. Weitere Informationen dazu finden Sie unter [Erstellen oder Aktualisieren einer Pipeline](https://msdn.microsoft.com/library/azure/dn906741.aspx).
@@ -292,13 +327,9 @@ Sie können die Pipeline auch mit REST-APIs erstellen und bereitstellen. Dieser 
 ### Verwenden des .NET SDK
 Sie können die Pipeline auch mit dem .NET SDK erstellen und bereitstellen. Dieser Mechanismus kann zum programmgesteuerten Erstellen von Pipelines genutzt werden. Weitere Informationen hierzu finden Sie unter [Programmgesteuertes Erstellen, Verwalten und Überwachen von Data Factorys](data-factory-create-data-factories-programmatically.md).
 
+### Verwenden von ARM-Vorlagen (Azure Resource Manager)
+Sie können eine Pipeline mithilfe einer ARM-Vorlage (Azure Resource Manager) erstellen und bereitstellen. Weitere Informationen hierzu finden Sie unter [Erste Schritte mit Azure Data Factory (Azure Resource Manager)](data-factory-build-your-first-pipeline-using-arm.md)
 
-## Planung und Ausführung
-Sie wissen jetzt, was Pipelines und Aktivitäten sind. Sie haben sich auch angesehen, wie sie definiert werden, und besitzen einen allgemeinen Überblick über die Aktivitäten in Azure Data Factory. Sehen wir uns jetzt an, wie sie ausgeführt werden.
-
-Eine Pipeline ist nur zwischen ihrer Start- und ihrer Endzeit aktiv. Sie wird weder vor der Startzeit noch nach der Endzeit ausgeführt. Wenn die Pipeline angehalten wird, wird sie unabhängig von Start- und Endzeit nicht ausgeführt. Wenn eine Pipeline ausgeführt werden soll, darf sie nicht angehalten werden.
-
-Eigentlich ist es nicht die Pipeline, die ausgeführt wird. Es sind vielmehr die Aktivitäten in der Pipeline, die ausgeführt werden. Dies geschieht jedoch im Gesamtkontext der Pipeline. Informationen zur Planung und Ausführung in Azure Data Factory finden Sie unter [Planung und Ausführung](data-factory-scheduling-and-execution.md).
 
 ## Verwalten und Überwachen  
 Sobald eine Pipeline bereitgestellt wird, können Sie Ihre Pipelines, Slices und Ausführungen verwalten und überwachen. Weitere Informationen finden Sie hier: [Überwachen und Verwalten von Pipelines](data-factory-monitor-manage-pipelines.md).
@@ -335,4 +366,4 @@ Sobald eine Pipeline bereitgestellt wird, können Sie Ihre Pipelines, Slices und
 
  
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

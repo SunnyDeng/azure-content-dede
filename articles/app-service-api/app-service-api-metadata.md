@@ -12,7 +12,7 @@
 	ms.workload="na"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="get-started-article"
+	ms.topic="article"
 	ms.date="02/16/2016"
 	ms.author="tdykstra"/>
 
@@ -22,7 +22,7 @@ In App Service-API-Apps ist eine Unterstützung für [Swagger 2.0](http://swagge
 
 ## Swagger-Endpunkt
 
-Sie können einen Endpunkt angeben, der Swagger 2.0-JSON-Metadaten für eine API-App in einer Eigenschaft der API-App bereitstellt. Der Endpunkt kann sich auf den Basis-URL der API-App oder auf eine absolute URL beziehen. Absolute URLs können nach außerhalb der API-App verweisen.
+Sie können einen Endpunkt angeben, der Swagger 2.0-JSON-Metadaten für eine API-App in einer Eigenschaft der API-App bereitstellt. Der Endpunkt kann sich auf den Basis-URL der API-App oder auf eine absolute URL beziehen. Absolute URLs können nach außerhalb der API-App verweisen.
 
 Für viele nachgelagerte Clients (z. B. Visual Studio-Codegenerierung und PowerApps-Schritt „API hinzufügen“) muss die URL öffentlich zugänglich sein (ohne Schutz durch Benutzer- oder Dienstauthentifizierung). Dies bedeutet, dass wenn Sie die App Service-Authentifizierung verwenden und die API-Definition innerhalb der App selbst verfügbar machen möchten, Sie eine Authentifizierungsmethode wählen müssen, die anonymen Datenverkehr zu lässt, um Ihre API zu erreichen. Weitere Informationen finden Sie unter [Authentifizierung und Autorisierung für App Service-API-Apps](app-service-api-authentication.md).
 
@@ -56,4 +56,4 @@ Sie können Clientcode für eine API-App mit Visual Studio oder über die Befehl
 
 Ein Schritt-für-Schritt-Tutorial mit Anleitungen zum Erstellen, Bereitstellen und Nutzen einer API-App finden Sie unter [Erste Schritte mit API-Apps in Azure App Service](app-service-api-dotnet-get-started.md).
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0302_2016-->

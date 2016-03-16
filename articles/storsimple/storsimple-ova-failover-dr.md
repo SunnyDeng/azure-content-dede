@@ -13,10 +13,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="01/20/2016"
+   ms.date="03/01/2016"
    ms.author="alkohli"/>
 
-# Notfallwiederherstellung und Gerätefailover für das StorSimple Virtual Array (Vorschau)
+# Notfallwiederherstellung und Gerätefailover für das StorSimple Virtual Array
 
 
 ## Übersicht
@@ -27,7 +27,7 @@ Ein Gerätefailover wird über das Feature der Notfallwiederherstellung koordini
 
 ![](./media/storsimple-ova-failover-dr/image16.png)
 
-Dieser Artikel gilt nur für StorSimple Virtual Arrays (Vorschau). Informationen zum Failover für ein Gerät der 8000er Serie finden Sie unter [Failover und Notfallwiederherstellung für das StorSimple-Gerät](storsimple-device-failover-disaster-recovery.md).
+Dieser Artikel gilt nur für StorSimple Virtual Arrays. Informationen zum Failover für ein Gerät der 8000er Serie finden Sie unter [Failover und Notfallwiederherstellung für das StorSimple-Gerät](storsimple-device-failover-disaster-recovery.md).
 
 
 ## Was ist die Notfallwiederherstellung?
@@ -74,7 +74,7 @@ Vor Beginn der Notfallwiederherstellung werden auf dem Gerät Vorüberprüfungen
 
 - Überprüfen des verfügbaren Speicherplatzes auf dem Zielgerät
 
-- Überprüfen, ob ein iSCSI-Server-Quellgerät über gültige ACR-Namen, IQN (nicht länger als 220 Zeichen) und ein CHAP-Kennwort (12 bis 16 Zeichen) für die Volumes verfügt
+- Überprüfen, ob ein iSCSI-Server-Quellgerät über gültige ACR-Namen, IQN (nicht länger als 220 Zeichen) und ein CHAP-Kennwort (12 bis 16 Zeichen) für die Volumes verfügt
 
 Falls eine der obigen Vorüberprüfungen fehlschlägt, kann die Notfallwiederherstellung nicht durchgeführt werden. Sie müssen diese Fehler beheben und den Vorgang dann wiederholen.
 
@@ -115,7 +115,7 @@ Führen Sie die folgenden Schritte aus, um Ihr Gerät auf einem virtuellen StorS
 
     1. Wählen Sie in der Dropdownliste mit den verfügbaren Geräten ein **Zielgerät** aus. Nur die Geräte, die über ausreichende Kapazität verfügen, werden in der Dropdownliste angezeigt.
 
-    2. Überprüfen Sie die Details des Quellgeräts, z. B. Gerätename, Gesamtkapazität und die Namen der Freigaben, die am Failover beteiligt sind.
+    2. Überprüfen Sie die Details des Quellgeräts, z. B. Gerätename, Gesamtkapazität und die Namen der Freigaben, die am Failover beteiligt sind.
 
 		![](./media/storsimple-ova-failover-dr/image21.png)
 
@@ -174,4 +174,4 @@ Falls eine der Vorüberprüfungen nicht erfolgreich ist, werden Vorüberprüfung
 
 Erfahren Sie mehr darüber, wie Sie das [StorSimple Virtual Array mit der lokalen Webbenutzeroberfläche verwalten](storsimple-ova-web-ui-admin.md).
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0302_2016-->

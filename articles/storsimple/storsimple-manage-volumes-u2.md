@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="02/18/2016"
+   ms.date="02/25/2016"
    ms.author="v-sharos" />
 
 # Verwalten von Volumes mithilfe des StorSimple Manager-Diensts (Update 2)
@@ -182,18 +182,32 @@ Sie können sich [hier](https://azure.microsoft.com/documentation/videos/expand-
 
 ## Ändern des Volumetyps
 
-Sie können den Volumetyp von mehrstufig in lokal ändern oder umgekehrt. Normalerweise handelt es sich dabei um kleine vorhandene Volumes, auf die Sie häufig zugreifen möchten. Diese Konvertierung sollte jedoch nicht häufig vorkommen. Für die Konvertierung eines Volumes von mehrstufig in lokal gibt es folgende Gründe:
+Sie können den Volumetyp von mehrstufig in lokal ändern oder umgekehrt. Diese Konvertierung sollte jedoch nicht häufig vorkommen. Für die Konvertierung eines Volumes von mehrstufig in lokal gibt es folgende Gründe:
 
 - Lokale Garantien in Bezug auf Datenverfügbarkeit und Leistung
 - Beseitigung von Cloudlatenzzeiten und Cloudverbindungsproblemen.
 
-Ein lokales Volume wird bei seiner Erstellung vollständig bereitgestellt. Wenn Sie ein mehrstufiges Volume in ein lokales Volume konvertieren, stellt StorSimple vor der Konvertierung sicher, dass auf dem Gerät genügend Speicherplatz verfügbar ist. Wenn Sie nicht über genügend Speicherplatz verfügen, erhalten Sie eine Fehlermeldung und der Vorgang wird abgebrochen.
+Normalerweise handelt es sich dabei um kleine vorhandene Volumes, auf die Sie häufig zugreifen möchten. Ein lokales Volume wird bei seiner Erstellung vollständig bereitgestellt. Wenn Sie ein mehrstufiges Volume in ein lokales Volume konvertieren, stellt StorSimple vor der Konvertierung sicher, dass auf dem Gerät genügend Speicherplatz verfügbar ist. Wenn Sie nicht über genügend Speicherplatz verfügen, erhalten Sie eine Fehlermeldung und der Vorgang wird abgebrochen.
 
 > [AZURE.NOTE] Bevor Sie eine Konvertierung von mehrstufig in lokal starten, berücksichtigen Sie unbedingt den Platzbedarf der anderen Workloads.
 
 Möglicherweise empfiehlt es sich, ein lokales Volume in ein mehrstufiges Volume zu ändern, wenn Sie zusätzlichen Speicherplatz zur Bereitstellung anderer Volumes benötigen. Bei der Konvertierung des lokalen Volumes in ein mehrstufiges erhöht sich die auf dem Gerät verfügbare Kapazität um die Größe der freigegebenen Kapazität. Wenn Verbindungsprobleme die Konvertierung eines Volumes vom lokalen in den mehrstufigen Typ verhindern, zeigt das lokale Volume Eigenschaften eines mehrstufigen Volumes, bis die Konvertierung abgeschlossen ist. Dies liegt daran, dass einige Daten möglicherweise in die Cloud übergegangen sind. Diese übergelaufenen Daten belegen weiterhin lokalen Speicherplatz auf dem Gerät, der erst freigegeben werden kann, wenn der Vorgang neu gestartet wird und abgeschlossen ist.
 
 >[AZURE.NOTE] Das Konvertieren eines Volumes kann einige Zeit dauern, und eine Konvertierung kann nach ihrem Start nicht abgebrochen werden. Das Volume bleibt während der Konvertierung online, und Sie können Sicherungen erstellen. Sie können das Volume jedoch nicht erweitern oder wiederherstellen, solange die Konvertierung stattfindet.
+
+Die Konvertierung von einem mehrstufigen in ein lokales Volume kann sich negativ auf die Geräteleistung auswirken. Darüber hinaus kann sich die erforderliche Dauer für die Konvertierung durch die folgenden Faktoren verlängern:
+
+- Es ist nicht genügend Bandbreite vorhanden.
+- Das Gerät ist voll, sodass Gerätedaten bereits in die Cloud übertragen werden.
+- Es ist keine aktuelle Sicherung vorhanden.
+
+So können Sie die möglichen Auswirkungen dieser Faktoren minimieren
+
+- Überprüfen Sie die Richtlinien für die Bandbreitendrosselung, und stellen Sie sicher, dass eine dedizierte Bandbreite von 40 MBit/s verfügbar ist.
+- Planen Sie die Durchführung der Konvertierung außerhalb der Spitzenzeiten.
+- Erstellen Sie eine Sicherung, bevor Sie die Konvertierung starten.
+
+Wenn Sie mehrere Volumes (mit verschiedenen Workloads) konvertieren, sollten Sie die Konvertierung der Volumes so priorisieren, dass Volumes mit einer höheren Priorität zuerst konvertiert werden. Beispielsweise sollten Sie Volumes, die virtuelle Computer oder Volumes mit SQL-Workloads hosten, konvertieren, bevor Sie Volumes mit Workloads zur Dateifreigabe konvertieren.
 
 #### So ändern Sie den Volumetyp
 
@@ -203,7 +217,7 @@ Möglicherweise empfiehlt es sich, ein lokales Volume in ein mehrstufiges Volume
 
 3. Wählen Sie ein Volume aus, und klicken Sie unten auf der Seite auf **Ändern**. Der Assistent zum Ändern von Volumes wird gestartet.
 
-4. Ändern Sie auf der Seite **Grundeinstellungen** den Verwendungstyp, indem Sie den neuen Typ aus der Dropdownliste **Verwendungstyp** auswählen.
+4. Ändern Sie auf der Seite **Grundeinstellungen** den Verwendungstyp, indem Sie den neuen Typ in der Dropdownliste **Verwendungstyp** auswählen.
 
     - Wenn Sie den Typ in **Lokal** ändern, prüft StorSimple, ob genügend Kapazität vorhanden ist.
     - Wenn Sie den Typ in **Mehrstufig** ändern und dieses Volume für archivierte Daten verwendet werden soll, aktivieren Sie das Kontrollkästchen **Verwenden Sie dieses Volume für Archivdaten, auf die Sie seltener zugreifen**.
@@ -285,4 +299,4 @@ Führen Sie die folgenden Schritte durch, um die Überwachung eines Volumes zu a
 
  
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

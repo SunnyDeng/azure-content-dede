@@ -4,7 +4,7 @@
 	services="mobile-services"
 	documentationCenter="windows"
 	authors="ggailey777"
-	manager="dwrede"
+	manager="erikre"
 	editor=""/>
 
 <tags
@@ -13,14 +13,17 @@
 	ms.tgt_pltfrm="mobile-windows-store"
 	ms.devlang="javascript"
 	ms.topic="get-started-article"
-	ms.date="02/10/2016"
+	ms.date="03/06/2016"
 	ms.author="glenga"/>
 
 # Erste Schritte mit Mobile Services
 
-[AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]&nbsp;
+[AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]
 
-[AZURE.INCLUDE [mobile-services-hero-slug](../../includes/mobile-services-hero-slug.md)]
+&nbsp;
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+> Informationen für die entsprechende Mobile Apps-Version dieses Themas finden Sie unter [Erstellen einer Windows-App mit Mobile Apps](../app-service-mobile/app-service-mobile-windows-store-dotnet-get-started.md).
 
 Dieses Lernprogramm zeigt Ihnen, wie Sie einen cloudbasierten Back-End-Dienst zu einer Windows Store-JavaScript-App mithilfe von Azure Mobile Services hinzufügen. In diesem Lernprogramm erstellen Sie einen neuen mobilen Dienst und eine einfache *To-Do-Listen*-App, die App-Daten im neuen mobilen Dienst speichert. Der von Ihnen zu erstellende mobile Dienst verwendet JavaScript für die serverseitige Geschäftslogik.
 
@@ -89,4 +92,4 @@ Da Sie jetzt den Schnellstart abgeschlossen haben, können Sie anschließend erf
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
 [klassischen Azure-Portal]: https://manage.windowsazure.com/
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0309_2016-->

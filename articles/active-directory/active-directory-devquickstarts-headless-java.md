@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Erste Schritte in Azure AD Java | Microsoft Azure"
+	pageTitle="Erste Schritte in Azure AD Java | Microsoft Azure"
 	description="Erfahren Sie, wie Sie eine Java-Befehlszeilen-App erstellen, die Benutzer für den Zugriff auf eine API anmeldet."
 	services="active-directory"
 	documentationCenter="java"
@@ -13,28 +13,31 @@
   ms.tgt_pltfrm="na"
 	ms.devlang="java"
 	ms.topic="article"
-	ms.date="11/14/2015"
+	ms.date="02/19/2016"
 	ms.author="brandwe"/>
 
 
-# Verwenden der Java-Befehlszeilen-App für den Zugriff auf eine API mit Azure AD
+# Verwenden der Java-Befehlszeilen-App für den Zugriff auf eine API mit Azure AD
 
 [AZURE.INCLUDE [active-directory-devguide](../../includes/active-directory-devguide.md)]
 
 Azure AD erleichtert die Auslagerung der Identitätsverwaltung für Webanwendungen, indem es eine einmalige An- und Abmeldung (Single Sign-on und Single Sign-out) mit nur wenigen Codezeilen ermöglicht. Für Java-Web-Apps erreichen Sie das Gleiche durch die Microsoft-Implementierung des Community-gestützten ADAL4J.
 
-  Hier verwenden wir ADAL4J für Folgendes: - Anmelden eines Benutzers bei der Anwendung mit Azure AD als Identitätsanbieter - Anzeigen von Informationen zum Benutzer - Abmelden des Benutzers von der Anwendung
+  Hier verwenden wir ADAL4J für Folgendes:
+- Anmelden von Benutzern an der App mit Azure AD als Identitätsanbieter
+- Anzeigen einiger Informationen zum Benutzer
+- Abmelden des Benutzers von der App
 
 Dazu müssen Sie folgende Schritte ausführen:
 
 1. Registrieren einer Anwendung in Azure AD
 2. Legen Sie fest, dass Ihre App die Bibliothek „ADAL4J“ verwendet.
-3. Verwenden Sie die Bibliothek „ADAL4J“ zur Ausgabe von An- und Abmeldeanforderungen für Azure AD.
+3. Verwenden Sie die Bibliothek „ADAL4J“ zur Ausgabe von An- und Abmeldeanforderungen für Azure AD.
 4. Ausdrucken von Informationen zum Benutzer
 
 Beginnen Sie, indem Sie [das Anwendungsgerüst](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect/archive/skeleton.zip) oder [das vollständige Beispiel herunterladen](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect\/archive/complete.zip). Außerdem benötigen Sie einen Azure AD-Mandanten, bei dem Sie Ihre Anwendung registrieren. Wenn Sie noch keinen Mandanten haben, [erfahren Sie hier, wie Sie einen erhalten](active-directory-howto-tenant.md).
 
-## 1\. Registrieren einer Anwendung in Azure AD
+## 1\. Registrieren einer Anwendung in Azure AD
 Damit Ihre Anwendung Benutzer authentifizieren kann, müssen Sie zunächst in Ihrem Mandanten eine neue Anwendung registrieren.
 
 - Melden Sie sich beim Azure-Verwaltungsportal an.
@@ -259,10 +262,10 @@ Mit den aktuellen Tomcat-Servern können WAR-Dateien einfach bereitgestellt werd
 
 ##Nächste Schritte
 
-Glückwunsch! Sie haben nun eine funktionierende Java-Anwendung, die Benutzer authentifizieren, Web-APIs über OAuth 2.0 sicher aufrufen und grundlegende Benutzerinformationen abfragen kann. Sofern nicht bereits geschehen, ist es nun an der Zeit, Ihren Mandanten mit Benutzern zu füllen.
+Glückwunsch! Sie haben nun eine funktionierende Java-Anwendung, die Benutzer authentifizieren, Web-APIs über OAuth 2.0 sicher aufrufen und grundlegende Benutzerinformationen abfragen kann. Sofern nicht bereits geschehen, ist es nun an der Zeit, Ihren Mandanten mit Benutzern zu füllen.
 
 Als Referenz stellen wir das vollständige Beispiel (ohne Ihre Konfigurationswerte) [hier als ZIP-Datei bereit](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect/archive/complete.zip). Sie können es alternativ aus GitHub klonen:
 
 ```git clone --branch complete https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect.git```
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0302_2016-->

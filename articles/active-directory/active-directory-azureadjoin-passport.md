@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/19/2015"
+	ms.date="02/26/2016"
 	ms.author="femila"/>
 
 # Authentifizieren von Identitäten ohne Kennwörter über Microsoft Passport
@@ -81,4 +81,4 @@ Ausführliche Anweisungen zur Bereitstellung finden Sie unter [Microsoft Passpor
 * [Benutzererfahrungen beim Verknüpfen von in die Domäne eingebundenen Windows 10-Geräten mit Azure AD](active-directory-azureadjoin-devices-group-policy.md)
 * [Einrichten von Azure AD Join](active-directory-azureadjoin-setup.md)
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0302_2016-->

@@ -1,6 +1,6 @@
 <properties
  pageTitle="Exemplarische Vorgehensweise zur vorkonfigurierten Lösung für Remoteüberwachung | Microsoft Azure"
- description="Eine Beschreibung der vorkonfigurierten Lösung für Remoteüberwachung von Azure IoT und deren Architektur."
+ description="Eine Beschreibung der vorkonfigurierten Lösung für Remoteüberwachung von Azure IoT und deren Architektur."
  services=""
  suite="iot-suite"
  documentationCenter=""
@@ -14,7 +14,7 @@
  ms.topic="get-started-article"
  ms.tgt_pltfrm="na"
  ms.workload="na"
- ms.date="10/21/2015"
+ ms.date="03/02/2016"
  ms.author="stevehob"/>
 
 # Exemplarische Vorgehensweise zur vorkonfigurierten Lösung für Remoteüberwachung
@@ -32,7 +32,7 @@ Das folgende Diagramm beschreibt die logischen Komponenten der vorkonfigurierten
 
 ### Simulierte Geräte
 
-In der vorkonfigurierten Lösung ist das simulierte Gerät ein Kühlgerät (z. B. die Klimaanlage eines Gebäudes oder die Lüftungsanlage einer Anlage). Jedes simulierte Gerät sendet die folgenden Telemetriemeldungen an IoT Hub:
+In der vorkonfigurierten Lösung ist das simulierte Gerät ein Kühlgerät (z. B. die Klimaanlage eines Gebäudes oder die Lüftungsanlage einer Anlage). Jedes simulierte Gerät sendet die folgenden Telemetriemeldungen an IoT Hub:
 
 
 | Message | Beschreibung |
@@ -78,51 +78,14 @@ Die Bestätigung der Gerätebefehle erfolgt über den IoT Hub.
 
 ### Azure Stream Analytics-Aufträge
 
-**Auftrag 1: Telemetrie** verarbeitet den eingehenden Datenstrom mit Gerätetelemetriedaten auf zwei Arten. Bei der ersten Methode werden alle Telemetriemeldungen von den Geräten an den permanenten Blobspeicher gesendet. Bei der zweiten Methode werden durchschnittliche, minimale und maximale Luftfeuchtigkeitswerte für ein gleitendes Fenster von fünf Minuten berechnet. Diese Daten werden auch an den Blobspeicher gesendet. Dieser Auftrag verwendet die folgende Abfragedefinition:
 
-```
-WITH 
-    [StreamData]
-AS (
-    SELECT
-        *
-    FROM 
-      [IoTHubStream] 
-    WHERE
-        [ObjectType] IS NULL -- Filter out device info and command responses
-) 
-
-SELECT
-    *
-INTO
-    [Telemetry]
-FROM
-    [StreamData]
-
-SELECT
-    DeviceId,
-    AVG (Humidity) AS [AverageHumidity], 
-    MIN(Humidity) AS [MinimumHumidity], 
-    MAX(Humidity) AS [MaxHumidity], 
-    5.0 AS TimeframeMinutes 
-INTO
-    [TelemetrySummary]
-FROM
-    [StreamData]
-WHERE
-    [Humidity] IS NOT NULL
-GROUP BY
-    DeviceId, 
-    SlidingWindow (mi, 5)
-```
-
-**Auftrag 2: Geräteinformationen** filtert Meldungen mit Geräteinformationen aus dem eingehenden Meldungsdatenstrom und sendet diese an einen Event Hub-Endpunkt. Ein Gerät sendet Meldungen mit Geräteinformationen beim Start und als Antwort auf den Befehl **SendDeviceInfo**. Dieser Auftrag verwendet die folgende Abfragedefinition:
+**Auftrag 1: Geräteinformationen** filtert Meldungen mit Geräteinformationen aus dem eingehenden Meldungsdatenstrom und sendet diese an einen Event Hub-Endpunkt. Ein Gerät sendet Meldungen mit Geräteinformationen beim Start und als Antwort auf den Befehl **SendDeviceInfo**. Dieser Auftrag verwendet die folgende Abfragedefinition:
 
 ```
 SELECT * FROM DeviceDataStream Partition By PartitionId WHERE  ObjectType = 'DeviceInfo'
 ```
 
-**Auftrag 3: Regeln** wertet eingehende Telemetriewerte zu Temperatur und Feuchtigkeit anhand von Schwellenwerten pro Gerät aus. Schwellenwerte werden im Regel-Editor festgelegt, der zur Lösung gehört. Jedes Gerät-Wert-Paar wird nach dem Zeitstempel in einem Blob gespeichert, der in Stream Analytics als **Verweisdaten** gelesen wird. Der Auftrag vergleicht alle nicht leeren Werte mit dem für das Gerät festgelegten Schwellenwert. Wenn er die Bedingung „>“ überschreitet, gibt der Auftrag ein **Alarm**-Ereignis aus. Damit wird angezeigt, dass der Schwellenwert überschritten wurde. Zudem werden das Gerät, der Wert und Zeitstempelwerte bereitgestellt. Dieser Auftrag verwendet die folgende Abfragedefinition:
+**Auftrag 2: Regeln** wertet eingehende Telemetriewerte zu Temperatur und Feuchtigkeit anhand von Schwellenwerten pro Gerät aus. Schwellenwerte werden im Regel-Editor festgelegt, der zur Lösung gehört. Jedes Gerät-Wert-Paar wird nach dem Zeitstempel in einem Blob gespeichert, der in Stream Analytics als **Verweisdaten** gelesen wird. Der Auftrag vergleicht alle nicht leeren Werte mit dem für das Gerät festgelegten Schwellenwert. Wenn er die Bedingung „>“ überschreitet, gibt der Auftrag ein **Alarm**-Ereignis aus. Damit wird angezeigt, dass der Schwellenwert überschritten wurde. Zudem werden das Gerät, der Wert und Zeitstempelwerte bereitgestellt. Dieser Auftrag verwendet die folgende Abfragedefinition:
 
 ```
 WITH AlarmsData AS 
@@ -161,6 +124,44 @@ FROM AlarmsData
 SELECT *
 INTO DeviceRulesHub
 FROM AlarmsData
+```
+
+**Auftrag 3: Telemetrie** verarbeitet den eingehenden Datenstrom mit Gerätetelemetriedaten auf zwei Arten. Bei der ersten Methode werden alle Telemetriemeldungen von den Geräten an den permanenten Blobspeicher gesendet. Bei der zweiten Methode werden durchschnittliche, minimale und maximale Luftfeuchtigkeitswerte für ein gleitendes Fenster von fünf Minuten berechnet. Diese Daten werden auch an den Blobspeicher gesendet. Dieser Auftrag verwendet die folgende Abfragedefinition:
+
+```
+WITH 
+    [StreamData]
+AS (
+    SELECT
+        *
+    FROM 
+      [IoTHubStream] 
+    WHERE
+        [ObjectType] IS NULL -- Filter out device info and command responses
+) 
+
+SELECT
+    *
+INTO
+    [Telemetry]
+FROM
+    [StreamData]
+
+SELECT
+    DeviceId,
+    AVG (Humidity) AS [AverageHumidity], 
+    MIN(Humidity) AS [MinimumHumidity], 
+    MAX(Humidity) AS [MaxHumidity], 
+    5.0 AS TimeframeMinutes 
+INTO
+    [TelemetrySummary]
+FROM
+    [StreamData]
+WHERE
+    [Humidity] IS NOT NULL
+GROUP BY
+    DeviceId, 
+    SlidingWindow (mi, 5)
 ```
 
 ### Ereignisprozessor
@@ -216,7 +217,7 @@ Wenn das Gerät meldet, dass es den Befehl erfolgreich ausgeführt hat, wechselt
 
 ![](media/iot-suite-remote-monitoring-sample-walkthrough/solutionportal_06.png)
 
-Mit dem Lösungsportal können Sie nach Geräten mit bestimmten Merkmalen wie z. B. einer Modellnummer suchen:
+Mit dem Lösungsportal können Sie nach Geräten mit bestimmten Merkmalen wie z. B. einer Modellnummer suchen:
 
 ![](media/iot-suite-remote-monitoring-sample-walkthrough/solutionportal_07.png)
 
@@ -224,4 +225,4 @@ Sie können ein Gerät deaktivieren, und nachdem es deaktiviert wurde, können S
 
 ![](media/iot-suite-remote-monitoring-sample-walkthrough/solutionportal_08.png)
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0309_2016-->

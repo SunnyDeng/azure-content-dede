@@ -13,23 +13,23 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/26/2016"
+	ms.date="02/29/2016"
 	ms.author="jeedes"/>
 
 
 # Lernprogramm: Azure Active Directory-Integration mit QuickHelp
 
-In diesem Lernprogramm erfahren Sie, wie Sie QuickHelp in Azure Active Directory (Azure AD) integrieren können.<br>Die Integration von QuickHelp in Azure AD bietet Ihnen folgende Vorteile:
+In diesem Lernprogramm erfahren Sie, wie Sie QuickHelp in Azure Active Directory (Azure AD) integrieren können.<br>Die Integration von QuickHelp in Azure AD bietet Ihnen folgende Vorteile:
 
-- Sie können in Azure AD steuern, wer auf QuickHelp Zugriff hat. 
-- Sie können es Benutzern ermöglichen, sich mit ihren Azure AD-Konten automatisch bei QuickHelp anzumelden (einmaliges Anmelden).
+- Sie können in Azure AD steuern, wer auf QuickHelp Zugriff hat. 
+- Sie können es Benutzern ermöglichen, sich mit ihren Azure AD-Konten automatisch bei QuickHelp anzumelden (einmaliges Anmelden).
 - Sie können Ihre Konten an einem zentralen Ort verwalten – dem Azure Active Directory-Portal.
 
-Weitere Informationen zur Integration von SaaS-Apps in Azure AD finden Sie unter [Was bedeuten Anwendungszugriff und einmaliges Anmelden mit Azure Active Directory?](active-directory-appssoaccess-whatis.md).
+Weitere Informationen zur Integration von SaaS-Apps in Azure AD finden Sie unter [Was bedeuten Anwendungszugriff und einmaliges Anmelden mit Azure Active Directory?](active-directory-appssoaccess-whatis.md).
 
 ## Voraussetzungen 
 
-Um die Azure AD-Integration mit QuickHelp konfigurieren zu können, benötigen Sie Folgendes:
+Um die Azure AD-Integration mit QuickHelp konfigurieren zu können, benötigen Sie Folgendes:
 
 - Ein Azure AD-Abonnement.
 - Ein QuickHelp-Abonnement, für das einmaliges Anmelden aktiviert ist
@@ -52,7 +52,7 @@ Ziel dieses Tutorials ist es, das einmalige Anmelden von Azure AD in einer Testu
 
 
 ## Hinzufügen von QuickHelp aus dem Katalog
-Zum Konfigurieren der Integration von QuickHelp in Azure AD müssen Sie QuickHelp aus dem Katalog der Liste der verwalteten SaaS-Apps hinzufügen.
+Zum Konfigurieren der Integration von QuickHelp in Azure AD müssen Sie QuickHelp aus dem Katalog der Liste der verwalteten SaaS-Apps hinzufügen.
 
 **Um QuickHelp aus dem Katalog hinzuzufügen, führen Sie die folgenden Schritte aus:**
 
@@ -68,37 +68,37 @@ Zum Konfigurieren der Integration von QuickHelp in Azure AD müssen Sie QuickHe
 
 
 ##  Konfigurieren und Testen der einmaligen Anmeldung von Azure AD
-In diesem Abschnitt soll anhand eines Testbenutzers namens "Britta Simon" veranschaulicht werden, wie das einmalige Anmelden von Azure AD in QuickHelp konfiguriert und getestet werden kann.
+In diesem Abschnitt soll anhand eines Testbenutzers namens "Britta Simon" veranschaulicht werden, wie das einmalige Anmelden von Azure AD in QuickHelp konfiguriert und getestet werden kann.
 
 
-Zum Konfigurieren und Testen des einmaligen Anmeldens mit Azure AD bei QuickHelp müssen Sie die folgenden Bausteine ausführen:
+Zum Konfigurieren und Testen des einmaligen Anmeldens mit Azure AD bei QuickHelp müssen Sie die folgenden Bausteine ausführen:
 
 1. **[Konfigurieren von Azure AD – einmaliges Anmelden](#configuring-azure-ad-single-single-sign-on)**, um Ihren Benutzern das Verwenden dieser Funktion zu ermöglichen.
 2. **[Erstellen eines Azure AD-Testbenutzers](#creating-an-azure-ad-test-user)**, um das einmalige Anmelden mit Azure AD mit dem Testbenutzer Britta Simon zu testen.
-4. **[Erstellen eines QuickHelp-Testbenutzers](#creating-a-quickhelp-test-user)**, um eine Entsprechung von Britta Simon in QuickHelp zu erhalten, die mit ihrer Darstellung in Azure AD verknüpft ist.
+4. **[Erstellen eines QuickHelp-Testbenutzers](#creating-a-quickhelp-test-user)**, um eine Entsprechung von Britta Simon in QuickHelp zu erhalten, die mit ihrer Darstellung in Azure AD verknüpft ist.
 5. **[Zuweisen des Azure AD-Testbenutzers](#assigning-the-azure-ad-test-user)**, um Britta Simon für das einmalige Anmelden von Azure AD zu aktivieren.
 5. **[Testen der einmaligen Anmeldung](#testing-single-sign-on)**, um zu überprüfen, ob die Konfiguration funktioniert.
 
 ### Konfigurieren der einmaligen Anmeldung in Azure AD
 
-Das Ziel dieses Abschnitts ist, das einmalige Anmelden von Azure AD im Azure AD-Portal zu aktivieren und das einmalige Anmelden in der QuickHelp-Anwendung zu konfigurieren.<br>
+Das Ziel dieses Abschnitts ist, das einmalige Anmelden von Azure AD im Azure AD-Portal zu aktivieren und das einmalige Anmelden in der QuickHelp-Anwendung zu konfigurieren.<br>
 
-**Führen Sie zum Konfigurieren des einmaligen Anmeldens von Azure AD in QuickHelp die folgenden Schritte aus:**
+**Führen Sie zum Konfigurieren des einmaligen Anmeldens von Azure AD in QuickHelp die folgenden Schritte aus:**
 
-1. Klicken Sie im Azure AD-Portal auf der Anwendungsintegrationsseite für **QuickHelp** auf **Einmaliges Anmelden konfigurieren**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu öffnen. <br><br> ![Einmaliges Anmelden konfigurieren][6] <br>
+1. Klicken Sie im Azure AD-Portal auf der Anwendungsintegrationsseite für **QuickHelp** auf **Einmaliges Anmelden konfigurieren**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu öffnen. <br><br> ![Einmaliges Anmelden konfigurieren][6] <br>
 
-2. Wählen Sie auf der Seite **Wie sollen sich Benutzer bei QuickHelp anmelden?** die Option **Azure AD – einmaliges Anmelden** aus, und klicken Sie dann auf **Weiter**. <br><br> ![Azure AD – einmaliges Anmelden][7] <br>
+2. Wählen Sie auf der Seite **Wie sollen sich Benutzer bei QuickHelp anmelden?** die Option **Azure AD – einmaliges Anmelden** aus, und klicken Sie dann auf **Weiter**. <br><br> ![Azure AD – einmaliges Anmelden][7] <br>
 
 3. Führen Sie auf der Dialogseite **App-Einstellungen konfigurieren** die folgenden Schritte aus: <br><br>![Konfigurieren von App-Einstellungen][8] <br>
  
-     a. Geben Sie im Textfeld **Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei der QuickHelp-Website verwenden (z. B. *https://quickhelp.com/bsiazure/*).
+     a. Geben Sie im Textfeld **Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei der QuickHelp-Website verwenden (z. B. *https://quickhelp.com/bsiazure/*).
 
-     >[AZURE.NOTE] Wenden Sie sich an das QuickHelp-Supportteam, falls Ihnen die Anmelde-URL nicht bekannt ist.
+     > [AZURE.NOTE] Wenden Sie sich an das QuickHelp-Supportteam, falls Ihnen die Anmelde-URL nicht bekannt ist.
 
      b. Klicken Sie auf **Weiter**.
 
  
-4. Klicken Sie auf der Seite **Einmaliges Anmelden konfigurieren für QuickHelp** auf **Metadaten herunterladen**, und speichern Sie die Metadatendatei lokal auf Ihrem Computer. <br><br>![Was ist Azure AD Connect?][9] <br>
+4. Klicken Sie auf der Seite **Einmaliges Anmelden konfigurieren für QuickHelp** auf **Metadaten herunterladen**, und speichern Sie die Metadatendatei lokal auf Ihrem Computer. <br><br>![Was ist Azure AD Connect?][9] <br>
 
 
 
@@ -131,9 +131,9 @@ Das Ziel dieses Abschnitts ist, das einmalige Anmelden von Azure AD im Azure A
 
 
 
-6. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration der einmaligen Anmeldung aus, und klicken Sie dann auf **Weiter**. <br><br>![Was ist Azure AD Connect?][10]<br>
+6. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration der einmaligen Anmeldung aus, und klicken Sie dann auf **Weiter**. <br><br>![Was ist Azure AD Connect?][10]<br>
 
-7. Klicken Sie auf der Seite **Bestätigung zur einmaligen Anmeldung** auf **Fertig stellen**. <br><br>![Was ist Azure AD Connect?][11]
+7. Klicken Sie auf der Seite **Bestätigung zur einmaligen Anmeldung** auf **Fertig stellen**. <br><br>![Was ist Azure AD Connect?][11]
 
 
 
@@ -181,7 +181,7 @@ Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta S
  
 ### Erstellen einen QuickHelp-Testbenutzers
 
-Das Ziel dieses Abschnitts ist das Erstellen eines Benutzers namens Britta Simon in QuickHelp. Damit einmaliges Anmelden funktioniert, muss Azure AD wissen, wer der entsprechende Gegenbenutzer in QuickHelp zu einem Benutzer in Azure AD ist. Anders ausgedrückt: Zwischen einem Azure AD-Benutzer und dem entsprechenden Benutzer in QuickHelp muss eine Linkbeziehung eingerichtet werden.
+Das Ziel dieses Abschnitts ist das Erstellen eines Benutzers namens Britta Simon in QuickHelp. Damit einmaliges Anmelden funktioniert, muss Azure AD wissen, wer der entsprechende Gegenbenutzer in QuickHelp zu einem Benutzer in Azure AD ist. Anders ausgedrückt: Zwischen einem Azure AD-Benutzer und dem entsprechenden Benutzer in QuickHelp muss eine Linkbeziehung eingerichtet werden.
 
 QuickHelp unterstützt die Just-in-Time-Bereitstellung. Auf diese Weise kann ein Benutzerkonto bei Bedarf automatisch in QuickHelp erstellt und mit dem Azure AD-Konto verknüpft werden.
 
@@ -208,7 +208,7 @@ Das Ziel dieses Abschnitts ist, Britta Simon für das einmalige Anmelden bei Azu
 
 ### Testen der einmaligen Anmeldung
 
-Das Ziel dieses Abschnitts ist das Testen Ihrer Azure AD-Konfiguration für einmaliges Anmelden mithilfe des Zugriffsbereichs.<br> Wenn Sie im Zugriffsbereich auf die Kachel "QuickHelp" klicken, sollten Sie automatisch bei Ihrer QuickHelp-Anwendung angemeldet werden.
+Das Ziel dieses Abschnitts ist das Testen Ihrer Azure AD-Konfiguration für einmaliges Anmelden mithilfe des Zugriffsbereichs.<br> Wenn Sie im Zugriffsbereich auf die Kachel "QuickHelp" klicken, sollten Sie automatisch bei Ihrer QuickHelp-Anwendung angemeldet werden.
 
 
 ## Zusätzliche Ressourcen
@@ -255,4 +255,4 @@ Das Ziel dieses Abschnitts ist das Testen Ihrer Azure AD-Konfiguration für ein
 [401]: ./media/active-directory-saas-QuickHelp-tutorial/tutorial_QuickHelp_401.png
 [402]: ./media/active-directory-saas-QuickHelp-tutorial/tutorial_QuickHelp_402.png
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0302_2016-->

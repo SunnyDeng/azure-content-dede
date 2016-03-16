@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="mobile-multiple"
 	ms.workload="mobile" 
-	ms.date="11/23/2015"
+	ms.date="02/29/2016"
 	ms.author="piyushjo"/>
 
 #Implementieren von Mobile Engagement per Medien-App
@@ -30,13 +30,13 @@ Peter hat vor Kurzem die Informationen unter [Azure Mobile Engagement – Leitfa
 
 ##Ziele und KPIs
 
-Es findet ein Treffen der wichtigsten Personen statt, die an der App von Peter beteiligt sind. Der Umsatz wird über Anzeigen generiert, die Benutzern beim Konsumieren der Medien angezeigt werden. Indem Peter die pro Benutzer konsumierten Inhalte erhöht, steigert er den Umsatz. Es wird ein Hauptziel vereinbart: Erhöhung des Umsatzes mit Anzeigen um 25 %. Es werden Business Key Performance Indicators (KPIs) erstellt, um dieses Ziel zu messen und voranzutreiben.
+Es findet ein Treffen der wichtigsten Personen statt, die an der App von Peter beteiligt sind. Der Umsatz wird über Anzeigen generiert, die Benutzern beim Konsumieren der Medien angezeigt werden. Indem Peter die pro Benutzer konsumierten Inhalte erhöht, steigert er den Umsatz. Es wird ein Hauptziel vereinbart: Erhöhung des Umsatzes mit Anzeigen um 25 %. Es werden Business Key Performance Indicators (KPIs) erstellt, um dieses Ziel zu messen und voranzutreiben.
 
 * Anzahl von Anzeigen, auf die pro Benutzer geklickt wird
 * Anzahl der besuchten Artikelseiten (pro Benutzer/pro Sitzung/pro Woche/pro Monat…)
 * Bevorzugte Kategorien
 
-Basierend auf der Besprechung mit den wichtigsten Beteiligten hat Peter seine Business-KPIs definiert. Er hält sich dabei an Teil 1 von [Azure Mobile Engagement – Leitfaden mit ersten Schritten und Best Practices](mobile-engagement-getting-started-best-practices.md).
+Basierend auf der Besprechung mit den wichtigsten Beteiligten hat Peter seine Business-KPIs definiert. Er hält sich dabei an Teil 1 von [Azure Mobile Engagement – Leitfaden mit ersten Schritten und Best Practices](mobile-engagement-getting-started-best-practices.md).
 
 Anschließend erstellt er die folgenden Engagement-KPIs, um sicherzustellen, dass die Ziele erreicht werden:
 
@@ -70,13 +70,13 @@ Anschließend steigt Peter noch tiefer ein und gibt die Details für die Pushben
 
 Weitere Informationen finden Sie in den [Playbooks](https://github.com/Azure/azure-mobile-engagement-samples/tree/master/Playbooks).
 
-Gemäß Teil 2 des Whitepapers verwendet Peter den Zielabschnitt, um festzulegen, welche Daten er erfassen muss. Er schreibt seinen Markierungsplan gemeinsam mit dem IT-Team, um die Lösung zu implementieren. Nach einer Woche mit Implementierungsarbeit und Tests der Benutzerakzeptanz kann Peter seine Programme endlich starten.
+Gemäß Teil 2 des Whitepapers verwendet Peter den Zielabschnitt, um festzulegen, welche Daten er erfassen muss. Er schreibt seinen Markierungsplan gemeinsam mit dem IT-Team, um die Lösung zu implementieren. Nach einer Woche mit Implementierungsarbeit und Tests der Benutzerakzeptanz kann Peter seine Programme endlich starten.
 
 ##Programmergebnisse
 
 Vier Monate später sieht sich Peter die Leistung der Programme an. Für das Willkommensprogramm und das wöchentliche Programm wurden die Ziele erreicht. Die Anzahl der Benutzer mit nur einer Sitzung hat abgenommen, es werden mehr Funktionen der App genutzt, und die Anzahl der Verbindungen pro Woche hat sich verdoppelt.
 
-Das **Programm zur Inaktivität** hilft Peter dabei, die Neigungen der Benutzer besser zu verstehen. Anscheinend kehren 15 % der inaktiven Benutzer zur App zurück. Die meisten von ihnen bleiben aber nicht länger als einen Monat aktiv. Peter schwebt eine potenzielle Optimierung dieser Sequenz durch zusätzliche Benachrichtigungen und eine Erweiterung der Inhaltsauswahl vor.
+Das **Programm zur Inaktivität** hilft Peter dabei, die Neigungen der Benutzer besser zu verstehen. Anscheinend kehren 15 % der inaktiven Benutzer zur App zurück. Die meisten von ihnen bleiben aber nicht länger als einen Monat aktiv. Peter schwebt eine potenzielle Optimierung dieser Sequenz durch zusätzliche Benachrichtigungen und eine Erweiterung der Inhaltsauswahl vor.
 
 Das **Programm für die Ermittlung** funktioniert nicht gut. Das Cross-Selling wird gesteigert, aber nicht so stark, dass die Ziele erreicht werden. Peter findet heraus, dass er nicht über genügend Daten verfügt, um die Zielgruppenansprache relevant zu gestalten und geeignete Inhalte vorzuschlagen. Er stoppt sein Programm und konzentriert sich auf das Senden von „Editorial-Pushbenachrichtigungen“ mit Azure Mobile Engagement. Seine Journalisten verfügen bereits über eine CMS-Lösung zum Senden von Pushbenachrichtigungen und möchten sie beibehalten.
 
@@ -92,7 +92,7 @@ Um sicherzustellen, dass dieses Feature richtig funktioniert, bittet Peter das I
 
 Nach einigen Tests ist Peter zufrieden. Dank dieser API können die Journalisten weiterhin Pushbenachrichtigungen per CMS senden, und mit Azure Mobile Engagement werden alle Verhaltensdaten gesammelt.
 
-Nach diesen ersten vier Monaten spiegeln die Ergebnisse eine gute Gesamtleistung wider und geben Peter und seinen Chefs Sicherheit. Der ROI pro Benutzer hat sich um 15 % erhöht, und der mobile Umsatz macht 17,5 % des Gesamtumsatzes aus. Dies ist eine Steigerung von 7,5 % innerhalb von vier Monaten.
+Nach diesen ersten vier Monaten spiegeln die Ergebnisse eine gute Gesamtleistung wider und geben Peter und seinen Chefs Sicherheit. Der ROI pro Benutzer hat sich um 15 % erhöht, und der mobile Umsatz macht 17,5 % des Gesamtumsatzes aus. Dies ist eine Steigerung von 7,5 % innerhalb von vier Monaten.
 
 <!--Image references-->
 [1]: ./media/mobile-engagement-media-scenario/engagement-strategy.png
@@ -101,4 +101,4 @@ Nach diesen ersten vier Monaten spiegeln die Ergebnisse eine gute Gesamtleistung
 <!--Link references-->
 [Media Playbook link]: https://github.com/Azure/azure-mobile-engagement-samples/tree/master/Playbooks
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0302_2016-->

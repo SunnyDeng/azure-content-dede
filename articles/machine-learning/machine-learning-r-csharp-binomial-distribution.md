@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/01/2015" 
+	ms.date="02/28/2016" 
 	ms.author="ireiter"/>
 
 
@@ -290,4 +290,4 @@ Häufig gestellte Fragen zur Nutzung des Webdiensts und zum Veröffentlichen im 
 [6]: ./media/machine-learning-r-csharp-binomial-distribution/binomial_6.png
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0302_2016-->

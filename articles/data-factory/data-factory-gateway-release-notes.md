@@ -22,8 +22,13 @@ Eine Herausforderung für die moderne Datenintegration ist das nahtlose Verschie
 
 Weitere Informationen finden Sie unter [Verschieben von Daten zwischen lokalen Quellen und der Cloud mit Azure Data Factory](data-factory-move-data-between-onprem-and-cloud.md).
 
+## Aktuelle Version (1.10.5892.1)
 
-## Aktuelle Version (1.9.5865.2)
+• Leistungsverbesserungen • Fehlerbehebungen
+
+## Frühere Versionen
+
+## 1\.9.5865.2
 
 - Automatische Aktualisierung ohne Benutzereingriff
 - Neues Taskleistensymbol mit Gatewaystatusanzeige
@@ -32,9 +37,6 @@ Weitere Informationen finden Sie unter [Verschieben von Daten zwischen lokalen Q
 - PowerShell-Skript für Aktivierung/Deaktivierung der automatischen Aktualisierung 
 - Leistungsverbesserungen
 - Fehlerbehebungen
-
-
-## Frühere Versionen
 
 ## 1\.8.5822.1
 
@@ -111,7 +113,7 @@ Weitere Informationen finden Sie unter [Verschieben von Daten zwischen lokalen Q
 
 ### 1\.4.5492.1
 
-- Einheitliche Binärdatei, die sowohl Microsoft Azure Data Factory als auch Office 365 Power BI-Dienste unterstützt
+- Einheitliche Binärdatei, die sowohl Microsoft Azure Data Factory als auch Office 365 Power BI-Dienste unterstützt
 - Optimierung von Konfigurationsbenutzeroberfläche und Registrierungsprozess
 - Azure Data Factory – Azure Ingress- und Egress-Unterstützung für SQL Server-Datenquelle
 
@@ -121,7 +123,7 @@ Weitere Informationen finden Sie unter [Verschieben von Daten zwischen lokalen Q
  	
 ### 1\.1.5526.8
 
-- Erfordert .NET Framework 4.5.1 als Voraussetzung während des Setups.
+- Erfordert .NET Framework 4.5.1 als Voraussetzung während des Setups.
 
 ### 1\.0.5144.2
 
@@ -132,4 +134,4 @@ Weitere Informationen finden Sie unter [Verschieben von Daten zwischen lokalen Q
 ### Warum versucht der Datenquellen-Manager, eine Verbindung mit dem Gateway herzustellen?
 Dies ist ein Sicherheitsdesign, bei dem Sie nur lokale Datenquellen für den Cloudzugriff in Ihrem Unternehmensnetzwerk konfigurieren können. Ihre Anmeldeinformationen gelangen nicht an Orte außerhalb Ihrer Unternehmensfirewall. Stellen Sie sicher, dass Ihr Computer den Computer erreichen kann, auf dem das Gateway installiert ist.
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0302_2016-->

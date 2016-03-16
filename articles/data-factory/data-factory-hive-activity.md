@@ -61,7 +61,7 @@ inputs | Von der Hive-Aktivität genutzte Eingaben | Nein
 outputs | Von der Hive-Aktivität erzeugte Ausgaben | Ja 
 linkedServiceName | Verweis auf den HDInsight-Cluster, der als verknüpfter Dienst in Data Factory registriert ist. | Ja 
 script | Angabe des Hive-Skripts inline | Nein
-scriptPath | Speichern Sie das Hive-Skript in einem Azure-Blobspeicher, und geben Sie den Pfad zur Datei an. Verwenden Sie die Eigenschaft "script" oder "scriptPath". Beide können nicht zusammen verwendet werden. | Nein 
+scriptPath | Speichern Sie das Hive-Skript in einem Azure-Blobspeicher, und geben Sie den Pfad zur Datei an. Verwenden Sie die Eigenschaft "script" oder "scriptPath". Beide können nicht zusammen verwendet werden. Beachten Sie, dass beim Dateinamen Groß-/Kleinschreibung beachtet werden muss. | Nein 
 defines | Geben Sie Parameter als Schlüssel-Wert-Paare für Verweise innerhalb des Hive-Skripts mit "hiveconf" an. | Nein
 
 ## Beispiel
@@ -214,4 +214,4 @@ Gehen Sie folgendermaßen vor, um das Hive-Skript zu parametrisieren
 			SUM(Duration)
 		FROM HiveSampleIn Group by ProfileID
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0302_2016-->
