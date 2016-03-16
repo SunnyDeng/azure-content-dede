@@ -30,7 +30,7 @@ Da OAuth 2.0 erweitert wird, können Apps zudem **Zugriffstoken** sicher abrufen
 
 Azure AD B2C erweitert das OpenID Connect-Standardprotokoll, sodass mehr als nur eine einfache Authentifizierung und Autorisierung erfolgt. Dazu werden [**Richtlinienparameter**](active-directory-b2c-reference-policies.md) eingeführt, mit denen Sie OpenID Connect zum Hinzufügen von Benutzeroberflächen z. B. für die Registrierung, Anmeldung und Profilverwaltung zu Ihrer App verwenden können. Hier zeigen wir Ihnen, wie Sie mit OpenID Connect und Richtlinien diese Benutzeroberflächen in Webanwendungen implementieren. Wir zeigen Ihnen außerdem, wie Zugriffstoken für den Zugriff auf Web-APIs abgerufen werden.
 
-Die HTTP-Beispielanforderungen unten verwenden unser B2C-Beispielverzeichnis **fabrikamb2c.onmicrosoft.com** sowie unsere Beispielanwendung ****https://aadb2cplayground.azurewebsites.net** und die Richtlinien. Sie können selbst Anforderungen mit diesen Werten testen oder eigene Werte verwenden. Erfahren Sie, wie Sie [eigene B2C-Mandanten, -Anwendungen und -Richtlinien erstellen](#use-your-own-b2c-directory).
+Die HTTP-Beispielanforderungen unten verwenden unser B2C-Beispielverzeichnis **fabrikamb2c.onmicrosoft.com** sowie unsere Beispielanwendung **https://aadb2cplayground.azurewebsites.net** und die Richtlinien. Sie können selbst Anforderungen mit diesen Werten testen oder eigene Werte verwenden. Erfahren Sie, wie Sie [eigene B2C-Mandanten, -Anwendungen und -Richtlinien erstellen](#use-your-own-b2c-directory).
 
 ## Übermitteln von Authentifizierungsanforderungen
 Wenn die Web-App Benutzer authentifizieren und eine Richtlinie ausführen muss, kann sie die Benutzer an den `/authorize`-Endpunkt weiterleiten. Dies ist der interaktive Teil des Datenflusses, bei dem der Benutzer je nach Richtlinie tatsächlich Aktionen durchführt.
@@ -355,4 +355,4 @@ image goes here
 
 -->
 
-<!---HONumber=AcomDC_0302_2016-->
+<!----HONumber=AcomDC_0302_2016-->

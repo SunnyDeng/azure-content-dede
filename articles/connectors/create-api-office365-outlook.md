@@ -53,8 +53,7 @@ Alle APIs unterstützen Daten im JSON- und XML-Format.
 Wenn Sie diese API zu PowerApps Enterprise hinzufügen, geben Sie die Werte für den **App-Schlüssel** und den **geheimen App-Schlüssel** Ihrer Office 365-AAD-Anwendung (Azure Active Directory) ein. Der Wert von **Umleitungs-URL** wird auch in Ihrer Office 365-Anwendung verwendet. Wenn Sie noch keine Office 365-Anwendung haben, führen Sie die folgenden Schritte aus, um die Anwendung zu erstellen:
 
 1. Öffnen Sie das [Azure-Portal][5], dann **Active Directory**, und wählen Sie den Namen des Mandanten Ihrer Organisation aus.
-2. Klicken Sie auf die Registerkarte **Anwendungen**, und wählen Sie **Hinzufügen** aus:  
-![AAD-Mandanten-Anwendungen][7]
+2. Klicken Sie auf die Registerkarte **Anwendungen**, und wählen Sie **Hinzufügen** aus: ![AAD-Mandanten-Anwendungen][7]
 
 3. Auf der Seite **Anwendung hinzufügen**:
 
@@ -66,20 +65,17 @@ Wenn Sie diese API zu PowerApps Enterprise hinzufügen, geben Sie die Werte für
 
 6. Unter **App-Eigenschaften**:
 
-	1. Geben Sie unter **ANMELDE-URL** die Anmelde-URL Ihrer Anwendung ein. Da Sie die Authentifizierung mit AAD für PowerApps durchführen, legen Sie die Anmelde-URL auf _https://login.windows.net_ fest.
-	2. Geben Sie einen gültigen **APP-ID-URI** für Ihre App ein.  
+	1. Geben Sie unter **ANMELDE-URL** die Anmelde-URL Ihrer Anwendung ein. Da Sie die Authentifizierung mit AAD für PowerApps durchführen, legen Sie die Anmelde-URL auf \__https://login.windows.net_ fest.
+2. Geben Sie einen gültigen **APP-ID-URI** für Ihre App ein.  
 	3. Klicken Sie auf **OK**.  
 
 	![AAD-Anwendung hinzufügen – App-Eigenschaften][9]
 
-7. Wenn Sie fertig sind, wird die neue AAD-App geöffnet. Wählen Sie **Konfigurieren** aus:  
-![Contoso-AAD-App][10]
+7. Wenn Sie fertig sind, wird die neue AAD-App geöffnet. Wählen Sie **Konfigurieren** aus: ![Contoso-AAD-App][10]
 
-8. Legen Sie die **Antwort-URL** im Abschnitt _OAuth 2_ auf den Wert der Umleitungs-URL fest, der beim Hinzufügen der Office 365-Outlook-API im Azure-Portal angezeigt wurde. Wählen Sie **Anwendung hinzufügen** aus:  
-![Contoso-AAD-App konfigurieren][11]
+8. Legen Sie die **Antwort-URL** im Abschnitt _OAuth 2_ auf den Wert der Umleitungs-URL fest, der beim Hinzufügen der Office 365-Outlook-API im Azure-Portal angezeigt wurde. Wählen Sie **Anwendung hinzufügen** aus: ![Contoso-AAD-App konfigurieren][11]
 
-9. Wählen Sie unter **Berechtigungen für andere Anwendungen** die Option **Office 365 Exchange Online** und dann **OK** aus:  
-![Contoso-App-Delegat][12]
+9. Wählen Sie unter **Berechtigungen für andere Anwendungen** die Option **Office 365 Exchange Online** und dann **OK** aus: ![Contoso-App-Delegat][12]
 
 	Auf der Konfigurationsseite können Sie nun sehen, dass _Office 365 Exchange Online_ der Liste _Berechtigungen für andere Anwendungen_ hinzugefügt wurde.
 
@@ -114,8 +110,7 @@ Gilt für Version: 1.0.
 
 
 ### Bei Start eines anstehenden Ereignisses 
-Löst einen Fluss aus, wenn ein anstehendes Kalenderereignis gestartet wird.  
-```GET: /Events/OnUpcomingEvents```
+Löst einen Fluss aus, wenn ein anstehendes Kalenderereignis gestartet wird. ```GET: /Events/OnUpcomingEvents```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -135,8 +130,7 @@ Löst einen Fluss aus, wenn ein anstehendes Kalenderereignis gestartet wird.
 
 
 ### E-Mails abrufen 
-Ruft E-Mails aus einem Ordner ab.  
-```GET: /Mail```
+Ruft E-Mails aus einem Ordner ab. ```GET: /Mail```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -161,8 +155,7 @@ Ruft E-Mails aus einem Ordner ab.
 
 
 ### E-Mail senden 
-Sendet eine E-Mail.  
-```POST: /Mail```
+Sendet eine E-Mail. ```POST: /Mail```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -182,8 +175,7 @@ Sendet eine E-Mail.
 
 
 ### E-Mail löschen 
-Löscht eine E-Mail anhand der ID.  
-```DELETE: /Mail/{messageId}```
+Löscht eine E-Mail anhand der ID. ```DELETE: /Mail/{messageId}```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -202,8 +194,7 @@ Löscht eine E-Mail anhand der ID.
 
 
 ### Als gelesen markieren 
-Markiert eine E-Mail als gelesen.  
-```POST: /Mail/MarkAsRead/{messageId}```
+Markiert eine E-Mail als gelesen. ```POST: /Mail/MarkAsRead/{messageId}```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -222,8 +213,7 @@ Markiert eine E-Mail als gelesen.
 
 
 ### Nachricht beantworten 
-Antwortet auf eine E-Mail.  
-```POST: /Mail/ReplyTo/{messageId}```
+Antwortet auf eine E-Mail. ```POST: /Mail/ReplyTo/{messageId}```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -244,8 +234,7 @@ Antwortet auf eine E-Mail.
 
 
 ### Anlagen abrufen 
-Ruft die Nachrichtenanlage anhand der ID ab.  
-```GET: /Mail/{messageId}/Attachments/{attachmentId}```
+Ruft die Nachrichtenanlage anhand der ID ab. ```GET: /Mail/{messageId}/Attachments/{attachmentId}```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -265,8 +254,7 @@ Ruft die Nachrichtenanlage anhand der ID ab.
 
 
 ### Bei neuer E-Mail 
-Löst einen Fluss aus, wenn eine neue E-Mail eingeht.  
-```GET: /Mail/OnNewEmail```
+Löst einen Fluss aus, wenn eine neue E-Mail eingeht. ```GET: /Mail/OnNewEmail```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -292,8 +280,7 @@ Löst einen Fluss aus, wenn eine neue E-Mail eingeht.
 
 
 ### E-Mails mit Optionen senden 
-Sendet eine E-Mail mit mehreren Optionen und wartet, bis der Empfänger mit einer der Optionen antwortet.  
-```POST: /mailwithoptions/$subscriptions```
+Sendet eine E-Mail mit mehreren Optionen und wartet, bis der Empfänger mit einer der Optionen antwortet. ```POST: /mailwithoptions/$subscriptions```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -313,8 +300,7 @@ Sendet eine E-Mail mit mehreren Optionen und wartet, bis der Empfänger mit eine
 
 
 ### Genehmigungs-E-Mail senden 
-Sendet eine Genehmigungs-E-Mail und wartet auf eine Antwort des Empfängers.  
-```POST: /approvalmail/$subscriptions```
+Sendet eine Genehmigungs-E-Mail und wartet auf eine Antwort des Empfängers. ```POST: /approvalmail/$subscriptions```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -337,8 +323,7 @@ Sendet eine Genehmigungs-E-Mail und wartet auf eine Antwort des Empfängers.
 
 
 ### Kalender abrufen 
-Ruft Kalender ab.  
-```GET: /datasets/calendars/tables```
+Ruft Kalender ab. ```GET: /datasets/calendars/tables```
 
 Es gibt keine Parameter für diesen Aufruf.
 
@@ -353,8 +338,7 @@ Es gibt keine Parameter für diesen Aufruf.
 
 
 ### Ereignisse abrufen 
-Ruft Elemente aus einem Kalender ab.  
-```GET: /datasets/calendars/tables/{table}/items```
+Ruft Elemente aus einem Kalender ab. ```GET: /datasets/calendars/tables/{table}/items```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -373,8 +357,7 @@ Ruft Elemente aus einem Kalender ab.
 
 
 ### Ereignis erstellen 
-Erstellt ein neues Ereignis.  
-```POST: /datasets/calendars/tables/{table}/items```
+Erstellt ein neues Ereignis. ```POST: /datasets/calendars/tables/{table}/items```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -390,8 +373,7 @@ Erstellt ein neues Ereignis.
 
 
 ### Ereignis abrufen 
-Ruft ein bestimmtes Element aus einem Kalender ab.  
-```GET: /datasets/calendars/tables/{table}/items/{id}```
+Ruft ein bestimmtes Element aus einem Kalender ab. ```GET: /datasets/calendars/tables/{table}/items/{id}```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -407,8 +389,7 @@ Ruft ein bestimmtes Element aus einem Kalender ab.
 
 
 ### Ereignis löschen 
-Löscht ein Kalenderelement.  
-```DELETE: /datasets/calendars/tables/{table}/items/{id}```
+Löscht ein Kalenderelement. ```DELETE: /datasets/calendars/tables/{table}/items/{id}```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -424,8 +405,7 @@ Löscht ein Kalenderelement.
 
 
 ### Ereignis aktualisieren 
-Aktualisiert ein Kalenderelement teilweise.  
-```PATCH: /datasets/calendars/tables/{table}/items/{id}```
+Aktualisiert ein Kalenderelement teilweise. ```PATCH: /datasets/calendars/tables/{table}/items/{id}```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -442,8 +422,7 @@ Aktualisiert ein Kalenderelement teilweise.
 
 
 ### Bei neuen Elementen 
-Wird ausgelöst, wenn ein neues Kalenderelement erstellt wird.  
-```GET: /datasets/calendars/tables/{table}/onnewitems```
+Wird ausgelöst, wenn ein neues Kalenderelement erstellt wird. ```GET: /datasets/calendars/tables/{table}/onnewitems```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -462,8 +441,7 @@ Wird ausgelöst, wenn ein neues Kalenderelement erstellt wird.
 
 
 ### Bei aktualisierten Elementen 
-Wird ausgelöst, wenn ein Kalenderelement geändert wird.  
-```GET: /datasets/calendars/tables/{table}/onupdateditems```
+Wird ausgelöst, wenn ein Kalenderelement geändert wird. ```GET: /datasets/calendars/tables/{table}/onupdateditems```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -482,8 +460,7 @@ Wird ausgelöst, wenn ein Kalenderelement geändert wird.
 
 
 ### Ordner „Kontakte“ abrufen 
-Ruft Ordner des Typs „Kontakte“ ab.  
-```GET: /datasets/contacts/tables```
+Ruft Ordner des Typs „Kontakte“ ab. ```GET: /datasets/contacts/tables```
 
 Es gibt keine Parameter für diesen Aufruf.
 
@@ -496,8 +473,7 @@ Es gibt keine Parameter für diesen Aufruf.
 
 
 ### Kontakte abrufen 
-Ruft Kontakte aus einem Ordner des Typs „Kontakte“ ab.  
-```GET: /datasets/contacts/tables/{table}/items```
+Ruft Kontakte aus einem Ordner des Typs „Kontakte“ ab. ```GET: /datasets/contacts/tables/{table}/items```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -516,8 +492,7 @@ Ruft Kontakte aus einem Ordner des Typs „Kontakte“ ab.
 
 
 ### Kontakt erstellen 
-Erstellt einen neuen Kontakt.  
-```POST: /datasets/contacts/tables/{table}/items```
+Erstellt einen neuen Kontakt. ```POST: /datasets/contacts/tables/{table}/items```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -533,8 +508,7 @@ Erstellt einen neuen Kontakt.
 
 
 ### Kontakt abrufen 
-Ruft einen bestimmten Kontakt aus einem Ordner „Kontakte“ ab.  
-```GET: /datasets/contacts/tables/{table}/items/{id}```
+Ruft einen bestimmten Kontakt aus einem Ordner „Kontakte“ ab. ```GET: /datasets/contacts/tables/{table}/items/{id}```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -550,8 +524,7 @@ Ruft einen bestimmten Kontakt aus einem Ordner „Kontakte“ ab.
 
 
 ### Kontakt löschen 
-Löscht einen Kontakt.  
-```DELETE: /datasets/contacts/tables/{table}/items/{id}```
+Löscht einen Kontakt. ```DELETE: /datasets/contacts/tables/{table}/items/{id}```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -567,8 +540,7 @@ Löscht einen Kontakt.
 
 
 ### Kontakt aktualisieren 
-Aktualisiert einen Kontakt teilweise.  
-```PATCH: /datasets/contacts/tables/{table}/items/{id}```
+Aktualisiert einen Kontakt teilweise. ```PATCH: /datasets/contacts/tables/{table}/items/{id}```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -835,5 +807,5 @@ Nach dem Hinzufügen der Office 365-API zu PowerApps Enterprise [erteilen Sie de
 [12]: ./media/create-api-office365-outlook/contoso-aad-app-delegate-office365-outlook.png
 [13]: ./media/create-api-office365-outlook/contoso-aad-app-delegate-office365-outlook-permissions.png
 
-<!----HONumber=AcomDC_0302_2016-->
+<!-----HONumber=AcomDC_0302_2016-->
 

@@ -80,7 +80,8 @@ Risikoereignisse sind Ereignisse, die von Identity Protection als verdächtig ge
 | Anmeldungen von infizierten Geräten | Anmeldungen von möglicherweise infizierten Geräten |
 | Anmeldungen von anonymen IP-Adressen | Anmeldungen von unbekannten Quellen |
 | Anmeldungen von IP-Adressen mit verdächtigen Aktivitäten |	Anmeldungen von IP-Adressen mit verdächtigen Aktivitäten |
-| Anmeldungen von unbekannten Standorten | - | | Sperr-Ereignisse (nicht Teil der öffentlichen Vorschau) | - |
+| Anmeldungen von unbekannten Standorten | - | 
+| Sperr-Ereignisse (nicht Teil der öffentlichen Vorschau) | - |
 
 Die folgenden Azure AD-Berichte zu anomalen Aktivitäten sind nicht als Risikoereignisse in Azure AD Identity Protection enthalten und daher auch nicht über Identity Protection verfügbar. Diese Berichte sind im Azure-Verwaltungsportal noch enthalten, aber sie werden nach und nach eingestellt, da sie durch Risikoereignisse in Identity Protection ersetzt werden.
 
@@ -637,4 +638,4 @@ Führen Sie die folgenden Schritte aus, um das Anmelderisiko zu testen:
  - [Azure AD und Identity Show: Identity Protection (Vorschau)](https://channel9.msdn.com/Series/Azure-AD-Identity/Azure-AD-and-Identity-Show-Identity-Protection-Preview)
  - [Identity Protection – Glossar](active-directory-identityprotection-glossary.md)
 
-<!---HONumber=AcomDC_0302_2016-->
+<!----HONumber=AcomDC_0302_2016-->
