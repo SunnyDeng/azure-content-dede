@@ -62,8 +62,8 @@ Wenn Sie CRM Online zu PowerApps Enterprise hinzufügen, geben Sie die **Client-
 
 3. Unter **App-Eigenschaften**:
 
-	1. Geben Sie unter **ANMELDE-URL** die Anmelde-URL Ihrer Anwendung ein. Da Sie die Authentifizierung mit AAD für PowerApps durchführen, legen Sie die Anmelde-URL auf \__https://login.windows.net_ fest.
-2. Geben Sie einen gültigen **APP-ID-URI** für Ihre App ein.  
+	1. Geben Sie unter **ANMELDE-URL** die Anmelde-URL Ihrer Anwendung ein. Da Sie die Authentifizierung mit AAD für PowerApps durchführen, legen Sie die Anmelde-URL auf _https://login.windows.net_ fest.
+	2. Geben Sie einen gültigen **APP-ID-URI** für Ihre App ein.  
 	3. Klicken Sie auf **OK**.  
 
 	![AAD-Anwendung hinzufügen – App-Eigenschaften][10]
@@ -80,11 +80,14 @@ Führen Sie folgende Schritte aus, um sich bei CRM Online anzumelden und die Kon
 
 1. Wählen Sie **Wiederholung** aus.
 2. Wählen Sie eine **Häufigkeit** aus, und geben Sie ein **Intervall** an.
-3. Wählen Sie **Aktion hinzufügen** aus. ![Konfigurieren von CRM Online][13]
+3. Wählen Sie **Aktion hinzufügen** aus.  
+![Konfigurieren von CRM Online][13]
 4. Geben Sie in das Suchfeld „CRM“ ein, und warten Sie, bis die Suche alle Einträge mit CRM im Namen zurückgibt.
 5. Wählen Sie **Dynamics CRM Online – Neuen Datensatz erstellen** aus.
-6. Wählen Sie **Bei Dynamics CRM Online anmelden**: ![Konfigurieren von CRM Online][14]
-7. Geben Sie Ihre CRM Online-Anmeldeinformationen ein, um die Anwendung zu autorisieren. ![Konfigurieren von CRM Online][15]  
+6. Wählen Sie **Bei Dynamics CRM Online anmelden**:  
+![Konfigurieren von CRM Online][14]
+7. Geben Sie Ihre CRM Online-Anmeldeinformationen ein, um die Anwendung zu autorisieren.
+![Konfigurieren von CRM Online][15]  
 8. Kehren Sie nach der Anmeldung zur Logik-App zurück, um diese zu vervollständigen. Dazu fügen Sie weitere benötigte Trigger und Aktionen hinzu.
 9. Speichern Sie Ihre Arbeit durch Auswählen von **Speichern** in der Menüleiste oben.
 
@@ -300,3 +303,5 @@ Nach dem Hinzufügen der CRM Online-API zu PowerApps Enterprise [erteilen Sie de
 [15]: ./media/create-api-crmonline/crmconfig3.png
 
 <!---HONumber=AcomDC_0302_2016-->
+
+

@@ -73,11 +73,13 @@ In einer tatsächlichen Anwendung würden Sie normalerweise separate Konten für
 
 1. Öffnen Sie das Fenster **Server-Explorer** in Visual Studio.
 
-2. Klicken Sie mit der rechten Maustaste auf den Knoten **Azure**, und klicken Sie dann auf**Mit Microsoft Azure verbinden**. ![Herstellen einer Verbindung mit Azure](./media/websites-dotnet-webjobs-sdk-get-started/connaz.png)
+2. Klicken Sie mit der rechten Maustaste auf den Knoten **Azure**, und klicken Sie dann auf**Mit Microsoft Azure verbinden**. 
+![Herstellen einer Verbindung mit Azure](./media/websites-dotnet-webjobs-sdk-get-started/connaz.png)
 
 3. Melden Sie sich mit Ihren Azure-Anmeldeinformationen an.
 
-5. Klicken Sie mit der rechten Maustaste unter dem Azure-Knoten auf **Speicher**, und klicken Sie dann auf **Speicherkonto erstellen**. ![Speicherkonto erstellen](./media/websites-dotnet-webjobs-sdk-get-started/createstor.png)
+5. Klicken Sie mit der rechten Maustaste unter dem Azure-Knoten auf **Speicher**, und klicken Sie dann auf **Speicherkonto erstellen**. 
+![Speicherkonto erstellen](./media/websites-dotnet-webjobs-sdk-get-started/createstor.png)
 
 3. Geben Sie im Dialogfeld **Speicherkonto erstellen** einen Namen für das Speicherkonto ein.
 
@@ -468,7 +470,7 @@ Um Dateien zu einem Projekt oder einem Ordner hinzuzufügen, klicken Sie mit der
 	- *Global.asax.cs*  
 	- Im Ordner *Controllers*: *AdController.cs*
 	- Im Ordner *Views\\Shared*: Datei *\_Layout.cshtml*
-- Im Ordner *Views\\Home*: *Index.cshtml*
+	- Im Ordner *Views\\Home*: *Index.cshtml*
 	- Im Ordner *Views\\Ad* (Ordner zuerst erstellen): fünf *CSHTML*-Dateien<br/><br/>
 
 3. Fügen Sie im Projekt ContosoAdsWebJob die folgenden Dateien aus dem heruntergeladenen Projekt hinzu.
@@ -816,3 +818,4 @@ Weitere Informationen finden Sie unter [Einrichten eines Dashboards für die lok
 Weitere Informationen finden Sie unter [Dokumentationsressourcen für Azure WebJobs](http://go.microsoft.com/fwlink/?LinkId=390226).
 
 <!---HONumber=AcomDC_0302_2016-->
+

@@ -38,11 +38,11 @@ Zudem enthält es Nur-Lese-Schlüssel, um Benutzern den schreibgeschützten Zugr
 
 ### Anzeigen und Kopieren eines Zugriffsschlüssels im Azure-Portal
 
-1.      Greifen Sie im [Azure-Portal](https://portal.azure.com/) auf Ihr DocumentDB-Konto zu. 
+1.      Greifen Sie im [Azure-Portal](https://portal.azure.com/) auf Ihr DocumentDB-Konto zu. 
 
-2.      Klicken Sie auf der Leiste **Essentials** des Blatts **DocumentDB-Konto** auf **Schlüssel**.
+2.      Klicken Sie auf der Leiste **Essentials** des Blatts **DocumentDB-Konto** auf **Schlüssel**.
 
-3.      Klicken Sie im Blatt **Schlüssel** rechts neben dem Schlüssel, den Sie kopieren möchten, auf die Schaltfläche **Kopieren**.
+3.      Klicken Sie im Blatt **Schlüssel** rechts neben dem Schlüssel, den Sie kopieren möchten, auf die Schaltfläche **Kopieren**.
 
   ![Anzeigen und Kopieren eines Zugriffsschlüssels im Azure-Portal, Blatt „Schlüssel“](./media/documentdb-manage-account/copykeys.png)
 
@@ -54,17 +54,17 @@ Sie sollten regelmäßig die Zugriffsschlüssel für Ihr DocumentDB-Konto änder
 
 Falls Sie über Webanwendungen oder Cloud-Dienste verfügen, die das DocumentDB-Konto verwenden, verlieren Sie die Verbindungen beim erneuten Generieren von Schlüsseln – es sei denn, Sie führen einen Rollup für die Schlüssel aus. Die folgenden Schritte stellen den Prozess für das Rollup der Schlüssel dar.
 
-1.      Aktualisieren Sie den Zugriffsschlüssel im Anwendungscode, damit er auf den sekundären Zugriffsschlüssel des DocumentDB-Kontos verweist.
+1.      Aktualisieren Sie den Zugriffsschlüssel im Anwendungscode, damit er auf den sekundären Zugriffsschlüssel des DocumentDB-Kontos verweist.
 
-2.      Generieren Sie den primären Zugriffsschlüssel für Ihr DocumentDB-Konto neu. Greifen Sie im [Azure-Portal](https://portal.azure.com/) auf Ihr DocumentDB-Konto zu.
+2.      Generieren Sie den primären Zugriffsschlüssel für Ihr DocumentDB-Konto neu. Greifen Sie im [Azure-Portal](https://portal.azure.com/) auf Ihr DocumentDB-Konto zu.
 
-3.      Klicken Sie auf der Leiste **Essentials** des Blatts **DocumentDB-Konto** auf **Schlüssel**.
+3.      Klicken Sie auf der Leiste **Essentials** des Blatts **DocumentDB-Konto** auf **Schlüssel**.
 
-4.      Klicken Sie im Blatt **Schlüssel** auf den Befehl **Primären Zugriffsschlüssel neu generieren**, und klicken Sie dann auf **OK**, um das Generieren eines neuen Schlüssels zu bestätigen.
+4.      Klicken Sie im Blatt **Schlüssel** auf den Befehl **Primären Zugriffsschlüssel neu generieren**, und klicken Sie dann auf **OK**, um das Generieren eines neuen Schlüssels zu bestätigen.
 
-5.      Sobald Sie sichergestellt haben, dass der neue Schlüssel verwendet werden kann (etwa 5 Minuten nach der erneuten Erzeugung), aktualisieren Sie den Zugriffsschlüssel im Anwendungscode, damit er auf den neuen primären Zugriffsschlüssel verweist.
+5.      Sobald Sie sichergestellt haben, dass der neue Schlüssel verwendet werden kann (etwa 5 Minuten nach der erneuten Erzeugung), aktualisieren Sie den Zugriffsschlüssel im Anwendungscode, damit er auf den neuen primären Zugriffsschlüssel verweist.
 
-6.      Generieren Sie den sekundären Zugriffsschlüssel neu.
+6.      Generieren Sie den sekundären Zugriffsschlüssel neu.
 
 *Beachten Sie, dass die Bereitstellung eines neu generierten Schlüssels einige Minuten in Anspruch nehmen kann, bevor Sie damit auf Ihr DocumentDB-Konto zugreifen können.*
 
@@ -83,17 +83,17 @@ DocumentDB unterstützt vier detailliert definierte, benutzerkonfigurierbare Dat
 
 ### So legen Sie die Standardkonsistenz für ein DocumentDB-Konto fest
 
-1.      Greifen Sie im [Azure-Portal](https://portal.azure.com/) auf Ihr DocumentDB-Konto zu. 
+1.      Greifen Sie im [Azure-Portal](https://portal.azure.com/) auf Ihr DocumentDB-Konto zu. 
 
-2.      Falls auf dem Blatt „Konto“ das Blatt **Einstellungen** nicht bereits geöffnet ist, klicken Sie auf das Symbol **Einstellungen** auf der oberen Befehlsleiste.
+2.      Falls auf dem Blatt „Konto“ das Blatt **Einstellungen** nicht bereits geöffnet ist, klicken Sie auf das Symbol **Einstellungen** auf der oberen Befehlsleiste.
 
-3.      Klicken Sie auf dem Blatt **Alle Einstellungen** auf den Eintrag **Standardkonsistenz** unter **Feature**.
+3.      Klicken Sie auf dem Blatt **Alle Einstellungen** auf den Eintrag **Standardkonsistenz** unter **Feature**.
 
 ![Standardkonsistenz - Sitzung](./media/documentdb-manage-account/chooseandsaveconsistency.png)
 
-4.      Wählen Sie im Blatt **Standardkonsistenz** die neue Konsistenzebene aus und klicken Sie auf **Speichern**.
+4.      Wählen Sie im Blatt **Standardkonsistenz** die neue Konsistenzebene aus und klicken Sie auf **Speichern**.
 
-5.      Sie können den Fortschritt des Vorgangs im Notification Hub des Azure-Portals überwachen.
+5.      Sie können den Fortschritt des Vorgangs im Notification Hub des Azure-Portals überwachen.
 
 *Beachten Sie, dass es einige Minuten in Anspruch nehmen kann, bis sich die Änderung der Standardkonsistenz auf Ihr DocumentDB-Konto auswirkt.*
 
@@ -102,13 +102,13 @@ Um ein nicht mehr verwendetes DocumentDB-Konto aus dem Azure-Portal zu entfernen
 
 ![So löschen Sie ein DocumentDB-Konto im Azure-Portal](./media/documentdb-manage-account/deleteaccountconfirmation.png)
 
-1.      Greifen Sie im [Azure-Portal](https://portal.azure.com/) auf das zu löschende DocumentDB-Konto zu. 
+1.      Greifen Sie im [Azure-Portal](https://portal.azure.com/) auf das zu löschende DocumentDB-Konto zu. 
 
-2.      Klicken Sie im Blatt **DocumentDB-Konto** auf den Befehl **Löschen**.
+2.      Klicken Sie im Blatt **DocumentDB-Konto** auf den Befehl **Löschen**.
 
-3.      Geben Sie im daraufhin angezeigten Bestätigungsblatt den Namen des DocumentDB-Kontos ein, um zu bestätigen, dass Sie das Konto löschen möchten.
+3.      Geben Sie im daraufhin angezeigten Bestätigungsblatt den Namen des DocumentDB-Kontos ein, um zu bestätigen, dass Sie das Konto löschen möchten.
 
-4.      Klicken Sie im Bestätigungsfenster auf die Schaltfläche **Löschen**.
+4.      Klicken Sie im Bestätigungsfenster auf die Schaltfläche **Löschen**.
 
 ## <a id="next"></a>Nächste Schritte
 
