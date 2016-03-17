@@ -118,7 +118,7 @@
    
     	![StorSimple Devices page](./media/storsimple-configure-and-register-device-gov-u2/HCS_DeviceOnline-gov-include.png) 
   
-        Wenn der Gerätestatus ** „Offline“ ** ist, warten Sie ein paar Minuten, bis das Gerät online geschaltet wird. 
+        Wenn der Gerätestatus „Offline“ ist, warten Sie ein paar Minuten, bis das Gerät online geschaltet wird. 
 
         Wenn das Gerät nach einigen Minuten immer noch offline ist, müssen Sie sicherstellen, dass Ihr Firewallnetzwerk wie unter [Netzwerkanforderungen für Ihr StorSimple-Gerät](../articles/storsimple/storsimple-system-requirements.md). 
 

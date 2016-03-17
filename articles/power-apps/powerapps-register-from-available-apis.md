@@ -109,9 +109,9 @@ In der folgenden Tabelle sind die Funktionen von Microsoft-verwalteten und IT-ve
 
 1. Melden Sie sich mit Ihrem Geschäftskonto (*IhrBenutzername*@*IhrUnternehmen*.com) beim [Azure-Portal](https://portal.azure.com/) an. Sie werden automatisch mit Ihrem Unternehmensabonnement angemeldet.
 2. Wählen Sie **Durchsuchen**, **PowerApps** und dann **APIs verwalten** aus:  
-![][17].
+![][17]
 3. Wählen Sie in „Manage APIs“ die Option **Add** aus:  
-![][18].
+![][18]  
 4. Geben Sie in **Add API** die API-Eigenschaften ein:  
 
 	- Geben Sie unter **Name** einen Namen für die API ein. Beachten Sie, dass der eingegebene Name in die Laufzeit-URL der API eingefügt wird. Geben Sie einen aussagekräftigen und innerhalb Ihrer Organisation eindeutigen Namen ein.
@@ -156,4 +156,4 @@ In diesem Thema haben Sie erfahren, wie Sie eine eigene Instanz der verfügbaren
 [42]: ./media/powerapps-register-from-available-apis/sqlserver.png
 [43]: ./media/powerapps-register-from-available-apis/twitter.png
 
-<!---HONumber=AcomDC_0224_2016-->
+<!----HONumber=AcomDC_0224_2016-->
