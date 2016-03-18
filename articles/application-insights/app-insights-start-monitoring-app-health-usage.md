@@ -269,4 +269,4 @@ Wenn diese App Teil einer größeren Anwendung ist, empfiehlt es sich, sie mithi
 [roles]: app-insights-resources-roles-access-control.md
 [start]: app-insights-overview.md
 
-<!---HONumber=AcomDC_0211_2016-->
+<!-----HONumber=AcomDC_0211_2016-->
