@@ -96,11 +96,14 @@ Damit ist das Lernprogramm beendet.
 
 In diesem Lernprogramm wurden die Grundlagen der Aktivierung einer universellen Windows-App für die Arbeit mit Daten in Mobile Services behandelt. Lesen Sie danach eines dieser anderen Themen:
 
-* [Erste Schritte mit der Authentifizierung] <br/>Informationen zur Authentifizierung von Benutzern Ihrer App.
+* [Erste Schritte mit der Authentifizierung]
+  <br/>Informationen zur Authentifizierung von Benutzern Ihrer App.
 
-* [Erste Schritte mit Pushbenachrichtigungen] <br/>Informationen zum Senden einer einfachen Pushbenachrichtigung an Ihre App.
+* [Erste Schritte mit Pushbenachrichtigungen]
+  <br/>Informationen zum Senden einer einfachen Pushbenachrichtigung an Ihre App.
 
-* [Mobile Services #C-Anleitungen: Konzeptionelle Referenz](mobile-services-dotnet-how-to-use-client-library.md) <br/>Lernen Sie mehr über die Verwendung von Mobile Services mit .NET.
+* [Mobile Services #C-Anleitungen: Konzeptionelle Referenz](mobile-services-dotnet-how-to-use-client-library.md)
+  <br/>Lernen Sie mehr über die Verwendung von Mobile Services mit .NET.
 
 
 <!-- Images. -->

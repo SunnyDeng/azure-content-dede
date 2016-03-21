@@ -70,7 +70,8 @@ Nachdem Sie eine Verbindung hergestellt haben, geben Sie die Eigenschaften für 
 Gilt für Version: 1.0.
 
 ### Mein Profil abrufen 
-Ruft das Benutzerprofil für den aktuellen Benutzer ab. ```GET: /users/me```
+Ruft das Benutzerprofil für den aktuellen Benutzer ab.
+```GET: /users/me```
 
 Es gibt keine Parameter für diesen Aufruf.
 
@@ -88,7 +89,8 @@ Es gibt keine Parameter für diesen Aufruf.
 
 
 ### Benutzerprofil abrufen 
-Ruft ein bestimmtes Benutzerprofil ab. ```GET: /users/{userId}```
+Ruft ein bestimmtes Benutzerprofil ab.
+```GET: /users/{userId}```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -108,7 +110,8 @@ Ruft ein bestimmtes Benutzerprofil ab. ```GET: /users/{userId}```
 
 
 ### Vorgesetzten abrufen 
-Ruft das Benutzerprofil des Vorgesetzten des angegebenen Benutzers ab. ```GET: /users/{userId}/manager```
+Ruft das Benutzerprofil des Vorgesetzten des angegebenen Benutzers ab.
+```GET: /users/{userId}/manager```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -129,7 +132,8 @@ Ruft das Benutzerprofil des Vorgesetzten des angegebenen Benutzers ab. ```GET: /
 
 
 ### Direkt unterstellte Mitarbeiter abrufen 
-Ruft direkt unterstellte Mitarbeiter ab. ```GET: /users/{userId}/directReports```
+Ruft direkt unterstellte Mitarbeiter ab.
+```GET: /users/{userId}/directReports```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -150,7 +154,8 @@ Ruft direkt unterstellte Mitarbeiter ab. ```GET: /users/{userId}/directReports``
 
 
 ### Nach Benutzern suchen 
-Ruft die Suchergebnisse für Benutzerprofile ab. ```GET: /users```
+Ruft die Suchergebnisse für Benutzerprofile ab.
+```GET: /users```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|

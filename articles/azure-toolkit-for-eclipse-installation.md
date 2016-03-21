@@ -31,9 +31,11 @@ Die folgenden Schritte veranschaulichen die Installation des Azure-Toolkits für
 ## So installieren Sie das Azure-Toolkit für Eclipse
 
 1. Starten Sie Eclipse.
-2. Klicken Sie im Eclipse-Menü auf <strong>Help</strong> und dann auf <strong>Install New Software</strong>, wie im folgenden Diagramm gezeigt. ![Installieren des Azure-Toolkits für Eclipse][ic590123]
+2. Klicken Sie im Eclipse-Menü auf <strong>Help</strong> und dann auf <strong>Install New Software</strong>, wie im folgenden Diagramm gezeigt.
+	![Installieren des Azure-Toolkits für Eclipse][ic590123]
 3. Geben Sie im Dialogfeld <strong>Available Software</strong> im Textfeld <strong>Work with</strong> den Text <strong>http://dl.microsoft.com/eclipse</strong> ein, und drücken Sie dann die <strong>EINGABETASTE</strong>.
-4. Aktivieren Sie im Fenster <strong>Name</strong> die Option <strong>Azure Toolkit for Eclipse</strong>, und deaktivieren Sie <strong>Contact all update sites during install to find required software</strong>. Der Bildschirm sieht dann etwa wie folgt aus: ![Installieren des Azure-Toolkits für Eclipse][ic719482]
+4. Aktivieren Sie im Fenster <strong>Name</strong> die Option <strong>Azure Toolkit for Eclipse</strong>, und deaktivieren Sie <strong>Contact all update sites during install to find required software</strong>. Der Bildschirm sieht dann etwa wie folgt aus:
+	 ![Installieren des Azure-Toolkits für Eclipse][ic719482]
 5. Nach dem Erweitern von <strong>Azure Toolkit for Eclipse</strong> sehen Sie die folgenden Elemente:
     * **Azure Access Control Services Filter:** Diese Komponente bietet Unterstützung für die Authentifizierung von Benutzern mit Azure ACS.
     * **Azure Common Plugin:** Diese Komponente enthält die gemeinsam verwendeten Funktionen als Basis für die weiteren Komponenten.

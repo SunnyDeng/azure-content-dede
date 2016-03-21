@@ -200,7 +200,7 @@ One thing which is important to point out: if there are pending changes in the l
 
 * [Cloud Cover: Offlinesynchronisierung in Azure Mobile Services]
 
-* [Azure Friday: Offlinefähige Apps in Azure Mobile Services] (Hinweis: Demos sind für Windows, Funktionserläuterungen gelten jedoch für alle Plattformen)
+* [Azure Friday: Offlinefähige Apps in Azure Mobile Services] \(Hinweis: Demos sind für Windows, Funktionserläuterungen gelten jedoch für alle Plattformen)
 
 
 <!-- URLs. -->

@@ -49,11 +49,14 @@ Alle APIs unterstützen Daten im JSON- und XML-Format.
 
 Wenn Sie die API Ihren Logik-Apps hinzufügen, müssen Sie sich bei Dynamic CRM Online anmelden. Führen Sie folgende Schritte aus, um sich bei CRM Online anzumelden und die Konfiguration der **Verbindung** in Ihrer Logik-App abzuschließen:
 
-1. Wählen Sie in Ihrer Logik-App **Aktion hinzufügen** aus: ![Konfigurieren von CRM Online][13]
+1. Wählen Sie in Ihrer Logik-App **Aktion hinzufügen** aus:
+![Konfigurieren von CRM Online][13]
 4. Geben Sie in das Suchfeld „CRM“ ein, und warten Sie, bis die Suche alle Einträge mit CRM im Namen zurückgibt.
 5. Wählen Sie **Dynamics CRM Online – Neuen Datensatz erstellen** aus.
-6. Wählen Sie **Bei Dynamics CRM Online anmelden**: ![Konfigurieren von CRM Online][14]
-7. Geben Sie Ihre CRM Online-Anmeldeinformationen ein, um die Anwendung zu autorisieren. ![Konfigurieren von CRM Online][15]  
+6. Wählen Sie **Bei Dynamics CRM Online anmelden**:
+![Konfigurieren von CRM Online][14]
+7. Geben Sie Ihre CRM Online-Anmeldeinformationen ein, um die Anwendung zu autorisieren.
+![Konfigurieren von CRM Online][15]  
 8. Kehren Sie nach der Anmeldung zur Logik-App zurück, um diese zu vervollständigen. Dazu fügen Sie weitere benötigte Trigger und Aktionen hinzu.
 9. Speichern Sie Ihre Arbeit durch Auswählen von **Speichern** in der Menüleiste oben.
 

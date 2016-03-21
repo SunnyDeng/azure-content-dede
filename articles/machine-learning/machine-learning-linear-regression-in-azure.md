@@ -62,7 +62,9 @@ Zunächst war das Excel-Modell dem Azure-ML-Modell deutlich überlegen.
 |---|:---:|:---:|
 |Leistung| | |
 |<ul style="list-style-type: none;"><li>Adjusted R Square</li></ul>| 0,96 |–|
-|<ul style="list-style-type: none;"><li>Coefficient of <br />Determination</li></ul>|–|	0,78<br />(geringe Genauigkeit)|
+|<ul style="list-style-type: none;"><li>Coefficient of <br />
+Determination</li></ul>|–|	0,78<br />
+(geringe Genauigkeit)|
 |Mittlerer absoluter Fehler |	9,5 Mio. $|	19,4 Mio. $|
 |Mean Absolute Error (%)|	6,03 %|	12,2 %
 

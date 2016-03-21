@@ -70,7 +70,8 @@ Gilt für Version: 1.0.
 
 
 ### Bei Start eines anstehenden Ereignisses 
-Löst einen Fluss aus, wenn ein anstehendes Kalenderereignis beginnt. ```GET: /Events/OnUpcomingEvents```
+Löst einen Fluss aus, wenn ein anstehendes Kalenderereignis beginnt.
+```GET: /Events/OnUpcomingEvents```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -90,7 +91,8 @@ Löst einen Fluss aus, wenn ein anstehendes Kalenderereignis beginnt. ```GET: /E
 
 
 ### E-Mails abrufen 
-Ruft E-Mails aus einem Ordner ab. ```GET: /Mail```
+Ruft E-Mails aus einem Ordner ab.
+```GET: /Mail```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -115,7 +117,8 @@ Ruft E-Mails aus einem Ordner ab. ```GET: /Mail```
 
 
 ### E-Mail senden 
-Sendet eine E-Mail. ```POST: /Mail```
+Sendet eine E-Mail.
+```POST: /Mail```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -135,7 +138,8 @@ Sendet eine E-Mail. ```POST: /Mail```
 
 
 ### E-Mail löschen 
-Löscht eine E-Mail anhand der ID. ```DELETE: /Mail/{messageId}```
+Löscht eine E-Mail anhand der ID.
+```DELETE: /Mail/{messageId}```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -154,7 +158,8 @@ Löscht eine E-Mail anhand der ID. ```DELETE: /Mail/{messageId}```
 
 
 ### Als gelesen markieren 
-Markiert eine E-Mail als gelesen. ```POST: /Mail/MarkAsRead/{messageId}```
+Markiert eine E-Mail als gelesen.
+```POST: /Mail/MarkAsRead/{messageId}```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -173,7 +178,8 @@ Markiert eine E-Mail als gelesen. ```POST: /Mail/MarkAsRead/{messageId}```
 
 
 ### Nachricht beantworten 
-Antwortet auf eine E-Mail. ```POST: /Mail/ReplyTo/{messageId}```
+Antwortet auf eine E-Mail.
+```POST: /Mail/ReplyTo/{messageId}```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -194,7 +200,8 @@ Antwortet auf eine E-Mail. ```POST: /Mail/ReplyTo/{messageId}```
 
 
 ### Anlagen abrufen 
-Ruft die Nachrichtenanlage anhand der ID ab. ```GET: /Mail/{messageId}/Attachments/{attachmentId}```
+Ruft die Nachrichtenanlage anhand der ID ab.
+```GET: /Mail/{messageId}/Attachments/{attachmentId}```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -214,7 +221,8 @@ Ruft die Nachrichtenanlage anhand der ID ab. ```GET: /Mail/{messageId}/Attachmen
 
 
 ### Bei neuer E-Mail 
-Löst einen Fluss aus, wenn eine neue E-Mail eingeht. ```GET: /Mail/OnNewEmail```
+Löst einen Fluss aus, wenn eine neue E-Mail eingeht.
+```GET: /Mail/OnNewEmail```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -240,7 +248,8 @@ Löst einen Fluss aus, wenn eine neue E-Mail eingeht. ```GET: /Mail/OnNewEmail``
 
 
 ### E-Mails mit Optionen senden 
-Sendet eine E-Mail mit mehreren Optionen und wartet, bis der Empfänger mit einer der Optionen antwortet. ```POST: /mailwithoptions/$subscriptions```
+Sendet eine E-Mail mit mehreren Optionen und wartet, bis der Empfänger mit einer der Optionen antwortet.
+```POST: /mailwithoptions/$subscriptions```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -260,7 +269,8 @@ Sendet eine E-Mail mit mehreren Optionen und wartet, bis der Empfänger mit eine
 
 
 ### Genehmigungs-E-Mail senden 
-Sendet eine Genehmigungs-E-Mail und wartet auf eine Antwort des Empfängers. ```POST: /approvalmail/$subscriptions```
+Sendet eine Genehmigungs-E-Mail und wartet auf eine Antwort des Empfängers.
+```POST: /approvalmail/$subscriptions```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -283,7 +293,8 @@ Sendet eine Genehmigungs-E-Mail und wartet auf eine Antwort des Empfängers. ```
 
 
 ### Kalender abrufen 
-Ruft Kalender ab. ```GET: /datasets/calendars/tables```
+Ruft Kalender ab.
+```GET: /datasets/calendars/tables```
 
 Es gibt keine Parameter für diesen Aufruf.
 
@@ -298,7 +309,8 @@ Es gibt keine Parameter für diesen Aufruf.
 
 
 ### Ereignisse abrufen 
-Ruft Elemente aus einem Kalender ab. ```GET: /datasets/calendars/tables/{table}/items```
+Ruft Elemente aus einem Kalender ab.
+```GET: /datasets/calendars/tables/{table}/items```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -317,7 +329,8 @@ Ruft Elemente aus einem Kalender ab. ```GET: /datasets/calendars/tables/{table}/
 
 
 ### Ereignis erstellen 
-Erstellt ein neues Ereignis. ```POST: /datasets/calendars/tables/{table}/items```
+Erstellt ein neues Ereignis.
+```POST: /datasets/calendars/tables/{table}/items```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -333,7 +346,8 @@ Erstellt ein neues Ereignis. ```POST: /datasets/calendars/tables/{table}/items``
 
 
 ### Ereignis abrufen 
-Ruft ein bestimmtes Element aus einem Kalender ab. ```GET: /datasets/calendars/tables/{table}/items/{id}```
+Ruft ein bestimmtes Element aus einem Kalender ab.
+```GET: /datasets/calendars/tables/{table}/items/{id}```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -349,7 +363,8 @@ Ruft ein bestimmtes Element aus einem Kalender ab. ```GET: /datasets/calendars/t
 
 
 ### Ereignis löschen 
-Löscht ein Kalenderelement. ```DELETE: /datasets/calendars/tables/{table}/items/{id}```
+Löscht ein Kalenderelement.
+```DELETE: /datasets/calendars/tables/{table}/items/{id}```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -365,7 +380,8 @@ Löscht ein Kalenderelement. ```DELETE: /datasets/calendars/tables/{table}/items
 
 
 ### Ereignis aktualisieren 
-Aktualisiert ein Kalenderelement teilweise. ```PATCH: /datasets/calendars/tables/{table}/items/{id}```
+Aktualisiert ein Kalenderelement teilweise.
+```PATCH: /datasets/calendars/tables/{table}/items/{id}```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -382,7 +398,8 @@ Aktualisiert ein Kalenderelement teilweise. ```PATCH: /datasets/calendars/tables
 
 
 ### Bei neuen Elementen 
-Wird ausgelöst, wenn ein neues Kalenderelement erstellt wird. ```GET: /datasets/calendars/tables/{table}/onnewitems```
+Wird ausgelöst, wenn ein neues Kalenderelement erstellt wird.
+```GET: /datasets/calendars/tables/{table}/onnewitems```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -401,7 +418,8 @@ Wird ausgelöst, wenn ein neues Kalenderelement erstellt wird. ```GET: /datasets
 
 
 ### Bei aktualisierten Elementen 
-Wird ausgelöst, wenn ein Kalenderelement geändert wird. ```GET: /datasets/calendars/tables/{table}/onupdateditems```
+Wird ausgelöst, wenn ein Kalenderelement geändert wird.
+```GET: /datasets/calendars/tables/{table}/onupdateditems```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -420,7 +438,8 @@ Wird ausgelöst, wenn ein Kalenderelement geändert wird. ```GET: /datasets/cale
 
 
 ### Ordner „Kontakte“ abrufen 
-Ruft Ordner des Typs „Kontakte“ ab. ```GET: /datasets/contacts/tables```
+Ruft Ordner des Typs „Kontakte“ ab.
+```GET: /datasets/contacts/tables```
 
 Es gibt keine Parameter für diesen Aufruf.
 
@@ -433,7 +452,8 @@ Es gibt keine Parameter für diesen Aufruf.
 
 
 ### Kontakte abrufen 
-Ruft Kontakte aus einem Ordner des Typs „Kontakte“ ab. ```GET: /datasets/contacts/tables/{table}/items```
+Ruft Kontakte aus einem Ordner des Typs „Kontakte“ ab.
+```GET: /datasets/contacts/tables/{table}/items```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -452,7 +472,8 @@ Ruft Kontakte aus einem Ordner des Typs „Kontakte“ ab. ```GET: /datasets/con
 
 
 ### Kontakt erstellen 
-Erstellt einen neuen Kontakt. ```POST: /datasets/contacts/tables/{table}/items```
+Erstellt einen neuen Kontakt.
+```POST: /datasets/contacts/tables/{table}/items```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -468,7 +489,8 @@ Erstellt einen neuen Kontakt. ```POST: /datasets/contacts/tables/{table}/items``
 
 
 ### Kontakt abrufen 
-Ruft einen bestimmten Kontakt aus einem Ordner „Kontakte“ ab. ```GET: /datasets/contacts/tables/{table}/items/{id}```
+Ruft einen bestimmten Kontakt aus einem Ordner „Kontakte“ ab.
+```GET: /datasets/contacts/tables/{table}/items/{id}```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -484,7 +506,8 @@ Ruft einen bestimmten Kontakt aus einem Ordner „Kontakte“ ab. ```GET: /datas
 
 
 ### Kontakt löschen 
-Löscht einen Kontakt. ```DELETE: /datasets/contacts/tables/{table}/items/{id}```
+Löscht einen Kontakt.
+```DELETE: /datasets/contacts/tables/{table}/items/{id}```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -500,7 +523,8 @@ Löscht einen Kontakt. ```DELETE: /datasets/contacts/tables/{table}/items/{id}``
 
 
 ### Kontakt aktualisieren 
-Aktualisiert einen Kontakt teilweise. ```PATCH: /datasets/contacts/tables/{table}/items/{id}```
+Aktualisiert einen Kontakt teilweise.
+```PATCH: /datasets/contacts/tables/{table}/items/{id}```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
