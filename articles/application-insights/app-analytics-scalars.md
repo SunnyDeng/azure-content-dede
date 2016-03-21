@@ -26,7 +26,11 @@
 
 ---
 
-[ago](#ago) | [arraylength](#arraylength) | [bin](#bin) [countof](#countof) | [dayofweek](#dayofweek) | [extract](#extract) | [extractjson](#extractjson) | [floor](#floor) <br/>[getmonth](#getmonth) | [gettype](#gettype) [getyear](#getyear) | [hash](#hash) | [iff](#iff) | [isempty](#isempty) | [isnotempty](#isnotempty) | [isnull](#isnull) | [isnotnull](#isnotnull) <br/> [now](#now) | [notempty](#notempty) | [notnull](#notnull) | [parsejson](#parsejson)| [rand](#rand) | [range](#range) | [replace](#replace) | [split](#split) | [sqrt](#sqrt) <br/>[startofmonth](#startofmonth) | [startofyear](#startofyear) | [strcat](#strcat) | [strlen](#strlen) | [substring](#substring) | [tolower](#tolower) | [toupper](#toupper) | [treepath](#treepath)
+[ago](#ago) | [arraylength](#arraylength) | [bin](#bin) [countof](#countof) | [dayofweek](#dayofweek) | [extract](#extract) | [extractjson](#extractjson) | [floor](#floor) 
+<br/>[getmonth](#getmonth) | [gettype](#gettype) [getyear](#getyear) | [hash](#hash) | [iff](#iff) | [isempty](#isempty) | [isnotempty](#isnotempty) | [isnull](#isnull) | [isnotnull](#isnotnull) 
+<br/> [now](#now) | [notempty](#notempty) | [notnull](#notnull) | [parsejson](#parsejson)| [rand](#rand) | [range](#range) | [replace](#replace) | [split](#split) | [sqrt](#sqrt) 
+<br/>[startofmonth](#startofmonth) | [startofyear](#startofyear) | [strcat](#strcat) | [strlen](#strlen) | [substring](#substring) 
+| [tolower](#tolower) | [toupper](#toupper) | [treepath](#treepath)
 
 ---
 
@@ -40,7 +44,9 @@ Skalare Ausdrücke unterscheiden sich von [Abfragen](app-analytics-queries.md), 
 
 ## Skalare
 
-[casts](#casts) | [comparisons](#scalar-comparisons) <br/> [gettype](#gettype) | [hash](#hash) | [iff](#iff)| [isnull](#isnull) | [isnotnull](#isnotnull) | [notnull](#notnull)
+[casts](#casts) | [comparisons](#scalar-comparisons)
+<br/>
+[gettype](#gettype) | [hash](#hash) | [iff](#iff)| [isnull](#isnull) | [isnotnull](#isnotnull) | [notnull](#notnull)
 
 Die unterstützten Typen sind:
 
@@ -158,7 +164,9 @@ Diese Funktion gibt den Wert von *ifTrue* zurück, wenn *predicate* als `true` a
 iff(floor(timestamp, 1d)==floor(now(), 1d), "today", "anotherday")
 ```
 
-<a name="isnull"/></a> <a name="isnotnull"/></a> <a name="notnull"/></a>
+<a name="isnull"/></a>
+<a name="isnotnull"/></a>
+<a name="notnull"/></a>
 ### isnull, isnotnull, notnull
 
     isnull(parsejson("")) == true
@@ -186,7 +194,7 @@ True oder False, je nachdem, ob ist der Wert null oder nicht null ist.
 | "" | false
 |"x" | false
 |parsejson("")|true
-|parsejson("")|false
+|parsejson("[]")|false
 |parsejson("{}")|false
 
 **Beispiel**
@@ -218,7 +226,8 @@ Beachten Sie, dass es andere Möglichkeiten gibt, diesen Effekt zu erreichen:
 
 ## Zahlen
 
-[bin](#bin) | [floor](#floor) | [rand](#rand) | [range](#range) | [sqrt](#sqrt) | [todouble](#todouble) | [toint](#toint) | [tolong](#tolong)
+[bin](#bin) | [floor](#floor) | [rand](#rand) | [range](#range) | [sqrt](#sqrt) 
+| [todouble](#todouble) | [toint](#toint) | [tolong](#tolong)
 
 ### Numerische Literale
 
@@ -232,7 +241,17 @@ Beachten Sie, dass es andere Möglichkeiten gibt, diesen Effekt zu erreichen:
 || |
 |---|-------------|
 | + | Hinzufügen |
-| - | Subtrahieren | | * | Multiplizieren | | / | Dividieren | | % | Modulo | || |`<` |Kleiner |`<=`|Kleiner oder gleich |`>` |Größer |`>=`|Größer oder gleich |`<>`|Ungleich |`!=`|Ungleich
+| - | Subtrahieren |
+| * | Multiplizieren |
+| / | Dividieren |
+| % | Modulo |
+||
+|`<` |Kleiner
+|`<=`|Kleiner oder gleich
+|`>` |Größer
+|`>=`|Größer oder gleich
+|`<>`|Ungleich
+|`!=`|Ungleich 
 
 
 
@@ -531,7 +550,7 @@ Die Regeln sind mit JavaScript identisch.
 
 Zeichenfolgen können entweder in einfachen oder doppelten Anführungszeichen eingeschlossen sein.
 
-Es wird ein umgekehrter Schrägstrich (``) verwendet, um Zeichen wie z. B. `\t` (Tab), `\n` (Zeilenvorschub) und Instanzen der einschließenden Anführungszeichen mit einem Escapezeichen zu versehen.
+Es wird ein umgekehrter Schrägstrich (`\`) verwendet, um Zeichen wie z. B. `\t` (Tab), `\n` (Zeilenvorschub) und Instanzen der einschließenden Anführungszeichen mit einem Escapezeichen zu versehen.
 
 * `'this is a "string" literal in single \' quotes'`
 * `"this is a 'string' literal in double " quotes"`
@@ -650,12 +669,15 @@ Diesem Beispiel entspricht `substring(Text, 2, 4)`:
 extract("^.{2,2}(.{4,4})", 1, Text)
 ```
 
-<a name="notempty"></a> <a name="isnotempty"></a> <a name="isempty"></a>
+<a name="notempty"></a>
+<a name="isnotempty"></a>
+<a name="isempty"></a>
 ### isempty, isnotempty, notempty
 
     isempty("") == true
 
-„True“, wenn das Argument eine leere Zeichenfolge oder null ist. Siehe auch [isnull](#isnull).
+„True“, wenn das Argument eine leere Zeichenfolge oder null ist.
+Siehe auch [isnull](#isnull).
 
 
 **Syntax**
@@ -677,7 +699,7 @@ Gibt an, ob das Argument eine leere Zeichenfolge oder isnull ist.
 | "" | true
 |"x" | false
 |parsejson("")|true
-|parsejson("")|false
+|parsejson("[]")|false
 |parsejson("{}")|false
 
 
@@ -824,7 +846,9 @@ Konvertiert eine Zeichenfolge in Großbuchstaben.
 
 ## Arrays und Objekte – dynamische Typen
 
-[literals](#dynamic-literals) | [casting](#casting-dynamic-objects) | [operators](#operators) | [let clauses](#dynamic-objects-in-let-clauses) <br/> [arraylength](#arraylength) | [extractjson](#extractjson) | [parsejson](#parsejson) | [range](#range) | [treepath](#treepath) | [todynamic](#todynamic)
+[literals](#dynamic-literals) | [casting](#casting-dynamic-objects) | [operators](#operators) | [let clauses](#dynamic-objects-in-let-clauses)
+<br/>
+[arraylength](#arraylength) | [extractjson](#extractjson) | [parsejson](#parsejson) | [range](#range) | [treepath](#treepath) | [todynamic](#todynamic)
 
 
 Hier ist das Ergebnis einer Abfrage für eine Application Insights-Ausnahme. Der Wert unter `details` ist ein Array.

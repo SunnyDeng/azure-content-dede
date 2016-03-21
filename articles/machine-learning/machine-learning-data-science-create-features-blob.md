@@ -23,7 +23,8 @@
 
 In diesem Dokument wird erläutert, wie Sie Features für in einem Azure-Blob-Container gespeicherte Daten mithilfe des [Pandas](http://pandas.pydata.org/)-Python-Pakets erstellen. Nach der Beschreibung des Ladens von Daten in einen Panda-Datenrahmen wird erläutert, wie kategorische Features mit Indikatorwerten und Klassifizierungsfeatures mithilfe von Python-Skripts generiert werden.
 
-[AZURE.INCLUDE [cap-create-features-data-selector](../../includes/cap-create-features-selector.md)]Dieses **Menü** stellt eine Verknüpfung mit Themen dar, in denen beschrieben wird, wie Features für Daten in verschiedenen Umgebungen erstellt werden. Diese Aufgabe ist ein Teil des [Cortana Analytics-Prozesses (CAP)](https://azure.microsoft.com/documentation/learning-paths/cortana-analytics-process/).
+[AZURE.INCLUDE [cap-create-features-data-selector](../../includes/cap-create-features-selector.md)]
+Dieses **Menü** stellt eine Verknüpfung mit Themen dar, in denen beschrieben wird, wie Features für Daten in verschiedenen Umgebungen erstellt werden. Diese Aufgabe ist ein Teil des [Cortana Analytics-Prozesses (CAP)](https://azure.microsoft.com/documentation/learning-paths/cortana-analytics-process/).
 
 ## Voraussetzungen
 In diesem Artikel wird davon ausgegangen, dass Sie Folgendes abgeschlossen haben:
