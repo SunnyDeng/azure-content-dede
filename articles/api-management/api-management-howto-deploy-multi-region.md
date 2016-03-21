@@ -4,7 +4,7 @@
 	services="api-management"
 	documentationCenter=""
 	authors="steved0x"
-	manager="dwrede"
+	manager="erikre"
 	editor=""/>
 
 <tags
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/07/2015"
+	ms.date="03/04/2016"
 	ms.author="sdanie"/>
 
 # Bereitstellen einer Azure API Management-Dienstinstanz für mehrere Azure-Regionen
@@ -22,7 +22,7 @@ API Management unterstützt eine Bereitstellung für mehrere Regionen, wodurch A
 
 Bei der anfänglichen Erstellung eines API Management-Diensts enthält dieser nur eine [Einheit][] und befindet sich in einer einzelnen Azure-Region. Diese wird als primäre Region bezeichnet. Mit dem klassischen Azure-Portal können auf einfache Weise zusätzliche Regionen hinzugefügt werden. Der API Management-Gatewayserver wird in jeder Region bereitgestellt und Datenverkehr durch Aufrufe wird an das nächstgelegene Gateway geroutet. Wenn eine Region offline geht, wird der Datenverkehr automatisch an das nächstgelegene Gateway umgeleitet.
 
-> [AZURE.IMPORTANT]Die Bereitstellung in mehreren Regionen steht nur im Tarif **[Premium][]** zur Verfügung.
+> [AZURE.IMPORTANT] Die Bereitstellung in mehreren Regionen steht nur im Tarif **[Premium][]** zur Verfügung.
 
 ## <a name="add-region"> </a>Bereitstellen einer API Management-Dienstinstanz für eine neue Region
 
@@ -75,4 +75,4 @@ Wenn Sie die gewünschten Regionen entfernt haben, klicken Sie auf **Speichern**
 [Einheit]: http://azure.microsoft.com/pricing/details/api-management/
 [Premium]: http://azure.microsoft.com/pricing/details/api-management/
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0309_2016-->

@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="02/02/2016"
+   ms.date="03/08/2016"
    ms.author="jgao"/>
 
 # Erstellen Windows-basierter Hadoop-Cluster in HDInsight mithilfe von ARM-Vorlagen
@@ -23,7 +23,10 @@
 
 Erfahren Sie mehr über das Erstellen von HDInsight-Clustern mithilfe von Azure-Ressourcen-Manager-Vorlagen (ARM). Weitere Informationen finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](../resource-group-template-deploy.md). Andere Tools und Features zur Clustererstellung finden Sie, indem Sie oben auf dieser Seite auf die Registerkartenauswahl klicken, oder unter [Methoden zur Clustererstellung](hdinsight-provision-clusters.md#cluster-creation-methods).
 
-###Voraussetzungen:
+##Voraussetzungen:
+
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
+
 
 Bevor Sie die Anweisungen in diesem Artikel ausführen können, benötigen Sie Folgendes:
 
@@ -34,7 +37,7 @@ Bevor Sie die Anweisungen in diesem Artikel ausführen können, benötigen Sie F
 
 ARM-Vorlagen können HDInsight-Cluster, ihre abhängigen Ressourcen (z. B. das standardmäßige Speicherkonto) und andere Ressourcen (z. B. Azure SQL-Datenbank zur Verwendung von Apache Sqoop) für die Anwendung ganz einfach in einem einzigen, koordinierten Vorgang erstellt werden. In der Vorlage müssen Sie die Ressourcen definieren, die für die Anwendung erforderlich sind, und Bereitstellungsparameter für die Eingabe von Werten für unterschiedliche Umgebungen angeben. Die Vorlage besteht aus JSON und Ausdrücken, mit denen Sie Werte für die Bereitstellung erstellen können.
 
-Eine ARM-Vorlage zum Erstellen eines HDInsight-Clusters und des abhängigen Azure Storage-Kontos finden Sie in [Anhang A](). Verwenden Sie einen Text-Editor, um die Vorlage in einer Datei auf Ihrer Arbeitsstation zu speichern. Sie erfahren, wie die Vorlage mit verschiedenen Tools aufgerufen werden kann.
+Eine ARM-Vorlage zum Erstellen eines HDInsight-Clusters und des abhängigen Azure-Speicherkontos finden Sie in [Anhang A](#appx-a-arm-template). Verwenden Sie einen Text-Editor, um die Vorlage in einer Datei auf Ihrer Arbeitsstation zu speichern. Sie erfahren, wie die Vorlage mit verschiedenen Tools aufgerufen werden kann.
 
 Weitere Informationen zu ARM-Vorlagen finden Sie unter
 
@@ -44,7 +47,7 @@ Weitere Informationen zu ARM-Vorlagen finden Sie unter
 
 ## Bereitstellen mit PowerShell
 
-Gehen Sie wie folgt vor, um den Linux-basierten HDInsight-Cluster zu erstellen.
+Gehen Sie wie folgt vor, um den HDInsight-Cluster zu erstellen.
 
 **So stellen Sie ein Cluster mithilfe einer ARM-Vorlage bereit**
 
@@ -111,7 +114,11 @@ Im folgende Beispiel werden ein Cluster und dessen abhängiges Speicherkonto und
 	azure login
 	azure config mode arm
     azure group create -n hdi1229rg -l "East US 2"
-    azure group deployment create "hdi1229rg" "hdi1229" --template-file "C:\HDITutorials-ARM\hdinsight-arm-windows-template.json" -p "{"clusterName":{"value":"hdi1229win"},"clusterStorageAccountName":{"value":"hdi1229store"},"location":{"value":"East US 2"},"clusterLoginPassword":{"value":"Pass@word1"}}"
+    azure group deployment create "hdi1229rg" "hdi1229" --template-file "C:\HDITutorials-ARM\hdinsight-arm-template.json" -p "{"clusterName":{"value":"hdi1229win"},"clusterStorageAccountName":{"value":"hdi1229store"},"location":{"value":"East US 2"},"clusterLoginPassword":{"value":"Pass@word1"}}"
+
+
+
+
 
 ## Bereitstellen über die REST-API
 
@@ -129,8 +136,8 @@ In diesem Artikel haben Sie mehrere Möglichkeiten zum Erstellen von HDInsight-C
 - Ein Beispiel für die Bereitstellung von Ressourcen über die .NET-Clientbibliothek finden Sie unter [Bereitstellen von Ressourcen mithilfe von .NET-Bibliotheken und einer Vorlage](../virtual-machines/arm-template-deployment.md).
 - Ein ausführliches Beispiel für die Bereitstellung einer Anwendung finden Sie unter [Vorhersagbares Bereitstellen von Microservices in Azure](../app-service-web/app-service-deploy-complex-application-predictably.md).
 - Informationen zum Bereitstellen der Lösung in andere Umgebungen finden Sie unter [Entwicklungs- und Testumgebungen in Microsoft Azure](../solution-dev-test-environments.md).
-- Informationen zu den Abschnitten der Azure-Ressourcen-Manager-Vorlage finden Sie unter [Erstellen von Vorlagen](../resource-group-authoring-templates.md).
-- Unter [Vorlagenfunktionen](../resource-group-template-functions.md) finden Sie eine Liste der Funktionen, die Sie in einer Azure-Ressourcen-Manager-Vorlage verwenden können.
+- Informationen zu den Abschnitten der Azure Resource Manager-Vorlage finden Sie unter [Erstellen von Vorlagen](../resource-group-authoring-templates.md).
+- Unter [Vorlagenfunktionen](../resource-group-template-functions.md) finden Sie eine Liste der Funktionen, die Sie in einer Azure Resource Manager-Vorlage verwenden können.
 
 
 ##Anhang A: ARM-Vorlage
@@ -283,165 +290,4 @@ Die folgende Azure-Ressourcen-Manager-Vorlage erstellt einen Windows-basierten H
         }
     }
 
-
-
-##Anhang B: ARM-Vorlage für Linux-basierten Cluster
-
-Die folgende Azure-Ressourcen-Manager-Vorlage erstellt einen Linux-basierten Hadoop-Cluster mit abhängigem Azure-Speicherkonto.
-
-	{
-	  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-	  "contentVersion": "1.0.0.0",
-	  "parameters": {
-	    "location": {
-	      "type": "string",
-	      "defaultValue": "North Europe",
-	      "allowedValues": [
-	        "North Europe"
-	      ],
-	      "metadata": {
-	        "description": "The location where all azure resources will be deployed."
-	      }
-	    },
-	    "clusterName": {
-	      "type": "string",
-	      "metadata": {
-	        "description": "The name of the HDInsight cluster to create."
-	      }
-	    },
-	    "clusterLoginUserName": {
-	      "type": "string",
-	      "defaultValue": "admin",
-	      "metadata": {
-	        "description": "These credentials can be used to submit jobs to the cluster and to log into cluster dashboards."
-	      }
-	    },
-	    "clusterLoginPassword": {
-	      "type": "securestring",
-	      "metadata": {
-	        "description": "The password for the cluster login."
-	      }
-	    },
-	    "sshUserName": {
-	      "type": "string",
-	      "defaultValue": "username",
-	      "metadata": {
-	        "description": "These credentials can be used to remotely access the cluster and the edge node virtual machine."
-	      }
-	    },
-	    "sshPassword": {
-	      "type": "securestring",
-	      "metadata": {
-	        "description": "The password for the ssh user."
-	      }
-	    },
-	    "clusterStorageAccountName": {
-	      "type": "string",
-	      "metadata": {
-	        "description": "The name of the storage account to be created and be used as the cluster's storage."
-	      }
-	    },
-	    "clusterStorageType": {
-	      "type": "string",
-	      "defaultValue": "Standard_LRS",
-	      "allowedValues": [
-	        "Standard_LRS",
-	        "Standard_GRS",
-	        "Standard_ZRS"
-	      ]
-	    },
-	    "clusterWorkerNodeCount": {
-	      "type": "int",
-	      "defaultValue": 4,
-	      "metadata": {
-	        "description": "The number of nodes in the HDInsight cluster."
-	      }
-	    }
-	  },
-	  "variables": {},
-	  "resources": [
-	    {
-	      "name": "[parameters('clusterStorageAccountName')]",
-	      "type": "Microsoft.Storage/storageAccounts",
-	      "location": "[parameters('location')]",
-	      "apiVersion": "2015-05-01-preview",
-	      "dependsOn": [],
-	      "tags": {},
-	      "properties": {
-	        "accountType": "[parameters('clusterStorageType')]"
-	      }
-	    },
-	    {
-	      "name": "[parameters('clusterName')]",
-	      "type": "Microsoft.HDInsight/clusters",
-	      "location": "[parameters('location')]",
-	      "apiVersion": "2015-03-01-preview",
-	      "dependsOn": [
-	        "[concat('Microsoft.Storage/storageAccounts/',parameters('clusterStorageAccountName'))]"
-	      ],
-	      "tags": {},
-	      "properties": {
-	        "clusterVersion": "3.2",
-	        "osType": "Linux",
-	        "clusterDefinition": {
-	          "kind": "hadoop",
-	          "configurations": {
-	            "gateway": {
-	              "restAuthCredential.isEnabled": true,
-	              "restAuthCredential.username": "[parameters('clusterLoginUserName')]",
-	              "restAuthCredential.password": "[parameters('clusterLoginPassword')]"
-	            }
-	          }
-	        },
-	        "storageProfile": {
-	          "storageaccounts": [
-	            {
-	              "name": "[concat(parameters('clusterStorageAccountName'),'.blob.core.windows.net')]",
-	              "isDefault": true,
-	              "container": "[parameters('clusterName')]",
-	              "key": "[listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('clusterStorageAccountName')), '2015-05-01-preview').key1]"
-	            }
-	          ]
-	        },
-	        "computeProfile": {
-	          "roles": [
-	            {
-	              "name": "headnode",
-	              "targetInstanceCount": "1",
-	              "hardwareProfile": {
-	                "vmSize": "Large"
-	              },
-	              "osProfile": {
-	                "linuxOperatingSystemProfile": {
-	                  "username": "[parameters('sshUserName')]",
-	                  "password": "[parameters('sshPassword')]"
-	                }
-	              }
-	            },
-	            {
-	              "name": "workernode",
-	              "targetInstanceCount": "[parameters('clusterWorkerNodeCount')]",
-	              "hardwareProfile": {
-	                "vmSize": "Large"
-	              },
-	              "osProfile": {
-	                "linuxOperatingSystemProfile": {
-	                  "username": "[parameters('sshUserName')]",
-	                  "password": "[parameters('sshPassword')]"
-	                }
-	              }
-	            }
-	          ]
-	        }
-	      }
-	    }
-	  ],
-	  "outputs": {
-	    "cluster": {
-	      "type": "object",
-	      "value": "[reference(resourceId('Microsoft.HDInsight/clusters',parameters('clusterName')))]"
-	    }
-	  }
-	}
-
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0309_2016-->

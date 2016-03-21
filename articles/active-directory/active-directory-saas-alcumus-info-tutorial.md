@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/18/2015"
+	ms.date="03/08/2016"
 	ms.author="jeedes"/>
 
 
@@ -23,9 +23,9 @@ In diesem Tutorial erfahren Sie, wie Sie Alcumus Info Exchange in Azure Active D
 
 - Sie können in Azure AD steuern, wer auf Alcumus Info Exchange Zugriff hat. 
 - Sie können es Benutzern ermöglichen, sich mit ihren Azure AD-Konten automatisch bei Alcumus Info Exchange anzumelden (einmaliges Anmelden).
-- Sie können Ihre Konten an einem zentralen Ort verwalten – dem Azure Active Directory-Portal
+- Sie können Ihre Konten an einem zentralen Ort verwalten – im klassischen Azure-Portal.
 
-Weitere Informationen zur Integration von SaaS-Apps in Azure AD finden Sie unter [Was bedeuten Anwendungszugriff und einmaliges Anmelden mit Azure Active Directory?](active-directory-appssoaccess-whatis.md).
+Weitere Informationen zur Integration von SaaS-Apps in Azure AD finden Sie unter [Was bedeuten Anwendungszugriff und einmaliges Anmelden mit Azure Active Directory?](active-directory-appssoaccess-whatis.md).
 
 ## Voraussetzungen 
 
@@ -56,7 +56,7 @@ Zum Konfigurieren der Integration von Alcumus Info Exchange in Azure AD müssen 
 
 **Um Alcumus Info Exchange aus dem Katalog hinzuzufügen, führen Sie die folgenden Schritte aus:**
 
-1. Klicken Sie im linken Navigationsbereich des **Azure-Verwaltungsportals** auf **Active Directory**. <br><br>![Active Directory][1]<br>
+1. Klicken Sie im **klassischen Azure-Portal** im linken Navigationsbereich auf **Active Directory**. <br><br>![Active Directory][1]<br>
 
 2. Wählen Sie in der Liste **Verzeichnis** das Verzeichnis aus, für das Sie die Verzeichnisintegration aktivieren möchten.
 
@@ -87,11 +87,11 @@ Zum Konfigurieren und Testen des einmaligen Anmeldens in Azure AD bei Alcumus In
 
 ### Konfigurieren der einmaligen Anmeldung in Azure AD
 
-Das Ziel dieses Abschnitts ist es, das einmalige Anmelden von Azure AD im Azure AD-Portal zu aktivieren und das einmalige Anmelden in Ihrer Alcumus Info Exchange-Anwendung zu konfigurieren.<br>
+Das Ziel dieses Abschnitts ist es, das einmalige Anmelden von Azure AD im klassischen Azure-Portal zu aktivieren und das einmalige Anmelden in Ihrer Alcumus Info Exchange-Anwendung zu konfigurieren.<br>
 
 **Führen Sie zum Konfigurieren des einmaligen Anmeldens von Azure AD in Alcumus Info Exchange die folgenden Schritte aus:**
 
-1. Klicken Sie im Azure AD-Portal auf der Anwendungsintegrationsseite für **Alcumus Info Exchange** auf **Einmaliges Anmelden konfigurieren**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu öffnen.<br><br>![Einmaliges Anmelden konfigurieren][6]
+1. Klicken Sie im klassischen Azure-Portal auf der Anwendungsintegrationsseite für **Alcumus Info Exchange** auf **Einmaliges Anmelden konfigurieren**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu öffnen.<br><br>![Einmaliges Anmelden konfigurieren][6]
 
 2. Wählen Sie auf der Seite **Wie sollen sich Benutzer bei Alcumus Info Exchange anmelden** die Option **Azure AD – einmaliges Anmelden** aus, und klicken Sie dann auf **Weiter**.<br><br> ![Azure AD – einmaliges Anmelden][7]
 
@@ -99,28 +99,28 @@ Das Ziel dieses Abschnitts ist es, das einmalige Anmelden von Azure AD im Azure 
  
      3\.1. Geben Sie in das Textfeld **Antwort-URL** die Consumer-URL ein, die für Sie von Ihrem Alcumus Info Exchange-Supportteam eingerichtet wurde.
 
-     >[AZURE.NOTE] Wenn Sie den richtigen Wert nicht kennen, wenden Sie sich über [helpdesk@alcumusgroup.com](mailto:helpdesk@alcumusgroup.com) an das Alcumus Info Exchange-Supportteam.
+     > [AZURE.NOTE] Wenn Sie den richtigen Wert nicht kennen, wenden Sie sich über [helpdesk@alcumusgroup.com](mailto:helpdesk@alcumusgroup.com) an das Alcumus Info Exchange-Supportteam.
 
      3\.2. Klicken Sie auf **Weiter**.
  
-4. Klicken Sie auf der Seite **Einmaliges Anmelden für Alcumus Info Exchange konfigurieren** auf **Metadaten herunterladen**, und speichern Sie die Metadatendatei lokal auf Ihrem Computer.<br><br>![Was ist Azure AD Connect?][9]
+4. Klicken Sie auf der Seite **Einmaliges Anmelden für Alcumus Info Exchange konfigurieren** auf **Metadaten herunterladen**, und speichern Sie die Metadatendatei lokal auf Ihrem Computer.<br><br>![Was ist Azure AD Connect?][9]
 
 5. Wenden Sie sich über [helpdesk@alcumusgroup.com](mailto:helpdesk@alcumusgroup.com) an das Alcumus Info Exchange-Supportteam, stellen Sie ihnen die Metadatendatei bereit, und bitten Sie sie, SSO für Sie zu aktivieren.
 
 
-6. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration der einmaligen Anmeldung aus, und klicken Sie dann auf **Weiter**. <br><br>![Was ist Azure AD Connect?][10]
+6. Wählen Sie im klassischen Azure-Portal die Bestätigung zur Konfiguration der einmaligen Anmeldung aus, und klicken Sie dann auf **Weiter**. <br><br>![Was ist Azure AD Connect?][10]
 
-7. Klicken Sie auf der Seite **Bestätigung zur einmaligen Anmeldung** auf **Fertig stellen**.<br><br>![Was ist Azure AD Connect?][11]
-
-
+7. Klicken Sie auf der Seite **Bestätigung zur einmaligen Anmeldung** auf **Fertig stellen**. <br><br>![Was ist Azure AD Connect?][11]
 
 
-### Erstellen einen Azure AD-Testbenutzers
-Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta Simon im Azure-Portal.<br> Wählen Sie in der Benutzerliste **Britta Simon** aus.<br><br>![Azure AD-Benutzer erstellen][20]<br>
+
+
+### Erstellen eines Azure AD-Testbenutzers
+Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta Simon im klassischen Azure-Portal.<br> Wählen Sie in der Benutzerliste **Britta Simon** aus.<br><br>![Azure AD-Benutzer erstellen][20]<br>
 
 **Um einen Testbenutzer in Azure AD zu erstellen, führen Sie die folgenden Schritte aus:**
 
-1. Klicken Sie im linken Navigationsbereich des **Azure-Verwaltungsportals** auf **Active Directory**.<br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-alcumus-info-tutorial/create_aaduser_02.png) 
+1. Klicken Sie im **klassischen Azure-Portal** im linken Navigationsbereich auf **Active Directory**. <br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-alcumus-info-tutorial/create_aaduser_02.png) 
 
 2. Wählen Sie in der Liste **Verzeichnis** das Verzeichnis aus, für das Sie die Verzeichnisintegration aktivieren möchten.
 
@@ -204,4 +204,4 @@ Das Ziel dieses Abschnitts ist das Testen Ihrer Azure AD-Konfiguration für einm
 [205]: ./media/active-directory-saas-alcumus-info-tutorial/tutorial_general_205.png
 [400]: ./media/active-directory-saas-alcumus-info-tutorial/tutorial_alcumus_402.png
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0309_2016-->

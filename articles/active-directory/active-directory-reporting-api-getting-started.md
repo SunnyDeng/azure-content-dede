@@ -3,8 +3,8 @@
    description="Vorgehensweise zum Einstieg in die Azure Active Directory Reporting-API"
    services="active-directory"
    documentationCenter=""
-   authors="kenhoff"
-   manager="mbaldwin"
+   authors="dhanyahk"
+   manager="stevenpo"
    editor=""/>
 
 <tags
@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="12/07/2015"
-   ms.author="kenhoff"/>
+   ms.date="03/07/2016"
+   ms.author="dhanyahk"/>
 
 
 # Erste Schritte mit der Azure AD Reporting-API
@@ -35,7 +35,7 @@ Die Reporting-API verwendet [OAuth](https://msdn.microsoft.com/library/azure/dn6
 
 
 ### Erstellen einer Anwendung
-- Navigieren Sie zum [Azure-Verwaltungsportal](https://manage.windowsazure.com/).
+- Navigieren Sie zum [klassischen Azure-Portal](https://manage.windowsazure.com/).
 - Navigieren Sie zu Ihrem Verzeichnis.
 - Navigieren Sie zu Anwendungen.
 - Klicken Sie auf der unteren Leiste auf "Hinzufügen".
@@ -52,7 +52,7 @@ Die Reporting-API verwendet [OAuth](https://msdn.microsoft.com/library/azure/dn6
 - Navigieren Sie zu Ihrer neu erstellten Anwendung.
 - Klicken Sie auf die Registerkarte **Konfigurieren**.
 - Im Abschnitt "Berechtigungen für andere Anwendungen":
-	- Wählen Sie in "Microsoft Azure Active Directory" > "Anwendungsberechtigungen" **Verzeichnisdaten lesen** aus.
+	- Wählen Sie in „Azure Active Directory > Anwendungsberechtigungen“ die Option **Verzeichnisdaten lesen** aus.
 - Klicken Sie auf der unteren Leiste auf **Speichern**.
 
 
@@ -67,9 +67,9 @@ Die folgenden Schritte begleiten Sie durch das Abrufen der Client-ID Ihrer Anwen
 - Die Client-ID Ihrer Anwendung ist im Feld **Client-ID** aufgeführt.
 
 #### Geheimer Clientschlüssel der Anwendung
-- Navigieren Sie zur Registerkarte "Anwendungen".
+- Navigieren Sie zur Registerkarte **Anwendungen**.
 - Navigieren Sie zu Ihrer neu erstellten Anwendung.
-- Navigieren Sie zur Registerkarte "Konfigurieren".
+- Navigieren Sie zur Registerkarte **Konfigurieren**.
 - Generieren Sie einen neuen geheimen Schlüssel für die Anwendung, indem Sie im Abschnitt "Schlüssel" eine Dauer auswählen.
 - Der Schlüssel wird beim Speichern angezeigt. Kopieren Sie ihn, und fügen Sie ihn unbedingt an einem sicheren Ort ein, da es später keine Möglichkeit des Abrufs gibt.
 
@@ -141,38 +141,38 @@ Bearbeiten Sie eines des folgenden Skripts, um mit Ihrem Verzeichnis zu arbeiten
 	# Author: Michael McLaughlin (michmcla@microsoft.com)
 	# Date: January 20, 2016
 	# This requires the Python Requests module: http://docs.python-requests.org
-	
+
 	import requests
 	import datetime
 	import sys
-	
+
 	client_id = 'your-application-client-id-here'
 	client_secret = 'your-application-client-secret-here'
 	login_url = 'https://login.windows.net/'
-	tenant_domain = 'your-directory-name-here.onmicrosoft.com' 
-	
+	tenant_domain = 'your-directory-name-here.onmicrosoft.com'
+
 	# Get an OAuth access token
 	bodyvals = {'client_id': client_id,
 	            'client_secret': client_secret,
 	            'grant_type': 'client_credentials'}
-	
+
 	request_url = login_url + tenant_domain + '/oauth2/token?api-version=1.0'
 	token_response = requests.post(request_url, data=bodyvals)
-	
+
 	access_token = token_response.json().get('access_token')
 	token_type = token_response.json().get('token_type')
-	
+
 	if access_token is None or token_type is None:
 	    print "ERROR: Couldn't get access token"
 	    sys.exit(1)
-	
+
 	# Use the access token to make the API request
 	yesterday = datetime.date.strftime(datetime.date.today() - datetime.timedelta(days=1), '%Y-%m-%d')
-	
+
 	header_params = {'Authorization': token_type + ' ' + access_token}
 	request_string = 'https://graph.windows.net/' + tenant_domain + '/reports/auditEvents?api-version=beta&filter=eventTime%20gt%20' + yesterday   
 	response = requests.get(request_string, headers = header_params)
-	
+
 	if response.status_code is 200:
 	    print response.content
 	else:
@@ -195,4 +195,4 @@ Das Skript gibt Listen aller verfügbaren Berichte und die Ausgabe des Berichts 
 - Unter [Azure AD-Überwachungsberichtsereignisse](active-directory-reporting-audit-events.md) finden Sie weitere Informationen zum Überwachungsbericht.
 - Unter [Azure AD-Berichte und -Ereignisse (Vorschau)](https://msdn.microsoft.com/library/azure/mt126081.aspx) finden Sie weitere Informationen zum Graph-API-REST-Dienst.
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0309_2016-->

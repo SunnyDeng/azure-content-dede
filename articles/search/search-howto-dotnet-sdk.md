@@ -13,7 +13,7 @@
    ms.workload="search"
    ms.topic="article"
    ms.tgt_pltfrm="na"
-   ms.date="02/09/2016"
+   ms.date="03/08/2016"
    ms.author="brjohnst"/>
 
 # Verwenden von Azure Search aus einer .NET-Anwendung
@@ -296,7 +296,7 @@ Diese Methode besteht aus vier Teilen. Im ersten Teil wird ein `Hotel`-Objektarr
 
 Im zweiten Teil wird ein `IndexBatch` mit den Dokumenten erstellt. Sie geben den Vorgang an, den Sie auf den Batch zum Zeitpunkt seiner Erstellung anwenden möchten, in diesem Fall durch Aufruf von `IndexBatch.Upload`. Der Batch wird dann durch die Methode `Documents.Index` in den Azure Search-Index hochgeladen.
 
-> [AZURE.NOTE] In diesem Beispiel werden nur Dokumente hochgeladen. Wenn Sie z. B. Änderungen in vorhandenen Dokumenten zusammenführen oder Dokumente löschen möchten, können Sie zum Erstellen von Batches `IndexBatch.Merge`, `IndexBatch.MergeOrUpload` oder `IndexBatch.Delete` aufrufen. Sie können auch verschiedene Vorgänge in einem einzigen Batch kombinieren, indem Sie `IndexBatch.New` aufrufen. Dieses akzeptiert eine Auflistung von `IndexAction`-Objekten, und jedes dieser Objekte weist Azure Search an, einen bestimmten Vorgang für das Dokument auszuführen. Sie können jede `IndexAction` mit ihrem eigenen Vorgang erstellen, indem Sie die entsprechende Methode aufrufen, z. B. `IndexAction.Merge`, `IndexAction.Upload` usw.
+> [AZURE.NOTE] In diesem Beispiel werden nur Dokumente hochgeladen. Wenn Sie z. B. Änderungen in vorhandenen Dokumenten zusammenführen oder Dokumente löschen möchten, können Sie zum Erstellen von Batches `IndexBatch.Merge`, `IndexBatch.MergeOrUpload` oder `IndexBatch.Delete` aufrufen. Sie können auch verschiedene Vorgänge in einem einzigen Batch kombinieren, indem Sie `IndexBatch.New` aufrufen. Dieses akzeptiert eine Auflistung von `IndexAction`-Objekten, und jedes dieser Objekte weist Azure Search an, einen bestimmten Vorgang für das Dokument auszuführen. Sie können jede `IndexAction` mit ihrem eigenen Vorgang erstellen, indem Sie die entsprechende Methode aufrufen, z. B. `IndexAction.Merge`, `IndexAction.Upload` usw.
 
 Der dritte Teil dieser Methode ist ein Catch-Block, der einen wichtigen Fehlerfall bei der Indizierung abfängt. Falls der Azure Search-Dienst Dokumente des Batch nicht indizieren kann, löst `Documents.Index` eine `IndexBatchException` aus. Dies kann bei der Indizierung von Dokumenten geschehen, wenn der Dienst stark ausgelastet ist. **Es wird dringend empfohlen, einen solchen Fall in Ihrem Code explizit zu behandeln.** Zum Beispiel kann die Indizierung der zuvor nicht indizierten Dokumente nach einer Weile wieder aufgenommen werden oder der Vorgang kann, wie im Beispiel gezeigt, nach der Aufzeichnung des Fehlers fortgeführt werden. Je nach Datenkonsistenzanforderungen Ihrer Anwendung sind aber auch andere Lösungen möglich.
 
@@ -350,7 +350,7 @@ Diese Möglichkeit, eigene Klassen als Dokumente zu verwenden, funktioniert in b
 
 **Ein wichtiger Hinweis zu Datentypen**
 
-Beim Entwerfen eigener Modellklassen für die Zuordnung zum Azure Search-Index wird empfohlen, Eigenschaften von Werttypen, z. B. `bool` und `int`, als Eigenschaften zu deklarieren, die NULL-Werte zulassen (z. B. `bool?` anstelle von `bool`). Wenn Sie eine Eigenschaft verwenden, die keine NULL-Werte zulässt, müssen Sie **garantieren**, dass keine Dokumente im Index einen NULL-Wert für das entsprechende Feld enthalten. Weder das SDK noch der Azure Search-Dienst helfen Ihnen, dies durchzusetzen.
+Beim Entwerfen eigener Modellklassen für die Zuordnung zum Azure Search-Index wird empfohlen, Eigenschaften von Werttypen, z. B. `bool` und `int`, als Eigenschaften zu deklarieren, die NULL-Werte zulassen (z. B. `bool?` anstelle von `bool`). Wenn Sie eine Eigenschaft verwenden, die keine NULL-Werte zulässt, müssen Sie **garantieren**, dass keine Dokumente im Index einen NULL-Wert für das entsprechende Feld enthalten. Weder das SDK noch der Azure Search-Dienst helfen Ihnen, dies durchzusetzen.
 
 Dieser Aspekt ist nicht nur hypothetisch relevant: Stellen Sie sich ein Szenario vor, in dem Sie ein neues Feld einem vorhandenen Index vom Typ `Edm.Int32` hinzufügen. Nach dem Aktualisieren der Indexdefinition besitzen alle Dokumente einen NULL-Wert für das neue Feld (da in Azure Search alle Typen NULL-Werte zulassen). Wenn Sie für dieses Feld anschließend eine Modellklasse mit einer `int`-Eigenschaft verwenden, die keine NULL-Werte zulässt, erhalten Sie beim Abrufen von Dokumenten folgende `JsonSerializationException`:
 
@@ -643,6 +643,4 @@ Hotel.cs:
         }
     }
 
-Sie finden den vollständigen Quellcode der Beispielanwendung auch [auf GitHub](http://aka.ms/search-dotnet-howto).
-
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0309_2016-->

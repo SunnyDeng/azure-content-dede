@@ -3,8 +3,8 @@
    description="Überwachte Ereignisse, die zum Anzeigen und Herunterladen aus Azure Active Directory verfügbar sind"
    services="active-directory"
    documentationCenter=""
-   authors="kenhoff"
-   manager="mbaldwin"
+   authors="dhanyahk"
+   manager="stevenpo"
    editor=""/>
 
 <tags
@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="12/07/2015"
-   ms.author="kenhoff"/>
+   ms.date="03/07/2016"
+   ms.author="dhanyahk"/>
 
 # Azure Active Directory-Überwachungsberichtsereignisse
 
@@ -89,7 +89,7 @@ Promote tenant to partner
 --->
 
 ## Aufbewahrung von Überwachungsberichten
-Ereignisse im Azure AD-Überwachungsbericht werden für 180 Tage beibehalten. Weitere Informationen zur Aufbewahrung von Berichten finden Sie unter [Aufbewahrungsrichtlinien für Azure Active Directory-Berichte](active-directory-reporting-retention.md).
+Ereignisse im Azure AD-Überwachungsbericht werden für 180 Tage beibehalten. Weitere Informationen zur Aufbewahrung von Berichten finden Sie unter [Aufbewahrungsrichtlinien für Azure Active Directory-Berichte](active-directory-reporting-retention.md).
 
 Kunden, die ihre Überwachungsereignisse für längere Zeit speichern möchten, können mithilfe der Reporting-API regelmäßig Überwachungsereignisse in einen separaten Datenspeicher abrufen. Ausführliche Informationen finden Sie unter [Erste Schritte mit der Azure AD Reporting-API](active-directory-reporting-api-getting-started.md).
 
@@ -122,4 +122,4 @@ TelephoneNumber | Die Telefonnummer des Benutzers.
 
 Überwachungsdatensätze sind ein erforderliches Steuerelement in vielen Richtlinien zur Einhaltung von Vorschriften. Kunden, die den Azure Active Directory-Überwachungsbericht zum Erfüllen dieser Vorschriften nutzen, wird empfohlen, der Kopie des exportierten Überwachungsberichts eine Kopie dieses Hilfethemas hinzuzufügen, das die Berichtsdetails erläutert. Wenn der Prüfer die Richtlinien zur Vorschrifteneinhaltung bestimmen möchte, die Azure derzeit erfüllt, leiten Sie ihn zur [Seite "Compliance"](https://azure.microsoft.com/support/trust-center/compliance/) im Microsoft Azure Trust Center.
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0309_2016-->

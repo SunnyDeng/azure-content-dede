@@ -3,8 +3,8 @@
    description="Erfahren Sie, wie Sie mit Azure Backup mithilfe des Azure Import/Export-Diensts Daten aus dem Netzwerk senden können. Dieser Artikel beschreibt das Offlineseeding der ersten Sicherungsdaten über den Azure Import/Export-Dienst."
    services="backup"
    documentationCenter=""
-   authors="Jim-Parker"
-   manager="jwhit"
+   authors="nkolli1"
+   manager="shivamg"
    editor=""/>
 <tags
    ms.service="backup"
@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="storage-backup-recovery"
    ms.date="01/28/2016"
-   ms.author="jimpark;"/>
+   ms.author="jimpark;nkolli;trinadhk"/>
 
 # Workflow zur Offlinesicherung in Azure Backup
 Azure Backup verfügt über zahlreiche integrierte effizienzsteigernde Maßnahmen, um Netzwerk- und Speicherkosten zu sparen. Azure Backup komprimiert nicht nur Daten, sondern sichert auch den vollständigen Inhalt nur einmal und danach nur Deltas/inkrementelle Daten. Wenn beispielsweise ein Dateivolume mit 10 TB gesichert wird, Azure Backup 10 TB bei der anfänglichen Replikation (Initial Replication, IR) und nur Deltas bei der Delta-Replikation. Bei der IR ist also die maximale WAN-Bandbreite erforderlich. Um die Abhängigkeit des WAN bei der IR zu verringern, unterstützt Azure Backup mithilfe des Azure-Import/Export-Diensts die Offline-Sicherung.
@@ -119,4 +119,4 @@ Sobald die ersten Sicherungsdaten im Speicherkonto verfügbar sind, kopiert der 
 - Wenn Sie Fragen zum Azure Import/Export-Workflow haben, finden Sie weitere Informationen in diesem [Artikel](../storage/storage-import-export-service.md).
 - Bei Fragen zum Workflow finden Sie weitere Informationen im Abschnitt zur Offlinesicherung in den [häufig gestellten Fragen](backup-azure-backup-faq.md) zu Azure Backup.
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

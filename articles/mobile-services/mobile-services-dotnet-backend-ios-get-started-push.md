@@ -19,12 +19,12 @@
 
 # Hinzufügen von Pushbenachrichtigungen zur iOS-App und zum .NET-Back-End
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-push](../../includes/mobile-services-selector-get-started-push.md)]
 
 &nbsp;
 
-
-[AZURE.INCLUDE [mobile-services-selector-get-started-push](../../includes/mobile-services-selector-get-started-push.md)]
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+> Informationen für die entsprechende Mobile Apps-Version dieses Themas finden Sie unter [Hinzufügen von Pushbenachrichtigungen zu Ihrer iOS-App](../app-service-mobile/app-service-mobile-ios-get-started-push.md).
 
 In diesem Thema wird das Hinzufügen von Pushbenachrichtigungen zum [Schnellstartprojekt](mobile-services-dotnet-backend-ios-get-started.md) gezeigt, sodass Ihnen der mobile Dienst eine Pushbenachrichtigung sendet, wenn ein Datensatz eingefügt wird. Sie müssen zunächst [Erste Schritte mit Mobile Services] abschließen.
 
@@ -132,4 +132,4 @@ In diesem Thema wird das Hinzufügen von Pushbenachrichtigungen zum [Schnellstar
 [Send broadcast notifications to subscribers]: ../notification-hubs-ios-send-breaking-news.md
 [Send template-based notifications to subscribers]: ../notification-hubs-ios-send-localized-breaking-news.md
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0309_2016-->

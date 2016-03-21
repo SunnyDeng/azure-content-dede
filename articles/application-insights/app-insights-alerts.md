@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/01/2016" 
+	ms.date="03/05/2016" 
 	ms.author="awills"/>
  
 # Einrichten von Warnungen in Application Insights
@@ -48,6 +48,8 @@ Um eine E-Mail zu erhalten, wenn eine Metrik einen Schwellenwert überschreitet,
 
 *Die Schaltfläche "Warnung hinzufügen" wird nicht angezeigt.* – Verwenden Sie ein Organisationskonto? Sie können Warnungen festlegen, wenn Sie für diese Anwendungsressource über Zugriffsberechtigungen für Besitzer oder Mitwirkende verfügen. Sehen Sie unter "Einstellungen" -> "Benutzer" nach. [Erfahren Sie mehr über die Zugriffssteuerung][roles].
 
+> [AZURE.NOTE] Auf dem Blatt „Warnungen“ sehen Sie, dass bereits eine Warnung festlegen ist: [Proaktive NRT-Diagnose](app-insights-nrt-proactive-diagnostics.md). Dies ist eine automatische Benachrichtigung, die eine bestimmte Metrik überwacht,nämlich die Anforderungsfehlerrate. Sofern Sie nicht entscheiden, diese Funktion zu deaktivieren, müssen Sie also keine eigene Warnung für die Anforderungsfehlerrate festlegen.
+
 ## Anzeigen Ihrer Warnungen
 
 Sie erhalten eine E-Mail, wenn sich ein Warnungsstatus von "Inaktiv" in "Aktiv" ändert und umgekehrt.
@@ -58,13 +60,10 @@ Die Dropdownliste "Warnungen" enthält einen Überblick über die letzten Aktivi
 
 ![](./media/app-insights-alerts/010-alert-drop.png)
 
-Der Verlauf von Statusänderungen befindet sich im Ereignisprotokoll "Vorgänge":
+Der Verlauf von Statusänderungen befindet sich im Überwachungsprotokoll:
 
-![Klicken Sie auf dem Blatt "Übersicht" im unteren Bereich auf "Ereignisse der letzten Woche"](./media/app-insights-alerts/09-alerts.png)
+![Klicken Sie auf dem Blatt „Übersicht“ auf „Einstellungen“, „Überwachungsprotokolle“.](./media/app-insights-alerts/09-alerts.png)
 
-*Beziehen sich diese "Ereignisse" auf Telemetrie- oder benutzerdefinierte Ereignisse?*
-
-* Nein. Diese operativen Ereignisse sind nur ein Protokoll der Geschehnisse auf dieser Anwendungsressource. 
 
 
 ## Funktionsweise von Warnungen
@@ -127,4 +126,4 @@ Zu den gängigen Warnungen zählen Folgende:
 
  
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

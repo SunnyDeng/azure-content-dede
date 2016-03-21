@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/16/2015" 
+	ms.date="03/04/2016" 
 	ms.author="tomfitz"/>
 
 # Erstellen einer Redis Cache-Instanz mithilfe einer Vorlage
@@ -26,7 +26,7 @@ Weitere Informationen zum Erstellen von Vorlagen finden Sie unter [Erstellen von
 
 Die vollständige Vorlage finden Sie unter [Redis Cache-Vorlage](https://github.com/Azure/azure-quickstart-templates/blob/master/101-redis-cache/azuredeploy.json).
 
->[AZURE.NOTE]ARM-Vorlagen für den neuen [Tarif „Premium“](cache-premium-tier-intro.md) sind verfügbar.
+>[AZURE.NOTE] ARM-Vorlagen für den neuen [Tarif „Premium“](cache-premium-tier-intro.md) sind verfügbar.
 >
 >-    [Erstellen eines Premium-Redis Caches mit Clustering](https://azure.microsoft.com/documentation/templates/201-redis-premium-cluster-diagnostics/)
 >-    [Erstellen eines Premium-Redis Caches mit Datenpersistenz](https://azure.microsoft.com/documentation/templates/201-redis-premium-persistence/)
@@ -137,4 +137,4 @@ Erstellt den Azure Redis Cache.
 
     azure group deployment create --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-redis-cache/azuredeploy.json -g ExampleDeployGroup
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0309_2016-->

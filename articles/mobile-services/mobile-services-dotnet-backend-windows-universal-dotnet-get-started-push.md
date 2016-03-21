@@ -4,7 +4,7 @@
 	services="mobile-services,notification-hubs"
 	documentationCenter="windows"
 	authors="ggailey777"
-	manager="dwrede"
+	manager="erikre"
 	editor=""/>
 
 <tags
@@ -13,17 +13,17 @@
 	ms.tgt_pltfrm="mobile-windows-store"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="11/11/2015"
+	ms.date="03/05/2016"
 	ms.author="glenga"/>
 
 # Hinzufügen von Pushbenachrichtigungen zur Mobile Services-App
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-push](../../includes/mobile-services-selector-get-started-push.md)]
 
 &nbsp;
 
-
-[AZURE.INCLUDE [mobile-services-selector-get-started-push](../../includes/mobile-services-selector-get-started-push.md)]
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+> Informationen für die entsprechende Mobile Apps-Version dieses Themas finden Sie unter [Hinzufügen von Pushbenachrichtigungen zu Ihrer Windows-App](../app-service-mobile/app-service-mobile-windows-store-dotnet-get-started-push.md).
 
 ##Übersicht
 In diesem Thema erfahren Sie, wie Sie mithilfe von Azure Mobile Services mit .NET-Backend Pushbenachrichtigungen an eine universelle Windows-App senden. In diesem Lernprogramm fügen Sie Pushbenachrichtigungen mithilfe von Azure Notification Hubs zum universellen Windows-App-Projekt hinzu. Wenn dies abgeschlossen ist, sendet Ihr mobiler Dienst immer dann, wenn ein Datensatz in die ToDoList-Tabelle eingefügt wird, eine Pushbenachrichtigung vom .NET-Backend an alle registrierten Windows Store- und Windows Phone Store-Apps. Der von Ihnen erstellte Benachrichtigungshub ist für den mobilen Dienst kostenlos, kann unabhängig vom mobilen Dienst verwaltet werden und kann von anderen Anwendungen und Diensten verwendet werden.
@@ -31,7 +31,7 @@ In diesem Thema erfahren Sie, wie Sie mithilfe von Azure Mobile Services mit .NE
 Für dieses Lernprogramm benötigen Sie Folgendes:
 
 * Ein aktives [Microsoft Store-Konto](http://go.microsoft.com/fwlink/p/?LinkId=280045)
-* <a href="https://go.microsoft.com/fwLink/p/?LinkID=391934" target="_blank">Visual Studio Community 2013</a>.
+* [Visual Studio Community 2013](https://go.microsoft.com/fwLink/p/?LinkID=391934).
 
 ##<a id="register"></a>Registrieren der App für Pushbenachrichtigungen
 
@@ -43,7 +43,7 @@ Für dieses Lernprogramm benötigen Sie Folgendes:
 
 &nbsp;&nbsp;8. Führen Sie die vorherigen Schritte erneut aus, um dem Windows Phone Store-App-Projekt Pushbenachrichtigungen hinzuzufügen, und entfernen Sie dann in der gemeinsam genutzten Datei "App.xaml.cs" den zusätzlichen Aufruf von **UploadChannel** sowie den restlichen bedingten Wrapper `#if...#endif`. In beiden Projekten kann nun ein einziger Aufruf von **UploadChannel** verwendet werden.
 
-> [AZURE.NOTE]Sie können den generierten Code auch vereinfachen, indem Sie die in `#if...#endif` umschlossenen [MobileServiceClient](http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx)-Definitionen zu einer einzigen nicht umschlossenen Definition zusammenfassen, die von beiden Versionen der App genutzt wird.
+> [AZURE.NOTE] Sie können den generierten Code auch vereinfachen, indem Sie die in `#if...#endif` umschlossenen [MobileServiceClient](http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx)-Definitionen zu einer einzigen nicht umschlossenen Definition zusammenfassen, die von beiden Versionen der App genutzt wird.
 
 Nachdem die Pushbenachrichtigungen in der App aktiviert wurden, müssen Sie den mobilen Dienst aktualisieren und für den Versand von Pushbenachrichtigungen anpassen.
 
@@ -112,4 +112,4 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 [Verwenden eines .NET-Clients für Azure Mobile Services]: mobile-services-windows-dotnet-how-to-use-client-library.md
 [MobileServiceClient]: http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0309_2016-->

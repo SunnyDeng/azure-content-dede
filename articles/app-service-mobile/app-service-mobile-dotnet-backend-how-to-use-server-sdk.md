@@ -31,7 +31,7 @@ Die Referenzdokumentation für das Server-SDK finden Sie hier: [Azure Mobile App
 
 ## <a name="create-app"></a>Erstellen eines .NET-Back-Ends für Ihre mobile Anwendung
 
-Wenn Sie ein neues Projekt beginnen, können Sie entweder über das [Azure-Portal] oder mit Visual Studio eine App Service-Anwendung erstellen. In diesem Abschnitt wird erläutert, wie Sie mit einer dieser Komponenten ein neues Back-End für eine mobile Anwendung erstellen, das eine einfache Aufgabenlisten-API hostet. Sie können die Erstellung lokal vornehmen oder das Projekt in der cloudbasierten mobilen App Service-App veröffentlichen.
+Wenn Sie ein neues Projekt beginnen, können Sie entweder über das [Azure-Portal] oder mit Visual Studio eine App Service-Anwendung erstellen. In diesem Abschnitt wird erläutert, wie Sie mit einer dieser Komponenten ein neues Back-End für eine mobile Anwendung erstellen, das eine einfache Aufgabenlisten-API hostet. Sie können die Erstellung lokal vornehmen oder das Projekt in der cloudbasierten mobilen App Service-App veröffentlichen.
 
 Wenn Sie einem vorhandenen Projekt mobile Funktionen hinzufügen, lesen Sie weiter unten die Informationen im Abschnitt [Herunterladen und Initialisieren des SDKs](#install-sdk).
 
@@ -47,7 +47,7 @@ Sie können direkt im [Azure-Portal ] eine neue mobile Anwendung erstellen. Sie 
 
 ### Erstellen eines .NET-Back-Ends mithilfe von Visual Studio 2013 und Visual Studio 2015
 
-Um ein Mobile Apps-Projekt in Visual Studio zu erstellen, müssen Sie [Azure SDK für .NET](https://azure.microsoft.com/downloads/) (Version 2.8.1 oder höher) installieren. Erstellen Sie nach dem Installieren des SDKs eine neue ASP.NET-Anwendung:
+Um ein Mobile Apps-Projekt in Visual Studio zu erstellen, müssen Sie [Azure SDK für .NET](https://azure.microsoft.com/downloads/) (Version 2.8.1 oder höher) installieren. Erstellen Sie nach dem Installieren des SDKs eine neue ASP.NET-Anwendung:
 
 1. Öffnen Sie das Dialogfeld **Neues Projekt** (über *Datei* > **Neu** > **Projekt...**).
 
@@ -186,7 +186,7 @@ Der benutzerdefinierte API-Controller bietet Grundfunktionen für Ihr Mobile App
 
 1. Klicken Sie in Visual Studio mit der rechten Maustaste auf den Ordner "Controller", und klicken Sie dann auf **Hinzufügen** > **Controller**. Wählen Sie **Web-API 2-Controller &ndash;Empty**, und klicken Sie auf **Hinzufügen**.
 
-2. Geben Sie einen **Controllernamen** an, z. B. `CustomController`, und klicken Sie auf **Hinzufügen**. Dadurch wird eine neue **CustomController**-Klasse erstellt, die von **ApiController** erbt.
+2. Geben Sie einen **Controllernamen** an, z. B. `CustomController`, und klicken Sie auf **Hinzufügen**. Dadurch wird eine neue **CustomController**-Klasse erstellt, die von **ApiController** erbt.
 
 3. Fügen Sie in der neuen Controller-Klassendatei die folgende using-Anweisung hinzu:
 
@@ -212,7 +212,7 @@ Clients haben noch immer Zugriff auf alle Controller ohne angewendetes **MobileA
 
 ## Vorgehensweise: Verwenden der Authentifizierung
 
-Mobile Apps greift zur Vereinfachung der Authentifizierungsimplementierung in Ihre Apps auf die App Service-Authentifizierung und auf ASP.NET zurück. In diesem Abschnitt erfahren Sie, wie Sie die folgenden authentifizierungsbezogenen Aufgaben in Ihrem .NET-Back-End-Serverprojekt ausführen:
+Mobile Apps greift zur Vereinfachung der Authentifizierungsimplementierung in Ihre Apps auf die App Service-Authentifizierung und auf ASP.NET zurück. In diesem Abschnitt erfahren Sie, wie Sie die folgenden authentifizierungsbezogenen Aufgaben in Ihrem .NET-Back-End-Serverprojekt ausführen:
 
 + [Vorgehensweise: Authentifizierung zu einem Serverprojekt hinzufügen](#add-auth)
 + [Vorgehensweise: Verwenden einer benutzerdefinierten Authentifizierung für Ihre Anwendung](#custom-auth)
@@ -365,27 +365,40 @@ Sie können dem Serverprojekt Pushbenachrichtigungen hinzufügen, indem Sie das 
 
 An diesem Punkt können Sie den Notification Hubs-Client zum Senden von Pushbenachrichtigungen an registrierte Geräte verwenden. Weitere Informationen finden Sie unter [Hinzufügen von Pushbenachrichtigungen zur App](app-service-mobile-ios-get-started-push.md) Weitere Informationen zu allem, was mit Notification Hubs machbar ist, finden Sie unter [Übersicht über Notification Hubs](../notification-hubs/notification-hubs-overview.md).
 
-##<a name="tags"></a>Hinzufügen von Tags zu einer Geräteinstallation zum Aktivieren von Pushvorgängen an Tags
+##<a name="tags"></a>Gewusst wie: Hinzufügen von Tags zu einer Geräteinstallation zum Ermöglichen von zielgerichteten Pushvorgängen
 
-Gemäß den Schritten unter **Vorgehensweise: Definieren eines benutzerdefinierten API-Controllers** können Sie eine benutzerdefinierte API auf Ihrem Back-End einrichten, die mit Notification Hubs zusammenarbeitet, um Tags einer bestimmten Geräteinstallation hinzuzufügen. Stellen Sie sicher, dass Sie die im lokalen Clientspeicher gespeicherte Installations-ID und die hinzuzufügenden Tags übergeben. (Letzteres ist optional, da Sie Tags auch direkt auf Ihrem Back-End angeben können.) Fügen Sie Ihrem Controller den folgenden Ausschnitt für die Zusammenarbeit mit Notification Hubs hinzu, um ein Tag zu einer Geräteinstallations-ID hinzuzufügen.
+Mit Notification Hubs können Sie zielgerichtete Benachrichtigungen an spezielle Registrierungen senden, indem Sie Tags verwenden. Ein Tag, das automatisch erstellt wird, ist die Installations-ID, die speziell für eine Instanz der App auf einem bestimmten Gerät gilt. Eine Registrierung mit einer Installations-ID wird auch als *Installation* bezeichnet. Sie können die Installations-ID zum Verwalten einer Installation verwenden, z. B. zum Hinzufügen von Tags. Der Zugriff auf die Installations-ID ist über die **installationId**-Eigenschaft von **MobileServiceClient** möglich.
 
-Verwendung von [NuGet (Azure Notification Hubs)](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/) ([Referenz](https://msdn.microsoft.com/library/azure/mt414893.aspx)):
+Im folgenden Beispiel wird veranschaulicht, wie Sie eine Installations-ID verwenden, um ein Tag einer bestimmten Installation in Notification Hubs hinzuzufügen:
 
-		var hub = NotificationHubClient.CreateClientFromConnectionString("my-connection-string", "my-hub");
+	hub.PatchInstallation("my-installation-id", new[]
+	{
+	    new PartialUpdateOperation
+	    {
+	        Operation = UpdateOperationType.Add,
+	        Path = "/tags",
+	        Value = "{my-tag}"
+	    }
+	});
 
-		hub.PatchInstallation("my-installation-id", new[]
-		{
-		    new PartialUpdateOperation
-		    {
-		        Operation = UpdateOperationType.Add,
-		        Path = "/tags",
-		        Value = "{my-tag}"
-		    }
-		});
+Beachten Sie, dass alle Tags, die vom Client während der Registrierung von Pushbenachrichtigungen bereitgestellt werden, vom Back-End beim Erstellen der Installation ignoriert werden. Damit ein Client der Installation Tags hinzufügen kann, müssen Sie eine neue benutzerdefinierte API erstellen, die Tags nach dem obigen Muster hinzufügt. Ein Beispiel für einen benutzerdefinierten API-Controller, mit dem Clients einer Installation Tags hinzufügen können, finden Sie unter [Client-added push notification tags](https://github.com/Azure-Samples/app-service-mobile-dotnet-backend-quickstart/blob/master/README.md#client-added-push-notification-tags) (Vom Client hinzugefügte Tags für Pushbenachrichtigungen) als Teil des Beispiels „App Service Mobile Apps completed quickstart for .NET backend“.
 
-Verwenden Sie [Notification Hubs-APIs](https://msdn.microsoft.com/library/azure/dn495101.aspx), um einen Pushvorgang an diese Tags auszuführen.
+##<a name="push-user"></a>Gewusst wie: Senden von Pushbenachrichtigungen an einen authentifizierten Benutzer
 
-Sie können Ihre benutzerdefinierte API auch so einrichten, dass Geräteinstallationen mit Notification Hubs direkt auf Ihrem Back-End registriert werden.
+Wenn ein authentifizierter Benutzer für Pushbenachrichtigungen registriert wird, wird der Registrierung automatisch ein Tag mit der Benutzer-ID hinzugefügt. Mithilfe dieses Tags können Sie Pushbenachrichtigungen an alle Geräte senden, die von einem bestimmten Benutzer registriert wurden. Mit dem folgenden Code wird die SID des Benutzers abgerufen, der die Anforderung stellt, und an jede Geräteregistrierung für diesen Benutzer wird eine Pushbenachrichtigungsvorlage gesendet:
+
+    // Get the current user SID and create a tag for the current user.
+    var claimsPrincipal = this.User as ClaimsPrincipal;
+    string sid = claimsPrincipal.FindFirst(ClaimTypes.NameIdentifier).Value;
+    string userTag = "_UserId:" + sid;
+
+    // Build a dictionary for the template with the item message text.
+    var notification = new Dictionary<string, string> { { "message", item.Text } };
+
+    // Send a template notification to the user ID.
+    await hub.SendTemplateNotificationAsync(notification, userTag);
+    
+Stellen Sie vor der Registrierung für Pushbenachrichtigungen von einem authentifizierten Client sicher, dass die Authentifizierung abgeschlossen ist. Weitere Informationen finden Sie unter [Push to users](https://github.com/Azure-Samples/app-service-mobile-dotnet-backend-quickstart/blob/master/README.md#push-to-users) (Push an Benutzer) im Beispiel „App Service Mobile Apps completed quickstart for .NET backend“.
 
 ## Vorgehensweise: Debuggen und Problembehandlung des .NET-Server-SDKs
 
@@ -397,7 +410,7 @@ Azure App Service stellt mehrere Debug- und Problembehandlungsverfahren für ASP
 
 ### Protokollierung
 
-Zum Schreiben in App Service-Diagnoseprotokolle kann das standardmäßige Schreiben von ASP.NET-Ablaufverfolgungen verwendet werden. Um in die Protokolle schreiben zu können, müssen Sie in Ihrem Mobile App-Back-End die Diagnose aktivieren.
+Zum Schreiben in App Service-Diagnoseprotokolle kann das standardmäßige Schreiben von ASP.NET-Ablaufverfolgungen verwendet werden. Um in die Protokolle schreiben zu können, müssen Sie in Ihrem Mobile App-Back-End die Diagnose aktivieren.
 
 So können Sie die Diagnose aktivieren und in die Protokolle schreiben:
 
@@ -407,12 +420,12 @@ So können Sie die Diagnose aktivieren und in die Protokolle schreiben:
 
 		using System.Web.Http.Tracing;
 
-3. Erstellen Sie wie folgt einen Ablaufverfolgungs-Writer für Schreibvorgänge aus dem .NET Back-End in die Diagnoseprotokolle:
+3. Erstellen Sie wie folgt einen Ablaufverfolgungs-Writer für Schreibvorgänge aus dem .NET Back-End in die Diagnoseprotokolle:
 
 		ITraceWriter traceWriter = this.Configuration.Services.GetTraceWriter();
 		traceWriter.Info("Hello, World");
 
-4. Veröffentlichen Sie Ihr Serverprojekt neu, und greifen Sie auf das Mobile App-Back-End zu, um den Codepfad mit der Protokollierung auszuführen.
+4. Veröffentlichen Sie Ihr Serverprojekt neu, und greifen Sie auf das Mobile App-Back-End zu, um den Codepfad mit der Protokollierung auszuführen.
 
 5. Gehen Sie zum Herunterladen und Auswerten der Protokolle wie unter [Vorgehensweise: Herunterladen von Protokollen](../app-service-web/web-sites-enable-diagnostic-log.md#download) beschrieben vor.
 
@@ -445,4 +458,4 @@ Ihr lokal ausgeführter Server kann nun Token überprüfen, die der Client vom c
 [Microsoft.Azure.Mobile.Server.Login]: http://www.nuget.org/packages/Microsoft.Azure.Mobile.Server.Login/
 [Microsoft.Azure.Mobile.Server.Notifications]: http://www.nuget.org/packages/Microsoft.Azure.Mobile.Server.Notifications/
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0309_2016-->

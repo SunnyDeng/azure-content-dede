@@ -12,14 +12,10 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/16/2016" 
+	ms.date="03/02/2016" 
 	ms.author="awills"/>
 
 # Erstellen einer neuen Application Insights-Ressource
-
-
-
-[AZURE.INCLUDE [app-insights-selector-get-started](../../includes/app-insights-selector-get-started.md)]
 
 Visual Studio Application Insights zeigt Daten über Ihre Anwendung in einer Microsoft Azure-*Ressource* an. Die Erstellung einer neuen Ressource gehört daher zur [Einrichtung von Application Insights, um eine neue Anwendung zu überwachen][start]. In vielen Fällen kann dies automatisch über die IDE erfolgen. Diese Methode wird nach Möglichkeit empfohlen. In einigen Fällen wird eine Ressource jedoch manuell erstellt.
 
@@ -94,4 +90,4 @@ Sie können ein [PowerShell-Skript](app-insights-powershell-script-create-resour
 
  
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0309_2016-->

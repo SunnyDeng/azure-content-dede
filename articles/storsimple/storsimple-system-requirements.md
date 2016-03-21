@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD" 
-   ms.date="02/04/2016"
+   ms.date="03/04/2016"
    ms.author="alkohli"/>
 
 # StorSimple-Software, hohe Verfügbarkeit und Netzwerkanforderungen
@@ -35,10 +35,10 @@ Die folgenden Softwareanforderungen gelten für Speicherclients, die auf das Sto
 
 | Unterstützte Betriebssysteme | Erforderliche Version | Weitere Anforderungen/Hinweise |
 | --------------------------- | ---------------- | ------------- |
-| Windows Server | 2008 R2 SP1, 2012, 2012 R2 |StorSimple iSCSI-Volumes werden nur für die Verwendung auf den folgenden Windows-Datenträgertypen unterstützt:<ul><li>Einfaches Volume auf einfachem Datenträger</li><li>Einfaches und gespiegeltes Volume auf dynamischem Datenträger</li></ul>Schlanke Speicherzuweisung für Windows Server 2012 und ODX-Features werden bei Verwendung eines StorSimple iSCSI-Volumes unterstützt.<br><br>Mit StorSimple können Volumes mit schlanker und vollständiger Speicherzuweisung erstellt werden. Es können damit keine teilweise bereitgestellten Volumes erstellt werden.<br><br>Das erneute Formatieren eines mit schlanker Speicherzuweisung erstellten Volumes kann lange dauern. Es wird empfohlen, das Volume zu löschen und dann ein neues Volume zu erstellen, anstatt neu zu formatieren. Falls Sie trotzdem das Neuformatieren eines Volumes vorziehen:<ul><li>Führen Sie vor dem Neuformatieren den folgenden Befehl aus, um Verzögerungen bei der Speicherplatzrückgewinnung zu vermeiden: <br>`fsutil behavior set disabledeletenotify 1`</br></li><li>Verwenden Sie nach Abschluss der Formatierung den folgenden Befehl, um die Speicherplatzrückgewinnung wieder zu aktivieren:<br>`fsutil behavior set disabledeletenotify 0`</br></li><li>Wenden Sie den Windows Server 2012-Hotfix, der unter [KB2878635](https://support.microsoft.com/kb/2870270) beschrieben ist, auf Ihren Windows Server-Computer an.</li></ul></li></ul></ul> Greifen Sie auf [Softwareanforderungen für optionale Komponenten](#software-requirements-for-optional-components) zu, wenn Sie StorSimple Snapshot Manager oder den StorSimple-Adapter für SharePoint konfigurieren.|
-| VMWare ESX | 5\.1 und 5.5 | Wird für VMware vSphere als iSCSI-Client unterstützt. Die VAAI-Blockfunktion wird für VMware vSphere auf StorSimple-Geräten unterstützt. 
-| Linux RHEL/CentOS | 5 und 6 | Unterstützung für Linux-iSCSI-Clients mit Open-iSCSI-Initiator, Versionen 5 und 6. |
-| Linux | SUSE Linux 11 | |
+| Windows Server | 2008 R2 SP1, 2012, 2012 R2 |StorSimple iSCSI-Volumes werden nur für die Verwendung auf den folgenden Windows-Datenträgertypen unterstützt:<ul><li>Einfaches Volume auf einfachem Datenträger</li><li>Einfaches und gespiegeltes Volume auf dynamischem Datenträger</li></ul>Schlanke Speicherzuweisung für Windows Server 2012 und ODX-Features werden bei Verwendung eines StorSimple iSCSI-Volumes unterstützt.<br><br>Mit StorSimple können Volumes mit schlanker und vollständiger Speicherzuweisung erstellt werden. Es können damit keine teilweise bereitgestellten Volumes erstellt werden.<br><br>Das erneute Formatieren eines mit schlanker Speicherzuweisung erstellten Volumes kann lange dauern. Es wird empfohlen, das Volume zu löschen und dann ein neues Volume zu erstellen, anstatt neu zu formatieren. Falls Sie trotzdem das Neuformatieren eines Volumes vorziehen:<ul><li>Führen Sie vor dem Neuformatieren den folgenden Befehl aus, um Verzögerungen bei der Speicherplatzrückgewinnung zu vermeiden: <br>`fsutil behavior set disabledeletenotify 1`</br></li><li>Verwenden Sie nach Abschluss der Formatierung den folgenden Befehl, um die Speicherplatzrückgewinnung wieder zu aktivieren:<br>`fsutil behavior set disabledeletenotify 0`</br></li><li>Wenden Sie den Windows Server 2012-Hotfix, der unter [KB2878635](https://support.microsoft.com/kb/2870270) beschrieben ist, auf Ihren Windows Server-Computer an.</li></ul></li></ul></ul> Greifen Sie auf [Softwareanforderungen für optionale Komponenten](#software-requirements-for-optional-components) zu, wenn Sie StorSimple Snapshot Manager oder den StorSimple-Adapter für SharePoint konfigurieren.|
+| VMWare ESX | 5\.1, 5.5 und 6.0 | Wird für VMware vSphere als iSCSI-Client unterstützt. Die VAAI-Blockfunktion wird für VMware vSphere auf StorSimple-Geräten unterstützt. 
+| Linux RHEL/CentOS | 5 und 6 | Unterstützung für Linux-iSCSI-Clients mit Open-iSCSI-Initiator, Versionen 5 und 6. |
+| Linux | SUSE Linux 11 | |
  > [AZURE.NOTE] IBM AIX wird für StorSimple derzeit nicht unterstützt.
 
 ## Softwareanforderungen für optionale Komponenten
@@ -47,20 +47,20 @@ Die folgenden Sofwareanforderungen gelten für die optionalen StorSimple-Kompone
 
 | Komponente | Hostplattform | Weitere Anforderungen/Hinweise |
 | --------------------------- | ---------------- | ------------- |
-| StorSimple Snapshot Manager | Windows Server 2008R2 SP1, 2012, 2012R2 | Die Verwendung für StorSimple Snapshot Manager unter Windows Server ist für die Sicherung/Wiederherstellung von gespiegelten dynamischen Datenträgern und für alle anwendungskonsistenten Sicherungen erforderlich.<br> StorSimple Snapshot Manager wird nur unter Windows Server 2008 R2 SP1 (64 Bit), Windows 2012 R2 und Windows Server 2012 unterstützt.<ul><li>Wenn Sie Window Server 2012 verwenden, müssen Sie .NET 3.5 - 4.5 installieren, bevor Sie StorSimple Snapshot Manager installieren.</li><li>Wenn Sie Windows Server 2008 R2 SP1 verwenden, müssen Sie Windows Management Framework 3.0 installieren, bevor Sie StorSimple Snapshot Manager installieren.</li></ul> |
-| StorSimple-Adapter für SharePoint | Windows Server 2008R2 SP1, 2012, 2012R2 |<ul><li>StorSimple-Adapter für SharePoint wird nur unter SharePoint 2010 und SharePoint 2013 unterstützt.</li><li>RBS erfordert SQL Server Enterprise Edition, Version 2008 R2 oder 2012.</li></ul>|
+| StorSimple Snapshot Manager | Windows Server 2008R2 SP1, 2012, 2012R2 | Die Verwendung für StorSimple Snapshot Manager unter Windows Server ist für die Sicherung/Wiederherstellung von gespiegelten dynamischen Datenträgern und für alle anwendungskonsistenten Sicherungen erforderlich.<br> StorSimple Snapshot Manager wird nur unter Windows Server 2008 R2 SP1 (64 Bit), Windows 2012 R2 und Windows Server 2012 unterstützt.<ul><li>Wenn Sie Window Server 2012 verwenden, müssen Sie .NET 3.5 - 4.5 installieren, bevor Sie StorSimple Snapshot Manager installieren.</li><li>Wenn Sie Windows Server 2008 R2 SP1 verwenden, müssen Sie Windows Management Framework 3.0 installieren, bevor Sie StorSimple Snapshot Manager installieren.</li></ul> |
+| StorSimple-Adapter für SharePoint | Windows Server 2008R2 SP1, 2012, 2012R2 |<ul><li>StorSimple-Adapter für SharePoint wird nur unter SharePoint 2010 und SharePoint 2013 unterstützt.</li><li>RBS erfordert SQL Server Enterprise Edition, Version 2008 R2 oder 2012.</li></ul>|
  
 ## Netzwerkanforderungen für Ihr StorSimple-Gerät
 
-Das StorSimple-Gerät ist ein gesperrtes Gerät. Allerdings müssen Ports in der Firewall für iSCSI-, Cloud- oder Verwaltungsdatenverkehr geöffnet werden. In der folgenden Tabelle sind die Ports aufgeführt, die in der Firewall geöffnet werden müssen. In dieser Tabelle bezieht sich *ein* oder *eingehend* auf die Richtung, aus der eingehende Clientanforderungen auf das Gerät zugreifen. Entsprechend bezieht sich *aus* oder *ausgehend* auf die Richtung, in der das StorSimple-Gerät Daten über die Bereitstellung hinaus an externe Ziele sendet: z. B. ausgehende Verbindungen mit dem Internet.
+Das StorSimple-Gerät ist ein gesperrtes Gerät. Allerdings müssen Ports in der Firewall für iSCSI-, Cloud- oder Verwaltungsdatenverkehr geöffnet werden. In der folgenden Tabelle sind die Ports aufgeführt, die in der Firewall geöffnet werden müssen. In dieser Tabelle bezieht sich *ein* oder *eingehend* auf die Richtung, aus der eingehende Clientanforderungen auf das Gerät zugreifen. Entsprechend bezieht sich *aus* oder *ausgehend* auf die Richtung, in der das StorSimple-Gerät Daten über die Bereitstellung hinaus an externe Ziele sendet: z. B. ausgehende Verbindungen mit dem Internet.
 
 | Portnr.<sup>1,2</sup> | ein oder aus | Portbereich | Erforderlich | Hinweise |
 |------------------------|-----------|------------|----------|-------| 
-|TCP 80 (HTTP)<sup>3</sup>| aus | WAN | Nein |<ul><li>Der ausgehende Port wird für den Internetzugriff zum Abrufen von Updates verwendet.</li><li>Der ausgehende Webproxy ist vom Benutzer konfigurierbar.</li><li>Zum Ermöglichen von Systemupdates muss dieser Port auch für die festen IP-Adressen des Controllers geöffnet sein.</li></ul> |
-|TCP 443 (HTTPS)<sup>3</sup>| aus | WAN | Ja |<ul><li>Der ausgehende Port wird für den Zugriff auf Daten in der Cloud verwendet.</li><li>Der ausgehende Webproxy ist vom Benutzer konfigurierbar.</li><li>Zum Ermöglichen von Systemupdates muss dieser Port auch für die festen IP-Adressen des Controllers geöffnet sein.</li></ul>|
-|UDP 53 (DNS) | aus | WAN | In einigen Fällen; siehe Hinweise. |Dieser Port ist nur dann erforderlich, wenn Sie einen internetbasierten DNS-Server verwenden. |
-| UDP 123 (NTP) | aus | WAN | In einigen Fällen; siehe Hinweise. |Dieser Port ist nur dann erforderlich, wenn Sie einen internetbasierten NTP-Server verwenden. |
-| TCP 9354 | aus | WAN | Ja |Der ausgehende Port wird vom StorSimple-Gerät für die Kommunikation mit dem StorSimple Manager-Dienst verwendet. |
+|TCP 80 (HTTP)<sup>3</sup>| aus | WAN | Nein |<ul><li>Der ausgehende Port wird für den Internetzugriff zum Abrufen von Updates verwendet.</li><li>Der ausgehende Webproxy ist vom Benutzer konfigurierbar.</li><li>Zum Ermöglichen von Systemupdates muss dieser Port auch für die festen IP-Adressen des Controllers geöffnet sein.</li></ul> |
+|TCP 443 (HTTPS)<sup>3</sup>| aus | WAN | Ja |<ul><li>Der ausgehende Port wird für den Zugriff auf Daten in der Cloud verwendet.</li><li>Der ausgehende Webproxy ist vom Benutzer konfigurierbar.</li><li>Zum Ermöglichen von Systemupdates muss dieser Port auch für die festen IP-Adressen des Controllers geöffnet sein.</li></ul>|
+|UDP 53 (DNS) | aus | WAN | In einigen Fällen; siehe Hinweise. |Dieser Port ist nur dann erforderlich, wenn Sie einen internetbasierten DNS-Server verwenden. |
+| UDP 123 (NTP) | aus | WAN | In einigen Fällen; siehe Hinweise. |Dieser Port ist nur dann erforderlich, wenn Sie einen internetbasierten NTP-Server verwenden. |
+| TCP 9354 | aus | WAN | Ja |Der ausgehende Port wird vom StorSimple-Gerät für die Kommunikation mit dem StorSimple Manager-Dienst verwendet. |
 | 3260 (iSCSI) | Geben Sie in | LAN | Nein | Dieser Port wird für den Datenzugriff über iSCSI verwendet.|
 | 5985 | Geben Sie in | LAN | Nein | Der eingehende Port wird vom StorSimple-Momentaufnahme-Manager für die Kommunikation mit dem StorSimple-Gerät verwendet.<br>Dieser Port wird auch verwendet, wenn Sie eine Remoteverbindung mit Windows PowerShell für StorSimple über HTTP herstellen. |
 | 5986 | Geben Sie in | LAN | Nein | Dieser Port wird verwendet, wenn Sie eine Remoteverbindung mit Windows PowerShell für StorSimple über HTTPS herstellen. |
@@ -83,18 +83,18 @@ Die Algorithmen der Routingmetrik unterscheiden sich je nach Version der Softwar
 
 **Versionen vor Update 1**
 
-Dazu gehören Softwareversionen vor Update 1, z. B. die GA oder die Versionen 0.1, 0.2 oder 0.3. Die auf der Routingmetrik basierende Reihenfolge lautet wie folgt:
+Dazu gehören Softwareversionen vor Update 1, z. B. die GA oder die Versionen 0.1, 0.2 oder 0.3. Die auf der Routingmetrik basierende Reihenfolge lautet wie folgt:
 
    *Zuletzt konfigurierte 10-GbE-Netzwerkschnittstelle > andere 10-GbE-Netzwerkschnittstelle > zuletzt konfigurierte 1-GbE-Netzwerkschnittstelle > andere 1-GbE-Netzwerkschnittstelle*
 
 
-**Versionen ab Update 1 und vor Update 2**
+**Versionen ab Update 1 und vor Update 2**
 
-Dazu gehören Softwareversionen wie z. B. 1, 1.1 und 1.2. Die auf der Routingmetrik basierende Reihenfolge wird folgendermaßen festgelegt:
+Dazu gehören Softwareversionen wie z. B. 1, 1.1 und 1.2. Die auf der Routingmetrik basierende Reihenfolge wird folgendermaßen festgelegt:
 
-   *DATA 0 > zuletzt konfigurierte 10-GbE-Netzwerkschnittstelle > andere 10-GbE-Netzwerkschnittstelle > zuletzt konfigurierte 1-GbE-Netzwerkschnittstelle > andere 1-GbE-Netzwerkschnittstelle*
+   *DATA 0 > zuletzt konfigurierte 10-GbE-Netzwerkschnittstelle > andere 10-GbE-Netzwerkschnittstelle > zuletzt konfigurierte 1-GbE-Netzwerkschnittstelle > andere 1-GbE-Netzwerkschnittstelle*
 
-   In Update 1 ist DATA 0 die niedrigste Routingmetrik. Daher wird der gesamte Datenverkehr der Cloud über DATA 0 weitergeleitet. Notieren Sie sich dies, wenn es mehrere Cloud-Netzwerkschnittstellen auf dem StorSimple-Gerät gibt.
+   In Update 1 ist DATA 0 die niedrigste Routingmetrik. Daher wird der gesamte Datenverkehr der Cloud über DATA 0 weitergeleitet. Notieren Sie sich dies, wenn es mehrere Cloud-Netzwerkschnittstellen auf dem StorSimple-Gerät gibt.
 
 
 **Versionen ab Update 2**
@@ -122,16 +122,16 @@ Update 2 umfasst mehrere netzwerkbezogene Verbesserungen, und die Routingmetrik 
 
 	Dies lässt sich anhand des folgenden Beispiels erläutern:
 
-	Stellen Sie sich ein StorSimple-Gerät mit zwei cloudfähigen Netzwerkschnittstellen vor, Data 0 und Data 5. Data 1 bis Data 4 sind nicht cloudfähig, weisen jedoch ein konfiguriertes Gateway auf. Der Datenverkehr für dieses Gerät wird in folgender Reihenfolge weitergeleitet:
+	Stellen Sie sich ein StorSimple-Gerät mit zwei cloudfähigen Netzwerkschnittstellen vor, Data 0 und Data 5. Data 1 bis Data 4 sind nicht cloudfähig, weisen jedoch ein konfiguriertes Gateway auf. Der Datenverkehr für dieses Gerät wird in folgender Reihenfolge weitergeleitet:
 
 	*Data 0 (1) > Data 5 (6) > Data 1 (20) > Data 2 (30) > Data 3 (40) > Data 4 (50)*
 	
 	*Die Zahlen in Klammern geben die jeweilige Routingmetrik an.*
 	
-	Wenn Data 0 einen Fehler verursacht, wird der Clouddatenverkehr über Data 5 weitergeleitet. Falls ein Gateway auf dem gesamten übrigen Netzwerk konfiguriert ist, verläuft der Clouddatenverkehr bei einem Ausfall von Data 0 und Data 5 über Data 1.
+	Wenn Data 0 einen Fehler verursacht, wird der Clouddatenverkehr über Data 5 weitergeleitet. Falls ein Gateway auf dem gesamten übrigen Netzwerk konfiguriert ist, verläuft der Clouddatenverkehr bei einem Ausfall von Data 0 und Data 5 über Data 1.
  
 
-- Wenn auf einer cloudfähigen Netzwerkschnittstelle ein Fehler auftritt, werden mit 30 Sekunden Verzögerung drei weitere Versuche zum Herstellen einer Verbindung mit der Schnittstelle unternommen. Wenn kein Versuch zum Erfolg führt, wird der Datenverkehr anhand der Routingtabelle an die nächste verfügbare cloudfähige Schnittstelle geroutet. Wenn sämtliche cloudfähigen Netzwerkschnittstellen einen Fehler verursachen, führt das Gerät ein Failover zum anderen Controller durch (in diesem Fall findet kein Neustart statt).
+- Wenn auf einer cloudfähigen Netzwerkschnittstelle ein Fehler auftritt, werden mit 30 Sekunden Verzögerung drei weitere Versuche zum Herstellen einer Verbindung mit der Schnittstelle unternommen. Wenn kein Versuch zum Erfolg führt, wird der Datenverkehr anhand der Routingtabelle an die nächste verfügbare cloudfähige Schnittstelle geroutet. Wenn sämtliche cloudfähigen Netzwerkschnittstellen einen Fehler verursachen, führt das Gerät ein Failover zum anderen Controller durch (in diesem Fall findet kein Neustart statt).
 	
 - Wenn ein VIP-Fehler für eine iSCSI-aktivierte Netzwerkschnittstelle vorliegt, werden drei Wiederholungsversuche mit einer Verzögerung von 2 Sekunden unternommen. Dieses Verhalten ist seit früheren Versionen gleich geblieben. Wenn alle iSCSI-Netzwerkschnittstellen einen Fehler verursachen, wird ein Controllerfailover (zusammen mit einem Neustart) durchgeführt.
 
@@ -142,20 +142,20 @@ Update 2 umfasst mehrere netzwerkbezogene Verbesserungen, und die Routingmetrik 
 
 	Im folgenden Beispiel sind für ein StorSimple-Gerät zwei Netzwerkschnittstellen aktiviert, Data 0 und Data 1. Data 0 ist cloudfähig, Data 1 ist sowohl cloudfähig als auch iSCSI-aktiviert. Keine anderen Netzwerkschnittstellen auf diesem Gerät sind für die Cloud oder iSCSI aktiviert.
 		
-	Wenn bei Data 1 ein Fehler auftritt und es sich dabei um die letzte iSCSI-Netzwerkschnittstelle handelt, führt dies zu einem Controllerfailover auf Data 1 auf dem anderen Controller.
+	Wenn bei Data 1 ein Fehler auftritt und es sich dabei um die letzte iSCSI-Netzwerkschnittstelle handelt, führt dies zu einem Controllerfailover auf Data 1 auf dem anderen Controller.
 
 
 ### Bewährte Methoden für Netzwerke
 
 Befolgen Sie zusätzlich zu den oben genannten Netzwerkanforderungen die folgenden bewährten Methoden, um eine optimale Leistung für Ihre StorSimple-Lösung zu gewährleisten:
 
-- Stellen Sie sicher, dass für das StorSimple-Gerät jederzeit eine dedizierte Bandbreite von 40 MBit/s (oder mehr) zur Verfügung steht. Diese Bandbreite sollte nicht gemeinsam mit anderen Anwendungen genutzt werden.
+- Stellen Sie sicher, dass für das StorSimple-Gerät jederzeit eine dedizierte Bandbreite von 40 MBit/s (oder mehr) zur Verfügung steht. Diese Bandbreite sollte nicht gemeinsam mit anderen Anwendungen genutzt werden.
 
 - Stellen Sie sicher, dass jederzeit eine Netzwerkverbindung mit dem Internet verfügbar ist. Zeitweise unterbrochene oder unzuverlässige Internetverbindungen mit den Geräten, also auch eine Unterbrechung der Internetverbindung, führt zu einer nicht unterstützten Konfiguration.
 
 - Isolieren Sie den Datenverkehr für iSCSI und Cloud durch Verwendung jeweils eigener Netzwerkschnittstellen auf dem Gerät für den iSCSI- und Cloudzugriff. Weitere Informationen finden Sie unter [Ändern von Netzwerkschnittstellen](storsimple-modify-device-config.md#modify-network-interfaces) für das StorSimple-Gerät.
 
-- Verwenden Sie keine Link Aggregation Protocol-Konfiguration (LACP) für die Netzwerkschnittstellen. Dies ist eine nicht unterstützte Konfiguration.
+- Verwenden Sie keine Link Aggregation Control Protocol-Konfiguration (LACP) für die Netzwerkschnittstellen. Dies ist eine nicht unterstützte Konfiguration.
 
 
 ## Anforderungen an hohe Verfügbarkeit für StorSimple
@@ -211,7 +211,7 @@ Die Controllermodule von StorSimple-Geräten verfügen jeweils über vier 1-Giga
 
 - Verwenden Sie nach Möglichkeit auf Servern MPIO, damit die Server Fehler bei Links, dem Netzwerk oder einzelnen Schnittstellen tolerieren können.
 
-Informationen zur Einbindung Ihres Geräts in das Netzwerk, um eine hohe Verfügbarkeit und Leistung zu erzielen, finden Sie unter [Installieren des StorSimple 8100-Geräts](storsimple-8100-hardware-installation.md#cable-your-storsimple-8100-device) bzw. [Installieren des StorSimple 8600-Geräts](storsimple-8600-hardware-installation.md#cable-your-storsimple-8600-device).
+Informationen zur Einbindung Ihres Geräts in das Netzwerk, um eine hohe Verfügbarkeit und Leistung zu erzielen, finden Sie unter [Installieren des StorSimple 8100-Geräts](storsimple-8100-hardware-installation.md#cable-your-storsimple-8100-device) bzw. [Installieren des StorSimple 8600-Geräts](storsimple-8600-hardware-installation.md#cable-your-storsimple-8600-device).
 
 #### SSDs und HDDs
 
@@ -231,7 +231,7 @@ StorSimple-Geräte enthalten Solid-State-Datenträger (SSDs) und Festplattenlauf
 
 #### EBOD-Gehäuse
 
-StorSimple-Geräte des Modells 8600 bieten zusätzlich zum normalen Gehäuse ein EBOD (Extended Bunch of Disks)-Gehäuse. Ein EBOD enthält EBOD-Controller und Festplattenlaufwerke (HDDs), die mit gespiegelten Speicherbereichen geschützt werden. Durch die Verwendung von gespiegelten Speicherbereichen wird sichergestellt, dass das Gerät Fehler von einzelnen oder mehreren HDDs tolerieren kann. Das EBOD-Gehäuse ist mit dem primären Gehäuse über redundante SAS-Kabel verbunden.
+StorSimple-Geräte des Modells 8600 bieten zusätzlich zum normalen Gehäuse ein EBOD (Extended Bunch of Disks)-Gehäuse. Ein EBOD enthält EBOD-Controller und Festplattenlaufwerke (HDDs), die mit gespiegelten Speicherbereichen geschützt werden. Durch die Verwendung von gespiegelten Speicherbereichen wird sichergestellt, dass das Gerät Fehler von einzelnen oder mehreren HDDs tolerieren kann. Das EBOD-Gehäuse ist mit dem primären Gehäuse über redundante SAS-Kabel verbunden.
 
 - Stellen Sie sicher, dass beide Controllermodule der EBOD-Gehäuse, beide SAS-Kabel und alle Festplatten jederzeit installiert sind.
 
@@ -251,7 +251,7 @@ Lesen Sie sich diese bewährten Methoden sorgfältig durch, um eine hohe Verfüg
 
 - Konfigurieren von StorSimple mit [Dateiserverclustern mit zwei Knoten][1]. Wenn Sie einzelne Fehlerquellen eliminieren und auf Hostseite Redundanz erzeugen, wird die gesamte Lösung höher verfügbar.
 
-- Verwenden Sie die in Windows Server 2012 (SMB 3.0) verfügbaren permanent verfügbaren Freigaben für eine hohe Verfügbarkeit während Failovern der Speichercontroller. Weitere Informationen zum Konfigurieren von Dateiserverclustern und permanent verfügbaren Freigaben mit Windows Server 2012 erhalten Sie in diesem [Vorführvideo](http://channel9.msdn.com/Events/IT-Camps/IT-Camps-On-Demand-Windows-Server-2012/DEMO-Continuously-Available-File-Shares) (in englischer Sprache).
+- Verwenden Sie die in Windows Server 2012 (SMB 3.0) verfügbaren permanent verfügbaren Freigaben für eine hohe Verfügbarkeit während Failovern der Speichercontroller. Weitere Informationen zum Konfigurieren von Dateiserverclustern und permanent verfügbaren Freigaben mit Windows Server 2012 erhalten Sie in diesem [Vorführvideo](http://channel9.msdn.com/Events/IT-Camps/IT-Camps-On-Demand-Windows-Server-2012/DEMO-Continuously-Available-File-Shares) (in englischer Sprache).
 
 ## Nächste Schritte
 
@@ -261,4 +261,4 @@ Lesen Sie sich diese bewährten Methoden sorgfältig durch, um eine hohe Verfüg
 <!--Reference links-->
 [1]: https://technet.microsoft.com/library/cc731844(v=WS.10).aspx
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0309_2016-->

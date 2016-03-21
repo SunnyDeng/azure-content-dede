@@ -19,8 +19,8 @@
 
 # Überwachen und Verwalten von Azure Data Factory-Pipelines
 > [AZURE.SELECTOR]
-- [Using Azure Portal/Azure PowerShell](data-factory-monitor-manage-pipelines.md)
-- [Using Monitoring and Management App](data-factory-monitor-manage-app.md)
+- [Verwenden des Azure-Portals/Azure PowerShell](data-factory-monitor-manage-pipelines.md)
+- [Verwenden der App „Überwachung und Verwaltung“](data-factory-monitor-manage-app.md)
 
 Der Data Factory-Dienst bietet eine zuverlässige und umfassende Ansicht der Speicherungs-, Verarbeitungs- und Datenverschiebungsdienste. Der Dienst hilft Ihnen, die Integrität der Datenpipeline von A bis Z schnell zu bewerten, Probleme auszumachen und Korrekturmaßnahmen zu ergreifen. Sie können auch die Datenherkunft und die Beziehungen zwischen Ihrer Daten in allen Ihren Quellen visuell nachverfolgen und eine vollständige Verlaufsübersicht von Auftragsausführung, Systemstatus und Abhängigkeiten in einem zentralen Überwachungsdashboard anzeigen.
 
@@ -349,7 +349,7 @@ Die folgende Tabelle enthält eine Liste der verfügbaren Vorgänge und Status (
 Vorgangsname | Status | Unterstatus
 -------------- | ------ | ----------
 RunStarted | Started | Starting
-RunFinished | Failed / Succeeded | <p>FailedResourceAllocation</p><p>Succeeded</p><p>FailedExecution</p><p>TimedOut</p><p><Canceled/p><p>FailedValidation</p><p>Abandoned</p>
+RunFinished | Failed / Succeeded | FailedResourceAllocation<br/><br/>Succeeded<br/><br/>FailedExecution<br/><br/>TimedOut<br/><br/><Canceled<br/><br/>FailedValidation<br/><br/>Abandoned
 OnDemandClusterCreateStarted | Gestartet
 OnDemandClusterCreateSuccessful | Succeeded
 OnDemandClusterDeleted | Succeeded
@@ -545,7 +545,9 @@ Sie können Warnungen zu Metriken auf die gleiche Weise wie zu Ereignissen berei
  
 Ersetzen Sie "subscriptionId", "resourceGroupName" und "dataFactoryName" im obigen Beispiel durch die entsprechenden Werte.
 
-*metricName* unterstützt ab jetzt zwei Werte: "FailedRuns" und "SuccessfulRuns".
+*MetricName* unterstützt ab jetzt zwei Werte:
+- FailedRuns
+- SuccessfulRuns
 
 **Bereitstellen der Warnung:**
 
@@ -573,7 +575,7 @@ Folgende Meldung sollte nach erfolgreicher Bereitstellung angezeigt werden:
 Zum Bereitstellen einer Warnungsregel können Sie auch das Cmdlet **Add-AlertRule** verwenden. Ausführliche Informationen und Beispiele finden Sie im Thema [Add-AlertRule](https://msdn.microsoft.com/library/mt282468.aspx).
 
 ## Verschieben von Data Factory in eine andere Ressourcengruppe oder ein anderes Abonnement
-Sie können eine Data Factory mithilfe der Schaltfläche **Verschieben** auf der Befehlsleiste auf der Homepage Ihrer Data Factory in eine andere Ressourcengruppe oder ein anders Abonnement verschieben.
+Sie können eine Data Factory mithilfe der Schaltfläche **Verschieben** in der Befehlsleiste auf der Homepage Ihrer Data Factory in eine andere Ressourcengruppe oder ein anderes Abonnement verschieben.
 
 ![Data Factory verschieben](./media/data-factory-monitor-manage-pipelines/MoveDataFactory.png)
 
@@ -581,4 +583,4 @@ Sie können auch alle zugehörigen Ressourcen (z. B. mit der Data Factory verkn�
 
 ![Dialogfeld „Ressourcen verschieben“](./media/data-factory-monitor-manage-pipelines/MoveResources.png)
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0309_2016-->

@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/04/2015" 
+	ms.date="03/06/2016" 
 	ms.author="awills"/>
 
 #  Application Insights für Microsoft Azure-Apps
@@ -28,8 +28,13 @@ Welche Art von App verwenden Sie?
 
 * [Azure-Web-App](app-insights-asp-net.md)
 * [Azure Cloud Services-App – Web- und Workerrollen](app-insights-cloudservices.md)
-* [Web-App unter IIS in Azure VM](../app-insights-asp-net.md)
+* [Web-App unter IIS in Azure VM](app-insights-asp-net.md)
 * [Anwendung außerhalb von Azure](app-insights-overview.md)
+
+
+Zusätzliche Telemetriedaten
+
+* [Anzeigen von Azure-Diagnoseprotokollen in Application Insights](app-insights-azure-diagnostics.md)
 
 
 
@@ -40,4 +45,4 @@ Welche Art von App verwenden Sie?
 
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0309_2016-->

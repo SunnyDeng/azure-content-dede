@@ -3,8 +3,8 @@
    description="Azure-Suchdienst-REST-API Version 2015-02-28-Preview beinhaltet experimentelle Features wie Natural Language-Analyseprogramme und moreLikeThis-Suchvorgänge."
    services="search"
    documentationCenter="na"
-   authors="HeidiSteen"
-   manager="mblythe"
+   authors="brjohnstmsft"
+   manager="pablocas"
    editor=""/>
 
 <tags
@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="search"
-   ms.date="02/16/2016"
-   ms.author="heidist"/>
+   ms.date="03/08/2016"
+   ms.author="brjohnst"/>
 
 # Azure-Suchdienst-REST-API: Version 2015-02-28-Preview
 
@@ -1054,7 +1054,7 @@ Der Anforderungstext enthält ein oder mehrere zu indizierende Dokumente. Dokume
 - `upload`: Das Hochladen entspricht einer "upsert"-Aktion, bei der neue Dokumente eingefügt und bestehende Dokumente aktualisiert/ersetzt werden. Beachten Sie, dass bei einer Aktualisierung alle Felder ersetzt werden.
 - `merge`: Beim Zusammenführen wird ein bestehendes Dokument mit den angegebenen Feldern aktualisiert. Wenn das Dokument nicht vorhanden ist, schlägt die Zusammenführung fehl. Jedes Feld, das Sie in einer Zusammenführung angeben, ersetzt das vorhandene Feld im Dokument. Dies beinhaltet auch Felder vom Typ `Collection(Edm.String)`. Beispiel: Wenn das Dokument ein Feld namens "tags" mit dem Wert `["budget"]` enthält, und Sie eine Zusammenführung mit dem Wert `["economy", "pool"]` für "tags" durchführen, hat das Feld "tags" am Ende den Wert `["economy", "pool"]`. Der Wert lautet **nicht** `["budget", "economy", "pool"]`.
 - `mergeOrUpload`: Verhält sich wie beim `merge`-Vorgang, wenn im Index bereits ein Dokument mit dem gegebenen Schlüssel vorhanden ist. Wenn das Dokument noch nicht vorhanden ist, verhält es sich wie beim `upload`-Vorgang eines neuen Dokuments.
-- `delete`: Hiermit wird das angegebenen Dokument aus dem Index gelöscht. Sie können für den `delete`-Vorgang nur den Wert für das Schlüsselfeld angeben. Wenn Sie versuchen, andere Felder anzugeben, wird der Fehler "HTTP 400" ausgegeben. Wenn Sie ein einzelnes Feld aus einem Dokument entfernen möchten, verwenden Sie stattdessen `merge` und setzen das Feld explizit auf `null`.
+- `delete`: Hiermit wird das angegebenen Dokument aus dem Index gelöscht. Beachten Sie, dass alle Felder, die Sie in einem anderen `delete`-Vorgang als dem Schlüsselfeld angeben, ignoriert werden. Wenn Sie ein einzelnes Feld aus einem Dokument entfernen möchten, verwenden Sie stattdessen `merge` und setzen das Feld explizit auf `null`.
 
 **Antwort**
 
@@ -1774,4 +1774,4 @@ Rufen Sie 5 Vorschläge mit der Teilsuche nach "lux" ab.
       "suggesterName": "sg"
     }
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0309_2016-->

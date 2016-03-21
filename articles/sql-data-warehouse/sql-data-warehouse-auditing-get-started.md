@@ -1,29 +1,29 @@
-<properties 
-   pageTitle="Erste Schritte bei der Überwachung von SQL Data Warehouse-Datenbanken | Microsoft Azure" 
-   description="Erste Schritte bei der Überwachung von SQL Data Warehouse-Datenbanken" 
-   services="sql-data-warehouse" 
-   documentationCenter="" 
-   authors="twounder" 
-   manager="barbkess" 
+<properties
+   pageTitle="Erste Schritte bei der Überwachung von SQL Data Warehouse-Datenbanken | Microsoft Azure"
+   description="Erste Schritte bei der Überwachung von SQL Data Warehouse-Datenbanken"
+   services="sql-data-warehouse"
+   documentationCenter=""
+   authors="twounder"
+   manager="barbkess"
    editor=""/>
 
-<tags 
-   ms.service="sql-data-warehouse" 
-   ms.workload="data-management" 
-   ms.tgt_pltfrm="na" 
-   ms.devlang="na" 
-   ms.topic="article" 
-   ms.date="01/07/2016" 
+<tags
+   ms.service="sql-data-warehouse"
+   ms.workload="data-management"
+   ms.tgt_pltfrm="na"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.date="03/03/2016" 
    ms.author="mausher;barbkess;sonyama"/>
- 
-# Erste Schritte bei der Überwachung von SQL Data Warehouse-Datenbanken 
+
+# Erste Schritte bei der Überwachung von SQL Data Warehouse-Datenbanken
 Bei der Azure SQL Data Warehouse-Überwachung werden Datenbankereignisse erfasst und die überwachten Ereignisse in einem Überwachungsprotokoll in Ihrem Azure Storage-Konto protokolliert.
 
 Die Überwachung kann Ihnen dabei helfen, die gesetzlichen Bestimmungen einzuhalten, die Datenbankaktivität zu verstehen und Einblicke in Abweichungen und Anomalien zu erhalten, die auf geschäftsspezifische Bedenken oder mutmaßliche Sicherheitsverstöße hinweisen können.
 
 Überwachungstools ermöglichen und erleichtern die Einhaltung von Normen, garantieren diese jedoch nicht. Weitere Informationen über Azure-Programme, die die Einhaltung von Normen unterstützen, finden Sie im <a href="http://azure.microsoft.com/support/trust-center/compliance/" target="_blank">Azure Trust Center</a>.
 
-+ [Grundlagen zur Datenbanküberwachung] 
++ [Grundlagen zur Datenbanküberwachung]
 + [Einrichten der Überwachung für Ihre Datenbank]
 + [Analysieren von Überwachungsprotokollen und -berichten]
 
@@ -66,7 +66,7 @@ Eine Überwachungsrichtlinie kann für eine spezifische Datenbank oder als Stand
 	![][1]
 
 3. Deaktivieren Sie auf dem Blatt zur Überwachungskonfiguration zunächst das Kontrollkästchen **Überwachungseinstellungen von Server erben**. Dadurch können Sie die Einstellungen für eine bestimmte Datenbank angeben.
-	
+
 	![][2]
 
 4. Aktivieren Sie anschließend die Überwachung, indem Sie auf die Schaltfläche **EIN** klicken.
@@ -103,7 +103,7 @@ Ausführlichere Anweisungen zum Arbeiten mit der Berichtvorlage finden Sie unter
 
 ##<a id="subheading-4">Methoden zur Verwendung in der Produktion</a>
 Die Beschreibung in diesem Abschnitt bezieht sich auf die obigen Screenshots. Sie können entweder das <a href="https://portal.azure.com" target="_blank">Azure-Portal</a> oder das <a href= "https://manage.windowsazure.com/" target="_bank">klassische Azure-Portal</a> verwenden.
- 
+
 
 ##<a id="subheading-5"></a>Erneute Speicherschlüsselgenerierung
 
@@ -116,11 +116,11 @@ In der Produktion werden Sie wahrscheinlich Ihre Speicherschlüssel regelmäßig
 3. Wechseln Sie zurück zum Blatt für die Überwachungskonfiguration, ändern Sie den **Speicherzugriffsschlüssel** von *Sekundär* in *Primär*, und klicken Sie auf **SPEICHERN**.
 
 4. Wechseln Sie zurück zur Speicherbenutzeroberfläche, und **generieren Sie erneut** den *sekundären Zugriffsschlüssel* (als Vorbereitung auf den nächsten Schlüsselaktualisierungszyklus).
-  
+
 ##<a id="subheading-6"></a>Automatisierung
 Es gibt mehrere PowerShell-Cmdlets, die Sie zum Konfigurieren der Überwachung in Azure SQL-Datenbank verwenden können. Für den Zugriff auf die Cmdlets zur Überwachung muss PowerShell im Azure-Ressourcen-Manager-Modus ausgeführt werden.
 
-> [AZURE.NOTE]Das [Azure-Ressourcen-Manager](https://msdn.microsoft.com/library/dn654592.aspx)-Modul befindet sich derzeit in der Vorschau. Möglicherweise stellt es nicht die gleichen Verwaltungsfunktionen wie das Azure-Modul bereit.
+> [AZURE.NOTE] Das [Azure-Ressourcen-Manager](https://msdn.microsoft.com/library/dn654592.aspx)-Modul befindet sich derzeit in der Vorschau. Möglicherweise stellt es nicht die gleichen Verwaltungsfunktionen wie das Azure-Modul bereit.
 
 Wenn Sie im Azure-Ressourcen-Manager-Modus arbeiten, führen Sie `Get-Command *AzureSql*` aus, um die verfügbaren Cmdlets aufzulisten.
 
@@ -141,4 +141,4 @@ Wenn Sie im Azure-Ressourcen-Manager-Modus arbeiten, führen Sie `Get-Command *A
 
 <!--Link references-->
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0309_2016-->

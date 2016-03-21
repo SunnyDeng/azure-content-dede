@@ -1,7 +1,7 @@
 <properties
 	pageTitle="Schützen von vertraulichen Daten in SQL-Datenbank mithilfe der Datenbankverschlüsselung | Microsoft Azure"
 	description="Schützen Sie vertrauliche Daten in der SQL-Datenbank in wenigen Minuten."
-	keywords="SQL-Datenbank, SQL-Verschlüsselung, Verschlüsselung der Datenbank, Verschlüsselungsschlüssel, vertrauliche Daten, Always Encrypted"	
+	keywords="Verschlüsselung, Verschlüsselungsschlüssel, Cloud-Verschlüsselung"	
 	services="sql-database"
 	documentationCenter=""
 	authors="stevestein"
@@ -15,19 +15,19 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/29/2016"
+	ms.date="03/02/2016"
 	ms.author="sstein"/>
 
-# Schützen von vertraulichen Daten in SQL-Datenbank mithilfe der Datenbankverschlüsselung und Speichern der Verschlüsselungsschlüssel in Azure Key Vault
+# Schützen Sie vertrauliche Daten in der SQL-Datenbank mithilfe von Verschlüsselung und Speicherung Ihrer Verschlüsselungsschlüssel in Azure Key Vault
 
 > [AZURE.SELECTOR]
 - [Azure-Schlüsseltresor](sql-database-always-encrypted-azure-key-vault.md)
 - [Windows-Zertifikatspeicher](sql-database-always-encrypted.md)
 
 
-In diesem Artikel erfahren Sie, wie Sie vertrauliche Daten in einer SQL-Datenbank mithilfe der Datenbankverschlüsselung unter Einsatz des [Always-Encrypted-Assistenten](https://msdn.microsoft.com/library/mt459280.aspx) in [SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/library/hh213248.aspx) sichern und die Verschlüsselungsschlüssel in Azure Key Vault speichern.
+In diesem Artikel erfahren Sie, wie Sie vertrauliche Daten in einer SQL-Datenbank mithilfe der Datenverschlüsselung unter Einsatz des [Always-Encrypted-Assistenten](https://msdn.microsoft.com/library/mt459280.aspx) in [SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/library/hh213248.aspx) sichern und die einzelnen Verschlüsselungsschlüssel in Azure Key Vault speichern.
 
-Always Encrypted ist eine neue Verschlüsselungstechnologie in Azure SQL-Datenbank und SQL Server, mit der vertrauliche ruhende Daten auf dem Server, auf dem Weg zwischen Client und Server und während der Verwendung geschützt werden. So wird sichergestellt, dass vertrauliche Daten im Datenbanksystem niemals im Klartextformat auftauchen. Nur Clientanwendungen oder App-Server, für die Zugriff auf die Schlüssel besteht, können auf Klartextdaten zugreifen. Ausführliche Informationen finden Sie unter [Always Encrypted (Database Engine)](https://msdn.microsoft.com/library/mt163865.aspx).
+Always Encrypted ist eine neue Datenverschlüsselungstechnologie in Azure SQL-Datenbank und SQL Server, mit der vertrauliche ruhende Daten auf dem Server, auf dem Weg zwischen Client und Server und während der Verwendung geschützt werden. So wird sichergestellt, dass vertrauliche Daten im Datenbanksystem niemals im Klartextformat auftauchen. Nach der Konfiguration der Datenverschlüsselung können nur Clientanwendungen oder App-Server, die Zugriff auf die Schlüssel haben, auf Klartextdaten zugreifen. Ausführliche Informationen finden Sie unter [Always Encrypted (Database Engine)](https://msdn.microsoft.com/library/mt163865.aspx).
 
 
 Nach dem Konfigurieren der Datenbank für die Verwendung von Always Encrypted erstellen wir eine Clientanwendung in C# mit Visual Studio, um mit den verschlüsselten Daten zu arbeiten.
@@ -264,6 +264,26 @@ Der folgende Code zeigt, wie Sie Always Encrypted aktivieren, indem Sie [SqlConn
     // Enable Always Encrypted.
     connStringBuilder.ColumnEncryptionSetting = 
        SqlConnectionColumnEncryptionSetting.Enabled;
+
+## Registrieren des Azure-Schlüsseltresor-Anbieters
+
+Der folgende Code zeigt, wie Sie den Azure-Schlüsseltresor-Anbieter mit dem ADO.NET-Treiber registrieren:
+
+    private static ClientCredential _clientCredential;
+
+    static void InitializeAzureKeyVaultProvider()
+    {
+       _clientCredential = new ClientCredential(clientId, clientSecret);
+
+       SqlColumnEncryptionAzureKeyVaultProvider azureKeyVaultProvider =
+          new SqlColumnEncryptionAzureKeyVaultProvider(GetToken);
+
+       Dictionary<string, SqlColumnEncryptionKeyStoreProvider> providers =
+          new Dictionary<string, SqlColumnEncryptionKeyStoreProvider>();
+
+       providers.Add(SqlColumnEncryptionAzureKeyVaultProvider.ProviderName, azureKeyVaultProvider);
+       SqlConnection.RegisterColumnEncryptionKeyStoreProviders(providers);
+    }
 
 
 
@@ -635,7 +655,7 @@ Sie sehen, dass die verschlüsselten Spalten keine Klartextdaten enthalten.
    ![Neue Konsolenanwendung](./media/sql-database-always-encrypted-azure-key-vault/ssms-encrypted.png)
 
 
-Zum Verwenden von SSMS zum Zugreifen auf die Klartextdaten können wir der Verbindung den Parameter **Column Encryption Setting=enabled** hinzufügen.
+Um SSMS zum Zugreifen auf die Klartextdaten zu verwenden, können wir der Verbindung den Parameter **Column Encryption Setting=enabled** hinzufügen.
 
 1. Klicken Sie in SSMS im **Objekt-Explorer** mit der rechten Maustaste auf Ihren Server und dann auf **Trennen**.
 2. Klicken Sie auf **Verbinden** > **Datenbankmodul**, um das Fenster **Mit Server verbinden** zu öffnen, und klicken Sie dann auf **Optionen**.
@@ -656,7 +676,7 @@ Zum Verwenden von SSMS zum Zugreifen auf die Klartextdaten können wir der Verbi
 ## Nächste Schritte
 Nach dem Erstellen einer Datenbank, für die Always Encrypted verwendet wird, ist es ratsam, die folgenden Schritte auszuführen:
 
-- [Column Master Key Rotation and Cleanup](https://msdn.microsoft.com/library/mt607048.aspx)
+- [Rotation und Bereinigung der Schlüssel](https://msdn.microsoft.com/library/mt607048.aspx).
 - [Migrate Sensitive Data Protected by Always Encrypted](https://msdn.microsoft.com/library/mt621539.aspx)
 
 
@@ -669,4 +689,4 @@ Nach dem Erstellen einer Datenbank, für die Always Encrypted verwendet wird, is
 - [Always Encrypted Wizard](https://msdn.microsoft.com/library/mt459280.aspx)
 - [Always Encrypted Blog](http://blogs.msdn.com/b/sqlsecurity/archive/tags/always-encrypted/)
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

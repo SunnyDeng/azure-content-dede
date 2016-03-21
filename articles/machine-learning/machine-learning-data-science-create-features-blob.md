@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/05/2016" 
+	ms.date="03/04/2016" 
 	ms.author="fashah;garye;bradsev" />
 
 #Erstellen von Features für Azure-Blob-Speicherdaten mithilfe von Panda
@@ -37,7 +37,7 @@ Um ein DataSet zu untersuchen und zu bearbeiten, muss es aus der Blobquelle in e
 
 1. Laden Sie die Daten mithilfe des Blobdiensts und folgenden Python-Beispielcodes aus dem Azure-Blob herunter. Ersetzen Sie die Variablen im Code durch die für Ihre Umgebung geltenden Werte: 
 
-	    from azure.storage import BlobService
+	    from azure.storage.blob import BlobService
     	import tables
     	
 		STORAGEACCOUNTNAME= <storage_account_name>
@@ -107,13 +107,14 @@ Zum Generieren von klassifizierten Funktionen gehen Sie wie folgt vor:
 
 ##<a name="sql-featuregen"></a>Zurückschreiben von Daten in das Azure-Blob und Verwenden in Azure Machine Learning
 
-Nachdem Sie die Daten untersucht und die erforderlichen Funktionen erstellt haben, können Sie die Daten (als Stichproben oder über Funktionen) mithilfe der folgenden Schritte in ein Azure-Blob hochladen und in Azure Machine Learning verwenden. Beachten Sie, dass in Azure Machine Learning Studio ebenfalls weitere Funktionen erstellt werden können. 1. Schreiben Sie den DataFrame in eine lokale Datei:
+Nachdem Sie die Daten untersucht und die erforderlichen Funktionen erstellt haben, können Sie die Daten (als Stichproben oder über Funktionen) mithilfe der folgenden Schritte in ein Azure-Blob hochladen und in Azure Machine Learning verwenden. Beachten Sie, dass in Azure Machine Learning Studio ebenfalls weitere Funktionen erstellt werden können.
+1. Schreiben Sie den DataFrame in eine lokale Datei:
 
 		dataframe.to_csv(os.path.join(os.getcwd(),LOCALFILENAME), sep='\t', encoding='utf-8', index=False)
 
 2. Laden Sie die Daten in ein Azure-Blob hoch:
 
-		from azure.storage import BlobService
+		from azure.storage.blob import BlobService
     	import tables
 
 		STORAGEACCOUNTNAME= <storage_account_name>
@@ -140,4 +141,4 @@ Nachdem Sie die Daten untersucht und die erforderlichen Funktionen erstellt habe
 
  
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0309_2016-->

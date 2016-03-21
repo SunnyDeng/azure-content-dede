@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="Java" 
 	ms.topic="article" 
-	ms.date="01/09/2016" 
+	ms.date="03/04/2016" 
 	ms.author="robmcm"/>
 
 # Hochladen einer benutzerdefinierten Java Web-App in Azure
@@ -72,7 +72,7 @@ Beispiele:
                                     
 **stdoutLogFile** (Default="d:\\home\\LogFiles\\httpPlatformStdout.log".) Absoluter Dateipfad, für den **stdout** und **stderr** von dem unter **processPath** angegebenen Prozess protokolliert werden.
                                     
-> [AZURE.NOTE]`%HTTP_PLATFORM_PORT%` ist ein spezieller Platzhalter, der entweder als Teil von **arguments** oder als Teil der Liste **httpPlatform** **environmentVariables** angegeben wird. Dieser wird von **HttpPlatformHandler** durch einen intern generierten Port ersetzt, damit der von **processPath** festgelegte Prozess diesen Port abhören kann.
+> [AZURE.NOTE] `%HTTP_PLATFORM_PORT%` ist ein spezieller Platzhalter, der entweder als Teil von **arguments** oder als Teil der Liste **httpPlatform** **environmentVariables** angegeben wird. Dieser wird von **HttpPlatformHandler** durch einen intern generierten Port ersetzt, damit der von **processPath** festgelegte Prozess diesen Port abhören kann.
 
 ## Bereitstellung
 
@@ -257,4 +257,4 @@ Weitere Informationen zu Java finden Sie im [Java Developer Center](/develop/jav
 <!-- External Links -->
 [Azure App Service]: http://go.microsoft.com/fwlink/?LinkId=529714
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0309_2016-->

@@ -4,7 +4,7 @@
 	services="api-management" 
 	documentationCenter="" 
 	authors="steved0x" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor=""/>
 
 <tags 
@@ -62,4 +62,4 @@ Produkte in API Management enthalten eine oder mehrere APIs sowie ein Nutzungsko
 [Importieren einer API-Definition mit Operationen]: api-management-howto-import-api.md
 [Erstellen und Konfigurieren erweiterter Produkteinstellungen]: api-management-howto-product-with-rules.md
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0309_2016-->

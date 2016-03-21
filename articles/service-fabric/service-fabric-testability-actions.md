@@ -17,18 +17,18 @@
    ms.author="heeldin;motanv"/>
 
 # Testability-Aktionen
-Zur Simulierung einer unzuverlässigen Infrastruktur bietet Azure Service Fabric Entwicklern die Möglichkeit, verschiedene Ausfälle und Statusübergänge aus der Praxis zu simulieren. Diese werden als Testability-Aktionen verfügbar gemacht. Bei den Aktionen handelt es sich um Low-Level-APIs, die eine bestimmte Fault Injection, einen Statusübergang oder eine Überprüfung bewirken. Diese Aktionen können von Dienstentwicklern zu umfassenden Testszenarien für Ihre Dienste kombiniert werden.
+Zur Simulierung einer unzuverlässigen Infrastruktur bietet Azure Service Fabric Ihnen, dem Entwickler, die Möglichkeit, verschiedene Ausfälle und Statusübergänge aus der Praxis zu simulieren. Diese werden als Testability-Aktionen verfügbar gemacht. Bei den Aktionen handelt es sich um Low-Level-APIs, die eine bestimmte Fault Injection, einen Statusübergang oder eine Überprüfung bewirken. Diese Aktionen können von Ihnen zu umfassenden Testszenarien für Ihre Dienste kombiniert werden.
 
 Auf der Grundlage dieser Aktionen stellt Service Fabric einige allgemeine Testszenarien bereit. Es wird dringend empfohlen, diese integrierten Szenarien zu verwenden. Sie wurden sorgfältig ausgewählt, um häufig vorkommende Statusübergänge und Ausfallsituationen zu testen. Aktionen können aber auch zum Erstellen von benutzerdefinierten Testszenarien verwendet werden, wenn Sie Fälle abdecken möchten, die noch nicht in den integrierten Testszenarien enthalten oder speziell auf Ihre Anwendung zugeschnitten sind.
 
-Die C#-Implementierungen der Aktionen befinden sich in der Assembly „System.Fabric.Testability.dll“. Das PowerShell-Modul „Testability“ befindet sich in der Assembly „Microsoft.ServiceFabric.Testability.Powershell.dll“. Im Rahmen der Laufzeitinstallation wird das PowerShell-Modul „ServiceFabricTestability“ installiert, um eine einfache Nutzung zu ermöglichen.
+Die C#-Implementierungen der Aktionen befinden sich in der Assembly „System.Fabric.dll“. Das PowerShell-Modul für System Fabric befindet sich in der Assembly „Microsoft.ServiceFabric.Powershell.dll“. Im Rahmen der Laufzeitinstallation wird das PowerShell-Modul „ServiceFabric“ installiert, um eine einfache Nutzung zu ermöglichen.
 
 ## Ordnungsgemäße und nicht ordnungsgemäße Fehleraktionen
 Testability-Aktionen sind nach zwei Hauptbereichen (Buckets) klassifiziert:
 
 * Nicht ordnungsgemäße Fehler: Mit diesen Fehlern werden Fehler wie Neustarts von Computern und Abstürze von Prozessen simuliert. Bei diesen Fehlern wird der Ausführungskontext von Prozessen abrupt beendet. Dies bedeutet, dass keine Bereinigung des Status ausgeführt werden kann, bevor die Anwendung neu gestartet wird.
 
-* Ordnungsgemäße Fehler: Mit diesen Fehlern werden ordnungsgemäße Aktionen simuliert, z. B. Verschiebungen von Replikaten und per Lastenausgleich ausgelöst Ablegevorgänge. In diesen Fällen wird der Dienst über das Schließen informiert und kann vor dem Beenden den Status bereinigen.
+* Ordnungsgemäße Fehler: Mit diesen Fehlern werden ordnungsgemäße Aktionen simuliert, z. B. Verschiebungen von Replikaten und per Lastenausgleich ausgelöst Ablegevorgänge. In diesen Fällen wird der Dienst über das Schließen informiert und kann vor dem Beenden den Status bereinigen.
 
 Führen Sie zur besseren Überprüfung der Qualität die Dienst- und Unternehmensworkload aus, während Sie verschiedene ordnungsgemäße und nicht ordnungsgemäße Fehler auslösen. Bei nicht ordnungsgemäßen Fehlern werden Szenarien simuliert, bei denen der Dienstprozess mitten in einem Workflow abrupt beendet wird. Auf diese Weise wird der Wiederherstellungspfad getestet, nachdem das Dienstreplikat von Service Fabric wiederhergestellt wurde. Dies ist eine Hilfe beim Testen der Datenkonsistenz und der richtigen Beibehaltung des Dienstzustands nach Ausfällen. Bei den anderen (ordnungsgemäßen) Fehlern wird getestet, ob der Dienst richtig auf Replikate reagiert, die von Service Fabric verschoben werden. Hierbei wird auch die Behandlung des Abbruchs in der RunAsync-Methode getestet. Der Dienst muss überprüfen, ob das Abbruchtoken festgelegt ist, den Status korrekt speichern und die RunAsync-Methode beenden.
 
@@ -53,7 +53,7 @@ Führen Sie zur besseren Überprüfung der Qualität die Dienst- und Unternehmen
 
 ## Ausführen einer Testability-Aktion mit PowerShell
 
-Dieses Tutorial zeigt, wie Sie mit PowerShell eine Testability-Aktion ausführen. Sie erfahren, wie Sie eine Testability-Aktion für einen lokalen Cluster (One-Box) oder für einen Azure-Cluster ausführen. „Microsoft.Fabric.Testability.Powershell.dll“ (das PowerShell-Modul „Testability“) wird automatisch installiert, wenn Sie den MSI für Microsoft Service Fabric installieren. Das Modul wird beim Öffnen einer PowerShell-Eingabeaufforderung automatisch geladen.
+Dieses Tutorial zeigt, wie Sie mit PowerShell eine Testability-Aktion ausführen. Sie erfahren, wie Sie eine Testability-Aktion für einen lokalen Cluster (One-Box) oder für einen Azure-Cluster ausführen. „Microsoft.Fabric.Powershell.dll“ (das PowerShell-Modul für Service Fabric) wird automatisch installiert, wenn Sie den MSI für Microsoft Service Fabric installieren. Das Modul wird beim Öffnen einer PowerShell-Eingabeaufforderung automatisch geladen.
 
 Abschnitte des Tutorials:
 
@@ -68,7 +68,7 @@ Um eine Testability-Aktion für einen lokalen Cluster ausführen zu können, mü
 Restart-ServiceFabricNode -NodeName Node1 -CompletionMode DoNotVerify
 ```
 
-Hier wird die Aktion **Restart-ServiceFabricNode** für einen Knoten namens „Node1“ ausgeführt. Für den Beendigungsmodus ist festgelegt, dass nicht überprüft werden soll, ob die Neustartaktion erfolgreich war. Bei Verwendung des Beendigungsmodus „Verify“wird überprüft, ob die Neustartaktion erfolgreich war. Anstatt den Knoten direkt anhand des Namens anzugeben, können Sie ihn auch wie folgt per Partitionsschlüssel und Art des Replikats angeben:
+Hier wird die Aktion **Restart-ServiceFabricNode** für einen Knoten namens „Node1“ ausgeführt. Für den Beendigungsmodus ist festgelegt, dass nicht überprüft werden soll, ob die Aktion zum Neustarten des Knotens erfolgreich war. Bei Verwendung des Beendigungsmodus „Verify“wird überprüft, ob die Neustartaktion erfolgreich war. Anstatt den Knoten direkt anhand des Namens anzugeben, können Sie ihn auch wie folgt per Partitionsschlüssel und Art des Replikats angeben:
 
 ```powershell
 Restart-ServiceFabricNode -ReplicaKindPrimary  -PartitionKindNamed -PartitionKey Partition3 -CompletionMode Verify
@@ -89,7 +89,7 @@ Der folgende Screenshot zeigt den Testability-Befehl **Restart-ServiceFabricNode
 
 ![](media/service-fabric-testability-actions/Restart-ServiceFabricNode.png)
 
-Die Ausgabe der ersten Instanz von **Get-ServiceFabricNode** (ein Cmdlet aus dem Service Fabric-PowerShell-Modul) zeigt, dass der lokale Cluster über fünf Knoten verfügt: „Node.1“ bis „Node.5“. Nach Ausführung der Testability-Aktion **Restart-ServiceFabricNode** (Cmdlet) für „Node.4“ ist zu sehen, dass die Betriebszeit des Knotens zurückgesetzt wurde.
+Die Ausgabe der ersten Instanz von **Get-ServiceFabricNode** (ein Cmdlet aus dem Service Fabric-PowerShell-Modul) zeigt, dass der lokale Cluster über fünf Knoten verfügt: „Node.1“ bis „Node.5“. Nach Ausführung der Testability-Aktion **Restart-ServiceFabricNode** (Cmdlet) für „Node.4“ ist zu sehen, dass die Betriebszeit des Knotens zurückgesetzt wurde.
 
 ### Ausführen einer Aktion für einen Azure-Cluster
 
@@ -168,14 +168,14 @@ class Test
 
         // Create FabricClient with connection and security information here
         FabricClient fabricclient = new FabricClient(clusterConnection);
-        await fabricclient.ClusterManager.RestartNodeAsync(primaryofReplicaSelector, CompletionMode.Verify);
+        await fabricclient.FaultManager.RestartNodeAsync(primaryofReplicaSelector, CompletionMode.Verify);
     }
 
     static async Task RestartNodeAsync(string clusterConnection, string nodeName, BigInteger nodeInstanceId)
     {
         // Create FabricClient with connection and security information here
         FabricClient fabricclient = new FabricClient(clusterConnection);
-        await fabricclient.ClusterManager.RestartNodeAsync(nodeName, nodeInstanceId, CompletionMode.Verify);
+        await fabricclient.FaultManager.RestartNodeAsync(nodeName, nodeInstanceId, CompletionMode.Verify);
     }
 }
 ```
@@ -235,4 +235,4 @@ ReplicaSelector secondaryReplicaSelector = ReplicaSelector.RandomSecondaryOf(par
    - [Simulieren von Ausfällen während der Bearbeitung von Dienstworkloads](service-fabric-testability-workload-tests.md)
    - [Ausfälle bei der Kommunikation von Dienst zu Dienst](service-fabric-testability-scenarios-service-communication.md)
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0309_2016-->

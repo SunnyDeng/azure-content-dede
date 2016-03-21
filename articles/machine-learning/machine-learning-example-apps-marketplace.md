@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/08/2015" 
+	ms.date="03/02/2016" 
 	ms.author="luisca"/>
 
 # Machine Learning-Apps im Azure Marketplace
@@ -35,7 +35,7 @@ Zu diesen Apps gehören beispielsweise:
   
 
 ##Erkennung von Anomalien##
-Eine API, über die anomale Ereignisse in Zeitreihendaten (z. B. Servertelemetriedaten oder sensorbasierte Daten) erkannt werden.
+Eine API, über die anomale Ereignisse in Zeitreihendaten (z. B. Servertelemetriedaten oder sensorbasierte Daten) erkannt werden.
 
 [Link zum Marketplace](https://datamarket.azure.com/dataset/aml_labs/anomalydetection)
 
@@ -51,10 +51,5 @@ Mit dieser API kann unstrukturierter Text für Aufgaben wie Stimmungsanalyse und
 [Dokumentation](machine-learning-apps-text-analytics.md)
 
  
- ##Customer Churn Prediction## Customer Churn Prediction ist ein in Azure Machine Learning integrierter Dienst zur Analyse der Kundenabwanderung. Dieser Dienst ist dazu entworfen vorherzusagen, wann ein Kunde (Spieler, Abonnent, Benutzer usw.) die Inanspruchnahme von Leistungen eines Unternehmens oder eines Diensts wahrscheinlich beendet. Die Möglichkeit vorherzusagen, für welche Kunden ein hohes Abwanderungsrisiko besteht, bietet Unternehmen die Gelegenheit, durch entsprechende Maßnahmen die Wahrscheinlichkeit einer Abwanderung zu verringern.
 
-[Link zum Marketplace](https://datamarket.azure.com/dataset/amla/customer-churn-prediction)
-
-[Dokumentation](https://churn.cloudapp.net/documentation)
-
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0309_2016-->

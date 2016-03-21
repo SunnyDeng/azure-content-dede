@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/24/2015"
+	ms.date="03/07/2016"
 	ms.author="femila"/>
 
 # Konfigurieren der automatischen Geräteregistrierung für in eine Domäne eingebundene Windows 8.1-Geräte
@@ -24,7 +24,7 @@ Sie können eine Active Directory-Gruppenrichtlinie verwenden, um Ihre in eine D
 
 1. Öffnen Sie den Server-Manager, und navigieren Sie zu **Tools** > **Gruppenrichtlinienverwaltung**.
 2. Navigieren Sie von der Gruppenrichtlinienverwaltung aus zu dem Domänenknoten, der der Domäne entspricht, in der Sie **Automatische Arbeitsbereichverknüpfung** aktivieren möchten.
-3. Klicken Sie mit der rechten Maustaste auf Ihr neues **Gruppenrichtlinienobjekt**, und wählen Sie dann **Neu** aus. Geben Sie Ihrem Gruppenrichtlinienobjekt einen Namen, z. B. **Automatische Arbeitsbereichverknüpfung**. Klicken Sie auf **OK**.
+3. Klicken Sie mit der rechten Maustaste auf Ihr neues **Gruppenrichtlinienobjekt**, und wählen Sie dann **Neu** aus. Geben Sie Ihrem Gruppenrichtlinienobjekt einen Namen, z. B. **Automatische Arbeitsbereichverknüpfung**. Klicken Sie auf **OK**.
 4. Klicken Sie mit der rechten Maustaste auf Ihr neues Gruppenrichtlinienobjekt, und wählen Sie dann **Bearbeiten** aus.
 5. Navigieren Sie zu **Computerkonfiguration** > **Richtlinien** > **Administrative Vorlagen** > **Windows-Komponenten** > **Arbeitsbereichverknüpfung**.
 6. Klicken Sie mit der rechten Maustaste auf "Clientcomputer automatisch in Arbeitsbereich einbinden", und wählen Sie dann **Bearbeiten**.
@@ -54,7 +54,7 @@ Die Gruppenrichtlinie aktiviert einen geplanten Task auf dem System, der im Kont
 
 ## Weitere Themen
 - [Azure Active Directory-Geräteregistrierung – Übersicht](active-directory-conditional-access-device-registration-overview.md)
-- [Automatische Geräteregistrierung bei Azure Active Directory für in Domänen eingebundene Windows-Geräte](active-directory-conditional-access-automatic-device-registration.md)
+- [Automatische Geräteregistrierung bei Azure Active Directory für in Domänen eingebundene Windows 10-Geräte](active-directory-conditional-access-automatic-device-registration.md)
 - [Konfigurieren der automatischen Geräteregistrierung für in eine Domäne eingebundene Windows 7-Geräte](active-directory-conditional-access-automatic-device-registration-windows7.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0309_2016-->

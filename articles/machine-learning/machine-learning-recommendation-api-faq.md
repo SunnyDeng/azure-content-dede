@@ -3,7 +3,7 @@
 	description="FAQ zur mit Azure Machine Learning erstellten Microsoft RECOMMENDATIONS API" 
 	services="machine-learning" 
 	documentationCenter="" 
-	authors="jaymathe" 
+	authors="luisca" 
 	manager="paulettm" 
 	editor="cgronlun"/>
 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/08/2015" 
+	ms.date="03/01/2016" 
 	ms.author="luisca"/>
 
 #Häufig gestellte Fragen zur Einrichtung und Verwendung der Machine Learning RECOMMENDATIONS-API
@@ -31,7 +31,12 @@ RECOMMENDATIONS akzeptiert als Eingabe ein Element oder einen Satz von Elementen
 
 **Gibt es Nutzungsbeschränkungen?**
 
-RECOMMENDATIONS verfügt über die folgenden Nutzungsbeschränkungen: * Maximale Modellanzahl pro Abonnement: 10 * Maximale Anzahl von Elementen, die ein Katalog aufnehmen kann: 100.000 * Maximale Anzahl an beibehaltenen Nutzungspunkten: ca. 5.000.000. Die älteste wird gelöscht, wenn neue hochgeladen oder gemeldet werden. * Maximale Größe der als E-Mail zu sendenden Daten (z. B. beim Importieren von Katalog- oder Nutzungsdaten): 200 MB * Anzahl der Transaktionen pro Sekunde (TPS) für ein inaktives Empfehlungsmodellbuild: ca. 2 TPS. Ein aktives Empfehlungsmodellbuild kann bis zu 20 TPS aufnehmen.
+Azure Machine Learning-Empfehlungen hat die folgenden Nutzungsbeschränkungen:
+* Maximale Anzahl von Modellen pro Abonnement: 10
+* Maximale Anzahl von Elementen, die ein Katalog aufnehmen kann: 100.000
+* Die maximale Menge der Nutzungspunkte, die aufbewahrt werden, beträgt etwa 5.000.000. Die ältesten werden gelöscht, wenn neue hochgeladen oder gemeldet werden.
+* Die maximale Größe der Daten, die per E-Mail gesendet werden können (z. B. Importieren von Katalog- oder Nutzungsdaten), beträgt 200 MB.
+* Die Anzahl der Transaktionen pro Sekunde bei Empfehlungsmodellbuilds, die nicht aktiv sind, beträgt etwa 2 T/s. Ein aktives Empfehlungsmodellbuild kann bis zu 20 TPS aufnehmen.
 
 ##Einkauf und Abrechnung 
 
@@ -46,7 +51,7 @@ Nicht im Moment.
 
 **Gibt es eine kostenlose Testversion von RECOMMENDATIONS?**
 
-Es gibt eine kostenlose Testversion, die auf 10.000 Transaktionen pro Monat beschränkt ist.
+Es gibt eine kostenlose Testversion, die auf 10.000 Transaktionen pro Monat beschränkt ist.
 
 **Wann erhalte ich eine Rechnung für RECOMMENDATIONS?**
 
@@ -130,4 +135,4 @@ Der technische Support ist auf der Website des [Microsoft Azure-Supports](https:
 
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0309_2016-->

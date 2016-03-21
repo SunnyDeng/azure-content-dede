@@ -12,10 +12,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="02/05/2016"
+   ms.date="03/02/2016"
    ms.author="alkohli" />
 
-# Verwalten von Speicherkonten mithilfe des StorSimple Manager-Diensts (Vorschau)
+# Verwalten von Speicherkonten mithilfe des StorSimple Manager-Diensts
 
 ## Übersicht
 
@@ -24,11 +24,11 @@ Auf der Seite **Konfigurieren** werden die globalen Dienstparameter angezeigt, d
 - Speicherkonten 
 - Zugriffssteuerungsdatensätze 
 
-In diesem Tutorial wird erläutert, wie Sie die Seite **Konfigurieren** zum Hinzufügen, Bearbeiten oder Löschen von Speicherkonten für Ihr StorSimple Virtual Array verwenden. Die Informationen in diesem Tutorial gelten nur für das StorSimple Virtual Array in der öffentlichen Vorschau.
+In diesem Tutorial wird erläutert, wie Sie die Seite **Konfigurieren** zum Hinzufügen, Bearbeiten oder Löschen von Speicherkonten für Ihr StorSimple Virtual Array verwenden. Die Informationen in diesem Tutorial gelten nur für das StorSimple Virtual Array mit der GA-Version der Software aus dem März 2016.
 
  ![Konfigurieren, Seite](./media/storsimple-ova-manage-storage-accounts/configure_service_page.png)
 
-Speicherkonten enthalten die Anmeldeinformationen, die das Gerät für den Zugriff auf das Speicherkonto mit dem Clouddienstanbieter nutzt. Für Microsoft Azure-Speicherkonten sind dies die Anmeldeinformationen, wie z. B. Kontoname und primärer Zugriffsschlüssel.
+Speicherkonten enthalten die Anmeldeinformationen, die das Gerät für den Zugriff auf das Speicherkonto mit dem Clouddienstanbieter nutzt. Für Microsoft Azure-Speicherkonten sind dies die Anmeldeinformationen, wie z. B. Kontoname und primärer Zugriffsschlüssel.
 
 Auf der Seite **Konfigurieren** werden alle Speicherkonten, die für das Abrechnungsabonnement erstellt werden, in einem Tabellenformat mit den folgenden Informationen angezeigt:
 
@@ -101,4 +101,4 @@ Sie können ein Speicherkonto bearbeiten, das von Ihrem Gerät verwendet wird. W
 
 - Erfahren Sie, wie Sie [Ihr StorSimple Virtual Array verwalten](storsimple-ova-web-ui-admin.md).
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0309_2016-->

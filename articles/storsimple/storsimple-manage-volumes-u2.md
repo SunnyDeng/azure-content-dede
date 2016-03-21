@@ -3,7 +3,7 @@
    description="Erläutert, wie Sie StorSimple-Volumes hinzufügen, ändern, überwachen und löschen sowie ggf. offline schalten können."
    services="storsimple"
    documentationCenter="NA"
-   authors="SharS"
+   authors="alkohli"
    manager="carmonm"
    editor="" />
 <tags 
@@ -12,8 +12,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="02/25/2016"
-   ms.author="v-sharos" />
+   ms.date="02/29/2016"
+   ms.author="alkohli" />
 
 # Verwalten von Volumes mithilfe des StorSimple Manager-Diensts (Update 2)
 
@@ -40,7 +40,7 @@ Nach Bedarf können Sie den Volumetyp von lokal in mehrstufig ändern oder umgek
 
 Lokale Volumes werden vollständig bereitgestellt und lagern keine Daten in die Cloud aus. So gewährleisten sie lokale Garantien für primäre Daten, unabhängig von der Cloudkonnektivität. Daten auf lokalen Volumes werden nicht dedupliziert und komprimiert. Allerdings werden Momentaufnahmen von lokal angehefteten Volumes dedupliziert.
 
-Lokale Volumes werden vollständig bereitgestellt. Aus diesem Grund müssen Sie bei deren Erstellung über genügend Speicherplatz auf dem Gerät verfügen. Sie können lokale Volumes mit einer Größe von maximal 9 TB auf dem StorSimple 8100-Gerät und 24 TB auf dem 8600-Gerät bereitstellen. StorSimple reserviert den verbleibenden lokalen Speicherplatz auf dem Gerät für Momentaufnahmen, Metadaten und die Datenverarbeitung. Sie können die Größe eines lokalen Volumes auf den maximal verfügbaren Speicherplatz erhöhen, jedoch können Sie die Größe eines Volumes nach der Erstellung nicht mehr verringern.
+Lokale Volumes werden vollständig bereitgestellt. Aus diesem Grund müssen Sie bei deren Erstellung über genügend Speicherplatz auf dem Gerät verfügen. Sie können lokale Volumes mit einer Größe von maximal 8 TB auf dem StorSimple 8100-Gerät und 20 TB auf dem 8600-Gerät bereitstellen. StorSimple reserviert den verbleibenden lokalen Speicherplatz auf dem Gerät für Momentaufnahmen, Metadaten und die Datenverarbeitung. Sie können die Größe eines lokalen Volumes auf den maximal verfügbaren Speicherplatz erhöhen, jedoch können Sie die Größe eines Volumes nach der Erstellung nicht mehr verringern.
 
 Wenn Sie ein lokales Volume erstellen, verringert sich dadurch der verfügbare Speicherplatz für die Erstellung mehrstufiger Volumes. Das Gegenteil trifft ebenfalls zu: Wenn Sie mehrstufige Volumes verwenden, ist der Speicherplatz für die Erstellung lokaler Volumes geringer als die oben genannten Obergrenzen.
 
@@ -59,11 +59,11 @@ In der folgenden Tabelle finden Sie die bereitgestellte Maximalkapazität für d
 | | Maximale Größe mehrstufiger Volumes | Maximale Größe lokaler Volumes |
 |-------------|----------------------------|------------------------------------|
 | **Physische Geräte** | | |
-| 8100 | 64 TB | 9 TB |
-| 8600 | 64 TB | 24 TB |
+| 8100 | 64 TB | 8 TB |
+| 8600 | 64 TB | 20 TB |
 | **Virtuelle Geräte** | | |
 | 8010 | 30 TB | – |
-| 8020 | 64 TB | – | 
+| 8020 | 64 TB | – |
 
 ## Die Seite "Volumes"
 
@@ -198,14 +198,14 @@ Möglicherweise empfiehlt es sich, ein lokales Volume in ein mehrstufiges Volume
 Die Konvertierung von einem mehrstufigen in ein lokales Volume kann sich negativ auf die Geräteleistung auswirken. Darüber hinaus kann sich die erforderliche Dauer für die Konvertierung durch die folgenden Faktoren verlängern:
 
 - Es ist nicht genügend Bandbreite vorhanden.
-- Das Gerät ist voll, sodass Gerätedaten bereits in die Cloud übertragen werden.
+
 - Es ist keine aktuelle Sicherung vorhanden.
 
 So können Sie die möglichen Auswirkungen dieser Faktoren minimieren
 
 - Überprüfen Sie die Richtlinien für die Bandbreitendrosselung, und stellen Sie sicher, dass eine dedizierte Bandbreite von 40 MBit/s verfügbar ist.
 - Planen Sie die Durchführung der Konvertierung außerhalb der Spitzenzeiten.
-- Erstellen Sie eine Sicherung, bevor Sie die Konvertierung starten.
+- Erstellen Sie eine Cloudmomentaufnahme, bevor Sie die Konvertierung starten.
 
 Wenn Sie mehrere Volumes (mit verschiedenen Workloads) konvertieren, sollten Sie die Konvertierung der Volumes so priorisieren, dass Volumes mit einer höheren Priorität zuerst konvertiert werden. Beispielsweise sollten Sie Volumes, die virtuelle Computer oder Volumes mit SQL-Workloads hosten, konvertieren, bevor Sie Volumes mit Workloads zur Dateifreigabe konvertieren.
 
@@ -299,4 +299,4 @@ Führen Sie die folgenden Schritte durch, um die Überwachung eines Volumes zu a
 
  
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

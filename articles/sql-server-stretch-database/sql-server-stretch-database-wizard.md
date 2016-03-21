@@ -3,9 +3,9 @@
 	description="Erfahren Sie, wie eine Datenbank für Stretch-Datenbank konfigurieren, indem Sie den Assistenten zum Aktivieren einer Datenbank für Stretch ausführen."
 	services="sql-server-stretch-database"
 	documentationCenter=""
-	authors="douglasl"
-	manager="jhubbard"
-	editor="monicar"/>
+	authors="douglaslMS"
+	manager=""
+	editor=""/>
 
 <tags
 	ms.service="sql-server-stretch-database"
@@ -31,8 +31,12 @@ Weitere Informationen zu Stretch-Datenbank finden Sie unter [Stretch-Datenbank](
 ## <a name="Intro"></a>Einführung
 Überprüfen Sie den Zweck des Assistenten und die Voraussetzungen.
 
+![Einführungsseite des Assistenten der Stretch-Datenbank][StretchWizardImage1]
+
 ## <a name="Tables"></a>Auswählen von Tabellen
 Wählen Sie die Tabellen, die Sie für Stretch aktivieren möchten.
+
+![Auswahl der Tabellenseite des Assistenten der Stretch-Datenbank][StretchWizardImage2]
 
 |Column|Beschreibung|
 |----------|---------------|
@@ -48,6 +52,8 @@ Wählen Sie die Tabellen, die Sie für Stretch aktivieren möchten.
 
 1.  Melden Sie sich bei Microsoft Azure mit einem Microsoft-Konto an.
 
+    ![Anmelden bei Azure – Assistent der Stretch-Datenbank][StretchWizardImage3]
+
 2.  Wählen Sie das Azure-Abonnement für Stretch-Datenbank aus.
 
 3.  Wählen Sie eine Azure-Region. Wenn Sie einen neuen Server erstellen, wird der Server in dieser Region erstellt.
@@ -57,6 +63,14 @@ Wählen Sie die Tabellen, die Sie für Stretch aktivieren möchten.
 4.  Geben Sie an, ob Sie einen vorhandenen Server verwenden oder einen neuen Azure-Server erstellen möchten.
 
     Wenn Active Directory auf dem SQL Server mit Azure Active Directory verbunden ist, können Sie optional ein Verbunddienstkonto für SQL Server für die Kommunikation mit dem Azure-Remoteserver verwenden. Weitere Informationen zu den Anforderungen für diese Option finden Sie unter [ALTER DATABASE SET-Optionen (Transact-SQL)](https://msdn.microsoft.com/library/bb522682.aspx).
+
+	-   **Erstellen eines neuen Servers**
+
+        1.  Erstellen Sie einen Benutzernamen und ein Kennwort für den Serveradministrator.
+
+        2.  Wählen Sie optional ein Verbunddienstkonto für SQL Server für die Kommunikation mit dem Azure-Remoteserver aus.
+
+		![Erstellen eines neuen Azure-Server – Assistent der Stretch-Datenbank][StretchWizardImage4]
 
     -   **Vorhandener Server**
 
@@ -68,24 +82,26 @@ Wählen Sie die Tabellen, die Sie für Stretch aktivieren möchten.
 
             -   Wählen Sie **Integrierte Active Directory-Authentifizierung** aus, um ein Verbunddienstkonto für SQL Server für die Kommunikation mit dem Azure-Remoteserver zu verwenden.
 
-    -   **Erstellen eines neuen Servers**
-
-        1.  Erstellen Sie einen Benutzernamen und ein Kennwort für den Serveradministrator.
-
-        2.  Wählen Sie optional ein Verbunddienstkonto für SQL Server für die Kommunikation mit dem Azure-Remoteserver aus.
+		![Auswählen eines vorhandenen Azure-Servers – Assistent der Stretch-Datenbank][StretchWizardImage5]
 
 ## <a name="Credentials"></a>Sichere Anmeldeinformationen
 Geben Sie ein sicheres Kennwort zum Erstellen eines Datenbankhauptschlüssels ein, oder geben Sie das Kennwort ein, wenn bereits ein Datenbankhauptschlüssel vorhanden ist.
 
 Sie brauchen einen Datenbankhauptschlüssel, um die Anmeldeinformationen zu sichern, die Stretch-Datenbank für die Verbindung mit der Remotedatenbank verwendet.
 
+![Seite mit den sicheren Anmeldeinformationen des Assistenten der Stretch-Datenbank][StretchWizardImage6]
+
 Weitere Informationen zum Datenbankhauptschlüssel finden Sie unter [CREATE MASTER KEY (Transact-SQL)](https://msdn.microsoft.com/library/ms174382.aspx) und [Erstellen eines Datenbankhauptschlüssels](https://msdn.microsoft.com/library/aa337551.aspx). Weitere Informationen über die Anmeldeinformationen, die der Assistent erstellt, finden Sie unter [CREATE DATABASE SCOPED CREDENTIAL (Transact-SQL)](https://msdn.microsoft.com/library/mt270260.aspx).
 
 ## <a name="Network"></a>Auswählen der IP-Adresse
 Verwenden Sie die öffentliche IP-Adresse von SQL Server, oder geben Sie einen IP-Adressbereich ein, um eine Firewallregel für Azure zu erstellen, damit SQL Server mit dem Azure-Remoteserver kommunizieren kann.
 
+![Auswählen der IP-Adressseite des Assistenten der Stretch-Datenbank][StretchWizardImage7]
+
 ## <a name="Summary"></a>Zusammenfassung
 Überprüfen Sie die Werte, die Sie eingegeben haben, und die im Assistenten ausgewählten Optionen. Wählen Sie dann **Fertig stellen**, um Stretch zu aktivieren.
+
+![Zusammenfassungsseite des Assistenten der Stretch-Datenbank][StretchWizardImage8]
 
 ## <a name="Results"></a>Ergebnisse
 Überprüfen Sie die Ergebnisse.
@@ -111,4 +127,13 @@ Aktivieren von zusätzlichen Tabellen für Stretch-Datenbank Überwachen der Dat
 ## Weitere Informationen
 [Aktivieren von Stretch-Datenbank für eine Datenbank](sql-server-stretch-database-enable-database.md)[Aktivieren von Stretch-Datenbank für eine Tabelle](sql-server-stretch-database-enable-table.md)
 
-<!---HONumber=AcomDC_0302_2016-->
+[StretchWizardImage1]: ./media/sql-server-stretch-database-wizard/stretchwiz1.png
+[StretchWizardImage2]: ./media/sql-server-stretch-database-wizard/stretchwiz2.png
+[StretchWizardImage3]: ./media/sql-server-stretch-database-wizard/stretchwiz3.png
+[StretchWizardImage4]: ./media/sql-server-stretch-database-wizard/stretchwiz4.png
+[StretchWizardImage5]: ./media/sql-server-stretch-database-wizard/stretchwiz5.png
+[StretchWizardImage6]: ./media/sql-server-stretch-database-wizard/stretchwiz6.png
+[StretchWizardImage7]: ./media/sql-server-stretch-database-wizard/stretchwiz7.png
+[StretchWizardImage8]: ./media/sql-server-stretch-database-wizard/stretchwiz8.png
+
+<!---HONumber=AcomDC_0309_2016-->

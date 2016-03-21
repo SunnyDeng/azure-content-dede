@@ -4,7 +4,7 @@
    services="dns" 
    documentationCenter="na" 
    authors="joaoma" 
-   manager="carolz" 
+   manager="carmonm" 
    editor=""/>
 
 <tags
@@ -13,14 +13,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services" 
-   ms.date="11/24/2015"
+   ms.date="03/03/2016"
    ms.author="joaoma"/>
 
 # Erstellen von DNS-Einträgen für eine Web-App in einer benutzerdefinierten Domäne
 
-Sie können Azure DNS verwenden, um eine benutzerdefinierte Domäne für Ihre Web-Apps zu hosten. Stellen Sie sich z. B. vor, dass Sie eine Azure-Web-App erstellen und dass Ihre Benutzer über contoso.com oder www.contoso.com als vollqualifizierten Domänennamen Zugriff darauf haben sollen. In diesem Szenario müssen Sie zwei Einträge erstellen: einen A-Stammeintrag, der auf "contoso.com" verweist, und einen CNAME-Eintrag für den www-Namen, der auf den A-Eintrag verweist.
+Sie können Azure DNS verwenden, um eine benutzerdefinierte Domäne für Ihre Web-Apps zu hosten. Stellen Sie sich z. B. vor, dass Sie eine Azure-Web-App erstellen und dass Ihre Benutzer über contoso.com oder www.contoso.com als vollqualifizierten Domänennamen Zugriff darauf haben sollen. In diesem Szenario müssen Sie zwei Einträge erstellen: einen A-Stammeintrag, der auf "contoso.com" verweist, und einen CNAME-Eintrag für den www-Namen, der auf den A-Eintrag verweist.
 
-> [AZURE.NOTE]Beachten Sie, dass Sie beim Erstellen eines A-Eintrags für eine Web-App in Azure den A-Eintrag manuell aktualisieren müssen, wenn sich die zugrunde liegende IP-Adresse für die Web-App ändert.
+> [AZURE.NOTE] Beachten Sie, dass Sie beim Erstellen eines A-Eintrags für eine Web-App in Azure den A-Eintrag manuell aktualisieren müssen, wenn sich die zugrunde liegende IP-Adresse für die Web-App ändert.
 
 Bevor Sie Einträge für Ihre benutzerdefinierte Domäne erstellen können, müssen Sie eine DNS-Zone in Azure DNS erstellen und die Zone in Ihrer Registrierungsstelle an Azure DNS delegieren. Befolgen Sie zum Erstellen einer DNS-Zone die Anweisungen unter [Erste Schritte mit Azure DNS](../dns-getstarted-create-dnszone/#Create-a-DNS-zone). Befolgen Sie zum Delegieren Ihres DNS an Azure DNS den Anweisungen unter [Delegieren einer Domäne an Azure DNS](../dns-domain-delegation).
  
@@ -28,23 +28,23 @@ Bevor Sie Einträge für Ihre benutzerdefinierte Domäne erstellen können, müs
 
 Ein A-Eintrag wird verwendet, um der IP-Adresse einen Namen zuzuordnen. Im folgenden Beispiel wird "@" als A-Eintrag einer IPv4-Adresse zugewiesen:
 
-### Schritt 1
+### Schritt 1
  
 Erstellen Sie einen A-Eintrag, und weisen Sie ihn einer Variablen "$rs" zu.
 	
 	PS C:\>$rs= New-AzureRMDnsRecordSet -Name "@" -RecordType "A" -ZoneName "contoso.com" -ResourceGroupName "MyAzureResourceGroup" -Ttl 600 
 
-### Schritt 2
+### Schritt 2
 
 Fügen Sie einen IPv4-Wert der zuvor erstellten Datensatzgruppe "@" mithilfe der zugewiesenen $rs-Variablen hinzu. Der zugewiesene IPv4-Wert ist die IP-Adresse für Ihre Web-App.
 
-> [AZURE.NOTE]Befolgen Sie zum Suchen der IP-Adresse für eine Web-App die Anleitungen unter [Konfigurieren eines benutzerdefinierten Domänennamens in Azure App Service](../web-sites-custom-domain-name/#Find-the-virtual-IP-address).
+> [AZURE.NOTE] Befolgen Sie zum Suchen der IP-Adresse für eine Web-App die Anleitungen unter [Konfigurieren eines benutzerdefinierten Domänennamens in Azure App Service](../web-sites-custom-domain-name/#Find-the-virtual-IP-address).
 
 	PS C:\> Add-AzureRMDnsRecordConfig -RecordSet $rs -Ipv4Address <your web app IP address>
 
-### Schritt 3
+### Schritt 3
 
-Übergeben Sie die Änderungen an die Datensatzgruppe. Verwenden Sie „Set-AzureRmDnsRecordSet“, um Änderungen an der Datensatzgruppe in Azure DNS hochzuladen:
+Übergeben Sie die Änderungen an die Datensatzgruppe. Verwenden Sie „Set-AzureRmDnsRecordSet“, um Änderungen an der Datensatzgruppe in Azure DNS hochzuladen:
 
 	Set-AzureRMDnsRecordSet -RecordSet $rs
 
@@ -52,7 +52,7 @@ Fügen Sie einen IPv4-Wert der zuvor erstellten Datensatzgruppe "@" mithilfe der
 
 Wenn Ihre Domäne bereits von Azure DNS verwaltet wird (siehe [DNS-Domänendelegierung](../dns-domain-delegation)), können Sie das folgende Beispiel verwenden, um einen CNAME-Eintrag für contoso.azurewebsites.net zu erstellen:
 
-### Schritt 1
+### Schritt 1
 
 Öffnen Sie PowerShell, und erstellen Sie eine neue CNAME-Datensatzgruppe, und weisen Sie sie einer Variablen "$rs" zu:
 
@@ -67,9 +67,9 @@ Wenn Ihre Domäne bereits von Azure DNS verwaltet wird (siehe [DNS-Domänendeleg
 	Records           : {}
 	Tags              : {}
 
-Dadurch wird ein Datensatzgruppentyp "CNAME" mit einer Gültigkeitsdauer von 600 Sekunden in der DNS-Zone mit dem Namen "contoso.com" erstellt.
+Dadurch wird ein Datensatzgruppentyp "CNAME" mit einer Gültigkeitsdauer von 600 Sekunden in der DNS-Zone mit dem Namen "contoso.com" erstellt.
 
-### Schritt 2
+### Schritt 2
 
 Sobald die CNAME-Datensatzgruppe erstellt wurde, müssen Sie einen Aliaswert erstellen, der auf die Web-App verweist.
 
@@ -86,7 +86,7 @@ Mit der zuvor zugewiesenen Variable "$rs" können Sie den folgenden PowerShell-B
 	Records           : {contoso.azurewebsites.net}
 	Tags              : {}
 
-### Schritt 3
+### Schritt 3
 
 Führen Sie mithilfe des Cmdlets „Set-AzureRmDnsRecordSet“ ein Commit für die Änderungen aus.
 
@@ -115,7 +115,7 @@ Wenn Sie einen A-Datensatz für Ihre Web-App verwenden möchten, müssen Sie ein
 
 Im folgenden Beispiel wird der Eintrag "awverify" für "contoso.com" erstellt, um den Besitzer für die benutzerdefinierte Domäne zu überprüfen:
 
-### Schritt 1
+### Schritt 1
 
 	PS C:\> $rs = New-AzureRMDnsRecordSet -ZoneName contoso.com -ResourceGroupName myresourcegroup -Name "awverify" -RecordType "CNAME" -Ttl 600
  
@@ -129,7 +129,7 @@ Im folgenden Beispiel wird der Eintrag "awverify" für "contoso.com" erstellt, u
 	Tags              : {}
 
 
-### Schritt 2
+### Schritt 2
 
 Sobald der Eintrag "awverify" erstellt wurde, müssen Sie den CNAME-Datensatzgruppenalias auf "awverify.contoso.azurewebsites.net" festlegen, wie im folgenden Befehl gezeigt:
 
@@ -144,7 +144,7 @@ Sobald der Eintrag "awverify" erstellt wurde, müssen Sie den CNAME-Datensatzgru
 	Records           : {awverify.contoso.azurewebsites.net}
 	Tags              : {}
 
-### Schritt 3
+### Schritt 3
 
 Führen Sie mithilfe des Cmdlets „Set-AzureRmDnsRecordSet“ ein Commit für die Änderungen aus, wie im folgenden Befehl gezeigt:
 
@@ -165,4 +165,4 @@ Jetzt können Sie mit der Durchführung der Schritte unter [Konfigurieren eines 
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0309_2016-->

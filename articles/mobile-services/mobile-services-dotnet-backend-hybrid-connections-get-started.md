@@ -13,18 +13,16 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="multiple"
 	ms.topic="article"
-	ms.date="02/07/2016"
+	ms.date="03/05/2016"
 	ms.author="glenga"/>
 
 
 # Verbinden mit einem lokalen SQL Server über Azure Mobile Services mithilfe von Hybridverbindungen
 
 [AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+> Informationen für die entsprechende Mobile Apps-Version dieses Themas finden Sie unter [Zugreifen auf lokale Ressourcen über Hybridverbindungen in Azure App Service](../app-service-web/web-sites-hybrid-connection-get-started.md).
 
-&nbsp;
-
-
-Wenn Ihr Unternehmen auf die Cloud umstellt, können Sie möglicherweise nicht alle Ihre Ressourcen sofort zu Azure migrieren. Mit Hybridverbindungen können Azure Mobile Services sichere Verbindungen mit Ihren lokalen Ressourcen herstellen. Auf diese Weise können Sie Ihre lokalen Daten mithilfe von Azure für Ihre mobilen Clients zugänglich machen. Unterstützt werden unter anderem alle Ressourcen, die auf einem statischen TCP-Port laufen, inklusive Microsoft SQL Server, MySQL, HTTP Web-APIs und die meisten selbst entwickelten Webdienste. Hybridverbindungen verwenden SAS-Autorisierung (Shared Access Signature) zum Sichern der Verbindungen vom mobilen Dienst und dem lokalen Hybrid Connection Manager zur Hybridverbindung. Weitere Informationen finden Sie unter [Übersicht über Hybridverbindungen](../integration-hybrid-connection-overview.md).
+Wenn Ihr Unternehmen auf die Cloud umstellt, können Sie möglicherweise nicht alle Ihre Ressourcen sofort zu Azure migrieren. Mit Hybridverbindungen können Azure Mobile Services sichere Verbindungen mit Ihren lokalen Ressourcen herstellen. Auf diese Weise können Sie Ihre lokalen Daten mithilfe von Azure für Ihre mobilen Clients zugänglich machen. Unterstützt werden unter anderem alle Ressourcen, die auf einem statischen TCP-Port laufen, inklusive Microsoft SQL Server, MySQL, HTTP Web-APIs und die meisten selbst entwickelten Webdienste. Hybridverbindungen verwenden SAS-Autorisierung (Shared Access Signature) zum Sichern der Verbindungen vom mobilen Dienst und dem lokalen Hybrid Connection Manager zur Hybridverbindung. Weitere Informationen finden Sie unter [Übersicht über Hybridverbindungen](../biztalk-services/integration-hybrid-connection-overview.md).
 
 In diesem Lernprogramm erfahren Sie, wie Sie einen mobilen .NET Back-End-Dienst so anpassen können, dass er eine lokale SQL Server-Datenbank anstatt der standardmäßig mit Ihrem Dienst bereitgestellten Azure SQL-Datenbank verwendet. Hybridverbindungen werden auch für einen mobilen JavaScript-Back-End-Dienst unterstützt, wie in [diesem Artikel](http://blogs.msdn.com/b/azuremobile/archive/2014/05/12/connecting-to-an-external-database-with-node-js-backend-in-azure-mobile-services.aspx) beschrieben.
 
@@ -128,8 +126,8 @@ Da Sie jetzt die Datenbankverbindung überprüft haben, müssen Sie eine App-Ein
 ##Siehe auch##
 
 + [Website zu Hybridverbindungen](../../services/biztalk-services/)
-+ [Überblick über Hybridverbindungen](../integration-hybrid-connection-overview.md)
-+ [BizTalk Services: Registerkarten "Dashboard", "Überwachen", "Skalieren", "Konfigurieren" und "Hybridverbindungen"](../biztalk-dashboard-monitor-scale-tabs.md)
++ [Überblick über Hybridverbindungen](../biztalk-services/integration-hybrid-connection-overview.md)
++ [BizTalk Services: Registerkarten "Dashboard", "Überwachen", "Skalieren", "Konfigurieren" und "Hybridverbindungen"](../biztalk-services/biztalk-dashboard-monitor-scale-tabs.md)
 + [Ändern des Datenmodells eines mobilen .NET-Back-End-Diensts](mobile-services-dotnet-backend-how-to-use-code-first-migrations.md)
 
 <!-- IMAGES -->
@@ -140,4 +138,4 @@ Da Sie jetzt die Datenbankverbindung überprüft haben, müssen Sie eine App-Ein
 [klassischen Azure-Portal]: http://manage.windowsazure.com
 [Erste Schritte mit Mobile Services]: mobile-services-dotnet-backend-windows-store-dotnet-get-started.md
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0309_2016-->

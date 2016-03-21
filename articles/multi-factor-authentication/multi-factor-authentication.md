@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article" 
-	ms.date="02/29/2016"
+	ms.date="03/03/2016"
 	ms.author="billmath"/>
 
 # Was ist Azure Multi-Factor Authentication?
@@ -108,7 +108,7 @@ Mobile App als zweiter Faktor|* | * | *
 Telefonanruf als zweiter Faktor|* | * | *
 SMS als zweiter Faktor|* | * | *
 App-Kennwörter für Clients, die MFA nicht unterstützen|* | * | *
-Administrative Kontrolle über Authentifizierungsmethoden| | | *
+Administrative Kontrolle über Authentifizierungsmethoden| (Öffentliche Vorschau)|(Öffentliche Vorschau) | *
 PIN-Modus| | | *
 Betrugswarnung| | | *
 MFA-Berichte| | | *
@@ -120,7 +120,7 @@ Vertrauenswürdige IP-Adressen| | | *
 Speichern der MFA für vertrauenswürdige Geräte |* | * | *
 MFA-SDK| | | *
 MFA für lokale Anwendungen mit MFA-Server| | | *
-Auswählbare Überprüfungsoptionen (öffentliche Vorschau)|* | * | *
+
 
 
 ## Beziehen von Azure Multi-Factor Authentication
@@ -193,20 +193,20 @@ Unidirektionale SMS als zweite Stufe | ● | ●
 Bidirektionale SMS als zweite Stufe | | ●
 Hardwaretoken als zweite Stufe | | ●
 App-Kennwörter für Clients, die MFA nicht unterstützen | ● |  
-Administrative Kontrolle über Authentifizierungsmethoden | | ●
+Administrative Kontrolle über Authentifizierungsmethoden | (Öffentliche Vorschau) | ●
 PIN-Modus | | ●
 Betrugswarnung | ● | ●
 MFA-Berichte | ● | ●
-Einmalumgehung | ● | ●
+Einmalumgehung | | ●
 Benutzerdefinierte Begrüßungen für Telefonanrufe | ● | ●
 Benutzerdefinierte Anrufer-ID für Telefonanrufe | ● | ●
 Vertrauenswürdige IP-Adressen | ● | ●
-Speichern der MFA für vertrauenswürdige Geräte (öffentliche Vorschau) | ● |  
+Speichern der MFA für vertrauenswürdige Geräte| ● |  
 Bedingter Zugriff | ● | ●
-Cache | ● | ●
+Cache | | ●
 
 Sie haben nun ermittelt, ob Sie Multi-Factor Authentication in der Cloud oder den MFA-Server lokal verwenden möchten. Jetzt können Sie mit dem Einrichten und Verwenden von Azure Multi-Factor Authentication beginnen. **Wählen Sie das Symbol aus, das Ihrem Szenario entspricht.**
 
 <center> [![Cloud](./media/multi-factor-authentication-get-started/cloud2.png)](multi-factor-authentication-get-started-cloud.md) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[![Proofup](./media/multi-factor-authentication-get-started/server2.png)](multi-factor-authentication-get-started-server.md) &#160;&#160;&#160;&#160;&#160; </center>
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

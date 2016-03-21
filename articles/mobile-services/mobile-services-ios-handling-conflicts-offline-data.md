@@ -3,7 +3,7 @@
 	description="Lernen Sie, wie Sie Azure Mobile Services zum Behandeln von Konflikten beim Synchronisieren von Offlinedaten in Ihrer iOS-Anwendung verwenden"
 	documentationCenter="ios"
 	authors="krisragh"
-	manager="dwrede"
+	manager="erikre"
 	editor=""
 	services="mobile-services"/>
 
@@ -13,29 +13,31 @@
 	ms.tgt_pltfrm="mobile-ios"
 	ms.devlang="objective-c"
 	ms.topic="article"
-	ms.date="12/16/2015"
+	ms.date="03/06/2016"
 	ms.author="krisragh;donnam"/>
 
 
 # Behandeln von Konflikten bei der Synchronisierung von Offlinedaten in Mobile Services
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+[AZURE.INCLUDE [mobile-services-selector-offline-conflicts](../../includes/mobile-services-selector-offline-conflicts.md)]
 
 &nbsp;
 
-
-[AZURE.INCLUDE [mobile-services-selector-offline-conflicts](../../includes/mobile-services-selector-offline-conflicts.md)]
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
 
 In diesem Thema erfahren Sie, wie Sie Daten synchronisieren und Konflikte behandeln können, wenn Sie die Offlinefunktionen von Azure Mobile Services verwenden. Dieses Lernprogramm baut auf dem Lernprogramm [Erste Schritte mit Offlinedaten] auf.
 
->[AZURE.NOTE]Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://www.windowsazure.com/pricing/free-trial/?WT.mc_id=AE564AB28" target="_blank">Kostenlose Azure-Testversion</a>.
+>[AZURE.NOTE] Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://www.windowsazure.com/pricing/free-trial/?WT.mc_id=AE564AB28" target="_blank">Kostenlose Azure-Testversion</a>.
 
 
 ## Herunterladen des iOS-Projekts
 
 Laden Sie für dieses Lernprogramm [ein aktualisiertes Xcode-Projekt von GitHub](https://github.com/Azure/mobile-services-samples/tree/master/TodoOffline/iOS) herunter. Wir haben das Xcode-Projekt vom Ende des Lernprogramms [Erste Schritte mit Offlinedaten] als Ausgangspunkt verwendet und dann aktualisiert, damit Elemente bearbeitet werden können. Wir haben außerdem unterstützende Klassen und Methoden hinzugefügt, damit im nächsten Abschnitt eine Konfliktbehandlung hinzugefügt werden kann.
 
-Wenn Sie am Ende dieses Lernprogramms die App auf zwei Telefonen ausführen, auf beiden Telefonen das gleiche Element lokal ändern und die Änderungen per Push auf den Server übertragen, kann der Benutzer auf jedem Telefon auswählen, welche Version beibehalten werden soll: * die Clientversion beibehalten (die Version auf dem Server wird überschrieben), * die Serverversion beibehalten (die lokale Tabelle auf dem Client wird aktualisiert) oder * keine Version beibehalten (der Pushvorgang wird abgebrochen, und der Vorgang bleibt ausstehend).
+Wenn Sie Sie diese App am Ende dieses Lernprogramms auf zwei Telefonen ausführen, das gleiche Element auf beiden Telefonen lokal ändern und die Änderungen zurück an den Server übertragen, lassen Sie den Benutzer an jedem Telefon auswählen, welche Version beibehalten werden soll:
+  * die Client-Version behalten (überschreibt die Version auf dem Server)
+  * die Serverversion behalten (aktualisiert die lokale Client-Tabelle)
+  * keine der beiden Versionen behalten (bricht die Übertragung ab, der Vorgang steht aus)
 
 Jetzt fügen wir die Konfliktbehandlung hinzu, um diese Funktion zu aktivieren.
 
@@ -144,4 +146,4 @@ Führen Sie eine Aktualisierung in den App-Instanzen durch, indem Sie von oben n
 [Erste Schritte mit Offlinedaten]: mobile-services-ios-get-started-offline-data.md
 [Get started with Mobile Services]: mobile-services-ios-get-started.md
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0309_2016-->

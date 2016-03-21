@@ -13,10 +13,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/07/2016"
+   ms.date="03/03/2016"
    ms.author="jrj;barbkess;sonyama"/>
 
- 
+
 # Sichten in SQL Data Warehouse
 
 Sichten sind in SQL Data Warehouse besonders nützlich. Sie können auf verschiedene Weisen zur Verbesserung der Qualität der Lösung verwendet werden.
@@ -33,7 +33,7 @@ CREATE TABLE dbo.DimDate_New
 WITH (DISTRIBUTION = ROUND_ROBIN
 , CLUSTERED INDEX (DateKey ASC)
 )
-AS 
+AS
 SELECT *
 FROM   dbo.DimDate  AS prod
 UNION ALL
@@ -54,7 +54,12 @@ Sichten bieten eine intelligente Möglichkeit, leistungsoptimierte Verknüpfunge
 ## Einschränkungen
 Sichten in SQL Data Warehouse bestehen nur aus Metadaten
 
-Daher sind die folgenden Optionen nicht verfügbar: - Es ist keine Schemabindungsoption verfügbar - Basistabellen können nicht über die Sicht aktualisiert werden - Sichten können nicht auf temporären Tabellen erstellt werden - Es gibt keine Unterstützung für EXPAND/NOEXPAND-Hinweise - Es gibt keine indizierten Sichten in SQL Data Warehouse
+Daher sind die folgenden Optionen nicht verfügbar:
+- 	Es gibt keine Schemabindungsoption.
+- 	Basistabellen können nicht über die Ansicht aktualisiert werden.
+- 	Sichten können nicht für temporäre Tabellen erstellt werden.
+- 	EXPAND/NOEXPAND-Hinweise werden nicht unterstützt.
+- 	Es sind keine indizierten Sichten in SQL Data Warehouse verfügbar.
 
 
 ## Nächste Schritte
@@ -69,4 +74,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [SQL Data Warehouse-Entwicklu
 
 <!--Other Web references-->
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0309_2016-->

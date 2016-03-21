@@ -44,19 +44,20 @@ Dieses Lernprogramm führt Sie durch das Löschen von Assets aus allen Edgeknote
 
 	> [AZURE.NOTE] Um das Blatt „Löschen“ aufzurufen, können Sie auch auf dem Blatt des CDN-Endpunkts auf die Schaltfläche **Löschen** klicken. In diesem Fall ist im **URL**-Feld die Adresse des Diensts dieses Endpunkts vorgegeben.
 
-4. Wählen Sie, welche Assets Sie aus dem Edgeknoten löschen möchten. Wenn Sie alle Assets löschen möchten, klicken Sie auf das Kontrollkästchen **Alles löschen**. Geben Sie andernfalls den vollständigen Pfad jedes Assets, das Sie löschen möchten (z. B. */pictures/kitten.png*), in das Textfeld **Pfad** ein.
+4. Wählen Sie, welche Assets Sie aus dem Edgeknoten löschen möchten. Wenn Sie alle Assets löschen möchten, klicken Sie auf das Kontrollkästchen **Alles löschen**. Geben Sie andernfalls den vollständigen Pfad eines jeden Assets ein, das Sie löschen möchten (z. B. `/pictures/kitten.png`), in das Textfeld **Pfad** ein.
 
 	> [AZURE.TIP] Nachdem Sie Text eingegeben haben, werden weitere **Pfad**-Textfelder angezeigt, damit Sie eine Liste mit mehreren Assets erstellen können. Sie können Assets aus der Liste löschen, indem Sie auf die Schaltfläche mit den Auslassungspunkten (...) klicken.
 	>
-	> Die Pfade müssen eine relative URL sein. Sternchen (*) können als Platzhalter verwendet werden.
+	> Pfade müssen eine relative URL enthalten, die dem folgenden [regulären Ausdruck](https://msdn.microsoft.com/library/az24scfc.aspx) entspricht: `^\/(?:[a-zA-Z0-9-_.\u0020]+\/)**$";`. Sternchen (*) können als Platzhalterzeichen verwendet werden (z. B. `/music/*`).
 
 5. Klicken Sie auf die Schaltfläche **Löschen**.
 
 	![Löschschaltfläche](./media/cdn-purge-endpoint/cdn-purge-button.png)
 
+> [AZURE.NOTE] Die Verarbeitung von Anforderungen zum Löschen kann etwa 2 bis 3 Minuten in Anspruch nehmen. Es gilt eine Einschränkung von 10 Anforderungen zum Löschen pro Minute pro CDN-Profil.
 
 ## Weitere Informationen
 - [Vorabladen von Assets auf einen Azure CDN-Endpunkt](cdn-preload-endpoint.md)
 - [Azure CDN-REST-API-Referenz – Löschen oder Vorabladen eines Endpunkts](https://msdn.microsoft.com/library/mt634451.aspx)
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

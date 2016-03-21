@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Erste Schritte mit Azure Data Factory"
-	description="Dieses Tutorial zeigt, wie Sie eine Beispieldatenpipeline erstellen, die Daten mithilfe von Azure HDInsight transformiert."
+	pageTitle="Erstellen der ersten Data Factory | Microsoft Azure"
+	description="Dieses Tutorial zeigt, wie Sie eine Data Factory mit einer Datenpipeline erstellen, die Daten mithilfe von Azure HDInsight transformiert."
 	services="data-factory"
 	documentationCenter=""
 	authors="spelluru"
@@ -13,16 +13,16 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article" 
-	ms.date="12/18/2015"
+	ms.date="03/03/2016"
 	ms.author="spelluru"/>
 
-# Erste Schritte mit Azure Data Factory
+# Tutorial: Erstellen der ersten Data Factory (Übersicht)
 > [AZURE.SELECTOR]
-- [Tutorial Overview](data-factory-build-your-first-pipeline.md)
-- [Using Data Factory Editor](data-factory-build-your-first-pipeline-using-editor.md)
-- [Using PowerShell](data-factory-build-your-first-pipeline-using-powershell.md)
-- [Using Visual Studio](data-factory-build-your-first-pipeline-using-vs.md)
-- [Using Resource Manager Template](data-factory-build-your-first-pipeline-using-arm.md)
+- [Übersicht über das Tutorial](data-factory-build-your-first-pipeline.md)
+- [Verwenden des Data Factory-Editors](data-factory-build-your-first-pipeline-using-editor.md)
+- [Mithilfe von PowerShell](data-factory-build-your-first-pipeline-using-powershell.md)
+- [Verwenden von Visual Studio](data-factory-build-your-first-pipeline-using-vs.md)
+- [Verwenden der Resource Manager-Vorlage](data-factory-build-your-first-pipeline-using-arm.md)
 
 Dieser Artikel hilft Ihnen beim Einstieg in die Erstellung Ihrer ersten Azure Data Factory.
 
@@ -46,7 +46,7 @@ In diesem Tutorial führen Sie die folgenden Schritte aus:
 1.	Erstellen Sie die **Data Factory**. Eine Data Factory kann eine oder mehrere Datenpipelines enthalten, die Daten verschieben und verarbeiten. 
 2.	Erstellen Sie die **verknüpften Dienste**. Sie erstellen einen verknüpften Dienst, um einen Datenspeicher oder einen Computedienst mit der Data Factory zu verknüpfen. Ein Datenspeicher wie Azure Storage hält Ein-/Ausgabedaten von Aktivitäten in der Pipeline. Ein Computedienst wie Azure HDInsight verarbeitet/transformiert Daten.    
 3.	Erstellen von **Datasets** für Eingabe und Ausgabe Ein Eingabedataset stellt die Eingabe für eine Aktivität in der Pipeline dar, und ein Ausgabedataset stellt die Ausgabe für die Aktivität dar.
-3.	Erstellen Sie die **Pipeline**. Eine Pipeline kann eine oder mehrere Aktivitäten wie z. B. Kopieraktivität zum Kopieren von Daten aus einer Quelle an ein Ziel oder HDInsight Hive-Aktivität zum Transformieren von Eingabedaten mithilfe des Hive-Skripts zum Erzeugen von Ausgabedaten aufweisen. Dieses Beispiel verwendet die HDInsight-Hive-Aktivität, die ein Hive-Skript ausführt. Das Skript erstellt zuerst eine externe Tabelle, die auf die Webprotokollrohdaten im Azure-Blobspeicher verweist, und partitioniert die Rohdaten dann nach Jahr und Monat.
+3.	Erstellen Sie die **Pipeline**. Eine Pipeline kann eine oder mehrere Aktivitäten wie z. B. Kopieraktivität zum Kopieren von Daten aus einer Quelle an ein Ziel oder HDInsight Hive-Aktivität zum Transformieren von Eingabedaten mithilfe des Hive-Skripts zum Erzeugen von Ausgabedaten aufweisen. Dieses Beispiel verwendet die HDInsight-Hive-Aktivität, die ein Hive-Skript ausführt. Das Skript erstellt zuerst eine externe Tabelle, die auf die Webprotokollrohdaten im Azure-Blobspeicher verweist, und partitioniert die Rohdaten dann nach Jahr und Monat.
 
 Ihre erste Pipeline mit dem Namen **MyFirstPipeline** verwendet eine Hive-Aktivität zum Transformieren und Analysieren eines Webprotokolls, das Sie in den Ordner **inputdata** im Container **adfgetstarted** (adfgetstarted/inputdata) in Ihrem Azure-Blobspeicher hochladen.
  
@@ -185,7 +185,7 @@ Erstellen Sie mithilfe des Editors eine Datei namens **input.log** in **c:\\adfg
 
 ### Hochladen von Eingabe- und HQL-Datei in Ihren Azure-Blobspeicher
 
-Sie können jedes Tool Ihrer Wahl für diese Aufgabe verwenden (z. B. [Microsoft Azure Storage-Explorer](http://storageexplorer.com/) oder CloudXPlorer von ClumsyLeaf Software). Dieser Abschnitt enthält Anweisungen zur Verwendung des AzCopy-Tools.
+Sie können jedes Tool Ihrer Wahl für diese Aufgabe verwenden (z. B. [Microsoft Azure Storage-Explorer](http://storageexplorer.com/) oder CloudXPlorer von ClumsyLeaf Software). Dieser Abschnitt enthält Anweisungen zur Verwendung des AzCopy-Tools.
 	 
 2. So bereiten Sie den Azure-Speicher für das Tutorial vor:
 	1. Laden Sie die [neueste Version von **AzCopy**](http://aka.ms/downloadazcopy) oder die [neueste Vorschauversion](http://aka.ms/downloadazcopypr) herunter. Im Artikel [Verwenden von AzCopy ](../storage/storage-use-azcopy.md) finden Sie eine Anleitung zur Verwendung des Hilfsprogramms.
@@ -222,4 +222,4 @@ Jetzt können Sie mit dem Tutorial beginnen. Klicken Sie oben auf eine der Regis
 - Visual Studio
 - Azure-Ressourcen-Manager-Vorlagen 
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0309_2016-->

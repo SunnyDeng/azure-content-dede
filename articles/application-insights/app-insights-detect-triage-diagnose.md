@@ -36,7 +36,10 @@ Das Team arbeitet an ungefähr folgendem Zyklus:
 
 Anforderungen werden in den Entwicklungs-Backlog (Aufgabenliste) geladen. Sie arbeiten mit kurzen Sprints, in denen häufig Software – in der Regel in Form von Verbesserungen und Erweiterungen der vorhandenen Anwendung – bereitgestellt wird. Die Live-App wird regelmäßig mit neuen Features aktualisiert. Während die App live geschaltet ist, überwacht das Team sie mithilfe von Application Insights in Hinblick auf Leistung und Verwendung. Diese Analyse wird zurück in ihr Entwicklungs-Backlog geladen.
 
-Das Team verwendet Application Insights zum genauen Überwachen der Live-Webanwendung in Bezug auf: * Leistung. Es möchte nachvollziehen können, wie die Antwortzeiten in Abhängigkeit von der Anforderungsanzahl variieren, wie viele CPU-, Netzwerk-, Datenträgerressourcen und andere Ressourcen verwendet werden und wo Engpässe auftreten. * Fehler. Wenn Ausnahmen oder Fehler bei Anforderungen auftreten oder ein Leistungsindikator den zulässigen Bereich überschreitet, muss das Team sofort darüber informiert werden, um entsprechende Maßnahmen ergreifen zu können. * Verwendung. Sobald eine neue Funktion veröffentlicht wird, möchte das Team wissen, inwieweit sie genutzt wird und ob Benutzer Probleme mit dieser Funktion haben.
+Das Team verwendet Application Insights zum genauen Überwachen der Live-Webanwendung in Bezug auf:
+* Leistung. Es soll nachvollziehbar sein, wie die Antwortzeiten in Abhängigkeit von der Anforderungsanzahl variieren, wie viele CPU-, Netzwerk-, Datenträgerressourcen und andere Ressourcen verwendet werden und wo Engpässe auftreten.
+* Fehler. Wenn Ausnahmen oder Fehler bei Anforderungen auftreten oder ein Leistungsindikator den zulässigen Bereich überschreitet, muss das Team sofort darüber informiert werden, um entsprechende Maßnahmen ergreifen zu können.
+* Verwendung. Sobald eine neue Funktion veröffentlicht wird, möchte das Team wissen, inwieweit sie genutzt wird und ob Benutzer Probleme mit dieser Funktion haben.
 
 
 
@@ -49,7 +52,7 @@ Konzentrieren wir uns auf den Feedbackteil des Zyklus:
 ## Erkennen schlechter Verfügbarkeit
 
 
-Marcela Markova ist im OBS-Team eine Spezialistin für Tests und für die Überwachung der Onlineleistung zuständig. Sie richtet mehrere [Webtests][availability] ein:
+Marcela Markova ist leitende Entwicklerin im OBS-Team, und ist für Tests sowie für die Überwachung der Onlineleistung zuständig. Sie richtet mehrere [Webtests][availability] ein:
 
 * Einen einzelnen URL-Test für die Hauptangebotsseite der App, http://fabrikambank.com/onlinebanking/. Sie legt Kriterien für den HTTP-Code 200 und den Text "Willkommen!" fest. Wenn dieser Test misslingt, ist etwas mit dem Netzwerk oder den Servern ernsthaft nicht in Ordnung, oder es liegt ggf. ein Bereitstellungsproblem vor. (Oder jemand hat ohne ihr Wissen die Begrüßungsmeldung auf der Seite geändert.)
 
@@ -77,27 +80,49 @@ Die Übersichtsseite in Application Insights enthält ein Diagramm, das eine Vie
 
 Die Browser-Seitenladezeit wird von Telemetriedaten abgeleitet, die direkt von Webseiten gesendet werden. Die Serverantwortzeit, die Anzahl von Serveranforderungen und die Anzahl der Anforderungsfehler werden alle auf dem Webserver gemessen und von dort an Application Insights gesendet.
 
+Marcela ist etwas besorgt über den Serverantwortgraphen, der die Durchschnittszeit anzeigt, in der ein Server eine HTTP-Anforderung vom Browser eines Benutzers erhält und in der der Server die Antwort zurückgibt. Es ist nicht ungewöhnlich, dass eine Abweichung in diesem Diagramm auftritt, da die Systemauslastung variiert. In diesem Fall existiert aber scheinbar eine Korrelation zwischen geringfügigen Anstiegen in der Anzahl der Anforderungen, und großen Anstiegen in der Antwortzeit. Das könnte darauf hinweisen, dass das System genau an seiner Grenze arbeitet.
 
-Der Zähler "Anforderungsfehler" bezieht sich auf Fälle, bei denen Benutzern ein Fehler angezeigt wurde, meist im Anschluss an eine im Code ausgelöste Ausnahme. Vielleicht wird den Benutzern auf dem Bildschirm die Meldung "Es tut uns leid, dass wir Ihre Daten zur Zeit nicht aktualisieren können" oder aber (im absolut peinlichsten Fall) ein Stapelabbild des Webservers gezeigt.
+Sie öffnet die Serverdiagramme:
 
+![Verschiedene Metriken](./media/app-insights-detect-triage-diagnose/06.png)
 
-Marcela wirft von Zeit zu Zeit gern einen Blick auf diese Diagramme. Treten keine Anforderungsfehler auf, ist das vielversprechend. Wenn sie jedoch als Bereich des Diagramms die letzte Woche angibt, werden gelegentliche Fehler angezeigt. Dies ist bei einem ausgelasteten Server akzeptabel. Doch wenn es bei den Anforderungsfehlern oder einigen anderen Metriken wie der Serverantwortzeit zu plötzlichen Spitzen kommt, möchte Marcela sofort davon wissen. Dabei kann es sich um ein unvorhergesehenes Problem handeln, das von einer bestimmten Codeversion, einem Fehler in einer Abhängigkeit, z. B. einer Datenbank, oder einer nicht ordnungsgemäßen Reaktion auf eine hohe Anforderungslast verursacht werden kann.
-
-#### Warnungen
-
-Also legt sie zwei [Warnungen][metrics] fest: eine für Antwortzeiten, die einen üblichen Schwellenwert überschreiten, und eine zweite für eine Rate fehlerhafter Anforderungen, die größer als die aktuelle Grundlage sind.
+Es scheinen keine Anzeichen einer Ressourceneinschränkung vorhanden zu sein, also sind die Unregelmäßigkeiten in den Serverantwort-Diagrammen möglicherweise nur ein Zufall.
 
 
-In Verbindung mit der Warnung zur Verfügbarkeit bieten diese ihr die Sicherheit, dass sie informiert wird, sobald etwas Ungewöhnliches passiert.
+## Warnungen
 
+Dennoch möchte sie die Antwortzeiten im Auge behalten. Wenn diese zu lang werden, möchte sie sofort darüber informiert sein.
 
-Es ist auch möglich, Warnungen für eine Vielzahl anderer Metriken festzulegen. Beispielsweise können Sie E-Mails empfangen, wenn die Anzahl der Ausnahmen hoch wird oder der verfügbare Arbeitsspeicher zur Neige geht oder es zu einer Spitze bei den Clientanforderungen kommt.
-
+Also richtet sie eine [Warnung][metrics] für Antwortzeiten ein, die länger sind als der typische Schwellenwert. Dies gibt ihr Zuversicht, dass Bescheid weiß, wenn Antwortzeiten zu langsam sind.
 
 
 ![Blatt "Warnung hinzufügen"](./media/app-insights-detect-triage-diagnose/07-alerts.png)
 
+Warnungen können für eine Vielzahl anderer Metriken eingerichtet werden. Beispielsweise können Sie E-Mails empfangen, wenn die Anzahl der Ausnahmen hoch wird oder der verfügbare Arbeitsspeicher zur Neige geht oder es zu einer Spitze bei den Clientanforderungen kommt.
 
+## Proaktive Diagnosewarnungen
+
+Am nächsten Tag kommt eine E-Mail mit einer Warnung von Application Insights. Als sie die E-Mail öffnet, erkennt sie, dass dies nicht die Warnung für Antwortzeiten ist, die sie eingerichtet hat. Stattdessen wird ihr mitgeteilt, dass es einen plötzlichen Anstieg an gescheiterten Anforderungen gab. Dies sind Anforderungen, die mindestens 500 Fehlercodes oder mehr zurückgegeben haben.
+
+Anforderungsfehler sind Fälle, bei denen Benutzern ein Fehler angezeigt wurde, meist im Anschluss an eine im Code ausgelöste Ausnahme. Vielleicht wird den Benutzern auf dem Bildschirm die Meldung "Es tut uns leid, dass wir Ihre Daten zur Zeit nicht aktualisieren können" oder aber (im absolut peinlichsten Fall) ein Stapelabbild des Webservers gezeigt.
+
+Diese Warnung ist eine Überraschung, denn das letzte Mal, als sie die Situation prüfte, war die Anzahl der Anforderungsfehler ermutigend niedrig. Eine kleine Anzahl von Fehlern werden in einem ausgelasteten Server erwartet.
+
+Dies war ebenso eine Überraschung für sie, denn sie musste diese Warnung nicht konfigurieren. Die Proaktive Diagnose ist schon in Application Insights enthalten. Sie passt sich automatisch dem üblichen Fehlermuster Ihrer App an, und „gewöhnt sich“ an Fehler auf einer bestimmten Seite, unter hoher Last oder verknüpft mit anderen Metriken. Es wird nur dann ein Alarm ausgelöst, wenn der Anstieg über einen erwarteten Punkt hinausgeht.
+
+![Proaktive Diagnose-E-Mail](./media/app-insights-detect-triage-diagnose/21.png)
+
+Dies ist eine sehr nützliche E-Mail. Sie löst nicht nur einen Alarm aus, sie führt auch einen großen Teil der Eingrenzung und Diagnose durch.
+
+Es wird gezeigt, wie viele Kunden, Webseiten oder Vorgänge betroffen sind. Marcela kann entscheiden, ob das gesamte Team als Übung für den Erstfall daran arbeiten soll, oder ob es reicht, diese Arbeit bis zur nächsten Woche aufzuschieben.
+
+Die E-Mail zeigt auch, dass eine bestimmte Ausnahme aufgetreten ist, und dass der Fehler den fehlerhaften Aufrufen auf eine bestimmte Datenbank zugeordnet werden kann, was sogar noch interessanter ist. Dies erklärt, warum der Fehler plötzlich aufgetreten ist, obwohl Marcelas Team in letzter Zeit keine Updates bereitgestellt hat.
+
+Sie sendet Ping-Nachrichten an den Leiter des Datenbankteams. Ja, sie haben ein Hotfix in der letzten halben Stunde herausgegeben, und ups, eine kleine Schemaänderung könnte durchgeführt worden sein ...
+
+Das Problem wird also behoben, noch vor der Untersuchung von Protokollen, und innerhalb von 15 Minuten vor dessen Erscheinen. Marcela klickt trotzdem auf den Link, um Application Insights zu öffnen. Sie wird direkt auf eine fehlgeschlagene Anforderung geleitet und sie kann die fehlerhafte Datenbankanforderung in der Liste der Abhängigkeitsaufrufe sehen.
+
+![Fehlgeschlagene Anforderung](./media/app-insights-detect-triage-diagnose/23.png)
 
 
 ## Erkennen von Ausnahmen
@@ -175,7 +200,7 @@ Sie kann die Auswirkung jeder Bereitstellung auf die Leistung bewerten, indem ü
 ## Eingrenzung
 
 
-Die Eingrenzung, d. h. das Bewerten des Schweregrads und Ausmaßes eines Problems, ist der erste Schritt nach der Erkennung. Müssen wir das Team um Mitternacht herbeirufen? Oder kann es bis zur nächsten praktischen Lücke im Rückstand unbehandelt bleiben? Es gibt einige wichtigen Fragen bei der Eingrenzung.
+Die Eingrenzung, d. h. das Bewerten des Schweregrads und Ausmaßes eines Problems, ist der erste Schritt nach der Erkennung. Müssen wir das Team um Mitternacht herbeirufen? Oder kann es bis zur nächsten praktischen Lücke im Rückstand unbehandelt bleiben? Es gibt einige wichtigen Fragen bei der Eingrenzung.
 
 
 Wie ist das Ausmaß? Die Diagramme auf dem Blatt "Übersicht" setzen das Problem in Perspektive. Beispielsweise hat die Fabrikam-Anwendung vier Webtestwarnungen in einer Nacht generiert. Als sich das Team das Diagramm am Morgen ansah, konnte es einige rote Punkte erkennen, wenngleich für die meisten Tests die Zeichen auf grün standen. Nach einer Detailsuche im Verfügbarkeitsdiagramm war klar, dass all diese zwischenzeitlichen Probleme von einem bestimmten Test herrührten. Es handelte sich offensichtlich um ein Netzwerkproblem, das sich auf nur eine Route auswirkte und sich wahrscheinlich von selbst beheben sollte.
@@ -234,7 +259,7 @@ Das Entwicklungsteam der Fabrikam Bank befolgt nun einen strukturierteren Ansatz
 
 * Es legt auf der Übersichtsseite von Application Insights Leistungsziele in Bezug auf bestimmte Kennzahlen fest.
 
-* Das Team integriert von Anfang an Leistungsmessungen in die Anwendung, z. B. in Form von Metriken, die den Benutzerfortschritt in "Trichtern" messen.
+* Das Team integriert von Anfang an Leistungsmessungen in die Anwendung, z. B. in Form von Metriken, die den Benutzerfortschritt in "Trichtern" messen.
 
 
 
@@ -261,4 +286,4 @@ Ein Team kann also Application Insights nicht nur nutzen, um einzelne Probleme z
 [usage]: app-insights-web-track-usage.md
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0309_2016-->

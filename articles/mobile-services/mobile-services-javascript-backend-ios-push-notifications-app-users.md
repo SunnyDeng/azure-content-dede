@@ -21,6 +21,11 @@
 
 [AZURE.INCLUDE [mobile-services-selector-push-users](../../includes/mobile-services-selector-push-users.md)]
 
+&nbsp;
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+> Informationen für die entsprechende Mobile Apps-Version dieses Themas finden Sie unter [Vorgehensweise: Senden von Pushbenachrichtigungen an einen authentifizierten Benutzer mithilfe von Tags](../app-service-mobile/app-service-mobile-node-backend-how-to-use-server-sdk.md#push-user).
+
 In diesem Thema erfahren Sie, wie Sie unter iOS Pushbenachrichtigungen an einen authentifizierten Benutzer senden. Bevor Sie dieses Lernprogramm starten, bearbeiten Sie zunächst [Erste Schritte mit Authentifizierung] und [Erste Schritte mit Pushbenachrichtigungen].
 
 In diesem Lernprogramm müssen sich Benutzer zuerst authentifizieren. Sie registrieren Sie dazu beim Notification Hub für Pushbenachrichtigungen und aktualisieren Serverskripts, damit diese Benachrichtigungen nur authentifizierte Benutzer gesendet werden.
@@ -69,8 +74,6 @@ function insert(item, user, request) {
 <!-- URLs. -->
 [Erste Schritte mit Authentifizierung]: mobile-services-ios-get-started-users.md
 [Erste Schritte mit Pushbenachrichtigungen]: mobile-services-javascript-backend-ios-get-started-push.md
-
-[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [Mobile Services .NET How-to Conceptual Reference]: mobile-services-ios-how-to-use-client-library.md
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0309_2016-->

@@ -15,14 +15,18 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na" 
-   ms.date="02/25/2016"
+   ms.date="03/02/2016"
    ms.author="mandia"/>
 
 # Erste Schritte mit der Google Drive-API
 Verbinden Sie sich mit Google Drive, um Dateien zu erstellen, Zeilen abzurufen usw. Die Google Drive-API kann in Folgendem verwendet werden:
 
-- PowerApps 
 - Logik-Apps 
+- PowerApps
+
+> [AZURE.SELECTOR]
+- [Logik-Apps](../articles/connectors/create-api-googledrive.md)
+- [PowerApps Enterprise](../articles/power-apps/powerapps-create-api-googledrive.md)
 
 Google Drive ermöglicht Folgendes:
 
@@ -47,33 +51,6 @@ Alle APIs unterstützen Daten im JSON- und XML-Format.
 
 ## Herstellen der Verbindung mit Google Drive
 
-### Hinzufügen zusätzlicher Konfiguration in PowerApps
-Wenn Sie Google Drive zu PowerApps Enterprise hinzufügen, geben Sie die Werte für den **App-Schlüssel** und den **geheimen App-Schlüssel** Ihrer Google Drive-Anwendung ein. Der Wert von **Umleitungs-URL** wird auch in Ihrer Google Drive-Anwendung verwendet. Wenn Sie noch keine Google Drive-Anwendung haben, führen Sie die folgenden Schritte aus, um die Anwendung zu erstellen:
-
-1. Melden Sie sich bei der [Google Developers Console][5] an, und wählen Sie **Leeres Projekt erstellen** aus: ![Google Developers Console][6]
-
-2. Geben Sie die Anwendungseigenschaften ein, und wählen Sie **Erstellen** aus.
-3. Wählen Sie **Google-APIs verwenden** aus: ![Verwenden von Google-APIs][8]  
-4. Wählen Sie in der Übersicht **Drive-API** aus: ![Übersicht über Google Drive-API][9]  
-5. Wählen Sie **Enable API** aus: ![Aktivieren der Google Drive-API][10]  
-6. Wählen Sie nach dem Aktivieren der Drive API die Registerkarte **Credentials** und dann **OAuth 2.0 Client ID** aus: ![Hinzufügen von Anmeldeinformationen][12]  
-7. Wählen Sie **Configure consent screen** aus.
-8. Geben Sie auf dem **OAuth-Zustimmungsbildschirm** unter **Produktname** einen Produktnamen ein, und wählen Sie **Speichern** aus: ![Konfigurieren des Zustimmungsbildschirms][13]  
-9. Auf der Seite „Create client ID“:  
-
-	1. Wählen Sie unter **Anwendungstyp** die Option **Webanwendung** aus.
-	2. Geben Sie einen Namen für den Client ein.
-	3. Geben Sie die Umleitungs-URL ein, die angezeigt wird, wenn Sie die Google Drive-API im Azure-Portal hinzufügen.
-	4. Klicken Sie auf **Erstellen**.  
-
-	![Erstellen der Client-ID][14]
-
-11. Die Client-ID und der geheime Client-Schlüssel der registrierten Anwendung werden angezeigt.
-
-Nun können Sie die Werte für den **App-Schlüssel** und den **geheimen App-Schlüssel** kopieren und in Ihre Google Drive-Konfiguration im Azure-Portal einfügen.
-
-
-### Hinzufügen zusätzlicher Konfiguration in Logik-Apps
 Wenn Sie diese API Ihren Logik-Apps hinzufügen, müssen Sie ihnen das Herstellen einer Verbindung mit Google Drive erlauben.
 
 1. Melden Sie sich bei Ihrem Google Drive-Konto an.
@@ -182,7 +159,7 @@ Extrahiert eine Archivdatei in einen Ordner in Google Drive (Beispiel: ZIP). ```
 
 
 ### Dateiinhalt anhand der ID abrufen    
-Ruft den Inhalt der Datei aus Google Drive anhand der ID ab. ```GET: /datasets/default/files/{id}/content```
+Ruft den Inhalt der Datei anhand der ID aus Google Drive ab. ```GET: /datasets/default/files/{id}/content```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -196,7 +173,7 @@ Ruft den Inhalt der Datei aus Google Drive anhand der ID ab. ```GET: /datasets/d
 
 
 ### Dateiinhalt anhand des Pfads abrufen    
-Ruft den Inhalt der Datei aus Google Drive anhand des Pfads ab. ```GET: /datasets/default/GetFileContentByPath```
+Ruft den Inhalt der Datei anhand des Pfads aus Google Drive ab. ```GET: /datasets/default/GetFileContentByPath```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -224,7 +201,7 @@ Ruft Dateimetadaten aus Google Drive anhand der ID ab. ```GET: /datasets/default
 
 
 ### Dateimetadaten anhand des Pfads abrufen    
-Ruft Dateimetadaten aus Google Drive anhand des Pfads ab. ```GET: /datasets/default/GetFileByPath```
+Ruft Dateimetadaten anhand des Pfads aus Google Drive ab. ```GET: /datasets/default/GetFileByPath```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -363,9 +340,10 @@ Aktualisiert eine Zeile in einer Google-Tabelle. ```PATCH: /datasets/{dataset}/t
 
 
 ## Nächste Schritte
-Nach Hinzufügen der Google Drive-API zu PowerApps Enterprise [erteilen Sie den Benutzern Berechtigungen](../power-apps/powerapps-manage-api-connection-user-access.md) zum Verwenden der API in ihren Apps.
 
-[Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md)
+[Erstellen Sie eine Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md).
+
+Gehen Sie zur [Liste der APIs](apis-list.md) zurück.
 
 
 <!--References-->
@@ -378,4 +356,4 @@ Nach Hinzufügen der Google Drive-API zu PowerApps Enterprise [erteilen Sie den 
 [13]: ./media/create-api-googledrive/configure-consent-screen.png
 [14]: ./media/create-api-googledrive/create-client-id.png
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

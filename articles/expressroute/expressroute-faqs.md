@@ -122,7 +122,7 @@ Weitere Informationen finden Sie unter [Freigeben einer ExpressRoute-Verbindung 
 Nein. Alle virtuellen Netzwerke, die mit der gleichen ExpressRoute-Verbindung verknüpft sind, sind Teil der gleichen Routingdomäne und aus Routingsicht nicht voneinander isoliert. Wenn Sie eine Isolierung der Routen benötigen, müssen Sie zuerst eine separate ExpressRoute-Verbindung erstellen.
 
 ### Kann mehr als ein virtuelles Netzwerk mit mehr als einer ExpressRoute-Verbindung verbunden sein?
-Ja. Sie können ein einzelnes virtuelles Netzwerk mit bis zu 4 ExpressRoute-Verbindungen verknüpfen. Sie müssen über vier unterschiedliche Standorte angefordert werden.
+Ja. Sie können ein einzelnes virtuelles Netzwerk mit bis zu 4 ExpressRoute-Verbindungen verknüpfen. Sie müssen über vier unterschiedliche [ExpressRoute-Standorte](expressroute-locations.md) angefordert werden.
 
 ### Kann ich von meinen virtuellen Netzwerken aus, die mit ExpressRoute-Verbindungen verbunden sind, ins Internet gehen?
 Ja. Wenn Sie über die BGP-Sitzung keine Standardrouten (0.0.0.0/0) oder Internet-Routepräfixe angekündigt haben, können Sie von einem virtuellen Netzwerk aus, das mit einer ExpressRoute-Verbindung verknüpft ist, eine Verbindung zum Internet herstellen.
@@ -241,4 +241,4 @@ Weitere Informationen zur Liste der Partner und Standorte, die ExpressRoute unte
 ### Kann ich über das Internet auf Office 365 zugreifen, selbst wenn für meine Organisation ExpressRoute konfiguriert wurde?
 Ja. Office 365-Dienstendpunkte sind über das Internet erreichbar, selbst wenn ExpressRoute für Ihr Netzwerk konfiguriert wurde. Wenn Sie sich an einem Ort befinden, an dem die Verbindung mit Office 365-Diensten über ExpressRoute konfiguriert wurde, wird die Verbindung über ExpressRoute hergestellt.
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0309_2016-->

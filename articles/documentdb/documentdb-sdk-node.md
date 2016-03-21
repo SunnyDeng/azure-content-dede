@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="nodejs" 
 	ms.topic="article" 
-	ms.date="02/02/2016" 
+	ms.date="03/08/2016" 
 	ms.author="ryancraw"/>
 
 # DocumentDB SDK
@@ -26,9 +26,20 @@
 
 ##DocumentDB Node.js SDK
 
-<table> <tr><td>** Herunterladen **</td><td>[NPM](https://www.npmjs.com/package/documentdb)</td></tr> <tr><td>** Mitwirken **</td><td>[GitHub](https://github.com/Azure/azure-documentdb-node/tree/master/source)</td></tr> <tr><td>** Dokumentation **</td><td>[Referenzdokumentation zum Node.js SDK](http://azure.github.io/azure-documentdb-node/)</td></tr> <tr><td>** Beispiele **</td><td>[Node.js-Codebeispiele](https://github.com/Azure/azure-documentdb-node/tree/master/samples)</td></tr> <tr><td>** Erste Schritte **</td><td>[Erste Schritte mit dem Node.js SDK](documentdb-nodejs-get-started.md)</td></tr> <tr><td>** Derzeit unterstützte Plattform **</td><td>[Node.js v0.10](https://nodejs.org/en/blog/release/v0.10.0/)<br/>[Node.js v0.12](https://nodejs.org/en/blog/release/v0.12.0/)<br/>[Node.js v4.2.0](https://nodejs.org/en/blog/release/v4.2.0/)</td></tr> </table></br>
+<table>
+<tr><td>**Download**</td><td>[NPM](https://www.npmjs.com/package/documentdb)</td></tr>
+<tr><td>**Mitwirken**</td><td>[GitHub](https://github.com/Azure/azure-documentdb-node/tree/master/source)</td></tr>
+<tr><td>**Dokumentation**</td><td>[Node.js SDK Reference Documentation](http://azure.github.io/azure-documentdb-node/)</td></tr>
+<tr><td>**Beispiele**</td><td>[Node.js Code Samples](https://github.com/Azure/azure-documentdb-node/tree/master/samples)</td></tr>
+<tr><td>**Erste Schritte**</td><td>[Erste Schritte mit dem Node.js-SDK] (documentdb-nodejs-get-started.md)</td></tr>
+<tr><td>**Aktuelle unterstützte Plattform**</td><td>[Node.js v0.10] (https://nodejs.org/en/blog/release/v0.10.0/)<br/>[Node.js v0.12](https://nodejs.org/en/blog/release/v0.12.0/)<br/>[Node.js v4.2.0](https://nodejs.org/en/blog/release/v4.2.0/)</td></tr>
+</table></br>
 
 ##Versionshinweise
+###<a name="1.5.6"/>1.5.6</a>
+
+- Fehler in „RangePartitionResolver.resolveForRead“ behoben, durch den aufgrund einer ungültigen Verkettung der Ergebnisse keine Links zurückgegeben wurden.
+
 ###<a name="1.5.5"/>1.5.5</a>
 
 - Problem mit „hashParitionResolver resolveForRead()“ behoben: Bei einem nicht angegebenen Partitionsschlüssel wurde eine Ausnahme ausgelöst, anstatt eine Liste aller registrierten Links zurückgegeben.
@@ -39,11 +50,11 @@
 
 ###<a name="1.5.3"/>1.5.3</a>
 
-- Problem [Nr. 81](https://github.com/Azure/azure-documentdb-node/issues/81) behoben – Ordnungsgemäße Behandlung von Bindestrichen in Medien-IDs
+- Problem [Nr. 81](https://github.com/Azure/azure-documentdb-node/issues/81) behoben – Ordnungsgemäße Behandlung von Bindestrichen in Medien-IDs.
 
 ###<a name="1.5.2"/>1.5.2</a>
 
-- Problem [Nr. 95](https://github.com/Azure/azure-documentdb-node/issues/95) behoben – Warnung des EventEmitter-Listeners über Speicherverluste
+- Problem [Nr. 95](https://github.com/Azure/azure-documentdb-node/issues/95) behoben – Warnung des EventEmitter-Listeners über Speicherverluste.
 
 ###<a name="1.5.1"/>1.5.1</a>
 
@@ -100,7 +111,7 @@
 - Allgemeine Verfügbarkeit (GA) des SDK
 
 ## Veröffentlichungs- und Deaktivierungstermine
-Wenn Microsoft ein SDK deaktiviert, werden Sie mindestens **12 Monate** vorher benachrichtigt, um einen reibungslosen Übergang zu einer neueren/unterstützten Version zu gewährleisten.
+Wenn Microsoft ein SDK deaktiviert, werden Sie mindestens **12 Monate** vorher benachrichtigt, um einen reibungslosen Übergang zu einer neueren/unterstützten Version zu gewährleisten.
 
 Neue Features, Funktionen und Optimierungen werden nur dem aktuellen SDK hinzugefügt. Daher wird empfohlen, immer so früh wie möglich auf die neueste SDK-Version zu aktualisieren.
 
@@ -143,4 +154,4 @@ Alle Versionen des Azure DocumentDB SDK für Node.js vor Version **1.0.0** werde
 
 Weitere Informationen zu DocumentDB finden Sie auf der Seite zum Dienst [Microsoft Azure DocumentDB](https://azure.microsoft.com/services/documentdb/).
 
-<!----HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0309_2016-->

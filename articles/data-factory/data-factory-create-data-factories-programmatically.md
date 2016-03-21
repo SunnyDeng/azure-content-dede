@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Erstellen, Überwachen und Verwalten von Azure Data Factorys mithilfe des Data Factory SDK" 
+	pageTitle="Erstellen, Überwachen und Verwalten von Azure Data Factorys mithilfe des Data Factory SDK | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie Azure Data Factorys mithilfe des Data Factory .NET SDK programmgesteuert erstellen, überwachen und verwalten." 
 	services="data-factory" 
 	documentationCenter="" 
@@ -394,4 +394,4 @@ Die Kopieraktivität führt die Datenverschiebung in Azure Data Factory durch, u
 [azure-developer-center]: http://azure.microsoft.com/downloads/
  
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

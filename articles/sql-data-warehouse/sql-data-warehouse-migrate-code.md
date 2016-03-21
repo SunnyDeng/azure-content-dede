@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/07/2016"
+   ms.date="03/03/2016"
    ms.author="jrj;barbkess;sonyama"/>
 
 # Migrieren von SQL-Code nach SQL Data Warehouse
@@ -55,9 +55,23 @@ Glücklicherweise können die meisten dieser Einschränkungen umgangen werden. D
 ### Allgemeine Tabellenausdrücke
 Die aktuelle Implementierung von allgemeinen Tabellenausdrücken (CTEs) in SQL Data Warehouse weist die folgenden Funktionen und Einschränkungen auf:
 
-**CTE-Funktionen** + Ein CTE kann in einer SELECT-Anweisung angegeben werden. + Ein CTE kann in einer CREATE VIEW-Anweisung angegeben werden. + Ein CTE kann in der Anweisung CREATE TABLE AS SELECT (CTAS) angegeben werden. + Ein CTE kann in der Anweisung CREATE REMOTE TABLE AS SELECT (CRTAS) angegeben werden. + Ein CTE kann in der Anweisung CREATE EXTERNAL TABLE AS SELECT (CETAS) angegeben werden. + Von einem CTE kann auf eine Remotetabelle verwiesen werden. + Von einem CTE kann auf eine externe Tabelle verwiesen werden. + In einem CTE können mehrere CTE-Abfragedefinitionen festgelegt werden.
+**Funktionalität allgemeiner Tabellenausdrücke (CTE)**
++ Ein allgemeiner Tabellenausdruck kann in einer SELECT-Anweisung angegeben werden.
++ Ein allgemeiner Tabellenausdruck kann in einer CREATE VIEW-Anweisung angegeben werden.
++ Ein allgemeiner Tabellenausdruck kann in einer CREATE TABLE AS SELECT (CTAS)-Anweisung angegeben werden.
++ Ein allgemeiner Tabellenausdruck kann in einer CREATE REMOTE TABLE AS SELECT (CRTAS)-Anweisung angegeben werden.
++ Ein allgemeiner Tabellenausdruck kann in einer CREATE EXTERNAL TABLE AS SELECT (CETAS)-Anweisung angegeben werden.
++ Eine Remotetabelle kann über einen allgemeinen Tabellenausdruck referenziert werden.
++ Eine externe Tabelle kann über einen allgemeinen Tabellenausdruck referenziert werden.
++ In einem allgemeinen Tabellenausdruck können mehrere Abfragedefinitionen definiert werden.
 
-**CTE-Einschränkungen** + Auf ein CTE muss eine einzelne SELECT-Anweisung folgen. Die Anweisungen INSERT, UPDATE, DELETE und MERGE werden nicht unterstützt. + Ein allgemeiner Tabellenausdruck mit Verweisen auf sich selbst (rekursiver allgemeiner Tabellenausdruck) wird nicht unterstützt (siehe nachfolgender Abschnitt). + Die Angabe mehrerer WITH-Klauseln in einem CTE ist nicht zulässig. Wenn eine CTE-Abfragedefinition beispielsweise eine Unterabfrage enthält, darf diese Unterabfrage keine geschachtelte WITH-Klausel enthalten, die einen anderen CTE definiert. + In der CTE-Abfragedefinition darf nur eine ORDER BY-Klausel verwendet werden, wenn eine TOP-Klausel angegeben ist. + Wenn ein CTE in einer Anweisung verwendet wird, die Teil eines Batches ist, muss auf die davor angegebene Anweisung ein Semikolon folgen. + Bei der Verwendung in Anweisungen, die mit „sp\_prepare“ vorbereitet werden, verhalten sich CTEs genau wie andere SELECT-Anweisungen in PDW. Wenn CTEs jedoch als Teil von CETAS verwendet werden, die mit „sp\_prepare“ vorbereitet werden, kann das Verhalten von SQL Server- und anderen PDW-Anweisungen aufgrund der Art, wie die Bindung für „sp\_prepare“ implementiert wird, abweichen. Falls die das CTE referenzierende SELECT-Anweisung eine falsche Spalte verwendet, die im CTE nicht vorhanden ist, wird „sp\_prepare“ übergeben, ohne dass der Fehler erkannt wird. Der Fehler wird dann aber während „sp\_execute“ ausgegeben.
+**Einschränkungen bei allgemeinen Tabellenausdrücken (CTE)**
++ Auf einen allgemeinen Tabellenausdruck muss eine einzelne SELECT-Anweisung folgen. INSERT-, UPDATE-, DELETE- und MERGE-Anweisungen werden nicht unterstützt.
++ Ein allgemeiner Tabellenausdruck, der Verweise auf sich selbst (einen rekursiven allgemeinen Tabellenausdrucks) enthält, wird nicht unterstützt (siehe nachfolgenden Abschnitt).
++ Es ist maximal eine WITH-Klausel in einem allgemeinen Tabellenausdruck zulässig. Beispiel: Wenn eine Abfragedefinition für einen allgemeinen Tabellenausdruck eine Unterabfrage enthält, kann nicht diese Unterabfrage keine geschachtelte WITH-Klausel enthalten, die einen anderen allgemeinen Tabellenausdruck definiert.
++ Eine ORDER BY-Klausel kann in der Abfragedefinition für einen allgemeinen Tabellenausdruck nur verwendet werden, wenn eine TOP-Klausel angegeben wurde.
++ Wenn ein allgemeiner Tabellenausdruck in einer Anweisung verwendet wird, die Teil einer Batchinstanz ist, muss der Anweisung davor ein Semikolon folgen.
++ Bei Verwendung in Anweisungen, die mit sp\_prepare vorbereitet wurden, verhalten sich allgemeine Tabellenausdrücke genauso, wie andere SELECT-Anweisungen in PDW. Wenn CTEs jedoch als Teil von CETAS verwendet werden, die mit „sp\_prepare“ vorbereitet werden, kann das Verhalten von SQL Server- und anderen PDW-Anweisungen aufgrund der Art, wie die Bindung für „sp\_prepare“ implementiert wird, abweichen. Falls die das CTE referenzierende SELECT-Anweisung eine falsche Spalte verwendet, die im CTE nicht vorhanden ist, wird „sp\_prepare“ übergeben, ohne dass der Fehler erkannt wird. Der Fehler wird dann aber während „sp\_execute“ ausgegeben.
 
 ### Rekursive allgemeine Tabellenausdrücke (CTE)
 
@@ -65,7 +79,7 @@ Dies ist ein komplexes Migrationsszenario. Es wird empfohlen, den CTE zu unterte
 
 ### Systemfunktionen
 
-Es werden auch einige Systemfunktionen nicht unterstützt. Zu den wichtigsten Funktionen, die normalerweise in Data Warehousing verwendet, gehören u. a.:
+Es werden auch einige Systemfunktionen nicht unterstützt. Zu den wichtigsten Funktionen, die normalerweise in Data Warehousing verwendet, gehören u. a.:
 
 - NEWID()
 - NEWSEQUENTIALID()
@@ -80,17 +94,17 @@ Wieder können viele dieser Probleme umgangen werden.
 Der folgende Code ist beispielsweise eine Alternativlösung zum Abrufen von @@ROWCOUNT-Informationen:
 
 ```
-SELECT  SUM(row_count) AS row_count 
-FROM    sys.dm_pdw_sql_requests 
-WHERE   row_count <> -1 
-AND     request_id IN 
-                    (   SELECT TOP 1    request_id 
-                        FROM            sys.dm_pdw_exec_requests 
-                        WHERE           session_id = SESSION_ID() 
+SELECT  SUM(row_count) AS row_count
+FROM    sys.dm_pdw_sql_requests
+WHERE   row_count <> -1
+AND     request_id IN
+                    (   SELECT TOP 1    request_id
+                        FROM            sys.dm_pdw_exec_requests
+                        WHERE           session_id = SESSION_ID()
                         ORDER BY end_time DESC
                     )
 ;
-``` 
+```
 
 ## Nächste Schritte
 Hinweise zur Entwicklung des Codes finden Sie in der [Entwicklungsübersicht][].
@@ -116,4 +130,4 @@ Hinweise zur Entwicklung des Codes finden Sie in der [Entwicklungsübersicht][].
 
 <!--Other Web references-->
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0309_2016-->

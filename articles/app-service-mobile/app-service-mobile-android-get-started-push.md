@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="mobile-android"
 	ms.devlang="java"
 	ms.topic="article"
-	ms.date="02/04/2016"
-	ms.author="yuaxu"/>
+	ms.date="03/04/2016"
+	ms.author="yuaxu;ricksal"/>
 
 # Hinzufügen von Pushbenachrichtigungen zu Ihrer Android-App
 
@@ -80,4 +80,4 @@ Sie können die App testen, indem Sie ein Android-Telefon direkt mit einem USB-K
 
 [Set Up Google Play Services SDK]: https://developers.google.com/android/guides/setup
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0309_2016-->

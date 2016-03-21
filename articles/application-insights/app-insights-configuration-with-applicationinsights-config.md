@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/05/2015" 
+	ms.date="03/06/2015" 
 	ms.author="awills"/>
 
 # Konfigurieren des Application Insights-SDK mit "ApplicationInsights.config" oder XML
@@ -46,7 +46,7 @@ Sie können auch eigenen Code zur Abhängigkeitsnachverfolgung mithilfe der [Tra
 
 ### Leistungserfassung
 
-Dient zum [Sammeln von Systemleistungsindikatoren](app-insights-web-monitor-performance.md#system-performance-counters), z. B. CPU-, Arbeitsspeicher- und Netzwerkauslastung von IIS-Installationen. Sie können angeben, welche Leistungsindikatoren erfasst werden sollen, z. B. auch Leistungsindikatoren, die Sie selbst eingerichtet haben.
+Dient zum [Sammeln von Systemleistungsindikatoren](app-insights-web-monitor-performance.md#system-performance-counters), z. B. CPU-, Arbeitsspeicher- und Netzwerkauslastung von IIS-Installationen. Sie können angeben, welche Leistungsindikatoren erfasst werden sollen, z. B. auch Leistungsindikatoren, die Sie selbst eingerichtet haben.
 
 * `Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector.PerformanceCollectorModule`
 * NuGet-Paket [Microsoft.ApplicationInsights.PerfCounterCollector](http://www.nuget.org/packages/Microsoft.ApplicationInsights.PerfCounterCollector).
@@ -54,7 +54,7 @@ Dient zum [Sammeln von Systemleistungsindikatoren](app-insights-web-monitor-perf
 
 ### Application Insights-Diagnosetelemetrie
 
-`DiagnosticsTelemetryModule` gibt Fehler im eigentlichen Application Insights-Instrumentationscode an. Dies geschieht beispielsweise, wenn der Code nicht auf Leistungsindikatoren zugreifen kann oder wenn `ITelemetryInitializer` eine Ausnahme auslöst wird. Telemetriedaten der Ablaufverfolgung, die in diesem Modul nachverfolgt werden, werden in der [Diagnosesuche][diagnostic] angezeigt.
+`DiagnosticsTelemetryModule` gibt Fehler im eigentlichen Application Insights-Instrumentationscode an. Dies geschieht beispielsweise, wenn der Code nicht auf Leistungsindikatoren zugreifen kann oder wenn `ITelemetryInitializer` eine Ausnahme auslöst wird. Telemetriedaten der Ablaufverfolgung, die in diesem Modul nachverfolgt werden, werden in der [Diagnosesuche][diagnostic] angezeigt.
  
 * `Microsoft.ApplicationInsights.Extensibility.Implementation.Tracing.DiagnosticsTelemetryModule`
 * NuGet-Paket [Microsoft.ApplicationInsights](http://www.nuget.org/packages/Microsoft.ApplicationInsights). Wenn Sie nur dieses Paket installieren, wird die Datei „ApplicationInsights.config“ nicht automatisch erstellt. 
@@ -285,4 +285,4 @@ Um einen neuen Schlüssel abzurufen, [erstellen Sie eine neue Ressource im Appli
 [redfield]: app-insights-monitor-performance-live-website-now.md
 [start]: app-insights-overview.md
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0309_2016-->

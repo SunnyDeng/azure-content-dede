@@ -13,15 +13,15 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
-   ms.date="12/02/2015"
+   ms.date="03/04/2016"
    ms.author="jgao"/>
 
 # Konfigurieren einer VPN-Verbindung zwischen zwei virtuellen Netzwerken in Azure  
 
 > [AZURE.SELECTOR]
-- [Configure VPN connectivity](../hdinsight-hbase-geo-replication-configure-VNETs.md)
-- [Configure DNS](hdinsight-hbase-geo-replication-configure-DNS.md)
-- [Configure HBase replication](hdinsight-hbase-geo-replication.md) 
+- [Konfigurieren von VPN-Konnektivität](../hdinsight-hbase-geo-replication-configure-VNETs.md)
+- [Konfigurieren von DNS](hdinsight-hbase-geo-replication-configure-DNS.md)
+- [Konfigurieren von HBase-Replikation](hdinsight-hbase-geo-replication.md) 
 
 Die virtuelle Azure-Netzwerk Standort-zu-Standort-Konnektivität verwendet ein VPN-Gateway, um einen sicheren Tunnel mit IPSec/IKE bereitzustellen. Die VNets können sich in verschiedenen Abonnements und Regionen befinden. Sie können sogar VNet-zu-VNet-Kommunikation mit Konfigurationen für mehrere Standorte kombinieren. Es gibt mehrere Gründe für VNet zu-VNet-Konnektivität:
 
@@ -29,7 +29,7 @@ Die virtuelle Azure-Netzwerk Standort-zu-Standort-Konnektivität verwendet ein V
 - Regionale Anwendungen mit mehreren Ebenen mit starker Isolierungsgrenze 
 - Abonnementübergreifende Kommunikation zwischen Organisationen in Azure
 
-Weitere Informationen finden Sie unter [Konfiguration einer VNet-zu-VNet-Verbindung](../virtual-network/virtual-networks-configure-vnet-to-vnet-connection.md).
+Weitere Informationen finden Sie unter [Konfiguration einer VNet-zu-VNet-Verbindung](../vpn-gateway/virtual-networks-configure-vnet-to-vnet-connection.md).
 
 Video anzeigen:
 
@@ -189,7 +189,7 @@ Diese Konfiguration umfasst zwei Teile. Zunächst konfigurieren Sie eine VNet-St
 
 1.	Klicken Sie im klassischen Azure-Portal auf die Registerkarte **DASHBOARD**.
 4.	Klicken Sie auf unten auf der Seite auf **GATEWAY ERSTELLEN** und anschließend auf **Dynamisches Routing**.
-5.	Klicken Sie auf **Ja**, um zu bestätigen. Die Gatewaygrafik auf der Seite wechselt zu Gelb und zeigt „Gateway wird erstellt“ an. Die Erstellung des Gateways nimmt normalerweise 15 Minuten in Anspruch.
+5.	Klicken Sie auf **Ja**, um zu bestätigen. Die Gatewaygrafik auf der Seite wechselt zu Gelb und zeigt „Gateway wird erstellt“ an. Die Erstellung des Gateways nimmt normalerweise 15 Minuten in Anspruch.
 
 	Wenn sich der Gatewaystatus in „Connecting“ ändert, wird die IP-Adresse für jedes Gateway im Dashboard angezeigt. Notieren Sie sich die IP-Adressen, die für jedes VNet gelten. Gehen Sie dabei sorgfältig vor, um sie nicht zu verwechseln. Dies sind die IP-Adressen, die verwendet werden, wenn Sie die IP-Platzhalteradressen für das VPN-Gerät unter „Lokale Netzwerke“ bearbeiten.
 
@@ -270,4 +270,4 @@ In diesem Lernprogramm haben Sie gelernt, eine VPN-Verbindung zwischen zwei virt
 [img-vnet-lnet-diagram]: ./media/hdinsight-hbase-geo-replication-configure-VNets/HDInsight.HBase.VPN.LNet.diagram.png
 [img-vpn-status]: ./media/hdinsight-hbase-geo-replication-configure-VNets/HDInsight.HBase.VPN.status.png
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0309_2016-->

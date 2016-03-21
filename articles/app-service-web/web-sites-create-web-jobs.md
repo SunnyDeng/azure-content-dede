@@ -76,7 +76,7 @@ Die folgenden Dateitypen werden akzeptiert:
 
 ## <a name="CreateScheduledCRON"></a>Erstellen eines geplanten WebJobs mithilfe eines CRON-Ausdrucks
 
-Diese Technik ist in Web-Apps im Standard- oder Premium-Modus verfügbar und erfordert die Aktivierung der Einstellung **Immer aktiviert** für die Anwendung.
+Diese Technik ist in Web-Apps im Basic-, Standard- oder Premium-Modus verfügbar und erfordert die Aktivierung der Einstellung **Immer aktiviert** für die Anwendung.
 
 Damit ein bedarfsgesteuerter WebJob in einen geplanten WebJob wird, muss lediglich eine `settings.job` -Datei im Stamm der WebJob Zip-Datei eingefügt werden. Diese JSON-Datei sollte eine `schedule`-Eigenschaft mit einem [CRON-Ausdruck](https://en.wikipedia.org/wiki/Cron) wie im Beispiel unten enthalten.
 
@@ -92,7 +92,7 @@ Um beispielsweise Ihren WebJob alle 15 Minuten auszulösen, sieht `settings.job`
 
 Weitere Beispiele für CRON-Zeitpläne:
 
-- Einmal pro Stunde (d. h. wenn die Minutenzahl 0 ist): `0 0 * * * *` 
+- Einmal pro Stunde (d. h. wenn die Minutenzahl 0 ist): `0 0 * * * *` 
 - Jede Stunde von 9:00 bis 17:00 Uhr: `0 0 9-17 * * *` 
 - Täglich um 9:30 Uhr: `0 30 9 * * *`
 - An jedem Werktag um 9:30 Uhr: `0 30 9 * * 1-5`
@@ -146,7 +146,7 @@ Das Azure-Portal bietet noch nicht die Möglichkeit, einen geplanten Webauftrag 
 	
 	![Bestimmte Wochentage in bestimmten Wochen in einem Monat planen][SchdMonthsOnPartWeekDaysOccurences]
 	
-11. Nachdem Sie mindestens einen Auftrag erstellt haben, werden die Namen zusammen mit dem Status, dem Zeitplantyp und anderen Informationen auf der Registerkarte WebJobs angezeigt. Die Verlaufsinformationen für die letzten 30 Webaufträge werden gespeichert.
+11. Nachdem Sie mindestens einen Auftrag erstellt haben, werden die Namen zusammen mit dem Status, dem Zeitplantyp und anderen Informationen auf der Registerkarte WebJobs angezeigt. Die Verlaufsinformationen für die letzten 30 Webaufträge werden gespeichert.
 	
 	![Auftragsliste][WebJobsListWithSeveralJobs]
 	
@@ -195,7 +195,7 @@ Geplante Aufträge können auf den Seiten im Azure Scheduler des [klassischen Po
 
 ## <a name="WHPNotes"></a>Hinweise
 	
-- Web-Apps im kostenlosen Modus können nach 20 Minuten ablaufen, wenn keine Anforderungen bei der scm-Website (Bereitstellung) eingehen und das Web-App-Portal in Azure nicht geöffnet ist. Dieses Verhalten wird durch Anforderungen bei der tatsächlichen Website nicht zurückgesetzt.
+- Web-Apps im kostenlosen Modus können nach 20 Minuten ablaufen, wenn keine Anforderungen bei der scm-Website (Bereitstellung) eingehen und das Web-App-Portal in Azure nicht geöffnet ist. Dieses Verhalten wird durch Anforderungen bei der tatsächlichen Website nicht zurückgesetzt.
 - Code für einen fortlaufenden Auftrag muss zur Ausführung in einer Endlosschleife geschrieben sein.
 - Kontinuierliche Aufträge werden nur dann fortlaufend ausgeführt, wenn die Web-App aktiv ist.
 - In den Modi "Basic" und "Standard" ist das Feature "Immer aktiviert" verfügbar. Ist es aktiviert, wird verhindert, dass Web-Apps in den Leerlauf wechseln.
@@ -239,4 +239,4 @@ Weitere Informationen finden Sie unter [Empfohlene Ressourcen für Azure WebJobs
 [JobActionPageInScheduler]: ./media/web-sites-create-web-jobs/33JobActionPageInScheduler.png
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0309_2016-->

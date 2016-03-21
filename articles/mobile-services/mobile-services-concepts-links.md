@@ -20,8 +20,6 @@
 
 [AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
 
-&nbsp;
-
 Über die Links zu den unten angegebenen Themen erhalten Sie Informationen zu bestimmten Verhaltensweisen von Microsoft Azure Mobile Services. Diese Themen sind auch als Hilfe im klassischen Azure-Portal verfügbar.
 
 [AZURE.INCLUDE [mobile-services-concepts](../../includes/mobile-services-concepts.md)]
@@ -86,4 +84,4 @@ Die folgenden Themen enthalten Beispiele zum Ausführen von Aufgaben mit Servers
 - [Fehlerbehandlung](https://msdn.microsoft.com/library/azure/jj631632.aspx)
 - [Tastenkombinationen](https://msdn.microsoft.com/library/azure/jj552469.aspx)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0309_2016-->

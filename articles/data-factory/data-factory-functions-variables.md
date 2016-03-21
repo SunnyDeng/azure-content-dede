@@ -55,21 +55,21 @@ In den folgenden Tabellen werden alle Funktionen in Azure Data Factory aufgelist
 
 Kategorie | Funktion | Parameter | Beschreibung
 -------- | -------- | ---------- | ----------- 
-Time | AddHours(X,Y) | X: DateTime <p>Y: int</p> | Fügt Y Stunden der angegebenen Uhrzeit X hinzu.<p>Beispiel: 05.09.2013 12:00:00 Uhr + 2 Stunden = 05.09.2013 14:00:00 Uhr</p>
-Time | AddMinutes(X,Y) | X: DateTime <p>Y: int</p> | Fügt Y Minuten zu X hinzu.<p>Beispiel: 15.09.2013 12:00:00 Uhr + 15 Minuten = 15.09.2013 12:15:00 Uhr</p>
-Time | StartOfHour(X) | X: Datetime | Ruft die Startzeit der Stunde ab, die von der Stundenkomponente von X dargestellt wird. <p>Beispiel: StartOfHour von 15.09.2013 05:10:23 Uhr ist 15.09.2013 05:00:00 Uhr</p>
-Date | AddDays(X,Y) | X: DateTime<p>Y: int</p> | Fügt Y Tage zu X hinzu. <p>Beispiel: 15.09.2013 12:00:00 Uhr + 2 Tage = 17.09.2013 12:00:00 Uhr</p>
-Date | AddMonths(X,Y) | X: DateTime<p>Y: int</p> | Fügt Y Monate zu X hinzu.<p>Beispiel: 15.09.2013 12:00:00 Uhr + 1 Monat = 15.10.2013 12:00:00 Uhr</p> 
-Date | AddQuarters(X,Y) | X: DateTime <p>Y: int</p> | Fügt Y * 3 Monate zu X hinzu<p>Beispiel: 15.09.2013 12:00:00 Uhr + 1 Quartal = 15.12.2013 12:00:00 Uhr</p>
-Date | AddWeeks(X,Y) | X: DateTime<p>Y: int</p> | Fügt Y * 7 Tage zu X hinzu. <p>Beispiel: 15.09.2013 12:00:00 Uhr + 1 Woche = 22.09.2013 12:00:00 Uhr</p>
-Date | AddYears(X,Y) | X: DateTime<p>Y: int</p> | Fügt Y Jahre zu X hinzu.<p>Beispiel: 15.09.2013 12:00:00 Uhr + 1 Jahr = 15.09.2014 12:00:00 Uhr</p>
-Date | Day(X) | X: DateTime | Ruft die Komponente "Tag" von X ab.<p>Beispiel: Tag von 15.09.2013 12:00:00 Uhr ist der 9.</p>
-Date | DayOfWeek(X) | X: DateTime | Ruft den Tag der Komponente "Woche" von X ab.<p>Beispiel: DayOfWeek von 15.09.2013 12:00:00 Uhr ist Sonntag.</p>
-Date | DayOfYear(X) | X: DateTime | Ruft den Tag des Jahres ab, der von der Komponente "Jahr" von X dargestellt wird.<p>Beispiele:<br/>01.12.2015: Tag 335 von 2015<br/>31.12.2015: Tag 365 von 2015<br/>31.12.2016: Tag 366 von 2016 (Schaltjahr)</p>
-Date | DaysInMonth(X) | X: DateTime | Ruft die Tage des Monats ab, die von der Komponente "Monat" des Parameters X dargestellt werden.<p>Beispiel: DaysInMonth von 15.09.2013 sind 30, da der Monat September 30 Tage hat.</p>
-Date | EndOfDay(X) | X: DateTime | Ruft die Datum/Uhrzeit-Angabe ab, die das Ende des Tages (Komponente "Tag") von X darstellt.<p>Beispiel: EndOfDay 15.09.2013 17:10:23 Uhr ist 15.09.2013 23:59:59 Uhr.</p>
-Date | EndOfMonth(X) | X: DateTime | Ruft das Ende des Monats ab, das von der Komponente "Monat" des Parameters X dargestellt wird.<p>Beispiel: EndOfMonth 15.09.2013 17:10:23 Uhr ist 30.09.2013 23:59:59 Uhr (Datum/Uhrzeit-Angabe, die das Ende des Monats September darstellt)</p>
-Date | StartOfDay(X) | X: DateTime | Ruft den Beginn des Tages ab, der von der Komponente "Tag" des Parameters X dargestellt wird.<p>Beispiel: StartOfDay 15.09.2013 17:10:23 Uhr ist 15.09.2013 12:00:00 Uhr.</p>
+Time | AddHours(X,Y) | X: DateTime <br/><br/>Y: int | Fügt Y Stunden der angegebenen Uhrzeit X hinzu.<br/><br/>Beispiel: 05.09.2013 12:00:00 Uhr + 2 Stunden = 05.09.2013 14:00:00 Uhr
+Time | AddMinutes(X,Y) | X: DateTime <br/><br/>Y: int | Fügt Y Minuten zu X hinzu.<br/><br/>Beispiel: 15.09.2013 12:00:00 Uhr + 15 Minuten = 15.09.2013 12:15:00 Uhr
+Time | StartOfHour(X) | X: Datetime | Ruft die Startzeit der Stunde ab, die von der Stundenkomponente von X dargestellt wird. <br/><br/>Beispiel: StartOfHour von 15.09.2013 05:10:23 Uhr ist 15.09.2013 05:00:00 Uhr
+Date | AddDays(X,Y) | X: DateTime<br/><br/>Y: int | Fügt Y Tage zu X hinzu. <br/><br/>Beispiel: 15.09.2013 12:00:00 Uhr + 2 Tage = 17.09.2013 12:00:00 Uhr
+Date | AddMonths(X,Y) | X: DateTime<br/><br/>Y: int | Fügt Y Monate zu X hinzu.<br/><br/>Beispiel: 15.09.2013 12:00:00 Uhr + 1 Monat = 15.10.2013 12:00:00 Uhr 
+Date | AddQuarters(X,Y) | X: DateTime <br/><br/>Y: int | Fügt Y * 3 Monate zu X hinzu<br/><br/>Beispiel: 15.09.2013 12:00:00 Uhr + 1 Quartal = 15.12.2013 12:00:00 Uhr
+Date | AddWeeks(X,Y) | X: DateTime<br/><br/>Y: int | Fügt Y * 7 Tage zu X hinzu. <br/><br/>Beispiel: 15.09.2013 12:00:00 Uhr + 1 Woche = 22.09.2013 12:00:00 Uhr
+Date | AddYears(X,Y) | X: DateTime<br/><br/>Y: int | Fügt Y Jahre zu X hinzu.<br/><br/>Beispiel: 15.09.2013 12:00:00 Uhr + 1 Jahr = 15.09.2014 12:00:00 Uhr
+Date | Day(X) | X: DateTime | Ruft die Komponente "Tag" von X ab.<br/><br/>Beispiel: Tag von 15.09.2013 12:00:00 Uhr ist der 9. 
+Date | DayOfWeek(X) | X: DateTime | Ruft den Tag der Komponente "Woche" von X ab.<br/><br/>Beispiel: DayOfWeek von 15.09.2013 12:00:00 Uhr ist Sonntag.
+Date | DayOfYear(X) | X: DateTime | Ruft den Tag des Jahres ab, der von der Komponente "Jahr" von X dargestellt wird.<br/><br/>Beispiele:<br/>01.12.2015: Tag 335 von 2015<br/>31.12.2015: Tag 365 von 2015<br/>31.12.2016: Tag 366 von 2016 (Schaltjahr)
+Date | DaysInMonth(X) | X: DateTime | Ruft die Tage des Monats ab, die von der Komponente "Monat" des Parameters X dargestellt werden.<br/><br/>Beispiel: DaysInMonth von 15.09.2013 sind 30, da der Monat September 30 Tage hat.
+Date | EndOfDay(X) | X: DateTime | Ruft die Datum/Uhrzeit-Angabe ab, die das Ende des Tages (Komponente "Tag") von X darstellt.<br/><br/>Beispiel: EndOfDay 15.09.2013 17:10:23 Uhr ist 15.09.2013 23:59:59 Uhr.
+Date | EndOfMonth(X) | X: DateTime | Ruft das Ende des Monats ab, das von der Komponente "Monat" des Parameters X dargestellt wird.<br/><br/>Beispiel: EndOfMonth 15.09.2013 17:10:23 Uhr ist 30.09.2013 23:59:59 Uhr (Datum/Uhrzeit-Angabe, die das Ende des Monats September darstellt)
+Date | StartOfDay(X) | X: DateTime | Ruft den Beginn des Tages ab, der von der Komponente "Tag" des Parameters X dargestellt wird.<br/><br/>Beispiel: StartOfDay 15.09.2013 17:10:23 Uhr ist 15.09.2013 12:00:00 Uhr.
 DateTime | From(X) | X: String | Analysieren der Zeichenfolge X in einen Datum/Uhrzeit-Wert.
 DateTime | Ticks(X) | X: DateTime | Ruft die Zeiteinheitseigenschaft des Parameters X ab. Eine Zeiteinheit entspricht 100 Nanosekunden. Der Wert dieser Eigenschaft stellt die Anzahl der Zeiteinheiten dar, die seit Mitternacht am 1. Januar 0001 verstrichen sind. 
 Text | Format(X) | X: Stringvariable | Formatiert den Text.
@@ -88,4 +88,4 @@ Im Thema [Benutzerdefinierte Formatzeichenfolgen für Datum und Uhrzeit](https:/
 > [AZURE.NOTE] Bei Verwenden einer Funktion in einer anderen Funktion müssen Sie für die innere Funktion nicht das Präfix **$$** verwenden. Beispiel: $$Text.Format('PartitionKey eq \\'my\_pkey\_filter\_value\\' und RowKey ge \\'{0:yyyy-MM-dd HH:mm:ss}\\'', Time.AddHours(SliceStart, -6)). Beachten Sie bei diesem Beispiel, dass das Präfix **$$** für die **Time.AddHours**-Funktion nicht verwendet wird.
   
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0309_2016-->

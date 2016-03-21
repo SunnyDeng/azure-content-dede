@@ -4,7 +4,7 @@
 	services="cache" 
 	documentationCenter="" 
 	authors="steved0x" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor=""/>
 
 <tags 
@@ -13,14 +13,14 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="12/03/2015" 
+	ms.date="03/04/2016" 
 	ms.author="sdanie"/>
 
 # Verwenden von Azure Managed Cache Service
 
 Dieser Leitfaden beschreibt die ersten Schritte mit **Azure Managed Cache Service**. Die Beispiele sind in C#-Code geschrieben und verwenden die .NET API. Die behandelten Szenarien umfassen das **Erstellen und Konfigurieren eines Caches**, **Konfigurieren von Cacheclients**, **Hinzufügen und Entfernen von Objekten aus dem Cache, Speichern des ASP.NET-Sitzungsstatus im Cache** und **Aktivieren der Zwischenspeicherung von ASP.NET-Seitenausgaben mit dem Cache**. Weitere Informationen zum Verwenden von Azure Cache finden Sie im Abschnitt [Nächste Schritte][].
 
->[AZURE.IMPORTANT]Wir geben die Deaktivierung der Dienste Azure Managed Cache Service und Azure In-Role Cache am 30. November 2016 bekannt. Sie sollten zur Vorbereitung für die Einstellung dieser Dienste zu Azure Redis Cache migrieren. Weitere Informationen zu Daten und Hinweise zur Migration finden Sie unter [Welches Azure Cache-Angebot ist für mich das richtige?](../redis-cache/cache-faq.md#which-azure-cache-offering-is-right-for-me)
+>[AZURE.IMPORTANT]Wir geben die Deaktivierung der Dienste Azure Managed Cache Service und Azure In-Role Cache am 30. November 2016 bekannt. Es wird empfohlen, als Vorbereitung für diese Einstellung dieser Dienste zu Azure Redis Cache zu migrieren. Weitere Informationen zu Daten und Hinweise zur Migration finden Sie unter [Welches Azure Cache-Angebot ist für mich das richtige?](../redis-cache/cache-faq.md#which-azure-cache-offering-is-right-for-me)
 
 <a name="what-is"></a>
 ## Was ist Azure Managed Cache Service?
@@ -30,16 +30,16 @@ Azure Managed Cache Service ist eine verteilte, arbeitsspeicherinterne, skalierb
 Azure Managed Cache Service enthält die folgenden Features:
 
 -   Vorbereitete ASP.NET-Anbieter für Sitzungszustand und Seitenausgabecaching für schnellere Webanwendungen, ohne Änderung des Anwendungscodes
--   Zwischenspeichern beliebiger serialisierbarer verwalteter Objekte, z. B. CLR-Objekte, Zeilen, XML und Binärdaten
+-   Zwischenspeichern beliebiger serialisierbarer verwalteter Objekte, z. B. CLR-Objekte, Zeilen, XML und Binärdaten
 -   Konsistentes Entwicklungsmodell für Azure und Windows Server AppFabric
 
 Mit Managed Cache Service erhalten Sie Zugriff auf einen sicheren, dedizierten Cache, der von Microsoft verwaltet wird. Auf einen mit Managed Cache Service erstellten Cache kann auch von Anwendungen in Azure zugegriffen werden, die auf Azure-Websites, Web- und Workerrollen und Virtual Machines ausgeführt werden.
 
 Managed Cache Service ist in drei Stufen verfügbar:
 
--	Basic: Cache mit einer Größe von 128 MB bis 1 GB
--	Standard: Cache mit einer Größe von 1 GB bis 10 GB
--	Premium: Cache mit einer Größe von 5 GB bis 150 GB
+-	Basic: Cache mit einer Größe von 128 MB bis 1 GB
+-	Standard: Cache mit einer Größe von 1 GB bis 10 GB
+-	Premium: Cache mit einer Größe von 5 GB bis 150 GB
 
 Diese Ausführungen unterscheiden sich hinsichtlich der Features und des Preises. Die Features werden weiter unten in diesem Leitfaden behandelt, weitere Informationen zu den Preisen finden Sie unter [Cache – Preisdetails][].
 
@@ -79,13 +79,13 @@ Geben Sie unter **Location** eine Region für den Cache an. Die beste Leistung w
 
 Die Optionen **Sku** und **Memory** werden gemeinsam verwendet, um die Größe des Caches zu bestimmen. Managed Cache Service ist in den folgenden drei Ausführungen verfügbar.
 
--	Basic: Cache mit einer Größe von 128 MB bis 1 GB, der in 128-MB-Schritten vergrößert werden kann, mit einem benannten Standardcache
--	Standard: Cache mit einer Größe von 1 GB bis 10 GB, der in 1-GB-Schritten vergrößert werden kann und Benachrichtigungen sowie bis zu zehn benannte Caches unterstützt
--	Premium: Cache mit einer Größe von 5 GB bis 150 GB, der in 5-GB-Schritten vergrößert werden kann und Benachrichtigungen, hohe Verfügbarkeit sowie bis zu zehn benannte Caches unterstützt
+-	Basic: Cache mit einer Größe von 128 MB bis 1 GB, der in 128-MB-Schritten vergrößert werden kann, mit einem benannten Standardcache
+-	Standard: Cache mit einer Größe von 1 GB bis 10 GB, der in 1-GB-Schritten vergrößert werden kann und Benachrichtigungen sowie bis zu zehn benannte Caches unterstützt
+-	Premium: Cache mit einer Größe von 5 GB bis 150 GB, der in 5-GB-Schritten vergrößert werden kann und Benachrichtigungen, hohe Verfügbarkeit sowie bis zu zehn benannte Caches unterstützt
 
-Wählen Sie für **Sku** und **Memory** die Werte aus, die den Anforderungen Ihrer Anwendung entsprechen. Beachten Sie, dass einige Cachefeatures (z. B. Benachrichtigungen und hohe Verfügbarkeit) nur bei bestimmten Cacheangeboten verfügbar sind. Weitere Informationen zum Auswählen des für Ihre Anwendung optimal geeigneten Cacheangebots und der geeigneten Cachegröße finden Sie unter [Cacheangebote][].
+Wählen Sie für **Sku** und **Memory** die Werte aus, die den Anforderungen Ihrer Anwendung entsprechen. Beachten Sie, dass einige Cachefeatures (z. B. Benachrichtigungen und hohe Verfügbarkeit) nur bei bestimmten Cacheangeboten verfügbar sind. Weitere Informationen zum Auswählen des für Ihre Anwendung optimal geeigneten Cacheangebots und der geeigneten Cachegröße finden Sie unter [Cacheangebote][].
 
- Im folgenden Beispiel wird ein Cache mit 128 MB des Typs "Basic" mit dem Namen "contosocache" in der geografischen Region "South Central US" erstellt.
+ Im folgenden Beispiel wird ein Cache mit 128 MB des Typs "Basic" mit dem Namen "contosocache" in der geografischen Region "South Central US" erstellt.
 
 	New-AzureManagedCache -Name contosocache -Location "South Central US" -Sku Basic -Memory 128MB
 
@@ -140,7 +140,7 @@ Wenn **Gleitend** angegeben ist, wird das unter **Time (min)** angegebene Ablauf
 
 Wenn **Never** angegeben ist, muss für **Time (min)** der Wert **0** festgelegt werden, und Elemente laufen nicht ab.
 
-Die Standardablaufrichtlinie ist **Absolut**, und die Standardeinstellung für **Time (min)** beträgt 10 Minuten. Die Ablaufrichtlinie gilt fest für jedes Element in einem benannten Cache, **Time (min)** kann jedoch mithilfe der Überladungen **Add** und **Put**, die einen Zeitüberschreitungsparameter übernehmen, für jedes Element angepasst werden.
+Die Standardablaufrichtlinie ist **Absolut**, und die Standardeinstellung für **Time (min)** beträgt 10 Minuten. Die Ablaufrichtlinie gilt fest für jedes Element in einem benannten Cache, **Time (min)** kann jedoch mithilfe der Überladungen **Add** und **Put**, die einen Zeitüberschreitungsparameter übernehmen, für jedes Element angepasst werden.
 
 Weitere Informationen zu Entfernungs- und Ablaufrichtlinien finden Sie unter [Ablauf und Entfernung][].
 
@@ -278,7 +278,7 @@ Um programmseitig mit dem Cache arbeiten zu können, benötigen Sie eine Referen
 
     using Microsoft.ApplicationServer.Caching;
 
->Wenn die Typen in der using-Anweisung nach der Installation des Cache NuGet-Pakets, mit dem die erforderlichen Verweise hinzugefügt werden, nicht von Visual Studio erkannt werden, stellen Sie sicher, dass das Zielprofil für das Projekt .NET Framework 4 oder höher ist, und wählen Sie eines der Profile aus, in dem nicht **Client Profile** angegeben ist. Anweisungen zum Konfigurieren von Cacheclients finden Sie unter [Konfigurieren der Cacheclients][].
+>Wenn die Typen in der using-Anweisung nach der Installation des Cache NuGet-Pakets, mit dem die erforderlichen Verweise hinzugefügt werden, nicht von Visual Studio erkannt werden, stellen Sie sicher, dass das Zielprofil für das Projekt .NET Framework 4 oder höher ist, und wählen Sie eines der Profile aus, in dem nicht **Client Profile** angegeben ist. Anweisungen zum Konfigurieren von Cacheclients finden Sie unter [Konfigurieren der Cacheclients][].
 
 Es gibt zwei Möglichkeiten, um ein **DataCache**-Objekt zu erstellen. Sie können entweder einfach einen **DataCache** erstellen und den Namen des gewünschten Caches angeben.
 
@@ -331,13 +331,13 @@ Mit der **Put**-Methode wird das Objekt mit dem angegebenen Schlüssel dem Cache
 <a name="specify-expiration"></a>
 ## Vorgehensweise: Angeben des Ablaufs eines Objekts im Cache
 
-Standardmäßig laufen Elemente im Cache 10 Minuten nach der Ablage im Cache ab. Dies kann in der Einstellung **Zeit (Min.)** auf der Registerkarte „Konfigurieren“ für den Cache im klassischen Azure-Portal konfiguriert werden.
+Standardmäßig laufen Elemente im Cache 10 Minuten nach der Ablage im Cache ab. Dies kann in der Einstellung **Zeit (Min.)** auf der Registerkarte „Konfigurieren“ für den Cache im klassischen Azure-Portal konfiguriert werden.
 
 ![NamedCaches][NamedCaches]
 
 Es gibt drei Arten von **Ablaufrichtlinien**: **Nie**, **Absolut** und **Gleitend**. Damit wird konfiguriert, wie durch **Time (min)** der Ablauf bestimmt wird. Der **Standardablauftyp** lautet **Absolut** und bedeutet, dass der Countdown für den Ablauf eines Elements beginnt, sobald dieses im Cache abgelegt wird. Sobald die für ein Element angegebene Zeitdauer verstrichen ist, läuft es ab. Wenn **Gleitend** angegeben ist, wird der Ablaufcountdown für ein Element bei jedem Zugriff darauf im Cache zurückgesetzt, und das Element läuft erst ab, wenn die angegebene Zeitdauer seit dem letzten Zugriff verstrichen ist. Bei Angabe von **Never** muss für **Time (min)** der Wert **0** festgelegt werden. Die Elemente laufen nicht ab und bleiben für den gesamten Verbleib im Cache gültig.
 
-Wenn ein längeres oder kürzeres Zeitüberschreitungsintervall anstelle der im Cache konfigurierten Einstellung gewünscht wird, kann eine bestimmte Dauer angegeben werden, wenn ein Element dem Cache hinzugefügt oder darin aktualisiert wird. Dazu wird die Überladung von **Add** und **Put** verwendet, die einen **TimeSpan**-Parameter übernimmt. Im folgenden Beispiel wird die Zeichenfolge **value** mit dem Schlüssel **item** und einer Zeitüberschreitungseinstellung von 30 Minuten dem Cache hinzugefügt.
+Wenn ein längeres oder kürzeres Zeitüberschreitungsintervall anstelle der im Cache konfigurierten Einstellung gewünscht wird, kann eine bestimmte Dauer angegeben werden, wenn ein Element dem Cache hinzugefügt oder darin aktualisiert wird. Dazu wird die Überladung von **Add** und **Put** verwendet, die einen **TimeSpan**-Parameter übernimmt. Im folgenden Beispiel wird die Zeichenfolge **value** mit dem Schlüssel **item** und einer Zeitüberschreitungseinstellung von 30 Minuten dem Cache hinzugefügt.
 
     // Add the string "value" to the cache, keyed by "item"
     cache.Add("item", "value", TimeSpan.FromMinutes(30));
@@ -400,7 +400,7 @@ Fügen Sie jeder Seite, für die Sie die Ausgabe zwischenspeichern möchten, ein
 
     <%@ OutputCache Duration="60" VaryByParam="*" %>
 
-In diesem Beispiel verbleiben die zwischengespeicherten Daten 60 Sekunden lang im Cache. Für jede Parameterkombination wird eine andere Version der Seite zwischengespeichert. Weitere Informationen zu den verfügbaren Optionen finden Sie unter [OutputCache-Direktive][].
+In diesem Beispiel verbleiben die zwischengespeicherten Daten 60 Sekunden lang im Cache. Für jede Parameterkombination wird eine andere Version der Seite zwischengespeichert. Weitere Informationen zu den verfügbaren Optionen finden Sie unter [OutputCache-Direktive][].
 
 Weitere Informationen zum Verwenden des Ausgabecacheanbieters für Azure Cache finden Sie unter [Seitenausgabecacheanbieter für Azure Cache][].
 
@@ -484,4 +484,4 @@ Nachdem Sie sich nun mit den Grundlagen von Managed Cache Service vertraut gemac
 [Which Azure Cache offering is right for me?]: cache-faq.md#which-azure-cache-offering-is-right-for-me
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0309_2016-->

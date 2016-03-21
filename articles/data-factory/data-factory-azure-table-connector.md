@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verschieben von Daten in eine und aus einer Azure-Tabelle | Azure Data Factory" 
+	pageTitle="Verschieben von Daten in/aus Azure-Tabellen | Microsoft Azure" 
 	description="Erfahren Sie, wie Daten mithilfe von Azure Data Factory in einen und aus einem Azure-Tabellenspeicher verschoben werden." 
 	services="data-factory" 
 	documentationCenter="" 
@@ -380,7 +380,7 @@ Im Abschnitt "typeProperties" der Aktivit채t verf체gbare Eigenschaften variieren
 
 Eigenschaft | Beschreibung | Zul채ssige Werte | Erforderlich
 -------- | ----------- | -------------- | -------- 
-azureTableSourceQuery | Verwendet die benutzerdefinierte Abfrage zum Lesen von Daten. | <p>Abfragezeichenfolge f체r Azure-Tabelle. Siehe unten aufgef체hrte Beispiele. | Nein
+azureTableSourceQuery | Verwendet die benutzerdefinierte Abfrage zum Lesen von Daten. | Abfragezeichenfolge f체r Azure-Tabelle. Siehe unten aufgef체hrte Beispiele. | Nein
 azureTableSourceIgnoreTableNotFound | Gibt an, ob der Ausnahmefall, dass die Tabelle nicht vorhanden ist, ignoriert werden soll. | TRUE<br/>FALSE | Nein |
 
 ### Beispiele f체r azureTableSourceQuery
@@ -526,4 +526,4 @@ In diesem Fall f체hrt Data Factory die Typkonvertierungen automatisch einschlie�
 
 [AZURE.INCLUDE [data-factory-column-mapping](../../includes/data-factory-column-mapping.md)]
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

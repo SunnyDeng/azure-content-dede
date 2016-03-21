@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/11/2016"
+	ms.date="03/07/2016"
 	ms.author="genli"/>
 
 # Hinzufügen oder Ändern von Azure-Administratorrollen
@@ -23,13 +23,13 @@ In Microsoft Azure stehen drei verschiedene Administratorrollen zur Verfügung:
 
 | Administratorrolle | Begrenzung | Beschreibung
 | ------------- | ------------- |---------------|
-|Kontoadministrator (AA) | 1 pro Azure-Konto |Dies ist die Person, die sich für Azure-Abonnements angemeldet oder diese erworben hat und die für den Zugriff auf das [Kontocenter](https://account.windowsazure.com/Home/Index) und zum Ausführen verschiedener Verwaltungsaufgaben berechtigt ist. Dazu gehört z. B. die Möglichkeit zum Erstellen von Abonnements, Kündigen von Abonnements, Ändern der Abrechnung für ein Abonnement und Ändern des Dienstadministrators.
+|Kontoadministrator (AA) | 1 pro Azure-Konto |Dies ist die Person, die sich für Azure-Abonnements angemeldet oder diese erworben hat und die für den Zugriff auf das [Kontocenter](https://account.windowsazure.com/Home/Index) und zum Ausführen verschiedener Verwaltungsaufgaben berechtigt ist. Dazu gehört z. B. die Möglichkeit zum Erstellen von Abonnements, Kündigen von Abonnements, Ändern der Abrechnung für ein Abonnement und Ändern des Dienstadministrators.
 | Dienstadministrator (SA) | 1 pro Azure-Abonnement |Diese Person ist zum Verwalten von Diensten im [Azure-Portal](https://manage.windowsazure.com/) berechtigt. Standardmäßig ist der Kontoadministrator für ein neues Abonnement gleichzeitig auch der Dienstadministrator.|
 |Co-Administrator (CA)|200 pro Abonnement|Diese Person verfügt über die gleichen Zugriffsrechte wie der Dienstadministrator, kann jedoch die Zuordnung von Abonnements zu Azure-Verzeichnissen nicht ändern.|
 
 > [AZURE.NOTE] Die rollenbasierte Zugriffssteuerung in Azure Active Directory (RBAC, Role-based Access Control) ermöglicht es, Benutzer mehreren Rollen hinzuzufügen. Weitere Informationen finden Sie unter [Rollenbasierte Zugriffssteuerung in Azure Active Directory](./active-directory/role-based-access-control-configure.md).
 
-## Hinzufügen eines Co-Administrators für ein Abonnement
+## Hinzufügen eines Administrators für ein Abonnement
 
 1. Melden Sie sich beim [klassischen Azure-Portal](https://manage.windowsazure.com/) an.
 
@@ -43,10 +43,10 @@ In Microsoft Azure stehen drei verschiedene Administratorrollen zur Verfügung:
 
 Die folgende E-Mail-Adresse kann als Co-Administrator hinzugefügt werden:
 
-* **Microsoft-Konto** (früher Windows Live ID) </br> Sie können ein Microsoft-Konto verwenden, um sich bei allen verbraucherorientierten Microsoft-Produkten und Clouddiensten anzumelden, z. B. Outlook (Hotmail), Skype (MSN), OneDrive, Windows Phone und Xbox LIVE.
+* **Microsoft-Konto** (früher Windows Live ID) </br> Sie können ein Microsoft-Konto verwenden, um sich bei allen verbraucherorientierten Microsoft-Produkten und Clouddiensten anzumelden, z. B. Outlook (Hotmail), Skype (MSN), OneDrive, Windows Phone und Xbox LIVE.
 * **Organisationskonto**</br> Ein Organisationskonto ist ein Konto, das unter Azure Active Directory erstellt wird. Die Adresse eines Organisationskontos ähnelt der folgenden Adresse: user@&lt;your Domäne&gt;.onmicrosoft.com
 
-## Begrenzungen und Einschränkungen
+### Begrenzungen und Einschränkungen
 
  * Jedes Azure-Abonnement ist einem Azure AD-Verzeichnis zugeordnet (das auch als Standardverzeichnis bezeichnet wird). Um das Standardverzeichnis zu finden, dem das Abonnement zugeordnet ist, wählen Sie im [klassischen Azure-Portal](https://manage.windowsazure.com/) die Optionen **Einstellungen** > **Abonnements** aus. Überprüfen Sie dort die Abonnement-ID, und suchen dann das Standardverzeichnis.
 
@@ -56,13 +56,14 @@ Die folgende E-Mail-Adresse kann als Co-Administrator hinzugefügt werden:
 
  * Nachdem es jetzt möglich ist, sich bei Azure mit einem Organisationskonto anzumelden, ändern sich die folgenden Kontoanforderungen für Dienstadministratoren und Co-Administratoren:
 
-	| Anmeldemethode| Microsoft-Konto oder Benutzer im Standardverzeichnis als Co-Administrator oder Dienstadministrator hinzufügen? |Organisationskonto in der gleichen Organisation als Co-Administrator oder Dienstadministrator hinzufügen? |Organisationskonto in einer anderen Organisation als Co-Administrator oder Dienstadministrator hinzufügen?
-	| ------------- | ------------- |---------------|---------------|
-	|Microsoft Account |Ja|Nein|Nein|
-	|Organisationskonto|Ja|Ja|Nein|
+	Anmeldemethode| Microsoft-Konto oder Benutzer im Standardverzeichnis als Co-Administrator oder Dienstadministrator hinzufügen? |Organisationskonto in der gleichen Organisation als Co-Administrator oder Dienstadministrator hinzufügen? |Organisationskonto in einer anderen Organisation als Co-Administrator oder Dienstadministrator hinzufügen?
+	------------- | ------------- |---------------|---------------
+	Microsoft Account |Ja|Nein|Nein
+	Organisationskonto|Ja|Ja|Nein
 
 ## Ändern des Dienstadministrators für ein Abonnement
-Nur der Kontoadministrator kann den Dienstadministrator für ein Abonnement ändern.
+
+Klassisches Azure-Portal: Nur der Kontoadministrator kann den Dienstadministrator für ein Abonnement ändern.
 
 1. Melden Sie sich im [Kontoverwaltungsportal](https://account.windowsazure.com/subscriptions) unter Verwendung des Kontoadministrators an.
 
@@ -88,4 +89,4 @@ Informationen zum Übertragen des Besitzes des Azure-Kontos auf ein anderes Kont
 
 * Weitere Informationen zur Beziehung von Azure Active Directory zu Ihrem Azure-Abonnement finden Sie unter [Zuweisen von Administratorrollen in Azure Active Directory](./active-directory/active-directory-assign-admin-roles.md).
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0309_2016-->

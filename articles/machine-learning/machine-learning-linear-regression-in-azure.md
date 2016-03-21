@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Verwenden der linearen Regression in Machine Learning | Microsoft Azure" 
-	description="Ein Vergleich von Modellen zur linearen Regression in Excel und in Azure Machine Learning Studio " 
+	description="Ein Vergleich von Modellen zur linearen Regression in Excel und in Azure Machine Learning Studio" 
 	metaKeywords="" 
 	services="machine-learning" 
 	documentationCenter="" 
@@ -14,15 +14,17 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/11/2015" 
+	ms.date="03/02/2016" 
 	ms.author="kbaroni;garye" />
 
 # Verwenden der linearen Regression in Azure Machine Learning
 
 > *Kate Baroni* und *Ben Boatman* sind Enterprise Solution Architects im Microsoft Data Insights Center of Excellence. In diesem Artikel beschreiben die beiden ihre Erfahrungen beim Migrieren einer vorhandenen Regressionsanalysesuite zu einer cloudbasierten Lösung mit Azure Machine Learning.
-
-[AZURE.INCLUDE [machine-learning-kostenlose-Testversion](../../includes/machine-learning-free-trial.md)]
-
+ 
+&nbsp;
+  
+[AZURE.INCLUDE [machine-learning-free-trial](../../includes/machine-learning-free-trial.md)]
+ 
 ## Zielsetzung
 
 Unser Projekt begann zunächst mit zwei Zielsetzungen:
@@ -50,7 +52,7 @@ Das Erstellen unseres Experiments in Azure ML verlief in folgenden Schritten:
 
 1.	Hochladen des DataSets als CSV-Datei in Azure ML (sehr kleine Datei)
 2.	Erstellen eines neuen Experiments und Verwenden des [Project Columns][project-columns]-Moduls, um dieselben Datenfunktionen wie in Excel auszuwählen.   
-3.	Verwenden des [Split][split]-Modul (mit Modus *Relative Expression*), um die Daten in genauso große Trainingssätze aufzuteilen, wie dies in Excel der Fall war.  
+3.	Verwenden des [Split Data][split]-Moduls (im Modus *Relative Expression*), um die Daten in ebenso große Trainingssätze wie in Excel aufzugliedern  
 4.	Experimentieren mit dem [Linear Regression][linear-regression]-Modul (nur Standardoptionen), Dokumentieren und Vergleichen mit den Ergebnissen unseres Excel-Regressionsmodells
 
 ### Beurteilung erster Ergebnisse
@@ -64,7 +66,7 @@ Zunächst war das Excel-Modell dem Azure-ML-Modell deutlich überlegen.
 Determination</li></ul>|–|	0,78<br />
 (geringe Genauigkeit)|
 |Mittlerer absoluter Fehler |	9,5 Mio. $|	19,4 Mio. $|
-|Mean Absolute Error (%)|	6,03 %|	12,2 %
+|Mean Absolute Error (%)|	6,03 %|	12,2 %
 
 Als wir unser Verfahren und die Ergebnisse den Entwicklern und Data Scientists des Azure ML-Teams zeigten, konnte man uns dort ein paar rasche Tipps geben.
 
@@ -76,28 +78,28 @@ Als wir unser Verfahren und die Ergebnisse den Entwicklern und Data Scientists d
 ### Rätsel gelöst!
 Als wir die Empfehlungen umgesetzt hatten, konnten wir in Azure ML denselben Benchmark erzielen wie mit Excel.
 
-|| Excel|Azure ML (erstes Modell)|Azure ML mit Least Squares|
+|| Excel|Azure ML (Start)|Azure ML mit der Methode der kleinsten Quadrate|
 |---|:---:|:---:|:---:|
-|Bezeichneter Wert |Actuals (numerisch)|gleich|gleich|
-|Learner |Excel -> Data Analysis -> Regression|Linear Regression.|Linear Regression|
-|Learner options|–|Standard|ordinary least squares<br /> L2 = 0,005|
-|Data Set|26 Zeichen, 3 Features, 1 Bezeichnung. Alle numerisch|gleich|gleich|
-|Split: trainieren|Excel trainiert mit ersten 18 Zeilen, getestet an letzten 8 Zeilen|gleich|gleich|
-|Split: testen|Excel-Regressionsformel auf letzte 8 Zeilen angewendet|gleich|gleich|
+|Bezeichneter Wert |Ist-Werte (numerisch)|identisch|identisch|
+|Lernender |Excel -> Data Analysis -> Regression|Lineare Regression|Linear Regression|
+|Lernmoduloptionen|N/V|Standardeinstellungen|Methode der kleinsten Quadrate<br />L2 = 0,005|
+|Dataset|26 Zeilen, 3 Funktionen, 1 Bezeichnung Alle numerisch|identisch|identisch|
+|Split: trainieren|Excel mithilfe der ersten 18 Zeilen trainiert, mit den letzten 8 Zeilen getestet|identisch|identisch|
+|Split: Test|Excels Regressionsformel auf die letzten 8 Zeilen angewendet|identisch|identisch|
 |**Leistung**||||
-|Angepasstes R-Quadrat|0,96|–||
+|Adjusted R Square|0,96|–||
 |Coefficient of Determination|–|0,78|0,952049|
-|Mean Absolute Error |9,5 M$|19,4 M$|9,5 M$|
-|Mean Absolute Error (%)|<span style="background-color: 00FF00;"> 6,03 %</span>|12,2 %|<span style="background-color: 00FF00;"> 6,03 %</span>|
+|Mittlerer absoluter Fehler |9,5 Mio. $|19,4 Mio. $|9,5 Mio. $|
+|Mean Absolute Error (%)|<span style="background-color: 00FF00;"> 6,03%</span>|12,2 %|<span style="background-color: 00FF00;"> 6,03%</span>|
 
 Zudem gab es eine gute Übereinstimmung der Excel-Koeffizienten mit den Funktionsgewichten im trainierten Azure-Modell.
 
-||Excel-Koeffizienten|Azure-Featuregewichtungen|
+||Excel-Koeffizienten|Stärken der Azure-Funktion|
 |---|:---:|:---:|
-|Intercept/Bias|19470209,88|19328500|
-|Feature A|0,832653063|0,834156|
-|Feature B|11071967,08|11007300|
-|Feature C|25383318,09|25140800|
+|Schnittpunkt/Verschiebung|19470209,88|19328500|
+|Funktion A|0,832653063|0,834156|
+|Funktion B|11071967,08|11007300|
+|Funktion C|25383318,09|25140800|
 
 ## Nächste Schritte
 
@@ -117,7 +119,7 @@ Kopieren Sie bei geöffnetem Arbeitsblatt Ihre vordefinierten Parameter in den b
 ![][2]
  
 ### Optimieren und weitere Untersuchungen
-Nun, da wir mit dem Excel-Modell unseren Benchmark erreicht hatten, versuchten wir uns daran, unser Modell der linearen Regression in Azure ML zu optimieren. Wir verwendeten das Modul [Filter-Based Feature Selection][filter-based-feature-selection], um unsere Auswahl der anfänglichen Datenelemente zu verbessern, womit wir eine Leistungsverbesserung von 4,6 % (mittlerer absoluter Fehler) erreichen konnten. Für zukünftige Projekte werden wir diese Funktion verwenden, die uns möglicherweise wochenlanges Iterieren von Datenattributen zum Herausfinden des richtigen Funktionssatzes für das Modell erspart.
+Nun, da wir mit dem Excel-Modell unseren Benchmark erreicht hatten, versuchten wir uns daran, unser Modell der linearen Regression in Azure ML zu optimieren. Wir verwendeten das Modul [Filter-Based Feature Selection][filter-based-feature-selection], um unsere Auswahl der anfänglichen Datenelemente zu verbessern, womit wir eine Leistungsverbesserung von 4,6 % (mittlerer absoluter Fehler) erreichen konnten. Für zukünftige Projekte werden wir diese Funktion verwenden, die uns möglicherweise wochenlanges Iterieren von Datenattributen zum Herausfinden des richtigen Funktionssatzes für das Modell erspart.
 
 Als Nächstes planen wir die Einbeziehung zusätzlicher Algorithmen wie [Bayes][bayesian-linear-regression] oder [Boosted Decision Trees][boosted-decision-tree-regression] in unser Experiment, um deren Leistung vergleichen zu können.
 
@@ -159,4 +161,4 @@ Im Folgenden finden Sie einige Ressourcen für Ihre Arbeit mit Regression:
 [split]: https://msdn.microsoft.com/library/azure/70530644-c97a-4ab6-85f7-88bf30a8be5f/
  
 
-<!------HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0309_2016-->

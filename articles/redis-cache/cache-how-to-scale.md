@@ -4,7 +4,7 @@
 	services="redis-cache" 
 	documentationCenter="" 
 	authors="steved0x" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor=""/>
 
 <tags 
@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/16/2015" 
+	ms.date="03/04/2016" 
 	ms.author="sdanie"/>
 
 # Skalieren von Azure Redis Cache
 
->[AZURE.NOTE]Die Skalierungsfunktion von Azure Redis Cache befindet sich derzeit in der Vorschau. Während des Vorschauzeitraums können Sie nicht auf einen Premium-Tarif-Cache herauf bzw. davon herunter skalieren, aber Sie können den Tarif innerhalb eines Premium-Caches ändern. Bei einem Premium-Cache mit aktivierter Clusterunterstützung können Sie außerdem [die Clustergröße ändern](cache-how-to-premium-clustering.md#cluster-size).
+>[AZURE.NOTE] Die Skalierungsfunktion von Azure Redis Cache befindet sich derzeit in der Vorschau. Während des Vorschauzeitraums können Sie nicht auf einen Premium-Tarif-Cache herauf bzw. davon herunter skalieren, aber Sie können den Tarif innerhalb eines Premium-Caches ändern. Bei einem Premium-Cache mit aktivierter Clusterunterstützung können Sie außerdem [die Clustergröße ändern](cache-how-to-premium-clustering.md#cluster-size).
 
 Für Azure Redis Cache stehen verschiedene Cacheangebote bereit, die Flexibilität bei der Auswahl von Cachegröße und -funktionen bieten. Wenn sich die Anforderungen Ihrer Anwendung ändern, nachdem der Cache erstellt wurde, können Sie die Größe des Caches auf dem Blatt **Ändern des Tarifs** im [Azure-Portal](https://portal.azure.com) skalieren.
 
@@ -46,7 +46,7 @@ Wählen Sie auf dem Blatt **Tarif** den gewünschten Tarif aus, und klicken Sie 
 
 ![Tarif][redis-cache-pricing-tier-blade]
 
->[AZURE.NOTE]Sie können mit den folgenden Einschränkungen auf eine andere Preisstufe skalieren.
+>[AZURE.NOTE] Sie können mit den folgenden Einschränkungen auf eine andere Preisstufe skalieren.
 >
 >-	Sie können keine Skalierung auf oder aus einem **Premium**-Cache vornehmen.
 >-	Ein **Standard**-Cache kann nicht auf einen **Basic**-Cache skaliert werden.
@@ -134,7 +134,7 @@ Wenn ein **Basic**-Cache auf einen **Standard**-Cache skaliert wird, werden die 
 
 Wenn ein **Standard**-Cache auf eine größere Größe skaliert wird, bleiben in der Regel alle Daten erhalten. Wenn Sie einen **Standard**-Cache auf eine kleinere Größe herunterskalieren, können Daten verloren gehen, je nachdem, ob der neue Cache groß genug für alle im alten Cache enthaltenen Daten ist. Wenn Daten beim Herunterskalieren verloren gehen, werden die Schlüssel mithilfe der Entfernungsrichtlinie [allkeys-lru](http://redis.io/topics/lru-cache) entfernt.
 
-Hinweis: Für Caches der Tarife „Standard“ und „Premium“ gilt zwar eine SLA (Service Level Agreement, Vereinbarung zum Servicelevel) von 99,9 % für Verfügbarkeit, aber keine SLA für Datenverlust.
+Hinweis: Für Caches der Tarife „Standard“ und „Premium“ gilt zwar eine SLA (Service Level Agreement, Vereinbarung zum Servicelevel) von 99,9 % für Verfügbarkeit, aber keine SLA für Datenverlust.
 
 ## Ist der Cache während der Skalierung verfügbar?
 
@@ -150,13 +150,13 @@ Ein **Standard**-Cache kann nicht zu einem **Basic**-Cache geändert werden.
 
 Ein **Basic**-Cache kann auf einen **Standard**-Cache skaliert werden, die Größe kann jedoch nicht gleichzeitig geändert werden. Wenn Sie eine andere Größe benötigen, können Sie anschließend einen Skalierungsvorgang auf die gewünschte Größe durchführen.
 
-Sie können von einem **C0**-Cache (250 MB) auf eine größere Größe hochskalieren, Sie können jedoch einen größeren Cache nicht auf **C0** herunterskalieren.
+Sie können von einem **C0**-Cache (250 MB) auf eine größere Größe hochskalieren, Sie können jedoch einen größeren Cache nicht auf **C0** herunterskalieren.
 
 Wenn bei einem Skalierungsvorgang ein Fehler auftritt, versucht der Dienst, den Vorgang rückgängig zu machen, und der Cache wird auf die ursprüngliche Größe zurückgesetzt.
 
 ## Wie lange dauert die Skalierung?
 
-Die Skalierung dauert ca. 20 Minuten, je nachdem, wie viele Daten sich im Cache befinden.
+Die Skalierung dauert ca. 20 Minuten, je nachdem, wie viele Daten sich im Cache befinden.
 
 ## Woher weiß ich, dass die Skalierung abgeschlossen ist?
 
@@ -178,4 +178,4 @@ Wir haben die Funktion veröffentlicht, um Feedback zu erhalten. Basierend auf d
 
 [redis-cache-scaling]: ./media/cache-how-to-scale/redis-cache-scaling.png
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0309_2016-->

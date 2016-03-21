@@ -3,9 +3,9 @@
 	description="Erfahren Sie mehr über Hindernisse, die Sie beheben müssen, bevor Sie Stretch-Datenbank aktivieren können."
 	services="sql-server-stretch-database"
 	documentationCenter=""
-	authors="douglasl"
-	manager="jhubbard"
-	editor="monicar"/>
+	authors="douglaslMS"
+	manager=""
+	editor=""/>
 
 <tags
 	ms.service="sql-server-stretch-database"
@@ -92,4 +92,4 @@ In der aktuellen Vorversion von SQL Server 2016 haben Stretch-fähige Tabellen d
 ## Weitere Informationen
 [Identifizieren von Datenbanken und Tabellen für Stretch-Datenbank durch Ausführen von Stretch Database Advisor](sql-server-stretch-database-identify-databases.md) [Aktivieren von Stretch-Datenbank für eine Datenbank](sql-server-stretch-database-enable-database.md) [Aktivieren von Stretch-Datenbank für eine Tabelle](sql-server-stretch-database-enable-table.md)
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

@@ -4,7 +4,7 @@
 	services="api-management" 
 	documentationCenter="" 
 	authors="steved0x" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor=""/>
 
 <tags 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/07/2015" 
+	ms.date="03/04/2016" 
 	ms.author="sdanie"/>
 
 # Hinzufügen von Operationen zu einer API in Azure API Management
@@ -65,7 +65,7 @@ Wählen Sie die Registerkarte **Zwischenspeichern** und markieren Sie das Kontro
 
 ![Zwischenspeichern][api-management-caching-tab]
 
-**Dauer** gibt den Zeitraum an, für den eine Operationsantwort im Cache verbleibt. Der Standardwert beträgt 3600 Sekunden oder 1 Stunde.
+**Dauer** gibt den Zeitraum an, für den eine Operationsantwort im Cache verbleibt. Der Standardwert beträgt 3600 Sekunden oder 1 Stunde.
 
 Cacheschlüssel werden zur Unterscheidung von Antworten verwendet, und die Antwort für jeden einzelnen Cacheschlüssel erhält einen eigenen Wert im Cache. Geben Sie optionale Abfrageparameter und/oder HTTP-Header in die Textfelder **Nach Abfrageparametern variieren** bzw. **Nach Headern variieren** ein, die bei der Berechnung der Cacheschlüsselwerte verwendet werden sollen. Wenn Sie keine Parameter angeben, werden die komplette Anforderungs-URL und die folgenden HTTP-Headerwerte beim Generieren der Cacheschlüssel verwendet: **Accept** und **Accept-Charset**.
 
@@ -164,4 +164,4 @@ Nachdem Sie die Operationen zur API hinzugefügt haben, können Sie die API zu e
 [Erstellen und Veröffentlichen eines Produkts]: api-management-howto-add-products.md
 [Zwischenspeichern von Operationsergebnissen in Azure API Management]: api-management-howto-cache.md
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0309_2016-->

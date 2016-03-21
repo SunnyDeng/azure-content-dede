@@ -75,7 +75,9 @@ Sie können die primären oder sekundären Zertifikate einfach über das Azure-P
 
 ![Screenshot mit dem Zertifikatfingerabdruck im Azure-Portal.][CertificateUpgrade]
 
->[AZURE.NOTE] Bevor Sie ein Zertifikat bestimmen, das Sie für die Clusterressourcen verwenden möchten, müssen Sie die folgenden Schritte ausführen. Andernfalls wird das neue Zertifikat nicht verwendet: 1. Laden Sie das neue Zertifikat in den Azure-Schlüsseltresor hoch. Eine Anleitung finden Sie unter [Service Fabric security (Service Fabric-Sicherheit)](service-fabric-cluster-security.md). Beginnen Sie mit Schritt 2 in diesem Dokument. 2. Aktualisieren Sie alle virtuellen Computer, die Ihren Cluster bilden, sodass das Zertifikat auf ihnen bereitgestellt wird. Weitere Informationen hierzu finden Sie im [Azure Key Vault-Teamblog](http://blogs.technet.com/b/kv/archive/2015/07/14/vm_2d00_certificates.aspx).
+>[AZURE.NOTE] Bevor Sie ein Zertifikat bestimmen, das Sie für die Clusterressourcen verwenden möchten, müssen Sie die folgenden Schritte ausführen. Andernfalls wird das neue Zertifikat nicht verwendet:
+1. Laden Sie das neue Zertifikat in den Azure-Schlüsseltresor hoch. Anweisungen finden Sie in unter [Service Fabric-Sicherheit](service-fabric-cluster-security.md). Beginnen Sie mit Schritt 2 in diesem Dokument.
+2. Aktualisieren Sie alle virtuellen Computer, die Ihren Cluster bilden, sodass das Zertifikat auf ihnen bereitgestellt wird. Weitere Informationen hierzu finden Sie im [Azure Key Vault-Teamblog](http://blogs.technet.com/b/kv/archive/2015/07/14/vm_2d00_certificates.aspx).
 
 ### Anwendungsports
 
@@ -100,11 +102,11 @@ Um einen neuen Port auf allen VMs in einem Knotentyp öffnen zu können, führen
 
 Für die einzelnen Knotentypen können Sie benutzerdefinierte Placement-Eigenschaften hinzufügen, die Sie in Ihrer Anwendung verwenden möchten. „NodeType“ ist eine Standardeigenschaft, die Sie verwenden können, ohne dass sie explizit hinzugefügt werden muss.
 
->[AZURE.NOTE] Informationen zur Verwendung der Placement-Eigenschaften finden Sie in der [Übersicht der Platzierungseinschränkungen](service-fabric-placement-constraint.md).
+>[AZURE.NOTE] Ausführliche Informationen zur Verwendung von Platzierungseinschränkungen, Knoteneigenschaften und deren Definition finden Sie im Abschnitt „Platzierungseinschränkungen und Knoteneigenschaften“ im Dokument „Clusterressourcen-Manager von Service Fabric“ unter [Beschreiben Ihres Clusters](service-fabric-cluster-resource-manager-cluster-description.md).
 
 ### Kapazitätsmetriken
 
-Für die einzelnen Knotentypen können Sie benutzerdefinierte Kapazitätsmetriken hinzufügen, die Sie in Ihrer Anwendung zum Melden der Auslastung verwenden möchten. Informationen zur Verwendung von Kapazitätsmetriken zum Melden der Auslastung finden Sie in der [Übersicht über das Melden der dynamischen Auslastung](service-fabric-resource-balancer-dynamic-load-reporting.md).
+Für die einzelnen Knotentypen können Sie benutzerdefinierte Kapazitätsmetriken hinzufügen, die Sie in Ihrer Anwendung zum Melden der Auslastung verwenden möchten. Ausführliche Informationen zur Verwendung von Kapazitätsmetriken zum Melden der Auslastung finden Sie in den Dokumenten zum Clusterressourcen-Manager von Service Fabric unter [Beschreiben Ihres Clusters](service-fabric-cluster-resource-manager-cluster-description.md) und [Metriken und Auslastung](service-fabric-cluster-resource-manager-metrics.md).
 
 ### Betriebssystem-Patches auf den virtuellen Computern, die den Cluster bilden
 
@@ -124,4 +126,4 @@ Wenn Sie das verwendete Betriebssystemimage auf den virtuellen Computern des Clu
 [AddingProbes]: ./media/service-fabric-cluster-upgrade/addingProbes.png
 [AddingLBRules]: ./media/service-fabric-cluster-upgrade/addingLBRules.png
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0309_2016-->

@@ -3,7 +3,7 @@
    description="Es wird beschrieben, wie Sie mit Access Control-Datensätzen (Access Control Records, ACRs) bestimmen, welche Hosts Verbindungen mit einem Volume auf dem StorSimple Virtual Array herstellen können."
    services="storsimple"
    documentationCenter=""
-   authors="SharS"
+   authors="alkohli"
    manager="carmonm"
    editor="" />
 <tags 
@@ -12,10 +12,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="02/18/2016"
-   ms.author="v-sharos" />
+   ms.date="03/02/2016"
+   ms.author="alkohli" />
 
-# Verwenden des StorSimple Manager-Diensts zum Verwalten von Access Control-Datensätzen für das StorSimple Virtual Array (Vorschau)
+# Verwenden des StorSimple Manager-Diensts zum Verwalten von Access Control-Datensätzen für das StorSimple Virtual Array 
 
 ## Übersicht
 
@@ -114,4 +114,4 @@ Führen Sie die folgenden Schritte aus, um einen Zugriffssteuerungsdatensatz zu 
 
 - Lesen Sie sich die weiteren Informationen zum [Hinzufügen von Volumes und Konfigurieren von ACRs](storsimple-ova-deploy3-iscsi-setup.md#step-3-add-a-volume) durch.
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0309_2016-->

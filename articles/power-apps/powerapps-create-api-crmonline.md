@@ -5,7 +5,7 @@
     suite="powerapps"
 	documentationCenter=""
 	authors="schabungbam"
-	manager="dwrede"
+	manager="erikre"
 	editor=""/>
 
 <tags
@@ -14,10 +14,16 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="11/25/2015"
+   ms.date="03/02/2016"
    ms.author="sameerch"/>
 
-# Erstellen einer neuen Dynamics CRM Online-API in der App Service-Umgebung Ihrer Organisation
+# Erstellen einer neuen Dynamics CRM Online-API in PowerApps Enterprise
+
+> [AZURE.SELECTOR]
+- [Logik-Apps](../articles/connectors/create-api-crmonline.md)
+- [PowerApps Enterprise](../articles/power-apps/powerapps-create-api-crmonline.md)
+
+Fügen Sie die Dynamics CRM Online-API in der App Service-Umgebung Ihrer Organisation (Mandant) hinzu.
 
 ## Erstellen der API im Azure-Portal
 
@@ -45,7 +51,7 @@
 
 9. Geben Sie die **Client-ID** und den **geheimen App-Schlüssel ** Ihrer Azure Active Directory (AAD)-Anwendung für Dynamics CRM Online ein. Wenn Sie nicht über diese Daten verfügen, finden Sie weiter unten im Abschnitt „Registrieren einer AAD-App zur Verwendung mit PowerApps“ Informationen zum Erstellen der benötigten Werte für die ID und den geheimen Schlüssel.
 
-	> [AZURE.IMPORTANT]Speichern Sie die **Umleitungs-URL**. Möglicherweise benötigen Sie diesen Wert an späterer Stelle in diesem Thema.
+	> [AZURE.IMPORTANT] Speichern Sie die **Umleitungs-URL**. Möglicherweise benötigen Sie diesen Wert an späterer Stelle in diesem Thema.
 
 10. Wählen Sie **OK** aus, um die Schritte abzuschließen.
 
@@ -57,7 +63,7 @@ Ihrer App Service-Umgebung wird dann eine neue Dynamics CRM Online-API hinzugef�
 
 2. Wählen Sie **Durchsuchen** und dann **Active Directory** aus:
 
-	> [AZURE.NOTE]Damit wird Active Directory im klassischen Azure-Portal geöffnet.
+	> [AZURE.NOTE] Damit wird Active Directory im klassischen Azure-Portal geöffnet.
 
 3. Wählen Sie den Mandantennamen Ihrer Organisation aus:  
 ![Azure Active Directory starten][7]
@@ -67,13 +73,17 @@ Ihrer App Service-Umgebung wird dann eine neue Dynamics CRM Online-API hinzugef�
 
 5. Auf der Seite **Anwendung hinzufügen**:
 
-	a) Geben Sie unter **Name** einen Namen für Ihre Anwendung ein. b) Übernehmen Sie unter „Typ“ die aktivierte Option **Web**. c) Wählen Sie **Weiter** aus.
+	1. Geben Sie einen **Namen** für Ihre Anwendung ein.  
+	2. Lassen Sie als Anwendungstyp **Web** ausgewählt.  
+	3. Wählen Sie **Weiter**.
 
 	![AAD-Anwendung hinzufügen – App-Info][9]
 
 6. Unter **App-Eigenschaften**:
 
-	a) Geben Sie unter **URL FÜR ANMELDUNG** die Anmelde-URL Ihrer Anwendung ein. Da Sie die Authentifizierung mit AAD für PowerApps durchführen, legen Sie die Anmelde-URL auf \__https://login.windows.net_ fest. b) Geben Sie einen gültigen **APP-ID-URI** für Ihre App ein. c) Wählen Sie **OK** aus.
+	1. Geben Sie unter **ANMELDE-URL** die Anmelde-URL Ihrer Anwendung ein. Da Sie die Authentifizierung mit AAD für PowerApps durchführen, legen Sie die Anmelde-URL auf \__https://login.windows.net_ fest.
+2. Geben Sie einen gültigen **APP-ID-URI** für Ihre App ein.  
+	3. Klicken Sie auf **OK**.  
 
 	![AAD-Anwendung hinzufügen – App-Eigenschaften][10]
 
@@ -86,6 +96,11 @@ Ihrer App Service-Umgebung wird dann eine neue Dynamics CRM Online-API hinzugef�
 9. Wählen Sie **Speichern** aus.
 
 Eine neue Azure Active Directory-App wird erstellt. Diese App können Sie in der Konfiguration Ihrer Dynamics CRM Online-API im Azure-Portal verwenden.
+
+## Informationen zu REST-APIs
+
+[Dynamics CRM Online REST-API](../connectors/create-api-crmonline.md).
+
 
 ## Zusammenfassung und nächste Schritte
 In diesem Thema haben Sie die Dynamics CRM Online-API zu PowerApps Enterprise hinzugefügt. Als Nächstes können Sie den Zugriff für Benutzer auf die API einrichten, damit sie den Apps der Benutzer hinzugefügt werden kann:
@@ -107,4 +122,4 @@ In diesem Thema haben Sie die Dynamics CRM Online-API zu PowerApps Enterprise hi
 [11]: ./media/powerapps-create-api-crmonline/contoso-aad-app.PNG
 [12]: ./media/powerapps-create-api-crmonline/contoso-aad-app-configure.PNG
 
-<!----HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0309_2016-->

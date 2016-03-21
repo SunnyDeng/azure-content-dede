@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Handbuch zur Leistung und Optimierung der Kopieraktivität"
+	pageTitle="Handbuch zur Leistung und Optimierung der Kopieraktivität | Microsoft Azure"
 	description="Erfahren Sie mehr zu wichtigen Faktoren, die sich auf die Leistung der Datenverschiebung in Azure Data Factory über die Kopieraktivität auswirken."
 	services="data-factory"
 	documentationCenter=""
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/17/2015"
+	ms.date="03/07/2016"
 	ms.author="spelluru"/>
 
 
@@ -224,4 +224,4 @@ Hier finden Sie einige Referenzen zur Leistungsüberwachung und -optimierung fü
 - Lokale SQL Server: [Überwachen und Optimieren der Leistung](https://msdn.microsoft.com/library/ms189081.aspx)
 - Lokaler Dateiserver: [Leistungsoptimierung für Dateiserver](https://msdn.microsoft.com/library/dn567661.aspx)
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

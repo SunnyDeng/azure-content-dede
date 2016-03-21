@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/24/2016"
+	ms.date="02/24/2016"
 	ms.author="dineshm"/>
 
 
@@ -22,7 +22,8 @@
 [AZURE.INCLUDE [storage-selector-client-side-encryption-include](../../includes/storage-selector-client-side-encryption-include.md)]
 
 ## Übersicht  
-Die [Azure Storage-Clientbibliothek für Java](https://www.nuget.org/packages/WindowsAzure.Storage) unterstützt die Verschlüsselung von Daten innerhalb von Clientanwendungen, bevor die Daten nach Azure Storage hochgeladen werden. Gleichermaßen wird die Entschlüsselung von Daten während des Herunterladens auf den Client unterstützt. Um eine Schlüsselverwaltung für Speicherkonten zu ermöglichen, unterstützt die Bibliothek zudem die Integration in [Azure-Schlüsseltresor](https://azure.microsoft.com/services/key-vault/).
+
+Die [Azure Storage-Clientbibliothek für Java](http://mvnrepository.com/artifact/com.microsoft.azure/azure-storage) unterstützt die Verschlüsselung von Daten innerhalb von Clientanwendungen, bevor die Daten nach Azure Storage hochgeladen werden. Gleichermaßen wird die Entschlüsselung von Daten während des Herunterladens auf den Client unterstützt. Um eine Schlüsselverwaltung für Speicherkonten zu ermöglichen, unterstützt die Bibliothek zudem die Integration in [Azure-Schlüsseltresor](https://azure.microsoft.com/services/key-vault/).
 
 ## Verschlüsselung und Entschlüsselung über das Umschlagverfahren    
 Die Prozesse bei der Verschlüsselung und Entschlüsselung folgen dem Umschlagverfahren.
@@ -34,8 +35,7 @@ Die Verschlüsselung über das Umschlagverfahren funktioniert wie folgt:
 
 2.	Benutzerdaten werden mit diesem CEK verschlüsselt.
 
-3.	Der CEK wird dann mit dem Schlüsselverschlüsselungsschlüssel (Key Encryption Key, KEK) umschlossen (verschlüsselt). Der KEK wird anhand eines Schlüsselbezeichners identifiziert und kann ein asymmetrisches Schlüsselpaar oder ein symmetrischer Schlüssel sein. 
-Er kann lokal verwaltet oder im Azure-Schlüsseltresor gespeichert werden. Die Speicherclientbibliothek hat selbst nie Zugriff auf den KEK. Die Bibliothek ruft lediglich den Algorithmus für das Umschließen des Schlüssels aus, der vom Schlüsseltresor bereitgestellt wird. Benutzer können bei Bedarf benutzerdefinierte Anbieter für das Umschließen von Schlüsseln bzw. das Aufheben dieses Zustands verwenden.
+3.	Der CEK wird dann mit dem Schlüsselverschlüsselungsschlüssel (Key Encryption Key, KEK) umschlossen (verschlüsselt). Der KEK wird anhand eines Schlüsselbezeichners identifiziert und kann ein asymmetrisches Schlüsselpaar oder ein symmetrischer Schlüssel sein. Er kann lokal verwaltet oder im Azure-Schlüsseltresor gespeichert werden. Die Speicherclientbibliothek hat selbst nie Zugriff auf den KEK. Die Bibliothek ruft lediglich den Algorithmus für das Umschließen des Schlüssels aus, der vom Schlüsseltresor bereitgestellt wird. Benutzer können bei Bedarf benutzerdefinierte Anbieter für das Umschließen von Schlüsseln bzw. das Aufheben dieses Zustands verwenden.
 
 4.	Die verschlüsselten Daten werden dann in den Azure Storage-Dienst hochgeladen. Der umschlossene Schlüssel und einige zusätzliche Verschlüsselungsmetadaten werden entweder als Metadaten (in einem Blob) gespeichert oder mit den verschlüsselten Daten (Warteschlangennachrichten und Tabellenentitäten) interpoliert.
 
@@ -118,15 +118,14 @@ Es gibt drei Schlüsseltresorpakete:
 
 2.	Verwenden Sie den Basisbezeichner des geheimen Schlüssels als Parameter, um die aktuelle Version des geheimen Schlüssels für die Verschlüsselung aufzulösen und diese Informationen lokal zwischenzuspeichern. Verwenden Sie "CachingKeyResolver" für die Zwischenspeicherung. Es wird nicht erwartet, dass die Benutzer eigene Logik für das Zwischenspeichern implementieren.
 
-3.	Verwenden Sie beim Erstellen der Verschlüsselungsrichtlinie den Zwischenspeicherungsresolver als Eingabe.
-Weitere Informationen zur Verwendung des Schlüsseltresors finden Sie in den Beispielen für Verschlüsselungscode. <fix URL>
+3.	Verwenden Sie beim Erstellen der Verschlüsselungsrichtlinie den Zwischenspeicherungsresolver als Eingabe. Weitere Informationen zur Verwendung des Schlüsseltresors finden Sie in den Beispielen für Verschlüsselungscode. <fix URL>
 
 ## Bewährte Methoden  
 Verschlüsselungsunterstützung ist nur in der Speicherclientbibliothek für Java verfügbar.
 
 >[AZURE.IMPORTANT] Beachten Sie bei Verwendung einer clientseitigen Verschlüsselung die folgenden wichtigen Punkte:
 >  
->- Verwenden Sie beim Lesen aus einem verschlüsselten Blob oder beim Schreiben in diesen Befehle zum Hochladen des vollständigen Blobs und zum Herunterladen des bereichsbasierten oder vollständigen Blobs. Vermeiden Sie beim Schreiben in einen verschlüsselten Blob Protokollvorgänge wie z. B. "Put Block", "Put Block List", "Write Pages", "Clear Pages" oder "Append Block". Andernfalls wird der verschlüsselte Blob möglicherweise beschädigt und kann nicht mehr gelesen werden.
+>- Verwenden Sie beim Lesen aus einem verschlüsselten Blob oder beim Schreiben in diesen Befehle zum Hochladen des vollständigen Blobs und zum Herunterladen des bereichsbasierten oder vollständigen Blobs. Vermeiden Sie beim Schreiben in einen verschlüsselten Blob Protokollvorgänge wie z. B. "Put Block", "Put Block List", "Write Pages", "Clear Pages" oder "Append Block". Andernfalls wird der verschlüsselte Blob möglicherweise beschädigt und kann nicht mehr gelesen werden.
 >
 >- Für Tabellen gilt eine ähnliche Einschränkung. Achten Sie darauf, dass Sie beim Aktualisieren verschlüsselter Eigenschaften auch die Verschlüsselungsmetadaten aktualisieren.
 >
@@ -241,9 +240,11 @@ Beachten Sie, dass ein Verschlüsseln Ihrer Storage-Daten einen zusätzlichen Le
 
 ## Nächste Schritte  
 
-- Herunterladen der [Azure Storage-Clientbibliothek für das Java-Maven-Paket](https://github.com/Azure/azure-storage-java)  
+- Herunterladen der [Azure Storage-Clientbibliothek für das Java-Maven-Paket](http://mvnrepository.com/artifact/com.microsoft.azure/azure-storage)  
 - Herunterladen der [Azure Storage-Clientbibliothek für Java-Quellcode aus GitHub](https://github.com/Azure/azure-storage-java)   
-- Herunterladen der Azure Key Vault-Maven-Pakete [Core](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Core/), [Client](http://www.nuget.org/packages/Microsoft.Azure.KeyVault/) und [Extensions](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Extensions/)
+- Herunterladen der Azure Key Vault-Maven-Bibliothek für das Java-Maven-Paket
+	- [Core](http://mvnrepository.com/artifact/com.microsoft.azure/azure-keyvault-core)-Paket
+	- [Client](http://mvnrepository.com/artifact/com.microsoft.azure/azure-keyvault)-Paket
 - Anzeigen der [Azure Key Vault-Dokumentation](../key-vault/key-vault-whatis.md)  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0309_2016-->

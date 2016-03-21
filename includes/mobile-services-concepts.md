@@ -7,7 +7,7 @@ Mit Mobile Services haben Sie folgende Möglichkeiten:
 + **Systemeigene und plattformübergreifende Apps erstellen**: Verbinden Sie Ihre iOS-, Android-, Windows- oder plattformübergreifenden Xamarin- oder Cordova-Apps (Phonegap) mithilfe der systemeigenen SDKs mit dem mobilen Back-End-Dienst.  
 + **Push-Benachrichtigungen an Ihre Benutzer senden:** Senden Sie Push-Benachrichtigungen an die Benutzer Ihrer App.
 + **Benutzer authentifizieren:** Nutzen Sie beliebte Identitätsanbieter wie Facebook und Twitter, um Ihre App-Benutzer zu authentifizieren.
-+ **Daten in der Cloud speichern:** Speichern Sie Benutzerdaten in einer SQL-Datenbank (Standard) oder in Mongo DB, DocumentDB, Azure-Tabellen oder Azure-Blobs. 
++ **Daten in der Cloud speichern:** Speichern Sie Benutzerdaten in einer SQL-Datenbank (Standard) oder in Mongo DB, DocumentDB, Azure-Tabellen oder Azure-Blobs. 
 + **Offline-Ready-Anwendungen mit Synchronisierung erstellen:** Machen Sie Ihre Apps im Offlinemodus verfügbar, und verwenden Sie Mobile Services, um Daten im Hintergrund zu synchronisieren.
 + **Apps überwachen und skalieren:** Überwachen Sie die App-Verwendung, und skalieren Sie Ihr Back-End bei wachsendem Bedarf. 
 
@@ -22,6 +22,6 @@ Mobile Services umfasst folgende wichtige Funktionen und basiert auf den folgend
 + **Skalierung:** Die Möglichkeit, gegen eine Zusatzgebühr mehr Rechenleistung, Performance und Speicher hinzuzukaufen, wenn Ihre App am Popularität gewinnt.
 + **Geplanter Auftrag:** Benutzerdefinierter Code, der anhand eines vorab geplanten Termins oder auf Anforderung ausgeführt wird.
 
-Weitere Informationen finden Sie unter [Mobile Services – Konzepte](mobile-services-concepts-links.md).
+Weitere Informationen finden Sie unter [Mobile Services-Konzepte](../articles/mobile-services/mobile-services-concepts-links.md).
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0309_2016-->

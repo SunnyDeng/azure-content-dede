@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/07/2016"
+   ms.date="03/03/2016"
    ms.author="barbkess;sonyama"/>
 
 # Migrieren von Daten
@@ -28,18 +28,18 @@ Wenn sich Ihre Daten in Flatfiles befinden, müssen Sie sie zuerst in den Azure-
 
 Auch PolyBase stellt eine leistungsstarke Möglichkeit zum Laden der Daten dar. Allerdings bedeutet dies, dass statt einem zwei Tools verwendet werden. Wenn Ihr Schwerpunkt auf der besten Leistung liegt, sollten Sie PolyBase verwenden. Wenn Sie nur ein Tool verwenden möchten (und die Daten nicht allzu umfangreich sind), ist ADF die beste Lösung für Sie.
 
-> [AZURE.NOTE]Für PolyBase müssen die Datendateien mit UTF-8 codiert sein. Dies ist die Standardcodierung der ADF-Kopieraktivität, sodass keine Änderungen vorgenommen werden müssen. Es gilt lediglich zu beachten, dass das Standardverhalten der ADF-Kopieraktivität nicht geändert wird.
+> [AZURE.NOTE] Für PolyBase müssen die Datendateien mit UTF-8 codiert sein. Dies ist die Standardcodierung der ADF-Kopieraktivität, sodass keine Änderungen vorgenommen werden müssen. Es gilt lediglich zu beachten, dass das Standardverhalten der ADF-Kopieraktivität nicht geändert wird.
 
 In diesem Artikel finden Sie [Beispiele zur Verwendung der ADF-Kopieraktivität].
 
 ## Integration Services ##
 Integration Services (SSIS) ist ein leistungsfähiges und flexibles ETL-Tool (Extrahieren Transformieren und Laden), das komplexe Workflows, Datentransformation und verschiedene Optionen zum Laden von Daten unterstützt. Mit SSIS können Sie Daten in Azure oder als Teil einer größeren Migration übertragen.
 
-> [AZURE.NOTE]Mit SSIS können Daten ohne die Bytereihenfolge-Marke in der Datei in das Format UTF-8 exportiert werden. Um dies zu konfigurieren, müssen Sie die Zeichendaten im Datenfluss mithilfe der abgeleiteten Spaltenkomponente zunächst so konvertieren, dass die UTF-8-Codepage 65001 verwendet wird. Nachdem die Spalten konvertiert wurden, schreiben Sie die Daten in den Flatfile-Zieladapter. Dabei müssen Sie sicherstellen, dass 65001 auch als Codepage für die Datei ausgewählt wurde.
+> [AZURE.NOTE] Mit SSIS können Daten ohne die Bytereihenfolge-Marke in der Datei in das Format UTF-8 exportiert werden. Um dies zu konfigurieren, müssen Sie die Zeichendaten im Datenfluss mithilfe der abgeleiteten Spaltenkomponente zunächst so konvertieren, dass die UTF-8-Codepage 65001 verwendet wird. Nachdem die Spalten konvertiert wurden, schreiben Sie die Daten in den Flatfile-Zieladapter. Dabei müssen Sie sicherstellen, dass 65001 auch als Codepage für die Datei ausgewählt wurde.
 
 SSIS stellt eine Verbindung mit SQL Data Warehouse her. Die Verbindungsherstellung entspricht der mit einer SQL Server-Bereitstellung. Für die Verbindungen muss jedoch ein ADO.NET-Verbindungs-Manager verwendet werden. Zudem sollten Sie darauf achten, dass die Einstellung "Sofern verfügbar, Masseneinfügung verwenden" konfiguriert ist, um den Durchsatz zu maximieren. Weitere Informationen zu dieser Eigenschaft finden Sie in dem Artikel zum [ADO.NET-Zieladapter][].
 
-> [AZURE.NOTE]Die Verbindungsherstellung mit Azure SQL Data Warehouse mithilfe von OLEDB wird nicht unterstützt.
+> [AZURE.NOTE] Die Verbindungsherstellung mit Azure SQL Data Warehouse mithilfe von OLEDB wird nicht unterstützt.
 
 Darüber hinaus besteht immer die Möglichkeit, dass ein Paket aufgrund von Drosselung oder Netzwerkproblemen fehlschlagen kann. Entwerfen Sie die Pakete so, dass sie zum Zeitpunkt des Fehlers fortgesetzt werden können, ohne dass die vor dem Fehler abgeschlossenen Arbeitsschritte erneut ausgeführt werden müssen.
 
@@ -48,7 +48,7 @@ Weitere Informationen finden Sie in der [SSIS-Dokumentation][].
 ## bcp
 bcp ist ein Befehlszeilenprogramm, das für den Import und Export von Flatfiledaten entwickelt wurde. Einige Transformationen können während des Datenexports durchgeführt werden. Zum Durchführen einfacher Transformationen können Sie die Daten mit einer Abfrage auswählen und transformieren. Nach dem Export können die Flatfiles dann direkt in das Ziel in der SQL Data Warehouse-Datenbank geladen werden.
 
-> [AZURE.NOTE]Häufig empfiehlt es sich, die während des Datenexports verwendeten Transformationen in einer Ansicht im Quellsystem zu kapseln. Dadurch wird sichergestellt, dass die Logik beibehalten wird und der Prozess wiederholbar ist.
+> [AZURE.NOTE] Häufig empfiehlt es sich, die während des Datenexports verwendeten Transformationen in einer Ansicht im Quellsystem zu kapseln. Dadurch wird sichergestellt, dass die Logik beibehalten wird und der Prozess wiederholbar ist.
 
 bcp bietet folgende Vorteile:
 
@@ -57,7 +57,7 @@ bcp bietet folgende Vorteile:
 
 bcp weist folgende Einschränkungen auf:
 
-- bcp funktioniert nur mit tabellarischen Flatfiles. Für Dateien im XML- oder JSON-Format kann es z. B. nicht verwendet werden.
+- bcp funktioniert nur mit tabellarischen Flatfiles. Für Dateien im XML- oder JSON-Format kann es z. B. nicht verwendet werden.
 - bcp unterstützt den Export in das Format UTF-8 nicht. Dies verhindert möglicherweise die Verwendung von PolyBase für mithilfe von bcp exportierte Daten.
 - Die Funktionen für die Datentransformation beschränken sich auf den Export und sind relativ einfach.
 - bcp bietet keine Stabilität beim Laden von Daten über das Internet. Jede Instabilität im Netzwerk kann daher zu Fehlern beim Laden führen.
@@ -82,9 +82,9 @@ Betrachten wir diese Schritte zunächst in der umgekehrten Reihenfolge: Daten k�
 3. Speicherort der Datendateien
 
 ### Codieren
-Für PolyBase müssen Datendateien mit UTF-8 codiert sein. Dies bedeutet, dass Ihre Daten beim Export dieser Anforderung entsprechen müssen. Wenn die Daten nur einfache ASCII-Zeichen (keine erweiterten ASCII-Zeichen) enthalten, werden diese direkt dem UTF-8-Standard zugeordnet, und Sie müssen sich keine größeren Gedanken über die Codierung machen. Wenn die Daten jedoch Sonderzeichen wie z. B. Umlaute, Akzente oder Symbole enthalten oder nicht lateinische Sprachen unterstützen, müssen Sie sicherstellen, dass die Exportdateien ordnungsgemäß UTF-8-codiert sind.
+Für PolyBase müssen Datendateien mit UTF-8 codiert sein. Dies bedeutet, dass Ihre Daten beim Export dieser Anforderung entsprechen müssen. Wenn die Daten nur einfache ASCII-Zeichen (keine erweiterten ASCII-Zeichen) enthalten, werden diese direkt dem UTF-8-Standard zugeordnet, und Sie müssen sich keine größeren Gedanken über die Codierung machen. Wenn die Daten jedoch Sonderzeichen wie z. B. Umlaute, Akzente oder Symbole enthalten oder nicht lateinische Sprachen unterstützen, müssen Sie sicherstellen, dass die Exportdateien ordnungsgemäß UTF-8-codiert sind.
 
-> [AZURE.NOTE]bcp unterstützt den Export von Daten in das Format UTF-8 nicht. Daher ist es am besten, die Daten mithilfe von Integration Services oder der ADF-Kopieraktivität zu exportieren. Es soll auch darauf hingewiesen werden, dass die UTF-8 Bytereihenfolge-Marke (Byte Order Mark, BOM) in der Datendatei nicht erforderlich ist.
+> [AZURE.NOTE] bcp unterstützt den Export von Daten in das Format UTF-8 nicht. Daher ist es am besten, die Daten mithilfe von Integration Services oder der ADF-Kopieraktivität zu exportieren. Es soll auch darauf hingewiesen werden, dass die UTF-8 Bytereihenfolge-Marke (Byte Order Mark, BOM) in der Datendatei nicht erforderlich ist.
 
 Alle Dateien, die mit UTF-16 codiert sind, müssen ***vor*** der Datenübertragung neu geschrieben werden.
 
@@ -104,7 +104,7 @@ Einer der langsamsten Schritte bei der Datenmigration ist die Übertragung der D
 Glücklicherweise stehen mehrere Optionen zur Verbesserung der Geschwindigkeit und Stabilität dieses Vorgangs zur Verfügung:
 
 ### [ExpressRoute][]
-Beispielsweise können Sie [ExpressRoute][] verwenden, um die Übertragung von Daten zu beschleunigen. [ExpressRoute][] ermöglicht Ihnen die Erstellung einer privaten Verbindung mit Azure, d. h., die Verbindung erfolgt nicht über das öffentliche Internet. Dieser Schritt ist keineswegs unbedingt erforderlich. Dadurch verbessert sich jedoch der Durchsatz bei der Übertragung von Daten in Azure von einem Standort vor Ort oder in der Nähe.
+Beispielsweise können Sie [ExpressRoute][] verwenden, um die Übertragung von Daten zu beschleunigen. [ExpressRoute][] ermöglicht Ihnen die Erstellung einer privaten Verbindung mit Azure, d. h., die Verbindung erfolgt nicht über das öffentliche Internet. Dieser Schritt ist keineswegs unbedingt erforderlich. Dadurch verbessert sich jedoch der Durchsatz bei der Übertragung von Daten in Azure von einem Standort vor Ort oder in der Nähe.
 
 Die Verwendung von [ExpressRoute][] bietet folgende Vorteile:
 
@@ -124,7 +124,7 @@ Allgemeine Übersicht über den Import- und Exportprozess:
 
 1. Konfigurieren eines Azure-Blob-Speichercontainers zum Empfangen der Daten
 2. Exportieren der Daten in den lokalen Speicher
-2. Kopieren der Daten auf SATA II/III-Festplatten (3,5 Zoll) mit dem +++[Azure Import/Export-Tool]
+2. Kopieren der Daten auf SATA II/III-Festplatten (3,5 Zoll) mit dem +++[Azure Import/Export-Tool]
 3. Erstellen eines Importauftrags mithilfe des Azure Import/Export-Diensts mit den vom [Azure Import/Export-Tool] generierten Journaldateien
 4. Versenden der Datenträger an das von Ihnen benannte Azure-Rechenzentrum
 5. Übertragen der Daten in Ihren Azure-Blob-Speichercontainer
@@ -153,7 +153,7 @@ Die vollständige Dokumentation finden Sie hier: [AZCopy][].
 ## Optimieren des Datenexports
 Neben dem Sicherstellen, dass der Export den von PolyBase vorgegebenen Anforderungen entspricht, können Sie den gesamten Prozess durch die Optimierung des Datenexports weiter verbessern.
 
-> [AZURE.NOTE]Da die Daten für PolyBase im Format UTF-8 codiert sein müssen, ist es unwahrscheinlich, dass Sie den Export der Daten mit bcp durchführen. bcp unterstützt die Ausgabe von Datendateien in UTF-8 nicht. SSIS oder die ADF-Kopieraktivität eignen sich weitaus besser für diesen Datenexport.
+> [AZURE.NOTE] Da die Daten für PolyBase im Format UTF-8 codiert sein müssen, ist es unwahrscheinlich, dass Sie den Export der Daten mit bcp durchführen. bcp unterstützt die Ausgabe von Datendateien in UTF-8 nicht. SSIS oder die ADF-Kopieraktivität eignen sich weitaus besser für diesen Datenexport.
 
 ### Datenkomprimierung
 PolyBase kann die mit GZip komprimierten Daten lesen. Wenn Sie Ihre Daten in GZip-Dateien komprimieren können, minimieren Sie die Menge der über das Netzwerk übertragenen Daten.
@@ -194,4 +194,4 @@ Weitere Informationen zur Migration finden Sie unter [Migrieren Ihrer Lösung na
 [ADO.NET-Zieladapter]: https://msdn.microsoft.com/library/bb934041.aspx
 [SSIS-Dokumentation]: https://msdn.microsoft.com/library/ms141026.aspx
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0309_2016-->

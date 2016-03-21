@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/07/2016"
+   ms.date="03/03/2016"
    ms.author="jrj;barbkess;sonyama"/>
 
 # Verwalten von Statistiken in SQL Data Warehouse
@@ -29,14 +29,14 @@ Das Erstellen und Aktualisieren der Statistiken ist wichtig, um die Abfrageleist
 
 Statistiken für einzelne Spalten sind Objekte, die Informationen zum Wertebereich und zur Häufigkeit von Werten in einer Spalte enthalten. Der Abfrageoptimierer verwendet dieses Histogramm, um die Anzahl von Spalten im Abfrageergebnis zu schätzen. Dies wirkt sich direkt auf Entscheidungen aus, die in Bezug auf die Optimierung der Abfrage getroffen werden.
 
-Statistiken für mehrere Spalten sind Statistiken, die für eine Liste mit Spalten erstellt werden. Sie enthalten Einspaltenstatistiken für die erste Spalte der Liste sowie einige spaltenübergreifende Korrelationsinformationen, die als „Densities“ (Dichten) bezeichnet werden. Mehrspaltenstatistiken können die Abfrageleistung für bestimmte Vorgänge verbessern, z. B. zusammengesetzte Verknüpfungen (Joins) und Group By-Vorgänge.
+Statistiken für mehrere Spalten sind Statistiken, die für eine Liste mit Spalten erstellt werden. Sie enthalten Einspaltenstatistiken für die erste Spalte der Liste sowie einige spaltenübergreifende Korrelationsinformationen, die als „Densities“ (Dichten) bezeichnet werden. Mehrspaltenstatistiken können die Abfrageleistung für bestimmte Vorgänge verbessern, z. B. zusammengesetzte Verknüpfungen (Joins) und Group By-Vorgänge.
 
 Weitere Informationen finden Sie unter [DBCC SHOW\_STATISTICS][] auf der MSDN-Website.
 
 ## Warum sind Statistiken erforderlich?
 Ohne geeignete Statistiken können Sie nicht die Leistung erzielen, für deren Bereitstellung SQL Data Warehouse ausgelegt ist. Für Tabellen und Spalten werden von SQL Data Warehouse nicht automatisch Statistiken generiert, sodass Sie diese selbst erstellen müssen. Es ist ratsam, sie während des Erstellvorgangs der Tabelle zu erstellen und dann nach dem Auffüllen zu aktualisieren.
 
-> [AZURE.NOTE]Wenn Sie SQL Server verwenden, können Sie ggf. SQL Server das Erstellen und Aktualisieren von Einspaltenstatistiken je nach Bedarf überlassen. In diesem Punkt unterscheidet sich SQL Data Warehouse. Da die Daten verteilt sind, werden in SQL Data Warehouse nicht automatisch Statistiken über alle verteilten Daten hinweg zusammengefasst. Die zusammengefassten Statistiken werden nur generiert, wenn Sie Statistiken erstellen und aktualisieren.
+> [AZURE.NOTE] Wenn Sie SQL Server verwenden, können Sie ggf. SQL Server das Erstellen und Aktualisieren von Einspaltenstatistiken je nach Bedarf überlassen. In diesem Punkt unterscheidet sich SQL Data Warehouse. Da die Daten verteilt sind, werden in SQL Data Warehouse nicht automatisch Statistiken über alle verteilten Daten hinweg zusammengefasst. Die zusammengefassten Statistiken werden nur generiert, wenn Sie Statistiken erstellen und aktualisieren.
 
 ## Gründe für das Erstellen von Statistiken
 Ein kohärenter Satz aktueller Statistiken ist ein zentraler Bestandteil von SQL Data Warehouse. Daher ist es wichtig, beim Entwerfen von Tabellen Statistiken zu erstellen.
@@ -45,7 +45,9 @@ Das Erstellen von Einspaltenstatistiken für jede Spalte ist eine einfache Mögl
 
 Mehrspaltenstatistiken werden vom Abfrageoptimierer nur verwendet, wenn sich die Spalten in zusammengesetzten Verknüpfungen oder Group By-Klauseln befinden. Zusammengesetzte Filter profitieren derzeit nicht von Mehrspaltenstatistiken.
 
-Es ist zu Beginn der SQL Data Warehouse-Entwicklung daher eine gute Idee, das folgende Muster zu implementieren: - Erstellen von Einspaltenstatistiken für jede Spalte in jeder Tabelle - Erstellen von Mehrspaltenstatistiken für Spalten, die in Verknüpfungen und Group By-Klauseln verwendet werden
+Wenn Sie mit der SQL Data Warehouse-Entwicklung beginnen, ist es daher aus gutem Grund ratsam, das folgende Muster zu implementieren:
+- Erstellen Sie Einzelspaltenstatistiken für jede Spalte einer jeden Tabelle.
+- Erstellen Sie Mehrspaltenstatistiken für die Spalten, die von Abfragen in Verknüpfungen und Group by-Klauseln verwendet werden.
 
 Wenn Sie später genauer wissen, wie Sie Ihre Daten abfragen möchten, können Sie dieses Modell verfeinern. Dies gilt vor allem, wenn die Tabellen breit sind. Einen erweiterten Methodenansatz finden Sie im Abschnitt [Implementieren der Statistikverwaltung](## Implementieren der Statistikverwaltung).
 
@@ -70,11 +72,11 @@ Unten sind einige Richtlinien zur Aktualisierung von Statistiken während des La
 
 - Stellen Sie sicher, dass jede geladene Tabelle mindestens über ein aktualisiertes Statistikobjekt verfügt. Im Rahmen der Statistikaktualisierung werden dann die Informationen zur Tabellengröße (Zeilen- und Seitenanzahl) aktualisiert.
 - Konzentrieren Sie sich auf Spalten mit JOIN-, GROUP BY-, ORDER BY- und DISTINCT-Klauseln.
-- Erwägen Sie, Spalten vom Typ „aufsteigender Schlüssel“, z. B. Transaktionsdaten, häufiger zu aktualisieren, da diese Werte nicht in das Statistikhistogramm einbezogen werden.
+- Erwägen Sie, Spalten vom Typ „aufsteigender Schlüssel“, z. B. Transaktionsdaten, häufiger zu aktualisieren, da diese Werte nicht in das Statistikhistogramm einbezogen werden.
 - Erwägen Sie, Spalten mit statischer Verteilung weniger häufig zu aktualisieren.
 - Bedenken Sie, dass jedes statistische Objekt der Reihe nach aktualisiert wird. Es ist ggf. nicht ideal, einfach `UPDATE STATISTICS <TABLE_NAME>` zu implementieren. Dies gilt besonders für breite Tabellen mit vielen Statistikobjekten.
 
-> [AZURE.NOTE]Weitere Informationen zum Thema [Aufsteigender Schlüssel] finden Sie im Whitepaper zum Kardinalitätsschätzungsmodell von SQL Server 2014.
+> [AZURE.NOTE] Weitere Informationen zum Thema [Aufsteigender Schlüssel] finden Sie im Whitepaper zum Kardinalitätsschätzungsmodell von SQL Server 2014.
 
 Weitere Informationen finden Sie unter [Kardinalitätsschätzung][] auf der MSDN-Website.
 
@@ -86,7 +88,7 @@ In diesen Beispielen wird veranschaulicht, wie Sie verschiedene Optionen zum Ers
 
 Zum Erstellen von Statistiken für eine Spalte geben Sie einfach einen Namen für das Statistikobjekt und den Namen der Spalte an.
 
-Bei dieser Syntax werden alle Standardoptionen verwendet. Standardmäßig wird in SQL Data Warehouse beim Erstellen von Statistiken eine Stichprobe von 20 % der Tabelle verwendet.
+Bei dieser Syntax werden alle Standardoptionen verwendet. Standardmäßig wird in SQL Data Warehouse beim Erstellen von Statistiken eine Stichprobe von 20 % der Tabelle verwendet.
 
 ```
 CREATE STATISTICS [statistics_name] ON [schema_name].[table_name]([column_name]);
@@ -100,7 +102,7 @@ CREATE STATISTICS col1_stats ON dbo.table1 (col1);
 
 ### B. Erstellen von Einspaltenstatistiken per Untersuchung jeder Zeile
 
-Die standardmäßige Stichprobenrate von 20 % ist in den meisten Fällen ausreichend. Sie können die Stichprobenrate aber auch anpassen.
+Die standardmäßige Stichprobenrate von 20 % ist in den meisten Fällen ausreichend. Sie können die Stichprobenrate aber auch anpassen.
 
 Verwenden Sie die folgende Syntax, um die gesamte Tabelle zu verwenden:
 
@@ -134,7 +136,7 @@ In diesem Beispiel werden Statistiken für einen Bereich von Werten erstellt. Di
 CREATE STATISTICS stats_col1 ON table1(col1) WHERE col1 > '2000101' AND col1 < '20001231';
 ```
 
-> [AZURE.NOTE]Damit der Abfrageoptimierer beim Auswählen des Plans für die verteilte Abfrage die Verwendung von gefilterten Statistiken berücksichtigt, muss die Abfrage in die Definition des Statistikobjekts passen. Im vorherigen Beispiel müssen für die Where-Klausel der Abfrage col1-Werte zwischen 2000101 und 20001231 angegeben werden.
+> [AZURE.NOTE] Damit der Abfrageoptimierer beim Auswählen des Plans für die verteilte Abfrage die Verwendung von gefilterten Statistiken berücksichtigt, muss die Abfrage in die Definition des Statistikobjekts passen. Im vorherigen Beispiel müssen für die Where-Klausel der Abfrage col1-Werte zwischen 2000101 und 20001231 angegeben werden.
 
 ### E. Erstellen von Einspaltenstatistiken mit allen Optionen
 
@@ -150,7 +152,7 @@ Die gesamte Referenz finden Sie unter [CREATE STATISTICS][] auf der MSDN-Website
 
 Verwenden Sie zum Erstellen einer Mehrspaltenstatistik einfach die vorherigen Beispiele, aber geben Sie mehr Spalten an.
 
-> [AZURE.NOTE]Das Histogramm, das zum Schätzen der Zeilenanzahl im Abfrageergebnis verwendet wird, ist nur für die erste Spalte verfügbar, die in der Definition des Statistikobjekts aufgelistet ist.
+> [AZURE.NOTE] Das Histogramm, das zum Schätzen der Zeilenanzahl im Abfrageergebnis verwendet wird, ist nur für die erste Spalte verfügbar, die in der Definition des Statistikobjekts aufgelistet ist.
 
 In diesem Beispiel basiert das Histogramm auf *product\_category*. Spaltenübergreifende Statistiken werden für *product\_category* und *product\_sub\_c\\ategory* berechnet:
 
@@ -165,7 +167,7 @@ Da zwischen *product\_category* und *product\_sub\_category* eine Korrelation be
 Eine Möglichkeit zum Erstellen von Statistiken ist das Ausgeben von CREATE STATISTICS-Befehlen nach dem Erstellen der Tabelle.
 
 ```
-CREATE TABLE dbo.table1 
+CREATE TABLE dbo.table1
 (
    col1 int
 ,  col2 int
@@ -314,7 +316,7 @@ UPDATE STATISTICS dbo.table1;
 
 Diese Anweisung ist einfach zu verwenden. Bedenken Sie, dass hiermit alle Statistiken der Tabelle aktualisiert werden, sodass unter Umständen mehr Arbeit als erforderlich erledigt wird. Wenn die Leistung kein Problem darstellt, ist dies auf jeden Fall die einfachste und umfassendste Möglichkeit sicherzustellen, dass die Statistiken aktuell sind.
 
-> [AZURE.NOTE]Beim Aktualisieren aller Statistiken einer Tabelle führt SQL Data Warehouse einen Scan durch, um für jede Statistik Stichproben der Tabelle zu nehmen. Wenn die Tabelle groß ist und viele Spalten und Statistiken enthält, kann es effizienter sein, je nach Bedarf einzelne Spalten zu aktualisieren.
+> [AZURE.NOTE] Beim Aktualisieren aller Statistiken einer Tabelle führt SQL Data Warehouse einen Scan durch, um für jede Statistik Stichproben der Tabelle zu nehmen. Wenn die Tabelle groß ist und viele Spalten und Statistiken enthält, kann es effizienter sein, je nach Bedarf einzelne Spalten zu aktualisieren.
 
 Eine Implementierung einer `UPDATE STATISTICS`-Prozedur wird im Artikel [Temporäre Tabellen] beschrieben. Die Implementierungsmethode unterscheidet sich etwas von der obigen `CREATE STATISTICS`-Prozedur, aber das Endergebnis ist identisch.
 
@@ -380,7 +382,7 @@ JOIN    sys.columns         AS co ON    sc.[column_id]      = co.[column_id]
 JOIN    sys.types           AS ty ON    co.[user_type_id]   = ty.[user_type_id]
 JOIN    sys.tables          AS tb ON  co.[object_id]        = tb.[object_id]
 JOIN    sys.schemas         AS sm ON  tb.[schema_id]        = sm.[schema_id]
-WHERE   1=1 
+WHERE   1=1
 AND     st.[user_created] = 1
 ;
 ```
@@ -428,11 +430,11 @@ DBCC SHOW\_STATISTICS() ist im Vergleich zu SQL Server strenger in SQL Data Ware
 
 1. Nicht dokumentierte Funktionen werden nicht unterstützt.
 - Verwendung von Stats\_stream nicht möglich
-- Ergebnisse für bestimmte Teilmengen von Statistikdaten können nicht verknüpft werden, z. B. (STAT\_HEADER JOIN DENSITY\_VECTOR)
+- Ergebnisse für bestimmte Teilmengen von Statistikdaten können nicht verknüpft werden, z. B. (STAT\_HEADER JOIN DENSITY\_VECTOR)
 2. NO\_INFOMSGS kann für die Meldungsunterdrückung nicht festgelegt werden
 3. Eckige Klammern um Namen von Statistiken können nicht verwendet werden
 4. Spaltennamen können nicht zum Identifizieren von Statistikobjekten verwendet werden
-5. Benutzerdefinierter Fehler 2767 wird nicht unterstützt
+5. Benutzerdefinierter Fehler 2767 wird nicht unterstützt
 
 
 ## Nächste Schritte
@@ -459,4 +461,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [SQL Data Warehouse-Entwicklu
 [sys.table\_types]: https://msdn.microsoft.com/library/bb510623.aspx
 [Aktualisieren von Statistiken]: https://msdn.microsoft.com/library/ms187348.aspx
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0309_2016-->

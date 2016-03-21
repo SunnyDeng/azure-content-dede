@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/04/2015" 
+	ms.date="03/04/2016" 
 	ms.author="bradsev" />
 
 
@@ -112,7 +112,7 @@ Abbildung 7: Visualisieren des Ergebnisses der Modellbewertung bei der Multiklas
 
 **Ergebnisinterpretation**
 
-Die linken sechzehn Spalten stellen die Featurewerte des Testsatzes dar. Die Spalten mit den Namen "Scored Probabilities for Class 'XX'" entsprechen der Spalte "Scored Probabilities" bei zwei Klassen. Sie zeigen die Wahrscheinlichkeit, dass der entsprechende Eintrag in einer bestimmten Klasse liegt. Für den ersten Eintrag beträgt die Wahrscheinlichkeit z. B. 0,003571, dass es sich um ein "A" handelt, 0,000451, dass es sich um ein "B" handelt usw. Die letzte Spalte "Scored Labels" entspricht "Scored Labels" bei zwei Klassen. Die Klasse mit der größten ausgewerteten Wahrscheinlichkeit wird als die vorhergesagte Klasse des entsprechenden Eintrags ausgewählt. Beispielsweise ist "F" der ausgewertete Bezeichner für den ersten Eintrag, da es mit größter Wahrscheinlichkeit (0,916995) ein "F" ist.
+Die linken sechzehn Spalten stellen die Featurewerte des Testsatzes dar. Die Spalten mit den Namen "Scored Probabilities for Class 'XX'" entsprechen der Spalte "Scored Probabilities" bei zwei Klassen. Sie zeigen die Wahrscheinlichkeit, dass der entsprechende Eintrag in einer bestimmten Klasse liegt. Für den ersten Eintrag beträgt die Wahrscheinlichkeit z. B. 0,003571, dass es sich um ein "A" handelt, 0,000451, dass es sich um ein "B" handelt usw. Die letzte Spalte "Scored Labels" entspricht "Scored Labels" bei zwei Klassen. Die Klasse mit der größten ausgewerteten Wahrscheinlichkeit wird als die vorhergesagte Klasse des entsprechenden Eintrags ausgewählt. Beispielsweise ist "F" der ausgewertete Bezeichner für den ersten Eintrag, da es mit größter Wahrscheinlichkeit (0,916995) ein "F" ist.
 
 **Webdienstveröffentlichung**
 
@@ -198,7 +198,7 @@ Abbildung 17: Visualisieren des Clusteringergebnisses für ein neues Dataset
 
 **Ergebnisinterpretation**
 
-Obwohl die Ergebnisse der beiden Teile aus verschiedenen Experimentphasen stammen, sehen sie genau gleich aus und werden auf dieselbe Weise interpretiert. Die ersten vier Spalten sind Features. Die letzte Spalte "Assignments" ist das Vorhersageergebnis. Die Einträge, denen die gleiche Zahl zugewiesen wurde, werden als im selben Cluster befindlich vorhergesagt, d. h. beide weisen in bestimmter Form Ähnlichkeiten auf (in diesem Experiment wurde die standardmäßige euklidische Abstandsmetrik verwendet). Denken Sie daran, dass Sie die Anzahl von Clustern mit 2 angegeben haben. In der Spalte "Assignments" sind also die Einträge entweder mit 0 oder 1 bezeichnet.
+Obwohl die Ergebnisse der beiden Teile aus verschiedenen Experimentphasen stammen, sehen sie genau gleich aus und werden auf dieselbe Weise interpretiert. Die ersten vier Spalten sind Features. Die letzte Spalte "Assignments" ist das Vorhersageergebnis. Die Einträge, denen die gleiche Zahl zugewiesen wurde, werden als im selben Cluster befindlich vorhergesagt, d. h. beide weisen in bestimmter Form Ähnlichkeiten auf (in diesem Experiment wurde die standardmäßige euklidische Abstandsmetrik verwendet). Denken Sie daran, dass Sie die Anzahl von Clustern mit 2 angegeben haben. In der Spalte "Assignments" sind also die Einträge entweder mit 0 oder 1 bezeichnet.
 
 **Webdienstveröffentlichung**
 
@@ -309,4 +309,4 @@ Abbildung 26: Webdienstergebnis für das Restaurantempfehlungsproblem
 [train-matchbox-recommender]: https://msdn.microsoft.com/library/azure/fa4aa69d-2f1c-4ba4-ad5f-90ea3a515b4c/
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0309_2016-->

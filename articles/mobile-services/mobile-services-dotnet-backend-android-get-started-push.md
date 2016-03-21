@@ -17,11 +17,10 @@
 	ms.author="ricksal"/>
 
 # Hinzufügen von Pushbenachrichtigungen zur Mobile Services-App
-
 [AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
-
+> Informationen für die entsprechende Mobile Apps-Version dieses Themas finden Sie unter [Hinzufügen von Pushbenachrichtigungen zu Ihrer Android-App](../app-service-mobile/app-service-mobile-android-get-started-push.md).
+ 
 &nbsp;
-
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-push](../../includes/mobile-services-selector-get-started-push.md)]
 
@@ -117,4 +116,4 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 [Senden von Übertragungsbenachrichtigungen an Abonnenten]: ../notification-hubs-windows-store-dotnet-send-breaking-news.md
 [Senden vorlagenbasierter Benachrichtigungen an Abonnenten]: ../notification-hubs-windows-store-dotnet-send-localized-breaking-news.md
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0309_2016-->

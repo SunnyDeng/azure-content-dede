@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/08/2015" 
+	ms.date="03/07/2016" 
 	ms.author="luisca"/>
 
 # Machine Learning-Beispiel-App: Häufig zusammen gekauft
@@ -21,7 +21,7 @@
 
 ## WICHTIG: DIESER DIENST WURDE ALS VERALTET MARKIERT
 
-Die Funktionalität „Häufig zusammen gekauft“, die dieser Dienst bietet, wurde jetzt in unsere umfassendere [Empfehlungen-API](http://gallery.azureml.net/MachineLearningAPI/3574432384684cac9cc766e57729ea4c) integriert. Wir empfehlen Ihnen, statt dieses Dienstes diese Empfehlungen zu verwenden.
+**Die Funktionalität „Häufig zusammen gekauft“, die dieser Dienst bietet, wurde jetzt in unsere umfassendere [Empfehlungen-API integriert](http://gallery.azureml.net/MachineLearningAPI/3574432384684cac9cc766e57729ea4c). Wir empfehlen Ihnen, statt dieses Diensts diese Empfehlungen zu verwenden.**
 
 ##Übersicht
 
@@ -39,4 +39,4 @@ Dieser Dienst enthält APIs zum Erstellen von Modellen für "Häufig zusammen ge
 
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0309_2016-->

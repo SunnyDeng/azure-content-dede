@@ -33,7 +33,7 @@ Azure Data Lake-Speicher ist ein mit HDFS-kompatibler Cloudspeicherdienst, der f
 
 Bei der Installation von Java und dem JDK auf Ihrer Entwicklungsworkstation können die folgenden Umgebungsvariablen festgelegt werden. Sie sollten dennoch prüfen, ob die Variablen vorhanden sind und korrekte Werte für Ihr System enthalten.
 
-* __JAVA\_HOME__ – sollte auf das Verzeichnis verweisen, in dem die Java-Laufzeitumgebung (Java Runtime Environment, JRE) installiert ist. Für eine Unix- oder Linux-Distribution sollte z. B. ein Wert wie `/usr/lib/jvm/java-7-oracle` verwendet werden. Unter Windows sollte der Wert ähnlich sein wie `c:\Program Files (x86)\Java\jre1.7`.
+* __JAVA\_HOME__ – sollte auf das Verzeichnis verweisen, in dem die Java-Laufzeitumgebung (Java Runtime Environment, JRE) installiert ist. Für eine Unix- oder Linux-Distribution sollte z. B. ein Wert wie `/usr/lib/jvm/java-7-oracle` verwendet werden. Unter Windows sollte der Wert so ähnlich sein wie `c:\Program Files (x86)\Java\jre1.7`.
 
 * __PATH__ – sollte die folgenden Pfade enthalten:
 
@@ -217,8 +217,12 @@ __Für Windows-basiertes HDInsight__:
 
     ![Topologieaktionen](./media/hdinsight-storm-write-data-lake-store/topologyactions.png)
 
+## Löschen des Clusters
+
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
+
 ##Nächste Schritte
 
 Nachdem Sie erfahren haben, wie Daten mithilfe von Storm in Azure Data Lake-Speicher geschrieben werden, können Sie sich mit anderen [Storm-Beispielen für HDInsight](hdinsight-storm-example-topology.md) beschäftigen.
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0309_2016-->

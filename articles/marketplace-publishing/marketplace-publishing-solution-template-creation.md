@@ -36,7 +36,7 @@ Eine Lösungsvorlage ist allen zugehörigen Topologien übergeordnet. Sie könne
 
   Azure Marketplace: http://azure.microsoft.com/marketplace/partners/{PublisherNamespace}/{OfferIdentifier}{TopologyIdentifier}
 
-  Azure-Vorschauportal: https://ms.portal.azure.com/#gallery/{PublisherNamespace}.{OfferIdentifier}{TopologyIdentifier}
+  Azure-Portal: https://portal.azure.com/#gallery/{PublisherNamespace}.{OfferIdentifier}{TopologyIdentifier}
 
 - Fügen Sie eine neue Version hinzu.
 
@@ -46,16 +46,6 @@ Laden Sie eine ZIP-Datei hoch, die alle erforderlichen Dateien zum Bereitstellen
 - Alle verknüpften Vorlagen und erforderlichen Skripts
 
 Nachdem Sie die ZIP-Datei hochgeladen haben, klicken Sie auf **Zertifizierung anfordern**. Das Microsoft-Zertifizierungsteam prüft die Dateien und zertifiziert die Topologie.
-
-Sie können den Erstellungsvorgang auch testen, ohne eine tatsächliche Bereitstellung für den Kunden durchzuführen. Führen Sie hierzu die folgenden Schritte aus:
-
-1. Speichern Sie die Datei *createUiDefinition.json*, und generieren Sie die absolute URL. Die URL muss öffentlich zugänglich sein.
-2. Codieren Sie die URL mithilfe des Tools unter [http://www.url-encode-decode.com/](http://www.url-encode-decode.com/).
-3. Ersetzen Sie den fett hervorgehobenen Text durch den Speicherort (codierte URL) der Datei *createUiDefinition.json*, die überprüft werden soll.
-
-  > https://portal.azure.com/?clientOptimizations=false#blade/Microsoft_Azure_Compute/CreateMultiVmWizardBlade/internal_bladeCallId/anything/internal_bladeCallerParams/ **{"initialData":{},"providerConfig":{"createUiDefinition":"http://yoururltocreateuidefinition.jsonURLencoded"}}**
-
-4. Kopieren Sie die URL, fügen Sie sie in einen beliebigen Browser ein, und testen Sie die Benutzerfreundlichkeit für die Datei „createUiDefinition.json“.
 
   > [AZURE.TIP] Während Ihre Entwickler die Topologien für die Lösungsvorlagen erstellen und diese zertifizieren lassen, können die Business-, Marketing- und/oder Rechtsabteilungen Ihres Unternehmens mit der Arbeit an den Marketinginhalten und den rechtlichen Inhalten beginnen.
 
@@ -77,4 +67,4 @@ Folgende Artikel könnten für Sie ebenfalls von Interesse sein:
 [link-acct-creation]: marketplace-publishing-microsoft-accounts-creation-registration.md
 [link-pubportal]: https://publish.windowsazure.com
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

@@ -31,7 +31,9 @@ Operational Insights identifiziert die Quellen für die unterschiedlichen Arten 
 * [Azure Resource Manager](https://azure.microsoft.com/resource-group-overview/)
 
 ## Voraussetzungen
-Bei einigen Vorgängen aus diesem Dokument kommen die folgenden Tools zum Einsatz: * [Azure PowerShell](https://azure.microsoft.com/powershell-install-configure/) * [Azure-Ressourcen-Manager (Client)](https://github.com/projectkudu/ARMClient)
+Diese Tools werden verwendet, um einige Vorgänge in diesem Dokument durchzuführen:
+* [Azure PowerShell](https://azure.microsoft.com/powershell-install-configure/)
+* [Azure Resource Manager-Client](https://github.com/projectkudu/ARMClient)
 
 ## Andere Protokollquellen, die gesammelt werden können
 1. **Service Fabric-Protokolle:** Werden von der Plattform für standardmäßige ETW- und EventSource-Kanäle ausgegeben. Protokolle können unterschiedlicher Art sein:
@@ -123,7 +125,7 @@ Einem bereits vorhandenen Cluster ohne Diagnosebereitstellung können Sie die Di
                 }
             }
     },
-                    "StorageAccount": "[parameters('applicationDiagnosticsStorageAccountNamee')]"
+                    "StorageAccount": "[parameters('applicationDiagnosticsStorageAccountName')]"
                 },
                 "protectedSettings": {
                     "storageAccountName": "[parameters('applicationDiagnosticsStorageAccountName')]",
@@ -167,7 +169,7 @@ Ersetzen Sie „vmNamePrefix“ durch das Präfix, das Sie beim Erstellen des Cl
 
 Passen Sie die wie oben beschrieben erstellten JSON-Dateien an die Einzelheiten Ihrer Umgebung an. Rufen Sie dann den folgenden Befehl auf, und übergeben Sie dabei den Namen der Ressourcengruppe für Ihren Service Fabric-Cluster. Nach erfolgreicher Ausführung des Befehls wird die Diagnose auf allen VMs bereitgestellt, und es wird damit begonnen, die Protokolle aus dem Cluster an Tabellen im angegebenen Azure-Speicherkonto hochzuladen.
 
-Vor dem Aufrufen des Bereitstellungsbefehls sind unter Umständen noch einige Setupschritte erforderlich – etwa das Hinzufügen Ihres Azure-Kontos (`Add-AzureAccount`), das Auswählen des richtigen Abonnements (`Select-AzureSubscription`) und das Wechseln in den Ressourcen-Manager-Modus (`Switch-AzureMode AzureResourceManager`).
+Vor dem Aufrufen des Bereitstellungsbefehls sind unter Umständen noch einige Setupschritte erforderlich – etwa das Hinzufügen Ihres Azure-Kontos (`Add-AzureAccount`), das Auswählen des richtigen Abonnements (`Select-AzureSubscription`) und das Wechseln in den Resource Manager-Modus (`Switch-AzureMode AzureResourceManager`).
 
 ```ps
 
@@ -304,7 +306,7 @@ Im Anschluss finden Sie einige Beispiele für Szenarien und die dazugehörigen A
     Type=ServiceFabricReliableServiceEvent AND ServiceName="fabric:/Application2/Stateless1" AND "RunAsync has been invoked"
     ```
 
-2. **So ermitteln Sie, ob ein statusbehafteter Dienst Ausnahmen ausgelöst hat, die von Service Fabric als Fehler gekennzeichnet wurden:** Verwenden Sie für die Suche nach entsprechenden Ereignissen eine Abfrage wie die folgende:
+2. **So ermitteln Sie, ob ein zustandsbehafteter Dienst Ausnahmen ausgelöst hat, die von Service Fabric als Fehler gekennzeichnet wurden:** Verwenden Sie für die Suche nach entsprechenden Ereignissen eine Abfrage wie die folgende:
 
     ```
     Type=ServiceFabricReliableServiceEvent AND ServiceName="fabric:/Application2/Stateful1" AND TaskName=StatefulRunAsyncFailure
@@ -325,4 +327,4 @@ Sie müssen den EtwEventSourceProviderConfiguration-Abschnitt in der Datei „Wa
 ## Nächste Schritte
 Sehen Sie sich die Diagnoseereignisse an, die für [Reliable Actors](service-fabric-reliable-actors-diagnostics.md) und [Reliable Services](service-fabric-reliable-services-diagnostics.md) ausgegeben werden, um besser zu verstehen, welche Ereignisse Sie beim Behandeln von Problemen untersuchen sollten.
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0309_2016-->

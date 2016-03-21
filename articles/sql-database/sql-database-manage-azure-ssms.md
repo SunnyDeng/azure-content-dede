@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/11/2015" 
+	ms.date="03/07/2016" 
 	ms.author="jeffreyg"/>
 
 
@@ -21,56 +21,13 @@
 
 
 > [AZURE.SELECTOR]
-- [Azure Portal](sql-database-manage-portal.md)
+- [Azure-Portal](sql-database-manage-portal.md)
 - [SSMS](sql-database-manage-azure-ssms.md)
 - [PowerShell](sql-database-command-line-tools.md)
 
-Sie können SQL Server Management Studio (SSMS) verwenden, um logische Server und Datenbanken der Azure SQL-Datenbank zu verwalten. Dieses Thema enthält Anleitungen für häufige Aufgaben mit SSMS. Sie sollten bereits einen logischen Server und eine logische Datenbank in der Azure SQL-Datenbank erstellt haben, bevor Sie beginnen. Um zu beginnen, lesen Sie [Erstellen einer ersten Azure SQL-Datenbank](sql-database-get-started.md) und kehren dann zurück.
+Sie können SQL Server Management Studio (SSMS) verwenden, um logische Server und Datenbanken der Azure SQL-Datenbank zu verwalten. Dieses Thema enthält Anleitungen für häufige Aufgaben mit SSMS. Sie sollten bereits einen logischen Server und eine logische Datenbank in der Azure SQL-Datenbank erstellt haben, bevor Sie beginnen. Unter [Erstellen einer ersten Azure SQL-Datenbank](sql-database-get-started.md) und im Artikel zum [Verbinden und Abfragen mithilfe von SSMS](sql-database-connect-query-ssms.md) finden Sie Informationen dazu, wie Sie eine Verbindung herstellen und dann eine einfache SELECT-Abfrage ausführen.
 
 Es wird empfohlen, dass Sie die neueste Version von SSMS verwenden, wenn Sie mit der Azure SQL-Datenbank arbeiten. Klicken Sie hierfür auf [Herunterladen von SQL Server Management Studio](https://msdn.microsoft.com/library/mt238290.aspx).
-
-
-## Herstellen einer Verbindung mit einem logischen SQL-Datenbankserver
-
-Um eine Verbindung mit der SQL-Datenbank herstellen zu können, müssen Sie den Servernamen auf Azure kennen. Eventuell müssen Sie sich beim Portal anmelden, um diese Information zu erhalten.
-
-1.  Melden Sie sich beim [klassischen Azure-Portal](http://manage.windowsazure.com) an.
-
-2.  Klicken Sie im linken Bereich auf **SQL-Datenbanken**.
-
-3.  Klicken Sie oben auf der Startseite der SQL-Datenbanken auf **SERVER**, um eine Liste aller Server anzuzeigen, die Ihrem Abonnement zugeordnet sind. Suchen Sie den Namen des gewünschten Servers und kopieren Sie ihn in die Zwischenablage.
-
-	Konfigurieren Sie als nächstes die SQL-Datenbank-Firewall, um Verbindungen von Ihrem lokalen Computer zu ermöglichen. Geben Sie hierzu die IP-Adresse Ihres lokalen Computers in die Ausnahmeliste der Firewall ein.
-
-1.  Klicken Sie auf der Startseite der SQL-Datenbanken auf **SERVER** und dann auf den Server, mit dem Sie eine Verbindung herstellen möchten.
-
-2.  Klicken Sie oben auf der Seite auf **Konfigurieren**.
-
-3.  Kopieren Sie die IP-Adresse in das Feld CURRENT CLIENT IP ADDRESS.
-
-4.  Auf der Seite **Konfigurieren** sind für Zugelassene IP-Adressen drei Felder verfügbar, in denen Sie einen Regelnamen und die Start- und Endwerte eines IP-Adressbereichs eingeben können. Als Regelnamen können Sie den Namen Ihres Computers wählen. Kopieren Sie für Bereichsanfang und -ende die IP-Adresse Ihres Computers in beide Felder und aktivieren Sie das Kontrollkästchen, das anschließend angezeigt wird.
-
-	Der Regelname muss eindeutig sein. Wenn es sich um Ihren Entwicklungscomputer handelt, können Sie seine IP-Adresse in beide Felder eingeben und als Anfangs- und Endwert des IP-Adressbereichs nutzen. Andernfalls kann es erforderlich sein, einen größeren IP-Adressbereich zu wählen, um Verbindungen von weiteren Computern in Ihrer Organisation zu ermöglichen.
- 
-5. Klicken Sie unten auf der Seite auf **Speichern**.
-
-    **Hinweis:** Es kann bis zu fünf Minuten dauern, bis geänderten Firewalleinstellungen wirksam werden.
-
-	Sie können nun über Management Studio eine Verbindung zur SQL-Datenbank aufbauen.
-
-1.  Klicken Sie auf der Taskleiste auf **Start**, zeigen Sie auf **Alle Programme** > **Microsoft SQL Server 2014**, und klicken Sie anschließend auf **SQL Server Management Studio**.
-
-2.  Geben Sie unter **Verbindung mit Server herstellen** den vollständigen Servernamen im Format „*Servername*.database.windows.net“ ein. In Azure ist der Servername eine automatisch generierte Zeichenfolge aus alphanumerischen Zeichen.
-
-3.  Wählen Sie **SQL Server-Authentifizierung**.
-
-4.  Geben Sie im Feld **Anmeldung** den SQL Server-Administratornamen ein, den Sie im Portal beim Erstellen des Servers angegeben haben.
-
-5.  Geben Sie im Feld **Kennwort** das Kennwort ein, das Sie im Portal beim Erstellen des Servers angegeben haben.
-
-8.  Klicken Sie auf **Verbinden**, um die Verbindung herzustellen.
-
-SQL Server 2014 SSMS mit den neuesten Updates bietet erweiterte Unterstützung für Aufgaben wie etwa das Erstellen und Ändern von Azure SQL-Datenbanken. Darüber hinaus können Sie für diese Aufgaben auch Transact-SQL-Anweisungen verwenden. Die folgenden Schritte enthalten Beispiele für derartige Anweisungen. Weitere Informationen zur Verwendung von Transact-SQL mit SQL-Datenbank einschließlich detaillierter Angaben zu unterstützten Befehlen finden Sie unter [Transact-SQL-Referenz (SQL-Datenbank)](http://msdn.microsoft.com/library/bb510741.aspx).
 
 ## Erstellen und Verwalten von Azure SQL-Datenbanken
 
@@ -78,7 +35,7 @@ Während Sie mit der **Master**-Datenbank verbunden sind, können Sie neue Daten
 
 Öffnen Sie den Ordner „Datenbanken“, erweitern Sie den Ordner **System Databases**, klicken Sie mit der rechten Maustaste auf **master**, und klicken Sie anschließend auf **Neue Abfrage**, um ein Abfragefenster in Management Studio zu öffnen.
 
--   Verwenden Sie die Anweisung **CREATE DATABASE**, um eine neue Datenbank zu erstellen. Weitere Informationen finden Sie unter [CREATE DATABASE (SQL-Datenbank)](https://msdn.microsoft.com/library/dn268335.aspx). Die folgende Anweisung erstellt eine neue Datenbank mit dem Namen **myTestDB** und gibt an, dass es sich um eine Datenbank der Standard S0-Edition mit einer maximalen Standardgröße von 250 GB handelt.
+-   Verwenden Sie die Anweisung **CREATE DATABASE**, um eine neue Datenbank zu erstellen. Weitere Informationen finden Sie unter [CREATE DATABASE (SQL-Datenbank)](https://msdn.microsoft.com/library/dn268335.aspx). Die folgende Anweisung erstellt eine neue Datenbank mit dem Namen **myTestDB** und gibt an, dass es sich um eine Datenbank der Standard S0-Edition mit einer maximalen Standardgröße von 250 GB handelt.
 
         CREATE DATABASE myTestDB
         (EDITION='Standard',
@@ -86,7 +43,7 @@ Während Sie mit der **Master**-Datenbank verbunden sind, können Sie neue Daten
 
 Klicken Sie auf **Ausführen**, um die Abfrage durchzuführen.
 
--   Mit der Anweisung **ALTER DATABASE** können Sie eine vorhandene Datenbank anpassen und beispielsweise den Namen oder die Edition der Datenbank ändern. Weitere Informationen finden Sie unter [ALTER DATABASE (SQL-Datenbank)](https://msdn.microsoft.com/library/ms174269.aspx). Die folgende Anweisung ändert die im vorherigen Schritt erstellte Datenbank und legt die Edition auf „Standard S1“ fest.
+-   Mit der Anweisung **ALTER DATABASE** können Sie eine vorhandene Datenbank anpassen und beispielsweise den Namen oder die Edition der Datenbank ändern. Weitere Informationen finden Sie unter [ALTER DATABASE (SQL-Datenbank)](https://msdn.microsoft.com/library/ms174269.aspx). Die folgende Anweisung ändert die im vorherigen Schritt erstellte Datenbank und legt die Edition auf „Standard S1“ fest.
 
         ALTER DATABASE myTestDB
         MODIFY
@@ -102,7 +59,7 @@ Klicken Sie auf **Ausführen**, um die Abfrage durchzuführen.
 
 -   In SQL-Datenbank wird die Anweisung **USE** nicht für einen Wechsel zwischen einzelnen Datenbanken unterstützt. Statt dessen müssen Sie direkt eine Verbindung zur Zieldatenbank herstellen.
 
->[AZURE.NOTE]Viele der Transact-SQL-Anweisungen, die eine Datenbank erstellen oder modifizieren, müssen in ihrem eigenen Batch ausgeführt werden und können nicht mit anderen Transact-SQL-Anweisungen gruppiert werden. Weitere Informationen finden Sie in den anweisungsspezifischen Artikeln, die über die oben aufgeführten Links verfügbar sind.
+>[AZURE.NOTE] Viele der Transact-SQL-Anweisungen, die eine Datenbank erstellen oder modifizieren, müssen in ihrem eigenen Batch ausgeführt werden und können nicht mit anderen Transact-SQL-Anweisungen gruppiert werden. Weitere Informationen finden Sie in den anweisungsspezifischen Artikeln, die über die oben aufgeführten Links verfügbar sind.
 
 ## Erstellen und Verwalten von Anmeldungen
 
@@ -149,7 +106,7 @@ Die Datenbank vom Typ **master** überwacht alle Anmeldungen und verfolgt, welch
 
 ## Überwachen von SQL-Datenbanken mit dynamischen Verwaltungssichten</h2>
 
-SQL-Datenbank unterstützt mehrere Dynamic Management Views, mit denen Sie eine Einzeldatenbank überwachen können. Im Folgenden finden Sie einige wenige Beispiele für die Art Überwachungsdaten, die Sie mit diesen Ansichten abrufen können. Umfassende Details und weitere Anwendungsbeispiele finden Sie unter [Überwachen der Azure SQL-Datenbank mit dynamischen Verwaltungssichten](https://msdn.microsoft.com/library/azure/ff394114.aspx).
+SQL-Datenbank unterstützt mehrere Dynamic Management Views, mit denen Sie eine Einzeldatenbank überwachen können. Im Folgenden finden Sie einige wenige Beispiele für die Art Überwachungsdaten, die Sie mit diesen Ansichten abrufen können. Umfassende Details und weitere Anwendungsbeispiele finden Sie unter [Überwachen der Azure SQL-Datenbank mit dynamischen Verwaltungssichten](https://msdn.microsoft.com/library/azure/ff394114.aspx).
 
 -   Die Abfrage einer dynamischen Verwaltungsansicht erfordert die Berechtigung **VIEW DATABASE STATE**. Wenn Sie einem bestimmten Benutzer die Berechtigung **VIEW DATABASE STATE** zuweisen möchten, stellen Sie mit Ihrer Hauptanmeldung für die Serverebene eine Verbindung zu der Datenbank her, die Sie verwalten möchten, und führen Sie bezogen auf sie die folgende Anweisung aus:
 
@@ -192,4 +149,4 @@ SQL-Datenbank unterstützt mehrere Dynamic Management Views, mit denen Sie eine 
  
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0309_2016-->

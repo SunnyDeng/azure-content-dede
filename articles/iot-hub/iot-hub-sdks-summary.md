@@ -74,9 +74,9 @@ Die folgende Liste enthält Links zur online verfügbaren API-Referenzdokumentat
 [Internet der Dinge (IoT, Internet of Things) .NET]: https://msdn.microsoft.com/library/mt488521.aspx
 [Microsoft Azure IoT-Geräte-SDK für C]: http://azure.github.io/azure-iot-sdks/c/api_reference/index.html
 [Microsoft Azure IoT-Geräte-SDK für Java]: http://azure.github.io/azure-iot-sdks/java/device/api_reference/index.html
-[Microsoft Azure IoT-Geräte-SDK für Node.js]: http://azure.github.io/azure-iot-sdks/node/api_reference/azure-iot-device/1.0.0/index.html
+[Microsoft Azure IoT-Geräte-SDK für Node.js]: http://azure.github.io/azure-iot-sdks/node/api_reference/azure-iot-device/1.0.1/index.html
 [IoT Hub REST]: https://msdn.microsoft.com/library/mt548492.aspx
 [Microsoft Azure IoT-Dienst-SDK für Java]: http://azure.github.io/azure-iot-sdks/java/service/api_reference/index.html
-[Microsoft Azure IoT-Dienst-SDK für Node.js]: http://azure.github.io/azure-iot-sdks/node/api_reference/azure-iothub/1.0.0/index.html
+[Microsoft Azure IoT-Dienst-SDK für Node.js]: http://azure.github.io/azure-iot-sdks/node/api_reference/azure-iothub/1.0.1/index.html
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

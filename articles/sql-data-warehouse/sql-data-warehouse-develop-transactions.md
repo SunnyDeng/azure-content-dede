@@ -13,12 +13,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/07/2016"
+   ms.date="03/03/2016"
    ms.author="jrj;barbkess;sonyama"/>
 
 # Transaktionen in SQL Data Warehouse
 
-Wie zu erwarten unterstützt SQL Data Warehouse alle Transaktionseigenschaften. Um allerdings eine angemessene Leistung von SQL Data Warehouse sicherzustellen, wurden einige Features im Vergleich zu SQL Server eingeschränkt. In diesem Artikel werden die Unterschiede hervorgehoben und die anderen Features aufgelistet.
+Wie zu erwarten unterstützt SQL Data Warehouse alle Transaktionseigenschaften. Um allerdings eine angemessene Leistung von SQL Data Warehouse sicherzustellen, wurden einige Features im Vergleich zu SQL Server eingeschränkt. In diesem Artikel werden die Unterschiede hervorgehoben und die anderen Features aufgelistet.
 
 ## Transaktionsisolationsstufen
 SQL Data Warehouse implementiert ACID-Transaktionen. Die Isolation der Transaktionsunterstützung ist jedoch beschränkt auf `READ UNCOMMITTED` und kann nicht geändert werden. Sie können eine Reihe von Codemethoden implementieren, um fehlerhafte Datenlesevorgänge zu verhindern, wenn dies ein Problem für Sie darstellt. Die am häufigsten verwendeten Methoden nutzen sowohl CTAS als auch Wechsel von Partitionstabellen (oftmals gleitendes Fenstermuster genannt), um zu verhindern, dass Benutzer Daten abrufen, die noch vorbereitet werden. Sichten, die die Daten vorab filtern, sind auch ein beliebter Ansatz.
@@ -26,7 +26,7 @@ SQL Data Warehouse implementiert ACID-Transaktionen. Die Isolation der Transakti
 ## Transaktionsstatus
 SQL Data Warehouse verwendet die XACT\_STATE()-Funktion, um eine fehlgeschlagene Transaktion mit dem Wert "-2" zu melden. Dies bedeutet, dass die Transaktion fehlgeschlagen und nur für den Rollback markiert ist.
 
-> [AZURE.NOTE]Die Verwendung von "-2" in der XACT\_STATE-Funktion zum Kennzeichnen einer fehlgeschlagenen Transaktion stellt für SQL Server unterschiedliche Verhalten dar. SQL Server verwendet den Wert "-1" für eine Transaktion, für die kein Commit durchgeführt werden kann. SQL Server kann einige Fehler innerhalb einer Transaktion tolerieren, ohne als nicht commitfähig gekennzeichnet zu werden. SELECT 1/0 würde beispielsweise einen Fehler verursachen, jedoch keinen Transaktionszustand erzwingen, der keinen Commit zulässt. SQL Server lässt auch Lesevorgänge in der Transaktion zu, für die kein Commit möglich ist. Dies ist allerdings in SQLDW nicht der Fall. Bei einem Fehler innerhalb einer SQLDW-Transaktion wird automatisch der Zustand "-2" festgelegt, einschließlich SELECT 1/0-Fehlern. Es ist daher wichtig, zu überprüfen, ob in Ihrem Anwendungscode XACT\_STATE() verwendet wird.
+> [AZURE.NOTE] Die Verwendung von "-2" in der XACT\_STATE-Funktion zum Kennzeichnen einer fehlgeschlagenen Transaktion stellt für SQL Server unterschiedliche Verhalten dar. SQL Server verwendet den Wert "-1" für eine Transaktion, für die kein Commit durchgeführt werden kann. SQL Server kann einige Fehler innerhalb einer Transaktion tolerieren, ohne als nicht commitfähig gekennzeichnet zu werden. SELECT 1/0 würde beispielsweise einen Fehler verursachen, jedoch keinen Transaktionszustand erzwingen, der keinen Commit zulässt. SQL Server lässt auch Lesevorgänge in der Transaktion zu, für die kein Commit möglich ist. Dies ist allerdings in SQLDW nicht der Fall. Bei einem Fehler innerhalb einer SQLDW-Transaktion wird automatisch der Zustand "-2" festgelegt, einschließlich SELECT 1/0-Fehlern. Es ist daher wichtig, zu überprüfen, ob in Ihrem Anwendungscode XACT\_STATE() verwendet wird.
 
 In SQL Server kann ein Codefragment angezeigt werden, das wie folgt aussieht:
 
@@ -112,4 +112,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 
 <!--Other Web references-->
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0309_2016-->

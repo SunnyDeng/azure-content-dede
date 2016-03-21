@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="multiple"
     ms.devlang="Java"
     ms.topic="article"
-    ms.date="01/09/2016" 
+    ms.date="03/07/2016" 
     ms.author="robmcm"/>
 
 <!-- Legacy MSDN URL = https://msdn.microsoft.com/library/azure/hh694271.aspx -->
@@ -28,46 +28,47 @@ Das Azure Toolkit für Eclipse stellt Vorlagen und Funktionen bereit, die Ihnen 
 
 Die folgenden Artikel helfen Ihnen beim Einstieg in die Verwendung des Azure Tookit für Eclipse:
 
-* [Neuerungen im Azure-Toolkit für Eclipse][]
-* [Installieren des Azure-Toolkits für Eclipse][]
-* [Erstellen einer Hello World-Anwendung für Azure in Eclipse][]
-* [Anzeigen von Javadoc-Inhalten in Eclipse für das Paket für Azure-Bibliotheken für Java][]
+* [Neuerungen im Azure-Toolkit für Eclipse]
+* [Installieren des Azure-Toolkits für Eclipse]
+* [Creating a Hello World Application for Azure in Eclipse (in englischer Sprache)]
+* [Erstellen einer „Hello World“-Web-App für Azure in Eclipse]
+* [Anzeigen von Javadoc-Inhalten in Eclipse für das Paket für Azure-Bibliotheken für Java]
 
 ## Konfigurieren von Azure-Projekteinstellungen ##
 
 In den folgenden Artikel erfahren Sie, wie Sie das Azure-Toolkit für Eclipse verwenden, um die Einstellungen für Ihre Projekte in Azure zu konfigurieren:
 
-* [Azure-Projekteigenschaften][]
-* [Eigenschaften der Azure-Rolle][]
-* [Azure-Dienstendpunkte][]
-* [Azure-Speicherkontoliste][]
-* [Aktivieren der Sitzungsaffinität][]
-* [Aktivieren des Remotezugriffs für Azure-Bereitstellungen in Eclipse][]
+* [Azure-Projekteigenschaften]
+* [Eigenschaften der Azure-Rolle]
+* [Azure-Dienstendpunkte]
+* [Azure-Speicherkontoliste]
+* [Aktivieren der Sitzungsaffinität]
+* [Aktivieren des Remotezugriffs für Azure-Bereitstellungen in Eclipse]
 
 ## Verwenden des Azure-Toolkits für Eclipse ##
 
 Die folgenden Artikel erklären, wie Sie mit dem Azure-Toolkit für Eclipse Ihren Java-Projekten Azure-Funktionen hinzufügen:
 
-* [Verwenden von zusammengestelltem Caching][]
-* [Verwenden von dediziertem Caching][]
-* [Bereitstellen umfangreicher Bereitstellungen][]
-* [Verwenden der Azure-Dienstlaufzeitbibliothek in JSP][]
-* [Debuggen von Azure-Anwendungen in Eclipse][]
-* [SSL-Abladung][]
-* [Verwenden der SSL-Abladung][]
-* [Verwalten von Sitzungsdaten mit Sitzungsaffinität][]
-* [Authentifizieren von Webbenutzern mit dem Azure Access Control Service über Eclipse][]
-* [Verwenden von JMS mit AMQP 1.0 in Azure mit Eclipse][]
+* [Verwenden von zusammengestelltem Caching]
+* [Verwenden von dediziertem Caching]
+* [Bereitstellen umfangreicher Bereitstellungen]
+* [Verwenden der Azure-Dienstlaufzeitbibliothek in JSP]
+* [Debuggen von Azure-Anwendungen in Eclipse]
+* [SSL-Abladung]
+* [Verwenden der SSL-Abladung]
+* [Verwalten von Sitzungsdaten mit Sitzungsaffinität]
+* [Authentifizieren von Webbenutzern mit dem Azure Access Control Service über Eclipse]
+* [Verwenden von JMS mit AMQP 1.0 in Azure mit Eclipse]
 
 ## Weitere Informationen ##
 
-[Installieren des Azure-Toolkits für Eclipse][]
+[Installieren des Azure-Toolkits für Eclipse]
 
-[Erstellen einer Hello World-Anwendung für Azure in Eclipse][]
+[Erstellen einer Hello World-Anwendung für Azure in Eclipse]
 
-[What‘s New in the Azure Toolkit for Eclipse (in englischer Sprache)][]
+[What‘s New in the Azure Toolkit for Eclipse (in englischer Sprache)]
 
-Weitere Informationen zum Verwenden von Azure mit Java finden Sie im [Azure Java Developer Center][].
+Weitere Informationen zum Verwenden von Azure mit Java finden Sie im [Azure Java Developer Center].
 
 <!-- URL List -->
 
@@ -76,7 +77,9 @@ Weitere Informationen zum Verwenden von Azure mit Java finden Sie im [Azure Java
 [Eigenschaften der Azure-Rolle]: http://go.microsoft.com/fwlink/?LinkID=699525
 [Azure-Dienstendpunkte]: http://go.microsoft.com/fwlink/?LinkID=699526
 [Azure-Speicherkontoliste]: http://go.microsoft.com/fwlink/?LinkID=699528
+[Creating a Hello World Application for Azure in Eclipse (in englischer Sprache)]: http://go.microsoft.com/fwlink/?LinkID=699533
 [Erstellen einer Hello World-Anwendung für Azure in Eclipse]: http://go.microsoft.com/fwlink/?LinkID=699533
+[Erstellen einer „Hello World“-Web-App für Azure in Eclipse]: ./app-service-web/create-a-hello-world-web-app-for-azure-in-eclipse.md
 [Debuggen von Azure-Anwendungen in Eclipse]: http://go.microsoft.com/fwlink/?LinkID=699535
 [Bereitstellen umfangreicher Bereitstellungen]: http://go.microsoft.com/fwlink/?LinkID=699536
 [Anzeigen von Javadoc-Inhalten in Eclipse für das Paket für Azure-Bibliotheken für Java]: http://go.microsoft.com/fwlink/?LinkID=699537
@@ -94,4 +97,4 @@ Weitere Informationen zum Verwenden von Azure mit Java finden Sie im [Azure Java
 [Neuerungen im Azure-Toolkit für Eclipse]: http://go.microsoft.com/fwlink/?LinkID=699552
 [What‘s New in the Azure Toolkit for Eclipse (in englischer Sprache)]: http://go.microsoft.com/fwlink/?LinkID=699552
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0309_2016-->

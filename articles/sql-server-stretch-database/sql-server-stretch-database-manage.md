@@ -3,9 +3,9 @@
 	description="Erfahren Sie, wie Sie Stretch-Datenbank verwalten und Probleme behandeln können."
 	services="sql-server-stretch-database"
 	documentationCenter=""
-	authors="douglasl"
-	manager="jhubbard"
-	editor="monicar"/>
+	authors="douglaslMS"
+	manager=""
+	editor=""/>
 
 <tags
 	ms.service="sql-server-stretch-database"
@@ -53,4 +53,4 @@ Empfehlungen zur Problembehandlung finden Sie unter [Überwachen und Behandeln v
 ## Weitere Informationen
 [Überwachen von Stretch-Datenbank](sql-server-stretch-database-monitor.md) [Sichern und Wiederherstellen von Stretch-fähigen Datenbanken](sql-server-stretch-database-backup.md)
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

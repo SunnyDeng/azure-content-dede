@@ -13,7 +13,7 @@
 	ms.workload="big-data"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="get-started-article"
+	ms.topic="article"
 	ms.date="02/05/2016"
 	ms.author="jgao"/>
 
@@ -30,6 +30,8 @@ Die Informationen in diesem Artikel gelten für Windows-basierte HDInsight-Clust
 > [AZURE.NOTE] HBase (Version 0.98.0) für Windows-basiertes HDInsight ist nur für HDInsight-Cluster der Version 3.1 verfügbar (basiert auf Apache Hadoop und YARN 2.4.0). Versionshinweise finden Sie unter [Neuheiten in den von HDInsight bereitgestellten Hadoop-Clusterversionen?][hdinsight-versions]
 
 ###Voraussetzungen
+
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 Bevor Sie mit diesem Lernprogramm zu HBase beginnen können, benötigen Sie Folgendes:
 
@@ -291,7 +293,9 @@ Zum Öffnen der Web-Benutzeroberfläche müssen Sie eine RDP-Sitzung zum Cluster
 
 In einem Cluster mit hoher Verfügbarkeit gibt es einen Link zum aktuellen aktiven HBase-Masterknoten, unter dem die Web-Benutzeroberfläche gehostet wird.
 
+##Löschen des Clusters
 
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 
 ## Wie geht es weiter?
@@ -299,7 +303,7 @@ In diesem HBase-Tutorial für HDInsight haben Sie erfahren, wie Sie einen HBase-
 
 Weitere Informationen finden Sie unter:
 
-- [Überblick zu HDInsight HBase][hdinsight-hbase-overview] HBase ist eine Open Source-NoSQL-Datenbank von Apache, die auf Hadoop basiert und wahlfreien Zugriff und starke Konsistenz für große Mengen unstrukturierter und teilstrukturierter Daten bietet.
+- [Überblick zu HDInsight HBase][hdinsight-hbase-overview] HBase ist eine Open Source-NoSQL-Datenbank von Apache, die auf Hadoop basiert und wahlfreien Zugriff und starke Konsistenz für große Mengen unstrukturierter und teilstrukturierter Daten bietet.
 - [Erstellen von HBase-Clustern in Azure Virtual Network][hdinsight-hbase-provision-vnet]. Mit der Integration in virtuelle Netzwerke können HBase-Cluster im selben virtuellen Netzwerk bereitgestellt werden wie Ihre Anwendungen, sodass Anwendungen direkt mit HBase kommunizieren können.
 - [Konfigurieren der HBase-Replikation in HDInsight](hdinsight-hbase-geo-replication.md) Erfahren Sie, wie Sie HBase-Replikation zwischen zwei Azure-Rechenzentren konfigurieren.
 - [Analysieren der Twitter-Stimmungen mit HBase in HDInsight][hbase-twitter-sentiment] Erfahren Sie, wie Sie in Echtzeit [Stimmungsanalysen](http://en.wikipedia.org/wiki/Sentiment_analysis) bei Big Data mithilfe von HBase in einem Hadoop-Cluster in HDInsight durchführen können.
@@ -331,4 +335,4 @@ Weitere Informationen finden Sie unter:
 [img-hbase-sample-data-tabular]: ./media/hdinsight-hbase-tutorial-get-started/hdinsight-hbase-contacts-tabular.png
 [img-hbase-sample-data-bigtable]: ./media/hdinsight-hbase-tutorial-get-started/hdinsight-hbase-contacts-bigtable.png
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0309_2016-->

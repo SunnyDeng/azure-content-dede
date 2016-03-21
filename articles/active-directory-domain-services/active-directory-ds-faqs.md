@@ -41,7 +41,6 @@ Nein. Azure AD-Domänendienste kann nur im älteren Azure-Verwaltungsportal (d. 
 #### Kann ich Domänencontroller zu einer verwalteten Domäne der Azure AD-Domänendienste hinzufügen?
 Nein. Die von den Azure AD-Domänendiensten bereitgestellte Domäne ist eine verwaltete Domäne. Die Domänencontroller für diese Domäne müssen nicht bereitgestellt, konfiguriert oder anderweitig verwaltet werden – diese Verwaltungsschritte werden als Dienst von Microsoft bereitgestellt. Daher können Sie keine zusätzlichen Domänencontroller (weder mit Lese-/Schreibzugriff noch mit reinem Lesezugriff) für die verwaltete Domäne hinzufügen.
 
-
 ### Verwaltung und Betrieb
 
 #### Ich habe Azure AD-Domänendienste aktiviert. Welches Benutzerkonto verwende ich für den Domänenbeitritt von Computern zu dieser Domäne?
@@ -56,7 +55,7 @@ Nein. Gruppenmitgliedschaften können nicht in Domänen geändert werden, die vo
 #### Kann ich das Schema der von den Azure AD-Domänendiensten bereitgestellten Domäne erweitern?
 Nein. Das Schema für die verwaltete Domäne wird von Microsoft verwaltet. Schemaerweiterungen werden von Azure AD-Domänendiensten nicht unterstützt.
 
-### Kann ich DNS-Einträge ändern, die von Azure AD-Domänendiensten bereitgestellt werden?
+#### Kann ich DNS-Einträge ändern, die von Azure AD-Domänendiensten bereitgestellt werden?
 Ja. Benutzer, die Mitglieder der administrativen Gruppe sind (d. h. „AAD DC Administrators“), verfügen über DNS-Administratorberechtigungen zum Ändern der DNS-Einträge.
 
 ### Abrechnung und Verfügbarkeit
@@ -76,4 +75,4 @@ Auf unserer [Seite für Regionen](active-directory-ds-regions.md) finden Sie ein
 #### Wann wird Azure AD-Domänendienste allgemein verfügbar sein?
 Wir können derzeit keine Zeitpläne für die allgemeine Verfügbarkeit des Diensts bekannt geben.
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

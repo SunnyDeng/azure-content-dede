@@ -1,7 +1,7 @@
 ## Zusätzliche Ressourcen
 
-- [Azure AD Entwicklerhandbuch](active-directory-developers-guide.md)
-- [AzureADSamples auf GitHub >>](https://github.com/AzureAdSamples) (in englischer Sprache)
-- [CloudIdentity.com >>](https://cloudidentity.com) (in englischer Sprache)
+- [Azure AD Entwicklerhandbuch](https://azure.microsoft.com/documentation/articles/active-directory-developers-guide/)
+- [AzureADSamples auf GitHub >> (in englischer Sprache)](https://github.com/AzureAdSamples)
+- [CloudIdentity.com >> (in englischer Sprache)](http://cloudidentity.com)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0309_2016-->

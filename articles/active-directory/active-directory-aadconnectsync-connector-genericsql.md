@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.devlang="na"
    ms.topic="article"
-   ms.date="01/21/2016"
+   ms.date="03/08/2016"
    ms.author="andkjell"/>
 
 # Technische Referenz für den generischen SQL-Connector
@@ -22,9 +22,11 @@ Dieser Artikel beschreibt den generischen SQL-Connector. Der Artikel bezieht sic
 
 - Microsoft Identity Manager 2016 (MIM2016)
 - Forefront Identity Manager 2010 R2 (FIM2010R2)
-    -   Mindestens Hotfix 4.1.3461.0 ([KB2870703](https://support.microsoft.com/kb/2870703)) erforderlich.
+    -   Mindestens Hotfix 4.1.3461.0 ([KB2870703](https://support.microsoft.com/kb/2870703)) erforderlich.
 
 Der Connector steht für MIM2016 und FIM2010R2 im [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=717495) zum Download bereit.
+
+Um diesen Connector in Aktion zu sehen, lesen Sie den Artikel [Schrittweise Anleitung für den generischen SQL-Connector](active-directory-aadconnectsync-connector-genericsql-step-by-step.md).
 
 ## Übersicht über den generischen SQL-Connector
 
@@ -78,9 +80,9 @@ Der Konnektivitätsbildschirm ist der erste, der beim Erstellen eines neuen gene
 
 Die Datenbank muss eine der folgenden Authentifizierungsmethoden unterstützen:
 
-- **Windows-Authentifizierung**: Die authentifizierende Datenbank überprüft den Benutzer anhand der Windows-Anmeldeinformationen. In diesem Fall wird das vom Synchronisierungsdienst verwendete Dienstkonto verwendet. Dieses Konto benötigt Berechtigungen für die Datenbank.
+- **Windows-Authentifizierung**: Die authentifizierende Datenbank überprüft den Benutzer anhand der Windows-Anmeldeinformationen. Der angegebene Benutzername und das angegebene Kennwort werden zur Authentifizierung bei der Datenbank verwendet werden. Dieses Konto benötigt Berechtigungen für die Datenbank.
 - **SQL-Authentifizierung**: Die authentifizierende Datenbank verwendet zum Herstellen der Datenbankverbindung den im Konnektivitätsbildschirm definierten Benutzernamen und das dazugehörige Kennwort. Wenn Sie Benutzername und Kennwort in der DSN-Datei speichern, haben die im Konnektivitätsbildschirm angegebenen Anmeldeinformationen Vorrang.
-- **Azure SQL-Datenbankauthentifizierung**: Weitere Informationen finden Sie unter [Herstellen einer Verbindung mit SQL-Datenbank unter Verwendung der Azure Active Directory-Authentifizierung](sql-database-aad-authentication.md).
+- **Azure SQL-Datenbankauthentifizierung**: Weitere Informationen finden Sie unter [Herstellen einer Verbindung mit SQL-Datenbank unter Verwendung der Azure Active Directory-Authentifizierung](..\sql-database\sql-database-aad-authentication.md).
 
 **DN ist Anker**: Wenn Sie diese Option aktivieren, wird der DN auch als Ankerattribut verwendet. Die Option kann bei einer einfachen Implementierung verwendet werden, es gelten jedoch folgende Einschränkungen:
 
@@ -88,7 +90,7 @@ Die Datenbank muss eine der folgenden Authentifizierungsmethoden unterstützen:
 
 **Exporttyp: Objekt ersetzen**: Falls nur einige Attribute geändert wurden, wird beim Exportieren das gesamte Objekt mit allen Attributen exportiert und das vorhandene Objekt ersetzt.
 
-### Schema 1 (Objekttyperkennung)
+### Schema 1 (Objekttyperkennung)
 
 Auf dieser Seite wird für den Connector die Suche nach den verschiedenen Objekttypen in der Datenbank konfiguriert.
 
@@ -102,13 +104,13 @@ Jeder Objekttyp wird als Partition angezeigt und unter **Konfigurieren von Parti
 - **Tabelle/Sicht/Gespeicherte Prozedur**: Geben Sie den Namen der Tabelle, Sicht oder gespeicherten Prozedur und anschließend den Namen der Spalte mit der Objekttypenliste an. Geben Sie bei Verwendung einer gespeicherten Prozedur außerdem Parameter im Format **[Name]:[Richtung]:[Wert]** an. Geben Sie die Parameter jeweils in einer separaten Zeile an. (Drücken Sie STRG+EINGABETASTE, um eine neue Zeile zu erhalten.) ![schema1c](./media/active-directory-aadconnectsync-connector-genericsql/schema1c.png)
 - **SQL-Abfrage**: Diese Option ermöglicht die Angabe einer SQL-Abfrage, die eine einzelne Spalte mit Objekttypen zurückgibt. (Beispiel: `SELECT [Column Name] FROM TABLENAME`) Die zurückgegebene Spalte muss vom Typ „String“ (varchar) sein.
 
-### Schema 2 (Attributtyperkennung)
+### Schema 2 (Attributtyperkennung)
 
 Auf dieser Seite wird die Erkennung der Attributnamen und -typen konfiguriert. Die Konfigurationsoptionen werden für jeden auf der vorherigen Seite ermittelten Objekttyp aufgeführt.
 
 ![schema2a](./media/active-directory-aadconnectsync-connector-genericsql/schema2a.png)
 
-**Attributtyp-Erkennungsmethode**: Der Connector unterstützt für jeden im Schema 1-Bildschirm erkannten Objekttyp folgende Attributtyp-Erkennungsmethoden:
+**Attributtyp-Erkennungsmethode**: Der Connector unterstützt für jeden im Schema 1-Bildschirm erkannten Objekttyp folgende Attributtyp-Erkennungsmethoden:
 
 - **Tabelle/Sicht/Gespeicherte Prozedur**: Geben Sie den Namen der Tabelle, Sicht oder gespeicherten Prozedur an, die für die Suche nach den Attributnamen verwendet werden soll. Geben Sie bei Verwendung einer gespeicherten Prozedur außerdem Parameter im Format **[Name]:[Richtung]:[Wert]** an. Geben Sie die Parameter jeweils in einer separaten Zeile an. (Drücken Sie STRG+EINGABETASTE, um eine neue Zeile zu erhalten.) Wenn Sie Attributnamen in einem mehrwertigen Attribut ermitteln möchten, geben Sie eine kommagetrennte Tabellen- oder Sichtenliste an. Mehrwertige Szenarien, bei denen die übergeordnete und die untergeordnete Tabelle die gleichen Spaltennamen enthalten, werden nicht unterstützt.
 - **SQL-Abfrage**: Diese Option ermöglicht die Angabe einer SQL-Abfrage, die eine einzelne Spalte mit Attributnamen zurückgibt. (Beispiel: `SELECT [Column Name] FROM TABLENAME`) Die zurückgegebene Spalte muss vom Typ „String“ (varchar) sein.
@@ -125,7 +127,7 @@ Auf dieser Seite können Sie jeweils das Anker- und DN-Attribut für die erkannt
 
 ### Schema 4 (Definieren von Attributtyp, Verweis und Richtung)
 
-Auf dieser Seite können Sie für die Attribute jeweils den Attributtyp (beispielsweise ganze Zahl, Verweis, Zeichenfolge, Binärwert oder boolescher Wert) und die Richtung konfigurieren. Hier werden alle Attribute der Seite **Schema 2** aufgeführt (auch mehrwertige Attribute).
+Auf dieser Seite können Sie für die Attribute jeweils den Attributtyp (beispielsweise ganze Zahl, Verweis, Zeichenfolge, Binärwert oder boolescher Wert) und die Richtung konfigurieren. Hier werden alle Attribute der Seite **Schema 2** aufgeführt (auch mehrwertige Attribute).
 
 ![schema4a](./media/active-directory-aadconnectsync-connector-genericsql/schema4a.png)
 
@@ -138,7 +140,7 @@ Hinweise:
 - **Geschachtelte Tabellen** können als einspaltige Datenbanktabellen betrachtet werden kann. Oracle speichert die Zeilen einer geschachtelten Tabelle in keiner bestimmten Reihenfolge. Beim Abrufen der geschachtelten Tabelle in eine PL/SQL-Variable werden die Zeilen jedoch mit fortlaufenden tiefgestellten Zeichen (beginnend mit 1) versehen. Dies ermöglicht einen arrayähnlichen Zugriff auf einzelne Zeilen.
 - **VARRYS** werden vom Connector nicht unterstützt.
 
-### Schema 5 (Definieren der Partition für Verweisattribute)
+### Schema 5 (Definieren der Partition für Verweisattribute)
 
 Auf dieser Seite wird für alle Referenzattribute konfiguriert, auf welche Partition (also auf welchen Objekttyp) das jeweilige Attribut verweist.
 
@@ -226,7 +228,7 @@ Ein Beispiel: Sie möchten das Employee-Objekt und alle dazugehörigen mehrwerti
 
 - Bei großen Datenmengen empfiehlt sich die Implementierung der Paginierung für gespeicherte Prozeduren.
 - Damit Ihre gespeicherte Prozedur die Paginierung unterstützt, müssen Sie den Start- und den Endindex angeben. Weitere Informationen finden Sie unter [Effiziente Paginierung bei großen Datenmengen](https://msdn.microsoft.com/library/bb445504.aspx).
-- „@StartIndex“ und „@EndIndex“ werden zur Ausführungszeit durch entsprechende Seitengrößenwerte ersetzt, die auf der Seite **Schritt konfigurieren** konfiguriert wurden. Ein Beispiel: Angenommen, der Connector ruft die erste Seite ab, und die Seitengröße ist auf 500 festgelegt. In diesem Fall wird „@StartIndex“ auf 1 und „@EndIndex“ auf 500 festgelegt. Dieser Wert nimmt zu, wenn der Connector weitere Seiten abruft, was die Änderung von „@StartIndex“ und „@EndIndex“ nach sich zieht.
+- „@StartIndex“ und „@EndIndex“ werden zur Ausführungszeit durch entsprechende Seitengrößenwerte ersetzt, die auf der Seite **Schritt konfigurieren** konfiguriert wurden. Ein Beispiel: Angenommen, der Connector ruft die erste Seite ab, und die Seitengröße ist auf 500 festgelegt. In diesem Fall wird „@StartIndex“ auf 1 und „@EndIndex“ auf 500 festgelegt. Dieser Wert nimmt zu, wenn der Connector weitere Seiten abruft, was die Änderung von „@StartIndex“ und „@EndIndex“ nach sich zieht.
 - Geben Sie zum Ausführen einer parametrisierten gespeicherten Prozedur die Parameter im Format `[Name]:[Direction]:[Value]` an. Geben Sie die Parameter jeweils in eine separate Zeile ein. (Drücken Sie STRG+EINGABETASTE, um eine neue Zeile zu erhalten.)
 - Der generische SQL-Connector unterstützt auch Importvorgänge aus einer verteilten Umgebung (etwa Verbindungsserver in Microsoft SQL Server). Falls Informationen aus einer Tabelle auf einem Verbindungsserver abgerufen werden sollen, muss die Tabelle im folgenden Format angegeben werden: `[ServerName].[Database].[Schema].[TableName]`
     - In verteilten Umgebungen unterstützt der Connector nur Microsoft-Verbindungsserver.
@@ -295,4 +297,4 @@ Bei Verwendung der Option „SQL-Abfrage“ werden drei verschiedene Abfragen f�
 
 -	Informationen zum Aktivieren der Protokollierung für die Behandlung von Connectorproblemen finden Sie unter [Vorgehensweise: Aktivieren der ETW-Ablaufverfolgung für Connectors](http://go.microsoft.com/fwlink/?LinkId=335731).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0309_2016-->

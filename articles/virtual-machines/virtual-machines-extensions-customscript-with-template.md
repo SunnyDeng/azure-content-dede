@@ -17,7 +17,7 @@
    ms.date="11/01/2015"
    ms.author="kundanap"/>
 
-# Verwenden der benutzerdefinierten Skripterweiterung mit Azure-Ressourcen-Manager-Vorlagen
+# Verwenden der benutzerdefinierten Skripterweiterung mit Azure Resource Manager-Vorlagen
 
 Dieser Artikel bietet einen Überblick über das Schreiben von Azure-Ressourcen-Manager-Vorlagen mit der benutzerdefinierten Skripterweiterung zum Starten (Bootstrappen) von Workloads auf einem virtuellen Linux- oder Windows-Computer.
 
@@ -45,7 +45,7 @@ Eine Azure-Ressourcen-Manager-Vorlage ermöglicht es Ihnen, deklarativ die Azure
 
 ## Verwenden der benutzerdefinierten Skripterweiterung
 
-Zum Bereitstellen mit Vorlagen wird genau die Version der CustomScript-Erweiterung verwendet, die für Azure-Service-Verwaltungs-APIs verfügbar ist. Die Erweiterung unterstützt dieselben Parameter und Szenarios, etwa Hochladen von Dateien in ein Azure Storage-Konto oder in einen Github-Speicherort. Der wesentliche Unterschied bei einer Verwendung von Vorlagen besteht darin, dass die genaue Version der Erweiterung angegeben werden muss im Gegensatz zur Angabe der Version im Format Hauptversion.*.
+Verwenden Sie zum Bereitstellen mit Vorlagen genau die Version der CustomScript-Erweiterung, die für Azure-Dienstverwaltungs-APIs verfügbar ist. Die Erweiterung unterstützt dieselben Parameter und Szenarios, etwa Hochladen von Dateien in ein Azure Storage-Konto oder in einen Github-Speicherort. Der wesentliche Unterschied bei einer Verwendung von Vorlagen besteht darin, dass die genaue Version der Erweiterung angegeben werden muss im Gegensatz zur Angabe der Version im Format Hauptversion.*.
 
  ## Vorlagenbeispiel für einen virtuellen Linux-Computer
 
@@ -96,10 +96,10 @@ Definieren Sie die folgende Ressource im "Resource"-Abschnitt der Vorlage.
 
 Ersetzen Sie in den obigen Beispielen die Datei-URL und den Dateinamen durch Ihre eigenen Einstellungen.
 
-Nachdem Sie die Vorlage geschrieben haben, können Sie sie über die Azure-CLI oder über Azure Powershell bereitstellen.
+Nachdem Sie die Vorlage geschrieben haben, können Sie sie über die Azure-Befehlszeilenschnittstelle oder über Azure PowerShell bereitstellen.
 
 In den nachstehenden Beispielen finden Sie vollständige Beispiele zum Konfigurieren von Anwendungen auf einem virtuellen Computer mithilfe der benutzerdefinierten Skripterweiterung.
 
 <a href="https://github.com/Azure/azure-quickstart-templates/blob/b1908e74259da56a92800cace97350af1f1fc32b/mongodb-on-ubuntu/azuredeploy.json/" target="_blank">Benutzerdefinierte Skripterweiterung auf einem virtuellen Linux-Computer</a> </br> <a href="https://github.com/Azure/azure-quickstart-templates/blob/b1908e74259da56a92800cace97350af1f1fc32b/201-list-storage-keys-windows-vm/azuredeploy.json/" target="_blank">Benutzerdefinierte Skripterweiterung auf einem virtuellen Windows-Computer</a>
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0309_2016-->

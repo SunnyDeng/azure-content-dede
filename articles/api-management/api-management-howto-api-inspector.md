@@ -4,7 +4,7 @@
 	services="api-management" 
 	documentationCenter="" 
 	authors="steved0x" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor=""/>
 
 <tags 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/03/2015" 
+	ms.date="03/04/2016" 
 	ms.author="sdanie"/>
 
 # Verwenden des API-Inspektors zur Verfolgung von Aufrufen in Azure API Management
@@ -24,7 +24,7 @@ Zusätzlich zur Ablaufverfolgung von Vorgängen verfolgt der API-Inspektor auch 
 
 Hier finden Sie eine schrittweise Anleitung für die Nutzung des API-Inspektors.
 
->[AZURE.NOTE]Nachverfolgungen mit dem API-Inspektor werden nur für Anforderungen generiert und verfügbar gemacht, die Abonnementschlüssel enthalten, die zum [Administratorkonto](api-management-howto-create-groups.md) gehören.
+>[AZURE.NOTE] Nachverfolgungen mit dem API-Inspektor werden nur für Anforderungen generiert und verfügbar gemacht, die Abonnementschlüssel enthalten, die zum [Administratorkonto](api-management-howto-create-groups.md) gehören.
 
 ## <a name="trace-call"> </a> Verwenden des API-Inspektors zum Verfolgen von Aufrufen
 
@@ -261,4 +261,4 @@ Laden Sie die Ablaufverfolgungsdatei über die **ocp-apim-trace-location**-URL h
 
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0309_2016-->

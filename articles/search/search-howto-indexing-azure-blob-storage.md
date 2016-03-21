@@ -12,7 +12,7 @@ ms.service="search"
 ms.devlang="rest-api"
 ms.workload="search" ms.topic="article"  
 ms.tgt_pltfrm="na"
-ms.date="02/08/2016"
+ms.date="03/08/2016"
 ms.author="eugenesh" />
 
 # Indizieren von Dokumenten in Azure Blob Storage mit Azure Search
@@ -205,8 +205,22 @@ Eigenschaftenname | Eigenschaftswert | Erklärung
 AzureSearch\_Skip | „true“ | Weist den Blobindexer an, das Blob vollständig zu überspringen. Es wird nicht versucht, Metadaten oder Inhalt zu extrahieren. Dies ist nützlich, wenn Sie bestimmte Inhaltstypen überspringen möchten oder wenn ein bestimmtes Blob wiederholt fehlschlägt und den Indizierungsprozess unterbricht.
 AzureSearch\_SkipContent | „true“ | Weist den Blobindexer an, nur die Metadaten zu indizieren und das Extrahieren von Inhalten des Blobs zu überspringen. Dies ist hilfreich, wenn der Blobinhalt nicht weiter relevant ist, Sie aber dennoch die an das Blob angefügten Metadaten indizieren möchten.
 
+<a name="IndexerParametersConfigurationControl"></a>
+## Verwenden von Indexerparametern zum Steuern des Extrahierens von Dokumenten
+
+Wenn Sie die Inhaltsextraktion für alle Blobs überspringen möchten, können Sie dazu ein Indexer- Konfigurationsobjekt verwenden, anstatt zu jedem Blob einzeln benutzerdefinierte Metadaten hinzufügen zu müssen. Legen Sie zu diesem Zweck im `parameters`-Objekt die `SkipContent`-Konfigurationseigenschaft auf `true` fest:
+
+ 	PUT https://[service name].search.windows.net/indexers/<your indexer name>?api-version=2015-02-28-Preview
+	Content-Type: application/json
+	api-key: [admin key]
+
+	{
+	  ... other parts of indexer definition
+	  "parameters" : { "configuration" : { "SkipContent" : true } }
+	}
+
 ## Helfen Sie uns bei der Verbesserung von Azure Search
 
 Teilen Sie uns auf unserer [UserVoice-Website](https://feedback.azure.com/forums/263029-azure-search/) mit, wenn Sie sich Features wünschen oder Verbesserungsvorschläge haben.
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

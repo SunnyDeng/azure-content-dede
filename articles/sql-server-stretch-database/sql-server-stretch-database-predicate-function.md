@@ -1,11 +1,11 @@
 <properties
-	pageTitle="Schreiben einer Inline-Tabellenwertfunktion zum Auswählen von zu migrierenden Zeilen (Stretch-Datenbank) | Microsoft Azure"
-	description="Erfahren Sie, wie Sie ein Filterprädikat erstellen können, um die zu migrierenden Zeilen auszuwählen."
+	pageTitle="Verwenden eines Filterprädikats, um die zu migrierenden Zeilen auszuwählen (Stretch-Datenbank) | Microsoft Azure"
+	description="Erfahren Sie, wie Sie ein Filterprädikat verwenden können, um die zu migrierenden Zeilen auszuwählen."
 	services="sql-server-stretch-database"
 	documentationCenter=""
-	authors="douglasl"
-	manager="jhubbard"
-	editor="monicar"/>
+	authors="douglaslMS"
+	manager=""
+	editor=""/>
 
 <tags
 	ms.service="sql-server-stretch-database"
@@ -16,7 +16,7 @@
 	ms.date="02/26/2016"
 	ms.author="douglasl"/>
 
-# Schreiben einer Inline-Tabellenwertfunktion zum Auswählen von zu migrierenden Zeilen (Stretch-Datenbank)
+# Verwenden eines Filterprädikats, um die zu migrierenden Zeilen auszuwählen (Stretch-Datenbank)
 
 Wenn Sie Verlaufsdaten in einer separaten Tabelle speichern, können Sie Stretch-Datenbank so konfigurieren, dass die gesamte Tabelle migriert wird. Wenn die Tabelle alte und aktuelle Daten enthält, können Sie anderenfalls ein Filterprädikat zum Auswählen der zu migrierenden Zeilen angeben. Das Filterprädikat muss eine Inline-Tabellenwertfunktion aufrufen. In diesem Thema wird beschrieben, wie Sie eine Inline-Tabellenwertfunktion zum Auswählen von zu migrierenden Zeilen schreiben.
 
@@ -409,4 +409,4 @@ Sie können die Inline-Tabellenwertfunktionen nicht verwerfen, solange eine Tabe
 ## Weitere Informationen
 [ALTER TABLE (Transact-SQL)](https://msdn.microsoft.com/library/ms190273.aspx)
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

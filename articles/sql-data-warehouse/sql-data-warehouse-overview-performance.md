@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/08/2016"
+   ms.date="03/03/2016"
    ms.author="mausher;barbkess;jrj;nicw;sonyama"/>
 
 # Übersicht über Leistung und Skalierbarkeit
@@ -23,11 +23,14 @@ SQL Data Warehouse ist eine cloudbasierte, verteilte Datenbankplattform, die ent
 
 *Die folgenden Informationen gelten für Azure SQL Data Warehouse in der Vorschauversion. Diese Informationen werden während der Vorschau fortlaufend aktualisiert, da der Dienst bis zur allgemeinen Verfügbarkeit (GA) erweitert wird.*
 
-Unsere Ziele für SQL Data Warehouse sind: – Vorhersagbare Leistung und lineare Skalierbarkeit für mehrere Petabyte an Daten – Hohe Zuverlässigkeit für alle Data Warehouse-Vorgänge unterstützt durch ein Service Level Agreement (SLA) – Kurze Zeit vom Laden der Daten bis zu den Einblicken in relationale und nicht relationale Daten
+Unsere Ziele für SQL Data Warehouse:
+-	Vorhersagbare Leistung und lineare Skalierbarkeit für Daten bis zum Petabytebereich
+-	Hohe Zuverlässigkeit für alle Data Warehouse-Vorgänge, unterstützt durch SLA (Service Level Agreement)
+-	Kurze Zeit vom Laden der Daten bis zu den Einblicken in relationale und nicht relationale Daten
 
 Während der Vorschau werden wir kontinuierlich an diesen Zielen arbeiten, um sie vor der allgemeinen Verfügbarkeit (GA) umzusetzen.
 
->[AZURE.NOTE]In den folgenden Abschnitten wird der Azure SQL Data Warehouse-Dienst beim Start der öffentlichen Vorschau beschrieben. Diese Informationen werden während der Vorschau fortlaufend aktualisiert, da der Dienst bis zur allgemeinen Verfügbarkeit (GA) erweitert wird.
+>[AZURE.NOTE] In den folgenden Abschnitten wird der Azure SQL Data Warehouse-Dienst beim Start der öffentlichen Vorschau beschrieben. Diese Informationen werden während der Vorschau fortlaufend aktualisiert, da der Dienst bis zur allgemeinen Verfügbarkeit (GA) erweitert wird.
 
 ## Datenschutz
 SQL Data Warehouse speichert alle Daten im Azure-Speicher mit georedundanten Blobs. Drei synchrone Kopien der Daten werden in der lokalen Azure-Region behalten, um transparenten Datenschutz bei lokalen Ausfällen (z. B. Speicherlaufwerksausfälle) sicherzustellen. Darüber hinaus werden drei weitere asynchrone Kopien in einer Azure-Remoteregion zum Schutz von Daten bei einem regionalen Ausfall (Notfallwiederherstellung) beibehalten. Lokale und Remoteregionen werden zusammen verwendet, um akzeptable Synchronisierungslatenzen (z. B. Osten der USA und Westen der USA) zu erreichen.
@@ -40,12 +43,14 @@ SQL Data Warehouse ist ein verteiltes System mit mehreren Komponenten, bei dem d
 
 Basierend auf gesammelten Telemetriedaten wird die Zuverlässigkeit von SQL Data Warehouse auf 98 % für typische Data Warehouse-Workloads geschätzt. Dies bedeutet, dass im Durchschnitt, 2 von 100 Abfragen aufgrund von Systemfehlern fehlschlagen können. Dies ist keine SLA für die Vorschau, sondern eher ein Indikator für die erwartete Zuverlässigkeit von ausgeführten Abfragen. Beachten Sie, dass die Wahrscheinlichkeit einer fehlerhaften Abfrage mit der Ausführungszeit steigt (eine Abfrage, die länger als 2 Stunden dauert, schlägt z. B. mit einer viel höheren Wahrscheinlichkeit fehl als eine Abfrage, die weniger als 10 Minuten dauert). Während der Vorschau nehmen wir fortlaufende Verbesserungen vor, um die gleiche Zuverlässigkeit für Vorgänge unabhängig von deren Ausführungszeit zu gewährleisten. Wenn wir diese Erweiterungen mit dem Ziel der Bereitstellung einer vollständigen SLA bei der allgemeinen Verfügbarkeit veröffentlichen, werden wir die erwartete Zuverlässigkeit aktualisieren.
 
-Während der Vorschau gibt es für SQL Data Warehouse möglicherweise bis zu fünf Wartungsmaßnahmen pro Monat, um wichtige Updates zu installieren. Jedes Ereignis kann bis zu 2 Stunden lang Abfragefehler verursachen, wobei diese Zeit von der Anzahl der DWUs abhängt, die von der SQL Data Warehouse-Instanz verwendet werden. Wir unternehmen jeden Versuch, die Kunden über diese Ereignisse 48 Stunden im Voraus zu benachrichtigen, um eine gründliche Planung zu ermöglichen.
+Während der Vorschau wird SQL Data Warehouse in regelmäßigen Abständen aktualisiert werden, um neue Funktionen und wichtige Updates zu installieren. Diese Upgrades können störend sein, und derzeit werden Upgrades nicht in einem vorhersehbaren Zeitplan durchgeführt. Wenn Sie feststellen, dass dieser Prozess zu störend ist, wir empfehlen Ihnen, [ein Supportticket zu erstellen][], damit wir Ihnen helfen können, diesen Prozess zu umgehen.
 
 ## Leistung und Skalierbarkeit
 SQL Data Warehouse führt Data Warehouse-Einheiten (DWUs) als Abstraktion von Datenverarbeitungsressourcen (CPUs, Arbeitsspeicher, Speicher-E/A) ein, die auf mehreren Knoten aggregiert sind. Durch eine Erhöhung der Anzahl der DWUs werden auch die aggregierten Datenverarbeitungsressourcen einer SQL Data Warehouse-Instanz erhöht. SQL Data Warehouse verteilt Vorgänge (z. B. das Laden von Daten oder Abfragen) auf die gesamte Compute-Infrastruktur in der Instanz, um die Leistung von Ladevorgängen und Abfragen zu erhöhen oder zu verringern, wenn das System hoch- oder herunterskaliert wird.
 
-Jedes Data Warehouse verfügt über zwei grundlegende Leistungsmetriken: – **Laderate**: die Anzahl der Datensätze, die pro Sekunde in das Data Warehouse geladen werden können. Wir messen insbesondere die Anzahl der Datensätze über PolyBase aus dem Azure-Blob-Speicher in eine Tabelle mit einem gruppierten Spaltenspeicherindex importiert werden können. – **Scanrate**: die Anzahl der Datensätze, die pro Sekunde sequenziell aus dem Data Warehouse abgerufen werden können. Mit dieser Metrik wird speziell die Anzahl der Datensätze gemessen, die von einer Abfrage aus einer Tabelle mit einem gruppierten Spaltenspeicherindex zurückgegeben werden.
+Für jedes Data Warehouse gibt es zwei grundlegende Messwerte für die Leistung:
+- **Laderate**: Die Anzahl der Datensätze, die pro Sekunde in das Data Warehouse geladen werden können. Wir messen speziell die Anzahl der Datensätze, die über PolyBase aus dem Azure-Blob-Speicher in eine Tabelle mit einem gruppierten Spaltenspeicherindex importiert werden können.
+- **Scanrate**: Die Anzahl der Datensätze, die pro Sekunde sequenziell aus dem Data Warehouse abgerufen werden können. Mit dieser Metrik wird speziell die Anzahl der Datensätze gemessen, die von einer Abfrage aus einer Tabelle mit einem gruppierten Spaltenspeicherindex zurückgegeben werden.
 
 Während der Vorschau nehmen wir fortlaufende Verbesserungen vor, um diese Raten zu erhöhen und sicherzustellen, dass sie planbar skalieren.
 
@@ -72,9 +77,10 @@ Anleitungen zum Erstellen Ihrer SQL Data Warehouse-Lösung finden Sie im Artikel
 [Auswählen eines Hashverteilungsschlüssels für die Tabelle]: sql-data-warehouse-develop-hash-distribution-key.md
 [Statistiken zum Verbessern der Leistung]: sql-data-warehouse-develop-statistics.md
 [Entwicklungsübersicht]: sql-data-warehouse-overview-develop.md
+[ein Supportticket zu erstellen]: sql-data-warehouse-get-started-create-support-ticket.md
 
 <!--MSDN references-->
 
 <!--Other web references-->
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0309_2016-->

@@ -13,13 +13,13 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
- 	ms.date="03/01/2016"  
+ 	ms.date="03/02/2016"  
 	ms.author="juliako"/>
 
 
 #Häufig gestellte Fragen  
 
-##Übersicht
+##Allgemeine häufig gestellte Fragen zu AMS 
 
 F: Wie wird die Indizierung skaliert?
 
@@ -39,11 +39,21 @@ A: Media Services unterstützt die Integration im Azure CDN. (Weitere Informatio
 
 F: Unterstützt Azure Media Services das Speichern von Bildern?
 
-A: Wenn Sie nur JPEG- oder PNG-Bilder speichern möchten, sollten Sie diese im Azure-BLOB-Speicher belassen. Es ergeben sich keine Vorteile daraus, sie in Ihrem Media Services-Konto zu speichern, außer Sie möchten sie zusammen mit Ihren Video- oder Audio-Medienobjekten aufbewahren. Dies gilt auch, wenn Sie die Bilder als Overlays im Video-Encoder verwenden möchten. Media Services Encoder unterstützt das Überlagern von Videos mit Bildern – deshalb werden JPEG und PNG auch als unterstützte Eingabeformate angegeben. Weitere Informationen finden Sie unter [Erstellen von Überlagerungen](https://msdn.microsoft.com/library/azure/dn640496.aspx).
+A: Wenn Sie nur JPEG- oder PNG-Bilder speichern möchten, sollten Sie diese im Azure-BLOB-Speicher belassen. Es ergeben sich keine Vorteile daraus, sie in Ihrem Media Services-Konto zu speichern, außer Sie möchten sie zusammen mit Ihren Video- oder Audio-Medienobjekten aufbewahren. Dies gilt auch, wenn Sie die Bilder als Overlays im Video-Encoder verwenden möchten. Media Encoder Standard unterstützt die Überlagerung von Videos mit Bildern, und daher werden JPEG und PNG auch als unterstützte Eingabeformate aufgelistet. Weitere Informationen finden Sie unter [Erstellen von Überlagerungen](media-services-custom-mes-presets-with-dotnet.md#overlay).
 
 F: Wie kann ich Medienobjekte von einem Media Services-Konto in ein anderes kopieren?
 
-A: Um Medienobjekte von einem Media Services-Konto in ein anderes zu kopieren, verwenden Sie die Erweiterungsmethode [IAsset.Copy](https://github.com/Azure/azure-sdk-for-media-services-extensions/blob/dev/MediaServices.Client.Extensions/IAssetExtensions.cs#L354), die im Repository [Azure Media Services .NET SDK-Erweiterungen](https://github.com/Azure/azure-sdk-for-media-services-extensions/) verfügbar ist. Weitere Informationen finden Sie in [diesem](https://social.msdn.microsoft.com/Forums/azure/28912d5d-6733-41c1-b27d-5d5dff2695ca/migrate-media-services-across-subscription?forum=MediaServices) Forumsthread.
+A: Um Medienobjekte unter Verwendung von .NET von einem Media Services-Konto in ein anderes zu kopieren, verwenden Sie die Erweiterungsmethode [IAsset.Copy](https://github.com/Azure/azure-sdk-for-media-services-extensions/blob/dev/MediaServices.Client.Extensions/IAssetExtensions.cs#L354), die im Repository [Azure Media Services .NET SDK-Erweiterungen](https://github.com/Azure/azure-sdk-for-media-services-extensions/) verfügbar ist. Weitere Informationen finden Sie in [diesem](https://social.msdn.microsoft.com/Forums/azure/28912d5d-6733-41c1-b27d-5d5dff2695ca/migrate-media-services-across-subscription?forum=MediaServices) Forumsthread.
+
+F: Welche Zeichen werden in Dateinamen bei der Arbeit mit AMS unterstützt?
+
+A: Media Services verwendet beim Erstellen von URLs für den Streaminginhalt den Wert der IAssetFile.Name-Eigenschaft (z. B. http://{AMSAccount}.origin.mediaservices.windows.net/{GUID}/{IAssetFile.Name}/streamingParameters.). Aus diesem Grund ist die Prozentcodierung nicht zulässig. Der Wert der **Name**-Eigenschaft darf keines der folgenden [für die Prozentcodierung reservierten Zeichen enthalten](http://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters): !*'();:@&=+$,/?%#". Darüber hinaus wird für die Dateinamenerweiterung nur ein Punkt (.) unterstützt.
+
+
+F: Wie wird eine Verbindung mithilfe von REST hergestellt?
+
+A: Nach der erfolgreichen Verbindung mit https://media.windows.net erhalten Sie eine 301 Redirect-Antwort, in der ein anderer Media Services-URI angegeben ist. Entsprechend der Beschreibung unter [Herstellen einer Verbindung mit einem Media Services-Konto über die Media Services-REST-API](media-services-rest-connect_programmatically.md) müssen Sie nachfolgende Aufrufe an den neuen URI senden.
+
 
 F: Wie kann ich ein Video während des Codierungsvorgangs drehen?
 
@@ -62,6 +72,9 @@ A: [Media Encoder Standard](media-services-dotnet-encode-with-media-encoder-stan
 	
 	...
 
+
+
+
 ##Media Services-Lernpfade
 
 [AZURE.INCLUDE [media-services-learning-paths-include](../../includes/media-services-learning-paths-include.md)]
@@ -70,4 +83,4 @@ A: [Media Encoder Standard](media-services-dotnet-encode-with-media-encoder-stan
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

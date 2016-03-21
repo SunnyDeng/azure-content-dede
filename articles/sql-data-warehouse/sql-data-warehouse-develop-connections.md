@@ -13,10 +13,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/07/2016"
+   ms.date="03/03/2016"
    ms.author="jrj;barbkess;sonyama"/>
 
-# Herstellen einer Verbindung mit SQL Data Warehouse 
+# Herstellen einer Verbindung mit SQL Data Warehouse
 Zum Herstellen einer Verbindung mit SQL Data Warehouse müssen Sie zu Authentifizierungszwecken Sicherheitsanmeldeinformationen übergeben. Beim Herstellen einer Verbindung werden Sie feststellen, dass bestimmte Verbindungseinstellungen im Rahmen der Einrichtung Ihrer Abfragesitzung konfiguriert werden.
 
 In diesem Artikel werden die folgenden Aspekte der Verbindungsherstellung für SQL Data Warehouse beschrieben:
@@ -29,9 +29,9 @@ In diesem Artikel werden die folgenden Aspekte der Verbindungsherstellung für S
 ## Authentifizierung
 Zum Herstellen einer Verbindung mit SQL Data Warehouse müssen Sie die folgenden Informationen angeben:
 
-- Vollqualifizierter Servername 
+- Vollqualifizierter Servername
 - SQL-Authentifizierung
-- Benutzername 
+- Benutzername
 - Kennwort
 - Standarddatenbank (optional)
 
@@ -42,7 +42,7 @@ Standardmäßig wird die Verbindung mit der Masterdatenbank hergestellt, nicht m
 1. Geben Sie die Standarddatenbank an, wenn Sie Ihren Server mit dem SQL Server-Objekt-Explorer in SSDT registrieren, oder in Ihrer Verbindungszeichenfolge für die Anwendung. Fügen Sie für eine ODBC-Verbindung beispielsweise den InitialCatalog-Parameter ein.
 2. Markieren Sie zuerst die Benutzerdatenbank, bevor Sie eine Sitzung in SSDT erstellen.
 
-> [AZURE.NOTE]Eine Anleitung zum Herstellen einer Verbindung mit SQL Data Warehouse per SSDT finden Sie im Artikel mit den ersten Schritten zum [Herstellen einer Verbindung und Durchführen von Abfragen][].
+> [AZURE.NOTE] Eine Anleitung zum Herstellen einer Verbindung mit SQL Data Warehouse per SSDT finden Sie im Artikel mit den ersten Schritten zum [Herstellen einer Verbindung und Durchführen von Abfragen][].
 
 Hierbei ist es wiederum wichtig zu beachten, dass die Transact-SQL-Anweisung **USE <your DB>** zum Ändern der Datenbank für eine Verbindung nicht unterstützt wird.
 
@@ -98,7 +98,7 @@ Jede Abfrage wird mit einem oder mehreren Anforderungsbezeichnern dargestellt. A
 Da SQL Data Warehouse aber ein verteiltes MPP-System ist, werden Sitzungs- und Anforderungsbezeichner im Vergleich zu SQL Server etwas anders verfügbar gemacht.
 
 Sitzungen und Anforderungen werden logisch durch ihre jeweiligen Bezeichner dargestellt.
-	
+
 | Bezeichner | Beispielwert |
 | :--------- | :------------ |
 | Sitzungs-ID | SID123456 |
@@ -158,4 +158,4 @@ Nach dem Herstellen der Verbindung können Sie mit dem Entwerfen der Tabellen be
 
 <!--Other references-->
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0309_2016-->

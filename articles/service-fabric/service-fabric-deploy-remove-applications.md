@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="12/10/2015"
+   ms.date="03/08/2016"
    ms.author="seanmck"/>
 
 # Bereitstellen von Anwendungen
@@ -24,7 +24,7 @@ Sobald der [Anwendungstyp gepackt][10] wurde, ist die Anwendung für die Bereits
 2. Registrieren des Anwendungstyps
 3. Erstellen der Anwendungsinstanz
 
->[AZURE.NOTE]Wenn Sie Visual Studio zum Bereitstellen und Debuggen von Anwendungen in Ihrem lokalen Entwicklungscluster verwenden, werden alle im Folgenden beschriebenen Schritte automatisch über ein PowerShell-Skript im Ordner „Scripts“ des Anwendungsprojekts ausgeführt. In diesem Artikel wird die grundlegende Funktionsweise der Skripts erläutert, sodass Sie die gleichen Vorgänge außerhalb von Visual Studio ausführen können.
+>[AZURE.NOTE] Wenn Sie Visual Studio zum Bereitstellen und Debuggen von Anwendungen in Ihrem lokalen Entwicklungscluster verwenden, werden alle im Folgenden beschriebenen Schritte automatisch über ein PowerShell-Skript im Ordner „Scripts“ des Anwendungsprojekts ausgeführt. In diesem Artikel wird die grundlegende Funktionsweise der Skripts erläutert, sodass Sie die gleichen Vorgänge außerhalb von Visual Studio ausführen können.
 
 ## Hochladen des Anwendungspakets
 
@@ -59,7 +59,7 @@ D:\TEMP\MYAPPLICATIONTYPE
     └───MyData
             init.dat
 
-PS D:\temp> Copy-ServiceFabricApplicationPackage MyApplicationType
+PS D:\temp> Copy-ServiceFabricApplicationPackage -ApplicationPackagePath MyApplicationType -ImageStoreConnectionString (Get-ImageStoreConnectionStringFromClusterManifest(Get-ServiceFabricClusterManifest))
 Copy application package succeeded
 
 PS D:\temp>
@@ -82,7 +82,7 @@ DefaultParameters      : {}
 PS D:\temp>
 ~~~
 
-Der Befehl **Register-ServiceFabricApplicationType** wird erst zurückgegeben, wenn das Paket vom System erfolgreich kopiert wurde. Die Dauer des Kopiervorgangs hängt vom Inhalt des Anwendungspakets ab. Verwenden Sie den Parameter**-TimeoutSec**, wenn ein längeres Zeitlimit erforderlich ist. (Das Standardzeitlimit beträgt 60 Sekunden.)
+Der Befehl **Register-ServiceFabricApplicationType** wird erst zurückgegeben, wenn das Paket vom System erfolgreich kopiert wurde. Die Dauer des Kopiervorgangs hängt vom Inhalt des Anwendungspakets ab. Verwenden Sie den Parameter**-TimeoutSec**, wenn ein längeres Zeitlimit erforderlich ist. (Das Standardzeitlimit beträgt 60 Sekunden.)
 
 Der Befehl **Get-ServiceFabricApplicationType** listet alle erfolgreich registrierten Anwendungstypversionen auf.
 
@@ -128,7 +128,7 @@ Für jede Version des registrierten Anwendungstyps können mehrere Anwendungsins
 
 ## Entfernen einer Anwendung
 
-Wird eine Anwendungsinstanz nicht mehr benötigt, kann diese mit dem Befehl **Remove-ServiceFabricApplication** dauerhaft entfernt werden. Mit diesem Befehl werden auch alle Dienste automatisch entfernt, die mit der Anwendung verknüpft sind, d. h., der Dienstzustand wird vollständig und dauerhaft entfernt. Dieser Vorgang kann nicht rückgängig gemacht werden, und der Anwendungsstatus kann nicht wiederhergestellt werden.
+Wird eine Anwendungsinstanz nicht mehr benötigt, kann diese mit dem Befehl **Remove-ServiceFabricApplication** dauerhaft entfernt werden. Mit diesem Befehl werden auch alle Dienste automatisch entfernt, die mit der Anwendung verknüpft sind, d. h., der Dienstzustand wird vollständig und dauerhaft entfernt. Dieser Vorgang kann nicht rückgängig gemacht werden, und der Anwendungsstatus kann nicht wiederhergestellt werden.
 
 ~~~
 PS D:\temp> Remove-ServiceFabricApplication fabric:/MyApp
@@ -225,4 +225,4 @@ PS D:\temp>
 [10]: service-fabric-application-model.md
 [11]: service-fabric-application-upgrade.md
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0309_2016-->

@@ -4,7 +4,7 @@
 	services="api-management"
 	documentationCenter=""
 	authors="antonba"
-	manager="dwrede"
+	manager="erikre"
 	editor=""/>
 
 <tags
@@ -68,4 +68,4 @@ Nachdem Ihr API Management-Dienst mit dem VPN verbunden wurde, unterscheidet sic
 [Lernprogramm: Erstellen eines virtuellen Netzwerks mit standortübergreifenden Verbindungen]: ../virtual-networks-create-site-to-site-cross-premises-connectivity
 [Verwenden des API-Inspektors zur Verfolgung von Aufrufen in Azure API Management]: api-management-howto-api-inspector.md
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0309_2016-->

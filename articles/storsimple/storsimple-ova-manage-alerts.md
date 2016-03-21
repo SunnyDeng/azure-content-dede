@@ -3,7 +3,7 @@
    description="Es werden die Warnungsbedingungen und -schweregrade für StorSimple Virtual Array beschrieben, und Sie erfahren, wie Sie den StorSimple Manager-Dienst zum Verwalten von Warnungen verwenden."
    services="storsimple"
    documentationCenter="NA"
-   authors="SharS"
+   authors="alkohli"
    manager="carmonm"
    editor="" />
 <tags 
@@ -12,10 +12,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="02/18/2016"
-   ms.author="v-sharos" />
+   ms.date="03/02/2016"
+   ms.author="alkohli" />
 
-# Verwenden des StorSimple Manager-Diensts zum Anzeigen und Verwalten von Warnungen für das StorSimple Virtual Array (Vorschau)
+# Verwenden des StorSimple Manager-Diensts zum Anzeigen und Verwalten von Warnungen für das StorSimple Virtual Array
 
 ## Übersicht
 
@@ -31,7 +31,7 @@ Sie können auswählen, ob Sie per E-Mail über die Warnungsbedingungen für die
 
 >[AZURE.NOTE] Sie können maximal 20 E-Mail-Adressen pro virtuellem Gerät eingeben.
 
-Nachdem Sie die E-Mail-Benachrichtigung für ein virtuelles Gerät aktiviert haben, erhalten die Mitglieder der Benachrichtigungsliste jedes Mal eine E-Mail-Nachricht, wenn eine kritische Warnung vorliegt. Die Nachrichten werden von der Adresse *storsimple-alerts-noreply@mail.windowsazure.com* gesendet und enthalten eine Beschreibung der Warnungsbedingung. Empfänger können auf **Abonnement kündigen** klicken, um das Entfernen aus der E-Mail-Benachrichtigungsliste durchzuführen.
+Nachdem Sie die E-Mail-Benachrichtigung für ein virtuelles Gerät aktiviert haben, erhalten die Mitglieder der Benachrichtigungsliste jedes Mal eine E-Mail-Nachricht, wenn eine kritische Warnung vorliegt. Die Nachrichten werden von der Adresse **storsimple-alerts-noreply@mail.windowsazure.com* gesendet und enthalten eine Beschreibung der Warnungsbedingung. Empfänger können auf **Abonnement kündigen** klicken, um das Entfernen aus der E-Mail-Benachrichtigungsliste durchzuführen.
 
 #### So aktivieren Sie E-Mail-Benachrichtigungen über Warnungen für ein virtuelles Gerät
 
@@ -141,19 +141,6 @@ In den folgenden Tabellen sind einige Microsoft Azure StorSimple-Warnungen aufge
 |:---|:---|:---|
 |Für das Gerät *<device name>* besteht keine Verbindung mit der Cloud.|Für das benannte Gerät kann keine Verbindung mit der Cloud hergestellt werden. |Es konnte keine Verbindung mit der Cloud hergestellt werden. Dies kann einen der folgenden Gründe haben:<ul><li>Unter Umständen liegt ein Problem mit den Netzwerkeinstellungen auf Ihrem Gerät vor.</li><li>Unter Umständen liegt ein Problem mit den Anmeldeinformationen für das Speicherkonto vor.</li></ul>Weitere Informationen zur Behandlung von Verbindungsproblemen finden Sie auf der [lokalen Webbenutzeroberfläche](storsimple-ova-web-ui-admin.md) des Geräts.|
 
-#### Verhalten von StorSimple beim Ausfall der Cloudverbindung
-
-Was geschieht beim Ausfall der Cloudverbindung des StorSimple-Geräts in der Produktionsumgebung?
-
-Wenn die Cloudverbindung für das StorSimple-Gerät in der Produktion ausfällt, können je nach Status des Geräts die folgenden Umstände eintreten:
-
-- **Für die lokalen Daten auf dem Gerät**: Es tritt für einige Zeit keine Unterbrechung auf, und Lesevorgänge werden nach wie vor bedient. Bei ansteigender Anzahl ausstehender EA-Vorgänge und Überschreitung eines Grenzwerts kann es jedoch zu Ausfällen bei Lesevorgängen kommen. 
-
-	Abhängig von der Menge der Daten auf dem Gerät werden innerhalb der ersten Stunden nach der Unterbrechung der Cloudverbindung auch Schreibvorgänge weiterhin ausgeführt. Die Schreibvorgänge werden dann langsamer, und es treten erste Fehler auf, wenn die Cloudverbindung für mehrere Stunden getrennt ist. Auf dem Gerät ist temporärer Speicherplatz für Daten vorhanden, die in die Cloud verschoben werden sollen. Dieser Bereich wird geleert, wenn die Daten gesendet werden. Bei einem Verbindungsfehler werden Daten in diesem Speicherbereich nicht in die Cloud übertragen, und ein E/A-Fehler tritt auf.
- 
-- **Für die in der Cloud gespeicherten Daten**: Für die meisten Cloudverbindungsfehler wird eine Fehlermeldung zurückgegeben. Sobald die Verbindung wiederhergestellt ist, werden die EA-Vorgänge wieder aufgenommen, ohne dass der Benutzer das Volume online schalten muss. In seltenen Fällen ist unter Umständen ein Benutzereingriff erforderlich, um das Volume aus dem klassischen Azure-Portal wieder online zu schalten.
- 
-- **Für aktuell ausgeführte Cloudmomentaufnahmen**: Der Vorgang wird innerhalb von 4–5 Stunden mehrfach erneut versucht, und wenn die Verbindung nicht wiederhergestellt wird, tritt ein Fehler bei den Cloudmomentaufnahmen auf.
 
 ### Konfigurationswarnungen
 
@@ -166,16 +153,16 @@ Wenn die Cloudverbindung für das StorSimple-Gerät in der Produktion ausfällt,
 
 |Warnungstext|Ereignis|Weitere Informationen/Empfohlene Maßnahmen|
 |:---|:---|:---|
-|Die Sicherung von <*Name des Geräts*> konnte nicht abgeschlossen werden.|Fehler beim Sicherungsauftrag.|Eine Sicherung konnte nicht erstellt werden. Erwägen Sie eine der folgenden Maßnahmen:<ul><li>Der Sicherungsvorgang kann aufgrund möglicher Konnektivitätsprobleme nicht erfolgreich abgeschlossen werden. Stellen Sie sicher, dass keine Konnektivitätsprobleme vorliegen. Weitere Informationen zur Behandlung von Verbindungsproblemen finden Sie auf der [lokalen Webbenutzeroberfläche](storsimple-ova-web-ui-admin.md) Ihres virtuellen Geräts.</li><li>Sie haben das verfügbare Speicherlimit erreicht. Erwägen Sie, nicht mehr benötigte Sicherungen zu löschen, um mehr Speicherplatz bereitzustellen.</li></ul> Beheben Sie die Probleme, löschen Sie die Warnung, und versuchen Sie, den Vorgang zu wiederholen.|
-|Die Wiederherstellung von <*Name des Geräts*> konnte nicht abgeschlossen werden.|Fehler bei Wiederherstellungsauftrag.|Die Daten konnten nicht aus der Sicherung wiederhergestellt werden. Erwägen Sie eine der folgenden Maßnahmen:<ul><li>Unter Umständen ist Ihre Sicherungsliste nicht gültig. Aktualisieren Sie die Liste, um zu überprüfen, ob sie gültig ist.</li><li>Unter Umständen wird durch Verbindungsprobleme verhindert, dass der Wiederherstellungsvorgang erfolgreich abgeschlossen wird. Stellen Sie sicher, dass keine Konnektivitätsprobleme vorliegen.</li><li>Sie haben das verfügbare Speicherlimit erreicht. Erwägen Sie, nicht mehr benötigte Sicherungen zu löschen, um mehr Speicherplatz bereitzustellen.</li></ul>Lösen Sie die Probleme, löschen Sie die Warnung, und versuchen Sie, den Wiederherstellungsvorgang zu wiederholen.|
-|Das Klonen von <*Name des Geräts*> konnte nicht abgeschlossen werden.|Fehler beim Klonauftrag.|Ein Klon konnte nicht erstellt werden. Erwägen Sie eine der folgenden Maßnahmen:<ul><li>Unter Umständen ist Ihre Sicherungsliste nicht gültig. Aktualisieren Sie die Liste, um zu überprüfen, ob sie gültig ist.</li><li>Unter Umständen wird durch Verbindungsprobleme verhindert, dass der Klonvorgang erfolgreich abgeschlossen wird. Stellen Sie sicher, dass keine Konnektivitätsprobleme vorliegen.</li><li>Sie haben das verfügbare Speicherlimit erreicht. Erwägen Sie, nicht mehr benötigte Sicherungen zu löschen, um mehr Speicherplatz bereitzustellen.</li></ul>Lösen Sie die Probleme, löschen Sie die Warnung, und versuchen Sie, den Vorgang zu wiederholen.|
+|Die Sicherung von <*Name des Geräts*> konnte nicht abgeschlossen werden.|Fehler beim Sicherungsauftrag.|Eine Sicherung konnte nicht erstellt werden. Erwägen Sie eine der folgenden Maßnahmen:<ul><li>Der Sicherungsvorgang kann aufgrund möglicher Konnektivitätsprobleme nicht erfolgreich abgeschlossen werden. Stellen Sie sicher, dass keine Konnektivitätsprobleme vorliegen. Weitere Informationen zur Behebung von Verbindungsproblemen finden Sie auf der [lokalen Webbenutzeroberfläche](storsimple-ova-web-ui-admin.md) Ihres virtuellen Geräts.</li><li>Sie haben das verfügbare Speicherlimit erreicht. Erwägen Sie, nicht mehr benötigte Sicherungen zu löschen, um mehr Speicherplatz bereitzustellen.</li></ul> Beheben Sie die Probleme, löschen Sie die Warnung, und versuchen Sie, den Vorgang zu wiederholen.|
+|Die Wiederherstellung von <*Name des Geräts*> konnte nicht abgeschlossen werden.|Fehler bei Wiederherstellungsauftrag.|Die Daten konnten nicht aus der Sicherung wiederhergestellt werden. Erwägen Sie eine der folgenden Maßnahmen:<ul><li>Unter Umständen ist Ihre Sicherungsliste nicht gültig. Aktualisieren Sie die Liste, um ihre Gültigkeit sicherzustellen.</li><li>Unter Umständen verhindern Verbindungsprobleme, dass der Wiederherstellungsvorgang erfolgreich abgeschlossen wird. Stellen Sie sicher, dass keine Konnektivitätsprobleme vorliegen.</li><li>Sie haben das verfügbare Speicherlimit erreicht. Erwägen Sie, nicht mehr benötigte Sicherungen zu löschen, um mehr Speicherplatz bereitzustellen.</li></ul>Lösen Sie die Probleme, löschen Sie die Warnung, und versuchen Sie, den Wiederherstellungsvorgang zu wiederholen.|
+|Das Klonen von <*Name des Geräts*> konnte nicht abgeschlossen werden.|Fehler beim Klonauftrag.|Ein Klon konnte nicht erstellt werden. Erwägen Sie eine der folgenden Maßnahmen:<ul><li>Unter Umständen ist Ihre Sicherungsliste nicht gültig. Aktualisieren Sie die Liste, um ihre Gültigkeit sicherzustellen.</li><li>Unter Umständen verhindern Verbindungsprobleme, dass der Klonvorgang erfolgreich abgeschlossen wird. Stellen Sie sicher, dass keine Konnektivitätsprobleme vorliegen.</li><li>Sie haben das verfügbare Speicherlimit erreicht. Erwägen Sie, nicht mehr benötigte Sicherungen zu löschen, um mehr Speicherplatz bereitzustellen.</li></ul>Lösen Sie die Probleme, löschen Sie die Warnung, und versuchen Sie, den Vorgang zu wiederholen.|
 
 ### Leistungswarnungen
 
 |Warnungstext|Ereignis|Weitere Informationen/Empfohlene Maßnahmen|
 |:---|:---|:---|
 |Bei der Datenübertragung kommt es zu unerwarteten Verzögerungen.|Langsame Datenübertragung.|Drosselungsfehler treten auf, wenn Sie die Skalierbarkeitsziele eines Speicherdiensts überschreiten. Der Speicherdienst tut dies, um sicherzustellen, dass kein Einzelclient oder Mandant diesen Dienst auf Kosten anderer verwenden kann. Weitere Informationen zur Problembehandlung für Ihr Azure-Speicherkonto finden Sie unter [Microsoft Azure-Speicher: Überwachung, Diagnose und Problembehandlung](storage-monitoring-diagnosing-troubleshooting.md).
-|Der lokale reservierte Festplattenspeicher auf <*Name des Geräts*> ist in Kürze erschöpft.|Langsame Reaktion.|10 % des insgesamt bereitgestellten Speicherplatzes für <*Name des Geräts*> ist auf dem lokalen Gerät reserviert, und dieser reservierte Speicherplatz ist in Kürze erschöpft. Die Workload auf <*Name des Geräts*> generiert eine höhere Änderungsrate, oder Sie haben kürzlich eine große Menge von Daten migriert. Dies kann zu Leistungseinbußen führen. Wählen Sie eine der folgenden Vorgehensweisen, um dieses Problem zu lösen:<ul><li>Erhöhen Sie die Cloudbandbreite für dieses Gerät.</li><li>Reduzieren Sie die Workloads, oder verschieben Sie sie auf ein anderes Volume oder eine andere Freigabe.</li></ul>
+|Der lokale reservierte Festplattenspeicher auf <*Name des Geräts*> ist in Kürze erschöpft.|Langsame Reaktion.|10 % des insgesamt bereitgestellten Speicherplatzes für <*Name des Geräts*> ist auf dem lokalen Gerät reserviert, und dieser reservierte Speicherplatz ist in Kürze erschöpft. Die Workload auf <*Name des Geräts*> generiert eine höhere Änderungsrate, oder Sie haben kürzlich eine große Menge von Daten migriert. Dies kann zu Leistungseinbußen führen. Wählen Sie eine der folgenden Vorgehensweisen, um dieses Problem zu lösen:<ul><li>Erhöhen Sie die Cloudbandbreite für dieses Gerät.</li><li>Reduzieren Sie die Workloads, oder verschieben Sie sie zu einem anderen Volume oder einer anderen Freigabe.</li></ul>
 
 ### Sicherheitswarnungen
 
@@ -195,4 +182,4 @@ Wenn die Cloudverbindung für das StorSimple-Gerät in der Produktion ausfällt,
 
 - [Erfahren Sie mehr über das StorSimple Virtual Array](storsimple-ova-overview.md).
 
-<!----HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0309_2016-->

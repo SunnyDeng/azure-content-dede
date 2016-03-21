@@ -104,10 +104,12 @@ Event Hub ist die Datenquelle für dieses Beispiel. Führen Sie die folgenden Sc
 4. Klicken Sie auf **Konfigurieren**, und erstellen Sie zwei neue Zugriffsrichtlinien mit den folgenden Informationen.
 
 	<table>
-<tr><th>Name</th><th>Berechtigungen</th></tr>
-<tr><td>Geräte</td><td>Send</td></tr>
-<tr><td>Storm</td><td>Empfangen</td></tr>
-</table>Klicken Sie nach der Erstellung der Berechtigungen auf das **Speichern**-Symbol am unteren Seitenrand. Daraufhin werden die gemeinsam genutzten Zugriffsrichtlinien erstellt, die für den Austausch von Nachrichten mit diesem Hub verwendet werden.
+	<tr><th>Name</th><th>Berechtigungen</th></tr>
+	<tr><td>Geräte</td><td>Send</td></tr>
+	<tr><td>Storm</td><td>Empfangen</td></tr>
+	</table>
+
+	Klicken Sie nach der Erstellung der Berechtigungen auf das **Speichern**-Symbol am unteren Seitenrand. Daraufhin werden die gemeinsam genutzten Zugriffsrichtlinien erstellt, die für den Austausch von Nachrichten mit diesem Hub verwendet werden.
 
 5. Verwenden Sie nach dem Speichern der Richtlinien den **Generator für freigegebene Zugriffsschlüssel** unten auf der Seite, um den Schlüssel für die Richtlinien **devices** und **storm** abzurufen. Speichern Sie diese, da Sie sie später verwenden werden.
 
@@ -316,7 +318,7 @@ Wenn Sie HBase mit diesem Beispiel verwenden möchten, müssen Sie ein virtuelle
 
 9. Unten auf der Seite finden Sie den Namen des Standardsubnetzes. Dieser lautet **Subnet-1**. Klicken Sie auf die Schaltfläche **Subnetz hinzufügen**, um **Subnet-2** hinzuzufügen. Diese Subnetze werden die Storm- und HBase-Cluster enthalten.
 
-	> [AZURE.NOTE] In diesem Artikel verwenden wir Cluster mit nur einem Knoten. Falls Sie Cluster mit mehreren Knoten erstellen, müssen Sie den Wert **CIDR (ANZAHL ADRESSEN)** für das Subnetz überprüfen, das Sie für den Cluster verwenden. Die Anzahl der Adressen muss größer als die Anzahl der Workerknoten plus sieben sein (Gateway: 2, Hauptknoten: 2, Zookeeper: 3). Wenn Sie zum Beispiel einen HBase-Cluster mit 10 Knoten benötigen, muss die Anzahl der Adressen für das Subnetz größer als 17 (10 + 7) sein. Andernfalls funktioniert die Bereitstellung nicht.
+	> [AZURE.NOTE] In diesem Artikel verwenden wir Cluster mit nur einem Knoten. Falls Sie Cluster mit mehreren Knoten erstellen, müssen Sie den Wert **CIDR (ANZAHL ADRESSEN)** für das Subnetz überprüfen, das Sie für den Cluster verwenden. Die Anzahl der Adressen muss größer als die Anzahl der Workerknoten plus sieben sein (Gateway: 2, Hauptknoten: 2, Zookeeper: 3). Wenn Sie zum Beispiel einen HBase-Cluster mit 10 Knoten benötigen, muss die Anzahl der Adressen für das Subnetz größer als 17 (10 + 7) sein. Andernfalls funktioniert die Bereitstellung nicht.
 	>
 	> Sie sollten unbedingt ein einziges Subnetz pro Cluster verwenden.
 
@@ -399,6 +401,9 @@ Vor dem Ausführen der Topologie müssen Sie HBase zur Annahme der Daten vorbere
 
 Wenn Sie die Topologie auf dem Storm-Cluster gestartet und die Daten verarbeitet haben, können Sie mithilfe des `scan 'SensorData'`-Befehls erneut sicherstellen, dass die Daten in HBase eingefügt wurden.
 
+## Löschen der Cluster
+
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 ## Nächste Schritte
 
@@ -422,4 +427,4 @@ Sie haben gelernt, wie Sie Daten mithilfe von Storm aus einem Event Hub lesen un
 
 [azure-portal]: https://manage.windowsazure.com/
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0309_2016-->

@@ -25,8 +25,9 @@ In diesem Leitfaden erfahren Sie, wie Sie das Android-Client-SDK für Mobile App
 
 Dieser Leitfaden konzentriert sich auf die Clientseite des Android-SDK. Weitere Informationen zu den serverseitigen SDKs für mobile Apps finden Sie unter [Arbeiten mit dem .NET-Back-End-SDK](app-service-mobile-dotnet-backend-how-to-use-server-sdk.md) oder [Verwenden des Node.js-Back-End-SDKs](app-service-mobile-node-backend-how-to-use-server-sdk.md).
 
+## Referenzdokumentation
 
-<!---You can find the Javadocs API reference for the Android client library [here](http://go.microsoft.com/fwlink/p/?LinkId=298735).-->
+Sie finden die Javadocs-API-Referenz für die Android-Clientbibliothek [auf GitHub](http://azure.github.io/azure-mobile-apps-android-client/).
 
 ## Einrichtung und Voraussetzungen
 
@@ -56,9 +57,9 @@ Danach müssen Sie die Schritte ausführen, die in der fundierten Einführung be
 
 2. Fügen Sie diesen Code in die *Module app*-Ebene der **build.gradle**-Datei im *dependencies*-Tag ein:
 
-		compile 'com.microsoft.azure:azure-mobile-android:3.0'
+		compile 'com.microsoft.azure:azure-mobile-android:3.1'
 
-	Derzeit ist 3.0 die neueste Version. Die unterstützten Versionen sind [hier](http://go.microsoft.com/fwlink/p/?LinkID=717034) aufgeführt.
+	Derzeit ist 3.1 die neueste Version. Die unterstützten Versionen sind [hier](http://go.microsoft.com/fwlink/p/?LinkID=717034) aufgeführt.
 
 ###<a name="enable-internet"></a>Aktivieren der Internetberechtigung
 Für den Zugriff auf Azure muss für Ihre App die INTERNET-Berechtigung aktiviert sein. Wenn sie nicht bereits aktiviert ist, fügen Sie Ihrer Datei **AndroidManifest.xml** die folgende Codezeile hinzu:
@@ -92,7 +93,7 @@ Der Code ist in einer Datei namens **ToDoItem.java** gespeichert.
 
 Wenn Ihre SQL Azure-Tabelle weitere Spalten enthält, würden Sie die entsprechenden Felder dieser Klasse hinzufügen.
 
-Enthielte sie z. B. eine Integerspalte „Priority“, dann könnten Sie dieses Feld zusammen mit seinen Getter- und Setter-Methoden hinzufügen:
+Enthielte sie z. B. eine Integerspalte „Priority“, dann könnten Sie dieses Feld zusammen mit seinen Getter- und Setter-Methoden hinzufügen:
 
 		private Integer priority;
 
@@ -113,9 +114,9 @@ Enthielte sie z. B. eine Integerspalte „Priority“, dann könnten Sie dieses
 	        mPriority = priority;
 	    }
 
-Informationen zum Erstellen zusätzlicher Tabellen in Ihrem Mobile Apps-Back-End finden Sie unter [Vorgehensweise: Definieren eines Tabellencontrollers](app-service-mobile-dotnet-backend-how-to-use-server-sdk.md#how-to-define-a-table-controller) (.NET-Back-End) oder [Definieren von Tabellen mit einem dynamischen Schema](app-service-mobile-node-backend-how-to-use-server-sdk.md#TableOperations) (Node.js-Back-End). Für ein Node.js-Back-End können Sie auch die Einstellung **Einfache Tabellen** im [Azure-Portal] verwenden.
+Informationen zum Erstellen zusätzlicher Tabellen in Ihrem Mobile Apps-Back-End finden Sie unter [Gewusst wie: Definieren eines Tabellencontrollers](app-service-mobile-dotnet-backend-how-to-use-server-sdk.md#how-to-define-a-table-controller) (.NET-Back-End) oder [Definieren von Tabellen mit einem dynamischen Schema](app-service-mobile-node-backend-how-to-use-server-sdk.md#TableOperations) (Node.js-Back-End). Für ein Node.js-Back-End können Sie auch die Einstellung **Einfache Tabellen** im [Azure-Portal] verwenden.
 
-###<a name="create-client"></a>Erstellen des Clientkontexts
+###<a name="create-client"></a>Gewusst wie: Erstellen des Clientkontexts
 
 Der folgende Code erstellt das **MobileServiceClient**-Objekt, das für den Zugriff auf Ihr Mobile App-Back-End verwendet wird. Der Code gehört in die `onCreate`-Methode der **Activity**-Klasse, die in *AndroidManifest.xml* als **MAIN**-Aktion und **LAUNCHER**-Kategorie angegeben ist. Im Schnellstartcode gehört er in die Datei **ToDoActivity.java**.
 
@@ -251,7 +252,7 @@ Beachten Sie, dass der zweite Parameter des ToDoItemAdapter-Konstruktors ein Ver
 
 Mobile Apps-Tabellenvorgänge und benutzerdefinierte API-Aufrufe sind asynchron, sodass Sie die Objekte [Future](http://developer.android.com/reference/java/util/concurrent/Future.html) und [AsyncTask](http://developer.android.com/reference/android/os/AsyncTask.html) in allen asynchronen Methoden mit Abfragen und Einfügungen, Aktualisierungen und Löschungen verwenden. Dies erleichtert die Ausführungen mehrerer Vorgänge in einem Hintergrundthread, ohne sich um mehrere geschachtelte Rückrufe kümmern zu müssen.
 
-Um zu erfahren, wie diese asynchronen APIs in Ihrer Android-App verwendet und wie Daten in der Benutzeroberfläche angezeigt werden, können Sie sich die Datei **ToDoActivity.java** im Android-Schnellstartprojekt über das [Azure-Portal] ansehen.
+Um zu erfahren, wie diese asynchronen APIs in Ihrer Android-App verwendet und wie Daten auf der Benutzeroberfläche angezeigt werden, können Sie sich die Datei **ToDoActivity.java** im Android-Schnellstartprojekt über das [Azure-Portal] ansehen.
 
 
 #### <a name="use-adapter"></a>Verwenden des Adapters
@@ -288,7 +289,7 @@ Sie sind nun in der Lage, die Datenbindung zu verwenden. Der folgende Code zeigt
 
 Sie müssen den Adapter jedes mal aufrufen, wenn Sie die *ToDoItem*-Tabelle ändern und das Ergebnis der Änderungen anzeigen möchten. Da Veränderungen auf einzelnen Einträgen erfolgen, erhalten Sie in diesem Fall eine einzelne Zeile anstatt einer Sammlung. Beim Einfügen von Elementen rufen Sie die *add*-Methode des Adapters auf und beim Löschen von Elementen dessen *remove*-Methode.
 
-##<a name="querying"></a>Abfragen von Daten aus Ihrem Mobile App-Back-End
+##<a name="querying"></a>Gewusst wie: Abfragen von Daten aus Ihrem Mobile App-Back-End
 
 Dieser Abschnitt beschreibt, wie Sie Abfragen an Ihr Mobile App-Back-End stellen können. Dies umfasst folgende Aufgaben:
 
@@ -309,7 +310,7 @@ Die Variable *results* gibt das Resultset der Abfrage als Liste zurück.
 
 ### <a name="filtering"></a>Gewusst wie: Filtern zurückgegebener Daten
 
-Bei der Ausführung der folgenden Abfrage werden alle Elemente aus der *ToDoItem*-Tabelle zurückgegeben, wobei *complete* gleich *false* ist. Dies ist der Code, der bereits im Schnellstart vorhanden ist.
+Bei der Ausführung der folgenden Abfrage werden alle Elemente aus der *ToDoItem*-Tabelle zurückgegeben, wobei *complete* gleich *FALSE* ist. Dies ist der Code, der bereits im Schnellstart vorhanden ist.
 
 	List<ToDoItem> result = mToDoTable.where()
 								.field("complete").eq(false)
@@ -344,11 +345,11 @@ Außerdem können Sie logische Operatoren gruppieren und schachteln, wie etwa hi
 				(startsWith("text", "PRI0").or().field("duration").gt(10))
 				.execute().get();
 
-Eine detailliertere Besprechung und weitere Beispiele für Filter finden Sie unter [Exploring the richness of the Android client query model](http://hashtagfail.com/post/46493261719/mobile-services-android-querying) (Untersuchen der umfassenden Möglichkeiten des Android-Clientabfragemodells).
+Eine ausführlichere Besprechung und weitere Beispiele für Filter finden Sie unter [Exploring the richness of the Android client query model](http://hashtagfail.com/post/46493261719/mobile-services-android-querying) (Untersuchen der umfassenden Möglichkeiten des Android-Clientabfragemodells).
 
 ### <a name="sorting"></a>Gewusst wie: Sortieren zurückgegebener Daten
 
-Der folgende Code gibt alle Elemente aus einer *ToDoItems*-Tabelle in aufsteigender Reihenfolge nach dem *text*-Feld sortiert zurück. *mToDoTable* ist der Verweis auf die zuvor erstellte Back-End-Tabelle:
+Der folgende Code gibt alle Elemente aus einer *ToDoItems*-Tabelle in aufsteigender Reihenfolge sortiert nach dem *text*-Feld zurück. *mToDoTable* ist der Verweis auf die zuvor erstellte Back-End-Tabelle:
 
 	mToDoTable.orderBy("text", QueryOrder.Ascending).execute().get();
 
@@ -385,7 +386,7 @@ Die **select**-Methode folgt im Anschluss an Methoden wie **where** und **orderB
 
 Wie Sie sehen, können die Methoden zum Abfragen von Back-End-Tabellen verkettet werden. Auf diese Weise können Sie z. B. spezielle Spalten gefilterter Zeilen mit Sortierung und Seitenverwaltung abfragen. Sie können komplexe logische Filter erstellen.
 
-Dies funktioniert dank der von den Abfragemethoden zurückgegebenen **MobileServiceQuery<T>**-Objekte, in denen wiederum zusätzliche Methoden aufgerufen werden können. Um die Methodenverkettung zu beenden und die Abfrage auszuführen, rufen Sie die **execute**-Methode auf.
+Dies funktioniert dank der von den Abfragemethoden zurückgegebenen **MobileServiceQuery&lt;T&gt;**-Objekte, in denen wiederum zusätzliche Methoden aufgerufen werden können. Um die Methodenverkettung zu beenden und die Abfrage auszuführen, rufen Sie die **execute**-Methode auf.
 
 Im folgenden Codebeispiel wird *mToDoTable* als Verweis auf die Tabelle *ToDoItem* verwendet.
 
@@ -399,7 +400,7 @@ Im folgenden Codebeispiel wird *mToDoTable* als Verweis auf die Tabelle *ToDoIte
 Beachten Sie, dass beim Verketten von Methoden die *where*-Methode und Prädikate immer an erster Stelle stehen müssen. Anschließend können Sie Folgemethoden in der Reihenfolge aufrufen, in der Ihre Anwendung diese benötigt.
 
 
-##<a name="inserting"></a>Einfügen von Daten in das Back-End
+##<a name="inserting"></a>Gewusst wie: Einfügen von Daten in das Back-End
 
 Der folgende Code zeigt, wie Sie neue Zeilen in eine Tabelle einfügen können.
 
@@ -423,7 +424,7 @@ Zeichenfolgen-ID-Werte bieten folgende Vorteile:
 + Datensätze aus unterschiedlichen Tabellen oder Datenbanken lassen sich leichter zusammenführen.
 + ID-Werte lassen sich leichter in die Anwendungslogik integrieren.
 
-##<a name="updating"></a>Aktualisieren von Daten in einer mobilen App
+##<a name="updating"></a>Gewusst wie: Aktualisieren von Daten in einer mobilen App
 
 Der folgende Code zeigt, wie Sie Daten in einer Tabelle aktualisieren können.
 
@@ -431,7 +432,7 @@ Der folgende Code zeigt, wie Sie Daten in einer Tabelle aktualisieren können.
 
 In diesem Beispiel ist *item* ein Verweis auf eine Zeile in der *ToDoItem*-Tabelle, an der einige Änderungen vorgenommen wurden.
 
-##<a name="deleting"></a>Löschen von Daten in einer mobilen App
+##<a name="deleting"></a>Gewusst wie: Löschen von Daten in einer mobilen App
 
 Der folgende Code zeigt, wie Sie Daten durch Angabe des Datenobjekts aus einer Tabelle löschen.
 
@@ -543,7 +544,7 @@ Für Filterung, Sortierung und Seitenverwaltung können Sie Methoden mit den gle
 
 Mit einer benutzerdefinierten API können Sie benutzerdefinierte Endpunkte definieren, die Serverfunktionen zur Verfügung stellen, welche keinem Einfüge-, Aktualisierungs-, Lösch- oder Lesevorgang zugeordnet sind. Durch die Verwendung einer benutzerdefinierten API erhalten Sie mehr Kontrolle über das Messaging, einschließlich Lesen und Einstellen der HTTP-Nachrichten-Header sowie Definieren eines von JSON abweichenden Nachrichtentextformats.
 
-Rufen Sie von einem Android-Client aus die **invokeApi**-Methode auf, um den benutzerdefinierten API-Endpunkt aufzurufen. Das folgende Beispiel zeigt, wie ein API-Endpunkt mit dem Namen *completeAll* aufgerufen wird, der eine Auflistungsklasse mit dem Namen „MarkAllResult“ zurückgibt.
+Rufen Sie von einem Android-Client aus die **invokeApi**-Methode auf, um den benutzerdefinierten API-Endpunkt aufzurufen. Das folgende Beispiel zeigt, wie ein API-Endpunkt mit dem Namen *completeAll* aufgerufen wird, der eine Sammelklasse mit dem Namen MarkAllResult zurückgibt.
 
 	public void completeItem(View view) {
 
@@ -565,11 +566,11 @@ Rufen Sie von einem Android-Client aus die **invokeApi**-Methode auf, um den ben
 
 Die **invokeApi**-Methode wird beim Client aufgerufen, der eine POST-Anfrage an die neue benutzerdefinierte API sendet. Das von der benutzerdefinierten API zurückgegebene Ergebnis wird in einem Meldungsdialogfeld angezeigt, ebenso wie jegliche Fehler. Mit anderen Versionen von **invokeApi** können Sie optional ein Objekt im Anforderungshauptteil senden, die HTTP-Methode angeben und Abfrageparameter mit der Anforderung senden. Nicht typisierte Versionen von **invokeApi** werden ebenfalls bereitgestellt.
 
-##<a name="authentication"></a>Hinzufügen von Authentifizierung zur App
+##<a name="authentication"></a>Gewusst wie: Hinzufügen von Authentifizierung zur App
 
 Es stehen bereits Tutorials zur Verfügung, in denen das Hinzufügen dieser Features im Detail beschrieben wird.
 
-App Service unterstützt die [Authentifizierung von App-Benutzern](app-service-mobile-android-get-started-users.md) mit einer Vielzahl externer Identitätsanbieter: Facebook, Google, Microsoft-Konto, Twitter und Azure Active Directory. Sie können Berechtigungen für Tabellen vergeben, um den Zugriff auf bestimmte Operationen auf authentifizierte Benutzer zu beschränken. Außerdem können Sie die Identität authentifizierter Benutzer verwenden, um Autorisierungsregeln auf Ihrem Back-End zu implementieren.
+App Service unterstützt das [Authentifizieren von App-Benutzern](app-service-mobile-android-get-started-users.md) mit einer Vielzahl externer Identitätsanbieter: Facebook, Google, Microsoft-Konto, Twitter und Azure Active Directory. Sie können Berechtigungen für Tabellen vergeben, um den Zugriff auf bestimmte Operationen auf authentifizierte Benutzer zu beschränken. Außerdem können Sie die Identität authentifizierter Benutzer verwenden, um Autorisierungsregeln auf Ihrem Back-End zu implementieren.
 
 Insgesamt werden zwei Authentifizierungsflüsse unterstützt: ein *Serverfluss* und ein *Clientfluss*. Der Serverfluss bietet die einfachste Authentifizierungsform, da in diesem Fall die Authentifizierungs-Webschnittstelle des Anbieters verwendet wird. Der Clientfluss ermöglicht eine tiefere Integration mit gerätespezifischen Fähigkeiten wie z. B. einmalige Anmeldung, da in diesem Fall anbieterspezifische und gerätespezifische SDKs verwendet werden, und Programmierung Ihrerseits erforderlich ist.
 
@@ -596,7 +597,7 @@ Sie können die ID des angemeldeten Benutzers von einem **MobileServiceUser** mi
 
 Beim Zwischenspeichern von Authentifizierungstoken müssen Benutzer-ID und Authentifizierungstoken lokal auf dem Gerät gespeichert werden. Beim nächsten Start der App prüfen Sie den Cache und können den Anmeldevorgang überspringen und den Client mit diesen Daten aktivieren, sofern sie vorhanden sind. Diese Daten sind jedoch vertraulich und sollten aus Sicherheitsgründen verschlüsselt gespeichert werden, falls das Telefon gestohlen wird.
 
-Ein vollständiges Beispiel zum Zwischenspeichern von Authentifizierungstoken finden Sie im Abschnitt [Zwischenspeichern von Authentifizierungstokens](app-service-mobile-android-get-started-users.md#cache-tokens).
+Ein vollständiges Beispiel zum Zwischenspeichern von Authentifizierungstoken finden Sie im Abschnitt [Zwischenspeichern von Authentifizierungstoken](app-service-mobile-android-get-started-users.md#cache-tokens).
 
 Wenn Sie versuchen, ein abgelaufenes Token zu verwenden, erhalten Sie die Antwort *401 nicht autorisiert*. Der Benutzer muss sich erneut anmelden, um ein neues Token zu erhalten. Um den Code zur Behandlung dieses Falls nicht an jeder Stelle in Ihrer App schreiben zu müssen, an der der mobile Dienst aufgerufen wird, können Sie Filter verwenden, mit denen Sie Aufrufe an und Antworten von Mobile Services abfangen können. Der Filtercode prüft Antworten auf 401, löst bei Bedarf den Anmeldeprozess aus und setzt anschließend die Anfrage fort, die den 401-Fehler ausgelöst hatte. Sie können auch das Token auf Ablauf überprüfen.
 
@@ -605,7 +606,7 @@ Wenn Sie versuchen, ein abgelaufenes Token zu verwenden, erhalten Sie die Antwor
 
 Nutzen Sie die Active Directory-Authentifizierungsbibliothek (Active Directory Authentication Library, ADAL), um Benutzer mithilfe von Azure Active Directory bei Ihrer Anwendung anzumelden. Dies wird aufgrund der besseren Bedienbarkeit und der Möglichkeit, zusätzliche Anpassungen vorzunehmen, den `loginAsync()`-Methoden häufig vorgezogen.
 
-1. Konfigurieren Sie Ihr mobiles App-Back-End für die AAD-Anmeldung, indem Sie die im Tutorial [So konfigurieren Sie Ihre App Service-Anwendung zur Verwendung der Azure Active Directory-Anmeldung](app-service-mobile-how-to-configure-active-directory-authentication.md) beschriebenen Schritte ausführen. Schließen Sie auch den optionalen Schritt zur Registrierung einer nativen Clientanwendung ab.
+1. Konfigurieren Sie Ihr mobiles App-Back-End für die AAD-Anmeldung, indem Sie die im Tutorial [Gewusst wie: Konfigurieren von App Service für die Active Directory-Anmeldung](app-service-mobile-how-to-configure-active-directory-authentication.md) beschriebenen Schritte ausführen. Schließen Sie auch den optionalen Schritt zur Registrierung einer nativen Clientanwendung ab.
 
 2. Installieren Sie ADAL, indem Sie die Datei „build.gradle“ so ändern, dass sie Folgendes enthält:
 
@@ -615,7 +616,7 @@ Nutzen Sie die Active Directory-Authentifizierungsbibliothek (Active Directory A
 
 * Ersetzen Sie **INSERT-AUTHORITY-HERE** durch den Namen des Mandanten, unter dem Sie Ihre Anwendung bereitgestellt haben. Das Format sollte https://login.windows.net/contoso.onmicrosoft.com entsprechen. Sie können diesen Wert auf der Registerkarte „Domäne“ in Ihrer Azure Active Directory-Instanz im [klassischen Azure-Portal] kopieren.
 
-* Ersetzen Sie **INSERT-RESOURCE-ID-HERE** durch die Client-ID für Ihr mobiles App-Back-End. Sie finden diese auf der Registerkarte **Erweitert** unter **Azure Active Directory-Einstellungen** im Portal.
+* Ersetzen Sie **INSERT-RESOURCE-ID-HERE** durch die Client-ID für Ihr Mobile App-Back-End. Sie finden diese im Portal auf der Registerkarte **Erweitert** unter **Azure Active Directory-Einstellungen**.
 
 * Ersetzen Sie **INSERT-CLIENT-ID-HERE** durch die Client-ID, die Sie aus der nativen Clientanwendung kopiert haben.
 
@@ -681,7 +682,7 @@ Nutzen Sie die Active Directory-Authentifizierungsbibliothek (Active Directory A
 
 ## Hinzufügen von Pushbenachrichtigungen zur App
 
-Erfahren Sie in der [Übersicht](notification-hubs-overview.md/#integration-with-app-service-mobile-apps), wie Microsoft Azure Notification Hubs eine Vielzahl von Pushbenachrichtigungen unterstützt.
+In der [Übersicht](notification-hubs-overview.md/#integration-with-app-service-mobile-apps) erfahren Sie, wie Microsoft Azure Notification Hubs eine Vielzahl von Pushbenachrichtigungen unterstützt.
 
 In [diesem Tutorial](app-service-mobile-android-get-started-push.md) wird bei jedem Einfügen eines Datensatzes eine Pushbenachrichtigung gesendet.
 
@@ -765,7 +766,7 @@ Die Zuordnung von Client-Tabellennamen zu anderen Tabellennamen im mobilen Diens
 
 ### <a name="conversions"></a>Automatisieren von Tabellennamenzuordnungen
 
-Die Zuordnung von Spaltennamen für kleine Tabellen mit nur wenigen Spalten ist kein großer Aufwand, wie zuvor gezeigt. Angenommen, die Tabelle hat jedoch viele Spalten, z. B. 20 oder 30. In diesem Fall können wir die <a href=" http://go.microsoft.com/fwlink/p/?LinkId=290801" target="_blank">gson</a>-API aufrufen und eine Umwandlungsstrategie für alle Spalten angeben, um nicht jeden Spaltennamen einzeln zuordnen zu müssen.
+Die Zuordnung von Spaltennamen für kleine Tabellen mit nur wenigen Spalten ist kein großer Aufwand, wie zuvor gezeigt. Angenommen, die Tabelle hat jedoch viele Spalten, z. B. 20 oder 30. In diesem Fall können wir die <a href=" http://go.microsoft.com/fwlink/p/?LinkId=290801" target="_blank">gson</a>-API aufrufen und eine Umwandlungsstrategie für alle Spalten angeben, um nicht jeden Spaltennamen einzeln zuordnen zu müssen.
 
 Dazu verwenden wir die <a href=" http://go.microsoft.com/fwlink/p/?LinkId=290801" target="_blank">gson</a>-Bibliothek, mit der die Android-Clientbibliothek im Hintergrund Java-Objekte nach JSON-Daten serialisiert, die anschließend an Azure Mobile Services übertragen werden.
 
@@ -840,4 +841,4 @@ Sie können diese allgemeine Methode immer dann verwenden, wenn Sie mit komplexe
 [Get started with authentication]: app-service-mobile-android-get-started-users.md
 [Erste Schritte mit Authentifizierungen]: app-service-mobile-android-get-started-users.md
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0309_2016-->

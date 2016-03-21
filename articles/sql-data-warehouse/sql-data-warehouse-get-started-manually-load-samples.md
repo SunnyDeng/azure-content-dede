@@ -13,14 +13,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/07/2016"
+   ms.date="03/03/2016"
    ms.author="lodipalm;barbkess;sonyama"/>
 
 #Laden von Beispieldaten in SQL Data Warehouse
 
 Sobald Sie [eine Instanz der SQL Data Warehouse-Datenbank erstellt haben][create a SQL Data Warehouse database instance], besteht der nächste Schritt darin, einige Tabellen zu erstellen und zu laden. Sie können die Adventure Works-Beispielskripts verwenden, die wir für SQL Data Warehouse erstellt haben, um Tabellen für das fiktive Unternehmen namens Adventure Works zu erstellen und zu laden. Diese Skripts verwenden „sqlcmd“ zum Ausführen von SQL und „bcp“, um Daten zu laden. Wenn Sie diese Tools bereits installiert haben, folgen Sie diesen Links, um [bcp][] und [sqlcmd][] zu installieren.
 
-Befolgen Sie diese einfachen Schritte, um die Adventure Works-Beispieldatenbank in SQL DW zu laden ...
+Befolgen Sie diese einfachen Schritte, um die Adventure Works-Beispieldatenbank in SQL DW zu laden ...
 
 1. Laden Sie die [Adventure Works-Beispielskripts für die SQL Data Warehouse][] herunter.
 
@@ -84,4 +84,4 @@ Da Sie jetzt Gelegenheit hatten, einige Abfragen mit Beispieldaten auszuprobiere
 <!--Other Web references-->
 [Adventure Works-Beispielskripts für die SQL Data Warehouse]: https://migrhoststorage.blob.core.windows.net/sqldwsample/AdventureWorksSQLDW2012.zip
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0309_2016-->

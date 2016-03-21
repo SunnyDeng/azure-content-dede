@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/01/2015"
+	ms.date="03/04/2016"
 	ms.author="jgao"/>
 
 #Analysieren von Flugverspätungsdaten mit Hive in HDInsight
@@ -25,7 +25,7 @@ Hive ermöglicht die Ausführung eines Hadoop MapReduce-Auftrags über eine SQL-
 Einer der größten Vorteile von Azure HDInsight ist die Trennung von Datenspeicher und Server. HDInsight verwendet zur Datenspeicherung Azure Blob-Speicher. Ein typischer Auftrag besteht aus drei Teilen:
 
 1. **Speichern von Daten im Azure-Blobspeicher** Dies kann ein fortlaufender Prozess sein. Es werden zum Beispiel Wetterdaten, Sensordaten, Webprotokolle und in diesem Fall Daten über Flugverspätungen im Azure-Blobspeicher gespeichert.
-2. **Ausführen von Aufträgen.** Für die Bearbeitung der Daten führen Sie ein Windows PowerShell-Skript (oder eine Clientanwendung) aus, um einen HDInsight-Cluster zu erstellen, Aufträge auszuführen und den Cluster zu löschen. Die Aufträge speichern Ausgabedaten im Azure-Blobspeicher. Die Ausgabedaten bleiben selbst nach dem Löschen des Clusters erhalten. So bezahlen Sie nur für den tatsächlichen Verbrauch.
+2. **Ausführen von Aufträgen.** Für die Bearbeitung der Daten führen Sie ein Windows PowerShell-Skript (oder eine Clientanwendung) aus, um einen HDInsight-Cluster zu erstellen, Aufträge auszuführen und den Cluster zu löschen. Die Aufträge speichern Ausgabedaten im Azure-Blobspeicher. Die Ausgabedaten bleiben selbst nach dem Löschen des Clusters erhalten. So bezahlen Sie nur für den tatsächlichen Verbrauch.
 3. **Rufen Sie die Ausgabe aus dem Azure-Blobspeicher ab**, oder exportieren Sie für dieses Lernprogramm die Daten in eine Azure SQL-Datenbank.
 
 Das folgende Diagramm veranschaulicht das Szenario und die Struktur dieses Lernprogramms:
@@ -55,7 +55,7 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
 **In diesem Lernprogramm verwendete Dateien**
 
-In diesem Lernprogramm werden Flugdaten hinsichtlich der termingerechten Durchführung von Fluggesellschaften des [Research and Innovative Technology Administration, Bureau of Transportation Statistics][rita-website] (RITA) verwendet. Eine Kopie der Daten wurde in einen Azure-Blobspeichercontainer mit öffentlicher Blobzugriffsberechtigung hochgeladen. Ein Teil des PowerShell-Skripts kopiert die Daten aus dem öffentlichen Blobcontainer in den standardmäßigen Blobcontainer des Clusters. Das HiveQL-Skript wird ebenfalls in denselben Blobcontainer kopiert. Weitere Informationen darüber, wie Sie die Daten in Ihr eigenes Speicherkonto einfügen/hochladen und die HiveQL-Skriptdatei erstellen/hochladen können, finden Sie in [Anhang A](#appendix-a) und [Anhang B](#appendix-b).
+In diesem Lernprogramm werden Flugdaten hinsichtlich der termingerechten Durchführung von Fluggesellschaften des [Research and Innovative Technology Administration, Bureau of Transportation Statistics][rita-website] (RITA) verwendet. Eine Kopie der Daten wurde in einen Azure-Blobspeichercontainer mit öffentlicher Blobzugriffsberechtigung hochgeladen. Ein Teil des PowerShell-Skripts kopiert die Daten aus dem öffentlichen Blobcontainer in den standardmäßigen Blobcontainer des Clusters. Das HiveQL-Skript wird ebenfalls in denselben Blobcontainer kopiert. Weitere Informationen darüber, wie Sie die Daten in Ihr eigenes Speicherkonto einfügen/hochladen und die HiveQL-Skriptdatei erstellen/hochladen können, finden Sie in [Anhang A](#appendix-a) und [Anhang B](#appendix-b).
 
 In der folgenden Tabelle sind die in diesem Lernprogramm verwendeten Dateien aufgelistet:
 
@@ -74,7 +74,7 @@ Hadoop MapReduce verwendet Stapelbearbeitung. Die kosteneffizienteste Möglichke
 
 **So führen Sie Hive-Abfragen mit Azure PowerShell aus**
 
-1. Erstellen Sie eine Azure SQL-Datenbank und die Tabelle für die Ausgabe des Sqoop-Auftrags mithilfe der Anweisungen in [Anhang C](#appendix-c).
+1. Erstellen Sie eine Azure SQL-Datenbank und die Tabelle für die Ausgabe des Sqoop-Auftrags mithilfe der Anweisungen in [Anhang C](#appendix-c).
 3. Öffnen Sie Windows PowerShell ISE, und führen Sie folgendes Skript aus:
 
 		$subscriptionID = "<Azure Subscription ID>"
@@ -234,7 +234,7 @@ Hadoop MapReduce verwendet Stapelbearbeitung. Die kosteneffizienteste Möglichke
 
 ---
 ##<a id="appendix-a"></a>Anhang A – Hochladen der Daten zu Flugverspätungen in den Azure-Blobspeicher
-Das Hochladen der Datendatei und der HiveQL-Skriptdateien (siehe [Anhang B](#appendix-b)) erfordert eine gewisse Planung. Idealerweise sollten die Datendateien und die HiveQL-Datei vor dem Erstellen eines HDInsight-Clusters und vor dem Ausführen des Hive-Auftrags gespeichert werden. Sie haben zwei Möglichkeiten:
+Das Hochladen der Datendatei und der HiveQL-Skriptdateien (siehe [Anhang B](#appendix-b)) erfordert eine gewisse Planung. Idealerweise sollten die Datendateien und die HiveQL-Datei vor dem Erstellen eines HDInsight-Clusters und vor dem Ausführen des Hive-Auftrags gespeichert werden. Sie haben zwei Möglichkeiten:
 
 - **Verwenden Sie dasselbe Azure-Speicherkonto, das vom HDInsight-Cluster als Standarddateisystem verwendet wird.** Da der HDInsight-Cluster über den Zugriffsschlüssel für das Speicherkonto verfügt, müssen Sie keine weiteren Änderungen vornehmen.
 - **Verwenden Sie ein anderes Azure-Speicherkonto als das Standarddateisystem des HDInsight-Clusters.** In diesem Fall müssen Sie den Erstellungsteil des Windows PowerShell-Skripts ändern, das Sie unter [Erstellen des HDInsight-Clusters und Ausführen von Hive/Sqoop-Aufträgen](#runjob) finden, um das Speicherkonto als zusätzliches Speicherkonto zu verknüpfen. Anweisungen hierzu finden Sie unter [Erstellen von Hadoop-Clustern in HDInsight][hdinsight-provision]. Der HDInsight-Cluster kennt dann den Zugriffsschlüssel für das Speicherkonto.
@@ -247,26 +247,26 @@ Das Hochladen der Datendatei und der HiveQL-Skriptdateien (siehe [Anhang B](#ap
 2. Wählen Sie auf der Website die folgenden Werte aus:
 
 	<table border="1">
-<tr><th>Name</th><th>Wert</th></tr>
-<tr><td>Filter Year</td><td>2013 </td></tr>
-<tr><td>Filter Period</td><td>January</td></tr>
-<tr><td>Felder</td><td>*Year*, *FlightDate*, *UniqueCarrier*, *Carrier*, *FlightNum*, *OriginAirportID*, *Origin*, *OriginCityName*, *OriginState*, *DestAirportID*, *Dest*, *DestCityName*, *DestState*, *DepDelayMinutes*, *ArrDelay*, *ArrDelayMinutes*, *CarrierDelay*, *WeatherDelay*, *NASDelay*, *SecurityDelay*, *LateAircraftDelay* (Entfernen Sie die Häkchen bei allen anderen Feldern.)</td></tr>
-</table>
+	<tr><th>Name</th><th>Wert</th></tr>
+	<tr><td>Filter Year</td><td>2013 </td></tr>
+	<tr><td>Filter Period</td><td>January</td></tr>
+	<tr><td>Felder</td><td>*Year*, *FlightDate*, *UniqueCarrier*, *Carrier*, *FlightNum*, *OriginAirportID*, *Origin*, *OriginCityName*, *OriginState*, *DestAirportID*, *Dest*, *DestCityName*, *DestState*, *DepDelayMinutes*, *ArrDelay*, *ArrDelayMinutes*, *CarrierDelay*, *WeatherDelay*, *NASDelay*, *SecurityDelay*, *LateAircraftDelay* (Entfernen Sie die Häkchen bei allen anderen Feldern.)</td></tr>
+	</table>
 
 3. Klicken Sie auf **Download**.
-4. Entpacken Sie die Datei im Ordner **C:\\Tutorials\\FlightDelay\\2013Data**. Jede Datei ist eine CSV-Datei und hat eine Größe von ungefähr 60 GB.
+4. Entpacken Sie die Datei im Ordner **C:\\Tutorials\\FlightDelay\\2013Data**. Jede Datei ist eine CSV-Datei und hat eine Größe von ungefähr 60 GB.
 5.	Geben Sie der Datei den Monat, für den sie Daten enthält, als neuen Namen. Die Datei mit Daten aus dem Monat Januar hieße dann beispielsweise *January.csv*.
-6. Wiederholen Sie die Schritte 2 und 5, um eine Datei für jeden der 12 Monate des Jahres 2013 herunterzuladen. Für das Lernprogramm benötigen Sie mindestens eine Datei.  
+6. Wiederholen Sie die Schritte 2 und 5, um eine Datei für jeden der 12 Monate des Jahres 2013 herunterzuladen. Für das Lernprogramm benötigen Sie mindestens eine Datei.  
 
 **So laden Sie Daten zu Flugverspätungen in den Azure-Blobspeicher hoch**
 
 1. Bereiten Sie die Parameter vor:
 
 	<table border="1">
-<tr><th>Variablenname</th><th>Hinweise</th></tr>
-<tr><td>$storageAccountName</td><td>Das Azure-Speicherkonto, in das Sie die Daten hochladen möchten.</td></tr>
-<tr><td>$blobContainerName</td><td>Der Blobcontainer, in den Sie die Daten hochladen möchten.</td></tr>
-</table>
+	<tr><th>Variablenname</th><th>Hinweise</th></tr>
+	<tr><td>$storageAccountName</td><td>Das Azure-Speicherkonto, in das Sie die Daten hochladen möchten.</td></tr>
+	<tr><td>$blobContainerName</td><td>Der Blobcontainer, in den Sie die Daten hochladen möchten.</td></tr>
+	</table>
 2. Öffnen Sie Azure PowerShell ISE.
 3. Fügen Sie das folgende Skript in den Skriptbereich ein:
 
@@ -346,7 +346,7 @@ Wenn Sie für das Hochladen der Dateien eine andere Methode verwenden möchten, 
 
 	wasb://<ContainerName>@<StorageAccountName>.blob.core.windows.net/tutorials/flightdelay/data
 
-Bei „tutorials/flightdelay/data“ handelt es sich um den virtuellen Ordner, den Sie beim Hochladen der Dateien erstellt haben. Überprüfen Sie, dass 12 Dateien vorhanden sind, eine für jeden Monat.
+Bei „tutorials/flightdelay/data“ handelt es sich um den virtuellen Ordner, den Sie beim Hochladen der Dateien erstellt haben. Überprüfen Sie, dass 12 Dateien vorhanden sind, eine für jeden Monat.
 
 >[AZURE.NOTE] Sie müssen die Hive-Abfrage aktualisieren, um vom neuen Speicherort lesen zu können.
 
@@ -372,10 +372,10 @@ Eine vollständige Liste der HiveQL-Befehle finden Sie unter [Hive Data Definiti
 1. Bereiten Sie die Parameter vor:
 
 	<table border="1">
-<tr><th>Variablenname</th><th>Hinweise</th></tr>
-<tr><td>$storageAccountName</td><td>Das Azure-Speicherkonto, in das Sie das HiveQL-Skript hochladen möchten.</td></tr>
-<tr><td>$blobContainerName</td><td>Der Blobcontainer, in den Sie das HiveQL-Skript hochladen möchten.</td></tr>
-</table>
+	<tr><th>Variablenname</th><th>Hinweise</th></tr>
+	<tr><td>$storageAccountName</td><td>Das Azure-Speicherkonto, in das Sie das HiveQL-Skript hochladen möchten.</td></tr>
+	<tr><td>$blobContainerName</td><td>Der Blobcontainer, in den Sie das HiveQL-Skript hochladen möchten.</td></tr>
+	</table>
 2. Öffnen Sie Azure PowerShell ISE.
 
 3. Kopieren und fügen Sie das folgende Skript in den Skriptbereich ein:
@@ -547,25 +547,25 @@ Eine vollständige Liste der HiveQL-Befehle finden Sie unter [Hive Data Definiti
 
 	Im Skript werden folgende Variablen verwendet:
 
-	- **$hqlLocalFileName** – Das Skript speichert die HiveQL-Skriptdatei lokal, bevor sie in den Blobspeicher hochgeladen wird. Dies ist der Dateiname. Der Standardwert lautet <u>C:\\tutorials\\flightdelay\\flightdelays.hql</u>.
-	- **$hqlBlobName** – Dies ist der Blobname der HiveQL-Skriptdatei, der im Azure-Blobspeicher verwendet wird. Der Standardwert lautet „tutorials/flightdelay/flightdelays.hql“. Da die Datei direkt zum Azure-Blobspeicher geschrieben wird, befindet sich KEIN "/" am Anfang des Blobnamens. Wenn Sie im Blobspeicher auf die Datei zugreifen möchten, müssen Sie "/" an den Anfang des Dateinamens einfügen.
+	- **$hqlLocalFileName** – Das Skript speichert die HiveQL-Skriptdatei lokal, bevor sie in den Blobspeicher hochgeladen wird. Dies ist der Dateiname. Der Standardwert lautet <u>C:\\tutorials\\flightdelay\\flightdelays.hql</u>.
+	- **$hqlBlobName** – Dies ist der Blobname der HiveQL-Skriptdatei, der im Azure-Blobspeicher verwendet wird. Der Standardwert lautet „tutorials/flightdelay/flightdelays.hql“. Da die Datei direkt zum Azure-Blobspeicher geschrieben wird, befindet sich KEIN "/" am Anfang des Blobnamens. Wenn Sie im Blobspeicher auf die Datei zugreifen möchten, müssen Sie "/" an den Anfang des Dateinamens einfügen.
 	- **$srcDataFolder** und **$dstDataFolder** - = "tutorials/flightdelay/data" = "tutorials/flightdelay/output"
 
 
 ---
-##<a id="appendix-c"></a>Anhang C: Vorbereiten der Azure SQL-Datenbank für die Ausgabe des Sqoop-Auftrags
+##<a id="appendix-c"></a>Anhang C: Vorbereiten der Azure SQL-Datenbank für die Ausgabe des Sqoop-Auftrags
 **So bereiten Sie die SQL-Datenbank vor (Zusammenführen mit dem Sqoop-Skript)**
 
 1. Bereiten Sie die Parameter vor:
 
 	<table border="1">
-<tr><th>Variablenname</th><th>Hinweise</th></tr>
-<tr><td>$sqlDatabaseServerName</td><td>Der Name für den Azure SQL-Datenbankserver. Geben Sie nichts ein, um einen neuen Server zu erstellen.</td></tr>
-<tr><td>$sqlDatabaseUsername</td><td>Der Anmeldename für den Azure SQL-Datenbankserver. Wenn $sqlDatabaseServerName ein vorhandener Server ist, werden der Anmeldename und das Anmeldekennwort für die Authentifizierung beim Server verwendet. Andernfalls werden sie zum Erstellen eines neuen Servers verwendet.</td></tr>
-<tr><td>$sqlDatabasePassword</td><td>Das Anmeldekennwort für den Azure SQL-Datenbankserver.</td></tr>
-<tr><td>$sqlDatabaseLocation</td><td>Dieser Wert wird nur verwendet, wenn Sie einen neuen Azure-Datenbankserver erstellen.</td></tr>
-<tr><td>$sqlDatabaseName</td><td>Die zum Erstellen der Tabelle "AvgDelays" für den Sqoop-Auftrag verwendete SQL-Datenbank. Wenn Sie keinen Wert eingeben, wird eine Datenbank mit dem Namen "HDISqoop" erstellt. Der Tabellenname für die Sqoop-Auftragsausgabe ist "AvgDelays". </td></tr>
-</table>
+	<tr><th>Variablenname</th><th>Hinweise</th></tr>
+	<tr><td>$sqlDatabaseServerName</td><td>Der Name für den Azure SQL-Datenbankserver. Geben Sie nichts ein, um einen neuen Server zu erstellen.</td></tr>
+	<tr><td>$sqlDatabaseUsername</td><td>Der Anmeldename für den Azure SQL-Datenbankserver. Wenn $sqlDatabaseServerName ein vorhandener Server ist, werden der Anmeldename und das Anmeldekennwort für die Authentifizierung beim Server verwendet. Andernfalls werden sie zum Erstellen eines neuen Servers verwendet.</td></tr>
+	<tr><td>$sqlDatabasePassword</td><td>Das Anmeldekennwort für den Azure SQL-Datenbankserver.</td></tr>
+	<tr><td>$sqlDatabaseLocation</td><td>Dieser Wert wird nur verwendet, wenn Sie einen neuen Azure-Datenbankserver erstellen.</td></tr>
+	<tr><td>$sqlDatabaseName</td><td>Die zum Erstellen der Tabelle "AvgDelays" für den Sqoop-Auftrag verwendete SQL-Datenbank. Wenn Sie keinen Wert eingeben, wird eine Datenbank mit dem Namen "HDISqoop" erstellt. Der Tabellenname für die Sqoop-Auftragsausgabe ist "AvgDelays". </td></tr>
+	</table>
 2. Öffnen Sie Azure PowerShell ISE.
 3. Kopieren und fügen Sie das folgende Skript in den Skriptbereich ein:
 
@@ -691,18 +691,18 @@ Eine vollständige Liste der HiveQL-Befehle finden Sie unter [Hive Data Definiti
 
 	>[AZURE.NOTE] Das Skript verwendet einen REST-Dienst, http://bot.whatismyipaddress.com, um Ihre externe IP-Adresse abzurufen. Die IP-Adresse wird zum Erstellen einer Firewallregel für den SQL-Datenbankserver verwendet.
 
-	Im Skript werden u. a. folgende Variablen verwendet:
+	Im Skript werden u. a. folgende Variablen verwendet:
 
 	- **$ipAddressRestService** – Der Standardwert ist http://bot.whatismyipaddress.com. Es handelt sich um einen REST-Dienst mit öffentlicher IP-Adresse, mit dem die externe IP-Adresse abgerufen wird. Bei Bedarf können Sie andere Dienst verwenden. Die externe IP-Adresse, die vom Dienst abgerufen wurde, wird verwendet, um eine Firewallregel für Ihren Azure SQL-Datenbankserver zu erstellen, sodass Sie von der Arbeitsstation aus (mithilfe eines PowerShell-Skripts) auf die Datenbank zugreifen können.
-	- **$fireWallRuleName** – Dies ist der Name der Firewallregel für den Azure SQL-Datenbankserver. Der Standardname lautet <u>FlightDelay</u>. Bei Bedarf können Sie den Namen ändern.
-	- **$sqlDatabaseMaxSizeGB** – Dieser Wert wird nur verwendet, wenn Sie einen neuen Azure SQL-Datenbankserver erstellen. Der Standardwert ist 10 GB. 10 GB reicht für dieses Lernprogramm aus.
-	- **$sqlDatabaseName** – Dieser Wert wird nur verwendet, wenn Sie eine neue Azure SQL-Datenbank erstellen. Der Standardwert ist HDISqoop. Bei einer Umbenennung müssen Sie das Sqoop PowerShell-Skript entsprechend aktualisieren.
+	- **$fireWallRuleName** – Dies ist der Name der Firewallregel für den Azure SQL-Datenbankserver. Der Standardname lautet <u>FlightDelay</u>. Bei Bedarf können Sie den Namen ändern.
+	- **$sqlDatabaseMaxSizeGB** – Dieser Wert wird nur verwendet, wenn Sie einen neuen Azure SQL-Datenbankserver erstellen. Der Standardwert ist 10 GB. 10 GB reicht für dieses Lernprogramm aus.
+	- **$sqlDatabaseName** – Dieser Wert wird nur verwendet, wenn Sie eine neue Azure SQL-Datenbank erstellen. Der Standardwert ist HDISqoop. Bei einer Umbenennung müssen Sie das Sqoop PowerShell-Skript entsprechend aktualisieren.
 
 4. Drücken Sie **F5**, um das Skript auszuführen.
 5. Validieren Sie die Skriptausgabe. Überprüfen Sie, ob das Skript erfolgreich ausgeführt wurde.
 
 ##<a id="nextsteps"></a> Nächste Schritte
-Jetzt wissen Sie, wie Sie eine Datei in den Azure-Blobspeicher hochladen, eine Hive-Tabelle mit Daten aus dem Azure-Blobspeicher füllen, Hive-Abfragen ausführen und Sqoop zum Exportieren von Daten aus dem HDFS in eine Azure SQL-Datenbank verwenden können. Weitere Informationen finden Sie in den folgenden Artikeln:
+Jetzt wissen Sie, wie Sie eine Datei in den Azure-Blobspeicher hochladen, eine Hive-Tabelle mit Daten aus dem Azure-Blobspeicher füllen, Hive-Abfragen ausführen und Sqoop zum Exportieren von Daten aus dem HDFS in eine Azure SQL-Datenbank verwenden können. Weitere Informationen finden Sie in den folgenden Artikeln:
 
 * [Erste Schritte mit HDInsight][hdinsight-get-started]
 * [Verwenden von Hive mit HDInsight][hdinsight-use-hive]
@@ -742,4 +742,4 @@ Jetzt wissen Sie, wie Sie eine Datei in den Azure-Blobspeicher hochladen, eine H
 [img-hdi-flightdelays-run-hive-job-output]: ./media/hdinsight-analyze-flight-delay-data/HDI.FlightDelays.RunHiveJob.Output.png
 [img-hdi-flightdelays-flow]: ./media/hdinsight-analyze-flight-delay-data/HDI.FlightDelays.Flow.png
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0309_2016-->

@@ -43,7 +43,7 @@ Service Fabric vereinfacht das Schreiben und Verwalten von verteilten skalierbar
 
 1. Simulieren/Generieren von Fehlern, die in der Praxis auftreten können: Einer der wichtigsten Aspekte von Service Fabric ist, dass für verteilte Anwendungen damit die Wiederherstellung nach verschiedenen Fehlern möglich ist. Um zu testen, ob die Anwendung nach diesen Fehlern wiederhergestellt werden kann, benötigen wir ein aber Verfahren zum Simulieren bzw. Generieren dieser Fehler aus der Praxis in einer kontrollierten Testumgebung.
 
-2. Möglichkeit zum Generieren der korrelierten Fehler: Grundlegende Fehler im System, z. B. ein Netzwerk- oder Computerausfall, können leicht individuell ausgelöst werden. Das Generieren der signifikanten Anzahl von Szenarien, die in der Praxis aufgrund von Interaktionen zwischen diesen Einzelfehlern auftreten können, ist dagegen nicht so einfach.
+2. Möglichkeit zum Generieren der korrelierten Fehler: Grundlegende Fehler im System, z. B. ein Netzwerk- oder Computerausfall, können leicht individuell ausgelöst werden. Das Generieren der signifikanten Anzahl von Szenarien, die in der Praxis aufgrund von Interaktionen zwischen diesen Einzelfehlern auftreten können, ist dagegen nicht so einfach.
 
 3. Einheitliche Umgebungen für unterschiedliche Entwicklungs- und Bereitstellungsstufen: Es gibt viele Fault Injection-Systeme, mit denen verschiedene Arten von Fehlern ausgelöst werden können. Dies ist aber nicht sehr benutzerfreundlich, wenn zwischen One-Box-Entwicklerszenarien, dem Ausführen der gleichen Tests in großen Testumgebungen und dem Testen in der Produktion gewechselt wird.
 
@@ -51,7 +51,7 @@ Es gibt zwar viele Verfahren zum Lösen dieser Probleme, aber es fehlt ein Syste
 
 ### Simulieren/Generieren von Fehlerszenarien aus der Praxis
 
-Um die Robustheit eines verteilten Systems in Bezug auf Fehler zu testen, benötigen wir ein Verfahren zum Generieren von Fehlern. Das Generieren eines Fehlers, z. B. der Ausfall eines Knotens, ist theoretisch zwar einfach, aber dabei kommt es zu den gleichen Konsistenzproblemen, die von Service Fabric gelöst werden müssen. Wenn ein Knoten heruntergefahren werden soll, ist der folgende Workflow erforderlich:
+Um die Robustheit eines verteilten Systems in Bezug auf Fehler zu testen, benötigen wir ein Verfahren zum Generieren von Fehlern. Das Generieren eines Fehlers, z. B. der Ausfall eines Knotens, ist theoretisch zwar einfach, aber dabei kommt es zu den gleichen Konsistenzproblemen, die von Service Fabric gelöst werden müssen. Wenn ein Knoten heruntergefahren werden soll, ist der folgende Workflow erforderlich:
 
 1. Geben Sie auf dem Client eine Anforderung zum Herunterfahren des Knotens aus.
 
@@ -73,7 +73,7 @@ Das konsistente Simulieren von Fehlern aus der Praxis ist schon schwierig, aber 
 
 3. Das Schreibquorum kann nicht wiederhergestellt werden, weil die Daten für die Replikate verloren gegangen sind (aufgrund einer Beschädigung der Festplatte oder eines Reimagings des Computers).
 
-Diese korrelierten Fehler kommen auch in der Praxis vor, aber nicht so häufig wie Einzelfehler. Es ist wichtig, dass diese Szenarien getestet werden können, bevor sie in der Produktion auftreten. Noch wichtiger ist die Möglichkeit, diese Szenarien mit Produktionsworkloads in kontrolliertem Rahmen zu simulieren (am Tag, wenn alle Techniker anwesend sind). Dies ist viel besser, als wenn der Fehler zum ersten Mal um 2 Uhr morgens in der Produktion auftritt.
+Diese korrelierten Fehler kommen auch in der Praxis vor, aber nicht so häufig wie Einzelfehler. Es ist wichtig, dass diese Szenarien getestet werden können, bevor sie in der Produktion auftreten. Noch wichtiger ist die Möglichkeit, diese Szenarien mit Produktionsworkloads in kontrolliertem Rahmen zu simulieren (am Tag, wenn alle Techniker anwesend sind). Dies ist viel besser, als wenn der Fehler zum ersten Mal um 2 Uhr morgens in der Produktion auftritt.
 
 ### Einheitliche Benutzeroberfläche in unterschiedlichen Umgebungen
 
@@ -97,11 +97,11 @@ Bei Service Fabric ist das eigentliche Verfahren identisch, auch wenn das Ausma�
 
 ### Verwenden von Testability in C#
 
-Die Testability-Features sind in der Datei „System.Fabric.Testability.dll“ enthalten. Diese DLL befindet sich im NuGet-Paket „Microsoft.ServiceFabric.Testability.nupack“. Fügen Sie das NuGet-Paket als Referenz in Ihr Projekt ein, um die Testability-Features zu nutzen.
+Die Testability-Features sind in der Datei „System.Fabric.dll“ enthalten. Diese DLL befindet sich im NuGet-Paket „Microsoft.ServiceFabric.nupack“. Fügen Sie das NuGet-Paket als Referenz in Ihr Projekt ein, um die Testability-Features zu nutzen.
 
 ### Verwenden von Testability in PowerShell
 
-Zum Verwenden von Testability in PowerShell müssen Sie den Laufzeit-MSI installieren. Nach der Installation des MSI wird das ServiceFabricTestability-PowerShell-Modul für Entwickler automatisch geladen.
+Zum Verwenden von Testability in PowerShell müssen Sie den Laufzeit-MSI installieren. Nach der MSI-Installation wird das ServiceFabric-PowerShell-Modul für Entwickler automatisch geladen.
 
 ## Zusammenfassung
 
@@ -115,4 +115,4 @@ Zum Erstellen echter Dienste für die Cloud müssen Sie vor und nach der Bereits
   - [Simulieren von Ausfällen während der Bearbeitung von Dienstworkloads](service-fabric-testability-workload-tests.md)
   - [Ausfälle bei der Kommunikation von Dienst zu Dienst](service-fabric-testability-scenarios-service-communication.md)
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0309_2016-->

@@ -3,7 +3,7 @@
    description="Erfahren Sie, wie Sie allgemeine Leistungsprobleme mithilfe der dynamischen Verwaltungssichten zum Überwachen von Microsoft Azure SQL-Datenbank ermitteln und diagnostizieren."
    services="sql-database"
    documentationCenter=""
-   authors="BYHAM"
+   authors="carlrabeler"
    manager="jeffreyg"
    editor=""
    tags=""/>
@@ -24,8 +24,8 @@ Die Microsoft Azure SQL-Datenbank unterstützt eine Teilmenge dynamischer Verwal
 Die SQL-Datenbank unterstützt teilweise drei Kategorien von dynamischen Verwaltungssichten:
 
 - Dynamische Verwaltungssichten für die Datenbank
-- Dynamische Verwaltungssichten für die Ausführung
-- Dynamische Verwaltungssichten für Transaktionen
+- Dynamische Verwaltungssichten für die Ausführung 
+- Dynamische Verwaltungssichten für Transaktionen 
 
 Ausführliche Informationen zu dynamischen Verwaltungssichten finden Sie unter [Dynamische Verwaltungssichten und -funktionen (Transact-SQL)](https://msdn.microsoft.com/library/ms188754.aspx) in der SQL Server-Onlinedokumentation.
 
@@ -137,4 +137,4 @@ ORDER BY highest_cpu_queries.total_worker_time DESC;
 
 [Einführung in SQL-Datenbank](sql-database-technical-overview.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0309_2016-->

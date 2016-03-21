@@ -14,7 +14,7 @@
      ms.topic="article"
      ms.tgt_pltfrm="na"
      ms.workload="na"
-     ms.date="09/29/2015"
+     ms.date="03/02/2016"
      ms.author="stevehob"/>
 
 # Anpassen vorkonfigurierter Lösungen
@@ -23,24 +23,42 @@ Die vorkonfigurierten Lösungen in der Azure IoT Suite veranschaulichen das Bere
 
 ## Suchen des Quellcodes
 
-Der Quellcode für die vorkonfigurierte Lösung ist auf GitHub in den folgenden Repositorys verfügbar:
+Der Quellcode für die vorkonfigurierten Lösungen ist auf GitHub in den folgenden Repositorys verfügbar:
 
 - Remoteüberwachung: [https://www.github.com/Azure/azure-iot-remote-monitoring](https://github.com/Azure/azure-iot-remote-monitoring)
+- Vorhersagbarer Wartungsbedarf: [https://github.com/Azure/azure-iot-predictive-maintenance](https://github.com/Azure/azure-iot-predictive-maintenance)
 
-Dieser Quellcode wird bereitgestellt, um ein Muster zum Implementieren der Kernfunktionen der Remoteüberwachung mithilfe der Azure IoT-Suite zu veranschaulichen.
+Der Quellcode für die vorkonfigurierten Lösungen wird bereitgestellt, um Muster und Verfahren zum Implementieren der umfassenden Funktionalität von IoT-Lösungen mithilfe von Azure IoT Suite zu veranschaulichen. Eine Anleitung zum Erstellen und Bereitstellen über die Befehlszeile finden Sie im GitHub-Wiki zu den einzelnen vorkonfigurierten Lösungen:
+
+- [Wiki zu Remoteüberwachung](https://github.com/Azure/azure-iot-remote-monitoring/wiki)
+- [Wiki zu vorhersagbarem Wartungsbedarf](https://github.com/Azure/azure-iot-predictive-maintenance/wiki)
+
+## Verwalten der Berechtigungen in einer vorkonfigurierten Lösung
+Das Lösungs-Portal für jede vorkonfigurierte Lösung wird als eine neue Azure Active Directory-Anwendung erstellt. Sie können die Berechtigungen für das Lösungs-Portal (AAD-Anwendung) wie folgt verwalten:
+
+1. Öffnen Sie das [klassische Azure-Portal](https://manage.windowsazure.com).
+2. Navigieren Sie zur AAD-Anwendung, indem Sie **Anwendungen im Besitz meines Unternehmens** auswählen und dann auf das Häkchen klicken.
+3. Navigieren Sie zu **Benutzer**, und weisen Sie Mitglieder in Ihrem Azure Active Directory-Mandanten einer Rolle zu. 
+
+Die Anwendung wird standardmäßig mit den Rollen **Administrator**, **Read Only** und **Implicit Read Only** bereitgestellt. **Implicit Read Only** wird Benutzern gewährt, die Mitglied des Azure Active Directory-Mandanten sind, denen jedoch keine Rolle zugewiesen wurde. Sie können die Datei [RolePermissions.cs](https://github.com/Azure/azure-iot-remote-monitoring/blob/master/DeviceAdministration/Web/Security/RolePermissions.cs) ändern, nachdem Sie das GitHub-Repository verzweigt haben, und dann die Projektmappe erneut bereitstellen.
 
 ## Ändern der vorkonfigurierten Regeln
 
-Die Remoteüberwachungslösung enthält zwei [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/)-Aufträge, um die im Dashboard angezeigte Telemetrie- und Alarmlogik zu implementieren.
+Die Remoteüberwachungslösung enthält drei [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/)-Aufträge, um die Geräteinformationen, Telemetriedaten und Regellogik für die Lösung zu implementieren.
 
-Der erste Auftrag wählt alle Daten aus dem eingehenden Telemetriedatenstrom und erstellt zwei verschiedene Ausgaben. Der Auftrag wird mit **[Lösungsname]-Telemetry** benannt.
+Die drei Stream Analytics-Aufträge und ihre Syntax werden ausführlich unter [Exemplarische Vorgehensweise für die vorkonfigurierte Lösung zur Remoteüberwachung](iot-suite-remote-monitoring-sample-walkthrough.md) beschrieben.
 
-- Die erste Ausgabe ruft alle Daten mit `SELECT *` ab und speichert die Ausgaben in einem BLOB-Speicher. Aus diesem BLOB-Speicher liest das Dashboard Rohwerte zum Erstellen der Diagramme.
-- Die zweite Ausgabe führt eine `AVG()`-, `MIN()`- und `MAX()`-Berechnung über einem gleitenden Zeitraum von 5 Minuten aus. Diese Daten werden auf den Drehsteuerungen des Dashboards angezeigt.
+Sie können diese Aufträge direkt bearbeiten, um die Logik zu ändern oder spezifische Logik für das Szenario hinzuzufügen. Sie finden die Stream Analytics-Aufträge wie folgt:
+ 
+1. Navigieren Sie zum [Azure-Portal](https://portal.azure.com).
+2. Navigieren Sie zu der Ressourcengruppe mit demselben Namen wie Ihre IoT-Lösung. 
+3. Wählen Sie den Azure Stream Analytics-Auftrag aus, den Sie ändern möchten. 
+4. Beenden Sie den Auftrag, indem Sie aus den Befehlen **Beenden** auswählen. 
+5. Bearbeiten Sie die Eingaben, die Abfrage und die Ausgaben.
 
-Auf der Stream Analytics-Benutzeroberfläche können Sie diese Aufträge direkt bearbeiten, um die Logik zu ändern oder spezifische Logik für das Szenario hinzuzufügen.
+    Eine einfache Änderung besteht darin, die Abfrage für den **Rules**-Auftrag so zu ändern, dass **„<“** anstelle von **„>“** verwendet wird. Das Lösungs-Portal zeigt weiterhin **„>“** an, wenn Sie eine Regel bearbeiten, aber Sie werden feststellen, dass sich das Verhalten aufgrund der Änderung am zugrunde liegenden Auftrag umkehrt.
 
-Der zweite Auftrag bearbeitet die Werte für "Gerät bis Schwellenwert", die auf der Seite **Regeln** der Lösung erstellt werden. Dieser Auftrag verarbeitet den für jedes Gerät festgelegten Schwellenwert als Referenzdaten. Er bestimmt durch Vergleich des Schwellenwerts, ob dieser größer als (`>`) der tatsächliche Wert ist. Sie können diesen Auftrag ändern, um z. B. den Vergleichsoperator zu ändern.
+6. Starten des Auftrags
 
 > [AZURE.NOTE] Das Remoteüberwachungs-Dashboard hängt von bestimmten Daten ab. Deshalb kann das Ändern der Aufträge dazu führen, dass das Dashboard fehlschlägt.
 
@@ -58,6 +76,8 @@ Unter [Verbinden von Geräten mit der IoT Suite](iot-suite-connecting-devices.md
 
 Der Quellcode der Remoteüberwachungslösung (auf den oben verwiesen wird) enthält einen .NET-Simulator. Dieser Simulator wird als Teil der Lösung bereitgestellt und kann geändert werden, um andere Metadaten oder Telemetrie zu senden oder auf andere Befehle zu reagieren.
 
+Der vorkonfigurierte Simulator in der vorkonfigurierten Lösung zur Remoteüberwachung ist ein Kühlgerät, das Telemetriedaten zu Temperatur und Feuchtigkeit ausgibt. Sie können den Simulator im Projekt [Simulator.WebJob](https://github.com/Azure/azure-iot-remote-monitoring/tree/master/Simulator/Simulator.WebJob) ändern, wenn Sie das GitHub-Repository verzweigt haben.
+
 Darüber hinaus stellt Azure IoT ein [C-SDK-Beispiel](https://github.com/Azure/azure-iot-sdks/c/serializer/samples/remote_monitoring) bereit, das mit der vorkonfigurierten Remoteüberwachungslösung verwendet werden kann.
 
 ### Erstellen und Verwenden eines eigenen (physischen) Geräts
@@ -66,8 +86,10 @@ Die [Azure IoT-SDKs](https://github.com/Azure/azure-iot-sdks) bieten Bibliotheke
 
 ## Nächste Schritte
 
+Haben Sie Anpassungsvorschläge für dieses Dokument? Fügen Sie Vorschläge für neue Funktionen im [Benutzerforum](https://feedback.azure.com/forums/321918-azure-iot) hinzu, kommentieren Sie diesen Artikel weiter unten, oder senden Sie uns eine E-Mail an iotsolhelp@microsoft.com.
+
 Weitere Informationen zu IoT-Geräten finden Sie auf der [Azure IoT-Entwicklerwebsite](https://azure.microsoft.com/develop/iot/), die entsprechende Links und Dokumente enthält.
 
 [IoT-Geräte-SDK]: https://azure.microsoft.com/documentation/articles/iot-hub-sdks-summary/
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0309_2016-->

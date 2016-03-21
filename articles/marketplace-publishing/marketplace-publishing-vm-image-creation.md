@@ -13,12 +13,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="Azure"
    ms.workload="na"
-   ms.date="02/02/2016"
+   ms.date="03/07/2016"
    ms.author="hascipio; v-divte"/>
 
 # Anleitung zum Erstellen eines VM-Images für Azure Marketplace
 
-In diesem Artikel (**Schritt 2**) werden Sie durch die Vorbereitung der virtuellen Festplatten (VHDs) geführt, die Sie im Azure Marketplace bereitstellen möchten. Ihre VHDs bilden die Grundlage Ihrer SKU. Der Prozess variiert in Abhängigkeit davon, ob Sie eine Linux- oder Windows-basierte SKU bereitstellen. Dieser Artikel deckt beide Szenarien ab. Dieser Vorgang kann parallel zur [Kontoerstellung und -registrierung][link-acct-creation] ausgeführt werden.
+In diesem Artikel (**Schritt 2**) werden Sie durch die Vorbereitung der virtuellen Festplatten (VHDs) geführt, die Sie im Azure Marketplace bereitstellen möchten. Ihre VHDs bilden die Grundlage Ihrer SKU. Der Prozess variiert in Abhängigkeit davon, ob Sie eine Linux- oder Windows-basierte SKU bereitstellen. Dieser Artikel deckt beide Szenarien ab. Dieser Vorgang kann parallel zur [Kontoerstellung und -registrierung][link-acct-creation] ausgeführt werden.
 
 ## 1\. Definieren von Angeboten und SKUs
 
@@ -53,13 +53,13 @@ Nach dem Hinzufügen eines Angebots müssen Sie Ihre SKUs definieren und angeben
 ## 2\. Erstellen einer Azure-kompatiblen VHD (Linux-basiert)
 Im Mittelpunkt dieses Abschnitts stehen bewährte Methoden zum Erstellen eines Linux-basierten VM-Images für den Azure Marketplace. Eine exemplarische Vorgehensweise finden Sie in der folgenden Dokumentation: [Erstellen und Hochladen einer virtuellen Festplatte, die das Linux-Betriebssystem enthält][link-azure-vm-1].
 
-> [AZURE.TIP] Viele der folgenden Schritte (z. B. Agent-Installation, Festlegen der Kernel-Boot-Parameter) wurden für Linux-Images, die im Microsoft Azure-Image-Katalog verfügbar sind, bereits ausgeführt. Um Zeit zu sparen, können Sie also eines dieser Images als Grundlage verwenden, anstatt ein nicht für Azure geeignetes Linux-Image zu konfigurieren.
+> [AZURE.TIP] Viele der folgenden Schritte (z. B. Agent-Installation, Festlegen der Kernel-Boot-Parameter) wurden für Linux-Images, die im Microsoft Azure-Image-Katalog verfügbar sind, bereits ausgeführt. Um Zeit zu sparen, können Sie also eines dieser Images als Grundlage verwenden, anstatt ein nicht für Azure geeignetes Linux-Image zu konfigurieren.
 
 ### 2\.1 Auswählen der richtigen VHD-Größe
 Veröffentlichte SKUs (VM-Images) sollten für alle VM-Größen ausgelegt sein, die die Anzahl von Datenträgern für die SKU unterstützen. Sie können Richtlinien zu empfohlenen Größen ausgeben. Diese werden jedoch als Empfehlungen betrachtet und nicht erzwungen:
 
-1. Linux-Betriebssystem-VHD: Die Linux-Betriebssystem-VHD in Ihrem VM-Image sollte als VHD mit 30 GB bis 50 GB und festem Format erstellt werden. Sie darf nicht kleiner als 30 GB sein. Liegt die physische Größe unter der VHD-Größe, sollte die VHD von geringer Dichte sein. Bei Linux-VHDs, die größer als 50 GB sind, muss dies je nach Einzelfall geklärt werden. Wenn bereits eine VHD in einem anderen Format vorhanden ist, können Sie das [Format mit dem PowerShell-Cmdlet „Convert-VHD“ ändern][link-technet-1].
-2. Datenträger-VHD: Datenträger können bis zu 1 TB groß sein. Datenträger-VHDs sollten als VHDs mit festem Format erstellt werden. Sie sollten außerdem eine geringe Dichte aufweisen. Bedenken Sie bei der Entscheidung über die Datenträgergröße, dass Kunden die Größe von VHDs in einem Image nicht verändern können.
+1. Linux-Betriebssystem-VHD: Die Linux-Betriebssystem-VHD in Ihrem VM-Image sollte als VHD mit 30 GB bis 50 GB und festem Format erstellt werden. Sie darf nicht kleiner als 30 GB sein. Liegt die physische Größe unter der VHD-Größe, sollte die VHD von geringer Dichte sein. Bei Linux-VHDs, die größer als 50 GB sind, muss dies je nach Einzelfall geklärt werden. Wenn bereits eine VHD in einem anderen Format vorhanden ist, können Sie das [Format mit dem PowerShell-Cmdlet „Convert-VHD“ ändern][link-technet-1].
+2. Datenträger-VHD: Datenträger können bis zu 1 TB groß sein. Datenträger-VHDs sollten als VHDs mit festem Format erstellt werden. Sie sollten außerdem eine geringe Dichte aufweisen. Bedenken Sie bei der Entscheidung über die Datenträgergröße, dass Kunden die Größe von VHDs in einem Image nicht verändern können.
 
 ### 2\.2 Installieren des neuesten Azure Linux-Agent
 Stellen Sie bei der Vorbereitung der Betriebssystem-VHD sicher, dass der neueste [Azure Linux-Agent][link-azure-vm-2] installiert ist. Verwenden Sie die RPM- oder Deb-Pakete. Das Paket trägt häufig den Namen „walinuxagent“ oder „WALinuxAgent“. Überprüfen Sie aber zur Sicherheit Ihre Distribution. Der Agent stellt wichtige Funktionen für IaaS-Bereitstellungen von Linux in Azure bereit, wie etwa Funktionen zur Bereitstellung von virtuellen Computern und Netzwerkfunktionen.
@@ -76,7 +76,7 @@ Die Agent-Konfigurationsdatei wird unter „/etc/waagent.conf“ abgelegt.
 ### 2\.3 Überprüfen, ob die erforderlichen Bibliotheken enthalten sind
 Außer dem Azure Linux-Agent müssen auch die folgenden Bibliotheken enthalten sein:
 
-1. Im Kernel muss mindestens [Linux-Integrationsdienste][link-intsvc] 3.0 aktiviert sein. Informationen finden Sie unter [Linux-Kernelanforderungen](../virtual-machines/virtual-machines-linux-create-upload-vhd-generic/#linux-kernel-requirements).
+1. Im Kernel muss mindestens [Linux-Integrationsdienste][link-intsvc] 3.0 aktiviert sein. Informationen finden Sie unter [Linux-Kernelanforderungen](./virtual-machines-linux-create-upload-vhd-generic/#linux-kernel-requirements).
 2. [Kernel-Patch](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/drivers/scsi/storvsc_drv.c?id=5c1b10ab7f93d24f29b5630286e323d1c5802d5c) für Azure-E/A-Stabilität (wahrscheinlich für neuere Kernels nicht erforderlich, sollte jedoch überprüft werden)
 3. [Python][link-python] 2.6 oder höher
 4. Python pyasn1-Paket, falls nicht bereits installiert
@@ -93,14 +93,14 @@ Der Kernel-Boot-Zeile müssen auch folgende Parameter hinzugefügt werden:
 Damit wird gewährleistet, dass der Azure-Support Kunden bei Bedarf mit der Ausgabe über die serielle Konsole unterstützen kann. Außerdem wird hiermit für einen geeigneten Timeout für die Bereitstellung des Betriebssystem-Datenträgers aus dem Cloudspeicher gesorgt. Selbst wenn Ihre SKU Benutzer am direkten SSH-Zugriff auf einen virtuellen Computer hindert, muss die Ausgabe über die serielle Konsole aktiviert sein.
 
 ### 2\.6 Standardmäßiges Einbeziehen des SSH-Servers
-Es wird dringend empfohlen, SSH für den Kunden zu aktivieren. Wenn der SSH-Server aktiviert ist, fügen Sie der Datei „sshd config“ den SSH-Keep-Alive mit der folgenden Option hinzu: **ClientAliveInterval 180**. Der empfohlene Wert ist 180, der zulässige Bereich reicht jedoch von 30 bis 235. Nicht alle Anwendungen geben Kunden direkten SSH-Zugriff auf den virtuellen Computer. Wird SSH ausdrücklich blockiert, erübrigt sich die Festlegung der Option **ClientAliveInterval**.
+Es wird dringend empfohlen, SSH für den Kunden zu aktivieren. Wenn der SSH-Server aktiviert ist, fügen Sie der Datei „sshd config“ den SSH-Keep-Alive mit der folgenden Option hinzu: **ClientAliveInterval 180**. Der empfohlene Wert ist 180, der zulässige Bereich reicht jedoch von 30 bis 235. Nicht alle Anwendungen geben Kunden direkten SSH-Zugriff auf den virtuellen Computer. Wird SSH ausdrücklich blockiert, erübrigt sich die Festlegung der Option **ClientAliveInterval**.
 
 ### 2\.7 Erfüllen von Netzwerkanforderungen
 Im Folgenden werden die Netzwerkanforderungen für ein Azure-kompatibles Linux-VM-Image erläutert:
 
-- In vielen Fällen ist es am besten, NetworkManager zu deaktivieren. Eine Ausnahme stellen Systeme dar, die auf CentOS 7.x (und seinen Ableitungen) basieren. Bei diesen Systemen muss NetworkManager aktiviert bleiben.
+- In vielen Fällen ist es am besten, NetworkManager zu deaktivieren. Eine Ausnahme stellen Systeme dar, die auf CentOS 7.x (und seinen Ableitungen) basieren. Bei diesen Systemen muss NetworkManager aktiviert bleiben.
 - Die Netzwerkkonfiguration sollte über die Skripts **ifup** und **ifdown** gesteuert werden können. Der Linux-Agent kann diese Befehle zum Neustarten der Netzwerke während der Bereitstellung verwenden.
-- Eine benutzerdefinierte Netzwerkkonfiguration darf nicht stattfinden. Im letzten Schritt sollte die Datei „Resolv.conf“ gelöscht werden. Dies geschieht in der Regel bei der Aufhebung der Bereitstellung (siehe [Benutzerhandbuch für Azure Linux-Agent](../virtual-machines/virtual-machines-linux-agent-user-guide/)). Mithilfe des folgenden Befehls können Sie diesen Schritt auch manuell ausführen:
+- Eine benutzerdefinierte Netzwerkkonfiguration darf nicht stattfinden. Im letzten Schritt sollte die Datei „Resolv.conf“ gelöscht werden. Dies geschieht in der Regel bei der Aufhebung der Bereitstellung (siehe [Benutzerhandbuch für Azure Linux-Agent](./virtual-machines-linux-agent-user-guide/)). Mithilfe des folgenden Befehls können Sie diesen Schritt auch manuell ausführen:
 
         rm /etc/resolv.conf
 
@@ -134,7 +134,7 @@ Es wird empfohlen, in der Konfigurationsdatei (/etc/waagent.conf) festzulegen, d
 - „Provisioning.RegenerateSshHostKeyPair“ in der Konfigurationsdatei auf „y“ festlegen, um alle SSH-Hostschlüssel zu entfernen.
 - „Provisioning.DeleteRootPassword“ in der Konfigurationsdatei auf „y“ festlegen, um das Stammkennwort aus „/etc/shadow“ zu entfernen. Eine Dokumentation zu den Inhalten der Konfigurationsdatei finden Sie im Abschnitt zur „KONFIGURATION“ der Infodatei auf der Agent Github-Repository-Seite ([https://github.com/Azure/WALinuxAgent](https://github.com/Azure/WALinuxAgent) und Bildlauf nach unten durchführen).  
 
-Damit ist das Generalisieren des virtuellen Linux-Computers abgeschlossen. Schalten Sie den virtuellen Computer über das Azure-Portal, über die Befehlszeile oder über den virtuellen Computer selbst aus. Nachdem Sie den virtuellen Computer ausgeschaltet haben, können Sie mit Schritt 3.4 fortfahren.
+Damit ist das Generalisieren des virtuellen Linux-Computers abgeschlossen. Schalten Sie den virtuellen Computer über das Azure-Portal, über die Befehlszeile oder über den virtuellen Computer selbst aus. Nachdem Sie den virtuellen Computer ausgeschaltet haben, können Sie mit Schritt 3.4 fortfahren.
 
 ## 3\. Erstellen einer Azure-kompatiblen VHD (Windows-basiert)
 Im Mittelpunkt dieses Abschnitts stehen die Schritte zum Erstellen einer SKU auf Basis von Windows Server für den Azure Marketplace.
@@ -150,7 +150,7 @@ Erstellen Sie zunächst einen virtuellen Computer aus einem der folgenden Images
 
 Diese Verknüpfungen finden Sie auch im Veröffentlichungsportal auf der SKU-Seite.
 
-> [AZURE.TIP] Wenn Sie das aktuelle Azure-Portal oder PowerShell verwenden, sind am 8. September 2014 und später veröffentlichte Windows Server-Images genehmigt.
+> [AZURE.TIP] Wenn Sie das aktuelle Azure-Portal oder PowerShell verwenden, sind am 8. September 2014 und später veröffentlichte Windows Server-Images genehmigt.
 
 
 ### 3\.2 Erstellen des virtuellen Windows-basierten Computers
@@ -228,11 +228,11 @@ Weitere Informationen zu RDP finden Sie im MSDN-Artikel [Herstellen einer Verbin
 Verwenden Sie nach dem Herunterladen der Betriebssystem-VHD Hyper-V, und konfigurieren Sie einen virtuellen Computer, um mit dem Erstellen einer SKU zu beginnen. Eine ausführliche Anleitung finden Sie unter folgendem TechNet-Link: [Installieren von Hyper-V und Erstellen eines virtuellen Computers](http://technet.microsoft.com/library/hh846766.aspx).
 
 ### 3\.4 Auswählen der richtigen VHD-Größe
-Die Windows-Betriebssystem-VHD in Ihrem VM-Image sollte als VHD mit 128 GB und mit festem Format erstellt werden.
+Die Windows-Betriebssystem-VHD in Ihrem VM-Image sollte als VHD mit 128 GB und mit festem Format erstellt werden.
 
-Beträgt die physische Größe weniger als 128 GB, sollte die VHD von geringer Dichte sein. Die bereitgestellten Windows- und SQL Server-Images erfüllen diese Anforderungen. Ändern Sie weder das Format noch die Größe der VHD.
+Beträgt die physische Größe weniger als 128 GB, sollte die VHD von geringer Dichte sein. Die bereitgestellten Windows- und SQL Server-Images erfüllen diese Anforderungen. Ändern Sie weder das Format noch die Größe der VHD.
 
-Datenträger können bis zu 1 TB groß sein. Bedenken Sie bei der Entscheidung über die Datenträgergröße, dass Kunden die Größe von VHDs in einem Image zum Zeitpunkt der Bereitstellung nicht verändern können. Datenträger-VHDs sollten als VHDs mit festem Format erstellt werden. Sie sollten außerdem eine geringe Dichte aufweisen. Datenträger können leer sein oder Daten enthalten.
+Datenträger können bis zu 1 TB groß sein. Bedenken Sie bei der Entscheidung über die Datenträgergröße, dass Kunden die Größe von VHDs in einem Image zum Zeitpunkt der Bereitstellung nicht verändern können. Datenträger-VHDs sollten als VHDs mit festem Format erstellt werden. Sie sollten außerdem eine geringe Dichte aufweisen. Datenträger können leer sein oder Daten enthalten.
 
 
 ### 3\.5 Installieren der neuesten Windows-Patches
@@ -242,7 +242,7 @@ Die Basisimages enthalten die neuesten, bis zum Veröffentlichungsdatum erschien
 Falls zusätzliche Einstellungen konfiguriert werden müssen, können Sie eine geplante Aufgabe einrichten, die beim Start ausgeführt wird. So ist es möglich, nach der Bereitstellung des virtuellen Computers letzte Änderungen daran vorzunehmen:
 
 - Es gilt als bewährte Methode, die Aufgabe so zu konfigurieren, dass sie sich nach der erfolgreichen Ausführung selbst löscht.
-- Die Konfiguration sollte sich nur auf die Laufwerke C oder D stützen, denn diese beiden Laufwerke sind die einzigen, die mit Sicherheit immer vorhanden sind. Laufwerk C ist der Betriebssystem-Datenträger, und Laufwerk D ist der temporäre lokale Datenträger.
+- Die Konfiguration sollte sich nur auf die Laufwerke C oder D stützen, denn diese beiden Laufwerke sind die einzigen, die mit Sicherheit immer vorhanden sind. Laufwerk C ist der Betriebssystem-Datenträger, und Laufwerk D ist der temporäre lokale Datenträger.
 
 ### 3\.7 Generalisieren des Images
 Alle Images im Azure Marketplace müssen allgemein wiederverwendbar sein. Anders ausgedrückt: Die Betriebssystem-VHD muss generalisiert werden:
@@ -250,9 +250,9 @@ Alle Images im Azure Marketplace müssen allgemein wiederverwendbar sein. Anders
 - Unter Windows sollte für das Image eine Systemvorbereitung mit „Sysprep“ durchgeführt werden. Einstellungen, die den Befehl **sysprep** nicht unterstützen, dürfen nicht konfiguriert werden.
 - Sie können den folgenden Befehl über das Verzeichnis „%windir%\\System32\\Sysprep“ ausführen.
 
-        sysprep.exe /generalize /oobe /sshutdown
+        sysprep.exe /generalize /oobe /shutdown
 
-  Anleitungen zur Systemvorbereitung des Betriebssystems mit „sysprep“ finden Sie in Schritt 1 des folgenden MSDN-Artikels: [Erstellen und Hochladen einer Windows Server-VHD in Azure](../virtual-machines/virtual-machines-create-upload-vhd-windows-server/).
+  Anleitungen zur Systemvorbereitung des Betriebssystems mit „sysprep“ finden Sie in Schritt 1 des folgenden MSDN-Artikels: [Erstellen und Hochladen einer Windows Server-VHD in Azure](./virtual-machines-create-upload-vhd-windows-server/).
 
 ## 4\. Bereitstellen eines virtuellen Computers auf Basis der VHDs
 Nachdem Sie Ihre VHDs (generalisierte Betriebssystem-VHD und null oder mehr Datenträger-VHDs) in ein Azure-Speicherkonto hochgeladen haben, können Sie sie als Benutzer-VM-Image registrieren. Anschließend können Sie das Image testen. Beachten Sie Folgendes: Da Ihre Betriebssystem-VHD generalisiert wurde, können Sie den virtuellen Computer nicht direkt bereitstellen, indem Sie die VHD-URL angeben.
@@ -317,7 +317,7 @@ Mit dem Cmdlet **Invoke-WebRequest** können Sie ein VM-Image aus PowerShell ers
 
 Durch das Ausführen dieses Skripts wird ein Benutzer-VM-Image mit dem Namen erstellt, den Sie im ImageName-Parameter „myVMImage“ angegeben haben. Er besteht aus einem Betriebssystem-Datenträger und einem normalen Datenträger.
 
-Diese API ist ein asynchroner Vorgang und gibt den Status 202 („Zulässig“) zurück. Wenn Sie sehen möchten, ob das VM-Image erstellt wurde, müssen Sie den Vorgangsstatus abfragen. Der Wert „x-ms-request-id“ in der zurückgegebenen Antwort ist die Vorgangs-ID. Diese ID muss im Parameter „$opId“ (siehe unten) festgelegt werden.
+Diese API ist ein asynchroner Vorgang und gibt den Status 202 („Zulässig“) zurück. Wenn Sie sehen möchten, ob das VM-Image erstellt wurde, müssen Sie den Vorgangsstatus abfragen. Der Wert „x-ms-request-id“ in der zurückgegebenen Antwort ist die Vorgangs-ID. Diese ID muss im Parameter „$opId“ (siehe unten) festgelegt werden.
 
         $opId = #Fill In With Operation ID
         $uri2 = $SrvMngtEndPoint + "/" + $SubId + "/" + "operations" + "/" + "opId"
@@ -375,7 +375,7 @@ Verwenden Sie das folgende Skript zum Erstellen eines VM-Images aus einer Betrie
 
 Durch das Ausführen dieses Skripts wird ein Benutzer-VM-Image mit dem Namen erstellt, den Sie im ImageName-Parameter „myVMImage“ angegeben haben. Er besteht aus einem Betriebssystem-Datenträger und einem normalen Datenträger.
 
-Diese API ist ein asynchroner Vorgang und gibt den Status 202 („Zulässig“) zurück. Wenn Sie sehen möchten, ob das VM-Image erstellt wurde, müssen Sie den Vorgangsstatus abfragen. Der Wert „x-ms-request-id“ in der zurückgegebenen Antwort ist die Vorgangs-ID. Diese ID muss im Parameter „$opId“ (siehe unten) festgelegt werden.
+Diese API ist ein asynchroner Vorgang und gibt den Status 202 („Zulässig“) zurück. Wenn Sie sehen möchten, ob das VM-Image erstellt wurde, müssen Sie den Vorgangsstatus abfragen. Der Wert „x-ms-request-id“ in der zurückgegebenen Antwort ist die Vorgangs-ID. Diese ID muss im Parameter „$opId“ (siehe unten) festgelegt werden.
 
         $opId = #Fill In With Operation ID
         $uri2 = $SrvMngtEndPoint + "/" + $SubId + "/" + "operations" + "/" + "$opId"
@@ -426,7 +426,7 @@ Verwenden Sie das folgende Skript zum Erstellen eines VM-Images aus einer Betrie
         { echo "Not Accepted"
         }
 
-Durch das Ausführen dieses Skripts wird ein Benutzer-VM-Image mit dem Namen erstellt, den Sie im ImageName-Parameter „myVMImage“ angegeben haben. Es besteht aus einem Betriebssystem-Datenträger, der auf der von Ihnen übergebenen VHD basiert, und einem leeren Datenträger mit 32 GB.
+Durch das Ausführen dieses Skripts wird ein Benutzer-VM-Image mit dem Namen erstellt, den Sie im ImageName-Parameter „myVMImage“ angegeben haben. Es besteht aus einem Betriebssystem-Datenträger, der auf der von Ihnen übergebenen VHD basiert, und einem leeren Datenträger mit 32 GB.
 
 ### 4\.2 Bereitstellen eines virtuellen Computers aus einem Benutzer-VM-Image
 Zum Bereitstellen eines virtuellen Computers aus einem Benutzer-VM-Image können Sie das aktuelle [Azure-Portal](https://manage.windowsazure.com) oder PowerShell verwenden.
@@ -482,7 +482,7 @@ Das Zertifizierungstool funktioniert mit virtuellen Windows- und Linux-Computern
 
 ### **Verbinden des Zertifizierungstools mit einem Windows-basierten VM-Image**
 
-1. Geben Sie den vollqualifizierten VM-DNS-Namen ein (z. B. MyVMName.Cloudapp.net).
+1. Geben Sie den vollqualifizierten VM-DNS-Namen ein (z. B. MyVMName.Cloudapp.net).
 2. Geben Sie den Benutzernamen und das Kennwort ein.
 
   ![Kennwortauthentifizierung eines Windows-VM-Images][img-cert-vm-pswd-win]
@@ -503,7 +503,7 @@ Nach dem automatisierten Test werden Sie zur Eingabe zusätzlicher Informationen
 
 ![Fragebogen im Zertifizierungstool][img-cert-vm-questionnaire-2]
 
-Nachdem Sie den Fragebogen ausgefüllt haben, können Sie zusätzliche Informationen angeben, z. B. SSH-Zugriffsinformationen für das Linux-VM-Image und Erklärungen für fehlgeschlagene Bewertungen. Sie können die Testergebnisse und Protokolldateien für die ausgeführten Testfälle zusätzlich zu Ihren Antworten aus dem Fragebogen herunterladen. Speichern Sie die Ergebnisse in demselben Container wie die VHDs.
+Nachdem Sie den Fragebogen ausgefüllt haben, können Sie zusätzliche Informationen angeben, z. B. SSH-Zugriffsinformationen für das Linux-VM-Image und Erklärungen für fehlgeschlagene Bewertungen. Sie können die Testergebnisse und Protokolldateien für die ausgeführten Testfälle zusätzlich zu Ihren Antworten aus dem Fragebogen herunterladen. Speichern Sie die Ergebnisse in demselben Container wie die VHDs.
 
 ![Zertifizierungstestergebnisse speichern][img-cert-vm-results]
 
@@ -517,13 +517,13 @@ Der erstellte Shared Access Signature-URI sollte die folgenden Anforderungen erf
 - Die Zugriffsdauer sollte mindestens sieben Werktage ab der Erstellung des Shared Access Signature-URI betragen.
 - Geben Sie eine Uhrzeit 15 Minuten vor der aktuellen Uhrzeit an, um unmittelbare Fehler aufgrund von Zeitabweichungen zu vermeiden.
 
-Eine Anleitung zum Erstellen eines Shared Access Signature-URI finden Sie unter [Shared Access Signatures, Teil 1: Grundlagen zum SAS-Modell][link-azure-1] und [Shared Access Signatures, Teil 2: Erstellen und Verwenden einer SAS mit dem Azure-Blob-Dienst][link-azure-2].
+Eine Anleitung zum Erstellen eines Shared Access Signature-URI finden Sie unter [Shared Access Signatures, Teil 1: Grundlagen zum SAS-Modell][link-azure-1] und [Shared Access Signatures, Teil 2: Erstellen und Verwenden einer SAS mit dem Azure-Blob-Dienst][link-azure-2].
 
 Anstatt einen gemeinsam verwendeten Zugriffsschlüssel per Code zu erstellen, können Sie auch Speichertools wie den [Azure-Speicher-Explorer][link-azure-codeplex] verwenden.
 
 **Generieren eines gemeinsam verwendeten Zugriffsschlüssels mit Azure-Speicher-Explorer**
 
-1. Laden Sie [Azure-Speicher-Explorer][link-azure-codeplex] 6 oder höher aus CodePlex herunter.
+1. Laden Sie [Azure-Speicher-Explorer][link-azure-codeplex] 6 oder höher aus CodePlex herunter.
 2. Öffnen Sie die Anwendung, nachdem sie installiert wurde.
 3. Klicken Sie auf **Konto hinzufügen**.
 
@@ -553,7 +553,7 @@ Anstatt einen gemeinsam verwendeten Zugriffsschlüssel per Code zu erstellen, k�
 
     ![Abbildung][img-azstg-setup-6]
 
-    a. **Zugriff erlaubt ab**: Wählen Sie den Tag vor dem aktuellen Datum aus, um in Bezug auf die UTC-Zeit sicherzugehen. Wählen Sie beispielsweise 05.10.2014 aus, wenn das aktuelle Datum der 6. Oktober 2014 ist.
+    a. **Zugriff erlaubt ab**: Wählen Sie den Tag vor dem aktuellen Datum aus, um in Bezug auf die UTC-Zeit sicherzugehen. Wählen Sie beispielsweise 05.10.2014 aus, wenn das aktuelle Datum der 6. Oktober 2014 ist.
 
     b. **Zugriff erlaubt bis**: Wählen Sie ein Datum aus, das mindestens sieben bis acht Tage nach dem Datum liegt, das Sie unter **Zugriff erlaubt ab** angegeben haben.
 
@@ -581,23 +581,20 @@ Nach dem Erstellen des Angebots und der SKU müssen Sie die zu dieser SKU gehör
 3. Die am oberen Seitenrand aufgeführte ID ist nicht die SKU-ID, sondern die Angebots-ID.
 4. Tragen Sie im Abschnitt **SKUs** die Eigenschaften ein.
 5. Klicken Sie unter **Betriebssystemfamilie** auf den zur Betriebssystem-VHD gehörigen Betriebssystemtyp.
-6. Geben Sie im Feld **Betriebssystem** eine Beschreibung des Betriebssystems ein. Wählen Sie ein Format nach dem Schema Betriebssystemfamilie, Typ, Version und Updates. Beispiel: „Windows Server Datacenter 2014 R2“.
-7. Wählen Sie bis zu sechs empfohlene VM-Größen aus. Dies sind Empfehlungen, die für Kunden auf dem Blatt „Tarif“ im Azure-Portal sichtbar sind, wenn sie Ihr Image erwerben und bereitstellen möchten.
-
-  > [AZURE.NOTE] Es handelt sich hierbei nur um Empfehlungen. Der Kunde kann eine beliebige VM-Größe auswählen, die sich für die in Ihrem Image festgelegten Datenträger eignet.
-
+6. Geben Sie im Feld **Betriebssystem** eine Beschreibung des Betriebssystems ein. Wählen Sie ein Format nach dem Schema Betriebssystemfamilie, Typ, Version und Updates. Beispiel: „Windows Server Datacenter 2014 R2“.
+7. Wählen Sie bis zu sechs empfohlene VM-Größen aus. Dies sind Empfehlungen, die für Kunden auf dem Blatt „Tarif“ im Azure-Portal sichtbar sind, wenn sie Ihr Image erwerben und bereitstellen möchten. **Es handelt sich hierbei nur um Empfehlungen. Der Kunde kann eine beliebige VM-Größe auswählen, die sich für die in Ihrem Image festgelegten Datenträger eignet.**
 8. Geben Sie die Version ein. Das Versionsfeld kapselt eine semantische Version, um das Produkt und seine Updates zu identifizieren:
   -	Versionen sollten im Format „X.Y.Z“ angegeben werden. „X“, „Y“ und „Z“ sind dabei ganze Zahlen.
   -	Images in verschiedenen SKUs können verschiedene Haupt- und Nebenversionen enthalten.
   -	Bei Versionen innerhalb einer SKU sollte es sich nur um inkrementelle Änderungen handeln, die die Patchversion erhöhen („Z“ aus „X.Y.Z“).
 9. Geben Sie im Feld **URL der Betriebssystem-VHD** den Shared Access Signature-URI ein, der für die Betriebssystem-VHD erstellt wurde.
 10. Wenn dieser SKU Datenträger zugeordnet sind, wählen Sie die logische Gerätenummer (Logical Unit Number, LUN) aus, mit der dieser Datenträger bei der Bereitstellung eingebunden werden soll.
-11. Geben Sie im Feld **URL der LUN X-VHD** den Shared Access Signature-URI ein, der für die erste Daten-VHD erstellt wurde.
+11. Geben Sie im Feld **URL der LUN X-VHD** den Shared Access Signature-URI ein, der für die erste Daten-VHD erstellt wurde.
 
-    ![Abbildung][img-pubportal-vm-skus-2]
+    ![Abbildung](media/marketplace-publishing-vm-image-creation/vm-image-pubportal-skus-3.png)
 
 ## Nächster Schritt
-Wenn Sie die SKU-Details abgeschlossen haben, können Sie mit der [Anleitung für Marketinginhalte in Azure Marketplace][link-pushstaging] fortfahren. In diesem Schritt des Veröffentlichungsprozesses geben Sie Marketinginhalte, Preise und andere Informationen an, die vor dem Fortfahren mit **Schritt 3: Testen Ihres VM-Angebots im Stagingmodus** benötigt werden. Bei diesem Schritt testen Sie verschiedene Anwendungsfallszenarien, bevor Sie das Angebot zum allgemeinen Anzeigen und Kaufen im Azure Marketplace bereitstellen.
+Wenn Sie die SKU-Details abgeschlossen haben, können Sie mit der [Anleitung für Marketinginhalte in Azure Marketplace][link-pushstaging] fortfahren. In diesem Schritt des Veröffentlichungsprozesses geben Sie Marketinginhalte, Preise und andere Informationen an, die vor dem Fortfahren mit **Schritt 3: Testen Ihres VM-Angebots im Stagingmodus** benötigt werden. Bei diesem Schritt testen Sie verschiedene Anwendungsfallszenarien, bevor Sie das Angebot zum allgemeinen Anzeigen und Kaufen im Azure Marketplace bereitstellen.
 
 ## Weitere Informationen
 - [Erste Schritte: Veröffentlichen eines Angebots im Azure Marketplace](marketplace-publishing-getting-started.md)
@@ -629,7 +626,7 @@ Wenn Sie die SKU-Details abgeschlossen haben, können Sie mit der [Anleitung fü
 
 [link-pushstaging]: marketplace-publishing-push-to-staging.md
 [link-github-waagent]: https://github.com/Azure/WALinuxAgent
-[link-azure-codeplex]: http://storageexplorer.com/
+[link-azure-codeplex]: https://azurestorageexplorer.codeplex.com/
 [link-azure-2]: ../storage/storage-dotnet-shared-access-signature-part-2/
 [link-azure-1]: ../storage/storage-dotnet-shared-access-signature-part-1/
 [link-msft-download]: http://www.microsoft.com/download/details.aspx?id=44299
@@ -647,11 +644,11 @@ Wenn Sie die SKU-Details abgeschlossen haben, können Sie mit der [Anleitung fü
 [link-datactr-2012]: http://azure.microsoft.com/marketplace/partners/microsoft/windowsserver2012datacenter/
 [link-datactr-2008-r2]: http://azure.microsoft.com/marketplace/partners/microsoft/windowsserver2008r2sp1/
 [link-acct-creation]: marketplace-publishing-accounts-creation-registration.md
-[link-azure-vm-1]: ../virtual-machines/virtual-machines-linux-create-upload-vhd/
+[link-azure-vm-1]: ./virtual-machines-linux-create-upload-vhd/
 [link-technet-1]: https://technet.microsoft.com/library/hh848454.aspx
-[link-azure-vm-2]: ../virtual-machines/virtual-machines-linux-agent-user-guide/
+[link-azure-vm-2]: ./virtual-machines-linux-agent-user-guide/
 [link-openssl]: https://www.openssl.org/
 [link-intsvc]: http://www.microsoft.com/download/details.aspx?id=41554
 [link-python]: https://www.python.org/
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0309_2016-->

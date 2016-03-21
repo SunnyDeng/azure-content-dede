@@ -13,20 +13,23 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/28/2016" 
+	ms.date="03/04/2016" 
 	ms.author="tomfitz"/>
 
 # Verschieben von Ressourcen in eine neue Ressourcengruppe oder ein neues Abonnement
 
-In diesem Thema erfahren Sie, wie Sie Ressourcen aus einer Ressourcengruppe in eine andere Ressourcengruppe verschieben. Sie können die Ressourcen auch in ein neues Abonnement verschieben. Möglicherweise müssen Sie Ressourcen aus Folgenden Gründen verschieben:
+In diesem Thema erfahren Sie, wie Sie Ressourcen aus einer Ressourcengruppe in eine andere Ressourcengruppe verschieben. Sie können Ressourcen auch in ein neues Abonnement verschieben (sie muss jedoch im gleichen [Mandanten](./active-directory/active-directory-howto-tenant.md) vorhanden sein). Möglicherweise müssen Sie Ressourcen aus Folgenden Gründen verschieben:
 
 1. Zu Abrechnungszwecken muss eine Ressource sich in einem anderen Abonnement befinden.
 2. Eine Ressource hat nicht mehr den gleichen Lebenszyklus wie die Ressourcen, mit denen sie zuvor gruppiert wurde. Sie möchten sie in eine neue Ressourcengruppe verschieben, damit Sie diese Ressource separat von anderen Ressourcen verwalten können.
 3. Eine Ressource hat jetzt den gleichen Lebenszyklus wie andere Ressourcen in einer anderen Ressourcengruppe. Sie möchten sie in die Ressourcengruppe mit den anderen Ressourcen verschieben, damit Sie sie zusammen verwalten können.
 
+## Überlegungen vor dem Verschieben von Ressourcen
+
 Beim Verschieben einer Ressource sollten Sie einige wichtige Aspekte berücksichtigen:
 
 1. Sie können nicht den Speicherort der Ressource ändern. Wenn Sie ein Ressource verschieben, wird sie nur in eine neue Ressourcengruppe verschoben. Die neue Ressourcengruppe hat möglicherweise einen anderen Speicherort, das heißt jedoch nicht, dass der Speicherort der Ressource geändert wird.
+2. Der Ressourcenanbieter der verschobenen Ressource muss im Zielabonnement registriert sein. Dieses Problem kann auftreten, wenn eine Ressource zu einem neuen Abonnement verschoben wird, dieses aber noch nie mit diesem Ressourcentyp verwendet wurde. Beispiel: Wenn Sie eine API Management-Dienstinstanz zu einem Abonnement verschieben, für das der Ressourcenanbieter **Microsoft.ApiManagement** nicht registriert wurde, wird die Verschiebung nicht durchgeführt. Weitere Informationen zum Überprüfen des Registrierungsstatus und der Ressourcenanbieter im Register finden Sie unter [Ressourcenanbieter und -typen](../resource-manager-supported-services/#resource-providers-and-types).
 2. Die Zielressourcengruppe sollte nur Ressourcen enthalten, die den gleichen Anwendungslebenszyklus wie die verschobenen Ressourcen haben.
 3. Wenn Sie Azure PowerShell oder die Azure-Befehlszeilenschnittstelle verwenden, stellen Sie sicher, dass Sie die neueste Version verwenden. Führen Sie zum Aktualisieren Ihrer Version den Microsoft-Webplattform-Installer aus, und überprüfen Sie, ob eine neue Version verfügbar ist. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md) und [Installieren der Azure-Befehlszeilenschnittstelle](xplat-cli-install.md).
 4. Es kann einige Zeit dauern, bis der Verschiebevorgang abgeschlossen ist. Die Eingabeaufforderung wartet so lange, bis der Vorgang abgeschlossen ist.
@@ -39,20 +42,19 @@ Nicht alle Dienste unterstützen derzeit die Möglichkeit, Ressourcen zu verschi
 Derzeit unterstützen die folgenden Dienste das Verschieben in eine neue Ressourcengruppe und ein neues Abonnement:
 
 - API Management
+- App Service-Apps (siehe unten [App Service-Einschränkungen](#app-service-limitations))
 - Automation
 - Batch
 - Data Factory
 - DocumentDB
 - HDInsight-Cluster
 - Schlüsseltresor
-- Logik-Apps
 - Mobile Engagement
 - Notification Hubs
 - Operational Insights
 - Redis-Cache
 - Suche
-- SQL-Datenbankserver (beim Verschieben eines Servers werden auch alle zugehörigen Datenbanken verschoben. Datenbanken können nicht separat vom Server verschoben werden.)
-- Web-Apps (es gelten einige [Einschränkungen](app-service-web/app-service-move-resources.md))
+- SQL-Datenbankserver (siehe unten [SQL-Datenbank-Einschränkungen](#sql-database-limitations))
 
 Die folgenden Dienste unterstützen das Verschieben in eine neue Ressourcengruppe, jedoch nicht in ein neues Abonnement:
 
@@ -67,16 +69,18 @@ Die folgenden Dienste unterstützen derzeit nicht das Verschieben einer Ressourc
 - Speicher
 - ExpressRoute
 
-Bei der Arbeit mit Web-Apps können Sie nicht nur einen App Services-Plan verschieben. Zum Verschieben von Web-Apps stehen folgende Optionen bereit:
+## App Service-Einschränkungen
+
+Bei der Arbeit mit App Service-Apps können Sie nicht nur einen App Services-Plan verschieben. Zum Verschieben von App Service-Apps stehen folgende Optionen bereit:
 
 - Verschieben Sie alle Ressourcen aus einer Ressourcengruppe in eine andere Ressourcengruppe, wenn die Zielressourcengruppe noch keine Microsoft.Web-Ressourcen enthält.
 - Verschieben Sie Web-Apps in eine andere Ressourcengruppe, behalten Sie jedoch den App Services-Plan in der ursprünglichen Ressourcengruppe bei.
 
+## SQL-Datenbank-Einschränkungen
+
 Eine SQL-Datenbank kann nicht separat vom Server verschoben werden. Die Datenbank und der Server müssen sich in derselben Ressourcengruppe befinden. Wenn Sie eine SQL Server-Instanz verschieben, werden auch alle zugehörigen Datenbanken verschoben.
 
 ## Verschieben von Ressourcen mithilfe von PowerShell
-
-[AZURE.INCLUDE [powershell-preview-inline-include](../includes/powershell-preview-inline-include.md)]
 
 Verwenden Sie zum Verschieben vorhandener Ressourcen in eine andere Ressourcengruppe oder ein anderes Abonnement den Befehl **Move-AzureRmResource**.
 
@@ -111,10 +115,22 @@ Führen Sie zum Verschieben vorhandener Ressourcen in eine andere Ressourcengrup
 
 Geben Sie im Anforderungstext die Zielgruppe und die zu verschiebenden Ressourcen an. Weitere Informationen zur REST-Verschiebung finden Sie unter [Verschieben von Ressourcen](https://msdn.microsoft.com/library/azure/mt218710.aspx).
 
+## Verschieben von Ressourcen über das Portal
+
+Sie können einige Ressourcen über das Portal verschieben. Allerdings werden nicht alle Ressourcenanbieter, die den Vorgang unterstützen, diese Funktion über das Portal bereitstellen.
+
+Um eine Ressource zu verschieben, wählen Sie die Ressource aus, und klicken Sie dann auf die Schaltfläche **Verschieben**.
+
+![Verschieben von Ressourcen](./media/resource-group-move-resources/move-resources.png)
+
+Geben Sie an, wohin die Ressource verschoben werden soll. Wenn andere Ressourcen mit der Ressource verschoben werden müssen, werden diese aufgeführt.
+
+![Auswählen des Ziels](./media/resource-group-move-resources/select-destination.png)
+
 ## Nächste Schritte
 - [Verwenden von Azure PowerShell mit dem Ressourcen-Manager](./powershell-azure-resource-manager.md)
 - [Verwenden der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit der Azure-Ressourcenverwaltung](./xplat-cli-azure-resource-manager.md)
 - [Verwenden des Azure-Portals zum Verwalten von Ressourcen](azure-portal/resource-group-portal.md)
 - [Verwenden von Tags zum Organisieren von Azure-Ressourcen](./resource-group-using-tags.md)
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0309_2016-->

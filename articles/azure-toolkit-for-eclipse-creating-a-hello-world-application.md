@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="multiple"
     ms.devlang="Java"
     ms.topic="article"
-    ms.date="01/09/2016" 
+    ms.date="03/04/2016" 
     ms.author="robmcm"/>
 
 <!-- Legacy MSDN URL = https://msdn.microsoft.com/library/azure/hh690944.aspx -->
@@ -95,7 +95,7 @@ Da die Bereitstellung in einer Stagingumgebung erfolgt ist, hat der DNS-Name die
 
 In dieser exemplarischen Vorgehensweise wurde die Bereitstellung in einer Stagingumgebung ausgeführt. Bei einer Bereitstellung für den Produktivbetrieb führen Sie jedoch die gleichen Schritte aus. Der einzige Unterschied besteht darin, dass Sie im Dialogfeld **Publish to Azure** bei **Target environment** nicht **Staging**, sondern **Production** auswählen. Eine Bereitstellung für den Produktivbetrieb führt zu einer URL, die auf einem DNS-Namen Ihrer Wahl basiert und nicht auf einer GUID wie beim Staging.
 
->[AZURE.WARNING]Sie haben jetzt Ihre Azure-Anwendung in der Cloud bereitgestellt. Bevor Sie fortfahren, sollten Sie sich jedoch klarmachen, dass für eine bereitgestellte Anwendung – auch wenn sie nicht ausgeführt wird – weiterhin auf Ihr Abonnement angerechnete fakturierbare Zeiten entstehen. Es ist daher äußerst wichtig, dass Sie nicht gewünschte Bereitstellungen aus Ihrem Azure-Abonnement löschen.
+>[AZURE.WARNING] Sie haben jetzt Ihre Azure-Anwendung in der Cloud bereitgestellt. Bevor Sie fortfahren, sollten Sie sich jedoch klarmachen, dass für eine bereitgestellte Anwendung – auch wenn sie nicht ausgeführt wird – weiterhin auf Ihr Abonnement angerechnete fakturierbare Zeiten entstehen. Es ist daher äußerst wichtig, dass Sie nicht gewünschte Bereitstellungen aus Ihrem Azure-Abonnement löschen.
 
 ## Informationen zu Azure-Bereitstellungsprojekten ##
 
@@ -103,7 +103,7 @@ Zum Bereitstellen von Java-Anwendungen in Azure benötigen Sie ein Azure-Bereits
 
 Neben den Informationen über Ihre Anwendungen enthält ein Azure-Bereitstellungsprojekt auch Informationen über andere wichtige Komponenten der Bereitstellung, insbesondere über den Anwendungsservercontainer, in dem die Web-App ausgeführt wird, und die Java-Runtime, auf der sie ausgeführt wird. Azure unterstützt eine große Zahl von Java-Runtimes und Java-Anwendungsservern, unter denen Sie auswählen können.
 
-Das hier verwendete Beispiel wurde zu Lernzwecken erheblich vereinfacht. Ein Azure-Bereitstellungsprojekt kann jedoch auch andere wichtige Konfigurationsinformationen enthalten. Dies ermöglicht es Ihnen, mit Ihren Anwendungen nahezu beliebig komplexe, skalierbare, hochverfügbare Mehrebenen-Clouddienste zu erstellen. Sie können z. B. **Sitzungsaffinität (persistente Sitzungen)**, **schnelles Zwischenspeichern**, **Remotedebuggen**, **SSL-Abladung**, **Firewall-/Portrourting**, **Remotezugriff** und eine Reihe von weiteren leistungsfähigen Funktionen aktivieren.
+Das hier verwendete Beispiel wurde zu Lernzwecken erheblich vereinfacht. Ein Azure-Bereitstellungsprojekt kann jedoch auch andere wichtige Konfigurationsinformationen enthalten. Dies ermöglicht es Ihnen, mit Ihren Anwendungen nahezu beliebig komplexe, skalierbare, hochverfügbare Mehrebenen-Clouddienste zu erstellen. Sie können z. B. **Sitzungsaffinität (persistente Sitzungen)**, **schnelles Zwischenspeichern**, **Remotedebuggen**, **SSL-Abladung**, **Firewall-/Portrourting**, **Remotezugriff** und eine Reihe von weiteren leistungsfähigen Funktionen aktivieren.
 
 Wenn Sie die Schritte im vorherigen Abschnitt dieses Tutorials („So stellen Sie die Anwendung schnell und einfach in Azure bereit“) vollständig ausgeführt haben, sehen Sie jetzt im Projektexplorer ein für Sie neu generiertes Azure-Bereitstellungsprojekt mit dem Namen „**MyHelloWorld\_onAzure**“
 
@@ -111,22 +111,22 @@ Sie hätten auch zu Beginn dieses Tutorials selbst ein leeres Azure-Bereitstellu
 
 Um ein Azure-Bereitstellungsprojekt von Grund auf neu zu erstellen, klicken Sie auf die Schaltfläche **New Azure Deployment Project** ![][ic710876].
 
-Unabhängig davon, ob Sie mit einem bereits vorhandenen Azure-Bereitstellungsprojekt arbeiten oder eines von Grund auf neu erstellen, können Sie dessen Konfigurationseinstellungen und Komponenten jederzeit problemlos ändern, z. B. das JDK oder den Anwendungsserver.
+Unabhängig davon, ob Sie mit einem bereits vorhandenen Azure-Bereitstellungsprojekt arbeiten oder eines von Grund auf neu erstellen, können Sie dessen Konfigurationseinstellungen und Komponenten jederzeit problemlos ändern, z. B. das JDK oder den Anwendungsserver.
 
 So ändern Sie das JDK, den Anwendungsserver oder die Anwendungsliste in einem vorhandenen Azure-Bereitstellungsprojekt:
 
-1. Erweitern Sie im Projektexplorer den Projektknoten (z. B. **MyHelloWorld\_onAzure**).
+1. Erweitern Sie im Projektexplorer den Projektknoten (z. B. **MyHelloWorld\_onAzure**).
 2. Klicken Sie mit der rechten Maustaste auf **WorkerRole1**.
 3. Erweitern Sie im Kontextmenü das Untermenü **Azure**.
 4. Klicken Sie auf **Server Configuration**.
 
-Unabhängig davon, ob Sie diese Serverkonfigurationsschritte durch Bearbeiten eines vorhandenen Azure-Bereitstellungsprojekts oder durch eine vollkommene Neuerstellung gestartet haben, werden Ihnen gleichartige Dialogfelder angezeigt, in denen Sie Ihre JDK-, Server- und Anwendungskomponenten konfigurieren können. Ausführliche Informationen zum Ändern der Einstellungen in diesen Dialogfeldern, z. B. zum Ändern des JDKs und des Anwendungsservers sowie zum Hinzufügen oder Entfernen von Anwendungen in einer Bereitstellung, finden Sie im Artikel [Eigenschaften für die Serverkonfiguration][].
+Unabhängig davon, ob Sie diese Serverkonfigurationsschritte durch Bearbeiten eines vorhandenen Azure-Bereitstellungsprojekts oder durch eine vollkommene Neuerstellung gestartet haben, werden Ihnen gleichartige Dialogfelder angezeigt, in denen Sie Ihre JDK-, Server- und Anwendungskomponenten konfigurieren können. Ausführliche Informationen zum Ändern der Einstellungen in diesen Dialogfeldern, z. B. zum Ändern des JDKs und des Anwendungsservers sowie zum Hinzufügen oder Entfernen von Anwendungen in einer Bereitstellung, finden Sie im Artikel [Eigenschaften für die Serverkonfiguration][].
 
 ## Nur für Windows: So stellen Sie die Anwendung im Serveremulator bereit ##
 
->[AZURE.NOTE]Der Azure-Emulator ist nur unter Windows verfügbar. Überspringen Sie diesen Abschnitt, wenn Sie ein anderes Betriebssystem als Windows verwenden.
+>[AZURE.NOTE] Der Azure-Emulator ist nur unter Windows verfügbar. Überspringen Sie diesen Abschnitt, wenn Sie ein anderes Betriebssystem als Windows verwenden.
 
-Wenn Sie ein neues Azure-Bereitstellungsprojekt gemäß den zuvor beschriebenen Schritten erstellt haben, d. h. implizit, indem Sie Ihre Anwendung in Azure veröffentlicht haben, wurden das JDK und die Anwendungsserver für die Cloud konfiguriert, aber nicht für eine lokale Emulation. Ihr Projekt muss daher zum Testen im lokalen Emulator vorbereitet werden. Führen Sie dazu folgende Schritte aus:
+Wenn Sie ein neues Azure-Bereitstellungsprojekt gemäß den zuvor beschriebenen Schritten erstellt haben, d. h. implizit, indem Sie Ihre Anwendung in Azure veröffentlicht haben, wurden das JDK und die Anwendungsserver für die Cloud konfiguriert, aber nicht für eine lokale Emulation. Ihr Projekt muss daher zum Testen im lokalen Emulator vorbereitet werden. Führen Sie dazu folgende Schritte aus:
 
 1. Klicken Sie im Projektexplorer von Eclipse auf **MyHelloWorld\_onAzure**.
 1. Klicken Sie mit der rechten Maustaste auf **WorkerRole1**.
@@ -138,7 +138,7 @@ Wenn Sie ein neues Azure-Bereitstellungsprojekt gemäß den zuvor beschriebenen 
 1. Klicken Sie auf **OK**.
 1. Klicken Sie auf der Eclipse-Symbolleiste auf die Schaltfläche **Run in Azure Emulator** ![][ic710879]. Wenn die Schaltfläche **Run in Azure Emulator** nicht aktiviert ist, stellen Sie sicher, dass **MyHelloWorld\_onAzure** im Projektexplorer von Eclipse ausgewählt ist und dass der Projektexplorer von Eclipse als aktuelles Fenster den Fokus hat. Dadurch wird zunächst eine vollständige Erstellung Ihres Projekts gestartet, und anschließend wird Ihre Java-Webanwendung im Serveremulator aufgerufen. (Beachten Sie, dass die erste Erstellung je nach Leistungscharakteristik Ihres Computers einige Sekunden oder auch einige Minuten in Anspruch nehmen kann. Nachfolgende Erstellungsvorgänge werden schneller ausgeführt.) Nach Abschluss des ersten Erstellungsschritts werden Sie von der Windows-Benutzerkontensteuerung (UAC, User Account Control) zu einer Genehmigung aufgefordert, dass dieser Befehl an Ihrem Computer Änderungen vornehmen darf. Klicken Sie auf **Ja**.
 
->[AZURE.IMPORTANT]Wenn Ihnen die Eingabeaufforderung der Benutzerkontensteuerung nicht angezeigt wird, prüfen Sie, ob auf der Windows-Taskleiste ein Symbol für die Benutzerkontensteuerung angezeigt wird. Mitunter wird die Eingabeaufforderung der Benutzerkontensteuerung nicht als oberstes Fenster angezeigt und ist nur als Taskleistensymbol sichtbar.
+>[AZURE.IMPORTANT] Wenn Ihnen die Eingabeaufforderung der Benutzerkontensteuerung nicht angezeigt wird, prüfen Sie, ob auf der Windows-Taskleiste ein Symbol für die Benutzerkontensteuerung angezeigt wird. Mitunter wird die Eingabeaufforderung der Benutzerkontensteuerung nicht als oberstes Fenster angezeigt und ist nur als Taskleistensymbol sichtbar.
 
 1. Untersuchen Sie die Ausgabe in der Benutzeroberfläche des Serveremulators und prüfen Sie, ob bei Ihrem Projekt Probleme vorhanden sind. Abhängig vom Inhalt Ihrer Bereitstellung kann es einige Minuten dauern, bis Ihre Anwendung im Serveremulator vollständig gestartet ist.
 1. Rufen Sie einen Browser auf, und verwenden Sie als Adresse die URL `http://localhost:8080/MyHelloWorld` (bei dem Teil `MyHelloWorld` der URL muss die Groß-/Kleinschreibung beachtet werden). Daraufhin sollte die Anwendung „MyHelloWorld“ angezeigt werden (die Ausgabe von „index.jsp“), ähnlich wie in der folgenden Abbildung:
@@ -195,4 +195,4 @@ Weitere Informationen zum Verwenden von Azure mit Java finden Sie im [Azure Java
 [ic719491]: ./media/azure-toolkit-for-eclipse-creating-a-hello-world-application/ic719491.png
 [ic789598]: ./media/azure-toolkit-for-eclipse-creating-a-hello-world-application/ic789598.png
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0309_2016-->
