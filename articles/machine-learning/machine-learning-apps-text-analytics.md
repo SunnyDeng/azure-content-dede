@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/22/2016"
+	ms.date="03/08/2016"
 	ms.author="onewth"/>
 
 
@@ -58,7 +58,7 @@ Stellen Sie sicher, dass Sie die richtigen Header in Ihre Anforderung einbeziehe
                
 	Where <creds> = ConvertToBase64(“AccountKey:” + yourActualAccountKey);  
 
-Sie finden den Schlüssel Ihres Kontos in [Azure Data Market](https://datamarket.azure.com/account/keys).
+Sie finden den Schlüssel Ihres Kontos in [Azure Data Market](https://datamarket.azure.com/account/keys). Beachten Sie, dass derzeit nur JSON für Eingabe- und Ausgabeformate akzeptiert wird. XML wird nicht unterstützt.
 
 ---
 
@@ -383,4 +383,4 @@ Die Eigenschaften für jeden Teil der Antwort lauten:
 | TopicId | Die Themen-ID, der der Datensatz zugewiesen wurde. |
 | Distance | Zuverlässigkeit, dass der Datensatz zu dem Thema gehört. Je näher „Distance“ an 0 liegt, desto höher ist die Zuverlässigkeit. |
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0309_2016-->

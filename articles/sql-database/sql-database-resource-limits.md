@@ -14,7 +14,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="data-management"
-	ms.date="02/17/2016"
+	ms.date="03/02/2016"
 	ms.author="jroth" />
 
 
@@ -55,12 +55,6 @@ Für eine einzelne Datenbank sind deren Einschränkungen durch die Dienstebene u
 
 Eine erweiterte Definition der einzelnen Ressourcen, die in den vorangehenden Tabellen aufgeführt werden, können Sie der Beschreibungen in [Funktionen und Grenzen der Serviceebenen](sql-database-performance-guidance.md#service-tier-capabilities-and-limits) entnehmen. Eine Übersicht über die Diensttarife finden Sie unter [Dienstebenen und Leistungsstufen für Azure SQL-Datenbank](sql-database-service-tiers.md).
 
-## DTU-Kontingent pro Server
-
-Azure SQL-Datenbank verfügt über ein DTU-Kontingent pro logischen Server von derzeit 15000 DTUs. Dieses Kontingent stellt die DTUs dar, die ein logischer Server hosten kann, basierend auf der Summe der DTUs der Leistungsstufe der einzelnen Datenbanken auf dem Server. Beispielsweise hat ein Server mit 5 Basic-Datenbanken (maximal 5 x 5 DTUs), 2 Standard-S1-Datenbanken (maximal 2 x 20 DTUs) und 3 Premium-P1-Datenbanken (bis zu 3 x 100 DTUs) insgesamt 365 DTUs des DTU-Kontingents von 15000 verbraucht.
-
->[AZURE.NOTE] [Wenden Sie sich an den Support](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/), um dieses Kontingent zu erhöhen.
-
 ## Weitere Einschränkungen für SQL-Datenbanken
 
 | Bereich | Begrenzung | Beschreibung |
@@ -75,4 +69,4 @@ Azure SQL-Datenbank verfügt über ein DTU-Kontingent pro logischen Server von d
 
 [Fehlermeldungen für Clientprogramme der SQL-Datenbank](sql-database-develop-error-messages.md)
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0309_2016-->

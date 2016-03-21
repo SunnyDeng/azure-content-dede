@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="powershell"
    ms.workload="TBD" 
-   ms.date="01/22/2016"
+   ms.date="03/02/2016"
    ms.author="coreyp"/>
 
 # Azure Automation DSC – Übersicht #
@@ -56,7 +56,7 @@ Azure Automation DSC ermöglicht Ihnen das Importieren, Erstellen und Kompiliere
 
 ###Knotenkonfiguration###
 
-Wenn eine DSC-Konfiguration kompiliert wird, werden in Abhängigkeit von den Node-Blöcken in der Konfiguration eine oder mehrere Knotenkonfigurationen erstellt. Eine Knotenkonfiguration ist dasselbe wie ein MOF- oder Konfigurationsdokument (wenn Sie mit diesen PS DSC-Begriffen vertraut sind) und repräsentiert eine „Rolle“, wie z. B. einen Webserver oder Worker, deren gewünschten Zustand einer oder mehrere Knoten annehmen sollen oder deren Kompatibilität geprüft werden soll. Namen von Knotenkonfigurationen in Azure Automation DSC weisen das Format „Konfigurationsname.NodeConfigurationBlockName“ auf.
+Wenn eine DSC-Konfiguration kompiliert wird, werden in Abhängigkeit von den Node-Blöcken in der Konfiguration eine oder mehrere Knotenkonfigurationen erstellt. Eine Knotenkonfiguration ist dasselbe wie ein MOF- oder Konfigurationsdokument (wenn Sie mit diesen PS DSC-Begriffen vertraut sind) und repräsentiert eine „Rolle“, wie z. B. einen Webserver oder Worker, deren gewünschten Zustand einer oder mehrere Knoten annehmen sollen oder deren Kompatibilität geprüft werden soll. Namen von Knotenkonfigurationen in Azure Automation DSC weisen das Format „Konfigurationsname.NodeConfigurationBlockName“ auf.
 
 PS DSC-Knoten erkennen Knotenkonfigurationen, die entweder per DSC-Push oder mithilfe von Pullmethoden angewendet werden sollen. Azure Automation DSC basiert auf der DSC-Pullmethode, bei der Knoten Knotenkonfigurationen anfordern, die sie von Azure Automation DSC-Pullservern anwenden sollen. Da die Knoten die Anforderung an Azure Automation DSC senden, können sich die Knoten hinter Firewalls befinden, keine eingehenden Ports geöffnet haben usw. Sie benötigen nur ausgehenden Zugriff auf das Internet (entweder direkt oder über einen Proxy).
 
@@ -102,7 +102,7 @@ Die folgende Abbildung veranschaulicht detailliert die Prozessschritte im DSC-Le
 
 - Azure Automation DSC bietet zurzeit keine Unterstützung für teilweise oder zusammengesetzte DSC-Konfigurationen. Zusammengesetzte DSC-Ressourcen können jedoch importiert und genau wie in der lokalen PowerShell verwendet werden, um die Wiederverwendung von Konfigurationen zu ermöglichen.
 
-- Für den PowerShell DSC-Agent für Windows muss die neueste Version von WMF 5 installiert werden, um eine Kommunikation mit Azure Automation zu ermöglichen. Die neueste Version des PowerShell DSC-Agents für Linux muss installiert sein, um unter Linux eine Kommunikation mit Azure Automation zu ermöglichen.
+- Für den PowerShell DSC-Agent für Windows muss die neueste Version von WMF 5 installiert werden, um eine Kommunikation mit Azure Automation zu ermöglichen. Die neueste Version des PowerShell DSC-Agents für Linux muss installiert sein, um unter Linux eine Kommunikation mit Azure Automation zu ermöglichen.
 
 - Der traditionelle PowerShell DSC-Pullserver erwartet, dass Modul-ZIP-Dateien im Format **Modulname\_Version.zip** auf dem Pullserver platziert werden. Azure Automation erwartet, dass PowerShell-Module mit Namen im Format **Modulname.zip** importiert werden. In [diesem Blogbeitrag](https://azure.microsoft.com/blog/2014/12/15/authoring-integration-modules-for-azure-automation/) finden Sie weitere Informationen zum erforderlichen Format von Integrationsmodulen, um diese Module in Azure Automation zu importieren.
 
@@ -116,6 +116,9 @@ Die folgende Abbildung veranschaulicht detailliert die Prozessschritte im DSC-Le
 
 - Wenn beim Upgrade auf WMF 5 RTM der Computer bereits als Knoten in Azure Automation DSC registriert ist, heben Sie seine Registrierung in Azure Automation DSC auf, und registrieren Sie ihn nach dem Upgrade auf WMF 5 RTM erneut. Löschen Sie vor der Neuregistrierung die Datei „$env:windir\\system32\\configuration\\DSCEngineCache.mof“.
 
+- PowerShell DSC-Cmdlets funktionieren möglicherweise nicht, wenn WMF 5 RTM zusätzlich zu WMF 5 Produktion Preview installiert ist. Um dieses Problem zu beheben, führen Sie den folgenden Befehl in einer PowerShell-Sitzung mit erhöhten Rechten (als Administrator) aus: `mofcomp $env:windir\system32\wbem\DscCoreConfProv.mof`
+ 
+
 ##Verwandte Artikel##
 
 - [Integrieren von Computern für die Verwaltung durch Azure Automation DSC](../automation/automation-dsc-onboarding.md)
@@ -124,4 +127,4 @@ Die folgende Abbildung veranschaulicht detailliert die Prozessschritte im DSC-Le
 - [Azure Automation DSC – Preise](https://azure.microsoft.com/pricing/details/automation/)
 - [Kontinuierliche Bereitstellung für IaaS-VMs mit Azure Automation DSC und Chocolatey](automation-dsc-cd-chocolatey.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0309_2016-->

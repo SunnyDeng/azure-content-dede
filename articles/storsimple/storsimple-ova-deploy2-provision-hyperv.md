@@ -13,14 +13,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="03/01/2016"
+   ms.date="03/07/2016"
    ms.author="alkohli"/>
 
 # Bereitstellen des StorSimple Virtual Array – Bereitstellen eines Virtual Array in Hyper-V
 
 ![](./media/storsimple-ova-deploy2-provision-hyperv/hyperv4.png)
 
-## Übersicht 
+## Übersicht
 
 Dieses Tutorial zur Bereitstellung bezieht sich auf Microsoft Azure StorSimple Virtual Arrays (auch als „lokale virtuelle StorSimple-Geräte“ oder „virtuelle StorSimple-Geräte“ bezeichnet) mit der Version vom März 2016 (allgemeine Verfügbarkeit). In diesem Tutorial wird beschrieben, wie Sie ein StorSimple Virtual Array auf einem Hostsystem mit Hyper-V 2008 R2, Hyper-V 2012 oder Hyper-V 2012 R2 bereitstellen.
 
@@ -38,10 +38,10 @@ Stellen Sie Folgendes sicher, bevor Sie beginnen:
 -   Sie haben alle Schritte unter [Vorbereiten des Portals für StorSimple Virtual Array](storsimple-ova-deploy1-portal-prep.md) ausgeführt.
 
 -   Sie haben das Image des virtuellen Geräts für Hyper-V aus dem Azure-Portal heruntergeladen. Weitere Informationen finden Sie unter [Schritt 3: Herunterladen des Image mit dem virtuellen Gerät](storsimple-ova-deploy1-portal-prep.md#step-3-download-the-virtual-device-image).
-	
+
 	> [AZURE.IMPORTANT] Die Software auf dem StorSimple Virtual Array kann nur in Verbindung mit dem StorSimple Manager-Dienst verwendet werden.
 
-### Für das virtuelle StorSimple-Gerät 
+### Für das virtuelle StorSimple-Gerät
 
 Stellen Sie Folgendes sicher, bevor Sie ein virtuelles Gerät bereitstellen:
 
@@ -50,20 +50,20 @@ Stellen Sie Folgendes sicher, bevor Sie ein virtuelles Gerät bereitstellen:
 -   Das Hostsystem verfügt für die Bereitstellung des virtuellen Geräts über die folgenden Ressourcen:
 
 	-   Mindestens 4 Kerne
-	
+
 	-   Mindestens 8 GB RAM
-	
+
 	-   Eine Netzwerkschnittstelle
-	
+
 	-   Einen virtuellen Datenträger mit 500 GB für Systemdaten
 
-### Für das Netzwerk im Datencenter 
+### Für das Netzwerk im Datencenter
 
 Stellen Sie Folgendes sicher, bevor Sie beginnen:
 
 -   Sie haben sich die Netzwerkanforderungen zum Bereitstellen eines virtuellen StorSimple-Geräts angesehen und das Netzwerk des Rechenzentrums gemäß den Anforderungen konfiguriert. Weitere Informationen finden Sie unter [StorSimple Virtual Array-Netzwerkanforderungen](storsimple-ova-system-requirements.md#networking-requirements).
 
-## Schritt-für-Schritt-Bereitstellung 
+## Schritt-für-Schritt-Bereitstellung
 
 Zum Bereitstellen und Herstellen der Verbindung mit einem virtuellen Gerät müssen Sie die folgenden Schritte ausführen:
 
@@ -144,7 +144,7 @@ Führen Sie die folgenden Schritte aus, um ein Gerät im Hypervisor bereitzustel
 
     b. Klicken Sie auf **Weiter**.
 
-	![](./media/storsimple-ova-deploy2-provision-hyperv/image8.png)
+	![](./media/storsimple-ova-deploy2-provision-hyperv/image8m.png)
 
 1.  Überprüfen Sie die angezeigte **Zusammenfassung**. Klicken Sie auf **Fertig stellen**, um die virtuelle Maschine zu erstellen.
 
@@ -160,7 +160,7 @@ Führen Sie die folgenden Schritte aus, um ein Gerät im Hypervisor bereitzustel
 
 1.  Um die Mindestanforderungen zu erfüllen, müssen Sie auch einen virtuellen Datenträger mit 500 GB hinzufügen. Auf der Seite **Einstellungen**:
 
-    1.  Wählen Sie im linken Bereich die Option **SCSI-Controller**. 
+    1.  Wählen Sie im linken Bereich die Option **SCSI-Controller**.
     2.  Wählen Sie im rechten Bereich die Option **Festplatte**, und klicken Sie auf **Hinzufügen**.
 
 	![](./media/storsimple-ova-deploy2-provision-hyperv/image12.png)
@@ -193,9 +193,6 @@ Führen Sie die folgenden Schritte aus, um ein Gerät im Hypervisor bereitzustel
 
 	![](./media/storsimple-ova-deploy2-provision-hyperv/image19.png)
 
-1.  Sie gelangen zurück auf die Seite **Einstellungen**. Führen Sie diesen Schritt nur aus, wenn Sie eine VHDX verwenden. Wenn Sie eine VHD und einen virtuellen Generation 1-Computer verwenden, überspringen Sie diesen Schritt, und fahren Sie mit dem nächsten fort. Sie müssen jetzt den sicheren Start auf dem virtuellen Computer deaktivieren. „Sicherer Start“ ist standardmäßig aktiviert, wenn Sie einen neuen virtuellen Generation 2-Computer erstellen. Wählen Sie auf der Seite **Einstellungen** für den virtuellen Generation 2-Computer unter **Hardware** **Firmware** aus, und deaktivieren Sie das Kontrollkästchen **Sicheren Start aktivieren**.
-
-
 2.  Sie gelangen zurück auf die Seite **Einstellungen**. Klicken Sie auf **OK**, um die Seite **Einstellungen** zu schließen, und kehren Sie zum Hyper-V-Manager-Fenster zurück.
 
 	![](./media/storsimple-ova-deploy2-provision-hyperv/image20.png)
@@ -214,7 +211,7 @@ Führen Sie die folgenden Schritte aus, um Ihr virtuelles Gerät zu starten und 
 
 	![](./media/storsimple-ova-deploy2-provision-hyperv/image22.png)
 
-1.  Unter Umständen müssen Sie 5 bis 10 Minuten warten, bis das Gerät bereit ist. In der Konsole wird eine Statusmeldung angezeigt, die den Fortschritt angibt. Wenn das Gerät bereit ist, wählen Sie **Aktion**. Drücken Sie `Ctrl + Alt + Delete`, um sich beim virtuellen Gerät anzumelden. Der Standardbenutzer ist *StorSimpleAdmin*, und das Standardkennwort ist *Password1*.
+1.  Unter Umständen müssen Sie 5 bis 10 Minuten warten, bis das Gerät bereit ist. In der Konsole wird eine Statusmeldung angezeigt, die den Fortschritt angibt. Wenn das Gerät bereit ist, wählen Sie **Aktion**. Drücken Sie `Ctrl + Alt + Delete`, um sich am virtuellen Gerät anzumelden. Der Standardbenutzer ist *StorSimpleAdmin*, und das Standardkennwort ist *Password1*.
 
 	![](./media/storsimple-ova-deploy2-provision-hyperv/image23.png)
 
@@ -236,13 +233,13 @@ Führen Sie die folgenden Schritte aus, um Ihr virtuelles Gerät zu starten und 
 
 1.  Die Schritte 6 bis 8 gelten nur beim Starten in anderen Umgebungen als einer DHCP-Umgebung. Falls Sie sich in einer DHCP-Umgebung befinden, sollten Sie diese Schritte überspringen und mit Schritt 9 fortfahren. Wenn Sie Ihr Gerät in einer anderen Umgebung als einer DHCP-Umgebung gestartet haben, wird der folgende Bildschirm angezeigt.
 
-	![](./media/storsimple-ova-deploy2-provision-hyperv/image28.png)
+	![](./media/storsimple-ova-deploy2-provision-hyperv/image28m.png)
 
  	Sie müssen das Netzwerk jetzt konfigurieren.
 
-1.  Verwenden Sie den `Get-HcsIpAddress`-Befehl, um die Netzwerkschnittstellen aufzulisten, die auf Ihrem virtuellen Gerät aktiviert sind. Wenn für das Gerät eine einzelne Netzwerkschnittstelle aktiviert ist, wird dieser Schnittstelle der Standardname `Ethernet` zugewiesen.
+1.  Verwenden Sie den Befehl `Get-HcsIpAddress`, um die Netzwerkschnittstellen aufzulisten, die auf Ihrem virtuellen Gerät aktiviert sind. Wenn für das Gerät eine einzelne Netzwerkschnittstelle aktiviert ist, wird dieser Schnittstelle der Standardname `Ethernet` zugewiesen.
 
-	![](./media/storsimple-ova-deploy2-provision-hyperv/image29.png)
+	![](./media/storsimple-ova-deploy2-provision-hyperv/image29m.png)
 
 1.  Verwenden Sie das `Set-HcsIpAddress`-Cmdlet, um das Netzwerk zu konfigurieren. Unten ist ein Beispiel angegeben:
 
@@ -252,7 +249,7 @@ Führen Sie die folgenden Schritte aus, um Ihr virtuelles Gerät zu starten und 
 
 1.  Nachdem die anfängliche Einrichtung abgeschlossen und das Gerät gestartet wurde, wird der Bannertext für das Gerät angezeigt. Notieren Sie sich die IP-Adresse und die URL, die im Bannertext für die Verwaltung des Geräts angezeigt wird. Sie verwenden diese IP-Adresse zum Herstellen der Verbindung mit der Web-UI Ihres virtuellen Geräts und zum Durchführen des lokalen Setups und der Registrierung.
 
-	![](./media/storsimple-ova-deploy2-provision-hyperv/image31.png)
+	![](./media/storsimple-ova-deploy2-provision-hyperv/image31m.png)
 
 	Wenn Ihr Gerät die Mindestanforderungen für die Konfiguration nicht erfüllt, wird im Bannertext ein Fehler angezeigt (siehe unten). Sie müssen die Gerätekonfiguration ändern, damit sie über ausreichende Ressourcen zum Erfüllen der Mindestanforderungen verfügt. Sie können das Gerät dann neu starten und die Verbindung dafür herstellen. Die Mindestanforderungen für die Konfiguration finden Sie unter [Schritt 1: Sicherstellen, dass das Hostsystem die Mindestanforderungen für virtuelle Geräte erfüllt](#step-1-ensure-that-the-host-system-meets-minimum-virtual-device-requirements).
 
@@ -276,4 +273,4 @@ Sehen Sie sich das Video an, in dem die Bereitstellung eines StorSimple Virtual 
 
 -   [Einrichten des StorSimple Virtual Array als iSCSI-Server](storsimple-ova-deploy3-iscsi-setup.md)
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

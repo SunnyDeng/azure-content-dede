@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="02/17/2016"
+   ms.date="03/03/2016"
    ms.author="sahajs;barbkess;sonyama"/>
 
 
@@ -25,9 +25,9 @@ Dieser Artikel erläutert die Grundlagen der Planung von Geschäftskontinuität 
 
 Geschäftskontinuität- und Notfallwiederherstellungspläne müssen für folgende Parameter optimiert sein:
 
-**Recovery Time Objective (RTO)**: die maximal akzeptable Zeitspanne, bevor die Datenbank nach einem Ausfall vollständig wiederhergestellt ist, d. h. der maximale Verlust von Verfügbarkeit bei Ausfällen.
+**Recovery Time Objective (RTO)**: die maximal akzeptable Zeitspanne, bevor die Datenbank nach einem Ausfall vollständig wiederhergestellt ist, d. h. der maximale Verlust von Verfügbarkeit bei Ausfällen.
 
-**Recovery Point Objective (RPO)**: das maximal akzeptable Zeitfenster verlorener Updates, während die Datenbank nach einem Ausfall wiederhergestellt wird, d. h. der maximale Verlust von Daten bei Ausfällen.
+**Recovery Point Objective (RPO)**: das maximal akzeptable Zeitfenster verlorener Updates, während die Datenbank nach einem Ausfall wiederhergestellt wird, d. h. der maximale Verlust von Daten bei Ausfällen.
 
 **Estimated Recovery Time (ERT)**: die geschätzte Dauer bis zur vollständigen Funktion der Datenbank nach einer Wiederherstellungsanforderung.
 
@@ -78,4 +78,4 @@ Informationen zu den Geschäftskontinuitätsfeatures anderer SQL-Datenbank-Editi
 
 <!--Other Web references-->
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0309_2016-->

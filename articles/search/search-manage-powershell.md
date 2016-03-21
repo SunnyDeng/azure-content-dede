@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Verwalten von Azure Search mit PowerShell-Skripts | Microsoft Azure | Gehosteter Cloudsuchdienst" 
-	description="Verwalten Ihres Azure Search-Diensts in Microsoft Azure mit PowerShell-Skripts. Erstellen oder Aktualisieren eines Azure Search-Diensts und Verwalten von Azure Search-Administratorschlüsseln"  
+	description="Verwalten Sie den Azure Search-Dienst mit PowerShell-Skripts. Erstellen oder Aktualisieren eines Azure Search-Diensts und Verwalten von Azure Search-Administratorschlüsseln" 
 	services="search" 
 	documentationCenter="" 
 	authors="seansaleh" 
@@ -14,10 +14,10 @@
 	ms.workload="search" 
 	ms.topic="article" 
 	ms.tgt_pltfrm="powershell" 
-	ms.date="02/25/2016" 
+	ms.date="03/08/2016" 
 	ms.author="seasa"/>
 
-# Verwalten Ihres Search-Diensts in Microsoft Azure mit PowerShell
+# Verwalten des Azure Search-Diensts mit PowerShell
 > [AZURE.SELECTOR]
 - [Portal](search-manage.md)
 - [PowerShell](search-manage-powershell.md)
@@ -49,7 +49,7 @@ Führen Sie den folgenden Befehl aus, um das Abonnement anzugeben. Im folgenden 
 ## Befehle als Starthilfe
 
 	$serviceName = "your-service-name-lowercase-with-dashes"
-	$sku = "free" # or "standard" for a paid service
+	$sku = "free" # or "basic" or "standard" for paid services
 	$location = "West US"
 	# You can get a list of potential locations with
 	# (Get-AzureRmResourceProvider -ListAvailable | Where-Object {$_.ProviderNamespace -eq 'Microsoft.Search'}).Locations
@@ -136,4 +136,4 @@ Nachdem der Dienst erstellt wurde, können Sie die nächsten Schritte ausführen
 
 - [Analysieren Ihres Azure Search-Datenverkehrs](search-traffic-analytics.md)
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

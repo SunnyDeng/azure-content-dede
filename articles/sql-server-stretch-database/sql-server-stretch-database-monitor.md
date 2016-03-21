@@ -3,9 +3,9 @@
 	description="Erfahren Sie Einzelheiten über das Überwachen des Status der Datenmigration."
 	services="sql-server-stretch-database"
 	documentationCenter=""
-	authors="douglasl"
-	manager="jhubbard"
-	editor="monicar"/>
+	authors="douglaslMS"
+	manager=""
+	editor=""/>
 
 <tags
 	ms.service="sql-server-stretch-database"
@@ -49,4 +49,4 @@ Es gibt mehrere Probleme, die eine Migration beeinflussen können. Überprüfen 
 <!--Image references-->
 [StretchMonitorImage1]: ./media/sql-server-stretch-database-monitor/StretchDBMonitor.png
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

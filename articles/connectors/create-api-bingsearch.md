@@ -48,9 +48,6 @@ Keine | <ul><li>Web durchsuchen</li><li>Videos suchen</li><li>Bilder suchen</li>
 
 Alle APIs unterstützen Daten im JSON- und XML-Format.
 
-## Hinzufügen zusätzlicher Konfiguration
-Wenn Sie die Bing-Suche PowerApps Enterprise hinzufügen, werden Sie aufgefordert, einen Kontoschlüssel anzugeben. Wenn Sie keinen Schlüssel für die Bing-Suche haben, nutzen Sie das kostenlose [Angebot für die Bing-Suche](https://datamarket.azure.com/dataset/bing/search), um einen Schlüssel zu erhalten.
-
 
 ## Swagger-REST-API – Referenz
 Gilt für Version: 1.0.
@@ -120,7 +117,7 @@ Ruft Bilder aus einer Bing-Suche ab. ```GET: /Image```
 
 
 ### Nachrichten suchen    
-Ruft Ergebnisse zu Nachrichten aus einer Bing-Suche ab. ```GET: /News```
+Ruft neue Ergebnisse aus einer Bing-Suche ab. ```GET: /News```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -143,7 +140,7 @@ Ruft Ergebnisse zu Nachrichten aus einer Bing-Suche ab. ```GET: /News```
 
 
 ### Schreibweisen suchen    
-Ruft Vorschläge für Schreibweisen ab. ```GET: /SpellingSuggestions```
+Ruft Rechtschreibvorschläge ab. ```GET: /SpellingSuggestions```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -297,8 +294,8 @@ Ruft alle Websites, Videos, Bilder usw. aus einer Bing-Suche ab. ```GET: /Compos
 
 ## Nächste Schritte
 
-Nach Hinzufügen der Bing-Such-API zu PowerApps Enterprise [erteilen Sie den Benutzern die Berechtigungen](../power-apps/powerapps-manage-api-connection-user-access.md) zum Verwenden der API in ihren Apps.
+[Erstellen Sie eine Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md).
 
-[Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md)
+Gehen Sie zur [Liste der APIs](apis-list.md) zurück.
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

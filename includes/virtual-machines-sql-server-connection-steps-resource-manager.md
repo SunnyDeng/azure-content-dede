@@ -30,4 +30,4 @@ Wählen Sie zum Erstellen einer DNS-Bezeichnung als Erstes im Portal die Option 
 
 	![SSMS-Verbindung](./media/virtual-machines-sql-server-connection-steps/rm-ssms-connect.png)
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0309_2016-->

@@ -56,8 +56,8 @@ Speicherkonfigurationen werden zum Konfigurieren des lokalen Speichers verwendet
 
 |Name|Unit|Standardwert|Hinweise|
 |----|----|-------------|-------|
-|MaxAsyncCommitDelay|Millisekunden|200|Legt das maximale Batchverarbeitungsintervall für permanente Commits des lokalen Speichers fest.|
-|MaxVerPages|Anzahl von Seiten|8192|Die maximale Anzahl von Versionsseiten in der lokalen Speicherdatenbank. Sie bestimmt die maximale Anzahl von ausstehenden Transaktionen.|
+|MaxAsyncCommitDelayInMilliseconds|Millisekunden|200|Legt das maximale Batchverarbeitungsintervall für permanente Commits des lokalen Speichers fest.|
+|MaxVerPages|Anzahl von Seiten|16384|Die maximale Anzahl von Versionsseiten in der lokalen Speicherdatenbank. Sie bestimmt die maximale Anzahl von ausstehenden Transaktionen.|
 
 ## Beispiel einer Konfigurationsdatei
 
@@ -86,4 +86,4 @@ Speicherkonfigurationen werden zum Konfigurieren des lokalen Speichers verwendet
 
 Der Parameter „BatchAcknowledgementInterval“ steuert die Replikationslatenz. Der Wert "0" ergibt die geringstmögliche Latenz, allerdings auf Kosten des Durchsatzes (da eine größer Anzahl von Bestätigungsnachrichten gesendet und verarbeitet werden muss, von denen jede weniger Bestätigungen enthält). Je größer der Wert für "BatchAcknowledgementInterval" ist, um so höher ist der Gesamtdurchsatz der Replikation, zu Lasten einer höheren Vorgangslatenz. Daraus ergibt sich direkt die Latenz von Transaktions-Commits.
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0309_2016-->

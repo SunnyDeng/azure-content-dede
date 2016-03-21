@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-ios"
 	ms.devlang="objective-c"
 	ms.topic="article"
-	ms.date="02/04/2016"
+	ms.date="03/07/2016"
 	ms.author="krisragh"/>
 
 # Verwenden der iOS-Clientbibliothek für Azure Mobile Apps
@@ -154,7 +154,13 @@ let query = table.query()
 let query = table.queryWithPredicate(NSPredicate(format: "complete == NO"))
 ```
 
-Mit `MSQuery` können Sie verschiedene Abfrageeigenschaften steuern, darunter die Folgenden. Führen Sie eine `MSQuery`-Abfrage durch, indem Sie `readWithCompletion` für MSQuery aufrufen, wie im nächsten Beispiel gezeigt. * Reihenfolge der Ergebnisse angeben * Zurückzugebenden Felder einschränken * Zurückzugebenden Datensätze einschränken * Gesamtzahl in der Antwort angeben * Benutzerdefinierte Abfragezeichenfolgen-Parameter in der Anforderung angeben * Zusätzliche Funktionen anwenden
+Mit `MSQuery` können Sie verschiedene Abfrageeigenschaften steuern, darunter die Folgenden. Führen Sie eine `MSQuery`-Abfrage durch, indem Sie auf `readWithCompletion`, wie im folgenden Beispiel gezeigt, aufrufen.
+* Festlegen der Reihenfolge der Ergebnisse
+* Einschränkung der zurückzugebenden Felder
+* Einschränkung der Anzahl der zurückzugebenden Datensätze
+* Festlegen der Gesamtanzahl in der Antwort
+* Festlegen benutzerdefinierter Abfrageparameter in der Anforderung
+* Anwenden zusätzlicher Funktionen
 
 
 ## <a name="sorting"></a>Gewusst wie: Sortieren von Daten mit MSQuery
@@ -198,21 +204,21 @@ query.readWithCompletion { (result, error) in
 
 Um die in einer Abfrage zurückzugebenden Felder einzuschränken, geben Sie die Namen der Felder in der **SelectFields**-Eigenschaft an. Hier werden nur der Text und abgeschlossene Felder angezeigt:
 
-**Objective-C:**
+**Objective-C**:
 
 ```
 query.selectFields = @[@"text", @"complete"];
 ```
 
-**Swift:**
+**Swift**:
 
 ```
 query.selectFields = ["text", "complete"]
 ```
 
-Um zusätzliche Abfragezeichenfolgen-Parameter in die Anforderung einzubinden (z. B. weil diese Parameter von einem benutzerdefinierten serverseitigen Skript verwendet werden), füllen Sie `query.parameters` wie folgt aus:
+Um zusätzliche Abfragezeichenfolgen-Parameter in die Anforderung einzubinden (z. B. weil diese Parameter von einem benutzerdefinierten serverseitigen Skript verwendet werden), füllen Sie `query.parameters` wie folgt aus:
 
-**Objective-C:**
+**Objective-C**:
 
 ```
 query.parameters = @{
@@ -221,7 +227,7 @@ query.parameters = @{
 };
 ```
 
-**Swift:**
+**Swift**:
 
 ```
 query.parameters = ["myKey1": "value1", "myKey2": "value2"]
@@ -235,7 +241,7 @@ Wenn `id` nicht angegeben wird, generiert das Back-End automatisch eine neue ein
 
 Das `result` enthält das neue eingefügte Element. Abhängig von Ihrer Serverlogik kann es im Vergleich zur ursprünglichen Übergabe an den Server zusätzliche oder geänderte Daten enthalten.
 
-**Objective-C:**
+**Objective-C**:
 
 ```
 NSDictionary *newItem = @{@"id": @"custom-id", @"text": @"my new item", @"complete" : @NO};
@@ -248,7 +254,7 @@ NSDictionary *newItem = @{@"id": @"custom-id", @"text": @"my new item", @"comple
 }];
 ```
 
-**Swift:**
+**Swift**:
 
 ```
 let newItem = ["id": "custom-id", "text": "my new item", "complete": false]
@@ -265,7 +271,7 @@ table.insert(newItem) { (result, error) in
 
 Um eine vorhandene Zeile zu aktualisieren, ändern Sie ein Element, und rufen Sie `update` auf:
 
-**Objective-C:**
+**Objective-C**:
 
 ```
 NSMutableDictionary *newItem = [oldItem mutableCopy]; // oldItem is NSDictionary
@@ -279,7 +285,7 @@ NSMutableDictionary *newItem = [oldItem mutableCopy]; // oldItem is NSDictionary
 }];
 ```
 
-**Swift:**
+**Swift**:
 
 ```
 if let newItem = oldItem.mutableCopy() as? NSMutableDictionary {
@@ -326,7 +332,7 @@ Für Änderungen muss zumindest das `id`-Attribut gesetzt sein.
 
 Um ein Element zu löschen, rufen Sie `delete` mit dem Element auf:
 
-**Objective-C:**
+**Objective-C**:
 
 ```
 [table delete:item completion:^(id itemId, NSError *error) {
@@ -338,7 +344,7 @@ Um ein Element zu löschen, rufen Sie `delete` mit dem Element auf:
 }];
 ```
 
-**Swift:**
+**Swift**:
 
 ```
 table.delete(newItem as [NSObject: AnyObject]) { (itemId, error) in
@@ -378,6 +384,48 @@ table.deleteWithId("37BBF396-11F0-4B39-85C8-B319C729AF6D") { (itemId, error) in
 
 Für Löschungen muss zumindest das `id`-Attribut gesetzt sein.
 
+##<a name="customapi"></a>Gewusst wie: Aufrufen einer benutzerdefinierten API
+
+Mit einer benutzerdefinierten API können Sie beliebige Back-End-Funktionen verfügbar machen. Sie muss keinem Tabellenvorgang zuordnet sein. Sie erhalten nicht nur mehr Kontrolle über das Messaging, sondern können sogar Header lesen/festlegen und das Layout der Antwort ändern. Informationen zum Erstellen einer benutzerdefinierten API auf dem Back-End finden Sie unter [Benutzerdefinierte APIs](app-service-mobile-node-backend-how-to-use-server-sdk.md#work-easy-apis).
+
+Rufen Sie zum Öffnen einer benutzerdefinierten APIs `MSClient.invokeAPI` wie unten dargestellt auf. Der Inhalt der Anforderung und der Antwort wird als JSON behandelt. Um weitere Medientypen zu nutzen, [verwenden Sie die andere Überladung von `invokeAPI`](http://azure.github.io/azure-mobile-services/iOS/v3/Classes/MSClient.html#//api/name/invokeAPI:data:HTTPMethod:parameters:headers:completion:).
+
+Um eine `GET`-Anforderung anstelle einer `POST`-Anforderung zu erstellen, setzen Sie den Parameter `HTTPMethod` auf `"GET"` und den Parameter `body` auf `nil` (da GET-Anforderungen keinen Nachrichtentext enthalten). Wenn Ihre benutzerdefinierte API anderen HTTP-Verben unterstützt, ändern Sie `HTTPMethod` entsprechend.
+
+**Objective-C**:
+```
+    [self.client invokeAPI:@"sendEmail"
+                      body:@{ @"contents": @"Hello world!" }
+                HTTPMethod:@"POST"
+                parameters:@{ @"to": @"bill@contoso.com", @"subject" : @"Hi!" }
+                   headers:nil
+                completion: ^(NSData *result, NSHTTPURLResponse *response, NSError *error) {
+                    if(error) {
+                        NSLog(@"ERROR %@", error);
+                    } else {
+                        // Do something with result
+                    }
+                }];
+```
+
+**Swift**:
+
+```
+client.invokeAPI("sendEmail",
+            body: [ "contents": "Hello World" ],
+            HTTPMethod: "POST",
+            parameters: [ "to": "bill@contoso.com", "subject" : "Hi!" ],
+            headers: nil)
+            {
+                (result, response, error) -> Void in
+                if let err = error {
+                    print("ERROR ", err)
+                } else if let res = result {
+                          // Do something with result
+                }
+        }
+```
+
 ##<a name="templates"></a>Gewusst wie: Registrieren von Pushvorlagen zum Senden plattformübergreifender Benachrichtigungen
 
 Um Vorlagen zu registrieren, übergeben Sie einfach die Vorlagen mit Ihrer **client.push registerDeviceToken**-Methode in Ihrer Client-App.
@@ -404,13 +452,13 @@ Um Vorlagen zu registrieren, übergeben Sie einfach die Vorlagen mit Ihrer **cli
 
 Ihre Vorlagen vom Typ „NSDictionary“ und können mehrere Vorlagen im folgenden Format enthalten:
 
-**Objective-C:**
+**Objective-C**:
 
 ```
 NSDictionary *iOSTemplate = @{ @"templateName": @{ @"body": @{ @"aps": @{ @"alert": @"$(message)" } } } };
 ```
 
-**Swift:**
+**Swift**:
 
 ```
 let iOSTemplate = ["templateName": ["body": ["aps": ["alert": "$(message)"]]]]
@@ -426,13 +474,13 @@ Beim Aufrufen eines mobilen Dienstes enthält der completion-Block einen `NSErro
 
 Die Datei [`<WindowsAzureMobileServices/MSError.h>`](https://github.com/Azure/azure-mobile-services/blob/master/sdk/iOS/src/MSError.h) definiert die Konstanten `MSErrorResponseKey`, `MSErrorRequestKey` und `MSErrorServerItemKey`, um mehr Daten im Zusammenhang mit dem Fehler zu erhalten. Sie können wie folgt abgerufen werden:
 
-**Objective-C:**
+**Objective-C**:
 
 ```
 NSDictionary *serverItem = [error.userInfo objectForKey:MSErrorServerItemKey];
 ```
 
-**Swift:**
+**Swift**:
 
 ```
 let serverItem = error.userInfo[MSErrorServerItemKey]
@@ -440,13 +488,13 @@ let serverItem = error.userInfo[MSErrorServerItemKey]
 
 Darüber hinaus definiert die Datei Konstanten für jeden Fehlercode. Sie können wie folgt verwendet werden:
 
-**Objective-C:**
+**Objective-C**:
 
 ```
 if (error.code == MSErrorPreconditionFailed) {
 ```
 
-**Swift:**
+**Swift**:
 
 ```
 if (error.code == MSErrorPreconditionFailed) {
@@ -479,7 +527,7 @@ und der Pod:
 
 * Ersetzen Sie **INSERT-REDIRECT-URI-HERE** durch den Endpunkt _/.auth/login/done_ Ihrer Website mithilfe des HTTPS-Schemas. Dieser Wert sollte etwa so aussehen: \__https://contoso.azurewebsites.net/.auth/login/done_.
 
-**Objective-C:**
+**Objective-C**:
 
 	#import <ADALiOS/ADAuthenticationContext.h>
 	#import <ADALiOS/ADAuthenticationSettings.h>
@@ -514,7 +562,7 @@ und der Pod:
 	}
 
 
-**Swift:**
+**Swift**:
 
 	// add the following imports to your bridging header:
 	//     #import <ADALiOS/ADAuthenticationContext.h>
@@ -592,4 +640,4 @@ und der Pod:
 [CLI to manage Mobile Services tables]: ../virtual-machines-command-line-tools.md#Mobile_Tables
 [Conflict-Handler]: mobile-services-ios-handling-conflicts-offline-data.md#add-conflict-handling
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0309_2016-->

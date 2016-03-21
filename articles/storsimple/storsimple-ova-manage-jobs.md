@@ -3,7 +3,7 @@
    description="Es wird die Seite „Aufträge“ des StorSimple Manager-Diensts beschrieben, und Sie erfahren, wie Sie damit kürzlich durchgeführte und aktuelle Aufträge für das StorSimple Virtual Array nachverfolgen."
    services="storsimple"
    documentationCenter="NA"
-   authors="SharS"
+   authors="alkohli"
    manager="carmonm"
    editor=""/>
 <tags 
@@ -12,10 +12,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="na"
-   ms.date="02/22/2016"
-   ms.author="v-sharos" />
+   ms.date="03/02/2016"
+   ms.author="alkohli" />
 
-# Verwenden des StorSimple Manager-Diensts zum Anzeigen von Aufträgen für das StorSimple Virtual Array (Vorschau)
+# Verwenden des StorSimple Manager-Diensts zum Anzeigen von Aufträgen für das StorSimple Virtual Array
 
 ## Übersicht
 
@@ -72,4 +72,4 @@ Diese Fehler betreffen Sicherungs-, Wiederherstellungs-, Aktualisierungs- und Fa
 
 [Erfahren Sie, wie Sie Ihr StorSimple Virtual Array über die lokale Webbenutzeroberfläche verwalten](storsimple-ova-web-ui-admin.md).
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0309_2016-->

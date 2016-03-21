@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na" 
-   ms.date="01/21/2016"
+   ms.date="03/02/2016"
    ms.author="guayan"/>
 
 # Registrieren einer Microsoft-verwalteten API oder einer IT-verwalteten API
@@ -22,13 +22,12 @@ Es gibt **Microsoft-verwaltete** und **IT-verwaltete** APIs. Wenn Sie PowerApps 
 
 Mit den IT-verwalteten APIs können Sie alles steuern und überwachen, so auch den Arbeitsspeicher, die Konnektivität, die Vertrauenswürdigkeit und weitere Elemente. Die IT-verwalteten APIs umfassen auch die APIs, die Verbindungen mit einem lokalen System wie SQL Server und SharePoint Server herstellen können.
 
-Damit Sie **Microsoft-verwaltete** oder **IT-verwaltete** APIs verwenden können, müssen Sie die APIs im Azure-Portal „registrieren“. Sobald die APIs registriert sind, können Sie diese in Ihren Apps verwenden. Folgende Optionen sind verfügbar:
+> [AZURE.SELECTOR]
+- [Verwaltete APIs](../articles/power-apps/powerapps-register-from-available-apis.md)
+- [APIs in Ihrer App Service-Umgebung](../articles/power-apps/powerapps-register-api-hosted-in-app-service.md)
+- [Swagger-APIs](../articles/power-apps/powerapps-register-existing-api-from-api-definition.md)
 
-- Registrieren einer vorgefertigten Microsoft-verwalteten API oder einer IT-verwalteten API (in diesem Thema)
-- Registrieren einer Web-App, einer API-App und einer mobilen App, die in Ihrer [App Service-Umgebung](powerapps-register-api-hosted-in-app-service.md) gehostet werden
-- Registrieren eigener Swagger-APIs mit einer [Swagger 2.0-API-Definition](powerapps-register-existing-api-from-api-definition.md)
-
-Dieser Artikel konzentriert sich auf das **Registrieren von vorgefertigten Microsoft-verwalteten APIs und von IT-verwalteten APIs**.
+In diesem Thema konzentrieren wir uns auf die erste Option: **Registrieren von Microsoft-verwalteten APIs und IT-verwalteten APIs**.
 
 #### Voraussetzungen für den Einstieg
 
@@ -108,17 +107,13 @@ In der folgenden Tabelle sind die Funktionen von Microsoft-verwalteten und IT-ve
 ## Registrieren einer Microsoft-verwalteten oder IT-verwalteten API
 
 1. Melden Sie sich mit Ihrem Geschäftskonto (*IhrBenutzername*@*IhrUnternehmen*.com) beim [Azure-Portal](https://portal.azure.com/) an. Sie werden automatisch mit Ihrem Unternehmensabonnement angemeldet.
-2. Wählen Sie **Durchsuchen**, **PowerApps** und dann **APIs verwalten** aus:  
-![][17]
-3. Wählen Sie in „Manage APIs“ die Option **Add** aus:  
-![][18]  
+2. Wählen Sie **Durchsuchen**, **PowerApps** und dann **APIs verwalten** aus: ![][17].
+3. Wählen Sie in „Manage APIs“ die Option **Add** aus: ![][18]  
 4. Geben Sie in **Add API** die API-Eigenschaften ein:  
 
 	- Geben Sie unter **Name** einen Namen für die API ein. Beachten Sie, dass der eingegebene Name in die Laufzeit-URL der API eingefügt wird. Geben Sie einen aussagekräftigen und innerhalb Ihrer Organisation eindeutigen Namen ein.
-	- Wählen Sie in **Source** die Option **From available APIs** aus:
-	![][19]
-5. Wählen Sie **API** aus, und wählen Sie dann die API aus, die Sie registrieren möchten:
-![][20]
+	- Wählen Sie in **Source** die Option **From available APIs** aus: ![][19]
+5. Wählen Sie **API** aus, und wählen Sie dann die API aus, die Sie registrieren möchten: ![][20]
 6. Wählen Sie Ihre spezielle API aus, und fügen Sie alle konfigurierbaren Eigenschaften hinzu.
 7. Wählen Sie **ADD** aus, um diese Schritte abzuschließen.
 
@@ -156,4 +151,4 @@ In diesem Thema haben Sie erfahren, wie Sie eine eigene Instanz der verfügbaren
 [42]: ./media/powerapps-register-from-available-apis/sqlserver.png
 [43]: ./media/powerapps-register-from-available-apis/twitter.png
 
-<!----HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0309_2016-->

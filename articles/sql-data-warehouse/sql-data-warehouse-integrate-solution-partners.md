@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="02/12/2016"
+   ms.date="03/03/2016"
    ms.author="jrj;barbkess;sonyama"/>
 
 # SQL Data Warehouse-Lösungspartner
@@ -27,7 +27,7 @@ Für die Erstellung Ihrer eigenen End-to-End-Data Warehouse-Lösung können Sie 
 | ![Birst][2] |**Birst**<br>Birst ist ein weltweit führender Anbieter von Business Intelligence und Analysen in der Cloud. Unternehmen können eine vertrauenswürdige Datenquelle im Kontext der einzelnen wichtigen Geschäftskunden erstellen. Geschäftskunden im gesamten Unternehmen können dann Informationen mit erstklassigen BI-Tools protokollieren und analysieren.| [Weitere Informationen][birst_more] |
 | ![Bryte Systems][3] |**Bryte Systems**<br>Bryte Systems automatisiert die Datenübertragung in SQL Data Warehouse aus einer Vielzahl von Datenbanken und Quellen. Bryte Systems ist spezialisiert auf Technologien im Bereich Datenverschiebung und Datenintegration. Es erstellt skalierbare cloudbasierte Data Warehouses und Data Lakes für tiefere Einblicke. | [Weitere Informationen][bryte_systems_more] |
 | ![ClearStory Data][4] |**ClearStory Data**<br>ClearStory Data ermöglicht Analysen mit kurzen Zyklen für unterschiedliche in SQL Data Warehouse gespeicherte Daten. Die integrierte Spark-basierte Plattform und Analyseanwendung von ClearStory beschleunigt den Datenzugriff und die Harmonisierung von unterschiedlichen Datasets. Sie ermöglichen die schnelle und übergreifende Datendurchsuchung, anhand der Geschäftskunden sich selbständig einen detaillierten Einblick verschaffen können.| [Weitere Informationen][clearstory_data_more] |
-| ![Coffing Data Warehousing][5] |**Coffing Data Warehousing**<br>Coffing Data Warehousing bietet das Tool Nexus Chameleon, das 10 Jahre Entwicklung in Abfragesystemen aufweisen kann. Nexus ist als Abfragetool für SQL Data Warehouse verfügbar. Mithilfe von Nexus können Sie Abfragen auf internen und Cloudcomputern durchführen und Daten aus verschiedenen Plattformen zusammenführen. Point-Click-Report! | [Weitere Informationen][coffing_data_warehousing_more] |
+| ![Coffing Data Warehousing][5] |**Coffing Data Warehousing**<br>Coffing Data Warehousing bietet das Tool Nexus Chameleon, das 10 Jahre Entwicklung in Abfragesystemen aufweisen kann. Nexus ist als Abfragetool für SQL Data Warehouse verfügbar. Mithilfe von Nexus können Sie Abfragen auf internen und Cloudcomputern durchführen und Daten aus verschiedenen Plattformen zusammenführen. Point-Click-Report! | [Weitere Informationen][coffing_data_warehousing_more] |
 | ![Dell Statistica][6] |**Dell Statistica**<br>Dell Statistica ist eine erweiterte Analyseplattform, über die Unternehmen Zukunftsprognosen erstellen, Prozesse optimieren, Kosten senken und Umsätze steigern können. Dell Statistica vereinfacht die Analyse großer Datenmengen, optimiert die Implementierung und Bereitstellung, extrahiert fundierte Einblicke aus Texten und stärkt Ihr Unternehmen. | [Weitere Informationen][dell_statistica_more] |
 | ![Dundas][7] |**Dundas Software**<br>Dundas Data Visualization ist ein führender globaler Anbieter von Software für Business Intelligence und Datenvisualisierung. Die Dashboards, Berichte und visuellen Datenanalysen von Dundas lassen sich nahtlos in Geschäftsanwendungen integrieren und ermöglichen bessere Entscheidungen und schnellere Einblicke. | [Weitere Informationen][dundas_software_more] |
 | ![Inbrein][8] |**Inbrein**<br>Inbrein MicroERD bietet die Tools, die Sie benötigen, um ein präzises Datenmodell zu erstellen, die Datenredundanz zu verringern, die Produktivität zu steigern und Standards zu überprüfen. Über die Benutzeroberfläche, die basierend auf umfassenden Nutzungserlebnissen entwickelt wurde, können Modellierer einfach und komfortabel mit DB-Modellen arbeiten. Über schnelle funktionale Verbesserungen und Updates können Sie fortlaufend von neuen und verbesserten MicroERD-Funktionen profitieren. | [Weitere Informationen][inbrein_more] |
@@ -101,4 +101,4 @@ Weitere Informationen zur Integration mit SQL Data Warehouse finden Sie unter [E
 [targit_more]: http://www.targit.com/en/
 [yellowfin_more]: http://www.yellowfinbi.com/
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0309_2016-->

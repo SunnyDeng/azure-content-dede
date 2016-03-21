@@ -13,14 +13,17 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/07/2016"
+   ms.date="03/03/2016"
    ms.author="jrj;barbkess;sonyama"/>
 
 # Group By-Optionen in SQL Data Warehouse
 
 Die [GROUP BY]-Klausel wird verwendet, um Daten zu einer Gruppe von Zeilen zusammenzufassen. Außerdem verfügt sie über einige Optionen zur Erweiterung der Funktionalität, die umgangen werden müssen, da sie von Azure SQL Data Warehouse nicht direkt unterstützt werden.
 
-Diese Optionen sind: - GROUP BY with ROLLUP - GROUPING SETS - GROUP BY with CUBE
+Die Optionen sind:
+- GROUP BY mit ROLLUP
+- GROUPING SETS
+- GROUP BY mit CUBE
 
 ## Rollup- und Grouping Set-Optionen
 Die einfachste Möglichkeit ist hierbei die alternative Verwendung von `UNION ALL`, um das Rollup durchzuführen, anstatt sich auf die explizite Syntax zu verlassen. Das Ergebnis ist identisch.
@@ -40,7 +43,10 @@ GROUP BY ROLLUP (
 ;
 ```
 
-Durch die Verwendung von ROLLUP haben wir die folgenden Aggregationen angefordert: - Country and Region - Country - Grand Total
+Durch die Verwendung von ROLLUP haben wir die folgenden Aggregationen angefordert:
+- Land und Region
+- Land
+- Gesamtergebnis
 
 Um dies zu ersetzen, müssen Sie `UNION ALL` verwenden. Für das Angeben der Aggregationen war die explizite Rückgabe der gleichen Ergebnisse erforderlich:
 
@@ -50,7 +56,7 @@ SELECT [SalesTerritoryCountry]
 ,      SUM(SalesAmount) AS TotalSalesAmount
 FROM  dbo.factInternetSales s
 JOIN  dbo.DimSalesTerritory t     ON s.SalesTerritoryKey       = t.SalesTerritoryKey
-GROUP BY 
+GROUP BY
        [SalesTerritoryCountry]
 ,      [SalesTerritoryRegion]
 UNION ALL
@@ -59,7 +65,7 @@ SELECT [SalesTerritoryCountry]
 ,      SUM(SalesAmount) AS TotalSalesAmount
 FROM  dbo.factInternetSales s
 JOIN  dbo.DimSalesTerritory t     ON s.SalesTerritoryKey       = t.SalesTerritoryKey
-GROUP BY 
+GROUP BY
        [SalesTerritoryCountry]
 UNION ALL
 SELECT NULL
@@ -80,7 +86,7 @@ Der erste Schritt ist das Definieren des „Cubes“, mit dem alle Aggregationse
 
 ```
 CREATE TABLE #Cube
-WITH 
+WITH
 (   DISTRIBUTION = ROUND_ROBIN
 ,   LOCATION = USER_DB
 )
@@ -99,9 +105,9 @@ CROSS JOIN ( SELECT 'SalesTerritoryRegion' as Region
            ) r
 )
 SELECT Cols
-,      CASE WHEN SUBSTRING(GroupBy,LEN(GroupBy),1) = ',' 
-            THEN SUBSTRING(GroupBy,1,LEN(GroupBy)-1) 
-            ELSE GroupBy 
+,      CASE WHEN SUBSTRING(GroupBy,LEN(GroupBy),1) = ','
+            THEN SUBSTRING(GroupBy,1,LEN(GroupBy)-1)
+            ELSE GroupBy
        END AS GroupBy  --Remove Trailing Comma
 ,Seq
 FROM GrpCube;
@@ -114,7 +120,7 @@ Hier sind die Ergebnisse des CTAS-Vorgangs angegeben:
 Der zweite Schritt ist das Angeben einer Zieltabelle zum Speichern von Zwischenergebnissen:
 
 ```
-DECLARE 
+DECLARE
  @SQL NVARCHAR(4000)
 ,@Columns NVARCHAR(4000)
 ,@GroupBy NVARCHAR(4000)
@@ -150,7 +156,7 @@ BEGIN
               FROM  dbo.factInternetSales s
               JOIN  dbo.DimSalesTerritory t  
               ON s.SalesTerritoryKey = t.SalesTerritoryKey
-              '+CASE WHEN @GroupBy <>'' 
+              '+CASE WHEN @GroupBy <>''
                      THEN 'GROUP BY '+@GroupBy ELSE '' END
 
     EXEC sp_executesql @SQL;
@@ -161,7 +167,7 @@ END
 Abschließend können wir die Ergebnisse zurückgeben, indem wir sie einfach aus der temporären #Results-Tabelle auslesen.
 
 ```
-SELECT * 
+SELECT *
 FROM #Results
 ORDER BY 1,2,3
 ;
@@ -185,4 +191,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 
 <!--Other Web references-->
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0309_2016-->

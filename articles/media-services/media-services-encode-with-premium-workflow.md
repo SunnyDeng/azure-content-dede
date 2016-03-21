@@ -18,9 +18,9 @@
 
 #Erweiterte Codierung mit dem Media Encoder Premium Workflow
 
->[AZURE.NOTE]Fragen zu Encoder Premium senden Sie per E-Mail an „mepd at Microsoft.com“.
+>[AZURE.NOTE]– Fragen zu Encoder Premium senden Sie per E-Mail an „mepd at Microsoft.com“.
 >
->Der in diesem Thema beschriebene Media Encoder Premium Workflow-Medienprozessor ist in China nicht verfügbar.
+>- Der in diesem Thema beschriebene Media Encoder Premium Workflow-Medienprozessor ist in China nicht verfügbar.
 
 ##Übersicht
 
@@ -35,8 +35,6 @@ In den folgenden Themen erhalten Sie nähere Informationen zum **Media Encoder P
 Dieses Thema demonstriert die Codierung mit **Media Encoder Premium Workflow** unter Verwendung von .NET.
 
 Für Codieraufgaben für den **Media Encoder Premium Workflow** ist eine separate Konfigurationsdatei, die sogenannte Workflowdatei, erforderlich. Diese Dateien haben die Erweiterung .workflow und werden mit dem [Workflow Designer](media-services-workflow-designer.md) erstellt.
-
->[AZURE.NOTE]Fragen zu Encoder Premium senden Sie per E-Mail an „mepd at Microsoft.com“.
 
 ##Codieren
 
@@ -279,4 +277,4 @@ Im folgenden finden Sie ein vollständiges Beispiel. Informationen zum Einrichte
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

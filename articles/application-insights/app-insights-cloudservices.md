@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="ibiza"
    ms.topic="article"
    ms.workload="tbd"
-   ms.date="11/15/2015"
+   ms.date="03/02/2016"
    ms.author="sdash"/>
 
 # Application Insights für Azure Cloud Services
@@ -171,13 +171,17 @@ Wenn Sie jedoch bereits das Log4N- oder NLog-Framework verwenden, können Sie au
 
 Das Application Insights-SDK kann Aufrufe melden, die Ihre App an externe Abhängigkeiten sendet, z. B. an REST-APIs und SQL-Server. Auf diese Weise können Sie feststellen, ob eine bestimmte Abhängigkeit langsame Antworten oder Fehler verursacht.
 
-Um Abhängigkeiten nachzuverfolgen, müssen Sie die Web- oder Workerrolle mit dem [Application Insights-Agent](app-insights-monitor-performance-live-website-now.md) einrichten, der auch als "Statusmonitor" bezeichnet wird.
+Wenn die Anwendung .NET Framework 4.6 oder höher verwendet, müssen Sie nichts weiter tun.
+
+Richten Sie andernfalls die Web- oder Workerrolle mit dem [Application Insights-Agent](app-insights-monitor-performance-live-website-now.md) ein, der auch als „Statusmonitor“ bezeichnet wird.
 
 So verwenden Sie den Application Insights-Agent mit Ihren Web- oder Workerrollen
 
 * Fügen Sie den Ordner [AppInsightsAgent](https://github.com/Microsoft/ApplicationInsights-Home/tree/master/Samples/AzureEmailService/WorkerRoleA/AppInsightsAgent) und die beiden darin enthaltenen Dateien Ihren Web- oder Workerrollenprojekten hinzu. Achten Sie darauf, dass Sie ihre Buildeigenschaften so festlegen, dass sie immer in das Ausgabeverzeichnis kopiert werden. Mit diesen Dateien wird der Agent installiert.
 * Fügen Sie der CSDEF-Datei wie [hier](https://github.com/Microsoft/ApplicationInsights-Home/tree/master/Samples/AzureEmailService/AzureEmailService/ServiceDefinition.csdef#L18) gezeigt die Startaufgabe hinzu.
 * HINWEIS: Für *Workerrollen* sind wie [hier](https://github.com/Microsoft/ApplicationInsights-Home/tree/master/Samples/AzureEmailService/AzureEmailService/ServiceDefinition.csdef#L44) gezeigt drei Umgebungsvariablen erforderlich. Für Webrollen ist dies nicht erforderlich.
+
+### Abhängigkeitsberichte
 
 Hier ein Beispiel für die Ansicht im Application Insights-Portal:
 
@@ -277,10 +281,9 @@ Haben Sie für .NET 4.6 erstellt? 4.6 wird nicht automatisch in Azure Cloud Serv
 [client]: app-insights-javascript.md
 [diagnostic]: app-insights-diagnostic-search.md
 [netlogs]: app-insights-asp-net-trace-logs.md
-[perf]: app-insights-web-monitor-performance.md
 [portal]: http://portal.azure.com/
 [qna]: app-insights-troubleshoot-faq.md
 [redfield]: app-insights-monitor-performance-live-website-now.md
 [start]: app-insights-overview.md
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0309_2016-->

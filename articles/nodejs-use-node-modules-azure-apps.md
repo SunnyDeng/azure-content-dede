@@ -1,6 +1,6 @@
 <properties pageTitle="Arbeiten mit Node.js-Modulen" description="Sie erfahren etwas über die Arbeit mit Node.js-Modulen im Zusammenhang mit Azure Websites oder Cloud Services." services="" documentationCenter="nodejs" authors="rmcmurray" manager="wpickett" editor=""/>
 
-<tags ms.service="multiple" ms.workload="na" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="01/09/2016" ms.author="robmcm"/>
+<tags ms.service="multiple" ms.workload="na" ms.tgt_pltfrm="na" ms.devlang="nodejs" ms.topic="article" ms.date="03/04/2016" ms.author="robmcm"/>
 
 
 
@@ -15,9 +15,9 @@ Wenn Sie sich bereits mit Node.js-Modulen, **package.json**- und **npm-shrinkwra
 * Azure-Websites verstehen **package.json**- und **npm-shrinkwrap.json**-Dateien und können Module basierend auf den Einträgen in diesen Dateien installieren.
 * Azure Cloud Services erfordern, dass alle Module auf der Entwicklungsumgebung installiert sind und das Verzeichnis **node\_modules** als Teil des Bereitstellungspakets enthalten ist.
 
-> [AZURE.NOTE]Azure Virtual Machines werden in diesem Artikel nicht behandelt, da die Bereitstellung auf einem virtuellen Computer vom Betriebssystem abhängig ist, das von dem virtuellen Computer gehostet wird.
+> [AZURE.NOTE] Azure Virtual Machines werden in diesem Artikel nicht behandelt, da die Bereitstellung auf einem virtuellen Computer vom Betriebssystem abhängig ist, das von dem virtuellen Computer gehostet wird.
 
-> [AZURE.NOTE]Sie können die Unterstützung für die Installation von Modulen mithilfe der Dateien **package.json** oder **npm-shrinkwrap.json** auf Azure aktivieren, dies erfordert jedoch die Anpassung der Standardskripts, die von Clouddienstprojekten verwendet werden. Ein Beispiel dafür finden Sie unter [Azure Startup task to run npm install to avoid deploying node modules](http://nodeblog.azurewebsites.net/startup-task-to-run-npm-in-azure) (Azure-Startaufgabe zum Ausführen von npm install, um keine Node.js-Module bereitstellen zu müssen, in englischer Sprache)
+> [AZURE.NOTE] Sie können die Unterstützung für die Installation von Modulen mithilfe der Dateien **package.json** oder **npm-shrinkwrap.json** auf Azure aktivieren, dies erfordert jedoch die Anpassung der Standardskripts, die von Clouddienstprojekten verwendet werden. Ein Beispiel dafür finden Sie unter [Azure Startup task to run npm install to avoid deploying node modules](http://nodeblog.azurewebsites.net/startup-task-to-run-npm-in-azure) (Azure-Startaufgabe zum Ausführen von npm install, um keine Node.js-Module bereitstellen zu müssen, in englischer Sprache)
 
 ##Node.js-Module
 
@@ -44,7 +44,8 @@ Während der Entwicklung können Sie bei der Installation von Modulen die Parame
 
 Ein potenzielles Problem bei der Datei **package.json** ist, dass nur die Version für die Abhängigkeiten auf oberster Ebene angegeben wird. Manche installierten Module geben die Version der Module an, von denen sie abhängen, andere nicht. Somit ist es möglich, dass Sie eine andere Abhängigkeitskette erhalten als die in der Entwicklung verwendete.
 
-> [AZURE.NOTE]Falls die Datei <b>package.json</b> auf ein systemeigenes Modul verweist, wird Ihnen bei der Bereitstellung auf einer Azure-Website ein Fehler ähnlich dem folgenden angezeigt, wenn die Anwendung mithilfe von Git veröffentlicht wird:
+> [AZURE.NOTE]
+Falls die Datei <b>package.json</b> auf ein systemeigenes Modul verweist, wird Ihnen bei der Bereitstellung auf einer Azure-Website ein Fehler ähnlich dem folgenden angezeigt, wenn die Anwendung mithilfe von Git veröffentlicht wird:
 
 >		npm ERR! module-name@0.6.0 install: 'node-gyp configure build'
 
@@ -57,7 +58,8 @@ Die Datei **npm-shrinkwrap.json** ist ein Versuch, die Modulversionsbegrenzungen
 
 Wenn die Anwendung für die Produktion bereit ist, können Sie die Versionsanforderungen sperren und eine Datei **npm-shrinkwrap.json** über den Befehl **npm shrinkwrap** erstellen. Diese verwendet die derzeit im Ordner **node\_modules** installierten Versionen, und speichert sie in der Datei **npm-shrinkwrap.json**. Nachdem die Anwendung zur Hostingumgebung bereitgestellt wurde, wird der Befehl **npm install** verwendet, um die Datei **npm-shrinkwrap.json** zu analysieren und alle aufgelisteten Abhängigkeiten zu installieren. Weitere Informationen hierzu finden Sie unter [npm-install](https://npmjs.org/doc/install.html).
 
-> [AZURE.NOTE]Falls die Datei <b>npm-shrinkwrap.json</b> auf ein systemeigenes Modul verweist, wird Ihnen bei der Bereitstellung auf einer Azure-Website ein Fehler ähnlich dem folgenden angezeigt, wenn die Anwendung mithilfe von Git veröffentlicht wird:
+> [AZURE.NOTE]
+Falls die Datei <b>npm-shrinkwrap.json</b> auf ein systemeigenes Modul verweist, wird Ihnen bei der Bereitstellung auf einer Azure-Website ein Fehler ähnlich dem folgenden angezeigt, wenn die Anwendung mithilfe von Git veröffentlicht wird:
 
 >		npm ERR! module-name@0.6.0 install: 'node-gyp configure build'
 
@@ -78,4 +80,4 @@ Weitere Informationen finden Sie im [Node.js Developer Center](/develop/nodejs/)
 [Build and deploy a Node.js application to an Azure Cloud Service]: cloud-services-nodejs-develop-deploy-app.md
 [Benutzerdefinierte Website-Bereitstellungsskripts mit Kudu]: /documentation/videos/custom-web-site-deployment-scripts-with-kudu/
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0309_2016-->

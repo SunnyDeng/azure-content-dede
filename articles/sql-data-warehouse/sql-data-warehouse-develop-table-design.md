@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/07/2016"
+   ms.date="03/03/2016"
    ms.author="jrj;barbkess;sonyama"/>
 
 # Tabellenentwurf in SQL Data Warehouse #
@@ -115,15 +115,15 @@ Alternativen:
 
 Teilweise unterstützt:
 
-- Standardeinschränkungen unterstützen nur Literale und Konstanten. Nicht deterministische Ausdrücke oder Funktionen, z. B. `GETDATE()` oder `CURRENT_TIMESTAMP`, werden nicht unterstützt.
+- Standardeinschränkungen unterstützen nur Literale und Konstanten. Nicht deterministische Ausdrücke oder Funktionen, z. B. `GETDATE()` oder `CURRENT_TIMESTAMP`, werden nicht unterstützt.
 
-> [AZURE.NOTE]Definieren Sie Ihre Tabellen so, dass die maximal mögliche Zeilengröße, einschließlich der vollständigen Länge der Spalten mit variabler Länge, 32.767 Byte nicht überschreitet. Sie können zwar eine Zeile mit Daten variabler Länge definieren, bei der dieser Wert überschritten wird, aber Sie können keine Daten in die Tabelle einfügen. Versuchen Sie außerdem, die Größe Ihrer Spalten mit variabler Länge zu beschränken, um beim Ausführen von Abfragen einen noch besseren Durchsatz zu erzielen.
+> [AZURE.NOTE] Definieren Sie Ihre Tabellen so, dass die maximal mögliche Zeilengröße, einschließlich der vollständigen Länge der Spalten mit variabler Länge, 32.767 Byte nicht überschreitet. Sie können zwar eine Zeile mit Daten variabler Länge definieren, bei der dieser Wert überschritten wird, aber Sie können keine Daten in die Tabelle einfügen. Versuchen Sie außerdem, die Größe Ihrer Spalten mit variabler Länge zu beschränken, um beim Ausführen von Abfragen einen noch besseren Durchsatz zu erzielen.
 
 ## Prinzipien der Datenverteilung
 
 Es gibt zwei Möglichkeiten für das Verteilen von Daten in SQL Data Warehouse:
 
-1. Gleichmäßiges zufälliges Verteilen von Daten 
+1. Gleichmäßiges zufälliges Verteilen von Daten
 2. Verteilen von Daten basierend auf Hashwerten aus einer einzelnen Spalte
 
 Die Datenverteilung wird auf Tabellenebene entschieden. Alle Tabellen sind verteilt. Sie weisen die Verteilung für jede Tabelle in der SQL Data Warehouse-Datenbank zu.
@@ -175,13 +175,13 @@ WITH
 ;
 ```
 
-> [AZURE.NOTE]Beachten Sie, dass im zweiten Beispiel kein Verteilungsschlüssel erwähnt wird. Roundrobin ist der Standard und daher nicht unbedingt erforderlich. Eine explizite Vorgehensweise wird aber als bewährte Methode angesehen, weil damit sichergestellt ist, dass andere Bearbeiter Ihre Absichten beim Durchsehen des Tabellenentwurfs klar erkennen können.
+> [AZURE.NOTE] Beachten Sie, dass im zweiten Beispiel kein Verteilungsschlüssel erwähnt wird. Roundrobin ist der Standard und daher nicht unbedingt erforderlich. Eine explizite Vorgehensweise wird aber als bewährte Methode angesehen, weil damit sichergestellt ist, dass andere Bearbeiter Ihre Absichten beim Durchsehen des Tabellenentwurfs klar erkennen können.
 
 Dieser Tabellentyp wird häufig verwendet, wenn keine offensichtliche Schlüsselspalte für das Hashing der Daten vorhanden ist. Er kann auch für kleinere oder weniger signifikante Tabellen verwendet werden, bei denen die Verschiebungskosten nicht so hoch sind.
 
 Das Laden von Daten in eine verteilte Roundrobin-Tabelle ist meist schneller als das Laden in eine verteilte Hashtabelle. Bei einer verteilten Roundrobin-Tabelle ist es nicht erforderlich, die Daten genau zu verstehen oder das Hashing vor dem Laden durchzuführen. Daher sind Roundrobin-Tabellen häufig gute Ladeziele.
 
-> [AZURE.NOTE]Wenn Daten per Roundrobin verteilt werden, werden die Daten der Verteilung auf *Puffer*ebene zugeordnet.
+> [AZURE.NOTE] Wenn Daten per Roundrobin verteilt werden, werden die Daten der Verteilung auf *Puffer*ebene zugeordnet.
 
 ### Empfehlungen
 
@@ -195,13 +195,13 @@ Erwägen Sie die Verwendung der Roundrobin-Verteilung für die Tabelle in den fo
 
 ## Hashverteilung
 
-Bei der Hashverteilung wird eine interne Funktion verwendet, um ein Dataset auf die Verteilungen zu verteilen, indem das Hashing für eine einzelne Spalte durchgeführt wird. Wenn Daten gehasht werden, gibt es keine explizite Reihenfolge für die Zuordnung der Daten zur Verteilung. Der Hashvorgang selbst ist aber ein deterministischer Prozess. Dadurch werden die Ergebnisse des Hashvorgangs vorhersehbar. Beim Hashing einer Ganzzahlspalte mit dem Wert 10 ergibt sich immer derselbe Hashwert. Dies bedeutet, dass ***jede*** gehashte Ganzzahlspalte, die den Wert 10 enthält, derselben Verteilung zugeordnet wird. Dies gilt auch tabellenübergreifend.
+Bei der Hashverteilung wird eine interne Funktion verwendet, um ein Dataset auf die Verteilungen zu verteilen, indem das Hashing für eine einzelne Spalte durchgeführt wird. Wenn Daten gehasht werden, gibt es keine explizite Reihenfolge für die Zuordnung der Daten zur Verteilung. Der Hashvorgang selbst ist aber ein deterministischer Prozess. Dadurch werden die Ergebnisse des Hashvorgangs vorhersehbar. Beim Hashing einer Ganzzahlspalte mit dem Wert 10 ergibt sich immer derselbe Hashwert. Dies bedeutet, dass ***jede*** gehashte Ganzzahlspalte, die den Wert 10 enthält, derselben Verteilung zugeordnet wird. Dies gilt auch tabellenübergreifend.
 
 Die Vorhersagbarkeit des Hashings ist äußerst wichtig. Dies bedeutet, dass die Hashverteilung der Daten zu Leistungsverbesserungen führen kann, wenn Daten gelesen und Tabellen verknüpft werden.
 
 Wie unten dargestellt, kann die Hashverteilung sehr effektiv für die Abfrageoptimierung sein. Daher wird dies als eine optimierte Form der Datenverteilung angesehen.
 
-> [AZURE.NOTE]Beachten Sie Folgendes: Das Hashing basiert nicht auf dem Wert der Daten, sondern auf dem Typ der Daten, die gehasht werden.
+> [AZURE.NOTE] Beachten Sie Folgendes: Das Hashing basiert nicht auf dem Wert der Daten, sondern auf dem Typ der Daten, die gehasht werden.
 
 Unten ist eine Tabelle angegeben, für die eine Hashverteilung nach ProductKey durchgeführt wurde.
 
@@ -223,7 +223,7 @@ WITH
 ;
 ```
 
-> [AZURE.NOTE]Wenn für die Daten eine Hashverteilung erfolgt, werden sie der Verteilung auf Zeilenebene zugeordnet.
+> [AZURE.NOTE] Wenn für die Daten eine Hashverteilung erfolgt, werden sie der Verteilung auf Zeilenebene zugeordnet.
 
 ## Tabellenpartitionen
 Tabellenpartitionen werden unterstützt und sind einfach zu definieren.
@@ -274,7 +274,7 @@ Beachten Sie die folgenden Empfehlungen zum Generieren von Statistiken:
 2. Generieren Sie Mehrspaltenstatistiken für zusammengesetzte Klauseln.
 3. Aktualisieren Sie Statistiken regelmäßig. Denken Sie daran, dass dies nicht automatisch durchgeführt wird!
 
->[AZURE.NOTE]In der Regel wird in SQL Server Data Warehouse ausschließlich `AUTOSTATS` genutzt, um die Spaltenstatistiken auf dem aktuellen Stand zu halten. Dies ist auch für SQL Server Data Warehouses nicht die bewährte Methode. `AUTOSTATS` wird bei einer Änderungsrate von 20 % ausgelöst. Dies ist für große Faktentabellen mit Millionen oder Milliarden von Zeilen ggf. nicht ausreichend. Daher ist es immer ratsam, die Aktualisierung der Statistiken im Auge zu behalten. So ist sichergestellt, dass die Statistiken die Kardinalität der Tabelle präzise widerspiegeln.
+>[AZURE.NOTE] In der Regel wird in SQL Server Data Warehouse ausschließlich `AUTOSTATS` genutzt, um die Spaltenstatistiken auf dem aktuellen Stand zu halten. Dies ist auch für SQL Server Data Warehouses nicht die bewährte Methode. `AUTOSTATS` wird bei einer Änderungsrate von 20 % ausgelöst. Dies ist für große Faktentabellen mit Millionen oder Milliarden von Zeilen ggf. nicht ausreichend. Daher ist es immer ratsam, die Aktualisierung der Statistiken im Auge zu behalten. So ist sichergestellt, dass die Statistiken die Kardinalität der Tabelle präzise widerspiegeln.
 
 ## Nicht unterstützte Funktionen
 In SQL Data Warehouse werden die folgenden Funktionen nicht verwendet oder nicht unterstützt:
@@ -306,4 +306,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 
 <!--Other Web references-->
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0309_2016-->

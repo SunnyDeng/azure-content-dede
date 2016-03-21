@@ -40,11 +40,11 @@ In diesem Tutorial wird Schritt für Schritt erläutert, wie Sie zwischengespeic
 
 	![Blatt „Laden“ für CDN](./media/cdn-preload-endpoint/cdn-load-blade.png)
 
-4. Geben Sie in das Textfeld **Pfad** den vollständigen Pfad jedes Assets ein, das Sie laden möchten (z. B. */pictures/kitten.png*).
+4. Geben Sie in das Textfeld **Pfad** den vollständigen Pfad eines jeden Assets ein, das geladen werden soll (z. B. `/pictures/kitten.png`).
 
 	> [AZURE.TIP] Nachdem Sie Text eingegeben haben, werden weitere **Pfad**-Textfelder angezeigt, damit Sie eine Liste mit mehreren Assets erstellen können. Sie können Assets aus der Liste löschen, indem Sie auf die Schaltfläche mit den Auslassungspunkten (...) klicken.
 	>
-	> Die Pfade müssen eine relative URL sein. Sternchen (*) können als Platzhalter verwendet werden.
+	> Pfade müssen eine relative URL enthalten, die dem folgenden [regulären Ausdruck](https://msdn.microsoft.com/library/az24scfc.aspx) entspricht: `^(?:\/[a-zA-Z0-9-_.\u0020]+)+$`. Jedes Objekt muss einen eigenen Pfad haben. Platzhalter werden beim Vorabladen von Assets nicht unterstützt.
 
     ![Schaltfläche „Laden“](./media/cdn-preload-endpoint/cdn-load-paths.png)
 
@@ -52,9 +52,10 @@ In diesem Tutorial wird Schritt für Schritt erläutert, wie Sie zwischengespeic
 
 	![Schaltfläche „Laden“](./media/cdn-preload-endpoint/cdn-load-button.png)
 
+> [AZURE.NOTE] Es gilt eine Einschränkung von 10 Anforderungen zum Laden pro Minute pro CDN-Profil.
 
 ## Weitere Informationen
 - [Löschen eines Azure CDN-Endpunkts](cdn-purge-endpoint.md)
 - [Azure CDN-REST-API-Referenz – Löschen oder Vorabladen eines Endpunkts](https://msdn.microsoft.com/library/mt634451.aspx)
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

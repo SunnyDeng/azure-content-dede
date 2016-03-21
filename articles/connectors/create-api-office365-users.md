@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Hinzufügen der Office 365-Benutzer-API zu Ihren Logik-Apps | Microsoft Azure"
+	pageTitle="Hinzufügen der Office 365 Users-API zu PowerApps Enterprise- oder Logik-Apps | Microsoft Azure"
 	description="Übersicht über die Office 365-Benutzer-API und REST-API-Parameter"
 	services=""	
 	documentationCenter="" 	
@@ -14,17 +14,23 @@ ms.devlang="na"
 ms.topic="article"
 ms.tgt_pltfrm="na"
 ms.workload="integration"
-ms.date="02/25/2016"
+ms.date="03/03/2016"
 ms.author="deonhe"/>
 
 # Erste Schritte mit der Office 365-Benutzer-API
 
 Stellen Sie eine Verbindung mit der Office 365-Benutzer-API her, um Profile abzurufen, Benutzer zu suchen und vieles mehr. Die Office 365-Benutzer-API kann verwendet werden von:
 
-- PowerApps 
 - Logik-Apps 
+- PowerApps
 
->[AZURE.NOTE] Diese Version des Artikels gilt für die Schemaversion 2015-08-01-preview für Logik-Apps. Um die Schemaversion „2014-12-01-preview“ aufzurufen, klicken Sie auf [Office 365-API](../app-service-logic/app-service-logic-connector-office365.md).
+> [AZURE.SELECTOR]
+- [Logik-Apps](../articles/connectors/create-api-office365-users.md)
+- [PowerApps Enterprise](../articles/power-apps/powerapps-create-api-office365-users.md)
+
+&nbsp;
+
+>[AZURE.NOTE] Diese Version des Artikels gilt für die Schemaversion 2015-08-01-preview für Logik-Apps. Um die Schemaversion 2014-12-01-preview aufzurufen, klicken Sie auf [Office 365-API](../app-service-logic/app-service-logic-connector-office365.md).
 
 
 Mit der Office 365-Benutzer-API können Sie folgende Aktionen ausführen:
@@ -50,47 +56,6 @@ Alle APIs unterstützen Daten im JSON- und XML-Format.
 
 ## Herstellen einer Verbindung mit Office 365-Benutzern
 
-### Hinzufügen zusätzlicher Konfigurationen in PowerApps
-Wenn Sie diese API in PowerApps Enterprise hinzufügen, geben Sie die Werte für die **Client-ID** und den **geheimen Clientschlüssel** Ihrer Office 365-AAD-Anwendung (Azure Active Directory) ein. Der Wert von **Umleitungs-URL** wird auch in Ihrer Office 365-Anwendung verwendet. Wenn Sie noch keine Office 365-Anwendung haben, führen Sie die folgenden Schritte aus, um die Anwendung zu erstellen:
-
-1. Öffnen Sie das [Azure-Portal][5], dann **Active Directory**, und wählen Sie den Namen des Mandanten Ihrer Organisation aus.
-2. Klicken Sie auf die Registerkarte **Anwendungen**, und wählen Sie **Hinzufügen** aus:  
-![AAD-Mandanten-Anwendungen][7]
-
-3. Auf der Seite **Anwendung hinzufügen**:  
-
-	1. Geben Sie einen **Namen** für Ihre Anwendung ein.  
-	2. Lassen Sie als Anwendungstyp **Web** ausgewählt.  
-	3. Wählen Sie **Weiter**.  
-
-	![AAD-Anwendung hinzufügen – App-Info][8]
-
-4. Unter **App-Eigenschaften**:  
-
-	1. Geben Sie unter **ANMELDE-URL** die Anmelde-URL Ihrer Anwendung ein. Da Sie die Authentifizierung mit AAD für PowerApps durchführen, legen Sie die Anmelde-URL auf \__https://login.windows.net_ fest.  
-	2. Geben Sie einen gültigen **APP-ID-URI** für Ihre App ein.  
-	3. Klicken Sie auf **OK**.  
-
-	![AAD-Anwendung hinzufügen – App-Eigenschaften][9]
-
-5. Wenn Sie fertig sind, wird die neue AAD-App geöffnet. Wählen Sie **Konfigurieren** aus:  
-![Contoso-AAD-App][10]
-
-6. Legen Sie die **Antwort-URL** im Abschnitt **OAuth 2** auf den Wert der Umleitungs-URL fest, der beim Hinzufügen der Office 365-Benutzer-API im Azure-Portal angezeigt wurde. Wählen Sie **Anwendung hinzufügen** aus:  
-![Contoso-AAD-App konfigurieren][11]
-
-7. Wählen Sie unter **Berechtigungen für andere Anwendungen** die Option **Office 365 Unified API (Vorschau)** und dann **OK**.
-
-	Auf der Konfigurationsseite können Sie nun sehen, dass _Office 365 Unified API (Vorschau)_ der Liste _Berechtigungen für andere Anwendungen_ hinzugefügt wurde.
-
-8. Wählen Sie für **Office 365 Exchange Online** die Option **Delegierte Berechtigungen** aus, und wählen Sie dann die Berechtigung **Alle grundlegenden Benutzerprofile lesen**.
-
-Eine neue Azure Active Directory-App wird erstellt. Sie können die **Client-ID** und den **geheimen Clientschlüssel** kopieren und in Ihre Konfiguration der Office 365-Benutzer-API im Azure-Portal einfügen.
-
-Einige hilfreiche Informationen zu AAD-Anwendungen finden Sie unter [Wie und warum werden Anwendungen zu Azure AD hinzugefügt?](../active-directory/active-directory-how-applications-are-added.md).
-
-
-### Hinzufügen zusätzlicher Konfiguration in Logik-Apps
 Wenn Sie Ihren Logik-Apps diese API hinzufügen, müssen Sie sich bei Ihrem Konto für die Office 365-Benutzer-API anmelden und den Logik-Apps das Herstellen einer Verbindung mit Ihrem Konto gestatten.
 
 1. Melden Sie sich bei Ihrem Konto für die Office 365-Benutzer-API an.
@@ -105,8 +70,7 @@ Nachdem Sie eine Verbindung hergestellt haben, geben Sie die Eigenschaften für 
 Gilt für Version: 1.0.
 
 ### Mein Profil abrufen 
-Ruft das Benutzerprofil für den aktuellen Benutzer ab.  
-```GET: /users/me```
+Ruft das Benutzerprofil für den aktuellen Benutzer ab. ```GET: /users/me```
 
 Es gibt keine Parameter für diesen Aufruf.
 
@@ -124,8 +88,7 @@ Es gibt keine Parameter für diesen Aufruf.
 
 
 ### Benutzerprofil abrufen 
-Ruft ein bestimmtes Benutzerprofil ab.  
-```GET: /users/{userId}```
+Ruft ein bestimmtes Benutzerprofil ab. ```GET: /users/{userId}```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -145,8 +108,7 @@ Ruft ein bestimmtes Benutzerprofil ab.
 
 
 ### Vorgesetzten abrufen 
-Ruft das Benutzerprofil des Vorgesetzten des angegebenen Benutzers ab.  
-```GET: /users/{userId}/manager```
+Ruft das Benutzerprofil des Vorgesetzten des angegebenen Benutzers ab. ```GET: /users/{userId}/manager```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -167,8 +129,7 @@ Ruft das Benutzerprofil des Vorgesetzten des angegebenen Benutzers ab.
 
 
 ### Direkt unterstellte Mitarbeiter abrufen 
-Ruft direkt unterstellte Mitarbeiter ab.  
-```GET: /users/{userId}/directReports```
+Ruft direkt unterstellte Mitarbeiter ab. ```GET: /users/{userId}/directReports```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -189,8 +150,7 @@ Ruft direkt unterstellte Mitarbeiter ab.
 
 
 ### Nach Benutzern suchen 
-Ruft die Suchergebnisse für Benutzerprofile ab.  
-```GET: /users```
+Ruft die Suchergebnisse für Benutzerprofile ab. ```GET: /users```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
@@ -214,7 +174,7 @@ Ruft die Suchergebnisse für Benutzerprofile ab.
 
 #### Benutzer: Modellklasse „User“.
 
-| Name | Datentyp |Erforderlich
+|Eigenschaftenname | Datentyp |Erforderlich
 |---|---|---|
 |DisplayName|string|no|
 |GivenName|string|no|
@@ -231,9 +191,10 @@ Ruft die Suchergebnisse für Benutzerprofile ab.
 
 
 ## Nächste Schritte
-Nach dem Hinzufügen der Office 365-API zu PowerApps Enterprise [erteilen Sie den Benutzern Berechtigungen](../power-apps/powerapps-manage-api-connection-user-access.md) zum Verwenden der API in ihren Apps.
 
 [Erstellen Sie eine Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md).
+
+Gehen Sie zur [Liste der APIs](apis-list.md) zurück.
 
 <!--References-->
 [5]: https://portal.azure.com
@@ -243,6 +204,4 @@ Nach dem Hinzufügen der Office 365-API zu PowerApps Enterprise [erteilen Sie de
 [10]: ./media/create-api-office365-users/contoso-aad-app.PNG
 [11]: ./media/create-api-office365-users/contoso-aad-app-configure.PNG
 
-<!---HONumber=AcomDC_0302_2016-->
-
-
+<!---HONumber=AcomDC_0309_2016-->

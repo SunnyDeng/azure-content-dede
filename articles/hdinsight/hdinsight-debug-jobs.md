@@ -89,7 +89,7 @@ Power Query kann von [https://www.microsoft.com/de-de/download/details.aspx?id=3
 9. Klicken Sie im Dialogfeld „Gruppieren nach“ auf **OK**.
 10. Klicken Sie auf „Übernehmen und schließen“.
  
-Sie können jetzt Excel zum Filtern und Sortieren verwenden. Sie können nach Wunsch andere Spalten einbeziehen (z. B. „Message“), um auftretende Probleme detailliert zu untersuchen. Doch das zuvor beschriebene Auswählen und Gruppieren der Spalten bietet einen guten Überblick darüber, was in Hadoop-Diensten passiert. Das gleiche Prinzip kann auf die Tabellen „setuplog“ und „hadoopinstalllog“ angewendet werden.
+Sie können jetzt Excel zum Filtern und Sortieren verwenden. Sie können nach Wunsch andere Spalten einbeziehen (z. B. „Message“), um auftretende Probleme detailliert zu untersuchen. Doch das zuvor beschriebene Auswählen und Gruppieren der Spalten bietet einen guten Überblick darüber, was in Hadoop-Diensten passiert. Das gleiche Prinzip kann auf die Tabellen „setuplog“ und „hadoopinstalllog“ angewendet werden.
 
 #### Verwenden von Visual Studio
 
@@ -142,7 +142,7 @@ Klicken Sie im Azure-Portal auf den Namen eines HDInsight-Clusters, um das Clust
 
 * **Abrufen des Knotenstatus**. Erweitern Sie im linken Bereich **Cluster**, und klicken Sie auf **Knoten**. Hiermit werden alle Knoten im Cluster, die HTTP-Adresse der einzelnen Knoten, die jeweils zugewiesenen Ressourcen usw. aufgeführt.
 
-* **Überwachen des Auftragsstatus**. Erweitern Sie im linken Bereich **Cluster**, und klicken Sie dann auf **Anwendungen**, um alle Aufträge im Cluster aufzulisten. Wenn Sie nur Aufträge in einem bestimmten Zustand betrachten möchten (z. B. neu, übermittelt, ausgeführt usw.), klicken Sie auf den entsprechenden Link unter **Anwendungen**. Sie können außerdem auf den Auftragsnamen klicken, um weitere Informationen zum Auftrag abzurufen, z. B. Ausgabe, Protokolle usw.
+* **Überwachen des Auftragsstatus**. Erweitern Sie im linken Bereich **Cluster**, und klicken Sie dann auf **Anwendungen**, um alle Aufträge im Cluster aufzulisten. Wenn Sie nur Aufträge in einem bestimmten Zustand betrachten möchten (z. B. neu, übermittelt, ausgeführt usw.), klicken Sie auf den entsprechenden Link unter **Anwendungen**. Sie können außerdem auf den Auftragsnamen klicken, um weitere Informationen zum Auftrag abzurufen, z. B. Ausgabe, Protokolle usw.
 
 ###Öffnen der HBase-Benutzeroberfläche
 
@@ -313,11 +313,11 @@ Einige dieser Fehlermeldungen können auch im Azure-Portal angezeigt werden, wen
 
 ### <a id="UnableToResolveDNS"></a>UnableToResolveDNS
 - **Beschreibung**: DNS *IhreDnsUrl* konnte nicht aufgelöst werden. Stellen Sie sicher, dass die vollqualifizierte URL für den Blobendpunkt bereitgestellt wird.  
-- **Lösung**: Geben Sie eine gültige Blob-URL an. Die URL MUSS uneingeschränkt gültig sein, d. h., sie muss mit „*http://* “ beginnen und auf *.com* enden.
+- **Lösung**: Geben Sie eine gültige Blob-URL an. Die URL MUSS uneingeschränkt gültig sein, d. h., sie muss mit „**http://*“ beginnen und auf *.com* enden.
 
 ### <a id="UnableToVerifyLocationOfResource"></a>UnableToVerifyLocationOfResource
 - **Beschreibung**: Der Speicherort der Ressource *IhreDnsUrl* konnte nicht überprüft werden. Stellen Sie sicher, dass die vollqualifizierte URL für den Blobendpunkt bereitgestellt wird.  
-- **Lösung**: Geben Sie eine gültige Blob-URL an. Die URL MUSS uneingeschränkt gültig sein, d. h., sie muss mit „*http://* “ beginnen und auf *.com* enden.
+- **Lösung**: Geben Sie eine gültige Blob-URL an. Die URL MUSS uneingeschränkt gültig sein, d. h., sie muss mit „**http://*“ beginnen und auf *.com* enden.
 
 ### <a id="VersionCapabilityNotAvailable"></a>VersionCapabilityNotAvailable
 - **Beschreibung**: Die Versionsfunktion ist nicht für Version *AngegebeneVersion* und Abonnement-ID *IhreAbonnementID* verfügbar.  
@@ -337,6 +337,6 @@ Einige dieser Fehlermeldungen können auch im Azure-Portal angezeigt werden, wen
 
 ## Nächste Schritte
 
-[Debuggen von Tez-Aufträgen in HDInsight mithilfe von Ambari-Ansichten](hdinsight-debug-ambari-tez-view.md)[Aktivieren von Heapdumps für Hadoop-Dienste auf Linux-basierten HDInsight-Clustern](hdinsight-hadoop-collect-debug-heap-dump-linux.md)[Verwalten von HDInsight-Clustern mithilfe der Ambari-Webbenutzeroberfläche](hdinsight-hadoop-manage-ambari.md)
+[Debuggen von Tez-Aufträgen in HDInsight mithilfe von Ambari-Ansichten](hdinsight-debug-ambari-tez-view.md) [Aktivieren von Heapdumps für Hadoop-Dienste auf Linux-basierten HDInsight-Clustern](hdinsight-hadoop-collect-debug-heap-dump-linux.md)[Verwalten von HDInsight-Clustern mithilfe der Ambari-Webbenutzeroberfläche](hdinsight-hadoop-manage-ambari.md)
 
-<!----HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0309_2016-->

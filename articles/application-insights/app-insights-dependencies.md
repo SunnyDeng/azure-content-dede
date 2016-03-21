@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/09/2016" 
+	ms.date="03/02/2016" 
 	ms.author="awills"/>
  
 # Diagnostizieren von Problemen mit Abhängigkeiten in Application Insights
@@ -38,7 +38,7 @@ Der standardmäßig verfügbare Abhängigkeitsmonitor meldet derzeit Aufrufe an 
  * Lokale oder Remote-HTTP-Aufrufe
  * Azure DocumentDb, Tabelle, Blobspeicher und Warteschlange
 * Java
- * Aufrufe an eine Datenbank über einen [JDBC](http://docs.oracle.com/javase/7/docs/technotes/guides/jdbc/)-Treiber, z. B. MySQL, SQL Server, PostgreSQL oder SQLite.
+ * Aufrufe an eine Datenbank über einen [JDBC](http://docs.oracle.com/javase/7/docs/technotes/guides/jdbc/)-Treiber, z. B. MySQL, SQL Server, PostgreSQL oder SQLite.
 * Webseiten
  * [AJAX-Aufrufe](app-insights-javascript.md)
 
@@ -50,10 +50,11 @@ Installieren Sie den entsprechenden Agent für den Hostserver.
 
 Plattform | Installieren
 ---|---
-IIS-Server | [Statusmonitor](app-insights-monitor-performance-live-website-now.md)
+IIS-Server | [Installieren Sie den Statusmonitor auf dem Server](app-insights-monitor-performance-live-website-now.md), oder [aktualisieren Sie die Anwendung auf .NET Framework 4.6 oder höher](http://go.microsoft.com/fwlink/?LinkId=528259) 
 Azure-Web-App | [Application Insights-Erweiterung](../azure-portal/insights-perf-analytics.md)
 Java-Webserver | [Java-Web-Apps](app-insights-java-agent.md)
 Webseiten | [JavaScript-Monitor](app-insights-javascript.md) (ohne zusätzliche Einrichtung über die Überwachung der Webseite hinaus)
+Clouddienst | [Verwenden Sie die Startaufgabe](app-insights-cloudservices.md#dependencies), oder [installieren Sie .NET Framework 4.6+](../cloud-services/cloud-services-dotnet-install-dotnet.md)  
 
 Für den Statusmonitor für IIS-Server müssen Sie das Quellprojekt nicht mit dem Application Insights-SDK neu erstellen.
 
@@ -139,4 +140,4 @@ Siehe [Webseiten](app-insights-javascript.md).
 
  
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0309_2016-->

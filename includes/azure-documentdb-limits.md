@@ -24,10 +24,10 @@ Maximale Anzahl von JOINs pro Abfrage* |5
 Maximale Anzahl von UND-Klauseln pro Abfrage* |20
 Maximale Anzahl von ODER-Klauseln pro Abfrage* |20
 Maximale Anzahl von Werten pro IN-Ausdruck* |200
-Maximale Anzahl von Punkten in einem Polygonargument in einer ST\_WITHIN-Abfrage* |16
+Maximale Anzahl von Punkten in einem Polygonargument in einer ST\_WITHIN-Abfrage* |256
 Maximale Anzahl von Sammlungserstellungen pro Minute* |5
 Maximale Anzahl von Skalierungsvorgängen pro Minute* |5
 
 Kontingente mit einem Sternchen (*) [können angepasst werden. Wenden Sie sich dafür an den Azure-Support](../articles/documentdb/documentdb-increase-limits.md).
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

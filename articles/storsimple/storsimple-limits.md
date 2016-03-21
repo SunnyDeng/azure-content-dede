@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="02/17/2016"
+   ms.date="02/29/2016"
    ms.author="alkohli" />
 
 # StorSimple-Systemeinschränkungen
@@ -27,9 +27,9 @@ StorSimple bietet skalierbaren und flexiblen Speicher für Ihr Rechenzentrum. Es
 | Maximale Anzahl von Volumecontainern | 64 | |
 | Maximale Anzahl von Volumes | 255 | |
 | Maximale Anzahl von Zeitplänen pro Bandbreitenvorlage | 168 | Einen Zeitplan für jede Stunde, jeden Tag der Woche (24 * 7). |
-| Maximale Größe eines mehrstufigen Volumes auf physischen Geräten | 64 TB für 8100 und 8600 | 8100 und 8600 sind physische Geräte. |
-| Maximale Größe eines mehrstufigen Volumes auf virtuellen Geräten in Azure | 30 TB für 8010 <br></br> 64 TB für 8020 | 8010 und 8020 sind virtuelle Geräte in Azure, die Standardspeicher und Storage Premium verwenden. |
-| Maximale Größe eines lokal fixierten Volumes auf physischen Geräten | 9 TB für 8100 <br></br> 24 TB für 8600 | 8100 und 8600 sind physische Geräte. |
+| Maximale Größe eines mehrstufigen Volumes auf physischen Geräten | 64 TB für 8100 und 8600 | 8100 und 8600 sind physische Geräte. |
+| Maximale Größe eines mehrstufigen Volumes auf virtuellen Geräten in Azure | 30 TB für 8010 <br></br> 64 TB für 8020 | 8010 und 8020 sind virtuelle Geräte in Azure, die Standardspeicher und Storage Premium verwenden. |
+| Maximale Größe eines lokal fixierten Volumes auf physischen Geräten | 8 TB für 8100 <br></br> 20 TB für 8600 | 8100 und 8600 sind physische Geräte. |
 | Maximale Anzahl von iSCSI-Verbindungen | 512 | |
 | Maximale Anzahl von iSCSI-Verbindungen von Initiatoren | 512 | |
 | Maximale Anzahl von Zugriffssteuerungsdatensätzen pro Gerät | 64 | |
@@ -52,4 +52,4 @@ StorSimple bietet skalierbaren und flexiblen Speicher für Ihr Rechenzentrum. Es
 
 Überprüfen Sie die [StorSimple-Systemanforderungen](storsimple-system-requirements.md).
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0309_2016-->

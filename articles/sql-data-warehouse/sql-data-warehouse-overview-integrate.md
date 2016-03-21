@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="02/01/2016"
+   ms.date="03/03/2016"
    ms.author="lodipalm;barbkess;sonyama"/>
 
 #Nutzen anderer Dienste mit SQL Data Warehouse
@@ -30,7 +30,7 @@ Wir arbeiten daran, im Azure-Ökosystem Verbindungen mit weiteren Diensten herzu
 Mit der Power BI-Integration können Sie die Rechenleistung von SQL Data Warehouse mit der dynamischen Berichterstellung und Visualisierung der Power BI nutzen. Die Power BI-Integration umfasst derzeit:
 
 + **Direct Connect**: Eine erweiterte Verbindung mit logischem Pushdown gegen SQL Data Warehouse. Dies ermöglicht schnellere Analysen im größeren Maßstab.
-+ **Open in Power BI**: Die Schaltfläche 'Open in Power BI' übergibt für eine nahtlose Verbindung Instanzinformationen an Power BI. 
++ **Open in Power BI**: Die Schaltfläche 'Open in Power BI' übergibt für eine nahtlose Verbindung Instanzinformationen an Power BI.
 
 Weitere Informationen finden Sie unter [Integration in Power BI](./sql-data-warehouse-integrate-power-bi.md) oder in der [Power BI-Dokumentation](http://blogs.msdn.com/b/powerbi/archive/2015/06/24/exploring-azure-sql-data-warehouse-with-power-bi.aspx).
 
@@ -44,7 +44,7 @@ Weitere Informationen finden Sie unter[Integration in Azure Data Factory](./sql-
 ##Azure Machine Learning
 Azure Machine Learning ist ein vollständig verwalteter Analytics-Dienst, mit dem Benutzer komplexe Modelle erstellen können, die einen großen Satz von Vorhersagetools nutzen. SQL Data Warehouse wird sowohl als Quelle als auch als Ziel für diese Modelle mit den folgenden Funktionen unterstützt:
 
-+ **Daten lesen**: skalierte Laufwerkmodelle mit T-SQL gegen SQL Data Warehouse. 
++ **Daten lesen**: skalierte Laufwerkmodelle mit T-SQL gegen SQL Data Warehouse.
 + **Daten schreiben**: Zurückgeben von Änderungen von jedem Modell zurück an SQL Data Warehouse.
 
 Weitere Informationen finden Sie unter [Integration in Azure Machine Learning](./sql-data-warehouse-integrate-azure-machine-learning.md) oder in der [Azure Machine Learning-Dokumentation](https://azure.microsoft.com/services/machine-learning/).
@@ -71,4 +71,4 @@ Weitere Informationen finden Sie unter[Integration in Azure Stream Analytics](./
 
 <!--Other Web references-->
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0309_2016-->

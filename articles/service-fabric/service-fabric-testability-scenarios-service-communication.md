@@ -41,7 +41,7 @@ Wenn Dienste im Cluster verschoben werden, gibt es zwei Szenarien, auf deren Beh
 
 Die ordnungsgemäße Behandlung dieser Szenarien ist wichtig dafür, dass das System reibungslos ausgeführt werden kann. Bedenken Sie dazu Folgendes:
 
-- Jeder Dienst, mit dem eine Verbindung hergestellt werden kann, verfügt über eine *Adresse*, die er überwacht (z. B. HTTP oder WebSockets). Wenn eine Dienstinstanz oder Partition verschoben wird, ändert sich der dazugehörige Adressendpunkt. (Er wechselt zu einem anderen Knoten mit einer anderen IP-Adresse.) Wenn Sie die integrierten Kommunikationskomponenten verwenden, werden darüber die Dienstadressen neu für Sie aufgelöst.
+- Jeder Dienst, mit dem eine Verbindung hergestellt werden kann, verfügt über eine *Adresse*, die er überwacht (z. B. HTTP oder WebSockets). Wenn eine Dienstinstanz oder Partition verschoben wird, ändert sich der dazugehörige Adressendpunkt. (Er wechselt zu einem anderen Knoten mit einer anderen IP-Adresse.) Wenn Sie die integrierten Kommunikationskomponenten verwenden, werden darüber die Dienstadressen neu für Sie aufgelöst.
 - Unter Umständen kann es zu einem vorübergehenden Anstieg der Dienstwartezeit kommen, während die Dienstinstanz ihren Listener neu startet. Dies hängt davon ab, wie schnell der Dienst den Listener öffnet, nachdem die Instanz verschoben wurde.
 - Alle vorhandenen Verbindungen müssen geschlossen und wieder geöffnet werden, nachdem der Dienst einen neuen Knoten öffnet. Beim ordnungsgemäßen Herunterfahren oder Neustart eines Knotens wird Zeit dafür veranschlagt, die für das ordnungsgemäße Herunterfahren vorhandener Verbindungen anfällt.
 
@@ -75,7 +75,7 @@ Mit den Testability-Tools von Service Fabric können Sie ein Testszenario zum Te
 
 Service Fabric ist eine Plattform, mit der für Ihre Dienste eine hohe Verfügbarkeit erzielt werden soll. In Extremfällen können zugrunde liegende Infrastrukturprobleme trotzdem noch zum Ausfall der Verfügbarkeit führen. Es ist wichtig, auch für diese Szenarien Tests durchzuführen.
 
-Für zustandsbehaftete Dienste wird ein quorumbasiertes System zum Replizieren des Zustands mit dem Ziel einer hohen Verfügbarkeit verwendet. Dies bedeutet, dass ein Quorum von Replikaten verfügbar sein muss, um Schreibvorgänge ausführen zu können. In seltenen Fällen, z. B. bei einem umfangreicheren Hardwarefehler, ist unter Umständen kein Quorum von Replikaten verfügbar. Sie können dann keine Schreibvorgänge ausführen, während Lesevorgänge weiterhin möglich sind.
+Für zustandsbehaftete Dienste wird ein quorumbasiertes System zum Replizieren des Zustands mit dem Ziel einer hohen Verfügbarkeit verwendet. Dies bedeutet, dass ein Quorum von Replikaten verfügbar sein muss, um Schreibvorgänge ausführen zu können. In seltenen Fällen, z. B. bei einem umfangreicheren Hardwarefehler, ist unter Umständen kein Quorum von Replikaten verfügbar. Sie können dann keine Schreibvorgänge ausführen, während Lesevorgänge weiterhin möglich sind.
 
 ### Testen: Nichtverfügbarkeit von Schreibvorgängen
 
@@ -85,11 +85,11 @@ Mithilfe des PowerShell-Cmdlets **Invoke-ServiceFabricPartitionQuorumLoss** kann
 
 ```powershell
 
-PS > Invoke-ServiceFabricPartitionQuorumLoss -ServiceName fabric:/Myapplication/MyService -QuorumLossMode PartialQuorumLoss -QuorumLossDurationInSeconds 20
+PS > Invoke-ServiceFabricPartitionQuorumLoss -ServiceName fabric:/Myapplication/MyService -QuorumLossMode QuorumReplicas -QuorumLossDurationInSeconds 20
 
 ```
 
-In diesem Beispiel wird `QuorumLossMode` auf `PartialQuorumLoss` festgelegt, um anzugeben, dass ein Quorumverlust ausgelöst werden soll, ohne alle Replikate herunterzufahren. Auf diese Weise sind Lesevorgänge weiterhin möglich. Um ein Szenario zu testen, in dem eine gesamte Partition nicht verfügbar ist, können Sie diesen Schalter auf `FullQuorumLoss` festlegen.
+In diesem Beispiel wird `QuorumLossMode` auf `QuorumReplicas` festgelegt, um anzugeben, dass ein Quorumverlust ausgelöst werden soll, ohne alle Replikate herunterzufahren. Auf diese Weise sind Lesevorgänge weiterhin möglich. Um ein Szenario zu testen, in dem eine gesamte Partition nicht verfügbar ist, können Sie diesen Schalter auf `AllReplicas` festlegen.
 
 ## Nächste Schritte
 
@@ -97,4 +97,4 @@ In diesem Beispiel wird `QuorumLossMode` auf `PartialQuorumLoss` festgelegt, um 
 
 [Weitere Informationen zu Testability-Szenarien](service-fabric-testability-scenarios.md)
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0309_2016-->

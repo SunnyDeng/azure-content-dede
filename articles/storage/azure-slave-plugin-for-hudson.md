@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="Java"
 	ms.topic="article"
-	ms.date="01/11/2016"
+	ms.date="02/22/2016"
 	ms.author="robmcm"/>
 
 # Verwenden des Azure Slave-Plug-Ins mit Hudson Continuous Integration
@@ -42,7 +42,7 @@ Ein Abonnementprofil, das als Veröffentlichungseinstellungen bezeichnet wird, i
 * Ihre Abonnement-ID
 * ein Verwaltungszertifikat für Ihr Abonnement
 
-Diese finden Sie in Ihrem Abonnementprofil. Wenn Sie keine Kopie Ihres Abonnementprofils besitzen, können Sie es [hier](https://manage.windowsazure.com/publishsettings/Index?SchemaVersion=2.0) herunterladen. Es folgt ein Beispiel für ein Abonnementprofil.
+Sie finden dies in Ihrem [Abonnementprofil](https://manage.windowsazure.com/publishsettings/Index?SchemaVersion=2.0). Es folgt ein Beispiel für ein Abonnementprofil.
 
 	<?xml version="1.0" encoding="utf-8"?>
 
@@ -204,4 +204,4 @@ In diesem Abschnitt erstellen Sie eine Hudson-Aufgabe, die auf einen untergeordn
 
 Hudson erstellt dann einen untergeordneten Knoten mithilfe der im vorherigen Abschnitt erstellten Vorlage und führt das Skript aus, das Sie im Buildschritt für diese Aufgabe angegeben haben.
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0309_2016-->

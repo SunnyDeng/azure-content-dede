@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/16/2016"
+	ms.date="03/04/2016"
 	ms.author="markusvi;andkjell"/>
 
 
 # Azure AD Connect-Synchronisierung: Grundlagen und Anpassung der Synchronisierung
-Die Azure Active Directory Connect-Synchronisierungsdienste (Azure AD Connect-Synchronisierung) sind eine Hauptkomponente von Azure AD Connect. Diese Dienste wickeln alle Vorgänge ab, die mit dem Synchronisieren von Identitätsdaten zwischen Ihrer lokalen Umgebung und Azure AD in der Cloud zusammenhängen. Azure AD Connect Sync ist der Nachfolger von DirSync, Azure AD Sync und Forefront Identity Manager mit konfiguriertem Azure Active Directory-Connector.
+Die Azure Active Directory Connect-Synchronisierungsdienste (Azure AD Connect-Synchronisierung) sind eine Hauptkomponente von Azure AD Connect. Diese Dienste wickeln alle Vorgänge ab, die mit dem Synchronisieren von Identitätsdaten zwischen Ihrer lokalen Umgebung und Azure AD in der Cloud zusammenhängen. Azure AD Connect Sync ist der Nachfolger von DirSync, Azure AD Sync und Forefront Identity Manager mit konfiguriertem Azure Active Directory-Connector.
 
 Dieses Thema ist das zentrale Thema für **Azure AD Connect Sync** (auch als **„Synchronisierungsmodul“ bezeichnet**) und enthält eine Liste mit Links zu allen anderen verwandten Themen. Links zu Azure AD Connect finden Sie unter [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
@@ -36,12 +36,15 @@ Dieses Thema ist das zentrale Thema für **Azure AD Connect Sync** (auch als **�
 | [Grundlegendes zu Ausdrücken für die deklarative Bereitstellung](active-directory-aadconnectsync-understanding-declarative-provisioning-expressions.md) | Es wird ausführlich beschrieben, wie das Konfigurationsmodell funktioniert und wie die Syntax für die Ausdruckssprache verwendet wird. |
 | [Bewährte Methoden zum Ändern der Standardkonfiguration](active-directory-aadconnectsync-best-practices-changing-default-configuration.md) | Wenn Sie die Details der obigen Themen kennen und Änderungen an der Standardkonfiguration vornehmen möchten, damit Ihr Szenario funktioniert bzw. Ihre Anforderungen erfüllt werden, helfen Ihnen die Informationen in diesem Thema weiter. |
 | [Konfigurieren der Filterung](active-directory-aadconnectsync-configure-filtering.md) | Beschreibt die verschiedenen Optionen zum Begrenzen der Objekte für die Synchronisierung mit Azure AD und enthält eine Schritt-für-Schritt-Anleitung für deren Konfiguration. |
-| **Features** ||
-| [Implementieren der Kennwortsynchronisierung](active-directory-aadconnectsync-implement-password-synchronization.md) | Es wird beschrieben, wie die Synchronisierung von Kennwörtern funktioniert und wie die Implementierung sowie der Betrieb und die Problembehandlung durchgeführt werden. |
+| **Features und Szenarien** ||
 | [Verhindern von versehentlichen Löschungen](active-directory-aadconnectsync-feature-prevent-accidental-deletes.md) | Beschreibt das Feature zum *Verhindern von versehentlichen Löschungen* und dessen Konfiguration. |
 | [Scheduler](active-directory-aadconnectsync-feature-scheduler.md) | Beschreibt den integrierten Scheduler zum Importieren, Synchronisieren und Exportieren von Daten. |
-| **Vorgänge** ||
-| [Operative Aufgaben und Überlegungen](active-directory-aadconnectsync-operations.md) | Es werden operative Aspekte beschrieben, z. B. die Notfallwiederherstellung. |
+| [Implementieren der Kennwortsynchronisierung](active-directory-aadconnectsync-implement-password-synchronization.md) | Es wird beschrieben, wie die Synchronisierung von Kennwörtern funktioniert und wie die Implementierung sowie der Betrieb und die Problembehandlung durchgeführt werden. |
+| [Geräterückschreiben](active-directory-aadconnect-feature-device-writeback.md) | Beschreibt wie das Geräterückschreiben in Azure AD Connect funktioniert. |
+| [Verzeichniserweiterungen](active-directory-aadconnectsync-feature-directory-extensions.md) | Beschreibt, wie Sie das Azure AD-Schema mit Ihren eigenen benutzerdefinierten Attributen erweitern. |
+| **Vorgänge und Benutzeroberfläche** ||
+| [Synchronization Service Manager](active-directory-aadconnectsync-service-manager-ui.md) | Beschreibt die Benutzeroberfläche von Synchronization Service Manager, einschließlich der Registerkarten [Operations](active-directory-aadconnectsync-service-manager-ui-operations.md), [Connectors](active-directory-aadconnectsync-service-manager-ui-connectors.md), [Metaverse Designer](active-directory-aadconnectsync-service-manager-ui-mvdesigner.md) und [Metaverse Search](active-directory-aadconnectsync-service-manager-ui-mvsearch.md).|
+| [Operative Aufgaben und Überlegungen](active-directory-aadconnectsync-operations.md) | Es werden operative Aspekte beschrieben, z. B. die Notfallwiederherstellung. |
 | **Weitere Informationen und Referenzen** ||
 | [Ports](active-directory-aadconnect-ports.md) | Enthält eine Liste der Ports, die Sie zwischen dem Synchronisierungsmodul und Ihren lokalen Verzeichnissen und Azure AD geöffnet sein müssen. |
 | [Mit Azure Active Directory synchronisierte Attribute](active-directory-aadconnectsync-attributes-synchronized.md) | Enthält eine Liste aller Attribute, die zwischen lokalem AD und Azure AD synchronisiert werden. |
@@ -51,4 +54,4 @@ Dieses Thema ist das zentrale Thema für **Azure AD Connect Sync** (auch als **�
 
 * [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0309_2016-->

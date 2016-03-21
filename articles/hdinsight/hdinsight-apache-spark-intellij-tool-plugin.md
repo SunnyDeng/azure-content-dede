@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/05/2016" 
+	ms.date="03/03/2016" 
 	ms.author="nitinme"/>
 
 
@@ -57,11 +57,13 @@ Falls Sie beim Installieren von IntelliJ IDEA nicht zum Aktivieren des Scala-Plu
 
 2. Klicken Sie auf dem nächsten Bildschirm links unten auf **Browse Repositories**. Suchen Sie im daraufhin eingeblendeten Dialogfeld **Browse Repositories** nach **HDInsight**, wählen Sie **Microsoft Azure HDInsight Tools for IntelliJ** aus, und klicken Sie dann auf **Install**.
 
+	![HDInsight-Plug-In installieren](./media/hdinsight-apache-spark-intellij-tool-plugin/install-hdinsight-plugin.png)
+
 3. Klicken Sie bei Aufforderung auf die Schaltfläche **Restart IntelliJ IDEA**, um die IDE neu zu starten.
 
 ## Ausführen einer Spark Scala-Anwendung in einem HDInsight Spark-Cluster
 
-1. Starten Sie IntelliJ IDEA, und erstellen Sie ein neues Projekt. Wählen Sie im Dialogfeld für das neue Projekt Folgendes aus, und klicken Sie anschließend auf **Next**:
+1. Starten Sie IntelliJ IDEA, und erstellen Sie ein neues Projekt. Wählen Sie im Dialogfeld für das neue Projekt Folgendes aus, und klicken Sie anschließend auf **Weiter**:
 
 	![Erstellen einer Spark Scala-Anwendung](./media/hdinsight-apache-spark-intellij-tool-plugin/create-hdi-scala-app.png)
 
@@ -73,7 +75,7 @@ Falls Sie beim Installieren von IntelliJ IDEA nicht zum Aktivieren des Scala-Plu
 
 	* Geben Sie einen Projektnamen und den Projektspeicherort an.
 	* Geben Sie für **Project SDK** eine Java-Version größer als 7 an.
-	* Klicken Sie für **Scala SDK** auf **Create**, dann auf **Download**, und wählen Sie die zu verwendende Version von Scala aus. **Verwenden Sie nicht die Version 2.11.x**. In diesem Beispiel wird Version **2.10.6** verwendet.
+	* Klicken Sie für **Scala SDK** auf **Create**, dann auf **Download**, und wählen Sie die zu verwendende Version von Scala aus. **Verwenden Sie nicht die Version 2.11.x**. In diesem Beispiel wird die Version **2.10.6** verwendet.
 	
 		![Erstellen einer Spark Scala-Anwendung](./media/hdinsight-apache-spark-intellij-tool-plugin/hdi-scala-version.png)
 
@@ -106,7 +108,7 @@ Falls Sie beim Installieren von IntelliJ IDEA nicht zum Aktivieren des Scala-Plu
 
 		![Hinzufügen von Quellcode](./media/hdinsight-apache-spark-intellij-tool-plugin/hdi-spark-scala-code-object.png)
 
-	3. Fügen Sie den folgenden Code in die Datei **MyClusterApp.scala** ein. Dieser Code liest die Daten aus der Datei „HVAC.csv“ (die für alle HDInsight Spark-Cluster verfügbar ist), ruft die Zeilen ab, die nur eine Ziffer in der siebten Spalte der CSV-Datei enthalten, und schreibt die Ausgabe in **/HVACOut** unter dem Standardspeichercontainer für den Cluster.
+	3. Fügen Sie den folgenden Code in die Datei **MyClusterApp.scala** ein. Dieser Code liest die Daten aus der Datei "HVAC.csv" (die für alle HDInsight Spark-Cluster verfügbar ist), ruft die Zeilen ab, die nur eine Ziffer in der siebten Spalte der CSV-Datei enthalten, und schreibt die Ausgabe in **/HVACOut** unter dem Standardspeichercontainer für den Cluster.
 
 
 			import org.apache.spark.SparkConf
@@ -147,9 +149,9 @@ Falls Sie beim Installieren von IntelliJ IDEA nicht zum Aktivieren des Scala-Plu
 	
 		* Da der Anwendungscode in diesem Beispiel keine Befehlszeilenargumente oder Referenzdateien (z. B. JAR) erfordert, können Sie die restlichen Textfelder leer lassen.
 	
-		* Klicken Sie auf **Submit**.
+		* Klicken Sie auf **Senden**.
 
-	3. Auf der Registerkarte **Spark Submission** unten im Fenster sollte nun das Anzeigen des Prozesses beginnen.
+	3. Auf der Registerkarte **Spark Submission** unten im Fenster sollte nun der Prozess angezeigt werden.
 
 	Im nächsten Abschnitt erfahren Sie, wie Sie mithilfe des HDInsight-Plug-Ins für IntelliJ IDEA auf die Auftragsausgabe zugreifen.
 
@@ -168,11 +170,11 @@ Sie können eine Vielzahl von Vorgängen mit dem HDInsight-Plug-In ausführen.
 
 	![Zugreifen auf Clusterspeicher](./media/hdinsight-apache-spark-intellij-tool-plugin/hdi-spark-access-storage.png)
 
-4. Klicken Sie auf den Namen des Speichercontainers, der dem Cluster zugeordnet ist. Im rechten Bereich sollten Sie einen Ordner namens **HVACOut** sehen. Doppelklicken Sie darauf, um den Ordner zu öffnen. Sie sehen Dateien des Typs **part-***. Öffnen Sie eine dieser Dateien, um die Ausgabe der Anwendung anzuzeigen.
+4. Klicken Sie auf den Namen des Speichercontainers, der dem Cluster zugeordnet ist. Im rechten Bereich sollten Sie einen Ordner namens **HVACOut** sehen. Doppelklicken Sie darauf, um den Ordner zu öffnen. Sie sehen Dateien vom Typ **part-***. Öffnen Sie eine dieser Dateien, um die Ausgabe der Anwendung anzuzeigen.
 
 ### Zugreifen auf den Spark-Verlaufsserver
 
-1. Klicken Sie in **HDInsight Explorer** mit der rechten Maustaste auf den Namen Ihres Spark-Cluster, und wählen Sie dann **Open Spark History UI** aus. Geben Sie die Anmeldeinformationen für den Cluster ein, wenn Sie dazu aufgefordert werden. Diese müssen Sie beim Bereitstellen des Clusters angegeben haben.
+1. Klicken Sie in **HDInsight Explorer** mit der rechten Maustaste auf den Namen Ihres Spark-Clusters, und wählen Sie dann **Open Spark History UI** aus. Geben Sie die Anmeldeinformationen für den Cluster ein, wenn Sie dazu aufgefordert werden. Diese müssen Sie beim Bereitstellen des Clusters angegeben haben.
 
 2. Im Dashboard des Spark-Verlaufsservers können Sie die Anwendung, deren Ausführung Sie gerade beendet haben, anhand des Anwendungsnamens suchen. Im obigen Code legen Sie den Anwendungsnamen mit `val conf = new SparkConf().setAppName("MyClusterApp")` fest. Daher lautetet der Name Ihrer Spark-Anwendung **MyClusterApp**.
 
@@ -191,7 +193,7 @@ Mithilfe des HDInsight-Tools-Plug-Ins für IntelliJ IDEA können Sie Spark Scala
 
 ### Voraussetzung
 
-Beim lokalen Ausführen der Spark Scala-Anwendung auf einem Windows-Computer erhalten Sie ggf. eine Ausnahme wie unter [SPARK-2356](https://issues.apache.org/jira/browse/SPARK-2356) beschrieben, die aufgrund der unter Windows fehlenden Datei „WinUtils.exe“ ausgelöst wird. Um diesen Fehler zu umgehen, müssen Sie [die ausführbare Datei hier herunterladen](http://public-repo-1.hortonworks.com/hdp-win-alpha/winutils.exe) und an einem Speicherort wie **C:\\WinUtils\\bin** speichern. Anschließend müssen Sie die Umgebungsvariable **HADOOP\_HOME** hinzufügen und den Wert der Variablen auf **C\\WinUtils** festlegen.
+Beim lokalen Ausführen der Spark Scala-Anwendung auf einem Windows-Computer erhalten Sie ggf. eine Ausnahme wie unter [SPARK-2356](https://issues.apache.org/jira/browse/SPARK-2356) beschrieben, die aufgrund der unter Windows fehlenden Datei „WinUtils.exe“ ausgelöst wird. Um diesen Fehler zu umgehen, müssen Sie [die ausführbare Datei hier herunterladen](http://public-repo-1.hortonworks.com/hdp-win-alpha/winutils.exe) und an einem Speicherort wie **C:\\WinUtils\\bin** speichern. Fügen Sie anschließend die Umgebungsvariable **HADOOP\_HOME** hinzu, und setzen Sie den Wert der Variablen auf **C\\WinUtils**.
 
 ### Ausführen einer lokalen Spark Scala-Anwendung	 
 
@@ -207,23 +209,23 @@ Beim lokalen Ausführen der Spark Scala-Anwendung auf einem Windows-Computer erh
 
 	* Geben Sie einen Projektnamen und den Projektspeicherort an.
 	* Geben Sie für **Project SDK** eine Java-Version größer als 7 an.
-	* Klicken Sie für **Scala SDK** auf **Create**, dann auf **Download**, und wählen Sie die zu verwendende Version von Scala aus. **Verwenden Sie nicht die Version 2.11.x**. In diesem Beispiel wird Version **2.10.6** verwendet.
+	* Klicken Sie für **Scala SDK** auf **Create**, dann auf **Download**, und wählen Sie die zu verwendende Version von Scala aus. **Verwenden Sie nicht die Version 2.11.x**. In diesem Beispiel wird die Version **2.10.6** verwendet.
 	
 		![Erstellen einer Spark Scala-Anwendung](./media/hdinsight-apache-spark-intellij-tool-plugin/hdi-scala-version.png)
 
 	* Für **Spark SDK**: Laden Sie das zu verwendende SDK [hier](http://go.microsoft.com/fwlink/?LinkID=723585&clcid=0x409) herunter.
-	* Klicken Sie auf **Fertig stellen**.
+	* Klicken Sie auf **Finish**.
 
 		![Erstellen einer Spark Scala-Anwendung](./media/hdinsight-apache-spark-intellij-tool-plugin/hdi-scala-local-project-details.png)
 
 3. Definieren Sie die Projektstruktur so, dass ein Artefakt (eine JAR-Paketdatei) erstellt wird, die letztlich den Code enthält, der im Cluster ausgeführt wird.
 
-	1. Klicken Sie im Menü **File** auf **Project Structure**.
+	1. Klicken Sie im Menü **Datei** auf **Projektstruktur**.
 	2. Klicken Sie im Dialogfeld **Project Structure** auf **Artifacts** und anschließend auf das Pluszeichen. Klicken Sie im eingeblendeten Dialogfeld auf **JAR** und anschließend auf **Empty**.
 
 		![JAR-Datei erstellen](./media/hdinsight-apache-spark-intellij-tool-plugin/create-jar-1.png)
 
-	3. Geben Sie einen Namen für die JAR-Datei ein (z. B. **MyLocalApp**). Klicken Sie im Bereich „Available Elements“ mit der rechten Maustaste **'MyLocalApp' compile output**, und klicken Sie dann auf **Put into Output Root**.
+	3. Geben Sie einen Namen für die JAR-Datei ein (z. B. **MyLocalApp**). Klicken Sie im Bereich "Available Elements" mit der rechten Maustaste auf **'MyLocalApp' compile output**, und klicken Sie dann auf **Put into Output Root**.
 
 		![JAR-Datei erstellen](./media/hdinsight-apache-spark-intellij-tool-plugin/create-local-jar-2.png)
 	
@@ -281,7 +283,7 @@ Sie können auch Ihre vorhandenen in IntelliJ IDEA erstellten Spark Scala-Anwend
 
 		<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
 
-3. Fügen Sie dem Element `UniqueKey="HDInsightTool"` hinzu, damit das **module**-Element wie das Folgende aussieht:
+3. Fügen Sie dem Element `UniqueKey="HDInsightTool"` hinzu, damit das **module**-Element wie folgt aussieht:
 
 		<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4" UniqueKey="HDInsightTool">
 
@@ -318,4 +320,4 @@ Sie können auch Ihre vorhandenen in IntelliJ IDEA erstellten Spark Scala-Anwend
 
 * [Verwalten von Ressourcen für den Apache Spark-Cluster in Azure HDInsight](hdinsight-apache-spark-resource-manager.md)
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

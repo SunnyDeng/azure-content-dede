@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="02/23/2016"
+   ms.date="03/02/2016"
    ms.author="terrylan"/>
 
 # Hinzufügen einer Web Application Firewall in Azure Security Center
@@ -42,7 +42,7 @@ In Azure Security Center wird unter Umständen empfohlen, dass Sie zum Schutz Ih
 10. Wählen Sie **Web Application Firewall-Setup abschließen** aus. Ein neues Blatt wird geöffnet. Sie sehen, dass eine Webanwendung vorhanden ist, für die der Datenverkehr umgeleitet muss.
 11. Wählen Sie die Webanwendung aus. Es wird ein Blatt geöffnet, in dem Sie Schritte zum Abschließen des Web Application Firewall-Setups ausführen können. Führen Sie die Schritte aus, und wählen Sie dann **Datenverkehr einschränken** aus. Security Center führt die Verkabelung dann für Sie durch. ![][6]
 
-> [AZURE.NOTE] Der automatische Bereitstellungsvorgang basiert auf (mit dem Ressourcen-Manager-Bereitstellungsmodell erstellten) WAF-Paketen, die in einem separaten VNET bereitgestellt werden. Der Zugriff auf die geschützten Webanwendungen auf virtuellen Computern (klassisch) ist auf die WAF-Geräte beschränkt, die nur Netzwerksicherheitsgruppen verwenden. Diese Unterstützung wird in Zukunft auf eine vollständig angepasste Bereitstellung von WAF-Paketen (klassisch) erweitert werden. Erfahren Sie mehr über das [klassische und das Ressourcen-Manager-Bereitstellungsmodell](../azure-classic-rm.md) für Azure-Ressourcen.
+> [AZURE.NOTE] Sie können mehrere Webanwendungen in Security Center schützen, indem Sie diese Anwendungen Ihren vorhandenen WAF-Bereitstellungen hinzufügen. WAF-Geräte (erstellt mit dem Ressourcen-Manager-Bereitstellungsmodell) müssen in einem separaten virtuellen Netzwerk bereitgestellt werden. WAF-Geräte (erstellt mit dem klassischen Bereitstellungsmodell) sind auf die Verwendung einer Netzwerksicherheitsgruppe beschränkt. Diese Unterstützung wird in Zukunft auf eine vollständig angepasste Bereitstellung eines WAF-Geräts (klassisch) erweitert. Erfahren Sie mehr über das [klassische und das Ressourcen-Manager-Bereitstellungsmodell](../azure-classic-rm.md) für Azure-Ressourcen.
 
 Die Protokolle dieser WAF sind nun vollständig integriert. Security Center kann automatisch beginnen, die Protokolle zu sammeln und zu analysieren, damit Sie wichtige Sicherheitswarnungen erhalten können.
 
@@ -54,7 +54,7 @@ In diesem Dokument wurde gezeigt, wie Sie die Security Center-Empfehlung „Web 
 
 Weitere Informationen zu Security Center finden Sie in den folgenden Quellen:
 
-- [Festlegen von Sicherheitsrichtlinien in Azure Security Center:](security-center-policies.md) Erfahren Sie, wie Sie Sicherheitsrichtlinien konfigurieren.
+- [Festlegen von Sicherheitsrichtlinien in Azure Security Center](security-center-policies.md): Erfahren Sie, wie Sie Sicherheitsrichtlinien für Ihre Azure-Abonnements und -Ressourcengruppen konfigurieren.
 - [Überwachen der Sicherheitsintegrität in Azure Security Center:](security-center-monitoring.md) Erfahren Sie, wie Sie die Integrität Ihrer Azure-Ressourcen überwachen.
 - [Verwalten von und Reagieren auf Sicherheitswarnungen in Azure Security Center:](security-center-managing-and-responding-alerts.md) Erfahren Sie, wie Sie Sicherheitswarnungen verwalten und darauf reagieren.
 - [Verwalten von Sicherheitsempfehlungen in Azure Security Center:](security-center-recommendations.md) Erfahren Sie, wie Empfehlungen Ihnen beim Schutz der Azure-Ressourcen helfen.
@@ -69,4 +69,4 @@ Weitere Informationen zu Security Center finden Sie in den folgenden Quellen:
 [5]: ./media/security-center-add-web-application-firewall/finalize-waf.png
 [6]: ./media/security-center-add-web-application-firewall/restrict-traffic.png
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0309_2016-->

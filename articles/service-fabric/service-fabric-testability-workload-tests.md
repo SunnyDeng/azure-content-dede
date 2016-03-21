@@ -23,14 +23,17 @@ Dank der in Azure Service Fabric enthaltenen Testability-Szenarien müssen sich 
 ## Benutzerdefiniertes Beispielszenario
 Mit diesem Test wird ein Szenario veranschaulicht, bei dem eine Überlappung der Geschäftsworkload mit [ordnungsgemäßen und nicht ordnungsgemäßen Fehlern](service-fabric-testability-actions.md#graceful-vs-ungraceful-fault-actions) erfolgt. Die Fehler sollten in der Mitte von Dienstvorgängen oder bei der Berechnung der besten Ergebnisse ausgelöst werden.
 
-Wir gehen hier ein Beispiel für einen Dienst durch, der die vier Workloads A, B, C und D verfügbar macht. Jede Workload entspricht einer Gruppe von Workflows, und es kann sich dabei um eine Berechnung, Speicherung oder Mischung handeln. Der Einfachheit halber werden die Workloads im Beispiel abstrahiert. Die unterschiedlichen Fehler, die in diesem Beispiel ausgeführt werden, lauten: + RestartNode: Nicht ordnungsgemäßer Fehler zum Simulieren eines Computerneustarts. + RestartDeployedCodePackage: Nicht ordnungsgemäßer Fehler zum Simulieren von Abstürzen des Dienstprozesshosts. + RemoveReplica: Ordnungsgemäßer Fehler zum Simulieren einer Replikatentfernung. + MovePrimary: Ordnungsgemäßer Fehler zum Simulieren von Replikatverschiebungen, die vom Service Fabric Load Balancer ausgelöst werden.
+Wir gehen hier ein Beispiel für einen Dienst durch, der die vier Workloads A, B, C und D verfügbar macht. Jede Workload entspricht einer Gruppe von Workflows, und es kann sich dabei um eine Berechnung, Speicherung oder Mischung handeln. Der Einfachheit halber werden die Workloads im Beispiel abstrahiert. Die folgenden unterschiedlichen Ausfälle werden die in diesem Beispiel ausgeführt:
+  + RestartNode: Ein nicht ordnungsgemäßer Ausfall zur Simulation eines Neustarts des Computers.
+  + RestartDeployedCodePackage: Ein nicht ordnungsgemäßer Ausfall zur Simulation von Abstürzen des Diensthostprozesses.
+  + RemoveReplica: Ein ordnungsgemäßer Ausfall zur Simulation des Entfernens eines Replikats.
+  + MovePrimary: Ein ordnungsgemäßer Ausfall zur Simulation von Replikatverschiebungen, die durch Service Fabric Load Balancer ausgelöst werden.
 
 ```csharp
 // Add a reference to System.Fabric.Testability.dll and System.Fabric.dll.
 
 using System;
 using System.Fabric;
-using System.Fabric.Testability;
 using System.Fabric.Testability.Scenario;
 using System.Threading;
 using System.Threading.Tasks;
@@ -147,9 +150,9 @@ class Test
     {
         Array values = Enum.GetValues(typeof(T));
         T workload = (T)values.GetValue(random.Next(values.Length));
-        return T;
+        return workload;
     }
 }
 ```
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0309_2016-->

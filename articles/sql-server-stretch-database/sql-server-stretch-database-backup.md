@@ -3,9 +3,9 @@
 	description="Erfahren Sie mehr über das Sichern und Wiederherstellen von Stretch-fähigen Datenbanken."
 	services="sql-server-stretch-database"
 	documentationCenter=""
-	authors="douglasl"
-	manager="jhubbard"
-	editor="monicar"/>
+	authors="douglaslMS"
+	manager=""
+	editor=""/>
 
 <tags
 	ms.service="sql-server-stretch-database"
@@ -67,4 +67,4 @@ Nachdem Sie die Verbindung erneut hergestellt haben, versucht Stretch-Datenbank,
 [StretchBackupImage3]: ./media/sql-server-stretch-database-backup/StretchDBBackup3.png
 [StretchBackupImage4]: ./media/sql-server-stretch-database-backup/StretchDBBackup4.png
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

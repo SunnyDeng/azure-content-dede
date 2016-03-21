@@ -5,7 +5,7 @@
     suite="powerapps"
 	documentationCenter="" 
 	authors="rajeshramabathiran"
-	manager="dwrede"
+	manager="erikre"
 	editor=""/>
 
 <tags
@@ -14,22 +14,28 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na" 
-   ms.date="11/25/2015"
+   ms.date="03/03/2016"
    ms.author="litran"/>
 
-# Erstellen einer neuen Google Drive-API in der App Service-Umgebung Ihrer Organisation
+# Erstellen einer neuen Google Drive-API in PowerApps Enterprise
+
+> [AZURE.SELECTOR]
+- [Logik-Apps](../articles/connectors/create-api-googledrive.md)
+- [PowerApps Enterprise](../articles/power-apps/powerapps-create-api-googledrive.md)
+
+Fügen Sie die Google Drive-API der App Service-Umgebung Ihrer Organisation (Mandant) hinzu.
 
 ## Erstellen der API im Azure-Portal
 
 1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/) mit Ihrem Geschäftskonto an. Melden Sie sich beispielsweise mit *IhrBenutzername*@*IhrUnternehmen*.com an. Sie werden dann automatisch mit Ihrem Unternehmensabonnement angemeldet.
  
-2. Wählen Sie auf der Taskleiste die Option **Durchsuchen** aus: ![][15]
+2. Wählen Sie in der Taskleiste **Durchsuchen**: ![][15]
 
 3. Um PowerApps zu finden, können Sie in der Liste scrollen oder *powerapps* eingeben: ![][16]
 
 4. Wählen Sie in **PowerApps** die Option **Manage APIs** aus: ![Navigieren zu registrierten APIs][1]
 
-5. Wählen Sie in **Manage APIs** die Option **Add** aus, um die neue API hinzuzufügen: ![API hinzufügen][2]
+5. Wählen Sie in **Manage APIs** die Option **Add** aus, um die neue API hinzufügen: ![API hinzufügen][2]
 
 6. Geben Sie einen beschreibenden **Namen** für Ihre API ein.
 	
@@ -39,7 +45,7 @@
 
 9. Geben Sie den *App-Schlüssel* und den *geheimen App-Schlüssel* Ihrer Google Drive-Anwendung ein. Wenn Sie nicht über diese Daten verfügen, finden Sie weiter unten im Abschnitt „Registrieren einer Google Drive-App zur Verwendung mit PowerApps“ Informationen zum Erstellen der benötigten Werte für den Schlüssel und den geheimen Schlüssel.
 
-	> [AZURE.IMPORTANT]Speichern Sie die **Umleitungs-URL**. Möglicherweise benötigen Sie diesen Wert an späterer Stelle in diesem Thema.
+	> [AZURE.IMPORTANT] Speichern Sie die **Umleitungs-URL**. Möglicherweise benötigen Sie diesen Wert an späterer Stelle in diesem Thema.
 
 10. Wählen Sie **OK** aus, um die Schritte abzuschließen.
 
@@ -70,13 +76,20 @@ Wenn Sie über keine vorhandene Google Drive-App mit den Werten für den Schlüs
 
 10. Auf der Seite „Create client ID“:
 
-	a) Wählen Sie unter **Application type** die Option **Web application** aus. b) Geben Sie einen Namen für den Client ein. c) Legen Sie die Umleitungs-URL auf die Umleitungs-URL fest, die Sie beim Hinzufügen der neuen Google Drive-API im Azure-Portal erhalten haben (weiter oben in diesem Thema). d) Wählen Sie **Create** aus.
+	1. Wählen Sie unter **Anwendungstyp** die Option **Webanwendung** aus.  
+	2.  Geben Sie einen Namen für den Client ein.  
+	3. Legen Sie die Umleitungs-URL auf die Umleitungs-URL fest, die Sie beim Hinzufügen der neuen Google Drive-API im Azure-Portal erhalten haben (in diesem Thema).  
+	4. Klicken Sie auf **Erstellen**.  
 
 	![Erstellen der Client-ID][14]
 
 11. Die Client-ID und der geheime Client-Schlüssel der registrierten Anwendung werden angezeigt.
 
 Eine neue Google Drive-App wird erstellt. Diese App können Sie in der Konfiguration Ihrer Google Drive-API im Azure-Portal verwenden.
+
+## Informationen zu REST-APIs
+
+[Google Drive-REST-API](../connectors/create-api-googledrive.md) – Referenz
 
 ## Zusammenfassung und nächste Schritte
 In diesem Thema haben Sie die Google Drive-API zu PowerApps Enterprise hinzugefügt. Als Nächstes können Sie den Zugriff für Benutzer auf die API einrichten, damit sie den Apps der Benutzer hinzugefügt werden kann:
@@ -102,4 +115,4 @@ In diesem Thema haben Sie die Google Drive-API zu PowerApps Enterprise hinzugef�
 [15]: ./media/powerapps-create-api-googledrive/browseall.png
 [16]: ./media/powerapps-create-api-googledrive/allresources.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0309_2016-->

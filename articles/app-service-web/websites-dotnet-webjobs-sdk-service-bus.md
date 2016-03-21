@@ -65,7 +65,7 @@ Zum Schreiben einer Funktion, die das WebJobs-SDK aufruft, wenn eine Warteschlan
 
 Das SDK empfängt eine Nachricht im `PeekLock`-Modus und ruft bei erfolgreicher Ausführung der Funktion `Complete` für die Nachricht auf. Ist die Ausführung nicht erfolgreich, wird `Abandon` aufgerufen. Wenn die Funktion länger als im `PeekLock`-Timeout angegeben ausgeführt wird, wird die Sperre automatisch erneuert.
 
-Service Bus verwaltet eine eigene Warteschlange für nicht verarbeitete Nachrichten. Deshalb ist weder eine Steuerung noch eine Konfiguration über das WebJobs-SDK möglich.
+Service Bus führt eine eigene Verarbeitung von Warteschlangen für nicht verarbeitbare Nachrichten durch, die nicht mit dem WebJobs-SDK konfiguriert oder gesteuert werden kann.
 
 ### Zeichenfolgen-Warteschlangennachrichten
 
@@ -186,4 +186,4 @@ In diesem Artikel werden u. a. die folgenden Themen behandelt:
 In dieser Anleitung wurde anhand von Codebeispielen veranschaulicht, wie häufige Szenarien für das Arbeiten mit Azure Service Bus behandelt werden. Weitere Informationen zur Verwendung von Azure WebJobs und dem WebJobs-SDK finden Sie unter [Empfohlene Ressourcen für Azure WebJobs](http://go.microsoft.com/fwlink/?linkid=390226).
  
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

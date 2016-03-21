@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Klonen von Web-Apps"
-	description="Erfahren Sie, wie Sie Ihre Web-Apps in neue Web-Apps klonen."
+	pageTitle="Klonen einer Web-App mithilfe von PowerShell"
+	description="Erfahren Sie, wie Sie Ihre Web-Apps mit PowerShell in neue Web-Apps klonen."
 	services="app-service\web"
 	documentationCenter=""
 	authors="ahmedelnably"
@@ -16,9 +16,9 @@
 	ms.date="01/13/2016"
 	ms.author="ahmedelnably"/>
 
-# Klonen der Azure App Service-App #
+# Klonen der Azure App Service-App mit PowerShell#
 
-Mit der Veröffentlichung von Microsoft Azure PowerShell Version 1.1.0 wurde New-AzureRMWebApp eine neue Option hinzugefügt. Diese ermöglicht es dem Benutzer, eine vorhandene Web-App in eine neu erstellte App in einer anderen Region oder der gleichen Region zu klonen. Dadurch können Kunden schnell und einfach eine Anzahl von Apps in unterschiedlichen Regionen bereitstellen.
+Mit der Veröffentlichung von Microsoft Azure PowerShell Version 1.1.0 wurde New-AzureRMWebApp eine neue Option hinzugefügt. Diese ermöglicht es dem Benutzer, eine vorhandene Web-App in eine neu erstellte App in einer anderen Region oder der gleichen Region zu klonen. Dadurch können Kunden eine Reihe von Apps in unterschiedlichen Regionen bereitstellen.
 
 Das Klonen einer App wird zurzeit nur im Premium-Tarif der App Service-Pläne unterstützt. Das neue Feature verwendet die gleichen Einschränkungen wie das Web-Apps-Sicherungsfeature. Informationen dazu finden Sie unter [Sichern von Web-Apps in Azure App Service](web-sites-backup.md).
 
@@ -77,7 +77,7 @@ Das folgende Beispiel zeigt, wie man einen Klon der Quellen-Web-App in einer neu
 
 ## Konfigurieren des Traffic Managers beim Klonen einer App ##
 
-Die Erstellung von Web-Apps für mehrere Regionen und die Konfiguration von Azure Traffic Manager zum Leiten von Datenverkehr an alle diese Web-Apps sind wichtig, um sicherzustellen, dass die Apps der Kunden hoch verfügbar sind. Beim Klonen einer vorhandenen Web-App haben Sie die Option, beide Web-Apps entweder mit einem neuen Traffic Manager-Profil oder mit einem vorhandenen Profil zu verbinden. Beachten Sie jedoch, dass nur die ARM-Version von Traffic Manager unterstützt wird.
+Die Erstellung von Web-Apps für mehrere Regionen und die Konfiguration von Azure Traffic Manager zum Leiten von Datenverkehr an alle diese Web-Apps sind wichtig, um sicherzustellen, dass die Apps der Kunden hoch verfügbar sind. Beim Klonen einer vorhandenen Web-App haben Sie die Option, beide Web-Apps entweder mit einem neuen Traffic Manager-Profil oder mit einem vorhandenen Profil zu verbinden. Beachten Sie jedoch, dass nur die ARM-Version von Traffic Manager unterstützt wird.
 
 ### Erstellen eines neuen Traffic Manager-Profils während eine App geklont wird ###
 
@@ -97,7 +97,7 @@ Das folgende Beispiel zeigt, wie man, nach der Zusammenstellung der Traffic Mana
 
 ## Aktuelle Einschränkungen ##
 
-Dieses Feature ist zurzeit in der Vorschau. Wir arbeiten daran, neue Funktionen im Laufe der Zeit hinzuzufügen. In der folgenden Liste sind die bekannten Einschränkung für die aktuelle Version des Klonens einer App aufgeführt:
+Dieses Feature ist zurzeit in der Vorschau. Wir arbeiten daran, neue Funktionen im Laufe der Zeit hinzuzufügen. In der folgenden Liste sind die bekannten Einschränkungen für die aktuelle Version zum Klonen einer App aufgeführt:
 
 - Einstellungen für automatische Skalierung werden nicht geklont
 - Einstellungen des Sicherungszeitplans werden nicht geklont
@@ -109,9 +109,10 @@ Dieses Feature ist zurzeit in der Vorschau. Wir arbeiten daran, neue Funktionen 
 
 
 ### Referenzen ###
+- [Klonen einer Web-App über das Azure-Portal](app-service-web-app-cloning-portal.md)
 - [Sichern von Web-Apps in Azure App Service](web-sites-backup.md)
 - [Azure-Ressourcen-Manager-Unterstützung für Azure Traffic Manager – Vorschau](../../articles/traffic-manager/traffic-manager-powershell-arm.md)
 - [Einführung in die App Service-Umgebung](app-service-app-service-environment-intro.md)
 - [Verwenden von Windows PowerShell mit dem Azure-Ressourcen-Manager](../powershell-azure-resource-manager.md)
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0309_2016-->

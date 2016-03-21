@@ -20,44 +20,41 @@
 
 ##Übersicht
 
-Über Azure Active Directory können Benutzer und Gruppen automatisch für alle Anwendungen oder Identitätsspeicher bereitgestellt werden, denen ein Webdienst mit einer Schnittstelle vorgelagert ist, wie sie in der [SCIM 2.0-Protokollspezifikation](https://tools.ietf.org/html/draft-ietf-scim-api-19) definiert ist. Azure Active Directory kann Anforderungen senden, um Benutzer und Gruppen für diesen Webdienst zu erstellen, zu ändern und zu löschen, und dann können diese Anforderungen in Vorgänge im Zielidentitätsspeicher übersetzt werden.
+Über Azure Active Directory können Benutzer und Gruppen automatisch für alle Anwendungen oder Identitätsspeicher bereitgestellt werden, denen ein Webdienst mit einer Schnittstelle vorgelagert ist, wie sie in der [SCIM 2.0-Protokollspezifikation](https://tools.ietf.org/html/draft-ietf-scim-api-19) definiert ist. Azure Active Directory kann Anforderungen senden, um Benutzer und Gruppen für diesen Webdienst zu erstellen, zu ändern und zu löschen, und dann können diese Anforderungen in Vorgänge im Zielidentitätsspeicher übersetzt werden.
 
-![][1]
-*Abbildung: Bereitstellung aus Azure Active Directory in einem Identitätsspeicher per Webdienst*
+![][1] *Abbildung: Bereitstellung aus Azure Active Directory in einem Identitätsspeicher per Webdienst*
 
-Diese Funktion kann zusammen mit der Funktion „[Bring your own app](http://blogs.technet.com/b/ad/archive/2015/06/17/bring-your-own-app-with-azure-ad-self-service-saml-configuration-gt-now-in-preview.aspx)“ in Azure AD verwendet werden, um das einmalige Anmelden und die automatische Benutzerbereitstellung für Anwendungen zu ermöglichen, die einen SCIM-Webdienst bereitstellen oder denen ein solcher vorgelagert ist.
+Diese Funktion kann zusammen mit der Funktion „[Bring your own app](http://blogs.technet.com/b/ad/archive/2015/06/17/bring-your-own-app-with-azure-ad-self-service-saml-configuration-gt-now-in-preview.aspx)“ in Azure AD verwendet werden, um das einmalige Anmelden und die automatische Benutzerbereitstellung für Anwendungen zu ermöglichen, die einen SCIM-Webdienst bereitstellen oder denen ein solcher vorgelagert ist.
 
 In Azure Active Directory gibt es zwei Anwendungsfälle für SCIM:
 
-* **Bereitstellen von Benutzern und Gruppen für Anwendungen, die SCIM unterstützen**: Anwendungen, die SCIM 2.0 unterstützen und ein OAuth-Bearertoken aus Azure AD akzeptieren, können sofort mit Azure AD eingesetzt werden.
+* **Bereitstellen von Benutzern und Gruppen für Anwendungen, die SCIM unterstützen**: Anwendungen, die SCIM 2.0 unterstützen und ein OAuth-Bearertoken zum Authentifizieren verwenden, können sofort mit Azure AD eingesetzt werden.
 
-* **Erstellen einer eigenen Bereitstellungslösung für Anwendungen, die eine andere API-basierte Bereitstellung unterstützen**: Für Anwendungen ohne SCIM können Sie einen SCIM-Endpunkt erstellen, der zwischen dem SCIM-Endpunkt von Azure AD und der API übersetzt, die die betreffende Anwendung zum Bereitstellen von Benutzern unterstützt. Um die Entwicklung eines SCIM-Endpunkts zu erleichtern, stellen wir Ihnen CLI-Bibliotheken (Command Line Interface, Befehlszeilenschnittstelle) sowie Codebeispiele zur Verfügung, die das Bereitstellen eines SCIM-Endpunkts und das Übersetzen von SCIM-Nachrichten veranschaulichen.
+* **Erstellen einer eigenen Bereitstellungslösung für Anwendungen, die eine andere API-basierte Bereitstellung unterstützen**: Für Anwendungen ohne SCIM können Sie einen SCIM-Endpunkt erstellen, der zwischen dem SCIM-Endpunkt von Azure AD und der API übersetzt, die die betreffende Anwendung zum Bereitstellen von Benutzern unterstützt. Um die Entwicklung eines SCIM-Endpunkts zu erleichtern, stellen wir Ihnen CLI-Bibliotheken (Command Line Interface, Befehlszeilenschnittstelle) sowie Codebeispiele zur Verfügung, die das Bereitstellen eines SCIM-Endpunkts und das Übersetzen von SCIM-Nachrichten veranschaulichen.
 
 ##Bereitstellen von Benutzern und Gruppen für Anwendungen, die SCIM unterstützen
 
-Azure Active Directory kann so konfiguriert werden, dass zugewiesene Benutzer und Gruppen automatisch für Anwendungen bereitgestellt werden, die einen [SCIM 2.0-Webdienst (System for Cross-domain Identity Management)](https://tools.ietf.org/html/draft-ietf-scim-api-19) implementieren und OAuth-Bearertoken für die Authentifizierung akzeptieren. Im Rahmen der SCIM 2.0-Spezifikation müssen Anwendungen die folgenden Anforderungen erfüllen:
+Azure Active Directory kann so konfiguriert werden, dass zugewiesene Benutzer und Gruppen automatisch für Anwendungen bereitgestellt werden, die einen [SCIM 2.0-Webdienst (System for Cross-domain Identity Management)](https://tools.ietf.org/html/draft-ietf-scim-api-19) implementieren und OAuth-Bearertoken für die Authentifizierung akzeptieren. Im Rahmen der SCIM 2.0-Spezifikation müssen Anwendungen die folgenden Anforderungen erfüllen:
 
-* Unterstützt das Erstellen von Benutzern und/oder Gruppen gemäß Abschnitt 3.3 des SCIM-Protokolls  
+* Unterstützt das Erstellen von Benutzern und/oder Gruppen gemäß Abschnitt 3.3 des SCIM-Protokolls  
 
-* Unterstützt das Ändern von Benutzern und/oder Gruppen mit Patch-Anforderungen gemäß Abschnitt 3.5.2 des SCIM-Protokolls
+* Unterstützt das Ändern von Benutzern und/oder Gruppen mit Patch-Anforderungen gemäß Abschnitt 3.5.2 des SCIM-Protokolls
 
-* Unterstützt das Abrufen einer bekannten Ressource gemäß Abschnitt 3.4.1 des SCIM-Protokolls
+* Unterstützt das Abrufen einer bekannten Ressource gemäß Abschnitt 3.4.1 des SCIM-Protokolls
 
-*  Unterstützt das Abfragen von Benutzern und/oder Gruppen gemäß Abschnitt 3.4.2 des SCIM-Protokolls In der Standardeinstellung werden Benutzer nach „externalId“ und Gruppen nach „displayName“ abgefragt.
+*  Unterstützt das Abfragen von Benutzern und/oder Gruppen gemäß Abschnitt 3.4.2 des SCIM-Protokolls In der Standardeinstellung werden Benutzer nach „externalId“ und Gruppen nach „displayName“ abgefragt.
 
-* Unterstützt das Abfragen von Benutzern nach ID und nach Manager gemäß Abschnitt 3.4.2 des SCIM-Protokolls
+* Unterstützt das Abfragen von Benutzern nach ID und nach Manager gemäß Abschnitt 3.4.2 des SCIM-Protokolls
 
-* Unterstützt das Abfragen von Gruppen nach ID und nach Mitglied gemäß Abschnitt 3.4.2 des SCIM-Protokolls
+* Unterstützt das Abfragen von Gruppen nach ID und nach Mitglied gemäß Abschnitt 3.4.2 des SCIM-Protokolls
 
-* Akzeptiert OAuth-Bearertoken für die Autorisierung gemäß Abschnitt 2.1 des SCIM-Protokolls
-
-* Unterstützt die Verwendung von Azure AD als Identitätsanbieter für das OAuth-Token (Unterstützung für externe Identitätsanbieter in Kürze verfügbar)
+* Akzeptiert OAuth-Bearertoken für die Autorisierung gemäß Abschnitt 2.1 des SCIM-Protokolls
 
 Überprüfen Sie beim Anbieter Ihrer Anwendung oder in der Dokumentation zu Ihrer Anwendung, ob diese Anforderungen voll erfüllt werden.
  
 ###Erste Schritte
 
-Anwendungen, die das SCIM-Profil wie oben beschrieben erfüllen, können über das App-Feature „Benutzerdefiniert“ im Azure AD-Anwendungskatalog mit Azure Active Directory verbunden werden. Nachdem Herstellen der Verbindung führt Azure AD alle 5 Minuten einen Synchronisierungsprozess aus, bei dem der SCIM-Endpunkt der Anwendung auf zugewiesene Benutzer und Gruppen abgefragt wird. Entsprechend den Details der Zuweisung werden dann Benutzer erstellt oder geändert.
+Anwendungen, die das SCIM-Profil wie oben beschrieben erfüllen, können über das App-Feature „Benutzerdefiniert“ im Azure AD-Anwendungskatalog mit Azure Active Directory verbunden werden. Nachdem Herstellen der Verbindung führt Azure AD alle 5 Minuten einen Synchronisierungsprozess aus, bei dem der SCIM-Endpunkt der Anwendung auf zugewiesene Benutzer und Gruppen abgefragt wird. Entsprechend den Details der Zuweisung werden dann Benutzer erstellt oder geändert.
 
 **So verbinden Sie eine Anwendung, die SCIM unterstützt:**
 
@@ -68,13 +65,14 @@ Anwendungen, die das SCIM-Profil wie oben beschrieben erfüllen, können über d
 ![][2]
 
 4.	Klicken Sie im angezeigten Fenster auf die zweite Schaltfläche **Kontobereitstellung konfigurieren**.
-5.	Geben Sie im Dialogfeld die URL des SCIM-Endpunkts der Anwendung ein.  
-6.	Klicken Sie auf **Weiter** und auf die Schaltfläche **Test starten**, damit Azure Active Directory versucht, eine Verbindung mit dem SCIM-Endpunkt herzustellen. Wenn die Versuche fehlschlagen, werden Diagnoseinformationen angezeigt.  
-7.	Falls die Verbindungsherstellung mit der Anwendung erfolgreich ist, klicken Sie auf den restlichen Bildschirmen auf **Weiter** und dann auf **Abgeschlossen**, um das Dialogfeld zu schließen.
-8.	Klicken Sie im angezeigten Bildschirm auf die dritte Schaltfläche **Konten zuweisen**. Weisen Sie im angezeigten Abschnitt „Benutzer und Gruppen“ die Benutzer und Gruppen zu, die Sie für die Anwendung bereitstellen möchten.
-9.	Klicken Sie nach dem Zuweisen der Benutzer und Gruppen am oberen Rand des Bildschirms auf die Registerkarte **Konfigurieren**.
-10.	Vergewissern Sie sich, dass der Status unter **Kontobereitstellung** auf „Ein“ festgelegt ist. 
-11.	Klicken Sie unter **Extras** auf **Kontobereitstellung neu starten**, um den Bereitstellungsprozess zu starten.
+5.	Geben Sie in das Feld **URL des Bereitstellungsendpunkts** die URL des SCIM-Endpunkts der Anwendung ein.
+6.	Wenn der SCIM-Endpunkt ein OAuth-Bearertoken benötigt, das von einem anderen Aussteller als Azure AD stammt, kopieren Sie das erforderliche OAuth-Bearertoken in das Feld **Authentifizierungstoken (optional)**. Wird dieses Feld leer gelassen, dann fügt Azure AD in jede Anforderung ein von Azure AD ausgestelltes OAuth-Bearertoken ein. Apps, die Azure AD als Identitätsanbieter verwenden, können dieses von Azure AD ausgestellte Token überprüfen.
+7.	Klicken Sie auf **Weiter** und auf die Schaltfläche **Test starten**, damit Azure Active Directory versucht, eine Verbindung mit dem SCIM-Endpunkt herzustellen. Wenn die Versuche fehlschlagen, werden Diagnoseinformationen angezeigt.  
+8.	Falls die Verbindungsherstellung mit der Anwendung erfolgreich ist, klicken Sie auf den restlichen Bildschirmen auf **Weiter** und dann auf **Abgeschlossen**, um das Dialogfeld zu schließen.
+9.	Klicken Sie im angezeigten Bildschirm auf die dritte Schaltfläche **Konten zuweisen**. Weisen Sie im angezeigten Abschnitt „Benutzer und Gruppen“ die Benutzer und Gruppen zu, die Sie für die Anwendung bereitstellen möchten.
+10.	Klicken Sie nach dem Zuweisen der Benutzer und Gruppen am oberen Rand des Bildschirms auf die Registerkarte **Konfigurieren**.
+11.	Vergewissern Sie sich, dass der Status unter **Kontobereitstellung** auf „Ein“ festgelegt ist. 
+12.	Klicken Sie unter **Extras** auf **Kontobereitstellung neu starten**, um den Bereitstellungsprozess zu starten.
 
 Beachten Sie, dass fünf bis zehn Minuten verstreichen dürfen, bevor der Bereitstellungsprozess damit beginnt, die Anforderungen an den SCIM-Endpunkt zu senden. Eine Zusammenfassung der Verbindungsversuche wird auf der Registerkarte „Dashboard“ der Anwendung bereitgestellt, und Sie können einen Bericht mit den Bereitstellungsaktivitäten und alle Bereitstellungsfehler über die Registerkarte „Berichte“ des Verzeichnisses herunterladen.
 
@@ -84,7 +82,7 @@ Wenn Sie einen SCIM-Webdienst mit Schnittstelle zu Azure Active Directory erstel
 
 So funktioniert es:
 
-1.	Azure AD stellt eine Common Language Infrastructure-Bibliothek mit dem Namen [Microsoft.SystemForCrossDomainIdentityManagement](https://www.nuget.org/packages/Microsoft.SystemForCrossDomainIdentityManagement/) bereit. Systemintegratoren und Entwickler können diese Bibliothek verwenden, um einen SCIM-basierten Webdienstendpunkt zu erstellen und bereitzustellen, über den Azure AD mit dem Identitätsspeicher einer beliebigen Anwendung verbunden werden kann.
+1.	Azure AD stellt eine Common Language Infrastructure-Bibliothek mit dem Namen [Microsoft.SystemForCrossDomainIdentityManagement](https://www.nuget.org/packages/Microsoft.SystemForCrossDomainIdentityManagement/) bereit. Systemintegratoren und Entwickler können diese Bibliothek verwenden, um einen SCIM-basierten Webdienstendpunkt zu erstellen und bereitzustellen, über den Azure AD mit dem Identitätsspeicher einer beliebigen Anwendung verbunden werden kann.
 2.	Zuordnungen werden in den Webdienst implementiert, um das standardisierte Benutzerschema dem erforderlichen Benutzerschema und Protokoll für die Anwendung zuzuordnen.
 3.	Die Endpunkt-URL wird in Azure AD als Teil einer benutzerdefinierten Anwendung im Anwendungskatalog registriert.
 4.	Benutzer und Gruppen werden dieser Anwendung in Azure AD zugewiesen. Bei der Zuweisung werden sie in eine Warteschlange eingereiht, um mit der Zielanwendung synchronisiert zu werden. Der Synchronisierungsvorgang für die Warteschlange wird alle fünf Minuten ausgeführt.
@@ -95,9 +93,9 @@ Zum Vereinfachen dieses Prozesses wird ein Satz mit [Codebeispielen](https://git
 
 **Voraussetzungen**
 
-* Visual Studio 2013 oder höher
+* Visual Studio 2013 oder höher
 * [Azure SDK für .NET](https://azure.microsoft.com/downloads/)
-* Windows-Computer, der die Verwendung von ASP.NET Framework 4.5 als SCIM-Endpunkt unterstützt. Auf diesen Computer muss aus der Cloud zugegriffen werden können.
+* Windows-Computer, der die Verwendung von ASP.NET Framework 4.5 als SCIM-Endpunkt unterstützt. Auf diesen Computer muss aus der Cloud zugegriffen werden können.
 * [Azure-Abonnement mit Testversion oder lizenzierter Version von Azure AD Premium](https://azure.microsoft.com/services/active-directory/)
 * Für das Amazon AWS-Beispiel sind Bibliotheken aus dem [AWS Toolkit für Visual Studio](http://docs.aws.amazon.com/AWSToolkitVS/latest/UserGuide/tkv_setup.html) erforderlich. Weitere Details finden Sie in der INFODATEI des Beispiels.
 
@@ -108,7 +106,7 @@ Die einfachste Möglichkeit zum Implementieren eines SCIM-Endpunkts, der Bereits
 **So erstellen Sie einen SCIM-Beispielendpunkt**
 
 1.	Laden Sie das Paket mit dem Codebeispiel unter [https://github.com/Azure/AzureAD-BYOA-Provisioning-Samples/tree/master](https://github.com/Azure/AzureAD-BYOA-Provisioning-Samples/tree/master) herunter.
-2.	Entzippen Sie das Paket, und speichern Sie die Daten auf Ihrem Windows-Computer, z. B. unter „C:\\AzureAD-BYOA-Provisioning-Samples“.
+2.	Entzippen Sie das Paket, und speichern Sie die Daten auf Ihrem Windows-Computer, z. B. unter „C:\\AzureAD-BYOA-Provisioning-Samples“.
 3.	Starten Sie in diesem Ordner die FileProvisioningAgent-Projektmappe in Visual Studio.
 4.	Wählen Sie **Extras > Bibliothekspaket-Manager > Paket-Manager-Konsole**, und führen Sie die unten angegebenen Befehle für das FileProvisioningAgent-Projekt aus, um die Projektmappenverweise aufzulösen:
 
@@ -120,8 +118,8 @@ Die einfachste Möglichkeit zum Implementieren eines SCIM-Endpunkts, der Bereits
 
     FileAgnt.exe http://<ip-address>:9000 TargetFile.csv
 
-8.	Wählen Sie in Windows unter **Windows-Einstellungen > Netzwerk- und Interneteinstellungen** die Option **Windows-Firewall > Erweiterte Einstellungen** aus, und erstellen Sie eine **Eingehende Regel**, mit der der eingehende Zugriff auf Port 9000 zugelassen wird.
-9.	Falls sich der Windows-Computer hinter einem Router befindet, muss der Router konfiguriert werden, um die Netzwerkadressübersetzung zwischen seinem Port 9000, der gegenüber dem Internet offen ist, und Port 9000 auf dem Windows-Computer durchzuführen. Dies ist erforderlich, damit Azure AD auf diesen Endpunkt in der Cloud zugreifen kann.
+8.	Wählen Sie in Windows unter **Windows-Einstellungen > Netzwerk- und Interneteinstellungen** die Option **Windows-Firewall > Erweiterte Einstellungen** aus, und erstellen Sie eine **Eingehende Regel**, mit der der eingehende Zugriff auf Port 9000 zugelassen wird.
+9.	Falls sich der Windows-Computer hinter einem Router befindet, muss der Router konfiguriert werden, um die Netzwerkadressübersetzung zwischen seinem Port 9000, der gegenüber dem Internet offen ist, und Port 9000 auf dem Windows-Computer durchzuführen. Dies ist erforderlich, damit Azure AD auf diesen Endpunkt in der Cloud zugreifen kann.
 
 
 **So registrieren Sie den SCIM-Beispielendpunkt in Azure AD**
@@ -149,7 +147,7 @@ Der letzte Schritt bei der Überprüfung des Beispiels besteht darin, die Datei 
 
 Um Ihren eigenen Webdienst zu entwickeln, der mit der SCIM-Spezifikation übereinstimmt, sollten Sie sich zuerst mit den folgenden Bibliotheken von Microsoft vertraut machen, mit denen der Entwicklungsprozess beschleunigt wird:
 
-**1.** Common Language Infrastructure-Bibliotheken werden zur Verwendung mit Sprachen angeboten, die auf der betreffenden Infrastruktur basieren, z. B. C#. Eine dieser Bibliotheken ([Microsoft.SystemForCrossDomainIdentityManagement.Service](https://www.nuget.org/packages/Microsoft.SystemForCrossDomainIdentityManagement/)) deklariert eine Schnittstelle (Microsoft.SystemForCrossDomainIdentityManagement.IProvider), die in der Abbildung unten dargestellt ist. Ein Entwickler, der die Bibliotheken verwendet, würde diese Schnittstelle mit einer Klasse implementieren, die generisch als „Anbieter“ bezeichnet werden kann. Mit den Bibliotheken kann der Entwickler leicht einen Webdienst bereitstellen, der die Vorgaben der SCIM-Spezifikation erfüllt – entweder gehostet in Internetinformationsdienste oder einer beliebigen ausführbaren Common Language Infrastructure-Assembly. Anforderungen an den Webdienst werden in Aufrufe der Anbietermethoden übersetzt, die vom Entwickler für den Betrieb über einen Identitätsspeicher programmiert werden.
+**1.** Common Language Infrastructure-Bibliotheken werden zur Verwendung mit Sprachen angeboten, die auf der betreffenden Infrastruktur basieren, z. B. C#. Eine dieser Bibliotheken ([Microsoft.SystemForCrossDomainIdentityManagement.Service](https://www.nuget.org/packages/Microsoft.SystemForCrossDomainIdentityManagement/)) deklariert eine Schnittstelle (Microsoft.SystemForCrossDomainIdentityManagement.IProvider), die in der Abbildung unten dargestellt ist. Ein Entwickler, der die Bibliotheken verwendet, würde diese Schnittstelle mit einer Klasse implementieren, die generisch als „Anbieter“ bezeichnet werden kann. Mit den Bibliotheken kann der Entwickler leicht einen Webdienst bereitstellen, der die Vorgaben der SCIM-Spezifikation erfüllt – entweder gehostet in Internetinformationsdienste oder einer beliebigen ausführbaren Common Language Infrastructure-Assembly. Anforderungen an den Webdienst werden in Aufrufe der Anbietermethoden übersetzt, die vom Entwickler für den Betrieb über einen Identitätsspeicher programmiert werden.
 
 ![][3]
 
@@ -278,7 +276,7 @@ Um den Dienst in Internetinformationsdienste zu hosten, würde ein Entwickler ei
 
 ###Behandeln der Endpunktauthentifizierung
 
-Anforderungen aus Azure Active Directory enthalten ein OAuth 2.0-Bearertoken. Alle Dienste, die die Anforderung empfangen, sollten den Aussteller als Azure Active Directory im Namen des erwarteten Azure Active Directory-Mandanten authentifizieren, was den Zugriff auf den Graph-Webdienst von Azure Active Directory betrifft. Im Token wird der Aussteller mit einem iss-Anspruch angegeben, z. B. „iss":"https://sts.windows.net/cbb1a5ac-f33b-45fa-9bf5-f37db0fed422/“. In diesem Beispiel wird die Basisadresse des Anspruchswerts (https://sts.windows.net) zum Identifizieren von Azure Active Directory als Aussteller verwendet, und das Segment mit der relativen Adresse (cbb1a5ac-f33b-45fa-9bf5-f37db0fed422) ist ein eindeutiger Bezeichner des Azure Active Directory-Mandanten, in dessen Namen das Token ausgestellt wurde. Wenn das Token zum Zugreifen auf den Graph-Webdienst von Azure Active Directory ausgestellt wurde, sollte sich der Bezeichner dieses Diensts (00000002-0000-0000-c000-000000000000) im Wert des aud-Anspruchs für das Token befinden.
+Anforderungen aus Azure Active Directory enthalten ein OAuth 2.0-Bearertoken. Alle Dienste, die die Anforderung empfangen, sollten den Aussteller als Azure Active Directory im Namen des erwarteten Azure Active Directory-Mandanten authentifizieren, was den Zugriff auf den Graph-Webdienst von Azure Active Directory betrifft. Im Token wird der Aussteller mit einem iss-Anspruch angegeben, z. B. „iss":"https://sts.windows.net/cbb1a5ac-f33b-45fa-9bf5-f37db0fed422/“. In diesem Beispiel wird die Basisadresse des Anspruchswerts (https://sts.windows.net) zum Identifizieren von Azure Active Directory als Aussteller verwendet, und das Segment mit der relativen Adresse (cbb1a5ac-f33b-45fa-9bf5-f37db0fed422) ist ein eindeutiger Bezeichner des Azure Active Directory-Mandanten, in dessen Namen das Token ausgestellt wurde. Wenn das Token zum Zugreifen auf den Graph-Webdienst von Azure Active Directory ausgestellt wurde, sollte sich der Bezeichner dieses Diensts (00000002-0000-0000-c000-000000000000) im Wert des aud-Anspruchs für das Token befinden.
 
 Entwickler, die die von Microsoft bereitgestellten Common Language Infrastructure-Bibliotheken zum Erstellen eines SCIM-Diensts verwenden, können Anforderungen von Azure Active Directory authentifizieren, indem sie das Microsoft.Owin.Security.ActiveDirectory-Paket verwenden. Hierzu sind folgende Schritte erforderlich:
 
@@ -333,11 +331,11 @@ Entwickler, die die von Microsoft bereitgestellten Common Language Infrastructur
 
 Azure Active Directory kann für SCIM-Webdienste zwei Arten von Ressourcen bereitstellen. Diese Arten von Ressourcen sind Benutzer und Gruppen.
 
-Benutzerressourcen werden über den Schemabezeichner „urn:ietf:params:scim:schemas:extension:enterprise:2.0:User“ identifiziert, der in dieser Protokollspezifikation enthalten ist: http://tools.ietf.org/html/draft-ietf-scim-core-schema. Die Standardzuordnung der Attribute von Benutzern in Azure Active Directory zu den Attributen von urn:ietf:params:scim:schemas:extension:enterprise:2.0:User-Ressourcen ist unten in Tabelle 1 angegeben.
+Benutzerressourcen werden über den Schemabezeichner „urn:ietf:params:scim:schemas:extension:enterprise:2.0:User“ identifiziert, der in dieser Protokollspezifikation enthalten ist: http://tools.ietf.org/html/draft-ietf-scim-core-schema. Die Standardzuordnung der Attribute von Benutzern in Azure Active Directory zu den Attributen von urn:ietf:params:scim:schemas:extension:enterprise:2.0:User-Ressourcen ist unten in Tabelle 1 angegeben.
 
-Gruppenressourcen werden über den Schemabezeichner http://schemas.microsoft.com/2006/11/ResourceManagement/ADSCIM/Group identifiziert. Unten in Tabelle 2 ist die Standardzuordnung der Attribute von Gruppen in Azure Active Directory zu den Attributen von http://schemas.microsoft.com/2006/11/ResourceManagement/ADSCIM/Group-Ressourcen angegeben.
+Gruppenressourcen werden über den Schemabezeichner http://schemas.microsoft.com/2006/11/ResourceManagement/ADSCIM/Group identifiziert. Unten in Tabelle 2 ist die Standardzuordnung der Attribute von Gruppen in Azure Active Directory zu den Attributen von http://schemas.microsoft.com/2006/11/ResourceManagement/ADSCIM/Group-Ressourcen angegeben.
 
-###Tabelle 1: Standardzuordnung von Benutzerattributen
+###Tabelle 1: Standardzuordnung von Benutzerattributen
 
 | Azure Active Directory-Benutzer | urn:ietf:params:scim:schemas:extension:enterprise:2.0:User |
 | ------------- | ------------- |
@@ -360,7 +358,7 @@ Gruppenressourcen werden über den Schemabezeichner http://schemas.microsoft.com
 | user-PrincipalName | userName |
 
 
-###Tabelle 2: Standardzuordnung von Gruppenattributen
+###Tabelle 2: Standardzuordnung von Gruppenattributen
 
 | Azure Active Directory-Gruppe | http://schemas.microsoft.com/2006/11/ResourceManagement/ADSCIM/Group |
 | ------------- | ------------- |
@@ -376,7 +374,7 @@ Gruppenressourcen werden über den Schemabezeichner http://schemas.microsoft.com
 
 In der Abbildung unten sind die Nachrichten dargestellt, die von Azure Active Directory an einen SCIM-Dienst gesendet werden, um den Lebenszyklus eines Benutzers in einem anderen Identitätsspeicher zu verwalten. In der Abbildung ist auch zu sehen, wie ein SCIM-Dienst, der mit den Common Language Infrastructure-Bibliotheken von Microsoft zum Erstellen dieser Dienste implementiert wird, diese Anforderungen in Aufrufe der Methoden eines Anbieters übersetzt.
 
-![][4]*Abbildung: Sequenz der Durchführung und Aufhebung einer Benutzerbereitstellung*
+![][4]* Abbildung: Sequenz der Durchführung und Aufhebung einer Benutzerbereitstellung*
 
 **1.** Azure Active Directory fragt den Dienst nach einem Benutzer mit einem externalId-Attributwert ab, der mit dem mailNickname-Attributwert eines Benutzers in Azure Active Directory übereinstimmt. Die Abfrage wird als Hypertext Transfer Protocol-Anforderung wie in diesem Beispiel ausgedrückt, wobei „jyoung“ ein Beispiel für ein mailNickname-Element eines Benutzers in Azure Active Directory ist:
 
@@ -539,7 +537,7 @@ Wenn der Dienst mit den Common Language Infrastructure-Bibliotheken von Microsof
 * parameters.RequestedAttributePaths.ElementAt(0): "id"
 * parameters.SchemaIdentifier: "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"
 
-Hier kann der Wert von Index x „0“ und der Wert von Index y „1“ lauten, oder der Wert von x kann „1“ und der Wert von y „0“ lauten. Dies hängt von der Reihenfolge bei den Ausdrücken des Filterabfrageparameters ab.
+Hier kann der Wert von Index x „0“ und der Wert von Index y „1“ lauten, oder der Wert von x kann „1“ und der Wert von y „0“ lauten. Dies hängt von der Reihenfolge bei den Ausdrücken des Filterabfrageparameters ab.
 
 **5.** Dies ist ein Beispiel für eine Anforderung von Azure Active Directory an einen SCIM-Dienst zum Aktualisieren eines Benutzers:
 
@@ -683,7 +681,7 @@ In der Abbildung unten sind die Nachrichten dargestellt, die von Azure Active Di
 * Für Anforderungen zum Abrufen von Gruppen wird vorgegeben, dass das members-Attribut aus allen Ressourcen ausgeschlossen wird, die als Antwort auf die Anforderung bereitgestellt werden.  
 * Bei Anforderungen für die Ermittlung, ob ein Referenzattribut einen bestimmten Wert hat, handelt es sich um Anforderungen zum members-Attribut.  
 
-![][5] *Abbildung: Sequenz der Durchführung und Aufhebung einer Gruppenbereitstellung*
+![][5] * Abbildung: Sequenz der Durchführung und Aufhebung einer Gruppenbereitstellung*
 
 ##Verwandte Artikel
 
@@ -704,4 +702,4 @@ In der Abbildung unten sind die Nachrichten dargestellt, die von Azure Active Di
 [4]: ./media/active-directory-scim-provisioning/scim-figure-4.PNG
 [5]: ./media/active-directory-scim-provisioning/scim-figure-5.PNG
 
-<!----HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0309_2016-->

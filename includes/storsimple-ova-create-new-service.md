@@ -23,7 +23,7 @@
 
 	1.  Klicken Sie auf **StorSimple-Manager erstellen**, um den Dienst zu erstellen.
 
-		![](./media/storsimple-ova-create-new-service/image1-include.png)
+		![](./media/storsimple-ova-create-new-service/image1m-include.png)
 
 	Sie werden auf die Startseite **Dienst** weitergeleitet. Die Diensterstellung dauert einige Minuten. Nachdem der Dienst erfolgreich erstellt wurde, werden Sie entsprechend benachrichtigt.
 
@@ -31,4 +31,4 @@
 
 	Der Status des Diensts ändert sich in **Aktiv**.
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

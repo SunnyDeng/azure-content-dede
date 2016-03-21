@@ -4,7 +4,7 @@
    services="active-directory"
    documentationCenter=""
    authors="dhanyahk"
-   manager="mbaldwin"
+   manager="stevenpo"
    editor=""/>
 
 <tags
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="02/17/2016"
+   ms.date="03/07/2016"
    ms.author="dhanyahk"/>
 
 # Azure Active Directory-Bericht „Alle Benutzeranmeldeaktivitäten“
@@ -32,4 +32,4 @@ Der Bericht „Alle Benutzeranmeldeaktivitäten“ enthält alle Anmeldungen von
  >
  - Der Bericht „Alle Benutzeranmeldeaktivitäten“ ist derzeit nur über die Reporting-API verfügbar. Weitere Informationen finden Sie unter [Erste Schritte mit der Azure AD Reporting-API](active-directory-reporting-api-getting-started.md).
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0309_2016-->

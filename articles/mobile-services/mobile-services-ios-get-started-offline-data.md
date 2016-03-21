@@ -3,7 +3,7 @@
 	description="Erfahren Sie, wie Sie Azure Mobile Services verwenden, um Offlinedaten in Ihrer iOS-Anwendung zwischenzuspeichern und zu synchronisieren."
 	documentationCenter="ios"
 	authors="krisragh"
-	manager="dwrede"
+	manager="erikre"
 	editor=""
 	services="mobile-services"/>
 
@@ -13,17 +13,17 @@
 	ms.tgt_pltfrm="mobile-ios"
 	ms.devlang="objective-c"
 	ms.topic="article"
-	ms.date="01/12/2016"
+	ms.date="03/05/2016"
 	ms.author="krisragh;donnam"/>
 
 # Erste Schritte mit der Synchronisierung von Offlinedaten in Mobile Services
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
-
+[AZURE.INCLUDE [mobile-services-selector-offline](../../includes/mobile-services-selector-offline.md)]
+ 
 &nbsp;
 
-
-[AZURE.INCLUDE [mobile-services-selector-offline](../../includes/mobile-services-selector-offline.md)]
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+> Informationen für die entsprechende Mobile Apps-Version dieses Themas finden Sie unter [Aktivieren der Offlinesynchronisierung für Ihre mobile iOS-App](../app-service-mobile/app-service-mobile-ios-get-started-offline-data.md).
 
 Die Offlinesynchronisierung ermöglicht Ihnen, Daten in einer mobilen Anwendung anzuzeigen und Daten hinzuzufügen oder zu ändern, auch wenn keine Netzwerkverbindung verfügbar ist. In diesem Lernprogramm erfahren Sie, wie Sie Ihre App so konfigurieren, dass Änderungen automatisch in einer lokalen Offlinedatenbank gespeichert werden und die Daten synchronisiert werden, sobald die App wieder online ist.
 
@@ -275,4 +275,4 @@ Um den lokalen Speicher mit dem Server zu synchronisieren, wurden `MSSyncTable.p
 
 [Erste Schritte mit Mobile Services]: mobile-services-ios-get-started.md
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0309_2016-->

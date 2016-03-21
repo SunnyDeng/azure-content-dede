@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/03/2015" 
+	ms.date="03/04/2016" 
 	ms.author="mimig"/>
 
 
@@ -51,8 +51,8 @@ DocumentDB-Konten können hinsichtlich Speicher und Durchsatz durch Hinzufügen 
 ### Wie viel kostet Microsoft Azure DocumentDB?
 Ausführliche Informationen dazu finden Sie auf der Seite [DocumentDB – Preise](http://go.microsoft.com/fwlink/p/?LinkID=402317). Die Nutzungsgebühren für DocumentDB werden bestimmt von der verwendeten Anzahl von Sammlungen, der Anzahl der Stunden, die die Sammlungen online waren, und der [Leistungsebene](documentdb-performance-levels.md) jeder Sammlung.
 
-### Gibt es eine kostenlose Testversion?
-Wenn Azure für Sie neu ist, können Sie sich für eine [kostenlose Testversion von Azure](https://azure.microsoft.com/pricing/free-trial/) registrieren. Sie erhalten ein Guthaben von 200 US-Dollar für 30 Tage, in denen Sie alle Azure-Dienste ausprobieren können. Wenn Sie ein Visual Studio-Abonnement besitzen, haben Sie Anspruch auf ein [kostenloses Azure-Guthaben von 150 US-Dollar pro Monat](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/), das Sie für beliebige Azure-Dienste nutzen können.
+### Ist ein kostenloses Konto verfügbar?
+Wenn Azure für Sie neu ist, können Sie sich für ein [kostenloses Azure-Konto](https://azure.microsoft.com/pricing/free-trial/) registrieren. Sie erhalten ein Guthaben von 200 US-Dollar für 30 Tage, in denen Sie alle Azure-Dienste ausprobieren können. Wenn Sie ein Visual Studio-Abonnement besitzen, haben Sie Anspruch auf ein [kostenloses Azure-Guthaben von 150 US-Dollar pro Monat](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/), das Sie für beliebige Azure-Dienste nutzen können.
 
 ### Wie kann ich zusätzliche Hilfe zu DocumentDB erhalten?
 Wenn Sie Hilfe benötigen, wenden Sie sich auf [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-documentdb) oder in den [MSDN-Foren für Entwickler zu Azure DocumentDB](https://social.msdn.microsoft.com/forums/azure/home?forum=AzureDocumentDB) an uns, oder terminieren Sie einen [1:1-Chat mit dem Entwicklungsteam von DocumentDB](http://www.askdocdb.com/). Um bei den neuesten Features von DocumentDB auf dem Laufenden zu bleiben, folgen Sie uns auf [Twitter](https://twitter.com/DocumentDB).
@@ -66,7 +66,7 @@ Microsoft Azure DocumentDB steht im [Azure-Portal][azure-portal] zur Verfügung.
 Ein Hauptschlüssel ist ein Sicherheitstoken für den Zugriff auf alle Ressourcen eines Kontos. Personen, die über diesen Schlüssel verfügen, haben Lese- und Schreibzugriff auf alle Ressourcen im Datenbankkonto. Gehen Sie beim Verteilen der Hauptschlüssel mit Bedacht vor. Der primäre und der sekundäre Hauptschlüssel stehen auf dem Blatt **Schlüssel** im [Azure-Portal][azure-portal] zur Verfügung. Weitere Informationen zu Schlüsseln finden Sie unter [Anzeigen, Kopieren und erneutes Generieren von Zugriffsschlüsseln](documentdb-manage-account.md#keys).
 
 ### Wie erstelle ich eine Datenbank?
-Datenbanken können über das [Azure-Portal]() erstellt werden, wie in [Erstellen einer DocumentDB-Datenbank](documentdb-create-database.md) beschrieben, über eines der [DocumentDB-SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) oder über die [REST-APIs](https://msdn.microsoft.com/library/azure/dn781481.aspx).
+Datenbanken können über das [Azure-Portal]() erstellt werden, wie in [Erstellen einer DocumentDB-Datenbank](documentdb-create-database.md) beschrieben, über eines der [DocumentDB-SDKs](documentdb-sdk-dotnet.md) oder über die [REST-APIs](https://msdn.microsoft.com/library/azure/dn781481.aspx).
 
 ### Was ist eine Sammlung?
 Eine Sammlung ist ein Container für JSON-Dokumente und die zugehörige JavaScript-Anwendungslogik. Abfragen und Transaktionen sind Sammlungen zugeordnet. Sie können heterogene (nicht zusammenhängende) JSON-Dokumente in einer Sammlung speichern, die alle automatisch indiziert werden.
@@ -77,17 +77,17 @@ Sammlungen sind zudem die Abrechnungseinheiten für DocumentDB. Die monatlichen 
 Jede Sammlung ist mit einer Zuweisung an Datenbankspeicher und bereitgestelltem Durchsatz auf einer der unterstützten [Leistungsebenen](documentdb-performance-levels.md) ausgestattet. Außerdem sind für jede vom Dienst verwaltete Ressource Kontingente angegeben. Eine Übersicht aller Grenzwerte finden Sie unter [DocumentDB-Grenzen und -Kontingente](documentdb-limits.md). Informationen zum Beantragen einer Änderung Ihrer Kontobegrenzungen finden Sie unter [Anfordern von erhöhten DocumentDB-Kontobegrenzungen](documentdb-increase-limits.md).
 
 ### Wie richte ich Benutzer und Berechtigungen ein?
-Sie können Benutzer und Berechtigungen mit einem des [DocumentDB SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) oder mithilfe der [REST-APIs](https://msdn.microsoft.com/library/azure/dn781481.aspx) erstellen.
+Sie können Benutzer und Berechtigungen mit einem des [DocumentDB SDKs](documentdb-sdk-dotnet.md) oder mithilfe der [REST-APIs](https://msdn.microsoft.com/library/azure/dn781481.aspx) erstellen.
 
 ## Datenbankfragen zum Entwickeln mit Microsoft Azure DocumentDB
 
 ### Wie beginne ich beim Entwickeln mit DocumentDB?
-[SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) sind für .NET, Python, Node.js, JavaScript und Java verfügbar. Entwickler können außerdem die [RESTful HTTP-APIs](https://msdn.microsoft.com/library/azure/dn781481.aspx) zur Interaktion mit DocumentDB-Ressourcen auf einer Vielzahl von Plattformen und mit verschiedenen Sprachen nutzen.
+[SDKs](documentdb-sdk-dotnet.md) sind für .NET, Python, Node.js, JavaScript und Java verfügbar. Entwickler können außerdem die [RESTful HTTP-APIs](https://msdn.microsoft.com/library/azure/dn781481.aspx) zur Interaktion mit DocumentDB-Ressourcen auf einer Vielzahl von Plattformen und mit verschiedenen Sprachen nutzen.
 
 Beispiele der [.NET](https://github.com/Azure/azure-documentdb-net/tree/master/samples/code-samples), [Java](https://github.com/Azure/azure-documentdb-java), [Node.js](https://github.com/Azure/azure-documentdb-node/tree/master/samples) und [Python](https://github.com/Azure/azure-documentdb-python) SDKs für DocumentDB sind auf GitHub verfügbar.
 
 ### Unterstützt DocumentDB SQL?
-Die DocumentDB SQL-Abfragesprache bietet umfassende hierarchische und relationale Operatoren sowie die Erweiterbarkeit über JavaScript-basierte benutzerdefinierte Funktionen. Die JSON-Grammatik ermöglicht die Modellierung von JSON-Dokumenten als Struktur mit den Beschriftungen als Strukturknoten. Dies wird sowohl von den automatischen Indizierungstechniken als auch beim SQL-Abfragedialekt von DocumentDB verwendet. Ausführliche Informationen zur Verwendung der SQL-Grammatik finden Sie im Artikel [Abfragen von DocumentDB][query].
+Die DocumentDB-SQL-Abfragesprache ist eine erweiterte Teilmenge der Abfragefunktionalität, die von SQL unterstützt wird. Die DocumentDB SQL-Abfragesprache bietet umfassende hierarchische und relationale Operatoren sowie die Erweiterbarkeit über JavaScript-basierte benutzerdefinierte Funktionen. Die JSON-Grammatik ermöglicht die Modellierung von JSON-Dokumenten als Struktur mit den Beschriftungen als Strukturknoten. Dies wird sowohl von den automatischen Indizierungstechniken als auch beim SQL-Abfragedialekt von DocumentDB verwendet. Ausführliche Informationen zur Verwendung der SQL-Grammatik finden Sie im Artikel [Abfragen von DocumentDB][query].
 
 ### Welche Datentypen werden von DocumentDB unterstützt?
 Die in DocumentDB unterstützten primitiven Datentypen sind dieselben wie in JSON. JSON hat ein einfaches Typsystem, das aus Zeichenfolgen, Zahlen (IEEE754 mit doppelter Genauigkeit) und booleschen Werten – "true", "false" und NULL-Werten – besteht. Komplexere Datentypen wie DateTime, Guid, Int64 und Geometrie können sowohl in JSON als auch in DocumentDB durch das Erstellen von verschachtelten Objekten mit dem { }-Operator sowie Arrays mit dem [ ]-Operator dargestellt werden.
@@ -115,4 +115,4 @@ Ja. Da es sich bei DocumentDB um einen RESTful-Dienst handelt, sind Ressourcenli
 [query]: documentdb-sql-query.md
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0309_2016-->

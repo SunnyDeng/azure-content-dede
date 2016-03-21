@@ -3,7 +3,7 @@
 	description="Azure ML Recommendation-Beispielanwendung" 
 	services="machine-learning" 
 	documentationCenter="" 
-	authors="luisca" 
+	authors="LuisCabrer" 
 	manager="paulettm" 
 	editor="cgronlun"/>
 
@@ -13,19 +13,19 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/07/2015" 
+	ms.date="03/02/2016" 
 	ms.author="luisca"/>
 
 
-# Allgemeine Vorgänge in den Machine Learning Empfehlungen-API
+# Die Azure Machine Learning-Empfehlungen-API anhand einer Beispielanwendung
 
 ##Zweck
 
-Dieses Dokument zeigt die Verwendung der Azure Machine Learning RECOMMENDATIONS-API anhand einer [Beispielanwendung](http://1drv.ms/1xeO2F3).
+Dieses Dokument zeigt die Verwendung der Azure Machine Learning RECOMMENDATIONS-API anhand einer [Beispielanwendung](https://code.msdn.microsoft.com/Recommendations-144df403).
 
 Diese Anwendung ist nicht dazu vorgesehen, vollständige Funktionen zu enthalten oder alle APIs zu verwenden. Sie soll nur einige allgemeine Anwendungen zeigen, wenn Sie den Azure Machine Learning-Empfehlungsdienst zum ersten Mal verwenden möchten.
 
-[AZURE.INCLUDE [machine-learning-kostenlose-Testversion](../../includes/machine-learning-free-trial.md)]
+[AZURE.INCLUDE [machine-learning-free-trial](../../includes/machine-learning-free-trial.md)]
 
 ##Einführung zum Machine Learning-Empfehlungsdienst
 
@@ -90,4 +90,4 @@ Eine vollständige Beschreibung der APIs finden Sie in der Dokumentation zum Mic
 Die Beispiel-App ist nicht für die Ausführung in einer Produktionsumgebung gedacht. Der Katalog umfasst nur sehr wenige Daten, die kein sinnvolles Empfehlungsmodell ergeben. Die Daten werden als Beispiel bereitgestellt.
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0309_2016-->

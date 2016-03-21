@@ -84,7 +84,7 @@ Die Kategorie für Gerätetelemetrie dient zum Nachverfolgen von Fehlern, die au
 
 ### C2D-Befehle
 
-Die Kategorie der C2D-Befehle dient zum Nachverfolgen von Fehlern, die auf dem IoT Hub auftreten und in Beziehung zur Gerätebefehls-Pipeline stehen. Dazu zählen Fehler, die beim Senden von Befehlen (z. B. nicht autorisierter Absender), Empfangen von Befehlen (Zustellungsanzahl überschritten) und Empfangen von Feedback zu Befehlen (z. B. Feedback abgelaufen) auftreten. Diese Kategorie fängt keine Fehler eines Geräts ab, das einen Befehl nicht ordnungsgemäß verarbeitet, wenn der Befehl erfolgreich übermittelt wurde.
+Die Kategorie der C2D-Befehle dient zum Nachverfolgen von Fehlern, die auf dem IoT Hub auftreten und in Beziehung zur Gerätebefehls-Pipeline stehen. Dazu zählen Fehler, die beim Senden von Befehlen (z. B. nicht autorisierter Absender), Empfangen von Befehlen (Zustellungsanzahl überschritten) und Empfangen von Feedback zu Befehlen (z. B. Feedback abgelaufen) auftreten. Diese Kategorie fängt keine Fehler eines Geräts ab, das einen Befehl nicht ordnungsgemäß verarbeitet, wenn der Befehl erfolgreich übermittelt wurde.
 
     {
          "messageSizeInBytes": 1234,
@@ -106,7 +106,7 @@ Die Kategorie der C2D-Befehle dient zum Nachverfolgen von Fehlern, die auf dem I
 
 ### Verbindungen
 
-Der Kategorie für Verbindungen verfolgt Ereignisse nach, die Geräte beim Herstellen oder Trennen von IoT Hub-Verbindungen verursachen. Das Nachverfolgen dieser Kategorie ist nützlich zum Bestimmen nicht autorisierter Verbindungsversuche und zum Nachverfolgen, wann eine Verbindung mit Geräten in Bereichen mit schlechter Konnektivität unterbrochen wird.
+Die Kategorie für Verbindungen verfolgt Fehler nach, wenn Geräte Verbindungen mit dem IoT Hub herstellen oder trennen. Das Nachverfolgen dieser Kategorie ist nützlich zum Bestimmen nicht autorisierter Verbindungsversuche und zum Nachverfolgen, wann eine Verbindung mit Geräten in Bereichen mit schlechter Konnektivität unterbrochen wird.
 
     {
          "durationMs": 1234,
@@ -139,4 +139,4 @@ Nach diesem Überblick über die Vorgangsüberwachung können Sie die folgenden 
 [lnk-scaling]: iot-hub-scaling.md
 [lnk-dr]: iot-hub-ha-dr.md
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0309_2016-->

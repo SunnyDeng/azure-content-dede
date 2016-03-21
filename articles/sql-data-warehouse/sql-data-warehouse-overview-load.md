@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/07/2016"
+   ms.date="03/03/2016"
    ms.author="lodipalm;barbkess;sonyama"/>
 
 # Laden von Daten in SQL Data Warehouse
@@ -27,10 +27,10 @@ SQL Data Warehouse bietet zahlreiche Optionen zum Laden von Daten. Dazu gehören
 
 Während alle oben genannten Methoden mit SQL Data Warehouse verwendet werden können, ist PolyBase durch die Möglichkeit, Lasten aus Azure Blob-Speichern transparent zu parallelisieren, das schnellste Tool zum Laden von Daten. Weitere Informationen zum [Laden mit PolyBase][]. Da viele Benutzer mit Anfangswerten von Hunderten von Gigabytes bis Dutzenden Terabytes aus lokalen Quellen arbeiten, finden Sie in den folgenden Abschnitten Informationen zum anfänglichen Laden von Daten.
 
-## Anfängliches Laden in SQL Data Warehouse aus SQL Server 
+## Anfängliches Laden in SQL Data Warehouse aus SQL Server
 Zum Laden aus einer lokalen SQL Server-Instanz in SQL Data Warehouse werden folgende Schritte empfohlen:
 
-1. Exportieren der SQL Server-Daten in Flatfiles mit **BCP** 
+1. Exportieren der SQL Server-Daten in Flatfiles mit **BCP**
 2. Verwenden von **AZCopy** oder **Import/Export** (bei größeren Datasets), um die Dateien in Azure zu verschieben
 3. Konfigurieren von PolyBase zum Lesen der Dateien aus dem Speicherkonto
 4. Erstellen neuer Tabellen und Laden von Daten mit **PolyBase**
@@ -56,7 +56,7 @@ Beachten Sie außerdem in Hinsicht auf das Laden mit PolyBase, dass UTF-16 noch 
 ```
 Get-Content <input_file_name> -Encoding Unicode | Set-Content <output_file_name> -Encoding utf8
 ```
- 
+
 Nachdem Sie die Daten erfolgreich in Dateien exportiert haben, können Sie sie in Azure verschieben. Dazu können Sie AZCopy oder den Import/Export-Dienst verwenden, wie es im folgenden Abschnitt beschrieben ist.
 
 ## Laden in Azure mit AZCopy oder Import/Export
@@ -80,13 +80,13 @@ Neben der grundlegenden Vorgehensweise werden die folgenden bewährten Methoden 
 + **ExpressRoute**: Wie oben erwähnt, kann dieser Prozess durch Aktivierung von ExpressRoute beschleunigt werden. Einen Überblick über ExpressRoute und Schritte zum Konfigurieren finden Sie in der [Dokumentation zu ExpressRoute][].
 
 + **Ordnerstruktur**: Um die Übertragung mit PolyBase zu vereinfachen, stellen Sie sicher, dass jede Tabelle einem eigenen Ordner zugeordnet ist. Dadurch werden die Schritte beim späteren Laden mit PolyBase minimiert und vereinfacht. Im Übrigen hat es keine Auswirkung, wenn eine Tabelle in mehrere Dateien oder sogar Unterverzeichnisse innerhalb des Ordners aufgeteilt wird.
-	 
 
-## Konfigurieren von PolyBase 
+
+## Konfigurieren von PolyBase
 
 Da sich die Daten nun in Azure-Speicher-Blobs befinden, werden sie mit PolyBase in die SQL Data Warehouse-Instanz importiert. Die folgenden Schritte betreffen ausschließlich die Konfiguration, und viele davon müssen nur einmal pro SQL Data Warehouse-Instanz, Benutzer oder Speicherkonto ausgeführt werden. Diese Schritte sind noch ausführlicher in der Dokumentation zum [Laden mit PolyBase][] beschrieben.
 
-1. **Erstellen eines Datenbank-Hauptschlüssels.** Dieser Vorgang muss nur einmal pro Datenbank ausgeführt werden. 
+1. **Erstellen eines Datenbank-Hauptschlüssels.** Dieser Vorgang muss nur einmal pro Datenbank ausgeführt werden.
 
 2. **Erstellen von datenbankbezogenen Anmeldeinformationen.** Dieser Vorgang ist nur erforderlich, wenn Sie neue Anmeldeinformationen/Benutzer erstellen, andernfalls können zuvor erstellte Anmeldeinformationen verwendet werden.
 
@@ -99,27 +99,27 @@ Da sich die Daten nun in Azure-Speicher-Blobs befinden, werden sie mit PolyBase 
 CREATE MASTER KEY;
 
 -- Creating a database scoped credential
-CREATE DATABASE SCOPED CREDENTIAL <Credential Name> 
-WITH 
+CREATE DATABASE SCOPED CREDENTIAL <Credential Name>
+WITH
     IDENTITY = '<User Name>'
 ,   Secret = '<Azure Storage Key>'
 ;
 
 -- Creating external file format (delimited text file)
-CREATE EXTERNAL FILE FORMAT text_file_format 
-WITH 
+CREATE EXTERNAL FILE FORMAT text_file_format
+WITH
 (
-    FORMAT_TYPE = DELIMITEDTEXT 
+    FORMAT_TYPE = DELIMITEDTEXT
 ,   FORMAT_OPTIONS  (
-                        FIELD_TERMINATOR ='|' 
+                        FIELD_TERMINATOR ='|'
                     )
 );
 
 --Creating an external data source
-CREATE EXTERNAL DATA SOURCE azure_storage 
-WITH 
+CREATE EXTERNAL DATA SOURCE azure_storage
+WITH
 (
-    TYPE = HADOOP 
+    TYPE = HADOOP
 ,   LOCATION ='wasbs://<Container>@<Blob Path>'
 ,   CREDENTIAL = <Credential Name>
 )
@@ -128,35 +128,35 @@ WITH
 
 Das Speicherkonto ist nun ordnungsgemäß konfiguriert, sodass Sie mit dem Laden der Daten in SQL Data Warehouse fortfahren können.
 
-## Laden von Daten mit PolyBase 
+## Laden von Daten mit PolyBase
 Nach dem Konfigurieren von PolyBase können Sie Daten direkt in SQL Data Warehouse laden, indem Sie einfach eine externe Tabelle erstellen, die auf die Daten im Speicher verweist, und dann diese Daten einer neuen Tabelle in SQL Data Warehouse zuordnen. Dies kann mithilfe der beiden folgenden einfachen Befehle erreicht werden.
 
 1. Verwenden Sie den Befehl "CREATE EXTERNAL TABLE" zum Definieren der Struktur Ihrer Daten. Um sicherzustellen, dass der Status Ihrer Daten schnell und effizient erfasst wird, wird empfohlen, ein Skript für die SQL Server-Tabelle in SSMS zu erstellen und dann eine manuelle Anpassung entsprechend den Unterschieden der externen Tabelle vorzunehmen. Nach dem Erstellen einer externen Tabelle in Azure verweist diese weiterhin auf den gleichen Speicherort, selbst wenn Daten aktualisiert oder zusätzliche Daten hinzugefügt werden.  
 
 ```
 -- Creating external table pointing to file stored in Azure Storage
-CREATE EXTERNAL TABLE <External Table Name> 
+CREATE EXTERNAL TABLE <External Table Name>
 (
     <Column name>, <Column type>, <NULL/NOT NULL>
 )
-WITH 
+WITH
 (   LOCATION='<Folder Path>'
 ,   DATA_SOURCE = <Data Source>
 ,   FILE_FORMAT = <File Format>      
 );
 ```
 
-2. Laden Sie Daten mit einer Anweisung vom Typ "CREATE TABLE...AS SELECT". 
+2. Laden Sie Daten mit einer Anweisung vom Typ "CREATE TABLE...AS SELECT".
 
 ```
-CREATE TABLE <Table Name> 
-WITH 
+CREATE TABLE <Table Name>
+WITH
 (
 	CLUSTERED COLUMNSTORE INDEX,
 	DISTRIBUTION = <HASH(<Column Name>)>/<ROUND_ROBIN>
 )
-AS 
-SELECT  * 
+AS
+SELECT  *
 FROM    <External Table Name>
 ;
 ```
@@ -165,7 +165,7 @@ Beachten Sie, dass Sie mit einer detaillierteren SELECT-Anweisung auch einen Unt
 
 Zusätzlich zur Anweisung "`CREATE TABLE...AS SELECT`" können Sie mit einer Anweisung vom Typ "INSERT...INTO" auch Daten aus externen Tabellen in bereits vorhandene Tabellen laden.
 
-##  Erstellen von Statistiken für die neu geladenen Daten 
+##  Erstellen von Statistiken für die neu geladenen Daten
 
 Azure SQL Data Warehouse bietet noch keine Unterstützung für die automatische Erstellung oder die automatische Aktualisierung von Statistiken. Um die beste Leistung bei Abfragen zu erhalten, ist es wichtig, dass die Statistiken für alle Spalten aller Tabellen nach dem ersten Laden oder nach allen wesentlichen Datenänderungen erstellt werden. Eine ausführliche Erläuterung der Statistik finden Sie unter dem Thema [Statistiken][] in der Entwicklungsgruppe der Themen. Es folgt ein kurzes Beispiel, wie Sie Statistiken für die in diesem Beispiel geladene Tabelle erstellen können.
 
@@ -202,4 +202,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 [Azure-Speicherdokumentation]: https://azure.microsoft.com/de-DE/documentation/articles/storage-create-storage-account/
 [Dokumentation zu ExpressRoute]: http://azure.microsoft.com/documentation/services/expressroute/
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

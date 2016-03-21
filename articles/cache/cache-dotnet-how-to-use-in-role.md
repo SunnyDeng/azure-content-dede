@@ -4,7 +4,7 @@
 	services="cache" 
 	documentationCenter=".net" 
 	authors="steved0x" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor=""/>
 
 <tags 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="12/03/2015" 
+	ms.date="03/04/2016" 
 	ms.author="sdanie"/>
 
 
@@ -25,7 +25,7 @@
 
 Dieser Leitfaden zeigt Ihnen die ersten Schritte mit **In-Role Cache für Azure Cache**. Die Beispiele sind in C#-Code geschrieben und verwenden die .NET API. Es werden folgende Szenarien vorgestellt: **Konfigurieren eines Cacheclusters**, **Konfigurieren von Cacheclients**, **Hinzufügen und Entfernen von Objekten vom Cache, Speichern des ASP.NET-Sitzungszustands im Cache** und **Aktivieren des ASP.NET-Seitenausgabecaches mithilfe des Cache**. Weitere Informationen zur Verwendung des In-Role Cache erhalten Sie unter [Nächste Schritte][].
 
->[AZURE.IMPORTANT]Wir geben die Deaktivierung der Dienste Azure Managed Cache Service und Azure In-Role Cache zum 30. November 2016 bekannt. Es wird empfohlen, als Vorbereitung für diese Einstellung dieser Dienste zu Azure Redis Cache zu migrieren. Weitere Informationen zu Daten und Hinweise zur Migration finden Sie unter [Welches Azure Cache-Angebot ist für mich das richtige?](../redis-cache/cache-faq.md#which-azure-cache-offering-is-right-for-me)
+>[AZURE.IMPORTANT]Wir geben die Deaktivierung der Dienste Azure Managed Cache Service und Azure In-Role Cache zum 30. November 2016 bekannt. Es wird empfohlen, als Vorbereitung für diese Einstellung dieser Dienste zu Azure Redis Cache zu migrieren. Weitere Informationen zu Daten und Hinweise zur Migration finden Sie unter [Welches Azure Cache-Angebot ist für mich das richtige?](../redis-cache/cache-faq.md#which-azure-cache-offering-is-right-for-me)
 
 <a name="what-is"></a>
 ## Was ist In-Role Cache?
@@ -33,12 +33,12 @@ Dieser Leitfaden zeigt Ihnen die ersten Schritte mit **In-Role Cache für Azure 
 In-Role Caches bieten eine Caching-Schicht für Azure-Anwendungen. Das Caching erhöht die Leistung, indem es Daten vorübergehend im Speicher anderer Backend-Quellen speichert. Außerdem kann es die Kosten in Zusammenhang mit Datenbanktransaktionen in der Cloud reduzieren. Der In-Role Cache umfasst folgende Features:
 
 -   Vorbereitete ASP.NET-Anbieter für Sitzungszustand und Seitenausgabecaching für schnellere Webanwendungen, ohne Änderung des Anwendungscodes
--   Zwischenspeichern beliebiger serialisierbarer verwalteter Objekte, z. B. CLR-Objekte, Zeilen, XML und Binärdaten
+-   Zwischenspeichern beliebiger serialisierbarer verwalteter Objekte, z. B. CLR-Objekte, Zeilen, XML und Binärdaten
 -   Konsistentes Entwicklungsmodell für Azure und Windows Server AppFabric
 
 In-Role Cache stellt eine Möglichkeit zum Durchführen von Cachingaktionen bereit, indem ein Teil des Arbeitsspeichers der virtuellen Maschinen verwendet wird, in denen die Rolleninstanzen Ihrer Azure-Clouddienste (auch als gehostete Dienste bekannt) gehostet werden. Dadurch erhalten Sie eine höhere Flexibilität bei der Bereitstellung, die Caches können sehr groß sein und es gibt keine Cache-spezifischen Beschränkungen.
 
->[AZURE.IMPORTANT]Ab Azure SDK 2.6 verwendet In-Role Cache das Microsoft Azure Storage SDK, Version 4.3. In früheren Versionen des Azure SDK verwendete In-Role Cache das Azure Storage SDK 1.7. Anwendungen, die In-Role Cache mit Azure SDK-Versionen vor 2.6 verwenden, sollten zu Azure SDK 2.6 migriert werden, bevor Azure Storage Version 2011-08-18 am 1. August 2016 außer Betrieb gesetzt wird. Weitere Informationen finden Sie unter [Versionshinweise zu Azure SDK 2.6 – In-Role Cache](../azure-sdk-dotnet-release-notes-2_6.md#in-role-cache-updates) und [Aktualisierung bezüglich der Entfernung der Version Microsoft Azure Storage: Verlängerung bis 2016](http://blogs.msdn.com/b/windowsazurestorage/archive/2015/10/19/microsoft-azure-storage-service-version-removal-update-extension-to-2016.aspx).
+>[AZURE.IMPORTANT] Ab Azure SDK 2.6 verwendet In-Role Cache das Microsoft Azure Storage SDK, Version 4.3. In früheren Versionen des Azure SDK verwendete In-Role Cache das Azure Storage SDK 1.7. Anwendungen, die In-Role Cache mit Azure SDK-Versionen vor 2.6 verwenden, sollten zu Azure SDK 2.6 migriert werden, bevor Azure Storage Version 2011-08-18 am 1. August 2016 außer Betrieb gesetzt wird. Weitere Informationen finden Sie unter [Versionshinweise zu Azure SDK 2.6 – In-Role Cache](../azure-sdk-dotnet-release-notes-2_6.md#in-role-cache-updates) und [Aktualisierung bezüglich der Entfernung der Version Microsoft Azure Storage: Verlängerung bis 2016](http://blogs.msdn.com/b/windowsazurestorage/archive/2015/10/19/microsoft-azure-storage-service-version-removal-update-extension-to-2016.aspx).
 
 Das Caching von Rolleninstanzen bietet folgende Vorteile:
 
@@ -80,7 +80,7 @@ Zum Konfigurieren eines **Zusammengestellten Rollencacheclusters** müssen Sie d
 
 ![RoleCache1][RoleCache1]
 
-Gehen Sie zur Registerkarte **Caching**, markieren Sie das Kästchen **Caching aktivieren**, und geben Sie die gewünschten Cachingoptionen an. Wenn das Caching in einer **Workerrolle** oder einer **ASP.NET- Webrolle** aktiviert ist, lautet die Standardeinstellung wie folgt: **Zusammengestelltes Rollencaching**, wobei 30 % des Speichers für die Rolleninstanzen dem Caching zugewiesen sind. Es wird automatisch ein Standardcache konfiguriert. Wenn gewünscht können weitere Caches mit anderen Namen erstellt werden, die ebenfalls den zugewiesenen Speicher teilen.
+Gehen Sie zur Registerkarte **Caching**, markieren Sie das Kästchen **Caching aktivieren**, und geben Sie die gewünschten Cachingoptionen an. Wenn das Caching in einer **Workerrolle** oder einer **ASP.NET- Webrolle** aktiviert ist, lautet die Standardeinstellung wie folgt: **Zusammengestelltes Rollencaching**, wobei 30 % des Speichers für die Rolleninstanzen dem Caching zugewiesen sind. Es wird automatisch ein Standardcache konfiguriert. Wenn gewünscht können weitere Caches mit anderen Namen erstellt werden, die ebenfalls den zugewiesenen Speicher teilen.
 
 ![RoleCache2][RoleCache2]
 
@@ -112,10 +112,10 @@ Gehen Sie zur Registerkarte **Konfiguration**. Die standardmäßig festgelegte *
 
 Gesamter verfügbarer Speicher für die verschiedenen VM-Größen:
 
--	**Klein**: 1,75 GB
--	**Mittel**: 3,5 GB
--	**Groß**: 7 GB
--	**Sehr groß**: 14 GB
+-	**Klein**: 1,75 GB
+-	**Mittel**: 3,5 GB
+-	**Groß**: 7 GB
+-	**Sehr groß**: 14 GB
 
 
 > Die Speichergrößen beziehen sich auf den gesamten Speicherplatz, der der VM zur Verfügung steht und für das Betriebssystem, Cacheprozesse, Cachedaten und Anwendungen geteilt wird. Weitere Informationen zur Konfiguration der Größe virtueller Maschinen finden Sie unter [Konfiguration der Größe einer virtuellen Maschine][]. Beachten Sie, dass **besonders kleine** virtuelle Maschinen das Caching nicht unterstützen.
@@ -272,13 +272,13 @@ Mit der **Put**-Methode wird das Objekt mit dem angegebenen Schlüssel dem Cache
 <a name="specify-expiration"></a>
 ## Vorgehensweise: Angeben des Ablaufs eines Objekts im Cache
 
-Standardmäßig laufen Elemente im Cache 10 Minuten nach der Ablage im Cache ab. Die Zeit kann in den Rolleneigenschaften der Rolle, die den Cachecluster hostet, unter **Lebensdauer (min)** konfiguriert werden.
+Standardmäßig laufen Elemente im Cache 10 Minuten nach der Ablage im Cache ab. Die Zeit kann in den Rolleneigenschaften der Rolle, die den Cachecluster hostet, unter **Lebensdauer (min)** konfiguriert werden.
 
 ![RoleCache6][RoleCache6]
 
 Es gibt drei verschiedene **Ablauftypen**: **Keine**, **Absolut** und **Gleitendes Fenster**. Diese Typen bestimmen, wie **Lebensdauer (min)** eingesetzt wird, um das Ablaufdatum festzulegen. Der **Standardablauftyp** lautet **Absolut** und bedeutet, dass der Countdown für den Ablauf eines Elements beginnt, sobald dieses im Cache abgelegt wird. Sobald die für ein Element angegebene Zeitdauer verstrichen ist, läuft es ab. Wird **Gleitendes Fenster** angegeben, wird die Lebensdauer für ein Element jedes Mal zurückgesetzt, wenn im Cache auf das Element zugegriffen wird. Das Element läuft nicht ab, solange die angegebene Zeit nach dem letzten Zugriff nicht abläuft. Wird **Keine** angegeben, muss die **Lebensdauer (min)** auf **0** gesetzt werden. Das Element läuft in diesem Fall nicht ab und bleibt gültig, solange es sich im Cache befindet.
 
-Wird eine längere oder kürzere Lebensdauer als die in den Rolleneigenschaften angegebene gewünscht, kann eine spezifische Lebensdauer angegeben werden, wenn ein Element im Cache hinzugefügt oder aktualisiert wird. Verwenden Sie dafür die Überladung von **Add** und **Put**, die einen **TimeSpan**-Parameter annehmen. Im folgenden Beispiel wird die Zeichenfolge **value** mit dem Schlüssel **item** und einer Zeitüberschreitungseinstellung von 30 Minuten dem Cache hinzugefügt.
+Wird eine längere oder kürzere Lebensdauer als die in den Rolleneigenschaften angegebene gewünscht, kann eine spezifische Lebensdauer angegeben werden, wenn ein Element im Cache hinzugefügt oder aktualisiert wird. Verwenden Sie dafür die Überladung von **Add** und **Put**, die einen **TimeSpan**-Parameter annehmen. Im folgenden Beispiel wird die Zeichenfolge **value** mit dem Schlüssel **item** und einer Zeitüberschreitungseinstellung von 30 Minuten dem Cache hinzugefügt.
 
     // Add the string "value" to the cache, keyed by "item"
     cache.Add("item", "value", TimeSpan.FromMinutes(30));
@@ -341,7 +341,7 @@ Fügen Sie jeder Seite, für die Sie die Ausgabe zwischenspeichern möchten, ein
 
     <%@ OutputCache Duration="60" VaryByParam="*" %>
 
-In diesem Beispiel verbleiben die zwischengespeicherten Daten 60 Sekunden lang im Cache. Für jede Parameterkombination wird eine andere Version der Seite zwischengespeichert. Weitere Informationen zu den verfügbaren Optionen finden Sie unter [OutputCache-Direktive][].
+In diesem Beispiel verbleiben die zwischengespeicherten Daten 60 Sekunden lang im Cache. Für jede Parameterkombination wird eine andere Version der Seite zwischengespeichert. Weitere Informationen zu den verfügbaren Optionen finden Sie unter [OutputCache-Direktive][].
 
 Weitere Informationen zur Verwendung des Output Cache Providers für In-Role Cache finden Sie unter [Output Cache Provider für In-Role Cache][].
 
@@ -375,7 +375,7 @@ Nachdem Sie sich nun mit den Grundlagen von In-Role Cache vertraut gemacht haben
 [Vorgehensweise: Speichern der ASP.NET-Seitenausgabe im Cache]: #store-page
 [Target a Supported .NET Framework Profile]: #prepare-vs-target-net
  
-<!-- IMAGES -->
+<!-- IMAGES --> 
 [RoleCache1]: ./media/cache-dotnet-how-to-use-in-role/cache8.png
 [RoleCache2]: ./media/cache-dotnet-how-to-use-in-role/cache9.png
 [RoleCache3]: ./media/cache-dotnet-how-to-use-in-role/cache10.png
@@ -410,4 +410,4 @@ Nachdem Sie sich nun mit den Grundlagen von In-Role Cache vertraut gemacht haben
 [Which Azure Cache offering is right for me?]: cache-faq.md#which-azure-cache-offering-is-right-for-me
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0309_2016-->

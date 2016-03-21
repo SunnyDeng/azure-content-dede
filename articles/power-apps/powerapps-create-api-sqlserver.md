@@ -15,16 +15,18 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na" 
-   ms.date="11/25/2015"
+   ms.date="03/03/2016"
    ms.author="litran"/>
 
 
-# Erstellen einer neuen SQL Server-API in der App Service-Umgebung Ihrer Organisation
+# Erstellen einer neuen SQL Server-API in PowerApps Enterprise
+
+Fügen Sie die SQL Server-API in der App Service-Umgebung Ihrer Organisation (Mandant) hinzu.
 
 ## Erstellen der API im Azure-Portal
 
 1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/) mit Ihrem Geschäftskonto an. Melden Sie sich beispielsweise mit *IhrBenutzername*@*IhrUnternehmen*.com an. Sie werden dann automatisch mit Ihrem Unternehmensabonnement angemeldet. 
-2. Wählen Sie auf der Taskleiste die Option **Durchsuchen** aus: ![][14]  
+2. Wählen Sie in der Taskleiste **Durchsuchen**: ![][14]  
 3. Um PowerApps zu finden, können Sie in der Liste scrollen oder *powerapps* eingeben: ![][15]  
 4. Wählen Sie in **PowerApps** die Option **Manage APIs** aus.
 5. Wählen Sie in **Manage APIs** die Option **Add** aus, um die neue API hinzuzufügen.
@@ -36,16 +38,16 @@ Ihrer App Service-Umgebung wird dann eine neue SQL Server-API hinzugefügt.
 
 ## Konfigurieren der lokalen Verbindung mit SQL Server
 
-Sie können lokal eine Verbindung mit SQL Server herstellen. Zum Herstellen dieser Hybridverbindung können Sie vorhandene Hybridnetzwerklösungen in Azure verwenden, z. B.:
+Sie können lokal eine Verbindung mit SQL Server herstellen. Zum Herstellen dieser Hybridverbindung können Sie vorhandene Hybridnetzwerklösungen in Azure verwenden, z. B.:
 
-- [ExpressRoute](../expressroute-introduction.md)
-- [Standort-zu-Standort-VPN-Verbindung](../vpn-gateway-create-site-to-site-rm-powershell.md)
-- [Punkt-zu-Standort-Verbindung](../vpn-gateway-point-to-site-create.md)  
+- [ExpressRoute](../expressroute/expressroute-introduction.md)
+- [Standort-zu-Standort-VPN-Verbindung](../vpn-gateway/vpn-gateway-create-site-to-site-rm-powershell.md)
+- [Punkt-zu-Standort-Verbindung](../vpn-gateway/vpn-gateway-point-to-site-create.md)  
 
-	> [AZURE.NOTE]Jeder App Service-Umgebung ist ein virtuelles Netzwerk zugeordnet. Sie können die Netzwerkverbindung mit diesem virtuellen Netzwerk herstellen.  
-- [Hybridverbindungen](../web-sites-hybrid-connection-get-started.md)  
+	> [AZURE.NOTE]  Jeder App Service-Umgebung ist ein virtuelles Netzwerk zugeordnet. Sie können die Netzwerkverbindung mit diesem virtuellen Netzwerk herstellen.  
+- [Hybridverbindungen](../app-service-web/web-sites-hybrid-connection-get-started.md)  
 
-	> [AZURE.NOTE]Jede registrierte API in Ihrer App Service-Umgebung verfügt über eine entsprechende Web-App. Über diese Web-App können Sie genau wie über jede andere Web-App Hybridverbindungen herstellen.
+	> [AZURE.NOTE]  Jede registrierte API in Ihrer App Service-Umgebung verfügt über eine entsprechende Web-App. Über diese Web-App können Sie genau wie über jede andere Web-App Hybridverbindungen herstellen.
 	
 Im folgenden Beispiel wird veranschaulicht, wie eine Hybridverbindung hergestellt wird:
 
@@ -53,7 +55,7 @@ Im folgenden Beispiel wird veranschaulicht, wie eine Hybridverbindung hergestell
 
 2.  Wählen Sie die Kachel **Ressourcen** und dann die Web-App aus, deren Namen dem Ihrer SQL Server-API entspricht. Wählen Sie in diesem Beispiel die Web-App *sqlconnectordemo* aus: ![SQL-Web-App](./media/powerapps-create-api-sqlserver/sqlwebapp.png)
 
-3.  Wählen Sie in **Einstellungen** die Option **Netzwerk** aus. Wählen Sie **Configure your hybrid connection endpoints** aus, und befolgen Sie dann [diese Anweisungen](../web-sites-hybrid-connection-get-started.md) zum Erstellen der Hybridverbindung: ![Netzwerk](./media/powerapps-create-api-sqlserver/network.png)
+3.  Wählen Sie in **Einstellungen** die Option **Netzwerk** aus. Wählen Sie **Configure your hybrid connection endpoints** aus, und befolgen Sie dann [diese Anweisungen](../app-service-web/web-sites-hybrid-connection-get-started.md) zum Erstellen der Hybridverbindung: ![Netzwerk](./media/powerapps-create-api-sqlserver/network.png)
 
 Nachdem die Hybridverbindung erstellt und hergestellt wurde, haben Sie die Verbindung mit dem lokalen Server aktiviert. Erstellen Sie als Nächstes die Verbindung mit Ihren Daten, und richten Sie den Zugriff für Benutzer ein: ![Hybridverbindung](./media/powerapps-create-api-sqlserver/hybridconn.png)
 
@@ -65,7 +67,7 @@ Nachdem die Hybridverbindung erstellt und hergestellt wurde, haben Sie die Verbi
 
 3. Wählen Sie in „Verbindungen“ die Option **Verbindung hinzufügen** aus: ![](./media/powerapps-create-api-sqlserver/addconnection.png)
 
-4. Geben Sie einen Namen für die Verbindung und die Verbindungszeichenfolge ein. Für die Eingabe der Verbindungszeichenfolge müssen Sie einige spezifische Eigenschaften für den Dienst kennen, mit dem Sie eine Verbindung herstellen. Wenn Sie z. B. lokal eine Verbindung mit SQL Server herstellen, müssen Sie den Benutzernamen, das Kennwort und andere Eigenschaften kennen, die zum Herstellen der Verbindung erforderlich sind.
+4. Geben Sie einen Namen für die Verbindung und die Verbindungszeichenfolge ein. Für die Eingabe der Verbindungszeichenfolge müssen Sie einige spezifische Eigenschaften für den Dienst kennen, mit dem Sie eine Verbindung herstellen. Wenn Sie z. B. lokal eine Verbindung mit SQL Server herstellen, müssen Sie den Benutzernamen, das Kennwort und andere Eigenschaften kennen, die zum Herstellen der Verbindung erforderlich sind.
 
 5. Klicken Sie zum Speichern der Änderungen auf **Hinzufügen**.
 
@@ -78,4 +80,4 @@ In diesem Thema haben Sie die SQL Server-API hinzugefügt, um lokal eine Verbind
 [14]: ./media/powerapps-create-api-sqlserver/browseall.png
 [15]: ./media/powerapps-create-api-sqlserver/allresources.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0309_2016-->

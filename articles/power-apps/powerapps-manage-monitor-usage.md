@@ -5,7 +5,7 @@
     suite="powerapps"
 	documentationCenter="" 
 	authors="MandiOhlinger"
-	manager="dwrede"
+	manager="erikre"
 	editor=""/>
 
 <tags
@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na" 
-   ms.date="11/25/2015"
+   ms.date="03/02/2016"
    ms.author="litran"/>
 
 
@@ -38,7 +38,7 @@ Nachdem PowerApps Enterprise aktiviert ist, können Sie Administratoren hinzufü
 4. Wählen Sie in **Users** die Option **Add** aus.
 5. Wählen Sie die Rolle **Besitzer** aus: ![][2]  
 
-	> [AZURE.IMPORTANT]Sie müssen die Rolle **Besitzer** auswählen, wenn Sie eine Person als PowerApps-Administrator zuweisen möchten. Keine der anderen aufgeführten Rollen bietet Benutzern vollständigen Zugriff, um PowerApps zu verwalten.
+	> [AZURE.IMPORTANT] Sie müssen die Rolle **Besitzer** auswählen, wenn Sie eine Person als PowerApps-Administrator zuweisen möchten. Keine der anderen aufgeführten Rollen bietet Benutzern vollständigen Zugriff, um PowerApps zu verwalten.
 
 6. Wählen Sie Ihre Benutzer oder Gruppen aus.
 7. Wählen Sie **OK** aus, um die Schritte ausführen.
@@ -49,7 +49,7 @@ Wenn Sie Administratoren zu PowerApps Enterprise hinzufügen, können die Benutz
 - Verwalten von allen Apps sowie von deren Benutzerzugriff
 - Ändern der Abrechnung: nein
 
-> [AZURE.IMPORTANT]PowerApps-Administratoren können solange keine Änderungen an der App Service-Umgebung vornehmen, bis ihnen die Besitzerrolle für die Ressourcengruppe der App Service-Umgebung zugewiesen wurde. Die Vorgehensweise hierzu finden Sie [in diesem Artikel](powerapps-get-started-azure-portal.md).
+> [AZURE.IMPORTANT] PowerApps-Administratoren können solange keine Änderungen an der App Service-Umgebung vornehmen, bis ihnen die Besitzerrolle für die Ressourcengruppe der App Service-Umgebung zugewiesen wurde. Informationen hierzu finden Sie unter [Erste Schritte mit PowerApps Enterprise](powerapps-get-started-azure-portal.md).
 
 Sobald den PowerApps-Administratoren die Besitzerrolle für die Ressourcengruppe der App Service-Umgebung zugewiesen wurde, können sie ebenfalls folgenden Aufgaben ausführen:
 
@@ -98,7 +98,7 @@ Als PowerApps-Administrator können Sie Benutzer und Gruppen zu PowerApps hinzuf
 2. Wählen Sie auf der Kachel **All apps** den Eintrag **Logic apps** aus: ![][8]  
 3. Wählen Sie die Logik-App aus, zu der Sie Details anzeigen möchten. Stellen Sie sicher, dass Sie das Korrekturabonnement für PowerApps auswählen, damit die richtigen Logik-Apps aufgelistet werden: ![][7]  
 
-	> [AZURE.IMPORTANT]In der öffentlichen Vorschau sehen Sie möglicherweise einige Unstimmigkeiten in der Anzahl von Logik-Apps auf der Kachel für Durchsuchen und der Anzahl, die auf dem PowerApps-Hauptblatt angezeigt wird. Dies entspricht dem erwarteten Verhalten. Im Portal werden alle Logik-Apps für alle Hostingpläne angezeigt, und es erfolgt keine Filterung der Logik-Apps unter der App Service-Umgebung, die für PowerApps bereitgestellt wird. Dieses Verhalten wird in einem zukünftigen Update behoben.
+	> [AZURE.IMPORTANT] In der öffentlichen Vorschau sehen Sie möglicherweise einige Unstimmigkeiten in der Anzahl von Logik-Apps auf der Kachel für Durchsuchen und der Anzahl, die auf dem PowerApps-Hauptblatt angezeigt wird. Dies entspricht dem erwarteten Verhalten. Im Portal werden alle Logik-Apps für alle Hostingpläne angezeigt, und es erfolgt keine Filterung der Logik-Apps unter der App Service-Umgebung, die für PowerApps bereitgestellt wird. Dieses Verhalten wird in einem zukünftigen Update behoben.
 
 	**Weitere Informationen zu Logik-Apps sowie dazu, wie diese verwaltet werden, finden Sie in [diesen Anleitungen](https://azure.microsoft.com/documentation/services/app-service/logic/).**
 
@@ -166,4 +166,4 @@ Nachdem Sie nun einiges Wissen zum Azure-Portal gesammelt haben, können Sie mit
 [9]: ./media/powerapps-manage-monitor-usage/webapps.png
 [10]: ./media/powerapps-manage-monitor-usage/mobileapps.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0309_2016-->

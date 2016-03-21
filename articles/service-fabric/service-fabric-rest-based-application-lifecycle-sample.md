@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="12/07/2015"
+   ms.date="03/03/2016"
    ms.author="ryanwi"/>
 
 # REST-basierter Anwendungslebenszyklus – Beispiel
@@ -22,19 +22,19 @@ Dieses Beispiel veranschaulicht den Service Fabric-Anwendungslebenszyklus anhand
 
 In diesem Beispiel wird Folgendes durchgeführt:
 
-* Das **WordCount 1.0.0**-Beispiel wird aus dem WordCount-Anwendungspaket im Imagespeicher bereitgestellt.
-* Die Liste mit den Anwendungstypen wird angezeigt, darunter WordCount 1.0.0.
+* Das **WordCount 1.0.0**-Beispiel wird aus dem WordCount-Anwendungspaket im Imagespeicher bereitgestellt.
+* Die Liste mit den Anwendungstypen wird angezeigt, darunter WordCount 1.0.0.
 * Die WordCount-Anwendung wird als **fabric:/WordCount** erstellt.
-* Die Liste mit den Anwendungen wird angezeigt, darunter „fabric:/WordCount Version 1.0.0“.
-* Die Version 1.1.0 des WordCount-Beispiels wird aus dem **WordCountUpgrade**-Anwendungspaket im Imagespeicher bereitgestellt.
-* Die Liste mit den Anwendungstypen wird angezeigt, darunter sowohl WordCount 1.0.0 als auch **WordCount 1.1.0**.
-* Die WordCount-Anwendung wird auf Version 1.1.0 aktualisiert.
-* Die Liste mit den Anwendungen wird angezeigt, darunter WordCount Version 1.1.0, aber jetzt ohne WordCount Version 1.0.0.
+* Die Liste mit den Anwendungen wird angezeigt, darunter „fabric:/WordCount Version 1.0.0“.
+* Die Version 1.1.0 des WordCount-Beispiels wird aus dem **WordCountUpgrade**-Anwendungspaket im Imagespeicher bereitgestellt.
+* Die Liste mit den Anwendungstypen wird angezeigt, darunter sowohl WordCount 1.0.0 als auch **WordCount 1.1.0**.
+* Die WordCount-Anwendung wird auf Version 1.1.0 aktualisiert.
+* Die Liste mit den Anwendungen wird angezeigt, darunter WordCount Version 1.1.0, aber jetzt ohne WordCount Version 1.0.0.
 * Die WordCount-Anwendung wird gelöscht.
 * Die Liste mit den Anwendungen wird angezeigt, aber jetzt ohne „fabric:/WordCount“.
-* Die Bereitstellung der Version 1.1.0 des WordCount-Beispiels wird aufgehoben.
-* Die Liste mit den Anwendungstypen wird angezeigt, darunter WordCount 1.0.0, aber jetzt ohne WordCount 1.1.0.
-* Die Bereitstellung von Version 1.0.0 des WordCount-Beispiels wird aufgehoben.
+* Die Bereitstellung der Version 1.1.0 des WordCount-Beispiels wird aufgehoben.
+* Die Liste mit den Anwendungstypen wird angezeigt, darunter WordCount 1.0.0, aber jetzt ohne WordCount 1.1.0.
+* Die Bereitstellung von Version 1.0.0 des WordCount-Beispiels wird aufgehoben.
 * Die Liste mit den Anwendungstypen wird angezeigt, aber jetzt ohne WordCount.
 
 
@@ -709,4 +709,4 @@ namespace ServiceFabricRestCaller
 
 [Service Fabric-Anwendungslebenszyklus](service-fabric-application-lifecycle.md)
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0309_2016-->

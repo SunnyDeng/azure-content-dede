@@ -4,7 +4,7 @@
 	services="api-management" 
 	documentationCenter="" 
 	authors="steved0x" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor=""/>
 
 <tags 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/07/2015" 
+	ms.date="03/04/2016" 
 	ms.author="sdanie"/>
 
 # Importieren einer API-Definition mit Operationen in Azure API Management
@@ -54,7 +54,7 @@ Geben Sie anschließend ein **URL-Suffix für die Web-API** ein. Dieses Suffix w
 
 Geben Sie alle Werte ein, und klicken Sie auf **Speichern**, um die API und die entsprechenden Operationen zu erstellen.
 
->[AZURE.NOTE]Ein Lernprogramm zum Importieren einer einfachen Taschenrechner-API im Swagger-Format finden Sie unter [Verwalten Ihrer ersten API in Azure API Management](api-management-get-started.md).
+>[AZURE.NOTE] Ein Lernprogramm zum Importieren einer einfachen Taschenrechner-API im Swagger-Format finden Sie unter [Verwalten Ihrer ersten API in Azure API Management](api-management-get-started.md).
 
 ## <a name="export-api"> </a>Exportieren einer API
 
@@ -95,4 +95,4 @@ Nachdem Sie die API erstellt und die Operationen importiert haben, können Sie z
 [Erstellen von APIs]: api-management-howto-create-apis.md
 [Konfigurieren von API-Einstellungen]: api-management-howto-create-apis.md#configure-api-settings
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0309_2016-->

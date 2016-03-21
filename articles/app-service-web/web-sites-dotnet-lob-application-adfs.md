@@ -40,7 +40,7 @@ Sie erstellen eine grundlegende ASP.NET-Anwendung in Azure App Service-Web-Apps 
 
 Sie benötigen Folgendes zum Bearbeiten dieses Lernprogramms:
 
-- Lokale AD FS-Bereitstellung (Eine umfassende exemplarische Vorgehensweise des von mir genutzten Testlabors finden Sie unter [Testlabor: Eigenständiger STS mit AD FS in Azure VM (nur für Testzwecke)](TODO).)
+- Lokale AD FS-Bereitstellung (Eine umfassende exemplarische Vorgehensweise des von mir genutzten Testlabors finden Sie unter [Testlabor: Eigenständiger STS mit AD FS in Azure VM (nur für Testzwecke)](https://blogs.msdn.microsoft.com/cephalin/2014/12/21/test-lab-standalone-sts-with-ad-fs-in-azure-vm-for-test-only/).)
 - Berechtigungen zum Erstellen von Vertrauensstellungen der vertrauenden Seite in AD FS-Verwaltung
 - Visual Studio 2013
 - [Azure SDK 2.5.1](http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409) oder höher
@@ -356,4 +356,4 @@ Azure App Service-Web-Apps unterstützen zwei Methoden für den Zugriff auf loka
  
  
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

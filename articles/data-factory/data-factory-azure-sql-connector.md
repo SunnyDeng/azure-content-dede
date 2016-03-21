@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verschieben von Daten in und aus Azure SQL | Azure Data Factory" 
+	pageTitle="Verschieben von Daten in/aus Azure SQL-Datenbank | Microsoft Azure" 
 	description="Erfahren Sie, wie Daten mithilfe von Azure Data Factory in und aus Azure SQL-Datenbank verschoben werden." 
 	services="data-factory" 
 	documentationCenter="" 
@@ -630,4 +630,4 @@ Die Zuordnung ist mit der SQL Server-Datentypzuordnung für ADO.NET identisch.
 
 	 
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0309_2016-->

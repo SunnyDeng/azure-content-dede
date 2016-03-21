@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/07/2016"
+   ms.date="03/03/2016"
    ms.author="nicw;jrj;mausher;barbkess;sonyama"/>
 
 # Flexible Leistung und Skalierbarkeit mit SQL Data Warehouse
@@ -27,12 +27,12 @@ Anstatt feste DWU-Ausgangspunkte bereitzustellen, die möglicherweise gut für e
 
 1. Beginnen Sie bei einer Data Warehouse-Entwicklung, indem Sie eine geringe Anzahl von DWUs auswählen.
 2. Überwachen Sie die Anwendungsleistung, und beobachten Sie dabei die Anzahl der ausgewählten DWUs im Vergleich zur beobachteten Leistung.
-3. Bestimmen Sie durch Annahme einer linearen Skalierung, wie viel schneller oder langsamer die Leistung für Sie sein muss, um die optimale Leistungsstufe für Ihre Anforderungen zu erreichen. 
+3. Bestimmen Sie durch Annahme einer linearen Skalierung, wie viel schneller oder langsamer die Leistung für Sie sein muss, um die optimale Leistungsstufe für Ihre Anforderungen zu erreichen.
 4. Erhöhen oder verringern Sie die Anzahl der ausgewählten DWUs. Der Dienst reagiert schnell und passt die Computeressourcen gemäß den DWU-Anforderungen an.
 5. Nehmen Sie weitere Anpassungen vor, bis Sie die optimale Leistungsstufe für Ihre geschäftlichen Anforderungen erreichen.
 
 Wenn Sie eine Anwendung mit wechselnder Workload haben, verschieben Sie die Leistungsstufen nach oben oder unten, um Spitzen und Tiefpunkte zu berücksichtigen. Wenn z. B. eine Workload in der Regel am Ende des Monats einen Spitzenwert aufweist, fügen Sie während dieser Spitzenzeiten weitere DWUs hinzu, und entfernen Sie sie wieder, wenn diese Spitzenzeiten vorbei sind.
- 
+
 ## Aufwärts- und Abwärtsskalieren von Compute-Ressourcen
 Unabhängig vom Cloudspeicher ermöglicht Ihnen die Flexibilität von SQL Data Warehouse das Vergrößern, Verkleinern oder Anhalten der Rechenleistung mithilfe eines Schiebereglers für Data Warehouse-Einheiten (DWUs). Dies bietet Ihnen die Flexibilität, die Rechenleistung auf einen Idealwert für Ihr Unternehmen zu optimieren.
 
@@ -41,7 +41,7 @@ Um die Rechenleistung zu erhöhen, können Sie mithilfe des Schiebereglers für 
 Im [klassischen Azure-Portal][] können Sie oben auf der SQL Data Warehouse-Seite auf das Symbol zum Skalieren klicken und anschließend mithilfe des Schiebereglers die Anzahl der DWUs, die auf Data Warehouse angewendet werden, erhöhen oder verringern. Klicken Sie anschließend auf „Speichern“. Wenn Sie die Skalierung lieber programmgesteuert ändern, zeigt der folgende T-SQL-Code, wie Sie die DWU-Zuordnung für Ihr SQL Data Warehouse anpassen:
 
 ```
-ALTER DATABASE MySQLDW 
+ALTER DATABASE MySQLDW
 MODIFY (SERVICE_OBJECTIVE = 'DW1000')
 ;
 ```
@@ -96,4 +96,4 @@ Die Leistungsübersicht finden Sie unter [Leistungsübersicht][].
 [klassische Azure-Portal]: http://portal.azure.com/
 [klassischen Azure-Portal]: http://portal.azure.com/
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0309_2016-->

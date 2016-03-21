@@ -40,7 +40,8 @@ Dienst | Verschieben der Auftragsausgabe an SQL Data Warehouse mithilfe von Data
 Tools | Verwenden des Diagnosetools | 1 | Ausstehend | [@mumian](https://github.com/mumian) | 
 U-SQL | Erläutert Techniken für bereichsbasierte JOINs | 1 | Ausstehend | [@MikeRys](https://github.com/mikerys) |[@saveenr](https://github.com/saveenr) 
 U-SQL | ADLS-Authentifizierungsoptionen | 1 | Ausstehend | [@ArindamC](https://github.com/mikerys) |[@saveenr](https://github.com/saveenr) 
-
+U-SQL | Auftragsübermittlung mit der plattformübergreifenden CLI | 1 | Ausstehend | [@edmacauley](https://github.com/edmacauley) |[@mwinkle](https://github.com/mwinkle) 
+U-SQL | Updates der Referenzdokumentation für REDUCE und COMBINE | 1 | Ausstehend | [@edmacauley](https://github.com/edmacauley) |[@mwinkle](https://github.com/mwinkle)
 
 
 
@@ -57,4 +58,4 @@ Für das Senden von Feedback bezüglich des Rückstands stehen mehrere Optionen 
 * Senden Sie im [Azure-Inhaltsrepository](https://github.com/Azure/azure-content/blob/master/articles/data-lake-analytics/data-lake-analytics-documentation-backlog.md) eine Pull-Anforderung für dieses Dokument.
 * Senden Sie eine E-Mail an [adlafeedback@microsoft.com](mailto:adlafeedback@microsoft.com?subject=DocBacklog).
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

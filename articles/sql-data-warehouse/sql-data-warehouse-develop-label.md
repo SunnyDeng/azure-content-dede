@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/07/2016"
+   ms.date="03/03/2016"
    ms.author="jrj;barbkess;sonyama"/>
 
 # Verwenden von Bezeichnungen zum Instrumentieren von Abfragen in SQL Data Warehouse
@@ -37,9 +37,9 @@ Um nach der Bezeichnung zu suchen, können Sie die folgende Abfrage nutzen, bei 
 	FROM    sys.dm_pdw_exec_requests r
 	WHERE   r.[label] = 'My Query Label'
 	;
-	``` 
+	```
 
-> [AZURE.NOTE]Es ist wichtig, dass Sie das Wort „label“ bei Abfragen in eckige Klammern oder doppelte Anführungszeichen setzen. „label“ ist ein reserviertes Wort, das zu einem Fehler führen kann, wenn es nicht entsprechend markiert wird.
+> [AZURE.NOTE] Es ist wichtig, dass Sie das Wort „label“ bei Abfragen in eckige Klammern oder doppelte Anführungszeichen setzen. „label“ ist ein reserviertes Wort, das zu einem Fehler führen kann, wenn es nicht entsprechend markiert wird.
 
 
 ## Nächste Schritte
@@ -54,4 +54,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 
 <!--Other Web references-->
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0309_2016-->

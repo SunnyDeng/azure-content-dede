@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/07/2016"
+   ms.date="03/03/2016"
    ms.author="lodipalm;sonyama;barbkess"/>
 
 
@@ -55,7 +55,7 @@ So erkennt die Bedrohungserkennung beispielsweise bestimmte anomale Datenbankakt
 
 	![Navigationsbereich][4]
 
-2. Klicken Sie in der E-Mail auf den Link für das Azure SQL-Überwachungsprotokoll, um das klassische Azure-Portal aufzurufen und die relevanten Überwachungsdatensätze für die Zeit des verdächtigen Ereignisses anzuzeigen.
+2. Klicken Sie in der E-Mail auf den Link für das Azure SQL-Überwachungsprotokoll, um das klassische Azure-Portal aufzurufen und die relevanten Überwachungsdatensätze für die Zeit des verdächtigen Ereignisses anzuzeigen.
 
 	![Navigationsbereich][5]
 
@@ -63,7 +63,7 @@ So erkennt die Bedrohungserkennung beispielsweise bestimmte anomale Datenbankakt
 
 	![Navigationsbereich][6]
 
-4. Klicken Sie auf dem Blatt mit den Überwachungsdatensätzen auf **In Excel öffnen**, um eine vorkonfigurierte Excel-Vorlage zu öffnen, das Überwachungsprotokoll zu importieren und eine ausführlichere Analyse für die Zeit des verdächtigen Ereignisses durchzuführen.<br/> **Hinweis:** Ab Excel 2010 werden Power Query und die Einstellung **Schnelles Kombinieren** benötigt.
+4. Klicken Sie auf dem Blatt mit den Überwachungsdatensätzen auf **In Excel öffnen**, um eine vorkonfigurierte Excel-Vorlage zu öffnen, das Überwachungsprotokoll zu importieren und eine ausführlichere Analyse für die Zeit des verdächtigen Ereignisses durchzuführen.<br/> **Hinweis:** Ab Excel 2010 werden Power Query und die Einstellung **Schnelles Kombinieren** benötigt.
 
 	![Navigationsbereich][7]
 
@@ -89,4 +89,4 @@ So erkennt die Bedrohungserkennung beispielsweise bestimmte anomale Datenbankakt
 [8]: ./media/sql-data-warehouse-security-threat-detection/8_td_excel_fast_combine.png
 [9]: ./media/sql-data-warehouse-security-threat-detection/9_td_excel_parameters.png
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0309_2016-->

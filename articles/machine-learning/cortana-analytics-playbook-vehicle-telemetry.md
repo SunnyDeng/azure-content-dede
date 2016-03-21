@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/02/2015" 
+	ms.date="03/04/2016" 
 	ms.author="bradsev" />
 
 
@@ -28,7 +28,7 @@ Supercomputer stehen nicht mehr im Labor, sondern sind jetzt in Ihrer Garage gep
 
 Microsofts Cortana Analytics ist eine vollständig verwaltete Big Data- und erweiterte Analyse-Suite, die es Ihnen ermöglicht, Ihre Daten in intelligente Aktionen umzuwandeln. Wir möchten Ihnen die Cortana Analytics-Lösungsvorlage zur Fahrzeugtelemetrieanalyse vorstellen. Diese Lösung veranschaulicht, wie Automobilhändler, Automobilhersteller und Versicherungsgesellschaften die Funktionen von Cortana Analytics verwenden können, um Echtzeitdaten sowie prädiktive Einblicke zum Fahrzeugzustand und zum Fahrverhalten zu erhalten.
 
-Die Lösung ist als ein [Lambda-Architekturmuster](https://en.wikipedia.org/wiki/Lambda_architecture) implementiert und zeigt dadurch das vollständige Potential der Cortana Analytics-Plattform für Echtzeit- und Batchverarbeitung. Sie umfasst einen Fahrzeugtelematiksimulator, nutzt Event Hubs für die Erfassung von Millionen von simulierten Fahrzeugtelemetrieereignissen in Azure, verwendet anschließend Stream Analytics für Echtzeiteinblicke in den Fahrzeugzustand und speichert diese Daten in einem beständigen Speicher für umfangreichere Batchanalysen. Sie nutzt Machine Learning für die Erkennung von Anomalien in Echtzeit und Batchverarbeitung zum Gewinnen prädiktiver Einblicke. HDInsight wird für Datentransformationen verwendet, und Data Factory übernimmt die Orchestrierung, Planung, Ressourcenverwaltung und Überwachung der Batchverarbeitungs-Pipeline. Power BI bietet für diese Lösung abschließend ein umfassendes Dashboard für Visualisierungen von Echtzeitdaten und Predictive Analytics.
+Die Lösung ist als ein [Lambda-Architekturmuster](https://en.wikipedia.org/wiki/Lambda_architecture) implementiert und zeigt dadurch das vollständige Potential der Cortana Analytics-Plattform für Echtzeit- und Batchverarbeitung. Sie umfasst einen Fahrzeugtelematiksimulator, nutzt Event Hubs für die Erfassung von Millionen von simulierten Fahrzeugtelemetrieereignissen in Azure, verwendet anschließend Stream Analytics für Echtzeiteinblicke in den Fahrzeugzustand und speichert diese Daten in einem beständigen Speicher für umfangreichere Batchanalysen. Sie nutzt Machine Learning für die Erkennung von Anomalien in Echtzeit und Batchverarbeitung zum Gewinnen prädiktiver Einblicke. HDInsight wird für Datentransformationen verwendet, und Data Factory übernimmt die Orchestrierung, Planung, Ressourcenverwaltung und Überwachung der Batchverarbeitungs-Pipeline. Power BI bietet für diese Lösung abschließend ein umfassendes Dashboard für Visualisierungen von Echtzeitdaten und Predictive Analytics.
 
 ## Architektur
 
@@ -42,11 +42,11 @@ Diese Lösung umfasst die folgenden **Cortana Analytics-Komponenten** und präse
 - **Machine Learning** für die Erkennung von Anomalien in Echtzeit und Batchverarbeitung zum Gewinnen prädiktiver Einblicke.
 - **HDInsight** wird verwendet, um Daten nach Maß zu transformieren.
 - **Data Factory** übernimmt die Orchestrierung, Planung, Ressourcenverwaltung und Überwachung der Batchverarbeitungs-Pipeline.
-- **Power BI** bietet dieser Lösung ein umfassendes Dashboard für Visualisierungen von Echtzeitdaten und Predictive Analytics.
+- **Power BI** bietet dieser Lösung ein umfassendes Dashboard für Visualisierungen von Echtzeitdaten und Predictive Analytics.
 
 Diese Lösung greift auf die folgenden zwei unterschiedlichen **Datenquellen** zu:
 
 - **Simulierte Fahrzeugsignale und -diagnose:** Ein Fahrzeugtelematiksimulator gibt Diagnoseinformationen und Signale aus, die dem Zustand des Fahrzeugs und dem Fahrverhalten zu einem bestimmten Zeitpunkt entsprechen. 
 - **Fahrzeugkatalog:** Der Fahrzeugkatalog ist ein Referenzdataset mit der Fahrgestellnummer zur Modellierung der Zuordnung.
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0309_2016-->

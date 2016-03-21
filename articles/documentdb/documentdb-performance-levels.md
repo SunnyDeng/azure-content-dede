@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/29/2016" 
+	ms.date="03/08/2016" 
 	ms.author="johnmac"/>
 
 #Leistungsebenen in DocumentDB
@@ -36,15 +36,15 @@ Jede Leistungsebene verfügt über eine Beschränkung der Anforderungseinheit(RU
 Leistungsebene der Sammlung|Reservierter Durchsatz
 ---|---
 S1|250 RU/Sek.
-S2|1000 RU/Sek.
-S3|2500 RU/Sek.
+S2|1000 RU/Sek.
+S3|2500 RU/Sek.
 
 DocumentDB ermöglicht eine Vielzahl von Datenbankvorgängen, wie z. B. Abfragen, Abfragen mit benutzerdefinierten Funktionen (UDFs), gespeicherte Prozeduren und Trigger. Die Verarbeitungskosten im Zusammenhang mit diesen Vorgängen variieren basierend auf CPU, E/A und Speicher, die/der für den jeweiligen Vorgang erforderlich ist. Anstatt sich Gedanken über Hardwareressourcen und deren Verwaltung zu machen, können Sie sich eine Anforderungseinheit als alleinige Maßeinheit für die Ressourcen vorstellen, die für das Durchführen der verschiedenen Datenbankvorgänge und das Ausführen einer Anwendungsanforderung erforderlich sind.
 
-> [AZURE.NOTE] Leistungsebenen werden in Anforderungseinheiten gemessen. Jede Leistungsebene verfügt über eine maximale Rate der Anforderungseinheiten pro Sekunde. Die Leistungsebene einer Sammlung kann über die APIs oder das [Microsoft Azure-Portal ](https://portal.azure.com/)angepasst werden. Änderungen der Leistungsstufe sollten innerhalb von drei Minuten abgeschlossen sein.
+> [AZURE.NOTE] Leistungsebenen werden in Anforderungseinheiten gemessen. Jede Leistungsebene verfügt über eine maximale Rate der Anforderungseinheiten pro Sekunde. Die Leistungsebene einer Sammlung kann über die APIs oder das [Microsoft Azure-Portal ](https://portal.azure.com/)angepasst werden. Änderungen der Leistungsstufe sollten innerhalb von drei Minuten abgeschlossen sein.
 
 ##Festlegen von Leistungsebenen für Sammlungen
-Sobald eine Sammlung erstellt wurde, wird die vollständige Zuweisung von RUs basierend auf der angegebenen Leistungsebene für die Sammlung reserviert. Beispiel: Wenn für eine Sammlung „S3“ festgelegt wird, kann die Sammlung 2.500 RUs/Sek. verarbeiten. Jede Sammlung reserviert den festgelegten Durchsatz und 10 GB Datenbankspeicher. Der Preis der Sammlung variiert je nach ausgewählter Leistungsebene (S1, S2, S3). Beachten Sie, dass der Betrieb von DocumentDB von der Kapazitätsreservierung abhängig ist. Indem Sie eine Sammlung erstellen, reserviert die Anwendung den entsprechenden Durchsatz und wird basierend auf diesem Durchsatz und dem Datenbankspeicher abgerechnet. Hierbei spielt es keine Rolle, wie viel Speicher und Durchsatz tatsächlich genutzt wird.
+Sobald eine Sammlung erstellt wurde, wird die vollständige Zuweisung von RUs basierend auf der angegebenen Leistungsebene für die Sammlung reserviert. Beispiel: Wenn für eine Sammlung „S3“ festgelegt wird, kann die Sammlung 2.500 RUs/Sek. verarbeiten. Jede Sammlung reserviert den festgelegten Durchsatz und 10 GB Datenbankspeicher. Der Preis der Sammlung variiert je nach ausgewählter Leistungsebene (S1, S2, S3). Beachten Sie, dass der Betrieb von DocumentDB von der Kapazitätsreservierung abhängig ist. Indem Sie eine Sammlung erstellen, reserviert die Anwendung den entsprechenden Durchsatz und wird basierend auf diesem Durchsatz und dem Datenbankspeicher abgerechnet. Hierbei spielt es keine Rolle, wie viel Speicher und Durchsatz tatsächlich genutzt wird.
 
 Nach dem Erstellen einer Sammlung können Sie die Leistungsebene über die DocumentDB-SDKs oder das klassische Azure-Portal anpassen.
 
@@ -80,7 +80,7 @@ Das Azure-Portal ist eine Option, die Ihnen beim Verwalten der Leistungsstufen I
 7. Klicken Sie dann auf dem Blatt **Sammlung** auf die Kachel **Tarif** im Fokus **Nutzung**.
 8. Klicken Sie auf dem Blatt **Wählen Sie Ihren Tarif** auf die gewünschte Leistungsstufe, und klicken Sie dann am unteren Seitenrand auf **Auswählen**. 
 
->[AZURE.NOTE] Das Ändern von Leistungsstufen einer Sammlung kann bis zu 2 Minuten dauern.
+>[AZURE.NOTE] Das Ändern von Leistungsstufen einer Sammlung kann bis zu 2 Minuten dauern.
 
 ![Ändern des Tarifs][1]
 
@@ -122,4 +122,4 @@ Weitere Informationen zu DocumentDB finden Sie in der Azure DocumentDB-[Dokument
 
 [1]: ./media/documentdb-performance-levels/img1.png
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0309_2016-->

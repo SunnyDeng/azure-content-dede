@@ -14,13 +14,13 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na" 
-   ms.date="11/25/2015"
+   ms.date="03/02/2016"
    ms.author="litran"/>
 
 
 # Hinzufügen einer neuen API, Hinzufügen einer Verbindung und Einrichten des Zugriffs für Benutzer
 
-APIs sind innerhalb einer [App Service-Umgebung](powerapps-get-started-azure-portal.md) vorhanden. APIs können aus den für PowerApps verfügbaren APIs, aus in Ihrer App Service-Umgebung gehosteten API-Apps oder mit Swagger 2.0 erstellt werden. Es sind viele vorgefertigte APIs verfügbar, die Ihrem PowerApps-Dienst problemlos hinzugefügt werden können. Sie können zudem Ihre eigene API im JSON- oder Swagger 2.0-Format hochladen.
+APIs sind innerhalb einer [App Service-Umgebung](powerapps-get-started-azure-portal.md) vorhanden. APIs können aus den für PowerApps verfügbaren APIs, aus in Ihrer App Service-Umgebung gehosteten API-Apps oder mit Swagger 2.0 erstellt werden. Es sind viele vorgefertigte APIs verfügbar, die Ihrem PowerApps-Dienst problemlos hinzugefügt werden können. Sie können zudem Ihre eigene API im JSON- oder Swagger 2.0-Format hochladen.
 
 In diesem Thema:
 
@@ -75,7 +75,7 @@ Sie können auch eine API löschen, die Sie zuvor hinzugefügt haben. Wählen Si
 In diesem Thema haben Sie folgende Schritte ausgeführt:
 
 - Sie haben eine API hinzugefügt und Benutzern in Ihrem Unternehmen die Rechte zur Verwendung der API zugewiesen. Sie können diese Schritte auch jederzeit zum Verwalten des Zugriffs zur Laufzeit ausführen. Wenn beispielsweise BenutzerA Ihr Unternehmen verlässt, können Sie über das Azure-Portal problemlos die Berechtigungen dieses Benutzers entfernen. Dasselbe gilt, wenn BenutzerB neu in Ihr Unternehmen eintritt.
-- Sie haben eine Verbindung hinzugefügt (die einer Verbindungszeichenfolge ähnelt). Mit diesem Schritt kann die in Azure gehostete API mit Ihrem System verbunden werden, z. B. mit einem lokalen SQL Server. Sie haben zudem für Benutzer in Ihrem Unternehmen die Berechtigungen zur Verwendung der Verbindung eingerichtet. 
+- Sie haben eine Verbindung hinzugefügt (die einer Verbindungszeichenfolge ähnelt). Mit diesem Schritt kann die in Azure gehostete API mit Ihrem System verbunden werden, z. B. mit einem lokalen SQL Server. Sie haben zudem für Benutzer in Ihrem Unternehmen die Berechtigungen zur Verwendung der Verbindung eingerichtet. 
 - Abhängig von der Aufgabe haben Sie mit unterschiedlichen Blättern gearbeitet. Um eine Verbindung hinzuzufügen, öffnen Sie die API und verwenden das entsprechende Blatt. Um den Zugriff für Benutzer einzurichten, öffnen Sie die API bzw. die Verbindung, je nachdem, ob Sie den Zugriff für die API oder die Verbindung erteilen. 
 - Sie können ferner alle APIs löschen, die Sie in Ihrer App Service-Umgebung erstellt haben.
 
@@ -86,4 +86,4 @@ Als Nächstes können Sie [Ihre PowerApps verwalten und überwachen](powerapps-m
 [3]: ./media/powerapps-manage-api-connection-user-access/selectpermission.png
 [4]: ./media/powerapps-manage-api-connection-user-access/deleteapi.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0309_2016-->

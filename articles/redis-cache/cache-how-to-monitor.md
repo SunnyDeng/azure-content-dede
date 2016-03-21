@@ -4,7 +4,7 @@
 	services="redis-cache" 
 	documentationCenter="" 
 	authors="steved0x" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor=""/>
 
 <tags 
@@ -13,14 +13,14 @@
 	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/03/2015" 
+	ms.date="03/04/2016" 
 	ms.author="sdanie"/>
 
 # Überwachen von Azure Redis Cache
 
 Azure Redis Cache bietet verschiedene Optionen zum Überwachen Ihrer Cache-Instanzen. Sie können Metriken anzeigen, Metrikdiagramme an das Startmenü anheften, Daten- und Zeitbereiche für Überwachungsdiagramme anpassen, Metriken aus Diagrammen hinzufügen und entfernen sowie Warnungen festlegen, die ausgelöst werden, wenn bestimmte Bedingungen erfüllt sind. Diese Tools ermöglichen es Ihnen, die Integrität Ihrer Azure Redis Cache-Instanzen zu überwachen und unterstützen Sie beim Verwalten Ihrer Cachinganwendungen.
 
-Wenn die Cachediagnose aktiviert ist, werden ca. alle 30 Sekunden Metriken für Azure Redis Cache-Instanzen gesammelt und gespeichert, sodass sie in den Metrikdiagrammen angezeigt und durch Warnungsregeln ausgewertet werden können.
+Wenn die Cachediagnose aktiviert ist, werden ca. alle 30 Sekunden Metriken für Azure Redis Cache-Instanzen gesammelt und gespeichert, sodass sie in den Metrikdiagrammen angezeigt und durch Warnungsregeln ausgewertet werden können.
 
 Cachemetriken werden mithilfe des Redis-Befehls [INFO](http://redis.io/commands/info) gesammelt. Weitere Informationen zu den verschiedenen für die Cachemetriken verwendeten INFO-Befehlen finden Sie unter [Verfügbare Metriken und Berichtsintervalle](#available-metrics-and-reporting-intervals).
 
@@ -28,7 +28,7 @@ Zum Anzeigen von Cachemetriken klicken Sie auf [Durchsuchen](cache-configure.md)
 
 ![Überwachen][redis-cache-monitor-overview]
 
->[AZURE.IMPORTANT]Wenn im Azure-Portal die folgende Meldung angezeigt wird, befolgen Sie die Anweisungen im Abschnitt [Aktivieren der Cachediagnose](#enable-cache-diagnostics), um die Cachediagnose zu aktivieren.
+>[AZURE.IMPORTANT] Wenn im Azure-Portal die folgende Meldung angezeigt wird, befolgen Sie die Anweisungen im Abschnitt [Aktivieren der Cachediagnose](#enable-cache-diagnostics), um die Cachediagnose zu aktivieren.
 >
 >`Monitoring may not be enabled. Click here to turn on Diagnostics.`
 
@@ -42,7 +42,7 @@ Um die Cachediagnose zu aktivieren und zu konfigurieren, navigieren Sie zum Blat
 
 ![Aktivieren der Cachediagnose][redis-cache-enable-diagnostics]
 
-Klicken Sie auf ein Überwachungsdiagramm, z. B. **Treffer und Fehler**, um das Blatt **Metrik** anzuzeigen, und klicken Sie auf **Diagnoseeinstellungen**, um die Diagnoseeinstellungen für die Cachedienstinstanz zu aktivieren und zu konfigurieren.
+Klicken Sie auf ein Überwachungsdiagramm, z. B. **Treffer und Fehler**, um das Blatt **Metrik** anzuzeigen, und klicken Sie auf **Diagnoseeinstellungen**, um die Diagnoseeinstellungen für die Cachedienstinstanz zu aktivieren und zu konfigurieren.
 
 ![Diagnoseeinstellungen][redis-cache-diagnostic-settings]
 
@@ -54,11 +54,11 @@ Klicken Sie auf den Pfeil rechts neben **Speicherkonto**, um ein Speicherkonto a
 
 Wenn die Diagnoseeinstellungen konfiguriert sind, klicken Sie auf **Speichern**, um die Konfiguration zu speichern. Beachten Sie, dass es einen Moment dauern kann, bis die Änderungen wirksam werden.
 
->[AZURE.IMPORTANT]Caches innerhalb derselben Region und desselben Abonnements nutzen ein gemeinsames Speicherkonto für Diagnosedaten. Wenn die Konfiguration dieses Kontos geändert wird, gilt diese Änderung für alle Caches dieses Abonnements in dieser Region.
+>[AZURE.IMPORTANT] Caches innerhalb derselben Region und desselben Abonnements nutzen ein gemeinsames Speicherkonto für Diagnosedaten. Wenn die Konfiguration dieses Kontos geändert wird, gilt diese Änderung für alle Caches dieses Abonnements in dieser Region.
 
 Um die gespeicherten Metriken anzuzeigen, untersuchen Sie die Tabellen in Ihrem Speicherkonto, deren Namen mit `WADMetrics` beginnen. Weitere Informationen zum Zugriff auf die gespeicherten Metriken außerhalb des Azure-Portals finden Sie im Beispiel [Access Redis Cache Monitoring data](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring) (in englischer Sprache).
 
->[AZURE.NOTE]Im Azure-Portal werden nur Metriken angezeigt, die im ausgewählten Speicherkonto gespeichert sind. Wenn Sie das Speicherkonto ändern, sind die Daten im zuvor konfigurierten Speicherkonto weiterhin verfügbar, werden im Azure-Portal jedoch nicht angezeigt.
+>[AZURE.NOTE] Im Azure-Portal werden nur Metriken angezeigt, die im ausgewählten Speicherkonto gespeichert sind. Wenn Sie das Speicherkonto ändern, sind die Daten im zuvor konfigurierten Speicherkonto weiterhin verfügbar, werden im Azure-Portal jedoch nicht angezeigt.
 
 ## Verfügbare Metriken und Berichtsintervalle
 
@@ -66,7 +66,7 @@ Cachemetriken werden in verschiedenen Berichtsintervallen gemeldet, einschließl
 
 Jede Metrik umfasst zwei Versionen. Eine Metrik misst die Leistung für den gesamten Cache. Eine zweite Version der Metrik, deren Name `(Shard 0-9)` enthält, misst für Caches, die [Clustering](cache-how-to-premium-clustering.md) verwenden, die Leistung für einen einzelnen Shard in einem Cache. Wenn z. B. ein Cache 4 Shards enthält, ist `Cache Hits` der Gesamtbetrag der Treffer für den gesamten Cache, und `Cache Hits (Shard 3)` gibt lediglich die Treffer für dieses Shard des Caches an.
 
->[AZURE.NOTE]Selbst wenn keine der mit dem Cache verbundenen Clientanwendungen aktiv ist, wird möglicherweise Cacheaktivität angezeigt, wie z. B. verbundene Clients, Arbeitsspeicherauslastung und Vorgänge, die gerade ausgeführt werden. Diese Aktivität ist beim Betrieb einer Azure Redis Cache-Instanz normal.
+>[AZURE.NOTE] Selbst wenn keine der mit dem Cache verbundenen Clientanwendungen aktiv ist, wird möglicherweise Cacheaktivität angezeigt, wie z. B. verbundene Clients, Arbeitsspeicherauslastung und Vorgänge, die gerade ausgeführt werden. Diese Aktivität ist beim Betrieb einer Azure Redis Cache-Instanz normal.
 
 | Metrik | Beschreibung |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -76,7 +76,7 @@ Jede Metrik umfasst zwei Versionen. Eine Metrik misst die Leistung für den gesa
 | Entfernte Schlüssel | Die Anzahl von Elementen, die aufgrund des `maxmemory`-Grenzwerts während des angegebenen Berichtsintervalls aus dem Cache entfernt wurden. Dieser Wert ist dem Redis-INFO-Befehl `evicted_keys` zugeordnet. |
 | Abgelaufene Schlüssel | Die Anzahl von Elementen, die während des angegebenen Berichtsintervalls im Cache abgelaufen sind. Dieser Wert ist dem Redis-INFO-Befehl `expired_keys` zugeordnet. |
 | get-Vorgänge | Die Anzahl von get-Vorgängen im Cache während des angegebenen Berichtsintervalls. Dieser Wert ist die Summe der folgenden Werte aus dem Redis-INFO-Befehl "all": `cmdstat_get`, `cmdstat_hget`, `cmdstat_hgetall`, `cmdstat_hmget`, `cmdstat_mget`, `cmdstat_getbit` und `cmdstat_getrange` und entspricht der Summe aller Cachetreffer und Cachefehler während des angegebenen Berichtsintervalls. |
-| Redis-Serverlast | Der Prozentsatz der Zyklen, in denen der Redis-Server mit der Verarbeitung beschäftigt ist und nicht auf Nachrichten wartet. Wenn dieser Zähler den Wert 100 erreicht, bedeutet dies, dass der Redis-Server die Leistungsobergrenze erreicht hat und die CPU nicht schneller arbeiten kann. Wenn eine hohe Redis-Serverlast angezeigt wird, bedeutet dies auch Timeoutausnahmen auf dem Client. In diesem Fall sollten Sie erwägen, den Cache zentral hochzuskalieren oder Ihre Daten in mehrere Caches zu partitionieren. |
+| Redis-Serverlast | Der Prozentsatz der Zyklen, in denen der Redis-Server mit der Verarbeitung beschäftigt ist und nicht auf Nachrichten wartet. Wenn dieser Zähler den Wert 100 erreicht, bedeutet dies, dass der Redis-Server die Leistungsobergrenze erreicht hat und die CPU nicht schneller arbeiten kann. Wenn eine hohe Redis-Serverlast angezeigt wird, bedeutet dies auch Timeoutausnahmen auf dem Client. In diesem Fall sollten Sie erwägen, den Cache zentral hochzuskalieren oder Ihre Daten in mehrere Caches zu partitionieren. |
 | set-Vorgänge | Die Anzahl von set-Vorgängen im Cache während des angegebenen Berichtsintervalls. Dieser Wert ist die Summe der folgenden Werte aus dem Redis-INFO-Befehl "all": `cmdstat_set`, `cmdstat_hset`, `cmdstat_hmset`, `cmdstat_hsetnx`, `cmdstat_lset`, `cmdstat_mset`, `cmdstat_msetnx`, `cmdstat_setbit`, `cmdstat_setex`, `cmdstat_setrange` und `cmdstat_setnx`. |
 | Vorgänge gesamt | Die Gesamtzahl aller Befehle, die während des angegebenen Berichtsintervalls vom Cacheserver verarbeitet wurden. Dieser Wert ist dem Redis-INFO-Befehl `total_commands_processed` zugeordnet. Beachten Sie: Wenn Azure Redis Cache ausschließlich für pub/sub-Vorgänge verwendet wird, sind keine Metriken für `Cache Hits`, `Cache Misses`, `Gets` oder `Sets` vorhanden. Stattdessen sind `Total Operations`-Metriken vorhanden, die die Cachenutzung für pub/sub-Vorgänge widerspiegeln. |
 | Verwendeter Arbeitsspeicher | Der Betrag von Cachearbeitsspeicher in MB, der während des angegebenen Berichtsintervalls für Schlüssel-Wert-Paare im Cache verwendet wird. Dieser Wert ist dem Redis-INFO-Befehl `used_memory` zugeordnet. Metadaten und Fragmentierung sind hierin nicht enthalten. |
@@ -145,7 +145,7 @@ Wenn Sie die Metriken für einen bestimmten Zeitraum in einem Diagramm anzeigen 
 
 ## Überwachen eines Premium-Caches mithilfe des Clusterings
 
-Premium-Caches, für die [Clustering](cache-how-to-premium-clustering.md) aktiviert ist, lassen bis zu 10 Shards zu. Jeder Shard hat eine eigene Metriken, und diese Metriken werden aggregiert, um Metriken für den Cache als Ganzes zu bieten. Jede Metrik umfasst zwei Versionen. Eine Metrik misst die Leistung des gesamten Caches. Eine zweite Version der Metrik, deren Name `(Shard 0-9)` enthält, misst die Leistung eines einzelnen Shards in einem Cache. Wenn z. B. ein Cache 3 Shards enthält, ist `Cache Hits` die Gesamtmenge der Treffer im gesamten Cache, und `Cache Hits (Shard 2)` gibt lediglich die Treffer für den jeweiligen Shard des Caches an.
+Premium-Caches, für die [Clustering](cache-how-to-premium-clustering.md) aktiviert ist, lassen bis zu 10 Shards zu. Jeder Shard hat eine eigene Metriken, und diese Metriken werden aggregiert, um Metriken für den Cache als Ganzes zu bieten. Jede Metrik umfasst zwei Versionen. Eine Metrik misst die Leistung des gesamten Caches. Eine zweite Version der Metrik, deren Name `(Shard 0-9)` enthält, misst die Leistung eines einzelnen Shards in einem Cache. Wenn z. B. ein Cache 3 Shards enthält, ist `Cache Hits` die Gesamtmenge der Treffer im gesamten Cache, und `Cache Hits (Shard 2)` gibt lediglich die Treffer für den jeweiligen Shard des Caches an.
 
 In jedem Überwachungsdiagramm werden die Metriken auf oberster Ebene für den Cache sowie die Metriken für jeden Shard im Cache angezeigt.
 
@@ -196,7 +196,7 @@ Warnungsregeln verfügen über folgenden Eigenschaften:
 | Metrik | Die Metrik, die durch die Warnungsregel überwacht werden soll. Eine Liste der Cachemetriken finden Sie unter "Verfügbare Metriken und Berichtsintervalle". |
 | Bedingung | Der Bedingungsoperator für die Warnungsregel. Mögliche Optionen: größer als, größer oder gleich, kleiner als, kleiner oder gleich. |
 | Schwellenwert | Der Wert, mit dem die Metrik verglichen wird, unter Verwendung des durch die Bedingungseigenschaft angegebenen Operators. Je nach Metrik kann es sich bei diesem Wert um Bytes/Sekunde, Bytes, % oder einen Zähler handeln. |
-| Zeitraum | Gibt den Zeitraum an, während dessen der Durchschnittswert der Metrik für den Warnungsregelvergleich verwendet wird. Wenn der Zeitraum z. B. "Während der letzten Stunde" lautet, wird der Durchschnittswert der Metrik während der letzten Stunde für den Vergleich verwendet. Wenn Sie eine Benachrichtigung erhalten möchten, sobald der Schwellenwert aufgrund einer Aktivitätsspitze erreicht wird, sollte ein kürzerer Zeitraum angegeben werden. Wenn Sie benachrichtigt werden möchten, wenn dauerhaft Aktivität oberhalb des Schwellenwerts vorhanden ist, geben Sie einen längeren Zeitraum an. |
+| Zeitraum | Gibt den Zeitraum an, während dessen der Durchschnittswert der Metrik für den Warnungsregelvergleich verwendet wird. Wenn der Zeitraum z. B. "Während der letzten Stunde" lautet, wird der Durchschnittswert der Metrik während der letzten Stunde für den Vergleich verwendet. Wenn Sie eine Benachrichtigung erhalten möchten, sobald der Schwellenwert aufgrund einer Aktivitätsspitze erreicht wird, sollte ein kürzerer Zeitraum angegeben werden. Wenn Sie benachrichtigt werden möchten, wenn dauerhaft Aktivität oberhalb des Schwellenwerts vorhanden ist, geben Sie einen längeren Zeitraum an. |
 | E-Mail an Dienst- und Co-Administrator | Wenn diese Einstellung auf "true" festgelegt ist, erhalten der Dienstadministrator und der Co-Administrator bei Aktivierung der Warnung eine E-Mail. |
 | E-Mail an weiteren Administrator | Optionale E-Mail-Adresse für einen zusätzlichen Administrator, der bei Aktivierung der Warnung benachrichtigt werden soll. |
 
@@ -212,11 +212,11 @@ Geben Sie die gewünschten Regelkriterien auf dem Blatt **Warnung hinzufügen** 
 
 ![Hinzufügen einer Warnungsregel][redis-cache-add-alert]
 
->[AZURE.NOTE]Wenn Sie eine Warnungsregel durch Klicken auf **Warnung hinzufügen** auf dem Blatt **Metrik** erstellen, sind nur die Metriken, die auf dem Diagramm auf diesem Blatt angezeigt werden, in der Dropdownliste **Metrik** enthalten. Wenn Sie eine Warnungsregel durch Klicken auf **Warnung hinzufügen** auf dem Blatt **Warnungsregeln** hinzufügen, stehen alle Cachemetriken in der Dropdownliste **Metrik** zur Verfügung.
+>[AZURE.NOTE] Wenn Sie eine Warnungsregel durch Klicken auf **Warnung hinzufügen** auf dem Blatt **Metrik** erstellen, sind nur die Metriken, die auf dem Diagramm auf diesem Blatt angezeigt werden, in der Dropdownliste **Metrik** enthalten. Wenn Sie eine Warnungsregel durch Klicken auf **Warnung hinzufügen** auf dem Blatt **Warnungsregeln** hinzufügen, stehen alle Cachemetriken in der Dropdownliste **Metrik** zur Verfügung.
 
 Sobald eine Warnungsregel gespeichert wurde, wird sie sowohl auf dem Blatt **Warnungsregel** als auch auf dem Blatt **Metrik** für alle Diagramme angezeigt, die die in der Warnungsregel verwendete Metrik anzeigen. Klicken Sie zum Bearbeiten einer Warnungsregel auf die Regel, um das Blatt **Regel bearbeiten** zu öffnen. Auf dem Blatt **Regel bearbeiten** können Sie die Eigenschaften der Regel bearbeiten, die Regel löschen oder deaktivieren bzw. sie reaktivieren, falls sie zuvor deaktiviert war.
 
->[AZURE.NOTE]Es dauert einen Moment, bis die Änderungen, die Sie an den Eigenschaften der Regel vorgenommen haben, auf den Blättern **Warnungsregeln** oder **Metrik** widergespiegelt werden.
+>[AZURE.NOTE] Es dauert einen Moment, bis die Änderungen, die Sie an den Eigenschaften der Regel vorgenommen haben, auf den Blättern **Warnungsregeln** oder **Metrik** widergespiegelt werden.
 
 Wenn eine Warnungsregel aktiviert wird, wird je nach Konfiguration der Regel eine E-Mail gesendet, und es wird ein Warnsymbol im Detail **Warnungsregeln** auf dem Blatt **Redis Cache** angezeigt.
 
@@ -259,4 +259,4 @@ Weitere Informationen zu Warnungen in Azure finden Sie unter [Empfangen von Warn
 
 [redis-cache-premium-point-shard]: ./media/cache-how-to-monitor/redis-cache-premium-point-shard.png
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0309_2016-->

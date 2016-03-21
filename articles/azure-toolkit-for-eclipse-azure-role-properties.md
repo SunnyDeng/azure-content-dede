@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="multiple"
     ms.devlang="Java"
     ms.topic="article"
-    ms.date="01/09/2016" 
+    ms.date="03/04/2016" 
     ms.author="robmcm"/>
 
 <!-- Legacy MSDN URL = https://msdn.microsoft.com/library/azure/hh690945.aspx -->
@@ -51,7 +51,7 @@ Die folgenden Eigenschaftenseiten stehen für Azure-Rollen zur Verfügung:
 
 ![][ic719499]
 
->[AZURE.NOTE]Nur Windows: Wenn Sie die Anzahl der Instanzen auf einen Wert größer 1 festlegen und auch einen Anwendungsserver konfigurieren, lässt das Toolkit unabhängig von dieser Einstellung nur die Ausführung einer einzelnen Rolleninstanz im Emulator zu. Dadurch werden Portbindungskonflikte zwischen den verschiedenen Serverinstanzen vermieden, wenn diese auf dem gleichen Computer ausgeführt werden und beispielsweise alle versuchen, eine Bindung mit Port 8080 herzustellen. Die gewünschte Einstellung für die Instanzenanzahl wird gespeichert, aber bei der Bereitstellung in der Cloud wirksam.
+>[AZURE.NOTE] Nur Windows: Wenn Sie die Anzahl der Instanzen auf einen Wert größer 1 festlegen und auch einen Anwendungsserver konfigurieren, lässt das Toolkit unabhängig von dieser Einstellung nur die Ausführung einer einzelnen Rolleninstanz im Emulator zu. Dadurch werden Portbindungskonflikte zwischen den verschiedenen Serverinstanzen vermieden, wenn diese auf dem gleichen Computer ausgeführt werden und beispielsweise alle versuchen, eine Bindung mit Port 8080 herzustellen. Die gewünschte Einstellung für die Instanzenanzahl wird gespeichert, aber bei der Bereitstellung in der Cloud wirksam.
 
 <a name="caching_properties"></a>
 ### Caching-Eigenschaften ###
@@ -66,7 +66,7 @@ Auf der Eigenschaftenseite **Caching** können Sie globale Einstellungen für Fo
 * Cachegröße als Prozentsatz des Arbeitsspeichers
 * Name des Speicherkontos zum Speichern des Cachezustands, wenn Ihre Anwendung als Clouddienst ausgeführt wird (oder keine Angabe, wenn Sie den Cachezustand nicht speichern möchten). (Beim Ausführen der Anwendung im Serveremulator wird der Name des Speicherkontos nicht verwendet.) Wenn Sie den Namen des Speicherkontos auf **(Auto)** (Standardeinstellung) festlegen, wird für die Cachekonfiguration automatisch das im Dialogfeld **Veröffentlichen in Azure** ausgewählte Speicherkonto verwendet.
 
->[AZURE.NOTE]Die Einstellung **(Auto)** funktioniert nur dann wie gewünscht, wenn Sie Ihre Bereitstellung mit dem Bereitstellungs-Assistenten des Eclipse-Toolkits veröffentlichen. Wenn Sie die CSPKG-Datei stattdessen manuell (etwa über das [Azure-Verwaltungsportal][]) veröffentlichen, funktioniert die Bereitstellung nicht ordnungsgemäß.
+>[AZURE.NOTE] Die Einstellung **(Auto)** funktioniert nur dann wie gewünscht, wenn Sie Ihre Bereitstellung mit dem Bereitstellungs-Assistenten des Eclipse-Toolkits veröffentlichen. Wenn Sie die CSPKG-Datei stattdessen manuell (etwa über das [Azure-Verwaltungsportal][]) veröffentlichen, funktioniert die Bereitstellung nicht ordnungsgemäß.
 
 Das folgende Dialogfeld zeigt die Eigenschaften für einen Cache:
 
@@ -98,7 +98,7 @@ Weitere Informationen zur Verwendung von Caching finden Sie unter [Vorgehensweis
 
 In diesem Dialogfeld können Sie Zertifikate hinzufügen oder entfernen, auf die von Ihrem Eclipse-Projekt verwiesen wird. Beachten Sie, dass die hier aufgeführten Zertifikate nicht automatisch in jedem Java-Schlüsselspeicher gespeichert werden und daher nicht automatisch für jede Verwendung in einer Java-Anwendung zur Verfügung stehen. Sie werden nur bei Azure registriert, damit sie auf den virtuellen Maschinen, die Ihre Bereitstellung ausführen, vorab in den Windows-Zertifikatspeicher geladen und später von anderer Windows-Software verwendet werden können. Derzeit ist [SSL-Abladung][] die einzige Funktion des Toolkits, die Zertifikate verwendet, auf die im Dialogfeld **Zertifikate** auf diese Weise verwiesen wird. Dies ist der Abhängigkeit von IIS (Internet Information Services; Internetinformationsdienste) und ARR (Application Request Routing; Routing von Anwendungsanforderungen) geschuldet, für die das richtige Zertifikat auf diese Weise verfügbar gemacht werden muss.
 
-Wenn Sie Ihr Projekt mithilfe des Veröffentlichungs-Assistenten in Azure bereitstellen, werden Sie aufgefordert, auf die entsprechenden Personal Information Exchange (PFX)-Dateien für diese Zertifikate (einschließlich Kennwörter) zu verweisen, damit sie automatisch in den Azure-Dienst hochgeladen werden (sofern nicht bereits geschehen).
+Wenn Sie Ihr Projekt mithilfe des Veröffentlichungs-Assistenten in Azure bereitstellen, werden Sie aufgefordert, auf die entsprechenden Personal Information Exchange (PFX)-Dateien für diese Zertifikate (einschließlich Kennwörter) zu verweisen, damit sie automatisch in den Azure-Dienst hochgeladen werden (sofern nicht bereits geschehen).
 
 <a name="components_properties"></a>
 ### Eigenschaften für Komponenten ###
@@ -114,7 +114,7 @@ Für jede Komponente kann Folgendes angegeben werden:
 * Der Schritt, der ausgeführt werden soll, wenn die Komponente bei der Erstellung Ihres Azure-Bereitstellungsprojekts in das Projekt importiert wird.
 * Der Schritt, der ausgeführt werden soll, wenn die Komponente in der Azure-Cloud bereitgestellt wird.
 
->[AZURE.NOTE]Denken Sie beim Angeben von Komponentendateien oder Befehlszeilen daran, dass Ihre Bereitstellung für eine virtuelle Windows-Maschine veröffentlicht wird. Die benutzerdefinierten Schritte müssen also auf ein Windows-basiertes Betriebssystem zugeschnitten sein.
+>[AZURE.NOTE] Denken Sie beim Angeben von Komponentendateien oder Befehlszeilen daran, dass Ihre Bereitstellung für eine virtuelle Windows-Maschine veröffentlicht wird. Die benutzerdefinierten Schritte müssen also auf ein Windows-basiertes Betriebssystem zugeschnitten sein.
 
 Für Komponenten stehen folgende Eigenschaften zur Verfügung:
 
@@ -131,7 +131,7 @@ Für Komponenten stehen folgende Eigenschaften zur Verfügung:
 	
 * **Als:** Dateiname, unter dem die Komponente in das Verzeichnis **approot** der Rolle importiert und schließlich in der Azure-Cloud bereitgestellt wird. Lassen Sie diese Eigenschaft leer, um den gleichen Namen zu verwenden wie auf dem lokalen Computer. Bei ausführbaren Komponenten (also Komponenten, deren Bereitstellungsmethode auf **Ausführen** festgelegt ist) kann es sich um eine beliebige Windows-Befehlszeilenanweisung handeln.
 
-	>[AZURE.IMPORTANT]Die Behandlung von Leerzeichen ist bei diesem Wert abhängig von der Bereitstellungsmethode. Bei der Bereitstellungsmethode **Ausführen** werden Leerzeichen nicht als Teil des Dateinamens, sondern als Trennzeichen für Befehlszeilenargumente interpretiert. Bei allen anderen Bereitstellungsmethoden werden Leerzeichen als Teil des Dateinamens interpretiert.
+	>[AZURE.IMPORTANT] Die Behandlung von Leerzeichen ist bei diesem Wert abhängig von der Bereitstellungsmethode. Bei der Bereitstellungsmethode **Ausführen** werden Leerzeichen nicht als Teil des Dateinamens, sondern als Trennzeichen für Befehlszeilenargumente interpretiert. Bei allen anderen Bereitstellungsmethoden werden Leerzeichen als Teil des Dateinamens interpretiert.
 	
 * **Bereitstellen:** Methode zum Angeben der Aktion, die beim Starten der Bereitstellung für die Komponente ausgeführt wird. Mögliche Werte:
     * **Kopieren:** Die Komponente wird an den durch die Eigenschaft **Nach** angegebenen Zielpfad kopiert.
@@ -158,7 +158,7 @@ Wenn Sie eine Komponente löschen möchten, wählen Sie sie aus, klicken Sie auf
 
 Komponenten werden in der angegebenen Reihenfolge verarbeitet. Die Reihenfolge kann mithilfe der Schaltflächen **Nach oben** und **Nach unten** geändert werden.
 
->[AZURE.NOTE]Auch das Serverkonfigurationsfeature basiert auf Komponenten. Diese Komponenten können nicht entfernt oder bearbeitet werden, ohne die entsprechende Serverkonfiguration zu entfernen. Wenn Sie versuchen, eine solche Komponente zu ändern, wird ein entsprechender Hinweis angezeigt.
+>[AZURE.NOTE] Auch das Serverkonfigurationsfeature basiert auf Komponenten. Diese Komponenten können nicht entfernt oder bearbeitet werden, ohne die entsprechende Serverkonfiguration zu entfernen. Wenn Sie versuchen, eine solche Komponente zu ändern, wird ein entsprechender Hinweis angezeigt.
 
 <a name="debugging_properties"></a>
 ### Debuggingeigenschaften ###
@@ -184,13 +184,13 @@ Geben Sie einen Namen für den Endpunkt ein, wählen Sie den Typ (**Eingabe**, *
 
 Je nach Art des Endpunkts können folgende Portbereiche verwendet werden:
 
-* Bei einem Eingabeinstanz-Endpunkt kann der öffentliche Port als Portbereich (z. B. **2000–2010**) und der private Port als fester Wert angegeben werden.
+* Bei einem Eingabeinstanz-Endpunkt kann der öffentliche Port als Portbereich (z. B. **2000–2010**) und der private Port als fester Wert angegeben werden.
 * Bei einem internen Endpunkt wird der öffentliche Port nicht verwendet. Der private Port kann als Bereich angegeben, leer gelassen oder auf ein Sternchen festgelegt werden. In letzterem Fall wird er automatisch von Azure festgelegt.
 * Bei einem Eingabeendpunkt kann der öffentliche Port nur auf einen festen Wert festgelegt werden. Der private Port kann als fester Wert angegeben, leer gelassen oder auf ein Sternchen festgelegt werden. In letzterem Fall wird er automatisch von Azure festgelegt.
 
 Wenn Sie nur eine einzelne Portnummer und keinen Bereich verwenden möchten, lassen Sie das Textfeld für das Ende des Bereichs leer.
 
-Wenn Sie bei Verwendung der automatischen Portfestlegung ermitteln möchten, welcher Port zur Laufzeit tatsächlich verwendet wird, kann Ihre Anwendung die Azure Service Runtime-API verwenden. Die entsprechende Dokumentation finden Sie in der [Paketzusammenfassung für „com.microsoft.windowsazure.serviceruntime“][].
+Wenn Sie bei Verwendung der automatischen Portfestlegung ermitteln möchten, welcher Port zur Laufzeit tatsächlich verwendet wird, kann Ihre Anwendung die Azure Service Runtime-API verwenden. Die entsprechende Dokumentation finden Sie in der [Paketzusammenfassung für „com.microsoft.windowsazure.serviceruntime“][].
 
 Informationen zum Verwenden von Instanzeingabe-Endpunkten beim Debuggen einer Bereitstellung mit mehreren Instanzen finden Sie unter [Debuggen einer bestimmten Rolleninstanz in einer Bereitstellung mit mehreren Instanzen][].
 
@@ -209,7 +209,7 @@ Zur ordnungsgemäßen Konfiguration einiger Features (etwa Caching, Remotedebugg
 
 Umgebungsvariablen stehen Ihrem Startskript beim Start der Rolle zur Verfügung.
 
->[AZURE.NOTE]Denken Sie beim Angeben von Umgebungsvariablen daran, dass Ihre Bereitstellung für eine virtuelle Windows-Maschine veröffentlicht wird. Die Umgebungsvariablen müssen also auf ein Windows-basiertes Betriebssystem zugeschnitten sein.
+>[AZURE.NOTE] Denken Sie beim Angeben von Umgebungsvariablen daran, dass Ihre Bereitstellung für eine virtuelle Windows-Maschine veröffentlicht wird. Die Umgebungsvariablen müssen also auf ein Windows-basiertes Betriebssystem zugeschnitten sein.
 
 Klicken Sie auf die Schaltfläche **Hinzufügen**, um als Beispiel für eine Umgebungsvariable, die beim Start der Rolle verfügbar ist, eine neue Umgebungsvariable zu erstellen. Das folgende Beispiel zeigt eine Umgebungsvariable namens **MyRoleVersion**, die erstellt und mit dem Wert **1.0** versehen wird:
 
@@ -250,7 +250,7 @@ Weitere Informationen finden Sie unter [Sitzungsaffinitiät][]. Beachten Sie au�
 
 Darüber hinaus können Sie optional eine Umgebungsvariable angeben, die dem lokalen Speicher entspricht.
 
-Standardmäßig werden alle Elemente, die Sie in Azure bereitstellen, im Ordner **approot** der Rolleninstanz platziert (und entzippt). Die meisten einfachen Bereitstellungen finden dort zwar auch nach dem Entzippen Platz, dem Verzeichnis **approot** ist jedoch nur eine begrenzte Menge an Speicherplatz zugewiesen, und diese ist nicht klar definiert. (Weniger als 1 GB ist eine gute Faustregel.) Daher empfiehlt es sich, über das Dialogfeld für lokalen Speicher eine lokale Speicherressource einzurichten, um sicherzustellen, dass Azure ausreichend Speicherplatz für größere Bereitstellungen zuordnet, die unter Umständen nicht in den Ordner **approot** passen. Eine einfache Anleitung hierzu finden Sie unter [Bereitstellen großer Bereitstellungen][].
+Standardmäßig werden alle Elemente, die Sie in Azure bereitstellen, im Ordner **approot** der Rolleninstanz platziert (und entzippt). Die meisten einfachen Bereitstellungen finden dort zwar auch nach dem Entzippen Platz, dem Verzeichnis **approot** ist jedoch nur eine begrenzte Menge an Speicherplatz zugewiesen, und diese ist nicht klar definiert. (Weniger als 1 GB ist eine gute Faustregel.) Daher empfiehlt es sich, über das Dialogfeld für lokalen Speicher eine lokale Speicherressource einzurichten, um sicherzustellen, dass Azure ausreichend Speicherplatz für größere Bereitstellungen zuordnet, die unter Umständen nicht in den Ordner **approot** passen. Eine einfache Anleitung hierzu finden Sie unter [Bereitstellen großer Bereitstellungen][].
 
 Auf die Speicherressource kann ganz einfach in Startskripts (etwa **startup.cmd**) verwiesen werden. Dabei wird die Umgebungsvariable verwendet, die der Ressource automatisch vom Eclipse-Toolkit zugeordnet wurde, wie im Dialogfeld für den lokalen Speicher zu sehen. Diese Umgebungsvariable enthält den vollständigen Pfad der lokalen Ressource, die Sie zum Zeitpunkt der Ausführung Ihres Startskripts konfiguriert haben.
 
@@ -323,7 +323,7 @@ Informationen zur Option **In Azure verfügbaren Drittanbieterserver bereitstell
 Informationen zur Option **Auf der Grundlage eines benutzerdefinierten Downloads bereitstellen**:
 
 1. Vergewissern Sie sich, dass Sie gemäß den vorhergehenden Schritten bereits einen Servertyp ausgewählt haben. Diese Angabe wird vom Plug-In benötigt, um den Server auf der Grundlage Ihres benutzerdefinierten Downloads bereitzustellen. Dieser muss nämlich der gleichen Servertypfamilie angehören.
-1. Aktivieren Sie das Kontrollkästchen **Auf der Grundlage eines benutzerdefinierten Downloads bereitstellen**. Wenn Sie einen Download aus Ihrem Azure-Speicherkonto verwenden möchten, wählen Sie in der Dropdownliste **Speicherkonto** das Speicherkonto aus. (Der Listeninhalt kann durch Klicken auf den Link **Konten** geändert werden.) Daraufhin wird das Feld **URL** teilweise ausgefüllt. Geben Sie anschließend den Rest der URL zu Ihrer Serverdownload-ZIP-Datei ein. (Bei Verwendung von Azure Storage müssen Blob-Namen in der URL in Kleinbuchstaben angegeben werden.) Wenn Sie Azure Storage nicht verwenden möchten, wählen Sie in der Dropdownliste **Speicherkonto** die Option **(Kein)** aus, und geben Sie in das Feld **URL** die URL für Ihre Serverdownload-ZIP-Datei ein. Die ZIP-Datei enthält einen untergeordneten Ordner, der das Installationsverzeichnis Ihres Anwendungsservers darstellt. Wenn Sie also beispielsweise eine ZIP-Datei für Apache Tomcat 7.0.35 verwenden, enthält die ZIP-Datei den untergeordneten Ordner für das Installationsverzeichnis (etwa **apache-tomcat-7.0.35**). 
+1. Aktivieren Sie das Kontrollkästchen **Auf der Grundlage eines benutzerdefinierten Downloads bereitstellen**. Wenn Sie einen Download aus Ihrem Azure-Speicherkonto verwenden möchten, wählen Sie in der Dropdownliste **Speicherkonto** das Speicherkonto aus. (Der Listeninhalt kann durch Klicken auf den Link **Konten** geändert werden.) Daraufhin wird das Feld **URL** teilweise ausgefüllt. Geben Sie anschließend den Rest der URL zu Ihrer Serverdownload-ZIP-Datei ein. (Bei Verwendung von Azure Storage müssen Blob-Namen in der URL in Kleinbuchstaben angegeben werden.) Wenn Sie Azure Storage nicht verwenden möchten, wählen Sie in der Dropdownliste **Speicherkonto** die Option **(Kein)** aus, und geben Sie in das Feld **URL** die URL für Ihre Serverdownload-ZIP-Datei ein. Die ZIP-Datei enthält einen untergeordneten Ordner, der das Installationsverzeichnis Ihres Anwendungsservers darstellt. Wenn Sie also beispielsweise eine ZIP-Datei für Apache Tomcat 7.0.35 verwenden, enthält die ZIP-Datei den untergeordneten Ordner für das Installationsverzeichnis (etwa **apache-tomcat-7.0.35**). 
 1. Geben Sie den Wert für die Basisverzeichnis-Umgebungsvariable an. Standardmäßig wird der Wert für Ihren lokalen Anwendungsserver verwendet (sofern vorhanden). Sie können jedoch einen anderen Wert angeben, falls Ihr Cloudanwendungsserver nicht Ihrem lokalen Anwendungsserver entspricht. Ihr Cloudanwendungsserver muss jedoch ebenfalls der zuvor ausgewählten Servertypfamilie angehören. Bei einer späteren Aktualisierung Ihrer ZIP-Datei für den Cloudanwendungsserver können Sie die Einstellung für das Basisverzeichnis manuell ändern oder wieder auf Ihre lokale Einstellung festlegen (falls Sie auch Ihren lokalen Anwendungsserver geändert haben).
 1. Klicken Sie zum Speichern der Änderungen auf **OK**.
 
@@ -351,7 +351,7 @@ Das folgende Beispiel zeigt, wie Sie eine Anwendung angeben können:
 
 Klicken Sie auf **Hinzufügen**, um eine weitere Anwendung hinzuzufügen, oder auf **Entfernen**, um eine Anwendung zu entfernen. Wenn Sie bei der Cloudbereitstellung einen Download als Anwendungsquelle verwenden möchten, geben Sie aus Effizienzgründen mithilfe der Komponenteneigenschaften[ ](#components_properties)eine URL, ein Speicherkonto usw. an.
 
-Ab der Version vom April 2014 werden Ihre Anwendungen automatisch in das für Ihre Bereitstellung ausgewählte Speicherkonto (unter dem Container **eclipsedeploy**) hochgeladen. Die Startlogik Ihrer Bereitstellung enthält einen Schritt, der zuerst die Anwendungen aus diesem Speicherkonto herunterlädt. Das bedeutet, dass Sie Ihre Anwendungen in der Bereitstellung ohne erneute Erstellung und Bereitstellung des gesamten Pakets upgraden können, indem Sie neuere Anwendungsversionen manuell direkt in das entsprechende Speicherkonto hochladen (beispielsweise über das Azure-Portal) und dabei die ursprünglich durch das Toolkit hochgeladenen WAR-Dateien ersetzen. Anschließend müssen Sie dann nur noch das Recycling dieser Rolleninstanzen initiieren – entweder mithilfe des Azure-Verwaltungsportals oder mithilfe von Befehlszeilenprogrammen. (Die direkte Initiierung des Rollenrecyclings im Eclipse-Toolkit wird derzeit nicht unterstützt.)
+Ab der Version vom April 2014 werden Ihre Anwendungen automatisch in das für Ihre Bereitstellung ausgewählte Speicherkonto (unter dem Container **eclipsedeploy**) hochgeladen. Die Startlogik Ihrer Bereitstellung enthält einen Schritt, der zuerst die Anwendungen aus diesem Speicherkonto herunterlädt. Das bedeutet, dass Sie Ihre Anwendungen in der Bereitstellung ohne erneute Erstellung und Bereitstellung des gesamten Pakets upgraden können, indem Sie neuere Anwendungsversionen manuell direkt in das entsprechende Speicherkonto hochladen (beispielsweise über das Azure-Portal) und dabei die ursprünglich durch das Toolkit hochgeladenen WAR-Dateien ersetzen. Anschließend müssen Sie dann nur noch das Recycling dieser Rolleninstanzen initiieren – entweder mithilfe des Azure-Verwaltungsportals oder mithilfe von Befehlszeilenprogrammen. (Die direkte Initiierung des Rollenrecyclings im Eclipse-Toolkit wird derzeit nicht unterstützt.)
 
 ### Hinweise zur Serverkonfiguration ###
 
@@ -388,7 +388,7 @@ In diesem Dialogfeld können Sie die SSL-Abladung aktivieren. Dies ermöglicht d
 
 [Installieren des Azure-Toolkits für Eclipse][]
 
-[Erstellen einer Hello World-Anwendung für Azure in Eclipse][]
+[Erstellen einer Hello World-Anwendung für Azure in Eclipse][]
 
 [Azure-Projekteigenschaften][]
 
@@ -404,7 +404,7 @@ Weitere Informationen zur Verwendung von Azure mit Java finden Sie im [Azure Jav
 [Azure-Projekteigenschaften]: http://go.microsoft.com/fwlink/?LinkID=699524
 [Azure-Speicherkontoliste]: http://go.microsoft.com/fwlink/?LinkID=699528
 [Paketzusammenfassung für „com.microsoft.windowsazure.serviceruntime“]: http://azure.github.io/azure-sdk-for-java/com/microsoft/windowsazure/serviceruntime/package-summary.html
-[Erstellen einer Hello World-Anwendung für Azure in Eclipse]: http://go.microsoft.com/fwlink/?LinkID=699533
+[Erstellen einer Hello World-Anwendung für Azure in Eclipse]: http://go.microsoft.com/fwlink/?LinkID=699533
 [Debuggen einer bestimmten Rolleninstanz in einer Bereitstellung mit mehreren Instanzen]: http://go.microsoft.com/fwlink/?LinkID=699535#debugging_specific_role_instance
 [Debuggen von Azure-Anwendungen in Eclipse]: http://go.microsoft.com/fwlink/?LinkID=699535
 [Bereitstellen großer Bereitstellungen]: http://go.microsoft.com/fwlink/?LinkID=699536
@@ -439,4 +439,4 @@ Weitere Informationen zur Verwendung von Azure mit Java finden Sie im [Azure Jav
 [ic719512]: ./media/azure-toolkit-for-eclipse-azure-role-properties/ic719512.png
 [ic719481]: ./media/azure-toolkit-for-eclipse-azure-role-properties/ic719481.png
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0309_2016-->

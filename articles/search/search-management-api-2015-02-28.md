@@ -18,7 +18,7 @@
 
 # Management-API: Version 2015-02-28
 
-Azure Search ist ein in Microsoft Azure gehosteter Cloudsuchdienst. Das vorliegende Dokument beschreibt die Version *2015-02-28* der Azure Search-Verwaltungs-REST-API. Sie wurde seitdem durch neuere Versionen ersetzt. Die neuesten Versionen finden Sie unter [Azure Search-Verwaltungs-REST-API 2015-08-19](https://msdn.microsoft.com/library/dn832684.aspx) auf MSDN.
+Azure Search ist ein in Microsoft Azure gehosteter Cloudsuchdienst. Das vorliegende Dokument beschreibt die Version *2015-02-28** der Azure Search-Verwaltungs-REST-API. Sie wurde seitdem durch neuere Versionen ersetzt. Die neuesten Versionen finden Sie unter [Azure Search-Verwaltungs-REST-API 2015-08-19](https://msdn.microsoft.com/library/dn832684.aspx) auf MSDN.
 
 ##Dienstverwaltungsvorgänge
 
@@ -481,6 +481,8 @@ Alternativ können Sie auch eine PUT-Anforderung verwenden.
 
     PUT https://management.azure.com/subscriptions/[subscriptionId]/resourcegroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]?api-version=2015-02-28
 
+> [AZURE.NOTE] Wenn Sie PUT verwenden, um den Dienst zu aktualisieren, müssen Sie den gleichen Anforderungstext verwenden, der in einer Anforderung [Dienst erstellen](#CreateService) verwendet wird.
+
 ###URI-Parameter der Anforderung###
 
 `subscriptionId`: Erforderlich. Die `subscriptionID` des Azure-Benutzers. Dieser Wert kann über die Azure-Ressourcen-Manager-API oder das Portal abgerufen werden.
@@ -826,4 +828,4 @@ Bei erfolgreicher Ausführung lautet der Statuscode HTTP 200 (OK).
 
 Keiner.
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0309_2016-->

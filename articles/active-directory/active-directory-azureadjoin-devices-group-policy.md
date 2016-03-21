@@ -8,10 +8,13 @@
 	editor=""
 	tags="azure-classic-portal"/>
 
-<tags ms.service="active-directory" ms.workload="identity" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article"
-
-	ms.date="02/26/2016"
-
+<tags
+	ms.service="active-directory"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="03/07/2016"
 	ms.author="femila"/>
 
 # Verbinden von in die Domäne eingebundenen Geräten mit Azure AD für Windows 10-Funktionen
@@ -72,7 +75,7 @@ Führen Sie auf dem Azure AD Connect-Server die folgenden PowerShell-Befehle aus
     Initialize-ADSyncDomainJoinedComputerSync –AdConnectorAccount [connector account name] -AzureADCredentials $aadAdminCred;
 
 
-Bei Ausführung des Cmdlets „$aadAdminCred = Get-Credential“ verwenden Sie das Format *user@example.com* für den Benutzernamen bei den Anmeldeinformationen, die eingegeben werden, wenn das Get-Credential-Popup-Fenster angezeigt wird.
+Bei Ausführung des Cmdlets „$aadAdminCred = Get-Credential“ verwenden Sie das Format **user@example.com* für den Benutzernamen bei den Anmeldeinformationen, die eingegeben werden, wenn das Get-Credential-Popup-Fenster angezeigt wird.
 
 Ersetzen Sie bei der Ausführung des Cmdlets „Initialize-ADSyncDomainJoinedComputerSync...“ [*Konnektorkontoname*] mit dem Domänenkonto, das als Active Directory-Konnektorkonto verwendet wird.
 
@@ -144,4 +147,4 @@ Die Gruppenrichtlinienvorlage wurde in Windows 10 umbenannt. Wenn Sie das Gruppe
 * [Benutzererfahrungen beim Verknüpfen von in die Domäne eingebundenen Windows 10-Geräten mit Azure AD](active-directory-azureadjoin-devices-group-policy.md)
 * [Einrichten von Azure AD Join](active-directory-azureadjoin-setup.md)
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

@@ -12,7 +12,7 @@
     ms.tgt_pltfrm="NA"
     ms.devlang="NA"
     ms.topic="article"
-    ms.date="02/16/2016"
+    ms.date="03/08/2016"
     ms.author="elizapo" />
 
 # Geplante Neuerungen in Azure RemoteApp
@@ -22,14 +22,14 @@ Wir arbeiten stetig daran, Azure RemoteApp mithilfe Ihres Feedbacks zu verbesser
 |Funktion|Januar - März 2016|April–Juni 2016|
 |-----------|-------|-------|
 |Azure RemoteApp ist sowohl im [klassischen Azure-Portal](http://manage.windowsazure.com) als auch im [Azure-Portal](https://portal.azure.com) verfügbar. |X | |
-|Universelle Windows 10-Anwendung mit Continuum für die Vorschauversion von Azure RemoteApp|X| |
+|Universelle Windows 10-Anwendung mit Continuum für die Vorschauversion von Azure RemoteApp|X| |
 |Möglichkeit zum Veröffentlichen einzelner Anwendungen für bestimmte Benutzer – **Private Vorschau** ([Feedback](https://feedback.azure.com/forums/247748-azure-remoteapp/suggestions/6067043-allow-the-ability-to-publish-specific-apps-to-spec/))|X | |
 |Verteilbares Windows-MSI-Clientpaket ([Feedback](https://feedback.azure.com/forums/247748-azure-remoteapp/suggestions/6627191-client-deployment-provide-an-msi-package-to-allo/))| X| |
 |HTML5-basierter Client für Azure RemoteApp|X ||
 |Support für Azure-Ressourcen-Manager (ARM)||X|
-|Azure v2-Ressourcenunterstützung| |X|
+|Azure v2-Ressourcenunterstützung| |X|
 |Cloud-Lösungsanbieter (CSP)||X|
-|Verfügbarkeit in der Region Indien|X||
+|Verfügbarkeit in der Region Indien||X|
 |Verfügbarkeit in der Region Großbritannien||X|
 
 
@@ -47,4 +47,4 @@ Weitere Verbesserungen, die dieses Jahr bereits hinzugefügt wurden:
 - Verfügbarkeit in australischen Rechenzentren
  
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0309_2016-->

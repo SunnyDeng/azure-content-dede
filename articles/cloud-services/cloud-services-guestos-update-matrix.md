@@ -17,7 +17,7 @@
    ms.author="yuemlu"/>
 
 # Azure-Gastbetriebssystemversionen und SDK-Kompatibilitätsmatrix
-Bietet Ihnen aktuelle Informationen zu den neuesten Azure-Gastbetriebssystemreleases für Cloud Services. Anhand dieser Informationen können Sie Ihren Upgradepfad planen, bevor ein Gastbetriebssystem wird.
+Bietet Ihnen aktuelle Informationen zu den neuesten Azure-Gastbetriebssystemreleases für Cloud Services. Anhand dieser Informationen können Sie Ihren Upgradepfad planen, bevor ein Gastbetriebssystem deaktiviert wird.
 
 > [AZURE.IMPORTANT] Diese Seite bezieht sich auf die Cloud Services-Web- und Workerrollen, die zusätzlich zu einem Gastbetriebssystem ausgeführt werden. Sie gilt nicht für IaaS Virtual Machines. Wenn Sie die Rollen so konfigurieren, dass die automatischen Gastbetriebssystemupdates, wie unter [Updateeinstellungen für Azure-Gastbetriebssysteme][] beschrieben, verwendet werden, müssen Sie diese Seite nicht unbedingt lesen.
 
@@ -40,13 +40,13 @@ Die Bereitstellung des Gastbetriebssystems Januar beginnt am 18. Januar 2016 und
 Das Gastbetriebssystem November 201511-02 wurde am 4. Januar 2016 für die Bereitstellung veröffentlicht. Diese Version des Betriebssystems wurde nicht als Standardbetriebssystem für automatische Updates festgelegt. Daher nimmt die Bereitstellung des Gastbetriebssystems für die Version November 201511-02 etwas mehr Zeit in Anspruch.
 
 ###### **18. Dezember 2015**
-November 201511-02: Das Veröffentlichungsdatum des Gastbetriebssystems wurde vom 16. Dezember 2015 auf den 4. Januar 2016 verschoben.
+Das Veröffentlichungsdatum der Version November 201511-02 des Gastbetriebssystems wurde vom 16. Dezember 2015 auf den 4. Januar 2016 verschoben.
 
 ###### **9. Dezember 2015**
-Die Bereitstellung des Gastbetriebssystems Dezember beginnt am 10. Dezember 2015 und soll voraussichtlich am 8. Januar 2016 freigegeben werden.
+Die Bereitstellung des Gastbetriebssystems beginnt am 10. Dezember 2015 und soll voraussichtlich am 8. Januar 2016 freigegeben werden.
 
 ###### **12. November 2015**  
-Am 7. August 2014 kündigte Microsoft an, dass der Support für .NET Framework 4, 4.5 und 4.5.1 am 12. Januar 2016 beendet wird. Es wird empfohlen, dass Kunden und Entwickler die verfügbare Aktualisierung auf .NET Framework 4.5.2 bis zum 12. Januar 2016 durchführen, um weiterhin technischen Support und Sicherheitsupdates zu erhalten. Weitere Informationen finden Sie in der Microsoft .NET Framework Support Lifecycle-Richtlinie.
+Am 7. August 2014 kündigte Microsoft an, dass der Support für .NET Framework 4, 4.5 und 4.5.1 am 12. Januar 2016 beendet wird. Kunden und Entwicklern wird empfohlen, bis zum 12. Januar 2016 eine direkte Aktualisierung auf .NET Framework 4.5.2 durchzuführen, um weiterhin technischen Support und Sicherheitsupdates zu erhalten. Weitere Informationen finden Sie in der Microsoft .NET Framework Support Lifecycle-Richtlinie.
 
 Am 27. Oktober haben wir angekündigt, dass Azure .NET Framework in Azure-Gastbetriebssystemen (Gast-BS) der Familien 2.x, 3.x und 4.x in der bevorstehenden Novemberversion für das Gast-BS auf .NET Framework 4.5.2 aktualisiert wird. Seither haben wir von Kunden Feedback dahingehend erhalten, die automatische Aktualisierung auf eine Betriebssystemversion mit .NET 4.5.2 zu verschieben und ein Image mit .NET 4.5.2 zur Testvalidierung bereitzustellen.
 
@@ -420,4 +420,4 @@ Aufgrund der partiellen Einführung der letzten beiden Releases können Personen
 [fam1retire]: cloud-services-guestos-family1-retirement.md
  
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0309_2016-->

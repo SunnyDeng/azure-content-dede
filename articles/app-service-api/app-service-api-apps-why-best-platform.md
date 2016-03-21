@@ -22,7 +22,7 @@ API-Apps ist einer der vier App-Typen, die von [Azure App Service](../app-servic
 
 ![](./media/app-service-api-apps-why-best-platform/appservicesuite.png)
 
-[App Service](../app-service/app-service-value-prop-what-is.md) ist eine vollständig verwaltete Plattform, die einen umfangreichen Satz von Funktionen für Web-, mobile und Integrationsszenarios bereitstellt. API-Apps in App Service bietet Funktionen, mit denen APIs in der Cloud und lokal einfacher erstellt, gehostet und genutzt werden können. Stellen Sie Ihre API als API-App in App Service bereit, und profitieren Sie von einer für Unternehmen geeigneten Sicherheit, einfacher Zugriffssteuerung, hybrider Konnektivität, automatischer SDK-Generierung und nahtloser Integration in [Logik-Apps](../app-service-logic/app-service-logic-what-are-logic-apps.md).
+[App Service](../app-service/app-service-value-prop-what-is.md) ist eine vollständig verwaltete Plattform, die einen umfangreichen Satz von Funktionen für mobile, Web- und Integrationsszenarien bereitstellt. API-Apps in App Service bietet Funktionen, mit denen APIs in der Cloud und lokal einfacher erstellt, gehostet und genutzt werden können. Stellen Sie Ihre API als API-App in App Service bereit, und profitieren Sie von einer für Unternehmen geeigneten Sicherheit, einfacher Zugriffssteuerung, hybrider Konnektivität, automatischer SDK-Generierung und nahtloser Integration in [Logik-Apps](../app-service-logic/app-service-logic-what-are-logic-apps.md).
 
 ## Warum API-Apps?
 
@@ -40,7 +40,16 @@ API-Apps stellt die folgenden Funktionen bereit:
 
 Darüber hinaus sind die mit API-Apps, Web-Apps und Mobile Apps angebotenen Funktionen austauschbar. Dies bedeutet, dass in einer Instanz von API-Apps Funktionen zum Entwickeln und Hosten von Web- und mobilen Apps genutzt werden können, die mit Web-Apps und Mobile Apps bereitgestellt werden. Dies gilt auch umgekehrt: Sie können beispielsweise eine API mithilfe einer Web-App hosten und dennoch die Swagger-Metadaten zur Generierung des Clientcodes und CORS für den domänenübergreifenden Browserzugriff verwenden. Weitere Informationen finden Sie unter [Web-Apps – Übersicht](../app-service-web/app-service-web-overview.md) und [Mobile Apps – Übersicht](../app-service-mobile/app-service-mobile-value-prop.md).
 
->[AZURE.NOTE]Mit [Azure API Management](../api-management/api-management-key-concepts.md) können Sie den Clientzugriff auf APIs steuern, die von App Service-API-Apps gehostet werden. API-Apps bietet zwar Authentifizierungsdienste, jedoch nicht andere Features zur Zugriffsverwaltung, die API Management bietet, z. B. Endpunktkonsolidierung und Drosselung.
+## Erweitern von API-Apps mithilfe von Azure API Management 
+
+API-Apps und [Azure API Management](../api-management/api-management-key-concepts.md) sind ergänzende Dienste:
+
+* API Management dient zur Verwaltung von APIs. Sie können mit einem API Management-Front-End auf einer API unter anderem die Nutzung überwachen und drosseln, die Ein- und Ausgabe bearbeiten und mehrere APIs zusammenführen konsolidieren. Die verwalteten APIs können an einem beliebigen Ort gehostet werden.
+* API-Apps wird für das Hosting von APIs verwendet. Der Dienst umfasst Funktionen zur einfachen Entwicklung und Nutzung von APIs, führt aber nicht die Art von Überwachung, Drosselung, Bearbeitung oder Konsolidierung durch, für die API Management zuständig ist. 
+
+Mit API Management können Sie von API-Apps gehostete APIs verwalten oder API-Apps ohne API Management verwenden.
+
+API Management und API-Apps verfügen über ein paar ähnliche Funktionen. Beispielsweise können beide die CORS-Unterstützung automatisieren. Wenn Sie die beiden Dienste zusammen verwenden, würden Sie API Management für CORS verwenden, da der Dienst als Front-End für API-Apps dient.
 
 ## <a id="concepts"></a> API-Apps – Konzepte
 
@@ -57,4 +66,4 @@ Eine Liste der bekannten Probleme mit API-Apps finden Sie in dem entsprechenden 
 
 Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure App Service](../app-service/app-service-value-prop-what-is.md).
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0309_2016-->

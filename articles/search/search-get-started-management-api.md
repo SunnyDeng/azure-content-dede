@@ -47,7 +47,7 @@ Bevor Sie die Beispielanwendung ausführen können, müssen Sie Authentifizierun
 
 Azure Resource Manager benötigt den Azure Active Directory-Dienst als Identitätsanbieter.
 
-Um ein Zugriffstoken zu erhalten, mit dem Anforderungen den Ressourcenmanager erreichen können, enthält die Clientanwendung ein Codesegment, das Active Directory aufruft. Das Codesegment sowie die erforderlichen Schritte zur Verwendung des Codesegments wurden aus diesem Artikel übernommen: [Authentifizieren von Anforderungen des Azure-Ressourcen-Managers]().
+Um ein Zugriffstoken zu erhalten, mit dem Anforderungen den Ressourcenmanager erreichen können, enthält die Clientanwendung ein Codesegment, das Active Directory aufruft. Das Codesegment sowie die erforderlichen Schritte zur Verwendung des Codesegments wurden aus diesem Artikel übernommen: [Authentifizieren von Anforderungen des Azure-Ressourcen-Managers](http://msdn.microsoft.com/library/azure/dn790557.aspx).
 
 Sie können die Anweisungen aus dem oben aufgeführten Link oder die Schritte in diesem Dokument verwenden, wenn Sie es vorziehen, das Lernprogramm Schritt für Schritt zu durchlaufen.
 
@@ -208,4 +208,4 @@ Nach Abschluss dieses Lernprogramms empfiehlt es sich, mehr über die Dienstverw
 
  
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->
