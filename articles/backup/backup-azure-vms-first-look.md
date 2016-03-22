@@ -21,11 +21,15 @@
 
 Dieser Artikel ist ein Tutorial, in dem die Schritte zum Vorbereiten Ihrer Azure-Umgebung zum Sichern eines virtuellen Azure-Computers erläutert werden. Dieses Tutorial setzt voraus, dass Sie in Ihrem Azure-Abonnement bereits einen virtuellen Computer verwenden und die entsprechenden Schritte durchgeführt haben, um dem Backup-Dienst den Zugriff auf den virtuellen Computer zu erlauben. Dies sind im Allgemeinen die Schritte, die auszuführen sind.
 
-1. Erstellen Sie einen Sicherungstresor, oder geben Sie einen vorhandenen Sicherungstresor an. Dieser muss sich *in der gleichen Region wie Ihr virtueller Computer* befinden.
-2. Verwenden Sie das Azure-Portal, um die virtuellen Computer im Abonnement zu ermitteln und zu registrieren.
-3. Installieren Sie den VM-Agent auf dem virtuellen Computer.
-4. Schützen Sie die virtuellen Computer, indem Sie eine Sicherungsrichtlinie erstellen.
-5. Führen Sie die Sicherung aus.
+![Allgemeiner Überblick über den Sicherungsvorgang für virtuelle Computer](./media/backup-azure-vms-first-look/BackupAzureVM.png)
+
+
+1. Erstellen Sie ein Azure-Abonnement, oder melden Sie sich bei Ihrem Azure-Abonnement an.
+2. Erstellen Sie einen Sicherungstresor, oder geben Sie einen vorhandenen Sicherungstresor an. Dieser muss sich *in der gleichen Region wie Ihr virtueller Computer* befinden.
+3. Verwenden Sie das Azure-Portal, um die virtuellen Computer im Abonnement zu ermitteln und zu registrieren.
+4. Installieren Sie den VM-Agent auf dem virtuellen Computer (wenn Sie einen virtuellen Computer aus dem Azure-Katalog verwenden, ist der VM-Agent bereits vorhanden).
+5. Erstellen Sie die Richtlinie für den Schutz der virtuellen Computer.
+6. Führen Sie die Sicherung aus.
 
 >[AZURE.NOTE] Azure verfügt über zwei Bereitstellungsmodelle zum Erstellen und Verwenden von Ressourcen: [Resource Manager-Bereitstellungen und klassische Bereitstellungen](../resource-manager-deployment-model.md). Der Azure Backup-Dienst unterstützt derzeit keine virtuellen Computer, die auf dem Azure Resource Manager (ARM) basieren (auch als virtuelle IaaS V2-Computer bezeichnet). Da virtuelle IaaS V2-Computer mit der neuen Version des Azure-Portals eingeführt wurden, ist dieses Tutorial für die Verwendung mit dem Typ virtueller Computer gedacht, die im klassischen Azure-Portal erstellt werden können.
 
@@ -226,4 +230,4 @@ Nachdem Sie einen virtuellen Computer erfolgreich gesichert haben, sind unter Um
 ## Fragen?
 Wenn Sie Fragen haben oder Anregungen zu gewünschten Funktionen mitteilen möchten, [senden Sie uns Ihr Feedback](http://aka.ms/azurebackup_feedback).
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

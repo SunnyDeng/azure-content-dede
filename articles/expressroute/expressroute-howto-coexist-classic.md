@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="03/08/2016"
+   ms.date="03/09/2016"
    ms.author="cherylmc"/>
 
 # Konfigurieren von parallel bestehenden ExpressRoute- und Standort-zu-Standort-Verbindungen
@@ -188,7 +188,7 @@ Wenn Sie ein vorhandenes virtuelles Netzwerk über eine ExpressRoute- oder Stand
 
 1. Sie müssen die aktuelle Version der PowerShell-Cmdlets für Azure-Ressourcen-Manager installieren. Weitere Informationen zur Installation der PowerShell-Cmdlets finden Sie unter [Gewusst wie: Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md). Beachten Sie, dass die Cmdlets, die Sie für diese Konfiguration verwenden, von den Ihnen vertrauten leicht abweichen können. Achten Sie darauf, die in dieser Anleitung angegebenen Cmdlets zu verwenden. 
 
-2. Löschen Sie das vorhandene Standort-zu-Standort-VPN-Gateway. Nutzen Sie das folgende Cmdlet, um die Werte mit Ihren eigenen auszutauschen.
+2. Löschen Sie das vorhandene ExpressRoute- oder Standort-zu-Standort-VPN Gateway. Nutzen Sie das folgende Cmdlet, um die Werte mit Ihren eigenen auszutauschen.
 
 	`Remove-AzureVNetGateway –VnetName MyAzureVNET`
 
@@ -218,4 +218,4 @@ Wenn Sie ein vorhandenes virtuelles Netzwerk über eine ExpressRoute- oder Stand
 
 Weitere Informationen über ExpressRoute finden Sie unter [ExpressRoute – FAQ](expressroute-faqs.md).
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

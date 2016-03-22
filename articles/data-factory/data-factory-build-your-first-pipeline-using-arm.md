@@ -36,12 +36,12 @@ Neben den im Thema „Tutorial – Übersicht“ aufgeführten vorausgesetzten K
 - Dieser Artikel bietet keine grundlegende Übersicht über den Azure Data Factory-Dienst. Eine ausführliche Übersicht über den Dienst finden Sie unter [Einführung in Azure Data Factory](data-factory-introduction.md). 
 - Informationen zu Azure-Ressourcen-Manager-Vorlagen (ARM-Vorlagen) finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](../resource-group-authoring-templates.md). 
 
+> [AZURE.IMPORTANT]
+Sie müssen die erforderlichen Schritte in [Übersicht über das Tutorial](data-factory-build-your-first-pipeline.md) abschließen, damit Sie die exemplarische Vorgehensweise in diesem Artikel ausführen können.
 
 ## Schritt 1: Erstellen der ARM-Vorlage
 
 Erstellen Sie eine JSON-Datei mit dem Namen **ADFTutorialARM.json** im Ordner **C:\\ADFGetStarted** mit dem folgenden Inhalt:
-
-> [AZURE.IMPORTANT] Ändern Sie die Werte für die Variablen **storageAccountName** und **storageAccountKey**. Ändern Sie auch **dataFactoryName**, denn dieser Name muss eindeutig sein.
 
 Mit der Vorlage können Sie die folgenden Data Factory-Entitäten erstellen.
 
@@ -51,6 +51,9 @@ Mit der Vorlage können Sie die folgenden Data Factory-Entitäten erstellen.
 
 Klicken Sie auf die Registerkarte **Verwenden des Data Factory-Editors**, um zu dem Artikel mit näheren Informationen zu JSON-Eigenschaften, die in dieser Vorlage verwendet werden, zu wechseln.
 
+> [AZURE.IMPORTANT] Ändern Sie die Werte für die Variablen **storageAccountName** und **storageAccountKey**. Ändern Sie auch **dataFactoryName**, denn dieser Name muss eindeutig sein.
+
+
 	{
 	    "contentVersion": "1.0.0.0",
 	    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
@@ -58,10 +61,10 @@ Klicken Sie auf die Registerkarte **Verwenden des Data Factory-Editors**, um zu 
 	    },
 	    "variables": {
 	        "dataFactoryName":  "TutorialDataFactoryARM",
-	        "storageAccountName":  "<stroage account name>" ,
-	        "storageAccountKey":  "<storage account key>",
+	        "storageAccountName":  "<AZURE STORAGE ACCOUNT NAME>" ,
+	        "storageAccountKey":  "<AZURE STORAGE ACCOUNT KEY>",
 	        "apiVersion": "2015-10-01",
-	        "storageLinkedServiceName": "StorageLinkedService",
+	        "storageLinkedServiceName": "AzureStorageLinkedService",
 	        "hdInsightOnDemandLinkedServiceName": "HDInsightOnDemandLinkedService",
 	        "blobInputDataset": "AzureBlobInput",
 	        "blobOutputDataset": "AzureBlobOutput",
@@ -96,12 +99,13 @@ Klicken Sie auf die Registerkarte **Verwenden des Data Factory-Editors**, um zu 
 	                    "apiVersion": "[variables('apiVersion')]",
 	                    "properties": {
 	                        "type": "HDInsightOnDemand",
-	                        "typeProperties": {
-	                            "version": "3.2",
-	                            "clusterSize": 1,
-	                            "timeToLive": "00:30:00",
-	                            "linkedServiceName": "StorageLinkedService"
-	                        }
+        					"typeProperties": {
+                                "clusterSize": 4,
+                                "version":  "3.2",
+            					"timeToLive": "00:05:00",
+                                "osType": "linux",
+            					"linkedServiceName": "[variables('storageLinkedServiceName')]",
+    						}
 	                    }
 	                },
 	                {
@@ -114,7 +118,7 @@ Klicken Sie auf die Registerkarte **Verwenden des Data Factory-Editors**, um zu 
 	                    "apiVersion": "[variables('apiVersion')]",
 						    "properties": {
 						        "type": "AzureBlob",
-						        "linkedServiceName": "StoraegLinkedService",
+						        "linkedServiceName": "[variables('storageLinkedServiceName')]",
 						        "typeProperties": {
 						            "fileName": "input.log",
 						            "folderPath": "adfgetstarted/inputdata",
@@ -142,7 +146,7 @@ Klicken Sie auf die Registerkarte **Verwenden des Data Factory-Editors**, um zu 
 						    "properties": {
 						        "published": false,
 						        "type": "AzureBlob",
-						        "linkedServiceName": "StorageLinkedService",
+						        "linkedServiceName": "[variables('storageLinkedServiceName')]",
 						        "typeProperties": {
 						            "folderPath": "adfgetstarted/partitioneddata",
 						            "format": {
@@ -174,7 +178,7 @@ Klicken Sie auf die Registerkarte **Verwenden des Data Factory-Editors**, um zu 
 						                "type": "HDInsightHive",
 						                "typeProperties": {
 						                    "scriptPath": "adfgetstarted/script/partitionweblogs.hql",
-						                    "scriptLinkedService": "StorageLinkedService",
+						                    "scriptLinkedService": "[variables('storageLinkedServiceName')]",
 						                    "defines": {
 		                        				"inputtable": "[concat('wasb://adfgetstarted@', variables('storageAccountName'), '.blob.core.windows.net/inputdata')]",
 		                        				"partitionedtable": "[concat('wasb://adfgetstarted@', variables('storageAccountName'), '.blob.core.windows.net/partitioneddata')]"
@@ -212,14 +216,15 @@ Klicken Sie auf die Registerkarte **Verwenden des Data Factory-Editors**, um zu 
 	    ]
 	}
 
+Klicken Sie auf die Registerkarte **Verwenden des Data Factory-Editors**, um zu dem Artikel mit näheren Informationen zu JSON-Eigenschaften, die in dieser Vorlage verwendet werden, zu wechseln.
 
 Beachten Sie Folgendes:
 
-- Die Data Factory erstellt mit dem obigen JSON-Code einen **Windows-basierten** HDInsight-Cluster für Sie. Sie können sich auch für die Erstellung eines **Linux-basierten** HDInsight-Clusters entscheiden. Ausführliche Informationen finden Sie unter [Bedarfsgesteuerter verknüpfter HDInsight-Dienst](data-factory-compute-linked-services.md#azure-hdinsight-on-demand-linked-service). 
+- Die Data Factory erstellt mit dem obigen JSON-Code einen **Linux-basierten** HDInsight-Cluster für Sie. Sie können sich auch für die Erstellung eines **Windows-basierten** HDInsight-Clusters entscheiden. Ausführliche Informationen finden Sie unter [Bedarfsgesteuerter verknüpfter HDInsight-Dienst](data-factory-compute-linked-services.md#azure-hdinsight-on-demand-linked-service). 
 - Anstelle eines bedarfsgesteuerten HDInsight-Clusters können Sie auch **Ihren eigenen HDInsight-Cluster** verwenden. Ausführliche Informationen finden Sie unter [Verknüpfter HDInsight-Dienst](data-factory-compute-linked-services.md#azure-hdinsight-linked-service).
-- Der HDInsight-Cluster erstellt einen **Standardcontainer** im Blobspeicher, den Sie im JSON-Code angegeben haben (**linkedServiceName**). HDInsight löscht diesen Container nicht, wenn der Cluster gelöscht wird. Dies ist beabsichtigt. Beim bedarfsgesteuerten verknüpften HDInsight-Dienst wird jedes Mal ein HDInsight-Cluster erstellt, wenn ein Slice verarbeitet werden muss – es sei denn, ein aktiver Cluster (**timeToLive**) ist vorhanden und wird gelöscht, nachdem die Verarbeitung abgeschlossen ist.
+- Der HDInsight-Cluster erstellt einen **Standardcontainer** im Blob Storage, den Sie im JSON-Code angegeben haben (**linkedServiceName**). HDInsight löscht diesen Container nicht, wenn der Cluster gelöscht wird. Dies ist beabsichtigt. Beim bedarfsgesteuerten verknüpften HDInsight-Dienst wird jedes Mal ein HDInsight-Cluster erstellt, wenn ein Slice verarbeitet werden muss – es sei denn, ein aktiver Cluster (**timeToLive**) ist vorhanden und wird gelöscht, nachdem die Verarbeitung abgeschlossen ist.
 
-	Wenn immer mehr Slices verarbeitet werden, enthält Azure Blob Storage viele Container. Falls Sie diese für die Problembehandlung der Aufträge nicht benötigen, sollten Sie sie ggf. löschen, um die Speicherkosten zu verringern. Der Name dieser Container basiert auf dem folgenden Muster: adf**ihrdatafactoryname**-**nameverknüpfterdienst**-datumuhrzeitstempel. Verwenden Sie Tools wie [Microsoft Storage-Explorer](http://storageexplorer.com/), um Container in Ihrer Azure Blob Storage-Instanz zu löschen.
+	Wenn immer mehr Slices verarbeitet werden, enthält Azure Blob Storage viele Container. Falls Sie diese für die Problembehandlung der Aufträge nicht benötigen, sollten Sie sie ggf. löschen, um die Speicherkosten zu verringern. Der Name dieser Container basiert auf dem folgenden Muster: adf**ihrdatafactoryname**-**nameverknüpfterdienst**-datumuhrzeitstempel. Verwenden Sie Tools wie [Microsoft Storage-Explorer](http://storageexplorer.com/), um Container in Azure Blob Storage zu löschen.
 
 Ausführliche Informationen finden Sie unter [Bedarfsgesteuerter verknüpfter HDInsight-Dienst](data-factory-compute-linked-services.md#azure-hdinsight-on-demand-linked-service).
 
@@ -227,10 +232,9 @@ Ausführliche Informationen finden Sie unter [Bedarfsgesteuerter verknüpfter HD
 
 ## Schritt 2: Bereitstellen von Data Factory-Entitäten mit der ARM-Vorlage
 
-1. Starten Sie Azure PowerShell, und führen Sie den folgenden Befehl aus. Lassen Sie Azure PowerShell bis zum Ende dieses Tutorials geöffnet. Wenn Sie PowerShell schließen und erneut öffnen, müssen Sie die Befehle erneut ausführen.
+1. Starten Sie **Azure PowerShell**, und führen Sie den folgenden Befehl aus. 
 	- Führen Sie **Login-AzureRmAccount** aus, und geben Sie den Benutzernamen und das Kennwort ein, den bzw. das Sie bei der Anmeldung beim Azure-Portal verwendet haben.  
-	- Führen Sie **Get-AzureSubscription** aus, um alle Abonnements für dieses Konto anzuzeigen.
-	- Führen Sie **Select-AzureSubscription SubscriptionName** aus, um das Abonnement auszuwählen, mit dem Sie arbeiten möchten. Dieses Abonnement sollte dasselbe sein, das Sie im Azure-Portal verwendet haben.
+	- Führen Sie den folgenden Befehl aus, um ein Abonnement auszuwählen, in dem die Data Factory erstellt werden soll. Get-AzureRmSubscription -SubscriptionName <SUBSCRIPTION NAME> | Set-AzureRmContext
 1. Führen Sie den folgenden Befehl aus, um die Data Factory-Entitäten bereitzustellen, die Sie in Schritt 1 mit der ARM-Vorlage erstellt haben. 
 
 		New-AzureRmResourceGroupDeployment -Name MyARMDeployment -ResourceGroupName ADFTutorialResourceGroup -TemplateFile C:\ADFGetStarted\ADFTutorialARM.json
@@ -252,4 +256,4 @@ Ausführliche Informationen finden Sie unter [Bedarfsgesteuerter verknüpfter HD
 10. Sobald der Slice den Status **Bereit** hat, überprüfen Sie, ob die Ausgabedaten sich in Ihrem Blobspeicher im Ordner **partitioneddata** im Container **adfgetstarted** befinden.  
  
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
-   ms.date="02/10/2016"
+   ms.date="03/15/2016"
    ms.author="jgao"/>
 
 # Tutorial: Entwickeln von U-SQL-Skripts mit Data Lake-Tools für Visual Studio
@@ -28,8 +28,8 @@ U-SQL ist eine hyperskalierbare, hochgradig erweiterbare Sprache zum Vorbereiten
 
 ###Voraussetzungen
 
-- **Visual Studio 2015, Visual Studio 2013 Update 4 oder Visual Studio 2012 mit Installation von Visual C++** 
-- **Microsoft Azure SDK für .NET ab Version 2.7.1**. Führen Sie die Installation mit dem [Webplattform-Installer](http://www.microsoft.com/web/downloads/platform.aspx) durch.
+- **Visual Studio 2015, Visual Studio 2013 Update 4 oder Visual Studio 2012 mit Installation von Visual C++** 
+- **Microsoft Azure SDK für .NET ab Version 2.7.1**. Führen Sie die Installation mit dem [Webplattform-Installer](http://www.microsoft.com/web/downloads/platform.aspx) durch.
 - **[Data Lake-Tools für Visual Studio](http://aka.ms/adltoolsvs)** 
 
     Nachdem die Installation der Data Lake-Tools für Visual Studio abgeschlossen ist, wird in Visual Studio ein Data Lake-Menü angezeigt:
@@ -106,7 +106,7 @@ Die Data Lake Analytics-Aufträge werden in der Sprache U-SQL geschrieben. Weite
 		    SELECT *
 		    FROM @searchlog;        
 
-        OUTPUT @searchlog   
+        OUTPUT @res   
             TO "/Output/SearchLog-from-Data-Lake.csv"
         USING Outputters.Csv();
 
@@ -174,8 +174,8 @@ Die Data Lake Analytics-Aufträge werden in der Sprache U-SQL geschrieben. Weite
 
 	![U-SQL Visual Studio Data Lake Analytics-Diagramm zur Auftragsleistung](./media/data-lake-analytics-data-lake-tools-get-started/data-lake-analytics-data-lake-tools-performance-graph.png)
 
-	* Auftragszusammenfassung. Hier können Sie die zusammengefassten Informationen des aktuellen Auftrags anzeigen, z. B. Zustand, Status, Ausführungszeit, Laufzeitname, Absender usw.   
-	* Auftragsdetails. Hier werden ausführliche Informationen zum Auftrag bereitgestellt, z. B. Skript, Ressource, Scheitelpunktausführungsansicht.
+	* Auftragszusammenfassung. Hier können Sie die zusammengefassten Informationen des aktuellen Auftrags anzeigen, z. B. Zustand, Status, Ausführungszeit, Laufzeitname, Absender usw.   
+	* Auftragsdetails. Hier werden ausführliche Informationen zum Auftrag bereitgestellt, z. B. Skript, Ressource, Scheitelpunktausführungsansicht.
 	* Auftragsdiagramm: Es werden vier Diagramme zur Visualisierung der Auftragsinformationen bereitgestellt: Status, gelesene Daten, geschriebene Daten, Ausführungszeit, durchschnittliche Ausführungszeit pro Knoten, Eingangsdurchsatz, Ausgangsdurchsatz.
 	* Metadatenvorgänge: Hier werden alle Metadatenvorgänge angezeigt.
 	* Zustandsverlauf. 
@@ -262,11 +262,15 @@ Es gibt zwei Möglichkeiten zum Ausführen der angepassten C#-Dateien:
 
 Sie können C#-Assemblys debuggen, ohne sie zu senden und beim Azure Data Lake Analytics-Dienst zu registrieren. Sie können sowohl in der Code-Behind-Datei als auch in einem referenzierten C#-Projekt Haltepunkte festlegen.
 
-**So debuggen Sie lokalen Code in der CodeBehind-Datei:** 1. Legen Sie Haltepunkte in der CodeBehind-Datei fest. 2. Drücken Sie **F5**, um das Skript lokal zu debuggen.
+**So debuggen Sie lokalen Code in der CodeBehind-Datei:**
+1.	Legen Sie Haltepunkte in der CodeBehind-Datei fest. 
+2.	Drücken Sie **F5**, um das Skript lokal zu debuggen.
 
 Das folgende Verfahren funktioniert nur in Visual Studio 2015. In älteren Versionen von Visual Studio müssen Sie eventuell die PDB-Dateien manuell hinzufügen.
 
-**So debuggen Sie lokalen Code in einem referenzierten C#-Projekt:** 1. Erstellen Sie ein C#-Assemblyprojekt, und erstellen Sie es, um die Ausgabe-DLL zu generieren. 2. Registrieren Sie die DLL mithilfe einer U-SQL-Anweisung:
+**So debuggen Sie lokalen Code in einem referenzierten C#-Projekt:**
+1.	Erstellen Sie ein C#-Assemblyprojekt, und erstellen Sie es, um die Ausgabe-DLL zu generieren.
+2.	Registrieren Sie die DLL mithilfe einer U-SQL-Anweisung:
 
         CREATE ASSEMBLY assemblyname FROM @"..\..\path\to\output\.dll";
 3.	Legen Sie Haltepunkte im C#-Code fest.
@@ -359,4 +363,4 @@ Mit dem folgenden PowerShell-Skript werden das Azure Data Lake Analytics-Konto u
     Get-AzureRmDataLakeStoreChildItem -Account $dataLakeStoreName -Path  "/Samples/Data/"
     #endregion
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0316_2016-->

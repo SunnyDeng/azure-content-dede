@@ -1,63 +1,48 @@
 <properties
-	pageTitle="Datenimport in Azure Search | Microsoft Azure | Gehosteter Cloudsuchdienst"
-	description="Hochladen von Daten in einen Index in Azure Search"
-	services="search"
-	documentationCenter=""
-	authors="HeidiSteen"
-	manager="mblythe"
-	editor=""
+    pageTitle="Hochladen von Daten in Azure Search | Microsoft Azure | Gehosteter Cloudsuchdienst"
+    description="Erfahren Sie, wie Sie Daten in einen Index in Azure Search hochladen können."
+    services="search"
+    documentationCenter=""
+    authors="ashmaka"
+    manager=""
+    editor=""
     tags=""/>
 
 <tags
-	ms.service="search"
-	ms.devlang="na"
-	ms.workload="search"
-	ms.topic="get-started-article"
-	ms.tgt_pltfrm="na"
-	ms.date="02/09/2016"
-	ms.author="heidist"/>
+    ms.service="search"
+    ms.devlang="NA"
+    ms.workload="search"
+    ms.topic="get-started-article"
+    ms.tgt_pltfrm="na"
+    ms.date="03/10/2016"
+    ms.author="ashmaka"/>
 
-# Importieren von Daten in Azure Search
+# Hochladen von Daten in Azure Search
 > [AZURE.SELECTOR]
-- [Overview](search-what-is-data-import.md)
-- [Portal](search-import-data-portal.md)
+- [Übersicht](search-what-is-data-import.md)
 - [.NET](search-import-data-dotnet.md)
 - [REST](search-import-data-rest-api.md)
-- [Indexers](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers-2015-02-28.md)
 
-In Azure Search arbeitet der Dienst mit dauerhaft gespeicherten Daten (einem Index), der Dokumente und Informationen bereitstellt, die zum Verarbeiten eines Indexes, Ausführen von Abfragen oder Formulieren von Suchergebnissen dienen. Um einen Index zu füllen, können Sie ein Push- oder Pull-Modell zum Laden von Daten verwenden.
 
-Vor dem Importieren muss der Index bereits vorhanden sein. Weitere Informationen finden Sie unter [Indizes in Azure Search](search-what-is-an-index.md).
+## Modelle zum Hochladen von Daten in Azure Search
+Es gibt zwei Möglichkeiten zum Auffüllen Ihres Azure Search-Indexes mit Ihren Daten. Die erste Option ist die manuelle Push-Übertragung Ihrer Daten mithilfe der Azure Search [REST-API](search-import-data-rest-api.md) oder [.NET SDK](search-import-data-dotnet.md) in den Index. Die zweite Option besteht darin, [eine unterstützte Datenquelle auf Ihren Azure Search-Index zu verweisen](search-indexer-overview.md), damit Azure Search die Daten automatisch mithilfe von Pull in den Suchdienst abruft.
 
-##Push-Übertragung von Daten in einen Index
+Dieses Handbuch behandelt nur die Verwendung des Push-Modells zum Hochladen von Daten (das nur in der [REST-API](search-import-data-rest-api.md) und [.NET SDK](search-import-data-dotnet.md) unterstützt wird), weiter unten finden Sie aber dennoch weitere Informationen zum Pull-Modell.
 
-Dieser Ansatz bezieht sich darauf, dass ein vorhandenes Dataset, das dem Indexschema entspricht, und Ihrem Suchdienst zur Verfügung gestellt wird. Bei Anwendungen mit sehr niedrigen Latenzanforderungen (wenn z. B. Suchvorgänge mit Inventardatenbanken synchronisiert werden müssen), ist ein Push-Modell Ihre einzige Option.
+### Push-Übertragung von Daten in einen Index
 
-Sie können die REST-API oder .NET SDK zur Push-Übertragung von Daten in einen Index verwenden. Es gibt derzeit keine Toolunterstützung für die Push-Übertragung von Daten über das Portal.
+Dieser Ansatz bezieht sich auf die programmgesteuerte Übertragung Ihrer Daten an Azure Search, damit diese für die Suche verfügbar sind. Bei Anwendungen mit sehr niedrigen Latenzanforderungen (wenn z. B. Suchvorgänge mit dynamischen Inventardatenbanken synchronisiert werden müssen) ist das Push-Modell Ihre einzige Option.
 
-Dieser Ansatz ist flexibler als ein Pull-Modell, da Sie Dokumente einzeln oder in Batches hochladen (bis zu 1.000 pro Batch oder 16 MB, je nachdem, welches Limit zuerst erreicht wird).
+Sie können die [REST-API](https://msdn.microsoft.com/library/azure/dn798930.aspx) oder [.NET SDK](search-import-data-dotnet.md) zur Push-Übertragung von Daten in einen Index verwenden. Es gibt derzeit keine Toolunterstützung für die Push-Übertragung von Daten über das Portal.
 
-##Pull-Übertragung von Daten (Durchforstung) 
+Dieser Ansatz ist flexibler als ein Pull-Modell, da Sie Dokumente einzeln oder in Batches hochladen können (bis zu 1000 pro Batch oder 16 MB, je nachdem, welches Limit zuerst erreicht wird). Das Push-Modell ermöglicht Ihnen auch das Hochladen von Dokumenten in Azure Search, unabhängig davon, wo sich Ihre Daten befinden.
 
-Ein Pull-Modell durchforstet eine unterstützte Datenquelle und lädt den Index für Sie. Diese Funktion wird in Azure Search über *Indexer* implementiert, die derzeit für Azure SQL-Datenbank, DocumentDB und SQL Server auf virtuellen Azure-Computern verfügbar sind. Weitere Informationen zum Hochladen von Azure SQL-Daten finden Sie unter [Indexer](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers-2015-02-28.md).
+### Abrufen von Daten in einen Index mithilfe von Pull
 
-Sie können das Portal, REST-API oder .NET SDK zur Pull-Übertragung von Daten in einen Index verwenden.
+Das Pull-Modell durchsucht eine unterstützte Datenquelle und lädt die Daten automatisch für Sie in den Azure Search-Index hoch. Da Änderungen und Löschvorgänge in vorhandenen Dokumenten nachverfolgt und neue Dokumente erkannt werden, ist es mithilfe von Indexern nicht mehr erforderlich, die Daten in Ihrem Index aktiv zu verwalten.
 
-##Datasetanforderungen
+Diese Funktion wird in Azure Search über *Indexer* implementiert, die derzeit für [Blob Storage (Vorschau)](search-howto-indexing-azure-blob-storage.md), [DocumentDB](http://aka.ms/documentdb-search-indexer), [Azure SQL-Datenbank und SQL Server auf virtuellen Azure-Computern](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers-2015-02-28.md) verfügbar sind.
 
-Es gibt keine Einschränkung für den Typ der Daten, die Sie hochladen, solange das Schema und die Datasets als JSON-Strukturen formuliert sind.
+Die Indexer-Funktion steht sowohl im [Azure-Portal](search-import-data-portal.md) als auch in der [REST-API](https://msdn.microsoft.com/library/azure/dn946891.aspx) zur Verfügung.
 
-Die Daten sollten aus einer beliebigen Datenbank oder Datenquelle stammen, die Ihre benutzerdefinierte Anwendung erstellt oder verwendet. Wenn Ihre Anwendung beispielsweise ein Onlinekatalog ist, muss der Index, den Sie für Azure Search erstellen, Daten dem Produktbestand oder den Vertriebsdatenbanken entnehmen, die Ihre Anwendung unterstützen.
-
-Das Dataset sollte aus einer einzelnen Tabelle, Sicht, einem einzelnen Blobcontainer oder Ähnlichem stammen. Sie müssen möglicherweise eine Datenstruktur in der Datenbank oder NoSQL-Anwendung erstellen, die Azure Search Daten bereitstellt. Alternativ können Sie für bestimmte Datenquellen wie Azure SQL-Datenbank oder DocumentDB einen Indexer erstellen, der eine externen Tabelle, Sicht oder einen Blobcontainer auf Daten durchforstet, die in Azure Search hochgeladen werden sollen.
-
-##Auswählen eines Datenimportansatzes
-
-|Kriterien|Empfohlener Ansatz|
-|------------|---------------|
-|Datensynchronisierung nahezu in Echtzeit|Programmieren Sie entweder die .NET- oder REST-API für Pushübertragungen von Aktualisierungen in einen Index. Ein Pullansatz für die Erfassung von Daten ist ein geplanter Vorgang, der nicht schnell genug ausgeführt werden kann, um mit den schnellen Änderungen in einer primären Datenquelle Schritt zu halten.|
-|Azure SQL-Datenbank, DocumentDB oder SQL Server auf virtuellen Azure-Computern|Indexer sind an bestimmte Datenquellentypen gekoppelt. Wenn primäre Datenquellen als Datenquellentyp unterstützt werden, ist ein Indexer die einfachste Möglichkeit, einen Index zu laden. Die maximal planbare Datenaktualisierungsfrequenz sind stündliche Intervalle. Sie können einen Indexer im Portal oder in Code konfigurieren.|
-|Geplante Datenaktualisierung|Verwenden Sie einen Indexer (siehe oben).|
-|Codefreie Erstellung von Prototypen oder Bearbeitung|Das Portal enthält einen Assistenten zum Importieren von Daten, der einen Indexer konfiguriert. Dabei wird mitunter ein vorläufiges Schema generiert, wenn in der primären Datenbank genügend Informationen dafür enthalten sind. Der Assistent bietet Optionen zum Einrichten geplanter Datenaktualisierungen. Optional können Sie Sprachanalysen oder CORS-Optionen hinzufügen. Es gibt einige Nachteile: Sie können weder Bewertungsprofile hinzufügen noch ein im Portal erstelltes Schema in eine JSON-Datei zur Verwendung in Code exportieren.| 
-
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0316_2016-->

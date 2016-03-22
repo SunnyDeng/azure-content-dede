@@ -23,8 +23,8 @@
 - [.Net](web-sites-dotnet-get-started.md)
 - [Node.js](web-sites-nodejs-develop-deploy-mac.md)
 - [Java](web-sites-java-get-started.md)
-- [PHP - Git](web-sites-php-mysql-deploy-use-git.md)
-- [PHP - FTP](web-sites-php-mysql-deploy-use-ftp.md)
+- [PHP – Git](web-sites-php-mysql-deploy-use-git.md)
+- [PHP – FTP](web-sites-php-mysql-deploy-use-ftp.md)
 - [Python](web-sites-python-ptvs-django-mysql.md)
 
 In diesem Lernprogramm erfahren Sie, wie Sie eine PHP-MySQL-Web-App erstellen und über Git in [App Service](http://go.microsoft.com/fwlink/?LinkId=529714) bereitstellen. Dazu verwenden Sie [PHP][install-php], das MySQL-Befehlszeilentool (Teil von [MySQL][install-mysql]) und [Git][install-git] auf Ihrem Computer. Die Anweisungen in diesem Lernprogramm lassen sich von jedem Betriebssystem aus befolgen, einschließlich Windows, Max und Linux. Nachdem Sie diese Anleitung durchgearbeitet haben, verfügen Sie über eine in Azure ausgeführte PHP-/MySQL-Web-App.
@@ -33,6 +33,7 @@ Sie erhalten Informationen zu folgenden Themen:
 
 * Erstellen einer Web-App und einer MySQL-Datenbank über das [Azure-Portal](https://portal.azure.com). Da PHP standardmäßig in[App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714) aktiviert ist, gelten für die Ausführung Ihres PHP-Codes keine besonderen Voraussetzungen.
 * Veröffentlichen und erneutes Veröffentlichen Ihrer Anwendung mithilfe von Git in Azure
+* Gewusst wie: Aktivieren der Composer-Erweiterung zum Automatisieren von Composer-Aufgaben bei jedem `git push`.
 
 Mithilfe dieses Lernprogramms erstellen Sie eine einfache Web-App für die Registrierung in PHP. Die Anwendung wird in Web-Apps gehostet. Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
 
@@ -264,6 +265,27 @@ Befolgen Sie die folgenden Schritte, um Änderungen an der Anwendung zu veröffe
 
 >[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
+<a name="composer">
+## Aktivieren der Composer-Automatisierung mit der Composer-Erweiterung
+
+Standardmäßig wird composer.json (sofern in Ihrem PHP-Projekt vorhanden) vom Git-Bereitstellungsprozess in App Service nicht verarbeitet. Während `git push` können Sie die Verarbeitung von composer.json aktivieren, indem Sie die Composer-Erweiterung aktivieren.
+
+1. Klicken Sie im Blatt Ihrer PHP-Web-App im [Azure-Portal](https://portal.azure.com) auf **Tools** > **Erweiterungen**.
+
+    ![](./media/web-sites-php-mysql-deploy-use-git/composer-extension-settings.png)
+
+2. Klicken Sie auf **Hinzufügen** und anschließend auf **Composer**.
+
+    ![](./media/web-sites-php-mysql-deploy-use-git/composer-extension-add.png)
+    
+3. Klicken Sie auf **OK**, um die rechtlichen Bedingungen zu akzeptieren. Klicken Sie erneut auf **OK**, um die Erweiterung hinzuzufügen.
+
+    Das Blatt **Installierte Erweiterungen** zeigt nun die Composer-Erweiterung an. ![](./media/web-sites-php-mysql-deploy-use-git/composer-extension-view.png)
+    
+4. Führen Sie nun wie im vorherigen Abschnitt `git add`, `git commit`, und `git push` aus. Nun sehen Sie, dass Composer in composer.json definierte Abhängigkeiten installiert.
+
+    ![](./media/web-sites-php-mysql-deploy-use-git/composer-extension-success.png)
+
 ## Nächste Schritte
 
 Weitere Informationen finden Sie im [PHP Developer Center](/develop/php/).
@@ -303,4 +325,4 @@ Weitere Informationen finden Sie im [PHP Developer Center](/develop/php/).
 [sql-database-editions]: http://msdn.microsoft.com/library/windowsazure/ee621788.aspx
  
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0316_2016-->

@@ -12,8 +12,8 @@
 	ms.workload="media" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="02/03/2016"
+	ms.topic="get-started-article"
+	ms.date="03/08/2016"
 	ms.author="juliako"/>
 
 
@@ -22,10 +22,10 @@
 > [AZURE.SELECTOR]
 - [Portal](media-services-portal-creating-live-encoder-enabled-channel.md)
 - [.NET](media-services-dotnet-creating-live-encoder-enabled-channel.md)
-- [REST API](https://msdn.microsoft.com/library/azure/dn783458.aspx)
+- [REST-API](https://msdn.microsoft.com/library/azure/dn783458.aspx)
 
 >[AZURE.NOTE]
-> Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](/pricing/free-trial/?WT.mc_id=A261C142F).
+Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](/pricing/free-trial/?WT.mc_id=A261C142F).
 
 ##Übersicht
 
@@ -94,7 +94,7 @@ Zum Abschließen dieses Lernprogramms müssen folgende Voraussetzungen erfüllt 
 	Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](/pricing/free-trial/?WT.mc_id=A261C142F). Sie erhalten ein Guthaben, mit dem Sie andere kostenpflichtige Azure-Dienste ausprobieren können. Selbst, nachdem Sie dieses Guthaben aufgebraucht haben, können Sie das Konto behalten und kostenlose Azure-Dienste und -Features nutzen, z. B. das Web-Apps-Feature in Azure App Service.
 - Media Services-Konto. Informationen zum Erstellen eines Media Services-Kontos finden Sie unter [Konto erstellen](media-services-create-account.md).
 - Visual Studio 2010 SP1 (Professional, Premium, Ultimate oder Express) oder höhere Versionen.
-- Sie müssen das Media Services .NET SDK, Version 3.2.0.0 oder höher, verwenden.
+- Sie müssen das Media Services .NET SDK, Version 3.2.0.0 oder höher, verwenden.
 - Sie benötigen eine Webcam und einen Encoder, von dem ein Single-Bitrate-Livedatenstrom gesendet wird.
 
 ##Überlegungen
@@ -530,4 +530,4 @@ Fügen Sie der app.config-Datei den Bereich „appSettings“ hinzu, und geben S
 
 Wenn dieses Thema nicht die erwarteten Informationen enthält, Informationen fehlen oder auf andere Weise Ihre Erwartungen nicht erfüllt wurden, senden Sie uns bitte über den Disqus-Thread unten Ihr Feedback.
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0316_2016-->

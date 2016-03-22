@@ -13,11 +13,11 @@
 	ms.workload="data-services"
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
-	ms.topic="hero-article" 
-	ms.date="02/19/2016"
+	ms.topic="hero-article"
+	ms.date="03/09/2016"
 	ms.author="anhoh"/>
 
-# NoSQL-Tutorial: Erstellen einer DocumentDB-C#-Konsolenanwendung 
+# NoSQL-Tutorial: Erstellen einer DocumentDB-C#-Konsolenanwendung
 
 > [AZURE.SELECTOR]
 - [.NET](documentdb-get-started.md)
@@ -141,6 +141,7 @@ Ihre DocumentDB-[Datenbank](documentdb-resources.md#databases) kann mithilfe der
 Eine [Sammlung](documentdb-resources.md#collections) kann mithilfe der [CreateDocumentCollectionAsync](https://msdn.microsoft.com/library/microsoft.azure.documents.client.documentclient.createdocumentcollectionasync.aspx)-Methode der **DocumentClient**-Klasse erstellt werden. Eine Sammlung ist ein Container für JSON-Dokumente und die zugehörige JavaScript-Anwendungslogik. Die neu erstellte Sammlung wird einer [S1-Leistungsebene](documentdb-performance-levels.md) zugeordnet. Erstellen Sie nach dem Erstellen der Datenbank in der **GetStartedDemo**-Methode eine neue Sammlung mit dem Namen **FamilyCollection**.
 
     // Check to verify a document collection with the id=FamilyCollection does not exist
+    // dbs is prepended to the id to identify the parent resource: databases
     DocumentCollection documentCollection = client.CreateDocumentCollectionQuery("dbs/" + database.Id).Where(c => c.Id == "FamilyCollection").AsEnumerable().FirstOrDefault();
 
 	// If the document collection does not exist, create a new collection
@@ -205,6 +206,7 @@ Zunächst müssen wir eine **übergeordnete**, **untergeordnete**, **Pet-**, **A
 Als Nächstes erstellen Sie Ihre Dokumente innerhalb Ihrer asynchronen **GetStartedDemo**-Methode.
 
     // Check to verify a document with the id=AndersenFamily does not exist
+    // colls is prepended to the id to identify the parent resource: collections, along with the rest of the resource path: dbs/FamilyRegistry
     Document document = client.CreateDocumentQuery("dbs/" + database.Id + "/colls/" + documentCollection.Id).Where(d => d.Id == "AndersenFamily").AsEnumerable().FirstOrDefault();
 
 	// If the document does not exist, create a new document
@@ -221,24 +223,25 @@ Als Nächstes erstellen Sie Ihre Dokumente innerhalb Ihrer asynchronen **GetStar
 	        },
 	        Children = new Child[] {
 	            new Child
-	            { 
-	                FirstName = "Henriette Thaulow", 
-	                Gender = "female", 
-	                Grade = 5, 
+	            {
+	                FirstName = "Henriette Thaulow",
+	                Gender = "female",
+	                Grade = 5,
 	                Pets = new Pet[] {
-	                    new Pet { GivenName = "Fluffy" } 
+	                    new Pet { GivenName = "Fluffy" }
 	                }
-	            } 
+	            }
 	        },
 	        Address = new Address { State = "WA", County = "King", City = "Seattle" },
 	        IsRegistered = true
 	    };
-	
+
 	    // id based routing for the first argument, "dbs/FamilyRegistry/colls/FamilyCollection"
 	    await client.CreateDocumentAsync("dbs/" + database.Id + "/colls/" + documentCollection.Id, andersonFamily);
 	}
 
     // Check to verify a document with the id=AndersenFamily does not exist
+    // colls is prepended to the id to identify the parent resource: collections, along with the rest of the resource path: dbs/FamilyRegistry
     document = client.CreateDocumentQuery("dbs/" + database.Id + "/colls/" + documentCollection.Id).Where(d => d.Id == "WakefieldFamily").AsEnumerable().FirstOrDefault();
 
     if (document == null)
@@ -253,9 +256,9 @@ Als Nächstes erstellen Sie Ihre Dokumente innerhalb Ihrer asynchronen **GetStar
             },
             Children = new Child[] {
                 new Child {
-                    FamilyName= "Merriam", 
-                    FirstName= "Jesse", 
-                    Gender= "female", 
+                    FamilyName= "Merriam",
+                    FirstName= "Jesse",
+                    Gender= "female",
                     Grade= 8,
                     Pets= new Pet[] {
                         new Pet { GivenName= "Goofy" },
@@ -263,9 +266,9 @@ Als Nächstes erstellen Sie Ihre Dokumente innerhalb Ihrer asynchronen **GetStar
                     }
                 },
                 new Child {
-                    FamilyName= "Miller", 
-                    FirstName= "Lisa", 
-                    Gender= "female", 
+                    FamilyName= "Miller",
+                    FirstName= "Lisa",
+                    Gender= "female",
                     Grade= 1
                 }
             },
@@ -323,7 +326,7 @@ Das folgende Diagramm veranschaulicht, wie die DocumentDB-SQL-Abfragesyntax gege
 
 Das [FROM](documentdb-sql-query.md#from-clause) -Schlüsselwort ist in der Abfrage optional, da DocumentDB Abfragen auf eine Sammlung begrenzt. Aus diesem Grund ist "FROM Familien f" austauschbar mit "FROM Stamm r" oder einem anderen variablen Namen, den Sie auswählen. DocumentDB wird ableiten, dass Familien, Stamm oder der variable Name, den Sie ausgewählt haben, standardmäßig auf die aktuelle Sammlung verweisen.
 
-##<a id="DeleteDatabase"></a>Schritt 8: Löschen der Onlinedatenbank
+##<a id="DeleteDatabase"></a>Schritt 8: Löschen der Onlinedatenbank
 
 Das Löschen der erstellten Datenbank entfernt die Datenbank und alle untergeordneten Ressourcen (Sammlungen, Dokumente usw.). Sie können die Datenbank und den Dokument-Client löschen, indem Sie folgenden Codeausschnitt an das Ende der asynchronen **GetStartedDemo**-Methode hängen.
 
@@ -331,7 +334,7 @@ Das Löschen der erstellten Datenbank entfernt die Datenbank und alle untergeord
     await client.DeleteDatabaseAsync("dbs/" + database.Id);
 	client.Dispose();
 
-##<a id="Run"></a>Schritt 9: Ausführen der C#-Konsolenanwendung
+##<a id="Run"></a>Schritt 9: Ausführen der C#-Konsolenanwendung
 
 Sie können die Anwendung nun ausführen. Am Ende der **Main**-Methode fügen Sie die folgende Codezeile ein, sodass Sie die Konsolenausgabe lesen können, bevor die Anwendung beendet wird.
 
@@ -476,6 +479,5 @@ Um die Verweise auf das DocumentDB .NET SDK in Visual Studio wiederherzustellen,
 [documentdb-create-account]: documentdb-create-account.md
 [documentdb-manage]: documentdb-manage.md
 [keys]: media/documentdb-get-started/nosql-tutorial-keys.png
- 
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0316_2016-->

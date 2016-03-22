@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="multiple"
 	ms.topic="get-started-article"
-	ms.date="12/09/2015"
+	ms.date="03/09/2016"
 	ms.author="sethm"/>
 
 
@@ -23,7 +23,7 @@ Azure Service Bus Messaging ist ein zuverlässiger Dienst für die Übermittlung
 
 Bei Service Bus Messaging geht es, ähnlich wie bei einem Postdienst, der Briefe zustellt, um eine flexible Übermittlung von Informationen zwischen Absender und Empfänger. Der Messagingdienst stellt sicher, dass die Informationen übermittelt werden, selbst wenn Absender und Empfänger niemals gleichzeitig online oder zum exakt gleichen Zeitpunkt verfügbar sind. Messaging entspricht also dem Senden eines Briefes. Eine Kommunikation ohne Broker dagegen lässt sich eher mit einem Telefonanruf vergleichen (zumindest Anrufen in früheren Zeiten, als es noch keine Anklopffunktion und Anruferkennung gab - diese Funktionen entsprechen eher der brokerbasierten Nachrichtenübermittlung).
 
-Der Absender der Nachricht kann auch eine Vielzahl von Übermittlungsmerkmalen anfordern, wie z. B. Transaktionen, Duplikaterkennung, Ablaufdatum und -uhrzeit und Batchverarbeitung. Auch diese Muster weisen Analogien mit einem Postdienst auf: wiederholte Übermittlung, erforderliche Signatur, Adressänderung oder Rückruf.
+Der Absender der Nachricht kann auch eine Vielzahl von Übermittlungsmerkmalen anfordern, wie z. B. Transaktionen, Duplikaterkennung, Ablaufdatum und -uhrzeit und Batchverarbeitung. Auch diese Muster weisen Analogien mit einem Postdienst auf: wiederholte Übermittlung, erforderliche Signatur, Adressänderung oder Rückruf.
 
 Service Bus unterstützt zwei unterschiedliche Muster für das Messaging: *Relaymessaging* und *Brokermessaging*.
 
@@ -35,13 +35,13 @@ Der Relaydienst unterstützt herkömmliches unidirektionales Messaging, Anforder
 
 Sie müssen die Verbindung zwischen dem lokalen Dienst und dem Relaydienst mithilfe einer Sammlung von WCF-Relay-Bindungen initiieren. Im Prinzip werden die Relaybindungen Transportbindungselementen zugeordnet, die entwickelt wurden, um WCF-Kanalkomponenten zu erstellen, die in der Cloud in Service Bus integriert werden.
 
-Relaymessaging bietet viele Vorteile, erfordert jedoch, dass der Server und der Client gleichzeitig online sind, damit Nachrichten gesendet und empfangen werden können. Dies ist für die Kommunikation im HTTP-Stil nicht optimal, da die Anforderungen meist keine sehr lange Lebensdauer aufweisen. Ebenso ist dies nicht gut für Clients geeignet, die nur gelegentlich eine Verbindung herstellen, z. B. Browser, mobile Anwendungen usw. Beim Brokermessaging wird die entkoppelte Kommunikation unterstützt, und es ergeben sich einige besondere Vorteile. Clients und Server können bei Bedarf jederzeit eine Verbindung herstellen und ihre Vorgänge auf asynchrone Weise durchführen.
+Relaymessaging bietet viele Vorteile, erfordert jedoch, dass der Server und der Client gleichzeitig online sind, damit Nachrichten gesendet und empfangen werden können. Dies ist für die Kommunikation im HTTP-Stil nicht optimal, da die Anforderungen meist keine sehr lange Lebensdauer aufweisen. Ebenso ist dies nicht gut für Clients geeignet, die nur gelegentlich eine Verbindung herstellen, z. B. Browser, mobile Anwendungen usw. Beim Brokermessaging wird die entkoppelte Kommunikation unterstützt, und es ergeben sich einige besondere Vorteile. Clients und Server können bei Bedarf jederzeit eine Verbindung herstellen und ihre Vorgänge auf asynchrone Weise durchführen.
 
 ## Brokermessaging
 
-Im Gegensatz zum Schema beim Relaymessaging können Sie sich das [Brokermessaging](service-bus-fundamentals-hybrid-solutions.md) als asynchron oder „temporär entkoppelt“ vorstellen. Produzent (Absender) und Konsumenten (Empfänger) müssen nicht gleichzeitig online sein. Die Messaginginfrastruktur speichert Nachrichten zuverlässig in einem „Broker“ (z. B. einer Warteschlange), bis die Empfängerseite für den Empfang bereit ist. Auf diese Weise können die Komponenten verteilter Anwendungen voneinander entkoppelt werden, und zwar entweder gewollt (z. B. zu Wartungszwecken) oder aufgrund eines Komponentenausfalls, ohne das Gesamtsystem zu beeinträchtigen. Außerdem muss die empfangende Anwendung ggf. nur zu bestimmten Tageszeiten online sein, z. B. bei einem System für die Bestandsverwaltung, das nur am Ende eines Arbeitstages ausgeführt wird.
+Im Gegensatz zum Schema beim Relaymessaging können Sie sich das [Brokermessaging](service-bus-fundamentals-hybrid-solutions.md) als asynchron oder „temporär entkoppelt“ vorstellen. Produzent (Absender) und Konsumenten (Empfänger) müssen nicht gleichzeitig online sein. Die Messaginginfrastruktur speichert Nachrichten zuverlässig in einem „Broker“ (z. B. einer Warteschlange), bis die Empfängerseite für den Empfang bereit ist. Auf diese Weise können die Komponenten verteilter Anwendungen voneinander entkoppelt werden, und zwar entweder gewollt (z. B. zu Wartungszwecken) oder aufgrund eines Komponentenausfalls, ohne das Gesamtsystem zu beeinträchtigen. Außerdem muss die empfangende Anwendung ggf. nur zu bestimmten Tageszeiten online sein, z. B. bei einem System für die Bestandsverwaltung, das nur am Ende eines Arbeitstages ausgeführt wird.
 
-Die Hauptkomponenten der Brokermessaging-Infrastruktur des Service Bus sind Warteschlangen, Themen und Abonnements. Der Hauptunterschied besteht darin, dass Themen Funktionen zum Veröffentlichen/Abonnieren unterstützen, die für anspruchsvolle inhaltsbasierte Routing- und Übermittlungslogik verwendet werden können, wie z. B. zum Senden an mehrere Empfänger. Diese Komponenten ermöglichen neue Szenarien für asynchrones Messaging, z. B. temporäre Entkopplung, Veröffentlichen/Abonnieren und Lastenausgleich. Weitere Informationen zu diesen Messagingentitäten finden Sie unter [Service Bus-Warteschlangen, -Themen und -Abonnements](service-bus-queues-topics-subscriptions.md).
+Die Hauptkomponenten der Brokermessaging-Infrastruktur des Service Bus sind Warteschlangen, Themen und Abonnements. Der Hauptunterschied besteht darin, dass Themen Funktionen zum Veröffentlichen/Abonnieren unterstützen, die für anspruchsvolle inhaltsbasierte Routing- und Übermittlungslogik verwendet werden können, wie z. B. zum Senden an mehrere Empfänger. Diese Komponenten ermöglichen neue Szenarien für asynchrones Messaging, z. B. temporäre Entkopplung, Veröffentlichen/Abonnieren und Lastenausgleich. Weitere Informationen zu diesen Messagingentitäten finden Sie unter [Service Bus-Warteschlangen, -Themen und -Abonnements](service-bus-queues-topics-subscriptions.md).
 
 Wie bei der Relaymessaging-Infrastruktur wird auch das Brokermessaging für WCF- und .NET Framework-Programmierer und über REST bereitgestellt.
 
@@ -51,9 +51,9 @@ Weitere Informationen zu Service Bus Messaging finden Sie in folgenden Themen.
 
 - [Service Bus-Warteschlangen, -Themen und -Abonnements](service-bus-queues-topics-subscriptions.md)
 - [Service Bus – Grundlagen](service-bus-fundamentals-hybrid-solutions.md)
-- [Service Bus-Architektur](service-bus-architecture.md)
+- [Service Bus-Architektur](service-bus-architecture.md)
 - [Verwenden von Service Bus-Warteschlangen](service-bus-dotnet-how-to-use-queues.md)
 - [Verwenden von Service Bus-Themen](service-bus-dotnet-how-to-use-topics-subscriptions.md)
  
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0316_2016-->
