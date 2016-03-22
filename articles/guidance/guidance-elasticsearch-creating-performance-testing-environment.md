@@ -259,9 +259,9 @@ Navigieren Sie im Webbrowser zur Seite [Apache JMeter herunterladen](http://jmet
 
 Wechseln Sie zur Website [Benutzerdefinierte JMeter-Plug-Ins](http://jmeter-plugins.org/), und laden Sie den Standardsatz von Plug-Ins herunter. Speichern Sie die ZIP-Datei im gleichen Ordner wie den JMeter-Download aus dem vorherigen Schritt.
 
-Öffnen Sie in Windows Explorer den Ordner mit der ZIP-Datei „apache-jmeter-*xx*“ (wobei *xx* für die aktuelle Version von JMeter steht), und extrahieren Sie die Dateien in den aktuellen Ordner (die ZIP-Datei erstellt einen Unterordner namens „apache-jmeter-*xxx*“).
+Öffnen Sie in Windows Explorer den Ordner mit der ZIP-Datei „apache-jmeter-*xx* “ (wobei *xx* für die aktuelle Version von JMeter steht), und extrahieren Sie die Dateien in den aktuellen Ordner (die ZIP-Datei erstellt einen Unterordner namens „apache-jmeter- *xxx* “).
 
-Extrahieren Sie die Dateien in der Datei „JMeterPlugins-Standard-*yyy*.zip“ (wobei *yyy* die aktuelle Version der Plug-Ins ist) im Ordner „apache-jmeter-*xxx*“. Dadurch werden die Plug-Ins dem richtigen Ordner für JMeter hinzugefügt (Sie können die lib-Ordner problemlos zusammenführen und bei entsprechender Aufforderung die Lizenz- und Readme-Dateien überschreiben).
+Extrahieren Sie die Dateien in der Datei „JMeterPlugins-Standard-*yyy*.zip“ (wobei *yyy* die aktuelle Version der Plug-Ins ist) im Ordner „apache-jmeter- *xxx* “. Dadurch werden die Plug-Ins dem richtigen Ordner für JMeter hinzugefügt (Sie können die lib-Ordner problemlos zusammenführen und bei entsprechender Aufforderung die Lizenz- und Readme-Dateien überschreiben).
 
 Wechseln Sie zum Ordner „apache-jmeter -*xxx*/bin“, und bearbeiten Sie die Datei „jmeter.properties“ mit Notepad. Suchen Sie in der `jmeter.properties`-Datei den Abschnitt mit der Bezeichnung *Remotehosts und RMI-Konfiguration*. Suchen Sie in diesem Abschnitt der Datei nach der folgenden Zeile:
 
@@ -396,4 +396,4 @@ Klicken Sie auf den Link, der Ihrem Cluster entspricht („elasticsearch210“ i
 
 [Optimierung der Datenerfassungsleistung für Elasticsearch in Azure]: guidance-elasticsearch-tuning-data-ingestion-performance.md
 
-<!---HONumber=AcomDC_0224_2016-->
+<!----HONumber=AcomDC_0224_2016-->
