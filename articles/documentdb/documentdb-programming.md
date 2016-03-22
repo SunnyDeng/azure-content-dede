@@ -52,7 +52,7 @@ Dieser Ansatz von *„JavaScript als modernes T-SQL“* befreit die Anwendungsen
 
 Die Erstellung und Ausführung von Datenbanktriggern, gespeicherten Prozeduren und benutzerdefinierten Abfrageoperatoren wird auf vielen Plattformen, z. B. .NET, Node.js und JavaScript, über die [REST-API](https://msdn.microsoft.com/library/azure/dn781481.aspx), [DocumentDB Studio](https://github.com/mingaliu/DocumentDBStudio/releases) und [Client-SDKs](documentdb-sdk-dotnet.md) unterstützt.
 
-**In diesem Tutorial wird das [Node.js-SDK mit Q Promises](http://azure.github.io/azure-documentdb-node-q/) verwendet**, um die Syntax und Verwendung von gespeicherten Prozeduren, Triggern und benutzerdefinierten Funktionen (User Defined Functions, UDFs) zu veranschaulichen.
+**In diesem Tutorial wird das** [Node.js-SDK mit Q Promises](http://azure.github.io/azure-documentdb-node-q/) **verwendet**, um die Syntax und Verwendung von gespeicherten Prozeduren, Triggern und benutzerdefinierten Funktionen (User Defined Functions, UDFs) zu veranschaulichen.
 
 ## Gespeicherte Prozeduren
 
@@ -919,4 +919,4 @@ Weitere Informationen zur serverseitigen DocumentDB-Programmierung finden Sie au
 - [Dienstorientierte Datenbankarchitektur](http://dl.acm.org/citation.cfm?id=1066267&coll=Portal&dl=GUIDE) 
 - [Hosten der .NET-Lautzeitumgebung in Microsoft SQL Server](http://dl.acm.org/citation.cfm?id=1007669)
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0224_2016--->
