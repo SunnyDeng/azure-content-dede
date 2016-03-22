@@ -12,7 +12,7 @@
 	ms.workload="data-management"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="article"
+	ms.topic="hero-article"
 	ms.date="02/26/2016"
 	ms.author="douglasl"/>
 
@@ -96,6 +96,8 @@ Weitere Informationen zum Datenbankhauptschlüssel finden Sie unter [CREATE MAST
 ## <a name="Network"></a>Auswählen der IP-Adresse
 Verwenden Sie die öffentliche IP-Adresse von SQL Server, oder geben Sie einen IP-Adressbereich ein, um eine Firewallregel für Azure zu erstellen, damit SQL Server mit dem Azure-Remoteserver kommunizieren kann.
 
+Die auf dieser Seite angegebenen IP-Adressen informieren den Azure-Server darüber, dass eingehende Daten, Abfragen und Verwaltungsvorgänge, die von SQL Server initiiert werden, die Azure-Firewall durchlaufen können. Der Assistent ändert keine Einstellungen der Firewall auf SQL Server.
+
 ![Auswählen der IP-Adressseite des Assistenten der Stretch-Datenbank][StretchWizardImage7]
 
 ## <a name="Summary"></a>Zusammenfassung
@@ -114,9 +116,9 @@ Wählen Sie optional **Überwachen** aus, um den Status der Datenmigration im St
 ## Nächste Schritte
 Aktivieren von zusätzlichen Tabellen für Stretch-Datenbank Überwachen der Datenmigration und Verwalten von Stretch-fähigen Datenbanken und Tabellen
 
--   [Aktivieren von Stretch-Datenbank für eine Tabelle](sql-server-stretch-database-enable-table.md) zum Aktivieren zusätzlicher Tabellen
+-   [Aktivieren der Stretch-Datenbank für eine Tabelle](sql-server-stretch-database-enable-table.md) zum Aktivieren zusätzlicher Tabellen
 
--   [Überwachen von Stretch-Datenbank](sql-server-stretch-database-monitor.md) zum Anzeigen des Status der Datenmigration
+-   [Überwachen der Stretch-Datenbank](sql-server-stretch-database-monitor.md) zum Anzeigen des Status der Datenmigration
 
 -   [Anhalten und Fortsetzen von Stretch-Datenbank](sql-server-stretch-database-pause.md)
 
@@ -125,7 +127,10 @@ Aktivieren von zusätzlichen Tabellen für Stretch-Datenbank Überwachen der Dat
 -   [Sichern und Wiederherstellen von Stretch-fähigen Datenbanken](sql-server-stretch-database-backup.md)
 
 ## Weitere Informationen
-[Aktivieren von Stretch-Datenbank für eine Datenbank](sql-server-stretch-database-enable-database.md)[Aktivieren von Stretch-Datenbank für eine Tabelle](sql-server-stretch-database-enable-table.md)
+
+[Aktivieren von Stretch-Datenbank für eine Datenbank](sql-server-stretch-database-enable-database.md)
+
+[Aktivieren von Stretch-Datenbank für eine Tabelle](sql-server-stretch-database-enable-table.md)
 
 [StretchWizardImage1]: ./media/sql-server-stretch-database-wizard/stretchwiz1.png
 [StretchWizardImage2]: ./media/sql-server-stretch-database-wizard/stretchwiz2.png
@@ -136,4 +141,4 @@ Aktivieren von zusätzlichen Tabellen für Stretch-Datenbank Überwachen der Dat
 [StretchWizardImage7]: ./media/sql-server-stretch-database-wizard/stretchwiz7.png
 [StretchWizardImage8]: ./media/sql-server-stretch-database-wizard/stretchwiz8.png
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

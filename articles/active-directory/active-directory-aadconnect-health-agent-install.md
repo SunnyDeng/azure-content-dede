@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="02/17/2016"
+	ms.date="03/08/2016"
 	ms.author="billmath"/>
 
 
@@ -121,13 +121,31 @@ Der Azure AD Connect Health-Agent für die Synchronisierung wird im neuesten Bui
 
 Um sicherzustellen, dass der Agent installiert wurde, öffnen Sie die Dienste und prüfen Folgendes. Nach Abschluss der Konfiguration sollten die folgenden Dienste ausgeführt werden. Die Dienste werden erst gestartet, wenn die Konfiguration abgeschlossen wurde.
 
-- Azure AD Connect Health AadSync Insights-Dienst
-- Azure AD Connect Health AadSync-Überwachungsdienst
+- Azure AD Connect Health Sync Insights-Dienst
+- Azure AD Connect Health Sync-Überwachungsdienst
 
 ![Überprüfen von Azure AD Connect Health für die Synchronisierung](./media/active-directory-aadconnect-health-sync/services.png)
 
 >[Azure.NOTE] Denken Sie daran, dass Sie Azure AD Connect Health nur mit Azure AD Premium nutzen können. Nur wenn Sie über Azure AD Premium verfügen, können Sie die Konfiguration im Azure-Portal abschließen. Weitere Informationen finden Sie in den [hier](active-directory-aadconnect-health.md#requirements) beschriebenen Anforderungen.
 
+
+## Manuelle Registrierung für Azure AD Connect Health für die Synchronisierung
+Wenn die Agent-Registrierung von Azure AD Connect Health für die Synchronisierung fehlschlägt, nachdem Sie Azure AD Connect erfolgreich installiert haben, können Sie den Agent mit dem folgenden PowerShell-Befehl manuell registrieren.
+
+>[AZURE.IMPORTANT] Die Verwendung dieses PowerShell-Befehls ist nur erforderlich, wenn die Agent-Registrierung nach der Installation von Azure AD Connect fehlschlägt.
+
+Der folgende PowerShell-Befehl ist NUR erforderlich, wenn die Health-Agent-Registrierung auch nach der erfolgreichen Installation und Konfiguration von Azure AD Connect fehlschlägt. In solchen Fällen können Azure AD Connect Health-Dienste NICHT gestartet werden, solange der Agent nicht erfolgreich registriert wurde.
+ 	
+Sie können den Azure AD Connect Health-Agent für die Synchronisierung mit dem folgenden PowerShell-Befehl manuell registrieren:
+
+`Register-AzureADConnectHealthSyncAgent -AttributeFiltering $false -StagingMode $false`
+
+Der Befehl hat folgende Parameter:
+
+- AttributeFiltering : $true (default) – wenn Azure AD Connect den Standardattributsatz nicht synchronisiert und für die Verwendung eines gefilterten Attributsatzes angepasst wurde. Andernfalls $false.
+- StagingMode: $false (Standard) – wenn der Azure AD Connect-Server sich NICHT im Stagingmodus befindet; $true, wenn der Server werden für den Stagingmodus konfiguriert ist.
+ 
+Wenn Sie zur Authentifizierung aufgefordert werden, geben Sie das globale Administratorkonto (wie etwaadmin@domain.onmicrosoft.com) ein, das zum Konfigurieren von Azure AD Connect verwendet wurde.
 
 
 
@@ -206,4 +224,4 @@ Sie können das Flag -ShowResults im Befehl verwenden, um detaillierte Protokoll
 * [Azure AD Connect Health – FAQ](active-directory-aadconnect-health-faq.md)
 * [Azure AD Connect Health: Versionsverlauf](active-directory-aadconnect-health-version-history.md)
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

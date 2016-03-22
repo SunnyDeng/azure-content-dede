@@ -1,6 +1,6 @@
 <properties
-    pageTitle="Importieren von Daten in Azure Search über die REST-API | Microsoft Azure | Gehosteter Cloudsuchdienst"
-    description="Hochladen von Daten in einen Index in Azure Search über die REST-API."
+    pageTitle="Hochladen von Daten in Azure Search über die REST-API | Microsoft Azure | Gehosteter Cloudsuchdienst"
+    description="Erfahren Sie, wie Sie Daten in einen Index in Azure Search über die REST-API hochladen."
     services="search"
     documentationCenter=""
     authors="ashmaka"
@@ -14,24 +14,23 @@
     ms.workload="search"
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
-    ms.date="03/09/2016"
+    ms.date="03/10/2016"
     ms.author="ashmaka"/>
 
-# Importieren von Daten in Azure Search über die REST-API
+# Hochladen von Daten in Azure Search über die REST-API
 > [AZURE.SELECTOR]
 - [Übersicht](search-what-is-data-import.md)
-- [Portal](search-import-data-portal.md)
 - [.NET](search-import-data-dotnet.md)
 - [REST](search-import-data-rest-api.md)
-- [Indexer](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers-2015-02-28.md)
 
+In diesem Artikel erfahren Sie, wie Sie die [Azure Search REST-API](https://msdn.microsoft.com/library/azure/dn798935.aspx) zum Importieren von Daten in einen Azure Search-Index verwenden.
 
-In diesem Artikel erfahren Sie, wie Sie die [Azure Search REST-API](https://msdn.microsoft.com/library/azure/dn798935.aspx) zum Importieren von Daten in einen Azure Search-Index verwenden. [Erstellen Sie einen Azure Search-Index](search-create-index-rest-api.md), bevor Sie mit dieser exemplarischen Vorgehensweise beginnen.
+[Erstellen Sie einen Azure Search-Index](search-what-is-an-index.md), bevor Sie mit dieser exemplarischen Vorgehensweise beginnen.
 
 Um Dokumente mit der REST-API mithilfe von Push in Ihren Index zu verschieben, geben Sie eine HTTP POST-Anforderung an das URL-Endpunkt Ihres Indexes aus. Der Hauptteil der HTTP-Anforderung ist ein JSON-Objekt, das die Dokumente enthält, die hinzugefügt, geändert oder gelöscht werden sollen.
 
 ## I. Identifizieren des Admin-API-Schlüssels Ihres Azure Search-Diensts
-Beim Ausgeben von HTTP-Anforderungen in Ihrem Dienst mithilfe der REST-API muss *jede* API den API-Schlüssel enthalten, der für den bereitgestellten Suchdienst erstellt wurde. Ein gültiger Schlüssel stellt anforderungsbasiert eine Vertrauensstellung her zwischen der Anwendung, die die Anforderung versendet, und dem Dienst, der sie verarbeitet.
+Beim Ausgeben von HTTP-Anforderungen in Ihrem Dienst mithilfe der REST-API muss *jede* API-Anforderung den API-Schlüssel enthalten, der für den bereitgestellten Suchdienst erstellt wurde. Ein gültiger Schlüssel stellt anforderungsbasiert eine Vertrauensstellung her zwischen der Anwendung, die die Anforderung versendet, und dem Dienst, der sie verarbeitet.
 
 1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/) an, um die API-Schlüssel für Ihren Dienst zu suchen.
 2. Wechseln Sie zum Blatt Ihres Azure Search-Diensts.
@@ -53,8 +52,7 @@ Jedes JSON-Objekt im Array „value“ stellt ein zu indizierendes Dokument dar.
 --- | --- | --- | ---
 `upload` | Eine `upload`-Aktion entspricht „upsert“, wobei neue Dokumente eingefügt und bestehende Dokumente aktualisiert/ersetzt werden. | Schlüssel und alle anderen zu definierenden Felder | Wenn ein bestehendes Dokument aktualisiert/ersetzt wird, werden alle in der Anforderung nicht festgelegten Felder auf `null` festgelegt. Dies tritt auch auf, wenn das Feld zuvor auf einen Wert festgelegt wurde, der nicht Null ist.
 `merge` | Aktualisiert ein bestehendes Dokument mit den angegebenen Feldern. Wenn das Dokument im Index nicht vorhanden ist, schlägt die Zusammenführung fehl. | Schlüssel und alle anderen zu definierenden Felder | Jedes Feld, das Sie in einer Zusammenführung angeben, ersetzt das vorhandene Feld im Dokument. Dies beinhaltet auch Felder vom Typ `Collection(Edm.String)`. Wenn das Dokument beispielsweise das Feld `tags` mit dem Wert `["budget"]` enthält und Sie eine Zusammenführung mit dem Wert `["economy", "pool"]` für `tags` durchführen, hat das Feld `tags` am Ende den Wert `["economy", "pool"]`. Der Wert lautet nicht `["budget", "economy", "pool"]`.
-`mergeOrUpload` | Verhält sich wie `merge`, wenn im Index bereits ein Dokument mit dem entsprechenden Schlüssel vorhanden ist. Wenn das Dokument nicht vorhanden ist, verhält es sich wie `upload` mit einem neuen Dokument. | Schlüssel und alle anderen zu definierenden Felder | - 
-`delete` | Entfernt das festgelegte Dokument aus dem Index. | nur Schlüssel | Alle festgelegten Felder mit Ausnahme des Schlüsselfelds werden ignoriert. Wenn Sie ein einzelnes Feld aus einem Dokument entfernen möchten, verwenden Sie stattdessen `merge` und setzen das Feld ausdrücklich auf null.
+`mergeOrUpload` | Verhält sich wie `merge`, wenn im Index bereits ein Dokument mit dem entsprechenden Schlüssel vorhanden ist. Wenn das Dokument nicht vorhanden ist, verhält es sich wie `upload` mit einem neuen Dokument. | Schlüssel und alle anderen zu definierenden Felder | - `delete` | Entfernt das festgelegte Dokument aus dem Index. | nur Schlüssel | Alle festgelegten Felder mit Ausnahme des Schlüsselfelds werden ignoriert. Wenn Sie ein einzelnes Feld aus einem Dokument entfernen möchten, verwenden Sie stattdessen `merge` und setzen das Feld ausdrücklich auf null.
 
 ## III. Erstellen Sie die HTTP-Anforderung und den Anforderungstext
 Da Sie nun die erforderlichen Feldwerte für Ihre Indexaktionen gesammelt haben, können Sie die HTTP-Anforderung und den JSON-Anforderungstext für den Datenimport erstellen.
@@ -117,7 +115,7 @@ In der URL müssen Sie Ihren Dienstnamen, den Indexnamen (in diesem Fall „hote
 
 In diesem Fall verwenden wir `upload`, `mergeOrUpload` und `delete` als Suchaktionen.
 
-Wir gehen davon aus, dass der Index in diesem Beispiel („hotels“) bereits mit einigen Dokumenten gefüllt ist. Beachten Sie, dass alle möglichen Dokumentfelder bei `mergeOrUpload` nicht festgelegt werden mussten und bei `delete` nur der Dokumentschlüssel (`hotelId`) definiert werden musste.
+Wir gehen davon aus, dass der Index in diesem Beispiel („hotels“) bereits mit einigen Dokumenten gefüllt ist. Beachten Sie, dass bei `mergeOrUpload` nicht alle möglichen Dokumentfelder festgelegt werden mussten und dass bei `delete` nur der Dokumentschlüssel (`hotelId`) definiert wurde.
 
 Beachten Sie außerdem, dass nur bis zu 1000 Dokumente (oder 16 MB) in einer einzigen Indizierungsanforderung enthalten sein können.
 
@@ -164,9 +162,9 @@ Der Statuscode `503` wird zurückgegeben, wenn keines der Elemente in der Anford
 
 > [AZURE.NOTE] In diesem Fall empfehlen wir ein Backoff des Clientcodes. Versuchen Sie es daraufhin nach einer Weile erneut. Dadurch hat das System ausreichend Zeit für eine Wiederherstellung, und die Wahrscheinlichkeit, dass spätere Anforderungen gelingen, steigt. Wenn Sie Ihre Anforderungen schnell wiederholen, dauert das Problem nur an.
 
-Weitere Informationen zu Dokumentaktionen und Antworten bei Erfolg/Fehler finden Sie unter [Hinzufügen, aktualisieren und Löschen von Dokumenten (REST-API in Azure Search-Dienst)](https://msdn.microsoft.com/library/azure/dn798930.aspx). Weitere Informationen zu anderen HTTP-Statuscodes, die bei Fehlern ausgegeben werden, finden Sie unter [HTTP status codes (Azure Search)](https://msdn.microsoft.com/library/azure/dn798925.aspx) (HTTP-Statuscodes (Azure Search)).
+Weitere Informationen zu Dokumentaktionen und Antworten bei Erfolg/Fehler finden Sie unter [Hinzufügen, Aktualisieren und Löschen von Dokumenten](https://msdn.microsoft.com/library/azure/dn798930.aspx). Weitere Informationen zu anderen HTTP-Statuscodes, die bei Fehlern ausgegeben werden, finden Sie unter [HTTP-Statuscodes (Azure Search)](https://msdn.microsoft.com/library/azure/dn798925.aspx).
 
 ## Weiter
-Nach dem Auffüllen des Azure Search-Indexes können Sie mit Abfragen für die Suche nach Dokumenten beginnen. Ausführliche Informationen finden Sie unter [Abfragen des Azure Search-Index mit der REST-API](search-query-rest-api.md).
+Nach dem Auffüllen des Azure Search-Indexes können Sie mit Abfragen für die Suche nach Dokumenten beginnen. Ausführliche Informationen finden Sie unter [Abfragen in Azure Search](search-query-overview.md).
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

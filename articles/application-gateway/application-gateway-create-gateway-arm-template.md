@@ -81,7 +81,7 @@ Sie können die vorhandene Azure-Ressourcen-Manager-Vorlage herunterladen, um ei
 	- **name**. Name der Ressource. Beachten Sie die Verwendung von **[parameters('applicationGatewayName')]**. Dies bedeutet, dass der Name während der Bereitstellung durch einen Benutzer oder eine Parameterdatei eingegeben wird.
 	- **properties**. Liste der Eigenschaften für die Ressource. Diese Vorlage verwendet während der Erstellung des Application Gateways das virtuelle Netzwerk und die öffentliche IP-Adresse.
 
-7. Navigieren Sie zurück zu https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/101-create-application-gateway/azuredeploy.json.
+7. Navigieren Sie zurück zu https://github.com/Azure/azure-quickstart-templates/blob/master/101-application-gateway-create/.
 8. Klicken Sie auf **azuredeploy-parameters.json**, und klicken Sie dann auf **RAW**.
 9. Speichern Sie die Datei in einem lokalen Ordner auf Ihrem Computer.
 10. Öffnen Sie die Datei, die Sie gerade gespeichert haben, und bearbeiten Sie die Parameterwerte. Verwenden Sie die unten angegebenen Werte, um das Application Gateway wie in unserem Szenario beschrieben bereitzustellen.
@@ -284,4 +284,4 @@ Weitere Informationen zu Lastenausgleichsoptionen im Allgemeinen finden Sie unte
 - [Azure-Lastenausgleich](https://azure.microsoft.com/documentation/services/load-balancer/)
 - [Azure Traffic Manager](https://azure.microsoft.com/documentation/services/traffic-manager/)
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

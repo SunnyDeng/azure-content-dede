@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="get-started-article" 
-	ms.date="02/01/2016" 
+	ms.date="03/07/2016" 
 	ms.author="spelluru"/>
 
 # Tutorial: Erstellen einer Pipeline mit Kopieraktivität mithilfe der Azure PowerShell
@@ -22,7 +22,7 @@
 - [Verwenden des Data Factory-Editors](data-factory-get-started-using-editor.md)
 - [Verwenden von Visual Studio](data-factory-get-started-using-vs.md)
 - [Mithilfe von PowerShell](data-factory-monitor-manage-using-powershell.md)
-
+- [Verwenden des Kopier-Assistenten](data-factory-copy-data-wizard-tutorial.md)
 
 Im Lernprogramm [Erste Schritte mit Azure Data Factory][adf-get-started] erfahren Sie, wie Sie eine Azure Data Factory mithilfe des [Azure-Portals][azure-portal] erstellen und überwachen. In diesem Lernprogramm erstellen und überwachen Sie eine Azure Data Factory mithilfe von Azure PowerShell-Cmdlets. Die Pipeline in der Data Factory, die Sie in diesem Lernprogramm erstellen, verwendet eine Kopieraktivität zum Kopieren von Daten aus einem Azure-Blob in eine Azure SQL-Datenbank.
 
@@ -99,7 +99,7 @@ In diesem Schritt erstellen Sie die beiden verknüpften Dienste **StorageLinkedS
 
 	Ersetzen Sie **accountname** durch den Namen Ihres Azure-Speicherkontos und **accountkey** durch den Schlüssel Ihres Azure-Speicherkontos.
 2.	Wechseln Sie in **Azure PowerShell** zum Ordner **ADFGetStartedPSH**. 
-3.	Verwenden Sie das Cmdlet **New-AzureRmDataFactoryLinkedService**, um einen verknüpften Dienst zu erstellen. Dieses Cmdlet und andere Data Factory-Cmdlets, die Sie in diesem Lernprogramm verwenden, erfordern das Eingeben von Werten für die Parameter **ResourceGroupName** und **DataFactoryName**. Sie können auch **Get-AzureRmDataFactory** verwenden, um ein DataFactory-Objekt abzurufen und das Objekt ohne Eingabe von „ResourceGroupName“ und „DataFactoryName“ bei jeder Ausführung eines Cmdlets zu übergeben. Führen Sie folgenden Befehl aus, um die Ausgabe des Cmdlets **Get-AzureRmDataFactory** der Variablen **$df** zuzuweisen. 
+3.	Verwenden Sie das Cmdlet **New-AzureRmDataFactoryLinkedService**, um einen verknüpften Dienst zu erstellen. Dieses Cmdlet und andere Data Factory-Cmdlets, die Sie in diesem Lernprogramm verwenden, erfordern das Eingeben von Werten für die Parameter **ResourceGroupName** und **DataFactoryName**. Sie können auch **Get-AzureRmDataFactory** verwenden, um ein DataFactory-Objekt abzurufen und das Objekt ohne Eingabe von „ResourceGroupName“ und „DataFactoryName“ bei jeder Ausführung eines Cmdlets zu übergeben. Führen Sie den folgenden Befehl aus, um die Ausgabe des Cmdlets **Get-AzureRmDataFactory** der Variablen **$df** zuzuweisen. 
 
 		$df=Get-AzureRmDataFactory -ResourceGroupName ADFTutorialResourceGroup -Name ADFTutorialDataFactoryPSH
 
@@ -447,4 +447,4 @@ Ausführliche Informationen zur **Kopieraktivität** in Azure Data Factory finde
 [sql-management-studio]: ../sql-database/sql-database-manage-azure-ssms.md
  
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0316_2016-->

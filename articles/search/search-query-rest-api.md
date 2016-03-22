@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Erstellen eines Azure Search-Indexes mit einer REST-API | Microsoft Azure | Gehosteter Cloudsuchdienst"
+    pageTitle="Abfragen des Azure Search-Indexes mithilfe der REST-API | Microsoft Azure | Gehosteter Cloudsuchdienst"
     description="Erstellen Sie eine Suchabfrage in Azure Search, und verwenden Sie Suchparameter zum Filtern und Sortieren von Suchergebnissen."
     services="search"
     documentationCenter=""
@@ -12,18 +12,19 @@
     ms.workload="search"
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
-    ms.date="03/09/2016"
+    ms.date="03/10/2016"
     ms.author="ashmaka"/>
 
 # Abfragen des Azure Search-Indexes mit der REST-API
 > [AZURE.SELECTOR]
 - [Übersicht](search-query-overview.md)
-- [Suchexplorer](search-explorer.md)
-- [Fiddler](search-fiddler.md)
+- [Portal](search-explorer.md)
 - [.NET](search-query-dotnet.md)
 - [REST](search-query-rest-api.md)
 
-Dieser Artikel beschreibt, wie Sie einen Index mithilfe der [Azure Search-REST-API](https://msdn.microsoft.com/library/azure/dn798935.aspx) abfragen. [Erstellen Sie einen Azure Search-Index](search-create-index-rest-api.md) und [füllen Sie ihn mit Daten](search-import-data-rest-api.md), bevor Sie mit dieser exemplarischen Vorgehensweise beginnen.
+Dieser Artikel beschreibt, wie Sie einen Index mithilfe der [Azure Search-REST-API](https://msdn.microsoft.com/library/azure/dn798935.aspx) abfragen.
+
+[Erstellen Sie einen Azure Search-Index](search-what-is-an-index.md) und [füllen Sie ihn mit Daten](search-what-is-data-import.md), bevor Sie mit dieser exemplarischen Vorgehensweise beginnen.
 
 ## I. Identifizieren des Abfrage-API-Schlüssel Ihres Azure Search-Diensts
 Eine wichtige Komponente jedes Suchvorgangs für die Azure Search-REST-API ist der *API-Schlüssel*, der für den bereitgestellten Dienst generiert wurde. Ein gültiger Schlüssel stellt anforderungsbasiert eine Vertrauensstellung her zwischen der Anwendung, die die Anforderung versendet, und dem Dienst, der sie verarbeitet.
@@ -34,7 +35,7 @@ Eine wichtige Komponente jedes Suchvorgangs für die Azure Search-REST-API ist d
 
 Der Dienst enthält *Admin-Schlüssel* und *Abfrageschlüssel*.
 
- - Die primären und sekundären *Admin-Schlüssel* gewähren Ihnen Vollzugriff auf alle Vorgänge. Dazu zählen die Diestverwaltung und das Erstellen und Löschen von Indizes, Indexern und Datenquellen. Ihnen stehen zwei Schlüssel zur Verfügung, damit Sie den sekundären Schlüssel weiterhin nutzen können, wenn Sie den primären Schlüssel neu generieren möchten, und umgekehrt.
+ - Die primären und sekundären *Admin-Schlüssel* gewähren Ihnen Vollzugriff auf alle Vorgänge. Dazu zählen die Dienstverwaltung und das Erstellen und Löschen von Indizes, Indexern und Datenquellen. Ihnen stehen zwei Schlüssel zur Verfügung, damit Sie den sekundären Schlüssel weiterhin nutzen können, wenn Sie den primären Schlüssel neu generieren möchten, und umgekehrt.
  - Die *Abfrageschlüssel* gewähren Ihnen Lesezugriff auf Indizes und Dokumente. Diese werden in der Regel auf Clientanwendungen verteilt, die Suchanfragen ausgeben.
 
 Zum Abfragen eines Indexes können Sie einen der Abfrageschlüssel verwenden. Admin-Schlüssel können auch für Abfragen verwendet werden, Sie sollten jedoch einen Abfrageschlüssel in Ihrem Anwendungscode verwenden, da dies dem [Prinzip der geringsten Rechte](https://en.wikipedia.org/wiki/Principle_of_least_privilege) besser entspricht.
@@ -48,15 +49,7 @@ Sowohl für POST als auch für GET müssen Sie in der Anforderungs-URL Ihren *Di
 
 Das Format für POST ist das Gleiche, allerdings mit der API-Version in den Parametern für die Abfragezeichenfolge.
 
-#### Arten von Abfragen
 
-Azure Search bietet viele Optionen, um äußerst leistungsfähige Abfragen zu erstellen. Die zwei wichtigsten Abfragetypen, die Sie verwenden, sind `search` und `filter`. Eine `search`-Abfrage sucht nach einem oder mehreren Begriffen in allen _durchsuchbaren_ Feldern im Index. Sie funktioniert so, wie Sie es von einer Suchmaschine wie Google oder Bing erwarten. Eine `filter`-Abfrage wertet einen booleschen Ausdruck für alle _filterbaren_ Felder in einem Index aus. Im Gegensatz zu `search`-Abfragen gleichen `filter`-Abfragen den genauen Inhalt eines Felds ab, d. h., bei Zeichenfolgenfeldern muss die Groß-/Kleinschreibung berücksichtigt werden.
-
-Suchvorgänge und Filter können separat oder zusammen verwendet werden. Wenn sie zusammen verwendet werden, wird der Filter zuerst auf den gesamten Index angewendet, und anschließend wird die Suche für die Ergebnisse des Filters ausgeführt. Filter können daher eine nützliche Methode zum Verbessern der Abfrageleistung darstellen, da sie die Menge der Dokumente reduzieren, die bei der Suchabfrage verarbeitet werden müssen.
-
-Die Syntax für Filterausdrücke ist eine Teilmenge der [OData-Filtersprache](https://msdn.microsoft.com/library/azure/dn798921.aspx). Für Suchabfragen können Sie die [vereinfachte Syntax](https://msdn.microsoft.com/library/azure/dn798920.aspx) oder die [Lucene-Abfragesyntax](https://msdn.microsoft.com/library/azure/mt589323.aspx) verwenden.
-
-Weitere Informationen zu den verschiedenen Parametern einer Abfrage finden Sie unter [Search Documents](https://msdn.microsoft.com/library/azure/dn798927.aspx) (Durchsuchen von Dokumenten). Im Folgenden finden Sie auch einige Beispielabfragen.
 
 #### Beispielabfragen
 
@@ -164,6 +157,6 @@ Bei erfolgreicher Abfrageanforderung wird der Statuscode `200 OK` ausgegeben, un
 }
 ```
 
-Weitere Informationen finden Sie im Abschnitt „Response“ (Antwort) unter [Search Documents](https://msdn.microsoft.com/library/azure/dn798927.aspx) (Durchsuchen von Dokumenten). Weitere Informationen zu anderen HTTP-Statuscodes, die bei Fehlern ausgegeben werden, finden Sie unter [HTTP status codes (Azure Search)](https://msdn.microsoft.com/library/azure/dn798925.aspx) (HTTP-Statuscodes (Azure Search)).
+Weitere Informationen finden Sie im Abschnitt „Antwort“ unter [Dokumente durchsuchen](https://msdn.microsoft.com/library/azure/dn798927.aspx). Weitere Informationen zu anderen HTTP-Statuscodes, die bei Fehlern ausgegeben werden, finden Sie unter [HTTP-Statuscodes (Azure Search)](https://msdn.microsoft.com/library/azure/dn798925.aspx).
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

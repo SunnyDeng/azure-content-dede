@@ -255,9 +255,11 @@ In diesem Abschnitt verwenden Sie Azure-Tools, die in den Visual Studio-Assisten
 
 	![](./media/app-service-api-dotnet-get-started/apptype.png)
 
-	Mit dem App-Typ werden nicht die Features bestimmt, die für die neue API-App, Web-App oder mobile App verfügbar sind. Alle API-App-Features, die in diesen Tutorials veranschaulicht werden, sind für alle drei Typen verfügbar. Die einzigen Unterschiede sind das im Azure-Portal angezeigte Symbol und der Text für den App-Typ sowie die Reihenfolge, in der Features auf einigen Seiten im Portal aufgeführt werden. Das Azure-Portal wird später in diesem Tutorial noch vorgestellt. Es ist eine Webschnittstelle zum Verwalten von Azure-Ressourcen.
+	<a id="apptype"></a> Der App-Typ bestimmt nicht die Features, die für die neue API-App, Web-App oder mobile App verfügbar sind. Alle API-App-Features, die in diesen Tutorials veranschaulicht werden, sind für alle drei Typen verfügbar. Die einzigen Unterschiede sind das im Azure-Portal angezeigte Symbol und der Text für den App-Typ sowie die Reihenfolge, in der Features auf einigen Seiten im Portal aufgeführt werden. Das Azure-Portal wird später in diesem Tutorial noch vorgestellt. Es ist eine Webschnittstelle zum Verwalten von Azure-Ressourcen.
 
-4. Geben Sie einen **API-App-Namen** ein, der in der Domäne *azurewebsites.net* eindeutig ist, z. B. ToDoListDataAPI mit einer angehängten Zahl.
+	Für diese Tutorials wird das SPA-Front-End in einer Web-App ausgeführt und jedes Web-API-Back-End in einer API-App. Es würde jedoch alles genauso funktionieren, wenn alle drei Apps Web-Apps oder API-Apps wären. Zudem könnte eine einzelne API-App oder Web-App sowohl das SPA-Front-End als auch das Back-End der mittleren Ebene hosten.
+
+4. Geben Sie einen **API-App-Namen** ein, der in der Domäne *azurewebsites.net* eindeutig ist, beispielsweise „ToDoListDataAPI“ mit einer angehängten Nummer.
 
 	Visual Studio schlägt einen eindeutigen Namen vor, indem an den Projektnamen eine Zeichenfolge mit Datum und Uhrzeit angefügt wird. Wenn Sie möchten, können Sie diesen Namen akzeptieren.
 
@@ -265,7 +267,7 @@ In diesem Abschnitt verwenden Sie Azure-Tools, die in den Visual Studio-Assisten
 
 	Dieser Name wird von Azure als Präfix für die URL Ihrer Anwendung verwendet. Die vollständige URL besteht aus diesem Namen und dem Zusatz *.azurewebsites.net*. Für den Namen `ToDoListDataAPI` lautet die URL z. B. `todolistdataapi.azurewebsites.net`.
 
-6. Klicken Sie in der Dropdownliste **Ressourcengruppe** auf **Neu**, und geben Sie dann „ToDoListGroup“ oder einen anderen Namen ein, den Sie bevorzugen.
+6. Klicken Sie in der Dropdownliste **Ressourcengruppe** auf **Neu**, und geben Sie dann „ToDoListGroup“ oder einen beliebigen anderen Namen ein.
 
 	Eine Ressourcengruppe ist eine Sammlung mit Azure-Ressourcen, z. B. API-Apps, Datenbanken, VMs usw. Für dieses Tutorial ist es besser, eine neue Ressourcengruppe zu erstellen. Es ist dann einfacher, alle Azure-Ressourcen, die Sie für das Tutorial erstellen, in einem Schritt zu löschen.
 
@@ -273,13 +275,13 @@ In diesem Abschnitt verwenden Sie Azure-Tools, die in den Visual Studio-Assisten
 
 4. Klicken Sie neben der Dropdownliste **App Service-Plan** auf die Schaltfläche **Neu**.
 
-	Der Screenshot enthält Beispielwerte für die Optionen **API-App-Name**, **Abonnement** und **Ressourcengruppe**. Ihre Werte werden sich von diesen Werten unterscheiden.
+	Der Screenshot zeigt Beispielwerte für die Optionen **API-App-Name**, **Abonnement** und **Ressourcengruppe**. Ihre Werte werden sich von diesen Werten unterscheiden.
 
 	![](./media/app-service-api-dotnet-get-started/createas.png)
 
 	In den folgenden Schritten erstellen Sie einen App Service-Plan für die neue Ressourcengruppe. Mit einem App Service-Plan werden die Computeressourcen angegeben, auf denen Ihre API-App ausgeführt wird. Wenn Sie beispielsweise den Free-Tarif wählen, wird Ihre API-App auf freigegebenen VMs ausgeführt. Für einige kostenpflichtige Tarife wird sie dagegen auf dedizierten VMs ausgeführt. Weitere Informationen zu App Service-Plänen finden Sie unter [App Service-Pläne – Übersicht](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md).
 
-5. Geben Sie im Dialogfeld **App Service-Plan konfigurieren** den Namen „ToDoListPlan“ oder einen anderen Namen ein, den Sie bevorzugen.
+5. Geben Sie im Dialogfeld **App Service-Plan konfigurieren** den Namen „ToDoListPlan“ oder einen beliebigen anderen Namen ein.
 
 5. Wählen Sie in der Dropdownliste **Standort** den Standort aus, der Ihnen am nächsten liegt.
 
@@ -305,7 +307,7 @@ In diesem Abschnitt verwenden Sie Azure-Tools, die in den Visual Studio-Assisten
 
 8. Klicken Sie auf der Registerkarte **Verbindung** des Assistenten **Web veröffentlichen** auf **Weiter**.
 
-	Sie können stattdessen auch gleich auf **Veröffentlichen** klicken, um das Projekt sofort für die neue API-App bereitzustellen. In diesem Tutorial verwenden Sie aber die anderen Registerkarten dieses Dialogfelds, um zu erfahren, welche Optionen darauf enthalten sind.
+	Sie können stattdessen auch gleich auf **Veröffentlichen** klicken, um das Projekt sofort für die neue API-App bereitzustellen. In diesem Tutorial verwenden Sie aber die anderen Registerkarten dieses Dialogfelds, um zu erfahren, welche Optionen dort verfügbar sind.
 
 	![](./media/app-service-api-dotnet-get-started/connnext.png)
 
@@ -315,7 +317,7 @@ In diesem Abschnitt verwenden Sie Azure-Tools, die in den Visual Studio-Assisten
 	* Während der Veröffentlichung vorkompilieren
 	* Dateien aus dem App\_Data-Ordner ausschließen
 
-	Für dieses Tutorial benötigen Sie diese Optionen nicht. Ausführliche Beschreibungen ihrer Funktionsweise finden Sie unter [Gewusst wie: Bereitstellen eines Webanwendungsprojekts mit der One-Click-Veröffentlichung in Visual Studio](https://msdn.microsoft.com/library/dd465337.aspx).
+	Für dieses Tutorial benötigen Sie diese Optionen nicht. Ausführliche Beschreibungen der Funktionsweise dieser Optionen finden Sie unter [Gewusst wie: Bereitstellen eines Webanwendungsprojekts mit der One-Click-Veröffentlichung in Visual Studio](https://msdn.microsoft.com/library/dd465337.aspx).
 
 14. Klicken Sie auf **Weiter**.
 
@@ -345,13 +347,13 @@ In diesem Abschnitt verwenden Sie Azure-Tools, die in den Visual Studio-Assisten
 
 	![](./media/app-service-api-dotnet-get-started/browseas.png)
 
-15. Suchen Sie im Blatt **App Services** nach Ihrer neuen API-App, und klicken Sie darauf. (Im Azure-Portal werden Fenster, die auf der rechten Seite geöffnet werden, als *Blätter* bezeichnet.)
+15. Suchen Sie auf dem Blatt **App Services** nach Ihrer neuen API-App, und klicken Sie darauf. (Im Azure-Portal werden Fenster, die auf der rechten Seite geöffnet werden, als *Blätter* bezeichnet.)
 
 	![](./media/app-service-api-dotnet-get-started/choosenewapiappinportal.png)
 
 	Es werden zwei Blätter geöffnet: ein Blatt mit einer Übersicht zur API-App, und ein Blatt mit einer langen Liste mit Einstellungen, die Sie anzeigen und ändern können.
 
-16. Suchen Sie im Blatt **Einstellungen** nach dem Abschnitt **API**, und klicken Sie auf **API-Definition**.
+16. Suchen Sie auf dem Blatt **Einstellungen** nach dem Abschnitt **API**, und klicken Sie auf **API-Definition**.
 
 	![](./media/app-service-api-dotnet-get-started/apidefinsettings.png)
 
@@ -405,7 +407,7 @@ Das Projekt ToDoListAPI verfügt bereits über den generierten Clientcode, aber 
 
 	![](./media/app-service-api-dotnet-get-started/codegenfiles.png)
 
-5. Öffnen Sie im Projekt ToDoListAPI die Datei *Controllers\\ToDoListController.cs*, um den Code zum Aufrufen der API mit dem generierten Client anzuzeigen.
+5. Öffnen Sie im Projekt „ToDoListAPI“ die Datei *Controllers\\ToDoListController.cs*, um den Code zum Aufrufen der API mit dem generierten Client anzuzeigen.
 
 	Der folgende Codeausschnitt zeigt, wie mit dem Code das Clientobjekt instanziiert und die Get-Methode aufgerufen wird.
 
@@ -429,7 +431,7 @@ Das Projekt ToDoListAPI verfügt bereits über den generierten Clientcode, aber 
 
 ### Erstellen einer API-App zum Hosten der mittleren Ebene
 
-1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt ToDoListAPI (nicht ToDoListDataAPI), und klicken Sie dann auf **Veröffentlichen**.
+1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt „ToDoListAPI“ (nicht „ToDoListDataAPI“), und klicken Sie dann auf **Veröffentlichen**.
 
 3.  Klicken Sie auf der Registerkarte **Profil** des Assistenten **Web veröffentlichen** auf **Microsoft Azure App Service**.
 
@@ -457,9 +459,9 @@ Wenn Sie jetzt die API-App der mittleren Ebene aufrufen, würde versucht werden,
  
 1. Navigieren Sie zum [Azure-Portal](https://portal.azure.com/) und dann zum Blatt **API-App** für die API-App, die Sie zum Hosten des Projekts „TodoListAPI“ (mittlere Ebene) erstellt haben.
 
-2. Klicken Sie im Blatt **Einstellungen** der API-App auf **App-Einstellungen**.
+2. Klicken Sie auf dem Blatt **Einstellungen** der API-App auf **App-Einstellungen**.
  
-4. Scrollen Sie im Blatt **Anwendungseinstellungen** der API-App nach unten zum Abschnitt **App-Einstellungen**, und fügen Sie den folgenden Schlüssel und Wert hinzu:
+4. Scrollen Sie auf dem Blatt **Anwendungseinstellungen** der API-App nach unten zum Abschnitt **App-Einstellungen**, und fügen Sie den folgenden Schlüssel und Wert hinzu:
 
 	| **Schlüssel** | toDoListDataAPIURL |
 	|---|---|
@@ -478,15 +480,17 @@ Wenn Sie jetzt die API-App der mittleren Ebene aufrufen, würde versucht werden,
 
 13. Fügen Sie der URL in der Adresszeile des Browsers „swagger“ hinzu, und drücken Sie dann die EINGABETASTE. (Die URL lautet `http://{apiappname}.azurewebsites.net/swagger`.)
 
-	Im Browser wird die gleiche Swagger-Benutzeroberfläche wie vorher für ToDoListDataAPI angezeigt, aber jetzt ist `owner` kein erforderliches Feld für den Get-Vorgang. Der Grund ist, dass die API-App der mittleren Ebene diesen Wert für Sie an die API-App der Datenebene sendet. (Wenn Sie die Tutorials zur Authentifizierung durcharbeiten, sendet die mittlere Ebene für den Parameter `owner` echte Benutzer-IDs. Vorerst wird ein Sternchen hartcodiert.)
+	Im Browser wird die gleiche Swagger-Benutzeroberfläche wie zuvor für „ToDoListDataAPI“ angezeigt. `owner` ist jetzt jedoch kein erforderliches Feld für den Get-Vorgang, weil die API-App der mittleren Ebene diesen Wert für Sie an die API-App der Datenebene sendet. (Wenn Sie die Tutorials zur Authentifizierung durcharbeiten, sendet die mittlere Ebene für den Parameter `owner` echte Benutzer-IDs. Vorerst wird ein Sternchen hartcodiert.)
 
 12. Probieren Sie die Get-Methode und die anderen Methoden aus, um zu überprüfen, ob die API-App der mittleren Ebene die API-App der Datenebene erfolgreich aufruft.
 
 	![](./media/app-service-api-dotnet-get-started/midtierget.png)
 
+Weitere Informationen zum generierten Client finden Sie im [AutoRest-GitHub-Repository](https://github.com/azure/autorest). Falls Sie Probleme bei der Verwendung des generierten Clients haben, können Sie ein [Problem im AutoRest-Repository](https://github.com/azure/autorest/issues) öffnen.
+
 ## <a id="creating"></a> Optional: Erstellen eines API-App-Projekts von Grund auf
 
-In diesem Tutorial laden Sie ASP.NET-Web-API-Projekte für die Bereitstellung in App Service herunter, anstatt Projekte von Grund auf neu zu erstellen. Zum Erstellen eines Projekts, das Sie in einer API-App bereitstellen möchten, können Sie ein typisches Web-API-Projekt erstellen und das Swashbuckle-Paket installieren. Oder Sie können die **Azure-API-App**-Vorlage für neue Projekte verwenden. Klicken Sie zum Verwenden dieser Vorlage auf **Datei > Neu > Projekt > ASP.NET-Webanwendung > Azure-API-App**.
+In diesem Tutorial laden Sie ASP.NET-Web-API-Projekte für die Bereitstellung in App Service herunter, anstatt Projekte von Grund auf neu zu erstellen. Zum Erstellen eines Projekts, das Sie in einer API-App bereitstellen möchten, können Sie ein typisches Web-API-Projekt erstellen und das Swashbuckle-Paket installieren. Alternativ können Sie die **Azure-API-App**-Vorlage für neue Projekte verwenden. Klicken Sie zum Verwenden dieser Vorlage auf **Datei > Neu > Projekt > ASP.NET-Webanwendung > Azure-API-App**.
 
 ![](./media/app-service-api-dotnet-get-started/apiapptemplate.png)
 
@@ -494,13 +498,13 @@ Die Projektvorlage **Azure-API-App** entspricht der Auswahl der ASP.NET 4.5.2-Vo
 
 ## Optional: Ändern eines App-Typs
 
-Wie bereits beschrieben, besteht der einzige Unterschied zwischen API-Apps, Web-Apps und mobilen Apps darin, wie sie im Portal dargestellt werden. Da alle dieselben Features aufweisen, ist es nicht erforderlich, einen App-Typ zu ändern.
+Wie [zuvor](#apptype) erläutert, besteht der einzige Unterschied zwischen API-Apps, Web-Apps und mobilen Apps darin, wie sie im Portal dargestellt werden. Da alle dieselben Features aufweisen, ist es nicht erforderlich, einen App-Typ zu ändern.
 
 Wenn Sie die Portaldarstellung ändern möchten, ist dies ein einfacher Vorgang. Sie können beispielsweise eine der API-Apps, die Sie gerade erstellt haben, in eine Web-App ändern, indem Sie die folgenden Schritte ausführen:
 
 1. Öffnen Sie den Ressourcen-Explorer.
 
-2. Erweitern Sie im linken Navigationsbereich die Option **Abonnements**, und erweitern Sie dann das Abonnement, das Sie gerade verwenden.
+2. Erweitern Sie im linken Navigationsbereich die Option **Abonnements** und dann das Abonnement, das Sie gerade verwenden.
 
 4. Erweitern Sie **resourceGroups** und dann die Ressourcengruppe, die Sie gerade verwenden.
 
@@ -508,7 +512,7 @@ Wenn Sie die Portaldarstellung ändern möchten, ist dies ein einfacher Vorgang.
 
 6. Klicken Sie auf **Bearbeiten**.
 
-8. Suchen Sie nach der Eigenschaft `kind`, und ändern Sie sie von „api“ in „WebApp“.
+8. Suchen Sie nach der `kind`-Eigenschaft, und ändern Sie sie von „api“ in „WebApp“.
 
 	![](./media/app-service-api-dotnet-get-started/resexp.png)
 
@@ -518,7 +522,7 @@ Wenn Sie die Portaldarstellung ändern möchten, ist dies ein einfacher Vorgang.
 
 ## Optional: API-Definitions-URL in Azure-Ressourcen-Manager-Vorlagen
 
-In diesem Tutorial wurde die API-Definitions-URL in Visual Studio und im Azure-Portal veranschaulicht. Sie können die API-Definitions-URL für eine API-App auch konfigurieren, indem Sie [Azure Resource Manager-Vorlagen](../resource-group-authoring-templates.md) in Befehlszeilentools verwenden, z. B. [Azure PowerShell](../powershell-install-configure.md) und die [Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md).
+In diesem Tutorial wurde die API-Definitions-URL in Visual Studio und im Azure-Portal veranschaulicht. Sie können die API-Definitions-URL für eine API-App auch konfigurieren, indem Sie [Azure Resource Manager-Vorlagen](../resource-group-authoring-templates.md) in Befehlszeilentools verwenden, beispielsweise in [Azure PowerShell](../powershell-install-configure.md) und der [Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md).
 
 Öffnen Sie die [Datei „azuredeploy.json“ im Repository für die Beispielanwendung dieses Tutorials](https://github.com/azure-samples/app-service-api-dotnet-todo-list/blob/master/azuredeploy.json), um ein Beispiel für eine Azure Resource Manager-Vorlage zum Festlegen der API-Definitionseigenschaft anzuzeigen. Suchen Sie nach dem Abschnitt der Vorlage, die wie im folgenden Beispiel aussieht:
 
@@ -528,6 +532,6 @@ In diesem Tutorial wurde die API-Definitions-URL in Visual Studio und im Azure-P
 
 ## Nächste Schritte
 
-In diesem Tutorial haben Sie erfahren, wie Sie API-Apps erstellen, Code dafür bereitstellen, Clientcode generieren und die Apps dann über .NET-Clients nutzen. Im nächsten Tutorial der Reihe „Erste Schritte mit API-Apps“ wird gezeigt, wie Sie [API-Apps über JavaScript-Clients mit CORS nutzen](app-service-api-cors-consume-javascript.md).
+In diesem Tutorial haben Sie erfahren, wie Sie API-Apps erstellen, Code dafür bereitstellen, Clientcode generieren und die Apps dann über .NET-Clients nutzen. Im nächsten Tutorial der Reihe „Erste Schritte mit API-Apps“ wird gezeigt, wie Sie [API-Apps über JavaScript-Clients mit CORS nutzen](app-service-api-cors-consume-javascript.md). In weiteren Tutorials dieser Serie wird die Implementierung von Authentifizierung und Autorisierung erläutert.
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

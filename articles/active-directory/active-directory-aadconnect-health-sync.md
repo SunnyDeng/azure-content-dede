@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="02/17/2016"
+	ms.date="03/08/2016"
 	ms.author="billmath"/>
 
 # Verwenden von Azure AD Connect Health für die Synchronisierung
@@ -28,6 +28,17 @@ Im Abschnitt mit Azure AD Connect Health-Warnungen für die Synchronisierung wir
 Durch Auswahl einer Warnung werden zusätzliche Informationen, Lösungsschritte sowie Links zu weiterführender Dokumentation angezeigt.
 
 ![Azure AD Connect-Synchronisierungsfehler](./media/active-directory-aadconnect-health-sync/alert.png)
+
+### Beschränkte Auswertung von Warnungen
+Wenn Azure AD Connect die Standardkonfiguration NICHT verwendet (z. B. wenn die Attributfilterung von der Standardkonfiguration in eine benutzerdefinierte Konfiguration geändert wird), lädt der Azure AD Connect Health-Agent die Fehlerereignisse im Zusammenhang mit Azure AD Connect nicht hoch.
+
+Dies schränkt die Auswertung der Warnungen vom Dienst ein. Ihnen wird im Azure-Portal unter Ihrem Dienst ein Banner angezeigt, das auf diese Bedingung hinweist.
+
+![Azure AD Connect Health für die Synchronisierung](./media/active-directory-aadconnect-health-sync/banner.png)
+
+Sie können dies ändern, indem Sie auf „Einstellungen“ klicken und das Hochladen aller Fehlerprotokolle durch den Azure AD Connect Health-Agent erlauben.
+
+![Azure AD Connect Health für die Synchronisierung](./media/active-directory-aadconnect-health-sync/banner2.png)
 
 ## Einblick in die Synchronisierung
 Mit der neuesten Version von Azure AD Connect Health für die Synchronisierung wurden folgende neue Funktionen eingeführt:
@@ -56,4 +67,4 @@ Dieses Feature bietet eine grafische Darstellung des Trends bei der Anzahl von a
 * [Azure AD Connect Health – FAQ](active-directory-aadconnect-health-faq.md)
 * [Azure AD Connect Health: Versionsverlauf](active-directory-aadconnect-health-version-history.md)
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0316_2016-->

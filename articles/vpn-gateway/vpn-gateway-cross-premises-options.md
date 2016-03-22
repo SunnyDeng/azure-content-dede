@@ -1,6 +1,6 @@
 <properties 
    pageTitle="Informationen über sichere, standortübergreifende Verbindungen für virtuelle Netzwerke | Microsoft Azure"
-   description="Erfahren Sie mehr über die Arten von sicheren, standortübergreifenden Verbindungen für virtuelle Netzwerke, einschließlich der Standort-zu-Standort-Punkt-zu-Standort- und ExpressRoute-Verbindungen."
+   description="Erfahren Sie mehr über die Arten von sicheren, standortübergreifenden Verbindungen für virtuelle Netzwerke, einschließlich der Standort-zu-Standort, Punkt-zu-Standort- und ExpressRoute-Verbindungen."
    services="vpn-gateway"
    documentationCenter="na"
    authors="cherylmc"
@@ -12,14 +12,14 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="12/01/2015"
+   ms.date="03/08/2016"
    ms.author="cherylmc" />
 
 # Informationen über sichere, standortübergreifende Verbindungen für virtuelle Netzwerke
 
-Wenn Sie Ihre lokalen Standorte sicher mit einem virtuellen Netzwerk verbinden möchten, stehen Ihnen drei Optionen zur Verfügung: Standort-zu-Standort, Punkt-zu-Standort und ExpressRoute.
+Dieser Artikel beschreibt die verschiedenen Methoden, wie Sie Ihren lokalen Standort mit virtuellen Azure-Netzwerken verbinden können. Dieser Artikel betrifft sowohl das Resource Manager-Bereitstellungsmodell als auch das klassische Bereitstellungsmodell.
 
-Die von Ihnen gewählte Option kann von einer Vielzahl von Faktoren abhängen:
+Drei Verbindungsoptionen stehen zur Verfügung: Standort-zu-Standort, Punkt-zu-Standort und ExpressRoute. Die von Ihnen gewählte Option kann von einer Vielzahl von Faktoren abhängen:
 
 
 - Welche Form von Durchsatz benötigt Ihre Lösung?
@@ -43,12 +43,12 @@ Die folgende Tabelle kann Ihnen dabei helfen, die beste Verbindungsoption für I
 | **SLA** | [SLA](https://azure.microsoft.com/support/legal/sla/) | [SLA](https://azure.microsoft.com/support/legal/sla/) | [SLA](https://azure.microsoft.com/support/legal/sla/) |
 | **Preise** | [Preise](https://azure.microsoft.com/pricing/details/vpn-gateway/) | [Preise](https://azure.microsoft.com/pricing/details/vpn-gateway/) | [Preise](https://azure.microsoft.com/pricing/details/expressroute/) |
 | **Technische Dokumentation** | [VPN Gateway-Dokumentation](https://azure.microsoft.com/documentation/services/vpn-gateway/) | [VPN Gateway-Dokumentation](https://azure.microsoft.com/documentation/services/vpn-gateway/) | [ExpressRoute-Dokumentation](https://azure.microsoft.com/documentation/services/expressroute/) |
-| **Häufig gestellte Fragen ** | [Häufig gestellte Fragen zum VPN Gateway](vpn-gateway-vpn-faq.md) | [Häufig gestellte Fragen zum VPN Gateway](vpn-gateway-vpn-faq.md) | [ExpressRoute – FAQ](../expressroute/expressroute-faqs.md) |
+| **HÄUFIG GESTELLTE FRAGEN** | [Häufig gestellte Fragen zum VPN-Gateway](vpn-gateway-vpn-faq.md) | [Häufig gestellte Fragen zum VPN-Gateway](vpn-gateway-vpn-faq.md) | [ExpressRoute – FAQ](../expressroute/expressroute-faqs.md) |
 
 
 ## Standort-zu-Standort-Verbindungen
 
-Mit einem Standort-zu-Standort-VPN können Sie eine sichere Verbindung zwischen Ihrem lokalen Standort und dem virtuellen Netzwerk herstellen. Um eine Standort-zu-Standort-Verbindung herzustellen, wird ein VPN-Gerät im lokalen Netzwerk so konfiguriert, dass eine sichere Verbindung mit dem Azure-VPN-Gateway hergestellt wird. Nachdem die Verbindung hergestellt wurde, können Ressourcen in Ihrem lokalen Netzwerk und Ressourcen in Ihrem virtuellen Netzwerk direkt und sicher miteinander kommunizieren. Für Standort-zu-Standort-Verbindungen müssen Sie keine eigene Verbindung für jeden Clientcomputer in Ihrem lokalen Netzwerk herstellen, um auf die Ressourcen im virtuellen Netzwerk zuzugreifen.
+Mit einem Standort-zu-Standort-VPN können Sie eine sichere Verbindung zwischen Ihrem lokalen Standort und dem virtuellen Netzwerk herstellen. Um eine Standort-zu-Standort-Verbindung herzustellen, wird ein VPN-Gerät im lokalen Netzwerk so konfiguriert, dass eine sichere Verbindung mit dem Azure VPN Gateway hergestellt wird. Nachdem die Verbindung hergestellt wurde, können Ressourcen in Ihrem lokalen Netzwerk und Ressourcen in Ihrem virtuellen Netzwerk direkt und sicher miteinander kommunizieren. Für Standort-zu-Standort-Verbindungen müssen Sie keine eigene Verbindung für jeden Clientcomputer in Ihrem lokalen Netzwerk herstellen, um auf die Ressourcen im virtuellen Netzwerk zuzugreifen.
 
 **Verwenden Sie eine Standort-zu-Standort-Verbindung in den folgenden Fällen:**
 
@@ -59,11 +59,11 @@ Mit einem Standort-zu-Standort-VPN können Sie eine sichere Verbindung zwischen 
 **Anforderungen**
 
 - Das lokale VPN-Gerät muss eine Internet-zugängliche IPv4-IP-Adresse haben. Es darf sich nicht hinter einem NAT-Gerät befinden.
-- Sie müssen über ein kompatibles VPN-Gerät verfügen. Weitere Informationen finden Sie unter [Informationen zu VPN-Geräten](http://go.microsoft.com/fwlink/p/?LinkID=615099). 
+- Sie müssen über ein kompatibles VPN-Gerät verfügen. Weitere Informationen finden Sie unter [Informationen zu VPN-Geräten](vpn-gateway-about-vpn-devices.md). 
 - Das VPN-Gerät, das Sie verwenden, muss mit dem Gatewaytyp kompatibel sein, der für Ihre Lösung erforderlich ist. Siehe [Zu VPN-Gateways](vpn-gateway-about-vpngateways.md).
 - Die Gateway-SKU wirkt sich auch auf den aggregierten Durchsatz aus. Weitere Informationen finden Sie unter [Gateway-SKUs](vpn-gateway-about-vpngateways.md#gateway-skus). 
 
-Informationen zum Konfigurieren einer Standort-zu-Standort-VPN-Gatewayverbindung mithilfe des klassischen Azure-Portals und des klassischen Bereitstellungsmodells finden Sie unter [Konfigurieren eines virtuellen Netzwerks mit einer Standort-zu-Standort-VPN-Verbindung](vpn-gateway-site-to-site-create.md). Informationen zum Konfigurieren einer Standort-zu-Standort-VPN mithilfe des Ressourcen-Manager-Bereitstellungsmodells finden Sie unter [Erstellen eines virtuellen Netzwerks mit einer Standort-zu-Standort-VPN-Verbindung](vpn-gateway-create-site-to-site-rm-powershell.md).
+Informationen zum Konfigurieren einer Standort-zu-Standort-VPN- Gateway-Verbindung mithilfe des klassischen Azure-Portals und des klassischen Bereitstellungsmodells finden Sie unter [Konfigurieren eines virtuellen Netzwerks mit einer Standort-zu-Standort-VPN-Verbindung für das klassische Bereitstellungsmodell](vpn-gateway-site-to-site-create.md). Informationen zum Konfigurieren einer Standort-zu-Standort-VPN mithilfe des Ressourcen-Manager-Bereitstellungsmodells finden Sie unter [Erstellen eines virtuellen Netzwerks mit einer Standort-zu-Standort-VPN-Verbindung für das Resource Manager-Bereitstellungsmodell](vpn-gateway-create-site-to-site-rm-powershell.md).
 
 
 ## Punkt-zu-Standort-Verbindungen
@@ -84,7 +84,7 @@ Punkt-zu-Standort- und Standort-zu-Standort-Konfigurationen können gleichzeitig
 
 - Sie haben keine Internet-zugängliche IPv4-IP-Adresse für Ihr VPN-Gerät.
 
-Weitere Informationen zum Konfigurieren einer Punkt-zu-Standort-Verbindung finden Sie unter [Konfigurieren einer Punkt-zu-Standort-VPN-Verbindung mit einem virtuellen Netzwerk](vpn-gateway-point-to-site-create.md).
+Weitere Informationen zum Konfigurieren einer Punkt-zu-Standort-Verbindung für das klassische Bereitstellungsmodell finden Sie unter [Konfigurieren einer Punkt-zu-Standort-VPN-Verbindung mit einem virtuellen Netzwerk für das klassische Bereitstellungsmodell](vpn-gateway-point-to-site-create.md). Weitere Informationen zum Konfigurieren einer Punkt-zu-Standort-Verbindung für das Resource Manager-Bereitstellungsmodell finden Sie unter [Konfigurieren einer Punkt-zu-Standort-VPN-Verbindung mit einem virtuellen Netzwerk für das Resource Manager-Bereitstellungsmodell](vpn-gateway-howto-point-to-site-rm-ps.md).
 
 ## ExpressRoute-Verbindungen
 
@@ -97,6 +97,6 @@ Weitere Informationen über ExpressRoute finden Sie unter [ExpressRoute – Tech
 
 ## Nächste Schritte
 
-Weitere Informationen finden Sie unter [FAQs zu ExpressRoute](../expressroute/expressroute-faqs.md) und [FAQs zu VPN-Gateway](vpn-gateway-vpn-faq.md).
+Weitere Informationen finden Sie unter [Häufig gestellte Fragen zum VPN Gateway](vpn-gateway-vpn-faq.md) und [ExpressRoute – FAQ](../expressroute/expressroute-faqs.md).
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0316_2016-->

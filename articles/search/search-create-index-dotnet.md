@@ -14,7 +14,7 @@
     ms.workload="search"
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
-    ms.date="03/09/2016"
+    ms.date="03/10/2016"
     ms.author="brjohnst"/>
 
 # Erstellen eines Azure Search-Index mit dem .NET SDK
@@ -77,8 +77,8 @@ In unserem Beispiel hat der Index den Namen „hotels“. Die Felder wurden wie 
 var definition = new Index()
 {
     Name = "hotels",
-    Fields = new[] 
-    { 
+    Fields = new[]
+    {
         new Field("hotelId", DataType.String)                       { IsKey = true, IsFilterable = true },
         new Field("baseRate", DataType.Double)                      { IsFilterable = true, IsSortable = true, IsFacetable = true },
         new Field("description", DataType.String)                   { IsSearchable = true },
@@ -121,6 +121,6 @@ serviceClient.Indexes.Delete("hotels");
 > [AZURE.NOTE] Der Beispielcode in diesem Artikel verwendet der Einfachheit halber die synchronen Methoden des Azure Search-.NET-SDK. Für Ihre eigenen Anwendungen empfehlen wir aus Gründen der Skalierbarkeit und Reaktionsfähigkeit die asynchronen Methoden. In den Beispielen oben können Sie `Create` und `Delete` beispielsweise auch durch `CreateAsync` und `DeleteAsync` ersetzen.
 
 ## Weiter
-Nach dem Erstellen eines Azure Search-Indexes können Sie Ihre Inhalte in den Index hochladen und mit dem Durchsuchen der Daten beginnen. Ausführliche Informationen finden Sie unter [Datenimport in Azure Search mit dem .NET SDK](search-import-data-dotnet.md).
+Nach dem Erstellen eines Azure Search-Indexes können Sie [Ihre Inhalte in den Index hochladen](search-what-is-data-import.md) und mit dem Durchsuchen der Daten beginnen.
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

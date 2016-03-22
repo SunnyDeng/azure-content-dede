@@ -12,7 +12,7 @@
  ms.tgt_pltfrm="na"
  ms.devlang="dotnet"
  ms.topic="get-started-article"
- ms.date="12/04/2015"
+ ms.date="03/09/2016" 
  ms.author="krisragh"/>
 
 # Konzepte, Terminologie und Entitätshierarchie für Scheduler
@@ -30,14 +30,14 @@ Die folgende Tabelle beschreibt die wichtigsten Ressourcen, die von der Schedule
 
 ## Entitätsverwaltung für Scheduler
 
-Die Scheduler- und die Service Management-API machen für die Ressourcen allgemein folgende Vorgänge verfügbar:
+Die Scheduler- und die Service Management-API machen für die Ressourcen allgemein folgende Vorgänge verfügbar:
 
 |Funktion|Beschreibung und URI-Adresse|
 |---|---|
 |**Clouddienstverwaltung**|GET-, PUT- und DELETE-Unterstützung zum Erstellen und Ändern von Clouddiensten <p>`https://management.core.windows.net/{subscriptionId}/cloudservices/{cloudServiceName}`</p>|
 |**Auftragssammlungsverwaltung**|GET-, PUT- und DELETE-Unterstützung zum Erstellen und Ändern von Auftragssammlungen und der darin enthaltenen Aufträge. Bei einer Auftragssammlung handelt es sich um einen Container für Aufträge, der mit Kontingenten und gemeinsamen Einstellungen verknüpft ist. Beispiele für Kontingente (siehe Erläuterung weiter unten) wären die maximale Anzahl von Aufträgen sowie das kleinste Wiederholungsintervall. <p>PUT und DELETE: `https://management.core.windows.net/{subscriptionId}/cloudservices/{cloudServiceName}/resources/scheduler/jobcollections/{jobCollectionName}`</p><p>GET: `https://management.core.windows.net/{subscriptionId}/cloudservices/{cloudServiceName}/resources/scheduler/~/jobcollections/{jobCollectionName}`</p>
 |**Auftragsverwaltung**|GET-, PUT-, POST-, PATCH- und DELETE-Unterstützung zum Erstellen und Ändern von Aufträgen. Alle Aufträge müssen einer bereits vorhandenen Auftragssammlung angehören. Es gibt also keine implizite Erstellung. <p>`https://management.core.windows.net/{subscriptionId}/cloudservices/{cloudServiceName}/resources/scheduler/~/jobcollections/{jobCollectionName}/jobs/{jobId}`</p>|
-|**Auftragsverlaufsverwaltung**|GET-Unterstützung zum Abrufen des Auftragsausführungsverlaufs für 60 Tage. Dieser enthält unter anderem Informationen zur verstrichenen Zeit sowie zu den Ergebnissen der Auftragsausführung. Bietet Unterstützung für Abfragezeichenfolgenparameter zur Filterung auf der Grundlage von Zustand und Status. <P>`https://management.core.windows.net/{subscriptionId}/cloudservices/{cloudServiceName}/resources/scheduler/~/jobcollections/{jobCollectionName}/jobs/{jobId}/history`</p>|
+|**Auftragsverlaufsverwaltung**|GET-Unterstützung zum Abrufen des Auftragsausführungsverlaufs für 60 Tage. Dieser enthält unter anderem Informationen zur verstrichenen Zeit sowie zu den Ergebnissen der Auftragsausführung. Bietet Unterstützung für Abfragezeichenfolgenparameter zur Filterung auf der Grundlage von Zustand und Status. <P>`https://management.core.windows.net/{subscriptionId}/cloudservices/{cloudServiceName}/resources/scheduler/~/jobcollections/{jobCollectionName}/jobs/{jobId}/history`</p>|
 
 ## Auftragstypen
 
@@ -171,7 +171,7 @@ Der Auftrag kann einen von vier Zuständen haben: aktiviert, deaktiviert, abgesc
 
 
     	"state": "disabled", // enabled, disabled, completed, or faulted
-Abgeschlossene und fehlerhafte Aufträge werden nach 60 Tagen gelöscht.
+Abgeschlossene und fehlerhafte Aufträge werden nach 60 Tagen gelöscht.
 
 ## status
 
@@ -185,12 +185,12 @@ Für den Fall, dass bei einem Scheduler-Auftrag ein Fehler auftritt, kann durch 
 
 Für eine Wiederholungsrichtlinie können zwei zusätzliche Einstellungen angegeben werden: ein Wiederholungsintervall (**retryInterval**) und die Anzahl von Wiederholungen (**retryCount**).
 
-Das Wiederholungsintervall, das durch das Objekt **retryInterval** angegeben wird, ist das Intervall zwischen den Wiederholungen. Es ist standardmäßig auf den Mindestwert von einer Minute festgelegt. Der maximal zulässige Wert beträgt 18 Monate. Es wird im ISO-8601-Format definiert. Gleichermaßen wird der Wert für die Anzahl von Wiederholungen mit dem Objekt **retryCount** angegeben; es bestimmt, wie oft versucht wird, einen Vorgang zu wiederholen. Der Standardwert ist 5, der maximal zulässige Wert ist 20\. Die Angabe von **retryInterval** und **retryCount** ist jeweils optional. Wenn **retryType** auf **fixed** festgelegt ist und keine expliziten Werte angegeben werden, werden die Standardwerte verwendet.
+Das Wiederholungsintervall, das durch das Objekt **retryInterval** angegeben wird, ist das Intervall zwischen den Wiederholungen. Es ist standardmäßig auf den Mindestwert von einer Minute festgelegt. Der maximal zulässige Wert beträgt 18 Monate. Es wird im ISO-8601-Format definiert. Gleichermaßen wird der Wert für die Anzahl von Wiederholungen mit dem Objekt **retryCount** angegeben; es bestimmt, wie oft versucht wird, einen Vorgang zu wiederholen. Der Standardwert ist 5, der maximal zulässige Wert ist 20. Die Angabe von **retryInterval** und **retryCount** ist jeweils optional. Wenn **retryType** auf **fixed** festgelegt ist und keine expliziten Werte angegeben werden, werden die Standardwerte verwendet.
 
 ## Weitere Informationen
 
  [Was ist Azure Scheduler?](scheduler-intro.md)
- 
+
  [Erste Schritte mit dem Scheduler im Azure-Portal](scheduler-get-started-portal.md)
 
  [Pläne und Abrechnung in Azure Scheduler](scheduler-plans-billing.md)
@@ -207,4 +207,4 @@ Das Wiederholungsintervall, das durch das Objekt **retryInterval** angegeben wir
 
  [Ausgehende Authentifizierung von Azure Scheduler](scheduler-outbound-authentication.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0316_2016-->

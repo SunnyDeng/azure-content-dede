@@ -11,8 +11,8 @@
  ms.workload="infrastructure-services"
  ms.tgt_pltfrm="na"
  ms.devlang="dotnet"
- ms.topic="get-started-article"
- ms.date="12/04/2015"
+ ms.topic="hero-article"
+ ms.date="03/09/2016"
  ms.author="krisragh"/>
 
 # Was ist Azure Scheduler?
@@ -26,7 +26,7 @@ Scheduler plant [Aufträge](scheduler-concepts-terms.md), protokolliert einen Ve
 Mehrere Szenarios bieten sich für die Verwendung von Scheduler an. Beispiel:
 
 + _Periodische Anwendungsaktionen_: Erfassen von Daten von Twitter in regelmäßigen Abständen in einem Feed.
-+ _Tägliche Wartung_: Tägliche Bereinigung von Protokollen, das Durchführen von Sicherungen und anderen Wartungsaufgaben. Ein Administrator möchte eine Datenbank z. B. für die nächsten neun Monate täglich um 1:00 Uhr sichern.
++ _Tägliche Wartung_: Tägliche Bereinigung von Protokollen, das Durchführen von Sicherungen und anderen Wartungsaufgaben. Ein Administrator möchte eine Datenbank z. B. für die nächsten neun Monate täglich um 1:00 Uhr sichern.
 
 Mit Scheduler können Sie [Auftragssammlungen](scheduler-concepts-terms.md) programmgesteuert, mithilfe von Skripts und im Portal erstellen, aktualisieren, löschen, anzeigen und verwalten.
 
@@ -50,4 +50,4 @@ Mit Scheduler können Sie [Auftragssammlungen](scheduler-concepts-terms.md) prog
 
  [Ausgehende Authentifizierung von Azure Scheduler](scheduler-outbound-authentication.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0316_2016-->

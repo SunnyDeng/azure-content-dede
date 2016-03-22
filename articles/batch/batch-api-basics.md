@@ -13,7 +13,7 @@
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
 	ms.workload="big-compute"
-	ms.date="02/25/2016"
+	ms.date="03/11/2016"
 	ms.author="yidingz;marsma"/>
 
 # Übersicht über Azure Batch-Features
@@ -44,7 +44,7 @@ In den folgenden Abschnitten erfahren Sie mehr zu den einzelnen Ressourcen, die 
 
 ## <a name="resource"></a> Ressourcen des Batch-Diensts
 
-Wenn Sie den Azure Batch-Dienst verwenden, nutzen Sie die folgenden Ressourcen:
+Wenn Sie Batch verwenden, nutzen Sie viele der folgenden Ressourcen. Einige dieser Ressourcen, wie etwa Konten, Computeknoten, Pools, Aufträge und Aufgaben, werden in allen Batch-Lösungen verwendet. Andere, wie etwa Auftragszeitpläne und Anwendungspakete, sind hilfreiche, aber optionale Funktionen.
 
 - [Konto](#account)
 - [Computeknoten](#computenode)
@@ -55,7 +55,9 @@ Wenn Sie den Azure Batch-Dienst verwenden, nutzen Sie die folgenden Ressourcen:
 	- [Auftrags-Manager-Aufgabe](#jobmanagertask)
 	- [Tasks zur Auftragsvorbereitung und -freigabe](#jobpreprelease)
 	- [Tasks mit mehreren Instanzen](#multiinstance)
-- [Auftragszeitplan](#jobschedule)
+    - [Abhängigkeiten von Aufgaben](#taskdep)
+- [Auftragszeitpläne](#jobschedule)
+- [Anwendungspakete](#appkg)
 
 ### <a name="account"></a>Konto
 
@@ -141,6 +143,7 @@ Zusätzlich zu Tasks, die Sie zur Berechnung auf einem Knoten definieren können
 - [Auftrags-Manager-Aufgabe](#jobmanagertask)
 - [Tasks zur Auftragsvorbereitung und -freigabe](#jobmanagertask)
 - [Tasks mit mehreren Instanzen](#multiinstance)
+- [Abhängigkeiten von Aufgaben](#taskdep)
 
 #### <a name="starttask"></a>Startaufgabe
 
@@ -185,11 +188,23 @@ Weitere Informationen zu Auftragsvorbereitungs- und -freigabetasks finden Sie un
 
 Ein [Task mit mehreren Instanzen](batch-mpi.md) ist ein Task, der für die gleichzeitige Ausführung auf mehreren Computeknoten konfiguriert ist. Tasks mit mehreren Instanzen ermöglichen Szenarien, die eine hohe Leistung benötigen, wie z. B. das Message Passing Interface (MPI), und erfordern, dass Computeknoten zu einer Gruppe gebündelt werden, um einen einzelnen Workload zu bearbeiteten.
 
-Ausführliche Informationen zum Ausführen von MPI-Tasks in Batch mithilfe der Batch .NET-Bibliothek finden Sie unter [Use multi-instance tasks to run Message Passing Interface (MPI) applications in Azure Batch](batch-mpi.md) (Ausführen von Message Passing Interface-Anwendungen (MPI) in Azure Batch mithilfe von Tasks mit mehreren Instanzen).
+Ausführliche Informationen zum Ausführen von MPI-Aufträgen in Batch mithilfe der Batch .NET-Bibliothek finden Sie unter [Verwendung von Tasks mit mehreren Instanzen zum Ausführen von MPI-Anwendungen (Message Passing Interface) in Azure Batch](batch-mpi.md).
+
+#### <a name="taskdep"></a>Abhängigkeiten von Aufgaben
+
+Mithilfe von Abhängigkeiten von Aufgaben können Sie, wie der Name schon sagt, angeben, dass die Ausführung einer Aufgabe vom Abschluss einer oder mehrerer anderer Aufgaben abhängig ist. Die Downstreamaufgabe nutzt unter Umständen die Ausgabe der Upstreamaufgabe oder hängt von einer von der Upstreamaufgabe ausgeführten Initialisierung ab. In einem solchen Fall können Sie angeben, dass Ihr Auftrag Abhängigkeiten zwischen Aufgaben verwendet. Geben Sie dann für jede Aufgabe, die von einer (oder mehreren) anderen abhängig ist, die entsprechenden übergeordneten Aufgaben an.
 
 ### <a name="jobschedule"></a>Geplante Aufträge
 
 Mit Auftragszeitplänen können Sie wiederkehrende Aufträge im Batch-Dienst erstellen. Ein Auftragszeitplan gibt an, wann Aufträge ausgeführt werden, und enthält die Spezifikationen für die auszuführenden Aufträge. Ein Auftragszeitplan ermöglicht die Angabe der Dauer des Zeitplans – für wie lange und wann der Zeitplan in Kraft tritt – und wie oft während dieses Zeitraums Aufträge erstellt werden sollen.
+
+### <a name="appkg"></a>Anwendungspakete
+
+Das Feature [Anwendungspakete](batch-application-packages.md) ermöglicht eine einfache Verwaltung und Bereitstellung von Anwendungen für die in Ihren Pools benötigten Computeknoten. Mit Anwendungspaketen können Sie mehrere Versionen der von Ihren Aufgaben ausgeführten Anwendungen, einschließlich der Binärdaten und Unterstützungsdateien, einfach hochladen und verwalten und daraufhin eine oder mehrere dieser Anwendungen für die Computeknoten in Ihrem Pool bereitstellen.
+
+Batch kümmert sich im Hintergrund um die Details für die Arbeit mit Azure Storage, um Ihre Anwendungspakete sicher zu speichern und für Computeknoten bereitzustellen, damit sowohl Ihr Code als auch der Verwaltungsaufwand vereinfacht wird.
+
+Weitere Informationen zum Anwendungspaketfeature finden Sie unter [Application deployment with Azure Batch application packages](batch-application-packages.md) (Anwendungsbereitstellung mit Azure Batch-Anwendungspaketen).
 
 ## <a name="files"></a>Dateien und Verzeichnisse
 
@@ -326,7 +341,7 @@ Wenn bei einigen Ihrer Tasks Fehler auftreten, kann Ihre Batch-Clientanwendung o
 
 	Dadurch wird das Betriebssystem auf dem Knoten neu installiert. Wie beim Neustart eines Knotens werden Start- und Auftragsvorbereitungstasks nach dem Reimaging des Knotens erneut ausgeführt.
 
-- **Entfernen Sie den Knoten aus dem Pool ** ([REST][rest_remove] | [.NET][net_remove]).
+- **Entfernen Sie den Knoten aus dem Pool** ([REST][rest_remove] | [.NET][net_remove]).
 
 	Manchmal ist es erforderlich, den Knoten aus dem Pool vollständig zu entfernen.
 
@@ -387,4 +402,4 @@ Wenn bei einigen Ihrer Tasks Fehler auftreten, kann Ihre Batch-Clientanwendung o
 [rest_offline]: https://msdn.microsoft.com/library/azure/mt637904.aspx
 [rest_online]: https://msdn.microsoft.com/library/azure/mt637907.aspx
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0316_2016-->
