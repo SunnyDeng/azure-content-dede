@@ -144,7 +144,7 @@ Je nach Ihrer Netzwerkgröße kann das Aktivieren privater Verbindungen für Ihr
 |---|---|
 |**[Nimbo](http://www.nimbo.com/)**|US||
 |**[Dotnet Solutions](http://www.dotnetsolutions.co.uk/)**|EMEA|
-|**[Project Leadership](http://www.projectleadership.net/azure)** | US |
+|**[Projektleitung](http://www.projectleadership.net/azure)** | US |
 |**[Perficient](http://www.perficient.com/Partners/Microsoft/Cloud/Azure-ExpressRoute)** | US |
 
 ## Nächste Schritte
