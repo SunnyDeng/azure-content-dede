@@ -68,7 +68,7 @@ In diesem Abschnitt ändern Sie die simulierte Geräteanwendung, die Sie in [Sen
 
 > [AZURE.NOTE] Beachten Sie, dass diese Implementierung des simulierten Geräts die Cloud-zu-Gerät-Nachricht erst abschließt, nachdem das BLOB hochgeladen wurde. Dieser Ansatz vereinfacht die Verarbeitung der hochgeladenen Dateien im Back-End, da die Übermittlungsbestätigung die Verfügbarkeit der hochgeladenen Datei für die Verarbeitung bestätigt. Wie allerdings im [Entwicklungsleitfaden für IoT Hub][IoT Hub Developer Guide - C2D] beschrieben, wird eine Nachricht, die nicht vor dem *Sichtbarkeitstimeout* (normalerweise 1 Minute) abgeschlossen ist, zurück in die Gerätewarteschlange gestellt und erneut an die **ReceiveAsync()**-Methode übergeben. Bei Szenarien, in denen der Dateiupload länger dauern kann, empfiehlt es sich u. U. für das simulierte Gerät, die aktuellen Uploadaufträge in einem permanenten Speicher vorzuhalten. Dadurch kann das simulierte Gerät die Cloud-zu-Gerät-Nachricht vor Beendigung des Dateiuploads abschließen und dann das Back-End in einer Gerät-zu-Cloud-Nachricht über den Abschluss informieren.
 
-<!-- Links -->
+<!--- Links -->
 [IoT Hub Developer Guide - C2D]: iot-hub-devguide.md#c2d
 [Azure Storage – Verwenden von BLOBs]: ../storage/storage-dotnet-how-to-use-blobs.md#upload-a-blob-into-a-container
 
