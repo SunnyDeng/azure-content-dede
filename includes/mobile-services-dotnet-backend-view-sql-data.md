@@ -13,4 +13,4 @@ Der letzte optionale Schritt dieses Lernprogramms besteht darin, die mit dem mob
 
 	Beachten Sie, dass die Tabelle die Spalten "Id", "\_\_createdAt", "\_\_updatedAt" und "\_\_version" enthält. Diese Spalten ermöglichen die Synchronisierung von Offlinedaten und sind in der Basisklasse [EntityData](http://msdn.microsoft.com/library/microsoft.windowsazure.mobile.service.entitydata.aspx) implementiert. Weitere Informationen finden Sie unter [Erste Schritte mit der Synchronisierung von Offlinedaten].
 
-<!---HONumber=AcomDC_1203_2015-->
+<!----HONumber=AcomDC_1203_2015-->

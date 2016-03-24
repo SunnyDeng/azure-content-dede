@@ -56,4 +56,4 @@ Weitere Informationen zu den von Azure verwendeten Stammzertifikaten finden Sie 
 
 Weitere Informationen zu Java finden Sie im [Java Developer Center](/develop/java/).
 
-<!---HONumber=AcomDC_0309_2016-->
+<!----HONumber=AcomDC_0309_2016-->

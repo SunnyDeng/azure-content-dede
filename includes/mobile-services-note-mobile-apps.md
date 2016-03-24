@@ -4,4 +4,6 @@
 >
 > Informationen zum Einstieg in Azure Mobile Apps finden Sie im [Azure Mobile Apps documentation center](/documentation/learning-paths/appservice-mobileapps/) (Dokumentationscenter zu Azure Mobile Apps).
 
-<!----HONumber=AcomDC_0309_2016-->
+
+
+<!-----HONumber=AcomDC_0309_2016-->

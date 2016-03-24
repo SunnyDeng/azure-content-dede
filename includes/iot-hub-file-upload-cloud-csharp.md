@@ -70,4 +70,4 @@ In diesem Abschnitt ändern Sie die unter [Senden von Cloud-zu-Gerät-Nachrichte
 
 <!-- Images -->
 
-<!---HONumber=AcomDC_0309_2016-->
+<!----HONumber=AcomDC_0309_2016-->
