@@ -74,4 +74,4 @@ In diesem Abschnitt ändern Sie die simulierte Geräteanwendung, die Sie in [Sen
 
 <!-- Images -->
 
-<!---HONumber=AcomDC_0309_2016-->
+<!----HONumber=AcomDC_0309_2016-->

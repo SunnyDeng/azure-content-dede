@@ -21,4 +21,4 @@ Dieses Lernprogramm baut auf der [GetStartedWithMobileServices-App](http://go.mi
 
 6. Wiederholen Sie die Schritte 3 und 4, um sicherzustellen, dass sich die Beispiel-App gleichermaßen verhält.
 
-<!---HONumber=Oct15_HO3-->
+<!----HONumber=Oct15_HO3-->
