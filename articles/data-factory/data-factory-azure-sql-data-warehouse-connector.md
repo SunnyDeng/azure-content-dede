@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verschieben von Daten in und aus Azure SQL Data Warehouse | Azure Data Factory" 
+	pageTitle="Verschieben von Daten in/aus Azure SQL Data Warehouse | Microsoft Azure" 
 	description="Erfahren Sie, wie Daten mithilfe von Azure Data Factory in und aus Azure SQL Data Warehouse verschoben werden." 
 	services="data-factory" 
 	documentationCenter="" 
@@ -531,4 +531,4 @@ Die Zuordnung ist mit der [SQL Server-Datentypzuordnung für ADO.NET](https://ms
 
 [AZURE.INCLUDE [data-factory-column-mapping](../../includes/data-factory-column-mapping.md)]
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0309_2016-->

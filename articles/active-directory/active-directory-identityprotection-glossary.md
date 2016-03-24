@@ -1,8 +1,8 @@
 <properties
-	pageTitle="Identity Protection – Glossar | Microsoft Azure"
-	description="Identity Protection-Glossar"
+	pageTitle="Azure Active Directory Identity Protection – Glossar | Microsoft Azure"
+	description="Azure Active Directory Identity Protection – Glossar"
 	services="active-directory"
-	keywords="Azure Active Directory Identity Protection, Cloud App Discovery, Verwalten von Anwendungen"
+	keywords="Azure Active Directory Identity Protection, Cloud App Discovery, Verwalten von Anwendungen, Sicherheit, Risiko, Risikostufe, Sicherheitsrisiko, Sicherheitsrichtlinie, Glossar"
 	documentationCenter=""
 	authors="markusvi"
 	manager="stevenpo"
@@ -14,10 +14,10 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="03/01/2016"
+	ms.date="03/04/2016"
 	ms.author="markvi"/>
 
-# Identity Protection – Glossar 
+# Azure Active Directory Identity Protection – Glossar 
 
 
 ### Gefährdet (Benutzer)	
@@ -164,4 +164,4 @@ Eine Konfiguration oder ein Zustand in Azure Active Directory, durch die bzw. de
 
 - [Azure Active Directory Identity Protection](active-directory-identityprotection.md)
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

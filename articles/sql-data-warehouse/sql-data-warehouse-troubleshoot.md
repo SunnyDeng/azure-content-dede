@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/07/2016"
+   ms.date="03/03/2016"
    ms.author="mausher;sonyama;barbkess"/>
 
 # Problembehandlung
@@ -31,7 +31,7 @@ Azure SQL-Datenbanken sind durch Firewalls auf Server- und Datenbankebene gesch�
 Um Ihre Firewall für den Zugriff zu konfigurieren, führen Sie die im Abschnitt [Konfigurieren des Serverfirewall-Zugriffs für Ihre Client-IP-Adresse](sql-data-warehouse-get-started-provision.md/#step-4-configure-server-firewall-access-for-your-client-ip) auf der Seite [Erstellen eines SQL Data Warehouse](sql-data-warehouse-get-started-provision.md) beschriebenen Schritte aus.
 
 ### Nicht unterstützte Tools oder Protokolle
-SQL Data Warehouse unterstützt [Visual Studio 2013/2015](sql-data-warehouse-get-started-connect.md) als Entwicklungsumgebungen und [SQL Server Native Client 10/11 (ODBC)](https://msdn.microsoft.com/library/ms131415.aspx) für Clientverbindungen.
+SQL Data Warehouse unterstützt [Visual Studio 2013/2015](sql-data-warehouse-get-started-connect.md) als Entwicklungsumgebungen und [SQL Server Native Client 10/11 (ODBC)](https://msdn.microsoft.com/library/ms131415.aspx) für Clientverbindungen.
 
 Weitere Informationen finden Sie auf der Seite [Verbinden](sql-data-warehouse-get-started-connect.md).
 
@@ -56,7 +56,7 @@ FROM
 	JOIN sys.tables          AS tb	ON	co.[object_id]		= tb.[object_id]
 	JOIN sys.schemas         AS sm	ON	tb.[schema_id]		= sm.[schema_id]
 WHERE
-	1=1 
+	1=1
 	AND st.[user_created] = 1;
 ```
 
@@ -90,4 +90,4 @@ Anleitungen zum Erstellen Ihrer SQL Data Warehouse-Lösung finden Sie im Artikel
 
 <!--Other web references-->
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0309_2016-->

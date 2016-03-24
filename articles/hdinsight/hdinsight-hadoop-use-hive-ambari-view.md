@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="01/04/2016"
+   ms.date="03/04/2016"
    ms.author="larryfr"/>
 
 #Verwenden der Hive-Ansicht mit Hadoop in HDInsight
@@ -23,7 +23,7 @@
 
 Ambari ist ein Verwaltungs- und Überwachungsdienstprogramm, das mit Linux-basierten HDInsight-Clustern bereitgestellt wird. Eines der in Ambari bereitgestellten Features ist eine Webbenutzeroberfläche, die zum Ausführen von Hive-Abfragen verwendet werden kann. Dies ist die __Hive-Ansicht__, die Teil der Ambari-Ansichten des HDInsight-Clusters ist.
 
-> [AZURE.NOTE]Ambari verfügt über viele Funktionen, die in diesem Dokument nicht beschrieben werden. Weitere Informationen finden Sie unter [Verwalten von HDInsight-Clustern mithilfe der Ambari-Webbenutzeroberfläche](hdinsight-hadoop-manage-ambari.md).
+> [AZURE.NOTE] Ambari verfügt über viele Funktionen, die in diesem Dokument nicht beschrieben werden. Weitere Informationen finden Sie unter [Verwalten von HDInsight-Clustern mithilfe der Ambari-Webbenutzeroberfläche](hdinsight-hadoop-manage-ambari.md).
 
 ##Voraussetzungen
 
@@ -39,7 +39,7 @@ Sie können auch direkt zu Ambari navigieren, indem Sie in einem Webbrowser http
 
 ![Ambari-Ansichten auswählen](./media/hdinsight-hadoop-use-hive-ambari-view/selecthiveview.png).
 
-> [AZURE.NOTE]Beim Zugriff auf Ambari werden Sie aufgefordert, sich bei der Website zu authentifizieren. Geben Sie den Administratorkontonamen (Standard-`admin`) und das Kennwort ein, den bzw. das Sie beim Erstellen des Clusters verwendet haben.
+> [AZURE.NOTE] Beim Zugriff auf Ambari werden Sie aufgefordert, sich bei der Website zu authentifizieren. Geben Sie den Administratorkontonamen (Standard-`admin`) und das Kennwort ein, den bzw. das Sie beim Erstellen des Clusters verwendet haben.
 
 Eine Seite ähnlich der folgenden wird angezeigt:
 
@@ -73,21 +73,21 @@ Führen Sie in der Hive-Ansicht folgende Schritte aus, um eine Hive-Abfrage an D
 	- **SPEICHERORT DER TEXTDATEI** – Teilt Hive den Speicherort der Daten (das Verzeichnis "example/data") und die Information mit, dass die Speicherung als Text erfolgt.
 	- **AUSWÄHLEN** – Wählt die Anzahl aller Zeilen aus, bei denen die Spalte "t4" den Wert "FEHLER" enthält.
 
-	>[AZURE.NOTE]Wenn erwartet wird, dass die zugrunde liegenden Daten über eine externe Quelle, z. B. einen automatisierten Prozess zum Hochladen von Daten, oder über einen anderen MapReduce-Vorgang aktualisiert, aber von Hive immer die neuesten Daten verwendet werden, sollten externe Tabellen verwendet werden. Durch das Löschen einer externen Tabelle werden *nicht* die Daten, sondern nur die Tabellendefinitionen gelöscht.
+	>[AZURE.NOTE] Wenn erwartet wird, dass die zugrunde liegenden Daten über eine externe Quelle, z. B. einen automatisierten Prozess zum Hochladen von Daten, oder über einen anderen MapReduce-Vorgang aktualisiert, aber von Hive immer die neuesten Daten verwendet werden, sollten externe Tabellen verwendet werden. Durch das Löschen einer externen Tabelle werden *nicht* die Daten, sondern nur die Tabellendefinitionen gelöscht.
 
 2. Starten Sie die Abfrage mit der Schaltfläche __Ausführen__ am unteren Rand des Abfrage-Editors. Deren Farbe sollte zu Orange wechseln, und der Text sollte sich in __Ausführung beenden__ ändern. Der Abschnitt __Abfrageprozessergebnisse__ sollte unterhalb des Abfrage-Editors angezeigt werden und Informationen über den Auftrag enthalten.
 
-    > [AZURE.IMPORTANT]In einigen Browsern werden das Protokoll oder die Ergebnisdaten möglicherweise nicht korrekt aktualisiert. Wenn Sie einen Auftrag ausführen und eine scheinbar endlose Ausführung ohne Aktualisierung des Protokolls oder Rückgabe von Ergebnissen feststellen, sollten Sie es noch einmal mit Mozilla Firefox oder Google Chrome versuchen.
-    
+    > [AZURE.IMPORTANT] In einigen Browsern werden das Protokoll oder die Ergebnisdaten möglicherweise nicht korrekt aktualisiert. Wenn Sie einen Auftrag ausführen und eine scheinbar endlose Ausführung ohne Aktualisierung des Protokolls oder Rückgabe von Ergebnissen feststellen, sollten Sie es noch einmal mit Mozilla Firefox oder Google Chrome versuchen.
+
 3. Nach Abschluss der Abfrage werden im Abschnitt __Abfrageprozessergebnisse__ die Ergebnisse des Vorgangs angezeigt. Die Schaltfläche __Ausführung beenden__ ändert sich auch wieder in die grüne Schaltfläche __Ausführen__. Die Registerkarte __Ergebnisse__ sollte folgende Informationen enthalten:
 
         sev       cnt
         [ERROR]   3
 
     Auf der Registerkarte __Protokolle__ können die vom Auftrag erstellten Protokollinformationen angezeigt werden. Sie können sie zur Problembehandlung verwenden, wenn Probleme mit einer Abfrage auftreten.
-    
-    > [AZURE.TIP]Beachten Sie das Dropdown-Dialogfeld __Ergebnisse speichern__ in der oberen linken Ecke des Abschnitts __Abfrageprozessergebnisse__. Hiermit können Sie die Ergebnisse entweder herunterladen oder im HDInsight-Speicher als CSV-Datei speichern.
-    
+
+    > [AZURE.TIP] Beachten Sie das Dropdown-Dialogfeld __Ergebnisse speichern__ in der oberen linken Ecke des Abschnitts __Abfrageprozessergebnisse__. Hiermit können Sie die Ergebnisse entweder herunterladen oder im HDInsight-Speicher als CSV-Datei speichern.
+
 3. Wählen Sie die ersten vier Zeilen dieser Abfrage aus, und klicken Sie auf __Ausführen__. Beachten Sie, dass keine Ergebnisse vorliegen, wenn der Auftrag abgeschlossen ist. Der Grund ist, dass die Schaltfläche __Ausführen__, wenn ein Teil der Abfrage ausgewählt ist, nur die ausgewählten Anweisungen ausführt. In diesem Fall enthielt die Auswahl nicht die letzte Anweisung, die Zeilen aus der Tabelle abruft. Wenn Sie nur diese Zeile auswählen und __Ausführen__ verwenden, sollten die erwarteten Ergebnisse angezeigt werden.
 
 3. Verwenden Sie die Schaltfläche __Neues Arbeitsblatt__ am unteren Rand des __Abfrage-Editors__, um ein neues Arbeitsblatt zu erstellen. Geben Sie in das neue Arbeitsblatt die folgenden HiveQL-Anweisungen ein:
@@ -100,7 +100,7 @@ Führen Sie in der Hive-Ansicht folgende Schritte aus, um eine Hive-Abfrage an D
 	- **TABELLE ERSTELLEN, FALLS NICHT VORHANDEN** – Erstellt eine Tabelle, sofern diese noch nicht vorhanden ist. Da das Schlüsselwort **EXTERN** nicht verwendet wird, ist dies eine "interne" Tabelle, die im Hive-Data Warehouse gespeichert und vollständig von Hive verwaltet wird. Im Gegensatz zu externen Tabellen werden beim Ablegen von internen Tabellen auch die zugrunde liegenden Daten gelöscht.
 	- **ALS ORC GESPEICHERT** – Speichert die Daten im ORC-Format (Optimized Row Columnar) Dies ist ein stark optimiertes und effizientes Format zum Speichern von Hive-Daten.
 	- **ÜBERSCHREIBEN EINFÜGEN ... AUSWÄHLEN** – Wählt Zeilen in der Tabelle **log4jLogs** aus, die [FEHLER] enthalten, und fügt die Daten dann in die Tabelle **errorLogs** ein.
-    
+
     Verwenden Sie die Schaltfläche __Ausführen__, um diese Abfrage auszuführen. Die Registerkarte __Ergebnisse__ enthält keine Informationen, da diese Abfrage keine Zeilen zurückgibt, aber der Status __ERFOLGREICH__ sollte angezeigt werden.
 
 ###Hive-Einstellungen
@@ -109,14 +109,14 @@ Wählen Sie rechts vom Editor das Symbol __Einstellungen__.
 
 ![Symbole](./media/hdinsight-hadoop-use-hive-ambari-view/settings.png)
 
-Die Einstellungen können verwendet werden, um verschiedene Hive-Einstellungen zu ändern, z. B. das Ausführungsmodul für Hive von Tez (Standard) in MapReduce.
+Die Einstellungen können verwendet werden, um verschiedene Hive-Einstellungen zu ändern, z. B. das Ausführungsmodul für Hive von Tez (Standard) in MapReduce.
 
 ###Visuelle Erläuterung
 
 Wählen Sie rechts vom Editor das Symbol __Visuelle Erläuterung__.
 
 ![Symbole](./media/hdinsight-hadoop-use-hive-ambari-view/visualexplainicon.png)
-    
+
 Dies ist die Ansicht __Visuelle Erläuterung__ der Abfrage, die das Verständnis des Ablaufs komplexer Abfragen erleichtern kann. Sie können eine Textentsprechung dieser Ansicht mit der Schaltfläche __Erklären__ im Abfrage-Editor anzeigen.
 
 ![Bild zur visuellen Erläuterung](./media/hdinsight-hadoop-use-hive-ambari-view/visualexplain.png)
@@ -127,11 +127,11 @@ Wählen Sie rechts vom Editor das Symbol __Tez__.
 
 ![Symbole](./media/hdinsight-hadoop-use-hive-ambari-view/tez.png)
 
-Falls verfügbar, wird der von Tez für diese Abfrage verwendete gerichtete azyklische Graph (Directed Acyclic Graph, DAG) angezeigt. Wenn Sie den DAG für Abfragen anzeigen möchten, die Sie in der Vergangenheit ausgeführt haben, verwenden Sie stattdessen die __Tez-Ansicht__.
+Falls verfügbar, wird der von Tez für diese Abfrage verwendete gerichtete azyklische Graph (Directed Acyclic Graph, DAG) angezeigt. Wenn Sie den DAG für Abfragen anzeigen möchten, die Sie in der Vergangenheit ausgeführt haben, oder den Tez-Prozess debuggen möchten, verwenden Sie stattdessen die [Tez-Ansicht](hdinsight-debug-ambari-tez-view.md).
 
 ###Benachrichtigungen
 
-Wählen Sie rechts vom Editor das Symbol __Benachrichtigungen__.
+Wählen Sie rechts vom Editor das Symbol __Benachrichtigungen__ aus.
 
 ![Symbole](./media/hdinsight-hadoop-use-hive-ambari-view/notifications.png)
 
@@ -142,7 +142,7 @@ Benachrichtigungen sind Nachrichten, die beim Ausführen von Abfragen generiert 
 1. Erstellen Sie im Abfrage-Editor ein neues Arbeitsblatt, und geben Sie die folgende Abfrage ein:
 
         SELECT * from errorLogs;
-    
+
     Führen Sie die Abfrage aus, um zu überprüfen, ob sie funktioniert. So sehen die Ergebnisse aus:
 
         errorlogs.t1 	errorlogs.t2 	errorlogs.t3 	errorlogs.t4 	errorlogs.t5 	errorlogs.t6 	errorlogs.t7
@@ -151,7 +151,7 @@ Benachrichtigungen sind Nachrichten, die beim Ausführen von Abfragen generiert 
         2012-02-03 	19:25:27 	SampleClass4 	[ERROR] 	incorrect 	id
 
 2. Klicken Sie unten im Editor auf die Schaltfläche __Speichern unter__. Geben Sie der Abfrage den Namen __Errorlogs__, und wählen Sie __OK__. Beachten Sie, dass sich der Name des Arbeitsblatts in __Errorlogs__ ändert.
-    
+
 3. Wählen Sie oben auf der Seite mit der Hive-Ansicht die Registerkarte __Gespeicherte Abfragen__ aus. Beachten Sie, dass __Errorlogs__ jetzt als gespeicherte Abfrage aufgeführt ist. Sie bleibt in dieser Liste enthalten, bis Sie sie entfernen. Bei Auswahl des Namens wird die Abfrage im Abfrage-Editor geöffnet.
 
 ##Abfrageverlauf
@@ -172,7 +172,7 @@ Beispielsweise können Sie eine UDF mit den folgenden Eigenschaften definieren:
 * Ressourcenpfad: wasb:///myudfs.jar
 * UDF-Name: myawesomeudf
 * UDF-Klassenname: com.myudfs.Awesome
-    
+
 Mit der Schaltfläche __UDFs einfügen__ wird ein Eintrag mit dem Namen __myudfs__ angezeigt, der über eine weitere Dropdownliste für jede UDF verfügt, die für diese Ressource definiert ist. In diesem Fall ist dies __myawesomeudf__. Wenn Sie diesen Eintrag auswählen, wird am Anfang der Abfrage Folgendes hinzugefügt:
 
     add jar wasb:///myudfs.jar;
@@ -199,4 +199,4 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 
 * [Verwenden von MapReduce mit Hadoop in HDInsight](hdinsight-use-mapreduce.md)
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0309_2016-->

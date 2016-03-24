@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Importieren von Daten in Azure Search über das Portal | Microsoft Azure | Gehosteter Cloudsuchdienst"
-	description="Hochladen von Daten in einen Index in Azure Search über das Portal"
+	pageTitle="Importieren von Daten in Azure Search mithilfe von Indexern im Azure-Portal | Microsoft Azure | Gehosteter Cloudsuchdienst"
+	description="Gewusst wie: Verwenden von Indexern im Azure-Portal"
 	services="search"
 	documentationCenter=""
 	authors="HeidiSteen"
@@ -14,16 +14,10 @@
 	ms.workload="search"
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
-	ms.date="02/09/2016"
+	ms.date="03/10/2016"
 	ms.author="heidist"/>
 
 # Importieren von Daten in Azure Search über das Portal
-> [AZURE.SELECTOR]
-- [Overview](search-what-is-data-import.md)
-- [Portal](search-import-data-portal.md)
-- [.NET](search-import-data-dotnet.md)
-- [REST API](search-import-data-rest-api.md)
-- [Indexers](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers-2015-02-28.md)
 
 Das Azure-Portal bietet den Befehl **Daten importieren** im Azure Search-Dashboard, der Sie durch die Erfassung von Daten in Azure Search begleitet. Der Befehl setzt auf der integrierten Indexerfunktion auf, die eine vorhandene Datenquelle durchforstet und Dokumente basierend auf dem in der Datenquelle gefundenen Rowset erstellt oder hochlädt.
 
@@ -51,8 +45,8 @@ Sie können diesen Workflow mithilfe von Beispieldaten testen. Informationen zum
 
 4. Klicken Sie auf **Mit Ihren Daten verbinden**, um eine von einem Indexer verwendete Datenquellendefinition anzugeben. Folgende Optionen sind verfügbar:
 	- 	„Vorhandene Datenquelle“ bezieht sich auf eine zuvor für einen Indexer erstellte Datenquellendefinition. Wenn Sie in Ihrem Suchdienst bereits Indexer definiert haben, können Sie eine Datenquellendefinition für einen anderen Importvorgang wiederverwenden.
-	- 	„Azure SQL“ wird verwendet, um eine Datenquellenverbindung mit einer SQL-­Datenbank in Azure oder SQL Server-Datenbank in einer Azure-VM anzugeben. 
-	- 	„DocumentDB“ wird verwendet, um eine Datenquellenverbindung für diesen Datenquellentyp anzugeben. 
+	- 	„Azure SQL“ wird verwendet, um eine Datenquellenverbindung mit einer SQL-­Datenbank in Azure oder SQL Server-Datenbank in einer Azure-VM anzugeben.
+	- 	„DocumentDB“ wird verwendet, um eine Datenquellenverbindung für diesen Datenquellentyp anzugeben.
 
    Für „Azure SQL“ und „DocumentDB“ muss die Datenbank in Ihrem Abonnement vorhanden sein. Sie können eine Verbindungszeichenfolge einfügen, wenn Sie Ihnen bekannt ist. Oder wählen Sie eine Datenquelle, die zuvor von jemand erstellt wurde, der über Schreibrechte für Ihr Abonnement verfügt.
 
@@ -71,9 +65,9 @@ Sie können diesen Workflow mithilfe von Beispieldaten testen. Informationen zum
 6. Klicken Sie auf **Daten importieren**, um den Importvorgang über die Option „Jetzt ausführen“ auszuführen, oder richten Sie einen Wiederholungszeitplan ein.
 
 Beim gerade abgeschlossenen Datenimportvorgang wird im Hintergrund ein Indexer erstellt. Sie können nun den Indexer direkt bearbeiten und seine Bestandteile ändern.
-	
+
 ##Bearbeiten eines vorhandenen Indexers
 
 Doppelklicken Sie im Dashboard des Diensts auf die Kachel „Indexer“, um eine Liste aller Indexer einzublenden, die für Ihr Abonnement erstellt wurden. Doppelklicken Sie auf einen der Indexer, um ihn auszuführen, zu bearbeiten oder zu löschen.
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0316_2016-->

@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/10/2016" 
+	ms.date="03/02/2016" 
 	ms.author="awills"/>
 
 
@@ -35,7 +35,7 @@ Der standardmäßig verfügbare Abhängigkeitsmonitor meldet derzeit Aufrufe an 
  * Lokale oder Remote-HTTP-Aufrufe
  * Azure DocumentDb, Tabelle, Blobspeicher und Warteschlange
 * Java
- * Aufrufe an eine Datenbank über einen [JDBC](http://docs.oracle.com/javase/7/docs/technotes/guides/jdbc/)-Treiber, z. B. MySQL, SQL Server, PostgreSQL oder SQLite.
+ * Aufrufe an eine Datenbank über einen [JDBC](http://docs.oracle.com/javase/7/docs/technotes/guides/jdbc/)-Treiber, z. B. MySQL, SQL Server, PostgreSQL oder SQLite.
 * JavaScript auf Webseiten: Das [Webseiten-SDK](app-insights-javascript.md) protokolliert automatisch AJAX-Aufrufe als Abhängigkeiten.
 
 Mit der [TrackDependency-API](app-insights-api-custom-events-metrics.md#track-dependency) können Sie eigene SDK-Aufrufe zum Überwachen anderer Abhängigkeiten schreiben.
@@ -43,9 +43,13 @@ Mit der [TrackDependency-API](app-insights-api-custom-events-metrics.md#track-de
 
 ## So richten Sie die Abhängigkeitsüberwachung ein
 
-Sie benötigen ein [Microsoft Azure](http://azure.com)-Abonnement.
+Sie benötigen ein [Microsoft Azure](http://azure.com)-Abonnement.
 
 ### Wenn Ihre App auf Ihrem IIS-Server ausgeführt wird
+
+Wenn Ihre Web-App unter .NET 4.6 oder höher ausgeführt wird, erhalten Sie die automatische Abhängigkeitsüberwachung, wenn Sie [das Application Insights SDK in Ihrer App installieren](app-insights-asp-net.md). Es ist sonst nichts weiter erforderlich.
+
+Andernfalls installieren Sie den Application Insights-Statusmonitor auf dem Server:
 
 1. Melden Sie sich mit Administratorrechten auf Ihrem IIS-Webserver an.
 2. Laden Sie den [Statusmonitor-Installer](http://go.microsoft.com/fwlink/?LinkId=506648) herunter, und starten Sie ihn.
@@ -84,14 +88,14 @@ Nach Abschluss des Assistenten können Sie die Konfiguration des Agenten später
 
 ### Wenn Ihre App als Azure-Web-App ausgeführt wird
 
-Fügen Sie in der Systemsteuerung Ihrer Azure-Web-App die Application Insights-Erweiterung hinzu.
+Fügen Sie in der Systemsteuerung Ihrer Azure-Web-App die Application Insights-Erweiterung hinzu.
 
 ![In der Web-App: Einstellungen, Erweiterungen, Hinzufügen, Application Insights](./media/app-insights-asp-net-dependencies/05-extend.png)
 
 
 ### Wenn es sich um ein Azure-Clouddienstprojekt handelt
 
-[Fügen Sie Web- und Workerrollen Skripts hinzu](app-insights-cloudservices.md).
+[Fügen Sie Web- und Workerrollen Skripts hinzu](app-insights-cloudservices.md#dependencies). Oder installieren Sie [.NET Framework 4.6 oder höher](../cloud-services/cloud-services-dotnet-install-dotnet.md).
 
 ## <a name="diagnosis"></a> Diagnostizieren von Leistungsproblemen der Abhängigkeit
 
@@ -185,7 +189,6 @@ Wenn Sie das Standardmodul für die Nachverfolgung von Abhängigkeiten deaktivie
 [diagnostic]: app-insights-diagnostic-search.md
 [metrics]: app-insights-metrics-explorer.md
 [netlogs]: app-insights-asp-net-trace-logs.md
-[perf]: app-insights-web-monitor-performance.md
 [portal]: http://portal.azure.com/
 [qna]: app-insights-troubleshoot-faq.md
 [redfield]: app-insights-asp-net-dependencies.md
@@ -193,4 +196,4 @@ Wenn Sie das Standardmodul für die Nachverfolgung von Abhängigkeiten deaktivie
 
  
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0309_2016-->

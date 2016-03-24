@@ -11,10 +11,10 @@
 <tags
    ms.service="hdinsight"
    ms.devlang="na"
-   ms.topic="hero-article"
+   ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="02/25/2016"
+   ms.date="03/07/2016"
    ms.author="nitinme"/>
 
 
@@ -29,6 +29,8 @@ In diesem Lernprogramm lernen Sie Hadoop unter Windows kennen und unternehmen er
 [AZURE.INCLUDE [hdinsight-azure-portal](../../includes/hdinsight-azure-portal.md)]
 
 * [Erste Schritte mit Hadoop in HDInsight unter Windows](hdinsight-hadoop-tutorial-get-started-windows.md)
+
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 ## Welchen Zweck verfolgt dieses Hadoop-Lernprogramm?
 
@@ -207,6 +209,9 @@ Sie benötigen Excel 2013 oder 2010, um diesen Teil des Lernprogramms durchführ
 
 9. Klicken Sie in der oberen linken Ecke auf **Schließen und laden**, um die Ausgabe des Hive-Auftrags in Excel zu importieren.
 
+##Löschen des Clusters
+
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 ##<a name="nextsteps"></a>Nächste Schritte
 In diesem Hadoop-Lernprogramm haben Sie erfahren, wie ein Hadoop-Cluster unter Windows in HDInsight bereitgestellt, eine Hive-Abfrage für Daten ausgeführt und die Ergebnisse in Excel importiert werden, wo sie mit Business Intelligence-Tools weiter bearbeitet und grafisch angezeigt werden können. Weitere Informationen finden Sie in den folgenden Lernprogrammen:
@@ -280,4 +285,4 @@ In diesem Hadoop-Lernprogramm haben Sie erfahren, wie ein Hadoop-Cluster unter W
 [image-hdi-gettingstarted-powerquery-importdata2]: ./media/hdinsight-hadoop-tutorial-get-started-windows-v1/HDI.GettingStarted.PowerQuery.ImportData2.png
  
 
-<!----HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

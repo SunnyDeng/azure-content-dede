@@ -133,10 +133,14 @@ Die Topologie wird weiterhin ausgeführt, bis Sie sie beenden oder das Storm-Clu
 
     ![Schaltfläche Beenden in der Topologie-Zusammenfassung](./media/hdinsight-storm-power-bi-topology/killtopology.png)
 
+## Löschen des Clusters
+
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
+
 ## Nächste Schritte
 
 In diesem Dokument haben Sie erfahren, wie Daten aus einer Storm-Topologie an Power BI mithilfe von REST gesendet werden. Informationen zum Arbeiten mit anderen Azure-Technologien finden Sie hier:
 
 * [Beispiele für Storm-Topologien für Storm in HDInsight](hdinsight-storm-example-topology.md)
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

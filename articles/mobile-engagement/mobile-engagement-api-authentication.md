@@ -1,9 +1,9 @@
 <properties 
-	pageTitle="Erste Schritte mit den Authentifizierungs-APIs von Azure Mobile Engagement"
-	description="Dieser Migrationsleitfaden unterstützt Kunden, die zuvor die Authentifizierung mit Capptain-APIs verwendet haben und jetzt die Authentifizierung über die neuen Azure Mobile Engagement-APIs verwenden müssen." 
+	pageTitle="Authentifizieren mit Mobile Engagement-REST-APIs"
+	description="Beschreibt die Authentifizierung mit Azure Mobile Engagement-REST-APIs" 
 	services="mobile-engagement" 
 	documentationCenter="mobile" 
-	authors="wesmc7777"
+	authors="piyushjo"
 	manager="erikre"
 	editor=""/>
 
@@ -13,10 +13,10 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="mobile-multiple"
 	ms.workload="mobile" 
-	ms.date="02/29/2016"
+	ms.date="03/07/2016"
 	ms.author="wesmc"/>
 
-# Azure Mobile Engagement – Verwenden der APIs zur Authentifizierung
+# Authentifizieren mit Mobile Engagement-REST-APIs
 
 ## Übersicht
 
@@ -183,4 +183,4 @@ Da Sie jetzt über ein gültiges Token verfügen, sind Sie bereit für die API-A
 >[AZURE.NOTE] <br/>
 >1. Ignorieren Sie die API-Stammadresse, da diese für die vorherigen APIs galt.<br/> 2. Sie müssen den Namen der Anwendungsressource verwenden, der sich vom Namen der Anwendung selbst unterscheidet. 
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

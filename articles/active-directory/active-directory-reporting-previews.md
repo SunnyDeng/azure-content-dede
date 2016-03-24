@@ -3,7 +3,7 @@
    description="Azure Active Directory-Berichte in der öffentlichen und privaten Vorschau"
    services="active-directory"
    documentationCenter=""
-   authors="kenhoff"
+   authors="dhanyahk"
    manager="mbaldwin"
    editor=""/>
 
@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="12/07/2015"
-   ms.author="kenhoff"/>
+   ms.date="03/07/2016"
+   ms.author="dhanyahk"/>
 
 # Azure Active Directory-Berichte in der Vorschau
 
@@ -24,7 +24,7 @@ Bericht | Verfügbarkeit
 ------------------------------------------------------- | --------------------
 **Sicherheitsberichte** |
 Irreguläre Anmeldeaktivitäten | Allgemeine Verfügbarkeit
-Anmeldungen aus unbekannten Quellen | Allgemeine Verfügbarkeit
+Anmeldungen von unbekannten Quellen | Allgemeine Verfügbarkeit
 Anmeldungen nach mehreren Fehlern | Allgemeine Verfügbarkeit
 Anmeldungen aus mehreren geografischen Regionen | Allgemeine Verfügbarkeit
 Anmeldungen von IP-Adressen mit verdächtigen Aktivitäten | Allgemeine Verfügbarkeit
@@ -54,4 +54,4 @@ Nutzung RMS-fähiger Anwendungen | Öffentliche Vorschau
 **Berichte in der privaten Vorschau** |
 Alle Benutzeranmeldeaktivitäten | Private Vorschau
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0309_2016-->

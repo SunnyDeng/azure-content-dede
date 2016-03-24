@@ -464,6 +464,10 @@ Durch das Exportieren und Importieren können Sie Prüfpunktdaten persistent spe
 
 > [AZURE.NOTE] Da die Daten im Standard-Speichercontainer persistent gespeichert werden, **muss** der neue Cluster das gleiche Speicherkonto und den gleichen Container verwenden wie der vorherige Cluster.
 
+## Löschen des Clusters
+
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
+
 ##Problembehandlung
 
 Wenn unter /devicedata gespeicherte Dateien nicht angezeigt werden (mit dem Befehl `hadoop fs -ls /devicedata` oder dem Hive-Befehl in der Abfrage), prüfen Sie die Storm-Benutzeroberfläche auf mögliche von den Topologien zurückgegebenen Fehler.
@@ -478,4 +482,4 @@ Weitere Informationen zur Storm-Benutzeroberfläche finden Sie den folgenden The
 
 * [Beispiele für Storm-Topologien für Storm in HDInsight](hdinsight-storm-example-topology.md)
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

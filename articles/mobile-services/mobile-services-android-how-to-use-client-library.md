@@ -19,12 +19,13 @@
 
 # Verwenden der Android-Clientbibliothek für Mobile Services
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+[AZURE.INCLUDE [mobile-services-selector-client-library](../../includes/mobile-services-selector-client-library.md)]
 
 &nbsp;
 
-[AZURE.INCLUDE [mobile-services-selector-client-library](../../includes/mobile-services-selector-client-library.md)]
-
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+> Informationen für die entsprechende Mobile Apps-Version dieses Themas finden Sie unter [Verwenden der Android-Clientbibliothek für Mobile Apps](../app-service-mobile/app-service-mobile-android-how-to-use-client-library.md).
+ 
 Dieser Artikel beschreibt gängige Szenarien für die Verwendung des Android-Clients für Azure Mobile Services. Besprochen werden unter anderem Datenabfragen, Einfügen, Aktualisieren und Löschen von Daten, Authentifizierung von Benutzern, Fehlerbehandlung und Anpassungen des Clients.
 
 Wenn Sie keine Erfahrungen mit Mobile Services haben, sollten Sie eventuell zunächst das Schnellstart-Lernprogramm [Erste Schritte mit Mobile Services] absolvieren. Durch das erfolgreiche Abschließen dieses Lernprogramms wird sichergestellt, dass Sie Android Studio installiert haben. Es unterstützt Sie beim Konfigurieren Ihres Kontos und Erstellen Ihres ersten mobilen Diensts sowie beim Installieren des Mobile Services SDKs, das Android Version 2.2 oder höher unterstützt, wobei wir jedoch die Erstellung für Android Version 4.2 oder höher empfehlen.
@@ -85,7 +86,7 @@ Die [zweite Überladung](http://go.microsoft.com/fwlink/p/?LinkId=296840) wird v
 
 ## <a name="api"></a>Die API-Struktur
 
-Seit Version 2.0 der Clientbibliothek verwenden Tabellevorgänge mobiler Dienste die Objekte [Future](http://developer.android.com/reference/java/util/concurrent/Future.html) und [AsyncTask](http://developer.android.com/reference/android/os/AsyncTask.html) in allen asynchronen Vorgängen, z. B. in Methoden, die Abfragen und Vorgänge wie Einfügungen, Aktualisierungen und Löschungen einbeziehen. Dies erleichtert die Ausführungen mehrerer Vorgänge (in einem Hintergrundthread), ohne sich um mehrere geschachtelte Rückrufe kümmern zu müssen.
+Seit Version 2.0 der Clientbibliothek verwenden Tabellevorgänge mobiler Dienste die Objekte [Future](http://developer.android.com/reference/java/util/concurrent/Future.html) und [AsyncTask](http://developer.android.com/reference/android/os/AsyncTask.html) in allen asynchronen Vorgängen, z. B. in Methoden, die Abfragen und Vorgänge wie Einfügungen, Aktualisierungen und Löschungen einbeziehen. Dies erleichtert die Ausführungen mehrerer Vorgänge (in einem Hintergrundthread), ohne sich um mehrere geschachtelte Rückrufe kümmern zu müssen.
 
 
 ##<a name="querying"></a>Gewusst wie: Abfragen von Daten aus einem mobilen Dienst
@@ -721,7 +722,7 @@ Diese beiden ersten Aufgaben können Sie im [klassischen Azure-Portal](https://m
 
     Dieser Code authentifiziert einen Benutzer mit einer Google-Anmeldung. Ein Dialogfeld mit der ID des authentifizierten Benutzers wird eingeblendet. Ohne erfolgreiche Authentifizierung können Sie nicht fortfahren.
 
-    > [AZURE.NOTE]Falls Sie einen anderen Identitätsanbieter als Facebook verwenden, ändern Sie den an die **login**-Methode übergebenen Wert in einen der folgenden Werte: _MicrosoftAccount_, _Facebook_, _Twitter_ oder _WindowsAzureActiveDirectory_.
+    > [AZURE.NOTE] Falls Sie einen anderen Identitätsanbieter als Facebook verwenden, ändern Sie den an die **login**-Methode übergebenen Wert in einen der folgenden Werte: _MicrosoftAccount_, _Facebook_, _Twitter_ oder _WindowsAzureActiveDirectory_.
 
 
 3. Beim Ausführen der App können Sie sich mit dem Identitätsanbieter Ihrer Wahl anmelden.
@@ -866,7 +867,7 @@ Die Zuordnung von Client-Tabellennamen zu anderen Tabellennamen im mobilen Diens
 
 ### <a name="conversions"></a>Automatisieren von Tabellennamenzuordnungen
 
-Die Zuordnung von Spaltennamen für kleine Tabellen mit nur wenigen Spalten ist kein großer Aufwand, wie zuvor gezeigt. Angenommen, die Tabelle hat jedoch viele Spalten, z. B. 20 oder 30. In diesem Fall können wir die <a href=" http://go.microsoft.com/fwlink/p/?LinkId=290801" target="_blank">gson</a>-API aufrufen und eine Umwandlungsstrategie für alle Spalten angeben, um nicht jeden Spaltennamen einzeln zuordnen zu müssen.
+Die Zuordnung von Spaltennamen für kleine Tabellen mit nur wenigen Spalten ist kein großer Aufwand, wie zuvor gezeigt. Angenommen, die Tabelle hat jedoch viele Spalten, z. B. 20 oder 30. In diesem Fall können wir die <a href=" http://go.microsoft.com/fwlink/p/?LinkId=290801" target="_blank">gson</a>-API aufrufen und eine Umwandlungsstrategie für alle Spalten angeben, um nicht jeden Spaltennamen einzeln zuordnen zu müssen.
 
 Dazu verwenden wir die <a href=" http://go.microsoft.com/fwlink/p/?LinkId=290801" target="_blank">gson</a>-Bibliothek, mit der die Android-Clientbibliothek im Hintergrund Java-Objekte nach JSON-Daten serialisiert, die anschließend an Azure Mobile Services übertragen werden.
 
@@ -937,4 +938,4 @@ Sie können diese allgemeine Methode immer dann verwenden, wenn Sie mit komplexe
 [Erste Schritte mit Mobile Services]: mobile-services-android-get-started.md
 [ASCII-Steuerzeichen C0 und C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0309_2016-->

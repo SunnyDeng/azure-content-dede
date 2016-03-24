@@ -19,8 +19,7 @@
 # Erste Schritte mit der benutzerdefinierten Authentifizierung
 
 [AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
-
-&nbsp;
+> Informationen für die entsprechende Mobile Apps-Version dieses Themas finden Sie unter [Vorgehensweise: Verwenden einer benutzerdefinierten Authentifizierung für Ihre Anwendung](../app-service-mobile/app-service-mobile-dotnet-backend-how-to-use-server-sdk.md#custom-auth).
 
 
 ## Übersicht
@@ -165,11 +164,11 @@ Sie haben an diesem Punkt alles Nötige, um Benutzerkonten anlegen zu können. I
 
         [AuthorizeLevel(AuthorizationLevel.Anonymous)]
 
->[AZURE.IMPORTANT]Auf diesen Registrierungsendpunkt kann von jedem Client über HTTP zugegriffen werden. Bevor Sie diesen Dienst in einer Produktionsumgebung veröffentlichen, sollten Sie ein Schema zum Überprüfen der Registrierungen implementieren, z. B. SMS-basierte oder E-Mail-basierte Überprüfung. Damit können Sie verhindern, dass ein böswilliger Benutzer betrügerische Registrierungen erstellt.
+>[AZURE.IMPORTANT]Auf diesen Registrierungsendpunkt kann von jedem Client über HTTP zugegriffen werden. Bevor Sie diesen Dienst in einer Produktionsumgebung veröffentlichen, sollten Sie ein Schema zum Überprüfen der Registrierungen implementieren, z. B. SMS-basierte oder E-Mail-basierte Überprüfung. Damit können Sie verhindern, dass ein böswilliger Benutzer betrügerische Registrierungen erstellt.
 
 ## Erstellen des LoginProvider
 
-Eines der fundamentalen Konstrukte in der Mobile Services-Authentifizierungspipeline ist der **LoginProvider**. In diesem Abschnitt erstellen Sie Ihren eigenen `CustomLoginProvider`. Er wird nicht in die Pipeline eingebaut wie die integrierten Anbieter, sondern ermöglicht Ihnen ein paar praktische Funktionen. Bei Verwendung von Visual Studio 2013 müssen Sie unter Umständen das `WindowsAzure.MobileServices.Backend.Security`-NuGet-Paket installieren, um die Verweise auf die `LoginProvider`-Klasse hinzuzufügen.
+Eines der fundamentalen Konstrukte in der Mobile Services-Authentifizierungspipeline ist der **LoginProvider**. In diesem Abschnitt erstellen Sie Ihren eigenen `CustomLoginProvider`. Er wird nicht in die Pipeline eingebaut wie die integrierten Anbieter, sondern ermöglicht Ihnen ein paar praktische Funktionen. Bei Verwendung von Visual Studio 2013 müssen Sie unter Umständen das `WindowsAzure.MobileServices.Backend.Security`-NuGet-Paket installieren, um die Verweise auf die `LoginProvider`-Klasse hinzuzufügen.
 
 1. Erstellen Sie eine neue Klasse namens `CustomLoginProvider`, die von **LoginProvider** abgeleitet ist, und fügen Sie die folgenden `using`-Anweisungen hinzu:
 
@@ -424,4 +423,4 @@ Damit ist dieses Lernprogramm abgeschlossen.
 [ClaimsIdentity]: https://msdn.microsoft.com/library/system.security.claims.claimsidentity(v=vs.110).aspx
 [ProviderCredentials]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobile.service.security.providercredentials.aspx
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0309_2016-->

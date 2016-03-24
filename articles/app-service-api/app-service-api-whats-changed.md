@@ -18,19 +18,14 @@
 
 # App Service-API-Apps – Änderungen
 
-Auf der Connect()-Veranstaltung im November 2015 wurden für Azure App Service einige Verbesserungen [angekündigt](https://azure.microsoft.com/blog/azure-app-service-updates-november-2015/). Zu diesen Verbesserungen gehören grundlegende Änderungen der API-Apps, um eine bessere Ausrichtung auf mobile Apps und Web-Apps zu erzielen, die Konzeptanzahl zu reduzieren und die Bereitstellungs- und Laufzeitleistung zu verbessern. Ab dem 30. November 2015 werden die neuen API-Apps, die Sie mit dem Azure-Verwaltungsportal oder den neuesten Tools erstellen, diese Änderungen widerspiegeln. In diesem Artikel werden diese Änderungen beschrieben, und Sie erfahren auch, wie Sie vorhandene Apps neu bereitstellen, um die Funktionen nutzen zu können.
-
-
-> [AZURE.NOTE] Bei der ersten Vorschauversion von API-Apps wurden zwei Hauptszenarien unterstützt: 1) benutzerdefinierte APIs zur Verwendung in Logik-Apps oder Ihren eigenen Clients und 2) die Marketplace-API (häufig SaaS-Connectors) zur Verwendung in Logik-Apps. In diesem Artikel wird das erste Szenario behandelt (benutzerdefinierte APIs). Für Marketplace-APIs werden Anfang 2016 eine verbesserte Designeroberfläche für Logik-Apps und eine verbesserte zugrunde liegende Verbindungsbasis eingeführt. Die vorhandenen Marketplace-APIs sind im Logik-Apps-Designer weiterhin verfügbar.
+Auf der Connect()-Veranstaltung im November 2015 wurden für Azure App Service einige Verbesserungen [angekündigt](https://azure.microsoft.com/blog/azure-app-service-updates-november-2015/). Zu diesen Verbesserungen gehören grundlegende Änderungen der API-Apps, um eine bessere Ausrichtung auf mobile Apps und Web-Apps zu erzielen, die Konzeptanzahl zu reduzieren und die Bereitstellungs- und Laufzeitleistung zu verbessern. Ab dem 30. November 2015 werden die neuen API-Apps, die Sie mit dem Azure-Verwaltungsportal oder den neuesten Tools erstellen, diese Änderungen widerspiegeln. In diesem Artikel werden diese Änderungen beschrieben, und Sie erfahren auch, wie Sie vorhandene Apps neu bereitstellen, um die Funktionen nutzen zu können.
 
 ## Funktionsänderungen
 Die wichtigsten Funktionen von API-Apps – Authentifizierung, CORS und API-Metadaten – wurden direkt in App Service verschoben. Dank dieser Änderung sind die Funktionen für Web-Apps, mobile Apps und API-Apps verfügbar. Alle drei App-Arten verfügen im Ressourcen-Manager über den gleichen Ressourcentyp: **Microsoft.Web/sites**. Das API-Apps-Gateway wird für API-Apps nicht mehr benötigt und daher auch nicht mehr angeboten. Dies erleichtert außerdem die Verwendung von Azure API Management, da nur ein API Management-Gateway vorhanden ist.
 
 ![API-Apps-Übersicht](./media/app-service-api-whats-changed/api-apps-overview.png)
 
-Ein wichtiges Entwurfsprinzip beim API-Apps-Update ist, dass Sie Ihre API unverändert und in der gewünschten Sprache nutzen können. Wenn Ihre API bereits als Web-App oder mobile App* bereitgestellt wurde, müssen Sie Ihre App nicht neu bereitstellen, um die neuen Funktionen zu nutzen.
-
-> [AZURE.NOTE] *Wenn Sie gerade mit der Vorschauversion von API-Apps arbeiten, können Sie die unten angegebene ausführliche Migrationsanleitung verwenden.
+Ein wichtiges Entwurfsprinzip beim API-Apps-Update ist, dass Sie Ihre API unverändert und in der gewünschten Sprache nutzen können. Wenn Ihre API bereits als Web-App oder mobile App bereitgestellt wurde, müssen Sie Ihre App nicht neu bereitstellen, um die neuen Funktionen zu nutzen. Wenn Sie gerade mit der Vorschauversion von API-Apps arbeiten, können Sie die unten angegebene ausführliche Migrationsanleitung verwenden.
 
 ### Authentifizierung
 Die vorhandenen fertigen Authentifizierungsfunktionen für API-Apps, Mobile Services/Apps und Web-Apps wurden vereinheitlicht und sind im Verwaltungsportal auf einem zentralen Blatt für die Azure App Service-Authentifizierung verfügbar. Eine Einführung in die Authentifizierungsdienste in App Service finden Sie unter [Erweitern der App Service-Authentifizierung/Autorisierung](https://azure.microsoft.com/blog/announcing-app-service-authentication-authorization/).
@@ -44,7 +39,7 @@ Für API-Szenarien gibt es einige relevante neue Funktionen:
 Weitere Informationen zu den neuen Authentifizierungsfeatures finden Sie unter [Authentifizierung und Autorisierung für API-Apps in Azure App Service](app-service-api-authentication.md). Informationen zum Migrieren vorhandener API-Apps aus dem vorherigen API-Apps-Modell zum neuen Modell finden Sie weiter unten in diesem Artikel unter [Migrieren von vorhandenen API-Apps](#migrating-existing-api-apps).
  
 ### CORS
-Anstelle einer kommagetrennten **MS_CrossDomainOrigins**-App-Einstellung enthält das Azure-Verwaltungsportal jetzt ein Blatt zum Konfigurieren von CORS (Cross-Origin Resource Sharing). Alternativ dazu kann die Konfiguration auch mit den Ressourcen-Manager-Tools durchgeführt werden, wie z. B. Azure PowerShell, Befehlszeilenschnittstelle (CLI) oder [Ressourcen-Explorer](https://resources.azure.com/). Legen Sie die **cors**-Eigenschaft für Ihre Ressource **&lt;Websitename&gt;/web** auf den Ressourcentyp **Microsoft.Web/sites/config** fest. Beispiel:
+Anstelle einer kommagetrennten **MS\_CrossDomainOrigins**-App-Einstellung enthält das Azure-Verwaltungsportal jetzt ein Blatt zum Konfigurieren von CORS (Cross-Origin Resource Sharing). Alternativ dazu kann die Konfiguration auch mit den Ressourcen-Manager-Tools durchgeführt werden, wie z. B. Azure PowerShell, Befehlszeilenschnittstelle (CLI) oder [Ressourcen-Explorer](https://resources.azure.com/). Legen Sie die **cors**-Eigenschaft für Ihre Ressource **&lt;Websitename&gt;/web** auf den Ressourcentyp **Microsoft.Web/sites/config** fest. Beispiel:
 
     {
         "cors": {
@@ -55,7 +50,7 @@ Anstelle einer kommagetrennten **MS_CrossDomainOrigins**-App-Einstellung enthäl
     } 
 
 ### API-Metadaten
-Das Blatt „API-Definition“ ist jetzt für Web-Apps, mobile Apps und API-Apps verfügbar. Im Verwaltungsportal können Sie entweder eine relative URL oder eine absolute URL angeben, die auf einen Endpunkt zeigt, auf dem eine Swagger 2.0-Darstellung Ihrer API gehostet wird. Alternativ dazu können Sie die Konfiguration auch mit den Ressourcen-Manager-Tools durchführen. Legen Sie die **apiDefinition**-Eigenschaft für Ihre Ressource **&lt;Websitename&gt;/web** auf den Ressourcentyp **Microsoft.Web/sites/config** fest. Beispiel:
+Das Blatt „API-Definition“ ist jetzt für Web-Apps, mobile Apps und API-Apps verfügbar. Im Verwaltungsportal können Sie entweder eine relative URL oder eine absolute URL angeben, die auf einen Endpunkt zeigt, auf dem eine Swagger 2.0-Darstellung Ihrer API gehostet wird. Alternativ dazu können Sie die Konfiguration auch mit den Ressourcen-Manager-Tools durchführen. Legen Sie die **apiDefinition**-Eigenschaft für Ihre Ressource **&lt;Websitename&gt;/web** auf den Ressourcentyp **Microsoft.Web/sites/config** fest. Beispiel:
 
     {
         "apiDefinition":
@@ -64,29 +59,27 @@ Das Blatt „API-Definition“ ist jetzt für Web-Apps, mobile Apps und API-Apps
         }
     }
 
-Zu diesem Zeitpunkt muss der Metadaten-Endpunkt ohne Authentifizierung für viele nachgelagerte Clients (z. B. Visual Studio-REST-API-Clientgenerierung und PowerApps-Flow „API hinzufügen“) öffentlich verfügbar sein, um genutzt werden zu können. Dies bedeutet aber Folgendes: Wenn Sie die App Service-Authentifizierung verwenden und die API-Definition direkt aus Ihrer App verfügbar machen möchten, müssen Sie die oben beschriebene Option für die „Verzögerte Authentifizierung“ verwenden, damit die Route zu Ihren Swagger-Metadaten öffentlich ist.
+Zu diesem Zeitpunkt muss der Metadaten-Endpunkt ohne Authentifizierung für viele nachgelagerte Clients (z. B. Visual Studio-REST-API-Clientgenerierung und PowerApps-Flow „API hinzufügen“) öffentlich verfügbar sein, um genutzt werden zu können. Dies bedeutet aber Folgendes: Wenn Sie die App Service-Authentifizierung verwenden und die API-Definition direkt aus Ihrer App verfügbar machen möchten, müssen Sie die oben beschriebene Option für die „Verzögerte Authentifizierung“ verwenden, damit die Route zu Ihren Swagger-Metadaten öffentlich ist.
 
 ## Verwaltungsportal
 Durch die Auswahl von **Neu > Web und mobil > API-App** im Portal werden API-Apps erstellt, die die in diesem Artikel beschriebenen neuen Funktionen widerspiegeln. Bei Auswahl von **Durchsuchen > API-Apps** werden nur diese neuen API-Apps angezeigt. Wenn Sie zu einer API-App navigieren, weist das Blatt das gleiche Layout und die gleichen Funktionen wie für Web-Apps und mobile Apps auf. Die einzigen Unterschiede sind der Schnellstartinhalt und die Reihenfolge der Einstellungen.
 
-Vorhandene API-Apps (oder aus Logik-Apps erstellte Marketplace-API-Apps) mit den vorherigen Vorschaufunktionen werden im Logik-Apps-Designer weiterhin angezeigt. Beim Durchsuchen werden alle Ressourcen einer Ressourcengruppe angezeigt. Wenn Sie eine API-App mit den vorherigen Vorschaufunktionen erstellen möchten, finden Sie das Paket im Azure Marketplace unter **Web und mobil > API-Apps (Vorschau)**, und Sie können es durchsuchen.
+Vorhandene API-Apps (oder aus Logik-Apps erstellte Marketplace-API-Apps) mit den vorherigen Vorschaufunktionen werden im Logik-Apps-Designer weiterhin angezeigt. Beim Durchsuchen werden alle Ressourcen einer Ressourcengruppe angezeigt.
 
 ## Visual Studio
 
-Die meisten Web-Apps-Tools funktionieren mit neuen API-Apps, da sie den gleichen zugrunde liegenden Ressourcentyp **Microsoft.Web/sites** aufweisen. Die Azure Visual Studio-Tools sollten dagegen auf Version 2.8.1 oder höher aktualisiert werden, da damit mehrere Funktionen verfügbar gemacht werden, die speziell für APIs gelten. Laden Sie das SDK über die [Seite mit den Azure-Downloads](https://azure.microsoft.com/downloads/) herunter.
+Die meisten Web-Apps-Tools funktionieren mit neuen API-Apps, da sie den gleichen zugrunde liegenden Ressourcentyp **Microsoft.Web/sites** aufweisen. Die Azure Visual Studio-Tools sollten dagegen auf Version 2.8.1 oder höher aktualisiert werden, da damit mehrere Funktionen verfügbar gemacht werden, die speziell für APIs gelten. Laden Sie das SDK über die [Seite mit den Azure-Downloads](https://azure.microsoft.com/downloads/) herunter.
 
 Aufgrund der Rationalisierung der App Service-Typen erfolgt auch die Veröffentlichung einheitlich unter **Veröffentlichen > Microsoft Azure App Service**:
 
 ![API-Apps veröffentlichen](./media/app-service-api-whats-changed/api-apps-publish.png)
 
-Weitere Informationen zum SDK 2.8.1 erhalten Sie im [Blogbeitrag](https://azure.microsoft.com/blog/announcing-azure-sdk-2-8-1-for-net/) mit der Ankündigung.
+Weitere Informationen zum SDK 2.8.1 erhalten Sie im [Blogbeitrag](https://azure.microsoft.com/blog/announcing-azure-sdk-2-8-1-for-net/) mit der Ankündigung.
 
-Alternativ dazu können Sie das Veröffentlichungsprofil manuell aus dem Verwaltungsportal importieren, um die Veröffentlichung zu ermöglichen. Für Cloud-Explorer, die Codegenerierung und die API-App-Auswahl/-Erstellung ist aber SDK 2.8.1 oder höher erforderlich.
-
-Die Möglichkeit, die Veröffentlichung für vorhandene API-Apps mit den vorherigen Vorschaufunktionen durchzuführen, bleibt auch in SDK 2.8.1 bestehen. Wenn Sie das Projekt bereits veröffentlicht haben, ist keine weitere Maßnahme erforderlich. Wählen Sie zum Einrichten der Veröffentlichung im entsprechenden Dialogfeld in der Dropdownliste **Mehr Optionen** die Option **API-Apps (klassisch)** aus.
+Alternativ dazu können Sie das Veröffentlichungsprofil manuell aus dem Verwaltungsportal importieren, um die Veröffentlichung zu ermöglichen. Für Cloud-Explorer, die Codegenerierung und die API-App-Auswahl/-Erstellung ist aber SDK 2.8.1 oder höher erforderlich.
 
 ## Migrieren von vorhandenen API-Apps
-Wenn Ihre benutzerdefinierte API mit der vorherigen Vorschauversion von API-Apps bereitgestellt wurde, bitten wir Sie, bis zum 31. Dezember 2015 zum neuen Modell für API-Apps zu migrieren. Da sowohl das neue als auch das alte Modell auf Web-APIs basiert, die in App Service gehostet werden, kann der Großteil des vorhandenen Codes wiederverwendet werden.
+Wenn Ihre benutzerdefinierte API mit der vorherigen Vorschauversion von API-Apps bereitgestellt wurde, bitten wir Sie, bis zum 31. Dezember 2015 zum neuen Modell für API-Apps zu migrieren. Da sowohl das neue als auch das alte Modell auf Web-APIs basiert, die in App Service gehostet werden, kann der Großteil des vorhandenen Codes wiederverwendet werden.
 
 ### Hosting und erneute Bereitstellung
 Die Schritte für die erneute Bereitstellung entsprechen den Schritten zum Bereitstellen einer vorhandenen Web-API für App Service. Schritte:
@@ -118,27 +111,11 @@ Das vorherige API-Apps-Modell verfügte über APIs zum Ermitteln anderer API-App
 3. Erstellen Sie Ihre eigene Ermittlungs-API-App, und sorgen Sie dafür, dass andere API-Apps beim Starten für die Ermittlungs-App registriert werden.
 4. Füllen Sie die App-Einstellungen aller API-Apps (und Clients) zur Bereitstellungszeit mit den Endpunkten der anderen API-Apps. Dies eignet sich für Vorlagenbereitstellungen und wird aufgrund des Umstands ermöglicht, dass Sie mit API-Apps jetzt die Kontrolle über die URL haben.
 
-### Logik-Apps
-Über den Logik-Apps-Designer wird mit dem neuen API-Apps-Modell Anfang 2016 eine besonders nahtlose Integration hinzugefügt. Daher kann der in Logik-Apps integrierte HTTP-Connector einen beliebigen HTTP-Endpunkt aufrufen. Er unterstützt die Dienstprinzipalauthentifizierung, die standardmäßig auch von den App Service-Authentifizierungsdiensten unterstützt wird. Informationen zum Konsumieren einer unter App Service gehosteten API in Logik-Apps finden Sie unter [Verwenden der in App Service gehosteten benutzerdefinierten API mit Logik-Apps](../app-service-logic/app-service-logic-custom-hosted-api.md).
-
-### <a id="documentation"></a> Dokumentation für das vorherige API-Apps-Modell
-Einige Artikel auf [azure.microsoft.com](https://azure.microsoft.com/), die für das alte API-Apps-Modell geschrieben wurden, gelten für das neue Modell nicht mehr und werden von der Website entfernt. Die URLs dieser Artikel werden auf Artikel umgeleitet, die den ursprünglichen so ähnlich wie möglich sind und die auch für das neue Modell zutreffen. Sie können die alten Artikel jedoch weiterhin im [GitHub-Dokumentationsrepository für azure.microsoft.com](https://github.com/Azure/azure-content) lesen. Die meisten dieser möglicherweise gewünschten Artikel finden Sie im Ordner [articles/app-service-api](https://github.com/Azure/azure-content/tree/master/articles/app-service-api). Es folgen direkte Links zu einigen Artikeln, die sehr wahrscheinlich weiterhin für Sie relevant sind, wenn Sie ältere API-Apps unterstützen oder vom Marketplace aus neue Connector-API-Apps erstellen.
-
-* [Überblick zur Authentifizierung](https://github.com/Azure/azure-content/tree/master/articles/app-service/app-service-authentication-overview.md)
-* [Schützen einer API-App](https://github.com/Azure/azure-content/tree/master/articles/app-service-api/app-service-api-dotnet-add-authentication.md)
-* [Nutzung einer internen API-App](https://github.com/Azure/azure-content/tree/master/articles/app-service-api/app-service-api-dotnet-consume-internal.md)
-* [Nutzung mit Clientflussauthentifizierung](https://github.com/Azure/azure-content/tree/master/articles/app-service-api/app-service-api-authentication-client-flow.md)
-* [Bereitstellen und Konfigurieren einer SaaS-Connector-API-App](https://github.com/Azure/azure-content/tree/master/articles/app-service-api/app-service-api-connnect-your-app-to-saas-connector.md)
-* [Bereitstellen einer API-App mit einem neuen Gateway](https://github.com/Azure/azure-content/tree/master/articles/app-service-api/app-service-api-arm-new-gateway-provision.md)
-* [Debuggen einer API-App](https://github.com/Azure/azure-content/tree/master/articles/app-service-api/app-service-api-dotnet-debug.md)
-* [Verbinden mit einer SaaS-Plattform](https://github.com/Azure/azure-content/tree/master/articles/app-service-api/app-service-api-dotnet-connect-to-saas.md)
-* [Optimieren einer API-App für Logik-Apps](https://github.com/Azure/azure-content/tree/master/articles/app-service-api/app-service-api-optimize-for-logic-apps.md)
-* [API-App-Trigger](https://github.com/Azure/azure-content/tree/master/articles/app-service-api/app-service-api-dotnet-triggers.md)
-
 ## Nächste Schritte
+
 Weitere Informationen finden Sie in den Artikeln im [Abschnitt zur API-Apps-Dokumentation](https://azure.microsoft.com/documentation/services/app-service/api/). Sie wurden aktualisiert und für das neue Modell für API-Apps angepasst. Darüber hinaus haben Sie in den Foren Zugriff auf weitere Details und Anleitungen zur Migration:
 
 - [MSDN-Forum](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=AzureAPIApps)
 - [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-api-apps)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0316_2016-->

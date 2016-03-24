@@ -1,10 +1,10 @@
 <properties
-   pageTitle="Abgleichsdauer in Azure Active Directory-Berichten | Microsoft Azure"
-   description="Der erforderliche Zeitraum, bis frühere Ereignisse in Ihrem Azure Active Directory-Bericht angezeigt werden."
+   pageTitle="Abgleichszeiten in Azure Active Directory-Berichten | Microsoft Azure"
+   description="Der erforderliche Zeitraum, bis frühere Berichtsereignisse in Ihrem Azure AD-Verzeichnis angezeigt werden."
    services="active-directory"
    documentationCenter=""
-   authors="kenhoff"
-   manager="mbaldwin"
+   authors="dhanyahk"
+   manager="stevepo"
    editor=""/>
 
 <tags
@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="12/07/2015"
-   ms.author="kenhoff"/>
+   ms.date="03/07/2016"
+   ms.author="dhanyahk"/>
 
 # Abgleichszeiten für Azure Active Directory-Berichte
 
@@ -24,7 +24,7 @@ Nachdem ein Verzeichnis für Berichte aktiviert wurde, werden die Daten für die
 
 Bericht | Beschreibung
 ------------------------------------------------------- | -----------
-Anmeldungen aus unbekannten Quellen | 0 Tage
+Anmeldungen von unbekannten Quellen | 0 Tage
 Anmeldungen nach mehreren Fehlern | 0 Tage
 Anmeldungen aus mehreren geografischen Regionen | 0 Tage
 Anmeldungen von IP-Adressen mit verdächtigen Aktivitäten | 0 Tage
@@ -32,7 +32,7 @@ Anmeldungen von möglicherweise infizierten Geräten | 0 Tage
 Irreguläre Anmeldeaktivitäten | 0 Tage
 Benutzer mit anomalen Anmeldeaktivitäten | 0 Tage
 Benutzer mit kompromittierten Anmeldeinformationen | 0 Tage
-Überwachungsbericht | 30 Tage
+Überwachungsbericht | 30 Tage
 Aktivität "Zurücksetzen des Kennworts" (Azure AD) | 0 Tage
 Aktivität "Zurücksetzen des Kennworts" (Identity Manager) | 0 Tage
 Aktivität "Registrierung für Zurücksetzen des Kennworts" (Azure AD) | 0 Tage
@@ -48,4 +48,4 @@ Aktivste RMS-Benutzer | 0 Tage
 Nutzung von RMS-Geräten | 0 Tage
 Nutzung RMS-fähiger Anwendungen | 0 Tage
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0309_2016-->

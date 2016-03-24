@@ -5,7 +5,7 @@
     suite="powerapps"
 	documentationCenter="" 
 	authors="rajram"
-	manager="dwrede"
+	manager="erikre"
 	editor=""/>
 
 <tags
@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na" 
-   ms.date="11/25/2015"
+   ms.date="03/02/2016"
    ms.author="rajram"/>
 
 # Entwickeln von APIs für PowerApps
@@ -22,26 +22,26 @@
 Sie können Ihre eigene API erstellen oder entwickeln, die in PowerApps verwendet werden kann. Dazu müssen folgende Schritte ausgeführt werden:
 
 - Erstellen und Bereitstellen der API
-- Erstellen der [Swagger 2.0](http://swagger.io/)-API-Definition für die API
+- Erstellen der [Swagger 2.0](http://swagger.io/)-API-Definition für die API
 
 In diesem Thema werden diese Schritte aufgeführt.
 
-## Schritt 1: Erstellen und Bereitstellen der API
+## Schritt 1: Erstellen und Bereitstellen der API
 
 APIs für PowerApps lassen sich auf die gleiche Weise wie andere APIs erstellen und bereitstellen. Sie können Ihre bevorzugte Programmiersprache und das gewünschte Framework auswählen. Sie können Ihre API zudem in einer beliebigen Umgebung hosten. Es empfiehlt sich, die API in der gleichen App Service-Umgebung von PowerApps wie die [API-App](https://azure.microsoft.com/services/app-service/api/) zu hosten.
 
 In den folgenden Artikeln wird das Erstellen und Bereitstellen einer .NET-, Java- oder Node.js-API in der App Service-Umgebung erläutert:
 
-- [Erstellen und Bereitstellen einer .NET-API-App in Azure App Service](../app-service-api-dotnet-get-started.md)
-- [Erstellen und Bereitstellen einer Java-API-App in Azure App Service](../app-service-api-java-api-app.md)
-- [Erstellen und Bereitstellen einer Node.js-API-App in Azure App Service](../app-service-api-nodejs-api-app.md)
+- [Erstellen und Bereitstellen einer .NET-API-App in Azure App Service](../app-service-api/app-service-api-dotnet-get-started.md)
+- [Erstellen und Bereitstellen einer Java-API-App in Azure App Service](../app-service-api/app-service-api-java-api-app.md)
+- [Erstellen und Bereitstellen einer Node.js-API-App in Azure App Service](../app-service-api/app-service-api-nodejs-api-app.md)
 
 
-## Schritt 2: Erstellen der Swagger 2.0-API-Definition für die API
+## Schritt 2: Erstellen der Swagger 2.0-API-Definition für die API
 
-Wenn Sie die Anweisungen in einem der unter *Schritt 1* aufgeführten Artikel befolgen, wird automatisch eine Swagger 2.0-API-Standarddefinition für Ihre API erstellt. Um die generierte Swagger 2.0-API-Definition für PowerApps zu optimieren, können Sie sie optional mit den folgenden Schemaerweiterungen anpassen.
+Wenn Sie die Anweisungen in einem der unter *Schritt 1* aufgeführten Artikel befolgen, wird automatisch eine Swagger 2.0-API-Standarddefinition für Ihre API erstellt. Um die generierte Swagger 2.0-API-Definition für PowerApps zu optimieren, können Sie sie optional mit den folgenden Schemaerweiterungen anpassen.
 
-Allgemeine Informationen zum Anpassen von Swagger 2.0-API-Definitionen finden Sie unter [Anpassen von mit Swashbuckle generierten API-Definitionen](../app-service-api-dotnet-swashbuckle-customize.md).
+Allgemeine Informationen zum Anpassen von Swagger 2.0-API-Definitionen finden Sie unter [Anpassen von mit Swashbuckle generierten API-Definitionen](../app-service-api/app-service-api-dotnet-swashbuckle-customize.md).
 
 ### Schemaerweiterungen
 Neben den automatisch mit Swashbuckle generierten Swagger-Definitionen stehen beim Erstellen von APIs für PowerApps einige weitere Swagger-Erweiterungen zur Verfügung. Diese Erweiterungen werden in diesem Abschnitt aufgeführt und erläutert.
@@ -130,4 +130,4 @@ Beispiel:
 
 Dies ist nützlich in Szenarios, in denen die Eingaben für einen Vorgang dynamisch vorgenommen werden. Betrachten Sie beispielsweise das SQL-Beispiel. Das Schema jeder Tabelle ist unterschiedlich. Wenn ein Benutzer eine bestimmte Tabelle auswählt, muss der Logic Flow-Designer daher die Struktur der Tabelle ermitteln, sodass die Spaltennamen angezeigt werden können. Wenn die Swagger-Definition in diesem Kontext über _x-ms-dynamic-schema_ verfügt, wird der entsprechende Vorgang zum Abrufen des Schemas aufgerufen.
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0309_2016-->

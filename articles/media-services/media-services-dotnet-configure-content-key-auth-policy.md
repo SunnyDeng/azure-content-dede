@@ -236,7 +236,7 @@ Gehen Sie wie folgt vor, um ein Testtoken abzurufen, das auf der Token-Einschrä
 
 Mithilfe von Media Services können Sie die Rechte und Einschränkungen konfigurieren, die für die PlayReady-DRM-Laufzeit erzwungen werden sollen, wenn ein Benutzer versucht, geschützte Inhalte wiederzugeben.
 
-Wenn Sie Inhalte mit PlayReady schützen, müssen Sie in Ihrer Autorisierungsrichtlinie u. a. eine XML-Zeichenfolge zur Definition der [PlayReady-Lizenzvorlage](media-services-playready-license-template-overview.md) angeben. Die **PlayReadyLicenseResponseTemplate**-Klasse und die **PlayReadyLicenseTemplate**-Klasse im Media Services SDK für .NET unterstützen Sie bei der Definition der PlayReady-Lizenzvorlage.
+Wenn Sie Inhalte mit PlayReady schützen, müssen Sie in Ihrer Autorisierungsrichtlinie u. a. eine XML-Zeichenfolge zur Definition der [PlayReady-Lizenzvorlage](media-services-playready-license-template-overview.md) angeben. Die **PlayReadyLicenseResponseTemplate**-Klasse und die **PlayReadyLicenseTemplate**-Klasse im Media Services SDK für .NET unterstützen Sie bei der Definition der PlayReady-Lizenzvorlage.
 
 ###Open-Einschränkung
 	
@@ -439,4 +439,4 @@ Um ein Testtoken abzurufen, das auf der Token-Einschränkung basiert, die für d
 Nachdem Sie eine Autorisierungsrichtlinie für einen Inhaltsschlüssel konfiguriert haben, fahren Sie mit dem Thema [Konfigurieren einer Übermittlungsrichtlinie für Medienobjekte](media-services-dotnet-configure-asset-delivery-policy.md) fort.
  
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0309_2016-->

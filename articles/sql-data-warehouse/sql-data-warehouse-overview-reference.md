@@ -13,14 +13,20 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/07/2016"
+   ms.date="03/03/2016"
    ms.author="barbkess;sonyama"/>
 
 # Referenzthemen für SQL Data Warehouse
 
 Diese Artikel enthalten Referenzinformationen für SQL Data Warehouse.
 
-[Transact-SQL-Sprachelemente][] [Transact-SQL-Anweisungen][] [Transact-SQL-Systemsichten][] [PowerShell-Cmdlets][]
+[Transact-SQL-Sprachelemente][]
+
+[Transact-SQL-Anweisungen][]
+
+[Transact-SQL-Systemsichten][]
+
+[PowerShell-Cmdlets][]
 
 
 
@@ -39,4 +45,4 @@ Weitere Informationen zur Entwicklung finden Sie unter [Entwicklungsübersicht][
 
 <!--MSDN references-->
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0309_2016-->

@@ -21,10 +21,10 @@ Der Azure Active Directory-Anwendungskatalog enthält eine Liste der Anwendungen
 
 Kunden mit [Azure Active Directory Premium](active-directory-editions.md)-Lizenzen erhalten auch diese zusätzlichen Funktionen:
 
-* Self-Service-Integration für Anwendungen, die SAML 2.0-Identitätsanbieter unterstützen
+* Self-Service-Integration für Anwendungen, die SAML 2.0-Identitätsanbieter unterstützen (SP-initiiert oder IdP-initiiert)
 * Self-Service-Integration für Webanwendungen, die über eine HTML-basierte Anmeldeseite mit [kennwortbasierter einmaliger Anmeldung (Single Sign-On, SSO)](active-directory-appssoaccess-whatis.md/#password-based-single-sign-on) verfügen
 * Self-Service-Verbindung für Anwendungen, die das SCIM-Protokoll für die Benutzerbereitstellung verwenden ([wie hier beschrieben](active-directory-scim-provisioning))
-* Möglichkeit zum Hinzufügen von Links auf Anwendungen im [Office 365-App-Startfeld](https://blogs.office.com/2014/10/16/organize-office-365-new-app-launcher-2/) oder im [Azure AD-Zugriffsbereich](active-directory-appssoaccess-whatis.md/#deploying-azure-ad-integrated-applications-to-users)
+* Möglichkeit zum Hinzufügen von Links auf Anwendungen im [Office 365-App-Startfeld](https://blogs.office.com/2014/10/16/organize-office-365-new-app-launcher-2/) oder im [Azure AD-Zugriffsbereich](active-directory-appssoaccess-whatis.md/#deploying-azure-ad-integrated-applications-to-users)
 
 Diese Möglichkeiten beziehen sich nicht nur SaaS-Anwendungen, die Sie bereits nutzen, die aber noch nicht per Onboarding in den Azure AD-Anwendungskatalog aufgenommen wurden, sondern auch auf Drittanbieter-Webanwendungen, die Ihre Organisation auf von Ihnen kontrollierten Servern in der Cloud oder lokal bereitgestellt hat.
 
@@ -49,33 +49,51 @@ Das Hinzufügen einer Anwendung mit dieser Methode gestaltet sich ähnlich benut
 
 ##Azure AD – einmaliges Anmelden
 
-Wählen Sie diese Option aus, um die SAML-basierte Authentifizierung für die Anwendung zu konfigurieren. Hierfür ist es erforderlich, dass die Anwendung SAML 2.0 unterstützt, und Sie sollten sich vor dem Ausführen der nächsten Schritte informieren, wie die SAML-Funktionen der Anwendung genutzt werden können. Wenn Sie auf **Weiter** geklickt haben, werden Sie aufgefordert, drei URLs einzugeben, die den SAML-Endpunkten für die Anwendung entsprechen.
+Wählen Sie diese Option aus, um die SAML-basierte Authentifizierung für die Anwendung zu konfigurieren. Hierfür ist es erforderlich, dass die Anwendung SAML 2.0 unterstützt, und Sie sollten sich vor dem Ausführen der nächsten Schritte informieren, wie die SAML-Funktionen der Anwendung genutzt werden können. Wenn Sie auf **Weiter** geklickt haben, werden Sie aufgefordert, drei URLs einzugeben, die den SAML-Endpunkten für die Anwendung entsprechen.
 
 ![][4]
+ 
+Diese sind wie folgt:
 
-Über die Quickinfosymbole im Dialogfeld erhalten Sie detaillierte Informationen, wofür die jeweiligen URLs bestimmt sind und wie sie verwendet werden. Nachdem Sie diese eingegeben haben, klicken Sie auf **Weiter**, um den nächsten Bildschirm anzuzeigen. Auf diesem Bildschirm erhalten Sie Informationen darüber, was Sie auf Anwendungsseite konfigurieren müssen, damit diese ein SAML-Token von Azure AD akzeptiert.
+* **Anmelde-URL (nur SP-initiiert):** Hiermit melden sich Benutzer an dieser Anwendung an. Sofern die Anwendung für die Durchführung des vom Dienstanbieter (Service Provider, SP) initiierten einmaligen Anmeldens konfiguriert ist, passiert Folgendes, wenn ein Benutzer zu dieser URL navigiert: Der Dienstanbieter führt die Umleitung an Azure AD durch, um den Benutzer zu authentifizieren und anzumelden. Wenn dieses Feld ausgefüllt wird, verwendet Azure AD diese URL zum Starten der Anwendung aus Office 365 und über den Azure AD-Zugriffsbereich. Falls Sie dieses Feld leer lassen, führt Azure AD stattdessen eine vom Identitätsanbieter initiierte Anmeldung aus, wenn die App über Office 365, den Azure AD-Zugriffsbereich oder die Azure AD-URL für das einmalige Anmelden (kann von der Dashboard-Registerkarte kopiert werden) gestartet wird.
+
+* **Aussteller-URL:** Mit der Aussteller-URL sollte die Anwendung, für die das einmalige Anmelden konfiguriert wird, eindeutig identifiziert werden. Dies ist der Wert, der von Azure AD als **Audience**-Parameter des SAML-Tokens zurück an die Anwendung gesendet wird, und von der Anwendung wird erwartet, dass sie ihn überprüft. Dieser Wert ist auch als **Entitäts-ID** in SAML-Metadaten enthalten, die von der Anwendung bereitgestellt werden. Die SAML-Dokumentation der Anwendung enthält Details dazu, wie die Entitäts-ID bzw. der Wert für „Audience“ lautet. Unten ist ein Beispiel dafür angegeben, wie die Audience-URL im SAML-Token angezeigt wird, das von der Anwendung zurückgegeben wird:
+
+```
+    <Subject>
+    <NameID Format="urn:oasis:names:tc:SAML:2.0:nameid-format:unspecificed">chad.smith@example.com</NameID>
+        <SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer" />
+      </Subject>
+      <Conditions NotBefore="2014-12-19T01:03:14.278Z" NotOnOrAfter="2014-12-19T02:03:14.278Z">
+        <AudienceRestriction>
+          <Audience>https://tenant.example.com</Audience>
+        </AudienceRestriction>
+      </Conditions>
+```
+
+* **Antwort-URL:** Die Antwort-URL ist der Ort, an dem die Anwendung den Empfang des SAML-Tokens erwartet. Sie wird auch als **Assertion Consumer Service-URL (ACS)** bezeichnet. In der SAML-Dokumentation der Anwendung finden Sie Details dazu, wie die Antwort-URL bzw. ACS-URL des SAML-Tokens lautet. Nachdem Sie diese eingegeben haben, klicken Sie auf **Weiter**, um den nächsten Bildschirm anzuzeigen. Auf diesem Bildschirm erhalten Sie Informationen darüber, was Sie auf Anwendungsseite konfigurieren müssen, damit diese ein SAML-Token von Azure AD akzeptiert. 
 
 ![][5]
 
-Welche Werte erforderlich sind, variiert und hängt von der jeweiligen Anwendung ab. Prüfen Sie deshalb die SAML-Dokumentation der jeweiligen Anwendung. Sowohl die Dienst-URL für die **einmalige Anmeldung** als auch die Dienst-URL für die **einmalige Abmeldung** werden im gleichen Endpunkt aufgelöst, und zwar im SAML-Endpunkt zur Verarbeitung von Anforderungen für Ihre Azure AD-Instanz. Die Aussteller-URL ist der Wert, der in dem für die Anwendung ausgestellten SAML-Token als „Issuer“ angezeigt wird.
+Welche Werte erforderlich sind, variiert und hängt von der jeweiligen Anwendung ab. Prüfen Sie deshalb die SAML-Dokumentation der jeweiligen Anwendung. Sowohl die Dienst-URL für die **einmalige Anmeldung** als auch die Dienst-URL für die **einmalige Abmeldung** werden im gleichen Endpunkt aufgelöst, und zwar im SAML-Endpunkt zur Verarbeitung von Anforderungen für Ihre Azure AD-Instanz. Die Aussteller-URL ist der Wert, der in dem für die Anwendung ausgestellten SAML-Token als „Issuer“ angezeigt wird.
 
 Wenn Sie die Anwendung vollständig konfiguriert haben, klicken Sie auf die Schaltfläche **Weiter** und dann auf **Fertig stellen**, um das Dialogfeld zu schließen.
 
 ##Zuweisen von Benutzern und Gruppen zu Ihrer SAML-Anwendung 
 
-Nachdem Sie Ihre Anwendung zur Verwendung von Azure AD als SAML-Identitätsanbieter konfiguriert haben, ist sie fast zum Testen bereit. Als Sicherheitsmaßnahme stellt Azure AD nur dann ein Token aus, das den Benutzern die Anmeldung bei der Anwendung erlaubt, wenn ihnen zuvor mit Azure AD Zugriff gewährt wurde. Den Benutzern kann der Zugriff direkt oder über eine Gruppe gewährt werden, in der sie Mitglied sind.
+Nachdem Sie Ihre Anwendung zur Verwendung von Azure AD als SAML-Identitätsanbieter konfiguriert haben, ist sie fast zum Testen bereit. Als Sicherheitsmaßnahme stellt Azure AD nur dann ein Token aus, das den Benutzern die Anmeldung bei der Anwendung erlaubt, wenn ihnen zuvor mit Azure AD Zugriff gewährt wurde. Den Benutzern kann der Zugriff direkt oder über eine Gruppe gewährt werden, in der sie Mitglied sind.
 
 Um der Anwendung einen Benutzer oder eine Gruppe zuzuweisen, klicken Sie auf die Schaltfläche **Benutzer zuweisen**. Wählen Sie den gewünschten Benutzer oder die gewünschte Gruppe aus, und klicken Sie auf die Schaltfläche **Zuweisen**.
 
 ![][6]
 
-Nach dem Zuweisen eines Benutzers wird es für Azure AD möglich, ein Token für den Benutzer auszustellen und im Zugriffsbereich dieses Benutzers eine Kachel für die Anwendung anzuzeigen. Wenn der Benutzer Office 365 verwendet, wird die Anwendungskachel auch im Office 365-App-Startfeld angezeigt.
+Nach dem Zuweisen eines Benutzers wird es für Azure AD möglich, ein Token für den Benutzer auszustellen und im Zugriffsbereich dieses Benutzers eine Kachel für die Anwendung anzuzeigen. Wenn der Benutzer Office 365 verwendet, wird die Anwendungskachel auch im Office 365-App-Startfeld angezeigt.
 
 Sie können ein Kachellogo für die Anwendung hochladen. Verwenden Sie dazu die Schaltfläche **Logo hochladen** auf der Registerkarte **Konfigurieren** für die Anwendung.
 
 ###Anpassen der Ansprüche, die in einem SAML-Token ausgegeben werden 
 
-Wenn sich ein Benutzer bei der Anwendung authentifiziert, stellt Azure AD ein SAML-Token für die App aus, das Informationen über den Benutzer (oder „Ansprüche“) enthält, die ihn eindeutig identifizieren. Dazu gehören normalerweise der Benutzername, die E-Mail-Adresse, der Vorname und der Nachname des Benutzers.
+Wenn sich ein Benutzer bei der Anwendung authentifiziert, stellt Azure AD ein SAML-Token für die App aus, das Informationen über den Benutzer (oder „Ansprüche“) enthält, die ihn eindeutig identifizieren. Dazu gehören normalerweise der Benutzername, die E-Mail-Adresse, der Vorname und der Nachname des Benutzers.
 
 Sie können die im SAML-Token an die Anwendung übermittelten Ansprüche auf der Registerkarte **Attribute** anzeigen oder bearbeiten.
 
@@ -87,17 +105,17 @@ Informationen zum Hinzufügen und Bearbeiten von Ansprüchen für solche Szenari
 
 ###Testen der SAML-Anwendung 
 
-Nachdem die SAML-URLs und das Zertifikat in Azure AD und in der Anwendung konfiguriert, der Anwendung in Azure die Benutzer oder Gruppen zugewiesen und auch die Ansprüche überprüft und ggf. geändert wurden, kann sich der Benutzer bei der Anwendung anmelden.
+Nachdem die SAML-URLs und das Zertifikat in Azure AD und in der Anwendung konfiguriert, der Anwendung in Azure die Benutzer oder Gruppen zugewiesen und auch die Ansprüche überprüft und ggf. geändert wurden, kann sich der Benutzer bei der Anwendung anmelden.
 
-Um dies zu testen, melden Sie sich im Azure AD-Zugriffsbereich unter https://myapps.microsoft.com mit einem Benutzerkonto an, das Sie der Anwendung zugewiesen haben. Dann klicken Sie auf die Kachel für die Anwendung, um den Vorgang für das einmalige Anmelden zu starten. Alternativ können Sie die Anmelde-URL für die Anwendung aufrufen und sich von dort aus anmelden.
+Um dies zu testen, melden Sie sich im Azure AD-Zugriffsbereich unter https://myapps.microsoft.com mit einem Benutzerkonto an, das Sie der Anwendung zugewiesen haben. Dann klicken Sie auf die Kachel für die Anwendung, um den Vorgang für das einmalige Anmelden zu starten. Alternativ können Sie die Anmelde-URL für die Anwendung aufrufen und sich von dort aus anmelden.
 
 Hinweise zum Debuggen finden Sie in diesem [Artikel zum Debuggen der SAML-basierten einmaligen Anmeldung bei Anwendungen](active-directory-saml-debugging.md).
 
 ##Einmaliges Anmelden per Kennwort
 
-Wählen Sie diese Option aus, um das [kennwortbasierte einmalige Anmelden](active-directory-appssoaccess-whatis.md) für eine Webanwendung zu konfigurieren, die über eine HTML-Anmeldeseite verfügt. Das kennwortbasierte einmalige Anmelden (auch als „Password Vaulting“ oder „Kennworttresor“ bezeichnet) ermöglicht es Ihnen, den Benutzerzugriff und die Kennwörter für Webanwendungen zu verwalten, die keinen Identitätsverbund unterstützen. Es ist auch für Szenarien nützlich, in denen mehrere Benutzer ein Konto gemeinsam verwenden müssen, wie z. B. bei den App-Konten für die sozialen Medien Ihrer Organisation.
+Wählen Sie diese Option aus, um das [kennwortbasierte einmalige Anmelden](active-directory-appssoaccess-whatis.md) für eine Webanwendung zu konfigurieren, die über eine HTML-Anmeldeseite verfügt. Das kennwortbasierte einmalige Anmelden (auch als „Password Vaulting“ oder „Kennworttresor“ bezeichnet) ermöglicht es Ihnen, den Benutzerzugriff und die Kennwörter für Webanwendungen zu verwalten, die keinen Identitätsverbund unterstützen. Es ist auch für Szenarien nützlich, in denen mehrere Benutzer ein Konto gemeinsam verwenden müssen, wie z. B. bei den App-Konten für die sozialen Medien Ihrer Organisation.
 
-Nachdem Sie auf **Weiter** geklickt haben, werden Sie aufgefordert, die URL für die webbasierte Anmeldeseite der Anwendung einzugeben. Beachten Sie, dass es sich hierbei um die Seite handeln muss, welche die Eingabefelder für Benutzername und Kennwort enthält. Nach der Eingabe startet Azure AD einen Prozess, bei dem die Anmeldeseite im Hinblick auf eine Benutzernamenseingabe und eine Kennworteingabe analysiert wird. Wenn dieser Prozess nicht erfolgreich ist, wird Ihnen eine Anleitung für einen alternativen Prozess angezeigt, bei dem Sie eine Browsererweiterung installieren (erfordert Internet Explorer, Chrome oder Firefox) und damit die Felder manuell erfassen.
+Nachdem Sie auf **Weiter** geklickt haben, werden Sie aufgefordert, die URL für die webbasierte Anmeldeseite der Anwendung einzugeben. Beachten Sie, dass es sich hierbei um die Seite handeln muss, welche die Eingabefelder für Benutzername und Kennwort enthält. Nach der Eingabe startet Azure AD einen Prozess, bei dem die Anmeldeseite im Hinblick auf eine Benutzernamenseingabe und eine Kennworteingabe analysiert wird. Wenn dieser Prozess nicht erfolgreich ist, wird Ihnen eine Anleitung für einen alternativen Prozess angezeigt, bei dem Sie eine Browsererweiterung installieren (erfordert Internet Explorer, Chrome oder Firefox) und damit die Felder manuell erfassen.
 
 Nachdem die Anmeldeseite erfasst ist, können Sie wie bei regulären [Apps mit einmaligem Anmelden per Kennwort](active-directory-appssoaccess-whatis.md) Benutzer und Gruppen zuweisen und Anmeldeinformationsrichtlinien festlegen.
 
@@ -105,9 +123,9 @@ Hinweis: Sie können ein Kachellogo für die Anwendung hochladen. Verwenden Sie 
 
 ##Vorhandenes einmaliges Anmelden
 
-Wählen Sie diese Option, um im Azure AD-Zugriffsbereich oder im Office 365-Portal einen Link auf eine Anwendung hinzufügen. Sie können mit dieser Option Links auf benutzerdefinierte Web-Apps hinzufügen, die derzeit zur Authentifizierung nicht Azure AD verwenden, sondern Azure Active Directory-Verbunddienste (oder andere Verbunddienste). Oder Sie können Deep-Links auf spezifische SharePoint-Seiten oder andere Webseiten hinzufügen, die in den Zugriffsbereichen der betreffenden Benutzer angezeigt werden sollen.
+Wählen Sie diese Option, um im Azure AD-Zugriffsbereich oder im Office 365-Portal einen Link auf eine Anwendung hinzufügen. Sie können mit dieser Option Links auf benutzerdefinierte Web-Apps hinzufügen, die derzeit zur Authentifizierung nicht Azure AD verwenden, sondern Azure Active Directory-Verbunddienste (oder andere Verbunddienste). Oder Sie können Deep-Links auf spezifische SharePoint-Seiten oder andere Webseiten hinzufügen, die in den Zugriffsbereichen der betreffenden Benutzer angezeigt werden sollen.
 
-Nachdem Sie auf **Weiter** geklickt haben, werden Sie aufgefordert, die URL für die Anwendung einzugeben, für die der Link angezeigt werden soll. Wenn Sie dies abgeschlossen haben, können Sie der Anwendung Benutzer und Gruppen zuweisen. Dadurch wird die Anwendung im [Office 365-App-Startfeld](https://blogs.office.com/2014/10/16/organize-office-365-new-app-launcher-2/) oder im [Azure AD-Zugriffsbereich](active-directory-appssoaccess-whatis.md/#deploying-azure-ad-integrated-applications-to-users) für die betreffenden Benutzer angezeigt.
+Nachdem Sie auf **Weiter** geklickt haben, werden Sie aufgefordert, die URL für die Anwendung einzugeben, für die der Link angezeigt werden soll. Wenn Sie dies abgeschlossen haben, können Sie der Anwendung Benutzer und Gruppen zuweisen. Dadurch wird die Anwendung im [Office 365-App-Startfeld](https://blogs.office.com/2014/10/16/organize-office-365-new-app-launcher-2/) oder im [Azure AD-Zugriffsbereich](active-directory-appssoaccess-whatis.md/#deploying-azure-ad-integrated-applications-to-users) für die betreffenden Benutzer angezeigt.
 
 Hinweis: Sie können ein Kachellogo für die Anwendung hochladen. Verwenden Sie dazu die Schaltfläche **Logo hochladen** auf der Registerkarte **Konfigurieren** für die Anwendung.
 
@@ -126,4 +144,4 @@ Hinweis: Sie können ein Kachellogo für die Anwendung hochladen. Verwenden Sie 
 [6]: ./media/active-directory-saas-custom-apps/customapp6.png
 [7]: ./media/active-directory-saas-custom-apps/customapp7.png
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0309_2016-->

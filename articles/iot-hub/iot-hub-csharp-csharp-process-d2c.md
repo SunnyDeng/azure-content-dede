@@ -13,7 +13,7 @@
      ms.topic="article"
      ms.tgt_pltfrm="na"
      ms.workload="na"
-     ms.date="01/05/2016"
+     ms.date="02/03/2016"
      ms.author="dobett"/>
 
 # Lernprogramm: Verarbeiten von D2C-Nachrichten mit IoT Hub
@@ -24,7 +24,7 @@ Azure IoT Hub ist ein vollständig verwalteter Dienst, der eine zuverlässige un
 
 Dieses Lernprogramm baut auf dem Code des Lernprogramms [Erste Schritte mit IoT Hub] auf und veranschaulicht zwei skalierbare Muster, die Sie zum Verarbeiten von D2C-Nachrichten verwenden können:
 
-- Zuverlässiges Speichern von D2C-Nachrichten in [Azure Blob Storage]\: Dies ist sehr häufiges Szenario bei der Implementierung der *Cold Path*-Analyse, bei der Sie Daten in Blobs speichern. Die Blobs werden als Eingabe für Analyseprozesse mit Tools wie [Azure Data Factory] oder dem [HDInsight (Hadoop)]-Stapel verwendet.
+- Die zuverlässige Speicherung von Nachrichten von einem Gerät an die Cloud in [Azur Blob Storage]. Dies ist ein sehr häufiges Szenario bei der Implementierung der *Cold Path*-Analyse, bei der Sie Daten in Blobs speichern. Die Blobs werden als Eingabe für Analyseprozesse mit Tools wie [Azure Data Factory] oder dem [HDInsight (Hadoop)]-Stapel verwendet.
 
 - Zuverlässige Verarbeitung von *interaktiven* D2C-Nachrichten: D2C-Nachrichten sind interaktiv, wenn es sich um unmittelbare Auslöser für eine Reihe von Aktionen im Anwendungs-Back-End handelt und nicht um *Datenpunkt*-Nachrichten, die an ein Analysemodul übertragen werden. Ein Alarm von einem Gerät, bei dem das Einfügen eines Tickets in ein CRM-System ausgelöst werden muss, ist beispielsweise eine interaktive D2C-Nachricht. Bei Telemetriedaten, z. B. Temperaturangaben, handelt es sich dagegen um eine Datenpunkt-D2C-Nachricht.
 
@@ -49,7 +49,7 @@ Zum Durchführen dieses Lernprogramms benötigen Sie Folgendes:
 
 + Microsoft Visual Studio 2015.
 
-+ Ein aktives Azure-Konto. <br/>Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdevelop%2Fiot%2Ftutorials%2Fprocess-d2c%2F target="\_blank").
++ Ein aktives Azure-Konto. <br/>Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Konto erstellen. Weitere Informationen finden Sie unter [Kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdevelop%2Fiot%2Ftutorials%2Fprocess-d2c%2F target="\_blank").
 
 Sie sollten über grundlegende Kenntnisse in Bezug auf [Azure Storage] und [Azure Service Bus] verfügen.
 
@@ -91,23 +91,22 @@ Weitere Informationen zu IoT Hub:
 
 <!-- Links -->
 
-[Azure Blob storage]: https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/
-[Azure Data Factory]: https://azure.microsoft.com/de-DE/documentation/services/data-factory/
+[Azur Blob Storage]: ../storage/storage-dotnet-how-to-use-blobs.md
+[Azure Data Factory]: https://azure.microsoft.com/documentation/services/data-factory/
 [HDInsight (Hadoop)]: https://azure.microsoft.com/documentation/services/hdinsight/
-[Service Bus-Warteschlange]: https://azure.microsoft.com/de-DE/documentation/articles/service-bus-dotnet-how-to-use-queues/
+[Service Bus-Warteschlange]: ../service-bus/service-bus-dotnet-how-to-use-queues/
 [EventProcessorHost]: http://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventprocessorhost(v=azure.95).aspx
 
 
 
-[Entwicklungsleitfaden für Azure IoT Hub – Device to Cloud (D2C)]: https://azure.microsoft.com/documentation/articles/iot-hub-devguide/#d2c
+[Entwicklungsleitfaden für Azure IoT Hub – Device to Cloud (D2C)]: iot-hub-devguide.md#d2c
 
-[Azure Storage]: https://azure.microsoft.com/de-DE/documentation/services/storage/
-[Azure Service Bus]: https://azure.microsoft.com/de-DE/documentation/services/service-bus/
+[Azure Storage]: https://azure.microsoft.com/documentation/services/storage/
+[Azure Service Bus]: https://azure.microsoft.com/documentation/services/service-bus/
 
 
 
 [Senden von C2D-Nachrichten mit IoT Hub]: iot-hub-csharp-csharp-c2d.md
-
 [Hochladen von Dateien von Geräten]: iot-hub-csharp-csharp-file-upload.md
 
 [Übersicht zu IoT Hub]: iot-hub-what-is-iot-hub.md
@@ -117,4 +116,4 @@ Weitere Informationen zu IoT Hub:
 [Supported devices]: iot-hub-tested-configurations.md
 [Azure IoT Developer Center]: https://azure.microsoft.com/develop/iot
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0309_2016-->

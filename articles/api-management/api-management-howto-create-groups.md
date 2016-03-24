@@ -4,7 +4,7 @@
 	services="api-management" 
 	documentationCenter="" 
 	authors="steved0x" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor=""/>
 
 <tags 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/07/2015" 
+	ms.date="03/04/2016" 
 	ms.author="sdanie"/>
 
 # Erstellen und Verwenden von Gruppen für Entwicklerkonten in Azure API Management
@@ -30,7 +30,7 @@ Zusätzlich zu diesen Systemgruppen können Administratoren benutzerdefinierte G
 
 Diese Anleitung beschreibt, wie Administrator einer API Management-Instanz neue Gruppen hinzufügen und diese zu Produkten und Entwicklern zuordnen können.
 
->[AZURE.NOTE]Zusätzlich zum Erstellen und Verwalten von Gruppen im Herausgeberportal können Sie Ihre Gruppen mithilfe der Entität [Gruppe](https://msdn.microsoft.com/library/azure/dn776329.aspx) der API Management-REST-API erstellen und verwalten.
+>[AZURE.NOTE] Zusätzlich zum Erstellen und Verwalten von Gruppen im Herausgeberportal können Sie Ihre Gruppen mithilfe der Entität [Gruppe](https://msdn.microsoft.com/library/azure/dn776329.aspx) der API Management-REST-API erstellen und verwalten.
 
 ## <a name="create-group"> </a>Erstellen einer Gruppe
 
@@ -64,7 +64,7 @@ Auf der Registerkarte **Sichtbarkeit** können Sie Gruppen hinzufügen oder entf
 
 ![Sichtbarkeit einstellen][api-management-add-group-to-product-visibility]
 
->[AZURE.NOTE]Informationen zum Hinzufügen von Azure Active Directory-Gruppen finden Sie unter [Autorisieren von Entwicklerkonten mithilfe von Azure Active Directory in Azure API Management](api-management-howto-aad.md).
+>[AZURE.NOTE] Informationen zum Hinzufügen von Azure Active Directory-Gruppen finden Sie unter [Autorisieren von Entwicklerkonten mithilfe von Azure Active Directory in Azure API Management](api-management-howto-aad.md).
 >
 >Klicken Sie auf **Gruppen verwalten**, um Gruppen aus der Registerkarte **Sichtbarkeit** für ein Produkt zu konfigurieren.
 
@@ -111,4 +111,4 @@ Sobald Sie die Zuordnung zwischen Entwickler und Gruppe erstellt haben, können 
 [Erstellen einer API Management-Instanz]: api-management-get-started.md#create-service-instance
 [externe Gruppen in zugeordneten Azure Active Directory-Mandanten verwenden]: api-management-howto-aad.md#how-to-add-an-external-azure-active-directory-group
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0309_2016-->

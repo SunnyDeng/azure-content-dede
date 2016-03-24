@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="get-started-article" 
-	ms.date="02/01/2016" 
+	ms.date="03/07/2016" 
 	ms.author="spelluru"/>
 
 # Tutorial: Erstellen einer Pipeline mit Kopieraktivität mithilfe des Data Factory-Editors
@@ -22,7 +22,7 @@
 - [Verwenden des Data Factory-Editors](data-factory-get-started-using-editor.md)
 - [Verwenden von Visual Studio](data-factory-get-started-using-vs.md)
 - [Mithilfe von PowerShell](data-factory-monitor-manage-using-powershell.md)
-
+- [Verwenden des Kopier-Assistenten](data-factory-copy-data-wizard-tutorial.md)
 
 
 ##Dieses Lernprogramm umfasst folgende Punkte
@@ -459,4 +459,4 @@ Ausführliche Informationen zur **Kopieraktivität** in Azure Data Factory finde
 [image-data-factory-name-not-available]: ./media/data-factory-get-started-using-editor/getstarted-data-factory-not-available.png
  
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0316_2016-->

@@ -18,11 +18,12 @@
 
 # Hinzufügen von Offlinedatensynchronisierung zur Mobile Services-App für Android
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+[AZURE.INCLUDE [mobile-services-selector-offline](../../includes/mobile-services-selector-offline.md)]
 
 &nbsp;
 
-[AZURE.INCLUDE [mobile-services-selector-offline](../../includes/mobile-services-selector-offline.md)]
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+> Informationen für die entsprechende Mobile Apps-Version dieses Themas finden Sie unter [Aktivieren der Offlinesynchronisierung für Ihre mobile Android-App](../app-service-mobile/app-service-mobile-android-get-started-offline-data.md).
 
 ## Zusammenfassung
 
@@ -223,4 +224,4 @@ One thing which is important to point out: if there are pending changes in the l
 
 [Schnellstartlernprogramm „Erste Schritte mit Mobile Services“]: mobile-services-android-get-started.md
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0309_2016-->

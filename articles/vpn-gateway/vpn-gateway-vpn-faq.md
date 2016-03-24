@@ -4,7 +4,7 @@
    services="vpn-gateway"
    documentationCenter="na"
    authors="cherylmc"
-   manager="carolz"
+   manager="carmonm"
    editor="" />
 <tags 
    ms.service="vpn-gateway"
@@ -12,7 +12,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/16/2015"
+   ms.date="03/10/2016"
    ms.author="cherylmc" />
 
 # Häufig gestellte Fragen zum VPN-Gateway
@@ -50,7 +50,7 @@ Weitere Informationen zu standortübergreifenden Verbindungen finden Sie unter [
 
 **Punkt zu Standort**: Mit diesem Verbindungstyp können Sie ortsunabhängig eine Verbindung zwischen einem einzelnen Computer mit einer beliebigen Ressource in Ihrem virtuellen Netzwerk herstellen. Hierbei kommt der in Windows enthaltene VPN-Client zum Einsatz. Im Rahmen der Punkt-zu-Standort-Konfiguration installieren Sie ein Zertifikat und ein VPN-Clientkonfigurationspaket mit den Einstellungen, die es Ihrem Computer ermöglichen, eine Verbindung mit einem beliebigen virtuellen Computer oder einer beliebigen Rolleninstanz innerhalb des virtuellen Netzwerks herzustellen. Dieser Verbindungstyp eignet sich hervorragend, wenn Sie eine Verbindung mit einem virtuellen Netzwerk herstellen möchten, sich aber nicht vor Ort befinden. Er ist auch eine gute Wahl, wenn Ihnen keine VPN-Hardware oder keine extern ausgerichtete IPv4-Adresse zur Verfügung steht (beides Voraussetzungen für eine Standort-zu-Standort-Verbindung).
 
-Hinweis: Sie können Ihr virtuelles Netzwerk für die parallele Verwendung von Standort-zu-Standort- und Punkt-zu-Standort-Verbindungen konfigurieren. Hierzu müssen Sie Ihre Standort-zu-Standort-Verbindung mit einem Gateway für dynamisches Routing erstellen.
+Sie können Ihr virtuelles Netzwerk für die parallele Verwendung von Standort-zu-Standort- und Punkt-zu-Standort-Verbindungen konfigurieren. Hierzu müssen Sie Ihre Standort-zu-Standort-Verbindung mit einem routenbasierten VPN-Typ für Ihr Gateway erstellen. Routenbasierte VPN-Typen werden im klassischen Bereitstellungsmodell als dynamische Gateways bezeichnet.
 
 Weitere Informationen finden Sie unter [Informationen zu sicheren, standortübergreifenden Verbindungen für virtuelle Netzwerke](vpn-gateway-cross-premises-options.md).
 
@@ -110,7 +110,7 @@ Wir unterstützen bis zu 128 gleichzeitige VPN-Clientverbindungen mit einem virt
 
 Ja. Bisher konnten nur selbstsignierte Stammzertifikate verwendet werden. Sie können weiterhin 20 Stammzertifikate hochladen.
 
-### Können Proxys und Firewalls mit der Punkt-zu-Standort-Funktion durchquert werden?
+### Können Proxys und Firewalls mit der Punkt-zu-Standort-Funktion durchlaufen werden?
 
 Ja. Wir verwenden das Secure Socket Tunneling-Protokoll (SSTP), um eine Tunnelverbindung durch Firewalls zu ermöglichen. Dieser Tunnel wird als HTTPS-Verbindung angezeigt.
 
@@ -124,7 +124,7 @@ Automatische Verbindungswiederherstellung und DDNS werden in Punkt-zu-Standort-V
 
 ### Kann ich im gleichen virtuellen Netzwerk sowohl Standort-zu-Standort- als auch Punkt-zu-Standort-Konfigurationen verwenden?
 
-Ja. Sie können beide Lösungen verwenden, wenn für Ihr virtuelles Netzwerk ein VPN-Gateway mit dynamischem Routing zur Verfügung steht. Bei VPN-Gateways mit statischem Routing werden keine Punkt-zu-Standort-Verbindungen unterstützt.
+Ja. Beide Lösungen funktionieren, wenn Sie über einen routenbasierten VPN-Typ für Ihr Gateway verfügen. Für das klassische Bereitstellungsmodell benötigen Sie ein dynamisches Gateway. Punkt-zu-Standort-Konfigurationen werden für VPN Gateways mit statischem Routing oder Gateways mit „-VpnType = PolicyBased“ nicht unterstützt.
 
 ### Kann ich einen Punkt-zu-Standort-Client so konfigurieren, dass er gleichzeitig eine Verbindung mit mehreren virtuellen Netzwerken herstellt?
 
@@ -138,11 +138,11 @@ Der genaue Durchsatz der VPN-Tunnel lässt sich nur schwer ermitteln. IPsec und 
 
 ### Was ist ein richtlinienbasiertes Gateway mit statischem Routing?
 
-Gateways mit statischem Routing werden zur Implementierung richtlinienbasierter VPNs verwendet. Bei richtlinienbasierten VPNs werden Pakete verschlüsselt und durch IPsec-Tunnel geleitet. Grundlage hierfür sind Kombinationen aus Adresspräfixen zwischen Ihrem lokalen Netzwerk dem Azure-VNet. Die Richtlinie (auch Datenverkehrsselektor genannt) wird in der Regel als Zugriffsliste in der VPN-Konfiguration definiert.
+Richtlinienbasierte Gateways implementieren richtlinienbasierte VPNs verwendet. Bei richtlinienbasierten VPNs werden Pakete verschlüsselt und durch IPsec-Tunnel geleitet. Grundlage hierfür sind Kombinationen aus Adresspräfixen zwischen Ihrem lokalen Netzwerk und dem Azure-VNet. Die Richtlinie (auch Datenverkehrsselektor genannt) wird in der Regel als Zugriffsliste in der VPN-Konfiguration definiert.
 
 ### Was ist ein routebasiertes Gateway mit dynamischem Routing?
 
-Gateways mit dynamischem Routing dienen zur Implementierung routingbasierter VPNs. Bei routingbasierten VPNs werden Pakete auf der Grundlage der Routen der IP-Weiterleitungs- oder -Routingtabelle an die entsprechenden VPN-Tunnelschnittstellen weitergeleitet. An den Tunnelschnittstellen werden die Pakete dann ver- bzw. entschlüsselt. Die Richtlinie bzw. der Datenverkehrsselektor für routingbasierte VPNs werden im Any-to-Any-Format (bzw. als Platzhalter) konfiguriert.
+Routenbasierte Gateways implementieren die routenbasierten VPNs. Bei routingbasierten VPNs werden Pakete auf der Grundlage der Routen der IP-Weiterleitungs- oder -Routingtabelle an die entsprechenden VPN-Tunnelschnittstellen weitergeleitet. An den Tunnelschnittstellen werden die Pakete dann ver- bzw. entschlüsselt. Die Richtlinie bzw. der Datenverkehrsselektor für routingbasierte VPNs werden im Any-to-Any-Format (bzw. als Platzhalter) konfiguriert.
 
 ### Kann ich die IP-Adresse meines VPN-Gateways vor dessen Erstellung erhalten?
 
@@ -152,9 +152,9 @@ Nein. Die IP-Adresse kann erst nach der Erstellung des Gateways bezogen werden. 
 
 Beim Azure-VPN erfolgt die Authentifizierung mittels vorinstalliertem Schlüssel (Pre-Shared Key, PSK). Der vorinstallierte Schlüssel wird bei der Erstellung des VPN-Tunnels generiert. Der automatisch generierte PSK kann mit dem PowerShell-Cmdlet „Set Pre-Shared Key“ oder mithilfe der entsprechenden REST-API angepasst werden.
 
-### Kann ich mit der API „Set Pre-Shared Key“ mein VPN mit statischem Routing-Gateway konfigurieren?
+### Kann ich mit der API „Set Pre-Shared Key“ mein richtlinienbasiertes VPN mit statischem Routing-Gateway konfigurieren?
 
-Ja. Mit der API „Set Pre-Shared Key“ und dem PowerShell-Cmdlet können Sie sowohl Azure-VPNs mit statischem Routing als auch VPNs mit dynamischem Routing konfigurieren.
+Ja. Mit der API „Set Pre-Shared Key“ und dem PowerShell-Cmdlet können Sie sowohl richtlinienbasierte (statische) Azure-VPNs als auch routenbasierte (dynamische) VPNs konfigurieren.
 
 ### Kann ich andere Authentifizierungsoptionen verwenden?
 
@@ -162,9 +162,15 @@ Für die Authentifizierung können nur vorinstallierte Schlüssel (Pre-Shared Ke
 
 ### Was ist das Gatewaysubnetz, und wozu wird es benötigt?
 
-Es gibt einen Gatewaydienst, der ausgeführt wird, um standortübergreifende Verbindungen zu ermöglichen. Für das Routing zwischen Ihrem Standort und der Cloud benötigen wir zwei IP-Adressen aus Ihrer Routingdomäne. Sie müssen mindestens ein Subnetz vom Typ „/29“ angeben, aus dem wir IP-Adressen für die Einrichtung von Routen entnehmen können. Obwohl Sie ein /29-Subnetz erstellen können, berücksichtigen Sie, dass für einige Features eine bestimmten Gatewaygröße erforderlich ist. Halten Sie sich bitte an die Anforderungen an das Gatewaysubnetz für das Feature, das Sie konfigurieren möchten.
+Es gibt einen Gatewaydienst, der ausgeführt wird, um standortübergreifende Verbindungen zu ermöglichen.
 
-Beachten Sie, dass im Gatewaysubnetz keine virtuellen Computer oder Rolleninstanzen bereitgestellt werden dürfen.
+Sie müssen ein Gatewaysubnetz für Ihr VNet erstellen, um ein VPN Gateway zu konfigurieren. Alle Gatewaysubnetze müssen als „GatewaySubnet“ benannt werden, damit Sie einwandfrei funktionieren. Verwenden Sie für Ihr Gatewaysubnetz keinen anderen Namen. Zudem dürfen keine VMs oder anderen Komponenten im Gatewaysubnetz bereitgestellt werden.
+
+Die Mindestgröße des Gatewaysubnetzes hängt gänzlich von der Konfiguration ab, die Sie erstellen möchten. Obwohl es bei manchen Konfigurationen möglich ist, ein Gatewaysubnetz mit einer Größe von nur /29 zu erstellen, empfehlen wir, ein Gatewaysubnetz von mindestens /28 (/ 28, / 27, /26 usw.) zu erstellen.
+
+## Kann ich virtuelle Computer oder Rolleninstanzen in meinem Gatewaysubnetz bereitstellen?
+
+Nr.
 
 ### Wie kann ich angeben, welcher Datenverkehr über das VPN-Gateway abgewickelt werden soll?
 
@@ -193,11 +199,11 @@ Weitere Informationen finden Sie unter[Informationen zu VPN-Gateways](vpn-gatewa
 
 ### Welche Art von Gateway unterstützt mehrere Standorte sowie VNet-zu-VNet-Verbindungen?
 
-Nur VPNs mit dynamischem Routing.
+Nur routenbasierte VPNs (mit dynamischem Routing).
 
-### Kann ich eine Verbindung zwischen einem virtuellen Netzwerk mit VPN und dynamischem Routing und einem anderen virtuellen Netzwerk mit VPN und statischem Routing herstellen?
+### Kann ich ein VNet mit einem routenbasierten VPN-Typ (RouteBased) mit einem anderen VNet mit einem richtlinienbasierten VPN (PolicyBased) verbinden?
 
-Nein. Beide virtuellen Netzwerke müssen VPNs mit dynamischem Routing verwenden.
+Nein. Beide virtuellen Netzwerke müssen routenbasierte VPNs (mit dynamischem Routing) verwenden.
 
 ### Ist der Datenverkehr bei VNet-zu-VNet-Verbindungen sicher?
 
@@ -213,7 +219,7 @@ Maximal zehn (kombiniert für Basic- und Standard-Gateways mit dynamischem Routi
 
 ### Kann ich Punkt-zu-Standort-VPNs mit meinem virtuellen Netzwerk und mehreren VPN-Tunneln kombinieren?
 
-Ja. VPNs vom Typ „Punkt zu Standort“ (P2S) können mit den VPN-Gateways kombiniert werden, die Verbindungen mit mehreren lokalen Standorten und anderen virtuellen Netzwerken herstellen.
+Ja. VPNs vom Typ „Punkt zu Standort“ (P2S) können mit den VPN Gateways kombiniert werden, die Verbindungen mit mehreren lokalen Standorten und anderen virtuellen Netzwerken herstellen.
 
 ### Kann ich mithilfe eines VPNs mit mehreren Standorten mehrere Tunnel zwischen meinem virtuellen Netzwerk und meinem lokalen Standort konfigurieren?
 
@@ -225,11 +231,11 @@ Nein. Bei einer Überschneidung der Adressräume kann die netcfg-Datei nicht hoc
 
 ### Erhalte ich durch mehr Standort-zu-Standort-VPNs mehr Bandbreite als bei einem einzelnen virtuellen Netzwerk?
 
-Nein. Alle VPN-Tunnel (einschließlich Punkt-zu-Standort-VPNs) verwenden das gleiche Azure-VPN-Gateway und die gleiche verfügbare Bandbreite.
+Nein. Alle VPN-Tunnel (einschließlich Punkt-zu-Standort-VPNs) verwenden das gleiche Azure-VPN Gateway und die gleiche verfügbare Bandbreite.
 
-### Kann ich mit dem Azure-VPN-Gateway Datenverkehr zwischen meinen lokalen Standorten oder an ein anderes virtuelles Netzwerk übertragen?
+### Kann ich mit dem Azure-VPN Gateway Datenverkehr zwischen meinen lokalen Standorten oder an ein anderes virtuelles Netzwerk übertragen?
 
-Datenverkehr kann über das Azure-VPN-Gateway übertragen werden, die Übertragung basiert jedoch auf statisch definierten Adressräumen aus der netcfg-Konfigurationsdatei. BGP wird bei virtuellen Netzwerken von Azure und VPN-Gateways noch nicht unterstützt. Ohne BGP müssen die Adressräume für die Übertragung manuell in der netcfg-Datei definiert werden. Dies ist jedoch sehr fehleranfällig und wird daher nicht empfohlen.
+Datenverkehr kann über das Azure-VPN-Gateway übertragen werden, die Übertragung basiert jedoch auf statisch definierten Adressräumen aus der netcfg-Konfigurationsdatei. BGP wird bei virtuellen Netzwerken von Azure und VPN-Gateways noch nicht unterstützt. Ohne BGP müssen die Adressräume für die Übertragung manuell definiert werden. Dies ist jedoch sehr fehleranfällig und wird daher nicht empfohlen.
 
 ### Generiert Azure für alle meine VPN-Verbindungen für das gleiche virtuelle Netzwerk den gleichen vorinstallierten IPsec-/IKE-Schlüssel?
 
@@ -267,4 +273,4 @@ Weitere Informationen zu VPN-Gateways erhalten Sie auf der Seite [VPN Gateway-Do
 
  
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0316_2016-->

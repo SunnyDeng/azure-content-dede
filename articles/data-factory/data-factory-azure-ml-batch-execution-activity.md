@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Erstellen von Vorhersagepipelines mithilfe der Aktivität ";Azure Machine Learning-Batchausführung"; | Microsoft Azure" 
+	pageTitle="Verwenden von Machine Learning-Aktivitäten | Microsoft Azure" 
 	description="Beschreibt das Erstellen von Vorhersagepipelines mithilfe von Azure Data Factory und Azure Machine Learning" 
 	services="data-factory" 
 	documentationCenter="" 
@@ -772,4 +772,4 @@ Sie können auch [Data Factory-Funktionen ](https://msdn.microsoft.com/library/d
 
  
 
-<!---HONumber=AcomDC_0224_2016-->
+<!----HONumber=AcomDC_0309_2016-->

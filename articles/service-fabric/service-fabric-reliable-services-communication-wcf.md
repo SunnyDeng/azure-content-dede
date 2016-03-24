@@ -17,7 +17,7 @@
    ms.author="bharatn@microsoft.com"/>
 
 # WCF-basierter Kommunikationsstapel für Reliable Services
-Das Reliable Services-Framework ermöglicht Dienstautoren, den Kommunikationsstapel für ihren Dienst zu wählen. Sie können den Kommunikationsstapel ihrer Wahl über den von der [CreateServiceReplicaListeners- oder CreateServiceInstanceListeners](service-fabric-reliable-service-communication.md)-Methode zurückgegebenen **ICommunicationListener** implementieren. Das Framework bietet eine Implementierung des auf WCF (Windows Communication Foundation) basierenden Kommunikationsstapels für Dienstautoren, die eine WCF-basierte Kommunikation verwenden möchten.
+Das Reliable Services-Framework ermöglicht Dienstautoren, den Kommunikationsstapel für ihren Dienst zu wählen. Sie können den Kommunikationsstapel ihrer Wahl über den von der [CreateServiceReplicaListeners- oder CreateServiceInstanceListeners](service-fabric-reliable-services-communication.md)-Methode zurückgegebenen **ICommunicationListener** implementieren. Das Framework bietet eine Implementierung des auf WCF (Windows Communication Foundation) basierenden Kommunikationsstapels für Dienstautoren, die eine WCF-basierte Kommunikation verwenden möchten.
 
 ## WCF-Kommunikationslistener
 Die WCF-spezifische Implementierung von **ICommunicationListener** erfolgt über die **Microsoft.ServiceFabric.Services.Communication.Wcf.Runtime.WcfCommunicationListener**-Klasse.
@@ -47,7 +47,7 @@ protected override IEnumerable<ServiceReplicaListener> CreateServiceReplicaListe
 ```
 
 ## Schreiben von Clients für den WCF-Kommunikationsstapel
-Für das Schreiben von Clients, die über WCF mit Diensten kommunizieren, bietet das Framework **WcfClientCommunicationFactory**. Dies ist die spezielle WCF-Implementierung von [ClientCommunicationFactoryBase](service-fabric-reliable-service-communication.md).
+Für das Schreiben von Clients, die über WCF mit Diensten kommunizieren, bietet das Framework **WcfClientCommunicationFactory**. Dies ist die spezielle WCF-Implementierung von [ClientCommunicationFactoryBase](service-fabric-reliable-services-communication.md).
 
 ```csharp
 
@@ -114,4 +114,4 @@ var result = calculatorServicePartitionClient.InvokeWithRetryAsync(
 
 * [Web-API mit OWIN in Reliable Services](service-fabric-reliable-services-communication-webapi.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0309_2016-->

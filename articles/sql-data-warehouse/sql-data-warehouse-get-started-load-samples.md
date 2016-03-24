@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/07/2016"
+   ms.date="03/03/2016"
    ms.author="lodipalm;barbkess;sonyama"/>
 
 # Laden von Beispieldaten in SQL Data Warehouse
@@ -25,19 +25,19 @@ Im Folgenden erhalten Sie einen kurzen Überblick darüber, wie AdventureWorksDW
 ## Hinzufügen von Beispieldaten während der Erstellung
 Sie können sicherstellen, dass diese Daten während der Bereitstellung in das SQL Data Warehouse geladen werden, indem Sie folgende Schritte ausführen:
 
-1. Starten Sie den Erstellungsprozess, indem Sie SQL Data Warehouse im [klassischen Azure-Portal][] durch Klicken auf „+Neu“ und anschließend auf „Daten und Speicher“ suchen oder im Marketplace, indem Sie nach „SQL Data Warehouse“ suchen. 
- 
+1. Starten Sie den Erstellungsprozess, indem Sie SQL Data Warehouse im [klassischen Azure-Portal][] durch Klicken auf „+Neu“ und anschließend auf „Daten und Speicher“ suchen oder im Marketplace, indem Sie nach „SQL Data Warehouse“ suchen.
+
 2. Sobald der Prozess gestartet wurde, müssen Sie auf die Option „Quelle auswählen“ klicken und sie dann auf „Beispiel“ festlegen. Wenn Sie keinen neuen Server erstellen, werden Sie ebenfalls dazu aufgefordert, die Anmeldung für den Server anzugeben, den Sie zur Erstellung verwenden.
 
 
-> [AZURE.NOTE]Um Beispieldaten in Ihre Instanz zu laden, müssen Sie zum Zugriff auf den Server die Azure-Dienste aktivieren (dies sollte standardmäßig der Fall sein, wenn ein neuer Server erstellt wird). Wenn dies nicht erfolgt, dann schlägt das Laden fehl, Sie können jedoch weiterhin [Beispieldaten manuell laden][].
+> [AZURE.NOTE] Um Beispieldaten in Ihre Instanz zu laden, müssen Sie zum Zugriff auf den Server die Azure-Dienste aktivieren (dies sollte standardmäßig der Fall sein, wenn ein neuer Server erstellt wird). Wenn dies nicht erfolgt, dann schlägt das Laden fehl, Sie können jedoch weiterhin [Beispieldaten manuell laden][].
 
 
 ## Verwenden von Power BI zur Analyse von Adventureworks
 
 Die Nutzung des Beispieldatensatzes ist eine gute Möglichkeit, erste Schritte mit Power BI durchzuführen. Nach dem Laden der Beispieldaten können Sie eine Verbindung mit SQL Data Warehouse entweder durch Klicken auf die Schaltfläche „Öffnen in Power BI“ im klassischen Azure-Portal oder durch Wechseln zu [Power BI][] und [Herstellen einer Verbindung mit SQL Data Warehouse][] öffnen. Nachdem die Verbindung hergestellt ist, sollte ein neues Dataset mit dem gleichen Namen wie das Data Warehouse erstellt werden. Zum Vereinfachen der Analyse haben wir eine Ansicht namens „AggregateSales“ mit einigen der Metriken erstellt, die entscheidend für die Analyse des Umsatzes vom Unternehmen sind. Klicken Sie auf den Namen in dieser Ansicht, um sie zu erweitern, und sehen Sie die enthaltenen Spalten, sodass Sie mithilfe der folgenden Schritte einige schnelle Visualisierungen erstellen können:
 
-1. Zum Einstieg können wir einfach eine Übersicht über all unsere Umsätze durch Klicken auf die Spalten „PostalCode“ und „SalesAmount“ erstellen. Power BI erkennt dies sogar automatisch als geografische Daten und fügt Sie in einer Karte hinzu. 
+1. Zum Einstieg können wir einfach eine Übersicht über all unsere Umsätze durch Klicken auf die Spalten „PostalCode“ und „SalesAmount“ erstellen. Power BI erkennt dies sogar automatisch als geografische Daten und fügt Sie in einer Karte hinzu.
 
 2. Wenn Sie ein Balkendiagramm der Umsätze erstellen möchten, klicken Sie einfach auf die Spalte „SalesAmount“, und Power BI erstellt das Diagramm automatisch für Sie. Sie können ihm zusätzliche Tiefe verleihen, indem Sie das Diagramm „CustomerIncome“ auf das Feld „Achse“ auf der linken Seite von „AggregateSales“ ziehen, um die Umsätze nach Kundeneinkommen anzuzeigen.
 
@@ -95,4 +95,4 @@ Nachdem Sie sich schon etwas mit den Beispieldaten vertraut gemacht haben, könn
 <!--Other Web references-->
 [Sample Data Scripts]: https://migrhoststorage.blob.core.windows.net/sqldwsample/AdventureWorksPDW2012.zip/
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0309_2016-->

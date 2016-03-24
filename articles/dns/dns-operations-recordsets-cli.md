@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Verwalten von DNS-Datensatzgruppen und Einträgen in Azure DNS mithilfe der Befehlszeilenschnittstelle (CLI) | Microsoft Azure" 
+   pageTitle="Verwalten von DNS-Datensatzgruppen und Einträgen in Azure DNS mithilfe der Azure-Befehlszeilenschnittstelle (CLI) | Microsoft Azure" 
    description="Verwalten von DNS-Datensatzgruppen und Einträgen in Azure DNS, wenn Sie Ihre Domäne in Azure DNS hosten. Alle Befehle der Befehlszeilenschnittstelle (CLI) für Vorgänge für Datensatzgruppen und Einträge." 
    services="dns" 
    documentationCenter="na" 
@@ -13,18 +13,18 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services" 
-   ms.date="01/21/2016"
+   ms.date="03/04/2016"
    ms.author="joaoma"/>
 
 # Verwalten von DNS-Einträgen mithilfe der Befehlszeilenschnittstelle (CLI)
 
 > [AZURE.SELECTOR]
-- [Azure CLI](dns-operations-recordsets-cli.md)
+- [Azure-Befehlszeilenschnittstelle](dns-operations-recordsets-cli.md)
 - [PowerShell](dns-operations-recordsets.md)
 
-Diese Anleitung zeigt, wie Sie Datensatzgruppen und Einträge für die DNS-Zone verwalten.
+In diesem Leitfaden wird gezeigt, wie Sie Datensatzgruppen und Einträge für die DNS-Zone mit der plattformübergreifenden Azure-Befehlszeilenschnittstelle verwalten.
 
->[AZURE.NOTE] Azure DNS ist ein nur über Azure-Ressourcen-Manager verfügbarer Dienst. Er besitzt keine ASM-API. Sie müssen daher mit dem Befehl „azure config mode arm“ sicherstellen, dass die Azure-Befehlszeilenschnittstelle für die Verwendung des Ressourcen-Manager-Modus konfiguriert ist.
+>[AZURE.NOTE] Azure DNS ist ein nur über Azure-Ressourcen-Manager verfügbarer Dienst. Er besitzt keine ASM-API. Sie müssen daher mit dem Befehl „azure config mode arm“ sicherstellen, dass die Azure-Befehlszeilenschnittstelle für die Verwendung des Ressourcen-Manager-Modus konfiguriert ist.
 
 >Falls „Fehler: ‚dns‘ ist kein Azure-Befehl“ angezeigt wird, verwenden Sie wahrscheinlich die Azure-CLI im ASM-Modus und nicht im Ressourcen-Manager-Modus.
 
@@ -43,11 +43,11 @@ Azure DNS unterstützt die folgenden Eintragstypen: A, AAAA, CNAME, MX, NS, SOA,
 	azure network dns record-set create myresourcegroup contoso.com  www  A --ttl 300
 
 
->[AZURE.IMPORTANT] CNAME-Datensatzgruppen können nicht gleichzeitig neben anderen Datensatzgruppen mit dem gleichen Namen vorhanden sein. Sie können z. B. nicht CNAME mit dem relativen Namen "www" und einen A-Eintrag mit dem relativen Namen "www" gleichzeitig erstellen. Da die Zonenspitze (Name = " @") immer die NS- und SOA-Datensatzgruppen enthält, die beim Erstellen der Zone erstellt wurden, bedeutet dies, dass Sie keine CNAME-Datensatzgruppe an der Zonenspitze erstellen können. Diese Einschränkungen ergeben sich aus den DNS-Standards; sie sind keine Einschränkungen von Azure DNS.
+>[AZURE.IMPORTANT] CNAME-Datensatzgruppen können nicht gleichzeitig neben anderen Datensatzgruppen mit dem gleichen Namen vorhanden sein. Sie können z. B. nicht CNAME mit dem relativen Namen "www" und einen A-Eintrag mit dem relativen Namen "www" gleichzeitig erstellen. Da die Zonenspitze (Name = " @") immer die NS- und SOA-Datensatzgruppen enthält, die beim Erstellen der Zone erstellt wurden, bedeutet dies, dass Sie keine CNAME-Datensatzgruppe an der Zonenspitze erstellen können. Diese Einschränkungen ergeben sich aus den DNS-Standards; sie sind keine Einschränkungen von Azure DNS.
 
 ### Platzhalterdatensätze
 
-Azure DNS unterstützt [Platzhalterdatensätze](https://en.wikipedia.org/wiki/Wildcard_DNS_record). Diese werden für alle Abfragen mit einem übereinstimmenden Namen zurückgegeben (es sei denn, es gibt eine genauere Übereinstimmung aus einer Datensatzgruppe ohne Platzhalter). Um eine Datensatzgruppe mit Platzhaltern zu erstellen, verwenden Sie den Namen der Datensatzgruppe „*“ oder einen Namen, dessen Bezeichnung mit „*“ beginnt, z. B. „*.foo“.
+Azure DNS unterstützt [Platzhalterdatensätze](https://en.wikipedia.org/wiki/Wildcard_DNS_record). Diese werden für alle Abfragen mit einem übereinstimmenden Namen zurückgegeben (es sei denn, es gibt eine genauere Übereinstimmung aus einer Datensatzgruppe ohne Platzhalter). Um eine Datensatzgruppe mit Platzhaltern zu erstellen, verwenden Sie den Namen der Datensatzgruppe „*“ oder einen Namen, dessen Bezeichnung mit „*“ beginnt, z. B. „*.foo“.
 
 Datensatzgruppen mit Platzhaltern werden für alle Datensatztypen mit Ausnahme von NS und SOA unterstützt.
 
@@ -61,12 +61,12 @@ Um eine vorhandene Datensatzgruppe abzurufen, verwenden Sie `azure network dns r
 
 Sie können alle Datensätze in einer DNS-Zone mit dem Befehl `azure network dns record-set list` auflisten:
 
-### Option 1: 
+### Option 1: 
 Listen Sie alle Datensatzgruppen auf. Dadurch werden alle Datensatzgruppe zurückgegeben, unabhängig vom Namen oder Eintragstyp:
 
 	azure network dns record-set list myresourcegroup contoso.com
 
-### Option 2 
+### Option 2 
 
 Listen Sie Datensatzgruppen eines bestimmten Eintragstyps auf. Dadurch werden alle Datensatzgruppen zurückgegeben, die dem angegebenen Eintragstyp (in diesem Fall A-Einträge) entsprechen:
 
@@ -112,7 +112,7 @@ Fügen Sie nach dem Erstellen der A-Datensatzgruppe mit `azure network dns recor
 
 ### Erstellen einer MX-Datensatzgruppe mit einem einzelnen Eintrag
 
-In diesem Beispiel verwenden wir den Namen des Datensatzes "@" zum Erstellen des MX-Eintrags auf oberster Ebene der Zone (z. B. "contoso.com"). Dies ist bei MX-Einträgen üblich.
+In diesem Beispiel verwenden wir den Namen des Datensatzes "@" zum Erstellen des MX-Eintrags auf oberster Ebene der Zone (z. B. "contoso.com"). Dies ist bei MX-Einträgen üblich.
 
 	azure network dns record-set create myresourcegroup contoso.com  "@"  MX --ttl 300
 
@@ -242,4 +242,4 @@ Nachdem Sie die DNS-Zone und -Einträge erstellt haben, können Sie [Ihre Domän
 
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0309_2016-->

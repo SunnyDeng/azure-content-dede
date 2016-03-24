@@ -13,10 +13,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/07/2016"
+   ms.date="03/03/2016"
    ms.author="jrj;barbkess;sonyama"/>
 
-# Gespeicherte Prozeduren in SQL Data Warehouse 
+# Gespeicherte Prozeduren in SQL Data Warehouse
 
 SQL Data Warehouse unterstützt viele Transact-SQL-Features aus SQL Server. Darüber hinaus sind bestimmte Features für das horizontale Hochskalieren vorhanden, die genutzt werden sollten, um die Leistung einer Lösung zu verbessern.
 
@@ -28,26 +28,29 @@ In diesem Artikel wird erläutert, wie Sie gespeicherte Prozeduren in SQL Data W
 Gespeicherte Prozeduren sind eine hervorragende Möglichkeit zum Einschließen (Kapseln) von SQL-Code. Hierbei wird Code im Data Warehouse in der Nähe Ihrer Daten gespeichert. Indem Code in besser verwaltbare Einheiten eingeschlossen wird, unterstützen gespeicherte Prozeduren Entwickler beim Modularisieren ihrer Lösungen. Dies ermöglicht eine bessere Wiederverwendbarkeit des Codes. Für jede gespeicherte Prozedur können außerdem Parameter verwendet werden, um sie flexibler zu machen.
 
 SQL Data Warehouse bietet eine vereinfachte und optimierte Implementierung von gespeicherten Prozeduren. Der größte Unterschied im Vergleich zu SQL Server ist, dass die gespeicherte Prozedur kein vorab kompilierter Code ist. In Data Warehouses ist die Kompilierungszeit im Allgemeinen weniger wichtig. Wichtiger ist es, dass der Code der gespeicherten Prozedur richtig optimiert wird, wenn er für große Datenvolumina verwendet wird. Das Ziel besteht darin, Stunden, Minuten und Sekunden zu sparen, keine Millisekunden. Es ist daher hilfreicher, gespeicherte Prozeduren als Container für SQL-Logik zu betrachten.
- 
+
 Wenn SQL Data Warehouse Ihre gespeicherte Prozedur ausführt, werden die SQL-Anweisungen zur Laufzeit analysiert, übersetzt und optimiert. Während dieses Vorgangs wird jede Anweisung in verteilte Abfragen konvertiert. Der SQL-Code, der für die Daten tatsächlich ausgeführt wird, unterscheidet sich von der übermittelten Abfrage.
 
 ## Schachteln von gespeicherten Prozeduren
 Wenn gespeicherte Prozeduren andere gespeicherte Prozeduren aufrufen oder dynamischen SQL-Code ausführen, wird die innere gespeicherte Prozedur bzw. der Codeaufruf als „geschachtelt“ bezeichnet.
 
-SQL Data Warehouse unterstützt maximal acht Schachtelungsebenen. Dies ist ein Unterschied zu SQL Server. In SQL Server sind 32 Schachtelungsebenen zulässig.
+SQL Data Warehouse unterstützt maximal acht Schachtelungsebenen. Dies ist ein Unterschied zu SQL Server. In SQL Server sind 32 Schachtelungsebenen zulässig.
 
-Der Aufruf der obersten gespeicherten Prozedur entspricht Schachtelungsebene 1.
+Der Aufruf der obersten gespeicherten Prozedur entspricht Schachtelungsebene 1.
 
 ```
 EXEC prc_nesting
-``` 
-Wenn die gespeicherte Prozedur zusätzlich einen weiteren EXEC-Aufruf durchführt, wird die Schachtelungsebene auf 2 erhöht. ```
+```
+Wenn die gespeicherte Prozedur auch einen weiteren EXEC-Aufruf durchführt, wird dadurch die Schachtelungsebene auf 2 erhöht.
+```
 CREATE PROCEDURE prc_nesting
 AS
 EXEC prc_nesting_2  -- This call is nest level 2
 GO
 EXEC prc_nesting
-``` Wenn die zweite Prozedur dann dynamischen SQL-Code ausführt, wird die Schachtelungsebene auf 3 erhöht. ```
+```
+Wenn die zweite Prozedur dann dynamischen SQL-Code ausführt, wird dadurch die Schachtelungsebene auf 3 erhöht.
+```
 CREATE PROCEDURE prc_nesting_2
 AS
 EXEC sp_executesql 'SELECT 'another nest level'  -- This call is nest level 2
@@ -94,4 +97,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 
 <!--Other Web references-->
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0309_2016-->

@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Erfahren Sie, wie Sie Azure ML-Webdienste mithilfe von API Management verwalten | Microsoft Azure"
-	description="Diese Leitfaden zeigt, wie Sie Azure ML-Webdienste mithilfe von API Management verwalten."
+	description="Diese Leitfaden zeigt, wie Sie Azure ML-Webdienste mithilfe von API Management verwalten."
 	keywords="Maschinelles Lernen,API Management"
 	services="machine-learning"
 	documentationCenter=""
@@ -14,35 +14,35 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/08/2015"
+	ms.date="03/02/2016"
 	ms.author="roalexan" />
 
 
-# Erfahren Sie, wie Sie Azure ML-Webdienste mithilfe von API Management verwalten
+# Erfahren Sie, wie Sie Azure ML-Webdienste mithilfe von API Management verwalten
 
 ##Übersicht
 
-Dieser Leitfaden beschreibt die ersten Schritte mit API Management zur Verwaltung Ihrer Azure ML-Webdienste.
+Dieser Leitfaden beschreibt die ersten Schritte mit API Management zur Verwaltung Ihrer Azure ML-Webdienste.
 
 ##Was ist Azure API Management?
 
-Azure API Management ist ein Azure-Dienst, mit dem Sie Ihre REST-API-Endpunkte verwalten können, indem Sie Benutzerzugriff, Nutzungseinschränkungen und Dashboardüberwachung definieren. Klicken Sie [hier](https://azure.microsoft.com/services/api-management/), um Informationen zu Azure API Management zu erhalten. Klicken Sie [hier](api-management/api-management-get-started.md), um eine Anleitung zum Einstieg in Azure API Management zu erhalten. Dieser Leitfaden (auf dem der vorliegende Leitfaden basiert) behandelt weitere Themen, z. B. Benachrichtigungskonfiguration, Tarife, Antwortverarbeitung, Benutzerauthentifizierung, Produkterstellung, Entwicklerabonnements und Nutzungsdashboards.
+Azure API Management ist ein Azure-Dienst, mit dem Sie Ihre REST-API-Endpunkte verwalten können, indem Sie Benutzerzugriff, Nutzungseinschränkungen und Dashboardüberwachung definieren. Klicken Sie [hier](https://azure.microsoft.com/services/api-management/), um Informationen zu Azure API Management zu erhalten. Klicken Sie [hier](../api-management/api-management-get-started.md), um eine Anleitung zum Einstieg in Azure API Management zu erhalten. Dieser Leitfaden (auf dem der vorliegende Leitfaden basiert) behandelt weitere Themen, z. B. Benachrichtigungskonfiguration, Tarife, Antwortverarbeitung, Benutzerauthentifizierung, Produkterstellung, Entwicklerabonnements und Nutzungsdashboards.
 
-##Was ist Azure ML?
+##Was ist Azure ML?
 
-Azure ML ist ein Azure-Dienst für Machine Learning, mit dem Sie erweiterte Analyselösungen ganz einfach entwickeln, bereitstellen und freigeben können. Klicken Sie [hier](https://azure.microsoft.com/services/machine-learning/), um Informationen zu Azure ML zu erhalten.
+Azure ML ist ein Azure-Dienst für Machine Learning, mit dem Sie erweiterte Analyselösungen ganz einfach entwickeln, bereitstellen und freigeben können. Klicken Sie [hier](https://azure.microsoft.com/services/machine-learning/), um Informationen zu Azure ML zu erhalten.
 
 ##Voraussetzungen
 
 Zum Durcharbeiten dieses Leitfadens benötigen Sie Folgendes:
 
 * Ein Azure-Konto. Wenn Sie kein Azure-Konto haben, klicken Sie [hier](https://azure.microsoft.com/pricing/free-trial/), um zu erfahren, wie Sie ein kostenloses Testkonto erstellen.
-* Ein Azure ML-Konto. Wenn Sie kein Azure ML-Konto haben, klicken Sie [hier](https://studio.azureml.net/), um zu erfahren, wie Sie ein kostenloses Testkonto erstellen.
-* Den Arbeitsbereich, den Dienst und den API-Schlüssel für ein als Webdienst bereitgestelltes Azure ML-Experiment. Klicken Sie [hier](machine-learning/machine-learning-create-experiment.md), um Informationen zum Erstellen eines Azure ML-Experiments zu erhalten. Klicken Sie [hier](machine-learning/machine-learning-publish-a-machine-learning-web-service.md), um Informationen zum Bereitstellen eines Azure ML-Experiments als Webdienst zu erhalten. Alternativ dazu enthält Anhang A Anweisungen zum Erstellen und Testen eines einfachen Azure ML-Experiments und zum Bereitstellen dieses Experiments als Webdienst.
+* Ein Azure ML-Konto. Wenn Sie kein Azure ML-Konto haben, klicken Sie [hier](https://studio.azureml.net/), um zu erfahren, wie Sie ein kostenloses Testkonto erstellen.
+* Den Arbeitsbereich, den Dienst und den API-Schlüssel für ein als Webdienst bereitgestelltes Azure ML-Experiment. Klicken Sie [hier](machine-learning-create-experiment.md), um Informationen zum Erstellen eines Azure ML-Experiments zu erhalten. Klicken Sie [hier](machine-learning-publish-a-machine-learning-web-service.md), um Informationen zum Bereitstellen eines Azure ML-Experiments als Webdienst zu erhalten. Alternativ dazu enthält Anhang A Anweisungen zum Erstellen und Testen eines einfachen Azure ML-Experiments und zum Bereitstellen dieses Experiments als Webdienst.
 
 ##Erstellen einer API Management-Instanz
 
-Im Folgenden finden Sie die Schritte zur Verwendung von API Management zur Verwaltung Ihres Azure ML-Webdiensts. Erstellen Sie zuerst eine Instanz des Diensts. Melden Sie sich beim [klassischen Portal](https://manage.windowsazure.com/) an, und klicken Sie auf **Neu** > **App Services** > **API Management** > **Erstellen**.
+Im Folgenden finden Sie die Schritte zur Verwendung von API Management zur Verwaltung Ihres Azure ML-Webdiensts. Erstellen Sie zuerst eine Instanz des Diensts. Melden Sie sich beim [klassischen Portal](https://manage.windowsazure.com/) an, und klicken Sie auf **Neu** > **App Services** > **API Management** > **Erstellen**.
 
 ![create-instance](./media/machine-learning-manage-web-service-endpoints-using-api-management/create-instance.png)
 
@@ -54,11 +54,11 @@ Geben Sie einen Wert für den **Organisationsnamen** ein. In diesem Leitfaden wi
 
 ![create-service-2](./media/machine-learning-manage-web-service-endpoints-using-api-management/create-service-2.png)
 
-Aktivieren Sie das Kontrollkästchen, um Ihre Dienstinstanz zu erstellen. *Die Erstellung des neuen Diensts dauert bis zu 30 Minuten.*
+Aktivieren Sie das Kontrollkästchen, um Ihre Dienstinstanz zu erstellen. *Die Erstellung des neuen Diensts dauert bis zu 30 Minuten.*
 
 ##Erstellen der API
 
-Nach der Erstellung der Dienstinstanz können Sie die API erstellen. Eine API besteht aus einem Satz von Vorgängen, die aus Clientanwendungen aufgerufen werden können. API-Operationen funktionieren als Proxys für vorhandene Webdienste. In diesem Leitfaden werden APIs erstellt, die per Proxy an die vorhandenen Azure ML-Webdienste "RRS" und "BES" weiterleiten.
+Nach der Erstellung der Dienstinstanz können Sie die API erstellen. Eine API besteht aus einem Satz von Vorgängen, die aus Clientanwendungen aufgerufen werden können. API-Operationen funktionieren als Proxys für vorhandene Webdienste. In diesem Leitfaden werden APIs erstellt, die per Proxy an die vorhandenen Azure ML-Webdienste "RRS" und "BES" weiterleiten.
 
 APIs werden im API-Herausgeberportal erstellt und konfiguriert, das über das klassische Azure-Portal erreichbar ist. Um auf das Herausgeberportal zuzugreifen, wählen Sie Ihre Dienstinstanz aus.
 
@@ -72,7 +72,7 @@ Klicken Sie auf **APIs** im Menü **API Management** auf der linken Seite, und k
 
 ![api-management-menu](./media/machine-learning-manage-web-service-endpoints-using-api-management/api-management-menu.png)
 
-Geben Sie **Azure ML-Demo-API** als **Web-API-Namen** ein. Geben Sie ****https://ussouthcentral.services.azureml.net** als **Webdienst-URL** ein. Geben Sie **azureml-demo** als **Web-API-URL-Suffix** ein. Aktivieren Sie **HTTPS** als **Web-API-URL**-Schema. Wählen Sie **Starter** als **Produkte** aus. Wenn Sie fertig sind, klicken Sie auf **Speichern**, um die API zu erstellen.
+Geben Sie **Azure ML-Demo-API** als **Web-API-Namen** ein. Geben Sie ****https://ussouthcentral.services.azureml.net** als **Webdienst-URL** ein. Geben Sie **azureml-demo** als **Web-API-URL-Suffix** ein. Aktivieren Sie **HTTPS** als **Web-API-URL**-Schema. Wählen Sie **Starter** als **Produkte** aus. Wenn Sie fertig sind, klicken Sie auf **Speichern**, um die API zu erstellen.
 
 ![add-new-api](./media/machine-learning-manage-web-service-endpoints-using-api-management/add-new-api.png)
 
@@ -86,11 +86,11 @@ Das Fenster **Neue Operation** wird angezeigt, und die Registerkarte **Signatur*
 
 ##Hinzufügen eines RRS-Vorgangs
 
-Erstellen Sie zunächst einen Vorgang für den Azure ML-RRS-Dienst. Wählen Sie **POST** als **HTTP-Verb** aus. Geben Sie **/workspaces/{workspace}/services/{service}/execute?api-version={apiversion}&details={details}** als **URL-Vorlage** ein. Geben Sie **RRS Execute** als **Anzeigenamen** ein.
+Erstellen Sie zunächst einen Vorgang für den Azure ML-RRS-Dienst. Wählen Sie **POST** als **HTTP-Verb** aus. Geben Sie **/workspaces/{workspace}/services/{service}/execute?api-version={apiversion}&details={details}** als **URL-Vorlage** ein. Geben Sie **RRS Execute** als **Anzeigenamen** ein.
 
 ![add-rrs-operation-signature](./media/machine-learning-manage-web-service-endpoints-using-api-management/add-rrs-operation-signature.png)
 
-Klicken Sie links auf **Antworten** > **HINZUFÜGEN**, und wählen Sie **200 OK** aus. Klicken Sie auf **Speichern**, um diesen Vorgang zu speichern.
+Klicken Sie links auf **Antworten** > **HINZUFÜGEN**, und wählen Sie **200 OK** aus. Klicken Sie auf **Speichern**, um diesen Vorgang zu speichern.
 
 ![add-rrs-operation-response](./media/machine-learning-manage-web-service-endpoints-using-api-management/add-rrs-operation-response.png)
 
@@ -100,27 +100,27 @@ Für die BES-Vorgänge werden keine Screenshots bereitgestellt, da die Vorgehens
 
 ###Senden eines Batchausführungsauftrags (ohne ihn jedoch zu starten)
 
-Klicken Sie auf **Vorgang hinzufügen**, um der API den Azure ML-BES-Vorgang hinzuzufügen. Wählen Sie **POST** als **HTTP-Verb** aus. Geben Sie **/workspaces/{workspace}/services/{service}/jobs?api-version={apiversion}** als **URL-Vorlage** ein. Geben Sie **BES Submit** als **Anzeigenamen** ein. Klicken Sie links auf **Antworten** > **HINZUFÜGEN**, und wählen Sie **200 OK** aus. Klicken Sie auf **Speichern**, um diesen Vorgang zu speichern.
+Klicken Sie auf **Vorgang hinzufügen**, um der API den Azure ML-BES-Vorgang hinzuzufügen. Wählen Sie **POST** als **HTTP-Verb** aus. Geben Sie **/workspaces/{workspace}/services/{service}/jobs?api-version={apiversion}** als **URL-Vorlage** ein. Geben Sie **BES Submit** als **Anzeigenamen** ein. Klicken Sie links auf **Antworten** > **HINZUFÜGEN**, und wählen Sie **200 OK** aus. Klicken Sie auf **Speichern**, um diesen Vorgang zu speichern.
 
 ###Starten eines Batchausführungsauftrags
 
-Klicken Sie auf **Vorgang hinzufügen**, um der API den Azure ML-BES-Vorgang hinzuzufügen. Wählen Sie **POST** als **HTTP-Verb** aus. Geben Sie **/workspaces/{workspace}/services/{service}/jobs/{jobid}/start?api-version={apiversion}** als **URL-Vorlage** ein. Geben Sie **BES Start** als **Anzeigenamen** ein. Klicken Sie links auf **Antworten** > **HINZUFÜGEN**, und wählen Sie **200 OK** aus. Klicken Sie auf **Speichern**, um diesen Vorgang zu speichern.
+Klicken Sie auf **Vorgang hinzufügen**, um der API den Azure ML-BES-Vorgang hinzuzufügen. Wählen Sie **POST** als **HTTP-Verb** aus. Geben Sie **/workspaces/{workspace}/services/{service}/jobs/{jobid}/start?api-version={apiversion}** als **URL-Vorlage** ein. Geben Sie **BES Start** als **Anzeigenamen** ein. Klicken Sie links auf **Antworten** > **HINZUFÜGEN**, und wählen Sie **200 OK** aus. Klicken Sie auf **Speichern**, um diesen Vorgang zu speichern.
 
 ###Abrufen des Status oder des Ergebnisses eines Batchausführungsauftrags
 
-Klicken Sie auf **Vorgang hinzufügen**, um der API den Azure ML-BES-Vorgang hinzuzufügen. Wählen Sie **GET** als **HTTP-Verb** aus. Geben Sie **/workspaces/{workspace}/services/{service}/jobs/{jobid}?api-version={apiversion}** als **URL-Vorlage** ein. Geben Sie **BES Status** als **Anzeigenamen** ein. Klicken Sie links auf **Antworten** > **HINZUFÜGEN**, und wählen Sie **200 OK** aus. Klicken Sie auf **Speichern**, um diesen Vorgang zu speichern.
+Klicken Sie auf **Vorgang hinzufügen**, um der API den Azure ML-BES-Vorgang hinzuzufügen. Wählen Sie **GET** als **HTTP-Verb** aus. Geben Sie **/workspaces/{workspace}/services/{service}/jobs/{jobid}?api-version={apiversion}** als **URL-Vorlage** ein. Geben Sie **BES Status** als **Anzeigenamen** ein. Klicken Sie links auf **Antworten** > **HINZUFÜGEN**, und wählen Sie **200 OK** aus. Klicken Sie auf **Speichern**, um diesen Vorgang zu speichern.
 
 ###Löschen eines Batchausführungsauftrags
 
-Klicken Sie auf **Vorgang hinzufügen**, um der API den Azure ML-BES-Vorgang hinzuzufügen. Wählen Sie **DELETE** als **HTTP-Verb** aus. Geben Sie **/workspaces/{workspace}/services/{service}/jobs/{jobid}?api-version={apiversion}** als **URL-Vorlage** ein. Geben Sie **BES Delete** als **Anzeigenamen** ein. Klicken Sie links auf **Antworten** > **HINZUFÜGEN**, und wählen Sie **200 OK** aus. Klicken Sie auf **Speichern**, um diesen Vorgang zu speichern.
+Klicken Sie auf **Vorgang hinzufügen**, um der API den Azure ML-BES-Vorgang hinzuzufügen. Wählen Sie **DELETE** als **HTTP-Verb** aus. Geben Sie **/workspaces/{workspace}/services/{service}/jobs/{jobid}?api-version={apiversion}** als **URL-Vorlage** ein. Geben Sie **BES Delete** als **Anzeigenamen** ein. Klicken Sie links auf **Antworten** > **HINZUFÜGEN**, und wählen Sie **200 OK** aus. Klicken Sie auf **Speichern**, um diesen Vorgang zu speichern.
 
 ##Aufrufen einer Operation aus dem Entwicklerportal
 
-Operationen können direkt aus dem Entwicklerportal aufgerufen werden. Dies ist ein einfacher Weg, um die Operationen einer API anzuzeigen und zu testen. In diesem Schritt rufen Sie die **RRS Execute**-Methode auf, die der **Azure ML-Demo-API** hinzugefügt wurde. Klicken Sie im klassischen Portal im Menü oben rechts auf **Entwicklerportal**.
+Operationen können direkt aus dem Entwicklerportal aufgerufen werden. Dies ist ein einfacher Weg, um die Operationen einer API anzuzeigen und zu testen. In diesem Schritt rufen Sie die **RRS Execute**-Methode auf, die der **Azure ML-Demo-API** hinzugefügt wurde. Klicken Sie im klassischen Portal im Menü oben rechts auf **Entwicklerportal**.
 
 ![developer-portal](./media/machine-learning-manage-web-service-endpoints-using-api-management/developer-portal.png)
 
-Klicken Sie im Hauptmenü auf **APIs** und anschließend auf **Azure ML-Demo-API**, um die verfügbaren Vorgänge anzuzeigen.
+Klicken Sie im Hauptmenü auf **APIs** und anschließend auf **Azure ML-Demo-API**, um die verfügbaren Vorgänge anzuzeigen.
 
 ![demoazureml-api](./media/machine-learning-manage-web-service-endpoints-using-api-management/demoazureml-api.png)
 
@@ -128,9 +128,9 @@ Wählen Sie als Vorgang **RRS Execute** aus. Klicken Sie auf **Testen**.
 
 ![try-it](./media/machine-learning-manage-web-service-endpoints-using-api-management/try-it.png)
 
-Geben Sie als Anforderungsparameter Ihren **Arbeitsbereich** und **Dienst** sowie **2.0** als **API-Version** und **true** für die **Details** ein. Sie finden Ihren **Arbeitsbereich** und **Dienst** im Azure ML-Webdienstdashboard (siehe **Testen des Webdiensts** in Anhang A).
+Geben Sie als Anforderungsparameter Ihren **Arbeitsbereich** und **Dienst** sowie **2.0** als **API-Version** und **true** für die **Details** ein. Sie finden Ihren **Arbeitsbereich** und **Dienst** im Azure ML-Webdienstdashboard (siehe **Testen des Webdiensts** in Anhang A).
 
-Um den Anforderungsheader festzulegen, klicken Sie auf **Header hinzufügen**, und geben Sie **Content-Type** und **application/json** ein. Klicken Sie anschließend auf **Header hinzufügen**, und geben Sie **Authorization** und **Bearer<YOUR AZUREML SERVICE API-KEY>** ein. Sie finden Ihren **API-Schlüssel** im Azure ML-Webdienstdashboard (siehe **Testen des Webdiensts** in Anhang A).
+Um den Anforderungsheader festzulegen, klicken Sie auf **Header hinzufügen**, und geben Sie **Content-Type** und **application/json** ein. Klicken Sie anschließend auf **Header hinzufügen**, und geben Sie **Authorization** und **Bearer<YOUR AZUREML SERVICE API-KEY>** ein. Sie finden Ihren **API-Schlüssel** im Azure ML-Webdienstdashboard (siehe **Testen des Webdiensts** in Anhang A).
 
 Geben Sie **{"Inputs": {"input1": {"ColumnNames": ["Col2"], "Values": [["This is a good day"]]}}, "GlobalParameters": {}}** als Anforderungstext ein.
 
@@ -144,11 +144,11 @@ Nach dem Aufruf der Operation zeigt das Entwicklerportal die **Angeforderte URL*
 
 ![response-status](./media/machine-learning-manage-web-service-endpoints-using-api-management/response-status.png)
 
-##Anhang A – Erstellen und Testen eines einfachen Azure ML-Webdiensts
+##Anhang A – Erstellen und Testen eines einfachen Azure ML-Webdiensts
 
 ###Erstellen des Experiments
 
-Im Folgenden finden Sie die Schritte, die zum Erstellen eines einfachen Azure ML-Experiments und zum Bereitstellen des Experiments als Webdienst erforderlich sind. Der Webdienst akzeptiert als Eingabe eine Spalte mit beliebigem Text und gibt einen Satz von Features zurück, die als Ganzzahlen dargestellt werden. Beispiel:
+Im Folgenden finden Sie die Schritte, die zum Erstellen eines einfachen Azure ML-Experiments und zum Bereitstellen des Experiments als Webdienst erforderlich sind. Der Webdienst akzeptiert als Eingabe eine Spalte mit beliebigem Text und gibt einen Satz von Features zurück, die als Ganzzahlen dargestellt werden. Beispiel:
 
 Text | Text im Hashformat
 --- | ---
@@ -174,7 +174,7 @@ Erweitern Sie **Text Analytics**, und ziehen Sie **Feature Hashing** in das Expe
 
 ![connect-project-columns](./media/machine-learning-manage-web-service-endpoints-using-api-management/connect-project-columns.png)
 
-Geben Sie **3** als **Hashing bitsize** ein. Dadurch werden 8 (23) Spalten erstellt.
+Geben Sie **3** als **Hashing bitsize** ein. Dadurch werden 8 (23) Spalten erstellt.
 
 ![hashing-bitsize](./media/machine-learning-manage-web-service-endpoints-using-api-management/hashing-bitsize.png)
 
@@ -198,7 +198,7 @@ Klicken Sie auf **Yes**, um das Experiment zu veröffentlichen.
 
 ###Testen des Webdiensts
 
-Ein Azure ML-Webdienst besteht aus RRS-Endpunkten (Request/Response Service, Anforderungs-/Antwortdienst) und BES-Endpunkten (Batch Execution Service, Batchausführungsdienst). RRS dient zur synchronen Ausführung. BES dient zur asynchronen Auftragsausführung. Um Ihren Webdienst mit dem unten aufgeführten Python-Beispielcode zu testen, müssen Sie möglicherweise das Azure-SDK für Python herunterladen und installieren (siehe [Installieren von Python und SDK](python-how-to-install.md)).
+Ein Azure ML-Webdienst besteht aus RRS-Endpunkten (Request/Response Service, Anforderungs-/Antwortdienst) und BES-Endpunkten (Batch Execution Service, Batchausführungsdienst). RRS dient zur synchronen Ausführung. BES dient zur asynchronen Auftragsausführung. Um Ihren Webdienst mit dem unten aufgeführten Python-Beispielcode zu testen, müssen Sie möglicherweise das Azure-SDK für Python herunterladen und installieren (siehe [Installieren von Python und SDK](../python-how-to-install.md)).
 
 Sie benötigen auch den **Arbeitsbereich**, den **Dienst** und den **API-Schlüssel** Ihres Experiments für den unten stehenden Beispielcode. Sie finden den Arbeitsbereich und den Dienst, indem Sie im Webdienstdashboard für Ihr Experiment entweder auf **Anforderung/Antwort** oder auf **Batchausführung** klicken.
 
@@ -226,7 +226,7 @@ Die Ausgabe sollte folgendermaßen aussehen:
 
 #####Beispielcode
 
-Sie können Ihren RRS-Endpunkt auch mithilfe des Clientcodes testen. Wenn Sie auf dem Dashboard auf **Anforderung/Antwort** klicken und ganz nach unten scrollen, sehen Sie Beispielcode für C#, Python und R. Sie sehen auch die Syntax der RRS-Anforderung einschließlich URI, Header und Text der Anforderung.
+Sie können Ihren RRS-Endpunkt auch mithilfe des Clientcodes testen. Wenn Sie auf dem Dashboard auf **Anforderung/Antwort** klicken und ganz nach unten scrollen, sehen Sie Beispielcode für C#, Python und R. Sie sehen auch die Syntax der RRS-Anforderung einschließlich URI, Header und Text der Anforderung.
 
 Dieser Leitfaden zeigt ein funktionierendes Python-Beispiel. Sie müssen dieses Beispiel mit dem **Arbeitsbereich**, dem **Dienst** und dem **API-Schlüssel** Ihres Experiments bearbeiten.
 
@@ -258,7 +258,7 @@ Dieser Leitfaden zeigt ein funktionierendes Python-Beispiel. Sie müssen dieses 
     	print(json.loads(error.read()))
 
 ####Testen des BES-Endpunkts
-Klicken Sie auf dem Dashboard auf **Batchausführung**, und scrollen Sie bis zum Ende. Sie sehen Beispielcode für C#, Python und R. Sie sehen auch die Syntax der BES-Anforderungen zum Übermitteln, Starten, Abrufen des Status und Löschen eines Auftrags.
+Klicken Sie auf dem Dashboard auf **Batchausführung**, und scrollen Sie bis zum Ende. Sie sehen Beispielcode für C#, Python und R. Sie sehen auch die Syntax der BES-Anforderungen zum Übermitteln, Starten, Abrufen des Status und Löschen eines Auftrags.
 
 Dieser Leitfaden zeigt ein funktionierendes Python-Beispiel. Sie müssen dieses Beispiel mit dem **Arbeitsbereich**, dem **Dienst** und dem **API-Schlüssel** Ihres Experiments bearbeiten. Darüber hinaus müssen Sie den **Speicherkontonamen**, den **Speicherkontoschlüssel** und den **Speichercontainernamen** ändern. Und schließlich müssen Sie den Speicherort der **Eingabedatei** und den Speicherort der **Ausgabedatei** bearbeiten.
 
@@ -384,4 +384,4 @@ Dieser Leitfaden zeigt ein funktionierendes Python-Beispiel. Sie müssen dieses 
 	return
 	invokeBatchExecutionService()
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0309_2016-->

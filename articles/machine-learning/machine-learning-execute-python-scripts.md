@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/11/2015" 
+	ms.date="03/04/2016" 
 	ms.author="bradsev" />
 
 
@@ -123,7 +123,7 @@ Dieser Prozess wird unten in Abbildung 8 dargestellt, die mithilfe der scatter\_
  
 ![Bild1v](./media/machine-learning-execute-python-scripts/figure-v1-8.png)
 
-Abbildung 8. Speichern von MatplotLib-Abbildungen in Bildern.
+Abbildung 8. Speichern von MatplotLib-Abbildungen in Bildern.
 
 
 
@@ -133,7 +133,7 @@ Abbildung 9 zeigt einen Versuch, bei dem das oben gezeigte Skript verwendet wird
 	 
 ![Bild2v](./media/machine-learning-execute-python-scripts/figure-v2-9b.png)
 
-Abbildung 9. Visualisieren von Plots, die aus Python-Code generiert wurden.
+Abbildung 9. Visualisieren von Plots, die aus Python-Code generiert wurden.
 
 Beachten Sie, dass es möglich ist, mehrere Abbildungen zurückzugeben, indem Sie sie in verschiedenen Bildern speichern. Die Azure Machine Learning-Laufzeit übernimmt alle Bilder und verkettet sie zur Visualisierung.
 
@@ -145,11 +145,11 @@ Die Python-Funktion zum Berechnen der Wichtigkeitsbewertungen und zum Sortieren 
 
 ![Bild11](./media/machine-learning-execute-python-scripts/figure8.png)
 
-Abbildung 10. Funktion zum Klassifizieren von Features nach Bewertungen. Der folgende Versuch berechnet anschließend die Wichtigkeitsbewertungen der Features und gibt sie im Dataset "Pima Indian Diabetes" in Azure Maschine Learning aus:
+Abbildung 10. Funktion zum Klassifizieren von Features nach Bewertungen. Der folgende Versuch berechnet anschließend die Wichtigkeitsbewertungen der Features und gibt sie im Dataset "Pima Indian Diabetes" in Azure Maschine Learning aus:
 
 ![Bild12](./media/machine-learning-execute-python-scripts/figure9a.png) ![Bild13](./media/machine-learning-execute-python-scripts/figure9b.png)
 	
-Abbildung 11. Versuch zum Klassifizieren von Features im Dataset "Pima Indian Diabetes".
+Abbildung 11. Versuch zum Klassifizieren von Features im Dataset "Pima Indian Diabetes".
 
 ## Einschränkungen 
 Das Modul [Execute Python Script][execute-python-script] weist derzeit die folgenden Einschränkungen auf:
@@ -173,4 +173,4 @@ Weitere Informationen finden Sie im [Python Developer Center](/develop/python/).
 [execute-python-script]: https://msdn.microsoft.com/library/azure/cdb56f95-7f4c-404d-bde7-5bb972e6f232/
 [execute-r-script]: https://msdn.microsoft.com/library/azure/30806023-392b-42e0-94d6-6b775a6e0fd5/
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0309_2016-->

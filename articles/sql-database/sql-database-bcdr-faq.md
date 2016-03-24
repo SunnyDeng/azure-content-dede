@@ -23,7 +23,7 @@ Nach einem Downgrade auf eine niedrigere Leistungsebene wird die Aufbewahrungsda
 
 Wenn ein Upgrade der DB-Dienstebene durchgeführt wird, beginnt die Verlängerung der Aufbewahrungsdauer erst nach dem Upgrade der Datenbank.
 
-Wenn die DB beispielsweise von P1 auf S3 herabgestuft wird, wird die Aufbewahrungsdauer sofort von 35 Tagen auf 14 Tage geändert und alle Wiederherstellungspunkte mit einem Alter über 14 Tagen sind nicht mehr verfügbar. Wenn in der Folge wieder ein Upgrade auf P1 erfolgt, beginnt die Aufbewahrungsdauer bei 14 Tagen und erweitert sich nach und nach auf 35 Tage.
+Wenn die DB beispielsweise von P1 auf S3 herabgestuft wird, wird die Aufbewahrungsdauer sofort von 35 Tagen auf 14 Tage geändert und alle Wiederherstellungspunkte mit einem Alter über 14 Tagen sind nicht mehr verfügbar. Wenn in der Folge wieder ein Upgrade auf P1 erfolgt, beginnt die Aufbewahrungsdauer bei 14 Tagen und erweitert sich nach und nach auf 35 Tage.
 
 ## 2\. Wie lang ist die Aufbewahrungsdauer für eine gelöschte Datenbank? 
 Die Aufbewahrungsdauer wird anhand der Dienstebene der Datenbank, während sie vorhanden war, oder der Anzahl der Tage, die sie vorhanden war, berechnet, je nachdem, welcher Wert kleiner ist.
@@ -34,7 +34,7 @@ Derzeit wird das Wiederherstellen gelöschter Server nicht unterstützt.
 
 ## 4\. Wie lange dauert es, eine Datenbank wiederherzustellen?
 
-Die benötigte Dauer zum Wiederherstellen einer DB hängt von mehreren Faktoren wie z. B. der Größe der Datenbank, der Anzahl der Transaktionsprotokolle, der Netzwerkbandbreite usw. ab. Der Großteil der Datenbankwiederherstellungen erfolgt innerhalb von 12 Stunden.
+Die benötigte Dauer zum Wiederherstellen einer DB hängt von mehreren Faktoren wie z. B. der Größe der Datenbank, der Anzahl der Transaktionsprotokolle, der Netzwerkbandbreite usw. ab. Der Großteil der Datenbankwiederherstellungen erfolgt innerhalb von 12 Stunden.
 
 ## 5\. Kann ich die Aufbewahrungsdauer für den Wiederherstellungspunkt meiner Datenbank ändern?
 
@@ -58,6 +58,6 @@ Für aktive Georeplikation können alle sekundären Datenbanken (bis zu vier sek
 
 ## 9\. Was ist die Replikationsverzögerung bei der standardmäßigen Georeplikation bzw. der aktiven Georeplikation?
 
-Verwenden Sie die dynamische Verwaltungsansicht (DMV) [sys.dm\_geo\_replication\_link\_status](https://msdnstage.redmond.corp.microsoft.com/library/mt575504.aspx), um den Zeitpunkt der letzten Replikation, die Verzögerung der letzten Replikation und andere Informationen über den Replikationslink zu erhalten.
+Verwenden Sie die dynamische Verwaltungsansicht (DMV) [sys.dm\_geo\_replication\_link\_status](https://msdn.microsoft.com/library/mt575504.aspx), um den Zeitpunkt der letzten Replikation, die Verzögerung der letzten Replikation und andere Informationen über den Replikationslink zu erhalten.
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0309_2016-->

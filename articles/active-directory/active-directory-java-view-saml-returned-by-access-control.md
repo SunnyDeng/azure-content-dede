@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="Java"
     ms.topic="article"
-    ms.date="01/09/2016" 
+    ms.date="03/04/2016" 
     ms.author="robmcm" />
 
 # Anzeigen der vom Azure Access Control Service zurückgegebenen SAML
@@ -24,7 +24,8 @@ Diese Anleitung erklärt, wie Sie die Security Assertion Markup Language (SAML) 
 
 Weitere Informationen zum ACS finden Sie im Abschnitt [Nächste Schritte](#next_steps).
 
-> [AZURE.NOTE]Der Azure Access Control Service-Filter ist eine Technologievorschau für die Community. Als Vorabversion wird diese Software von Microsoft nicht offiziell unterstützt.
+> [AZURE.NOTE]
+Der Azure Access Control Service-Filter ist eine Technologievorschau für die Community. Als Vorabversion wird diese Software von Microsoft nicht offiziell unterstützt.
 
 ## Voraussetzungen
 
@@ -195,4 +196,4 @@ Wenn Sie die ACS-Funktionalität genauer erforschen und mit anspruchsvolleren Sz
 [saml_output]: ./media/active-directory-java-view-saml-returned-by-access-control/SAML_Output.png
  
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0309_2016-->

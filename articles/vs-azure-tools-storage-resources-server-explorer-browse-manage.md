@@ -21,7 +21,7 @@ Wenn Sie die Azure Tools für Microsoft Visual Studio installiert haben, können
 
 Wählen Sie zum Anzeigen des Server-Explorers in Visual Studio in der Menüleiste nacheinander die Optionen **Ansicht** und **Server-Explorer**. Der Speicherknoten zeigt alle Speicherkonten an, die unter jedem Azure-Abonnement/-Zertifikat vorhanden sind, mit dem Sie verbunden sind. Wird das Speicherkonto nicht angezeigt, befolgen Sie die Anweisungen am [Ende des Themas](#add-storage-accounts-by-using-server-explorer), um das Konto hinzuzufügen.
 
-Ab Azure SDK 2.7 können Sie auch den neuen Cloud-Explorer zum Anzeigen und Verwalten von Azure-Ressourcen verwenden. Weitere Informationen finden Sie unter [Verwalten von Azure-Ressourcen mit dem Cloud-Explorer](https://msdn.microsoft.com/library/azure/mt185741.aspx).
+Ab Azure SDK 2.7 können Sie auch den neuen Cloud-Explorer zum Anzeigen und Verwalten von Azure-Ressourcen verwenden. Weitere Informationen finden Sie unter [Verwalten von Azure-Ressourcen mit dem Cloud-Explorer](vs-azure-tools-resources-managing-with-cloud-explorer).
 
 
 ## Anzeigen und Verwalten von Speicherressourcen in Visual Studio
@@ -185,7 +185,7 @@ Der Azure Tabellenspeicherdienst erlaubt die Speicherung großer Mengen von stru
 
     ![Eine Azure-Tabelle im Projektmappen-Explorer](./media/vs-azure-tools-storage-resources-server-explorer-browse-manage/IC744165.png)
 
-Die Tabelle ist in Entitäten (Anzeige in Zeilen) und Eigenschaften (Anzeige in Spalten) organisiert. Die folgende Abbildung zeigt z. B. Entitäten, die im **Tabellen-Designer** aufgeführt sind:
+Die Tabelle ist in Entitäten (Anzeige in Zeilen) und Eigenschaften (Anzeige in Spalten) organisiert. Die folgende Abbildung zeigt z. B. Entitäten, die im **Tabellen-Designer** aufgeführt sind:
 
 ### So bearbeiten Sie Tabellendaten
 
@@ -193,7 +193,8 @@ Die Tabelle ist in Entitäten (Anzeige in Zeilen) und Eigenschaften (Anzeige in 
 
     ![Hinzufügen oder Bearbeiten einer Tabellenentität](./media/vs-azure-tools-storage-resources-server-explorer-browse-manage/IC656238.png)
 
-    Entitäten in einer einzelnen Tabelle müssen nicht denselben Eigenschaftensatz (Spalten) aufweisen. Beachten Sie beim Anzeigen und Bearbeiten von Tabellendaten folgende Einschränkungen: Binäre Daten (Typ "Byte") können zwar weder angezeigt noch bearbeitet, können aber in einer Tabelle gespeichert werden.
+    Entitäten in einer einzelnen Tabelle müssen nicht denselben Eigenschaftensatz (Spalten) aufweisen. Beachten Sie beim Anzeigen und Bearbeiten von Tabellendaten folgende Einschränkungen:
+    - Binäre Daten (vom Typ "Byte") können zwar nicht angezeigt oder bearbeitet, aber in einer Tabelle gespeichert werden.
 
     - Die **PartitionKey**- oder **RowKey**-Werte können nicht bearbeitet werden, da dieser Vorgang vom Tabellenspeicher in Azure nicht unterstützt wird.
 
@@ -313,4 +314,4 @@ Es gibt zwei Möglichkeiten, Speicherkonten mithilfe des Server-Explorers hinzuz
 
 Weitere Informationen dazu, wie Azure Storage Services verwendet wird, finden Sie unter [Zugreifen auf Azure Storage Services](https://msdn.microsoft.com/library/azure/ee405490.aspx).
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0309_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/08/2016" 
+	ms.date="03/04/2016" 
 	ms.author="bradsev" />
 
 # Verschieben von Daten in den und aus dem Azure-Blobspeicher mithilfe von Python
@@ -51,7 +51,7 @@ In diesem Dokument wird davon ausgegangen, dass Sie über ein Azure-Abonnement, 
 
 Fügen Sie am Anfang jedes Python-Codes, in dem Sie programmgesteuert auf Azure-Speicher zugreifen möchten, den folgenden Codeausschnitt ein:
 
-	from azure.storage import BlobService
+	from azure.storage.blob import BlobService
 
 Mit dem **BlobService**-Objekt können Sie auf Container und Blobs zugreifen. Mit dem folgenden Code wird unter Verwendung des Speicherkontonamens und Kontoschlüssels ein BlobService-Objekt erstellt. Ersetzen Sie "account\_name" und "account\_key" durch das tatsächliche Konto und den tatsächlichen Schlüssel.
 	
@@ -70,7 +70,7 @@ Der folgende Beispielcode lädt eine lokale Datei in einen Container hoch:
 
 Der folgende Beispielcode lädt alle Dateien (ausgenommen Verzeichnisse) in einem lokalen Verzeichnis in den Blobspeicher hoch:
 
-	from azure.storage import BlobService
+	from azure.storage.blob import BlobService
 	from os import listdir
 	from os.path import isfile, join
 	
@@ -95,9 +95,13 @@ Der folgende Beispielcode lädt alle Dateien (ausgenommen Verzeichnisse) in eine
 
 ## Herunterladen von Daten aus dem Blob
 
-Verwenden Sie die folgenden Methoden, um Daten aus einem Blob herunterzuladen: 1. get\_blob\_to\_path 2. get\_blob\_to\_file 3. get\_blob\_to\_bytes 4. get\_blob\_to\_text
+Verwenden Sie die folgenden Methoden zum Herunterladen von Daten aus einem Blob:
+1. get\_blob\_to\_path
+2. get\_blob\_to\_file
+3. get\_blob\_to\_bytes
+4. get\_blob\_to\_text 
 
-Dies sind Methoden zur Durchführung der erforderlichen Teilung, wenn die Größe der Daten 64 MB übersteigt.
+Dies sind Methoden zur Durchführung der erforderlichen Teilung, wenn die Größe der Daten 64 MB übersteigt.
 
 Der folgende Beispielcode lädt den Inhalt eines Blobs in einem Container in eine lokale Datei herunter:
 
@@ -105,7 +109,7 @@ Der folgende Beispielcode lädt den Inhalt eines Blobs in einem Container in ein
 
 Der folgende Beispielcode lädt alle Blobs aus einem Container herunter. Dabei wird "list\_blobs" verwendet, um die Liste der verfügbaren Blobs im Container abzurufen und in ein lokales Verzeichnis herunterzuladen.
 
-	from azure.storage import BlobService
+	from azure.storage.blob import BlobService
 	from os.path import join
 	
 	# Set parameters here
@@ -125,4 +129,4 @@ Der folgende Beispielcode lädt alle Blobs aus einem Container herunter. Dabei w
 	    except:
 	        print "something wrong happened when downloading the data %s"%blob.name
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0309_2016-->

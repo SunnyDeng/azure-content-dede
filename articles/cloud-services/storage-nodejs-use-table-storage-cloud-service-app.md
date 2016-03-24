@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="nodejs" 
 	ms.topic="article" 
-	ms.date="01/09/2016" 
+	ms.date="03/04/2016" 
 	ms.author="robmcm"/>
 
 # Node.js-Webanwendung mit Speicher
@@ -39,7 +39,7 @@ Unten finden Sie einen Screenshot der vollständigen Anwendung:
 
 Sie müssen die Speicher-Anmeldeinformationen übergeben, um auf den Azure-Speicher zugreifen zu können. Verwenden Sie dazu die Anwendungseinstellungen in der Datei web.config. Diese Einstellungen werden als Umgebungsvariablen an Node übergeben und anschließend vom Azure SDK gelesen.
 
-> [AZURE.NOTE]Die Speicher-Anmeldeinformationen werden nur verwendet, wenn die Anwendung in Azure bereitgestellt wird. Bei der Ausführung im Emulator verwendet die Anwendung den Speicheremulator.
+> [AZURE.NOTE] Die Speicher-Anmeldeinformationen werden nur verwendet, wenn die Anwendung in Azure bereitgestellt wird. Bei der Ausführung im Emulator verwendet die Anwendung den Speicheremulator.
 
 Führen Sie die folgenden Schritte aus, um die Anmeldeinformationen des Speicherkontos abzurufen und zu den web.config-Einstellungen hinzuzufügen:
 
@@ -53,7 +53,7 @@ Führen Sie die folgenden Schritte aus, um die Anmeldeinformationen des Speicher
 
 	Dieser Befehl ruft eine Liste der Speicherkonten und Kontoschlüssel Ihres gehosteten Dienstes ab.
 
-	> [AZURE.NOTE]Da das Azure SDK beim Bereitstellen eines Dienstes ein Speicherkonto erstellt, sollten Sie bereits von den Bereitstellungen Ihrer Anwendung aus den vorherigen Tutorials ein Speicherkonto besitzen.
+	> [AZURE.NOTE] Da das Azure SDK beim Bereitstellen eines Dienstes ein Speicherkonto erstellt, sollten Sie bereits von den Bereitstellungen Ihrer Anwendung aus den vorherigen Tutorials ein Speicherkonto besitzen.
 
 4.  Öffnen Sie die Datei **ServiceDefinition.csdef** mit den Umgebungseinstellungen, die bei der Bereitstellung der Anwendung in Azure verwendet werden:
 
@@ -403,4 +403,4 @@ In den folgenden Schritten erfahren Sie, wie Sie die Anwendung beenden und lösc
  
  
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0309_2016-->

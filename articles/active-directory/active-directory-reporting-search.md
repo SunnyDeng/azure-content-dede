@@ -3,8 +3,8 @@
 	description="Suchen Ihrer Azure Active Directory-Berichte zu Sicherheit, Aktivität und Überwachungsereignissen"
 	services="active-directory"
 	documentationCenter=""
-	authors="kenhoff"
-	manager="mbaldwin"
+	authors="dhanyahk"
+	manager="stevenpo"
 	editor=""/>
 
 <tags
@@ -13,26 +13,26 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="identity"
-	ms.date="12/07/2015"
-	ms.author="kenhoff"/>
+	ms.date="03/07/2016"
+	ms.author="dhanyahk"/>
 
 # Suche in Azure Active Directory-Berichten
 
 *Diese Dokumentation ist Teil des [Handbuchs für Azure Active Directory Reporting](active-directory-reporting-guide.md).*
 
-Azure Active Directory bietet Verzeichnisadministratoren die Möglichkeit, in mehreren Berichten nach Benutzersicherheit, Aktivität und Überwachungsereignissen zu suchen.
+Azure Active Directory (Azure AD) bietet Verzeichnisadministratoren die Möglichkeit, in mehreren Berichten nach Benutzersicherheit, Aktivität und Überwachungsereignissen zu suchen.
 
-Den Suchbereich finden Sie, wenn Sie zu **Azure-Verwaltungsportal -> Ihr Azure Active Directory -> Berichte** navigieren. Der Bereich befindet sich am Anfang der Liste der Berichte.
+Den Suchbereich finden Sie, wenn Sie im **klassischen Azure-Portal -> Ihr Azure AD Active Directory -> Berichte** navigieren. Der Bereich befindet sich am Anfang der Liste der Berichte.
 
-Um für einen bestimmten Benutzer nach Aktivitäts- oder Überwachungsereignissen zu suchen, wählen Sie einen Datumsbereich in den Feldern "Von" und "Bis", geben Sie UPN oder Anzeigenamen des Benutzers ein, und klicken Sie auf das Häkchen.
+Um für einen bestimmten Benutzer nach Aktivitäts- oder Überwachungsereignissen zu suchen, wählen Sie einen Datumsbereich in den Feldern „von“ und „bis“, geben Sie UPN oder Anzeigenamen des Benutzers ein, und wählen Sie das Häkchen („OK“).
 
 ## In die Suche einbezogene Berichte
 
 Es werden noch nicht alle Berichte in die Suchergebnisse einbezogen. Diese Tabelle gibt an, welche Berichte enthalten sind.
 
-Bericht | Included
+Bericht | Enthalten
 --------------------------------------------------- | --------
-Anmeldungen aus unbekannten Quellen | Nein
+Anmeldungen von unbekannten Quellen | Nein
 Anmeldungen nach mehreren Fehlern | Nein
 Anmeldungen aus mehreren geografischen Regionen | Nein
 Anmeldungen von IP-Adressen mit verdächtigen Aktivitäten | Nein
@@ -58,4 +58,4 @@ Nutzung von RMS-Geräten | Nein
  - [Azure Active Directory-Berichte](active-directory-view-access-usage-reports.md)
  - [Azure Active Directory-Überwachungsberichtsereignisse](active-directory-reporting-audit-events.md)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0309_2016-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="03/01/2016"
+   ms.date="03/03/2016"
    ms.author="alkohli"/>
 
 
@@ -257,13 +257,13 @@ Führen Sie die folgenden Schritte aus, um Ihr virtuelles Gerät zu starten und 
 
 1.  Die Schritte 6 bis 8 gelten nur beim Starten in anderen Umgebungen als einer DHCP-Umgebung. Falls Sie sich in einer DHCP-Umgebung befinden, sollten Sie diese Schritte überspringen und mit Schritt 9 fortfahren. Wenn Sie Ihr Gerät in einer anderen Umgebung als einer DHCP-Umgebung gestartet haben, wird der folgende Bildschirm angezeigt.
 
-	![](./media/storsimple-ova-deploy2-provision-vmware/image42.png)
+	![](./media/storsimple-ova-deploy2-provision-vmware/image42m.png)
 
 	Sie müssen das Netzwerk jetzt konfigurieren.
 
 1.  Verwenden Sie den `Get-HcsIpAddress`-Befehl, um die Netzwerkschnittstellen aufzulisten, die auf Ihrem virtuellen Gerät aktiviert sind. Wenn für das Gerät eine einzelne Netzwerkschnittstelle aktiviert ist, wird dieser Schnittstelle der Standardname `Ethernet` zugewiesen.
 
-	![](./media/storsimple-ova-deploy2-provision-vmware/image43.png)
+	![](./media/storsimple-ova-deploy2-provision-vmware/image43m.png)
 
 1.  Verwenden Sie das Set-HcsIpAddress-Cmdlet, um das Netzwerk zu konfigurieren. Unten ist ein Beispiel angegeben:
 
@@ -274,7 +274,7 @@ Führen Sie die folgenden Schritte aus, um Ihr virtuelles Gerät zu starten und 
 
 1.  Nachdem die anfängliche Einrichtung abgeschlossen und das Gerät gestartet wurde, wird der Bannertext für das Gerät angezeigt. Notieren Sie sich die IP-Adresse und die URL, die im Bannertext für die Verwaltung des Geräts angezeigt wird. Sie verwenden diese IP-Adresse zum Herstellen der Verbindung mit der Web-UI Ihres virtuellen Geräts und zum Durchführen des lokalen Setups und der Registrierung.
 
-	![](./media/storsimple-ova-deploy2-provision-vmware/image45.png)
+	![](./media/storsimple-ova-deploy2-provision-vmware/image45m.png)
 
 Wenn Ihr Gerät die Mindestanforderungen für die Konfiguration nicht erfüllt, wird im Bannertext ein Fehler angezeigt (siehe unten). Sie müssen die Gerätekonfiguration ändern, damit sie über ausreichende Ressourcen zum Erfüllen der Mindestanforderungen verfügt. Sie können das Gerät dann neu starten und die Verbindung dafür herstellen. Die Mindestanforderungen für die Konfiguration finden Sie unter [Schritt 1: Sicherstellen, dass das Hostsystem die Mindestanforderungen für virtuelle Geräte erfüllt](#step-1-ensure-host-system-meets-minimum-virtual-device-requirements).
 
@@ -292,4 +292,4 @@ Falls bei der anfänglichen Konfiguration über die lokale Web-UI andere Fehler 
 
 -   [Einrichten des StorSimple Virtual Array als iSCSI-Server](storsimple-ova-deploy3-iscsi-setup.md)
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

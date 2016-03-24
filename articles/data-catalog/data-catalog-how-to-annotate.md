@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Hinzufügen von Anmerkungen zu Datenquellen"
+   pageTitle="Hinzufügen von Anmerkungen zu Datenquellen | Microsoft Azure"
    description="Anleitungsartikel zum Hinzufügen von Anmerkungen zu Datenressourcen in Azure Data Catalog, einschließlich Anzeigenamen, Tags, Beschreibungen und Experten."
    services="data-catalog"
    documentationCenter=""
@@ -61,4 +61,4 @@ Durch die Registrierung einer Datenquelle in **Azure Data Catalog** werden struk
 ## Weitere Informationen
 - Eine schrittweise Anleitung zum Hinzufügen von Anmerkungen zu Datenquellen finden Sie im Tutorial [Erste Schritte mit Azure Data Catalog](data-catalog-get-started.md).
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/07/2016"
+   ms.date="03/03/2016"
    ms.author="jrj;barbkess;sonyama"/>
 
 # Migrieren Ihrer Lösung nach SQL Data Warehouse
@@ -28,7 +28,7 @@ Lesen Sie vor der Migration unbedingt diese Artikel, um sicherzustellen, dass Si
 - [Migrieren Ihres Schemas][]
 - [Migrieren Ihrer Daten][]
 - [Migrieren Ihres Codes][]
- 
+
 ## Nächste Schritte
 Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 
@@ -52,4 +52,4 @@ Sehen Sie sich außerdem die [Übersicht zum Laden][] an, die verschiedene Optio
 
 <!--Other Web references-->
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0309_2016-->

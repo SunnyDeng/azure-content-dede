@@ -46,7 +46,7 @@ Weitere Informationen zu den Azure-Ressourcen-Manager-Vorlagen finden Sie unter 
 
 ### Azure SDK 2.6 für Visual Studio ###
 
-Das neueste SDK enthält Verbesserungen für die Unterstützung von Ressourcen-Manager-Vorlagen im JSON-Editor. Sie können damit schnell eine Ressourcengruppenvorlage ganz neu erstellen oder eine vorhandene JSON-Vorlage (z. B. eine heruntergeladene Katalogvorlage) zur Bearbeitung öffnen, die Parameterdatei füllen und sogar die Ressourcengruppe direkt aus einer Azure-Ressourcengruppenlösung bereitstellen.
+Das neueste SDK enthält Verbesserungen für die Unterstützung von Ressourcen-Manager-Vorlagen im JSON-Editor. Sie können damit schnell eine Ressourcengruppenvorlage ganz neu erstellen oder eine vorhandene JSON-Vorlage (z. B. eine heruntergeladene Katalogvorlage) zur Bearbeitung öffnen, die Parameterdatei füllen und sogar die Ressourcengruppe direkt aus einer Azure-Ressourcengruppenlösung bereitstellen.
 
 Weitere Informationen finden Sie im [Azure SDK 2.6 für Visual Studio](/blog/2015/04/29/announcing-the-azure-sdk-2-6-for-net/).
 
@@ -76,7 +76,7 @@ Lassen Sie uns jetzt beginnen.
  
 	![](./media/app-service-deploy-complex-application-predictably/gettemplate-1-deploybuttonui.png)
 
-4.	Klicken Sie als Nächstes auf **Deploy**, um den Bereitstellungsprozess zu starten. Sobald der Prozess bis zum Abschluss ausgeführt wurde, klicken Sie auf den Link http://todoapp*XXXX*.azure.websites.net, um die bereitgestellte Anwendung anzusehen.
+4.	Klicken Sie als Nächstes auf **Deploy**, um den Bereitstellungsprozess zu starten. Sobald der Prozess bis zum Abschluss ausgeführt wurde, klicken Sie auf den Link http://todoapp*XXXX*.azurewebsites.net, um die bereitgestellte Anwendung anzusehen.
 
 	![](./media/app-service-deploy-complex-application-predictably/gettemplate-2-deployprogress.png)
 
@@ -115,7 +115,7 @@ Hier werden nicht alle Details des JSON-Formats beschrieben, aber der Abschnitt 
 
 ### Parameter ###
 
-Sehen Sie sich den Parameterabschnitt an. Dort erkennen Sie, dass die meisten dieser Parameter deshalb vorhanden sind, weil die Schaltfläche **Deploy to Azure** Sie zur Eingabe aufgefordert hat. Die Website hinter der Schaltfläche **Deploy to Azure** füllt die Eingabebenutzeroberfläche mit den Parametern, die in "azuredeploy.json" definiert wurden. Diese Parameter werden in den Ressourcendefinitionen verwendet, z. B. als Ressourcennamen, Eigenschaftswerte usw.
+Sehen Sie sich den Parameterabschnitt an. Dort erkennen Sie, dass die meisten dieser Parameter deshalb vorhanden sind, weil die Schaltfläche **Deploy to Azure** Sie zur Eingabe aufgefordert hat. Die Website hinter der Schaltfläche **Deploy to Azure** füllt die Eingabebenutzeroberfläche mit den Parametern, die in "azuredeploy.json" definiert wurden. Diese Parameter werden in den Ressourcendefinitionen verwendet, z. B. als Ressourcennamen, Eigenschaftswerte usw.
 
 ### Ressourcen ###
 
@@ -305,4 +305,4 @@ Erfahren Sie, wie Sie [agile Methoden umsetzen und eine aus Microservices besteh
 
  
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0309_2016-->

@@ -19,12 +19,12 @@
 # Verwalten von DNS-Zonen mithilfe der Befehlszeilenschnittstelle (CLI)
 
 > [AZURE.SELECTOR]
-- [Azure CLI](dns-operations-dnszones-cli.md)
+- [Azure-Befehlszeilenschnittstelle](dns-operations-dnszones-cli.md)
 - [PowerShell](dns-operations-dnszones.md)
 
-Diese Anleitung zeigt Ihnen, wie Sie die DNS-Zone verwalten. Sie hilft Ihnen, die Reihenfolge der erforderlichen Vorgänge zu verstehen, die für die Verwaltung der DNS-Zone durchgeführt werden müssen.
+In dieser Anleitung wird erläutert, wie die DNS-Zonenressourcen mithilfe der plattformübergreifenden Azure-Befehlszeilenschnittstelle verwaltet werden.
 
->[AZURE.NOTE] Azure DNS ist ein nur über Azure-Ressourcen-Manager verfügbarer Dienst. Er besitzt keine ASM-API. Sie müssen daher mit dem Befehl „azure config mode arm“ sicherstellen, dass die Azure-Befehlszeilenschnittstelle für die Verwendung des Ressourcen-Manager-Modus konfiguriert ist.
+>[AZURE.NOTE] Azure DNS ist ein nur über Azure-Ressourcen-Manager verfügbarer Dienst. Er besitzt keine ASM-API. Sie müssen daher mit dem Befehl „azure config mode arm“ sicherstellen, dass die Azure-Befehlszeilenschnittstelle für die Verwendung des Ressourcen-Manager-Modus konfiguriert ist.
 
 >Falls „Fehler: ‚dns‘ ist kein Azure-Befehl“ angezeigt wird, verwenden Sie wahrscheinlich die Azure-CLI im ASM-Modus und nicht im Ressourcen-Manager-Modus.
  
@@ -76,6 +76,6 @@ Dieser Vorgang hat einen optionalen Switch "-q", der die Eingabeaufforderung zur
 ## Nächste Schritte
 
 
-Erfahren Sie mehr zum [Verwalten von DNS-Einträgen](dns-operations-recordsets-cli.md)und [Automatisieren von Vorgängen mit dem .NET SDK](dns-sdk.md).
+Erfahren Sie mehr über das [Verwalten von DNS-Einträgen](dns-operations-recordsets-cli.md)und [Automatisieren von Vorgängen mit dem .NET SDK](dns-sdk.md).
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0309_2016-->

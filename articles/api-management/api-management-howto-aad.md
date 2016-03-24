@@ -4,7 +4,7 @@
 	services="api-management" 
 	documentationCenter="API Management" 
 	authors="steved0x" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor=""/>
 
 <tags 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/07/2015" 
+	ms.date="03/04/2016" 
 	ms.author="sdanie"/>
 
 # Autorisieren von Entwicklerkonten mithilfe von Active Directory in Azure API Management
@@ -84,7 +84,7 @@ Wechseln Sie zurück zum Herausgeberportal, und fügen Sie die aus der Azure Act
 
 ![Client-ID][api-management-client-id]
 
-Wechseln Sie zurück zur Azure Active Directory-Konfiguration, klicken Sie im Abschnitt **Schlüssel** auf die Dropdownliste **Dauer auswählen**, und geben Sie ein Intervall an. In diesem Beispiel wird der Wert **1 Jahr** verwendet.
+Wechseln Sie zurück zur Azure Active Directory-Konfiguration, klicken Sie im Abschnitt **Schlüssel** auf die Dropdownliste **Dauer auswählen**, und geben Sie ein Intervall an. In diesem Beispiel wird der Wert **1 Jahr** verwendet.
 
 ![Schlüssel][api-management-aad-key-before-save]
 
@@ -228,4 +228,4 @@ Der Benutzer ist jetzt beim Entwicklerportal für Ihre API Management-Dienstinst
 
 [Anmelden beim Entwicklerportal mit einem Azure Active Directory-Konto]: #Log-in-to-the-Developer-portal-using-an-Azure-Active-Directory-account
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0309_2016-->

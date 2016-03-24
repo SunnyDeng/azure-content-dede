@@ -18,13 +18,13 @@
 
 # Überwachen und Verwalten von Azure Data Factory-Pipelines mit der neuen App „Überwachung und Verwaltung“
 > [AZURE.SELECTOR]
-- [Using Azure Portal/Azure PowerShell](data-factory-monitor-manage-pipelines.md)
-- [Using Monitoring and Management App](data-factory-monitor-manage-app.md)
+- [Verwenden von Azure Portal/Azure PowerShell](data-factory-monitor-manage-pipelines.md)
+- [Verwenden der App "Überwachung und Verwaltung"](data-factory-monitor-manage-app.md)
 
-In diesem Artikel wird das Überwachen, Verwalten und Debuggen Ihrer Pipelines mithilfe der **App „Überwachung und Verwaltung“** beschrieben. Ferner wird erläutert, wie mithilfe dieser Anwendung Warnungen erstellt und Benachrichtigungen bei Fehlern eingerichtet werden.
+In diesem Artikel wird das Überwachen, Verwalten und Debuggen Ihrer Pipelines mithilfe der **App "Überwachung und Verwaltung"** beschrieben. Ferner wird erläutert, wie mithilfe dieser Anwendung Warnungen erstellt und Benachrichtigungen bei Fehlern eingerichtet werden.
       
 ## Starten der App „Überwachung und Verwaltung“ 
-Klicken Sie zum Starten der App „Überwachung und Verwaltung“ auf dem Blatt Ihrer Data Factory auf der Kachel **DATA FACTORY** auf **Überwachungs-App**.
+Klicken Sie zum Starten der App "Überwachung und Verwaltung" auf dem Blatt Ihrer Data Factory auf der Kachel **DATA FACTORY** auf **Überwachungs-App**.
 
 ![Kachel „Überwachung“ auf der Data Factory-Startseite](./media/data-factory-monitor-manage-app/MonitoringAppTile.png)
 
@@ -33,7 +33,7 @@ Die gestartete App „Überwachung und Verwaltung“ sollte auf einer separaten 
 ![App „Überwachung und Verwaltung“](./media/data-factory-monitor-manage-app/AppLaunched.png)
 
 ## Grundlegendes zur App „Überwachung und Verwaltung“
-Links befinden sich drei Registerkarten (**Ressourcen-Explorer**, **Überwachungsansichten** und **Warnungen**). Die erste Registerkarte (Ressourcen-Explorer) ist standardmäßig aktiviert.
+Links befinden sich drei Registerkarten (**Ressourcen-Explorer**, **Überwachungsansichten** und **Warnungen**). Die erste Registerkarte (Ressourcen-Explorer) ist standardmäßig ausgewählt.
 
 ### Ressourcen-Explorer
 Die **Strukturansicht** von Ressourcen-Explorer sehen Sie im linken Bereich, die **Diagrammansicht** oben und die Liste **Aktivitätsfenster** im mittleren Bereich unten. Die Registerkarten **Eigenschaften/Aktivitätsfenster-Explorer** werden rechts angezeigt.
@@ -41,7 +41,7 @@ Die **Strukturansicht** von Ressourcen-Explorer sehen Sie im linken Bereich, die
 Sie können alle Ressourcen (Pipelines, Datasets, verknüpfte Dienste) in der Data Factory in einer Strukturansicht anzeigen. Wenn Sie ein Objekt im Ressourcen-Explorer auswählen, sehen Sie Folgendes:
 
 - die zugeordnete Data Factory-Entität ist in der Diagrammansicht hervorgehoben.
-- zugeordnete Aktivitätsfenster (klicken Sie [hier](data-factory-scheduling-and-execution.md), um mehr zu Aktivitätsfenstern zu erfahren) sind in der Liste „Aktivitätsfenster“ unten hervorgehoben.  
+- Zugeordnete Aktivitätsfenster sind in der Liste „Aktivitätsfenster“ unten hervorgehoben. (Klicken Sie [hier](data-factory-scheduling-and-execution.md), um mehr zu Aktivitätsfenstern zu erfahren.)  
 - Eigenschaften des ausgewählten Objekts im Fenster „Eigenschaften“ im rechten Bereich. 
 
 ![Ressourcen-Explorer](./media/data-factory-monitor-manage-app/ResourceExplorer.png)
@@ -120,7 +120,7 @@ Das Aktivitätsfenster kann einen der folgenden Status haben:
 	<td rowspan="8">Warten</td><td>ScheduleTime</td><td>Der Zeitpunkt für die Ausführung des Aktivitätsfenster ist noch nicht erreicht.</td>
 </tr>
 <tr>
-<td>DatasetDependencies</td><td>Die vorgelagerten Abhängigkeiten sind nicht bereit.</td>
+<td>DatasetDependencies</td><td>Die Upstream-Abhängigkeiten sind nicht bereit.</td>
 </tr>
 <tr>
 <td>ComputeResources</td><td>Die Compute-Ressourcen sind nicht verfügbar.</td>
@@ -193,11 +193,11 @@ Das Fenster „Aktivitätsfenster-Explorer“ wird in der App „Überwachung un
 
 Sie können zu einem anderen Aktivitätsfenster wechseln, indem Sie in der Kalenderansicht oben darauf klicken. Sie können auch oben auf die Schaltflächen **Pfeil nach links/Pfeil nach rechts** klicken, um Aktivitätsfenster in der vorherigen oder nächsten Woche anzuzeigen.
 
-Sie können im unteren Bereich auf der Symbolleiste auf die Schaltflächen klicken, um das Aktivitätsfenster zu **wiederholen** oder die Details im Bereich zu **aktualisieren**.
+Sie können im unteren Bereich auf der Symbolleiste auf die Schaltflächen klicken, um das Aktivitätsfenster zu **erneut aufzurufen** oder die Details im Bereich zu **aktualisieren**.
 
 
 ## Verwenden von Systemsichten
-Die App „Überwachung und Verwaltung“ bietet vordefinierte Systemsichten (**Letzte Aktivitätsfenster**, **Fehlerhafte Aktivitätsfenster**, **In Bearbeitung befindliche Aktivitätsfenster**), in denen Sie die entsprechenden Aktivitätsfenster für Ihre Data Factory anzeigen können.
+Die App "Überwachung und Verwaltung" bietet vordefinierte Systemansichten (**Letzte Aktivitätsfenster**, **Fehlerhafte Aktivitätsfenster**, **In Bearbeitung befindliche Aktivitätsfenster**), in denen Sie die entsprechenden Aktivitätsfenster für Ihre Data Factory anzeigen können.
 
 Wechseln Sie zur Registerkarte **Überwachungsansichten** auf der linken Seite, indem Sie darauf klicken.
 
@@ -211,13 +211,13 @@ Sie können die Option **Fehlerhafte Aktivitätsfenster** nutzen, um alle fehler
 
 
 ## Sortieren und Filtern von Aktivitätsfenstern
-Ändern Sie auf der Befehlsleiste die **Startzeit** und **Endzeit**, um Aktivitätsfenster zu filtern. Klicken Sie nach Ändern von Start- und Endzeit auf die Schaltfläche neben der Endzeit, um die Liste „Aktivitätsfenster“ zu aktualisieren.
+Ändern Sie in der Befehlsleiste die **Startzeit** und **Endzeit**, um Aktivitätsfenster zu filtern. Klicken Sie nach Ändern von Start- und Endzeit auf die Schaltfläche neben der Endzeit, um die Liste „Aktivitätsfenster“ zu aktualisieren.
 
 ![Start- und Endzeiten](./media/data-factory-monitor-manage-app/StartAndEndTimes.png)
 
 > [AZURE.NOTE] Derzeit haben alle Zeiten in der App „Überwachung und Verwaltung“ das UTC-Format.
 
-Klicken Sie in der Liste **Aktivitätsfenster** auf den Namen einer Spalte (z. B.: Status).
+Klicken Sie in der Liste **Aktivitätsfenster** auf den Namen einer Spalte (z. B. "Status").
 
 ![Liste „Aktivitätsfenster“, Spaltenmenü](./media/data-factory-monitor-manage-app/ActivityWindowsListColumnMenu.png)
 
@@ -241,7 +241,7 @@ Im selben Fenster können Sie Filter aufheben. Um alle Filter für die Liste „
 ### Wiederholen ausgewählter Aktivitätsfenster
 Wählen Sie ein Aktivitätsfenster aus, klicken Sie für die erste Befehlsleisten-Schaltfläche auf den Pfeil nach unten, und wählen Sie **Wiederholen**/**Mit vorgelagerter Aktivität in der Pipeline wiederholen** aus. Bei Wahl der Option **Mit vorgelagerter Aktivität in der Pipeline wiederholen** werden alle vorgelagerten Aktivitätsfenster ebenfalls wiederholt. ![Wiederholen eines Aktivitätsfensters](./media/data-factory-monitor-manage-app/ReRunSlice.png)
 
-Sie können auch mehrere Aktivitätsfenster in der Liste auswählen und diese gleichzeitig wiederholen. Sie können Aktivitätsfenster basierend auf dem Status (z. B. **Fehlerhaft**) filtern und dann das fehlerhafte Aktivitätsfenster wiederholen, nachdem Sie den Fehler behoben haben, der den Fehler des Aktivitätsfenster verursacht hat. Im folgenden Abschnitt finden Sie Details zum Filtern von Aktivitätsfenstern in der Liste.
+Sie können auch mehrere Aktivitätsfenster in der Liste auswählen und diese gleichzeitig wiederholen. Sie können Aktivitätsfenster basierend auf dem Status (z. B. **Fehlerhaft**) filtern und das fehlerhafte Aktivitätsfenster wiederholen, nachdem Sie den Fehler behoben haben, der den Fehler des Aktivitätsfenster verursacht hat. Im folgenden Abschnitt finden Sie Details zum Filtern von Aktivitätsfenstern in der Liste.
 
 ### Anhalten/Fortsetzen mehrerer Pipelines
 Sie können bei gedrückter STRG-TASTE zwei oder mehrere Pipelines auswählen und diese über Schaltflächen auf der Befehlsleiste (in der folgenden Abbildung mit einem roten Rechteck hervorgehoben) gleichzeitig anhalten bzw. fortsetzen.
@@ -281,7 +281,7 @@ Ereignisname | Status | Unterstatus
 -------------- | ------ | ----------
 Aktivitätsausführung gestartet | Gestartet | Wird gestartet
 Aktivitätsausführung beendet | Succeeded | Succeeded 
-Aktivitätsausführung beendet | Fehler| Fehlerhafte Ressourcenzuordnung <p>Fehlerhafte Ausführung</p><p>Timeout</p><p>Fehlerhafte Überprüfung</p><p>Abgebrochen</p>
+Aktivitätsausführung beendet | Fehler| Fehlerhafte Ressourcenzuordnung <br/><br/>Fehlerhafte Ausführung<br/><br/>Timeout<br/><br/>Fehlerhafte Überprüfung<br/><br/>Abgebrochen
 Bedarfsgesteuerte Erstellung eines HDI-Clusters gestartet | Gestartet | &nbsp; |
 Bedarfsgesteuerte Erstellung eines HDI-Clusters erfolgreich | Succeeded | &nbsp; |
 Bedarfsgesteuert erstellten HDI-Cluster gelöscht | Succeeded | &nbsp; |
@@ -295,4 +295,4 @@ Bedarfsgesteuert erstellten HDI-Cluster gelöscht | Succeeded | &nbsp; |
     
  
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0309_2016-->

@@ -4,7 +4,7 @@
    services="load-balancer"
    documentationCenter="na"
    authors="joaoma"
-   manager="adinah"
+   manager="carmonm"
    editor="tysonn" />
 <tags 
    ms.service="load-balancer"
@@ -12,12 +12,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/19/2015"
+   ms.date="03/03/2016"
    ms.author="joaoma" />
 
 # Ändern von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich
 
-In der Standardkonfiguration ist der Azure-Lastenausgleich auf ein Leerlauftimeout von 4 Minuten eingestellt.
+In der Standardkonfiguration ist der Azure-Lastenausgleich auf ein Leerlauftimeout von 4 Minuten eingestellt.
 
 Dies bedeutet, dass bei einen Zeitraum der Inaktivität der TCP- oder HTTP-Sitzungen, der länger als der Timeoutwert ist, keine Garantie dafür gegeben werden kann, dass die Verbindung zwischen Client und Dienst bestehen bleibt.
 
@@ -31,7 +31,7 @@ Der grundlegende Gedanke dahinter ist, "TCP Keep-alive" mit einem kürzeren Inte
 
 Während "TCP Keep-alive" für Szenarios gut funktioniert, in denen Akkuleistung keine Rolle spielt, ist es im Allgemeinen keine geeignete Option für mobile Anwendungen. "TCP Keep-alive" sorgt in einer mobilen Anwendung wahrscheinlich für eine geringere Akkulebensdauer.
 
-Für solche Szenarios haben wir Unterstützung für konfigurierbare Leerlauftimeouts hinzugefügt. Sie können nun eine Dauer zwischen 4 und 30 Minuten festlegen. Diese Einstellung funktioniert nur für eingehende Verbindungen.
+Für solche Szenarios haben wir Unterstützung für konfigurierbare Leerlauftimeouts hinzugefügt. Sie können nun eine Dauer zwischen 4 und 30 Minuten festlegen. Diese Einstellung funktioniert nur für eingehende Verbindungen.
 
 ![tcptimeout](./media/load-balancer-tcp-idle-timeout/image1.png)
 
@@ -44,16 +44,16 @@ Für solche Szenarios haben wir Unterstützung für konfigurierbare Leerlauftime
 - Konfigurieren des TCP-Timeouts für Web-/Workerrollen über das Dienstmodell
  
 
->[AZURE.NOTE]Beachten Sie, dass einige Befehle nur im aktuellen Azure PowerShell-Paket vorhanden sind. Wenn der Powershell-Befehl nicht vorhanden ist, laden Sie ein aktuelles PowerShell-Paket herunter.
+>[AZURE.NOTE] Beachten Sie, dass einige Befehle nur im aktuellen Azure PowerShell-Paket vorhanden sind. Wenn der Powershell-Befehl nicht vorhanden ist, laden Sie ein aktuelles PowerShell-Paket herunter.
 
  
-### Festlegen des TCP-Timeouts für Ihre öffentliche IP auf Instanzebene auf 15 Minuten
+### Festlegen des TCP-Timeouts für Ihre öffentliche IP auf Instanzebene auf 15 Minuten
 
 	Set-AzurePublicIP –PublicIPName webip –VM MyVM -IdleTimeoutInMinutes 15
 
-"IdleTimeoutInMinutes" ist optional. Wenn dieser Wert nicht festgelegt ist, beträgt das Standardtimeout 4 Minuten.
+"IdleTimeoutInMinutes" ist optional. Wenn dieser Wert nicht festgelegt ist, beträgt das Standardtimeout 4 Minuten.
 
->[AZURE.NOTE]Der zulässige Timeoutbereich liegt zwischen 4 und 30 Minuten.
+>[AZURE.NOTE] Der zulässige Timeoutbereich liegt zwischen 4 und 30 Minuten.
  
 ### Festlegen des Leerlauftimeouts beim Erstellen eines Azure-Endpunkts auf einem virtuellen Computer
 
@@ -160,10 +160,10 @@ Aktualisieren der Konfiguration der angegebenen Eingabeendpunkte mit Lastenausgl
 
 [Interner Lastenausgleich (Übersicht)](load-balancer-internal-overview.md)
 
-[Erste Schritte zum Konfigurieren des Lastenausgleichs für Internetverbindungen](load-balancer-internet-getstarted.md)
+[Erste Schritte zum Konfigurieren des Lastenausgleichs für Internetverbindungen](load-balancer-get-started-internet-arm-ps.md)
 
 [Konfigurieren eines Lastenausgleichs-Verteilungsmodus](load-balancer-distribution-mode.md)
 
  
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0309_2016-->

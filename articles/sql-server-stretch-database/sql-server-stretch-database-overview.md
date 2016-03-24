@@ -3,22 +3,24 @@
 	description="Finden Sie heraus, wie Stretch-Datenbank Ihre historischen Daten transparent und sicher zu Microsoft Azure Cloud migriert."
 	services="sql-server-stretch-database"
 	documentationCenter=""
-	authors="douglasl"
-	manager="jhubbard"
-	editor="monicar"/>
+	authors="douglaslMS"
+	manager=""
+	editor=""/>
 
 <tags
 	ms.service="sql-server-stretch-database"
 	ms.workload="data-management"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="article"
+	ms.topic="get-started-article"
 	ms.date="02/26/2016"
 	ms.author="douglasl"/>
 
 # Übersicht über Stretch-Datenbank
 
 Stretch-Datenbank migriert Ihre historischen Daten transparent und sicher zu Microsoft Azure Cloud.
+
+Wenn Sie sofort mit Stretch-Datenbank beginnen möchten, lesen Sie [Erste Schritte mit der Datenbank aktivieren für Stretch-Assistenten](sql-server-stretch-database-wizard.md).
 
 ## Was sind die Vorteile von Stretch-Datenbank?
 Stretch-Datenbank bietet die folgenden Vorteile:
@@ -61,17 +63,17 @@ Stretch-Datenbank ist für Transaktionsdatenbanken mit großen Mengen an histori
 
 Falls Sie die Funktion „temporale Tabelle“ von SQL Server 2016 verwenden, verwenden Sie Stretch-Datenbank, um die ganze oder einen Teil der zugehörigen Verlaufstabelle zur kostengünstigen Speicherung in Azure zu migrieren. Weitere Informationen finden Sie unter [Manage Retention of Historical Data in System-Versioned Temporal Tables](https://msdn.microsoft.com/library/mt637341.aspx) (Verwalten der Aufbewahrung historischer Daten in temporalen Tabellen mit Systemversionsverwaltung).
 
-Verwenden Sie den Stretch-Datenbank-Ratgeber, eine Funktion von SQL Server 2016-Upgraderatgeber, zum Identifizieren von Datenbanken und Tabellen für Stretch-Datenbank. Weitere Informationen finden Sie unter [Identify databases and tables for Stretch Database](sql-server-stretch-database-identify-databases.md) (Identifizieren von Datenbanken und Tabellen für Stretch-Datenbank). Weitere Informationen über mögliche Blockierungsprobleme finden Sie unter [Surface area limitations and blocking issues for Stretch Database ](sql-server-stretch-database-limitations.md) (Oberflächenbegrenzungen und Blockierungsprobleme für Stretch-Datenbank).
+Verwenden Sie den Stretch-Datenbank-Ratgeber, eine Funktion von SQL Server 2016-Upgraderatgeber, zum Identifizieren von Datenbanken und Tabellen für Stretch-Datenbank. Weitere Informationen finden Sie unter [Identifizieren von Datenbanken und Tabellen für Stretch-Datenbank](sql-server-stretch-database-identify-databases.md). Weitere Informationen über mögliche Blockierungsprobleme finden Sie unter [Oberflächeneinschränkungen und Hindernisse für Stretch-Datenbank](sql-server-stretch-database-limitations.md).
 
-## <a name="FAQ"></a>Häufig gestellte Fragen zu Stretch-Datenbank
+## <a name="FAQ"></a>Häufig gestellte Fragen zur Stretch-Datenbank
 **Funktioniert Stretch-Datenbank mit &lt;SQL Server-Funktionsname&gt;?**
--   Eine Liste der SQL Server-Funktionen, welche die Nutzung von Tabellen in Stretch verhindern, finden Sie unter [Surface area limitations and blocking issues for Stretch Database](sql-server-stretch-database-limitations.md) (Oberflächenbegrenzungen und Blockierungsprobleme für Stretch-Datenbank).
+-   Eine Liste der SQL Server-Funktionen, welche die Nutzung von Tabellen in Stretch verhindern, finden Sie unter [Oberflächeneinschränkungen und Hindernisse für Stretch-Datenbank](sql-server-stretch-database-limitations.md).
 
--   Optional können Sie den SQL Server 2016 Upgraderatgeber herunterladen, und den Stretch-Datenbank-Ratgeber ausführen, um die Eignung von Datenbanken und Tabellen für Stretch-Datenbank zu prüfen. Weitere Informationen finden Sie unter [Identify databases and tables for Stretch Database](sql-server-stretch-database-identify-databases.md) (Identifizieren von Datenbanken und Tabellen für Stretch-Datenbank).
+-   Optional können Sie den SQL Server 2016 Upgraderatgeber herunterladen, und den Stretch-Datenbank-Ratgeber ausführen, um die Eignung von Datenbanken und Tabellen für Stretch-Datenbank zu prüfen. Weitere Informationen finden Sie unter [Identifizieren von Datenbanken und Tabellen für Stretch-Datenbank](sql-server-stretch-database-identify-databases.md).
 
 **Kann ich eine andere lokale SQL Server-Instanz zum Ziel der Stretch-Datenbank erklären?** Nein. Stretch-Datenbank unterstützt keine andere lokale SQL Server-Instanz als den Remoteendpunkt.
 
-**Kann ich Stretch deaktivieren, und migrierte Daten zurück in die lokale Tabelle verschieben?** Ja. Weitere Informationen finden Sie unter [Disable Stretch Database and bring back remote data ](sql-server-stretch-database-disable.md) (Stretch-Datenbank deaktivieren und Remotedaten zurückbringen).
+**Kann ich Stretch deaktivieren, und migrierte Daten zurück in die lokale Tabelle verschieben?** Ja. Weitere Informationen finden Sie unter [Deaktivieren von Stretch-Datenbank und Zurückbringen von Remotedaten](sql-server-stretch-database-disable.md).
 
 ## Begriffe
 **Lokale Datenbank** –  die lokale SQL Server-Datenbank
@@ -114,11 +116,11 @@ Stretch-Datenbank ändert das Berechtigungsmodell einer vorhandenen Datenbank ni
 **Testen Sie Stretch-Datenbank mit der AdventureWorks-Beispieldatenbank.** Um die AdventureWorks-Beispieldatenbank zu erhalten, laden Sie [hier](https://www.microsoft.com/download/details.aspx?id=49502) mindestens die Datenbankdatei sowie die Beispiel- und Skriptdatei herunter. Nachdem Sie die Beispieldatenbank auf einer Instanz von SQL Server 2016 wiederhergestellt haben, entpacken Sie die Datei „Stretch DB Samples“ aus dem Ordner „Stretch DB “. Führen Sie die Skripts in dieser Datei aus, um den von Ihren Daten verwendeten Speicherplatz vor und nach der Aktivierung von Stretch-Datenbank zu überprüfen, den Fortschritt der Datenmigration zu verfolgen, und um zu bestätigen, dass Sie weiterhin vorhandene Daten abfragen und neue Daten einfügen können, sowohl während als auch nach der Datenmigration.
 
 ## Nächster Schritt
-**Identifizieren Sie Datenbanken und Tabellen, die sich für Stretch-Datenbank eignen.** Laden Sie SQL Server 2016-Upgraderatgeber herunter, und führen Sie den Stretch-Datenbank-Ratgeber aus, um Datenbanken und Tabellen, die sich für Stretch-Datenbank eignen, zu identifizieren. Der Stretch-Datenbank-Ratgeber erkennt auch Blockierungsprobleme. Weitere Informationen finden Sie unter [Identify databases and tables for Stretch Database ](sql-server-stretch-database-identify-databases.md) (Identifizieren von Datenbanken und Tabellen für Stretch-Datenbank).
+**Identifizieren Sie Datenbanken und Tabellen, die sich für Stretch-Datenbank eignen.** Laden Sie SQL Server 2016-Upgraderatgeber herunter, und führen Sie den Stretch-Datenbank-Ratgeber aus, um Datenbanken und Tabellen, die sich für Stretch-Datenbank eignen, zu identifizieren. Der Stretch-Datenbank-Ratgeber erkennt auch Blockierungsprobleme. Weitere Informationen finden Sie unter [Identifizieren von Datenbanken und Tabellen für Stretch-Datenbank](sql-server-stretch-database-identify-databases.md).
 
 <!--Image references-->
 [StretchOverviewImage1]: ./media/sql-server-stretch-database-overview/StretchDBOverview.png
 [StretchOverviewImage2]: ./media/sql-server-stretch-database-overview/StretchDBOverview1.png
 [StretchOverviewImage3]: ./media/sql-server-stretch-database-overview/StretchDBOverview2.png
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0316_2016-->

@@ -18,7 +18,7 @@
 # Mehrere VIPs pro Clouddienst
 Sie können über das öffentliche Internet auf Azure-Clouddienste zugreifen, indem Sie eine von Azure bereitgestellte IP-Adresse verwenden. Diese öffentliche IP-Adresse wird als VIP (virtuelle IP) bezeichnet, da sie mit dem Azure-Lastenausgleich verknüpft ist und nicht wirklich mit den VM-Instanzen im Clouddienst. Sie können auf jede VM-Instanz innerhalb eines Clouddiensts über eine einzelne VIP zugreifen.
 
-Es gibt jedoch Szenarios, in denen Sie möglicherweise mehr als eine VIP-Adresse als Einstiegspunkt für den gleichen Clouddienst benötigen. Beispielsweise kann der Clouddienst mehrere Websites hosten, die SSL-Verbindungen über den SSL-Standardport 443 erfordern, wobei jede Website für einen anderen Kunden oder Mandanten gehostet wird. In diesem Fall benötigen Sie eine andere öffentlich zugängliche IP-Adresse für jede Website. Das folgende Diagramm zeigt eine typische Webhosting-Konfiguration mit mehreren Mandanten, die mehrere SSL-Zertifikate auf dem gleichen öffentlichen Port erfordern.
+Es gibt jedoch Szenarios, in denen Sie möglicherweise mehr als eine VIP-Adresse als Einstiegspunkt für den gleichen Clouddienst benötigen. Beispielsweise kann der Clouddienst mehrere Websites hosten, die SSL-Verbindungen über den Standardport 443 erfordern, wobei jede Website für einen anderen Kunden oder Mandanten gehostet wird. In diesem Fall benötigen Sie eine andere öffentlich zugängliche IP-Adresse für jede Website. Das folgende Diagramm zeigt eine typische Webhosting-Konfiguration mit mehreren Mandanten, die mehrere SSL-Zertifikate auf dem gleichen öffentlichen Port erfordern.
 
 ![Multi-VIP-SSL-Szenario](./media/load-balancer-multivip/Figure1.png)
 
@@ -100,7 +100,7 @@ Um eine VIP in einem Clouddienst einem Endpunkt zuzuordnen, führen Sie den folg
     | Add-AzureEndpoint -Name myEndpoint -Protocol tcp -LocalPort 8080 -PublicPort 80 -VirtualIPName Vip2 `
     | Update-AzureVM
 
-Durch den oben aufgeführten Befehl wird ein mit der VIP verknüpfter Endpunkt namens *Vip2* auf Port *80* erstellt und mit dem virtuellen Computer namens *myVM1* in einem Clouddienst mit dem Namen *myService* über *TCP* auf Port *8080* verknüpft.
+Durch den oben aufgeführten Befehl wird ein mit der VIP verknüpfter Endpunkt namens *Vip2* auf Port *80* erstellt und mit dem virtuellen Computer namens *myVM1* in einem Clouddienst mit dem Namen *myService* über *TCP* auf Port *8080* verknüpft.
 
 Führen Sie den folgenden PowerShell-Befehl aus, um die Konfiguration zu überprüfen:
 
@@ -128,7 +128,7 @@ Die Ausgabe ähnelt den folgenden Ergebnissen:
     ExtensionData   :
 
 ## So aktivieren Sie den Lastenausgleich für eine bestimmten VIP-Adresse
-Sie können eine einzelne VIP für den Lastenausgleich mehreren virtuellen Computern zuordnen. Gehen wir beispielsweise davon aus, dass Sie einen Clouddienst mit dem Namen *myService* sowie zwei virtuelle Computer namens *myVM1* und *myVM2* haben. Der Clouddienst verfügt über mehrere VIPs, eine davon heißt *Vip2*. Wenn Sie sicherstellen möchten, dass für jeden Datenverkehr an Port *81* auf *Vip2* Lastenausgleich zwischen *myVM1* und *myVM2* auf Port *8181* ausgeführt wird, führen Sie das folgende PowerShell-Skript aus:
+Sie können eine einzelne VIP für den Lastenausgleich mehreren virtuellen Computern zuordnen. Gehen wir beispielsweise davon aus, dass Sie einen Clouddienst mit dem Namen *myService* sowie zwei virtuelle Computer namens *myVM1* und *myVM2* haben. Der Clouddienst verfügt über mehrere VIPs, eine davon heißt *Vip2*. Wenn Sie sicherstellen möchten, dass für jeden Datenverkehr an Port *81* auf *Vip2* Lastenausgleich zwischen *myVM1* und *myVM2* auf Port *8181* ausgeführt wird, führen Sie das folgende PowerShell-Skript aus:
 
     Get-AzureVM -ServiceName myService -Name myVM1 `
     | Add-AzureEndpoint -Name myEndpoint -LoadBalancedEndpointSetName myLBSet `
@@ -140,7 +140,7 @@ Sie können eine einzelne VIP für den Lastenausgleich mehreren virtuellen Compu
         -Protocol tcp -LocalPort 8181 -PublicPort 81 -VirtualIPName Vip2  -DefaultProbe `
     | Update-AzureVM
 
-Sie können den Lastenausgleich auch zur Verwendung einer anderen VIP aktualisieren. Wenn Sie den folgenden PowerShell-Befehl ausführen, wird z. B. festgelegt, dass eine VIP-Adresse mit dem Namen "Vip1" für den Lastenausgleich verwendet wird:
+Sie können den Lastenausgleich auch zur Verwendung einer anderen VIP aktualisieren. Wenn Sie den folgenden PowerShell-Befehl ausführen, wird z. B. festgelegt, dass eine VIP-Adresse mit dem Namen "Vip1" für den Lastenausgleich verwendet wird:
 
     Set-AzureLoadBalancedEndpoint -ServiceName myService -LBSetName myLBSet -VirtualIPName Vip1
 
@@ -148,11 +148,11 @@ Sie können den Lastenausgleich auch zur Verwendung einer anderen VIP aktualisie
 
 [Lastenausgleich für Internetzugriff (Übersicht)](load-balancer-internet-overview.md)
 
-[Erste Schritte mit Lastenausgleich für Internetzugriff](load-balancer-internet-getstarted.md)
+[Erste Schritte mit Lastenausgleich für Internetzugriff](load-balancer-get-started-internet-arm-ps.md)
 
 [Virtuelle Netzwerke im Überblick](../virtual-network/virtual-networks-overview.md)
 
 [Reservierte IP-REST-APIs](https://msdn.microsoft.com/library/azure/dn722420.aspx)
  
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0309_2016-->

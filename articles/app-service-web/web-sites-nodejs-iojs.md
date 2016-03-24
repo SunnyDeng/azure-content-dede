@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="nodejs" 
 	ms.topic="article" 
-	ms.date="01/09/2016"
+	ms.date="03/04/2016"
 	ms.author="robmcm" />
 
 # Verwenden von io.js mit Azure App Service-Web-Apps
@@ -31,12 +31,12 @@ Das [io.js-Bereitstellungsskript](https://github.com/felixrieseberg/iojs-azure) 
 
 Die erste Datei, **.deployment**, weist Web-Apps an, **deploy.cmd** bei der Bereitstellung auszuführen. Dieses Skript führt alle üblichen Schritte für eine Node.js-Anwendung aus, lädt jedoch auch die neueste Version von „io.js“ herunter. **IISNode.yml** schließlich konfiguriert die Web-Apps für die Verwendung der soeben heruntergeladenen io.js-Binärdatei anstelle einer vorinstallierten Node.js-Binärdatei.
 
-> [AZURE.NOTE]Um die verwendete io.js-Binärdatei zu aktualisieren, stellen Sie die Anwendung einfach erneut bereit. Das Skript lädt bei jeder Bereitstellung der Anwendung eine neue Version der Datei "io.js" herunter.
+> [AZURE.NOTE] Um die verwendete io.js-Binärdatei zu aktualisieren, stellen Sie die Anwendung einfach erneut bereit. Das Skript lädt bei jeder Bereitstellung der Anwendung eine neue Version der Datei "io.js" herunter.
 
 <a id="manualinstallation"></a>
 ## Verwenden der manuellen Installation
 
-Die manuelle Installation einer benutzerdefinierten io.js-Version umfasst nur zwei Schritte. Laden Sie zunächst die **win-x64**-Binärdatei direkt aus der [io.js-Distribution] herunter. Zwei Dateien werden benötigt: **iojs.exe** und **iojs.lib**. Speichern Sie beide Dateien in einem Ordner innerhalb Ihrer Web-App, z. B. in **bin/iojs**.
+Die manuelle Installation einer benutzerdefinierten io.js-Version umfasst nur zwei Schritte. Laden Sie zunächst die **win-x64**-Binärdatei direkt aus der [io.js-Distribution] herunter. Zwei Dateien werden benötigt: **iojs.exe** und **iojs.lib**. Speichern Sie beide Dateien in einem Ordner innerhalb Ihrer Web-App, z. B. in **bin/iojs**.
 
 Um Web-Apps zur Verwendung von **iojs.exe** anstelle einer vorinstallierten Node-Version zu konfigurieren, erstellen Sie die Datei **IISNode.yml** im Stammverzeichnis der Anwendung und fügen in dieser die folgende Zeile hinzu.
 
@@ -47,12 +47,12 @@ Um Web-Apps zur Verwendung von **iojs.exe** anstelle einer vorinstallierten Node
 
 In diesem Artikel haben Sie erfahren, wie io.js sowohl mithilfe der vorhandenen Bereitstellungsskripts als auch über eine manuelle Installation mit App Service- Web-Apps verwendet wird.
 
-> [AZURE.NOTE]io.js wird ständig weiterentwickelt und häufiger aktualisiert als Node.js. Einige Node.js-Module funktionieren möglicherweise nicht mit io.js. Hinweise zur Problembehandlung erhalten Sie unter [io.js auf GitHub].
+> [AZURE.NOTE] io.js wird ständig weiterentwickelt und häufiger aktualisiert als Node.js. Einige Node.js-Module funktionieren möglicherweise nicht mit io.js. Hinweise zur Problembehandlung erhalten Sie unter [io.js auf GitHub].
 
 ## Änderungen
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 [io.js]: https://iojs.org
 [io.js-Distribution]: https://iojs.org/dist/
@@ -60,4 +60,4 @@ In diesem Artikel haben Sie erfahren, wie io.js sowohl mithilfe der vorhandenen 
 [io.js Deployment Script]: https://github.com/felixrieseberg/iojs-azure
  
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0309_2016-->

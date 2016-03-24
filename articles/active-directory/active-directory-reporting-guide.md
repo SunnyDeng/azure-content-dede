@@ -3,7 +3,7 @@
    description="Eine Anleitung mit sämtlichen Artikeln mit Bezug auf Azure Active Directory-Berichte"
    services="active-directory"
    documentationCenter=""
-   authors="kenhoff"
+   authors="dhanyahk"
    manager="mbaldwin"
    editor=""/>
 
@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="12/07/2015"
-   ms.author="kenhoff"/>
+   ms.date="03/07/2016"
+   ms.author="dhanyahk"/>
 
 
 # Anleitung für Azure Active Directory-Berichte
@@ -30,4 +30,4 @@
  - [Azure Active Directory-Bericht „Alle Benutzeranmeldeaktivitäten“](active-directory-reporting-all-user-sign-in-activity-report.md)
  - [Anzeigen Ihrer Zugriffs- und Nutzungsberichte](active-directory-view-access-usage-reports.md)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0309_2016-->

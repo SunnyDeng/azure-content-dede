@@ -52,7 +52,7 @@ Sie können einen Connector in einer Logik-App oder über den Azure Marketplace 
 	Name | Erforderlich | Beschreibung
 --- | --- | ---
 ConnectionString | Ja | DB2-Clientverbindungszeichenfolge (z. B. „Network Address=servername;Network Port=50000;User ID=username;Password=password;Initial Catalog=SAMPLE;Package Collection=NWIND;Default Schema=NWIND“).
-Tabellen | Ja | Durch Kommas getrennte Liste von Tabellen-, Sicht- und Aliasnamen, die für OData-Vorgänge und zum Generieren der Swagger-Dokumentation mit Beispielen erforderlich sind (z. B. „*NEWORDERS*“).
+Tabellen | Ja | Durch Kommas getrennte Liste von Tabellen-, Sicht- und Aliasnamen, die für OData-Vorgänge und zum Generieren der Swagger-Dokumentation mit Beispielen erforderlich sind (z. B. „ *NEWORDERS* “).
 Prozeduren | Ja | Durch Kommas getrennte Liste mit Prozedur- und Funktionsnamen (z. B. „SPORDERID“).
 OnPremise | Nein | Lokale Bereitstellung mit Azure Service Bus Relay
 ServiceBusConnectionString | Nein | Azure Service Bus Relay-Verbindungszeichenfolge
@@ -67,7 +67,7 @@ PollToAlterData | Nein | UPDATE- oder DELETE-Anweisung zum Verwenden mit einem L
 ## Logik-App mit DB2-Connectoraktion zum Hinzufügen von Daten ##
 Sie können eine Logik-App-Aktion definieren, um Daten einer DB2-Tabelle mit einem OData-Vorgang vom Typ „API einfügen“ oder „Post an Entität“ hinzuzufügen. Beispielsweise können Sie einen neuen Datensatz mit einer Kundenbestellung einfügen, indem Sie eine SQL INSERT-Anweisung für eine Tabelle verarbeiten, die mit einer Identitätsspalte definiert wurde, und den Identitätswert oder die betroffenen Zeilen an die Logik-App zurückgeben (SELECT ORDID FROM FINAL TABLE (INSERT INTO NWIND.NEWORDERS (CUSTID,SHIPNAME,SHIPADDR,SHIPCITY,SHIPREG,SHIPZIP) VALUES (?,?,?,?,?,?))).
 
-> [AZURE.TIP] Mit der DB2-Verbindung „*Post an EntitySet*“ wird der Wert der Identitätsspalte zurückgegeben, und mit „*API einfügen*“ werden betroffene Zeilen zurückgegeben.
+> [AZURE.TIP] Mit der DB2-Verbindung „ *Post an EntitySet* “ wird der Wert der Identitätsspalte zurückgegeben, und mit „ *API einfügen* “ werden betroffene Zeilen zurückgegeben.
 
 1. Wählen Sie im Azure-Startmenü **+** (Pluszeichen), **Web und mobil** und dann **Logik-App**.
 2. Geben Sie den Namen (z. B. „NewOrdersDb2“), den App Service-Plan und andere Eigenschaften ein, und wählen Sie **Erstellen**.
@@ -271,4 +271,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [13]: ./media/app-service-logic-connector-db2/LogicApp_RemoveOrdersDb2_TriggersActions.png
 [14]: ./media/app-service-logic-connector-db2/LogicApp_RemoveOrdersDb2_Outputs.png
 
-<!---HONumber=AcomDC_0224_2016-->
+<!------HONumber=AcomDC_0224_2016-->

@@ -4,7 +4,7 @@
 	services="api-management" 
 	documentationCenter="" 
 	authors="antonba" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor=""/>
 
 <tags 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/03/2015" 
+	ms.date="03/04/2016" 
 	ms.author="antonba"/>
 
 # Delegieren von Benutzerregistrierung und Produktabonnierung
@@ -46,7 +46,11 @@ Anschließend müssen Sie den **Delegierungsendpunkt** einrichten. Dieser Endpun
 
 	> *http://www.yourwebsite.com/apimdelegation?operation=SignIn&returnUrl={URL der Quellseite}&salt={string}&sig={string}*
 
-	Abfrageparameter für Anmeldung/Registrierung: – **operation**: Gibt an, um welche Art von Delegierungsanforderung es sich handelt; in diesem Fall ist nur **SignIn** möglich – **returnUrl**: Die URL der Seite, auf der der Benutzer auf einen Link für Anmeldung oder Registrierung geklickt hat – **salt**: Eine spezielle salt-Zeichenfolge, mit der ein Sicherheitshash berechnet wird – **sig**: Ein berechneter Sicherheitshash zum Vergleich mit dem von Ihnen generierten Hash
+	Abfrageparameter für Anmeldung und Registrierung:
+	- **operation**: identifiziert den Typ der Delegierungsanforderung – in diesem Fall kann dieser nur **SignIn** sein
+	- **returnUrl**: Die URL der Seite, auf die der Benutzer auf einen Anmeldungs- oder Registrierungslink geklickt hat.
+	- **salt**: Eine spezielle Salt-Zeichenfolge, mit der ein Sicherheitshash generiert wird
+	- **sig**: Ein berechneter Sicherheitshash zum Vergleich mit dem von Ihnen generierten Hash
 
 2. Überprüfen, ob die Anfrage von Azure API Management stammt (optional, aus Sicherheitsgründen jedoch dringend empfohlen)
 
@@ -101,7 +105,15 @@ Konfigurieren Sie anschließend die folgenden Aktionen für den Delegierungsendp
 
 	> *http://www.yourwebsite.com/apimdelegation?operation={operation}&productId={product für Abonnement}&userId={Benutzer, der die Anforderung sendet}&salt={string}&sig={string}*
 
-	Abfrageparameter für das Abonnieren von Produkten: – **operation**: Gibt an, um welche Art von Delegierungsanforderung es sich handelt. Für Anforderungen zur Produktabonnierung stehen die folgenden Optionen zur Verfügung: – "Subscribe": Eine Anforderung, ein Produkt mit der bereitgestellten ID für einen Benutzer zu abonnieren (siehe unten) – "Unsubscribe": Eine Anforderung, das Produktabonnement für einen Benutzer zu kündigen – "Renew": Eine Anforderung zum Verlängern eines Abonnements (wenn dieses z. B. ausläuft) – **productId**: Die ID des Produkts, das ein Benutzer abonnieren möchte – **userId**: Die ID des Benutzers, für den die Anforderung gesendet wird – **salt**: Eine spezielle salt-Zeichenfolge, mit der ein Sicherheitshash berechnet wird – **sig**: Ein berechneter Sicherheitshash zum Vergleich mit dem von Ihnen generierten Hash
+	Abfrageparameter für die Produktabonnierung:
+	- **operation**: gibt den Typ der Delegierungsanforderung an. Für Produktabonnierungsanfragen sind die folgenden Optionen gültig:
+		- „Subscribe“: Anfrage für ein Abonnement eines Produkts mit der angegebenen ID (siehe unten) für den Benutzer
+		- „Unsubscribe“: Anfrage zur Beendigung des Abonnement für ein Produkt durch den Benutzer
+		- „Renew“: Anfrage zur Erneuerung eines Abonnements durch den Benutzer (weil dieses z. B. demnächst abläuft)
+	- **productId**: Die ID des Produkts, das der Benutzer abonnieren möchte
+	- **userId**: Die ID des Benutzers, der die Anforderung gestellt hat
+	- **salt**: Eine spezielle Salt-Zeichenfolge, mit der ein Sicherheitshash generiert wird
+	- **sig**: Ein berechneter Sicherheitshash zum Vergleich mit dem von Ihnen generierten Hash
 
 
 2. Überprüfen, ob die Anfrage von Azure API Management stammt (optional, aus Sicherheitsgründen jedoch dringend empfohlen)
@@ -166,4 +178,4 @@ Weitere Informationen zum Delegieren finden Sie im folgenden Video.
 
 [api-management-delegation-signin-up]: ./media/api-management-howto-setup-delegation/api-management-delegation-signin-up.png
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0309_2016-->

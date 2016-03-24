@@ -4,7 +4,7 @@
 	services="api-management" 
 	documentationCenter="" 
 	authors="steved0x" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor=""/>
 
 <tags 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/07/2015" 
+	ms.date="03/04/2016" 
 	ms.author="sdanie"/>
 
 # Erstellen von APIs in Azure API Management
@@ -58,7 +58,7 @@ Auf der Registerkarte **Einstellungen** können Sie die Konfiguration einer API 
 
 Um die Gatewayauthentifizierung für die Back-End-Dienst-Implementierung der API zu konfigurieren, wählen Sie die Registerkarte **Sicherheit**. Über die Dropdownliste **Mit Anmeldeinformationen** können Sie die **HTTP-Standardauthentifizierung** oder die **Clientzertifikatauthentifizierung** konfigurieren. Zum Verwenden der HTTP-Standardauthentifizierung geben Sie einfach die gewünschten Anmeldeinformationen ein. Informationen zum Verwenden der Clientzertifikatauthentifizierung finden Sie unter [Sichern von Back-End-Diensten über eine Clientzertifikatauthentifizierung][] in Azure API Management.
 
-Auf der Registerkarte **Sicherheit** können Sie außerdem die **Benutzerautorisierung** mithilfe von OAuth 2.0 konfigurieren. Weitere Informationen finden Sie unter [Autorisieren von Entwicklerkonten mithilfe von OAuth 2.0 in Azure API Management][].
+Auf der Registerkarte **Sicherheit** können Sie außerdem die **Benutzerautorisierung** mithilfe von OAuth 2.0 konfigurieren. Weitere Informationen finden Sie unter [Autorisieren von Entwicklerkonten mithilfe von OAuth 2.0 in Azure API Management][].
 
 ![Einstellungen für die Standardauthentifizierung][api-management-api-settings-credentials]
 
@@ -96,6 +96,6 @@ Nachdem Sie die API erstellt und die Einstellungen konfiguriert haben, können S
 [Erste Schritte mit Azure API Management]: api-management-get-started.md
 [Erstellen einer API Management-Dienstinstanz]: api-management-get-started.md#create-service-instance
 [Sichern von Back-End-Diensten über eine Clientzertifikatauthentifizierung]: api-management-howto-mutual-certificates.md
-[Autorisieren von Entwicklerkonten mithilfe von OAuth 2.0 in Azure API Management]: api-management-howto-oauth2.md
+[Autorisieren von Entwicklerkonten mithilfe von OAuth 2.0 in Azure API Management]: api-management-howto-oauth2.md
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0309_2016-->

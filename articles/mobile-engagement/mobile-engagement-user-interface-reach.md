@@ -13,13 +13,13 @@
    ms.topic="article"
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="mobile" 
-   ms.date="11/29/2015"
+   ms.date="03/08/2016"
    ms.author="piyushjo"/>
 
 
 # Wie Sie die Benutzer Ihrer Anwendung mit Pushbenachrichtigungen erreichen
 
-In diesem Artikel wird die Registerkarte **REACH** im Portal **Mobile Engagement** beschrieben. Verwenden Sie das Portal **Mobile Engagement**, um Ihre mobilen Apps zu überwachen und zu verwalten. Beachten Sie, dass Sie zur Verwendung des Portals zuerst ein **Azure Mobile Engagement**-Konto erstellen müssen. Weitere Informationen finden Sie unter [Erstellen eines Azure Mobile Engagement-Kontos](mobile-engagement-create-account.md).
+In diesem Artikel wird die Registerkarte **REACH** im Portal **Mobile Engagement** beschrieben. Verwenden Sie das Portal **Mobile Engagement**, um Ihre mobilen Apps zu überwachen und zu verwalten. Beachten Sie, dass Sie zur Verwendung des Portals zuerst ein **Azure Mobile Engagement**-Konto erstellen müssen. Weitere Informationen finden Sie unter [Erstellen eines Azure Mobile Engagement-Kontos](mobile-engagement-create.md).
 
 Der Abschnitt "Reach" der Benutzeroberfläche ist das Verwaltungstool für Pushkampagnen, mit dem Sie Kampagnen und Merkmale von Pushbenachrichtigungen erstellen, bearbeiten, aktivieren, beenden und überwachen sowie entsprechende Statistiken abrufen können. Der Zugriff darauf ist auch über die Reach-API (und einige Elemente der untergeordneten Push-API) möglich. Vor der Verwendung von Reach-Kampagnen müssen Sie unabhängig davon, ob Sie die APIs oder Benutzeroberfläche verwenden, Azure Mobile Engagement und Reach für jede Plattform mit dem SDK in Ihre Anwendung integrieren.
 
@@ -52,7 +52,13 @@ Klicken Sie auf „**Statistiken**“, um die Details einer Reichweitenkampagne 
 	4. Auf iOS-Geräten werden Nachrichten manchmal nicht zugestellt, wenn der Akkuladestand des Geräts niedrig ist oder wenn die App beim Verarbeiten von Remotebenachrichtigungen eine erhebliche Menge an Energie verbraucht. Dies ist eine Einschränkung der iOS-Geräte.   
 
 3.	**Angezeigt**: Gibt die Anzahl der Meldungen an, die dem App-Benutzer erfolgreich auf dem Gerät angezeigt wurden – entweder in Form einer System-/Out-of-App-Benachrichtigung im Notification Center oder einer In-App-Benachrichtigung in der mobilen App. Die Registerkarte **Erweitert** zeigt an, wie viele der Benachrichtigungen System- und wie viele In-App-Benachrichtigungen waren.
-
+	
+	*Warum die angezeigte Anzahl kleiner als die übermittelte Anzahl ist (die noch angezeigt werden muss)*
+	
+	1. Wenn für die Benachrichtigungskampagne ein Enddatum festgelegt wurde, wurde die Benachrichtigung möglicherweise übermittelt. Sie wurde jedoch nie angezeigt, wenn sie bereits abgelaufen war, als der App-Benutzer sie öffnen wollte.   
+	2. Wenn es sich um ein In-App-Benachrichtigung handelt, wird die Benachrichtigung nur angezeigt, wenn der App-Benutzer die Anwendung öffnet. Falls der App-Benutzer die Anwendung nicht geöffnet hat, meldet das SDK bis zum Öffnen der Anwendung, dass die Benachrichtigung übermittelt aber noch nicht angezeigt wurde. 
+	2. Wenn es sich um eine In-App-Benachrichtigung handelt, die bei einer bestimmten Aktivität oder in einem bestimmten Bildschirm angezeigt werden soll, wird auch hier die Benachrichtigung bis zum Öffnen der Anwendung im jeweiligen Bildschirm als übermittelt aber noch nicht geöffnet gemeldet. 
+	
 4.	**Benutzerinteraktionen**: Gibt die Anzahl der Meldungen an, mit denen der App-Benutzer interagiert hat, und enthält die Meldungen, die entweder geschlossen wurden oder für die eine Aktion ausgeführt wurde.
 
 	- *Der App-Benutzer kann eine Benachrichtigung auf eine der folgenden Weisen öffnen:*
@@ -171,4 +177,4 @@ Klicken Sie auf „**Statistiken**“, um die Details einer Reichweitenkampagne 
 [Link 29]: mobile-engagement-user-interface-reach-content.md
  
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0309_2016-->

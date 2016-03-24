@@ -22,9 +22,9 @@
 
 # Hinzufügen einer Streamingdateneingabe oder von Verweisdaten zu einem Stream Analytics-Auftrag
 
-Erfahren Sie, wie Sie eine Datenquelle als Streamingdateneingabe aus Event Hubs oder als Verweisdaten aus Blobspeicher mit Ihrem Stream Analytics-Auftrag verknüpfen.
+Erfahren Sie, wie Sie eine Datenquelle als Streamingdateneingabe aus Event Hubs oder als Verweisdaten aus dem Blobspeicher mit Ihrem Stream Analytics-Auftrag verknüpfen.
 
-Azure Stream Analytics-Aufträge können mit einer oder mehreren Dateneingaben verknüpft werden, die jeweils eine Verbindung mit einer vorhandenen Datenquelle definieren. Werden Daten an diese Datenquelle gesendet, werden sie von dem Stream Analytics-Auftrag übernommen und in Echtzeit als Streamingdaten verarbeitet. Stream Analytics verfügt über eine hervorragende Integration in [Azure Event Hubs](https://azure.microsoft.com/services/event-hubs/) und [Azure-Blobspeicher](./storage/storage-dotnet-how-to-use-blobs.md) sowohl innerhalb als auch außerhalb des Auftragsabonnements.
+Azure Stream Analytics-Aufträge können mit einer oder mehreren Dateneingaben verknüpft werden, die jeweils eine Verbindung mit einer vorhandenen Datenquelle definieren. Werden Daten an diese Datenquelle gesendet, werden sie von dem Stream Analytics-Auftrag übernommen und in Echtzeit als Streamingdaten verarbeitet. Stream Analytics verfügt über eine hervorragende Integration in [Azure Event Hubs](https://azure.microsoft.com/services/event-hubs/) und [Azure-Blobspeicher](../storage/storage-dotnet-how-to-use-blobs.md) sowohl innerhalb als auch außerhalb des Auftragsabonnements.
 
 Dieser Artikel ist ein Schritt im [Stream Analytics-Lernpfad](/documentation/learning-paths/stream-analytics/).
 
@@ -88,4 +88,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 - [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0309_2016-->

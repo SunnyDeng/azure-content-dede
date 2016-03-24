@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="multiple"
     ms.devlang="Java"
     ms.topic="article"
-    ms.date="01/09/2016" 
+    ms.date="03/04/2016" 
     ms.author="robmcm"/>
 
 <!-- Legacy MSDN URL = https://msdn.microsoft.com/library/azure/dn205108.aspx -->
@@ -26,7 +26,7 @@ Im Folgenden ist das Dialogfeld **Storage Accounts** abgebildet.
 
 ![][ic719496]
 
-Dieses Dialogfeld kann auch über einen der Links **Accounts** in Dialogfeldern geöffnet werden, in denen Speicherkonten verwendet werden, z. B.:
+Dieses Dialogfeld kann auch über einen der Links **Accounts** in Dialogfeldern geöffnet werden, in denen Speicherkonten verwendet werden, z. B.:
 
 * Registerkarte **JDK** im Dialogfeld **Server Configuration**.
 * Registerkarte **Server** im Dialogfeld **Server Configuration**.
@@ -74,7 +74,7 @@ Es kann mehrere Minuten dauern, bis das Speicherkonto erstellt wurde. Nachdem es
 1. Klicken Sie im Dialogfeld **Storage Accounts** auf das Speicherkonto, das Sie bearbeiten möchten, und dann auf **Remove**.
 2. Klicken Sie auf **OK**, wenn Sie zum Entfernen des Speicherkontos aufgefordert werden.
 
->[AZURE.NOTE]Durch das Entfernen des Speicherkontos im Dialogfeld **Storage Accounts** wird das Konto nur aus der Liste der unter Eclipse sichtbaren Speicherkonten entfernt. Das Speicherkonto wird dabei nicht aus dem Azure-Abonnement entfernt. Darüber hinaus wird das Speicherkonto möglicherweise erneut in der Liste angezeigt, nachdem Eclipse die Daten Ihres Abonnements neu geladen hat.
+>[AZURE.NOTE] Durch das Entfernen des Speicherkontos im Dialogfeld **Storage Accounts** wird das Konto nur aus der Liste der unter Eclipse sichtbaren Speicherkonten entfernt. Das Speicherkonto wird dabei nicht aus dem Azure-Abonnement entfernt. Darüber hinaus wird das Speicherkonto möglicherweise erneut in der Liste angezeigt, nachdem Eclipse die Daten Ihres Abonnements neu geladen hat.
 
 ## Weitere Informationen ##
 
@@ -100,4 +100,4 @@ Weitere Informationen zum Verwenden von Azure mit Java finden Sie im [Azure Java
 [ic719496]: ./media/azure-toolkit-for-eclipse-azure-storage-account-list/ic719496.png
 [ic719497]: ./media/azure-toolkit-for-eclipse-azure-storage-account-list/ic719497.png
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0309_2016-->

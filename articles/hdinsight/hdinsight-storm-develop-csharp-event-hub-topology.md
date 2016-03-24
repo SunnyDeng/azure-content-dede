@@ -87,10 +87,12 @@ Event Hubs ist die Datenquelle für dieses Beispiel. Führen Sie die folgenden S
 4. Klicken Sie auf **Konfigurieren**, und erstellen Sie zwei neue Zugriffsrichtlinien mit den folgenden Informationen.
 
 	<table>
-<tr><th>Name</th><th>Berechtigungen</th></tr>
-<tr><td>Writer</td><td>Send</td></tr>
-<tr><td>Leser</td><td>Empfangen</td></tr>
-</table>Klicken Sie nach dem Erstellen der Berechtigungen auf das Symbol **Speichern** am unteren Seitenrand. Auf diese Weise werden die Richtlinien für den gemeinsamen Zugriff erstellt, die zum Senden (writer) und Empfangen (reader) von Daten an diesen Event Hub bzw. von diesem verwendet werden.
+	<tr><th>Name</th><th>Berechtigungen</th></tr>
+	<tr><td>Writer</td><td>Send</td></tr>
+	<tr><td>Leser</td><td>Empfangen</td></tr>
+	</table>
+
+	Klicken Sie nach dem Erstellen der Berechtigungen auf das Symbol **Speichern** am unteren Seitenrand. Auf diese Weise werden die Richtlinien für den gemeinsamen Zugriff erstellt, die zum Senden (writer) und Empfangen (reader) von Daten an diesen Event Hub bzw. von diesem verwendet werden.
 
 	![Richtlinien](./media/hdinsight-storm-develop-csharp-event-hub-topology/policy.png)
 
@@ -141,13 +143,13 @@ In diesem Abschnitt erstellen Sie eine Topologie, die Daten mithilfe des Event H
 3. Geben Sie folgende Einstellungen ein. Verwenden Sie die Informationen für den Event Hub, den Sie zuvor in der Spalte **Wert** erstellt haben.
 
 	<table>
-<tr><th style="text-align:left">Name</th><th style="text-align:left">Typ</th><th style="text-align:left">Umfang</th></tr>
-<tr><td style="text-align:left">EventHubPolicyName</td><td style="text-align:left">string</td><td style="text-align:left">Anwendung</td></tr>
-<tr><td style="text-align:left">EventHubPolicyKey</td><td style="text-align:left">string</td><td style="text-align:left">Anwendung</td></tr>
-<tr><td style="text-align:left">EventHubNamespace</td><td style="text-align:left">string</td><td style="text-align:left">Anwendung</td></tr>
-<tr><td style="text-align:left">EventHubName</td><td style="text-align:left">string</td><td style="text-align:left">Anwendung</td></tr>
-<tr><td style="text-align:left">EventHubPartitionCount</td><td style="text-align:left">int</td><td style="text-align:left">Anwendung</td></tr>
-</table>
+	<tr><th style="text-align:left">Name</th><th style="text-align:left">Typ</th><th style="text-align:left">Umfang</th></tr>
+	<tr><td style="text-align:left">EventHubPolicyName</td><td style="text-align:left">string</td><td style="text-align:left">Anwendung</td></tr>
+	<tr><td style="text-align:left">EventHubPolicyKey</td><td style="text-align:left">string</td><td style="text-align:left">Anwendung</td></tr>
+	<tr><td style="text-align:left">EventHubNamespace</td><td style="text-align:left">string</td><td style="text-align:left">Anwendung</td></tr>
+	<tr><td style="text-align:left">EventHubName</td><td style="text-align:left">string</td><td style="text-align:left">Anwendung</td></tr>
+	<tr><td style="text-align:left">EventHubPartitionCount</td><td style="text-align:left">int</td><td style="text-align:left">Anwendung</td></tr>
+	</table>
 
 4. Speichern und schließen Sie die **Eigenschaftenseite**.
 
@@ -296,15 +298,17 @@ In diesem Abschnitt erstellen Sie eine Topologie, die Daten mithilfe des Event H
 3. Geben Sie folgende Einstellungen ein. Verwenden Sie die Informationen für den Event Hub und das Speicherkonto, die Sie zuvor in der Spalte **Wert** erstellt haben.
 
 	<table>
-<tr><th style="text-align:left">Name</th><th style="text-align:left">Typ</th><th style="text-align:left">Umfang</th></tr>
-<tr><th style="text-align:left">EventHubPolicyName</th><th style="text-align:left">string</th><th style="text-align:left">Anwendung</th></tr>
-<tr><th style="text-align:left">EventHubPolicyKey</th><th style="text-align:left">string</th><th style="text-align:left">Anwendung</th></tr>
-<tr><th style="text-align:left">EventHubNamespace</th><th style="text-align:left">string</th><th style="text-align:left">Anwendung</th></tr>
-<tr><th style="text-align:left">EventHubName</th><th style="text-align:left">string</th><th style="text-align:left">Anwendung</th></tr>
-<tr><th style="text-align:left">EventHubPartitionCount</th><th style="text-align:left">int</th><th style="text-align:left">Anwendung</th></tr>
-<tr><th style="text-align:left">StorageConnection</th><th style="text-align:left">(Verbindungszeichenfolge)</th><th style="text-align:left">Anwendung</th></tr>
-<tr><th style="text-align:left">TableName</th><th style="text-align:left">string</th><th style="text-align:left">Anwendung</th></tr>
-</table>Geben Sie als **TableName** den Namen der Tabelle ein, in der Ereignisse gespeichert werden sollen.
+	<tr><th style="text-align:left">Name</th><th style="text-align:left">Typ</th><th style="text-align:left">Umfang</th></tr>
+	<tr><th style="text-align:left">EventHubPolicyName</th><th style="text-align:left">string</th><th style="text-align:left">Anwendung</th></tr>
+	<tr><th style="text-align:left">EventHubPolicyKey</th><th style="text-align:left">string</th><th style="text-align:left">Anwendung</th></tr>
+	<tr><th style="text-align:left">EventHubNamespace</th><th style="text-align:left">string</th><th style="text-align:left">Anwendung</th></tr>
+	<tr><th style="text-align:left">EventHubName</th><th style="text-align:left">string</th><th style="text-align:left">Anwendung</th></tr>
+	<tr><th style="text-align:left">EventHubPartitionCount</th><th style="text-align:left">int</th><th style="text-align:left">Anwendung</th></tr>
+	<tr><th style="text-align:left">StorageConnection</th><th style="text-align:left">(Verbindungszeichenfolge)</th><th style="text-align:left">Anwendung</th></tr>
+	<tr><th style="text-align:left">TableName</th><th style="text-align:left">string</th><th style="text-align:left">Anwendung</th></tr>
+	</table>
+
+	Geben Sie als **TableName** den Namen der Tabelle ein, in der Ereignisse gespeichert werden sollen.
 
     Für **StorageConnection** geben Sie den Wert `DefaultEndpointsProtocol=https;AccountName=myAccount;AccountKey=myKey;` ein. Ersetzen Sie **myAccount** und **myKey** durch den Namen des Speicherkontos und den zuvor abgerufenen Schlüssel.
 
@@ -354,7 +358,7 @@ In diesem Abschnitt erstellen Sie eine Topologie, die Daten mithilfe des Event H
 
          List<string> javaSerializerInfo = new List<string>() { "microsoft.scp.storm.multilang.CustomizedInteropJSONSerializer" };
 
-	Hierdurch wird ein benutzerdefinierter Serialisierer erstellt, der zum Serialisieren der von Java-Komponenten (z. B. EventHubSpout) erzeugten Daten verwendet wird. Das beim Serialisieren erzeugte JSON-Format ist von nachgelagerten C#-Komponenten nutzbar.
+	Hierdurch wird ein benutzerdefinierter Serialisierer erstellt, der zum Serialisieren der von Java-Komponenten (z. B. EventHubSpout) erzeugten Daten verwendet wird. Das beim Serialisieren erzeugte JSON-Format ist von nachgelagerten C#-Komponenten nutzbar.
 
 3. Suchen Sie den folgenden Code:
 
@@ -377,7 +381,7 @@ In diesem Abschnitt erstellen Sie eine Topologie, die Daten mithilfe des Event H
 
 	Dieser Code weist die Topologie an, einen (in Bolt.cs definierten) Bolt zu verwenden. Der zuvor definierte benutzerdefinierte Serialisierer wird hier verwendet, damit dieser Bolt die von vorgelagerten Java-Komponenten erzeugten Daten nutzen kann. In diesem Fall ist dies der EventHubSpout.
 
-    > [AZURE.IMPORTANT] Der letzte Parameter für SetBolt (mit dem Wert `true`) ermöglicht ACK-Funktionalität. Dieser Parameter ist erforderlich, da die EventHubSpout-Komponente für die ausgegebenen Daten ein ACK erwartet. Wenn von nachgelagerten Komponenten keine ACKs zurückgegeben werden, stoppt der Spout den Empfang nach der Verarbeitung von ungefähr 1.000 Nachrichten.
+    > [AZURE.IMPORTANT] Der letzte Parameter für SetBolt (mit dem Wert `true`) ermöglicht ACK-Funktionalität. Dieser Parameter ist erforderlich, da die EventHubSpout-Komponente für die ausgegebenen Daten ein ACK erwartet. Wenn von nachgelagerten Komponenten keine ACKs zurückgegeben werden, stoppt der Spout den Empfang nach der Verarbeitung von ungefähr 1.000 Nachrichten.
 
 An dieser Stelle ist die Arbeit mit **Program.cs** abgeschlossen. Die Topologie wurde definiert, nun müssen Sie eine Hilfsklasse erstellen, um Daten in den Tabellenspeicher zu schreiben. Anschließend müssen Sie **Bolt.cs** so ändern, dass die durch den Spout erzeugten Daten interpretiert werden können.
 
@@ -520,6 +524,10 @@ Um die Topologien zu beenden, wählen Sie jede Topologie im **Storm Topologies V
 
 ![Bild der Beendigung einer Topologie](./media/hdinsight-storm-develop-csharp-event-hub-topology/killtopology.png)
 
+##Löschen des Clusters
+
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
+
 ## Hinweise
 
 ### Setzen von Prüfpunkten
@@ -548,7 +556,7 @@ Durch das Exportieren und Importieren können Sie Prüfpunktdaten persistent spe
 
 > [AZURE.NOTE] Da die Daten im Standard-Speichercontainer persistent gespeichert werden, **muss** der neue Cluster das gleiche Speicherkonto und den gleichen Container verwenden wie der vorherige Cluster.
 
-## Zusammenfassung
+## Nächste Schritte
 
 In diesem Dokument haben Sie erfahren, wie Sie den Java-Spout und den -Bolt für Event Hubs aus einer C#-Topologie verwenden, um mit Daten in Azure Event Hub zu arbeiten. Weitere Informationen zum Erstellen von C#-Topologien finden Sie in folgenden Themen.
 
@@ -557,4 +565,4 @@ In diesem Dokument haben Sie erfahren, wie Sie den Java-Spout und den -Bolt für
 * [Beispiele für Storm-Topologien für Storm in HDInsight](hdinsight-storm-example-topology.md)
  
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0309_2016-->

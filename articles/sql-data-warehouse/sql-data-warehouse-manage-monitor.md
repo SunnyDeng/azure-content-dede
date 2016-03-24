@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/07/2016"
+   ms.date="03/03/2016"
    ms.author="sahajs;barbkess;sonyama"/>
 
 # Überwachen Ihres Workloads mit dynamischen Verwaltungssichten
@@ -38,10 +38,10 @@ Verwenden Sie die folgende Abfrage zum Abrufen der Informationen zur aktuellen V
 
 ```
 
-SELECT * 
-FROM sys.dm_pdw_nodes_exec_connections AS c 
-   JOIN sys.dm_pdw_nodes_exec_sessions AS s 
-   ON c.session_id = s.session_id 
+SELECT *
+FROM sys.dm_pdw_nodes_exec_connections AS c
+   JOIN sys.dm_pdw_nodes_exec_sessions AS s
+   ON c.session_id = s.session_id
 WHERE c.session_id = @@SPID;
 
 ```
@@ -70,7 +70,7 @@ SELECT * FROM sys.dm_pdw_exec_requests ORDER BY total_elapsed_time DESC;
 Speichern Sie die Anforderungs-ID der Abfrage.
 
 
-  
+
 ### SCHRITT 2: Überprüfen, ob die Abfrage auf Ressourcen wartet
 
 ```
@@ -81,15 +81,15 @@ Speichern Sie die Anforderungs-ID der Abfrage.
 SELECT waits.session_id,
       waits.request_id,  
       requests.command,
-      requests.status, 
+      requests.status,
       requests.start_time,  
       waits.type,  
-      waits.object_type, 
+      waits.object_type,
       waits.object_name,  
       waits.state  
-FROM   sys.dm_pdw_waits waits 
+FROM   sys.dm_pdw_waits waits
    JOIN  sys.dm_pdw_exec_requests requests
-   ON waits.request_id=requests.request_id 
+   ON waits.request_id=requests.request_id
 WHERE waits.request_id = 'QID33188'
 ORDER BY waits.object_name, waits.object_type, waits.state;
 
@@ -112,7 +112,7 @@ Verwenden Sie die Anforderungs-ID, um eine Liste aller verteilten Abfrageschritt
 
 -- Find the distributed query plan steps for a specific query.
 -- Replace request_id with value from Step 1.
- 
+
 SELECT * FROM sys.dm_pdw_request_steps
 WHERE request_id = 'QID33209'
 ORDER BY step_index;
@@ -123,8 +123,8 @@ Speichern Sie den Schrittindex des lang dauernden Schritts.
 
 Überprüfen Sie die Spalte *operation\_type* des Schritts für die Abfrage mit langer Laufzeit:
 
-- Fahren Sie mit Schritt 4a für **SQL-Vorgänge** fort: OnOperation, RemoteOperation, ReturnOperation.
-- Fahren Sie mit Schritt 4b für **Datenverschiebungsvorgänge** fort: ShuffleMoveOperation, BroadcastMoveOperation, TrimMoveOperation, PartitionMoveOperation, MoveOperation, CopyOperation.
+- Fahren Sie mit Schritt 4a für **SQL-Vorgänge** fort: OnOperation, RemoteOperation, ReturnOperation.
+- Fahren Sie mit Schritt 4b für **Datenverschiebungsvorgänge** fort: ShuffleMoveOperation, BroadcastMoveOperation, TrimMoveOperation, PartitionMoveOperation, MoveOperation, CopyOperation.
 
 
 
@@ -148,7 +148,7 @@ Verwenden Sie die folgende Abfrage, um den SQL Server-Ausführungsplan für den 
 
 ```
 
--- Find the SQL Server execution plan for a query running on a specific SQL Data Warehouse Compute or Control node. 
+-- Find the SQL Server execution plan for a query running on a specific SQL Data Warehouse Compute or Control node.
 -- Replace distribution_id and spid with values from previous query.
 
 DBCC PDW_SHOWEXECUTIONPLAN(1, 78);
@@ -165,13 +165,13 @@ Verwenden Sie die Anforderungs-ID und den Schrittindex zum Abrufen von Informati
 
 -- Find the information about all the workers completing a Data Movement Step.
 -- Replace request_id and step_index with values from Step 1 and 3.
- 
+
 SELECT * FROM sys.dm_pdw_dms_workers
 WHERE request_id = 'QID33209' AND step_index = 2;
 
 ```
 
-- Überprüfen Sie die Spalte *total\_elapsed\_time*, um festzustellen, ob eine bestimmte Verteilung für das Verschieben von Daten erheblich länger als andere dauert. 
+- Überprüfen Sie die Spalte *total\_elapsed\_time*, um festzustellen, ob eine bestimmte Verteilung für das Verschieben von Daten erheblich länger als andere dauert.
 - Überprüfen Sie für die Verteilung mit langer Laufzeit die Spalte *rows\_processed*, um festzustellen, ob die Anzahl der Zeilen, die von dieser Verteilung verschoben werden, beträchtlich größer als bei den anderen ist. Dies zeigt, dass Ihre Abfrage eine Datenschiefe aufweist.
 
 
@@ -188,7 +188,7 @@ DBCC PDW_SHOWSPACEUSED("dbo.FactInternetSales");
 ```
 
 
-Das Ergebnis dieser Abfrage zeigt Ihnen die Anzahl der Tabellenzeilen, die in jeder der 60 Verteilungen Ihrer Datenbank gespeichert sind. Für eine optimale Leistung sollten die Zeilen in der verteilten Tabelle gleichmäßig auf alle Verteilungen verteilt sein. Weitere Informationen finden Sie unter [Tabellenentwurf][].
+Das Ergebnis dieser Abfrage zeigt Ihnen die Anzahl der Tabellenzeilen, die in jeder der 60 Verteilungen Ihrer Datenbank gespeichert sind. Für eine optimale Leistung sollten die Zeilen in der verteilten Tabelle gleichmäßig auf alle Verteilungen verteilt sein. Weitere Informationen finden Sie unter [Tabellenentwurf][].
 
 
 
@@ -203,4 +203,4 @@ Weitere Tipps zur Verwaltung von SQL Data Warehouse finden Sie unter [Verwaltung
 
 <!--MSDN references-->
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0309_2016-->

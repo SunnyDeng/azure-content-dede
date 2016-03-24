@@ -1,6 +1,6 @@
 Ein neues Einfügeskript wird registriert, das beim Einfügen eines neuen Aktivitätselements eine SAS generiert.
 
-0. Wenn Sie das Speicherkonto noch nicht erstellt haben, lesen Sie [So erstellen Sie ein Speicherkonto](../storage/storage-create-storage-account.md).
+0. Wenn Sie das Speicherkonto noch nicht erstellt haben, lesen Sie [So erstellen Sie ein Speicherkonto](../articles/storage/storage-create-storage-account.md).
 
 1. Klicken Sie im [klassischen Azure-Portal](https://manage.windowsazure.com/) auf **Speicher**, klicken Sie auf das Speicherkonto, und klicken Sie dann auf **Schlüssel verwalten**.
 
@@ -78,7 +78,7 @@ Ein neues Einfügeskript wird registriert, das beim Einfügen eines neuen Aktivi
 
    	Dadurch wird die Funktion ersetzt, die aufgerufen wird, wenn ein Einfügevorgang in der Tabelle "TodoItem" mit einem neuen Skript erfolgt. Dieses neue Skript generiert eine neue SAS für den Einfügevorgang, die fünf Minuten gültig ist. Dann weist es den Wert der generierten SAS der `sasQueryString`-Eigenschaft des zurückgegebenen Elements zu. Die `imageUri`-Eigenschaft wird auch auf den Ressourcenpfad des neuen BLOB festgelegt, um die Imageanzeige während der Bindung in der Client-UI zu ermöglichen.
 
-	>[AZURE.NOTE]Durch diesen Code wird eine SAS für ein einzelnes BLOB erstellt. Wenn Sie mehrere Blobs in einen Container mit derselben SAS hochladen möchten, können Sie stattdessen die [generateSharedAccessSignature-Methode](http://go.microsoft.com/fwlink/?LinkId=390455)</a> mit einem leeren Blob-Ressourcennamen wie dem Folgenden aufrufen:
+	>[AZURE.NOTE] Durch diesen Code wird eine SAS für ein einzelnes BLOB erstellt. Wenn Sie mehrere Blobs in einen Container mit derselben SAS hochladen möchten, können Sie stattdessen die [generateSharedAccessSignature-Methode](http://go.microsoft.com/fwlink/?LinkId=390455)</a> mit einem leeren Blob-Ressourcennamen wie dem Folgenden aufrufen:
 	>                 
 	>     blobService.generateSharedAccessSignature(containerName, '', sharedAccessPolicy);
 
@@ -91,4 +91,4 @@ Als Nächstes aktualisieren Sie die Quickstart-App, um unter Verwendung der beim
 <!-- URLs. -->
 [App-Einstellungen]: http://msdn.microsoft.com/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0309_2016-->

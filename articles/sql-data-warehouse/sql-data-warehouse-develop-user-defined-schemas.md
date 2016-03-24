@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/07/2016"
+   ms.date="03/03/2016"
    ms.author="jrj;barbkess;sonyama"/>
 
 # Benutzerdefinierte Schemas in SQL Data Warehouse
@@ -22,9 +22,9 @@ Herkömmliche Data Warehouses verwenden häufig separate Datenbanken, um Anwendu
 
 Im Gegensatz dazu werden mit SQL Data Warehouse die gesamten Data Warehouse-Workloads innerhalb einer Datenbank ausgeführt. Datenbankübergreifende Verknüpfungen sind nicht zulässig. SQL Data Warehouse erwartet daher, dass alle vom Warehouse verwendeten Tabellen innerhalb der einen Datenbank gespeichert werden.
 
-> [AZURE.NOTE]SQL Data Warehouse unterstützt keine datenbankübergreifenden Abfragen. Data Warehouse-Implementierungen, die diese Funktion nutzen, müssen daher überarbeitet werden.
+> [AZURE.NOTE] SQL Data Warehouse unterstützt keine datenbankübergreifenden Abfragen. Data Warehouse-Implementierungen, die diese Funktion nutzen, müssen daher überarbeitet werden.
 
-## Recommendations 
+## Recommendations
 
 Hierbei handelt es sich um Empfehlungen für die Konsolidierung der Workload-, Sicherheits-, Domänen- und Funktionsgrenzen mithilfe von benutzerdefinierten Schemas.
 
@@ -40,7 +40,7 @@ Wenn bereits Schemas verwendet wurden, stehen Ihnen einige Optionen zur Verfügu
 2. Behalten Sie die älteren Schemanamen bei, indem Sie diese vorab an den Tabellennamen anhängen.
 3. Behalten Sie die älteren Schemanamen bei, indem Sie Sichten auf die Tabelle in einem zusätzlichen Schema zum Neuerstellen der alten Schemastruktur implementieren.
 
-> [AZURE.NOTE]Option 3 mag auf den ersten Blick die attraktivste Option sein. Bei genauerem Hinsehen treten jedoch Probleme zutage. Sichten werden nur in SQL Data Warehouse gelesen. Jede Änderung von Daten oder Tabellen muss für die Basistabelle ausgeführt werden. Option 3 führt außerdem eine Schicht von Sichten im System ein. Sie sollten dies besonders berücksichtigen, wenn Sie in Ihrer Architektur bereits Sichten verwenden.
+> [AZURE.NOTE] Option 3 mag auf den ersten Blick die attraktivste Option sein. Bei genauerem Hinsehen treten jedoch Probleme zutage. Sichten werden nur in SQL Data Warehouse gelesen. Jede Änderung von Daten oder Tabellen muss für die Basistabelle ausgeführt werden. Option 3 führt außerdem eine Schicht von Sichten im System ein. Sie sollten dies besonders berücksichtigen, wenn Sie in Ihrer Architektur bereits Sichten verwenden.
 
 
 ### Beispiele:
@@ -108,7 +108,7 @@ FROM	[edw].customer
 ;
 ```
 
-> [AZURE.NOTE]Jede Änderung in der Schemastrategie erfordert eine Überprüfung des Sicherheitsmodells für die Datenbank. In vielen Fällen können Sie das Sicherheitsmodell vereinfachen, indem Sie Berechtigungen auf Schemaebene zuweisen. Wenn präzisere Berechtigungen erforderlich sind, können Sie Datenbankrollen verwenden.
+> [AZURE.NOTE] Jede Änderung in der Schemastrategie erfordert eine Überprüfung des Sicherheitsmodells für die Datenbank. In vielen Fällen können Sie das Sicherheitsmodell vereinfachen, indem Sie Berechtigungen auf Schemaebene zuweisen. Wenn präzisere Berechtigungen erforderlich sind, können Sie Datenbankrollen verwenden.
 
 ## Nächste Schritte
 Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
@@ -122,4 +122,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 
 <!--Other Web references-->
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0309_2016-->

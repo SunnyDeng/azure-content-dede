@@ -13,22 +13,22 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="get-started-article" 
-	ms.date="11/06/2015" 
+	ms.date="03/09/2016" 
 	ms.author="sethm"/>
 
 # Azure Service Bus
 
-Ob eine Anwendung oder ein Dienst in einer Cloud betrieben wird oder lokal installiert ist – sie bzw. er muss oft mit anderen Anwendungen oder Diensten interagieren. In Azure wird als umfangreich einsetzbare Lösung hierfür Service Bus bereitgestellt. Der vorliegende Artikel bietet einen Überblick über diese Technologie und beschreibt, wann Sie den Einsatz von Service Bus in Erwägung ziehen sollten.
+Ob eine Anwendung oder ein Dienst in einer Cloud betrieben wird oder lokal installiert ist – sie bzw. er muss oft mit anderen Anwendungen oder Diensten interagieren. Microsoft Azure stellt Service Bus als umfangreich einsetzbare Lösung bereit. Der vorliegende Artikel bietet einen Überblick über diese Technologie und beschreibt, wann Sie den Einsatz von Service Bus in Erwägung ziehen sollten.
 
 ## Service Bus – Grundlagen
 
 Verschiedene Situationen erfordern verschiedene Kommunikationsarten. Manchmal ist die beste Lösung, Anwendungen Nachrichten über einfache Warteschlangen senden und empfangen zu lassen. In anderen Situationen ist eine normale Warteschlange nicht genug, sondern eine Warteschlange mit einem Veröffentlichungs- und Abonnementsmechanismus ist besser geeignet. In manchen Fällen ist nur eine Verbindung zwischen den Anwendungen erforderlich. Warteschlangen sind nicht erforderlich. Service Bus bietet alle drei Optionen, sodass Ihre Anwendungen auf mehrere verschiedene Arten miteinander interagieren können.
 
-Service Bus ist ein Clouddienst mit mehreren Mandanten. Das bedeutet, dass der Dienst von mehreren Benutzern gemeinsam genutzt wird. Jeder Benutzer, z. B. auch ein Anwendungsentwickler, erstellt einen *Namespace* und definiert dann die erforderlichen Kommunikationsmechanismen innerhalb dieses Namespace. Abbildung 1 zeigt, wie dies aussieht.
+Service Bus ist ein Clouddienst mit mehreren Mandanten. Das bedeutet, dass der Dienst von mehreren Benutzern gemeinsam genutzt wird. Jeder Benutzer, z. B. auch ein Anwendungsentwickler, erstellt einen *Namespace* und definiert dann die erforderlichen Kommunikationsmechanismen innerhalb dieses Namespace. Abbildung 1 zeigt, wie dies aussieht.
 
 ![][1]
  
-**Abbildung 1: Service Bus stellt einen mehrinstanzenfähigen Dienst zum Verbinden von Anwendungen über die Cloud bereit.**
+**Abbildung 1: Service Bus stellt einen mehrinstanzenfähigen Dienst zum Verbinden von Anwendungen über die Cloud bereit.**
 
 Innerhalb eines Namespace können Sie eine oder mehr Instanzen von vier verschiedenen Kommunikationsmechanismen verwenden, von denen jeder die Anwendungen auf andere Weise verbindet. Die Auswahlmöglichkeiten sind:
 
@@ -49,11 +49,11 @@ Angenommen, Sie entscheiden sich dafür, zwei Anwendungen über eine Service Bus
 
 ![][2]
  
-**Abbildung 2: Service Bus-Warteschlangen bieten eine asynchrone unidirektionale Kommunikation.**
+**Abbildung 2: Service Bus-Warteschlangen bieten eine asynchrone unidirektionale Kommunikation.**
 
 Der Vorgang ist einfach: Ein Sender sendet eine Nachricht an eine Service Bus-Warteschlange, und ein Empfänger greift diese Nachricht zu einem späteren Zeitpunkt auf. Eine Warteschlange kann wie in Abbildung 2 gezeigt einen einzelnen Empfänger aufweisen, oder mehrere Anwendungen können dieselbe Warteschlange auslesen. In der letzten Situation wird jede Nachricht nur von einem Empfänger gelesen. Für einen Multicastdienst sollten Sie stattdessen ein Thema verwenden.
 
-Jede Nachricht besteht aus zwei Teilen: einem Satz von Eigenschaften (jede davon ist ein Paar aus Schlüssel und Wert) und einem binären Nachrichtentext. Die Art der Verwendung richtet sich danach, welche Aufgaben in der Anwendung ausgeführt werden sollen. Wenn eine Anwendung z. B. eine Nachricht über einen kürzlich erfolgten Verkauf sendet, kann die Nachricht die Eigenschaften *Verkäufer="Ava"* und *Menge=10000* enthalten. Der Nachrichtentext kann ein gescanntes Bild des unterzeichneten Verkaufsvertrags enthalten oder auch leer sein.
+Jede Nachricht besteht aus zwei Teilen: einem Satz von Eigenschaften (jede davon ist ein Paar aus Schlüssel und Wert) und einem binären Nachrichtentext. Die Art der Verwendung richtet sich danach, welche Aufgaben in der Anwendung ausgeführt werden sollen. Wenn eine Anwendung z. B. eine Nachricht über einen kürzlich erfolgten Verkauf sendet, kann die Nachricht die Eigenschaften *Verkäufer="Ava"* und *Menge=10000* enthalten. Der Nachrichtentext kann ein gescanntes Bild des unterzeichneten Verkaufsvertrags enthalten oder auch leer sein.
 
 Ein Empfänger kann eine Nachricht von einer Service Bus-Warteschlange auf zwei verschiedene Arten lesen. Bei Verwendung der ersten Option, *ReceiveAndDelete*, wird eine Nachricht aus der Warteschlange entfernt und sofort gelöscht. Dies ist einfach, aber wenn der Empfänger ausfällt, bevor die Verarbeitung der Nachricht abgeschlossen ist, geht die Nachricht verloren. Da die Nachricht dann aus der Warteschlange entfernt worden ist, kann kein anderer Empfänger auf sie zugreifen.
 
@@ -73,9 +73,9 @@ So hilfreich sie generell auch sind – Warteschlangen sind nicht immer die best
 
 ![][3]
  
-**Abbildung 3: Auf Grundlage des in einer Abonnementanwendung definierten Filters kann diese einige oder alle Nachrichten empfangen, die an ein Service Bus-Thema gesendet wurden.**
+**Abbildung 3: Auf Grundlage des in einer Abonnementanwendung definierten Filters kann diese einige oder alle Nachrichten empfangen, die an ein Service Bus-Thema gesendet wurden.**
 
-Ein Thema ist in mancherlei Weise einer Warteschlange ähnlich. Sender schicken Nachrichten an ein Thema auf dieselbe Weise, auf die sie Nachrichten an eine Warteschlange schicken, und diese Nachrichten sehen genauso aus wie bei den Warteschlangen. Der große Unterschied ist, dass bei Themen jede empfangende Anwendung durch Definition eines *Filters* ihr eigenes Abonnement einrichten kann. Ein Abonnement sieht dann nur die Nachrichten, die auf diesen Filter passen. Abbildung 3 zeigt z. B. einen Sender und ein Thema mit drei Abonnenten, jeder mit seinem eigenen Filter:
+Ein Thema ist in mancherlei Weise einer Warteschlange ähnlich. Sender schicken Nachrichten an ein Thema auf dieselbe Weise, auf die sie Nachrichten an eine Warteschlange schicken, und diese Nachrichten sehen genauso aus wie bei den Warteschlangen. Der große Unterschied ist, dass bei Themen jede empfangende Anwendung durch Definition eines *Filters* ihr eigenes Abonnement einrichten kann. Ein Abonnement sieht dann nur die Nachrichten, die auf diesen Filter passen. Abbildung 3 zeigt z. B. einen Sender und ein Thema mit drei Abonnenten, jeder mit seinem eigenen Filter:
 
 - Abonnent 1 empfängt nur Nachrichten, die die Eigenschaft *Verkäufer="Ava"* haben.
 - Abonnent 2 empfängt Nachrichten, die die Eigenschaft *Verkäufer="Ruby"* und/oder eine Eigenschaft namens *Menge* haben, deren Wert größer ist als 100.000. Ruby könnte die Vertriebschefin sein, die sowohl ihre eigenen Verkäufe als auch diejenigen anderer Verkäufer ab einer bestimmten Menge sehen möchte.
@@ -85,11 +85,11 @@ Wie bei Warteschlangen können Abonnenten eines Themas Nachrichten über **Recei
 
 ## Relays
 
-Sowohl Warteschlangen als auch Themen ermöglichen eine asynchrone unidirektionale Kommunikation über einen Broker. Der Verkehr fließt in nur eine Richtung, und es besteht keine direkte Verbindung zwischen Sendern und Empfängern. Aber was tun, wenn dies nicht genug ist? Angenommen, Ihre Anwendungen sollen Nachrichten sowohl senden als auch empfangen, oder sie möchten vielleicht eine direkte Verbindung zwischen ihnen herstellen, ohne einen Broker zum Speichern der Nachrichten zu verwenden. Für solche Szenarien bietet Service Bus Relays an, wie in Abbildung 4 gezeigt.
+Sowohl Warteschlangen als auch Themen ermöglichen eine asynchrone unidirektionale Kommunikation über einen Broker. Der Verkehr fließt in nur eine Richtung, und es besteht keine direkte Verbindung zwischen Sendern und Empfängern. Aber was tun, wenn dies nicht genug ist? Angenommen, Ihre Anwendungen sollen Nachrichten sowohl senden als auch empfangen, oder sie möchten vielleicht eine direkte Verbindung zwischen ihnen herstellen, ohne einen Broker zum Speichern der Nachrichten zu verwenden. Für solche Szenarien bietet Service Bus Relays an, wie in Abbildung 4 gezeigt.
 
 ![][4]
  
-**Abbildung 4: Service Bus Relay ermöglicht eine synchrone bidirektionale Kommunikation zwischen Anwendungen.**
+**Abbildung 4: Service Bus Relay ermöglicht eine synchrone bidirektionale Kommunikation zwischen Anwendungen.**
 
 Die naheliegende Frage lautet: Wozu wird Service Bus Relay eingesetzt? Selbst wenn ich keine Warteschlangen benötige, wieso sollten Anwendungen über einen Clouddienst kommunizieren und nicht direkt miteinander interagieren? Die Antwort ist, dass eine direkte Kommunikation schwieriger sein kann, als Sie denken.
 
@@ -101,7 +101,7 @@ Um Service Bus Relay verwenden zu können, nutzen die Anwendungen Windows Commun
 
 Anders als bei Warteschlangen und Themen werden Relays nicht explizit durch Anwendungen erstellt. Wenn eine Anwendung zum Empfangen von Nachrichten eine TCP-Verbindung mit Service Bus aufbaut, wird ein Relay automatisch erstellt. Wenn die Verbindung ausfällt, wird das Relay gelöscht. Damit eine Anwendung ein von einem bestimmten Listener erzeugtes Relay finden kann, bietet Service Bus eine Registry, die es Anwendungen erlaubt, ein bestimmtes Relay anhand seines Namens zu finden.
 
-Relays sind die richtige Lösung, wenn direkte Kommunikation zwischen Anwendungen erforderlich ist. Denken Sie z. B. an ein Fluglinien-Reservierungssystem, das in einem lokalen Rechenzentrum läuft und auf das von Eincheck-Terminals, Mobilgeräten und anderen Computern zugegriffen wird. Anwendungen, die auf all diesen Systemen laufen, könnten auf Service Bus Relay in der Cloud vertrauen, um immer dann zu kommunizieren, wenn sie gerade ausgeführt werden.
+Relays sind die richtige Lösung, wenn direkte Kommunikation zwischen Anwendungen erforderlich ist. Denken Sie z. B. an ein Fluglinien-Reservierungssystem, das in einem lokalen Rechenzentrum läuft und auf das von Eincheck-Terminals, Mobilgeräten und anderen Computern zugegriffen wird. Anwendungen, die auf all diesen Systemen laufen, könnten auf Service Bus Relay in der Cloud vertrauen, um immer dann zu kommunizieren, wenn sie gerade ausgeführt werden.
 
 ## Event Hubs
 
@@ -125,4 +125,4 @@ Nachdem Sie nun mit den Grundlagen von Azure Service Bus vertraut sind, finden S
 [3]: ./media/service-bus-fundamentals-hybrid-solutions/SvcBus_03_topicsandsubscriptions.png
 [4]: ./media/service-bus-fundamentals-hybrid-solutions/SvcBus_04_relay.png
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0316_2016-->

@@ -14,15 +14,21 @@ ms.devlang="na"
 ms.topic="article"
 ms.tgt_pltfrm="na"
 ms.workload="na"
-ms.date="02/25/2016"
+ms.date="03/03/2016"
 ms.author="mandia"/>
 
 # Erste Schritte mit der OneDrive-API
 
 Stellen Sie eine Verbindung mit OneDrive her, um Ihre Dateien zu verwalten, d. h. diese hochzuladen, abzurufen, zu löschen usw. Die OneDrive-API kann in Folgendem verwendet werden:
 
-- PowerApps 
 - Logik-Apps 
+- PowerApps
+
+> [AZURE.SELECTOR]
+- [Logik-Apps](../articles/connectors/create-api-onedrive.md)
+- [PowerApps Enterprise](../articles/power-apps/powerapps-create-api-onedrive.md)
+
+&nbsp;
 
 >[AZURE.NOTE] Diese Version des Artikels gilt für die Schemaversion 2015-08-01-preview für Logik-Apps. Um die Schemaversion 2014-12-01-preview aufzurufen, klicken Sie auf [OneDrive-API](../app-service-logic/app-service-logic-connector-onedrive.md).
 
@@ -48,26 +54,6 @@ Alle APIs unterstützen Daten im JSON- und XML-Format.
 
 ## Herstellen einer Verbindung mit OneDrive
 
-### Hinzufügen zusätzlicher Konfiguration in PowerApps
-Wenn Sie OneDrive zu PowerApps Enterprise hinzufügen, geben Sie die Werte für den **App-Schlüssel** und den **geheimen App-Schlüssel** Ihrer OneDrive-Anwendung ein. Der Wert von **Umleitungs-URL** wird auch in Ihrer OneDrive-Anwendung verwendet. Wenn Sie noch keine OneDrive-Anwendung haben, führen Sie die folgenden Schritte aus, um die Anwendung zu erstellen:
-
-1. Wechseln Sie zu der [App-Erstellungsseite][5] im _Developer Center des Microsoft-Kontos_ und melden Sie sich mit Ihrem _Microsoft-Konto_ an.
-
-2. Geben Sie den **Anwendungsnamen** ein, und stimmen Sie der Vereinbarung zu:
-
-	![Neue OneDrive-App][6]
-
-3. Unter „Einstellungen“:
-
-	1. Wählen **API-Einstellungen** aus.  
-	2. Legen Sie die **Umleitungs-URL** auf den Wert fest, der gezeigt wird, wenn Sie die neue OneDrive-API im Azure-Portal hinzufügen.  
-	3. **Speichern** Sie die Änderungen.  
-
-	![API-Einstellungen der OneDrive-App][7]
-
-Nun können Sie die Werte für den **App-Schlüssel** und den **geheimen App-Schlüssel** kopieren und in Ihre OneDrive-Konfiguration im Azure-Portal einfügen.
-
-### Hinzufügen zusätzlicher Konfiguration in Logik-Apps
 Wenn Sie diese API Ihren Logik-Apps hinzufügen, müssen Sie ihnen das Herstellen einer Verbindung mit OneDrive erlauben.
 
 1. Melden Sie sich bei Ihrem OneDrive-Konto an.
@@ -317,13 +303,13 @@ Extrahiert einen Ordner in OneDrive. ```POST: /datasets/default/extractFolderV2`
 
 
 ## Nächste Schritte
-Nach Hinzufügen der OneDrive-API zu PowerApps Enterprise [erteilen Sie den Benutzern Berechtigungen](../power-apps/powerapps-manage-api-connection-user-access.md) zum Verwenden der API in ihren Apps.
 
-[Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md)
+[Erstellen Sie eine Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md).
 
+Gehen Sie zur [Liste der APIs](apis-list.md) zurück.
 
 [5]: https://account.live.com/developers/applications/create
 [6]: ./media/create-api-onedrive/onedrive-new-app.png
 [7]: ./media/create-api-onedrive/onedrive-app-api-settings.png
 
-<!----HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0309_2016-->

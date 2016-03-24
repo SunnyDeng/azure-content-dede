@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="01/25/2016"
+   ms.date="03/03/2016"
    ms.author="mcoskun"/>
 
 # Sichern und Wiederherstellen von Reliable Services
@@ -22,9 +22,9 @@ Azure Service Fabric ist eine Plattform mit hoher Verfügbarkeit, bei der der St
 
 Ein Dienst möchte Daten beispielsweise in den folgenden Szenarien sichern:
 
-* Bei dauerhaftem Verlust eines gesamten Service Fabric-Clusters oder aller Knoten, die eine bestimmte Partition ausführen. Dies kann beispielsweise passieren, wenn Sie keine Georeplikation für den Zustand verwenden, der gesamte Cluster sich in einem Rechenzentrum befindet und das gesamte Rechenzentrum ausfällt.
+* Bei dauerhaftem Verlust eines gesamten Service Fabric-Clusters oder aller Knoten, die eine bestimmte Partition ausführen.
 
-* Administrative Fehler, durch die der Zustand versehentlich gelöscht oder beschädigt wird. Das kann z. B. passieren, wenn ein Administrator mit ausreichenden Berechtigungen versehentlich den Dienst löscht.
+* Administrative Fehler, durch die der Zustand versehentlich gelöscht oder beschädigt wird. Das kann z. B. passieren, wenn ein Administrator mit ausreichenden Berechtigungen versehentlich den Dienst löscht.
 
 * Fehler im Dienst, die zu einer Beschädigung von Daten führen. Dies kann beispielsweise bei einem Dienstcode-Upgrade geschehen, bei dem fehlerhafte Daten in eine Reliable Collection geschrieben werden. In diesem Fall müssen unter Umständen der Code und die Daten in einen früheren Zustand zurückversetzt werden.
 
@@ -77,7 +77,7 @@ Im Allgemeinen können die Fälle, in denen Sie möglicherweise eine Wiederherst
 
 - Der gesamte Dienst geht verloren. Beispielsweise entfernt ein Administrator den gesamten Dienst, sodass Dienst und Daten wiederhergestellt werden müssen.
 
-- Der Dienst hat beschädigte Anwendungsdaten repliziert (z. B. aufgrund eines Anwendungsfehlers). In diesem Fall muss der Dienst aktualisiert oder zurückgesetzt werden, um die Ursache der Beschädigung zu entfernen, und nicht beschädigte Daten müssen wiederhergestellt werden.
+- Der Dienst hat beschädigte Anwendungsdaten repliziert (z. B. aufgrund eines Anwendungsfehlers). In diesem Fall muss der Dienst aktualisiert oder zurückgesetzt werden, um die Ursache der Beschädigung zu entfernen, und nicht beschädigte Daten müssen wiederhergestellt werden.
 
 Da viele Ansätze möglich sind, nennen wir einige Beispiele zum Verwenden von **RestoreAsync** zur Wiederherstellung in den obigen Szenarien.
 
@@ -122,7 +122,7 @@ protected override async Task<bool> OnDataLossAsync(CancellationToken cancellati
 
 ## Gelöschter oder verlorener Dienst
 
-Wenn ein Dienst entfernt wird, muss der Dienst erst neu erstellt werden, bevor die Daten wiederhergestellt werden können. Der Dienst muss unbedingt mit der gleichen Konfiguration erstellt werden, z. B. dem Partitionierungsschema, damit die Daten problemlos wiederhergestellt werden können. Sobald der Dienst wieder läuft, muss die API zum Wiederherstellen von Daten (**OnDataLossAsync** oben) auf jeder Partition dieses Dienstes aufgerufen werden. Eine Möglichkeit, dies zu erreichen, ist die Verwendung von **FabricClient.ServiceManager.InvokeDataLossAsync** auf jeder Partition.
+Wenn ein Dienst entfernt wird, muss der Dienst erst neu erstellt werden, bevor die Daten wiederhergestellt werden können. Der Dienst muss unbedingt mit der gleichen Konfiguration erstellt werden, z. B. dem Partitionierungsschema, damit die Daten problemlos wiederhergestellt werden können. Sobald der Dienst wieder läuft, muss die API zum Wiederherstellen von Daten (**OnDataLossAsync** oben) auf jeder Partition dieses Dienstes aufgerufen werden. Eine Möglichkeit, dies zu erreichen, ist die Verwendung von **FabricClient.ServiceManager.InvokeDataLossAsync** auf jeder Partition.
 
 Ab diesem Zeitpunkt erfolgt die Implementierung wie im oben aufgeführten Szenario. Jede Partition muss die letzte relevante Sicherung aus dem externen Speicher wiederherstellen. Ein Nachteil ist, dass die Partitions-ID sich geändert haben kann, da die Runtime Partitions-IDs dynamisch erstellt. Daher muss der Dienst die entsprechenden Partitionsinformationen und den Dienstnamen speichern, um die aktuelle Sicherung zum Speichern für jede Partition zu finden.
 
@@ -141,7 +141,7 @@ Beachten Sie Folgendes:
 
 - Bei einer Wiederherstellung besteht die Möglichkeit, dass die wiederherzustellende Sicherung älter als der Status der Partition vor dem Verlust der Daten ist. Deshalb sollte die Wiederherstellung nur als letzter Ausweg verwendet werden, um so viele Daten wie möglich wiederherzustellen.
 
-- Die Zeichenfolge, die den Sicherungsorderpfad und die Dateipfade im Sicherungsordner repräsentiert, kann je nach FabricDataRoot-Pfad und Namenslänge des Anwendungstyps länger als 255 Zeichen sein. Einige .NET-Methoden, z. B. **Directory.Move**, lösen daraufhin unter Umständen die Ausnahme **PathTooLongException** aus. Eine Problemumgehung besteht darin, kernel32-APIs wie **CopyFile** direkt aufzurufen.
+- Die Zeichenfolge, die den Sicherungsorderpfad und die Dateipfade im Sicherungsordner repräsentiert, kann je nach FabricDataRoot-Pfad und Namenslänge des Anwendungstyps länger als 255 Zeichen sein. Einige .NET-Methoden, z. B. **Directory.Move**, lösen daraufhin unter Umständen die Ausnahme **PathTooLongException** aus. Eine Problemumgehung besteht darin, kernel32-APIs wie **CopyFile** direkt aufzurufen.
 
 
 ## Weitere Informationen zum Sichern und Wiederherstellen
@@ -149,7 +149,7 @@ Beachten Sie Folgendes:
 ### Sicherung
 Mit dem Reliable State Manager können konsistente Sicherungen erstellt werden, ohne Lese- oder Schreibvorgänge zu blockieren. Zu diesem Zweck verwendet er einen Mechanismus für Prüfpunkt- und Protokollbeständigkeit. Der Reliable State Manager entlastet durch Prüfpunkte an bestimmten Punkten das Transaktionsprotokoll und verbessert Wiederherstellungszeiten. Wenn **IReliableStateManager.BackupAsync** aufgerufen wird, weist der Reliable State Manager alle Reliable Objects an, ihre neuesten Prüfpunktdateien in einen lokalen Sicherungsordner zu kopieren. Der Reliable State Manager kopiert dann alle Protokolleinträge ab dem „Start“-Zeiger bis zum aktuellen Protokolleintrag in den Sicherungsordner. Da alle Protokolleinträge bis zum aktuellen Protokolleintrag in der Sicherung enthalten sind und der Reliable State Manager die Write-Ahead-Protokollierung beibehält, garantiert der Reliable State Manager, dass alle bestätigten Transaktionen (**CommitAsync** wurde erfolgreich wiedergegeben) in der Sicherung enthalten sind.
 
-Sämtliche nach dem Aufrufen von **BackupAsync** bestätigten Transaktionen können in der Sicherung enthalten sein oder auch nicht. Sobald der lokale Sicherungsordner der Plattform von der Plattform aufgefüllt wurde (z. B. Abschluss der lokalen Sicherung durch die Runtime), wird der Rückruf der Dienstsicherung aufgerufen. Durch diesen Rückruf wird der Sicherungsordner in einen externen Speicherort wie den Azure-Speicher verschoben.
+Sämtliche nach dem Aufrufen von **BackupAsync** bestätigten Transaktionen können in der Sicherung enthalten sein oder auch nicht. Sobald der lokale Sicherungsordner der Plattform von der Plattform aufgefüllt wurde (z. B. Abschluss der lokalen Sicherung durch die Runtime), wird der Rückruf der Dienstsicherung aufgerufen. Durch diesen Rückruf wird der Sicherungsordner in einen externen Speicherort wie den Azure-Speicher verschoben.
 
 ### Wiederherstellen
 
@@ -158,4 +158,4 @@ Der Reliable State Manager ermöglicht das Wiederherstellen aus einer Sicherung 
 
 **RestoreAsync** löscht zuerst jeden bestehenden Zustand in dem primären Replikat, von dem es aufgerufen wurde. Danach erstellt der Reliable State Manager alle Reliable Objects, die im Sicherungsordner vorhanden sind. Als Nächstes werden die Reliable Objects angewiesen, ihre Prüfpunkte im Sicherungsordner wiederherzustellen. Schließlich stellt der Reliable State Manager seinen eigenen Status aus den Protokolldatensätzen im Sicherungsordner wieder her und führt die Wiederherstellung aus. Im Rahmen des Wiederherstellungsprozesses werden ab dem „Startpunkt“ beginnende Vorgänge, die Protokolldatensätze in den Sicherungsordner ausgeführt haben, in den Reliable Objects wiederholt. Dadurch wird sichergestellt, dass der wiederhergestellte Status konsistent ist.
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0309_2016-->

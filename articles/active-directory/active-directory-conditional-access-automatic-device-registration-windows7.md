@@ -1,6 +1,6 @@
 <properties
-	pageTitle="# Konfigurieren der automatischen Geräteregistrierung für in eine Domäne eingebundene Windows 7-Geräte | Microsoft Azure"
-	description="Schritte zum Konfigurieren Ihrer in eine Domäne eingebundenen Windows 7-Geräte zur automatischen Registrierung bei Azure AD, sowie Schritte zum Bereitstellen des Geräteregistrierungs-Softwarepakets für Ihre in eine Domäne eingebundenen Windows 7-Geräte mithilfe eines Softwareverteilungssystems wie System Center Configuration Manager."
+	pageTitle="# Konfigurieren der automatischen Geräteregistrierung für in eine Domäne eingebundene Windows 7-Geräte | Microsoft Azure"
+	description="Schritte zum Konfigurieren Ihrer in eine Domäne eingebundenen Windows 7-Geräte zur automatischen Registrierung bei Azure AD, sowie Schritte zum Bereitstellen des Geräteregistrierungs-Softwarepakets für Ihre in eine Domäne eingebundenen Windows 7-Geräte mithilfe eines Softwareverteilungssystems wie System Center Configuration Manager."
 	services="active-directory"
 	documentationCenter=""
 	authors="femila"
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/24/2015"
+	ms.date="03/07/2016"
 	ms.author="femila"/>
 
 # Konfigurieren der automatischen Geräteregistrierung für in eine Domäne eingebundene Windows 7-Geräte
@@ -22,12 +22,12 @@ Als IT-Administrator können Sie Ihre in eine Domäne eingebundenen Windows 7-Ge
 
 ##Installieren des Geräteregistrierung-Softwarepakets auf in eine Domäne eingebundenen Windows 7-Geräten
 
-Die Geräteregistrierung für Windows 7 ist als [herunterladbares MSI-Paket](https://connect.microsoft.com/site1164) verfügbar. Das Paket muss auf Windows 7-Computern installiert werden, die in eine Active Directory-Domäne eingebunden sind. Sie sollten das Paket mithilfe eines Softwareverteilungssystems wie System Center Configuration Manager bereitstellen. Das MSI-Paket unterstützt die standardmäßigen Hintergrundinstallationsoptionen mithilfe des Parameters "/quiet". Das Softwarepaket steht zum Download auf der [Microsoft Connect-Website](https://connect.microsoft.com/site1164) zur Verfügung. Dort können Sie "Arbeitsbereichverknüpfung für Windows 7" auswählen und dann herunterladen.
+Die Geräteregistrierung für Windows 7 ist als [herunterladbares MSI-Paket](https://connect.microsoft.com/site1164) verfügbar. Das Paket muss auf Windows 7-Computern installiert werden, die in eine Active Directory-Domäne eingebunden sind. Sie sollten das Paket mithilfe eines Softwareverteilungssystems wie System Center Configuration Manager bereitstellen. Das MSI-Paket unterstützt die standardmäßigen Hintergrundinstallationsoptionen mithilfe des Parameters "/quiet". Das Softwarepaket steht zum Download auf der [Microsoft Connect-Website](https://connect.microsoft.com/site1164) zur Verfügung. Dort können Sie "Arbeitsbereichverknüpfung für Windows 7" auswählen und dann herunterladen.
 
 ![](./media/active-directory-conditional-access/device-registration-process-windows7.gif)
 
 ## Arbeitsbereichverknüpfung mit Azure Active Directory
-Die Geräteregistrierung für in eine Domäne eingebundene Windows 7-Geräte erfordert keine Benutzeroberfläche, weshalb auch keine enthalten ist. Nach der Installation auf dem Computer wird jeder Domänenbenutzer, der sich bei dem Computer anmeldet, automatisch und im Hintergrund mit einem Geräteobjekt bei Azure AD registriert. Für jeden registrierten Benutzer des physischen Geräts gibt es ein Geräteobjekt in Azure AD.
+Die Geräteregistrierung für in eine Domäne eingebundene Windows 7-Geräte erfordert keine Benutzeroberfläche, weshalb auch keine enthalten ist. Nach der Installation auf dem Computer wird jeder Domänenbenutzer, der sich bei dem Computer anmeldet, automatisch und im Hintergrund mit einem Geräteobjekt bei Azure AD registriert. Für jeden registrierten Benutzer des physischen Geräts gibt es ein Geräteobjekt in Azure AD.
 
 Das Installationsprogramm erstellt einen geplanten Task auf dem System, der im Kontext des Benutzers ausgeführt und bei Anmeldung eines Benutzers ausgelöst wird. Der Task registriert den Benutzer und das Gerät im Hintergrund bei Azure AD, nachdem die Anmeldung des Benutzers abgeschlossen ist. Den geplanten Task finden Sie in der Aufgabenplanungsbibliothek unter **Microsoft** > **Arbeitsbereichverknüpfung**. Der Task wird für alle Active Directory-Benutzer ausgeführt, die sich bei dem Computer anmelden, und registriert sie. In der folgenden Abbildung ist der schrittweise Vorgang für die automatische Geräteregistrierung aufgeführt.
 
@@ -48,7 +48,8 @@ Sie können die Registrierung Ihrer in eine Domäne eingebundenen Windows 7-Ger�
     
     %ProgramFiles%\Microsoft Workplace Join\AutoWorkplace.exe /leave
 
->[AZURE.NOTE]Dieser Befehl muss im Kontext jedes Domänenbenutzers ausgeführt werden, der sich bei dem Computer angemeldet hat. Ereignisanzeige und Fehler für in eine Domäne eingebundene Windows 7-Geräte
+>[AZURE.NOTE]
+Dieser Befehl muss im Kontext jedes Domänenbenutzers ausgeführt werden, der sich bei dem Computer angemeldet hat. Ereignisanzeige und Fehler für in eine Domäne eingebundene Windows 7-Geräte
 
 Das Windows-Ereignisprotokoll auf dem Windows 7-Computer zeigt Meldungen im Zusammenhang mit der Arbeitsbereichverknüpfung an. Sie finden dort sowohl Meldungen zu erfolgreichen als auch fehlgeschlagenen Arbeitsbereichverknüpfungs-Ereignissen. Das Ereignisprotokoll finden Sie in der Ereignisanzeige unter "Anwendungs- und Dienstprotokolle > Microsoft -Arbeitsbereichverknüpfung".
 
@@ -57,7 +58,8 @@ Das Windows-Ereignisprotokoll auf dem Windows 7-Computer zeigt Meldungen im Zusa
 - [Azure Active Directory-Geräteregistrierung – Übersicht](active-directory-conditional-access-device-registration-overview.md)
 - [Automatische Geräteregistrierung bei Azure Active Directory für in Domänen eingebundene Windows-Geräte](active-directory-conditional-access-automatic-device-registration.md)
 - [Konfigurieren der automatischen Geräteregistrierung für in eine Domäne eingebundene Windows 8.1-Geräte](active-directory-conditional-access-automatic-device-registration-windows8_1.md)
+- [Automatische Geräteregistrierung bei Azure Active Directory für in Domänen eingebundene Windows 10-Geräte](active-directory-azureadjoin-devices-group-policy.md)
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0309_2016-->

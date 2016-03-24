@@ -2,7 +2,7 @@ Ressource|Standardlimit|Maximales Limit
 ---|---|---
 Prozessorkerne pro [Abonnement](../articles/billing-buy-sign-up-azure-subscription.md) <sup>1</sup>|20|10\.000
 [Co-Administratoren](../articles/billing-add-change-azure-subscription-administrator.md) pro Abonnement|200|200
-[Speicherkonten](../articles/storage/storage-create-storage-account.md) pro Abonnement|100|100
+[Speicherkonten](../articles/storage/storage-create-storage-account.md) pro Abonnement<sup>2</sup>|100|100
 [Clouddienste](../articles/cloud-services/fundamentals-application-models.md#tellmecs) pro Abonnement|20|200
 [Lokale Netzwerke](http://msdn.microsoft.com/library/jj157100.aspx) pro Abonnement|10|500
 SQL-Datenbankserver pro Abonnement|6|150
@@ -16,4 +16,6 @@ Warnungsregeln pro Abonnement|250|250
 
 <sup>1</sup> Zusätzliche kleine Instanzen zählen als ganzer Prozessorkern im Sinn des Limits, obwohl nur ein Teil eines Kerns verwendet wird.
 
-<!---HONumber=AcomDC_0211_2016-->
+<sup>2</sup>Wenn Sie mehr als 100 Speicherkonten benötigen, stellen Sie eine Anfrage an den [Azure-Support](https://azure.microsoft.com/support/faq/). Das Azure Storage-Team überprüft Ihr Geschäftsszenario. Bei einer Genehmigung können Sie über bis zu 250 Speicherkonten verfügen.
+
+<!---HONumber=AcomDC_0309_2016-->

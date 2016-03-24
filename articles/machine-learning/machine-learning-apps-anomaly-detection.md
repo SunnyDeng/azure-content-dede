@@ -3,7 +3,7 @@
 	description="Die Anomaly Detection-API ist ein mit Microsoft Azure Machine Learning erstelltes Beispiel, das Anomalien in Zeitreihendaten erkennt, wenn die numerischen Daten zeitlich gleich verteilt sind." 
 	services="machine-learning" 
 	documentationCenter="" 
-	authors="LuisCabrer" 
+	authors="pingf" 
 	manager="paulettm"
 	editor="cgronlun" />
 
@@ -13,7 +13,7 @@
 	ms.topic="reference" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="multiple" 
-	ms.date="12/08/2015" 
+	ms.date="03/07/2016" 
 	ms.author="pingf"/>
 
 
@@ -27,11 +27,11 @@ Die Anomaly Detection-API ist ein mit Azure Machine Learning erstelltes Beispiel
 
 Dieser Dienst zur Erkennung von Anomalien erkennt die folgenden unterschiedlichen Typen von Anomalien in Zeitreihendaten:
 
-1. Positive und negative Trends: Beim Überwachen der Speicherauslastung in der Computerverarbeitung weist ein Aufwärtstrend z. B. auf einen Speicherverlust hin.
+1. Positive und negative Trends: Beim Überwachen der Speicherauslastung in der Computerverarbeitung weist ein Aufwärtstrend z. B. auf einen Speicherverlust hin.
 
-2. Anstieg im dynamischen Wertebereich: Bei der Überwachung der durch einen Dienst ausgelösten Ausnahmen kann ein Anstieg im dynamischen Wertebereich z. B. auf eine Instabilität der Dienstintegrität hinweisen.
+2. Anstieg im dynamischen Wertebereich: Bei der Überwachung der durch einen Dienst ausgelösten Ausnahmen kann ein Anstieg im dynamischen Wertebereich z. B. auf eine Instabilität der Dienstintegrität hinweisen.
 
-3. Spitzen und Abfälle: Beim Überwachen der Anzahl von fehlerhaften Anmeldeversuchen bei einem Dienst oder der Anzahl der Auscheckvorgänge in einer E-Commerce-Website könnten Spitzen oder Abfälle z. B. auf anormales Verhalten hinweisen.
+3. Spitzen und Abfälle: Beim Überwachen der Anzahl von fehlerhaften Anmeldeversuchen bei einem Dienst oder der Anzahl der Auscheckvorgänge in einer E-Commerce-Website könnten Spitzen oder Abfälle z. B. auf anormales Verhalten hinweisen.
 
 
 Diese Erkennungsprogramme dienen zum Nachverfolgen von Änderungen an Werten im Zeitverlauf und melden laufende Änderungen in ihren Werten. Sie benötigen keine Ad-hoc-Schwellenwertanpassung, und ihre Bewertungen können verwendet werden, um falsch positive Raten zu steuern. Die Anomaly Detection-API ist nützlich in Szenarios wie Dienstüberwachung durch Nachverfolgen von KPIs über die Zeit, oder von Nutzungsdaten wie der Anzahl von Suchvorgängen, der Anzahl von Klicks, Leistungsindikatoren wie Arbeitsspeicher, CPU, Dateilesevorgängen usw. über die Zeit.
@@ -40,7 +40,7 @@ Diese Erkennungsprogramme dienen zum Nachverfolgen von Änderungen an Werten im 
 
 Der Dienst stellt eine REST-basierte API über HTTPS bereit, die auf unterschiedliche Weise genutzt werden kann, beispielsweise durch eine Web- oder mobile Anwendung, T, Python, Excel usw. Wir bieten eine [Azure-Webanwendung](http://anomalydetection-aml.azurewebsites.net/), mit der Sie den Webdienst zur Erkennung von Anomalien für Ihre Daten ausführen und die Ergebnisse visualisieren können.
 
-Sie können auch Zeitreihendaten über einen REST-API-Aufruf an diesen Dienst senden, dann wird eine Kombination der oben beschriebenen drei Anomaliearten ausgeführt. Der Dienst wird auf der Machine Learning-Plattform Azure ML ausgeführt, die nahtlos für Ihre geschäftlichen Anforderungen skaliert werden kann und SLAs von 99,95 % bietet.
+Sie können auch Zeitreihendaten über einen REST-API-Aufruf an diesen Dienst senden, dann wird eine Kombination der oben beschriebenen drei Anomaliearten ausgeführt. Der Dienst wird auf der Machine Learning-Plattform Azure ML ausgeführt, die nahtlos für Ihre geschäftlichen Anforderungen skaliert werden kann und SLAs von 99,95 % bietet.
 
 Die folgende Abbildung zeigt ein Beispiel für erkannte Anomalien in einer Zeitreihe mit dem oben genannten Framework. Die Zeitreihe weist zwei unterschiedliche Pegeländerungen und drei Spitzen auf. Die roten Punkte zeigen die Zeit an, zu der die Pegeländerung erkannt wird, während die roten nach oben weisenden Pfeile die erkannten Spitzen anzeigen.
 
@@ -89,4 +89,4 @@ Time|Data|Tspike|Zspike|Martingale values|Alert indicator|Martingale values (2)|
 
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0309_2016-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="02/09/2016"
+   ms.date="03/03/2016"
    ms.author="jrj;barbkess;sonyama"/>
 
 # Hashverteilung und deren Auswirkung auf die Abfrageleistung in SQL Data Warehouse
@@ -61,7 +61,7 @@ Wie wir gesehen haben, kann die Datenschiefe die ausgewogene Ausführung beeintr
 
 > [AZURE.NOTE] Die `WHERE`-Klausel ist normalerweise beim Identifizieren von Spalten hilfreich, die sich am besten für die Partitionierung eignen.
 
-Ein gutes Beispiel für eine Spalte, die in der `WHERE`-Klausel verwendet wird, ist ein Datumsfeld. Datumsfelder sind klassische Beispiele für gut geeignete Partitionierungsspalten, aber es sind häufig auch schlechte Hashverteilungsspalten. Normalerweise gelten Data Warehouse-Abfragen für einen angegebenen Zeitraum, z. B. Tag, Woche oder Monat. Die Hashverteilung nach Datum kann sich unter Umständen negativ auf die Skalierbarkeit und die Leistung ausgewirkt haben. Wenn beispielsweise ein Datumsbereich von einer Woche (also sieben Tagen) angegeben wurde, beträgt die maximale Anzahl von Hashes 7 – einen pro Tag. Dies bedeutet, dass nur sieben unserer Verteilungen Daten enthalten würden. Die restlichen Verteilungen würden keine Daten enthalten. Diese Situation würde zu einer unausgewogenen Abfrageausführung führen, da nur sieben Verteilungen Daten verarbeiten.
+Ein gutes Beispiel für eine Spalte, die in der `WHERE`-Klausel verwendet wird, ist ein Datumsfeld. Datumsfelder sind klassische Beispiele für gut geeignete Partitionierungsspalten, aber es sind häufig auch schlechte Hashverteilungsspalten. Normalerweise gelten Data Warehouse-Abfragen für einen angegebenen Zeitraum, z. B. Tag, Woche oder Monat. Die Hashverteilung nach Datum kann sich unter Umständen negativ auf die Skalierbarkeit und die Leistung ausgewirkt haben. Wenn beispielsweise ein Datumsbereich von einer Woche (also sieben Tagen) angegeben wurde, beträgt die maximale Anzahl von Hashes 7 – einen pro Tag. Dies bedeutet, dass nur sieben unserer Verteilungen Daten enthalten würden. Die restlichen Verteilungen würden keine Daten enthalten. Diese Situation würde zu einer unausgewogenen Abfrageausführung führen, da nur sieben Verteilungen Daten verarbeiten.
 
 > [AZURE.NOTE] Mit Roundrobin-Tabellen wird in der Regel eine ausgewogene Ausführung erzielt. Dies liegt daran, dass die Daten gleichmäßig über die Verteilungen hinweg gespeichert werden.
 
@@ -70,7 +70,7 @@ Um die Leistung und den allgemeinen Abfragedurchsatz zu verbessern, sollten Sie 
 
 Hashverteilungsschlüssel:
 
-1. Ist ein statischer Wert, da Sie die Hashspalte nicht aktualisieren können. 
+1. Ist ein statischer Wert, da Sie die Hashspalte nicht aktualisieren können.
 2. Wird in Ihren Abfragen in `JOIN`-, `GROUP BY`-, `DISTINCT`- oder `HAVING`-Klauseln verwendet.
 2. Wird nicht in `WHERE`-Klauseln verwendet.
 3. Verfügt über viele unterschiedliche Werte, mindestens 1.000.
@@ -103,4 +103,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 
 <!--Other Web references-->
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0309_2016-->

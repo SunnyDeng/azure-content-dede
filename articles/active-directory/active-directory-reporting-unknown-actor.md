@@ -3,7 +3,7 @@
    description="Beschreibung des Ereignisses „Unbekannter Akteur“ in Azure Active Directory-Berichten"
    services="active-directory"
    documentationCenter=""
-   authors="kenhoff"
+   authors="SSalahAhmed"
    manager="mbaldwin"
    editor=""/>
 
@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="12/07/2015"
-   ms.author="kenhoff"/>
+   ms.date="03/04/2016"
+   ms.author="saah"/>
 
 # Azure Active Directory-Berichtsereignisse „Unbekannter Akteur“
 
@@ -28,7 +28,7 @@ In diesem Fall führt ein Dienstprinzipal (Anwendung) Verzeichnisaktualisierunge
 
 ![](./media/active-directory-reporting-unknown-actor/spd-actor.png)
 
-Dies ist ein bekanntes Problem, an dessen Lösung wir intensiv arbeiten.
+Dies ist ein bekanntes Problem, an dessen Lösung wir arbeiten.
 
 ## Ein Benutzer wurde vor der Verarbeitung des Ereignisses aus dem Verzeichnis gelöscht.
 
@@ -36,8 +36,8 @@ In diesem Fall wurde ein Benutzer aus dem Verzeichnis gelöscht, bevor wir das E
 
 ![](./media/active-directory-reporting-unknown-actor/unknown-actor.png)
 
-Dies ist ein bekanntes Problem, an dessen Lösung wir intensiv arbeiten.
+Dies ist ein bekanntes Problem, an dessen Lösung wir arbeiten.
 
 <!-- ![](./media/active-directory-reporting-unknown-actor/uid-actor.png) -->
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0309_2016-->

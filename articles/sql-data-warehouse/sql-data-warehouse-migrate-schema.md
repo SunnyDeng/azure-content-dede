@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/19/2016"
+   ms.date="03/03/2016"
    ms.author="jrj;barbkess;sonyama"/>
 
 # Migrieren Ihres Schemas nach SQL Data Warehouse#
@@ -115,15 +115,15 @@ Alternativen:
 - **table**: in temporäre Tabellen konvertieren
 - **timestamp**: Code anpassen, sodass datetime2 und die `CURRENT_TIMESTAMP`-Funktion verwendet wird. Beachten Sie, dass Sie "current\_timestamp" nicht als Standardeinschränkung verwenden können und dass der Wert nicht automatisch aktualisiert wird. Wenn Sie rowversion-Werte aus einer Spalte mit timestamp-Typ migrieren müssen, sollten Sie binary(8) oder varbinary(8) für NOT NULL- oder NULL-Zeilenversionswerte verwenden.
 - **varchar(max)**: varchar(8000) oder kleiner zur Verbesserung der Leistung
-- **uniqueidentifier**: varbinary(16) oder varchar(36), abhängig vom Eingabeformat (Binärdaten oder Zeichen) Ihrer Werte. Wenn das Eingabeformat auf Zeichen basiert, ist eine Optimierung möglich. Durch das Konvertieren von Zeichen in das Binärformat können Sie den Spaltenspeicher um über 50 Prozent reduzieren. In sehr großen Tabellen kann diese Optimierung von Vorteil sein.
+- **uniqueidentifier**: varbinary(16) oder varchar(36), abhängig vom Eingabeformat (Binärdaten oder Zeichen) Ihrer Werte. Wenn das Eingabeformat auf Zeichen basiert, ist eine Optimierung möglich. Durch das Konvertieren von Zeichen in das Binärformat können Sie den Spaltenspeicher um über 50 Prozent reduzieren. In sehr großen Tabellen kann diese Optimierung von Vorteil sein.
 - **Benutzerdefinierte Datentypen**: zurück in systemeigene Typen konvertieren, falls möglich
 - **xml**: varchar(8000) oder kleiner zur Verbesserung der Leistung. Gegebenenfalls in Spalten unterteilen.
 
 Teilweise unterstützt:
 
-- Standardeinschränkungen unterstützen nur Literale und Konstanten. Nicht deterministische Ausdrücke oder Funktionen, z. B. `GETDATE()` oder `CURRENT_TIMESTAMP`, werden nicht unterstützt.
+- Standardeinschränkungen unterstützen nur Literale und Konstanten. Nicht deterministische Ausdrücke oder Funktionen, z. B. `GETDATE()` oder `CURRENT_TIMESTAMP`, werden nicht unterstützt.
 
-> [AZURE.NOTE]Definieren Sie Ihre Tabellen so, dass die maximal mögliche Zeilengröße, einschließlich der vollständigen Länge der Spalten mit variabler Länge, 32.767 Byte nicht überschreitet. Sie können zwar eine Zeile mit Daten variabler Länge definieren, bei der dieser Wert überschritten wird, aber Sie können keine Daten in die Tabelle einfügen. Versuchen Sie außerdem, die Größe Ihrer Spalten mit variabler Länge zu beschränken, um beim Ausführen von Abfragen einen noch besseren Durchsatz zu erzielen.
+> [AZURE.NOTE] Definieren Sie Ihre Tabellen so, dass die maximal mögliche Zeilengröße, einschließlich der vollständigen Länge der Spalten mit variabler Länge, 32.767 Byte nicht überschreitet. Sie können zwar eine Zeile mit Daten variabler Länge definieren, bei der dieser Wert überschritten wird, aber Sie können keine Daten in die Tabelle einfügen. Versuchen Sie außerdem, die Größe Ihrer Spalten mit variabler Länge zu beschränken, um beim Ausführen von Abfragen einen noch besseren Durchsatz zu erzielen.
 
 ## Nächste Schritte
 Nachdem Sie Ihr Datenbankschema erfolgreich in SQLDW migriert haben, können Sie mit den folgenden Artikeln fortfahren:
@@ -145,4 +145,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 
 <!--Other Web references-->
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0309_2016-->

@@ -3,7 +3,7 @@
 	description="Erläutert das Anzeigen von Zugriffs- und Nutzungsberichten, um sich einen Einblick in die Integrität und Sicherheit des Verzeichnisses Ihrer Organisation zu verschaffen."
 	services="active-directory"
 	documentationCenter=""
-	authors="kenhoff"
+	authors="dhanyahk"
 	manager="stevenpo"
 	editor=""/>
 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/07/2015"
-	ms.author="kenhoff;Justinha;curtand"/>
+	ms.date="03/07/2016"
+	ms.author="dhanyahk"/>
 
 
 # Anzeigen von Zugriffs- und Nutzungsberichten
@@ -99,7 +99,15 @@ Im Azure-Verwaltungsportal werden Berichte auf folgende Weise kategorisiert:
 ## Berichte zu anomalen Aktivitäten
 <p>Die Berichte zu anomalen Aktivitäten markieren verdächtige Anmeldeaktivitäten in Office365, im Azure-Verwaltungsportal, im Azure AD-Zugriffsbereich, in SharePoint Online, in Dynamics CRM Online und in anderen Microsoft-Onlinediensten.</p>
 <p>All diese Berichte, mit Ausnahme des Berichts "Anmeldungen nach mehreren Fehlern", markieren außerdem verdächtige <i>Verbundanmeldungen</i> bei den oben genannten Diensten, unabhängig vom Verbundanbieter. </p>
-<p>Die folgenden Berichte sind verfügbar: </p><ul> <li>[Anmeldungen aus unbekannten Quellen](active-directory-reporting-sign-ins-from-unknown-sources.md).</li> <li>[Anmeldungen nach mehreren Fehlern](active-directory-reporting-sign-ins-after-multiple-failures.md).</li> <li>[Anmeldungen aus mehreren geografischen Regionen](active-directory-reporting-sign-ins-from-multiple-geographies.md).</li> <li>[Anmeldungen von IP-Adressen mit verdächtigen Aktivitäten](active-directory-reporting-sign-ins-from-ip-addresses-with-suspicious-activity.md).</li> <li>[Irreguläre Anmeldeaktivitäten](active-directory-reporting-irregular-sign-in-activity.md).</li> <li>[Anmeldungen von möglicherweise infizierten Geräten](active-directory-reporting-sign-ins-from-possibly-infected-devices.md).</li> <li>[Benutzer mit anomalen Anmeldeaktivitäten](active-directory-reporting-users-with-anomalous-sign-in-activity.md).</li> <li>Benutzer mit kompromittierten Anmeldeinformationen</li>.</ul>
+<p>Folgende Berichte sind verfügbar:</p><ul>
+<li>[Anmeldungen von unbekannten Quellen] (active-directory-reporting-sign-ins-from-unknown-sources.md).</li>
+<li>[Anmeldungen nach mehreren Fehlern] (active-directory-reporting-sign-ins-after-multiple-failures.md).</li>
+<li>[Anmeldungen aus mehreren geografischen Regionen](active-directory-reporting-sign-ins-from-multiple-geographies.md).</li>
+<li>[Anmeldungen von IP-Adressen mit verdächtigen Aktivitäten] (active-directory-reporting-sign-ins-from-ip-addresses-with-suspicious-activity.md).</li>
+<li>[Irreguläre Anmeldeaktivitäten] (active-directory-reporting-irregular-sign-in-activity.md).</li>
+<li>[Anmeldungen von möglicherweise infizierten Geräten] (active-directory-reporting-sign-ins-from-possibly-infected-devices.md).</li>
+<li>[Benutzern mit anomalen Anmeldeaktivitäten] (active-directory-reporting-users-with-anomalous-sign-in-activity.md).</li>
+<li>Benutzer mit kompromittierten Anmeldeinformationen</li>.</ul>
 
 
 
@@ -164,7 +172,7 @@ Im Azure-Verwaltungsportal werden Berichte auf folgende Weise kategorisiert:
 
 Dieser Bericht enthält Informationen zu Anmeldungen bei _allen_ Programmen, auf die Ihr Verzeichnis Zugriff hat, einschließlich vorab integrierter Microsoft-Anwendungen.
 
-Zu den bereits integrierten Microsoft-Anwendungen zählen Office 365, Sharepoint, das Azure-Verwaltungsportal und andere.
+Zu den bereits integrierten Microsoft-Anwendungen zählen Office 365, Sharepoint, das Azure-Verwaltungsportal und andere.
 
 ![Zusammenfassung Anwendungsnutzung](./media/active-directory-view-access-usage-reports/applicationUsage.PNG)
 
@@ -224,8 +232,8 @@ Nur bestimmte Arten von Anmeldeereignissen werden im Bericht "Benutzeraktivität
 | Anmeldungen beim [Microsoft Azure-Portal](https://portal.azure.com/) | Ja |
 | Anmeldungen beim [Office 365-Portal](http://portal.office.com/) | Ja |
 | Anmeldungen bei einer systemeigenen Anwendung wie Outlook (siehe nachfolgende Ausnahme) | Ja |
-| Anmeldungen bei einer Verbund-/bereitgestellten App über den Zugriffsbereich wie z. B. Salesforce | Ja |
-| Anmeldungen bei einer kennwortbasierten App über den Zugriffsbereich wie z. B. Twitter | Ja |
+| Anmeldungen bei einer Verbund-/bereitgestellten App über den Zugriffsbereich wie z. B. Salesforce | Ja |
+| Anmeldungen bei einer kennwortbasierten App über den Zugriffsbereich wie z. B. Twitter | Ja |
 | Anmeldungen bei einer benutzerdefinierten Geschäfts-App, die dem Verzeichnis hinzugefügt wurde | Nein (in Kürze verfügbar) |
 | Anmeldungen bei einer Azure AD-Anwendungsproxy-App, die dem Verzeichnis hinzugefügt wurde | Nein (in Kürze verfügbar) |
 
@@ -246,11 +254,11 @@ Wenn Sie vermuten, dass ein Benutzerkonto ggf. gefährdet ist, oder von einer ve
 
 - Den Benutzer kontaktieren, um die Aktivität zu überprüfen
 - Das Kennwort des Benutzers zurücksetzen
-- Die [Multi-Factor Authentication](multi-factor-authentication-get-started.md) zum Erhöhen der Sicherheit aktivieren
+- Die [Multi-Factor Authentication](../multi-factor-authentication/multi-factor-authentication-get-started.md) zum Erhöhen der Sicherheit aktivieren
 
 ## Anzeigen oder Herunterladen eines Berichts
 
-1. Klicken Sie im Azure-Verwaltungsportal auf **Active Directory**, dann auf den Namen des Verzeichnisses Ihrer Organisation und danach auf **Berichte**.
+1. Klicken Sie im klassischen Azure-Portal auf **Active Directory**, klicken Sie auf den Namen des Verzeichnisses Ihrer Organisation und anschließend auf **Berichte**.
 2. Klicken Sie auf der Seite "Berichte" auf den Bericht, den Sie anzeigen und/oder herunterladen möchten.
 
     > [AZURE.NOTE] Wenn Sie die Berichtsfunktion von Azure Active Directory zum ersten Mal verwenden, wird eine Aktivierungsmeldung angezeigt. Wenn Sie zustimmen, klicken Sie auf das Häkchensymbol, um den Vorgang fortzusetzen.
@@ -260,7 +268,7 @@ Wenn Sie vermuten, dass ein Benutzerkonto ggf. gefährdet ist, oder von einer ve
     - Letzte 7 Tage
     - Letzte 30 Tage
 4. Klicken Sie auf das Häkchensymbol, um den Bericht auszuführen.
-	- Im Azure-Verwaltungsportal werden bis zu 1000 Ereignisse angezeigt.
+	- Im klassischen Azure-Portal werden bis zu 1000 Ereignisse angezeigt.
 5. Falls zutreffend, klicken Sie auf **Herunterladen**, um den Bericht in einer komprimierten Datei im CSV-Format herunterzuladen, um ihn offline anzeigen oder zu archivieren.
 	- In der heruntergeladenen Datei werden bis zu 75.000 Ereignisse aufgenommen.
 	- Informationen zu weiteren Daten finden Sie im Artikel zur [Azure AD Reporting-API](active-directory-reporting-api-getting-started.md).
@@ -271,11 +279,11 @@ Wenn Sie Anomalieberichte prüfen, stellen Sie möglicherweise fest, dass Sie ve
 
 ## Automatische E-Mail-Benachrichtigungen
 
-Weitere Informationen zu den Benachrichtigungen für Berichte in Azure AD finden Sie unter [Benachrichtigungen zu Azure Active Directory-Berichten](active-directory-reporting-notifications.md).
+Weitere Informationen zu den Benachrichtigungen für Berichte in Azure AD finden Sie unter [Benachrichtigungen zu Azure Active Directory-Berichten](active-directory-reporting-notifications.md).
 
 ## Nächste Schritte
 
 - [Erste Schritte mit Azure Active Directory Premium](active-directory-get-started-premium.md)
 - [Hinzufügen Ihres Unternehmensbranding zur Anmelde- und Zugriffsbereichsseite](active-directory-add-company-branding.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0309_2016-->

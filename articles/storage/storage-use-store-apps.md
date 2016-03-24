@@ -11,10 +11,10 @@
 	ms.tgt_pltfrm="mobile-windows-store"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="01/07/2016"
+	ms.date="02/24/2016"
 	ms.author="tamram"/>
 	
-# Verwenden von Azure Storage in Windows Store-Apps
+# Verwenden von Azure Storage in Windows Store-Apps
 
 ## Übersicht
 
@@ -22,9 +22,9 @@ Dieser Leitfaden zeigt die ersten Schritte der Entwicklung einer Windows Store-A
 
 ## Herunterladen erforderlicher Tools
 
-- [Visual Studio 2012](http://msdn.microsoft.com/library/windows/apps/br211384) vereinfacht das Erstellen, Debuggen, Lokalisieren, Packen und Bereitstellen von Windows Store-Apps.
-- Die [Azure Storage-Clientbibliothek für Windows-Runtime](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/11/05/windows-azure-storage-client-library-for-windows-runtime.aspx) stellt eine Klassenbibliothek für die Arbeit mit Azure Storage bereit.
-- Die [WCF Data Services-Tools für Windows Store-Apps](http://www.microsoft.com/download/details.aspx?id=30714) erweitern die Nutzung von „Dienstverweis hinzufügen“ durch clientseitige OData-Unterstützung für Windows Store-Apps in Visual Studio 2012 und höher.
+- [Visual Studio](https://www.visualstudio.com/de-DE/visual-studio-homepage-vs.aspx) vereinfacht das Erstellen, Debuggen, Lokalisieren, Packen und Bereitstellen von Windows Store-Apps. Visual Studio 2012 oder höher wird vorausgesetzt.
+- Die [Azure Storage-Clientbibliothek](https://www.nuget.org/packages/WindowsAzure.Storage) stellt eine Windows-Runtime-Klassenbibliothek für die Arbeit mit Azure Storage bereit.
+- Die [WCF Data Services-Tools für Windows Store-Apps](http://www.microsoft.com/download/details.aspx?id=30714) erweitern die Nutzung von „Dienstverweis hinzufügen“ durch clientseitige OData-Unterstützung für Windows Store-Apps in Visual Studio.
 
 ## Entwickeln von Apps
 
@@ -87,4 +87,4 @@ Sie können auch einen Verweis zu „Microsoft.WindowsAzure.Storage.Table.dll“
 [store-apps-storage-choose-library]: ./media/storage-use-store-apps/store-apps-storage-choose-library.png
 [store-apps-storage-package-manager]: ./media/storage-use-store-apps/store-apps-storage-package-manager.png
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0309_2016-->

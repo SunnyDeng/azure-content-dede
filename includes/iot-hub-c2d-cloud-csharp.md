@@ -84,17 +84,17 @@ In diesem Abschnitt ändern Sie die **SendCloudToDevice**-App so, dass sie Feedb
 
         commandMessage.Ack = DeliveryAcknowledgement.Full;
 
-4.  Führen Sie die Apps durch Drücken von **F5** aus. Alle drei Anwendungen sollten gestartet werden. Wählen Sie die Fenster **SendCloudToDevice** aus, und drücken Sie die **EINGABETASTE**: Sie sollten sehen, dass die Nachricht von der simulierten App empfangen wird. Nach einigen Sekunden sollte die Feedbacknachricht von der **SendCloudToDevice**-App empfangen werden.
+4.  Führen Sie die Apps durch Drücken von **F5** aus. Alle drei Anwendungen sollten gestartet werden. Wählen Sie die Fenster **SendCloudToDevice** aus, und drücken Sie die **EINGABETASTE**: Sie sollten sehen, dass die Nachricht von der simulierten App empfangen wird. Nach einigen Sekunden sollte die Feedbacknachricht von der **SendCloudToDevice**-Anwendung empfangen werden.
 
     ![][22]
 
-> [AZURE.NOTE]Der Einfachheit halber wird in diesem Lernprogramm keine Wiederholungsrichtlinie implementiert. Es wird empfohlen, im Produktionscode Wiederholungsrichtlinien zu implementieren (z. B. einen exponentiellen Backoff), wie im MSDN-Artikel zum [Behandeln vorübergehender Fehler] beschrieben.
+> [AZURE.NOTE] Der Einfachheit halber wird in diesem Lernprogramm keine Wiederholungsrichtlinie implementiert. Es wird empfohlen, im Produktionscode Wiederholungsrichtlinien zu implementieren (z. B. einen exponentiellen Backoff), wie im MSDN-Artikel zum [Behandeln vorübergehender Fehler] beschrieben.
 
 <!-- Links -->
 
 [IoT Hub Developer Guide - C2D]: iot-hub-devguide.md#c2d
 [NuGet-Paket mit dem Dienst-SDK für Azure IoT]: https://www.nuget.org/packages/Microsoft.Azure.Devices/
-[Behandeln vorübergehender Fehler]: https://msdn.microsoft.com/de-DE/library/hh680901(v=pandp.50).aspx
+[Behandeln vorübergehender Fehler]: https://msdn.microsoft.com/library/hh680901(v=pandp.50).aspx
 [Erste Schritte mit IoT Hub]: iot-hub-csharp-csharp-getstarted.md
 
 <!-- Images -->
@@ -102,4 +102,4 @@ In diesem Abschnitt ändern Sie die **SendCloudToDevice**-App so, dass sie Feedb
 [21]: ./media/iot-hub-c2d-cloud-csharp/sendc2d1.png
 [22]: ./media/iot-hub-c2d-cloud-csharp/sendc2d2.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0309_2016-->

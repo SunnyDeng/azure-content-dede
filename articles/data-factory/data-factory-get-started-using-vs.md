@@ -13,16 +13,16 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="get-started-article" 
-	ms.date="02/01/2016" 
+	ms.date="03/07/2016" 
 	ms.author="spelluru"/>
 
 # Tutorial: Erstellen einer Pipeline mit Kopieraktivität mithilfe von Visual Studio
 > [AZURE.SELECTOR]
 - [Übersicht über das Tutorial](data-factory-get-started.md)
-- [Verwenden des Azure Data Factory-Editors](data-factory-get-started-using-editor.md)
+- [Verwenden des Data Factory-Editors](data-factory-get-started-using-editor.md)
 - [Verwenden von Visual Studio](data-factory-get-started-using-vs.md)
 - [Mithilfe von PowerShell](data-factory-monitor-manage-using-powershell.md)
-
+- [Verwenden des Kopier-Assistenten](data-factory-copy-data-wizard-tutorial.md)
 
 ##Inhalt dieses Lernprogramms
 In diesem Lernprogramm führen Sie mit Visual Studio 2013 die folgenden Schritte aus:
@@ -244,4 +244,4 @@ Unter [Überwachen von Datasets und Pipelines](data-factory-get-started-using-ed
 ## Siehe auch
 Ausführliche Informationen zur **Kopieraktivität** in Azure Data Factory finden Sie im Artikel [Datenverschiebungsaktivitäten](data-factory-data-movement-activities.md).
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0316_2016-->

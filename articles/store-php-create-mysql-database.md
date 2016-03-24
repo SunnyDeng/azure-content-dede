@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="PHP"
 	ms.topic="article"
-	ms.date="01/09/2016"
+	ms.date="03/04/2016"
 	ms.author="robmcm"/>
 
 #Erstellen einer MySQL-Datenbank in Azure
@@ -27,4 +27,4 @@ Unter <https://github.com/WindowsAzure/azure-sdk-for-php-samples/tree/master/tas
 
 Weitere Informationen finden Sie im [PHP Developer Center](/develop/php/).
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0309_2016-->

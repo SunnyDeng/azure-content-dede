@@ -300,7 +300,7 @@ Hinzufügen der AuthorizationPolicy zum ContentKey, wie [hier](#AddAuthorization
 
 Mithilfe von Media Services können Sie die Rechte und Einschränkungen konfigurieren, die für die PlayReady-DRM-Laufzeit erzwungen werden sollen, wenn ein Benutzer versucht, geschützte Inhalte wiederzugeben.
 
-Wenn Sie Inhalte mit PlayReady schützen, müssen Sie in Ihrer Autorisierungsrichtlinie u. a. eine XML-Zeichenfolge zur Definition der [PlayReady-Lizenzvorlage](https://msdn.microsoft.com/library/azure/dn783459.aspx) angeben.
+Wenn Sie Inhalte mit PlayReady schützen, müssen Sie in Ihrer Autorisierungsrichtlinie u. a. eine XML-Zeichenfolge zur Definition der [PlayReady-Lizenzvorlage](https://msdn.microsoft.com/library/azure/dn783459.aspx) angeben.
 
 ###Open-Einschränkung
 	
@@ -483,4 +483,4 @@ Nachdem Sie eine Autorisierungsrichtlinie für einen Inhaltsschlüssel konfiguri
 
  
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0309_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="nodejs"
 	ms.topic="article"
-	ms.date="01/09/2016"
+	ms.date="03/04/2016"
 	ms.author="robmcm"/>
 
 
@@ -102,7 +102,7 @@ Befolgen Sie diese Schritte, um eine Azure-Web-App zu erstellen und dann die Git
 	Geben Sie den Namen der Web-App ein, wenn Sie dazu aufgefordert werden.
 
 	>[AZURE.NOTE]
-	Der Befehl "azure site set -w" funktioniert erst ab Version 0.7.4 der Azure-Befehlszeilenschnittstelle. Sie können die Unterstützung von WebSocket im [Azure-Portal](https://portal.azure.com) aktivieren.
+	Der Befehl "azure site set -w" funktioniert erst ab Version 0.7.4 der Azure-Befehlszeilenschnittstelle. Sie können die Unterstützung von WebSocket im [Azure-Portal](https://portal.azure.com) aktivieren.
 	>
 	>Um WebSockets mithilfe des Azure-Portals zu aktivieren, klicken Sie auf dem Web-Apps-Blatt auf die Web-App und dann auf **Alle Einstellungen** > ** Anwendungseinstellungen**. Klicken Sie unter **Web Sockets** auf **Ein**. Klicken Sie anschließend auf **Save**.
 
@@ -146,7 +146,7 @@ Führen Sie die Schritte unter [Einen Cache erstellen in Azure Redis Cache](/doc
 
 	> [AZURE.NOTE] Obwohl der Adapter __socket.io-redis__ direkt mit Redis kommunizieren kann, unterstützt die aktuelle Version die vom Azure Redis Cache benötigte Authentifizierung nicht. Daher wird die Erstverbindung über das Modul __redis__ hergestellt und der Client dann an den Adapter __socket.io-redis__ übergeben.
 	>
-	> Der Azure Redis Cache unterstützt zwar sichere Verbindungen über Port 6380, die in diesem Beispiel verwendeten Module jedoch nicht (Stand 14.7.2014). Im obigen Code wird daher der unsichere Standardport 6379 verwendet.
+	> Der Azure Redis Cache unterstützt zwar sichere Verbindungen über Port 6380, die in diesem Beispiel verwendeten Module jedoch nicht (Stand 14.7.2014). Im obigen Code wird daher der unsichere Standardport 6379 verwendet.
 
 3. Speichern Sie die geänderte Datei __app.js__.
 
@@ -204,7 +204,7 @@ Wenn Clientbrowser immer wieder auf Long Polling zurückfallen und WebSockets ni
 
 		<webSocket enabled="false"/>
 
-	Dadurch wird das Modul "IIS WebSockets" deaktiviert, das eine eigene Implementierung von WebSockets aufweist und Konflikte mit Node.js- spezifischen WebSocket-Modulen wie z. B. Socket.IO verursacht. Wenn diese Zeile nicht vorhanden ist oder auf `true` festgelegt ist, ist dies möglicherweise der Grund, warum der WebSocket-Transport für Ihre Anwendung nicht funktioniert.
+	Dadurch wird das Modul "IIS WebSockets" deaktiviert, das eine eigene Implementierung von WebSockets aufweist und Konflikte mit Node.js- spezifischen WebSocket-Modulen wie z. B. Socket.IO verursacht. Wenn diese Zeile nicht vorhanden ist oder auf `true` festgelegt ist, ist dies möglicherweise der Grund, warum der WebSocket-Transport für Ihre Anwendung nicht funktioniert.
 
 	Normalerweise enthalten Node.js-Anwendungen keine **web.config**-Datei, sodass Azure-Websites eine solche Datei für Node.js-Anwendungen bei deren Bereitstellung automatisch generieren. Da diese Datei automatisch auf dem Server generiert wird, müssen Sie die FTP- oder FTPS-URL für Ihre Website zur Anzeige der Datei verwenden. Die FTP- und FTPS-URLs für Ihre Website können Sie im klassischen Portal einsehen, indem Sie Ihre Web-App und dann den Link **Dashboard** auswählen. Die URLs werden im Bereich **Auf einen Blick** angezeigt.
 
@@ -286,4 +286,4 @@ Weitere Informationen finden Sie außerdem im [Node.js Developer Center](/develo
 [pricing]: /pricing/details/web-sites/
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0309_2016-->
