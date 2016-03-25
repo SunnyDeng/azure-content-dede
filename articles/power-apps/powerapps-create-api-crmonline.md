@@ -49,7 +49,7 @@ Fügen Sie die Dynamics CRM Online-API in der App Service-Umgebung Ihrer Organis
 8. Wählen Sie **Einstellungen – Erforderliche Einstellungen konfigurieren** aus:  
 ![Einstellungen der Dynamics CRM Online-API konfigurieren][6]
 
-9. Geben Sie die **Client-ID** und den **geheimen App-Schlüssel ** Ihrer Azure Active Directory (AAD)-Anwendung für Dynamics CRM Online ein. Wenn Sie nicht über diese Daten verfügen, finden Sie weiter unten im Abschnitt „Registrieren einer AAD-App zur Verwendung mit PowerApps“ Informationen zum Erstellen der benötigten Werte für die ID und den geheimen Schlüssel.
+9. Geben Sie die **Client-ID** und den **geheimen App-Schlüssel** Ihrer Azure Active Directory (AAD)-Anwendung für Dynamics CRM Online ein. Wenn Sie nicht über diese Daten verfügen, finden Sie weiter unten im Abschnitt „Registrieren einer AAD-App zur Verwendung mit PowerApps“ Informationen zum Erstellen der benötigten Werte für die ID und den geheimen Schlüssel.
 
 	> [AZURE.IMPORTANT] Speichern Sie die **Umleitungs-URL**. Möglicherweise benötigen Sie diesen Wert an späterer Stelle in diesem Thema.
 
@@ -81,8 +81,8 @@ Ihrer App Service-Umgebung wird dann eine neue Dynamics CRM Online-API hinzugef�
 
 6. Unter **App-Eigenschaften**:
 
-	1. Geben Sie unter **ANMELDE-URL** die Anmelde-URL Ihrer Anwendung ein. Da Sie die Authentifizierung mit AAD für PowerApps durchführen, legen Sie die Anmelde-URL auf \__https://login.windows.net_ fest.
-2. Geben Sie einen gültigen **APP-ID-URI** für Ihre App ein.  
+	1. Geben Sie unter **ANMELDE-URL** die Anmelde-URL Ihrer Anwendung ein. Da Sie die Authentifizierung mit AAD für PowerApps durchführen, legen Sie die Anmelde-URL auf _https://login.windows.net_ fest.
+	2. Geben Sie einen gültigen **APP-ID-URI** für Ihre App ein.  
 	3. Klicken Sie auf **OK**.  
 
 	![AAD-Anwendung hinzufügen – App-Eigenschaften][10]
