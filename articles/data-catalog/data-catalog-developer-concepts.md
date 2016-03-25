@@ -95,7 +95,8 @@ Diese Eigenschaften gelten für alle Stammassettypen und für alle Anmerkungstyp
 |**Eigenschaftenname**|**Datentyp**|**Kommentare**
 |---|---|---
 |modifiedTime|DateTime|Der Zeitpunkt der letzten Stammänderung. Wird vom Client festgelegt. (Dieser Wert wird nicht vom Server gepflegt.)
-|__id|String|Die ID des Elements (schreibgeschützt). Diese ID ist für das Asset in einem Katalog garantiert eindeutig. |__type|String|Der Typ des Assets (schreibgeschützt).
+|__id|String|Die ID des Elements (schreibgeschützt). Diese ID ist für das Asset in einem Katalog garantiert eindeutig.
+|__type|String|Der Typ des Assets (schreibgeschützt).
 |__\_\_creatorId|String|Eine Zeichenfolge, die vom Ersteller des Assets verwendet wird, um das Asset eindeutig zu identifizieren.
 
 ### Allgemeine Stammeigenschaften
