@@ -124,6 +124,7 @@ Alle Versionen des Azure DocumentDB SDK für Node.js vor Version **1.0.0** werde
 
 | Version | Herausgabedatum | Deaktivierungstermine 
 | ---	  | ---	         | ---
+| [1.5.6](#1.5.6) | 8. März 2016 |
 | [1.5.5](#1.5.5) | 2. Februar 2016 |--- 
 | [1.5.4](#1.5.4) | 1. Februar 2016 |--- 
 | [1.5.2](#1.5.2) | 26. Januar 2016 |--- 
@@ -154,4 +155,4 @@ Alle Versionen des Azure DocumentDB SDK für Node.js vor Version **1.0.0** werde
 
 Weitere Informationen zu DocumentDB finden Sie auf der Seite zum Dienst [Microsoft Azure DocumentDB](https://azure.microsoft.com/services/documentdb/).
 
-<!---HONumber=AcomDC_0309_2016-->
+<!----HONumber=AcomDC_0309_2016-->

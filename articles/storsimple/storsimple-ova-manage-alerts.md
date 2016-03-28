@@ -31,7 +31,7 @@ Sie können auswählen, ob Sie per E-Mail über die Warnungsbedingungen für die
 
 >[AZURE.NOTE] Sie können maximal 20 E-Mail-Adressen pro virtuellem Gerät eingeben.
 
-Nachdem Sie die E-Mail-Benachrichtigung für ein virtuelles Gerät aktiviert haben, erhalten die Mitglieder der Benachrichtigungsliste jedes Mal eine E-Mail-Nachricht, wenn eine kritische Warnung vorliegt. Die Nachrichten werden von der Adresse **storsimple-alerts-noreply@mail.windowsazure.com* gesendet und enthalten eine Beschreibung der Warnungsbedingung. Empfänger können auf **Abonnement kündigen** klicken, um das Entfernen aus der E-Mail-Benachrichtigungsliste durchzuführen.
+Nachdem Sie die E-Mail-Benachrichtigung für ein virtuelles Gerät aktiviert haben, erhalten die Mitglieder der Benachrichtigungsliste jedes Mal eine E-Mail-Nachricht, wenn eine kritische Warnung vorliegt. Die Nachrichten werden von der Adresse *storsimple-alerts-noreply@mail.windowsazure.com* gesendet und enthalten eine Beschreibung der Warnungsbedingung. Empfänger können auf **Abonnement kündigen** klicken, um das Entfernen aus der E-Mail-Benachrichtigungsliste durchzuführen.
 
 #### So aktivieren Sie E-Mail-Benachrichtigungen über Warnungen für ein virtuelles Gerät
 
@@ -182,4 +182,4 @@ In den folgenden Tabellen sind einige Microsoft Azure StorSimple-Warnungen aufge
 
 - [Erfahren Sie mehr über das StorSimple Virtual Array](storsimple-ova-overview.md).
 
-<!---HONumber=AcomDC_0309_2016-->
+<!----HONumber=AcomDC_0309_2016-->

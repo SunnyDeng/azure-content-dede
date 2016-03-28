@@ -29,21 +29,27 @@ Fügen Sie die Office 365-Benutzer-API in der App Service-Umgebung Ihrer Organis
 
 1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/) mit Ihrem Geschäftskonto an. Melden Sie sich beispielsweise mit *IhrBenutzername*@*IhrUnternehmen*.com an. Sie werden dann automatisch mit Ihrem Unternehmensabonnement angemeldet.
  
-2. Wählen Sie in der Taskleiste die Option **Durchsuchen** aus: ![][14]
+2. Wählen Sie in der Taskleiste die Option **Durchsuchen** aus:  
+![][14]
 
-3. Um PowerApps zu finden, können Sie in der Liste scrollen oder *powerapps* eingeben: ![][15]
+3. Um PowerApps zu finden, können Sie in der Liste scrollen oder *powerapps* eingeben:  
+![][15]
 
-4. Wählen Sie in **PowerApps** die Option **Manage APIs** aus: ![Zu registrierten APIs navigieren][1]
+4. Wählen Sie in **PowerApps** die Option **Manage APIs** aus:    
+![Zu registrierten APIs navigieren][1]
 
-5. Wählen Sie in **Manage APIs** die Option **Add** aus, um die neue API hinzufügen: ![API hinzufügen][2]
+5. Wählen Sie in **Manage APIs** die Option **Add** aus, um die neue API hinzufügen:  
+![API hinzufügen][2]
 
-6. Geben Sie einen beschreibenden **Namen** für Ihre API ein.
+6. Geben Sie einen beschreibenden **Namen** für Ihre API ein.  
 	
-7. Wählen Sie in **Source** die Option **Available APIs**, um die vorgefertigten APIs auszuwählen, und wählen Sie dann **Office 365-Benutzer** aus: ![Office 365-Benutzer-API auswählen][3]
+7. Wählen Sie in **Source** die Option **Available APIs**, um die vorgefertigten APIs auszuwählen, und wählen Sie dann **Office 365-Benutzer** aus:  
+![Office 365-Benutzer-API auswählen][3]
 
-8. Wählen Sie **Einstellungen – Erforderliche Einstellungen konfigurieren** aus: ![Einstellungen für die Office 365-Benutzer-API konfigurieren][4]
+8. Wählen Sie **Einstellungen – Erforderliche Einstellungen konfigurieren** aus:  
+![Einstellungen für die Office 365-Benutzer-API konfigurieren][4]
 
-9. Geben Sie die *Client-ID* und den *geheimen App-Schlüssel * Ihrer Azure Active Directory-Anwendung (AAD) für Office 365 ein. Wenn Sie nicht über diese Daten verfügen, finden Sie weiter unten im Abschnitt „Registrieren einer AAD-App zur Verwendung mit PowerApps“ Informationen zum Erstellen der benötigten Werte für die ID und den geheimen Schlüssel.
+9. Geben Sie die *Client-ID* und den *geheimen App-Schlüssel * Ihrer Azure Active Directory-Anwendung (AAD) für Office 365 ein. Wenn Sie nicht über diese Daten verfügen, finden Sie weiter unten im Abschnitt „Registrieren einer AAD-App zur Verwendung mit PowerApps“ Informationen zum Erstellen der benötigten Werte für die ID und den geheimen Schlüssel.  
 
 	> [AZURE.IMPORTANT] Speichern Sie die **Umleitungs-URL**. Möglicherweise benötigen Sie diesen Wert an späterer Stelle in diesem Thema.
 
@@ -61,11 +67,13 @@ Wenn Sie über keine vorhandene AAD-App mit den Werten für den Schlüssel und d
 
 	> [AZURE.NOTE] Damit wird Active Directory im klassischen Azure-Portal geöffnet.
 
-3. Wählen Sie den Mandantennamen Ihrer Organisation aus: ![Azure Active Directory starten][6]
+3. Wählen Sie den Mandantennamen Ihrer Organisation aus:  
+![Azure Active Directory starten][6]
 
-4. Klicken Sie auf die Registerkarte **Anwendungen**, und wählen Sie **Hinzufügen** aus: ![AAD-Mandanten-Anwendungen][7]
+4. Klicken Sie auf die Registerkarte **Anwendungen**, und wählen Sie **Hinzufügen** aus:  
+![AAD-Mandanten-Anwendungen][7]
 
-5. Auf der Seite **Anwendung hinzufügen**:
+5. Auf der Seite **Anwendung hinzufügen**:  
 
 	1. Geben Sie einen **Namen** für Ihre Anwendung ein.  
 	2. Lassen Sie als Anwendungstyp **Web** ausgewählt.  
@@ -73,17 +81,19 @@ Wenn Sie über keine vorhandene AAD-App mit den Werten für den Schlüssel und d
 
 	![AAD-Anwendung hinzufügen – App-Info][8]
 
-6. Unter **App-Eigenschaften**:
+6. Unter **App-Eigenschaften**:  
 
-	1. Geben Sie unter **ANMELDE-URL** die Anmelde-URL Ihrer Anwendung ein. Da Sie die Authentifizierung mit AAD für PowerApps durchführen, legen Sie die Anmelde-URL auf \__https://login.windows.net_ fest.
-2. Geben Sie einen gültigen **APP-ID-URI** für Ihre App ein.  
+	1. Geben Sie unter **ANMELDE-URL** die Anmelde-URL Ihrer Anwendung ein. Da Sie die Authentifizierung mit AAD für PowerApps durchführen, legen Sie die Anmelde-URL auf \__https://login.windows.net_ fest.  
+	2. Geben Sie einen gültigen **APP-ID-URI** für Ihre App ein.  
 	3. Klicken Sie auf **OK**.  
 
 	![AAD-Anwendung hinzufügen – App-Eigenschaften][9]
 
-7. Nach erfolgreichem Abschluss werden Sie zu der neuen AAD-App weitergeleitet. Wählen Sie **Konfigurieren** aus: ![Contoso-AAD-App][10]
+7. Nach erfolgreichem Abschluss werden Sie zu der neuen AAD-App weitergeleitet. Wählen Sie **Konfigurieren** aus:  
+![Contoso-AAD-App][10]
 
-8. Legen Sie die **Antwort-URL** im Abschnitt _OAuth 2_ auf die Umleitungs-URL fest, die Sie beim Hinzufügen der neuen Office 365-Benutzer-API im Azure-Portal erhalten haben (weiter oben in diesem Thema). Wählen Sie **Anwendung hinzufügen** aus: ![Contoso-AAD-App konfigurieren][11]
+8. Legen Sie die **Antwort-URL** im Abschnitt _OAuth 2_ auf die Umleitungs-URL fest, die Sie beim Hinzufügen der neuen Office 365-Benutzer-API im Azure-Portal erhalten haben (weiter oben in diesem Thema). Wählen Sie **Anwendung hinzufügen** aus:  
+![Contoso-AAD-App konfigurieren][11]
 
 9. Wählen Sie im Fenster **Berechtigungen für andere Anwendungen** die Option **Office 365 Unified API (Vorschau)** und dann **OK**.
 
@@ -118,4 +128,4 @@ In diesem Thema haben Sie PowerApps Enterprise die Office 365-Benutzer-API hinzu
 [10]: ./media/powerapps-create-api-office365-users/contoso-aad-app.PNG
 [11]: ./media/powerapps-create-api-office365-users/contoso-aad-app-configure.PNG
 
-<!---HONumber=AcomDC_0309_2016-->
+<!----HONumber=AcomDC_0309_2016-->

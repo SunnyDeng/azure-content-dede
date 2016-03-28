@@ -38,7 +38,7 @@ Risikoereignisse vom Typ „Kompromittierte Anmeldeinformationen“ werden als R
 
 Mit dieser Art von Risikoereignis werden zwei Anmeldungen identifiziert, die von weit entfernten Orten durchgeführt wurden und bei denen mindestens einer der Orte aufgrund des bisherigen Verhaltens atypisch für den Benutzer ist. Außerdem ist der Zeitraum zwischen den beiden Anmeldungen kürzer als der Zeitraum, der für die Reise des Benutzers vom ersten zum zweiten Ort erforderlich wäre. Dies deutet darauf hin, dass ein anderer Benutzer die gleichen Anmeldeinformationen verwendet.
 
-Bei diesem Machine Learning-Algorithmus werden offensichtliche „*falsch positive Ergebnisse*“ ignoriert, die zum Zustand des unmöglichen Ortswechsels beitragen, z. B. VPNs und regelmäßig von anderen Benutzern der Organisation verwendete Orte. Das System verfügt über einen anfänglichen Lernzeitraum von 14 Tagen, in dem das Anmeldeverhalten des neuen Benutzers erlernt wird.
+Bei diesem Machine Learning-Algorithmus werden offensichtliche „ *falsch positive Ergebnisse* “ ignoriert, die zum Zustand des unmöglichen Ortswechsels beitragen, z. B. VPNs und regelmäßig von anderen Benutzern der Organisation verwendete Orte. Das System verfügt über einen anfänglichen Lernzeitraum von 14 Tagen, in dem das Anmeldeverhalten des neuen Benutzers erlernt wird.
 
 Der unmögliche Ortswechsel ist normalerweise ein zuverlässiger Hinweis darauf, dass sich ein Hacker erfolgreich anmelden konnte. Es kann aber zu falsch positiven Ergebnissen kommen, wenn ein Benutzer mit einem neuen Gerät unterwegs ist oder eine VPN-Verbindung nutzt, die von anderen Personen der Organisation normalerweise nicht verwendet wird. Eine weitere Quelle für falsch positive Ergebnisse sind Anwendungen, von denen Server-IPs fälschlicherweise als Client-IPs übergeben werden. Hierbei kann der Eindruck entstehen, dass Anmeldungen über das Rechenzentrum durchgeführt werden, in dem das Back-End der Anwendung gehostet wird (häufig sind dies Microsoft-Rechenzentren, die den Eindruck entstehen lassen, dass Anmeldungen über im Besitz von Microsoft befindliche IP-Adressen abgewickelt werden). Aufgrund dieser falsch positiven Ergebnisse ergibt sich als Risikostufe für das Risikoereignis „Mittel“.
 
@@ -78,4 +78,4 @@ Bei dieser Art von Risikoereignis handelt es sich um ein Verfahren zur Echtzeita
 
 - [Azure Active Directory Identity Protection](active-directory-identityprotection.md)
 
-<!---HONumber=AcomDC_0309_2016-->
+<!----HONumber=AcomDC_0309_2016-->

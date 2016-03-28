@@ -44,7 +44,8 @@ Derzeit führen wir immer nur eine Aktion sequenziell aus. Dies ist so, damit wi
 Grundsätzlich muss der Clusterressourcen-Manager auch wissen, wann der Cluster als unausgeglichenen gilt und welche Replikate für eine Korrektur verschoben werden müssen. Hierfür gibt es zwei wesentliche Konfigurationseinstellungen: Ausgleichsschwellenwerte und Aktivitätsschwellenwerte.
 
 ## Ausgleichsschwellenwerte
-Ein Ausgleichsschwellenwert ist das Hauptsteuerinstrument für das Auslösen eines proaktiven erneuten Ausgleichs. Der Ausgleichsschwellenwert definiert, wie unausgeglichenen der Cluster für eine bestimmte Metrik sein muss, damit dieser vom Ressourcen-Manager als unausgeglichenen eingestuft wird und bei der nächsten Ausführung ein Ausgleich ausgelöst wird. Ausgleichsschwellenwerte werden als Teil des Clustermanifests metrikbezogen definiert:
+Ein Ausgleichsschwellenwert ist das Hauptsteuerinstrument für das Auslösen eines proaktiven erneuten Ausgleichs. Der Ausgleichsschwellenwert definiert, wie unausgeglichenen der Cluster für eine bestimmte Metrik sein muss, damit dieser vom Ressourcen-Manager als unausgeglichenen eingestuft wird und bei der nächsten Ausführung ein Ausgleich ausgelöst wird. 
+Ausgleichsschwellenwerte werden als Teil des Clustermanifests metrikbezogen definiert:
 
 ``` xml
     <Section Name="MetricBalancingThresholds">
@@ -61,7 +62,8 @@ Bei diesem einfachen Beispiel belegt jeder Dienst nur eine Einheit einer bestimm
 
 ![Ausgleichsschwellenwert – Beispielaktionen][Image2]
 
-Beachten Sie, dass das Unterschreiten des Ausgleichsschwellenwerts kein explizites Ziel ist. Ausgleichsschwellenwerte sind lediglich Trigger.
+Beachten Sie, dass das Unterschreiten des Ausgleichsschwellenwerts kein explizites Ziel ist. 
+Ausgleichsschwellenwerte sind lediglich Trigger.
 
 ## Aktivitätsschwellenwerte
 Mitunter ist die Gesamtlast des Clusters niedrig, obwohl Knoten relativ unausgeglichen sind. Der Grund hierfür kann bloß die Tageszeit sein oder dass der Cluster neu ist und einem Bootstrapping unterzogen wird. In beiden Fällen möchten Sie möglicherweise auf einen Lastenausgleich verzichten, da der Nutzen sehr gering ist und Sie bloß viel Zeit für das Verschieben von Netzwerk- und Computeressourcen aufwenden. Im Ressourcen-Manager gibt es mit dem Aktivitätsschwellenwert ein weiteres Steuerungsinstrument, mit dem Sie eine absolute Untergrenze für eine Aktivität angeben können. Wenn eine Knoten nicht mindestens diese Last aufweist, wird kein Ausgleich ausgelöst, selbst wenn der Ausgleichsschwellenwert erreicht wird. Nehmen wir als Beispiel Berichte mit den folgenden Summen für die Nutzung auf diesen Knoten. Nehmen wir außerdem an, dass wir unseren Ausgleichsschwellenwert 3 beibehalten, aber nun auch den Aktivitätsschwellenwert 1536 haben. Obgleich im ersten Fall der Cluster gemäß dem Ausgleichsschwellenwert unausgeglichen ist, erreicht kein Knoten den Mindestaktivitätsschwellenwert, weshalb wir nicht eingreifen. Im folgenden Beispiel überschreitet Knoten 1 ein wenig den Aktivitätsschwellenwert, weshalb ein Ausgleich erfolgt.
@@ -103,4 +105,4 @@ Der Ressourcen-Manager ermittelt bei jeder Ausführung automatisch, welche Diens
 [Image4]: ./media/service-fabric-cluster-resource-manager-balancing/cluster-resource-manager-balancing-services-together1.png
 [Image5]: ./media/service-fabric-cluster-resource-manager-balancing/cluster-resource-manager-balancing-services-together2.png
 
-<!---HONumber=AcomDC_0316_2016-->
+<!----HONumber=AcomDC_0316_2016-->
