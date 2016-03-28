@@ -99,7 +99,7 @@ Sie können jetzt Excel zum Filtern und Sortieren verwenden. Sie können nach Wu
 2. Klicken Sie im Menü **Ansicht** auf **Cloud-Explorer**. Oder drücken Sie einfach **STRG+\\, STRG+X**.
 3. Wählen Sie in **Cloud-Explorer** die Option **Ressourcentypen** aus. Die andere verfügbare Option ist **Ressourcengruppen**.
 4. Erweitern Sie **Speicherkonten**, das Standardspeicherkonto für Ihren Cluster, und klicken Sie dann **Tabellen**.
-5. Doppelklicken Sie auf **hadoopservicelog**.
+5. Doppelklicken Sie auf „hadoopservicelog“.
 6. Fügen Sie einen Filter hinzu. Beispiel:
 	
 		TraceLevel eq 'ERROR'
@@ -341,4 +341,4 @@ Einige dieser Fehlermeldungen können auch im Azure-Portal angezeigt werden, wen
 - [Aktivieren von Heapdumps für Hadoop-Dienste auf Linux-basierten HDInsight-Clustern](hdinsight-hadoop-collect-debug-heap-dump-linux.md)
 - [Verwalten von HDInsight-Clustern mithilfe der Ambari-Webbenutzeroberfläche](hdinsight-hadoop-manage-ambari.md)
 
-<!---HONumber=AcomDC_0316_2016-->
+<!----HONumber=AcomDC_0316_2016-->

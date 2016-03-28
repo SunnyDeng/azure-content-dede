@@ -35,7 +35,8 @@ Die **Status** Spalte gibt Ihnen die wichtigste Information und zeigt das schwer
 | --- | --- |
 | stopped-* | Die Ausführung konnte nicht abgeschlossen werden. Beispielsweise wenn das Remotesystem ausgefallen ist und nicht kontaktiert werden kann. |
 | stopped-error-limit | Es gibt mehr als 5.000 Fehler. Die Ausführung wurde aufgrund der großen Anzahl von Fehlern automatisch beendet. |
-| completed-*-errors | Die Ausführung ist abgeschlossen, jedoch sind Fehler aufgetreten (weniger als 5.000) die untersucht werden sollten. | | completed-*-warnings | Die Ausführung wurde abgeschlossen, einige Daten sind jedoch nicht im erwarteten Zustand. Wenn Fehler auftreten, ist dies normalerweise nur ein Symptom. Bis Sie die Fehler behoben haben, sollten Sie keine Warnungen untersuchen. |
+| completed-*-errors | Die Ausführung ist abgeschlossen, jedoch sind Fehler aufgetreten (weniger als 5.000) die untersucht werden sollten. | 
+| completed-*-warnings | Die Ausführung wurde abgeschlossen, einige Daten sind jedoch nicht im erwarteten Zustand. Wenn Fehler auftreten, ist dies normalerweise nur ein Symptom. Bis Sie die Fehler behoben haben, sollten Sie keine Warnungen untersuchen. |
 | Erfolg | Keine Probleme |
 
 Wenn Sie eine Zeile auswählen, wird der unteren Bereich aktualisiert, und die Details dieser Ausführung angezeigt. Ganz links neben dem unteren Teil erscheint möglicherweise eine Liste mit **Schritt #**. Diese wird nur angezeigt, wenn Sie mehrere Domänen in Ihrer Gesamtstruktur haben, und jede Domäne als ein Schritt dargestellt wird. Den Domänennamen finden Sie unter der Überschrift **Partition**. Unter **Synchronisierungsstatistiken** finden Sie weitere Informationen über die Anzahl der Änderungen, die verarbeitet wurden. Sie können auf die Links klicken, um eine Liste der geänderten Objekte zu erhalten. Wenn Sie Objekte mit einem Fehler haben, werden diese unter **Synchronisierungsfehler** angezeigt.
@@ -56,4 +57,4 @@ Weitere Informationen zur Konfiguration der [Azure AD Connect-Synchronisierung](
 
 Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=AcomDC_0309_2016-->
+<!----HONumber=AcomDC_0309_2016-->
