@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Überwachen von XTP-In-Memory-Speicher | Microsoft Azure"
-	description="Einschätzen und Überwachen der XTP-In-Memory-Speicherverwendung und -kapazität; Beheben des Kapazitätsfehlers 41805"
+	description="Einschätzen und Überwachen der XTP-In-Memory-Speicherverwendung und -kapazität; Beheben des Kapazitätsfehlers 41823"
 	services="sql-database"
 	documentationCenter=""
 	authors="jodebrui"
@@ -20,7 +20,7 @@
 
 # Überwachen des In-Memory-OLTP-Speichers
 
-Bei der Verwendung von [In-Memory-OLTP](sql-database-in-memory.md) befinden sich die Daten der speicheroptimierten Tabellen und Tabellenvariablen im In-Memory-OLTP-Speicher. Jede Premium-Serviceebene hat eine maximale In-Memory-Speichergröße, die im [Artikel zu Serviceebenen von SQL-Datenbanken](sql-database-service-tiers.md#service-tiers-for-single-databases) dokumentiert ist. Wenn dieses Limit überschritten wird, treten bei Einfüge- und Aktualisierungsvorgänge möglicherweise Fehler auf (mit Fehlercode 41805). An diesem Punkt müssen Sie entweder Daten löschen, um Speicherplatz freizugeben, oder ein Upgrade der Leistungsstufe Ihrer Datenbank durchführen.
+Bei der Verwendung von [In-Memory-OLTP](sql-database-in-memory.md) befinden sich die Daten der speicheroptimierten Tabellen und Tabellenvariablen im In-Memory-OLTP-Speicher. Jede Premium-Serviceebene hat eine maximale In-Memory-Speichergröße, die im [Artikel zu Serviceebenen von SQL-Datenbanken](sql-database-service-tiers.md#service-tiers-for-single-databases) dokumentiert ist. Wenn dieses Limit überschritten wird, treten bei Einfüge- und Aktualisierungsvorgängen möglicherweise Fehler auf (Fehlercode: 41823). An diesem Punkt müssen Sie entweder Daten löschen, um Speicherplatz freizugeben, oder ein Upgrade der Leistungsstufe Ihrer Datenbank durchführen.
 
 ## Bestimmen, ob genügend In-Memory-Speicherplatz für die Daten vorhanden ist
 
@@ -43,11 +43,11 @@ Oder verwenden Sie folgende Abfrage, um die In-Memory-Speicherverwendung anzuzei
     select xtp_storage_percent from sys.dm_db_resource_stats
 
 
-## Korrigieren von Fehlern aufgrund von ungenügendem Arbeitsspeicher – Fehler 41805
+## Korrigieren von Fehlern aufgrund von fehlendem Speicherplatz – Fehler 41823
 
-Wenn nicht genügend Speicherplatz zur Verfügung steht, treten bei den Vorgängen INSERT, UPDATE und CREATE Fehler mit Fehlercode 41805 auf.
+Wenn nicht genügend Speicherplatz zur Verfügung steht, treten bei den Vorgängen INSERT, UPDATE und CREATE Fehler mit Fehlercode 41823 auf.
 
-Die Fehlermeldung 41805 weist darauf hin, dass die speicheroptimierten Tabellen und Tabellenvariablen die maximale Speichergröße überschritten haben.
+Der Fehlercode 41823 weist darauf hin, dass die speicheroptimierten Tabellen und Tabellenvariablen die maximale Speichergröße überschritten haben.
 
 Beheben Sie den Fehler mit einer der folgenden Methoden:
 
@@ -58,4 +58,4 @@ Beheben Sie den Fehler mit einer der folgenden Methoden:
 ## Nächste Schritte
 Weitere Informationen zum [Überwachen von Azure SQL-Datenbank mit dynamischen Verwaltungssichten](sql-database-monitoring-with-dmvs.md)
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0316_2016-->

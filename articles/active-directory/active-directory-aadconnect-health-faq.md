@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/17/2016"
+	ms.date="03/08/2016"
 	ms.author="billmath;vakarand"/>
 
 
@@ -92,6 +92,11 @@ Azure AD Connect Health-Warnungen werden basierend auf einer Erfolgsbedingung au
 
 Sie müssen die TCP/UDP-Ports 80, 443 und 5671 öffnen, damit der Azure AD Connect Health-Agent mit den Azure AD Connect Health-Dienstendpunkten kommunizieren kann.
 
+
+**F: Warum sehe ich zwei Server mit dem gleichen Namen im Azure AD Connect Health-Portal?**
+
+Wenn Sie einen Agent von einem Server entfernen, wird der Server nicht automatisch aus dem Azure AD Connect-Portal entfernt. Wenn Sie also manuell einen Agent von einem Server oder den Server selbst entfernt haben, müssen Sie den Servereintrag manuell aus dem Azure AD Connect Health-Portal löschen. Weitere Informationen finden Sie unter [Löschen eines Servers oder einer Dienstinstanz](active-directory-aadconnect-health-operations.md#delete-a-server-or-service-instance). Wenn Sie das Image eines Servers neu erstellt oder einen neuen Server mit den gleichen Details(z. B. Computername) erstellt haben, den Server aber nicht aus dem Azure AD Connect Health-Portal entfernt und dann den Agent auf dem neuen Server installiert haben, werden jetzt unter Umständen zwei Einträge für den Server angezeigt. In diesem Fall sollten Sie den Eintrag für den älteren Server manuell löschen. Die Daten mit diesem Eintrag sind in der Regel veraltet.
+
 ## Verwandte Links
 
 * [Azure AD Connect Health](active-directory-aadconnect-health.md)
@@ -101,4 +106,4 @@ Sie müssen die TCP/UDP-Ports 80, 443 und 5671 öffnen, damit der Azure AD Conne
 * [Verwenden von Azure AD Connect Health für die Synchronisierung](active-directory-aadconnect-health-sync.md)
 * [Azure AD Connect Health: Versionsverlauf](active-directory-aadconnect-health-version-history.md)
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0316_2016-->

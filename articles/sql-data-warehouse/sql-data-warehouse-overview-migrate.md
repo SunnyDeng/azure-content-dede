@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="03/03/2016"
+   ms.date="03/14/2016"
    ms.author="jrj;barbkess;sonyama"/>
 
 # Migrieren Ihrer Lösung nach SQL Data Warehouse
@@ -45,11 +45,11 @@ Sehen Sie sich außerdem die [Übersicht zum Laden][] an, die verschiedene Optio
 
 [Entwicklungsübersicht]: sql-data-warehouse-overview-develop.md
 [Übersicht zum Laden]: sql-data-warehouse-overview-load.md
-[Transact-SQL-Referenz]: sql-data-warehouse-overview-migrate.md
+[Transact-SQL-Referenz]: sql-data-warehouse-overview-reference.md
 
 <!--MSDN references-->
 
 
 <!--Other Web references-->
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

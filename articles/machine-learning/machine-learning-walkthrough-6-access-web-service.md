@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Schritt 6: Zugreifen auf den Machine Learning-Webdienst | Microsoft Azure"
-	description="Exemplarische Vorgehensweise zur Entwicklung einer Vorhersagelösung – Schritt 6: Zugreifen auf einen aktiven Azure Machine Learning-Webdienst"
+	pageTitle="Schritt 6: Zugreifen auf den Machine Learning-Webdienst | Microsoft Azure"
+	description="Exemplarische Vorgehensweise zur Entwicklung einer Vorhersagelösung – Schritt 6: Zugreifen auf einen aktiven Azure Machine Learning-Webdienst"
 	services="machine-learning"
 	documentationCenter=""
 	authors="garyericson"
@@ -13,11 +13,11 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/03/2016"
+	ms.date="03/09/2016"
 	ms.author="garye"/>
 
 
-# Anleitung Schritt 6: Zugreifen auf den Azure Machine Learning-Webdienst
+# Anleitung Schritt 6: Zugreifen auf den Azure Machine Learning-Webdienst
 
 Dies ist der letzte Schritt der exemplarischen Vorgehensweise zum [Entwickeln einer Predictive Analytics-Lösung mit Azure Machine Learning](machine-learning-walkthrough-develop-predictive-solution.md).
 
@@ -44,4 +44,4 @@ Weitere Informationen zur Verwendung von Web-App-Vorlagen finden Sie unter [Verw
 
 Sie können auch eine benutzerdefinierte Anwendung entwickeln, die mithilfe von in den Programmiersprachen R, C# und Python bereitgestelltem Startcode auf den Webdienst zugreift. Vollständige Details finden Sie unter [Gewusst wie: Nutzen eines Azure Machine Learning-Webdiensts, der von einem Machine Learning-Experiment aus veröffentlicht wurde](machine-learning-consume-web-services.md).
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0316_2016-->

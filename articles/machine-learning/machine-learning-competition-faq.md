@@ -3,7 +3,7 @@
 	description="Häufig gestellte Fragen zu Microsoft Azure Machine Learning-Wettbewerben"
 	services="machine-learning"
 	documentationCenter=""
-	authors="garyericson"
+	authors="hning86"
 	manager="paulettm"
 	editor="cgronlun"/>
 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="03/08/2016"
+	ms.date="03/11/2016"
 	ms.author="haining;chlovel;garye"/>
 
 # Microsoft Azure Machine Learning-Wettbewerb – FAQ
@@ -70,4 +70,4 @@ Microsoft überprüft die Ergebnisse der privaten Bestenliste und wird dann Kont
 
 Wenn Sie einen Wettbewerb gewonnen haben, müssen Sie eine Teilnahmeberechtigungs- und Lizenzerklärung sowie ein Freigabeformular unterschreiben. Dieses Formular bekräftigt die Wettbewerbsregeln. Gewinner müssen ein US-Steuerformular „W-9“ oder „W-8BEN“ ausfüllen, wenn Sie keine Steuerzahler in den USA sind.
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

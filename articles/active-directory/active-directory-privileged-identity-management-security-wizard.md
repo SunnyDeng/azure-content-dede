@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Der Sicherheits-Assistent von Azure Privileged Identity Management"
-   description="Bei der ersten Verwendung der Erweiterung „Azure Privileged Identity Management“ wird ein Sicherheits-Assistent angezeigt. Dieser Artikel beschreibt die Schritte zur Verwendung des Assistenten."
+   pageTitle="Der Sicherheits-Assistent von Azure AD Privileged Identity Management"
+   description="Bei der ersten Verwendung der Erweiterung Azure Active Directory Privileged Identity Management wird ein Sicherheits-Assistent angezeigt. Dieser Artikel beschreibt die Schritte zur Verwendung des Assistenten."
    services="active-directory"
    documentationCenter=""
    authors="kgremban"
@@ -13,10 +13,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="01/21/2016"
+   ms.date="03/08/2016"
    ms.author="kgremban"/>
 
-# Der Sicherheits-Assistent von Azure Privileged Identity Management
+# Der Sicherheits-Assistent von Azure AD Privileged Identity Management
 
 Beim ersten Ausführen von Azure Privileged Identity Management (PIM) wird ein Assistent angezeigt. Der Assistent bietet Ihnen Einblick in die Sicherheitsrisiken privilegierter Identitäten und hilft Ihnen, diese Risiken mithilfe von Privileged Identity Management zu reduzieren.
 
@@ -32,7 +32,7 @@ Mit **DEFINIEREN SIE TEMPORÄRE ADMINISTRATOREINSTELLUNGEN** können Sie Multi-F
 
 Ihnen stehen drei Optionen zum Ändern des Zeitfensters eines globalen Administrators zur Verfügung:
 
-1.  Klicken Sie auf die Schaltfläche **Alle als temporär festlegen**, um alle globalen Administratoren als temporäre Administratoren festzulegen.
+1.  Klicken Sie auf die Schaltfläche **Alle als temporär festlegen**, um alle globalen Administratoren als temporäre Administratoren festzulegen. Wählen Sie diese Option nur, wenn alle Administratoren Organisationskonten besitzen und sich für Azure MFA registriert haben.
 
 2.  Klicken Sie auf die Schaltfläche **Alle als permanent festlegen**, um alle globalen Administratoren als permanente Administratoren festzulegen.
 
@@ -52,13 +52,13 @@ Damit Administratoren eine E-Mail empfangen können, wenn Rollen aktiviert werde
 
 ## Erfordern von Multi-Factor Authentication
 
-Wenn Sie möchten, dass Administratoren zum Anmelden bei ihren Konten und zum Anfordern einer Erweiterung ihrer Rolle Multi-Factor Authentication (MFA) verwenden müssen, klicken Sie zum Aktivieren von MFA auf die Schaltfläche **Aktivieren**. Sie können diese Funktion später deaktivieren.
+Wenn Sie möchten, dass Administratoren zum Anmelden bei ihren Konten und zum Anfordern einer Erweiterung ihrer Rolle Multi-Factor Authentication (MFA) verwenden müssen, klicken Sie zum Aktivieren von MFA auf die Schaltfläche **Aktivieren**.
 
 <!--For more information about MFA and PIM, click here. PLACEHOLDER: NEED LINK TO MFA DOC.-->
 
 Wählen Sie die Rollen aus, auf die diese Einstellungen angewendet werden. Klicken Sie auf **OK**.
 
-> [AZURE.WARNING] Zu diesem Zeitpunkt müssen Sie über mindestens zwei Sicherheitsadministratoren verfügen. Wenn nur ein Sicherheitsadministrator vorhanden ist, der nicht als permanenter Administrator festgelegt und für den nicht MFA eingerichtet ist, kann der Benutzer bei Ablauf der Rollenzuweisung PIM nicht verwalten.
+> [AZURE.WARNING] Zu diesem Zeitpunkt müssen mehrere Sicherheitsadministratoren mit einem Organisationskonto (nicht einem Microsoft-Konto) vorhanden sein. Wenn nur ein Sicherheitsadministrator vorhanden ist, der nicht als permanenter Administrator festgelegt und für den nicht MFA eingerichtet ist, kann der Benutzer bei Löschung des Kontos PIM nicht verwalten.
 
 Klicken Sie anschließend auf die Schaltfläche **OK**.
 
@@ -67,4 +67,4 @@ Nachdem Sie Änderungen vorgenommen haben, wird der Assistent nicht mehr angezei
 ## Nächste Schritte
 [AZURE.INCLUDE [active-directory-privileged-identity-management-toc](../../includes/active-directory-privileged-identity-management-toc.md)]
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0316_2016-->

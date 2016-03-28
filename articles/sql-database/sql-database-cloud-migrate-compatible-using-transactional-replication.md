@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-management"
-   ms.date="12/17/2015"
+   ms.date="03/14/2016"
    ms.author="carlrab"/>
 
 # Migrieren der SQL Server-Datenbank zur SQL-Datenbank per Transaktionsreplikation
@@ -29,8 +29,8 @@ Die Transaktionsreplikation ist eine Technologie, die seit SQL Server 6.5 in SQL
  - SQL Server 2014 SP1 CU3 und höher
  - SQL Server 2014 RTM CU10 und höher
  - SQL Server 2012 SP2 CU8 und höher
- - SQL Server 2012 SP3 
+ - SQL Server 2013 SP3 (nach der Veröffentlichung)
 
 Sie können die Transaktionsreplikation auch zum Migrieren einer Teilmenge Ihrer lokalen Datenbank verwenden. Die Veröffentlichung, die Sie zu Azure SQL-Datenbank replizieren, kann auf eine Teilmenge der Tabellen in der replizierten Datenbank beschränkt werden. Für jede replizierte Tabelle können Sie die Daten außerdem auf eine Teilmenge der Zeilen bzw. eine Teilmenge der Spalten beschränken.
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0316_2016-->

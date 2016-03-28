@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Lastenausgleich für einen Cluster mit dem Clusterressourcen-Manager von Azure Service Fabric"
+   pageTitle="Lastenausgleich für einen Cluster mit dem Clusterressourcen-Manager von Azure Service Fabric | Microsoft Azure"
    description="Eine Einführung in den Lastenausgleich für einen Cluster mit dem Clusterressourcen-Manager von Service Fabric."
    services="service-fabric"
    documentationCenter=".net"
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="03/03/2016"
+   ms.date="03/10/2016"
    ms.author="masnider"/>
 
 # Lastenausgleich für Service Fabric-Cluster
@@ -25,6 +25,7 @@ Die erste Gruppen von Steuerungsmöglichkeiten, die den Lastenausgleich bestimme
 2.	Einschränkungsüberprüfungen – In dieser Phase erfolgt eine Überprüfung auf und Korrektur bei Verstößen gegen verschiedene Platzierungseinschränkungen (Regeln) im System. Beispiele hierfür sind z. B. das Sicherstellen, dass Knoten nicht ihre Kapazität überschreiten und die Platzierungseinschränkungen eines Diensts erfüllt werden (mehr dazu weiter unten).
 3.	Lastenausgleich – In dieser Phase wird geprüft, ob basierend auf dem gewünschten Ausgleichsgrad für verschiedene Metriken ein proaktiver erneuter Ausgleich erforderlich ist. Falls ja, wird versucht, eine ausgeglichenere Anordnung im Cluster zu finden.
 
+## Konfigurieren von Schritten und Timern für den Clusterressourcen-Manager
 Jede dieser Phasen wird durch einen anderen Timer gesteuert, der die Häufigkeit bestimmt. Wenn Sie z. B. stündlich neue Dienstworkloads im Cluster platzieren möchten (um diese zu Batches zusammenzufassen), jedoch regelmäßig alle paar Sekunden Lastenausgleichsprüfungen wünschen, können Sie diese erzwingen. Wenn die einzelnen Timer ausgelöst werden, wird ein Kennzeichen festgelegt, das besagt, dass wir uns um diesen Teil der Aufgaben des Ressourcen-Managers kümmern müssen. Seine Auswahl erfolgt dann im nächsten Gesamtdurchlauf durch den Zustandsautomat (deshalb werden diese Konfigurationen als „Mindestintervall“ definiert). Standardmäßig überprüft der Ressourcen-Manager seinen Zustand und wendet Updates jede Zehntelsekunde an und legt die Kennzeichen für die Platzierungs- und Einschränkungsüberprüfung sekündlich sowie das Kennzeichen für den Ausgleich alle fünf Sekunden fest.
 
 ClusterManifest.xml
@@ -60,7 +61,10 @@ Bei diesem einfachen Beispiel belegt jeder Dienst nur eine Einheit einer bestimm
 
 ![Ausgleichsschwellenwert – Beispielaktionen][Image2]
 
-Beachten Sie, dass das Unterschreiten des Ausgleichsschwellenwerts kein explizites Ziel ist. Ausgleichsschwellenwerte sind lediglich Trigger. AktivitätsschwellenwertMitunter ist die Gesamtlast des Clusters niedrig, obwohl Knoten relativ unausgeglichen sind. Der Grund hierfür kann bloß die Tageszeit sein oder dass der Cluster neu ist und einem Bootstrapping unterzogen wird. In beiden Fällen möchten Sie möglicherweise auf einen Lastenausgleich verzichten, da der Nutzen sehr gering ist und Sie bloß viel Zeit für das Verschieben von Netzwerk- und Computeressourcen aufwenden. Im Ressourcen-Manager gibt es mit dem Aktivitätsschwellenwert ein weiteres Steuerungsinstrument, mit dem Sie eine absolute Untergrenze für eine Aktivität angeben können. Wenn eine Knoten nicht mindestens diese Last aufweist, wird kein Ausgleich ausgelöst, selbst wenn der Ausgleichsschwellenwert erreicht wird. Nehmen wir als Beispiel Berichte mit den folgenden Summen für die Nutzung auf diesen Knoten. Nehmen wir außerdem an, dass wir unseren Ausgleichsschwellenwert 3 beibehalten, aber nun auch den Aktivitätsschwellenwert 1536 haben. Obgleich im ersten Fall der Cluster gemäß dem Ausgleichsschwellenwert unausgeglichen ist, erreicht kein Knoten den Mindestaktivitätsschwellenwert, weshalb wir nicht eingreifen. Im folgenden Beispiel überschreitet Knoten 1 ein wenig den Aktivitätsschwellenwert, weshalb ein Ausgleich erfolgt.
+Beachten Sie, dass das Unterschreiten des Ausgleichsschwellenwerts kein explizites Ziel ist. Ausgleichsschwellenwerte sind lediglich Trigger.
+
+## Aktivitätsschwellenwerte
+Mitunter ist die Gesamtlast des Clusters niedrig, obwohl Knoten relativ unausgeglichen sind. Der Grund hierfür kann bloß die Tageszeit sein oder dass der Cluster neu ist und einem Bootstrapping unterzogen wird. In beiden Fällen möchten Sie möglicherweise auf einen Lastenausgleich verzichten, da der Nutzen sehr gering ist und Sie bloß viel Zeit für das Verschieben von Netzwerk- und Computeressourcen aufwenden. Im Ressourcen-Manager gibt es mit dem Aktivitätsschwellenwert ein weiteres Steuerungsinstrument, mit dem Sie eine absolute Untergrenze für eine Aktivität angeben können. Wenn eine Knoten nicht mindestens diese Last aufweist, wird kein Ausgleich ausgelöst, selbst wenn der Ausgleichsschwellenwert erreicht wird. Nehmen wir als Beispiel Berichte mit den folgenden Summen für die Nutzung auf diesen Knoten. Nehmen wir außerdem an, dass wir unseren Ausgleichsschwellenwert 3 beibehalten, aber nun auch den Aktivitätsschwellenwert 1536 haben. Obgleich im ersten Fall der Cluster gemäß dem Ausgleichsschwellenwert unausgeglichen ist, erreicht kein Knoten den Mindestaktivitätsschwellenwert, weshalb wir nicht eingreifen. Im folgenden Beispiel überschreitet Knoten 1 ein wenig den Aktivitätsschwellenwert, weshalb ein Ausgleich erfolgt.
 
 ![Beispiel eines Aktivitätsschwellenwerts][Image3]
 
@@ -87,11 +91,10 @@ Der Ressourcen-Manager ermittelt bei jeder Ausführung automatisch, welche Diens
 
 ![Gemeinsamer Lastenausgleich von Diensten][Image5]
 
-<!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## Nächste Schritte
-- [Informationen zu Metriken](service-fabric-cluster-resource-manager-metrics.md)
-- [Informationen zu Drosselungen für Ressourcen-Manager](service-fabric-cluster-resource-manager-advanced-throttling.md)
-- [Informationen zu den Kosten von Dienstverschiebungen](service-fabric-cluster-resource-manager-movement-cost.md)
+- Metriken bestimmen, wie der Clusterressourcen-Manager von Service Fabric den Ressourcenverbrauch und die Kapazität im Cluster verwaltet. Weitere Informationen zu Metriken und deren Konfiguration finden Sie in [diesem Artikel](service-fabric-cluster-resource-manager-metrics.md).
+- Bewegungskosten sind eine Möglichkeit, dem Clusterressourcen-Manager mitzuteilen, dass bestimmte Dienste teurer zu bewegen sind als andere. Weitere Informationen zu Bewegungskosten finden Sie in [diesem Artikel](service-fabric-cluster-resource-manager-movement-cost.md).
+- Der Clusterressourcen-Manager bietet mehrere Drosselungen, die Sie konfigurieren können, um Änderungen im Cluster zu verlangsamen. Sie sind normalerweise nicht erforderlich, aber bei Bedarf finden Sie [hier](service-fabric-cluster-resource-manager-advanced-throttling.md) weitere Informationen.
 
 
 [Image1]: ./media/service-fabric-cluster-resource-manager-balancing/cluster-resrouce-manager-balancing-thresholds.png
@@ -100,4 +103,4 @@ Der Ressourcen-Manager ermittelt bei jeder Ausführung automatisch, welche Diens
 [Image4]: ./media/service-fabric-cluster-resource-manager-balancing/cluster-resource-manager-balancing-services-together1.png
 [Image5]: ./media/service-fabric-cluster-resource-manager-balancing/cluster-resource-manager-balancing-services-together2.png
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

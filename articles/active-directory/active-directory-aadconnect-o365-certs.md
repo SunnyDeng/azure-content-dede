@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="03/07/2016"
+	ms.date="03/14/2016"
 	ms.author="billmath"/>
 
 
@@ -55,7 +55,7 @@ https://(your_FS_name)/federationmetadata/2007-06/federationmetadata.xml
 
 Dabei wird `(your_FS_name) ` durch den Verbunddiensthostnamen ersetzt, den Ihre Organisation verwendet, z. B. "fs.contoso.com". Wenn Sie diese beiden Einstellungen erfolgreich überprüfen können, müssen Sie nichts weiter tun.
 
-Beispiel: https://fs.contospocom/federationmetadata/2007-06/federationmetadata.xml
+Beispiel: https://fs.contoso.com/federationmetadata/2007-06/federationmetadata.xml
 
 ## Wenn Sie das Zertifikat manuell aktualisieren möchten
 Jedes Mal, wenn Sie Ihre AD FS-Zertifikate manuell aktualisieren, müssen Sie Ihre Office 365-Domäne mit dem PowerShell-Befehl Update-MsolFederatedDomain aktualisieren, wie im Abschnitt [hier](#if-your-metadata-is-not-publicly-accessible) in den Schritten zum manuellen Aktualisieren der Eigenschaften der Office 365-Verbundvertrauensstellung beschrieben.
@@ -101,4 +101,4 @@ Wenn die AutocertificateRollover-Einstellung "True" ist, aber die Verbundmetadat
 
 >[AZURE.NOTE] Wenn Sie mehrere Domänen der obersten Ebene unterstützen müssen, z. B. "contoso.com" und "fabrikam.com", müssen Sie den SupportMultipleDomain-Switch mit den Cmdlets verwenden. Weitere Informationen finden Sie unter "Unterstützen mehrerer Domänen auf oberster Ebene". Stellen Sie abschließend sicher, dass alle Webanwendungsproxy-Server mit dem [Windows Server Mai 2014](http://support.microsoft.com/kb/2955164)-Rollup aktualisiert wurden. Andernfalls können sich die Proxys möglicherweise nicht mit dem neuen Zertifikat aktualisieren, was zu einem Ausfall führt.
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

@@ -1,8 +1,8 @@
 #### So erstellen Sie einen neuen Dienst
 
-1.  Melden Sie sich mit Ihren Microsoft-Kontoanmeldeinformationen unter folgender URL beim klassischen Azure-Portal an: [https://manage.windowsazure.com/](https://manage.windowsazure.com/)
+1.  Melden Sie sich mit Ihren Microsoft-Kontoanmeldeinformationen unter folgender URL beim klassischen Azure-Portal an: [https://manage.windowsazure.com/](https://manage.windowsazure.com/). Falls Sie das Gerät im Government-Portal bereitstellen, melden Sie sich bei [https://manage.windowsazure.us/](https://manage.windowsazure.us/) an.
 
-2.  Klicken Sie im Portal auf **Neu > Datendienste > StorSimple Manager > Schnellerfassung**.
+2.  Klicken Sie im Portal auf **Neu > Data Services > StorSimple Manager > Schnellerfassung**.
 
 3.  Gehen Sie im angezeigten Formular folgendermaßen vor:
 
@@ -14,7 +14,9 @@
 
 	 -   Falls Sie über weitere Workloads in Azure verfügen, die über Ihr StorSimple-Gerät bereitgestellt werden sollen, empfiehlt sich die Verwendung dieses Rechenzentrums.
 
-   	 -   StorSimple Manager und der Azure-Speicher können sich an zwei verschiedenen Standorten befinden. In einem solchen Fall müssen Sie das StorSimple Manager- und das Azure-Speicherkonto separat erstellen. Um ein Azure-Speicherkonto zu erstellen, wechseln Sie zum Azure Storage-Dienst im Portal und befolgen Sie die Schritte unter [Erstellen eines Azure Storage-Kontos](storage-create-storage-account.md#create-a-storage-account). Nach dem Erstellen dieses Kontos fügen Sie es dem StorSimple Manager-Dienst hinzu, indem Sie die Schritte unter [Konfigurieren eines neuen Speicherkontos für den Dienst](#optional-step-configure-a-new-storage-account-for-the-service) ausführen.
+   	 -   StorSimple Manager und der Azure-Speicher können sich an zwei verschiedenen Standorten befinden. In einem solchen Fall müssen Sie das StorSimple Manager- und das Azure-Speicherkonto separat erstellen. Um ein Azure-Speicherkonto zu erstellen, wechseln Sie zum Azure-Speicherdienst im Portal, und befolgen Sie die Schritte unter [Erstellen eines Azure-Speicherkontos](storage-create-storage-account.md#create-a-storage-account). Nach dem Erstellen dieses Kontos fügen Sie es dem StorSimple Manager-Dienst hinzu, indem Sie die Schritte unter [Konfigurieren eines neuen Speicherkontos für den Dienst](#optional-step-configure-a-new-storage-account-for-the-service) ausführen.
+   	 
+   	 -   Beim Bereitstellen des virtuellen Geräts im Government-Portal ist der StorSimple Manager-Dienst in den US-Standorten Iowa und Virginia verfügbar.
    	 
    	 	
 	1.  Wählen Sie ein **Abonnement** aus der Dropdownliste aus. Das Abonnement ist mit Ihrem Abrechnungskonto verknüpft. Dieses Feld wird nicht angezeigt, wenn Sie nur ein Abonnement besitzen.
@@ -31,4 +33,4 @@
 
 	Der Status des Diensts ändert sich in **Aktiv**.
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

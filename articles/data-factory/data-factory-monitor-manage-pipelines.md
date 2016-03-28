@@ -378,8 +378,10 @@ Nachdem die Ressourcengruppenbereitstellung erfolgreich abgeschlossen wurde, wer
 	Parameters        :
 	Outputs           :
 
+> [AZURE.NOTE] Sie können die REST-API [Warnungsregel erstellen](https://msdn.microsoft.com/library/azure/dn510366.aspx) verwenden, um eine Regel für Warnungen zu erstellen. Die JSON-Nutzlast ähnelt dem JSON-Beispiel weiter oben.
+
 #### Abrufen der Liste von Azure-Ressourcengruppenbereitstellungen
-Um die Liste der bereitgestellten Azure-Ressourcengruppen abzurufen, verwenden Sie das Cmdlet **Get-AzureRmResourceGroupDeployment**, wie im folgenden Beispiel gezeigt:
+Um die Liste der bereitgestellten Azure-Ressourcengruppen abzurufen, verwenden Sie das Cmdlet **Get-AzureRmResourceGroupDeployment** wie im folgenden Beispiel gezeigt:
 
 	Get-AzureRmResourceGroupDeployment -ResourceGroupName adf
 	
@@ -545,7 +547,7 @@ Sie können Warnungen zu Metriken auf die gleiche Weise wie zu Ereignissen berei
  
 Ersetzen Sie "subscriptionId", "resourceGroupName" und "dataFactoryName" im obigen Beispiel durch die entsprechenden Werte.
 
-*MetricName* unterstützt ab jetzt zwei Werte:
+*metricName* unterstützt ab jetzt 2 Werte:
 - FailedRuns
 - SuccessfulRuns
 
@@ -583,4 +585,4 @@ Sie können auch alle zugehörigen Ressourcen (z. B. mit der Data Factory verkn�
 
 ![Dialogfeld „Ressourcen verschieben“](./media/data-factory-monitor-manage-pipelines/MoveResources.png)
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

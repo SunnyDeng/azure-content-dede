@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/03/2016"
+	ms.date="03/09/2016"
 	ms.author="chhavib;cgronlun;garye"/>
 
 
@@ -63,7 +63,7 @@ Führen Sie die folgenden Schritte aus, um mit einem Experiment zum Cortana Anal
 
 Eine *Sammlung* ist eine Liste verwandter Elemente aus dem Cortana Analytics-Katalog, die zum späteren Verweisen, Verwenden oder Teilen gruppiert sind. Die Sammlung kann Elemente enthalten, deren Besitzer Sie sind oder bei denen es sich um Beiträge aus der Community handelt.
 
-Beispielsweise können Sie eine Sammlung verwenden, um Elemente zu einem bestimmten Thema zu gruppieren, oder Sie können die Gruppierung für ein Experiment mit mehreren Schritten durchführen, mit dem ein komplexes Problem gelöst wird. Die ersten Sammlungen von Microsoft bestehen aus Machine Learning-Experimentvorlagen mit mehreren Schritten zum Lösen von realen Problemen, z. B. Erkennung von Onlinebetrug, Textklassifizierung, Prognosenerstellung für den Einzelhandel und vorbeugende Wartung.
+Beispielsweise können Sie eine Sammlung verwenden, um Elemente zu einem bestimmten Thema zu gruppieren, oder Sie können die Gruppierung für ein Experiment mit mehreren Schritten durchführen, mit dem ein komplexes Problem gelöst wird. Die ersten Sammlungen von Microsoft bestehen aus Machine Learning-Experimentvorlagen mit mehreren Schritten zum Lösen von realen Problemen, z. B. Erkennung von Onlinebetrug, Textklassifizierung, Prognosenerstellung für den Einzelhandel und vorbeugende Wartung.
 
 Führen Sie die folgenden Schritte aus, um eine Sammlung zu erstellen und dem Cortana Analytics-Katalog als Beitrag hinzuzufügen:
 
@@ -116,7 +116,7 @@ Wenn Sie die letzten Profiländerungen (Profilbild, Vorname oder Nachname) für 
 
 **Welche Anforderungen gelten für das Übermitteln oder Bearbeiten eines Bilds für mein Experiment?**
 
-Die Bilder, die Sie zusammen mit Ihrem Experiment übermitteln, werden verwendet, um eine Kachel für Ihren Beitrag zu erstellen. Es wird empfohlen, dass die Bilder kleiner als 500 KB sind, mit einem Seitenverhältnis von 3:2. Eine Auflösung von 960 x 640 wird empfohlen.
+Die Bilder, die Sie zusammen mit Ihrem Experiment übermitteln, werden verwendet, um eine Kachel für Ihren Beitrag zu erstellen. Es wird empfohlen, dass die Bilder kleiner als 500 KB sind, mit einem Seitenverhältnis von 3:2. Eine Auflösung von 960 x 640 wird empfohlen.
 
 **Was geschieht mit dem Dataset, das ich im Experiment verwendet habe? Wird das Dataset auch im Katalog veröffentlicht?**
 
@@ -136,4 +136,4 @@ Beschreibungen mit Rich Text-Renderingfunktionen sind nicht für alle Katalogben
 
 **[ZUM KATALOG >>](http://gallery.cortanaanalytics.com)**
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0316_2016-->

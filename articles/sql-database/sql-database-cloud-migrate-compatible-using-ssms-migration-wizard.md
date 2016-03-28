@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-management"
-   ms.date="12/17/2015"
+   ms.date="03/14/2016"
    ms.author="carlrab"/>
 
 # Migrieren von SQL Server-Datenbank auf SQL-Datenbank mit dem Assistenten zum Bereitstellen einer Datenbank unter Microsoft Azure-Datenbank
@@ -22,7 +22,7 @@ Mit dem Assistenten zum Bereitstellen einer Datenbank unter Microsoft Azure in S
 
 ## Verwenden des Assistenten zum Bereitstellen einer Datenbank unter Microsoft Azure-Datenbank
 
-> [AZURE.NOTE] Die folgenden Schritte setzen voraus, dass Sie über einen [bereitgestellten SQL-Datenbankserver](sql-database-get-started.md) verfügen.
+> [AZURE.NOTE] Die folgenden Schritte setzen voraus, dass Sie über einen [bereitgestellten SQL-Datenbankserver](https://azure.microsoft.com/documentation/learning-paths/sql-database-training-learn-sql-database/) verfügen.
 
 1. Stellen Sie sicher, dass Sie über die neueste Version von SQL Server Management Studio verfügen. Neue Versionen von Management Studio werden monatlich aktualisiert, damit sie mit Updates des Azure-Portals synchron sind.
 
@@ -54,4 +54,4 @@ Mit dem Assistenten zum Bereitstellen einer Datenbank unter Microsoft Azure in S
 
 [Beheben von Problemen mit der Datenbankkompatibilität](sql-database-cloud-migrate-fix-compatibility-issues.md), falls vorhanden.
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

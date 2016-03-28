@@ -75,9 +75,7 @@ In diesem Artikel werden einige häufige Fehler beschrieben, die bei der Arbeit 
 
 **Ursache des Fehlers:** Wenn es sich bei Ihrem Runbook um einen PowerShell-Workflow handelt, werden komplexe Objekte in einem deserialisierten Format gespeichert, um den Runbookstatus beizubehalten, wenn der Workflow angehalten wird.
 
-**Tipps zur Problembehandlung:**
-
-Sie können dieses Problem mit einer der folgenden drei Lösungen beheben:
+**Tipps zur Problembehandlung:** Sie können dieses Problem mit einer der folgenden drei Lösungen beheben:
 
 1. Wenn Sie komplexe Objekte von einem Cmdlet an ein anderes übergeben, sollten Sie diese Cmdlets mit einem InlineScript umschließen.  
 2. Übergeben Sie den Namen oder Wert, den Sie aus dem komplexen Objekt benötigen, anstatt das gesamte Objekt zu übergeben.  
@@ -139,9 +137,7 @@ Sie können dieses Problem mit einer der folgenden drei Lösungen beheben:
 
 - Das Cmdlet **New-AzureRmAutomationModule** wird zum Hochladen des Moduls verwendet, und Sie haben nicht den vollständigen Speicherpfad angegeben oder haben das Modul nicht mit einer öffentlich zugänglichen URL geladen.
 
-**Tipps zur Problembehandlung:**
-
-Sie können dieses Problem wie folgt beheben:
+**Tipps zur Problembehandlung:** Sie können dieses Problem wie folgt beheben:
 
 - Stellen Sie sicher, dass für das Modul das folgende Format eingehalten wird: ModuleName.Zip **->** ModuleName oder Versionsnummer **->** (ModuleName.psm1, ModuleName.psd1).
 
@@ -176,7 +172,7 @@ Sie können dieses Problem wie folgt beheben:
 **Tipps zur Problembehandlung:** Sie können dieses Problem wie folgt beheben:
 
 - Stellen Sie sicher, dass der Ausdruck neben dem Schlüsselwort **Node** in der Konfigurationsdefinition nicht mit „$null“ ausgewertet wird.  
-- Wenn Sie bei der Kompilierung der Konfiguration Konfigurationsdaten übergeben, stellen Sie sicher, dass Sie die erwarteten Werte übergeben, die für die Konfiguration aus [configurationData](automation-dsc-compile.md#configurationdata) erforderlich sind.
+- Wenn Sie bei der Kompilierung der Konfiguration Konfigurationsdaten übergeben, stellen Sie sicher, dass Sie die erwarteten Werte übergeben, die für die Konfiguration aus [ConfigurationData](automation-dsc-compile.md#configurationdata) erforderlich sind.
 
 
 ### Szenario: Der DSC-Knotenbericht bleibt mit dem Status „In Bearbeitung“ hängen.
@@ -210,4 +206,4 @@ Sie haben folgende Möglichkeiten, wenn Sie die oben genannten Schritte zur Prob
 
 - Veröffentlichen Sie Feedback oder Vorschläge zu Features für Azure Automation unter [User Voice](https://feedback.azure.com/forums/34192--general-feedback) (Aussagen von Benutzern).
 
-<!-----HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0316_2016-->

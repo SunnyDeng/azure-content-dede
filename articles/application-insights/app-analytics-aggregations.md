@@ -24,9 +24,9 @@
 
 
 
-## `summarize`-Operator
+## summarize-Operator
 
-Erstellt eine Tabelle, die den Inhalt der Eingabetabelle aggregiert.
+Erzeugt eine Tabelle, die den Inhalt der Eingabetabelle aggregiert.
 
     purchases
     | summarize avg(Price) 
@@ -42,19 +42,19 @@ Erstellt eine Tabelle, die den Inhalt der Eingabetabelle aggregiert.
 ### Syntax
 
     T | summarize
-         [  [Column =] Aggregation [`,` ...]]
+         [  [ Column = ] Aggregation [ , ... ]]
          [ by
-            [Column =] GroupExpression [`,` ...]]
+            [ Column = ] GroupExpression [ , ... ]]
 
 **Argumente**
 
-* *Column:* Optionaler Namen für eine Ergebnisspalte. Nimmt standardmäßig den vom Ausdruck abgeleiteten Namen an.
-* *Aggregation:* Ein Aufruf einer Aggregationsfunktion wie z. B. `count()` oder `avg()` mit Spaltennamen als Argumente. Eine Liste der Aggregationsfunktionen finden Sie nachfolgend.
-* *GroupExpression:* Ein Ausdruck für die Spalten, der einen Satz von unterschiedlichen Werten enthält. Normalerweise handelt es sich entweder um einen Spaltennamen, der bereits einen eingeschränkten Satz von Werten bereitstellt, oder um `bin()` mit einer numerischen Spalte oder Zeitspalte als Argument. 
+* *Column:* Optionaler Name für eine Ergebnisspalte. Nimmt standardmäßig den vom Ausdruck abgeleiteten Namen an.
+* *Aggregation:* Ein Aufruf einer Aggregationsfunktion, wie z. B. `count()` oder `avg()`, mit Spaltennamen als Argumente. Eine Liste der Aggregationsfunktionen finden Sie nachfolgend.
+* *GroupExpression:* Ein Ausdruck für die Spalten, der einen Satz von unterschiedlichen Werten bereitstellt. Normalerweise handelt es sich entweder um einen Spaltennamen, der bereits einen eingeschränkten Satz von Werten bereitstellt, oder um `bin()` mit einer numerischen Spalte oder Zeitspalte als Argument. 
 
 Wenn Sie einen numerischen Ausdruck oder Zeitausdruck ohne `bin()` bereitstellen, wendet die AI-Analyse ihn automatisch mit einem Intervall von `1h` für Uhrzeiten oder von `1.0` für Zahlen an.
 
-Wenn Sie keinen *GroupExpression* angeben, wird die gesamte Tabelle in einer einzelnen Ausgabezeile zusammengefasst.
+Wenn Sie keine *GroupExpression* angeben, wird die gesamte Tabelle in einer einzelnen Ausgabezeile zusammengefasst.
 
 Sie müssen in der `by`-Klausel einen einfachen Typ, keinen dynamischen Typ verwenden. Hier ist zum Beispiel die `tostring`-Umwandlung wichtig:
 
@@ -78,14 +78,15 @@ Abfrage zur Anzeige von durchschnittlichen Antwortzeiten auf unterschiedliche HT
 
 ### Zusammenfassen nach numerischen Spalten
 
-Wenn Sie anhand eines kontinuierlichen Skalars, z. B. eine Zahl oder eine Zeit, gruppieren möchten, müssen Sie die `bin`-Funktion (auch bekannt als `floor`) verwenden, um den kontinuierlichen Bereich als Pakete in Behälter (bins) zu sortieren.
+Wenn Sie anhand eines kontinuierlichen Skalars, z. B. einer Zahl oder einer Zeit, gruppieren möchten, müssen Sie die `bin`-Funktion (auch bekannt als `floor`) verwenden, um den kontinuierlichen Bereich als Pakete in Behälter (bins) zu sortieren.
 
     requests
     | summarize count() 
-      by duration_range=bin(duration, 1)
+      by bin(duration, 1000)/1000
 
 ![result](./media/app-analytics-aggregations/04.png)
 
+(Die Dauer der Anforderung ist eine Zahl in Millisekunden.)
  
 ## Tipps
 
@@ -171,7 +172,7 @@ requests
 | sort by max_pop_tod asc
 ```
 
-## AGGREGATIONSFUNKTIONEN
+## AGGREGATIONEN
 
 ## beliebig 
 
@@ -191,6 +192,7 @@ traces
 | top 10 by count_level desc 
 ```
 
+<a name="argmin"></a> <a name="argmax"></a>
 ## argmin, argmax
 
     argmin(ExprToMinimize, * | ExprToReturn  [ , ... ] )
@@ -322,7 +324,7 @@ Sie entsprechen einer Teilmenge der TypeScript-Typanmerkungen, die als dynamisch
 
 Gibt die Anzahl der Zeilen zurück, für die *Predicate* als `true` ausgewertet wird. Wenn kein *Predicate* (Prädikat) angegeben ist, wird die Gesamtzahl der Datensätze in der Gruppe zurückgegeben.
 
-**Leistungstipp**: Verwenden Sie `summarize count(filter)` anstelle von `where filter | summarize count()`
+**Leistungstipp**: Verwenden Sie `summarize count(filter)` anstelle von `where filter | summarize count()`.
    
 
 ## dcount
@@ -334,7 +336,7 @@ Gibt eine Schätzung der Anzahl von unterschiedlichen Werten für *Expr* in der 
 Mit *Accuracy* wird, sofern angegeben, der Ausgleich zwischen Geschwindigkeit und Genauigkeit gesteuert.
 
  * `0` = die am wenigsten präzise und schnellste Berechnung.
- * `1` = die Standardeinstellung, die Genauigkeit und die Berechnungszeit ausgleicht; etwa 0,8 % Fehlerwahrscheinlichkeit.
+ * `1` = die Standardeinstellung, die Genauigkeit und Berechnungszeit ausgleicht; etwa 0,8 % Fehlerwahrscheinlichkeit.
  * `2` = die präziseste und langsamste Berechnung; etwa 0,4 % Fehlerwahrscheinlichkeit.
 
 **Beispiel**
@@ -384,6 +386,8 @@ Berechnet das Minimum von *Expr*.
 
 **Tipp**: Damit erhalten Sie die Mindest- oder Maximalwerte, z. B. den höchsten oder niedrigsten Preis. Wenn Sie jedoch andere Spalten in der Zeile abrufen möchten, z. B. den Namen des Lieferanten mit dem niedrigsten Preis, verwenden Sie [argmin oder argmax](#argmin-argmax).
 
+
+<a name="percentile"></a> <a name="percentiles"></a>
 ## percentile, percentiles
 
     percentile(Expression, Percentile)
@@ -392,7 +396,7 @@ Gibt eine Schätzung für *Expression* des angegebenen Quantils in der Gruppe zu
     
     percentiles(Expression, Percentile1 [ , Percentile2 ] )
 
-Ähnlich wie `percentile()`, berechnet jedoch eine Reihe von Quantilwerten (was schneller ist als jedes Quantil einzeln zu berechnen).
+Ähnlich wie `percentile()`, berechnet jedoch eine Reihe von Quantilwerten (was schneller ist, als jedes Quantil einzeln zu berechnen).
 
 **Beispiele**
 
@@ -459,4 +463,4 @@ Gibt die Summe von *Expr* für die Gruppe zurück.
 
 [AZURE.INCLUDE [app-analytics-footer](../../includes/app-analytics-footer.md)]
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

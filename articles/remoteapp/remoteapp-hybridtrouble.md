@@ -40,7 +40,7 @@ Sie können den im Subnetz bereitgestellten virtuellen Computern für eine besse
 >[AZURE.NOTE] Sie müssen sicherstellen, dass die DNS-Server in Ihrem VNET jederzeit verfügbar und in der Lage sind, die im VNET gehosteten virtuellen Computer aufzulösen. Verwenden Sie hierfür nicht Google DNS.
 
 
-Für Hybridsammlungen verwenden Sie eigene DNS-Server. Sie geben sie in Ihrem Netzwerkkonfigurationsschema oder über das Verwaltungsportal beim Erstellen des virtuellen Netzwerks an. DNS-Server werden in der Reihenfolge verwendet, in der sie zum Failover angegeben sind (im Gegensatz zu Roundrobin).
+Für Hybridsammlungen verwenden Sie eigene DNS-Server. Sie geben sie in Ihrem Netzwerkkonfigurationsschema oder über das Verwaltungsportal beim Erstellen des virtuellen Netzwerks an. DNS-Server werden in der Reihenfolge verwendet, in der sie zum Failover angegeben sind (im Gegensatz zu Roundrobin). Lesen Sie unter [Namensauflösung für virtuelle Computer und Rolleninstanzen](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md) nach, um sicherzustellen, dass Ihre DNS-Server richtig konfiguriert sind.
 
 Stellen Sie sicher, dass auf die DNS-Server für die Sammlung zugegriffen werden kann und dass sie über das VNET-Subnetz, dass Sie für diese Sammlung angegeben haben, verfügbar sind.
 
@@ -67,4 +67,4 @@ Stellen Sie sicher, dass die Domänendetails gültig sind und dass der Domänenc
 
 Der erstellte oder hinzugefügte Domänenname muss ein interner Domänenname sein (nicht Ihr Azure AD-Domänenname), und er muss in das DNS-Format auflösbar sein (contoso.local). Angenommen, Sie verfügen über einen internen Active Directory-Namen (contoso.local) und eine Active Directory-UPN (contoso.com), dann müssen Sie den internen Namen verwenden, wenn Sie eine Sammlung erstellen.
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0316_2016-->

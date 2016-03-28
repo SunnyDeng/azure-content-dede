@@ -87,7 +87,7 @@ Die Bereitstellung sollte ungefähr 10 bis 20 Minuten dauern. Der Status der Ber
 
 ## Zugreifen auf die Microsoft Data Science Virtual Machine
 
-Nach der VM-Erstellung können Sie sich mithilfe von Remotedesktop mit den Anmeldeinformationen des Administratorkontos anmelden, die Sie im Abschnitt „Grundlagen“ von Schritt 4 erstellt haben.
+Nach der VM-Erstellung können Sie sich mithilfe von Remotedesktop mit den Anmeldeinformationen des Administratorkontos anmelden, die Sie im Abschnitt „Grundlagen“ von Schritt 4 erstellt haben.
 
 Sobald Ihre VM erstellt und bereitgestellt wurde, können Sie beginnen, die installierten und konfigurierten Tools zu verwenden. Für viele der Tools gibt es Desktopsymbole und Kacheln im Startmenü.
 
@@ -111,7 +111,7 @@ Zum Schluss müssen Sie den IPython-Server, der auf dem virtuellen Computer als 
 Für die Durchführung Ihrer Analysen ist auf der VM Microsoft R Server Developer Edition vorinstalliert. Microsoft R Server ist eine unterstützte, sichere und in großem Maße bereitstell- und skalierbare Analyseplattform für Unternehmen, die auf R basiert. Dank vielfältiger Big Data-Statistiken, Vorhersagemodellierung und Machine Learning-Funktionen unterstützt R Server Analysen vollumfänglich - von der Exploration über die Analyse bis hin zur Visualisierung und der Modellierung. Die Verwendung und Erweiterung der Open-Source-Sprache R sorgt für die vollständige Kompatibilität zwischen Microsoft R Server und in R geschriebenen Skripten, Funktionen und CRAN-Paketen für die Datenanalyse in Unternehmen. Mit der Möglichkeit, Daten parallel und in großen Stücken verarbeiten zu können, hebt Microsoft R Server die Speicherbeschränkungen der Open-Source-Sprache R auf und ermöglicht den Benutzern so auch die Analyse von Daten, deren Größe die des Hauptspeichers bei weitem überschreitet. Zusätzlich enthält die VM eine integrierte Entwicklungsumgebung für R (IDE), die Sie durch Klicken auf das Symbol „Revolution R Enterprise 8.0“ im Startmenü oder auf dem Desktop öffnen können. Sie können auch andere IDEs wie „[RStudio](http://www.rstudio.com)” herunterladen und verwenden.
 
 ### Python
-Für die Entwicklung mithilfe von Python wurden Anaconda Python Distribution 2.7 und 3.5 installiert. Diese Distribution enthält die Python-Basisversion sowie etwa 300 der beliebtesten Pakete für Mathematik, Entwicklung und Datenanalysen. Sie können die Python-Tools für Visual Studio (PTVS), die mit der Visual Studio 2015 Community Edition installiert werden, oder eine der mit Anaconda gebündelten IDEs wie IDLE oder Spyder verwenden. Sie können eines dieser Tools über eine Suche auf der Suchleiste starten (**Windows-Taste**+**S**). **Hinweis**: Damit die Python-Tools für Visual Studio auf Anaconda Python 2.7 und 3.5 verweisen können, müssen Sie benutzerdefinierte Umgebungen für jede Version erstellen. Wechseln Sie in der Visual Studio 2015 Community Edition zu „Tools -> Python-Tools -> Python-Umgebungen“, und klicken Sie auf „+ Benutzerdefiniert“. Legen Sie die Umgebungspfade fest. Anaconda Python 2.7 wird unter C:\\Anaconda installiert, Anaconda Python 3.5 unter C:\\Anaconda\\envs\\py35. Ausführliche Schrittanleitungen hierzu finden Sie in der [PTVS-Dokumentation](https://github.com/Microsoft/PTVS/wiki/Selecting-and-Installing-Python-Interpreters#hey-i-already-have-an-interpreter-on-my-machine-but-ptvs-doesnt-seem-to-know-about-it).
+Für die Entwicklung mithilfe von Python wurden Anaconda Python Distribution 2.7 und 3.5 installiert. Diese Distribution enthält die Python-Basisversion sowie etwa 300 der beliebtesten Pakete für Mathematik, Entwicklung und Datenanalysen. Sie können die Python-Tools für Visual Studio (PTVS), die mit der Visual Studio 2015 Community Edition installiert werden, oder eine der mit Anaconda gebündelten IDEs wie IDLE oder Spyder verwenden. Sie können eines dieser Tools über eine Suche auf der Suchleiste starten (**Windows-Taste**+**S**). **Hinweis**: Damit die Python-Tools für Visual Studio auf Anaconda Python 2.7 und 3.5 verweisen können, müssen Sie benutzerdefinierte Umgebungen für jede Version erstellen. Wechseln Sie in der Visual Studio 2015 Community Edition zu „Tools -> Python-Tools -> Python-Umgebungen“, und klicken Sie auf „+ Benutzerdefiniert“. Legen Sie die Umgebungspfade fest. Anaconda Python 2.7 wird unter C:\\Anaconda installiert, Anaconda Python 3.5 unter C:\\Anaconda\\envs\\py35. Ausführliche Schrittanleitungen hierzu finden Sie in der [PTVS-Dokumentation](https://github.com/Microsoft/PTVS/wiki/Selecting-and-Installing-Python-Interpreters#hey-i-already-have-an-interpreter-on-my-machine-but-ptvs-doesnt-seem-to-know-about-it).
 
 ### Jupyter Notebook
 Zur Anaconda Distribution gehört außerdem ein Jupyter Notebook, eine Umgebung zum Freigeben von Code und Analysen. Es wurde bereits ein Jupyter Notebook-Server mit Python 2, Python 3 und R-Kernels konfiguriert. Es gibt ein Desktopsymbol namens „Jupyter Notebook“, um den Browser für den Zugriff auf den Notebook-Server zu starten. Wenn Sie die VM über Remotedesktop verwenden, können Sie auch [https://localhost:9999/](https://localhost:9999/) für den Zugriff auf den Jupyter Notebook-Server aufrufen. (Hinweis: Fahren Sie fort, wenn Warnungen zu Zertifikaten angezeigt werden). Es sind Beispiele für Notebooks enthalten - eines für Python und eines für R. Der Link zu den Beispielen wird Ihnen auf der Startseite für die Notebooks angezeigt, nachdem Sie sich mit dem im vorherigen Schritt festgelegten Passwort am Jupyter Notebook authentifiziert haben.
@@ -125,13 +125,17 @@ Hinweis: Es könnte eine Meldung angezeigt werden, die besagt, dass der Evaluier
 Eine eingeschränkte Version von SQL Server gehört ebenfalls zu Visual Studio Community Edition. Sie können auf die SQL Server-Instanz zugreifen, indem Sie **SQL Server Management Studio** starten. Ihr VM-Name wird als Servernamen angegeben. Verwenden Sie die Windows-Authentifizierung, wenn Sie als Administrator unter Windows angemeldet sind. Sobald SQL Server Management Studio gestartet wurde, können Sie andere Benutzer erstellen, Datenbanken erstellen, Daten importieren und SQL-Abfragen ausführen.
 
 ### Azure 
-Mehrere Azure-Tools sind auf der VM installiert: – Es gibt eine Desktopverknüpfung für den Zugriff auf die Azure SDK-Dokumentation. – **AzCopy** wird zum Verschieben von Daten in das und aus dem Microsoft Azure Storage-Konto verwendet. – **Azure Storage Explorer** wird verwendet, um die Objekte zu durchsuchen, die in Ihrem Azure Storage-Konto gespeichert sind. – **Microsoft Azure PowerShell** ist ein Tool zur Verwaltung von Azure-Ressourcen in der PowerShell-Skriptsprache und ebenfalls auf Ihrer VM installiert.
+Mehrere Azure-Tools werden auf dem virtuellen Computer installiert:
+- Es gibt eine Desktopverknüpfung, um auf die Azure SDK-Dokumentation zuzugreifen. 
+- **AzCopy** wird zum Verschieben von Daten in und aus Ihrem Microsoft Azure Storage-Konto verwendet. 
+- Der **Azure-Speicher-Explorer** wird verwendet, um die Objekte zu durchsuchen, die in Ihrem Azure Storage-Konto gespeichert sind. 
+- **Microsoft Azure PowerShell** ist ein Tool zur Verwaltung Ihrer Azure-Ressourcen in der PowerShell-Skriptsprache und ist auch auf Ihrem virtuellen Computer installiert ist. 
 
 ###Power BI
 
 Um Dashboards und aussagekräftige Visualisierungen zu erstellen, wurde **Power BI Desktop** installiert. Verwenden Sie dieses Tool, um Daten aus verschiedenen Quellen abzurufen, Dashboards und Berichte zu erstellen und diese in der Cloud zu veröffentlichen. Weitere Informationen finden Sie auf der [Power BI](http://powerbi.microsoft.com)-Website.
 
-Hinweis: Für den Zugriff auf Power BI benötigen Sie ein Office 365-Konto.
+Hinweis: Für den Zugriff auf Power BI benötigen Sie ein Office 365-Konto.
 
 ## Zusätzliche Microsoft-Entwicklungstools
 Der [**Microsoft-Webplattform-Installer**](https://www.microsoft.com/web/downloads/platform.aspx) kann verwendet werden, um weitere Microsoft-Entwicklungstools zu suchen und herunterzuladen. Es gibt auch eine Verknüpfung mit dem Tool auf dem Desktop der Microsoft Data Science Virtual Machine.
@@ -141,7 +145,8 @@ Mit den folgenden Schritten können Sie noch mehr lernen und entdecken.
 
 * Verschaffen Sie sich einen Überblick über die verschiedenen Tools, die auf der Data Science-VM installiert sind, indem Sie das Startmenü öffnen und sich die Liste der installierten Tools ansehen.
 * Navigieren Sie zu **C:\\Programme\\Microsoft\\MRO-for-RRE\\8.0\\R-3.2.2\\library\\RevoScaleR\\demoScripts**, um Anwendungsbeispiele der RevoScaleR-Bibliothek in R zu erhalten, die Datenanalysen auf Unternehmensebene unterstützt.  
-* Erfahren Sie, wie Sie mithilfe des [Data Science Process](https://azure.microsoft.com/documentation/learning-paths/cortana-analytics-process/) systematisch vollständige Analyselösungen erstellen. 
-* Öffnen Sie den [Cortana Analytics Katalog](http://gallery.cortanaanalytics.com), um Anwendungsbeispiele der Cortana Analytics Suite für die Bereiche Machine Learning und Datenanalysen zu erhalten. Für den einfachen Zugriff haben wir auch ein Symbol auf dem Desktop und im Startmenü der virtuellen Maschine bereitgestellt. 
+* Lesen Sie den Artikel [Zehn Dinge, die Sie mit der Data Science Virtual Machine machen können](http://aka.ms/dsvmtenthings)
+* Erfahren Sie, wie Sie mithilfe des [Data Science Process](https://azure.microsoft.com/documentation/learning-paths/cortana-analytics-process/) systematisch vollständige Analyselösungen erstellen.
+* Öffnen Sie den [Cortana Analytics-Katalog](http://gallery.cortanaanalytics.com), um Anwendungsbeispiele der Cortana Analytics Suite für die Bereiche Machine Learning und Datenanalysen zu erhalten. Für den einfachen Zugriff haben wir auch ein Symbol auf dem Desktop und im Startmenü der virtuellen Maschine bereitgestellt. 
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0316_2016-->

@@ -545,6 +545,11 @@ Das Ergebnis von `reduce by city` kann z. B. Folgendes enthalten:
 | Paris | 27163 |
 
 
+## render-Anweisung
+
+    T | render [ table | timechart  | barchart | piechart ]
+
+„Render“ weist die Darstellungsschicht an, wie die Tabelle angezeigt werden soll. Es sollte das letzte Element der Pipe sein. Es ist eine praktische Alternative zum Verwenden der Steuerelemente in der Anzeige, und Sie können eine Abfrage mit einer bestimmten Präsentationsmethode speichern.
 
 
 ## sort-Operator 
@@ -602,7 +607,7 @@ Eine Tabelle, die zeigt, wie viele Elemente in jedem Intervall  [0,10.0], [10.0,
 
 **Argumente**
 
-* *Spalte:* Optionaler Name für eine Ergebnisspalte. Nimmt standardmäßig den vom Ausdruck abgeleiteten Namen an.
+* *Column:* Optionaler Name für eine Ergebnisspalte. Nimmt standardmäßig den vom Ausdruck abgeleiteten Namen an.
 * *Aggregation:* Ein Aufruf einer [Aggregationsfunktion](app-analytics-aggregations.md) wie z. B. `count()` oder `avg()` mit Spaltennamen als Argumente. Siehe die [Liste der Aggregationsfunktionen](app-analytics-aggregations.md).
 * *GroupExpression:* Ein Ausdruck für die Spalten, der einen Satz von unterschiedlichen Werten bereitstellt. Normalerweise handelt es sich entweder um einen Spaltennamen, der bereits einen eingeschränkten Satz von Werten bereitstellt, oder um `bin()` mit einer numerischen Spalte oder Zeitspalte als Argument. 
 
@@ -614,7 +619,7 @@ Wenn Sie keine *GroupExpression* angeben, wird die gesamte Tabelle in einer einz
 
 **Rückgabe**
 
-Die Eingabezeilen sind in Gruppen mit denselben Werten der `by`-Ausdrücke angeordnet. Anschließend werden die angegebenen Aggregationsfunktionen über jede Gruppe berechnet, dabei wird eine Zeile für jede Gruppe erzeugt. Das Ergebnis enthält die `by`-Spalten und auch mindestens eine Spalte für jedes berechnete Aggregat. (Einige Aggregationsfunktionen geben mehrere Spalten zurück.)
+Die Eingabezeilen sind in Gruppen mit den gleichen Werten der `by`-Ausdrücke angeordnet. Anschließend werden die angegebenen Aggregationsfunktionen über jede Gruppe berechnet, dabei wird eine Zeile für jede Gruppe erzeugt. Das Ergebnis enthält die `by`-Spalten und auch mindestens eine Spalte für jedes berechnete Aggregat. (Einige Aggregationsfunktionen geben mehrere Spalten zurück.)
 
 Das Ergebnis umfasst ebenso viele Zeilen, wie unterschiedliche Kombinationen von `by`-Werten vorhanden sind. Wenn Sie Zusammenfassungen über Bereiche von numerischen Werten erstellen möchten, verwenden Sie `bin()`, um Bereiche auf diskrete Werte zu reduzieren.
 
@@ -761,4 +766,4 @@ Beachten Sie, dass wir den Vergleich zwischen zwei Spalten an das Ende stellen, 
 
 [AZURE.INCLUDE [app-analytics-footer](../../includes/app-analytics-footer.md)]
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

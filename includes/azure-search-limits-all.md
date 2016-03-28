@@ -1,4 +1,4 @@
-Ressource|Kostenlos|Basic (Vorschau) <sup>6</sup>|S1|S2
+Ressource|Kostenlos|Basic (Vorschau) <sup>6</sup>|S1|S2 <sup>7</sup>
 ---|---|---|---|----
 Maximale Anzahl von Suchdiensten|–|–|12 pro Azure-Abonnement|12 pro Azure-Abonnement 
 Maximale Speichergröße <sup>1</sup>|50 MB oder 10.000 Dokumente|2 GB pro Dienst|25 GB pro Partition oder 300 GB Dokumente pro Dienst|100 GB pro Partition oder 1,2 TB pro Dienst 
@@ -21,10 +21,12 @@ Preise <sup>4</sup>|–|$75 pro SU pro Monat|$250 pro SU pro Monat|$1000 pro SU 
 
 <sup>3</sup> Sucheinheiten sind die abrechenbare Einheit für ein Replikat oder eine Partition. Sie brauchen beides für Speicher-, Indizierungs- und Abfragevorgänge. Unter [Kapazitätsplanung](../articles/search/search-capacity-planning.md) finden Sie gültige Kombinationen von Replikaten und Partitionen, mit denen Sie im Basic- bzw. Standard-Tarif innerhalb der maximalen Grenzwerte von 3 oder 36 Einheiten bleiben.
 
-<sup>4</sup> Der Preis gilt für den US-Markt und veranschaulicht die relativen Kosten für die einzelnen Tarife. Für andere Märkte gelten andere Preise. Preise in anderen Währungen finden Sie auf der [Seite mit den Preisen](https://azure.microsoft.com/pricing/details/search/). Der Preis gilt pro Sucheinheit (SU). Auf der S1-Ebene kostet eine Konfiguration mit drei Sucheinheiten (z. B. 3 Replikate und 1 Partition) im Durchschnitt $750 pro Monat. Wenn Sie innerhalb des Monats auf weniger SUs herunterskalieren, wird die Rechnung anteilig erstellt, sodass nur die tatsächliche Nutzung abgerechnet wird.
+<sup>4</sup> Der Preis gilt für den US-Markt und veranschaulicht die relativen Kosten für die einzelnen Tarife. Für andere Märkte gelten andere Preise. Preise in anderen Währungen finden Sie unter [Preisübersicht](https://azure.microsoft.com/pricing/details/search/). Der Preis gilt pro Sucheinheit (SU). Auf der S1-Ebene kostet eine Konfiguration mit drei Sucheinheiten (z. B. 3 Replikate und 1 Partition) im Durchschnitt $750 pro Monat. Wenn Sie innerhalb des Monats auf weniger SUs herunterskalieren, wird die Rechnung anteilig erstellt, sodass nur die tatsächliche Nutzung abgerechnet wird.
 
 <sup>5</sup> Dies ist kein Tippfehler. Der Basic-Tarif ist auf maximal 100 Felder pro Index begrenzt. Dies ist der einzige Tarif, für den diese Untergrenze gilt.
 
 <sup>6</sup> Der [Basic-Tarif](http://aka.ms/azuresearchbasic) ist während der Vorschauphase zu einem Einführungspreis mit 50 % Nachlass auf den vollen Preis erhältlich.
 
-<!----HONumber=AcomDC_0302_2016-->
+<sup>7</sup> S2 benötigt ein Dienstticket. Es kann nicht im Portal bereitgestellt werden. Für Hilfe zu den ersten Schritten, senden Sie eine E-Mail an azuresearch_contact@microsoft.com.
+
+<!----HONumber=AcomDC_0316_2016-->

@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/23/2015"
+	ms.date="03/08/2015"
 	ms.author="genli"/>
 
 # Was kann ich tun, wenn mein Abonnement deaktiviert wird?
@@ -28,10 +28,19 @@ Weitere Informationen zu Ausgabenlimits finden Sie unter [Azure-Ausgabenlimit](h
 
 ### Ein Zahlung einer Rechnung ist überfällig
 
-Die Problembehebung finden Sie im Artikel [Warum haben Sie eine Benachrichtigung erhalten, dass Ihr Azure-Abonnement einen überfälligen Saldo aufweist?](../billing-azure-subscription-past-due-balance.md)
+Die Problembehebung finden Sie im Artikel [Warum haben Sie eine Benachrichtigung erhalten, dass Ihr Azure-Abonnement einen überfälligen Saldo aufweist?](billing-azure-subscription-past-due-balance.md)
 
 ### Das Azure-Abonnement wurde gekündigt
 
-Um ein Abonnement zu reaktivieren, müssen Sie ein Supportticket erstellen. Informationen zum Erstellen eines Supporttickets für das Reaktivieren eines Azure-Abonnements finden Sie im Artikel [Erstellen eines Supporttickets bei Problemen mit Azure-Abrechnungen und -Abonnements](../billing-how-to-create-billing-support-ticket.md).
+Um ein Abonnement zu reaktivieren, müssen Sie ein Supportticket erstellen: Melden Sie sich beim [Azure-Portal](https://portal.azure.com/) an, und wählen Sie **Hilfe und Support**>**Neue Supportanfrage**.
 
-<!---HONumber=AcomDC_1203_2015-->
+![helpandsupportbutton](./media/billing-how-to-create-billing-support-ticket/helpandsupport.png)
+
+Wenn Sie nicht auf das Portal zugreifen können, können Sie auch über die Azure-Support-Website oder das Azure-Kontocenter eine Supportanforderung senden:
+
+ * Zum Übermitteln eines Supporttickets von der [Azure-Support-Website](https://azure.microsoft.com/support/options/) klicken Sie auf **Support erhalten**.
+ * Um ein Supportticket aus dem [Azure-Kontocenter](https://account.windowsazure.com/Subscriptions) zu übermitteln, klicken Sie auf ein Abonnement und dann auf **Microsoft Support kontaktieren**.
+
+Weitere Informationen finden Sie unter [Erstellen eines Supporttickets bei Problemen mit Azure-Abrechnungen und -Abonnements](billing-how-to-create-billing-support-ticket.md).
+
+<!---HONumber=AcomDC_0316_2016-->

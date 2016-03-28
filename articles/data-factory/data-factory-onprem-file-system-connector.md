@@ -442,7 +442,7 @@ password | Geben Sie das Kennwort für das Benutzerkonto (userid) an. | Nein (we
 encryptedCredential | Geben Sie die verschlüsselten Anmeldeinformationen an, die Sie durch Ausführen des Cmdlets "New-AzureRmDataFactoryEncryptValue" erhalten.<br/><br/>**Hinweis**: Sie müssen mindestens die Azure PowerShell-Version 0.8.14 verwenden, um mit Cmdlets wie "New-AzureRmDataFactoryEncryptValue" zu arbeiten, bei denen der type-Parameter auf "OnPremisesFileSystemLinkedService" gesetzt ist. | Nein (wenn Sie "userid" und "password" unverschlüsselt angeben)
 gatewayName | Der Name des Gateways, das der Data Factory-Dienst zum Verbinden mit dem lokalen Dateiserver verwenden soll. | Ja
 
-Ausführliche Informationen zum Festlegen von Anmeldeinformationen für eine Datenquelle des lokalen Dateisystems finden Sie unter [Festlegen von Anmeldeinformationen und Sicherheit](data-factory-move-data-between-onprem-and-cloud.md#setting-credentials-and-security).
+Ausführliche Informationen zum Festlegen von Anmeldeinformationen für eine Datenquelle des lokalen Dateisystems finden Sie unter [Festlegen von Anmeldeinformationen und Sicherheit](data-factory-move-data-between-onprem-and-cloud.md#set-credentials-and-security).
 
 **Beispiel: Mit "username" und "password" im Nur-Text-Format**
 	
@@ -608,4 +608,4 @@ false | mergeFiles | Für einen Quellordner "Ordner1" mit der folgenden Struktur
 
  
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

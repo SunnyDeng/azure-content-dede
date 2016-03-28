@@ -1,10 +1,10 @@
 <properties
-	pageTitle="Bewährte Methoden für das Entwerfen von Azure-Ressourcen-Manager-Vorlagen"
+	pageTitle="Bewährte Methoden für Azure Resource Manager-Vorlagen | Microsoft Azure"
 	description="Anzeigen von Entwurfsmustern für Azure-Ressourcen-Manager Vorlagen"
 	services="azure-resource-manager"
 	documentationCenter=""
-	authors="mmercuri"
-	manager="georgem"
+	authors="tfitzmac"
+	manager="timlt"
 	editor="tysonn"/>
 
 <tags
@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="12/17/2015"
-	ms.author="mmercuri"/>
+	ms.author="tomfitz"/>
 
 # Bewährte Methoden für das Entwerfen von Azure-Ressourcen-Manager-Vorlagen
 
@@ -29,7 +29,7 @@ In Vorlagen werden die Vorteile des zugrunde liegenden Azure-Ressourcen-Managers
 - Anwenden der rollenbasierten Zugriffssteuerung, um Benutzern, Gruppen und Diensten den entsprechenden Zugriff zu gewähren
 - Verwenden von Kategoriezuordnungen, um Aufgaben wie z. B. Abrechnungsübersichten zu optimieren
 
-Dieser Artikel bietet Details zu Nutzungsszenarien sowie Architektur- und Implementierungsmustern, die während unserer Entwurfssitzungen und praktischen Vorlagenimplementierungen bei AzureCAT-Kunden (Azure Customer Advisory Team) bestimmt wurden. Diese keineswegs akademischen, bewährten Verfahren wurden beeinflusst von der Entwicklung von Vorlagen für 12 führende Linux-basierte OSS-Technologien einschließlich: Apache Kafka, Apache Spark, Cloudera, Couchbase, Hortonworks HDP, DataStax Enterprise powered by Apache Cassandra, Elasticsearch, Jenkins, MongoDB, Nagios, PostgreSQL, Redis und Nagios. Die meisten dieser Vorlagen wurden mit einem bekannten Hersteller einer bestimmten Distribution entwickelt und von den Anforderungen der Unternehmens- und SI-Kunden von Microsoft im Rahmen der jüngsten Projekte beeinflusst.
+Dieser Artikel bietet Details zu Nutzungsszenarien sowie Architektur- und Implementierungsmustern, die während unserer Entwurfssitzungen und praktischen Vorlagenimplementierungen bei AzureCAT-Kunden (Azure Customer Advisory Team) bestimmt wurden. Diese keineswegs akademischen, bewährten Verfahren wurden beeinflusst von der Entwicklung von Vorlagen für 12 führende Linux-basierte OSS-Technologien einschließlich: Apache Kafka, Apache Spark, Cloudera, Couchbase, Hortonworks HDP, DataStax Enterprise powered by Apache Cassandra, Elasticsearch, Jenkins, MongoDB, Nagios, PostgreSQL, Redis und Nagios. Die meisten dieser Vorlagen wurden mit einem bekannten Hersteller einer bestimmten Distribution entwickelt und von den Anforderungen der Unternehmens- und SI-Kunden von Microsoft im Rahmen der jüngsten Projekte beeinflusst.
 
 In diesem Artikel werden diese bewährten Vorgehensweisen vorgestellt, mit denen Sie erstklassige Azure-Ressourcen-Manager-Vorlagen entwickeln können.
 
@@ -53,7 +53,7 @@ IT-Abteilungen von Unternehmen nutzen Vorlagen zumeist für die Bereitstellung v
 
 #### Cloudkapazität
 
-Es kommt häufig vor, dass IT-Abteilungen Teams in ihrem Unternehmen Cloudkapazität in bekannten T-Shirt-Größen zur Verfügung stellen, z. B. als "S", "M" oder "L". Bei den angebotenen T-Shirt-Größen können verschiedene Ressourcentypen und -mengen kombiniert werden. Zugleich wird ein Grad an Standardisierung geboten, der die Verwendung von Vorlagen möglich macht. Die Vorlagen bieten Kapazität auf eine einheitliche Weise, die Unternehmensrichtlinien erzwingt, und arbeiten mit einer Kategorisierung, um nutzenden Abteilungen die Kostenverrechnung zu ermöglichen.
+Es kommt häufig vor, dass IT-Abteilungen Teams in ihrem Unternehmen Cloudkapazität in bekannten T-Shirt-Größen zur Verfügung stellen, z. B. als "S", "M" oder "L". Bei den angebotenen T-Shirt-Größen können verschiedene Ressourcentypen und -mengen kombiniert werden. Zugleich wird ein Grad an Standardisierung geboten, der die Verwendung von Vorlagen möglich macht. Die Vorlagen bieten Kapazität auf eine einheitliche Weise, die Unternehmensrichtlinien erzwingt, und arbeiten mit einer Kategorisierung, um nutzenden Abteilungen die Kostenverrechnung zu ermöglichen.
 
 Beispielsweise müssen Sie möglicherweise Entwicklungs-, Test- oder Produktionsumgebungen einrichten, in denen die Softwareentwicklungsteams ihre Lösungen bereitstellen können. Die Umgebung weist eine vordefinierte Netzwerktopologie und Elemente auf, die die Softwareentwicklungsteams nicht ändern können, wie z. B. Regeln für den Zugriff auf das öffentliche Internet und die Paketuntersuchung. Möglicherweise gibt es auch organisationsspezifische Rollen für diese Umgebungen mit unterschiedlichen Zugriffsrechten für die Umgebung.
 
@@ -72,7 +72,7 @@ In vielen Gesprächen mit Clouddienstanbietern haben wir mehrere Ansätze ausgem
 Wenn Sie Ihr Angebot in Ihrem eigenen Azure-Abonnement hosten, sind zwei Hostingverfahren gängig: das Einrichten einer eigenen Bereitstellung für jeden Kunden oder das Bereitstellen von Skalierungseinheiten in einer gemeinsam genutzten Infrastruktur, die von allen Kunden verwendet wird.
 
 - **Eigene Bereitstellungen für jeden Kunden.** Eigene Bereitstellungen pro Kunde erfordern feste Topologien verschiedener bekannter Konfigurationen. Diese weisen möglicherweise unterschiedliche Größen virtueller Computer (VMs), Anzahlen von Knoten und Mengen an zugeordnetem Speicher auf. Eine Kategorisierung von Bereitstellungen dient zum Erstellen der Abrechnungsübersicht für jeden Kunden. Die rollenbasierte Zugriffssteuerung kann aktiviert werden, um Kunden Zugriff auf bestimmte Bereiche ihrer Cloudumgebung zu gewähren.
-- **Skalierungseinheiten in von mehreren Mandanten gemeinsam genutzten Umgebungen.** Eine Vorlage kann eine Skalierungseinheit für Umgebungen mit mehreren Mandanten darstellen. In diesem Fall wird die gleiche Infrastruktur zur Unterstützung aller Kunden verwendet. Die Bereitstellungen stellen eine Gruppe von Ressourcen dar, die dem gehosteten Angebot einen bestimmten Grad an Kapazität zur Verfügung stellen, der z. B. als Anzahl von Benutzern oder Transaktionen ausgedrückt wird. Diese Skalierungseinheiten werden je nach Bedarf vergrößert oder verkleinert.
+- **Skalierungseinheiten in von mehreren Mandanten gemeinsam genutzten Umgebungen.** Eine Vorlage kann eine Skalierungseinheit für Umgebungen mit mehreren Mandanten darstellen. In diesem Fall wird die gleiche Infrastruktur zur Unterstützung aller Kunden verwendet. Die Bereitstellungen stellen eine Gruppe von Ressourcen dar, die dem gehosteten Angebot einen bestimmten Grad an Kapazität zur Verfügung stellen, der z. B. als Anzahl von Benutzern oder Transaktionen ausgedrückt wird. Diese Skalierungseinheiten werden je nach Bedarf vergrößert oder verkleinert.
 
 ### In Kundenabonnement einfließendes Angebot eines Clouddienstanbieters
 
@@ -82,7 +82,7 @@ Diese Bereitstellungen unterliegen der rollenbasierten Zugriffsteuerung, damit S
 
 ### Azure Marketplace
 
-Wenn Sie Ihre Angebote über eine Onlineplattform, wie z. B. Azure Marketplace bewerben und verkaufen möchten, können Sie Vorlagen entwickeln, um unterschiedliche Arten von Bereitstellungen zu bieten, die im Azure-Konto eines Kunden ausgeführt werden. Diese unterschiedlichen Bereitstellungen werden in der Regel als T-Shirt-Größen (S, M, L), Produkt-/Zielgruppentyp (Community, Developer, Enterprise) oder Featuretyp (Basis, hohe Verfügbarkeit) beschrieben. In einigen Fällen erlauben Ihnen diese Typen das Angeben bestimmter Attribute der Bereitstellung, wie z. B. VM-Typ oder Anzahl der Datenträger.
+Wenn Sie Ihre Angebote über eine Onlineplattform, wie z. B. Azure Marketplace bewerben und verkaufen möchten, können Sie Vorlagen entwickeln, um unterschiedliche Arten von Bereitstellungen zu bieten, die im Azure-Konto eines Kunden ausgeführt werden. Diese unterschiedlichen Bereitstellungen werden in der Regel als T-Shirt-Größen (S, M, L), Produkt-/Zielgruppentyp (Community, Developer, Enterprise) oder Featuretyp (Basis, hohe Verfügbarkeit) beschrieben. In einigen Fällen erlauben Ihnen diese Typen das Angeben bestimmter Attribute der Bereitstellung, wie z. B. VM-Typ oder Anzahl der Datenträger.
 
 ## Open-Source-Software-Projekte (OSS)
 
@@ -97,7 +97,7 @@ Achten Sie beim Erstellen der Vorlagen auf die Anforderungen dahingehend, was si
 - Außerhalb bedeutet die VMs und andere Ressourcen Ihrer Bereitstellung, wie z. B. Netzwerktopologie, Kategorisierung, Verweise auf Zertifikate/geheime Schlüssel und rollenbasierte Zugriffssteuerung. Alle diese Ressourcen sind Teil Ihrer Vorlage.
 - Innerhalb bedeutet die installierte Software und der allgemein gewünschte Zustand der Konfiguration. Andere Mechanismen, wie z. B. VM-Erweiterungen oder Skripts, werden vollständig oder teilweise verwendet. Diese Mechanismen werden von der Vorlage bestimmt und ausgeführt, ohne sich in ihr zu befinden.
 
-Zu den gängigen Beispielen von Aktivitäten, die innerhalb der VM anzusiedeln sind, zählen z. B.:
+Zu den gängigen Beispielen von Aktivitäten, die innerhalb der VM anzusiedeln sind, zählen z. B.:
 
 - Installieren oder Entfernen von Serverrollen und -features
 - Installieren und Konfigurieren von Software auf Knoten- oder Clusterebene
@@ -145,19 +145,19 @@ Es könnte anfangs angenommen werden, dass eine Vorlage den Nutzern die größtm
 
 Oberflächlich betrachtet erscheinen Konfigurationen in freier Form ideal. Sie ermöglichen Ihnen, einen VM-Typ auszuwählen und eine beliebige Anzahl von Knoten und an diese Knoten angeschlossene Datenträger anzugeben, und zwar als Parameter für eine Vorlage. Wenn Sie jedoch bei Vorlagen genauer hinsehen, mit denen mehrere virtuelle Computer mit verschiedenen Größen bereitgestellt werden, sind zusätzliche Überlegungen anzustellen, die diese Wahl in einer Vielzahl von Szenarien weniger geeignet erscheinen lassen.
 
-Im Artikel [Größen für Virtual Machine und Clouddienste in Azure](http://msdn.microsoft.com/library/azure/dn641267.aspx) auf der Azure-Website sind die verschiedenen VM-Typen und verfügbaren Größen sowie jeweils die Anzahl langlebiger Datenträger (2, 4, 8, 16 oder 32) angegeben, die angefügt werden können. Jeder angeschlossene Datenträger bietet 500 IOPS (E/A-Vorgänge pro Sekunde), und Vielfache dieser Laufwerke können über einen Multiplikator dieser Anzahl von IOPS in einem Pool zusammengefasst werden. Beispielsweise können 16 Datenträger in einem Pool zusammengefasst werden, um 8.000 IOPS bereitzustellen. Das Bilden von Pools erfolgt über eine Konfiguration im Betriebssystem unter Verwendung von Microsoft Windows-Speicherplätzen oder RAID (Redundant Array of Inexpensive Disks) unter Linux.
+Im Artikel [Größen für Virtual Machine und Clouddienste in Azure](http://msdn.microsoft.com/library/azure/dn641267.aspx) auf der Azure-Website sind die verschiedenen VM-Typen und verfügbaren Größen sowie jeweils die Anzahl langlebiger Datenträger (2, 4, 8, 16 oder 32) angegeben, die angefügt werden können. Jeder angeschlossene Datenträger bietet 500 IOPS (E/A-Vorgänge pro Sekunde), und Vielfache dieser Laufwerke können über einen Multiplikator dieser Anzahl von IOPS in einem Pool zusammengefasst werden. Beispielsweise können 16 Datenträger in einem Pool zusammengefasst werden, um 8.000 IOPS bereitzustellen. Das Bilden von Pools erfolgt über eine Konfiguration im Betriebssystem unter Verwendung von Microsoft Windows-Speicherplätzen oder RAID (Redundant Array of Inexpensive Disks) unter Linux.
 
 Eine Konfiguration in freier Form ermöglicht die Auswahl einer Reihe von VM-Instanzen, von verschiedenen VM-Typen und -Größen für diese Instanzen, einer Anzahl von Datenträgern, die basierend auf dem VM-Typ variieren kann, sowie von einem oder mehreren Skripts zum Konfigurieren des VM-Inhalts.
 
 Es ist üblich, dass eine Bereitstellung ggf. mehrere Typen von Knoten, z. B. Master- und Datenknoten, aufweist, sodass diese Flexibilität oft für jeden Knotentyp geboten wird.
 
-Sobald Sie mit dem Bereitstellen von Clustern einer gewissen Größe anfangen, beginnen Sie mit Vielfachen all dieser Werte zu arbeiten. Wenn Sie z. B. einen Hadoop-Cluster mit 8 Masterknoten und 200 Datenknoten bereitstellen möchten und mit Pools von 4 angefügten Datenträgern für jeden Masterknoten und 16 angefügten Datenträgern für jeden Datenknoten arbeiten, müssen Sie 208 VMs und 3.232 Datenträger verwalten.
+Sobald Sie mit dem Bereitstellen von Clustern einer gewissen Größe anfangen, beginnen Sie mit Vielfachen all dieser Werte zu arbeiten. Wenn Sie z. B. einen Hadoop-Cluster mit 8 Masterknoten und 200 Datenknoten bereitstellen möchten und mit Pools von 4 angefügten Datenträgern für jeden Masterknoten und 16 angefügten Datenträgern für jeden Datenknoten arbeiten, müssen Sie 208 VMs und 3.232 Datenträger verwalten.
 
-Bei Speicherkonten werden Anforderungen über dem definierten Grenzwert von 20.000 Transaktionen pro Sekunde eingeschränkt. Deshalb müssen Sie die Speicherkontenpartitionierung erwägen und Berechnungen anstellen, um die geeignete Anzahl von Speicherkonten zur Unterstützung dieser Topologie zu bestimmen. Angesichts der Vielzahl von Kombinationen, die vom Ansatz mit freier Form unterstützt werden, sind dynamische Berechnungen erforderlich, um die entsprechende Partitionierung zu bestimmen. Die Vorlagensprache von Azure-Ressourcen-Manager bietet derzeit keine mathematische Funktionen. Deshalb müssen Sie diese Berechnungen im Code ausführen, um eine eindeutige, hartcodierte Vorlage mit den entsprechenden Details zu erstellen.
+Bei Speicherkonten werden Anforderungen über dem definierten Grenzwert von 20.000 Transaktionen pro Sekunde eingeschränkt. Deshalb müssen Sie die Speicherkontenpartitionierung erwägen und Berechnungen anstellen, um die geeignete Anzahl von Speicherkonten zur Unterstützung dieser Topologie zu bestimmen. Angesichts der Vielzahl von Kombinationen, die vom Ansatz mit freier Form unterstützt werden, sind dynamische Berechnungen erforderlich, um die entsprechende Partitionierung zu bestimmen. Die Vorlagensprache von Azure-Ressourcen-Manager bietet derzeit keine mathematische Funktionen. Deshalb müssen Sie diese Berechnungen im Code ausführen, um eine eindeutige, hartcodierte Vorlage mit den entsprechenden Details zu erstellen.
 
 In IT-Abteilungs- und SI-Szenarien muss jemand die Vorlagen verwalten und für die Topologien Unterstützung bieten, die einer oder mehreren Organisationen bereitgestellt wurden. Dieser zusätzliche Aufwand aufgrund verschiedener Konfigurationen und Vorlagen für jeden Kunden ist alles andere als wünschenswert.
 
-Sie können diese Vorlagen zum Bereitstellen von Umgebungen im Azure-Abonnement Ihres Kunden verwenden. Doch sowohl IT-Abteilungsteams als auch Clouddienstanbieter stellen diese meist in ihren eigenen Abonnements bereit, wobei eine Kostenverrechnungsfunktion für die Abrechnung mit den Kunden verwendet wird. In diesen Szenarien ist das Ziel die Bereitstellung von Kapazität für mehrere Kunden in einem Pool von Abonnements und eine dichte Anzahl von Bereitstellungen in den Abonnements, um das Ausufern von Abonnements, d. h. die Anzahl zu verwaltender Abonnements, zu minimieren. Bei wirklich dynamischen Bereitstellungsgrößen erfordert das Erreichen dieser Art von Dichte eine sorgfältige Planung und zusätzliche "Gerüstbauarbeiten" im Auftrag der Organisation.
+Sie können diese Vorlagen zum Bereitstellen von Umgebungen im Azure-Abonnement Ihres Kunden verwenden. Doch sowohl IT-Abteilungsteams als auch Clouddienstanbieter stellen diese meist in ihren eigenen Abonnements bereit, wobei eine Kostenverrechnungsfunktion für die Abrechnung mit den Kunden verwendet wird. In diesen Szenarien ist das Ziel die Bereitstellung von Kapazität für mehrere Kunden in einem Pool von Abonnements und eine dichte Anzahl von Bereitstellungen in den Abonnements, um das Ausufern von Abonnements, d. h. die Anzahl zu verwaltender Abonnements, zu minimieren. Bei wirklich dynamischen Bereitstellungsgrößen erfordert das Erreichen dieser Art von Dichte eine sorgfältige Planung und zusätzliche "Gerüstbauarbeiten" im Auftrag der Organisation.
 
 Darüber hinaus können Sie Abonnements nicht über einen API-Aufruf erstellen, sondern müssen dies manuell über das Portal tun. Mit zunehmender Anzahl von Abonnements erfordert das etwaige resultierende Ausufern von Abonnements administrative Eingriffe, sodass keine Automatisierung möglich ist. Bei einem solchen Maß an Variabilität bei den Größen von Bereitstellungen müssten Sie eine Anzahl von Abonnements manuell vorab bereitstellen, um sicherzustellen, dass Abonnements verfügbar sind.
 
@@ -171,7 +171,7 @@ Viele IT-Abteilungen von Unternehmen, Anbieter von Open-Source-Software und SIs 
 
 Dieser Ansatz bietet geeignete, bekannte Konfigurationen mit unterschiedlichen Größen, die für Kunden vorkonfiguriert sind. Ohne bekannte Konfigurationen müssen Endkunden Clustergrößen selbst bestimmen, Ressourcenbeschränkungen der Plattform berücksichtigen und Berechnungen ausführen, um die resultierende Partitionierung von Speicherkonten und anderen Ressourcen (aufgrund von Clustergrößen- und Ressourcenbeschränkungen) zu bestimmen. Bekannte Konfigurationen ermöglichen Kunden das einfache Auswählen der richtigen Größe für eine bestimmte Bereitstellung. Zusätzlich zum Verbessern der Erfahrung für den Kunden ist eine kleine Anzahl bekannter Konfigurationen einfacher zu unterstützen und ermöglicht Ihnen das Erreichen einer höheren Dichte.
 
-Ein Ansatz bekannter Konfigurationen mit Schwerpunkt auf T-Shirt-Größen kann möglicherweise auch eine variierende Anzahl von Knoten innerhalb einer Größe aufweisen. Beispielsweise kann die T-Shirt-Größe S 3 bis 10 Knoten aufweisen. Die T-Shirt-Größe wird dann für eine Unterstützung von bis zu 10 Knoten gestaltet und ermöglicht dem Nutzer eine Auswahl in freier Form bis zur angegebenen Maximalgröße.
+Ein Ansatz bekannter Konfigurationen mit Schwerpunkt auf T-Shirt-Größen kann möglicherweise auch eine variierende Anzahl von Knoten innerhalb einer Größe aufweisen. Beispielsweise kann die T-Shirt-Größe S 3 bis 10 Knoten aufweisen. Die T-Shirt-Größe wird dann für eine Unterstützung von bis zu 10 Knoten gestaltet und ermöglicht dem Nutzer eine Auswahl in freier Form bis zur angegebenen Maximalgröße.
 
 Eine auf dem Workloadtyp basierende Größe kann hinsichtlich der Anzahl der Knoten, die bereitgestellt werden kann, eine freiere Form haben, wird aber abhängig vom Workload eine unterschiedliche Knotengröße und Konfiguration der Software auf dem Knoten aufweisen.
 
@@ -201,7 +201,7 @@ Die Metadatendatei für die Vorlage (metadata.json) enthält die Schlüssel-/Wer
 
 **Die Metadaten der Vorlage sind in der Datei "metadata.json" beschrieben**
 
-Software-Agents können die Datei "metadata.json" abrufen und die Informationen und einen Link zur Vorlage auf einer Webseite oder in einem Verzeichnis veröffentlichen. Elemente sind u. a. *itemDisplayName*, *description*, *summary*, *githubUsername* und *dateUpdated*.
+Software-Agents können die Datei "metadata.json" abrufen und die Informationen und einen Link zur Vorlage auf einer Webseite oder in einem Verzeichnis veröffentlichen. Elemente sind u. a. *itemDisplayName*, *description*, *summary*, *githubUsername* und *dateUpdated*.
 
 Nachstehend wird eine vollständige Beispieldatei gezeigt.
 
@@ -252,7 +252,7 @@ Eine Vorlage für optionale Ressourcen können Sie z. B. zum Konfigurieren einer
 Sie können die Vorlage für optionale Ressourcen von mehreren Stellen aus verknüpfen:
 
 -	Falls für jede Bereitstellung zutreffend, erstellen Sie einen parametergesteuerten Link über die Vorlage für freigegebene Ressourcen.
--	Falls für ausgewählte bekannte Konfigurationen zutreffend, z. B. ausschließliche Installation in großen Bereitstellungen, erstellen Sie einen parameter- oder variablengesteuerten Link über die Vorlage für eine bekannte Konfiguration.
+-	Falls für ausgewählte bekannte Konfigurationen zutreffend, z. B. ausschließliche Installation in großen Bereitstellungen, erstellen Sie einen parameter- oder variablengesteuerten Link über die Vorlage für eine bekannte Konfiguration.
 
 Ob eine bestimmte Ressource optional ist, hängt möglicherweise nicht vom Vorlagennutzer, sondern vom Vorlagenanbieter ab. Angenommen, Sie müssen die Anforderung eines bestimmten Produkts oder eines Produkt-Add-Ons (gängig bei Clouddienstanbietern) erfüllen oder Richtlinien erzwingen (gängig bei SIs und IT-Abteilungen von Unternehmen). In diesen Fällen können Sie eine Variable verwenden, um zu ermitteln, ob die Ressource bereitgestellt werden soll.
 
@@ -269,11 +269,11 @@ Der T-Shirt-Größenansatz wird häufig verwendet, aber die Parameter können ei
 Wie bei der Vorlage für freigegebene Ressourcen werden Variablen an die Vorlage für eine bekannte Konfiguration von Folgendem übergeben:
 
 -	Einem Endbenutzer – d. h. die an die Hauptvorlage übergebenen Parameter
--	Einer Organisation – d. h. die Variablen in der Hauptvorlage, die interne Anforderungen oder Richtlinien darstellen
+-	Einer Organisation – d. h. die Variablen in der Hauptvorlage, die interne Anforderungen oder Richtlinien darstellen
 
 ### Vorlage für Memberknotenressourcen
 
-In einer bekannten Konfiguration sind häufig ein oder mehrere Memberknotentypen enthalten. Bei Hadoop gibt es z. B. Master- und Datenknoten. Wenn Sie MongoDB installieren, gibt es Datenknoten und eine Vermittlung. Wenn Sie DataStax bereitstellen, verfügen Sie über Datenknoten sowie über eine VM mit installiertem OpsCenter.
+In einer bekannten Konfiguration sind häufig ein oder mehrere Memberknotentypen enthalten. Bei Hadoop gibt es z. B. Master- und Datenknoten. Wenn Sie MongoDB installieren, gibt es Datenknoten und eine Vermittlung. Wenn Sie DataStax bereitstellen, verfügen Sie über Datenknoten sowie über eine VM mit installiertem OpsCenter.
 
 ![Memberknotenressourcen](./media/best-practices-resource-manager-design-templates/member-resources.png)
 
@@ -383,4 +383,4 @@ Wenn Sie Ihre Vorlage im Marketplace veröffentlichen möchten, richten Sie einf
 - Empfehlungen für die Sicherheitseinstellungen im Azure-Ressourcen-Manager finden Sie unter [Sicherheitsaspekte für Azure-Ressourcen-Manager](best-practices-resource-manager-security.md).
 - Informationen zur Freigabe des Status in Vorlagen finden Sie unter [Freigeben des Status in Azure-Ressourcen-Manager-Vorlagen](best-practices-resource-manager-state.md).
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0316_2016-->

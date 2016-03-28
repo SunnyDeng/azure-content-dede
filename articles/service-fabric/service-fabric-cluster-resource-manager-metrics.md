@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Verwalten von Metriken mit dem Cluster-Resource Manager von Azure Service Fabric"
+   pageTitle="Verwalten von Metriken mit dem Clusterressourcen-Manager von Azure Service Fabric | Microsoft Azure"
    description="Enthält Informationen zum Konfigurieren und Verwenden von Metriken in Service Fabric."
    services="service-fabric"
    documentationCenter=".net"
@@ -13,10 +13,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="03/03/2016"
+   ms.date="03/10/2016"
    ms.author="masnider"/>
 
-# Metriken
+# Verwalten von Ressourcenverbrauch und Auslastung in Service Fabric mit Metriken
 „Metriken“ ist in Service Fabric die generische Bezeichnung für die Ressourcen, die für Ihre Dienste wichtig sind. Im Allgemeinen sind mit einer Metrik alle Dinge gemeint, die Sie in Bezug auf eine Ressource verwalten möchten, um die Leistung Ihrer Dienste zu steuern.
 
 In allen obigen Beispielen wurde implizit auf Metriken verwiesen, z. B. Arbeitsspeicher, Datenträger, CPU-Auslastung. All dies sind Beispiele für Metriken. Es handelt sich hierbei um physische Metriken, also Ressourcen, die physischen Ressourcen auf dem Knoten entsprechen und verwaltet werden müssen. Metriken können auch logische Metriken sein, z. B. „MyWorkQueueDepth“, die anwendungsdefiniert sind und für die eine bestimmte Ebene des Ressourcenverbrauchs gilt (wobei die Anwendung darüber aber keine eindeutigen Informationen besitzt und nicht weiß, wie diese gemessen wird).
@@ -109,7 +109,7 @@ Nachdem Sie erfahren haben, wie Sie Ihre eigenen Metriken definieren, geht es nu
 ## Last
 Die Last oder auch Auslastung ist eine allgemeine Angabe, welcher Anteil einer bestimmten Metrik von einer Dienstinstanz oder einem Replikat auf einem bestimmten Knoten verbraucht wird.
 
-### Standardauslastung
+## Standardauslastung
 Die Standardauslastung gibt an, welche Auslastung der Resource Manager für die einzelnen Dienstinstanzen oder Replikate des Diensts ansetzen soll, bis Updates von tatsächlichen Dienstinstanzen oder Replikaten eingehen. Für Dienste mit einfachem Aufbau wird dies zu einer statischen Definition, die niemals dynamisch aktualisiert und somit während der gesamten Lebensdauer des Diensts verwendet wird. Dies eignet sich gut für eine einfache Kapazitätsplanung, weil es genau die Vorgehensweise ist, die wir kennen: die Zuordnung bestimmter Ressourcen zu bestimmten Workloads. Der Vorteil besteht aber darin, dass wir uns jetzt im Bereich der Microservices befinden. Hierbei werden Ressourcen nicht statisch bestimmten Workloads zugewiesen, und der Mensch ist nicht am Treffen der Entscheidungen beteiligt.
 
 Wir lassen es zu, dass zustandsbehaftete Dienste die Standardauslastung für ihre primären und sekundären Replikate angeben. In Wirklichkeit sehen diese Werte für viele Dienste aufgrund der unterschiedlichen Workloads, die von primären und sekundären Replikaten ausgeführt werden, anders aus. Und da primäre Replikate normalerweise sowohl Lese- als auch Schreibvorgänge bereitstellen (und außerdem die größte Rechenlast tragen), ist die Standardauslastung für ein primäres Replikat höher als für sekundäre Replikate.
@@ -117,7 +117,6 @@ Wir lassen es zu, dass zustandsbehaftete Dienste die Standardauslastung für ihr
 Wir nehmen nun aber an, dass Sie Ihren Dienst eine Zeit lang ausgeführt und bemerkt haben, dass einige Instanzen oder Replikate Ihres Diensts deutlich mehr Ressourcen als andere verbrauchen oder dass der Verbrauch im Laufe der Zeit variiert. Es kann beispielsweise sein, dass sie einem bestimmten Kunden zugeordnet sind oder dass sie nur für bestimmte Workloads bestimmt sind, die sich im Laufe des Tages ändern, z. B. Nachrichtendatenverkehr oder Aktienhandel. Ihnen fällt jedenfalls auf, dass es keinen alleinigen Wert gibt, den Sie für die Auslastung angeben können, ohne relativ weit daneben zu liegen. Außerdem bemerken Sie, dass Ihre unrealistische erste Einschätzung dazu führt, dass Service Fabric für Ihren Dienst entweder zu viele oder zu wenig Ressourcen zuordnet und daher Knoten vorhanden sind, die eine zu hohe oder zu niedrige Auslastung aufweisen. Vorgehensweise Es ist möglich, dass Ihr Dienst seine Auslastung ständig „on the fly“ meldet.
 
 ## Dynamische Auslastung
-
 Mit Berichten zur dynamischen Auslastung können Replikate oder Instanzen ihre Zuordnung bzw. die gemeldete Auslastung von Metriken im Cluster über ihre Lebensdauer hinweg anpassen. Ein Dienstreplikat oder eine Instanz, das bzw. die derzeit keine Auslastung aufweist, meldet in der Regel eine geringe Nutzung der Ressourcen, und für Replikate oder Instanzen mit höherer Auslastung wird eine höhere Nutzung gemeldet. Aufgrund dieser allgemeinen Veränderungen im Cluster können wir die Dienstreplikate und -instanzen im Cluster ständig neu organisieren, um sicherzustellen, dass die Dienste und Instanzen die benötigten Ressourcen erhalten. Höher ausgelastete Dienste können so Ressourcen von anderen Replikaten oder Instanzen nutzen, die gerade keine oder nur wenig Arbeit verrichten. Das kontinuierliche Melden der Auslastung ist mit der ReportLoad-Methode möglich, die unter ServicePartition und als Eigenschaft des StatefulService-Basiselements verfügbar ist. In Ihrem Dienst würde der Code wie folgt aussehen:
 
 Code:
@@ -128,6 +127,7 @@ this.ServicePartition.ReportLoad(new List<LoadMetric> { new LoadMetric("Memory",
 
 Dienstreplikate oder -instanzen können die Auslastung nur für die Metriken melden, für deren Verwendung sie konfiguriert wurden. Die Liste mit den Metriken wird jeweils festgelegt, wenn ein Dienst erstellt wird. Wenn ein Dienstreplikat oder eine Instanz versucht, die Auslastung für eine Metrik zu melden, die derzeit nicht für die Verwendung konfiguriert ist, protokolliert Service Fabric den Bericht, ignoriert ihn aber. Dies bedeutet, dass er nicht verwendet wird, wenn der Zustand des Clusters berechnet oder gemeldet wird. Dies ist praktisch, weil Sie so besser experimentieren können. Der Code kann alle Dinge messen und melden, für die die Vorgehensweise bekannt ist. Der Bediener kann die Regeln für den Lastenausgleich des Diensts kontinuierlich konfigurieren, optimieren und aktualisieren, ohne jemals den Code ändern zu müssen. Beispiele hierfür sind das Deaktivieren einer Metrik mit einem Fehlerbericht, das Neukonfigurieren der Gewichtungen von Metriken anhand des Verhaltens oder das Aktivieren einer neuen Metrik erst dann, wenn der Code bereits bereitgestellt und überprüft wurde.
 
+## Kombinieren von Standardauslastungswerten und dynamischen Auslastungsberichten
 Ist es sinnvoll, eine Standardauslastung für einen Dienst anzugeben, für den die Auslastung dynamisch gemeldet wird? Auf jeden Fall. In diesem Fall dient die Standardauslastung als Schätzung, bis die richtigen Berichte vom jeweiligen Replikat oder der Instanz des Diensts vorhanden sind. Dies ist vorteilhaft, da Resource Manager hiermit arbeiten kann, wenn das Replikat bzw. die Instanz bei der Erstellung angeordnet wird. Die Standardauslastung dient als anfängliche Schätzung, sodass Resource Manager die Dienstinstanzen oder -replikate von Beginn an möglichst gut anordnen kann. Wenn keine Informationen vorhanden wären, würde die Anordnung zufällig erfolgen, und wir müssten mit ziemlicher Sicherheit eine Anpassung vornehmen, sobald die Berichte zur tatsächlichen Auslastung verfügbar sind.
 
 Wir sehen uns das vorherige Beispiel an und prüfen, was passiert, wenn wir eine benutzerdefinierte Auslastung hinzufügen und diese nach der Erstellung des Diensts dynamisch aktualisiert wird. In diesem Beispiel verwenden wir „Memory“ (Arbeitsspeicher) und setzen voraus, dass der zustandsbehaftete Dienst zuvor mit dem folgenden Befehl erstellt wurde:
@@ -145,6 +145,7 @@ Ein mögliches Clusterlayout kann beispielsweise wie folgt aussehen:
 ![Ausgleich für Cluster mit Standardmetriken und benutzerdefinierten Metriken][Image2]
 
 Beachten Sie folgende Punkte:
+
 -	Da Replikate oder Instanzen die Standardauslastung des Diensts verwenden, bis sie ihre eigene Auslastung melden, wissen wir, dass die Replikate in Partition 1 des zustandsbehafteten Diensts noch keine eigene Auslastung gemeldet haben.
 -	Sekundäre Replikate innerhalb einer Partition können über eine eigene Auslastung verfügen.
 -	Insgesamt sehen die Metriken ziemlich gut aus. Die Differenz zwischen der maximalen und minimalen Auslastung eines Knotens (für den Arbeitsspeicher, der uns in diesem Fall am wichtigsten ist) weist nur einen Faktor von 1,75 auf (der Knoten mit der höchsten Auslastung für den Arbeitsspeicher ist N3, und N2 hat die geringste Auslastung, also gilt 28/16 = 1,75). Das ist ein guter Ausgleichswert!
@@ -183,17 +184,16 @@ Im unteren Beispiel haben wir die Replikate sowohl basierend auf dem globalen Au
 
 Indem die Metrikgewichtungen berücksichtigt werden, wird der globale Ausgleich basierend auf dem Durchschnitt der Metrikgewichtungen berechnet. Wir führen den Ausgleich für einen Dienst in Bezug auf seine eigenen definierten Metrikgewichtungen durch.
 
-<!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## Nächste Schritte
-- [Informationen zur Konfiguration von Diensten](service-fabric-cluster-resource-manager-configure-services.md)
-- [Informationen zu Defragmentierungsmetriken](service-fabric-cluster-resource-manager-defragmentation-metrics.md)
-- [Informationen zum Lastenausgleich durch den Cluster-Resource Manager im Cluster](service-fabric-cluster-resource-manager-balancing.md)
-- [Einführung in den Cluster-Resource Manager von Service Fabric](service-fabric-cluster-resource-manager-introduction.md)
-- [Informationen zu den Kosten von Dienstverschiebungen](service-fabric-cluster-resource-manager-movement-cost.md)
+- Weitere Informationen zu den anderen Optionen, die für die Konfiguration von Diensten zur Verfügung stehen, finden Sie im Thema zu den anderen verfügbaren Clusterressourcen-Manager-Konfigurationen, [Konfigurieren von Diensten](service-fabric-cluster-resource-manager-configure-services.md).
+- Das Definieren von Defragmentierungsmetriken ist eine Möglichkeit, die Last auf Knoten zu konsolidieren, statt sie auszubreiten. Weitere Informationen zum Konfigurieren der Defragmentierung finden Sie in [diesem Artikel](service-fabric-cluster-resource-manager-defragmentation-metrics.md).
+- Informationen darüber, wie der Clusterressourcen-Manager die Auslastung im Cluster verwaltet und verteilt, finden Sie im Artikel zum [Lastenausgleich](service-fabric-cluster-resource-manager-balancing.md).
+- Starten Sie mit einer [Einführung in den Clusterressourcen-Manager von Service Fabric](service-fabric-cluster-resource-manager-introduction.md).
+- Bewegungskosten sind eine Möglichkeit, dem Clusterressourcen-Manager mitzuteilen, dass bestimmte Dienste teurer zu bewegen sind als andere. Weitere Informationen zu Bewegungskosten finden Sie in [diesem Artikel](service-fabric-cluster-resource-manager-movement-cost.md).
 
 [Image1]: ./media/service-fabric-cluster-resource-manager-metrics/cluster-resource-manager-cluster-layout-with-default-metrics.png
 [Image2]: ./media/service-fabric-cluster-resource-manager-metrics/Service-Fabric-Resource-Manager-Dynamic-Load-Reports.png
 [Image3]: ./media/service-fabric-cluster-resource-manager-metrics/cluster-resource-manager-metric-weights-impact.png
 [Image4]: ./media/service-fabric-cluster-resource-manager-metrics/cluster-resource-manager-global-vs-local-balancing.png
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

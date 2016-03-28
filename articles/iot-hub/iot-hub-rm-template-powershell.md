@@ -16,13 +16,13 @@
      ms.date="02/12/2016"
      ms.author="dobett"/>
 
-# Erstellen eines IoT-Hubs mit PowerShell
+# Erstellen eines IoT Hubs mit PowerShell
 
 [AZURE.INCLUDE [iot-hub-resource-manager-selector](../../includes/iot-hub-resource-manager-selector.md)]
 
 ## Einführung
 
-Sie können den Azure Resource Manager (ARM) verwenden, um Azure IoT-Hubs programmgesteuert zu erstellen und zu verwalten. In diesem Tutorial erfahren Sie, wie Sie anhand einer Ressourcen-Manager-Vorlage mit einem C#-Programm einen IoT-Hub erstellen.
+Sie können den Azure Resource Manager (ARM) verwenden, um Azure IoT-Hubs programmgesteuert zu erstellen und zu verwalten. In diesem Tutorial erfahren Sie, wie Sie anhand einer Resource Manager-Vorlage mit PowerShell einen IoT Hub erstellen.
 
 > [AZURE.NOTE] Azure verfügt über zwei verschiedene Bereitstellungsmodelle für das Erstellen und Verwenden von Ressourcen: [Ressourcen-Manager und klassische Bereitstellungen](../resource-manager-deployment-model.md). Dieser Artikel behandelt die Verwendung des Ressourcen-Manager-Bereitstellungsmodells.
 
@@ -62,7 +62,7 @@ Verwenden Sie eine JSON-Vorlage, um einen neuen IoT-Hub in der Ressourcengruppe 
 
     ```
     {
-      "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
+      "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
       "contentVersion": "1.0.0.0",
       "parameters": {
         "hubName": {
@@ -123,4 +123,4 @@ Nachdem Sie nun einen IoT-Hub mithilfe einer ARM-Vorlage mit PowerShell bereitge
 [lnk-azure-rm-overview]: ../resource-group-overview.md
 [lnk-powershell-arm]: ../powershell-azure-resource-manager.md
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0316_2016-->

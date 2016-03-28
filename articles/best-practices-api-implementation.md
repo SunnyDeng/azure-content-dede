@@ -46,11 +46,11 @@ Bei einem Dienst, der mit der ASP.NET-Web-API implementiert wird, wird jede Anfo
 	);
 	```
 
-	Routen können generisch sein und Literale wie _api_ und Variablen wie _{controller}_ und _{id}_ umfassen. Beim konventionsbasierten Routing können einige Elemente der Route optional sein. Das Web-API-Framework bestimmt wie folgt, welche Methode im Controller aufgerufen wird: Die HTTP-Methode der Anforderung wird mit dem ersten Teil des Methodennamens in der API abgeglichen, und anschließend werden alle optionalen Parameter abgeglichen. Wenn ein Controller mit dem Namen _orders_ die Methoden _GetAllOrders()_ oder _GetOrderByInt(int id)_ enthält, wird die GET-Anforderung \__http://www.adventure-works.com/api/orders/_ an die _GetAlllOrders()_-Methode geleitet, und die GET-Anforderung \__http://www.adventure-works.com/api/orders/99_ wird an die _GetOrderByInt(int id)_-Methode weitergeleitet. Falls keine übereinstimmende Methode verfügbar ist, die im Controller mit dem Präfix „Get“ beginnt, antwortet das Web-API-Framework mit der Nachricht „HTTP 405 (Method Not Allowed)“. Außerdem muss der in der Routingtabelle angegebene Name des Parameters (id) dem Namen des Parameters für die _GetOrderById_-Methode entsprechen. Andernfalls antwortet das Web-API-Framework mit der Antwort „HTTP 404 (Nicht gefunden)“.
+	Routen können generisch sein und Literale wie _api_ und Variablen wie _{controller}_ und _{id}_ umfassen. Beim konventionsbasierten Routing können einige Elemente der Route optional sein. Das Web-API-Framework bestimmt wie folgt, welche Methode im Controller aufgerufen wird: Die HTTP-Methode der Anforderung wird mit dem ersten Teil des Methodennamens in der API abgeglichen, und anschließend werden alle optionalen Parameter abgeglichen. Wenn ein Controller mit dem Namen _orders_ die Methoden _GetAllOrders()_ oder _GetOrderByInt(int id)_ enthält, wird die GET-Anforderung \__http://www.adventure-works.com/api/orders/_ an die _GetAlllOrders()_-Methode geleitet, und die GET-Anforderung \__http://www.adventure-works.com/api/orders/99_ wird an die _GetOrderByInt(int id)_-Methode weitergeleitet. Falls keine übereinstimmende Methode verfügbar ist, die im Controller mit dem Präfix „Get“ beginnt, antwortet das Web-API-Framework mit der Nachricht „HTTP 405 (Method Not Allowed)“. Außerdem muss der in der Routingtabelle angegebene Name des Parameters (id) dem Namen des Parameters für die _GetOrderById_-Methode entsprechen. Andernfalls antwortet das Web-API-Framework mit der Antwort „HTTP 404 (Nicht gefunden)“.
 
-	Dieselben Regeln gelten für POST-, PUT- und DELETE HTTP-Anforderungen. Eine PUT-Anforderung, mit der die Details von Bestellung 101 aktualisiert werden, wird an den URI \__http://www.adventure-works.com/api/orders/101_ geleitet. Der Text der Nachricht enthält die neuen Details der Bestellung, und diese Informationen werden als Parameter an eine Methode im orders-Controller mit einem Namen übergeben, der mit dem Präfix _Put_ beginnt, z. B. _PutOrder_.
+	Dieselben Regeln gelten für POST-, PUT- und DELETE HTTP-Anforderungen. Eine PUT-Anforderung, mit der die Details von Bestellung 101 aktualisiert werden, wird an den URI \__http://www.adventure-works.com/api/orders/101_ geleitet. Der Text der Nachricht enthält die neuen Details der Bestellung, und diese Informationen werden als Parameter an eine Methode im orders-Controller mit einem Namen übergeben, der mit dem Präfix _Put_ beginnt, z. B. _PutOrder_.
 
-	Die standardmäßige Routingtabelle ergibt keine Übereinstimmung mit einer Anforderung, bei der auf untergeordnete Ressourcen in einer REST-Web-API verwiesen wird, z. B. \__http://www.adventure-works.com/api/customers/1/orders_ (Suche nach den Details aller Bestellungen von „customer 1“). Zum Behandeln dieser Fälle können Sie der Routingtabelle benutzerdefinierte Routen hinzufügen:
+	Die standardmäßige Routingtabelle ergibt keine Übereinstimmung mit einer Anforderung, bei der auf untergeordnete Ressourcen in einer REST-Web-API verwiesen wird, z. B. \__http://www.adventure-works.com/api/customers/1/orders_ (Suche nach den Details aller Bestellungen von „customer 1“). Zum Behandeln dieser Fälle können Sie der Routingtabelle benutzerdefinierte Routen hinzufügen:
 
 	```C#
 	config.Routes.MapHttpRoute(
@@ -82,7 +82,7 @@ Bei einem Dienst, der mit der ASP.NET-Web-API implementiert wird, wird jede Anfo
 
 - **Vermeiden Sie Mehrdeutigkeit beim Routing**.
 
-	Das konventionsbasierte Routing kann zu mehrdeutigen Pfaden führen, wenn mehrere Methoden in einem Controller die gleiche Route aufweisen. In diesen Fällen antwortet das Web-API-Framework mit der Antwortnachricht „HTTP 500 (Internal Server Error)“ mit dem Text „Multiple actions were found that match the request“ (Es wurden mehrere Aktionen gefunden, die mit der Anforderung übereinstimmen).
+	Das konventionsbasierte Routing kann zu mehrdeutigen Pfaden führen, wenn mehrere Methoden in einem Controller die gleiche Route aufweisen. In diesen Fällen antwortet das Web-API-Framework mit der Antwortnachricht „HTTP 500 (Internal Server Error)“ mit dem Text „Multiple actions were found that match the request“ (Es wurden mehrere Aktionen gefunden, die mit der Anforderung übereinstimmen).
 
 - **Ziehen Sie das attributbasierte Routing vor**.
 
@@ -115,7 +115,7 @@ Bei einem Dienst, der mit der ASP.NET-Web-API implementiert wird, wird jede Anfo
 
 	Das attributbasierte Routing hat zudem den nützlichen Nebeneffekt, dass es als Dokumentation für Entwickler fungiert, die den Code später warten müssen. Es ist immer sofort klar, welche Methode zu welcher Route gehört, und mit dem _HttpGet_-Attribut wird angegeben, auf welche Art von HTTP-Anforderung die Methode antwortet.
 
-	Beim attributbasierten Routing können Sie Einschränkungen festlegen, um vorzugeben, wie die Parameter abgeglichen werden. Mit Einschränkungen kann die Art des Parameters angegeben werden, und in einigen Fällen kann damit auch der zulässige Bereich der Parameterwerte angegeben werden. Im folgenden Beispiel muss der id-Parameter der _FindCustomerByID_-Methode eine Ganzzahl sein, die nicht negativ ist. Wenn eine Anwendung eine HTTP GET-Anforderung mit einer negativen Kundennummer übermittelt, antwortet das Web-API-Framework mit der Nachricht „HTTP 405 (Method Not Allowed)“:
+	Beim attributbasierten Routing können Sie Einschränkungen festlegen, um vorzugeben, wie die Parameter abgeglichen werden. Mit Einschränkungen kann die Art des Parameters angegeben werden, und in einigen Fällen kann damit auch der zulässige Bereich der Parameterwerte angegeben werden. Im folgenden Beispiel muss der id-Parameter der _FindCustomerByID_-Methode eine Ganzzahl sein, die nicht negativ ist. Wenn eine Anwendung eine HTTP GET-Anforderung mit einer negativen Kundennummer übermittelt, antwortet das Web-API-Framework mit der Nachricht „HTTP 405 (Method Not Allowed)“:
 
 	```C#
 	public class CustomersController : ApiController
@@ -133,7 +133,7 @@ Bei einem Dienst, der mit der ASP.NET-Web-API implementiert wird, wird jede Anfo
 	}
 	```
 
-	Weitere Informationen zum attributbasierten Routing finden Sie auf der Microsoft-Website unter [Attributrouting in der Web-API 2](http://www.asp.net/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2).
+	Weitere Informationen zum attributbasierten Routing finden Sie auf der Microsoft-Website unter [Attributrouting in der Web-API 2](http://www.asp.net/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2).
 
 - **Unterstützen Sie Unicode-Zeichen in Routen**.
 
@@ -145,7 +145,7 @@ Bei einem Dienst, der mit der ASP.NET-Web-API implementiert wird, wird jede Anfo
 
 - **Berücksichtigen Sie die Vor- und Nachteile einer Platzierung der API in einer Unterdomäne**.
 
-	Standardmäßig werden APIs von der ASP.NET-Web-API im Verzeichnis _/api_ einer Domäne angeordnet, z. B. \__http://www.adventure-works.com/api/orders_. Dieses Verzeichnis befindet sich in derselben Domäne wie alle anderen Dienste, die vom Host verfügbar gemacht werden. Es kann vorteilhaft sein, eine Web-API in ihre eigenen Unterdomänen aufzuteilen, die auf einem separaten Host ausgeführt werden (mit URIs wie \__http://api.adventure-works.com/orders_). Bei dieser Trennung können Sie die Web-API effektiver partitionieren und skalieren, ohne dass sich dies auf andere Webanwendungen oder Dienste auswirkt, die in der Domäne _www.adventure-works.com_ ausgeführt werden.
+	Standardmäßig werden APIs von der ASP.NET-Web-API im Verzeichnis _/api_ einer Domäne angeordnet, z. B. \__http://www.adventure-works.com/api/orders_. Dieses Verzeichnis befindet sich in derselben Domäne wie alle anderen Dienste, die vom Host verfügbar gemacht werden. Es kann vorteilhaft sein, eine Web-API in ihre eigenen Unterdomänen aufzuteilen, die auf einem separaten Host ausgeführt werden (mit URIs wie \__http://api.adventure-works.com/orders_). Bei dieser Trennung können Sie die Web-API effektiver partitionieren und skalieren, ohne dass sich dies auf andere Webanwendungen oder Dienste auswirkt, die in der Domäne _www.adventure-works.com_ ausgeführt werden.
 
 	Das Platzieren einer Web-API in einer anderen Unterdomäne kann aber auch zu Sicherheitsproblemen führen. Unter _www.adventure-works.com_ gehostete Webanwendungen oder Dienste, bei denen eine an einem anderen Ort ausgeführte Web-API aufgerufen wird, können die Richtlinie vieler Webbrowser zum identischen Ursprung verletzen. In diesem Fall ist es erforderlich, zwischen den Hosts das Cross-Origin Resource Sharing (CORS) zu ermöglichen. Weitere Informationen finden Sie im Leitfaden zur API-Sicherheit.
 
@@ -155,7 +155,7 @@ Nachdem eine Anforderung einer Clientanwendung erfolgreich an eine Methode in ei
 
 - **GET-, PUT-, DELETE-, HEAD- und PATCH-Aktionen sollten idempotent sein**.
 
-	Der Code, mit dem diese Anforderungen implementiert werden, sollte nicht mit Nebeneffekten verbunden sein. Eine Anforderung, die für eine Ressource wiederholt ausgeführt wird, sollte zum gleichen Ergebnis führen. Wenn Sie beispielsweise mehrere DELETE-Anforderungen an denselben URI senden, sollte dies immer die gleiche Auswirkung haben. Hierbei kann der HTTP-Statuscode in den Antwortnachrichten variieren (für die erste DELETE-Anforderung wird ggf. Statuscode 204 (No Content) zurückgegeben, während für eine nachfolgende DELETE-Anforderung Statuscode 404 (Nicht gefunden) zurückgegeben werden kann).
+	Der Code, mit dem diese Anforderungen implementiert werden, sollte nicht mit Nebeneffekten verbunden sein. Eine Anforderung, die für eine Ressource wiederholt ausgeführt wird, sollte zum gleichen Ergebnis führen. Wenn Sie beispielsweise mehrere DELETE-Anforderungen an denselben URI senden, sollte dies immer die gleiche Auswirkung haben. Hierbei kann der HTTP-Statuscode in den Antwortnachrichten variieren (für die erste DELETE-Anforderung wird ggf. Statuscode 204 (No Content) zurückgegeben, während für eine nachfolgende DELETE-Anforderung Statuscode 404 (Nicht gefunden) zurückgegeben werden kann).
 
 > [AZURE.NOTE] Der Artikel [Idempotency Patterns](http://blog.jonathanoliver.com/idempotency-patterns/) (Muster der Idempotenz) im Blog von Jonathan Oliver enthält eine Übersicht über die Idempotenz und ihre Verbindung mit Datenverwaltungsvorgängen.
 
@@ -167,7 +167,7 @@ Nachdem eine Anforderung einer Clientanwendung erfolgreich an eine Methode in ei
 
 	Bauen Sie die Unterstützung von POST-, PUT- und DELETE-Anforderungen über Ressourcenauflistungen ein. Eine POST-Anforderung kann die Details für mehrere neue Ressourcen enthalten und diese derselben Auflistung hinzufügen. Mit einer PUT-Anforderung kann der gesamte Ressourcensatz in einer Auflistung ersetzt werden, und mit einer DELETE-Anforderung kann eine gesamte Auflistung entfernt werden.
 
-	Beachten Sie, dass die in der ASP.NET-Web-API 2 enthaltene OData-Unterstützung das Zusammenfassen von Anforderungen in Batches ermöglicht. Eine Clientanwendung kann mehrere Web-API-Anforderungen verpacken und in einer einzelnen HTTP-Anforderung an den Server senden. Sie erhält dann eine einzelne HTTP-Antwort mit den Antworten für die einzelnen Anforderungen. Weitere Informationen finden Sie auf der Microsoft-Website unter [Einführung in die Batchunterstützung in der Web-API und Web-API-OData](http://blogs.msdn.com/b/webdev/archive/2013/11/01/introducing-batch-support-in-web-api-and-web-api-odata.aspx).
+	Beachten Sie, dass die in der ASP.NET-Web-API 2 enthaltene OData-Unterstützung das Zusammenfassen von Anforderungen in Batches ermöglicht. Eine Clientanwendung kann mehrere Web-API-Anforderungen verpacken und in einer einzelnen HTTP-Anforderung an den Server senden. Sie erhält dann eine einzelne HTTP-Antwort mit den Antworten für die einzelnen Anforderungen. Weitere Informationen finden Sie auf der Microsoft-Website unter [Einführung in die Batchunterstützung in der Web-API und Web-API-OData](http://blogs.msdn.com/b/webdev/archive/2013/11/01/introducing-batch-support-in-web-api-and-web-api-odata.aspx).
 
 - **Halten Sie sich an das HTTP-Protokoll, wenn Sie eine Antwort zurück an eine Clientanwendung senden**.
 
@@ -192,7 +192,7 @@ Nachdem eine Anforderung einer Clientanwendung erfolgreich an eine Methode in ei
 	}
 	```
 
-	Wenn der POST-Vorgang erfolgreich ist, erstellt das Web-API-Framework eine HTTP-Antwort mit dem Statuscode 200 (OK) und den Details des Kunden als Text der Nachricht. Gemäß HTTP-Protokoll sollte ein POST-Vorgang in diesem Fall aber den Statuscode 201 (Created) zurückgeben, und die Antwortnachricht sollte den URI der neu erstellten Ressource im Location-Header enthalten.
+	Wenn der POST-Vorgang erfolgreich ist, erstellt das Web-API-Framework eine HTTP-Antwort mit dem Statuscode 200 (OK) und den Details des Kunden als Text der Nachricht. Gemäß HTTP-Protokoll sollte ein POST-Vorgang in diesem Fall aber den Statuscode 201 (Created) zurückgeben, und die Antwortnachricht sollte den URI der neu erstellten Ressource im Location-Header enthalten.
 
 	Geben Sie Ihre eigene HTTP-Antwortnachricht zum Bereitstellen dieser Features über die `IHttpActionResult`-Schnittstelle an. Bei diesem Ansatz haben Sie eine gute Kontrolle über den HTTP-Statuscode, die Header in der Antwortnachricht und sogar das Format der Daten im Text der Antwortnachricht. Dies wird im folgenden Codebeispiel veranschaulicht. Diese Version der `CreateNewCustomer`-Methode liegt näher an den Erwartungen des Clients gemäß HTTP-Protokoll. Die `Created`-Methode der `ApiController`-Klasse erstellt die Antwortnachricht aus den angegebenen Daten und fügt den Location-Header den Ergebnissen hinzu:
 
@@ -222,7 +222,7 @@ Nachdem eine Anforderung einer Clientanwendung erfolgreich an eine Methode in ei
 
 - **Unterstützen Sie die Inhaltsaushandlung**.
 
-	Der Text einer Antwortnachricht kann Daten in unterschiedlichen Formaten enthalten. Bei einer HTTP GET-Anforderung können Daten beispielsweise im JSON- oder XML-Format zurückgegeben werden. Wenn der Client eine Anforderung sendet, kann diese einen Accept-Header zum Angeben der Datenformate enthalten, die behandelt werden können. Diese Formate werden als Medientypen angegeben. Ein Client, der eine GET-Anforderung zum Abrufen eines Bilds ausgibt, kann beispielsweise einen Accept-Header angeben, mit dem die für den Client verarbeitbaren Medientypen aufgeführt werden, z. B. „image/jpeg, image/gif, image/png“. Wenn die Web-API das Ergebnis zurückgibt, sollte sie die Daten mit einem dieser Medientypen formatieren und das Format im Content-Type-Header der Antwort angeben.
+	Der Text einer Antwortnachricht kann Daten in unterschiedlichen Formaten enthalten. Bei einer HTTP GET-Anforderung können Daten beispielsweise im JSON- oder XML-Format zurückgegeben werden. Wenn der Client eine Anforderung sendet, kann diese einen Accept-Header zum Angeben der Datenformate enthalten, die behandelt werden können. Diese Formate werden als Medientypen angegeben. Ein Client, der eine GET-Anforderung zum Abrufen eines Bilds ausgibt, kann beispielsweise einen Accept-Header angeben, mit dem die für den Client verarbeitbaren Medientypen aufgeführt werden, z. B. „image/jpeg, image/gif, image/png“. Wenn die Web-API das Ergebnis zurückgibt, sollte sie die Daten mit einem dieser Medientypen formatieren und das Format im Content-Type-Header der Antwort angeben.
 
 	Falls der Client keinen Accept-Header angibt, sollten Sie für den Text der Antwort ein geeignetes Standardformat verwenden. Beispiel: Das ASP.NET-Web-API-Framework nutzt für textbasierte Daten standardmäßig JSON.
 
@@ -313,11 +313,11 @@ Nachdem eine Anforderung einer Clientanwendung erfolgreich an eine Methode in ei
 	- Eine HTTP PUT-Anforderung an den URI \__http://adventure-works.com/customers/2/orders_, um für den Kunden eine neue Bestellung zu erstellen. Die Daten müssen in der Anforderungsnachricht im Format „x-www-form-urlencoded“ bereitgestellt werden.
 
 ## Aspekte der Behandlung von Ausnahmen
-Wenn ein Vorgang im ASP.NET-Web-API-Framework eine unerwartete Ausnahme auslöst, gibt das Framework standardmäßig eine Antwortnachricht mit dem HTTP-Statuscode 500 (Internal Server Error) zurück. Häufig ist dieser allzu simple Ansatz allein nicht hilfreich und erschwert die Ermittlung der Ausnahmeursache. Daher sollten Sie zum Behandeln von Ausnahmen einen umfassenderen Ansatz wählen. Beachten Sie hierbei die folgenden Punkte:
+Wenn ein Vorgang im ASP.NET-Web-API-Framework eine unerwartete Ausnahme auslöst, gibt das Framework standardmäßig eine Antwortnachricht mit dem HTTP-Statuscode 500 (Internal Server Error) zurück. Häufig ist dieser allzu simple Ansatz allein nicht hilfreich und erschwert die Ermittlung der Ausnahmeursache. Daher sollten Sie zum Behandeln von Ausnahmen einen umfassenderen Ansatz wählen. Beachten Sie hierbei die folgenden Punkte:
 
 - **Erfassen Sie Ausnahmen, und geben Sie eine aussagekräftige Antwort an Clients zurück**.
 
-	Mit dem Code zum Implementieren eines HTTP-Vorgangs sollte eine umfassende Ausnahmebehandlung bereitgestellt werden, anstatt zuzulassen, dass unerwartete Ausnahmen ins Web-API-Framework gelangen. Wenn eine Ausnahme den erfolgreichen Abschluss des Vorgangs verhindert, kann die Ausnahme in der Antwortnachricht zurück übergeben werden. Sie sollte aber eine aussagekräftige Beschreibung des Fehlers enthalten, der die Ausnahme verursacht hat. Außerdem sollte die Ausnahme den passenden HTTP-Statuscode enthalten, anstatt einfach für jede Situation den Statuscode 500 zurückzugeben. Wenn eine Benutzeranforderung beispielsweise eine Datenbankaktualisierung bewirkt, die eine Verletzung einer Einschränkung darstellt (z. B. das versuchte Löschen eines Kunden, für den noch Bestellungen ausstehen), sollten Sie den Statuscode 409 (Conflict) und einen Nachrichtentext zurückgeben, um die Ursache des Konflikts anzugeben. Falls die Anforderung aufgrund einer anderen Bedingung nicht durchführbar ist, können Sie den Statuscode 400 (Bad Request) zurückgeben. Eine vollständige Liste mit HTTP-Statuscodes finden Sie auf der W3C-Website im Thema zu den [Statuscodedefinitionen](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).
+	Mit dem Code zum Implementieren eines HTTP-Vorgangs sollte eine umfassende Ausnahmebehandlung bereitgestellt werden, anstatt zuzulassen, dass unerwartete Ausnahmen ins Web-API-Framework gelangen. Wenn eine Ausnahme den erfolgreichen Abschluss des Vorgangs verhindert, kann die Ausnahme in der Antwortnachricht zurück übergeben werden. Sie sollte aber eine aussagekräftige Beschreibung des Fehlers enthalten, der die Ausnahme verursacht hat. Außerdem sollte die Ausnahme den passenden HTTP-Statuscode enthalten, anstatt einfach für jede Situation den Statuscode 500 zurückzugeben. Wenn eine Benutzeranforderung beispielsweise eine Datenbankaktualisierung bewirkt, die eine Verletzung einer Einschränkung darstellt (z. B. das versuchte Löschen eines Kunden, für den noch Bestellungen ausstehen), sollten Sie den Statuscode 409 (Conflict) und einen Nachrichtentext zurückgeben, um die Ursache des Konflikts anzugeben. Falls die Anforderung aufgrund einer anderen Bedingung nicht durchführbar ist, können Sie den Statuscode 400 (Bad Request) zurückgeben. Eine vollständige Liste mit HTTP-Statuscodes finden Sie auf der W3C-Website im Thema zu den [Statuscodedefinitionen](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).
 
 	Der folgende Code enthält ein Beispiel, bei dem unterschiedliche Bedingungen abgefangen werden und eine geeignete Antwort zurückgegeben wird.
 
@@ -364,13 +364,13 @@ Wenn ein Vorgang im ASP.NET-Web-API-Framework eine unerwartete Ausnahme auslöst
 
 	> [AZURE.TIP] Fügen Sie keine Informationen ein, die für Angreifer beim Eindringen in Ihre Web-API nützlich sein könnten. Weitere Informationen finden Sie auf der Microsoft-Website auf der Seite [Ausnahmebehandlung in der ASP.NET-Web-API](http://www.asp.net/web-api/overview/error-handling/exception-handling).
 
-	> [AZURE.NOTE] Viele Webserver fangen Fehlerbedingungen selbst ab, bevor sie die Web-API erreichen. Wenn Sie beispielsweise die Authentifizierung für eine Website konfigurieren und der Benutzer keine richtigen Authentifizierungsinformationen angibt, sollte der Webserver mit dem Statuscode 401 (Unauthorized) antworten. Nachdem ein Client authentifiziert wurde, kann Ihr Code eigene Überprüfungen durchführen, um zu bestätigen, dass der Client auf die angeforderte Ressource zugreifen kann. Wenn diese Autorisierung nicht erfolgreich ist, sollten Sie den Statuscode 403 (Forbidden) zurückgeben.
+	> [AZURE.NOTE] Viele Webserver fangen Fehlerbedingungen selbst ab, bevor sie die Web-API erreichen. Wenn Sie beispielsweise die Authentifizierung für eine Website konfigurieren und der Benutzer keine richtigen Authentifizierungsinformationen angibt, sollte der Webserver mit dem Statuscode 401 (Unauthorized) antworten. Nachdem ein Client authentifiziert wurde, kann Ihr Code eigene Überprüfungen durchführen, um zu bestätigen, dass der Client auf die angeforderte Ressource zugreifen kann. Wenn diese Autorisierung nicht erfolgreich ist, sollten Sie den Statuscode 403 (Forbidden) zurückgeben.
 
 - **Behandeln Sie Ausnahmen auf konsistente Weise, und protokollieren Sie Informationen zu Fehlern**.
 
 	Erwägen Sie zum einheitlichen Behandeln von Ausnahmen die Implementierung einer globalen Strategie zur Fehlerbehandlung in der gesamten Web-API. Dies erreichen Sie teilweise wie folgt: Sie erstellen einen Ausnahmefilter, der immer ausgeführt wird, wenn ein Controller eine unbehandelte Ausnahme auslöst, bei der es sich nicht um eine `HttpResponseException`-Ausnahme handelt. Dieser Ansatz ist auf der Microsoft-Website auf der Seite [Ausnahmebehandlung in der ASP.NET-Web-API](http://www.asp.net/web-api/overview/error-handling/exception-handling) beschrieben.
 
-	Es gibt jedoch mehrere Situationen, in denen ein Ausnahmefilter eine Ausnahme nicht abfängt, z. B.:
+	Es gibt jedoch mehrere Situationen, in denen ein Ausnahmefilter eine Ausnahme nicht abfängt, z. B.:
 
 	- Von Controllerkonstruktoren ausgelöste Ausnahmen
 
@@ -384,16 +384,16 @@ Wenn ein Vorgang im ASP.NET-Web-API-Framework eine unerwartete Ausnahme auslöst
 
 - **Unterscheiden Sie zwischen clientseitigen und serverseitigen Fehlern**.
 
-	Im HTTP-Protokoll wird zwischen Fehlern unterschieden, die aufgrund der Clientanwendung auftreten (HTTP 4xx-Statuscodes), und Fehlern, die aufgrund eines Problems auf dem Server auftreten (HTTP 5xx-Statuscodes). Achten Sie darauf, dass Sie diese Konvention in allen Fehlerantwortnachrichten befolgen.
+	Im HTTP-Protokoll wird zwischen Fehlern unterschieden, die aufgrund der Clientanwendung auftreten (HTTP 4xx-Statuscodes), und Fehlern, die aufgrund eines Problems auf dem Server auftreten (HTTP 5xx-Statuscodes). Achten Sie darauf, dass Sie diese Konvention in allen Fehlerantwortnachrichten befolgen.
 
 <a name="considerations-for-optimizing"></a>
 ## Aspekte der Optimierung des clientseitigen Datenzugriffs
 
-In einer verteilten Umgebung, z. B. mit einem Webserver und Clientanwendungen, ist das Netzwerk eines der Elemente, die am stärksten beachtet werden müssen. Es können sich erhebliche Engpässe ergeben, und zwar vor allem, wenn eine Clientanwendung häufig Anforderungen sendet oder Daten empfängt. Daher sollten Sie versuchen, die Menge des im Netzwerk übertragenen Datenverkehrs möglichst zu verringern. Beachten Sie beim Implementieren des Codes zum Abrufen und Verwalten von Daten die folgenden Punkte:
+In einer verteilten Umgebung, z. B. mit einem Webserver und Clientanwendungen, ist das Netzwerk eines der Elemente, die am stärksten beachtet werden müssen. Es können sich erhebliche Engpässe ergeben, und zwar vor allem, wenn eine Clientanwendung häufig Anforderungen sendet oder Daten empfängt. Daher sollten Sie versuchen, die Menge des im Netzwerk übertragenen Datenverkehrs möglichst zu verringern. Beachten Sie beim Implementieren des Codes zum Abrufen und Verwalten von Daten die folgenden Punkte:
 
 - **Unterstützen Sie die clientseitige Zwischenspeicherung**.
 
-	Das HTTP 1.1-Protokoll unterstützt die Zwischenspeicherung auf Clients und Zwischenservern, über die eine Anforderung mit Cache-Control-Header weitergeleitet wird. Wenn eine Clientanwendung eine HTTP GET-Anforderung an die Web-API sendet, kann die Antwort einen Cache-Control-Header enthalten. Hiermit wird angegeben, ob die Daten im Text der Antwort vom Client oder einem Zwischenserver, über den die Anforderung weitergeleitet wurde, sicher zwischengespeichert werden können. Außerdem wird angegeben, nach welchem Zeitraum die Daten ablaufen und als veraltet angesehen werden. Das folgende Beispiel enthält eine HTTP GET-Anforderung und die dazugehörige Antwort mit einem Cache-Control-Header:
+	Das HTTP 1.1-Protokoll unterstützt die Zwischenspeicherung auf Clients und Zwischenservern, über die eine Anforderung mit Cache-Control-Header weitergeleitet wird. Wenn eine Clientanwendung eine HTTP GET-Anforderung an die Web-API sendet, kann die Antwort einen Cache-Control-Header enthalten. Hiermit wird angegeben, ob die Daten im Text der Antwort vom Client oder einem Zwischenserver, über den die Anforderung weitergeleitet wurde, sicher zwischengespeichert werden können. Außerdem wird angegeben, nach welchem Zeitraum die Daten ablaufen und als veraltet angesehen werden. Das folgende Beispiel enthält eine HTTP GET-Anforderung und die dazugehörige Antwort mit einem Cache-Control-Header:
 
 	```HTTP
 	GET http://adventure-works.com/orders/2 HTTP/1.1
@@ -409,7 +409,7 @@ In einer verteilten Umgebung, z. B. mit einem Webserver und Clientanwendungen, 
 	{"orderID":2,"productID":4,"quantity":2,"orderValue":10.00}
 	```
 
-	In diesem Beispiel wird mit dem Cache-Control-Header angegeben, dass die zurückgegebenen Daten nach 600 Sekunden ablaufen sollen. Außerdem sind sie nur für einen einzelnen Client geeignet und dürfen nicht in einem freigegebenen Cache gespeichert werden, der von anderen Clients verwendet wird (sie sind _private_). Im Cache-Control-Header kann anstelle von _private_ auch _public_ angegeben werden, damit die Daten in einem freigegebenen Cache gespeichert werden können. Oder es kann _no-store_ angegeben werden, wenn die Daten vom Client **nicht** zwischengespeichert werden dürfen. Im folgenden Codebeispiel wird veranschaulicht, wie Sie einen Cache-Control-Header in einer Antwortnachricht erstellen:
+	In diesem Beispiel wird mit dem Cache-Control-Header angegeben, dass die zurückgegebenen Daten nach 600 Sekunden ablaufen sollen. Außerdem sind sie nur für einen einzelnen Client geeignet und dürfen nicht in einem freigegebenen Cache gespeichert werden, der von anderen Clients verwendet wird (sie sind _private_). Im Cache-Control-Header kann anstelle von _private_ auch _public_ angegeben werden, damit die Daten in einem freigegebenen Cache gespeichert werden können. Oder es kann _no-store_ angegeben werden, wenn die Daten vom Client **nicht** zwischengespeichert werden dürfen. Im folgenden Codebeispiel wird veranschaulicht, wie Sie einen Cache-Control-Header in einer Antwortnachricht erstellen:
 
 	```C#
 	public class OrdersController : ApiController
@@ -477,7 +477,7 @@ In einer verteilten Umgebung, z. B. mit einem Webserver und Clientanwendungen, 
 
 - **Stellen Sie ETags zum Optimieren der Abfrageverarbeitung bereit**.
 
-	Wenn eine Clientanwendung ein Objekt abruft, kann die Antwortnachricht auch ein _ETag_ (Entitätstag) enthalten. Ein ETag ist eine opake Zeichenfolge, mit der die Version einer Ressource angegeben wird. Wenn eine Ressource geändert wird, wird auch das ETag geändert. Dieses ETag sollte von der Clientanwendung als Teil der Daten zwischengespeichert werden. Im folgenden Codebeispiel wird veranschaulicht, wie Sie einer HTTP GET-Anforderung ein ETag als Teil der Antwort hinzufügen. In diesem Code wird die `GetHashCode`-Methode eines Objekts zum Generieren eines numerischen Werts verwendet, mit dem das Objekt identifiziert wird (Sie können diese Methode bei Bedarf außer Kraft setzen und einen eigenen Hashwert generieren, indem Sie einen Algorithmus verwenden, z. B. MD5):
+	Wenn eine Clientanwendung ein Objekt abruft, kann die Antwortnachricht auch ein _ETag_ (Entitätstag) enthalten. Ein ETag ist eine opake Zeichenfolge, mit der die Version einer Ressource angegeben wird. Wenn eine Ressource geändert wird, wird auch das ETag geändert. Dieses ETag sollte von der Clientanwendung als Teil der Daten zwischengespeichert werden. Im folgenden Codebeispiel wird veranschaulicht, wie Sie einer HTTP GET-Anforderung ein ETag als Teil der Antwort hinzufügen. In diesem Code wird die `GetHashCode`-Methode eines Objekts zum Generieren eines numerischen Werts verwendet, mit dem das Objekt identifiziert wird (Sie können diese Methode bei Bedarf außer Kraft setzen und einen eigenen Hashwert generieren, indem Sie einen Algorithmus verwenden, z. B. MD5):
 
 	```C#
 	public class OrdersController : ApiController
@@ -529,15 +529,15 @@ In einer verteilten Umgebung, z. B. mit einem Webserver und Clientanwendungen, 
 	...
 	```
 
-	- Der GET-Vorgang in der Web-API ruft das aktuelle ETag für die angeforderten Daten ab („Order 2“ im obigen Beispiel) und vergleicht es mit dem Wert im If-None-Match-Header.
+	- Der GET-Vorgang in der Web-API ruft das aktuelle ETag für die angeforderten Daten ab („Order 2“ im obigen Beispiel) und vergleicht es mit dem Wert im If-None-Match-Header.
 
-	- Wenn das aktuelle ETag für die angeforderten Daten mit dem von der Anforderung bereitgestellten ETag übereinstimmt, hat sich die Ressource nicht geändert. Die Web-API sollte also eine HTTP-Antwort mit leerem Nachrichtentext und dem Statuscode 304 (Not Modified) zurückgeben.
+	- Wenn das aktuelle ETag für die angeforderten Daten mit dem von der Anforderung bereitgestellten ETag übereinstimmt, hat sich die Ressource nicht geändert. Die Web-API sollte also eine HTTP-Antwort mit leerem Nachrichtentext und dem Statuscode 304 (Not Modified) zurückgeben.
 
-	- Wenn das aktuelle ETag für die angeforderten Daten nicht mit dem von der Anforderung bereitgestellten ETag übereinstimmt, haben sich die Daten geändert. Die Web-API sollte also eine HTTP-Antwort mit den neuen Daten im Nachrichtentext und dem Statuscode 200 (OK) zurückgeben.
+	- Wenn das aktuelle ETag für die angeforderten Daten nicht mit dem von der Anforderung bereitgestellten ETag übereinstimmt, haben sich die Daten geändert. Die Web-API sollte also eine HTTP-Antwort mit den neuen Daten im Nachrichtentext und dem Statuscode 200 (OK) zurückgeben.
 
-	- Falls die angeforderten Daten nicht mehr vorhanden sind, sollte die Web-API eine HTTP-Antwort mit dem Statuscode 404 (Nicht gefunden) zurückgeben.
+	- Falls die angeforderten Daten nicht mehr vorhanden sind, sollte die Web-API eine HTTP-Antwort mit dem Statuscode 404 (Nicht gefunden) zurückgeben.
 
-	- Der Client verwendet den Statuscode zum Verwalten des Cache. Wenn sich die Daten nicht geändert haben (Statuscode 304), kann das Objekt zwischengespeichert bleiben, und die Clientanwendung sollte weiterhin diese Version des Objekts nutzen. Wenn sich die Daten geändert haben (Statuscode 200), sollte das zwischengespeicherte Objekt verworfen und das neue Objekt eingefügt werden. Falls die Daten nicht mehr verfügbar sind (Statuscode 404), sollte das Objekt aus dem Cache entfernt werden.
+	- Der Client verwendet den Statuscode zum Verwalten des Cache. Wenn sich die Daten nicht geändert haben (Statuscode 304), kann das Objekt zwischengespeichert bleiben, und die Clientanwendung sollte weiterhin diese Version des Objekts nutzen. Wenn sich die Daten geändert haben (Statuscode 200), sollte das zwischengespeicherte Objekt verworfen und das neue Objekt eingefügt werden. Falls die Daten nicht mehr verfügbar sind (Statuscode 404), sollte das Objekt aus dem Cache entfernt werden.
 
 	> [AZURE.NOTE] Wenn der Antwortheader den Cache-Control-Header „no-store“ enthält, sollte das Objekt unabhängig vom HTTP-Statuscode aus dem Cache entfernt werden.
 
@@ -649,15 +649,15 @@ In einer verteilten Umgebung, z. B. mit einem Webserver und Clientanwendungen, 
 	productID=3&quantity=5&orderValue=250
 	```
 
-	- Der PUT-Vorgang in der Web-API ruft das aktuelle ETag für die angeforderten Daten ab („Order 1“ im obigen Beispiel) und vergleicht es mit dem Wert im If-Match-Header.
+	- Der PUT-Vorgang in der Web-API ruft das aktuelle ETag für die angeforderten Daten ab („Order 1“ im obigen Beispiel) und vergleicht es mit dem Wert im If-Match-Header.
 
-	- Wenn das aktuelle ETag für die angeforderten Daten mit dem von der Anforderung bereitgestellten ETag übereinstimmt, hat sich die Ressource nicht geändert. Die Web-API sollte also das Update durchführen und eine Nachricht mit dem HTTP-Statuscode 204 (No Content) zurückgeben, wenn der Vorgang erfolgreich ist. Die Antwort kann Cache-Control- und ETag-Header für die aktualisierte Version der Ressource enthalten. Die Antwort sollte immer den Location-Header enthalten, mit dem auf den URI der gerade aktualisierten Ressource verwiesen wird.
+	- Wenn das aktuelle ETag für die angeforderten Daten mit dem von der Anforderung bereitgestellten ETag übereinstimmt, hat sich die Ressource nicht geändert. Die Web-API sollte also das Update durchführen und eine Nachricht mit dem HTTP-Statuscode 204 (No Content) zurückgeben, wenn der Vorgang erfolgreich ist. Die Antwort kann Cache-Control- und ETag-Header für die aktualisierte Version der Ressource enthalten. Die Antwort sollte immer den Location-Header enthalten, mit dem auf den URI der gerade aktualisierten Ressource verwiesen wird.
 
-	- Wenn das aktuelle ETag für die angeforderten Daten nicht mit dem von der Anforderung bereitgestellten ETag übereinstimmt, wurden die Daten von einem anderen Benutzer geändert, seitdem sie abgerufen wurden. Die Web-API sollte eine HTTP-Antwort mit einem leeren Nachrichtentext und dem Statuscode 412 (Precondition Failed) zurückgeben.
+	- Wenn das aktuelle ETag für die angeforderten Daten nicht mit dem von der Anforderung bereitgestellten ETag übereinstimmt, wurden die Daten von einem anderen Benutzer geändert, seitdem sie abgerufen wurden. Die Web-API sollte eine HTTP-Antwort mit einem leeren Nachrichtentext und dem Statuscode 412 (Precondition Failed) zurückgeben.
 
-	- Falls die zu aktualisierende Ressource nicht mehr vorhanden ist, sollte die Web-API eine HTTP-Antwort mit dem Statuscode 404 (Nicht gefunden) zurückgeben.
+	- Falls die zu aktualisierende Ressource nicht mehr vorhanden ist, sollte die Web-API eine HTTP-Antwort mit dem Statuscode 404 (Nicht gefunden) zurückgeben.
 
-	- Der Client nutzt den Statuscode und die Antwortheader zum Verwalten des Cache. Wenn die Daten aktualisiert wurden (Statuscode 204), kann das Objekt zwischengespeichert bleiben (sofern im Cache-Control-Header nicht „no-store“ angegeben ist), aber das ETag muss aktualisiert werden. Falls die Daten von einem anderen Benutzer geändert (Statuscode 412) oder Nicht gefunden wurden (Statuscode 404), sollte das zwischengespeicherte Objekt verworfen werden.
+	- Der Client nutzt den Statuscode und die Antwortheader zum Verwalten des Cache. Wenn die Daten aktualisiert wurden (Statuscode 204), kann das Objekt zwischengespeichert bleiben (sofern im Cache-Control-Header nicht „no-store“ angegeben ist), aber das ETag muss aktualisiert werden. Falls die Daten von einem anderen Benutzer geändert (Statuscode 412) oder Nicht gefunden wurden (Statuscode 404), sollte das zwischengespeicherte Objekt verworfen werden.
 
 	Im nächsten Codebeispiel wird eine Implementierung des PUT-Vorgangs für den Orders-Controller veranschaulicht:
 
@@ -741,7 +741,7 @@ Wenn eine Clientanwendung Anforderungen ausgibt, bei denen Daten gesendet oder e
 
 - **Optimieren Sie Anforderungen und Antworten, die große Objekte enthalten**.
 
-	Einige Ressourcen können große Objekte sein oder große Felder enthalten, z. B. Grafiken oder andere Arten von Binärdaten. Eine Web-API sollte das Streamen unterstützen, um das Hoch- und Herunterladen dieser Ressourcen zu optimieren.
+	Einige Ressourcen können große Objekte sein oder große Felder enthalten, z. B. Grafiken oder andere Arten von Binärdaten. Eine Web-API sollte das Streamen unterstützen, um das Hoch- und Herunterladen dieser Ressourcen zu optimieren.
 
 	Das HTTP-Protokoll stellt das Verfahren für die segmentierte Transfercodierung bereit, mit dem große Datenobjekte zurück auf einen Client gestreamt werden können. Wenn der Client eine HTTP GET-Anforderung für ein großes Objekt sendet, kann die Web-API die Antwort in einzelnen _Segmenten_ („Chunks“) über eine HTTP-Verbindung zurücksenden. Die Länge der Daten in der Antwort ist am Anfang unter Umständen noch nicht bekannt (ggf. werden sie erst generiert). Der Server, auf dem die Web-API gehostet wird, sollte also mit jedem Segment eine Antwortnachricht senden, für die der Header „Transfer-Encoding: Chunked“ angegeben ist, und kein Content-Length-Header. Die Clientanwendung kann die einzelnen Segmente empfangen, um die vollständige Antwort zusammenzusetzen. Die Datenübertragung ist abgeschlossen, wenn der Server das letzte Segment mit einer Größe von null zurücksendet. Sie können das „Chunking“ in der ASP.NET-Web-API implementieren, indem Sie die `PushStreamContent`-Klasse verwenden.
 
@@ -873,21 +873,21 @@ Wenn eine Clientanwendung Anforderungen ausgibt, bei denen Daten gesendet oder e
     }
 	```
 
-	> [AZURE.TIP] Die Datenmenge, die Sie für einen Webdienst hochladen können, ist beim Streamen nicht beschränkt. Eine einzelne Anforderung kann also zu einem riesigen Objekt führen, das Ressourcen in erheblichem Umfang verbraucht. Wenn die Web-API während des Streamingvorgangs ermittelt, dass die Menge der Daten in einer Anforderung nicht mehr akzeptabel ist, kann sie den Vorgang abbrechen und eine Antwortnachricht mit dem Statuscode 413 (Request Entity Too Large) zurückgeben.
+	> [AZURE.TIP] Die Datenmenge, die Sie für einen Webdienst hochladen können, ist beim Streamen nicht beschränkt. Eine einzelne Anforderung kann also zu einem riesigen Objekt führen, das Ressourcen in erheblichem Umfang verbraucht. Wenn die Web-API während des Streamingvorgangs ermittelt, dass die Menge der Daten in einer Anforderung nicht mehr akzeptabel ist, kann sie den Vorgang abbrechen und eine Antwortnachricht mit dem Statuscode 413 (Request Entity Too Large) zurückgeben.
 
 	Sie können die Größe von großen Objekten, die über das Netzwerk übertragen werden, per HTTP-Komprimierung verringern. Dieser Ansatz ist hilfreich, um die Menge des Datenverkehrs im Netzwerk und die damit verbundene Netzwerklatenz zu reduzieren. Der Nachteil ist, dass auf dem Client und dem Server, auf dem die Web-API gehostet wird, zusätzlicher Verarbeitungsaufwand anfällt. Eine Clientanwendung, die den Eingang von komprimierten Daten erwartet, kann beispielsweise den Anforderungsheader „Accept-Encoding: gzip“ einfügen (auch andere Algorithmen zur Datenkomprimierung können angegeben werden). Wenn der Server die Komprimierung unterstützt, sollte die Antwort den Inhalt im gzip-Format im Nachrichtentext sowie den Antwortheader „Content-Encoding: gzip“ enthalten.
 
-	> [AZURE.TIP] Sie können die codierte Komprimierung mit dem Streaming kombinieren. Komprimieren Sie die Daten vor dem Streamen, und geben Sie die gzip-Inhaltscodierung und die segmentierte Transfercodierung in den Nachrichtenheadern an. Beachten Sie außerdem, dass einige Webserver (z. B. Internet Information Server) so konfiguriert werden können, dass HTTP-Antworten automatisch komprimiert werden. Dies gilt unabhängig davon, ob die Web-API die Daten komprimiert oder nicht.
+	> [AZURE.TIP] Sie können die codierte Komprimierung mit dem Streaming kombinieren. Komprimieren Sie die Daten vor dem Streamen, und geben Sie die gzip-Inhaltscodierung und die segmentierte Transfercodierung in den Nachrichtenheadern an. Beachten Sie außerdem, dass einige Webserver (z. B. Internet Information Server) so konfiguriert werden können, dass HTTP-Antworten automatisch komprimiert werden. Dies gilt unabhängig davon, ob die Web-API die Daten komprimiert oder nicht.
 
 - **Implementieren Sie Teilantworten für Clients, die keine asynchronen Vorgänge unterstützen**.
 
-	Als Alternative zum asynchronen Streaming kann eine Clientanwendung Daten für große Objekte explizit in Segmenten anfordern. Diese werden als Teilantworten bezeichnet. Die Clientanwendung sendet eine HTTP HEAD-Anforderung, um Informationen zum Objekt abzurufen. Wenn die Web-API Teilantworten unterstützt, sollte sie auf die HEAD-Anforderung mit einer Antwortnachricht reagieren, die einen Accept-Ranges-Header und einen Content-Length-Header zum Angeben der Gesamtgröße des Objekts enthält. Der Text der Nachricht sollte aber leer sein. Die Clientanwendung kann diese Informationen verwenden, um eine Reihe von GET-Anforderungen zu erstellen, mit denen ein Bereich für den zu empfangenden Bytebereich angegeben wird. Die Web-API sollte eine Antwortnachricht mit dem HTTP-Status 206 (Partial Content), einen Content-Length-Header zum Angeben des tatsächlichen Betrags an Daten im Text der Antwortnachricht und einen Content-Range-Header zurückgeben, mit dem angegeben wird, welchen Teil des Objekts (z. B. Bytes 4.000 bis 8.000) diese Daten darstellen.
+	Als Alternative zum asynchronen Streaming kann eine Clientanwendung Daten für große Objekte explizit in Segmenten anfordern. Diese werden als Teilantworten bezeichnet. Die Clientanwendung sendet eine HTTP HEAD-Anforderung, um Informationen zum Objekt abzurufen. Wenn die Web-API Teilantworten unterstützt, sollte sie auf die HEAD-Anforderung mit einer Antwortnachricht reagieren, die einen Accept-Ranges-Header und einen Content-Length-Header zum Angeben der Gesamtgröße des Objekts enthält. Der Text der Nachricht sollte aber leer sein. Die Clientanwendung kann diese Informationen verwenden, um eine Reihe von GET-Anforderungen zu erstellen, mit denen ein Bereich für den zu empfangenden Bytebereich angegeben wird. Die Web-API sollte eine Antwortnachricht mit dem HTTP-Status 206 (Partial Content), einen Content-Length-Header zum Angeben des tatsächlichen Betrags an Daten im Text der Antwortnachricht und einen Content-Range-Header zurückgeben, mit dem angegeben wird, welchen Teil des Objekts (z. B. Bytes 4.000 bis 8.000) diese Daten darstellen.
 
 	HTTP HEAD-Anforderungen und Teilantworten werden im Leitfaden zum API-Entwurf ausführlicher beschrieben.
 
 - **Vermeiden Sie das Senden unnötiger Continue-Statusnachrichten in Clientanwendungen**.
 
-	Eine Clientanwendung, die eine große Datenmenge an einen Server senden möchte, kann auch zuerst ermitteln, ob auf dem Server die Bereitschaft zum Annehmen der Anforderung besteht. Vor dem Senden der Daten kann die Clientanwendung eine HTTP-Anforderung mit einem Header „Expect: 100-Continue“ und einem Content-Length-Header zum Angeben der Größe für die Daten übermitteln. Der Nachrichtentext ist hierbei leer. Wenn der Server zum Behandeln der Anforderung bereit ist, sollte er mit einer Nachricht antworten, in der der HTTP-Status 100 (Continue) angegeben ist. Die Clientanwendung kann den Vorgang dann fortsetzen und die gesamte Anforderung senden, einschließlich der Daten im Nachrichtentext.
+	Eine Clientanwendung, die eine große Datenmenge an einen Server senden möchte, kann auch zuerst ermitteln, ob auf dem Server die Bereitschaft zum Annehmen der Anforderung besteht. Vor dem Senden der Daten kann die Clientanwendung eine HTTP-Anforderung mit einem Header „Expect: 100-Continue“ und einem Content-Length-Header zum Angeben der Größe für die Daten übermitteln. Der Nachrichtentext ist hierbei leer. Wenn der Server zum Behandeln der Anforderung bereit ist, sollte er mit einer Nachricht antworten, in der der HTTP-Status 100 (Continue) angegeben ist. Die Clientanwendung kann den Vorgang dann fortsetzen und die gesamte Anforderung senden, einschließlich der Daten im Nachrichtentext.
 
 	Wenn Sie einen Dienst per IIS hosten, werden Expect: 100-Continue-Header vom Treiber „HTTP.sys“ automatisch erkannt und behandelt, bevor Anforderungen an Ihre Webanwendung übergeben werden. Dies bedeutet, dass Sie diese Header wahrscheinlich nicht in Ihrem Anwendungscode sehen, und Sie können davon ausgehen, dass per IIS bereits alle Nachrichten herausgefiltert wurden, die als ungeeignet oder zu groß angesehen werden.
 
@@ -924,9 +924,9 @@ Wenn eine Clientanwendung Anforderungen ausgibt, bei denen Daten gesendet oder e
 	}
 	```
 
-	Eine Clientanwendung kann eine Anforderung zum Abrufen von 30 Bestellungen ausgeben, bei der bei Offset = 50 begonnen wird. Hierfür wird der URI \__http://www.adventure-works.com/api/orders?limit=30&offset=50_ verwendet.
+	Eine Clientanwendung kann eine Anforderung zum Abrufen von 30 Bestellungen ausgeben, bei der bei Offset = 50 begonnen wird. Hierfür wird der URI \__http://www.adventure-works.com/api/orders?limit=30&offset=50_ verwendet.
 
-	> [AZURE.TIP] Sie sollten verhindern, dass Clientanwendungen Abfragezeichenfolgen angeben können, die zu einem URI mit einer Länge von mehr als 2.000 Zeichen führen. Viele Webclients und -server können keine URIs dieser Länge verarbeiten.
+	> [AZURE.TIP] Sie sollten verhindern, dass Clientanwendungen Abfragezeichenfolgen angeben können, die zu einem URI mit einer Länge von mehr als 2.000 Zeichen führen. Viele Webclients und -server können keine URIs dieser Länge verarbeiten.
 
 <a name="considerations-for-maintaining-responsiveness"></a>
 ## Aspekte zur Aufrechterhaltung der Reaktionsfähigkeit, Skalierbarkeit und Verfügbarkeit
@@ -935,7 +935,7 @@ Eine Web-API kann von vielen Clientanwendungen, die weltweit an den unterschiedl
 
 - **Stellen Sie die asynchrone Unterstützung für Anforderungen mit langer Ausführungsdauer bereit**.
 
-	Eine Anforderung, deren Verarbeitung unter Umständen sehr lange dauern kann, sollte durchgeführt werden, ohne den übermittelnden Client zu blockieren. Die Web-API kann einige erste Überprüfungen durchführen, um die Anforderung zu validieren, eine separate Aufgabe zum Ausführen der Arbeit initiieren und dann eine Antwortnachricht mit dem HTTP-Code 202 (Accepted) zurückgeben. Die Aufgabe kann asynchron als Teil der Web-API-Verarbeitung ausgeführt werden, oder sie kann in einen Azure WebJob (wenn die Web-API von einer Azure-Website gehostet wird) oder eine Workerrolle (wenn die Web-API als Azure-Clouddienst implementiert wird) verlagert werden.
+	Eine Anforderung, deren Verarbeitung unter Umständen sehr lange dauern kann, sollte durchgeführt werden, ohne den übermittelnden Client zu blockieren. Die Web-API kann einige erste Überprüfungen durchführen, um die Anforderung zu validieren, eine separate Aufgabe zum Ausführen der Arbeit initiieren und dann eine Antwortnachricht mit dem HTTP-Code 202 (Accepted) zurückgeben. Die Aufgabe kann asynchron als Teil der Web-API-Verarbeitung ausgeführt werden, oder sie kann in einen Azure WebJob (wenn die Web-API von einer Azure-Website gehostet wird) oder eine Workerrolle (wenn die Web-API als Azure-Clouddienst implementiert wird) verlagert werden.
 
 	> [AZURE.NOTE] Weitere Informationen zur Verwendung von WebJobs mit der Azure-Website finden Sie auf der Microsoft-Website unter [Ausführen von Hintergrundaufgaben mit Webaufträgen](web-sites-create-web-jobs.md).
 
@@ -945,17 +945,17 @@ Eine Web-API kann von vielen Clientanwendungen, die weltweit an den unterschiedl
 
 	1. Die Clientanwendung sendet die erste Anfrage an die Web-API.
 
-	2. Die Web-API speichert Informationen zur Anforderung in einer Tabelle, die im Tabellenspeicher oder im Microsoft Azure Cache vorgehalten wird, und generiert einen eindeutigen Schlüssel für diesen Eintrag, z. B. in Form einer GUID.
+	2. Die Web-API speichert Informationen zur Anforderung in einer Tabelle, die im Tabellenspeicher oder im Microsoft Azure Cache vorgehalten wird, und generiert einen eindeutigen Schlüssel für diesen Eintrag, z. B. in Form einer GUID.
 
 	3. Von der Web-API wird die Verarbeitung als separate Aufgabe initiiert. Die Web-API zeichnet den Status der Aufgabe in der Tabelle als _Running_ auf.
 
-	4. Die Web-API gibt eine Antwortnachricht mit dem HTTP-Statuscode 202 (Accepted) und der GUID des Tabelleneintrags im Text der Nachricht zurück.
+	4. Die Web-API gibt eine Antwortnachricht mit dem HTTP-Statuscode 202 (Accepted) und der GUID des Tabelleneintrags im Text der Nachricht zurück.
 
 	5. Wenn die Aufgabe abgeschlossen ist, speichert die Web-API die Ergebnisse in der Tabelle und legt den Status der Aufgabe auf _Complete_ fest. Beachten Sie Folgendes: Wenn die Durchführung der Aufgabe nicht erfolgreich ist, kann die Web-API auch Informationen zum Fehler speichern und den Status auf _Failed_ festlegen.
 
 	6. Während der Ausführung der Aufgabe kann der Client mit seiner eigenen Verarbeitung fortfahren. Er kann regelmäßig eine Anforderung an den URI _/polling/{guid}_ senden. Hierbei steht _{guid}_ für die GUID, die von der Web-API in der 202-Antwortnachricht zurückgegeben wird.
 
-	7. Die Web-API am URI _/polling{guid}_ fragt den Status der entsprechenden Aufgabe in der Tabelle ab und gibt eine Antwortnachricht mit dem HTTP-Statuscode 200 (OK) und dem Status zurück (_Running_, _Complete_ oder _Failed_). Wenn die Aufgabe abgeschlossen ist oder nicht erfolgreich war, kann die Antwortnachricht auch die Ergebnisse der Verarbeitung oder Informationen enthalten, die zur Ursache des Fehlers verfügbar sind.
+	7. Die Web-API am URI _/polling/{guid}_ fragt den Status der entsprechenden Aufgabe in der Tabelle ab und gibt eine Antwortnachricht mit dem HTTP-Statuscode 200 (OK) und dem Status zurück (_Running_, _Complete_ oder _Failed_). Wenn die Aufgabe abgeschlossen ist oder nicht erfolgreich war, kann die Antwortnachricht auch die Ergebnisse der Verarbeitung oder Informationen enthalten, die zur Ursache des Fehlers verfügbar sind.
 
 	Falls Sie es vorziehen, Benachrichtigungen zu implementieren, können Sie beispielsweise die folgenden verfügbaren Optionen verwenden:
 
@@ -973,13 +973,13 @@ Eine Web-API kann von vielen Clientanwendungen, die weltweit an den unterschiedl
 
 - **Verfolgen Sie Clients nach, und implementieren Sie die Drosselung, um die Gefahr von DoS-Angriffen zu verringern**.
 
-	Wenn ein bestimmter Client innerhalb eines bestimmten Zeitraums eine große Zahl von Anforderungen sendet, kann dies zu einer Monopolisierung des Diensts führen und die Leistung anderer Clients beeinträchtigen. Zur Beseitigung dieses Problems kann eine Web-API die Aufrufe von Clientanwendungen überwachen, indem entweder die IP-Adresse aller eingehenden Anforderungen nachverfolgt wird oder indem jeder authentifizierte Zugriff protokolliert wird. Sie können diese Informationen nutzen, um den Zugriff auf Ressourcen zu beschränken. Wenn ein Client einen festgelegten Grenzwert überschreitet, kann die Web-API eine Antwortnachricht mit dem Status 503 (Service Unavailable) zurückgeben und einen Retry-After-Header einfügen. Mit diesem Header wird angegeben, wann der Client die nächste Anforderung senden kann, ohne dass diese abgelehnt wird. Diese Strategie kann die Gefahr eines DoS-Angriffs (Denial Of Service) über Clients in Verbindung mit einem Zusammenbruch des Systems verringern.
+	Wenn ein bestimmter Client innerhalb eines bestimmten Zeitraums eine große Zahl von Anforderungen sendet, kann dies zu einer Monopolisierung des Diensts führen und die Leistung anderer Clients beeinträchtigen. Zur Beseitigung dieses Problems kann eine Web-API die Aufrufe von Clientanwendungen überwachen, indem entweder die IP-Adresse aller eingehenden Anforderungen nachverfolgt wird oder indem jeder authentifizierte Zugriff protokolliert wird. Sie können diese Informationen nutzen, um den Zugriff auf Ressourcen zu beschränken. Wenn ein Client einen festgelegten Grenzwert überschreitet, kann die Web-API eine Antwortnachricht mit dem Status 503 (Service Unavailable) zurückgeben und einen Retry-After-Header einfügen. Mit diesem Header wird angegeben, wann der Client die nächste Anforderung senden kann, ohne dass diese abgelehnt wird. Diese Strategie kann die Gefahr eines DoS-Angriffs (Denial Of Service) über Clients in Verbindung mit einem Zusammenbruch des Systems verringern.
 
 - **Verwalten Sie dauerhafte HTTP-Verbindungen sorgfältig**.
 
-	Das HTTP-Protokoll unterstützt dauerhafte HTTP-Verbindungen, sofern sie verfügbar sind. Mit der HTTP 1.0-Spezifikation wurde der Connection:Keep-Alive-Header hinzugefügt. Hiermit kann eine Clientanwendung für den Server angeben, dass dieselbe Verbindung zum Senden nachfolgender Anforderungen genutzt werden kann, anstatt neue Verbindungen zu öffnen. Die Verbindung wird automatisch geschlossen, wenn der Client die Verbindung nicht innerhalb eines vom Host definierten Zeitraums wiederverwendet. Dies ist das Standardverhalten in HTTP 1.1, das von Azure-Diensten verwendet wird. Es ist also nicht erforderlich, Keep-Alive-Header in Nachrichten einzufügen.
+	Das HTTP-Protokoll unterstützt dauerhafte HTTP-Verbindungen, sofern sie verfügbar sind. Mit der HTTP 1.0-Spezifikation wurde der Connection:Keep-Alive-Header hinzugefügt. Hiermit kann eine Clientanwendung für den Server angeben, dass dieselbe Verbindung zum Senden nachfolgender Anforderungen genutzt werden kann, anstatt neue Verbindungen zu öffnen. Die Verbindung wird automatisch geschlossen, wenn der Client die Verbindung nicht innerhalb eines vom Host definierten Zeitraums wiederverwendet. Dies ist das Standardverhalten in HTTP 1.1, das von Azure-Diensten verwendet wird. Es ist also nicht erforderlich, Keep-Alive-Header in Nachrichten einzufügen.
 
-	Das Offenhalten einer Verbindung kann die Reaktionsfähigkeit verbessern, indem die Latenz und Netzwerküberlastung reduziert wird. Aber es kann sich negativ auf die Skalierbarkeit auswirken, wenn nicht benötigte Verbindungen länger als erforderlich geöffnet bleiben, da das gleichzeitige Herstellen von Verbindungen für andere Clients eingeschränkt wird. Außerdem kann es sich auf die Akkulaufzeit auswirken, wenn die Clientanwendung auf einem Mobilgerät ausgeführt wird. Falls die Anwendung nur gelegentlich Anforderungen an den Server sendet, kann das Aufrechterhalten einer offenen Verbindung dazu führen, dass der Akku schneller leer ist. Um sicherzustellen, dass eine Verbindung unter HTTP 1.1 nicht dauerhaft eingerichtet wird, kann der Client einen Connection:Close-Header in Nachrichten einfügen, um das Standardverhalten außer Kraft zu setzen. Wenn ein Server eine sehr große Anzahl von Clients behandelt, kann er einen Connection:Close-Header in Antwortnachrichten einfügen, mit dem die Verbindung geschlossen wird und Serverressourcen gespart werden.
+	Das Offenhalten einer Verbindung kann die Reaktionsfähigkeit verbessern, indem die Latenz und Netzwerküberlastung reduziert wird. Aber es kann sich negativ auf die Skalierbarkeit auswirken, wenn nicht benötigte Verbindungen länger als erforderlich geöffnet bleiben, da das gleichzeitige Herstellen von Verbindungen für andere Clients eingeschränkt wird. Außerdem kann es sich auf die Akkulaufzeit auswirken, wenn die Clientanwendung auf einem Mobilgerät ausgeführt wird. Falls die Anwendung nur gelegentlich Anforderungen an den Server sendet, kann das Aufrechterhalten einer offenen Verbindung dazu führen, dass der Akku schneller leer ist. Um sicherzustellen, dass eine Verbindung unter HTTP 1.1 nicht dauerhaft eingerichtet wird, kann der Client einen Connection:Close-Header in Nachrichten einfügen, um das Standardverhalten außer Kraft zu setzen. Wenn ein Server eine sehr große Anzahl von Clients behandelt, kann er einen Connection:Close-Header in Antwortnachrichten einfügen, mit dem die Verbindung geschlossen wird und Serverressourcen gespart werden.
 
 	> [AZURE.NOTE] Dauerhafte HTTP-Verbindungen sind ein rein optionales Feature zum Reduzieren des Netzwerkaufwands, der mit dem wiederholten Einrichten eines Kommunikationskanals verbunden ist. Weder die Web-API noch die Clientanwendung sollten davon abhängig sein, dass eine dauerhafte HTTP-Verbindung verfügbar ist. Nutzen Sie keine dauerhaften HTTP-Verbindungen, um Benachrichtigungssysteme im Comet-Stil zu implementieren. Stattdessen sollten Sie Sockets (oder WebSockets, falls verfügbar) auf TCP-Ebene verwenden. Beachten Sie außerdem Folgendes: Der Nutzen von Keep-Alive-Headern ist eingeschränkt, wenn eine Clientanwendung mit einem Server über einen Proxy kommuniziert. Nur die Verbindung mit dem Client und dem Proxy ist dauerhafter Art.
 
@@ -994,7 +994,7 @@ Die Web-API muss in einer Hostumgebung bereitgestellt werden, um sie für Client
 - Unter Umständen ist es gesetzlich vorgeschrieben, alle Anforderungen und Antworten zu protokollieren und zu überwachen.
 - Zum Sicherstellen der Verfügbarkeit kann es erforderlich sein, die Integrität des Servers zu überwachen, auf dem die Web-API gehostet wird, und ihn bei Bedarf neu zu starten.
 
-Es ist hilfreich, diese Probleme von den technischen Problemen in Bezug auf die Implementierung der Web-API abkoppeln zu können. Erwägen Sie aus diesem Grund das Erstellen einer so genannten [Fassade](http://en.wikipedia.org/wiki/Facade_pattern) (Façade), die als separater Prozess ausgeführt wird und Anforderungen an die Web-API weiterleitet. Mit dieser Fassade können die Verwaltungsvorgänge bereitgestellt und geprüfte Anforderungen an die Web-API weitergeleitet werden. Die Nutzung einer Fassade ist ferner mit vielen funktionellen Vorteilen verbunden, z. B.:
+Es ist hilfreich, diese Probleme von den technischen Problemen in Bezug auf die Implementierung der Web-API abkoppeln zu können. Erwägen Sie aus diesem Grund das Erstellen einer so genannten [Fassade](http://en.wikipedia.org/wiki/Facade_pattern) (Façade), die als separater Prozess ausgeführt wird und Anforderungen an die Web-API weiterleitet. Mit dieser Fassade können die Verwaltungsvorgänge bereitgestellt und geprüfte Anforderungen an die Web-API weitergeleitet werden. Die Nutzung einer Fassade ist ferner mit vielen funktionellen Vorteilen verbunden, z. B.:
 
 - Sie dient als Integrationspunkt für mehrere Web-APIs.
 - Sie ermöglicht das Transformieren von Nachrichten und das Übersetzen von Kommunikationsprotokollen für Clients, die mit unterschiedlicher Technologie erstellt wurden.
@@ -1007,13 +1007,13 @@ Eine Web-API sollte so gründlich wie jede andere Software getestet werden. Erw�
 
 Die Art einer Web-API bringt eigene zusätzliche Anforderungen in Bezug auf die Überprüfung der korrekten Funktionsweise mit sich. Achten Sie besonders auf die folgenden Aspekte:
 
-- Testen Sie alle Routen, um zu überprüfen, ob dabei die richtigen Vorgänge aufgerufen werden. Achten Sie besonders darauf, ob der HTTP-Statuscode 405 (Method Not Allowed) unerwartet zurückgegeben wird. Dies kann auf eine fehlende Übereinstimmung zwischen einer Route und den HTTP-Methoden (GET, POST, PUT, DELETE) hindeuten, die auf dieser Route genutzt werden können.
+- Testen Sie alle Routen, um zu überprüfen, ob dabei die richtigen Vorgänge aufgerufen werden. Achten Sie besonders darauf, ob der HTTP-Statuscode 405 (Method Not Allowed) unerwartet zurückgegeben wird. Dies kann auf eine fehlende Übereinstimmung zwischen einer Route und den HTTP-Methoden (GET, POST, PUT, DELETE) hindeuten, die auf dieser Route genutzt werden können.
 
-	Senden Sie HTTP-Anforderungen an Routen, die dafür keine Unterstützung aufweisen, z. B. per Übermittlung einer POST-Anforderung an eine bestimmte Ressource (POST-Anforderungen sollten nur an Ressourcenauflistungen gesendet werden). In diesen Fällen _sollte_ die einzig gültige Antwort der Statuscode 405 (Not Allowed) sein.
+	Senden Sie HTTP-Anforderungen an Routen, die dafür keine Unterstützung aufweisen, z. B. per Übermittlung einer POST-Anforderung an eine bestimmte Ressource (POST-Anforderungen sollten nur an Ressourcenauflistungen gesendet werden). In diesen Fällen _sollte_ die einzig gültige Antwort der Statuscode 405 (Not Allowed) sein.
 
 - Vergewissern Sie sich, dass alle Routen richtig geschützt sind und geeignete Authentifizierungs- und Autorisierungsüberprüfungen aufweisen.
 
-	> [AZURE.NOTE] Für einige Aspekte der Sicherheit, z. B. die Benutzerauthentifizierung, ist meist nicht die Web-API verantwortlich, sondern die Hostumgebung. Es ist trotzdem erforderlich, Sicherheitstests in den Bereitstellungsprozess einzubinden.
+	> [AZURE.NOTE] Für einige Aspekte der Sicherheit, z. B. die Benutzerauthentifizierung, ist meist nicht die Web-API verantwortlich, sondern die Hostumgebung. Es ist trotzdem erforderlich, Sicherheitstests in den Bereitstellungsprozess einzubinden.
 
 - Testen Sie die Ausnahmebehandlung, die von den einzelnen Vorgängen durchgeführt wird, und stellen Sie sicher, dass eine passende und aussagekräftige HTTP-Antwort zurück an die Clientanwendung übergeben wird.
 - Achten Sie darauf, dass Anforderungs- und Antwortnachrichten richtig formatiert sind. Wenn eine HTTP POST-Anforderung beispielsweise die Daten für eine neue Ressource im Format „x-www-form-urlencoded“ enthält, müssen Sie bestätigen, dass der entsprechende Vorgang die Daten richtig analysiert, die Ressourcen erstellt und eine Antwort mit den Details der neuen Ressource zurückgibt, einschließlich des richtigen Location-Headers.
@@ -1022,18 +1022,18 @@ Die Art einer Web-API bringt eigene zusätzliche Anforderungen in Bezug auf die 
 	> [AZURE.IMPORTANT] Wenn Sie die Web-API über einen API Management-Dienst veröffentlichen, sollten diese URIs die URL des Management-Diensts widerspiegeln, und nicht die URL des Webservers, auf dem die Web-API gehostet wird.
 
 - Stellen Sie sicher, dass jeder Vorgang für unterschiedliche Eingabekombinationen die richtigen Statuscodes zurückgibt. Beispiel:
-	- Wenn eine Abfrage erfolgreich ist, sollte der Vorgang den Statuscode 200 (OK) zurückgeben.
-	- Wenn eine Ressource nicht gefunden wird, sollte der Vorgang den HTTP-Statuscode 404 (Nicht gefunden) zurückgeben.
-	- Wenn der Client eine Anforderung sendet, mit der eine Ressource erfolgreich gelöscht wird, sollte der Statuscode 204 (No Content) lauten.
-	- Wenn der Client eine Anforderung sendet, mit der eine neue Ressource erstellt wird, sollte der Statuscode 201 (Created) lauten.
+	- Wenn eine Abfrage erfolgreich ist, sollte der Vorgang den Statuscode 200 (OK) zurückgeben.
+	- Wenn eine Ressource nicht gefunden wird, sollte der Vorgang den HTTP-Statuscode 404 (Nicht gefunden) zurückgeben.
+	- Wenn der Client eine Anforderung sendet, mit der eine Ressource erfolgreich gelöscht wird, sollte der Statuscode 204 (No Content) lauten.
+	- Wenn der Client eine Anforderung sendet, mit der eine neue Ressource erstellt wird, sollte der Statuscode 201 (Created) lauten.
 
-Achten Sie auf unerwartete Antwortstatuscodes im Bereich 5xx. Diese Nachrichten werden normalerweise vom Server gemeldet, um anzugeben, dass eine gültige Anforderung nicht erfüllt werden konnte.
+Achten Sie auf unerwartete Antwortstatuscodes im Bereich 5xx. Diese Nachrichten werden normalerweise vom Server gemeldet, um anzugeben, dass eine gültige Anforderung nicht erfüllt werden konnte.
 
 - Testen Sie die unterschiedlichen Anforderungsheaderkombinationen, die von einer Clientanwendung angegeben werden können, und stellen Sie sicher, dass die Web-API in Antwortnachrichten die erwarteten Informationen zurückgibt.
 
-- Testen Sie Abfragezeichenfolgen. Wenn ein Vorgang optionale Parameter verwenden kann (z. B. Paginierungsanforderungen), sollten Sie die unterschiedlichen Kombinationen und die Reihenfolge von Parametern testen.
+- Testen Sie Abfragezeichenfolgen. Wenn ein Vorgang optionale Parameter verwenden kann (z. B. Paginierungsanforderungen), sollten Sie die unterschiedlichen Kombinationen und die Reihenfolge von Parametern testen.
 
-- Vergewissern Sie sich, dass asynchrone Vorgänge erfolgreich abgeschlossen werden. Wenn die Web-API das Streamen für Anforderungen unterstützt, die große binäre Objekte zurückgeben (z. B. Video oder Audio), sollten Sie sicherstellen, dass Clientanforderungen beim Streamen der Daten nicht blockiert werden. Wenn die Web-API das Abrufen für Datenänderungsvorgänge mit langer Ausführungsdauer implementiert, sollten Sie sicherstellen, dass die Vorgänge ihren Status während des Ablaufs richtig melden.
+- Vergewissern Sie sich, dass asynchrone Vorgänge erfolgreich abgeschlossen werden. Wenn die Web-API das Streamen für Anforderungen unterstützt, die große binäre Objekte zurückgeben (z. B. Video oder Audio), sollten Sie sicherstellen, dass Clientanforderungen beim Streamen der Daten nicht blockiert werden. Wenn die Web-API das Abrufen für Datenänderungsvorgänge mit langer Ausführungsdauer implementiert, sollten Sie sicherstellen, dass die Vorgänge ihren Status während des Ablaufs richtig melden.
 
 Außerdem sollten Sie Leistungstests erstellen und ausführen, um zu überprüfen, ob die Web-API auch in Notfällen zufriedenstellend arbeitet. Sie können mit Visual Studio Ultimate ein Projekt zum Testen der Webleistung und Auslastung erstellen. Weitere Informationen finden Sie auf der Microsoft-Website unter [Ausführen von Leistungstests für Ihre App](https://msdn.microsoft.com/library/dn250793.aspx).
 
@@ -1051,7 +1051,7 @@ Azure stellt den [API Management-Dienst](https://azure.microsoft.com/documentati
 
 	Sie können Vorgänge entweder manuell definieren, indem Sie die Assistenten im Azure-Verwaltungsportal verwenden, oder Sie können sie aus einer Datei importieren, in der die Definitionen im WADL- oder Swagger-Format enthalten sind.
 
-4. Konfigurieren Sie die Sicherheitseinstellungen zwischen dem API Management-Dienst und dem Webserver, auf dem die Web-API gehostet wird. Der API Management-Dienst unterstützt derzeit die Standardauthentifizierung und die wechselseitige Authentifizierung mit Zertifikaten sowie die OAuth 2.0-Benutzerautorisierung.
+4. Konfigurieren Sie die Sicherheitseinstellungen zwischen dem API Management-Dienst und dem Webserver, auf dem die Web-API gehostet wird. Der API Management-Dienst unterstützt derzeit die Standardauthentifizierung und die wechselseitige Authentifizierung mit Zertifikaten sowie die OAuth 2.0-Benutzerautorisierung.
 
 5. Erstellen Sie ein Produkt. Ein Produkt ist die Einheit der Veröffentlichung. Sie fügen die Web-APIs, die Sie zuvor mit dem Management-Dienst verbunden haben, dem Produkt hinzu. Wenn das Produkt veröffentlicht wird, werden die Web-APIs für Entwickler verfügbar gemacht.
 
@@ -1073,9 +1073,9 @@ Der Azure API Management-Dienst enthält ein Entwicklerportal, mit dem die von e
 
 Außerdem bietet das Portal Folgendes:
 
-- Dokumentation zum Produkt mit den verfügbaren Vorgängen, den erforderlichen Parametern und den unterschiedlichen Antworten, die zurückgegeben werden können. Beachten Sie, dass diese Informationen anhand der Details generiert werden, die in Schritt 3 in der Liste im Abschnitt [Veröffentlichen einer Web-API mit dem Microsoft Azure API Management-Dienst](#publishing-a-web-API) enthalten sind.
+- Dokumentation zum Produkt mit den verfügbaren Vorgängen, den erforderlichen Parametern und den unterschiedlichen Antworten, die zurückgegeben werden können. Beachten Sie, dass diese Informationen anhand der Details generiert werden, die in Schritt 3 in der Liste im Abschnitt [Veröffentlichen einer Web-API mit dem Microsoft Azure API Management-Dienst](#publishing-a-web-API) enthalten sind.
 
-- Codeausschnitte, die das Aufrufen von Vorgängen für mehrere Sprachen veranschaulichen, z. B. JavaScript, C#, Java, Ruby, Python und PHP.
+- Codeausschnitte, die das Aufrufen von Vorgängen für mehrere Sprachen veranschaulichen, z. B. JavaScript, C#, Java, Ruby, Python und PHP.
 
 - Eine Entwicklerkonsole, über die Entwickler eine HTTP-Anforderung zum Testen der Vorgänge im Produkt und zum Anzeigen der Ergebnisse senden können.
 
@@ -1093,7 +1093,7 @@ Die Erstellung eines clientseitigen SDK ist ein aufwendiges Unterfangen, da es k
 Je nach Art der Veröffentlichung und Bereitstellung Ihrer Web-API können Sie die Web-API direkt überwachen, oder Sie können Informationen zur Verwendung und Integrität sammeln, indem Sie den Datenverkehr analysieren, der den API Management-Dienst durchläuft.
 
 ### Direktes Überwachen einer Web-API
-Wenn Sie Ihre Web-API mit der ASP.NET-Web-API-Vorlage (entweder als Web-API-Projekt oder Webrolle in einem Azure-Clouddienst) und Visual Studio 2013 implementiert haben, können Sie per ASP.NET Application Insights Daten zur Verfügbarkeit, Leistung und Verwendung sammeln. Application Insights ist ein Paket, mit dem Informationen zu Anforderungen und Antworten transparent nachverfolgt und aufgezeichnet werden, wenn die Web-API in der Cloud bereitgestellt wird. Nachdem das Paket installiert und konfiguriert wurde, müssen Sie in Ihrer Web-API zur Nutzung keinen Code ändern. Wenn Sie die Web-API auf einer Azure-Website bereitstellen, wird der gesamte Datenverkehr untersucht, und die folgenden statistischen Daten werden gesammelt:
+Wenn Sie Ihre Web-API mit der ASP.NET-Web-API-Vorlage (entweder als Web-API-Projekt oder Webrolle in einem Azure-Clouddienst) und Visual Studio 2013 implementiert haben, können Sie per ASP.NET Application Insights Daten zur Verfügbarkeit, Leistung und Verwendung sammeln. Application Insights ist ein Paket, mit dem Informationen zu Anforderungen und Antworten transparent nachverfolgt und aufgezeichnet werden, wenn die Web-API in der Cloud bereitgestellt wird. Nachdem das Paket installiert und konfiguriert wurde, müssen Sie in Ihrer Web-API zur Nutzung keinen Code ändern. Wenn Sie die Web-API auf einer Azure-Website bereitstellen, wird der gesamte Datenverkehr untersucht, und die folgenden statistischen Daten werden gesammelt:
 
 - Reaktionszeit des Servers
 
@@ -1109,7 +1109,7 @@ Wenn Sie Ihre Web-API mit der ASP.NET-Web-API-Vorlage (entweder als Web-API-Proj
 
 - Unterschiedliche Benutzerrollen, mit denen auf die Web-API zugegriffen wird
 
-Sie können diese Daten im Azure-Verwaltungsportal in Echtzeit anzeigen. Außerdem können Sie WebTests erstellen, mit denen die Integrität der Web-API überwacht wird. Ein WebTest sendet eine regelmäßige Anforderung an einen angegebenen URI in der Web-API und erfasst die Antwort. Sie können die Definition einer erfolgreichen Antwort angeben (z. B. HTTP-Statuscode 200). Und wenn die Anforderung diese Antwort nicht zurückgibt, können Sie vorgeben, dass eine Warnung an einen Administrator gesendet wird. Bei Bedarf kann der Administrator den Server neu starten, auf dem die Web-API gehostet wird, wenn er ausgefallen ist.
+Sie können diese Daten im Azure-Verwaltungsportal in Echtzeit anzeigen. Außerdem können Sie WebTests erstellen, mit denen die Integrität der Web-API überwacht wird. Ein WebTest sendet eine regelmäßige Anforderung an einen angegebenen URI in der Web-API und erfasst die Antwort. Sie können die Definition einer erfolgreichen Antwort angeben (z. B. HTTP-Statuscode 200). Und wenn die Anforderung diese Antwort nicht zurückgibt, können Sie vorgeben, dass eine Warnung an einen Administrator gesendet wird. Bei Bedarf kann der Administrator den Server neu starten, auf dem die Web-API gehostet wird, wenn er ausgefallen ist.
 
 Weitere Informationen finden Sie auf der Microsoft-Website unter [Application Insights – Beginnen Sie damit, Integrität und Nutzung Ihrer Anwendung zu überwachen](app-insights-start-monitoring-app-health-usage/).
 
@@ -1123,7 +1123,7 @@ Wenn Sie Ihre Web-API mit dem API Management-Dienst veröffentlicht haben, enth�
 
 - **Aktivität**: Diese Registerkarte enthält eine Textzusammenfassung der Anzahl von erfolgreichen Aufrufen, fehlgeschlagenen Aufrufen, blockierten Aufrufen, der durchschnittlichen Reaktionszeit und Reaktionszeiten für Produkt, Web-API und Vorgang. Auf dieser Seite ist auch die Anzahl von Aufrufen angegeben, die von den einzelnen Entwicklern durchgeführt wurden.
 
-- **Auf einen Blick**: Auf dieser Registerkarte wird eine Zusammenfassung der Leistungsdaten angezeigt, z. B. die Entwickler mit den meisten API-Aufrufen und die Produkte, Web-APIs und Vorgänge, von denen diese Aufrufe empfangen wurden.
+- **Auf einen Blick**: Auf dieser Registerkarte wird eine Zusammenfassung der Leistungsdaten angezeigt, z. B. die Entwickler mit den meisten API-Aufrufen und die Produkte, Web-APIs und Vorgänge, von denen diese Aufrufe empfangen wurden.
 
 Anhand dieser Informationen können Sie bestimmen, ob eine bestimmte Web-API oder ein Vorgang einen Engpass verursacht, und bei Bedarf die Hostumgebung skalieren und weitere Server hinzufügen. Sie können auch prüfen, ob eine oder mehrere Anwendungen eine unangemessen hohe Menge an Ressourcen verbrauchen, und entsprechende Richtlinien anwenden, um Kontingente festzulegen und die Aufrufraten zu beschränken.
 
@@ -1135,7 +1135,7 @@ Anhand dieser Informationen können Sie bestimmen, ob eine bestimmte Web-API ode
 ## Weitere Informationen
 - Auf der Microsoft-Website unter [Informationen zur ASP.NET-Web-API](http://www.asp.net/web-api) finden Sie eine ausführliche Einführung in die Erstellung von REST-Webdiensten mit der Web-API.
 - Auf der Microsoft-Website unter [Routing in der ASP.NET-Web-API](http://www.asp.net/web-api/overview/web-api-routing-and-actions/routing-in-aspnet-web-api) wird beschrieben, wie das konventionsbasierte Routing im ASP.NET-Web-API-Framework funktioniert.
-- Weitere Informationen zum attributbasierten Routing finden Sie auf der Microsoft-Website unter [Attributrouting in der Web-API 2](http://www.asp.net/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2).
+- Weitere Informationen zum attributbasierten Routing finden Sie auf der Microsoft-Website unter [Attributrouting in der Web-API 2](http://www.asp.net/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2).
 - Die Seite mit dem [Lernprogramm](http://www.odata.org/getting-started/basic-tutorial/) auf der OData-Website enthält eine Einführung in die Features des OData-Protokolls.
 - Die Seite [ASP.NET-Web-API-OData](http://www.asp.net/web-api/overview/odata-support-in-aspnet-web-api) auf der Microsoft-Website enthält Beispiele und weitere Informationen zur Implementierung einer OData-Web-API mit ASP.NET.
 - Auf der Seite [Einführung der Batchunterstützung für die Web-API und Web-API-OData](http://blogs.msdn.com/b/webdev/archive/2013/11/01/introducing-batch-support-in-web-api-and-web-api-odata.aspx) der Microsoft-Website wird beschrieben, wie Sie Batchvorgänge in einer Web-API mit OData implementieren.
@@ -1152,4 +1152,4 @@ Anhand dieser Informationen können Sie bestimmen, ob eine bestimmte Web-API ode
 - Auf der Seite [Überprüfen von Code mithilfe von Komponententests](https://msdn.microsoft.com/library/dd264975.aspx) der Microsoft-Website werden ausführliche Informationen zum Erstellen und Verwalten von Komponententests mit Visual Studio bereitgestellt.
 - Auf der Seite [Ausführen von Leistungstests für Ihre App](https://msdn.microsoft.com/library/dn250793.aspx) der Microsoft-Website wird beschrieben, wie Sie Visual Studio Ultimate zum Erstellen eines Projekts zum Testen der Webleistung und Auslastung verwenden.
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0316_2016-->

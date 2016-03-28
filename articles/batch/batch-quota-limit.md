@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/26/2016"
+	ms.date="03/11/2016"
 	ms.author="danlep"/>
 
 # Kontingente und Limits für den Azure Batch-Dienst
@@ -35,7 +35,12 @@ Batch-Konten pro Region und Abonnement|1|50
 ## Andere Limits
 Ressource|Maximales Limit
 ---|---
-Aufgaben pro Serverknoten|4 x Anzahl der Kerne des Knotens
+Aufgaben pro Serverknoten | 4 x Anzahl der Kerne des Knotens
+Anwendungen pro Batch-Konto | 20
+Anwendungspakete pro Anwendung. | 40
+Anwendungspaketgröße (jeweils) | Ca. 195 GB<sup>1</sup>
+
+<sup>1</sup> Azure Storage-Grenzwert für die maximale Blockblobgröße
 
 ## Anzeigen von Batch-Kontingenten
 
@@ -81,7 +86,7 @@ Anhand der folgenden Schritte können Sie die Erhöhung eines Kontingents im Azu
 
 6. Klicken Sie auf **Erstellen**, um die Supportanfrage zu übermitteln.
 
-Der Azure-Support tritt mit Ihnen in Kontakt. Die Bearbeitung der Anfrage kann bis zu 2 Werktage in Anspruch nehmen.
+Der Azure-Support tritt mit Ihnen in Kontakt. Die Bearbeitung der Anfrage kann bis zu 2 Werktage in Anspruch nehmen.
 
 ## Verwandte Themen
 
@@ -93,4 +98,4 @@ Der Azure-Support tritt mit Ihnen in Kontakt. Die Bearbeitung der Anfrage kann b
 
 [account_quotas]: ./media/batch-quota-limit/accountquota_portal.PNG
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0316_2016-->

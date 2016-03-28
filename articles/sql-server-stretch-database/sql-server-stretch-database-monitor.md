@@ -33,9 +33,17 @@ Wählen Sie **Aufgaben | Stretch | Überwachung** für eine Datenbank in SQL Ser
 Öffnen Sie die dynamische Verwaltungssicht **sys.dm\_db\_rda\_migration\_status**, um zu ermitteln, wie viele Batches und Zeilen mit Daten migriert wurden. Weitere Informationen finden Sie unter [sys.dm\_db\_rda\_migration\_status (Transact-SQL)](https://msdn.microsoft.com/library/dn935017.aspx).
 
 ## <a name="Firewall"></a>Beheben von Problemen bei der Datenmigration
+**Die Azure-Firewall blockiert Verbindungen von meinem lokalen Server.**
+
+Möglicherweise müssen Sie in den Einstellungen der Azure-Firewall des Azure-Servers eine Regel hinzufügen, um SQL Server zu erlauben, mit dem Azure-Remoteserver zu kommunizieren.
+
+**Zeilen aus meiner Stretch-aktivierten Tabelle werden nicht zu Azure migriert. Was ist das Problem?**
+
 Es gibt mehrere Probleme, die eine Migration beeinflussen können. Überprüfen Sie die folgenden Punkte.
 
 -   Überprüfen Sie die Netzwerkkonnektivität für den SQL Server-Computer.
+
+-   Stellen Sie sicher, dass die Azure-Firewall Ihren SQL Server nicht daran hindert, eine Verbindung mit dem Remoteendpunkt herzustellen.
 
 -   Überprüfen Sie die dynamische Verwaltungsansicht **sys.dm\_db\_rda\_migration\_status** für den Status des aktuellen Batchs. Wenn ein Fehler aufgetreten ist, überprüfen Sie die Werte error\_number, error\_state und error\_severity für den Batch.
 
@@ -44,9 +52,10 @@ Es gibt mehrere Probleme, die eine Migration beeinflussen können. Überprüfen 
     -   Weitere Informationen zum Inhalt von SQL Server-Fehlermeldungen finden Sie unter [sys.messages (Transact-SQL)](https://msdn.microsoft.com/library/ms187382.aspx).
 
 ## Siehe auch
+
 [Verwalten von Stretch Database und Behandeln von Problemen ](sql-server-stretch-database-manage.md)
 
 <!--Image references-->
 [StretchMonitorImage1]: ./media/sql-server-stretch-database-monitor/StretchDBMonitor.png
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

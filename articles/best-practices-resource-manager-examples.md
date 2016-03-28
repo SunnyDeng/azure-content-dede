@@ -3,8 +3,8 @@
 	description="Beispiele für Azure-Ressourcen-Manager-Vorlagen, die bewährte Methoden veranschaulichen."
 	services="azure-resource-manager"
 	documentationCenter=""
-	authors="mmercuri"
-	manager="georgem"
+	authors="tfitzmac"
+	manager="timlt"
 	editor="tysonn"/>
 
 <tags
@@ -14,11 +14,11 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="12/17/2015"
-	ms.author="mmercuri"/>
+	ms.author="tomfitz"/>
 
 # Kontextabhängige Beispiele bewährter Methoden für die Implementierung von Vorlagen
 
-Dieses Thema enthält 7 kontextbezogene Beispiele für die Implementierung Ihrer Azure-Ressourcen-Manager-Vorlagen. Eine Übersicht über die Prinzipien, die in diesen Beispielen veranschaulicht werden, finden Sie unter [Bewährte Methoden für das Entwerfen von Azure-Ressourcen-Manager-Vorlagen](best-practices-resource-manager-design-templates.md).
+Dieses Thema enthält 7 kontextbezogene Beispiele für die Implementierung Ihrer Azure-Ressourcen-Manager-Vorlagen. Eine Übersicht über die Prinzipien, die in diesen Beispielen veranschaulicht werden, finden Sie unter [Bewährte Methoden für das Entwerfen von Azure-Ressourcen-Manager-Vorlagen](best-practices-resource-manager-design-templates.md).
 
 Dieses Thema ist Teil eines umfangreicheren Whitepapers. Um den vollständigen Artikel zu lesen, laden Sie [World Class ARM Templates Considerations and Proven Practices](http://download.microsoft.com/download/8/E/1/8E1DBEFA-CECE-4DC9-A813-93520A5D7CFE/World Class ARM Templates - Considerations and Proven Practices.pdf) herunter.
 
@@ -106,7 +106,7 @@ Dadurch, dass Abonnements isoliert und die Zuständigkeit für diese Abonnements
 
 In bestimmten Kontexten gelten Anforderungen, die für ein bestimmtes Gebiet vorgesehene bereitzustellende Dienste berücksichtigen müssen, und zwar hinsichtlich der Einhaltung geltender Vorschriften.
 
-Während ein Dienst globaler Natur sein mag, können Bereitstellungen, die sich in bestimmten Gebieten befinden oder diesen Dienste zur Verfügung stellen, Vorgaben für das Betriebspersonal unterliegen. Beispielsweise können zum Betrieb dieser Dienste Personen vorgeschrieben sein, die Bürger eines bestimmten Lands oder eines geopolitischen Raums (z. B. EU) sind und/oder bestimmte Überprüfungen ihres Hintergrunds bestanden haben.
+Während ein Dienst globaler Natur sein mag, können Bereitstellungen, die sich in bestimmten Gebieten befinden oder diesen Dienste zur Verfügung stellen, Vorgaben für das Betriebspersonal unterliegen. Beispielsweise können zum Betrieb dieser Dienste Personen vorgeschrieben sein, die Bürger eines bestimmten Lands oder eines geopolitischen Raums (z. B. EU) sind und/oder bestimmte Überprüfungen ihres Hintergrunds bestanden haben.
 
 Eine geografische Isolierung bietet auch Vorteile in Bezug auf die Nutzung neuer Plattformdienste und -funktionen. In einigen Ländern, wie z. B. China, steht möglicherweise nur eine Teilmenge der Plattformdienste zur Verfügung und/oder wurde die Bereitstellung von Plattformdiensten verzögert.
 
@@ -124,7 +124,7 @@ Die Trennung von Rollen und Aufgaben ist eine wesentliche Voraussetzung dafür, 
 
 Wenn die Einhaltung von Vorschriften wichtig ist, muss der Zugriff auf bestimmte Ressourcen beschränkt werden können.
 
-Wenn Sie sich beispielsweise sensible Daten in vielen Szenarien ansehen, in denen die Einhaltung von Vorschriften eine Rolle spielt, z. B. Patientenakten, Finanzdaten, Steuerunterlagen usw., ist es wichtig, die Anzahl der Personen mit Zugriffs-, Anzeige- oder Bearbeitungsrechten für die Daten auf diejenigen zu begrenzen, die den Zugriff für ihre Aufgaben in der Organisation benötigen.
+Wenn Sie sich beispielsweise sensible Daten in vielen Szenarien ansehen, in denen die Einhaltung von Vorschriften eine Rolle spielt, z. B. Patientenakten, Finanzdaten, Steuerunterlagen usw., ist es wichtig, die Anzahl der Personen mit Zugriffs-, Anzeige- oder Bearbeitungsrechten für die Daten auf diejenigen zu begrenzen, die den Zugriff für ihre Aufgaben in der Organisation benötigen.
 
 Die rollenbasierte Zugriffssteuerung bietet einer Person, einem System oder einer Gruppe Zugriff auf bestimmte Ressourcen unter angegebenen Bedingungen.
 
@@ -134,7 +134,7 @@ Zusätzlich zur von der rollenbasierten Zugriffssteuerung ermöglichten Einschr�
 
 ### Implementierung mit Azure-Ressourcen-Manager
 
-Zuvor mussten Organisationen mit der Abonnementpartitionierung arbeiten, um diese Ziele zu erreichen. Wenngleich möglich, war dies nicht ideal. Da die Erstellung eines Abonnements gewissermaßen eine gewerbliche Aktivität ist, stellte die Dienstverwaltungs-API keinen Mechanismus zur Verfügung, gemäß dem neue Abonnements automatisch erstellt oder gelöscht werden, weshalb Abonnements manuell erstellt werden mussten. Die resultierende Anzahl von Abonnements kann erheblich anwachsen. Für sehr große Dienste, wie z. B. die kommerziellen Dienste von Microsoft selbst, kann diese Anzahl über 1000 Abonnements betragen. Dies führt häufig zur Erstellung eines benutzerdefinierten Gerüsts zum Erstellen und Verwalten von Abonnements für eine Organisation.
+Zuvor mussten Organisationen mit der Abonnementpartitionierung arbeiten, um diese Ziele zu erreichen. Wenngleich möglich, war dies nicht ideal. Da die Erstellung eines Abonnements gewissermaßen eine gewerbliche Aktivität ist, stellte die Dienstverwaltungs-API keinen Mechanismus zur Verfügung, gemäß dem neue Abonnements automatisch erstellt oder gelöscht werden, weshalb Abonnements manuell erstellt werden mussten. Die resultierende Anzahl von Abonnements kann erheblich anwachsen. Für sehr große Dienste, wie z. B. die kommerziellen Dienste von Microsoft selbst, kann diese Anzahl über 1000 Abonnements betragen. Dies führt häufig zur Erstellung eines benutzerdefinierten Gerüsts zum Erstellen und Verwalten von Abonnements für eine Organisation.
 
 Mit dem Azure-Ressourcen-Manager ist die Bereitstellung mehrerer Umgebungen innerhalb eines Abonnements wesentlich einfacher. Der ARM lockert die vorherigen festen Obergrenzen für Ressourcen, die im vorherigen Modell galten, wurde der Bedarf an Partitionierung aufgrund von Ressourceneinschränkungen erheblich reduziert wird.
 
@@ -150,7 +150,7 @@ Endkunden benötigen in Azure Active Directory registrierte Konten, die für die
 
 Während die Ressourcengrenzen in Azure-Ressourcen-Manager gelockert wurden, gelten dennoch weiter Einschränkungen. Über das Erstellen der Umgebungen selbst hinaus sollten Sie versuchen, innerhalb von Abonnements eine hohe Dichte von Umgebungen zu erzielen. Die Bereitstellung einer Umgebung entspricht der Bereitstellung von Kapazität für eine Person oder Organisation, und Sie sollten prüfen, welche "T-Shirt-Größe(n)" Sie zur Verfügung stellen möchten. Bestimmen Sie insbesondere die Varianten zwischen Kunden der Typen S, M, L und XL hinsichtlich der benötigten Ressourcen.
 
-Sie können auch verschiedene Abonnements für unterschiedliche T-Shirt-Größen verwenden, um eine höhere Dichte zu erreichen. So können z. B. von einem angegebenen Abonnement 1000 Umgebungen der Größe S, 500 Bereitstellungen der Größe M, 100 Bereitstellungen der Größe L und 10 Bereitstellungen der Größe XL unterstützt werden. Da für mehrere Abonnements nicht mehr abgerechnete Kosten anfallen, können Sie die verschiedenen Größen in unterschiedlichen Abonnements isolieren, um eine maximale Dichte zu erreichen. Dies kann erfolgen, während die Anzahl von Abonnements relativ moderat und einfach verwaltbar gehalten wird.
+Sie können auch verschiedene Abonnements für unterschiedliche T-Shirt-Größen verwenden, um eine höhere Dichte zu erreichen. So können z. B. von einem angegebenen Abonnement 1000 Umgebungen der Größe S, 500 Bereitstellungen der Größe M, 100 Bereitstellungen der Größe L und 10 Bereitstellungen der Größe XL unterstützt werden. Da für mehrere Abonnements nicht mehr abgerechnete Kosten anfallen, können Sie die verschiedenen Größen in unterschiedlichen Abonnements isolieren, um eine maximale Dichte zu erreichen. Dies kann erfolgen, während die Anzahl von Abonnements relativ moderat und einfach verwaltbar gehalten wird.
 
 Eine wichtige Überlegung ist die Festlegung, ob Sie bereit sind, einem Kunden das Erhöhen oder Ändern seiner Bereitstellungsgröße zu erlauben, und falls ja, wie Sie dies unterstützen möchten.
 
@@ -176,7 +176,7 @@ Ressourcensperren können aktiviert werden, um festzulegen, dass Ressourcen schr
 
 Wenn die Organisation verlangt, dass bestimmter Datenverkehr, z. B. zwischen den Ebenen der Anwendung, zunächst einen Vermittler wie ein virtuelles Netzwerkgerät durchläuft, müssen benutzerdefinierte Routen verwendet werden.
 
-Ein virtuelles Gerät ist letztlich nur ein virtueller Computer, der eine Anwendung zur Verarbeitung des Netzwerkverkehrs ausführt, z. B. eine Firewall oder ein NAT-Gerät. Verschiedene Drittanbieter stellen virtuelle Netzwerkgeräte in Azure bereit. Zudem können Organisationen ihre eigenen einsetzen.
+Ein virtuelles Gerät ist letztlich nur ein virtueller Computer, der eine Anwendung zur Verarbeitung des Netzwerkverkehrs ausführt, z. B. eine Firewall oder ein NAT-Gerät. Verschiedene Drittanbieter stellen virtuelle Netzwerkgeräte in Azure bereit. Zudem können Organisationen ihre eigenen einsetzen.
 
 Bei Verwenden eines eigenen virtuellen Geräts kann eine Organisation vorhandenen Code wiederverwenden, der ggf. bereits in ihrer lokalen Umgebungen verwendet wird. Dieser virtuelle Computer muss eingehenden Datenverkehr empfangen können, der nicht an ihn selbst adressiert ist. Damit ein virtueller Computer an andere Ziele gerichteten Datenverkehr empfangen kann, müssen Sie auf dem virtuellen Computer die IP-Weiterleitung aktivieren.
 
@@ -254,4 +254,4 @@ Schließlich kann es wünschenswert sein, sicherzustellen, dass bestimmte Ressou
 - Empfehlungen für die Sicherheitseinstellungen in Azure-Ressourcen-Manager finden Sie unter [Sicherheitsaspekte für Azure-Ressourcen-Manager](best-practices-resource-manager-security.md).
 - Informationen zur Freigabe des Status in Vorlagen finden Sie unter [Freigeben des Status in Azure-Ressourcen-Manager-Vorlagen](best-practices-resource-manager-state.md).
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0316_2016-->

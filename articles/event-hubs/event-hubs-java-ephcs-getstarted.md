@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/05/2015"
+	ms.date="03/08/2016"
 	ms.author="sethm"/>
 
 # Erste Schritte mit Event Hubs
@@ -26,7 +26,7 @@ Event Hubs sind ein hochgradig skalierbares Aufnahmesystem, das Millionen von Er
 
 Weitere Informationen finden Sie unter [Übersicht über Event Hubs][].
 
-In diesem Lernprogramm erfahren Sie, wie Nachrichten mithilfe einer Konsolenanwendung in Java in einem Event Hub erfasst werden und wie Sie diese gleichzeitig mit der C#-Bibliothek des [Ereignisprozessorhosts][] abrufen.
+In diesem Lernprogramm erfahren Sie, wie Nachrichten mithilfe einer Konsolenanwendung in Java in einem Event Hub erfasst werden und wie Sie diese gleichzeitig mit der C#-Bibliothek des [Ereignisprozessorhosts][] abrufen.
 
 Zur Ausführung dieses Lernprogramms benötigen Sie Folgendes:
 
@@ -44,7 +44,7 @@ Zur Ausführung dieses Lernprogramms benötigen Sie Folgendes:
 
 	![][1]
 
-3. Geben Sie einen Namen für den Event Hub ein. Wählen Sie die gewünschte Region aus, und klicken Sie dann auf **Neuen Event Hub erstellen**.
+3. Geben Sie einen Namen für den Event Hub ein. Wählen Sie die gewünschte Region aus, und klicken Sie dann auf **Neuen Event Hub erstellen**.
 
 	![][2]
 
@@ -62,7 +62,7 @@ Zur Ausführung dieses Lernprogramms benötigen Sie Folgendes:
 
 7. Beachten Sie auf derselben Seite die generierten Schlüssel für **SendRule**.
 
-	![][6b]
+	![][7]
 
 8. Klicken Sie am oberen Seitenrand auf die Registerkarte **Dashboard**, und klicken Sie dann auf **Verbindungsinformationen**. Notieren Sie sich die beiden Verbindungszeichenfolgen.
 
@@ -92,7 +92,7 @@ Sie können jetzt die Anwendung ausführen.
 Nachdem Sie eine funktionierende Anwendung erstellt haben, die einen Ereignis-Hub erstellt und Daten sendet und empfängt, können Sie mit den folgenden Szenarios fortfahren:
 
 - Eine vollständige [Beispielanwendung mit Verwendung von Ereignis-Hubs][].
-- Das Beispiel [Horizontales Hochskalieren der Ereignisverarbeitung mit Event Hubs][]
+- Das Beispiel [Horizontales Hochskalieren der Ereignisverarbeitung mit Event Hubs][]
 - Eine [Messaginglösung mit Warteschlange][] unter Verwendung von Service Bus-Warteschlangen.
 
 Weitere Informationen finden Sie im [Java Developer Center](/develop/java/).
@@ -104,7 +104,7 @@ Weitere Informationen finden Sie im [Java Developer Center](/develop/java/).
 [4]: ./media/event-hubs-java-ephcs-getstarted/create-event-hub4.png
 [5]: ./media/event-hubs-java-ephcs-getstarted/create-event-hub5.png
 [6]: ./media/event-hubs-java-ephcs-getstarted/create-event-hub6.png
-[6b]: ./media/event-hubs-java-ephcs-getstarted/create-event-hub6b.png
+[7]: ./media/event-hubs-java-ephcs-getstarted/create-event-hub6b.png
 
 
 [21]: ./media/event-hubs-java-ephcs-getstarted/run-csharp-ephcs1.png
@@ -115,8 +115,8 @@ Weitere Informationen finden Sie im [Java Developer Center](/develop/java/).
 [Ereignisprozessorhosts]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
 [Übersicht über Event Hubs]: event-hubs-overview.md
 [Beispielanwendung mit Verwendung von Ereignis-Hubs]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097
-[Horizontales Hochskalieren der Ereignisverarbeitung mit Event Hubs]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-45f43fc3
+[Horizontales Hochskalieren der Ereignisverarbeitung mit Event Hubs]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-45f43fc3
 [Messaginglösung mit Warteschlange]: ../service-bus/service-bus-dotnet-multi-tier-app-using-service-bus-queues.md
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0316_2016-->

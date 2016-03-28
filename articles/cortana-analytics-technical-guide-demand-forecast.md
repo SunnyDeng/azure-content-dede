@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="01/24/2016"
-	ms.author="yijichen"/>
+	ms.author="inqiu;yijichen"/>
 
 # Technischer Leitfaden zur Cortana Analytics-Lösungsvorlage für die Prognose des Energiebedarfs
 
@@ -25,8 +25,6 @@ Lösungsvorlagen dienen zur schnelleren Erstellung von E2E-Demos auf Grundlage d
 Im Zuge der Bereitstellung führen Sie mehrere Schritte aus, bei denen Sie die Anmeldeinformationen für die Lösung einrichten. Notieren Sie sich diese während der Bereitstellung angegebenen Anmeldeinformationen, z. B. Lösungsname, Benutzername und Kennwort, oder zeichnen Sie sie anderweitig auf.
 
 Das Ziel dieses Dokuments besteht darin, die Referenzarchitektur und die verschiedenen im Rahmen Ihres Abonnements bereitgestellten Komponenten zu beschreiben, die Teil dieser Lösungsvorlage sind. Das Dokument erklärt auch, wie Sie die Beispieldaten durch eigene echte Daten ersetzen, um Erkenntnisse und Vorhersagen aus Ihren eigenen Daten zu gewinnen. Außerdem erläutert das Dokument, welche Teile der Lösungsvorlage geändert werden müssen, wenn Sie die Lösung mit Ihren eigenen Daten anpassen möchten. Am Ende des Dokuments finden Sie Anweisungen zum Erstellen des Power BI-Dashboards für diese Lösungsvorlage.
-
->[AZURE.TIP] Sie können eine [PDF-Version dieses Dokuments](http://github.com/yijichen/document-public/raw/master/Demand%20Forecasting%20for%20Engery%20Solution%20Template.pdf) herunterladen und drucken.
 
 ## **Übersicht**
 
@@ -99,7 +97,7 @@ Sie finden die [Azure Stream Analytics](https://azure.microsoft.com/services/str
 
 -   Melden Sie sich beim [Azure-Verwaltungsportal](https://manage.windowsazure.com/) an.
 
--   Suchen die Stream Analytics-Aufträge ![](media\cortana-analytics-technical-guide-demand-forecast\icon-stream-analytics.png), die beim Bereitstellen der Lösung generiert wurden. Einer dient zum Übertragen von Daten per Push an den Blobspeicher (z. B. mytest1streaming432822asablob), und der andere dient zum Übertragen von Daten per Push an Power BI (z. B. mytest1streaming432822asapbi).
+-   Suchen Sie die Stream Analytics-Aufträge ![](media\cortana-analytics-technical-guide-demand-forecast\icon-stream-analytics.png), die beim Bereitstellen der Lösung generiert wurden. Einer dient zum Übertragen von Daten per Push an den Blobspeicher (z. B. mytest1streaming432822asablob), und der andere dient zum Übertragen von Daten per Push an Power BI (z. B. mytest1streaming432822asapbi).
 
 
 -   Wählen Sie Folgendes aus:
@@ -132,7 +130,7 @@ Fünf der Pipelines dieser Factory enthalten [Hive](http://blogs.msdn.com/b/bigd
 
 #### *AggregateDemandDataTo1HrPipeline*
 
-Diese [Pipeline](data-factory\data-factory-create-pipelines.md) enthält eine einzelne Aktivität: eine [HDInsightHive](data-factory\data-factory-hive-activity.md)-Aktivität mit einem [HDInsightLinkedService](https://msdn.microsoft.com/library/azure/dn893526.aspx), der ein [Hive](http://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx)-Skript ausführt, um die alle 10 Sekunden eingehenden gestreamten Bedarfsdaten auf Unterstationsebene auf die stündliche Regionsebene zu aggregieren und sie über den Stream Analytics-Auftrag in [Azure Storage](https://azure.microsoft.com/services/storage/) einzubringen.
+Diese [Pipeline](data-factory\data-factory-create-pipelines.md) enthält eine einzelne Aktivität: eine [HDInsightHive](data-factory\data-factory-hive-activity.md)-Aktivität mit einem [HDInsightLinkedService](https://msdn.microsoft.com/library/azure/dn893526.aspx), der ein [Hive](http://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx)-Skript ausführt, um die alle zehn Sekunden eingehenden gestreamten Bedarfsdaten auf Unterstationsebene auf die stündliche Regionsebene zu aggregieren und sie über den Stream Analytics-Auftrag in [Azure Storage](https://azure.microsoft.com/services/storage/) einzubringen.
 
 Das [Hive](http://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx)-Skript für diese Partitionierungsaufgabe heißt ***AggregateDemandRegion1Hr.hql***
 
@@ -258,7 +256,7 @@ In einer Pipeline mit kalten Daten besteht das grundlegende Ziel darin, die Beda
 
 	-   Ersetzen Sie im Ausklappfenster **Server** und **Datenbank** durch Ihre eigenen Server- und Datenbanknamen, und klicken Sie dann auf **OK**. Geben Sie beim Servernamen unbedingt den Port 1433 an (**NameIhrerLösung.database.windows.net, 1433**). Ignorieren Sie die auf dem Bildschirm angezeigten Warnmeldungen.
 
-	-   Im nächsten Ausklappfenster werden im linken Bereich zwei Optionen angezeigt (**Windows** und **Datenbank**). Klicken Sie auf **Datenbank**, und geben Sie den **Benutzernamen** und das **Kennwort** ein (hierbei handelt es sich um den Benutzernamen und das Kennwort, das Sie beim ersten Bereitstellen der Lösung und beim Erstellen der Azure SQL-Datenbank eingegeben haben). Aktivieren Sie bei ***Wählen Sie die Ebene aus, auf die diese Einstellungen anzuwenden sind*** die Option für die Datenbankebene. Klicken Sie auf **Verbinden**.
+	-   Im nächsten Ausklappfenster werden im linken Bereich zwei Optionen angezeigt (**Windows** und **Datenbank**). Klicken Sie auf **Datenbank**, und geben Sie den **Benutzernamen** und das **Kennwort** ein (hierbei handelt es sich um Benutzername und Kennwort, die Sie beim ersten Bereitstellen der Lösung und beim Erstellen der Azure SQL-Datenbank eingegeben haben). Aktivieren Sie bei ***Wählen Sie die Ebene aus, auf die diese Einstellungen anzuwenden sind*** die Option für die Datenbankebene. Klicken Sie auf **Verbinden**.
 
 	-   Wenn die vorherige Seite wieder angezeigt wird, schließen Sie das Fenster. Eine Meldung wird angezeigt. Klicken Sie darin auf **Anwenden**. Klicken Sie zum Schluss auf die Schaltfläche **Speichern**, um die Änderungen zu speichern. Für Ihre Power BI-Datei wurde nun eine Verbindung mit dem Server eingerichtet. Wenn Ihre Visualisierungen leer sind, stellen Sie sicher, dass Sie die Auswahl für die Visualisierungen aufheben, um alle Daten zu visualisieren. Klicken Sie dazu in der rechten oberen Ecke der Legenden auf das Radierersymbol. Klicken Sie auf die Schaltfläche zum Aktualisieren, damit neue Daten in den Visualisierungen widergespiegelt werden. Anfangs sehen Sie in den Visualisierungen nur die Seedingdaten, weil die Data Factory planmäßig alle drei Stunden aktualisiert wird. Wenn Sie die Daten nach drei Stunden aktualisieren, sehen Sie in den Visualisierungen neue Vorhersagen.
 
@@ -290,4 +288,4 @@ Es stehen zwei Tools zur Verfügung, mit denen Sie die Gesamtkosten zum Ausführ
 
 -   [Microsoft Azure-Kostenschätzungstool (Desktopversion)](http://www.microsoft.com/download/details.aspx?id=43376)
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

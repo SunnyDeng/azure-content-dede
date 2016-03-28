@@ -19,34 +19,11 @@
 #Anwendungsarchitektur in Microsoft Azure
 Ressourcen zum Erstellen von Anwendungen, die Microsoft Azure verwenden. Dies umfasst Tools, mit denen Sie die Diagramme zeichnen können, um Softwaresysteme visuell zu beschreiben.
 
-
-
-##Entwurfsmuster für die Azure-Architektur
-Microsoft veröffentlicht eine Reihe von Architekturentwurfsmustern, mit deren Hilfe Sie eigene benutzerdefinierte Entwürfe erstellen können. Diese Muster dienen als Bausteine für die Architektur. Sie können miteinander kombiniert werden, damit Sie Microsoft Azure Platform optimal für die geschäftlichen Anforderungen Ihres Unternehmens nutzen können.
-
-
-[Übersicht](../azure-architectures-cpif-overview/) – [Hybrid Networking](../azure-architectures-cpif-infrastructure-hybrid-networking/) – [Offsite Batch Processing](../azure-architectures-cpif-foundation-offsite-batch-processing-tier/) – [Multi-Site Data Tier](../azure-architectures-cpif-foundation-multi-site-data-tier/) – [Global Load Balanced Web Tier](../azure-architectures-cpif-foundation-global-load-balanced-web-tier/) – [Azure Search Tier](../azure-architectures-cpif-foundation-azure-search-tier/)
- 
-Jedes Muster enthält Folgendes:
- 
-- Eine Dienstbeschreibung
-- Eine Liste der zur Nutzung des Musters erforderlichen Azure-Dienste
-- Architekturdiagramme
-- Architekturabhängigkeiten
-- Einschränkungen des Musters oder Überlegungen, die sich auf das Muster auswirken können
-- Schnittstellen und Endpunkten
-- Antimuster
-- Wichtige grundlegende Überlegungen zur Architektur: Verfügbarkeit und Stabilität, zusammengesetzte SLAs für die verwendeten Dienste, Skalierung und Leistung, Kosten und operative Überlegungen.
-
-![Entwurfsmuster für die Azure-Architektur](./media/architecture-overview/AzureArchPatterns.jpg)
-
-
 ##Poster mit Entwurfsmustern
-Microsoft Patterns and Practices hat das Buch zu [Cloudentwurfsmustern](http://msdn.microsoft.com/library/dn568099.aspx) veröffentlicht, das sowohl auf MSDN als auch als PDF-Download erhältlich ist. Es ist zudem ein großformatiges Poster verfügbar, auf dem alle Muster aufgelistet sind.
 
-![Patterns und Practices – Poster zu Cloudmustern](./media/architecture-overview/PnPPatternPosterThumb.jpg)
+Microsoft Patterns & Practices hat das Buch zu [Cloudentwurfsmustern](http://msdn.microsoft.com/library/dn568099.aspx) veröffentlicht, das sowohl auf MSDN als auch als PDF-Download erhältlich ist. Es ist zudem ein großformatiges Poster verfügbar, auf dem alle Muster aufgelistet sind.
 
-
+![Patterns & Practices – Poster zu Cloudmustern](./media/architecture-overview/PnPPatternPosterThumb.jpg)
 
 ##Microsoft-Architektur – Zertifizierungskurs
 
@@ -73,7 +50,7 @@ In den Plänen wird der [Cloud- und Enterprise-Symbolsatz](#symbol-and-icon-sets
 
 ##Visio-Vorlage "3D Blueprint"
 
-Die 3D-Versionen der [Microsoft-Architekturpläne](http://aka.ms/azblueprints) wurden zunächst in einem Nicht-Microsoft-Tool erstellt. Eine neue Vorlage für Visio 2013 (und höher) wurde am 5. August 2015 im Rahmen eines [Zertifizierungskurses zur Microsoft-Architektur auf EDX.ORG](#microsoft-architecture-certification-course) bereitgestellt.
+Die 3D-Versionen der [Microsoft-Architekturpläne](http://aka.ms/azblueprints) wurden zunächst in einem Nicht-Microsoft-Tool erstellt. Eine neue Vorlage für Visio 2013 (und höher) wurde am 5. August 2015 im Rahmen eines [Zertifizierungskurses zur Microsoft-Architektur auf EDX.ORG](#microsoft-architecture-certification-course) bereitgestellt.
 
 Die Vorlage steht auch außerhalb des Kurses zur Verfügung.
 
@@ -108,4 +85,4 @@ Microsoft veröffentlicht mehrere architekturbezogene Poster/Infografiken. Dazu 
 
 ![Infografiken zur Azure-Architektur](./media/architecture-overview/AzureArchInfographicThumb.jpg)
 
-<!---HONumber=AcomDC_0128_2016--->
+<!---HONumber=AcomDC_0316_2016-->

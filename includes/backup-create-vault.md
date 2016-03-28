@@ -23,9 +23,9 @@ Mit den folgenden Schritten erstellen Sie den zum Speichern von Sicherungen verw
 
 ### Azure Backup – Speicherredundanzoptionen
 
-> Der beste Zeitpunkt zum Bestimmen Ihrer Speicherredundanzoptionen ist unmittelbar nach Erstellung des Tresors, bevor Computer beim Tresor registriert werden. Sobald ein Element beim Tresor registriert wurde, wird die Speicherredundanzoption gesperrt und kann nicht mehr geändert werden.
+>[AZURE.IMPORTANT] Der beste Zeitpunkt zum Identifizieren von Speicherredundanzoptionen ist unmittelbar nach der Erstellung des Tresors, bevor Computer beim Tresor registriert werden. Sobald ein Element beim Tresor registriert wurde, wird die Speicherredundanzoption gesperrt und kann nicht mehr geändert werden.
 
-Die Speicherredundanz des Back-End-Speichers von Azure Backup wird durch Ihre geschäftlichen Anforderungen bestimmt. Wenn Sie Azure als primären Speicherendpunkt für die Sicherung verwenden (wenn Sie beispielsweise von einem Windows Server in Azure sichern), sollten Sie die Option "Georedundanter Speicher" in Betracht ziehen (Standardeinstellung). Diese finden Sie unter der Option **Konfigurieren** Ihres Sicherungstresors.
+Die Speicherredundanz des Back-End-Speichers von Azure Backup sollte durch Ihre geschäftlichen Anforderungen bestimmt werden. Wenn Sie Azure als primären Speicherendpunkt für die Sicherung verwenden (wenn Sie beispielsweise von einem Windows Server in Azure sichern), sollten Sie die Option "Georedundanter Speicher" in Betracht ziehen (Standardeinstellung). Diese finden Sie unter der Option **Konfigurieren** Ihres Sicherungstresors.
 
 ![GRS](./media/backup-create-vault/grs.png)
 
@@ -39,4 +39,4 @@ Bei Verwendung von Azure als tertiären Speicherendpunkt (Sie verwenden beispiel
 
 ![LRS](./media/backup-create-vault/lrs.png)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0316_2016-->

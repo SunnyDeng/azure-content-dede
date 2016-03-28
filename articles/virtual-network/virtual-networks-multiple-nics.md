@@ -19,7 +19,7 @@
 
 # Erstellen eines virtuellen Computers mit mehreren Netzwerkschnittstellenkarten (NICs)
 
-Sie können virtuelle Computer (VMs) in Azure erstellen und allen virtuellen Computern mehrere Netzwerkkarten (NICs) zuordnen. Viele virtuelle Netzwerkanwendungen, z. B. Lösungen für die Anwendungsübermittlung und WAN-Optimierung, erfordern mehrere NICs. Multi-NIC bietet zudem weitere Funktionen zur Verwaltung des Netzwerkdatenverkehrs, darunter die Isolation des Datenverkehrs zwischen einer Front-End-NIC und Back-End-NIC(s) oder die Trennung des Datenverkehrs auf Datenverkehrsebene vom Datenverkehr auf Verwaltungsebene.
+Sie können virtuelle Computer (VMs) in Azure erstellen und allen virtuellen Computern mehrere Netzwerkkarten (NICs) zuordnen. Viele virtuelle Netzwerkanwendungen, z. B. Lösungen für die Anwendungsübermittlung und WAN-Optimierung, erfordern mehrere NICs. Multi-NIC bietet zudem weitere Funktionen zur Verwaltung des Netzwerkdatenverkehrs, darunter die Isolation des Datenverkehrs zwischen einer Front-End-NIC und Back-End-NIC(s) oder die Trennung des Datenverkehrs auf Datenverkehrsebene vom Datenverkehr auf Verwaltungsebene.
 
 ![Multi-NIC für virtuelle Computer](./media/virtual-networks-multiple-nics/IC757773.png)
 
@@ -33,6 +33,7 @@ Derzeit gelten für Multi-NIC die folgenden Anforderungen und Einschränkungen:
 - Innerhalb eines Clouddiensts (klassische Bereitstellungen) oder einer Ressourcengruppe (Ressourcen-Manager-Bereitstellung) sind nur die folgenden Einstellungen möglich: 
 	- Alle virtuellen Computer in diesem Clouddienst müssen Multi-NIC-fähig sein, oder 
 	- alle virtuellen Computer in diesem Clouddienst müssen jeweils eine einzelne NIC haben. 
+	- Ein virtueller Computer ohne sekundäre Netzwerkschnittstellen kann nicht nachträglich mit einer solchen ausgerüstet werden. Auch können bestehende sekundäre Netzwerkschnittstellen nicht nachträglich entfernt werden.
 
 [AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell.
  
@@ -168,7 +169,7 @@ Führen Sie die folgenden Schritte aus, um einen virtuellen Computer mit mehrere
 
 ## Sekundärer Netzwerkkartenzugriff auf andere Subnetze
 
-Das aktuelle Modell in Azure sieht vor, dass alle Netzwerkkarten auf einem virtuellen Computer mit einem Standardgateway eingerichtet wurden. Dadurch können die Netzwerkkarten mit IP-Adressen außerhalb ihres Subnetzes kommunizieren. Bei Betriebssystemen, die das schwache Hostroutingmodell verwenden, z. B. Linux, werden Internetverbindungen unterbrochen, wenn eingehender und ausgehender Datenverkehr unterschiedliche Netzwerkkarten verwenden.
+Das aktuelle Modell in Azure sieht vor, dass alle Netzwerkkarten auf einem virtuellen Computer mit einem Standardgateway eingerichtet wurden. Dadurch können die Netzwerkkarten mit IP-Adressen außerhalb ihres Subnetzes kommunizieren. Bei Betriebssystemen, die das schwache Hostroutingmodell verwenden, z. B. Linux, werden Internetverbindungen unterbrochen, wenn eingehender und ausgehender Datenverkehr unterschiedliche Netzwerkkarten verwenden.
 
 Um dieses Problem zu beheben, wird Anfang Juli 2015 ein Update für die Azure-Plattform eingeführt, mit dem das Standardgateway aus den sekundären Netzwerkkarten entfernt wird. Dies hat keine Auswirkungen auf vorhandene virtuelle Computer, solange diese nicht neu gestartet werden. Nach dem Neustart werden die neuen Einstellungen wirksam und der Datenverkehrsfluss für die sekundären Netzwerkkarten werden auf das gleiche Subnetz beschränkt. Wenn die Benutzer die Kommunikation der sekundäre Netzwerkkarten mit Adressen außerhalb ihres Subnetzes zulassen möchten, müssen sie, wie unten beschrieben, der Routingtabelle einen Eintrag hinzufügen, mit dem das Gateway konfiguriert wird.
 
@@ -265,4 +266,4 @@ Da virtuelle Linux-Computer im Standardverhalten schwaches Hostrouting verwenden
 - Bereitstellen von [MultiNIC-VMs in einem Anwendungsszenario mit 2-Ebenen in einer Ressourcen-Manager-Bereitstellung](virtual-network-deploy-multinic-arm-template.md).
 - Bereitstellen von [MultiNIC-VMs in einem Anwendungsszenario mit 2-Ebenen in einer klassischen Bereitstellung](virtual-network-deploy-multinic-classic-ps.md).
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0316_2016-->

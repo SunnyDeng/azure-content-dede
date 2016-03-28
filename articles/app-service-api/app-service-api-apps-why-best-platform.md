@@ -38,11 +38,11 @@ API-Apps stellt die folgenden Funktionen bereit:
 
 - **Nutzen Sie eigene APIs in unveränderter Form** – Es ist nicht erforderlich, den Code vorhandener APIs zu ändern, um all die API-App-Features zu nutzen – stellen Sie lediglich Ihren Code in einer API-App bereit. Ihre API kann alle von App Service unterstützten Sprachen oder Frameworks verwenden, einschließlich ASP.NET und C#, Java, PHP, Node.js und Python.
 
-Darüber hinaus sind die mit API-Apps, Web-Apps und Mobile Apps angebotenen Funktionen austauschbar. Dies bedeutet, dass in einer Instanz von API-Apps Funktionen zum Entwickeln und Hosten von Web- und mobilen Apps genutzt werden können, die mit Web-Apps und Mobile Apps bereitgestellt werden. Dies gilt auch umgekehrt: Sie können beispielsweise eine API mithilfe einer Web-App hosten und dennoch die Swagger-Metadaten zur Generierung des Clientcodes und CORS für den domänenübergreifenden Browserzugriff verwenden. Weitere Informationen finden Sie unter [Web-Apps – Übersicht](../app-service-web/app-service-web-overview.md) und [Mobile Apps – Übersicht](../app-service-mobile/app-service-mobile-value-prop.md).
+Darüber hinaus kann eine API-App von Features profitieren, die von [Web-Apps](../app-service-web/app-service-web-overview.md) und [Mobile Apps](../app-service-mobile/app-service-mobile-value-prop.md) bereitgestellt werden. Dies gilt auch umgekehrt: Wenn Sie eine API mithilfe einer Web-App oder einer mobilen App hosten, kann diese von API-App-Funktionen wie Swagger-Metadaten zur Generierung des Clientcodes und CORS für den domänenübergreifenden Browserzugriff profitieren. Der einzige Unterschied zwischen den drei App-Typen (API, Web, mobil) ist der Name und das Symbol im Azure-Portal. Da alle dieselben Funktionen haben, muss der Typ einer App zu keinem Zeitpunkt geändert werden, um die von Ihnen gewünschten Funktionen zu erhalten. Wenn Sie jedoch den Typ einer vorhandenen App ändern möchten, ist dies ein einfacher Vorgang. Weitere Informationen finden Sie im Abschnitt **Ändern eines App-Typs** unter [Erste Schritte mit API-Apps und ASP.NET in Azure App Service](app-service-api-dotnet-get-started.md#optional-changing-an-app-type).
 
 ## Erweitern von API-Apps mithilfe von Azure API Management 
 
-API-Apps und [Azure API Management](../api-management/api-management-key-concepts.md) sind ergänzende Dienste:
+API-Apps und [Azure API Management](../api-management/api-management-key-concepts.md) sind sich ergänzende Dienste:
 
 * API Management dient zur Verwaltung von APIs. Sie können mit einem API Management-Front-End auf einer API unter anderem die Nutzung überwachen und drosseln, die Ein- und Ausgabe bearbeiten und mehrere APIs zusammenführen konsolidieren. Die verwalteten APIs können an einem beliebigen Ort gehostet werden.
 * API-Apps wird für das Hosting von APIs verwendet. Der Dienst umfasst Funktionen zur einfachen Entwicklung und Nutzung von APIs, führt aber nicht die Art von Überwachung, Drosselung, Bearbeitung oder Konsolidierung durch, für die API Management zuständig ist. 
@@ -60,10 +60,8 @@ API Management und API-Apps verfügen über ein paar ähnliche Funktionen. Beisp
 
 ## Erste Schritte
 
-Arbeiten Sie zum Einstieg in API-Apps das Tutorial [Erste Schritte mit API-Apps ](app-service-api-dotnet-get-started.md) durch.
+Arbeiten Sie zum Einstieg in API-Apps eines der Tutorials unter [Erste Schritte mit API-Apps ](app-service-api-dotnet-get-started.md) durch.
 
-Eine Liste der bekannten Probleme mit API-Apps finden Sie in dem entsprechenden [Forumsbeitrag](https://social.msdn.microsoft.com/Forums/de-DE/7f8b42f2-ac0d-48b8-a35e-3b4934e1c25e/api-app-known-issues?forum=AzureAPIApps).
+Um Fragen über API-Apps zu stellen, starten Sie einen Thread im [API-Apps-Forum](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=AzureAPIApps).
 
-Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure App Service](../app-service/app-service-value-prop-what-is.md).
-
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

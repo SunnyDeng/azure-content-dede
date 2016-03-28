@@ -72,7 +72,7 @@ Mit dem folgenden Verfahren können eine Skriptdatei in Azure Automation importi
 
 
 ### So importieren Sie ein Runbook aus einer Datei mit dem Azure-Portal
-Mit dem folgenden Verfahren können eine Skriptdatei in Azure Automation importieren. Beachten Sie, dass Sie mit diesem Portal nur eine .ps1-Datei in ein PowerShell-Workflow-Runbook importieren können.
+Mit dem folgenden Verfahren können eine Skriptdatei in Azure Automation importieren. Beachten Sie, dass Sie mit diesem Portal eine .ps1-Datei in ein PowerShell-Runbook oder PowerShell-Workflow-Runbook importieren können.
 
 1. Öffnen Sie im Azure-Portal Ihr Automation-Konto.
 2. Klicken Sie auf die Kachel **Runbooks**, um die Liste mit den Runbooks zu öffnen.
@@ -131,4 +131,4 @@ Sie können das Cmdlet [Publish-AzureAutomationRunbook](https://msdn.microsoft.c
 - [Bearbeiten von Textrunbooks in Azure Automation](automation-edit-textual-runbook.md)
 - [Grafische Erstellung in Azure Automation](automation-graphical-authoring-intro.md)
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0316_2016-->

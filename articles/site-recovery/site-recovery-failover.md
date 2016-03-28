@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery" 
-	ms.date="02/22/2016" 
+	ms.date="03/14/2016" 
 	ms.author="raynew"/>
 
 # Failover in Site Recovery
@@ -215,14 +215,15 @@ Hier erfahren Sie, wie Sie ein nicht geplantes Failover für einen Wiederherstel
 2. Wählen Sie auf der Seite **Geplantes Failover bestätigen** den Quell- und Zielort aus. Beachten Sie die Failover-Richtung. Wenn das Failover vom primären Standort erwartungsgemäß funktioniert hat und sich alle virtuellen Computer am sekundären Standort befinden, dient diese Angabe nur zu Informationszwecken.
 3. Wählen Sie bei einem Failback von Azure Einstellungen unter **Datensynchronisierung** aus:
 
-	- **Daten vor dem Failover synchronisieren**: Diese Option minimiert die Ausfallzeiten der virtuellen Computer, da diese für die Synchronisierung nicht heruntergefahren werden. Die Option bewirkt Folgendes:
+	- **Daten vor dem Failover synchronisieren (nur Deltaänderungen synchronisieren)**: Diese Option minimiert die Ausfallzeiten der virtuellen Computer, da diese für die Synchronisierung nicht heruntergefahren werden. Die Option bewirkt Folgendes:
 		- Phase 1: Sie erstellt eine Momentaufnahme des virtuellen Computers in Azure und kopiert sie auf den lokalen Hyper-V-Host. Der Computer wird weiterhin in Azure ausgeführt.
 		- Phase 2: Sie fährt den virtuellen Computer in Azure herunter, damit keine neuen Änderungen vorgenommen werden. Die letzten Änderungen werden an den lokalen Server übertragen, und der lokale virtuelle Computer wird gestartet.
 	
-	> [AZURE.NOTE] Die Verwendung dieser Option empfiehlt sich, wenn Sie Azure über einen längeren Zeitraum (einen Monat oder länger) ausgeführt haben. Die Option führt die Synchronisierung durch, ohne virtuelle Computer herunterzufahren. Sie führt keine Neusynchronisierung durch, sondern ein vollständiges Failback. Diese Option beinhaltet keine Prüfsummenberechnungen.
 
-	- **Daten nur während des Failovers synchronisieren**: Verwenden Sie diese Option, wenn Sie Azure nur für einen kurzen Zeitraum ausgeführt haben. Diese Option führt anstelle eines vollständigen Failbacks eine Neusynchronisierung durch und ist somit schneller. Außerdem führt sie eine schnelle Prüfsummenberechnung durch und lädt nur geänderte Blöcke herunter.
-
+	- **Daten nur während Failover synchronisieren (vollständiger Download)**: Verwenden Sie diese Option, wenn Sie über einen längeren Zeitraum Azure verwendet haben. Diese Option ist schneller, da erwartet wird, dass die meisten Daten auf dem Datenträger geändert wurden, und keine Zeit mit der Prüfsummenberechnung verschwendet werden soll. Mit der Option wird ein Download des Datenträgers durchgeführt. Sie ist auch nützlich, wenn der lokale virtuelle Computer gelöscht wurde.
+	
+	> [AZURE.NOTE] Es wird empfohlen, diese Option zu verwenden, wenn Sie Azure seit einer Weile nutzen (einen Monat oder länger) oder wenn der lokale virtuelle Computer gelöscht wurde. Mit dieser Option werden keine Prüfsummenberechnungen durchgeführt.
+	
 5. Wenn Sie ein Failover zu Azure durchführen und die Datenverschlüsselung für die Cloud aktiviert ist, wählen Sie unter **Verschlüsselungsschlüssel** das Zertifikat aus, das beim Aktivieren der Datenverschlüsselung im Rahmen der Anbieterinstallation auf dem VMM-Server ausgestellt wurde.
 5. Standardmäßig wird der letzte Wiederherstellungspunkt verwendet. Unter **Wiederherstellungspunkt ändern** können Sie bei Bedarf einen anderen Wiederherstellungspunkt angeben. 
 6. Klicken Sie auf das Häkchen, um das Failback zu starten. Der Fortschritt des Failovers wird auf der Registerkarte **Aufträge** angezeigt. 
@@ -254,4 +255,4 @@ Wenn Sie den Schutz zwischen einem [Hyper-V-Standort und Azure](site-recovery-hy
 
  
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0316_2016-->
